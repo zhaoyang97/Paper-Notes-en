@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster
 description: >-
-  [ICLR 2026][Image Generation][REINFORCE] Instead of struggling to make a factorized reverse process approximate a complex target, FLDD makes the **forward noising process learnable**. This ensures the induced reverse target is factorized and easily matched by existing samplers, reducing discrete diffusion sampling from hundreds of steps to 10 without changing
+  [ICLR 2026][Image Generation][Discrete Diffusion] Instead of struggling to make a factorized reverse process approximate a complex target, FLDD makes the **forward noising process learnable**. This ensures the induced reverse target is factorized and easily matched by existing samplers, reducing discrete diffusion sampling from hundreds of steps to 10 without changing the sampler or increasing inference overhead.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - REINFORCE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "Learnable Forward Process"
+  - "Few-step Generation"
+  - "Non-Markovian"
+  - "Maximum Coupling"
+  - "REINFORCE"
 date: 2026-05-08
-content_hash: 0168acff4efb5477
+content_hash: c837142abcf12ca5
 ---
+
 # Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster
 
 **Conference**: ICLR 2026  
@@ -128,8 +134,8 @@ Molecule Generation QM9 / ZINC250k (Table 2):
 - [\[ICLR 2026\] ReDDiT: Rehashing Noise for Discrete Visual Generation](reddit_rehashing_noise_for_discrete_visual_generation.md)
 - [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
 - [\[ICML 2026\] Adapting Noise to Data: Generative Flows from Learned 1D Processes](../../ICML2026/image_generation/adapting_noise_to_data_generative_flows_from_1d_processes.md)
-- [\[ICLR 2026\] Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall](loopholing_discrete_diffusion_deterministic_bypass_of_the_sampling_wall.md)
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
+- [\[ICLR 2026\] Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall](loopholing_discrete_diffusion_deterministic_bypass_of_the_sampling_wall.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ALLNet: Multi-task Dense Prediction for Degraded Images
 description: >-
-  [CVPR 2026][Others][Paper Note] ALLNet dismantles the two-stage cascaded "restoration-then-prediction" pipeline. Using a dual-decoder U-Net, it enables mutual feature feeding between the restoration and prediction streams at every scale. By employing a degradation-adaptive Mixture-of-Experts (MaE) module for de-degradation and a Task Collaborative Re
+  [CVPR 2026][Multi-task Dense Prediction] ALLNet dismantles the two-stage cascaded "restoration-then-prediction" pipeline. Using a dual-decoder U-Net, it enables mutual feature feeding between the restoration and prediction streams at every scale. By employing a degradation-adaptive Mixture-of-Experts (MaE) module for de-degradation and a Task Collaborative Refinement (TCR) module for bidirectional semantic alignment, it outperforms existing SOTA methods across four tasks on d…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multi-task Dense Prediction"
+  - "Image Restoration"
+  - "Degraded Images"
+  - "Mixture of Experts (MoE)"
+  - "Cross-task Synergy"
 date: 2026-05-08
-content_hash: 5f2822d42f6c6d2e
+content_hash: 106eb002b9840374
 ---
+
 # ALLNet: Multi-task Dense Prediction for Degraded Images
 
 **Conference**: CVPR 2026  
@@ -156,11 +161,11 @@ Incremental addition of components (InternImage-T baseline, $\Delta_{MTL}$ is th
 
 ## Related Papers
 
+- [\[ICLR 2026\] Ensemble Prediction of Task Affinity for Efficient Multi-Task Learning](../../ICLR2026/others/ensemble_prediction_of_task_affinity_for_efficient_multi-task_learning.md)
 - [\[CVPR 2026\] Region-Wise Correspondence Prediction between Manga Line Art Images](region-wise_correspondence_prediction_between_manga_line_art_images.md)
-- [\[CVPR 2026\] UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders](uplift_efficient_pixel-dense_feature_upsampling_with_local_attenders.md)
+- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
+- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
 - [\[CVPR 2026\] A Difference-in-Difference Approach to Detecting AI-Generated Images](a_difference-in-difference_approach_to_detecting_ai-generated_images.md)
-- [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
-- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
 
 </div>
 

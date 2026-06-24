@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper establishes a "standard ruler" for Diffusion Posterior Sampling (DPS) algorithms: by utilizing Lévy process signals—which allow for exact Gibbs sampling—as the test distribution, it obtains "gold standard" posterior samples at the distribution level. The authors systematically evaluate mainstream DPS algorit
+  [ICLR2026][Image Restoration][Diffusion Posterior Sampling] This paper establishes a "standard ruler" for Diffusion Posterior Sampling (DPS) algorithms: by utilizing Lévy process signals—which allow for exact Gibbs sampling—as the test distribution, it obtains "gold standard" posterior samples at the distribution level. The authors systematically evaluate mainstream DPS algorithms (C-DPS / DiffPIR / DPnP) across four types of inverse problems (denoising, deconvolution…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Diffusion Posterior Sampling"
+  - "Linear Inverse Problems"
+  - "Gibbs Sampling"
+  - "Posterior Calibration"
+  - "MMSE Optimality"
 date: 2026-05-08
-content_hash: 402b0142716ba179
+content_hash: 2e81d5981388c598
 ---
+
 # A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms
 
 **Conference**: ICLR2026  
@@ -123,7 +129,7 @@ Findings: The $\ell_2$ baseline is perfect (0.00) under Gaussian increments, **v
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -131,7 +137,7 @@ Findings: The $\ell_2$ baseline is perfect (0.00) under Gaussian increments, **v
 - [\[ICLR 2026\] LearnIR: Learnable Posterior Sampling for Real-World Image Restoration](learnir_learnable_posterior_sampling_for_real-world_image_restoration.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](../../ICML2026/image_restoration/triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
-- [\[NeurIPS 2025\] Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation](../../NeurIPS2025/image_restoration/improving_diffusion-based_inverse_algorithms_under_few-step_constraint_via_learn.md)
+- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
 
 </div>
 

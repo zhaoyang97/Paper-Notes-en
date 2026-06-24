@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization
 description: >-
-  [AAAI 2026][Model Compression][Dynamic Adapters] To address the severe inference latency overhead (250%–950%) of dynamic MoE-LoRA adapters…
+  [AAAI 2026][Model Compression][Dynamic Adapters] To address the severe inference latency overhead (250%–950%) of dynamic MoE-LoRA adapters, this paper proposes a token-level pre-gating architecture that performs a single global routing decision at the first layer. Combined with a custom SGMM fused CUDA kernel that merges all activated LoRA adapters into the backbone in one shot, the approach reduces decoding latency by 2.4× while preserving model accuracy.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Inference Acceleration"
   - "Token-Level Routing"
 date: 2026-05-08
-content_hash: 61a8bb9b63582a16
+content_hash: 1e34ee9d4f375876
 ---
 
 # AdaFuse: Accelerating Dynamic Adapter Inference via Token-Level Pre-Gating and Fused Kernel Optimization
@@ -119,11 +119,11 @@ The design principle of "making algorithms system-friendly" is transferable to M
 
 ## Related Papers
 
+- [\[ICML 2025\] Joker: Joint Optimization Framework for Lightweight Kernel Machines](../../ICML2025/model_compression/joker_joint_optimization_framework_for_lightweight_kernel_machines.md)
+- [\[ICLR 2026\] WINA: Weight Informed Neuron Activation for Accelerating Large Language Model Inference](../../ICLR2026/model_compression/wina_weight_informed_neuron_activation_for_accelerating_large_language_model_inf.md)
+- [\[CVPR 2026\] Otil: Accelerating Diffusion Model Inference via Communication-Efficient Multi-GPU Parallelism](../../CVPR2026/model_compression/otil_accelerating_diffusion_model_inference_via_communication-efficient_multi-gp.md)
 - [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
-- [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
 - [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](../../ICLR2026/model_compression/titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
-- [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](../../ACL2026/model_compression/dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
-- [\[AAAI 2026\] Earth-Adapter: Bridge Geospatial Domain Gaps with Mixture of Frequency Adaptation](earth-adapter_bridge_the_geospatial_domain_gaps_with_mixture_of_frequency_adapta.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification
 description: >-
-  [AAAI 2026][Human Understanding][Cross-Modality Person Re-Identification] To address the core problem of unreliable cross-modality associations in unsupervised visible-infrared person re-identification (USVI-ReID)…
+  [AAAI 2026][Human Understanding][Cross-Modality Person Re-Identification] To address the core problem of unreliable cross-modality associations in unsupervised visible-infrared person re-identification (USVI-ReID), this paper proposes modality-aware Jaccard distance correction and a "split-and-contrast" invariance learning strategy. By eliminating modality bias, the method enables reliable global cross-modality clustering and feature alignment…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Jaccard Distance Correction"
   - "Global Clustering"
 date: 2026-05-08
-content_hash: deed593ca24b1bb7
+content_hash: 73eaf38c23531a36
 ---
 
 # Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification
@@ -168,11 +168,11 @@ On SYSU-MM01, All Search Rank-1 improves by 1.2% and Indoor by 4.7%; on RegDB, V
 
 ## Related Papers
 
+- [\[CVPR 2026\] Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/spatial-frequency_collaborative_learning_for_occluded_visible-infrared_person_re.md)
+- [\[ECCV 2024\] Multi-Memory Matching for Unsupervised Visible-Infrared Person Re-Identification](../../ECCV2024/human_understanding/multi-memory_matching_for_unsupervised_visible-infrared_person_re-identification.md)
+- [\[CVPR 2026\] BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/bit_matching-based_bi-directional_interaction_transformation_network_for_visible.md)
+- [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
 - [\[ICCV 2025\] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning](../../ICCV2025/human_understanding/weakly_supervised_visible-infrared_person_re-identification_via_heterogeneous_ex.md)
-- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](../../CVPR2026/human_understanding/vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
-- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](../../ICCV2025/human_understanding/openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[AAAI 2026\] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction](spatiotemporal-untrammelled_mixture_of_experts_for_multi-person_motion_predictio.md)
-- [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](generating_attribute-aware_human_motions_from_textual_prompt.md)
 
 </div>
 

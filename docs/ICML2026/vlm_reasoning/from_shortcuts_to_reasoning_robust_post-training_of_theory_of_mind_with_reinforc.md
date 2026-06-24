@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning
 description: >-
-  [ICML 2026][vlm_reasoning][Theory of Mind] The authors first reveal that mainstream ToM datasets are contaminated by "shortcuts" (achieving 99% accuracy via spurious correlations rather than true mental reasoning). They propose a lightweight auditing framework to filter these datasets and systematically demonstrate on four shortcut-free datasets that reinforcem
+  [ICML 2026][VLM Reasoning][Theory of Mind] The authors first reveal that mainstream ToM datasets are contaminated by "shortcuts" (achieving 99% accuracy via spurious correlations rather than true mental reasoning). They propose a lightweight auditing framework to filter these datasets and systematically demonstrate on four shortcut-free datasets that reinforcement fine-tuning with explicit reasoning chains (Thinking-RFT) outperforms SFT by 6% on average (approximately 10% in…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Theory of Mind
-  - RLVR
-  - Thinking-RFT
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Theory of Mind"
+  - "RLVR"
+  - "Thinking-RFT"
+  - "Data Shortcut"
+  - "Verifiable Reward"
 date: 2026-05-08
-content_hash: cf753851f8e2c770
+content_hash: 03bdecabe5ba2be9
 ---
+
 # From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -126,11 +129,11 @@ Experiments on ExploreToM (shortcut) vs. Hi-ToM (OOD) reveal the harms of shortc
 
 ## Related Papers
 
-- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](../../CVPR2026/vlm_reasoning/mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
 - [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
+- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](../../CVPR2026/vlm_reasoning/mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
+- [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
 - [\[ICML 2026\] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning](ivgr_internalizing_visually_grounded_reasoning_for_mllms_with_reinforcement_lear.md)
 - [\[ICML 2025\] Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner](../../ICML2025/vlm_reasoning/overcoming_multi-step_complexity_in_multimodal_theory-of-mind_reasoning_a_scalab.md)
-- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](../../CVPR2026/vlm_reasoning/r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning
 description: >-
-  [NeurIPS 2025][Interpretability][Knowledge Distillation] This paper proposes the Learning to Focus (LeaF) framework, which leverages gradient-guided detection to identify "confounding tokens" in training data. During kno…
+  [NeurIPS 2025][Interpretability][Knowledge Distillation] This paper proposes the Learning to Focus (LeaF) framework, which leverages gradient-guided detection to identify "confounding tokens" in training data. During knowledge distillation, these tokens are pruned to construct counterfactual samples, aligning the student model's attention to the key contextual tokens attended by the teacher model, thereby improving accuracy on mathematical reasoning and code generation tasks.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Token Pruning"
   - "Confounding Factors"
 date: 2026-05-08
-content_hash: 82325aa54f9238b0
+content_hash: 9729af1fe7ff5cea
 ---
 
 # Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning

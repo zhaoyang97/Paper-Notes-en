@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] When More Is Less: Understanding Chain-of-Thought Length in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper systematically reveals that the belief "the longer the Chain-of-Thought, the better" is a misconception—task accuracy follows an **inverted U-shaped** curve relative to CoT length. There exists an **optimal length** that shortens as model capability increases and task difficulty decreases. The authors explai
+  [ICLR 2026][Reasoning][Chain-of-Thought] This paper systematically reveals that the belief "the longer the Chain-of-Thought, the better" is a misconception—task accuracy follows an **inverted U-shaped** curve relative to CoT length. There exists an **optimal length** that shortens as model capability increases and task difficulty decreases. The authors explain this phenomenon using a theoretical model of error accumulation, derive a scaling law…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Error Accumulation
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "CoT length"
+  - "error accumulation"
+  - "overthinking"
+  - "RL calibration"
 date: 2026-05-08
-content_hash: 9f9b67dcb61d75da
+content_hash: 59f90dd6b17bb9da
 ---
+
 # When More Is Less: Understanding Chain-of-Thought Length in LLMs
 
 **Conference**: ICLR 2026  
@@ -144,11 +148,11 @@ The impact of self-correction training (SC) on optimal length $N^*$ and optimal 
 
 ## Related Papers
 
-- [\[ICLR 2026\] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models](when_reasoning_meets_compression_understanding_the_effects_of_pruning_and_quant.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[ICLR 2026\] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models](when_reasoning_meets_compression_understanding_the_effects_of_pruning_and_quant.md)
+- [\[ICML 2026\] SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning](../../ICML2026/llm_reasoning/smartthinker_progressive_chain-of-thought_length_calibration_for_efficient_large.md)
 - [\[ICLR 2026\] When Silence is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?](when_silence_is_golden_can_llms_learn_to_abstain_in_temporal_qa_and_beyond.md)
-- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](../../ICML2026/llm_reasoning/when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
-- [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
+- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
 
 </div>
 

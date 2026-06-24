@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AutoNumerics-Zero: Automated Discovery of State-of-the-Art Mathematical Functions
 description: >-
-  [ICML 2026][Others][Paper Note] AutoNumerics-Zero is proposed as an evolutionary symbolic regression method with zero prior knowledge. Starting from empty programs, it automatically discovers arithmetic programs for approximating transcendental functions (such as exponential and cosine functions). Under finite-precision targets, it surpasses classic
+  [ICML2026][Symbolic Regression] AutoNumerics-Zero is proposed as an evolutionary symbolic regression method with zero prior knowledge. Starting from empty programs, it automatically discovers arithmetic programs for approximating transcendental functions (such as exponential and cosine functions). Under finite-precision targets, it surpasses classic approximation methods designed by mathematicians over centuries by requiring fewer operations.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Symbolic Regression"
+  - "Evolutionary Search"
+  - "Transcendental Function Approximation"
+  - "Program Discovery"
+  - "Numerical Computing"
 date: 2026-05-08
-content_hash: 9a69db75222b3740
+content_hash: 53374460b4a77ef4
 ---
+
 # AutoNumerics-Zero: Automated Discovery of State-of-the-Art Mathematical Functions
 
 **Conference**: ICML2026  
@@ -140,7 +145,7 @@ The discovered 10-operation program $f(x) = \left(\frac{c_4}{\frac{c_1}{\frac{c_
 - [\[ACL 2025\] Limited Generalizability in Argument Mining: State-Of-The-Art Models Learn Datasets, Not Arguments](../../ACL2025/others/limited_generalizability_in_argument_mining_state-of-the-art_models_learn_datase.md)
 - [\[ECCV 2024\] Auto-GAS: Automated Proxy Discovery for Training-Free Generative Architecture Search](../../ECCV2024/others/auto-gas_automated_proxy_discovery_for_training-free_generative_architecture_sea.md)
 - [\[CVPR 2026\] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](../../CVPR2026/others/unimernet_a_universal_network_for_real-world_mathematical_expression_recognition.md)
-- [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](../../ICLR2026/others/missing_mass_for_differentially_private_domain_discovery.md)
+- [\[ACL 2026\] Neural Induction of Finite-State Transducers](../../ACL2026/others/neural_induction_of_finite-state_transducers.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](../../ICLR2026/others/bayesian_influence_functions_for_hessian-free_data_attribution.md)
 
 </div>

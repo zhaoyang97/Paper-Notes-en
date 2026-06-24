@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence
 description: >-
-  [CVPR 2026][Others][Paper Note] Focusing on "view mismatch" (Test-time Noisy Correspondence, TNC) that occurs only during deployment, BML performs **in-place bootstrapping to inject controllable mismatches and record contaminated views** on a clean training set. This "revealed" knowledge is used to supervise a lightweight reliability estimator (incor
+  [CVPR 2026][Test-time Noisy Correspondence] Focusing on "view mismatch" (Test-time Noisy Correspondence, TNC) that occurs only during deployment, BML performs **in-place bootstrapping to inject controllable mismatches and record contaminated views** on a clean training set. This "revealed" knowledge is used to supervise a lightweight reliability estimator (incorporating both intra-view uncertainty and inter-view prediction divergence). During inference…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Test-time Noisy Correspondence"
+  - "Multi-view Fusion"
+  - "Reliability Estimation"
+  - "Bootstrapping"
+  - "Reveal-supervised"
 date: 2026-05-08
-content_hash: c73b3f9f71430783
+content_hash: 6c85be92c47e3963
 ---
+
 # Bootstrapping Multi-view Learning for Test-time Noisy Correspondence
 
 **Conference**: CVPR 2026  
@@ -164,11 +169,11 @@ Ablation results under 50% TNC (AVG. over 7 datasets):
 
 ## Related Papers
 
+- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
-- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
-- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
+- [\[CVPR 2026\] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization](plug-and-play_incomplete_multi-view_clustering_via_janus-faced_affinity_learning.md)
 
 </div>
 

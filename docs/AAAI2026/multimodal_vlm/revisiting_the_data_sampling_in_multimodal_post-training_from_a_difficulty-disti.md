@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal post-training] This paper proposes two multimodal data difficulty assessment strategies—PISM (Progressive Image Semantic Masking) and CMAB (Cross-Modality Attention Balance)—and dem…
+  [AAAI 2026][Multimodal VLM][Multimodal post-training] This paper proposes two multimodal data difficulty assessment strategies—PISM (Progressive Image Semantic Masking) and CMAB (Cross-Modality Attention Balance)—and demonstrates that training exclusively with GRPO on difficulty-stratified data consistently outperforms the conventional SFT+GRPO pipeline, establishing that strategic data selection is more consequential than complex training paradigms.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "reinforcement learning"
   - "data selection"
 date: 2026-05-08
-content_hash: 0c14ea331244a089
+content_hash: 4864ae4441de7e19
 ---
 
 # Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View
@@ -151,11 +151,11 @@ The paper defines multimodal data difficulty along two dimensions: **intra-modal
 
 ## Related Papers
 
-- [\[ICLR 2026\] DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage](../../ICLR2026/multimodal_vlm/diva-grpo_enhancing_multimodal_reasoning_through_difficulty-adaptive_variant_adv.md)
-- [\[NeurIPS 2025\] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling](../../NeurIPS2025/multimodal_vlm/enhancing_the_outcome_reward-based_rl_training_of_mllms_with_self-consistency_sa.md)
+- [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](../../CVPR2026/multimodal_vlm/why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
+- [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](../../ICLR2026/multimodal_vlm/visual_jigsaw_post-training_improves_mllms.md)
 - [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](../../ICML2026/multimodal_vlm/med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
-- [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](../../ICML2026/multimodal_vlm/from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
-- [\[ACL 2026\] PRISM: Self-Pruning Intrinsic Selection Method for Training-Free Multimodal Data Selection](../../ACL2026/multimodal_vlm/prism_self-pruning_intrinsic_selection_method_for_training-free_multimodal_data_.md)
+- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](../../ICLR2026/multimodal_vlm/psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
+- [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)
 
 </div>
 

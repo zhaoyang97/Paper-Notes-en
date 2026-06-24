@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper examines the internal representations of diffusion models through the lens of the two principles of self-supervised learning (SSL): "invariance + expansion." It proposes a label-free scalar metric, **ICR (Invariant Contamination Ratio)**, which predicts the optimal noise levels for downstream classification
+  [ICML2026][Image Generation][Diffusion Models] This paper examines the internal representations of diffusion models through the lens of the two principles of self-supervised learning (SSL): "invariance + expansion." It proposes a label-free scalar metric, **ICR (Invariant Contamination Ratio)**, which predicts the optimal noise levels for downstream classification and provides early warnings for overfitting/memorization during training without requiring sampling or training c…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Self-Supervised Principles"
+  - "Invariant-Residual Decomposition"
+  - "ICR Metric"
+  - "Memorization Detection"
 date: 2026-05-08
-content_hash: eb653f4d6c146313
+content_hash: b3a77ada1a2014e4
 ---
+
 markdown
 # Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles
 
@@ -128,15 +133,14 @@ ICR and Training Dynamics:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Adapting Self-Supervised Representations as a Latent Space for Efficient Generation](../../ICLR2026/image_generation/adapting_self-supervised_representations_as_a_latent_space_for_efficient_generat.md)
-- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](../../ICLR2026/image_generation/generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 - [\[AAAI 2026\] Stabilizing Self-Consuming Diffusion Models with Latent Space Filtering](../../AAAI2026/image_generation/stabilizing_self-consuming_diffusion_models_with_latent_space_filtering.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](../../ICLR2026/image_generation/there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
+- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](../../ICLR2026/image_generation/generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 - [\[ICML 2026\] SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders](saemnesia_erasing_concepts_in_diffusion_models_with_supervised_sparse_autoencode.md)
-- [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](../../CVPR2026/image_generation/spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
 
 </div>
 

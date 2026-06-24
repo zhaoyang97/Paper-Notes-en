@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering
 description: >-
-  [AAAI 2026][Medical Imaging][Medical VQA] This paper proposes Q-FSRU, a model that transforms medical image and text features into the frequency domain via FFT for multimodal fusion…
+  [AAAI 2026][Medical Imaging][Medical VQA] This paper proposes Q-FSRU, a model that transforms medical image and text features into the frequency domain via FFT for multimodal fusion, and incorporates external medical knowledge through a quantum-inspired retrieval-augmented generation (Quantum RAG) mechanism, achieving 90% accuracy and a ROC-AUC of 0.9541 on the VQA-RAD dataset.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Fast Fourier Transform"
   - "Cross-Modal Reasoning"
 date: 2026-05-08
-content_hash: 712d8dec9d5b79c6
+content_hash: 3cd5ec32ee0686af
 ---
 
 # Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering
@@ -195,11 +195,11 @@ Detailed 5-fold cross-validation results:
 
 ## Related Papers
 
+- [\[CVPR 2026\] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering](../../CVPR2026/medical_imaging/mr-rag_multimodal_relevance-aware_retrieval-augmented_generation_for_medical_vis.md)
+- [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](../../CVPR2026/medical_imaging/dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
+- [\[ICLR 2026\] MedVLSynther: Synthesizing High-Quality Medical Visual Question Answering from Biomedical Literature with Generator-Verifier LMMs](../../ICLR2026/medical_imaging/synthesizing_high-quality_visual_question_answering_from_medical_documents_with_.md)
 - [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
 - [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
-- [\[AAAI 2026\] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation](decoding_with_structured_awareness_integrating_directional_frequency-spatial_and.md)
-- [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
-- [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
 
 </div>
 

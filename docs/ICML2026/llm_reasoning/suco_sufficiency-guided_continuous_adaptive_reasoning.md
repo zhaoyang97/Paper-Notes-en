@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SuCo: Sufficiency-guided Continuous Adaptive Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] SuCo proposes "Minimum Sufficient CoT (MSC)"—the shortest CoT prefix capable of producing the correct answer. Based on this, it designs a two-stage training process (MSC-aligned Fine-Tuning, MFT + Sufficiency-Aware Policy Optimization, SAPO), enabling large reasoning models to autonomously adjust reasoning length on a
+  [ICML2026][Reasoning][Adaptive Reasoning] SuCo proposes "Minimum Sufficient CoT (MSC)"—the shortest CoT prefix capable of producing the correct answer. Based on this, it designs a two-stage training process (MSC-aligned Fine-Tuning, MFT + Sufficiency-Aware Policy Optimization, SAPO), enabling large reasoning models to autonomously adjust reasoning length on a **continuous spectrum**. It achieves higher accuracy with fewer tokens across math, code…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reasoning"
+  - "Adaptive Reasoning"
+  - "Chain-of-Thought Efficiency"
+  - "Minimum Sufficient CoT"
+  - "Reinforcement Learning"
+  - "Overthinking"
 date: 2026-05-08
-content_hash: fb50640730742cbd
+content_hash: e2e95c843e47d4ff
 ---
+
 # SuCo: Sufficiency-guided Continuous Adaptive Reasoning
 
 **Conference**: ICML2026  
@@ -148,11 +153,11 @@ SuCo achieves a **win-win in accuracy and efficiency**: at the 7B scale, average
 
 ## Related Papers
 
+- [\[ICLR 2026\] Once-More: Continuous Self-Correction for Large Language Models via Perplexity-Guided Intervention](../../ICLR2026/llm_reasoning/once-more_continuous_self-correction_for_large_language_models_via_perplexity-gu.md)
 - [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
+- [\[ICML 2026\] Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models](stop_when_further_reasoning_wont_help_attention-state_adaptive_generation_in_rea.md)
 - [\[ICML 2026\] Select to Think: Unlocking SLM Potential with Local Sufficiency](select_to_think_unlocking_slm_potential_with_local_sufficiency.md)
-- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](../../ICLR2026/llm_reasoning/continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
 - [\[ACL 2026\] When Is Thinking Enough? Early Exit via Sufficiency Assessment for Efficient Reasoning](../../ACL2026/llm_reasoning/when_is_thinking_enough_early_exit_via_sufficiency_assessment_for_efficient_reas.md)
-- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 
 </div>
 

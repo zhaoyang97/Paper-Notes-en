@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Memory-Efficient 4-bit Preconditioned Stochastic Optimization
 description: >-
-  [ICCV 2025][Optimization][Shampoo] This paper proposes a 4-bit quantization scheme based on Cholesky decomposition and error feedback…
+  [ICCV 2025][Optimization][Shampoo] This paper proposes a 4-bit quantization scheme based on Cholesky decomposition and error feedback, compressing the preconditioner matrices of the Shampoo optimizer to 4-bit precision. The approach substantially reduces GPU memory consumption while preserving training performance close to 32-bit Shampoo, with convergence guarantees provided for both smooth and non-smooth settings.
 tags:
   - "ICCV 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "low-precision optimizer"
   - "memory-efficient training"
 date: 2026-05-08
-content_hash: b64a4197aa22ca2e
+content_hash: dc7cad86839f4429
 ---
 
 # Memory-Efficient 4-bit Preconditioned Stochastic Optimization
@@ -176,9 +176,9 @@ The learning rate is scaled via the grafting trick. Both SGD and AdamW are suppo
 
 - [\[NeurIPS 2025\] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis](../../NeurIPS2025/optimization/nonlinearly_preconditioned_gradient_methods_momentum_and_stochastic_analysis.md)
 - [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](../../ICML2026/optimization/memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
+- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](../../NeurIPS2025/optimization/efficient_adaptive_federated_optimization.md)
-- [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](../../NeurIPS2025/optimization/isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
-- [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](class-wise_federated_averaging_for_efficient_personalization.md)
+- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](../../ICLR2026/optimization/a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
 
 </div>
 

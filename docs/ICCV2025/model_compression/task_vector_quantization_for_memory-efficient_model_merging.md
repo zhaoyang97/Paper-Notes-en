@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Task Vector Quantization for Memory-Efficient Model Merging
 description: >-
-  [ICCV 2025][Model Compression][Model Merging] This paper proposes quantizing task vectors (the difference between fine-tuned and pre-trained weights) rather than the fine-tuned weights themselves. By exploiting the narro…
+  [ICCV 2025][Model Compression][Model Merging] This paper proposes quantizing task vectors (the difference between fine-tuned and pre-trained weights) rather than the fine-tuned weights themselves. By exploiting the narrower numerical range of task vectors, the method achieves quantization down to 3-bit without accuracy loss. The paper further proposes Residual Task Vector Quantization (RTVQ), which decomposes task vectors into a shared high-precision base vector and low-preci…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Residual Quantization"
   - "Multi-Task Learning"
 date: 2026-05-08
-content_hash: 678b00baed8c6e18
+content_hash: 0672c5ed88aaa0b5
 ---
 
 # Task Vector Quantization for Memory-Efficient Model Merging
@@ -133,10 +133,10 @@ Dense prediction tasks (NYUv2, ResNet-50):
 ## Related Papers
 
 - [\[ICCV 2025\] FREE-Merging: Fourier Transform for Efficient Model Merging](free-merging_fourier_transform_for_efficient_model_merging.md)
+- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
+- [\[CVPR 2025\] Less is More: Efficient Model Merging with Binary Task Switch](../../CVPR2025/model_compression/less_is_more_efficient_model_merging_with_binary_task_switch.md)
 - [\[ICCV 2025\] MSQ: Memory-Efficient Bit Sparsification Quantization](msq_memory-efficient_bit_sparsification_quantization.md)
-- [\[ICCV 2025\] SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting](ssvq_unleashing_the_potential_of_vector_quantization_with_sign-splitting.md)
 - [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
-- [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](../../NeurIPS2025/model_compression/accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 
 </div>
 

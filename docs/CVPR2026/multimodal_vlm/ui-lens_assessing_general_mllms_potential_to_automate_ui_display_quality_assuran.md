@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] UI-Lens constructs a multilingual UI display defect detection benchmark for real-world commercial Apps (4,759 Chinese interfaces + 3,392 English interfaces, with 6 defect categories and expert naming). Systematic evaluation of 9 mainstream MLLMs/VLMs reveals that they perform nearly identically to random guessing on fi
+  [CVPR 2026][Multimodal VLM][UI defect detection] UI-Lens constructs a multilingual UI display defect detection benchmark for real-world commercial Apps (4,759 Chinese interfaces + 3,392 English interfaces, with 6 defect categories and expert naming). Systematic evaluation of 9 mainstream MLLMs/VLMs reveals that they perform nearly identically to random guessing on fine-grained boundary defects (Text Overflow F1 only 22.19%) and cross-interface semantic consistency (F1 only 11…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "UI defect detection"
+  - "MLLM benchmark"
+  - "fine-grained boundary awareness"
+  - "cross-interface semantic consistency"
+  - "commercial App interfaces"
 date: 2026-05-08
-content_hash: d0a6dfa40523046d
+content_hash: 3900e578a829f43c
 ---
+
 # UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance
 
 **Conference**: CVPR 2026  
@@ -153,10 +159,10 @@ One-shot slightly outperformed self-reasoning methods, but the overall gain was 
 ## Related Papers
 
 - [\[CVPR 2026\] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs](widget2code_from_visual_widgets_to_ui_code_via_multimodal_llms.md)
-- [\[CVPR 2026\] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](focusui_efficient_ui_grounding_via_position-preserving_visual_token_selection.md)
 - [\[ACL 2026\] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations](../../ACL2026/multimodal_vlm/beyond_screenshots_evaluating_vlms_understanding_of_ui_animations.md)
-- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
 - [\[ACL 2025\] Aria-UI: Visual Grounding for GUI Instructions](../../ACL2025/multimodal_vlm/aria-ui_visual_grounding_for_gui_instructions.md)
+- [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](../../ACL2026/multimodal_vlm/do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
+- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
 
 </div>
 

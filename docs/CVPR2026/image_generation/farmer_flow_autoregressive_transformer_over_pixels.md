@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FARMER: Flow AutoRegressive Transformer over Pixels
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] FARMER integrates invertible Autoregressive Flows (AF) and Autoregressive Transformers (AR) into an end-to-end framework, performing generation and exact likelihood estimation directly on raw pixels. By using AF to transform images into latent sequences and AR to implicitly model the distribution of these sequences—sup
+  [CVPR 2026][Image Generation][Normalizing Flows] FARMER integrates invertible Autoregressive Flows (AF) and Autoregressive Transformers (AR) into an end-to-end framework, performing generation and exact likelihood estimation directly on raw pixels. By using AF to transform images into latent sequences and AR to implicitly model the distribution of these sequences—supported by self-supervised dimensionality reduction, one-step distillation, and resampling-based CFG—it reduces…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Normalizing Flows"
+  - "Autoregressive Generation"
+  - "Pixel-level Modeling"
+  - "Exact Likelihood"
+  - "Dimensionality Reduction"
 date: 2026-05-08
-content_hash: e3c007b3bce87ec7
+content_hash: 3fcea7dab8ba5077
 ---
+
 # FARMER: Flow AutoRegressive Transformer over Pixels
 
 **Conference**: CVPR 2026  
@@ -168,9 +174,9 @@ NF Architecture Comparison (Table 3): AF is more expressive than Jet, but slow t
 
 - [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
 - [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
+- [\[ICLR 2026\] Dragging with Geometry: From Pixels to Geometry-Guided Image Editing](../../ICLR2026/image_generation/dragging_with_geometry_from_pixels_to_geometry-guided_image_editing.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
 - [\[CVPR 2026\] From Sketch to Fresco: Efficient Diffusion Transformer with Progressive Resolution](from_sketch_to_fresco_efficient_diffusion_transformer_with_progressive_resolutio.md)
-- [\[CVPR 2026\] VibeToken: Scaling 1D Image Tokenizers and Autoregressive Models for Dynamic Resolution Generations](vibetoken_scaling_1d_image_tokenizers_and_autoregressive_models_for_dynamic_reso.md)
 
 </div>
 

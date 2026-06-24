@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Is Parameter Isolation Better for Prompt-Based Continual Learning?
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Mixture-of-Experts] Addressing the mainstream "one set of prompts per task" paradigm in prompt-based continual learning, this paper proposes a Hash framework utilizing a shared prompt pool + task-aware sparse gating. It introduces a modulator based on historical activation statistics to simultaneously suppress abused prompts and protect e
+  [CVPR 2026][Self-Supervised Learning][Continual Learning] Addressing the mainstream "one set of prompts per task" paradigm in prompt-based continual learning, this paper proposes a Hash framework utilizing a shared prompt pool + task-aware sparse gating. It introduces a modulator based on historical activation statistics to simultaneously suppress abused prompts and protect essential ones, consistently outperforming static allocation methods across 4 class-incremental benchma…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Mixture-of-Experts
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Prompt Learning"
+  - "Mixture-of-Experts"
+  - "Class-Incremental Learning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 15540ec8f90bfb3c
+content_hash: 3ed6d525dbc1868b
 ---
+
 # Is Parameter Isolation Better for Prompt-Based Continual Learning?
 
 **Conference**: CVPR 2026  
@@ -126,15 +131,16 @@ FAA results for the three components:
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
 - [\[ECCV 2024\] PromptCCD: Learning Gaussian Mixture Prompt Pool for Continual Category Discovery](../../ECCV2024/self_supervised/promptccd_learning_gaussian_mixture_prompt_pool_for_continual_category_discovery.md)
+- [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
+- [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
 - [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
-- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
-- [\[AAAI 2026\] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds](../../AAAI2026/self_supervised/catformer_when_continual_learning_meets_spiking_transformers_with_dynamic_thresh.md)
 
 </div>
 

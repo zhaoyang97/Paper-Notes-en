@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] Replace "online prefilling of long documents into KV cache" with "offline training of a small learnable KV cache (Cartridge) for each corpus." Use **Self-Study** (self-generated synthetic dialogues + context distillation) to replicate the general-purpose In-Context Learning (ICL) capabilities in the small cache, achiev
+  [ICLR 2026][LLM Efficiency][KV Cache] Replace "online prefilling of long documents into KV cache" with "offline training of a small learnable KV cache (Cartridge) for each corpus." Use **Self-Study** (self-generated synthetic dialogues + context distillation) to replicate the general-purpose In-Context Learning (ICL) capabilities in the small cache, achieving a 38.6× reduction in memory and a 26.4× increase in throughput on average.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
-  - prefix-tuning
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache"
+  - "Long Context"
+  - "Context Distillation"
+  - "prefix-tuning"
+  - "Offline Training"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 8f56bc763c1b73d1
+content_hash: 062bbea8e361944d
 ---
+
 # Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ Distilling soft labels provides richer supervision than simple next-token predic
 - [\[ICLR 2026\] Reasoning Language Model Inference Serving Unveiled: An Empirical Study](reasoning_language_model_inference_serving_unveiled_an_empirical_study.md)
 - [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
-- [\[ICLR 2026\] Stacked From One: Multi-Scale Self-Injection for Context Window Extension](stacked_from_one_multi-scale_self-injection_for_context_window_extension.md)
+- [\[ICLR 2026\] Predicting LLM Output Length via Entropy-Guided Representations](predicting_llm_output_length_via_entropy-guided_representations.md)
 
 </div>
 

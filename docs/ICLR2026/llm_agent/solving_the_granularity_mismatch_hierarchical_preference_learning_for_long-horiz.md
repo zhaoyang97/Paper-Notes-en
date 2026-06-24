@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][hierarchical DPO] The HPL framework is proposed to address the granularity mismatch in preference learning for long-horizon LLM Agents. By utilizing triple-level DPO (trajectory-level + step-level + action group-level) and dual-layer curriculum learning (sub-task complexity × sample difficulty), it significantly outperforms baselines su
+  [ICLR 2026][LLM Agent][hierarchical DPO] The HPL framework is proposed to address the granularity mismatch in preference learning for long-horizon LLM Agents. By utilizing triple-level DPO (trajectory-level + step-level + action group-level) and dual-layer curriculum learning (sub-task complexity × sample difficulty), it significantly outperforms baselines such as ETO and IPR on ALFWorld/WebShop/InterCode-SQL (average 59.44 vs 55.43/55.49).
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - hierarchical DPO
-  - preference learning
-  - long-horizon agent
-  - curriculum learning
-  - action group
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "hierarchical DPO"
+  - "preference learning"
+  - "long-horizon agent"
+  - "curriculum learning"
+  - "action group"
 date: 2026-05-08
-content_hash: 4d9dfb6968be275e
+content_hash: 53bd10eac8c44671
 ---
+
 # Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents
 
 **Conference**: ICLR 2026  
@@ -137,7 +138,7 @@ Feeding all preference pairs to the model simultaneously can cause long groups a
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -145,7 +146,7 @@ Feeding all preference pairs to the model simultaneously can cause long groups a
 - [\[ICLR 2026\] From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents](from_single_to_multi-granularity_toward_long-term_memory_association_and_selecti.md)
 - [\[ICLR 2026\] MobileIPL: Enhancing Mobile Agents Thinking Process via Iterative Preference Learning](mobileipl_enhancing_mobile_agents_thinking_process_via_iterative_preference_lear.md)
 - [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](../../ACL2026/llm_agent/timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
-- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
+- [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
 
 </div>
 

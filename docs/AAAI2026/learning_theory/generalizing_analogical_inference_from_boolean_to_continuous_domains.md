@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Generalizing Analogical Inference from Boolean to Continuous Domains
 description: >-
-  [AAAI 2026][AI Foundations / Analogical Reasoning][analogical reasoning] This paper revisits the theoretical foundations of analogical inference: it first constructs a counterexample demonstrating the failure of classica…
+  [AAAI 2026][AI Foundations][Boolean domain generalization] This paper revisits the theoretical foundations of analogical inference: it first constructs a counterexample demonstrating the failure of classical generalization bounds in the Boolean domain, then proposes a unified analogical inference framework based on parameterized generalized means, extending discrete classification to continuous regression domains.
 tags:
   - "AAAI 2026"
-  - "AI Foundations / Analogical Reasoning"
-  - "analogical reasoning"
+  - "AI Foundations"
+  - "Analogical Reasoning"
   - "Boolean domain generalization"
   - "continuous domain regression"
   - "generalized mean"
   - "error bounds"
 date: 2026-05-08
-content_hash: fe1b5941bcf35a23
+content_hash: bcd82b2bb07f7db9
 ---
 
 # Generalizing Analogical Inference from Boolean to Continuous Domains
@@ -149,11 +149,11 @@ Not applicable.
 
 ## Related Papers
 
-- [\[ICML 2026\] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](../../ICML2026/learning_theory/correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)
-- [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](../../NeurIPS2025/learning_theory/how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
-- [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
-- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](a_switching_framework_for_online_interval_scheduling_with_pr.md)
-- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
+- [\[ICML 2026\] Understanding the Parameter Space Geometry of Transformers Encoding Boolean Functions](../../ICML2026/learning_theory/understanding_the_parameter_space_geometry_of_transformers_encoding_boolean_func.md)
+- [\[ICLR 2026\] Persistence Spheres: Bi-Continuous Representations of Persistence Diagrams](../../ICLR2026/learning_theory/persistence_spheres_bi-continuous_representations_of_persistence_diagrams.md)
+- [\[ICLR 2026\] Multiple-Prediction-Powered Inference](../../ICLR2026/learning_theory/multiple-prediction-powered_inference.md)
+- [\[ICLR 2026\] Variational Inference for Cyclic Learning](../../ICLR2026/learning_theory/variational_inference_for_cyclic_learning.md)
+- [\[ICLR 2026\] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval](../../ICLR2026/learning_theory/discounted_online_convex_optimization_uniform_regret_across_a_continuous_interva.md)
 
 </div>
 

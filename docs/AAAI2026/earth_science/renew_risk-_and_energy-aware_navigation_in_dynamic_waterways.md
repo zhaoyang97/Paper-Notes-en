@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways
 description: >-
-  [AAAI 2026 (Oral)][Earth Science][ASV] This paper proposes RENEW, a global path planner for autonomous surface vessels (ASVs) operating in dynamic water current (ocean current) environments. It introduces a unified risk-…
+  [AAAI 2026 (Oral)][Earth Science][ASV] This paper proposes RENEW, a global path planner for autonomous surface vessels (ASVs) operating in dynamic water current (ocean current) environments. It introduces a unified risk- and energy-aware strategy via adaptive no-go zone identification, best-effort contingency planning, and a hierarchical architecture based on Constrained Delaunay Triangulation (CDT), achieving zero collisions in emergency maneuver tests.
 tags:
   - "AAAI 2026 (Oral)"
   - "Earth Science"
@@ -13,7 +13,7 @@ tags:
   - "energy-awareness"
   - "No Go Zone"
 date: 2026-05-08
-content_hash: 318633099c1fa633
+content_hash: 3fb79c4e6aeb5951
 ---
 
 # RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways
@@ -164,10 +164,10 @@ An Oral paper with a clearly defined problem and rigorous methodology. The zero-
 ## Related Papers
 
 - [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
-- [\[CVPR 2026\] GeoChemAD: Benchmarking Unsupervised Geochemical Anomaly Detection for Mineral Exploration](../../CVPR2026/earth_science/geochemad_benchmarking_unsupervised_geochemical_anomaly_detection_for_mineral_ex.md)
-- [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
-- [\[NeurIPS 2025\] A Probabilistic U-Net Approach to Downscaling Climate Simulations](../../NeurIPS2025/earth_science/a_probabilistic_unet_approach_to_downscaling_climate_simulat.md)
-- [\[NeurIPS 2025\] Power Ensemble Aggregation for Improved Extreme Event AI Prediction](../../NeurIPS2025/earth_science/power_ensemble_aggregation_for_improved_extreme_event_ai_prediction.md)
+- [\[ICLR 2026\] GeoFAR: Geography-Informed Frequency-Aware Super-Resolution for Climate Data](../../ICLR2026/earth_science/geofar_geography-informed_frequency-aware_super-resolution_for_climate_data.md)
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](../../ICLR2026/earth_science/tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
+- [\[ICML 2026\] Scaling Laws of Global Weather Models](../../ICML2026/earth_science/scaling_laws_of_global_weather_models.md)
+- [\[ICLR 2026\] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework](../../ICLR2026/earth_science/unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
 
 </div>
 

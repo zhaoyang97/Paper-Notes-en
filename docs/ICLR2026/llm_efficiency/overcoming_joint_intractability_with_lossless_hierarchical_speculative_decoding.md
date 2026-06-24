@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][Inference Acceleration] This paper proposes Hierarchical Speculative Decoding (HSD), a novel verification strategy using "hierarchical branch resampling + capping." Without altering the target model distribution (provably lossless), it significantly improves the number of draft tokens accepted per step, increasing average decoding speed by 6.
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] This paper proposes Hierarchical Speculative Decoding (HSD), a novel verification strategy using "hierarchical branch resampling + capping." Without altering the target model distribution (provably lossless), it significantly improves the number of draft tokens accepted per step, increasing average decoding speed by 6.7%, with gains exceeding 12% when integrated into EAGLE-3.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Lossless Verification"
+  - "Joint Intractability"
+  - "Hierarchical Resampling"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 72da46358bffe11f
+content_hash: fddd63394303186d
 ---
+
 # Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ On average, HSD improves BE by ~6.2% and DS by ~6.7% over Tokenwise/Blockwise ba
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models](self-speculative_decoding_accelerates_lossless_inference_in_any-order_and_any-su.md)
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[ICLR 2026\] SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism](specbranch_speculative_decoding_via_hybrid_drafting_and_rollback-aware_branch_pa.md)
-- [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
+- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
 
 </div>
 

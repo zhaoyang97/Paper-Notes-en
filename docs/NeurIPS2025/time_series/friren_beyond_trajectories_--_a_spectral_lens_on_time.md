@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series
 description: >-
-  [NeurIPS 2025][Time Series][long-term time series forecasting] This paper proposes Fern (Forecasting with Ellipsoidal RepresentatioN), which replaces conventional trajectory prediction with patch-wise ellipsoidal transpo…
+  [NeurIPS 2025][Time Series][long-term time series forecasting] This paper proposes Fern (Forecasting with Ellipsoidal RepresentatioN), which replaces conventional trajectory prediction with patch-wise ellipsoidal transport (rotation–scaling–translation). Fern substantially outperforms baselines on chaotic systems while remaining competitive on standard LTSF benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -13,7 +13,7 @@ tags:
   - "chaotic systems"
   - "Wasserstein distance"
 date: 2026-05-08
-content_hash: 20ff357a56175497
+content_hash: 5ed89b5c74a4e1fb
 ---
 
 # Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series
@@ -164,9 +164,9 @@ The idea of **"predicting geometry rather than trajectories"** transfers to othe
 
 - [\[ICML 2026\] Ellipsoidal Time Series Forecasting](../../ICML2026/time_series/ellipsoidal_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
+- [\[ICLR 2026\] A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems](../../ICLR2026/time_series/a_spectral-grassmann_wasserstein_metric_for_operator_representations_of_dynamica.md)
 - [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](sempo_lightweight_foundation_models_for_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning](universal_spectral_tokenization_via_self-supervised_panchromatic_representation_.md)
-- [\[AAAI 2026\] Sonnet: Spectral Operator Neural Network for Multivariable Time Series Forecasting](../../AAAI2026/time_series/sonnet_spectral_operator_neural_network_for_multivariable_time_series_forecastin.md)
 
 </div>
 

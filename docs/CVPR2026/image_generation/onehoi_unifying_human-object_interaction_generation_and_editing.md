@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OneHOI: Unifying Human-Object Interaction Generation and Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] OneHOI uses a Diffusion Transformer (R-DiT) to unify "HOI image generation" and "HOI image editing" into a single conditional denoising process. By explicitly modeling interaction structures through an HOI encoder, verb-mediated structured attention, and HOI-specific RoPE, it achieves SOTA results in editing, layout-co
+  [CVPR 2026][Image Generation][Human-Object Interaction] OneHOI uses a Diffusion Transformer (R-DiT) to unify "HOI image generation" and "HOI image editing" into a single conditional denoising process. By explicitly modeling interaction structures through an HOI encoder, verb-mediated structured attention, and HOI-specific RoPE, it achieves SOTA results in editing, layout-controllable generation, and the newly proposed multi-HOI editing task.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Human-Object Interaction"
+  - "Diffusion Transformer"
+  - "Controllable Generation"
+  - "Image Editing"
+  - "Attention Mask"
 date: 2026-05-08
-content_hash: 82260a9a891c4735
+content_hash: f36d6c2298925d32
 ---
+
 # OneHOI: Unifying Human-Object Interaction Generation and Editing
 
 **Conference**: CVPR 2026  
@@ -164,10 +169,10 @@ Incremental ablation from a strong baseline BL (Eligen) by adding the four compo
 ## Related Papers
 
 - [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
+- [\[CVPR 2025\] InterAct: Advancing Large-Scale Versatile 3D Human-Object Interaction Generation](../../CVPR2025/image_generation/interact_advancing_large-scale_versatile_3d_human-object_interaction_generation.md)
 - [\[CVPR 2026\] HP-Edit: A Human-Preference Post-Training Framework for Image Editing](hp-edit_a_human-preference_post-training_framework_for_image_editing.md)
-- [\[CVPR 2026\] Refaçade: Editing Object with Given Reference Texture](refacade_editing_object_with_given_reference_texture.md)
-- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
-- [\[CVPR 2026\] Cross-Axis Feature Fusion with Joint-Wise Motion Difference Prediction for Text-Based 3D Human Motion Editing](cross-axis_feature_fusion_with_joint-wise_motion_difference_prediction_for_text-.md)
+- [\[CVPR 2026\] MagicQuill V2: Precise and Interactive Image Editing with Layered Visual Cues](magicquill_v2_precise_and_interactive_image_editing_with_layered_visual_cues.md)
 
 </div>
 

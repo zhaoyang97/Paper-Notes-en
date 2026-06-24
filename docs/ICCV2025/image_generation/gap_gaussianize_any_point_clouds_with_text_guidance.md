@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GAP: Gaussianize Any Point Clouds with Text Guidance
 description: >-
-  [ICCV 2025][Image Generation][Point Cloud to Gaussian] This paper proposes GAP, a framework that leverages depth-aware image diffusion models to convert colorless point clouds into high-fidelity 3D Gaussian representatio…
+  [ICCV 2025][Image Generation][Point Cloud to Gaussian] This paper proposes GAP, a framework that leverages depth-aware image diffusion models to convert colorless point clouds into high-fidelity 3D Gaussian representations. A surface anchoring mechanism ensures geometric fidelity, and a diffusion-based inpainting strategy completes hard-to-observe regions.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Surface Anchoring"
   - "Appearance Generation"
 date: 2026-05-08
-content_hash: 01d94fe2df96275a
+content_hash: e70890cf49b6359b
 ---
 
 # GAP: Gaussianize Any Point Clouds with Text Guidance
@@ -132,8 +132,8 @@ UV-mapping methods based on BPA reconstruction exhibit substantial degradation a
 - [\[ICCV 2025\] Bridging the Skeleton-Text Modality Gap: Diffusion-Powered Modality Alignment for Zero-shot Skeleton-based Action Recognition](bridging_the_skeleton_text_modality_gap_diffusion_powered_modality_alignment_for.md)
 - [\[NeurIPS 2025\] Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations](../../NeurIPS2025/image_generation/towards_a_golden_classifier-free_guidance_path_via_foresight_fixed_point_iterati.md)
 - [\[ICCV 2025\] TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance](teefusion_blending_text_embeddings_to_distill_classifier-free_guidance.md)
-- [\[ICCV 2025\] AIComposer: Any Style and Content Image Composition via Feature Integration](aicomposer_any_style_and_content_image_composition_via_feature_integration.md)
 - [\[ICCV 2025\] Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching](mind_the_gap_aligning_vision_foundation_models_to_image_feature_matching.md)
+- [\[CVPR 2025\] Symbolic Representation for Any-to-Any Generative Tasks](../../CVPR2025/image_generation/symbolic_representation_for_any-to-any_generative_tasks.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Building a Foundational Guardrail for General Agentic Systems via Synthetic Data
 description: >-
-  [ICLR 2026][LLM Safety][agentic safety] This paper proposes a comprehensive guardrail solution targeting the "pre-execution" phase, the safest intervention point for LLM agents. It utilizes a controllable synthetic data engine, AuraGen, to generate large-scale annotated risk trajectories to train a lightweight guardian model, Safiron (equipped with cross-pla
+  [ICLR2026][LLM Safety][agentic safety] This paper proposes a comprehensive guardrail solution targeting the "pre-execution" phase, the safest intervention point for LLM agents. It utilizes a controllable synthetic data engine, AuraGen, to generate large-scale annotated risk trajectories to train a lightweight guardian model, Safiron (equipped with cross-planner adapters for unified input formats), to determine, classify, and explain risks. A human-verified Pre-Exec Bench is r…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - agentic safety
-  - GRPO
+  - "ICLR2026"
+  - "LLM Safety"
+  - "agentic safety"
+  - "pre-execution guardrail"
+  - "synthetic data"
+  - "risk detection"
+  - "GRPO"
 date: 2026-05-08
-content_hash: d89073da01b042f0
+content_hash: b0e77af849ed8f10
 ---
+
 # Building a Foundational Guardrail for General Agentic Systems via Synthetic Data
 
 **Conference**: ICLR2026  
@@ -133,15 +137,15 @@ GRPO significantly improves risk category accuracy and explanation correctness c
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] POPri: Private Federated Learning using Preference-Optimized Synthetic Data](../../ICML2025/llm_safety/popri_private_federated_learning_using_preference-optimized_synthetic_data.md)
 - [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](../../NeurIPS2025/llm_safety/virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
-- [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](../../ACL2026/llm_safety/do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
+- [\[NeurIPS 2025\] TRAP: Targeted Redirecting of Agentic Preferences](../../NeurIPS2025/llm_safety/trap_targeted_redirecting_of_agentic_preferences.md)
 - [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
-- [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
+- [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](../../ACL2026/llm_safety/do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
 
 </div>
 

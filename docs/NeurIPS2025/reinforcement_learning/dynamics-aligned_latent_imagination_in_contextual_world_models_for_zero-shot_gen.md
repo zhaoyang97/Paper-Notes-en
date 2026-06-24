@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][contextual MDP] DALI, a self-supervised context encoder, is introduced into the DreamerV3 architecture to infer latent environment parameters (e.g., gravity…
+  [NeurIPS 2025][Reinforcement Learning][contextual MDP] DALI, a self-supervised context encoder, is introduced into the DreamerV3 architecture to infer latent environment parameters (e.g., gravity, friction) from interaction history. It achieves zero-shot generalization on cMDP benchmarks without retraining, outperforming ground-truth context-aware baselines by up to 96.4% on extrapolation tasks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "DreamerV3"
   - "latent context"
 date: 2026-05-08
-content_hash: 48bf2a51d7402bc8
+content_hash: 37df0abb10cb19a9
 ---
 
 # Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization
@@ -134,11 +134,11 @@ The total loss comprises three components: the original DreamerV3 world model lo
 
 ## Related Papers
 
+- [\[ICML 2025\] Zero-Shot Generalization of Vision-Based RL Without Data Augmentation](../../ICML2025/reinforcement_learning/zero-shot_generalization_of_vision-based_rl_without_data_augmentation.md)
+- [\[ICLR 2026\] Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics](../../ICLR2026/reinforcement_learning/zero-shot_adaptation_of_behavioral_foundation_models_to_unseen_dynamics.md)
 - [\[NeurIPS 2025\] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds](foundation_models_as_world_models_a_foundational_study_in_text-based_gridworlds.md)
-- [\[ICML 2026\] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](../../ICML2026/reinforcement_learning/unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)
-- [\[NeurIPS 2025\] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems](inverse_optimization_latent_variable_models_for_learning_costs_applied_to_route_.md)
 - [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](bootstrap_off-policy_with_world_model.md)
-- [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
+- [\[ICLR 2026\] TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning](../../ICLR2026/reinforcement_learning/td-jepa_latent-predictive_representations_for_zero-shot_reinforcement_learning.md)
 
 </div>
 

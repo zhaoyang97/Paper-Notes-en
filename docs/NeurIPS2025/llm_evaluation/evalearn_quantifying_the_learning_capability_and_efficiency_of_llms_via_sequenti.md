@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving
 description: >-
-  [NeurIPS 2025][LLM Evaluation][sequential learning] This paper proposes EvaLearn, a benchmark that evaluates the learning capability and learning efficiency of LLMs through a **sequential problem-solving** paradigm…
+  [NeurIPS 2025][LLM Evaluation][sequential learning] This paper proposes EvaLearn, a benchmark that evaluates the learning capability and learning efficiency of LLMs through a **sequential problem-solving** paradigm, revealing that models with stronger static performance do not necessarily possess greater learning potential.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -11,7 +11,7 @@ tags:
   - "benchmark"
   - "dynamic evaluation"
 date: 2026-05-08
-content_hash: 848bc3a460696901
+content_hash: ccb0d1de98766582
 ---
 
 # EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving
@@ -147,10 +147,10 @@ Nine frontier models are evaluated (including both thinking and non-thinking var
 ## Related Papers
 
 - [\[NeurIPS 2025\] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](creativity_or_brute_force_using_brainteasers_as_a_window_into_the_problem-solvin.md)
-- [\[ICLR 2026\] RankLLM: Weighted Ranking of LLMs by Quantifying Question Difficulty](../../ICLR2026/llm_evaluation/rankllm_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
+- [\[ICML 2025\] Fleet of Agents: Coordinated Problem Solving with Large Language Models](../../ICML2025/llm_evaluation/fleet_of_agents_coordinated_problem_solving_with_large_language_models.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](../../ACL2026/llm_evaluation/engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[ACL 2026\] Do LLMs Overthink Basic Math Reasoning? Benchmarking the Accuracy-Efficiency Tradeoff](../../ACL2026/llm_evaluation/do_llms_overthink_basic_math_reasoning_benchmarking_the_accuracy-efficiency_trad.md)
+- [\[ICLR 2026\] EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty](../../ICLR2026/llm_evaluation/eip_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
 
 </div>
 

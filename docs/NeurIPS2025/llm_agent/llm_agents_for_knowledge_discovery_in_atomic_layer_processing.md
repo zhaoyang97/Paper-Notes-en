@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Agents for Knowledge Discovery in Atomic Layer Processing
 description: >-
-  [NeurIPS 2025][LLM Agent][knowledge discovery] By having an LLM agent control a simulated chemical reactor (a black-box function), this work demonstrates that agents can explore, discover…
+  [NeurIPS 2025][LLM Agent][knowledge discovery] By having an LLM agent control a simulated chemical reactor (a black-box function), this work demonstrates that agents can explore, discover, and summarize the rules of an unknown chemical system through trial and error without any prior knowledge, revealing both the capabilities and limitations of agents for open-ended scientific discovery.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "scientific exploration"
   - "tool-augmented reasoning"
 date: 2026-05-08
-content_hash: bbbbd98c60fdaa26
+content_hash: be341874c8366c1a
 ---
 
 # LLM Agents for Knowledge Discovery in Atomic Layer Processing
@@ -185,11 +185,11 @@ Key finding: gpt-5's advantage stems not from superior reasoning but from **spon
 
 ## Related Papers
 
-- [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](../../ICLR2026/llm_agent/newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
+- [\[ICML 2025\] GuardAgent: Safeguard LLM Agents via Knowledge-Enabled Reasoning](../../ICML2025/llm_agent/guardagent_safeguard_llm_agents_by_a_guard_agent_via_knowledge-enabled_reasoning.md)
+- [\[ICML 2025\] Improving LLM Agent Planning with In-Context Learning via Atomic Fact Augmentation and Lookahead Search](../../ICML2025/llm_agent/improving_llm_agent_planning_with_in-context_learning_via_atomic_fact_augmentati.md)
 - [\[NeurIPS 2025\] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding](deep_video_discovery_agentic_search_with_tool_use_for_longfo.md)
-- [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
+- [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](../../ICLR2026/llm_agent/newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](../../ICLR2026/llm_agent/towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 
 </div>
 

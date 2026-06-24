@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes
 description: >-
-  [NeurIPS 2025][Video Understanding][Event camera] EAG3R integrates asynchronous event streams from event cameras into the MonST3R point map reconstruction framework. Through a Retinex enhancement module…
+  [NeurIPS 2025 Spotlight][Video Understanding][Event camera] EAG3R integrates asynchronous event streams from event cameras into the MonST3R point map reconstruction framework. Through a Retinex enhancement module, an SNR-aware fusion mechanism, and an event photometric consistency loss, it achieves robust depth estimation, pose tracking, and 4D reconstruction in extreme low-light dynamic scenes, significantly outperforming RGB-only methods via zero-shot transfer to nighttime…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Video Understanding"
   - "Event camera"
   - "3D geometry estimation"
@@ -12,7 +12,7 @@ tags:
   - "point map reconstruction"
   - "dynamic scene reconstruction"
 date: 2026-05-08
-content_hash: db7b8ae584675015
+content_hash: 2e306173d4edc30f
 ---
 
 # EAG3R: Event-Augmented 3D Geometry Estimation for Dynamic and Extreme-Lighting Scenes
@@ -167,10 +167,10 @@ $$X_{\text{global}}^* = \arg\min \left(\mathcal{L}_{\text{align}} + w_{\text{smo
 ## Related Papers
 
 - [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](../../ICCV2025/video_understanding/emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
-- [\[NeurIPS 2025\] PASS: Path-Selective State Space Model for Event-Based Recognition](pass_path-selective_state_space_model_for_event-based_recognition.md)
-- [\[ICCV 2025\] Simultaneous Motion And Noise Estimation with Event Cameras](../../ICCV2025/video_understanding/simultaneous_motion_and_noise_estimation_with_event_cameras.md)
 - [\[CVPR 2026\] SHOW3D: Capturing Scenes of 3D Hands and Objects in the Wild](../../CVPR2026/video_understanding/show3d_capturing_scenes_of_3d_hands_and_objects_in_the_wild.md)
-- [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
+- [\[CVPR 2025\] EDCFlow: Exploring Temporally Dense Difference Maps for Event-based Optical Flow Estimation](../../CVPR2025/video_understanding/edcflow_exploring_temporally_dense_difference_maps_for_event-based_optical_flow_.md)
+- [\[ICCV 2025\] Simultaneous Motion And Noise Estimation with Event Cameras](../../ICCV2025/video_understanding/simultaneous_motion_and_noise_estimation_with_event_cameras.md)
+- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 
 </div>
 

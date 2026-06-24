@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] This paper proposes Information Elicitation Agents (IEA) as a new dialogue paradigm and releases YIELD, the first large-scale human-to-human information elicitation dialogue dataset (2,281 dialogues, 26M tokens). The study formalizes information elicitation as a finite-horizon POMDP and designs specialized evaluation m
+  [ACL 2026][LLM Agent][Information Elicitation] This paper proposes Information Elicitation Agents (IEA) as a new dialogue paradigm and releases YIELD, the first large-scale human-to-human information elicitation dialogue dataset (2,281 dialogues, 26M tokens). The study formalizes information elicitation as a finite-horizon POMDP and designs specialized evaluation metrics (Conformity, Progression, TLR). Experiments demonstrate that fine-tuning on YIELD significantly improves t…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
-  - POMDP
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Information Elicitation"
+  - "Dialogue Dataset"
+  - "Reinforcement Learning"
+  - "Conversational Agents"
+  - "POMDP"
 date: 2026-05-08
-content_hash: dd2f9d42033907c1
+content_hash: 762b2d666afbc7d3
 ---
+
 # YIELD: A Large-Scale Dataset and Evaluation Framework for Information Elicitation Agents
 
 **Conference**: ACL 2026  
@@ -140,10 +144,10 @@ Conformity Evaluation (Perplexity and Response Length Comparison):
 ## Related Papers
 
 - [\[CVPR 2026\] WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces](../../CVPR2026/llm_agent/webchain_a_large-scale_human-annotated_dataset_of_real-world_web_interaction_tra.md)
+- [\[ICLR 2026\] GPS: Graph-guided Proactive Information Seeking in Large Language Models](../../ICLR2026/llm_agent/gps_graph-guided_proactive_information_seeking_in_large_language_models.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ICML 2026\] Video2GUI: Synthesizing Large-Scale Interaction Trajectories for Generalized GUI Agent Pretraining](../../ICML2026/llm_agent/video2gui_synthesizing_large-scale_interaction_trajectories_for_generalized_gui_.md)
-- [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
 - [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](../../CVPR2026/llm_agent/mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](prints_reward_modeling_for_long-horizon_information_seeking.md)
 
 </div>
 

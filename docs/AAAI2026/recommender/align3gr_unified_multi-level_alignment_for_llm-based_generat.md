@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation
 description: >-
-  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper proposes Align³GR, a unified three-level alignment framework that systematically bridges the semantic-behavioral gap between LLMs and recommen…
+  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper proposes Align³GR, a unified three-level alignment framework that systematically bridges the semantic-behavioral gap between LLMs and recommender systems at the token level (dual-side SCID), the behavior modeling level (multi-task SFT), and the preference level (progressive DPO).
 tags:
   - "AAAI 2026 (Oral)"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "Semantic-Collaborative ID"
 date: 2026-05-08
-content_hash: d02145eb5489ccce
+content_hash: a17e353abb069e51
 ---
 
 # Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation
@@ -137,9 +137,9 @@ The three-level alignment design (token/behavior/preference) is transferable to 
 
 - [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 - [\[AAAI 2026\] Inductive Generative Recommendation via Retrieval-based Speculation](inductive_generative_recommendation_via_retrieval-based_speculation.md)
+- [\[ACL 2025\] GRAM: Generative Recommendation via Semantic-aware Multi-granular Late Fusion](../../ACL2025/recommender/gram_generative_recommendation.md)
 - [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
-- [\[ACL 2026\] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment](../../ACL2026/recommender/hsuga_llm-enhanced_recommendation_with_hierarchical_semantic_understanding_and_g.md)
-- [\[ACL 2026\] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation](../../ACL2026/recommender/from_past_to_path_masked_history_learning_for_next-item_prediction_in_generative.md)
+- [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](../../ICLR2026/recommender/continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
 
 </div>
 

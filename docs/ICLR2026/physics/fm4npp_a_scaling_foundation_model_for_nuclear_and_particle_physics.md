@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] FM4NPP: A Scaling Foundation Model for Nuclear and Particle Physics
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Foundation Model] This work successfully transfers the "large-scale self-supervised pre-training + frozen weights + lightweight adapter" paradigm to sparse, 3D point-cloud-like collider detector data for the first time. Using Mamba, a foundation model FM4NPP with up to 188M parameters was pre-trained on 10 million collision events. With
+  [ICLR 2026][Physics & Scientific Computing][Foundation Model] This work successfully transfers the "large-scale self-supervised pre-training + frozen weights + lightweight adapter" paradigm to sparse, 3D point-cloud-like collider detector data for the first time. Using Mamba, a foundation model FM4NPP with up to 188M parameters was pre-trained on 10 million collision events. With frozen weights and small adapters, it outperforms specialized models across track finding…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Foundation Model
-  - Self-supervised Learning
-  - Particle Physics
-  - Mamba/SSM
-  - Neural Scaling Law
-  - Track Finding
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Foundation Model"
+  - "Self-supervised Learning"
+  - "Particle Physics"
+  - "Mamba/SSM"
+  - "Neural Scaling Law"
+  - "Track Finding"
 date: 2026-05-08
-content_hash: 5a655211b5a612bc
+content_hash: ed737630fb54bae2
 ---
+
 # FM4NPP: A Scaling Foundation Model for Nuclear and Particle Physics
 
 **Conference**: ICLR 2026  
@@ -152,8 +153,8 @@ All three design choices (k-NNN, large k, Hierarchical Raster Scan) are validate
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 - [\[ICML 2025\] OmniArch: Building Foundation Model For Scientific Computing](../../ICML2025/physics/omniarch_building_foundation_model_for_scientific_computing.md)
 - [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
+- [\[ICLR 2026\] Scaling Laws and Symmetry, Evidence from Neural Force Fields](scaling_laws_and_symmetry_evidence_from_neural_force_fields.md)
 - [\[ICLR 2026\] OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction](oxtal_an_all-atom_diffusion_model_for_organic_crystal_structure_prediction.md)
-- [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Predictive CVaR Q-Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][CVaR] This paper proposes Predictive CVaR Q-learning (PCVaR-Q), which reformulates the CVaR objective—originally only evaluable at the end of a trajectory—into a step-by-step recursive Bellman form by introducing a pair of "predictive tail value/probability functions." Combined with a "bi-directional exploration" strategy th
+  [ICLR 2026][Reinforcement Learning][CVaR] This paper proposes Predictive CVaR Q-learning (PCVaR-Q), which reformulates the CVaR objective—originally only evaluable at the end of a trajectory—into a step-by-step recursive Bellman form by introducing a pair of "predictive tail value/probability functions." Combined with a "bi-directional exploration" strategy that simultaneously explores actions and risk budgets, it significantly improves the sample efficiency and training stab…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - CVaR
-  - Q-learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "CVaR"
+  - "Risk-Sensitive RL"
+  - "Q-learning"
+  - "Bellman equation"
+  - "Sample efficiency"
 date: 2026-05-08
-content_hash: d34c1adfa4340aea
+content_hash: 12a65d7629fca3af
 ---
+
 # Predictive CVaR Q-Learning
 
 **Conference**: ICLR 2026  
@@ -134,9 +138,9 @@ In the decision tree, RN always chooses the high-expectation but high-risk "up" 
 
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
 - [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)
+- [\[ICLR 2026\] TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning](td-jepa_latent-predictive_representations_for_zero-shot_reinforcement_learning.md)
+- [\[ICLR 2026\] RAMPS: Robust Adaptive Multi-step Predictive Shield](robust_adaptive_multi-step_predictive_shielding.md)
 - [\[AAAI 2026\] Deep (Predictive) Discounted Counterfactual Regret Minimization](../../AAAI2026/reinforcement_learning/deep_predictive_discounted_counterfactual_regret_minimization.md)
-- [\[ICLR 2026\] Q-learning with Posterior Sampling](q-learning_with_posterior_sampling.md)
-- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LoKI: Low-damage Knowledge Implanting of Large Language Models
 description: >-
-  [AAAI 2026][LLM/NLP][Parameter-efficient fine-tuning] This paper proposes LoKI, a parameter-efficient fine-tuning method grounded in the mechanistic understanding of knowledge storage in Transformers. It introduces Knowl…
+  [AAAI 2026][LLM (Other)][Parameter-efficient fine-tuning] This paper proposes LoKI, a parameter-efficient fine-tuning method grounded in the mechanistic understanding of knowledge storage in Transformers. It introduces Knowledge Vector Attribution (KVA) to quantify the contribution of each knowledge vector in FFN layers, and applies a layer-balanced strategy to select low-contribution vectors for targeted knowledge implanting. The approach achieves strong task performance whi…
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Parameter-efficient fine-tuning"
   - "catastrophic forgetting"
   - "knowledge vector attribution"
   - "layer-balanced strategy"
   - "FFN knowledge storage"
 date: 2026-05-08
-content_hash: ed083791bc1135c8
+content_hash: 8c3b29747adf1c04
 ---
 
 # LoKI: Low-damage Knowledge Implanting of Large Language Models
@@ -144,11 +144,11 @@ The method is well-motivated and elegantly designed, successfully translating in
 
 ## Related Papers
 
+- [\[ACL 2025\] DenseLoRA: Dense Low-Rank Adaptation of Large Language Models](../../ACL2025/llm_nlp/denselora_dense_low-rank_adaptation_of_large_language_models.md)
 - [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
-- [\[NeurIPS 2025\] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](../../NeurIPS2025/llm_nlp/the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)
-- [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
-- [\[AAAI 2026\] CoEvo: Continual Evolution of Symbolic Solutions Using Large Language Models](coevo_continual_evolution_of_symbolic_solutions_using_large_language_models.md)
+- [\[ACL 2025\] Knowledge Boundary of Large Language Models: A Survey](../../ACL2025/llm_nlp/knowledge_boundary_survey.md)
+- [\[ACL 2025\] TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models](../../ACL2025/llm_nlp/table_lora_structure_understanding.md)
+- [\[ICLR 2026\] Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models](../../ICLR2026/llm_nlp/cite_pretrain_retrieval-free_knowledge_attribution_for_large_language_models.md)
 
 </div>
 

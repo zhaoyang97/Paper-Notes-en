@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] K²-Agent: Co-Evolving Know-What and Know-How for Hierarchical Mobile Device Control
 description: >-
-  [ICLR 2026][LLM Agent][Mobile Device Control] Inspired by the human cognitive systems of "knowing what" (declarative) and "knowing how" (procedural), K²-Agent utilizes a high-level planner running an SRLR self-evolution loop to refine task knowledge and a low-level executor using curriculum C-GRPO to learn operational skills. These two components co-evolve in a cl
+  [ICLR 2026][LLM Agent][Mobile Device Control] Inspired by the human cognitive systems of "knowing what" (declarative) and "knowing how" (procedural), K²-Agent utilizes a high-level planner running an SRLR self-evolution loop to refine task knowledge and a low-level executor using curriculum C-GRPO to learn operational skills. These two components co-evolve in a closed loop. Using only raw screenshots and open-source 7B/72B backbones, it achieves a new SOTA of 76.1% success ra…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Mobile Device Control
-  - Hierarchical Agent
-  - Declarative & Procedural Knowledge
-  - GRPO
-  - Self-Evolution
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Mobile Device Control"
+  - "Hierarchical Agent"
+  - "Declarative & Procedural Knowledge"
+  - "GRPO"
+  - "Self-Evolution"
 date: 2026-05-08
-content_hash: a1c20baada03963a
+content_hash: ecdca714ff3a901a
 ---
+
 # K²-Agent: Co-Evolving Know-What and Know-How for Hierarchical Mobile Device Control
 
 **Conference**: ICLR 2026  
@@ -125,8 +126,8 @@ Stepwise improvements clearly isolate the contributions of each component: addin
 - [\[ICLR 2026\] Do Large Language Models Know What They Are Capable Of?](do_large_language_models_know_what_they_are_capable_of.md)
 - [\[ICLR 2026\] How Dark Patterns Manipulate Web Agents](how_dark_patterns_manipulate_web_agents.md)
 - [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
-- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 
 </div>
 

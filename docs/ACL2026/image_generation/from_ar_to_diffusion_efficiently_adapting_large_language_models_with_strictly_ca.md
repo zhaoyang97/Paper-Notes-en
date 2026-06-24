@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons
 description: >-
-  [ACL 2026][Image Generation][Diffusion Language Model] This paper proposes FLUID, which efficiently adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves reasoning and code generation performance close to strong AR models a
+  [ACL2026][Image Generation][Diffusion Language Models] This paper proposes FLUID, which efficiently adapts pre-trained autoregressive (AR) LLMs into diffusion-based parallel generation models using strictly causal attention and entropy-aware Elastic Horizons. With only 2.7B adaptation tokens, it achieves reasoning and code generation performance close to strong AR models and superior to existing diffusion baselines.
 tags:
-  - ACL 2026
-  - Image Generation
-  - Diffusion Language Model
+  - "ACL2026"
+  - "Image Generation"
+  - "Diffusion Language Models"
+  - "Autoregressive Adaptation"
+  - "Causal Attention"
+  - "Dynamic Step Size"
+  - "Parallel Generation"
 date: 2026-05-08
-content_hash: 1ca5cd64b3a45015
+content_hash: 148ffdd21e6089ff
 ---
+
 # From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons
 
 **Conference**: ACL2026  
@@ -134,8 +139,20 @@ Stage II targets horizon distribution matching: $\mathcal{L}_{Stage2} = D_{KL}(\
 - Value: ⭐⭐⭐⭐⭐ Highly insightful for low-latency LLM generation.
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
+- [\[ICLR 2026\] D-AR: Diffusion via Autoregressive Models](../../ICLR2026/image_generation/d-ar_diffusion_via_autoregressive_models.md)
+- [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](../../NeurIPS2025/image_generation/non-markovian_discrete_diffusion_with_causal_language_models.md)
+- [\[ICLR 2026\] MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation](../../ICLR2026/image_generation/mmada-parallel_multimodal_large_diffusion_language_models_for_thinking-aware_edi.md)
+- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)

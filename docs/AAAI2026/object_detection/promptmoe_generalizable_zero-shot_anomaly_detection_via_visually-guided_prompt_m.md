@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts
 description: >-
-  [AAAI 2026][Object Detection][Zero-Shot Anomaly Detection] PromptMoE shifts prompt learning from a monolithic paradigm to a compositional one. Through a visually-guided Mixture of Experts (MoE) mechanism…
+  [AAAI 2026][Object Detection][Zero-Shot Anomaly Detection] PromptMoE shifts prompt learning from a monolithic paradigm to a compositional one. Through a visually-guided Mixture of Experts (MoE) mechanism, it dynamically assembles instance-adaptive normal/abnormal state prompts from a learnable semantic primitive bank, achieving state-of-the-art zero-shot anomaly detection (ZSAD) performance across 15 industrial and medical datasets.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Compositional Prompt Learning"
   - "Visually-Guided Routing"
 date: 2026-05-08
-content_hash: 327bd406bb0ea4b1
+content_hash: 73cfae9056bd561a
 ---
 
 # PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts
@@ -197,10 +197,10 @@ State-of-the-art results are achieved in both industrial and medical domains, wi
 ## Related Papers
 
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](../../CVPR2026/object_detection/moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
-- [\[CVPR 2026\] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](../../CVPR2026/object_detection/cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)
+- [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](../../CVPR2026/object_detection/fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
 - [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](../../CVPR2026/object_detection/gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
+- [\[CVPR 2026\] DLVP-CLIP: Enhancing Fine-Grained Zero-Shot Anomaly Detection via Dynamic Local Visual Prompting](../../CVPR2026/object_detection/dlvp-clip_enhancing_fine-grained_zero-shot_anomaly_detection_via_dynamic_local_v.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](../../CVPR2026/object_detection/visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](../../CVPR2026/object_detection/anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 
 </div>
 

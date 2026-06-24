@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SFR-Net: Steering-Fusion-Refining Network in Multi-label Zero-Shot Sewer Defect Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] SFR-Net adapts CLIP to sewer defect scenarios using a three-stage "Steering (RS) $\rightarrow$ Fusion (MEF) $\rightarrow$ Refining (GR)" pipeline. It employs lightweight adapters to steer representations toward the pipe domain, fuses global and local evidence for initial scoring, and uses a GCN to learn a transferable
+  [CVPR 2026][Object Detection][Multi-label Zero-shot Learning] SFR-Net adapts CLIP to sewer defect scenarios using a three-stage "Steering (RS) $\rightarrow$ Fusion (MEF) $\rightarrow$ Refining (GR)" pipeline. It employs lightweight adapters to steer representations toward the pipe domain, fuses global and local evidence for initial scoring, and uses a GCN to learn a transferable "score refinement logic" from seen classes to unseen ones. It achieves SOTA on Sewer-ML and the se…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Multi-label Zero-shot Learning"
+  - "Sewer Defect Detection"
+  - "CLIP Domain Adaptation"
+  - "Graph Convolution"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: 507d0abf2068a754
+content_hash: 9ebcba4ff2294ce0
 ---
+
 # SFR-Net: Steering-Fusion-Refining Network in Multi-label Zero-Shot Sewer Defect Detection
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ Incremental addition of modules (Sewer-ML, Table 3):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection](defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](../../ICLR2026/object_detection/pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding](mrd_multi-resolution_retrieval-detection_fusion_for_high-resolution_image_unders.md)
+- [\[CVPR 2026\] Boosting Quantitive and Spatial Awareness for Zero-Shot Object Counting](boosting_quantitive_and_spatial_awareness_for_zero-shot_object_counting.md)
 
 </div>
 

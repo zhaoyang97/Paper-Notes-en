@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][Vision-language model debiasing] This paper proposes BiPrompt, a bilateral prompt optimization framework that simultaneously mitigates spurious biases on both the visual side (structured atten…
+  [AAAI 2026][Multimodal VLM][Vision-language model debiasing] This paper proposes BiPrompt, a bilateral prompt optimization framework that simultaneously mitigates spurious biases on both the visual side (structured attention erasure) and the textual side (balanced prompt normalization) in VLMs such as CLIP at test time, improving OOD robustness without retraining.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "prompt optimization"
   - "spurious correlations"
 date: 2026-05-08
-content_hash: 54b099c55acd23d5
+content_hash: cf0f6708e4152e50
 ---
 
 # BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models
@@ -175,11 +175,11 @@ Only lightweight parameters such as the gating scalar $\alpha$ and normalization
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bilateral Information-aware Test-time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/bilateral_information-aware_test-time_adaptation_for_vision-language_models.md)
 - [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
-- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](../../CVPR2026/multimodal_vlm/towards_calibrating_prompt_tuning_of_vision-language_models.md)
-- [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](../../ICCV2025/multimodal_vlm/advancing_textual_prompt_learning_with_anchored_attributes.md)
-- [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
-- [\[AAAI 2026\] Leveraging Textual Compositional Reasoning for Robust Change Captioning](leveraging_textual_compositional_reasoning_for_robust_change_captioning.md)
+- [\[CVPR 2025\] Debiasing Multimodal Large Language Models via Noise-Aware Preference Optimization](../../CVPR2025/multimodal_vlm/debiasing_multimodal_large_language_models_via_noise-aware_preference_optimizati.md)
+- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](../../CVPR2026/multimodal_vlm/interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
+- [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](../../CVPR2026/multimodal_vlm/ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework
 description: >-
-  [CVPR 2026][Multimodal VLM][DINOv2] This work redefines zero-shot image captioning from "image-centric" to "patch-centric." It utilizes a frozen dense visual backbone (DINOv2 family) to extract patch features, applies non-parametric aggregation for specific regions, and feeds the result into a text-only trained decoder. This unified framework addresses m
+  [CVPR 2026][Multimodal VLM][Zero-shot captioning] This work redefines zero-shot image captioning from "image-centric" to "patch-centric." It utilizes a frozen dense visual backbone (DINOv2 family) to extract patch features, applies non-parametric aggregation for specific regions, and feeds the result into a text-only trained decoder. This unified framework addresses multi-granularity tasks—including single patches, boxes, mouse traces, and whole images—without requiring any r…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - DINOv2
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Zero-shot captioning"
+  - "region-level captioning"
+  - "patch aggregation"
+  - "DINOv2"
+  - "modality gap"
 date: 2026-05-08
-content_hash: 53e5284399a0509e
+content_hash: 8bf88320d0e646d0
 ---
+
 # One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework
 
 **Conference**: CVPR 2026  
@@ -130,11 +135,11 @@ In tasks emphasizing local content (**trace / dense / region-set**), the patch-c
 
 ## Related Papers
 
-- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[CVPR 2026\] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition](beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima.md)
+- [\[ICLR 2026\] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/one_patch_doesnt_fit_all_adaptive_patching_for_native-resolution_multimodal_larg.md)
+- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 - [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
-- [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
+- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
 
 </div>
 

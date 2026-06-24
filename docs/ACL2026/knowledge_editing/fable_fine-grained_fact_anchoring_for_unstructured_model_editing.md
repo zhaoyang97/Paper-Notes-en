@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Paper Note] This paper identifies that existing unstructured model editing methods, while capable of holistic recall of edited text, fail to provide access to fine-grained facts. It proposes the FABLE framework, which uses a two-stage hierarchical strategy to anchor fine-grained facts in shallow layers and integrate holistic narra
+  [ACL 2026 Findings][Knowledge Editing][Model Editing] This paper identifies that existing unstructured model editing methods, while capable of holistic recall of edited text, fail to provide access to fine-grained facts. It proposes the FABLE framework, which uses a two-stage hierarchical strategy to anchor fine-grained facts in shallow layers and integrate holistic narratives in deep layers, and constructs the UnFine diagnostic benchmark for systematic evaluation.
 tags:
-  - ACL 2026
-  - Knowledge Editing
+  - "ACL 2026 Findings"
+  - "Knowledge Editing"
+  - "Model Editing"
+  - "Unstructured Knowledge"
+  - "Fine-grained Fact Injection"
+  - "Hierarchical Key-Value Storage"
+  - "UnFine Benchmark"
 date: 2026-05-08
-content_hash: 092553399cff9300
+content_hash: 2740b31585003210
 ---
+
 # FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing
 
 **Conference**: ACL 2026 Findings  
@@ -133,10 +139,10 @@ Both stages utilize closed-form optimization. Stage 1 updates Layers 4, 5, and 6
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
+- [\[ICLR 2026\] TangleScore: Tangle-Guided Purge and Imprint for Unstructured Knowledge Editing](../../ICLR2026/knowledge_editing/tanglescore_tangle-guided_purge_and_imprint_for_unstructured_knowledge_editing.md)
 - [\[ACL 2026\] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)
 - [\[ACL 2026\] CLaRE-ty Amid Chaos: Quantifying Representational Entanglement to Predict Ripple Effects in LLM Editing](clare-ty_amid_chaos_quantifying_representational_entanglement_to_predict_ripple_.md)
-- [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
-- [\[AAAI 2026\] Model Editing as a Double-Edged Sword: Steering Agent Ethical Behavior](../../AAAI2026/knowledge_editing/model_editing_as_a_double-edged_sword_steering_agent_ethical_behavior_toward_ben.md)
+- [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 
 </div>
 

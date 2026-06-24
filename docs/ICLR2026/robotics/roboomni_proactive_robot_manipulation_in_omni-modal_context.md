@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoboOmni: Proactive Robot Manipulation in Omni-modal Context
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] RoboOmni integrates speech, environmental sounds, visual observations, and robot actions into a unified omni-modal LLM framework, enabling robots to proactively infer user intentions from implicit household contexts, provide vocal confirmation, and execute 7-DoF manipulation actions.
+  [ICLR2026][Robotics][Proactive Robot Manipulation] RoboOmni integrates speech, environmental sounds, visual observations, and robot actions into a unified omni-modal LLM framework, enabling robots to proactively infer user intentions from implicit household contexts, provide vocal confirmation, and execute 7-DoF manipulation actions.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Proactive Robot Manipulation"
+  - "Cross-modal Contextual Instructions"
+  - "Speech-Vision-Action Model"
+  - "Environmental Sound"
+  - "Human Confirmation"
 date: 2026-05-08
-content_hash: 90f55dfdfcd51f27
+content_hash: 6ba3931541561511
 ---
+
 # RoboOmni: Proactive Robot Manipulation in Omni-modal Context
 
 **Conference**: ICLR2026  
@@ -130,6 +136,7 @@ Ablations show that performance stems from multi-modal complementarity.
 - **Value**: ⭐⭐⭐⭐⭐ (Provides a new dataset and a strong baseline for proactive household robotics).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,7 +145,7 @@ Ablations show that performance stems from multi-modal complementarity.
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](../../CVPR2026/robotics/profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
 - [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[NeurIPS 2025\] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data](../../NeurIPS2025/robotics/himacon_discovering_hierarchical_manipulation_concepts_from_unlabeled_multi-moda.md)
-- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
+- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
 
 </div>
 

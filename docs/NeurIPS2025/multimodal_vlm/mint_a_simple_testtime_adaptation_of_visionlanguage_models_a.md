@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][test-time adaptation] This work identifies **embedding variance collapse**—the simultaneous shrinkage of intra- and inter-class variance that erodes discriminability in the embedding space—…
+  [NeurIPS 2025][Multimodal VLM][test-time adaptation] This work identifies **embedding variance collapse**—the simultaneous shrinkage of intra- and inter-class variance that erodes discriminability in the embedding space—as the root cause of CLIP's performance degradation under image corruptions. It proposes Mint, which restores embedding geometry online by maximizing pseudo-label inter-class variance (PL-inter) using only two lightweight components: a mean accumulator and a g…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -14,7 +14,7 @@ tags:
   - "pseudo-label"
   - "LayerNorm"
 date: 2026-05-08
-content_hash: 891c65c370e220bf
+content_hash: 4c9a02d31f1d45ea
 ---
 
 # Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions
@@ -181,9 +181,9 @@ Pre- and post-adaptation comparisons confirm that Mint successfully increases bo
 
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 - [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](../../AAAI2026/multimodal_vlm/panda_test-time_adaptation_with_negative_data_augmentation.md)
-- [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
 
 </div>
 

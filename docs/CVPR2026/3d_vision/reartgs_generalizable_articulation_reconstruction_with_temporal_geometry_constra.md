@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REArtGS++: Generalizable Articulation Reconstruction with Temporal Geometry Constraint via Planar Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] REArtGS++ reconstructs part-level surface meshes and estimates joint parameters of unseen articulated objects (e.g., drawers, refrigerators) using only multi-view RGB images from any two states, without predefining joint types or relying on external models. By modeling each joint as a decoupled screw motion and extendi
+  [CVPR 2026][3D Vision][Articulated Objects] REArtGS++ reconstructs part-level surface meshes and estimates joint parameters of unseen articulated objects (e.g., drawers, refrigerators) using only multi-view RGB images from any two states, without predefining joint types or relying on external models. By modeling each joint as a decoupled screw motion and extending "normal-depth consistency constraints" from discrete states to the entire motion interval via Planar Gaussians an…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Objects"
+  - "Joint Parameter Estimation"
+  - "Planar Gaussian Splatting"
+  - "Screw Motion"
+  - "Temporal Geometry Constraint"
 date: 2026-05-08
-content_hash: 5801eee8d3c90043
+content_hash: 1a860a465a61081a
 ---
+
 # REArtGS++: Generalizable Articulation Reconstruction with Temporal Geometry Constraint via Planar Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,20 @@ On multi-part objects, ArtGS/REArtGS fail significantly when joint type priors a
 - Value: ⭐⭐⭐⭐ High utility for part-level reconstruction and joint estimation in robotics/embodied AI, solving previous failures on screw and multi-part objects.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
+- [\[CVPR 2026\] Minimal Constraint Relaxation for Multiview Autocalibration](minimal_constraint_relaxation_for_multiview_autocalibration.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] TGSFormer: Scalable Temporal Gaussian Splatting for Embodied Semantic Scene Completion](tgsformer_scalable_temporal_gaussian_splatting_for_embodied_semantic_scene_compl.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)

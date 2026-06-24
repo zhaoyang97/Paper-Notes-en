@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Does Persona Make LLMs K-pop Fans? A Pilot Study of LLM-Based Online Concert Audience Agents
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] The authors constructed a "virtual audience" system consisting of ten LLM agents posting real-time danmaku. By pairing pre-recorded K-pop performances with human-like fan chats, an N=11 within-subject pilot study revealed that assigning individual personas to each agent significantly enhances diversity and "naturalness
+  [ICML2026][Multi-Agent][LLM Agents] The authors constructed a "virtual audience" system consisting of ten LLM agents posting real-time danmaku. By pairing pre-recorded K-pop performances with human-like fan chats, an N=11 within-subject pilot study revealed that assigning individual personas to each agent significantly enhances diversity and "naturalness" at the model output level. However, this **does not** translate into a stronger sense of social connection, engagement…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "LLM Agents"
+  - "Online Concerts"
+  - "Audience Simulation"
+  - "Persona Conditioning"
+  - "Collective Experience"
 date: 2026-05-08
-content_hash: be8591abc7eb65b7
+content_hash: 961e66cd15324683
 ---
+
 # Does Persona Make LLMs K-pop Fans? A Pilot Study of LLM-Based Online Concert Audience Agents
 
 **Conference**: ICML2026  
@@ -125,15 +131,16 @@ Participants **perceived** persona-conditioned agents as more natural, yet this 
 - **Value**: ⭐⭐⭐⭐ Insights on "collective monologue" have significant implications for cultural AI agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters](../../ICLR2026/multi_agent/strategic_planning_and_rationalizing_on_trees_make_llms_better_debaters.md)
 - [\[ACL 2026\] HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents](../../ACL2026/multi_agent/hachimi_scalable_and_controllable_student_persona_generation_via_orchestrated_ag.md)
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
-- [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
 - [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 - [\[ICML 2026\] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning](toward_culturally_aligned_llms_through_ontology-guided_multi-agent_reasoning.md)
+- [\[ICML 2026\] More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration](more_capable_less_cooperative_when_llms_fail_at_zero-cost_collaboration.md)
 
 </div>
 

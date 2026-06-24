@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Weak-to-Strong Diffusion with Reflection
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] W2SD proposes alternating "strong model denoising + weak model inversion" (reflection) during diffusion sampling. It uses the estimable "weak-to-strong gap" between a pair of off-the-shelf models to approximate the unobservable "strong-to-ideal gap," pulling the sampling trajectory toward the real data distribution wit
+  [ICLR 2026][Image Generation][Diffusion sampling] W2SD proposes alternating "strong model denoising + weak model inversion" (reflection) during diffusion sampling. It uses the estimable "weak-to-strong gap" between a pair of off-the-shelf models to approximate the unobservable "strong-to-ideal gap," pulling the sampling trajectory toward the real data distribution without training. It significantly improves human preference and aesthetic quality across various settings (Image…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion sampling"
+  - "training-free augmentation"
+  - "weak-to-strong gap"
+  - "reflection operator"
+  - "inference-time scaling"
 date: 2026-05-08
-content_hash: 310e52d947b2b2d2
+content_hash: f908a38539210604
 ---
+
 # Weak-to-Strong Diffusion with Reflection
 
 **Conference**: ICLR 2026  
@@ -127,15 +133,15 @@ Personalization (SD1.5+LoRA as strong, SD1.5 as weak): DINO 48.03→**51.58**, C
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance](../../CVPR2026/image_generation/improving_diffusion_generalization_with_weak-to-strong_segmented_guidance.md)
 - [\[ICML 2026\] Weak Diffusion Priors Can Still Achieve Strong Inverse-Problem Performance](../../ICML2026/image_generation/weak_diffusion_priors_can_still_achieve_strong_inverse-problem_performance.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[CVPR 2026\] ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement](../../CVPR2026/image_generation/showtable_unlocking_creative_table_visualization_with_collaborative_reflection_a.md)
-- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 
 </div>
 

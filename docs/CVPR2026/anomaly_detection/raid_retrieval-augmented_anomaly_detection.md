@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAID: Retrieval-Augmented Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] RAID reinterprets Unsupervised Anomaly Detection (UAD) as a Retrieval-Augmented Generation (RAG) pipeline: it first performs coarse-to-fine retrieval using a three-level vector library (class prototype → semantic prototype → instance token), then employs a "Guided MoE Filter" to denoise the retrieved matching cost volu
+  [CVPR 2026][Anomaly Detection][Unsupervised Anomaly Detection] RAID reinterprets Unsupervised Anomaly Detection (UAD) as a Retrieval-Augmented Generation (RAG) pipeline: it first performs coarse-to-fine retrieval using a three-level vector library (class prototype → semantic prototype → instance token), then employs a "Guided MoE Filter" to denoise the retrieved matching cost volume. This suppresses matching noise and produces anomaly maps with sharp boundaries…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Unsupervised Anomaly Detection"
+  - "Retrieval-Augmented Generation"
+  - "Hierarchical Vector Library"
+  - "Guided MoE"
+  - "Cost Volume Filtering"
 date: 2026-05-08
-content_hash: d14ceacb8d544612
+content_hash: ffeede4d3739b8e0
 ---
+
 # RAID: Retrieval-Augmented Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -134,8 +140,21 @@ Retrieval strategies: Flat (0.267s, 99.4/98.7) vs. Hierarchical (0.052s, 99.3/98
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](../../ICLR2026/anomaly_detection/mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
+- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
+- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
+- [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)
+- [\[CVPR 2026\] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

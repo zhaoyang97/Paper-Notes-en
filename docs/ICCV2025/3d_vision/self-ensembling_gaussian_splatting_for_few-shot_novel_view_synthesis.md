@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis
 description: >-
-  [3D Vision] SE-GS dynamically generates diverse 3DGS models during training via an uncertainty-aware perturbation strategy…
+  [3D Vision] SE-GS dynamically generates diverse 3DGS models during training via an uncertainty-aware perturbation strategy, and leverages a self-ensembling mechanism to allow the Σ-model to aggregate information from perturbed models, effectively mitigating overfitting under sparse-view settings and achieving state-of-the-art few-shot novel view synthesis performance across multiple datasets.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 590dcb6bb2c538c0
+content_hash: e7b5a282491d243e
 ---
 
 # Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis

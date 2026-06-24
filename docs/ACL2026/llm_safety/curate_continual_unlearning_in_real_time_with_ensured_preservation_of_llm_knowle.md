@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] CURaTE proposes a behavioral unlearning framework based on sentence embedding matching: it trains a general unlearning embedder during pre-deployment (without using any forget set), stores new unlearning requests as embeddings in a database in real-time post-deployment, and determines whether to answer or refuse via co
+  [ACL 2026 Findings][LLM Safety][Continual unlearning] CURaTE proposes a behavioral unlearning framework based on sentence embedding matching: it trains a general unlearning embedder during pre-deployment (without using any forget set), stores new unlearning requests as embeddings in a database in real-time post-deployment, and determines whether to answer or refuse via cosine similarity during inference, achieving near-perfect knowledge preservation by avoiding any modificati…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Continual unlearning"
+  - "real-time unlearning"
+  - "behavioral unlearning"
+  - "sentence embedding"
+  - "knowledge preservation"
 date: 2026-05-08
-content_hash: 238f10fe4c7e0ece
+content_hash: 7b4bb5e63562ffb9
 ---
+
 # CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge
 
 **Conference**: ACL 2026 Findings  
@@ -130,9 +136,9 @@ The complete contrastive loss is $\mathcal{L} = \frac{1}{2|T|}\sum [y \cdot d_U^
 
 - [\[ACL 2025\] Real-time Factuality Assessment from Adversarial Feedback](../../ACL2025/llm_safety/real-time_factuality_assessment_from_adversarial_feedback.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
+- [\[ICLR 2026\] Learning-Time Encoding Shapes Unlearning in LLMs](../../ICLR2026/llm_safety/learning-time_encoding_shapes_unlearning_in_llms.md)
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
 - [\[ACL 2026\] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)
-- [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
 
 </div>
 

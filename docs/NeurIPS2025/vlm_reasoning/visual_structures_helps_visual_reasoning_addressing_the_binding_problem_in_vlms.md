@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Visual Structures Help Visual Reasoning: Addressing the Binding Problem in LVLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Visual reasoning] This paper proposes VISER (Visual Input Structure for Enhanced Reasoning), which constructs spatial partitions by superimposing equidistant horizontal lines with numeric l…
+  [NeurIPS 2025][VLM Reasoning][Visual reasoning] This paper proposes VISER (Visual Input Structure for Enhanced Reasoning), which constructs spatial partitions by superimposing equidistant horizontal lines with numeric labels onto input images, combined with a "row-by-row scan" textual instruction. This approach converts the parallel visual processing of LVLMs into sequential region-by-region parsing. Without modifying the model, without training, and within a single query…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Visual reasoning"
   - "binding problem"
   - "visual prompting"
@@ -13,7 +13,7 @@ tags:
   - "spatial structure"
   - "cognitive science"
 date: 2026-05-08
-content_hash: bc5f75125c3877c8
+content_hash: 52fb5e75973d5bf5
 ---
 
 # Visual Structures Help Visual Reasoning: Addressing the Binding Problem in LVLMs
@@ -151,11 +151,11 @@ In comparison with fine-tuned models (on Qwen2.5-VL): VISER achieves 41% on 2D c
 
 ## Related Papers
 
-- [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](../../ICML2026/multimodal_vlm/self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[ICLR 2026\] No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers](../../ICLR2026/vlm_reasoning/no_labels_no_problem_training_visual_reasoners_with_multimodal_verifiers.md)
+- [\[CVPR 2025\] Critic-V: VLM Critics Help Catch VLM Errors in Multimodal Reasoning](../../CVPR2025/vlm_reasoning/critic-v_vlm_critics_help_catch_vlm_errors_in_multimodal_reasoning.md)
+- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](../../ICLR2026/vlm_reasoning/mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
 - [\[NeurIPS 2025\] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments](physvlm-avr_active_visual_reasoning_for_multimodal_large_language_models_in_phys.md)
-- [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
-- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](visual_instruction_bottleneck_tuning.md)
+- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedMOP: Achieving Enhanced Privacy and Performance in Federated Learning via Momentum Orthogonal Projection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] FedMOP applies a "momentum-evolved orthogonal shift" to the initial model **before** the start of each client's local training. The orthogonal component offsets non-IID drift to enhance performance, while momentum evolution transforms the shift vector into a $(d+t)$-dimensional intractable inverse problem for attackers
+  [CVPR 2026][AI Safety][Gradient Leakage Attack] FedMOP applies a "momentum-evolved orthogonal shift" to the initial model **before** the start of each client's local training. The orthogonal component offsets non-IID drift to enhance performance, while momentum evolution transforms the shift vector into a $(d+t)$-dimensional intractable inverse problem for attackers to protect privacy. This marks the first time "stronger privacy" and "higher accuracy" are achieved simultaneou…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Gradient Leakage Attack"
+  - "Federated Learning"
+  - "Orthogonal Projection"
+  - "Momentum Hiding"
+  - "Privacy-Performance Trade-off"
 date: 2026-05-08
-content_hash: 1491af5f0ba95304
+content_hash: 703a49dd02df5dc6
 ---
+
 # FedMOP: Achieving Enhanced Privacy and Performance in Federated Learning via Momentum Orthogonal Projection
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ On the most heterogeneous and difficult CIFAR-100, it outperforms the runner-up 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Convergent Differential Privacy Analysis for General Federated Learning](../../ICLR2026/ai_safety/convergent_differential_privacy_analysis_for_general_federated_learning.md)
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
 - [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
+- [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](../../ICLR2026/ai_safety/federated_learning_of_quantile_inference_under_local_differential_privacy.md)
 - [\[CVPR 2026\] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning](proxyfl_a_proxy-guided_framework_for_federated_semi-supervised_learning.md)
-- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper identifies that Robust Fine-Tuning (RFT) from **non-robust pretrained models** suffers from "suboptimal transfer"—where clean accuracy drops drastically below standard fine-tuning or even nears random levels, even with small adversarial perturbations. The authors attribute the root cause to "delayed task ada
+  [ICLR 2026][AI Safety][Robust Fine-Tuning] This paper identifies that Robust Fine-Tuning (RFT) from **non-robust pretrained models** suffers from "suboptimal transfer"—where clean accuracy drops drastically below standard fine-tuning or even nears random levels, even with small adversarial perturbations. The authors attribute the root cause to "delayed task adaptation" and propose **Epsilon-Scheduling** (a two-stage hinge schedule that starts at 0 and linearly ramps up to the…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Robust Fine-Tuning"
+  - "Adversarial Training"
+  - "Suboptimal Transfer"
+  - "Perturbation Scheduling"
+  - "Expected Robustness"
 date: 2026-05-08
-content_hash: 2287fbefa89938d3
+content_hash: 7a30db11d539d1d4
 ---
+
 # Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ At $8/255$, RFT-fix fails entirely (single-digit clean accuracy) on most difficu
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Optimization for Mitigating Reward Hacking with Correlated Proxies](robust_optimization_for_mitigating_reward_hacking_with_correlated_proxies.md)
 - [\[ICLR 2026\] Robust Federated Inference](robust_federated_inference.md)
 - [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
 - [\[ICLR 2026\] Eliciting Harmful Capabilities by Fine-Tuning on Safeguarded Outputs](eliciting_harmful_capabilities_by_fine-tuning_on_safeguarded_outputs.md)
 - [\[ICLR 2026\] Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.](reducing_information_dependency_does_not_cause_training_data_privacy_adversarial.md)
-- [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
 
 </div>
 

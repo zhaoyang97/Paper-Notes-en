@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper moves beyond the traditional defense paradigm of "adding noise or masking shallow intermediate representations." From an information-theoretic perspective, it proves that in edge-cloud collaborative inference, the model should be partitioned at the layer where the representation undergoes a "feature-to-decis
+  [ICML 2026][AI Safety][Model Inversion Attack] This paper moves beyond the traditional defense paradigm of "adding noise or masking shallow intermediate representations." From an information-theoretic perspective, it proves that in edge-cloud collaborative inference, the model should be partitioned at the layer where the representation undergoes a "feature-to-decision" phase transition (named the Golden Partition Zone, GPZ by the authors). The intra-class mean square radius $…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Model Inversion Attack"
+  - "Collaborative Inference"
+  - "Partitioning Strategy"
+  - "Information Entropy"
+  - "Label Smoothing"
 date: 2026-05-08
-content_hash: 2478e8ff3186da69
+content_hash: c1b519775e9e10c8
 ---
+
 # Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference
 
 **Conference**: ICML 2026  
@@ -121,11 +127,11 @@ In IR-152, the spatial resolution is compressed to $4\times 4$ at Block 49, wher
 
 ## Related Papers
 
-- [\[ICML 2026\] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception](one_model_to_translate_them_all_universal_any-to-any_translation_for_heterogeneo.md)
 - [\[ICML 2026\] PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding](pipesd_an_efficient_cloud-edge_collaborative_pipeline_inference_framework_with_s.md)
+- [\[ICML 2026\] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception](one_model_to_translate_them_all_universal_any-to-any_translation_for_heterogeneo.md)
 - [\[ICLR 2026\] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients](../../ICLR2026/ai_safety/co-lora_collaborative_model_personalization_on_heterogeneous_multi-modal_clients.md)
+- [\[ICLR 2026\] Secure Outlier-Aware Large Language Model Inference](../../ICLR2026/ai_safety/secure_outlier-aware_large_language_model_inference.md)
 - [\[NeurIPS 2025\] Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning](../../NeurIPS2025/ai_safety/model_inversion_with_layer-specific_modeling_and_alignment_for_data-free_continu.md)
-- [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](../../AAAI2026/ai_safety/privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
 
 </div>
 

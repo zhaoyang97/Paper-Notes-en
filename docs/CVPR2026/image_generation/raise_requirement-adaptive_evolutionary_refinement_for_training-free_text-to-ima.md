@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment
 description: >-
-  [CVPR 2026][Image Generation][Multi-Agent] This paper proposes the RAISE framework, which models T2I generation as a requirement-driven adaptive evolutionary process. By decomposing prompts into structured checklists via a requirement analyzer, the framework concurrently evolves candidate populations through multi-action mutations (prompt rewriting, noise resam
+  [CVPR 2026][Image Generation][Inference-time scaling] This paper proposes the RAISE framework, which models T2I generation as a requirement-driven adaptive evolutionary process. By decomposing prompts into structured checklists via a requirement analyzer, the framework concurrently evolves candidate populations through multi-action mutations (prompt rewriting, noise resampling, and instruction editing). It then employs tool-augmented visual verification to eliminate candidate…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Multi-Agent
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Inference-time scaling"
+  - "Text-to-image alignment"
+  - "Evolutionary optimization"
+  - "Requirement-driven"
+  - "Multi-agent"
 date: 2026-05-08
-content_hash: 330f40c597c8e095
+content_hash: c91ac60e0d5e8536
 ---
+
 # RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,17 @@ In Round 2, the Analyzer updates the checklist and enters the later stage, switc
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](dtg-restore_training-free_diffusion_refinement_for_generative_video_super-resolu.md)
+- [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
+- [\[CVPR 2026\] PromptLoop: Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment](promptloop_plug-and-play_prompt_refinement_via_latent_feedback_for_diffusion_mod.md)
+- [\[CVPR 2026\] WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval](wiser_wider_search_deeper_thinking_and_adaptive_fusion_for_training-free_zero-sh.md)
+- [\[CVPR 2026\] PG-VTON: Single-Pass Training-Free Virtual Try-On via Patch-Guided Reference Alignment](pg-vton_single-pass_training-free_virtual_try-on_via_patch-guided_reference_alig.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)

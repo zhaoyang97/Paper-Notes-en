@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety
 description: >-
-  [ICML 2026][Audio & Speech][jailbreak benchmark] MultiBreak utilizes an iterative framework of "active learning + uncertainty-guided rewriting" to expand a multi-turn jailbreak dataset to 10,389 conversations and 2,665 independent harmful intents. With a diversity score of 0.942, it significantly outperforms previous works and increases ASR on DeepSeek-R1-7B / GPT-4.
+  [ICML 2026][Audio & Speech][Multi-turn jailbreak] MultiBreak utilizes an iterative framework of "active learning + uncertainty-guided rewriting" to expand a multi-turn jailbreak dataset to 10,389 conversations and 2,665 independent harmful intents. With a diversity score of 0.942, it significantly outperforms previous works and increases ASR on DeepSeek-R1-7B / GPT-4.1-mini by 54% / 34.6% respectively compared to the next best dataset.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - jailbreak benchmark
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Multi-turn jailbreak"
+  - "jailbreak benchmark"
+  - "active learning"
+  - "uncertainty-guided"
+  - "LLM redteaming"
 date: 2026-05-08
-content_hash: 8c29154ad76709e3
+content_hash: b8005897c56a944f
 ---
+
 # MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety
 
 **Conference**: ICML 2026  
@@ -130,15 +135,13 @@ Table 2 (ASR, judge: LG=LLaMA Guard / GPT=GPT-4o-mini):
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](../../ICLR2026/audio_speech/echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
 - [\[ICML 2026\] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks](mecat_a_multi-experts_constructed_benchmark_for_fine-grained_audio_understanding.md)
 - [\[ICLR 2026\] Incentive-Aligned Multi-Source LLM Summaries](../../ICLR2026/audio_speech/incentive-aligned_multi-source_llm_summaries.md)
+- [\[ICLR 2026\] TTSDS2: Resources and Benchmark for Evaluating Human-Quality Text to Speech Systems](../../ICLR2026/audio_speech/ttsds2_resources_and_benchmark_for_evaluating_human-quality_text_to_speech_syste.md)
 - [\[ICML 2026\] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents](safesearch_automated_red-teaming_of_llm-based_search_agents.md)
-- [\[ICML 2026\] Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability](evaluating_and_rewarding_lalms_for_expressive_role-play_tts_via_mean_continuatio.md)
 
 </div>
 

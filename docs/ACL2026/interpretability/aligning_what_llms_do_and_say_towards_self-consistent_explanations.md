@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations
 description: >-
-  [ACL 2026][Interpretability][Paper Note] Constructed the Post-hoc Self-Consistency Bank (PSCB, 85K decisions × 428K explanations) to quantify the feature attribution gap between LLM answers and their natural language explanations. Improved attribution consistency through DPO optimization without compromising model accuracy.
+  [ACL 2026 Findings][Interpretability][Self-consistency] Constructed the Post-hoc Self-Consistency Bank (PSCB, 85K decisions × 428K explanations) to quantify the feature attribution gap between LLM answers and their natural language explanations. Improved attribution consistency through DPO optimization without compromising model accuracy.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Self-consistency"
+  - "Feature attribution"
+  - "Explanation faithfulness"
+  - "DPO optimization"
+  - "Attribution alignment"
 date: 2026-05-08
-content_hash: cc866d018cb333a4
+content_hash: 8384d0047cc11098
 ---
+
 # Aligning What LLMs Do and Say: Towards Self-Consistent Explanations
 
 **Conference**: ACL 2026 Findings  
@@ -127,11 +133,11 @@ A standard DPO objective function is used for training on PSCB preference pairs.
 
 ## Related Papers
 
+- [\[ICLR 2026\] What Do Large Language Models Know About Opinions?](../../ICLR2026/interpretability/what_do_large_language_models_know_about_opinions.md)
 - [\[ACL 2026\] A Systematic Comparison between Extractive Self-Explanations and Human Rationales in Text Classification](a_systematic_comparison_between_extractive_self-explanations_and_human_rationale.md)
 - [\[ACL 2026\] Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations](do_llms_know_tool_irrelevance_demystifying_structural_alignment_bias_in_tool_inv.md)
 - [\[ACL 2026\] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)
 - [\[AAAI 2026\] LLM Circuit Analyses Are Consistent Across Training and Scale](../../AAAI2026/interpretability/llm_circuit_analyses_consistent_across_training_and_scale.md)
-- [\[ACL 2025\] Llama See, Llama Do: A Mechanistic Perspective on Contextual Entrainment and Distraction in LLMs](../../ACL2025/interpretability/llama_see_llama_do_entrainment.md)
 
 </div>
 

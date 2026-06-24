@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conformal Online Learning of Deep Koopman Linear Embeddings
 description: >-
-  [NEURIPS2025][LLM Evaluation][Koopman operator] This paper proposes the COLoKe framework, which reinterprets conformal prediction as a model consistency diagnostic tool. Parameter updates are triggered only when the Koop…
+  [NEURIPS2025][LLM Evaluation][Koopman operator] This paper proposes the COLoKe framework, which reinterprets conformal prediction as a model consistency diagnostic tool. Parameter updates are triggered only when the Koopman model's prediction error exceeds a dynamically calibrated threshold, enabling efficient online Koopman linear embedding learning for nonlinear dynamical systems.
 tags:
   - "NEURIPS2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "dynamical systems"
   - "deep learning"
 date: 2026-05-08
-content_hash: d432ff86726ac5c9
+content_hash: a1e7363c506748af
 ---
 
 # Conformal Online Learning of Deep Koopman Linear Embeddings
@@ -140,11 +140,11 @@ Key transferable insights:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](../../ICLR2026/learning_theory/distribution-informed_online_conformal_prediction.md)
+- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](../../ICLR2026/learning_theory/online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[ICLR 2026\] Deep FlexQP: Accelerated Nonlinear Programming via Deep Unfolding](../../ICLR2026/learning_theory/deep_flexqp_accelerated_nonlinear_programming_via_deep_unfolding.md)
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
 
 </div>
 

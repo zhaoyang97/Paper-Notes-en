@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Universal Model Routing for Efficient LLM Inference
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes UniRoute, which encodes each LLM into a "prediction error vector on a small batch of representative prompts." Paired with a bilinear scorer, it allows the trained router to route to new LLMs appearing only at test time **without retraining**, achieving a better cost-quality trade-off across 30+ unse
+  [ICLR 2026][LLM Efficiency][Model Routing] This paper proposes UniRoute, which encodes each LLM into a "prediction error vector on a small batch of representative prompts." Paired with a bilinear scorer, it allows the trained router to route to new LLMs appearing only at test time **without retraining**, achieving a better cost-quality trade-off across 30+ unseen models.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Model Routing"
+  - "Dynamic LLM Pool"
+  - "Inference Cost"
+  - "Zero-shot Generalization"
+  - "Clustering Representation"
 date: 2026-05-08
-content_hash: 2db65b9840ae0464
+content_hash: 540b820f41bf63aa
 ---
+
 # Universal Model Routing for Efficient LLM Inference
 
 **Conference**: ICLR 2026  
@@ -153,10 +159,10 @@ Both UniRoute versions outperform all baselines on EmbedLLM, SPROUT, and Headlin
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
+- [\[ICLR 2026\] ICaRus: Identical Cache Reuse for Efficient Multi-Model Inference](icarus_identical_cache_reuse_for_efficient_multi-model_inference.md)
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling](semantic_parallelism_redefining_efficient_moe_inference_via_model-data_co-schedu.md)
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] DiSRouter: Distributed Self-Routing for LLM Selections](disrouter_distributed_self-routing_for_llm_selections.md)
 
 </div>
 

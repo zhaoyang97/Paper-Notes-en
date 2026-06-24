@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Reasoning][RLVR] This work systematically investigates the entropy dynamics of LLMs during RLVR training, revealing that positive-advantage tokens are the primary drivers of entropy collapse. It introduces Positive-Advantage Reweighting to effectively regulate model entropy by dynamically adjusting the loss weights of these tokens.
+  [ACL 2026 Findings][Reasoning][Entropy collapse] This work systematically investigates the entropy dynamics of LLMs during RLVR training, revealing that positive-advantage tokens are the primary drivers of entropy collapse. It introduces Positive-Advantage Reweighting to effectively regulate model entropy by dynamically adjusting the loss weights of these tokens.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Entropy collapse"
+  - "RLVR"
+  - "GRPO"
+  - "Positive-advantage reweighting"
+  - "Reasoning models"
 date: 2026-05-08
-content_hash: 0f6304491845c334
+content_hash: 3daa47b3d3f76afb
 ---
+
 # Revisiting Entropy in Reinforcement Learning for Large Reasoning Models
 
 **Conference**: ACL 2026 Findings  
@@ -125,9 +129,9 @@ Pos-Adv-Reweight (Entropy-guided) outperforms Clip-Higher on 6 out of 7 benchmar
 
 ## Related Papers
 
+- [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](../../ICLR2026/llm_reasoning/conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 - [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](../../NeurIPS2025/llm_reasoning/the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](../../AAAI2026/llm_reasoning/well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
+- [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
 - [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 - [\[ACL 2026\] TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models](trigreason_trigger-based_collaboration_between_small_and_large_reasoning_models.md)
 

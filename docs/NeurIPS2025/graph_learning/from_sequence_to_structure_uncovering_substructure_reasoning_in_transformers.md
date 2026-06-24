@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Sequence to Structure: Uncovering Substructure Reasoning in Transformers
 description: >-
-  [NeurIPS 2025][Graph Learning][Transformer interpretability] This paper presents empirical and theoretical analyses revealing how decoder-only Transformers understand graph structure from text sequences. It proposes "Ind…
+  [NeurIPS 2025][Graph Learning][Transformer interpretability] This paper presents empirical and theoretical analyses revealing how decoder-only Transformers understand graph structure from text sequences. It proposes "Induced Substructure Filtration" (ISF) to explain the layer-wise substructure identification mechanism, and extends this framework to validate consistency in LLMs, support compositional graph reasoning (Thinking-in-Substructures)…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "induced subgraph filtration"
   - "LLM graph understanding"
 date: 2026-05-08
-content_hash: 52a208ebeeebe247
+content_hash: 653d76e7bd4e2f3d
 ---
 
 # From Sequence to Structure: Uncovering Substructure Reasoning in Transformers
@@ -143,8 +143,8 @@ The input is a concatenated sequence $Q$ consisting of the graph's textual repre
 - [\[NeurIPS 2025\] Relieving the Over-Aggregating Effect in Graph Transformers](relieving_the_over-aggregating_effect_in_graph_transformers.md)
 - [\[NeurIPS 2025\] Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework](unifying_and_enhancing_graph_transformers_via_a_hierarchical_mask_framework.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
-- [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
-- [\[ICML 2026\] Structure-Centric Graph Foundation Model via Geometric Bases](../../ICML2026/graph_learning/structure-centric_graph_foundation_model_via_geometric_bases.md)
+- [\[ICML 2025\] Banyan: Improved Representation Learning with Explicit Structure](../../ICML2025/graph_learning/banyan_improved_representation_learning_with_explicit_structure.md)
+- [\[ICML 2025\] GrokFormer: Graph Fourier Kolmogorov-Arnold Transformers](../../ICML2025/graph_learning/grokformer_graph_fourier_kolmogorov-arnold_transformers.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models
 description: >-
-  [Medical NLP] This position paper systematically reviews the current state of LLM-assisted thematic analysis (TA) on unstructured clinical transcripts…
+  [Medical LLM] This position paper systematically reviews the current state of LLM-assisted thematic analysis (TA) on unstructured clinical transcripts, identifies highly fragmented evaluation practices across the literature, and proposes a standardized evaluation framework centered on three dimensions: Validity, Reliability, and Interpretability.
 tags:
-  - "Medical NLP"
+  - "Medical LLM"
 date: 2026-05-08
-content_hash: 7726086b30b67c59
+content_hash: d561fc1190fc8272
 ---
 
 # Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models
@@ -134,11 +134,11 @@ LLM inference costs have decreased substantially to approximately \$0.15–\$2.5
 
 ## Related Papers
 
+- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_for_biomedical_lite.md)
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
 - [\[NeurIPS 2025\] LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation](llm-assisted_emergency_triage_benchmark_bridging_hospital-rich_and_mci-like_fiel.md)
 - [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_nlp/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 - [\[NeurIPS 2025\] Large Language Models as Medical Codes Selectors: A Benchmark Using the International Classification of Primary Care](large_language_models_as_medical_codes_selectors_a_benchmark_using_the_internati.md)
-- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability
 description: >-
-  [ICML 2026][Audio & Speech][Role-Play TTS] This paper formulates the "continuation probability of a pre-trained Large Audio Language Model (LALM) on ground-truth speech tokens" as an objective style consistency metric named MCLP. By employing a gated hybrid reward of MCLP+CER through GRPO on the newly constructed WenetSpeech-RP-TTS dataset, the subjective MOS o
+  [ICML 2026][Audio & Speech][Role-Play TTS] This paper formulates the "continuation probability of a pre-trained Large Audio Language Model (LALM) on ground-truth speech tokens" as an objective style consistency metric named MCLP. By employing a gated hybrid reward of MCLP+CER through GRPO on the newly constructed WenetSpeech-RP-TTS dataset, the subjective MOS of role-play TTS is improved from 1.86 to 3.58.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - Role-Play TTS
-  - LALM
-  - Mean Continuation Log-Probability
-  - GRPO
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Role-Play TTS"
+  - "LALM"
+  - "Mean Continuation Log-Probability"
+  - "GRPO"
+  - "Style Consistency"
 date: 2026-05-08
-content_hash: 409f7da93662b118
+content_hash: 0533394c82859a0e
 ---
+
 # Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability
 
 **Conference**: ICML 2026  
@@ -132,13 +134,20 @@ CER is roughly 1/10th of baselines. MOS is 0.71 higher than the strongest Instru
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Steps-Audio-2: Technical Report (2025)
-- DeepSeek-V3/R1: Technical Report (2025)
-- PPO vs GRPO: DeepSeek-V3 Insights
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](focus_then_listen_an_empirical_study_of_plug-and-play_audio_enhancer_for_noise-r.md)
+- [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
+- [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](../../ACL2026/audio_speech/computational_narrative_understanding_for_expressive_text-to-speech.md)
+- [\[ICLR 2026\] VibeVoice: Expressive Podcast Generation with Next-Token Diffusion](../../ICLR2026/audio_speech/vibevoice_expressive_podcast_generation_with_next-token_diffusion.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](../../ACL2026/audio_speech/phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](../../ACL2026/audio_speech/computational_narrative_understanding_for_expressive_text-to-speech.md)

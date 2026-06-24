@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents
 description: >-
-  [CVPR 2026][Multimodal VLM][Theory of Mind] MindPower introduces a robot-centric Theory-of-Mind (ToM) reasoning framework that organizes the process of Perception → Belief → Desire → Intention → Decision → Action into a six-layer reasoning hierarchy. By optimizing reasoning consistency with Mind-Reward (based on GRPO), the model exceeds GPT-4o by 12.77% in decis
+  [CVPR 2026][VLM Reasoning][Theory of Mind] MindPower introduces a robot-centric Theory-of-Mind (ToM) reasoning framework that organizes the process of Perception → Belief → Desire → Intention → Decision → Action into a six-layer reasoning hierarchy. By optimizing reasoning consistency with Mind-Reward (based on GRPO), the model exceeds GPT-4o by 12.77% in decision-making and 12.49% in action generation.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Theory of Mind
-  - Mind-Reward
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Theory of Mind"
+  - "BDI Reasoning"
+  - "Embodied Agent"
+  - "Mind-Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 8cd481ed5e8f9e7c
+content_hash: aecadec141c56eb4
 ---
+
 # MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents
 
 **Conference**: CVPR 2026  
@@ -160,11 +163,11 @@ Example of a six-layer process where Alice searches for an apple: **Perception**
 
 ## Related Papers
 
-- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
-- [\[ACL 2026\] GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs](../../ACL2026/multimodal_vlm/grouptom-bench_benchmarking_group_theory_of_mind_and_nonlinear_social_emergence_.md)
-- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
-- [\[ICML 2025\] Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner](../../ICML2025/multimodal_vlm/overcoming_multi-step_complexity_in_multimodal_theory-of-mind_reasoning_a_scalab.md)
-- [\[ICML 2025\] From Black Boxes to Transparent Minds: Evaluating and Enhancing the Theory of Mind in Multimodal Large Language Models](../../ICML2025/multimodal_vlm/from_black_boxes_to_transparent_minds_evaluating_and_enhancing_the_theory_of_min.md)
+- [\[ICML 2026\] From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning](../../ICML2026/vlm_reasoning/from_shortcuts_to_reasoning_robust_post-training_of_theory_of_mind_with_reinforc.md)
+- [\[ICML 2025\] Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner](../../ICML2025/vlm_reasoning/overcoming_multi-step_complexity_in_multimodal_theory-of-mind_reasoning_a_scalab.md)
+- [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
+- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
+- [\[NeurIPS 2025\] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](../../NeurIPS2025/vlm_reasoning/vagen_reinforcing_world_model_reasoning_for_multi-turn_vlm_agents.md)
 
 </div>
 

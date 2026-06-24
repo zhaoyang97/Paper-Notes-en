@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection
 description: >-
-  [NeurIPS 2025][Object Detection][Data Augmentation] ReCon proposes a training-free, region-controllable data augmentation framework that enhances the detection data quality of existing structure-controllable generative m…
+  [NeurIPS 2025 Spotlight][Object Detection][Data Augmentation] ReCon proposes a training-free, region-controllable data augmentation framework that enhances the detection data quality of existing structure-controllable generative models through Region-Guided Rectification (RGR) and Region-Aligned Cross-Attention (RACA), achieving 35.5 mAP on COCO—surpassing GeoDiffusion, which requires fine-tuning.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Object Detection"
   - "Data Augmentation"
   - "Diffusion Models"
   - "Region Control"
   - "ControlNet"
 date: 2026-05-08
-content_hash: f52253490b8d6921
+content_hash: 8b4b1e4aacd5990c
 ---
 
 # ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection
@@ -134,10 +134,10 @@ ReCon's key innovation lies in shifting the evaluation of generation quality fro
 ## Related Papers
 
 - [\[NeurIPS 2025\] ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction](recon-gs_continuum-preserved_gaussian_streaming_for_fast_and_compact_reconstruct.md)
-- [\[CVPR 2026\] UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](../../CVPR2026/object_detection/uavgen_visual_prototype_conditioned_focal_region_generation_for_uav_based_object_detection.md)
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](../../CVPR2026/object_detection/parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
-- [\[NeurIPS 2025\] DCAD-2000: A Multilingual Dataset across 2000+ Languages with Data Cleaning as Anomaly Detection](dcad-2000_a_multilingual_dataset_across_2000_languages_with_data_cleaning_as_ano.md)
-- [\[NeurIPS 2025\] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)
+- [\[CVPR 2026\] Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](../../CVPR2026/object_detection/visual_prototype_conditioned_focal_region_generation_for_uav-based_object_detect.md)
+- [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](../../CVPR2026/object_detection/fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
+- [\[ICML 2025\] Understanding the Emergence of Multimodal Representation Alignment](../../ICML2025/object_detection/understanding_the_emergence_of_multimodal_representation_alignment.md)
 
 </div>
 

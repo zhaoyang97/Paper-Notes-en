@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] A Reasoning Paradigm for Named Entity Recognition
 description: >-
-  [AAAI 2026][LLM Reasoning][NER] This paper proposes ReasoningNER, which reframes named entity recognition from "implicit pattern matching" to an "explicit reasoning" paradigm. Through a three-stage pipeline (CoT data con…
+  [AAAI 2026][Reasoning][NER] This paper proposes ReasoningNER, which reframes named entity recognition from "implicit pattern matching" to an "explicit reasoning" paradigm. Through a three-stage pipeline (CoT data construction → CoT fine-tuning → GRPO reinforcement enhancement), the model first reasons and then extracts entities. Under zero-shot settings, ReasoningNER surpasses GPT-4 by 12.3 F1 points, and the 8B model achieves an average F1 of 72.4 on CrossNER.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "NER"
   - "Chain-of-Thought"
   - "Reasoning Paradigm"
   - "GRPO Reinforcement Learning"
   - "Zero-Shot Generalization"
 date: 2026-05-08
-content_hash: 7dca5c8652812bcf
+content_hash: c17fa303cff51fee
 ---
 
 # A Reasoning Paradigm for Named Entity Recognition
@@ -146,8 +146,8 @@ ReasoningNER redefines NER as a reasoning task: given input text and entity type
 - [\[ICML 2026\] R2-Router: A New Paradigm for LLM Routing with Reasoning](../../ICML2026/llm_reasoning/r2-router_a_new_paradigm_for_llm_routing_with_reasoning.md)
 - [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](../../ACL2026/llm_reasoning/failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
 - [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
+- [\[ACL 2025\] Chain-of-Reasoning: Towards Unified Mathematical Reasoning in Large Language Models via a Multi-Paradigm Perspective](../../ACL2025/llm_reasoning/chain_of_reasoning_unified_math.md)
 - [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
-- [\[AAAI 2026\] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](beyond_react_a_planner-centric_framework_for_complex_tool-au.md)
 
 </div>
 

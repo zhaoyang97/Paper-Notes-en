@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper systematically reveals the impact of Human Uncertainty (HU) on Supervised Fine-Tuning (SFT) in VQA—demonstrating that high HU samples are ineffective or even harmful. It proposes the HaDola framework, a four-stage pipeline of "Discriminate-Self Annotate-Error Trigger-Training," which matches or exceeds stron
+  [ICLR 2026][Multimodal VLM][Human Uncertainty (HU)] This paper systematically reveals the impact of Human Uncertainty (HU) on Supervised Fine-Tuning (SFT) in VQA—demonstrating that high HU samples are ineffective or even harmful. It proposes the HaDola framework, a four-stage pipeline of "Discriminate-Self Annotate-Error Trigger-Training," which matches or exceeds strong baselines fine-tuned on 100% data using only 5% seed annotations in both accuracy and calibration.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Human Uncertainty (HU)"
+  - "Visual Question Answering"
+  - "Supervised Fine-Tuning"
+  - "Data Efficiency"
+  - "Model Calibration"
+  - "Automatic Labeling"
 date: 2026-05-08
-content_hash: 5d6ff0fc3d4bea37
+content_hash: 5bb21a8193cccf3a
 ---
+
 # Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering
 
 **Conference**: ICLR 2026  
@@ -120,14 +127,17 @@ All components are essential: **Removing the Error Trigger causes the largest pe
 
 <div class="related-papers" markdown="1">
 
-- **Lan et al. (2025a)**: Quantifying human uncertainty in VQA datasets.
-- **Antol et al. (2015)**: The original VQA dataset and challenge.
-- **Karamcheti et al. (2021)**: Active learning limitations on hard samples.
+## Related Papers
+
+- [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
+- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](../../CVPR2026/multimodal_vlm/vq-va_world_towards_high-quality_visual_question-visual_answering.md)
+- [\[ICLR 2026\] Knowledge Exchange with Confidence: Cost-Effective LLM Integration for Reliable and Efficient Visual Question Answering](knowledge_exchange_with_confidence_cost-effective_llm_integration_for_reliable_a.md)
+- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/multimodal_vlm/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/multimodal_vlm/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)

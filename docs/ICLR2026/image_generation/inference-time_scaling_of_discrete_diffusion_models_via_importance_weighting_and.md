@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design
 description: >-
-  [ICLR 2026][Image Generation][Sequential Monte Carlo] This paper introduces Sequential Monte Carlo (SMC) into the inference stage of discrete diffusion models. Through computable importance weights and near-optimal proposal designs, it enhances reward alignment, CFG sampling, and controllable generation for cross-modal, biological, and image tasks without retraining the b
+  [ICLR 2026][Image Generation][Discrete Diffusion Models] This paper introduces Sequential Monte Carlo (SMC) into the inference stage of discrete diffusion models. Through computable importance weights and near-optimal proposal designs, it enhances reward alignment, CFG sampling, and controllable generation for cross-modal, biological, and image tasks without retraining the base model.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Sequential Monte Carlo
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Diffusion Models"
+  - "Sequential Monte Carlo"
+  - "Importance Weighting"
+  - "Optimal Proposal"
+  - "Inference-Time Alignment"
 date: 2026-05-08
-content_hash: 8d29e5a121428443
+content_hash: 18aa9ac1eb253778
 ---
+
 # Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design
 
 **Conference**: ICLR 2026  
@@ -126,6 +131,7 @@ If $q_\phi$ is sufficiently close to the optimal proposal, the weights across pa
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

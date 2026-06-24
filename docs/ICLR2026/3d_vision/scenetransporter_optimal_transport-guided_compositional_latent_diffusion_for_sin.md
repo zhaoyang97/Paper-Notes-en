@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] SceneTransporter reformulates open-world structured 3D scene generation as a global assignment-association problem by introducing an entropic Optimal Transport (OT) framework into the denoising loop of compositional 3D latent diffusion models: OT plan-gated cross-attention achieves exclusive patch-to-part routing (prev
+  [ICLR 2026][3D Vision][Structured 3D scenes] SceneTransporter reformulates open-world structured 3D scene generation as a global assignment-association problem by introducing an entropic Optimal Transport (OT) framework into the denoising loop of compositional 3D latent diffusion models: OT plan-gated cross-attention achieves exclusive patch-to-part routing (preventing feature entanglement), while edge-regularized assignment costs encourage the separation of different instanc…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Structured 3D scenes"
+  - "Optimal Transport"
+  - "Compositional Diffusion"
+  - "Instance Separation"
+  - "Cross-attention Gating"
 date: 2026-05-08
-content_hash: 83319f1112b8d0e5
+content_hash: 7baeb76963f6bc5a
 ---
+
 # SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation
 
 **Conference**: ICLR 2026  
@@ -130,13 +136,17 @@ Using a forced ranking system (1-4 scale), Ours received the highest preference 
 
 <div class="related-papers" markdown="1">
 
-- **PartPacker**: Low-rank rectified flow for part-based 3D generation.
-- **OT-Diffusion**: Using Optimal Transport to guide the generation path of diffusion models.
+## Related Papers
+
+- [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
+- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](../../CVPR2026/3d_vision/pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
+- [\[ICLR 2026\] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image](sat3dgen_comprehensive_street-level_3d_scene_generation_from_single_satellite_im.md)
+- [\[ICML 2026\] AvAtar: Learning to Align via Active Optimal Transport](../../ICML2026/3d_vision/avatar_learning_to_align_via_active_optimal_transport.md)
+- [\[ICML 2026\] Streaming Sliced Optimal Transport](../../ICML2026/3d_vision/streaming_sliced_optimal_transport.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)

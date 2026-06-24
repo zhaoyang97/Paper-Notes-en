@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DeepWeightFlow: Re-Basined Flow Matching for Generating Neural Network Weights
 description: >-
-  [ICLR 2026][learning_theory][Flow Matching] DeepWeightFlow utilizes a simple MLP-based flow matching model to directly learn a velocity field in the "weight space," mapping Gaussian noise to trained full network weights in a single pass. It first normalizes the training set networks using Git Re-Basin or TransFusion (eliminating permutation symmetries) and emplo
+  [ICLR2026][Weight Generation][Flow Matching] DeepWeightFlow utilizes a simple MLP-based flow matching model to directly learn a velocity field in the "weight space," mapping Gaussian noise to trained full network weights in a single pass. It first normalizes the training set networks using Git Re-Basin or TransFusion (eliminating permutation symmetries) and employs PCA to compress dimensions to a trainable scale. This allows the generation of hundreds of high-precision…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Flow Matching
-  - Git Re-Basin
+  - "ICLR2026"
+  - "Weight Generation"
+  - "Hypernetworks"
+  - "Generative Models"
+  - "Flow Matching"
+  - "Neural Network Weight Generation"
+  - "Permutation Symmetry"
+  - "Git Re-Basin"
 date: 2026-05-08
-content_hash: 8dc058888da2fe9f
+content_hash: df4369cb2211fa42
 ---
+
 # DeepWeightFlow: Re-Basined Flow Matching for Generating Neural Network Weights
 
 **Conference**: ICLR2026  
@@ -135,8 +140,6 @@ Transfer Learning: Generated ResNet-18 weights on CIFAR-10 transferred to STL-10
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

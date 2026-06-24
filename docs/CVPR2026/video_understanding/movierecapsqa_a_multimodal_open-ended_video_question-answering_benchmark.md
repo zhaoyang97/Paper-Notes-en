@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper introduces MovieRecapsQA, a multimodal open-ended video question-answering benchmark constructed from movie recap videos. It contains approximately 8.2K questions covering 60 movies and features a reference-free evaluation metric based on atomic facts, revealing that the primary bottleneck for current MLLMs
+  [CVPR 2026][Video Understanding][Video Question Answering] This paper introduces MovieRecapsQA, a multimodal open-ended video question-answering benchmark constructed from movie recap videos. It contains approximately 8.2K questions covering 60 movies and features a reference-free evaluation metric based on atomic facts, revealing that the primary bottleneck for current MLLMs lies in visual perception rather than reasoning.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Question Answering"
+  - "Multimodal Understanding"
+  - "Open-Ended Evaluation"
+  - "Movie Understanding"
+  - "Reference-Free Evaluation"
 date: 2026-05-08
-content_hash: 67b0d65a15bdd668
+content_hash: 5d6d313cda29c5aa
 ---
+
 # MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ This paper is a dataset/evaluation contribution and does not involve model train
 ## Related Papers
 
 - [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
 - [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](../../NeurIPS2025/video_understanding/egogazevqa_egocentric_gaze_guided_video_question_answering.md)
 - [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
 
 </div>
 

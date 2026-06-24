@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SatDreamer360: Multiview-Consistent Generation of Ground-Level Scenes from Satellite Imagery
 description: >-
-  [ICLR 2026][Remote Sensing][Paper Note] Starting from a single satellite image and predefined ground camera trajectories, SatDreamer360 utilizes triplane scene representations, ray-guided pixel attention, and panoramic epipolar-constrained temporal attention to generate geometrically aligned and cross-frame consistent 360° ground panorama sequences within a
+  [ICLR 2026][Remote Sensing][Satellite-to-ground generation] Starting from a single satellite image and predefined ground camera trajectories, SatDreamer360 utilizes triplane scene representations, ray-guided pixel attention, and panoramic epipolar-constrained temporal attention to generate geometrically aligned and cross-frame consistent 360° ground panorama sequences within a diffusion model, outperforming Sat2Density, ControlS2S, and EscherNet on the newly constructed VIGOR…
 tags:
-  - ICLR 2026
-  - Remote Sensing
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Satellite-to-ground generation"
+  - "multiview consistency"
+  - "panorama generation"
+  - "triplane representation"
+  - "epipolar-constrained attention"
 date: 2026-05-08
-content_hash: 7cd6b8c13b563e05
+content_hash: 906aefbcafa2284e
 ---
+
 # SatDreamer360: Multiview-Consistent Generation of Ground-Level Scenes from Satellite Imagery
 
 **Conference**: ICLR 2026  

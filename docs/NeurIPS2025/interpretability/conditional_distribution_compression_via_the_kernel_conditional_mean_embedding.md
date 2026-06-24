@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Conditional Distribution Compression via the Kernel Conditional Mean Embedding
 description: >-
-  [NeurIPS 2025][Interpretability][distribution compression] This work presents the first compression algorithm targeting **conditional distributions** (rather than joint distributions)…
+  [NeurIPS 2025][Interpretability][distribution compression] This work presents the first compression algorithm targeting **conditional distributions** (rather than joint distributions), introducing a novel metric AMCMD based on the kernel conditional mean embedding (KCME) and a linear-time algorithm ACKIP for constructing compressed datasets that preserve the statistical properties of conditional distributions.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "RKHS"
   - "data compression"
 date: 2026-05-08
-content_hash: c6173fe831895216
+content_hash: 5f84b556b189cc63
 ---
 
 # Conditional Distribution Compression via the Kernel Conditional Mean Embedding
@@ -158,10 +158,10 @@ The work presents strong theoretical innovations (AMCMD + complexity reduction v
 ## Related Papers
 
 - [\[NeurIPS 2025\] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement](far_from_the_shallow_brain-predictive_reasoning_embedding_through_residual_disen.md)
-- [\[ICML 2026\] MAAT: Knowledge-Guided Kernel Regression for Heterogeneous Partially Observed State Reconstruction](../../ICML2026/interpretability/knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
-- [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
-- [\[ICCV 2025\] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow](../../ICCV2025/interpretability/vital_more_understandable_feature_visualization_through_distribution_alignment_a.md)
-- [\[ICML 2026\] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence](../../ICML2026/interpretability/pine_pruning_boosted_tree_ensembles_with_conformal_in-distribution_prediction_eq.md)
+- [\[ICML 2026\] MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression](../../ICML2026/interpretability/knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
+- [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](../../ICLR2026/interpretability/learning_is_forgetting_llm_training_as_lossy_compression.md)
+- [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](../../CVPR2026/interpretability/hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
+- [\[ICML 2025\] SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression](../../ICML2025/interpretability/slim_one-shot_quantization_and_sparsity_with_low-rank_approximation_for_llm_weig.md)
 
 </div>
 

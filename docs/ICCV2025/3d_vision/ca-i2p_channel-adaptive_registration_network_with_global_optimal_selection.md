@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection
 description: >-
-  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes CA-I2P, which introduces a Channel Adaptive Adjustment Module (CAA) to enhance and filter channel-level discrepancies between image and point…
+  [ICCV 2025][3D Vision][Image-to-point cloud registration] This paper proposes CA-I2P, which introduces a Channel Adaptive Adjustment Module (CAA) to enhance and filter channel-level discrepancies between image and point cloud features, and a Global Optimal Selection (GOS) module that replaces top-k selection with optimal transport to reduce many-to-one matching errors, achieving state-of-the-art image-to-point cloud registration performance on RGB-D Scenes V2 and 7-Scenes.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "optimal transport"
   - "detector-free method"
 date: 2026-05-08
-content_hash: 2d8b7cb7729b35a2
+content_hash: 9fa2122788bd5700
 ---
 
 # CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection
@@ -153,10 +153,10 @@ CMCF contributes the largest PIR gain (+10.7pp); GOS contributes the largest IR 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Rethinking 2D-3D Registration: A Novel Network for High-Value Zone Selection and Representation Consistency Alignment](../../CVPR2026/3d_vision/rethinking_2d-3d_registration_a_novel_network_for_high-value_zone_selection_and_.md)
 - [\[ICCV 2025\] LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling](localdygs_multi-view_global_dynamic_scene_modeling_via_adaptive_local_implicit_f.md)
 - [\[ICCV 2025\] RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration](reggs_unposed_sparse_views_gaussian_splatting_with_3dgs_registration.md)
-- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](../../CVPR2026/3d_vision/hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
-- [\[ICLR 2026\] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception](../../ICLR2026/3d_vision/coopertrim_adaptive_data_selection_for_uncertainty-aware_cooperative_perception.md)
+- [\[ICML 2026\] FSI2P: A Hierarchical Focus–Sweep Registration Network with Dynamically Allocated Depth](../../ICML2026/3d_vision/fs-i2pa_hierarchical_focus-sweep_registration_network_with_dynamically_allocated.md)
 - [\[NeurIPS 2025\] Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting](../../NeurIPS2025/3d_vision/mesh_interpolation_graph_network_for_dynamic_and_spatially_irregular_global_weat.md)
 
 </div>

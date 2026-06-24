@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction
 description: >-
-  [ICCV 2025][Image Generation][infinite game generation] This paper proposes AnimeGamer, an infinite anime life simulation system built upon a multimodal large language model (MLLM). By predicting the next game state via…
+  [ICCV 2025][Image Generation][infinite game generation] This paper proposes AnimeGamer, an infinite anime life simulation system built upon a multimodal large language model (MLLM). By predicting the next game state via action-aware multimodal representations — comprising dynamic animation shots and character state updates — the system achieves a continuously consistent interactive anime gaming experience.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "video diffusion model"
   - "game state prediction"
 date: 2026-05-08
-content_hash: 4fc3141b55cb5e98
+content_hash: 72b6c1feabf32dac
 ---
 
 # AnimeGamer: Infinite Anime Life Simulation with Next Game State Prediction
@@ -152,10 +152,10 @@ GPT-4V and human evaluation (10-point scale):
 ## Related Papers
 
 - [\[ICCV 2025\] PanoLlama: Generating Endless and Coherent Panoramas with Next-Token-Prediction LLMs](panollama_generating_endless_and_coherent_panoramas_with_next-token-prediction_l.md)
+- [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](../../CVPR2026/image_generation/fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
+- [\[ICML 2025\] Generative Audio Language Modeling with Continuous-Valued Tokens and Masked Next-Token Prediction](../../ICML2025/image_generation/generative_audio_language_modeling_with_continuous-valued_tokens_and_masked_next.md)
 - [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
 - [\[NeurIPS 2025\] State-Covering Trajectory Stitching for Diffusion Planners](../../NeurIPS2025/image_generation/state-covering_trajectory_stitching_for_diffusion_planners.md)
-- [\[ICLR 2026\] Next Visual Granularity Generation](../../ICLR2026/image_generation/next_visual_granularity_generation.md)
-- [\[NeurIPS 2025\] Failure Prediction at Runtime for Generative Robot Policies](../../NeurIPS2025/image_generation/failure_prediction_at_runtime_for_generative_robot_policies.md)
 
 </div>
 

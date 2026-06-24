@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] To address the issue in Lifelong Person Re-Identification (LReID) where fixed network architectures cannot accommodate continuously accumulating knowledge, leading to catastrophic forgetting, this paper proposes the dynamic expansion framework VIA. It models each new domain independently using cascaded dual LoRA adapte
+  [CVPR 2026][Human Understanding][Lifelong Person Re-Identification] To address the issue in Lifelong Person Re-Identification (LReID) where fixed network architectures cannot accommodate continuously accumulating knowledge, leading to catastrophic forgetting, this paper proposes the dynamic expansion framework VIA. It models each new domain independently using cascaded dual LoRA adapters, reuses cross-domain commonalities via a shared expert pool with routing…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Lifelong Person Re-Identification"
+  - "Catastrophic Forgetting"
+  - "Dynamic Expansion"
+  - "LoRA Expert Adapters"
+  - "Cross-domain Knowledge Reuse"
 date: 2026-05-08
-content_hash: e052ea7707e35c44
+content_hash: 27a736f242ab9d09
 ---
+
 # Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -144,16 +150,17 @@ Gains on individual domains are even more significant: DukeMTMC-reID mAP rose fr
 
 <div class="related-papers" markdown="1">
 
-| Paper | Area | Key Logic |
-|-------|------|-----------|
-| **DASK (AAAI 2025)** | LReID | Domain-adaptive knowledge distillation in fixed architectures |
-| **LSTKC++ (T-PAMI 2025)** | LReID | Long-term spatial-temporal knowledge consolidation |
-| **CLIP-ReID (CVPR 2023)** | ReID | Utilizing CLIP's semantic priors for ReID task alignment |
+## Related Papers
+
+- [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)
+- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
+- [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
+- [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
+- [\[CVPR 2026\] Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification](pose-guided_enriched_feature_learning_for_federated-by-camera_person_re-identifi.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)

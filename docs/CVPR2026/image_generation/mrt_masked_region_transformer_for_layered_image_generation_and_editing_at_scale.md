@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] MRT unifies three layered image tasks—Text-to-Layer (T2L), Image-to-Layer (I2L), and Layer-to-Layer (L2L)—into a single 20B masked region diffusion Transformer. It utilizes "adaptive masking" to determine whether each layer originates from clean latents or noise, and incorporates an "overflow-aware canvas layer" to gen
+  [CVPR 2026][Image Generation][Layered Image Generation] MRT unifies three layered image tasks—Text-to-Layer (T2L), Image-to-Layer (I2L), and Layer-to-Layer (L2L)—into a single 20B masked region diffusion Transformer. It utilizes "adaptive masking" to determine whether each layer originates from clean latents or noise, and incorporates an "overflow-aware canvas layer" to generate full, reusable RGBA layers that extend beyond canvas boundaries. Trained on 10M design samples…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Layered Image Generation"
+  - "Transparent Layers"
+  - "Masked Region Diffusion"
+  - "Overflow Layer"
+  - "Diffusion Distillation"
 date: 2026-05-08
-content_hash: ac57d9561f008e82
+content_hash: c3c4d15b543ddc4c
 ---
+
 # MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,14 @@ Textual conditions (Table 4, I2L): Adding text improved PSNR$_\text{merged}$ 21.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)
+- [\[CVPR 2026\] MagicQuill V2: Precise and Interactive Image Editing with Layered Visual Cues](magicquill_v2_precise_and_interactive_image_editing_with_layered_visual_cues.md)
 - [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
+- [\[CVPR 2026\] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)
 - [\[CVPR 2026\] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
-- [\[CVPR 2026\] Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](qwen-image-layered_towards_inherent_editability_via_layer_decomposition.md)
 
 </div>
 

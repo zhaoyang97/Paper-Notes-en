@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper introduces AgentGym-RL, an open-source decoupled multi-turn reinforcement learning framework capable of training LLM agents from scratch across five real-world scenarios: Web Navigation, Deep Search, Digital Games, Embodied Control, and Science Tasks. It proposes ScalingInter-RL—a phased training method that
+  [ICLR2026][LLM Agent][Multi-Turn RL] This paper introduces AgentGym-RL, an open-source decoupled multi-turn reinforcement learning framework capable of training LLM agents from scratch across five real-world scenarios: Web Navigation, Deep Search, Digital Games, Embodied Control, and Science Tasks. It proposes ScalingInter-RL—a phased training method that progressively increases the number of interaction turns from short-horizon to long-horizon—enabling a 7B model to match or…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Multi-Turn RL"
+  - "Long-Horizon Decision Making"
+  - "Interactive Environments"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 79a4e7292f4c05ce
+content_hash: 0381e8515e80b827
 ---
+
 # AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL
 
 **Conference**: ICLR2026  
@@ -145,8 +150,8 @@ RL Algorithm Ablation (GRPO vs. REINFORCE++):
 - [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
 - [\[ICLR 2026\] Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](unlocking_long-horizon_agentic_search_with_large-scale_end-to-end_rl.md)
 - [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
+- [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
 - [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](meta-rl_induces_exploration_in_language_agents.md)
-- [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
 
 </div>
 

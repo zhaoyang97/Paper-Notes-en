@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HouseMind: Tokenization Allows MLLMs to Understand, Generate and Edit Architectural Floor Plans
 description: >-
-  [CVPR 2026][Multimodal VLM][VQ-VAE] The paper proposes HouseMind, which discretizes architectural floor plan outlines and room instances into spatial tokens using a hierarchical VQ-VAE. These are unified with text tokens in a single vocabulary, enabling a small-scale LLM (0.6B) to achieve three major tasks—understanding, generation, and editing—within a
+  [CVPR 2026][Multimodal VLM][Architectural Floor Plans] The paper proposes HouseMind, which discretizes architectural floor plan outlines and room instances into spatial tokens using a hierarchical VQ-VAE. These are unified with text tokens in a single vocabulary, enabling a small-scale LLM (0.6B) to achieve three major tasks—understanding, generation, and editing—within a single autoregressive framework. It significantly outperforms methods based on diffusion models and large…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VQ-VAE
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Architectural Floor Plans"
+  - "VQ-VAE"
+  - "Multimodal LLM"
+  - "Spatial Reasoning"
+  - "Hierarchical Tokens"
 date: 2026-05-08
-content_hash: f450e2a19c913fbc
+content_hash: 1e4052b7e73bcf57
 ---
+
 # HouseMind: Tokenization Allows MLLMs to Understand, Generate and Edit Architectural Floor Plans
 
 **Conference**: CVPR 2026  
@@ -146,10 +151,10 @@ The VQ-VAE is trained using standard reconstruction loss + commitment loss + cod
 ## Related Papers
 
 - [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](a_more_word-like_image_tokenization_for_mllms.md)
-- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
+- [\[ICLR 2026\] ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?](../../ICLR2026/multimodal_vlm/odi-bench_can_mllms_understand_immersive_omnidirectional_environments.md)
 - [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
-- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
 - [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
+- [\[CVPR 2026\] Linking Perception, Confidence and Accuracy in MLLMs](linking_perception_confidence_and_accuracy_in_mllms.md)
 
 </div>
 

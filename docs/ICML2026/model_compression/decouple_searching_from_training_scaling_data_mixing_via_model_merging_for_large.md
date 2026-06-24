@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training
 description: >-
-  [ICML 2026][Model Compression][Pretraining] To identify optimal data mixing ratios in LLM pre-training without the prohibitive cost of proxy experiments, this paper proposes DeMix. The method involves training $N$ component models only once (each corresponding to a candidate subset). Subsequently, any candidate ratio $\{\alpha_i\}$ is treated as a "training-free
+  [ICML 2026][Model Compression][Data Mixing] To identify optimal data mixing ratios in LLM pre-training without the prohibitive cost of proxy experiments, this paper proposes DeMix. The method involves training $N$ component models only once (each corresponding to a candidate subset). Subsequently, any candidate ratio $\{\alpha_i\}$ is treated as a "training-free" proxy through weighted merging $\sum_i \alpha_i \Theta_i$. LightGBM is employed for iterative regression on the si…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Pretraining
+  - "ICML 2026"
+  - "Model Compression"
+  - "Data Mixing"
+  - "Model Merging"
+  - "Pre-training"
+  - "Proxy Model"
+  - "Ratio Search"
 date: 2026-05-08
-content_hash: 543c41c386d8f11b
+content_hash: 949dfe6227d2fb1b
 ---
+
 # Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training
 
 **Conference**: ICML 2026  
@@ -138,9 +143,9 @@ Downstream performance of final mixture ratios (Macro avg rank within 96 referen
 
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
 - [\[ICML 2026\] GradPower: Powering Gradients for Faster Language Model Pre-Training](gradpower_powering_gradients_for_faster_language_model_pre-training.md)
-- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
-- [\[ICLR 2026\] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery](../../ICLR2026/model_compression/paser_post-training_data_selection_for_efficient_pruned_large_language_model_rec.md)
+- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
 
 </div>
 

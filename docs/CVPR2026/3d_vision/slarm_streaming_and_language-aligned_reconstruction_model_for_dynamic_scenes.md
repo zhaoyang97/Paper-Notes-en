@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SLARM: Streaming and Language-Aligned Reconstruction Model for Dynamic Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SLARM is a feed-forward Transformer that simultaneously outputs 4D Gaussian geometry, 3D scene flow, and language-aligned semantics for dynamic scenes in a single forward pass. It utilizes high-order motion functions for unsupervised learning of complex non-uniform motions, distills LSeg for text-queryable semantics, a
+  [CVPR 2026][3D Vision][Dynamic Scene Reconstruction] SLARM is a feed-forward Transformer that simultaneously outputs 4D Gaussian geometry, 3D scene flow, and language-aligned semantics for dynamic scenes in a single forward pass. It utilizes high-order motion functions for unsupervised learning of complex non-uniform motions, distills LSeg for text-queryable semantics, and employs windowed causal attention for constant-latency streaming inference. It improves motion accuracy…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Scene Reconstruction"
+  - "4D Gaussian"
+  - "Feed-forward Reconstruction"
+  - "Language-Aligned Semantics"
+  - "Streaming Inference"
 date: 2026-05-08
-content_hash: 43ab38c800a81c24
+content_hash: d94723c94176ec84
 ---
+
 # SLARM: Streaming and Language-Aligned Reconstruction Model for Dynamic Scenes
 
 **Conference**: CVPR 2026  
@@ -145,15 +151,14 @@ Semantic Segmentation (Table 2):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
+- [\[CVPR 2026\] Stabilizing Streaming Video Geometry via Dynamic Feature Normalization](stabilizing_streaming_video_geometry_via_dynamic_feature_normalization.md)
 - [\[CVPR 2026\] LangField4D: Learning Identity-Adaptive and Spatio-Temporal Continuous 4D Language Fields for Dynamic Scenes](langfield4d_learning_identity-adaptive_and_spatio-temporal_continuous_4d_languag.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
 - [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
 
 </div>
 

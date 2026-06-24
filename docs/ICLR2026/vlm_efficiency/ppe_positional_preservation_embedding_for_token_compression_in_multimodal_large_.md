@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][vlm_efficiency][RoPE] PPE (Positional Preservation Embedding) leverages the rotation independence of RoPE dimensions to encode multiple original position IDs into different dimension segments of a merged token, enabling a single compressed token to carry multiple spatial/temporal positional information. PPE is a zero-parameter, plug-and-pla
+  [ICLR 2026][Multimodal Efficiency][Token Compression] PPE (Positional Preservation Embedding) leverages the rotation independence of RoPE dimensions to encode multiple original position IDs into different dimension segments of a merged token, enabling a single compressed token to carry multiple spatial/temporal positional information. PPE is a zero-parameter, plug-and-play universal operator that yields only a 3.6% average performance drop on image tasks at 55% compression an…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - RoPE
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Token Compression"
+  - "Positional Encoding"
+  - "RoPE"
+  - "MLLM Efficiency"
+  - "Spatio-temporal Preservation"
 date: 2026-05-08
-content_hash: ec369e79ee5dac7c
+content_hash: 073d462d26ce0477
 ---
+
 # PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -142,11 +147,11 @@ PPE-3B, with only 3B parameters and 55% compression, outperforms the 7B PACT and
 
 ## Related Papers
 
-- [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
-- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](../../CVPR2026/vlm_efficiency/evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
-- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[ICLR 2026\] Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective](task-related_token_compression_in_multimodal_large_language_models_from_an_expla.md)
 - [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](../../CVPR2026/vlm_efficiency/hybrid_token_compression_for_vision-language_models.md)
+- [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
+- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](../../CVPR2026/vlm_efficiency/omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
 
 </div>
 

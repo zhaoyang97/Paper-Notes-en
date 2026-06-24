@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion
 description: >-
-  [ICCV 2025][3D Vision][City-scale 3D generation] This paper presents Sat2City, the first 3D generation framework capable of simultaneously producing city-scale geometry and appearance from a single satellite image. By in…
+  [ICCV 2025][3D Vision][City-scale 3D generation] This paper presents Sat2City, the first 3D generation framework capable of simultaneously producing city-scale geometry and appearance from a single satellite image. By integrating sparse voxel grids with a cascaded latent diffusion model, it introduces a Re-Hash multi-scale feature grid and an inverse sampling strategy, achieving high-fidelity generation superior to existing methods on a self-constructed 3D city dataset.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "cascaded latent diffusion"
   - "appearance modeling"
 date: 2026-05-08
-content_hash: da427a9a0f7e51e0
+content_hash: 936913f5f779b331
 ---
 
 # Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion
@@ -172,8 +172,8 @@ In a subjective evaluation with 60 participants, Sat2City achieves the highest s
 - [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
 - [\[ICCV 2025\] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions](wonderplay_dynamic_3d_scene_generation_from_a_single_image_and_actions.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
+- [\[ICLR 2026\] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image](../../ICLR2026/3d_vision/sat3dgen_comprehensive_street-level_3d_scene_generation_from_single_satellite_im.md)
 - [\[ICCV 2025\] Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models](representing_3d_shapes_with_64_latent_vectors_for_3d_diffusion_models.md)
-- [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](a_recipe_for_generating_3d_worlds_from_a_single_image.md)
 
 </div>
 

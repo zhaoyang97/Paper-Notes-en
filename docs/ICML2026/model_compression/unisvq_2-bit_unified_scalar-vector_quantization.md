@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniSVQ: 2-bit Unified Scalar-Vector Quantization
 description: >-
-  [ICML 2026][Model Compression][Paper Note] UniSVQ unifies Scalar Quantization (SQ) and Vector Quantization (VQ) through an "affine transformation of integer lattices." This yields a 2-bit Post-Training Quantization (PTQ) scheme that achieves VQ-level accuracy with only 20 extra parameters per weight matrix, while maintaining the integer operator structure and i
+  [ICML 2026][Model Compression][2-bit Quantization] UniSVQ unifies Scalar Quantization (SQ) and Vector Quantization (VQ) through an "affine transformation of integer lattices." This yields a 2-bit Post-Training Quantization (PTQ) scheme that achieves VQ-level accuracy with only 20 extra parameters per weight matrix, while maintaining the integer operator structure and inference throughput of SQ.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "2-bit Quantization"
+  - "Scalar Quantization"
+  - "Vector Quantization"
+  - "Affine Lattice"
+  - "Post-Training Quantization"
 date: 2026-05-08
-content_hash: 3645e3cb728e1387
+content_hash: 612d19dbac1e11b3
 ---
+
 # UniSVQ: 2-bit Unified Scalar-Vector Quantization
 
 **Conference**: ICML 2026  
@@ -133,11 +139,11 @@ UniSVQ requires only ~$1/64$ of the extra storage compared to VQ. Since affine t
 
 ## Related Papers
 
-- [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
+- [\[ICML 2026\] LC-QAT: Data-Efficient 2-Bit QAT for LLMs via Linear-Constrained Vector Quantization](lc-qat_data-efficient_2-bit_qat_for_llms_via_linear-constrained_vector_quantizat.md)
 - [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
-- [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
-- [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
+- [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
 
 </div>
 

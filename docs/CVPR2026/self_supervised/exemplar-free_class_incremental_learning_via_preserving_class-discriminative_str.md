@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper identifies that the essence of catastrophic forgetting in Exemplar-Free Class Incremental Learning (EFCIL) is the collapse of "class-discriminative structure." It proposes the Adaptive Prototype Calibration (APR) to correct the mean and covariance of old class prototypes (preserving intra-class structure) an
+  [CVPR 2026][Self-Supervised Learning][Exemplar-Free Class Incremental Learning] This paper identifies that the essence of catastrophic forgetting in Exemplar-Free Class Incremental Learning (EFCIL) is the collapse of "class-discriminative structure." It proposes the Adaptive Prototype Calibration (APR) to correct the mean and covariance of old class prototypes (preserving intra-class structure) and the Structural Consistency Constraint (SCC) to maintain angular relationships…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Exemplar-Free Class Incremental Learning"
+  - "Catastrophic Forgetting"
+  - "Class-Discriminative Structure"
+  - "Prototype Calibration"
+  - "Pre-trained ViT"
 date: 2026-05-08
-content_hash: 7a775453abf218c2
+content_hash: 6150f38522f8545d
 ---
+
 # Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Ablation of SCC and APR components (Last-Acc):
 ## Related Papers
 
 - [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
+- [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
 - [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
-- [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
-- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
-- [\[ACL 2025\] AnalyticKWS: Towards Exemplar-Free Analytic Class Incremental Learning for Small-footprint Keyword Spotting](../../ACL2025/self_supervised/analytickws_towards_exemplar-free_analytic_class_incremental_learning_for_small-.md)
+- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 
 </div>
 

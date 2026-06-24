@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Physical Basis of Prediction: World Model Formation in Neural Organoids via an LLM-Generated Curriculum
 description: >-
-  [NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)][Medical NLP][Neural organoids] This paper proposes a framework for studying world model formation in human neural organoids…
+  [NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)][Medical LLM][Neural organoids] This paper proposes a framework for studying world model formation in human neural organoids, comprising three progressively complex virtual environments (conditioned avoidance, predator–prey, Pong) and a meta-learning approach in which an LLM automatically generates experimental protocols, complemented by a multi-scale biophysical evaluation strategy to quantify…
 tags:
   - "NeurIPS 2025 (Workshop: Scaling Environments for Agents / Embodied World Models)"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Neural organoids"
   - "world models"
   - "curriculum learning"
   - "LLM-generated environments"
   - "synaptic plasticity"
 date: 2026-05-08
-content_hash: 4ae8ed7c7e00b437
+content_hash: 600f26b892413719
 ---
 
 # The Physical Basis of Prediction: World Model Formation in Neural Organoids via an LLM-Generated Curriculum
@@ -52,8 +52,8 @@ The framework comprises three major components:
 
 1. **Predictive-coding-based learning mechanism**:
    Drawing on the Free Energy Principle, biological agents have an intrinsic drive to minimize prediction error. Feedback signals are designed accordingly:
-   - **Reward (model confirmation)**: predictable, low-entropy electrical stimulation (e.g., consistent low-frequency sine waves) that minimizes "surprise" and reinforces successful strategies. An alternative is UV-light-triggered release of caged dopamine to directly activate reward pathways.
-   - **Punishment (model violation)**: unpredictable, high-entropy stimulation (white-noise electrical signals) that generates strong prediction errors, driving the network to update its strategy to avoid such states.
+    - **Reward (model confirmation)**: predictable, low-entropy electrical stimulation (e.g., consistent low-frequency sine waves) that minimizes "surprise" and reinforces successful strategies. An alternative is UV-light-triggered release of caged dopamine to directly activate reward pathways.
+    - **Punishment (model violation)**: unpredictable, high-entropy stimulation (white-noise electrical signals) that generates strong prediction errors, driving the network to update its strategy to avoid such states.
 
    This bipolar feedback translates abstract RL principles into concrete biophysical signals that drive synaptic change.
 

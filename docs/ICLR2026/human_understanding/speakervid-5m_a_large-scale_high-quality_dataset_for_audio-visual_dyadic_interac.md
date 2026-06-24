@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation
 description: >-
-  [ICLR 2026][Human Understanding][Dataset] Addressing the lack of public data for "active interactive digital humans," this work constructs SpeakerVid-5M—the first large-scale, high-quality dataset for audio-visual dyadic interactive digital human generation (8,743 hours, 5.2 million single-person clips, 770,000 dialogue pairs). It also introduces an auto-regre
+  [ICLR 2026][Human Understanding][Digital Human Generation] Addressing the lack of public data for "active interactive digital humans," this work constructs SpeakerVid-5M—the first large-scale, high-quality dataset for audio-visual dyadic interactive digital human generation (8,743 hours, 5.2 million single-person clips, 770,000 dialogue pairs). It also introduces an auto-regressive video dialogue baseline and the VidChatBench evaluation benchmark.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Dataset
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Digital Human Generation"
+  - "Dyadic Interaction"
+  - "Audio-Visual Alignment"
+  - "Dataset"
+  - "Auto-regressive Generation"
 date: 2026-05-08
-content_hash: 1ca923a070395168
+content_hash: 2eb8b9a17e394e3a
 ---
+
 # SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation
 
 **Conference**: ICLR 2026  
@@ -143,9 +148,9 @@ The Dyadic protocol (direct A/V input) consistently outperforms Conditioned (abs
 
 - [\[CVPR 2026\] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data](../../CVPR2026/human_understanding/opent2m_no-frill_motion_generation_with_open-source_large-scale_high-quality_dat.md)
 - [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](../../CVPR2026/human_understanding/romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
-- [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](humof_human_motion_forecasting_in_interactive_social_scenes.md)
 - [\[ICML 2026\] Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets](../../ICML2026/human_understanding/efficient_validation-free_intrinsic_quality_estimation_for_large-scale_face_reco.md)
-- [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](../../CVPR2026/human_understanding/mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
+- [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](humof_human_motion_forecasting_in_interactive_social_scenes.md)
+- [\[ICLR 2026\] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision](sapiens2.md)
 
 </div>
 

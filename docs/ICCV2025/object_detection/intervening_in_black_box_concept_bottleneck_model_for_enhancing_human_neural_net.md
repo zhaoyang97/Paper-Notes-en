@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding
 description: >-
-  [ICCV 2025][Object Detection][Interpretability] This paper proposes the CBM-HNMU framework, which approximates the reasoning process of a black-box model via a Concept Bottleneck Model (CBM)…
+  [ICCV 2025][Object Detection][Interpretability] This paper proposes the CBM-HNMU framework, which approximates the reasoning process of a black-box model via a Concept Bottleneck Model (CBM), automatically identifies and corrects harmful concepts, and distills the corrected knowledge back into the black-box model, enabling systematic model intervention and accuracy improvement beyond the sample level.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Distillation"
   - "Model Correction"
 date: 2026-05-08
-content_hash: 86975c00a34b1697
+content_hash: eb710a32d442d27f
 ---
 
 # Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding
@@ -132,11 +132,11 @@ $$S_i = \frac{1}{n} \sum_{k=1}^{n} E_{img}(C_k^{|}(i)) \times E_{text}(C^t)^T$$
 
 ## Related Papers
 
+- [\[CVPR 2025\] T2ICount: Enhancing Cross-modal Understanding for Zero-Shot Counting](../../CVPR2025/object_detection/t2icount_enhancing_cross-modal_understanding_for_zero-shot_counting.md)
+- [\[CVPR 2025\] Efficient Event-Based Object Detection: A Hybrid Neural Network with Spatial and Temporal Attention](../../CVPR2025/object_detection/efficient_event-based_object_detection_a_hybrid_neural_network_with_spatial_and_.md)
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](../../CVPR2026/object_detection/black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
 - [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
-- [\[CVPR 2026\] Prompt-Free Universal Region Proposal Network](../../CVPR2026/object_detection/prompt-free_universal_region_proposal_network.md)
 - [\[ICCV 2025\] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions](voccl3d_a_video_benchmark_dataset_for_3d_human_pose_and_shape_estimation_under_r.md)
-- [\[NeurIPS 2025\] DetectiumFire: A Comprehensive Multi-modal Dataset Bridging Vision and Language for Fire Understanding](../../NeurIPS2025/object_detection/detectiumfire_a_comprehensive_multi-modal_dataset_bridging_vision_and_language_f.md)
-- [\[NeurIPS 2025\] MSTAR: Box-Free Multi-Query Scene Text Retrieval with Attention Recycling](../../NeurIPS2025/object_detection/mstar_box-free_multi-query_scene_text_retrieval_with_attention_recycling.md)
 
 </div>
 

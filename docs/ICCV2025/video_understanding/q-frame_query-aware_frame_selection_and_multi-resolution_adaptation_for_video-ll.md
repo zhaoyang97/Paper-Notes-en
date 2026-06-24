@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs
 description: >-
-  [ICCV 2025][Video Understanding][Video Frame Selection] This paper proposes Q-Frame, a training-free plug-and-play framework for video frame selection and multi-resolution adaptation. By leveraging CLIP cross-modal match…
+  [ICCV 2025][Video Understanding][Video Frame Selection] This paper proposes Q-Frame, a training-free plug-and-play framework for video frame selection and multi-resolution adaptation. By leveraging CLIP cross-modal matching and the Gumbel-Max trick, Q-Frame achieves query-aware frame selection, enabling Video-LLMs to process more informative frames under the same computational budget. It achieves significant performance gains on three benchmarks: MLVU, LongVideoBench…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "Gumbel-Max Sampling"
 date: 2026-05-08
-content_hash: 808d1c6dae2ab875
+content_hash: a9396dacf104731f
 ---
 
 # Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs
@@ -165,10 +165,10 @@ Ablation on frame resolution allocation (token budget equivalent to 8 high-resol
 ## Related Papers
 
 - [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
+- [\[CVPR 2025\] M-LLM Based Video Frame Selection for Efficient Video Understanding](../../CVPR2025/video_understanding/m-llm_based_video_frame_selection_for_efficient_video_understanding.md)
+- [\[CVPR 2025\] Progress-Aware Video Frame Captioning](../../CVPR2025/video_understanding/progress-aware_video_frame_captioning.md)
 - [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](../../CVPR2026/video_understanding/divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
 - [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
-- [\[ICLR 2026\] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering](../../ICLR2026/video_understanding/air_enabling_adaptive_iterative_and_reasoning-based_frame_selection_for_video_qu.md)
-- [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
 
 </div>
 

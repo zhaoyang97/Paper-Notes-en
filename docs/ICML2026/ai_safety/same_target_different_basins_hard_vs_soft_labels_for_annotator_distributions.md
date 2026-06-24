@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Same Target, Different Basins: Hard vs. Soft Labels for Annotator Distributions
 description: >-
-  [ICML 2026][AI Safety][Paper Note] By feeding "annotator distributions" to models via hard labels on CIFAR-10H (multipass cycling by votes / SLS resampling per epoch), this work proves these methods are equivalent to the soft label cross-entropy expectation goal but converge to flatter basins, perform better under sparse annotations, and slightly excel
+  [ICML 2026 (EIML Workshop)][AI Safety][Annotator distributions] By feeding "annotator distributions" to models via hard labels on CIFAR-10H (multipass cycling by votes / SLS resampling per epoch), this work proves these methods are equivalent to the soft label cross-entropy expectation goal but converge to flatter basins, perform better under sparse annotations, and slightly excel in OOD detection.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026 (EIML Workshop)"
+  - "AI Safety"
+  - "Annotator distributions"
+  - "Hard and soft labels"
+  - "Loss landscape"
+  - "OOD detection"
+  - "Calibration"
 date: 2026-05-08
-content_hash: fab418bdd5ea3d78
+content_hash: e0279536d88e8d0a
 ---
+
 # Same Target, Different Basins: Hard vs. Soft Labels for Annotator Distributions
 
 **Conference**: ICML 2026 (EIML Workshop)  
@@ -131,10 +137,10 @@ Multipass / SLS / Det. control are geometrically almost identical ($\lambda_{\ma
 ## Related Papers
 
 - [\[ICML 2025\] Retraining with Predicted Hard Labels Provably Increases Model Accuracy](../../ICML2025/ai_safety/retraining_with_predicted_hard_labels_provably_increases_model_accuracy.md)
+- [\[ICLR 2026\] Dataset Distillation for Memorized Data: Soft Labels can Leak Held-Out Teacher Knowledge](../../ICLR2026/ai_safety/dataset_distillation_for_memorized_data_soft_labels_can_leak_held-out_teacher_kn.md)
 - [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[ICML 2026\] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack](exposing_vulnerabilities_in_explanation_for_time_series_classifiers_via_dual-tar.md)
-- [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
-- [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](../../CVPR2026/ai_safety/decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
+- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
+- [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
 
 </div>
 

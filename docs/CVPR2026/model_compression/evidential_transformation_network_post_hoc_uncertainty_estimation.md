@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation
 description: >-
-  [CVPR 2026][Pretraining][Paper Note] The paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that transforms pretrained classifiers or LLMs into evidential models by learning sample-dependent affine transformations in the logit space, achieving reliable uncertainty estimation with minimal computational overhead.
+  [CVPR 2026 Highlight][Model Compression][Uncertainty Estimation] The paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that transforms pretrained classifiers or LLMs into evidential models by learning sample-dependent affine transformations in the logit space, achieving reliable uncertainty estimation with minimal computational overhead.
 tags:
-  - CVPR 2026
-  - Pretraining
+  - "CVPR 2026 Highlight"
+  - "Model Compression"
+  - "Uncertainty Estimation"
+  - "Evidential Deep Learning"
+  - "Post-hoc Method"
+  - "Dirichlet Distribution"
+  - "LLMs"
 date: 2026-05-08
-content_hash: 3bc7a9181e01d3fb
+content_hash: 931ca75601c89ca6
 ---
+
 # Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation
 
 **Conference**: CVPR 2026 Highlight  
@@ -129,11 +135,11 @@ The training target is the ELBO (Eq. 5): the reconstruction term is the expected
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] One Prompt Fits All: Universal Graph Adaptation for Pretrained Models](../../NeurIPS2025/llm_pretraining/one_prompt_fits_all_universal_graph_adaptation_for_pretrained_models.md)
-- [\[ICML 2026\] Annotations Mitigate Post-Training Mode Collapse](../../ICML2026/llm_pretraining/annotations_mitigate_post-training_mode_collapse.md)
-- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](../../ICLR2026/llm_pretraining/identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
-- [\[ACL 2026\] Compact Example-Based Explanations for Language Models](../../ACL2026/llm_pretraining/compact_example-based_explanations_for_language_models.md)
-- [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](../../ICLR2026/llm_pretraining/steering_language_models_with_weight_arithmetic.md)
+- [\[NeurIPS 2025\] C-LoRA: Contextual Low-Rank Adaptation for Uncertainty Estimation in Large Language Models](../../NeurIPS2025/model_compression/c-lora_contextual_low-rank_adaptation_for_uncertainty_estimation_in_large_langua.md)
+- [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](../../ICML2026/model_compression/quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
+- [\[NeurIPS 2025\] Elastic ViTs from Pretrained Models without Retraining](../../NeurIPS2025/model_compression/elastic_vits_from_pretrained_models_without_retraining.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](../../ICML2026/model_compression/post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](../../ICLR2026/model_compression/inlier-centric_post-training_quantization_for_object_detection_models.md)
 
 </div>
 

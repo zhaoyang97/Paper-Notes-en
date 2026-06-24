@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression
 description: >-
-  [ICLR 2026][Interpretability][KernelSHAP] This paper proposes PolySHAP, which improves the estimation accuracy of Shapley values by extending the linear approximation of KernelSHAP to higher-order polynomial regression to capture non-linear feature interactions. It theoretically proves that paired sampling is equivalent to second-order PolySHAP, providing the
+  [ICLR 2026][Interpretability][Shapley Values] This paper proposes PolySHAP, which improves the estimation accuracy of Shapley values by extending the linear approximation of KernelSHAP to higher-order polynomial regression to capture non-linear feature interactions. It theoretically proves that paired sampling is equivalent to second-order PolySHAP, providing the first explanation for the superior performance of the paired sampling heuristic.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - KernelSHAP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Shapley Values"
+  - "Explainable AI"
+  - "Polynomial Regression"
+  - "Feature Interactions"
+  - "KernelSHAP"
 date: 2026-05-08
-content_hash: 97c0504cf55f500a
+content_hash: 0d50f5e11b2cfd93
 ---
+
 # PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression
 
 **Conference**: ICLR 2026  
@@ -127,8 +132,8 @@ Evaluations across 15 different attribution games (tabular, image, language; $d$
 
 - [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
-- [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
 - [\[ICML 2026\] A Deep Learning Model of Mental Rotation Informed by Interactive VR Experiments](../../ICML2026/interpretability/a_deep_learning_model_of_mental_rotation_informed_by_interactive_vr_experiments.md)
+- [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
 - [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](../../ICML2026/interpretability/breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
 
 </div>

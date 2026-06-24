@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][Mixture-of-Experts] Addressing the issue where shoving item-IDs into an LLM causes collaborative signals and linguistic semantics to conflict, this paper proposes IDIOMoE: splitting the FFN of each pre-trained LLM block into a **text expert** and an **item expert**. Using static token-type gating to route tokens based on their type (item-
+  [ICLR2026][Recommender Systems][Recommendation Systems] Addressing the issue where shoving item-IDs into an LLM causes collaborative signals and linguistic semantics to conflict, this paper proposes IDIOMoE: splitting the FFN of each pre-trained LLM block into a **text expert** and an **item expert**. Using static token-type gating to route tokens based on their type (item-id tokens go to the item expert, others to the text expert), the model decouples "collaborative filterin…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - Mixture-of-Experts
-  - item-ID
+  - "ICLR2026"
+  - "Recommender Systems"
+  - "Recommendation Systems"
+  - "Large Language Models"
+  - "Mixture-of-Experts"
+  - "item-ID"
+  - "Knowledge Interference"
 date: 2026-05-08
-content_hash: e86612a05b720728
+content_hash: 00ad6526decd34e7
 ---
+
 # Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation
 
 **Conference**: ICLR2026  

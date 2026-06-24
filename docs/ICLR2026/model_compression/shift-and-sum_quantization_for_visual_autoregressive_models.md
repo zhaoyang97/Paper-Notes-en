@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Shift-and-Sum Quantization for Visual Autoregressive Models
 description: >-
-  [ICLR 2026][Model Compression][Shift-and-Sum] This paper proposes Shift-and-Sum quantization and calibration data resampling for Visual Autoregressive (VAR) models. The former specifically reduces errors in attention-value products for high-attention value tokens, while the latter aligns the VQ-VAE codebook sampling frequency in small calibration sets with the mod
+  [ICLR2026][Model Compression][Post-Training Quantization] This paper proposes Shift-and-Sum quantization and calibration data resampling for Visual Autoregressive (VAR) models. The former specifically reduces errors in attention-value products for high-attention value tokens, while the latter aligns the VQ-VAE codebook sampling frequency in small calibration sets with the model's prediction probabilities. The method consistently outperforms BRECQ and LiteVAR on low-bit VAR an…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Shift-and-Sum
+  - "ICLR2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Visual Autoregressive Models"
+  - "Shift-and-Sum"
+  - "Calibration Data Resampling"
+  - "Attention Quantization"
 date: 2026-05-08
-content_hash: b9e9cfbe20fe357f
+content_hash: 69a70b4239b26878
 ---
+
 # Shift-and-Sum Quantization for Visual Autoregressive Models
 
 **Conference**: ICLR2026  
@@ -187,10 +192,10 @@ Ablations on ImageNet (VAR-d16, 4/6 bit) show that both Shift-and-Sum and calibr
 ## Related Papers
 
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICLR 2026\] Tequila: Trapping-free Ternary Quantization for Large Language Models](tequila_trapping-free_ternary_quantization_for_large_language_models.md)
-- [\[ICLR 2026\] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models](kbvq-moe_klt-guided_svd_with_bias-corrected_vector_quantization_for_moe_large_la.md)
-- [\[ICLR 2026\] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models](qwha_quantization-aware_walsh-hadamard_adaptation_for_parameter-efficient_fine-t.md)
-- [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
+- [\[ICLR 2026\] Beyond Uniformity: Sample and Frequency Meta Weighting for Post-Training Quantization of Diffusion Models](beyond_uniformity_sample_and_frequency_meta_weighting_for_post-training_quantiza.md)
+- [\[CVPR 2026\] Progressive Supernet Training for Efficient Visual Autoregressive Modeling](../../CVPR2026/model_compression/progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)
+- [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](../../ICCV2025/model_compression/bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
+- [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
 
 </div>
 

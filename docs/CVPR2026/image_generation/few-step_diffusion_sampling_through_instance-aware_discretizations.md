@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Few-Step Diffusion Sampling Through Instance-Aware Discretizations
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] Addressing the sub-optimal issue of "sharing a single set of time-step discretizations for all samples" in diffusion/Flow Matching sampling, this paper proposes INDIS: training a lightweight network $\phi(\mathbf{x}_T, \mathbf{c})$ to generate instance-specific discretizations for each initial noise and condition. With
+  [CVPR 2026][Image Generation][Diffusion acceleration] Addressing the sub-optimal issue of "sharing a single set of time-step discretizations for all samples" in diffusion/Flow Matching sampling, this paper proposes INDIS: training a lightweight network $\phi(\mathbf{x}_T, \mathbf{c})$ to generate instance-specific discretizations for each initial noise and condition. With nearly zero inference overhead, it significantly reduces FID for 3~7 step sampling (e.g.…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion acceleration"
+  - "Time-step discretization"
+  - "Instance-adaptive"
+  - "Few-step sampling"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 846817c33148920d
+content_hash: 412dd34004b1fceb
 ---
+
 # Few-Step Diffusion Sampling Through Instance-Aware Discretizations
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Removing the three components observed via FID (FFHQ/LSUN/FLUX):
 
 ## Related Papers
 
+- [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
+- [\[CVPR 2026\] InverFill: One-Step Inversion for Enhanced Few-Step Diffusion Inpainting](inverfill_one-step_inversion_for_enhanced_few-step_diffusion_inpainting.md)
+- [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
-- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
-- [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
-- [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
 
 </div>
 

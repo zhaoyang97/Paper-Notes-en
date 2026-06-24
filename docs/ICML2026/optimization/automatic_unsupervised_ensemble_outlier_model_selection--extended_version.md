@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automatic Unsupervised Ensemble Outlier Model Selection–Extended Version
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] The MetaEns framework is proposed to adaptively and greedily construct compact, high-quality anomaly detection ensembles under unlabeled conditions. It works by predicting the marginal ensemble gain of candidate detectors through meta-learning, combined with a proxy objective function featuring diversity discounts and
+  [ICML2026][Optimization][Unsupervised Anomaly Detection] The MetaEns framework is proposed to adaptively and greedily construct compact, high-quality anomaly detection ensembles under unlabeled conditions. It works by predicting the marginal ensemble gain of candidate detectors through meta-learning, combined with a proxy objective function featuring diversity discounts and algorithm family risk regularization.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Unsupervised Anomaly Detection"
+  - "Ensemble Model Selection"
+  - "Meta-learning"
+  - "Submodular Optimization"
+  - "Adaptive Stopping"
 date: 2026-05-08
-content_hash: a566e87fc6caeb71
+content_hash: baf9bf2979eefef1
 ---
+
 # Automatic Unsupervised Ensemble Outlier Model Selection–Extended Version
 
 **Conference**: ICML2026  
@@ -144,10 +150,10 @@ MetaEns outperforms the strongest baseline ELECT Top-10 across all metrics, with
 ## Related Papers
 
 - [\[ICLR 2026\] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](../../ICLR2026/optimization/calm_co-evolution_of_algorithms_and_language_model_for_automatic_heuristic_desig.md)
-- [\[ICML 2026\] Sign Lock-In: Randomly Initialized Weight Signs Persist and Bottleneck Sub-Bit Model Compression](sign_lock-in_randomly_initialized_weight_signs_persist_and_bottleneck_sub-bit_mo.md)
 - [\[ICML 2026\] Minibatch Selection via Partition Matroid Constrained Gradient Matching](minibatch_selection_via_partition_matroid_constrained_gradient_matching.md)
+- [\[ICML 2026\] Sign Lock-In: Randomly Initialized Weight Signs Persist and Bottleneck Sub-Bit Model Compression](sign_lock-in_randomly_initialized_weight_signs_persist_and_bottleneck_sub-bit_mo.md)
+- [\[ICML 2026\] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning](utility-diversity_aware_online_batch_selection_for_llm_supervised_fine-tuning.md)
 - [\[ICML 2026\] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption](convex_basins_in_single-index_model_loss_landscapes_applications_to_robust_recov.md)
-- [\[ICML 2025\] Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation](../../ICML2025/optimization/sparse_causal_discovery_with_generative_intervention_for_unsupervised_graph_doma.md)
 
 </div>
 

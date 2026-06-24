@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] ReSplat couples a universal diffusion-based image restoration model and a feed-forward 3D Gaussian Splatting (3DGS) model into a self-guided closed loop. 3D Gaussian centers generated midway through diffusion sampling serve as "self-guidance" to achieve multi-view consistent restoration. The restored images are then fe
+  [ICLR 2026][3D Vision][Feed-forward Gaussian Splatting] ReSplat couples a universal diffusion-based image restoration model and a feed-forward 3D Gaussian Splatting (3DGS) model into a self-guided closed loop. 3D Gaussian centers generated midway through diffusion sampling serve as "self-guidance" to achieve multi-view consistent restoration. The restored images are then fed back into the GS model for scene reconstruction, enabling clearer and more robust novel view synthesis…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Feed-forward Gaussian Splatting"
+  - "Degradation-agnostic Restoration"
+  - "Residual Diffusion"
+  - "Multi-view Alignment"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 1fe2d9b189913925
+content_hash: 0636e742868d0516
 ---
+
 # ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion
 
 **Conference**: ICLR 2026  
@@ -122,6 +128,7 @@ Average NVS metrics across 5 degradations:
 - Value: ⭐⭐⭐⭐⭐ High utility for real-world fast reconstruction from degraded data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

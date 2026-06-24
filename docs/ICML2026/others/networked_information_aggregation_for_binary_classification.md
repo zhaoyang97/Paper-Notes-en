@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Networked Information Aggregation for Binary Classification
 description: >-
-  [ICML 2026][Others][vertical federated learning] This work extends the conclusion of Kearns-Roth-Ryu 2026—which states that linear regression agents on a DAG can approach global optimality by sequentially passing prediction columns—to binary classification. Under the $M$-coverage condition, each agent observes a subset of feature columns and sequentially forwards its
+  [ICML 2026][vertical federated learning] This work extends the conclusion of Kearns-Roth-Ryu 2026—which states that linear regression agents on a DAG can approach global optimality by sequentially passing prediction columns—to binary classification. Under the $M$-coverage condition, each agent observes a subset of feature columns and sequentially forwards its logits downstream, achieving global logistic regression optimality with an excess BCE loss of $O(M/\sqrt{D})$. Simulta…
 tags:
-  - ICML 2026
-  - Others
-  - vertical federated learning
+  - "ICML 2026"
+  - "vertical federated learning"
+  - "logistic regression"
+  - "DAG sequential learning"
+  - "Bregman divergence"
+  - "excess loss lower bound"
 date: 2026-05-08
-content_hash: 60175f84562961c0
+content_hash: 406888ab66bcdda7
 ---
+
 # Networked Information Aggregation for Binary Classification
 
 **Conference**: ICML 2026  

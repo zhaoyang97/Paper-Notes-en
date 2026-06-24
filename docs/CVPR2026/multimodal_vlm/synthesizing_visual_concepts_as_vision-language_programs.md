@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Synthesizing Visual Concepts as Vision-Language Programs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Treat the VLM as a "perception function" rather than a "reasoner" — let it extract structured symbolic descriptions from images, and then use program synthesis over a Domain-Specific Language (DSL) to search for an executable logical program that expresses visual rules. This approach consistently outperforms direct VLM
+  [CVPR 2026][Multimodal VLM][Visual-Language Programs] Treat the VLM as a "perception function" rather than a "reasoner" — let it extract structured symbolic descriptions from images, and then use program synthesis over a Domain-Specific Language (DSL) to search for an executable logical program that expresses visual rules. This approach consistently outperforms direct VLM prompting on inductive visual reasoning tasks, while producing programs that are naturally interpretable…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual-Language Programs"
+  - "neuro-symbolic reasoning"
+  - "program synthesis"
+  - "inductive visual reasoning"
+  - "Probabilistic Context-Free Grammar (PCFG)"
 date: 2026-05-08
-content_hash: 4119752bf1b1e97d
+content_hash: 04d5d7d151e17829
 ---
+
 # Synthesizing Visual Concepts as Vision-Language Programs
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,17 @@ Average gains reach up to +13.5%, with **smaller models benefiting the most**. T
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
+- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
+- [\[CVPR 2026\] Same or Not? Enhancing Visual Perception in Vision-Language Models](same_or_not_enhancing_visual_perception_in_vision-language_models.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)

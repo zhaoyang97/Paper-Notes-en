@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RAAS: LLM Agentic System Architecture Search with GRPO
 description: >-
-  [CVPR 2026][LLM Agent][Agentic Supernet] RAAS introduces the concept of "group relative evaluation" into agentic supernet architecture search: multiple candidate architectures compete on the **same problem** (CAO), with each architecture undergoing **multiple independent trials to calculate a trimmed mean** (MTAS). By using zero-centered relative advantage si
+  [CVPR 2026][LLM Agent][Multi-Agent Architecture Search] RAAS introduces the concept of "group relative evaluation" into agentic supernet architecture search: multiple candidate architectures compete on the **same problem** (CAO), with each architecture undergoing **multiple independent trials to calculate a trimmed mean** (MTAS). By using zero-centered relative advantage signals to update the generative distribution, it decouples "architecture quality" from "problem difficult…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Agentic Supernet
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multi-Agent Architecture Search"
+  - "Agentic Supernet"
+  - "Group Relative Policy Optimization"
+  - "Evaluation Stability"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a39267bb544be803
+content_hash: 8f9b43b2cb161fe5
 ---
+
 # RAAS: LLM Agentic System Architecture Search with GRPO
 
 **Conference**: CVPR 2026  
@@ -131,11 +135,11 @@ Ablations were performed by incrementally adding modules (Fig.5, values represen
 
 ## Related Papers
 
-- [\[CVPR 2026\] EpiAgent: An Agent-Centric System for Ancient Inscription Restoration](epiagent_agent_centric_system_for_ancient_inscription_restoration.md)
 - [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](../../ACL2026/llm_agent/magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
 - [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
-- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
+- [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](../../ICLR2026/llm_agent/an_information_theoretic_perspective_on_agentic_system_design.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](../../ACL2026/llm_agent/bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
+- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](../../ACL2026/llm_agent/robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 
 </div>
 

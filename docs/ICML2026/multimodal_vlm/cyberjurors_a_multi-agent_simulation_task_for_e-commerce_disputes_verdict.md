@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CyberJurors: A Multi-Agent Simulation Task for E-Commerce Disputes Verdict
 description: >-
-  [ICML 2026][Multimodal VLM][IV-CoT] The authors formalize the real-world crowdsourced jury mechanism of e-commerce platforms into the EDV (E-commerce Dispute Verdicts) task. They construct VerdictBench, the first multimodal benchmark containing 6,000 cases with ground-truth voting distributions from 17 jurors (text/images/video/multi-round). They propose
+  [ICML 2026][Multimodal VLM][E-commerce Dispute Verdict] The authors formalize the real-world crowdsourced jury mechanism of e-commerce platforms into the EDV (E-commerce Dispute Verdicts) task. They construct VerdictBench, the first multimodal benchmark containing 6,000 cases with ground-truth voting distributions from 17 jurors (text/images/video/multi-round). They propose CyberJurors, which uses a four-phase Individual Verdict Chain-of-Thought (IV-CoT) for fine-grained evid…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - IV-CoT
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "E-commerce Dispute Verdict"
+  - "Crowdsourced Jury"
+  - "Multi-agent Simulation"
+  - "IV-CoT"
+  - "Precedent Constraint"
 date: 2026-05-08
-content_hash: 8e54619588bc7323
+content_hash: 24830d099792db80
 ---
+
 # CyberJurors: A Multi-Agent Simulation Task for E-Commerce Disputes Verdict
 
 **Conference**: ICML 2026  
@@ -144,9 +149,9 @@ Incremental module activation on the validation set:
 
 ## Related Papers
 
+- [\[ICML 2026\] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning](task-aware_structured_memory_for_dynamic_multi-modal_in-context_learning.md)
 - [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](../../CVPR2026/multimodal_vlm/hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
 - [\[ACL 2026\] AFMRL: Attribute-Enhanced Fine-Grained Multi-Modal Representation Learning in E-commerce](../../ACL2026/multimodal_vlm/afmrl_attribute-enhanced_fine-grained_multi-modal_representation_learning_in_e-c.md)
-- [\[ICML 2026\] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning](task-aware_structured_memory_for_dynamic_multi-modal_in-context_learning.md)
 - [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](../../CVPR2026/multimodal_vlm/vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
 - [\[ACL 2026\] From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models](../../ACL2026/multimodal_vlm/from_heads_to_neurons_causal_attribution_and_steering_in_multi-task_vision-langu.md)
 

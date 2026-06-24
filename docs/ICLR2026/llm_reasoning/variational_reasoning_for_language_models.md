@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Variational Reasoning for Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][ELBO] This paper treats the "Chain-of-Thought" (CoT) as a latent variable and "correct answer" as an observation, deriving a training objective from ELBO using variational inference. It introduces a variational posterior with an "answer hint" to sample CoT trajectories more likely to be correct. The model is updated using th
+  [ICLR 2026][Reasoning][Variational Inference] This paper treats the "Chain-of-Thought" (CoT) as a latent variable and "correct answer" as an observation, deriving a training objective from ELBO using variational inference. It introduces a variational posterior with an "answer hint" to sample CoT trajectories more likely to be correct. The model is updated using the IWAE multi-trajectory tight bound with accuracy-based weights, while the posterior is updated using forward-KL t…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - ELBO
-  - IWAE
-  - Forward-KL
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Variational Inference"
+  - "Latent CoT"
+  - "ELBO"
+  - "IWAE"
+  - "Forward-KL"
 date: 2026-05-08
-content_hash: 0354ead718ab28c7
+content_hash: 9c3c41742ac3492c
 ---
+
 # Variational Reasoning for Language Models
 
 **Conference**: ICLR 2026  

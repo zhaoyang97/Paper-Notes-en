@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Kernel Conditional Tests from Learning-Theoretic Bounds
 description: >-
-  [NeurIPS 2025][Statistical Testing / Kernel Methods / Learning Theory][conditional hypothesis testing] A unified framework is proposed for converting confidence bounds of learning algorithms into conditional hypothesis t…
+  [NeurIPS 2025][Statistical Testing][conditional hypothesis testing] A unified framework is proposed for converting confidence bounds of learning algorithms into conditional hypothesis tests. Built upon kernel ridge regression, the framework yields conditional two-sample tests with finite-sample guarantees and, for the first time, supports non-i.i.d. data and online sampling scenarios.
 tags:
   - "NeurIPS 2025"
-  - "Statistical Testing / Kernel Methods / Learning Theory"
+  - "Statistical Testing"
+  - "Kernel Methods"
+  - "Learning Theory"
   - "conditional hypothesis testing"
   - "kernel ridge regression"
   - "confidence bounds"
   - "conditional distribution functionals"
   - "bootstrapping"
 date: 2026-05-08
-content_hash: 09b35c582f99877d
+content_hash: f94befe7b5715015
 ---
 
 # Kernel Conditional Tests from Learning-Theoretic Bounds
@@ -124,11 +126,11 @@ The standard KRR objective is $f_{D,\lambda} = \arg\min_f \sum_n \|y_n - f(x_n)\
 
 ## Related Papers
 
+- [\[ICML 2026\] Sequential Kernel-based Conditional Independence Testing via Adaptive Betting](../../ICML2026/learning_theory/sequential_kernel-based_conditional_independence_testing_via_adaptive_betting.md)
 - [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](../../ICML2026/learning_theory/conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](../../ICLR2026/learning_theory/decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
+- [\[ICLR 2026\] Subspace Kernel Learning on Tensor Sequences](../../ICLR2026/learning_theory/subspace_kernel_learning_on_tensor_sequences.md)
+- [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](../../ICLR2026/learning_theory/understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 
 </div>
 

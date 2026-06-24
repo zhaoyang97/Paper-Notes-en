@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification
 description: >-
-  [NeurIPS 2025][Object Detection][backdoor attack] This paper proposes DPSBA, a clean-label backdoor attack framework for graph classification that generates in-distribution trigger subgraphs via adversarial training whil…
+  [NeurIPS 2025][Object Detection][backdoor attack] This paper proposes DPSBA, a clean-label backdoor attack framework for graph classification that generates in-distribution trigger subgraphs via adversarial training while suppressing both structural and semantic anomalies, achieving high attack success rates with significantly improved stealthiness.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "adversarial training"
   - "GNN security"
 date: 2026-05-08
-content_hash: 70f68c3432f06547
+content_hash: a859a03bde0e0a02
 ---
 
 # Stealthy Yet Effective: Distribution-Preserving Backdoor Attacks on Graph Classification
@@ -152,11 +152,11 @@ Experiments are conducted on 4 TUDataset benchmarks with 3 graph classifiers (GC
 
 ## Related Papers
 
+- [\[CVPR 2025\] Test-Time Backdoor Detection for Object Detection Models](../../CVPR2025/object_detection/test-time_backdoor_detection_for_object_detection_models.md)
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
+- [\[CVPR 2025\] Distribution Prototype Diffusion Learning for Open-set Supervised Anomaly Detection](../../CVPR2025/object_detection/distribution_prototype_diffusion_learning_for_open-set_supervised_anomaly_detect.md)
 - [\[AAAI 2026\] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice](../../AAAI2026/object_detection/an_overall_real-time_mechanism_for_classification_and_quality_evaluation_of_rice.md)
-- [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
-- [\[AAAI 2026\] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection](../../AAAI2026/object_detection/towards_multiple_missing_values-resistant_unsupervised_graph_anomaly_detection.md)
-- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/object_detection/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
+- [\[CVPR 2026\] Distribution-Aligned Multimodal Fusion for Robust Object Detection](../../CVPR2026/object_detection/distribution-aligned_multimodal_fusion_for_robust_object_detection.md)
 
 </div>
 

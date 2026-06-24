@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Group-Normalized Implicit Value Optimization for Language Models
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] GN-IVO treats LLM generation as a step-by-step decision process. It constructs a normalized reward distribution from a group of candidate responses under the same prompt and then matches this distribution using the prefix probability ratio of the current policy relative to the old policy. This provides fine-grained val
+  [ICLR 2026][LLM Alignment][Reinforcement learning post-training] GN-IVO treats LLM generation as a step-by-step decision process. It constructs a normalized reward distribution from a group of candidate responses under the same prompt and then matches this distribution using the prefix probability ratio of the current policy relative to the old policy. This provides fine-grained value signals for tokens or reasoning steps without training an explicit critic or value network.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reinforcement learning post-training"
+  - "Implicit value function"
+  - "Group normalization"
+  - "Sequence-level credit assignment"
+  - "Critic-free optimization"
 date: 2026-05-08
-content_hash: bc51d1837d3fc7b3
+content_hash: 60ee918c24681253
 ---
+
 # Group-Normalized Implicit Value Optimization for Language Models
 
 **Conference**: ICLR 2026  

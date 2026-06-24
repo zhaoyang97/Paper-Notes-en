@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Echoes as Anchors: Probabilistic Costs and Attention Refocusing in LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Echo of Prompt] This paper reinterprets the spontaneous phenomenon of "repeating the prompt" at the beginning of the Chain of Thought (Echo of Prompt, EOP) in large reasoning models from a training byproduct to an intrinsic attention refocusing mechanism. By defining the "echo likelihood difference $\Delta L$" via a rejection sampling
+  [ICLR 2026][Reasoning][Echo of Prompt] This paper reinterprets the spontaneous phenomenon of "repeating the prompt" at the beginning of the Chain of Thought (Echo of Prompt, EOP) in large reasoning models from a training byproduct to an intrinsic attention refocusing mechanism. By defining the "echo likelihood difference $\Delta L$" via a rejection sampling framework to quantify probabilistic costs, the paper proposes two methods: the training-based ED-SFT and the training-fr…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Echo of Prompt
-  - Test-Time Compute
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Echo of Prompt"
+  - "Test-time Compute"
+  - "Attention Refocusing"
+  - "Rejection Sampling"
+  - "Chain of Thought"
 date: 2026-05-08
-content_hash: 0cbbde2bcdb6f552
+content_hash: 96d7e59faafd9ec0
 ---
+
 # Echoes as Anchors: Probabilistic Costs and Attention Refocusing in LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -119,10 +122,10 @@ Layer-wise attention (DeepSeek-8B, GSM8K, Correct $-$ Incorrect): Final layer an
 ## Related Papers
 
 - [\[ICLR 2026\] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning](frost_filtering_reasoning_outliers_with_attention_for_efficient_reasoning.md)
+- [\[ICLR 2026\] HATSolver: Learning Gröbner Bases with Hierarchical Attention Transformers](hatsolver_learning_gröbner_bases_with_hierarchical_attention_transformers.md)
 - [\[ICML 2026\] Attention Illuminates LLM Reasoning: The Preplan-and-Anchor Rhythm Enables Fine-Grained Policy Optimization](../../ICML2026/llm_reasoning/attention_illuminates_llm_reasoning_the_preplan-and-anchor_rhythm_enables_fine-g.md)
 - [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
-- [\[ICML 2026\] Stop When Further Reasoning Won't Help: Attention-State Adaptive Generation in Reasoning Models](../../ICML2026/llm_reasoning/stop_when_further_reasoning_wont_help_attention-state_adaptive_generation_in_rea.md)
-- [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](../../CVPR2026/llm_reasoning/appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
+- [\[NeurIPS 2025\] Cognitive Mirrors: Exploring the Diverse Functional Roles of Attention Heads in LLM Reasoning](../../NeurIPS2025/llm_reasoning/cognitive_mirrors_exploring_the_diverse_functional_roles_of_attention_heads_in_l.md)
 
 </div>
 

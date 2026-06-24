@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Unmasking Policies for Diffusion Language Models
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper explicitly models the decoding process of masked diffusion language models (dLLMs) as an MDP. Using GRPO, it trains a single-layer Transformer policy—comprising less than 0.01% of the base model's parameters and taking only token confidence as input—to adaptively decide which positions to unmask at each step
+  [ICML 2026 Oral Spotlight][Reinforcement Learning][dLLM Sampling] This paper explicitly models the decoding process of masked diffusion language models (dLLMs) as an MDP. Using GRPO, it trains a single-layer Transformer policy—comprising less than 0.01% of the base model's parameters and taking only token confidence as input—to adaptively decide which positions to unmask at each step. In the semi-AR setting, it matches manual heuristics like Fast-dLLM…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026 Oral Spotlight"
+  - "Reinforcement Learning"
+  - "dLLM Sampling"
+  - "Unmasking Policy"
+  - "GRPO"
+  - "Adaptive Computation"
+  - "Bernoulli Policy"
 date: 2026-05-08
-content_hash: a07faeb452e003f2
+content_hash: c6d964927ec496ce
 ---
+
 # Learning Unmasking Policies for Diffusion Language Models
 
 **Conference**: ICML 2026 Oral Spotlight  
@@ -130,8 +135,8 @@ Broadly, this line of work extends "Adaptive Computation" (Graves, Bengio, etc.)
 - [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 - [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
+- [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](../../ICLR2026/reinforcement_learning/spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
 - [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
-- [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/mmada_multimodal_large_diffusion_language_models.md)
 
 </div>
 

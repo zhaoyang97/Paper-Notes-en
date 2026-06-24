@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniRefiner: Teaching Pre-trained ViTs to Self-Dispose Dross via Contrastive Register
 description: >-
-  [CVPR 2026][Self-Supervised Learning][register token] UniRefiner systematically categorizes up to 40% of "spurious tokens" in the feature maps of large-scale pre-trained ViTs (including EVA-CLIP-8B and InternViT-6B) into three types. By using a multiplex detector to identify them and employing "contrastive registers" during LoRA self-distillation, it explicitly drives spu
+  [CVPR 2026][Self-Supervised Learning][ViT Feature Refinement] UniRefiner systematically categorizes up to 40% of "spurious tokens" in the feature maps of large-scale pre-trained ViTs (including EVA-CLIP-8B and InternViT-6B) into three types. By using a multiplex detector to identify them and employing "contrastive registers" during LoRA self-distillation, it explicitly drives spurious signals into register regions while retaining clean semantics in image regions. With only 5k…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - register token
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "ViT Feature Refinement"
+  - "Spurious Tokens"
+  - "Register Token"
+  - "Self-Distillation"
+  - "Dense Prediction"
 date: 2026-05-08
-content_hash: b2f6636fc7e8cbef
+content_hash: c00fc0c4fcf2d4cf
 ---
+
 # UniRefiner: Teaching Pre-trained ViTs to Self-Dispose Dross via Contrastive Register
 
 **Conference**: CVPR 2026  
@@ -134,10 +139,20 @@ Register Design Ablation (SigLIPv2-So, ADE20K):
 - Value: ⭐⭐⭐⭐⭐ (High utility for repurposing large-scale VLMs)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
+- [\[CVPR 2026\] Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach](teaching_dinov3_about_partial_3d_geometry_a_self-supervised_geometry-aware_appro.md)
+- [\[CVPR 2026\] In Pursuit of Pixel Supervision for Visual Pre-training](in_pursuit_of_pixel_supervision_for_visual_pre-training.md)
+- [\[ICLR 2026\] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning](../../ICLR2026/self_supervised/fly-cl_a_fly-inspired_framework_for_enhancing_efficient_decorrelation_and_reduce.md)
+- [\[CVPR 2026\] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG](reading_your_actions_learning_generalizable_action_representations_via_pre-train.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning](../../ICLR2026/self_supervised/fly-cl_a_fly-inspired_framework_for_enhancing_efficient_decorrelation_and_reduce.md)

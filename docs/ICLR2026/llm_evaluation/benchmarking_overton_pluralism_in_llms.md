@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Overton Pluralism in LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][benchmark] The authors propose the OvertonBench framework, formalizing Overton pluralism as a set coverage metric, OvertonScore, through a large-scale human study (1,208 representative US participants, 60 subjective questions, 8 LLMs). It is found that all current models score only between 0.35–0.41 (theoretical upper bound is 1.
+  [ICLR 2026][LLM Evaluation][Overton Pluralism] The authors propose the OvertonBench framework, formalizing Overton pluralism as a set coverage metric, OvertonScore, through a large-scale human study (1,208 representative US participants, 60 subjective questions, 8 LLMs). It is found that all current models score only between 0.35–0.41 (theoretical upper bound is 1.0), and a highly correlated (ρ=0.88) automated evaluation tool is constructed based on these findings.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Overton Pluralism"
+  - "LLM Bias"
+  - "benchmark"
+  - "Viewpoint Coverage"
+  - "Automated Evaluation"
 date: 2026-05-08
-content_hash: f4647d6eb1139a0a
+content_hash: f61e39713a61ffdc
 ---
+
 # Benchmarking Overton Pluralism in LLMs
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ Large-scale human studies are slow and expensive. This work uses Gemini 2.5 Pro 
 
 ## Related Papers
 
+- [\[ICLR 2026\] LogiConBench: Benchmarking Logical Consistencies of LLMs](logiconbench_benchmarking_logical_consistencies_of_llms.md)
 - [\[ICLR 2026\] PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing](pcb-bench_benchmarking_llms_for_printed_circuit_board_placement_and_routing.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](../../ACL2026/llm_evaluation/personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 - [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
 - [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](../../AAAI2026/llm_evaluation/benchmarking_llms_for_political_science_a_united_nations_perspective.md)
-- [\[ACL 2025\] WebWalker: Benchmarking LLMs in Web Traversal](../../ACL2025/llm_evaluation/webwalker_benchmarking_llms_in_web_traversal.md)
 
 </div>
 

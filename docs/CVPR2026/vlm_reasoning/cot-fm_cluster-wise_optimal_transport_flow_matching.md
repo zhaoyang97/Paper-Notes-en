@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] COT-FM: Cluster-wise Optimal Transport Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] Ours proposes COT-FM, a plug-and-play enhancement framework for Flow Matching. By clustering target samples, inverting the pre-trained model to obtain cluster-wise source distributions, and approximating optimal transport within each cluster, it significantly straightens the transport paths. This simultaneously acceler
+  [CVPR 2026][VLM Reasoning][Flow Matching] Ours proposes COT-FM, a plug-and-play enhancement framework for Flow Matching. By clustering target samples, inverting the pre-trained model to obtain cluster-wise source distributions, and approximating optimal transport within each cluster, it significantly straightens the transport paths. This simultaneously accelerates sampling and improves generation quality without modifying the model architecture.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Clustering"
+  - "Vector Field Straightening"
+  - "Accelerated Sampling"
 date: 2026-05-08
-content_hash: 61be3a31efb0d78a
+content_hash: 4c182cb3dce9c62e
 ---
+
 # COT-FM: Cluster-wise Optimal Transport Flow Matching
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ After Stage 1 constructs the cluster-wise vector fields, Stage 2 fine-tunes the 
 
 ## Related Papers
 
-- [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](../../ICCV2025/image_generation/contrastive_flow_matching.md)
-- [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](../../NeurIPS2025/image_generation/on_the_relation_between_rectified_flows_and_optimal_transport.md)
-- [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](../../ICML2026/image_generation/pareto-guided_optimal_transport_for_multi-reward_alignment.md)
-- [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
-- [\[CVPR 2026\] ChordEdit: One-Step Low-Energy Transport for Image Editing](chordedit_one-step_low-energy_transport_for_image_editing.md)
+- [\[ICML 2026\] Spectral-Progressive Thought Flow for Lightweight Multimodal Reasoning](../../ICML2026/vlm_reasoning/spectral-progressive_thought_flow_for_lightweight_multimodal_reasoning.md)
+- [\[CVPR 2026\] Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching](eliciting_complex_spatial_reasoning_in_mllms_through_wide-baseline_matching.md)
+- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
+- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
+- [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](../../ICLR2026/vlm_reasoning/test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
 
 </div>
 

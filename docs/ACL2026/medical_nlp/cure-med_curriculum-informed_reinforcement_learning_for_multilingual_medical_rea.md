@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning
 description: >-
-  [ACL 2026][Medical NLP][GRPO] The authors construct CureMed-Bench, a medical reasoning dataset covering 13 languages (including low-resource languages like Amharic, Yoruba, and Swahili) with 15,774 open-ended questions. They propose Cure-Med: a two-stage "code-switching aware SFT + curriculum GRPO" framework that jointly optimizes reasoning correct
+  [ACL 2026 Oral][Medical LLM][Multilingual Medical Reasoning] The authors construct CureMed-Bench, a medical reasoning dataset covering 13 languages (including low-resource languages like Amharic, Yoruba, and Swahili) with 15,774 open-ended questions. They propose Cure-Med: a two-stage "code-switching aware SFT + curriculum GRPO" framework that jointly optimizes reasoning correctness and language consistency. At 7B, it achieves a language consistency/logical accuracy of 85.21%…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - GRPO
+  - "ACL 2026 Oral"
+  - "Medical LLM"
+  - "Multilingual Medical Reasoning"
+  - "GRPO"
+  - "Curriculum Learning"
+  - "Code-switching SFT"
+  - "Low-resource Languages"
 date: 2026-05-08
-content_hash: 63149742415baa40
+content_hash: 0e7a2f0e14670426
 ---
+
 # CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning
 
 **Conference**: ACL 2026 Oral  
@@ -146,7 +151,7 @@ At 32B, performance reaches Consistency 94.96 / Accuracy 70.04, showing strong s
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -154,7 +159,7 @@ At 32B, performance reaches Consistency 94.96 / Accuracy 70.04, showing strong s
 - [\[ACL 2026\] From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning](from_answers_to_arguments_toward_trustworthy_clinical_diagnostic_reasoning_with_.md)
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
 - [\[ACL 2026\] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings](rads_reinforcement_learning-based_sample_selection_improves_transfer_learning_in.md)
-- [\[ACL 2026\] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](../../ICLR2026/medical_nlp/doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 
 </div>
 

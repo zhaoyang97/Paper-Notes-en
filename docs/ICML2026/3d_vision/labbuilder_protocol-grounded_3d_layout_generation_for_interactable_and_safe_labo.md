@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory
 description: >-
-  [ICML 2026][3D Vision][Paper Note] LabBuilder compiles free-text experimental descriptions into "asset-chemical protocols," then utilizes hierarchical generation combined with geometric/chemical multi-objective optimization and navigation repair to produce 3D chemistry laboratory layouts that are both visually plausible and executable for robotic experi
+  [ICML 2026][3D Vision][Laboratory scene generation] LabBuilder compiles free-text experimental descriptions into "asset-chemical protocols," then utilizes hierarchical generation combined with geometric/chemical multi-objective optimization and navigation repair to produce 3D chemistry laboratory layouts that are both visually plausible and executable for robotic experimental workflows.
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Laboratory scene generation"
+  - "protocol grounding"
+  - "chemical safety"
+  - "navigation reachability"
+  - "hierarchical layout"
 date: 2026-05-08
-content_hash: 12da9a512a910c27
+content_hash: b9265bc709374346
 ---
+
 # LabBuilder: Protocol-Grounded 3D Layout Generation for Interactable and Safe Laboratory
 
 **Conference**: ICML 2026  

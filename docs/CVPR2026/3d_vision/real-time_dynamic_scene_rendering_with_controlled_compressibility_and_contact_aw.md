@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Real-Time Dynamic Scene Rendering with Controlled Compressibility and Contact Awareness
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing artifacts at contact/occlusion boundaries caused by the common "incompressible, source-free" motion assumption in dynamic 3D Gaussian Splatting, this paper introduces a projection framework utilizing a "source-aware continuity equation + implicit surface contact constraints." By projecting network-predicted
+  [CVPR 2026][3D Vision][Dynamic Scene Rendering] Addressing artifacts at contact/occlusion boundaries caused by the common "incompressible, source-free" motion assumption in dynamic 3D Gaussian Splatting, this paper introduces a projection framework utilizing a "source-aware continuity equation + implicit surface contact constraints." By projecting network-predicted velocity fields onto a physically feasible set for supervised training, it achieves higher fidelity and real-tim…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Scene Rendering"
+  - "4D Gaussian Splatting"
+  - "Compressible Flow"
+  - "Contact Constraints"
+  - "Physical Priors"
 date: 2026-05-08
-content_hash: f18d97cdd9a60826
+content_hash: f0e464145eb4cd28
 ---
+
 # Real-Time Dynamic Scene Rendering with Controlled Compressibility and Contact Awareness
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ GP = Per-Gaussian primitive projection, LL = Local linear field projection.
 
 ## Related Papers
 
+- [\[CVPR 2026\] SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything](samosaic3d_modular_scene_assembly_for_real-time_3d_segment_anything.md)
 - [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
 - [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
 - [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
 - [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
-- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
 
 </div>
 

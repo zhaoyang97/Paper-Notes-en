@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generating Robust Portfolios of Optimization Models using Large Language Models
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] This paper proposes a lightweight, training-free algorithm that utilizes a single LLM to act simultaneously as a "stochastic generator" and a "scoring evaluator." By packaging candidate optimization models into a portfolio until the cumulative generation probability reaches $1-\alpha$, it theoretically proves that as l
+  [ICML 2026][AIGC Detection][Optimization Modeling] This paper proposes a lightweight, training-free algorithm that utilizes a single LLM to act simultaneously as a "stochastic generator" and a "scoring evaluator." By packaging candidate optimization models into a portfolio until the cumulative generation probability reaches $1-\alpha$, it theoretically proves that as long as **either** the generator or the evaluator aligns with human preferences…
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "Optimization Modeling"
+  - "Portfolio of Candidates"
+  - "LLM Evaluation"
+  - "Human-in-the-loop"
+  - "Coverage Guarantees"
 date: 2026-05-08
-content_hash: bc9ee8b7acbff905
+content_hash: a9ba122c64eb779f
 ---
+
 # Generating Robust Portfolios of Optimization Models using Large Language Models
 
 **Conference**: ICML 2026  
@@ -137,10 +143,10 @@ The entire process is **training-free, fine-tuning-free, and RLHF-free**. It rel
 ## Related Papers
 
 - [\[ICML 2026\] Deep Residual Injection for Full-Spectrum Forensic Signal Perception in Multimodal Large Language Models](deep_residual_injection_for_full-spectrum_forensic_signal_perception_in_multimod.md)
+- [\[ICLR 2026\] Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models](../../ICLR2026/aigc_detection/spherical_watermark_encryption-free_lossless_watermarking_for_diffusion_models.md)
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
 - [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
-- [\[ICML 2026\] Distributional Open-Ended Evaluation of LLM Cultural Value Alignment Based on Value Codebook](distributional_open-ended_evaluation_of_llm_cultural_value_alignment_based_on_va.md)
-- [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
+- [\[ICML 2026\] ForensicConcept: Transferable Forensic Concepts for AIGI Detection](forensicconcept_transferable_forensic_concepts_for_aigi_detection.md)
 
 </div>
 

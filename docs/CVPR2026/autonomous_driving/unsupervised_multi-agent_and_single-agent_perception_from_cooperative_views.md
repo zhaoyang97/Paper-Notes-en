@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unsupervised Multi-agent and Single-agent Perception from Cooperative Views
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] UMS utilizes the cooperative perspective brought by Vehicle-to-Vehicle (V2V) communication to develop a pseudo-label refinement framework (PPF Filtering + PPS Stabilizing + CCL Cross-view Consistency) without any manual annotation. Based on observations that "dense multi-vehicle point clouds make classification easier"
+  [CVPR 2026][Autonomous Driving][V2V Cooperative Perception] UMS utilizes the cooperative perspective brought by Vehicle-to-Vehicle (V2V) communication to develop a pseudo-label refinement framework (PPF Filtering + PPS Stabilizing + CCL Cross-view Consistency) without any manual annotation. Based on observations that "dense multi-vehicle point clouds make classification easier" and "cooperative views can supervise single-vehicle detection," it is the first to train both multi…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "V2V Cooperative Perception"
+  - "Unsupervised 3D Object Detection"
+  - "Pseudo-labels"
+  - "Point Cloud Density"
+  - "Cross-view Consistency"
 date: 2026-05-08
-content_hash: e3bac4928238661f
+content_hash: 557b56ef3c5bf4fd
 ---
+
 # Unsupervised Multi-agent and Single-agent Perception from Cooperative Views
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ PPF provides the largest single-step improvement (+40 points on OPV2V Multi). CC
 - Value: ⭐⭐⭐⭐ Unsupervised cooperative perception is highly relevant for deployment; PPF and PPS mechanisms are reusable tricks for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
 - [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
 - [\[CVPR 2026\] Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving](beyond_rule-based_agents_active_markov_games_for_realistic_multi-agent_interacti.md)
 - [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
 - [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
+- [\[ICML 2025\] Hybrid Quantum-Classical Multi-Agent Pathfinding](../../ICML2025/autonomous_driving/hybrid_quantum-classical_multi-agent_pathfinding.md)
 
 </div>
 

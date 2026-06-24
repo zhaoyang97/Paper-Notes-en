@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jailbreaking Multimodal Large Language Models using Multi-Clip Video
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper constructs MCV SafetyBench to evaluate the safety of video MLLMs, discovering that multi-clip and multi-context video inputs systematically increase attack success rates (ASR), while simple filtering of sampled image frames significantly mitigates these risks.
+  [ACL2026][Multimodal VLM][Multimodal Safety] This paper constructs MCV SafetyBench to evaluate the safety of video MLLMs, discovering that multi-clip and multi-context video inputs systematically increase attack success rates (ASR), while simple filtering of sampled image frames significantly mitigates these risks.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Multimodal Safety"
+  - "Video Input"
+  - "MLLM Evaluation"
+  - "Attack Success Rate"
+  - "Image Filtering Defense"
 date: 2026-05-08
-content_hash: 084f60f62c94ea85
+content_hash: b78ae3011ec3dbf9
 ---
+
 # Jailbreaking Multimodal Large Language Models using Multi-Clip Video
 
 **Conference**: ACL2026  
@@ -134,8 +140,8 @@ This paper focuses on evaluation and defense experiments and does not train new 
 
 - [\[ACL 2026\] DMN: A Compositional Framework for Jailbreaking Multimodal LLMs with Multi-Image Inputs](dmn_a_compositional_framework_for_jailbreaking_multimodal_llms_with_multi-image_.md)
 - [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](../../ICCV2025/multimodal_vlm/jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
-- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
 - [\[ACL 2026\] LaMI: Augmenting Large Language Models via Late Multi-Image Fusion](lami_augmenting_large_language_models_via_late_multi-image_fusion.md)
+- [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
 - [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
 
 </div>

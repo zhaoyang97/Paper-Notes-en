@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][cold-start] It is discovered that the reasoning performance of Multimodal LLMs is highly correlated with Visual Attention Scores (VAS) ($r=0.96$). The AVAR framework is proposed to enhance VAS through three stages: visual anchoring data synthesis, attention-guided training objectives, and visual anchoring reward shaping, achieving
+  [ICLR 2026][Reinforcement Learning][Visual Attention] It is discovered that the reasoning performance of Multimodal LLMs is highly correlated with Visual Attention Scores (VAS) ($r=0.96$). The AVAR framework is proposed to enhance VAS through three stages: visual anchoring data synthesis, attention-guided training objectives, and visual anchoring reward shaping, achieving an average improvement of 7% across 77 benchmarks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - cold-start
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Visual Attention"
+  - "Multimodal Reasoning"
+  - "cold-start"
+  - "Attention-Guided Training"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 80698774301b1bcc
+content_hash: 950387e074e67d52
 ---
+
 # From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning
 
 **Conference**: ICLR 2026  

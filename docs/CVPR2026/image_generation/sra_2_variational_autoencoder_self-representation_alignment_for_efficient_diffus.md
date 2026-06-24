@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training
 description: >-
-  [CVPR 2026][Image Generation][SiT] SRA 2 directly utilizes the existing SD-VAE encoding features from the first stage of latent diffusion as supervision signals. By using a lightweight MLP to project intermediate SiT features for alignment, it accelerates diffusion Transformer training convergence by up to $7\times$ with only a 4% increase in GFLOPs, wi
+  [CVPR 2026][Image Generation][Diffusion Transformer] SRA 2 directly utilizes the existing SD-VAE encoding features from the first stage of latent diffusion as supervision signals. By using a lightweight MLP to project intermediate SiT features for alignment, it accelerates diffusion Transformer training convergence by up to $7\times$ with only a 4% increase in GFLOPs, without introducing external representation encoders or maintaining a dual-model teacher.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - SiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Training Acceleration"
+  - "Representation Alignment"
+  - "VAE Features"
+  - "SiT"
 date: 2026-05-08
-content_hash: aa392bf21a1e3fa2
+content_hash: 9ab442c8fee3e0d7
 ---
+
 # SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training
 
 **Conference**: CVPR 2026  
@@ -144,15 +149,14 @@ SRA 2 reaches FID 1.52 / IS 316.2 at 800 epochs, comparable to REPA (1.42) in FI
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Pareto Variational Autoencoder](../../ICLR2026/image_generation/pareto_variational_autoencoder.md)
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](../../ICLR2026/image_generation/latent_diffusion_model_without_variational_autoencoder.md)
 - [\[CVPR 2026\] VA-π: Variational Policy Alignment for Pixel-Aware Autoregressive Generation](va-p_variational_policy_alignment_for_pixel-aware_autoregressive_generation.md)
-- [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
-- [\[CVPR 2026\] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models](when_local_rules_create_global_order_self-organized_representation_learning_for_.md)
-- [\[CVPR 2026\] ExpPortrait: Expressive Portrait Generation via Personalized Representation](expportrait_expressive_portrait_generation_via_personalized_representation.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 
 </div>
 

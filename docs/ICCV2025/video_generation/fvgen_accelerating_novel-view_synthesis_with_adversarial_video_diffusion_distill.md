@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation
 description: >-
-  [ICCV 2025][Video Generation][Novel-view synthesis] This paper proposes FVGen, a framework that distills a multi-step video diffusion model (VDM) into a student model requiring only 4 sampling steps. Through GAN-based st…
+  [ICCV 2025][Video Generation][Novel-view synthesis] This paper proposes FVGen, a framework that distills a multi-step video diffusion model (VDM) into a student model requiring only 4 sampling steps. Through GAN-based student initialization and softened reverse KL divergence optimization, FVGen reduces sampling time by over 90% while maintaining or even surpassing the visual quality of the teacher model.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "softened reverse KL divergence"
   - "few-step sampling"
 date: 2026-05-08
-content_hash: 9c9f0fac5d453436
+content_hash: d408b0838aede025
 ---
 
 # FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation
@@ -140,10 +140,10 @@ GAN stage: standard adversarial loss + two-timescale update rule. DMD stage: sof
 ## Related Papers
 
 - [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
+- [\[ECCV 2024\] SV3D: Novel Multi-view Synthesis and 3D Generation from a Single Image using Latent Video Diffusion](../../ECCV2024/video_generation/sv3d_novel_multi-view_synthesis_and_3d_generation_from_a_single_image_using_late.md)
+- [\[CVPR 2025\] StreetCrafter: Street View Synthesis with Controllable Video Diffusion Models](../../CVPR2025/video_generation/streetcrafter_street_view_synthesis_with_controllable_video_diffusion_models.md)
 - [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
 - [\[AAAI 2026\] Phased One-Step Adversarial Equilibrium for Video Diffusion Models](../../AAAI2026/video_generation/phased_one-step_adversarial_equilibrium_for_video_diffusion_models.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](../../CVPR2026/video_generation/moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
-- [\[ICCV 2025\] Causal-Entity Reflected Egocentric Traffic Accident Video Synthesis](causal-entity_reflected_egocentric_traffic_accident_video_synthesis.md)
 
 </div>
 

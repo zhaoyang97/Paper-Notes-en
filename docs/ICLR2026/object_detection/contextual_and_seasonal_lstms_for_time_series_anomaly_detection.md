@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Contextual and Seasonal LSTMs for Time Series Anomaly Detection
 description: >-
-  [ICLR 2026][Object Detection][time series anomaly detection] Aiming at "minor point anomalies" and "slowly rising anomalies" that are difficult for existing methods to detect in univariate time series, this paper proposes the CS-LSTMs dual-branch architecture. S-LSTM models periodic evolution in the frequency domain, while C-LSTM captures local trends in the time domain. Combine
+  [ICLR 2026][Object Detection][time series anomaly detection] Aiming at "minor point anomalies" and "slowly rising anomalies" that are difficult for existing methods to detect in univariate time series, this paper proposes the CS-LSTMs dual-branch architecture. S-LSTM models periodic evolution in the frequency domain, while C-LSTM captures local trends in the time domain. Combined with a wavelet noise decomposition strategy, it outperforms SOTA on four benchmarks with a 40% in…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - time series anomaly detection
-  - LSTM
-  - frequency domain
-  - noise decomposition
-  - univariate time series
+  - "ICLR 2026"
+  - "Object Detection"
+  - "time series anomaly detection"
+  - "LSTM"
+  - "frequency domain"
+  - "noise decomposition"
+  - "univariate time series"
 date: 2026-05-08
-content_hash: 90eaa8c955d7a57e
+content_hash: a4f6624fad14e308
 ---
+
 # Contextual and Seasonal LSTMs for Time Series Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -135,9 +136,9 @@ The mask is key to integrating the denoising strategy into the loss: the origina
 ## Related Papers
 
 - [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
-- [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](../../NeurIPS2025/object_detection/structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
+- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 - [\[ICML 2025\] KAN-AD: Time Series Anomaly Detection with Kolmogorov-Arnold Networks](../../ICML2025/object_detection/kan-ad_time_series_anomaly_detection_with_kolmogorov-arnold_networks.md)
 
 </div>

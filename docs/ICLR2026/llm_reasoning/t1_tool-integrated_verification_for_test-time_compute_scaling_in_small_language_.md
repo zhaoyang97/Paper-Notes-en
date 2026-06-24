@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][best-of-N] When small models serve as verifiers in test-time scaling, they often misjudge due to an inability to memorize arithmetic or facts. T1 introduces a two-stage verification process: first, an external tool like a code interpreter filters out candidates with calculation errors; then, a reward model scores the remaining on
+  [ICLR 2026][Reasoning][Test-time compute scaling] When small models serve as verifiers in test-time scaling, they often misjudge due to an inability to memorize arithmetic or facts. T1 introduces a two-stage verification process: first, an external tool like a code interpreter filters out candidates with calculation errors; then, a reward model scores the remaining ones. By outsourcing memory-intensive tasks to tools, Llama-3.2-1B outperforms Llama-3.1-8B on the MATH dataset.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - best-of-N
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time compute scaling"
+  - "Small Language Models"
+  - "Verifier"
+  - "Tool use"
+  - "Best-of-N"
 date: 2026-05-08
-content_hash: df2b6159ef175185
+content_hash: 35fb42cee46f1c5a
 ---
+
 # T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction
 description: >-
-  [ICCV 2025][Segmentation][Semi-supervised segmentation] This paper proposes ConformalSAM, a framework that leverages Conformal Prediction to calibrate the output uncertainty of the foundation segmentation model SEEM on t…
+  [ICCV 2025][Segmentation][Semi-supervised segmentation] This paper proposes ConformalSAM, a framework that leverages Conformal Prediction to calibrate the output uncertainty of the foundation segmentation model SEEM on target domains. Unreliable pixel labels are filtered out before serving as supervision signals for unlabeled data. Combined with a late-stage self-reliance training strategy, the framework achieves 81.21 mIoU on PASCAL VOC under the 1/16 labeled setting.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "uncertainty calibration"
   - "pseudo labels"
 date: 2026-05-08
-content_hash: 6090fc2774cfe5db
+content_hash: 6f710b5cc0e0121c
 ---
 
 # ConformalSAM: Unlocking the Potential of Foundational Segmentation Models in Semi-Supervised Semantic Segmentation with Conformal Prediction
@@ -157,10 +157,10 @@ ConformalSAM employs a two-stage training procedure:
 ## Related Papers
 
 - [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](../../AAAI2026/segmentation/s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
+- [\[CVPR 2026\] From Softmax to Dirichlet: Evidential Learning for Semi-supervised Semantic Segmentation](../../CVPR2026/segmentation/from_softmax_to_dirichlet_evidential_learning_for_semi-supervised_semantic_segme.md)
 - [\[ICCV 2025\] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation](know_your_attention_maps_class-specific_token_masking_for_weakly_supervised_sema.md)
 - [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](joint_self-supervised_video_alignment_and_action_segmentation.md)
-- [\[ICCV 2025\] Auto-Vocabulary Semantic Segmentation](auto-vocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss](prompt_guidance_and_human_proximal_perception_for_hot_prediction_with_regional_j.md)
+- [\[ECCV 2024\] LASS3D: Language-Assisted Semi-Supervised 3D Semantic Segmentation with Progressive Unreliable Data Exploitation](../../ECCV2024/segmentation/lass3d_language-assisted_semi-supervised_3d_semantic_segmentation_with_progressi.md)
 
 </div>
 

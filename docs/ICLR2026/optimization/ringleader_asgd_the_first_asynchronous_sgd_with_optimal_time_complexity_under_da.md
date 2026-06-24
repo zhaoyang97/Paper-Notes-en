@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ringleader ASGD: The First Asynchronous SGD with Optimal Time Complexity under Data Heterogeneity
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Ringleader ASGD utilizes a "gradient table + round-based buffering + exactly one update per worker per round" asynchronous mechanism to avoid training dominance by fast devices in non-convex stochastic optimization under arbitrary data heterogeneity. It achieves the optimal time complexity for parallel first-order stoc
+  [ICLR2026][Optimization][Asynchronous Optimization] Ringleader ASGD utilizes a "gradient table + round-based buffering + exactly one update per worker per round" asynchronous mechanism to avoid training dominance by fast devices in non-convex stochastic optimization under arbitrary data heterogeneity. It achieves the optimal time complexity for parallel first-order stochastic methods within a fixed computation time model.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Asynchronous Optimization"
+  - "Stochastic Gradient Descent"
+  - "Data Heterogeneity"
+  - "Time Complexity"
+  - "Delay Control"
 date: 2026-05-08
-content_hash: 722c8b6d60bc24d4
+content_hash: 3e6caae68d03de84
 ---
+
 # Ringleader ASGD: The First Asynchronous SGD with Optimal Time Complexity under Data Heterogeneity
 
 **Conference**: ICLR2026  
@@ -191,8 +197,8 @@ Rather than a traditional ablation table, the paper uses mechanism comparisons w
 
 - [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
 - [\[ICLR 2026\] Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods](birch_sgd_a_tree_graph_framework_for_local_and_asynchronous_sgd_methods.md)
-- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](../../AAAI2026/optimization/data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
+- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[AAAI 2026\] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack](../../AAAI2026/optimization/tackling_resource-constrained_and_data-heterogeneity_in_federated_learning_with_.md)
 
 </div>

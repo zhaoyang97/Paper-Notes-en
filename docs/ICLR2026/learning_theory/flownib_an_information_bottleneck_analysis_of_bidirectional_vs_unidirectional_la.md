@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] FlowNIB: An Information Bottleneck Analysis of Bidirectional vs. Unidirectional Language Models
 description: >-
-  [ICLR 2026][learning_theory][Information Bottleneck] This paper explains "why bidirectional language models understand context better than unidirectional models" through the lens of the Information Bottleneck—bidirectional layers retain more mutual information on both the input and label sides. It proposes FlowNIB, a lightweight posterior framework that aligns two mutual
+  [ICLR 2026][Learning Theory][Mutual Information] This paper explains "why bidirectional language models understand context better than unidirectional models" through the lens of the Information Bottleneck—bidirectional layers retain more mutual information on both the input and label sides. It proposes FlowNIB, a lightweight posterior framework that aligns two mutual information estimations onto a single optimization trajectory, making layer-wise and cross-model mutual inform…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Information Bottleneck
-  - Mutual Information
-  - MINE
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Information Bottleneck"
+  - "Language Model Representation Analysis"
+  - "Mutual Information"
+  - "MINE"
+  - "Bidirectional vs. Unidirectional"
+  - "Representation Quality"
+  - "Effective Dimension"
 date: 2026-05-08
-content_hash: 8fe6470311a87a8f
+content_hash: 5ed5ae981f48557d
 ---
+
 # FlowNIB: An Information Bottleneck Analysis of Bidirectional vs. Unidirectional Language Models
 
 **Conference**: ICLR 2026  
@@ -118,10 +123,10 @@ Regardless of directionality, using native single-token masking/generation predi
 ## Related Papers
 
 - [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](automata_learning_and_identification_of_the_support_of_language_models.md)
-- [\[ICLR 2026\] Unveiling the Basin-like Loss Landscape in Large Language Models](unveiling_the_basin-like_loss_landscape_in_large_language_models.md)
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
+- [\[ICLR 2026\] Unveiling the Basin-like Loss Landscape in Large Language Models](unveiling_the_basin-like_loss_landscape_in_large_language_models.md)
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
-- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 
 </div>
 

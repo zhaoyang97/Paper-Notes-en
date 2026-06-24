@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RMIT-ADM+S at the MMU-RAG NeurIPS 2025 Competition
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes the Routing-to-RAG (R2RAG) system, which employs an LLM-based query classifier to route simple queries to single-turn Vanill…
+  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes the Routing-to-RAG (R2RAG) system, which employs an LLM-based query classifier to route simple queries to single-turn Vanilla RAG and complex queries to iterative Vanilla Agent. All components are built upon two lightweight models — Qwen3-4B (unquantized) and Qwen3-Reranker-0.6B — running on a single consumer-grade GPU, and the system won the Best Dynamic Evaluation award in the op…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Lightweight RAG"
   - "Dynamic Evaluation"
 date: 2026-05-08
-content_hash: e18dcc4ae0be7ae4
+content_hash: 8ac7c20bcc55248a
 ---
 
 # RMIT-ADM+S at the MMU-RAG NeurIPS 2025 Competition
@@ -146,10 +146,10 @@ R2RAG won the **Best Dynamic Evaluation award in the open-source track** of the 
 
 ## Related Papers
 
+- [\[ACL 2025\] Empaths at SemEval-2025 Task 11: Retrieval-Augmented Approach to Perceived Emotions Prediction](../../ACL2025/information_retrieval/empaths_at_semeval-2025_task_11_retrieval-augmented_approach_to_perceived_emotio.md)
 - [\[NeurIPS 2025\] HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG](hifi-rag_hierarchical_content_filtering_and_two-pass_generation_for_open-domain_.md)
 - [\[NeurIPS 2025\] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG](secon-rag_a_two-stage_semantic_filtering_and_conflict-free_framework_for_trustwo.md)
-- [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](../../ACL2026/information_retrieval/is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
-- [\[CVPR 2026\] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](../../CVPR2026/information_retrieval/m4-rag_a_massive-scale_multilingual_multi-cultural_multimodal_rag.md)
+- [\[ACL 2025\] Contradiction Detection in RAG-Based Chatbots](../../ACL2025/information_retrieval/contradiction_detection_in_rag-based_chatbots.md)
 - [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality
 description: >-
-  [ICLR 2026][Model Compression][Mamba-2] SSDi8 is the first post-training quantization framework specifically designed for the Mamba-2 State Space Duality (SSD) module. By employing a "sparsity-aware restructuring + persistent INT8 state path + dimension-decomposition-aware channel quantization + mean correction" suite, it maintains near-FP16 accuracy under W
+  [ICLR 2026][Model Compression][Post-training Quantization] SSDi8 is the first post-training quantization framework specifically designed for the Mamba-2 State Space Duality (SSD) module. By employing a "sparsity-aware restructuring + persistent INT8 state path + dimension-decomposition-aware channel quantization + mean correction" suite, it maintains near-FP16 accuracy under W8A8 / W4A8 while accelerating SSD inference by up to 1.4×.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mamba-2
-  - INT8
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training Quantization"
+  - "Mamba-2"
+  - "State Space Duality"
+  - "INT8"
+  - "Channel Quantization"
 date: 2026-05-08
-content_hash: 637d1dc533e7a25d
+content_hash: bb4cb13440ac264e
 ---
+
 # SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality
 
 **Conference**: ICLR 2026  
@@ -162,11 +166,11 @@ Hybrid architecture Nemotron-H-8B-Reasoning (Table 7): Applying INT8 only to the
 
 ## Related Papers
 
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[CVPR 2025\] EfficientViM: Efficient Vision Mamba with Hidden State Mixer based State Space Duality](../../CVPR2025/model_compression/efficientvim_efficient_vision_mamba_with_hidden_state_mixer_based_state_space_du.md)
 - [\[ICLR 2026\] The Curious Case of In-Training Compression of State Space Models](the_curious_case_of_in-training_compression_of_state_space_models.md)
-- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
-- [\[ICLR 2026\] AIRE-Prune: Asymptotic Impulse-Response Energy for State Pruning in State Space Models](aire-prune_asymptotic_impulse-response_energy_for_state_pruning_in_state_space_m.md)
-- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICLR 2026\] Q&C: When Quantization Meets Cache in Efficient Generation](qc_when_quantization_meets_cache_in_efficient_generation.md)
 
 </div>
 

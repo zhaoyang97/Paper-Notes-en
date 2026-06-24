@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion Model] PRISM overturns the convention that "visual representations must be used to reconstruct visual images." The authors first prove via alignment metrics that fMRI signals most closely resemble the **textual space** of language models. Consequently, they project fMRI into a structured textual space as an intermediate bridg
+  [ICLR 2026][Medical Imaging][fMRI visual decoding] PRISM overturns the convention that "visual representations must be used to reconstruct visual images." The authors first prove via alignment metrics that fMRI signals most closely resemble the **textual space** of language models. Consequently, they project fMRI into a structured textual space as an intermediate bridge. By utilizing "automated search for brain-aligned keywords + object-centric diffusion" to synthesize images…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI visual decoding"
+  - "Textual latent space"
+  - "Object-centric generation"
+  - "Prompt search"
+  - "Diffusion models"
 date: 2026-05-08
-content_hash: c737c3215d9b28c9
+content_hash: 71b9be4d8ebdf67f
 ---
+
 # Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs
 description: >-
-  [AAAI 2026][Medical Imaging][LoRA fusion] This paper proposes qa-FLoRA, a query-adaptive LoRA fusion method that requires neither training data nor a training process. It dynamically determines fusion weights by computin…
+  [AAAI 2026][Medical Imaging][LoRA fusion] This paper proposes qa-FLoRA, a query-adaptive LoRA fusion method that requires neither training data nor a training process. It dynamically determines fusion weights by computing per-layer KL divergence between each adapter and the base model, achieving significant improvements over static fusion and training-free baselines across nine multilingual composite tasks.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "KL divergence"
   - "multi-domain adaptation"
 date: 2026-05-08
-content_hash: 74eed64e12c7dce2
+content_hash: 314ef9707d5e25e7
 ---
 
 # qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs
@@ -138,10 +138,10 @@ This paper systematically categorizes LoRA fusion methods into four paradigms: s
 ## Related Papers
 
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
-- [\[AAAI 2026\] Self-supervised Multiplex Consensus Mamba for General Image Fusion](self-supervised_multiplex_consensus_mamba_for_general_image_fusion.md)
 - [\[AAAI 2026\] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes](note2chat_improving_llms_for_multi-turn_clinical_history_taking_using_medical_no.md)
-- [\[ICML 2026\] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning](../../ICML2026/medical_imaging/dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning.md)
+- [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](../../CVPR2026/medical_imaging/mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
 - [\[AAAI 2026\] Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty](fine-tuned_llms_know_they_dont_know_a_parameter-efficient_approach_to_recovering.md)
+- [\[ICML 2026\] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning](../../ICML2026/medical_imaging/dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning.md)
 
 </div>
 

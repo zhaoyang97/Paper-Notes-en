@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] DVMap: Fine-Grained Pluralistic Value Alignment via High-Consensus Demographic-Value Mapping
 description: >-
-  [ACL 2026][LLM Reasoning][Demographic Archetype] DVMap shifts "pluralistic value alignment" from coarse-grained national labels to 11-dimensional demographic profiles. It filters 56,100 WVS data points through "high-consensus profiles" (Shannon entropy = 0), then trains Qwen3-8B using Structured CoT + GRPO (binary rewards). The model outperforms DeepSeek-v3.2 and mat
+  [ACL 2026][Reasoning][Pluralistic Value Alignment] DVMap shifts "pluralistic value alignment" from coarse-grained national labels to 11-dimensional demographic profiles. It filters 56,100 WVS data points through "high-consensus profiles" (Shannon entropy = 0), then trains Qwen3-8B using Structured CoT + GRPO (binary rewards). The model outperforms DeepSeek-v3.2 and matches GPT-4o in triple generalization tests across demographics, countries, and values.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Demographic Archetype
-  - Structured CoT
-  - GRPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "Pluralistic Value Alignment"
+  - "Demographic Archetype"
+  - "Structured CoT"
+  - "GRPO"
+  - "Cross-cultural Generalization"
 date: 2026-05-08
-content_hash: c29d7f202a29cd3b
+content_hash: fdfc8928ab608a1a
 ---
+
 # DVMap: Fine-Grained Pluralistic Value Alignment via High-Consensus Demographic-Value Mapping
 
 **Conference**: ACL 2026  
@@ -151,9 +154,9 @@ Based on Qwen3-4B, three sets of ablations highlight the core designs:
 
 - [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](../../AAAI2026/llm_reasoning/improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
 - [\[ACL 2026\] ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling](toolprm_fine-grained_inference_scaling_of_structured_outputs_for_function_callin.md)
-- [\[NeurIPS 2025\] Value-Guided Search for Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/llm_reasoning/value-guided_search_for_efficient_chain-of-thought_reasoning.md)
+- [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/llm_reasoning/polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
+- [\[ICML 2026\] Attention Illuminates LLM Reasoning: The Preplan-and-Anchor Rhythm Enables Fine-Grained Policy Optimization](../../ICML2026/llm_reasoning/attention_illuminates_llm_reasoning_the_preplan-and-anchor_rhythm_enables_fine-g.md)
 - [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](../../AAAI2026/llm_reasoning/jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
-- [\[NeurIPS 2025\] Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning](../../NeurIPS2025/llm_reasoning/trajectory_bellman_residual_minimization_a_simple_value-based_method_for_llm_rea.md)
 
 </div>
 

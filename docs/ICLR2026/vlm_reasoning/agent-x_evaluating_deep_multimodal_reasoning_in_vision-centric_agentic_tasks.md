@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks
 description: >-
-  [ICLR 2026][vlm_reasoning][benchmark] Agent-X is a large-scale benchmark for "vision-centric agents," covering 6 types of scenarios with 828 real-world multimodal tasks (image/multi-image/video/instructional text). It features a fine-grained "step-level + reasoning chain + outcome" three-mode evaluation system. Results indicate that even the strongest mode
+  [ICLR2026][VLM Reasoning][Vision-centric Agent] Agent-X is a large-scale benchmark for "vision-centric agents," covering 6 types of scenarios with 828 real-world multimodal tasks (image/multi-image/video/instructional text). It features a fine-grained "step-level + reasoning chain + outcome" three-mode evaluation system. Results indicate that even the strongest models from GPT, Gemini, and Qwen series achieve full-link success rates below 50%…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - benchmark
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Vision-centric Agent"
+  - "Deep Multimodal Reasoning"
+  - "Tool Calling"
+  - "Step-level Evaluation"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: dc02ae84735f31fa
+content_hash: 5e850d3722552e06
 ---
+
 # Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks
 
 **Conference**: ICLR2026  

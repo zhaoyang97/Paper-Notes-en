@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors propose MotionScale, a scalable 4D Gaussian Splatting framework. By leveraging cluster-based adaptive motion fields and progressive optimization strategies, it achieves high-fidelity reconstruction of appearance, geometry, and motion for large-scale dynamic scenes from monocular videos. It achieves a PSNR o
+  [CVPR 2026][3D Vision][4D Reconstruction] The authors propose MotionScale, a scalable 4D Gaussian Splatting framework. By leveraging cluster-based adaptive motion fields and progressive optimization strategies, it achieves high-fidelity reconstruction of appearance, geometry, and motion for large-scale dynamic scenes from monocular videos. It achieves a PSNR of 17.98 on DyCheck and reduces the 3D tracking EPE to 0.070, significantly outperforming existing methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "Gaussian Splatting"
+  - "Dynamic Scenes"
+  - "Motion Field"
+  - "Monocular Video"
 date: 2026-05-08
-content_hash: 2a271b6051b4ed74
+content_hash: 74b69c4f6bd7598b
 ---
+
 # MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,16 @@ Joint optimization on long sequences suffers from foreground-background interfer
 - **Value**: ⭐⭐⭐⭐ Advances the SOTA in monocular 4D reconstruction with a scalable motion design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
 - [\[CVPR 2026\] MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes](morgs_efficient_per-gaussian_motion_reasoning_for_streamable_dynamic_3d_scenes.md)
 - [\[CVPR 2026\] Velox: Learning Representations of 4D Geometry and Appearance](velox_learning_representations_of_4d_geometry_and_appearance.md)
 - [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
 - [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
 
 </div>
 

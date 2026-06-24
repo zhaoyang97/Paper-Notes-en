@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve
 description: >-
-  [NeurIPS 2025][Multi-Agent][multi-agent collaboration] This paper proposes the LessonL framework, enabling multiple small LLM agents to reflect on both successful and failed cases through mutually shared "lessons…
+  [NeurIPS 2025][Multi-Agent][multi-agent collaboration] This paper proposes the LessonL framework, enabling multiple small LLM agents to reflect on both successful and failed cases through mutually shared "lessons," collaboratively optimizing code performance. A combination of three 7B–14B models achieves code optimization results on par with GPT-4o and approaching o3.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "mutual learning"
   - "performance optimization"
 date: 2026-05-08
-content_hash: c44bbe549bc8d280
+content_hash: 7ad9d5a30d21be97
 ---
 
 # Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve
@@ -132,11 +132,11 @@ The core loop of LessonL: initial solution generation → lesson extraction → 
 
 ## Related Papers
 
-- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
-- [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](../../AAAI2026/multi_agent/shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
-- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
-- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+- [\[ICLR 2026\] AI-for-Science Low-code Platform with Bayesian Adversarial Multi-Agent Framework](../../ICLR2026/multi_agent/ai-for-science_low-code_platform_with_bayesian_adversarial_multi-agent_framework.md)
+- [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
 - [\[NeurIPS 2025\] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization](rd-agent-quant_a_multi-agent_framework_for_data-centric_factors_and_model_joint_.md)
+- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
+- [\[ICLR 2026\] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](../../ICLR2026/multi_agent/graphplanner_graph_memory-augmented_agentic_routing_for_multi-agent_llms.md)
 
 </div>
 

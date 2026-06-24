@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Newton Method Revisited: Global Convergence Rates up to $O(1/k^3)$ for Stepsize Schedules and Linesearch Procedures
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper re-analyzes Newton's method with stepsize from the unconventional perspective of "Hölder continuity of the third derivative." It proposes a family of explicitly computable stepsize schedules (RN), pushing the global convergence rate of the classical Newton method from $O(1/k^2)$ to $O(1/k^3)$. It also provid
+  [ICLR 2026][Optimization][Newton Method] This paper re-analyzes Newton's method with stepsize from the unconventional perspective of "Hölder continuity of the third derivative." It proposes a family of explicitly computable stepsize schedules (RN), pushing the global convergence rate of the classical Newton method from $O(1/k^2)$ to $O(1/k^3)$. It also provides linesearch/backtracking versions (GRLS, UN) that do not require prior knowledge of smoothness constants and…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Newton Method"
+  - "Second-order Optimization"
+  - "Global Convergence Rate"
+  - "Stepsize Schedule"
+  - "Linesearch"
+  - "Hölder Continuity"
+  - "Local Hessian Norm"
 date: 2026-05-08
-content_hash: cd6731e01472ec7a
+content_hash: 8e22b938f68ca38b
 ---
+
 # Newton Method Revisited: Global Convergence Rates up to $O(1/k^3)$ for Stepsize Schedules and Linesearch Procedures
 
 **Conference**: ICLR 2026  

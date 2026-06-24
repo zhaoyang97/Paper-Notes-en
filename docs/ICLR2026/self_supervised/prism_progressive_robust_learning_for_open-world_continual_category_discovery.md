@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: Progressive Robust Learning for Open-World Continual Category Discovery
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] PRISM proposes "Open-World Continual Category Discovery" (OW-CCD), a more realistic setting where data streams contain both new categories and domain shifts. By utilizing a "High-frequency Categorical Shunting + Sparse Assignment Matching + Invariant Knowledge Transfer" toolkit, it consistently achieves new CCD SOTA on
+  [ICLR 2026][Self-Supervised Learning][Continual Category Discovery] PRISM proposes "Open-World Continual Category Discovery" (OW-CCD), a more realistic setting where data streams contain both new categories and domain shifts. By utilizing a "High-frequency Categorical Shunting + Sparse Assignment Matching + Invariant Knowledge Transfer" toolkit, it consistently achieves new CCD SOTA on SSB-C and DomainNet (with a 15.1% gain on the clean domain of CUB-C).
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Category Discovery"
+  - "Open-world"
+  - "Domain Shift"
+  - "High-frequency Spectrum"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 005383f84d4e8126
+content_hash: a0e50d60ebabb92b
 ---
+
 # PRISM: Progressive Robust Learning for Open-World Continual Category Discovery
 
 **Conference**: ICLR 2026  
@@ -134,10 +140,10 @@ Shunting strategy comparison: HCS (60.9/39.2) outperforms original image (55.0/2
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond the Static World: Continual Category Discovery under Visual Drift](../../CVPR2026/self_supervised/beyond_the_static_world_continual_category_discovery_under_visual_drift.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
 - [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](../../CVPR2026/self_supervised/decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
+- [\[ICLR 2026\] Uncover Underlying Correspondence for Robust Multi-view Clustering](uncover_underlying_correspondence_for_robust_multi-view_clustering.md)
 - [\[ECCV 2024\] PromptCCD: Learning Gaussian Mixture Prompt Pool for Continual Category Discovery](../../ECCV2024/self_supervised/promptccd_learning_gaussian_mixture_prompt_pool_for_continual_category_discovery.md)
-- [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](../../CVPR2026/self_supervised/seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
-- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
 
 </div>
 

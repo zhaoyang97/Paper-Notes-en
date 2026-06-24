@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The ARM-FM framework is proposed to automatically generate Language-Aligned Reward Machines (LARM) from natural language task descriptions using foundation models (e.g., GPT-4o). These include automata structures, executable label functions, and natural language descriptions for each state. This provides compositional
+  [ICLR 2026][Reinforcement Learning][Reward Machines] The ARM-FM framework is proposed to automatically generate Language-Aligned Reward Machines (LARM) from natural language task descriptions using foundation models (e.g., GPT-4o). These include automata structures, executable label functions, and natural language descriptions for each state. This provides compositional dense reward signals for RL agents, solving sparse-reward long-horizon tasks in environments like MiniGrid…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reward Machines"
+  - "Foundation Models"
+  - "Compositional RL"
+  - "Language-Aligned Automata"
+  - "Zero-Shot Generalization"
 date: 2026-05-08
-content_hash: cf70b456fadff082
+content_hash: 362bc1a1fbfa076a
 ---
+
 # ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -133,7 +139,7 @@ In a continuous skill space, compositional generalization becomes a natural bypr
 - [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
 - [\[ICLR 2026\] 3D-aware Disentangled Representation for Compositional Reinforcement Learning](3d-aware_disentangled_representation_for_compositional_reinforcement_learning.md)
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](optimistic_task_inference_behavior_models.md)
-- [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
+- [\[ICLR 2026\] Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics](zero-shot_adaptation_of_behavioral_foundation_models_to_unseen_dynamics.md)
 
 </div>
 

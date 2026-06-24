@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Interpreto: An Explainability Library for Transformers
 description: >-
-  [ACL 2026][Interpretability][attribution] Interpreto is an open-source Python interpretability library for HuggingFace language models that unifies token/word/sentence attribution with activation-level concept explanations under a single API, offering demos, tutorials, metrics, and end-to-end concept explanation pipelines.
+  [ACL2026][Interpretability][Transformer interpretability] Interpreto is an open-source Python interpretability library for HuggingFace language models that unifies token/word/sentence attribution with activation-level concept explanations under a single API, offering demos, tutorials, metrics, and end-to-end concept explanation pipelines.
 tags:
-  - ACL 2026
-  - Interpretability
-  - attribution
-  - concept-based explanation
-  - HuggingFace
+  - "ACL2026"
+  - "Interpretability"
+  - "Transformer interpretability"
+  - "attribution"
+  - "concept-based explanation"
+  - "HuggingFace"
+  - "mechanistic interpretability"
 date: 2026-05-08
-content_hash: 78e812309c639ed6
+content_hash: 6ffd05d360f017a0
 ---
+
 # Interpreto: An Explainability Library for Transformers
 
 **Conference**: ACL2026  
@@ -136,15 +139,15 @@ In the attribution library comparison, Interpreto is the only library listed tha
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning for Highly Faithful Explainability](../../ICLR2026/interpretability/learning_for_highly_faithful_explainability.md)
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](../../ICLR2026/interpretability/bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
-- [\[ICML 2026\] Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement](../../ICML2026/interpretability/cognitive_fatigue_in_autoregressive_transformers_formalization_and_measurement.md)
-- [\[ACL 2025\] Normalized AOPC: Fixing Misleading Faithfulness Metrics for Feature Attribution Explainability](../../ACL2025/interpretability/normalized_aopc_faithfulness_metrics.md)
+- [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](../../ICLR2026/interpretability/temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
 - [\[CVPR 2026\] Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings](../../CVPR2026/interpretability/inside-out_measuring_generalization_in_vision_transformers_through_inner_working.md)
-- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](../../NeurIPS2025/interpretability/nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
+- [\[ICLR 2026\] Decoupling Positional and Symbolic Attention in Transformers](../../ICLR2026/interpretability/decoupling_positional_and_symbolic_attention_in_transformers.md)
 
 </div>
 

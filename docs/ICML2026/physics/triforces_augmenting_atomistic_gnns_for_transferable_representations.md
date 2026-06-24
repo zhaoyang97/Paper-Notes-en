@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TriForces: Augmenting Atomistic GNNs for Transferable Representations
 description: >-
-  [ICML 2026][Physics & Scientific Computing][MLIP] TriForces decomposes atomistic graph neural networks into three parallel streams—"Composition-Structure-Interaction"—and overlays multi-objective self-supervised pre-training (LeJEPA + Denoising + Masking). This ensures that MLIPs are more robust in few-shot transfer, cross-domain fine-tuning, and similar structure ret
+  [ICML 2026][Physics & Scientific Computing][MLIP] TriForces decomposes atomistic graph neural networks into three parallel streams—"Composition-Structure-Interaction"—and overlays multi-objective self-supervised pre-training (LeJEPA + Denoising + Masking). This ensures that MLIPs are more robust in few-shot transfer, cross-domain fine-tuning, and similar structure retrieval compared to single-stream baselines.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - MLIP
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "MLIP"
+  - "Self-supervised Pre-training"
+  - "Three-stream Architecture"
+  - "SOAP Descriptors"
+  - "Transfer Learning"
 date: 2026-05-08
-content_hash: 545af3ef61cf654d
+content_hash: 0a9e6a26148e2adb
 ---
+
 # TriForces: Augmenting Atomistic GNNs for Transferable Representations
 
 **Conference**: ICML 2026  
@@ -143,11 +148,11 @@ TriForces achieved the best overall results in 6 out of 8 tasks using purely sel
 
 ## Related Papers
 
-- [\[ICLR 2026\] Augmenting Representations with Scientific Papers](../../ICLR2026/physics/augmenting_representations_with_scientific_papers.md)
 - [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
+- [\[ICLR 2026\] Towards a Transferable Acceleration Method for Density Functional Theory](../../ICLR2026/physics/towards_a_transferable_acceleration_method_for_density_functional_theory.md)
 - [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](../../AAAI2026/physics/learning_fair_representations_with_kolmogorov-arnold_networks.md)
-- [\[ICML 2026\] PINNfluence: Interpreting PINNs Through Influence Functions](pinnfluence_interpreting_pinns_through_influence_functions.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
+- [\[ICLR 2026\] PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation](../../ICLR2026/physics/pro-mof_policy_optimization_with_universal_atomistic_models_for_controllable_mof.md)
+- [\[ICML 2025\] The Dark Side of the Forces: Assessing Non-Conservative Force Models for Atomistic Machine Learning](../../ICML2025/physics/the_dark_side_of_the_forces_assessing_non-conservative_force_models_for_atomisti.md)
 
 </div>
 

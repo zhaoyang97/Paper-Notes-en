@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling
 description: >-
-  [CVPR 2026][Others][learngene] BoT treats neural network weights as "continuous signals," where models of different sizes are simply discretized versions of the same signal at different resolutions. By applying 3D Discrete Wavelet Transform (DWT) for downsampling to achieve Large-to-Small (L2S) transfer and Inverse DWT (IDWT) with zero-padded high f
+  [CVPR 2026][Model Compression][Cross-architecture initialization] BoT treats neural network weights as "continuous signals," where models of different sizes are simply discretized versions of the same signal at different resolutions. By applying 3D Discrete Wavelet Transform (DWT) for downsampling to achieve Large-to-Small (L2S) transfer and Inverse DWT (IDWT) with zero-padded high frequencies for upsampling to achieve Small-to-Large (S2L) transfer…
 tags:
-  - CVPR 2026
-  - Others
-  - learngene
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Cross-architecture initialization"
+  - "Wavelet Transform"
+  - "learngene"
+  - "Model expansion"
 date: 2026-05-08
-content_hash: d8bf71b67a80d1e3
+content_hash: ed0d3c96bcaa1d11
 ---
+
 # A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling
 
 **Conference**: CVPR 2026  
@@ -161,11 +164,11 @@ Evaluating validation loss after fixed steps for various wavelet bases.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
-- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
-- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
-- [\[CVPR 2026\] Bidirectional Normalizing Flow: From Data to Noise and Back](bidirectional_normalizing_flow_from_data_to_noise_and_back.md)
-- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
+- [\[CVPR 2026\] OneSparse: A Unified Framework for Sparse Activation Layers in Vision Models](onesparse_a_unified_framework_for_sparse_activation_layers_in_vision_models.md)
+- [\[CVPR 2026\] WPT: World-to-Policy Transfer via Online World Model Distillation](wpt_world-to-policy_transfer_via_online_world_model_distillation.md)
+- [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
+- [\[CVPR 2026\] Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)
+- [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](../../ICLR2026/model_compression/odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reconciling Visual Perception and Generation in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] GenRep performs discriminative perception and generative modeling simultaneously within a single diffusion model. It uses Monte Carlo methods to distill distribution knowledge from the diffusion model to perception tasks and conversely utilizes high-level semantics learned by perception to guide the generative denoisin
+  [ICLR 2026][Image Generation][Diffusion Models] GenRep performs discriminative perception and generative modeling simultaneously within a single diffusion model. It uses Monte Carlo methods to distill distribution knowledge from the diffusion model to perception tasks and conversely utilizes high-level semantics learned by perception to guide the generative denoising process. By employing gradient alignment to coordinate the two objectives, GenRep achieves leading performance…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Unified Perception and Generation"
+  - "Monte Carlo Approximation"
+  - "Gradient Alignment"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: 048eb2f574ac7c97
+content_hash: b6ceffb359d8546f
 ---
+
 # Reconciling Visual Perception and Generation in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -143,8 +148,8 @@ Notably, while previous diffusion perception methods often sacrificed generation
 - [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](../../CVPR2026/image_generation/unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
 - [\[ICLR 2026\] Next Visual Granularity Generation](next_visual_granularity_generation.md)
 - [\[ICLR 2026\] Product of Experts for Visual Generation](product_of_experts_for_visual_generation.md)
-- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](../../ICML2026/image_generation/stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
 - [\[ICLR 2026\] VMDiff: Visual Mixing Diffusion for Limitless Cross-Object Synthesis](vmdiff_visual_mixing_diffusion_for_limitless_cross-object_synthesis.md)
+- [\[ICLR 2026\] Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models](synthetic_history_evaluating_visual_representations_of_the_past_in_diffusion_mod.md)
 
 </div>
 

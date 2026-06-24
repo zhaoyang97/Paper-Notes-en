@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Multimodal RAG] This paper proposes a dual-component framework (Windsock + DANCE) to address three core challenges in multimodal RAG: the Windsock module adaptively determines…
+  [NeurIPS 2025][Multimodal VLM][Multimodal RAG] This paper proposes a dual-component framework (Windsock + DANCE) to address three core challenges in multimodal RAG: the Windsock module adaptively determines **when to retrieve** and **which modality to retrieve** (text/image/none) based on the query; the DANCE instruction fine-tuning strategy improves **how to utilize** retrieved information by dynamically selecting the model's weakest modality for noise-robust training. The o…
 tags:
   - "NeurIPS 2025"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "Multimodal RAG"
   - "Adaptive Retrieval"
   - "Modality Selection"
   - "Noise-Robust Training"
   - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: 5a849115fd9e8bd0
+content_hash: a83133d63fae4260
 ---
 
 # Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation
@@ -53,25 +53,25 @@ The complete pipeline consists of three core components:
 1. **Windsock — Query-Aware Adaptive Retrieval Decision Maker**:
 
    Built on a Flan-T5-Small backbone, Windsock implements the following three-way classification:
-   $$c = \mathcal{W}(Q) \in \{\text{NA}, \text{Visual}, \text{Textual}\}$$
+    $c = \mathcal{W}(Q) \in \{\text{NA}, \text{Visual}, \text{Textual}\}$
 
    The corresponding strategy is executed based on the classification result:
-   $$\begin{cases} r^\varnothing = \mathcal{G}(Q, \varnothing), & \text{if } c = \text{NA} \\ r^V = \mathcal{G}(Q, \mathcal{R}(Q, \mathbb{D}^I)), & \text{if } c = \text{Visual} \\ r^T = \mathcal{G}(Q, \mathcal{R}(Q, \mathbb{D}^T)), & \text{if } c = \text{Textual} \end{cases}$$
+    $\begin{cases} r^\varnothing = \mathcal{G}(Q, \varnothing), & \text{if } c = \text{NA} \\ r^V = \mathcal{G}(Q, \mathcal{R}(Q, \mathbb{D}^I)), & \text{if } c = \text{Visual} \\ r^T = \mathcal{G}(Q, \mathcal{R}(Q, \mathbb{D}^T)), & \text{if } c = \text{Textual} \end{cases}$
 
    Design advantages: (a) skipping unnecessary retrievals reduces overhead and noise; (b) selecting the most appropriate modality improves information quality; (c) modular design enables **plug-and-play** integration with arbitrary MLLMs. Experiments show that Windsock adds only 10.25 ms (1.83%) of inference overhead.
 
 2. **Self-Evaluation Training Data Construction** (no GPT-4 annotation required):
 
    For each QA pair $\{Q, A\}$, the MLLM generates answers under three strategies (no retrieval / visual retrieval / textual retrieval) and scores each using downstream task metrics (e.g., F1):
-   $$s^\varnothing = \epsilon(r^\varnothing, A), \quad s^I = \epsilon(r^I, A), \quad s^T = \epsilon(r^T, A)$$
-   $$c^* = \arg\max_c(s^\varnothing, s^I, s^T)$$
+    $s^\varnothing = \epsilon(r^\varnothing, A), \quad s^I = \epsilon(r^I, A), \quad s^T = \epsilon(r^T, A)$
+    $c^* = \arg\max_c(s^\varnothing, s^I, s^T)$
 
    The optimal strategy $c^*$ serves as the training label for Windsock. This approach leverages the MLLM's own capabilities to evaluate different strategies without external annotation. It also identifies cases where retrieval is harmful (when $s^\varnothing > \max(s^I, s^T)$).
 
 3. **DANCE — Dynamic Noise-Resistant Instruction Fine-Tuning**:
 
    Core Idea: Rather than injecting noise randomly, DANCE intelligently identifies the model's **weakest modality** for targeted training. Specifically, for each sample, the modality on which the MLLM performs worst is selected:
-   $$\arg\min_M (s^I, s^T) \in \{I, T\}$$
+    $\arg\min_M (s^I, s^T) \in \{I, T\}$
 
    Retrieved results from this modality are highly likely to contain noise or irrelevant information. These "hard samples" are used to construct instruction fine-tuning data: $\{Q, \mathcal{R}(Q, \mathbb{D}^M), A\}$, and the model is trained via standard instruction tuning to extract useful information from noisy contexts.
 
@@ -155,10 +155,10 @@ The complete pipeline consists of three core components:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
-- [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
-- [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
-- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
-- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/information_retrieval/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](../../ACL2026/multimodal_vlm/universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/multimodal_vlm/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[CVPR 2025\] RAP: Retrieval-Augmented Personalization for Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/rap_retrieval-augmented_personalization_for_multimodal_large_language_models.md)
+- [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](../../ICLR2026/multimodal_vlm/rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
 
 </div>
 

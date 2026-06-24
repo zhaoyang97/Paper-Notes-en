@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] CARL: Camera-Agnostic Representation Learning for Spectral Image Analysis
 description: >-
-  [ICLR 2026][Self-Supervised Learning][I-JEPA] CARL uses "wavelength position encoding + self-attention-cross-attention spectral encoder" to distill spectral images with arbitrary channel counts (RGB/MSI/HSI) into camera-agnostic feature representations. Combined with a feature-level spatio-spectral self-supervised strategy (CARL-SSL), it achieves cross-camera spat
+  [ICLR 2026][Self-Supervised Learning][Spectral imaging] CARL uses "wavelength position encoding + self-attention-cross-attention spectral encoder" to distill spectral images with arbitrary channel counts (RGB/MSI/HSI) into camera-agnostic feature representations. Combined with a feature-level spatio-spectral self-supervised strategy (CARL-SSL), it achieves cross-camera spatio-spectral joint representation learning for the first time, outperforming camera-specific and channel-…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - I-JEPA
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Spectral imaging"
+  - "camera-agnostic representation"
+  - "wavelength position encoding"
+  - "self-supervised pre-training"
+  - "I-JEPA"
+  - "cross-domain generalization"
 date: 2026-05-08
-content_hash: cdb6835782b51b9e
+content_hash: ba4ebd78d4889b98
 ---
+
 # CARL: Camera-Agnostic Representation Learning for Spectral Image Analysis
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming
 description: >-
-  [NeurIPS 2025][Model Compression][4D Gaussian Splatting] This paper proposes 4DGCPro, a hierarchical 4D Gaussian compression framework that achieves multi-bitrate progressive volumetric video streaming within a single mo…
+  [NeurIPS 2025][Model Compression][4D Gaussian Splatting] This paper proposes 4DGCPro, a hierarchical 4D Gaussian compression framework that achieves multi-bitrate progressive volumetric video streaming within a single model, via perception-weighted hierarchical Gaussian representation, motion-aware adaptive grouping, and end-to-end entropy-optimized training. The framework supports real-time decoding and rendering on mobile devices and surpasses existing SOTA in rate-distorti…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Representation"
   - "Entropy Coding"
 date: 2026-05-08
-content_hash: ca4177caedbe7f4f
+content_hash: cb6c0d3b5a67fdf2
 ---
 
 # 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming
@@ -157,9 +157,9 @@ Compared to **4DGC**: 4DGC is a predecessor from the same group (CVPR 2025) that
 
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
+- [\[NeurIPS 2025\] Eyes Wide Open: Ego Proactive Video-LLM for Streaming Video](eyes_wide_open_ego_proactive_videollm_for_streaming_video.md)
 - [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](smooth_regularization_for_efficient_video_recognition.md)
-- [\[NeurIPS 2025\] Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning](twilight_adaptive_attention_sparsity_with_hierarchical_top-p_pruning.md)
-- [\[NeurIPS 2025\] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings](a-thought_efficient_reasoning_via_bidirectional_compression_for_low-resource_set.md)
+- [\[ICML 2025\] FGFP: A Fractional Gaussian Filter and Pruning for Deep Neural Networks Compression](../../ICML2025/model_compression/fgfp_a_fractional_gaussian_filter_and_pruning_for_deep_neural_networks_compressi.md)
 
 </div>
 

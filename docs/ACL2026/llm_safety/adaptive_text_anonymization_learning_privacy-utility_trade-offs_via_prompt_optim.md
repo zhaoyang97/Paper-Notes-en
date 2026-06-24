@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Discovered task-specific anonymization instructions for LLMs via an adaptive framework using evolutionary prompt optimization. It outperforms hand-crafted strategies across multiple privacy-utility trade-off scenarios and is executable on open-source models.
+  [ACL 2026 Findings][LLM Safety][Text Anonymization] Discovered task-specific anonymization instructions for LLMs via an adaptive framework using evolutionary prompt optimization. It outperforms hand-crafted strategies across multiple privacy-utility trade-off scenarios and is executable on open-source models.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Text Anonymization"
+  - "Privacy Protection"
+  - "Prompt Optimization"
+  - "Evolutionary Algorithms"
+  - "Privacy-Utility Trade-off"
 date: 2026-05-08
-content_hash: b919ba296081749e
+content_hash: e4448b4b3ec5daad
 ---
+
 # Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization
 
 **Conference**: ACL 2026 Findings  
@@ -131,10 +137,10 @@ No gradient-based training is involved. The optimization objective is the aggreg
 ## Related Papers
 
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
-- [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
 - [\[ACL 2026\] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization](look_twice_before_you_leap_a_rational_framework_for_localized_adversarial_anonym.md)
 - [\[NeurIPS 2025\] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy](../../NeurIPS2025/llm_safety/invisibleink_high-utility_and_low-cost_text_generation_with_differential_privacy.md)
 - [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
+- [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 
 </div>
 

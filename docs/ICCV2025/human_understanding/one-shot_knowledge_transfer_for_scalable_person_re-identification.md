@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One-Shot Knowledge Transfer for Scalable Person Re-Identification
 description: >-
-  [ICCV 2025][Human Understanding][Knowledge Transfer] This paper proposes OSKT (One-Shot Knowledge Transfer), which distills teacher model knowledge into a compact intermediate representation termed a "weight chain…
+  [ICCV 2025][Human Understanding][Knowledge Transfer] This paper proposes OSKT (One-Shot Knowledge Transfer), which distills teacher model knowledge into a compact intermediate representation termed a "weight chain," enabling the generation of student models of arbitrary sizes for person re-identification with a single round of computation.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Model Compression"
   - "One-Shot Computation"
 date: 2026-05-08
-content_hash: a59a96f12afbf931
+content_hash: 9bed88a3f76a2e2b
 ---
 
 # One-Shot Knowledge Transfer for Scalable Person Re-Identification
@@ -142,11 +142,11 @@ OSKT operates in two stages: (1) distilling a weight chain from the teacher mode
 
 ## Related Papers
 
-- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[ICCV 2025\] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning](weakly_supervised_visible-infrared_person_re-identification_via_heterogeneous_ex.md)
 - [\[ICCV 2025\] Controllable and Expressive One-Shot Video Head Swapping](controllable_and_expressive_one-shot_video_head_swapping.md)
+- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
 - [\[NeurIPS 2025\] K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning](../../NeurIPS2025/human_understanding/k-decore_facilitating_knowledge_transfer_in_continual_structured_knowledge_reaso.md)
-- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](../../CVPR2026/human_understanding/vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
+- [\[ICCV 2025\] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning](weakly_supervised_visible-infrared_person_re-identification_via_heterogeneous_ex.md)
+- [\[CVPR 2026\] Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification](../../CVPR2026/human_understanding/dynamic_magic_unleashing_restricted_knowledge_for_lifelong_person_re-identificat.md)
 
 </div>
 

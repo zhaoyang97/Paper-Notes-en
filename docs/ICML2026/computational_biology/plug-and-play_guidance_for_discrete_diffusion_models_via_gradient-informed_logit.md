@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper proposes GILC (Gradient-Informed Logit Correction), which treats a pre-trained denoising network as a variational proxy for the value function. By employing a mechanism that "bypasses the model Jacobian and performs gradient correction directly on clean prediction logits," it achieves controllable generation
+  [ICML 2026][Computational Biology][Discrete Diffusion] This paper proposes GILC (Gradient-Informed Logit Correction), which treats a pre-trained denoising network as a variational proxy for the value function. By employing a mechanism that "bypasses the model Jacobian and performs gradient correction directly on clean prediction logits," it achieves controllable generation for discrete diffusion **without any re-training**. It outperforms training-free baselines and matches o…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Discrete Diffusion"
+  - "Plug-and-Play Guidance"
+  - "Logit Correction"
+  - "Variational Proxy"
+  - "Policy Gradient"
 date: 2026-05-08
-content_hash: 8079875205e1ef53
+content_hash: d9e28fbe12d22bde
 ---
+
 # Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction
 
 **Conference**: ICML 2026  
@@ -147,10 +153,10 @@ The **Ours (GILC-DB)** success rate exceeds the fine-tuning method DRAKES by app
 ## Related Papers
 
 - [\[ICML 2026\] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)
+- [\[ICLR 2026\] Clustering by Denoising: Latent Plug-and-Play Diffusion for Single-Cell Embeddings](../../ICLR2026/computational_biology/clustering_by_denoising_latent_plug-and-play_diffusion_for_single-cell_embedding.md)
 - [\[ICML 2026\] On the Collapse of Generative Paths: A Criterion and Correction for Diffusion Steering](on_the_collapse_of_generative_paths_a_criterion_and_correction_for_diffusion_ste.md)
-- [\[ICML 2026\] TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation](td3b_transition-directed_discrete_diffusion_for_allosteric_binder_generation.md)
-- [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](../../NeurIPS2025/computational_biology/remasking_discrete_diffusion_models_with_inference-time_scaling.md)
-- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
+- [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](../../ICLR2026/computational_biology/ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
+- [\[ICLR 2026\] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition](../../ICLR2026/computational_biology/discrete_diffusion_trajectory_alignment_via_stepwise_decomposition.md)
 
 </div>
 

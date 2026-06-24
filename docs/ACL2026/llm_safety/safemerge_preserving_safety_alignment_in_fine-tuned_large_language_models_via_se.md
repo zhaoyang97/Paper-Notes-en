@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Ours proposes SafeMERGE, a lightweight post-fine-tuning framework that identifies fine-tuned layers deviating from safe behavior via cosine similarity and merges only these layers with corresponding layers of a safety model. This significantly reduces harmful outputs across four LLMs while maintaining or even improving
+  [ACL 2026 Findings][LLM Safety][Safety Alignment] Ours proposes SafeMERGE, a lightweight post-fine-tuning framework that identifies fine-tuned layers deviating from safe behavior via cosine similarity and merges only these layers with corresponding layers of a safety model. This significantly reduces harmful outputs across four LLMs while maintaining or even improving task performance.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Safety Alignment"
+  - "Model Merging"
+  - "LoRA Fine-tuning"
+  - "Post-fine-tuning Defense"
+  - "Selective layer-wise merging"
 date: 2026-05-08
-content_hash: ecc8faf0bbb7318b
+content_hash: 5b58a840ad03f2ec
 ---
+
 # SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging
 
 **Conference**: ACL 2026 Findings  
@@ -139,7 +145,7 @@ The safety model is fine-tuned using standard LoRA. SafeMERGE itself requires no
 - [\[ACL 2025\] Merge Hijacking: Backdoor Attacks to Model Merging of Large Language Models](../../ACL2025/llm_safety/merge_hijacking_backdoor_attacks_to_model_merging_of_large_language_models.md)
 - [\[AAAI 2026\] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](../../AAAI2026/llm_safety/safenlidb_a_privacy-preserving_safety_alignment_framework_for_llm-based_natural_.md)
 - [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
+- [\[ICLR 2026\] Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance](../../ICLR2026/llm_safety/safety_at_one_shot_patching_fine-tuned_llms_with_a_single_instance.md)
 
 </div>
 

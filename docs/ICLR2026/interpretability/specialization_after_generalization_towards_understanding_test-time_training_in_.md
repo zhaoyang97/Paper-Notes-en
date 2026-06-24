@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 description: >-
-  [ICLR 2026][Interpretability][Test-Time Training] Starting from the Linear Representation Hypothesis (LRH), this paper proposes a theoretical framework of "specialization after generalization" to systematically explain why TTT is effective in in-distribution scenarios for the first time. Foundation models experience concept superposition interference due to global und
+  [ICLR 2026 Oral][Interpretability][Test-Time Training] Starting from the Linear Representation Hypothesis (LRH), this paper proposes a theoretical framework of "specialization after generalization" to systematically explain why TTT is effective in in-distribution scenarios for the first time. Foundation models experience concept superposition interference due to global underparameterization. TTT releases model capacity by temporarily forgetting irrelevant concepts and locally…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Test-Time Training
+  - "ICLR 2026 Oral"
+  - "Interpretability"
+  - "Test-Time Training"
+  - "Linear Representation Hypothesis"
+  - "Sparse Autoencoders"
+  - "Specialization after Generalization"
+  - "Foundation Models"
 date: 2026-05-08
-content_hash: 71e13aac4b2a468e
+content_hash: fab984d3dcb4902d
 ---
+
 # Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 
 **Conference**: ICLR 2026 Oral  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models
 description: >-
-  [ICLR 2026][vlm_reasoning][GroupMatch] This paper points out that the "near-random guessing" performance of multimodal models on compositional reasoning benchmarks is largely an illusion created by **artificially depressed evaluation metrics**. It proposes a more faithful GroupMatch metric along with SimpleMatch to translate results back to standard metrics
+  [ICLR 2026][VLM Reasoning][Compositional Reasoning] This paper points out that the "near-random guessing" performance of multimodal models on compositional reasoning benchmarks is largely an illusion created by **artificially depressed evaluation metrics**. It proposes a more faithful GroupMatch metric along with SimpleMatch to translate results back to standard metrics. Furthermore, it introduces Test-Time Matching (TTM), an iterative self-training algorithm without external…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GroupMatch
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Compositional Reasoning"
+  - "Evaluation metric correction"
+  - "Test-time matching"
+  - "Pseudo-label self-training"
+  - "GroupMatch"
 date: 2026-05-08
-content_hash: 5e0083ed7cdfb3fd
+content_hash: 7b9c88e06b36a656
 ---
+
 # Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models
 
 **Conference**: ICLR 2026  

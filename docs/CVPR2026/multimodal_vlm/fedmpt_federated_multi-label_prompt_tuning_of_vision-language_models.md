@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] FedMPT models Federated Multi-Label Recognition (MLR) as a causal front-door adjustment problem. It uses an LLM to generate a set of universal "conditions" (e.g., spatial layout, object poses) as mediating variables to constrain label co-occurrence. Through a three-step pipeline—conditional prompts, optimal transport,
+  [CVPR 2026][Multimodal VLM][Federated Learning] FedMPT models Federated Multi-Label Recognition (MLR) as a causal front-door adjustment problem. It uses an LLM to generate a set of universal "conditions" (e.g., spatial layout, object poses) as mediating variables to constrain label co-occurrence. Through a three-step pipeline—conditional prompts, optimal transport, and gated aggregation—these conditions are aligned to image regions and adaptively weighted. This significantly…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Federated Learning"
+  - "Multi-Label Recognition"
+  - "Prompt Learning"
+  - "Causal Adjustment"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 7b2aace3d9f3cc43
+content_hash: f4016127ec95a929
 ---
+
 # FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,20 @@ Efficiency (Table 5): FedMPT uses only **0.80M** trainable parameters (the least
 - **Value**: ⭐⭐⭐⭐ Highly practical for privacy-sensitive multi-label fields like medical or remote sensing.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
+- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
+- [\[ICLR 2026\] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](../../ICLR2026/multimodal_vlm/pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l.md)
+- [\[ICCV 2025\] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models](../../ICCV2025/multimodal_vlm/fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models.md)
+- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)

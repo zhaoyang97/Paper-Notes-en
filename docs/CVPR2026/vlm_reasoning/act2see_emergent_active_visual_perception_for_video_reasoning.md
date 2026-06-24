@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Act2See: Emergent Active Visual Perception for Video Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Act2See enables video VLMs through supervised fine-tuning to **autonomously decide when to insert a video frame** during the textual CoT reasoning process—either by retrieving a real evidence frame from the original video or conditionally "imagining" a counterfactual frame—thereby refreshing or surpassing closed-source
+  [CVPR 2026][VLM Reasoning][Active Visual Perception] Act2See enables video VLMs through supervised fine-tuning to **autonomously decide when to insert a video frame** during the textual CoT reasoning process—either by retrieving a real evidence frame from the original video or conditionally "imagining" a counterfactual frame—thereby refreshing or surpassing closed-source models of similar or even larger sizes on 5 video reasoning benchmarks including VideoEspresso and ViTIB.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Active Visual Perception"
+  - "Interleaved CoT"
+  - "Frame Retrieval"
+  - "Frame Generation"
+  - "SFT"
 date: 2026-05-08
-content_hash: 011fa48dcbb4634d
+content_hash: d4b19a826562fcb4
 ---
+
 # Act2See: Emergent Active Visual Perception for Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Comparison with recent video-text interleaved CoT methods on Video-MME (Table 3)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
-- [\[CVPR 2026\] WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_video_llm_memory.md)
-- [\[CVPR 2026\] WeaveTime: Streaming from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_from_earlier_frames_into_emergent_memory_in_videollms.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
+- [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
 - [\[CVPR 2026\] Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs](dont_show_pixels_show_cues_unlocking_visual_tool_reasoning_in_language_models_vi.md)
-- [\[CVPR 2026\] Enhancing Descriptive Captions with Visual Attributes for Multimodal Perception](enhancing_descriptive_captions_with_visual_attributes_for_multimodal_perception.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
+- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
 
 </div>
 

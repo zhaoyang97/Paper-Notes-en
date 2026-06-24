@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper proposes the PLOTTER framework, which signifies the first shift of narrative planning from textual representations to graph structures (Event Graph + Character Graph). Through a multi-agent Evaluate-Plan-Revise iterative loop, narrative defects are diagnosed and repaired on graph topologies, significantly ou
+  [ACL 2026 Findings][Text Generation][Narrative Generation] This paper proposes the PLOTTER framework, which signifies the first shift of narrative planning from textual representations to graph structures (Event Graph + Character Graph). Through a multi-agent Evaluate-Plan-Revise iterative loop, narrative defects are diagnosed and repaired on graph topologies, significantly outperforming existing methods in dimensions such as narrativity, characterization…
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026 Findings"
+  - "Text Generation"
+  - "Narrative Generation"
+  - "Graph-based Reasoning"
+  - "Event Graph"
+  - "Character Graph"
+  - "Multi-agent Iterative Optimization"
 date: 2026-05-08
-content_hash: 702fe67d50d56346
+content_hash: 3150979f40bbe22b
 ---
+
 # Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation
 
 **Conference**: ACL 2026 Findings  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tell me Habibi, is it Real or Fake?
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] This paper introduces **ArEnAV**, the first large-scale audio-visual deepfake dataset targeting "Arabic-English intra-sentential code-switching (CSW)" (387k videos, 765+ hours). Utilizing an integrated generation pipeline with 4 TTS paths and 2 lip-sync models, the authors perform "content-driven" semantic manipulation
+  [ICLR 2026][AIGC Detection][Deepfake Detection] This paper introduces **ArEnAV**, the first large-scale audio-visual deepfake dataset targeting "Arabic-English intra-sentential code-switching (CSW)" (387k videos, 765+ hours). Utilizing an integrated generation pipeline with 4 TTS paths and 2 lip-sync models, the authors perform "content-driven" semantic manipulation of real YouTube videos. They systematically demonstrate that existing SOTA detection/localization models and hu…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Deepfake Detection"
+  - "Arabic-English Code-Switching"
+  - "Audio-Visual Dataset"
+  - "Temporal Localization"
+  - "Multilingual"
 date: 2026-05-08
-content_hash: 3b1e49723d88503a
+content_hash: 7efffadf42c9d153
 ---
+
 # Tell me Habibi, is it Real or Fake?
 
 **Conference**: ICLR 2026  
@@ -154,7 +160,7 @@ Cross-dataset detection (AUC): SOTA detectors performing excellently on FF++/Cel
 - [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](../../ACL2026/aigc_detection/detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 - [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](../../ACL2026/aigc_detection/c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
-- [\[ICLR 2026\] A Rich Knowledge Space for Scalable Deepfake Detection](a_rich_knowledge_space_for_scalable_deepfake_detection.md)
+- [\[ICLR 2026\] Exploring Specular Reflection Inconsistency for Generalizable Face Forgery Detection](exploring_specular_reflection_inconsistency_for_generalizable_face_forgery_detec.md)
 
 </div>
 

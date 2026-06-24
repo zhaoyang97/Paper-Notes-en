@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Focus and Dilution: The Multi-stage Learning Process of Attention
 description: >-
-  [ICML 2026][Pretraining][Paper Note] By performing phased linearization of gradient flow around a series of critical points in a simplified setting where a single-layer Transformer learns Markovian data, this paper reveals and rigorously characterizes the recurring "focus–dilution" cycles in attention training, observing consistent phenomena on WikiText a
+  [ICML 2026 Spotlight][LLM Pretraining][Attention Training Dynamics] By performing phased linearization of gradient flow around a series of critical points in a simplified setting where a single-layer Transformer learns Markovian data, this paper reveals and rigorously characterizes the recurring "focus–dilution" cycles in attention training, observing consistent phenomena on WikiText and TinyStories.
 tags:
-  - ICML 2026
-  - Pretraining
+  - "ICML 2026 Spotlight"
+  - "LLM Pretraining"
+  - "Attention Training Dynamics"
+  - "Focus-Dilution Cycle"
+  - "Condensation Phenomenon"
+  - "Markovian Data"
+  - "Saddle-point Linearization"
 date: 2026-05-08
-content_hash: 19fa1e9ff6d42820
+content_hash: bec3dd68fd3de479
 ---
+
 # Focus and Dilution: The Multi-stage Learning Process of Attention
 
 **Conference**: ICML 2026 Spotlight  
@@ -128,9 +134,9 @@ The training objective is the cross-entropy of the final token $\mathcal{L}(\the
 
 - [\[ICML 2025\] On the Role of Label Noise in the Feature Learning Process](../../ICML2025/llm_pretraining/on_the_role_of_label_noise_in_the_feature_learning_process.md)
 - [\[ICLR 2026\] Conditioned Initialization for Attention](../../ICLR2026/llm_pretraining/conditioned_initialization_for_attention.md)
+- [\[ICLR 2026\] Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training](../../ICLR2026/llm_pretraining/late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
 - [\[NeurIPS 2025\] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation](../../NeurIPS2025/llm_pretraining/the_atlas_of_in-context_learning_how_attention_heads_shape_in-context_retrieval_.md)
-- [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](../../ICLR2026/llm_pretraining/deconstructing_positional_information_from_attention_logits_to_training_biases.md)
-- [\[ACL 2026\] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](../../ACL2026/llm_pretraining/toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)
+- [\[ICLR 2026\] Avey-B: Refactoring Attention-Free Architectures into Bidirectional Encoders](../../ICLR2026/llm_pretraining/avey-b.md)
 
 </div>
 

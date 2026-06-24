@@ -1,16 +1,21 @@
 ---
 title: >-
-  [Paper Note] JQBench: 一个从自然语言和/或示例读写 JSON 的基准
+  [Paper Note] JQBench: A Benchmark for Reading and Writing JSON from Natural Language and/or Examples
 description: >-
-  [ICLR 2026][LLM Evaluation][jq] This paper constructs **JQBench**, a benchmark for evaluating the ability of LLMs to translate natural language and/or I/O examples into `jq` expressions (querying, filtering, and transforming JSON). Generated via two automated pipelines—Stack Overflow (JQSTACK, 1496 tasks) and Spider (JQSPIDER, 859 tasks)—it reveals t
+  [ICLR 2026][LLM Evaluation][jq] This paper constructs **JQBench**, a benchmark for evaluating the ability of LLMs to translate natural language and/or I/O examples into `jq` expressions (querying, filtering, and transforming JSON). Generated via two automated pipelines—Stack Overflow (JQSTACK, 1496 tasks) and Spider (JQSPIDER, 859 tasks)—it reveals three counter-intuitive findings: the "Documentation Trap," "jq lagging behind Python," and "Example feedback is crucial."
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - jq
-  - programming-by-example
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "jq"
+  - "JSON transformation"
+  - "natural language to code"
+  - "programming-by-example"
+  - "agentic evaluation"
+  - "low-resource language"
 date: 2026-05-08
-content_hash: 494082ac6621112f
+content_hash: e765bb6ff810ff56
 ---
+
 # JQBench: A Benchmark for Reading and Writing JSON from Natural Language and/or Examples
 
 **Conference**: ICLR 2026  
@@ -120,11 +125,11 @@ flowchart TD
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Personalized Deep Research: Benchmarks and Evaluations](towards_personalized_deep_research_benchmarks_and_evaluations.md)
-- [\[ICLR 2026\] RedacBench: Can AI Erase Your Secrets?](redacbench_can_ai_erase_your_secrets.md)
-- [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
-- [\[ICLR 2026\] Culture in Action: Evaluating Text-to-Image Models through Social Activities](culture_in_action_evaluating_text-to-image_models_through_social_activities.md)
-- [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
+- [\[ACL 2025\] BelarusianGLUE: Towards a Natural Language Understanding Benchmark for Belarusian](../../ACL2025/llm_evaluation/belarusian_glue.md)
+- [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
+- [\[ICLR 2026\] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation](addressing_pitfalls_in_the_evaluation_of_uncertainty_estimation_methods_for_natu.md)
+- [\[ICLR 2026\] CogniLoad: A Synthetic Natural Language Reasoning Benchmark With Tunable Length, Intrinsic Difficulty, and Distractor Density](cogniload_a_synthetic_natural_language_reasoning_benchmark_with_tunable_length_i.md)
+- [\[ACL 2025\] MisMatched: A Benchmark for Scientific Natural Language Inference](../../ACL2025/llm_evaluation/a_mismatched_benchmark_for_scientific_natural_language_inference.md)
 
 </div>
 

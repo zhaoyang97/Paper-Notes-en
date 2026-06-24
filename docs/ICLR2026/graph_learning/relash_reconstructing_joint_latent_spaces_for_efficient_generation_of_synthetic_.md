@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReLaSH: Reconstructing Joint Latent Spaces for Efficient Generation of Synthetic Hypergraphs with Hyperlink Attributes
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] ReLaSH decomposes the generation of "attributed hypergraphs" into two steps: first, an **interpretable likelihood-based embedding model** compresses hyperedges and their attributes into a low-dimensional joint latent space; second, a **distribution-free score-based diffusion generator** reconstructs the data distributi
+  [ICLR 2026][Graph Learning][Hypergraph Generation] ReLaSH decomposes the generation of "attributed hypergraphs" into two steps: first, an **interpretable likelihood-based embedding model** compresses hyperedges and their attributes into a low-dimensional joint latent space; second, a **distribution-free score-based diffusion generator** reconstructs the data distribution within this low-dimensional space. This approach bypasses the curse of dimensionality associated with high…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Hypergraph Generation"
+  - "Hyperedge Attributes"
+  - "Joint Latent Space"
+  - "Likelihood-based Embedding"
+  - "Score-based Diffusion"
 date: 2026-05-08
-content_hash: df317b86e0b4842a
+content_hash: cd5182bfb94bc2c4
 ---
+
 # ReLaSH: Reconstructing Joint Latent Spaces for Efficient Generation of Synthetic Hypergraphs with Hyperlink Attributes
 
 **Conference**: ICLR 2026  

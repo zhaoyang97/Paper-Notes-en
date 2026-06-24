@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World
 description: >-
-  [CVPR 2026][Multimodal VLM][4D dynamics] This paper introduces Dyn-Bench—a large-scale benchmark for dynamic understanding of the physical 4D world (comprising 1k videos, 7k VQA pairs, and 3k dynamic grounding pairs). It systematically evaluates the spatio-temporal reasoning capabilities of general-purpose, spatial-aware, and region-level MLLMs, revealing tha
+  [CVPR 2026][VLM Reasoning][4D dynamics] This paper introduces Dyn-Bench—a large-scale benchmark for dynamic understanding of the physical 4D world (comprising 1k videos, 7k VQA pairs, and 3k dynamic grounding pairs). It systematically evaluates the spatio-temporal reasoning capabilities of general-purpose, spatial-aware, and region-level MLLMs, revealing that existing models fail to maintain consistency between reasoning and grounding. The authors propose two structured integ…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 4D dynamics
-  - Dyn-Bench benchmark
-  - spatio-temporal reasoning
-  - dynamic grounding
-  - MLLM evaluation
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "4D dynamics"
+  - "Dyn-Bench benchmark"
+  - "spatio-temporal reasoning"
+  - "dynamic grounding"
+  - "MLLM evaluation"
 date: 2026-05-08
-content_hash: 572b2a9fa01f2d98
+content_hash: 60b1384eb02776d8
 ---
+
 # Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World
 
 **Conference**: CVPR 2026  
@@ -136,15 +137,14 @@ Cross-modal reasoning is a second bottleneck; LLM backbones struggle to extract 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models](flowhijack_dynamics_aware_backdoor_attack_on_flow_matching_vla_models.md)
-- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
-- [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](phycritic_multimodal_critic_models_for_physical_ai.md)
+- [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
+- [\[CVPR 2026\] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models](quantiphy_a_quantitative_benchmark_evaluating_physical_reasoning_abilities_of_vi.md)
 
 </div>
 

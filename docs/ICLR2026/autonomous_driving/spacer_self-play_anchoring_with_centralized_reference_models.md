@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPACeR: Self-Play Anchoring with Centralized Reference Models
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] SPACeR proposes a "human-like self-play" framework that utilizes a pre-trained tokenized autoregressive motion model as a centralized reference policy. Through log-likelihood rewards and KL divergence constraints, it guides decentralized self-play RL policies to align with human driving distributions. It outperforms pu
+  [ICLR 2026][Autonomous Driving][Self-play Reinforcement Learning] SPACeR proposes a "human-like self-play" framework that utilizes a pre-trained tokenized autoregressive motion model as a centralized reference policy. Through log-likelihood rewards and KL divergence constraints, it guides decentralized self-play RL policies to align with human driving distributions. It outperforms pure self-play methods on WOSAC while achieving 10x faster inference and 50x fewer parameters th…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Self-play Reinforcement Learning"
+  - "Traffic Simulation"
+  - "tokenized models"
+  - "KL divergence alignment"
+  - "human driving distribution"
 date: 2026-05-08
-content_hash: 6a7cc927d94c4a90
+content_hash: 44407c237f4a19dc
 ---
+
 # SPACeR: Self-Play Anchoring with Centralized Reference Models
 
 **Conference**: ICLR 2026  
@@ -132,7 +138,7 @@ WOSAC Validation Set (Vehicles):
 - [\[AAAI 2026\] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning](../../AAAI2026/autonomous_driving/fastdrivevla_efficient_end-to-end_driving_via_plug-and-play_.md)
 - [\[ICCV 2025\] ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models](../../ICCV2025/autonomous_driving/eta_efficiency_through_thinking_ahead_a_dual_approach_to_self-driving_with_large.md)
 - [\[ICLR 2026\] Low-Latency Neural LiDAR Compression with 2D Context Models](low-latency_neural_lidar_compression_with_2d_context_models.md)
-- [\[ICLR 2026\] Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving](discrete_diffusion_for_reflective_vision-language-action_models_in_autonomous_dr.md)
+- [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](../../CVPR2026/autonomous_driving/efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
 
 </div>
 

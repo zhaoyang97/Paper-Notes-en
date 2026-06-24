@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning Permutation-Invariant Macroscopic Dynamics
 description: >-
-  [ICML 2026][Others][Paper Note] Aiming at the naturally unordered microscopic states of particle systems, this paper proposes an autoencoder framework that "reconstructs density instead of particles." It utilizes a DeepSet encoder to obtain permutation-invariant closure variables $\hat{\bm{z}}$ and employs conditional normalizing flows with a Gaussia
+  [ICML2026][Permutation-invariant closure variables] Aiming at the naturally unordered microscopic states of particle systems, this paper proposes an autoencoder framework that "reconstructs density instead of particles." It utilizes a DeepSet encoder to obtain permutation-invariant closure variables $\hat{\bm{z}}$ and employs conditional normalizing flows with a Gaussian mixture density, centered at observation points, as the reconstruction target. This approach bypasses poin…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Permutation-invariant closure variables"
+  - "distribution reconstruction"
+  - "DeepSet encoder"
+  - "conditional normalizing flow"
+  - "macroscopic dynamics"
 date: 2026-05-08
-content_hash: b469d235d469509e
+content_hash: 28f85746c119cc06
 ---
+
 # Learning Permutation-Invariant Macroscopic Dynamics
 
 **Conference**: ICML2026  

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection
 description: >-
-  [NeurIPS 2025][LLM Safety][text watermark detection] This paper systematically evaluates eight classical goodness-of-fit (GoF) tests for LLM text watermark detection…
+  [NeurIPS 2025 Spotlight][LLM Safety][text watermark detection] This paper systematically evaluates eight classical goodness-of-fit (GoF) tests for LLM text watermark detection, demonstrating that GoF tests significantly outperform existing baseline methods in both detection power and robustness.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Safety"
   - "text watermark detection"
   - "goodness-of-fit tests"
@@ -12,7 +12,7 @@ tags:
   - "statistical hypothesis testing"
   - "robustness"
 date: 2026-05-08
-content_hash: a508deb5244eff91
+content_hash: 5a0b827eaf92d797
 ---
 
 # On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection
@@ -129,10 +129,10 @@ This paper is an empirical evaluation study and requires no model training. Key 
 ## Related Papers
 
 - [\[NeurIPS 2025\] ORBIT -- Open Recommendation Benchmark for Reproducible Research with Hidden Tests](orbit_--_open_recommendation_benchmark_for_reproducible_research_with_hidden_tes.md)
-- [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
-- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
+- [\[ICML 2025\] Empirical Privacy Variance](../../ICML2025/llm_safety/empirical_privacy_variance.md)
 - [\[ACL 2026\] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework](../../ACL2026/llm_safety/rethinking_llm_watermark_detection_in_black-box_settings_a_non-intrusive_third-p.md)
-- [\[NeurIPS 2025\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
+- [\[ICML 2025\] Unlocking the Power of Rehearsal in Continual Learning: A Theoretical Perspective](../../ICML2025/llm_safety/unlocking_the_power_of_rehearsal_in_continual_learning_a_theoretical_perspective.md)
+- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 
 </div>
 

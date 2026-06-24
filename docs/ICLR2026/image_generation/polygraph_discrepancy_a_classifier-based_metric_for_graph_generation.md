@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PolyGraph Discrepancy: a classifier-based metric for graph generation
 description: >-
-  [ICLR 2026][Image Generation][MMD] Ours proposes PolyGraph Discrepancy (PGD), which approximates the variational lower bound of the Jensen-Shannon distance by training a classifier to distinguish between real and generated graphs. This approach solves three core problems: the lack of an absolute scale in MMD metrics, incomparability between different de
+  [ICLR 2026][Image Generation][Graph Generation] Ours proposes PolyGraph Discrepancy (PGD), which approximates the variational lower bound of the Jensen-Shannon distance by training a classifier to distinguish between real and generated graphs. This approach solves three core problems: the lack of an absolute scale in MMD metrics, incomparability between different descriptors, and high bias/variance in small sample sizes.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MMD
-  - TabPFN
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Graph Generation"
+  - "Jensen-Shannon Distance"
+  - "Classifier-based Evaluation"
+  - "MMD"
+  - "TabPFN"
 date: 2026-05-08
-content_hash: 8e8acda8de23c87b
+content_hash: 5217d6d71c2f509f
 ---
+
 # PolyGraph Discrepancy: a classifier-based metric for graph generation
 
 **Conference**: ICLR 2026  
@@ -174,6 +178,7 @@ PGD improves monotonically with training iterations, whereas MMD metrics exhibit
 - Value: ⭐⭐⭐⭐⭐ — Likely to become a new standard for graph generation evaluation, solving core problems that have long troubled the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -181,8 +186,8 @@ PGD improves monotonically with training iterations, whereas MMD metrics exhibit
 - [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
 - [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](../../CVPR2026/image_generation/c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
 - [\[ICLR 2026\] GGBall: Graph Generative Model on Poincaré Ball](ggball_graph_generative_model_on_poincaré_ball.md)
-- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 - [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
 
 </div>
 

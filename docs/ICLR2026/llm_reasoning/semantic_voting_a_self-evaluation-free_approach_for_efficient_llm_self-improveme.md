@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks
 description: >-
-  [ICLR 2026][LLM Reasoning][DPO] For open-ended tasks like translation and summarization, where "answers do not match literally and lack verifiable rewards," this paper proposes **Semantic Voting**: using a lightweight sentence vector model to calculate pairwise semantic similarity among several self-sampled candidates. Each candidate is assigned an "
+  [ICLR 2026][Reasoning][Self-Improvement] For open-ended tasks like translation and summarization, where "answers do not match literally and lack verifiable rewards," this paper proposes **Semantic Voting**: using a lightweight sentence vector model to calculate pairwise semantic similarity among several self-sampled candidates. Each candidate is assigned an "alignment score with consensus," and the highest/lowest scoring pairs are selected for DPO training. This process bypas…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - DPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Self-Improvement"
+  - "Semantic Voting"
+  - "Unsupervised Pseudo-labeling"
+  - "DPO"
+  - "Open-ended Tasks"
 date: 2026-05-08
-content_hash: 53ac0974b2c5d8e8
+content_hash: a15faffe4f535538
 ---
+
 # Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks
 
 **Conference**: ICLR 2026  
@@ -136,7 +141,7 @@ The key finding is **stability**: SJ and EM frequently **cause the base model to
 - [\[ICLR 2026\] Reverse-Engineered Reasoning for Open-Ended Generation](reverse-engineered_reasoning_for_open-ended_generation.md)
 - [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
 - [\[ICLR 2026\] Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning](think_in_parallel_answer_as_one_logit_averaging_for_open-ended_reasoning.md)
-- [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
+- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Latent Concept Disentanglement in Transformer-based Language Models
 description: >-
-  [ICLR 2026][Interpretability][in-context learning] This paper uses mechanistic interpretability methods to demonstrate that transformers explicitly disentangle latent "concepts" within demonstrations during in-context learning. In discrete world-knowledge tasks, a small cluster of attention heads first parses a hidden "bridge entity" before composing the answer. In con
+  [ICLR 2026][Interpretability][in-context learning] This paper uses mechanistic interpretability methods to demonstrate that transformers explicitly disentangle latent "concepts" within demonstrations during in-context learning. In discrete world-knowledge tasks, a small cluster of attention heads first parses a hidden "bridge entity" before composing the answer. In continuous numerical tasks, latent parameters are compressed onto low-dimensional smooth manifolds that are susc…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - in-context learning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "in-context learning"
+  - "mechanistic interpretability"
+  - "latent variables"
+  - "task vectors"
+  - "activation patching"
+  - "concept composition"
 date: 2026-05-08
-content_hash: b83930a0cfca3e37
+content_hash: 4ae3159ebfc7671c
 ---
+
 # Latent Concept Disentanglement in Transformer-based Language Models
 
 **Conference**: ICLR 2026  

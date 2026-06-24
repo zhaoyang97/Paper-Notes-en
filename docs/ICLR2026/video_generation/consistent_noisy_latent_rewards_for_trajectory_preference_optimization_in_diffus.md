@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Consistent Noisy Latent Rewards for Trajectory Preference Optimization in Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][T2I] This paper proposes SLRM + TAPO: first, a score-based latent reward model that preserves diffusion score capabilities is used to stably evaluate intermediate sampling states; then, multi-timestep SDE exploration and filtering are employed to construct more consistent win-lose trajectory pairs, thereby improving prefere
+  [ICLR2026][Video Generation][Diffusion preference alignment] This paper proposes SLRM + TAPO: first, a score-based latent reward model that preserves diffusion score capabilities is used to stably evaluate intermediate sampling states; then, multi-timestep SDE exploration and filtering are employed to construct more consistent win-lose trajectory pairs, thereby improving preference alignment for text-to-image and text-to-video diffusion models.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - T2I
-  - T2V
+  - "ICLR2026"
+  - "Video Generation"
+  - "Diffusion preference alignment"
+  - "noisy latent reward model"
+  - "trajectory-level preference optimization"
+  - "T2I"
+  - "T2V"
 date: 2026-05-08
-content_hash: ca77f9bf06e46e0c
+content_hash: e2c08d6a02218052
 ---
+
 # Consistent Noisy Latent Rewards for Trajectory Preference Optimization in Diffusion Models
 
 **Conference**: ICLR2026  

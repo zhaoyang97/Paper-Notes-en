@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][State Space Model] RS-SSM is proposed to extract channel-wise specific information distribution features (CwAP) through frequency domain analysis and adaptively invert the forget gate matrix to supplement and refine spatio-temporal details lost during SSM state space compression (FGIR). It achieves SOTA performance on four video semantic
+  [CVPR 2026][Segmentation][Video Semantic Segmentation] RS-SSM is proposed to extract channel-wise specific information distribution features (CwAP) through frequency domain analysis and adaptively invert the forget gate matrix to supplement and refine spatio-temporal details lost during SSM state space compression (FGIR). It achieves SOTA performance on four video semantic segmentation benchmarks while maintaining high efficiency.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - State Space Model
-  - Mamba
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Video Semantic Segmentation"
+  - "State Space Model"
+  - "Forget Gate Refinement"
+  - "Frequency Domain Analysis"
+  - "Mamba"
 date: 2026-05-08
-content_hash: a148eff6cef46a5a
+content_hash: 4c4315cdeb0ecd72
 ---
+
 # RS-SSM: Refining Forgotten Specifics in State Space Model for Video Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -139,16 +143,16 @@ RS-SSM was compared with existing methods on VSPW, NYUv2, and CamVid datasets. I
 - Value: ⭐⭐⭐⭐ Provides a systemic solution for SSM in pixel-level vision tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2025\] Exploiting Temporal State Space Sharing for Video Semantic Segmentation](../../CVPR2025/segmentation/exploiting_temporal_state_space_sharing_for_video_semantic_segmentation.md)
-- [\[CVPR 2025\] DefMamba: Deformable Visual State Space Model](../../CVPR2025/segmentation/defmamba_deformable_visual_state_space_model.md)
 - [\[CVPR 2025\] MV-SSM: Multi-View State Space Modeling for 3D Human Pose Estimation](../../CVPR2025/segmentation/mv-ssm_multi-view_state_space_modeling_for_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
 - [\[CVPR 2025\] GroupMamba: Efficient Group-Based Visual State Space Model](../../CVPR2025/segmentation/groupmamba_efficient_group-based_visual_state_space_model.md)
+- [\[CVPR 2025\] DefMamba: Deformable Visual State Space Model](../../CVPR2025/segmentation/defmamba_deformable_visual_state_space_model.md)
 
 </div>
 

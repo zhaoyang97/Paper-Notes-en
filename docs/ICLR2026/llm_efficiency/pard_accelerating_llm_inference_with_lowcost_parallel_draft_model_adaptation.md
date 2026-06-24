@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] PARD transforms an off-the-shelf small language model into a target-agnostic draft model that outputs $K$ tokens in parallel in a single forward pass. By utilizing Conditional Output Dropping (COD), the training cost for this adaptation is reduced to $O(N)$. On vLLM, it enables LLaMA3.1-8B to reach 264.88 tokens/s, whi
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] PARD transforms an off-the-shelf small language model into a target-agnostic draft model that outputs $K$ tokens in parallel in a single forward pass. By utilizing Conditional Output Dropping (COD), the training cost for this adaptation is reduced to $O(N)$. On vLLM, it enables LLaMA3.1-8B to reach 264.88 tokens/s, which is $3.67\times$ faster than autoregressive generation and $1.15\times$ faster than EAGLE-3.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Parallel Drafting"
+  - "Target-Agnostic"
+  - "Mask Token"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: b8b23945b4d49630
+content_hash: 480ef01d5a2333e6
 ---
+
 # PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation
 
 **Conference**: ICLR 2026  
@@ -141,15 +147,14 @@ On code tasks, PARD achieves $3.20\times\sim4.44\times$ speedup, with an average
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] SpareTrain: Fault-Tolerant LLM Training via Low-Cost Dual Modular Redundancy](sparetrain_fault-tolerant_llm_training_via_low-cost_dual_modular_redundancy.md)
+- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 - [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
-- [\[ICLR 2026\] LoRA-S: An Efficient Low Rank Adaptation scheme via Sylvester equation](lora-s_an_efficient_low_rank_adaptation_scheme_via_sylvester_equation.md)
 
 </div>
 

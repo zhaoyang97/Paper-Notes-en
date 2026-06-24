@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors introduce **CultureMix**, a food VQA benchmark utilizing diffusion models to synthesize 23,000 images featuring "co-occurring multiple cultural elements" (across 4 sub-tasks). The study evaluates 10 Large Vision-Language Models (LVLMs) on their ability to recognize food and its country of origin in mixed-cu
+  [CVPR 2026][Multimodal VLM][Culture Mixing] The authors introduce **CultureMix**, a food VQA benchmark utilizing diffusion models to synthesize 23,000 images featuring "co-occurring multiple cultural elements" (across 4 sub-tasks). The study evaluates 10 Large Vision-Language Models (LVLMs) on their ability to recognize food and its country of origin in mixed-culture scenarios. Findings indicate that models rely heavily on background cues and are frequently misled by "cultura…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Culture Mixing"
+  - "Food VQA"
+  - "Cross-cultural Understanding"
+  - "Benchmark"
+  - "Contextual Bias"
 date: 2026-05-08
-content_hash: f86727eddb69edba
+content_hash: 67a7924df3b887d9
 ---
+
 # World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -130,6 +136,19 @@ Explored three strategies: **PromptDirect** (ignore background), **PromptCoT** (
 
 <div class="related-papers" markdown="1">
 <!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
+- [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](../../ICLR2026/multimodal_vlm/ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
+- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
+- [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](../../ICML2026/multimodal_vlm/timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
+
+</div>
+
 <!-- RELATED:END -->
 </div>
 

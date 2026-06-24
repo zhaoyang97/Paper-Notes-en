@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization
 description: >-
-  [NeurIPS 2025][Optimization][DRO] This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL divergence)—under a distributionally robust optimization (DRO) framework to address alignment failures caused…
+  [NeurIPS 2025][Optimization][DRO] This paper proposes two robust DPO variants—WDPO (Wasserstein) and KLDPO (KL divergence)—under a distributionally robust optimization (DRO) framework to address alignment failures caused by shifts in user preference distributions. The approach provides $O(n^{-1/4})$ convergence guarantees and achieves significant improvements over standard DPO on multi-dimensional alignment tasks and the OpenLLM leaderboard.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "preference shift"
   - "LLM alignment"
 date: 2026-05-08
-content_hash: cb7d4ff0e3611a85
+content_hash: 23b2d547e50c8457
 ---
 
 # Robust LLM Alignment via Distributionally Robust Direct Preference Optimization
@@ -125,9 +125,9 @@ WDPO appends a gradient regularization term directly to the DPO loss; KLDPO rewe
 
 - [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](doubly_robust_alignment_for_large_language_models.md)
 - [\[NeurIPS 2025\] Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment](clean_first_align_later_benchmarking_preference_data_cleaning_for_reliable_llm_a.md)
+- [\[ICLR 2026\] Distributionally Robust Optimization via Generative Ambiguity Modeling](../../ICLR2026/optimization/distributionally_robust_optimization_via_generative_ambiguity_modeling.md)
 - [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
-- [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
-- [\[NeurIPS 2025\] FedRTS: Federated Robust Pruning via Combinatorial Thompson Sampling](fedrts_federated_robust_pruning_via_combinatorial_thompson_sampling.md)
+- [\[ICML 2025\] Right Now, Wrong Then: Non-Stationary Direct Preference Optimization under Preference Drift](../../ICML2025/optimization/right_now_wrong_then_non-stationary_direct_preference_optimization_under_prefere.md)
 
 </div>
 

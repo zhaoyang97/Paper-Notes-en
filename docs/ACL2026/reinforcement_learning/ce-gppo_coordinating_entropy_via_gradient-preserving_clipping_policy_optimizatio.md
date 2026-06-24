@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] The CE-GPPO algorithm is proposed. By reintroducing gradient signals for low-probability tokens outside the PPO clipping interval through stop-gradient operations, it achieves fine-grained coordinated control of policy entropy and attains a better balance between exploration and exploitation.
+  [ACL 2026][Reinforcement Learning][Policy Optimization] The CE-GPPO algorithm is proposed. By reintroducing gradient signals for low-probability tokens outside the PPO clipping interval through stop-gradient operations, it achieves fine-grained coordinated control of policy entropy and attains a better balance between exploration and exploitation.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Entropy Dynamic Control"
+  - "Gradient Preservation"
+  - "PPO Improvement"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: d89c42155b22ce2a
+content_hash: 83f513712fdf2a63
 ---
+
 # CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -137,10 +143,10 @@ The objective function modifies the three-branch loss based on GRPO: Outside neg
 ## Related Papers
 
 - [\[ICLR 2026\] Entropy-Preserving Reinforcement Learning (REPO / ADAPO)](../../ICLR2026/reinforcement_learning/entropy-preserving_reinforcement_learning.md)
+- [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](../../ICLR2026/reinforcement_learning/bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
+- [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](../../ICLR2026/reinforcement_learning/relative_entropy_pathwise_policy_optimization.md)
 - [\[ACL 2026\] RL-PLUS: Countering Capability Boundary Collapse of LLMs in Reinforcement Learning with Hybrid-policy Optimization](rl-plus_countering_capability_boundary_collapse_of_llms_in_reinforcement_learnin.md)
 - [\[ICLR 2026\] Exploration vs Exploitation: Rethinking RLVR through Clipping, Entropy, and Spurious Reward](../../ICLR2026/reinforcement_learning/exploration_vs_exploitation_rethinking_rlvr_through_clipping_entropy_and_spuriou.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
-- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Addressing the pain points where off-the-shelf CLIP fails to capture fine-grained makeup and holistic injection loses regional controllability, FRAM fine-tunes a specialized "Makeup CLIP Encoder" using synthetic data. It then extracts region-separated makeup features using learnable facial region queries coupled with a
+  [CVPR 2026][Image Generation][Makeup Transfer] Addressing the pain points where off-the-shelf CLIP fails to capture fine-grained makeup and holistic injection loses regional controllability, FRAM fine-tunes a specialized "Makeup CLIP Encoder" using synthetic data. It then extracts region-separated makeup features using learnable facial region queries coupled with attention loss. This allows diffusion-based methods to combine makeup from different reference images (e.g.…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - ControlNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Makeup Transfer"
+  - "Diffusion Models"
+  - "Region Controllability"
+  - "CLIP Fine-tuning"
+  - "ControlNet"
 date: 2026-05-08
-content_hash: 03839e5be2ce81c9
+content_hash: 79e6939d78f660a0
 ---
+
 # Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features
 
 **Conference**: CVPR 2026  
@@ -140,15 +144,16 @@ CLIP fine-tuning ablation (CPM-real, Acc: Makeup KNN accuracy):
 - **Value**: ⭐⭐⭐⭐ (High application value; the synthesis-alignment paradigm is transferable to other face editing tasks).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ECCV 2024\] Toward Tiny and High-quality Facial Makeup with Data Amplify Learning](../../ECCV2024/image_generation/toward_tiny_and_high-quality_facial_makeup_with_data_amplify_learning.md)
+- [\[CVPR 2026\] RegionRoute: Regional Style Transfer with Diffusion Model](regionroute_regional_style_transfer_with_diffusion_model.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
-- [\[CVPR 2026\] Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection](mitigating_memorization_in_texttoimage_diffusion_v.md)
+- [\[CVPR 2026\] HierEdit: Region-Aware Hierarchical Diffusion for Efficient High-Resolution Editing](hieredit_region-aware_hierarchical_diffusion_for_efficient_high-resolution_editi.md)
 - [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
-- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
 
 </div>
 

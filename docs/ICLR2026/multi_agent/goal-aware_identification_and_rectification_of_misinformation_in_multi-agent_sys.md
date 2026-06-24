@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Multi-Agent System] This paper proposes the red-teaming dataset MisInfoTask and the training-free defense framework ARGUS. Through a two-stage process of "adaptive localization of key propagation channels on the graph + goal-aware multi-round persuasive rectification," it specifically defends against "misinformation" injection—content tha
+  [ICLR 2026][Multi-Agent][Multi-Agent System] This paper proposes the red-teaming dataset MisInfoTask and the training-free defense framework ARGUS. Through a two-stage process of "adaptive localization of key propagation channels on the graph + goal-aware multi-round persuasive rectification," it specifically defends against "misinformation" injection—content that is semantically harmless but factually incorrect—within LLM multi-agent systems.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Multi-Agent System
-  - Misinformation Injection
-  - Goal-Aware Reasoning
-  - Training-Free Defense
-  - Information Flow
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-Agent System"
+  - "Misinformation Injection"
+  - "Goal-Aware Reasoning"
+  - "Training-Free Defense"
+  - "Information Flow"
 date: 2026-05-08
-content_hash: e06042bf1e10db06
+content_hash: bfe06db5591851fd
 ---
+
 # Goal-Aware Identification and Rectification of Misinformation in Multi-Agent Systems
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hyperbolic Busemann Neural Networks
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] This work utilizes Busemann functions to intrinsically lift Multinomial Logistic Regression (MLR) and Fully Connected (FC) layers into hyperbolic space. It introduces two unified components, BMLR and BFC, which are applicable to both the Poincaré ball and Lorentz models. These components outperform existing hyperbolic
+  [CVPR 2026][Computational Biology][Hyperbolic Neural Networks] This work utilizes Busemann functions to intrinsically lift Multinomial Logistic Regression (MLR) and Fully Connected (FC) layers into hyperbolic space. It introduces two unified components, BMLR and BFC, which are applicable to both the Poincaré ball and Lorentz models. These components outperform existing hyperbolic layers across four task categories: image classification, genomic sequences, node classification…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Hyperbolic Neural Networks"
+  - "Busemann functions"
+  - "Hyperbolic classification"
+  - "Fully connected layers"
+  - "Manifold learning"
 date: 2026-05-08
-content_hash: 71572093ba91ec68
+content_hash: 48c1cadf5eae1071
 ---
+
 # Hyperbolic Busemann Neural Networks
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ The FC layer requires outputting a new point rather than just a scalar logit. Th
 
 ## Related Papers
 
+- [\[ICML 2026\] Hyperbolic Neural Population Geometry Benefits Computation](../../ICML2026/computational_biology/hyperbolic_neural_population_geometry_benefits_computation.md)
 - [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
-- [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](../../NeurIPS2025/computational_biology/random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
 - [\[CVPR 2026\] CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)
+- [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](../../NeurIPS2025/computational_biology/random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
 - [\[CVPR 2026\] Cell-Type Prototype-Informed Neural Network for Gene Expression Estimation from Pathology Images](cell-type_prototype-informed_neural_network_for_gene_expression_estimation_from_.md)
-- [\[ICLR 2026\] Intrinsic Lorentz Neural Network](../../ICLR2026/computational_biology/intrinsic_lorentz_neural_network.md)
 
 </div>
 

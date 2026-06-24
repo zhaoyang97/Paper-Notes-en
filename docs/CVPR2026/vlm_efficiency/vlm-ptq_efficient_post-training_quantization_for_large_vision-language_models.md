@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] VLM-PTQ observes two overlooked issues when migrating weight compensation quantization methods like GPTQ/GPTAQ to Vision-Language Models: "round-to-nearest" is sub-optimal under asymmetric targets, and vision/text channels are treated indiscriminately. The paper uses a closed-form correction term to shift the quantizat
+  [CVPR 2026][Multimodal Efficiency][Post-Training Quantization] VLM-PTQ observes two overlooked issues when migrating weight compensation quantization methods like GPTQ/GPTAQ to Vision-Language Models: "round-to-nearest" is sub-optimal under asymmetric targets, and vision/text channels are treated indiscriminately. The paper uses a closed-form correction term to shift the quantization target to the true optimum and redistributes channel weights using a modality-aware importanc…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Post-Training Quantization"
+  - "Vision-Language Models"
+  - "Weight Compensation"
+  - "Asymmetric Calibration"
+  - "Modality-aware"
 date: 2026-05-08
-content_hash: bb7ef8363bab4066
+content_hash: 83257191fa030021
 ---
+
 # VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -142,16 +148,16 @@ Under combined quantization, Ours consistently outperforms GPTAQ by 5-9 percenta
 - Value: ⭐⭐⭐⭐ High practical value for VLM deployment due to low overhead and significant accuracy gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
 - [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
-- [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](../../AAAI2026/model_compression/post_training_quantization_for_efficient_dataset_condensation.md)
-- [\[CVPR 2026\] CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model](car-sam_cross-attention_reconstruction_for_post-training_quantization_of_the_seg.md)
-- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[CVPR 2026\] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)
+- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
 
 </div>
 

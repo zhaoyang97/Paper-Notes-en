@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pretraining with Re-parametrized Self-Attention: Unlocking Generalization in SNN-Based Neural Decoding Across Time, Brains, and Tasks
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes RAT SNN—a lightweight spiking neural network that integrates "re-parameterized spiking self-attention + multi-timescale spiking neurons + multi-stage cross-condition pre-training." Designed to decode motor intent from cortical spike trains, it achieves accuracy comparable to mainstream ANN decoders
+  [ICLR 2026][Computational Biology][Spiking Neural Networks (SNN)] This paper proposes RAT SNN—a lightweight spiking neural network that integrates "re-parameterized spiking self-attention + multi-timescale spiking neurons + multi-stage cross-condition pre-training." Designed to decode motor intent from cortical spike trains, it achieves accuracy comparable to mainstream ANN decoders with only 600,000 parameters and pure addition (AC) operations during inference. It enables ra…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Spiking Neural Networks (SNN)"
+  - "Re-parameterized Self-Attention"
+  - "Brain-Computer Interface (BCI)"
+  - "Cross-condition Pre-training"
+  - "Low-power Decoding"
 date: 2026-05-08
-content_hash: 0986caec3f0a4cd3
+content_hash: 535ad975f24717d4
 ---
+
 # Pretraining with Re-parametrized Self-Attention: Unlocking Generalization in SNN-Based Neural Decoding Across Time, Brains, and Tasks
 
 **Conference**: ICLR 2026  
@@ -157,10 +163,10 @@ Synaptic operation comparison (Energy proxy):
 ## Related Papers
 
 - [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
-- [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](continuous_multinomial_logistic_regression_for_neural_decoding.md)
 - [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
+- [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](continuous_multinomial_logistic_regression_for_neural_decoding.md)
 - [\[ICLR 2026\] Only Brains Align with Brains: Cross-Region Alignment Patterns Expose Limits of Normative Models](only_brains_align_with_brains_cross-region_alignment_patterns_expose_limits_of_n.md)
-- [\[ICLR 2026\] Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining](decoding_dynamic_visual_experience_from_calcium_imaging_via_cell-pattern-aware_p.md)
 
 </div>
 

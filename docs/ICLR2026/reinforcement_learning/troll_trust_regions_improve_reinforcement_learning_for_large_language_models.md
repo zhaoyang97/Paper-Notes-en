@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] TROLL: Trust Regions improve Reinforcement Learning for Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] This paper proposes TROLL (Trust Region Optimization for Large Language models), which replaces the clipping mechanism in PPO with a differentiable discrete trust region projection. It implements token-level policy updates based on principled KL constraints, consistently outperforming PPO-clip in mathematical reasoning
+  [ICLR 2026][Reinforcement Learning][Trust Region] This paper proposes TROLL (Trust Region Optimization for Large Language models), which replaces the clipping mechanism in PPO with a differentiable discrete trust region projection. It implements token-level policy updates based on principled KL constraints, consistently outperforming PPO-clip in mathematical reasoning and code generation tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Trust Region"
+  - "PPO"
+  - "Policy Clipping"
+  - "KL Constraint"
+  - "LLM Reinforcement Learning"
+  - "Token-level Optimization"
 date: 2026-05-08
-content_hash: eeb1b8d5bc3e6b46
+content_hash: 170df8be1d6d8534
 ---
+
 # TROLL: Trust Regions improve Reinforcement Learning for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -183,16 +189,14 @@ Consistent advantages across model families and tasks:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
-- [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
-- [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
+- [\[ICLR 2026\] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models](cde_curiosity-driven_exploration_for_efficient_reinforcement_learning_in_large_l.md)
 
 </div>
 

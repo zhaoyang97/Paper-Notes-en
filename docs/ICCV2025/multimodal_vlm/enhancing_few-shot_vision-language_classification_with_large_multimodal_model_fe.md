@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features
 description: >-
-  [ICCV 2025][Multimodal VLM][Sparse attention vectors] This paper proposes Sparse Attention Vectors (SAVs) — a training-free method that extracts fewer than 5% of attention heads from frozen generative Large Multimodal Mo…
+  [ICCV 2025][Multimodal VLM][Sparse attention vectors] This paper proposes Sparse Attention Vectors (SAVs) — a training-free method that extracts fewer than 5% of attention heads from frozen generative Large Multimodal Models (LMMs) as strong feature representations. With only approximately 20 labeled samples per class, SAVs achieve state-of-the-art performance on vision-language classification tasks, outperforming LoRA fine-tuning by an average of 7% on challenging benchmarks…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "vision-language classification"
 date: 2026-05-08
-content_hash: f5849c63f2b6f0ae
+content_hash: b54132cb6ee7794c
 ---
 
 # Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features
@@ -200,11 +200,11 @@ Average gain of SAVs over LoRA: +7% on LLaVA-OV; similar margins on Qwen2-VL.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Generalized Few-Shot 3D Point Cloud Segmentation with Vision-Language Model](../../CVPR2025/multimodal_vlm/generalized_few-shot_3d_point_cloud_segmentation_with_vision-language_model.md)
 - [\[ICCV 2025\] Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model](interpretable_zero-shot_learning_with_locally-aligned_vision-language_model.md)
 - [\[ICCV 2025\] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation](sparsity_outperforms_low-rank_projections_in_few-shot_adaptation.md)
 - [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[NeurIPS 2025\] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning](../../NeurIPS2025/multimodal_vlm/vt-fsl_bridging_vision_and_text_with_llms_for_few-shot_learning.md)
 
 </div>
 

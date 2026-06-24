@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper reformulates "learning evolution operators for high-dimensional dynamical systems" as an **encoder-only self-supervised contrastive learning problem**. By using bilinear similarity $\langle\phi(x_t), P\phi(x_{t+1})\rangle$ to model the density ratio of state transitions, the authors prove it is equivalent to
+  [ICLR 2026][Physics & Scientific Computing][Evolution operator] This paper reformulates "learning evolution operators for high-dimensional dynamical systems" as an **encoder-only self-supervised contrastive learning problem**. By using bilinear similarity $\langle\phi(x_t), P\phi(x_{t+1})\rangle$ to model the density ratio of state transitions, the authors prove it is equivalent to least-squares operator estimation and negative VAMP-2 scores under an optimal predictor. The me…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Evolution operator"
+  - "Koopman/Transfer operator"
+  - "Spectral decomposition"
+  - "Contrastive learning"
+  - "Transferable representation"
 date: 2026-05-08
-content_hash: f6eca1e518ae1a74
+content_hash: 9852497e730f0f61
 ---
+
 # Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems
 
 **Conference**: ICLR 2026  
@@ -128,7 +134,6 @@ Experiments span molecular dynamics and climate science, focusing on the ability
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

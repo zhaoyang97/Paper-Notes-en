@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Revisiting Active Sequential Prediction-Powered Mean Estimation
 description: >-
-  [ICLR 2026][learning_theory][FTRL] This paper revisits "active sequential prediction-powered mean estimation": it provides **non-asymptotic, anytime-valid**, data-dependent confidence bounds for an estimator that previously only had asymptotic guarantees. By employing Follow-the-Regularized-Leader (FTRL) online learning to select query probabilities per
+  [ICLR 2026][Learning Theory][Active Sequential Mean Estimation] This paper revisits "active sequential prediction-powered mean estimation": it provides **non-asymptotic, anytime-valid**, data-dependent confidence bounds for an estimator that previously only had asymptotic guarantees. By employing Follow-the-Regularized-Leader (FTRL) online learning to select query probabilities per round, the theory and experiments jointly demonstrate that when query probabilities are blind t…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - FTRL
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Active Statistical Inference"
+  - "Prediction-Powered Inference (PPI)"
+  - "Active Sequential Mean Estimation"
+  - "Non-asymptotic Analysis"
+  - "Freedman's Inequality"
+  - "FTRL"
+  - "Query Probability"
 date: 2026-05-08
-content_hash: 4716b2ef3b0deac7
+content_hash: 7ff20078c9e05d7a
 ---
+
 # Revisiting Active Sequential Prediction-Powered Mean Estimation
 
 **Conference**: ICLR 2026  
@@ -115,8 +122,20 @@ Scanning $\lambda \in \{0.05, 0.1, 0.5, 0.8, 1.0\}$ for ZC24 reveals that $\lamb
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Multiple-Prediction-Powered Inference](multiple-prediction-powered_inference.md)
+- [\[ICLR 2026\] Mean Estimation from Coarse Data: Characterizations and Efficient Algorithms](mean_estimation_from_coarse_data_characterizations_and_efficient_algorithms.md)
+- [\[ICLR 2026\] Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions](revenue_maximization_under_sequential_price_competition_via_the_estimation_of_s-.md)
+- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Revisiting Tree-Sliced Wasserstein Distance through the Lens of the Fermat–Weber Problem](revisiting_tree-sliced_wasserstein_distance_through_the_lens_of_the_fermatweber_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Multiple-Prediction-Powered Inference](multiple-prediction-powered_inference.md)

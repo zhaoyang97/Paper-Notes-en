@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres
 description: >-
-  [NeurIPS 2025][Image Generation][Schrödinger Bridge] This paper extends the Iterative Markovian Fitting (IMF) procedure to the tree-structured Schrödinger Bridge problem…
+  [NeurIPS 2025][Image Generation][Schrödinger Bridge] This paper extends the Iterative Markovian Fitting (IMF) procedure to the tree-structured Schrödinger Bridge problem, proposing the TreeDSBM algorithm. For Wasserstein barycentre computation, it elegantly merges IMF iterations with fixed-point iterations, requiring only inexpensive bridge-matching steps for efficient solution.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Tree-Structured Cost"
   - "Generative Model"
 date: 2026-05-08
-content_hash: 48adc42c55fca746
+content_hash: 08ea31370510a6ac
 ---
 
 # Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres
@@ -158,8 +158,8 @@ TreeDSB exhibits training instability at low regularization $\varepsilon$; TreeD
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](../../ICLR2026/image_generation/branched_schrödinger_bridge_matching.md)
 - [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
 - [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
-- [\[NeurIPS 2025\] Tree-Guided Diffusion Planner](tree-guided_diffusion_planner.md)
-- [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
+- [\[ICML 2025\] Tree-Sliced Wasserstein Distance: A Geometric Perspective](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_a_geometric_perspective.md)
+- [\[ICML 2025\] Tree-Sliced Wasserstein Distance with Nonlinear Projection](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_with_nonlinear_projection.md)
 
 </div>
 

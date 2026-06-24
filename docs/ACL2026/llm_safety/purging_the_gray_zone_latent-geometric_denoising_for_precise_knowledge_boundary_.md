@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes the GeoDe framework, which constructs a truth hyperplane by training linear probes in the LLM latent space. Using the geometric distance from samples to the hyperplane as a confidence signal, it filters high-quality abstention fine-tuning data, effectively eliminating "gray zone" noise near decision
+  [ACL 2026 Findings][LLM Safety][Knowledge boundary awareness] This paper proposes the GeoDe framework, which constructs a truth hyperplane by training linear probes in the LLM latent space. Using the geometric distance from samples to the hyperplane as a confidence signal, it filters high-quality abstention fine-tuning data, effectively eliminating "gray zone" noise near decision boundaries to significantly enhance model truthfulness and reliability.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Knowledge boundary awareness"
+  - "abstention fine-tuning"
+  - "latent space probe"
+  - "geometric denoising"
+  - "hallucination mitigation"
 date: 2026-05-08
-content_hash: 8c2f4eef92e6395e
+content_hash: 6a2011a60c0817bd
 ---
+
 # Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness
 
 **Conference**: ACL 2026 Findings  
@@ -129,10 +135,10 @@ Supervised fine-tuning is performed on the filtered subset using standard cross-
 ## Related Papers
 
 - [\[ACL 2026\] Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](into_the_gray_zone_domain_contexts_can_blur_llm_safety_boundaries.md)
-- [\[ACL 2026\] CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge](curate_continual_unlearning_in_real_time_with_ensured_preservation_of_llm_knowle.md)
 - [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
+- [\[ACL 2026\] CURaTE: Continual Unlearning in Real Time with Ensured Preservation of LLM Knowledge](curate_continual_unlearning_in_real_time_with_ensured_preservation_of_llm_knowle.md)
+- [\[ICLR 2026\] Obfuscated Activations Bypass LLM Latent-Space Defenses](../../ICLR2026/llm_safety/obfuscated_activations_bypass_llm_latent-space_defenses.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
-- [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](../../ICLR2026/llm_safety/measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
 
 </div>
 

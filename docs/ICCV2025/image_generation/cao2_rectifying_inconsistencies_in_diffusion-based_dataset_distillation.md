@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation
 description: >-
-  [ICCV 2025][Image Generation][Dataset Distillation] This paper identifies two critical issues in diffusion-based dataset distillation — *objective inconsistency* and *condition inconsistency* — and proposes a two-stage f…
+  [ICCV 2025][Image Generation][Dataset Distillation] This paper identifies two critical issues in diffusion-based dataset distillation — *objective inconsistency* and *condition inconsistency* — and proposes a two-stage framework, CaO2: the first stage mitigates objective inconsistency via classifier-guided sample selection, and the second stage mitigates condition inconsistency via latent space optimization to maximize conditional likelihood…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Objective Consistency"
   - "Latent Space Optimization"
 date: 2026-05-08
-content_hash: d238b96c433769e4
+content_hash: 128006fd035b5111
 ---
 
 # CaO2: Rectifying Inconsistencies in Diffusion-Based Dataset Distillation
@@ -137,11 +137,11 @@ CaO2 is a two-stage framework: the first stage generates an image pool and selec
 
 ## Related Papers
 
+- [\[ICML 2025\] Taming Diffusion for Dataset Distillation with High Representativeness (D³HR)](../../ICML2025/image_generation/taming_diffusion_for_dataset_distillation_with_high_representativeness.md)
 - [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](../../CVPR2026/image_generation/learnability-guided_diffusion_for_dataset_distillation.md)
-- [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](inference-time_diffusion_model_distillation.md)
 - [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](../../NeurIPS2025/image_generation/entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
 - [\[ICCV 2025\] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](superedit_rectifying_and_facilitating_supervision_for_instruction-based_image_ed.md)
-- [\[ICCV 2025\] ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization](imagegem_in-the-wild_generative_image_interaction_dataset_for_generative_model_p.md)
+- [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](inference-time_diffusion_model_distillation.md)
 
 </div>
 

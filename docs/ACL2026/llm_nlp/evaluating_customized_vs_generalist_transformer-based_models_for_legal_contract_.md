@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification
 description: >-
-  [ACL 2026][LLM (Other)][legal-specific models] This paper systematically compares the performance of 13 customized legal Transformer models and 9 general-purpose models on 3 English contract classification tasks. It finds that smaller models with contract-relevant pretraining, such as Legal-BERT and Contracts-BERT, generally outperform larger general-purpose models
+  [ACL2026][LLM (Other)][legal-specific models] This paper systematically compares the performance of 13 customized legal Transformer models and 9 general-purpose models on 3 English contract classification tasks. It finds that smaller models with contract-relevant pretraining, such as Legal-BERT and Contracts-BERT, generally outperform larger general-purpose models on long-tail legal labels.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - legal-specific models
-  - contract classification
-  - long-tail labels
-  - macro-F1
-  - domain pretraining
+  - "ACL2026"
+  - "LLM (Other)"
+  - "legal-specific models"
+  - "contract classification"
+  - "long-tail labels"
+  - "macro-F1"
+  - "domain pretraining"
 date: 2026-05-08
-content_hash: e5536ab5209c7682
+content_hash: d0b46ad0a4a91ef5
 ---
+
 # Evaluating Customized vs. Generalist Transformer-based Models for Legal Contract Classification
 
 **Conference**: ACL2026  
@@ -116,10 +117,10 @@ The study does not introduce new loss functions, utilizing standard task-specifi
 ## Related Papers
 
 - [\[ACL 2026\] Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification](nürnberg_nlp_at_psydefdetect_multi-axis_voter_ensembles_for_psychological_defenc.md)
-- [\[ACL 2025\] TESS 2: A Large-Scale Generalist Diffusion Language Model](../../ACL2025/llm_nlp/tess_2_a_large-scale_generalist_diffusion_language_model.md)
+- [\[ICLR 2026\] Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models](../../ICLR2026/llm_nlp/parameters_vs_context_fine-grained_control_of_knowledge_reliance_in_language_mod.md)
 - [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
+- [\[ACL 2025\] TESS 2: A Large-Scale Generalist Diffusion Language Model](../../ACL2025/llm_nlp/tess_2_a_large-scale_generalist_diffusion_language_model.md)
 - [\[ACL 2025\] CogniBench: A Legal-inspired Framework and Dataset for Assessing Cognitive Faithfulness of Large Language Models](../../ACL2025/llm_nlp/cognibench_cognitive_faithfulness.md)
-- [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal In-Context Learning for ASR of Low-Resource Languages
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This study systematically investigates whether Multimodal In-Context Learning (MICL) enables speech LLMs to learn unseen endangered languages. It proposes an MICL-based hypothesis selection system that combines the complementary strengths of acoustic models and speech LLMs, significantly improving ASR performance acros
+  [ACL 2026 Findings][Audio & Speech][Multimodal Contextual Learning] This study systematically investigates whether Multimodal In-Context Learning (MICL) enables speech LLMs to learn unseen endangered languages. It proposes an MICL-based hypothesis selection system that combines the complementary strengths of acoustic models and speech LLMs, significantly improving ASR performance across three endangered languages.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Multimodal Contextual Learning"
+  - "Low-resource ASR"
+  - "Speech Large Language Models"
+  - "Cross-lingual Transfer"
+  - "Hypothesis Selection"
 date: 2026-05-08
-content_hash: b68095c53eceacf2
+content_hash: 48e8d18ea65cb1fc
 ---
+
 # Multimodal In-Context Learning for ASR of Low-Resource Languages
 
 **Conference**: ACL 2026 Findings  

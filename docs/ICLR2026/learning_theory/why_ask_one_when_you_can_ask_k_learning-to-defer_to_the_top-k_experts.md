@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Why Ask One When You Can Ask k? Learning-to-Defer to the Top-k Experts
 description: >-
-  [ICLR 2026][learning_theory][Learning-to-Defer] This paper generalizes the Learning-to-Defer (L2D) framework from "deferring to a single expert" to "consulting the $k$ most cost-effective entities." It introduces a **k-independent surrogate loss that can be trained once and switched to any $k$ during deployment**, proving its Bayes / H-consistency for both one-stage
+  [ICLR 2026][Learning Theory][Top-k Deferral] This paper generalizes the Learning-to-Defer (L2D) framework from "deferring to a single expert" to "consulting the $k$ most cost-effective entities." It introduces a **k-independent surrogate loss that can be trained once and switched to any $k$ during deployment**, proving its Bayes / H-consistency for both one-stage and two-stage paradigms. Furthermore, an adaptive cardinality function Top-k(x) is proposed based on sample diffic…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Learning-to-Defer
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Learning-to-Defer"
+  - "Surrogate Loss Consistency"
+  - "Top-k Deferral"
+  - "Surrogate Loss"
+  - "Bayes Consistency"
+  - "Adaptive Cardinality"
 date: 2026-05-08
-content_hash: c651ea1f29eb393f
+content_hash: ea87d952506f6793
 ---
+
 # Why Ask One When You Can Ask k? Learning-to-Defer to the Top-k Experts
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,10 @@ Results for California Housing (Regression, Two-stage) are reported here (RMSE$\
 ## Related Papers
 
 - [\[ICLR 2026\] The Lie of the Average: How Class Incremental Learning Evaluation Deceives You?](the_lie_of_the_average_how_class_incremental_learning_evaluation_deceives_you.md)
-- [\[ICLR 2026\] When Shift Happens - Confounding is to Blame](when_shift_happens_-_confounding_is_to_blame.md)
-- [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
 - [\[ICLR 2026\] When Bias Meets Trainability: Connecting Theories of Initialization](when_bias_meets_trainability_connecting_theories_of_initialization.md)
-- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](better_bounds_for_the_distributed_experts_problem.md)
+- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] Know When to Abstain: Optimal Selective Classification with Likelihood Ratios](know_when_to_abstain_optimal_selective_classification_with_likelihood_ratios.md)
+- [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
 
 </div>
 

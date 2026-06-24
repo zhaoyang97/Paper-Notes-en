@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task
 description: >-
-  [ICLR 2026][LLM Reasoning][Fill-in-the-Middle] Drawing on the Fill-in-the-Middle (FIM) paradigm from code completion, this work trains a specialized step expansion model, MathFimer-7B, to insert finer-grained intermediate reasoning steps into existing mathematical solution chains, thereby systematically enhancing the mathematical reasoning capabilities of downstrea
+  [ICLR 2026][Reasoning][Mathematical Reasoning] Drawing on the Fill-in-the-Middle (FIM) paradigm from code completion, this work trains a specialized step expansion model, MathFimer-7B, to insert finer-grained intermediate reasoning steps into existing mathematical solution chains, thereby systematically enhancing the mathematical reasoning capabilities of downstream models.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Fill-in-the-Middle
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Mathematical Reasoning"
+  - "Fill-in-the-Middle"
+  - "Reasoning Step Expansion"
+  - "Chain-of-Thought"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: ef187e95189d3269
+content_hash: 5f8b4372ad19af3c
 ---
+
 # MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task
 
 **Conference**: ICLR 2026  
@@ -143,11 +147,11 @@ Comprehensive experiments across 4 base models and 5 datasets were conducted:
 
 ## Related Papers
 
-- [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
-- [\[ICLR 2026\] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns](expanding_reasoning_potential_in_foundation_model_by_learning_diverse_chains_of_.md)
 - [\[ACL 2025\] ClozeMath: Improving Mathematical Reasoning in Language Models by Learning to Fill Equations](../../ACL2025/llm_reasoning/clozemath_improving_mathematical_reasoning_in_language_models_by_learning_to_fil.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
-- [\[ICLR 2026\] Learning Global Hypothesis Space for Enhancing Synergistic Reasoning Chain](learning_global_hypothesis_space_for_enhancing_synergistic_reasoning_chain.md)
+- [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
+- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
+- [\[ICLR 2026\] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns](expanding_reasoning_potential_in_foundation_model_by_learning_diverse_chains_of_.md)
+- [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
 
 </div>
 

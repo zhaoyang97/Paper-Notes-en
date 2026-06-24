@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Safety][Chain-of-Thought] Aiming at the "Snowball Effect" in Large Reasoning Models (LRMs) where small deviations in the Chain-of-Thought (CoT) are progressively amplified—leading to either a slide from safety analysis into harmful compliance or from helpfulness into over-refusal—this paper proposes AdvChain. By constructing adversarial CoT sam
+  [ICLR 2026][LLM Safety][Safety Alignment] Aiming at the "Snowball Effect" in Large Reasoning Models (LRMs) where small deviations in the Chain-of-Thought (CoT) are progressively amplified—leading to either a slide from safety analysis into harmful compliance or from helpfulness into over-refusal—this paper proposes AdvChain. By constructing adversarial CoT samples featuring "Temptation-Correction" and "Hesitation-Correction" (intentionally introducing errors and then correcti…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Safety Alignment"
+  - "Large Reasoning Models"
+  - "Chain-of-Thought"
+  - "Self-Correction"
+  - "Adversarial Fine-tuning"
 date: 2026-05-08
-content_hash: c61abc30da269fc9
+content_hash: 9a58e79646e542ec
 ---
+
 # AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -143,15 +148,14 @@ Data ratio ablation (fixed 1000 samples, adjusting T-C : H-C): Higher T-C ratios
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Output Supervision Can Obfuscate the Chain of Thought](output_supervision_can_obfuscate_the_chain_of_thought.md)
-- [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](../../AAAI2026/llm_safety/badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
 - [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](../../ACL2026/llm_safety/reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ICLR 2026\] Teach to Reason Safely: Policy-Guided Safety Tuning for MLRMs](teach_to_reason_safely_policy-guided_safety_tuning_for_mlrms.md)
-- [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
+- [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](../../AAAI2026/llm_safety/badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
+- [\[ICLR 2026\] Output Supervision Can Obfuscate the Chain of Thought](output_supervision_can_obfuscate_the_chain_of_thought.md)
+- [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 
 </div>
 

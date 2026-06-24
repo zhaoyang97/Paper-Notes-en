@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding
 description: >-
-  [CVPR 2026][LLM Efficiency][Video-LLM] Addressing two major bottlenecks in Video-LLM speculative decoding—"draft and target models waiting for each other" and "trade-off between speedup ratio and model alignment"—ParallelVLM implements both prefilling and decoding as draft/target parallel pipelines. It employs UV-Prune, an unbiased pruning method based on v
+  [CVPR 2026][LLM Efficiency][Speculative Decoding] Addressing two major bottlenecks in Video-LLM speculative decoding—"draft and target models waiting for each other" and "trade-off between speedup ratio and model alignment"—ParallelVLM implements both prefilling and decoding as draft/target parallel pipelines. It employs UV-Prune, an unbiased pruning method based on visual-text similarity variations (rather than attention scores), to expand the draft window. This achieves $3.…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
-  - Video-LLM
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Video-LLM"
+  - "Visual Token Pruning"
+  - "Parallel Pipeline"
+  - "Lossless Acceleration"
 date: 2026-05-08
-content_hash: fe6316a283ad6cf0
+content_hash: e95a55e1df495ac3
 ---
+
 # ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding
 
 **Conference**: CVPR 2026  
@@ -115,8 +120,21 @@ Lossy pruning (10% retention) degrades performance by 9.1%–17.7% and only yiel
 - Value: ⭐⭐⭐⭐⭐ Training-free, lossless, and ~3× speedup provides direct value for large-scale Video-LLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](../../ICLR2026/llm_efficiency/overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
+- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
+- [\[ICLR 2026\] Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models](../../ICLR2026/llm_efficiency/self-speculative_decoding_accelerates_lossless_inference_in_any-order_and_any-su.md)
+- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](../../ICLR2026/llm_efficiency/fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

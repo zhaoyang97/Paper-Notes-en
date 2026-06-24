@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models
 description: >-
-  [AAAI 2026][Image Generation][Text-to-image safety] This paper proposes MacPrompt, a black-box cross-lingual attack method that translates harmful words into multi-language candidates and performs character-level recombi…
+  [AAAI 2026][Image Generation][Text-to-image safety] This paper proposes MacPrompt, a black-box cross-lingual attack method that translates harmful words into multi-language candidates and performs character-level recombination to construct "macaronic words" as adversarial prompts. The method simultaneously bypasses text safety filters and concept removal defenses, achieving attack success rates of up to 92% on sexual content and 90% on violent content.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "macaronic words"
   - "concept removal"
 date: 2026-05-08
-content_hash: 04c70928d1c1c21f
+content_hash: 76b3cc83a8240979
 ---
 
 # MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models
@@ -199,11 +199,11 @@ Core insight: **T2I safety mechanisms cannot be confined to monolingual assumpti
 
 ## Related Papers
 
+- [\[ACL 2025\] Multimodal Pragmatic Jailbreak on Text-to-image Models](../../ACL2025/image_generation/multimodal_pragmatic_jailbreak_on_text-to-image_models.md)
 - [\[AAAI 2026\] Creating Blank Canvas Against AI-Enabled Image Forgery](creating_blank_canvas_against_ai-enabled_image_forgery.md)
-- [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](../../ICCV2025/image_generation/pla_prompt_learning_attack_against_text-to-image_generative_models.md)
-- [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](../../ICML2026/image_generation/alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
-- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](../../CVPR2026/image_generation/groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
 - [\[AAAI 2026\] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model](t2i-riskyprompt_a_benchmark_for_safety_evaluation_attack_and_defense_on_text-to-.md)
+- [\[AAAI 2026\] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models](dogfit_domain-guided_fine-tuning_for_efficient_transfer_learning_of_diffusion_mo.md)
+- [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](../../ICML2026/image_generation/alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
 
 </div>
 

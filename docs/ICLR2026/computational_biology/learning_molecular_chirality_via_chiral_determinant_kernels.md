@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Molecular Chirality via Chiral Determinant Kernels
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The paper proposes Chiral Determinant Kernels (ChiDeK) to encode SE(3)-invariant chiral matrices, unifying central and axial chirality within a GNN framework for the first time. By combining this with cross-attention to propagate stereochemical information, it achieves a >7% accuracy improvement on a newly constructed
+  [ICLR2026][Computational Biology][Molecular Chirality] The paper proposes Chiral Determinant Kernels (ChiDeK) to encode SE(3)-invariant chiral matrices, unifying central and axial chirality within a GNN framework for the first time. By combining this with cross-attention to propagate stereochemical information, it achieves a >7% accuracy improvement on a newly constructed axial chirality benchmark.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Molecular Chirality"
+  - "Chiral Determinant Kernels"
+  - "Equivariant GNNs"
+  - "Axial Chirality"
+  - "SE(3) Invariance"
 date: 2026-05-08
-content_hash: a307b0391120dfb0
+content_hash: a4855a1f748740fe
 ---
+
 # Learning Molecular Chirality via Chiral Determinant Kernels
 
 **Conference**: ICLR2026  
@@ -120,7 +126,7 @@ Training uses standard classification/regression losses plus a weighting regular
 - [\[ICML 2026\] Flexible Kernels for Protein Property Prediction](../../ICML2026/computational_biology/flexible_kernels_for_protein_property_prediction.md)
 - [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
 - [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
-- [\[ICLR 2026\] 3DCS: Datasets and Benchmark for Evaluating Conformational Sensitivity in Molecular Representations](3dcs_datasets_and_benchmark_for_evaluating_conformational_sensitivity_in_molecul.md)
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 
 </div>
 

@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] A Switching Framework for Online Interval Scheduling with Predictions
 description: >-
-  [AAAI 2026][Online Algorithms / Learning-Augmented Algorithms / Scheduling Optimization][Online interval scheduling] For the irrevocable online interval scheduling problem…
+  [AAAI 2026][Online Algorithms][Online interval scheduling] For the irrevocable online interval scheduling problem, this paper proposes the SemiTrust-and-Switch framework and the SmoothMerge randomized algorithm. By switching between or blending a prediction-trusting strategy and a classical greedy algorithm, the approach achieves near-optimal performance when predictions are accurate (consistency) and degrades gracefully when predictions are erroneous (robustness and smoothne…
 tags:
   - "AAAI 2026"
-  - "Online Algorithms / Learning-Augmented Algorithms / Scheduling Optimization"
+  - "Online Algorithms"
+  - "Learning-Augmented Algorithms"
+  - "Scheduling Optimization"
   - "Online interval scheduling"
-  - "learning-augmented algorithms"
   - "competitive ratio"
   - "consistency–robustness tradeoff"
   - "randomized algorithms"
 date: 2026-05-08
-content_hash: 3e2944763777a1fc
+content_hash: 260fd98eeeea7444
 ---
 
 # A Switching Framework for Online Interval Scheduling with Predictions
@@ -125,11 +126,11 @@ The trust-and-switch paradigm is transferable to other online maximization probl
 
 ## Related Papers
 
+- [\[ICLR 2026\] On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions](../../ICLR2026/learning_theory/on_smoothness_bounds_for_non-clairvoyant_scheduling_with_predictions.md)
+- [\[ICLR 2026\] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval](../../ICLR2026/learning_theory/discounted_online_convex_optimization_uniform_regret_across_a_continuous_interva.md)
 - [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](../../NeurIPS2025/learning_theory/non-clairvoyant_scheduling_with_progress_bars.md)
-- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
-- [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/learning_theory/learning-augmented_online_bipartite_fractional_matching.md)
-- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
+- [\[ICLR 2026\] Towards Safe and Optimal Online Bidding: A Modular Look-Ahead Lyapunov Framework](../../ICLR2026/learning_theory/towards_safe_and_optimal_online_bidding_a_modular_look-ahead_lyapunov_framework.md)
+- [\[ICLR 2026\] ATLAS: Alibaba Dataset and Benchmark for Learning-Augmented Scheduling](../../ICLR2026/learning_theory/atlas_alibaba_dataset_and_benchmark_for_learning-augmented_scheduling.md)
 
 </div>
 

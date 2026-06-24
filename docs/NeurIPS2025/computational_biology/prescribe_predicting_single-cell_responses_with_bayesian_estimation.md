@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation
 description: >-
-  [NeurIPS 2025][Computational Biology][single-cell perturbation prediction] PRESCRIBE is a framework that jointly models epistemic uncertainty (model unfamiliarity with inputs) and aleatoric uncertainty (inherent randomne…
+  [NeurIPS 2025][Computational Biology][single-cell perturbation prediction] PRESCRIBE is a framework that jointly models epistemic uncertainty (model unfamiliarity with inputs) and aleatoric uncertainty (inherent randomness of biological systems) in single-cell perturbation prediction via multivariate deep evidential regression. It generates a pseudo E-distance as a unified uncertainty proxy; filtering unreliable predictions based on this metric yields accuracy improvements ex…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "deep evidential regression"
   - "pseudo E-distance"
 date: 2026-05-08
-content_hash: e7e9cd44d7063122
+content_hash: 07bad59f661c2e0f
 ---
 
 # PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation
@@ -138,10 +138,10 @@ The composite loss is $\mathcal{L} = \mathcal{L}_1 + \lambda_1 \mathcal{L}_2 + \
 ## Related Papers
 
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
+- [\[ICLR 2026\] Doloris: Dual Conditional Diffusion Implicit Bridges with Sparsity Masking Strategy for Unpaired Single-Cell Perturbation Estimation](../../ICLR2026/computational_biology/doloris_dual_conditional_diffusion_implicit_bridges_with_sparsity_masking_strate.md)
+- [\[ACL 2025\] A Survey on Foundation Language Models for Single-cell Biology](../../ACL2025/computational_biology/foundation_lm_single_cell_survey.md)
 - [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)
-- [\[ICLR 2026\] Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation](../../ICLR2026/computational_biology/retrieval-augmented_generation_for_predicting_cellular_responses_to_gene_perturb.md)
-- [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](../../ICLR2026/computational_biology/scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
-- [\[NeurIPS 2025\] Is Sequence Information All You Need for Bayesian Optimization of Antibodies?](is_sequence_information_all_you_need_for_bayesian_optimization_of_antibodies.md)
+- [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
 
 </div>
 

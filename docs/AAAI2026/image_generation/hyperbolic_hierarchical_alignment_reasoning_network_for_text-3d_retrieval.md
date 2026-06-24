@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval
 description: >-
-  [AAAI 2026][Image Generation][Text-3D Retrieval] This paper proposes H2ARN, which embeds text and 3D point cloud data in the Lorentz hyperbolic space. It addresses hierarchical representation collapse via a hierarchical…
+  [AAAI 2026][Image Generation][Text-3D Retrieval] This paper proposes H2ARN, which embeds text and 3D point cloud data in the Lorentz hyperbolic space. It addresses hierarchical representation collapse via a hierarchical ordering loss (entailment cones), and mitigates redundancy-induced saliency dilution via contribution-aware hyperbolic aggregation. The method achieves state-of-the-art performance on Text-3D retrieval and introduces the T3DR-HIT v2 dataset…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Entailment Cones"
   - "Contribution-Aware Aggregation"
 date: 2026-05-08
-content_hash: 3fbc803f834afca9
+content_hash: 2ee342a8e752c91c
 ---
 
 # Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval
@@ -185,9 +185,9 @@ Total loss: $\mathcal{L}_{total} = \mathcal{L}_{cont} + \lambda \mathcal{L}_{ord
 
 - [\[ICLR 2026\] HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation](../../ICLR2026/image_generation/hierloc_hyperbolic_entity_embeddings_for_hierarchical_visual_geolocation.md)
 - [\[ICCV 2025\] HypDAE: Hyperbolic Diffusion Autoencoders for Hierarchical Few-shot Image Generation](../../ICCV2025/image_generation/hypdae_hyperbolic_diffusion_autoencoders_for_hierarchical_few-shot_image_generat.md)
-- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
 - [\[AAAI 2026\] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs](truthfulrag_resolving_factual-level_conflicts_in_retrieval-augmented_generation_.md)
 - [\[AAAI 2026\] Breaking the Modality Barrier: Generative Modeling for Accurate Molecule Retrieval from Mass Spectra](breaking_the_modality_barrier_generative_modeling_for_accurate_molecule_retrieva.md)
+- [\[AAAI 2026\] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)
 
 </div>
 

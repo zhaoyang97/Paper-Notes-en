@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Universal Beta Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] The authors propose Universal Beta Splatting (UBS), which generalizes 3D Gaussian Splatting into N-dimensional anisotropic Beta kernels. By providing per-dimension shape control, it unifies the modeling of spatial geometry, view-dependent appearance, and scene dynamics within a single representation, achieving interpre
+  [3D Vision] The authors propose Universal Beta Splatting (UBS), which generalizes 3D Gaussian Splatting into N-dimensional anisotropic Beta kernels. By providing per-dimension shape control, it unifies the modeling of spatial geometry, view-dependent appearance, and scene dynamics within a single representation, achieving interpretable scene decomposition and SOTA rendering quality.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Beta Kernel
-  - N-Dimensional
-  - View-Dependent
-  - Dynamic Scene
-  - Real-Time Rendering
+  - "3D Vision"
 date: 2026-05-08
-content_hash: 2bd86d932cc8b74c
+content_hash: 5f9ceb3cda31d745
 ---
+
 # Universal Beta Splatting
 
 - **Conference**: ICLR 2026
@@ -168,6 +162,7 @@ PSNR gains reach up to **+8.27 dB** (on 6DGS-PBR dataset).
 - **Writing Quality**: ⭐⭐⭐⭐⭐ — Establishes a general primitive framework for radiance field rendering.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

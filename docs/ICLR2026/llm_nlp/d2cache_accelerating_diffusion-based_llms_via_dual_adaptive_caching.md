@@ -4,15 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM (Other)][Diffusion LLM] Proposed d²Cache, a training-free approximate KV caching framework for Diffusion-based LLMs (dLLMs). It achieves a $4.1\times$ inference speedup while improving generation quality through a two-stage strategy: deterministic-prior-guided masked token selection combined with attention-aware non-masked token selection.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Diffusion LLM
-  - KV Cache
-  - Inference Acceleration
-  - dLLM
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Diffusion LLM"
+  - "KV Cache"
+  - "Inference Acceleration"
+  - "dLLM"
+  - "Attention Pruning"
 date: 2026-05-08
-content_hash: ce9bd78850e6349f
+content_hash: e19e1e871388bc3d
 ---
+
 # d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching
 
 **Conference**: ICLR 2026  
@@ -148,8 +150,8 @@ The method achieves a $4.1\times$ speedup while increasing accuracy by $1.6\%$.
 - [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](../../ICML2026/llm_nlp/spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
 - [\[ICLR 2026\] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding](stopping_computation_for_converged_tokens_in_masked_diffusion-lm_decoding.md)
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
 - [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
-- [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
 
 </div>
 

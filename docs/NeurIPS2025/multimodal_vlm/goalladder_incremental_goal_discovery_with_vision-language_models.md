@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GoalLadder: Incremental Goal Discovery with Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Vision-Language Models] This paper proposes GoalLadder, a framework that leverages VLMs to incrementally discover and rank candidate goal states…
+  [NeurIPS 2025][Multimodal VLM][Vision-Language Models] This paper proposes GoalLadder, a framework that leverages VLMs to incrementally discover and rank candidate goal states, employs an ELO rating system to handle noisy feedback, and defines distance-based rewards in a learned embedding space. Using only a single language instruction, the method trains RL agents to achieve approximately 95% success rate.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "ELO Rating"
   - "Reward Function"
 date: 2026-05-08
-content_hash: 7fb990a5ee0f8266
+content_hash: 799fa1e764b38cf7
 ---
 
 # GoalLadder: Incremental Goal Discovery with Vision-Language Models
@@ -152,10 +152,10 @@ GoalLadder approaches Oracle performance across all 7 tasks and even surpasses O
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
-- [\[NeurIPS 2025\] RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](roborefer_towards_spatial_referring_with_reasoning_in_vision-language_models_for.md)
+- [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](../../CVPR2026/multimodal_vlm/boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
 - [\[NeurIPS 2025\] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](hope_hybrid_of_position_embedding_for_long_context_visionlan.md)
 - [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](adapting_visionlanguage_models_for_evaluating_world_models.md)
-- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
+- [\[NeurIPS 2025\] Context Informs Pragmatic Interpretation in Vision-Language Models](context_informs_pragmatic_interpretation_in_vision-language_models.md)
 
 </div>
 

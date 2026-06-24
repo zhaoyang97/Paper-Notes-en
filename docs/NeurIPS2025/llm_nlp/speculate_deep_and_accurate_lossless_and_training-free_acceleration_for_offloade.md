@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs
 description: >-
-  [NeurIPS 2025][LLM/NLP][Speculative Decoding] This paper proposes SubSpec, a plug-and-play lossless and training-free acceleration method for offloaded LLMs. The core idea is to construct a highly aligned quantized subst…
+  [NeurIPS 2025][LLM (Other)][Speculative Decoding] This paper proposes SubSpec, a plug-and-play lossless and training-free acceleration method for offloaded LLMs. The core idea is to construct a highly aligned quantized substitute draft model directly from the offloaded target model itself, and to maximize alignment by sharing GPU-resident layers and KV-Cache. SubSpec achieves a 9.1× speedup for Qwen2.5 7B under an 8GB VRAM budget and a 12.5× speedup for Qwen2.5 32B under 24GB…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Speculative Decoding"
   - "Parameter Offloading"
   - "Training-Free Acceleration"
   - "Quantization"
   - "KV-Cache Sharing"
 date: 2026-05-08
-content_hash: 79be68bdbfd62e0b
+content_hash: cc0bcab404605666
 ---
 
 # SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs
@@ -142,11 +142,11 @@ SubSpec requires no training whatsoever — this is its most fundamental practic
 
 ## Related Papers
 
+- [\[ACL 2025\] Token Prepending: A Training-Free Approach for Eliciting Better Sentence Embeddings from LLMs](../../ACL2025/llm_nlp/token_prepending_training_free.md)
+- [\[ACL 2025\] Training-free LLM Merging for Multi-task Learning](../../ACL2025/llm_nlp/training-free_llm_merging_for_multi-task_learning.md)
 - [\[ACL 2026\] VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs](../../ACL2026/llm_nlp/voyager_a_training_free_approach_for_generating_diverse_datasets_using_llms.md)
 - [\[NeurIPS 2025\] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers](dont_be_lazy_completep_enables_compute-efficient_deep_transformers.md)
-- [\[NeurIPS 2025\] Reparameterized LLM Training via Orthogonal Equivalence Transformation](reparameterized_llm_training_via_orthogonal_equivalence_transformation.md)
-- [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
-- [\[NeurIPS 2025\] Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models](breaking_ars_sampling_bottleneck_provable_acceleration_via_d.md)
+- [\[ACL 2025\] A Training-free LLM-based Approach to General Chinese Character Error Correction](../../ACL2025/llm_nlp/a_training-free_llm-based_approach_to_general_chinese_character_error_correction.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][SOAP] COSMOS decomposes the gradient matrix into a "leading direction + residual" based on feature subspaces. It applies SOAP-style second-order preconditioning to the most informative low-dimensional principal subspace and uses the computationally cheap MUON for the remaining high-dimensional residuals. This achieves pre-tr
+  [ICLR2026][LLM (Other)][Adaptive Optimizer] COSMOS decomposes the gradient matrix into a "leading direction + residual" based on feature subspaces. It applies SOAP-style second-order preconditioning to the most informative low-dimensional principal subspace and uses the computationally cheap MUON for the remaining high-dimensional residuals. This achieves pre-training convergence comparable to or slightly better than SOAP while using memory close to MUON (approximately 1/5 of…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - SOAP
-  - MUON
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Adaptive Optimizer"
+  - "Memory-Efficient"
+  - "Feature Subspace"
+  - "SOAP"
+  - "MUON"
 date: 2026-05-08
-content_hash: 00faa01d440380da
+content_hash: 4f07647880ed5123
 ---
+
 # COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models
 
 **Conference**: ICLR2026  
@@ -148,11 +152,20 @@ COSMOS memory is 19.4% lower than SOAP and 6.8% lower than Adam, practically mat
 - Value: ⭐⭐⭐⭐ Provides a practical optimizer for LLM pre-training that offers MUON-level memory with SOAP-level performance.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)
+- [\[ACL 2025\] Semantic Exploration with Adaptive Gating for Efficient Problem Solving with Language Models](../../ACL2025/llm_nlp/semantic_exploration_adaptive_gating.md)
+- [\[ACL 2025\] A Survey on Efficient Large Language Model Training: From Data-centric Perspectives](../../ACL2025/llm_nlp/a_survey_on_efficient_large_language.md)
+- [\[ICLR 2026\] The Lattice Representation Hypothesis of Large Language Models](the_lattice_representation_hypothesis_of_large_language_models.md)
+- [\[ACL 2026\] GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning](../../ACL2026/llm_nlp/grass_gradient-based_adaptive_layer-wise_importance_sampling_for_memory-efficien.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](pt2-llm_post-training_ternarization_for_large_language_models.md)

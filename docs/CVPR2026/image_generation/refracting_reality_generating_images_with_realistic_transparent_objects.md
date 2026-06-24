@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Refracting Reality: Generating Images with Realistic Transparent Objects
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the long-standing failure of text-to-image models in generating realistic refraction for transparent objects, this paper proposes the training-free Snellcaster. It applies Snell's Law to perform "refraction self-warping" at each step of the FLUX generation trajectory. By utilizing an auxiliary panoramic imag
+  [CVPR 2026][Image Generation][Transparent Object Generation] Addressing the long-standing failure of text-to-image models in generating realistic refraction for transparent objects, this paper proposes the training-free Snellcaster. It applies Snell's Law to perform "refraction self-warping" at each step of the FLUX generation trajectory. By utilizing an auxiliary panoramic image centered at the transparent object to fill in surfaces not visible to the camera…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Transparent Object Generation"
+  - "Refraction"
+  - "Snell's Law"
+  - "Cross-view Synchronization"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 9243758e5c5f311a
+content_hash: 6c86f376ddc77b48
 ---
+
 # Refracting Reality: Generating Images with Realistic Transparent Objects
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,10 @@ Performed across 6 indoor scenes with spherical geometry (before relighting):
 ## Related Papers
 
 - [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
-- [\[ICML 2026\] Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior](../../ICML2026/image_generation/initialization_is_half_the_battle_generating_diverse_images_from_a_guidance_pote.md)
+- [\[ICLR 2026\] SketchingReality: From Hand-Drawn Scene Sketches to Photo-Realistic Images](../../ICLR2026/image_generation/sketchingreality_from_freehand_scene_sketches_to_photorealistic_images.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
-- [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
-- [\[ICML 2025\] Shielded Diffusion: Generating Novel and Diverse Images using Sparse Repellency](../../ICML2025/image_generation/shielded_diffusion_generating_novel_and_diverse_images_using_sparse_repellency.md)
+- [\[ICML 2026\] Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior](../../ICML2026/image_generation/initialization_is_half_the_battle_generating_diverse_images_from_a_guidance_pote.md)
 
 </div>
 

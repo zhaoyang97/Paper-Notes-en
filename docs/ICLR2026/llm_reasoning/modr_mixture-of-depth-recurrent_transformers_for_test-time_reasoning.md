@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Huginn] Decouples the "single-chain" latent space recurrent module of Depth-Recurrent Transformers (Huginn) into multiple recurrent branches that share a backbone with individual LoRAs. It employs a hard-gate router without auxiliary loss to dynamically switch branches during each token's generation, significantly improving ma
+  [ICLR 2026][Reasoning][Depth-Recurrent Transformer] Decouples the "single-chain" latent space recurrent module of Depth-Recurrent Transformers (Huginn) into multiple recurrent branches that share a backbone with individual LoRAs. It employs a hard-gate router without auxiliary loss to dynamically switch branches during each token's generation, significantly improving math and commonsense reasoning accuracy by training $<0.2\%$ of parameters.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Huginn
-  - Mixture-of-Experts
-  - LoRA
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Depth-Recurrent Transformer"
+  - "Huginn"
+  - "Latent Space Reasoning"
+  - "Mixture-of-Experts"
+  - "LoRA"
+  - "Dynamic Routing"
+  - "Test-Time Compute"
 date: 2026-05-08
-content_hash: 4e5d98a0dd383311
+content_hash: f360b997ef8f9ee7
 ---
+
 # MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning
 
 **Conference**: ICLR 2026  
@@ -113,16 +118,16 @@ MoDr achieves a **+7.2% / +2.48%** Gain over Huginn / Huginn-SFT. OOD gains (+7.
 - **Value**: ⭐⭐⭐⭐ — Provides a low-cost, reproducible path for adaptive depth reasoning with meaningful generalization gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] ChainGPT: Dual-Reasoning Model with Recurrent Depth and Multi-Rank State Updates](chaingpt_dual-reasoning_model_with_recurrent_depth_and_multi-rank_state_updates.md)
 - [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
 - [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
-- [\[NeurIPS 2025\] A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers](../../NeurIPS2025/llm_reasoning/a_little_depth_goes_a_long_way_the_expressive_power_of_logde.md)
 - [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
+- [\[NeurIPS 2025\] A Little Depth Goes a Long Way: The Expressive Power of Log-Depth Transformers](../../NeurIPS2025/llm_reasoning/a_little_depth_goes_a_long_way_the_expressive_power_of_logde.md)
 
 </div>
 

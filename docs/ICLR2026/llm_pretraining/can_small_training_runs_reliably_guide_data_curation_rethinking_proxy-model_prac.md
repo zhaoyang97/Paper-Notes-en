@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can Small Training Runs Reliably Guide Data Curation? Rethinking Proxy-Model Practice
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper points out a fatal flaw in the practice widely relied upon by frontier teams—comparing data recipes using small proxy models with fixed hyperparameters. Dataset rankings can be flipped by minor changes in the learning rate. The authors propose training proxy models with an extremely small learning rate ($10^
+  [ICLR2026][LLM Pretraining][Proxy models] This paper points out a fatal flaw in the practice widely relied upon by frontier teams—comparing data recipes using small proxy models with fixed hyperparameters. Dataset rankings can be flipped by minor changes in the learning rate. The authors propose training proxy models with an extremely small learning rate ($10^{-5}\sim10^{-6}$) as a simple patch, which improves the Spearman correlation of rankings from a proxy (GPT2-125M) to a…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Proxy models"
+  - "data recipe ablation"
+  - "learning rate"
+  - "hyperparameter sensitivity"
+  - "transferability"
 date: 2026-05-08
-content_hash: 2abe52e3ca1b618f
+content_hash: 75f60ca43945a0c6
 ---
+
 # Can Small Training Runs Reliably Guide Data Curation? Rethinking Proxy-Model Practice
 
 **Conference**: ICLR2026  
@@ -128,8 +134,8 @@ The 23 recipes cover four data curation dimensions: (1) Domain composition (10 P
 - [\[ICLR 2026\] Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods](rethinking_data_curation_in_llm_training_online_reweighting_offers_better_genera.md)
 - [\[ICLR 2026\] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning](task-aware_data_selection_via_proxy-label_enhanced_distribution_matching_for_llm.md)
 - [\[ICLR 2026\] DUET: Optimizing LLM Training Data Mixtures via Noisy Feedback from Unseen, Downstream Evaluation Tasks](duet_optimizing_llm_training_data_mixtures_via_noisy_feedback_from_unseen_downst.md)
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
 - [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
-- [\[ICLR 2026\] SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training](spice_submodular_penalized_informationconflict_selection_for_efficient_large_lan.md)
 
 </div>
 

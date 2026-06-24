@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Weakly supervised semantic segmentation] This paper proposes SSR, a dual-level semantic and spatial rectification framework that addresses non-target foreground over-activation caused by CLIP's…
+  [AAAI 2026][Segmentation][Weakly supervised semantic segmentation] This paper proposes SSR, a dual-level semantic and spatial rectification framework that addresses non-target foreground over-activation caused by CLIP's cross-modal semantic misalignment via Cross-Modal Prototype Alignment (CMPA), and background over-activation during affinity propagation via Superpixel-Guided Correction (SGC). SSR achieves state-of-the-art performance on PASCAL VOC and MS COCO…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "superpixel-guided correction"
   - "class activation map"
 date: 2026-05-08
-content_hash: ece48df4c0e1b0b8
+content_hash: bb73a5ce8ce9a11d
 ---
 
 # SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation
@@ -177,11 +177,11 @@ Loss function ablation (VOC train mIoU):
 
 ## Related Papers
 
-- [\[ICCV 2025\] Know Your Attention Maps: Class-specific Token Masking for Weakly Supervised Semantic Segmentation](../../ICCV2025/segmentation/know_your_attention_maps_class-specific_token_masking_for_weakly_supervised_sema.md)
-- [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
-- [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](../../CVPR2026/segmentation/wsrvos_weakly_supervised_rvos.md)
-- [\[CVPR 2026\] FCL-COD: Weakly Supervised Camouflaged Object Detection with Frequency-aware and Contrastive Learning](../../CVPR2026/segmentation/fcl-cod_weakly_supervised_camouflaged_object_detection_with_frequency-aware_and_.md)
-- [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2025\] Exploring CLIP's Dense Knowledge for Weakly Supervised Semantic Segmentation](../../CVPR2025/segmentation/exploring_clips_dense_knowledge_for_weakly_supervised_semantic_segmentation.md)
+- [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
+- [\[CVPR 2026\] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/beyond_text_visual_description_assembly_by_probabilistic_model_for_clip-based_we.md)
+- [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](../../CVPR2026/segmentation/frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](../../CVPR2026/segmentation/s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
 
 </div>
 

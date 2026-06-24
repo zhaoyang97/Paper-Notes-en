@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] When Softmax Fails at the Top: Extreme Value Corrections for InfoNCE
 description: >-
-  [ICML 2026][Self-Supervised Learning][InfoNCE] This paper interprets InfoNCE as a top-1 selection likelihood and points out that standard softmax implicitly assumes a Gumbel tail distribution. However, hard negatives with high similarity in normalized embeddings more frequently exhibit Weibull behavior with finite endpoints. The authors propose WEINCE, a parameter-
+  [ICML 2026][Self-Supervised Learning][InfoNCE] This paper interprets InfoNCE as a top-1 selection likelihood and points out that standard softmax implicitly assumes a Gumbel tail distribution. However, hard negatives with high similarity in normalized embeddings more frequently exhibit Weibull behavior with finite endpoints. The authors propose WEINCE, a parameter-free method that adaptively mixes softmax logits with endpoint shortfall logits using in-batch tail statistics to…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - InfoNCE
-  - hard negatives
-  - Weibull tail
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "InfoNCE"
+  - "Extreme Value Theory"
+  - "hard negatives"
+  - "Weibull tail"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: 555fbd930d2b3bdc
+content_hash: f7102a2acc63f24c
 ---
+
 # When Softmax Fails at the Top: Extreme Value Corrections for InfoNCE
 
 **Conference**: ICML 2026  

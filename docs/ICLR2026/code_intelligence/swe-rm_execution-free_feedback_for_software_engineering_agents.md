@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SWE-RM: Execution-Free Feedback for Software Engineering Agents
 description: >-
-  [ICLR 2026][Code Intelligence][SWE Agent] This paper points out that "strong Test-Time Scaling (TTS) performance" does not guarantee that a reward model will be effective in reinforcement learning (RL). It proposes to evaluate reward models through three dimensions: **TTS + Discriminability (AUC) + Calibration (ECE)**. Based on this, it trains SWE-RM (30B-A3B)
+  [ICLR 2026][Code Intelligence][SWE Agent] This paper points out that "strong Test-Time Scaling (TTS) performance" does not guarantee that a reward model will be effective in reinforcement learning (RL). It proposes to evaluate reward models through three dimensions: **TTS + Discriminability (AUC) + Calibration (ECE)**. Based on this, it trains SWE-RM (30B-A3B), an execution-free reward model that improves Qwen3-Coder-Max from 67.0% to 74.6% (open-source SOTA) via TTS on SWE-B…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - SWE Agent
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "SWE Agent"
+  - "Reward Model"
+  - "Execution-Free Feedback"
+  - "Calibration"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 7fe5c884afb7bc5b
+content_hash: 49a2f79bd2fcf772
 ---
+
 # SWE-RM: Execution-Free Feedback for Software Engineering Agents
 
 **Conference**: ICLR 2026  

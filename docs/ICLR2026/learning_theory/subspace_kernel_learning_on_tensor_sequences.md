@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Subspace Kernel Learning on Tensor Sequences
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes UKTL (Uncertainty-driven Kernel Tensor Learning), which unfolds high-order tensors into subspaces along each mode, constructs learnable "sum-product" kernels on Grassmann manifolds to compare tensor sequences, utilizes Nyström approximation with soft k-means dynamic pivots for scalability, and adapt
+  [ICLR 2026][Kernel Methods][Tensor Kernels] This paper proposes UKTL (Uncertainty-driven Kernel Tensor Learning), which unfolds high-order tensors into subspaces along each mode, constructs learnable "sum-product" kernels on Grassmann manifolds to compare tensor sequences, utilizes Nyström approximation with soft k-means dynamic pivots for scalability, and adaptively down-weights noisy dimensions via mode-wise uncertainty. Trained end-to-end…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Kernel Methods"
+  - "Tensor Learning"
+  - "Subspace Geometry"
+  - "Tensor Kernels"
+  - "Grassmann Manifolds"
+  - "Nyström Approximation"
+  - "Uncertainty Modeling"
+  - "Skeleton Action Recognition"
 date: 2026-05-08
-content_hash: f25b99f9bc061e22
+content_hash: 12418a59bbfdda79
 ---
+
 # Subspace Kernel Learning on Tensor Sequences
 
 **Conference**: ICLR 2026  
@@ -157,10 +165,10 @@ UKTL demonstrates a significant gain over KTL (e.g., +1.2% on NTU-120 X-Sub) due
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
-- [\[ICLR 2026\] How to Square Tensor Networks and Circuits Without Squaring Them](how_to_square_tensor_networks_and_circuits_without_squaring_them.md)
+- [\[ICLR 2026\] Some Neural Networks Inherently Preserve Subspace Clustering Structure](some_neural_networks_inherently_preserve_subspace_clustering_structure.md)
 - [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
-- [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
-- [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](../../NeurIPS2025/learning_theory/kernel_conditional_tests_from_learning-theoretic_bounds.md)
+- [\[ICLR 2026\] How to Square Tensor Networks and Circuits Without Squaring Them](how_to_square_tensor_networks_and_circuits_without_squaring_them.md)
+- [\[ICLR 2026\] Towards Sampling Data Structures for Tensor Products in Turnstile Streams](towards_sampling_data_structures_for_tensor_products_in_turnstile_streams.md)
 
 </div>
 

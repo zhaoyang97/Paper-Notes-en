@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAVias: Mitigate Any Visual Bias
 description: >-
-  [ICCV2025][Multimodal VLM][Visual Bias Mitigation] This paper proposes MAVias, an open-set visual bias mitigation framework that extracts visual attribute tags from images using a tagging foundation model…
+  [ICCV2025][Multimodal VLM][Visual Bias Mitigation] This paper proposes MAVias, an open-set visual bias mitigation framework that extracts visual attribute tags from images using a tagging foundation model, employs an LLM to filter out tags irrelevant to the target class as potential biases, encodes the identified biases via vision-language embeddings, and incorporates them into training to learn bias-invariant representations. MAVias substantially outperforms existing methods…
 tags:
   - "ICCV2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Models"
   - "Fairness"
 date: 2026-05-08
-content_hash: f8cf65a451fdb817
+content_hash: 52497c978c9d273e
 ---
 
 # MAVias: Mitigate Any Visual Bias
@@ -130,10 +130,10 @@ SGD is used as the optimizer (Adam for CelebA), with a learning rate of 0.001 de
 ## Related Papers
 
 - [\[NeurIPS 2025\] MDReID: Modality-Decoupled Learning for Any-to-Any Multi-Modal Object Re-Identification](../../NeurIPS2025/multimodal_vlm/mdreid_modality-decoupled_learning_for_any-to-any_multi-modal_object_re-identifi.md)
-- [\[ICLR 2026\] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/grasp_any_region_towards_precise_contextual_pixel_understanding_for_multimodal_l.md)
-- [\[ICCV 2025\] CVPT: Cross Visual Prompt Tuning](cvpt_cross_visual_prompt_tuning.md)
-- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
-- [\[ICCV 2025\] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models](instruction-grounded_visual_projectors_for_continual_learning_of_generative_visi.md)
+- [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](../../ICLR2026/multimodal_vlm/flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)
+- [\[CVPR 2025\] Joint Vision-Language Social Bias Removal for CLIP](../../CVPR2025/multimodal_vlm/joint_vision-language_social_bias_removal_for_clip.md)
+- [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](../../ICLR2026/multimodal_vlm/next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
+- [\[CVPR 2026\] Describe Anything Anywhere At Any Moment](../../CVPR2026/multimodal_vlm/describe_anything_anywhere_at_any_moment.md)
 
 </div>
 

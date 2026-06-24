@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost
 description: >-
-  [NeurIPS 2025][LLM Reasoning][LRM-as-a-judge] This paper presents the first systematic analysis of large reasoning models (LRMs) in MQM-based machine translation evaluation…
+  [NeurIPS 2025][Reasoning][LRM-as-a-judge] This paper presents the first systematic analysis of large reasoning models (LRMs) in MQM-based machine translation evaluation, identifying failure modes including overthinking, score overestimation, and scale-dependent sensitivity to input materials. The authors propose ThinMQM, a method that calibrates LRM reasoning by fine-tuning on synthetic human MQM annotation trajectories, reducing the thinking budget by approximately 35× while…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "LRM-as-a-judge"
   - "machine translation evaluation"
   - "MQM"
   - "thinking budget calibration"
   - "ThinMQM"
 date: 2026-05-08
-content_hash: 53311dfba320a3c8
+content_hash: 65c23c9e0801b28d
 ---
 
 # Are Large Reasoning Models Good Translation Evaluators? Analysis and Performance Boost
@@ -122,10 +122,10 @@ The study is organized into two stages: (1) **Diagnostic Analysis** — a system
 ## Related Papers
 
 - [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](../../ACL2026/llm_reasoning/scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
+- [\[ICML 2025\] Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators](../../ICML2025/llm_reasoning/evaluating_judges_as_evaluators_the_jetts_benchmark_of_llm-as-judges_as_test-tim.md)
 - [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
-- [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
+- [\[ACL 2025\] DRT: Deep Reasoning Translation via Long Chain-of-Thought](../../ACL2025/llm_reasoning/drt_deep_reasoning_translation_via_long_chain-of-thought.md)
 - [\[NeurIPS 2025\] DisCO: Reinforcing Large Reasoning Models with Discriminative Constrained Optimization](disco_reinforcing_large_reasoning_models_with_discriminative_constrained_optimiz.md)
-- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
 
 </div>
 

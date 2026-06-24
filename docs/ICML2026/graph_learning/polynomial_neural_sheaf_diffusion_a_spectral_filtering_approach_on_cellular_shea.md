@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] PolyNSD replaces the "single-step spatial diffusion" of Sheaf Neural Networks with a learnable $K$-th order polynomial spectral filter applied to the normalized sheaf Laplacian. Using Chebyshev three-term recurrence for stable computation, a single layer achieves a $K$-hop receptive field and controllable low/band/high
+  [ICML 2026][Graph Learning][Neural Sheaf Diffusion] PolyNSD replaces the "single-step spatial diffusion" of Sheaf Neural Networks with a learnable $K$-th order polynomial spectral filter applied to the normalized sheaf Laplacian. Using Chebyshev three-term recurrence for stable computation, a single layer achieves a $K$-hop receptive field and controllable low/band/high-pass responses. A surprising finding is that using only diagonal restriction maps outperforms existing NSD…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Neural Sheaf Diffusion"
+  - "Chebyshev Polynomial Filtering"
+  - "Heterophilic Graphs"
+  - "Oversmoothing"
+  - "Diagonal Restriction Maps"
 date: 2026-05-08
-content_hash: 286817e40de49ac0
+content_hash: fa2b0b85abc31be5
 ---
+
 # Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves
 
 **Conference**: ICML 2026  
@@ -132,9 +138,9 @@ DiagPolySD improves over Diag-NSD by 4.3 points on Texas and outperforms GCN by 
 
 - [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
+- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](../../ICLR2026/graph_learning/cooperative_sheaf_neural_networks.md)
+- [\[ICLR 2026\] CheckMate! Watermarking Graph Diffusion Models in Polynomial Time](../../ICLR2026/graph_learning/checkmate_watermarking_graph_diffusion_models_in_polynomial_time.md)
 - [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[ICML 2026\] Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach](rethinking_feature_alignment_in_generalist_graph_anomaly_detection_a_relational_.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
 
 </div>
 

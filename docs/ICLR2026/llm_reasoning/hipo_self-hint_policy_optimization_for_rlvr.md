@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] HiPO: Self-Hint Policy Optimization for RLVR
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] HiPO extracts "prefixes" from accidentally successful trajectories within a training batch to serve as on-policy self-hints for resampling. This transforms sparse 0/1 rewards into dense contrastive learning signals, specifically addressing the "near-miss" problem and exploration stagnation in RLVR.
+  [ICLR 2026][Reasoning][RLVR] HiPO extracts "prefixes" from accidentally successful trajectories within a training batch to serve as on-policy self-hints for resampling. This transforms sparse 0/1 rewards into dense contrastive learning signals, specifically addressing the "near-miss" problem and exploration stagnation in RLVR.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Sparse Reward"
+  - "Self-hint"
+  - "Exploration Stagnation"
+  - "Tool-integrated Reasoning"
 date: 2026-05-08
-content_hash: 958c902555a2f0b1
+content_hash: 7b80eb8b5c4748b4
 ---
+
 # HiPO: Self-Hint Policy Optimization for RLVR
 
 **Conference**: ICLR 2026  
@@ -116,6 +121,7 @@ HiPO achieves an average avg@32 gain of **+5.0 pp** over GRPO and outperforms it
 - **Value**: ⭐⭐⭐⭐ — Directly addresses a core pain point of RLVR (sparse rewards) with a compute-friendly, data-free bootstrapping path. highly practical for researchers working on LLM reasoning RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -124,7 +130,7 @@ HiPO achieves an average avg@32 gain of **+5.0 pp** over GRPO and outperforms it
 - [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ICLR 2026\] Asymmetric Proximal Policy Optimization: Mini-Critics Boost LLM Reasoning](asymmetric_proximal_policy_optimization_mini-critics_boost_llm_reasoning.md)
+- [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
 
 </div>
 

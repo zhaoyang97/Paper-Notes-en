@@ -4,12 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][Medical Imaging][Tagged MRI] The InvTag framework is proposed, which for the first time combines an MR physics forward model with a pre-trained diffusion generative prior to unifiedly solve three sub-tasks of 3D Tagged MRI: anatomical recovery, Cine synthesis, and motion estimation, without requiring any additional training data.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Tagged MRI
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Tagged MRI"
+  - "Inverse Problem"
+  - "Diffusion Prior"
+  - "Motion Estimation"
+  - "Image Super-resolution"
 date: 2026-05-08
-content_hash: 4098f49a6118781a
+content_hash: e922e222ef733c6b
 ---
+
 # Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
 
 **Conference**: CVPR 2026  
@@ -156,7 +161,7 @@ Anatomy $a$ and forward model parameters are interdependent, making simultaneous
 - [\[AAAI 2026\] Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT](../../AAAI2026/medical_imaging/unsupervised_multi-parameter_inverse_solving_for_reducing_ring_artifacts_in_3d_x.md)
 - [\[CVPR 2026\] GenTract: Generative Global Tractography](gentract_generative_global_tractography.md)
 - [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
-- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
+- [\[CVPR 2026\] MicroFM: Physics-guided Flow Matching for Isotropic Microscopy Reconstruction](microfm_physics-guided_flow_matching_for_isotropic_microscopy_reconstruction.md)
 
 </div>
 

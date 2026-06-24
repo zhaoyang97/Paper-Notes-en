@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper proposes "Few-Shot Hybrid Incremental Learning (FSHIL)," a realistic new paradigm where data is scarce and task types (new classes, new domains, or both) appear stochastically. By introducing "Conditional Meta-Expanding Mixture of Experts (CME-MoE)" to reconcile stability and plasticity at the feature level
+  [CVPR 2026][LLM Efficiency][Few-Shot Incremental Learning] This paper proposes "Few-Shot Hybrid Incremental Learning (FSHIL)," a realistic new paradigm where data is scarce and task types (new classes, new domains, or both) appear stochastically. By introducing "Conditional Meta-Expanding Mixture of Experts (CME-MoE)" to reconcile stability and plasticity at the feature level and "Self-Expanding Prototype Classifier (SEPC)" to model multi-distribution boundaries at the classi…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Few-Shot Incremental Learning"
+  - "Stability-Plasticity"
+  - "Mixture of Experts"
+  - "Meta-learning Expansion"
+  - "Self-expanding Prototypes"
 date: 2026-05-08
-content_hash: 76b8c93b69db38ea
+content_hash: e7b47295f83a8862
 ---
+
 # Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Component ablation (FSHIL, 5-shot, Avg/Last %). Baseline indicates no modules ad
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
-- [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
-- [\[CVPR 2026\] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)
-- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
+- [\[CVPR 2026\] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)
+- [\[ACL 2025\] On Many-Shot In-Context Learning for Long-Context Evaluation](../../ACL2025/llm_efficiency/on_many-shot_in-context_learning_for_long-context_evaluation.md)
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](../../ICLR2026/llm_efficiency/meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](../../ICLR2026/llm_efficiency/learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+- [\[ACL 2025\] Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse Attention](../../ACL2025/llm_efficiency/efficient_many-shot_in-context_learning_with_dynamic_block-sparse_attention.md)
 
 </div>
 

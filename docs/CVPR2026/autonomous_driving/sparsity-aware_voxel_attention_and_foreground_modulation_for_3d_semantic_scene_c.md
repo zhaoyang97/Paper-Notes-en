@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] VoxSAMNet is proposed, a monocular semantic scene completion framework that explicitly models voxel sparsity and semantic imbalance. It utilizes a Dummy Shortcut to skip empty voxels and combines Foreground Dropout with a Text-Guided Image Filter to mitigate long-tail overfitting, achieving a SOTA mIoU of 18.19% on Sem
+  [CVPR 2026][Autonomous Driving][Semantic Scene Completion] VoxSAMNet is proposed, a monocular semantic scene completion framework that explicitly models voxel sparsity and semantic imbalance. It utilizes a Dummy Shortcut to skip empty voxels and combines Foreground Dropout with a Text-Guided Image Filter to mitigate long-tail overfitting, achieving a SOTA mIoU of 18.19% on SemanticKITTI (outperforming existing monocular and stereo methods).
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Semantic Scene Completion"
+  - "Voxel Sparsity"
+  - "Foreground Modulation"
+  - "Deformable Attention"
+  - "Long-tail Distribution"
 date: 2026-05-08
-content_hash: 30ae6fa900befde1
+content_hash: 64e086fac072796e
 ---
+
 # Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion
 
 **Conference**: CVPR 2026  
@@ -163,7 +169,7 @@ Contribution of components: Both DSFR and TGIF contribute significant improvemen
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 - [\[AAAI 2026\] Unleashing Semantic and Geometric Priors for 3D Scene Completion](../../AAAI2026/autonomous_driving/unleashing_semantic_and_geometric_priors_for_3d_scene_completion.md)
 - [\[CVPR 2026\] Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion](probabilistic_discrepancy_learning_for_roadside_lidar_scene_completion.md)
-- [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
+- [\[AAAI 2026\] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](../../AAAI2026/autonomous_driving/hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)
 
 </div>
 

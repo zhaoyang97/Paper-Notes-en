@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MOSPA: Human Motion Generation Driven by Spatial Audio
 description: >-
-  [NeurIPS 2025][Human Understanding][Spatial audio] This work introduces the novel task of spatial-audio-driven human motion generation, constructs the SAM dataset comprising 9+ hours, 27 scenes…
+  [NeurIPS 2025 Spotlight][Human Understanding][Spatial audio] This work introduces the novel task of spatial-audio-driven human motion generation, constructs the SAM dataset comprising 9+ hours, 27 scenes, and 12 subjects with paired binaural audio and motion data, and proposes the MOSPA diffusion model. By fusing audio features including MFCC, tempogram, and RMS with sound source position and motion style conditions, MOSPA achieves an FID of 7.98…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Human Understanding"
   - "Spatial audio"
   - "motion generation"
@@ -12,7 +12,7 @@ tags:
   - "SAM dataset"
   - "binaural audio"
 date: 2026-05-08
-content_hash: c4b4fd209ffd54e4
+content_hash: 0b1fdb023f365e71
 ---
 
 # MOSPA: Human Motion Generation Driven by Spatial Audio
@@ -150,11 +150,11 @@ Quantitative evaluation on the SAM dataset (8:1:1 split, 2400/300/300 sequences)
 
 ## Related Papers
 
+- [\[ECCV 2024\] Audio-Driven Talking Face Generation with Stabilized Synchronization Loss](../../ECCV2024/human_understanding/audio-driven_talking_face_generation_with_stabilized_synchronization_loss.md)
 - [\[NeurIPS 2025\] VASA-3D: Lifelike Audio-Driven Gaussian Head Avatars from a Single Image](vasa-3d_lifelike_audio-driven_gaussian_head_avatars_from_a_single_image.md)
+- [\[CVPR 2025\] MoEE: Mixture of Emotion Experts for Audio-Driven Portrait Animation](../../CVPR2025/human_understanding/moee_mixture_of_emotion_experts_for_audio-driven_portrait_animation.md)
+- [\[CVPR 2026\] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](../../CVPR2026/human_understanding/pc-talk_precise_facial_animation_control_for_audio-driven_talking_face_generatio.md)
 - [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
-- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](../../ICCV2025/human_understanding/kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](../../ICCV2025/human_understanding/genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
 
 </div>
 

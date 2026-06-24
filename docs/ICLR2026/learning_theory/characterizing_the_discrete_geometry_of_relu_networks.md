@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Characterizing the Discrete Geometry of ReLU Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper abstracts the polyhedral complex partitioned by fully connected ReLU networks in the input space into a "connectivity graph" (where regions are nodes and adjacent regions share edges). It proves that the **average degree of this graph is universally upper-bounded by $2d$ (twice the input dimension), independ
+  [ICLR 2026][Learning Theory][ReLU Networks] This paper abstracts the polyhedral complex partitioned by fully connected ReLU networks in the input space into a "connectivity graph" (where regions are nodes and adjacent regions share edges). It proves that the **average degree of this graph is universally upper-bounded by $2d$ (twice the input dimension), independent of network width and depth**. It also provides an upper bound for the graph diameter $O(m^\ell)$ that is indepen…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Neural Network Geometry"
+  - "ReLU Networks"
+  - "Polyhedral Complex"
+  - "Connectivity Graph"
+  - "Average Degree"
+  - "Graph Diameter"
 date: 2026-05-08
-content_hash: 765f8eb46bd334e8
+content_hash: e7a1a544348eae3d
 ---
+
 # Characterizing the Discrete Geometry of ReLU Networks
 
 **Conference**: ICLR 2026  
@@ -124,15 +131,14 @@ The average degree is consistently **below the upper bound $2d$** ($<8$ for $d{=
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
+- [\[ICLR 2026\] Beyond Spectra: Eigenvector Overlaps in Loss Geometry](beyond_spectra_eigenvector_overlaps_in_loss_geometry.md)
 - [\[ICLR 2026\] Characterizing Pattern Matching and Its Limits on Compositional Task Structures](characterizing_pattern_matching_and_its_limits_on_compositional_task_structures.md)
 - [\[ICLR 2026\] A Unification of Discrete, Gaussian, and Simplicial Diffusion](a_unification_of_discrete_gaussian_and_simplicial_diffusion.md)
-- [\[ICLR 2026\] Beyond Spectra: Eigenvector Overlaps in Loss Geometry](beyond_spectra_eigenvector_overlaps_in_loss_geometry.md)
-- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
 
 </div>
 

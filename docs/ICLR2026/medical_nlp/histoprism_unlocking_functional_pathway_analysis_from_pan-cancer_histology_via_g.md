@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction
 description: >-
-  [ICLR 2026][Medical NLP][Pan-Cancer] This paper proposes HistoPrism, an efficient Transformer architecture that predicts pan-cancer gene expression from H&E histology images by injecting cancer type conditions via cross-attention. It introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, significantly outperforming
+  [ICLR 2026][Medical LLM][Spatial Transcriptomics] This paper proposes HistoPrism, an efficient Transformer architecture that predicts pan-cancer gene expression from H&E histology images by injecting cancer type conditions via cross-attention. It introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, significantly outperforming STPath in pathway-level prediction, especially for core biological pathways with low variance.
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Pan-Cancer
-  - Transformer
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Pan-Cancer"
+  - "Pathway Analysis"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 8ff84a8c94199cd7
+content_hash: 2557f8a9d67e1a16
 ---
+
 # HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction
 
 **Conference**: ICLR 2026  
@@ -138,9 +142,9 @@ The model is trained end-to-end using the MSE loss function: $\mathcal{L}_{\text
 ## Related Papers
 
 - [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
+- [\[ACL 2026\] ReMedi: Reasoner for Medical Clinical Prediction](../../ACL2026/medical_nlp/remedi_reasoner_for_medical_clinical_prediction.md)
 - [\[ICLR 2026\] SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis](survhte-bench_a_benchmark_for_heterogeneous_treatment_effect_estimation_in_survi.md)
 - [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
-- [\[ACL 2026\] ReMedi: Reasoner for Medical Clinical Prediction](../../ACL2026/medical_nlp/remedi_reasoner_for_medical_clinical_prediction.md)
 - [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOSAIC-GS: Monocular Scene Reconstruction via Advanced Initialization for Complex Dynamic Environments
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MOSAIC-GS shifts "motion estimation" in monocular dynamic scene reconstruction from the photometric optimization stage to a four-step preprocessing pipeline. It first detects, segments, and tracks dynamic objects, refines scene flow using rigidity constraints, and **directly initializes** trajectories for dynamic Gauss
+  [CVPR 2026][3D Vision][Monocular dynamic reconstruction] MOSAIC-GS shifts "motion estimation" in monocular dynamic scene reconstruction from the photometric optimization stage to a four-step preprocessing pipeline. It first detects, segments, and tracks dynamic objects, refines scene flow using rigidity constraints, and **directly initializes** trajectories for dynamic Gaussians using Poly-Fourier curves. Combined with static/dynamic Gaussian decoupling…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular dynamic reconstruction"
+  - "Gaussian Splatting"
+  - "scene flow initialization"
+  - "rigidity constraints"
+  - "Poly-Fourier trajectory"
 date: 2026-05-08
-content_hash: de41564e13e1724f
+content_hash: 59bfeb17776c3fe5
 ---
+
 # MOSAIC-GS: Monocular Scene Reconstruction via Advanced Initialization for Complex Dynamic Environments
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Training time includes preprocessing; pure photometric optimization takes only ~
 
 ## Related Papers
 
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
 - [\[CVPR 2026\] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction](reflow_self-correction_motion_learning_for_dynamic_scene_reconstruction.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 - [\[CVPR 2026\] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments](wildrayzer_self-supervised_large_view_synthesis_in_dynamic_environments.md)
-- [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
+- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 
 </div>

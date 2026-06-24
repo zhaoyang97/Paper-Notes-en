@@ -2,17 +2,16 @@
 title: >-
   [Paper Note] Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs
 description: >-
-  [NeurIPS 2025][Medical NLP][Medical LLM] This paper proposes the MedQA-Followup framework to systematically evaluate the multi-turn robustness of medical LLMs. It reveals that models exhibit acceptable performance under…
+  [NeurIPS 2025][Medical LLM][Multi-Turn Dialogue Robustness] This paper proposes the MedQA-Followup framework to systematically evaluate the multi-turn robustness of medical LLMs. It reveals that models exhibit acceptable performance under single-turn perturbations (shallow robustness), yet accuracy can catastrophically drop from 91.2% to 13.5% under multi-turn follow-up challenges (deep vulnerability). Notably, indirect contextual manipulation proves more destructive than dir…
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
   - "Medical LLM"
   - "Multi-Turn Dialogue Robustness"
   - "Cognitive Bias"
   - "MedQA"
   - "Clinical Safety"
 date: 2026-05-08
-content_hash: 488c9ec9aeb51271
+content_hash: 97edeacd0b15cd94
 ---
 
 # Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs
@@ -133,10 +132,10 @@ This paper presents an evaluation framework and does not involve model training.
 ## Related Papers
 
 - [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](../../ICLR2026/medical_nlp/atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
+- [\[ACL 2025\] Improving Automatic Evaluation of LLMs in Biomedical Relation Extraction via LLMs-as-the-Judge](../../ACL2025/medical_nlp/biore_llm_judge_evaluation.md)
 - [\[ACL 2026\] IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages](../../ACL2026/medical_nlp/indicmeddialog_a_parallel_multi-turn_medical_dialogue_dataset_for_accessible_hea.md)
+- [\[ACL 2025\] Evaluation of LLMs in Medical Text Summarization: The Role of Vocabulary Adaptation in High OOV Settings](../../ACL2025/medical_nlp/evaluation_of_llms_in_medical_text_summarization_the_role_of_vocabulary_adaptati.md)
 - [\[NeurIPS 2025\] H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis](h-ddx_a_hierarchical_evaluation_framework_for_differential_diagnosis.md)
-- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](../../ICLR2026/medical_nlp/counselbench_llm_mental_health_qa.md)
-- [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
 
 </div>
 

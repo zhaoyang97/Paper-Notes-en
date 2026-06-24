@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deceptron: Learned Local Inverses for Fast and Stable Physics Inversion
 description: >-
-  [NEURIPS2025][AI Safety][inverse problems] This paper proposes the Deceptron bidirectional module, which learns a local inverse of a differentiable forward surrogate and introduces a Jacobian Composition Penalty (JCP). B…
+  [NEURIPS2025][AI Safety][inverse problems] This paper proposes the Deceptron bidirectional module, which learns a local inverse of a differentiable forward surrogate and introduces a Jacobian Composition Penalty (JCP). By mapping output-space residuals back to the input space, the method achieves Gauss-Newton-like preconditioned gradient updates for physics inversion, dramatically reducing iteration counts (approximately 20× speedup on Heat-1D).
 tags:
   - "NEURIPS2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Jacobian composition"
   - "Gauss-Newton"
 date: 2026-05-08
-content_hash: 3cc54ac6046cefe4
+content_hash: cfe32c11bb7858cc
 ---
 
 # Deceptron: Learned Local Inverses for Fast and Stable Physics Inversion
@@ -135,11 +135,11 @@ DNet v0 achieves the lowest error with a fixed 6 steps under an identical fair-c
 
 ## Related Papers
 
+- [\[CVPR 2025\] Lyapunov Stable Graph Neural Flow](../../CVPR2025/ai_safety/lyapunov_stable_graph_neural_flow.md)
 - [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
 - [\[NeurIPS 2025\] Model Inversion with Layer-Specific Modeling and Alignment for Data-Free Continual Learning](model_inversion_with_layer-specific_modeling_and_alignment_for_data-free_continu.md)
-- [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](../../ICML2026/ai_safety/partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
-- [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](../../ICML2026/ai_safety/copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
-- [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](../../ICML2026/ai_safety/sora_free_second-order_attacks_in_fast_adversarial_training.md)
+- [\[CVPR 2025\] Gradient Inversion Attacks on Parameter-Efficient Fine-Tuning](../../CVPR2025/ai_safety/gradient_inversion_attacks_on_parameter-efficient_fine-tuning.md)
+- [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](../../CVPR2026/ai_safety/mitigating_error_amplification_in_fast_adversarial_training.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Fathom-DeepResearch: Unlocking Long Horizon Information Retrieval and Synthesis for SLMs
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][DeepResearch] An open-source DeepResearch system built using two 4B small models: Fathom-Search-4B handles multi-turn real-time web search and evidence reasoning (stably exceeding 20 tool calls), while Fathom-Synthesizer-4B synthesizes retrieval trajectories into citation-dense research reports. By utilizing the DUETQA dataset, RAPO
+  [ICLR 2026][Information Retrieval & RAG][DeepResearch] An open-source DeepResearch system built using two 4B small models: Fathom-Search-4B handles multi-turn real-time web search and evidence reasoning (stably exceeding 20 tool calls), while Fathom-Synthesizer-4B synthesizes retrieval trajectories into citation-dense research reports. By utilizing the DUETQA dataset, RAPO optimization algorithm, and controllable step-level rewards, the system pushes open-source DeepSearch to…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - DeepResearch
-  - GRPO
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "DeepResearch"
+  - "tool-augmented RL"
+  - "multi-turn retrieval"
+  - "GRPO"
+  - "step-level reward"
+  - "report synthesis"
 date: 2026-05-08
-content_hash: 765a930ee5676320
+content_hash: 2c555d1155d47f2c
 ---
+
 # Fathom-DeepResearch: Unlocking Long Horizon Information Retrieval and Synthesis for SLMs
 
 **Conference**: ICLR 2026  

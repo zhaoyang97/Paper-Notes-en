@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] To address the issue in CLIP test-time prompt tuning (TPT) where imposing strict orthogonal constraints to enhance class separability leads to overconfidence and poor calibration, this paper replaces hard orthogonal constraints with a **Huber-style smooth orthogonal calibration (SoC)**. By applying a capped, gentle rep
+  [CVPR 2026][Multimodal VLM][Test-time prompt tuning] To address the issue in CLIP test-time prompt tuning (TPT) where imposing strict orthogonal constraints to enhance class separability leads to overconfidence and poor calibration, this paper replaces hard orthogonal constraints with a **Huber-style smooth orthogonal calibration (SoC)**. By applying a capped, gentle repulsion to semantically similar class prototypes, SoC significantly reduces the Expected Calibration Error (…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Test-time prompt tuning"
+  - "model calibration"
+  - "vision-language models"
+  - "orthogonal regularization"
+  - "Huber loss"
 date: 2026-05-08
-content_hash: d6ffec1b1a5b0e93
+content_hash: 58b7a6727611508e
 ---
+
 # SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning
 
 **Conference**: CVPR 2026  
@@ -144,9 +149,9 @@ On four ImageNet distribution shift variants (ViT-L/14), SoC matches O-TPT accur
 
 - [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
 - [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](../../ICLR2026/multimodal_vlm/a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
-- [\[CVPR 2026\] Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](dual-modality_anchor-guided_filtering_for_test-time_prompt_tuning.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
 - [\[CVPR 2026\] Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration](multi-modal_test-time_adaptation_via_adaptive_probabilistic_gaussian_calibration.md)
+- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 
 </div>
 

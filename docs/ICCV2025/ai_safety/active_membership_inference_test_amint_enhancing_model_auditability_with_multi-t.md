@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning
 description: >-
-  [ICCV 2025][AI Safety][Membership Inference] This paper proposes Active MINT (aMINT), a multi-task learning framework that jointly trains a MINT model alongside the audited model during training…
+  [ICCV 2025][AI Safety][Membership Inference] This paper proposes Active MINT (aMINT), a multi-task learning framework that jointly trains a MINT model alongside the audited model during training, enabling detection of whether specific data was used for training with over 80% accuracy — significantly outperforming existing passive MINT and membership inference attack methods.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "AI Trustworthiness"
   - "Model Transparency"
 date: 2026-05-08
-content_hash: 4bedba7d8119506b
+content_hash: 43eda74fb7894a10
 ---
 
 # Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning
@@ -141,11 +141,11 @@ Active MINT substantially outperforms all MIA methods and Passive MINT, despite 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
+- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 - [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](membership_inference_attacks_with_false_discovery_rate_control.md)
 - [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](../../AAAI2026/ai_safety/privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
-- [\[ICCV 2025\] FRET: Feature Redundancy Elimination for Test Time Adaptation](fret_feature_redundancy_elimination_for_test_time_adaptation.md)
+- [\[ACL 2025\] Multi-task Adversarial Attacks against Black-box Model with Few-shot Queries](../../ACL2025/ai_safety/multi-task_adversarial_attacks_against_black-box_model_with_few-shot_queries.md)
 
 </div>
 

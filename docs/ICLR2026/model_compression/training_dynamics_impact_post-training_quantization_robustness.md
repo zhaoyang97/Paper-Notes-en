@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training Dynamics Impact Post-Training Quantization Robustness
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The authors systematically measured GPTQ post-training quantization (PTQ) errors across open-source large model training trajectories (up to 32B parameters and 15T tokens). They found that the surge in quantization error is driven by training dynamics, such as learning rate decay, rather than increased training data vo
+  [ICLR 2026][Model Compression][Post-training quantization] The authors systematically measured GPTQ post-training quantization (PTQ) errors across open-source large model training trajectories (up to 32B parameters and 15T tokens). They found that the surge in quantization error is driven by training dynamics, such as learning rate decay, rather than increased training data volume. Accordingly, they propose two types of interventions—maintaining a larger learning rate and per…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "learning rate scheduling"
+  - "training dynamics"
+  - "weight averaging"
+  - "flat minima"
 date: 2026-05-08
-content_hash: f85d785179473227
+content_hash: 043bbb97e301363c
 ---
+
 # Training Dynamics Impact Post-Training Quantization Robustness
 
 **Conference**: ICLR 2026  
@@ -131,7 +137,7 @@ Learning Rate Intervention (160M, fixed recipe sweeping peak LR):
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
 - [\[ICLR 2026\] Qronos: Correcting the Past by Shaping the Future... in Post-Training Quantization](qronos_correcting_the_past_by_shaping_the_future_in_post-training_quantization.md)
 
 </div>

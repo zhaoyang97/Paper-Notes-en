@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Divide and Contrast: Learning Robust Temporal Features Without Augmentation
 description: >-
-  [ICML 2026][Time Series][Paper Note] Di-COT efficiently learns robust time series representations without data augmentation by **randomly partitioning sequences into overlapping sub-blocks** for contrastive learning. Compared to existing methods, it is 2.5 times faster with higher accuracy, validated comprehensively across 6 large-scale datasets + 124 UCR
+  [ICML 2026][Time Series][Time Series Representation Learning] Di-COT efficiently learns robust time series representations without data augmentation by **randomly partitioning sequences into overlapping sub-blocks** for contrastive learning. Compared to existing methods, it is 2.5 times faster with higher accuracy, validated comprehensively across 6 large-scale datasets + 124 UCR + 28 UEA.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Representation Learning"
+  - "Contrastive Learning"
+  - "Self-Supervised"
+  - "Augmentation-Free"
+  - "Sub-block Partitioning"
 date: 2026-05-08
-content_hash: 57cc7fa4fe68b6af
+content_hash: 8a903d4f4a2283b3
 ---
+
 # Divide and Contrast: Learning Robust Temporal Features Without Augmentation
 
 **Conference**: ICML 2026  
@@ -145,8 +151,8 @@ In the low-label setting, it improves +5.97% over the supervised baseline and is
 - [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
 - [\[ICML 2026\] Doubly Outlier-Robust Online Infinite Hidden Markov Model](doubly_outlier-robust_online_infinite_hidden_markov_model.md)
 - [\[AAAI 2026\] Task-Aware Retrieval Augmentation for Dynamic Recommendation](../../AAAI2026/time_series/task-aware_retrieval_augmentation_for_dynamic_recommendation.md)
+- [\[ICLR 2026\] AutoDA-Timeseries: Automated Data Augmentation for Time Series](../../ICLR2026/time_series/autoda-timeseries_automated_data_augmentation_for_time_series.md)
 - [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
-- [\[NeurIPS 2025\] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series](../../NeurIPS2025/time_series/maestro_adaptive_sparse_attention_and_robust_learning_for_multimodal_dynamic_tim.md)
 
 </div>
 

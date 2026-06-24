@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Quest for Efficient Reasoning: A Data-Centric Benchmark to CoT Distillation
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes DC-CoT—the first **data-centric** benchmark for systematically evaluating Chain-of-Thought (CoT) distillation. It places three types of data operations—augmentation, filtering, and mixing—into a unified framework. Through large-scale empirical studies across multiple teacher-student model pairs and
+  [ICLR 2026][Reasoning][CoT Distillation] This paper proposes DC-CoT—the first **data-centric** benchmark for systematically evaluating Chain-of-Thought (CoT) distillation. It places three types of data operations—augmentation, filtering, and mixing—into a unified framework. Through large-scale empirical studies across multiple teacher-student model pairs and reasoning tasks, it concludes that "Data Augmentation (especially Reverse Thinking) yields the highest gains…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "CoT Distillation"
+  - "Data Augmentation"
+  - "Data Filtering"
+  - "Data Mixing"
+  - "Small Model Reasoning"
 date: 2026-05-08
-content_hash: 84fb61fd1de9fb51
+content_hash: e19b1a104854c1b3
 ---
+
 # The Quest for Efficient Reasoning: A Data-Centric Benchmark to CoT Distillation
 
 **Conference**: ICLR 2026  
@@ -139,7 +145,6 @@ Impact of seed data volume on Llama-3.1-8B text average (Teacher: Gemini-1.5-Pro
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -147,7 +152,7 @@ Impact of seed data volume on Llama-3.1-8B text average (Teacher: Gemini-1.5-Pro
 - [\[ICLR 2026\] OpenThoughts: Data Recipes for Reasoning Models](openthoughts_data_recipes_for_reasoning_models.md)
 - [\[ICLR 2026\] On The Fragility of Benchmark Contamination Detection in Reasoning Models](on_the_fragility_of_benchmark_contamination_detection_in_reasoning_models.md)
 - [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
-- [\[ICLR 2026\] The CoT Encyclopedia：分析、预测并控制推理模型的思考方式](the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
+- [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
 
 </div>
 

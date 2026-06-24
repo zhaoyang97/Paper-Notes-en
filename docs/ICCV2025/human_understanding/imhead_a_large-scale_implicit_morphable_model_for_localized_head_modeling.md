@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling
 description: >-
-  [ICCV 2025][Human Understanding][3D morphable model] imHead proposes the first large-scale implicit 3D head morphable model. Through a global-local decoupled architecture trained on a dataset of 4,000 identities…
+  [ICCV 2025][Human Understanding][3D morphable model] imHead proposes the first large-scale implicit 3D head morphable model. Through a global-local decoupled architecture trained on a dataset of 4,000 identities, it achieves both a compact implicit representation and localized facial editing, surpassing existing methods in reconstruction accuracy and editing flexibility.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "local editing"
   - "large-scale dataset"
 date: 2026-05-08
-content_hash: d516f5285220c193
+content_hash: 85658001cafdd734
 ---
 
 # ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling
@@ -58,10 +58,10 @@ imHead is an auto-decoder-style implicit model $\mathcal{M}: (\mathbf{x}, \mathb
 
    Using raw scans from the MimicMe dataset (5,000 subjects, 20 expressions), a large-scale complete head dataset is constructed through the following pipeline:
 
-   - Multi-view rendering + RetinaFace detection of 2D landmarks → triangulation to extract 3D landmarks
-   - ICP rigid registration to FLAME canonical space → fitting optimization to obtain soft correspondences
-   - NPHM model fitting to complete the full head
-   - Non-rigid ICP (NICP) registration to recover identity-specific details
+    - Multi-view rendering + RetinaFace detection of 2D landmarks → triangulation to extract 3D landmarks
+    - ICP rigid registration to FLAME canonical space → fitting optimization to obtain soft correspondences
+    - NPHM model fitting to complete the full head
+    - Non-rigid ICP (NICP) registration to recover identity-specific details
 
    After filtering, 4,000 identities (~50,000 scans) are retained — **10×** larger than previous implicit head datasets. Demographic coverage includes 57% male / 43% female, ages 1–81, and multiple ethnicities.
 
@@ -161,9 +161,9 @@ imHead outperforms all baselines on both datasets, while its implicit space is o
 
 - [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](../../CVPR2026/human_understanding/lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
+- [\[CVPR 2025\] RGBAvatar: Reduced Gaussian Blendshapes for Online Modeling of Head Avatars](../../CVPR2025/human_understanding/rgbavatar_reduced_gaussian_blendshapes_for_online_modeling_of_head_avatars.md)
 - [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
-- [\[ICCV 2025\] Controllable and Expressive One-Shot Video Head Swapping](controllable_and_expressive_one-shot_video_head_swapping.md)
-- [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
+- [\[ICCV 2025\] GENMO: A GENeralist Model for Human MOtion](genmo_a_generalist_model_for_human_motion.md)
 
 </div>
 

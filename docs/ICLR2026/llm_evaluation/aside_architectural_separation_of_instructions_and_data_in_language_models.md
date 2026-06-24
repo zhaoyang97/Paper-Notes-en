@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ASIDE: Architectural Separation of Instructions and Data in Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][instruction-data separation] The paper proposes ASIDE, an architectural modification that distinguishes instructions and data via orthogonal rotation at the token embedding layer. By modifying only the forward pass and training on standard instruction-tuning data, it significantly enhances instruction-data separation and prompt injection robustnes
+  [ICLR 2026][LLM Evaluation][instruction-data separation] The paper proposes ASIDE, an architectural modification that distinguishes instructions and data via orthogonal rotation at the token embedding layer. By modifying only the forward pass and training on standard instruction-tuning data, it significantly enhances instruction-data separation and prompt injection robustness without requiring specialized safety training.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - instruction-data separation
-  - prompt injection
-  - orthogonal rotation
-  - token embedding
-  - architectural safety
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "instruction-data separation"
+  - "prompt injection"
+  - "orthogonal rotation"
+  - "token embedding"
+  - "architectural safety"
 date: 2026-05-08
-content_hash: f245d0d9d95f8fdc
+content_hash: 7c119157566ef186
 ---
+
 # ASIDE: Architectural Separation of Instructions and Data in Language Models
 
 **Conference**: ICLR 2026  
@@ -139,7 +140,7 @@ ASIDE's utility (AlpacaEval, SEP Utility) remains comparable to the Vanilla mode
 ## Related Papers
 
 - [\[AAAI 2026\] ConInstruct: Evaluating Large Language Models on Conflict Detection and Resolution in Instructions](../../AAAI2026/llm_evaluation/coninstruct_evaluating_large_language_models_on_conflict_detection_and_resolutio.md)
-- [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](prompt_and_parameter_co-optimization_for_large_language_models.md)
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 - [\[ICLR 2026\] Inverse IFEval: Can LLMs Unlearn Stubborn Training Conventions to Follow Real Instructions?](inverse_ifeval_can_llms_unlearn_stubborn_training_conventions_to_follow_real_ins.md)
 - [\[ICLR 2026\] DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle](dacomp_benchmarking_data_agents_across_the_full_data_intelligence_lifecycle.md)
 - [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)

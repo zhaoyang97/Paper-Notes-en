@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication
 description: >-
-  [AAAI 2026][Optimization][Semi-Decentralized Learning] This paper presents a unified convergence analysis framework to systematically compare, for the first time…
+  [AAAI 2026 Oral][Optimization][Semi-Decentralized Learning] This paper presents a unified convergence analysis framework to systematically compare, for the first time, two server-to-device communication primitives in semi-decentralized federated learning — S2S (returning the aggregated model only to sampled devices) and S2A (broadcasting to all devices). The analysis reveals distinct regimes in which S2S is superior under high inter-component heterogeneity and S2A is superior…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Optimization"
   - "Semi-Decentralized Learning"
   - "Sampled-to-Sampled"
@@ -12,7 +12,7 @@ tags:
   - "Convergence Analysis"
   - "Data Heterogeneity"
 date: 2026-05-08
-content_hash: e767af39c295b73a
+content_hash: dda40f4967eb4a0a
 ---
 
 # A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication
@@ -114,11 +114,11 @@ Experimental setup: 100 devices split into 2 components (50 each), topologies in
 
 ## Related Papers
 
+- [\[ICML 2026\] Improved Convergence Analysis of Topology Dependence in Decentralized SGD](../../ICML2026/optimization/improved_convergence_analysis_of_topology_dependence_in_decentralized_sgd.md)
+- [\[ICLR 2026\] Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM](../../ICLR2026/optimization/communication-efficient_decentralized_optimization_via_double-communication_symm.md)
+- [\[ICLR 2026\] On the Surprising Effectiveness of a Single Global Merging in Decentralized Learning](../../ICLR2026/optimization/on_the_surprising_effectiveness_of_a_single_global_merging_in_decentralized_lear.md)
 - [\[NeurIPS 2025\] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias](../../NeurIPS2025/optimization/a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe.md)
-- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](../../ICLR2026/optimization/a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
-- [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
-- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](personalized_federated_learning_with_bidirectional_communication_compression_via.md)
-- [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](../../NeurIPS2025/optimization/unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
+- [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](../../ICLR2026/optimization/unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
 
 </div>
 

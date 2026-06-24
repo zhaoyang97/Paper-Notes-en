@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Textual Equilibrium Propagation for Deep Compound AI Systems
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes Textual Equilibrium Propagation (TEP), an optimization method for compound AI systems based on local learning principles. Through a two-phase design consisting of a Free Phase and a Nudged Phase, it avoids the gradient explosion/vanishing problems inherent in global textual backpropagation, significantly
+  [ICLR 2026][Model Compression][Compound AI Systems] Ours proposes Textual Equilibrium Propagation (TEP), an optimization method for compound AI systems based on local learning principles. Through a two-phase design consisting of a Free Phase and a Nudged Phase, it avoids the gradient explosion/vanishing problems inherent in global textual backpropagation, significantly outperforming TextGrad on deep workflows.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Compound AI Systems"
+  - "Textual Gradients"
+  - "Equilibrium Propagation"
+  - "Prompt Optimization"
+  - "Multi-agent Workflows"
 date: 2026-05-08
-content_hash: a1c055e365410ae8
+content_hash: b70cb3abd69e5ecd
 ---
+
 # Textual Equilibrium Propagation for Deep Compound AI Systems
 
 **Conference**: ICLR 2026  

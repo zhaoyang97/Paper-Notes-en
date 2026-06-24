@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A2GC: Asymmetric Aggregation with Geometric Constraints for Locally Aggregated Descriptors
 description: >-
-  [CVPR 2026][Others][Paper Note] Addressing the failure of the "symmetric Sinkhorn" assumption in feature aggregation for Visual Place Recognition (VPR), A2GC reformulates the Optimal Transport solver into an **asymmetric** version (averaging row/column normalization + independent source/target marginal calibration) and overlays a **geometric constrai
+  [CVPR 2026][Visual Place Recognition] Addressing the failure of the "symmetric Sinkhorn" assumption in feature aggregation for Visual Place Recognition (VPR), A2GC reformulates the Optimal Transport solver into an **asymmetric** version (averaging row/column normalization + independent source/target marginal calibration) and overlays a **geometric constraint branch** (using learnable coordinate embeddings to bias spatially adjacent features towards the same cluster)…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Visual Place Recognition"
+  - "Optimal Transport"
+  - "Feature Aggregation"
+  - "Asymmetric Sinkhorn"
+  - "Geometric Constraints"
 date: 2026-05-08
-content_hash: 4996e5f56a5b012a
+content_hash: 93ef210d5960894e
 ---
+
 # A2GC: Asymmetric Aggregation with Geometric Constraints for Locally Aggregated Descriptors
 
 **Conference**: CVPR 2026  
@@ -146,9 +151,9 @@ Note: Pair-VPR, SelaVPR, CricaVPR, etc., marked with `*` are two-stage re-rankin
 
 - [\[NeurIPS 2025\] On Topological Descriptors for Graph Products](../../NeurIPS2025/others/on_topological_descriptors_for_graph_products.md)
 - [\[ICML 2026\] Networked Information Aggregation for Binary Classification](../../ICML2026/others/networked_information_aggregation_for_binary_classification.md)
-- [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](../../NeurIPS2025/others/asymmetric_duos_sidekicks_improve_uncertainty.md)
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
-- [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](../../ICCV2025/others/joint_asymmetric_loss_for_learning_with_noisy_labels.md)
+- [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](../../NeurIPS2025/others/asymmetric_duos_sidekicks_improve_uncertainty.md)
+- [\[ICLR 2026\] Learning Survival Distributions with Individually Calibrated Asymmetric Laplace Distribution](../../ICLR2026/others/learning_survival_distributions_with_individually_calibrated_asymmetric_laplace_.md)
 
 </div>
 

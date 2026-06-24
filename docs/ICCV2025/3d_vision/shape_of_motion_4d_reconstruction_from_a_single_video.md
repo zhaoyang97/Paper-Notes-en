@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Shape of Motion: 4D Reconstruction from a Single Video
 description: >-
-  [ICCV 2025][3D Vision][4D reconstruction] This paper proposes a dynamic 3D Gaussian representation based on $\mathbb{SE}(3)$ motion bases…
+  [ICCV 2025][3D Vision][4D reconstruction] This paper proposes a dynamic 3D Gaussian representation based on $\mathbb{SE}(3)$ motion bases, recovering globally consistent 3D motion trajectories from monocular video while simultaneously enabling real-time novel view synthesis and long-range 3D tracking, outperforming prior methods comprehensively on the iPhone and Kubric datasets.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "SE(3) motion basis"
   - "monocular video"
 date: 2026-05-08
-content_hash: 0a88a64809ebee64
+content_hash: ac5252a3f6a0fe0e
 ---
 
 # Shape of Motion: 4D Reconstruction from a Single Video
@@ -175,7 +175,7 @@ Ablation of key components (iPhone dataset, 3D tracking):
 ## Related Papers
 
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
-- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](../../CVPR2026/3d_vision/4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
+- [\[CVPR 2025\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](../../CVPR2025/3d_vision/4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
 - [\[ICCV 2025\] Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction](geo4d_leveraging_video_generators_for_geometric_4d_scene_reconstruction.md)
 - [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)

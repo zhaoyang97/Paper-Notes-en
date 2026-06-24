@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RigMo: Unifying Rig and Motion Learning for Generative Animation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] RigMo unifies "rig" and "motion" into a single feed-forward VAE: it learns a set of Gaussian bones, skinning weights, and per-frame SE(3) transformations directly from raw mesh sequences through self-supervision, eliminating the need for manual skeletal annotations. Coupled with a Motion-DiT operating in its latent spa
+  [CVPR 2026][3D Vision][4D Generation] RigMo unifies "rig" and "motion" into a single feed-forward VAE: it learns a set of Gaussian bones, skinning weights, and per-frame SE(3) transformations directly from raw mesh sequences through self-supervision, eliminating the need for manual skeletal annotations. Coupled with a Motion-DiT operating in its latent space for controllable motion generation, it significantly outperforms existing auto-rigging and deformation baselines in rec…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Generation"
+  - "Auto-rigging"
+  - "Skinning Weights"
+  - "Gaussian Bones"
+  - "Motion Diffusion"
 date: 2026-05-08
-content_hash: 4b742a0e1e42ec8c
+content_hash: 14e86434365b0b5d
 ---
+
 # RigMo: Unifying Rig and Motion Learning for Generative Animation
 
 **Conference**: CVPR 2026  
@@ -156,10 +162,10 @@ RigMo achieves higher reconstruction fidelity than AnimateAnyMesh using fewer to
 ## Related Papers
 
 - [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
-- [\[CVPR 2026\] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction](reflow_self-correction_motion_learning_for_dynamic_scene_reconstruction.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
 - [\[CVPR 2026\] DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum](dynamictree_interactive_real_tree_animation_via_sparse_voxel_spectrum.md)
+- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
+- [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
 
 </div>
 

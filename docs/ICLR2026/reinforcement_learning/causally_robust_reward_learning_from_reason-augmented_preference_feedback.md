@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Causally Robust Reward Learning from Reason-Augmented Preference Feedback
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] ReCouPLe treats a short natural language reason (e.g., "because it avoids a collision") as a projection axis in the embedding space. It decomposes trajectory representations into "reason-aligned" and "reason-orthogonal" components, ensuring preferences are explained only by the aligned component. This strips away spuri
+  [ICLR 2026][Reinforcement Learning][preference learning] ReCouPLe treats a short natural language reason (e.g., "because it avoids a collision") as a projection axis in the embedding space. It decomposes trajectory representations into "reason-aligned" and "reason-orthogonal" components, ensuring preferences are explained only by the aligned component. This strips away spurious features and significantly outperforms binary preference baselines in distribution shifts and zero-…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "preference learning"
+  - "reward modeling"
+  - "causal confusion"
+  - "natural language reasons"
+  - "orthogonal projection"
+  - "task transfer"
 date: 2026-05-08
-content_hash: db11a5f92e232650
+content_hash: 0c61f5139a85bb43
 ---
+
 # Causally Robust Reward Learning from Reason-Augmented Preference Feedback
 
 **Conference**: ICLR 2026  
@@ -123,14 +130,17 @@ ManiSkill Mean Reward Accuracy (3 seeds):
 
 <div class="related-papers" markdown="1">
 
-- **Causal Confusion in RL from Preferences** (Tien et al., 2023)
-- **Reward Learning from Narrated Demonstrations** (Cui et al., 2023)
-- **PFP: Preference Feature Programming** (Peng et al., 2024)
+## Related Papers
+
+- [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)
+- [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
+- [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
+- [\[ICLR 2026\] ExGRPO: Learning to Reason from Experience](exgrpo_learning_to_reason_from_experience.md)
+- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)

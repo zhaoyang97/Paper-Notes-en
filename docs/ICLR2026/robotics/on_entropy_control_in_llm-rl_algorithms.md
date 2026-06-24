@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On Entropy Control in LLM-RL Algorithms
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][RLVR] The authors theoretically explain why traditional entropy regularization is nearly ineffective in LLM-RL (due to immense action spaces and sparse optima causing entropy bias to overwhelm optimization gains). They propose the AEnt method, which uses clamped entropy (calculated on a reduced token space) and adaptive coef
+  [ICLR 2026][Robotics][Entropy Control] The authors theoretically explain why traditional entropy regularization is nearly ineffective in LLM-RL (due to immense action spaces and sparse optima causing entropy bias to overwhelm optimization gains). They propose the AEnt method, which uses clamped entropy (calculated on a reduced token space) and adaptive coefficients to effectively balance bias and benefits, consistently outperforming baselines in mathematical reasoning tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - RLVR
-  - LLM-RL
+  - "ICLR 2026"
+  - "Robotics"
+  - "Entropy Control"
+  - "RLVR"
+  - "LLM-RL"
+  - "Policy Optimization"
+  - "Exploration-Exploitation"
 date: 2026-05-08
-content_hash: 8f266844060b29f8
+content_hash: 8adb59d862154983
 ---
+
 # On Entropy Control in LLM-RL Algorithms
 
 **Conference**: ICLR 2026  
@@ -122,10 +126,10 @@ Setup (a) = Qwen2.5-Math-1.5B trained on MATH; Setup (b) = DeepSeek-R1-Distilled
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
+- [\[ICLR 2026\] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](simplevla-rl_scaling_vla_training_via_reinforcement_learning.md)
 - [\[ICLR 2026\] Masked Generative Policy for Robotic Control](masked_generative_policy_for_robotic_control.md)
-- [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](../../ICML2026/robotics/towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 - [\[ECCV 2024\] LLM as Copilot for Coarse-Grained Vision-and-Language Navigation](../../ECCV2024/robotics/llm_as_copilot_for_coarse-grained_vision-and-language_navigation.md)
-- [\[ICLR 2026\] From Embedding to Control: Representations for Stochastic Multi-Object Systems](from_embedding_to_control_representations_for_stochastic_multi-object_systems.md)
 
 </div>
 

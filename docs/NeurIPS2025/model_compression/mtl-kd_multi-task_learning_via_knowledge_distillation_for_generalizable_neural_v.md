@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver
 description: >-
-  [NeurIPS 2025][Model Compression][Vehicle Routing Problem] This paper proposes MTL-KD, a multi-task learning framework based on knowledge distillation. It distills policy knowledge from multiple RL single-task teacher mo…
+  [NeurIPS 2025][Model Compression][Vehicle Routing Problem] This paper proposes MTL-KD, a multi-task learning framework based on knowledge distillation. It distills policy knowledge from multiple RL single-task teacher models into a heavy-decoder student model, achieving efficient unified solving across diverse VRP variants with superior generalization on large-scale instances.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Neural Combinatorial Optimization"
   - "Scale Generalization"
 date: 2026-05-08
-content_hash: 3e3cc5cc6787c8c8
+content_hash: f95fdc46ff05f0ee
 ---
 
 # MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver
@@ -137,7 +137,7 @@ This design enables label-free training — no optimal solution annotations are 
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](../../ICCV2025/model_compression/ea-kd_entropy-based_adaptive_knowledge_distillation.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
-- [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
+- [\[ICCV 2025\] ACAM-KD: Adaptive and Cooperative Attention Masking for Knowledge Distillation](../../ICCV2025/model_compression/acam-kd_adaptive_and_cooperative_attention_masking_for_knowledge_distillation.md)
 
 </div>
 

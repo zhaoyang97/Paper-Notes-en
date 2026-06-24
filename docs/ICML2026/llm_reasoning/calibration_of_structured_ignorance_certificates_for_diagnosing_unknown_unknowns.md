@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Calibration of Structured Ignorance Certificates for Diagnosing Unknown Unknowns in Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] This paper proposes the **Structured Ignorance Certificate (SIC)**—an output format that mandates models, when encountering cross-domain problems exceeding their knowledge boundaries, to explicitly state via JSON "which two domains' intersection is missing, which concepts are required, and what should be retrieved" ins
+  [ICML 2026][Reasoning][Epistemic Uncertainty] This paper proposes the **Structured Ignorance Certificate (SIC)**—an output format that mandates models, when encountering cross-domain problems exceeding their knowledge boundaries, to explicitly state via JSON "which two domains' intersection is missing, which concepts are required, and what should be retrieved" instead of hallucinating answers. Through a dataset of 7,347 automatically synthesized "Unknown Unknown" (UU) cross-d…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "Epistemic Uncertainty"
+  - "Unknown Unknowns"
+  - "GRPO"
+  - "Structured Generation"
+  - "Retrieval Planning"
 date: 2026-05-08
-content_hash: adcbff0bd24453ed
+content_hash: 99006d957ac715f8
 ---
+
 # Calibration of Structured Ignorance Certificates for Diagnosing Unknown Unknowns in Reasoning Models
 
 **Conference**: ICML 2026  
@@ -141,11 +146,11 @@ Comparison of SIC-Tuned model vs. Base model (LoRA disabled) on 100 UU problems 
 
 ## Related Papers
 
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](../../ACL2026/llm_reasoning/calibration-aware_policy_optimization_for_reasoning_llms.md)
-- [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
-- [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
 - [\[ICML 2026\] From LLM-Generated Conjectures to Lean Formalizations: Automated Polynomial Inequality Proving via Sum-of-Squares Certificates](from_llm-generated_conjectures_to_lean_formalizations_automated_polynomial_inequ.md)
 - [\[ICML 2026\] SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning](smartthinker_progressive_chain-of-thought_length_calibration_for_efficient_large.md)
+- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](../../ACL2026/llm_reasoning/calibration-aware_policy_optimization_for_reasoning_llms.md)
+- [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
+- [\[ACL 2026\] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners](../../ACL2026/llm_reasoning/rsat_structured_attribution_makes_small_language_models_faithful_table_reasoners.md)
 
 </div>
 

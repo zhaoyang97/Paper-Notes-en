@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Video Generation][Video Frame Interpolation] ArbInterp proposes a generative video frame interpolation framework that supports arbitrary timestamps and lengths. It achieves precise temporal control via Timestamp-aware Rotary Positional Encoding (TaRoPE) and enables seamless splicing of long sequences through an appearance-motion decoupled conditioning strategy.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Frame Interpolation
-  - Generative VFI
-  - RoPE
-  - Temporal Conditioning
-  - Any-length Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Frame Interpolation"
+  - "Generative VFI"
+  - "RoPE"
+  - "Temporal Conditioning"
+  - "Any-length Generation"
 date: 2026-05-08
-content_hash: 4567c6d1f95375bd
+content_hash: 3ed51d2b9467392f
 ---
+
 # Arbitrary Generative Video Interpolation
 
 **Conference**: ICLR 2026  
@@ -147,9 +148,9 @@ ArbInterp achieves optimal or sub-optimal results across all interpolation ratio
 
 - [\[ICLR 2026\] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling](realtime_video_frame_interpolation_using_one-step_diffusion_sampling.md)
 - [\[ICLR 2026\] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation](mtvcraft_tokenizing_4d_motion_for_arbitrary_character_animation.md)
-- [\[ICLR 2026\] Generative View Stitching](generative_view_stitching.md)
-- [\[ICLR 2026\] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model](any-to-bokeh_arbitrary-subject_video_refocusing_with_video_diffusion_model.md)
 - [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
+- [\[ICLR 2026\] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model](any-to-bokeh_arbitrary-subject_video_refocusing_with_video_diffusion_model.md)
+- [\[ICLR 2026\] Generative View Stitching](generative_view_stitching.md)
 
 </div>
 

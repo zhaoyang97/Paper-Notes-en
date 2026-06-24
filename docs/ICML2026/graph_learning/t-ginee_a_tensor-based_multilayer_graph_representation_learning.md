@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] T-GINEE combines **CP tensor decomposition** with **Generalized Estimating Equations (GEE)** to explicitly model **cross-layer dependencies** in multilayer networks—offering theoretical guarantees and superior scalability, overcoming OOM limitations of other tensor methods on million-node graphs (DBLP, Stack Overflow).
+  [ICML 2026][Graph Learning][Multilayer graphs] T-GINEE combines **CP tensor decomposition** with **Generalized Estimating Equations (GEE)** to explicitly model **cross-layer dependencies** in multilayer networks—offering theoretical guarantees and superior scalability, overcoming OOM limitations of other tensor methods on million-node graphs (DBLP, Stack Overflow).
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Multilayer graphs"
+  - "Tensor decomposition"
+  - "Generalized estimating equations"
+  - "Cross-layer dependencies"
 date: 2026-05-08
-content_hash: 18ec0a410e2b222e
+content_hash: 2fcaf00dee3f1883
 ---
+
 # T-GINEE: A Tensor-Based Multilayer Graph Representation Learning
 
 **Conference**: ICML 2026  
@@ -116,11 +121,11 @@ CP, Tucker, and HOSVD all failed due to Out-of-Memory (OOM) errors on DBLP and S
 
 ## Related Papers
 
+- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](view_space_learning_representation_across_arbitrary_graphs.md)
 - [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
 - [\[ICML 2026\] Unsat Core Prediction through Polarity-Aware Representation Learning over Clause-Literal Hypergraphs](unsat_core_prediction_through_polarity-aware_representation_learning_over_clause.md)
-- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
-- [\[ICML 2025\] Banyan: Improved Representation Learning with Explicit Structure](../../ICML2025/graph_learning/banyan_improved_representation_learning_with_explicit_structure.md)
-- [\[AAAI 2026\] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption](../../AAAI2026/graph_learning/feature-centric_unsupervised_node_representation_learning_without_homophily_assu.md)
+- [\[ICLR 2026\] Topology Matters in RTL Circuit Representation Learning](../../ICLR2026/graph_learning/topology_matters_in_rtl_circuit_representation_learning.md)
+- [\[ICLR 2026\] On the Trade-off Between Expressivity and Privacy in Graph Representation Learning](../../ICLR2026/graph_learning/on_the_trade-off_between_expressivity_and_privacy_in_graph_representation_learni.md)
 
 </div>
 

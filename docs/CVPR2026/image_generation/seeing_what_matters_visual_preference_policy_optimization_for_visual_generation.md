@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] ViPO transforms the scalar advantage of "full-image scoring" in GRPO into a pixel-level, perception-aware structured advantage. It utilizes a training-free Perceptual Structuring Module (PSM) to extract preference allocation maps from pre-trained visual backbones. These maps are multiplied by the scalar advantage, dire
+  [CVPR 2026][Image Generation][GRPO] ViPO transforms the scalar advantage of "full-image scoring" in GRPO into a pixel-level, perception-aware structured advantage. It utilizes a training-free Perceptual Structuring Module (PSM) to extract preference allocation maps from pre-trained visual backbones. These maps are multiplied by the scalar advantage, directing optimization pressure toward regions that human eyes truly care about, thereby outperforming the original GRPO (DanceG…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Visual Preference Alignment"
+  - "Pixel-level Advantage"
+  - "Diffusion/Flow Matching"
+  - "Perceptual Structuring"
 date: 2026-05-08
-content_hash: 2e04ad5f089d0ff7
+content_hash: 07e0f70dc44d5a8d
 ---
+
 # Seeing What Matters: Visual Preference Policy Optimization for Visual Generation
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Number of principal components $K$: $K{=}3$ is a robust balance point (strong HP
 ## Related Papers
 
 - [\[CVPR 2026\] Learning What to Trust: Bayesian Prior-Guided Optimization for Visual Generation](learning_what_to_trust_bayesian_prior-guided_optimization_for_visual_generation.md)
+- [\[CVPR 2026\] VAR RL Done Right: Tackling Asynchronous Policy Conflicts in Visual Autoregressive Generation](var_rl_done_right_tackling_asynchronous_policy_conflicts_in_visual_autoregressiv.md)
 - [\[CVPR 2026\] ThinkGen: Generalized Thinking for Visual Generation](thinkgen_generalized_thinking_for_visual_generation.md)
-- [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
 - [\[CVPR 2026\] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation](maskfocus_focusing_policy_optimization_on_critical_steps_for_masked_image_genera.md)
-- [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
+- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](../../ICLR2026/image_generation/vipo_visual_preference_optimization_at_scale.md)
 
 </div>
 

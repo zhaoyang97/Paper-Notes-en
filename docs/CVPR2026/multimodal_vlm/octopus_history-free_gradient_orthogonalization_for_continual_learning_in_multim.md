@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the challenge of preventing catastrophic forgetting without storing historical data in Multimodal Large Language Models (MLLMs), Octopus demonstrates that gradient orthogonalization is more critical than parameter orthogonalization. It proposes History-Free Gradient Orthogonalization (HiFGO), which utilizes
+  [CVPR 2026][Multimodal VLM][Continual Learning] Addressing the challenge of preventing catastrophic forgetting without storing historical data in Multimodal Large Language Models (MLLMs), Octopus demonstrates that gradient orthogonalization is more critical than parameter orthogonalization. It proposes History-Free Gradient Orthogonalization (HiFGO), which utilizes only historical weights (no historical data), combined with a two-stage fine-tuning strategy (free adaptation fo…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Multimodal Large Language Models"
+  - "Gradient Orthogonalization"
+  - "History-Free"
+  - "Two-stage Fine-tuning"
 date: 2026-05-08
-content_hash: ab9212f794989e71
+content_hash: 01ffa71489c9394b
 ---
+
 # Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -139,8 +145,8 @@ Octopus achieves an Avg of 71.08 and Last of 71.01, significantly higher than th
 - [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
 - [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](../../ICLR2026/multimodal_vlm/keeplora_continual_learning_with_residual_gradient_adaptation.md)
 - [\[CVPR 2026\] Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning](re-evaluating_continual_vqa_toward_fair_and_robust_evaluation_for_multimodal_con.md)
-- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
+- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs
 description: >-
-  [ICLR 2026][LLM Reasoning][KGQA] PARoG trains a small planner using SPARQL queries as supervision signals to decompose complex questions into composable structured sub-goals. It utilizes a "Plan-Answer-Refine" loop where the LLM first attempts to answer using parametric knowledge and subsequently corrects errors using knowledge graph evidence. This ap
+  [ICLR 2026][Reasoning][KGQA] PARoG trains a small planner using SPARQL queries as supervision signals to decompose complex questions into composable structured sub-goals. It utilizes a "Plan-Answer-Refine" loop where the LLM first attempts to answer using parametric knowledge and subsequently corrects errors using knowledge graph evidence. This approach significantly outperforms SOTAs like PoG on WebQSP, CWQ, and GrailQA, particularly showing substantial improvements in compl…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - KGQA
-  - SPARQL
+  - "ICLR 2026"
+  - "Reasoning"
+  - "KGQA"
+  - "Knowledge Graph Enhancement"
+  - "Structured Planning"
+  - "SPARQL"
+  - "Self-Refinement"
 date: 2026-05-08
-content_hash: 85e7f588b4c379a1
+content_hash: d09155ef602ec056
 ---
+
 # Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs
 
 **Conference**: ICLR 2026  
@@ -131,15 +135,16 @@ Significant gains were observed on the weaker base (GPT-3.5) and the more comple
 - Value: ⭐⭐⭐⭐ Significant boost for complex logical KGQA; principles are transferable to general agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
 - [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
+- [\[AAAI 2026\] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](../../AAAI2026/llm_reasoning/graph_of_verification_structured_verification_of_llm_reasoning_with_directed_acy.md)
 - [\[ICLR 2026\] A Stitch in Time Saves Nine: Proactive Self-Refinement for Language Models](a_stitch_in_time_saves_nine_proactive_self-refinement_for_language_models.md)
 - [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
-- [\[AAAI 2026\] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs](../../AAAI2026/llm_reasoning/graph_of_verification_structured_verification_of_llm_reasoning_with_directed_acy.md)
-- [\[ICLR 2026\] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems](exposing_weaknesses_of_large_reasoning_models_through_graph_algorithm_problems.md)
 
 </div>
 

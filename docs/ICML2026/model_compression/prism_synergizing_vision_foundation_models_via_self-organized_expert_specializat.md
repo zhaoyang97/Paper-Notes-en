@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization
 description: >-
-  [ICML 2026][Model Compression][MoE] PRISM distills three heterogeneous Vision Foundation Models (CLIP, SAM, and DINOv2) into a single ViT student. By employing a "dual-stream conditional MoE"—consisting of a shared anchor stream for gradient stability and a context-routed sparse expert stream for conflict resolution—experts self-organize to share consens
+  [ICML 2026][Model Compression][Multi-teacher distillation] PRISM distills three heterogeneous Vision Foundation Models (CLIP, SAM, and DINOv2) into a single ViT student. By employing a "dual-stream conditional MoE"—consisting of a shared anchor stream for gradient stability and a context-routed sparse expert stream for conflict resolution—experts self-organize to share consensus knowledge and branch for conflicting knowledge. It outperforms the previous SOTA, SAK…
 tags:
-  - ICML 2026
-  - Model Compression
-  - MoE
+  - "ICML 2026"
+  - "Model Compression"
+  - "Multi-teacher distillation"
+  - "Vision Foundation Models"
+  - "MoE"
+  - "Contextual routing"
+  - "Gradient conflict"
 date: 2026-05-08
-content_hash: 22c8adf372b81d70
+content_hash: a1cfb9af5bcd44a7
 ---
+
 # PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization
 
 **Conference**: ICML 2026  
@@ -122,14 +127,15 @@ On NYUD-v2, PRISM and SAK are competitive. PRISM leads in SemSeg and Depth, whil
 - Value: ⭐⭐⭐⭐ (Provides a reproducible recipe for real-world VFM synergy).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models](../../CVPR2026/model_compression/siglino_efficient_multi-teacher_distillation_for_agglomerative_vision_foundation.md)
-- [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](../../NeurIPS2025/model_compression/vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
 - [\[ICML 2026\] BioArc: Discovering Optimal Neural Architectures for Biological Foundation Models](bioarc_discovering_optimal_neural_architectures_for_biological_foundation_models.md)
+- [\[ICML 2026\] Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](end-to-end_compression_for_tabular_foundation_models.md)
 
 </div>

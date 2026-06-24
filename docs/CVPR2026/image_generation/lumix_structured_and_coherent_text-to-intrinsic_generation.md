@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LumiX: Structured and Coherent Text-to-Intrinsic Generation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] LumiX proposes the new task of "text-to-intrinsic" generation based on the FLUX diffusion model: generating a set of pixel-aligned intrinsic maps (color, albedo, irradiance, depth, normals) from a single text prompt. It achieves this through two key designs: **Query-Broadcast Attention**, which broadcasts the color bra
+  [CVPR 2026][Image Generation][Text-to-Intrinsic] LumiX proposes the new task of "text-to-intrinsic" generation based on the FLUX diffusion model: generating a set of pixel-aligned intrinsic maps (color, albedo, irradiance, depth, normals) from a single text prompt. It achieves this through two key designs: **Query-Broadcast Attention**, which broadcasts the color branch query to all intrinsic maps to ensure structural consistency, and **Tensor LoRA**…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Intrinsic"
+  - "Diffusion Models"
+  - "Query-Broadcast Attention"
+  - "Tensor LoRA"
+  - "Cross-map Consistency"
 date: 2026-05-08
-content_hash: 5a7a005959f81754
+content_hash: 68f1aa492633f6b0
 ---
+
 # LumiX: Structured and Coherent Text-to-Intrinsic Generation
 
 **Conference**: CVPR 2026  
@@ -138,9 +143,9 @@ In zero-shot intrinsic decomposition (ARAP dataset, albedo quality): LumiX, base
 
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
 - [\[CVPR 2026\] Intrinsic Concept Extraction Based on Compositional Interpretability](intrinsic_concept_extraction_based_on_compositional_interpretability.md)
+- [\[CVPR 2026\] Hint2Gen: Bridging Understanding and Generation via Code-structured Hints](hint2gen_bridging_understanding_and_generation_via_code-structured_hints.md)
 - [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)
-- [\[CVPR 2026\] Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing](re-align_structured_reasoning-guided_alignment_for_in-context_image_generation_a.md)
-- [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](../../AAAI2026/image_generation/longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
+- [\[ICLR 2026\] CoEmoGen: Towards Semantically-Coherent and Scalable Emotional Image Content Generation](../../ICLR2026/image_generation/coemogen_towards_semantically-coherent_and_scalable_emotional_image_content_gene.md)
 
 </div>
 

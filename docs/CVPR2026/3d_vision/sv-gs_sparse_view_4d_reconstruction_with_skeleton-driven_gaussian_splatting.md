@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SV-GS reconstructs continuous 4D motion of articulated objects under extreme sparse settings—with only one arbitrary view per timestamp (approx. 20× fewer than typical dense video)—driven by "input skeleton + first-frame static reconstruction." By restricting time-variance exclusively to joint poses for smooth interpol
+  [CVPR 2026][3D Vision][4D Reconstruction] SV-GS reconstructs continuous 4D motion of articulated objects under extreme sparse settings—with only one arbitrary view per timestamp (approx. 20× fewer than typical dense video)—driven by "input skeleton + first-frame static reconstruction." By restricting time-variance exclusively to joint poses for smooth interpolation, it achieves PSNR gains of up to 34% over SOTA on synthetic data.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "Gaussian Splatting"
+  - "Skeleton-Driven Deformation"
+  - "Sparse View"
+  - "Linear Blend Skinning"
 date: 2026-05-08
-content_hash: 1f7401c041563c82
+content_hash: 56401ee021b04913
 ---
+
 # SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,10 @@ Removing components on D-NeRF:
 ## Related Papers
 
 - [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] TWINGS: Thin Plate Splines Warp-aligned Initialization for Sparse-View Gaussian Splatting](twings_thin_plate_splines_warp-aligned_initialization_for_sparse-view_gaussian_s.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
+- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
 - [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 
 </div>
 

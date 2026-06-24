@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PinPoint: Focus, Don't Prune — Identifying Instruction-Relevant Regions for Information-Rich Image Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] PinPoint is proposed as a two-stage framework: it first locates instruction-relevant image regions through Instruction-Region Alignment, then refines the encoding of selected regions, achieving higher VQA accuracy with fewer visual tokens.
+  [CVPR 2026][Multimodal VLM][Large Vision Language Models] PinPoint is proposed as a two-stage framework: it first locates instruction-relevant image regions through Instruction-Region Alignment, then refines the encoding of selected regions, achieving higher VQA accuracy with fewer visual tokens.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Large Vision Language Models"
+  - "Token Efficiency"
+  - "Region Selection"
+  - "Contrastive Learning"
+  - "Document Understanding"
 date: 2026-05-08
-content_hash: 90e711e430533a27
+content_hash: fd5bbc56dc31919c
 ---
+
 # PinPoint: Focus, Don't Prune — Identifying Instruction-Relevant Regions for Information-Rich Image Understanding
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ On InfoVQA, PinPoint achieves 18.5% higher accuracy than Vanilla with only 65.3%
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
 - [\[CVPR 2025\] Relation-Rich Visual Document Generator for Visual Information Extraction](../../CVPR2025/multimodal_vlm/relation-rich_visual_document_generator_for_visual_information_extraction.md)
-- [\[CVPR 2025\] Identifying and Mitigating Position Bias of Multi-image Vision-Language Models](../../CVPR2025/multimodal_vlm/identifying_and_mitigating_position_bias_of_multi-image_vision-language_models.md)
-- [\[CVPR 2026\] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs](when_token_pruning_is_worse_than_random_understanding_visual_token_information_i.md)
 - [\[CVPR 2026\] Concept Regions Matter: Benchmarking CLIP with a New Cluster-Importance Approach](concept_regions_matter_benchmarking_clip_with_a_new_cluster-importance_approach.md)
 - [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](seeing_through_touch_tactile_localization.md)
+- [\[CVPR 2026\] FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy](fluoclip_stain-aware_focus_quality_assessment_in_fluorescence_microscopy.md)
 
 </div>
 

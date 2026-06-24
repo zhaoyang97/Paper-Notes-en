@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification
 description: >-
-  [ICML 2026][learning_theory][MNL bandits] This work provides the first **computationally feasible** G-optimal experimental design in combinatorial MNL bandit action spaces—reformulating the Frank–Wolfe Linear Maximization Oracle (LMO) as a 0–1 MILP or a polynomial-time Schur complement relaxation—and construct the first best assortment identification algorithm
+  [ICML2026][others (Multinomial Logit Bandits][MNL bandits] This work provides the first **computationally feasible** G-optimal experimental design in combinatorial MNL bandit action spaces—reformulating the Frank–Wolfe Linear Maximization Oracle (LMO) as a 0–1 MILP or a polynomial-time Schur complement relaxation—and construct the first best assortment identification algorithm for "linear utility + non-uniform revenues" with sample complexity $\tilde{\mathcal{O}}(d\log N / \D…
 tags:
-  - ICML 2026
-  - learning_theory
-  - MNL bandits
-  - G-optimal design
-  - Frank-Wolfe
+  - "ICML2026"
+  - "others (Multinomial Logit Bandits"
+  - "Experimental Design"
+  - "Pure Exploration)"
+  - "MNL bandits"
+  - "G-optimal design"
+  - "Frank-Wolfe"
+  - "Mixed-Integer Linear Programming"
+  - "Best Assortment Identification"
 date: 2026-05-08
-content_hash: ed75006ae23acf84
+content_hash: 4d26bda2c6b43d48
 ---
+
 # Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification
 
 **Conference**: ICML2026  
@@ -147,13 +152,13 @@ The parameters are updated using Maximum Likelihood Estimation (MLE) with the ne
 
 <div class="related-papers" markdown="1">
 
-## 相关论文
+## Related Papers
 
+- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](../../ICLR2026/learning_theory/diversified_multinomial_logit_contextual_bandits.md)
 - [\[ICML 2025\] Near Optimal Best Arm Identification for Clustered Bandits](../../ICML2025/learning_theory/near_optimal_best_arm_identification_for_clustered_bandits.md)
 - [\[ICLR 2026\] An Improved Model-free Decision-estimation Coefficient with Applications in Adversarial MDPs](../../ICLR2026/learning_theory/an_improved_model-free_decision-estimation_coefficient_with_applications_in_adve.md)
 - [\[ICLR 2026\] A Near-Optimal Best-of-Both-Worlds Algorithm for Federated Bandits](../../ICLR2026/learning_theory/a_near-optimal_best-of-both-worlds_algorithm_for_federated_bandits.md)
 - [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](../../ICLR2026/learning_theory/best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
-- [\[ICML 2026\] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding](conditional_krr_injecting_unpenalized_features_into_kernel_methods_with_applicat.md)
 
 </div>
 

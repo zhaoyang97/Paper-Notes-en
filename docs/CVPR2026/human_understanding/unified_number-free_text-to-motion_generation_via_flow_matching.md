@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Unified Number-Free Text-to-Motion Generation Via Flow Matching
 description: >-
-  [CVPR 2026][Human Understanding][Flow Matching] UMF bridges single-person and multi-person motion datasets using a unified multi-token latent space. It establishes a "1+N" paradigm consisting of a "Pyramid Motion Flow (P-Flow)" for single-pass generation of motion priors and a "Semi-Noisy Motion Flow (S-Flow)" for iterative autoregressive generation of responses. Th
+  [CVPR 2026][Human Understanding][Multi-person Motion Generation] UMF bridges single-person and multi-person motion datasets using a unified multi-token latent space. It establishes a "1+N" paradigm consisting of a "Pyramid Motion Flow (P-Flow)" for single-pass generation of motion priors and a "Semi-Noisy Motion Flow (S-Flow)" for iterative autoregressive generation of responses. This reaches SOTA on text-driven "number-free" multi-person generation (InterHuman FID 4.772) whi…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Flow Matching
-  - Error Accumulation
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-person Motion Generation"
+  - "Flow Matching"
+  - "Pyramid Flow"
+  - "Error Accumulation"
+  - "Heterogeneous Data Unification"
 date: 2026-05-08
-content_hash: f4e73a7b2724714d
+content_hash: 1edc2d2955329521
 ---
+
 # Unified Number-Free Text-to-Motion Generation Via Flow Matching
 
 **Conference**: CVPR 2026  
@@ -152,14 +156,15 @@ Regarding efficiency (Table 4), under the same 60-step inference, UMF shows 140.
 - Value: ⭐⭐⭐⭐ (A SOTA generalist framework for multi-person motion with practical efficiency).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
-- [\[ECCV 2024\] FreeMotion: A Unified Framework for Number-free Text-to-Motion Synthesis](../../ECCV2024/human_understanding/freemotion_a_unified_framework_for_number-free_text-to-motion_synthesis.md)
 - [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
-- [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
+- [\[ECCV 2024\] FreeMotion: A Unified Framework for Number-free Text-to-Motion Synthesis](../../ECCV2024/human_understanding/freemotion_a_unified_framework_for_number-free_text-to-motion_synthesis.md)
+- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
 - [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
 
 </div>

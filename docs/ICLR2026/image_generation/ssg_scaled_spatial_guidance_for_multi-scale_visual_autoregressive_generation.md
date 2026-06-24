@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][VAR] Proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressive models through frequency-domain prior construction and semantic residual amplification.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VAR
+  - "ICLR 2026"
+  - "Image Generation"
+  - "VAR"
+  - "next-scale prediction"
+  - "information bottleneck"
+  - "frequency domain guidance"
+  - "training-free"
 date: 2026-05-08
-content_hash: 7be4ab821f6dbeb5
+content_hash: c876ab46f84839e8
 ---
+
 # SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,10 @@ VAR-d30 + SSG (FID 1.68) is competitive with diffusion and masked models while m
 ## Related Papers
 
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
+- [\[ICLR 2026\] SoftCFG: Uncertainty-guided Stable Guidance for Visual Autoregressive Model](softcfg_uncertainty-guided_stable_guidance_for_visual_autoregressive_model.md)
 - [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 - [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](bar_refactor_the_basis_of_autoregressive_visual_generation.md)
-- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
-- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](../../CVPR2026/image_generation/markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
+- [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
 
 </div>
 

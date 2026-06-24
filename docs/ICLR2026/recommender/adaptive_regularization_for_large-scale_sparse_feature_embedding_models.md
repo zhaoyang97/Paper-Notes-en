@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Regularization for Large-Scale Sparse Feature Embedding Models
 description: >-
-  [ICLR 2026][Recommender Systems][AdamAR] This paper theoretically explains the root cause of "one-epoch overfitting" in CTR/CVR models—where performance collapses after the first epoch—using Rademacher complexity. It identifies that the unconstrained growth of embedding norms expands the generalization bound. Consequently, the authors propose AdamAR, an adapt
+  [ICLR 2026][Recommender Systems][one-epoch overfitting] This paper theoretically explains the root cause of "one-epoch overfitting" in CTR/CVR models—where performance collapses after the first epoch—using Rademacher complexity. It identifies that the unconstrained growth of embedding norms expands the generalization bound. Consequently, the authors propose AdamAR, an adaptive regularization method that allocates norm budgets based on feature frequency: applying light regular…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - AdamAR
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "one-epoch overfitting"
+  - "Rademacher complexity"
+  - "adaptive regularization"
+  - "embedding norm budget"
+  - "AdamAR"
 date: 2026-05-08
-content_hash: 7f7be9b128c045d9
+content_hash: d911c03c7569a6f8
 ---
+
 # Adaptive Regularization for Large-Scale Sparse Feature Embedding Models
 
 **Conference**: ICLR 2026  

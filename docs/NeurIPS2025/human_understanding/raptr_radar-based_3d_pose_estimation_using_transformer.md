@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAPTR: Radar-Based 3D Pose Estimation Using Transformer
 description: >-
-  [NeurIPS 2025][Human Understanding][Radar Perception] This paper proposes RAPTR, the first Transformer framework for radar-based 3D human pose estimation using weak supervision (3D bounding boxes + 2D keypoint labels). T…
+  [NeurIPS 2025][Human Understanding][Radar Perception] This paper proposes RAPTR, the first Transformer framework for radar-based 3D human pose estimation using weak supervision (3D bounding boxes + 2D keypoint labels). Through pseudo-3D deformable attention and structured loss functions, RAPTR substantially outperforms baselines on two indoor datasets.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Weak Supervision"
   - "Deformable Attention"
 date: 2026-05-08
-content_hash: d9a50af4b1f9c750
+content_hash: 123108645ffce924
 ---
 
 # RAPTR: Radar-Based 3D Pose Estimation Using Transformer
@@ -124,11 +124,11 @@ DETR-style bipartite matching is used to associate predictions with ground truth
 
 ## Related Papers
 
+- [\[CVPR 2025\] HiPART: Hierarchical Pose AutoRegressive Transformer for Occluded 3D Human Pose Estimation](../../CVPR2025/human_understanding/hipart_hierarchical_pose_autoregressive_transformer_for_occluded_3d_human_pose_e.md)
 - [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
-- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](../../CVPR2026/human_understanding/e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[NeurIPS 2025\] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization](cycle-sync_robust_global_camera_pose_estimation_through_enhanced_cycle-consisten.md)
-- [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](../../ICCV2025/human_understanding/posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
-- [\[ICCV 2025\] HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation](../../ICCV2025/human_understanding/hcceposebf_predicting_front_back_surfaces_to_construct_ultra-dense_2d-3d_corresp.md)
+- [\[CVPR 2025\] 3D Face Reconstruction From Radar Images](../../CVPR2025/human_understanding/3d_face_reconstruction_from_radar_images.md)
+- [\[CVPR 2025\] GA3CE: Unconstrained 3D Gaze Estimation with Gaze-Aware 3D Context Encoding](../../CVPR2025/human_understanding/ga3ce_unconstrained_3d_gaze_estimation_with_gaze-aware_3d_context_encoding.md)
+- [\[CVPR 2025\] Analyzing the Synthetic-to-Real Domain Gap in 3D Hand Pose Estimation](../../CVPR2025/human_understanding/analyzing_the_synthetic-to-real_domain_gap_in_3d_hand_pose_estimation.md)
 
 </div>
 

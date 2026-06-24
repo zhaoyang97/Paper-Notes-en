@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GeoCodeBench is the first PhD-level code generation benchmark for 3D geometric computer vision. It contains 100 function completion tasks curated from 2025 top-tier papers and codebases, accompanied by automated and diverse unit tests. The strongest model, GPT-5, achieves only a 36.6% pass rate, revealing a significant
+  [CVPR 2026][3D Vision][3D vision code generation] GeoCodeBench is the first PhD-level code generation benchmark for 3D geometric computer vision. It contains 100 function completion tasks curated from 2025 top-tier papers and codebases, accompanied by automated and diverse unit tests. The strongest model, GPT-5, achieves only a 36.6% pass rate, revealing a significant gap in LLMs' ability to implement scientific-grade 3D code.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D vision code generation"
+  - "LLM evaluation"
+  - "geometric algorithm implementation"
+  - "PhD-level benchmark"
+  - "unit testing"
 date: 2026-05-08
-content_hash: 974ce02063fbf540
+content_hash: 2a52610059fdf9a9
 ---
+
 # GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Where $p_i$ is the number of tests passed for problem $i$, $T_i$ is the total te
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Cookbook of 3D Vision: Data, Learning Paradigms, and Application](a_cookbook_of_3d_vision_data_learning_paradigms_and_application.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
+- [\[ICLR 2026\] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra](../../ICLR2026/3d_vision/giq_benchmarking_3d_geometric_reasoning_of_vision_foundation_models_with_simulat.md)
+- [\[CVPR 2026\] PromptDepth: Efficient and Promptable Geometric 3D Vision Model for Embodied Intelligence](promptdepth_efficient_and_promptable_geometric_3d_vision_model_for_embodied_inte.md)
+- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
+- [\[CVPR 2026\] Pano360: Perspective to Panoramic Vision with Geometric Consistency](pano360_perspective_to_panoramic_vision_with_geometric_consistency.md)
+- [\[CVPR 2026\] Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints](revisiting_optimal_coding_for_i-tof_under_practical_sensor_constraints.md)
 
 </div>
 

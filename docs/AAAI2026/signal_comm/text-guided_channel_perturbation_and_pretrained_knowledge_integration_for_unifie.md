@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion
 description: >-
-  [AAAI2026][Signal & Communication][Multi-modality image fusion] This paper proposes UP-Fusion, a unified multi-modality image fusion framework comprising three modules — Semantic-aware Channel Pruning Module (SCPM)…
+  [AAAI2026][Signal & Communication][Multi-modality image fusion] This paper proposes UP-Fusion, a unified multi-modality image fusion framework comprising three modules — Semantic-aware Channel Pruning Module (SCPM), Geometric Affine Modulation (GAM), and CLIP Text-guided Channel Perturbation Module (TCPM) — that employs a single set of weights (trained solely on infrared-visible data) to simultaneously handle both IVIF and medical image fusion tasks…
 tags:
   - "AAAI2026"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "CLIP text guidance"
   - "pretrained knowledge"
 date: 2026-05-08
-content_hash: e0d2935b2ae466d5
+content_hash: 1156b4a5c8040fcc
 ---
 
 # Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion
@@ -123,11 +123,11 @@ $L_T = L_{grad} + L_{l_1}$. Training is conducted solely on LLVIP for 100 epochs
 
 ## Related Papers
 
-- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](../../CVPR2026/signal_comm/faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
+- [\[CVPR 2025\] DiTASK: Multi-Task Fine-Tuning with Diffeomorphic Transformations](../../CVPR2025/signal_comm/ditask_multi-task_fine-tuning_with_diffeomorphic_transformations.md)
 - [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](../../NeurIPS2025/signal_comm/memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
+- [\[CVPR 2025\] ABC-Former: Auxiliary Bimodal Cross-domain Transformer with Interactive Channel Attention](../../CVPR2025/signal_comm/abc-former_auxiliary_bimodal_cross-domain_transformer_with_interactive_channel_a.md)
 - [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
 - [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
-- [\[ICML 2026\] Joint Model and Data Sparsification via the Marginal Likelihood](../../ICML2026/signal_comm/joint_model_and_data_sparsification_via_the_marginal_likelihood.md)
 
 </div>
 

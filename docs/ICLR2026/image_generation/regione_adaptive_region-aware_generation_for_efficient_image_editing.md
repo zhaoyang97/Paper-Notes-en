@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing
 description: >-
-  [ICLR 2026][Image Generation][KV Cache] RegionE observes that in instruction-based image editing, the generation trajectories of unedited regions are approximately linear, while those of edited regions are more curved but exhibit similar velocities between adjacent steps. By employing adaptive region partitioning, region-level KV injection, and velocity deca
+  [ICLR 2026][Image Generation][Instruction-based Image Editing] RegionE observes that in instruction-based image editing, the generation trajectories of unedited regions are approximately linear, while those of edited regions are more curved but exhibit similar velocities between adjacent steps. By employing adaptive region partitioning, region-level KV injection, and velocity decay caching, it accelerates Step1X-Edit, FLUX.1 Kontext, and Qwen-Image-Edit by approximately 2.06-…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - KV Cache
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Instruction-based Image Editing"
+  - "Region-Aware Generation"
+  - "Diffusion Model Acceleration"
+  - "KV Cache"
+  - "Trajectory Redundancy"
 date: 2026-05-08
-content_hash: cdde4a4eefc169f4
+content_hash: cecc5b6aad1e6a19
 ---
+
 # RegionE: Adaptive Region-Aware Generation for Efficient Image Editing
 
 **Conference**: ICLR 2026  

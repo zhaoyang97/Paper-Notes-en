@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] OrienPose explicitly injects the "orientation prior" of an object into the reference latent variables of Novel View Synthesis (NVS) and employs an orientation consistency loss to supervise view transformations at the geometric level. This converts unseen object pose estimation—from a single image without a CAD model—fr
+  [CVPR 2026][3D Vision][Object Pose Estimation] OrienPose explicitly injects the "orientation prior" of an object into the reference latent variables of Novel View Synthesis (NVS) and employs an orientation consistency loss to supervise view transformations at the geometric level. This converts unseen object pose estimation—from a single image without a CAD model—from an "unconstrained pixel-wise transformation" into a "geometrically defined transformation with a known startin…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Object Pose Estimation"
+  - "Novel View Synthesis"
+  - "Orientation Prior"
+  - "Unseen Objects"
+  - "Generate-and-Compare"
 date: 2026-05-08
-content_hash: 91197c77f2ebb7fb
+content_hash: f8434739d196abc9
 ---
+
 # OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Removing OAG results in a larger performance drop than removing $L_{OC}$, confir
 
 ## Related Papers
 
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
+- [\[CVPR 2026\] PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting](posegaussian_6d_pose_estimation_for_unseen_objects_via_sparse-view_object-level_.md)
 - [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
-- [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
-- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
 
 </div>
 

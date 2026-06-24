@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass
 description: >-
-  [CVPR 2026][3D Vision][SMPL] UniSH employs a feed-forward network to simultaneously output scene geometry, camera parameters, and metric-scale SMPL humans from monocular videos. By utilizing "expert depth model distillation + coarse-to-fine human-scene alignment," it transfers priors trained on synthetic data to real-world in-the-wild videos, achi
+  [CVPR 2026][3D Vision][Joint Scene-Human Reconstruction] UniSH employs a feed-forward network to simultaneously output scene geometry, camera parameters, and metric-scale SMPL humans from monocular videos. By utilizing "expert depth model distillation + coarse-to-fine human-scene alignment," it transfers priors trained on synthetic data to real-world in-the-wild videos, achieving joint scene and human reconstruction in a single forward pass.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SMPL
-  - sim-to-real
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Joint Scene-Human Reconstruction"
+  - "Feed-forward"
+  - "SMPL"
+  - "Metric Scale Alignment"
+  - "sim-to-real"
 date: 2026-05-08
-content_hash: 8798d398713b663d
+content_hash: 9e56a15a9e3ec3cf
 ---
+
 # UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass
 
 **Conference**: CVPR 2026  
@@ -145,16 +149,16 @@ Human Surface Refinement (Bonn Dataset):
 - **Value**: ⭐⭐⭐⭐ High practical value for AR/VR and embodied AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
+- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 - [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
-- [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
-- [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation
 description: >-
-  [CVPR 2026][Autonomous Driving][State Space Model] A new OVDG-SS setting is proposed to unify the handling of unseen domains and unseen classes in semantic segmentation. A S2-Corr module based on State Space Models (SSM) is designed to repair the degradation of text-image correlation caused by domain shifts, achieving efficient and robust cross-domain open-vocabulary s
+  [CVPR 2026][Autonomous Driving][Open-vocabulary segmentation] A new OVDG-SS setting is proposed to unify the handling of unseen domains and unseen classes in semantic segmentation. A S2-Corr module based on State Space Models (SSM) is designed to repair the degradation of text-image correlation caused by domain shifts, achieving efficient and robust cross-domain open-vocabulary segmentation in autonomous driving scenarios.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - State Space Model
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Open-vocabulary segmentation"
+  - "Domain generalization"
+  - "State space models"
+  - "Text-image correlation"
+  - "Urban scene segmentation"
 date: 2026-05-08
-content_hash: 504463f357e0043f
+content_hash: 52f893484a18945b
 ---
+
 # Open-Vocabulary Domain Generalization in Urban-Scene Segmentation
 
 **Conference**: CVPR 2026  
@@ -171,10 +176,10 @@ Flattening 2D correlation maps into 1D sequences for SSM often leads to spatial 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation](../../NeurIPS2025/autonomous_driving/leveraging_depth_and_language_for_open-vocabulary_domain-generalized_semantic_se.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
 - [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
 - [\[CVPR 2026\] FedBPrompt: Federated Domain Generalization Person Re-Identification via Body Distribution Aware Visual Prompts](fedbprompt_federated_domain_generalization_person_re-identification_via_body_dis.md)
 - [\[CVPR 2026\] PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving](panda_unsupervised_domain_adaptation_for_multimodal_3d_panoptic_segmentation_in_.md)
+- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
 
 </div>
 

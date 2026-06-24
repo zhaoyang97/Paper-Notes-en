@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Active Learning with Low-Rank Structure for Data Selection
 description: >-
-  [ICML 2026][learning_theory][coreset] Addressing the mismatch where existing coreset methods assume geometric clustering while modern datasets exhibit global algebraic (low-rank) structures, this paper proposes a data selection framework based on low-rank approximation and residual sensitivity sampling. Using a weighted subset of size $\tilde{O}(k+1/\varep
+  [ICML 2026][Learning Theory][low-rank approximation] Addressing the mismatch where existing coreset methods assume geometric clustering while modern datasets exhibit global algebraic (low-rank) structures, this paper proposes a data selection framework based on low-rank approximation and residual sensitivity sampling. Using a weighted subset of size $\tilde{O}(k+1/\varepsilon^2)$, the method approximates the full average loss to a $(1\pm\varepsilon)$ relative error (with an a…
 tags:
-  - ICML 2026
-  - learning_theory
-  - coreset
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Data Selection"
+  - "Coreset"
+  - "low-rank approximation"
+  - "sensitivity sampling"
+  - "active learning"
 date: 2026-05-08
-content_hash: b37ae522dc80da10
+content_hash: 329d93c24f4f0082
 ---
+
 # Active Learning with Low-Rank Structure for Data Selection
 
 **Conference**: ICML 2026  
@@ -131,15 +136,16 @@ Low-rank SS consistently outperforms uniform sampling and is generally superior 
 - Value: ⭐⭐⭐⭐ Low-overhead, theoretically grounded data selection for foundation model fine-tuning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
-- [\[ICML 2026\] The Data Manifold under the Microscope](the_data_manifold_under_the_microscope.md)
+- [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](../../ICLR2026/learning_theory/high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](../../ICLR2026/learning_theory/optimizing_data_augmentation_through_bayesian_model_selection.md)
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](../../ICLR2026/learning_theory/saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
 - [\[ICML 2026\] When Sample Selection Bias Precipitates Model Collapse](when_sample_selection_bias_precipitates_model_collapse.md)
-- [\[ICML 2026\] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)
-- [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](../../NeurIPS2025/learning_theory/adaptive_data_analysis_for_growing_data.md)
 
 </div>
 

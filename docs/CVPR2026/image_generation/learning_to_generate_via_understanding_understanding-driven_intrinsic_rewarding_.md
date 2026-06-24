@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Ours proposes GvU, which leverages the visual understanding branch of a Unified Multimodal Model (UMM) as an intrinsic reward signal. By constructing a self-supervised RL framework (based on GRPO) through token-level text-image alignment probabilities, it iteratively improves T2I generation quality without external sup
+  [CVPR 2026][Image Generation][Unified Multimodal Models (UMM)] Ours proposes GvU, which leverages the visual understanding branch of a Unified Multimodal Model (UMM) as an intrinsic reward signal. By constructing a self-supervised RL framework (based on GRPO) through token-level text-image alignment probabilities, it iteratively improves T2I generation quality without external supervision. It achieves a 43.3% improvement on GenEval++, and the enhanced generation in turn promo…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Models (UMM)"
+  - "Self-supervised Reinforcement Learning"
+  - "Intrinsic Reward"
+  - "Text-Image Alignment"
+  - "GRPO"
+  - "Understanding-driven Generation"
 date: 2026-05-08
-content_hash: 2c177483756c24b9
+content_hash: 1662cbca7b42f4a7
 ---
+
 # Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -148,9 +154,9 @@ $$\mathcal{J}_{GRPO}(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\min\lef
 
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](../../NeurIPS2025/image_generation/coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[CVPR 2026\] Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling](scone_bridging_composition_and_distinction_in_subject-driven_image_generation_vi.md)
-- [\[CVPR 2026\] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction](parauni_enhance_generation_in_unified_multimodal_model_with_reinforcement-driven.md)
-- [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
+- [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
+- [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
 
 </div>
 

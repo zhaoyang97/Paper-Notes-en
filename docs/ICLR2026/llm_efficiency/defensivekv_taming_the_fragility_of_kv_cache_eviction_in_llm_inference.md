@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Addressing the issue where the "importance stability assumption" relied upon by KV cache eviction is fragile, and standard mean aggregation fails during critical moments, this paper proposes linear-time "Defensive Aggregation" (estimating worst-case risk using historical maximums + adaptive prior correction). Based on
+  [ICLR2026][LLM Efficiency][KV Cache Eviction] Addressing the issue where the "importance stability assumption" relied upon by KV cache eviction is fragile, and standard mean aggregation fails during critical moments, this paper proposes linear-time "Defensive Aggregation" (estimating worst-case risk using historical maximums + adaptive prior correction). Based on this, DefensiveKV and its cross-layer version Layer-DefensiveKV are constructed…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "KV Cache Eviction"
+  - "Worst-case Risk"
+  - "Defensive Aggregation"
+  - "Long-context Inference"
+  - "Inter-layer Budget Allocation"
 date: 2026-05-08
-content_hash: b5e7c0936862bbad
+content_hash: 59f25b9ac00dd59c
 ---
+
 # DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference
 
 **Conference**: ICLR2026  
@@ -127,11 +133,11 @@ On LongBench, at a 20% budget, CriticalKV loses 11.1%, whereas DefensiveKV drops
 
 ## Related Papers
 
-- [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
-- [\[AAAI 2026\] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction](../../AAAI2026/llm_efficiency/judge_q_trainable_queries_for_optimized_information_retention_in_kv_cache_evicti.md)
-- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
-- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](../../ICML2026/llm_efficiency/obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
+- [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
+- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](../../ICML2026/llm_efficiency/obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
+- [\[AAAI 2026\] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction](../../AAAI2026/llm_efficiency/judge_q_trainable_queries_for_optimized_information_retention_in_kv_cache_evicti.md)
 
 </div>
 

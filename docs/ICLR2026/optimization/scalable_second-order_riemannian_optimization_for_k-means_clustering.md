@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable Second-Order Riemannian Optimization for K-means Clustering
 description: >-
-  [ICLR 2026][Optimization & Theory][K-means] This paper reformulates the non-negativity constrained low-rank K-means SDP relaxation as an **unconstrained smooth optimization problem on a product manifold**. It is solved using a cubic-regularized Riemannian Newton method. Through manifold decomposition, the cost per Newton subproblem is reduced to linear complexit
+  [ICLR 2026][Optimization][K-means] This paper reformulates the non-negativity constrained low-rank K-means SDP relaxation as an **unconstrained smooth optimization problem on a product manifold**. It is solved using a cubic-regularized Riemannian Newton method. Through manifold decomposition, the cost per Newton subproblem is reduced to linear complexity with respect to the number of samples $n$. This allows convergence to a second-order critical point (globally optimal under…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - K-means
+  - "ICLR 2026"
+  - "Optimization"
+  - "K-means"
+  - "Riemannian optimization"
+  - "Semidefinite programming relaxation"
+  - "Second-order critical point"
+  - "Burer-Monteiro decomposition"
 date: 2026-05-08
-content_hash: 07f736ab644aeb4a
+content_hash: 033d8e6c11957bdf
 ---
+
 # Scalable Second-Order Riemannian Optimization for K-means Clustering
 
 **Conference**: ICLR 2026  
@@ -135,10 +140,20 @@ Convergence efficiency comparison on GMM ($n=100$, $\gamma=0.8$, $\mu=0.1$):
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
+- [\[ICLR 2026\] Riemannian Optimization on Relaxed Indicator Matrix Manifold](riemannian_optimization_on_relaxed_indicator_matrix_manifold.md)
+- [\[ICLR 2026\] Landing with the Score: Riemannian Optimization through Denoising](landing_with_the_score_riemannian_optimization_through_denoising.md)
+- [\[ICLR 2026\] Angle k-means: Accelerating Exact k-means via Angular Relationships](angle_k-means.md)
+- [\[AAAI 2026\] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator](../../AAAI2026/optimization/convex_clustering_redefined_robust_learning_with_higher_order_norms_and_beyond.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)

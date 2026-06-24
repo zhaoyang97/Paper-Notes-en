@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] LGKDE embeds each graph as a "node distribution" using a learnable deep MMD metric, overlays a multi-scale kernel density estimation (KDE) on this metric space, and trains end-to-end via a self-supervised contrastive signal where "normal graph density is higher than its structure-aware perturbed version." This provides
+  [ICML 2026][Graph Learning][Graph Density Estimation] LGKDE embeds each graph as a "node distribution" using a learnable deep MMD metric, overlays a multi-scale kernel density estimation (KDE) on this metric space, and trains end-to-end via a self-supervised contrastive signal where "normal graph density is higher than its structure-aware perturbed version." This provides the first unified framework for graph-level density estimation with theoretical guarantees—including cons…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Density Estimation"
+  - "Kernel Density Estimation"
+  - "Deep MMD"
+  - "Spectral Perturbation"
+  - "Graph-Level Anomaly Detection"
 date: 2026-05-08
-content_hash: 97342b1e8529e4b9
+content_hash: 4fc47022544f0bc0
 ---
+
 # Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection
 
 **Conference**: ICML 2026  
@@ -132,8 +138,8 @@ Performance was evaluated on 12 public graph anomaly detection benchmarks (MUTAG
 
 - [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](generalist_graph_anomaly_detection_via_prototype-based_distillation.md)
 - [\[ICML 2026\] Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach](rethinking_feature_alignment_in_generalist_graph_anomaly_detection_a_relational_.md)
-- [\[AAAI 2026\] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks](../../AAAI2026/graph_learning/bugsweeper_function-level_detection_of_smart_contract_vulnerabilities_using_grap.md)
-- [\[ICML 2026\] Anchor-guided Hypergraph Condensation with Dual-level Discrimination](anchor-guided_hypergraph_condensation_with_dual-level_discrimination.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](../../ICLR2026/graph_learning/topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
+- [\[ICLR 2026\] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection](../../ICLR2026/graph_learning/dr-ggad_dual_residual_centering_for_mitigating_anomaly_nondiscriminativity_in_ge.md)
 - [\[ICML 2026\] MedCoG: Maximizing LLM Inference Density in Medical Reasoning via Meta-Cognitive Regulation](medcog_maximizing_llm_inference_density_in_medical_reasoning_via_meta-cognitive_.md)
 
 </div>

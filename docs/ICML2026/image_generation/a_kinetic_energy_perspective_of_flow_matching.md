@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Kinetic Energy Perspective of Flow Matching
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] This paper treats flow matching sampling trajectories as particle motions and defines Kinetic Path Energy (KPE) to measure the cumulative kinetic energy of the generation process for each sample. Based on this, a training-free strategy called Kinetic Trajectory Shaping (KTS) is proposed to enhance generation quality wh
+  [ICML2026 Spotlight][Image Generation][Flow Matching] This paper treats flow matching sampling trajectories as particle motions and defines Kinetic Path Energy (KPE) to measure the cumulative kinetic energy of the generation process for each sample. Based on this, a training-free strategy called Kinetic Trajectory Shaping (KTS) is proposed to enhance generation quality while suppressing memorization caused by late-stage energy spikes.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - Kinetic Path Energy
+  - "ICML2026 Spotlight"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Kinetic Path Energy"
+  - "Memorization"
+  - "Trajectory Diagnostics"
+  - "Inference-time Regulation"
 date: 2026-05-08
-content_hash: bd77ec07bc5df53d
+content_hash: f021ee5a91e21590
 ---
+
 # A Kinetic Energy Perspective of Flow Matching
 
 **Conference**: ICML2026 Spotlight  
@@ -113,10 +117,10 @@ The main experiments prove KPE is a meaningful diagnostic metric and verify the 
 ## Related Papers
 
 - [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](stable_velocity_a_variance_perspective_on_flow_matching.md)
+- [\[ICLR 2026\] Delay Flow Matching](../../ICLR2026/image_generation/delay_flow_matching.md)
 - [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
 - [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
 - [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
-- [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
 
 </div>
 

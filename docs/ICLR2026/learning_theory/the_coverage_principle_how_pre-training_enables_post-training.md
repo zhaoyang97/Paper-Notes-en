@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] The Coverage Principle: How Pre-Training Enables Post-Training
 description: >-
-  [ICLR 2026][learning_theory][coverage profile] This paper theoretically answers "what pre-training actually leaves for post-training (RL / test-time scaling)"—the answer is not cross-entropy, but a quantity called **coverage profile**. The authors prove that next-token prediction **implicitly** optimizes coverage, and that coverage generalizes faster than cross-ent
+  [ICLR2026][Learning Theory][coverage profile] This paper theoretically answers "what pre-training actually leaves for post-training (RL / test-time scaling)"—the answer is not cross-entropy, but a quantity called **coverage profile**. The authors prove that next-token prediction **implicitly** optimizes coverage, and that coverage generalizes faster than cross-entropy without being hindered by sequence length, thereby explaining the anomaly of "why models with lower cross-ent…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - coverage profile
-  - next-token prediction
-  - Best-of-N
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Pre-training"
+  - "Test-time Scaling"
+  - "coverage profile"
+  - "next-token prediction"
+  - "maximum likelihood"
+  - "Best-of-N"
+  - "generalization analysis"
 date: 2026-05-08
-content_hash: ea6792df9223e396
+content_hash: cbf4f0b9640bb9a5
 ---
+
 # The Coverage Principle: How Pre-Training Enables Post-Training
 
 **Conference**: ICLR2026  
@@ -148,8 +153,8 @@ Core conclusion: Cross-entropy improves monotonically while Pass@N does not; cov
 - [\[ICLR 2026\] From Predictors to Samplers via the Training Trajectory](from_predictors_to_samplers_via_the_training_trajectory.md)
 - [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
 - [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
-- [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
 
 </div>
 

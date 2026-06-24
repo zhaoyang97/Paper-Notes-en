@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] DeepGuard is proposed to overcome the "final-layer bottleneck" by aggregating multi-layer representations from the upper Transformer layers through an attention mechanism. Combined with multi-objective training and a lightweight inference-time security guidance strategy, it improves the security-correctness generation
+  [ACL 2026][Code Intelligence][Secure Code Generation] DeepGuard is proposed to overcome the "final-layer bottleneck" by aggregating multi-layer representations from the upper Transformer layers through an attention mechanism. Combined with multi-objective training and a lightweight inference-time security guidance strategy, it improves the security-correctness generation rate by an average of 11.9% across 5 Code LLMs.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Secure Code Generation"
+  - "Multi-layer Aggregation"
+  - "Vulnerability Detection"
+  - "Contrastive Learning"
+  - "Inference-time Guidance"
 date: 2026-05-08
-content_hash: d31b77f6e9578025
+content_hash: 8f7fd27bd51c8a12
 ---
+
 # DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation
 
 **Conference**: ACL 2026  
@@ -116,10 +122,17 @@ $\mathcal{L}_{total} = \mathcal{L}_{gen} + w_{sec}\mathcal{L}_{sec} + w_{kl}\mat
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] RESCUE: Retrieval Augmented Secure Code Generation](../../ICLR2026/code_intelligence/rescue_retrieval_augmented_secure_code_generation.md)
+- [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
+- [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
+- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
+- [\[ICLR 2026\] FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption](../../ICLR2026/code_intelligence/fhe-coder_benchmarking_secure_agentic_code_generation_for_fully_homomorphic_encr.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)

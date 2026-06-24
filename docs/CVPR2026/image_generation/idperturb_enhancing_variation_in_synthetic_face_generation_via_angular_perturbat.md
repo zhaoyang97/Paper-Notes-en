@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] Proposes IDperturb, a geometric sampling strategy that performs angular perturbations on identity embeddings on the unit hypersphere. It significantly enhances the intra-class diversity of synthetic face datasets without modifying generative models, thereby improving downstream face recognition performance.
+  [CVPR 2026][Image Generation][Synthetic Faces] Proposes IDperturb, a geometric sampling strategy that performs angular perturbations on identity embeddings on the unit hypersphere. It significantly enhances the intra-class diversity of synthetic face datasets without modifying generative models, thereby improving downstream face recognition performance.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Synthetic Faces"
+  - "Identity Perturbation"
+  - "Angular Sampling"
+  - "Diffusion Models"
+  - "Face Recognition"
 date: 2026-05-08
-content_hash: cca0261aeec5a4ae
+content_hash: 14e0b6754255c054
 ---
+
 # IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ CFG strength ablation (lb=0.6): $\omega=2$ reaches the optimum (93.63%); excessi
 
 ## Related Papers
 
-- [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](../../AAAI2026/human_understanding/soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
-- [\[CVPR 2026\] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](pc-talk_precise_facial_animation_control_for_audio-driven_talking_face_generatio.md)
-- [\[CVPR 2026\] Goldilocks Test Sets for Face Verification](goldilocks_test_sets_for_face_verification.md)
-- [\[CVPR 2026\] FrankenMotion: Part-level Human Motion Generation and Composition](frankenmotion_part-level_human_motion_generation_and_composition.md)
-- [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
+- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
+- [\[ICML 2025\] Synthetic Face Datasets Generation via Latent Space Exploration from Brownian Identity Diffusion](../../ICML2025/image_generation/synthetic_face_datasets_generation_via_latent_space_exploration_from_brownian_id.md)
+- [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
+- [\[CVPR 2026\] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models](taming_sampling_perturbations_with_variance_expansion_loss_for_latent_diffusion_.md)
+- [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
 
 </div>
 

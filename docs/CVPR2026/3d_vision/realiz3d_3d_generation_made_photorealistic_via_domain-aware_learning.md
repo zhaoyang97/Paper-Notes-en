@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning
 description: >-
-  [CVPR 2026][3D Vision][Domain Shifter] Addressing the issue where photorealism is lost when fine-tuning diffusion models on synthetic 3D renders to achieve 3D controllability, this paper decouples "domain identity (real/synthetic)" from "3D control signals" using a lightweight Domain Shifter (low-rank residual adapter). Combined with layer-aware training an
+  [CVPR 2026][3D Vision][Domain Adaptation] Addressing the issue where photorealism is lost when fine-tuning diffusion models on synthetic 3D renders to achieve 3D controllability, this paper decouples "domain identity (real/synthetic)" from "3D control signals" using a lightweight Domain Shifter (low-rank residual adapter). Combined with layer-aware training and domain reassignment, the control capability is transferred from the synthetic domain to the real domain. This result…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Domain Shifter
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Domain Adaptation"
+  - "3D Controllable Generation"
+  - "Multi-view"
+  - "Domain Shifter"
+  - "Domain Leakage"
 date: 2026-05-08
-content_hash: 3c9ad3e5a163246d
+content_hash: c4766b79f4e881b6
 ---
+
 # Realiz3D: 3D Generation Made Photorealistic via Domain-Aware Learning
 
 **Conference**: CVPR 2026  
@@ -150,7 +155,7 @@ Stepwise addition of components based on Tab. 2 (DS=Domain Shifter, LA Train=Lay
 - [\[CVPR 2026\] Photo3D: Advancing Photorealistic 3D Generation through Structure-Aligned Detail Enhancement](photo3d_advancing_photorealistic_3d_generation_through_structure-aligned_detail_.md)
 - [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
+- [\[ICCV 2025\] DAP-MAE: Domain-Adaptive Point Cloud Masked Autoencoder for Effective Cross-Domain Learning](../../ICCV2025/3d_vision/dap-mae_domain-adaptive_point_cloud_masked_autoencoder_for_effective_cross-domai.md)
 
 </div>
 

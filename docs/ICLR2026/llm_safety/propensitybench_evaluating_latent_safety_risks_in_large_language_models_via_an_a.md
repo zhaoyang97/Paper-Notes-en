@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper introduces PropensityBench, an agentic evaluation framework that uses "proxy tools" to simulate dangerous capabilities. Rather than asking whether a model "can" perform harmful acts, it observes whether the model "would" proactively choose high-risk tools under six types of operational pressure. Results show
+  [ICLR 2026][LLM Safety][Propensity evaluation] This paper introduces PropensityBench, an agentic evaluation framework that uses "proxy tools" to simulate dangerous capabilities. Rather than asking whether a model "can" perform harmful acts, it observes whether the model "would" proactively choose high-risk tools under six types of operational pressure. Results show that many frontier models exhibit a sharp increase in propensity under pressure (average PropensityScore of 46.9…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Propensity evaluation"
+  - "latent safety risks"
+  - "agent stress testing"
+  - "shallow alignment"
+  - "dangerous capability proxy tools"
 date: 2026-05-08
-content_hash: a64215c29cd41b68
+content_hash: 7686f001a48eb7a7
 ---
+
 # PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach
 
 **Conference**: ICLR 2026  
@@ -122,6 +128,7 @@ The evaluation covers 12 frontier models, including OpenAI O3/O4-mini/O3-mini/GP
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a blind spot in frontier safety and provides a methodology for pre-deployment safety auditing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

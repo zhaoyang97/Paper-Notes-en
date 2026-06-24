@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] QUANTIPHY is the first **quantitative** benchmark evaluating the physical reasoning abilities of VLMs. Given a video and a single physical prior of an object (size / velocity / acceleration in real-world units), the model is required to infer the **numerical values** of the target object's kinematic quantities. Using 3
+  [CVPR 2026][VLM Reasoning][Physical reasoning] QUANTIPHY is the first **quantitative** benchmark evaluating the physical reasoning abilities of VLMs. Given a video and a single physical prior of an object (size / velocity / acceleration in real-world units), the model is required to infer the **numerical values** of the target object's kinematic quantities. Using 3.3K+ video-text instances and numerical ground truths, it reveals a gap where current VLMs are "linguistically pl…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Physical reasoning"
+  - "kinematic inference"
+  - "quantitative evaluation"
+  - "VLM benchmark"
+  - "video understanding"
 date: 2026-05-08
-content_hash: 1f47d50ba6578b9a
+content_hash: 78a1572da965b8d2
 ---
+
 # QUANTIPHY: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -133,10 +139,10 @@ The authors compared video+prior against prior-only, counterfactual, and CoT set
 ## Related Papers
 
 - [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
-- [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[CVPR 2026\] CURVE: A Benchmark for Cultural and Multilingual Long Video Reasoning](curve_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](../../ICLR2026/vlm_reasoning/omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
+- [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
 
 </div>
 

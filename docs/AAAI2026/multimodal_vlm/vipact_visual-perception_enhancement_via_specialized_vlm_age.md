@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use
 description: >-
-  [AAAI 2026][Multimodal VLM][VLM Agent] VipAct proposes a multi-agent collaboration framework that significantly improves VLM performance on fine-grained visual perception tasks through three-tier collaboration: an Orches…
+  [AAAI 2026][Multimodal VLM][VLM Agent] VipAct proposes a multi-agent collaboration framework that significantly improves VLM performance on fine-grained visual perception tasks through three-tier collaboration: an Orchestrator Agent (task analysis, planning, and coordination), specialized agents (captioning, comparison, and visual prompt interpretation), and vision expert models (depth estimation, object detection, segmentation, etc.). The framework improves accuracy on Blink…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Fine-Grained Visual Perception"
   - "System-2 Reasoning"
 date: 2026-05-08
-content_hash: 4eb764e8ffd16317
+content_hash: dc1799cbb7b00708
 ---
 
 # VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use
@@ -131,8 +131,8 @@ VipAct is a training-free framework that relies entirely on carefully designed p
 - [\[ACL 2026\] AdaTooler-V: Adaptive Tool-Use for Images and Videos](../../ACL2026/multimodal_vlm/adatooler-v_adaptive_tool-use_for_images_and_videos.md)
 - [\[AAAI 2026\] Zero-Reference Joint Low-Light Enhancement and Deblurring via Visual Autoregressive Modeling with VLM-Derived Modulation](zero-reference_joint_low-light_enhancement_and_deblurring_via_visual_autoregress.md)
 - [\[AAAI 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](empowering_semantic-sensitive_underwater_image_enhancement_with_vlm.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[CVPR 2026\] Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees](../../CVPR2026/multimodal_vlm/pop_proof_of_perception_conformal_reasoning.md)
+- [\[ECCV 2024\] m&m's: A Benchmark to Evaluate Tool-Use for Multi-step Multi-modal Tasks](../../ECCV2024/multimodal_vlm/m_ampmaposs_a_benchmark_to_evaluate_tool-use_for_multi-step_multi-modal_tasks.md)
+- [\[CVPR 2026\] Tackling Model Bias via Game-theoretic Multi-agent Collaboration Framework for Hateful Meme Classification](../../CVPR2026/multimodal_vlm/tackling_model_bias_via_game-theoretic_multi-agent_collaboration_framework_for_h.md)
 
 </div>
 

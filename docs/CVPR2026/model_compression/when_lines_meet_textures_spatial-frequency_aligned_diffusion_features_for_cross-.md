@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence
 description: >-
-  [CVPR 2026][Others][Paper Note] To address the difficulty of establishing semantic keypoint correspondences between "sparse line sketches" and "texture-rich photos," this paper proposes SFA-DIFT. It first fine-tunes CleanDIFT via LoRA into a cross-modally unified "clean diffusion feature" to align the spatial domain, then utilizes a wavelet-based Low
+  [CVPR 2026][Model Compression][Sketch-Photo Correspondence] To address the difficulty of establishing semantic keypoint correspondences between "sparse line sketches" and "texture-rich photos," this paper proposes SFA-DIFT. It first fine-tunes CleanDIFT via LoRA into a cross-modally unified "clean diffusion feature" to align the spatial domain, then utilizes a wavelet-based Low-Frequency Feature Aggregation (LoFFA) module to align the frequency domain. It achieves a new SOTA…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Sketch-Photo Correspondence"
+  - "Diffusion Features"
+  - "Wavelet Low-Frequency Aggregation"
+  - "LoRA Fine-tuning"
+  - "Keypoint Matching"
 date: 2026-05-08
-content_hash: e413019c939b6bd4
+content_hash: 47d4fdb4048ca402
 ---
+
 # When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence
 
 **Conference**: CVPR 2026  
@@ -125,16 +131,16 @@ Averaged results on MS-PSC6K and PSC6K:
 - Value: ⭐⭐⭐⭐ Provides a principled framework for cross-sparsity matching that could be applied to other modalities like point clouds or thermal images.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis](generalizable_radio-frequency_radiance_fields_for_spatial_spectrum_synthesis.md)
-- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
-- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](omnifood8k_nutrition_estimation.md)
-- [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
-- [\[CVPR 2026\] Region-Wise Correspondence Prediction between Manga Line Art Images](region-wise_correspondence_prediction_between_manga_line_art_images.md)
+- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
+- [\[ECCV 2024\] Uncertainty-Driven Spectral Compressive Imaging with Spatial-Frequency Transformer](../../ECCV2024/model_compression/uncertainty-driven_spectral_compressive_imaging_with_spatial-frequency_transform.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](../../ICLR2026/model_compression/gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
+- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](../../ICML2026/model_compression/xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
+- [\[ICCV 2025\] SDKD: Frequency-Aligned Knowledge Distillation for Lightweight Spatiotemporal Forecasting](../../ICCV2025/model_compression/frequency-aligned_knowledge_distillation_for_lightweight_spatiotemporal_forecast.md)
 
 </div>
 

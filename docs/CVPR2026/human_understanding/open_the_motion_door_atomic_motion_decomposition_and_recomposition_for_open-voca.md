@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][RVQ-VAE] To address the poor generalization of Text-to-Motion (T2M) models on out-of-distribution text, this paper proposes an "Atomic Motion Decomposition-Recomposition" framework. It decomposes arbitrary raw text into low-level "atomic motion" descriptions across different body parts and time intervals, then learns to recompo
+  [CVPR 2026][Human Understanding][Text-to-Motion] To address the poor generalization of Text-to-Motion (T2M) models on out-of-distribution text, this paper proposes an "Atomic Motion Decomposition-Recomposition" framework. It decomposes arbitrary raw text into low-level "atomic motion" descriptions across different body parts and time intervals, then learns to recompose these atomic motions into complete sequences. Using only HumanML3D for training…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - RVQ-VAE
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion"
+  - "Open-vocabulary"
+  - "Atomic Motion"
+  - "Decomposition-Recomposition"
+  - "RVQ-VAE"
 date: 2026-05-08
-content_hash: 6ab9f644b5f5a8a8
+content_hash: c65f3a81df5b32b7
 ---
+
 # Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Evaluation of module impact on HumanML3D and IDEA400 (CFF\* denotes a naive conc
 
 ## Related Papers
 
-- [\[CVPR 2026\] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data](opent2m_no-frill_motion_generation_with_open-source_large-scale_high-quality_dat.md)
 - [\[CVPR 2026\] OSMO: Open-vocabulary Self-eMOtion Tracking](osmo_open-vocabulary_self-emotion_tracking.md)
+- [\[CVPR 2026\] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data](opent2m_no-frill_motion_generation_with_open-source_large-scale_high-quality_dat.md)
 - [\[CVPR 2026\] Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection](learning_to_diversify_and_focus_a_reinforcement_framework_for_open-vocabulary_ho.md)
-- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
-- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2026\] HandX: Scaling Bimanual Motion and Interaction Generation](handx_scaling_bimanual_motion_and_interaction_generation.md)
 
 </div>
 

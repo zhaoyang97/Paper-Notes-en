@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper reinterprets LLM training as a Shannon-Hartley noisy channel—where parameter count corresponds to bandwidth, training tokens to signal power, and data/model noise to channel noise. From this framework, it derives the Shannon Scaling Law $C_{\text{LLM}} = aN^\alpha \log_2(1 + bD^\beta / (c(DN)^\gamma + dD^\de
+  [ICML 2026][Model Compression][Shannon Capacity] This paper reinterprets LLM training as a Shannon-Hartley noisy channel—where parameter count corresponds to bandwidth, training tokens to signal power, and data/model noise to channel noise. From this framework, it derives the Shannon Scaling Law $C_{\text{LLM}} = aN^\alpha \log_2(1 + bD^\beta / (c(DN)^\gamma + dD^\delta + e))$, which unifies the explanation of classical monotonic scaling and recently discovered U-shaped degra…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Shannon Capacity"
+  - "Scaling Laws"
+  - "U-shaped Loss"
+  - "Catastrophic Overtraining"
+  - "Quantization Degradation"
 date: 2026-05-08
-content_hash: 0420cf5528405674
+content_hash: 8bd5bef40de717a6
 ---
+
 # LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws
 
 **Conference**: ICML 2026  
@@ -122,15 +128,15 @@ In Pythia quantization experiments, as bit-width decreases from 4 to 2, loss rem
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
 - [\[ACL 2026\] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](../../ACL2026/model_compression/task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
+- [\[ACL 2025\] Spectra 1.1: Scaling Laws and Efficient Inference for Ternary Language Models](../../ACL2025/model_compression/scaling_laws_and_efficient_inference_for_ternary_language_models.md)
 - [\[ICML 2026\] MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment](mic_maximizing_informational_capacity_in_adaptive_representations_via_isotropic_.md)
-- [\[ICLR 2026\] A universal compression theory for lottery ticket hypothesis and neural scaling laws](../../ICLR2026/model_compression/a_universal_compression_theory_for_lottery_ticket_hypothesis_and_neural_scaling_.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Prompt and Parameter Co-Optimization for Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Fine-tuning] The paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder. It unifies discrete prompt optimization and continuous parameter fine-tuning into an end-to-end optimizable joint framework, significantly surpassing methods that optimize them independently on
+  [ICLR 2026][LLM Evaluation][prompt optimization] The paper proposes MetaTuner, a framework that simultaneously generates prompts and LoRA parameters via a shared meta encoder. It unifies discrete prompt optimization and continuous parameter fine-tuning into an end-to-end optimizable joint framework, significantly surpassing methods that optimize them independently on mathematical reasoning and question-answering tasks.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Fine-tuning
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "prompt optimization"
+  - "fine-tuning"
+  - "joint optimization"
+  - "LoRA"
+  - "discrete-continuous optimization"
 date: 2026-05-08
-content_hash: c8e47e4b8318870d
+content_hash: 7771bb413e2097f2
 ---
+
 # Prompt and Parameter Co-Optimization for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -153,10 +157,10 @@ MetaTuner-J average improvement over BetterTogether is 10.15% (7B backbone), wit
 ## Related Papers
 
 - [\[ICLR 2026\] SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization](sparseeval_efficient_evaluation_of_large_language_models_by_sparse_optimization.md)
-- [\[ICML 2025\] Hyperband-based Bayesian Optimization for Black-box Prompt Selection](../../ICML2025/llm_evaluation/hyperband-based_bayesian_optimization_for_black-box_prompt_selection.md)
 - [\[ICLR 2026\] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models](multi-turn_evaluation_of_anthropomorphic_behaviours_in_large_language_models.md)
 - [\[ICLR 2026\] CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics](cmphysbench_a_benchmark_for_evaluating_large_language_models_in_condensed_matter.md)
 - [\[ICLR 2026\] SimBench: Benchmarking the Ability of Large Language Models to Simulate Human Behaviors](simbench_benchmarking_the_ability_of_large_language_models_to_simulate_human_beh.md)
+- [\[ACL 2025\] Mis-prompt: Benchmarking Large Language Models for Proactive Error Handling](../../ACL2025/llm_evaluation/mis-prompt_benchmarking_large_language_models_for_proactive_error_handling.md)
 
 </div>
 

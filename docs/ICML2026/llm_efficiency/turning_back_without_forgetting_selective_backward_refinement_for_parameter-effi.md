@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Turning Back Without Forgetting: Selective Backward Refinement for Parameter-Efficient Continual Learning
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] SABER is the first to achieve "no-replay forward and backward transfer" in prompt-based continual learning. It utilizes dual correlation criteria—gradient geometry and loss distribution—to decide whether to "go back and refine old task prompts," and restricts updates to an orthogonal subspace that does not interfere wi
+  [ICML 2026][LLM Efficiency][Continual Learning] SABER is the first to achieve "no-replay forward and backward transfer" in prompt-based continual learning. It utilizes dual correlation criteria—gradient geometry and loss distribution—to decide whether to "go back and refine old task prompts," and restricts updates to an orthogonal subspace that does not interfere with old tasks to perform "safe refinement," allowing subsequent tasks to actively improve the accuracy of prior t…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Continual Learning"
+  - "Prompt Tuning"
+  - "Backward Knowledge Transfer"
+  - "Gradient Subspace"
+  - "No-replay"
 date: 2026-05-08
-content_hash: 1be3c58260e20958
+content_hash: 45db1f579cdc3e2b
 ---
+
 # Turning Back Without Forgetting: Selective Backward Refinement for Parameter-Efficient Continual Learning
 
 **Conference**: ICML 2026  
@@ -135,14 +141,14 @@ Key observation: All baseline methods exhibit negative BWT (at best close to 0).
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](../../ICLR2026/llm_efficiency/one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
-- [\[ACL 2026\] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning](../../ACL2026/llm_efficiency/small_data_big_noise_adversarial_training_for_robust_parameter-efficient_fine-tu.md)
-- [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
-- [\[ICML 2026\] Skip a Layer or Loop It? Learning Program-of-Layers in LLMs](skip_a_layer_or_loop_it_learning_program-of-layers_in_llms.md)
+- [\[ICLR 2026\] Merge before Forget: A Single LoRA Continual Learning via Continual Merging](../../ICLR2026/llm_efficiency/merge_before_forget_a_single_lora_continual_learning_via_continual_merging.md)
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](../../ICLR2026/llm_efficiency/meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
+- [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](../../ICLR2026/llm_efficiency/concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
 - [\[ICML 2026\] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)
 
 </div>

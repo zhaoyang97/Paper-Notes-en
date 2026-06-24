@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper proposes Prompt-Level Distillation (PLD), which extracts, clusters, and de-conflicts reasoning patterns from a teacher model on training samples to construct a system prompt for the student model. This significantly enhances the reasoning and classification capabilities of small models without updating param
+  [ACL2026][Social Computing][Prompt Distillation] This paper proposes Prompt-Level Distillation (PLD), which extracts, clusters, and de-conflicts reasoning patterns from a teacher model on training samples to construct a system prompt for the student model. This significantly enhances the reasoning and classification capabilities of small models without updating parameters.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL2026"
+  - "Social Computing"
+  - "Prompt Distillation"
+  - "Non-parametric Fine-tuning"
+  - "Instruction Clustering"
+  - "Conflict Resolution"
+  - "Reasoning Efficiency"
 date: 2026-05-08
-content_hash: 56805731efccfe56
+content_hash: 01e8b63bc19ca511
 ---
+
 # Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning
 
 **Conference**: ACL2026  

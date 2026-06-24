@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] ARES detects "systemic weaknesses" (simultaneous failure of both Core LLM and Reward Model) using a Safety Mentor that dynamically combines a quaternary structure of "Topic / Persona / Goal / Tactic." It subsequently employs a two-stage closed-loop process—repairing the RM before the policy—to raise the RedTeam safety
+  [ACL 2026][LLM Alignment][Red-Teaming] ARES detects "systemic weaknesses" (simultaneous failure of both Core LLM and Reward Model) using a Safety Mentor that dynamically combines a quaternary structure of "Topic / Persona / Goal / Tactic." It subsequently employs a two-stage closed-loop process—repairing the RM before the policy—to raise the RedTeam safety rate from 0.28 to 0.96 with negligible loss in general capabilities.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Red-Teaming"
+  - "Reward Model Repair"
+  - "Systemic Weakness"
+  - "Dual Attack"
+  - "RLHF Safety"
 date: 2026-05-08
-content_hash: 4088b650ac53dc47
+content_hash: 37318be6c7a408bc
 ---
+
 # ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System
 
 **Conference**: ACL 2026  
@@ -138,9 +144,9 @@ In a horizontal comparison of red-team data generation (using the same repair pi
 
 - [\[ICLR 2026\] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](../../ICLR2026/llm_alignment/cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation.md)
 - [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](../../ICLR2026/llm_alignment/capability-based_scaling_trends_for_llm-based_red-teaming.md)
+- [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
 - [\[ICLR 2026\] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts](../../ICLR2026/llm_alignment/sysformer_safeguarding_frozen_large_language_models_with_adaptive_system_prompts.md)
 - [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
-- [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](../../NeurIPS2025/llm_alignment/jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
 
 </div>
 

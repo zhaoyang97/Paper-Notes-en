@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] Ctrl&Shift is an end-to-end diffusion framework that achieves geometrically consistent, fine-grained object manipulation without explicit 3D reconstruction by decomposing the task into object removal and reference-guided inpainting, while injecting relative camera pose control.
+  [ICLR 2026][3D Vision][Object Manipulation] Ctrl&Shift is an end-to-end diffusion framework that achieves geometrically consistent, fine-grained object manipulation without explicit 3D reconstruction by decomposing the task into object removal and reference-guided inpainting, while injecting relative camera pose control.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
-  - Image Editing
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Object Manipulation"
+  - "Diffusion Models"
+  - "Geometric Consistency"
+  - "Camera Pose Control"
+  - "Image Editing"
 date: 2026-05-08
-content_hash: 11546bcf567dd25e
+content_hash: e8d19139230533b6
 ---
+
 # Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation
 
 **Conference**: ICLR 2026  
@@ -141,16 +145,16 @@ GeoEditBench (Self-constructed benchmark for geometry-aware editing):
 - Value: ⭐⭐⭐⭐⭐ (First to unify geometric precision and diffusion generalization)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
 - [\[ICLR 2026\] ShapeGen4D: Towards High Quality 4D Shape Generation from Videos](shapegen4d_towards_high_quality_4d_shape_generation_from_videos.md)
 - [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
 - [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
-- [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](fastvggt_fast_visual_geometry_transformer.md)
-- [\[ICLR 2026\] $\pi^3$: Permutation-Equivariant Visual Geometry Learning](pi3_permutation-equivariant_visual_geometry_learning.md)
 
 </div>
 

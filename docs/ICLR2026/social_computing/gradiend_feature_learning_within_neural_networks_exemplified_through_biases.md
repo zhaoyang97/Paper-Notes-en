@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GRADIEND: Feature Learning within Neural Networks Exemplified through Biases
 description: >-
-  [ICLR 2026][Social Computing][Interpretability] The authors propose GRADIEND—a gradient-based encoder-decoder architecture that learns interpretable monosemantic features (exemplified by gender) from model gradients through a single bottleneck neuron. It can identify which weights encode specific features and directly modify model weights via the decoder to eliminat
+  [ICLR 2026][Social Computing][Monosemantic feature learning] The authors propose GRADIEND—a gradient-based encoder-decoder architecture that learns interpretable monosemantic features (exemplified by gender) from model gradients through a single bottleneck neuron. It can identify which weights encode specific features and directly modify model weights via the decoder to eliminate bias, achieving SOTA debiasing performance on all baseline models when combined with INLP.
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Interpretability
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Monosemantic feature learning"
+  - "gender bias mitigation"
+  - "gradient encoder-decoder"
+  - "Transformer debiasing"
+  - "interpretability"
 date: 2026-05-08
-content_hash: 0410bb1eae183538
+content_hash: 797c2d5ca0366056
 ---
+
 # GRADIEND: Feature Learning within Neural Networks Exemplified through Biases
 
 **Conference**: ICLR 2026  
@@ -137,6 +142,7 @@ All models almost perfectly distinguish $\pm 1$ on gender-related data and map n
 - Value: ⭐⭐⭐⭐ (High proof-of-concept value, though application scope remains to be expanded)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -145,7 +151,7 @@ All models almost perfectly distinguish $\pm 1$ on gender-related data and map n
 - [\[ICML 2026\] Alignment Tampering: How Reinforcement Learning from Human Feedback Is Exploited to Optimize Misaligned Biases](../../ICML2026/social_computing/alignment_tampering_how_reinforcement_learning_from_human_feedback_is_exploited_.md)
 - [\[ICLR 2026\] Steering the Herd: A Framework for LLM-Based Control of Social Learning](steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md)
 - [\[ACL 2026\] Investigating Counterfactual Unfairness in LLMs towards Identities through Humor](../../ACL2026/social_computing/investigating_counterfactual_unfairness_in_llms_towards_identities_through_humor.md)
-- [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](../../ICCV2025/social_computing/learning_visual_proxy_for_compositional_zero-shot_learning.md)
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
 
 </div>
 

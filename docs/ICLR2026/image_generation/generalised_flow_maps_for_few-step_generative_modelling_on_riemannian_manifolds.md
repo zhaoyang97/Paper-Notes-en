@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] The "Flow Map" framework from Euclidean space is generalized to arbitrary Riemannian manifolds by proposing Generalised Flow Maps (GFM). Using three self-distillation losses, geometric generative models capable of "one-step/few-step" sampling on manifolds are trained from scratch, unifying and enhancing consistency mod
+  [ICLR 2026][Image Generation][Flow Map] The "Flow Map" framework from Euclidean space is generalized to arbitrary Riemannian manifolds by proposing Generalised Flow Maps (GFM). Using three self-distillation losses, geometric generative models capable of "one-step/few-step" sampling on manifolds are trained from scratch, unifying and enhancing consistency models, shortcut models, and MeanFlow for manifold settings.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Map"
+  - "Riemannian Manifold"
+  - "Few-step Generation"
+  - "Self-distillation"
+  - "Consistency Models"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: da92b2e93413e737
+content_hash: e6dbf15a13bcc7f4
 ---
+
 # Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds
 
 **Conference**: ICLR 2026  
@@ -127,10 +133,10 @@ The MMD-vs-NFE curves indicate that GFM substantially leads RFM at low NFE (1~2 
 ## Related Papers
 
 - [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](../../ICML2026/image_generation/riemannian_meanflow_for_one-step_generation_on_manifolds.md)
-- [\[NeurIPS 2025\] Riemannian Consistency Model](../../NeurIPS2025/image_generation/riemannian_consistency_model.md)
 - [\[ICLR 2026\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
-- [\[ICLR 2026\] PairFlow: Closed-Form Source-Target Coupling for Few-Step Generation in Discrete Flow Models](pairflow_closed-form_source-target_coupling_for_few-step_generation_in_discrete_.md)
 - [\[ICLR 2026\] DistillKac: Few-Step Image Generation via Damped Wave Equations](distillkac_few-step_image_generation_via_damped_wave_equations.md)
+- [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
+- [\[ICLR 2026\] Decoupled MeanFlow: Turning Flow Models into Flow Maps for Accelerated Sampling](decoupled_meanflow_turning_flow_models_into_flow_maps_for_accelerated_sampling.md)
 
 </div>
 

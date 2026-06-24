@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners
 description: >-
-  [ICML 2026][vlm_reasoning][X2I] To address the "understanding-generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are routed between three modes: direct
+  [ICML 2026][VLM Reasoning][Unified Multimodal Models] To address the "understanding-generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are routed between three modes: direct generation, self-reflection, and multi-step planning. The model is trained via SFT + GRPO with step-wise…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - X2I
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Unified Multimodal Models"
+  - "X2I"
+  - "Interleaved Reasoning"
+  - "GRPO"
+  - "Adaptive Planning"
 date: 2026-05-08
-content_hash: 97e1b3ce2b569646
+content_hash: e65756a149bb05ca
 ---
+
 # Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners
 
 **Conference**: ICML 2026  
@@ -141,7 +145,7 @@ SFT: Standard AR-NLL on subset $\mathcal{O}$ (Eq. 1). RL: GRPO policy with the c
 - [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/vlm_reasoning/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
 - [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](../../CVPR2026/vlm_reasoning/unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 - [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](../../CVPR2026/vlm_reasoning/ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
-- [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
+- [\[CVPR 2026\] OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection](../../CVPR2026/vlm_reasoning/ovod-agent_a_markov-bandit_framework_for_proactive_visual_reasoning_and_self-evo.md)
 
 </div>
 

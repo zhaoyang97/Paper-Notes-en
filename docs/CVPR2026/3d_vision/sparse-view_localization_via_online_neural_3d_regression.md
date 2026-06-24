@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparse-View Localization via Online Neural 3D Regression
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ON3R addresses extreme sparse-view localization scenarios where database images have minimal overlap (star-topology) and no pre-built 3D maps. It **temporarily trains a small MLP online** for each query image to regress query keypoints into 3D points (supervised by database reprojection residuals and monocular depth pr
+  [CVPR 2026][3D Vision][Camera Localization] ON3R addresses extreme sparse-view localization scenarios where database images have minimal overlap (star-topology) and no pre-built 3D maps. It **temporarily trains a small MLP online** for each query image to regress query keypoints into 3D points (supervised by database reprojection residuals and monocular depth priors). Absolute poses are then estimated via P3P-RANSAC and lightweight BA. It outperforms existing structure-less m…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Camera Localization"
+  - "Sparse-view"
+  - "Structure-less Localization"
+  - "Online Neural Regression"
+  - "Monocular Depth Prior"
 date: 2026-05-08
-content_hash: 0e1da4eef93e8171
+content_hash: 7d2c7ad95435e701
 ---
+
 # Sparse-View Localization via Online Neural 3D Regression
 
 **Conference**: CVPR 2026  
@@ -132,15 +138,16 @@ ON3R leads significantly at $K=2$. Transitive matching is the closest competitor
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
 - [\[CVPR 2026\] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer](diffusionharmonizer_bridging_neural_reconstruction_and_photorealistic_simulation.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
 - [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
-- [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
 
 </div>
 

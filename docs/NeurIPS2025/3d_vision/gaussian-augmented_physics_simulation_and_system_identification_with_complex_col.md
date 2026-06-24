@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders
 description: >-
-  [NeurIPS 2025][3D Vision][Differentiable Physics Simulation] This paper proposes AS-DiffMPM, a differentiable Material Point Method (MPM) framework supporting arbitrary-shape rigid body colliders…
+  [NeurIPS 2025][3D Vision][Differentiable Physics Simulation] This paper proposes AS-DiffMPM, a differentiable Material Point Method (MPM) framework supporting arbitrary-shape rigid body colliders, combined with multiple novel-view synthesis methods to enable system identification of physical parameters from visual observations.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian Splatting"
   - "Collision Handling"
 date: 2026-05-08
-content_hash: 4d8f0d5f26dc55eb
+content_hash: 62f95681821e93f6
 ---
 
 # Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders
@@ -172,11 +172,11 @@ Comparison of three collision handling strategies:
 
 ## Related Papers
 
+- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Video](../../ICLR2026/3d_vision/multi-object_system_identification_from_videos.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
 - [\[ICML 2026\] STABLE: Simulation-Ready Tabletop Layout Generation via a Semantics–Physics Dual System](../../ICML2026/3d_vision/stable_simulation-ready_tabletop_layout_generation_via_a_semantics-physics_dual_.md)
+- [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](../../ICLR2026/3d_vision/fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
 - [\[CVPR 2026\] AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects](../../CVPR2026/3d_vision/assemblybench_physics-aware_assembly_of_complex_industrial_objects.md)
-- [\[NeurIPS 2025\] DGH: Dynamic Gaussian Hair](dgh_dynamic_gaussian_hair.md)
-- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
 
 </div>
 

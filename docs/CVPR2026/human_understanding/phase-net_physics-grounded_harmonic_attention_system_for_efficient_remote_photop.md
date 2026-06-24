@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
 description: >-
-  [CVPR 2026][Human Understanding][rPPG] Starting from the Navier-Stokes equations, this work reveals through rigorous mathematical derivation that the rPPG pulse signal follows a second-order damped harmonic oscillator model. Its discrete solution is equivalent to a causal convolution operator, providing a first-principles justification for the choice of TCN
+  [CVPR 2026][Human Understanding][rPPG] Starting from the Navier-Stokes equations, this work reveals through rigorous mathematical derivation that the rPPG pulse signal follows a second-order damped harmonic oscillator model. Its discrete solution is equivalent to a causal convolution operator, providing a first-principles justification for the choice of TCN architectures. The resulting PHASE-Net, with only 0.29M parameters, achieves SOTA performance across multiple datasets.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - rPPG
-  - Navier-Stokes
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "rPPG"
+  - "physics-informed networks"
+  - "temporal convolutional networks"
+  - "hemodynamics"
+  - "Navier-Stokes"
+  - "lightweight models"
 date: 2026-05-08
-content_hash: 5b5be87cdb5ead43
+content_hash: 294f49afb15cada7
 ---
+
 # PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
 
 **Conference**: CVPR 2026  
@@ -145,15 +150,16 @@ The Negative Pearson Correlation Loss is used: $\mathcal{L}_{\text{pred}} = -\fr
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FLOW: Optimal Transport-Driven Feature Warping for Generalized Remote Physiological Measurement](flow_optimal_transport-driven_feature_warping_for_generalized_remote_physiologic.md)
-- [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)
 - [\[CVPR 2025\] Remote Photoplethysmography in Real-World and Extreme Lighting Scenarios](../../CVPR2025/human_understanding/remote_photoplethysmography_in_real-world_and_extreme_lighting_scenarios.md)
 - [\[CVPR 2026\] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens](scemos_scene-aware_3d_human_motion_synthesis_by_planning_with_geometry-grounded_.md)
-- [\[CVPR 2026\] InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs](interagent_physics-based_multi-agent_command_execution_via_diffusion_on_interaction_graphs.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
 
 </div>
 

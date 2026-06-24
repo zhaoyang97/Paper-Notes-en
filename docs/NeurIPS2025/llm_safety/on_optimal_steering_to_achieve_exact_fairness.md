@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On Optimal Steering to Achieve Exact Fairness
 description: >-
-  [NeurIPS 2025][LLM Safety][fairness] This paper defines the concept of an *ideal distribution*—a data distribution under which the Bayes-optimal classifier for any cost-sensitive risk satisfies exact fairness—and propose…
+  [NeurIPS 2025][LLM Safety][fairness] This paper defines the concept of an *ideal distribution*—a data distribution under which the Bayes-optimal classifier for any cost-sensitive risk satisfies exact fairness—and proposes an optimization framework that identifies the nearest ideal distribution via KL divergence minimization, providing provable fairness guarantees for both fair preprocessing and LLM representation steering.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM-representation"
   - "Bayes-optimal"
 date: 2026-05-08
-content_hash: 34b55a6a7bc0aa93
+content_hash: 3c998deae80d1da7
 ---
 
 # On Optimal Steering to Achieve Exact Fairness
@@ -173,7 +173,7 @@ Steering movie review generation toward "joyful" sentiment on Llama-3 8B:
 - [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
 - [\[NeurIPS 2025\] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](saemark_steering_personalized_multilingual_llm_watermarks_with_sparse_autoencode.md)
 - [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
-- [\[ICML 2026\] Beyond Procedure: Substantive Fairness in Conformal Prediction](../../ICML2026/llm_safety/beyond_procedure_substantive_fairness_in_conformal_prediction.md)
+- [\[ACL 2025\] Opt-Out: Investigating Entity-Level Unlearning for Large Language Models via Optimal Transport](../../ACL2025/llm_safety/opt-out_investigating_entity-level_unlearning_for_large_language_models_via_opti.md)
 
 </div>
 

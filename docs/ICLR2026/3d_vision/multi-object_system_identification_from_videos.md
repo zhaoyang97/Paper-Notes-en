@@ -1,14 +1,21 @@
 ---
 title: >-
-  [Paper Note] MOSIV：从视频中做多物体系统辨识
+  [Paper Note] MOSIV: Multi-Object System Identification from Video
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] MOSIV formalizes "Multi-Object System Identification" as a task for the first time—simultaneously reconstructing the 4D geometry of each object from multi-view videos and **optimizing continuous constitutive material parameters per object** (stiffness, plasticity, friction). By driving a differentiable MPM simulator wi
+  [ICLR 2026][3D Vision][System Identification] MOSIV formalizes "Multi-Object System Identification" as a task for the first time—simultaneously reconstructing the 4D geometry of each object from multi-view videos and **optimizing continuous constitutive material parameters per object** (stiffness, plasticity, friction). By driving a differentiable MPM simulator with geometry alignment losses, it moves beyond discrete modeling (selecting categories from a fixed material librar…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "System Identification"
+  - "Differentiable MPM"
+  - "4D Gaussian Splatting"
+  - "Continuous Constitutive Parameters"
+  - "Multi-object Contact"
+  - "Physical Simulation"
 date: 2026-05-08
-content_hash: 710e5223e7abd2f6
+content_hash: 47ba9cfcd269eec4
 ---
+
 # MOSIV: Multi-Object System Identification from Video
 
 **Conference**: ICLR 2026  
@@ -119,15 +126,16 @@ Ablation on supervision granularity (6 scenes, one per inter-material type), com
 - **Value**: ⭐⭐⭐⭐ — Establishes a new task and strong baseline for physically plausible scene reconstruction/prediction; impact is slightly limited by the synthetic domain and computational cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
-- [\[ICLR 2026\] Towards Physically Executable 3D Gaussian for Embodied Navigation](towards_physically_executable_3d_gaussian_for_embodied_navigation.md)
-- [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
-- [\[ICLR 2026\] Contact-guided Real2Sim from Monocular Video with Planar Scene Primitives](contact-guided_real2sim_from_monocular_video_with_planar_scene_primitives.md)
-- [\[ICLR 2026\] True Self-Supervised Novel View Synthesis is Transferable](true_self-supervised_novel_view_synthesis_is_transferable.md)
+- [\[NeurIPS 2025\] Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders](../../NeurIPS2025/3d_vision/gaussian-augmented_physics_simulation_and_system_identification_with_complex_col.md)
+- [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
+- [\[ICLR 2026\] ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation](reconviagen_towards_accurate_multi-view_3d_object_reconstruction_via_generation.md)
+- [\[ICLR 2026\] Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator](text-to-3d_by_stitching_a_multi-view_reconstruction_network_to_a_video_generator.md)
+- [\[ICLR 2026\] OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling](omniworld_a_multi-domain_and_multi-modal_dataset_for_4d_world_modeling.md)
 
 </div>
 

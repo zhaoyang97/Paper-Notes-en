@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Diffusion Language Model] This paper provides the first quantitative analysis of the CoT reasoning process in diffusion multimodal LLMs (dMLLM), identifying two key issues: "early answer generation" and "weak visual dependence." It proposes two training-free methods, Position-Step Penalty (PSP) and Visual Reasoning Guidance (VRG), achieving up
+  [CVPR2026][VLM Reasoning][Diffusion Language Models] This paper provides the first quantitative analysis of the CoT reasoning process in diffusion multimodal LLMs (dMLLM), identifying two key issues: "early answer generation" and "weak visual dependence." It proposes two training-free methods, Position-Step Penalty (PSP) and Visual Reasoning Guidance (VRG), achieving up to a 7.5% accuracy improvement with 3x acceleration.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Diffusion Language Model
-  - Chain-of-Thought
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "Diffusion Language Models"
+  - "Multimodal Reasoning"
+  - "Chain-of-Thought"
+  - "Visual Grounding"
+  - "Re-masking Strategy"
 date: 2026-05-08
-content_hash: c67299328d626bcb
+content_hash: 066441328665efbd
 ---
+
 # Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models
 
 **Conference**: CVPR2026  
@@ -135,11 +139,11 @@ The approach is entirely training-free and only active during the inference phas
 
 ## Related Papers
 
-- [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
-- [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
-- [\[CVPR 2026\] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation](guiding_diffusion-based_reconstruction_with_contrastive_signals_for_balanced_vis.md)
-- [\[ICML 2026\] Conditional Diffusion Sampling](../../ICML2026/multimodal_vlm/conditional_diffusion_sampling.md)
-- [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
+- [\[ICLR 2026\] VGR: Visual Grounded Reasoning](../../ICLR2026/vlm_reasoning/vgr_visual_grounded_reasoning.md)
+- [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
+- [\[ICML 2025\] Diffusion-VLA: Generalizable and Interpretable Robot Foundation Model via Self-Generated Reasoning](../../ICML2025/vlm_reasoning/diffusion-vla_generalizable_and_interpretable_robot_foundation_model_via_self-ge.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the pervasive issue in existing event-based deblurring where "fixed-weight kernels" are used to aggregate sparse events into event frames, failing to adapt to local motion variations, this paper proposes a **learnable 3D Gaussian event representation**. It adaptively samples spatiotemporal coordinates based
+  [CVPR 2026][Image Restoration][Event camera] To address the pervasive issue in existing event-based deblurring where "fixed-weight kernels" are used to aggregate sparse events into event frames, failing to adapt to local motion variations, this paper proposes a **learnable 3D Gaussian event representation**. It adaptively samples spatiotemporal coordinates based on blurry image content and event density, aggregates events using 3D Gaussian kernels…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Event camera"
+  - "motion deblurring"
+  - "learnable event representation"
+  - "3D Gaussian kernel"
+  - "bidirectional attention fusion"
 date: 2026-05-08
-content_hash: e36f4f63cd36ba7d
+content_hash: 022d078ff7c33c64
 ---
+
 # Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ Event representation comparison (GoPro, unified bins/kernels):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](motionaware_animatable_gaussian_avatars_deblurring.md)
 - [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
 - [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
+- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
 - [\[CVPR 2026\] Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor](spatio-temporal_difference_guided_motion_deblurring_with_the_complementary_visio.md)
+- [\[CVPR 2026\] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition](time-specialized_event-image_alignment_for_blur-to-video_decomposition.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Time, Identity and Consciousness in Language Model Agents
 description: >-
-  [AAAI 2026 Spring Symposium][LLM Agent][Machine Consciousness] This paper applies the temporal gap concept from Stack Theory to LLM agent evaluation…
+  [AAAI 2026 Spring Symposium][LLM Agent][Machine Consciousness] This paper applies the temporal gap concept from Stack Theory to LLM agent evaluation, proposing a conservative evaluation toolkit that distinguishes between "talking like a stable self" and "being organized like a stable self." It reveals identity trade-offs across different scaffold structures via persistence scores and an identity morphospace.
 tags:
   - "AAAI 2026 Spring Symposium"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Consistency"
   - "Stack Theory"
 date: 2026-05-08
-content_hash: 9c447af6c4510dea
+content_hash: 48577a67f98f8734
 ---
 
 # Time, Identity and Consciousness in Language Model Agents
@@ -121,10 +121,10 @@ This paper presents an evaluation framework rather than a training methodology. 
 ## Related Papers
 
 - [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](autotool_efficient_tool_selection_for_large_language_model_agents.md)
+- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](../../ICML2026/llm_agent/adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](../../NeurIPS2025/llm_agent/agenttts_large_language_model_agent_for_testtime_computeopti.md)
+- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](../../ICLR2026/llm_agent/dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 - [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/llm_agent/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
-- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](../../ACL2026/llm_agent/clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
-- [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](../../ACL2026/llm_agent/exploring_reasoning_reward_model_for_agents.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training
 description: >-
-  [NeurIPS 2025][LLM Pretraining][scaling laws] This paper proposes a set of power-law scaling relations for weight decay $\lambda$ and batch size $B$ in LLM pre-training. By introducing the concept of an AdamW timescale $…
+  [NeurIPS 2025][LLM Pretraining][scaling laws] This paper proposes a set of power-law scaling relations for weight decay $\lambda$ and batch size $B$ in LLM pre-training. By introducing the concept of an AdamW timescale $\tau$, it unifies hyperparameter scaling relationships, enabling accurate prediction of optimal hyperparameters prior to large-scale training.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "LLM pre-training"
   - "AdamW"
 date: 2026-05-08
-content_hash: a93d3c46365352f2
+content_hash: 64ccb51059f0ce4a
 ---
 
 # Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training
@@ -175,10 +175,10 @@ Tuning $\lambda$ strictly outperforms tuning $\eta$ on 6 out of 8 batch size val
 ## Related Papers
 
 - [\[NeurIPS 2025\] Gemstones: A Model Suite for Multi-Faceted Scaling Laws](gemstones_a_model_suite_for_multi-faceted_scaling_laws.md)
-- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
 - [\[ICML 2026\] On the Expressive Power of Permutation-Equivariant Weight-Space Networks](../../ICML2026/llm_pretraining/on_the_expressive_power_of_permutation-equivariant_weight-space_networks.md)
-- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](../../ICML2026/llm_pretraining/dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](../../ICLR2026/llm_pretraining/scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
+- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
+- [\[ACL 2025\] Training Dynamics Underlying Language Model Scaling Laws: Loss Deceleration and Zero-Sum Learning](../../ACL2025/llm_pretraining/training_dynamics_underlying_language_model_scaling_laws_loss_deceleration_and_z.md)
+- [\[ICML 2026\] Explaining Data Mixing Scaling Laws](../../ICML2026/llm_pretraining/explaining_data_mixing_scaling_laws.md)
 
 </div>
 

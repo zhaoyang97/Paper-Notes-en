@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] The (Marginal) Value of a Search Ad: An Online Causal Framework for Repeated Second-price Auctions
 description: >-
-  [ICML 2026][Causal Inference][treatment effect] This paper models the true value of search advertisements as the treatment effect of "winning vs. losing." It designs an online causal learning algorithm that utilizes payment rules under binary feedback in repeated second-price auctions (SPA), achieving a minimax optimal regret of $\widetilde\Theta(\sqrt{dT})$, which
+  [ICML 2026][Causal Inference][Second-price auctions] This paper models the true value of search advertisements as the treatment effect of "winning vs. losing." It designs an online causal learning algorithm that utilizes payment rules under binary feedback in repeated second-price auctions (SPA), achieving a minimax optimal regret of $\widetilde\Theta(\sqrt{dT})$, which is strictly easier to learn than first-price auctions (FPA) under the same setting.
 tags:
-  - ICML 2026
-  - Causal Inference
-  - treatment effect
-  - contextual bandit
-  - IPW
-  - UCB
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Second-price auctions"
+  - "treatment effect"
+  - "contextual bandit"
+  - "IPW"
+  - "UCB"
 date: 2026-05-08
-content_hash: 9da74dd9e7241aae
+content_hash: 98dc1f115d5824fd
 ---
+
 # The (Marginal) Value of a Search Ad: An Online Causal Framework for Repeated Second-price Auctions
 
 **Conference**: ICML 2026  
@@ -128,11 +130,11 @@ The algorithm does not train an ML model but performs online decision-making orc
 
 ## Related Papers
 
+- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](../../ICLR2026/causal_inference/score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
 - [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](../../ICLR2026/causal_inference/efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
 - [\[CVPR 2026\] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems](../../CVPR2026/causal_inference/a_polynomial_chaos_framework_for_causal_discovery_in_nonlinear_uncertain_systems.md)
-- [\[ACL 2025\] IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery](../../ACL2025/causal_inference/iris_an_iterative_and_integrated_framework.md)
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](../../ICLR2026/causal_inference/counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
 - [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](../../NeurIPS2025/causal_inference/counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
-- [\[NeurIPS 2025\] GST-UNet: A Neural Framework for Spatiotemporal Causal Inference with Time-Varying Confounding](../../NeurIPS2025/causal_inference/gst-unet_a_neural_framework_for_spatiotemporal_causal_inference_with_time-varyin.md)
 
 </div>
 

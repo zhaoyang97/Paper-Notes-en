@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM Safety][Federated Learning] This paper proposes FedLEASE, which addresses two critical challenges in federated LoRA fine-tuning: (1) automatically determining the optimal number of experts and their as…
+  [NeurIPS 2025][LLM Safety][Federated Learning] This paper proposes FedLEASE, which addresses two critical challenges in federated LoRA fine-tuning: (1) automatically determining the optimal number of experts and their assignment via LoRA B-matrix similarity clustering, and (2) enabling adaptive top-M expert selection through an expanded routing space of $2M-1$ dimensions, allowing each client to determine how many experts to use. FedLEASE achieves an average improvement of 5.…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Clustering"
   - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: 0c6043926bd702ed
+content_hash: 60e3c95ba98f6b05
 ---
 
 # Adaptive LoRA Experts Allocation and Selection for Federated Fine-Tuning
@@ -130,10 +130,10 @@ The framework consists of two phases: (1) **Initialization** — each client tra
 ## Related Papers
 
 - [\[NeurIPS 2025\] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA](fedsvd_adaptive_orthogonalization_for_private_federated_learning_with_lora.md)
-- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](../../ICML2026/llm_safety/fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
 - [\[AAAI 2026\] FedALT: Federated Fine-Tuning through Adaptive Local Training with Rest-of-World LoRA](../../AAAI2026/llm_safety/fedalt_federated_fine-tuning_through_adaptive_local_training_with_rest-of-world_.md)
 - [\[ICLR 2026\] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA](../../ICLR2026/llm_safety/she-lora_selective_homomorphic_encryption_for_federated_tuning_with_heterogeneou.md)
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
+- [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](../../ICLR2026/llm_safety/heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 
 </div>
 

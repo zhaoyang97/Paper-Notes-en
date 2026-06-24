@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AvAtar: Learning to Align via Active Optimal Transport
 description: >-
-  [ICML 2026][3D Vision][Alignment] This paper proposes AvAtar, an active alignment framework based on Optimal Transport (OT). It quantifies the influence of candidate queries on global alignment results through gradient propagation. By utilizing the adjoint state method and conjugate gradient method, it achieves efficient solutions with linear complexit
+  [ICML 2026][3D Vision][Optimal Transport] This paper proposes AvAtar, an active alignment framework based on Optimal Transport (OT). It quantifies the influence of candidate queries on global alignment results through gradient propagation. By utilizing the adjoint state method and conjugate gradient method, it achieves efficient solutions with linear complexity. AvAtar consistently outperforms existing active learning strategies in network alignment and cross-domain alignment…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Alignment
+  - "ICML 2026"
+  - "3D Vision"
+  - "Optimal Transport"
+  - "Active Learning"
+  - "Alignment"
+  - "Gradient Propagation"
+  - "Conjugate Gradient Method"
 date: 2026-05-08
-content_hash: 2f456dbcf94578ed
+content_hash: 2e25f94c5b095ec6
 ---
+
 # AvAtar: Learning to Align via Active Optimal Transport
 
 **Conference**: ICML 2026  

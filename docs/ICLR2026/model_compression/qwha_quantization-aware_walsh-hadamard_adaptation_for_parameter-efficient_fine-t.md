@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] QWHA utilizes the Walsh-Hadamard Transform (WHT) as the transform kernel for adapters, combined with a quantization-aware initialization scheme featuring "per-channel budget allocation + maximum magnitude selection + numerical refinement." This allows Fourier-like sparse adapters to be effectively applied to low-bit qu
+  [ICLR 2026][Model Compression][Quantization-Aware PEFT] QWHA utilizes the Walsh-Hadamard Transform (WHT) as the transform kernel for adapters, combined with a quantization-aware initialization scheme featuring "per-channel budget allocation + maximum magnitude selection + numerical refinement." This allows Fourier-like sparse adapters to be effectively applied to low-bit quantization scenarios for the first time, achieving stable accuracy superior to LoRA-based and other FT a…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Quantization-Aware PEFT"
+  - "Walsh-Hadamard Transform"
+  - "Sparse Adapter"
+  - "Quantization Error Compensation"
+  - "Parameter Initialization"
 date: 2026-05-08
-content_hash: 9afaa571ca4646ab
+content_hash: e4c445473cfc161a
 ---
+
 # QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,6 @@ Horizontally, WHA outperforms DCA/DHA/Sparse given the same selection strategy. 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -153,7 +158,7 @@ Horizontally, WHA outperforms DCA/DHA/Sparse given the same selection strategy. 
 - [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
 - [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
 - [\[ICLR 2026\] Efficient Orthogonal Fine-Tuning with Principal Subspace Adaptation](efficient_orthogonal_fine-tuning_with_principal_subspace_adaptation.md)
-- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 
 </div>
 

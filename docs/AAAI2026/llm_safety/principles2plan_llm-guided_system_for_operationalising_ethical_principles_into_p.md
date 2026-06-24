@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans
 description: >-
-  [AAAI 2026][LLM Safety][Ethical Planning] This paper presents Principles2Plan, an interactive prototype system that enables collaborative human–LLM operationalisation of high-level ethical principles (e.g., beneficence…
+  [AAAI 2026][LLM Safety][Ethical Planning] This paper presents Principles2Plan, an interactive prototype system that enables collaborative human–LLM operationalisation of high-level ethical principles (e.g., beneficence, privacy) into context-sensitive ethical rules, which are then embedded into a PDDL planner to generate ethically compliant action plans.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "PDDL"
   - "Human-AI Collaboration"
 date: 2026-05-08
-content_hash: 1209a2afc5440da6
+content_hash: 6a455f8d03147698
 ---
 
 # Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans
@@ -174,11 +174,11 @@ As a system demonstration paper, no traditional comparative experiments are cond
 
 ## Related Papers
 
-- [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
 - [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
+- [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](../../ACL2026/llm_safety/representation-guided_parameter-efficient_llm_unlearning.md)
+- [\[ICLR 2026\] CLUE: Conflict-guided Localization for LLM Unlearning Framework](../../ICLR2026/llm_safety/clue_conflict-guided_localization_for_llm_unlearning_framework.md)
 - [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
-- [\[AAAI 2026\] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach](uncovering_bias_paths_with_llm-guided_causal_discovery_an_active_learning_and_dy.md)
 
 </div>
 

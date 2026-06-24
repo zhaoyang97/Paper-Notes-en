@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Reasoning] This paper proposes the SSR framework, which converts raw depth information into structured textual reasoning rationales and compresses them into compact latent embedding…
+  [NeurIPS 2025][VLM Reasoning][Spatial Reasoning] This paper proposes the SSR framework, which converts raw depth information into structured textual reasoning rationales and compresses them into compact latent embeddings via knowledge distillation, enhancing the spatial reasoning capabilities of existing VLMs in a plug-and-play manner.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Spatial Reasoning"
   - "Depth Perception"
   - "Vision-Language Models"
   - "Chain-of-Thought"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 8bceede0fb93cb1c
+content_hash: f4f74e8e37817bdd
 ---
 
 # SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning
@@ -123,10 +123,10 @@ SSR (7B) yields further improvements, surpassing baselines such as LLaVA-NeXT-13
 ## Related Papers
 
 - [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] SD-VLM: Spatial Measuring and Understanding with Depth-Encoded Vision-Language Models](sd-vlm_spatial_measuring_and_understanding_with_depth-encoded_vision-language_mo.md)
-- [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/multimodal_vlm/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
+- [\[ACL 2025\] SpaRE: Enhancing Spatial Reasoning in Vision-Language Models with Synthetic Data](../../ACL2025/vlm_reasoning/spare_enhancing_spatial_reasoning_in_vision-language_models_with_synthetic_data.md)
+- [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
+- [\[ICML 2025\] Why Is Spatial Reasoning Hard for VLMs? An Attention Mechanism Perspective on Focus Areas](../../ICML2025/vlm_reasoning/why_is_spatial_reasoning_hard_for_vlms_an_attention_mechanism_perspective_on_foc.md)
 - [\[NeurIPS 2025\] RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics](roborefer_towards_spatial_referring_with_reasoning_in_vision-language_models_for.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
 
 </div>
 

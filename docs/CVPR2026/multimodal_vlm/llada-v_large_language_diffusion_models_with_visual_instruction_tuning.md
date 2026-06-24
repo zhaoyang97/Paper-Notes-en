@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning
 description: >-
-  [CVPR 2026][Multimodal VLM][Diffusion Language Model] Addressing the gap where "current Multimodal Large Language Models (MLLMs) almost exclusively follow the autoregressive paradigm and the diffusion path remains unverified," this paper grafts visual instruction tuning onto the masked diffusion language model LLaDA to create a pure diffusion MLLM—LLaDA-V. By leveraging b
+  [CVPR 2026][Multimodal VLM][Diffusion Language Models] Addressing the gap where "current Multimodal Large Language Models (MLLMs) almost exclusively follow the autoregressive paradigm and the diffusion path remains unverified," this paper grafts visual instruction tuning onto the masked diffusion language model LLaDA to create a pure diffusion MLLM—LLaDA-V. By leveraging bidirectional attention to better capture visual-spatial relationships, it refreshes the SOTA for pure dif…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Diffusion Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Diffusion Language Models"
+  - "Multimodal Large Language Models"
+  - "Visual Instruction Tuning"
+  - "Masked Diffusion"
+  - "Bidirectional Attention"
 date: 2026-05-08
-content_hash: dbda4e5f18325775
+content_hash: c6ece775a059bbdf
 ---
+
 # LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning
 
 **Conference**: CVPR 2026  
@@ -128,9 +133,9 @@ LLaDA-V sets new SOTA among all pure/hybrid diffusion MLLMs. Despite the LLaDA-8
 
 - [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
 - [\[ICML 2025\] Parrot: Multilingual Visual Instruction Tuning](../../ICML2025/multimodal_vlm/parrot_multilingual_visual_instruction_tuning.md)
-- [\[CVPR 2026\] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models](thinking_diffusion_penalize_and_guide_visual-grounded_reasoning_in_diffusion_mul.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
 - [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](streaming_video_instruction_tuning.md)
-- [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
+- [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
 
 </div>
 

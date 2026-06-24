@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Diffusion language models] This work presents the first systematic analysis of the root cause behind the reasoning gap in diffusion language models (DLMs)—namely…
+  [NeurIPS 2025][Reinforcement Learning][Diffusion language models] This work presents the first systematic analysis of the root cause behind the reasoning gap in diffusion language models (DLMs)—namely, the independent generation of tokens during denoising, which disrupts both intra- and inter-sequence correlations. A multi-reward optimization framework, MRO, is proposed and consistently improves reasoning performance of LLaDA-8B across test-time scaling, reject sampling…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "token correlation"
   - "SGRO"
 date: 2026-05-08
-content_hash: 52993b4eb57dcb6d
+content_hash: 725592b48f0a06f7
 ---
 
 # MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization
@@ -150,8 +150,8 @@ LLaDA-8B serves as the base DLM. Multiple reward signals are designed to capture
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
-- [\[NeurIPS 2025\] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization](parco_parallel_autoregressive_models_for_multi-agent_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models](repic_reinforced_post-training_for_personalizing_multi-modal_language_models.md)
+- [\[NeurIPS 2025\] PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization](parco_parallel_autoregressive_models_for_multi-agent_combinatorial_optimization.md)
 
 </div>
 

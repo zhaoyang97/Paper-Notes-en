@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] LogicXGNN proposes a post-hoc framework for extracting interpretable first-order logic rules from trained Graph Neural Networks (GNNs). By identifying predicates via graph structural hashing and hidden layer embedding patterns, determining discriminative DNF rule structures with decision trees, and grounding abstract p
+  [ICLR 2026][Graph Learning][GNN Interpretability] LogicXGNN proposes a post-hoc framework for extracting interpretable first-order logic rules from trained Graph Neural Networks (GNNs). By identifying predicates via graph structural hashing and hidden layer embedding patterns, determining discriminative DNF rule structures with decision trees, and grounding abstract predicates back to the input space, it generates a rule-based classifier that can substitute the original GNN a…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN Interpretability"
+  - "Logic Rule Extraction"
+  - "Decision Trees"
+  - "Knowledge Discovery"
+  - "Graph Generation"
 date: 2026-05-08
-content_hash: d494780a660d0bf3
+content_hash: 71c077f20dd30f81
 ---
+
 # LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks
 
 **Conference**: ICLR 2026  

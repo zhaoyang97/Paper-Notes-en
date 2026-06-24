@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ThermalGen: Style-Disentangled Flow-Based Generative Models for RGB-to-Thermal Image Translation
 description: >-
-  [NeurIPS 2025][Image Generation][RGB-to-Thermal Translation] This paper proposes ThermalGen, an adaptive flow-based generative model that achieves, for the first time…
+  [NeurIPS 2025][Image Generation][RGB-to-Thermal Translation] This paper proposes ThermalGen, an adaptive flow-based generative model that achieves, for the first time, high-fidelity RGB-to-Thermal image translation across diverse viewpoints, sensors, and environmental conditions via an RGB-conditioned architecture and a style disentanglement mechanism. Three new large-scale satellite–aerial RGB-T paired datasets are also released.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Dataset Joint Training"
   - "Thermal Imaging"
 date: 2026-05-08
-content_hash: fec1e66d183093bc
+content_hash: 8c69720db82b27e3
 ---
 
 # ThermalGen: Style-Disentangled Flow-Based Generative Models for RGB-to-Thermal Image Translation
@@ -59,11 +59,11 @@ ThermalGen is built upon the SiT (Scalable Interpolant Transformer) architecture
 
    Flow-based generation operates in the latent space:
 
-   $$\mathbf{z}_t = \alpha_t \mathbf{z}_0 + \sigma_t \boldsymbol{\epsilon}, \quad \alpha_t = 1-t, \quad \sigma_t = t$$
+    $\mathbf{z}_t = \alpha_t \mathbf{z}_0 + \sigma_t \boldsymbol{\epsilon}, \quad \alpha_t = 1-t, \quad \sigma_t = t$
 
    The training objective for the velocity function:
 
-   $$\mathcal{L}_{\text{flow}} = \mathbb{E}_{\mathbf{z}_t, t}\left[\|v_\theta(\mathbf{z}_t, t) - v(\mathbf{z}_t, t)\|^2\right]$$
+    $\mathcal{L}_{\text{flow}} = \mathbb{E}_{\mathbf{z}_t, t}\left[\|v_\theta(\mathbf{z}_t, t) - v(\mathbf{z}_t, t)\|^2\right]$
 
 2. **Style-Disentangled Mechanism**
 
@@ -78,8 +78,8 @@ ThermalGen is built upon the SiT (Scalable Interpolant Transformer) architecture
 3. **RGB Image Conditioning Architecture**
 
    Two variants are explored:
-   - **Multi-Head Cross-Attention (Cross-Attn)**: $\mathbf{z}_{\text{RGB}}$ serves as the query and $\hat{\mathbf{z}}_{t,T}$ as the key and value.
-   - **Concatenation**: $\hat{\mathbf{z}}_{t,T}$ and $\mathbf{z}_{\text{RGB}}$ are directly concatenated as the SiT input.
+    - **Multi-Head Cross-Attention (Cross-Attn)**: $\mathbf{z}_{\text{RGB}}$ serves as the query and $\hat{\mathbf{z}}_{t,T}$ as the key and value.
+    - **Concatenation**: $\hat{\mathbf{z}}_{t,T}$ and $\mathbf{z}_{\text{RGB}}$ are directly concatenated as the SiT input.
 
    Experiments demonstrate that concatenation yields consistently better FID and facilitates fine-tuning from pretrained SiT weights.
 
@@ -155,11 +155,11 @@ ThermalGen is built upon the SiT (Scalable Interpolant Transformer) architecture
 
 ## Related Papers
 
-- [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](../../ICCV2025/image_generation/scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
+- [\[CVPR 2026\] TherA: Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation](../../CVPR2026/image_generation/thera_thermal-aware_visual-language_prompting_for_controllable_rgb-to-thermal_in.md)
 - [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
 - [\[NeurIPS 2025\] EditInfinity: Image Editing with Binary-Quantized Generative Models](editinfinity_image_editing_with_binary-quantized_generative_models.md)
 - [\[NeurIPS 2025\] BitMark: Watermarking Bitwise Autoregressive Image Generative Models](bitmark_watermarking_bitwise_autoregressive_image_generative_models.md)
-- [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
+- [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](rectified-cfg_for_flow_based_models.md)
 
 </div>
 

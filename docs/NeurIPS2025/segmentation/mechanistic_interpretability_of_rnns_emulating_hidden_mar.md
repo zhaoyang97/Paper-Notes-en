@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
 description: >-
-  [NeurIPS 2025][Segmentation][RNN] A vanilla RNN is trained to reproduce the emission statistics of an HMM; reverse engineering then reveals the mechanism by which the RNN implements discrete stochastic state transitions:…
+  [NeurIPS 2025][Segmentation][RNN] A vanilla RNN is trained to reproduce the emission statistics of an HMM; reverse engineering then reveals the mechanism by which the RNN implements discrete stochastic state transitions: noise-driven orbital dynamics combined with rapid transitions triggered by "kick neurons." The underlying principle is self-induced stochastic resonance (SISR), and this dynamical motif can be composed and reused to emulate more complex discrete latent struct…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "kick neurons"
   - "orbital dynamics"
 date: 2026-05-08
-content_hash: 7e60949be2ddea2e
+content_hash: e372dfca45856adb
 ---
 
 # Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
@@ -162,9 +162,9 @@ Implications for computational neuroscience: the brain may implement discrete st
 
 - [\[NeurIPS 2025\] Attention (as Discrete-Time Markov) Chains](attention_as_discrete-time_markov_chains.md)
 - [\[NeurIPS 2025\] Interpreting ResNet-based CLIP via Neuron-Attention Decomposition](interpreting_resnet-based_clip_via_neuron-attention_decomposition.md)
-- [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
 - [\[NeurIPS 2025\] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks](instant_video_models_universal_adapters_for_stabilizing_image-based_networks.md)
 - [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
+- [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)
 description: >-
-  [ICCV 2025][Image Restoration][Generic Event Boundary Detection] DiffGEBD is the first work to introduce diffusion models into Generic Event Boundary Detection (GEBD). It frames boundary prediction as an iterative denois…
+  [ICCV 2025][Image Restoration][Generic Event Boundary Detection] DiffGEBD is the first work to introduce diffusion models into Generic Event Boundary Detection (GEBD). It frames boundary prediction as an iterative denoising process from random noise to a plausible boundary distribution, leverages Classifier-Free Guidance to control prediction diversity, and proposes two new evaluation metrics—Symmetric F1 and Diversity Score—to measure quality and diversity in multi-predictio…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Diversity Evaluation"
   - "Temporal Self-Similarity"
 date: 2026-05-08
-content_hash: bcb8195f0c5cb2cd
+content_hash: 26b9b473d483b5b5
 ---
 
 # Generic Event Boundary Detection via Denoising Diffusion (DiffGEBD)
@@ -158,11 +158,11 @@ Note: Competing methods are deterministic models; their multiple predictions are
 
 ## Related Papers
 
+- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](../../CVPR2026/image_restoration/from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
+- [\[ECCV 2024\] EDformer: Transformer-Based Event Denoising Across Varied Noise Levels](../../ECCV2024/image_restoration/edformer_transformer-based_event_denoising_across_varied_noise_levels.md)
 - [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](low-light_image_enhancement_using_event-based_illumination_estimation.md)
-- [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
-- [\[ICML 2026\] Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges](../../ICML2026/image_restoration/structured_diffusion_bridges_inductive_bias_for_denoising_diffusion_bridges.md)
+- [\[CVPR 2026\] Similarity-Consistent Likelihood Diffusion enables Hidden Person Detection from Wall Reflections](../../CVPR2026/image_restoration/similarity-consistent_likelihood_diffusion_enables_hidden_person_detection_from_.md)
 - [\[AAAI 2026\] Blur-Robust Detection via Feature Restoration: An End-to-End Framework for Prior-Guided Infrared UAV Target Detection](../../AAAI2026/image_restoration/blur-robust_detection_via_feature_restoration_an_end-to-end_framework_for_prior-.md)
-- [\[ICCV 2025\] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising](idf_iterative_dynamic_filtering_networks_for_generalizable_image_denoising.md)
 
 </div>
 

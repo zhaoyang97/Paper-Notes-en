@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] On the Role of Hidden States of Modern Hopfield Network in Transformer
 description: >-
-  [NeurIPS 2025][LLM/NLP][Modern Hopfield Network] This paper moves beyond the adiabatic approximation underlying the established correspondence between Modern Hopfield Networks (MHN) and Transformers. By retaining the hid…
+  [NeurIPS 2025][LLM (Other)][Modern Hopfield Network] This paper moves beyond the adiabatic approximation underlying the established correspondence between Modern Hopfield Networks (MHN) and Transformers. By retaining the hidden-state dynamics of MHN, it derives a novel attention mechanism—Modern Hopfield Attention (MHA)—that introduces a cross-layer propagation mechanism for attention scores within self-attention layers. MHA improves the performance of ViT and GPT-2 systemati…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Modern Hopfield Network"
   - "self-attention"
   - "rank collapse"
@@ -14,7 +14,7 @@ tags:
   - "Vision Transformer"
   - "GPT-2"
 date: 2026-05-08
-content_hash: 3c6e5e2e0c1944d3
+content_hash: ca2bf594fa6434da
 ---
 
 # On the Role of Hidden States of Modern Hopfield Network in Transformer
@@ -188,11 +188,11 @@ Standard attention collapses at depth 4, whereas MHA continues to improve at dep
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
+- [\[ACL 2025\] Mitigate Position Bias in LLMs via Scaling a Single Hidden States Channel](../../ACL2025/llm_nlp/mitigate_position_bias_in_large_language_models_via_scaling_a_single_dimension.md)
 - [\[NeurIPS 2025\] Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning](unifying_attention_heads_and_task_vectors_via_hidden_state_geometry_in_in-contex.md)
-- [\[NeurIPS 2025\] Characterizing the Expressivity of Fixed-Precision Transformer Language Models](characterizing_the_expressivity_of_fixed-precision_transformer_language_models.md)
+- [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
+- [\[ACL 2025\] PlanGenLLMs: A Modern Survey of LLM Planning Capabilities](../../ACL2025/llm_nlp/plangenllms_planning_survey.md)
 - [\[NeurIPS 2025\] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era](towards_implicit_aggregation_robust_image_representation_for_place_recognition_i.md)
-- [\[ICML 2026\] ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models](../../ICML2026/llm_nlp/anchor_abductive_network_construction_with_hierarchical_orchestration_for_reliab.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expertise Can Be Helpful for Reinforcement Learning-based Macro Placement
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] EXPlace explicitly encodes four types of expert knowledge accumulated by chip layout engineers (dataflow, macro grouping, periphery bias, and I/O keepout) into dense rewards and state masks for RL. It then employs Direct Preference Optimization (DPO) to mimic the expert workflow of "iterative refinement based on backen
+  [ICLR 2026][Reinforcement Learning][Macro placement] EXPlace explicitly encodes four types of expert knowledge accumulated by chip layout engineers (dataflow, macro grouping, periphery bias, and I/O keepout) into dense rewards and state masks for RL. It then employs Direct Preference Optimization (DPO) to mimic the expert workflow of "iterative refinement based on backend PPA feedback" for timing fine-tuning. This allows RL-based placement to significantly outperform analytic…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Macro placement"
+  - "EDA expert knowledge"
+  - "Dataflow"
+  - "Preference optimization"
+  - "Timing optimization"
 date: 2026-05-08
-content_hash: 297e59cd3f05d111
+content_hash: 7c99d7ea7e84f033
 ---
+
 # Expertise Can Be Helpful for Reinforcement Learning-based Macro Placement
 
 **Conference**: ICLR 2026  
@@ -112,6 +118,7 @@ Dataflow guidance and periphery bias have the most significant impact. Removing 
 - **Value**: ⭐⭐⭐⭐ — Addresses a real pain point in making RL placement industrially viable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -119,8 +126,8 @@ Dataflow guidance and periphery bias have the most significant impact. Removing 
 - [\[ICLR 2026\] Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning](use_the_online_network_if_you_can_towards_fast_and_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] How Far Can Unsupervised RLVR Scale LLM Training?](how_far_can_unsupervised_rlvr_scale_llm_training.md)
 - [\[ICML 2026\] You Can Learn Tokenization End-to-End with Reinforcement Learning](../../ICML2026/reinforcement_learning/you_can_learn_tokenization_end-to-end_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] When Can Model-Free Reinforcement Learning be Enough for Thinking?](../../NeurIPS2025/reinforcement_learning/when_can_model-free_reinforcement_learning_be_enough_for_thinking.md)
 - [\[ICLR 2026\] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](prosperity_before_collapse_how_far_can_off-policy_rl_reach_with_stale_data_on_ll.md)
+- [\[NeurIPS 2025\] When Can Model-Free Reinforcement Learning be Enough for Thinking?](../../NeurIPS2025/reinforcement_learning/when_can_model-free_reinforcement_learning_be_enough_for_thinking.md)
 
 </div>
 

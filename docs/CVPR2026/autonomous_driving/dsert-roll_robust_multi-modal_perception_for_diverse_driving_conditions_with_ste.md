@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper introduces DSERT-RoLL, a driving dataset that simultaneously collects stereo Event-RGB-Thermal cameras, 4D Radar, and dual LiDAR, covering extreme conditions such as rain, snow, fog, nighttime, and HDR. It proposes a multi-modal 3D detection framework that first generates initial boxes from ranging sensors,
+  [CVPR 2026][Autonomous Driving][Multi-modal Fusion] This paper introduces DSERT-RoLL, a driving dataset that simultaneously collects stereo Event-RGB-Thermal cameras, 4D Radar, and dual LiDAR, covering extreme conditions such as rain, snow, fog, nighttime, and HDR. It proposes a multi-modal 3D detection framework that first generates initial boxes from ranging sensors, supplements semantics using voxel-centric deformable sampling with three-way camera features…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Multi-modal Fusion"
+  - "3D Object Detection"
+  - "4D Radar"
+  - "Event Camera"
+  - "Robust Perception"
 date: 2026-05-08
-content_hash: c602c1ce88906329
+content_hash: 5f8a51728a8043a9
 ---
+
 # DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR
 
 **Conference**: CVPR 2026  
@@ -145,7 +151,7 @@ Ours achieves the highest AP across all listed conditions. Pure stereo (without 
 
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
-- [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
+- [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
 - [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
 - [\[ICCV 2025\] Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception](../../ICCV2025/autonomous_driving/unleashing_the_temporal_potential_of_stereo_event_cameras_for_continuous-time_3d.md)
 

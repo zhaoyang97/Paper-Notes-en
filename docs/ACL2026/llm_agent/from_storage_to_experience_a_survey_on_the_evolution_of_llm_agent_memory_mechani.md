@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms
 description: >-
-  [ACL 2026][LLM Agent][Agent Memory] This paper provides a systematic survey of LLM Agent memory mechanisms using an evolutionary framework of "Storage → Reflection → Experience." It utilizes formal definitions to map these three stages to three functional signatures: "Trajectory Retention → Trajectory Refinement → Cross-Trajectory Abstraction." The story
+  [ACL 2026 Findings][LLM Agent][Agent Memory] This paper provides a systematic survey of LLM Agent memory mechanisms using an evolutionary framework of "Storage → Reflection → Experience." It utilizes formal definitions to map these three stages to three functional signatures: "Trajectory Retention → Trajectory Refinement → Cross-Trajectory Abstraction." The storyline is structured around three RQs (Why-How-What), with a deep dive into two transformative mechanisms of the Expe…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Agent Memory
-  - Storage
-  - Reflection
-  - Experience
-  - MDL
-  - Cross-Trajectory Abstraction
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Agent Memory"
+  - "Storage"
+  - "Reflection"
+  - "Experience"
+  - "MDL"
+  - "Cross-Trajectory Abstraction"
 date: 2026-05-08
-content_hash: e9707fa532f8aa96
+content_hash: c247a1fafcaed8a6
 ---
+
 # From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms
 
 **Conference**: ACL 2026 Findings  
@@ -168,9 +169,9 @@ This is a survey; no training is performed. Cited references $\geq 200$, coverin
 
 - [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
-- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](../../ICML2026/llm_agent/se-ga_memory-augmented_self-evolution_for_gui_agents.md)
+- [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
 
 </div>
 

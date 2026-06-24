@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method
 description: >-
-  [ICLR 2026][Object Detection][TreeBench] This paper proposes TreeBench (the first traceable visual reasoning benchmark, consisting of 405 highly challenging VQA tasks where OpenAI-o3 achieves only 54.87%) and TreeVGR (a training paradigm that jointly supervises grounding and reasoning via reinforcement learning with Dual IoU rewards). The TreeVGR-7B model ach
+  [ICLR 2026][Object Detection][Visual Grounded Reasoning] This paper proposes TreeBench (the first traceable visual reasoning benchmark, consisting of 405 highly challenging VQA tasks where OpenAI-o3 achieves only 54.87%) and TreeVGR (a training paradigm that jointly supervises grounding and reasoning via reinforcement learning with Dual IoU rewards). The TreeVGR-7B model achieves gains of +16.8 on V\*Bench, +12.6 on MME-RealWorld, and +13.4 on TreeBench…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - TreeBench
-  - Reinforcement Learning
-  - Dual IoU
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Visual Grounded Reasoning"
+  - "Traceable Evidence"
+  - "Second-Order Reasoning"
+  - "TreeBench"
+  - "Reinforcement Learning"
+  - "Dual IoU"
 date: 2026-05-08
-content_hash: 44f92505496797e1
+content_hash: 2c3eb1d9927dccf7
 ---
+
 # Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method
 
 **Conference**: ICLR 2026  
@@ -135,14 +139,17 @@ In the RL stage following cold-start, the total reward includes accuracy, format
 
 <div class="related-papers" markdown="1">
 
-- **Pixel-Reasoner**: Cross-modal reasoning via RL for visual grounding.
-- **DeepEyes**: Direct RL for visual reasoning without intermediate SFT.
-- **V\*Bench**: A benchmark for fine-grained visual perception.
+## Related Papers
+
+- [\[ICCV 2025\] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning](../../ICCV2025/object_detection/visrl_intention-driven_visual_perception_via_reinforced_reasoning.md)
+- [\[AAAI 2026\] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning](../../AAAI2026/object_detection/connecting_the_dots_training-free_visual_grounding_via_agent.md)
+- [\[CVPR 2026\] Reasoning-Driven Anomaly Detection and Localization with Image-Level Supervision](../../CVPR2026/object_detection/reasoning-driven_anomaly_detection_and_localization_with_image-level_supervision.md)
+- [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](../../ICCV2025/object_detection/large-scale_pre-training_for_grounded_video_caption_generation.md)
+- [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](../../CVPR2026/object_detection/yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICCV 2025\] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning](../../ICCV2025/object_detection/visrl_intention-driven_visual_perception_via_reinforced_reasoning.md)

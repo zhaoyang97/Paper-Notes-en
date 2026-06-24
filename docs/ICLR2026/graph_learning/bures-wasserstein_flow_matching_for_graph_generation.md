@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bures-Wasserstein Flow Matching for Graph Generation
 description: >-
-  [ICLR 2026][Graph Learning][Flow Matching] Addressing the issue where existing graph diffusion/flow models "decouple nodes and edges for independent linear interpolation," leading to non-smooth probability paths and convergence difficulties, this paper models graphs as coupled colored Gaussian systems using Markov Random Fields (MRF). By constructing smooth, cl
+  [ICLR2026][Graph Learning][Graph Generation] Addressing the issue where existing graph diffusion/flow models "decouple nodes and edges for independent linear interpolation," leading to non-smooth probability paths and convergence difficulties, this paper models graphs as coupled colored Gaussian systems using Markov Random Fields (MRF). By constructing smooth, closed-form, simulation-free probability paths based on Bures-Wasserstein (BW) displacement between graph distributio…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Flow Matching
-  - Bures-Wasserstein
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Graph Generation"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Bures-Wasserstein"
+  - "Markov Random Fields"
 date: 2026-05-08
-content_hash: 00c10b37bf6dff49
+content_hash: 747bc727a86b15dd
 ---
+
 # Bures-Wasserstein Flow Matching for Graph Generation
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs
 description: >-
-  [NeurIPS 2025][Video Understanding][temporal grounding] TempSamp-R1 is a reinforcement fine-tuning framework that addresses the inefficiency of on-policy sampling in GRPO for video temporal grounding—caused by the vast s…
+  [NeurIPS 2025][Video Understanding][temporal grounding] TempSamp-R1 is a reinforcement fine-tuning framework that addresses the inefficiency of on-policy sampling in GRPO for video temporal grounding—caused by the vast search space—by introducing ground-truth annotations as off-policy supervision signals, non-linear soft advantage estimation, and a hybrid CoT training paradigm, achieving new state-of-the-art results on Charades-STA, ActivityNet, and QVHighlights.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -13,7 +13,7 @@ tags:
   - "hybrid CoT"
   - "video LLM"
 date: 2026-05-08
-content_hash: ea3aac6d0c9f6215
+content_hash: 1bda1fad8a85dac0
 ---
 
 # TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs
@@ -119,11 +119,11 @@ The standard GRPO objective is adopted: $\mathcal{J}(\theta) = \frac{1}{G}\sum_{
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding](../../CVPR2026/video_understanding/learning_to_refuse_refusal-aware_reinforcement_fine-tuning_for_hard-irrelevant_q.md)
+- [\[ACL 2025\] RAVEN: Robust Advertisement Video Violation Temporal Grounding via Reinforcement Reasoning](../../ACL2025/video_understanding/raven_robust_advertisement_video_violation_temporal_grounding_via_reinforcement_.md)
 - [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](enhancing_temporal_understanding_in_videollms_through_stacke.md)
 - [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
 - [\[NeurIPS 2025\] INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning](inst-it_boosting_instance_understanding_via_explicit_visual_prompt_instruction_t.md)
-- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](../../AAAI2026/video_understanding/tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
-- [\[NeurIPS 2025\] PixFoundation 2.0: Do Video Multi-Modal LLMs Use Motion in Visual Grounding?](pixfoundation_20_do_video_multi-modal_llms_use_motion_in_visual_grounding.md)
 
 </div>
 

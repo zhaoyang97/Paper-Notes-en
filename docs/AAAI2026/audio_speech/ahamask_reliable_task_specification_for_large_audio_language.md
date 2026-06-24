@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions
 description: >-
-  [AAAI 2026][Audio & Speech][Large Audio Language Models] By applying binary masks (AHAMask) over attention heads in the Transformer backbone of Large Audio Language Models (LALMs)…
+  [AAAI 2026][Audio & Speech][Large Audio Language Models] By applying binary masking (AHAMask) to attention heads within the Transformer backbone of Large Audio Language Models (LALMs), specific acoustic task functionalities can be reliably triggered without textual instructions, while simultaneously revealing the existence of "acoustic functional pathways" inside LALMs.
 tags:
   - "AAAI 2026"
   - "Audio & Speech"
@@ -12,94 +12,100 @@ tags:
   - "Task Specification"
   - "Functional Pathways"
 date: 2026-05-08
-content_hash: ee1c56c4a257c73d
+content_hash: a2f925cdaa2cc0e1
 ---
 
 # AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2509.01787v3](https://arxiv.org/abs/2509.01787v3)  
 **Code**: [https://github.com/X-LANCE/SALMONN-AHAMask](https://github.com/X-LANCE/SALMONN-AHAMask)  
-**Area**: Speech & Audio Processing / Large Language Model Interpretability
-**Keywords**: Large Audio Language Models, Attention Head Masking, Prompt Sensitivity, Task Specification, Functional Pathways
+**Area**: Speech and Audio Processing / Large Language Model Interpretability  
+**Keywords**: Large Audio Language Models, Attention Head Masking, Prompt Sensitivity, Task Specification, Functional Pathways  
 
 ## TL;DR
-By applying binary masks (AHAMask) over attention heads in the Transformer backbone of Large Audio Language Models (LALMs), specific acoustic task functionalities can be reliably triggered without any textual instructions, while revealing the existence of "acoustic functional pathways" within LALMs.
+By applying binary masking (AHAMask) to attention heads within the Transformer backbone of Large Audio Language Models (LALMs), specific acoustic task functionalities can be reliably triggered without textual instructions, while simultaneously revealing the existence of "acoustic functional pathways" inside LALMs.
 
 ## Background & Motivation
-Current LALMs (e.g., SALMONN, Qwen2Audio) are capable of handling diverse audio tasks (ASR, emotion recognition, speaker verification, etc.) in a unified framework, but rely heavily on natural language instructions for task specification. The key issue is that semantically equivalent instructions—differing only in wording, punctuation, or capitalization—can cause severe performance fluctuations (e.g., WER on SALMONN's ASR task jumping from 2% to 12%). This prompt sensitivity renders LALMs unreliable in real-world deployment. Meanwhile, prior work in the text LLM domain (han2025heads) has demonstrated that attention head masking can trigger specific text tasks without instructions, yet this property remains unexplored in multimodal audio models.
+Although current LALMs (e.g., SALMONN, Qwen2Audio) can deeply integrate various audio tasks (such as ASR, emotion recognition, speaker verification), they rely heavily on natural language instructions to specify the target task. The critical issue is prompt sensitivity: even for instruction queries with identical semantics, minor changes in phrasing, punctuation, or capitalization can trigger severe performance drops (e.g., SALMONN's ASR word error rate (WER) skyrocketing from 2% to 12%). This sensitivity makes LALMs highly unreliable in real-world deployment. Meanwhile, studies in the textual LLM domain (han2025heads) have discovered that masking attention heads can trigger specific textual tasks without instructions. However, this characteristic remains unexplored in multimodal audio models.
 
 ## Core Problem
-How can the dependence and sensitivity of LALMs on natural language instructions be eliminated, enabling reliable acoustic task specification without any instructions? More fundamentally, do the Transformer attention heads in LALMs harbor "functional pathways" analogous to those found in text LLMs?
+How can one eliminate the reliance and sensitivity of LALMs on natural language instructions to reliably specify acoustic tasks without any prompt instructions? More fundamentally, do "functional pathways" similar to those in text LLMs exist within the Transformer attention heads of LALMs?
 
 ## Method
 
 ### Overall Architecture
-AHAMask introduces a binary mask $m_{i,j} \in \{0,1\}$ for each attention head in the decoder-only LLM backbone of a LALM. During inference, only the selected subset of attention heads is activated, modifying MHA as $\text{MHA}_i(\mathbf{X}, \mathcal{M}) = \sum_{j=1}^{h} m_{i,j} \mathbf{Y}^{(i,j)} \mathbf{W}_O^{(i,j)}$. Due to skip connections, masking all heads in a given layer does not break the computation graph.
+AHAMask introduces a binary mask $m_{i,j} \in \{0,1\}$ for each attention head in the decoder-only LLM backbone of LALMs. During inference, only a selected subset of attention heads is activated, modifying the Multi-Head Attention (MHA) computation to:
+
+$$\text{MHA}_i(\mathbf{X}, \mathcal{M}) = \sum_{j=1}^{h} m_{i,j} \mathbf{Y}^{(i,j)} \mathbf{W}_O^{(i,j)}$$
+
+Thanks to residual skip connections, the computation graph remains intact even if all heads in a given layer are completely masked out.
 
 ### Key Designs
-1. **Gumbel-Sigmoid Training**: Since the mask $\mathcal{M}$ is discrete, Gumbel-Sigmoid is used for gradient estimation. During training, a soft mask is computed as $\mathbf{S} = \sigma((\mathbf{M} + \mathbf{G})/\tau)$, binarized via $\mathcal{M} = \mathbb{I}(\mathbf{S} \geq 0.5)$, with the straight-through estimator (STE) used for backpropagation. The temperature $\tau$ is linearly annealed from 4.0 to 0.5. The only trainable parameters are the mask logits $\mathbf{M} \in \mathbb{R}^{n \times h}$, with a count equal to the total number of attention heads (e.g., only 1,600 parameters for SALMONN).
-2. **Instruction-Free Training Paradigm**: Training is conducted on specific downstream tasks using only audio-text pairs $(Audio_k, Text_k)$ without any instructions. Standard cross-entropy loss is applied for next-token prediction, with all original LALM parameters frozen.
-3. **Sparsity Penalty**: An optional regularization term $\mathcal{L} = \mathcal{L}_{CE} + \lambda \sum_{i,j} m_{i,j}$ further reduces the number of active heads. Experiments show that with $\lambda = 10^{-4}$, only 299 out of 1,600 heads are required to achieve 98.02% accuracy on the GR task.
+1. **Gumbel-Sigmoid Training**: Because the mask $\mathcal{M}$ consists of discrete variables, Gumbel-Sigmoid is employed for gradient estimation. During training, soft masks are calculated as $\mathbf{S} = \sigma((\mathbf{M} + \mathbf{G})/\tau)$, which are then binarized to $\mathcal{M} = \mathbb{I}(\mathbf{S} \geq 0.5)$. The Straight-Through Estimator (STE) is used for backpropagation. The temperature $\tau$ is linearly annealed from 4.0 to 0.5. The only trainable parameters are the mask logits $\mathbf{M} \in \mathbb{R}^{n \times h}$, whose total count equals the number of attention heads (e.g., only 1600 parameters for SALMONN).
+2. **Instruction-Free Training Paradigm**: Training is performed on specific downstream tasks using solely audio-text pairs $(Audio_k, Text_k)$ without providing any textual instructions. Next-token prediction is conducted using standard cross-entropy loss while freezing all original LALM parameters.
+3. **Sparsity Penalty**: A sparsity regularization term $\mathcal{L} = \mathcal{L}_{CE} + \lambda \sum_{i,j} m_{i,j}$ can optionally be added to further reduce the number of activated heads. Empirical results indicate that with $\lambda = 10^{-4}$, the GR task achieves 98.02% accuracy utilizing only 299 out of 1600 heads.
 
 ### Loss & Training
-- Loss: Standard cross-entropy $\mathcal{L}_{CE}$ (next-token prediction), with optional L1 sparsity penalty
-- All head logits initialized from $\mathcal{N}(4, 0.02)$ (all heads active at initialization)
-- Learning rate warmed up to 1e-2, then cosine decayed to 1e-4
-- Single-GPU training (65G Ascend 910B NPU)
+- Loss: Standard cross-entropy $\mathcal{L}_{CE}$ (next-token prediction), optionally with an L1 sparsity penalty.
+- Initialization: All head logits are initialized as $\mathcal{N}(4, 0.02)$ (resulting in near-full activation initially).
+- Optimizer: Learning rate warms up to 1e-2 and decays to 1e-4 via a cosine scheduler.
+- Hardware: Trained on a single card (65G Ascend 910B NPU).
 
 ## Key Experimental Results
 
-| Dataset/Task | Metric | AHAMask (no instruction) | With Instruction | Notes |
-|---|---|---|---|---|
-| LibriSpeech ASR (SALMONN) | WER | 2.10/5.08 | 2.10/4.95 | Nearly on par |
-| GR (SALMONN) | ACC | 98.05% | 96.79% | AHAMask superior |
-| SER (SALMONN) | ACC | 70.02% | 69.70% | AHAMask slightly better |
-| ASV (SALMONN) | ACC | 93.24% | 93.49% | Nearly on par |
-| AAC (SALMONN) | METEOR/ROUGE-L | 24.15/48.71 | 20.60/40.42 | AHAMask significantly better |
+| Dataset / Task | Metric | AHAMask (Instruction-free) | With Instruction | Remarks |
+|-------------|------|-------------------|--------|------|
+| LibriSpeech ASR (SALMONN) | WER | 2.10/5.08 | 2.10/4.95 | Almost identical |
+| GR (SALMONN) | ACC | 98.05% | 96.79% | AHAMask is better |
+| SER (SALMONN) | ACC | 70.02% | 69.70% | AHAMask is slightly better |
+| ASV (SALMONN) | ACC | 93.24% | 93.49% | Almost identical |
+| AAC (SALMONN) | METEOR/ROUGE-L | 24.15/48.71 | 20.60/40.42 | AHAMask leads by a large margin |
 | GR (Qwen2Audio-Instruct) | ACC | 94.43% | 91.03% | AHAMask +3.4% |
 | ASV (Qwen2Audio-Base) | ACC | 85.75% | 49.24% | AHAMask +36.5%! |
-| Composite GR\|ASR (SALMONN) | IFR / ACC / WER | 99.12/97.77/2.21 | 98.59/68.02/3.52 | AHAMask dominant across all metrics |
-| Composite JSON format (SALMONN) | IFR / WER / ACC | 98.89/2.40/97.30 | 69.16/6.17/51.05 | Instruction-based method completely fails |
+| Composite Task GR\|ASR (SALMONN) | IFR / ACC / WER | 99.12/97.77/2.21 | 98.59/68.02/3.52 | AHAMask outperforms comprehensively |
+| Composite JSON Format (SALMONN) | IFR / WER / ACC | 98.89/2.40/97.30 | 69.16/6.17/51.05 | Instruction-based approach completely fails |
 
 ### Ablation Study
-- **Random masks are ineffective**: Random masks with the same head count completely fail, confirming that specific head locations are critical.
-- **Non-transferability across models**: The AHAMask trained on Qwen2Audio-Instruct is entirely ineffective on the Base model, and vice versa.
-- **Head count correlates with task complexity**: Classification tasks (GR/SER/ASV) require fewer heads; sequence generation tasks require more.
-- **Mask similarity reflects task relationships**: OSR and ASR exhibit the highest Jaccard similarity, validating linguistic intuition.
-- **"Many roads lead to Rome" effect**: Masks trained with different random seeds differ by more than 30% yet achieve nearly identical performance; taking their intersection yields even fewer heads without performance degradation.
-- **Functional pathways emerge progressively**: Incrementally activating heads by importance weight yields smooth performance improvement rather than abrupt jumps.
-- **Out-of-domain generalization**: The GR task generalizes well across TEDLIUM, CommonVoice, and VoxCeleb1 (ACC 89–98%); ASR generalization requires more diverse training data.
+- **Random Masking is Ineffective**: Randomly masking an equivalent number of heads leads to total performance failure, proving that head locations are strictly critical.
+- **Non-transferable Across Models**: An AHAMask trained on Qwen2Audio-Instruct remains fully ineffective on the Base model, and vice versa.
+- **Task Complexity Correlates with Head Count**: Classification tasks (GR/SER/ASV) require fewer active heads, whereas sequence generation tasks require more.
+- **Mask Similarity Reflects Task Correlation**: The Jaccard similarity between OSR and ASR masks is the highest, aligning with linguistic intuition.
+- **The "Many Roads to Rome" Effect**: Different random seeds yield masks with more than 30% difference in active-head selection, yet achieve identical performance. Taking the intersection yields even fewer heads without performance degradation.
+- **Gradual Formation of Functional Pathways**: Gradually activating heads according to their feature importance results in a smooth, non-monotonic performance improvement rather than abrupt shifts.
+- **Out-of-Domain (OOD) Generalization**: The GR task generalizes well on TEDLIUM, CommonVoice, and VoxCeleb1 (with 89-98% ACC), whereas ASR generalization requires highly diverse training data.
 
 ## Highlights & Insights
-- Extremely parameter-efficient: trainable parameters equal only the number of attention heads (1,600 for SALMONN, roughly 200 bytes of storage), orders of magnitude fewer than PEFT methods such as LoRA.
-- Inference is low-cost—binary masking actually reduces computation by deactivating a subset of heads.
-- Overwhelming advantage over instruction-based methods on composite tasks, particularly in instruction-following rate (IFR).
-- Reveals the existence of "acoustic functional pathways" in LALMs, an interesting interpretability finding.
-- Demonstrates that even base models (without instruction fine-tuning) can, via AHAMask, match or surpass instruct models.
+- **Extremely Parameter-Efficient**: Trainable parameters match the total number of attention heads (1600 for SALMONN, or 200 bytes of storage), which is several orders of magnitude smaller than PEFT methods like LoRA.
+- **Low Inference-Stage Overhead**: Deploying binary masks actually reduces computation costs as a portion of the heads are bypassed (pruned).
+- **Dominant Performance on Composite Tasks**: Outperforms instruction-based approaches significantly on composite tasks, particularly on Instruction-Following Rate (IFR).
+- **Reveals Acoustic Functional Pathways**: Unveils an intriguing interpretability insight that structured pathways exist inside LALMs for acoustic information.
+- **Empowers Base Models**: Base models (without instruction fine-tuning) can perform on par with or even outperform instruct-tuned models through AHAMask.
 
 ## Limitations & Future Work
-- Out-of-domain generalization for ASR remains limited; masks trained on a single domain may capture overly fine-grained features.
-- Composability is only validated for ASR+GR; combinations of three or more tasks remain unexplored.
-- Mask composability via Boolean operations across tasks has only been preliminarily explored.
-- A text-to-mask converter—automatically mapping natural language instructions to attention head masks—has not been investigated.
-- Validation is limited to three LALMs; larger-scale models (e.g., LLaMA-70B-scale audio models) are not covered.
-- Generative audio tasks (TTS, audio generation) are not explored.
+- **Generalization Gap in ASR**: A gap still remains under out-of-domain ASR scenarios; single-domain trained masks might capture overly granular features.
+- **Limited Context of Composite Tasks**: Testing was primarily restricted to ASR+GR composite tasks; the composability of larger task mixtures (3+ tasks) needs exploration.
+- **Mask Composability**: Only preliminary exploration has been conducted on performing boolean algebra on task-specific masks to combine features.
+- **No Text-to-Mask Architecture**: Automating the mapping from natural language instructions directly to attention head masks remains unaddressed.
+- **Scale Limitation**: Evaluating on 3 LALMs only without scaling to larger architectures (e.g., LLaMA-70B-grade audio systems).
+- **Unsupported Task Formats**: Generative audio tasks (like TTS or audio generation) have not yet been explored.
 
 ## Related Work & Insights
-- **han2025heads (Heads Are All You Need)**: This work directly extends the text LLM findings to the multimodal audio domain, confirming the existence of acoustic functional pathways. The core distinction lies in generalizing from pure text to audio-text multimodal alignment scenarios.
-- **LoRA and other PEFT methods**: LoRA requires millions of trainable parameters and maintains or increases parameter count at inference; AHAMask requires only thousands of parameters and actually reduces computation at inference.
-- **Steering Vectors / Representation Engineering**: These approaches control model behavior by adding directional vectors in the activation space, but still rely on instructions or incur additional inference overhead; AHAMask directly selects functional sub-networks at the structural level.
-- **Multimodal functional pathway analysis**: This finding could be extended to vision-language models (VLMs)—do attention heads in VLMs harbor analogous "visual functional pathways"? If so, could head masking enable instruction-free visual task specification?
-- **Cross-task mask composition**: Intersection and union operations over task-specific masks suggest a new paradigm for model editing and functional composition—combining capabilities purely through sub-network selection without modifying parameters.
-- **Implications for model compression**: AHAMask reveals that a large fraction of attention heads are redundant for specific tasks (e.g., SALMONN requires only 1/5 of heads for GR), providing task-aware guidance signals for structured pruning.
-- **Text-to-mask systems**: A promising future direction is training a lightweight network to map natural language instructions to attention head masks, combining the flexibility of instruction-based approaches with the reliability of masking.
+- **han2025heads (Heads Are All You Need)**: This work directly expands the concepts from textual LLM research to multimodal audio, validating the existence of acoustic functional pathways. The core distinction lies in transferring from pure-text to audio-text multimodal alignment.
+- **PEFT Methods (e.g., LoRA)**: LoRA requires millions of trainable parameters and keeps or increases parameter loads during inference. In contrast, AHAMask needs only thousands of parameters and actively reduces inference computational overhead.
+- **Steering Vectors / Representation Engineering**: These control models by adding direction vectors to the activation space but still suffer from prompt dependency and runtime overhead. AHAMask selects functional sub-networks structurally.
+
+## Related Work & Insights
+- **Multimodal Functional Pathway Analysis**: This key discovery can be extended to vision-language models (VLMs) to explore whether similar "visual functional pathways" exist within VLM attention heads, potentially allowing instruction-free visual task specification.
+- **Cross-Task Mask Operations**: Intersection and union operations on different task masks imply a new model editing paradigm where functionalities are composed simply by selecting subnetworks without modifying weights.
+- **Inspirations for Model Compression**: AHAMask reveals that many attention heads are redundant for specific tasks (e.g., SALMONN requires only 1/5 of the heads for GR), providing task-aware pruning signals for structured model compression.
+- **Text-to-Mask Systems**: An intriguing future direction is training a lightweight model to map natural language instructions directly to attention head masks, combining prompt flexibility with mask reliability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Core idea extends han2025heads; innovation lies in multimodal generalization and in-depth analysis)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (3 models, 7+ tasks, composite tasks, ablations, generalization, visualization—highly comprehensive)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, progressively organized experiments, deep analysis)
-- Value: ⭐⭐⭐⭐ (Reveals important interpretability findings, though practical applicability remains constrained by the need for task-specific training)
+- Novelty: ⭐⭐⭐⭐ (The core idea extends from han2025heads; the novelty lies in the multimodal extension and deep analysis)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Very comprehensive: evaluated across 3 models, 7+ tasks, composite tasks, ablation, generalization, and visualization)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, progressive experimental layout, and profound analysis)
+- Value: ⭐⭐⭐⭐ (Reveals significant interpretability insights, though practical application remains slightly capped by the need for task-specific training)
 
 <!-- RELATED:START -->
 
@@ -107,11 +113,11 @@ AHAMask introduces a binary mask $m_{i,j} \in \{0,1\}$ for each attention head i
 
 ## Related Papers
 
+- [\[ACL 2025\] Towards Reliable Large Audio Language Model](../../ACL2025/audio_speech/towards_reliable_large_audio_language_model.md)
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
 - [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](diffa_large_language_diffusion_models_can_listen_and_understand.md)
-- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](../../ACL2026/audio_speech/temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
-- [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](../../ACL2026/audio_speech/speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
+- [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](../../ICLR2026/audio_speech/measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)
+- [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](../../CVPR2026/audio_speech/audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models
 description: >-
-  [ICLR 2026][learning_theory][State Space Model] This paper theoretically proves that fixed-memory State Space Models (SSMs) cannot solve "true long-form generation tasks" regardless of the chain-of-thought (CoT) length. However, by enabling **interactive calls to external memory tools**, SSMs can achieve **infinite length generalization** for any computable long-for
+  [ICLR 2026][Learning Theory][Tool-Use] This paper theoretically proves that fixed-memory State Space Models (SSMs) cannot solve "true long-form generation tasks" regardless of the chain-of-thought (CoT) length. However, by enabling **interactive calls to external memory tools**, SSMs can achieve **infinite length generalization** for any computable long-form task—e.g., training on 5-digit addition and correctly performing 1000-digit addition.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - State Space Model
-  - ReAct
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "State Space Models"
+  - "Length Generalization"
+  - "Tool-Use"
+  - "ReAct"
+  - "Long-form Generation"
 date: 2026-05-08
-content_hash: 11ecc3aa16b20278
+content_hash: 5df94e220a7710d5
 ---
+
 # To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models
 
 **Conference**: ICLR 2026  
@@ -134,8 +138,8 @@ On addition, Mamba/LSTM trained on 5-digit trajectories can **perfectly** perfor
 ## Related Papers
 
 - [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
-- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
 - [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
+- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
 - [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
 

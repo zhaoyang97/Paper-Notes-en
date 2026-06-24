@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Discounted Cuts: A Stackelberg Approach to Network Disruption
 description: >-
-  [AAAI 2026][Reinforcement Learning][Stackelberg Games] This paper introduces the Discounted Cuts mathematical framework, modeling the classical Most Vital Links problem as a Stackelberg game. It systematically establishe…
+  [AAAI 2026][Reinforcement Learning][Stackelberg Games] This paper introduces the Discounted Cuts mathematical framework, modeling the classical Most Vital Links problem as a Stackelberg game. It systematically establishes a computational complexity classification for eight variants of discounted cuts and proves that all variants are solvable in polynomial time on bounded-genus graphs.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Bounded-Genus Graphs"
   - "Most Vital Links"
 date: 2026-05-08
-content_hash: 49709752cd546aee
+content_hash: 114c489dd17ddbb1
 ---
 
 # Discounted Cuts: A Stackelberg Approach to Network Disruption
@@ -179,9 +179,9 @@ This paper is a purely theoretical contribution; its core results constitute a c
 
 - [\[AAAI 2026\] Deep (Predictive) Discounted Counterfactual Regret Minimization](deep_predictive_discounted_counterfactual_regret_minimization.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
+- [\[ICLR 2026\] Learning to Reason Efficiently with Discounted Reinforcement Learning](../../ICLR2026/reinforcement_learning/learning_to_reason_efficiently_with_discounted_reinforcement_learning.md)
 - [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
 - [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](../../ICLR2026/reinforcement_learning/learning_to_play_multi-follower_bayesian_stackelberg_games.md)
-- [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
 
 </div>
 

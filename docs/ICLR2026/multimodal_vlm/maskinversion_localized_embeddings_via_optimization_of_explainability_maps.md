@@ -4,12 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Multimodal VLM][CLIP] Without fine-tuning any weights, by treating the alignment of a frozen CLIP's explainability map with a query mask as an optimization objective at test-time, iteratively optimizing a single token can learn a localized embedding for any image region that can directly replace the [CLS] token.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Region-level Representation"
+  - "Explainability Maps"
+  - "Test-time Optimization"
+  - "Textual Inversion"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 555a935dd6d25d6b
+content_hash: bde69ee3551c8a97
 ---
+
 # MaskInversion: Localized Embeddings via Optimization of Explainability Maps
 
 **Conference**: ICLR 2026  
@@ -143,11 +149,11 @@ Comparison with training-free patch aggregation methods (Mean Acc):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Language-Instructed Vision Embeddings for Controllable and Generalizable Perception](language-instructed_vision_embeddings_for_controllable_and_generalizable_percept.md)
 - [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
+- [\[ICLR 2026\] Guided Query Refinement: Multimodal Hybrid Retrieval with Test-Time Optimization](guided_query_refinement_multimodal_hybrid_retrieval_with_test-time_optimization.md)
+- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/multimodal_vlm/vill-e_video_llm_embeddings_for_retrieval.md)
 - [\[CVPR 2026\] VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models](../../CVPR2026/multimodal_vlm/vlm-loc_localization_in_point_cloud_maps_via_vision-language_models.md)
-- [\[CVPR 2026\] Illuminating Visual Identity in Universal Multimodal Embeddings](../../CVPR2026/multimodal_vlm/illuminating_visual_identity_in_universal_multimodal_embeddings.md)
-- [\[ICLR 2026\] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization](importance_sampling_for_multi-negative_multimodal_direct_preference_optimization.md)
-- [\[ICLR 2026\] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)
 
 </div>
 

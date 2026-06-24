@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] B³-Seg reformulates the task of "segmenting target objects on an off-the-shelf 3DGS asset" into a sequence of Beta-Bernoulli Bayesian updates. By utilizing an analytic form of Expected Information Gain (EIG) to actively select the most informative next camera view, the method achieves camera-free, training-free, open-v
+  [CVPR 2026][3D Vision][3DGS Segmentation] B³-Seg reformulates the task of "segmenting target objects on an off-the-shelf 3DGS asset" into a sequence of Beta-Bernoulli Bayesian updates. By utilizing an analytic form of Expected Information Gain (EIG) to actively select the most informative next camera view, the method achieves camera-free, training-free, open-vocabulary results in seconds. Its accuracy approaches that of supervised methods that require tens of minutes.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3DGS Segmentation"
+  - "Bayesian Update"
+  - "Active View Selection"
+  - "Expected Information Gain"
+  - "Open-vocabulary"
 date: 2026-05-08
-content_hash: 572c6ffdc9ad5cc2
+content_hash: 769d85d198486b50
 ---
+
 # B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ The combination provides a substantial gain of +9.6 mIoU. CLIP filters out incon
 
 ## Related Papers
 
-- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
-- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
-- [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
+- [\[CVPR 2026\] BA-GS: Bayesian Adaptive Gaussian Splatting for SFM-Free 3D Reconstruction](ba-gs_bayesian_adaptive_gaussian_splatting_for_sfm-free_3d_reconstruction.md)
+- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
+- [\[CVPR 2026\] AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows](anchorflow_training-free_3d_editing_via_latent_anchor-aligned_flows.md)
+- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
+- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
 
 </div>
 

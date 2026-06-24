@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FastVMT: Eliminating Redundancy in Video Motion Transfer
 description: >-
-  [ICLR 2026][Video Generation][Video Motion Transfer] By identifying and eliminating two types of redundancy in training-free video motion transfer pipelines—"motion redundancy" in attention and "gradient redundancy" in optimization—FastVMT utilizes sliding window motion extraction and skip-step gradient optimization to achieve an average 3.43× speedup (up to 14.91×) with
+  [ICLR 2026][Video Generation][Video Motion Transfer] By identifying and eliminating two types of redundancy in training-free video motion transfer pipelines—"motion redundancy" in attention and "gradient redundancy" in optimization—FastVMT utilizes sliding window motion extraction and skip-step gradient optimization to achieve an average 3.43× speedup (up to 14.91×) with almost no loss in fidelity or temporal consistency.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Motion Transfer
-  - Diffusion Transformer
-  - Training-Free
-  - Attention Redundancy
-  - Gradient Reuse
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Motion Transfer"
+  - "Diffusion Transformer"
+  - "Training-Free"
+  - "Attention Redundancy"
+  - "Gradient Reuse"
 date: 2026-05-08
-content_hash: 9c37ad7bb53ee2af
+content_hash: 25238a8e9b278e5f
 ---
+
 # FastVMT: Eliminating Redundancy in Video Motion Transfer
 
 **Conference**: ICLR 2026  
@@ -123,15 +124,13 @@ FastVMT achieves the best or tied-best results across all metrics while being th
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] EffiVMT: Video Motion Transfer via Efficient Spatial-Temporal Decoupled Finetuning](effivmt_video_motion_transfer_via_efficient_spatial-temporal_decoupled_finetunin.md)
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
 - [\[CVPR 2025\] DiTFlow: Video Motion Transfer with Diffusion Transformers](../../CVPR2025/video_generation/video_motion_transfer_with_diffusion_transformers.md)
-- [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](../../ICCV2025/video_generation/motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[NeurIPS 2025\] DisMo: Disentangled Motion Representations for Open-World Motion Transfer](../../NeurIPS2025/video_generation/dismo_disentangled_motion_representations_for_openworld_moti.md)
+- [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](../../CVPR2026/video_generation/let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
 
 </div>
 

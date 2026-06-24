@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CarGait: Cross-Attention based Re-ranking for Gait Recognition
 description: >-
-  [ICCV 2025][Human Understanding][Gait Recognition] This paper proposes CarGait, a cross-attention based re-ranking method for gait recognition. By performing strip-wise cross-attention between probe and candidate sequenc…
+  [ICCV 2025][Human Understanding][Gait Recognition] This paper proposes CarGait, a cross-attention based re-ranking method for gait recognition. By performing strip-wise cross-attention between probe and candidate sequences, CarGait learns fine-grained gait correspondences and maps global features from pretrained single-stage models into a new discriminative embedding space. The method consistently improves Rank-1/5 accuracy across seven gait models on three major benchmarks:…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Metric Learning"
   - "Fine-grained Matching"
 date: 2026-05-08
-content_hash: 0c72fbcb1901c7b3
+content_hash: 0dd133a7e7849d2e
 ---
 
 # CarGait: Cross-Attention based Re-ranking for Gait Recognition
@@ -140,11 +140,11 @@ CarGait is a two-stage approach: (1) a pretrained gait model produces a global r
 
 ## Related Papers
 
+- [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](../../CVPR2026/human_understanding/text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
 - [\[CVPR 2026\] MMGait: Towards Multi-Modal Gait Recognition](../../CVPR2026/human_understanding/mmgait_multi_modal_gait_recognition.md)
-- [\[ICLR 2026\] GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences](../../ICLR2026/human_understanding/gaitsnippet_gait_recognition_beyond_unordered_sets_and_ordered_sequences.md)
-- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
-- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[ICCV 2025\] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning](weakly_supervised_visible-infrared_person_re-identification_via_heterogeneous_ex.md)
+- [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](../../CVPR2026/human_understanding/eventgait_towards_robust_gait_recognition_with_event_streams.md)
+- [\[ECCV 2024\] Cut Out the Middleman: Revisiting Pose-Based Gait Recognition](../../ECCV2024/human_understanding/cut_out_the_middleman_revisiting_pose-based_gait_recognition.md)
+- [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](../../CVPR2026/human_understanding/hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
 
 </div>
 

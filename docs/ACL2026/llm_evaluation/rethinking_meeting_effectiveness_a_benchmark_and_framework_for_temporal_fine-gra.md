@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-Judge] This paper redefines meeting effectiveness evaluation by proposing an objective "Goal Achievement / Time Cost" standard and a temporal fine-grained evaluation paradigm. The authors constructed the AMI-ME dataset containing 2,459 annotated segments from 130 meetings and developed an LLM-based automatic evaluation framew
+  [ACL 2026][LLM Evaluation][Meeting Effectiveness Evaluation] This paper redefines meeting effectiveness evaluation by proposing an objective "Goal Achievement / Time Cost" standard and a temporal fine-grained evaluation paradigm. The authors constructed the AMI-ME dataset containing 2,459 annotated segments from 130 meetings and developed an LLM-based automatic evaluation framework that achieves a Spearman correlation of 0.64.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Meeting Effectiveness Evaluation"
+  - "Temporal Fine-grained Evaluation"
+  - "LLM-as-Judge"
+  - "Topic Segmentation"
+  - "Multi-party Dialogue"
 date: 2026-05-08
-content_hash: 31c5fdbb4882ec6a
+content_hash: 151fc2c42e3efe63
 ---
+
 # Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation
 
 **Conference**: ACL 2026  
@@ -134,9 +139,9 @@ As a pure evaluation framework, no training is involved. Annotations were conduc
 
 - [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
+- [\[ICLR 2026\] Teach2Eval: An Interaction-Driven LLMs Evaluation Method via Teaching Effectiveness](../../ICLR2026/llm_evaluation/teach2eval_an_interaction-driven_llms_evaluation_method_via_teaching_effectivene.md)
 - [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](../../ICML2026/llm_evaluation/on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
 - [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
-- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 
 </div>
 

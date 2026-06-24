@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective
 description: >-
-  [NeurIPS 2025][Image Generation][model collapse] This paper identifies a generalization-to-memorization transition in diffusion models under self-consuming loops (where each generation of models is trained on synthetic d…
+  [NeurIPS 2025 Spotlight][Image Generation][model collapse] This paper identifies a generalization-to-memorization transition in diffusion models under self-consuming loops (where each generation of models is trained on synthetic data from the previous one), reveals a strong linear correlation between training set entropy and model generalization (Pearson $r=0.91$), and proposes entropy-based data selection strategies (Greedy Selection / Threshold Decay Filter) that effectivel…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "model collapse"
   - "self-consuming loop"
@@ -13,7 +13,7 @@ tags:
   - "entropy"
   - "data selection"
 date: 2026-05-08
-content_hash: 44c7b8b009360e8d
+content_hash: c3a87fd7be55e7d9
 ---
 
 # A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective
@@ -143,11 +143,11 @@ Evaluated on CIFAR-10 (32K samples), FFHQ (8K samples), and MNIST (12K samples).
 
 ## Related Papers
 
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](../../CVPR2026/image_generation/generative_modeling_of_weights_generalization_or_memorization.md)
+- [\[ECCV 2024\] A Closer Look at GAN Priors: Exploiting Intermediate Features for Enhanced Model Inversion Attacks](../../ECCV2024/image_generation/a_closer_look_at_gan_priors_exploiting_intermediate_features.md)
 - [\[AAAI 2026\] UNSEEN: Enhancing Dataset Pruning from a Generalization Perspective](../../AAAI2026/image_generation/unseen_enhancing_dataset_pruning_from_a_generalization_perspective.md)
+- [\[ICML 2025\] GRAM: A Generative Foundation Reward Model for Reward Generalization](../../ICML2025/image_generation/gram_a_generative_foundation_reward_model_for_reward_generalization.md)
 - [\[NeurIPS 2025\] Scaling Can Lead to Compositional Generalization](scaling_can_lead_to_compositional_generalization.md)
-- [\[ICML 2026\] Quantifying Error Propagation and Model Collapse in Diffusion Models](../../ICML2026/image_generation/quantifying_error_propagation_and_model_collapse_in_diffusion_models.md)
-- [\[NeurIPS 2025\] Riemannian Consistency Model](riemannian_consistency_model.md)
-- [\[CVPR 2026\] Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework](../../CVPR2026/image_generation/smoothing_the_score_function_for_generalization_in_diffusion_models.md)
 
 </div>
 

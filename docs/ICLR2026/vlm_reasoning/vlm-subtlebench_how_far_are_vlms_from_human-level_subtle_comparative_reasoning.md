@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM] Proposes VLM-SubtleBench, a benchmark evaluating the subtle comparative reasoning capabilities of Visual Language Models, covering 10 difference types and 6 image domains (Natural, Gaming, Industrial, Aerial, Medical, Synthetic), revealing a performance gap of over 30% between VLMs and humans in spatial, temporal, and
+  [VLM Reasoning] Proposes VLM-SubtleBench, a benchmark evaluating the subtle comparative reasoning capabilities of Visual Language Models, covering 10 difference types and 6 image domains (Natural, Gaming, Industrial, Aerial, Medical, Synthetic), revealing a performance gap of over 30% between VLMs and humans in spatial, temporal, and viewpoint reasoning.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM
-  - Comparative Reasoning
-  - Benchmark
-  - Subtle Differences
-  - Multi-Image
+  - "VLM Reasoning"
 date: 2026-05-08
-content_hash: 58c5ab3201b440c1
+content_hash: 85386d1689fb98e5
 ---
+
 # VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?
 
 - **Conference**: ICLR 2026
@@ -130,10 +125,10 @@ The DINOv3 similarity of VLM-SubtleBench image pairs is significantly higher tha
 ## Related Papers
 
 - [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](../../CVPR2026/vlm_reasoning/see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
-- [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
-- [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
-- [\[ICLR 2026\] ARES: Multimodal Adaptive Reasoning via Difficulty-Aware Token-Level Entropy Shaping](ares_multimodal_adaptive_reasoning_via_difficulty-aware_token-level_entropy_shap.md)
+- [\[ICCV 2025\] Training-Free Personalization via Retrieval and Reasoning on Fingerprints](../../ICCV2025/vlm_reasoning/training-free_personalization_via_retrieval_and_reasoning_on_fingerprints.md)
+- [\[CVPR 2025\] Document Haystacks: Vision-Language Reasoning Over Piles of 1000+ Documents](../../CVPR2025/vlm_reasoning/document_haystacks_vision-language_reasoning_over_piles_of_1000_documents.md)
+- [\[ACL 2025\] MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale](../../ACL2025/vlm_reasoning/mammoth_vl_multimodal_reasoning.md)
+- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/vlm_reasoning/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 
 </div>
 

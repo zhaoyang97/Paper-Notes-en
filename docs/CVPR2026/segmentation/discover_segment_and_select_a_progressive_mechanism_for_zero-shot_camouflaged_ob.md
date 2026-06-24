@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][SAM] The proposed DSS is a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot training-free camouflaged object segmentation. It discovers the target (FOD) via self-supervised visual features and Leiden clustering, generates candidate masks with SAM, and selects the optimal mask through heuris
+  [CVPR 2026][Segmentation][Zero-shot segmentation] The proposed DSS is a three-stage progressive pipeline (Discover→Segment→Select) that achieves zero-shot training-free camouflaged object segmentation. It discovers the target (FOD) via self-supervised visual features and Leiden clustering, generates candidate masks with SAM, and selects the optimal mask through heuristic scoring and iterative MLLM pairwise comparisons. It significantly outperforms existing methods…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM
-  - MLLM
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Zero-shot segmentation"
+  - "Camouflaged object detection"
+  - "SAM"
+  - "MLLM"
+  - "Training-free pipeline"
+  - "Clustering localization"
 date: 2026-05-08
-content_hash: f69b1f9e2b216d3a
+content_hash: 538edd325ebfe590
 ---
+
 # DSS: Discover, Segment, and Select for Zero-shot Camouflaged Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -125,11 +130,11 @@ The entire pipeline is training-free and operates only during inference. Tunable
 
 ## Related Papers
 
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
+- [\[ICLR 2026\] Object-Centric Refinement for Enhanced Zero-Shot Segmentation](../../ICLR2026/segmentation/object-centric_refinement_for_enhanced_zero-shot_segmentation.md)
 - [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
 - [\[CVPR 2026\] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation](seeing_both_sides_towards_bidirectional_semantic_alignment_for_open-vocabulary_c.md)
 - [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
-- [\[CVPR 2026\] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models](ag-vas_anchor-guided_zero-shot_visual_anomaly_segmentation_with_large_multimodal.md)
+- [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Social Debiasing for Fair Multi-modal LLMs
 description: >-
-  [ICCV 2025][Causal Inference][Social bias] This paper constructs CMSC, a large-scale counterfactual dataset spanning 18 social concepts…
+  [ICCV 2025][Causal Inference][Social bias] This paper constructs CMSC, a large-scale counterfactual dataset spanning 18 social concepts, and proposes the Anti-Stereotype Debiasing (ASD) strategy—comprising bias-aware data resampling and a Social Fairness Loss—that effectively reduces social bias across four MLLM architectures with negligible degradation of general multimodal capability.
 tags:
   - "ICCV 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "fairness"
   - "data debiasing"
 date: 2026-05-08
-content_hash: 7ba827bceabdf959
+content_hash: 0b6bfb723736c1e6
 ---
 
 # Social Debiasing for Fair Multi-modal LLMs
@@ -139,11 +139,11 @@ Models are fine-tuned on SocialCounterfactuals and evaluated in a cross-dataset 
 
 ## Related Papers
 
+- [\[ICML 2025\] MPF: Aligning and Debiasing Language Models post Deployment via Multi Perspective Fusion](../../ICML2025/causal_inference/mpf_aligning_and_debiasing_language_models_post_deployment_via_multi_perspective.md)
 - [\[NeurIPS 2025\] A Principle of Targeted Intervention for Multi-Agent Reinforcement Learning](../../NeurIPS2025/causal_inference/a_principle_of_targeted_intervention_for_multi-agent_reinforcement_learning.md)
+- [\[CVPR 2025\] Joint Scheduling of Causal Prompts and Tasks for Multi-Task Learning](../../CVPR2025/causal_inference/joint_scheduling_of_causal_prompts_and_tasks_for_multi-task_learning.md)
 - [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
 - [\[ICLR 2026\] SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?](../../ICLR2026/causal_inference/selfreflect_can_llms_communicate_their_internal_answer_distribution.md)
-- [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
-- [\[NeurIPS 2025\] Performative Validity of Recourse Explanations](../../NeurIPS2025/causal_inference/performative_validity_of_recourse_explanations.md)
 
 </div>
 

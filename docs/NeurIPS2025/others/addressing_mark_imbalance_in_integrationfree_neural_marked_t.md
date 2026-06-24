@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes
 description: >-
-  [NeurIPS 2025][marked temporal point processes] This paper is the first to systematically reveal the severe impact of mark distribution imbalance on prediction performance in marked temporal point processes (MTPP). It pr…
+  [NeurIPS 2025][marked temporal point processes] This paper is the first to systematically reveal the severe impact of mark distribution imbalance on prediction performance in marked temporal point processes (MTPP). It proposes a mark-first-then-time prediction strategy, designs a thresholding method to calibrate the predicted probabilities of rare marks, and develops the integration-free IFNMTPP model to efficiently support mark probability estimation and time sampling.
 tags:
   - "NeurIPS 2025"
   - "marked temporal point processes"
@@ -11,7 +11,7 @@ tags:
   - "integration-free approximation"
   - "event prediction"
 date: 2026-05-08
-content_hash: 7c4d5bd306730e51
+content_hash: 780b608eda542e3b
 ---
 
 # Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes
@@ -130,11 +130,11 @@ The thresholding method substantially improves macro-F1 across all datasets, wit
 
 ## Related Papers
 
+- [\[ACL 2025\] A Spatio-Temporal Point Process for Fine-Grained Modeling of Reading Behavior](../../ACL2025/others/a_spatio-temporal_point_process_for_fine-grained_modeling_of_reading_behavior.md)
+- [\[CVPR 2026\] Neural Mixture Density Processes](../../CVPR2026/others/neural_mixture_density_processes.md)
 - [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 - [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
-- [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
-- [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
+- [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 
 </div>
 

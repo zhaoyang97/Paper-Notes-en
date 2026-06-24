@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CORDS - Continuous Representations of Discrete Structures
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] The task of "predicting a set of objects with unknown cardinality" is reformulated as inference over continuous fields. CORDS employs an **invertible** mapping to encode discrete object sets into a density field (encoding position and count) and a feature field (carrying attributes). The model learns entirely within th
+  [ICLR 2026][Graph Learning][Variable Cardinality] The task of "predicting a set of objects with unknown cardinality" is reformulated as inference over continuous fields. CORDS employs an **invertible** mapping to encode discrete object sets into a density field (encoding position and count) and a feature field (carrying attributes). The model learns entirely within the field space and performs precise decoding back to discrete sets when necessary. This allows handling variabl…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Variable Cardinality"
+  - "Continuous Fields"
+  - "Invertible Representations"
+  - "Kernel Superposition"
+  - "Molecule Generation"
 date: 2026-05-08
-content_hash: c930738984a3ed99
+content_hash: 095a1cf19b963e0d
 ---
+
 # CORDS - Continuous Representations of Discrete Structures
 
 **Conference**: ICLR 2026  

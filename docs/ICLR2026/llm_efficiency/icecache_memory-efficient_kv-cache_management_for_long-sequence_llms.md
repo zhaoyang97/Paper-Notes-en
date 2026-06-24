@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][KV-cache offloading] IceCache integrates "clustering tokens by semantic similarity" with the paging mechanism of PagedAttention. By utilizing an incrementally updatable multi-level DCI tree, it packs semantically similar tokens into the same physical memory pages. This ensures that relevant tokens are highly co-located during query-aware r
+  [ICLR 2026][LLM Efficiency][KV-cache offloading] IceCache integrates "clustering tokens by semantic similarity" with the paging mechanism of PagedAttention. By utilizing an incrementally updatable multi-level DCI tree, it packs semantically similar tokens into the same physical memory pages. This ensures that relevant tokens are highly co-located during query-aware retrieval, significantly improving hit rates and maintaining near-full cache accuracy with lower latency while u…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV-cache offloading
-  - PagedAttention
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV-cache offloading"
+  - "PagedAttention"
+  - "semantic clustering"
+  - "approximate nearest neighbor search"
+  - "multi-level DCI"
+  - "long-context inference"
 date: 2026-05-08
-content_hash: d21980086e534cb9
+content_hash: 4118166eba4d099d
 ---
+
 # IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs
 
 **Conference**: ICLR 2026  
@@ -117,10 +122,20 @@ IceCache achieves the **best trade-off** between CUDA memory footprint and TPOT 
 - **Value**: ⭐⭐⭐⭐ — Inference for long-sequence LLMs under memory constraints is a high-demand area. Achieving better-than-baseline results with 25% of the memory budget has high practical value.
 
  <!-- RELATED:START -->
- <div class="related-papers" markdown="1">
- </div>
- <!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
+- [\[ICLR 2026\] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences](louiskv_efficient_kv_cache_retrieval_for_long_input-output_sequences.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
+- [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)

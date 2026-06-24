@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoT-Edit: Let CoT Guide Instruction Video Editing
 description: >-
-  [CVPR 2026][Video Generation][Chain-of-Thought] Addressing the issues of inaccurate target localization and physically implausible object additions in complex scenarios for text-only instruction video editing, this paper proposes a three-stage **Plan–Guide–Edit** framework. A Multimodal Large Language Model (MLLM) with Chain-of-Thought (CoT) first "translates" instr
+  [CVPR 2026][Video Generation][Instruction Video Editing] Addressing the issues of inaccurate target localization and physically implausible object additions in complex scenarios for text-only instruction video editing, this paper proposes a three-stage **Plan–Guide–Edit** framework. A Multimodal Large Language Model (MLLM) with Chain-of-Thought (CoT) first "translates" instructions into a sequence of keyframe bounding boxes and enhanced instructions. A box-constrained mask br…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Instruction Video Editing"
+  - "Chain-of-Thought"
+  - "MLLM Planner"
+  - "Box-guided Mask"
+  - "Diffusion Editing"
 date: 2026-05-08
-content_hash: 294a4cda087c224c
+content_hash: 222133bb43da4fe2
 ---
+
 # CoT-Edit: Let CoT Guide Instruction Video Editing
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ Ablations evaluate Physical Plausibility (PR), Spatial Relations (SR), Instructi
 
 ## Related Papers
 
+- [\[CVPR 2026\] EasyV2V: A High-quality Instruction-based Video Editing Framework](easyv2v_a_high-quality_instruction-based_video_editing_framework.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
 - [\[CVPR 2026\] VIVA: VLM-Guided Instruction-Based Video Editing with Reward Optimization](viva_vlm-guided_instruction-based_video_editing_with_reward_optimization.md)
+- [\[ICLR 2026\] IVEBench: Modern Benchmark Suite for Instruction-Guided Video Editing Assessment](../../ICLR2026/video_generation/ivebench_modern_benchmark_suite_for_instruction-guided_video_editing_assessment.md)
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
-- [\[ICLR 2026\] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/lora-edit_controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
-- [\[CVPR 2026\] V-RGBX: Video Editing with Accurate Controls over Intrinsic Properties](v-rgbx_video_editing_with_accurate_controls_over_intrinsic_properties.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Analyzing Finetuning Representation Shift for Multimodal LLMs Steering
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM Interpretability] A training-free framework that reveals representation shifts in multimodal large language models (MLLMs) during finetuning through concept-level analysis…
+  [ICCV 2025][Multimodal VLM][MLLM Interpretability] A training-free framework that reveals representation shifts in multimodal large language models (MLLMs) during finetuning through concept-level analysis, and leverages shift vectors for lightweight model behavior steering (debiasing, safety control).
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Model Steering"
   - "Debiasing"
 date: 2026-05-08
-content_hash: c4f6bf36e050b596
+content_hash: ff0108ac2634dd00
 ---
 
 # Analyzing Finetuning Representation Shift for Multimodal LLMs Steering
@@ -52,7 +52,7 @@ The framework consists of three components: **concept extraction and comparison*
 
 2. **Concept Shift Vectors**
    The representations of the original model $f^a$ and the finetuned model $f^b$ are compared on the same dataset. For each original concept $\bm{u}_k^a$, the associated sample set $\bm{A}_k$ is identified and the shift vector is computed as:
-   $$\bm{\Delta}_k^{a \to b}(\bm{u}_k^a) = \frac{1}{|\bm{A}_k|} \sum_{m \in \bm{A}_k} (\bm{b}_m - \bm{a}_m)$$
+    $\bm{\Delta}_k^{a \to b}(\bm{u}_k^a) = \frac{1}{|\bm{A}_k|} \sum_{m \in \bm{A}_k} (\bm{b}_m - \bm{a}_m)$
    The shifted concept is then obtained via $\bm{u}_k^s = \bm{u}_k^a + \alpha \bm{\Delta}_k^{a \to b}$. A key finding is that **higher individual shift consistency correlates with better concept recovery** (statistically significant positive correlation).
 
 3. **Coarse-grained and Fine-grained Model Steering**
@@ -128,11 +128,11 @@ Fine-grained steering substantially outperforms coarse-grained steering on the g
 
 ## Related Papers
 
-- [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
 - [\[NeurIPS 2025\] Learning to Steer: Input-dependent Steering for Multimodal LLMs](../../NeurIPS2025/multimodal_vlm/learning_to_steer_input-dependent_steering_for_multimodal_llms.md)
+- [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
 - [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
 - [\[ICCV 2025\] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs](enrich_and_detect_video_temporal_grounding_with_multimodal_llms.md)
-- [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
+- [\[ICCV 2025\] Visual Chronicles: Using Multimodal LLMs to Analyze Massive Collections of Images](visual_chronicles_using_multimodal_llms_to_analyze_massive_collections_of_images.md)
 
 </div>
 

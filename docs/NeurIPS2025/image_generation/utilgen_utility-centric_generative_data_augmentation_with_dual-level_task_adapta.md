@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation
 description: >-
-  [NeurIPS 2025][Image Generation][Data Augmentation] This paper proposes UtilGen, a utility-centric generative data augmentation framework that evaluates the downstream task utility of synthetic data via a meta-learning w…
+  [NeurIPS 2025][Image Generation][Data Augmentation] This paper proposes UtilGen, a utility-centric generative data augmentation framework that evaluates the downstream task utility of synthetic data via a meta-learning weight network, and employs a dual-level optimization strategy—model-level DPO and instance-level (prompt + noise) optimization—to adaptively generate high-utility synthetic training data, achieving an average improvement of 3.87% across 8 benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Bi-level Optimization"
   - "DPO"
 date: 2026-05-08
-content_hash: c1745636ab575e3d
+content_hash: abeaaa3e55e3f1a8
 ---
 
 # UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation
@@ -124,10 +124,10 @@ Average gain: synthetic-only +3.87%, joint training +3.37%.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Non-Asymptotic Analysis of Data Augmentation for Precision Matrix Estimation](non-asymptotic_analysis_of_data_augmentation_for_precision_matrix_estimation.md)
-- [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
+- [\[CVPR 2026\] OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance](../../CVPR2026/image_generation/ontoaug_rethinking_generative_data_augmentation_via_ontology_guidance.md)
 - [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
+- [\[NeurIPS 2025\] Aligning Compound AI Systems via System-level DPO](aligning_compound_ai_systems_via_system-level_dpo.md)
 - [\[NeurIPS 2025\] Increasing the Utility of Synthetic Images through Chamfer Guidance](increasing_the_utility_of_synthetic_images_through_chamfer_guidance.md)
-- [\[ICLR 2026\] Pseudo-Nonlinear Data Augmentation: A Constrained Energy Minimization Viewpoint](../../ICLR2026/image_generation/pseudo-nonlinear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
 
 </div>
 

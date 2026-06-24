@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] The authors propose IGSA (Inverse Gradient Sample-based Attack), which utilizes "Inverse Gradient Sampling" to actively identify the most destructive perturbation directions within the neighborhood of an adversarial example. By performing perturbation-guided optimization along these directions, the method generates rob
+  [ICLR 2026][AI Safety][Adversarial Examples] The authors propose IGSA (Inverse Gradient Sample-based Attack), which utilizes "Inverse Gradient Sampling" to actively identify the most destructive perturbation directions within the neighborhood of an adversarial example. By performing perturbation-guided optimization along these directions, the method generates robust adversarial examples that maintain high attack success rates under various **unknown disturbances** (blur, JPEG…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Adversarial Examples"
+  - "Robust Attack"
+  - "Inverse Gradient Sampling"
+  - "Transferability"
+  - "Unknown Disturbances"
 date: 2026-05-08
-content_hash: ccdabd87453c3eb9
+content_hash: 632f641b7701bafe
 ---
+
 # Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample
 
 **Conference**: ICLR 2026  
@@ -147,10 +153,10 @@ Other methods almost entirely fail in targeted attacks against defense models (<
 ## Related Papers
 
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[ICLR 2026\] Reliable Poisoned Sample Detection against Backdoor Attacks Enhanced by Sharpness-Aware Minimization](reliable_poisoned_sample_detection_against_backdoor_attacks_enhanced_by_sharpnes.md)
 - [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
 - [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)
 - [\[ICLR 2026\] Protection against Source Inference Attacks in Federated Learning](protection_against_source_inference_attacks_in_federated_learning.md)
+- [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
 
 </div>
 

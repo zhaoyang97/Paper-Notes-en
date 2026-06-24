@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows
 description: >-
-  [AAAI 2026][Computational Biology][Genomic workflows] Three complementary chromosome-level genomic parallelization scheduling schemes are proposed — static scheduling (optimizing processing order)…
+  [AAAI 2026][Computational Biology][Genomic workflows] Three complementary chromosome-level genomic parallelization scheduling schemes are proposed — static scheduling (optimizing processing order), dynamic scheduling (knapsack-based batching with online RAM prediction), and a symbolic regression RAM predictor — achieving significant reductions in out-of-memory errors and execution time in both simulated and real precision medicine pipelines.
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "scheduling optimization"
   - "symbolic regression"
 date: 2026-05-08
-content_hash: 53ba7c860b9778ac
+content_hash: 92f4d8e055f8fb5d
 ---
 
 # Efficient Chromosome Parallelization for Precision Medicine Genomic Workflows
@@ -187,11 +187,11 @@ The complete dynamic scheduler closes approximately 13% of the gap to the theore
 
 ## Related Papers
 
+- [\[ICLR 2026\] Convex Efficient Coding](../../ICLR2026/computational_biology/convex_efficient_coding.md)
+- [\[ICLR 2026\] A Resolution-Agnostic Geometric Transformer for Chromosome Modeling Using Inertial Frame](../../ICLR2026/computational_biology/a_resolution-agnostic_geometric_transformer_for_chromosome_modeling_using_inerti.md)
 - [\[AAAI 2026\] TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling](trinitydna_a_bio-inspired_foundational_model_for_efficient_long-sequence_dna_mod.md)
-- [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](../../NeurIPS2025/computational_biology/random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
-- [\[AAAI 2026\] Constrained Best Arm Identification with Tests for Feasibility](constrained_best_arm_identification_with_tests_for_feasibility.md)
-- [\[AAAI 2026\] On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples](on_the_information_processing_of_one-dimensional_wasserstein_distances_with_fini.md)
-- [\[AAAI 2026\] EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization](epo_diverse_and_realistic_protein_ensemble_generation_via_energy_preference_opti.md)
+- [\[ICML 2026\] Rethinking Genomic Modeling Through Optical Character Recognition](../../ICML2026/computational_biology/rethinking_genomic_modeling_through_optical_character_recognition.md)
+- [\[ICLR 2026\] Tokenization to Transfer: Do Genomic Foundation Models Learn Good Representations?](../../ICLR2026/computational_biology/tokenization_to_transfer_do_genomic_foundation_models_learn_good_representations.md)
 
 </div>
 

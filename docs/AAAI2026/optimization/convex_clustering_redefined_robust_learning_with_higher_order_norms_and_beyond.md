@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator
 description: >-
-  [AAAI 2026][Optimization][Convex Clustering] This paper integrates the Median of Means (MoM) estimator into the convex clustering framework…
+  [AAAI 2026][Optimization][Convex Clustering] This paper integrates the Median of Means (MoM) estimator into the convex clustering framework, proposing the COMET algorithm. By combining random binning with median aggregation, COMET achieves robustness to noise and outliers without requiring prior knowledge of the number of clusters $k$. Weak consistency is established theoretically, and experiments on multiple real-world datasets demonstrate substantial improvements over six b…
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Outlier Detection"
   - "Adam Optimization"
 date: 2026-05-08
-content_hash: 140da55be4ca1140
+content_hash: d887e69bc5a47e56
 ---
 
 # Convex Clustering Redefined: Robust Learning with the Median of Means Estimator
@@ -153,11 +153,11 @@ The Brain dataset contains 42 brain tumor samples, 5597 features, and 5 classes.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](../../ICLR2026/optimization/convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
-- [\[ICML 2026\] Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption](../../ICML2026/optimization/convex_basins_in_single-index_model_loss_landscapes_applications_to_robust_recov.md)
+- [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](../../ICLR2026/optimization/scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
+- [\[ICLR 2026\] Angle k-means: Accelerating Exact k-means via Angular Relationships](../../ICLR2026/optimization/angle_k-means.md)
 - [\[AAAI 2026\] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets](ghost_solving_the_traveling_salesman_problem_on_graphs_of_convex_sets.md)
-- [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](../../NeurIPS2025/optimization/improving_the_straight-through_estimator_with_zeroth-order_information.md)
-- [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](../../NeurIPS2025/optimization/preference_learning_with_response_time_robust_losses_and_guarantees.md)
+- [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](../../ICML2026/optimization/clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
+- [\[CVPR 2025\] Convex Relaxation for Robust Vanishing Point Estimation in Manhattan World](../../CVPR2025/optimization/convex_relaxation_for_robust_vanishing_point_estimation_in_manhattan_world.md)
 
 </div>
 

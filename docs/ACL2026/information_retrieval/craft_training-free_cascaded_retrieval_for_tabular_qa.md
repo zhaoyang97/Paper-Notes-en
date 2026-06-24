@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CRAFT: Training-Free Cascaded Retrieval for Tabular QA
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes CRAFT, a three-stage cascaded table retrieval framework that requires no dataset-specific training (SPLADE sparse filtering → semantic mini-table ranking → neural re-ranking). By enhancing table representations with Gemini-generated titles and descriptions, it achieves SOTA on NQ-Tables (R@1 49.84),
+  [ACL 2026][Information Retrieval & RAG][Table Retrieval] This paper proposes CRAFT, a three-stage cascaded table retrieval framework that requires no dataset-specific training (SPLADE sparse filtering → semantic mini-table ranking → neural re-ranking). By enhancing table representations with Gemini-generated titles and descriptions, it achieves SOTA on NQ-Tables (R@1 49.84), demonstrates strong zero-shot generalization on OTT-QA, and exhibits significant robustness to query r…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Table Retrieval"
+  - "Cascaded Retrieval"
+  - "Zero-shot"
+  - "Table QA"
+  - "Training-free"
 date: 2026-05-08
-content_hash: f9c134a729eede26
+content_hash: 41c1e7f8afff833b
 ---
+
 # CRAFT: Training-Free Cascaded Retrieval for Tabular QA
 
 **Conference**: ACL 2026  
@@ -152,7 +158,7 @@ This paper involves no training. All models use pre-trained weights or APIs. The
 - [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](test-time_training_for_zero-resource_dense_retrieval_reranking.md)
 - [\[ACL 2026\] S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](s2g-rag_structured_sufficiency_and_gap_judging_for_iterative_retrieval-augmented.md)
 - [\[ACL 2026\] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](navigating_large-scale_document_collections_mudabench_for_multi-document_analyti.md)
-- [\[ICLR 2026\] Q-RAG: Long Context Multi-Step Retrieval via Value-Based Embedder Training](../../ICLR2026/information_retrieval/q_rag_long_context_multi_step_retrieval.md)
+- [\[ICLR 2026\] AssoMem: Scalable Memory QA with Multi-Signal Associative Retrieval](../../ICLR2026/information_retrieval/assomem_scalable_memory_qa_with_multi-signal_associative_retrieval.md)
 
 </div>
 

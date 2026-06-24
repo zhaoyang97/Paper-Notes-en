@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] On the Impact of the Utility in Semivalue-based Data Valuation
 description: >-
-  [ICLR 2026][Others][Data Valuation] This paper introduces a geometric representation termed "spatial signature" to unify the problem of utility selection in data valuation as a directional rotation on the unit circle. It proposes a quantitative robustness metric $R_p$, revealing that the Banzhaf value exhibits the highest ranking stability across differe
+  [ICLR 2026][Data Valuation] This paper introduces a geometric representation termed "spatial signature" to unify the problem of utility selection in data valuation as a directional rotation on the unit circle. It proposes a quantitative robustness metric $R_p$, revealing that the Banzhaf value exhibits the highest ranking stability across different utilities.
 tags:
-  - ICLR 2026
-  - Others
-  - Data Valuation
-  - Semivalue
-  - Shapley Value
-  - Banzhaf Value
-  - Robustness
+  - "ICLR 2026"
+  - "Data Valuation"
+  - "Semivalue"
+  - "Shapley Value"
+  - "Banzhaf Value"
+  - "Robustness"
 date: 2026-05-08
-content_hash: e92c2e8b166d67ec
+content_hash: 76cbbf4ed6deb6cc
 ---
+
 # On the Impact of the Utility in Semivalue-based Data Valuation
 
 **Conference**: ICLR 2026  

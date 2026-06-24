@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Potential of Weighting Methods in Federated Learning through Communication Compression
 description: >-
-  [ICLR 2026][Optimization & Theory][DIANA] This paper proposes ADI (Agnostic DIANA), which embeds "DIANA-style differential compression" into the solving of the agnostic weighted federated learning saddle point problem. This makes the two previously incompatible paths—"automatic weighting" and "communication compression"—simultaneously viable for the first time
+  [ICLR 2026][Optimization][Weighted Federated Learning] This paper proposes ADI (Agnostic DIANA), which embeds "DIANA-style differential compression" into the solving of the agnostic weighted federated learning saddle point problem. This makes the two previously incompatible paths—"automatic weighting" and "communication compression"—simultaneously viable for the first time. By using a $\min_\theta\max_\pi$ weighting framework to combat data heterogeneity while only uploading…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - DIANA
+  - "ICLR 2026"
+  - "Optimization"
+  - "Weighted Federated Learning"
+  - "Communication Compression"
+  - "Saddle Point Problem"
+  - "DIANA"
+  - "Optimistic Extra-gradient"
 date: 2026-05-08
-content_hash: 2f95d50f52b88f7f
+content_hash: 1346423dbfe31a21
 ---
+
 # Unlocking the Potential of Weighting Methods in Federated Learning through Communication Compression
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ Weight evolution analysis (Figure 3) shows: initially all client weights are equ
 ## Related Papers
 
 - [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[ICLR 2026\] LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning](legacy_a_lightweight_dynamic_gradient_compression_strategy_for_distributed_deep_.md)
 - [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)

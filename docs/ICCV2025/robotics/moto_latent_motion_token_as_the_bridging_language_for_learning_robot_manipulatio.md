@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
 description: >-
-  [ICCV 2025][Robotics][Video Pre-training] This paper proposes Moto, a framework that encodes inter-frame visual motion from video into discrete sequences via unsupervised Latent Motion Tokens. A GPT-style autoregressive…
+  [ICCV 2025][Robotics][Video Pre-training] This paper proposes Moto, a framework that encodes inter-frame visual motion from video into discrete sequences via unsupervised Latent Motion Tokens. A GPT-style autoregressive pre-training scheme is employed to learn motion priors, which are then transferred to real robot manipulation through a co-fine-tuning strategy. Moto achieves performance competitive with 55B-parameter models on the SIMPLER and CALVIN benchmarks using only 98M…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Robot Manipulation"
   - "Cross-Embodiment Transfer"
 date: 2026-05-08
-content_hash: bab1da7d4ba82f46
+content_hash: 48b83deae66cbfb3
 ---
 
 # Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos
@@ -166,11 +166,11 @@ Semantic validity of motion tokens:
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](../../CVPR2026/robotics/como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
 - [\[ICCV 2025\] Resolving Token-Space Gradient Conflicts: Token Space Manipulation for Transformer-Based Multi-Task Learning](resolving_token-space_gradient_conflicts_token_space_manipulation_for_transforme.md)
+- [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](../../CVPR2026/robotics/como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
 - [\[ICCV 2025\] Interaction-Merged Motion Planning: Effectively Leveraging Diverse Motion Datasets for Robust Planning](interaction-merged_motion_planning_effectively_leveraging_diverse_motion_dataset.md)
 - [\[ICCV 2025\] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations](bridging_domain_generalization_to_multimodal_domain_generalization_via_unified_r.md)
-- [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](imanip_skill-incremental_learning_for_robotic_manipulation.md)
+- [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](../../CVPR2026/robotics/dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
 
 </div>
 

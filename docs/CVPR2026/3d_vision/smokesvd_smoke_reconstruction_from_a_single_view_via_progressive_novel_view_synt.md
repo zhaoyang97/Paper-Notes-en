@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] This work utilizes diffusion models to synthesize side views frame-by-frame from a **single-view** video, followed by a cyclic reconstruction process of "coarse density → progressive refinement → fine density". This framework achieves high-quality single-view smoke reconstruction while being two orders of magnitude fas
+  [CVPR 2026][3D Vision][Smoke reconstruction] This work utilizes diffusion models to synthesize side views frame-by-frame from a **single-view** video, followed by a cyclic reconstruction process of "coarse density → progressive refinement → fine density". This framework achieves high-quality single-view smoke reconstruction while being two orders of magnitude faster than differentiable rendering (15 minutes vs. >30 hours).
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Smoke reconstruction"
+  - "Single-view"
+  - "Diffusion models"
+  - "Novel view synthesis"
+  - "Fluid physical constraints"
 date: 2026-05-08
-content_hash: 53b4ab3f55e465b6
+content_hash: 260560ce77ef827f
 ---
+
 # SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -139,14 +144,15 @@ NvRef Novel View Refinement Ablation:
 - Value: ⭐⭐⭐⭐ Significant practical value for graphics and VFX by reducing reconstruction time from hours to minutes while supporting re-simulation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
-- [\[CVPR 2026\] Splatent: Splatting Diffusion Latents for Novel View Synthesis](splatent_splatting_diffusion_latents_for_novel_view_synthesis.md)
 - [\[CVPR 2026\] OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation](orienpose_orientation-guided_novel_view_synthesis_for_single-image_unseen_object.md)
+- [\[CVPR 2026\] Splatent: Splatting Diffusion Latents for Novel View Synthesis](splatent_splatting_diffusion_latents_for_novel_view_synthesis.md)
 - [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
 
 </div>

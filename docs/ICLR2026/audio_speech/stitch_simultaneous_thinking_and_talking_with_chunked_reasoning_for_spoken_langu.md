@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][Chain-of-Thought] Stitch is proposed to enable "thinking while talking" in Spoken Language Models (SLMs) by interleaving silent reasoning tokens with speech tokens in chunks. It leverages the idle computation time during audio playback to perform reasoning. Stitch-S achieves first-frame latency identical to non-reasoning baselines while
+  [ICLR 2026][Audio & Speech][Spoken Language Models] Stitch is proposed to enable "thinking while talking" in Spoken Language Models (SLMs) by interleaving silent reasoning tokens with speech tokens in chunks. It leverages the idle computation time during audio playback to perform reasoning. Stitch-S achieves first-frame latency identical to non-reasoning baselines while improving mathematical reasoning accuracy by approximately 15 percentage points.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Spoken Language Models"
+  - "Chain-of-Thought"
+  - "Simultaneous thinking and talking"
+  - "Chunked reasoning"
+  - "Latency optimization"
 date: 2026-05-08
-content_hash: afe62f29689aa8dc
+content_hash: 7435cbe3b6cf1c28
 ---
+
 # Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models
 
 **Conference**: ICLR 2026  
@@ -137,7 +142,7 @@ Stitch-S performs comparably to baselines on non-reasoning tasks, indicating tha
 - [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
 - [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
 - [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
-- [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
+- [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
 
 </div>
 

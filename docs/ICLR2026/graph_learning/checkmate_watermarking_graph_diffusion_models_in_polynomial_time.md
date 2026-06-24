@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CheckMate! Watermarking Graph Diffusion Models in Polynomial Time
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] CheckWate is the first sampling-time watermarking framework for **graph diffusion models**. It embeds watermarks into the **eigenvalues** of noise latent variables (as eigenvalues are invariant to graph isomorphism), thereby bypassing the NP-hard obstacles of Graph Isomorphism (GI) and Graph Edit Distance (GED). It ach
+  [ICLR2026][Graph Learning][Graph Diffusion Models] CheckWate is the first sampling-time watermarking framework for **graph diffusion models**. It embeds watermarks into the **eigenvalues** of noise latent variables (as eigenvalues are invariant to graph isomorphism), thereby bypassing the NP-hard obstacles of Graph Isomorphism (GI) and Graph Edit Distance (GED). It achieves $O(N^3)$ polynomial-time watermark verification with stable detection across four datasets and four typ…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Graph Diffusion Models"
+  - "Generative Watermarking"
+  - "Graph Isomorphism"
+  - "Spectral Methods"
+  - "Checkerboard Random Matrices"
 date: 2026-05-08
-content_hash: d045104718e5c50c
+content_hash: acbc51eb78cf12cc
 ---
+
 # CheckMate! Watermarking Graph Diffusion Models in Polynomial Time
 
 **Conference**: ICLR2026  
@@ -131,7 +137,6 @@ CheckWate achieves optimal or near-optimal results across quality metrics, perfo
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

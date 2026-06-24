@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issue where enhancing high-frequency features simultaneously increases false alarm rates in infrared small target detection, this paper proposes a noise-suppression feature pyramid network (NS-FPN) from a frequency-domain perspective. By replacing the 1×1 convolutions and upsampling in the FPN with a Low
+  [CVPR 2026][Object Detection][Infrared Small Target] Addressing the issue where enhancing high-frequency features simultaneously increases false alarm rates in infrared small target detection, this paper proposes a noise-suppression feature pyramid network (NS-FPN) from a frequency-domain perspective. By replacing the 1×1 convolutions and upsampling in the FPN with a Low-frequency-guided Feature Purification (LFP) module and a Spiral-aware Feature Sampling (SFS) module…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Infrared Small Target"
+  - "Noise Suppression"
+  - "Frequency Domain Analysis"
+  - "Feature Pyramid"
+  - "False Alarm Suppression"
 date: 2026-05-08
-content_hash: 495417ef92ddb047
+content_hash: b1f886f2d01603f2
 ---
+
 # Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective
 
 **Conference**: CVPR 2026  
@@ -153,7 +159,7 @@ Comparison of sampling methods:
 - [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
 - [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
-- [\[CVPR 2026\] RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](raven_radar_adaptive_vision_encoders_for_efficient_chirp-wise_object_detection_a.md)
+- [\[CVPR 2025\] Small Target Detection Based on Mask-Enhanced Attention Fusion of Visible and Infrared Remote Sensing Images](../../CVPR2025/object_detection/small_target_detection_based_on_mask-enhanced_attention_fusion_of_visible_and_in.md)
 
 </div>
 

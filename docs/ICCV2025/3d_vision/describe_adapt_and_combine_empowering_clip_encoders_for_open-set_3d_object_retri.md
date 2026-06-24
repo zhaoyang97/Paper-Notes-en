@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval
 description: >-
-  [ICCV 2025][3D Vision][Open-set 3D retrieval] This paper proposes the DAC framework, which employs a "Describe–Adapt–Combine" three-step strategy to synergize CLIP with a multimodal large language model (MLLM). Using onl…
+  [ICCV 2025][3D Vision][Open-set 3D retrieval] This paper proposes the DAC framework, which employs a "Describe–Adapt–Combine" three-step strategy to synergize CLIP with a multimodal large language model (MLLM). Using only multi-view images, DAC substantially outperforms the previous SOTA method that relies on all modalities (point clouds + voxels + images) on open-set 3D object retrieval, achieving an average mAP improvement of over +10%.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "multi-view"
 date: 2026-05-08
-content_hash: b2d77fce8fcf88a9
+content_hash: e5bfab5528c5aad2
 ---
 
 # Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval
@@ -163,8 +163,8 @@ Contribution of each module (ViT-B/32, format: mAP/NDCG/ANMRR):
 ## Related Papers
 
 - [\[CVPR 2026\] DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval](../../CVPR2026/3d_vision/dino_eats_clip_adapting_beyond_knowns_for_open-set_3d_object_retrieval.md)
-- [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
 - [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
 - [\[ICCV 2025\] LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities](llava-3d_a_simple_yet_effective_pathway_to_empowering_lmms_with_3d_capabilities.md)
 - [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
 

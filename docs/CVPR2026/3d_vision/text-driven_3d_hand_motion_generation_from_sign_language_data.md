@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Text-Driven 3D Hand Motion Generation from Sign Language Data
 description: >-
-  [CVPR 2026][Human Understanding][SMPL-X] Utilizing large-scale sign language videos, sign language dictionaries, and LLMs, this work automatically constructs a dataset of 1.3 million "text-3D hand motion" pairs (BOBSL3DT). From this, the authors train HandMDM, a hand motion diffusion model driven by free-text descriptions (hand shape, position, finger/arm mov
+  [CVPR 2026][3D Vision][Hand motion generation] Utilizing large-scale sign language videos, sign language dictionaries, and LLMs, this work automatically constructs a dataset of 1.3 million "text-3D hand motion" pairs (BOBSL3DT). From this, the authors train HandMDM, a hand motion diffusion model driven by free-text descriptions (hand shape, position, finger/arm movement), which demonstrates strong generalization to unseen gestures, various sign languages…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - SMPL-X
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand motion generation"
+  - "Text-conditioned diffusion"
+  - "Sign language data"
+  - "Data scaling"
+  - "SMPL-X"
 date: 2026-05-08
-content_hash: d6fb3dd36653e03e
+content_hash: 1104b70afd9b4074
 ---
+
 # Text-Driven 3D Hand Motion Generation from Sign Language Data
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,16 @@ The model significantly outperforms baselines trained on smaller target-domain d
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
-- [\[CVPR 2026\] Learning Effective Sign Features without Text for Gloss-free Sign Language Translation](learning_effective_sign_features_without_text_for_gloss-free_sign_language_trans.md)
-- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
+- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)
+- [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
+- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
+- [\[ECCV 2024\] SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and Benchmark](../../ECCV2024/3d_vision/signavatars_a_large-scale_3d_sign_language_holistic_motion_dataset_and_benchmark.md)
+- [\[ICML 2026\] RelaxFlow: Text-Driven Amodal 3D Generation](../../ICML2026/3d_vision/relaxflow_text-driven_amodal_3d_generation.md)
 
 </div>
 

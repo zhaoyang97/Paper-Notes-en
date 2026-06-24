@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the overlooked characteristic that "lesion evolution is bidirectional and asymmetric (including both new onset and resolution)" in longitudinal chest X-ray report generation, BiOTPrompt utilizes **Bidirectional Optimal Transport** to establish soft correspondences between current and historical images. By id
+  [CVPR 2026][Medical Imaging][Radiology Report Generation] Addressing the overlooked characteristic that "lesion evolution is bidirectional and asymmetric (including both new onset and resolution)" in longitudinal chest X-ray report generation, BiOTPrompt utilizes **Bidirectional Optimal Transport** to establish soft correspondences between current and historical images. By identifying "newly emerging regions" and "disappearing regions" through the asymmetry in transport quali…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Radiology Report Generation"
+  - "Bidirectional Optimal Transport"
+  - "Disease Evolution"
+  - "LLM Prompting"
+  - "Multimodal Consistency"
 date: 2026-05-08
-content_hash: 103919f2171bc2d3
+content_hash: 2b034f863abde38f
 ---
+
 # BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation
 
 **Conference**: CVPR 2026  
@@ -140,15 +146,16 @@ BiOTPrompt achieves SOTA in all metrics. Notably, it **outperforms models using 
 - Value: ⭐⭐⭐⭐⭐ High clinical potential due to lack of historical report dependency.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
+- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](../../ICLR2026/medical_imaging/rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
 - [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
-- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 
 </div>
 

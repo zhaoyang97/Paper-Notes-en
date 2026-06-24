@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction
 description: >-
-  [NeurIPS 2025][Time Series][Jump diffusion] This paper proposes Neural MJD, which parameterizes a non-stationary Merton Jump Diffusion model via neural networks…
+  [NeurIPS 2025][Time Series][Jump diffusion] This paper proposes Neural MJD, which parameterizes a non-stationary Merton Jump Diffusion model via neural networks, casting prediction as an SDE simulation problem. The framework combines a time-varying Itô diffusion (capturing continuous drift) with a time-varying compound Poisson process (modeling abrupt jumps), and employs likelihood truncation together with an Euler-Maruyama with Restart solver to enable scalable learning and…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "time series forecasting"
   - "financial modeling"
 date: 2026-05-08
-content_hash: a1987f1682b67190
+content_hash: fcf740ecc879b665
 ---
 
 # Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction

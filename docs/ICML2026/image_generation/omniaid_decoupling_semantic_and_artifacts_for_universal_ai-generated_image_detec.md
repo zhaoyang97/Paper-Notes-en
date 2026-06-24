@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild
 description: >-
-  [ICML 2026][Image Generation][MoE] OmniAID employs a decoupled MoE architecture consisting of "Semantic Experts + a Universal Artifact Expert" to learn two types of forgery cues—"content-related flaws" and "universal generation artifacts"—within a low-rank residual subspace derived from CLIP-ViT attention weight SVD. Coupled with the modern Mirage datas
+  [ICML 2026][Image Generation][AIGI Detection] OmniAID employs a decoupled MoE architecture consisting of "Semantic Experts + a Universal Artifact Expert" to learn two types of forgery cues—"content-related flaws" and "universal generation artifacts"—within a low-rank residual subspace derived from CLIP-ViT attention weight SVD. Coupled with the modern Mirage dataset, it achieves state-of-the-art average accuracies of 95.9%, 91.4%, and 88.4% on GenImage, Chameleon…
 tags:
-  - ICML 2026
-  - Image Generation
-  - MoE
+  - "ICML 2026"
+  - "Image Generation"
+  - "AIGI Detection"
+  - "MoE"
+  - "Semantic-Artifact Decoupling"
+  - "SVD Residual Subspace"
+  - "Mirage Dataset"
 date: 2026-05-08
-content_hash: b93c1bb707ece74a
+content_hash: d9972208b3dc29a5
 ---
+
 # OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild
 
 **Conference**: ICML 2026  
@@ -130,6 +135,7 @@ Note: Standard OmniAID and baselines were trained only on GenImage-SDv1.4 for fa
 - Value: ⭐⭐⭐⭐⭐ Provides both a SOTA detector and a modern benchmark aligned with current generators.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

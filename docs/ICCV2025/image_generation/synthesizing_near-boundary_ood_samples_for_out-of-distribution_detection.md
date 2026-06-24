@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection
 description: >-
-  [ICCV 2025][Image Generation][Out-of-distribution detection] This paper proposes SynOOD, which synthesizes challenging near-boundary OOD samples by combining MLLM-based contextual semantic extraction…
+  [ICCV 2025][Image Generation][Out-of-distribution detection] This paper proposes SynOOD, which synthesizes challenging near-boundary OOD samples by combining MLLM-based contextual semantic extraction, iterative diffusion inpainting, and OOD gradient guidance. The synthesized samples are used to fine-tune the CLIP image encoder and negative label features, achieving a 2.80% AUROC improvement and 11.13% FPR95 reduction on the ImageNet benchmark.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model generation"
   - "negative labels"
 date: 2026-05-08
-content_hash: d6a591382382d391
+content_hash: 271a9e005988827a
 ---
 
 # Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection
@@ -140,10 +140,10 @@ $$\mathcal{L}^P = -\frac{1}{2m}\sum_{i=1}^{2m}\log\frac{\exp(sim(\hat{I}_i, T_i)
 
 ## Related Papers
 
+- [\[ICML 2025\] Out-of-Distribution Detection Methods Answer the Wrong Questions](../../ICML2025/image_generation/out-of-distribution_detection_methods_answer_the_wrong_questions.md)
 - [\[ICCV 2025\] Penalizing Boundary Activation for Object Completeness in Diffusion Models](penalizing_boundary_activation_for_object_completeness_in_diffusion_models.md)
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
 - [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
-- [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](../../NeurIPS2025/image_generation/epistemic_uncertainty_for_generated_image_detection.md)
 - [\[ICCV 2025\] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis](deepshield_fortifying_deepfake_video_detection_with_local_and_global_forgery_ana.md)
 
 </div>

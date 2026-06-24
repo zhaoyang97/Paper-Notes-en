@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adapting Lightweight Image-based Counting Models for Video Crowd Counting
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper avoids adding any temporal modules to Video Crowd Counting (VCC). Instead, it analytically formulates the spatiotemporal prior—that "crowd count changes between adjacent frames should be bounded"—as a frequency-domain statistical regulator based on the Characteristic Function (ChF). This regulator constrains
+  [CVPR 2026][Multimodal Efficiency][Video Crowd Counting] This paper avoids adding any temporal modules to Video Crowd Counting (VCC). Instead, it analytically formulates the spatiotemporal prior—that "crowd count changes between adjacent frames should be bounded"—as a frequency-domain statistical regulator based on the Characteristic Function (ChF). This regulator constrains a lightweight Image Crowd Counting (ICC) model only during training, while inference remains single-fr…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Video Crowd Counting"
+  - "Lightweight"
+  - "Statistical Regulator"
+  - "Characteristic Function"
+  - "Spatiotemporal Consistency"
 date: 2026-05-08
-content_hash: a46ee37e081065ac
+content_hash: 8748c2b92c719cf0
 ---
+
 # Adapting Lightweight Image-based Counting Models for Video Crowd Counting
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Single-frame inference allows the frame rate to far exceed multi-frame methods. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)
-- [\[ICML 2026\] Parameters as Experts: Adapting Vision Models with Dynamic Parameter Routing](../../ICML2026/model_compression/parameters_as_experts_adapting_vision_models_with_dynamic_parameter_routing.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[CVPR 2026\] Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing](adaptive_depth_lightweight_rgb-t_tracking_with_holistic_token_routing.md)
+- [\[CVPR 2026\] MM-SeR: Multimodal Self-Refinement for Lightweight Image Captioning](mm-ser_multimodal_self-refinement_for_lightweight_image_captioning.md)
+- [\[CVPR 2026\] OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data](omnizip_learning_a_unified_and_lightweight_lossless_compressor_for_multi-modal_d.md)
 - [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[CVPR 2026\] Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](differentiable_vector_quantization_for_rate-distortion_optimization_of_generativ.md)
 
 </div>
 

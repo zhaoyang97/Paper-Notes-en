@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction
 description: >-
-  [NeurIPS 2025 (Oral)][Model Compression][KV Cache Compression] This paper proposes KVzip, a query-agnostic KV cache eviction method that quantifies the importance of each KV pair by leveraging the LLM itself to reconstru…
+  [NeurIPS 2025 (Oral)][Model Compression][KV Cache Compression] This paper proposes KVzip, a query-agnostic KV cache eviction method that quantifies the importance of each KV pair by leveraging the LLM itself to reconstruct the original context from the cached KV pairs. KVzip achieves 3–4× KV cache compression and approximately 2× reduction in FlashAttention decoding latency, while significantly outperforming existing query-aware methods in multi-query scenarios.
 tags:
   - "NeurIPS 2025 (Oral)"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Long-Context Inference"
   - "Cache Reuse"
 date: 2026-05-08
-content_hash: 66f211aeb10d38d4
+content_hash: 291dbbd9dc4b2311
 ---
 
 # KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction
@@ -181,10 +181,10 @@ KVzip is a **training-free** method that directly leverages the capabilities of 
 ## Related Papers
 
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
+- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
 - [\[NeurIPS 2025\] Inference-Time Hyper-Scaling with KV Cache Compression](inference-time_hyper-scaling_with_kv_cache_compression.md)
 - [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
 - [\[NeurIPS 2025\] Homogeneous Keys, Heterogeneous Values: Exploiting Local KV Cache Asymmetry for Long-Context LLMs](homogeneous_keys_heterogeneous_values_exploiting_local_kv_cache_asymmetry_for_lo.md)
-- [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
 
 </div>
 

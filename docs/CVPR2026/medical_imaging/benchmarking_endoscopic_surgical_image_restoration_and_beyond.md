@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Endoscopic Surgical Image Restoration and Beyond
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The authors constructed SurgClean, the first multi-source real-world endoscopic surgical image restoration dataset (3,113 images across desmoking, dehazing, and desplashing). They systematically evaluated 22 representative methods (12 general and 10 task-specific), revealing a significant gap between existing methods a
+  [CVPR 2026][Medical Imaging][Endoscopic Image Restoration] The authors constructed SurgClean, the first multi-source real-world endoscopic surgical image restoration dataset (3,113 images across desmoking, dehazing, and desplashing). They systematically evaluated 22 representative methods (12 general and 10 task-specific), revealing a significant gap between existing methods and clinical requirements, while analyzing the intrinsic differences between surgical and natural scen…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Endoscopic Image Restoration"
+  - "Surgical Dehazing/Desmoking/Desplashing"
+  - "Benchmark Dataset"
+  - "Image Quality Assessment"
+  - "Clinical Application"
 date: 2026-05-08
-content_hash: 319142ddab3ea146
+content_hash: 9568b465812bcb64
 ---
+
 # Benchmarking Endoscopic Surgical Image Restoration and Beyond
 
 **Conference**: CVPR 2026  
@@ -171,8 +177,8 @@ All 22 compared methods were trained with the following setup:
 - [\[CVPR 2026\] Beyond the Static-World: Lifelong Learning for All-in-One Medical Image Restoration](beyond_the_static-world_lifelong_learning_for_all-in-one_medical_image_restorati.md)
 - [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
 - [\[CVPR 2026\] A Supervised Multi-task Framework for Joint cryo-ET Restoration Enabled by Generative Physical Simulation](a_supervised_multi-task_framework_for_joint_cryo-et_restoration_enabled_by_gener.md)
-- [\[CVPR 2026\] SIMSPINE: A Biomechanics-Aware Simulation Framework for 3D Spine Motion Annotation and Benchmarking](simspine_a_biomechanics-aware_simulation_framework_for_3d_spine_motion_annotatio.md)
 - [\[CVPR 2026\] Focus-to-Perceive Representation Learning: A Cognition-Inspired Hierarchical Framework for Endoscopic Video Analysis](focus-to-perceive_representation_learning_a_cognition-inspired_hierarchical_fram.md)
+- [\[CVPR 2026\] SIMSPINE: A Biomechanics-Aware Simulation Framework for 3D Spine Motion Annotation and Benchmarking](simspine_a_biomechanics-aware_simulation_framework_for_3d_spine_motion_annotatio.md)
 
 </div>
 

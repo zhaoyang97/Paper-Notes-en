@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fully Decentralized Certified Unlearning
 description: >-
-  [CVPR 2026][Federated Learning][Paper Note] Addressing the neglected scenario of "decentralized networks without a central coordinator," this paper proposes RR-DU—a random-walk-based certified unlearning algorithm. It performs noisy projected gradient ascent on the forgetting set only at the client initiating the deletion, while other clients continue with noise
+  [CVPR 2026][Federated Learning][Machine Unlearning] Addressing the neglected scenario of "decentralized networks without a central coordinator," this paper proposes RR-DU—a random-walk-based certified unlearning algorithm. It performs noisy projected gradient ascent on the forgetting set only at the client initiating the deletion, while other clients continue with noise-free descent. By incorporating sub-sampled Gaussian noise and trust region projections…
 tags:
-  - CVPR 2026
-  - Federated Learning
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Machine Unlearning"
+  - "Certified Unlearning"
+  - "Decentralized"
+  - "Differential Privacy"
+  - "Deletion Capacity"
 date: 2026-05-08
-content_hash: 274aa2f3858dcd7b
+content_hash: 3c9bb139800a920e
 ---
+
 # Fully Decentralized Certified Unlearning
 
 **Conference**: CVPR 2026  
@@ -134,7 +140,9 @@ ASR (Attack Success Rate) refers to the proportion of samples with triggers clas
 
 - [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
 - [\[CVPR 2026\] Personalized Federated Training of Diffusion Models with Privacy Guarantees](personalized_federated_training_of_diffusion_models_with_privacy_guarantees.md)
-- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
+- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
+- [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
 
 </div>
 

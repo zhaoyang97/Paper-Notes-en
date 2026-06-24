@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Geometry of Uncertainty: Learning Metric Spaces for Multimodal State Estimation in RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][POMDP] Uncertainty estimation is reformulated as a geometric problem in metric spaces—constructing a latent space where Euclidean distance represents the "minimum number of actions between two states," then fusing multimodal sensors via inverse distance weighting. This achieves robust state estimation against unseen sensor co
+  [ICLR 2026][Reinforcement Learning][state representation learning] Uncertainty estimation is reformulated as a geometric problem in metric spaces—constructing a latent space where Euclidean distance represents the "minimum number of actions between two states," then fusing multimodal sensors via inverse distance weighting. This achieves robust state estimation against unseen sensor corruptions without any noise assumptions or training on noisy data.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - POMDP
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "state representation learning"
+  - "multimodal sensor fusion"
+  - "metric spaces"
+  - "uncertainty estimation"
+  - "POMDP"
+  - "noise robustness"
 date: 2026-05-08
-content_hash: 3da5706cde3d773c
+content_hash: c8a40a942fa19ec7
 ---
+
 # Geometry of Uncertainty: Learning Metric Spaces for Multimodal State Estimation in RL
 
 **Conference**: ICLR 2026  
@@ -124,10 +130,10 @@ On Fetch–Slide with Failure corruption on both modalities: MetricMM maintains 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] Improving and Accelerating Offline RL in Large Discrete Action Spaces with Structured Policy Initialization](improving_and_accelerating_offline_rl_in_large_discrete_action_spaces_with_struc.md)
 - [\[ICLR 2026\] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching](sample_efficient_offline_rl_via_t-symmetry_enforced_latent_state-stitching.md)
 - [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
-- [\[ICLR 2026\] EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning](eubrl_epistemic_uncertainty_directed_bayesian_reinforcement_learning.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Autonomous Driving Planning] This paper proposes Flow Planner—a system combining three synergistic innovations: fine-grained trajectory tokenization…
+  [NeurIPS 2025][Autonomous Driving][Autonomous Driving Planning] This paper proposes Flow Planner—a system combining three synergistic innovations: fine-grained trajectory tokenization, an interaction-enhanced spatiotemporal fusion architecture, and flow matching with classifier-free guidance. It is the first purely learning-based method to surpass 90 points on nuPlan Val14 (90.43), and outperforms Diffusion Planner by 8.92 points on the interaction-intensive interPlan benchma…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Classifier-Free Guidance"
   - "Trajectory Generation"
 date: 2026-05-08
-content_hash: 4d23bc7403aa1e9d
+content_hash: 43de3272b76bf2e2
 ---
 
 # Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling
@@ -156,10 +156,10 @@ Flow Planner surpasses Diffusion Planner by 8.92 overall and by 17.37 on the Jay
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Foundational LiDAR World Models with Efficient Latent Flow Matching](towards_foundational_lidar_world_models_with_efficient_latent_flow_matching.md)
-- [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
-- [\[NeurIPS 2025\] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving](prioritizing_perception-guided_self-supervision_a_new_paradigm_for_causal_modeli.md)
+- [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
+- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](../../CVPR2026/autonomous_driving/wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
+- [\[ICLR 2026\] FlowAD: Ego-Scene Interactive Modeling for Autonomous Driving](../../ICLR2026/autonomous_driving/flowad_ego-scene_interactive_modeling_for_autonomous_driving.md)
 - [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
-- [\[AAAI 2026\] ReflexDiffusion: Reflexion-Enhanced Trajectory Planning for High Lateral Acceleration in Autonomous Driving](../../AAAI2026/autonomous_driving/reflexdiffusion_reflection-enhanced_trajectory_planning_for_.md)
 
 </div>
 

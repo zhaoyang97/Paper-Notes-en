@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models
 description: >-
-  [ICLR 2026][Optimization & Theory][Local Adam] DES-LOC assigns **independent synchronization periods** to parameters and various momentum states of adaptive optimizers—parameters are synchronized frequently, while momenta are synchronized sparsely according to their "half-lives." While maintaining provable convergence, it reduces communication volume by 170× compar
+  [ICLR2026][Optimization][Distributed Training] DES-LOC assigns **independent synchronization periods** to parameters and various momentum states of adaptive optimizers—parameters are synchronized frequently, while momenta are synchronized sparsely according to their "half-lives." While maintaining provable convergence, it reduces communication volume by 170× compared to DDP and 2× compared to the previous SOTA, Local Adam, achieving 1.3–2.1× end-to-end acceleration on 1–13B m…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Local Adam
+  - "ICLR2026"
+  - "Optimization"
+  - "Distributed Training"
+  - "Communication Efficiency"
+  - "Adaptive Optimizers"
+  - "Local Adam"
+  - "Fault-tolerant Training"
 date: 2026-05-08
-content_hash: a534bae5bdfc9f91
+content_hash: 02aa015f47680f62
 ---
+
 # DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models
 
 **Conference**: ICLR2026  
@@ -155,11 +160,11 @@ At 13B with $K_x=256$, DES-LOC saves 90+ days over DDP. At high-frequency $K_x=1
 
 ## Related Papers
 
+- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
+- [\[ICLR 2026\] GIT-BO: High-Dimensional Bayesian Optimization with Tabular Foundation Models](git-bo_high-dimensional_bayesian_optimization_with_tabular_foundation_models.md)
 - [\[ICLR 2026\] A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent](a_tale_of_two_geometries_adaptive_optimizers_and_non-euclidean_descent.md)
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
-- [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
-- [\[ICLR 2026\] Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM](communication-efficient_decentralized_optimization_via_double-communication_symm.md)
-- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
+- [\[ICML 2025\] The Panaceas for Improving Low-Rank Decomposition in Communication-Efficient Federated Learning](../../ICML2025/optimization/the_panaceas_for_improving_low-rank_decomposition_in_communication-efficient_fed.md)
 
 </div>
 

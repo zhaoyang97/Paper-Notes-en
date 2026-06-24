@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Building Social World Models with Large Language Models
 description: >-
-  [ICML 2026][Time Series][Paper Note] This paper proposes the "Social World Model" (SWM), which treats collective beliefs as states and social events as exogenous actions. It utilizes an LLM as a transition engine to learn an event-conditioned state transition distribution $P_\theta(\mathbf s_{t+1}\mid\mathbf s_t,e_t)$. By utilizing a frozen "hindsight pos
+  [ICML 2026][Time Series][Social World Model] This paper proposes the "Social World Model" (SWM), which treats collective beliefs as states and social events as exogenous actions. It utilizes an LLM as a transition engine to learn an event-conditioned state transition distribution $P_\theta(\mathbf s_{t+1}\mid\mathbf s_t,e_t)$. By utilizing a frozen "hindsight posterior attributor" to provide pseudo-labels, it bypasses the challenge of missing "event $\rightarrow$ belief chang…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Social World Model"
+  - "Belief Dynamics"
+  - "Prediction Markets"
+  - "Latent Event Attribution"
+  - "Posterior Guidance"
 date: 2026-05-08
-content_hash: d798530bcc0e5ccd
+content_hash: c84b9c9c601827b7
 ---
+
 # Building Social World Models with Large Language Models
 
 **Conference**: ICML 2026  
@@ -137,11 +143,11 @@ On Polymarket, SWM (posterior) ranks best or tied-for-best with MASE 0.980/0.892
 
 ## Related Papers
 
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](../../ICLR2026/time_series/semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](../../ICLR2026/time_series/timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
 - [\[ICML 2026\] FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models](factorynet_a_large-scale_dataset_toward_industrial_time-series_foundation_models.md)
-- [\[ACL 2025\] G2S: A General-to-Specific Learning Framework for Temporal Knowledge Graph Forecasting with Large Language Models](../../ACL2025/time_series/g2s_a_general-to-specific_learning_framework_for_temporal_knowledge_graph_foreca.md)
-- [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](../../NeurIPS2025/time_series/diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
-- [\[ICCV 2025\] VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models](../../ICCV2025/time_series/vlrmbench_a_comprehensive_and_challenging_benchmark_for_vision-language_reward_m.md)
+- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](../../ICLR2026/time_series/multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
+- [\[ICLR 2026\] ECHO: Toward Contextual Seq2Seq Paradigms in Large EEG Models](../../ICLR2026/time_series/echo_toward_contextual_seq2seq_paradigms_in_large_eeg_models.md)
 
 </div>
 

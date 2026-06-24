@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] CodePromptZip is proposed as the first code-oriented prompt compression framework. It constructs training data through type-aware prioritization and trains a small model compressor with a copy mechanism. It achieves performance improvements of 23.4%, 28.7%, and 8.7% over the best baselines across three coding tasks.
+  [ACL 2026 Findings][Information Retrieval & RAG][Code prompt compression] CodePromptZip is proposed as the first code-oriented prompt compression framework. It constructs training data through type-aware prioritization and trains a small model compressor with a copy mechanism. It achieves performance improvements of 23.4%, 28.7%, and 8.7% over the best baselines across three coding tasks.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Code prompt compression"
+  - "RAG"
+  - "Type-aware prioritization"
+  - "copy mechanism"
+  - "coding tasks"
 date: 2026-05-08
-content_hash: 8a7af3c21f4002a3
+content_hash: b766978186fca10c
 ---
+
 # CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs
 
 **Conference**: ACL 2026 Findings  
@@ -142,10 +147,10 @@ The compressor is trained using cross-entropy loss with the AdamW optimizer (bat
 ## Related Papers
 
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
-- [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](domain-specific_data_generation_framework_for_rag_adaptation.md)
+- [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
 - [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
+- [\[ACL 2025\] Multilingual Retrieval Augmented Generation for Culturally-Sensitive Tasks: A Benchmark for Cross-lingual Robustness](../../ACL2025/information_retrieval/multilingual_retrieval_augmented_generation_for_culturally-sensitive_tasks_a_ben.md)
 
 </div>
 

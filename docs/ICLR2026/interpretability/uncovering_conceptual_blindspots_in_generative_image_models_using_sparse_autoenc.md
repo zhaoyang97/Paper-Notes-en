@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders
 description: >-
-  [ICLR 2026][Interpretability][DINOv2] This paper proposes a framework to systematically diagnose "conceptual blindspots" using Sparse Autoencoders (SAEs). By mapping both real and model-generated images onto 32,000 interpretable concepts learned by an RA-SAE, it introduces an energy delta metric $\delta(k)$ to quantify whether each concept is "suppressed"
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper proposes a framework to systematically diagnose "conceptual blindspots" using Sparse Autoencoders (SAEs). By mapping both real and model-generated images onto 32,000 interpretable concepts learned by an RA-SAE, it introduces an energy delta metric $\delta(k)$ to quantify whether each concept is "suppressed" or "exaggerated" in the generative distribution. This transforms anecdotal generation failures (e.g.…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - DINOv2
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Conceptual Blindspots"
+  - "Generative Image Models"
+  - "DINOv2"
+  - "Energy-Based Models"
 date: 2026-05-08
-content_hash: 128c6ac8dc107b38
+content_hash: 1f19ae80268ca8d9
 ---
+
 # Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders
 
 **Conference**: ICLR 2026  

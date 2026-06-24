@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Improving Reasoning for Diffusion Language Models via Group Diffusion Policy Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][Diffusion Language Models] This paper proposes **GDPO** (Group Diffusion Policy Optimization), utilizing a low-variance, low-cost "Semi-deterministic Monte Carlo" scheme to efficiently estimate the sequence-level ELBO of diffusion language models. This allows GRPO-style RL post-training to be effectively applied to diffusion language models, con
+  [ICLR 2026][Reasoning][Diffusion Language Models] This paper proposes **GDPO** (Group Diffusion Policy Optimization), utilizing a low-variance, low-cost "Semi-deterministic Monte Carlo" scheme to efficiently estimate the sequence-level ELBO of diffusion language models. This allows GRPO-style RL post-training to be effectively applied to diffusion language models, consistently outperforming the previous diffu-GRPO across mathematical, planning, and coding reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Diffusion Language Models
-  - GRPO
-  - ELBO
-  - Semi-deterministic Monte Carlo
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Diffusion Language Models"
+  - "GRPO"
+  - "ELBO"
+  - "Variance Reduction"
+  - "Semi-deterministic Monte Carlo"
+  - "Sequence-level Likelihood"
 date: 2026-05-08
-content_hash: 99db1984ac6b2156
+content_hash: 4de4011571f3853e
 ---
+
 # Improving Reasoning for Diffusion Language Models via Group Diffusion Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -138,7 +141,7 @@ The improvement on Countdown is most dramatic (16.0 → 80.86), and Sudoku, GSM8
 - [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
 - [\[ICLR 2026\] On the Reasoning Abilities of Masked Diffusion Language Models](on_the_reasoning_abilities_of_masked_diffusion_language_models.md)
 - [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
-- [\[ICLR 2026\] LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning](ladir_latent_diffusion_enhances_llms_for_text_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
 - [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 
 </div>

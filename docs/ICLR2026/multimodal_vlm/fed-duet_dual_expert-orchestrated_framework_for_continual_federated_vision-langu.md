@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Fed-Duet: Dual Expert-Orchestrated Framework for Continual Federated Vision-Language Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] Fed-Duet decouples VLM adaptation in federated continual learning into two complementary pathways: "semantic experts (prompts) + parameter experts (adapters)". It utilizes a server-side knowledge orchestrator for adaptive distribution of shared semantic experts and client-side cross-attention gating to fuse local/share
+  [ICLR 2026][Multimodal VLM][Federated Continual Learning] Fed-Duet decouples VLM adaptation in federated continual learning into two complementary pathways: "semantic experts (prompts) + parameter experts (adapters)". It utilizes a server-side knowledge orchestrator for adaptive distribution of shared semantic experts and client-side cross-attention gating to fuse local/shared experts. Combined with routing consistency and expert stability losses…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
-  - Vision-Language Model
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Federated Continual Learning"
+  - "CLIP"
+  - "Vision-Language Models"
+  - "Mixture-of-Experts"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 665a056918982f73
+content_hash: 2cf50ceae0f882e5
 ---
+
 # Fed-Duet: Dual Expert-Orchestrated Framework for Continual Federated Vision-Language Learning
 
 **Conference**: ICLR 2026  
@@ -141,7 +145,7 @@ Ablation of core components (Avg Acc / Forgetting):
 - [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
 - [\[ECCV 2024\] Select and Distill: Selective Dual-Teacher Knowledge Transfer for Continual Learning on Vision-Language Models](../../ECCV2024/multimodal_vlm/select_and_distill_selective_dual-teacher_knowledge_transfer_for_continual_learn.md)
 - [\[ICLR 2026\] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l.md)
-- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
+- [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning
 description: >-
-  [ICLR 2026][Image Generation][offline RL] The authors propose Single-Step Completion Policy (SSCP), which compresses multi-step generative policies into single-step inference by predicting a "completion vector" (the normalized direction from any intermediate state to the target action) within a flow-matching framework. On D4RL, it performs equitably with multi
+  [ICLR 2026][Image Generation][offline RL] The authors propose Single-Step Completion Policy (SSCP), which compresses multi-step generative policies into single-step inference by predicting a "completion vector" (the normalized direction from any intermediate state to the target action) within a flow-matching framework. On D4RL, it performs equitably with multi-step diffusion/flow policies while being 64× faster in training and 4.7× faster in inference…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - offline RL
-  - flow matching
-  - single-step generation
-  - completion vector
-  - policy learning
-  - D4RL
+  - "ICLR 2026"
+  - "Image Generation"
+  - "offline RL"
+  - "flow matching"
+  - "single-step generation"
+  - "completion vector"
+  - "policy learning"
+  - "D4RL"
 date: 2026-05-08
-content_hash: 5a001d09f9a05922
+content_hash: 764cba63f1a72cb5
 ---
+
 # SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning
 
 **Conference**: ICLR 2026  
@@ -157,10 +158,10 @@ GC-SSCP (flat) outperforms HIQL (hierarchical) on average, demonstrating success
 ## Related Papers
 
 - [\[AAAI 2026\] EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI](../../AAAI2026/image_generation/efficientflow_efficient_equivariant_flow_policy_learning_for_embodied_ai.md)
-- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](../../CVPR2026/image_generation/renderflow_single-step_neural_rendering_via_flow_matching.md)
-- [\[NeurIPS 2025\] Scaling Offline RL via Efficient and Expressive Shortcut Models](../../NeurIPS2025/image_generation/scaling_offline_rl_via_efficient_and_expressive_shortcut_models.md)
-- [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
+- [\[AAAI 2026\] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation](../../AAAI2026/image_generation/mp1_meanflow_tames_policy_learning_in_1-step_for_robotic_manipulation.md)
+- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
 
 </div>
 

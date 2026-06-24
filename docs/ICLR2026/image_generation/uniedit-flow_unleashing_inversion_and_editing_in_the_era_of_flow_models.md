@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] To address inversion collapse and the failure of delayed injection caused by the "straight, non-intersecting trajectories" in flow matching models (SD3, FLUX), this paper proposes a training-free, model-agnostic predictor-corrector framework. Uni-Inv achieves high-fidelity inversion by constructing an implicit Euler cl
+  [ICLR 2026][Image Generation][Flow Matching] To address inversion collapse and the failure of delayed injection caused by the "straight, non-intersecting trajectories" in flow matching models (SD3, FLUX), this paper proposes a training-free, model-agnostic predictor-corrector framework. Uni-Inv achieves high-fidelity inversion by constructing an implicit Euler closed-form solution via reusing previous-step velocities. Uni-Edit incorporates a correction step during the editing…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Image Editing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Image Inversion"
+  - "Image Editing"
+  - "Predictor-Corrector"
+  - "Region-Adaptive Guidance"
 date: 2026-05-08
-content_hash: 9541c007c06aefa6
+content_hash: 0c2b40e845100a3e
 ---
+
 # UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models
 
 **Conference**: ICLR 2026  
@@ -153,10 +157,20 @@ The main tables reflect the impact of components. Core comparisons include:
 - Value: ⭐⭐⭐⭐⭐ Training-free, model-agnostic, and high efficiency (15 steps) make it highly practical for the flow model era.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
+- [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](free_lunch_for_stabilizing_rectified_flow_inversion.md)
+- [\[ICML 2025\] Taming Rectified Flow for Inversion and Editing](../../ICML2025/image_generation/taming_rectified_flow_for_inversion_and_editing.md)
+- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Multi-View Spatial Reasoning from Cross-View Relations
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] XVR (Cross-View Relations) constructs a large-scale multi-view Visual Question Answering (VQA) dataset with 100,000 samples. By explicitly training VLMs on three categories of tasks—correspondence, geometric verification, and viewpoint localization—it significantly enhances cross-view spatial reasoning capabilities, ac
+  [CVPR 2026][3D Vision][Multi-view Spatial Reasoning] XVR (Cross-View Relations) constructs a large-scale multi-view Visual Question Answering (VQA) dataset with 100,000 samples. By explicitly training VLMs on three categories of tasks—correspondence, geometric verification, and viewpoint localization—it significantly enhances cross-view spatial reasoning capabilities, achieving notable improvements across multi-view benchmarks and robotic manipulation tasks.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-view Spatial Reasoning"
+  - "Cross-view Relations"
+  - "Vision-Language Models"
+  - "Robot Manipulation"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: 9a8659b8b6d68203
+content_hash: ebefc8e808d35c6f
 ---
+
 # Learning Multi-View Spatial Reasoning from Cross-View Relations
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ VLA Manipulation Success (RoboCasa): The "TurnOffMicrowave" scenario saw the lar
 
 ## Related Papers
 
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
 - [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
-- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
+- [\[CVPR 2026\] CrossHOI: Learning Cross-View Representations for Monocular 3D Human-Object Interaction Reconstruction](crosshoi_learning_cross-view_representations_for_monocular_3d_human-object_inter.md)
 
 </div>
 

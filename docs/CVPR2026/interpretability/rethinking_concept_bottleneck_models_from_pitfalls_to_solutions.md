@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] The CBM-Suite framework is proposed to systematically address four pitfalls of Concept Bottleneck Models (CBMs): the lack of pre-evaluation metrics for concept relevance, the linearity problem causing bottlenecks to be bypassed, the accuracy gap compared to black-box models, and the research gap regarding the impact of
+  [CVPR 2026][Interpretability][Concept Bottleneck Models] The CBM-Suite framework is proposed to systematically address four pitfalls of Concept Bottleneck Models (CBMs): the lack of pre-evaluation metrics for concept relevance, the linearity problem causing bottlenecks to be bypassed, the accuracy gap compared to black-box models, and the research gap regarding the impact of different visual backbones/VLMs. This is achieved through entropy measures, non-linear layers…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Concept Relevance"
+  - "Distillation"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: 9a524c653061cfd7
+content_hash: 395111fbddb186e5
 ---
+
 # Rethinking Concept Bottleneck Models: From Pitfalls to Solutions
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ The entropy measure shows a strong negative correlation with classification accu
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
 - [\[CVPR 2026\] Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts](rounded_or_streamlined_head_bridging_concept_bottleneck_models_and_attribute-des.md)
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
-- [\[AAAI 2026\] Flexible Concept Bottleneck Model](../../AAAI2026/interpretability/flexible_concept_bottleneck_model.md)
+- [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](../../ICLR2026/interpretability/debugging_concept_bottleneck_models_through_removal_and_retraining.md)
+- [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
 
 </div>
 

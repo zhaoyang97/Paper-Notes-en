@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TesserAct: Learning 4D Embodied World Models
 description: >-
-  [ICCV 2025][Robotics][4D world model] TesserAct is a 4D embodied world model that trains a video generative model to jointly predict RGB, depth, and normal videos…
+  [ICCV 2025][Robotics][4D world model] TesserAct is a 4D embodied world model that trains a video generative model to jointly predict RGB, depth, and normal videos, which are subsequently converted into high-quality 4D scenes, enabling spatiotemporally consistent 3D world dynamics simulation and robot action planning.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -13,7 +13,7 @@ tags:
   - "joint depth-normal prediction"
   - "robot planning"
 date: 2026-05-08
-content_hash: 025ef84d1ca792ef
+content_hash: 3fd41ff645b707a0
 ---
 
 # TesserAct: Learning 4D Embodied World Models
@@ -158,11 +158,11 @@ PointNet encodes the 4D point cloud → combined with text embeddings → MLP ou
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Self-Improving Embodied Foundation Models](../../NeurIPS2025/robotics/self-improving_embodied_foundation_models.md)
-- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](../../ICLR2026/robotics/test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](../../NeurIPS2025/robotics/learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[ICCV 2025\] Embodied Representation Alignment with Mirror Neurons](embodied_representation_alignment_with_mirror_neurons.md)
-- [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
+- [\[ICML 2025\] FOUNDER: Grounding Foundation Models in World Models for Open-Ended Embodied Decision Making](../../ICML2025/robotics/founder_grounding_foundation_models_in_world_models_for_open-ended_embodied_deci.md)
+- [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](../../ICLR2026/robotics/world-in-world_world_models_in_a_closed-loop_world.md)
+- [\[CVPR 2025\] Neural Motion Simulator: Pushing the Limit of World Models in Reinforcement Learning](../../CVPR2025/robotics/neural_motion_simulator_pushing_the_limit_of_world_models_in_reinforcement_learn.md)
+- [\[CVPR 2026\] Dexterous World Models](../../CVPR2026/robotics/dexterous_world_models.md)
+- [\[ICML 2025\] SENSEI: Semantic Exploration Guided by Foundation Models to Learn Versatile World Models](../../ICML2025/robotics/sensei_semantic_exploration_guided_by_foundation_models_to_learn_versatile_world.md)
 
 </div>
 

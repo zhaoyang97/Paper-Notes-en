@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization
 description: >-
-  [ICLR 2026][Multi-Agent][LLM-as-a-Judge] SUMMQ structures "summarization" and "quizzing" as a pair of adversarial multi-agent tasks: the summarizer is responsible for full-text coverage, while the quizzer interrogates whether the summary omits information or exhibits distortion. An additional "examinee" agent validates if the summary can answer the quiz, util
+  [ICLR 2026][Multi-Agent][Long Document Summarization] SUMMQ structures "summarization" and "quizzing" as a pair of adversarial multi-agent tasks: the summarizer is responsible for full-text coverage, while the quizzer interrogates whether the summary omits information or exhibits distortion. An additional "examinee" agent validates if the summary can answer the quiz, utilizing multi-round feedback to refine the summary for improved completeness and factual consistency in long…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Long Document Summarization"
+  - "Adversarial Collaboration"
+  - "LLM-as-a-Judge"
+  - "Quiz Verification"
 date: 2026-05-08
-content_hash: 7128c2ad2a91287e
+content_hash: 97a41b0d4599fd32
 ---
+
 # Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization
 
 **Conference**: ICLR 2026  
@@ -133,7 +137,7 @@ Key ablations on MENSA (SUMMQ_COMBO, GPT-4O):
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/multi_agent/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
 - [\[ICLR 2026\] Learning Efficient and Interpretable Multi-Agent Communication](learning_efficient_and_interpretable_multi-agent_communication.md)
 - [\[NeurIPS 2025\] The PokeAgent Challenge: Competitive and Long-Context Learning at Scale](../../NeurIPS2025/multi_agent/the_pokeagent_challenge_competitive_and_long-context_learning_at_scale.md)
-- [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](context_learning_for_multi-agent_discussion.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 
 </div>
 

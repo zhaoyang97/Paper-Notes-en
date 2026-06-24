@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MEnvAgent: Scalable Polyglot Environment Construction for Verifiable Software Engineering
 description: >-
-  [ICML 2026][Code Intelligence][Multi-Agent] MEnvAgent employs a "Plan-Execute-Verify" three-stage multi-agent closed-loop and an environment reuse mechanism to automatically build executable and verifiable (Fail-to-Pass) Docker environments for real-world repositories across 10 languages. On the self-constructed MEnvBench, it improves the F2P rate by 8.6% and re
+  [ICML2026][Code Intelligence][Polyglot environment construction] MEnvAgent employs a "Plan-Execute-Verify" three-stage multi-agent closed-loop and an environment reuse mechanism to automatically build executable and verifiable (Fail-to-Pass) Docker environments for real-world repositories across 10 languages. On the self-constructed MEnvBench, it improves the F2P rate by 8.6% and reduces construction time by 43%, facilitating the creation of MEnvData-SWE…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - Multi-Agent
+  - "ICML2026"
+  - "Code Intelligence"
+  - "Polyglot environment construction"
+  - "Multi-agent"
+  - "Verifiable reward"
+  - "Environment reuse"
+  - "SWE dataset"
 date: 2026-05-08
-content_hash: c4f34ec2b8242625
+content_hash: 512ae19fa79ff277
 ---
+
 # MEnvAgent: Scalable Polyglot Environment Construction for Verifiable Software Engineering
 
 **Conference**: ICML2026  
@@ -142,11 +147,11 @@ Compared to "w/o Reuse", the full framework reduces average time by 46.0% and im
 
 ## Related Papers
 
+- [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](../../ICLR2026/code_intelligence/process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
+- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](../../ICLR2026/code_intelligence/swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 - [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](../../ICLR2026/code_intelligence/boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
-- [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
 - [\[ACL 2026\] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents](../../ACL2026/code_intelligence/eet_experience-driven_early_termination_for_cost-efficient_software_engineering_.md)
-- [\[ACL 2026\] Taming System Complexity: Demystifying Software Engineering Agents in Diagnosing Linux Kernel Faults](../../ACL2026/code_intelligence/taming_system_complexity_demystifying_software_engineering_agents_in_diagnosing_.md)
 
 </div>
 

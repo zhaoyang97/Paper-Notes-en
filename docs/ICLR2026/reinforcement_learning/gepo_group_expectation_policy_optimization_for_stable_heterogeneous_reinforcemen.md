@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Addressing the training instability of LLM reinforcement learning in decentralized environments with high network latency, this paper proposes coarsening importance weight granularity from the token/sequence level to the **group level** (using group-wise expected probabilities as the denominator). Theoretically, this e
+  [ICLR 2026][Reinforcement Learning][Asynchronous RL] Addressing the training instability of LLM reinforcement learning in decentralized environments with high network latency, this paper proposes coarsening importance weight granularity from the token/sequence level to the **group level** (using group-wise expected probabilities as the denominator). Theoretically, this exponentially reduces importance weight variance against high KL divergence…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Asynchronous RL"
+  - "Importance Sampling"
+  - "Variance Reduction"
+  - "Decentralized Training"
+  - "Policy Staleness"
 date: 2026-05-08
-content_hash: 7cc8efbaf01376e4
+content_hash: f63fc609d4fef163
 ---
+
 # GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -116,9 +122,9 @@ GEPO outperforms GSPO by 7.2% on the 'best' metric and reduces the best-to-last 
 
 - [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](heterogeneous_agent_q-weighted_policy_optimization.md)
 - [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](group_verification-based_policy_optimization_for_interactive_coding_agents.md)
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
 - [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
-- [\[ICLR 2026\] Jackpot: Align Actor-Policy Distribution for Scalable and Stable RL for LLM](jackpot_align_actor-policy_distribution_for_scalable_and_stable_rl_for_llm.md)
-- [\[ICLR 2026\] EXPO: Stable Reinforcement Learning with Expressive Policies](expo_stable_reinforcement_learning_with_expressive_policies.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 
 </div>
 

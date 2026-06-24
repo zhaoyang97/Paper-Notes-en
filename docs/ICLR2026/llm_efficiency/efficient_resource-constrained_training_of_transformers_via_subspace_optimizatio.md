@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient Resource-Constrained Training of Transformers via Subspace Optimization
 description: >-
-  [ICLR 2026][LLM Efficiency][subspace optimization] The authors propose WASI (Weight-Activation Subspace Iteration), which leverages the hypothesis that "parameter subspaces remain stable during fine-tuning." It simultaneously compresses Transformer weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition). Both training and inferenc
+  [ICLR 2026 Oral][LLM Efficiency][subspace optimization] The authors propose WASI (Weight-Activation Subspace Iteration), which leverages the hypothesis that "parameter subspaces remain stable during fine-tuning." It simultaneously compresses Transformer weights (via SVD + Gram-Schmidt subspace iteration) and activations (via Tucker decomposition). Both training and inference are performed within low-rank representations, achieving 62× training memory compression and 1.4× acce…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - subspace optimization
-  - transformer compression
-  - SVD
-  - activation compression
-  - edge deployment
+  - "ICLR 2026 Oral"
+  - "LLM Efficiency"
+  - "subspace optimization"
+  - "transformer compression"
+  - "SVD"
+  - "activation compression"
+  - "edge deployment"
 date: 2026-05-08
-content_hash: 374079c3ba7ac6ea
+content_hash: fc4f7687aed18709
 ---
+
 # Efficient Resource-Constrained Training of Transformers via Subspace Optimization
 
 **Conference**: ICLR 2026 Oral  
@@ -160,9 +161,9 @@ The benefits of low-rank computation would be negated if the backward pass requi
 
 - [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
 - [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
-- [\[ICLR 2026\] MeSH: Memory-as-State-Highways for Recursive Transformers](mesh_memory-as-state-highways_for_recursive_transformers.md)
 - [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
+- [\[ICLR 2026\] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling](cactus_accelerating_auto-regressive_decoding_with_constrained_acceptance_specula.md)
 
 </div>
 

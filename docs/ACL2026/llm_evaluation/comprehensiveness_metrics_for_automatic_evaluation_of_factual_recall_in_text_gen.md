@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] To address the difficulty of quantifying "missing key information" in long-form generation, this work proposes three comprehensiveness metrics—NLI decomposition + graph analysis, QA comparison, and end-to-end LLM identification. Coverage $S = |\mathcal{A}_{in}| / (|\mathcal{A}_{in}| + |\mathcal{A}_{out}|)$ is calculate
+  [ACL 2026 Findings][LLM Evaluation][Comprehensive Evaluation] To address the difficulty of quantifying "missing key information" in long-form generation, this work proposes three comprehensiveness metrics—NLI decomposition + graph analysis, QA comparison, and end-to-end LLM identification. Coverage $S = |\mathcal{A}_{in}| / (|\mathcal{A}_{in}| + |\mathcal{A}_{out}|)$ is calculated against a reference corpus $\mathcal{C}$ as the benchmark. Meta-evaluation on WikiContradict / C…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Comprehensive Evaluation"
+  - "Factual Recall"
+  - "NLI Graph"
+  - "Q&A Comparison"
+  - "End-to-End LLM Evaluation"
 date: 2026-05-08
-content_hash: 121b533476823749
+content_hash: 5d11641ed758dcd6
 ---
+
 # Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation
 
 **Conference**: ACL 2026 Findings  
@@ -157,7 +163,7 @@ Both Q&A and E2E identify gpt-oss-120b as the most comprehensive and Qwen 2.5 72
 - [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
 - [\[ACL 2026\] StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall](stratmem-bench_evaluating_strategic_memory_use_in_virtual_character_conversation.md)
 - [\[ICML 2026\] Hacking Generative Perplexity: Why Unconditional Text Evaluation Needs Distributional Metrics](../../ICML2026/llm_evaluation/hacking_generative_perplexity_why_unconditional_text_evaluation_needs_distributi.md)
-- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
+- [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
 
 </div>
 

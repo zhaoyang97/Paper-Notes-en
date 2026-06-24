@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ultra-Fast Neural Video Compression
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper proposes DCVC-UF, which introduces a "chunk coding" paradigm that encodes multiple frames into a single compact latent and decodes them back in parallel. By completely removing frame-by-frame motion estimation and utilizing frame-specific decoders and single-step entropy decoding, it achieves 371 encoding /
+  [CVPR 2026][Model Compression][Neural video coding] This paper proposes DCVC-UF, which introduces a "chunk coding" paradigm that encodes multiple frames into a single compact latent and decodes them back in parallel. By completely removing frame-by-frame motion estimation and utilizing frame-specific decoders and single-step entropy decoding, it achieves 371 encoding / 274 decoding FPS at 1080p on a 4090 GPU, while saving 42.2% bitrate compared to VTM(LD)…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Neural video coding"
+  - "chunk coding"
+  - "frame-specific decoder"
+  - "entropy coding acceleration"
+  - "rate-distortion-complexity trade-off"
 date: 2026-05-08
-content_hash: 279cc4d94d08b520
+content_hash: 1a1ea25fbe0394b0
 ---
+
 # Ultra-Fast Neural Video Compression
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ Baseline is DCVC-RT, cumulative rows lead to DCVC-UF (HT-S), 4090 GPU:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
+- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
 - [\[CVPR 2026\] Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder](ultra-low_bitrate_perceptual_image_compression_with_shallow_encoder.md)
 - [\[CVPR 2025\] Towards Practical Real-Time Neural Video Compression](../../CVPR2025/model_compression/towards_practical_real-time_neural_video_compression.md)
-- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
-- [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)
-- [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
 
 </div>
 

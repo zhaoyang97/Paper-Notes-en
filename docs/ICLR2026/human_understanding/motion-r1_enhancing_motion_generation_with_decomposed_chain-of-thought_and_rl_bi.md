@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Motion-R1: Enhancing Motion Generation with Decomposed Chain-of-Thought and RL Binding
 description: >-
-  [ICLR 2026][Human Understanding][Reinforcement Learning] Motion-R1 combines a "Decomposed Chain-of-Thought (CoT) Data Engine" with "RL Binding": the former uses an LLM to decompose high-level instructions into temporal/causal sub-action chains for cold-start SFT; the latter uses GRPO to directly incorporate "motion similarity + semantic similarity + format" as rewards, elimi
+  [ICLR 2026][Human Understanding][Text-to-Motion] Motion-R1 combines a "Decomposed Chain-of-Thought (CoT) Data Engine" with "RL Binding": the former uses an LLM to decompose high-level instructions into temporal/causal sub-action chains for cold-start SFT; the latter uses GRPO to directly incorporate "motion similarity + semantic similarity + format" as rewards, eliminating the need for expensive human preference annotations while generating semantically aligned and realistic…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Reinforcement Learning
-  - GRPO
-  - LLM
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion"
+  - "Decomposed Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Multi-modal Alignment"
+  - "LLM"
 date: 2026-05-08
-content_hash: 8e9231df02640edb
+content_hash: 04396c79ab0e39ca
 ---
+
 # Motion-R1: Enhancing Motion Generation with Decomposed Chain-of-Thought and RL Binding
 
 **Conference**: ICLR 2026  
@@ -135,11 +139,11 @@ Component-wise ablation on HumanML3D (CoT / Semantic Reward $R_{sem}$ / Motion R
 
 ## Related Papers
 
-- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing](../../CVPR2026/human_understanding/facecot_cot_reasoning_face_anti_spoofing.md)
+- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 - [\[ICLR 2026\] SesaHand: Enhancing 3D Hand Reconstruction via Controllable Generation with Semantic and Structural Alignment](sesahand_enhancing_3d_hand_reconstruction_via_controllable_generation_with_seman.md)
 - [\[AAAI 2026\] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis](../../AAAI2026/human_understanding/facial-r1_aligning_reasoning_and_recognition_for_facial_emotion_analysis.md)
-- [\[CVPR 2026\] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](../../CVPR2026/human_understanding/mobind_motion_binding_for_fine-grained_imu-video_pose_alignment.md)
 
 </div>
 

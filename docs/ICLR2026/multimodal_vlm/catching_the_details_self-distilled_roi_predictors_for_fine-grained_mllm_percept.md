@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Catching the Details: Self-Distilled RoI Predictors for Fine-Grained MLLM Perception
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper proposes SD-RPN (Self-Distilled Region Proposal Network), which transforms noisy and blurred intermediate-layer attention maps in MLLMs into high-quality pseudo-labels via denoising and selective labeling. These labels are used to train a small RPN attached to a frozen backbone, allowing the model to predict
+  [ICLR 2026][Multimodal VLM][Fine-grained perception] This paper proposes SD-RPN (Self-Distilled Region Proposal Network), which transforms noisy and blurred intermediate-layer attention maps in MLLMs into high-quality pseudo-labels via denoising and selective labeling. These labels are used to train a small RPN attached to a frozen backbone, allowing the model to predict Regions of Interest (RoI) in a single partial forward pass. Trained on only 10K QA pairs…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Fine-grained perception"
+  - "RoI localization"
+  - "Self-distillation"
+  - "Attention denoising"
+  - "High resolution"
 date: 2026-05-08
-content_hash: 13a83d5a8740d762
+content_hash: 3cad344748b7205c
 ---
+
 # Catching the Details: Self-Distilled RoI Predictors for Fine-Grained MLLM Perception
 
 **Conference**: ICLR 2026  

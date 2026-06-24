@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] This paper proposes Spec-o3, a tool-augmented vision-language agent that simulates the spectral inspection workflow of astronomers through Interleaved Multimodal Chain-of-Thought (iMCoT). Using a two-stage training approach with cold-start SFT and outcome-based RL, it improves the macro-F1 of rare celestial object iden
+  [ACL 2026][LLM Agent][Tool-Augmented Agent] This paper proposes Spec-o3, a tool-augmented vision-language agent that simulates the spectral inspection workflow of astronomers through Interleaved Multimodal Chain-of-Thought (iMCoT). Using a two-stage training approach with cold-start SFT and outcome-based RL, it improves the macro-F1 of rare celestial object identification from 28.3% to 76.5%, achieving an inference speed ~50x faster than manual inspection.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Tool-Augmented Agent"
+  - "Interleaved Multimodal Chain-of-Thought"
+  - "Spectral Inspection"
+  - "Reinforcement Learning"
+  - "Domain VLM"
 date: 2026-05-08
-content_hash: 214470ec518ffa79
+content_hash: 325c3bf603207129
 ---
+
 # Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification
 
 **Conference**: ACL 2026  
@@ -135,9 +140,9 @@ Cold start uses standard SFT loss (with loss mask for tool-return tokens). RL us
 
 - [\[CVPR 2026\] VULCAN: Tool-Augmented Multi Agents for Iterative 3D Object Arrangement](../../CVPR2026/llm_agent/vulcan_tool-augmented_multi_agents_for_iterative_3d_object_arrangement.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 - [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
-- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 
 </div>
 

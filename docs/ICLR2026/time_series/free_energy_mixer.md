@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Free Energy Mixer
 description: >-
-  [ICLR 2026][Time Series][Attention] This work proposes the Free Energy Mixer (FEM), which reformulates the reading of attention values as a free energy (log-sum-exp) optimization problem. By achieving channel-wise value-aware posterior selection, it overcomes the inherent bottleneck of standard attention, characterized as "lossless storage but lossy retr
+  [ICLR 2026][Time Series][Attention Mechanism] This work proposes the Free Energy Mixer (FEM), which reformulates the reading of attention values as a free energy (log-sum-exp) optimization problem. By achieving channel-wise value-aware posterior selection, it overcomes the inherent bottleneck of standard attention, characterized as "lossless storage but lossy retrieval." FEM can serve as a plug-and-play replacement for softmax/linear attention, RNNs, and SSMs…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Attention
-  - log-sum-exp
+  - "ICLR 2026"
+  - "Time Series"
+  - "Attention Mechanism"
+  - "Free Energy"
+  - "Channel-wise Selection"
+  - "log-sum-exp"
+  - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 74ab035a9da4c007
+content_hash: 1bc21d68cbc79087
 ---
+
 # Free Energy Mixer
 
 **Conference**: ICLR 2026  
@@ -178,7 +182,7 @@ Drawing on the local convolution approach of Mamba/DeltaNet, FEM uses an adaptiv
 - [\[NeurIPS 2025\] Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions](../../NeurIPS2025/time_series/neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions.md)
 - [\[CVPR 2026\] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](../../CVPR2026/time_series/sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)
 - [\[ICML 2025\] VisionTS: Visual Masked Autoencoders Are Free-Lunch Zero-Shot Time Series Forecasters](../../ICML2025/time_series/visionts_visual_masked_autoencoders_are_free-lunch_zero-shot_time_series_forecas.md)
-- [\[ICLR 2026\] Local Geometry Attention for Time Series Forecasting under Realistic Corruptions](local_geometry_attention_for_time_series_forecasting_under_realistic_corruptions.md)
+- [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
 
 </div>
 

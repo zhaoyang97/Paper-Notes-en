@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] To address the dependency of deep learning-based Single-Molecule Localization Microscopy (SMLM) on non-differentiable NMS in high-density scenarios, this paper reformulates the training objective as a set matching problem between "predicted emitters" and "ground truth." By utilizing entropy-regularized Optimal Transpor
+  [ICLR 2026][Computational Biology][Single-Molecule Localization Microscopy (SMLM)] To address the dependency of deep learning-based Single-Molecule Localization Microscopy (SMLM) on non-differentiable NMS in high-density scenarios, this paper reformulates the training objective as a set matching problem between "predicted emitters" and "ground truth." By utilizing entropy-regularized Optimal Transport (Sinkhorn) to construct a differentiable loss…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Single-Molecule Localization Microscopy (SMLM)"
+  - "Optimal Transport"
+  - "Set Matching"
+  - "Iterative Refinement"
+  - "End-to-End Learning"
 date: 2026-05-08
-content_hash: 7120aa92391acab2
+content_hash: 9dcf09000986e90c
 ---
+
 # Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization
 
 **Conference**: ICLR 2026  
@@ -132,16 +138,16 @@ Time-binning was used to simulate high density on Tubulin and NPC datasets. Ours
 - Value: ⭐⭐⭐⭐ High potential for advancing live-cell super-resolution imaging; code is open-source.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
 - [\[ICLR 2026\] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction](kgot_unified_knowledge_graph_and_optimal_transport_pseudo-labeling_for_molecule-.md)
 - [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
 - [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/computational_biology/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
 - [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
-- [\[ICML 2025\] Protriever: End-to-End Differentiable Protein Homology Search for Fitness Prediction](../../ICML2025/computational_biology/protriever_end-to-end_differentiable_protein_homology_search_for_fitness_predict.md)
 
 </div>
 

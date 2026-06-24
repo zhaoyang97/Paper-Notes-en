@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention
 description: >-
-  [ICCV 2025][Model Compression][Out-of-distribution detection] This paper identifies that ID samples exhibit consistent local gradient directions while OOD samples display chaotic gradient directions…
+  [ICCV 2025][Model Compression][Out-of-distribution detection] This paper identifies that ID samples exhibit consistent local gradient directions while OOD samples display chaotic gradient directions, and proposes to "short-circuit" feature coordinates exploited by spurious gradients at inference time to suppress OOD confidence. A first-order Taylor approximation is employed to avoid a second forward pass, yielding a lightweight and efficient OOD detection method.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "inference stage"
   - "first-order approximation"
 date: 2026-05-08
-content_hash: bda007fbc9878394
+content_hash: a34d18aa02e5e773
 ---
 
 # Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention
@@ -144,11 +144,11 @@ Using ImageNet-1k as the ID dataset and evaluating across multiple OOD datasets:
 
 ## Related Papers
 
+- [\[ICML 2025\] When Data-Free Knowledge Distillation Meets Non-Transferable Teacher: Escaping Out-of-Distribution](../../ICML2025/model_compression/when_data-free_knowledge_distillation_meets_non-transferable_teacher_escaping_ou.md)
 - [\[ICCV 2025\] Heavy Labels Out! Dataset Distillation with Label Space Lightening](heavy_labels_out_dataset_distillation_with_label_space_lightening.md)
-- [\[ACL 2026\] Efficient Learned Data Compression via Dual-Stream Feature Decoupling](../../ACL2026/model_compression/efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)
+- [\[ECCV 2024\] Is Retain Set All You Need in Machine Unlearning? Restoring Performance of Unlearned Models with Out-Of-Distribution Images](../../ECCV2024/model_compression/is_retain_set_all_you_need_in_machine_unlearning_restoring_performance_of_unlear.md)
 - [\[ICCV 2025\] UniConvNet: Expanding Effective Receptive Field while Maintaining Asymptotically Gaussian Distribution for ConvNets of Any Scale](uniconvnet_expanding_effective_receptive_field_while_maintaining_asymptotically_.md)
 - [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](../../NeurIPS2025/model_compression/knowledge_distillation_detection_for_open-weights_models.md)
-- [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](../../NeurIPS2025/model_compression/ai-generated_video_detection_via_perceptual_straightening.md)
 
 </div>
 

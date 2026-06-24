@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DynaGuard: A Dynamic Guardian Model With User-Defined Policies
 description: >-
-  [ICLR 2026][LLM Safety][GRPO] DynaGuard upgrades guardian models from "static category classifiers" to dynamic models capable of "understanding arbitrary user-defined policies to judge compliance." By synthesizing the DynaBench dataset comprising over 60,000 multi-turn dialogues and 40,000 policies, and training Qwen3 via SFT+GRPO, the 8B model out
+  [ICLR2026][LLM Safety][Guardian model] DynaGuard upgrades guardian models from "static category classifiers" to dynamic models capable of "understanding arbitrary user-defined policies to judge compliance." By synthesizing the DynaBench dataset comprising over 60,000 multi-turn dialogues and 40,000 policies, and training Qwen3 via SFT+GRPO, the 8B model outperforms GPT-4o-mini in custom rule violation detection. It supports a dual-mode output—"instant answer" or "reasoning wi…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - GRPO
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Guardian model"
+  - "user-defined policy"
+  - "compliance detection"
+  - "chain-of-thought"
+  - "GRPO"
 date: 2026-05-08
-content_hash: de8f4a9151bc797a
+content_hash: e068b4e4a76bfd36
 ---
+
 # DynaGuard: A Dynamic Guardian Model With User-Defined Policies
 
 **Conference**: ICLR2026  
@@ -150,15 +155,14 @@ Notably, existing guardian models collapsed on the custom policies of DynaBench 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](../../NeurIPS2025/llm_safety/agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
 - [\[ICLR 2026\] Analyzing and Evaluating Unbiased Language Model Watermark](analyzing_and_evaluating_unbiased_language_model_watermark.md)
 - [\[ICLR 2026\] GhostEI-Bench: Do Mobile Agents Resilience to Environmental Injection in Dynamic On-Device Environments?](ghostei-bench_do_mobile_agent_resilience_to_environmental_injection_in_dynamic_o.md)
 - [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
-- [\[ICLR 2026\] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions](faithful_bi-directional_model_steering_via_distribution_matching_and_distributed.md)
 
 </div>
 

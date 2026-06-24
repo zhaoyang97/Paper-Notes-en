@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning
 description: >-
-  [ICLR 2026][Medical NLP][Paper Note] Addressing the overconfidence issue where LLMs provide diagnoses despite incomplete information in multi-round clinical consultations, KnowGuard proposes an "investigate-before-abstain" paradigm. This approach shifts abstention decisions from model self-assessment to systematic cross-round evidence exploration over a m
+  [ICLR 2026][Medical LLM][Abstention] Addressing the overconfidence issue where LLMs provide diagnoses despite incomplete information in multi-round clinical consultations, KnowGuard proposes an "investigate-before-abstain" paradigm. This approach shifts abstention decisions from model self-assessment to systematic cross-round evidence exploration over a medical knowledge graph. By using a rolling-updated contextual evidence pool to identify "missing evidence…
 tags:
-  - ICLR 2026
-  - Medical NLP
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Abstention"
+  - "Multi-round Clinical Consultation"
+  - "Medical Knowledge Graph"
+  - "Evidence Pool"
+  - "Safety"
 date: 2026-05-08
-content_hash: 2b20309560a10800
+content_hash: ec5ce18cbe2a6b80
 ---
+
 # KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,17 @@ Removing components in the enhanced setting (Reporting ACC for ioAFRIMEDQA / ioM
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_nlp/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
+- [\[ACL 2026\] Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents](../../ACL2026/medical_nlp/beyond_the_individual_virtualizing_multi-disciplinary_reasoning_for_clinical_int.md)
+- [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
+- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
+- [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](../../ACL2026/medical_nlp/march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_nlp/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)

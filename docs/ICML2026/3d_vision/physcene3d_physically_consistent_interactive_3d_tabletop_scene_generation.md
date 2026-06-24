@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PhyScene3D: Physically Consistent Interactive 3D Tabletop Scene Generation
 description: >-
-  [ICML 2026][3D Vision][VLM] PhyScene3D reshapes 3D tabletop scene generation into a "human-constructive" hierarchical sequential planning: it linearizes scene graphs into an AABB-based anchor sequence using the Cognitive Topological Reasoning Chain (CTRC), and then embeds a differentiable SDF physics engine into the VLM training loop via Physics-
+  [ICML 2026][3D Vision][Tabletop Scene Generation] PhyScene3D reshapes 3D tabletop scene generation into a "human-constructive" hierarchical sequential planning: it linearizes scene graphs into an AABB-based anchor sequence using the Cognitive Topological Reasoning Chain (CTRC), and then embeds a differentiable SDF physics engine into the VLM training loop via Physics-Aware Denoising Alignment (PADA). This allows the model-generated scenes to surpass the physical plausibility…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - VLM
+  - "ICML 2026"
+  - "3D Vision"
+  - "Tabletop Scene Generation"
+  - "VLM"
+  - "Differentiable SDF"
+  - "Test-time Optimization"
+  - "Physical Consistency"
 date: 2026-05-08
-content_hash: 24c3ea2bf92f5dc5
+content_hash: 36fa8f989c34b6d4
 ---
+
 # PhyScene3D: Physically Consistent Interactive 3D Tabletop Scene Generation
 
 **Conference**: ICML 2026  

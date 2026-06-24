@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] BITS Pilani at SemEval-2026 Task 9: Structured Supervised Fine-Tuning with DPO Refinement for Polarization Detection
 description: >-
-  [ACL 2026][Social Computing][DPO] This paper proposes a two-stage pipeline consisting of "structured slot-filling SFT + DPO preference optimization" for the SemEval-2026 POLAR polarization detection task (English subset). The Qwen2.5-7B system submitted during the competition achieved a Macro-F1 of 0.7664. Post-competition, replacing the base model wit
+  [ACL 2026 (SemEval workshop)][Social Computing][Polarization detection] This paper proposes a two-stage pipeline consisting of "structured slot-filling SFT + DPO preference optimization" for the SemEval-2026 POLAR polarization detection task (English subset). The Qwen2.5-7B system submitted during the competition achieved a Macro-F1 of 0.7664. Post-competition, replacing the base model with Mistral-Nemo-12B and using preference pairs filtered by an LLM-judge improved the Macr…
 tags:
-  - ACL 2026
-  - Social Computing
-  - DPO
-  - SemEval-2026
-  - Qwen2.5 / Mistral-Nemo
+  - "ACL 2026 (SemEval workshop)"
+  - "Social Computing"
+  - "Polarization detection"
+  - "structured SFT"
+  - "DPO"
+  - "SemEval-2026"
+  - "Qwen2.5 / Mistral-Nemo"
 date: 2026-05-08
-content_hash: 5121a702fdb28577
+content_hash: e79777b256e9e56e
 ---
+
 # BITS Pilani at SemEval-2026 Task 9: Structured Supervised Fine-Tuning with DPO Refinement for Polarization Detection
 
 **Conference**: ACL 2026 (SemEval workshop)  

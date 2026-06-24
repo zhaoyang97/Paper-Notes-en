@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] gQIR: Generative Quanta Image Reconstruction
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Adapt large-scale text-to-image latent diffusion models to extreme photon-starved imaging scenarios of Single-Photon Avalanche Diodes (SPADs). Through a three-stage framework (Quanta-aligned VAE → Adversarially fine-tuned LoRA U-Net → FusionViT spatio-temporal fusion), the method achieves high-quality RGB reconstructio
+  [CVPR 2026][Image Generation][Single-photon sensors] Adapt large-scale text-to-image latent diffusion models to extreme photon-starved imaging scenarios of Single-Photon Avalanche Diodes (SPADs). Through a three-stage framework (Quanta-aligned VAE → Adversarially fine-tuned LoRA U-Net → FusionViT spatio-temporal fusion), the method achieves high-quality RGB reconstruction from sparse binary photon detections, significantly surpassing all existing methods under extreme 10K-100…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - burst imaging
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Single-photon sensors"
+  - "Diffusion models"
+  - "Image reconstruction"
+  - "burst imaging"
+  - "VAE alignment"
 date: 2026-05-08
-content_hash: f2af35121148c3be
+content_hash: 4422958be0b8abe6
 ---
+
 # gQIR: Generative Quanta Image Reconstruction
 
 **Conference**: CVPR 2026  
@@ -180,10 +184,10 @@ Training data: 2.81M images + 44,575 videos from various sources (SR, faces, deb
 ## Related Papers
 
 - [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
-- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
+- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
 - [\[CVPR 2026\] FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain](faithfusion_harmonizing_reconstruction_and_generation_via_pixel-wise_information.md)
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
-- [\[ECCV 2024\] NeuSDFusion: A Spatial-Aware Generative Model for 3D Shape Completion, Reconstruction, and Generation](../../ECCV2024/image_generation/neusdfusion_a_spatial-aware_generative_model_for_3d_shape_completion_reconstruct.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
 
 </div>
 

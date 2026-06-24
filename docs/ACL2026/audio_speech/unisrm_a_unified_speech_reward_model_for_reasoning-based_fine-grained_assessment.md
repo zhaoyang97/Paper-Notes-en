@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] UniSRM：用于细粒度语音评估的统一语音奖励模型
+  [Paper Note] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes UniSRM, a unified speech reward model. Through two-stage training (SFT + GRPO) and a Reasoning Consistency Reward (RCR) mechanism, it supports multi-dimensional, interpretable speech evaluation ranging from utterance-level quality to dialogue-level coherence, significantly outperforming existing met
+  [ACL 2026][Audio & Speech][Speech Reward Model] This paper proposes UniSRM, a unified speech reward model. Through two-stage training (SFT + GRPO) and a Reasoning Consistency Reward (RCR) mechanism, it supports multi-dimensional, interpretable speech evaluation ranging from utterance-level quality to dialogue-level coherence, significantly outperforming existing methods across multiple evaluation tasks.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Speech Reward Model"
+  - "Multi-dimensional Evaluation"
+  - "Reasoning Consistency"
+  - "Speech Synthesis Evaluation"
 date: 2026-05-08
-content_hash: c0936a6c719d0cb4
+content_hash: 70de0c8182440e72
 ---
+
 # UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation
 
 **Conference**: ACL 2026  
@@ -144,11 +149,11 @@ On external human-annotated datasets (BVCC, SOMOS), UniSRM demonstrates strong c
 
 ## Related Papers
 
-- [\[ACL 2026\] UniVocal：统一的语音-歌唱代码混用合成](univocal_unified_speech-singing_code-switching_synthesis.md)
-- [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
-- [\[ACL 2026\] Music Audio-Visual Question Answering Requires Specialized Multimodal Designs](music_audio-visual_question_answering_requires_specialized_multimodal_designs.md)
-- [\[ACL 2026\] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation](analyzing_reasoning_shifts_in_audio_deepfake_detection_under_adversarial_attacks.md)
-- [\[ACL 2026\] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](mind_the_pause_disfluency-aware_objective_tuning_for_multilingual_speech_correct.md)
+- [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+- [\[ACL 2026\] FIGMA: Towards Fine-Grained Music Retrieval](figma_towards_fine-grained_music_retrieval.md)
+- [\[AAAI 2026\] MF-Speech: Achieving Fine-Grained and Compositional Control in Speech Generation via Factor Disentanglement](../../AAAI2026/audio_speech/mf-speech_achieving_fine-grained_and_compositional_control_in_speech_generation_.md)
+- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-Mixed Synthesis](univocal_unified_speech-singing_code-switching_synthesis.md)
+- [\[ACL 2026\] SpeechLLM-as-Judges: Towards General and Interpretable Speech Quality Evaluation](speechllm-as-judges_towards_general_and_interpretable_speech_quality_evaluation.md)
 
 </div>
 

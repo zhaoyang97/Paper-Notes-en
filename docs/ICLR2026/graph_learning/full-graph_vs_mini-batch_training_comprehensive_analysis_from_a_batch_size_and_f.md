@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Full-Graph vs. Mini-Batch Training: Comprehensive Analysis from a Batch Size and Fan-Out Size Perspective
 description: >-
-  [ICLR 2026][Graph Learning][batch size] This paper treats GNN full-graph training as a special case of mini-batch training where both batch size and fan-out size are maximized. By analyzing convergence, generalization, and computational efficiency from the perspective of these two hyperparameters, it reaches a counter-intuitive conclusion: full-graph trainin
+  [ICLR 2026][Graph Learning][Full-graph training] This paper treats GNN full-graph training as a special case of mini-batch training where both batch size and fan-out size are maximized. By analyzing convergence, generalization, and computational efficiency from the perspective of these two hyperparameters, it reaches a counter-intuitive conclusion: full-graph training is not always superior to carefully tuned small-batch mini-batch training.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - batch size
-  - fan-out size
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Full-graph training"
+  - "mini-batch training"
+  - "batch size"
+  - "fan-out size"
+  - "generalization bound"
 date: 2026-05-08
-content_hash: 919a438eed61d337
+content_hash: aa5665f667986ca4
 ---
+
 # Full-Graph vs. Mini-Batch Training: Comprehensive Analysis from a Batch Size and Fan-Out Size Perspective
 
 **Conference**: ICLR 2026  

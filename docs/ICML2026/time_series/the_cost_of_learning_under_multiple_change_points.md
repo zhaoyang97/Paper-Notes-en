@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Cost of Learning Under Multiple Change Points
 description: >-
-  [ICML 2026][Time Series][Paper Note] This paper proposes the Anytime Tracking CUSUM (ATC) algorithm, which utilizes a time-varying adaptive threshold and the "selective detection" principle to achieve near minimax-optimal dynamic regret $O(\sigma^2 (S+1) \log T)$ without **any detectability assumptions** (such as minimum spacing or minimum jump size). It
+  [ICML 2026][Time Series][Online Learning] This paper proposes the Anytime Tracking CUSUM (ATC) algorithm, which utilizes a time-varying adaptive threshold and the "selective detection" principle to achieve near minimax-optimal dynamic regret $O(\sigma^2 (S+1) \log T)$ without **any detectability assumptions** (such as minimum spacing or minimum jump size). It also provides the first formal quantification of the logarithmic degradation bound due to "endogenous confounding from…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Online Learning"
+  - "Change Point Detection"
+  - "Dynamic Regret"
+  - "Non-stationary Environments"
+  - "Endogenous Confounding"
 date: 2026-05-08
-content_hash: 8476d5fca48354bc
+content_hash: 5a8fa25dbd52dff4
 ---
+
 # The Cost of Learning Under Multiple Change Points
 
 **Conference**: ICML 2026  
@@ -125,11 +131,11 @@ Minimize dynamic regret $\mathcal{R}_T(\pi) = \mathbb{E}[\sum_{t=2}^T (\hat{\mu}
 
 ## Related Papers
 
+- [\[ICLR 2026\] Local Geometry Attention for Time Series Forecasting under Realistic Corruptions](../../ICLR2026/time_series/local_geometry_attention_for_time_series_forecasting_under_realistic_corruptions.md)
+- [\[ICLR 2026\] Inferring brain plasticity rule under long-term stimulation with structured recurrent dynamics](../../ICLR2026/time_series/inferring_brain_plasticity_rule_under_long-term_stimulation_with_structured_recu.md)
 - [\[NeurIPS 2025\] PlanU: Large Language Model Reasoning through Planning under Uncertainty](../../NeurIPS2025/time_series/planu_large_language_model_reasoning_through_planning_under_uncertainty.md)
-- [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](../../NeurIPS2025/time_series/frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
 - [\[ICML 2025\] TCP-Diffusion: A Multi-modal Diffusion Model for Global Tropical Cyclone Precipitation Forecasting with Change Awareness](../../ICML2025/time_series/tcp-diffusion_a_multi-modal_diffusion_model_for_global_tropical_cyclone_precipit.md)
-- [\[ICML 2026\] Divide and Contrast: Learning Robust Temporal Features Without Augmentation](divide_and_contrast_learning_robust_temporal_features_without_augmentation.md)
-- [\[ICML 2026\] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series](position_current_benchmarking_hinders_real_progress_in_deep_learning_for_time_se.md)
+- [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](../../NeurIPS2025/time_series/frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
 
 </div>
 

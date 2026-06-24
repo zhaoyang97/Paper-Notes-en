@@ -51,11 +51,11 @@ To be added after in-depth paper reading.
 
 ## Related Papers
 
-- [\[ICLR 2026\] WOW-Seg: A Word-Free Open World Segmentation Model](wow-seg_a_word-free_open_world_segmentation_model.md)
-- [\[ICLR 2026\] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data](s3od_towards_generalizable_salient_object_detection_with_synthetic_data.md)
-- [\[ICLR 2026\] Benchmarking Open-ended Segmentation](benchmarking_open-ended_segmentation.md)
-- [\[ICLR 2026\] Hierarchical Prototype Learning for Semantic Segmentation](hierarchical_prototype_learning_for_semantic_segmentation.md)
-- [\[ICLR 2026\] LiFR-Seg: Anytime High-Frame-Rate Segmentation via Event-Guided Propagation](lifr-seg_anytime_high-frame-rate_segmentation_via_event-guided_propagation.md)
+- [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](../../NeurIPS2025/segmentation/mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
+- [\[ICLR 2026\] Enabling True Global Perception in State Space Models for Visual Tasks](enabling_true_global_perception_in_state_space_models_for_visual_tasks.md)
+- [\[CVPR 2026\] Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks](../../CVPR2026/segmentation/kαlos_finds_consensus_a_meta-algorithm_for_evaluating_inter-annotator_agreement_.md)
+- [\[ICLR 2026\] Locality-Attending Vision Transformer](locality-attending_vision_transformer.md)
+- [\[ICLR 2026\] Urban Socio-Semantic Segmentation with Vision-Language Reasoning](urban_socio-semantic_segmentation_with_vision-language_reasoning.md)
 
 </div>
 

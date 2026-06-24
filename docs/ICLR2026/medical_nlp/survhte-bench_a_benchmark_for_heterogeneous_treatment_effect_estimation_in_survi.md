@@ -2,19 +2,22 @@
 title: >-
   [Paper Note] SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis
 description: >-
-  [ICLR 2026][Medical NLP][heterogeneous treatment effects] Proposes SurvHTE-Bench, the first comprehensive benchmark for Heterogeneous Treatment Effect (HTE) estimation for right-censored survival data. It includes 40 synthetic datasets, 10 semi-synthetic datasets, and 2 real datasets to systematically evaluate 53 estimation methods under different causal assumption violations
+  [ICLR2026][Medical LLM][heterogeneous treatment effects] Proposes SurvHTE-Bench, the first comprehensive benchmark for Heterogeneous Treatment Effect (HTE) estimation for right-censored survival data. It includes 40 synthetic datasets, 10 semi-synthetic datasets, and 2 real datasets to systematically evaluate 53 estimation methods under different causal assumption violations and censoring levels. The study finds that no single method dominates…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - heterogeneous treatment effects
-  - survival analysis
-  - right-censored data
-  - causal inference
-  - benchmark
-  - CATE
+  - "ICLR2026"
+  - "Medical LLM"
+  - "heterogeneous treatment effects"
+  - "survival analysis"
+  - "right-censored data"
+  - "causal inference"
+  - "benchmark"
+  - "CATE"
+  - "meta-learners"
+  - "precision medicine"
 date: 2026-05-08
-content_hash: 70e85f1f672bf56b
+content_hash: 11dbfcbc07fb8f3c
 ---
+
 # SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis
 
 **Conference**: ICLR2026  
@@ -208,9 +211,9 @@ Key Findings: (1) Double-ML is optimal in medium-dimensional ACTG data; (2) Surv
 
 ## Related Papers
 
+- [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](../../ACL2026/medical_nlp/heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
 - [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
 - [\[ICLR 2026\] HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction](histoprism_unlocking_functional_pathway_analysis_from_pan-cancer_histology_via_g.md)
-- [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](../../ACL2026/medical_nlp/heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
 - [\[NeurIPS 2025\] HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring](../../NeurIPS2025/medical_nlp/healthslm-bench_benchmarking_small_language_models_for_mobile_and_wearable_healt.md)
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](../../NeurIPS2025/medical_nlp/position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 

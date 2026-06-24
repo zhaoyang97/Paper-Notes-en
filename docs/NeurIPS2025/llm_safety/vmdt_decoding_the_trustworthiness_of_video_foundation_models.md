@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VMDT: Decoding the Trustworthiness of Video Foundation Models
 description: >-
-  [NeurIPS 2025][LLM Safety][Video foundation models] This paper introduces VMDT (Video-Modal DecodingTrust), the first unified benchmark platform for evaluating the trustworthiness of T2V and V2T video foundation models a…
+  [NeurIPS 2025][LLM Safety][Video foundation models] This paper introduces VMDT (Video-Modal DecodingTrust), the first unified benchmark platform for evaluating the trustworthiness of T2V and V2T video foundation models across five dimensions—safety, hallucination, fairness, privacy, and adversarial robustness—covering large-scale assessments of 7 T2V and 19 V2T models, and revealing the complex relationship between model scale and trustworthiness.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "fairness"
   - "adversarial robustness"
 date: 2026-05-08
-content_hash: f4d3d5ee83326313
+content_hash: cba0d8a7413ee3ab
 ---
 
 # VMDT: Decoding the Trustworthiness of Video Foundation Models
@@ -162,11 +162,11 @@ This paper is an evaluation work (benchmark) and does not involve model training
 
 ## Related Papers
 
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](../../ICLR2026/llm_safety/trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
 - [\[NeurIPS 2025\] Evaluation of Vision-LLMs in Surveillance Video](evaluation_of_vision-llms_in_surveillance_video.md)
 - [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](../../ICLR2026/llm_safety/audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
+- [\[CVPR 2025\] Protecting Your Video Content: Disrupting Automated Video-Based LLM Annotations](../../CVPR2025/llm_safety/protecting_your_video_content_disrupting_automated_video-based_llm_annotations.md)
 - [\[NeurIPS 2025\] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning](holollm_multisensory_foundation_model_for_language-grounded_human_sensing_and_re.md)
-- [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](../../ACL2026/llm_safety/vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](../../ICML2026/llm_safety/dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
 
 </div>
 

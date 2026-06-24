@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] MedGMAE shifts the MIM pre-training target for 3D medical imaging from "reconstructing discrete voxel intensities" to "predicting a set of continuous 3D Gaussian primitives followed by volume rendering." This learns encoder representations that better align with anatomical continuity and transforms the decoder into a t
+  [ICLR 2026][Medical Imaging][Masked Autoencoder] MedGMAE shifts the MIM pre-training target for 3D medical imaging from "reconstructing discrete voxel intensities" to "predicting a set of continuous 3D Gaussian primitives followed by volume rendering." This learns encoder representations that better align with anatomical continuity and transforms the decoder into a transferable "geometric prior" capable of providing zero-shot initialization for 3DGS-CT reconstruction.
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Masked Autoencoder"
+  - "3D Gaussian Primitives"
+  - "Volumetric Pre-training"
+  - "Zero-shot Initialization"
+  - "CT Reconstruction"
 date: 2026-05-08
-content_hash: 098422ec06a2722a
+content_hash: 11f08b8cd8c2b0e1
 ---
+
 # MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ Proxy task ablation (DSC%, comparing Voxel SSL vs. Gaussian SSL):
 ## Related Papers
 
 - [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](../../CVPR2026/medical_imaging/masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
-- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](../../AAAI2026/medical_imaging/multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
 - [\[ICLR 2026\] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization](frequency-balanced_retinal_representation_learning_with_mutual_information_regul.md)
+- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](../../AAAI2026/medical_imaging/multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
 - [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](anatomy-aware_representation_learning_for_medical_ultrasound.md)
-- [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](../../CVPR2026/medical_imaging/gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
+- [\[ICLR 2026\] UltraGauss: Ultrafast Gaussian Reconstruction of 3D Ultrasound Volumes](ultragauss_ultrafast_gaussian_reconstruction_of_3d_ultrasound_volumes.md)
 
 </div>
 

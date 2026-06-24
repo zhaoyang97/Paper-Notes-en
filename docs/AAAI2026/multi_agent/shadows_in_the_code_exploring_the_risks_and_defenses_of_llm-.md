@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent Security] The first systematic security analysis of LLM-based multi-agent software development systems (ChatDev/MetaGPT/AgentVerse): proposes the IMBIA attack framework covering two t…
+  [AAAI 2026][Multi-Agent][Multi-Agent Security] The first systematic security analysis of LLM-based multi-agent software development systems (ChatDev/MetaGPT/AgentVerse): proposes the IMBIA attack framework covering two threat scenarios (malicious user + benign agents / benign user + malicious agent) and 12 malicious behaviors across 5 malware families, achieving an attack success rate (ASR) of up to 93% on ChatDev, with the Adv-IMBIA adversarial defense reducing ASR by 40–73%…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Adversarial Defense"
   - "Malware Families"
 date: 2026-05-08
-content_hash: 2b3bc7e667d5cfd3
+content_hash: beeba146d14dadbf
 ---
 
 # Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems
@@ -128,7 +128,7 @@ The first systematic security analysis of LLM-based multi-agent software develop
 ## Related Papers
 
 - [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](../../ICLR2026/multi_agent/when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
-- [\[ICLR 2026\] Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution](../../ICLR2026/multi_agent/auditing_cascading_risks_in_multi-agent_systems_via_semanti-geometric_co-evolut.md)
+- [\[ICLR 2026\] Breaking and Fixing Defenses Against Control Flow Hijacking in Multi-Agent Systems](../../ICLR2026/multi_agent/breaking_and_fixing_defenses_against_control_flow_hijacking_in_multi-agent_syste.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
 - [\[AAAI 2026\] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems](parallelism_meets_adaptiveness_scalable_documents_understanding_in_multi-agent_l.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](../../ACL2026/multi_agent/conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)

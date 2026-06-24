@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the difficulty of text-to-image models in handling compositional prompts such as "multiple objects + attribute binding + spatial relationships," BIDPO extends Diffusion DPO into a bimodal (image + text) preference optimization. It incorporates a region-level loss weighting based on bounding boxes and an auto
+  [CVPR 2026][Image Generation][Compositional Generation] To address the difficulty of text-to-image models in handling compositional prompts such as "multiple objects + attribute binding + spatial relationships," BIDPO extends Diffusion DPO into a bimodal (image + text) preference optimization. It incorporates a region-level loss weighting based on bounding boxes and an automated pipeline generating 94,000 preference pairs. On T2I-CompBench, it improves attribute binding by ap…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Compositional Generation"
+  - "Direct Preference Optimization (DPO)"
+  - "Bimodal Alignment"
+  - "Region-level Guidance"
+  - "Preference Dataset"
 date: 2026-05-08
-content_hash: 916a3a5318c5da0e
+content_hash: 965d433cee86233b
 ---
+
 # Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization
 
 **Conference**: CVPR 2026  

@@ -82,7 +82,7 @@ item_total: 56
 
 **🤖 AAAI2026** · **56** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (140)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (50)](../../ICLR2026/autonomous_driving/index.md) · [🧪 ICML2026 (8)](../../ICML2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (157)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (50)](../../ICLR2026/autonomous_driving/index.md) · [🧪 ICML2026 (8)](../../ICML2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md) · [🧪 ICML2025 (10)](../../ICML2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Autonomous Driving ×8 · 3D Object Detection ×5 · Diffusion Models ×5 · Agents ×5 · Adversarial Robustness ×4
 
@@ -96,27 +96,27 @@ item_total: 56
 
 **[Backdoor Attacks on Open Vocabulary Object Detectors via Multi-Modal Prompt Tuning](backdoor_attacks_on_open_vocabulary_object_detectors_via_multi-modal_prompt_tuni.md)**
 
-:   This paper presents the first study on backdoor attacks against open-vocabulary object detectors (OVODs), proposing TrAP (Trigger-Aware Prompt tuning), which jointly optimizes learnable prompts in both visual and textual branches alongside a learnable trigger to inject high-success-rate backdoors without modifying any model weights.
+:   The first study on backdoor attacks against open-vocabulary object detectors (OVOD). It proposes TrAP (Trigger-Aware Prompt tuning), which injects high-success-rate backdoors without modifying model weights by jointly optimizing learnable prompts in both visual and textual branches alongside a learnable trigger.
 
 **[Beta Distribution Learning for Reliable Roadway Crash Risk Assessment](beta_distribution_learning_for_reliable_roadway_crash_risk_a.md)**
 
-:   A geospatial deep learning framework based on Beta distribution learning is proposed, which leverages multi-scale satellite imagery to predict the full probability distribution of fatal crash risk (rather than point estimates), achieving 17–23% improvement in Recall while naturally expressing uncertainty through distribution shape.
+:   A geospatial deep learning framework based on Beta distribution learning is proposed to predict the full probability distribution (rather than point estimates) of fatal roadway crash risks from multi-scale satellite imagery, achieving a 17-23% improvement in Recall and naturally expressing uncertainty through the shape of the distribution.
 
 **[CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)**
 
-:   CaTFormer is proposed to explicitly model causal interactions between driver behavior and environmental context via a causal temporal Transformer, achieving state-of-the-art performance of 98.6% F1 on the Brain4Cars dataset.
+:   This paper proposes CaTFormer, which explicitly models the causal interaction between driver behavior and environmental context using a Causal Temporal Transformer, achieving state-of-the-art performance with a 98.6% F1 score on the Brain4Cars dataset.
 
 **[CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)**
 
-:   CompTrack is proposed as the first framework to simultaneously address dual redundancy in LiDAR point clouds: SFP filters background noise via information entropy analysis to resolve spatial redundancy; IB-DTC estimates effective rank via online SVD and adaptively determines compression ratio to compress foreground into low-rank proxy tokens, resolving information redundancy. Achieves state-of-the-art on nuScenes (61.04% Success) at 90 FPS.
+:   Proposes CompTrack—the first 3D single object tracking framework to address the dual challenges of spatial and informational redundancy in LiDAR point clouds simultaneously: the Spatial Foreground Predictor (SFP) filters background noise based on information entropy, and the Information Bottleneck-guided Dynamic Token Compression (IB-DTC) module estimates the effective rank via online SVD to compress the foreground into compact proxy tokens; achieves state-of-the-art performance on nuScenes and Waymo while running in real-time at 90 FPS.
 
 **[Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification](debiased_dual-invariant_defense_for_adversarially_robust_person_re-identificatio.md)**
 
-:   This work systematically identifies two unique challenges in adversarial defense for person ReID — model bias and composite generalization requirements — and proposes a Debiased Dual-Invariant Defense framework. The data balancing stage employs a diffusion model for resampling to mitigate bias, while the dual adversarial self-meta defense stage achieves dual generalization to unseen IDs and unseen attacks via Farthest Negative Example Softening (FNES)-based metric adversarial training and adversarially-enhanced self-meta learning.
+:   This work systematically identifies two unique challenges in person Re-ID adversarial defense (model bias and composite generalization needs) and proposes a Debiased Dual-Invariant Defense framework: resampling with a diffusion model in the data balancing phase alleviates bias, while dual generalization to unseen IDs and unseen attacks is achieved in the dual adversarial self-meta defense phase using metric adversarial training with farthest negative expansion softening and adversarially-enhanced self-meta learning.
 
 **[AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)**
 
-:   This paper identifies the architectural root cause of ego-status over-reliance in end-to-end autonomous driving—namely, the premature fusion of ego status within the BEV encoder—and proposes AdaptiveAD, a dual-branch architecture consisting of a scene-driven branch (with ego status removed) and a self-driven branch that independently generate planning decisions. A scene-aware fusion module then adaptively integrates the two branches. Complemented by path attention, BEV unidirectional distillation, and an autoregressive online mapping auxiliary task, AdaptiveAD achieves state-of-the-art planning performance on nuScenes.
+:   This work identifies the architectural root cause of over-reliance on ego status in end-to-end autonomous driving (premature fusion of ego status within the BEV encoder). It proposes AdaptiveAD, a dual-branch architecture consisting of a scene-driven branch (with ego status omitted) and a planning-only branch to generate decisions independently. These decisions are subsequently integrated adaptively via a scene-aware fusion module, working in tandem with path attention, unidirectional BEV distillation, and an autoregressive online mapping auxiliary task to achieve state-of-the-art open-loop planning performance on nuScenes.
 
 **[SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)**
 
@@ -128,11 +128,11 @@ item_total: 56
 
 **[DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)**
 
-:   This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first employs a discriminative Proposal Decoder to generate coarse trajectory proposals, then iteratively refines them via a diffusion model, combined with a fine-grained semantic interaction module. The method achieves state-of-the-art performance on both NAVSIM v2 and Bench2Drive benchmarks.
+:   This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first generates coarse trajectories using a discriminative Proposal Decoder and then refines them iteratively using a diffusion model. Combined with a fine-grained semantic interaction module, it achieves SOTA performance on both NAVSIM v2 and Bench2Drive benchmarks.
 
 **[Drive As You Like: Strategy-Level Motion Planning Based on A Multi-Head Diffusion Model](drive_as_you_like_strategy-level_motion_planning_based_on_a_multi-head_diffusion.md)**
 
-:   This paper proposes M-Diffusion Planner, a strategy-level motion planning framework built upon a multi-head diffusion model and GRPO post-training, enabling users to switch among driving styles such as aggressive, conservative, and comfortable via natural language, while maintaining state-of-the-art planning performance.
+:   Proposes M-Diffusion Planner, which achieves strategy-level motion planning based on a multi-head diffusion model and GRPO post-training, allowing users to switch between aggressive, conservative, and comfortable driving styles via natural language while maintaining SOTA planning performance.
 
 **[DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)**
 
@@ -140,15 +140,15 @@ item_total: 56
 
 **[DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning](drivesuprim_towards_precise_trajectory_selection_for_end-to-end_planning.md)**
 
-:   This paper proposes DriveSuprim, which addresses three key bottlenecks in selection-based end-to-end planning — difficulty distinguishing similar trajectories, directional bias, and hard-label instability — through a coarse-to-fine trajectory selection paradigm, rotation-based data augmentation, and a self-distillation soft-label framework, achieving state-of-the-art performance on NAVSIM v1/v2 and Bench2Drive.
+:   DriveSuprim is proposed to address key challenges in selection-based end-to-end planning—difficulty in distinguishing similar trajectories, orientation bias, and instability of hard labels—via a coarse-to-fine trajectory filtering paradigm, rotation-based data augmentation, and a self-distillation soft label framework, achieving state-of-the-art (SOTA) performance on NAVSIM v1/v2 and Bench2Drive.
 
 **[Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)**
 
-:   This paper proposes DST (Dual-branch Spatial-Temporal), a road network representation learning framework that jointly models spatial heterogeneity and temporal dynamics via a spatial branch (mix-hop transition matrix + graph–hypergraph contrastive learning) and a temporal branch (Transformer encoder + next-token prediction + weekday/weekend classification). DST achieves state-of-the-art performance on three downstream tasks across three cities.
+:   This paper proposes the DST (Dual-branch Spatial-Temporal) road network representation learning framework. By jointly modeling the spatial heterogeneity and temporal dynamics of road networks through a spatial branch (mix-hop transition matrix + graph-hypergraph contrastive learning) and a temporal branch (Transformer encoder + next-token prediction + weekday/weekend classification), the method achieves SOTA performance on three downstream tasks across three cities.
 
 **[ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts](expertad_enhancing_autonomous_driving_systems_with_mixture_of_experts.md)**
 
-:   ExpertAD introduces a Mixture-of-Experts (MoE) architecture into the perception and prediction modules of end-to-end autonomous driving systems. A Perception Adapter dynamically re-weights BEV features to amplify task-critical semantics, while a Mixture of Sparse Experts employs a router to selectively activate relevant driving task experts and uses sparse attention to reduce computation. The framework reduces inference latency by approximately 25% while maintaining or improving planning performance.
+:   This paper proposes ExpertAD, introducing the Mixture of Experts (MoE) architecture into the perception and prediction modules of end-to-end autonomous driving systems (ADS). Specifically, the Perception Adapter dynamically reweights BEV (Bird's-Eye-View) features to amplify task-critical semantics, and the Mixture of Sparse Experts (MoSE) dynamically activates relevant driving task experts via a router while employing sparse attention to reduce computational cost. This approach reduces inference latency by approximately 25% while maintaining or improving planning performance.
 
 **[Exploring Surround-View Fisheye Camera 3D Object Detection](exploring_surround-view_fisheye_camera_3d_object_detection.md)**
 
@@ -172,11 +172,11 @@ item_total: 56
 
 **[Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction](global-lens_transformers_adaptive_token_mixing_for_dynamic_link_prediction.md)**
 
-:   This paper proposes GLFormer, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive token mixer conditioned on interaction order and temporal intervals, and employs a hierarchical aggregation mechanism to enlarge the temporal receptive field. GLFormer achieves performance on par with or superior to Transformer baselines across 6 benchmarks while substantially reducing computational complexity.
+:   GLFormer is proposed, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive token mixer based on interaction order and time intervals, combined with a hierarchical aggregation mechanism to expand the temporal receptive field. It achieves comparable or superior performance to Transformer baselines across six benchmarks while significantly reducing computational complexity.
 
 **[HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)**
 
-:   This paper proposes the HD2-SSC framework, which addresses the 2D→3D input–output dimension gap via a High-dimensional Semantic Decoupling (HSD) module (expanding pixel features along a pseudo-dimension and orthogonally decoupling them), and addresses the annotation–reality density gap via a High-density Occupancy Refinement (HOR) module (a "detection–refinement" paradigm that aligns geometrically and semantically critical voxels). The method achieves state-of-the-art performance on SemanticKITTI and SSCBench-KITTI-360.
+:   This paper proposes the HD2-SSC framework. It addresses the 2D-to-3D input-output dimension gap through a High-Dimension Semantic Decoupling (HSD) module (expanding pixel features along pseudo-dimensions and orthogonally decoupling them), and addresses the annotation-reality density gap through a High-Density Occupancy Refinement (HOR) module (aligning geometric and semantic critical voxels via a "detection-refinement" paradigm), achieving SOTA results on SemanticKITTI and SSCBench-KITTI-360.
 
 **[Hierarchical Prompt Learning for Image- and Text-Based Person Re-Identification](hierarchical_prompt_learning_for_image-_and_text-based_person_re-identification.md)**
 

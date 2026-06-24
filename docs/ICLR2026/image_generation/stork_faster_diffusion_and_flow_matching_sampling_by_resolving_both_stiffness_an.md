@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] STORK: 通过同时解决刚性与结构依赖来加速扩散与流匹配采样
+  [Paper Note] STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] STORK introduces Stabilized Runge-Kutta (SRK) methods from numerical analysis—designed specifically for "stiff ODEs"—into diffusion and flow matching sampling. By utilizing Taylor expansion to compress the high Number of Function Evaluations (NFE) typical of SRK into "virtual NFEs," it yields a training-free solver tha
+  [ICLR 2026][Image Generation][Diffusion Models] STORK introduces Stabilized Runge-Kutta (SRK) methods from numerical analysis—designed specifically for "stiff ODEs"—into diffusion and flow matching sampling. By utilizing Taylor expansion to compress the high Number of Function Evaluations (NFE) typical of SRK into "virtual NFEs," it yields a training-free solver that handles stiffness without structural dependence. At ultra-low budgets of 7–20 NFE…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Flow Matching"
+  - "Training-free Sampling"
+  - "Stabilized Runge-Kutta"
+  - "Stiff ODE"
 date: 2026-05-08
-content_hash: 1420fca066ab2493
+content_hash: 2a0fc7784f8960d4
 ---
+
 # STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency
 
 **Conference**: ICLR 2026  
@@ -147,11 +151,11 @@ Comparison of raw RK4, raw SRK4, and STORK-4 on CIFAR-10 highlights the necessit
 
 ## Related Papers
 
-- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
 - [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
+- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
-- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
+- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
 
 </div>
 

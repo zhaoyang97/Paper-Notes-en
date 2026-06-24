@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping
 description: >-
-  [AAAI 2026][Reinforcement Learning][Test-time alignment] This paper proposes a test-time policy shaping method that interpolates and modifies the action probability distribution of pretrained RL agents at inference time…
+  [AAAI 2026][Reinforcement Learning][Test-time alignment] This paper proposes a test-time policy shaping method that interpolates and modifies the action probability distribution of pretrained RL agents at inference time using lightweight ethical attribute classifiers, enabling fine-grained behavioral steering across multiple ethical attributes without retraining.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "ethical behavior steering"
   - "Machiavellian agents"
 date: 2026-05-08
-content_hash: 612b511de06083ae
+content_hash: 9c7fcc769c774604
 ---
 
 # Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping
@@ -150,10 +150,10 @@ Evaluation platform: MACHIAVELLI benchmark, 134 text-based games; 10 games with 
 ## Related Papers
 
 - [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](../../ICLR2026/reinforcement_learning/thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
+- [\[ICML 2025\] Test-Time Adaptation with Binary Feedback](../../ICML2025/reinforcement_learning/test-time_adaptation_with_binary_feedback.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](../../ICLR2026/reinforcement_learning/representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_teachers_of_test_time_scaling.md)
 - [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](../../ICLR2026/reinforcement_learning/p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
-- [\[ACL 2026\] SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time](../../ACL2026/reinforcement_learning/what_if_consensus_lies_selective-complementary_reinforcement_learning_at_test_ti.md)
-- [\[AAAI 2026\] G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation](g-ubs_towards_robust_understanding_of_implicit_feedback_via_group-aware_user_beh.md)
 
 </div>
 

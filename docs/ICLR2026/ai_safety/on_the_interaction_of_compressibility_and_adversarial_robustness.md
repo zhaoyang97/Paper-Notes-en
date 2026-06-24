@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Interaction of Compressibility and Adversarial Robustness
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper provides a unified theoretical framework proving that "structured compression" (at both neuron and spectral levels) concentrates parameter energy into a few dominant directions. This concentration raises the operator norm and Lipschitz constant of the network, creating "high-sensitivity directions" in the re
+  [ICLR 2026][AI Safety][Structured Compression] This paper provides a unified theoretical framework proving that "structured compression" (at both neuron and spectral levels) concentrates parameter energy into a few dominant directions. This concentration raises the operator norm and Lipschitz constant of the network, creating "high-sensitivity directions" in the representation space that adversarial attacks can exploit, ultimately leading to a systematic degradation of advers…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Structured Compression"
+  - "Adversarial Robustness"
+  - "Lipschitz Constant"
+  - "Operator Norm"
+  - "Low-rank"
 date: 2026-05-08
-content_hash: 1614976452ba37e3
+content_hash: 91b38c2e1a55bc63
 ---
+
 # On the Interaction of Compressibility and Adversarial Robustness
 
 **Conference**: ICLR 2026  
@@ -120,15 +126,16 @@ Experiments cover MNIST, CIFAR-10, CIFAR-100, SVHN, Flickr30k, and ImageNet-1k d
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction](generative_adversarial_post-training_mitigates_reward_hacking_in_live_human-ai_m.md)
+- [\[ICLR 2026\] When Flatness Does (Not) Guarantee Adversarial Robustness](when_flatness_does_not_guarantee_adversarial_robustness.md)
 - [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
 - [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
 - [\[ICLR 2026\] Zero-Sacrifice Persistent-Robustness Adversarial Defense for Pre-Trained Encoders](zero-sacrifice_persistent-robustness_adversarial_defense_for_pre-trained_encoder.md)
-- [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring LLMs for Scientific Information Extraction using the SciEx Framework
 description: >-
-  [AAAI 2026][Multimodal VLM][Scientific Information Extraction] This paper proposes SciEx, a modular and composable scientific information extraction framework that decouples PDF parsing, multimodal retrieval…
+  [AAAI 2026][Multimodal VLM][Scientific Information Extraction] This paper proposes SciEx, a modular and composable scientific information extraction framework that decouples PDF parsing, multimodal retrieval, schema-guided extraction, and cross-document aggregation into independent components. The framework evaluates the extraction capabilities of GPT-4o and Gemini-2.5-Flash on a dataset of 143 papers spanning medicine and environmental science…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Reasoning"
   - "Modular Framework"
 date: 2026-05-08
-content_hash: 55824aac21d9e303
+content_hash: a52815ed4afa1a6f
 ---
 
 # Exploring LLMs for Scientific Information Extraction using the SciEx Framework
@@ -135,10 +135,10 @@ SciEx is a purely prompt-driven RAG framework and involves no model training. GP
 ## Related Papers
 
 - [\[ICLR 2026\] LiveWeb-IE: A Benchmark For Online Web Information Extraction](../../ICLR2026/multimodal_vlm/liveweb-ie_a_benchmark_for_online_web_information_extraction.md)
-- [\[AAAI 2026\] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios](stola_self-adaptive_touch-language_framework_with_tactile_commonsense_reasoning_.md)
+- [\[CVPR 2025\] Relation-Rich Visual Document Generator for Visual Information Extraction](../../CVPR2025/multimodal_vlm/relation-rich_visual_document_generator_for_visual_information_extraction.md)
+- [\[ACL 2025\] Table Understanding and (Multimodal) LLMs: A Cross-Domain Case Study on Scientific Tables](../../ACL2025/multimodal_vlm/table_understanding_and_multimodal_llms_a_cross-domain_case_study_on_scientific_.md)
+- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
 - [\[AAAI 2026\] Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks](information_theoretic_optimal_surveillance_for_epidemic_prevalence_in_networks.md)
-- [\[AAAI 2026\] Phantom Menace: Exploring and Enhancing the Robustness of VLA Models Against Physical Sensor Attacks](phantom_menace_exploring_and_enhancing_the_robustness_of_vla_models_against_phys.md)
-- [\[ACL 2026\] DMN: A Compositional Framework for Jailbreaking Multimodal LLMs with Multi-Image Inputs](../../ACL2026/multimodal_vlm/dmn_a_compositional_framework_for_jailbreaking_multimodal_llms_with_multi-image_.md)
 
 </div>
 

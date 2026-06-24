@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Three Forward, One Backward: Memory-Efficient Full-Rank Fine-Tuning of Large Models via Extra Forward Passes
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Aiming at the inherent flaws of LoRA ("restricted expressiveness due to updates only in low-rank subspaces") and MeZO ("high variance and slow convergence of pure zeroth-order estimation"), this paper proposes LMAO. By alternating one forward+backward pass for LoRA (updating low-rank matrices $A, B$) and two perturbed
+  [ICLR 2026][LLM Efficiency][Memory-efficient fine-tuning] Aiming at the inherent flaws of LoRA ("restricted expressiveness due to updates only in low-rank subspaces") and MeZO ("high variance and slow convergence of pure zeroth-order estimation"), this paper proposes LMAO. By alternating one forward+backward pass for LoRA (updating low-rank matrices $A, B$) and two perturbed forward passes for zeroth-order estimation (updating base weights $W$) in each iteration…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Memory-efficient fine-tuning"
+  - "zeroth-order optimization"
+  - "low-rank adaptation"
+  - "full-rank update"
+  - "alternating optimization"
 date: 2026-05-08
-content_hash: 750169569058a91c
+content_hash: 4505f353cf46a829
 ---
+
 # Three Forward, One Backward: Memory-Efficient Full-Rank Fine-Tuning of Large Models via Extra Forward Passes
 
 **Conference**: ICLR 2026  
@@ -162,10 +168,10 @@ Peak Memory (GB, OPT-1.3B):
 ## Related Papers
 
 - [\[ICLR 2026\] FLoRG: Federated Fine-tuning with Low-rank Gram Matrices and Procrustes Alignment](florg_federated_fine-tuning_with_low-rank_gram_matrices_and_procrustes_alignment.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
 - [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
 - [\[ICML 2026\] TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins](../../ICML2026/llm_efficiency/tuneahead_predicting_fine-tuning_performance_before_full_training_begins.md)
-- [\[ICLR 2026\] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs](on-the-fly_adaptation_to_quantization_configuration-aware_lora_for_efficient_fin.md)
-- [\[ICLR 2026\] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models](neuron-aware_data_selection_in_instruction_tuning_for_large_language_models.md)
+- [\[ICLR 2026\] Mitigating Non-IID Drift in Zeroth-Order Federated LLM Fine-Tuning with Transferable Sparsity](mitigating_non-iid_drift_in_zeroth-order_federated_llm_fine-tuning_with_transfer.md)
 
 </div>
 

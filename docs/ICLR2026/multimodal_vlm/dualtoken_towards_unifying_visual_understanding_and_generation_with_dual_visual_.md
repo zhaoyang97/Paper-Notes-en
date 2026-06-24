@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies
 description: >-
-  [ICLR 2026][Multimodal VLM][SigLIP] DualToken decouples the naturally conflicting goals of "semantics for understanding" and "pixels for generation" along the shallow and deep structures of ViT. By learning reconstruction in shallow layers for a pixel codebook and semantics in deep layers for a semantic codebook, a single tokenizer achieves 0.25 rFID and
+  [ICLR 2026][Multimodal VLM][Unified Visual Tokenizer] DualToken decouples the naturally conflicting goals of "semantics for understanding" and "pixels for generation" along the shallow and deep structures of ViT. By learning reconstruction in shallow layers for a pixel codebook and semantics in deep layers for a semantic codebook, a single tokenizer achieves 0.25 rFID and 82.0% zero-shot accuracy simultaneously, enabling a pure autoregressive MLLM to excel at both image under…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - SigLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified Visual Tokenizer"
+  - "Dual Visual Codebooks"
+  - "Autoregressive Multimodal"
+  - "SigLIP"
+  - "Residual Quantization"
 date: 2026-05-08
-content_hash: 93fb83cfe8ddfa49
+content_hash: e3e33545135899de
 ---
+
 # DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies
 
 **Conference**: ICLR 2026  
@@ -119,11 +124,11 @@ DualToken approaches the zero-shot accuracy of pure semantic SigLIP and surpasse
 
 ## Related Papers
 
+- [\[ICLR 2026\] Simulation to Rules: A Dual-VLM Framework for Formal Visual Planning](simulation_to_rules_a_dual-vlm_framework_for_formal_visual_planning.md)
 - [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 - [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
 - [\[ICLR 2026\] K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge](k-sort_eval_efficient_preference_evaluation_for_visual_generation_via_corrected_.md)
-- [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](../../CVPR2026/multimodal_vlm/boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
-- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 
 </div>
 

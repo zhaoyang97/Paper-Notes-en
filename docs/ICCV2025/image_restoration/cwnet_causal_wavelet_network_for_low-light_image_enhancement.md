@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CWNet: Causal Wavelet Network for Low-Light Image Enhancement
 description: >-
-  [ICCV 2025][Image Restoration][Low-light image enhancement] This paper proposes CWNet, a Causal Wavelet Network that models low-light image enhancement through a structural causal model (SCM)…
+  [ICCV 2025][Image Restoration][Low-light image enhancement] This paper proposes CWNet, a Causal Wavelet Network that models low-light image enhancement through a structural causal model (SCM), treating semantic information as causal factors and brightness/color degradation as non-causal factors, and employs a wavelet-based backbone for fine-grained frequency-domain feature restoration.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "state space model"
   - "CLIP semantic consistency"
 date: 2026-05-08
-content_hash: 956d17cc8d072dec
+content_hash: 117e879ea944d90e
 ---
 
 # CWNet: Causal Wavelet Network for Low-Light Image Enhancement
@@ -119,10 +119,10 @@ The model has only 1.23M parameters and 11.3G FLOPs, far fewer than MIRNet (31.7
 ## Related Papers
 
 - [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](low-light_image_enhancement_using_event-based_illumination_estimation.md)
+- [\[CVPR 2025\] HVI: A New Color Space for Low-light Image Enhancement](../../CVPR2025/image_restoration/hvi_a_new_color_space_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](../../CVPR2026/image_restoration/bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
 - [\[AAAI 2026\] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement](../../AAAI2026/image_restoration/iclr_inter-chrominance_and_luminance_interaction_for_natural_color_restoration_i.md)
-- [\[ICCV 2025\] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement](learning_pixel-adaptive_multi-layer_perceptrons_for_real-time_image_enhancement.md)
-- [\[ICCV 2025\] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables](lightweight_and_fast_real-time_image_enhancement_via_decomposition_of_the_spatia.md)
-- [\[ICCV 2025\] MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices](mobileie_an_extremely_lightweight_and_effective_convnet_for_real-time_image_enha.md)
+- [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](../../CVPR2026/image_restoration/multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
 
 </div>
 

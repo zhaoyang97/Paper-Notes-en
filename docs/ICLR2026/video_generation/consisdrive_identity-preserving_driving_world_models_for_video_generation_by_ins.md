@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask
 description: >-
-  [ICLR 2026][Video Generation][nuScenes] ConsisDrive utilizes "instance masks" within a diffusion-based driving world model to constrain both attention and loss to individual objects. This ensures each visual token interacts only with its own instance's identity and trajectory tokens (preventing a bus from transforming into a truck or a red car into a black o
+  [ICLR2026][Video Generation][Driving world models] ConsisDrive utilizes "instance masks" within a diffusion-based driving world model to constrain both attention and loss to individual objects. This ensures each visual token interacts only with its own instance's identity and trajectory tokens (preventing a bus from transforming into a truck or a red car into a black one) while shifting supervision focus toward the foreground. Consequently, it achieves a record FVD of 37.23 a…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - nuScenes
+  - "ICLR2026"
+  - "Video Generation"
+  - "Driving world models"
+  - "Identity consistency"
+  - "Instance mask attention"
+  - "Temporal consistency"
+  - "nuScenes"
 date: 2026-05-08
-content_hash: 6812be48944046a6
+content_hash: 32d328349846659c
 ---
+
 # ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask
 
 **Conference**: ICLR2026  

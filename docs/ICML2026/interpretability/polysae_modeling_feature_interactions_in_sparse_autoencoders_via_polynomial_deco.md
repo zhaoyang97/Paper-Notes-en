@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding
 description: >-
-  [ICML 2026][Interpretability][Paper Note] PolySAE introduces secondndnd and third-order polynomial terms based on shared low-rank projections alongside the standard linear decoder of Sparse Autoencoders (SAEs). With a minimal parameter overhead (~3% on GPT-2 small), it explicitly models multiplicative interactions between sparse features. Across 4 LLMs and 3 S
+  [ICML 2026][Interpretability][Sparse Autoencoders] PolySAE introduces secondndnd and third-order polynomial terms based on shared low-rank projections alongside the standard linear decoder of Sparse Autoencoders (SAEs). With a minimal parameter overhead (~3% on GPT-2 small), it explicitly models multiplicative interactions between sparse features. Across 4 LLMs and 3 SAE variants, it improves probe F1 by approximately 8%, increases the 1-Wasserstein distance of class-conditio…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Feature Interactions"
+  - "Polynomial Decoding"
+  - "Low-rank Tensor Decomposition"
+  - "Compositionality"
 date: 2026-05-08
-content_hash: f9ca33e74bcaa73d
+content_hash: eb4c1f06bc5bdd90
 ---
+
 # PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding
 
 **Conference**: ICML 2026  
@@ -125,15 +131,15 @@ Low-rank decomposition reduces parameters by 65% with only a 1pp F1 loss. Adding
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
 - [\[ICML 2026\] Sparse Autoencoders are Topic Models](sparse_autoencoders_are_topic_models.md)
-- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](../../AAAI2026/interpretability/sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
 - [\[ICML 2026\] Ensembling Sparse Autoencoders](ensembling_sparse_autoencoders.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
+- [\[ICLR 2026\] Taming Polysemanticity in LLMs: Theory-Grounded Feature Recovery via Sparse Autoencoders](../../ICLR2026/interpretability/taming_polysemanticity_in_llms_theory-grounded_feature_recovery_via_sparse_autoe.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation
 description: >-
-  [ICLR 2026][Audio & Speech][GRPO] VowelPrompt is proposed to extract vowel-level prosodic descriptors (pitch/energy/duration) based on phonetic evidence, converting them into natural language to enhance LLM prompts for emotion recognition. Combined with a two-stage SFT+GRPO training strategy, it consistently outperforms SOTA under zero-shot, fine-tuned
+  [ICLR 2026][Audio & Speech][Speech Emotion Recognition] VowelPrompt is proposed to extract vowel-level prosodic descriptors (pitch/energy/duration) based on phonetic evidence, converting them into natural language to enhance LLM prompts for emotion recognition. Combined with a two-stage SFT+GRPO training strategy, it consistently outperforms SOTA under zero-shot, fine-tuned, cross-domain, and cross-lingual conditions while generating interpretable emotional reasoning.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - GRPO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech Emotion Recognition"
+  - "Prosodic Features"
+  - "Vowel-level"
+  - "LLM Inference"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 981aeea50a88dbbd
+content_hash: fcf463040c3e7547
 ---
+
 # VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,10 @@ Cross-lingual transfer in SER usually requires retraining, but VowelPrompt exten
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpeechJudge: Towards Human-Level Judgment for Speech Naturalness](speechjudge_towards_human-level_judgment_for_speech_naturalness.md)
 - [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
 - [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
 - [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](towards_true_speech-to-speech_models_without_text_guidance.md)
-- [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
 
 </div>

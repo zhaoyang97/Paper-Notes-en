@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing the long-standing dilemma in 3D human motion generation between "small but clean mocap sets" and "large but noisy in-the-wild sets," RoMo employs a **taxonomy-aware adaptive filtering pipeline** to distill approximately 1% of high-quality motion from 125,000 hours of web videos. It constructs a large-scale d
+  [CVPR 2026][Human Understanding][Human Motion Dataset] Addressing the long-standing dilemma in 3D human motion generation between "small but clean mocap sets" and "large but noisy in-the-wild sets," RoMo employs a **taxonomy-aware adaptive filtering pipeline** to distill approximately 1% of high-quality motion from 125,000 hours of web videos. It constructs a large-scale dataset featuring 820,000 segments (approx. 1,238 hours), each with 5 rich text descriptions organized by…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human Motion Dataset"
+  - "Semantic Taxonomy"
+  - "Dynamic Score"
+  - "Adaptive Filtering"
+  - "Text-to-Motion Generation"
 date: 2026-05-08
-content_hash: 776911156b6ab75c
+content_hash: 9fe4045e9f421990
 ---
+
 # RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation
 
 **Conference**: CVPR 2026  
@@ -111,6 +117,7 @@ Training the diffusion model MDM and autoregressive model MMGPT on RoMo:
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the data bottleneck in motion generation; the Dataset + Taxonomy + Toolbox provides a reproducible foundation for future work.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -119,7 +126,7 @@ Training the diffusion model MDM and autoregressive model MMGPT on RoMo:
 - [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
 - [\[CVPR 2026\] HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations](humaps-4d_a_multimodal_dataset_for_human_motion_analysis_with_physiological_and_.md)
 - [\[CVPR 2026\] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data](opent2m_no-frill_motion_generation_with_open-source_large-scale_high-quality_dat.md)
-- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
+- [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
 
 </div>
 

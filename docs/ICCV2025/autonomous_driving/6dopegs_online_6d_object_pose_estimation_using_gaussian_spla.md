@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][6D Object Pose Estimation] Leveraging the efficient differentiable rendering capability of 2D Gaussian Splatting…
+  [ICCV 2025][Autonomous Driving][6D Object Pose Estimation] Leveraging the efficient differentiable rendering capability of 2D Gaussian Splatting, this paper proposes a CAD-model-free online 6D object pose estimation and tracking method. By jointly optimizing a Gaussian object field and keyframe poses, it achieves approximately 5× speedup over BundleSDF while maintaining comparable accuracy.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Model-Free"
   - "RGB-D"
 date: 2026-05-08
-content_hash: 645cba9ae9e55a1f
+content_hash: 85f0f5fccc15b40e
 ---
 
 # 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting
@@ -163,8 +163,8 @@ How to achieve **real-time** joint optimization of 6D object pose estimation and
 
 - [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
-- [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
 - [\[ICCV 2025\] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](gs-livm_real-time_photo-realistic_lidar-inertial-visual_mapping_with_gaussian_sp.md)
+- [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
 - [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head
 description: >-
-  [CVPR 2026][Video Generation][Action Unit] EmoDiffTalk maps the "emotion-to-expression" transformation onto the explainable Action Unit (AU) encoding space. It utilizes AU-prompted Gaussian diffusion to drive speech into fine-grained dynamic 3D Gaussian talking heads and implements "one-sentence emotion editing" via a text-to-AU controller. It surpasses Prev. S
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] EmoDiffTalk maps the "emotion-to-expression" transformation onto the explainable Action Unit (AU) encoding space. It utilizes AU-prompted Gaussian diffusion to drive speech into fine-grained dynamic 3D Gaussian talking heads and implements "one-sentence emotion editing" via a text-to-AU controller. It surpasses Prev. SOTA in rendering fidelity, lip synchronization, and emotional controllability on EmoTalk3D and RenderMe-360.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Action Unit
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Talking Head"
+  - "Emotion Editing"
+  - "Action Unit"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 136e145471d444c6
+content_hash: b6f8041fc94e4b7c
 ---
+
 # EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head
 
 **Conference**: CVPR 2026  
@@ -153,11 +157,11 @@ User studies (1–5 scale) further support the subjective quality. Only Hallo3 a
 
 ## Related Papers
 
-- [\[CVPR 2026\] THEval: Evaluation Framework for Talking Head Video Generation](theval_evaluation_framework_for_talking_head_video_generation.md)
-- [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360deg_video_diffusion.md)
-- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
-- [\[AAAI 2026\] 3D4D: An Interactive Editable 4D World Model via 3D Video Generation](../../AAAI2026/video_generation/3d4d_an_interactive_editable_4d_world_model_via_3d_video_generation.md)
+- [\[CVPR 2026\] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)
+- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
+- [\[CVPR 2026\] RelightAnyone: A Generalized Relightable 3D Gaussian Head Model](relightanyone_a_generalized_relightable_3d_gaussian_head_model.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
+- [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
 
 </div>
 

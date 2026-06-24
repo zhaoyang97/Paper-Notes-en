@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mixture of Prototypes for Test-time Adaptive Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] The conventional "one prototype per class" approach in TTA-Seg is upgraded to a "cluster of experts per class." By using K-means to cluster intra-class prototypes from the source domain into multiple experts, employing a gating network for dynamic instance-wise weighted fusion, and applying min-max entropy optimization
+  [CVPR 2026][Segmentation][Test-time Adaptation] The conventional "one prototype per class" approach in TTA-Seg is upgraded to a "cluster of experts per class." By using K-means to cluster intra-class prototypes from the source domain into multiple experts, employing a gating network for dynamic instance-wise weighted fusion, and applying min-max entropy optimization to update only the gating module, this method achieves new SOTA results on benchmarks such as Cityscapes→ACDC a…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Test-time Adaptation"
+  - "Semantic Segmentation"
+  - "Mixture-of-Experts (MoE)"
+  - "Prototypical Clustering"
+  - "Entropy Optimization"
 date: 2026-05-08
-content_hash: 6143fc76ffd77f5e
+content_hash: 4b3b9e3e7cd57c78
 ---
+
 # Mixture of Prototypes for Test-time Adaptive Segmentation
 
 **Conference**: CVPR 2026  
@@ -153,15 +159,16 @@ CTTA (Cityscapes→ACDC sub-domains, Avg mIoU):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hyperbolic Prototype Learning with Uncertainty-Aware Consistency for Continual Test-Time Segmentation](hyperbolic_prototype_learning_with_uncertainty-aware_consistency_for_continual_t.md)
 - [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 - [\[CVPR 2026\] The Golden Subspace: Where Efficiency Meets Generalization in Continual Test-Time Adaptation](the_golden_subspace_where_efficiency_meets_generalization_in_continual_test-time.md)
-- [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
+- [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
 - [\[ICML 2025\] IT³: Idempotent Test-Time Training](../../ICML2025/segmentation/it3_idempotent_test-time_training.md)
-- [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TAO-Attack: Toward Advanced Optimization-based Jailbreak Attacks for Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][GCG] Addressing three chronic issues in optimization-based jailbreak attacks (represented by GCG)—vulnerability to refusal responses, generation of "pseudo-harmful" content, and inefficient token updates—TAO-Attack employs a **two-stage loss function** (suppressing refusal first, then penalizing pseudo-harmfulness) combined
+  [ICLR 2026][LLM Safety][Jailbreak Attacks] Addressing three chronic issues in optimization-based jailbreak attacks (represented by GCG)—vulnerability to refusal responses, generation of "pseudo-harmful" content, and inefficient token updates—TAO-Attack employs a **two-stage loss function** (suppressing refusal first, then penalizing pseudo-harmfulness) combined with **Direction-Prioritized Token Optimization (DPTO)**. It achieves a 100% Attack Success Rate (ASR) on three alig…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - GCG
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Jailbreak Attacks"
+  - "Optimization-based Attacks"
+  - "GCG"
+  - "Two-stage Loss"
+  - "Direction-Prioritized"
 date: 2026-05-08
-content_hash: 6741847a8528102b
+content_hash: 9e5f619ef8077262
 ---
+
 # TAO-Attack: Toward Advanced Optimization-based Jailbreak Attacks for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ Fixed initialization, Llama-2-7B-Chat, 1000 steps/query:
 
 ## Related Papers
 
+- [\[ICLR 2026\] SlotGCG: Exploiting the Positional Vulnerability in LLMs for Jailbreak Attacks](slotgcg_exploiting_the_positional_vulnerability_in_llms_for_jailbreak_attacks.md)
 - [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
-- [\[ICLR 2026\] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model](star_strategy-driven_automatic_jailbreak_red-teaming_for_large_language_model.md)
 - [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[ICLR 2026\] VEAttack: Downstream-Agnostic Vision Encoder Attack Against Large Vision Language Models](veattack_downstream-agnostic_vision_encoder_attack_against_large_vision_language.md)
-- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](../../ACL2026/llm_safety/jailbreaking_large_language_models_with_morality_attacks.md)
+- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 
 </div>
 

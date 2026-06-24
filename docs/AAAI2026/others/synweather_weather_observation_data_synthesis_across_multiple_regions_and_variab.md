@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer
 description: >-
-  [AAAI 2026][weather data synthesis] This work introduces SynWeather, the first unified multi-region multi-variable weather observation synthesis dataset (covering 4 regions × 4 variables × 6 satellites)…
+  [AAAI 2026][weather data synthesis] This work introduces SynWeather, the first unified multi-region multi-variable weather observation synthesis dataset (covering 4 regions × 4 variables × 6 satellites), and proposes SynWeatherDiff, a general probabilistic generative model based on a Diffusion Transformer. By leveraging text prompts to distinguish region–variable task combinations, SynWeatherDiff outperforms both task-specific models and existing general-purpose models across…
 tags:
   - "AAAI 2026"
   - "weather data synthesis"
@@ -11,7 +11,7 @@ tags:
   - "radar reflectivity"
   - "precipitation estimation"
 date: 2026-05-08
-content_hash: 1af2fc927a6eefcd
+content_hash: 124090233026f896
 ---
 
 # SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer
@@ -139,8 +139,8 @@ The autoencoder is trained with pixel reconstruction loss + KL divergence + adve
 - [\[ICCV 2025\] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](../../ICCV2025/others/layertracer_cognitive-aligned_layered_svg_synthesis_via_diffusion_transformer.md)
 - [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](../../NeurIPS2025/others/uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
-- [\[AAAI 2026\] The Limitations and Power of NP-Oracle-Based Functional Synthesis Techniques](the_limitations_and_power_of_np-oracle-based_functional_synthesis_techniques.md)
 - [\[AAAI 2026\] Regular Games – an Automata-Based General Game Playing Language](regular_games_--_an_automata-based_general_game_playing_language.md)
+- [\[AAAI 2026\] Designing Incident Reporting Systems for Harms from General-Purpose AI](designing_incident_reporting_systems_for_harms_from_general-purpose_ai.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction
 description: >-
-  [CVPR 2026][Self-Supervised Learning][iBOT] TimeBridge introduces an auxiliary task to the iBOT joint embedding framework: given only the start and end frames of a video, the model must "reconstruct" the intermediate frames. This forces the model to learn authentic temporal transformations. With 400 epochs of training, it achieves new SOTA on dense video predict
+  [CVPR 2026][Video Understanding][Self-supervised video representation] TimeBridge introduces an auxiliary task to the iBOT joint embedding framework: given only the start and end frames of a video, the model must "reconstruct" the intermediate frames. This forces the model to learn authentic temporal transformations. With 400 epochs of training, it achieves new SOTA on dense video prediction benchmarks such as DAVIS (73.5 J&F) and VIP (47.5 mIoU).
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - iBOT
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Self-supervised video representation"
+  - "Joint embedding"
+  - "Intermediate frame reconstruction"
+  - "iBOT"
+  - "Dense video prediction"
 date: 2026-05-08
-content_hash: 16d48aad254ecbf9
+content_hash: 07e644d209c7e8e1
 ---
+
 # TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ MAE-based methods (DropMAE, etc.) fail under this protocol ($<10\%$ accuracy), w
 
 ## Related Papers
 
-- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
-- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
-- [\[CVPR 2025\] AutoSSVH: Automated Frame Sampling for Self-Supervised Video Hashing](../../CVPR2025/self_supervised/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_.md)
-- [\[CVPR 2026\] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation](teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f.md)
-- [\[CVPR 2026\] TrackMAE: Video Representation Learning via Track, Mask, and Predict](trackmae_video_representation_learning_via_track_mask_and_predict.md)
+- [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
+- [\[CVPR 2026\] Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning](boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning.md)
+- [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
+- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
+- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
 
 </div>
 

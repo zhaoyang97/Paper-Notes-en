@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AetherCode: Evaluating LLMs' Ability to Win In Premier Programming Competitions
 description: >-
-  [ICLR 2026][Code Intelligence][IOI/ICPC] AetherCode is the first code reasoning benchmark to systematically collect 456 high-difficulty problems from premier programming competitions such as IOI and ICPC. It utilizes a hybrid approach of "automated generation + manual annotation by 67 experts" to achieve 100% TPR / 100% TNR for test cases. Results indicate th
+  [ICLR2026][Code Intelligence][Competitive Programming] AetherCode is the first code reasoning benchmark to systematically collect 456 high-difficulty problems from premier programming competitions such as IOI and ICPC. It utilizes a hybrid approach of "automated generation + manual annotation by 67 experts" to achieve 100% TPR / 100% TNR for test cases. Results indicate that even the strongest model, o4-mini-high, achieves only a 35.5% Pass@1…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - IOI/ICPC
-  - LLM Benchmark
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Competitive Programming"
+  - "Code Reasoning"
+  - "Test Case Quality"
+  - "IOI/ICPC"
+  - "LLM Benchmark"
 date: 2026-05-08
-content_hash: 8cb7845de17e927e
+content_hash: 317819a30d626b5d
 ---
+
 # AetherCode: Evaluating LLMs' Ability to Win In Premier Programming Competitions
 
 **Conference**: ICLR2026  

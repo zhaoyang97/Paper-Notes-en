@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper proposes VideoAgentTrek, which employs an inverse dynamics module, VIDEO2ACTION, to automatically recover operation trajectories with precise action parameters (1.52 million steps) from 39,000 unlabeled YouTube screen-recorded tutorials. Through a two-stage process of "continual pre-training + supervised fin
+  [ICLR 2026][LLM Agent][Computer use agent] This paper proposes VideoAgentTrek, which employs an inverse dynamics module, VIDEO2ACTION, to automatically recover operation trajectories with precise action parameters (1.52 million steps) from 39,000 unlabeled YouTube screen-recorded tutorials. Through a two-stage process of "continual pre-training + supervised fine-tuning," the OSWorld-Verified success rate of computer use agents is increased from 9.3% to 15.8% (a 70% relative i…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Computer use agent"
+  - "inverse dynamics"
+  - "unsupervised pre-training"
+  - "GUI video mining"
+  - "long-horizon planning"
 date: 2026-05-08
-content_hash: 99892bf58c803934
+content_hash: d58b37329368cd4e
 ---
+
 # VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos
 
 **Conference**: ICLR 2026  
@@ -128,10 +134,10 @@ Additionally, for VIDEO2ACTION's inverse dynamics quality: action event detectio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
 - [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
 - [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
-- [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
+- [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
 - [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
 
 </div>

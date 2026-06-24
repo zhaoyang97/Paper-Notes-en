@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI
 description: >-
-  [ICLR 2026][AI Safety][Diffusion Model] To address the prevalence of regression tasks in scientific computing, this paper utilizes a score-based diffusion model trained on the joint distribution $p(x, y_{\text{pred}})$. By treating the joint log-likelihood as a "certificate of trust" for model predictions, it demonstrates a strong correlation with actual pre
+  [ICLR 2026][AI Safety][OOD Detection] To address the prevalence of regression tasks in scientific computing, this paper utilizes a score-based diffusion model trained on the joint distribution $p(x, y_{\text{pred}})$. By treating the joint log-likelihood as a "certificate of trust" for model predictions, it demonstrates a strong correlation with actual prediction errors. This allows for determining whether an AI prediction is trustworthy (ID/OOD) without ground truth values a…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Diffusion Model
+  - "ICLR 2026"
+  - "AI Safety"
+  - "OOD Detection"
+  - "Diffusion Models"
+  - "Joint Likelihood"
+  - "Trust Certificate"
+  - "Scientific Regression"
 date: 2026-05-08
-content_hash: 7624d2845c16fd7c
+content_hash: 6fec58c437f922a4
 ---
+
 # Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI
 
 **Conference**: ICLR 2026  
@@ -144,11 +149,11 @@ JLBC performed best on average, significantly leading on NS-MIX (ACC 0.947 vs 0.
 
 ## Related Papers
 
+- [\[ICLR 2026\] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models](eigenscore_ood_detection_using_posterior_covariance_in_diffusion_models.md)
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)
 - [\[ICLR 2026\] Watermark-based Detection and Attribution of AI-Generated Content](watermark-based_attribution_of_ai-generated_content.md)
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](../../CVPR2026/ai_safety/scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
 - [\[ICLR 2026\] Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature](dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx.md)
-- [\[ICLR 2026\] Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging](tug-of-war_no_more_harmonizing_accuracy_and_robustness_in_vision-language_models.md)
 
 </div>
 

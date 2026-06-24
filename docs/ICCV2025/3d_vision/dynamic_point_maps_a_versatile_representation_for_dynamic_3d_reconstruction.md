@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Dynamic 3D Reconstruction] This paper proposes Dynamic Point Maps (DPM), extending DUSt3R's viewpoint-invariant point maps into a spatiotemporal-invariant representation that jointly controls viewp…
+  [ICCV 2025][3D Vision][Dynamic 3D Reconstruction] This paper proposes Dynamic Point Maps (DPM), extending DUSt3R's viewpoint-invariant point maps into a spatiotemporal-invariant representation that jointly controls viewpoint and time. By predicting only four sets of point maps in a feed-forward manner, DPM simultaneously addresses multiple 4D tasks including depth estimation, scene flow, motion segmentation, and 3D object tracking.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Motion Segmentation"
   - "DUSt3R"
 date: 2026-05-08
-content_hash: e681459e33d402c1
+content_hash: f5488521a0dac3f3
 ---
 
 # Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction
@@ -158,11 +158,11 @@ where $L_{\text{reg}}$ is a scale-normalized per-pixel regression loss that allo
 
 ## Related Papers
 
+- [\[CVPR 2026\] V-DPM: 4D Video Reconstruction with Dynamic Point Maps](../../CVPR2026/3d_vision/v-dpm_4d_video_reconstruction_with_dynamic_point_maps.md)
 - [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](../../NeurIPS2025/3d_vision/d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] Back on Track: Bundle Adjustment for Dynamic Scene Reconstruction](back_on_track_bundle_adjustment_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
-- [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
 
 </div>
 

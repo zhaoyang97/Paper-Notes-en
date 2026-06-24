@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation
 description: >-
-  [AAAI 2026][Model Compression][Multi-domain machine translation] This paper proposes CANEFT, which uses mutual information (MI) to identify consensus-aligned neurons in LLMs that are consistently important across domains…
+  [AAAI 2026][Model Compression][Multi-domain machine translation] This paper proposes CANEFT, which uses mutual information (MI) to identify consensus-aligned neurons in LLMs that are consistently important across domains, and fine-tunes only these neurons to achieve efficient adaptation for multi-domain machine translation (MDMT). CANEFT outperforms PEFT baselines such as LoRA across 3 LLMs and 10 translation domains without introducing any additional parameters.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "parameter-efficient fine-tuning"
   - "LLM"
 date: 2026-05-08
-content_hash: 30d1a7d47119bd11
+content_hash: 9ad75aef7bb43421
 ---
 
 # Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation
@@ -128,10 +128,10 @@ CANEFT outperforms both Full FT and LoRA on both seen and unseen domains.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](../../NeurIPS2025/model_compression/data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
+- [\[ACL 2025\] FedEx-LoRA: Exact Aggregation for Federated and Efficient Fine-Tuning of Large Language Models](../../ACL2025/model_compression/fedex_lora_federated_exact_aggregation.md)
+- [\[CVPR 2026\] S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain](../../CVPR2026/model_compression/s2ft_parameter-efficient_fine-tuning_in_sparse_spectrum_domain.md)
 - [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](../../ICLR2026/model_compression/abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](../../NeurIPS2025/model_compression/reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
-- [\[ICML 2026\] Jailbreak to Protect: Buffering and Reinforcing via Temporary Jailbreaking for Safe Fine-Tuning in Large Language Models](../../ICML2026/model_compression/jailbreak_to_protect_buffering_and_reinforcing_via_temporary_jailbreaking_for_sa.md)
 
 </div>
 

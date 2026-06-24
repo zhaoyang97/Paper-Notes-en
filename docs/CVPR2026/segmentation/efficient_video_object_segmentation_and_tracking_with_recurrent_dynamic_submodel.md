@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] To address the slow inference speeds of large video segmentation models like SAM2, this paper introduces a "Predictive-Aware Router" (taking the previous segmentation mask and current visual features) to activate only a specific subset of blocks per frame. Combined with "Importance-Aware LoRA" that fine-tunes only crit
+  [CVPR 2026][Segmentation][Video Object Segmentation] To address the slow inference speeds of large video segmentation models like SAM2, this paper introduces a "Predictive-Aware Router" (taking the previous segmentation mask and current visual features) to activate only a specific subset of blocks per frame. Combined with "Importance-Aware LoRA" that fine-tunes only critical blocks, it achieves a 1.3× real-world speedup on DAVIS 2017 with a performance drop of <0.4%…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Video Object Segmentation"
+  - "Dynamic Networks"
+  - "SAM2 Acceleration"
+  - "Block Skipping"
+  - "LoRA Fine-tuning"
 date: 2026-05-08
-content_hash: 00f81e29534c4a30
+content_hash: 9761e53a2dc9aa05
 ---
+
 # Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ RDS achieves 38.2 FPS (1.3× speedup) with only 7.6M parameters (3% of total), w
 
 ## Related Papers
 
-- [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](wsrvos_weakly_supervised_rvos.md)
-- [\[CVPR 2026\] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)
-- [\[CVPR 2026\] Annotation-Efficient Coreset Selection for Context-dependent Segmentation](annotation-efficient_coreset_selection_for_context-dependent_segmentation.md)
-- [\[CVPR 2026\] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation](lemma_laplacian_pyramids_for_efficient_marine_semantic_segmentation.md)
-- [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)
+- [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
+- [\[CVPR 2026\] RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](raven_radar_adaptive_vision_encoders_for_efficient_chirp-wise_object_detection_a.md)
+- [\[CVPR 2026\] CrackSSM: Reviving SSMs for Crack Segmentation via Dynamic Scanning](crackssm_reviving_ssms_for_crack_segmentation_via_dynamic_scanning.md)
+- [\[CVPR 2025\] A Distractor-Aware Memory for Visual Object Tracking with SAM2](../../CVPR2025/segmentation/a_distractor-aware_memory_for_visual_object_tracking_with_sam2.md)
+- [\[ICLR 2026\] Advancing Complex Video Object Segmentation via Progressive Concept Construction](../../ICLR2026/segmentation/advancing_complex_video_object_segmentation_via_progressive_concept_construction.md)
 
 </div>
 

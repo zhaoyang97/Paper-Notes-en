@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders
 description: >-
-  [ICML 2026][Interpretability][feature death] This paper identifies the true root cause of the "dead feature" problem in SAEs as the geometric properties of the activation distribution rather than training dynamics. It quantifies the severity of "dimension-level outliers" using $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$, analytically predicts the death rate from initia
+  [ICML 2026][Interpretability][Sparse Autoencoders] This paper identifies the true root cause of the "dead feature" problem in SAEs as the geometric properties of the activation distribution rather than training dynamics. It quantifies the severity of "dimension-level outliers" using $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$, analytically predicts the death rate from initialization (Spearman $\rho=0.82\sim0.89$ across 454 model-layer combinations)…
 tags:
-  - ICML 2026
-  - Interpretability
-  - feature death
-  - mean-centering
-  - TopK SAE
+  - "ICML 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "feature death"
+  - "activation outliers"
+  - "mean-centering"
+  - "TopK SAE"
 date: 2026-05-08
-content_hash: 5cf3d180490a0bb3
+content_hash: 2216a16a85234054
 ---
+
 # On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders
 
 **Conference**: ICML 2026  
@@ -138,8 +141,8 @@ The training objective remains the standard TopK-SAE (Reconstruction MSE + TopK 
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
 - [\[ICML 2026\] Sparse Autoencoders are Topic Models](sparse_autoencoders_are_topic_models.md)
 - [\[ICML 2026\] Ensembling Sparse Autoencoders](ensembling_sparse_autoencoders.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](../../NeurIPS2025/interpretability/a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
+- [\[ICLR 2026\] Taming Polysemanticity in LLMs: Theory-Grounded Feature Recovery via Sparse Autoencoders](../../ICLR2026/interpretability/taming_polysemanticity_in_llms_theory-grounded_feature_recovery_via_sparse_autoe.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
 
 </div>
 

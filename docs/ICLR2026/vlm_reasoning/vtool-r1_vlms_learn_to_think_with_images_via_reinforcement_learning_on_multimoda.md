@@ -2,16 +2,13 @@
 title: >-
   [Paper Note] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use
 description: >-
-  [ICLR 2026][vlm_reasoning][RFT] The study proposes VTool-R1, the first framework that trains VLMs via Reinforcement Learning Fine-tuning (RFT) to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
+  [VLM Reasoning] The study proposes VTool-R1, the first framework that trains VLMs via Reinforcement Learning Fine-tuning (RFT) to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - RFT
-  - VLM
-  - GRPO
+  - "VLM Reasoning"
 date: 2026-05-08
-content_hash: f99b4787ff7ef699
+content_hash: 6d2fae662dbaec21
 ---
+
 # VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use
 
 ## Paper Information
@@ -152,10 +149,10 @@ Since rewards are based only on the final answer, gradients for tool calls are b
 ## Related Papers
 
 - [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
-- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
-- [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
-- [\[ICLR 2026\] Thyme: Think Beyond Images](thyme_think_beyond_images.md)
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/vlm_reasoning/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](../../ICCV2025/vlm_reasoning/r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
+- [\[ACL 2025\] MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale](../../ACL2025/vlm_reasoning/mammoth_vl_multimodal_reasoning.md)
+- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](../../NeurIPS2025/vlm_reasoning/rtv-bench_benchmarking_mllm_continuous_perception_understanding_and_reasoning_th.md)
+- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/vlm_reasoning/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
 
 </div>
 

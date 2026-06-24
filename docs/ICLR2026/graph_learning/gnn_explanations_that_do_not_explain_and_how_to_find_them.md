@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GNN Explanations that do not Explain and How to find Them
 description: >-
-  [ICLR 2026][Graph Learning][EST] This paper reveals a fatal failure mode of self-explaining Graph Neural Networks (SE-GNNs): models can output "degenerate explanations" that are completely unrelated to their actual reasoning process while maintaining optimal accuracy. It proves that most existing faithfulness metrics fail to identify such explanations
+  [ICLR 2026][Graph Learning][Self-interpretable GNN] This paper reveals a fatal failure mode of self-explaining Graph Neural Networks (SE-GNNs): models can output "degenerate explanations" that are completely unrelated to their actual reasoning process while maintaining optimal accuracy. It proves that most existing faithfulness metrics fail to identify such explanations. To address this, the authors construct a controllable benchmark and propose a new metric, EST…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - EST
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Self-interpretable GNN"
+  - "Faithfulness"
+  - "Degenerate Explanations"
+  - "Explanation Auditing"
+  - "EST"
 date: 2026-05-08
-content_hash: a9c20127b24d7804
+content_hash: 12f6226de66795f9
 ---
+
 # GNN Explanations that do not Explain and How to find Them
 
 **Conference**: ICLR 2026  
@@ -147,10 +152,20 @@ When trained under original protocols, degenerate explanations **emerge naturall
 - Value: ⭐⭐⭐⭐⭐ Directly warns against blind trust in SE-GNNs in high-risk scenarios and provides the EST auditing tool.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
+- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
+- [\[NeurIPS 2025\] GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability](../../NeurIPS2025/graph_learning/gnnxemplar_exemplars_to_explanations_--_natural_language_rules_for_global_gnn_in.md)
+- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
+- [\[ICLR 2026\] Learning Concept Bottleneck Models from Mechanistic Explanations](learning_concept_bottleneck_models_from_mechanistic_explanations.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)

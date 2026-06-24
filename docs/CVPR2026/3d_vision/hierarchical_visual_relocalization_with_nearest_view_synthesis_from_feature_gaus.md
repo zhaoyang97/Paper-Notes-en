@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes SplatHLoc, a hierarchical visual relocalization framework based on Feature Gaussian Splatting. It synthesizes virtual views closer to the query via adaptive viewpoint retrieval and utilizes a hybrid feature matching strategy (rendered features for coarse matching and a semi-dense matcher for fine matching
+  [CVPR 2026][3D Vision][Visual Relocalization] Ours proposes SplatHLoc, a hierarchical visual relocalization framework based on Feature Gaussian Splatting. It synthesizes virtual views closer to the query via adaptive viewpoint retrieval and utilizes a hybrid feature matching strategy (rendered features for coarse matching and a semi-dense matcher for fine matching), achieving SOTA results on indoor and outdoor relocalization benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Relocalization"
+  - "Gaussian Splatting"
+  - "Feature Matching"
+  - "Novel View Synthesis"
+  - "Hierarchical Localization"
 date: 2026-05-08
-content_hash: dd0cfd887586c90e
+content_hash: 786d2b149fea4973
 ---
+
 # Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ On 7-Scenes, SplatHLoc outperforms STDLoc across all 7 scenarios, reducing the a
 
 ## Related Papers
 
+- [\[CVPR 2026\] CoRoGS: Contextual Gaussian Splatting for Robust Large-Deviation View Synthesis](corogs_contextual_gaussian_splatting_for_robust_large-deviation_view_synthesis.md)
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
+- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis](physically_inspired_gaussian_splatting_for_hdr_novel_view_synthesis.md)
 
 </div>
 

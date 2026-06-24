@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] FSFSplatter utilizes a large multi-view Transformer to convert 3 uncalibrated sparse images into a dense, geometrically consistent 2D Gaussian scene via a single feed-forward pass while simultaneously estimating camera parameters. This is followed by contribution-based pruning to remove floaters and geometry-enhanced o
+  [CVPR 2026][3D Vision][Sparse-view reconstruction] FSFSplatter utilizes a large multi-view Transformer to convert 3 uncalibrated sparse images into a dense, geometrically consistent 2D Gaussian scene via a single feed-forward pass while simultaneously estimating camera parameters. This is followed by contribution-based pruning to remove floaters and geometry-enhanced optimization supervised by depth and multi-view features, resulting in accurate…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse-view reconstruction"
+  - "3D Gaussian Splatting"
+  - "Surface reconstruction"
+  - "Pose-free reconstruction"
+  - "Feed-forward initialization"
 date: 2026-05-08
-content_hash: 81362dea8ee5c629
+content_hash: 4768003a4771fba8
 ---
+
 # FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes
 
 **Conference**: CVPR 2026  
@@ -161,11 +167,11 @@ DTU / Replica Surface CD↓:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
+- [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
+- [\[NeurIPS 2025\] GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction](../../NeurIPS2025/3d_vision/geosvr_taming_sparse_voxels_for_geometrically_accurate_surface_reconstruction.md)
+- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](../../ICLR2026/3d_vision/d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
+- [\[CVPR 2026\] BA-GS: Bayesian Adaptive Gaussian Splatting for SFM-Free 3D Reconstruction](ba-gs_bayesian_adaptive_gaussian_splatting_for_sfm-free_3d_reconstruction.md)
 
 </div>
 

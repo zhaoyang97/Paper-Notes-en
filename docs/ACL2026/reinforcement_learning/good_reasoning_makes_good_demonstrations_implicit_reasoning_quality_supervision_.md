@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Good Reasoning Makes Good Demonstrations: Implicit Reasoning Quality Supervision via In-Context Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] This paper points out that RLVR cannot distinguish between "high-quality reasoning for a correct answer" and "low-quality reasoning that happens to get the answer right." It proposes using the pedagogical utility of a demonstration, termed Evidence Gain, as an implicit quality signal. By employing In-Context RLVR, the
+  [ACL2026][Reinforcement Learning][RLVR] This paper points out that RLVR cannot distinguish between "high-quality reasoning for a correct answer" and "low-quality reasoning that happens to get the answer right." It proposes using the pedagogical utility of a demonstration, termed Evidence Gain, as an implicit quality signal. By employing In-Context RLVR, the model improves mathematical reasoning accuracy and quality without training a PRM.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
-  - Evidence Gain
-  - in-context learning
-  - DAPO
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Evidence Gain"
+  - "in-context learning"
+  - "DAPO"
+  - "mathematical reasoning"
 date: 2026-05-08
-content_hash: 358209e315da253c
+content_hash: ee5e361d87f405a3
 ---
+
 # Good Reasoning Makes Good Demonstrations: Implicit Reasoning Quality Supervision via In-Context Reinforcement Learning
 
 **Conference**: ACL2026  
@@ -173,9 +175,9 @@ IC-DAPO improves by an average of 2.5 points over DAPO on both 1.5B and 7B model
 
 - [\[ACL 2026\] AttnPO: Attention-Guided Process Supervision for Efficient Reasoning](attnpo_attention-guided_process_supervision_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](../../ICLR2026/reinforcement_learning/reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
-- [\[AAAI 2026\] Good-for-MDP State Reduction for Stochastic LTL Planning](../../AAAI2026/reinforcement_learning/good-for-mdp_state_reduction_for_stochastic_ltl_planning.md)
 - [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](../../ICLR2026/reinforcement_learning/longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[AAAI 2026\] Good-for-MDP State Reduction for Stochastic LTL Planning](../../AAAI2026/reinforcement_learning/good-for-mdp_state_reduction_for_stochastic_ltl_planning.md)
+- [\[ICLR 2026\] Enough is as good as a feast: A Comprehensive Analysis of How Reinforcement Learning Mitigates Task Conflicts in LLMs](../../ICLR2026/reinforcement_learning/enough_is_as_good_as_a_feast_a_comprehensive_analysis_of_how_reinforcement_learn.md)
 
 </div>
 

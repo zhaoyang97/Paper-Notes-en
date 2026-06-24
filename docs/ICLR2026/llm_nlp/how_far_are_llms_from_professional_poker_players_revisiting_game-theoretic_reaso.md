@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] How Far Are LLMs from Professional Poker Players? Revisiting Game-Theoretic Reasoning with Agentic Tool Use
 description: >-
-  [ICLR 2026][LLM (Other)][LLM poker] This paper systematically analyzes three major reasoning flaws of LLMs in poker (Heuristic Reasoning, Factual Misunderstanding, and the Knowing-Doing Gap) and proposes ToolPoker—the first tool-integrated LLM reasoning system for incomplete information games. By integrating an external CFR solver to provide game-theoret
+  [ICLR 2026][LLM (Other)][LLM poker] This paper systematically analyzes three major reasoning flaws of LLMs in poker (Heuristic Reasoning, Factual Misunderstanding, and the Knowing-Doing Gap) and proposes ToolPoker—the first tool-integrated LLM reasoning system for incomplete information games. By integrating an external CFR solver to provide game-theoretic optimal (GTO) guidance, the framework enables a 7B model to approach Nash equilibrium in Limit Hold'em.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - LLM poker
-  - game-theoretic reasoning
-  - tool-augmented LLM
-  - CFR solver
-  - incomplete information game
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "LLM poker"
+  - "game-theoretic reasoning"
+  - "tool-augmented LLM"
+  - "CFR solver"
+  - "incomplete information game"
 date: 2026-05-08
-content_hash: 9f8f16a37a4032c3
+content_hash: 68e14f746b2457a7
 ---
+
 # How Far Are LLMs from Professional Poker Players? Revisiting Game-Theoretic Reasoning with Agentic Tool Use
 
 **Conference**: ICLR 2026  

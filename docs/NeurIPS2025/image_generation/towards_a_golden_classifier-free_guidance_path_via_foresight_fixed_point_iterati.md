@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations
 description: >-
-  [NeurIPS 2025][Image Generation][Classifier-Free Guidance] This paper unifies conditional guidance under a fixed-point iteration framework, showing that CFG and its variants are all special cases of single-step iteration…
+  [NeurIPS 2025 Spotlight][Image Generation][Classifier-Free Guidance] This paper unifies conditional guidance under a fixed-point iteration framework, showing that CFG and its variants are all special cases of single-step iterations over short intervals. It theoretically proves their suboptimality and proposes Foresight Guidance (FSG)—performing multi-step iterations over longer intervals in early diffusion stages to achieve better alignment quality with less computation.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Classifier-Free Guidance"
   - "Fixed Point Iteration"
@@ -12,7 +12,7 @@ tags:
   - "Golden Path"
   - "Inference-Time Optimization"
 date: 2026-05-08
-content_hash: ce95a6d458bbc973
+content_hash: 9ffbe7411a488c77
 ---
 
 # Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations
@@ -57,40 +57,40 @@ The fixed-point equation is $\hat{x}_t = F(\hat{x}_t)$, where the fixed point of
 1. **Unified Fixed-Point Framework — Unifying the CFG Family**:
 
    All existing methods can be expressed as special cases of fixed-point iteration:
-   - **CFG**: Linear operator $F(x_t) = x_t - w\xi_t \Delta\epsilon(x_t)$, interval $[t-1, t]$, single step
-   - **CFG++**: Linear operator $F(x_t) = x_t - \lambda\tilde{\xi}_t \Delta\epsilon(x_t)$, interval $[t-1, t]$, with a more stable guidance schedule
-   - **Z-sampling**: Forward-backward operator, interval $[t-1, t+1]$, requires DDIM inversion
-   - **Resampling**: Forward-backward operator, interval $[t-1, t+1]$, replaces inversion with noise addition
+    - **CFG**: Linear operator $F(x_t) = x_t - w\xi_t \Delta\epsilon(x_t)$, interval $[t-1, t]$, single step
+    - **CFG++**: Linear operator $F(x_t) = x_t - \lambda\tilde{\xi}_t \Delta\epsilon(x_t)$, interval $[t-1, t]$, with a more stable guidance schedule
+    - **Z-sampling**: Forward-backward operator, interval $[t-1, t+1]$, requires DDIM inversion
+    - **Resampling**: Forward-backward operator, interval $[t-1, t+1]$, replaces inversion with noise addition
 
    **Four design dimensions are identified**:
-   - Consistency interval (short vs. long)
-   - Fixed-point operator type (linear vs. forward-backward)
-   - Guidance strength / schedule
-   - Number of iterations $K$
+    - Consistency interval (short vs. long)
+    - Fixed-point operator type (linear vs. forward-backward)
+    - Guidance strength / schedule
+    - Number of iterations $K$
 
 2. **Suboptimality of Short-Interval Single-Step Iterations (Theorem 1)**:
 
    Given a total iteration budget $N$ and timesteps $T$, uniformly divided into $M$ subproblems each with $N/M$ iterations, the upper bound is:
-   $$\mathcal{L} \leq B^2 \left(C r^{\frac{2N}{M}} + \frac{2L^2}{M^2}\right)$$
+    $\mathcal{L} \leq B^2 \left(C r^{\frac{2N}{M}} + \frac{2L^2}{M^2}\right)$
 
    The optimal $M^*$ is generally **not equal to** $T$, implying that performing fixed-point iterations at every timestep is unnecessary. Key insights:
-   - The smoother the noise predictor (smaller $L$), the smaller $M^*$, favoring fewer but longer subproblems
-   - With sufficient computation ($N \to \infty$), $M \to T$, recovering the step-wise strategy
+    - The smoother the noise predictor (smaller $L$), the smaller $M^*$, favoring fewer but longer subproblems
+    - With sufficient computation ($N \to \infty$), $M \to T$, recovering the step-wise strategy
 
 3. **Foresight Guidance (FSG)**:
 
    Core idea: **Apply longer intervals with more iterations in early stages and reduce them in later stages.**
 
    Parameterized as $\mathcal{S} = \{(t_i, K_i, \Delta t_i)\}_{i=1}^M$:
-   - $t_i$: timestep at which fixed-point iteration is applied
-   - $K_i$: number of iterations at that timestep
-   - $\Delta t_i$: consistency interval length
+    - $t_i$: timestep at which fixed-point iteration is applied
+    - $K_i$: number of iterations at that timestep
+    - $\Delta t_i$: consistency interval length
 
    Design principles:
-   - Iteration allocation ratio across early/middle/late stages is approximately 3:2:1
-   - Uses a forward-backward operator: conditional denoising $f_{t \to t-\Delta t}^\gamma$ + unconditional inversion $f_{t-\Delta t \to t}^u$
-   - Non-foresight steps use CFG++ to maintain stable guidance
-   - Single-step DDIM solver reduces per-iteration cost
+    - Iteration allocation ratio across early/middle/late stages is approximately 3:2:1
+    - Uses a forward-backward operator: conditional denoising $f_{t \to t-\Delta t}^\gamma$ + unconditional inversion $f_{t-\Delta t \to t}^u$
+    - Non-foresight steps use CFG++ to maintain stable guidance
+    - Single-step DDIM solver reduces per-iteration cost
 
 ### Loss & Training
 
@@ -190,11 +190,11 @@ FSG is a purely inference-time method requiring no training. Key design choices:
 
 ## Related Papers
 
+- [\[CVPR 2025\] TCFG: Tangential Damping Classifier-Free Guidance](../../CVPR2025/image_generation/tcfg_tangential_damping_classifier-free_guidance.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
+- [\[CVPR 2025\] Classifier-Free Guidance inside the Attraction Basin May Cause Memorization](../../CVPR2025/image_generation/classifier-free_guidance_inside_the_attraction_basin_may_cause_memorization.md)
 - [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
 - [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
-- [\[ICCV 2025\] TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance](../../ICCV2025/image_generation/teefusion_blending_text_embeddings_to_distill_classifier-free_guidance.md)
-- [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
 
 </div>
 

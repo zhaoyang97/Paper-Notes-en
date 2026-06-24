@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression
 description: >-
-  [ICML 2026][Interpretability][Transformer] Proposes SimpliPy (a rule-based simplification engine 100x faster than SymPy) and Flash-ANSR (a Transformer-based amortized symbolic regression framework). It matches or exceeds the legacy genetic programming method PySR on the FastSRB benchmark with a ~58% recovery rate, while generating increasingly concise expressio
+  [ICML 2026][Interpretability][Symbolic Regression] Proposes SimpliPy (a rule-based simplification engine 100x faster than SymPy) and Flash-ANSR (a Transformer-based amortized symbolic regression framework). It matches or exceeds the legacy genetic programming method PySR on the FastSRB benchmark with a ~58% recovery rate, while generating increasingly concise expressions as the inference budget grows.
 tags:
-  - ICML 2026
-  - Interpretability
-  - Transformer
+  - "ICML 2026"
+  - "Interpretability"
+  - "Symbolic Regression"
+  - "Expression Simplification"
+  - "Transformer"
+  - "Amortized Inference"
+  - "Scientific Discovery"
 date: 2026-05-08
-content_hash: 372003ab6f500f4a
+content_hash: ec1eb8cd87d06544
 ---
+
 # Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression
 
 **Conference**: ICML 2026  
@@ -138,10 +143,10 @@ The training objective is standard cross-entropy $\hat{\theta} = \arg\min_{\thet
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](../../NeurIPS2025/interpretability/towards_scaling_laws_for_symbolic_regression.md)
+- [\[ICML 2026\] MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression](knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
 - [\[ICML 2025\] Ab Initio Nonparametric Variable Selection for Scalable Symbolic Regression with Large p](../../ICML2025/interpretability/ab_initio_nonparametric_variable_selection_for_scalable_symbolic_regression_with.md)
-- [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](../../AAAI2026/interpretability/attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
-- [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
-- [\[ICML 2026\] Neural Collapse by Design: Learning Class Prototypes on the Hypersphere](neural_collapse_by_design_learning_class_prototypes_on_the_hypersphere.md)
+- [\[ICML 2026\] CLARITree: Cholesky and Lookahead Accelerations for Regression with Interpretable Piecewise Linear Trees](claritree_cholesky_and_lookahead_accelerations_for_regression_with_interpretable.md)
 
 </div>
 

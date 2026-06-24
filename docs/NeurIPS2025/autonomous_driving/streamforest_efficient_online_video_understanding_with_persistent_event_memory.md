@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] StreamForest: Efficient Online Video Understanding with Persistent Event Memory
 description: >-
-  [NeurIPS 2025][Autonomous Driving][streaming video understanding] This paper proposes StreamForest, an architecture that adaptively organizes streaming video frames into multiple event-level tree structures via a "Persis…
+  [NeurIPS 2025 Spotlight][Autonomous Driving][streaming video understanding] This paper proposes StreamForest, an architecture that adaptively organizes streaming video frames into multiple event-level tree structures via a "Persistent Event Memory Forest," combined with a "Fine-grained Spatiotemporal Window" to capture short-term visual cues. The method achieves 77.3% accuracy on StreamingBench and retains 96.8% of performance under extreme compression (only 1024 visual token…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Autonomous Driving"
   - "streaming video understanding"
   - "persistent event memory"
@@ -12,7 +12,7 @@ tags:
   - "visual token compression"
   - "multimodal large language models"
 date: 2026-05-08
-content_hash: ab8987003305b778
+content_hash: 5cb359882dfc9401
 ---
 
 # StreamForest: Efficient Online Video Understanding with Persistent Event Memory
@@ -153,11 +153,11 @@ A five-stage training strategy is adopted: the first three stages follow the off
 
 ## Related Papers
 
+- [\[CVPR 2025\] Online Video Understanding: OVBench and VideoChat-Online](../../CVPR2025/autonomous_driving/online_video_understanding_ovbench_and_videochat-online.md)
 - [\[ICLR 2026\] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding](../../ICLR2026/autonomous_driving/marc_memory-augmented_rl_token_compression_for_efficient_video_un.md)
-- [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
-- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
-- [\[NeurIPS 2025\] Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead](aha_predicting_what_matters_next_online_highlight_detection.md)
-- [\[NeurIPS 2025\] Towards Foundational LiDAR World Models with Efficient Latent Flow Matching](towards_foundational_lidar_world_models_with_efficient_latent_flow_matching.md)
+- [\[ICCV 2025\] EmbodiedOcc: Embodied 3D Occupancy Prediction for Vision-based Online Scene Understanding](../../ICCV2025/autonomous_driving/embodiedocc_embodied_3d_occupancy_prediction_for_vision-based_online_scene_under.md)
+- [\[ICCV 2025\] MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding](../../ICCV2025/autonomous_driving/mcam_multimodal_causal_analysis_model_for_ego-vehicle-level_driving_video_unders.md)
+- [\[NeurIPS 2025\] Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective](towards_physics-informed_spatial_intelligence_with_human_priors_an_autonomous_dr.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Recipe for Generating 3D Worlds from a Single Image
 description: >-
-  [ICCV 2025][3D Vision][Single-image 3D scene generation] The problem of single-image-to-3D-world generation is decomposed into two simpler sub-problems—panorama synthesis (training-free in-context learning) and point-clo…
+  [ICCV 2025][3D Vision][Single-image 3D scene generation] The problem of single-image-to-3D-world generation is decomposed into two simpler sub-problems—panorama synthesis (training-free in-context learning) and point-cloud-conditioned inpainting (ControlNet fine-tuned for only 5k steps)—combined with 3DGS reconstruction to produce immersive 3D environments navigable within a 2 m³ volume in VR, surpassing SOTA methods such as WonderJourney and DimensionX across all image quali…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3DGS"
   - "VR"
 date: 2026-05-08
-content_hash: 5399edf3b70542be
+content_hash: 077356eb038d8e0c
 ---
 
 # A Recipe for Generating 3D Worlds from a Single Image
@@ -127,11 +127,11 @@ The forward–backward warp improves PSNR from 11.98 to 15.88 (+32.5%), confirmi
 
 ## Related Papers
 
+- [\[CVPR 2025\] GenVDM: Generating Vector Displacement Maps From a Single Image](../../CVPR2025/3d_vision/genvdm_generating_vector_displacement_maps_from_a_single_image.md)
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)
 - [\[ICCV 2025\] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions](wonderplay_dynamic_3d_scene_generation_from_a_single_image_and_actions.md)
 - [\[ICCV 2025\] GAS: Generative Avatar Synthesis from a Single Image](gas_generative_avatar_synthesis_from_a_single_image.md)
 - [\[ICCV 2025\] Bolt3D: Generating 3D Scenes in Seconds](bolt3d_generating_3d_scenes_in_seconds.md)
-- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 
 </div>
 

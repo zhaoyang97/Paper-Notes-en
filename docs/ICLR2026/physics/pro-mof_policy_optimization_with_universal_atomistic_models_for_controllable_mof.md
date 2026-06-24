@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Flow Matching] PRO-MOF decomposes the inverse design of Metal-Organic Frameworks (MOFs) into a two-layer strategy: "selecting chemical building blocks first, then assembling 3D structures." It employs a pre-trained Universal Atomistic Model (UMA) as a high-fidelity physical environment to provide rewards. By rewriting the determinist
+  [ICLR 2026][Physics & Scientific Computing][Metal-Organic Frameworks] PRO-MOF decomposes the inverse design of Metal-Organic Frameworks (MOFs) into a two-layer strategy: "selecting chemical building blocks first, then assembling 3D structures." It employs a pre-trained Universal Atomistic Model (UMA) as a high-fidelity physical environment to provide rewards. By rewriting the deterministic Flow Matching generator into a Stochastic Differential Equation (SDE) to support explor…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Flow Matching
-  - Pass@K
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Metal-Organic Frameworks"
+  - "Hierarchical Reinforcement Learning"
+  - "Flow Matching"
+  - "Universal Atomistic Potentials"
+  - "Pass@K"
 date: 2026-05-08
-content_hash: 14f86dddc20ed76a
+content_hash: e3b0639e523cf8d4
 ---
+
 # PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation
 
 **Conference**: ICLR 2026  

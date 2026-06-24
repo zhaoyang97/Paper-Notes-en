@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Look-Ahead Reasoning on Learning Platforms
 description: >-
-  [NeurIPS 2025][level-k thinking] This paper formalizes level-$k$ look-ahead reasoning in user–algorithm interactions on learning platforms. It proves that individually selfish higher-order reasoning only accelerates conv…
+  [NeurIPS 2025][level-k thinking] This paper formalizes level-$k$ look-ahead reasoning in user–algorithm interactions on learning platforms. It proves that individually selfish higher-order reasoning only accelerates convergence without altering the equilibrium (i.e., no long-term gain), while the benefit of collective coordination is determined by the alignment between the learner's and users' utility functions. A theoretical framework is provided to characterize upper bounds…
 tags:
   - "NeurIPS 2025"
   - "level-k thinking"
@@ -11,7 +11,7 @@ tags:
   - "algorithmic collective action"
   - "strategic classification"
 date: 2026-05-08
-content_hash: a547fe73653cb1d9
+content_hash: e66832b074828018
 ---
 
 # Look-Ahead Reasoning on Learning Platforms
@@ -120,11 +120,11 @@ The learning platform deploys model $\theta$ → users strategically modify thei
 
 ## Related Papers
 
+- [\[ACL 2025\] Implicit Reasoning in Transformers is Reasoning through Shortcuts](../../ACL2025/others/implicit_reasoning_in_transformers_is_reasoning_through_shortcuts.md)
+- [\[ACL 2025\] Learning to Reason Over Time: Timeline Self-Reflection for Temporal Reasoning](../../ACL2025/others/tiser_timeline_self_reflection_temporal.md)
 - [\[NeurIPS 2025\] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing](uniformer_unified_and_efficient_transformer_for_reasoning_across_general_and_cus.md)
+- [\[ICML 2025\] Discrete Neural Algorithmic Reasoning](../../ICML2025/others/discrete_neural_algorithmic_reasoning.md)
 - [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
-- [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](../../AAAI2026/others/evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
-- [\[NeurIPS 2025\] Adjusted Count Quantification Learning on Graphs](adjusted_count_quantification_learning_on_graphs.md)
-- [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
 
 </div>
 

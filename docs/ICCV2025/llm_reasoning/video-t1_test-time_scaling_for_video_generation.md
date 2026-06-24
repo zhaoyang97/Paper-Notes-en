@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Video-T1: Test-Time Scaling for Video Generation
 description: >-
-  [ICCV 2025][LLM Reasoning][Test-time scaling] This paper transfers the test-time scaling (TTS) paradigm from LLMs to video generation by reformulating TTS as a search problem over trajectories from Gaussian noise space t…
+  [ICCV 2025][Reasoning][Test-time scaling] This paper transfers the test-time scaling (TTS) paradigm from LLMs to video generation by reformulating TTS as a search problem over trajectories from Gaussian noise space to the target video distribution. It proposes the Tree-of-Frames (ToF) search algorithm for efficient inference-time compute scaling, achieving consistent quality improvements across diverse video generation models on VBench.
 tags:
   - "ICCV 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Test-time scaling"
   - "video generation"
   - "Tree-of-Frames"
   - "diffusion models"
   - "autoregressive video"
 date: 2026-05-08
-content_hash: 57e03e5f59173378
+content_hash: 1efef8c06af1f674
 ---
 
 # Video-T1: Test-Time Scaling for Video Generation
@@ -172,10 +172,10 @@ Three multimodal reward models are employed: VisionReward (human preference acro
 ## Related Papers
 
 - [\[NeurIPS 2025\] TTS-VAR: A Test-Time Scaling Framework for Visual Auto-Regressive Generation](../../NeurIPS2025/llm_reasoning/tts-var_a_test-time_scaling_framework_for_visual_auto-regressive_generation.md)
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/llm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2025\] Enhancing Video-LLM Reasoning via Agent-of-Thoughts Distillation](../../CVPR2025/llm_reasoning/enhancing_video-llm_reasoning_via_agent-of-thoughts_distillation.md)
+- [\[ACL 2025\] Revisiting the Test-Time Scaling of o1-like Models: Do they Truly Possess Test-Time Scaling Capabilities?](../../ACL2025/llm_reasoning/revisiting_the_test-time_scaling_of_o1-like_models_do_they_truly_possess_test-ti.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](../../ICLR2026/llm_reasoning/t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
 - [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](../../NeurIPS2025/llm_reasoning/atom_of_thoughts_for_markov_llm_testtime_scaling.md)
-- [\[NeurIPS 2025\] VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning](../../NeurIPS2025/llm_reasoning/videorft_incentivizing_video_reasoning_capability_in_mllms_via_reinforced_fine-t.md)
-- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](../../ICML2026/llm_reasoning/lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
 
 </div>
 

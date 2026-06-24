@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Autoregressive Direct Preference Optimization
 description: >-
-  [ICML 2026][Alignment & RLHF][DPO] The authors observe that DPO's derivation sequence is flawed: it constructs a Bradley-Terry (BT) preference model based on the entire answer first and imposes the autoregressive assumption on the model only afterwards. ADPO **advances** the autoregressive assumption to before the BT model construction by defining energ
+  [ICML2026][LLM Alignment][DPO] The authors observe that DPO's derivation sequence is flawed: it constructs a Bradley-Terry (BT) preference model based on the entire answer first and imposes the autoregressive assumption on the model only afterwards. ADPO **advances** the autoregressive assumption to before the BT model construction by defining energy functions on the prefix closure of the output space. This yields a minimalist new loss that moves the summation sign from **ins…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - DPO
-  - Autoregressive
-  - Bradley-Terry
+  - "ICML2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "Autoregressive"
+  - "Bradley-Terry"
+  - "Prefix Closure"
+  - "Granularity"
 date: 2026-05-08
-content_hash: cf5b64840f031ee1
+content_hash: 898cdff7da00cd27
 ---
+
 # Autoregressive Direct Preference Optimization
 
 **Conference**: ICML2026  
@@ -123,10 +126,10 @@ Different windows $k$ provide various granularities. Results vary by base model 
 ## Related Papers
 
 - [\[ICML 2026\] Boosting Direct Preference Optimization with Penalization](boosting_direct_preference_optimization_with_penalization.md)
-- [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](../../ICLR2026/llm_alignment/token-importance_guided_direct_preference_optimization.md)
 - [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](../../ICLR2026/llm_alignment/safedpo_preference_optimization_safety.md)
 - [\[ICLR 2026\] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment](../../ICLR2026/llm_alignment/activedpo_active_direct_preference_optimization_for_sample-efficient_alignment.md)
-- [\[ACL 2025\] DiffPO: Diffusion Alignment with Direct Preference Optimization](../../ACL2025/llm_alignment/diffpo_diffusion_alignment.md)
+- [\[CVPR 2026\] Uncertainty-Aware Exploratory Direct Preference Optimization for Multimodal Large Language Models](../../CVPR2026/llm_alignment/uncertainty-aware_exploratory_direct_preference_optimization_for_multimodal_larg.md)
+- [\[ICLR 2026\] Sharpness-Aware Minimization in Logit Space Efficiently Enhances Direct Preference Optimization](../../ICLR2026/llm_alignment/sharpness-aware_minimization_in_logit_space_efficiently_enhances_direct_preferen.md)
 
 </div>
 

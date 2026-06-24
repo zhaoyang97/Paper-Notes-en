@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models
 description: >-
-  [ICML 2026][Code Intelligence][PPO] BoostAPR constructs a three-stage pipeline for training program-repair models via RL: execution-verified SFT → training sequence-level + line-level dual reward models → redistributing sequence rewards to key edit-line spans using the line-level model during PPO. Using Qwen2.5-Coder-32B, it pushes SWE-bench Verified per
+  [ICML 2026][Code Intelligence][Automated Program Repair] BoostAPR constructs a three-stage pipeline for training program-repair models via RL: execution-verified SFT → training sequence-level + line-level dual reward models → redistributing sequence rewards to key edit-line spans using the line-level model during PPO. Using Qwen2.5-Coder-32B, it pushes SWE-bench Verified performance from 17.8% to 40.7% (+22.9pp) and achieves 24.8% on Defects4J through cross-lingual transfer.
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - PPO
-  - SWE-bench
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Automated Program Repair"
+  - "PPO"
+  - "Dual Reward Models"
+  - "Line-level Credit Assignment"
+  - "SWE-bench"
 date: 2026-05-08
-content_hash: 322de216117720e8
+content_hash: 3e93c6e302a94528
 ---
+
 # BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models
 
 **Conference**: ICML 2026  
@@ -142,15 +146,16 @@ On SWE-bench Verified:
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Execution-Grounded Credit Assignment for GRPO in Code Generation](../../ICLR2026/code_intelligence/execution-grounded_credit_assignment_for_grpo_in_code_generation.md)
+- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](../../ICLR2026/code_intelligence/critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[ACL 2026\] QiMeng-PRepair: Precise Code Repair via Edit-Aware Reward Optimization](../../ACL2026/code_intelligence/qimeng-prepair_precise_code_repair_via_edit-aware_reward_optimization.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](../../ACL2026/code_intelligence/duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](../../ACL2026/code_intelligence/coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[ACL 2026\] SOCIA-EVO: Automated Simulator Construction via Dual-Anchored Bi-Level Optimization](../../ACL2026/code_intelligence/socia-evo_automated_simulator_construction_via_dual-anchored_bi-level_optimizati.md)
+- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](../../ACL2026/code_intelligence/coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Whom to Query for What: Adaptive Group Elicitation via Multi-Turn LLM Interactions
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper extends multi-turn questionnaire-style elicitation from the decision of "what question to ask" to a joint decision of "whom to query and what to query." It utilizes LLMs to estimate the information gain of questions and heterogeneous GNNs to propagate and impute missing responses across a group relationship
+  [ICML 2026][Graph Learning][Adaptive Elicitation] This paper extends multi-turn questionnaire-style elicitation from the decision of "what question to ask" to a joint decision of "whom to query and what to query." It utilizes LLMs to estimate the information gain of questions and heterogeneous GNNs to propagate and impute missing responses across a group relationship graph, thereby recovering group preferences faster under a limited respondent budget.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Adaptive Elicitation"
+  - "Group Preferences"
+  - "Heterogeneous Graph Neural Networks"
+  - "Information Gain"
+  - "Missing Response Imputation"
 date: 2026-05-08
-content_hash: eff0ed5c19dd4edf
+content_hash: a4133d315bbf33da
 ---
+
 # Whom to Query for What: Adaptive Group Elicitation via Multi-Turn LLM Interactions
 
 **Conference**: ICML 2026  
@@ -129,11 +135,11 @@ The ablation focuses on two areas: whether respondent selection is more valuable
 
 ## Related Papers
 
+- [\[ICML 2026\] What Makes a Desired Graph for Relational Deep Learning?](what_makes_a_desired_graph_for_relational_deep_learning.md)
 - [\[ECCV 2024\] GKGNet: Group K-Nearest Neighbor Based Graph Convolutional Network for Multi-Label Image Recognition](../../ECCV2024/graph_learning/gkgnet_group_k-nearest_neighbor_based_graph_convolutional_network_for_multi-labe.md)
+- [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](../../ICLR2026/graph_learning/damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[ICML 2026\] MedCoG: Maximizing LLM Inference Density in Medical Reasoning via Meta-Cognitive Regulation](medcog_maximizing_llm_inference_density_in_medical_reasoning_via_meta-cognitive_.md)
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
-- [\[AAAI 2026\] Relink: Constructing Query-Driven Evidence Graph On-the-Fly for GraphRAG](../../AAAI2026/graph_learning/relink_constructing_query-driven_evidence_graph_on-the-fly_for_graphrag.md)
-- [\[ICML 2025\] Is Complex Query Answering Really Complex?](../../ICML2025/graph_learning/is_complex_query_answering_really_complex.md)
 
 </div>
 

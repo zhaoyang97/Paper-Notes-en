@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FaSTA*: Fast-Slow Toolpath Agent with Subroutine Mining for Efficient Multi-turn Image Editing
 description: >-
-  [ICLR 2026][LLM Agent][In-Context RL] FaSTA* integrates LLM "fast planning" with A* search "slow planning" into a learning neuro-symbolic agent: it utilizes inductive reasoning to mine reusable symbolic subroutines—acting as "high-level tools"—from historical successful toolpaths. Most subtasks are solved instantly by applying these subroutines, with expen
+  [ICLR 2026][LLM Agent][Toolpath Planning] FaSTA* integrates LLM "fast planning" with A* search "slow planning" into a learning neuro-symbolic agent: it utilizes inductive reasoning to mine reusable symbolic subroutines—acting as "high-level tools"—from historical successful toolpaths. Most subtasks are solved instantly by applying these subroutines, with expensive A* search triggered only upon failure. Compared to CoSTA*, it reduces costs by 49.3% in multi-turn image editing…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - In-Context RL
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Toolpath Planning"
+  - "Neuro-symbolic Agent"
+  - "A* Search"
+  - "Subroutine Mining"
+  - "Fast-and-Slow Thinking"
+  - "In-Context RL"
 date: 2026-05-08
-content_hash: 13372112af0e5607
+content_hash: f9c583b19be5e758
 ---
+
 # FaSTA*: Fast-Slow Toolpath Agent with Subroutine Mining for Efficient Multi-turn Image Editing
 
 **Conference**: ICLR 2026  
@@ -139,9 +145,9 @@ A cost reduction of approximately 30% with comparable quality on an independent 
 
 - [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
 - [\[CVPR 2026\] iSHIFT: Lightweight Slow-Fast GUI Agent with Adaptive Perception](../../CVPR2026/llm_agent/ishift_lightweight_slow-fast_gui_agent_with_adaptive_perception.md)
+- [\[ACL 2025\] Browsing Like Human: A Multimodal Web Agent with Experiential Fast-and-Slow Thinking](../../ACL2025/llm_agent/browsing_like_human_a_multimodal_web_agent_with_experiential_fast-and-slow_think.md)
 - [\[ICLR 2026\] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions](evaluating_memory_in_llm_agents_via_incremental_multi-turn_interactions.md)
 - [\[ICLR 2026\] ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction](toolace-mt_non-autoregressive_generation_for_agentic_multi-turn_interaction.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
 
 </div>
 

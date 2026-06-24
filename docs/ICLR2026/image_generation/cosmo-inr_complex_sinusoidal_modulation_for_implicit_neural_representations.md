@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Through harmonic distortion analysis and Chebyshev polynomial approximation, this paper rigorously proves that odd/even symmetric activation functions suffer from systematic attenuation in the post-activation spectrum. It proposes modulating activation functions with a complex sinusoidal term $e^{j\zeta x}$ to retain f
+  [ICLR2026][Image Generation][Implicit Neural Representations] Through harmonic distortion analysis and Chebyshev polynomial approximation, this paper rigorously proves that odd/even symmetric activation functions suffer from systematic attenuation in the post-activation spectrum. It proposes modulating activation functions with a complex sinusoidal term $e^{j\zeta x}$ to retain full spectral support. The authors design the COSMO-RC activation function and a regularized prior…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Implicit Neural Representations"
+  - "Activation Function Design"
+  - "Spectral Bias"
+  - "Chebyshev Polynomials"
+  - "Complex Sinusoidal Modulation"
 date: 2026-05-08
-content_hash: 6abc497f7f3ba167
+content_hash: b2818e61d5ba9a76
 ---
+
 # COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations
 
 **Conference**: ICLR2026  
@@ -138,6 +144,7 @@ Training uses a standard MSE loss $L = \mathbb{E}_{x \in X} \|f_\theta(x) - \hat
 - Value: ⭐⭐⭐⭐ (Provides a generalizable framework for spectral analysis of activations)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

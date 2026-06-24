@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][RAG] This paper systematically reviews 134 papers on evidence-based text generation for LLMs. It proposes the first unified taxonomy (Attribution Mechanism × Citation Features × Task), analyzes 300 evaluation metrics categorized into seven dimensions and six methods, and provides a panoramic reference framework for this fra
+  [ACL 2026][LLM Evaluation][Evidence-based text generation] This paper systematically reviews 134 papers on evidence-based text generation for LLMs. It proposes the first unified taxonomy (Attribution Mechanism × Citation Features × Task), analyzes 300 evaluation metrics categorized into seven dimensions and six methods, and provides a panoramic reference framework for this fragmented field.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - RAG
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Evidence-based text generation"
+  - "citation attribution"
+  - "LLM trustworthiness"
+  - "evaluation framework"
+  - "RAG"
 date: 2026-05-08
-content_hash: 0044649ee0547393
+content_hash: 1068935f772e3c0b
 ---
+
 # Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models
 
 **Conference**: ACL 2026  
@@ -121,10 +126,10 @@ Additionally, **LLM Integration** methods are categorized into Training (45% of 
 ## Related Papers
 
 - [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
-- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
-- [\[ACL 2026\] Capabilities and Evaluation Biases of Large Language Models in Classical Chinese Poetry Generation: A Case Study on Tang Poetry](capabilities_and_evaluation_biases_of_large_language_models_in_classical_chinese.md)
-- [\[ACL 2026\] Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text](minos_a_multimodal_evaluation_model_for_bidirectional_generation_between_image_a.md)
+- [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
 - [\[ICML 2026\] Authority, Truth, and Citation Bias: A Large-Scale Multi-Domain Benchmark for Studying Epistemic Susceptibility in Large Language Models](../../ICML2026/llm_evaluation/authority_truth_and_citation_bias_a_large-scale_multi-domain_benchmark_for_study.md)
+- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
+- [\[ACL 2026\] Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text](minos_a_multimodal_evaluation_model_for_bidirectional_generation_between_image_a.md)
 
 </div>
 

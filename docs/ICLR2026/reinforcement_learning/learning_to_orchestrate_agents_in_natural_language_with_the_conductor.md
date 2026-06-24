@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning to Orchestrate Agents in Natural Language with the Conductor
 description: >-
-  [ICLR 2026][Reinforcement Learning][multi-agent coordination] A 7B Qwen2.5 model is trained as a "Conductor" using GRPO to output complete Agent workflows (subtask instructions + worker assignment + communication topology access lists) in natural language. Coordinating frontier models like GPT-5/Claude Sonnet 4/Gemini 2.5 Pro, it achieves an average of 77.27% across 7 reasoning b
+  [ICLR 2026][Reinforcement Learning][multi-agent coordination] A 7B Qwen2.5 model is trained as a "Conductor" using GRPO to output complete Agent workflows (subtask instructions + worker assignment + communication topology access lists) in natural language. Coordinating frontier models like GPT-5/Claude Sonnet 4/Gemini 2.5 Pro, it achieves an average of 77.27% across 7 reasoning benchmarks with only 960 questions × 200 training iterations, surpassing all single models (GPT-5 a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - multi-agent coordination
-  - reinforcement-learning
-  - workflow orchestration
-  - test-time scaling
-  - collective intelligence
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multi-agent coordination"
+  - "reinforcement-learning"
+  - "workflow orchestration"
+  - "test-time scaling"
+  - "collective intelligence"
 date: 2026-05-08
-content_hash: 368170fa2c0babc4
+content_hash: d41b4c96ff610b95
 ---
+
 # Learning to Orchestrate Agents in Natural Language with the Conductor
 
 **Conference**: ICLR 2026  
@@ -161,7 +162,7 @@ Training data: 960 questions from 4 domains (MATH 300, MMLU, RLPR, LiveCodeBench
 - [\[ICLR 2026\] Reinforcement Learning for Machine Learning Engineering Agents](reinforcement_learning_for_machine_learning_engineering_agents.md)
 - [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
 - [\[ICLR 2026\] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents](rlver_reinforcement_learning_with_verifiable_emotion_rewards_for_empathetic_agen.md)
-- [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](../../AAAI2026/reinforcement_learning/hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
+- [\[ICLR 2026\] Deconstructing Memory in Reinforcement Learning Agents: A Taxonomy and Evaluation Methodology](unraveling_the_complexity_of_memory_in_rl_agents_an_approach_for_classification_.md)
 
 </div>
 

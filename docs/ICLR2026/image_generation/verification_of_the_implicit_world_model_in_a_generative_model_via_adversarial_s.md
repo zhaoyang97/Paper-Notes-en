@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes an adversarial sequence generation method to verify the soundness of implicit world models in generative sequence models. Systematic evaluations across various adversarial strategies (IMO/BSO/AD) in the chess domain reveal that all tested models are unsound. Results indicate that training methods an
+  [ICLR 2026][Image Generation][Implicit World Models] This paper proposes an adversarial sequence generation method to verify the soundness of implicit world models in generative sequence models. Systematic evaluations across various adversarial strategies (IMO/BSO/AD) in the chess domain reveal that all tested models are unsound. Results indicate that training methods and dataset selection significantly impact soundness, and linear board state probes lack causal influence in…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Implicit World Models"
+  - "Adversarial Sequence Generation"
+  - "Chess"
+  - "Soundness Verification"
+  - "Linear Probes"
 date: 2026-05-08
-content_hash: fff4f17faeb63f8d
+content_hash: 595e01ebe6a088d9
 ---
+
 # Verification of the Implicit World Model in a Generative Model via Adversarial Sequences
 
 **Conference**: ICLR 2026  
@@ -132,7 +138,7 @@ Experiments utilize a GPT-2 architecture (~86M parameters, 12 layers, 768-dim, 1
 - [\[CVPR 2025\] Training Data Provenance Verification: Did Your Model Use Synthetic Data from My Generative Model for Training?](../../CVPR2025/image_generation/training_data_provenance_verification_did_your_model_use_synthetic_data_from_my_.md)
 - [\[ICLR 2026\] Generative Blocks World: Moving Things Around in Pictures](generative_blocks_world_moving_things_around_in_pictures.md)
 - [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](../../NeurIPS2025/image_generation/denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
-- [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
+- [\[ICLR 2026\] Enhanced Generative Model Evaluation with Clipped Density and Coverage](enhanced_generative_model_evaluation_with_clipped_density_and_coverage.md)
 
 </div>
 

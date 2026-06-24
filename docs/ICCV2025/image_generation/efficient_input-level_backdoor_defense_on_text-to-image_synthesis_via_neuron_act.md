@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation
 description: >-
-  [ICCV 2025][Image Generation][backdoor defense] NaviT2I identifies an "Early-step Activation Variation" phenomenon induced by backdoor triggers in text-to-image diffusion models…
+  [ICCV 2025][Image Generation][backdoor defense] NaviT2I identifies an "Early-step Activation Variation" phenomenon induced by backdoor triggers in text-to-image diffusion models, and proposes an efficient input-level backdoor defense framework that requires only the first diffusion iteration for analysis. The method achieves an average AUROC of 96.3% across 8 mainstream attacks while incurring only 3.8%–16.7% of the computational cost of existing methods.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "input-level detection"
   - "Stable Diffusion"
 date: 2026-05-08
-content_hash: 5bc83282e9a001b4
+content_hash: 7dede07018d8a1e4
 ---
 
 # Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation
@@ -150,9 +150,9 @@ where $m = 1.2$ is the default balancing coefficient.
 
 - [\[ICCV 2025\] Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy](disrupting_model_merging_a_parameter-level_defense_without_sacrificing_accuracy.md)
 - [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](polaranything_diffusion-based_polarimetric_image_synthesis.md)
+- [\[ICCV 2025\] Penalizing Boundary Activation for Object Completeness in Diffusion Models](penalizing_boundary_activation_for_object_completeness_in_diffusion_models.md)
 - [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
-- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
-- [\[ICCV 2025\] InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis](infgen_a_resolution-agnostic_paradigm_for_scalable_image_synthesis.md)
+- [\[ICCV 2025\] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing](dct-shield_a_robust_frequency_domain_defense_against_malicious_image_editing.md)
 
 </div>
 

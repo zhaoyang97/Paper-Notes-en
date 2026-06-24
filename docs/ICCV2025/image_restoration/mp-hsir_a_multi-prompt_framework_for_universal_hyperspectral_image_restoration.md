@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration
 description: >-
-  [ICCV 2025][Image Restoration][Hyperspectral image restoration] This paper proposes MP-HSIR, a unified hyperspectral image restoration framework that integrates three modalities of guidance—spectral prompts (universal lo…
+  [ICCV 2025][Image Restoration][Hyperspectral image restoration] This paper proposes MP-HSIR, a unified hyperspectral image restoration framework that integrates three modalities of guidance—spectral prompts (universal low-rank spectral patterns), text prompts, and visual prompts—to comprehensively outperform existing all-in-one methods and numerous task-specific methods across 9 HSI restoration tasks, including denoising, deblurring, super-resolution, inpainting, dehazing…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "spectral prompt"
   - "text-visual synergy"
 date: 2026-05-08
-content_hash: cfbe4515d6d88c57
+content_hash: fc1e888dbecfcd80
 ---
 
 # MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm
 description: >-
-  [ICLR 2026][Model Compression][GPTQ] This paper provides the first proof that GPTQ (when executed back-to-front) is mathematically equivalent to the classical Babai's Nearest Plane algorithm in lattice theory. This equivalence yields a geometric interpretation and a layer-wise error upper bound, based on which an improved unclipped quantization method is
+  [ICLR 2026][Model Compression][GPTQ] This paper provides the first proof that GPTQ (when executed back-to-front) is mathematically equivalent to the classical Babai's Nearest Plane algorithm in lattice theory. This equivalence yields a geometric interpretation and a layer-wise error upper bound, based on which an improved unclipped quantization method is designed.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GPTQ
-  - Quantization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "GPTQ"
+  - "Quantization"
+  - "Lattice Theory"
+  - "Closest Vector Problem"
+  - "Babai's Algorithm"
+  - "Error Bound"
 date: 2026-05-08
-content_hash: f1ea723a5cc1ec4f
+content_hash: 34b255a0d9df0f47
 ---
+
 # The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm
 
 **Conference**: ICLR 2026  
@@ -127,9 +132,9 @@ The aforementioned error bound holds only when no clipping occurs. Original GPTQ
 
 - [\[ICLR 2026\] The Lattice Geometry of Neural Network Quantization -- A Short Equivalence Proof of GPTQ and Babai's Algorithm](the_lattice_geometry_of_neural_network_quantization_--_a_short_equivalence_proof.md)
 - [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
-- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
 - [\[ICLR 2026\] MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling](moss_efficient_and_accurate_fp8_llm_training_with_microscaling_and_automatic_sca.md)
+- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
+- [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
 
 </div>
 

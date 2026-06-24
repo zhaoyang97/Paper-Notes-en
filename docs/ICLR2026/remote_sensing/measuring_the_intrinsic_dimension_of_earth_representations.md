@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Measuring the Intrinsic Dimension of Earth Representations
 description: >-
-  [ICLR 2026][Remote Sensing][Paper Note] This paper presents the first systematic measurement of the Intrinsic Dimension (ID) of Geographic Implicit Neural Representations (Geographic INR). It finds that the true ID of 256-512D embeddings is only 2-10. A high ID in the frozen embedding space correlates positively with downstream performance, while a low ID in
+  [ICLR 2026][Remote Sensing][Intrinsic Dimension] This paper presents the first systematic measurement of the Intrinsic Dimension (ID) of Geographic Implicit Neural Representations (Geographic INR). It finds that the true ID of 256-512D embeddings is only 2-10. A high ID in the frozen embedding space correlates positively with downstream performance, while a low ID in the supervised task-head activation space correlates with high performance, revealing a dual mechanism of "Rep…
 tags:
-  - ICLR 2026
-  - Remote Sensing
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Intrinsic Dimension"
+  - "Geographic Implicit Neural Representation"
+  - "Earth Observation"
+  - "Representation Learning"
+  - "Unsupervised Evaluation"
 date: 2026-05-08
-content_hash: 0d15fcfccad65b79
+content_hash: a6d40ae3f4ee4af5
 ---
+
 # Measuring the Intrinsic Dimension of Earth Representations
 
 **Conference**: ICLR 2026  
@@ -134,6 +140,7 @@ More input modalities $\rightarrow$ Higher ID $\rightarrow$ Better downstream pe
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,7 +149,7 @@ More input modalities $\rightarrow$ Higher ID $\rightarrow$ Better downstream pe
 - [\[ICML 2026\] Localized, High-resolution Geographic Representations with Slepian Functions](../../ICML2026/remote_sensing/localized_high-resolution_geographic_representations_with_slepian_functions.md)
 - [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](../../CVPR2026/remote_sensing/geosane_learning_geospatial_representations_from_models_not_data.md)
 - [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](../../CVPR2026/remote_sensing/ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
-- [\[CVPR 2026\] TESSERA: Temporal Embeddings of Surface Spectra for Earth Representation and Analysis](../../CVPR2026/remote_sensing/tessera_temporal_embeddings_of_surface_spectra_for_earth_representation_and_anal.md)
+- [\[ICLR 2026\] TerraFM: A Scalable Foundation Model for Unified Multisensor Earth Observation](terrafm_a_scalable_foundation_model_for_unified_multisensor_earth_observation.md)
 
 </div>
 

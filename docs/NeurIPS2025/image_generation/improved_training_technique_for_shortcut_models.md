@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improved Training Technique for Shortcut Models (iSM)
 description: >-
-  [NeurIPS 2025][Image Generation][Shortcut Models] Targeting five key performance bottlenecks of Shortcut Models (compounding guidance, fixed guidance, frequency bias, self-consistency deviation, and curved trajectories)…
+  [NeurIPS 2025][Image Generation][Shortcut Models] Targeting five key performance bottlenecks of Shortcut Models (compounding guidance, fixed guidance, frequency bias, self-consistency deviation, and curved trajectories), this paper proposes iSM, a unified training framework that incorporates intrinsic guidance, multi-level wavelet loss, scaling optimal transport, and twin EMA strategy, achieving substantial improvements on ImageNet 256×256 with one-step FID 5.27 and four-step…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "Optimal Transport"
   - "EMA Strategy"
 date: 2026-05-08
-content_hash: 33c5701e0c9cfbae
+content_hash: b0281df00b71b54c
 ---
 
 # Improved Training Technique for Shortcut Models (iSM)
@@ -225,8 +225,8 @@ The substantial improvement in Recall (0.11 → 0.55, 0.19 → 0.62) indicates t
 - [\[NeurIPS 2025\] Scaling Offline RL via Efficient and Expressive Shortcut Models](scaling_offline_rl_via_efficient_and_expressive_shortcut_models.md)
 - [\[NeurIPS 2025\] Show-o2: Improved Native Unified Multimodal Models](show-o2_improved_native_unified_multimodal_models.md)
 - [\[ICCV 2025\] Improved Noise Schedule for Diffusion Training](../../ICCV2025/image_generation/improved_noise_schedule_for_diffusion_training.md)
+- [\[ICLR 2026\] Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View](../../ICLR2026/image_generation/shortcut_diffusion_training_with_cumulative_consistency_loss_an_optimal_control_.md)
 - [\[NeurIPS 2025\] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model](pairwise_optimal_transports_for_training_all-to-all_flow-based_condition_transfe.md)
-- [\[NeurIPS 2025\] Training-Free Constrained Generation with Stable Diffusion Models](training-free_constrained_generation_with_stable_diffusion_models.md)
 
 </div>
 

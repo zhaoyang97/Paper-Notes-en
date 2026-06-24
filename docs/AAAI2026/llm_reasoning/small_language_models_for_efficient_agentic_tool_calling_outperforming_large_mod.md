@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning
 description: >-
-  [AAAI 2026][LLM Reasoning][Small Language Models] By applying a single-epoch supervised fine-tuning (SFT) on OPT-350M, this work achieves a 77.55% pass rate on ToolBench…
+  [AAAI 2026][Reasoning][Small Language Models] By applying a single-epoch supervised fine-tuning (SFT) on OPT-350M, this work achieves a 77.55% pass rate on ToolBench, substantially outperforming large-model baselines such as ChatGPT-CoT (26%) and ToolLLaMA-DFS (30.18%), demonstrating that small models with targeted fine-tuning can significantly surpass general-purpose large models on specific tasks.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Small Language Models"
   - "Tool Calling"
   - "SFT Fine-tuning"
   - "OPT-350M"
   - "ToolBench"
 date: 2026-05-08
-content_hash: ab1355806058aaac
+content_hash: 1c2ec12e16b50fe8
 ---
 
 # Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning
@@ -172,10 +172,10 @@ No formal ablation tables are provided; however, the paper discusses the sources
 ## Related Papers
 
 - [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](../../ACL2026/llm_reasoning/tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](../../ICLR2026/llm_reasoning/t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](../../ICLR2026/llm_reasoning/slm-mux_orchestrating_small_language_models_for_reasoning.md)
 - [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
-- [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
-- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 
 </div>
 

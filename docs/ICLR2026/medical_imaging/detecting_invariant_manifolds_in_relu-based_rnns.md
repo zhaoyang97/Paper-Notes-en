@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting Invariant Manifolds in ReLU-Based RNNs
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper proposes a semi-analytical algorithm for ReLU-based Piecewise Linear RNNs (PLRNNs) that directly computes the stable and unstable manifolds of saddle points or saddle periodic points. This allows for mapping the boundaries of different attractor basins in state space, identifying homoclinic/heteroclinic inte
+  [ICLR2026][Medical Imaging][Piecewise Linear RNN] This paper proposes a semi-analytical algorithm for ReLU-based Piecewise Linear RNNs (PLRNNs) that directly computes the stable and unstable manifolds of saddle points or saddle periodic points. This allows for mapping the boundaries of different attractor basins in state space, identifying homoclinic/heteroclinic intersections, and proving the existence of chaos within the RNN—filling a long-standing gap in how to analyze the…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Piecewise Linear RNN"
+  - "Invariant Manifolds"
+  - "Attractor Basins"
+  - "Homoclinic Orbits"
+  - "Chaos"
 date: 2026-05-08
-content_hash: 8b5f1f9e891bbd0b
+content_hash: 50fec281f1073c00
 ---
+
 # Detecting Invariant Manifolds in ReLU-Based RNNs
 
 **Conference**: ICLR2026  
@@ -131,8 +137,8 @@ The paper uses the "accurate restoration of state space structure" as the primar
 - [\[ICLR 2026\] BioTamperNet: Affinity-Guided State-Space Model Detecting Tampered Biomedical Images](biotampernet_affinity-guided_state-space_model_detecting_tampered_biomedical_ima.md)
 - [\[NeurIPS 2025\] GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds](../../NeurIPS2025/medical_imaging/geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam.md)
 - [\[ECCV 2024\] A Rotation-Invariant Texture ViT for Fine-Grained Recognition of Esophageal Cancer Endoscopic Ultrasound Images](../../ECCV2024/medical_imaging/a_rotation-invariant_texture_vit_for_fine-grained_recognition_of_esophageal_canc.md)
+- [\[ICLR 2026\] Dual-Kernel Adapter: Expanding Spatial Horizons for Data-Constrained Medical Image Analysis](dual-kernel_adapter_expanding_spatial_horizons_for_data-constrained_medical_imag.md)
 - [\[ICLR 2026\] Accelerating Benchmarking of Functional Connectivity Modeling via Structure-aware Core-set Selection](accelerating_benchmarking_of_functional_connectivity_modeling_via_structure-awar.md)
-- [\[ICLR 2026\] Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks](are_eeg_foundation_models_worth_it_comparative_evaluation_with_traditional_decod.md)
 
 </div>
 

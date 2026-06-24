@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] The GIFT method is proposed, which constructs a visual saliency map by tracking positive changes in visual attention ("gaze shifts") as the VLM interprets user queries. During the decoding stage, it simultaneously enhances attention for both visual and query tokens to maintain cross-modal fusion balance, achieving up t
+  [ICML 2026][Hallucination Detection][VLM Hallucination Mitigation] The GIFT method is proposed, which constructs a visual saliency map by tracking positive changes in visual attention ("gaze shifts") as the VLM interprets user queries. During the decoding stage, it simultaneously enhances attention for both visual and query tokens to maintain cross-modal fusion balance, achieving up to 20.7% improvement on CHAIR with only 1.13× latency overhead.
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "VLM Hallucination Mitigation"
+  - "Attention Shift"
+  - "Cross-Modal Fusion"
+  - "Visual Saliency"
+  - "Inference-time Intervention"
 date: 2026-05-08
-content_hash: 9fd9c9f8aef7320b
+content_hash: cb05086405737e69
 ---
+
 # Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation
 
 **Conference**: ICML 2026  
@@ -128,8 +134,8 @@ Amplifying only visual attention carries a risk: as visual weight increases, the
 - [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](../../AAAI2026/hallucination/inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
-- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
-- [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](../../CVPR2026/hallucination/mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](../../ICLR2026/hallucination/cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
 
 </div>
 

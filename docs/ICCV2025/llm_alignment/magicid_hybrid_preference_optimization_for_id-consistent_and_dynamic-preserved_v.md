@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MagicID: Hybrid Preference Optimization for ID-Consistent and Dynamic-Preserved Video Customization
 description: >-
-  [ICCV 2025][LLM Alignment][Video Customization] This paper proposes MagicID, a framework that constructs hybrid video pair data capturing identity and dynamic preferences…
+  [ICCV 2025][LLM Alignment][Video Customization] This paper proposes MagicID, a framework that constructs hybrid video pair data capturing identity and dynamic preferences, and designs a two-stage Hybrid Preference Optimization (HPO) training strategy. MagicID is the first work to apply DPO to identity-customized video generation, simultaneously addressing identity degradation and motion weakening caused by conventional self-reconstruction training.
 tags:
   - "ICCV 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Hybrid Sampling"
 date: 2026-05-08
-content_hash: 22cb96b6f57d5f04
+content_hash: 9e9c6a1919c12b77
 ---
 
 # MagicID: Hybrid Preference Optimization for ID-Consistent and Dynamic-Preserved Video Customization
@@ -165,11 +165,11 @@ $$\mathcal{L}_{\text{HPO}}(\theta) = \mathbb{E}_{(v_0^w, v_0^l) \sim \mathcal{D}
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Preference Optimization by Estimating the Ratio of the Data Distribution](../../NeurIPS2025/llm_alignment/preference_optimization_by_estimating_the_ratio_of_the_data_distribution.md)
-- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](../../ICLR2026/llm_alignment/learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
-- [\[AAAI 2026\] AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment](../../AAAI2026/llm_alignment/amapo_adaptive_margin-attached_preference_optimization_for_l.md)
-- [\[NeurIPS 2025\] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO](../../NeurIPS2025/llm_alignment/deepvideor1_video_reinforcement_finetuning_via_difficultyawa.md)
-- [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](../../ICLR2026/llm_alignment/token-importance_guided_direct_preference_optimization.md)
+- [\[ACL 2025\] Robust Preference Optimization via Dynamic Target Margins](../../ACL2025/llm_alignment/robust_preference_optimization_via_dynamic_target_margins.md)
+- [\[ACL 2025\] Probability-Consistent Preference Optimization for Enhanced LLM Reasoning](../../ACL2025/llm_alignment/probability-consistent_preference_optimization_for_enhanced_llm_reasoning.md)
+- [\[ACL 2025\] Fine-grained Video Dubbing Duration Alignment with Segment Supervised Preference Optimization](../../ACL2025/llm_alignment/fine-grained_video_dubbing_duration_alignment_with_segment_supervised_preference.md)
+- [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
+- [\[ACL 2025\] HAF-RM: A Hybrid Alignment Framework for Reward Model Training](../../ACL2025/llm_alignment/haf-rm_a_hybrid_alignment_framework_for_reward_model_training.md)
 
 </div>
 

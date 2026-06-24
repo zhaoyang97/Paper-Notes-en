@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preserve and Personalize: Personalized Text-to-Image Diffusion Models without Distributional Drift
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] To address the overfitting problem in personalized text-to-image fine-tuning—where the model replicates reference images and ignores prompts—this paper proves that existing objective functions inherently fail to preserve the pre-trained distribution. It proposes a regularization term based on Lipschitz continuity, esse
+  [ICLR 2026][Image Generation][Personalized Generation] To address the overfitting problem in personalized text-to-image fine-tuning—where the model replicates reference images and ignores prompts—this paper proves that existing objective functions inherently fail to preserve the pre-trained distribution. It proposes a regularization term based on Lipschitz continuity, essentially an L2 constraint on parameter offsets, which preserves the original generative capacity while red…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Personalized Generation"
+  - "Text-to-Image Diffusion"
+  - "Distribution Preservation"
+  - "Lipschitz Regularization"
+  - "Overfitting"
 date: 2026-05-08
-content_hash: 772a6da05118da57
+content_hash: f18f241c70fe7a1c
 ---
+
 # Preserve and Personalize: Personalized Text-to-Image Diffusion Models without Distributional Drift
 
 **Conference**: ICLR 2026  
@@ -139,17 +145,16 @@ Ours ranks first overall; other baselines often excel in one metric while failin
 - Value: ⭐⭐⭐⭐ Plug-and-play, significantly faster, and offers single-knob control.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Directional Textual Inversion for Personalized Text-to-Image Generation](directional_textual_inversion_for_personalized_text-to-image_generation.md)
 - [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](../../CVPR2026/image_generation/dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
 - [\[ECCV 2024\] Removing Distributional Discrepancies in Captions Improves Image-Text Alignment](../../ECCV2024/image_generation/removing_distributional_discrepancies_in_captions_improves_image-text_alignment.md)
-- [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] WISDOM treats the sequence of "evolving tasks" in non-stationary RL as a non-stationary signal. It uses a learnable wavelet representation network to transform task representation sequences into the wavelet domain, combined with a wavelet TD update operator and an autoregressive loss to capture multi-scale evolutionary
+  [ICLR 2026][Reinforcement Learning][Non-Stationary Reinforcement Learning] WISDOM treats the sequence of "evolving tasks" in non-stationary RL as a non-stationary signal. It uses a learnable wavelet representation network to transform task representation sequences into the wavelet domain, combined with a wavelet TD update operator and an autoregressive loss to capture multi-scale evolutionary trends. This enables the policy to adapt rapidly in environments with random periods…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Non-Stationary Reinforcement Learning"
+  - "Wavelets"
+  - "Task Representation"
+  - "Temporal Difference"
+  - "Meta-RL"
 date: 2026-05-08
-content_hash: 44fa9523ac696811
+content_hash: f386cb7019871da6
 ---
+
 # Wavelet Predictive Representations for Non-Stationary Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -137,11 +143,20 @@ WISDOM achieves the highest success rate with the smallest variance in most envi
 - Value: ⭐⭐⭐⭐ Provides a transferable frequency-domain representation learning paradigm for NSRL.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning](td-jepa_latent-predictive_representations_for_zero-shot_reinforcement_learning.md)
+- [\[ICML 2026\] Tracking Drift: Variation-Aware Entropy Scheduling for Non-Stationary Reinforcement Learning](../../ICML2026/reinforcement_learning/tracking_drift_variation-aware_entropy_scheduling_for_non-stationary_reinforceme.md)
+- [\[ICLR 2026\] Predictive CVaR Q-Learning](predictive_cvar_q-learning.md)
+- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](../../NeurIPS2025/reinforcement_learning/forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
+- [\[ICML 2026\] Space-sampled Value Decay: Forgetting Mechanisms for Non-stationary Deep Reinforcement Learning](../../ICML2026/reinforcement_learning/space-sampled_value_decay_forgetting_mechanisms_for_non-stationary_deep_reinforc.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Predictive CVaR Q-Learning](predictive_cvar_q-learning.md)

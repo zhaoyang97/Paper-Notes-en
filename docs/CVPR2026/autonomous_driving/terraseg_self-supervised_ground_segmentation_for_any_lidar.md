@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR
 description: >-
-  [CVPR 2026][Autonomous Driving][Self-Supervised Learning] This paper proposes TerraSeg, the first self-supervised domain-agnostic LiDAR ground segmentation model. By constructing a unified large-scale OmniLiDAR dataset (12 public benchmarks, 15 sensors, nearly 22 million scans) and an innovative PseudoLabeler self-supervised pseudo-label generation module, it achieves SOTA re
+  [CVPR 2026][Autonomous Driving][Ground segmentation] This paper proposes TerraSeg, the first self-supervised domain-agnostic LiDAR ground segmentation model. By constructing a unified large-scale OmniLiDAR dataset (12 public benchmarks, 15 sensors, nearly 22 million scans) and an innovative PseudoLabeler self-supervised pseudo-label generation module, it achieves SOTA results on nuScenes, SemanticKITTI, and Waymo without using any manual annotations.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Ground segmentation"
+  - "self-supervised learning"
+  - "cross-sensor generalization"
+  - "LiDAR perception"
+  - "pseudo-label"
 date: 2026-05-08
-content_hash: a52446cf5a6b933d
+content_hash: c2da1da1edb6e4a0
 ---
+
 # TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Ablation of PseudoLabeler components (nuScenes):
 ## Related Papers
 
 - [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
-- [\[CVPR 2025\] Exploring Scene Affinity for Semi-Supervised LiDAR Semantic Segmentation](../../CVPR2025/autonomous_driving/exploring_scene_affinity_for_semi-supervised_lidar_semantic_segmentation.md)
-- [\[CVPR 2026\] Le MuMo JEPA: Multi-Modal Self-Supervised Representation Learning with Learnable Fusion Tokens](le_mumo_jepa_multi-modal_self-supervised_representation_learning_with_learnable_.md)
+- [\[CVPR 2026\] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination](test-time_training_for_lidar_semantic_segmentation_under_corruption_via_geometri.md)
 - [\[CVPR 2026\] HorizonForge: Driving Scene Editing with Any Trajectories and Any Vehicles](horizonforge_driving_scene_editing_with_any_trajectories_and_any_vehicles.md)
 - [\[CVPR 2025\] PSA-SSL: Pose and Size-aware Self-Supervised Learning on LiDAR Point Clouds](../../CVPR2025/autonomous_driving/psa-ssl_pose_and_size-aware_self-supervised_learning_on_lidar_point_clouds.md)
+- [\[CVPR 2025\] Exploring Scene Affinity for Semi-Supervised LiDAR Semantic Segmentation](../../CVPR2025/autonomous_driving/exploring_scene_affinity_for_semi-supervised_lidar_semantic_segmentation.md)
 
 </div>
 

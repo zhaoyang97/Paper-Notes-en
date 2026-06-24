@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Video Finetuning Improves Reasoning Between Frames
 description: >-
-  [NeurIPS 2025][Video Understanding][video finetuning] This paper proposes a visual chain-of-thought (vCoT) approach to systematically compare image LLMs and video-finetuned LLMs on inter-frame reasoning. It finds that vi…
+  [NeurIPS 2025][Video Understanding][video finetuning] This paper proposes a visual chain-of-thought (vCoT) approach to systematically compare image LLMs and video-finetuned LLMs on inter-frame reasoning. It finds that video finetuning enables models to implicitly learn inter-frame transition reasoning, and that this capability transfers to relational reasoning tasks on static images.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "visual chain-of-thought"
   - "temporal understanding"
 date: 2026-05-08
-content_hash: 58a767fb02c8224e
+content_hash: 9f492b725e4a3912
 ---
 
 # Video Finetuning Improves Reasoning Between Frames
@@ -139,11 +139,11 @@ All model pairs share the same visual encoder, language backbone, and cross-moda
 
 ## Related Papers
 
+- [\[CVPR 2025\] BehaviorVLM: Unified Finetuning-Free Behavioral Understanding with Vision-Language Reasoning](../../CVPR2025/video_understanding/behaviorvlm_unified_finetuning-free_behavioral_understanding_with_vision-languag.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
-- [\[ICCV 2025\] DynImg: Key Frames with Visual Prompts are Good Representation for Multi-Modal Video Understanding](../../ICCV2025/video_understanding/dynimg_key_frames_with_visual_prompts_are_good_representation_for_multi-modal_vi.md)
 - [\[NeurIPS 2025\] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis](a_unified_reasoning_framework_for_holistic_zeroshot_video_an.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 - [\[NeurIPS 2025\] LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization](longvpo_from_anchored_cues_to_selfreasoning_for_longform_vid.md)
+- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 
 </div>
 

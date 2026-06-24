@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MoMa: A Simple Modular Learning Framework for Material Property Prediction
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] MoMa trains each material property task as an independent "module" and stores it in a Hub. For new tasks, it utilizes a training-free, representation-driven algorithm (kNN performance estimation + convex optimization for weights + weight space merging) to adaptively combine the most synergistic modules for fine-tuning.
+  [ICLR 2026][Physics & Scientific Computing][Modular Learning] MoMa trains each material property task as an independent "module" and stores it in a Hub. For new tasks, it utilizes a training-free, representation-driven algorithm (kNN performance estimation + convex optimization for weights + weight space merging) to adaptively combine the most synergistic modules for fine-tuning. It achieves an average performance gain of 14% over the strongest baseline across 17 material tas…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Modular Learning"
+  - "Material Property Prediction"
+  - "Model Merging"
+  - "kNN Proxy Error"
+  - "Convex Optimization"
+  - "Few-shot Learning"
 date: 2026-05-08
-content_hash: 799d5d77752ccca1
+content_hash: de9ff8d192f29631
 ---
+
 # MoMa: A Simple Modular Learning Framework for Material Property Prediction
 
 **Conference**: ICLR 2026  
@@ -129,7 +136,7 @@ Comparing AMC to other combination paradigms: it outperforms LoRAHub (search-bas
 - [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
 - [\[ICLR 2026\] OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction](oxtal_an_all-atom_diffusion_model_for_organic_crystal_structure_prediction.md)
 - [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
-- [\[ICLR 2026\] Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance](stretching_beyond_the_obvious_a_gradient-free_framework_to_unveil_the_hidden_lan.md)
+- [\[ICLR 2026\] TandemFoilSet: Datasets for Flow Field Prediction of Tandem-Airfoil Through the Reuse of Single Airfoils](tandemfoilset_datasets_for_flow_field_prediction_of_tandem-airfoil_through_the_r.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CLIPSym: Delving into Symmetry Detection with CLIP
 description: >-
-  [ICCV 2025][Multimodal VLM][Symmetry Detection] This paper proposes CLIPSym, the first method to leverage the multimodal understanding capability of pretrained CLIP for reflection and rotation symmetry detection. It intr…
+  [ICCV 2025][Multimodal VLM][Symmetry Detection] This paper proposes CLIPSym, the first method to leverage the multimodal understanding capability of pretrained CLIP for reflection and rotation symmetry detection. It introduces a Semantics-Aware Prompt Grouping (SAPG) strategy to integrate textual semantic cues and a decoder with theoretical rotation equivariance guarantees, achieving state-of-the-art results on three benchmarks: DENDI, SDRW, and LDRS.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Semantics-Aware Prompt Grouping"
   - "G-Convolution"
 date: 2026-05-08
-content_hash: ca9aceaf4b01a20e
+content_hash: 2fb61fbd395a92fe
 ---
 
 # CLIPSym: Delving into Symmetry Detection with CLIP
@@ -182,7 +182,7 @@ Equivariance evaluation (DENDI Reflection, ±45° random rotation):
 - [\[ICCV 2025\] GTA-CLIP: Generate, Transduct, Adapt — Iterative Transduction with VLMs](generate_transduct_adapt_iterative_transduction_with_vlms.md)
 - [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
 - [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
-- [\[ICCV 2025\] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection](adaptive_prompt_learning_via_gaussian_outlier_synthesis_for_out_of_distribution_detection.md)
+- [\[ICLR 2026\] Delving into Spectral Clustering with Vision-Language Representations](../../ICLR2026/multimodal_vlm/delving_into_spectral_clustering_with_vision-language_representations.md)
 
 </div>
 

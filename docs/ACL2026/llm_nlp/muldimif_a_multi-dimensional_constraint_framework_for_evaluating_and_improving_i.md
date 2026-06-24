@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] The authors propose MulDimIF, a multi-dimensional constraint framework that systematically evaluates the instruction-following capabilities of LLMs across three dimensions: constraint patterns (3 types), constraint categories (4 categories, 13 subcategories), and constraint difficulty (4 levels). Model performance is s
+  [ACL 2026][LLM (Other)][Instruction following] The authors propose MulDimIF, a multi-dimensional constraint framework that systematically evaluates the instruction-following capabilities of LLMs across three dimensions: constraint patterns (3 types), constraint categories (4 categories, 13 subcategories), and constraint difficulty (4 levels). Model performance is significantly improved via GRPO training, with findings indicating that improvements primarily stem from parameter…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Instruction following"
+  - "multi-dimensional constraints"
+  - "evaluation benchmark"
+  - "GRPO training"
+  - "attention mechanism analysis"
 date: 2026-05-08
-content_hash: 46e81cd1f4a6c980
+content_hash: 9ae0f42b595123c4
 ---
+
 # MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models
 
 **Conference**: ACL 2026  
@@ -132,7 +138,7 @@ The GRPO (Group Relative Policy Optimization) algorithm is employed for training
 - [\[ACL 2025\] MDCure: A Scalable Pipeline for Multi-Document Instruction-Following](../../ACL2025/llm_nlp/mdcure_a_scalable_pipeline_for_multi-document_instruction-following.md)
 - [\[ACL 2025\] Catching Shortcuts: A Framework for Evaluating Shortcuts in Large Language Models](../../ACL2025/llm_nlp/catching_shortcuts_a_framework_for_evaluating_shortcuts_in_large_language_models.md)
 - [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
-- [\[AAAI 2026\] Control Illusion: The Failure of Instruction Hierarchies in Large Language Models](../../AAAI2026/llm_nlp/control_illusion_the_failure_of_instruction_hierarchies_in_large_language_models.md)
+- [\[ICLR 2026\] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following](../../ICLR2026/llm_nlp/attend_to_the_active_structure-aware_dynamic_attention_in_llms_for_compositional.md)
 
 </div>
 

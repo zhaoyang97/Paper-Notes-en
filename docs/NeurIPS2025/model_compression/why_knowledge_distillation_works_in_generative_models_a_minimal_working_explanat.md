@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation
 description: >-
-  [NeurIPS 2025][Model Compression][Knowledge Distillation] Through theoretical analysis on Gaussian mixture models and large-scale experiments on the SmolLM2 family via multi-level distillation…
+  [NeurIPS 2025][Model Compression][Knowledge Distillation] Through theoretical analysis on Gaussian mixture models and large-scale experiments on the SmolLM2 family via multi-level distillation, this paper reveals the core mechanism of knowledge distillation in generative models: distillation induces a tradeoff in the student model between precision (generation quality) and recall (distribution coverage), governed by the entropy of the teacher distribution.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian Mixture Models"
   - "Teacher Entropy"
 date: 2026-05-08
-content_hash: 4686a088e7645aa6
+content_hash: 4932f13bb1f6a3a7
 ---
 
 # Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation
@@ -173,8 +173,8 @@ The trend is clear: lower temperature → more selective teacher → higher stud
 ## Related Papers
 
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
-- [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](knowledge_distillation_detection_for_open-weights_models.md)
 - [\[ICML 2026\] The Bridge-Garden Dilemma in LLM Distillation: Why Mixing Hard and Soft Labels Works](../../ICML2026/model_compression/the_bridge-garden_dilemma_in_llm_distillation_why_mixing_hard_and_soft_labels_wo.md)
+- [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](knowledge_distillation_detection_for_open-weights_models.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
 

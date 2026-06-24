@@ -4,12 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][Medical Imaging][Knowledge Distillation] MoMKD is proposed to replace traditional batch-local feature alignment with a momentum-updated class-conditional memory bank, achieving genomics $\rightarrow$ pathology cross-modal knowledge distillation. This enables genome-level predictive capability using only H&E slides during inference.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Knowledge Distillation"
+  - "Computational Pathology"
+  - "Momentum Memory"
+  - "Cross-modal Alignment"
+  - "Multiple Instance Learning"
 date: 2026-05-08
-content_hash: e25d66c7a2dd176e
+content_hash: 4c3e73b78ebfc0fa
 ---
+
 # Momentum Memory for Knowledge Distillation in Computational Pathology
 
 **Conference**: CVPR 2026  
@@ -175,8 +180,8 @@ Innovative introduction of MoCo dictionary concepts into cross-modal KD, with so
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 - [\[NeurIPS 2025\] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology](../../NeurIPS2025/medical_imaging/revisiting_end-to-end_learning_with_slide-level_supervision_in_computational_pat.md)
+- [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
 - [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
 - [\[CVPR 2026\] PDD: Manifold-Prior Diverse Distillation for Medical Anomaly Detection](pdd_manifold-prior_diverse_distillation_for_medical_anomaly_detection.md)

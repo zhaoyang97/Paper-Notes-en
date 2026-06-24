@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reconstructing CLIP for Open-Vocabulary Dense Perception
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] DenseRC addresses the neglected problem of "how to construct high-quality dense features for CLIP." It reveals that the generalized semantics of the cls token actually derive from multi-layer value embeddings, whereas spatial aggregation tends to amplify semantic misalignment. By using multi-layer values as a foundatio
+  [CVPR 2026][LLM Pretraining][Open-Vocabulary Dense Perception] DenseRC addresses the neglected problem of "how to construct high-quality dense features for CLIP." It reveals that the generalized semantics of the cls token actually derive from multi-layer value embeddings, whereas spatial aggregation tends to amplify semantic misalignment. By using multi-layer values as a foundation and employing a lightweight Head Selection Gating (HSG) for re-weighting solely across the head…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
-  - value embedding
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Open-Vocabulary Dense Perception"
+  - "CLIP"
+  - "Self-Distillation"
+  - "value embedding"
+  - "Head Selection Gating"
 date: 2026-05-08
-content_hash: c5edac68c29c28aa
+content_hash: 4bb41105f2f1b1b3
 ---
+
 # Reconstructing CLIP for Open-Vocabulary Dense Perception
 
 **Conference**: CVPR 2026  
@@ -145,11 +149,11 @@ In zero-shot region classification (ViT-B/16, no RPN), DenseRC achieves 76.7 for
 
 ## Related Papers
 
-- [\[CVPR 2026\] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception](synclip_synonym-coherent_language-image_pretraining_for_robust_open-vocabulary_d.md)
-- [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
-- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
-- [\[CVPR 2026\] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP](reevaluating_the_intra-modal_misalignment_hypothesis_in_clip.md)
-- [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
+- [\[ICML 2026\] Names Don't Matter: Symbol-Invariant Transformer for Open-Vocabulary Learning](../../ICML2026/llm_pretraining/names_dont_matter_symbol-invariant_transformer_for_open-vocabulary_learning.md)
+- [\[CVPR 2026\] Linking Modality Isolation in Heterogeneous Collaborative Perception](linking_modality_isolation_in_heterogeneous_collaborative_perception.md)
+- [\[ECCV 2024\] Plan, Posture and Go: Towards Open-Vocabulary Text-to-Motion Generation](../../ECCV2024/llm_pretraining/plan_posture_and_go_towards_open-vocabulary_text-to-motion_generation.md)
+- [\[ICML 2025\] The Double-Ellipsoid Geometry of CLIP](../../ICML2025/llm_pretraining/the_double-ellipsoid_geometry_of_clip.md)
+- [\[ICML 2025\] Whitened CLIP as a Likelihood Surrogate of Images and Captions](../../ICML2025/llm_pretraining/whitened_clip_as_a_likelihood_surrogate_of_images_and_captions.md)
 
 </div>
 

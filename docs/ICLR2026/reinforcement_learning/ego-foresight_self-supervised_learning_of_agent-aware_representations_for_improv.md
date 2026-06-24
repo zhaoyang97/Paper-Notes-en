@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Ego-Foresight: Self-supervised Learning of Agent-Aware Representations for Improved RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Inspired by human "motion prediction," Ego-Foresight utilizes the cue that "the agent's body configuration is predictable by future actions when it moves" to disentangle agent features from scene features **without any supervised masks**. Integrated as an auxiliary task into DrQ-v2 and TD-MPC2, it significantly enhance
+  [ICLR 2026][Reinforcement Learning][Agent-environment disentanglement] Inspired by human "motion prediction," Ego-Foresight utilizes the cue that "the agent's body configuration is predictable by future actions when it moves" to disentangle agent features from scene features **without any supervised masks**. Integrated as an auxiliary task into DrQ-v2 and TD-MPC2, it significantly enhances the sample efficiency and performance of visual RL.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Agent-environment disentanglement"
+  - "motion prediction"
+  - "self-supervised auxiliary tasks"
+  - "sample efficiency"
+  - "embodied adaptation"
 date: 2026-05-08
-content_hash: dc9a7c11efd77b14
+content_hash: e45ddb686f09b887
 ---
+
 # Ego-Foresight: Self-supervised Learning of Agent-Aware Representations for Improved RL
 
 **Conference**: ICLR 2026  
@@ -117,9 +123,9 @@ Notably, on **tasks requiring tools**, the performance gap between EF and baseli
 ## Related Papers
 
 - [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
+- [\[ICLR 2026\] Proximal Supervised Fine-Tuning](proximal_supervised_fine-tuning.md)
 - [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
-- [\[ICLR 2026\] Proximal Supervised Fine-Tuning](proximal_supervised_fine-tuning.md)
 - [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
 
 </div>

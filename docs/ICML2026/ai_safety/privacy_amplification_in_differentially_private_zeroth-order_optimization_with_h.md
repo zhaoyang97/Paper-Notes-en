@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States
 description: >-
-  [ICML 2026][AI Safety][PABI] The authors provide the first convergent **hidden-state DP upper bound** for "Differentially Private Zeroth-Order Gradient Descent (DP-ZOGD)". By designing a hybrid "directional + isotropic" noise mechanism and constructing an auxiliary process between two adjacent trajectories, they bypass the technical barrier of zer
+  [ICML 2026][AI Safety][Differential Privacy] The authors provide the first convergent **hidden-state DP upper bound** for "Differentially Private Zeroth-Order Gradient Descent (DP-ZOGD)". By designing a hybrid "directional + isotropic" noise mechanism and constructing an auxiliary process between two adjacent trajectories, they bypass the technical barrier of zeroth-order updates lacking global Lipschitz continuity. This reveals a previously unknown DP algorithm design princi…
 tags:
-  - ICML 2026
-  - AI Safety
-  - PABI
+  - "ICML 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Zeroth-Order Optimization"
+  - "PABI"
+  - "hidden-state analysis"
+  - "coupling analysis"
 date: 2026-05-08
-content_hash: 78226f790ca2d064
+content_hash: fc1a1e42a6d3053c
 ---
+
 # Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States
 
 **Conference**: ICML 2026  
@@ -108,15 +113,20 @@ Once $K \ge K_{\min}$ (the lower bound from Corollary 3.3), the **Ours** bound i
 - Value: ⭐⭐⭐⭐ (Provides a tighter accountant for all DP-ZO based LLM fine-tuning, allowing for more training steps or tighter $\varepsilon$).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-1. **Zhang et al. (2024a)**: MeZO: Fine-Tuning Language Models with Just Forward Passes. (Proposed empirical ZO-DP)
-2. **Altschuler & Talwar (2022)**: Privacy of the Iterates of Differentially Private SGD. (Foundation of PABI)
-3. **Tang et al. (2024)**: Differentially Private Zeroth-Order Optimization for Large Language Models. (Relevant baseline using composition)
+## Related Papers
+
+- [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](../../NeurIPS2025/ai_safety/stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
+- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](prism_gauge-invariant_tangent-space_differentially_private_lora.md)
+- [\[AAAI 2026\] An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses](../../AAAI2026/ai_safety/an_improved_privacy_and_utility_analysis_of_differentially_p.md)
+- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Advancing Textual Prompt Learning with Anchored Attributes
 description: >-
-  [ICCV 2025][Multimodal VLM][Prompt Learning] This paper proposes ATPrompt, which embeds general-purpose attribute tokens (e.g., color, shape) into textual prompts…
+  [ICCV 2025][Multimodal VLM][Prompt Learning] This paper proposes ATPrompt, which embeds general-purpose attribute tokens (e.g., color, shape) into textual prompts, extending the learning space of soft prompts from a one-dimensional class level to a multi-dimensional attribute level. ATPrompt serves as a plug-and-play module that integrates seamlessly into existing textual prompt learning methods, consistently improving baseline performance across 11 datasets.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Zero-Shot Generalization"
   - "Differentiable Attribute Search"
 date: 2026-05-08
-content_hash: 9c028e30fec89611
+content_hash: 01ac99bf336ae7c8
 ---
 
 # Advancing Textual Prompt Learning with Anchored Attributes
@@ -137,9 +137,9 @@ The search converges in approximately 5 epochs, taking under 5 minutes on a sing
 
 - [\[ICCV 2025\] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection](adaptive_prompt_learning_via_gaussian_outlier_synthesis_for_out_of_distribution_detection.md)
 - [\[NeurIPS 2025\] Learning Skill-Attributes for Transferable Assessment in Video](../../NeurIPS2025/multimodal_vlm/learning_skill-attributes_for_transferable_assessment_in_video.md)
+- [\[CVPR 2025\] Vision-Language Model IP Protection via Prompt-based Learning](../../CVPR2025/multimodal_vlm/vision-language_model_ip_protection_via_prompt-based_learning.md)
+- [\[CVPR 2025\] NLPrompt: Noise-Label Prompt Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/nlprompt_noise-label_prompt_learning_for_vision-language_models.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
-- [\[ICCV 2025\] FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection](fa_forced_prompt_learning_of_vision-language_models_for_out-of-distribution_dete.md)
-- [\[ICCV 2025\] PRO-VPT: Distribution-Adaptive Visual Prompt Tuning via Prompt Relocation](pro-vpt_distribution-adaptive_visual_prompt_tuning_via_prompt_relocation.md)
 
 </div>
 

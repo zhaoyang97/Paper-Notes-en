@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Flatland: The Adventures of Gradient Descent with Large Step Sizes
 description: >-
-  [ICML 2026][Optimization & Theory][Edge of Stability] This paper provides a unified definition of "large step size" requiring only "local Lipschitz / Hölder gradient continuity." By constructing a first-order adaptive step size using equality-type non-monotone line search, Gradient Descent (GD) is driven to run on the Edge of Stability (EoS) from the start of training, su
+  [ICML 2026][Optimization][Large learning rates] This paper provides a unified definition of "large step size" requiring only "local Lipschitz / Hölder gradient continuity." By constructing a first-order adaptive step size using equality-type non-monotone line search, Gradient Descent (GD) is driven to run on the Edge of Stability (EoS) from the start of training, suppressing sharpness to the global minimum of $2/K$. It further discovers that "premature entry into the global f…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Edge of Stability
-  - sharpness
+  - "ICML 2026"
+  - "Optimization"
+  - "Large learning rates"
+  - "Edge of Stability"
+  - "sharpness"
+  - "non-monotone line search"
+  - "self-stabilization"
 date: 2026-05-08
-content_hash: b73bf75bc3492e19
+content_hash: 33a7b3fbcd8288af
 ---
+
 # Flatland: The Adventures of Gradient Descent with Large Step Sizes
 
 **Conference**: ICML 2026  
@@ -128,10 +132,10 @@ Key Conclusion: NLS/PoNLS $\eta_k\cdot\lambda_1(H(w_k))$ values are consistently
 ## Related Papers
 
 - [\[ICML 2026\] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway](gradient_descent_with_large_step_size_restores_symmetry_in_deep_linear_networks_.md)
+- [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](../../ICLR2026/optimization/gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
 - [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
+- [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](../../ICLR2026/optimization/on_the_convergence_direction_of_gradient_descent.md)
 - [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](on_the_convergence_rate_of_lora_gradient_descent.md)
-- [\[AAAI 2026\] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training](../../AAAI2026/optimization/beyond_the_mean_fisher-orthogonal_projection_for_natural_gradient_descent_in_lar.md)
-- [\[NeurIPS 2025\] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression](../../NeurIPS2025/optimization/large_stepsizes_accelerate_gradient_descent_for_regularized_logistic_regression.md)
 
 </div>
 

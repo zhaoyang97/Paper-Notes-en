@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment
 description: >-
-  [AAAI 2026][Graph Learning][Multi-modal Entity Alignment] This paper proposes MyGram, which captures deep structural contextual information within each modality via a Modality-aware Graph Diffusion (MGD) module…
+  [AAAI 2026][Graph Learning][Multi-modal Entity Alignment] This paper proposes MyGram, which captures deep structural contextual information within each modality via a Modality-aware Graph Diffusion (MGD) module, and introduces a global distribution alignment loss (Gram Loss) based on the determinant of the Gram matrix to enforce cross-modal semantic consistency in high-dimensional space, achieving more robust multi-modal entity alignment.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Graph Diffusion Learning"
   - "Transformer"
 date: 2026-05-08
-content_hash: 1f4498c0f635e8d3
+content_hash: d1dd23ab90a44213
 ---
 
 # MyGram: Modality-aware Graph Transformer with Global Distribution for Multi-modal Entity Alignment
@@ -184,11 +184,11 @@ Maximum Hit@1 improvement of 4.8% on FBDB15K, 9.9% on FBYG15K, and 4.3% on DBP15
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](../../ICLR2026/graph_learning/learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
 - [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](../../ACL2026/graph_learning/ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
 - [\[AAAI 2026\] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification](ntsformer_a_self-teaching_graph_transformer_for_multimodal_isolated_cold-start_n.md)
-- [\[ACL 2026\] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion](../../ACL2026/graph_learning/collaboration_of_fusion_and_independence_hypercomplex-driven_robust_multi-modal_.md)
+- [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
 - [\[AAAI 2026\] PCoKG: Personality-aware Commonsense Reasoning with Debate](pcokg_personality-aware_commonsense_reasoning_with_debate.md)
-- [\[AAAI 2026\] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training](mug_meta-path-aware_universal_heterogeneous_graph_pre-training.md)
 
 </div>
 

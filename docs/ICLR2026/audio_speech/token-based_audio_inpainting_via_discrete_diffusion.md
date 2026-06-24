@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Token-based Audio Inpainting via Discrete Diffusion
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper proposes AIDD, which compresses audio into discrete token sequences using a pretrained tokenizer (WavTokenizer) and then performs absorbing state discrete diffusion within this token space to fill missing segments. With training improvements including span masking and derivative smoothing regularization, AID
+  [ICLR 2026][Audio & Speech][Audio Inpainting] This paper proposes AIDD, which compresses audio into discrete token sequences using a pretrained tokenizer (WavTokenizer) and then performs absorbing state discrete diffusion within this token space to fill missing segments. With training improvements including span masking and derivative smoothing regularization, AIDD achieves higher stability and lower distortion on medium-to-long gaps (150–750 ms) in MusicNet/MAESTRO compared…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio Inpainting"
+  - "Discrete Diffusion"
+  - "Audio Tokenizer"
+  - "Span Masking"
+  - "Smoothing Regularization"
 date: 2026-05-08
-content_hash: 25a14b9b10e8cd8e
+content_hash: 4d8337d4c8a8bcdd
 ---
+
 # Token-based Audio Inpainting via Discrete Diffusion
 
 **Conference**: ICLR 2026  

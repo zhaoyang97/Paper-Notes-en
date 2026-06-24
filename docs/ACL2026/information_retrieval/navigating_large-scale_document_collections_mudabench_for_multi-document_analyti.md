@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper introduces MuDABench, shifting multi-document QA from "finding relevant snippets" to "extraction, aggregation, and quantitative analysis over large-scale semi-structured collections." It demonstrates that vanilla RAG struggle even with increased recall, while metadata-aware multi-agent workflows significantl
+  [ACL2026 Findings][Information Retrieval & RAG][Multi-Document Analytical QA] This paper introduces MuDABench, shifting multi-document QA from "finding relevant snippets" to "extraction, aggregation, and quantitative analysis over large-scale semi-structured collections." It demonstrates that vanilla RAG struggle even with increased recall, while metadata-aware multi-agent workflows significantly improve results but still trail human experts.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Multi-Document Analytical QA"
+  - "RAG Evaluation"
+  - "Financial Documents"
+  - "Metadata Planning"
+  - "Agent Workflow"
 date: 2026-05-08
-content_hash: f5af0ce2d62a654d
+content_hash: 2d67cc3227f07ffc
 ---
+
 # Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA
 
 **Conference**: ACL2026 Findings  
@@ -150,10 +156,10 @@ Step-level error analysis (Table 3) reveals the bottleneck: Planning and Coding 
 ## Related Papers
 
 - [\[ACL 2026\] How Large Language Models Balance Internal Knowledge with User and Document Assertions](how_large_language_models_balance_internal_knowledge_with_user_and_document_asse.md)
+- [\[ICLR 2026\] Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs](../../ICLR2026/information_retrieval/long-document_qa_with_chain-of-structured-thought_and_fine-tuned_slms.md)
 - [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
 - [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
-- [\[ACL 2026\] A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval](a_picture_is_worth_a_thousand_words_an_empirical_study_of_aggregation_strategies.md)
-- [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 
 </div>
 

@@ -2,18 +2,21 @@
 title: >-
   [Paper Note] Multi-Condition Conformal Selection
 description: >-
-  [ICLR 2026][learning_theory][Conformal Selection] The authors generalize conformal selection, which originally handled only single-threshold conditions `y > c`, to multi-condition scenarios such as "conjunctions $c_1 < y < c_2$" and "disjunctions $y < c_1 \text{ or } y > c_2$". By designing **region-monotone** non-conformity scores and a **global BH procedure**, they
+  [ICLR 2026][Learning Theory][Conformal Selection] The authors generalize conformal selection, which originally handled only single-threshold conditions `y > c`, to multi-condition scenarios such as "conjunctions $c_1 < y < c_2$" and "disjunctions $y < c_1 \text{ or } y > c_2$". By designing **region-monotone** non-conformity scores and a **global BH procedure**, they achieve strict FDR control under finite samples.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Conformal Selection
-  - FDR Control
-  - Conformal p-value
-  - Benjamini–Hochberg
-  - Multi-Condition Selection
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Conformal Prediction"
+  - "Multiple Hypothesis Testing"
+  - "Conformal Selection"
+  - "FDR Control"
+  - "Conformal p-value"
+  - "Benjamini–Hochberg"
+  - "Multi-Condition Selection"
 date: 2026-05-08
-content_hash: be77feda1b26b5d4
+content_hash: 07da57420f89143d
 ---
+
 # Multi-Condition Conformal Selection
 
 **Conference**: ICLR 2026  
@@ -127,9 +130,9 @@ Naive set operations (Int/Uni) consistently exceed the nominal level, validating
 
 - [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
 - [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
-- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
 - [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
 - [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
+- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
 
 </div>
 

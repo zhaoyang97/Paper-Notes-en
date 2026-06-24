@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multivariate Gaussian Representation Learning for Medical Action Evaluation
 description: >-
-  [AAAI 2026][Medical Imaging][CPR Assessment] This paper proposes GaussMedAct, a framework that models joint motion trajectories as multivariate Gaussian mixture distributions combined with a Cartesian-vector dual-stream…
+  [AAAI 2026][Medical Imaging][CPR Assessment] This paper proposes GaussMedAct, a framework that models joint motion trajectories as multivariate Gaussian mixture distributions combined with a Cartesian-vector dual-stream encoding scheme. It achieves 92.1% Top-1 accuracy on the newly constructed CPREval-6k dataset while requiring only 10% of the computational cost of ST-GCN.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Spatiotemporal Representation"
   - "Medical Dataset"
 date: 2026-05-08
-content_hash: c41a4119c30b9043
+content_hash: 99e860cc71156c97
 ---
 
 # Multivariate Gaussian Representation Learning for Medical Action Evaluation
@@ -132,11 +132,11 @@ Input skeleton sequence → Dual-stream spatial encoding (Cartesian coordinates 
 
 ## Related Papers
 
-- [\[ICML 2026\] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](../../ICML2026/medical_imaging/semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)
-- [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
+- [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](../../ICLR2026/medical_imaging/medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
+- [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](../../ICLR2026/medical_imaging/anatomy-aware_representation_learning_for_medical_ultrasound.md)
+- [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](../../CVPR2026/medical_imaging/masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
 - [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
-- [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
-- [\[AAAI 2026\] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI](pings-x_physics-informed_normalized_gaussian_splatting_with_axes_alignment_for_e.md)
+- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
 
 </div>
 

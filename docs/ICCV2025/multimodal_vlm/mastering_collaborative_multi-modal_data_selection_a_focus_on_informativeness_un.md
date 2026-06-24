@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness
 description: >-
-  [ICCV 2025][Multimodal VLM][Data selection] This paper proposes DataTailor — a collaborative multimodal data selection framework grounded in three principles: informativeness, uniqueness…
+  [ICCV 2025][Multimodal VLM][Data selection] This paper proposes DataTailor — a collaborative multimodal data selection framework grounded in three principles: informativeness, uniqueness, and representativeness. Using only 15% of the data, DataTailor achieves 101.3% of the performance obtained with full-data fine-tuning, embodying the "Less is More" philosophy.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "uniqueness"
   - "representativeness"
 date: 2026-05-08
-content_hash: 8bcddf41acf705d3
+content_hash: ff6c722f4ddef5e2
 ---
 
 # Mastering Collaborative Multi-modal Data Selection: A Focus on Informativeness, Uniqueness, and Representativeness
@@ -150,9 +150,9 @@ DataTailor is a data selection method and introduces no additional training loss
 ## Related Papers
 
 - [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](../../NeurIPS2025/multimodal_vlm/coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
-- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
 - [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
 - [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
+- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 - [\[ICCV 2025\] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval](bidirectional_likelihood_estimation_with_multi-modal_large_language_models_for_t.md)
 
 </div>

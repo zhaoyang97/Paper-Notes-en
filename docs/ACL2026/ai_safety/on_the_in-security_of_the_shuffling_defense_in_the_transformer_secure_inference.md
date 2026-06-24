@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference
 description: >-
-  [ACL 2026][AI Safety][Paper Note] This paper demonstrates that the commonly used "expose intermediate activations after shuffling" defense in Transformer secure inference is insecure. It proposes an attack that first aligns activations under different random permutations and then solves linear equations to extract weights. The attack recovers approxima
+  [ACL2026][AI Safety][Secure Inference] This paper demonstrates that the commonly used "expose intermediate activations after shuffling" defense in Transformer secure inference is insecure. It proposes an attack that first aligns activations under different random permutations and then solves linear equations to extract weights. The attack recovers approximately usable model weights for Pythia-70m and GPT-2 with a query cost of approximately $1.
 tags:
-  - ACL 2026
-  - AI Safety
+  - "ACL2026"
+  - "AI Safety"
+  - "Secure Inference"
+  - "Linear Layer Encryption"
+  - "Shuffling Defense"
+  - "Model Extraction"
+  - "Activation Alignment"
 date: 2026-05-08
-content_hash: 5d59e83f200bedc3
+content_hash: de19e47832f53013
 ---
+
 # On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference
 
 **Conference**: ACL2026  
@@ -146,11 +152,11 @@ The analysis centered on fixed-point precision, condition number thresholds, and
 
 ## Related Papers
 
-- [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
 - [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](../../ICML2026/ai_safety/fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
+- [\[ICLR 2026\] Secure Outlier-Aware Large Language Model Inference](../../ICLR2026/ai_safety/secure_outlier-aware_large_language_model_inference.md)
+- [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
 - [\[ACL 2025\] CENTAUR: Bridging the Impossible Trinity of Privacy, Efficiency, and Performance in Privacy-Preserving Transformer Inference](../../ACL2025/ai_safety/centaur_bridging_the_impossible_trinity_of.md)
-- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](../../ICCV2025/ai_safety/find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
-- [\[ACL 2025\] Crafting Privacy-Preserving Adversarial Examples: A Defense Against Membership Inference](../../ACL2025/ai_safety/crafting_privacy-preserving_adversarial_examples_a_defense_against_membership_inf.md)
+- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](../../ICML2026/ai_safety/gradient_transformer_learning_to_generate_updates_for_llms.md)
 
 </div>
 

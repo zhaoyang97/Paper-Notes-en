@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach
 description: >-
-  [ICML 2026][Computational Biology][graph prompt learning] L3-PPI transforms the biological "L3 rule" (where more length-3 paths between protein pairs indicate a higher likelihood of interaction) into a learnable graph prompt. It utilizes a pre-trained GNN to recognize L3 patterns and a gated network to generate virtual L3 paths, regularizing the path count based on PPI labels
+  [ICML 2026][Computational Biology][PPI Prediction] L3-PPI transforms the biological "L3 rule" (where more length-3 paths between protein pairs indicate a higher likelihood of interaction) into a learnable graph prompt. It utilizes a pre-trained GNN to recognize L3 patterns and a gated network to generate virtual L3 paths, regularizing the path count based on PPI labels. This serves as a plug-and-play classification head that improves the performance of various PPI representat…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - graph prompt learning
+  - "ICML 2026"
+  - "Computational Biology"
+  - "PPI Prediction"
+  - "L3 Rule"
+  - "Graph Prompt Learning"
+  - "Complementarity Prior"
+  - "Plug-and-play Classification Head"
 date: 2026-05-08
-content_hash: f0288726d00bb238
+content_hash: 15665a0fb3ca8c4c
 ---
+
 # Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach
 
 **Conference**: ICML 2026  
@@ -131,11 +136,11 @@ The method demonstrates consistent positive transfer across four different backb
 
 ## Related Papers
 
+- [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](../../ICLR2026/computational_biology/i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
+- [\[ICML 2026\] Flexible Kernels for Protein Property Prediction](flexible_kernels_for_protein_property_prediction.md)
 - [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
-- [\[ICML 2026\] iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis](ilora_bayesian_low-rank_adaptation_with_latent_interaction_graphs_for_microbiome.md)
-- [\[NeurIPS 2025\] GFlowNets for Learning Better Drug-Drug Interaction Representations](../../NeurIPS2025/computational_biology/gflownets_for_learning_better_drug-drug_interaction_representations.md)
-- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
-- [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
+- [\[ICLR 2026\] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction](../../ICLR2026/computational_biology/kgot_unified_knowledge_graph_and_optimal_transport_pseudo-labeling_for_molecule-.md)
+- [\[ICLR 2026\] GRAM-DTI: Adaptive Multimodal Representation Learning for Drug-Target Interaction Prediction](../../ICLR2026/computational_biology/gram-dti_adaptive_multimodal_representation_learning_for_drugtarget_interaction_.md)
 
 </div>
 

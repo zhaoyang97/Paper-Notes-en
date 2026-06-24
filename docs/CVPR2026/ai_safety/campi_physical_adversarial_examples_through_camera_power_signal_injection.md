@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CamPI: Physical Adversarial Examples through Camera Power Signal Injection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] By injecting a modulated signal into the camera's power supply line, controllable stripe/mask perturbations are induced in the imaging process through ADC sampling aliasing. This generates physical adversarial examples that are invisible to the naked eye, require no physical patches or external lighting, and do not nee
+  [CVPR 2026][AI Safety][Physical Adversarial Examples] By injecting a modulated signal into the camera's power supply line, controllable stripe/mask perturbations are induced in the imaging process through ADC sampling aliasing. This generates physical adversarial examples that are invisible to the naked eye, require no physical patches or external lighting, and do not need to face the target directly. The authors build a differentiable simulation model to optimize this physic…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Physical Adversarial Examples"
+  - "Camera Power Injection"
+  - "Signal Modulation"
+  - "Differentiable Simulation"
+  - "Black-box Optimization"
 date: 2026-05-08
-content_hash: 0eff249f430d3b3d
+content_hash: db7e24f6d7c46853
 ---
+
 # CamPI: Physical Adversarial Examples through Camera Power Signal Injection
 
 **Conference**: CVPR 2026  

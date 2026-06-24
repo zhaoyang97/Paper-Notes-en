@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition
 description: >-
-  [NeurIPS 2025][Time Series][IMU sensors] This paper proposes a lightweight real-time motion recognition system that leverages wearable IMU sensors combined with the MiniRocket time-series classifier to achieve dancer-spe…
+  [NeurIPS 2025][Time Series][IMU sensors] This paper proposes a lightweight real-time motion recognition system that leverages wearable IMU sensors combined with the MiniRocket time-series classifier to achieve dancer-specific motion recognition with <50ms latency and 96.05% accuracy. Through "embodied memory mapping," the system encodes each dancer's personal movement-sound associations, establishing a human-machine collaborative performance paradigm that respects the express…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "real-time interaction"
   - "dance-music synergy"
 date: 2026-05-08
-content_hash: 57143152d71b5236
+content_hash: 7ccf7827d5cced3c
 ---
 
 # Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition
@@ -132,8 +132,8 @@ A two-stage pipeline: (1) **Training phase**: the dancer listens to personally m
 - [\[NeurIPS 2025\] MIRA: Medical Time Series Foundation Model for Real-World Health Data](mira_medical_time_series_foundation_model_for_real-world_health_data.md)
 - [\[NeurIPS 2025\] PlanU: Large Language Model Reasoning through Planning under Uncertainty](planu_large_language_model_reasoning_through_planning_under_uncertainty.md)
 - [\[ICML 2026\] Time-series Forecasting Through the Lens of Dynamics](../../ICML2026/time_series/time-series_forecasting_through_the_lens_of_dynamics.md)
-- [\[ICLR 2026\] Tuning the Burn-in Phase in RNN Training Improves Performance](../../ICLR2026/time_series/tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
+- [\[ICLR 2026\] Tuning the burn-in phase in training recurrent neural networks improves their performance](../../ICLR2026/time_series/tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
 
 </div>
 

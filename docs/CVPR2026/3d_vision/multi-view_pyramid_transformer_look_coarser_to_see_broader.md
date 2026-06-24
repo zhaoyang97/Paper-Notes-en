@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-view Pyramid Transformer: Look Coarser to See Broader
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MVP utilizes a "dual attention hierarchy" (relaxing the view dimension from intra-frame → intra-group → global, while merging spatial tokens from fine → coarse) to enable feed-forward Transformers to process dozens to hundreds of images. It reconstructs large-scene 3D Gaussians within 0.1–2 seconds, achieving state-of-
+  [CVPR 2026][3D Vision][Feed-forward 3D reconstruction] MVP utilizes a "dual attention hierarchy" (relaxing the view dimension from intra-frame → intra-group → global, while merging spatial tokens from fine → coarse) to enable feed-forward Transformers to process dozens to hundreds of images. It reconstructs large-scene 3D Gaussians within 0.1–2 seconds, achieving state-of-the-art quality and speed across the 16–256 view range.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D reconstruction"
+  - "Multi-view Transformer"
+  - "3D Gaussian Splatting"
+  - "Pyramid Attention"
+  - "Scalability"
 date: 2026-05-08
-content_hash: c3c284016e83b399
+content_hash: 4ab95384045c4453
 ---
+
 # Multi-view Pyramid Transformer: Look Coarser to See Broader
 
 **Conference**: CVPR 2026  
@@ -140,15 +146,16 @@ Variants trained on DL3DV at $256 \times 256$ for 100K steps:
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion](smvrt_implicit_human_3d_modeling.md)
-- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
 - [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
 - [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
+- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
+- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
 
 </div>
 

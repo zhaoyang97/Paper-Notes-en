@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can DPO Learn Diverse Human Values? A Theoretical Scaling Law
 description: >-
-  [NeurIPS 2025][LLM Alignment][DPO] This paper establishes a theoretical generalization framework for DPO under diverse human value settings. By analyzing the dynamic trajectory of reward margins after a finite number of…
+  [NeurIPS 2025][LLM Alignment][DPO] This paper establishes a theoretical generalization framework for DPO under diverse human value settings. By analyzing the dynamic trajectory of reward margins after a finite number of gradient steps, it proves that the number of samples required per value must grow logarithmically with the number of value categories $K$ (i.e., $Q = \Theta(\log K)$) to maintain generalization performance, thereby revealing the statistical cost of aligning wi…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "reward margin"
   - "preference learning theory"
 date: 2026-05-08
-content_hash: b98dd354fd40ed7a
+content_hash: cf2caed6e589f9c3
 ---
 
 # Can DPO Learn Diverse Human Values? A Theoretical Scaling Law
@@ -132,8 +132,8 @@ The theoretically predicted scaling trend is highly consistent under full-parame
 - [\[NeurIPS 2025\] Preference Learning with Lie Detectors can Induce Honesty or Evasion](preference_learning_with_lie_detectors_can_induce_honesty_or_evasion.md)
 - [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](../../ACL2026/llm_alignment/bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
 - [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](strategyproof_reinforcement_learning_from_human_feedback.md)
+- [\[ICML 2026\] Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences](../../ICML2026/llm_alignment/large_language_models_should_learn_personalized_rather_than_aggregated_human_pre.md)
 - [\[NeurIPS 2025\] Capturing Individual Human Preferences with Reward Features](capturing_individual_human_preferences_with_reward_features.md)
-- [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](../../ICLR2026/llm_alignment/skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
 
 </div>
 

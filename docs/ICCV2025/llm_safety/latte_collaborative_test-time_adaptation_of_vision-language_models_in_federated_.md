@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning
 description: >-
-  [ICCV 2025][LLM Safety][Test-Time Adaptation] This paper proposes Latte, a framework that enables collaborative test-time adaptation of vision-language models (e.g.…
+  [ICCV 2025][LLM Safety][Test-Time Adaptation] This paper proposes Latte, a framework that enables collaborative test-time adaptation of vision-language models (e.g., CLIP) in decentralized federated learning settings. Through a dual-memory mechanism combining local and external memory, Latte achieves cross-client knowledge sharing while preserving client-level personalization.
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Memory Cache"
   - "CLIP"
 date: 2026-05-08
-content_hash: 6a283be124e940b4
+content_hash: dd146428df578929
 ---
 
 # LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning
@@ -139,8 +139,8 @@ Latte achieves the best performance on all benchmarks. Notably, on TerraIncognit
 
 - [\[NeurIPS 2025\] Buffer Layers for Test-Time Adaptation](../../NeurIPS2025/llm_safety/buffer_layers_for_test-time_adaptation.md)
 - [\[ICCV 2025\] Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning](geminio_language-guided_gradient_inversion_attacks_in_federated_learning.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/llm_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
+- [\[CVPR 2025\] CleanSight: Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2025/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
+- [\[CVPR 2025\] TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models](../../CVPR2025/llm_safety/tapt_test-time_adversarial_prompt_tuning_for_robust_inference_in_vision-language.md)
 - [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 
 </div>

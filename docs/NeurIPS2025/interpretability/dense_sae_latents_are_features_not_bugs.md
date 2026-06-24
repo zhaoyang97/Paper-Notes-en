@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dense SAE Latents Are Features, Not Bugs
 description: >-
-  [NeurIPS 2025][Interpretability][SAE] This paper systematically investigates frequently activating "dense latents" in sparse autoencoders (SAEs)…
+  [NeurIPS 2025][Interpretability][SAE] This paper systematically investigates frequently activating "dense latents" in sparse autoencoders (SAEs), demonstrating that they are not training artifacts but rather reflections of intrinsically dense subspaces in language model residual streams. The authors propose a six-category taxonomy of dense latents encompassing position tracking, context binding, null space, alphabetic, part-of-speech, and PCA latents.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "mechanistic interpretability"
   - "Gemma 2"
 date: 2026-05-08
-content_hash: 1bddccf729561427
+content_hash: 4e680b98138461e3
 ---
 
 # Dense SAE Latents Are Features, Not Bugs
@@ -135,9 +135,9 @@ This is an analytical paper that proposes no new model; instead, it conducts sys
 
 - [\[NeurIPS 2025\] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders](towards_interpretability_without_sacrifice_faithful_dense_layer_decomposition_wi.md)
 - [\[NeurIPS 2025\] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set](vlsae_interpreting_and_enhancing_visionlanguage_alignment_wi.md)
+- [\[ICLR 2026\] SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training](../../ICLR2026/interpretability/sae_as_a_crystal_ball_interpretable_features_predict_cross-domain_transferabilit.md)
+- [\[ICLR 2026\] Evaluating SAE Interpretability Without Generating Explanations](../../ICLR2026/interpretability/evaluating_sae_interpretability_without_generating_explanations.md)
 - [\[NeurIPS 2025\] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference](dynamic_features_adaptation_in_networking_toward_flexible_training_and_explainab.md)
-- [\[ICML 2026\] Expand Neurons, Not Parameters](../../ICML2026/interpretability/expand_neurons_not_parameters.md)
-- [\[ICML 2026\] LLMs Lean on Priors, Not Programming Language Semantics](../../ICML2026/interpretability/llms_lean_on_priors_not_programming_language_semantics.md)
 
 </div>
 

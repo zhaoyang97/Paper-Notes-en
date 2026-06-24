@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning From the Past with Cascading Eligibility Traces
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper generalizes traditional exponentially decaying eligibility traces into cascading eligibility traces (CET) composed of multiple stages connected in series. This allows synaptic memory to peak near a specified delay $T$, thereby more accurately attributing error signals to past activity in scenarios involving
+  [ICLR2026][Reinforcement Learning][Eligibility Traces] This paper generalizes traditional exponentially decaying eligibility traces into cascading eligibility traces (CET) composed of multiple stages connected in series. This allows synaptic memory to peak near a specified delay $T$, thereby more accurately attributing error signals to past activity in scenarios involving second-scale behavioral feedback and minute-scale retrograde axonal signals.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Eligibility Traces"
+  - "Delayed Credit Assignment"
+  - "Biologically Plausible Learning"
+  - "State-Space Models"
 date: 2026-05-08
-content_hash: aaddc03e7e2db074
+content_hash: b6340f572f125e7f
 ---
+
 # Learning From the Past with Cascading Eligibility Traces
 
 **Conference**: ICLR2026  

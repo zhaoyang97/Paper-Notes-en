@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] fMRI-LM: Towards a Universal Foundation Model for Language-Aligned fMRI Understanding
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] fMRI-LM utilizes a three-stage framework that first discretizes brain signals into tokens aligned with the text embedding space, and then enables a pre-trained LLM to model brain activity as a predictable and describable "language." By complementing the lack of natural pairs with a synthetic fMRI-to-text description co
+  [CVPR 2026][Medical Imaging][fMRI foundation model] fMRI-LM utilizes a three-stage framework that first discretizes brain signals into tokens aligned with the text embedding space, and then enables a pre-trained LLM to model brain activity as a predictable and describable "language." By complementing the lack of natural pairs with a synthetic fMRI-to-text description corpus, it achieves zero-shot/few-shot performance on diverse tasks including sex, age, fluid intelligence…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "fMRI foundation model"
+  - "brain-language alignment"
+  - "neural tokenizer"
+  - "instruction tuning"
+  - "multi-task generalization"
 date: 2026-05-08
-content_hash: 5d5a6d6a66ae130c
+content_hash: 08f6f4cc2d22cc47
 ---
+
 # fMRI-LM: Towards a Universal Foundation Model for Language-Aligned fMRI Understanding
 
 **Conference**: CVPR 2026  
@@ -137,8 +143,8 @@ fMRI-LM-B(Q) utilizes a Qwen3-0.6B base. It mostly achieves the best or second-b
 - [\[CVPR 2026\] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images](medmo_grounding_and_understanding_multimodal_large_language_model_for_medical_im.md)
 - [\[CVPR 2026\] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding](mllm-hwsi_a_multimodal_large_language_model_for_hierarchical_whole_slide_image_u.md)
 - [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
+- [\[CVPR 2026\] Duala: Dual-Level Alignment of Subjects and Stimuli for Cross-Subject fMRI Decoding](duala_dual-level_alignment_of_subjects_and_stimuli_for_cross-subject_fmri_decodi.md)
 - [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
-- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 
 </div>
 

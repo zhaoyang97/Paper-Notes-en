@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Observations to Events: Event-Aware World Models for Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] Inspired by the cognitive science concept that "humans segment continuous sensory streams into discrete events," this paper proposes EAWM, a general framework that enables world models to **additionally predict "events"** (significant changes in brightness, values, or categories) alongside future observations. This all
+  [ICLR 2026][Reinforcement Learning][Model-based Reinforcement Learning] Inspired by the cognitive science concept that "humans segment continuous sensory streams into discrete events," this paper proposes EAWM, a general framework that enables world models to **additionally predict "events"** (significant changes in brightness, values, or categories) alongside future observations. This allows learning compact kinematic representations, improving strong baselines such as Dream…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Model-based Reinforcement Learning"
+  - "World Models"
+  - "Event-Aware Representation"
+  - "Sample Efficiency"
+  - "Visual Generalization"
 date: 2026-05-08
-content_hash: 63ecf1de7f6125da
+content_hash: 78aa33aca5529273
 ---
+
 # From Observations to Events: Event-Aware World Models for Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -113,11 +118,11 @@ Overall improvements: Atari 100K +13%, Craftax 1M +10%, DMC 500K +19%, DMC-GB2 5
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
-- [\[ICLR 2026\] Learning to Be Uncertain: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
-- [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
-- [\[ICLR 2026\] Object-Centric World Models from Few-Shot Annotations for Sample-Efficient Reinforcement Learning](object-centric_world_models_from_few-shot_annotations_for_sample-efficient_reinf.md)
+- [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
+- [\[ICLR 2026\] R2-Dreamer: Redundancy-Reduced World Models without Decoders or Augmentation](r2-dreamer_redundancy-reduced_world_models_without_decoders_or_augmentation.md)
+- [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
 
 </div>
 

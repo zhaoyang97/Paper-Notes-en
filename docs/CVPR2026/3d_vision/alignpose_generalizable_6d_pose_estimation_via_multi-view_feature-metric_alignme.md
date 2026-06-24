@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AlignPose: Generalizable 6D Pose Estimation via Multi-view Feature-metric Alignment
 description: >-
-  [CVPR 2026][3D Vision][BOP benchmark] AlignPose aggregates single-view object pose candidates from multiple calibrated RGB views into a single candidate using 3D NMS. It then employs a multi-view feature-metric refinement that simultaneously minimizes the discrepancy between online rendered features and observed image features across all views to solve for
+  [CVPR2026][3D Vision][Multi-view Pose Estimation] AlignPose aggregates single-view object pose candidates from multiple calibrated RGB views into a single candidate using 3D NMS. It then employs a multi-view feature-metric refinement that simultaneously minimizes the discrepancy between online rendered features and observed image features across all views to solve for a globally consistent world-coordinate pose. The entire process requires no object-specific training or symme…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - BOP benchmark
+  - "CVPR2026"
+  - "3D Vision"
+  - "Multi-view Pose Estimation"
+  - "Feature-metric Refinement"
+  - "Training-free Generalization"
+  - "Industrial Inspection"
+  - "BOP Benchmark"
 date: 2026-05-08
-content_hash: f08f17e848f76d7e
+content_hash: a47d601801a37ccc
 ---
+
 # AlignPose: Generalizable 6D Pose Estimation via Multi-view Feature-metric Alignment
 
 **Conference**: CVPR2026  
@@ -147,11 +152,11 @@ Descriptors: Using different DINOv2 layers or sizes impacts results by only a fe
 
 ## Related Papers
 
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
 - [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
+- [\[CVPR 2026\] PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting](posegaussian_6d_pose_estimation_for_unseen_objects_via_sparse-view_object-level_.md)
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
+- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
+- [\[CVPR 2026\] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis](dmaligner_enhancing_image_alignment_via_diffusion_model_based_view_synthesis.md)
 
 </div>
 

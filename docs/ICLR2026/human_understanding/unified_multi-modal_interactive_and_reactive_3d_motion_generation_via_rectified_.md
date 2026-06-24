@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Multi-Modal Interactive and Reactive 3D Motion Generation via Rectified Flow
 description: >-
-  [ICLR 2026][Human Understanding][Rectified Flow] DualFlow utilizes a dual-branch Transformer framework based on Rectified Flow to unify text, music, actor motions, and retrieved dyadic motion exemplars. It supports both interactive dyadic motion generation and actor-reactor reactive motion generation, achieving superior semantic alignment, motion quality, and synchro
+  [ICLR2026][Human Understanding][Dyadic motion generation] DualFlow utilizes a dual-branch Transformer framework based on Rectified Flow to unify text, music, actor motions, and retrieved dyadic motion exemplars. It supports both interactive dyadic motion generation and actor-reactor reactive motion generation, achieving superior semantic alignment, motion quality, and synchronization on MDD, InterHuman-AS, and DD100 with fewer inference steps.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Rectified Flow
+  - "ICLR2026"
+  - "Human Understanding"
+  - "Dyadic motion generation"
+  - "reactive motion generation"
+  - "Rectified Flow"
+  - "Retrieval-Augmented Generation"
+  - "multimodal conditioning"
 date: 2026-05-08
-content_hash: f36283ab91ffe6e7
+content_hash: 4b87a7bddbc5e7a7
 ---
+
 # Unified Multi-Modal Interactive and Reactive 3D Motion Generation via Rectified Flow
 
 **Conference**: ICLR2026  
@@ -128,13 +133,20 @@ Efficiency: DualFlow achieves better FID in 20 RF steps than InterGen in 50 DDIM
 - Value: ⭐⭐⭐⭐⭐ (Highly relevant for virtual humans, social robotics, and gaming).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- InterGen: Interactive Architecture for Multi-person Human Motion Generation, CVPR 2023.
-- DuoLando: Follower-Lead Video-to-Dance Generation, 2024.
-- Flow Matching for Generative Modeling, ICLR 2023.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ECCV 2024\] Large Motion Model for Unified Multi-Modal Motion Generation](../../ECCV2024/human_understanding/large_motion_model_for_unified_multi-modal_motion_generation.md)
+- [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](../../CVPR2026/human_understanding/unified_number-free_text-to-motion_generation_via_flow_matching.md)
+- [\[ICLR 2026\] ReactDance: Hierarchical Representation for High-Fidelity and Coherent Long-Form Reactive Dance Generation](reactdance_hierarchical_representation_for_high-fidelity_and_coherent_long-form_.md)
+- [\[CVPR 2026\] MMGait: Towards Multi-Modal Gait Recognition](../../CVPR2026/human_understanding/mmgait_multi_modal_gait_recognition.md)
+- [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](humof_human_motion_forecasting_in_interactive_social_scenes.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ECCV 2024\] Large Motion Model for Unified Multi-Modal Motion Generation](../../ECCV2024/human_understanding/large_motion_model_for_unified_multi-modal_motion_generation.md)

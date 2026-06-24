@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision
 description: >-
-  [CVPR 2026][Segmentation][SAM2] This paper introduces the "Conversational Image Segmentation (CIS)" task—grounding abstract concepts such as affordances, physical stability, and user intent onto pixel-level masks. It presents the CONVERSEG benchmark, a fully automated VLM data engine (synthesizing 61K prompt–mask pairs without manual annotation), and
+  [CVPR 2026][Segmentation][Conversational Segmentation] This paper introduces the "Conversational Image Segmentation (CIS)" task—grounding abstract concepts such as affordances, physical stability, and user intent onto pixel-level masks. It presents the CONVERSEG benchmark, a fully automated VLM data engine (synthesizing 61K prompt–mask pairs without manual annotation), and CONVERSEG-NET, a single-pass model. CONVERSEG-NET achieves 70.5% (3B) / 73.3% (7B) gIoU on CONVERSEG whi…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Conversational Segmentation"
+  - "Affordance Reasoning"
+  - "VLM Data Engine"
+  - "Curriculum Learning"
+  - "SAM2"
 date: 2026-05-08
-content_hash: 71715600af0b1278
+content_hash: e02c98ccc9e6098a
 ---
+
 # Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision
 
 **Conference**: CVPR 2026  

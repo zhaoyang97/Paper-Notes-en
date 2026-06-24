@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] OG-MAR organizes raw World Values Survey (WVS) data into a "cultural ontology with structural relations + individual value personas." During inference, it retrieves ontology triples relevant to the target population alongside demographically similar real-world respondents to instantiate multiple "Value Persona Agents."
+  [ICML2026][Multi-Agent][Cultural Alignment] OG-MAR organizes raw World Values Survey (WVS) data into a "cultural ontology with structural relations + individual value personas." During inference, it retrieves ontology triples relevant to the target population alongside demographically similar real-world respondents to instantiate multiple "Value Persona Agents." A judge agent then synthesizes a final answer following an "evidence-first, ontology-consistent" protocol…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Cultural Alignment"
+  - "Ontology-Guided"
+  - "Multi-Agent Reasoning"
+  - "World Values Survey"
+  - "Persona Simulation"
 date: 2026-05-08
-content_hash: 82e51a3349e28c42
+content_hash: 4d88994a4f61b8ef
 ---
+
 # Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning
 
 **Conference**: ICML2026  
@@ -133,11 +139,11 @@ Removing the multi-persona simulation (Single-Judge variant) led to drops across
 
 ## Related Papers
 
-- [\[ICML 2026\] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](systematic_failures_in_collective_reasoning_under_distributed_information_in_mul.md)
 - [\[ICML 2026\] MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks](mas-orchestra_understanding_and_improving_multi-agent_reasoning_through_holistic.md)
+- [\[ICLR 2026\] MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](../../ICLR2026/multi_agent/marshal_incentivizing_multi-agent_reasoning_via_self-play_with_strategic_llms.md)
+- [\[ICML 2026\] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](systematic_failures_in_collective_reasoning_under_distributed_information_in_mul.md)
 - [\[ACL 2025\] GETReason: Enhancing Image Context Extraction through Hierarchical Multi-Agent Reasoning](../../ACL2025/multi_agent/getreason_enhancing_image_context_extraction_through_hierarchical_multi-agent_re.md)
 - [\[ICLR 2026\] Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems](../../ICLR2026/multi_agent/aligned_agents_biased_swarm_measuring_bias_amplification_in_multi-agent_systems.md)
-- [\[ICML 2026\] More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration](more_capable_less_cooperative_when_llms_fail_at_zero-cost_collaboration.md)
 
 </div>
 

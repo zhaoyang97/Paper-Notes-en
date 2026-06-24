@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Order-Level Attention Similarity Across Language Models: A Latent Commonality
 description: >-
-  [NeurIPS 2025][Model Compression][Attention Mechanism] This paper proposes Order-Level Attention (OLA)—an order-wise decomposition of Attention Rollout—and discovers that different language models exhibit significant sim…
+  [NeurIPS 2025][Model Compression][Attention Mechanism] This paper proposes Order-Level Attention (OLA)—an order-wise decomposition of Attention Rollout—and discovers that different language models exhibit significant similarity in same-order OLA (OLAS). OLA is shown to implicitly encode syntactic knowledge, and based on this finding, the paper proposes TOA, the first training-free cross-LM adapter transfer method.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Syntactic Knowledge"
   - "Training-Free Adapter"
 date: 2026-05-08
-content_hash: 8239a6249570af74
+content_hash: 51a74ae66bd4fb4d
 ---
 
 # Order-Level Attention Similarity Across Language Models: A Latent Commonality
@@ -273,11 +273,11 @@ TOA uses stacked first- and second-order OLA as adapter input features. During t
 
 ## Related Papers
 
-- [\[ACL 2026\] Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings](../../ACL2026/model_compression/establishing_a_scale_for_kullback-leibler_divergence_in_language_models_across_v.md)
+- [\[ICLR 2026\] LS-Merge: Merging Language Models in Latent Space](../../ICLR2026/model_compression/ls-merge_merging_language_models_in_latent_space.md)
 - [\[NeurIPS 2025\] Geometry of Decision Making in Language Models](geometry_of_decision_making_in_language_models.md)
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
 - [\[NeurIPS 2025\] Disentangling Latent Shifts of In-Context Learning with Weak Supervision](disentangling_latent_shifts_of_in-context_learning_with_weak_supervision.md)
-- [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
+- [\[ACL 2026\] Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings](../../ACL2026/model_compression/establishing_a_scale_for_kullback-leibler_divergence_in_language_models_across_v.md)
 
 </div>
 

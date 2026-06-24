@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][LoRA] To address the issue where orthogonal gradient constraints are "too rigid and suppress plasticity" when using pre-trained models + LoRA for Class Incremental Learning, DGS replaces hard orthogonal constraints with an **interpolated fusion gradient** (original gradient $\oplus$ gradient projected onto the pre-trained su
+  [CVPR 2026][Self-Supervised Learning][Class Incremental Learning] To address the issue where orthogonal gradient constraints are "too rigid and suppress plasticity" when using pre-trained models + LoRA for Class Incremental Learning, DGS replaces hard orthogonal constraints with an **interpolated fusion gradient** (original gradient $\oplus$ gradient projected onto the pre-trained subspace). Combined with **semantic-shift calibrated unified classifier alignment** and a **patc…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - LoRA
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Class Incremental Learning"
+  - "LoRA"
+  - "Gradient Projection"
+  - "Stability-Plasticity"
+  - "Semantic Shift"
 date: 2026-05-08
-content_hash: 56142364a03daa43
+content_hash: 3c5abfaf0c81f6df
 ---
+
 # DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning
 
 **Conference**: CVPR 2026  
@@ -145,8 +150,8 @@ On ImageNet-R B0Inc20 / ObjectNet B0Inc10, components were added incrementally (
 
 - [\[CVPR 2026\] Dual-Estimator: Decoupling Global and Local Semantic Shift for Drift Compensation in Class-Incremental Learning](dual-estimator_decoupling_global_and_local_semantic_shift_for_drift_compensation.md)
 - [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
-- [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
 - [\[CVPR 2026\] Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model](nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_.md)
+- [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
 - [\[CVPR 2026\] The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery](the_devil_is_in_gradient_entanglement_energy-aware_gradient_coordinator_for_robu.md)
 
 </div>

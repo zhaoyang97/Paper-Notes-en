@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence
 description: >-
-  [AAAI 2026][Model Compression][Event Extraction] This paper proposes LexChronos, a dual-agent iterative framework for extracting structured event timelines from Indian Supreme Court judgments. A LoRA fine-tuned extractio…
+  [AAAI 2026][Model Compression][Event Extraction] This paper proposes LexChronos, a dual-agent iterative framework for extracting structured event timelines from Indian Supreme Court judgments. A LoRA fine-tuned extraction agent identifies candidate events, while a pretrained feedback agent scores and refines them through a confidence-driven loop. The system achieves a BERT F1 of 0.8751 on a synthetic dataset, and the structured timelines are preferred by GPT-4 over unstructur…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Dual-Agent Framework"
   - "Timeline Extraction"
 date: 2026-05-08
-content_hash: 240d2af7eccfa151
+content_hash: a91575338969d27c
 ---
 
 # LexChronos: An Agentic Framework for Structured Event Timeline Extraction in Indian Jurisprudence
@@ -211,11 +211,11 @@ $$F_{i+1} = \text{FeedbackAgent}(J, E_{i+1})$$
 
 ## Related Papers
 
+- [\[ICLR 2026\] SMixer: Rethinking Efficient-Training and Event-Driven SNNs](../../ICLR2026/model_compression/smixer_rethinking_efficient-training_and_event-driven_snns.md)
+- [\[ACL 2025\] CFSP: An Efficient Structured Pruning Framework for LLMs with Coarse-to-Fine Activation Information](../../ACL2025/model_compression/cfsp_an_efficient_structured_pruning_framework_for_llms_with_coarse-to-fine_acti.md)
 - [\[ICLR 2026\] Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows](../../ICLR2026/model_compression/multi-view_encoders_for_performance_prediction_in_llm-based_agentic_workflows.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 - [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](../../ICML2026/model_compression/area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
-- [\[ICLR 2026\] Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](../../ICLR2026/model_compression/incentivizing_agentic_reasoning_in_llm_judges_via_tool-integrated_reinforcement_.md)
-- [\[AAAI 2026\] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)
+- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 
 </div>
 

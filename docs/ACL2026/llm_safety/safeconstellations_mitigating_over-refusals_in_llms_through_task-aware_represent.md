@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] SafeConstellations identifies that LLM middle-to-late layer representations form stable "constellation trajectories" based on tasks. It significantly reduces over-refusal by lightly steering representations from refusal trajectories toward non-refusal trajectories on high-confidence benign tasks, while preserving gener
+  [ACL2026][LLM Safety][Over-refusal] SafeConstellations identifies that LLM middle-to-late layer representations form stable "constellation trajectories" based on tasks. It significantly reduces over-refusal by lightly steering representations from refusal trajectories toward non-refusal trajectories on high-confidence benign tasks, while preserving general capabilities.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL2026"
+  - "LLM Safety"
+  - "Over-refusal"
+  - "task-aware steering"
+  - "representation trajectories"
+  - "safety alignment"
+  - "inference-time intervention"
 date: 2026-05-08
-content_hash: 3968b827bd2ae5c8
+content_hash: 263430e8bb0fcf8f
 ---
+
 # SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering
 
 **Conference**: ACL2026  
@@ -135,15 +141,15 @@ The authors constructed a task over-refusal benchmark of 1,047 samples, covering
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training](dart_mitigating_harm_drift_in_difference-aware_llms_via_distill-audit-repair_tra.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](../../ICLR2026/llm_safety/prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
 - [\[ICCV 2025\] Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation](../../ICCV2025/llm_safety/forgetting_through_transforming_enabling_federated_unlearning_via_class-aware_re.md)
 - [\[ACL 2026\] SWAN: Semantic Watermarking with Abstract Meaning Representation](swan_semantic_watermarking_with_abstract_meaning_representation.md)
-- [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
 
 </div>
 

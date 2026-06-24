@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Online Linear Regression with Paid Stochastic Features
 description: >-
-  [AAAI2026][online linear regression] This paper studies a novel setting in online linear regression where features are corrupted by noise and the learner can **pay to reduce noise intensity**. It establishes that the opt…
+  [AAAI2026][online linear regression] This paper studies a novel setting in online linear regression where features are corrupted by noise and the learner can **pay to reduce noise intensity**. It establishes that the optimal regret rate is $\widetilde{\mathcal{O}}(\sqrt{T})$ when the noise covariance is known and $\widetilde{\mathcal{O}}(T^{2/3})$ when unknown, with matching lower bounds; all bounds are order-optimal in $T$.
 tags:
   - "AAAI2026"
   - "online linear regression"
@@ -12,7 +12,7 @@ tags:
   - "covariance estimation"
   - "matrix martingale concentration"
 date: 2026-05-08
-content_hash: e78b8aac67704093
+content_hash: f124007e12c2b879
 ---
 
 # Online Linear Regression with Paid Stochastic Features
@@ -195,8 +195,8 @@ This paper is a purely theoretical contribution; the experimental section primar
 - [\[NeurIPS 2025\] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination](../../NeurIPS2025/others/information-computation_tradeoffs_for_noiseless_linear_regression_with_oblivious.md)
 - [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](../../ICML2026/others/inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](../../ICML2026/others/adaptive_multi-round_allocation_with_stochastic_arrivals.md)
 - [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](../../ICML2026/others/cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
+- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](../../ICML2026/others/adaptive_multi-round_allocation_with_stochastic_arrivals.md)
 
 </div>
 

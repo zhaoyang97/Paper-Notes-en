@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How Stable is the Next Token? A Geometric View of LLM Prediction Stability
 description: >-
-  [ICLR 2026][Interpretability][Jacobian] This paper proposes **Token Constraint Bound ($\delta$TCB)**—a geometric metric that quantifies how much the internal hidden state $h$ of an LLM can be perturbed before the next-token prediction changes significantly. It demonstrates that this bound is determined by the "probability-weighted dispersion" of the output e
+  [ICLR 2026][Interpretability][Prediction Stability] This paper proposes **Token Constraint Bound ($\delta$TCB)**—a geometric metric that quantifies how much the internal hidden state $h$ of an LLM can be perturbed before the next-token prediction changes significantly. It demonstrates that this bound is determined by the "probability-weighted dispersion" of the output embedding space relative to the current prediction distribution, revealing local prediction robustness invisi…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Jacobian
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Prediction Stability"
+  - "Output Embedding Geometry"
+  - "Jacobian"
+  - "Contextual Robustness"
+  - "Prompt Engineering"
 date: 2026-05-08
-content_hash: cae0e992c0a8d6cd
+content_hash: 3b5297a48d4a16e0
 ---
+
 # How Stable is the Next Token? A Geometric View of LLM Prediction Stability
 
 **Conference**: ICLR 2026  
@@ -127,11 +132,11 @@ Compared to "PPL-only prompt selection," $\delta$TCB co-optimization achieves hi
 
 ## Related Papers
 
-- [\[ICLR 2026\] Noise Stability of Transformer Models](noise_stability_of_transformer_models.md)
+- [\[ICLR 2026\] I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?](i_predict_therefore_i_am_is_next_token_prediction_enough_to_learn_human-interpre.md)
 - [\[ICLR 2026\] Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation](token_alignment_heads_unveiling_attentions_role_in_llm_multilingual_translation.md)
-- [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](../../ICML2026/interpretability/gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
+- [\[ICLR 2026\] Noise Stability of Transformer Models](noise_stability_of_transformer_models.md)
 - [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
-- [\[ACL 2026\] How Context Shapes Truth: Geometric Transformations of Statement-level Truth Representations in LLMs](../../ACL2026/interpretability/how_context_shapes_truth_geometric_transformations_of_statement-level_truth_repr.md)
+- [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](../../ICML2026/interpretability/gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
 
 </div>
 

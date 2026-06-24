@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning of Population Dynamics: Inverse Optimization Meets JKO Scheme
 description: >-
-  [ICLR 2026][Optimization & Theory][JKO scheme] This paper proposes iJKOnet, which reformulates the task of "inferring energy functionals from discrete-time population snapshots" as an **inverse optimization problem**. By maximizing the gap between the optimal value of a JKO step and the value at the ground-truth measure, a min-max objective is derived. This allows
+  [ICLR 2026][Optimization][JKO scheme] This paper proposes iJKOnet, which reformulates the task of "inferring energy functionals from discrete-time population snapshots" as an **inverse optimization problem**. By maximizing the gap between the optimal value of a JKO step and the value at the ground-truth measure, a min-max objective is derived. This allows learning the energy functional driving the Wasserstein gradient flow through standard adversarial end-to-end training…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - JKO scheme
-  - inverse optimization
-  - Wasserstein gradient flow
-  - population dynamics
-  - adversarial training
+  - "ICLR 2026"
+  - "Optimization"
+  - "JKO scheme"
+  - "inverse optimization"
+  - "Wasserstein gradient flow"
+  - "population dynamics"
+  - "adversarial training"
 date: 2026-05-08
-content_hash: d4ba1175c99a1a4e
+content_hash: 50f2eb8e640a737e
 ---
+
 # Learning of Population Dynamics: Inverse Optimization Meets JKO Scheme
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs
 description: >-
-  [ICML 2026][Optimization & Theory][MeZO] This paper proposes ZO Fine-tuner: using a "per-block lightweight neural network PertNN" to automatically learn the perturbation variance for each parameter block of an LLM. It upgrades the fixed $\mathcal{N}(0,I)$ perturbation in MeZO to a block-adaptive non-uniform distribution. On OPT-30B, the auxiliary network occu
+  [ICML 2026][Optimization][Zeroth-Order Optimization] This paper proposes ZO Fine-tuner: using a "per-block lightweight neural network PertNN" to automatically learn the perturbation variance for each parameter block of an LLM. It upgrades the fixed $\mathcal{N}(0,I)$ perturbation in MeZO to a block-adaptive non-uniform distribution. On OPT-30B, the auxiliary network occupies <2MB yet outperforms existing zeroth-order (ZO) baselines in 82.1% of 28 experiment pairs (4 LLMs × 7…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - MeZO
-  - L2L
+  - "ICML 2026"
+  - "Optimization"
+  - "Zeroth-Order Optimization"
+  - "MeZO"
+  - "L2L"
+  - "Block-Diagonal Perturbation"
+  - "Memory-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: 9e5d89b1a2f9e521
+content_hash: a957d202ba6f42c6
 ---
+
 # Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs
 
 **Conference**: ICML 2026  
@@ -136,14 +140,20 @@ Table 2 (Normalization and Periodic Reset, loss / acc):
 - Value: ⭐⭐⭐⭐ High potential for memory-constrained edge fine-tuning scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-[1] Malladi et al. "MeZO: Fine-Tuning Language Models with Just Forward Passes." ICML 2023.
-[2] Zhang et al. "Eigen-Structure of the Hessian in Language Models." 2024b.
+## Related Papers
+
+- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](../../ICLR2026/optimization/fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
+- [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
+- [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
+- [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
+- [\[ICML 2026\] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning](utility-diversity_aware_online_batch_selection_for_llm_supervised_fine-tuning.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)

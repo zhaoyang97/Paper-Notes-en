@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the scarcity of PET labels by transferring knowledge from label-rich MRI, this paper proposes the DSDA framework. It explicitly decouples "classification-relevant critical brain regions" from "classification-irrelevant non-critical regions" using a brain region importance map. It then applies **differential
+  [CVPR 2026][Medical Imaging][PET brain disease diagnosis] Addressing the scarcity of PET labels by transferring knowledge from label-rich MRI, this paper proposes the DSDA framework. It explicitly decouples "classification-relevant critical brain regions" from "classification-irrelevant non-critical regions" using a brain region importance map. It then applies **differential processing**: non-critical regions undergo topological weighted alignment to eliminate domain discrepa…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "PET brain disease diagnosis"
+  - "Cross-modal domain adaptation"
+  - "Feature disentanglement"
+  - "Semi-supervised learning"
+  - "Brain region graph modeling"
 date: 2026-05-08
-content_hash: e3dbfcd9a2f897e7
+content_hash: 1a285661f359a540
 ---
+
 # Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET
 
 **Conference**: CVPR 2026  
@@ -160,9 +166,9 @@ Stepwise module addition on AIBL (Baseline: supervised learning $L_{label}=L_s+L
 ## Related Papers
 
 - [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
-- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[CVPR 2026\] Virtual Immunohistochemistry Staining with Dual-Aligned Multi-Task Feature Guidance](virtual_immunohistochemistry_staining_with_dual-aligned_multi-task_feature_guida.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
+- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
 
 </div>

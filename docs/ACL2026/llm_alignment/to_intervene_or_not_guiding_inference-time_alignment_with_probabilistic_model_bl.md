@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] Addressing the "quality blindness" in inference-time alignment—where an aligned model guides an unaligned base model token-by-token but fails to distinguish good advice from bad, leading to an "intervention paradox" where more intervention results in worse performance—BlendIn adopts quality-aware probabilistic distribu
+  [ACL 2026][LLM Alignment][Inference-time alignment] Addressing the "quality blindness" in inference-time alignment—where an aligned model guides an unaligned base model token-by-token but fails to distinguish good advice from bad, leading to an "intervention paradox" where more intervention results in worse performance—BlendIn adopts quality-aware probabilistic distribution blending. At positions where the base model is uncertain, it adaptively fuses the distributions of both…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Inference-time alignment"
+  - "distribution blending"
+  - "quality blindness"
+  - "intervention paradox"
+  - "guidance model"
 date: 2026-05-08
-content_hash: 5c048c4991edab2b
+content_hash: 775d328fb80f744e
 ---
+
 # To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending
 
 **Conference**: ACL 2026  
@@ -126,11 +132,11 @@ BlendIn consistently improves performance across both cross-family and same-fami
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
 - [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
+- [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
 - [\[ICML 2026\] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective](../../ICML2026/llm_alignment/reward_shaping_for_inference-time_alignment_a_stackelberg_game_perspective.md)
-- [\[ACL 2026\] On the Rejection Criterion for Proxy-Based Test-Time Alignment](on_the_rejection_criterion_for_proxy-based_test-time_alignment.md)
 - [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
+- [\[ACL 2026\] On the Rejection Criterion for Proxy-Based Test-Time Alignment](on_the_rejection_criterion_for_proxy-based_test-time_alignment.md)
 
 </div>
 

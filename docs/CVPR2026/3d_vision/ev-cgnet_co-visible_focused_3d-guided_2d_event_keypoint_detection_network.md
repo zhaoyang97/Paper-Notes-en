@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] EV-CGNet utilizes fine-grained spatio-temporal cues from event points to guide event frame feature prototype learning (G2PL). It further employs cross-frame self-attention to constrain keypoint detection to co-visible regions (CDDL), outperforming SOTA methods like SuperEvent in re-projection error, pose estimation, an
+  [CVPR 2026][3D Vision][Event camera] EV-CGNet utilizes fine-grained spatio-temporal cues from event points to guide event frame feature prototype learning (G2PL). It further employs cross-frame self-attention to constrain keypoint detection to co-visible regions (CDDL), outperforming SOTA methods like SuperEvent in re-projection error, pose estimation, and SLAM trajectory error across six benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event camera"
+  - "keypoint detection"
+  - "co-visible region"
+  - "3D-guided 2D"
+  - "feature matching"
 date: 2026-05-08
-content_hash: 46166cb04fff6d78
+content_hash: 1e184666261e3eae
 ---
+
 # EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ Impact of prototype count $N$:
 
 ## Related Papers
 
+- [\[CVPR 2026\] From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection](from_pairs_to_sequences_track-aware_policy_gradients_for_keypoint_detection.md)
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
-- [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
+- [\[ECCV 2024\] VCD-Texture: Variance Alignment based 3D-2D Co-Denoising for Text-Guided Texturing](../../ECCV2024/3d_vision/vcd-texture_variance_alignment_based_3d-2d_co-denoising_for_text-guided_texturin.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
 
 </div>
 

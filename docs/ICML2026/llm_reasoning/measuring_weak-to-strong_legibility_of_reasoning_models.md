@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Measuring Weak-to-Strong Legibility of Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][weak-to-strong legibility] This paper proposes **Transfer Utility (TU)**—a metric that measures the "weak-to-strong legibility" of reasoning traces by feeding percentile prefixes of traces from a strong Reasoning Language Model (RLM) to a weak student model and assessing the student's ability to complete the correct answer. Across 12 open-source
+  [ICML 2026][Reasoning][weak-to-strong legibility] This paper proposes **Transfer Utility (TU)**—a metric that measures the "weak-to-strong legibility" of reasoning traces by feeding percentile prefixes of traces from a strong Reasoning Language Model (RLM) to a weak student model and assessing the student's ability to complete the correct answer. Across 12 open-source RLMs, 3 datasets, and 85k traces, the study finds that **the traces of the most accurate and concise RLMs (e.…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - weak-to-strong legibility
-  - transfer utility
-  - reasoning trace
+  - "ICML 2026"
+  - "Reasoning"
+  - "weak-to-strong legibility"
+  - "transfer utility"
+  - "reasoning trace"
+  - "weak supervision"
+  - "reasoning legibility"
 date: 2026-05-08
-content_hash: a14058e3de4fab36
+content_hash: 35358e072f257a41
 ---
+
 # Measuring Weak-to-Strong Legibility of Reasoning Models
 
 **Conference**: ICML 2026  
@@ -120,14 +123,15 @@ FOTU and SOTU are global position-level properties. **RR** detects local deterio
 - Value: ⭐⭐⭐⭐⭐ (Critiques current RLVR training targets and establishes legibility as a first-class property).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](../../ICLR2026/llm_reasoning/gpg_a_simple_and_strong_reinforcement_learning_baseline_for_model_reasoning.md)
 - [\[ICLR 2026\] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs](../../ICLR2026/llm_reasoning/the_illusion_of_diminishing_returns_measuring_long_horizon_execution_in_llms.md)
 - [\[ICLR 2026\] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort](../../ICLR2026/llm_reasoning/is_it_thinking_or_cheating_detecting_implicit_reward_hacking_by_measuring_reason.md)
 - [\[ICML 2026\] Are Large Reasoning Models Interruptible?](are_large_reasoning_models_interruptible.md)
-- [\[ICML 2025\] Putnam-AXIOM: A Functional & Static Benchmark for Measuring Higher Level Mathematical Reasoning in LLMs](../../ICML2025/llm_reasoning/putnam-axiom_a_functional_and_static_benchmark_for_measuring_higher_level_mathem.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][QMIX] Ours proposes POW (Potentially Optimal Joint Actions Weighting), which uses an explicit joint-action-conditioned recognition module $Q_r$ to iteratively "identify" a set of potentially optimal joint actions and assign them higher training weights. This theoretically guarantees the recovery of the true optimal policy, b
+  [ICLR 2026][Reinforcement Learning][Cooperative MARL] Ours proposes POW (Potentially Optimal Joint Actions Weighting), which uses an explicit joint-action-conditioned recognition module $Q_r$ to iteratively "identify" a set of potentially optimal joint actions and assign them higher training weights. This theoretically guarantees the recovery of the true optimal policy, bridging the gap between the "theoretical promise" and "heuristic approximation" of the WQMIX series. It co…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - QMIX
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Cooperative MARL"
+  - "Value Decomposition"
+  - "Weighted Training"
+  - "Optimal Joint Actions"
+  - "QMIX"
 date: 2026-05-08
-content_hash: bc621410af1adb3c
+content_hash: 6b35dd434238c687
 ---
+
 # Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -158,11 +163,11 @@ VDN/QPLEX initially failed in Predator-Prey (Return 0), but converged to optimal
 
 ## Related Papers
 
-- [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
 - [\[ICLR 2026\] Retaining Suboptimal Actions to Follow Shifting Optima in Multi-Agent RL](retaining_suboptimal_actions_to_follow_shifting_optima_in_multi-agent_reinforcem.md)
+- [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
-- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
-- [\[ICLR 2026\] Optimal Robust Subsidy Policies for Irrational Agent in Principal-Agent MDPs](optimal_robust_subsidy_policies_for_irrational_agent_in_principal-agent_mdps.md)
 
 </div>
 

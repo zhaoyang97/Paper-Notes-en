@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Native MLLM] This paper systematically investigates the design space and scaling properties of native multimodal large language models (Native MLLMs) under data constraints. It identifies a…
+  [NeurIPS 2025][Multimodal VLM][Native MLLM] This paper systematically investigates the design space and scaling properties of native multimodal large language models (Native MLLMs) under data constraints. It identifies a positive log-linear optimal scaling relationship between the visual encoder and the LLM, and based on this finding proposes NaViL, which achieves competitive performance with state-of-the-art MLLMs using only approximately 600 million pre-training image-text…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Mixture-of-Experts"
   - "End-to-End Training"
 date: 2026-05-08
-content_hash: 57636cbd0f4f0138
+content_hash: a4f6955c68d5baea
 ---
 
 # NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints
@@ -132,9 +132,9 @@ NaViL-2B surpasses the compositional baseline InternVL-2.5-2B on most metrics an
 
 - [\[ICCV 2025\] Scaling Laws for Native Multimodal Models](../../ICCV2025/multimodal_vlm/scaling_laws_for_native_multimodal_models.md)
 - [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
-- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
-- [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
+- [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](the_narrow_gate_localized_imagetext_communication_in_native.md)
 - [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
+- [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
 
 </div>
 

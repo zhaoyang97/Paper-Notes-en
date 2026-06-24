@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Leveraging Textual Compositional Reasoning for Robust Change Captioning
 description: >-
-  [AAAI 2026][Multimodal VLM][Change Captioning] This paper proposes CORTEX, a framework that introduces VLM-generated compositional reasoning text as explicit cues, combined with an Image-Text Dual Alignment (ITDA) module…
+  [AAAI 2026][VLM Reasoning][Change Captioning] This paper proposes CORTEX, a framework that introduces VLM-generated compositional reasoning text as explicit cues, combined with an Image-Text Dual Alignment (ITDA) module, to enhance purely visual change captioning methods in understanding structured semantics such as object relationships and spatial configurations.
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Change Captioning"
   - "Compositional Reasoning"
   - "Vision-Language Models"
   - "Image-Text Alignment"
   - "Scene Change Description"
 date: 2026-05-08
-content_hash: 3a68e1d43cf06422
+content_hash: d1baaff715ea7c0b
 ---
 
 # Leveraging Textual Compositional Reasoning for Robust Change Captioning
@@ -169,11 +169,11 @@ Alignment loss ablation (CLEVR-Change):
 
 ## Related Papers
 
-- [\[AAAI 2026\] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning](discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag.md)
-- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](../../ICML2026/multimodal_vlm/self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
-- [\[AAAI 2026\] BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models](biprompt_bilateral_prompt_optimization_for_visual_and_textual_debiasing_in_visio.md)
-- [\[AAAI 2026\] Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models](difference_vector_equalization_for_robust_fine-tuning_of_vis.md)
-- [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
+- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](../../CVPR2026/vlm_reasoning/self-critical_distillation_network_for_video-based_commonsense_captioning.md)
+- [\[ICLR 2026\] CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs](../../ICLR2026/vlm_reasoning/compodistill_attention_distillation_for_compositional_reasoning_in_multimodal_ll.md)
+- [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](../../ICLR2026/vlm_reasoning/test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
+- [\[CVPR 2026\] Compositional Transformation Reasoning for Composed Video Retrieval](../../CVPR2026/vlm_reasoning/compositional_transformation_reasoning_for_composed_video_retrieval.md)
+- [\[ICML 2026\] From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning](../../ICML2026/vlm_reasoning/from_shortcuts_to_reasoning_robust_post-training_of_theory_of_mind_with_reinforc.md)
 
 </div>
 

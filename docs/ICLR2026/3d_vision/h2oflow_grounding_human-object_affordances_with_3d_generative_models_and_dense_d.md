@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] H2OFlow: Grounding Human-Object Affordances with 3D Generative Models and Dense Diffused Flows
 description: >-
-  [ICLR 2026][3D Vision][3D Affordance] H2OFlow utilizes 3D generative models to create synthetic HOI data and models point-wise displacement distributions from human to target poses via "dense diffused flow" on point clouds. **With zero manual annotation**, it simultaneously learns contact, orientation, and spatial occupancy affordances, generalizing effect
+  [ICLR 2026][3D Vision][3D Affordance] H2OFlow utilizes 3D generative models to create synthetic HOI data and models point-wise displacement distributions from human to target poses via "dense diffused flow" on point clouds. **With zero manual annotation**, it simultaneously learns contact, orientation, and spatial occupancy affordances, generalizing effectively to real-world point clouds.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Affordance
-  - Human-Object Interaction
-  - Dense Diffused Flow
-  - Diffusion Transformer
-  - Point Cloud
-  - Synthetic Data
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Affordance"
+  - "Human-Object Interaction"
+  - "Dense Diffused Flow"
+  - "Diffusion Transformer"
+  - "Point Cloud"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 16152a58b2cb8602
+content_hash: e75f889ca52acf7f
 ---
+
 # H2OFlow: Grounding Human-Object Affordances with 3D Generative Models and Dense Diffused Flows
 
 **Conference**: ICLR 2026  
@@ -126,9 +127,9 @@ Orientation and spatial affordances provide distinct gains, with the combination
 
 - [\[CVPR 2026\] QueryMe: Query-Driven Open-Vocabulary 3D Object Affordances Grounding from Multimodal Evidence](../../CVPR2026/3d_vision/queryme_query-driven_open-vocabulary_3d_object_affordances_grounding_from_multim.md)
 - [\[ICLR 2026\] Generative Human Geometry Distribution](generative_human_geometry_distribution.md)
-- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
 - [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](../../CVPR2026/3d_vision/affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
-- [\[ICLR 2026\] Scaling Sequence-to-Sequence Generative Neural Rendering](scaling_sequence-to-sequence_generative_neural_rendering.md)
+- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
+- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](../../CVPR2026/3d_vision/monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
 
 </div>
 

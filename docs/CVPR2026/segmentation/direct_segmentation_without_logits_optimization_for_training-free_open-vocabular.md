@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] A training-free open-vocabulary semantic segmentation method is proposed that bypasses the logits optimization process. Based on the hypothesis that "distribution discrepancies from logits to a degenerate distribution are consistent for homogeneous regions," segmentation maps are directly constructed via analytical sol
+  [CVPR 2026][Segmentation][Open-vocabulary semantic segmentation] A training-free open-vocabulary semantic segmentation method is proposed that bypasses the logits optimization process. Based on the hypothesis that "distribution discrepancies from logits to a degenerate distribution are consistent for homogeneous regions," segmentation maps are directly constructed via analytical solutions of optimal transport paths or maximum transport velocities. It achieves SOTA performance…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary semantic segmentation"
+  - "Training-free"
+  - "Distribution discrepancy"
+  - "Optimal transport"
+  - "Markov process"
 date: 2026-05-08
-content_hash: f36fd9e24917f24a
+content_hash: 9e829b4f6a02a923
 ---
+
 # Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -170,8 +176,8 @@ Completely **training-free** method. It involves no training or fine-tuning. Off
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
+- [\[CVPR 2026\] Exploring the Underwater World Segmentation without Extra Training](exploring_the_underwater_world_segmentation_without_extra_training.md)
 
 </div>
 

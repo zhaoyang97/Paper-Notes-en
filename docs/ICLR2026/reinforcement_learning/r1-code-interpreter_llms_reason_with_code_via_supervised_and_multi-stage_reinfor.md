@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Code Interpreter] This paper employs SFT cold starting and multi-stage curriculum GRPO to train open-source LLMs into general-purpose Code Interpreters that autonomously decide when to write code versus performing text-based reasoning. The key innovation is sorting samples for curriculum learning based on "Improvement Potential" rather
+  [ICLR 2026][Reinforcement Learning][Code Interpreter] This paper employs SFT cold starting and multi-stage curriculum GRPO to train open-source LLMs into general-purpose Code Interpreters that autonomously decide when to write code versus performing text-based reasoning. The key innovation is sorting samples for curriculum learning based on "Improvement Potential" rather than task difficulty. This approach increases the average RL gain from +3.4% to +9.3% across 144 heterogen…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Code Interpreter
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Code Interpreter"
+  - "Multi-stage Reinforcement Learning"
+  - "Curriculum Learning"
+  - "GRPO"
+  - "Improvement Potential"
 date: 2026-05-08
-content_hash: fc2eb25668053064
+content_hash: feee1cbe598612a6
 ---
+
 # R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning
 
 **Conference**: ICLR 2026  

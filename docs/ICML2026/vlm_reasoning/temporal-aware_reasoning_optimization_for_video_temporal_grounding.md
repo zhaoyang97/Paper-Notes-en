@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Temporal-Aware Reasoning Optimization for Video Temporal Grounding
 description: >-
-  [ICML 2026][vlm_reasoning][Reinforcement Learning] This paper proposes TaRO to address the issue of "glitzy but insubstantial reasoning" in RL-trained Video Temporal Grounding (VTG). It constructs high-quality reasoning trajectories using dense captions for warm-starting and introduces a reward based on the "confidence drop after shuffling keyframes" to measure reasoni
+  [ICML 2026][VLM Reasoning][Video Temporal Grounding] This paper proposes TaRO to address the issue of "glitzy but insubstantial reasoning" in RL-trained Video Temporal Grounding (VTG). It constructs high-quality reasoning trajectories using dense captions for warm-starting and introduces a reward based on the "confidence drop after shuffling keyframes" to measure reasoning quality, forcing the model to truly "think with time."
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Video Temporal Grounding"
+  - "Multimodal Large Language Models"
+  - "Reinforcement Learning"
+  - "Reasoning Quality Reward"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: a7a60327bc1a5d93
+content_hash: 0441f9b23eea03bd
 ---
+
 # Temporal-Aware Reasoning Optimization for Video Temporal Grounding
 
 **Conference**: ICML 2026  
@@ -142,11 +147,11 @@ TaRO consistently outperforms Time-R1 at the 3B scale, more than doubling perfor
 
 ## Related Papers
 
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/vlm_reasoning/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
 - [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](../../CVPR2026/vlm_reasoning/learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
 - [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](../../CVPR2026/vlm_reasoning/streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](../../CVPR2026/vlm_reasoning/cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
+- [\[ICLR 2026\] VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning](../../ICLR2026/vlm_reasoning/videozoomer_reinforcement-learned_temporal_focusing_for_long_video_reasoning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice
 description: >-
-  [CVPR 2026][Video Understanding][Reinforcement Learning] Ours proposes VideoAuto-R1, a video understanding framework for "on-demand reasoning": it adopts an "answer once, think once, answer twice" (answer→think→answer) paradigm during training, and during inference, it decides whether to trigger CoT reasoning based on the confidence of the first answer. It maintains SOTA acc
+  [CVPR 2026][VLM Reasoning][Video Reasoning] Ours proposes VideoAuto-R1, a video understanding framework for "on-demand reasoning": it adopts an "answer once, think once, answer twice" (answer→think→answer) paradigm during training, and during inference, it decides whether to trigger CoT reasoning based on the confidence of the first answer. It maintains SOTA accuracy while compressing the average response length from 149 to 44 tokens (approx. 3.3x compression).
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "Adaptive Thinking"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: d0e827fb959174bf
+content_hash: c5ce9ca1d343f05e
 ---
+
 # VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ If $s(a_1) \geq \log \tau$ ($\tau=0.97$), $a_1$ is accepted and decoding termina
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
+- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](../../NeurIPS2025/video_understanding/when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
 - [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
-- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
-- [\[CVPR 2026\] LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding](longvideo-r1_smart_navigation_for_low-cost_long_video_understanding.md)
+- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
 
 </div>
 

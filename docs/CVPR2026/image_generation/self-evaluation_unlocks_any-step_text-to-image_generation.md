@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Evaluation Unlocks Any-Step Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] This paper introduces the Self-Evaluating Model (Self-E), enabling a text-to-image model trained from scratch to learn local velocity fields like flow matching while simultaneously using its own current scoring as a "dynamic self-teacher." Without pre-trained teachers or distillation, it achieves a single model support
+  [CVPR 2026][Image Generation][Any-step generation] This paper introduces the Self-Evaluating Model (Self-E), enabling a text-to-image model trained from scratch to learn local velocity fields like flow matching while simultaneously using its own current scoring as a "dynamic self-teacher." Without pre-trained teachers or distillation, it achieves a single model supporting any-step inference—producing high-quality images in 2 steps while competing with top-tier flow matching m…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Any-step generation"
+  - "text-to-image"
+  - "self-evaluation"
+  - "flow matching"
+  - "few-step sampling"
 date: 2026-05-08
-content_hash: c4aa445ad0f65c4b
+content_hash: e8c2d3636ffb3a0e
 ---
+
 # Self-Evaluation Unlocks Any-Step Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ The advantage in the few-step range is particularly stark: at 2 steps, FLUX/SANA
 
 ## Related Papers
 
-- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
-- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
-- [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
+- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
+- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
+- [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](emf_meanflow_text_to_image.md)
 
 </div>
 

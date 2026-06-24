@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models
 description: >-
-  [ICLR 2026][AI Safety][CLIP] The authors observe that transformed adversarial samples in the CLIP feature space collectively shift along a "dominant direction" (whereas clean samples diverge), which happens to point back to the correct category center. Consequently, they propose DBD, a training-free test-time defense that estimates the "defense di
+  [ICLR2026][AI Safety][Adversarial Defense] The authors observe that transformed adversarial samples in the CLIP feature space collectively shift along a "dominant direction" (whereas clean samples diverge), which happens to point back to the correct category center. Consequently, they propose DBD, a training-free test-time defense that estimates the "defense direction" and repairs representations via dual-stream feature reconstruction guided by DB-score. DBD not only sets a n…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - CLIP
+  - "ICLR2026"
+  - "AI Safety"
+  - "Adversarial Defense"
+  - "CLIP"
+  - "Test-time Defense"
+  - "Directional Bias"
+  - "Feature Reconstruction"
 date: 2026-05-08
-content_hash: d55f960bfd709378
+content_hash: ae21f794c8dc90ca
 ---
+
 # Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models
 
 **Conference**: ICLR2026  

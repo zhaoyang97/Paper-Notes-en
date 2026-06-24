@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection
 description: >-
-  [NeurIPS 2025][AI Safety][Graph OOD Detection] This paper proposes RedOUT, a framework that constructs coding trees via structural entropy minimization to eliminate redundant information in graph structures. Combined wit…
+  [NeurIPS 2025][AI Safety][Graph OOD Detection] This paper proposes RedOUT, a framework that constructs coding trees via structural entropy minimization to eliminate redundant information in graph structures. Combined with the Redundancy-aware Graph Information Bottleneck (ReGIB) principle, RedOUT effectively distinguishes in-distribution (ID) from out-of-distribution (OOD) graph samples at test time without modifying pretrained model parameters…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Test-Time Detection"
   - "Coding Tree"
 date: 2026-05-08
-content_hash: 22fb395d5e9ce48e
+content_hash: 9047e3491fd6ba5e
 ---
 
 # Redundancy-Aware Test-Time Graph Out-of-Distribution Detection
@@ -155,8 +155,8 @@ Anomaly detection results (AUC%):
 
 - [\[AAAI 2026\] Graph Out-of-Distribution Detection via Test-Time Calibration with Dual Dynamic Dictionaries](../../AAAI2026/ai_safety/graph_out-of-distribution_detection_via_test-time_calibration_with_dual_dynamic_.md)
 - [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
+- [\[CVPR 2025\] OODD: Test-time Out-of-Distribution Detection with Dynamic Dictionary](../../CVPR2025/ai_safety/oodd_test-time_out-of-distribution_detection_with_dynamic_dictionary.md)
 - [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
 - [\[ICCV 2025\] FRET: Feature Redundancy Elimination for Test Time Adaptation](../../ICCV2025/ai_safety/fret_feature_redundancy_elimination_for_test_time_adaptation.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning
 description: >-
-  [ICML 2026][Model Compression][LoRA] The authors prove that LoRA's cumulative updates are trapped in a fixed low-rank subspace and propose ScaLoRA: after merging the old $AB^\top$ into $W^{pt}$ at each step, the adapter is restarted using an **analytically derived optimal "column scaling"**. This allows the first and second moments of AdamW to be transfer
+  [ICML 2026][Model Compression][LoRA] The authors prove that LoRA's cumulative updates are trapped in a fixed low-rank subspace and propose ScaLoRA: after merging the old $AB^\top$ into $W^{pt}$ at each step, the adapter is restarted using an **analytically derived optimal "column scaling"**. This allows the first and second moments of AdamW to be transferred equivariantly in $O((m+n)r)$ (eliminating the need for resets or warm-ups), enabling cumulative updates to naturally ac…
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
-  - ScaLoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "High-Rank Update"
+  - "Column Scaling"
+  - "AdamW moment equivariance"
+  - "ScaLoRA"
 date: 2026-05-08
-content_hash: 065500534268c57b
+content_hash: 9de821f8b11bd225
 ---
+
 # ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning
 
 **Conference**: ICML 2026  

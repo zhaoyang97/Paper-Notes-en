@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARGUS: Defending Against Multimodal Indirect Prompt Injection via Steering Instruction-Following Behavior
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] ARGUS discovers that the behaviors of "following user instructions vs. following injected instructions" are linearly separable in the activation space of MLLMs and reside within a "safe subspace." By applying activation steering toward a "defensive yet performance-preserving" direction during inference, combined with a
+  [CVPR 2026][Multimodal VLM][Indirect Prompt Injection] ARGUS discovers that the behaviors of "following user instructions vs. following injected instructions" are linearly separable in the activation space of MLLMs and reside within a "safe subspace." By applying activation steering toward a "defensive yet performance-preserving" direction during inference, combined with a three-stage pipeline (injection detection + adaptive intensity + post-filtering)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Indirect Prompt Injection"
+  - "Multimodal Defense"
+  - "Activation Steering"
+  - "Representation Engineering"
+  - "Instruction Following"
 date: 2026-05-08
-content_hash: 767bdb6c8de1494f
+content_hash: da8f6dfba42dff03
 ---
+
 # ARGUS: Defending Against Multimodal Indirect Prompt Injection via Steering Instruction-Following Behavior
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,14 @@ Key Takeaways: Prompt-based methods (System/Ignore Prompt) are largely ineffecti
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
+- [\[ICLR 2026\] MCIF: Multimodal Crosslingual Instruction-Following Benchmark from Scientific Talks](../../ICLR2026/multimodal_vlm/mcif_multimodal_crosslingual_instruction-following_benchmark_from_scientific_tal.md)
 - [\[CVPR 2026\] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](multi-crit_benchmarking_multimodal_judges_on_pluralistic_criteria-following.md)
 - [\[ACL 2025\] CrafText Benchmark: Advancing Instruction Following in Complex Multimodal Open-Ended World](../../ACL2025/multimodal_vlm/craftext_benchmark_advancing_instruction_following_in_complex_multimodal_open-en.md)
 - [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
-- [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
 
 </div>
 

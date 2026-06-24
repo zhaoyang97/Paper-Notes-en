@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Random Anchors with Low-rank Decorrelated Learning: A Minimalist Pipeline for Class-Incremental Medical Image Classification
 description: >-
-  [ICLR 2026][Others][Medical Imaging] For medical image class-incremental learning, this paper proposes RA-LDL: using "frozen random anchors + first-session low-rank residuals" to calibrate pre-trained features for better separability, combined with a set of "decorrelated" analytic classifiers constructed via closed-form ridge regression. The entire pipeli
+  [ICLR2026][Class-Incremental Learning] For medical image class-incremental learning, this paper proposes RA-LDL: using "frozen random anchors + first-session low-rank residuals" to calibrate pre-trained features for better separability, combined with a set of "decorrelated" analytic classifiers constructed via closed-form ridge regression. The entire pipeline requires gradient training only in the first session, with subsequent tasks updated via recursively accumulated statis…
 tags:
-  - ICLR 2026
-  - Others
-  - Medical Imaging
+  - "ICLR2026"
+  - "Class-Incremental Learning"
+  - "Pre-trained Models"
+  - "Representation Calibration"
+  - "Analytic Classifier"
+  - "Medical Imaging"
 date: 2026-05-08
-content_hash: 39db6b16d7975855
+content_hash: d0d3e14bfec13bc7
 ---
+
 # Random Anchors with Low-rank Decorrelated Learning: A Minimalist Pipeline for Class-Incremental Medical Image Classification
 
 **Conference**: ICLR2026  

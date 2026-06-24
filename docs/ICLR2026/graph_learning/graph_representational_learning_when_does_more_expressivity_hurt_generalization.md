@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Graph Representational Learning: When Does More Expressivity Hurt Generalization?
 description: >-
-  [ICLR 2026][Graph Learning][Tree Mover's Distance] This paper proposes a family of pseudometrics $\zeta$-TMD parameterized by graph invariants and derives a data-dependent generalization bound based on "train-test graph structural similarity + model complexity + training set size." It theoretically explains "when higher expressivity GNNs generalize worse"—only when the
+  [ICLR 2026][Graph Learning][GNN Expressivity] This paper proposes a family of pseudometrics $\zeta$-TMD parameterized by graph invariants and derives a data-dependent generalization bound based on "train-test graph structural similarity + model complexity + training set size." It theoretically explains "when higher expressivity GNNs generalize worse"—only when the added expressivity aligns with the structure-label correlation of the task is it beneficial; otherwise…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Tree Mover's Distance
-  - PAC-Bayes
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN Expressivity"
+  - "Generalization Bounds"
+  - "Tree Mover's Distance"
+  - "Pseudometric"
+  - "PAC-Bayes"
+  - "Structure-Label Correlation"
 date: 2026-05-08
-content_hash: 2a2f6c4bc55067ec
+content_hash: 7d8844913956fcf6
 ---
+
 # Graph Representational Learning: When Does More Expressivity Hurt Generalization?
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ Label noise experiments: training loss still converges to 0, but test error spik
 - [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
 - [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
 - [\[ICLR 2026\] GraphUniverse: Synthetic Graph Generation for Evaluating Inductive Generalization](graphuniverse_synthetic_graph_generation_for_evaluating_inductive_generalization.md)
-- [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
+- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 
 </div>
 

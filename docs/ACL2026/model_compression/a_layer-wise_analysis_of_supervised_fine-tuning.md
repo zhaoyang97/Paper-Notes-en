@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Layer-wise Analysis of Supervised Fine-Tuning
 description: >-
-  [ACL 2026][Model Compression][LoRA] This work conducts a layer-wise analysis of SFT in 1B-32B models through information-theoretic, geometric, and optimization perspectives. It finds that instruction-following capabilities are concentrated in the middle layers (20%-80%) rather than being uniformly distributed. Based on this, a Mid-Block Efficient Tuning
+  [ACL 2026][Model Compression][Supervised Fine-Tuning] This work conducts a layer-wise analysis of SFT in 1B-32B models through information-theoretic, geometric, and optimization perspectives. It finds that instruction-following capabilities are concentrated in the middle layers (20%-80%) rather than being uniformly distributed. Based on this, a Mid-Block Efficient Tuning strategy is proposed to selectively update middle layers, achieving up to a 10.2% improvement on GSM8K ove…
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
+  - "ACL 2026"
+  - "Model Compression"
+  - "Supervised Fine-Tuning"
+  - "Layer-wise Analysis"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 4816845f06795576
+content_hash: 9588402178ea72e2
 ---
+
 # A Layer-wise Analysis of Supervised Fine-Tuning
 
 **Conference**: ACL 2026  
@@ -133,11 +138,11 @@ The paper establishes causality through three complementary validation experimen
 
 ## Related Papers
 
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](../../ICLR2026/model_compression/trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
 - [\[ACL 2026\] LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference](leap_layer-wise_exit-aware_pretraining_for_efficient_transformer_inference.md)
+- [\[ICLR 2026\] Improving Block-Wise LLM Quantization by 4-bit Block-Wise Optimal Float (BOF4): Analysis and Variations](../../ICLR2026/model_compression/improving_block-wise_llm_quantization_by_4-bit_block-wise_optimal_float_bof4_ana.md)
 - [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](../../ICLR2026/model_compression/abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
-- [\[ACL 2026\] Rethinking Parameter Sharing for LLM Fine-Tuning with Multiple LoRAs](rethinking_parameter_sharing_for_llm_fine-tuning_with_multiple_loras.md)
-- [\[ACL 2026\] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Reasoning][Inference Acceleration] TrigReason proposes an event-triggered collaboration framework between small and large reasoning models. By analyzing three types of reasoning risks in small models (path deviation, cognitive overload, and recovery failure), it designs strategic priming, cognitive offload, and intervention request triggers to replace s
+  [ACL 2026 Findings][Reasoning][Reasoning Acceleration] TrigReason proposes an event-triggered collaboration framework between small and large reasoning models. By analyzing three types of reasoning risks in small models (path deviation, cognitive overload, and recovery failure), it designs strategic priming, cognitive offload, and intervention request triggers to replace step-by-step polling verification. While maintaining LRM-level accuracy, it offloads 1.70-4.79x more reaso…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Inference Acceleration
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Reasoning Acceleration"
+  - "Small-Large Model Collaboration"
+  - "Speculative Reasoning"
+  - "Event-Triggered"
+  - "Reasoning Models"
 date: 2026-05-08
-content_hash: 7e4f2b343ab8a5e3
+content_hash: 61e6249c8533669e
 ---
+
 # TrigReason: Trigger-Based Collaboration between Small and Large Reasoning Models
 
 **Conference**: ACL 2026 Findings  
@@ -148,8 +153,8 @@ TrigReason is entirely training-free and acts as a pure inference-time collabora
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
+- [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](../../ICLR2026/llm_reasoning/pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
-- [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
 
 </div>
 

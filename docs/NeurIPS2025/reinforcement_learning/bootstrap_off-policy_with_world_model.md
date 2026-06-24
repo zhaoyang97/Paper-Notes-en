@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bootstrap Off-policy with World Model (BOOM)
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Model-based reinforcement learning] This paper proposes the BOOM framework, which tightly couples an online planner (MPPI) with off-policy policy learning via a bootstrap loop: the…
+  [NeurIPS 2025][Reinforcement Learning][Model-based reinforcement learning] This paper proposes the BOOM framework, which tightly couples an online planner (MPPI) with off-policy policy learning via a bootstrap loop: the policy initializes the planner, which in turn guides policy improvement through a likelihood-free alignment loss, supplemented by a soft Q-weighted mechanism to prioritize high-return behaviors, achieving state-of-the-art performance on high-dimensional contin…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "actor divergence"
   - "behavior alignment"
 date: 2026-05-08
-content_hash: 146dc5dd3ebd5ccd
+content_hash: a90e4b69880b5799
 ---
 
 # Bootstrap Off-policy with World Model (BOOM)
@@ -151,10 +151,10 @@ BOOM comprises three tightly coupled components: a **policy network $\pi$**, an 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control](succeed_or_learn_slowly_sample_efficient_off-policy_reinforcement_learning_for_m.md)
-- [\[ICLR 2026\] From Observations to Events: Event-Aware World Model for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_model_for_reinforcement_learning.md)
-- [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
-- [\[NeurIPS 2025\] A Unifying View of Linear Function Approximation in Off-Policy RL Through Matrix Splitting and Preconditioning](a_unifying_view_of_linear_function_approximation_in_offpolic.md)
-- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](../../ICLR2026/reinforcement_learning/deep_spi_safe_policy_improvement_via_world_models.md)
+- [\[ICLR 2026\] Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model](../../ICLR2026/reinforcement_learning/squeeze_the_soaked_sponge_efficient_off-policy_rft_for_large_language_model.md)
+- [\[ICML 2025\] Log-Sum-Exponential Estimator for Off-Policy Evaluation and Learning](../../ICML2025/reinforcement_learning/log-sum-exponential_estimator_for_off-policy_evaluation_and_learning.md)
+- [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
+- [\[ICLR 2026\] Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning](../../ICLR2026/reinforcement_learning/buffer_matters_unleashing_the_power_of_off-policy_reinforcement_learning_in_larg.md)
 
 </div>
 

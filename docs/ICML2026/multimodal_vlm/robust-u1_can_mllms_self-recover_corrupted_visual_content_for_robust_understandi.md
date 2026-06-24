@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] Robust-U1 enables unified Multimodal Large Language Models (MLLMs) to first "self-recover" corrupted images at the pixel level and then perform joint reasoning using both original and recovered images, achieving SOTA in robust understanding under both real-world and adversarial degradations.
+  [ICML2026][Multimodal VLM][Multimodal Large Language Models] Robust-U1 enables unified Multimodal Large Language Models (MLLMs) to first "self-recover" corrupted images at the pixel level and then perform joint reasoning using both original and recovered images, achieving SOTA in robust understanding under both real-world and adversarial degradations.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Visual Robustness"
+  - "Self-Recovery"
+  - "Unified Models"
+  - "RL Alignment"
 date: 2026-05-08
-content_hash: 99afb8ba5960a867
+content_hash: 013f37e2d7384c2e
 ---
+
 # Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?
 
 **Conference**: ICML2026  
@@ -146,11 +152,11 @@ Recovery quality (on Robust-R1 validation, PSNR↑/SSIM↑/LPIPS↓) improves pr
 
 ## Related Papers
 
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](../../ICLR2026/multimodal_vlm/tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
 - [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
-- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](../../CVPR2026/multimodal_vlm/chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](vlanext_recipes_for_building_strong_vla_models.md)
+- [\[AAAI 2026\] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?](../../AAAI2026/multimodal_vlm/when_eyes_and_ears_disagree_can_mllms_discern_audio-visual_confusion.md)
 - [\[ICML 2026\] DCER: Robust Multimodal Fusion via Dual-Stage Compression and Energy-Based Reconstruction](dcer_dual-stage_compression_and_energy-based_reconstruction.md)
-- [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](../../ICCV2025/multimodal_vlm/synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
 
 </div>
 

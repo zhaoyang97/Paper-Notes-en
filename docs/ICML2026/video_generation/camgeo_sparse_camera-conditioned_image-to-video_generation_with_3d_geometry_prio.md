@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior
 description: >-
-  [ICML 2026][Video Generation][Paper Note] CamGeo distills 3D geometric knowledge from a pre-trained 3D video model (VGGT) through **training-only distillation**. By providing supervision signals only during the training phase, the diffusion model generates high-quality videos with geometric consistency and smooth motion under **sparse camera inputs**, while VG
+  [ICML 2026][Video Generation][Image-to-Video Generation] CamGeo distills 3D geometric knowledge from a pre-trained 3D video model (VGGT) through **training-only distillation**. By providing supervision signals only during the training phase, the diffusion model generates high-quality videos with geometric consistency and smooth motion under **sparse camera inputs**, while VGGT is completely removed during inference to maintain efficiency.
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Image-to-Video Generation"
+  - "Sparse Camera Conditioning"
+  - "3D Geometry Prior"
+  - "Training-Only Distillation"
 date: 2026-05-08
-content_hash: 09a351c3475eb294
+content_hash: 816a7c1ee898e467
 ---
+
 # CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior
 
 **Conference**: ICML 2026  
@@ -130,8 +135,8 @@ Linear interpolation methods perform worse than direct inference from sparse inp
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
 - [\[ICML 2026\] VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation](videogpa_distilling_geometry_priors_for_3d-consistent_video_generation.md)
+- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](../../ICCV2025/video_generation/stiv_scalable_text_and_image_conditioned_video_generation.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)

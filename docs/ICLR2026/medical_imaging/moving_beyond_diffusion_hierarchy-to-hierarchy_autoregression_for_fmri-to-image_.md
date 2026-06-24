@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction
 description: >-
-  [ICLR 2026][Medical Imaging][fMRI-to-Image] MindHier shifts fMRI-to-image reconstruction from "diffusion models + single static guidance" to "next-scale autoregression + hierarchical neural guidance." By injecting brain signals into the generation process across scales following the "forest before trees" principle, it achieves SOTA semantic metrics on NSD while
+  [ICLR 2026][Medical Imaging][fMRI-to-Image] MindHier shifts fMRI-to-image reconstruction from "diffusion models + single static guidance" to "next-scale autoregression + hierarchical neural guidance." By injecting brain signals into the generation process across scales following the "forest before trees" principle, it achieves SOTA semantic metrics on NSD while being 4.67× faster and more deterministic.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - fMRI-to-Image
-  - CLIP
-  - NSD
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI-to-Image"
+  - "Visual Autoregression (VAR)"
+  - "Hierarchical Alignment"
+  - "Coarse-to-Fine"
+  - "CLIP"
+  - "NSD"
 date: 2026-05-08
-content_hash: 2380fcd48e4ab970
+content_hash: deb789eed0b9c927
 ---
+
 # Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction
 
 **Conference**: ICLR 2026  
@@ -135,9 +139,20 @@ Guidance is dynamically selected across two cognitively inspired phases: **Seedi
 - **Value**: ⭐⭐⭐⭐ Significant speedup and deterministic stability make it highly relevant for real-time neural decoding.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)
+- [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
+- [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](../../CVPR2026/medical_imaging/benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
+- [\[ICLR 2026\] Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems](distributional_consistency_loss_beyond_pointwise_data_terms_in_inverse_problems.md)
+- [\[CVPR 2026\] D$^2$-FOSA: Dual-Diffusion Guided EEG-to-Image Reconstruction with Frequency-Oriented Semantic Alignment](../../CVPR2026/medical_imaging/d2-fosa_dual-diffusion_guided_eeg-to-image_reconstruction_with_frequency-oriente.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)

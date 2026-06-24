@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] CompBench: Benchmarking Complex Instruction-guided Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] CompBench is the first benchmark for instruction-guided image editing oriented toward **complex real-world scenarios**. By extracting high-density occlusion scenes from the Video Object Segmentation (VOS) dataset MOSE and employing an MLLM-Human collaboration framework with an instruction decomposition strategy, the au
+  [CVPR 2026][Image Generation][Instruction-guided Image Editing] CompBench is the first benchmark for instruction-guided image editing oriented toward **complex real-world scenarios**. By extracting high-density occlusion scenes from the Video Object Segmentation (VOS) dataset MOSE and employing an MLLM-Human collaboration framework with an instruction decomposition strategy, the authors constructed 3K+ high-fidelity editing samples across 9 tasks in 5 categories. This work sy…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruction-guided Image Editing"
+  - "Benchmark"
+  - "Complex Scenes"
+  - "MLLM-Human Collaboration"
+  - "Instruction Decomposition"
+  - "SSIM Quality Control"
 date: 2026-05-08
-content_hash: 867b01f7083da8cb
+content_hash: 89cddbe759ce2e7e
 ---
+
 # CompBench: Benchmarking Complex Instruction-guided Image Editing
 
 **Conference**: CVPR 2026  
@@ -105,16 +112,16 @@ The authors evaluated 15 mainstream models (InstructPix2Pix, MagicBrush, SmartEd
 -   **Insight**: When a task lacks data with both "complex scenes" and "precise annotations," leveraging existing annotations from adjacent tasks (like Segmentation/Detection/VOS) is often more efficient than labeling from scratch.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)
 - [\[CVPR 2026\] FlowDC: Flow-Based Decoupling-Decay for Complex Image Editing](flowdc_flow-based_decoupling-decay_for_complex_image_editing.md)
 - [\[CVPR 2026\] WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing](wiseedit_benchmarking_cognition-_and_creativity-informed_image_editing.md)
+- [\[CVPR 2026\] MotionEdit: Benchmarking and Learning Motion-Centric Image Editing](motionedit_benchmarking_and_learning_motion-centric_image_editing.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](../../ICLR2026/image_generation/visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
-- [\[CVPR 2026\] DreamOmni2: Multimodal Instruction-based Generation and Editing](dreamomni2_multimodal_instruction-based_generation_and_editing.md)
 
 </div>
 

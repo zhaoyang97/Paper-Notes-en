@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs
 description: >-
-  [CVPR 2026][Reinforcement Learning][ECRD] Ours proposes the Evidence-Constrained Reweighting Decoding (ECRD) framework: it maintains a dynamic textual evidence pool during LVLM decoding, reweights candidate tokens via distribution negotiation, and automatically invokes a lightweight visual decider to extract micro-evidence when uncertain. It significantly redu
+  [CVPR 2026][Reinforcement Learning][ECRD] Ours proposes the Evidence-Constrained Reweighting Decoding (ECRD) framework: it maintains a dynamic textual evidence pool during LVLM decoding, reweights candidate tokens via distribution negotiation, and automatically invokes a lightweight visual decider to extract micro-evidence when uncertain. It significantly reduces visual hallucinations and improves reasoning accuracy across multiple LVLMs without training.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - ECRD
-  - visual grounding
-  - hallucination mitigation
-  - training-free
-  - evidence pool
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "ECRD"
+  - "visual grounding"
+  - "hallucination mitigation"
+  - "training-free"
+  - "evidence pool"
 date: 2026-05-08
-content_hash: 8c916fc23f3e8595
+content_hash: 43625e0de62a59c0
 ---
+
 # See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs
 
 **Conference**: CVPR 2026  
@@ -136,10 +137,20 @@ Ours is completely training-free. The framework wraps around a frozen LVLM, and 
 - Value: ⭐⭐⭐⭐ High practical value for deployment as a training-free, plug-and-play solution.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Perceptual Flow Network for Visually Grounded Reasoning](../../ICML2026/reinforcement_learning/perceptual_flow_network_for_visually_grounded_reasoning.md)
+- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
+- [\[ICLR 2026\] Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models](../../ICLR2026/reinforcement_learning/divide_harmonize_then_conquer_it_shooting_multi-commodity_flow_problems_with_mul.md)
+- [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](../../ICML2026/reinforcement_learning/cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
+- [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Perceptual Flow Network for Visually Grounded Reasoning](../../ICML2026/reinforcement_learning/perceptual_flow_network_for_visually_grounded_reasoning.md)

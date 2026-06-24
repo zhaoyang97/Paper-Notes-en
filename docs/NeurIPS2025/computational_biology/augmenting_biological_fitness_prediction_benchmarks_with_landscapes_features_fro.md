@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features
 description: >-
-  [NeurIPS 2025][Computational Biology][Fitness landscape] GraphFLA is an efficient fitness landscape analysis framework that computes 20 biologically meaningful landscape features (ruggedness / epistasis / navigability /…
+  [NeurIPS 2025][Computational Biology][Fitness landscape] GraphFLA is an efficient fitness landscape analysis framework that computes 20 biologically meaningful landscape features (ruggedness / epistasis / navigability / neutrality) across 5,300+ real-world landscapes (ProteinGym / RNAGym / CIS-BP), revealing that model performance is highly dependent on landscape topology—e.g., VenusREM outperforms ProSST on highly navigable landscapes but underperforms it on highly epistatic…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "model diagnostics"
   - "combinatorial mutations"
 date: 2026-05-08
-content_hash: bcb118143ac5dd85
+content_hash: 6fc68342a763b447
 ---
 
 # GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features
@@ -186,11 +186,11 @@ Key patterns:
 
 ## Related Papers
 
+- [\[ICML 2025\] Protriever: End-to-End Differentiable Protein Homology Search for Fitness Prediction](../../ICML2025/computational_biology/protriever_end-to-end_differentiable_protein_homology_search_for_fitness_predict.md)
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 - [\[NeurIPS 2025\] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation](bidirectional_representations_augmented_autoregressive_biological_sequence_gener.md)
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
 - [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
-- [\[NeurIPS 2025\] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Bid Farewell to Seesaw: Towards Accurate Long-tail Session-based Recommendation via Dual Constraints of Hybrid Intents
 description: >-
-  [AAAI 2026][Recommender Systems][Session-based recommendation] This paper proposes the HID framework, which constructs hybrid intents via attribute-aware spectral clustering to distinguish session-relevant from session-i…
+  [AAAI 2026 Oral][Recommender Systems][Session-based recommendation] This paper proposes the HID framework, which constructs hybrid intents via attribute-aware spectral clustering to distinguish session-relevant from session-irrelevant tail items, and introduces a dual-constraint loss (ICLoss) targeting both long-tail coverage and recommendation accuracy. The framework achieves a "win-win" between long-tail promotion and accuracy, breaking the traditional seesaw dilemma where…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Recommender Systems"
   - "Session-based recommendation"
   - "long-tail distribution"
@@ -12,7 +12,7 @@ tags:
   - "spectral clustering"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 07581b465d930916
+content_hash: 7cbb2ff6d53c0f59
 ---
 
 # Bid Farewell to Seesaw: Towards Accurate Long-tail Session-based Recommendation via Dual Constraints of Hybrid Intents
@@ -166,9 +166,9 @@ Removing hybrid intents (HI) has a greater impact on diversity, while removing t
 
 - [\[AAAI 2026\] FreqRec: Exploiting Inter-Session Information with Frequency-enhanced Dual-Path Networks for Sequential Recommendation](exploiting_inter-session_information_with_frequency-enhanced_dual-path_networks_.md)
 - [\[AAAI 2026\] HyMoERec: Hybrid Mixture-of-Experts for Sequential Recommendation](hymoerec_hybrid_mixture-of-experts_for_sequential_recommendation.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
-- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
-- [\[AAAI 2026\] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation](tool4poi_a_tool-augmented_llm_framework_for_next_poi_recommendation.md)
+- [\[ACL 2026\] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents](../../ACL2026/recommender/from_recall_to_forgetting_benchmarking_long-term_memory_for_personalized_agents.md)
 
 </div>
 

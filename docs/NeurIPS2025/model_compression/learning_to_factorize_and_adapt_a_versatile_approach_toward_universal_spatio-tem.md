@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models
 description: >-
-  [NeurIPS 2025][Model Compression][spatio-temporal foundation models] This paper proposes FactoST-v2, a factorized spatio-temporal foundation model framework that decouples universal temporal pre-training from domain-spec…
+  [NeurIPS 2025][Model Compression][spatio-temporal foundation models] This paper proposes FactoST-v2, a factorized spatio-temporal foundation model framework that decouples universal temporal pre-training from domain-specific spatial adaptation, achieving cross-domain zero-shot/few-shot/full-shot spatio-temporal forecasting with linear complexity.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "spatio-temporal adaptation"
   - "zero-shot generalization"
 date: 2026-05-08
-content_hash: fb7ba368ef87c9b5
+content_hash: fccddd58aa8c217f
 ---
 
 # Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models
@@ -144,7 +144,7 @@ Key upgrade contributions from v1 to v2 (as described in the paper):
 - [\[NeurIPS 2025\] Revisiting Semi-Supervised Learning in the Era of Foundation Models](revisiting_semi-supervised_learning_in_the_era_of_foundation_models.md)
 - [\[ICCV 2025\] B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens](../../ICCV2025/model_compression/b-vllm_a_vision_large_language_model_with_balanced_spatio-temporal_tokens.md)
 - [\[NeurIPS 2025\] A Partition Cover Approach for Tokenization](a_partition_cover_approach_to_tokenization.md)
-- [\[NeurIPS 2025\] Universal Cross-Tokenizer Distillation via Approximate Likelihood Matching](universal_cross-tokenizer_distillation_via_approximate_likelihood_matching.md)
+- [\[CVPR 2026\] TimeRipples: Accelerating vDiTs by Understanding the Spatio-Temporal Correlations in Latent Space](../../CVPR2026/model_compression/timeripples_accelerating_vdits_by_understanding_the_spatio-temporal_correlations.md)
 - [\[NeurIPS 2025\] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning](graver_generative_graph_vocabularies_for_robust_graph_foundation_models_fine-tun.md)
 
 </div>

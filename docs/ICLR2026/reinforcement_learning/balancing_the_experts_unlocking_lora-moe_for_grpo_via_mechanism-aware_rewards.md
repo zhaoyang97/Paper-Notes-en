@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Balancing the Experts: Unlocking LoRA-MoE for GRPO via Mechanism-Aware Rewards
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] To address the issues of routing collapse and low expert utilization when using GRPO for reinforcement fine-tuning of LoRA-MoE, this paper proposes RO-GRPO. It converts internal routing statistics (entropy + load variance) collected during training into a scalar reward, which is directly integrated into the total GRPO
+  [ICLR2026][Reinforcement Learning][GRPO] To address the issues of routing collapse and low expert utilization when using GRPO for reinforcement fine-tuning of LoRA-MoE, this paper proposes RO-GRPO. It converts internal routing statistics (entropy + load variance) collected during training into a scalar reward, which is directly integrated into the total GRPO reward. Without auxiliary losses, architectural changes, or additional training stages…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - LoRA-MoE
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "LoRA-MoE"
+  - "Routing Collapse"
+  - "Mechanism-Aware Rewards"
+  - "Load Balancing"
 date: 2026-05-08
-content_hash: 00dfe4f647e6c074
+content_hash: 8c2a508eec517a45
 ---
+
 # Balancing the Experts: Unlocking LoRA-MoE for GRPO via Mechanism-Aware Rewards
 
 **Conference**: ICLR2026  

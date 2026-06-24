@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Grounding or Guessing? Visual Signals for Detecting Hallucinations in Sign Language Translation
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] This paper investigates the problem of hallucination in Sign Language Translation (SLT) for the first time, proposing a token-level "reliability" score. By using feature sensitivity and counterfactual perturbations, it quantifies whether the decoder is "grounding on the video" or "guessing based on language priors," th
+  [ICLR 2026][Hallucination Detection][Sign Language Translation] This paper investigates the problem of hallucination in Sign Language Translation (SLT) for the first time, proposing a token-level "reliability" score. By using feature sensitivity and counterfactual perturbations, it quantifies whether the decoder is "grounding on the video" or "guessing based on language priors," thereby predicting hallucination risk without reference translations and revealing why gloss-free…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Sign Language Translation"
+  - "Visual Grounding"
+  - "Counterfactual Perturbation"
+  - "Reliability Score"
 date: 2026-05-08
-content_hash: d627e3a99e1c4bbd
+content_hash: c8d150157dc94d9c
 ---
+
 # Grounding or Guessing? Visual Signals for Detecting Hallucinations in Sign Language Translation
 
 **Conference**: ICLR 2026  
@@ -118,10 +123,10 @@ The paper includes ablations on feature vs. counterfactual signals and pooling o
 ## Related Papers
 
 - [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
-- [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](../../ACL2026/hallucination/finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
 - [\[ICLR 2026\] PostAlign: Multimodal Grounding as a Corrective Lens for MLLMs](postalign_multimodal_grounding_as_a_corrective_lens_for_mllms.md)
+- [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](../../ACL2026/hallucination/finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
+- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
 - [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
-- [\[ICLR 2026\] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation](look_carefully_adaptive_visual_reinforcements_in_multimodal_large_language_model.md)
 
 </div>
 

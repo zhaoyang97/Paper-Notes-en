@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis
 description: >-
-  [ICLR 2026][Medical Imaging][fMRI] This paper proposes Spike-DB, which introduces the spiking computation paradigm into fMRI time-series modeling. By using spiking neurons simulated with IIR filters to encode BOLD signals into spike trains, it employs an "anchor region $\rightarrow$ target region" self-supervised prediction framework to learn temporal d
+  [ICLR 2026][Medical Imaging][Digital Brain] This paper proposes Spike-DB, which introduces the spiking computation paradigm into fMRI time-series modeling. By using spiking neurons simulated with IIR filters to encode BOLD signals into spike trains, it employs an "anchor region $\rightarrow$ target region" self-supervised prediction framework to learn temporal driving relationships between brain regions. It achieves high-precision brain activity prediction…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - fMRI
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Digital Brain"
+  - "Spiking Neural Networks"
+  - "fMRI"
+  - "Self-supervised Prediction"
+  - "Effective Connectivity"
 date: 2026-05-08
-content_hash: 4d1b760305a912bb
+content_hash: a059bbbc3f746e7f
 ---
+
 # Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis
 
 **Conference**: ICLR 2026  
@@ -146,11 +151,11 @@ Disease Classification (Four binary tasks, ACC%/F1%):
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders](a_brain_graph_foundation_model_pre-training_and_prompt-tuning_across_broad_atlas.md)
 - [\[ICLR 2026\] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer](brain-it_image_reconstruction_from_fmri_via_brain-interaction_transformer.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
 - [\[ICLR 2026\] Neuro-Symbolic Decoding of Neural Activity](neuro-symbolic_decoding_of_neural_activity.md)
-- [\[CVPR 2026\] Uni-Hema: Unified Model for Digital Hematopathology](../../CVPR2026/medical_imaging/uni-hema_unified_model_for_digital_hematopathology.md)
-- [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fingerprinting Deep Neural Networks for Ownership Protection: An Analytical Approach
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] AnaFP reformulates the empirical problem of "how far a fingerprint should be from the decision boundary" into finding a feasible interval for a stretch factor. By constraining adversarial fingerprints using both a robustness lower bound and a uniqueness upper bound, AnaFP distinguishes pirated models from independent m
+  [ICLR2026][AI Safety][Model Fingerprint] AnaFP reformulates the empirical problem of "how far a fingerprint should be from the decision boundary" into finding a feasible interval for a stretch factor. By constraining adversarial fingerprints using both a robustness lower bound and a uniqueness upper bound, AnaFP distinguishes pirated models from independent models more stably than existing methods across CNNs, MLPs, and GNNs.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Model Fingerprint"
+  - "Ownership Verification"
+  - "Adversarial Examples"
+  - "Decision Boundary"
+  - "Model Modification Attacks"
 date: 2026-05-08
-content_hash: b6c83184730cc309
+content_hash: 50ffb3149be46375
 ---
+
 # Fingerprinting Deep Neural Networks for Ownership Protection: An Analytical Approach
 
 **Conference**: ICLR2026  
@@ -144,6 +150,7 @@ The size of the proxy pool and the strategy for choosing $\tau$ were analyzed. A
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

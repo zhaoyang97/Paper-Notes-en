@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Ours proposes the SIVR framework, which computes internal variance (generalized variance, circular variance, token entropy) across LLM hidden layers as token-level features. A lightweight Transformer encoder aggregates full sequence patterns to estimate uncertainty and detect hallucinations, significantly outperforming
+  [ACL 2026][LLM Safety][Uncertainty Estimation] Ours proposes the SIVR framework, which computes internal variance (generalized variance, circular variance, token entropy) across LLM hidden layers as token-level features. A lightweight Transformer encoder aggregates full sequence patterns to estimate uncertainty and detect hallucinations, significantly outperforming baselines with stronger generalization.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Uncertainty Estimation"
+  - "Hallucination Detection"
+  - "Hidden State Variance"
+  - "Sequence Aggregation"
+  - "Internal Representation Dispersion"
 date: 2026-05-08
-content_hash: f0e765eb71d6e70f
+content_hash: c3edc48c1d2cbda5
 ---
+
 # Learning Uncertainty from Sequential Internal Dispersion in Large Language Models
 
 **Conference**: ACL 2026  

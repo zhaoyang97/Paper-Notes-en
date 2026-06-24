@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAR2Net: Learning Spatially Anchored Representations for Retrieval-Guided Cross-Stain Alignment
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] SAR2Net reformulates HE↔IHC Whole Slide Image (WSI) cross-stain alignment from "deformation transform estimation" to "region-level feature retrieval." By learning a "spatially anchored representation" for each point that depends only on coordinates and relative geometric encoding of anchors, it achieves robust region c
+  [CVPR 2026][Medical Imaging][Cross-stain alignment] SAR2Net reformulates HE↔IHC Whole Slide Image (WSI) cross-stain alignment from "deformation transform estimation" to "region-level feature retrieval." By learning a "spatially anchored representation" for each point that depends only on coordinates and relative geometric encoding of anchors, it achieves robust region correspondence under severe tissue deformation and fragmentation without requiring any global coarse alignmen…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Cross-stain alignment"
+  - "Whole Slide Image (WSI)"
+  - "Pathological registration"
+  - "Feature retrieval"
+  - "Spatially anchored representations"
 date: 2026-05-08
-content_hash: 17e58823550e4e66
+content_hash: 9644209b19926e8d
 ---
+
 # SAR2Net: Learning Spatially Anchored Representations for Retrieval-Guided Cross-Stain Alignment
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,15 @@ Components: Random perturbation (pertu), Local Geometry-aware Negative sampling 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
 - [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
+- [\[CVPR 2026\] Duala: Dual-Level Alignment of Subjects and Stimuli for Cross-Subject fMRI Decoding](duala_dual-level_alignment_of_subjects_and_stimuli_for_cross-subject_fmri_decodi.md)
 - [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
-- [\[CVPR 2026\] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning](taligndiff_automatic_tooth_alignment_assisted_by_diffusion-based_transformation_.md)
 
 </div>
 

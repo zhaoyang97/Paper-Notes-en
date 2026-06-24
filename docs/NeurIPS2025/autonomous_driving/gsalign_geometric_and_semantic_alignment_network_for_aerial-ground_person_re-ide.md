@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Aerial-Ground Person Re-Identification] This paper proposes GSAlign, a framework that addresses geometric distortion and semantic misalignment in aerial-ground person re-identification…
+  [NeurIPS 2025][Autonomous Driving][Aerial-Ground Person Re-Identification] This paper proposes GSAlign, a framework that addresses geometric distortion and semantic misalignment in aerial-ground person re-identification (AG-ReID) via a Learnable Thin Plate Spline (LTPS) module and a Dynamic Alignment Module (DAM), achieving +18.8% mAP and +16.8% Rank-1 improvements on the CARGO dataset under the aerial-ground protocol.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Masking"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: aceb87b6480fe2ff
+content_hash: 0b25303089dc0416
 ---
 
 # GSAlign: Geometric and Semantic Alignment Network for Aerial-Ground Person Re-Identification

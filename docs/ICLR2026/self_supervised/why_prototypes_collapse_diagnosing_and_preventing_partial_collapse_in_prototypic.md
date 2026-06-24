@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][prototype collapse] This work diagnoses the root cause of partial prototype collapse in prototypical self-supervised learning (SSL) as shortcut learning induced by the joint optimization of the encoder and prototypes. It proposes a fully decoupled training strategy—using an online GMM to independently estimate prototypes—to eliminate coll
+  [ICLR 2026][Self-Supervised Learning][prototype collapse] This work diagnoses the root cause of partial prototype collapse in prototypical self-supervised learning (SSL) as shortcut learning induced by the joint optimization of the encoder and prototypes. It proposes a fully decoupled training strategy—using an online GMM to independently estimate prototypes—to eliminate collapse and improve downstream performance.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - prototype collapse
-  - DINO
-  - decoupling
-  - Gaussian mixture
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "prototype collapse"
+  - "DINO"
+  - "decoupling"
+  - "Gaussian mixture"
 date: 2026-05-08
-content_hash: 87a3a9da3dd1349d
+content_hash: 782f945e53593774
 ---
+
 # Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning
 
 **Conference**: ICLR 2026  
@@ -139,10 +140,10 @@ The encoder retains the original consistency loss (e.g., cross-view prediction i
 ## Related Papers
 
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
+- [\[ICML 2025\] Collapse-Proof Non-Contrastive Self-Supervised Learning](../../ICML2025/self_supervised/collapse-proof_non-contrastive_self-supervised_learning.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 - [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
 - [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
-- [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](../../ICML2026/self_supervised/the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
-- [\[ICLR 2026\] One-Shot Exemplars for Class Grounding in Self-Supervised Learning](one-shot_exemplars_for_class_grounding_in_self-supervised_learning.md)
 
 </div>
 

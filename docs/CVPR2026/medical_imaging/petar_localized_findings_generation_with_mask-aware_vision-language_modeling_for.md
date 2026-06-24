@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing three major challenges in 3D whole-body PET/CT report generation—extremely small lesions (<0.1% volume), scattered regions of interest, and the lack of mask-text aligned datasets—this paper introduces PETARSeg-11K, the first publicly available lesion-level aligned dataset, and PETAR-4B, a mask-aware 3D visio
+  [CVPR 2026][Medical Imaging][PET/CT report generation] Addressing three major challenges in 3D whole-body PET/CT report generation—extremely small lesions (<0.1% volume), scattered regions of interest, and the lack of mask-text aligned datasets—this paper introduces PETARSeg-11K, the first publicly available lesion-level aligned dataset, and PETAR-4B, a mask-aware 3D vision-language model. By utilizing "mask conditioning + focal prompts" to resolve fine-grained details in sma…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "PET/CT report generation"
+  - "lesion-level localization"
+  - "mask-aware"
+  - "3D vision-language models"
+  - "focal prompts"
 date: 2026-05-08
-content_hash: 5f49e535fbf320e5
+content_hash: cad7e6963df5e04b
 ---
+
 # PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting
 
 **Conference**: CVPR 2026  
@@ -119,15 +125,16 @@ Removing any module decreases performance; **focal prompts have the strongest im
 - **Value**: ⭐⭐⭐⭐⭐ High potential for clinical impact and follow-up research in 3D medical VLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] IVAAN: Instance-level Vision-Language Alignment via Attribute-Guided Text Prompts Generation for Nuclei Analysis](ivaan_instance-level_vision-language_alignment_via_attribute-guided_text_prompts.md)
 - [\[CVPR 2026\] D2T2 - Multimodal Automated Planning for Brachytherapy](d2t2_-_multimodal_automated_planning_for_brachytherapy.md)
-- [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
 - [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](../../NeurIPS2025/medical_imaging/toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[CVPR 2026\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
+- [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
+- [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
 
 </div>
 

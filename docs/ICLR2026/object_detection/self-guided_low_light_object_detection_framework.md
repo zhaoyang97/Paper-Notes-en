@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Guided Low Light Object Detection Framework
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] This paper proposes SGLDet: during training, a detachable enhancement-denoising-Fourier fusion auxiliary branch is attached to a standard detector. It generates pixel-level supervision from the low-light images themselves to strengthen backbone representations. Since the auxiliary branch is removed during testing, it s
+  [ICLR 2026][Object Detection][Low-Light Object Detection] This paper proposes SGLDet: during training, a detachable enhancement-denoising-Fourier fusion auxiliary branch is attached to a standard detector. It generates pixel-level supervision from the low-light images themselves to strengthen backbone representations. Since the auxiliary branch is removed during testing, it significantly improves performance on DARK FACE, ExDark, and nuImages night detection without increasin…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Low-Light Object Detection"
+  - "Self-Guided Supervision"
+  - "Image Enhancement"
+  - "Image Denoising"
+  - "Fourier Fusion"
 date: 2026-05-08
-content_hash: 593ced9db0b360cb
+content_hash: 166d1cba530418b4
 ---
+
 # Self-Guided Low Light Object Detection Framework
 
 **Conference**: ICLR 2026  
@@ -134,16 +140,16 @@ The total loss is $L_{total}=L_{det}+\lambda \cdot L_{self}$, where $L_{self}=\|
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs](../../AAAI2026/object_detection/loretta_a_low_resource_framework_to_poison_continuous_time_dynamic_graphs.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
 - [\[ICLR 2026\] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection](cgsa_class-guided_slot-aware_adaptation_for_source-free_object_detection.md)
+- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
 - [\[ICML 2026\] EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding](../../ICML2026/object_detection/earl_towards_a_unified_analysis-guided_reinforcement_learning_framework_for_egoc.md)
-- [\[ICLR 2026\] Point2RBox-v3: Self-Bootstrapping from Point Annotations via Integrated Pseudo-Label Refinement and Utilization](point2rbox-v3_self-bootstrapping_from_point_annotations_via_integrated_pseudo-la.md)
-- [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](../../CVPR2026/object_detection/ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
 
 </div>
 

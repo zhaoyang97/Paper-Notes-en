@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond English-Centric Training: How Reinforcement Learning Improves Cross-Lingual Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][RL vs SFT] Using Qwen2.5-3B-Base for controlled comparisons, the authors systematically demonstrate for the first time that RL (GRPO) possesses significantly stronger cross-lingual generalization for multilingual reasoning than SFT. Counter-intuitively, RL using **non-English** (German/Chinese) data outperforms English data. The
+  [ICLR2026][Reasoning][Cross-lingual reasoning] Using Qwen2.5-3B-Base for controlled comparisons, the authors systematically demonstrate for the first time that RL (GRPO) possesses significantly stronger cross-lingual generalization for multilingual reasoning than SFT. Counter-intuitively, RL using **non-English** (German/Chinese) data outperforms English data. The study provides mechanistic explanations from three perspectives: "reasoning-time language inconsistency…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RL vs SFT
-  - GRPO
+  - "ICLR2026"
+  - "Reasoning"
+  - "Cross-lingual reasoning"
+  - "RL vs SFT"
+  - "GRPO"
+  - "Multilingual generalization"
+  - "Language inconsistency"
 date: 2026-05-08
-content_hash: f17a1b04f2ec5ab6
+content_hash: 61efdf2f0d6ed76f
 ---
+
 # Beyond English-Centric Training: How Reinforcement Learning Improves Cross-Lingual Reasoning in LLMs
 
 **Conference**: ICLR2026  

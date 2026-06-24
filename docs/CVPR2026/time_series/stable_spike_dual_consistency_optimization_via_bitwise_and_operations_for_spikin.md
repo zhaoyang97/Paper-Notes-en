@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks
 description: >-
-  [CVPR 2026][Time Series][Paper Note] Ours proposes the Stable Spike dual consistency optimization framework, which utilizes hardware-friendly bitwise AND operations to decouple stable spike skeletons from multi-timestep spike maps and injects amplitude-aware spike noise to enhance generalization. It improves neuromorphic object recognition accuracy by up
+  [CVPR2026][Time Series][Spiking Neural Networks] Ours proposes the Stable Spike dual consistency optimization framework, which utilizes hardware-friendly bitwise AND operations to decouple stable spike skeletons from multi-timestep spike maps and injects amplitude-aware spike noise to enhance generalization. It improves neuromorphic object recognition accuracy by up to 8.33% under ultra-low latency ($T=2$).
 tags:
-  - CVPR 2026
-  - Time Series
+  - "CVPR2026"
+  - "Time Series"
+  - "Spiking Neural Networks"
+  - "Timestep Consistency"
+  - "Bitwise AND"
+  - "Stable Spike Skeleton"
+  - "Amplitude-aware Noise"
+  - "Neuromorphic Recognition"
+  - "Low-latency Inference"
 date: 2026-05-08
-content_hash: a8a21edd3bbdaa7e
+content_hash: 2082ddd5ea957a85
 ---
+
 # Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks
 
 **Conference**: CVPR2026  
@@ -146,11 +154,11 @@ The temperature parameter $\alpha=2$, and balance coefficients $\beta=\gamma=1.0
 
 ## Related Papers
 
+- [\[ICLR 2026\] DeNOTS: Stable Deep Neural ODEs for Time Series](../../ICLR2026/time_series/denots_stable_deep_neural_odes_for_time_series.md)
 - [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
 - [\[ICLR 2026\] Tuning the burn-in phase in training recurrent neural networks improves their performance](../../ICLR2026/time_series/tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
 - [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](../../AAAI2026/time_series/urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
 - [\[CVPR 2026\] Real-Time Long Horizon Air Quality Forecasting via Group-Relative Policy Optimization](real-time_long_horizon_air_quality_forecasting_via_group-relative_policy_optimiz.md)
-- [\[AAAI 2026\] Transparent Networks for Multivariate Time Series](../../AAAI2026/time_series/transparent_networks_for_multivariate_time_series.md)
 
 </div>
 

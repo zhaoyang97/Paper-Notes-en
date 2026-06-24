@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][KV cache compression] This paper proposes AirCache, which achieves model performance retention with only 10% of the visual KV cache—reducing decoding latency by 29%–66%—through an elite observ…
+  [ICCV 2025][Multimodal Efficiency][KV cache compression] This paper proposes AirCache, which achieves model performance retention with only 10% of the visual KV cache—reducing decoding latency by 29%–66%—through an elite observation window (leveraging text self-attention to select critical text tokens for evaluating visual token importance) and adaptive inter-layer budget allocation (based on the intensity and skewness of importance score distributions).
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "KV cache compression"
   - "vision-language model"
   - "elite observation window"
   - "adaptive budget allocation"
   - "attention analysis"
 date: 2026-05-08
-content_hash: df9a3c99cb975d0d
+content_hash: a13a925bcbc51665
 ---
 
 # AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference
@@ -109,11 +109,11 @@ Across multiple LVLMs and benchmarks, AirCache achieves the closest performance 
 
 ## Related Papers
 
-- [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inferencetime_search_with_vision_value_model_for_imp.md)
-- [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
-- [\[ICCV 2025\] The Inter-Intra Modal Measure: A Predictive Lens on Fine-Tuning Outcomes in Vision-Language Models](the_inter-intra_modal_measure_a_predictive_lens_on_fine-tuning_outcomes_in_visio.md)
-- [\[ICCV 2025\] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection](adaptive_prompt_learning_via_gaussian_outlier_synthesis_for_out_of_distribution_detection.md)
-- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
+- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/vlm_efficiency/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
+- [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
+- [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
 
 </div>
 

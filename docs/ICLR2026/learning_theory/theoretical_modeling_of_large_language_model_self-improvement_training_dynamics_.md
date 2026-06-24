@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper models the training process of LLM "self-improvement" as a set of coupled differential equations inspired by physical potential energy. The gap between "solver capability" and "verifier capability" drives the exponential convergence of both throughout training iterations. This model can fit real training cur
+  [ICLR 2026][Learning Theory][Self-improvement] This paper models the training process of LLM "self-improvement" as a set of coupled differential equations inspired by physical potential energy. The gap between "solver capability" and "verifier capability" drives the exponential convergence of both throughout training iterations. This model can fit real training curves, quantify the upper bound of self-improvement, and further analyze the optimal allocation of external data in…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "LLM Self-Improvement"
+  - "Training Dynamics"
+  - "Self-improvement"
+  - "Solver-verifier gap"
+  - "Uncertainty"
+  - "Cross-improvement"
 date: 2026-05-08
-content_hash: 50a08cc84c116060
+content_hash: 3ec60b634f10ea77
 ---
+
 # Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap
 
 **Conference**: ICLR 2026  
@@ -142,10 +149,10 @@ Differences between allocation strategies were minimal (Max-Min of 0.73 on Phi-4
 ## Related Papers
 
 - [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICLR 2026\] Unveiling the Basin-like Loss Landscape in Large Language Models](unveiling_the_basin-like_loss_landscape_in_large_language_models.md)
 - [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
 - [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
-- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 
 </div>
 

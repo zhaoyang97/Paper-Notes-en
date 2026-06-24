@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] Ours proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through three narrative components—Task Overview, Constraints, and Examples—it achieves a structured reasoning process, improving zero-shot pass@10 by an average of 18.7%
+  [ACL 2026][Code Intelligence][Narrative Reformulation] Ours proposes StoryCoder, a prompting framework that reformulates code generation problems into coherent natural language narratives. By guiding LLMs through three narrative components—Task Overview, Constraints, and Examples—it achieves a structured reasoning process, improving zero-shot pass@10 by an average of 18.7% across 11 models.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Narrative Reformulation"
+  - "Code Generation"
+  - "Prompt Engineering"
+  - "Structured Reasoning"
+  - "Algorithm Selection"
 date: 2026-05-08
-content_hash: f60c7be44a487762
+content_hash: 7d2c111b4df7a7ad
 ---
+
 # StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation
 
 **Conference**: ACL 2026  
@@ -132,7 +138,7 @@ Representative closed-source models (pass@10):
 - [\[ACL 2026\] ReCode: Reinforcing Code Generation with Reasoning-Process Rewards](recode_reinforcing_code_generation_with_reasoning-process_rewards.md)
 - [\[ACL 2025\] Tree-of-Code: A Tree-Structured Exploring Framework for End-to-End Code Generation](../../ACL2025/code_intelligence/tree-of-code_a_tree-structured_exploring_framework_for_end-to-end_code_generatio.md)
 - [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
-- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](../../CVPR2026/code_intelligence/geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
+- [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](../../ICLR2026/code_intelligence/evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
 - [\[NeurIPS 2025\] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning](../../NeurIPS2025/code_intelligence/codecrash_exposing_llm_fragility_to_misleading_natural_language_in_code_reasonin.md)
 
 </div>

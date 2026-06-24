@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Emergence of Linear Analogies in Word Embeddings
 description: >-
-  [NeurIPS 2025][Image Generation][Word Embeddings] A generative model based on binary semantic attributes is proposed to analytically prove the emergence mechanism of linear analogy structures in word embeddings (e.g.…
+  [NeurIPS 2025][Image Generation][Word Embeddings] A generative model based on binary semantic attributes is proposed to analytically prove the emergence mechanism of linear analogy structures in word embeddings (e.g., $W_{\text{king}} - W_{\text{man}} + W_{\text{woman}} \approx W_{\text{queen}}$), providing a unified explanation for four key empirical observations.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "PMI Matrix"
   - "Semantic Attributes"
 date: 2026-05-08
-content_hash: 16a712f21590fcd5
+content_hash: dc0bf53903bacbdb
 ---
 
 # On the Emergence of Linear Analogies in Word Embeddings
@@ -137,10 +137,10 @@ This paper is purely theoretical and involves no model training. Validation is c
 ## Related Papers
 
 - [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
+- [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
 - [\[NeurIPS 2025\] Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials](linear_differential_vision_transformer_learning_visual_contrasts_via_pairwise_di.md)
 - [\[NeurIPS 2025\] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems](npn_non-linear_projections_of_the_null-space_for_imaging_inverse_problems.md)
-- [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
-- [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
+- [\[CVPR 2025\] Pattern Analogies: Learning to Perform Programmatic Image Edits by Analogy](../../CVPR2025/image_generation/pattern_analogies_learning_to_perform_programmatic_image_edits_by_analogy.md)
 
 </div>
 

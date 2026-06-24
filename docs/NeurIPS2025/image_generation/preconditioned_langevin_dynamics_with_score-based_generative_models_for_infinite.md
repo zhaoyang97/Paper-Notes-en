@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems
 description: >-
-  [NeurIPS 2025][Image Generation][Preconditioned Langevin dynamics] This paper rigorously analyzes score-based generative model (SGM)-driven Langevin posterior samplers in infinite-dimensional Hilbert spaces…
+  [NeurIPS 2025 Spotlight][Image Generation][Preconditioned Langevin dynamics] This paper rigorously analyzes score-based generative model (SGM)-driven Langevin posterior samplers in infinite-dimensional Hilbert spaces, derives for the first time convergence bounds that explicitly depend on score approximation errors, and identifies an optimal preconditioner that jointly depends on the forward operator and score errors, guaranteeing uniform convergence rates across all posterio…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Preconditioned Langevin dynamics"
   - "score-based generative models"
@@ -12,7 +12,7 @@ tags:
   - "function space"
   - "optimal preconditioner"
 date: 2026-05-08
-content_hash: 7df2e7300cdf4413
+content_hash: fae79d3a4669e135
 ---
 
 # Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems
@@ -134,7 +134,7 @@ Two linear inverse problems with analytically tractable solutions are used to va
 - [\[NeurIPS 2025\] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems](npn_non-linear_projections_of_the_null-space_for_imaging_inverse_problems.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
 - [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
-- [\[NeurIPS 2025\] On the Emergence of Linear Analogies in Word Embeddings](on_the_emergence_of_linear_analogies_in_word_embeddings.md)
+- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 
 </div>
 

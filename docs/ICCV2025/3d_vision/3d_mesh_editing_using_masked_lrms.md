@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D Mesh Editing using Masked LRMs
 description: >-
-  [ICCV 2025][3D Vision][LRM] This paper proposes MaskedLRM, which reformulates 3D shape editing as a conditional reconstruction problem. During training, randomly generated 3D occluders mask multi-view inputs…
+  [ICCV 2025][3D Vision][LRM] This paper proposes MaskedLRM, which reformulates 3D shape editing as a conditional reconstruction problem. During training, randomly generated 3D occluders mask multi-view inputs, and a single clean conditioning view guides completion of the occluded regions. At inference, the user defines an edit region and provides a single edited image; the model produces an edited 3D mesh in a **single forward pass in under 3 seconds** — 2–10× faster than opti…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Conditional Inpainting"
   - "Multi-view Consistency"
 date: 2026-05-08
-content_hash: b5a46f0bf8dd1795
+content_hash: 3e727517c3004e16
 ---
 
 # 3D Mesh Editing using Masked LRMs
@@ -126,9 +126,9 @@ The paradigm of "conditional reconstruction = editing" is generalizable to other
 
 - [\[ICCV 2025\] MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild](maskhand_generative_masked_modeling_for_robust_hand_mesh_reconstruction_in_the_w.md)
 - [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
+- [\[CVPR 2025\] MEGA: Masked Generative Autoencoder for Human Mesh Recovery](../../CVPR2025/3d_vision/mega_masked_generative_autoencoder_for_human_mesh_recovery.md)
+- [\[CVPR 2025\] Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories](../../CVPR2025/3d_vision/perturb-and-revise_flexible_3d_editing_with_generative_trajectories.md)
 - [\[ICCV 2025\] Monocular Semantic Scene Completion via Masked Recurrent Networks](monocular_semantic_scene_completion_via_masked_recurrent_networks.md)
-- [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
-- [\[ICCV 2025\] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery](ajahr_amputated_joint_aware_3d_human_mesh_recovery.md)
 
 </div>
 

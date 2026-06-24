@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Contrastive Predictive Coding Done Right for Mutual Information Estimation
 description: >-
-  [ICLR 2026][Self-Supervised Learning][InfoNCE] This paper theoretically debunks the long-standing misconception that "InfoNCE is a mutual information estimator"—it is actually a variational lower bound of another divergence (K-way JSD) and can never converge to the KL divergence. The authors introduce a simple modification by adding an "anchor class" (InfoNCE-ancho
+  [ICLR2026][Self-Supervised Learning][Contrastive learning] This paper theoretically debunks the long-standing misconception that "InfoNCE is a mutual information estimator"—it is actually a variational lower bound of another divergence (K-way JSD) and can never converge to the KL divergence. The authors introduce a simple modification by adding an "anchor class" (InfoNCE-anchor), allowing the critic to directly learn unambiguous density ratios. This results in a low-bias…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - InfoNCE
-  - proper scoring rule
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Contrastive learning"
+  - "Mutual information estimation"
+  - "InfoNCE"
+  - "Density ratio estimation"
+  - "proper scoring rule"
 date: 2026-05-08
-content_hash: 057d90fa4f3608df
+content_hash: 9e53d32573970d42
 ---
+
 # Contrastive Predictive Coding Done Right for Mutual Information Estimation
 
 **Conference**: ICLR2026  
@@ -136,8 +140,8 @@ Self-supervised representation learning (ResNet-18 pre-trained on CIFAR-100, $B{
 - Value: ⭐⭐⭐⭐ An important clarification and new SOTA tool for the "MI estimation" community; direct gains for SSL practice are limited but the conceptual correction value is high.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

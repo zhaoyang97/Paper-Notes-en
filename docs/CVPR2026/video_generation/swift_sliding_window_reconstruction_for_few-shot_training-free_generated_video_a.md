@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution
 description: >-
-  [CVPR 2026][Video Generation][3D VAE] SWIFT defines the "few-shot training-free generated video attribution" task for the first time. By leveraging the "multi-frame pixel $\leftrightarrow$ single-frame latent" temporal mapping in 3D VAEs, it performs normal and corrupted reconstructions via fixed-length sliding windows. The ratio of reconstruction losses o
+  [CVPR 2026][Video Generation][Generated video attribution] SWIFT defines the "few-shot training-free generated video attribution" task for the first time. By leveraging the "multi-frame pixel $\leftrightarrow$ single-frame latent" temporal mapping in 3D VAEs, it performs normal and corrupted reconstructions via fixed-length sliding windows. The ratio of reconstruction losses on overlapping frames serves as the attribution signal. It achieves over 90% average attribution accur…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - 3D VAE
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Generated video attribution"
+  - "3D VAE"
+  - "Sliding window reconstruction"
+  - "Training-free"
+  - "Temporal consistency"
 date: 2026-05-08
-content_hash: ae1d95e407c9afc1
+content_hash: 3ba9e7870ab3abc6
 ---
+
 # SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Window selection ablation (HunyuanVideo, $K=4$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
-- [\[CVPR 2026\] FlashLips: 100-FPS Mask-Free Latent Lip-Sync using Reconstruction Instead of Diffusion or GANs](flashlips_100-fps_mask-free_latent_lip-sync_using_reconstruction_instead_of_diff.md)
-- [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
 - [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 - [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
+- [\[ICCV 2025\] D3: Training-Free AI-Generated Video Detection Using Second-Order Features](../../ICCV2025/video_generation/d3_training-free_ai-generated_video_detection_using_second-order_features.md)
+- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
+- [\[CVPR 2026\] FlashLips: 100-FPS Mask-Free Latent Lip-Sync using Reconstruction Instead of Diffusion or GANs](flashlips_100-fps_mask-free_latent_lip-sync_using_reconstruction_instead_of_diff.md)
 
 </div>
 

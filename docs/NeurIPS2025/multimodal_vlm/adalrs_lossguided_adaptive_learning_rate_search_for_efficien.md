@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining
 description: >-
-  [NeurIPS 2025][Multimodal VLM][learning rate search] AdaLRS is proposed as a plug-and-play online learning rate search algorithm that adaptively adjusts the learning rate by monitoring the loss descent velocity…
+  [NeurIPS 2025][Multimodal VLM][learning rate search] AdaLRS is proposed as a plug-and-play online learning rate search algorithm that adaptively adjusts the learning rate by monitoring the loss descent velocity, reducing the cost of learning rate hyperparameter search from multiple independent training runs to a single run, achieving approximately 50% savings in training cost.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "foundation model pretraining"
   - "cosine scheduler"
 date: 2026-05-08
-content_hash: c872c2e3c6b317eb
+content_hash: c2157bcdf0e7ceea
 ---
 
 # AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining
@@ -124,11 +124,11 @@ The method monitors the slope of the training loss curve (loss descent velocity)
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] The Transparent Earth: A Multimodal Foundation Model for the Earth's Subsurface](the_transparent_earth_a_multimodal_foundation_model_for_the_earths_subsurface.md)
 - [\[ICCV 2025\] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning](../../ICCV2025/multimodal_vlm/babyvlm_data-efficient_pretraining_of_vlms_inspired_by_infant_learning.md)
+- [\[ACL 2025\] AVG-LLaVA: An Efficient Large Multimodal Model with Adaptive Visual Granularity](../../ACL2025/multimodal_vlm/avg-llava_an_efficient_large_multimodal_model_with_adaptive_visual_granularity.md)
+- [\[CVPR 2025\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2025/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model_era.md)
 - [\[NeurIPS 2025\] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](enhancing_visionlanguage_model_reliability_with_uncertaintyg.md)
-- [\[NeurIPS 2025\] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness](robustmerge_parameter-efficient_model_merging_for_mllms_with_direction_robustnes.md)
-- [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2026/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model.md)
-- [\[NeurIPS 2025\] PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation](prefixkv_adaptive_prefix_kv_cache_is_what_vision_instruction.md)
 
 </div>
 

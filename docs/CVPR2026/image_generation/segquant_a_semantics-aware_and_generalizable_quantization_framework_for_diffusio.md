@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The SegQuant framework is proposed, which achieves high-fidelity post-training quantization for diffusion models that is generalizable across architectures and compatible with deployment pipelines. This is achieved through semantics-aware segmentation quantization (SegLinear) based on static computation graphs and hard
+  [CVPR2026][Image Generation][Diffusion Model Quantization] The SegQuant framework is proposed, which achieves high-fidelity post-training quantization for diffusion models that is generalizable across architectures and compatible with deployment pipelines. This is achieved through semantics-aware segmentation quantization (SegLinear) based on static computation graphs and hardware-native dual-scale polarity-preserving quantization (DualScale)…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion Model Quantization"
+  - "Post-Training Quantization"
+  - "Semantics-Aware Segmentation"
+  - "Polarity-Preserving"
+  - "Deployment-Friendly"
 date: 2026-05-08
-content_hash: c98f360e56d2cb11
+content_hash: a26738cc8a4f31ce
 ---
+
 # SegQuant: A Semantics-Aware and Generalizable Quantization Framework for Diffusion Models
 
 **Conference**: CVPR2026  
@@ -176,11 +182,11 @@ Ours is a pure PTQ framework, introducing no additional training loss. Quantizat
 
 ## Related Papers
 
-- [\[ECCV 2024\] MagicEraser: Erasing Any Objects via Semantics-Aware Control](../../ECCV2024/image_generation/magiceraser_erasing_any_objects_via_semantics-aware_control.md)
-- [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
+- [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](../../ICLR2026/image_generation/quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
+- [\[ICLR 2026\] AttriCtrl: A Generalizable Framework for Controlling Semantic Attribute Intensity in Diffusion Models](../../ICLR2026/image_generation/attrictrl_a_generalizable_framework_for_controlling_semantic_attribute_intensity.md)
 - [\[ICCV 2025\] DMQ: Dissecting Outliers of Diffusion Models for Post-Training Quantization](../../ICCV2025/image_generation/dmq_dissecting_outliers_of_diffusion_models_for_post-training_quantization.md)
-- [\[CVPR 2026\] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception](unipercept_a_unified_diffusion_model_for_generalizable_visual_perception.md)
-- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
+- [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
 
 </div>
 

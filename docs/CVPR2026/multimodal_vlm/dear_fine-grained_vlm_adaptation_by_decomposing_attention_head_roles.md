@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 description: >-
-  [CVPR 2026][Multimodal VLM][Prompt Learning] This paper proposes DeAR, which decomposes deep attention heads in ViT into three functional roles—attribute, generalization, and mixed heads—using a Concept Entropy metric. By designing a role-based attention mask mechanism to precisely control information flow, it achieves an optimal balance between task adaptation a
+  [CVPR 2026][Multimodal VLM][Prompt Learning] This paper proposes DeAR, which decomposes deep attention heads in ViT into three functional roles—attribute, generalization, and mixed heads—using a Concept Entropy metric. By designing a role-based attention mask mechanism to precisely control information flow, it achieves an optimal balance between task adaptation and zero-shot generalization across 15 datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Prompt Learning
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Prompt Learning"
+  - "VLM Adaptation"
+  - "Attention Head Role Decomposition"
+  - "CLIP"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 1046179fb9546e66
+content_hash: 6d436b26c4ad8947
 ---
+
 # DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 
 **Conference**: CVPR 2026  
@@ -146,12 +150,17 @@ Where $\mathcal{L}_{\text{CE}}$ is the standard cross-entropy loss, $\mathcal{L}
 
 <div class="related-papers" markdown="1">
 
-No related papers cited in this section.
+## Related Papers
+
+- [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
+- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
+- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)

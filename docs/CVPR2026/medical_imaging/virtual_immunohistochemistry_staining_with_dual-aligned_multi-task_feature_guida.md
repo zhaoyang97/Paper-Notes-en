@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Virtual Immunohistochemistry Staining with Dual-Aligned Multi-Task Feature Guidance
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] When translating H&E pathology images to virtual immunohistochemistry (IHC), paired images naturally suffer from spatial misalignment, and supervision from single auxiliary tasks is often too weak. This paper extracts multi-task features using a set of auxiliary task models, performing spatial alignment followed by tas
+  [CVPR 2026][Medical Imaging][Virtual Immunohistochemistry Staining] When translating H&E pathology images to virtual immunohistochemistry (IHC), paired images naturally suffer from spatial misalignment, and supervision from single auxiliary tasks is often too weak. This paper extracts multi-task features using a set of auxiliary task models, performing spatial alignment followed by task-gap alignment (dual alignment). These semantic features provide feature-level guidance to…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Virtual Immunohistochemistry Staining"
+  - "Multi-Task Feature Guidance"
+  - "Spatial Alignment"
+  - "Task-Gap Alignment"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 7bf81bf3d67d625c
+content_hash: efbd1ec9cf64485d
 ---
+
 # Virtual Immunohistochemistry Staining with Dual-Aligned Multi-Task Feature Guidance
 
 **Conference**: CVPR 2026  
@@ -144,9 +150,9 @@ Ours leads in FID/KID/LPIPS for three out of four markers. While some methods sh
 ## Related Papers
 
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
-- [\[CVPR 2026\] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET](cross-domain_dual-stream_feature_disentanglement_for_brain_disorder_prediction_w.md)
 - [\[CVPR 2025\] UNIStainNet: Foundation-Model-Guided Virtual Staining of H&E to IHC](../../CVPR2025/medical_imaging/unistainnet_foundation-model-guided_virtual_staining_of_he_to_ihc.md)
 - [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
+- [\[CVPR 2026\] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET](cross-domain_dual-stream_feature_disentanglement_for_brain_disorder_prediction_w.md)
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EgoSound: Benchmarking Sound Understanding in Egocentric Videos
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EgoSound is the first benchmark to systematically evaluate the "egocentric sound understanding" capabilities of Multimodal Large Language Models (MLLMs). By merging Ego4D and EgoBlind data sources and defining a 7-task taxonomy covering intrinsic sound perception and cross-modal reasoning, it utilizes a three-stage aut
+  [CVPR 2026][Multimodal VLM][Egocentric Perspective] EgoSound is the first benchmark to systematically evaluate the "egocentric sound understanding" capabilities of Multimodal Large Language Models (MLLMs). By merging Ego4D and EgoBlind data sources and defining a 7-task taxonomy covering intrinsic sound perception and cross-modal reasoning, it utilizes a three-stage automated pipeline—"interaction annotation → audio-centric captioning → visually-verified OpenQA"—to produce 7…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Egocentric Perspective"
+  - "Sound Understanding"
+  - "Audio-Visual QA"
+  - "MLLM Evaluation"
+  - "Automated Data Generation"
 date: 2026-05-08
-content_hash: 4b0cf32f9ee8f5ea
+content_hash: 22bd20633c3623a2
 ---
+
 # EgoSound: Benchmarking Sound Understanding in Egocentric Videos
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ The gap between the best model and humans exceeds 27% (56.7 vs 83.9). Most model
 
 ## Related Papers
 
+- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
 - [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
-- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
 - [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](../../NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
-- [\[CVPR 2026\] EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy](egoprox_evaluating_mllms_on_egocentric_3d_proximity_reasoning_across_a_cognitive.md)
-- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
+- [\[CVPR 2026\] LifeEval: A Multimodal Benchmark for Assistive AI in Egocentric Daily Life Tasks](lifeeval_a_multimodal_benchmark_for_assistive_ai_in_egocentric_daily_life_tasks.md)
+- [\[AAAI 2026\] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding](../../AAAI2026/multimodal_vlm/exo2ego_exocentric_knowledge_guided_mllm_for_egocentric_vide.md)
 
 </div>
 

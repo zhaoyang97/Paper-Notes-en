@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Vision-Language Model] VLADR proposes leveraging fine-grained attribute knowledge from Vision-Language Models (VLMs) to enhance lifelong person re-identification. Through a two-stage training process involving Multi-granular Textual Attribute Disentanglement (MTAD) and Intra-domain Cross-modal Attribute Reinforcement (ICAR), it explicitly mo
+  [CVPR 2026][Human Understanding][Lifelong Person Re-Identification] VLADR proposes leveraging fine-grained attribute knowledge from Vision-Language Models (VLMs) to enhance lifelong person re-identification. Through a two-stage training process involving Multi-granular Textual Attribute Disentanglement (MTAD) and Intra-domain Cross-modal Attribute Reinforcement (ICAR), it explicitly models cross-domain shared human attributes to achieve efficient knowledge transfer and forget…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Lifelong Person Re-Identification"
+  - "Vision-Language Models"
+  - "Attribute Disentanglement"
+  - "Cross-modal Alignment"
+  - "Forgetting Mitigation"
 date: 2026-05-08
-content_hash: fcdef0f364e568fc
+content_hash: a030e19e1b5c3504
 ---
+
 # Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -168,7 +173,7 @@ Ours achieves consistent improvements across two standard LReID evaluation setti
 - [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
 - [\[CVPR 2026\] Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification](dynamic_magic_unleashing_restricted_knowledge_for_lifelong_person_re-identificat.md)
 - [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
-- [\[CVPR 2026\] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)
+- [\[CVPR 2026\] VRCLIP: Multimodal Canonical Correlation Alignment for CLIP-Driven Vision-Radio Person Re-Identification](vrclip_multimodal_canonical_correlation_alignment_for_clip-driven_vision-radio_p.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow Caching for Autoregressive Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Transformer] FlowCache identifies that different chunks in autoregressive video generation are in heterogeneous denoising states at the same timestep. Consequently, it replaces "uniform whole-frame caching" with an independent chunkwise adaptive caching strategy, complemented by a joint importance-redundancy KV cache compression. T
+  [ICLR 2026][Video Generation][Autoregressive Video Generation] FlowCache identifies that different chunks in autoregressive video generation are in heterogeneous denoising states at the same timestep. Consequently, it replaces "uniform whole-frame caching" with an independent chunkwise adaptive caching strategy, complemented by a joint importance-redundancy KV cache compression. This achieves 2.38× and 6.7× speedups on MAGI-1 and SkyReels-V2, respectively…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Autoregressive Video Generation"
+  - "Feature Caching"
+  - "KV Cache Compression"
+  - "Diffusion Transformer"
+  - "Training-free Acceleration"
 date: 2026-05-08
-content_hash: 957e4a3b96e3a102
+content_hash: 38941c4fc80ff534
 ---
+
 # Flow Caching for Autoregressive Video Generation
 
 **Conference**: ICLR 2026  
@@ -118,7 +123,7 @@ flowchart TD
 - [\[ICLR 2026\] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation](precisecache_precise_feature_caching_for_efficient_and_high-fidelity_video_gener.md)
 - [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](../../CVPR2026/video_generation/accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
 - [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](streaming_autoregressive_video_generation_via_diagonal_distillation.md)
-- [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
+- [\[CVPR 2026\] Flowception: Temporally Expansive Flow Matching for Video Generation](../../CVPR2026/video_generation/flowception_temporally_expansive_flow_matching_for_video_generation.md)
 
 </div>
 

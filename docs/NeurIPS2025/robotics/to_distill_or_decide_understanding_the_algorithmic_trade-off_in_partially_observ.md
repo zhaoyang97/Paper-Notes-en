@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] To Distill or Decide? Understanding the Algorithmic Trade-off in Partially Observable Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][Partial observability] Using a theoretical framework (perturbed Block MDP) and controlled locomotion experiments…
+  [NeurIPS 2025][Robotics][Partial observability] Using a theoretical framework (perturbed Block MDP) and controlled locomotion experiments, this paper systematically investigates the algorithmic trade-off between **privileged expert distillation** and **standard RL** (without privileged information) in partially observable RL, finding that the trade-off is primarily governed by the stochasticity of latent state dynamics.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Block MDP"
   - "algorithmic trade-off"
 date: 2026-05-08
-content_hash: 1f3cb857abb007e1
+content_hash: fec20d568636fc3b
 ---
 
 # To Distill or Decide? Understanding the Algorithmic Trade-off in Partially Observable Reinforcement Learning

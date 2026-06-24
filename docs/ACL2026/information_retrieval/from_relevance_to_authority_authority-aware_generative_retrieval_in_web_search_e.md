@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines
 description: >-
-  [ACL 2026][Information Retrieval & RAG][GRPO] This paper proposes AuthGR, the first framework to systematically integrate document authority into generative retrieval. By utilizing VLM multimodal authority scoring, a three-stage progressive training pipeline (CPT→SFT→GRPO), and a hybrid ensemble deployment pipeline, it validated significant user engagement improve
+  [ACL 2026][Information Retrieval & RAG][Generative Retrieval] This paper proposes AuthGR, the first framework to systematically integrate document authority into generative retrieval. By utilizing VLM multimodal authority scoring, a three-stage progressive training pipeline (CPT→SFT→GRPO), and a hybrid ensemble deployment pipeline, it validated significant user engagement improvements in large-scale A/B tests on the Naver commercial search engine.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - GRPO
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Generative Retrieval"
+  - "Authority"
+  - "GRPO"
+  - "Multimodal Scoring"
+  - "Web Search"
 date: 2026-05-08
-content_hash: 710753c37142cd70
+content_hash: a8be97b76a07f1c6
 ---
+
 # From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines
 
 **Conference**: ACL 2026  

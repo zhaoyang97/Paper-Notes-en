@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning
 description: >-
-  [CVPR 2026][Multimodal VLM][AR+Diffusion] The Narrative Weaver framework is proposed, combining the narrative planning of MLLMs with the fine-grained generation of diffusion models. It achieves long-range visual consistency under multi-modal conditions through learnable queries and a dynamic Memory Bank. Additionally, it introduces EAVSD, the first e-commerce
+  [CVPR 2026][Multimodal VLM][Long-range visual consistency] The Narrative Weaver framework is proposed, combining the narrative planning of MLLMs with the fine-grained generation of diffusion models. It achieves long-range visual consistency under multi-modal conditions through learnable queries and a dynamic Memory Bank. Additionally, it introduces EAVSD, the first e-commerce advertising storyboard dataset containing over 330K images.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - AR+Diffusion
-  - Memory Bank
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Long-range visual consistency"
+  - "Narrative generation"
+  - "AR+Diffusion"
+  - "Memory Bank"
+  - "E-commerce advertising"
 date: 2026-05-08
-content_hash: f5249afbdbcd41c0
+content_hash: 6055c68277659b8f
 ---
+
 # Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning
 
 **Conference**: CVPR 2026  
@@ -138,10 +142,10 @@ A three-stage progressive training strategy is utilized for efficient learning:
 ## Related Papers
 
 - [\[CVPR 2026\] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training](wan-weaver_interleaved_multi-modal_generation_via_decoupled_training.md)
-- [\[ACL 2025\] Mitigating Visual Forgetting via Take-along Visual Conditioning for Multi-modal Long CoT Reasoning](../../ACL2025/multimodal_vlm/tvc_mitigating_visual_forgetting.md)
-- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
 - [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
+- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
 
 </div>
 

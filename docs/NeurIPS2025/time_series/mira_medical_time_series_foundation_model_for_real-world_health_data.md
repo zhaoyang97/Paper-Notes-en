@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIRA: Medical Time Series Foundation Model for Real-World Health Data
 description: >-
-  [NeurIPS 2025][Time Series][Time series foundation model] This paper presents MIRA, a foundation model specifically designed for irregular medical time series. Through continuous-time rotary position encoding (CT-RoPE)…
+  [NeurIPS 2025][Time Series][Time series foundation model] This paper presents MIRA, a foundation model specifically designed for irregular medical time series. Through continuous-time rotary position encoding (CT-RoPE), frequency-specific Mixture-of-Experts (MoE), and a Neural ODE-based extrapolation module, MIRA is pretrained on 454 billion observation points and achieves zero-shot forecasting performance that reduces average error by 8% and 6% in OOD and in-distribution (ID…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Neural ODE"
   - "Mixture-of-Experts"
 date: 2026-05-08
-content_hash: 23c3e7c4d708e176
+content_hash: bc90d5396932593a
 ---
 
 # MIRA: Medical Time Series Foundation Model for Real-World Health Data
@@ -151,9 +151,9 @@ Compared to general-purpose time series foundation models such as Time-MoE, Moir
 
 - [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
 - [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
+- [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](../../ICLR2026/time_series/repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 - [\[NeurIPS 2025\] Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition](human-machine_ritual_synergic_performance_through_real-time_motion_recognition.md)
-- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](../../ICLR2026/time_series/adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
 
 </div>
 

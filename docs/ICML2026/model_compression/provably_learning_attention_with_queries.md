@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Provably Learning Attention with Queries
 description: >-
-  [ICML 2026][Model Compression][model stealing] The authors prove that single-head softmax attention can be precisely recovered with surprising simplicity under value-query access—requiring only $O(d^2)$ queries, which is significantly easier than ReLU MLPs of equivalent structure. When the head dimension $r \ll d$, the complexity can be reduced to $O(rd)$ using com
+  [ICML 2026][Model Compression][model stealing] The authors prove that single-head softmax attention can be precisely recovered with surprising simplicity under value-query access—requiring only $O(d^2)$ queries, which is significantly easier than ReLU MLPs of equivalent structure. When the head dimension $r \ll d$, the complexity can be reduced to $O(rd)$ using compressed sensing. The findings are extended to noisy oracles, membership queries…
 tags:
-  - ICML 2026
-  - Model Compression
-  - model stealing
-  - value query
-  - single-head attention
-  - parameter recovery
-  - compressed sensing
+  - "ICML 2026"
+  - "Model Compression"
+  - "model stealing"
+  - "value query"
+  - "single-head attention"
+  - "parameter recovery"
+  - "compressed sensing"
 date: 2026-05-08
-content_hash: 3938523deaab1c48
+content_hash: 1459b63f8a7f9117
 ---
+
 # Provably Learning Attention with Queries
 
 **Conference**: ICML 2026  
@@ -140,10 +141,10 @@ The paper is theoretical and does not contain empirical experiments. The "data" 
 
 ## Related Papers
 
+- [\[ICML 2026\] QHyer: Q-conditioned Hybrid Attention-mamba Transformer for Offline Goal-conditioned RL](qhyer_q-conditioned_hybrid_attention-mamba_transformer_for_offline_goal-conditio.md)
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
+- [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](../../ICLR2026/model_compression/fasa_frequency-aware_sparse_attention.md)
 - [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
-- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
-- [\[ICML 2026\] Easier to Judge Than to Find: Predicting In-Context Learning Success for Demonstration Selection](easier_to_judge_than_to_find_predicting_in-context_learning_success_for_demonstr.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
 
 </div>

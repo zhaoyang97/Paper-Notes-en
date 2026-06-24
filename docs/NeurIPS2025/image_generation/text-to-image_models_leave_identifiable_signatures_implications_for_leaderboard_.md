@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Text-to-Image Models Leave Identifiable Signatures: Implications for Leaderboard Security
 description: >-
-  [NeurIPS 2025 (Workshop: Lock-LLM)][Image Generation][text-to-image models] This paper demonstrates that text-to-image (T2I) models leave identifiable "signatures" in their generated images due to differences in training…
+  [NeurIPS 2025 (Workshop: Lock-LLM)][Image Generation][text-to-image models] This paper demonstrates that text-to-image (T2I) models leave identifiable "signatures" in their generated images due to differences in training data, architecture, and scale. Even without controlling the input prompt, an adversary can de-anonymize models on leaderboards via simple centroid classification in CLIP embedding space, achieving 87% Top-1 accuracy, thereby enabling ranking manipulation atta…
 tags:
   - "NeurIPS 2025 (Workshop: Lock-LLM)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "CLIP embeddings"
   - "adversarial manipulation"
 date: 2026-05-08
-content_hash: 05a5bdd6afa8c9c7
+content_hash: f16c3b94fa854e71
 ---
 
 # Text-to-Image Models Leave Identifiable Signatures: Implications for Leaderboard Security
@@ -139,8 +139,8 @@ No model training is performed. CLIP embeddings are extracted using a pretrained
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
 - [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
 - [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
+- [\[ACL 2025\] Multimodal Pragmatic Jailbreak on Text-to-image Models](../../ACL2025/image_generation/multimodal_pragmatic_jailbreak_on_text-to-image_models.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models](fairimagen_post-processing_for_bias_mitigation_in_text-to-image_models.md)
 
 </div>
 

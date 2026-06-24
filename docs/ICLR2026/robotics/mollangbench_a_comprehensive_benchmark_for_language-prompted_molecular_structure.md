@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][molecular recognition] This work proposes MolLangBench, a high-quality, unambiguous molecule-language interface benchmark constructed via automated tools and expert annotation. It covers recognition, editing, and generation tasks across SMILES, image, and graph modalities. Evaluations of 16+ commercial LLMs and 5 chemistry-specific models re
+  [ICLR 2026][Robotics][molecular recognition] This work proposes MolLangBench, a high-quality, unambiguous molecule-language interface benchmark constructed via automated tools and expert annotation. It covers recognition, editing, and generation tasks across SMILES, image, and graph modalities. Evaluations of 16+ commercial LLMs and 5 chemistry-specific models reveal that even GPT-5 remains significantly deficient in basic molecular operations (e.g.…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - molecular recognition
-  - molecule editing
-  - molecule generation
-  - molecule-language alignment
-  - benchmark
+  - "ICLR 2026"
+  - "Robotics"
+  - "molecular recognition"
+  - "molecule editing"
+  - "molecule generation"
+  - "molecule-language alignment"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 554d55c60e94a8e5
+content_hash: 56fbab119952dcb1
 ---
+
 # MolLangBench: A Comprehensive Benchmark for Language-Prompted Molecular Structure Recognition, Editing, and Generation
 
 **Conference**: ICLR 2026  
@@ -163,16 +164,16 @@ MolLangBench does not perform model training. Evaluation metrics include: Exact 
 - Value: ⭐⭐⭐⭐⭐ Provides a much-needed standardized tool for AI in chemistry and may shift research focus within the field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Memory, Benchmark & Robots: A Benchmark for Solving Complex Tasks with Reinforcement Learning](memory_benchmark_robots_a_benchmark_for_solving_complex_tasks_with_reinforcement.md)
 - [\[ICLR 2026\] Capturing Visual Environment Structure Correlates with Control Performance](capturing_visual_environment_structure_correlates_with_control_performance.md)
 - [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
+- [\[ICLR 2026\] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](x-vla_soft-prompted_transformer_as_scalable_cross-embodiment_vision-language-act.md)
 - [\[CVPR 2026\] Towards Training-Free Scene Text Editing](../../CVPR2026/robotics/towards_training-free_scene_text_editing.md)
-- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
 
 </div>
 

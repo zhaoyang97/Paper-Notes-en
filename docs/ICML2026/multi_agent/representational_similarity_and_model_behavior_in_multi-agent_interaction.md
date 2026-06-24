@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Representational Similarity and Model Behavior in Multi-Agent Interaction
 description: >-
-  [ICML 2026][Multi-Agent][CKA] This paper pairs 276 LLMs across 8 interactive games and identifies a robust pattern: pairs with higher internal representational similarity (quantified by CKA) exhibit better cooperation but lower collective novelty in their outputs—revealing a fundamental trade-off between cooperation and creativity driven by represe
+  [ICML2026][Multi-Agent][Representational Similarity] This paper pairs 276 LLMs across 8 interactive games and identifies a robust pattern: pairs with higher internal representational similarity (quantified by CKA) exhibit better cooperation but lower collective novelty in their outputs—revealing a fundamental trade-off between cooperation and creativity driven by representational similarity.
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - CKA
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Representational Similarity"
+  - "Cooperation"
+  - "Novelty"
+  - "CKA"
 date: 2026-05-08
-content_hash: c6bcbda3a24265ca
+content_hash: 168f3aaea428eb31
 ---
+
 # Representational Similarity and Model Behavior in Multi-Agent Interaction
 
 **Conference**: ICML2026  
@@ -139,10 +143,10 @@ The KBC effect is weakest as it has a unique Nash Equilibrium (choosing 0), maki
 ## Related Papers
 
 - [\[ACL 2026\] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey](../../ACL2026/multi_agent/llm-based_human-agent_collaboration_and_interaction_systems_a_survey.md)
+- [\[ICLR 2026\] CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards](../../ICLR2026/multi_agent/comas_co-evolving_multi-agent_systems_via_interaction_rewards.md)
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
 - [\[NeurIPS 2025\] R&D-Agent-Quant: A Multi-Agent Framework for Data-Centric Factors and Model Joint Optimization](../../NeurIPS2025/multi_agent/rd-agent-quant_a_multi-agent_framework_for_data-centric_factors_and_model_joint_.md)
-- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
-- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[ICML 2026\] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning](toward_culturally_aligned_llms_through_ontology-guided_multi-agent_reasoning.md)
 
 </div>
 

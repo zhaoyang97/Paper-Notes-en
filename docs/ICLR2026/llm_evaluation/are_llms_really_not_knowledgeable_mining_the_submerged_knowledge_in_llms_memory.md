@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Are LLMs Really Not Knowledgeable? Mining the Submerged Knowledge in LLMs' Memory
 description: >-
-  [ICLR 2026][LLM Evaluation][Hits@k] This paper argues that when LLMs fail QA tasks or respond with "unsure," it is often not because the knowledge is missing from the parameters, but because it is "submerged" and not expressed. It proposes the Hits@k metric to demonstrate that correct answers frequently reside within the top-k logits but are not selected
+  [ICLR 2026][LLM Evaluation][Parametric Knowledge] This paper argues that when LLMs fail QA tasks or respond with "unsure," it is often not because the knowledge is missing from the parameters, but because it is "submerged" and not expressed. It proposes the Hits@k metric to demonstrate that correct answers frequently reside within the top-k logits but are not selected (e.g., LLaMA3-8B achieves only 17.2% Hits@1 on DBpedia but 57.9% Hits@5). It further reveals that the prevale…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Hits@k
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Parametric Knowledge"
+  - "Storage-Expression Gap"
+  - "Hits@k"
+  - "Decoding Inhibition"
+  - "Hallucination"
 date: 2026-05-08
-content_hash: 6506b33352e260a2
+content_hash: 88d2045528b24408
 ---
+
 # Are LLMs Really Not Knowledgeable? Mining the Submerged Knowledge in LLMs' Memory
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,8 @@ Simply excluding "unsure"-like tokens recovers substantial correct knowledge, co
 - **Value**: ⭐⭐⭐⭐⭐ Hits@k is a low-cost, reusable metric with direct implications for evaluation and decoding research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

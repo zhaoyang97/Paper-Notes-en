@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models
 description: >-
-  [NeurIPS 2025][Time Series][stochastic differential equations] This paper proposes FIM-SDE, a pretrained recognition model capable of zero-shot (in-context) estimation of drift and diffusion functions of low-dimensional…
+  [NeurIPS 2025][Time Series][stochastic differential equations] This paper proposes FIM-SDE, a pretrained recognition model capable of zero-shot (in-context) estimation of drift and diffusion functions of low-dimensional SDEs from noisy time series data, and further surpasses all baseline methods via rapid fine-tuning.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "drift function estimation"
   - "diffusion function estimation"
 date: 2026-05-08
-content_hash: 0ef8ae4db90ef2a9
+content_hash: 66a683d23f69f4c4
 ---
 
 # In-Context Learning of Stochastic Differential Equations with Foundation Inference Models
@@ -219,10 +219,10 @@ FIM-SDE performs no worse than the best baseline across all noise levels.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Neural Stochastic Flows: Solver-Free Modelling and Inference for SDE Solutions](neural_stochastic_flows_solver-free_modelling_and_inference_for_sde_solutions.md)
+- [\[ICLR 2026\] Random Controlled Differential Equations](../../ICLR2026/time_series/random_controlled_differential_equations.md)
 - [\[NeurIPS 2025\] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)
-- [\[AAAI 2026\] AirDDE: Multifactor Neural Delay Differential Equations for Air Quality Forecasting](../../AAAI2026/time_series/airdde_multifactor_neural_delay_differential_equations_for_air_quality_forecasti.md)
+- [\[ICML 2026\] Learning Manifold and Itô Dynamics with Branched Neural Rough Differential Equations](../../ICML2026/time_series/learning_manifold_and_itô_dynamics_with_branched_neural_rough_differential_equat.md)
 - [\[NeurIPS 2025\] Transformer Embeddings for Fast Microlensing Inference](transformer_embeddings_for_fast_microlensing_inference.md)
-- [\[NeurIPS 2025\] Diffusion Transformers as Open-World Spatiotemporal Foundation Models](diffusion_transformers_as_open-world_spatiotemporal_foundation_models.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Addressing Divergent Representations from Causal Interventions on Neural Networks
 description: >-
-  [ICLR 2026][Interpretability][causal intervention] This work systematically reveals that causal interventions (such as activation patching, DAS, and SAE) push internal model representations away from their natural distributions. It theoretically distinguishes between "harmless" and "harmful" shifts and proposes the Counterfactual Latent (CL) loss to constrain intervene
+  [ICLR 2026 Oral][Interpretability][causal intervention] This work systematically reveals that causal interventions (such as activation patching, DAS, and SAE) push internal model representations away from their natural distributions. It theoretically distinguishes between "harmless" and "harmful" shifts and proposes the Counterfactual Latent (CL) loss to constrain intervened representations within the natural manifold. Evaluations on 7B LLMs demonstrate that this approach red…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - causal intervention
-  - mechanistic interpretability
-  - representational divergence
-  - Counterfactual Latent loss
-  - DAS
+  - "ICLR 2026 Oral"
+  - "Interpretability"
+  - "causal intervention"
+  - "mechanistic interpretability"
+  - "representational divergence"
+  - "Counterfactual Latent loss"
+  - "DAS"
 date: 2026-05-08
-content_hash: 9ecae14827b59b4c
+content_hash: efa4065e3eadf584
 ---
+
 # Addressing Divergent Representations from Causal Interventions on Neural Networks
 
 **Conference**: ICLR 2026 Oral  
@@ -150,11 +151,11 @@ CL loss reduces EMD by approximately 4.5x with a slight IIA improvement. In OOD 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 - [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](bayesian_neural_networks_for_functional_anova_model.md)
 - [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 - [\[ICLR 2026\] Causal Interpretation of Neural Network Computations with Contribution Decomposition](causal_interpretation_of_neural_network_computations_with_contribution_decomposi.md)
-- [\[ICLR 2026\] Estimating Dimensionality of Neural Representations from Finite Samples](estimating_dimensionality_of_neural_representations_from_finite_samples.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Measurement Plasticity: Sensor-Level Adaptation for Vision–Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Vision-Language Model] This paper shifts Test-Time Adaptation (TTA) for Vision-Language Models (VLM) from "tuning the model/tokens" to "tuning the camera/photons." By treating the camera's exposure triangle (ISO, shutter speed, aperture) as controllable "physical prompts," it selects multiple physical views based on source domain affinity du
+  [ICML2026][Multimodal VLM][Vision-Language Models] This paper shifts Test-Time Adaptation (TTA) for Vision-Language Models (VLM) from "tuning the model/tokens" to "tuning the camera/photons." By treating the camera's exposure triangle (ISO, shutter speed, aperture) as controllable "physical prompts," it selects multiple physical views based on source domain affinity during the capture stage, followed by entropy filtering and hard voting. Without any gradients or model modific…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Test-Time Adaptation"
+  - "Physical Prompting"
+  - "Exposure Triangle"
+  - "Source Domain Affinity"
 date: 2026-05-08
-content_hash: 1549f372de1bcef5
+content_hash: f0d86a347749d158
 ---
+
 # Measurement Plasticity: Sensor-Level Adaptation for Vision–Language Models
 
 **Conference**: ICML2026  
@@ -136,14 +141,17 @@ The Candidate Selection Algorithm (CSA) compresses the sensor parameter space in
 
 <div class="related-papers" markdown="1">
 
-1. **Lens**: *Control the Sensor, Not the Model: Sensor-Level Adaptation for Vision-Language Models*, ICML 2025.
-2. **PromptAlign**: *PromptAlign: Decoupling Statistics for Test-Time Adaptation*, NeurIPS 2023.
-3. **TPT**: *Test-Time Prompt Tuning for Zero-Shot Generalization*, NeurIPS 2022.
+## Related Papers
+
+- [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](../../CVPR2026/multimodal_vlm/decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
+- [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](../../CVPR2026/multimodal_vlm/pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/long-tailed_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](../../CVPR2026/multimodal_vlm/decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)

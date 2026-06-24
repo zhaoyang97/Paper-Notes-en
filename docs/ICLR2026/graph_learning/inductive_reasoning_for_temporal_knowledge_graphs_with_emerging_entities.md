@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Inductive Reasoning for Temporal Knowledge Graphs with Emerging Entities
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] To address emerging entities with "no historical interactions" in Temporal Knowledge Graphs (TKG), TransFIR utilizes a BERT-based text embedding combined with a learnable VQ codebook to assign entities to semantic clusters. It then transfers interaction chain patterns from semantically similar known entities to avoid r
+  [ICLR 2026][Graph Learning][Temporal Knowledge Graph] To address emerging entities with "no historical interactions" in Temporal Knowledge Graphs (TKG), TransFIR utilizes a BERT-based text embedding combined with a learnable VQ codebook to assign entities to semantic clusters. It then transfers interaction chain patterns from semantically similar known entities to avoid representation collapse, achieving an average MRR improvement of 28.6% across four benchmarks.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal Knowledge Graph"
+  - "Inductive Reasoning"
+  - "Emerging Entities"
+  - "Vector Quantization Codebook"
+  - "Representation Collapse"
+  - "Pattern Transfer"
 date: 2026-05-08
-content_hash: b32d157b173420ff
+content_hash: 4905c160d327bf97
 ---
+
 # Inductive Reasoning for Temporal Knowledge Graphs with Emerging Entities
 
 **Conference**: ICLR 2026  

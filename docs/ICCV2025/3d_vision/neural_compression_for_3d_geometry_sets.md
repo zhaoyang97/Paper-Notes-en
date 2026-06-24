@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Compression for 3D Geometry Sets
 description: >-
-  [ICCV 2025][3D Vision][3D geometry compression] This paper proposes NeCGS, the first neural compression paradigm capable of compressing geometry sets containing thousands of diverse 3D mesh models at ratios up to 900×…
+  [ICCV 2025][3D Vision][3D geometry compression] This paper proposes NeCGS, the first neural compression paradigm capable of compressing geometry sets containing thousands of diverse 3D mesh models at ratios up to 900×, achieving high-fidelity reconstruction via a TSDF-Def implicit representation and a quantization-aware auto-decoder.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "auto-decoder"
   - "geometry sets"
 date: 2026-05-08
-content_hash: f3634867a0f916a1
+content_hash: d8e50e12defb47c9
 ---
 
 # Neural Compression for 3D Geometry Sets
@@ -137,10 +137,10 @@ Quantized latent features and network parameters are compressed into a bitstream
 ## Related Papers
 
 - [\[ICCV 2025\] LINR-PCGC: Lossless Implicit Neural Representations for Point Cloud Geometry Compression](linr-pcgc_lossless_implicit_neural_representations_for_point_cloud_geometry_comp.md)
+- [\[CVPR 2025\] Toward Robust Neural Reconstruction from Sparse Point Sets](../../CVPR2025/3d_vision/toward_robust_neural_reconstruction_from_sparse_point_sets.md)
 - [\[ICCV 2025\] Geometry Distributions](geometry_distributions.md)
 - [\[ICCV 2025\] Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs](compression_of_3d_gaussian_splatting_with_optimized_feature_planes_and_standard_.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](../../CVPR2026/3d_vision/neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
-- [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
+- [\[ICLR 2026\] Neural Compression of 3D Meshes using Sparse Implicit Representation](../../ICLR2026/3d_vision/neural_compression_of_3d_meshes_using_sparse_implicit_representation.md)
 
 </div>
 

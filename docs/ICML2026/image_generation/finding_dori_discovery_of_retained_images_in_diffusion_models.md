@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Finding DoRI: Discovery of Retained Images in Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The authors demonstrate via a simple adversarial text embedding optimization method (DoRI) that diffusion model memory mitigation schemes like NeMo or Wanda—which aim to "prune and locate memory neurons"—merely "hide" memories rather than truly erasing them. This is because memorization is not localized at the embeddin
+  [ICML2026][Image Generation][Diffusion model memorization] The authors demonstrate via a simple adversarial text embedding optimization method (DoRI) that diffusion model memory mitigation schemes like NeMo or Wanda—which aim to "prune and locate memory neurons"—merely "hide" memories rather than truly erasing them. This is because memorization is not localized at the embedding, activation, or weight levels. They further propose an adversarial fine-tuning scheme to genuinely…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusion model memorization"
+  - "adversarial embedding"
+  - "pruning failure"
+  - "adversarial fine-tuning"
+  - "copyright and privacy"
 date: 2026-05-08
-content_hash: f9ec2f345cfe9d14
+content_hash: 342e292905fe79e8
 ---
+
 # Finding DoRI: Discovery of Retained Images in Diffusion Models
 
 **Conference**: ICML2026  
@@ -125,11 +131,11 @@ On SD v2.0, conclusions were consistent: NeMo+DoRI restored MR from 0.06 to 1.00
 
 ## Related Papers
 
+- [\[ICLR 2026\] Co-occurring Associated REtained concepts in Diffusion Unlearning](../../ICLR2026/image_generation/co-occurring_associated_retained_concepts_in_diffusion_unlearning.md)
 - [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](../../NeurIPS2025/image_generation/what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
 - [\[CVPR 2026\] SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](../../CVPR2026/image_generation/simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)
-- [\[CVPR 2025\] Hiding Images in Diffusion Models by Editing Learned Score Functions](../../CVPR2025/image_generation/hiding_images_in_diffusion_models_by_editing_learned_score_functions.md)
 - [\[AAAI 2026\] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images](../../AAAI2026/image_generation/beautiful_images_toxic_words_understanding_and_addressing_offensive_text_in_gene.md)
-- [\[ICML 2026\] Initialization is Half the Battle: Generating Diverse Images from a Guidance Potential Posterior](initialization_is_half_the_battle_generating_diverse_images_from_a_guidance_pote.md)
+- [\[CVPR 2025\] Hiding Images in Diffusion Models by Editing Learned Score Functions](../../CVPR2025/image_generation/hiding_images_in_diffusion_models_by_editing_learned_score_functions.md)
 
 </div>
 

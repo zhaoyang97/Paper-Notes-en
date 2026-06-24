@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 description: >-
-  [CVPR 2026][Image Generation][SLAT] MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representation. It achieves SOTA quality in cross-category 3D morphing by integrating source/target information via Morphing Cross-Attention (MCA) to ensure structural plausibility, enhancing temporal consistency w
+  [CVPR 2026][Image Generation][3D Morphing] MorphAny3D is proposed as the first training-free 3D morphing framework based on Structured Latent (SLAT) representation. It achieves SOTA quality in cross-category 3D morphing by integrating source/target information via Morphing Cross-Attention (MCA) to ensure structural plausibility, enhancing temporal consistency with Temporal-Fused Self-Attention (TFSA), and eliminating abrupt transitions through an orientation correction strate…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - SLAT
-  - Attention
-  - Trellis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3D Morphing"
+  - "SLAT"
+  - "Attention Mechanism"
+  - "Training-free"
+  - "Trellis"
 date: 2026-05-08
-content_hash: e5eff82369c11aa2
+content_hash: 21cb6043ae7d9e04
 ---
+
 # MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 
 **Conference**: CVPR 2026  
@@ -136,8 +139,8 @@ Occasional sudden "posture flips" occur during morphing. Statistical analysis of
 - [\[ECCV 2024\] TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](../../ECCV2024/image_generation/textdiffuser-2_unleashing_the_power_of_language_models_for_text_rendering.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
 - [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)
+- [\[CVPR 2026\] Hint2Gen: Bridging Understanding and Generation via Code-structured Hints](hint2gen_bridging_understanding_and_generation_via_code-structured_hints.md)
 - [\[CVPR 2026\] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)
-- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
 
 </div>
 

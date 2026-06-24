@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models
 description: >-
-  [CVPR 2026][Object Detection][Diffusion Model] Ours proposes InvAD, which shifts diffusion model anomaly detection from the "RGB space denoising reconstruction" paradigm to a "latent space noise-adding inversion" paradigm. By directly inferring the final latent variables through DDIM inversion and measuring deviations under the prior distribution to detect anomalie
+  [CVPR 2026][Object Detection][Anomaly detection] Ours proposes InvAD, which shifts diffusion model anomaly detection from the "RGB space denoising reconstruction" paradigm to a "latent space noise-adding inversion" paradigm. By directly inferring the final latent variables through DDIM inversion and measuring deviations under the prior distribution to detect anomalies, it reaches SOTA performance with only 3 inversion steps while increasing inference speed by approximately 2x…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Anomaly detection"
+  - "diffusion models"
+  - "DDIM inversion"
+  - "reconstruction-free paradigm"
+  - "industrial/medical defect detection"
 date: 2026-05-08
-content_hash: 6d99e81f81fdfad7
+content_hash: 95b4f5d651e7ed0d
 ---
+
 # InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -138,12 +143,11 @@ Once the inversion final state $\mathbf{z}_T$ is obtained, the "deviation from t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 - [\[ICCV 2025\] DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion](../../ICCV2025/object_detection/distil_data-free_inversion_of_suspicious_trojan_inputs_via_latent_diffusion.md)
+- [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
 - [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](../../AAAI2026/object_detection/countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
 - [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)

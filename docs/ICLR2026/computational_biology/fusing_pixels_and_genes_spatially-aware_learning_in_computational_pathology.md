@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology
 description: >-
-  [ICLR 2026][Computational Biology][Spatial Transcriptomics] This paper proposes the Stamp framework, which utilizes spatial transcriptomics (ST) gene expression data as supervisory signals. Through spatially-aware gene encoder pretraining and hierarchical multi-scale contrastive alignment, it achieves joint representation learning of pathological images and ST data, reaching St
+  [ICLR 2026][Computational Biology][Spatial Transcriptomics] This paper proposes the Stamp framework, which utilizes spatial transcriptomics (ST) gene expression data as supervisory signals. Through spatially-aware gene encoder pretraining and hierarchical multi-scale contrastive alignment, it achieves joint representation learning of pathological images and ST data, reaching State-of-the-Art (SOTA) performance across 4 downstream tasks on 6 datasets.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Spatial Transcriptomics
-  - Computational Pathology
-  - Multimodal Pretraining
-  - Gene Expression
-  - Contrastive Learning
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Computational Pathology"
+  - "Multimodal Pretraining"
+  - "Gene Expression"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 2833bf52de3fc281
+content_hash: b06111e239d8ce6c
 ---
+
 # Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology
 
 **Conference**: ICLR 2026  
@@ -168,10 +169,10 @@ Stamp exceeds specialized models requiring full-parameter training using only li
 ## Related Papers
 
 - [\[ICML 2025\] Global Context-aware Representation Learning for Spatially Resolved Transcriptomics](../../ICML2025/computational_biology/global_context-aware_representation_learning_for_spatially_resolved_transcriptom.md)
+- [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](../../AAAI2026/computational_biology/dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
 - [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
 - [\[ICLR 2026\] FACET: A Fragment-Aware Conformer Ensemble Transformer](facet_a_fragment-aware_conformer_ensemble_transformer.md)
 - [\[ICLR 2026\] RankFlow: Property-aware Transport for Protein Optimization](rankflow_property-aware_transport_for_protein_optimization.md)
-- [\[ICLR 2026\] Learning Brain Representation with Hierarchical Visual Embeddings](learning_brain_representation_with_hierarchical_visual_embeddings.md)
 
 </div>
 

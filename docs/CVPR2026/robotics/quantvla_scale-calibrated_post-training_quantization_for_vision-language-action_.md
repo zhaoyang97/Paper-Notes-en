@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] QuantVLA is proposed as the first training-free post-training quantization (PTQ) framework for Vision-Language-Action (VLA) models. By employing a selective quantization layout and two lightweight calibration mechanisms—Attention Temperature Matching (ATM) and Output Head Balancing (OHB)—it achieves approximately 70% m
+  [CVPR 2026][Robotics] QuantVLA is proposed as the first training-free post-training quantization (PTQ) framework for Vision-Language-Action (VLA) models. By employing a selective quantization layout and two lightweight calibration mechanisms—Attention Temperature Matching (ATM) and Output Head Balancing (OHB)—it achieves approximately 70% memory savings at W4A8 precision while exceeding the task success rate of the full-precision baseline.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
 date: 2026-05-08
-content_hash: eed6fb4437dc2bb9
+content_hash: 7a36cb76bd2202f8
 ---
+
 # QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -157,11 +158,11 @@ Robustness is demonstrated even under aggressive W4A4 precision, maintaining a 9
 
 ## Related Papers
 
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](cross-hand_latent_representation_for_vision-language-action_models.md)
-- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](sapave_active_perception_manipulation_vla_roboti.md)
+- [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](../../ICLR2026/robotics/hybrid_training_for_vision-language-action_models.md)
 
 </div>
 

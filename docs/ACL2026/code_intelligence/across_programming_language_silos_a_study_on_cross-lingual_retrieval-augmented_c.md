@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Across Programming Language Silos: A Study on Cross-Lingual Retrieval-Augmented Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] This paper presents the first systematic study of cross-programming-language Retrieval-Augmented Code Generation (RACG). By constructing a 14K-instance dataset across 13 languages, the study reveals the asymmetry of cross-lingual knowledge transfer and its relationship with language affinity and pre-training diversity.
+  [ACL 2026 Findings][Code Intelligence][Cross-Lingual Code Generation] This paper presents the first systematic study of cross-programming-language Retrieval-Augmented Code Generation (RACG). By constructing a 14K-instance dataset across 13 languages, the study reveals the asymmetry of cross-lingual knowledge transfer and its relationship with language affinity and pre-training diversity.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Cross-Lingual Code Generation"
+  - "Retrieval-Augmented Generation"
+  - "Knowledge Transfer"
+  - "Multilingual Programming"
+  - "Code Retrieval"
 date: 2026-05-08
-content_hash: 628c7abb725b12cd
+content_hash: fe0411f9ef56ea2e
 ---
+
 # Across Programming Language Silos: A Study on Cross-Lingual Retrieval-Augmented Code Generation
 
 **Conference**: ACL 2026 Findings  
@@ -108,10 +114,10 @@ This paper is a purely empirical study and does not involve model training or fi
 
 ## Related Papers
 
-- [\[ICLR 2026\] Inference-Time Safety for Code LLMs via Retrieval-Augmented Revision](../../ICLR2026/code_intelligence/inference-time_safety_for_code_llms_via_retrieval-augmented_revision.md)
-- [\[AAAI 2026\] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models](../../AAAI2026/code_intelligence/span_benchmarking_and_improving_cross-calendar_temporal_reasoning_of_large_langu.md)
-- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
+- [\[ICLR 2026\] RESCUE: Retrieval Augmented Secure Code Generation](../../ICLR2026/code_intelligence/rescue_retrieval_augmented_secure_code_generation.md)
+- [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](../../ICLR2026/code_intelligence/crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
 - [\[ACL 2026\] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion](reposhapley_shapley-enhanced_context_filtering_for_repository-level_code_complet.md)
+- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
 - [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 
 </div>

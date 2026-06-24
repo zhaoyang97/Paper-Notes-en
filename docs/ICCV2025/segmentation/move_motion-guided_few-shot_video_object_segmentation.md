@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MOVE: Motion-Guided Few-Shot Video Object Segmentation
 description: >-
-  [ICCV 2025][Segmentation][few-shot video segmentation] This paper introduces a novel task of motion-guided few-shot video object segmentation along with a large-scale dataset MOVE (224 motion categories, 4,300 videos…
+  [ICCV 2025][Segmentation][few-shot video segmentation] This paper introduces a novel task of motion-guided few-shot video object segmentation along with a large-scale dataset MOVE (224 motion categories, 4,300 videos, 314K masks), and proposes a Decoupled Motion-Appearance (DMA) network. Through a dual-branch architecture combining frame-differencing-based motion prototypes and appearance prototypes, the proposed method significantly outperforms existing FSVOS methods on the…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "temporal modeling"
   - "benchmark"
 date: 2026-05-08
-content_hash: cad3353e9db4fac2
+content_hash: 0d4cd078aff1f8c1
 ---
 
 # MOVE: Motion-Guided Few-Shot Video Object Segmentation
@@ -181,7 +181,7 @@ Auxiliary classification ablation:
 - [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](what_if_understanding_motion_through_sparse_interactions.md)
 - [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
-- [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
+- [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
 
 </div>
 

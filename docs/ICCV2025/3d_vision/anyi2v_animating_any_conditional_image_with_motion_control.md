@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnyI2V: Animating Any Conditional Image with Motion Control
 description: >-
-  [ICCV 2025][3D Vision][training-free] This paper proposes AnyI2V, a training-free framework that accepts arbitrary-modality images (mesh, point cloud, depth map, skeleton…
+  [ICCV 2025][3D Vision][training-free] This paper proposes AnyI2V, a training-free framework that accepts arbitrary-modality images (mesh, point cloud, depth map, skeleton, etc.) as first-frame conditions and combines user-defined trajectories for motion-controlled video generation, outperforming existing training-free methods and competing with trained methods on FID/FVD/ObjMC metrics.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "multimodal conditioning"
 date: 2026-05-08
-content_hash: 4dd071edba4e0982
+content_hash: 114a317064b69384
 ---
 
 # AnyI2V: Animating Any Conditional Image with Motion Control

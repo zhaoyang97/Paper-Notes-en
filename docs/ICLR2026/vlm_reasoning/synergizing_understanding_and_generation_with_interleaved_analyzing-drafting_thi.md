@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Synergizing Understanding and Generation with Interleaved Analyzing-Drafting Thinking
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] To address the issue where Unified Vision-Language Models (UVLMs) treat "understanding" and "generation" as two parallel skills that do not interact during problem-solving, this paper proposes **AD-Loop**. This method allows models to interleave "textual thinking (Analyzing)" and "latent visual thinking (Drafting)" dur
+  [ICLR 2026][VLM Reasoning][Unified Vision-Language Models] To address the issue where Unified Vision-Language Models (UVLMs) treat "understanding" and "generation" as two parallel skills that do not interact during problem-solving, this paper proposes **AD-Loop**. This method allows models to interleave "textual thinking (Analyzing)" and "latent visual thinking (Drafting)" during the reasoning process. Through a two-stage training of SFT + Adaptive RL…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Unified Vision-Language Models"
+  - "Understanding-Generation Synergy"
+  - "Interleaved Thinking"
+  - "Latent Visual Thinking"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 8c47237e30a12ecb
+content_hash: fab71818fe701938
 ---
+
 # Synergizing Understanding and Generation with Interleaved Analyzing-Drafting Thinking
 
 **Conference**: ICLR 2026  
@@ -173,11 +178,11 @@ Visual Thinking source comparison (RQ-2):
 
 ## Related Papers
 
+- [\[ICLR 2026\] RIG: Synergizing Reasoning and Imagination in End-to-End Generalist Policy](rig_synergizing_reasoning_and_imagination_in_end-to-end_generalist_policy.md)
+- [\[ICLR 2026\] Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning](zebra-cot_a_dataset_for_interleaved_vision-language_reasoning.md)
 - [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
-- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
-- [\[ICLR 2026\] Medical Thinking with Multiple Images](medical_thinking_with_multiple_images.md)
-- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](../../CVPR2026/vlm_reasoning/thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
+- [\[ICLR 2026\] ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation](rover_benchmarking_reciprocal_cross-modal_reasoning_for_omnimodal_generation.md)
 
 </div>
 

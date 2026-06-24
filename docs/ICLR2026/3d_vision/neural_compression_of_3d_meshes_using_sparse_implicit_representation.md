@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Compression of 3D Meshes using Sparse Implicit Representation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The mesh is converted into a "Sparse Implicit Tensor" (SIR) that stores SDF solely near the surface. A 0.42 MB Sparse Convolutional Autoencoder (SNC) performs end-to-end rate-distortion compression, achieving 30%–90% bit rate savings over Draco / V-DMC / G-PCC / NeCGS at near real-time speeds.
+  [ICLR 2026][3D Vision][3D Mesh Compression] The mesh is converted into a "Sparse Implicit Tensor" (SIR) that stores SDF solely near the surface. A 0.42 MB Sparse Convolutional Autoencoder (SNC) performs end-to-end rate-distortion compression, achieving 30%–90% bit rate savings over Draco / V-DMC / G-PCC / NeCGS at near real-time speeds.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Mesh Compression"
+  - "Sparse Implicit Representation"
+  - "Signed Distance Field"
+  - "Sparse Convolutional Autoencoder"
+  - "Rate-Distortion Optimization"
 date: 2026-05-08
-content_hash: 29ed779ed00b0c7e
+content_hash: 7b2080a84b358e96
 ---
+
 # Neural Compression of 3D Meshes using Sparse Implicit Representation
 
 **Conference**: ICLR 2026  

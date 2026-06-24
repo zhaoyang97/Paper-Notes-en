@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning From Design Procedure To Generate CAD Programs for Data Augmentation
 description: >-
-  [NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)][Code Intelligence][CAD program generation] This paper proposes a CAD program data augmentation paradigm inspired by industrial design workflows. By pro…
+  [NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)][Code Intelligence][CAD program generation] This paper proposes a CAD program data augmentation paradigm inspired by industrial design workflows. By providing reference surface programs and design procedure descriptions as LLM prompts, the method guides the generation of CAD programs containing B-Spline organic shapes, substantially narrowing the geometric complexity gap between public CAD datasets and indust…
 tags:
   - "NeurIPS 2025 (Workshop: Deep Learning for Code in the Agentic Era)"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "B-Spline geometry"
   - "industrial design"
 date: 2026-05-08
-content_hash: e76775149adc629b
+content_hash: c6bd02bd38b48c52
 ---
 
 # Learning From Design Procedure To Generate CAD Programs for Data Augmentation
@@ -139,11 +139,11 @@ The effect of removing the reference surface prompt is evaluated:
 
 ## Related Papers
 
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](../../ICLR2026/code_intelligence/tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](automated_multi-agent_workflows_for_rtl_design.md)
 - [\[NeurIPS 2025\] Preserving LLM Capabilities through Calibration Data Curation: From Analysis to Optimization](preserving_llm_capabilities_through_calibration_data_curation_from_analysis_to_o.md)
 - [\[ICLR 2026\] Sharing State Between Prompts and Programs](../../ICLR2026/code_intelligence/sharing_state_between_prompts_and_programs.md)
 - [\[ACL 2026\] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases](../../ACL2026/code_intelligence/codewiki_evaluating_ai39s_ability_to_generate_holistic_documentation_for_large-s.md)
-- [\[NeurIPS 2025\] Learning to Solve Complex Problems via Dataset Decomposition](learning_to_solve_complex_problems_via_dataset_decomposition.md)
 
 </div>
 

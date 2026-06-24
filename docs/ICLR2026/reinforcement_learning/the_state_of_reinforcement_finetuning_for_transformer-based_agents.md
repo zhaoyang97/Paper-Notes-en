@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] The State of Reinforcement Finetuning for Transformer-based Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][Transformer Agent] This paper systematically introduces Reinforcement Finetuning (RFT) to the few-shot meta-RL adaptation of Transformer-based Agents (TA). Through a large-scale empirical comparison across two orthogonal axes: "Finetuning Parameter Configurations × Finetuning Algorithms," it finds that no single algorithm is universally
+  [ICLR 2026][Reinforcement Learning][Reinforcement Finetuning (RFT)] This paper systematically introduces Reinforcement Finetuning (RFT) to the few-shot meta-RL adaptation of Transformer-based Agents (TA). Through a large-scale empirical comparison across two orthogonal axes: "Finetuning Parameter Configurations × Finetuning Algorithms," it finds that no single algorithm is universally optimal. Based on this, the authors propose QP (Q-guided Policy Optimization)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Transformer Agent
-  - meta-RL
-  - Prompt-DT
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reinforcement Finetuning (RFT)"
+  - "Transformer Agent"
+  - "meta-RL"
+  - "Prompt-DT"
+  - "Q-guided Policy Optimization"
 date: 2026-05-08
-content_hash: 1dd8d4cd960baeac
+content_hash: 6dc78b0d9a8ec288
 ---
+
 # The State of Reinforcement Finetuning for Transformer-based Agents
 
 **Conference**: ICLR 2026  
@@ -127,11 +130,11 @@ QP-SFT / QP-DPO achieve the highest or near-highest average scores in every conf
 
 ## Related Papers
 
-- [\[ICLR 2026\] Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner](vintix_ii_decision_pre-trained_transformer_is_a_scalable_in-context_reinforcemen.md)
-- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
 - [\[ICLR 2026\] Reinforcement Learning for Machine Learning Engineering Agents](reinforcement_learning_for_machine_learning_engineering_agents.md)
-- [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
-- [\[ICLR 2026\] Peak-Return Greedy Slicing: Subtrajectory Selection for Transformer-based Offline RL](peak-return_greedy_slicing_subtrajectory_selection_for_transformer-based_offline.md)
+- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
+- [\[ICLR 2026\] Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner](vintix_ii_decision_pre-trained_transformer_is_a_scalable_in-context_reinforcemen.md)
+- [\[ICLR 2026\] Probing in the Dark: State Entropy Maximization for POMDPs](probing_in_the_dark_state_entropy_maximization_for_pomdps.md)
+- [\[ICLR 2026\] RLVER: Reinforcement Learning with Verifiable Emotion Rewards for Empathetic Agents](rlver_reinforcement_learning_with_verifiable_emotion_rewards_for_empathetic_agen.md)
 
 </div>
 

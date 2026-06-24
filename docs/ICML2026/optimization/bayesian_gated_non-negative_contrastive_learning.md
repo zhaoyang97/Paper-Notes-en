@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bayesian Gated Non-Negative Contrastive Learning
 description: >-
-  [ICML 2026][Optimization & Theory][Interpretability] Addressing the optimization conflict (gradient oscillation) caused by shared background features in Non-Negative Contrastive Learning (NCL), BayesNCL is proposed. By learning a Bernoulli distribution for each feature dimension via a Bayesian gating head to dynamically filter high-frequency public features, it achieves
+  [ICML 2026][Optimization][Contrastive Learning] Addressing the optimization conflict (gradient oscillation) caused by shared background features in Non-Negative Contrastive Learning (NCL), BayesNCL is proposed. By learning a Bernoulli distribution for each feature dimension via a Bayesian gating head to dynamically filter high-frequency public features, it achieves a 142.1% improvement in semantic consistency on ImageNet-100 without sacrificing downstream accuracy.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Interpretability
+  - "ICML 2026"
+  - "Optimization"
+  - "Contrastive Learning"
+  - "Non-Negative Representation"
+  - "Bayesian Gating"
+  - "Semantic Decoupling"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: 23d73f748c2fa655
+content_hash: c8950398823e3425
 ---
+
 # Bayesian Gated Non-Negative Contrastive Learning
 
 **Conference**: ICML 2026  
@@ -150,8 +155,8 @@ The FLOPs increment is only ~2%, with training time increasing by ~13%, presenti
 ## Related Papers
 
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](../../CVPR2026/optimization/bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
-- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](cost-aware_stopping_for_bayesian_optimization.md)
+- [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](../../ICLR2026/optimization/conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
+- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](../../ICLR2026/optimization/toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
 - [\[ICML 2025\] A Unified View on Learning Unnormalized Distributions via Noise-Contrastive Estimation](../../ICML2025/optimization/a_unified_view_on_learning_unnormalized_distributions_via_noise-contrastive_esti.md)
 - [\[ICML 2026\] SyMerge: From Non-Interference to Synergistic Merging via Single-Layer Adaptation](symerge_from_non-interference_to_synergistic_merging_via_single-layer_adaptation.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Face Reconstruction] This paper proposes the FEM (Face Embedding Mapping) framework, which employs a KAN-based network to map embeddings from arbitrary face recognition (FR) or privacy-prese…
+  [AAAI 2026][Image Generation][Face Reconstruction] This paper proposes the FEM (Face Embedding Mapping) framework, which employs a KAN-based network to map embeddings from arbitrary face recognition (FR) or privacy-preserving face recognition (PPFR) systems into the embedding space of a pretrained identity-preserving (ID-Preserving) diffusion model, enabling high-resolution realistic face reconstruction for evaluating privacy leakage risks in FR systems.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Kolmogorov-Arnold Network"
   - "Diffusion Models"
 date: 2026-05-08
-content_hash: b1fcfee6822e2ead
+content_hash: a754f00bcd54f363
 ---
 
 # Realistic Face Reconstruction from Facial Embeddings via Diffusion Models
@@ -185,10 +185,10 @@ FEM achieves ASR under MLP-Hash protection close to the unprotected baseline, in
 ## Related Papers
 
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](../../CVPR2026/image_generation/high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
+- [\[CVPR 2025\] OFER: Occluded Face Expression Reconstruction](../../CVPR2025/image_generation/ofer_occluded_face_expression_reconstruction.md)
 - [\[AAAI 2026\] Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection](diffusion_reconstruction-based_data_likelihood_estimation_for_core-set_selection.md)
 - [\[CVPR 2026\] Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration](../../CVPR2026/image_generation/face2scene_using_facial_degradation_as_an_oracle_for_diffusion-based_scene_resto.md)
-- [\[AAAI 2026\] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](aedr_training-free_ai-generated_image_attribution_via_autoen.md)
-- [\[ICCV 2025\] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration](../../ICCV2025/image_generation/mofrr_mixture_of_diffusion_models_for_face_retouching_restoration.md)
+- [\[AAAI 2026\] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation](dos_directional_object_separation_in_text_embeddings_for_mul.md)
 
 </div>
 

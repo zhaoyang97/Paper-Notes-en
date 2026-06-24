@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering
 description: >-
-  [ACL 2026][Multimodal VLM][ASR] CRAFT is a claim-centric pipeline for multi-video question answering in news events. It combines dynamic key-frame selection, ASR transcription, iterative refinement via UNLI/MNLI/LLM critics, and citation consolidation, achieving 0.739 macro average, 0.810 reference recall, and 0.635 citation F1 on MAGMaR-Test.
+  [ACL2026][Multimodal VLM][Multi-video QA] CRAFT is a claim-centric pipeline for multi-video question answering in news events. It combines dynamic key-frame selection, ASR transcription, iterative refinement via UNLI/MNLI/LLM critics, and citation consolidation, achieving 0.739 macro average, 0.810 reference recall, and 0.635 citation F1 on MAGMaR-Test.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - ASR
-  - critic refinement
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Multi-video QA"
+  - "evidence attribution"
+  - "key-frame selection"
+  - "ASR"
+  - "critic refinement"
 date: 2026-05-08
-content_hash: a655a47be12adc75
+content_hash: 1b318e826b829e17
 ---
+
 # CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering
 
 **Conference**: ACL2026  
@@ -150,7 +154,7 @@ Full CRAFT achieves the highest overall average of 0.739 on MAGMaR-Test, with a 
 - [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](../../AAAI2026/multimodal_vlm/macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
 - [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](../../CVPR2026/multimodal_vlm/remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
-- [\[ACL 2025\] WikiMixQA: A Multimodal Benchmark for Question Answering over Tables and Charts](../../ACL2025/multimodal_vlm/wikimixqa_a_multimodal_benchmark_for_question_answering_over_tables_and_charts.md)
+- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/multimodal_vlm/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
 
 </div>
 

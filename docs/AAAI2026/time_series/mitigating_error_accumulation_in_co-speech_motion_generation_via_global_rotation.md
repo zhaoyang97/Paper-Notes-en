@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Error Accumulation in Co-Speech Motion Generation via Global Rotation Diffusion and Multi-Level Constraints
 description: >-
-  [AAAI 2026][Time Series][co-speech motion generation] This paper proposes GlobalDiff, a framework that, for the first time, performs diffusion-based generation in the global joint rotation space…
+  [AAAI 2026][Time Series][co-speech motion generation] This paper proposes GlobalDiff, a framework that, for the first time, performs diffusion-based generation in the global joint rotation space, fundamentally eliminating error accumulation in hierarchical forward kinematics. A three-level joint–bone–motion constraint scheme compensates for the structural priors lost under global representation. GlobalDiff achieves state-of-the-art performance on multi-speaker co-speech motio…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "error accumulation"
   - "skeletal constraints"
 date: 2026-05-08
-content_hash: 3728bdbb66d4c1eb
+content_hash: d09e94d3f6d897f8
 ---
 
 # Mitigating Error Accumulation in Co-Speech Motion Generation via Global Rotation Diffusion and Multi-Level Constraints
@@ -198,11 +198,11 @@ Contribution of each component (single speaker, Speaker 2):
 
 ## Related Papers
 
+- [\[ICML 2025\] TCP-Diffusion: A Multi-modal Diffusion Model for Global Tropical Cyclone Precipitation Forecasting with Change Awareness](../../ICML2025/time_series/tcp-diffusion_a_multi-modal_diffusion_model_for_global_tropical_cyclone_precipit.md)
 - [\[AAAI 2026\] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning](beyond_observations_reconstruction_error-guided_irregularly_sampled_time_series_.md)
-- [\[ICLR 2026\] VoT: Event-Driven Reasoning and Multi-Level Alignment Unlock the Value of Text for Time Series Forecasting](../../ICLR2026/time_series/unlocking_the_value_of_text_event-driven_reasoning_and_multi-level_alignment_for.md)
+- [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](../../ICLR2026/time_series/latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
+- [\[ICLR 2026\] Unlocking the Value of Text: Event-Driven Reasoning and Multi-Level Alignment for Time Series Forecasting](../../ICLR2026/time_series/unlocking_the_value_of_text_event-driven_reasoning_and_multi-level_alignment_for.md)
 - [\[AAAI 2026\] M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting](m2fmoe_multi-resolution_multi-view_frequency_mixture-of-experts_for_extreme-adap.md)
-- [\[AAAI 2026\] Coherent Multi-Agent Trajectory Forecasting in Team Sports with CausalTraj](coherent_multi-agent_trajectory_forecasting_in_team_sports_with_causaltraj.md)
-- [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
 
 </div>
 

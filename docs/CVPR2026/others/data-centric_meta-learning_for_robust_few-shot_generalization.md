@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Data-Centric Meta-Learning for Robust Few-Shot Generalization
 description: >-
-  [CVPR 2026][Others][Paper Note] Addressing the generalization collapse of optimization-based meta-learning in cross-domain few-shot scenarios, this work elevates "learnable visual prompts" from test-time auxiliaries to a core mechanism throughout the meta-training process. By aligning task inputs in the data space to reduce gradient direction conflic
+  [CVPR 2026][Optimization-based meta-learning] Addressing the generalization collapse of optimization-based meta-learning in cross-domain few-shot scenarios, this work elevates "learnable visual prompts" from test-time auxiliaries to a core mechanism throughout the meta-training process. By aligning task inputs in the data space to reduce gradient direction conflicts, Ours learns more universal prior knowledge and enables efficient adaptation by updating only the prompts and c…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Optimization-based meta-learning"
+  - "few-shot cross-domain generalization"
+  - "visual prompt"
+  - "gradient conflict"
+  - "bi-level optimization"
 date: 2026-05-08
-content_hash: 5d0b7f616efe31f5
+content_hash: a9d39c91a8239748
 ---
+
 # Data-Centric Meta-Learning for Robust Few-Shot Generalization
 
 **Conference**: CVPR 2026  
@@ -164,11 +169,11 @@ During testing, DCML only updates the head and prompt ($0.21\times10^5$ paramete
 
 ## Related Papers
 
-- [\[CVPR 2026\] DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process](ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
 - [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
 - [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
 - [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
-- [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](../../ICCV2025/others/is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
+- [\[CVPR 2026\] Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation](basis-oriented_low-rank_transfer_for_few-shot_and_test-time_adaptation.md)
 
 </div>
 

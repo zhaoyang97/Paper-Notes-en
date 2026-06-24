@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DLF: Extreme Image Compression with Dual-generative Latent Fusion
 description: >-
-  [ICCV 2025][Model Compression][extreme low-bitrate image compression] This paper proposes the Dual-generative Latent Fusion (DLF) framework, which decomposes the image latent space into semantic and detail branches for s…
+  [ICCV 2025][Model Compression][extreme low-bitrate image compression] This paper proposes the Dual-generative Latent Fusion (DLF) framework, which decomposes the image latent space into semantic and detail branches for separate compression, and eliminates inter-branch redundancy via a cross-branch interactive design. At extreme low bitrates (<0.01 bpp), DLF achieves state-of-the-art reconstruction quality with BD-Rate savings of up to 67.82% over MS-ILLM…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "vector quantization"
   - "semantic-detail decomposition"
 date: 2026-05-08
-content_hash: 96755b1ede567d37
+content_hash: f5c171ce2610459f
 ---
 
 # DLF: Extreme Image Compression with Dual-generative Latent Fusion
@@ -151,9 +151,9 @@ A two-stage progressive training scheme is adopted:
 
 - [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](../../CVPR2026/model_compression/generative_video_compression_with_one-dimensional_latent_representation.md)
 - [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](learned_image_compression_with_hierarchical_progressive_context_modeling.md)
-- [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](../../CVPR2026/model_compression/rdvq_differentiable_vq_image_compression.md)
+- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](../../CVPR2026/model_compression/cadc_content_adaptive_diffusion-based_generative_image_compression.md)
+- [\[ICML 2025\] Strategic Fusion Optimizes Transformer Compression](../../ICML2025/model_compression/strategic_fusion_optimizes_transformer_compression.md)
 - [\[ICCV 2025\] Fuse Before Transfer: Knowledge Fusion for Heterogeneous Distillation](fuse_before_transfer_knowledge_fusion_for_heterogeneous_distillation.md)
-- [\[NeurIPS 2025\] One-Step Diffusion-Based Image Compression with Semantic Distillation](../../NeurIPS2025/model_compression/one-step_diffusion-based_image_compression_with_semantic_distillation.md)
 
 </div>
 

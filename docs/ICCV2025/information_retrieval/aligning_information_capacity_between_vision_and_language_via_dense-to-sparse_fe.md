@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation
 description: >-
-  [ICCV 2025][Information Retrieval & RAG][Image-text matching] This paper proposes D2S-VSE, a two-stage training framework (dense-text pretraining + dense-to-sparse feature distillation fine-tuning) that enhances informat…
+  [ICCV 2025][Information Retrieval & RAG][Image-text matching] This paper proposes D2S-VSE, a two-stage training framework (dense-text pretraining + dense-to-sparse feature distillation fine-tuning) that enhances information capacity in visual-semantic embeddings, addressing the core asymmetry in information density between image and text modalities for image-text matching.
 tags:
   - "ICCV 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "dense-to-sparse distillation"
   - "cross-modal retrieval"
 date: 2026-05-08
-content_hash: 9081c3c305b9fb88
+content_hash: 20e79cf5e391a575
 ---
 
 # Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation
@@ -185,11 +185,11 @@ The surround strategy performs best, as the position of sparse text within the d
 
 ## Related Papers
 
-- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching](aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md)
-- [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
-- [\[ICCV 2025\] LangBridge: Interpreting Image as a Combination of Language Embeddings](langbridge_interpreting_image_as_a_combination_of_language_embeddings.md)
-- [\[ICCV 2025\] MonSTeR: a Unified Model for Motion, Scene, Text Retrieval](monster_a_unified_model_for_motion_scene_text_retrieval.md)
-- [\[ICCV 2025\] External Knowledge Injection for CLIP-Based Class-Incremental Learning](external_knowledge_injection_for_clip-based_class-incremental_learning.md)
+- [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
+- [\[ACL 2025\] Drama: Diverse Augmentation from Large Language Models to Smaller Dense Retrievers](../../ACL2025/information_retrieval/drama_diverse_augmentation_from_large_language_models_to_smaller_dense_retriever.md)
+- [\[ACL 2025\] Atomic LLM: A Fine-Grained Information Retrieval Evaluation Benchmark for Language Models](../../ACL2025/information_retrieval/atomic_llm_a_fine-grained_information_retrieval_evaluation_benchmark_for_languag.md)
+- [\[NeurIPS 2025\] Learning Task-Agnostic Representations through Multi-Teacher Distillation](../../NeurIPS2025/information_retrieval/learning_task-agnostic_representations_through_multi-teacher_distillation.md)
+- [\[ICLR 2026\] Learning Retrieval Models with Sparse Autoencoders](../../ICLR2026/information_retrieval/learning_retrieval_models_with_sparse_autoencoders.md)
 
 </div>
 

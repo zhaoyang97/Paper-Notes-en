@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-Judge] The authors develop MyScholarQA, the first open-source personalized Deep Research (DR) system using a profile-action-report tripartite architecture, which outperforms other DR baselines across 16 offline metrics. However, 90-minute interviews with 21 researchers reveal nine types of personalization failure modes comple
+  [ACL 2026][LLM Evaluation][Personalized Deep Research] The authors develop MyScholarQA, the first open-source personalized Deep Research (DR) system using a profile-action-report tripartite architecture, which outperforms other DR baselines across 16 offline metrics. However, 90-minute interviews with 21 researchers reveal nine types of personalization failure modes completely undetected by offline evaluations. Furthermore, four major LLM judges fail to accurately predict use…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-Judge
-  - user-centered eval
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Personalized Deep Research"
+  - "LLM-as-Judge"
+  - "User Study"
+  - "Interpretable Agents"
+  - "User-centered Eval"
 date: 2026-05-08
-content_hash: 8ea6a82802f9f2b5
+content_hash: c826056eff33b07b
 ---
+
 # Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users
 
 **Conference**: ACL 2026  
@@ -138,15 +142,16 @@ The system relies on prompt engineering and LLM chaining rather than training. B
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
+- [\[ICLR 2026\] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents](../../ICLR2026/llm_evaluation/researchrubrics_a_benchmark_of_prompts_and_rubrics_for_evaluating_deep_research_.md)
+- [\[ICLR 2026\] Towards Personalized Deep Research: Benchmarks and Evaluations](../../ICLR2026/llm_evaluation/towards_personalized_deep_research_benchmarks_and_evaluations.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
+- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
-- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
-- [\[ICLR 2026\] Do LLM Agents Know How to Ground, Recover, and Assess? Evaluating Epistemic Competence in Information-Seeking Agents](../../ICLR2026/llm_evaluation/do_llm_agents_know_how_to_ground_recover_and_assess_evaluating_epistemic_compete.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Confident and Adaptive Generative Speech Recognition via Risk Control
 description: >-
-  [ICLR 2026][Audio & Speech][Learn then Test] Addressing the issue where fixed $N$ in "LLM-based Generative Error Correction (GER) for ASR N-best hypotheses" either wastes computation or introduces noise, this paper adaptively determines the number of hypotheses per utterance based on ASR confidence scores. By employing the Learn then Test (LTT) risk control frame
+  [ICLR2026][Audio & Speech][Generative Error Correction] Addressing the issue where fixed $N$ in "LLM-based Generative Error Correction (GER) for ASR N-best hypotheses" either wastes computation or introduces noise, this paper adaptively determines the number of hypotheses per utterance based on ASR confidence scores. By employing the Learn then Test (LTT) risk control framework, it establishes a high-probability upper bound for "relative optimal performance degradation…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Learn then Test
-  - ASR
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Generative Error Correction"
+  - "Risk Control"
+  - "Learn then Test"
+  - "Adaptive Hypothesis Set"
+  - "ASR"
 date: 2026-05-08
-content_hash: 99b8405aaac53c8b
+content_hash: c7c8d3b5224a0b8c
 ---
+
 # Confident and Adaptive Generative Speech Recognition via Risk Control
 
 **Conference**: ICLR2026  
@@ -136,14 +140,15 @@ Testing on three HyPoradise datasets with $N=5$ and LLaMA-2-7B. $O_{llm}$ repres
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?](automatic_stage_lighting_control_is_it_a_rule-driven_process_or_generative_task.md)
 - [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
-- [\[NeurIPS 2025\] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](../../NeurIPS2025/audio_speech/enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)
 - [\[ICLR 2026\] Discovering and Steering Interpretable Concepts in Large Generative Music Models](discovering_and_steering_interpretable_concepts_in_large_generative_music_models.md)
+- [\[NeurIPS 2025\] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](../../NeurIPS2025/audio_speech/enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)
 - [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
 
 </div>

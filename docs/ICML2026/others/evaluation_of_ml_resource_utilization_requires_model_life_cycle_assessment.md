@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment
 description: >-
-  [ICML 2026][Others][Paper Note] This position paper argues that evaluating ML model resource consumption and environmental impact must move beyond focusing solely on the marginal costs of "single training" or "single inference." Instead, it advocates for adopting **Life Cycle Assessment (LCA)** from industrial ecology to aggregate and attribute costs
+  [ICML 2026][Life Cycle Assessment (LCA)] This position paper argues that evaluating ML model resource consumption and environmental impact must move beyond focusing solely on the marginal costs of "single training" or "single inference." Instead, it advocates for adopting **Life Cycle Assessment (LCA)** from industrial ecology to aggregate and attribute costs—ranging from hardware manufacturing (embodied costs) to operational costs of training and deployment—across the entire…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Life Cycle Assessment (LCA)"
+  - "Energy and Carbon Emissions"
+  - "Embodied Costs"
+  - "Functional Units"
+  - "Sustainable AI"
 date: 2026-05-08
-content_hash: 4da9b37ff6550be2
+content_hash: 4e996b2a252a3af3
 ---
+
 # Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment
 
 **Conference**: ICML 2026  
@@ -126,9 +131,9 @@ Using OLMo2 7B training and inference as an example (inference efficiency estima
 
 - [\[ICML 2026\] Comprehensive AI Governance Requires Addressing Non-Model Gains](comprehensive_ai_governance_requires_addressing_non-model_gains.md)
 - [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](../../AAAI2026/others/forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
-- [\[ICML 2025\] Position: AI Evaluation Should Learn from How We Test Humans](../../ICML2025/others/position_ai_evaluation_should_learn_from_how_we_test_humans.md)
-- [\[NeurIPS 2025\] Fostering the Ecosystem of AI for Social Impact Requires Expanding and Strengthening Evaluation Standards](../../NeurIPS2025/others/fostering_the_ecosystem_of_ai_for_social_impact_requires_expanding_and_strengthe.md)
 - [\[ICML 2026\] nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding](nd-rope_a_generalized_rope_for_n-dimensional_position_embedding.md)
+- [\[ICML 2026\] Position: Age Estimation Models Do Not Process Biometric Data](position_age_estimation_models_do_not_process_biometric_data.md)
+- [\[ICML 2025\] Position: AI Evaluation Should Learn from How We Test Humans](../../ICML2025/others/position_ai_evaluation_should_learn_from_how_we_test_humans.md)
 
 </div>
 

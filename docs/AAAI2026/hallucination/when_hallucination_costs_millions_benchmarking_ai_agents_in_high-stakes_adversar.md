@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets
 description: >-
-  [AAAI 2026][Hallucination Detection][AI Agent Evaluation] This paper introduces the CAIA benchmark, which leverages cryptocurrency markets as a natural adversarial laboratory to evaluate 17 state-of-the-art LLMs on agent…
+  [AAAI 2026][Hallucination Detection][AI Agent Evaluation] This paper introduces the CAIA benchmark, which leverages cryptocurrency markets as a natural adversarial laboratory to evaluate 17 state-of-the-art LLMs on agent capabilities in high-stakes adversarial environments. Results reveal that frontier models achieve only 67.4% accuracy (GPT-5) compared to a human baseline of 80%, and expose systematic tool selection failures.
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "Tool Selection"
   - "Hallucination"
 date: 2026-05-08
-content_hash: e9d4b5d033f993dd
+content_hash: f655a13cef60ad32
 ---
 
 # When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets

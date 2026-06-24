@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors observe that token "importance" fluctuates drastically across layers and heads, making traditional one-time token eviction an irreversible early decision error. They propose Token Sparse Attention, where each layer and attention head independently selects $L' \ll L$ tokens for dense attention. The output is
+  [ICML 2026][Model Compression][Sparse attention] The authors observe that token "importance" fluctuates drastically across layers and heads, making traditional one-time token eviction an irreversible early decision error. They propose Token Sparse Attention, where each layer and attention head independently selects $L' \ll L$ tokens for dense attention. The output is then scattered back to the original sequence length, coupled with a residual path that allows skipped tokens t…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Sparse attention"
+  - "prefill acceleration"
+  - "reversible token selection"
+  - "FlashAttention compatibility"
+  - "dynamic sparsity"
 date: 2026-05-08
-content_hash: cf43e4e9b07a8566
+content_hash: 17ef6339775f3451
 ---
+
 # Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection
 
 **Conference**: ICML 2026  
@@ -136,11 +142,11 @@ Comparison with token eviction methods at similar speedup (128K, LLaMA-3.1-8B):
 
 ## Related Papers
 
+- [\[ICML 2026\] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT](toast_token_channel_selection_and_structured_pruning_for_efficient_vit.md)
 - [\[ICML 2025\] OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM Inference](../../ICML2025/model_compression/orthorank_token_selection_via_sink_token_orthogonality_for_efficient_llm_inferen.md)
-- [\[ICML 2026\] T3S: 训练轨迹感知的 token 选择，破解推理蒸馏的「Imitation Shock」](training-trajectory-aware_token_selection.md)
+- [\[ICML 2026\] T3S: Training Trajectory-Aware Token Selection, Breaking the "Imitation Shock" in Reasoning Distillation](training-trajectory-aware_token_selection.md)
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](../../NeurIPS2025/model_compression/recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
-- [\[ICML 2026\] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT](toast_token_channel_selection_and_structured_pruning_for_efficient_vit.md)
 
 </div>
 

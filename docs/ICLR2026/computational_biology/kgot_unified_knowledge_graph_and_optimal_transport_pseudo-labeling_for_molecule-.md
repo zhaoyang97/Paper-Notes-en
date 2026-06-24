@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] KGOT models "pseudo-labeling unannotated molecule-protein pairs" as an Optimal Transport (OT) matching problem. The generated transport plan is then written back as a new relation into a large-scale biological Knowledge Graph (KG) for joint training. This closed loop of OT + KG effectively mitigates label scarcity in M
+  [ICLR 2026][Computational Biology][Molecule-Protein Interaction] KGOT models "pseudo-labeling unannotated molecule-protein pairs" as an Optimal Transport (OT) matching problem. The generated transport plan is then written back as a new relation into a large-scale biological Knowledge Graph (KG) for joint training. This closed loop of OT + KG effectively mitigates label scarcity in MPI tasks, comprehensively outperforming docking and DrugCLIP in both virtual screening and link…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecule-Protein Interaction"
+  - "Optimal Transport"
+  - "Pseudo-Labeling"
+  - "Knowledge Graph"
+  - "Virtual Screening"
+  - "Semi-Supervised Learning"
 date: 2026-05-08
-content_hash: d25b854ae29da116
+content_hash: e1a6e30970537d98
 ---
+
 # KGOT: Unified Knowledge Graph and Optimal Transport Pseudo-Labeling for Molecule-Protein Interaction Prediction
 
 **Conference**: ICLR 2026  
@@ -135,8 +142,8 @@ The paper reports three types of ablations (see Appendix E for details), with tr
 - [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
 - [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
 - [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
+- [\[ICLR 2026\] RankFlow: Property-aware Transport for Protein Optimization](rankflow_property-aware_transport_for_protein_optimization.md)
 - [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
-- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](../../ICML2026/computational_biology/learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
 
 </div>
 

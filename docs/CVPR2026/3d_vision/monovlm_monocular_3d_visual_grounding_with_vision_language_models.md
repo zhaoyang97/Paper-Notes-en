@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] MonoVLM utilizes a **three-stage curriculum GRPO training** framework to elevate monocular 3D visual grounding (predicting a 3D bounding box from an RGB image and a text description)—a task that even GPT-5 fails significantly—from nearly zero to SOTA. The model is first taught accurate 2D localization, then learns 3D c
+  [CVPR 2026][3D Vision][Monocular 3D grounding] MonoVLM utilizes a **three-stage curriculum GRPO training** framework to elevate monocular 3D visual grounding (predicting a 3D bounding box from an RGB image and a text description)—a task that even GPT-5 fails significantly—from nearly zero to SOTA. The model is first taught accurate 2D localization, then learns 3D centers through camera projection/back-projection, and finally refines complete 3D boxes using compound rewards. T…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
-  - GRPO
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular 3D grounding"
+  - "Vision-Language Models"
+  - "GRPO"
+  - "Curriculum Reinforcement Learning"
+  - "3D Bounding Box Prediction"
 date: 2026-05-08
-content_hash: b0cc5db19ce12902
+content_hash: c80cbe449ee5cc39
 ---
+
 # MonoVLM: Monocular 3D Visual Grounding with Vision Language Models
 
 **Conference**: CVPR 2026  
@@ -151,11 +155,11 @@ Key Takeaways: General VLMs (including GPT-5) largely fail (Acc@0.25 typically $
 
 ## Related Papers
 
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
-- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
-- [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
-- [\[CVPR 2026\] A Cookbook of 3D Vision: Data, Learning Paradigms, and Application](a_cookbook_of_3d_vision_data_learning_paradigms_and_application.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
+- [\[CVPR 2026\] UZ3DVG: Unaided Zero-Shot 3D Visual Grounding with Generated Language Conditions](uz3dvg_unaided_zero-shot_3d_visual_grounding_with_generated_language_conditions.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] Geometry-Guided 3D Visual Token Pruning for Video-Language Models](geometry-guided_3d_visual_token_pruning_for_video-language_models.md)
+- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
+- [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
 
 </div>
 

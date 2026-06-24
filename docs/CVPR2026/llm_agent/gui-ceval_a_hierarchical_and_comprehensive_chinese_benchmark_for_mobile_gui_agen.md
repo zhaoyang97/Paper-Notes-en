@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] This work proposes GUI-CEval, the first comprehensive benchmark for Chinese mobile GUI Agents. It covers 201 mainstream Chinese Apps across 4 device types, utilizing a "Foundation + Application" two-layer structure to conduct fine-grained diagnosis across five dimensions: perception, planning, reflection, execution, an
+  [CVPR 2026][LLM Agent][GUI Agent] This work proposes GUI-CEval, the first comprehensive benchmark for Chinese mobile GUI Agents. It covers 201 mainstream Chinese Apps across 4 device types, utilizing a "Foundation + Application" two-layer structure to conduct fine-grained diagnosis across five dimensions: perception, planning, reflection, execution, and evaluation. Experiments on 20 representative models reveal that current models still exhibit significant weaknesses in refle…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Chinese mobile benchmark"
+  - "multimodal evaluation"
+  - "hierarchical diagnosis"
+  - "mobile interaction"
 date: 2026-05-08
-content_hash: d7fbe5e07b8cd8ac
+content_hash: 19b2f74e59472042
 ---
+
 # GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents
 
 **Conference**: CVPR 2026  
@@ -106,16 +111,17 @@ Evaluation was conducted on 20 representative models (general MLLMs + GUI-specif
 
 <div class="related-papers" markdown="1">
 
-| Paper | Venue | Highlights |
-|-------|-------|------------|
-| ScreenSpot | CVPR 2024 | Benchmark for GUI element localization. |
-| AndroidWorld | ICML 2024 | Scalable environment for autonomous Android agents. |
-| UI-TARS | arXiv 2024 | Advanced model for GUI interaction trained on large-scale data. |
+## Related Papers
+
+- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
+- [\[CVPR 2026\] ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices](proactivemobile_a_comprehensive_benchmark_for_boosting_proactive_intelligence_on.md)
+- [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
+- [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](../../ICLR2026/llm_agent/m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
+- [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)

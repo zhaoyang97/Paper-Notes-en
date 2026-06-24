@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper proposes GeoID, a test-time training framework for robust LiDAR semantic segmentation under corruption. By injecting "off-manifold" synthetic noise points into point clouds, the model is tasked with a self-supervised objective of distinguishing between "geometrically consistent real inliers" and "manually di
+  [CVPR 2026][Autonomous Driving][LiDAR Semantic Segmentation] This paper proposes GeoID, a test-time training framework for robust LiDAR semantic segmentation under corruption. By injecting "off-manifold" synthetic noise points into point clouds, the model is tasked with a self-supervised objective of distinguishing between "geometrically consistent real inliers" and "manually displaced synthetic outliers" to adapt to the target domain. Combined with Bidirectional Unreliable P…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Semantic Segmentation"
+  - "Test-Time Training"
+  - "Corruption Robustness"
+  - "Self-Supervised Learning"
+  - "Geometric Inlier Discrimination"
 date: 2026-05-08
-content_hash: 3df55d16d4637973
+content_hash: ec8286e12d3c34f9
 ---
+
 # Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination
 
 **Conference**: CVPR 2026  
@@ -126,10 +132,10 @@ The full model (GeoID+BiUPF) improved performance by 4.0% on average. Removing B
 ## Related Papers
 
 - [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
+- [\[CVPR 2026\] TerraSeg: Self-Supervised Ground Segmentation for Any LiDAR](terraseg_self-supervised_ground_segmentation_for_any_lidar.md)
 - [\[ICLR 2026\] Adaptive Augmentation-Aware Latent Learning for Robust LiDAR Semantic Segmentation](../../ICLR2026/autonomous_driving/adaptive_augmentation-aware_latent_learning_for_robust_lidar_semantic_segmentati.md)
-- [\[CVPR 2026\] Learning Geometric and Photometric Features from Panoramic LiDAR Scans for Outdoor Place Categorization](learning_geometric_and_photometric_features_from_p.md)
-- [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](../../ICCV2025/autonomous_driving/adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
 - [\[CVPR 2026\] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](sgnlf_spectralgeometric_neural_fields_for_posefre.md)
+- [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](../../ICCV2025/autonomous_driving/adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
 
 </div>
 

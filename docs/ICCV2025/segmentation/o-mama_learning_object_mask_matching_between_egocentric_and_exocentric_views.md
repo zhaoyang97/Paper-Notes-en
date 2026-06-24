@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views
 description: >-
-  [ICCV 2025][Segmentation][Cross-View Segmentation] This work reframes cross-view (ego-exo) object segmentation as a mask matching problem. It leverages FastSAM to generate candidate masks…
+  [ICCV 2025][Segmentation][Cross-View Segmentation] This work reframes cross-view (ego-exo) object segmentation as a mask matching problem. It leverages FastSAM to generate candidate masks, DINOv2 to extract semantic features, and contrastive learning to match objects across views, achieving state-of-the-art performance on the Ego-Exo4D benchmark with only 1% of the trainable parameters used by prior methods.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "DINOv2"
 date: 2026-05-08
-content_hash: eed04e13745c628b
+content_hash: 0756acb820f1480b
 ---
 
 # O-MaMa: Learning Object Mask Matching between Egocentric and Exocentric Views
@@ -178,9 +178,9 @@ DINOv2 mask-pooled features substantially outperform CLIP and alternative poolin
 
 - [\[ICCV 2025\] Learning Precise Affordances from Egocentric Videos for Robotic Manipulation](learning_precise_affordances_from_egocentric_videos_for_robotic_manipulation.md)
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
+- [\[CVPR 2025\] LiVOS: Light Video Object Segmentation with Gated Linear Matching](../../CVPR2025/segmentation/livos_light_video_object_segmentation_with_gated_linear_matching.md)
 - [\[CVPR 2026\] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction](../../CVPR2026/segmentation/learning_cross-view_object_correspondence_via_cycle-consistent_mask_prediction.md)
 - [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](../../NeurIPS2025/segmentation/robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
-- [\[ICCV 2025\] Refer to Any Segmentation Mask Group With Vision-Language Prompts](refer_to_any_segmentation_mask_group_with_vision-language_prompts.md)
 
 </div>
 

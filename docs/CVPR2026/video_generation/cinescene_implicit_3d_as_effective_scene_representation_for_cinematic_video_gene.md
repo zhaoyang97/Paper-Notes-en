@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation
 description: >-
-  [CVPR 2026][Video Generation][VGGT] Given a set of static scene images, a text prompt, and a user-specified camera trajectory, CineScene injects "implicit 3D features" extracted by VGGT as context conditions into a pre-trained T2V diffusion model. This enables the generation of scene-consistent cinematic videos with novel dynamic subjects under significa
+  [CVPR 2026][Video Generation][Cinematic Video Generation] Given a set of static scene images, a text prompt, and a user-specified camera trajectory, CineScene injects "implicit 3D features" extracted by VGGT as context conditions into a pre-trained T2V diffusion model. This enables the generation of scene-consistent cinematic videos with novel dynamic subjects under significant viewpoint changes, achieving SOTA in both scene consistency and camera precision.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - VGGT
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Cinematic Video Generation"
+  - "Implicit 3D"
+  - "VGGT"
+  - "Context Conditioning"
+  - "Scene Consistency"
 date: 2026-05-08
-content_hash: 67ffd49645418ba0
+content_hash: 2cb28328ec888221
 ---
+
 # CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation
 
 **Conference**: CVPR 2026  
@@ -144,15 +149,16 @@ CineScene leads in scene consistency and camera precision. FramePack suffers fro
 - Value: ⭐⭐⭐⭐ (Practical applications for virtual production; non-intrusive to pre-trained T2V architectures)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](../../ICLR2026/video_generation/3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
 - [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
 - [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
+- [\[ICLR 2026\] NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis](../../ICLR2026/video_generation/nerv-diffusion_diffuse_implicit_neural_representation_for_video_synthesis.md)
 - [\[CVPR 2026\] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative](stage_storyboard-anchored_generation_for_cinematic_multi-shot_narrative.md)
-- [\[CVPR 2026\] HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives](holocine_holistic_generation_of_cinematic_multi-shot_long_video_narratives.md)
-- [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
 
 </div>
 

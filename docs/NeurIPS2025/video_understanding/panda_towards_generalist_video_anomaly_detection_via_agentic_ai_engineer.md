@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer
 description: >-
-  [NEURIPS2025][Video Understanding][video anomaly detection] This paper proposes PANDA, an agentic AI engineer framework built upon MLLMs, which achieves training-free and human-intervention-free generalist video anomaly…
+  [NEURIPS2025][Video Understanding][video anomaly detection] This paper proposes PANDA, an agentic AI engineer framework built upon MLLMs, which achieves training-free and human-intervention-free generalist video anomaly detection through four core capabilities: adaptive scene-aware strategy planning, goal-driven heuristic reasoning, tool-augmented self-reflection, and chain-of-memory.
 tags:
   - "NEURIPS2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "self-reflection"
   - "chain-of-memory"
 date: 2026-05-08
-content_hash: 086d976409e5156a
+content_hash: 95be787026854715
 ---
 
 # PANDA: Towards Generalist Video Anomaly Detection via Agentic AI Engineer
@@ -174,9 +174,9 @@ PANDA achieves comprehensive state-of-the-art performance among all training-fre
 
 - [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[CVPR 2025\] Anomize: Better Open Vocabulary Video Anomaly Detection](../../CVPR2025/video_understanding/anomize_better_open_vocabulary_video_anomaly_detection.md)
+- [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](../../CVPR2026/video_understanding/your_one-stop_solution_for_ai-generated_video_detection.md)
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](../../CVPR2026/video_understanding/no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
-- [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](../../AAAI2026/video_understanding/headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
-- [\[ICML 2026\] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](../../ICML2026/video_understanding/privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)
 
 </div>
 

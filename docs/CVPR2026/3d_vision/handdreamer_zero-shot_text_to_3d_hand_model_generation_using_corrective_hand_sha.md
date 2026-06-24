@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance
 description: >-
-  [CVPR 2026][3D Vision][Score Distillation Sampling] HandDreamer is the first zero-shot "Text-to-3D Hand Model" method. It utilizes MANO hand models for low-score initialization, employs 2D hand skeletons as ControlNet conditions to compress the number of modes in the probability distribution, and introduces a corrective hand shape (CHS) loss to rectify geometry througho
+  [CVPR 2026][3D Vision][Text-to-3D Hand Generation] HandDreamer is the first zero-shot "Text-to-3D Hand Model" method. It utilizes MANO hand models for low-score initialization, employs 2D hand skeletons as ControlNet conditions to compress the number of modes in the probability distribution, and introduces a corrective hand shape (CHS) loss to rectify geometry throughout the SDS process. This enables the generation of view-consistent, highly detailed…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Score Distillation Sampling
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-3D Hand Generation"
+  - "Score Distillation Sampling"
+  - "MANO Prior"
+  - "ControlNet Skeleton Guidance"
+  - "View Consistency"
 date: 2026-05-08
-content_hash: 7c648259b59a3bd7
+content_hash: d192f3a4e4d8884e
 ---
+
 # HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Gradual inclusion of the three components (Skeleton-CN = Hand Skeleton ControlNe
 
 ## Related Papers
 
-- [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
-- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
-- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
+- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
+- [\[CVPR 2026\] TokenHand: Discrete Token Representation for Efficient Hand Mesh Reconstruction](tokenhand_discrete_token_representation_for_efficient_hand_mesh_reconstruction.md)
+- [\[CVPR 2026\] UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation](ust-hand_an_uncertainty-aware_spatiotemporal_point_cloud_interaction_network_for.md)
 
 </div>
 

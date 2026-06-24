@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] Proposes Scene-VLM—the first video scene segmentation framework based on fine-tuned VLMs. By utilizing structured multimodal shot representations (visual frames + dialogue + metadata), causal sequence prediction, a context-focus window mechanism, and token logit confidence extraction, it achieves significant gains of +
+  [CVPR2026][Multimodal VLM][Video scene segmentation] Proposes Scene-VLM—the first video scene segmentation framework based on fine-tuned VLMs. By utilizing structured multimodal shot representations (visual frames + dialogue + metadata), causal sequence prediction, a context-focus window mechanism, and token logit confidence extraction, it achieves significant gains of +6 AP and +13.7 F1 on MovieNet and demonstrates natural language explanation capabilities.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Video scene segmentation"
+  - "Vision-Language Models"
+  - "Multimodal reasoning"
+  - "Sequence prediction"
+  - "Confidence estimation"
 date: 2026-05-08
-content_hash: a29f5851474cf14c
+content_hash: 53e168639251f986
 ---
+
 # Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models
 
 **Conference**: CVPR2026  
@@ -143,7 +148,7 @@ While encoders only output a confidence score, Scene-VLM can generate coherent n
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -151,7 +156,7 @@ While encoders only output a confidence score, Scene-VLM can generate coherent n
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
 - [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
 - [\[CVPR 2025\] Embodied Scene Understanding for Vision Language Models via MetaVQA](../../CVPR2025/multimodal_vlm/embodied_scene_understanding_for_vision_language_models_via_metavqa.md)
-- [\[CVPR 2026\] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity](infinibench_infinite_benchmarking_for_visual_spatial_reasoning_with_customizable.md)
+- [\[CVPR 2026\] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia](sea-vision_a_multilingual_benchmark_for_comprehensive_document_and_scene_text_un.md)
 
 </div>
 

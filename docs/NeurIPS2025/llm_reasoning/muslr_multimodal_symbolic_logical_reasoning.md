@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MuSLR: Multimodal Symbolic Logical Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multimodal symbolic logical reasoning] This paper introduces MuSLR, the first multimodal symbolic logical reasoning task, along with its benchmark MuSLR-Bench (1…
+  [NeurIPS 2025][Reasoning][Multimodal symbolic logical reasoning] This paper introduces MuSLR, the first multimodal symbolic logical reasoning task, along with its benchmark MuSLR-Bench (1,093 instances spanning 7 domains, 35 atomic symbolic logic rules, and reasoning depths of 2–9). It further proposes LogiCAM, a modular framework comprising premise selection, reasoning type identification, and symbolic reasoning modules, which improves GPT-4.1's CoT performance by 14.13%.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multimodal symbolic logical reasoning"
   - "VLM benchmark"
   - "formal logic"
   - "Chain-of-Thought"
   - "modular reasoning"
 date: 2026-05-08
-content_hash: 2159ef4272bbab62
+content_hash: ae936dc9fa8965a6
 ---
 
 # MuSLR: Multimodal Symbolic Logical Reasoning
@@ -129,7 +129,7 @@ LogiCAM is built on prompt engineering with GPT-4.1, employing a three-shot CoT 
 - [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](../../ACL2026/llm_reasoning/discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
 - [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
-- [\[NeurIPS 2025\] Visual Thoughts: A Unified Perspective of Understanding Multimodal Chain-of-Thought](visual_thoughts_a_unified_perspective_of_understanding_multi.md)
+- [\[ICLR 2026\] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks](../../ICLR2026/llm_reasoning/vericot_neuro-symbolic_chain-of-thought_validation_via_logical_consistency_check.md)
 
 </div>
 

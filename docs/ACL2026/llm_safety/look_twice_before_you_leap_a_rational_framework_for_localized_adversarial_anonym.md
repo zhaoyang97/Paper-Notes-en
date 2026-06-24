@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] The authors propose the RLAA framework, which utilizes an Attacker-Arbitrator-Anonymizer architecture and Marginal Rate of Substitution (MRS) rationality constraints to solve the utility collapse issue when migrating adversarial text anonymization to local small models, achieving a privacy-utility balance superior to A
+  [ACL 2026 Findings][LLM Safety][Text Anonymization] The authors propose the RLAA framework, which utilizes an Attacker-Arbitrator-Anonymizer architecture and Marginal Rate of Substitution (MRS) rationality constraints to solve the utility collapse issue when migrating adversarial text anonymization to local small models, achieving a privacy-utility balance superior to API-based solutions without requiring training.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Text Anonymization"
+  - "Adversarial Game"
+  - "Privacy Paradox"
+  - "Local Deployment"
+  - "Economic Rationality"
 date: 2026-05-08
-content_hash: 7345c7f51ded9e3c
+content_hash: 6b2ecdb3ed22fb15
 ---
+
 # Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization
 
 **Conference**: ACL 2026 Findings  
@@ -125,9 +131,9 @@ RLAA is a training-free framework that directly utilizes pre-trained local small
 
 - [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
-- [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 - [\[ACL 2026\] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)
 - [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](de-anonymization_at_scale_via_tournament-style_attribution.md)
+- [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 
 </div>
 

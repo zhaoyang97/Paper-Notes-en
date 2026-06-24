@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Protein Autoregressive Modeling via Multiscale Structure Generation
 description: >-
-  [ICML 2026][Computational Biology][next-scale prediction] PAR adapts the "next-scale prediction" concept from the visual autoregressive (VAR) domain to protein $C\alpha$ backbone generation. By using multiscale downsampling, an autoregressive Transformer, and a flow-based decoder instead of single-scale diffusion models—combined with noisy context learning and scheduled sampl
+  [ICML 2026 Spotlight][Computational Biology][Protein backbone generation] PAR adapts the "next-scale prediction" concept from the visual autoregressive (VAR) domain to protein $C\alpha$ backbone generation. By using multiscale downsampling, an autoregressive Transformer, and a flow-based decoder instead of single-scale diffusion models—combined with noisy context learning and scheduled sampling to mitigate exposure bias—it achieves an unconditional FPSD of 161.0 while unlocki…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - next-scale prediction
-  - flow matching
+  - "ICML 2026 Spotlight"
+  - "Computational Biology"
+  - "Protein backbone generation"
+  - "multiscale autoregressive"
+  - "next-scale prediction"
+  - "flow matching"
+  - "exposure bias"
 date: 2026-05-08
-content_hash: b997eb13e3c24d7f
+content_hash: d80751dcd393c2cc
 ---
+
 # Protein Autoregressive Modeling via Multiscale Structure Generation
 
 **Conference**: ICML 2026 Spotlight  
@@ -147,11 +151,11 @@ The 3-scale setup is the sweet spot. Performance drops with 4-5 scales, likely d
 
 ## Related Papers
 
+- [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](../../ICLR2026/computational_biology/flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](../../NeurIPS2025/computational_biology/multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
 - [\[ICML 2026\] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation](card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t.md)
 - [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
-- [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/computational_biology/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 
 </div>
 

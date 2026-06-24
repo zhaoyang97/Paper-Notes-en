@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis
 description: >-
-  [AAAI 2026][Multimodal VLM][Medical Diagnosis] This paper proposes PCDF (Pre-Consultation Dialogue Framework), which simulates realistic doctor-patient dialogue through two VLMs in role-play — DocVLM asks questions and P…
+  [AAAI 2026][Multimodal VLM][Medical Diagnosis] This paper proposes PCDF (Pre-Consultation Dialogue Framework), which simulates realistic doctor-patient dialogue through two VLMs in role-play — DocVLM asks questions and PatientVLM answers — to generate image-dialogue-diagnosis triplets for fine-tuning DocVLM. The framework achieves an average F1 improvement of 11.48 percentage points across four medical imaging benchmarks without relying on real clinical dialogue data.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multi-turn Dialogue"
   - "Data Augmentation"
 date: 2026-05-08
-content_hash: 0634e006db90d991
+content_hash: f06617531186fb3c
 ---
 
 # PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis
@@ -161,11 +161,11 @@ The PCDF framework consists of two stages:
 
 ## Related Papers
 
-- [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
 - [\[ACL 2026\] More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage](../../ACL2026/multimodal_vlm/more_than_meets_the_eye_measuring_the_semiotic_gap_in_vision-language_models_via.md)
-- [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
-- [\[NeurIPS 2025\] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering](../../NeurIPS2025/multimodal_vlm/are_vision_language_models_ready_for_clinical_diagnosis_a_3d_medical_benchmark_f.md)
-- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](../../ACL2026/multimodal_vlm/efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
+- [\[AAAI 2026\] SafeR-CLIP: Mitigating NSFW Content in Vision-Language Models While Preserving Pre-Trained Knowledge](safer-clip_mitigating_nsfw_content_in_vision-language_models_while_preserving_pr.md)
+- [\[CVPR 2025\] DocVLM: Make Your VLM an Efficient Reader](../../CVPR2025/multimodal_vlm/docvlm_make_your_vlm_an_efficient_reader.md)
+- [\[CVPR 2025\] Skip Tuning: Pre-trained Vision-Language Models are Effective and Efficient Adapters Themselves](../../CVPR2025/multimodal_vlm/skip_tuning_pre-trained_vision-language_models_are_effective_and_efficient_adapt.md)
+- [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
 
 </div>
 

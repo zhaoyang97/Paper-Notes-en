@@ -4,17 +4,18 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][4D reconstruction] The 4DEquine framework is proposed to **disentangle** 4D reconstruction of equines from monocular video into two sub-problems: dynamic motion estimation (AniMoFormer) and static appearance reconstruction (EquineGS). It achieves SOTA performance on real-world data while being trained only on synthetic data.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D reconstruction
-  - equine reconstruction
-  - 3D Gaussian Splatting
-  - parametric model
-  - monocular video
-  - feed-forward
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "equine reconstruction"
+  - "3D Gaussian Splatting"
+  - "parametric model"
+  - "monocular video"
+  - "feed-forward"
 date: 2026-05-08
-content_hash: 86b2b4dcb7b1b9dd
+content_hash: ab90c6fa4c8cde4e
 ---
+
 # 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
 
 **Conference**: CVPR 2026  
@@ -186,10 +187,10 @@ AniMoFormer leads by a wide margin across all datasets: reaching 84.2% PCK@0.05 
 ## Related Papers
 
 - [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
+- [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
+- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction](reflow_self-correction_motion_learning_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
-- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
-- [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](../../ICCV2025/3d_vision/vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
 
 </div>
 

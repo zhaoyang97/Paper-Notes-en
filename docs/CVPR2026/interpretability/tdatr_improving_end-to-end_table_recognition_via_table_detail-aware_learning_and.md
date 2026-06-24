@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] The TDATR framework is proposed, utilizing a "perceive-then-fuse" strategy and a structure-guided cell localization module to achieve end-to-end table recognition with limited annotated data, reaching SOTA on 7 benchmarks without dataset-specific fine-tuning.
+  [CVPR2026][Interpretability][Table Recognition] The TDATR framework is proposed, utilizing a "perceive-then-fuse" strategy and a structure-guided cell localization module to achieve end-to-end table recognition with limited annotated data, reaching SOTA on 7 benchmarks without dataset-specific fine-tuning.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR2026"
+  - "Interpretability"
+  - "Table Recognition"
+  - "End-to-End"
+  - "Detail-Aware Learning"
+  - "Cell Localization"
+  - "Vision-Language Alignment"
 date: 2026-05-08
-content_hash: 8e2868cb55f9b3ff
+content_hash: b718766faf572f6f
 ---
+
 # TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment
 
 **Conference**: CVPR2026  
@@ -133,10 +139,10 @@ Each stage is trained for 3 epochs using 16×64GB 910B NPUs.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](../../ICLR2026/interpretability/sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
 - [\[CVPR 2026\] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](../../NeurIPS2025/interpretability/table_as_a_modality_for_large_language_models.md)
-- [\[ICLR 2026\] Stress-Testing Alignment Audits with Prompt-Level Strategic Deception](../../ICLR2026/interpretability/stress-testing_alignment_audits_with_prompt-level_strategic_deception.md)
-- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
+- [\[ICLR 2026\] Decomposition of Concept-Level Rules in Visual Scenes](../../ICLR2026/interpretability/decomposition_of_concept-level_rules_in_visual_scenes.md)
 - [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)
 
 </div>

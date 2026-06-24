@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] The authors propose PL-Stitch, a self-supervised framework that utilizes the Plackett-Luce probabilistic ranking model to treat the temporal ordering of video frames as a pre-training signal. By learning "procedure-aware" video representations, it significantly outperforms existing self-supervised methods in surgical p
+  [CVPR 2026][Video Understanding][Procedural Activity Understanding] The authors propose PL-Stitch, a self-supervised framework that utilizes the Plackett-Luce probabilistic ranking model to treat the temporal ordering of video frames as a pre-training signal. By learning "procedure-aware" video representations, it significantly outperforms existing self-supervised methods in surgical phase recognition and cooking action segmentation.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Procedural Activity Understanding"
+  - "Temporal Ranking"
+  - "Plackett-Luce Model"
+  - "Self-Supervised Learning"
+  - "Surgical Video"
 date: 2026-05-08
-content_hash: 1d9fb089f7fda579
+content_hash: 3440b3bd5dcecf10
 ---
+
 # A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ The total loss is $\mathcal{L}_{total} = \lambda_1 \mathcal{L}_{vid} + \lambda_2
 
 ## Related Papers
 
-- [\[CVPR 2026\] Re-Depth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting](redepth_anything_test-time_depth_refinement_via_self-supervised_re-lighting.md)
-- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
-- [\[CVPR 2026\] Can You Learn to See Without Images? Procedural Warm-Up for Vision Transformers](can_you_learn_to_see_without_images_procedural_warm-up_for_vision_transformers.md)
-- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
-- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
+- [\[CVPR 2026\] Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning](boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning.md)
+- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
+- [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
+- [\[CVPR 2026\] Stitch-a-Demo: Creating Video Demonstrations from Multistep Descriptions](stitch-a-demo_creating_video_demonstrations_from_multistep_descriptions.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] This paper proposes C-BPO, which treats target user history as positive feedback and other users' history as noisy unlabeled negative feedback. It utilizes PU learning to correct the mis-penalization caused by "preference overlap," allowing the LLM to learn unique user preferences without suppressing general task capab
+  [ACL2026][Recommender Systems][LLM Personalization] This paper proposes C-BPO, which treats target user history as positive feedback and other users' history as noisy unlabeled negative feedback. It utilizes PU learning to correct the mis-penalization caused by "preference overlap," allowing the LLM to learn unique user preferences without suppressing general task capabilities.
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL2026"
+  - "Recommender Systems"
+  - "LLM Personalization"
+  - "Binary Feedback"
+  - "PU Learning"
+  - "Preference Recalibration"
+  - "User Diversity"
 date: 2026-05-08
-content_hash: 2d4ec4e9f39c81b2
+content_hash: aaf804c7e5008871
 ---
+
 # Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework
 
 **Conference**: ACL2026  
@@ -146,8 +152,8 @@ Evaluation was conducted on five personalization generation tasks from LaMP and 
 ## Related Papers
 
 - [\[ACL 2026\] SenseJudge: Human-Centric Preference-Driven Judgment Framework](sensejudge_human-centric_preference-driven_judgment_framework.md)
-- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 - [\[ICML 2026\] T-POP: Test-Time Personalization with Online Preference Feedback](../../ICML2026/recommender/t-pop_test-time_personalization_with_online_preference_feedback.md)
+- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 - [\[ACL 2026\] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context](what_makes_llms_effective_sequential_recommenders_a_study_on_preference_intensit.md)
 - [\[AAAI 2026\] Evaluating LLMs for Police Decision-Making: A Framework Based on Police Action Scenarios](../../AAAI2026/recommender/evaluating_llms_for_police_decision-making_a_framework_based_on_police_action_sc.md)
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Gaussian Process] This paper proposes Physics-Informed Log Evidence (PILE) within the Gaussian Process framework of physics-informed kernel learning. It uses a marginal likelihood index with an uncertainty interpretation to uniformly diagnose data fitting, physical constraints, and kernel/regularization hyperparameter selection, avoidin
+  [ICLR2026][Physics & Scientific Computing][Physics-Informed Machine Learning] This paper proposes Physics-Informed Log Evidence (PILE) within the Gaussian Process framework of physics-informed kernel learning. It uses a marginal likelihood index with an uncertainty interpretation to uniformly diagnose data fitting, physical constraints, and kernel/regularization hyperparameter selection, avoiding the multi-objective tuning ambiguity common in PIML.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Gaussian Process
-  - PILE
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Physics-Informed Machine Learning"
+  - "Gaussian Process"
+  - "Model Diagnostics"
+  - "PILE"
+  - "PDE Solving"
 date: 2026-05-08
-content_hash: 7a2fc7fd585ccfc2
+content_hash: 4dced079da56e920
 ---
+
 # Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning
 
 **Conference**: ICLR2026  

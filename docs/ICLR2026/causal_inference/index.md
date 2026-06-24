@@ -81,7 +81,7 @@ item_total: 64
 
 **🔬 ICLR2026** · **64** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [💬 ACL2026 (7)](../../ACL2026/causal_inference/index.md) · [🧪 ICML2026 (19)](../../ICML2026/causal_inference/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [💬 ACL2026 (7)](../../ACL2026/causal_inference/index.md) · [🧪 ICML2026 (19)](../../ICML2026/causal_inference/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (20)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×4 · LLM ×3 · Time-Series Forecasting ×2 · Reasoning ×2
 

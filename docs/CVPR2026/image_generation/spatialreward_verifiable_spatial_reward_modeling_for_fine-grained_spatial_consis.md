@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] SpatialReward is a "verifiable" spatial reward model for text-to-image (T2I) generation. It first decomposes free-form text into structured constraints, then uses expert models such as object detection and OCR to objectively verify the generated images. Finally, it utilizes a Vision-Language Model (VLM) for Chain-of-Th
+  [CVPR 2026][Image Generation][Text-to-Image] SpatialReward is a "verifiable" spatial reward model for text-to-image (T2I) generation. It first decomposes free-form text into structured constraints, then uses expert models such as object detection and OCR to objectively verify the generated images. Finally, it utilizes a Vision-Language Model (VLM) for Chain-of-Thought (CoT) reasoning based on verified facts to provide spatial reward scores. Integration with Flow-GRPO signific…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Spatial Consistency"
+  - "Verifiable Reward"
+  - "Reinforcement Learning"
+  - "Chain-of-Thought Reasoning"
 date: 2026-05-08
-content_hash: 2c4e497c6c30c628
+content_hash: b6332ed5f55b6436
 ---
+
 # SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -146,15 +151,16 @@ The contribution of each module was tested by removing them sequentially:
 - **Value**: ⭐⭐⭐⭐ Provides a practical reward solution for the spatial consistency bottleneck in T2I and introduces the SpatRelBench benchmark.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 - [\[CVPR 2026\] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward](promptenhancer_taming_your_rewriter_for_text-to-image_generation_via_fine-graine.md)
+- [\[ECCV 2024\] Getting it Right: Improving Spatial Consistency in Text-to-Image Models](../../ECCV2024/image_generation/getting_it_right_improving_spatial_consistency_in_text-to-image_models.md)
+- [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
 - [\[CVPR 2026\] SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling](spatialdiff_3d-aware_object_movement_via_implicit_spatial_modeling.md)
-- [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
-- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
 
 </div>
 

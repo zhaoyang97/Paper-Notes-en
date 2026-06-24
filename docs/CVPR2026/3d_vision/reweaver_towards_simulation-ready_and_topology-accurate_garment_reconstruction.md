@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The ReWeaver framework is proposed to jointly reconstruct 3D garment geometry and 2D sewing patterns from a minimum of 4 multi-view RGB images. By employing a dual-path Transformer to predict 3D surface patches/curves and their topological connections, followed by in-group attention to flatten 3D structures into 2D pan
+  [CVPR2026][3D Vision][Garment Reconstruction] The ReWeaver framework is proposed to jointly reconstruct 3D garment geometry and 2D sewing patterns from a minimum of 4 multi-view RGB images. By employing a dual-path Transformer to predict 3D surface patches/curves and their topological connections, followed by in-group attention to flatten 3D structures into 2D panel edges, it achieves the first topology-accurate garment asset recovery ready for direct physical simulation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Garment Reconstruction"
+  - "Sewing Patterns"
+  - "Topology Reconstruction"
+  - "Multi-view Reconstruction"
+  - "Physical Simulation"
 date: 2026-05-08
-content_hash: 3113b0e5b6b08f81
+content_hash: afad0420dbb51a50
 ---
+
 # ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction
 
 **Conference**: CVPR2026  
@@ -167,14 +173,15 @@ ReWeaver significantly outperforms the multi-view enhanced AIpparel (AIpparel-MV
 *   Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
 - [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
-- [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
 - [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
+- [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
 - [\[AAAI 2026\] Pb4U-GNet: Resolution-Adaptive Garment Simulation via Propagation-before-Update Graph Network](../../AAAI2026/3d_vision/pb4u-gnet_resolution-adaptive_garment_simulation_via_propagation-before-update_g.md)
 
 </div>

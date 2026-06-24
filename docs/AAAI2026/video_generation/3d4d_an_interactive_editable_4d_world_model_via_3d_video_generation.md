@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D4D: An Interactive Editable 4D World Model via 3D Video Generation
 description: >-
-  [AAAI 2026][Video Generation][4D scene] This paper proposes 3D4D, an interactive 4D visualization framework integrating WebGL and Supersplat rendering. A four-module backend pipeline converts static images and text promp…
+  [AAAI 2026][Video Generation][4D scene] This paper proposes 3D4D, an interactive 4D visualization framework integrating WebGL and Supersplat rendering. A four-module backend pipeline converts static images and text prompts into editable 4D scenes, while a VLM-guided foveated rendering strategy enables 60fps real-time interaction, achieving state-of-the-art performance on both CLIP Consistency and CLIP Score.
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "foveated rendering"
   - "VLM-guided"
 date: 2026-05-08
-content_hash: 7c9a51eba27c726c
+content_hash: 139e4a836891f5a0
 ---
 
 # 3D4D: An Interactive Editable 4D World Model via 3D Video Generation
@@ -149,11 +149,11 @@ Evaluation metrics: CLIP Consistency (CC, cross-view consistency) and CLIP Score
 
 ## Related Papers
 
+- [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](../../CVPR2026/video_generation/yume15_a_text-controlled_interactive_world_generation_model.md)
 - [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](../../CVPR2026/video_generation/versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
-- [\[ICML 2026\] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](../../ICML2026/video_generation/world-r1_reinforcing_3d_constraints_for_text-to-video_generation.md)
 - [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](../../CVPR2026/video_generation/seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
-- [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](../../ICCV2025/video_generation/steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
-- [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](../../ICCV2025/video_generation/realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
+- [\[CVPR 2026\] Stereo World Model: Camera-Guided Stereo Video Generation](../../CVPR2026/video_generation/stereo_world_model_camera-guided_stereo_video_generation.md)
+- [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](../../ICLR2026/video_generation/vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PubSub-VFL: Towards Efficient Two-Party Split Learning in Heterogeneous Environments via Publisher/Subscriber Architecture
 description: >-
-  [NeurIPS 2025][AI Safety][Vertical Federated Learning] This paper proposes PubSub-VFL, an efficient two-party vertical federated learning framework based on a publisher/subscriber architecture. Through a hierarchical asy…
+  [NeurIPS 2025][AI Safety][Vertical Federated Learning] This paper proposes PubSub-VFL, an efficient two-party vertical federated learning framework based on a publisher/subscriber architecture. Through a hierarchical asynchronous mechanism and system-profiling-based hyperparameter optimization, it achieves 2–7× training speedup and up to 91% computational resource utilization while preserving privacy and model accuracy.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Asynchronous Training"
   - "Resource Heterogeneity"
 date: 2026-05-08
-content_hash: 016f816a25797e28
+content_hash: 2393263abb2e5ab9
 ---
 
 # PubSub-VFL: Towards Efficient Two-Party Split Learning in Heterogeneous Environments via Publisher/Subscriber Architecture
@@ -143,11 +143,11 @@ A Gaussian Differential Privacy (GDP) protocol is applied to perturb the embeddi
 
 ## Related Papers
 
+- [\[CVPR 2026\] Stealing Split Learning Bottom Models by Recovering Embedding Geometry](../../CVPR2026/ai_safety/stealing_split_learning_bottom_models_by_recovering_embedding_geometry.md)
 - [\[NeurIPS 2025\] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients](dictpfl_efficient_and_private_federated_learning_on_encrypted_gradients.md)
+- [\[CVPR 2025\] Split Adaptation for Pre-trained Vision Transformers](../../CVPR2025/ai_safety/split_adaptation_for_pre-trained_vision_transformers.md)
+- [\[ECCV 2024\] Fisher Calibration for Backdoor-Robust Heterogeneous Federated Learning](../../ECCV2024/ai_safety/fisher_calibration_for_backdoor-robust_heterogeneous_federated_learning.md)
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
-- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](../../CVPR2026/ai_safety/fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
-- [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](../../AAAI2026/ai_safety/healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
-- [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](efficient_fairness-performance_pareto_front_computation.md)
 
 </div>
 

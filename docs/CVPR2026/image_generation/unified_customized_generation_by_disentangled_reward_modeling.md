@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Customized Generation by Disentangled Reward Modeling
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] USO (Unified Simultaneous Optimization) unifies "subject-driven generation" and "style-driven generation" as complementary tasks within a single DiT model. By constructing cross-task triplet data via two expert models, followed by joint training with disentangled encoding, random condition dropout, and Auxiliary Style
+  [CVPR 2026][Image Generation][Subject Customization] USO (Unified Simultaneous Optimization) unifies "subject-driven generation" and "style-driven generation" as complementary tasks within a single DiT model. By constructing cross-task triplet data via two expert models, followed by joint training with disentangled encoding, random condition dropout, and Auxiliary Style Reward (ASR), it achieves open-source SOTA performance in subject consistency, style similarity…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject Customization"
+  - "Style Customization"
+  - "Cross-task Disentanglement"
+  - "Reward Learning"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: b966b44779cc927c
+content_hash: 717f841720c74c0f
 ---
+
 # Unified Customized Generation by Disentangled Reward Modeling
 
 **Conference**: CVPR 2026  
@@ -150,9 +156,9 @@ The unified model achieves best or joint-best performance across all metrics, no
 
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 - [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
+- [\[CVPR 2026\] PaCo-RL: Advancing Reinforcement Learning for Consistent Image Generation with Pairwise Reward Modeling](paco-rl_advancing_reinforcement_learning_for_consistent_image_generation_with_pa.md)
 - [\[CVPR 2026\] Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling](scone_bridging_composition_and_distinction_in_subject-driven_image_generation_vi.md)
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
-- [\[CVPR 2026\] PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback](posteromni_generalized_artistic_poster_creation_via_task_distillation_and_unifie.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] To address the issues where "compressing a graph into a single sequence for canonicalization distorts graph distances and limits expressivity by node labelers," this paper proposes CTNN. It represents a graph as a **set of canonical spanning tree covers**. Each tree is processed by a powerful recursive tree encoder and
+  [ICLR2026][Graph Learning][Graph Canonicalization] To address the issues where "compressing a graph into a single sequence for canonicalization distorts graph distances and limits expressivity by node labelers," this paper proposes CTNN. It represents a graph as a **set of canonical spanning tree covers**. Each tree is processed by a powerful recursive tree encoder and then aggregated. Theoretically, this approach preserves invariance, maintains distances more effectively…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Graph Canonicalization"
+  - "Spanning Tree Cover"
+  - "GNN Expressivity"
+  - "Isomorphism Invariance"
+  - "Distance Distortion"
 date: 2026-05-08
-content_hash: 0907481989230a09
+content_hash: fe81080e5457837f
 ---
+
 # Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning
 
 **Conference**: ICLR2026  
@@ -142,10 +148,10 @@ Distance distortion comparison (mean±std over 50 samples, lower is better) conf
 ## Related Papers
 
 - [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
 - [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](on_the_expressive_power_of_gnn_derivatives.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
-- [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
+- [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
+- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
+- [\[ICLR 2026\] Differentiable Lifting for Topological Neural Networks](differentiable_lifting_for_topological_neural_networks.md)
 
 </div>
 

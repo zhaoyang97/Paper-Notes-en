@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework
 description: >-
-  [ICCV 2025][3D Vision][3D super-resolution] This paper proposes 3DSR, a framework that integrates 2D diffusion-based super-resolution with 3D Gaussian Splatting (3DGS) representations. At each diffusion denoising step…
+  [ICCV 2025][3D Vision][3D super-resolution] This paper proposes 3DSR, a framework that integrates 2D diffusion-based super-resolution with 3D Gaussian Splatting (3DGS) representations. At each diffusion denoising step, multi-view 3D consistency is enforced via 3DGS rendering, enabling high-fidelity and spatially consistent 3D scene super-resolution.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "multi-view consistency"
   - "novel view synthesis"
 date: 2026-05-08
-content_hash: d906e2fd0f43bf42
+content_hash: 8e1144c7c113e3d6
 ---
 
 # Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework
@@ -147,9 +147,9 @@ Qualitative analysis is used to demonstrate the contribution of each component:
 
 - [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
 - [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
+- [\[CVPR 2025\] S2Gaussian: Sparse-View Super-Resolution 3D Gaussian Splatting](../../CVPR2025/3d_vision/s2gaussian_sparse-view_super-resolution_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](../../CVPR2026/3d_vision/splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
 - [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](from_image_to_video_an_empirical_study_of_diffusion_representations.md)
-- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
-- [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BIRD-INTERACT: Re-imagining Text-to-SQL Evaluation via Lens of Dynamic Interactions
 description: >-
-  [ICLR 2026][LLM Evaluation][text-to-SQL] BIRD-INTERACT transforms single-turn text-to-SQL evaluation into a dynamic interactive environment featuring a user simulator, knowledge base management, and test case execution. It covers full CRUD operations and intentionally injects ambiguity to evaluate LLM interaction capabilities via two settings: c-Interact (pro
+  [ICLR2026][LLM Evaluation][text-to-SQL] BIRD-INTERACT transforms single-turn text-to-SQL evaluation into a dynamic interactive environment featuring a user simulator, knowledge base management, and test case execution. It covers full CRUD operations and intentionally injects ambiguity to evaluate LLM interaction capabilities via two settings: c-Interact (protocol-guided) and a-Interact (autonomous agent). Even the strongest model, GPT-5, achieved only 8.67% (c) / 17.00% (a) o…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - text-to-SQL
-  - benchmark
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "text-to-SQL"
+  - "interactive evaluation"
+  - "benchmark"
+  - "user simulator"
+  - "test-time scaling"
 date: 2026-05-08
-content_hash: 13bda8eb3f46fbd0
+content_hash: 4a4edecaf5b91b5a
 ---
+
 # BIRD-INTERACT: Re-imagining Text-to-SQL Evaluation via Lens of Dynamic Interactions
 
 **Conference**: ICLR2026  
@@ -135,9 +139,9 @@ The results show extreme difficulty, with the best models achieving only ~25% re
 
 - [\[AAAI 2026\] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search](../../AAAI2026/llm_evaluation/mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s.md)
 - [\[ACL 2025\] Something's Fishy In The Data Lake: A Critical Re-evaluation of Table Union Search Benchmarks](../../ACL2025/llm_evaluation/somethings_fishy_in_the_data_lake_a_critical_re-evaluation_of_table_union_search.md)
+- [\[ACL 2025\] EditInspector: A Benchmark for Evaluation of Text-Guided Image Edits](../../ACL2025/llm_evaluation/editinspector_a_benchmark_for_evaluation_of_text-guided_image_edits.md)
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](../../ACL2026/llm_evaluation/comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 - [\[ICLR 2026\] Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective](can_vision_language_models_assess_graphic_design_aesthetics_a_benchmark_evaluati.md)
-- [\[ACL 2026\] Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text](../../ACL2026/llm_evaluation/minos_a_multimodal_evaluation_model_for_bidirectional_generation_between_image_a.md)
 
 </div>
 

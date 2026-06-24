@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging
 description: >-
-  [NeurIPS 2025][Multimodal VLM][3D medical VLM] This paper proposes BTB3D, a 3D CT tokenizer based on causal convolutional codec, 3D Haar wavelet compression…
+  [NeurIPS 2025][Multimodal VLM][3D medical VLM] This paper proposes BTB3D, a 3D CT tokenizer based on causal convolutional codec, 3D Haar wavelet compression, and a three-stage progressive training strategy. It achieves substantial state-of-the-art improvements on two downstream tasks—radiology report generation and text-conditioned CT synthesis—demonstrating that "better tokens matter more than larger language models."
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "report generation"
   - "text-to-CT synthesis"
 date: 2026-05-08
-content_hash: a73e797ca849d6b6
+content_hash: 8d157aa99ee2f6af
 ---
 
 # Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging
@@ -177,10 +177,10 @@ $$\mathcal{L} = \underbrace{\|x - \hat{x}\|_1}_{\text{Reconstruction (L1)}} + \l
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
-- [\[ACL 2026\] ReGATE: Learning Faster and Better with Fewer Tokens in MLLMs](../../ACL2026/multimodal_vlm/regate_learning_faster_and_better_with_fewer_tokens_in_mllms.md)
 - [\[NeurIPS 2025\] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering](are_vision_language_models_ready_for_clinical_diagnosis_a_3d_medical_benchmark_f.md)
+- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](../../CVPR2026/multimodal_vlm/grounded_3d-aware_spatial_vision-language_modeling.md)
+- [\[CVPR 2025\] VisionZip: Longer is Better but Not Necessary in Vision Language Models](../../CVPR2025/multimodal_vlm/visionzip_longer_is_better_but_not_necessary_in_vision_language_models.md)
 - [\[NeurIPS 2025\] Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models](text_to_robotic_assembly_of_multi_component_objects_using_3d_generative_ai_and_v.md)
-- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
 
 </div>
 

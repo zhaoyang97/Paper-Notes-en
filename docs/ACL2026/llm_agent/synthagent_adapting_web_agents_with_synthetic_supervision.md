@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SynthAgent: Adapting Web Agents with Synthetic Supervision
 description: >-
-  [ACL 2026][LLM Agent][Web Agent] This paper presents SynthAgent, a framework for adapting Web Agents based entirely on synthetic supervision. It systematically covers functional areas of web pages to synthesize diverse tasks through categorical exploration. Then, a dual refinement strategy is employed: task refinement (triggered by conflict detection
+  [ACL 2026][LLM Agent][Synthetic Data] This paper presents SynthAgent, a framework for adapting Web Agents based entirely on synthetic supervision. It systematically covers functional areas of web pages to synthesize diverse tasks through categorical exploration. Then, a dual refinement strategy is employed: task refinement (triggered by conflict detection to correct hallucinations) and trajectory refinement (denoising from a global perspective). SynthAgent significantly outpe…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Web Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Synthetic Data"
+  - "Web Agent"
+  - "Dual Refinement"
+  - "Categorical Exploration"
+  - "Trajectory Quality"
 date: 2026-05-08
-content_hash: affb48cdccd1c773
+content_hash: fa0655acbf2edb16
 ---
+
 # SynthAgent: Adapting Web Agents with Synthetic Supervision
 
 **Conference**: ACL 2026  
@@ -145,11 +150,11 @@ A standard SFT paradigm is used, with the history context window taking the most
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Scalable Oversight via Partitioned Human Supervision](../../ICLR2026/llm_agent/towards_scalable_oversight_via_partitioned_human_supervision.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
+- [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](../../ICLR2026/llm_agent/repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
+- [\[ACL 2026\] Why LLM Web Agents Fail: A Hierarchical Planning Perspective](why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
 - [\[ACL 2026\] ExpSeek: Self-Triggered Experience Seeking for Web Agents](expseek_self-triggered_experience_seeking_for_web_agents.md)
-- [\[ACL 2026\] Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories](waking_up_blind_cold-start_optimization_of_supervision-free_agentic_trajectories.md)
 - [\[ACL 2026\] Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces](dont_click_that_teaching_web_agents_to_resist_deceptive_interfaces.md)
+- [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
 
 </div>
 

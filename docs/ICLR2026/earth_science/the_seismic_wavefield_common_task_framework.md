@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Seismic Wavefield Common Task Framework
 description: >-
-  [ICLR 2026][Earth Science][Paper Note] This paper adapts the "Common Task Framework (CTF)" approach—which catalyzed benchmarks like ImageNet and AlphaZero in NLP/CV—to seismology. It provides three multi-scale seismic wavefield datasets alongside a 12-point scoring protocol using hidden test sets. Evaluating 18 mainstream scientific machine learning models
+  [ICLR 2026][Earth Science][Seismic wavefield] This paper adapts the "Common Task Framework (CTF)" approach—which catalyzed benchmarks like ImageNet and AlphaZero in NLP/CV—to seismology. It provides three multi-scale seismic wavefield datasets alongside a 12-point scoring protocol using hidden test sets. Evaluating 18 mainstream scientific machine learning models reveals that most complex architectures fail to outperform a naive "all-zero" baseline.
 tags:
-  - ICLR 2026
-  - Earth Science
+  - "ICLR 2026"
+  - "Earth Science"
+  - "Seismic wavefield"
+  - "Common Task Framework (CTF)"
+  - "Hidden test set"
+  - "Multi-metric evaluation"
+  - "Scientific Machine Learning"
 date: 2026-05-08
-content_hash: 3026056a82e1535d
+content_hash: 3973c47a9455fcac
 ---
+
 # The Seismic Wavefield Common Task Framework
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
 - [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
-- [\[ICLR 2026\] GeoFAR: Geography-Informed Frequency-Aware Super-Resolution for Climate Data](geofar_geography-informed_frequency-aware_super-resolution_for_climate_data.md)
-- [\[ICLR 2026\] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning](omnifield_conditioned_neural_fields_for_robust_multimodal_spatiotemporal_learnin.md)
 - [\[CVPR 2026\] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](../../CVPR2026/earth_science/sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)
+- [\[ICLR 2026\] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
+- [\[NeurIPS 2025\] ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts](../../NeurIPS2025/earth_science/controlfusion_a_controllable_image_fusion_framework_with_language-vision_degrada.md)
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
 
 </div>
 

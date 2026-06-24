@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stratified Knowledge-Density Super-Network for Scalable Vision Transformers
 description: >-
-  [AAAI 2026][Model Compression][Vision Transformer] This paper proposes transforming a pretrained ViT into a "Stratified Knowledge-Density Super-Network" (SKD Super-Network) via two steps—WPAC (Weighted PCA Attention Cont…
+  [AAAI 2026][Model Compression][Vision Transformer] This paper proposes transforming a pretrained ViT into a "Stratified Knowledge-Density Super-Network" (SKD Super-Network) via two steps—WPAC (Weighted PCA Attention Contraction) and PIAD (Progressive Importance-Aware Dropout)—to hierarchically organize knowledge within the pretrained weights, enabling subnetwork extraction of arbitrary size at O(1) cost without additional fine-tuning, achieving performance on par with or surp…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "PCA"
   - "Progressive Dropout"
 date: 2026-05-08
-content_hash: 9ee95a2aec94065f
+content_hash: f5b5b0740d9b34e3
 ---
 
 # Stratified Knowledge-Density Super-Network for Scalable Vision Transformers
@@ -178,8 +178,8 @@ The resulting super-network supports on-demand dimension truncation for subnetwo
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)
 - [\[AAAI 2026\] EfficientFSL: Enhancing Few-Shot Classification via Query-Only Tuning in Vision Transformers](efficientfsl_enhancing_few-shot_classification_via_query-only_tuning_in_vision_t.md)
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
+- [\[ICLR 2026\] Faster Vision Transformers with Adaptive Patches](../../ICLR2026/model_compression/faster_vision_transformers_with_adaptive_patches.md)
 - [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 
 </div>
 

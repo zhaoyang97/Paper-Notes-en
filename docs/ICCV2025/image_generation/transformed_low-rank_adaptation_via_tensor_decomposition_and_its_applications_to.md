@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models
 description: >-
-  [ICCV 2025][Image Generation][Parameter-Efficient Fine-Tuning] This paper proposes TLoRA, which decomposes the fine-tuning of pretrained weights into a **Transform** adaptation and a **Residual** adaptation…
+  [ICCV 2025][Image Generation][Parameter-Efficient Fine-Tuning] This paper proposes TLoRA, which decomposes the fine-tuning of pretrained weights into a **Transform** adaptation and a **Residual** adaptation, parameterized respectively via Tensor Ring Matrix (TRM) and Tensor Ring (TR) decompositions. On SDXL, TLoRA achieves highly parameter-efficient fine-tuning with only 0.4M parameters while outperforming LoRA and other baselines.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Text-to-Image"
   - "Subject-Driven Generation"
 date: 2026-05-08
-content_hash: 16284f8d67a36224
+content_hash: 744776da8ec1eefa
 ---
 
 # Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models
@@ -138,11 +138,11 @@ where $T$ is the transform adaptation (parameterized via TRM) and $\Delta$ is th
 
 ## Related Papers
 
+- [\[ICML 2025\] Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape](../../ICML2025/image_generation/flat-lora_low-rank_adaptation_over_a_flat_loss_landscape.md)
 - [\[NeurIPS 2025\] GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning](../../NeurIPS2025/image_generation/gralora_granular_low-rank_adaptation_for_parameter-efficient_fine-tuning.md)
+- [\[ICML 2025\] IntLoRA: Integral Low-rank Adaptation of Quantized Diffusion Models](../../ICML2025/image_generation/intlora_integral_low-rank_adaptation_of_quantized_diffusion_models.md)
 - [\[NeurIPS 2025\] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold](../../NeurIPS2025/image_generation/stella_subspace_learning_in_low-rank_adaptation_using_stiefel_manifold.md)
 - [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
-- [\[ICCV 2025\] Understanding Flatness in Generative Models: Its Role and Benefits](understanding_flatness_in_generative_models_its_role_and_benefits.md)
-- [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
 
 </div>
 

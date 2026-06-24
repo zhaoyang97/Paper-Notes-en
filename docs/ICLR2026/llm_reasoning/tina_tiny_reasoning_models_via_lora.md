@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Tina: Tiny Reasoning Models via LoRA
 description: >-
-  [ICLR 2026][LLM Reasoning][LoRA] On a tiny 1.5B model, LoRA was used for RL (GRPO) post-training. By spending only \$9, the mathematical reasoning capability was trained to be comparable to or even better than the full-parameter SOTA of the same base model. The "Rapid Reasoning Format Adaptation" hypothesis is proposed to explain why this low-cost app
+  [ICLR 2026][Reasoning][LoRA] On a tiny 1.5B model, LoRA was used for RL (GRPO) post-training. By spending only \$9, the mathematical reasoning capability was trained to be comparable to or even better than the full-parameter SOTA of the same base model. The "Rapid Reasoning Format Adaptation" hypothesis is proposed to explain why this low-cost approach is effective.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - LoRA
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "LoRA"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Small Model Reasoning"
+  - "Cost Efficiency"
 date: 2026-05-08
-content_hash: 1b967865e6c46c08
+content_hash: db06929680ab4df5
 ---
+
 # Tina: Tiny Reasoning Models via LoRA
 
 **Conference**: ICLR 2026  

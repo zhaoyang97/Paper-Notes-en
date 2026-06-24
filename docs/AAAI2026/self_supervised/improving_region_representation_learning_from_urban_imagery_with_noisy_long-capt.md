@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Region Representation Learning from Urban Imagery with Noisy Long-Caption Supervision
 description: >-
-  [AAAI2026][Self-Supervised Learning][urban computing] This paper proposes UrbanLN, a framework that improves urban region representation learning from LLM-generated captions via a long-caption-aware positional encoding i…
+  [AAAI2026][Self-Supervised Learning][urban computing] This paper proposes UrbanLN, a framework that improves urban region representation learning from LLM-generated captions via a long-caption-aware positional encoding interpolation strategy and a dual-level (data and model) noise suppression mechanism.
 tags:
   - "AAAI2026"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "noise suppression"
   - "self-distillation"
 date: 2026-05-08
-content_hash: db7ef4538580710c
+content_hash: 8dfbb36847ccf8e4
 ---
 
 # Improving Region Representation Learning from Urban Imagery with Noisy Long-Caption Supervision
@@ -142,11 +142,11 @@ The following broader insights are worth noting:
 
 ## Related Papers
 
+- [\[ECCV 2024\] Revisiting Supervision for Continual Representation Learning](../../ECCV2024/self_supervised/revisiting_supervision_for_continual_representation_learning.md)
 - [\[AAAI 2026\] Improving Sustainability of Adversarial Examples in Class-Incremental Learning](improving_sustainability_of_adversarial_examples_in_class-incremental_learning.md)
-- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](../../CVPR2026/self_supervised/temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
-- [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](../../CVPR2026/self_supervised/reframing_long-tailed_learning_via_loss_landscape_geometry.md)
 - [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
-- [\[ICML 2026\] Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data](../../ICML2026/self_supervised/inconsistency-aware_minimization_improving_generalization_with_unlabeled_data.md)
+- [\[CVPR 2026\] Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks](../../CVPR2026/self_supervised/stabilizing_feature_geometry_in_noisy_pretrained_models_for_robust_downstream_ta.md)
+- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](../../CVPR2026/self_supervised/temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
 
 </div>
 

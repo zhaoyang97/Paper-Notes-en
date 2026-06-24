@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VisRes is a visual reasoning benchmark constructed using pure images in a four-choice format, expanding tasks across three difficulty levels: "perception completion → single-attribute rules → multi-attribute composition." The study reveals that once linguistic prompts are removed, even frontier VLMs such as GPT-5 and G
+  [CVPR 2026][VLM Reasoning][Visual Reasoning] VisRes is a visual reasoning benchmark constructed using pure images in a four-choice format, expanding tasks across three difficulty levels: "perception completion → single-attribute rules → multi-attribute composition." The study reveals that once linguistic prompts are removed, even frontier VLMs such as GPT-5 and Gemini-2.5 perform near random levels under subtle perturbations, exposing that their "reasoning" largely stems from…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Reasoning"
+  - "Evaluation Benchmark"
+  - "De-lexicalized Priors"
+  - "Perception-Reasoning Continuum"
+  - "Compositional Reasoning"
 date: 2026-05-08
-content_hash: 7d7d632fd8798e10
+content_hash: 40bed5b5ff77c25a
 ---
+
 # VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ Key observation: Under Level 1 perceptual perturbations, almost all models hover
 
 ## Related Papers
 
-- [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
-- [\[ACL 2026\] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis](../../ACL2026/multimodal_vlm/aica-bench_holistically_examining_the_capabilities_of_vlms_in_affective_image_co.md)
-- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
-- [\[CVPR 2026\] DiGraphHal-Bench: Evaluating Multimodal Large Language Models on Complex Directed Graphs](digraphhal-bench_evaluating_multimodal_large_language_models_on_complex_directed.md)
-- [\[ACL 2026\] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction](../../ACL2026/multimodal_vlm/shredbench_evaluating_the_semantic_reasoning_capabilities_of_multimodal_llms_in_.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](../../ICLR2026/vlm_reasoning/visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
+- [\[ACL 2025\] Chart-based Reasoning: Transferring Capabilities from LLMs to VLMs](../../ACL2025/vlm_reasoning/chart-based_reasoning_transferring_capabilities_from_llms_to_vlms.md)
+- [\[ACL 2026\] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction](../../ACL2026/vlm_reasoning/shredbench_evaluating_the_semantic_reasoning_capabilities_of_multimodal_llms_in_.md)
+- [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
+- [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](../../ICLR2026/vlm_reasoning/through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
 
 </div>
 

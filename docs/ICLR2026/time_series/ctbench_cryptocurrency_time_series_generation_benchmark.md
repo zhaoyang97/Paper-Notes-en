@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CTBench: Cryptocurrency Time Series Generation Benchmark
 description: >-
-  [ICLR 2026][Time Series][Paper Note] CTBench is the first benchmark specifically designed for time series generation (TSG) in cryptocurrency markets. Utilizing hourly data from 452 coins, 13 financial metrics, and a "Predictive Utility + Statistical Arbitrage" dual-task evaluation framework, it systematically benchmarks 8 SOTA generative models across 5 f
+  [ICLR2026][Time Series][Cryptocurrency] CTBench is the first benchmark specifically designed for time series generation (TSG) in cryptocurrency markets. Utilizing hourly data from 452 coins, 13 financial metrics, and a "Predictive Utility + Statistical Arbitrage" dual-task evaluation framework, it systematically benchmarks 8 SOTA generative models across 5 families. The study reveals a core trade-off: "high statistical fidelity $\neq$ actual profitability…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Cryptocurrency"
+  - "Time Series Generation"
+  - "Dual-Task Evaluation"
+  - "Statistical Arbitrage"
+  - "Financial Metrics"
 date: 2026-05-08
-content_hash: 7c3f2803be235714
+content_hash: 0df85dea17f57d8e
 ---
+
 # CTBench: Cryptocurrency Time Series Generation Benchmark
 
 **Conference**: ICLR2026  

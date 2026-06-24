@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes GAMBIT, a gamified multimodal jailbreak framework. By decomposing harmful queries into puzzle images plus hidden keywords and embedding them into competitive game scenarios, it leverages the model's reasoning incentives and cognitive load to bypass safety filters. It achieves an attack success rate
+  [ACL 2026][LLM Safety][Multimodal Jailbreak] This paper proposes GAMBIT, a gamified multimodal jailbreak framework. By decomposing harmful queries into puzzle images plus hidden keywords and embedding them into competitive game scenarios, it leverages the model's reasoning incentives and cognitive load to bypass safety filters. It achieves an attack success rate of 92.13% on Gemini 2.5 Flash and 85.87% on GPT-4o, proving effective for both reasoning and non-reasoning models.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Multimodal Jailbreak"
+  - "Gamified Attack"
+  - "Cognitive Load"
+  - "Reasoning Chain Safety"
+  - "MLLM Adversarial"
 date: 2026-05-08
-content_hash: 15fb425eae123364
+content_hash: 727004f7d2ec5564
 ---
+
 # GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models
 
 **Conference**: ACL 2026  
@@ -140,8 +146,8 @@ No training process (pure inference-time attack). Llama-Guard-3-8B is used as th
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
 - [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
+- [\[ICLR 2026\] Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies](../../ICLR2026/llm_safety/automatic_dialectic_jailbreak_a_framework_for_generating_effective_jailbreak_str.md)
 - [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
-- [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
 
 </div>
 

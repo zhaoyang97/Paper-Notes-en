@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Real-world super-resolution] DegFlow is proposed to learn continuous degradation trajectories from discrete-scale real HR-LR pairs via a residual autoencoder and latent space Flow Matching.…
+  [AAAI 2026][Image Generation][Real-world super-resolution] DegFlow is proposed to learn continuous degradation trajectories from discrete-scale real HR-LR pairs via a residual autoencoder and latent space Flow Matching. Given only a single HR image at inference, the model synthesizes realistic LR images at arbitrary continuous scales for training super-resolution models, achieving state-of-the-art performance.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "continuous scale"
   - "latent space"
 date: 2026-05-08
-content_hash: b33768135de3c82c
+content_hash: 1bc3ae09e3ffc585
 ---
 
 # Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution
@@ -181,9 +181,9 @@ Each component contributes clearly: cubic spline > LPIPS perceptual supervision 
 
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
 - [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution](../../CVPR2026/image_generation/oars_process-aware_online_alignment_for_generative_real-world_image_super-resolu.md)
-- [\[ICML 2026\] Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution](../../ICML2026/image_generation/q-dit4sr_exploration_of_detail-preserving_diffusion_transformer_quantization_for.md)
 - [\[AAAI 2026\] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models](symmetrical_flow_matching_unified_image_generation_segmentation_and_classificati.md)
+- [\[ICML 2026\] Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution](../../ICML2026/image_generation/q-dit4sr_exploration_of_detail-preserving_diffusion_transformer_quantization_for.md)
+- [\[AAAI 2026\] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data](stellar_scene_text_editor_for_low-resource_languages_and_real-world_data.md)
 
 </div>
 

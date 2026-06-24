@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes ELIT (Elastic Latent Interface Transformer), which inserts a variable-length latent interface and lightweight Read/Write cross-attention layers into DiT. This enables a single model to dynamically adjust the computational budget during inference while non-uniformly allocating computation to harder regions
+  [CVPR2026][Image Generation][Diffusion Transformer] Ours proposes ELIT (Elastic Latent Interface Transformer), which inserts a variable-length latent interface and lightweight Read/Write cross-attention layers into DiT. This enables a single model to dynamically adjust the computational budget during inference while non-uniformly allocating computation to harder regions of an image, achieving up to a 53% reduction in FID on ImageNet 512px.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Elastic Inference"
+  - "Latent Interface"
+  - "Adaptive Computation"
+  - "Multi-budget Model"
+  - "Cross-attention"
 date: 2026-05-08
-content_hash: ab3a1378aede9046
+content_hash: 80e6111045d9b404
 ---
+
 # One Model, Many Budgets: Elastic Latent Interfaces for Diffusion Transformers
 
 **Conference**: CVPR2026  
@@ -157,9 +164,9 @@ The core advantage of ELIT lies in its "minimal change, maximum compatibility"â€
 
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
 - [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
-- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
 
 </div>
 

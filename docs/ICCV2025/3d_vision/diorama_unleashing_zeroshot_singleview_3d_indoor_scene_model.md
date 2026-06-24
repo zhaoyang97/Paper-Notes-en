@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling
 description: >-
-  [ICCV 2025][3D Vision][zero-shot 3D scene modeling] This paper presents Diorama, the first zero-shot open-world system for 3D indoor scene modeling. By modularly composing foundation models (GPT-4o, SAM, DINOv2, Metric3D…
+  [ICCV 2025][3D Vision][zero-shot 3D scene modeling] This paper presents Diorama, the first zero-shot open-world system for 3D indoor scene modeling. By modularly composing foundation models (GPT-4o, SAM, DINOv2, Metric3D, etc.), Diorama converts a single RGB image into a complete, compositional 3D indoor scene containing architectural structures and CAD objects, requiring neither end-to-end training nor manual annotation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "pose estimation"
   - "layout optimization"
 date: 2026-05-08
-content_hash: c8acb305785c52d1
+content_hash: ca366c0d844f7cdd
 ---
 
 # Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling
@@ -162,8 +162,8 @@ Diorama's most significant advantage over DiffCAD is generalizability — DiffCA
 - [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
 - [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
 - [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
-- [\[ICCV 2025\] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning](accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning.md)
 - [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](../../CVPR2026/3d_vision/msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
+- [\[ICCV 2025\] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning](accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning.md)
 
 </div>
 

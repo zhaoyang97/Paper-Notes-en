@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiCache: A Plug-in Scaled-Hermite Upgrade for Taylor-Style Cache-then-Forecast Diffusion Acceleration
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] HiCache discovers that the finite difference approximations of DiT features follow a multivariate Gaussian distribution. Based on this, it replaces the monomial Taylor basis in TaylorSeer with "Scaled Hermite Polynomials" and uses dual scaling to ensure numerical stability. It achieves a 5.55× speedup on FLUX.1-dev wit
+  [ICLR 2026][Image Generation][Diffusion Acceleration] HiCache discovers that the finite difference approximations of DiT features follow a multivariate Gaussian distribution. Based on this, it replaces the monomial Taylor basis in TaylorSeer with "Scaled Hermite Polynomials" and uses dual scaling to ensure numerical stability. It achieves a 5.55× speedup on FLUX.1-dev with image quality surpassing the original model, while offering a plug-and-play upgrade to existing caching…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Acceleration"
+  - "Feature Caching"
+  - "Hermite Polynomials"
+  - "Training-free"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 7b77f83cf43c7abb
+content_hash: 976b7b3c279d4207
 ---
+
 # HiCache: A Plug-in Scaled-Hermite Upgrade for Taylor-Style Cache-then-Forecast Diffusion Acceleration
 
 **Conference**: ICLR 2026  
@@ -112,11 +117,11 @@ At 5.55× speedup, HiCache's ImageReward (0.9979) even **exceeds the unaccelerat
 
 ## Related Papers
 
-- [\[CVPR 2026\] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers](../../CVPR2026/image_generation/forecast_the_principal_stabilize_the_residual_subspace-aware_feature_caching_for.md)
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](../../CVPR2026/image_generation/resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
-- [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
-- [\[ICLR 2026\] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling](generation_then_reconstruction_accelerating_masked_autoregressive_models_via_two.md)
+- [\[CVPR 2026\] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers](../../CVPR2026/image_generation/forecast_the_principal_stabilize_the_residual_subspace-aware_feature_caching_for.md)
+- [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](../../CVPR2026/image_generation/adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
+- [\[ICLR 2026\] HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models](higs_history-guided_sampling_for_plug-and-play_enhancement_of_diffusion_models.md)
 
 </div>
 

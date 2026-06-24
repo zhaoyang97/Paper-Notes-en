@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] KL-Regularized Reinforcement Learning for Generative Modelling is Designed to Mode Collapse
 description: >-
-  [ICLR 2026][Reinforcement Learning][KL-regularized RL] This paper proves from a variational inference perspective that diversity collapse in KL-regularized RL is not an optimization failure but an inherent property of the target distribution being constructed as unimodal. Under common hyperparameters, even a perfect global optimum will collapse to a single high-reward mode
+  [ICLR 2026][Reinforcement Learning][KL-regularized RL] This paper proves from a variational inference perspective that diversity collapse in KL-regularized RL is not an optimization failure but an inherent property of the target distribution being constructed as unimodal. Under common hyperparameters, even a perfect global optimum will collapse to a single high-reward mode. Based on this, the authors propose MARA (Mode-Anchored Reward Augmentation)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - KL-regularized RL
-  - RLHF
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "KL-regularized RL"
+  - "mode collapse"
+  - "diversity"
+  - "variational inference"
+  - "RLHF"
+  - "reward recalibration"
 date: 2026-05-08
-content_hash: 0f64c87d23f2e88f
+content_hash: 3a0a62982774c0fe
 ---
+
 # KL-Regularized Reinforcement Learning for Generative Modelling is Designed to Mode Collapse
 
 **Conference**: ICLR 2026  

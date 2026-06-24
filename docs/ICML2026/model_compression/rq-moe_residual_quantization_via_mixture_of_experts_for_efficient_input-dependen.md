@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression
 description: >-
-  [ICML 2026][Model Compression][Residual Quantization] RQ-MoE introduces a "two-level MoE + dual-stream quantization" design, enabling the codebook in Residual Quantization (RQ) to be dynamically generated per input. By decoupling the instruction stream from the reconstruction stream, it achieves 6–14× decoding acceleration while matching or exceeding QINCo's MSE/Recall pe
+  [ICML 2026][Model Compression][Residual Quantization] RQ-MoE introduces a "two-level MoE + dual-stream quantization" design, enabling the codebook in Residual Quantization (RQ) to be dynamically generated per input. By decoupling the instruction stream from the reconstruction stream, it achieves 6–14× decoding acceleration while matching or exceeding QINCo's MSE/Recall performance across four retrieval benchmarks.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Residual Quantization
-  - MoE
-  - Normalized Residual Loss
+  - "ICML 2026"
+  - "Model Compression"
+  - "Residual Quantization"
+  - "MoE"
+  - "Input-Adaptive Codebook"
+  - "Parallel Decoding"
+  - "Normalized Residual Loss"
 date: 2026-05-08
-content_hash: bf1e3bd6e7e051e5
+content_hash: 19cfd791a49fe328
 ---
+
 # RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression
 
 **Conference**: ICML 2026  
@@ -160,10 +163,10 @@ Theoretical decoding acceleration stems from $M\times$ (step parallelization) $\
 ## Related Papers
 
 - [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
-- [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](../../ICLR2026/model_compression/mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
 - [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](../../ICLR2026/model_compression/efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
-- [\[ACL 2025\] MoQAE: Mixed-Precision Quantization for Long-Context LLM Inference via Mixture of Quantization-Aware Experts](../../ACL2025/model_compression/moqae_mixed_precision_kv_cache.md)
-- [\[ICML 2026\] RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs](rabit_residual-aware_binarization_training_for_accurate_and_efficient_llms.md)
+- [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
+- [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](unisvq_2-bit_unified_scalar-vector_quantization.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do-PFN: In-Context Learning for Causal Effect Estimation
 description: >-
-  [NeurIPS 2025][Causal Inference][Causal Effect Estimation] This paper proposes Do-PFN, which extends Prior-data Fitted Networks (PFN) to causal effect estimation. A Transformer is pre-trained on large-scale synthetic SCM…
+  [NeurIPS 2025][Causal Inference][Causal Effect Estimation] This paper proposes Do-PFN, which extends Prior-data Fitted Networks (PFN) to causal effect estimation. A Transformer is pre-trained on large-scale synthetic SCM data to perform in-context causal reasoning, enabling prediction of causal intervention distributions (CID) and CATE from observational data alone—without requiring causal graph knowledge or the unconfoundedness assumption—achieving strong performance on both…
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -13,7 +13,7 @@ tags:
   - "CATE"
   - "Amortized Inference"
 date: 2026-05-08
-content_hash: eeb5b21eb95ba6ea
+content_hash: 1a62fe6fccb19b91
 ---
 
 # Do-PFN: In-Context Learning for Causal Effect Estimation
@@ -130,9 +130,9 @@ This paper proposes Do-PFN, which extends Prior-data Fitted Networks (PFN) to ca
 
 - [\[NeurIPS 2025\] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation](an_analysis_of_causal_effect_estimation_using_outcome_invariant_data_augmentatio.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
-- [\[NeurIPS 2025\] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation](its_hard_to_be_normal_the_impact_of_noise_on_structure-agnostic_estimation.md)
 - [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](../../CVPR2026/causal_inference/retrieving_counterfactuals_improves_visual_in-context_learning.md)
-- [\[NeurIPS 2025\] Demystifying Spectral Feature Learning for Instrumental Variable Regression](demystifying_spectral_feature_learning_for_instrumental_variable_regression.md)
+- [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](../../ICLR2026/causal_inference/overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
+- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](../../ICLR2026/causal_inference/matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
 
 </div>
 

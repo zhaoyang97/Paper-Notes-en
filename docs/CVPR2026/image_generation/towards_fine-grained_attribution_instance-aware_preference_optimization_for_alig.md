@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][DPO] To address the spatially sparse reward problem in DPO-based diffusion model alignment—where a single preference label is assigned to an entire image—IAPO utilizes a VLM and a detector to automatically annotate an instance-level preference dataset. By employing an instance alignment loss with a dynamically reweighted ma
+  [CVPR 2026][Image Generation][Diffusion Model Alignment] To address the spatially sparse reward problem in DPO-based diffusion model alignment—where a single preference label is assigned to an entire image—IAPO utilizes a VLM and a detector to automatically annotate an instance-level preference dataset. By employing an instance alignment loss with a dynamically reweighted mask, it refines credit assignment from image-level granularity to individual object granularity…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Alignment"
+  - "DPO"
+  - "Instance-level Credit Assignment"
+  - "Preference Optimization"
+  - "Spatially Sparse Reward"
 date: 2026-05-08
-content_hash: 5c42971af5eaf8f5
+content_hash: bde8c73a84ec8b7e
 ---
+
 # Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -138,14 +143,17 @@ Ablation on $w_{neg}$ (Pick-a-Pic v2): $w_{neg}=1.0$ is equivalent to excluding 
 
 <div class="related-papers" markdown="1">
 
-- **Diffusion-DPO**: [arXiv:2311.12908](https://arxiv.org/abs/2311.12908)
-- **InPO**: [arXiv:2405.19739](https://arxiv.org/abs/2405.19739)
-- **KTO for Diffusion**: [arXiv:2406.01235](https://arxiv.org/abs/2406.01235)
+## Related Papers
+
+- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/image_generation/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
+- [\[ICML 2025\] Smoothed Preference Optimization via ReNoise Inversion for Aligning Diffusion Models with Varied Human Preferences](../../ICML2025/image_generation/smoothed_preference_optimization_via_renoise_inversion_for_aligning_diffusion_mo.md)
+- [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
+- [\[CVPR 2026\] CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think](craft_aligning_diffusion_models_with_finetuning_is_easier_than_you_think.md)
+- [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/image_generation/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion
 description: >-
-  [CVPR 2026][Autonomous Driving][Diffusion Model] PDL reformulates the challenge of "severe occlusion due to fixed viewpoints in roadside LiDAR" as a probabilistic inference problem. It first aligns noisy poses from visual detectors into high-precision pseudo-ground truth (pseudo-GT) via Probabilistic Pose Discrepancy Minimization (PPDM), then performs full-scene comp
+  [CVPR 2026][Autonomous Driving][Roadside LiDAR] PDL reformulates the challenge of "severe occlusion due to fixed viewpoints in roadside LiDAR" as a probabilistic inference problem. It first aligns noisy poses from visual detectors into high-precision pseudo-ground truth (pseudo-GT) via Probabilistic Pose Discrepancy Minimization (PPDM), then performs full-scene completion using a Scenario Discrepancy Learning (SDL) diffusion model conditioned on these pseudo-GTs. With dual-pa…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Roadside LiDAR"
+  - "Scene Completion"
+  - "Diffusion Model"
+  - "Pose Correction"
+  - "V2X Collaborative Perception"
 date: 2026-05-08
-content_hash: 69fd557a2852c077
+content_hash: 3e68dc12c4c40e2d
 ---
+
 # Probabilistic Discrepancy Learning for Roadside LiDAR Scene Completion
 
 **Conference**: CVPR 2026  
@@ -139,8 +144,8 @@ PPDM Pose Correction Performance (BEVHeight vs. PPDM, Car 3D AP @0.5):
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 - [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](../../AAAI2026/autonomous_driving/towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
-- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 - [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
+- [\[ICCV 2025\] Distilling Diffusion Models to Efficient 3D LiDAR Scene Completion](../../ICCV2025/autonomous_driving/distilling_diffusion_models_to_efficient_3d_lidar_scene_completion.md)
 
 </div>
 

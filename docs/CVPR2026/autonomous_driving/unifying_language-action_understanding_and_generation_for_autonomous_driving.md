@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unifying Language-Action Understanding and Generation for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][VLA] LinkVLA integrates language instructions and driving trajectories into a unified discrete vocabulary and enforces language-action alignment through an "action understanding" task (inferring instructions from trajectories). It replaces point-by-point autoregression with a two-step coarse-to-fine decoding, achieving a dr
+  [CVPR 2026][Autonomous Driving][VLA] LinkVLA integrates language instructions and driving trajectories into a unified discrete vocabulary and enforces language-action alignment through an "action understanding" task (inferring instructions from trajectories). It replaces point-by-point autoregression with a two-step coarse-to-fine decoding, achieving a driving score of 91.01 on the CARLA closed-loop benchmark while reducing inference latency from 361ms to 48ms (saving 86%).
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - VLA
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "VLA"
+  - "Language-Action Alignment"
+  - "Unified Discrete Vocabulary"
+  - "Coarse-to-Fine Generation"
+  - "Closed-loop Driving"
 date: 2026-05-08
-content_hash: 4d766c551f7a9952
+content_hash: ce5a3adcf8ebec61
 ---
+
 # Unifying Language-Action Understanding and Generation for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,15 @@ Latency-Performance Trade-off (H20 Average Per-step Inference Time):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
 - [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
-- [\[CVPR 2026\] Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving](drive_my_way_preference_alignment_of_vision-language-action_model_for_personaliz.md)
+- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] DrivePI: Spatial-aware 4D MLLM for Unified Autonomous Driving Understanding, Perception, Prediction and Planning](drivepi_spatial-aware_4d_mllm_for_unified_autonomous_driving_understanding_perce.md)
 
 </div>

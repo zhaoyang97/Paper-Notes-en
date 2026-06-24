@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FGM-HD: Boosting Generation Diversity of Fractal Generative Models through Hausdorff Dimension Induction
 description: >-
-  [AAAI 2026][Image Generation][Fractal Generative Model] This paper is the first to introduce Hausdorff Dimension (HD) into Fractal Generative Models (FGM), proposing a learnable HD estimation module…
+  [AAAI 2026][Image Generation][Fractal Generative Model] This paper is the first to introduce Hausdorff Dimension (HD) into Fractal Generative Models (FGM), proposing a learnable HD estimation module, a Monotonic Momentum-Driven Scheduling strategy (MMDS), and HD-guided rejection sampling. The method achieves a 39% improvement in generation diversity (Recall) on ImageNet while maintaining image quality.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Momentum-driven Scheduling Strategy"
   - "Rejection Sampling"
 date: 2026-05-08
-content_hash: 70f419437664fcfd
+content_hash: 25b0957d399df759
 ---
 
 # FGM-HD: Boosting Generation Diversity of Fractal Generative Models through Hausdorff Dimension Induction
@@ -139,11 +139,11 @@ The FGM-HD framework contains three key innovations: (1) a learnable HD estimati
 
 ## Related Papers
 
-- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
+- [\[CVPR 2026\] Expand and Prune: Maximizing Trajectory Diversity for Effective GRPO in Generative Models](../../CVPR2026/image_generation/expand_and_prune_maximizing_trajectory_diversity_for_effective_grpo_in_generativ.md)
 - [\[AAAI 2026\] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models](symmetrical_flow_matching_unified_image_generation_segmentation_and_classificati.md)
 - [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](../../NeurIPS2025/image_generation/boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
-- [\[ICLR 2026\] GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models](../../ICLR2026/image_generation/geodiv_framework_for_measuring_geographical_diversity_in_text-to-image_models.md)
-- [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](../../NeurIPS2025/image_generation/generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
+- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
+- [\[CVPR 2025\] Interpretable Generative Models through Post-hoc Concept Bottlenecks](../../CVPR2025/image_generation/interpretable_generative_models_through_post-hoc_concept_bottlenecks.md)
 
 </div>
 

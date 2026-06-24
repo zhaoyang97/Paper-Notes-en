@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DAG: A Dual Correlation Network for Time Series Forecasting with Exogenous Variables
 description: >-
-  [ICML 2026][Time Series][Paper Note] For Time Series Forecasting with known future covariates (TSF-X), DAG designs a dual-pathway network: one pathway captures "historical exogenous → future exogenous" attention patterns along the temporal dimension and injects them into "historical endogenous → future endogenous" predictions, while the other captures "hi
+  [ICML 2026][Time Series][Covariate Forecasting] For Time Series Forecasting with known future covariates (TSF-X), DAG designs a dual-pathway network: one pathway captures "historical exogenous → future exogenous" attention patterns along the temporal dimension and injects them into "historical endogenous → future endogenous" predictions, while the other captures "historical exogenous → historical endogenous" patterns along the channel dimension and injects them into "future e…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Covariate Forecasting"
+  - "Future Exogenous Variables"
+  - "Temporal Correlation"
+  - "Channel Correlation"
+  - "Attention Injection"
 date: 2026-05-08
-content_hash: 326c01d90d9aec3e
+content_hash: 6adb821d49acbe91
 ---
+
 # DAG: A Dual Correlation Network for Time Series Forecasting with Exogenous Variables
 
 **Conference**: ICML 2026  
@@ -164,11 +170,11 @@ Evaluation under the "historical exogenous only" setting confirms that DAG remai
 
 ## Related Papers
 
-- [\[AAAI 2026\] DeepBooTS: Dual-Stream Residual Boosting for Drift-Resilient Time-Series Forecasting](../../AAAI2026/time_series/deepboots_dual-stream_residual_boosting_for_drift-resilient_time-series_forecast.md)
-- [\[AAAI 2026\] Sonnet: Spectral Operator Neural Network for Multivariable Time Series Forecasting](../../AAAI2026/time_series/sonnet_spectral_operator_neural_network_for_multivariable_time_series_forecastin.md)
-- [\[ICML 2025\] HyperIMTS: Hypergraph Neural Network for Irregular Multivariate Time Series Forecasting](../../ICML2025/time_series/hyperimts_hypergraph_neural_network_for_irregular_multivariate_time_series_forec.md)
-- [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
+- [\[ICLR 2026\] GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables](../../ICLR2026/time_series/gcgnet_graph-consistent_generative_network_for_time_series_forecasting_with_exog.md)
+- [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](../../ICLR2026/time_series/cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 - [\[ICML 2026\] Ellipsoidal Time Series Forecasting](ellipsoidal_time_series_forecasting.md)
+- [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
+- [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](nested_spatio-temporal_time_series_forecasting.md)
 
 </div>
 

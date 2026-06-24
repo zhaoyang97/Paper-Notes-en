@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models
 description: >-
-  [NeurIPS 2025 (Spotlight)][Video Generation][video diffusion] This paper identifies and addresses the motion bias problem in video DPO — by constructing structurally aligned video pairs via noising and denoising GT video…
+  [NeurIPS 2025 (Spotlight)][Video Generation][video diffusion] This paper identifies and addresses the motion bias problem in video DPO — by constructing structurally aligned video pairs via noising and denoising GT videos to fix the motion dimension, annotating dense preferences at the temporal segment level for more precise learning signals, and leveraging off-the-shelf VLMs for automatic annotation to reduce cost. Using only 1/3 of the annotation data…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "segment-level preference"
   - "guided generation"
 date: 2026-05-08
-content_hash: b9b16fbcc665e7b5
+content_hash: fed6af8751a2eb4b
 ---
 
 # DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models
@@ -140,9 +140,9 @@ VanillaDPO's Dynamic Degree drops sharply from 84.16 to 80.25 (direct evidence o
 ## Related Papers
 
 - [\[CVPR 2026\] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models](../../CVPR2026/video_generation/mind_the_generative_details_direct_localized_detail_preference_optimization_for_.md)
+- [\[CVPR 2026\] AlcheMinT: Fine-grained Temporal Control for Multi-Reference Consistent Video Generation](../../CVPR2026/video_generation/alchemint_fine-grained_temporal_control_for_multi-reference_consistent_video_gen.md)
+- [\[ICLR 2026\] Consistent Noisy Latent Rewards for Trajectory Preference Optimization in Diffusion Models](../../ICLR2026/video_generation/consistent_noisy_latent_rewards_for_trajectory_preference_optimization_in_diffus.md)
 - [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](../../ICCV2025/video_generation/vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
-- [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](../../ICCV2025/video_generation/efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
-- [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](../../ICLR2026/video_generation/dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
 - [\[ICCV 2025\] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent](../../ICCV2025/video_generation/motionagent_fine-grained_controllable_video_generation_via_motion_field_agent.md)
 
 </div>

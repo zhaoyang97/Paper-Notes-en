@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data
 description: >-
-  [NeurIPS 2025][Robotics][manipulation concepts] This paper proposes a self-supervised framework that learns hierarchical manipulation concepts from unlabeled multi-modal robot demonstrations. It organizes representations…
+  [NeurIPS 2025][Robotics][manipulation concepts] This paper proposes a self-supervised framework that learns hierarchical manipulation concepts from unlabeled multi-modal robot demonstrations. It organizes representations via a cross-modal correlation network and a multi-horizon future predictor, enhancing the generalization of imitation learning policies to novel objects, unseen obstacles, and new environments.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "multi-timescale subgoals"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: 0181a27a76ed9176
+content_hash: c01c94e9c5766a92
 ---
 
 # HiMaCon: Discovering Hierarchical Manipulation Concepts from Unlabeled Multi-Modal Data
@@ -133,11 +133,11 @@ The paper validates deployment on a physical robot, where the concept-enhanced p
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
+- [\[ACL 2025\] Task-aware MoILE: Hierarchical-Task-Aware Multi-modal Mixture of Incremental LoRA Experts for Embodied Continual Learning](../../ACL2025/robotics/hierarchical-task-aware_multi-modal_mixture_of_incremental_lora_experts_for_embo.md)
 - [\[NeurIPS 2025\] Operation Veja: Fixing Fundamental Concepts Missing from Modern Roleplaying Training Paradigms](operation_veja_fixing_fundamental_concepts_missing_from_modern_roleplaying_train.md)
-- [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
-- [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](the_impact_of_scaling_training_data_on_adversarial_robustness.md)
-- [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
+- [\[CVPR 2026\] AURA: Multi-modal Shared Autonomy for Urban Navigation](../../CVPR2026/robotics/aura_multi-modal_shared_autonomy_for_urban_navigation.md)
+- [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](../../CVPR2026/robotics/floverse_floor_plan-guided_multi-modal_navigation.md)
+- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](../../ICLR2026/robotics/on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
 
 </div>
 

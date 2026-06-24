@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] The CASCADE framework is proposed to propagate epistemic uncertainty from a first-stage classifier (quantified via Venn-Abers predictors) into second-stage regression prediction intervals. This enables a 38.9% reduction in interval width for high-confidence patients while automatically expanding safety buffers for unce
+  [ICML2026][Medical Imaging][Conformal Prediction] The CASCADE framework is proposed to propagate epistemic uncertainty from a first-stage classifier (quantified via Venn-Abers predictors) into second-stage regression prediction intervals. This enables a 38.9% reduction in interval width for high-confidence patients while automatically expanding safety buffers for uncertain cases, achieving adaptive coverage guarantees.
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML2026"
+  - "Medical Imaging"
+  - "Conformal Prediction"
+  - "Uncertainty Quantization"
+  - "Two-Stage Decision Making"
+  - "Venn-Abers Calibration"
+  - "Parkinson's Disease"
 date: 2026-05-08
-content_hash: 93fd9ef6db26a05e
+content_hash: 74b71b5a295ad19e
 ---
+
 # CASCADE Conformal Prediction: Uncertainty-Adaptive Prediction Intervals for Two-Stage Clinical Decision Support
 
 **Conference**: ICML2026  

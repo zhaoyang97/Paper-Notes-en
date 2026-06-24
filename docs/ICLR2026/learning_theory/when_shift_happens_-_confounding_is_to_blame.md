@@ -7,7 +7,7 @@ tags:
   - ICLR 2026
   - learning_theory
 date: 2026-05-08
-content_hash: 3e4ab240f19eca0f
+content_hash: 602cd15a89dae6d2
 ---
 only XGB achieves a CI consistency of 0.92, corresponding to its significant lead in OOD performance (72.90% on subset A vs 62.75% for IRM). This perfectly matches the "maximize conditional information amount" target of Theorem 4.2.
 - **Adding Covariates is Generally Beneficial, but Gains Diminish/Occasional Regression**: From C $\to$ AC $\to$ A, OOD accuracy increases for most methods (e.g., XGB 64.35 $\to$ 72.80 $\to$ 72.90), validating Proposition 4.1; however, MLP/GDRO show slight regression on A, indicating the side effect of amplified variation may manifest in some methods.

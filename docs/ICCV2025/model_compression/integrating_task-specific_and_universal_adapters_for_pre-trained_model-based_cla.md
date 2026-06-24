@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning
 description: >-
-  [ICCV 2025][Model Compression][Class-Incremental Learning] This paper proposes TUNA, a method that trains orthogonal task-specific adapters for each incremental task and merges them into a universal adapter. Combined wit…
+  [ICCV 2025][Model Compression][Class-Incremental Learning] This paper proposes TUNA, a method that trains orthogonal task-specific adapters for each incremental task and merges them into a universal adapter. Combined with an entropy-based adapter selection mechanism and a dual-adapter ensemble inference strategy, TUNA achieves state-of-the-art performance in exemplar-free PTM-based class-incremental learning.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Model Merging"
   - "Continual Learning"
 date: 2026-05-08
-content_hash: 36898a3ddff5c648
+content_hash: 58e0e6b032d80614
 ---
 
 # Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning

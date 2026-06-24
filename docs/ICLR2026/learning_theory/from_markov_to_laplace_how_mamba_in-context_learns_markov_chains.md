@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] From Markov to Laplace: How Mamba In-Context Learns Markov Chains
 description: >-
-  [ICLR 2026][learning_theory][Mamba] This work employs "in-context learning on random Markov chains" as a microscope to prove and empirically demonstrate that even a single-layer, single-head Mamba (Selective SSM) can learn an add-$\beta$ (Laplacian smoothing) count estimator that is both Bayes and minimax optimal. The decisive component is **convolution*
+  [ICLR 2026][Learning Theory][Mamba] This work employs "in-context learning on random Markov chains" as a microscope to prove and empirically demonstrate that even a single-layer, single-head Mamba (Selective SSM) can learn an add-$\beta$ (Laplacian smoothing) count estimator that is both Bayes and minimax optimal. The decisive component is **convolution** rather than gating or nonlinearity. The authors further provide a constructive proof for exactly reproducing this estimato…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Mamba
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "State Space Models"
+  - "In-Context Learning"
+  - "Mamba"
+  - "Markov Chains"
+  - "Laplacian Smoothing"
+  - "Convolution"
+  - "Expressivity"
 date: 2026-05-08
-content_hash: 008e18b420ff7c41
+content_hash: eb7fbe1d7a8233db
 ---
+
 # From Markov to Laplace: How Mamba In-Context Learns Markov Chains
 
 **Conference**: ICLR 2026  
@@ -142,15 +149,16 @@ Convolution benefits both, but the Gain is significantly higher for Mamba (11% v
 - Value: ⭐⭐⭐⭐⭐ Foundation for mechanistic understanding of SSMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Infinite Horizon Markov Economies](infinite_horizon_markov_economies.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
-- [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
-- [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
 
 </div>
 

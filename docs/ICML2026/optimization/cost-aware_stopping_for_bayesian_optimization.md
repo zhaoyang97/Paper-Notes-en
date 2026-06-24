@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Cost-Aware Stopping for Bayesian Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][Bayesian optimization] The authors extend Weitzman's Pandora's Box stopping rule to Bayesian Optimization (BO) with correlations. They prove that under a shared "acquisition function value crossing the current best" stopping rule, the PBGI and LogEIPC cost-aware acquisition functions achieve an expected cost-adjusted simple regret no worse t
+  [ICML2026][Optimization][Bayesian optimization] The authors extend Weitzman's Pandora's Box stopping rule to Bayesian Optimization (BO) with correlations. They prove that under a shared "acquisition function value crossing the current best" stopping rule, the PBGI and LogEIPC cost-aware acquisition functions achieve an expected cost-adjusted simple regret no worse than "stopping after one sample." This provides the first adaptive stopping rule with theoretical guarantees for…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Bayesian optimization
-  - cost-aware stopping
-  - Pandora's Box
-  - Gittins index
-  - expected improvement per cost
+  - "ICML2026"
+  - "Optimization"
+  - "Bayesian optimization"
+  - "cost-aware stopping"
+  - "Pandora's Box"
+  - "Gittins index"
+  - "expected improvement per cost"
 date: 2026-05-08
-content_hash: 5c1248415118d1db
+content_hash: 49000fb32aa73a44
 ---
+
 # Cost-Aware Stopping for Bayesian Optimization
 
 **Conference**: ICML2026  
@@ -119,15 +120,13 @@ The authors evaluate the PBGI/LogEIPC stopping rule against 7 baseline rules acr
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](../../CVPR2026/optimization/dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
+- [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](../../ICLR2026/optimization/symmetry-aware_bayesian_optimization_via_max_kernels.md)
+- [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](../../ICLR2026/optimization/non-convex_federated_optimization_under_cost-aware_client_selection.md)
 - [\[NeurIPS 2025\] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](../../NeurIPS2025/optimization/cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
-- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
-- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
+- [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](../../CVPR2026/optimization/dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
+- [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](../../ICLR2026/optimization/combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Inversion for Learning Interval Change in Chest X-Rays
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] TILA utilizes "swapping the order of paired chest X-rays (temporal inversion)" as a supervisory signal. By incorporating inversion-aware objectives during pre-training, fine-tuning, and inference, it enables existing temporal vision-language models to genuinely distinguish whether lesions are "improving or worsening,"
+  [CVPR 2026][Medical Imaging][Chest X-ray] TILA utilizes "swapping the order of paired chest X-rays (temporal inversion)" as a supervisory signal. By incorporating inversion-aware objectives during pre-training, fine-tuning, and inference, it enables existing temporal vision-language models to genuinely distinguish whether lesions are "improving or worsening," rather than merely identifying their presence.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Chest X-ray"
+  - "Temporal change"
+  - "Vision-Language Pre-training"
+  - "Temporal Inversion"
+  - "Directional Consistency"
 date: 2026-05-08
-content_hash: 596c9e29661f8224
+content_hash: e1820bf883961bef
 ---
+
 # Temporal Inversion for Learning Interval Change in Chest X-Rays
 
 **Conference**: CVPR 2026  
@@ -107,15 +113,16 @@ During inference, TILA averages the forward prediction and the "reversed-then-sw
 - Value: ⭐⭐⭐⭐ Directly addresses the clinical nature of comparative reading and offers a lightweight, plug-and-play solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset](instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener.md)
-- [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
-- [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
 - [\[ECCV 2024\] CheX: Interactive Localization and Region Description in Chest X-rays](../../ECCV2024/medical_imaging/chex_interactive_localization_and_region_description_in_chest_x-rays.md)
 - [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](../../NeurIPS2025/medical_imaging/cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
+- [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
+- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Efficient General Feature Prediction in Masked Skeleton Modeling
 description: >-
-  [ICCV 2025][Video Understanding][masked skeleton modeling] This paper proposes GFP (General Feature Prediction), a framework that elevates the reconstruction target in masked skeleton modeling from low-level joint coordi…
+  [ICCV 2025][Video Understanding][masked skeleton modeling] This paper proposes GFP (General Feature Prediction), a framework that elevates the reconstruction target in masked skeleton modeling from low-level joint coordinates to multi-scale high-level semantic feature prediction. Coupled with a lightweight Target Generation Network and an information maximization constraint, GFP achieves a 6.2× training speedup while attaining state-of-the-art performance.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "self-supervised learning"
   - "action recognition"
 date: 2026-05-08
-content_hash: 3c16f2af6e4cf6fa
+content_hash: 5062614ee880ed1a
 ---
 
 # Towards Efficient General Feature Prediction in Masked Skeleton Modeling
@@ -160,10 +160,10 @@ GFP establishes a bidirectional learning paradigm between an encoder–decoder a
 ## Related Papers
 
 - [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](general_compression_framework_for_efficient_transformer_object_tracking.md)
+- [\[ECCV 2024\] Data Collection-Free Masked Video Modeling](../../ECCV2024/video_understanding/data_collection-free_masked_video_modeling.md)
+- [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](../../CVPR2026/video_understanding/self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
 - [\[ICCV 2025\] BlinkTrack: Feature Tracking over 80 FPS via Events and Images](blinktrack_feature_tracking_over_80_fps_via_events_and_images.md)
-- [\[ICCV 2025\] EMoTive: Event-Guided Trajectory Modeling for 3D Motion Estimation](emotive_event-guided_trajectory_modeling_for_3d_motion_estimation.md)
-- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
-- [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
+- [\[ECCV 2024\] Exploring the Feature Extraction and Relation Modeling For Light-Weight Transformer Tracking](../../ECCV2024/video_understanding/exploring_the_feature_extraction_and_relation_modeling_for_light-weight_transfor.md)
 
 </div>
 

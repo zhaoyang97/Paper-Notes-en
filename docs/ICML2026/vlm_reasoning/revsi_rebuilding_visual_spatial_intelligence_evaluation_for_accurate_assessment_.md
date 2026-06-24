@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][VSI-Bench] This paper systematically reveals structural failures in the widely used VSI-Bench due to 3D annotation drift and frame sampling inconsistency. By re-annotating 381 scenes and 5365 objects and designing frame-budget adaptive QA alongside "dummy video" stress tests (removing frames containing target objects), the author
+  [ICML 2026][VLM Reasoning][VSI-Bench] This paper systematically reveals structural failures in the widely used VSI-Bench due to 3D annotation drift and frame sampling inconsistency. By re-annotating 381 scenes and 5365 objects and designing frame-budget adaptive QA alongside "dummy video" stress tests (removing frames containing target objects), the authors construct ReVSI, a high-fidelity spatial intelligence benchmark. Evaluations show that open-source VLMs suffer performan…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - VSI-Bench
-  - hallucination
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "VSI-Bench"
+  - "Spatial Reasoning"
+  - "Frame Budget"
+  - "Dummy Video"
+  - "Hallucination"
 date: 2026-05-08
-content_hash: a4d7e3929c28022e
+content_hash: 7eaeef9a4410fc8b
 ---
+
 # ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning
 
 **Conference**: ICML 2026  
@@ -132,10 +136,10 @@ Evaluated general VLMs (Qwen3-VL, InternVL-3.5, LLaVA-Video, GPT-5.2, Gemini 3) 
 ## Related Papers
 
 - [\[ICML 2026\] Thinking in Structures: Evaluating Spatial Intelligence in Constraint-Governed Spaces](thinking_in_structures_evaluating_spatial_intelligence_in_constraint-governed_sp.md)
-- [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](../../CVPR2026/vlm_reasoning/g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[ICML 2026\] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)
 - [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](../../CVPR2026/vlm_reasoning/spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
+- [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
 
 </div>
 

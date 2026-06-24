@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes TaylorSeer, which upgrades the feature caching paradigm for diffusion models from "cache-and-reuse" to "cache-and-forecast" — leveraging Tay…
+  [ICCV 2025][Image Generation][Diffusion model acceleration] This paper proposes TaylorSeer, which upgrades the feature caching paradigm for diffusion models from "cache-and-reuse" to "cache-and-forecast" — leveraging Taylor series expansion with high-order finite differences over historical features to predict intermediate features at future timesteps. TaylorSeer achieves near-lossless 4.99× acceleration on FLUX and 5.00× on HunyuanVideo, entirely without additional training.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "FLUX"
   - "HunyuanVideo"
 date: 2026-05-08
-content_hash: f6ea46a956f00efa
+content_hash: 03519dcd07a8c404
 ---
 
 # From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers
@@ -164,7 +164,7 @@ At 4.53× speedup, TaylorSeer achieves an FID of only 2.65 (vs. 6.58 for FORA an
 - [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
 - [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
 - [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](../../CVPR2026/image_generation/seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
-- [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](../../CVPR2026/image_generation/adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
+- [\[ICML 2025\] Modulated Diffusion: Accelerating Generative Modeling with Modulated Quantization](../../ICML2025/image_generation/modulated_diffusion_accelerating_generative_modeling_with_modulated_quantization.md)
 
 </div>
 

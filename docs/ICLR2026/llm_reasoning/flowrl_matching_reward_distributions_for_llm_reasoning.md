@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FlowRL: Matching Reward Distributions for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GFlowNets] FlowRL transforms LLM reasoning RL from "maximizing scalar rewards" to "matching complete reward distributions"—using a learnable partition function to normalize scalar rewards into a target distribution, and leveraging the Trajectory Balance loss of GFlowNets to minimize the reverse KL between the policy and the targe
+  [ICLR 2026][Reasoning][Reward distribution matching] FlowRL transforms LLM reasoning RL from "maximizing scalar rewards" to "matching complete reward distributions"—using a learnable partition function to normalize scalar rewards into a target distribution, and leveraging the Trajectory Balance loss of GFlowNets to minimize the reverse KL between the policy and the target distribution. This preserves multiple valid reasoning modes and alleviates mode collapse…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GFlowNets
-  - RLHF
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reward distribution matching"
+  - "GFlowNets"
+  - "Trajectory balance"
+  - "Mode collapse"
+  - "Exploration diversity"
+  - "RLHF"
 date: 2026-05-08
-content_hash: ea770cff693e0894
+content_hash: 3faf554edd8c38af
 ---
+
 # FlowRL: Matching Reward Distributions for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,10 @@ $\beta$ Hyperparameter Ablation: $\beta=5 \to 31.34$, $\beta=10 \to 34.41$, **$\
 ## Related Papers
 
 - [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
+- [\[ICML 2026\] PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching](../../ICML2026/llm_reasoning/powerflow_unlocking_the_dual_nature_of_llms_via_principled_distribution_matching.md)
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 - [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
 - [\[ICLR 2026\] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models](mr3_multilingual_rubric-agnostic_reward_reasoning_models.md)
-- [\[ICML 2026\] PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching](../../ICML2026/llm_reasoning/powerflow_unlocking_the_dual_nature_of_llms_via_principled_distribution_matching.md)
 
 </div>
 

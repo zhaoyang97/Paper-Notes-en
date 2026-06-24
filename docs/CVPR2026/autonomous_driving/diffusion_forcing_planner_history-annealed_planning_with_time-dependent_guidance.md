@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Diffusion Forcing Planner: History-Annealed Planning with Time-Dependent Guidance for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Diffusion Model] To address the dilemma of "frame-by-frame jitter" and "copying historical trajectories" in learned planners, DFP segments the entire trajectory into historical/current/future chunks, independently adds noise to each for joint denoising, and employs "History-Annealed CFG" during inference to controllably adjust the inte
+  [CVPR 2026][Autonomous Driving][Motion Planning] To address the dilemma of "frame-by-frame jitter" and "copying historical trajectories" in learned planners, DFP segments the entire trajectory into historical/current/future chunks, independently adds noise to each for joint denoising, and employs "History-Annealed CFG" during inference to controllably adjust the intensity of historical influence. It achieves SOTA among learned baselines on nuPlan closed-loop benchmarks by bei…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Diffusion Model
-  - Diffusion Forcing
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Motion Planning"
+  - "Diffusion Models"
+  - "Diffusion Forcing"
+  - "Classifier-Free Guidance"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: a6d8185e7fc149bc
+content_hash: e14d0feca6a6fcee
 ---
+
 # Diffusion Forcing Planner: History-Annealed Planning with Time-Dependent Guidance for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -171,8 +175,8 @@ In high-speed scenarios, Comfort scores surged from 60.61 (DP) to 96.97 (DFP). Q
 ## Related Papers
 
 - [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
-- [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](../../AAAI2026/autonomous_driving/diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[ICLR 2026\] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving](../../ICLR2026/autonomous_driving/bridgedrive_diffusion_bridge_policy_for_closed-loop_trajectory_planning_in_auton.md)
 - [\[CVPR 2026\] Open-Ended Instruction Realization with LLM-Enabled Multi-Planner Scheduling in Autonomous Vehicles](open-ended_instruction_realization_with_llm-enabled_multi-planner_scheduling_in_.md)
 - [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
 

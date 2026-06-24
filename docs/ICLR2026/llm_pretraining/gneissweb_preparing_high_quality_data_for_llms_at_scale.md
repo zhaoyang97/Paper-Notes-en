@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GneissWeb: Preparing High Quality Data for LLMs at Scale
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] GneissWeb distills approximately 10T high-quality tokens from the 15T FineWeb dataset using "sharded exact substring deduplication + an ensemble of novel complementary quality filters." This allows a 7B model to outperform the FineWeb-trained version by an average of 2.73 percentage points across 11 benchmarks, filling
+  [ICLR 2026][LLM Pretraining][Pre-training datasets] GneissWeb distills approximately 10T high-quality tokens from the 15T FineWeb dataset using "sharded exact substring deduplication + an ensemble of novel complementary quality filters." This allows a 7B model to outperform the FineWeb-trained version by an average of 2.73 percentage points across 11 benchmarks, filling the gap between "small but refined" (<5T) and "large but coarse" (>15T) datasets.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Pre-training datasets"
+  - "data quality filtering"
+  - "deduplication"
+  - "readability scoring"
+  - "ensemble filtering"
 date: 2026-05-08
-content_hash: cebcc4a5e2cbfecd
+content_hash: 4b2743c2f038527f
 ---
+
 # GneissWeb: Preparing High Quality Data for LLMs at Scale
 
 **Conference**: ICLR 2026  
@@ -113,10 +119,10 @@ Compared to FineWeb (15T, fuzzy dedup), FineWeb-Edu / DCLM-Baseline (aggressive 
 ## Related Papers
 
 - [\[ICLR 2026\] Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset](nemotron-cc-math_a_133_billion-token-scale_high_quality_math_pretraining_dataset.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
 - [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
 - [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICLR 2026\] Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning](joint_selection_for_large-scale_pre-training_data_via_policy_gradient-based_mask.md)
-- [\[ICLR 2026\] Learning Facts at Scale with Active Reading](learning_facts_at_scale_with_active_reading.md)
 
 </div>
 

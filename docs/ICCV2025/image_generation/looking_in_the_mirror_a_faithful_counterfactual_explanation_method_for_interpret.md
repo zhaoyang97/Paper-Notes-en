@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models
 description: >-
-  [ICCV 2025][Image Generation][counterfactual explanation] This paper treats a classifier's decision boundary as a "mirror" and generates counterfactual explanations (CFEs) by reflecting feature representations to the oth…
+  [ICCV 2025][Image Generation][counterfactual explanation] This paper treats a classifier's decision boundary as a "mirror" and generates counterfactual explanations (CFEs) by reflecting feature representations to the other side of the mirror. A triangulation loss is designed to preserve distance relationships between the latent space and image space, yielding faithful, controllable, and animatable counterfactual explanations.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "classifier interpretability"
   - "animated transition"
 date: 2026-05-08
-content_hash: 999a058d679e6e8e
+content_hash: c10e4da9e792cc05
 ---
 
 # Looking in the Mirror: A Faithful Counterfactual Explanation Method for Interpreting Deep Image Classification Models
@@ -149,7 +149,7 @@ Mirror-CFE achieves optimal or near-optimal proximity (L1/LPIPS) and realism (FI
 - [\[ICCV 2025\] Revelio: Interpreting and Leveraging Semantic Information in Diffusion Models](revelio_interpreting_and_leveraging_semantic_information_in_diffusion_models.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
 - [\[NeurIPS 2025\] V-CECE: Visual Counterfactual Explanations via Conceptual Edits](../../NeurIPS2025/image_generation/v-cece_visual_counterfactual_explanations_via_conceptual_edits.md)
-- [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](../../NeurIPS2025/image_generation/counterfactual_identifiability_via_dynamic_optimal_transport.md)
+- [\[ICML 2025\] Towards a Mechanistic Explanation of Diffusion Model Generalization](../../ICML2025/image_generation/towards_a_mechanistic_explanation_of_diffusion_model_generalization.md)
 
 </div>
 

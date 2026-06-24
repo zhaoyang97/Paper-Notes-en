@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MM-IFEngine: Towards Multimodal Instruction Following
 description: >-
-  [Multimodal VLM] This paper proposes the MM-IFEngine pipeline, which systematically generates high-quality image–instruction pair data (in both SFT and DPO variants) and constructs the MM-IFEval benchmark…
+  [Multimodal VLM] This paper proposes the MM-IFEngine pipeline, which systematically generates high-quality image–instruction pair data (in both SFT and DPO variants) and constructs the MM-IFEval benchmark, achieving significant improvements in multimodal instruction following for MLLMs.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 3ff4413b1b65a3b8
+content_hash: ab05202d7f23d5fd
 ---
 
 # MM-IFEngine: Towards Multimodal Instruction Following
@@ -144,10 +144,10 @@ Progressively increasing the proportion of removed constraints from 33% → 66% 
 ## Related Papers
 
 - [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
+- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[ICCV 2025\] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
 
 </div>
 

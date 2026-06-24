@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][NAVSIM] ResAD reformulates trajectory prediction in end-to-end driving from "direct future trajectory prediction" to "predicting normalized residuals relative to an inertial reference trajectory." By using perturbed inertial references for multi-modal generation, diffusion decoding, and trajectory ranking, it achieves SOTA res
+  [CVPR 2026][Autonomous Driving][End-to-End Autonomous Driving] ResAD reformulates trajectory prediction in end-to-end driving from "direct future trajectory prediction" to "predicting normalized residuals relative to an inertial reference trajectory." By using perturbed inertial references for multi-modal generation, diffusion decoding, and trajectory ranking, it achieves SOTA results on NAVSIM v1/v2 with 88.8 PDMS / 85.5 EPDMS using only 2 denoising steps.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - NAVSIM
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Autonomous Driving"
+  - "Residual Trajectory Modeling"
+  - "Inertial Reference"
+  - "Diffusion Planning"
+  - "NAVSIM"
 date: 2026-05-08
-content_hash: 103138743499c56e
+content_hash: 91523fb780d33c8e
 ---
+
 # ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -135,6 +140,7 @@ Plug-and-play validation: Applying TRM(+PRNorm) to Transfuser (MLP planner) impr
 - Value: ⭐⭐⭐⭐ High utility due to its drop-in nature for existing E2EAD methods.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,7 +149,7 @@ Plug-and-play validation: Applying TRM(+PRNorm) to Transfuser (MLP planner) impr
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
-- [\[CVPR 2026\] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving](meanfuser_fast_one-step_multi-modal_trajectory_generation_and_adaptive_reconstru.md)
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
 
 </div>
 

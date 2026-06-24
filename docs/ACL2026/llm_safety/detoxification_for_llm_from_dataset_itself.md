@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detoxification for LLM from Dataset Itself
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes the HSPD (Hierarchical Semantic-Preserving Detoxification) pipeline, which uses SoCD (Soft Contrastive Decoding) to guide an LLM in locating and rewriting toxic segments in the original corpus while preserving semantics. This generates a detoxified corpus that can directly replace original data for
+  [ACL 2026][LLM Safety][Data-level Detoxification] This paper proposes the HSPD (Hierarchical Semantic-Preserving Detoxification) pipeline, which uses SoCD (Soft Contrastive Decoding) to guide an LLM in locating and rewriting toxic segments in the original corpus while preserving semantics. This generates a detoxified corpus that can directly replace original data for fine-tuning—reducing toxicity probability from 0.42 to 0.18 on GPT2-XL and achieving optimal detoxification ef…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Data-level Detoxification"
+  - "Contrastive Decoding"
+  - "Semantic Preservation"
+  - "Pre-training Corpus Cleaning"
+  - "Toxicity Mitigation"
 date: 2026-05-08
-content_hash: 27c47f7ba39361d7
+content_hash: 19286f9251d467ca
 ---
+
 # Detoxification for LLM from Dataset Itself
 
 **Conference**: ACL 2026  
@@ -152,10 +158,10 @@ The toxic small model is obtained via standard fine-tuning on a toxic dataset $\
 ## Related Papers
 
 - [\[ACL 2026\] CausalDetox: Causal Head Selection and Intervention for Language Model Detoxification](causaldetox_causal_head_selection_and_intervention_for_language_model_detoxifica.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](../../ICLR2026/llm_safety/tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[NeurIPS 2025\] CPRet: A Dataset, Benchmark, and Model for Retrieval in Competitive Programming](../../NeurIPS2025/llm_safety/cpret_a_dataset_benchmark_and_model_for_retrieval_in_competitive_programming.md)
 - [\[ICCV 2025\] Asynchronous Event Error-Minimizing Noise for Safeguarding Event Dataset](../../ICCV2025/llm_safety/asynchronous_event_error-minimizing_noise_for_safeguarding_event_dataset.md)
 - [\[ACL 2026\] SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking](ssg_logit-balanced_vocabulary_partitioning_for_llm_watermarking.md)
-- [\[ACL 2026\] Illusions of Confidence? Diagnosing LLM Truthfulness via Neighborhood Consistency](illusions_of_confidence_diagnosing_llm_truthfulness_via_neighborhood_consistency.md)
 
 </div>
 

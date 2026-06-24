@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Ctrl-World: A Controllable Generative World Model for Robot Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Model] Ours transforms pre-trained passive video diffusion models into a **controllable, multi-view, and long-term consistent** robotic world model. This allows general-purpose VLA policies to perform closed-loop rollouts in "imaginary space," enabling policy evaluation without real robots and improving success rates by 44.7%
+  [ICLR 2026][Robotics][World Model] Ours transforms pre-trained passive video diffusion models into a **controllable, multi-view, and long-term consistent** robotic world model. This allows general-purpose VLA policies to perform closed-loop rollouts in "imaginary space," enabling policy evaluation without real robots and improving success rates by 44.7% through fine-tuning on synthesized success trajectories.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Model
-  - VLA Policy
-  - Multi-View Prediction
-  - Action Conditioning
-  - Policy Evaluation
-  - DROID
+  - "ICLR 2026"
+  - "Robotics"
+  - "World Model"
+  - "VLA Policy"
+  - "Multi-View Prediction"
+  - "Action Conditioning"
+  - "Policy Evaluation"
+  - "DROID"
 date: 2026-05-08
-content_hash: 270698ef57c12461
+content_hash: bf9497c0592bf0ab
 ---
+
 # Ctrl-World: A Controllable Generative World Model for Robot Manipulation
 
 **Conference**: ICLR 2026  
@@ -125,7 +126,7 @@ Removing any component results in a performance drop; frame-level conditioning a
 - [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](sparse_imagination_for_efficient_visual_world_model_planning.md)
 - [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](worldgym_world_model_as_an_environment_for_policy_evaluation.md)
 - [\[ICLR 2026\] Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](genie_envisioner_a_unified_world_foundation_platform_for_robotic_manipulation.md)
-- [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](empowering_multi-robot_cooperation_via_sequential_world_models.md)
+- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](../../CVPR2026/robotics/chain_of_world_world_model_thinking_in_latent_motion.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Score-Based Error Correcting Code Decoder
 description: >-
-  [ICML 2026][Physics & Scientific Computing][DPM-Solver] This paper proposes SB-ECC: reinterpreting the soft decoding of binary linear block codes as the reverse denoising of a Variance Exploding (VE) diffusion process. By using a **time-unconditional** score network that directly accepts **signed channel observations** $\mathbf{y}$ to solve a parity-constraint-guided Probab
+  [ICML2026][Physics & Scientific Computing][Error Correcting Codes] This paper proposes SB-ECC: reinterpreting the soft decoding of binary linear block codes as the reverse denoising of a Variance Exploding (VE) diffusion process. By using a **time-unconditional** score network that directly accepts **signed channel observations** $\mathbf{y}$ to solve a parity-constraint-guided Probability Flow ODE, it achieves the best BER in 39 out of 42 code-SNR configurations…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - DPM-Solver
+  - "ICML2026"
+  - "Physics & Scientific Computing"
+  - "Error Correcting Codes"
+  - "Score-based Models"
+  - "Probability Flow ODE"
+  - "Neural Decoding"
+  - "DPM-Solver"
 date: 2026-05-08
-content_hash: 3456f56a0cec08e2
+content_hash: 33a56e66dd4a993f
 ---
+
 # Score-Based Error Correcting Code Decoder
 
 **Conference**: ICML2026  
@@ -135,11 +140,11 @@ SB-ECC achieved the **best BER in 39 out of 42** cases, with an average SNR gain
 
 ## Related Papers
 
+- [\[ICLR 2026\] SAQ: Stabilizer-Aware Quantum Error Correction Decoder](../../ICLR2026/physics/saq_stabilizer-aware_quantum_error_correction_decoder.md)
 - [\[ICML 2026\] Rethink the Role of Neural Decoders in Quantum Error Correction](rethink_the_role_of_neural_decoders_in_quantum_error_correction.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
+- [\[ICLR 2026\] LD-EnSF: Synergizing Latent Dynamics with Ensemble Score Filters for Fast Data Assimilation with Sparse Observations](../../ICLR2026/physics/ld-ensf_synergizing_latent_dynamics_with_ensemble_score_filters_for_fast_data_as.md)
 - [\[NeurIPS 2025\] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](../../NeurIPS2025/physics/score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)
-- [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](speculative_sampling_for_faster_molecular_dynamics.md)
-- [\[ICML 2026\] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields](ballast_bayesian_active_learning_with_look-ahead_amendment_for_sea-drifter_traje.md)
+- [\[ICML 2026\] Quantum latent distributions in deep generative models](quantum_latent_distributions_in_deep_generative_models.md)
 
 </div>
 

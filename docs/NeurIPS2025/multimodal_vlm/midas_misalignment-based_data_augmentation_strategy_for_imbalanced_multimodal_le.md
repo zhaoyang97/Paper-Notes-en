@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][modality imbalance] This work is the first to propose using cross-modal misaligned samples as supervised training signals—rather than treating them as noise or interference—to alleviate mod…
+  [NeurIPS 2025][Multimodal VLM][modality imbalance] This work is the first to propose using cross-modal misaligned samples as supervised training signals—rather than treating them as noise or interference—to alleviate modality imbalance in multimodal learning. The proposed MIDAS data augmentation framework combines three complementary mechanisms: confidence-based labeling of misaligned samples, weak-modality weighting, and hard-sample weighting. MIDAS substantially outperforms…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "weak-modality weighting"
   - "hard-sample weighting"
 date: 2026-05-08
-content_hash: e2716c1d942342eb
+content_hash: 5d8e140aaea1028d
 ---
 
 # MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning
@@ -153,8 +153,8 @@ MIDAS achieves 74.00% Acc / 73.64 F1 vs. Joint's 71.13% Acc / 70.86 F1, demonstr
 - [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
 - [\[NeurIPS 2025\] Learning Shared Representations from Unpaired Data](learning_shared_representations_from_unpaired_data.md)
 - [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
-- [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
 - [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](../../AAAI2026/multimodal_vlm/panda_test-time_adaptation_with_negative_data_augmentation.md)
+- [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
 
 </div>
 

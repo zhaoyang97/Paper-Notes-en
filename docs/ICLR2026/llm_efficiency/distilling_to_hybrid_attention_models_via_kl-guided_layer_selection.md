@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distilling to Hybrid Attention Models via KL-Guided Layer Selection
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] When distilling a pre-trained softmax attention Transformer into a hybrid model with "few softmax layers + many linear attention layers," the importance of each layer is scored by temporarily restoring it to softmax and measuring the reduction in KL distillation loss. By greedily selecting the $K$ most critical layers
+  [ICLR2026][LLM Efficiency][Linear Attention] When distilling a pre-trained softmax attention Transformer into a hybrid model with "few softmax layers + many linear attention layers," the importance of each layer is scored by temporarily restoring it to softmax and measuring the reduction in KL distillation loss. By greedily selecting the $K$ most critical layers to remain as softmax, the method significantly improves inference efficiency while maintaining long-context retriev…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Hybrid Architecture"
+  - "Cross-Architecture Distillation"
+  - "Layer Selection"
+  - "KL Divergence"
 date: 2026-05-08
-content_hash: d538d3179730946e
+content_hash: 900c4c282a72c959
 ---
+
 # Distilling to Hybrid Attention Models via KL-Guided Layer Selection
 
 **Conference**: ICLR2026  
@@ -126,11 +132,11 @@ Across scales (1.5B/7B), GA-S2 consistently outperforms SMART. At a 50% budget, 
 
 ## Related Papers
 
+- [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](../../ICML2026/llm_efficiency/knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
 - [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](../../ACL2026/llm_efficiency/native_hybrid_attention_for_efficient_sequence_modeling.md)
 - [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
-- [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](../../ICML2026/llm_efficiency/knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
 - [\[ICLR 2026\] Composer: A Search Framework for Hybrid Neural Architecture Design](composer_a_search_framework_for_hybrid_neural_architecture_design.md)
-- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
+- [\[ICLR 2026\] ProxyAttn: Guided Sparse Attention via Representative Heads](proxyattn_guided_sparse_attention_via_representative_heads.md)
 
 </div>
 

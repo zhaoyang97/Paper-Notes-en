@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition
 description: >-
-  [ICLR 2026][Others][SNN] The paper proposes DeepEISNN, a normalization-free learning framework based on cortical excitatory-inhibitory (E-I) circuits. By implementing E-I Init and E-I Prop, it achieves stable end-to-end training of deep SNNs, balancing performance and biological plausibility.
+  The paper proposes DeepEISNN, a normalization-free learning framework based on cortical excitatory-inhibitory (E-I) circuits. By implementing E-I Init and E-I Prop, it achieves stable end-to-end training of deep SNNs, balancing performance and biological plausibility.
 tags:
-  - ICLR 2026
-  - Others
-  - SNN
+
 date: 2026-05-08
-content_hash: efa1414f041a4673
+content_hash: d8bc4b7a932f3a6f
 ---
+
 # Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition
 
 ## Paper Information

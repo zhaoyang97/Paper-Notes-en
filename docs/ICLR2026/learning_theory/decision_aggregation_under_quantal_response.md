@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Decision Aggregation under Quantal Response
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates the aggregation of binary decisions from $n$ experts under bounded rationality characterized by quantal response. It proves that when collective rationality is below a threshold $g(n)$ dependent on the group size, naive majority voting is the minimax optimal robust aggregator. Furthermore, group
+  [ICLR2026][Learning Theory][Decision Aggregation] This paper investigates the aggregation of binary decisions from $n$ experts under bounded rationality characterized by quantal response. It proves that when collective rationality is below a threshold $g(n)$ dependent on the group size, naive majority voting is the minimax optimal robust aggregator. Furthermore, groups with bounded rationality can unexpectedly outperform fully rational groups because randomness in decision-ma…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Information Aggregation"
+  - "Bounded Rationality"
+  - "Decision Aggregation"
+  - "Quantal Response"
+  - "Majority Voting"
+  - "Minimax Regret"
 date: 2026-05-08
-content_hash: e41c0b8eed18ae9a
+content_hash: 4465925bf0eb256f
 ---
+
 # Decision Aggregation under Quantal Response
 
 **Conference**: ICLR2026  
@@ -115,14 +122,15 @@ Two empirical studies using `gpt-4o-mini` were conducted, where temperature $t$ 
 - **Value**: ⭐⭐⭐⭐ Significant conceptual and practical implications for collective intelligence, AI ensembles, and voting mechanisms.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Minimax-Optimal Aggregation for Density Ratio Estimation](minimax-optimal_aggregation_for_density_ratio_estimation.md)
+- [\[ICLR 2026\] Dimension-Free Decision Calibration for Nonlinear Loss Functions](dimension-free_decision_calibration_for_nonlinear_loss_functions.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
 - [\[ICLR 2026\] Conformalized Decision Risk Assessment](conformalized_decision_risk_assessment.md)
-- [\[ICLR 2026\] Dimension-Free Decision Calibration for Nonlinear Loss Functions](dimension-free_decision_calibration_for_nonlinear_loss_functions.md)
 - [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 
 </div>

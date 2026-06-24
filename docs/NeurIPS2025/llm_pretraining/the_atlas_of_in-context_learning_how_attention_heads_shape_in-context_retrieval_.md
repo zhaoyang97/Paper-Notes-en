@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][In-Context Learning] This paper systematically dissects the internal mechanisms of LLMs in in-context retrieval augmented QA using the AttnLRP attribution method. Three functionally specia…
+  [NeurIPS 2025][LLM Pretraining][In-Context Learning] This paper systematically dissects the internal mechanisms of LLMs in in-context retrieval augmented QA using the AttnLRP attribution method. Three functionally specialized attention head types are identified — Task heads (middle layers, parsing instructions/questions), Retrieval heads (later layers, verbatim copying of contextual answers), and Parametric heads (encoding parametric knowledge) — and their functions are valid…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "AttnLRP"
   - "Knowledge Attribution"
 date: 2026-05-08
-content_hash: 3f9c0c2cd0dabe25
+content_hash: 39f874a7e3a63d02
 ---
 
 # The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation
@@ -140,10 +140,10 @@ Function Vector zero-shot injection (Biography dataset):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[NeurIPS 2025\] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)
-- [\[AAAI 2026\] Perspective from a Broader Context: Can Room Style Knowledge Help Visual Floorplan Localization?](../../AAAI2026/llm_pretraining/perspective_from_a_broader_context_can_room_style_knowledge_help_visual_floorpla.md)
-- [\[ICML 2026\] Focus and Dilution: The Multi-stage Learning Process of Attention](../../ICML2026/llm_pretraining/focus_and_dilution_the_multi-stage_learning_process_of_attention.md)
+- [\[CVPR 2025\] ConText-CIR: Learning from Concepts in Text for Composed Image Retrieval](../../CVPR2025/llm_pretraining/context-cir_learning_from_concepts_in_text_for_composed_image_retrieval.md)
+- [\[ICML 2025\] When Can In-Context Learning Generalize Out of Task Distribution?](../../ICML2025/llm_pretraining/when_can_in-context_learning_generalize_out_of_task_distribution.md)
+- [\[ICML 2025\] In-Context Adaptation to Concept Drift for Learned Database Operations](../../ICML2025/llm_pretraining/in-context_adaptation_to_concept_drift_for_learned_database_operations.md)
+- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Motion-Aligned Word Embeddings for Text-to-Motion Generation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] MATE pushes "motion semantic alignment" down to the **word embedding layer** of the LLM text encoder. By fine-tuning only this thin layer (3.2M parameters) through motion localization and word-level decoupling, it binds motion-related words like "clockwise" to skeletal movements. This produces a plug-and-play motion-aw
+  [ICLR 2026][Human Understanding][Text-to-Motion Generation] MATE pushes "motion semantic alignment" down to the **word embedding layer** of the LLM text encoder. By fine-tuning only this thin layer (3.2M parameters) through motion localization and word-level decoupling, it binds motion-related words like "clockwise" to skeletal movements. This produces a plug-and-play motion-aware text encoder that improves mainstream T2M models like MoMask and MDM to new SOTA levels with vir…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion Generation"
+  - "Word Embedding Alignment"
+  - "Motion Semantic Decoupling"
+  - "Contrastive Learning"
+  - "Prototype Representation"
 date: 2026-05-08
-content_hash: bac7281bcf5974ac
+content_hash: 1b612e997c71742a
 ---
+
 # Motion-Aligned Word Embeddings for Text-to-Motion Generation
 
 **Conference**: ICLR 2026  
@@ -112,13 +118,13 @@ Loss Ablation: Removing $\mathcal{L}_{self}$ dropped performance to Top-1 0.498,
 - **Value**: ⭐⭐⭐⭐ High practical value for the T2M community due to its parameter efficiency and plug-and-play nature.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 - [\[ICLR 2026\] Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis](event-t2m_event-level_conditioning_for_complex_text-to-motion_synthesis.md)
-- [\[ICLR 2026\] Motion-R1: Enhancing Motion Generation with Decomposed Chain-of-Thought and RL Binding](motion-r1_enhancing_motion_generation_with_decomposed_chain-of-thought_and_rl_bi.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](../../CVPR2026/human_understanding/next-scale_autoregressive_models_for_text-to-motion_generation.md)
 - [\[CVPR 2025\] PersonaBooth: Personalized Text-to-Motion Generation](../../CVPR2025/human_understanding/personabooth_personalized_text-to-motion_generation.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)

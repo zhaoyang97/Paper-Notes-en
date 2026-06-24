@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] OmniVinci employs three architectural improvements for "visual-audio alignment" (OmniAlignNet semantic alignment, temporal grouping, and Constrained Rotary Time Embedding) alongside a data pipeline capable of synthesizing 24 million dialogues. Trained on only 0.2T tokens, this open-source omni-modal LLM understands vid
+  [ICLR 2026][Multimodal VLM][Omni-modal LLM] OmniVinci employs three architectural improvements for "visual-audio alignment" (OmniAlignNet semantic alignment, temporal grouping, and Constrained Rotary Time Embedding) alongside a data pipeline capable of synthesizing 24 million dialogues. Trained on only 0.2T tokens, this open-source omni-modal LLM understands video, audio, speech, and text simultaneously, outperforming Qwen2.5-Omni (while using only 1/6 of its training tokens)…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Omni-modal LLM"
+  - "visual-audio alignment"
+  - "temporal encoding"
+  - "data synthesis"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: 354181b86f8c719f
+content_hash: cc19f9e08f55f0cd
 ---
+
 # OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM
 
 **Conference**: ICLR 2026  
@@ -131,14 +137,14 @@ Incremental addition of the architecture components (trained on a 10B token subs
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Omni-Captioner: Data Pipeline, Models, and Benchmark for Omni Detailed Perception](omni-captioner_data_pipeline_models_and_benchmark_for_omni_detailed_perception.md)
-- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 - [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
 - [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
 - [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
 

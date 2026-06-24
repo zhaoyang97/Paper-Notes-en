@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] This paper losslessly decomposes any pre-trained ReLU network into the difference of two "monotonic and convex" subnetworks $f=g-h$. By resolving the numerical explosion inherent in such decompositions, it introduces three attribution methods—SplitCAM, SplitLRP, and SplitGrad—setting new state-of-the-art (SOTA) results
+  [CVPR 2026][Interpretability][DC Decomposition] This paper losslessly decomposes any pre-trained ReLU network into the difference of two "monotonic and convex" subnetworks $f=g-h$. By resolving the numerical explosion inherent in such decompositions, it introduces three attribution methods—SplitCAM, SplitLRP, and SplitGrad—setting new state-of-the-art (SOTA) results for saliency maps across faithfulness, localization, and robustness on VGG16 and ResNet18 (ImageNet-S).
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "DC Decomposition"
+  - "Monotonic Networks"
+  - "Saliency Maps"
+  - "ReLU Decomposition"
 date: 2026-05-08
-content_hash: 17f81a0618e1a516
+content_hash: 3a047ca79860bce7
 ---
+
 # Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition
 
 **Conference**: CVPR 2026  
@@ -137,8 +142,8 @@ VGG16 and ResNet18 on ImageNet (using ImageNet-S-50 for evaluation, containing 5
 - [\[ICML 2025\] FastCAV: Efficient Computation of Concept Activation Vectors for Explaining Deep Neural Networks](../../ICML2025/interpretability/fastcav_efficient_computation_of_concept_activation_vectors_for_explaining_deep_.md)
 - [\[CVPR 2026\] When Do Models Actually Decide? Mapping the Layer-Wise Decision Timeline in Pretrained Neural Networks](when_do_models_actually_decide_mapping_the_layer-wise_decision_timeline_in_pretr.md)
 - [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
-- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](../../ICLR2026/interpretability/addressing_divergent_representations_causal.md)
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
+- [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](../../ICLR2026/interpretability/bayesian_neural_networks_for_functional_anova_model.md)
 
 </div>
 

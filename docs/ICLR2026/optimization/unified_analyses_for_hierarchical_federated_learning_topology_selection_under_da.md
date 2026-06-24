@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper establishes the **first unified non-convex convergence framework** for four two-tier topologies of Hierarchical Federated Learning (HFL) (Star-Star / Star-Ring / Ring-Star / Ring-Ring). By utilizing a common set of assumptions and an "effective learning rate," it compares their convergence bounds in a single
+  [ICLR 2026][Optimization][Hierarchical Federated Learning] This paper establishes the **first unified non-convex convergence framework** for four two-tier topologies of Hierarchical Federated Learning (HFL) (Star-Star / Star-Ring / Ring-Star / Ring-Ring). By utilizing a common set of assumptions and an "effective learning rate," it compares their convergence bounds in a single table, derives three actionable topology selection principles, and validates them on CIFAR-10…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Hierarchical Federated Learning"
+  - "convergence analysis"
+  - "topology selection"
+  - "data heterogeneity"
+  - "ring aggregation"
 date: 2026-05-08
-content_hash: 912633b99b5bf636
+content_hash: 83e98dcf6a206a05
 ---
+
 # Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity
 
 **Conference**: ICLR 2026  
@@ -123,11 +129,11 @@ Setup: $N=100$ clients divided into $G=10$ groups, four data partitions (inter/i
 
 ## Related Papers
 
-- [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](non-convex_federated_optimization_under_cost-aware_client_selection.md)
 - [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](../../AAAI2026/optimization/data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
+- [\[ICLR 2026\] Ringleader ASGD: The First Asynchronous SGD with Optimal Time Complexity under Data Heterogeneity](ringleader_asgd_the_first_asynchronous_sgd_with_optimal_time_complexity_under_da.md)
+- [\[ICLR 2026\] Non-Convex Federated Optimization under Cost-Aware Client Selection](non-convex_federated_optimization_under_cost-aware_client_selection.md)
+- [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
 - [\[AAAI 2026\] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack](../../AAAI2026/optimization/tackling_resource-constrained_and_data-heterogeneity_in_federated_learning_with_.md)
-- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
-- [\[ICLR 2026\] Federated Learning with Profile Mapping under Distribution Shifts and Drifts](federated_learning_with_profile_mapping_under_distribution_shifts_and_drifts.md)
 
 </div>
 

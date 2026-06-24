@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk
 description: >-
-  [ICLR 2026][3D Vision][Mesh Generation] A mesh tokenization algorithm inspired by "silk weaving" is proposed. It provides a canonical topological framework through vertex layering and ordering, ensuring manifoldness, watertightness, normal consistency, and part-awareness of generated meshes while achieving SOTA compression efficiency.
+  [3D Vision] A mesh tokenization algorithm inspired by "silk weaving" is proposed. It provides a canonical topological framework through vertex layering and ordering, ensuring manifoldness, watertightness, normal consistency, and part-awareness of generated meshes while achieving SOTA compression efficiency.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Mesh Generation
-  - Auto-regressive
-  - Topology Preservation
-  - Mesh Tokenization
-  - Manifold
-  - Watertight
+  - "3D Vision"
 date: 2026-05-08
-content_hash: 467aa5a18f8db119
+content_hash: 4339ac7ebea9cb4e
 ---
+
 # Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk
 
 - **Conference**: ICLR 2026

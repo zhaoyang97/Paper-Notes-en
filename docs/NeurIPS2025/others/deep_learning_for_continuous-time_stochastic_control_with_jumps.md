@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Learning for Continuous-Time Stochastic Control with Jumps
 description: >-
-  [NeurIPS 2025][Stochastic Control] Two model-based deep learning algorithms (GPI-PINN and GPI-CBU) are proposed to solve finite-horizon continuous-time stochastic control problems with jumps. By iteratively training a po…
+  [NeurIPS 2025][Stochastic Control] Two model-based deep learning algorithms (GPI-PINN and GPI-CBU) are proposed to solve finite-horizon continuous-time stochastic control problems with jumps. By iteratively training a policy network and a value network, the approach avoids discretization and simulation of state dynamics, and demonstrates strong performance in high-dimensional settings.
 tags:
   - "NeurIPS 2025"
   - "Stochastic Control"
@@ -11,7 +11,7 @@ tags:
   - "Deep Learning"
   - "Actor-Critic"
 date: 2026-05-08
-content_hash: fc2621c9c19ce62c
+content_hash: 234c5477d7d53cb6
 ---
 
 # Deep Learning for Continuous-Time Stochastic Control with Jumps
@@ -176,10 +176,10 @@ GPI-PINN vs. GPI-CBU:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
+- [\[NeurIPS 2025\] Continuous Thought Machines](continuous_thought_machines.md)
 
 </div>
 

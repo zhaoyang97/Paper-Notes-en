@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Sustainability of Adversarial Examples in Class-Incremental Learning
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Adversarial examples] This paper proposes the SAE framework to address the degradation of adversarial examples (AEs) caused by domain drift in class-incremental learning (CIL). Throu…
+  [AAAI 2026][Self-Supervised Learning][Adversarial examples] This paper proposes the SAE framework to address the degradation of adversarial examples (AEs) caused by domain drift in class-incremental learning (CIL). Through a semantic correction module (jointly guided by CLIP and the CIL model) and a filtering-and-augmentation module (removing semantically confusing samples), SAE maintains attack effectiveness even after a 9× increase in the number of classes…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "robustness preservation"
   - "CLIP semantics"
 date: 2026-05-08
-content_hash: d87cd6d46377a2b5
+content_hash: 44f8138dff1df406
 ---
 
 # Improving Sustainability of Adversarial Examples in Class-Incremental Learning
@@ -133,10 +133,10 @@ SAE consists of two core modules: (1) a **Semantic Correction Module**—jointly
 ## Related Papers
 
 - [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](../../CVPR2026/self_supervised/temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
+- [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](../../CVPR2026/self_supervised/exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](../../CVPR2026/self_supervised/representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
+- [\[CVPR 2026\] Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](../../CVPR2026/self_supervised/beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)
 - [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](../../CVPR2026/self_supervised/hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
-- [\[AAAI 2026\] From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models without Finetuning](from_pretrain_to_pain_adversarial_vulnerability_of_video_foundation_models_witho.md)
-- [\[ICLR 2026\] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](../../ICLR2026/self_supervised/difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)
-- [\[AAAI 2026\] Improving Region Representation Learning from Urban Imagery with Noisy Long-Caption Supervision](improving_region_representation_learning_from_urban_imagery_with_noisy_long-capt.md)
 
 </div>
 

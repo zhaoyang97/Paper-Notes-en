@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DPOFusion adapts Direct Preference Optimization (DPO) from LLMs for infrared-visible image fusion. It first utilizes an attribute-aligned latent diffusion model to generate diverse fusion candidates, then applies "instance-level DPO" to fine-tune preferences only within regions of interest while enforcing consistency w
+  [CVPR 2026][Image Generation][Infrared and Visible Image Fusion] DPOFusion adapts Direct Preference Optimization (DPO) from LLMs for infrared-visible image fusion. It first utilizes an attribute-aligned latent diffusion model to generate diverse fusion candidates, then applies "instance-level DPO" to fine-tune preferences only within regions of interest while enforcing consistency with a reference model elsewhere. This single framework simultaneously satisfies four types of h…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Infrared and Visible Image Fusion"
+  - "Direct Preference Optimization"
+  - "Latent Diffusion"
+  - "Heterogeneous Demands"
+  - "Region-level Alignment"
 date: 2026-05-08
-content_hash: b37ddd0bf7cd11d9
+content_hash: 892e94fb1fd6ccee
 ---
+
 # Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,16 @@ RLDF-OD utilizes YOLOv11 responses as feedback, achieving 43.40 mAP. This demons
 - Value: ⭐⭐⭐⭐ Provides a unified framework for heterogeneous demands and a reusable IDPO structure.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] MagicFuse: Single Image Fusion for Visual and Semantic Reinforcement](magicfuse_single_image_fusion_for_visual_and_semantic_reinforcement.md)
 - [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[CVPR 2026\] MagicFuse: Single Image Fusion for Visual and Semantic Reinforcement](magicfuse_single_image_fusion_for_visual_and_semantic_reinforcement.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
+- [\[CVPR 2026\] NEAF: Natural Image Editing with Attention Fusion for Generalizable Test-time Optimization in Text-Guided Image Editing](neaf_natural_image_editing_with_attention_fusion_for_generalizable_test-time_opt.md)
 - [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
-- [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
 
 </div>
 

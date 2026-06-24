@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SketchRevive: Fine-Grained Pixel-to-Vector Sketch Completion with Diffusion-Prior-Guided Multimodal LLMs
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] SketchRevive introduces the new task of "Fine-Grained Pixel-to-Vector Sketch Completion" using a two-stage framework: a diffusion model first performs structurally consistent completion at the pixel level, followed by an MLLM for structure-aware refinement and vectorization. By injecting intermediate diffusion features
+  [CVPR 2026][Image Generation][Sketch Completion] SketchRevive introduces the new task of "Fine-Grained Pixel-to-Vector Sketch Completion" using a two-stage framework: a diffusion model first performs structurally consistent completion at the pixel level, followed by an MLLM for structure-aware refinement and vectorization. By injecting intermediate diffusion features into the MLLM visual stream, the framework significantly outperforms naive cascades of ControlNeXt with GPT-5…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Sketch Completion"
+  - "Pixel-to-Vector"
+  - "Diffusion Prior"
+  - "Multimodal LLMs"
+  - "SVG Vectorization"
 date: 2026-05-08
-content_hash: cdfd3af33316124a
+content_hash: 53c18faf80131343
 ---
+
 # SketchRevive: Fine-Grained Pixel-to-Vector Sketch Completion with Diffusion-Prior-Guided Multimodal LLMs
 
 **Conference**: CVPR 2026  

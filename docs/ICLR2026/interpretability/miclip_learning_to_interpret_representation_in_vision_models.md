@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MICLIP: Learning to Interpret Representation in Vision Models
 description: >-
-  [ICLR 2026][Interpretability][CLIP] MICLIP adapts the CLIP contrastive learning paradigm to "internal model representations," training a neuron encoder to project neuron/SAE features into the CLIP semantic space. This bypasses the old "activation-magnitude" assumption, providing a unified framework for both interpreting and precisely controlling internal
+  [ICLR 2026][Interpretability][Mechanistic interpretability] MICLIP adapts the CLIP contrastive learning paradigm to "internal model representations," training a neuron encoder to project neuron/SAE features into the CLIP semantic space. This bypasses the old "activation-magnitude" assumption, providing a unified framework for both interpreting and precisely controlling internal mechanisms of vision models.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - CLIP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic interpretability"
+  - "Contrastive learning"
+  - "CLIP"
+  - "Neuron interpretation"
+  - "Sparse Autoencoders"
+  - "Model control"
 date: 2026-05-08
-content_hash: 6f3593474e9768d2
+content_hash: fc7f1f3ed957b5ae
 ---
+
 # MICLIP: Learning to Interpret Representation in Vision Models
 
 **Conference**: ICLR 2026  
@@ -127,11 +133,11 @@ Original Accuracy: ResNet-50 80.14%, ViT-B/16 80.32%, CLIP 61.12%. MICLIP yields
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
-- [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
+- [\[ICLR 2026\] Learning to Interpret Weight Differences in Language Models](learning_to_interpret_weight_differences_in_language_models.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
-- [\[ICLR 2026\] Dyslexify: A Mechanistic Defense Against Typographic Attacks in CLIP](dyslexify_a_mechanistic_defense_against_typographic_attacks_in_clip.md)
 - [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
+- [\[ICLR 2026\] Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement](decoupling_dynamical_richness_from_representation_learning_towards_practical_mea.md)
 
 </div>
 

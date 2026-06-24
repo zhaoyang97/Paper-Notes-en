@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Model-Agnostic Meta Learning for Class Imbalance Adaptation
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes HAMR (Hardness-Aware Meta-Resample), a unified meta-learning framework. It dynamically estimates instance-level weights through bi-level optimization to prioritize truly difficult samples, combined with a neighborhood-aware resampling mechanism to focus training on difficult instances and their sema
+  [ACL 2026 Findings][LLM (Other)][Class Imbalance] This paper proposes HAMR (Hardness-Aware Meta-Resample), a unified meta-learning framework. It dynamically estimates instance-level weights through bi-level optimization to prioritize truly difficult samples, combined with a neighborhood-aware resampling mechanism to focus training on difficult instances and their semantic neighbors. It consistently outperforms strong baselines across 6 imbalanced NLP datasets.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Class Imbalance"
+  - "Meta Learning"
+  - "Adaptive Weights"
+  - "Difficulty-Aware Resampling"
+  - "Bi-level Optimization"
 date: 2026-05-08
-content_hash: ca754662f20caebb
+content_hash: 2571ad5c787fdb27
 ---
+
 # Model-Agnostic Meta Learning for Class Imbalance Adaptation
 
 **Conference**: ACL 2026 Findings  
@@ -143,10 +149,10 @@ The primary loss is weighted cross-entropy (classification) or token-level weigh
 
 ## Related Papers
 
+- [\[ICLR 2026\] Prompt-MII: Meta-Learning Instruction Induction for LLMs](../../ICLR2026/llm_nlp/prompt-mii_meta-learning_instruction_induction_for_llms.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
 - [\[ACL 2025\] Cultural Learning-Based Culture Adaptation of Language Models](../../ACL2025/llm_nlp/cultural_learning-based_culture_adaptation_of_language_models.md)
 - [\[ACL 2025\] Meta-Reflection: A Feedback-Free Reflection Learning Framework](../../ACL2025/llm_nlp/meta-reflection_a_feedback-free_reflection_learning_framework.md)
-- [\[ACL 2026\] Automatic Combination of Sample Selection Strategies for Few-Shot Learning](automatic_combination_of_sample_selection_strategies_for_few-shot_learning.md)
 - [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](../../NeurIPS2025/llm_nlp/c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
 
 </div>

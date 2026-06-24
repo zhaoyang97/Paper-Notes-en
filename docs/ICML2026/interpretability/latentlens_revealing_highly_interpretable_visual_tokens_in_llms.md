@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs
 description: >-
-  [ICML 2026][Interpretability][VLM] This paper proposes LatentLens—a training-free interpretability method that uses **contextualized text token representations** from a large corpus as a reference to perform nearest-neighbor retrieval for visual tokens at each layer of a VLM, returning sentence-level descriptions. The study proves that previously common
+  [ICML 2026][Interpretability][Visual tokens] This paper proposes LatentLens—a training-free interpretability method that uses **contextualized text token representations** from a large corpus as a reference to perform nearest-neighbor retrieval for visual tokens at each layer of a VLM, returning sentence-level descriptions. The study proves that previously common methods like LogitLens/EmbeddingLens significantly underestimate the interpretability of visual tokens (average 68…
 tags:
-  - ICML 2026
-  - Interpretability
-  - VLM
+  - "ICML 2026"
+  - "Interpretability"
+  - "Visual tokens"
+  - "VLM"
+  - "Contextualized representations"
+  - "Nearest neighbor retrieval"
 date: 2026-05-08
-content_hash: c488f94efd9ace59
+content_hash: afab11cb872a75eb
 ---
+
 # LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs
 
 **Conference**: ICML 2026  
@@ -130,11 +134,11 @@ The conclusions also held across 6 off-the-shelf VLMs (Molmo-7B-D, Molmo-72B, LL
 
 ## Related Papers
 
-- [\[ICML 2026\] Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](position_stop_anthropomorphizing_intermediate_tokens_as_reasoningthinking_traces.md)
-- [\[NeurIPS 2025\] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces](../../NeurIPS2025/interpretability/tangledfeatures_robust_feature_selection_in_highly_correlated_spaces.md)
+- [\[ICLR 2026\] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](../../ICLR2026/interpretability/from_tokens_to_thoughts_how_llms_and_humans_trade_compression_for_meaning.md)
+- [\[ICLR 2026\] Learning for Highly Faithful Explainability](../../ICLR2026/interpretability/learning_for_highly_faithful_explainability.md)
 - [\[ICML 2026\] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path](circuit_fingerprints_how_answer_tokens_encode_their_geometrical_path.md)
-- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
-- [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](../../ACL2026/interpretability/idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
+- [\[ICML 2026\] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality](muse_resolving_manifold_misalignment_in_visual_tokenization_via_topological_orth.md)
+- [\[ICML 2026\] Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](position_stop_anthropomorphizing_intermediate_tokens_as_reasoningthinking_traces.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Private Rate-Constrained Optimization with Applications to Fair Learning
 description: >-
-  [ICLR 2026][AI Safety][SGDA] This paper proposes RaCO-DP—a differential privacy version of the Stochastic Gradient Descent-Ascent (SGDA) algorithm. By unifying various "group fairness" metrics into "generalized rate constraints" based on histograms, the additional privacy overhead of the entire constrained optimization is reduced to the cost of a
+  [ICLR 2026][AI Safety][Differential Privacy] This paper proposes RaCO-DP—a differential privacy version of the Stochastic Gradient Descent-Ascent (SGDA) algorithm. By unifying various "group fairness" metrics into "generalized rate constraints" based on histograms, the additional privacy overhead of the entire constrained optimization is reduced to the cost of a private mini-batch histogram estimation per step. This approach Pareto-dominates existing private fair learning met…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - SGDA
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Rate Constraints"
+  - "Group Fairness"
+  - "SGDA"
+  - "Private Histogram"
 date: 2026-05-08
-content_hash: 8464f9db9bada16b
+content_hash: 933d9c400a832ae7
 ---
+
 # Private Rate-Constrained Optimization with Applications to Fair Learning
 
 **Conference**: ICLR 2026  

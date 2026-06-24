@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PCPO: Proportionate Credit Policy Optimization for Preference Alignment of Image Generation Models
 description: >-
-  [ICLR 2026][Image Generation][GRPO] This paper identifies that applying policy gradients (PPO/GRPO) to diffusion/flow model alignment results in the sampler's mathematical structure assigning **severely disproportionate credit weights** $w(t)$ across denoising timesteps, which is the root cause of training instability and model collapse. PCPO rectifies t
+  [ICLR 2026][Image Generation][Text-to-Image Alignment] This paper identifies that applying policy gradients (PPO/GRPO) to diffusion/flow model alignment results in the sampler's mathematical structure assigning **severely disproportionate credit weights** $w(t)$ across denoising timesteps, which is the root cause of training instability and model collapse. PCPO rectifies this through a "numerically stable log-hinge objective reconstruction + principled reweighting to uniformi…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Text-to-Image Alignment"
+  - "Policy Gradient"
+  - "GRPO"
+  - "Credit Assignment"
+  - "Model Collapse"
 date: 2026-05-08
-content_hash: 64ad784266576a72
+content_hash: b515ddb60ed401f0
 ---
+
 # PCPO: Proportionate Credit Policy Optimization for Preference Alignment of Image Generation Models
 
 **Conference**: ICLR 2026  
@@ -153,8 +158,8 @@ Statistical testing using Linear Mixed Models (LMM) on DDPO(Aesthetics) shows th
 ## Related Papers
 
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
-- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[ICLR 2026\] Group Critical-token Policy Optimization for Autoregressive Image Generation](group_critical-token_policy_optimization_for_autoregressive_image_generation.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
 - [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 - [\[ICLR 2026\] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](treegrpo_tree-advantage_grpo_for_online_rl_post-training_of_diffusion_models.md)
 

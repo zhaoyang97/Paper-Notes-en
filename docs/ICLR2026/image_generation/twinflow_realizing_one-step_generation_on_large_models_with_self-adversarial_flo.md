@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows
 description: >-
-  [ICLR 2026][Image Generation][one-step generation] TwinFlow is proposed: by extending the flow matching time interval from $[0,1]$ to $[-1,1]$, "twin trajectories" are constructed to form self-adversarial signals, enabling one-step generation without discriminators or frozen teachers. It is the first to extend 1-NFE generation capabilities to the 20B-parameter Qwen-Ima
+  [ICLR 2026][Image Generation][one-step generation] TwinFlow is proposed: by extending the flow matching time interval from $[0,1]$ to $[-1,1]$, "twin trajectories" are constructed to form self-adversarial signals, enabling one-step generation without discriminators or frozen teachers. It is the first to extend 1-NFE generation capabilities to the 20B-parameter Qwen-Image model; the 1-NFE GenEval of 0.86 approaches the original 100-NFE score of 0.87…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - one-step generation
-  - self-adversarial
-  - flow matching
-  - 20B scaling
-  - no auxiliary models
+  - "ICLR 2026"
+  - "Image Generation"
+  - "one-step generation"
+  - "self-adversarial"
+  - "flow matching"
+  - "20B scaling"
+  - "no auxiliary models"
 date: 2026-05-08
-content_hash: 26b67a67b7303122
+content_hash: 38b144d0db195773
 ---
+
 # TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows
 
 **Conference**: ICLR 2026  
@@ -188,11 +189,11 @@ Notably, TwinFlow avoids the mode collapse seen in Qwen-Image-Lightning (based o
 
 ## Related Papers
 
+- [\[ICML 2026\] Adversarial Flow Models](../../ICML2026/image_generation/adversarial_flow_models.md)
+- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](../../CVPR2026/image_generation/temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 - [\[ICLR 2026\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
 - [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
-- [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
-- [\[ICLR 2026\] On the Design of One-Step Diffusion via Shortcutting Flow Paths](on_the_design_of_one-step_diffusion_via_shortcutting_flow_paths.md)
-- [\[ICML 2026\] Adversarial Flow Models](../../ICML2026/image_generation/adversarial_flow_models.md)
+- [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](../../ICML2026/image_generation/riemannian_meanflow_for_one-step_generation_on_manifolds.md)
 
 </div>
 

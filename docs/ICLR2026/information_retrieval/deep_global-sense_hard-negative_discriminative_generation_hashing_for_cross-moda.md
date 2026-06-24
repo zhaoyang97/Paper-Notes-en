@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Deep Global-sense Hard-negative Discriminative Generation Hashing for Cross-modal Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Cross-modal Hashing] DGHDGH introduces "Hard Negative Generation" (HNG) into cross-modal hashing for the first time. It utilizes a cross-modal structural graph for bidirectional iterative message propagation to perceive **global sample correlation**. Based on this, it performs **channel-wise, difficulty-adaptive** anchor-negative interpola
+  [ICLR 2026][Information Retrieval & RAG][Cross-modal Hashing] DGHDGH introduces "Hard Negative Generation" (HNG) into cross-modal hashing for the first time. It utilizes a cross-modal structural graph for bidirectional iterative message propagation to perceive **global sample correlation**. Based on this, it performs **channel-wise, difficulty-adaptive** anchor-negative interpolation to synthesize hard negatives that are close to the anchor but do not violate other category b…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Cross-modal Hashing
-  - Hard Negative Generation
-  - Graph Message Propagation
-  - Hamming Co-space
-  - Channel-wise Interpolation
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Cross-modal Hashing"
+  - "Hard Negative Generation"
+  - "Graph Message Propagation"
+  - "Hamming Co-space"
+  - "Channel-wise Interpolation"
 date: 2026-05-08
-content_hash: aef4194d782679f4
+content_hash: 6d23874be64f4c2e
 ---
+
 # Deep Global-sense Hard-negative Discriminative Generation Hashing for Cross-modal Retrieval
 
 **Conference**: ICLR 2026  

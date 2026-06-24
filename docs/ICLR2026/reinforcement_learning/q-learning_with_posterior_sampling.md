@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Q-learning with Posterior Sampling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Q-learning] This paper proposes PSQL—the first Q-learning algorithm that uses "maintaining Gaussian posteriors over Q-values and taking argmax after sampling" for exploration. By modifying the target value calculation to "optimistic multi-sample sampling," the authors prove a near-optimal regret upper bound of $\tilde{O}(H^2\sqrt{
+  [ICLR 2026][Reinforcement Learning][Posterior Sampling] This paper proposes PSQL—the first Q-learning algorithm that uses "maintaining Gaussian posteriors over Q-values and taking argmax after sampling" for exploration. By modifying the target value calculation to "optimistic multi-sample sampling," the authors prove a near-optimal regret upper bound of $\tilde{O}(H^2\sqrt{SAT})$ for this natural posterior-sampling-style Q-learning.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Q-learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Posterior Sampling"
+  - "Q-learning"
+  - "Thompson Sampling"
+  - "Regret Upper Bound"
+  - "Tabular MDP"
 date: 2026-05-08
-content_hash: 725c720c37b79d84
+content_hash: 74ba92a936250c22
 ---
+
 # Q-learning with Posterior Sampling
 
 **Conference**: ICLR 2026  

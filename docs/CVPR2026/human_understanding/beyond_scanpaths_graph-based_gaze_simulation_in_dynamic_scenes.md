@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The authors model driver gaze as an autoregressive dynamical system: each frame of the traffic scene is encoded into a "gaze-centric" heterogeneous spatio-temporal graph. An Affinity Relational Transformer (ART) models the interaction between the gaze and traffic objects, while an Object-level Density Network (ODN) pre
+  [CVPR 2026][Human Understanding][Gaze Simulation] The authors model driver gaze as an autoregressive dynamical system: each frame of the traffic scene is encoded into a "gaze-centric" heterogeneous spatio-temporal graph. An Affinity Relational Transformer (ART) models the interaction between the gaze and traffic objects, while an Object-level Density Network (ODN) predicts the next-step gaze distribution, which is autoregressively unrolled into continuous gaze trajectories. T…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gaze Simulation"
+  - "Heterogeneous Graph Transformer"
+  - "Driver Attention"
+  - "Mixture Density Networks"
+  - "Dynamical Systems Modeling"
 date: 2026-05-08
-content_hash: 3dd3578dd01ff89f
+content_hash: addba064d4cd2f46
 ---
+
 # Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes
 
 **Conference**: CVPR 2026  
@@ -153,9 +159,9 @@ Comparisons in saccadic dynamics are even more striking: On Focus100, Human Fix 
 
 - [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
 - [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
-- [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
 - [\[CVPR 2026\] Push-and-Step: From RL-Based Balance Recovery to Physical Simulation of Dense Crowds](push-and-step_from_rl-based_balance_recovery_to_physical_simulation_of_dense_cro.md)
 - [\[CVPR 2026\] Beyond Single-View Sufficiency: CVBench for Cross-View Human Understanding](beyond_single-view_sufficiency_cvbench_for_cross-view_human_understanding.md)
+- [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](../../ICLR2026/human_understanding/humof_human_motion_forecasting_in_interactive_social_scenes.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Curriculum Abductive Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Abductive Learning] This paper proposes Curriculum Abductive Learning (C-ABL), which partitions a knowledge base into sub-knowledge-bases according to its dependency structure and introduces…
+  [NeurIPS 2025][Reasoning][Abductive Learning] This paper proposes Curriculum Abductive Learning (C-ABL), which partitions a knowledge base into sub-knowledge-bases according to its dependency structure and introduces them progressively during training. This substantially reduces the abduction search space in ABL, significantly improving training stability, convergence speed, and final accuracy.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Abductive Learning"
   - "Curriculum Learning"
   - "Knowledge Base Partitioning"
   - "Neuro-Symbolic Reasoning"
   - "Training Stability"
 date: 2026-05-08
-content_hash: 50fdcd902aa679e3
+content_hash: c5ee62f3ab4bea26
 ---
 
 # Curriculum Abductive Learning
@@ -129,11 +129,11 @@ In terms of training time, C-ABL requires only 132.6 minutes on decimal $d=4$ co
 
 ## Related Papers
 
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](../../ICLR2026/llm_reasoning/curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ACL 2025\] Commonsense Abductive Reasoning using Knowledge from Multiple Sources](../../ACL2025/llm_reasoning/commonsense_abductive_reasoning_using_knowledge_from_multiple_sources.md)
 - [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](../../ICLR2026/llm_reasoning/overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
-- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 - [\[ACL 2026\] GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO](../../ACL2026/llm_reasoning/ganitllm_difficulty-aware_bengali_mathematical_reasoning_through_curriculum-grpo.md)
-- [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
-- [\[NeurIPS 2025\] GPO: Learning from Critical Steps to Improve LLM Reasoning](gpo_learning_from_critical_steps_to_improve_llm_reasoning.md)
+- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 
 </div>
 

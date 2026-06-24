@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs
 description: >-
-  [ICML 2026][Model Compression][block-wise PTQ] Addressing the quality degradation of block-wise PTQ in generation tasks, LFQ replaces the quantization objective of the final Transformer block from MSE to logit-level cross-entropy loss. This aligns the token distribution of the quantized model with the full-precision model, consistently improving accuracy across gen
+  [ICML 2026][Model Compression][Low-bit quantization] Addressing the quality degradation of block-wise PTQ in generation tasks, LFQ replaces the quantization objective of the final Transformer block from MSE to logit-level cross-entropy loss. This aligns the token distribution of the quantized model with the full-precision model, consistently improving accuracy across generation benchmarks such as IFEval, GSM8K, MATH500, and AIME.
 tags:
-  - ICML 2026
-  - Model Compression
-  - block-wise PTQ
+  - "ICML 2026"
+  - "Model Compression"
+  - "Low-bit quantization"
+  - "post-training quantization"
+  - "cross-entropy alignment"
+  - "generation quality"
+  - "block-wise PTQ"
 date: 2026-05-08
-content_hash: be59cd23e22150f5
+content_hash: 6ada3c7d6cfe9464
 ---
+
 # LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs
 
 **Conference**: ICML 2026  
@@ -126,10 +131,10 @@ Since LFQ only replaces the loss function of the final block, it works seamlessl
 ## Related Papers
 
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
-- [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
-- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
+- [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](unisvq_2-bit_unified_scalar-vector_quantization.md)
 - [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
-- [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
 
 </div>
 

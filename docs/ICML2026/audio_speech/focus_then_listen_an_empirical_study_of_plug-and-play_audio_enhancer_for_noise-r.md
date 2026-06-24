@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models
 description: >-
-  [ICML 2026][Audio & Speech][LALM] This paper proposes Focus-Then-Listen (FTL), a plug-and-play audio enhancer that **does not update LALM parameters**. It decomposes the input waveform into speech and non-speech tracks, utilizes an LLM router to determine "which category to listen to" based on user instructions, and finally employs a modality-aware fus
+  [ICML 2026][Audio & Speech][LALM] This paper proposes Focus-Then-Listen (FTL), a plug-and-play audio enhancer that **does not update LALM parameters**. It decomposes the input waveform into speech and non-speech tracks, utilizes an LLM router to determine "which category to listen to" based on user instructions, and finally employs a modality-aware fusion block to generate task-adaptive enhanced audio for the Large Audio Language Model (LALM)…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - LALM
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "LALM"
+  - "Plug-and-Play Enhancer"
+  - "Speech/Non-speech Separation"
+  - "Instruction-aware"
+  - "Noise Robustness"
 date: 2026-05-08
-content_hash: efd13e1826cbcdd9
+content_hash: ffed9787767685eb
 ---
+
 # Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models
 
 **Conference**: ICML 2026  
@@ -141,10 +146,10 @@ Router quality (MMAU-Pro-Ctrl, Table 3):
 ## Related Papers
 
 - [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
-- [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](../../CVPR2026/audio_speech/audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
-- [\[AAAI 2026\] AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions](../../AAAI2026/audio_speech/ahamask_reliable_task_specification_for_large_audio_language.md)
-- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](../../ACL2026/audio_speech/temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
-- [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/audio_speech/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
+- [\[ICLR 2026\] StableToken: A Noise-Robust Semantic Speech Tokenizer for Resilient SpeechLLMs](../../ICLR2026/audio_speech/stabletoken_a_noise-robust_semantic_speech_tokenizer_for_resilient_speechllms.md)
+- [\[ICML 2026\] Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox](do_audio_llms_listen_or_read_analyzing_and_mitigating_paralinguistic_failures_wi.md)
+- [\[ICML 2026\] Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability](evaluating_and_rewarding_lalms_for_expressive_role-play_tts_via_mean_continuatio.md)
+- [\[ACL 2025\] Benchmarking Open-ended Audio Dialogue Understanding for Large Audio-Language Models](../../ACL2025/audio_speech/audio_dialogue_benchmark.md)
 
 </div>
 

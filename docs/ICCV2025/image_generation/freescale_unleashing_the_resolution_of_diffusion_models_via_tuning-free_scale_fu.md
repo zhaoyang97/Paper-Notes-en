@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion
 description: >-
-  [ICCV 2025][Image Generation][High-resolution generation] This paper proposes FreeScale, a tuning-free inference paradigm that extracts and fuses information from different receptive field scales via a Scale Fusion mecha…
+  [ICCV 2025][Image Generation][High-resolution generation] This paper proposes FreeScale, a tuning-free inference paradigm that extracts and fuses information from different receptive field scales via a Scale Fusion mechanism (global high-frequency + local low-frequency), combined with tailored self-cascade upscaling and restrained dilated convolution, achieving for the first time text-to-image generation at 8K resolution on a single A800 GPU, while also supporting high-resolu…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "scale fusion"
   - "frequency decomposition"
 date: 2026-05-08
-content_hash: 1fdd7988de2353fa
+content_hash: c71a12e2b3c375d4
 ---
 
 # FreeScale: Unleashing the Resolution of Diffusion Models via Tuning-Free Scale Fusion
@@ -145,9 +145,9 @@ FreeScale consists of three components:
 
 - [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
 - [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
+- [\[CVPR 2025\] FaithDiff: Unleashing Diffusion Priors for Faithful Image Super-Resolution](../../CVPR2025/image_generation/faithdiff_unleashing_diffusion_priors_for_faithful_image_super-resolution.md)
+- [\[ECCV 2024\] FouriScale: A Frequency Perspective on Training-Free High-Resolution Image Synthesis](../../ECCV2024/image_generation/fouriscale_a_frequency_perspective_on_training-free_high-resolution_image_synthe.md)
 - [\[ICCV 2025\] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency](free4d_tuning-free_4d_scene_generation_with_spatial-temporal_consistency.md)
-- [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](../../CVPR2026/image_generation/pixelrush_ultrafast_trainingfree_highresolution_im.md)
 
 </div>
 

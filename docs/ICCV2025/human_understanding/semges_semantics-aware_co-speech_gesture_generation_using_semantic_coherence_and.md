@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning
 description: >-
-  [Human Understanding] > SemGes proposes a two-stage framework that integrates semantic information at both global and fine-grained levels through semantic coherence and semantic relevance learning…
+  [Human Understanding] > SemGes proposes a two-stage framework that integrates semantic information at both global and fine-grained levels through semantic coherence and semantic relevance learning, generating co-speech gestures aligned with speech semantics. The method surpasses existing approaches on two benchmarks: BEAT and TED-Expressive.
 tags:
   - "Human Understanding"
 date: 2026-05-08
-content_hash: d9fa4d993d3b336d
+content_hash: 710695c2f6a58a07
 ---
 
 # SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning
@@ -159,11 +159,11 @@ SemGes achieves state-of-the-art performance on FGD (32.5% reduction), Diversity
 
 ## Related Papers
 
+- [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
 - [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
 - [\[ICCV 2025\] What's Making That Sound Right Now? Video-centric Audio-Visual Localization](whats_making_that_sound_right_now_video-centric_audio-visual_localization.md)
 - [\[ICCV 2025\] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection](sequential_keypoint_density_estimator_an_overlooked_baseline_of_skeleton-based_v.md)
 - [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
 
 </div>
 

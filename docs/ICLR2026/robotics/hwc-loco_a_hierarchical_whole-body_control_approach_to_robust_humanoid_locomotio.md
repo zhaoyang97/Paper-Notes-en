@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Sim2Real] HWC-Loco reformulates humanoid locomotion control as a "robust optimization" problem, utilizing a high-level planner to dynamically switch between two low-level policies: "goal-tracking" and "safety-recovery." This ensures ZMP stability without sacrificing task performance, achieving SOTA results across various terrain
+  [ICLR 2026][Robotics][Humanoid Robot] HWC-Loco reformulates humanoid locomotion control as a "robust optimization" problem, utilizing a high-level planner to dynamically switch between two low-level policies: "goal-tracking" and "safety-recovery." This ensures ZMP stability without sacrificing task performance, achieving SOTA results across various terrains, disturbances, and embodiments in both simulation and real-world hardware.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Sim2Real
+  - "ICLR 2026"
+  - "Robotics"
+  - "Humanoid Robot"
+  - "Whole-Body Control"
+  - "Robust Reinforcement Learning"
+  - "ZMP Constraint"
+  - "Hierarchical Policy"
+  - "Sim2Real"
 date: 2026-05-08
-content_hash: 281cd033ecfa88e7
+content_hash: 610385d4f4056978
 ---
+
 # HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion
 
 **Conference**: ICLR 2026  
@@ -119,8 +125,8 @@ Under constant strong disturbances, HWC-Loco maintained a success rate of 75.95%
 - [\[ICLR 2026\] WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](wholebodyvla_towards_unified_latent_vla_for_whole-body_loco-manipulation_control.md)
 - [\[ICLR 2026\] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control](hierarchical_value-decomposed_offline_reinforcement_learning_for_whole-body_cont.md)
 - [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
-- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 - [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
+- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 
 </div>
 

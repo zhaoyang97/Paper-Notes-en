@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents
 description: >-
-  [ACL 2026][Reinforcement Learning][Parallel Exploration] The authors propose a new paradigm of "parallel exploration"—where an agent interacts with $K$ environments synchronously and shares experiences across trajectories—and introduce the corresponding RL algorithm **DPEPO**. It undergoes "Cold-start SFT" to learn parallel reasoning, followed by GRPO training with hierarchi
+  [ACL 2026][Reinforcement Learning][Parallel Exploration] The authors propose a new paradigm of "parallel exploration"—where an agent interacts with $K$ environments synchronously and shares experiences across trajectories—and introduce the corresponding RL algorithm **DPEPO**. It undergoes "Cold-start SFT" to learn parallel reasoning, followed by GRPO training with hierarchical rewards consisting of "Trajectory-level Success + Step-level Diverse Action / Diverse State Transit…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Parallel Exploration
-  - GRPO
-  - Diversity-Driven Reward
-  - ALFWorld
-  - ScienceWorld
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Parallel Exploration"
+  - "GRPO"
+  - "Diversity-Driven Reward"
+  - "ALFWorld"
+  - "ScienceWorld"
 date: 2026-05-08
-content_hash: 66f71d3e4471a092
+content_hash: ebef8efec8d6f894
 ---
+
 # DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents
 
 **Conference**: ACL 2026  
@@ -160,10 +161,18 @@ Full DPEPO shows a +5.0 gain over ColdStart on ALFWorld In-Domain and +2.9 on Sc
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](../../ICLR2026/reinforcement_learning/group_verification-based_policy_optimization_for_interactive_coding_agents.md)
+- [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] Parallel-R1: Towards Parallel Thinking via Reinforcement Learning](../../ICLR2026/reinforcement_learning/parallel-r1_towards_parallel_thinking_via_reinforcement_learning.md)
+- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
+- [\[ICLR 2026\] Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents](../../ICLR2026/reinforcement_learning/information_gain-based_policy_optimization_a_simple_and_effective_approach_for_m.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)

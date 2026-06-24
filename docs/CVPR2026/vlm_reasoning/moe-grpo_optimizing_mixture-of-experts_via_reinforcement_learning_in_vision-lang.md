@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] Expert selection in MoE is modeled as a sequential decision-making problem. The routing policy is optimized via GRPO reinforcement learning with modality-aware routing guidance. This approach consistently outperforms deterministic top-K routing and its variants on image and video understanding tasks for VLMs.
+  [CVPR 2026][VLM Reasoning][Mixture-of-Experts] Expert selection in MoE is modeled as a sequential decision-making problem. The routing policy is optimized via GRPO reinforcement learning with modality-aware routing guidance. This approach consistently outperforms deterministic top-K routing and its variants on image and video understanding tasks for VLMs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - Vision-Language Model
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Mixture-of-Experts"
+  - "Reinforcement Learning"
+  - "Routing Policy Optimization"
+  - "Vision-Language Models"
+  - "GRPO"
 date: 2026-05-08
-content_hash: c16245d4af04684f
+content_hash: 76cdd9307e08f7e5
 ---
+
 # MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -143,15 +146,14 @@ MoE-GRPO achieves the best performance on 7 out of 9 benchmarks, outperforming t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
 - [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
-- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
 - [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parameterized Prompt for Incremental Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] To address the failure of the "prompts pool" in Incremental Object Detection (IOD) caused by the inherent co-occurrence phenomenon in detection scenarios, this paper replaces the discrete prompts pool with a parameterizable MLP bottleneck. Combined with task-vector-based prompt fusion and sparse loss, this approach all
+  [CVPR 2026][Object Detection][Incremental Object Detection] To address the failure of the "prompts pool" in Incremental Object Detection (IOD) caused by the inherent co-occurrence phenomenon in detection scenarios, this paper replaces the discrete prompts pool with a parameterizable MLP bottleneck. Combined with task-vector-based prompt fusion and sparse loss, this approach allows old task knowledge to be holistically preserved and updated, achieving SOTA results on PASCAL VO…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Incremental Object Detection"
+  - "Parameterized Prompt"
+  - "Prompts Pool Confusion"
+  - "Model Fusion"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 5d30c2bcc42afbf4
+content_hash: 82f43c5111c0f7f7
 ---
+
 # Parameterized Prompt for Incremental Object Detection
 
 **Conference**: CVPR 2026  
@@ -127,7 +133,7 @@ PASCAL VOC2007, 5+5+5+5 four-step setting (AP50, %), incrementally adding four c
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -135,7 +141,7 @@ PASCAL VOC2007, 5+5+5+5 four-step setting (AP50, %), incrementally adding four c
 - [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
 - [\[CVPR 2026\] InsCal: Calibrated Multi-Source Fully Test-Time Prompt Tuning for Object Detection](inscal_calibrated_multi-source_fully_test-time_prompt_tuning_for_object_detectio.md)
-- [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
+- [\[ECCV 2024\] Bridge Past and Future: Overcoming Information Asymmetry in Incremental Object Detection](../../ECCV2024/object_detection/bridge_past_and_future_overcoming_information_asymmetry_in_incremental_object_de.md)
 
 </div>
 

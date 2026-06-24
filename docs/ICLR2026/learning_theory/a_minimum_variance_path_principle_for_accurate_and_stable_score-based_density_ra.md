@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] A Minimum Variance Path Principle for Accurate and Stable Score-Based Density Ratio Estimation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper identifies the root of the "theoretical path-invariance vs. practical path-sensitivity" paradox in score-based density ratio estimation as a neglected term—the **path variance** of the score function. The authors propose the Minimum Variance Path (MVP) principle to explicitly incorporate this term into the o
+  [ICLR2026][Learning Theory][Score Matching] This paper identifies the root of the "theoretical path-invariance vs. practical path-sensitivity" paradox in score-based density ratio estimation as a neglected term—the **path variance** of the score function. The authors propose the Minimum Variance Path (MVP) principle to explicitly incorporate this term into the objective and use the Kumaraswamy Mixture Model to parametrize the path as a learnable function…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Probabilistic Methods"
+  - "Density Ratio Estimation"
+  - "Score Matching"
+  - "Path Variance"
+  - "Learnable Interpolation Path"
+  - "Kumaraswamy Mixture Model"
 date: 2026-05-08
-content_hash: 7f940c7383e113bf
+content_hash: 96c57e80d28bf7de
 ---
+
 # A Minimum Variance Path Principle for Accurate and Stable Score-Based Density Ratio Estimation
 
 **Conference**: ICLR2026  
@@ -142,9 +149,9 @@ Path constraints (affine vs. spherical) are data-dependent hyperparameters: affi
 
 - [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
 - [\[ICLR 2026\] Minimax-Optimal Aggregation for Density Ratio Estimation](minimax-optimal_aggregation_for_density_ratio_estimation.md)
+- [\[ICLR 2026\] Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems](weak_correlations_as_the_underlying_principle_for_linearization_of_gradient-base.md)
+- [\[ICLR 2026\] The Coverage Principle: How Pre-Training Enables Post-Training](the_coverage_principle_how_pre-training_enables_post-training.md)
 - [\[ICLR 2026\] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian](convergence_dynamics_of_over-parameterized_score_matching_for_a_single_gaussian.md)
-- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
-- [\[ICLR 2026\] Stable Coresets: Unleashing the Power of Uniform Sampling](stable_coresets_unleashing_the_power_of_uniform_sampling.md)
 
 </div>
 

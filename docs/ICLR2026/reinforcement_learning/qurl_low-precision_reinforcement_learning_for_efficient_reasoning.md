@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QuRL: Low-Precision Reinforcement Learning for Efficient Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] QuRL eliminates the 70% training time bottleneck in RLVR by using a **quantized actor for rollout decoding**. By introducing Adaptive Clipping Range (ACR) and Update-Aware Quantization (UAQ), it stabilizes the off-policy bias introduced by quantization, achieving 20%–80% speedup in INT8/FP8 rollout with almost no perfo
+  [ICLR 2026][Reinforcement Learning][RLVR] QuRL eliminates the 70% training time bottleneck in RLVR by using a **quantized actor for rollout decoding**. By introducing Adaptive Clipping Range (ACR) and Update-Aware Quantization (UAQ), it stabilizes the off-policy bias introduced by quantization, achieving 20%–80% speedup in INT8/FP8 rollout with almost no performance degradation.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Quantized rollout"
+  - "Decoupled PPO"
+  - "Adaptive Clipping"
+  - "Reasoning LLMs"
 date: 2026-05-08
-content_hash: 8aa88046120cdc8a
+content_hash: bcce2e7f9bf8bf0e
 ---
+
 # QuRL: Low-Precision Reinforcement Learning for Efficient Reasoning
 
 **Conference**: ICLR 2026  

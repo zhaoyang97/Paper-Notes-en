@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition
 description: >-
-  [ICCV 2025][Audio & Speech][omni-cognition] This paper proposes Lyra, a speech-centric omni-modal MLLM framework consisting of three core components — a DTW-based cross-modality regularizer, multi-modality LoRA…
+  [ICCV 2025][Audio & Speech][omni-cognition] This paper proposes Lyra, a speech-centric omni-modal MLLM framework consisting of three core components — a DTW-based cross-modality regularizer, multi-modality LoRA, and a latent multi-modality extractor — along with the first 12K long-speech SFT dataset. Using only 2.7M training samples and modest compute, Lyra achieves state-of-the-art performance simultaneously on vision-language, vision-speech, and speech-language benchmarks…
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -13,7 +13,7 @@ tags:
   - "long speech"
   - "token extraction"
 date: 2026-05-08
-content_hash: a6df411c1b5fe0d4
+content_hash: 4394ba509a184876
 ---
 
 # Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition
@@ -135,10 +135,10 @@ Built upon Qwen2-VL, Lyra incorporates a Whisper-v3 speech encoder and an ImageB
 ## Related Papers
 
 - [\[CVPR 2026\] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval](../../CVPR2026/audio_speech/omniret_efficient_and_high-fidelity_omni_modality_retrieval.md)
+- [\[ICLR 2026\] Data-Centric Lessons To Improve Speech-Language Pretraining](../../ICLR2026/audio_speech/data-centric_lessons_to_improve_speech-language_pretraining.md)
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](../../NeurIPS2025/audio_speech/efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
-- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](../../NeurIPS2025/audio_speech/e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
-- [\[ICCV 2025\] Understanding Co-speech Gestures in-the-wild](understanding_co-speech_gestures_in-the-wild.md)
-- [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
+- [\[ACL 2025\] MMS-LLaMA: Efficient LLM-based Audio-Visual Speech Recognition with Minimal Multimodal Speech Tokens](../../ACL2025/audio_speech/mms-llama_efficient_llm-based_audio-visual_speech_recognition_with_minimal_multi.md)
+- [\[ACL 2025\] Spark-TTS: An Efficient LLM-Based Text-to-Speech Model with Single-Stream Decoupled Speech Tokens](../../ACL2025/audio_speech/spark-tts_an_efficient_llm-based_text-to-speech_model_with_single-stream_decoupl.md)
 
 </div>
 

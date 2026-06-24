@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parameterization-Based Dataset Distillation of 3D Point Clouds through Learnable Shape Morphing
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper introduces the concept of "Distilled Dataset Parameterization" (DDP) to 3D point cloud distillation for the first time. By representing the synthetic set as a convex combination of low-resolution anchors with learnable weights via shape morphing, the method generates a larger and more diverse set of syntheti
+  [ICLR 2026][3D Vision][Dataset Distillation] This paper introduces the concept of "Distilled Dataset Parameterization" (DDP) to 3D point cloud distillation for the first time. By representing the synthetic set as a convex combination of low-resolution anchors with learnable weights via shape morphing, the method generates a larger and more diverse set of synthetic samples within the same storage budget. Combined with a uniformity-aware matching loss…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dataset Distillation"
+  - "3D Point Clouds"
+  - "Parameterization"
+  - "Shape Morphing"
+  - "Distribution Matching"
 date: 2026-05-08
-content_hash: 511dc6637bc3bfa1
+content_hash: 4765ac47a37b2d72
 ---
+
 # Parameterization-Based Dataset Distillation of 3D Point Clouds through Learnable Shape Morphing
 
 **Conference**: ICLR 2026  
@@ -137,8 +143,8 @@ In the cross-architecture generalization test (PPC=1), Ours improves SADM perfor
 - [\[CVPR 2026\] PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](../../CVPR2026/3d_vision/pandas_learnable_shape_interpolation_modeling_with_localized_control.md)
 - [\[ICLR 2026\] Interp3D: Correspondence-aware Interpolation for Generative Textured 3D Morphing](interp3d_correspondence-aware_interpolation_for_generative_textured_3d_morphing.md)
 - [\[ICLR 2026\] Point-MoE: Large-Scale Multi-Dataset Training with Mixture-of-Experts for 3D Semantic Segmentation](point-moe_large-scale_multi-dataset_training_with_mixture-of-experts_for_3d_sema.md)
+- [\[ICLR 2026\] Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance](quartet_of_diffusions_structure-aware_point_cloud_generation_through_part_and_sy.md)
 - [\[CVPR 2026\] Wave-Former: Through-Occlusion 3D Reconstruction via Wireless Shape Completion](../../CVPR2026/3d_vision/wave-former_through-occlusion_3d_reconstruction_via_wireless_shape_completion.md)
-- [\[AAAI 2026\] TOSC: Task-Oriented Shape Completion for Open-World Dexterous Grasp Generation from Partial Point Clouds](../../AAAI2026/3d_vision/tosc_task-oriented_shape_completion_for_open-world_dexterous_grasp_generation_fr.md)
 
 </div>
 

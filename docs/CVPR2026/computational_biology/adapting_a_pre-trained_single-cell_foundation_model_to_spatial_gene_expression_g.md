@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images
 description: >-
-  [CVPR 2026][Computational Biology][SoftAdaLN] The HINGE framework is proposed to adapt a pre-trained expression-space single-cell foundation model (sc-FM, CellFM) into a histology image-conditioned spatial gene expression generator. This is achieved by lightweight injection of visual context via identity-initialized SoftAdaLN modulation, alignment with pre-trainin
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] The HINGE framework is proposed to adapt a pre-trained expression-space single-cell foundation model (sc-FM, CellFM) into a histology image-conditioned spatial gene expression generator. This is achieved by lightweight injection of visual context via identity-initialized SoftAdaLN modulation, alignment with pre-training objectives through an expression-space masked diffusion process, and training stabilization via a…
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - SoftAdaLN
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Single-cell Foundation Models"
+  - "Masked Diffusion"
+  - "Histology-conditioned Generation"
+  - "SoftAdaLN"
 date: 2026-05-08
-content_hash: 2e32f0c9c597a7f0
+content_hash: 2d1a44772ebe40c5
 ---
+
 # HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images
 
 **Conference**: CVPR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Controlling Multimodal LLMs via Reward-guided Decoding
 description: >-
-  [ICCV 2025][Multimodal VLM][reward-guided decoding] This paper proposes MRGD (Multimodal Reward-Guided Decoding), which trains a PaliGemma-based object hallucination reward model and an OWLv2-based object recall reward m…
+  [ICCV 2025][Multimodal VLM][reward-guided decoding] This paper proposes MRGD (Multimodal Reward-Guided Decoding), which trains a PaliGemma-based object hallucination reward model and an OWLv2-based object recall reward model. During MLLM inference, MRGD performs sentence-level beam search by scoring candidates with a linearly weighted combination of the two rewards. On CHAIR, it reduces LLaVA-1.5's CHAIRi from 15.05 to 4.53 (a 70% reduction) while enabling dynamic and control…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "controllable generation"
   - "multimodal reward model"
 date: 2026-05-08
-content_hash: 284657b4f47a6cc4
+content_hash: 8ae935b3d2a68f83
 ---
 
 # Controlling Multimodal LLMs via Reward-guided Decoding
@@ -136,10 +136,10 @@ Cross-model generalization (Llama-3.2-Vision, already DPO-aligned):
 
 ## Related Papers
 
-- [\[ICCV 2025\] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation](multimodal_llms_as_customized_reward_models_for_text-to-image_generation.md)
 - [\[ICCV 2025\] CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning](captionsmiths_flexibly_controlling_language_pattern_in_image_captioning.md)
-- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
+- [\[ICCV 2025\] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation](multimodal_llms_as_customized_reward_models_for_text-to-image_generation.md)
 - [\[NeurIPS 2025\] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](../../NeurIPS2025/multimodal_vlm/enhancing_visionlanguage_model_reliability_with_uncertaintyg.md)
+- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
 - [\[ICCV 2025\] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs](enrich_and_detect_video_temporal_grounding_with_multimodal_llms.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spatial-Temporal Aware Visuomotor Diffusion Policy Learning
 description: >-
-  [ICCV 2025][3D Vision][Visual Imitation Learning] This paper proposes the 4D Diffusion Policy (DP4), which injects 3D spatial and 4D spatial-temporal awareness into a diffusion policy via a dynamic Gaussian world model…
+  [ICCV 2025][3D Vision][Visual Imitation Learning] This paper proposes the 4D Diffusion Policy (DP4), which injects 3D spatial and 4D spatial-temporal awareness into a diffusion policy via a dynamic Gaussian world model, achieving substantial improvements over baselines across 17 simulation tasks and 3 real-robot tasks (Adroit +16.4%, DexArt +14%, RLBench +6.45%, real tasks +8.6%).
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "World Model"
   - "Dexterous Manipulation"
 date: 2026-05-08
-content_hash: 46ee1d9511bbac17
+content_hash: eb6e6dd9d4657476
 ---
 
 # Spatial-Temporal Aware Visuomotor Diffusion Policy Learning
@@ -205,9 +205,9 @@ where $\lambda_{3D} = 0.1$ and $\lambda_{4D} = 0.01$. Training strategy: the Def
 
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 - [\[ICCV 2025\] 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting](7dgs_unified_spatial-temporal-angular_gaussian_splatting.md)
-- [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](../../NeurIPS2025/3d_vision/trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
+- [\[ICML 2025\] SE(3)-Equivariant Diffusion Policy in Spherical Fourier Space](../../ICML2025/3d_vision/se3-equivariant_diffusion_policy_in_spherical_fourier_space.md)
 - [\[CVPR 2026\] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics](../../CVPR2026/3d_vision/efficient_hybrid_se3-equivariant_visuomotor_flow_policy_via_spherical_harmonics_.md)
-- [\[ICCV 2025\] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image](catsplat_contextaware_transformer_with_spatial_guidance_for.md)
+- [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](../../NeurIPS2025/3d_vision/trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
 
 </div>
 

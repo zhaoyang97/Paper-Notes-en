@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning
 description: >-
-  [ICLR 2026][Code Intelligence][LLM Evaluation] CodeSense is the first fine-grained code semantic reasoning benchmark oriented toward real-world software engineering. The authors performed testing and captured execution traces across 744 Python/C/Java GitHub projects to automatically construct ground truth for execution values and program properties (loops, pointer
+  [ICLR2026][Code Intelligence][Code Reasoning] CodeSense is the first fine-grained code semantic reasoning benchmark oriented toward real-world software engineering. The authors performed testing and captured execution traces across 744 Python/C/Java GitHub projects to automatically construct ground truth for execution values and program properties (loops, pointer aliasing, branches) at statement, block, and function levels. Evaluating 14 SOTA LLMs across 4…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LLM Evaluation
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Code Reasoning"
+  - "Real-World Code"
+  - "Execution Tracing"
+  - "Fine-grained Semantics"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: e09e86ad66bed9c6
+content_hash: b9b690499c94b9eb
 ---
+
 # CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning
 
 **Conference**: ICLR2026  
@@ -117,7 +122,7 @@ From the full traces, unique functions were extracted and filtered if they conta
 - [\[ICLR 2026\] EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits](edit-bench_evaluating_llm_abilities_to_perform_real-world_instructed_code_edits.md)
 - [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](../../ACL2026/code_intelligence/referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)
 - [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](../../ACL2026/code_intelligence/logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
-- [\[ACL 2025\] CompileAgent: Automated Real-World Repo-Level Compilation with Tool-Integrated LLM-based Agent System](../../ACL2025/code_intelligence/compileagent_automated_real-world_repo-level_compilation_with_tool-integrated_ll.md)
+- [\[ICLR 2026\] Code World Models for General Game Playing](code_world_models_for_general_game_playing.md)
 - [\[ICLR 2026\] Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction](code2bench_scaling_source_and_rigor_for_dynamic_benchmark_construction.md)
 
 </div>

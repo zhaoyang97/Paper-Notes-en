@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] CapRL: Stimulating Dense Image Caption Capabilities via Reinforcement Learning
+  [Paper Note] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][RLVR] CapRL reformulates subjective image caption quality into a verifiable reward defined as "whether a text-only LLM can correctly answer image-related multiple-choice questions based solely on the caption." Using GRPO, Qwen2.5-VL-3B is trained to generate denser and more accurate captions, further yielding the CapRL-5M da
+  [ICLR2026][Multimodal VLM][Dense Image Captioning] CapRL reformulates subjective image caption quality into a verifiable reward defined as "whether a text-only LLM can correctly answer image-related multiple-choice questions based solely on the caption." Using GRPO, Qwen2.5-VL-3B is trained to generate denser and more accurate captions, further yielding the CapRL-5M dataset. This approach significantly outperforms SFT-based caption data in both multimodal pre-training and Pri…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - RLVR
-  - GRPO
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Dense Image Captioning"
+  - "RLVR"
+  - "GRPO"
+  - "Verifiable Reward"
+  - "Multimodal Pre-training"
 date: 2026-05-08
-content_hash: f9d1e478488db8a4
+content_hash: 184b6acde053216f
 ---
+
 # CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -161,11 +165,11 @@ The second set directly evaluates the information density of captioners under th
 
 ## Related Papers
 
-- [\[CVPR 2026\] CaptionQA: Is Your Caption as Useful as the Image Itself?](../../CVPR2026/multimodal_vlm/captionqa_is_your_caption_as_useful_as_the_image_itself.md)
 - [\[ICLR 2026\] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning](guirlvg_incentivize_gui_visual_grounding_via_empirical_exploration_on_reinforcem.md)
-- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 - [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
+- [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
 
 </div>
 

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics
 description: >-
-  [AAAI 2026][Interpretability][LLM Evaluation] This paper proposes the PragWorld benchmark, which evaluates the plasticity and robustness of LLMs' implicit world models by applying 7 types of minimal linguistic perturbati…
+  [AAAI 2026 Oral][Interpretability][LLM Evaluation] This paper proposes the PragWorld benchmark, which evaluates the plasticity and robustness of LLMs' implicit world models by applying 7 types of minimal linguistic perturbations to dialogues. A dual-perspective interpretability framework is designed to localize harmful/helpful layers, and a layer regularization fine-tuning strategy is proposed to improve robustness.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Interpretability"
   - "LLM Evaluation"
   - "World Model"
   - "Dialogue Understanding"
   - "Robustness"
 date: 2026-05-08
-content_hash: 27a25de943300c46
+content_hash: f7e120ac45f34b19
 ---
 
 # PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics
@@ -166,7 +166,7 @@ Models are fine-tuned on the synthetic split and evaluated on the manual split t
 
 - [\[ICML 2026\] Physics from Video: Identifiability of Time-Invariant Second-Order ODEs under Minimal Trajectory Conditions](../../ICML2026/interpretability/physics_from_video_identifiability_of_time-invariant_second-order_odes_under_min.md)
 - [\[NeurIPS 2025\] Evaluating LLMs in Open-Source Games](../../NeurIPS2025/interpretability/evaluating_llms_in_open-source_games.md)
-- [\[AAAI 2026\] Flexible Concept Bottleneck Model](flexible_concept_bottleneck_model.md)
+- [\[ICML 2025\] Reactivation: Empirical NTK Dynamics Under Task Shifts](../../ICML2025/interpretability/reactivation_empirical_ntk_dynamics_under_task_shifts.md)
 - [\[ACL 2026\] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](../../ACL2026/interpretability/do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)
 - [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](../../NeurIPS2025/interpretability/llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
 

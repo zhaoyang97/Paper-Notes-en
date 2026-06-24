@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation
 description: >-
-  [NeurIPS 2025][Recommender Systems][User Role Modeling] This paper proposes TagCF, a framework that employs MLLM to extract user role tags and item topic tags…
+  [NeurIPS 2025][Recommender Systems][User Role Modeling] This paper proposes TagCF, a framework that employs MLLM to extract user role tags and item topic tags, then uses LLM reasoning to construct U2I/I2U logic graphs (causal associations between user roles and item types). Three integration strategies — a tag encoder, contrastive learning augmentation, and logic-based scoring — are used to enhance recommendations. On an industrial platform with hundreds of millions of users…
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -11,7 +11,7 @@ tags:
   - "Tag-based Collaborative Filtering"
   - "Logical Reasoning Graph"
 date: 2026-05-08
-content_hash: 4f3b639c2132f2b5
+content_hash: 0cee6c822d271353
 ---
 
 # Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation
@@ -131,11 +131,11 @@ After 40 days of expanded deployment, TagCF-expl yields a statistically signific
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems](the_more_you_automate_the_less_you_see_hidden_pitfalls_of_ai_scientist_systems.md)
 - [\[NeurIPS 2025\] Think before Recommendation: Autonomous Reasoning-enhanced Recommender](think_before_recommendation_autonomous_reasoning-enhanced_recommender.md)
+- [\[NeurIPS 2025\] The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems](the_more_you_automate_the_less_you_see_hidden_pitfalls_of_ai_scientist_systems.md)
 - [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
 - [\[ACL 2026\] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment](../../ACL2026/recommender/hsuga_llm-enhanced_recommendation_with_hierarchical_semantic_understanding_and_g.md)
-- [\[NeurIPS 2025\] The Coming Crisis of Multi-Agent Misalignment: AI Alignment Must Be a Dynamic and Social Process](the_coming_crisis_of_multi-agent_misalignment_ai_alignment_must_be_a_dynamic_and.md)
+- [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](../../ACL2026/recommender/bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
 
 </div>
 

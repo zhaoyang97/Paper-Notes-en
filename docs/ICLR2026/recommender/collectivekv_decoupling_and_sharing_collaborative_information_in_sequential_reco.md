@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] Observing that KV caches of different users in sequential recommendation exhibit significant cross-user similarity (collaborative signals), CollectiveKV is proposed to decompose KV into low-dimensional user-specific parts and high-dimensional shared parts retrieved from a global KV pool, achieving a 0.8% compression ra
+  [ICLR 2026][Recommender Systems][KV cache compression] Observing that KV caches of different users in sequential recommendation exhibit significant cross-user similarity (collaborative signals), CollectiveKV is proposed to decompose KV into low-dimensional user-specific parts and high-dimensional shared parts retrieved from a global KV pool, achieving a 0.8% compression rate without performance degradation.
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "KV cache compression"
+  - "cross-user sharing"
+  - "collaborative signals"
+  - "sequential recommendation"
+  - "SVD analysis"
 date: 2026-05-08
-content_hash: 5b62ccf91b7ab81e
+content_hash: ad8b8aed4e587b7f
 ---
+
 # CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation
 
 **Conference**: ICLR 2026  
@@ -119,7 +125,7 @@ The pool, router, and projection layers are optimized end-to-end. Beyond the rec
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

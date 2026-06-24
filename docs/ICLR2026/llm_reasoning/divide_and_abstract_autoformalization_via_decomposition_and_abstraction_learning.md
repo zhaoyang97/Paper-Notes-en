@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] DNA is a training-free autoformalization framework that first extracts common mathematical concepts from the entire corpus and formalizes them into reusable abstractions to extend the target formal language. It then hierarchically decomposes each new proposition into "quantifier + premise + conclusion" clauses for step
+  [ICLR2026][Reasoning][Autoformalization] DNA is a training-free autoformalization framework that first extracts common mathematical concepts from the entire corpus and formalizes them into reusable abstractions to extend the target formal language. It then hierarchically decomposes each new proposition into "quantifier + premise + conclusion" clauses for step-by-step translation and recombination. It achieves a success rate improvement of up to 8.60× over baselines on LeanEuc…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Autoformalization"
+  - "Abstraction learning"
+  - "Hierarchical decomposition"
+  - "Zero-shot"
+  - "Theorem proving"
 date: 2026-05-08
-content_hash: ceb0772913195d6b
+content_hash: a0ee52b73748d81b
 ---
+
 # Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning
 
 **Conference**: ICLR2026  
@@ -138,10 +144,10 @@ DNA can naturally be split into two stages. The authors performed systematic abl
 ## Related Papers
 
 - [\[ICLR 2026\] LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction](loc-decomp_llm_autoformalization_via_logical_concept_decomposition_and_iterative.md)
-- [\[ICLR 2026\] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization](proofflow_a_dependency_graph_approach_to_faithful_proof_autoformalization.md)
 - [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
+- [\[ICLR 2026\] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization](proofflow_a_dependency_graph_approach_to_faithful_proof_autoformalization.md)
+- [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
 - [\[ICLR 2026\] Is In-Context Learning Learning?](is_in-context_learning_learning.md)
-- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
 
 </div>
 

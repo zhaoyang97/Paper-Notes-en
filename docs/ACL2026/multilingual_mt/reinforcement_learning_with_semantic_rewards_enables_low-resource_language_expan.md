@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax
 description: >-
-  [ACL 2026][Multilingual & Translation][GRPO] This paper redefines low-resource language expansion from token-level imitation to semantic space alignment. By employing GRPO and embedding-based semantic rewards to train Qwen3-4B, the authors achieve enhanced capabilities in Tibetan-Chinese translation and Tibetan headline generation. Crucially, this approach preser
+  [ACL2026 Findings][Multilingual & Machine Translation][Low-resource language] This paper redefines low-resource language expansion from token-level imitation to semantic space alignment. By employing GRPO and embedding-based semantic rewards to train Qwen3-4B, the authors achieve enhanced capabilities in Tibetan-Chinese translation and Tibetan headline generation. Crucially, this approach preserves dominant language performance (e.g., Chinese CMRC) significantly better than s…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - GRPO
+  - "ACL2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "Low-resource language"
+  - "Semantic reward"
+  - "GRPO"
+  - "Alignment tax"
+  - "Tibetan-Chinese translation"
 date: 2026-05-08
-content_hash: 690dfd289179dab4
+content_hash: f7c4e42306b31281
 ---
+
 # Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax
 
 **Conference**: ACL2026 Findings  
@@ -138,15 +143,14 @@ Reward ablation further demonstrates that improvements stem from the semantic re
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
 - [\[ACL 2026\] NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning](neoamt_neologism-aware_agentic_machine_translation_with_reinforcement_learning.md)
-- [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
-- [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
+- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
 - [\[ICML 2025\] KELPS: A Framework for Verified Multi-Language Autoformalization via Semantic-Syntactic Alignment](../../ICML2025/multilingual_mt/kelps_a_framework_for_verified_multi-language_autoformalization_via_semantic-syn.md)
+- [\[AAAI 2026\] ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation](../../AAAI2026/multilingual_mt/vidia2std_a_parallel_corpus_and_methods_for_low-resource_vietnamese_dialect-to-s.md)
+- [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Balanced LoRA: Removing Parameter Invariance to Accelerate Convergence
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper reveals that the overparameterization of LoRA leads to varying condition numbers for different low-rank factors $(A, B)$. It proves that the **balanced minimum point** ($A^\top A = BB^\top$) possesses the optimal condition number. Based on this, it proposes BaLoRA—projecting adapters onto the balanced manifo
+  [ICML2026][Optimization][LoRA Fine-tuning] This paper reveals that the overparameterization of LoRA leads to varying condition numbers for different low-rank factors $(A, B)$. It proves that the **balanced minimum point** ($A^\top A = BB^\top$) possesses the optimal condition number. Based on this, it proposes BaLoRA—projecting adapters onto the balanced manifold after each optimization step to accelerate convergence and enhance fine-tuning performance with almost zero overhe…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "LoRA Fine-tuning"
+  - "Parameter Invariance"
+  - "Condition Number Optimization"
+  - "Balanced Manifold Projection"
+  - "Convergence Acceleration"
 date: 2026-05-08
-content_hash: 999cf522f7ac953a
+content_hash: 2cdac61c8e12a69f
 ---
+
 # Balanced LoRA: Removing Parameter Invariance to Accelerate Convergence
 
 **Conference**: ICML2026  
@@ -122,8 +128,8 @@ BaLoRA's advantage is particularly significant at **high ranks** ($r=64/128$). W
 - [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](on_the_convergence_rate_of_lora_gradient_descent.md)
 - [\[ICML 2026\] TPV: Parameter Perturbations Through the Lens of Test Prediction Variance](tpv_parameter_perturbations_through_the_lens_of_test_prediction_variance.md)
 - [\[ICML 2026\] Towards Understanding Adam Convergence on Highly Degenerate Polynomials](towards_understanding_adam_convergence_on_highly_degenerate_polynomials.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](../../ICLR2026/optimization/sign-sgd_via_parameter-free_optimization.md)
 - [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
-- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](../../CVPR2026/optimization/label-free_cross-task_lora_merging_with_null-space_compression.md)
 
 </div>
 

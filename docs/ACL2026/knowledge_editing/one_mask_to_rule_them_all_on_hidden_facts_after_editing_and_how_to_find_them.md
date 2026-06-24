@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them
 description: >-
-  [ACL 2026][Knowledge Editing][ROME] This paper discovers that ROME / MEMIT does not truly overwrite old knowledge but suppresses it through a shared overattention mechanism; a sparse binary mask can reverse most edits and reduce the success rate of new edits from 98% to 38%.
+  [ACL2026 Findings][Knowledge Editing][ROME] This paper discovers that ROME / MEMIT does not truly overwrite old knowledge but suppresses it through a shared overattention mechanism; a sparse binary mask can reverse most edits and reduce the success rate of new edits from 98% to 38%.
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - ROME
-  - MEMIT
-  - binary mask
-  - overattention
+  - "ACL2026 Findings"
+  - "Knowledge Editing"
+  - "ROME"
+  - "MEMIT"
+  - "binary mask"
+  - "overattention"
 date: 2026-05-08
-content_hash: c0805cb7dce50bdf
+content_hash: 57150cdfa4ce82b6
 ---
+
 # One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them
 
 **Conference**: ACL2026 Findings  
@@ -136,11 +137,11 @@ Binary masks are non-differentiable, so authors initialize trainable parameters 
 
 ## Related Papers
 
-- [\[ACL 2025\] CKnowEdit: A New Chinese Knowledge Editing Dataset for Linguistics, Facts, and Logic Error Correction in LLMs](../../ACL2025/knowledge_editing/cknowedit_chinese_knowledge_editing_dataset_llms.md)
+- [\[ICLR 2026\] Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database](../../ICLR2026/knowledge_editing/scaling_knowledge_editing_in_llms_to_100000_facts_with_neural_kv_database.md)
 - [\[ACL 2025\] ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains](../../ACL2025/knowledge_editing/chainedit_propagating_ripple_effects_in_llm.md)
-- [\[ACL 2025\] Efficient Knowledge Editing via Minimal Precomputation](../../ACL2025/knowledge_editing/efficient_knowledge_editing.md)
+- [\[ACL 2025\] CKnowEdit: A New Chinese Knowledge Editing Dataset for Linguistics, Facts, and Logic Error Correction in LLMs](../../ACL2025/knowledge_editing/cknowedit_chinese_knowledge_editing_dataset_llms.md)
+- [\[ACL 2026\] Can Factual Opinions Be Edited (Manipulated) in Large Language Models?](can_factual_opinions_be_edited_manipulated_in_large_language_models.md)
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](../../ICLR2026/knowledge_editing/eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
-- [\[NeurIPS 2025\] Rethinking Residual Distribution in Locate-then-Edit Model Editing](../../NeurIPS2025/knowledge_editing/rethinking_residual_distribution_in_locate-then-edit_model_editing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the issue where existing visual grounding benchmarks are saturated (90%+) by MLLMs despite failing to measure real capabilities, the authors construct GroundingME—a hard benchmark with 1005 samples covering four dimensions: "Fine-grained Discriminative / Complex Spatial / Limited Visibility / Rejection". The
+  [CVPR 2026][Multimodal VLM][Visual Grounding] Addressing the issue where existing visual grounding benchmarks are saturated (90%+) by MLLMs despite failing to measure real capabilities, the authors construct GroundingME—a hard benchmark with 1005 samples covering four dimensions: "Fine-grained Discriminative / Complex Spatial / Limited Visibility / Rejection". The study finds that the strongest model achieves only 45.1% accuracy, most models score 0% on rejection tasks…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Grounding"
+  - "MLLM Benchmark"
+  - "Referring Expression Comprehension"
+  - "Rejection Ability"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: da1df21fd6a2cd2f
+content_hash: afaf33d7c08c80a9
 ---
+
 # GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation
 
 **Conference**: CVPR 2026  
@@ -133,10 +139,10 @@ Core Observations: (1) **Massive Capability Gap**—the strongest model reaches 
 ## Related Papers
 
 - [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
-- [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
+- [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](../../ICCV2025/multimodal_vlm/mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
+- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
 - [\[CVPR 2026\] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens](cubic_discrete_diffusion_discrete_visual_generation_on_high-dimensional_represen.md)
-- [\[CVPR 2026\] VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction](vgent_visual_grounding_via_modular_design_for_disentangling_reasoning_and_predic.md)
-- [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
+- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
 
 </div>
 

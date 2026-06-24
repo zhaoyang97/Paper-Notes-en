@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] This paper introduces WARC-Bench, which uses Web Archive files to "freeze" real websites into sandbox-replayable interactive environments. It constructs an evaluation set of 438 tasks focusing on "medium-granularity subtasks" (e.g., date selection, slider dragging, scrolling containers to extract info) with automated s
+  [ICLR 2026][LLM Agent][GUI Agent] This paper introduces WARC-Bench, which uses Web Archive files to "freeze" real websites into sandbox-replayable interactive environments. It constructs an evaluation set of 438 tasks focusing on "medium-granularity subtasks" (e.g., date selection, slider dragging, scrolling containers to extract info) with automated scoring via programmatic verifiable rewards. Experiments show that even the strongest closed-source models achieve only 64.8% s…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Web Archive
-  - RLVR
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Subtask Execution"
+  - "Web Archive"
+  - "Verifiable Reward"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 6762ec55b02d4e46
+content_hash: fe70b9a7b084be4a
 ---
+
 # WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions
 
 **Conference**: ICLR 2026  
@@ -127,15 +130,16 @@ Core Findings: **Grounding (ScreenSpot) and low-fidelity widget (MiniWoB++) task
 - Value: ⭐⭐⭐⭐⭐ Bridges an evaluation gap and provides a verifiable reward-driven training recipe for Web Agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
 - [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](../../CVPR2026/llm_agent/gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
 - [\[ICLR 2026\] SMAN-Bench: A Cross-System Benchmark for Mobile Agents under Single- and Multi-path, Ambiguous, and Noisy Tasks](sman-bench_a_cross-system_benchmark_for_mobile_agents_under_single-_and_multi-pa.md)
-- [\[ICLR 2026\] Terminal-Bench：在命令行界面上对智能体进行困难、真实任务的基准测试](terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
-- [\[ICLR 2026\] TRAJECT-Bench：一个轨迹感知的智能体工具调用评测基准](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
+- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
 
 </div>
 

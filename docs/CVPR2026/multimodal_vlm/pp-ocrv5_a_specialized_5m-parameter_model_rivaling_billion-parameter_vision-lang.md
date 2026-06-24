@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PP-OCRv5: A Specialized 5M-Parameter Model Rivaling Billion-Parameter Vision-Language Models on OCR Tasks
 description: >-
-  [CVPR 2026][Multimodal VLM][OCR] PP-OCRv5 shuns parameter scaling in favor of a "data-centric" methodology—systematically filtering and expanding training data across the dimensions of difficulty, accuracy, and diversity. This approach scales a 5M-parameter two-stage OCR system to compete with 10B- and 100B-parameter VLMs on standard OCR benchmarks, w
+  [CVPR 2026][Multimodal VLM][OCR] PP-OCRv5 shuns parameter scaling in favor of a "data-centric" methodology—systematically filtering and expanding training data across the dimensions of difficulty, accuracy, and diversity. This approach scales a 5M-parameter two-stage OCR system to compete with 10B- and 100B-parameter VLMs on standard OCR benchmarks, while maintaining superior localization precision, hallucination suppression, and computational efficiency.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - OCR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OCR"
+  - "Data-Centric"
+  - "Lightweight Model"
+  - "Text Recognition"
+  - "Data Quality"
 date: 2026-05-08
-content_hash: 3c41233878d5d8ee
+content_hash: 7d2636e094ea96b9
 ---
+
 # PP-OCRv5: A Specialized 5M-Parameter Model Rivaling Billion-Parameter Vision-Language Models on OCR Tasks
 
 **Conference**: CVPR 2026  
@@ -127,11 +132,11 @@ Notably, PP-OCRv5 dominates VLMs on challenging layouts like rotated text (Rotat
 
 ## Related Papers
 
+- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
 - [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
-- [\[NeurIPS 2025\] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness](../../NeurIPS2025/multimodal_vlm/robustmerge_parameter-efficient_model_merging_for_mllms_with_direction_robustnes.md)
 - [\[ACL 2025\] A Parameter-Efficient and Fine-Grained Prompt Learning for Vision-Language Models](../../ACL2025/multimodal_vlm/a_parameter-efficient_and_fine-grained_prompt_learning_for_vision-language_model.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[NeurIPS 2025\] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness](../../NeurIPS2025/multimodal_vlm/robustmerge_parameter-efficient_model_merging_for_mllms_with_direction_robustnes.md)
 
 </div>
 

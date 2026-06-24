@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Grounded Chain-of-Thought for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] This paper proposes the "Grounded Chain-of-Thought (GCoT)" task and the MM-GCoT benchmark. It requires Multimodal Large Language Models (MLLMs) to provide step-by-step reasoning with coordinate-based grounding before answering. By introducing the "Answer-Grounding Consistency" metric to quantify visual hallucinations,
+  [CVPR 2026][VLM Reasoning][Multimodal Large Models] This paper proposes the "Grounded Chain-of-Thought (GCoT)" task and the MM-GCoT benchmark. It requires Multimodal Large Language Models (MLLMs) to provide step-by-step reasoning with coordinate-based grounding before answering. By introducing the "Answer-Grounding Consistency" metric to quantify visual hallucinations, the study reveals that 12 state-of-the-art MLLMs commonly "answer correctly but look at the wrong place…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Large Models"
+  - "Visual Hallucination"
+  - "Grounded Reasoning"
+  - "Chain-of-Thought"
+  - "Evaluation Benchmark"
 date: 2026-05-08
-content_hash: d2970677e5291b11
+content_hash: 2af32fa07c973619
 ---
+
 # Grounded Chain-of-Thought for Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -124,11 +130,11 @@ Comparison across scales and prompt settings (Consistency %, %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
-- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
-- [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
-- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
+- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](../../ICLR2026/vlm_reasoning/rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
+- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[CVPR 2026\] Deeper Thought, Weaker Aim: Understanding and Mitigating Perceptual Impairment during Reasoning in Multimodal Large Language Models](deeper_thought_weaker_aim_understanding_and_mitigating_perceptual_impairment_dur.md)
 
 </div>
 

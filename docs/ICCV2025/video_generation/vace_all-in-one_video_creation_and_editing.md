@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VACE: All-in-One Video Creation and Editing
 description: >-
-  [ICCV 2025][Video Generation][Video Editing] This paper proposes VACE, an all-in-one video creation and editing framework built on Diffusion Transformer. Through a unified Video Condition Unit (VCU) interface and a plugg…
+  [ICCV 2025][Video Generation][Video Editing] This paper proposes VACE, an all-in-one video creation and editing framework built on Diffusion Transformer. Through a unified Video Condition Unit (VCU) interface and a pluggable Context Adapter architecture, a single model covers 12+ video tasks including reference-based generation, video editing, and mask-based editing, achieving performance on par with task-specific models.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "Unified Framework"
   - "Video Condition Unit"
 date: 2026-05-08
-content_hash: 3c1566c0da40d532
+content_hash: 4d1a10e25540d7a8
 ---
 
 # VACE: All-in-One Video Creation and Editing
@@ -159,11 +159,11 @@ Automated scoring and user study on VACE-Benchmark (480 evaluation samples, 12 t
 
 ## Related Papers
 
+- [\[CVPR 2025\] Visual Prompting for One-Shot Controllable Video Editing Without Inversion](../../CVPR2025/video_generation/visual_prompting_for_one-shot_controllable_video_editing_without_inversion.md)
 - [\[ICCV 2025\] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](omnihuman-1_rethinking_the_scaling-up_of_one-stage_conditioned_human_animation_m.md)
+- [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](../../CVPR2026/video_generation/one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
+- [\[CVPR 2025\] One-Minute Video Generation with Test-Time Training](../../CVPR2025/video_generation/one-minute_video_generation_with_test-time_training.md)
 - [\[ICCV 2025\] DIVE: Taming DINO for Subject-Driven Video Editing](dive_taming_dino_for_subject-driven_video_editing.md)
-- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](../../CVPR2026/video_generation/videocof_unified_video_editing_with_temporal_reasoner.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
-- [\[AAAI 2026\] Phased One-Step Adversarial Equilibrium for Video Diffusion Models](../../AAAI2026/video_generation/phased_one-step_adversarial_equilibrium_for_video_diffusion_models.md)
 
 </div>
 

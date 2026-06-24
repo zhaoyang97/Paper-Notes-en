@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Explainable Mixture Models through Differentiable Rule Learning
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Each component of a mixture model is bound to a "conjunctive rule readable on descriptive features." These rules, along with mixture weights, are learned via differentiable rule learning and gradient descent. This approach accurately models multimodal distributions like GMM while directly identifying "under what condit
+  [ICLR 2026][Interpretability][Mixture models] Each component of a mixture model is bound to a "conjunctive rule readable on descriptive features." These rules, along with mixture weights, are learned via differentiable rule learning and gradient descent. This approach accurately models multimodal distributions like GMM while directly identifying "under what conditions or for which population each peak occurs."
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mixture models"
+  - "explainability"
+  - "differentiable rule learning"
+  - "conditional density estimation"
+  - "subgroup discovery"
 date: 2026-05-08
-content_hash: 9301194dbb76f62d
+content_hash: 230b19f08198bed0
 ---
+
 # Explainable Mixture Models through Differentiable Rule Learning
 
 **Conference**: ICLR 2026  
@@ -120,8 +126,8 @@ XMM-GMM achieved the best overall rank (4.20) among both explainable and black-b
 ## Related Papers
 
 - [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](gavel_towards_rule-based_safety_through_activation_monitoring.md)
-- [\[ICLR 2026\] Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation](inferring_the_invisible_neuro-symbolic_rule_discovery_for_missing_value_imputati.md)
 - [\[ACL 2026\] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective](../../ACL2026/interpretability/investigating_more_explainable_and_partition-free_compositionality_estimation_fo.md)
+- [\[ICLR 2026\] Inferring the Invisible: Neuro-Symbolic Rule Discovery for Missing Value Imputation](inferring_the_invisible_neuro-symbolic_rule_discovery_for_missing_value_imputati.md)
 - [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 - [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
 

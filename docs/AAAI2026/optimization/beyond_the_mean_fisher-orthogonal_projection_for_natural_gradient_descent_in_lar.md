@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training
 description: >-
-  [AAAI2026][Optimization][Natural Gradient Descent] This paper proposes Fisher-Orthogonal Projection (FOP), which supplements variance information by orthogonally projecting sub-batch gradient differences under the Fisher…
+  [AAAI2026][Optimization][Natural Gradient Descent] This paper proposes Fisher-Orthogonal Projection (FOP), which supplements variance information by orthogonally projecting sub-batch gradient differences under the Fisher metric, enabling the second-order optimizer KFAC to remain effective in ultra-large batch training and achieving up to ×7.5 speedup.
 tags:
   - "AAAI2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Large Batch Training"
   - "Second-Order Optimization"
 date: 2026-05-08
-content_hash: 944a52eeb0fbbb0c
+content_hash: 54972d4dd112e652
 ---
 
 # Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training
@@ -145,11 +145,11 @@ Time to reach 91% accuracy; "—" indicates the threshold was not reached. FOP i
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](../../NeurIPS2025/optimization/natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
+- [\[ICLR 2026\] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks](../../ICLR2026/optimization/fast_convergence_of_natural_gradient_descent_for_over-parameterized_physics-info.md)
 - [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](../../ICLR2026/optimization/learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
-- [\[CVPR 2026\] SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated learning](../../CVPR2026/optimization/scope_semantic_coreset_with_orthogonal_projection_embeddings_for_federated_learn.md)
+- [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](../../NeurIPS2025/optimization/natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
 - [\[ICLR 2026\] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers](../../ICLR2026/optimization/pinet_optimizing_hard-constrained_neural_networks_with_orthogonal_projection_lay.md)
-- [\[NeurIPS 2025\] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression](../../NeurIPS2025/optimization/large_stepsizes_accelerate_gradient_descent_for_regularized_logistic_regression.md)
+- [\[ICML 2026\] Flatland: The Adventures of Gradient Descent with Large Step Sizes](../../ICML2026/optimization/flatland_the_adventures_of_gradient_descent_with_large_step_sizes.md)
 
 </div>
 

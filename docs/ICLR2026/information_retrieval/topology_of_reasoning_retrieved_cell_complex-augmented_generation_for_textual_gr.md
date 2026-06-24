@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 推理的拓扑结构：用检索到的胞腔复形增强生成解决文本图问答
+  [Paper Note] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] TopoRAG "lifts" text graphs into cell complexes, treating nodes, edges, and cycles as 0/1/2-cells. It employs topology-aware sub-complex retrieval and multi-dimensional message passing to feed high-order dependencies (cycles) into LLMs, consistently outperforming GraphRAG baselines such as G-Retriever and SubgraphRAG a
+  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] TopoRAG "lifts" text graphs into cell complexes, treating nodes, edges, and cycles as 0/1/2-cells. It employs topology-aware sub-complex retrieval and multi-dimensional message passing to feed high-order dependencies (cycles) into LLMs, consistently outperforming GraphRAG baselines such as G-Retriever and SubgraphRAG across three TGQA datasets.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Text-Graph Question Answering"
+  - "Cell Complexes"
+  - "Topological Deep Learning"
+  - "High-dimensional Structures"
 date: 2026-05-08
-content_hash: 28937b6bb5ee2298
+content_hash: 65f7465a3daed050
 ---
+
 # The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA
 
 **Conference**: ICLR 2026  
@@ -133,16 +139,16 @@ TSR (retrieval) has the most significant impact on WebQSP, proving that retrievi
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reusing Pre-training Data at Test Time is a Compute Multiplier](reusing_pre-training_data_at_test_time_is_a_compute_multiplier.md)
-- [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)
+- [\[ICLR 2026\] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge](g-reasoner_foundation_models_for_unified_reasoning_over_graph-structured_knowled.md)
 - [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
-- [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
-- [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
+- [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
+- [\[ICLR 2026\] Counterfactual Reasoning for Retrieval-Augmented Generation](counterfactual_reasoning_for_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora](linearrag_linear_graph_retrieval_augmented_generation_on_large-scale_corpora.md)
 
 </div>
 

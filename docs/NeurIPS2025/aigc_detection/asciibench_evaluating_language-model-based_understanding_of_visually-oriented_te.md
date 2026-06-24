@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text
 description: >-
-  [NeurIPS 2025][AIGC Detection][ASCII art] This paper introduces ASCIIBench, the first publicly available benchmark for ASCII art understanding and generation (5,315 images…
+  [NeurIPS 2025][AIGC Detection][ASCII art] This paper introduces ASCIIBench, the first publicly available benchmark for ASCII art understanding and generation (5,315 images, 752 categories). Systematic evaluation reveals that the visual modality substantially outperforms the text modality, multimodal fusion yields no benefit, and CLIP exhibits a fundamental bottleneck in representing ASCII structure—only categories with high intra-class consistency can be effectively distingui…
 tags:
   - "NeurIPS 2025"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "multimodal fusion"
 date: 2026-05-08
-content_hash: bf3fdabd4dcacb48
+content_hash: fd8072628e1ff246
 ---
 
 # ASCIIBench: Evaluating Language-Model-Based Understanding of Visually-Oriented Text
@@ -138,10 +138,10 @@ CLIP fine-tuning employs triplet loss, with positive pairs drawn from same-categ
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reasoning Compiler: LLM-Guided Optimizations for Efficient Model Serving](reasoning_compiler_llm-guided_optimizations_for_efficient_model_serving.md)
-- [\[ICML 2026\] Generating Robust Portfolios of Optimization Models using Large Language Models](../../ICML2026/aigc_detection/generating_robust_portfolios_of_optimization_models_using_large_language_models.md)
 - [\[NeurIPS 2025\] Synthesizing Performance Constraints for Evaluating and Improving Code Efficiency](synthesizing_performance_constraints_for_evaluating_and_improving_code_efficienc.md)
 - [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](../../ICML2026/aigc_detection/core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
-- [\[ICLR 2026\] PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives](../../ICLR2026/aigc_detection/policon_evaluating_llms_on_achieving_diverse_political_consensus_objectives.md)
+- [\[ICML 2026\] Generating Robust Portfolios of Optimization Models using Large Language Models](../../ICML2026/aigc_detection/generating_robust_portfolios_of_optimization_models_using_large_language_models.md)
+- [\[ICLR 2026\] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training](../../ICLR2026/aigc_detection/learning_from_dictionary_enhancing_robustness_of_machine-generated_text_detectio.md)
 
 </div>
 

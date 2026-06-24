@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness
 description: >-
-  [NeurIPS 2025][AI Safety][adversarial robustness] By embedding rotation-equivariant (P4 group) and scale-equivariant convolutional layers into CNNs…
+  [NeurIPS 2025][AI Safety][adversarial robustness] By embedding rotation-equivariant (P4 group) and scale-equivariant convolutional layers into CNNs, this work proposes two symmetry-aware architectures — Parallel and Cascaded — that significantly improve adversarial robustness without adversarial training. Grounded in the CLEVER framework, it theoretically demonstrates that equivariant architectures compress the hypothesis space, regularize gradients…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -13,7 +13,7 @@ tags:
   - "rotation equivariance"
   - "scale equivariance"
 date: 2026-05-08
-content_hash: 087ad1e7228e440a
+content_hash: 6a51020604aa2355
 ---
 
 # Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness
@@ -149,9 +149,9 @@ Parallel GCNN (R&S) achieves the best adversarial accuracy across all perturbati
 
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
 - [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
+- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](../../ICLR2026/ai_safety/on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](../../ICCV2025/ai_safety/towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
-- [\[NeurIPS 2025\] Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification](keep_it_real_challenges_in_attacking_compression-based_adversarial_purification.md)
-- [\[NeurIPS 2025\] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)
+- [\[ICML 2025\] Enhancing Certified Robustness via Block Reflector Orthogonal Layers and Logit Annealing Loss](../../ICML2025/ai_safety/enhancing_certified_robustness_via_block_reflector_orthogonal_layers_and_logit_a.md)
 
 </div>
 

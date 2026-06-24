@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RouteLMT: Learned Sample Routing for Hybrid LLM Translation Deployment
 description: >-
-  [ACL 2026][Multilingual & Translation][in-model router] RouteLMT formalizes the routing problem in hybrid LLM translation as a marginal gain allocation under a fixed large-model budget. It utilizes the internal representations of the last prompt token from a small translation model to predict "how much improvement the large model can bring relative to the small model." Acro
+  [ACL2026][Multilingual & Machine Translation][Hybrid Translation Deployment] RouteLMT formalizes the routing problem in hybrid LLM translation as a marginal gain allocation under a fixed large-model budget. It utilizes the internal representations of the last prompt token from a small translation model to predict "how much improvement the large model can bring relative to the small model." Across four translation directions, it achieves superior quality-budget Pareto frontier…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - in-model router
-  - XCOMET
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Hybrid Translation Deployment"
+  - "Marginal Gain Prediction"
+  - "In-Model Router"
+  - "Budget Allocation"
+  - "XCOMET"
 date: 2026-05-08
-content_hash: 7df4c2cadc72e7ab
+content_hash: 4535c1c2fd1feadd
 ---
+
 # RouteLMT: Learned Sample Routing for Hybrid LLM Translation Deployment
 
 **Conference**: ACL2026  

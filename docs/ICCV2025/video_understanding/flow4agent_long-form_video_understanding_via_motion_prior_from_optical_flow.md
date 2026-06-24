@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow
 description: >-
-  [ICCV 2025][Video Understanding][long-form video understanding] Flow4Agent is the first work to introduce optical flow motion priors into LLM-based video understanding. It employs Temporal Granularity Optimization (TGO)…
+  [ICCV 2025][Video Understanding][long-form video understanding] Flow4Agent is the first work to introduce optical flow motion priors into LLM-based video understanding. It employs Temporal Granularity Optimization (TGO) to cluster video events via coarse-grained optical flow and filter redundant scenes using semantic priors, and Motion Token Pruning (MTP) to remove intra-frame static redundant tokens via fine-grained optical flow. The method achieves state-of-the-art performa…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -14,7 +14,7 @@ tags:
   - "temporal granularity"
   - "key content extraction"
 date: 2026-05-08
-content_hash: 82eba601adafb04d
+content_hash: 5d4921e84b752bde
 ---
 
 # Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow
@@ -155,10 +155,10 @@ Sea-RAFT (4 iter for TGO / 12 iter for MTP) achieves the best performance, outpe
 ## Related Papers
 
 - [\[ICCV 2025\] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View](prior-flow_enhancing_primitive_panoramic_optical_flow_with_orthogonal_view.md)
-- [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
 - [\[ICCV 2025\] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics](hermes_temporal-coherent_long-form_understanding_with_episodes_and_semantics.md)
+- [\[ICCV 2025\] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases](flowseek_optical_flow_made_easier_with_depth_foundation_models_and_motion_bases.md)
+- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
-- [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
 
 </div>
 

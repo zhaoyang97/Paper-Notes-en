@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization
 description: >-
-  [ICML 2026][Hallucination Detection][DPO] By concatenating the original image and a contrastive negative image into a shared multi-image context and using anchor instructions to specify which image to observe, the partition functions of visual-preference DPO are automatically aligned to produce a theoretically consistent contrastive objective. Combined with su
+  [ICML 2026][Hallucination Detection][Multimodal Hallucination] By concatenating the original image and a contrastive negative image into a shared multi-image context and using anchor instructions to specify which image to observe, the partition functions of visual-preference DPO are automatically aligned to produce a theoretically consistent contrastive objective. Combined with surgically edited hard negative samples, this significantly reduces multimodal hallucinations in VL…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - DPO
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "Preference Optimization"
+  - "Visual Contrast"
+  - "DPO"
+  - "Hard Negatives"
 date: 2026-05-08
-content_hash: 42bbedfa859bac83
+content_hash: 9ab89afdc2d96ede
 ---
+
 # Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization
 
 **Conference**: ICML 2026  
@@ -142,8 +147,8 @@ Component-level ablation confirms all parts are necessary:
 - [\[NeurIPS 2025\] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization](../../NeurIPS2025/hallucination/mitigating_hallucination_through_theory-consistent_symmetric_multimodal_preferen.md)
 - [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
 - [\[CVPR 2025\] Stop Learning It All to Mitigate Visual Hallucination, Focus on the Hallucination Target](../../CVPR2025/hallucination/stop_learning_it_all_to_mitigate_visual_hallucination_focus_on_the_hallucination.md)
+- [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](../../ICLR2026/hallucination/visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](../../CVPR2026/hallucination/zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
-- [\[ACL 2025\] Retrieval Visual Contrastive Decoding to Mitigate Object Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/retrieval_visual_contrastive_decoding_to_mitigate_object_hallucinations_in_large.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] The authors discovered that multi-turn self-dialogues elicited from hallucinated answers exhibit uncertainty score fluctuations with far more intense "spikes" than those from truthful answers. They quantify this volatility as **SpikeScore** (the maximum second-order difference of the score sequence). By using a single
+  [ICLR2026][Hallucination Detection][cross-domain generalization] The authors discovered that multi-turn self-dialogues elicited from hallucinated answers exhibit uncertainty score fluctuations with far more intense "spikes" than those from truthful answers. They quantify this volatility as **SpikeScore** (the maximum second-order difference of the score sequence). By using a single threshold, SpikeScore enables hallucination detection across multiple domains while being train…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR2026"
+  - "Hallucination Detection"
+  - "cross-domain generalization"
+  - "multi-turn self-dialogue"
+  - "second-order difference"
+  - "uncertainty"
 date: 2026-05-08
-content_hash: d5f96591283a97be
+content_hash: f37f4aa7fc6c691a
 ---
+
 # Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection
 
 **Conference**: ICLR2026  
@@ -130,16 +135,16 @@ Traditional training-based methods collapsed cross-domain (AUROC 0.53–0.58). S
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the critical issue of cross-domain collapse in deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] VeriTrail: Closed-Domain Hallucination Detection with Traceability](veritrail_closed-domain_hallucination_detection_with_traceable_evidence_synthes.md)
 - [\[ACL 2025\] Learning Auxiliary Tasks Improves Reference-Free Hallucination Detection in Open-Domain Long-Form Generation](../../ACL2025/hallucination/learning_auxiliary_tasks_improves_reference-free_hallucination_detection_in_open.md)
-- [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
 - [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
-- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
+- [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
 
 </div>
 

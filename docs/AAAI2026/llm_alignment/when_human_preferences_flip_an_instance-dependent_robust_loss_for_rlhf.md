@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF
 description: >-
-  [AAAI 2026][LLM Alignment][RLHF] To address the pervasive "preference flipping" problem in human preference annotation, this paper proposes FA-DPO (Flipping-Aware DPO)…
+  [AAAI 2026][LLM Alignment][RLHF] To address the pervasive "preference flipping" problem in human preference annotation, this paper proposes FA-DPO (Flipping-Aware DPO), which models the annotation process as a two-stage procedure consisting of "true human intent + instance-dependent flipping probability." By correcting the BT model loss and iteratively optimizing a flipping estimation module, FA-DPO substantially improves alignment robustness under various noise conditions…
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "robust alignment"
   - "noisy annotation"
 date: 2026-05-08
-content_hash: 7a2fbe78b81c2578
+content_hash: 1c0abca206f8974b
 ---
 
 # When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF
@@ -132,11 +132,11 @@ An alternating two-step procedure: (1) fix the flipping model and update the pol
 
 ## Related Papers
 
+- [\[ICML 2026\] When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models](../../ICML2026/llm_alignment/when_distance_distracts_representation_distance_bias_in_bt-loss_for_reward_model.md)
+- [\[ICML 2026\] Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences](../../ICML2026/llm_alignment/large_language_models_should_learn_personalized_rather_than_aggregated_human_pre.md)
 - [\[NeurIPS 2025\] Capturing Individual Human Preferences with Reward Features](../../NeurIPS2025/llm_alignment/capturing_individual_human_preferences_with_reward_features.md)
-- [\[AAAI 2026\] On the Exponential Convergence for Offline RLHF with Pairwise Comparisons](on_the_exponential_convergence_for_offline_rlhf_with_pairwise_comparisons.md)
-- [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
-- [\[ACL 2026\] Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization](../../ACL2026/llm_alignment/topology-enhanced_alignment_for_large_language_models_trajectory_topology_loss_a.md)
-- [\[ICML 2026\] Adaptive Probe-based Steering for Robust LLM Jailbreaking](../../ICML2026/llm_alignment/adaptive_probe-based_steering_for_robust_llm_jailbreaking.md)
+- [\[ICML 2025\] Diverging Preferences: When do Annotators Disagree and do Models Know?](../../ICML2025/llm_alignment/diverging_preferences_when_do_annotators_disagree_and_do_models_know.md)
+- [\[ICLR 2026\] Humanline: Online Alignment as Perceptual Loss](../../ICLR2026/llm_alignment/humanline_online_alignment_as_perceptual_loss.md)
 
 </div>
 

@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][SPARKLE] This paper proposes SPARKLE, a three-axis analytical framework (plan following, knowledge integration…
+  [NeurIPS 2025][Reasoning][SPARKLE] This paper proposes SPARKLE, a three-axis analytical framework (plan following, knowledge integration, subproblem decomposition) for fine-grained dissection of how RL shapes LLM reasoning behavior. The analysis reveals that RL primarily enhances knowledge integration and planning flexibility rather than plan execution. The paper further introduces SparkleRL-PSS, a multi-stage RL training pipeline that effectively exploits hard problem data v…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "SPARKLE"
   - "GRPO"
   - "plan following"
@@ -13,7 +13,7 @@ tags:
   - "subproblem decomposition"
   - "multi-stage RL"
 date: 2026-05-08
-content_hash: e07b9f732b77ae89
+content_hash: 51ac26865d308df2
 ---
 
 # Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning
@@ -129,11 +129,11 @@ Stage 2-pss achieves an average gain of 2.02% over Stage 1, reaching 50.42% on A
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond English-Centric Training: How Reinforcement Learning Improves Cross-Lingual Reasoning in LLMs](../../ICLR2026/llm_reasoning/beyond_english-centric_training_how_reinforcement_learning_improves_cross-lingua.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
+- [\[NeurIPS 2025\] Beyond the 80/20 Rule: High-Entropy Minority Tokens Drive Effective Reinforcement Learning for LLM Reasoning](beyond_the_8020_rule_highentropy_minority_tokens_drive_effec.md)
 - [\[NeurIPS 2025\] ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning](expo_unlocking_hard_reasoning_with_self-explanation-guided_reinforcement_learnin.md)
-- [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
-- [\[NeurIPS 2025\] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)
 
 </div>
 

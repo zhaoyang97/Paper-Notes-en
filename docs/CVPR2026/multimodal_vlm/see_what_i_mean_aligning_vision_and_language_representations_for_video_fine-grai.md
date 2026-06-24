@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] SWIM is a training strategy that supervises the "object noun token → visual token" cross-attention in MLLMs using object masks during the training phase only. This enables the model to precisely locate user-specified objects from pure text prompts. At inference, it requires no visual prompts such as points, boxes, or m
+  [CVPR 2026][Multimodal VLM][Video fine-grained understanding] SWIM is a training strategy that supervises the "object noun token → visual token" cross-attention in MLLMs using object masks during the training phase only. This enables the model to precisely locate user-specified objects from pure text prompts. At inference, it requires no visual prompts such as points, boxes, or masks, outperforming expert models that rely on visual prompts on video fine-grained understanding…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video fine-grained understanding"
+  - "vision-language alignment"
+  - "cross-attention supervision"
+  - "referring understanding"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 473191c92ab55642
+content_hash: 024025a5714f23d0
 ---
+
 # See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding
 
 **Conference**: CVPR 2026  
@@ -138,9 +143,9 @@ The GamePoint@P metric (proportion of top P% attention pixels within the target 
 
 - [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
 - [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
 - [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
+- [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
 
 </div>
 

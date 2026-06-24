@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation
 description: >-
-  [AAAI 2026][Hallucination Detection][ESG Reports] This paper constructs ESG-Bench — 270 manually annotated QA pairs from 94 real ESG reports (2020–2024) — and proposes a three-stage hallucination mitigation pipeline: SFT…
+  [AAAI 2026][Hallucination Detection][ESG Reports] This paper constructs ESG-Bench — 270 manually annotated QA pairs from 94 real ESG reports (2020–2024) — and proposes a three-stage hallucination mitigation pipeline: SFT (with grounded answers + "Not Provided" abstention labels) → CoT Prompting (2/4-step prompt templates) → CoT Fine-tuning (with human-annotated reasoning chains). The 4-step CoT fine-tuned Llama-3 achieves 92.52% with-answer (WA) accuracy and 99.37% without-an…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -11,7 +11,7 @@ tags:
   - "CoT Fine-tuning"
   - "Compliance"
 date: 2026-05-08
-content_hash: 3d63221087cd1e2e
+content_hash: 608e710208f5024c
 ---
 
 # ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation
@@ -126,11 +126,11 @@ ESG-Bench construction: 94 real ESG reports → GPT-4o-generated questions → h
 
 ## Related Papers
 
+- [\[ACL 2025\] Fine-grained Hallucination Detection and Mitigation in Long-form Question Answering](../../ACL2025/hallucination/localizing_and_mitigating_errors_in_long-form_question_answering.md)
 - [\[AAAI 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets](when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
-- [\[ICML 2026\] Building Reliable Long-Form Generation via Hallucination Rejection Sampling](../../ICML2026/hallucination/building_reliable_long-form_generation_via_hallucination_rejection_sampling.md)
 - [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/hallucination/enhancing_hallucination_detection_via_future_context.md)
-- [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](../../ACL2026/hallucination/benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
+- [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](../../ACL2026/hallucination/benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 
 </div>
 

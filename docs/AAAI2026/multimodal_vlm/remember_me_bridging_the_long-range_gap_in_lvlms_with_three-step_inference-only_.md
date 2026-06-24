@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies
 description: >-
-  [AAAI 2026][Multimodal VLM][Large Vision-Language Models] This paper proposes T-DRS (Three-step Decay Resilience Strategies), a training-free inference-time framework that mitigates RoPE-induced long-range attention deca…
+  [AAAI 2026][Multimodal VLM][Large Vision-Language Models] This paper proposes T-DRS (Three-step Decay Resilience Strategies), a training-free inference-time framework that mitigates RoPE-induced long-range attention decay through three cooperative stages: semantics-driven enhancement, distance-aware control, and remote-distance re-reinforcement, achieving consistent performance gains across multiple LVLMs on VQA benchmarks.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Long-Range Attention Decay"
   - "Inference-Time Optimization"
 date: 2026-05-08
-content_hash: 46e061adbf765e1c
+content_hash: 2b31593710e85131
 ---
 
 # Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies
@@ -201,11 +201,11 @@ POPE ablation (F1-score):
 
 ## Related Papers
 
-- [\[AAAI 2026\] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?](bridging_the_copyright_gap_do_large_vision-language_models_r.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](../../CVPR2026/multimodal_vlm/text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
 - [\[CVPR 2026\] Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning](../../CVPR2026/multimodal_vlm/narrative_weaver_towards_controllable_long-range_visual_consistency_with_multi-m.md)
-- [\[CVPR 2026\] SoPE: Spherical Coordinate-Based Positional Embedding for 3D LVLMs](../../CVPR2026/multimodal_vlm/sope_spherical_positional_encoding_3d_lvlm.md)
-- [\[AAAI 2026\] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)](bridging_modalities_via_progressive_re-alignment_for_multimo.md)
+- [\[AAAI 2026\] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?](bridging_the_copyright_gap_do_large_vision-language_models_r.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](../../CVPR2026/multimodal_vlm/text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
+- [\[AAAI 2026\] Towards Long-window Anchoring in Vision-Language Model Distillation](towards_long-window_anchoring_in_vision-language_model_distillation.md)
 
 </div>
 

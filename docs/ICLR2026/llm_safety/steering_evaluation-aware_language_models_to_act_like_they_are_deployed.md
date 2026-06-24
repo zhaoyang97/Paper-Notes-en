@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steering Evaluation-Aware Language Models To Act Like They Are Deployed
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors first train a "context-dependent" Llama Nemotron 49B model organism (writing Python type hints during evaluation but omitting them during deployment) and then demonstrate that adding a contrastive activation steering vector to the residual stream can deceive the model into believing it is deployed in an eva
+  [ICLR 2026][LLM Safety][Evaluation-awareness] The authors first train a "context-dependent" Llama Nemotron 49B model organism (writing Python type hints during evaluation but omitting them during deployment) and then demonstrate that adding a contrastive activation steering vector to the residual stream can deceive the model into believing it is deployed in an evaluation setting, thereby exposing the "deployment behavior" it intended to hide.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Evaluation-awareness"
+  - "Activation steering"
+  - "Model organisms"
+  - "Alignment faking"
+  - "Safety evaluation"
 date: 2026-05-08
-content_hash: db90ae43160bde44
+content_hash: 85398dec606c16e6
 ---
+
 # Steering Evaluation-Aware Language Models To Act Like They Are Deployed
 
 **Conference**: ICLR 2026  

@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Time Series][LLM4TS] MSH-LLM supplements time series with semantics using "learnable hyperedges," aligns temporal features to LLM lexical prototypes across multiple scales via cross-modal attention, and activates the temporal reasoning of LLMs through "Mixture of Prompts," achieving SOTA performance on 27 datasets across 5 task categories.
 tags:
-  - ICLR 2026
-  - Time Series
-  - LLM4TS
+  - "ICLR 2026"
+  - "Time Series"
+  - "LLM4TS"
+  - "Multi-scale Alignment"
+  - "Hypergraph"
+  - "Mixed Prompts"
+  - "Time Series Forecasting"
 date: 2026-05-08
-content_hash: 1abdb909bb76cd19
+content_hash: cf6ec2e5a41f291b
 ---
+
 # Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis
 
 **Conference**: ICLR 2026  

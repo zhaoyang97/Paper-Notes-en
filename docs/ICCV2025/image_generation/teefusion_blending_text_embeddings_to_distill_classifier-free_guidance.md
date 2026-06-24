@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance
 description: >-
-  [ICCV 2025][Image Generation][CFG Distillation] This paper proposes TeEFusion, which encodes the guidance magnitude of CFG directly as a linear combination of conditional and unconditional text embeddings to replace dual…
+  [ICCV 2025][Image Generation][CFG Distillation] This paper proposes TeEFusion, which encodes the guidance magnitude of CFG directly as a linear combination of conditional and unconditional text embeddings to replace dual forward passes, achieving efficient CFG distillation with zero additional parameters. The method is compatible with complex teacher sampling strategies (e.g., Z-Sampling, W2SD), enabling a 6× inference speedup over the teacher model.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Guidance Distillation"
   - "DiT"
 date: 2026-05-08
-content_hash: c815a69dd00f5122
+content_hash: 682a5ede20229d00
 ---
 
 # TeEFusion: Blending Text Embeddings to Distill Classifier-Free Guidance
@@ -130,10 +130,10 @@ $$L_{\text{distill}} = \|\epsilon_{\theta_S}(x_t, \hat{z}_{t,c,\varnothing,w}) -
 ## Related Papers
 
 - [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[CVPR 2025\] TCFG: Tangential Damping Classifier-Free Guidance](../../CVPR2025/image_generation/tcfg_tangential_damping_classifier-free_guidance.md)
 - [\[ICCV 2025\] GAP: Gaussianize Any Point Clouds with Text Guidance](gap_gaussianize_any_point_clouds_with_text_guidance.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
 - [\[NeurIPS 2025\] Towards a Golden Classifier-Free Guidance Path via Foresight Fixed Point Iterations](../../NeurIPS2025/image_generation/towards_a_golden_classifier-free_guidance_path_via_foresight_fixed_point_iterati.md)
-- [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
 
 </div>
 

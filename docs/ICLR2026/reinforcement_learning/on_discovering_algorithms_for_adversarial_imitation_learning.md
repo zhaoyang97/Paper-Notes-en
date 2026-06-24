@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Discovering Algorithms for Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Proposes DAIL—the first meta-learning algorithm for Adversarial Imitation Learning (AIL). It decomposes AIL into two stages: density ratio estimation and reward assignment (RA). Using LLM-guided evolutionary search, it automatically discovers the optimal RA function $r_{\text{disc}}$, which generalizes across unseen en
+  [ICLR 2026][Reinforcement Learning][Adversarial Imitation Learning] Proposes DAIL—the first meta-learning algorithm for Adversarial Imitation Learning (AIL). It decomposes AIL into two stages: density ratio estimation and reward assignment (RA). Using LLM-guided evolutionary search, it automatically discovers the optimal RA function $r_{\text{disc}}$, which generalizes across unseen environments and policy optimizers while outperforming all human-designed baselines.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial Imitation Learning"
+  - "Reward Assignment Functions"
+  - "LLM-guided Evolution"
+  - "Meta-learning"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: b72bffbff1ba948b
+content_hash: 7339fa7b11af4bb2
 ---
+
 # On Discovering Algorithms for Adversarial Imitation Learning
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ Policy entropy analysis reveals that DAIL's stability stems from $r_{\text{disc}
 
 ## Related Papers
 
-- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
+- [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
+- [\[ICLR 2026\] Imitation Learning as Return Distribution Matching](imitation_learning_as_return_distribution_matching.md)
 - [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
-- [\[ICLR 2026\] Learning to Generate Unit Test via Adversarial Reinforcement Learning](learning_to_generate_unit_test_via_adversarial_reinforcement_learning.md)
 
 </div>
 

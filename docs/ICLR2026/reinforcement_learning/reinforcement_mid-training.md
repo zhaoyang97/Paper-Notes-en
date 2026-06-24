@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reinforcement Mid-Training
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This paper introduces Reinforcement Mid-Training (RMT) to fill the gap between pre-training and post-training. It utilizes unannotated pre-training corpora with next-token prediction as a verifiable reward for RL. The RMT framework employs dynamic token budgets, curriculum-based difficulty sampling, and a dual objectiv
+  [ICLR 2026][Reinforcement Learning][Reinforcement Mid-Training] This paper introduces Reinforcement Mid-Training (RMT) to fill the gap between pre-training and post-training. It utilizes unannotated pre-training corpora with next-token prediction as a verifiable reward for RL. The RMT framework employs dynamic token budgets, curriculum-based difficulty sampling, and a dual objective of "Selective RL + Full NTP," achieving up to +64.91% improvement in language modeling over th…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - next-token prediction
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reinforcement Mid-Training"
+  - "token budget"
+  - "curriculum sampling"
+  - "GRPO"
+  - "next-token prediction"
 date: 2026-05-08
-content_hash: aa4c9a5f905eb0c5
+content_hash: 668dc7ec501c8254
 ---
+
 # Reinforcement Mid-Training
 
 **Conference**: ICLR 2026  
@@ -141,7 +145,6 @@ In terms of response length, RMT-R1/Q3 average only 188/186 tokens, roughly 21% 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -149,7 +152,7 @@ In terms of response length, RMT-R1/Q3 average only 188/186 tokens, roughly 21% 
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
 - [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
-- [\[ICLR 2026\] Critique-RL: Training Language Models for Critiquing Through Two-Stage Reinforcement Learning](critique-rl_training_language_models_for_critiquing_through_two-stage_reinforcem.md)
+- [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
 
 </div>
 

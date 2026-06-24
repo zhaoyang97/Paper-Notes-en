@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DuoLoRA: Cycle-Consistent and Rank-Disentangled Content-Style Personalization
 description: >-
-  [ICCV 2025][Model Compression][LoRA merging] DuoLoRA introduces rank-dimension mask learning (ZipRank) for LoRA merging, combined with SDXL layer priors and a cycle-consistent merging loss (Constyle loss)…
+  [ICCV 2025][Model Compression][LoRA merging] DuoLoRA introduces rank-dimension mask learning (ZipRank) for LoRA merging, combined with SDXL layer priors and a cycle-consistent merging loss (Constyle loss), enabling efficient content-style LoRA composition that surpasses ZipLoRA and other state-of-the-art methods across multiple benchmarks while reducing trainable parameters by 19×.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "rank disentanglement"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 286495f921b268b6
+content_hash: 6867830424be92d7
 ---
 
 # DuoLoRA: Cycle-Consistent and Rank-Disentangled Content-Style Personalization
@@ -137,11 +137,11 @@ Comparison with Paircustomization:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Adversarial Concept Distillation for One-Step Diffusion Personalization](../../CVPR2026/model_compression/adversarial_concept_distillation_for_one-step_diffusion_personalization.md)
+- [\[CVPR 2025\] Style Quantization for Data-Efficient GAN Training](../../CVPR2025/model_compression/style_quantization_for_data-efficient_gan_training.md)
+- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](../../CVPR2026/model_compression/cadc_content_adaptive_diffusion-based_generative_image_compression.md)
+- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](../../CVPR2026/model_compression/content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
 - [\[ICCV 2025\] Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes](beyond_low-rank_tuning_model_prior-guided_rank_allocation_for_effective_transfer.md)
 - [\[ICCV 2025\] PLAN: Proactive Low-Rank Allocation for Continual Learning](plan_proactive_low-rank_allocation_for_continual_learning.md)
-- [\[NeurIPS 2025\] FiRA: Can We Achieve Full-Rank Training of LLMs Under Low-Rank Constraint?](../../NeurIPS2025/model_compression/fira_can_we_achieve_full-rank_training_of_llms_under_low-rank_constraint.md)
-- [\[ICLR 2026\] A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA](../../ICLR2026/model_compression/a_fano-style_accuracy_upper_bound_for_llm_single-pass_reasoning_in_multi-hop_qa.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Voxify3D: Pixel Art Meets Volumetric Rendering
 description: >-
-  [CVPR 2026][3D Vision][DVGO] Transforming 3D meshes into "Lego/pixel block" style voxel art: This work utilizes a differentiable two-stage voxel radiance field. First, coarse geometry and color are learned via DVGO. Then, stylization is achieved through six-view orthographic pixel art supervision, patch-level CLIP semantic loss, and palette-constr
+  [CVPR2026][3D Vision][Voxel Art] Transforming 3D meshes into "Lego/pixel block" style voxel art: This work utilizes a differentiable two-stage voxel radiance field. First, coarse geometry and color are learned via DVGO. Then, stylization is achieved through six-view orthographic pixel art supervision, patch-level CLIP semantic loss, and palette-constrained Gumbel-Softmax discrete color optimization. The framework produces voxel art with clear semantics, clean color blocks…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - DVGO
+  - "CVPR2026"
+  - "3D Vision"
+  - "Voxel Art"
+  - "Volumetric Rendering"
+  - "DVGO"
+  - "Orthographic Projection Supervision"
+  - "Gumbel-Softmax Discrete Quantization"
 date: 2026-05-08
-content_hash: cb9a36a36c79e66c
+content_hash: 0737224dadf683df
 ---
+
 # Voxify3D: Pixel Art Meets Volumetric Rendering
 
 **Conference**: CVPR2026  
@@ -135,10 +140,10 @@ Removing components (CLIP-IQA, 5-object average):
 ## Related Papers
 
 - [\[CVPR 2026\] Mirror Illusion Art](mirror_illusion_art.md)
-- [\[CVPR 2026\] Global Structure-from-Motion Meets Feedforward Reconstruction](global_structure-from-motion_meets_feedforward_reconstruction.md)
-- [\[CVPR 2026\] Radiance Meshes for Volumetric Reconstruction](radiance_meshes_for_volumetric_reconstruction.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
 - [\[NeurIPS 2025\] LinPrim: Linear Primitives for Differentiable Volumetric Rendering](../../NeurIPS2025/3d_vision/linprim_linear_primitives_for_differentiable_volumetric_rendering.md)
+- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
+- [\[CVPR 2026\] Radiance Meshes for Volumetric Reconstruction](radiance_meshes_for_volumetric_reconstruction.md)
+- [\[CVPR 2026\] Global Structure-from-Motion Meets Feedforward Reconstruction](global_structure-from-motion_meets_feedforward_reconstruction.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation
 description: >-
-  [CVPR 2026][Image Generation][DreamBooth] To address the issues of "unfaithful appearance" and "semantic loss" when directly applying DreamBooth-style fine-tuning to multimodal Autoregressive (AR) models, this paper proposes Proxy-Tuning: a weaker diffusion model first learns the subject from a few reference images and synthesizes batch proxy data to supervise
+  [CVPR 2026][Image Generation][Subject-driven generation] To address the issues of "unfaithful appearance" and "semantic loss" when directly applying DreamBooth-style fine-tuning to multimodal Autoregressive (AR) models, this paper proposes Proxy-Tuning: a weaker diffusion model first learns the subject from a few reference images and synthesizes batch proxy data to supervise the AR student model. The results show the student surpasses the teacher in subject fidelity…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DreamBooth
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject-driven generation"
+  - "Autoregressive models"
+  - "Weak-to-strong generalization"
+  - "Proxy-tuning"
+  - "DreamBooth"
 date: 2026-05-08
-content_hash: 4320f01e07a06996
+content_hash: 742819112459324f
 ---
+
 # Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation
 
 **Conference**: CVPR 2026  

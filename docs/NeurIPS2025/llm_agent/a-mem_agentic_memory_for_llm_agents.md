@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A-MEM: Agentic Memory for LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Agentic Memory] This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM agents. Each memory entry automatically generates a structured note (keywords/tags/contextual des…
+  [NeurIPS 2025][LLM Agent][Agentic Memory] This paper proposes A-Mem, a Zettelkasten-inspired agentic memory system for LLM agents. Each memory entry automatically generates a structured note (keywords/tags/contextual description), dynamically establishes inter-memory links, and triggers evolutionary updates to existing memories upon the insertion of new ones. A-Mem substantially outperforms baselines such as MemGPT on the LoCoMo long-conversation QA benchmark.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "Long-term Memory"
   - "Knowledge Management"
 date: 2026-05-08
-content_hash: 1d5eb5a275b1a928
+content_hash: 71f1bc9a861aab2a
 ---
 
 # A-MEM: Agentic Memory for LLM Agents
@@ -134,7 +134,7 @@ A-Mem leads substantially on Temporal QA (39.41 vs. MemGPT's 17.29), ranks first
 - [\[NeurIPS 2025\] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents](agentic_plan_caching_test-time_memory_for_fast_and_cost-efficient_llm_agents.md)
 - [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](../../ACL2026/llm_agent/hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
 - [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](../../ACL2026/llm_agent/memp_exploring_agent_procedural_memory.md)
-- [\[NeurIPS 2025\] Orchestration Framework for Financial Agents: From Algorithmic Trading to Agentic Trading](orchestration_framework_for_financial_agents_from_algorithmic_trading_to_agentic.md)
+- [\[ICML 2026\] Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents](../../ICML2026/llm_agent/memory_is_reconstructed_not_retrieved_graph_memory_for_llm_agents.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM] By analyzing the semantic refinement of visual embeddings in the shallow layers of LLMs, this paper proposes BASIC…
+  [ICCV 2025][Multimodal VLM][MLLM] By analyzing the semantic refinement of visual embeddings in the shallow layers of LLMs, this paper proposes BASIC, a method that leverages intrinsically refined visual embeddings from within the LLM as supervision signals to directly guide the visual projector in generating better initial visual embeddings along two dimensions: directional alignment and semantic distribution.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Modality Alignment"
   - "LLM Interpretability"
 date: 2026-05-08
-content_hash: 9d76c9b96bebf9dd
+content_hash: 2bf1d60b315f9c9f
 ---
 
 # BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models
@@ -176,11 +176,11 @@ Ablation on layer weights and supervision strength:
 
 ## Related Papers
 
-- [\[ICCV 2025\] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers](falcon_resolving_visual_redundancy_and_fragmentation_in_high.md)
-- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
+- [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
 - [\[ICCV 2025\] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](capellm_support-free_category-agnostic_pose_estimation_with_multimodal_large_lan.md)
-- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
-- [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
+- [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi_holmes_towards_explainable_and_generalizable_ai_generated_image_detection_via_mllm.md)
+- [\[ICCV 2025\] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers](falcon_resolving_visual_redundancy_and_fragmentation_in_high.md)
 
 </div>
 

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Price of Quality: Sufficient Conditions for Sparse Recovery using Mixed-Quality Data
 description: >-
-  [ICLR 2026][learning_theory][LASSO] This work investigates the sufficient conditions for the sample size required for sparse signal support recovery when observations originate from two heteroscedastic noise sources ("small amount of high-quality + large amount of low-quality" data). It proposes a quantitative metric, "Price of Quality" $\gamma$ (represe
+  [ICLR 2026][Learning Theory][Sparse Recovery] This work investigates the sufficient conditions for the sample size required for sparse signal support recovery when observations originate from two heteroscedastic noise sources ("small amount of high-quality + large amount of low-quality" data). It proposes a quantitative metric, "Price of Quality" $\gamma$ (representing how many low-quality samples a single high-quality sample is worth), and reveals a counter-intuitive contras…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - LASSO
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "High-dimensional Statistics"
+  - "Compressed Sensing"
+  - "Sparse Recovery"
+  - "Mixed-Quality Data"
+  - "Heteroscedastic Noise"
+  - "LASSO"
+  - "Information-Theoretic Threshold"
 date: 2026-05-08
-content_hash: 20c7ab9f9361774f
+content_hash: 313fc85b278d7c61
 ---
+
 # Price of Quality: Sufficient Conditions for Sparse Recovery using Mixed-Quality Data
 
 **Conference**: ICLR 2026  
@@ -148,9 +155,9 @@ This is a theoretical paper without empirical experiments. "Key results" are pre
 
 - [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
 - [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](the_price_of_robustness_stable_classifiers_need_overparameterization.md)
+- [\[ICLR 2026\] Identifiability Challenges in Sparse Linear Ordinary Differential Equations](identifiability_challenges_in_sparse_linear_ordinary_differential_equations.md)
 - [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
 - [\[ICLR 2026\] SVD Provably Denoises Nearest Neighbor Data](svd_provably_denoises_nearest_neighbor_data.md)
-- [\[ICLR 2026\] Residual Feature Integration is Sufficient to Prevent Negative Transfer](residual_feature_integration_is_sufficient_to_prevent_negative_transfer.md)
 
 </div>
 

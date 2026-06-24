@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unsupervised Feature Selection Through Group Discovery
 description: >-
-  [AAAI 2026][Interpretability][Unsupervised feature selection] This paper proposes GroupFS, the first end-to-end differentiable unsupervised feature selection framework that simultaneously discovers latent feature groups…
+  [AAAI 2026][Interpretability][Unsupervised feature selection] This paper proposes GroupFS, the first end-to-end differentiable unsupervised feature selection framework that simultaneously discovers latent feature groups and selects the most informative ones, requiring neither predefined groupings nor label supervision.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Gumbel-Softmax"
   - "sparse regularization"
 date: 2026-05-08
-content_hash: 4e665d4a924d807b
+content_hash: 9ce1a9a84429f03e
 ---
 
 # Unsupervised Feature Selection Through Group Discovery
@@ -135,10 +135,10 @@ Under fixed-budget settings, GroupFS ranks first or ties for first on 6 of 9 dat
 ## Related Papers
 
 - [\[NeurIPS 2025\] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces](../../NeurIPS2025/interpretability/tangledfeatures_robust_feature_selection_in_highly_correlated_spaces.md)
-- [\[AAAI 2026\] Quiet Feature Learning in Algorithmic Tasks](quiet_feature_learning_in_algorithmic_tasks.md)
+- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](../../CVPR2026/interpretability/h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
+- [\[ICLR 2026\] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders](../../ICLR2026/interpretability/learning_multimodal_dictionary_decompositions_with_group-sparse_autoencoders.md)
 - [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](../../ICLR2026/interpretability/decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
-- [\[AAAI 2026\] HSKBenchmark: Modeling and Benchmarking Chinese Second Language Acquisition in Large Language Models through Curriculum Tuning](hskbenchmark_modeling_and_benchmarking_chinese_second_language_acquisition_in_la.md)
+- [\[ICML 2025\] Concept-Based Unsupervised Domain Adaptation](../../ICML2025/interpretability/concept-based_unsupervised_domain_adaptation.md)
 
 </div>
 

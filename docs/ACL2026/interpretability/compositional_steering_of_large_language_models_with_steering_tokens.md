@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Steering of Large Language Models with Steering Tokens
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper proposes compositional steering tokens, which compress behavior instructions into embedding vectors in the input space via self-distillation. By training a dedicated compositional token `<and>` to capture the universal concept of "composition," the method demonstrates strong generalization capabilities acros
+  [ACL 2026][Interpretability][Compositional steering] This paper proposes compositional steering tokens, which compress behavior instructions into embedding vectors in the input space via self-distillation. By training a dedicated compositional token `<and>` to capture the universal concept of "composition," the method demonstrates strong generalization capabilities across unseen behavior combinations, unseen behaviors, and an unseen number of combined behaviors.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Compositional steering"
+  - "steering tokens"
+  - "self-distillation"
+  - "multi-behavior control"
+  - "zero-shot composition"
 date: 2026-05-08
-content_hash: e3fbf6c478771e37
+content_hash: 8284bd3a2700a2fa
 ---
+
 # Compositional Steering of Large Language Models with Steering Tokens
 
 **Conference**: ACL 2026  
@@ -144,7 +150,7 @@ The overall objective comprises self-distillation loss and orthogonal regulariza
 - [\[ACL 2026\] From Weights to Activations: Is Steering the Next Frontier of Adaptation?](from_weights_to_activations_is_steering_the_next_frontier_of_adaptation.md)
 - [\[CVPR 2026\] Language Models Can Explain Visual Features via Steering](../../CVPR2026/interpretability/language_models_can_explain_visual_features_via_steering.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
+- [\[ICLR 2026\] Activation Steering with a Feedback Controller](../../ICLR2026/interpretability/activation_steering_with_a_feedback_controller.md)
 
 </div>
 

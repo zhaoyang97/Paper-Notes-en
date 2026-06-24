@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations
 description: >-
-  [AAAI 2026][Interpretability][Concept Bottleneck Models] This paper proposes PCBM-ReD, a post-hoc concept bottleneck model that automatically extracts concepts from pretrained visual encoders via sparse autoencoders…
+  [AAAI 2026][Interpretability][Concept Bottleneck Models] This paper proposes PCBM-ReD, a post-hoc concept bottleneck model that automatically extracts concepts from pretrained visual encoders via sparse autoencoders, annotates and filters them using MLLMs, and selects a representative subset through reconstruction-guided search. Image representations are then sparsely decomposed into linear combinations of concept embeddings via CLIP's vision-language alignment. The method ac…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Sparse Decomposition"
   - "Representation Learning"
 date: 2026-05-08
-content_hash: 9e327d79a52a924f
+content_hash: 7602dde6b468d1d7
 ---
 
 # Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations
@@ -200,10 +200,10 @@ Key differentiators:
 ## Related Papers
 
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](partially_shared_concept_bottleneck_models.md)
-- [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](../../ICLR2026/interpretability/concepts_information_bottleneck_models.md)
+- [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](../../ICLR2026/interpretability/there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Flexible Concept Bottleneck Model](flexible_concept_bottleneck_model.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
 
 </div>
 

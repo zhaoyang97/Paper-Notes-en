@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Noise-Guided Transport: Imitation Learning from Random Priors
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper reformulates imitation learning as an adversarial training process where a predictor network fits a frozen random prior network on expert data while moving away from it on agent data. The authors prove that this objective is equivalent to minimizing the Earth Mover's Distance (EMD) between expert and agent d
+  [ICML 2026][Reinforcement Learning][Imitation Learning] This paper reformulates imitation learning as an adversarial training process where a predictor network fits a frozen random prior network on expert data while moving away from it on agent data. The authors prove that this objective is equivalent to minimizing the Earth Mover's Distance (EMD) between expert and agent distributions. The resulting lightweight method eliminates the need for gradient penalties and successful…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Imitation Learning"
+  - "Optimal Transport"
+  - "Random Priors"
+  - "Adversarial Training"
+  - "Sample Efficient"
 date: 2026-05-08
-content_hash: 47b3b4c60991cbc3
+content_hash: 8fb82365058ed114
 ---
+
 # Noise-Guided Transport: Imitation Learning from Random Priors
 
 **Conference**: ICML 2026  
@@ -134,11 +140,11 @@ On the Gymnasium continuous control suite, experts are SAC policies trained with
 
 ## Related Papers
 
-- [\[ACL 2026\] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/beyond_fully_random_masking_attention-guided_denoising_and_optimization_for_diff.md)
 - [\[ICML 2026\] Video-Based Optimal Transport for Feedback-Efficient Offline Preference-Based Reinforcement Learning](video-based_optimal_transport_for_feedback-efficient_offline_preference-based_re.md)
-- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
+- [\[ICLR 2026\] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies](../../ICLR2026/reinforcement_learning/goldenstart_q-guided_priors_and_entropy_control_for_distilling_flow_policies.md)
+- [\[ACL 2026\] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/beyond_fully_random_masking_attention-guided_denoising_and_optimization_for_diff.md)
 - [\[ICLR 2026\] Boolean Satisfiability via Imitation Learning](../../ICLR2026/reinforcement_learning/boolean_satisfiability_via_imitation_learning.md)
-- [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](../../ICLR2026/reinforcement_learning/on_discovering_algorithms_for_adversarial_imitation_learning.md)
+- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
 
 </div>
 

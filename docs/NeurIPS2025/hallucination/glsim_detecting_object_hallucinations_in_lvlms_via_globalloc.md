@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity
 description: >-
-  [NeurIPS 2025][Hallucination Detection][object hallucination] GLSim is a training-free object hallucination detection method for LVLMs that combines a global scene similarity score (cosine similarity between the object t…
+  [NeurIPS 2025][Hallucination Detection][object hallucination] GLSim is a training-free object hallucination detection method for LVLMs that combines a global scene similarity score (cosine similarity between the object token and the last instruction token) and a local visual grounding similarity score (cosine similarity between the object token and the Top-K image patch embeddings localized via Visual Logit Lens). It achieves 83.7% AUROC on MSCOCO…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -11,7 +11,7 @@ tags:
   - "visual logit lens"
   - "training-free"
 date: 2026-05-08
-content_hash: 5f238babc4c095f5
+content_hash: 70709887033c5a04
 ---
 
 # GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity
@@ -125,11 +125,11 @@ GLSim is entirely training-free and directly exploits the internal representatio
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/hallucination/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
+- [\[ICLR 2026\] AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing](../../ICLR2026/hallucination/after_mitigating_the_object_hallucination_of_lvlm_via_adaptive_factual-guided_ac.md)
+- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
 - [\[AAAI 2026\] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs](../../AAAI2026/hallucination/causally-grounded_dual-path_attention_intervention_for_objec.md)
-- [\[ICCV 2025\] Mitigating Object Hallucinations via Sentence-Level Early Intervention](../../ICCV2025/hallucination/mitigating_object_hallucinations_via_sentence-level_early_intervention.md)
+- [\[ACL 2025\] Retrieval Visual Contrastive Decoding to Mitigate Object Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/retrieval_visual_contrastive_decoding_to_mitigate_object_hallucinations_in_large.md)
 - [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
-- [\[NeurIPS 2025\] Intervene-All-Paths: Unified Mitigation of LVLM Hallucinations across Alignment Formats](intervene-all-paths_unified_mitigation_of_lvlm_hallucinations_across_alignment_f.md)
 
 </div>
 

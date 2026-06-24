@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning
 description: >-
-  [ICCV 2025][Image Generation][Federated Learning] This paper is the first to introduce the internal representations of a pretrained text-to-image diffusion model (Stable Diffusion) into federated learning…
+  [ICCV 2025][Image Generation][Federated Learning] This paper is the first to introduce the internal representations of a pretrained text-to-image diffusion model (Stable Diffusion) into federated learning, proposing the FedDifRC framework. Through two complementary modules—Text-Driven Diffusion Contrastive Learning (TDCL) and Noise-Driven Diffusion Consistency Regularization (NDCR)—the framework effectively mitigates data heterogeneity and achieves significant performance imp…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Consistency Regularization"
 date: 2026-05-08
-content_hash: 7ff0cbcadb25e28f
+content_hash: a06eff1b7ae4f8fc
 ---
 
 # FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning
@@ -142,7 +142,7 @@ $$\mathcal{L} = \mathcal{L}_{TDCL} + \mathcal{L}_{NDCR} + \mathcal{L}_{CE}$$
 - [\[ICCV 2025\] Unlocking the Potential of Diffusion Priors in Blind Face Restoration](unlocking_the_potential_of_diffusion_priors_in_blind_face_restoration.md)
 - [\[ICLR 2026\] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models](../../ICLR2026/image_generation/bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_.md)
 - [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](pla_prompt_learning_attack_against_text-to-image_generative_models.md)
-- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
+- [\[ICCV 2025\] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers](repa-e_unlocking_vae_for_end-to-end_tuning_of_latent_diffusion_transformers.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
 
 </div>

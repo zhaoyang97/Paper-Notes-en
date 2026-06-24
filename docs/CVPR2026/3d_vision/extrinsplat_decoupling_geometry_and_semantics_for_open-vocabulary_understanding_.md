@@ -4,13 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][3D Gaussian Splatting] Ours proposes the extrinsic paradigm, which completely decouples semantics from 3DGS geometry. By constructing a lightweight semantic index layer through multi-granularity object grouping and VLM text hypotheses, ours achieves training-free, low-storage, and ambiguity-aware open-vocabulary 3D scene understanding.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - VLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Open-Vocabulary Understanding"
+  - "Semantic Decoupling"
+  - "VLM"
+  - "Text Hypotheses"
 date: 2026-05-08
-content_hash: d953be128459d2cf
+content_hash: 7756f90f8c90a014
 ---
+
 # ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ The final segmentation is the union of Gaussian points from all matching groups:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
+- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
 - [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](ovi-map_open-vocabulary_instance-semantic_mapping.md)
+- [\[CVPR 2026\] OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding](openvoxel_training-free_grouping_and_captioning_voxels_for_open-vocabulary_3d_sc.md)
 
 </div>
 

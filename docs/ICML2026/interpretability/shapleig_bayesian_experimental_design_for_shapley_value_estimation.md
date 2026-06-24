@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation
 description: >-
-  [ICML 2026][Interpretability][EIG] For expensive games where evaluation budgets are extremely limited (e.g., requiring model retraining), this work utilizes a Gaussian Process (GP) with a Hamming kernel as a surrogate for the value function. It adaptively selects the next coalition based on the "Expected Information Gain (EIG) for the Shapley values" an
+  [ICML 2026][Interpretability][Shapley Value] For expensive games where evaluation budgets are extremely limited (e.g., requiring model retraining), this work utilizes a Gaussian Process (GP) with a Hamming kernel as a surrogate for the value function. It adaptively selects the next coalition based on the "Expected Information Gain (EIG) for the Shapley values" and reduces the EIG computation complexity from $O(4^p t)$ to $O(p^4 + t^3)$.
 tags:
-  - ICML 2026
-  - Interpretability
-  - EIG
+  - "ICML 2026"
+  - "Interpretability"
+  - "Shapley Value"
+  - "Bayesian Experimental Design"
+  - "EIG"
+  - "Gaussian Process"
+  - "Hamming Kernel"
 date: 2026-05-08
-content_hash: 1ed7bd1870ad990d
+content_hash: caa5590695104ef5
 ---
+
 # ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation
 
 **Conference**: ICML 2026  
@@ -131,10 +136,10 @@ The results show that ShaplEIG is strictly dominant across almost all budgets an
 ## Related Papers
 
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](../../ICLR2026/interpretability/seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
-- [\[ICML 2026\] Verified SHAP: 神经网络精确 Shapley 值的可证明界](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks](verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
+- [\[ICML 2026\] Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects](query_lens_interpreting_sparse_key-value_features_with_indirect_effects.md)
 - [\[ICML 2026\] Neural Collapse by Design: Learning Class Prototypes on the Hypersphere](neural_collapse_by_design_learning_class_prototypes_on_the_hypersphere.md)
-- [\[ICML 2026\] Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models](dual_mechanisms_of_value_expression_intrinsic_vs_prompted_values_in_large_langua.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology
 description: >-
-  [NeurIPS 2025][Medical Imaging][Pathology Image Synthesis] This paper proposes HeteroTissue-Diffuse (HTD), a dual-conditioned Latent Diffusion Model that generates heterogeneous pathology images by simultaneously conditi…
+  [NeurIPS 2025][Medical Imaging][Pathology Image Synthesis] This paper proposes HeteroTissue-Diffuse (HTD), a dual-conditioned Latent Diffusion Model that generates heterogeneous pathology images by simultaneously conditioning on semantic segmentation maps and real tissue crops (visual crops). On Camelyon16, the method reduces Fréchet Distance from 430 to 72 (a 6× improvement). DeepLabv3+ segmentation IoU trained on synthetic data falls within 1–2% of models trained on real da…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Heterogeneous Tissue"
   - "Self-Supervised Clustering"
 date: 2026-05-08
-content_hash: e0a1e5dc2bb9b799
+content_hash: a549f62027cf28c3
 ---
 
 # Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology
@@ -143,11 +143,11 @@ The standard LDM noise prediction loss is used: $\mathcal{L} = \mathbb{E}\|\epsi
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics](posterior_sampling_by_combining_diffusion_models_with_annealed_langevin_dynamics.md)
 - [\[NeurIPS 2025\] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology](starc-9_a_large-scale_dataset_for_multi-class_tissue_classification_for_crc_hist.md)
-- [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
+- [\[NeurIPS 2025\] Posterior Sampling by Combining Diffusion Models with Annealed Langevin Dynamics](posterior_sampling_by_combining_diffusion_models_with_annealed_langevin_dynamics.md)
+- [\[CVPR 2025\] SeaLion: Semantic Part-Aware Latent Point Diffusion Models for 3D Generation](../../CVPR2025/medical_imaging/sealion_semantic_part-aware_latent_point_diffusion_models_for_3d_generation.md)
 - [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
-- [\[NeurIPS 2025\] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging](ewc-guided_diffusion_replay_for_exemplar-free_continual_learning_in_medical_imag.md)
+- [\[CVPR 2025\] Latent Drifting in Diffusion Models for Counterfactual Medical Image Synthesis](../../CVPR2025/medical_imaging/latent_drifting_in_diffusion_models_for_counterfactual_medical_image_synthesis.md)
 
 </div>
 

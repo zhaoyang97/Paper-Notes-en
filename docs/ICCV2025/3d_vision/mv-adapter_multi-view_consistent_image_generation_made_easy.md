@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MV-Adapter: Multi-view Consistent Image Generation Made Easy
 description: >-
-  [ICCV 2025][3D Vision][Multi-view Generation] This paper proposes MV-Adapter, the first adapter-based framework for multi-view image generation. By duplicating self-attention layers and adopting a parallel attention arch…
+  [ICCV 2025][3D Vision][Multi-view Generation] This paper proposes MV-Adapter, the first adapter-based framework for multi-view image generation. By duplicating self-attention layers and adopting a parallel attention architecture, it enables plug-and-play multi-view generation on SDXL at 768 resolution, with compatibility across diverse T2I-derived models.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Generation"
   - "Texture Generation"
 date: 2026-05-08
-content_hash: 489d36ebca98f85e
+content_hash: 0b8808ca7930d4b5
 ---
 
 # MV-Adapter: Multi-view Consistent Image Generation Made Easy

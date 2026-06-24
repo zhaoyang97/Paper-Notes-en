@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth
 description: >-
-  [AAAI 2026][LLM Safety][LLM safety evaluation] This paper introduces SproutBench, an evaluation benchmark comprising 1,283 developmentally-grounded adversarial prompts…
+  [AAAI 2026][LLM Safety][LLM safety evaluation] This paper introduces SproutBench, an evaluation benchmark comprising 1,283 developmentally-grounded adversarial prompts, designed to systematically assess the safety of 47 LLMs in contexts involving children and adolescents (ages 0–6, 7–12, and 13–18). Key findings reveal that safety and risk prevention are strongly correlated ($\rho = 0.86$), while a significant trade-off exists between interactivity and age-appropriateness ($\…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "age-stratified benchmark"
   - "youth protection"
 date: 2026-05-08
-content_hash: be4d16c80a9a6735
+content_hash: 416a6e082d3e46a0
 ---
 
 # SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth
@@ -213,11 +213,11 @@ Chi-square test: $\chi^2 = 14.62, p < 0.01$, indicating that small models are si
 
 ## Related Papers
 
-- [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](../../ICLR2026/llm_safety/measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
-- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[ICLR 2026\] ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning](../../ICLR2026/llm_safety/armor_aligning_secure_and_safe_large_language_models_via_meticulous_reasoning.md)
 - [\[AAAI 2026\] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans](principles2plan_llm-guided_system_for_operationalising_ethical_principles_into_p.md)
+- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](../../ICLR2026/llm_safety/measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
 - [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
-- [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
 
 </div>
 

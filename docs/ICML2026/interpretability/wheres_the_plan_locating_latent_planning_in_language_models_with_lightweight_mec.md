@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Where's the Plan? Locating Latent Planning in Language Models with Lightweight Mechanistic Interventions
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper employs "rhyming couplet completion" as a clean test for look-ahead constraints. Using only lightweight tools—linear probes and activation patching—the study investigates "planning site formation" across more than ten scales in three model families: Qwen3, Gemma-3, and Llama-3. Probing reveals that informati
+  [ICML 2026][Interpretability][Latent Planning] This paper employs "rhyming couplet completion" as a clean test for look-ahead constraints. Using only lightweight tools—linear probes and activation patching—the study investigates "planning site formation" across more than ten scales in three model families: Qwen3, Gemma-3, and Llama-3. Probing reveals that information regarding future rhymes is linearly decodable at the newline character and strengthens with model scale. howev…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Latent Planning"
+  - "Activation Patching"
+  - "Linear Probes"
+  - "Path Patching"
+  - "Attention Head Localization"
 date: 2026-05-08
-content_hash: abe8ae521069ff38
+content_hash: 373fd8124df6dce9
 ---
+
 # Where's the Plan? Locating Latent Planning in Language Models with Lightweight Mechanistic Interventions
 
 **Conference**: ICML 2026  
@@ -131,11 +137,11 @@ Gemma-3-27B Attention Head Localization (Full Residual Reference = 63%):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Internal Planning in Language Models: Characterizing Horizon and Branch Awareness](../../ICLR2026/interpretability/internal_planning_in_language_models_characterizing_horizon_and_branch_awareness.md)
-- [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](../../ACL2026/interpretability/preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
-- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](../../AAAI2026/interpretability/sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
-- [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
+- [\[ICLR 2026\] Latent Planning Emerges with Scale](../../ICLR2026/interpretability/latent_planning_emerges_with_scale.md)
+- [\[ICLR 2026\] Path Channels and Plan Extension Kernels: A Mechanistic Description of Planning in a Sokoban RNN](../../ICLR2026/interpretability/path_channels_and_plan_extension_kernels_a_mechanistic_description_of_planning_i.md)
+- [\[ICLR 2026\] Emotions Where Art Thou: Understanding and Characterizing the Emotional Latent Space of Large Language Models](../../ICLR2026/interpretability/emotions_where_art_thou_understanding_and_characterizing_the_emotional_latent_sp.md)
+- [\[ICML 2026\] Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function](where_computation_lives_inside_tabpfn_causal_localisation_of_attention_head_func.md)
+- [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](../../ICLR2026/interpretability/latent_concept_disentanglement_in_transformer-based_language_models.md)
 
 </div>
 

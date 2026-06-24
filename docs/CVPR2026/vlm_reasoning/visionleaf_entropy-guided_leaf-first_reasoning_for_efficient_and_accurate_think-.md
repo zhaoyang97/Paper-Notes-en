@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image
 description: >-
-  [CVPR 2026][Multimodal VLM][think-with-image] VisionLeaf treats the multi-turn tool calling in think-with-image as a reasoning tree. Instead of a single-chain rollout from the root as in standard GRPO, it performs "leaf-first" splitting at nodes with the highest entropy. This approach improves Qwen2.5-VL-7B performance on VStar and HR-Bench by approximately 4.2% w
+  [CVPR 2026][VLM Reasoning][think-with-image] VisionLeaf treats the multi-turn tool calling in think-with-image as a reasoning tree. Instead of a single-chain rollout from the root as in standard GRPO, it performs "leaf-first" splitting at nodes with the highest entropy. This approach improves Qwen2.5-VL-7B performance on VStar and HR-Bench by approximately 4.2% while nearly halving the number of tool calls, without modifying the model or training data.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - think-with-image
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "think-with-image"
+  - "GRPO"
+  - "entropy-guided"
+  - "tree sampling"
+  - "tool calling"
 date: 2026-05-08
-content_hash: 8dff07e1d5277814
+content_hash: 06215923c8e3e242
 ---
+
 # VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image
 
 **Conference**: CVPR 2026  
@@ -135,10 +139,10 @@ Ablation of the node selection strategy (Table 2, scores across benchmarks):
 ## Related Papers
 
 - [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
-- [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
+- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
 - [\[CVPR 2026\] From Exploration to Exploitation: A Two-Stage Entropy RLVR Approach for Noise-Tolerant MLLM Training](from_exploration_to_exploitation_a_two-stage_entropy_rlvr_approach_for_noise-tol.md)
 - [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
 
 </div>
 

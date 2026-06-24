@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] ATLAS formalizes "real-world travel planning with search" as a dynamic Constraint Satisfaction Problem (CSP). It utilizes five specialized LLM agents (Search, Constraint Manager, Planner, Checker, and Search Advisor) to cooperatively complete constraints, iteratively correct errors, and guide search in the event of a d
+  [ICLR2026][Multi-Agent][Constraint Satisfaction] ATLAS formalizes "real-world travel planning with search" as a dynamic Constraint Satisfaction Problem (CSP). It utilizes five specialized LLM agents (Search, Constraint Manager, Planner, Checker, and Search Advisor) to cooperatively complete constraints, iteratively correct errors, and guide search in the event of a deadlock. This approach increases the final pass rate of TravelPlanner from 23.3% to 44.4% and achieves an 84% p…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Constraint Satisfaction"
+  - "Travel Planning"
+  - "Interleaved Search"
+  - "Multi-round Interaction"
 date: 2026-05-08
-content_hash: 26913fd9a50ddd2b
+content_hash: cd4b7376b5d6aacc
 ---
+
 # ATLAS: Constraints-Aware Multi-Agent Collaboration for Real-World Travel Planning
 
 **Conference**: ICLR2026  
@@ -132,14 +137,17 @@ Ablation conducted on the validation set using Gemini-2.5-Pro (Figure 3):
 
 <div class="related-papers" markdown="1">
 
-- **TravelPlanner**: A Benchmark of Real-World Planning with Multi-Constraint Satisfaction, arXiv 2024
-- **PMC**: Plan-and-Solve with Multi-Agent Collaboration, arXiv 2024
-- **Reflexion**: Language Agents with Iterative Design Feedback, NeurIPS 2023
+## Related Papers
+
+- [\[ICML 2025\] Is Your LLM-Based Multi-Agent a Reliable Real-World Planner? Exploring Fraud Detection in Travel Planning](../../ICML2025/multi_agent/is_your_llm-based_multi-agent_a_reliable_real-world_planner_exploring_fraud_dete.md)
+- [\[ACL 2026\] Towards Robust Real-World Spreadsheet Understanding with Multi-Agent Multi-Format Collaboration](../../ACL2026/multi_agent/towards_robust_real-world_spreadsheet_understanding_with_multi-agent_multi-forma.md)
+- [\[ICLR 2026\] UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking](uis-digger_towards_comprehensive_research_agent_systems_for_real-world_unindexed.md)
+- [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters](strategic_planning_and_rationalizing_on_trees_make_llms_better_debaters.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2025\] Is Your LLM-Based Multi-Agent a Reliable Real-World Planner? Exploring Fraud Detection in Travel Planning](../../ICML2025/multi_agent/is_your_llm-based_multi-agent_a_reliable_real-world_planner_exploring_fraud_dete.md)

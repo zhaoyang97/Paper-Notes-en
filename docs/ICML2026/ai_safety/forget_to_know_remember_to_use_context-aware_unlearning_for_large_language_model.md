@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models
 description: >-
-  [ICML 2026][AI Safety][LLM unlearning] This paper points out that existing LLM unlearning methods, while "erasing knowledge from parameters," also destroy the "contextual utility"—the ability of the model to correctly utilize that knowledge when it is re-provided in the prompt. The authors propose adding a KL regularization term to existing unlearning losse
+  [ICML 2026][AI Safety][LLM unlearning] This paper points out that existing LLM unlearning methods, while "erasing knowledge from parameters," also destroy the "contextual utility"—the ability of the model to correctly utilize that knowledge when it is re-provided in the prompt. The authors propose adding a KL regularization term to existing unlearning losses—aligning the distribution of the unlearned model on "question + context" inputs with the original model—effectively res…
 tags:
-  - ICML 2026
-  - AI Safety
-  - LLM unlearning
-  - contextual utility
-  - TOFU
+  - "ICML 2026"
+  - "AI Safety"
+  - "LLM unlearning"
+  - "contextual utility"
+  - "KL regularization"
+  - "TOFU"
+  - "RAG-friendly unlearning"
 date: 2026-05-08
-content_hash: 2f7148495e32c422
+content_hash: 4201438566cbec07
 ---
+
 # Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models
 
 **Conference**: ICML 2026  
@@ -129,9 +132,9 @@ The most dramatic result is RMU: while vanilla almost completely fails Contextua
 
 - [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
 - [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
+- [\[ICLR 2026\] Secure Outlier-Aware Large Language Model Inference](../../ICLR2026/ai_safety/secure_outlier-aware_large_language_model_inference.md)
 - [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
-- [\[ICML 2026\] The Unlearnability Phenomenon in RLVR for Language Models](the_unlearnability_phenomenon_in_rlvr_for_language_models.md)
-- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
+- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](../../ICLR2026/ai_safety/machine_unlearning_under_retainforget_entanglement.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detection of Unknown Unknowns in Autonomous Systems
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Addressing "unknown unknowns" (U2) scenarios that are only exposed after the deployment of autonomous systems (e.g., UAVs, autonomous driving, automated drug delivery), this paper notes that such risks **do not cause marginal distribution shifts**. Consequently, existing multivariate time series anomaly detection (MTAD
+  [ICLR2026][Time Series][Unknown Unknowns (U2)] Addressing "unknown unknowns" (U2) scenarios that are only exposed after the deployment of autonomous systems (e.g., UAVs, autonomous driving, automated drug delivery), this paper notes that such risks **do not cause marginal distribution shifts**. Consequently, existing multivariate time series anomaly detection (MTAD) methods relying on "distribution shift" collectively fail. The authors propose SPIE-AD…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Unknown Unknowns (U2)"
+  - "Zero-shot Anomaly Detection"
+  - "Sparse Dynamics Modeling"
+  - "Conformal Inference"
+  - "Autonomous Systems"
 date: 2026-05-08
-content_hash: 3fdd5c94b9e85dd9
+content_hash: 746bd1ac8d93a475
 ---
+
 # Detection of Unknown Unknowns in Autonomous Systems
 
 **Conference**: ICLR2026  
@@ -141,11 +147,11 @@ Key Comparison: Nearly all baselines see precision/recall drop to near 0 after *
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems](a_spectral-grassmann_wasserstein_metric_for_operator_representations_of_dynamica.md)
 - [\[ICLR 2026\] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method](learning_mixtures_of_linear_dynamical_systems_via_hybrid_tensor-em_method.md)
+- [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
 - [\[ICML 2026\] Embedding Hybrid Systems into Continuous Latent Vector Fields](../../ICML2026/time_series/embedding_hybrid_systems_into_continuous_latent_vector_fields.md)
 - [\[ICLR 2026\] Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective](enabling_arbitrary_inference_in_spatio-temporal_dynamic_systems_a_physics-inspir.md)
-- [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
-- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
 
 </div>
 

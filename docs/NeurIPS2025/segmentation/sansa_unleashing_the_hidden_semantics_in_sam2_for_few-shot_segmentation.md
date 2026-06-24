@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Few-Shot Segmentation] SANSA reveals that SAM2, despite being pre-trained in a class-agnostic manner, implicitly encodes rich semantic structure in its features. By inserting lightweight Adap…
+  [NeurIPS 2025 Spotlight][Segmentation][Few-Shot Segmentation] SANSA reveals that SAM2, despite being pre-trained in a class-agnostic manner, implicitly encodes rich semantic structure in its features. By inserting lightweight AdaptFormer adapters into the last two layers of a frozen SAM2 Image Encoder, the method redirects the Memory Attention mechanism from visual-similarity matching to semantic-similarity matching. This unified architecture achieves state-of-the-art perform…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Segmentation"
   - "Few-Shot Segmentation"
   - "SAM2"
@@ -12,7 +12,7 @@ tags:
   - "feature adaptation"
   - "Memory Attention"
 date: 2026-05-08
-content_hash: 207300226deb7251
+content_hash: 54b703eed255e113
 ---
 
 # SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation
@@ -124,10 +124,10 @@ SAM2's streaming pipeline processes the annotated reference frames sequentially 
 ## Related Papers
 
 - [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](../../ICCV2025/segmentation/object-level_correlation_for_few-shot_segmentation.md)
+- [\[ECCV 2024\] Eliminating Feature Ambiguity for Few-Shot Segmentation](../../ECCV2024/segmentation/eliminating_feature_ambiguity_for_few-shot_segmentation.md)
+- [\[CVPR 2025\] Dual-Agent Optimization framework for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/dual-agent_optimization_framework_for_cross-domain_few-shot_segmentation.md)
 - [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](../../ICCV2025/segmentation/move_motion-guided_few-shot_video_object_segmentation.md)
-- [\[NeurIPS 2025\] Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2](vanish_into_thin_air_cross-prompt_universal_adversarial_attacks_for_sam2.md)
-- [\[NeurIPS 2025\] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models](mechanistic_interpretability_of_rnns_emulating_hidden_markov_models.md)
-- [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](../../ICCV2025/segmentation/dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
+- [\[CVPR 2025\] The Devil is in Low-Level Features for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/the_devil_is_in_low-level_features_for_cross-domain_few-shot_segmentation.md)
 
 </div>
 

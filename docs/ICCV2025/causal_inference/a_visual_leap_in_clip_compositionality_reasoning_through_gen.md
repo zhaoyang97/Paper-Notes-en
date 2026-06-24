@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets
 description: >-
-  [ICCV 2025][Causal Inference][CLIP] This paper proposes a counterfactual image-text pair generation method based on block-based diffusion…
+  [ICCV 2025][Causal Inference][CLIP] This paper proposes a counterfactual image-text pair generation method based on block-based diffusion, treating image entities as "puzzle pieces" for independent generation and assembly. Combined with a two-level intra-set/inter-set loss function for CLIP fine-tuning (LoRA), the method surpasses the previous state of the art—which uses 3M manually annotated samples—using only 10K–300K synthetic samples on multiple compositional reasoning be…
 tags:
   - "ICCV 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "block-based diffusion"
   - "contrastive learning loss"
 date: 2026-05-08
-content_hash: ec02299e1ddf7257
+content_hash: 4198c75c6e6341cf
 ---
 
 # A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets
@@ -320,11 +320,11 @@ Core distinctions: (1) **Visual-side counterfactuals**—NegCLIP/SVLC/DAC primar
 
 ## Related Papers
 
-- [\[ICLR 2026\] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study](../../ICLR2026/causal_inference/on_the_eligibility_of_llms_for_counterfactual_reasoning_a_decompositional_study.md)
-- [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](../../NeurIPS2025/causal_inference/counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
+- [\[ICML 2025\] Classifier Reconstruction Through Counterfactual-Aware Wasserstein Prototypes](../../ICML2025/causal_inference/classifier_reconstruction_through_counterfactual-aware_wasserstein_prototypes.md)
+- [\[ACL 2025\] CoA-Reasoning: Explorations on Counterfactual Analysis in Physical Reasoning of LVLMs](../../ACL2025/causal_inference/coa-reasoning_explorations_on_counterfactual_analysis_in_physical_reasoning_of_l.md)
+- [\[ACL 2025\] FitCF: A Framework for Automatic Feature Importance-guided Counterfactual Example Generation](../../ACL2025/causal_inference/fitcf_a_framework_for_automatic_feature_importance-guided_counterfactual_example.md)
 - [\[CVPR 2026\] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations](../../CVPR2026/causal_inference/maskdime_adaptive_masked_diffusion_for_precise_and_efficient_visual_counterfactu.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations](../../ICLR2026/causal_inference/rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_perturbations.md)
-- [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](../../ACL2026/causal_inference/evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
+- [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](../../NeurIPS2025/causal_inference/counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
 
 </div>
 

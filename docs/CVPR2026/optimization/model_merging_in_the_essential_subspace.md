@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Model Merging in the Essential Subspace
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] The ESM framework is proposed to construct an "essential subspace" by performing PCA on activation offsets caused by parameter updates (rather than directly applying SVD to parameters). It utilizes three-level polarization scaling to enhance key parameters and suppress noise, achieving a 3.2% absolute accuracy improvem
+  [CVPR 2026][Optimization][Model Merging] The ESM framework is proposed to construct an "essential subspace" by performing PCA on activation offsets caused by parameter updates (rather than directly applying SVD to parameters). It utilizes three-level polarization scaling to enhance key parameters and suppress noise, achieving a 3.2% absolute accuracy improvement over Iso-CTS in a 20-task merging scenario with ViT-B/32.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Model Merging"
+  - "Principal Component Analysis"
+  - "Essential Subspace"
+  - "Polarization Scaling"
+  - "Low-rank Decomposition"
 date: 2026-05-08
-content_hash: ec917d3daa0b38e0
+content_hash: fa11eff3d1bceaf4
 ---
+
 # Model Merging in the Essential Subspace
 
 **Conference**: CVPR 2026  
@@ -143,9 +149,9 @@ ESM involves no training and requires only 32 unlabeled proxy samples for a sing
 
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
-- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](dc-merge_improving_model_merging_with_directional_consistency.md)
-- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](label-free_cross-task_lora_merging_with_null-space_compression.md)
+- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
+- [\[ICLR 2026\] How does the optimizer implicitly bias the model merging loss landscape?](../../ICLR2026/optimization/how_does_the_optimizer_implicitly_bias_the_model_merging_loss_landscape.md)
 
 </div>
 

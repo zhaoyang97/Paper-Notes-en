@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Stackelberg games] This paper proposes AC-SMFG, the first single-loop Actor-Critic algorithm with non-asymptotic convergence guarantees for solving Stackelberg Mean Field Games (SMF…
+  [NeurIPS 2025][Reinforcement Learning][Stackelberg games] This paper proposes AC-SMFG, the first single-loop Actor-Critic algorithm with non-asymptotic convergence guarantees for solving Stackelberg Mean Field Games (SMFGs), achieving a convergence rate of $\widetilde{\mathcal{O}}(k^{-1/2})$.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "non-asymptotic convergence"
   - "bilevel optimization"
 date: 2026-05-08
-content_hash: 08a7d21cfabc1301
+content_hash: 58829b5dfc33b4cf
 ---
 
 # Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis
@@ -135,8 +135,8 @@ The theoretical contributions are rigorous, providing the first non-asymptotic g
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
 - [\[NeurIPS 2025\] Non-convex Entropic Mean-Field Optimization via Best Response Flow](non-convex_entropic_mean-field_optimization_via_best_response_flow.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
+- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

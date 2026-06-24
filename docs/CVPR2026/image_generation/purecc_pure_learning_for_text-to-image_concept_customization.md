@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PureCC: Pure Learning for Text-to-Image Concept Customization
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The PureCC method is proposed to achieve high-fidelity concept customization while minimizing the impact on the original model's behavior and capacity. This is accomplished by decoupling the learning objective into "target concept implicit guidance" and "original condition prediction," utilizing a dual-branch training
+  [CVPR 2026][Image Generation][Concept Customization] The PureCC method is proposed to achieve high-fidelity concept customization while minimizing the impact on the original model's behavior and capacity. This is accomplished by decoupling the learning objective into "target concept implicit guidance" and "original condition prediction," utilizing a dual-branch training pipeline (frozen representation extractor + trainable flow model) and an adaptive guidance scaling factor $…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Customization"
+  - "Diffusion Model Fine-tuning"
+  - "Implicit Guidance"
+  - "Model Preservation"
+  - "Adaptive Scaling"
 date: 2026-05-08
-content_hash: 04140c07c244b345
+content_hash: d0127794ebef920e
 ---
+
 # PureCC: Pure Learning for Text-to-Image Concept Customization
 
 **Conference**: CVPR 2026  
@@ -150,7 +156,7 @@ Base model: SD 3.5-M, LoRA rank=4, learning rate 1e-4. Training data includes 14
 - [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] PositionIC: Unified Position and Identity Consistency for Image Customization](positionic_unified_position_and_identity_consistency_for_image_customization.md)
-- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
+- [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
 
 </div>
 

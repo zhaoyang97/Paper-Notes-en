@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Memorizing Long-tail Data Can Help Generalization Through Composition
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proves in an overparameterized linear model that memorizing long-tail features appearing only once, combined with the model's inherent "compositional" ability, enables correct predictions on novel combinations of long-tail features never seen during training. This intuition is validated on modified MNIST/Omn
+  [ICLR 2026][Learning Theory][Memorization] This paper proves in an overparameterized linear model that memorizing long-tail features appearing only once, combined with the model's inherent "compositional" ability, enables correct predictions on novel combinations of long-tail features never seen during training. This intuition is validated on modified MNIST/Omniglot datasets, showing that compositional capability depends on network architecture.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Generalization Theory"
+  - "Memorization"
+  - "Long-tail Data"
+  - "Compositional Generalization"
+  - "Overparameterization"
+  - "Minimum-norm Solution"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: ffd3162fd838d1ae
+content_hash: 543b626f06751c0e
 ---
+
 # Memorizing Long-tail Data Can Help Generalization Through Composition
 
 **Conference**: ICLR 2026  
@@ -123,10 +131,10 @@ Task: Stack 3 MNIST digit images channel-wise ($3\times28\times28$) to predict t
 ## Related Papers
 
 - [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
+- [\[ICLR 2026\] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](escaping_model_collapse_via_synthetic_data_verification_near-term_improvements_a.md)
 - [\[ICLR 2026\] Covariate-Guided Clusterwise Linear Regression for Generalization to Unseen Data](covariate-guided_clusterwise_linear_regression_for_generalization_to_unseen_data.md)
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](escaping_model_collapse_via_synthetic_data_verification_near-term_improvements_a.md)
-- [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 
 </div>
 

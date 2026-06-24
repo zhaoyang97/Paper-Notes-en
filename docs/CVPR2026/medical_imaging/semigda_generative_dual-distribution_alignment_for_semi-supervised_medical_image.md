@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Stable Diffusion VAE] SemiGDA shifts semi-supervised medical image segmentation from a "pixel-wise discriminative" to a "generative" paradigm. By utilizing two structurally distinct encoders to model and align the latent space prior distributions of images and masks, and leveraging a frozen Stable Diffusion VAE decoder equipped with lightwe
+  [CVPR 2026][Medical Imaging][Semi-supervised medical segmentation] SemiGDA shifts semi-supervised medical image segmentation from a "pixel-wise discriminative" to a "generative" paradigm. By utilizing two structurally distinct encoders to model and align the latent space prior distributions of images and masks, and leveraging a frozen Stable Diffusion VAE decoder equipped with lightweight skip adapters to "generate" masks, the method outperforms 11 SOTA semi-supervised approa…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Stable Diffusion VAE
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Semi-supervised medical segmentation"
+  - "generative segmentation"
+  - "latent space distribution alignment"
+  - "Stable Diffusion VAE"
+  - "consistency learning"
 date: 2026-05-08
-content_hash: 9264a492c6214601
+content_hash: 7bd9b80f0e636b5a
 ---
+
 # SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -155,9 +160,18 @@ Dual unsupervised consistency ($\mathcal{L}_{unsup}^{p}$ and $\mathcal{L}_{unsup
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[CVPR 2026\] Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation](divide_conquer_and_aggregate_asymmetric_experts_for_class-imbalanced_semi-superv.md)
+- [\[CVPR 2025\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/semantic_class_distribution_learning_for_debiasing_semi-supervised_medical_image.md)
+- [\[CVPR 2026\] D$^2$-FOSA: Dual-Diffusion Guided EEG-to-Image Reconstruction with Frequency-Oriented Semantic Alignment](d2-fosa_dual-diffusion_guided_eeg-to-image_reconstruction_with_frequency-oriente.md)
+- [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
+- [\[CVPR 2026\] Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging](semi-supervised_echocardiography_video_segmentation_via_anchor_semantic_awarenes.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)

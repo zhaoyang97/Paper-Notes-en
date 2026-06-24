@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][DPO] To address the issue where the deterministic output of one-step Real-ISR prevents preference optimization, this paper first employs "controllable noise injection + unequal timesteps" to enable one-step models to generate diverse candidates. It then merges DPO's pixel-level constraints with GRPO's intra-group relative a
+  [CVPR 2026][Image Restoration][One-step diffusion SR] To address the issue where the deterministic output of one-step Real-ISR prevents preference optimization, this paper first employs "controllable noise injection + unequal timesteps" to enable one-step models to generate diverse candidates. It then merges DPO's pixel-level constraints with GRPO's intra-group relative advantage into GDPO, integrated with an attribute-aware reward function dynamically weighted by image smoot…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - DPO
-  - GRPO
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "One-step diffusion SR"
+  - "preference optimization"
+  - "DPO"
+  - "GRPO"
+  - "reward function"
 date: 2026-05-08
-content_hash: d2ab73b4f01383d6
+content_hash: b512c0263b883f89
 ---
+
 # GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -130,15 +134,16 @@ Policy Ablation (RealSR):
 - Value: ⭐⭐⭐⭐ (Improves one-step SR quality with zero inference overhead)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution](../../NeurIPS2025/image_restoration/dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res.md)
 - [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
-- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
+- [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 
 </div>
 

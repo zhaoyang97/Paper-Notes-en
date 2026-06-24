@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Gamba: Mamba-based Graph Convolutional Network with Dynamic Graph Topology Learning for Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Mamba] To address the issue where directly stacking GCN and Mamba causes Mamba to scan along physically non-adjacent joint sequences, Gamba uses a node classification module to rearrange joints into Mamba-friendly sequences based on motion categories. It then employs a unidirectional State Space Model (SSM) to simultaneously
+  [CVPR 2026][Video Understanding][Skeleton action recognition] To address the issue where directly stacking GCN and Mamba causes Mamba to scan along physically non-adjacent joint sequences, Gamba uses a node classification module to rearrange joints into Mamba-friendly sequences based on motion categories. It then employs a unidirectional State Space Model (SSM) to simultaneously model intra-class local and inter-class global relationships, paired with Mamba-TCN for temporal m…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Mamba
-  - State Space Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Skeleton action recognition"
+  - "Mamba"
+  - "Graph Convolutional Network"
+  - "Dynamic graph topology"
+  - "State Space Models"
 date: 2026-05-08
-content_hash: 102eec00d7b1e8c9
+content_hash: 1654b8503285cc6d
 ---
+
 # Gamba: Mamba-based Graph Convolutional Network with Dynamic Graph Topology Learning for Action Recognition
 
 **Conference**: CVPR 2026  
@@ -160,11 +164,11 @@ Tested on the joint modality of NTU60 X-View:
 
 ## Related Papers
 
-- [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
+- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](../../ICCV2025/video_understanding/adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
 - [\[CVPR 2026\] MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos](ms-temba_multi-scale_temporal_mamba_for_understanding_long_untrimmed_videos.md)
-- [\[CVPR 2026\] MPL: Match-guided Prototype Learning for Few-shot Action Recognition](mpl_match-guided_prototype_learning_for_few-shot_action_recognition.md)
-- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
-- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-based Human Action Recognition with Virtual Connections](../../ICCV2025/video_understanding/adaptive_hyper_graph_convolution_network_skeleton_action_recognition.md)
+- [\[CVPR 2026\] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)
+- [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
 
 </div>
 

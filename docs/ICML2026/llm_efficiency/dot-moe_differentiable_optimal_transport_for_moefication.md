@@ -1,18 +1,20 @@
 ---
 title: >-
-  [Paper Note] DOT-MoE: 用可微 optimal transport 把 dense LLM 转成 MoE
+  [Paper Note] DOT-MoE: Transforming Dense LLMs into MoE with Differentiable Optimal Transport
 description: >-
-  [ICML 2026][LLM Efficiency][MoEfication] DOT-MoE models the "allocation of neurons to experts when converting a dense FFN to an MoE" as a differentiable optimal transport problem. It employs Sinkhorn-Knopp iterations to solve entropic-regularized balanced transport combined with a Straight-Through Estimator, allowing joint end-to-end learning of neuron-to-exp
+  [ICML 2026][LLM Efficiency][MoEfication] DOT-MoE models the "allocation of neurons to experts when converting a dense FFN to an MoE" as a differentiable optimal transport problem. It employs Sinkhorn-Knopp iterations to solve entropic-regularized balanced transport combined with a Straight-Through Estimator, allowing joint end-to-end learning of neuron-to-expert assignment and the router. It retains 90% of dense performance under 50% active parameters on LLaMA-2/3 and Qwen2.5…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - MoEfication
-  - Sinkhorn-Knopp
-  - Straight-Through Estimator
-  - dense-to-MoE
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "MoEfication"
+  - "Neuron Allocation"
+  - "Sinkhorn-Knopp"
+  - "Straight-Through Estimator"
+  - "dense-to-MoE"
 date: 2026-05-08
-content_hash: 8b02a38c0edeca83
+content_hash: 5b310c12d7f0530f
 ---
+
 # DOT-MoE: Transforming Dense LLMs into MoE with Differentiable Optimal Transport
 
 **Conference**: ICML 2026  
@@ -154,15 +156,15 @@ Under 50% active parameters, DOT-MoE retains ~87% of dense performance on LLaMA-
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses LLM deployment pain points; robust across architectures and offers a cost-effective recipe for industry.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Variational Routing: 校准 MoE Transformer 的可扩展贝叶斯框架](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
-- [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
-- [\[ICML 2026\] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving](theoretically_optimal_attentionffn_ratios_in_disaggregated_llm_serving.md)
+- [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
+- [\[ICML 2026\] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)
+- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
+- [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ACL 2025\] DIVE into MoE: Diversity-Enhanced Reconstruction of Large Language Models from Dense into Mixture-of-Experts](../../ACL2025/llm_efficiency/dive_moe_reconstruction.md)
 
 </div>

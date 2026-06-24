@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AIComposer: Any Style and Content Image Composition via Feature Integration
 description: >-
-  [ICCV 2025][Image Generation][Cross-domain image composition] AIComposer proposes the first cross-domain image composition method that requires no text prompts. By fusing foreground and background CLIP features via an ML…
+  [ICCV 2025][Image Generation][Cross-domain image composition] AIComposer proposes the first cross-domain image composition method that requires no text prompts. By fusing foreground and background CLIP features via an MLP network, combined with backward inversion + forward denoising and a local cross-attention strategy, the method achieves natural stylization and seamless composition without training the diffusion model, improving LPIPS and CSD metrics by 30.5% and 18.1%…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "local cross-attention"
   - "diffusion model inversion"
 date: 2026-05-08
-content_hash: 69ae504882293fbf
+content_hash: 5fb0223ef4849328
 ---
 
 # AIComposer: Any Style and Content Image Composition via Feature Integration
@@ -140,8 +140,8 @@ LPIPS improves by 30.5%, CSD by 18.1%, and user preference substantially exceeds
 - [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
 - [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
-- [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
-- [\[ICML 2026\] Content-Style Identification via Differential Independence](../../ICML2026/image_generation/content-style_identification_via_differential_independence.md)
+- [\[ECCV 2024\] ZipLoRA: Any Subject in Any Style by Effectively Merging LoRAs](../../ECCV2024/image_generation/ziplora_any_subject_in_any_style_by_effectively_merging_loras.md)
+- [\[CVPR 2026\] SplitFlux: Learning to Decouple Content and Style from a Single Image](../../CVPR2026/image_generation/splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)
 
 </div>
 

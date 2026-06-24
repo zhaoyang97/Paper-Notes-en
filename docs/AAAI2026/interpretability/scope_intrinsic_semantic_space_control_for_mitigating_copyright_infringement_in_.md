@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs
 description: >-
-  [AAAI 2026][Interpretability][Copyright Protection] This paper reframes copyright infringement mitigation in LLMs as an intrinsic semantic space control problem. It leverages sparse autoencoders (SAEs) to map hidden stat…
+  [AAAI 2026][Interpretability][Copyright Protection] This paper reframes copyright infringement mitigation in LLMs as an intrinsic semantic space control problem. It leverages sparse autoencoders (SAEs) to map hidden states into a high-dimensional sparse space, identifies copyright-sensitive subspaces, and clamps their activations to zero during decoding—effectively reducing verbatim reproduction of copyrighted content without external filters or parameter updates…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Feature Clamping"
   - "Inference-Time Intervention"
 date: 2026-05-08
-content_hash: 8ea69dd153c7eb6d
+content_hash: 58dea36672a4c24a
 ---
 
 # SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs
@@ -141,11 +141,11 @@ Effect of subspace dimensionality $n$ (BookSum, Llama-3):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs](../../ICLR2026/interpretability/watch_the_weights_unsupervised_monitoring_and_control_of_fine-tuned_llms.md)
 - [\[AAAI 2026\] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval](adaptive_evidential_learning_for_temporal-semantic_robustnes.md)
+- [\[ICLR 2026\] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space](../../ICLR2026/interpretability/paradigm_shift_of_gnn_explainer_from_label_space_to_prototypical_representation_.md)
 - [\[NeurIPS 2025\] Out of Control -- Why Alignment Needs Formal Control Theory (and an Alignment Control Stack)](../../NeurIPS2025/interpretability/out_of_control_--_why_alignment_needs_formal_control_theory_and_an_alignment_con.md)
 - [\[ICLR 2026\] Conjuring Semantic Similarity](../../ICLR2026/interpretability/conjuring_semantic_similarity.md)
-- [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](../../ICLR2026/interpretability/the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
-- [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](../../ICLR2026/interpretability/decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
 
 </div>
 

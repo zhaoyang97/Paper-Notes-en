@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Video-KTR: Reinforcing Video Reasoning via Key Token Attribution
 description: >-
-  [ICLR 2026][Video Understanding][Reinforcement Learning] Ours proposes Video-KTR, a modality-aware policy shaping framework that identifies three types of key tokens—visual-aware, temporal-sensitive, and high-entropy—through counterfactual analysis. By performing selective reinforcement learning updates only on these tokens, the method achieves SOTA performance on multiple v
+  [ICLR 2026][Video Understanding][Video Reasoning] Ours proposes Video-KTR, a modality-aware policy shaping framework that identifies three types of key tokens—visual-aware, temporal-sensitive, and high-entropy—through counterfactual analysis. By performing selective reinforcement learning updates only on these tokens, the method achieves SOTA performance on multiple video reasoning benchmarks (42.7% on Video-Holmes, surpassing GPT-4o).
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video Reasoning"
+  - "Reinforcement Learning"
+  - "Token Attribution"
+  - "Multimodal LLM"
+  - "GRPO"
 date: 2026-05-08
-content_hash: e1863bd0105ef997
+content_hash: c6fb0ed969b83724
 ---
+
 # Video-KTR: Reinforcing Video Reasoning via Key Token Attribution
 
 **Conference**: ICLR 2026  
@@ -130,7 +134,7 @@ Excellent method design, solid experimental analysis, and significant performanc
 - [\[ICLR 2026\] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering](air_enabling_adaptive_iterative_and_reasoning-based_frame_selection_for_video_qu.md)
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
-- [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](../../NeurIPS2025/video_understanding/when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
+- [\[AAAI 2026\] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios](../../AAAI2026/video_understanding/r-avst_empowering_video-llms_with_fine-grained_spatio-temporal_reasoning_in_comp.md)
 
 </div>
 

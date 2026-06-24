@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning
 description: >-
-  [ICML 2026][Code Intelligence][SFT] RankTuner proposes the Relative Rank Indicator $I_t$, which uses a single scalar signal comparing the "actual rank $R_t$ of the ground-truth token" against the "expected rank $\mathbb{E}[R_t]$ under the model distribution." By coupling probability $p_t$ (task alignment) and entropy $H_t$ (intrinsic uncertainty) into a
+  [ICML 2026][Code Intelligence][SFT] RankTuner proposes the Relative Rank Indicator $I_t$, which uses a single scalar signal comparing the "actual rank $R_t$ of the ground-truth token" against the "expected rank $\mathbb{E}[R_t]$ under the model distribution." By coupling probability $p_t$ (task alignment) and entropy $H_t$ (intrinsic uncertainty) into a token-level weight, it consistently outperforms pure probability/entropy reweighting baselines in Pass@1 for mathematical re…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - SFT
-  - token reweighting
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "SFT"
+  - "token reweighting"
+  - "probability-entropy calibration"
+  - "relative rank"
+  - "mathematical reasoning"
 date: 2026-05-08
-content_hash: 8a728f44837989ae
+content_hash: 3f5e7fb2b39719d3
 ---
+
 # Probability-Entropy Calibration: An Elastic Indicator for Adaptive Fine-tuning
 
 **Conference**: ICML 2026  
@@ -120,6 +124,7 @@ By injecting noise tokens into SFT data, it was found that RankTuner's proportio
 - Value: ⭐⭐⭐⭐ Plug-and-play for existing SFT pipelines with zero inference cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -127,8 +132,8 @@ By injecting noise tokens into SFT data, it was found that RankTuner's proportio
 - [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](entropy-informed_decoding_adaptive_information-driven_branching.md)
 - [\[AAAI 2026\] Unintended Misalignment from Agentic Fine-Tuning: Risks and Mitigation](../../AAAI2026/code_intelligence/unintended_misalignment_from_agentic_fine-tuning_risks_and_m.md)
 - [\[ACL 2025\] GiFT: Gibbs Fine-Tuning for Code Generation](../../ACL2025/code_intelligence/gift_gibbs_fine_tuning_code_gen.md)
-- [\[ICML 2026\] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench](he-snr_uncovering_latent_logic_via_entropy_for_guiding_mid-training_on_swe-bench.md)
 - [\[ICLR 2026\] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation](../../ICLR2026/code_intelligence/imse_intrinsic_mixture_of_spectral_experts_fine-tuning_for_test-time_adaptation.md)
+- [\[ICML 2026\] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench](he-snr_uncovering_latent_logic_via_entropy_for_guiding_mid-training_on_swe-bench.md)
 
 </div>
 

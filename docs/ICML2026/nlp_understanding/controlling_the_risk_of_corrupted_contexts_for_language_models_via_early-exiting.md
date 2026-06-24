@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Controlling the Risk of Corrupted Contexts for Language Models via Early-Exiting
 description: >-
-  [ICML 2026][NLP Understanding][Learn-then-Test] This paper formalizes the problem where "user-provided corrupted contexts degrade LLM performance" as a risk control task. By using zero-shot performance as a "safety baseline," combining dynamic early-exit (predicting at intermediate layers to avoid late-layer overthinking of harmful contexts) with a context-aware los
+  [ICML 2026][NLP Understanding][Corrupted Context] This paper formalizes the problem where "user-provided corrupted contexts degrade LLM performance" as a risk control task. By using zero-shot performance as a "safety baseline," combining dynamic early-exit (predicting at intermediate layers to avoid late-layer overthinking of harmful contexts) with a context-aware loss and an improved Learn-then-Test framework (preserving negative loss values via risk transformation rather th…
 tags:
-  - ICML 2026
-  - NLP Understanding
-  - Learn-then-Test
+  - "ICML 2026"
+  - "NLP Understanding"
+  - "Corrupted Context"
+  - "Early-Exiting"
+  - "Distribution-Free Risk Control"
+  - "Overthinking"
+  - "Learn-then-Test"
 date: 2026-05-08
-content_hash: 6680c80430a4d0c2
+content_hash: b7eb551fac15fb20
 ---
+
 # Controlling the Risk of Corrupted Contexts for Language Models via Early-Exiting
 
 **Conference**: ICML 2026  

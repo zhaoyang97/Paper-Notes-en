@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HEAPr: Hessian-based Efficient Atomic Expert Pruning in Output Space
 description: >-
-  [ICLR 2026][Model Compression][Mixture-of-Experts] HEAPr decomposes each MoE expert into irreducible "atomic experts" (one column of $W_{up}/W_{gate}$ + one row of $W_{down}$). It measures the importance of each atomic expert using second-order information from the Optimal Brain Surgeon (OBS). By simplifying from the "parameter space $\rightarrow$ output space," the He
+  [ICLR 2026][Model Compression][Mixture-of-Experts] HEAPr decomposes each MoE expert into irreducible "atomic experts" (one column of $W_{up}/W_{gate}$ + one row of $W_{down}$). It measures the importance of each atomic expert using second-order information from the Optimal Brain Surgeon (OBS). By simplifying from the "parameter space $\rightarrow$ output space," the Hessian storage complexity is reduced from $O(d^4)$ to $O(d^2)$. Global ranking and pruning of atomic experts a…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mixture-of-Experts
-  - Optimal Brain Surgeon
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Model Pruning"
+  - "Optimal Brain Surgeon"
+  - "Second-order Information"
+  - "Atomic Experts"
 date: 2026-05-08
-content_hash: 02b521ff07bd0095
+content_hash: 5046c3615592f8f5
 ---
+
 # HEAPr: Hessian-based Efficient Atomic Expert Pruning in Output Space
 
 **Conference**: ICLR 2026  

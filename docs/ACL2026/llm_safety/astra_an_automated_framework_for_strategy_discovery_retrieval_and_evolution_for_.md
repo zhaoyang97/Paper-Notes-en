@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] ASTRA treats every jailbreak attempt as a learning opportunity. By distilling strategies into a three-tier vector library ("Effective / Promising / Ineffective") based on continuous scores from 1-10, subsequent attacks reuse experience through similarity retrieval. It achieves an 80.6% Attack Success Rate (ASR) across
+  [ACL 2026][LLM Safety][Jailbreak Attacks] ASTRA treats every jailbreak attempt as a learning opportunity. By distilling strategies into a three-tier vector library ("Effective / Promising / Ineffective") based on continuous scores from 1-10, subsequent attacks reuse experience through similarity retrieval. It achieves an 80.6% Attack Success Rate (ASR) across 8 mainstream LLMs with an average of only 2.4 queries.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Jailbreak Attacks"
+  - "Strategy Bank"
+  - "Closed-loop Learning"
+  - "RAG Retrieval"
+  - "Black-box Red Teaming"
 date: 2026-05-08
-content_hash: c8a288539e1f8e1c
+content_hash: 5a8575ab7ae69bd0
 ---
+
 # ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs
 
 **Conference**: ACL 2026  
@@ -136,15 +142,15 @@ Average Queries (AQ, lower is better): PAIR 5.5 / TAP 6.3 / ReNeLLM 2.7 / **ASTR
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming](star-teaming_a_strategy-response_multiplex_network_approach_to_automated_llm_red.md)
-- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)
 - [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](../../CVPR2026/llm_safety/autodebias_automated_framework_for_debiasing_text-to-image_models.md)
-- [\[ACL 2026\] SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification](sere_structural_example_retrieval_for_enhancing_llms_in_event_causality_identifi.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](../../ICLR2026/llm_safety/plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
 - [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
+- [\[ACL 2026\] SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification](sere_structural_example_retrieval_for_enhancing_llms_in_event_causality_identifi.md)
 
 </div>
 

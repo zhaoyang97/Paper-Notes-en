@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Differential Syntactic and Semantic Encoding in LLMs
 description: >-
-  [ICML 2026][LLM (Other)][DeepSeek-V3] By averaging hidden representations of sentences sharing the same syntactic structure or the same meaning to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic/semantic information in LLMs like DeepSeek-V3 is encoded via **linear superposition**. Moreo
+  [ICML 2026][LLM (Other)][Syntactic-Semantic Decoupling] By averaging hidden representations of sentences sharing the same syntactic structure or the same meaning to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic/semantic information in LLMs like DeepSeek-V3 is encoded via **linear superposition**. Moreover, these two types of information exhibit clear separability in layer-wise distribution and orthogonal…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - DeepSeek-V3
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Syntactic-Semantic Decoupling"
+  - "Linear Encoding"
+  - "Centroid Ablation"
+  - "DeepSeek-V3"
+  - "Representation Geometry"
 date: 2026-05-08
-content_hash: a5916eea73561a54
+content_hash: e7bac69c824a1e28
 ---
+
 # Differential Syntactic and Semantic Encoding in LLMs
 
 **Conference**: ICML 2026  
@@ -140,9 +145,9 @@ This work is a **training-free** geometric analysis—no LLM fine-tuning or prob
 
 - [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
 - [\[ACL 2025\] A Systematic Study of Compositional Syntactic Transformer Language Models](../../ACL2025/llm_nlp/a_systematic_study_of_compositional_syntactic_transformer_language_models.md)
+- [\[ICLR 2026\] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities](../../ICLR2026/llm_nlp/differential_fine-tuning_large_language_models_towards_better_diverse_reasoning_.md)
 - [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](../../AAAI2026/llm_nlp/vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
 - [\[CVPR 2026\] Single-step Diffusion-based Video Coding with Semantic-Temporal Guidance](../../CVPR2026/llm_nlp/single-step_diffusion-based_video_coding_with_semantic-temporal_guidance.md)
-- [\[ACL 2025\] Quantifying Semantic Emergence in Language Models](../../ACL2025/llm_nlp/quantifying_semantic_emergence_in_language_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Efficient Guardrails for Compliance
 description: >-
-  [ICML 2026][LLM Agent][Web Agent] This paper constructs PolicyGuardBench, a 60k-scale dataset (5 domains, 733 standardized trajectories × 2195 atomic policies → 60,000 trajectory-policy pairs including cross-subdomain and prefix truncation settings). Based on Qwen3-4B-Instruct, the authors perform full-parameter SFT to create PolicyGuard-4B, a lightwei
+  [ICML 2026][LLM Agent][Policy Compliance] This paper constructs PolicyGuardBench, a 60k-scale dataset (5 domains, 733 standardized trajectories × 2195 atomic policies → 60,000 trajectory-policy pairs including cross-subdomain and prefix truncation settings). Based on Qwen3-4B-Instruct, the authors perform full-parameter SFT to create PolicyGuard-4B, a lightweight guardrail model. It achieves 90.14% accuracy and an 87.59% F1 score with a latency of 22.5 ms/sample…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Web Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Policy Compliance"
+  - "Trajectory Auditing"
+  - "Guardrail Model"
+  - "Web Agent"
+  - "Prefix Detection"
 date: 2026-05-08
-content_hash: 5d31f5543b87098c
+content_hash: 3e7cbcf014e3c681
 ---
+
 # Learning Efficient Guardrails for Compliance
 
 **Conference**: ICML 2026  
@@ -147,15 +152,14 @@ PolicyGuard-4B uses standard supervised instruction tuning: full-parameter SFT o
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
 - [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](../../ACL2026/llm_agent/webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
-- [\[ICML 2026\] AutoRPA: Efficient GUI Automation through LLM-Driven Code Synthesis from Interactions](autorpa_efficient_gui_automation_through_llm-driven_code_synthesis_from_interact.md)
-- [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
+- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](position_modular_memory_is_the_key_to_continual_learning_agents.md)
 
 </div>
 

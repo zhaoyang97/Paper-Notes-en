@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Chain-of-Thought] Ours proposes the CoT-PoT cross-modal ensembling method, which leverages the complementarity of two fundamentally different reasoning modalities—Chain-of-Thought (CoT) and Program-of-Thought (PoT)—to reduce the number of samples required for self-consistency by 9.3x, solving 78.6% of problems with only 2 samples.
+  [ACL 2026 Findings][Reasoning][Self-Consistency] Ours proposes the CoT-PoT cross-modal ensembling method, which leverages the complementarity of two fundamentally different reasoning modalities—Chain-of-Thought (CoT) and Program-of-Thought (PoT)—to reduce the number of samples required for self-consistency by 9.3x, solving 78.6% of problems with only 2 samples.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Self-Consistency"
+  - "Chain-of-Thought"
+  - "Program-of-Thought"
+  - "Cross-modal ensembling"
+  - "Bayesian early stopping"
 date: 2026-05-08
-content_hash: b6593975e25a99e2
+content_hash: 9682490e2266ce07
 ---
+
 # Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -135,9 +140,9 @@ A training-free method. Data-driven variants infer Bayesian parameters from 100 
 
 - [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
 - [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
+- [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](../../ICLR2026/llm_reasoning/the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
 - [\[ICML 2025\] Self-Consistency Preference Optimization](../../ICML2025/llm_reasoning/self-consistency_preference_optimization.md)
-- [\[ICML 2026\] Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](../../ICML2026/llm_reasoning/self-play_only_evolves_when_self-synthetic_pipeline_ensures_learnable_informatio.md)
-- [\[ACL 2026\] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning](revisiting_the_uniform_information_density_hypothesis_in_llm_reasoning.md)
+- [\[NeurIPS 2025\] A Theoretical Study on Bridging Internal Probability and Self-Consistency for LLM Reasoning](../../NeurIPS2025/llm_reasoning/a_theoretical_study_on_bridging_internal_probability_and_sel.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ART: Articulated Reconstruction Transformer
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ART reformulates "articulated object reconstruction" as a **part-level feed-forward prediction** problem. Using a set of learnable part slots, it decodes geometry, texture, and explicit motion parameters (axis/pivot/motion type) for each rigid part from sparse multi-view, multi-state RGB images in a single pass. This c
+  [CVPR 2026][3D Vision][Articulated Object Reconstruction] ART reformulates "articulated object reconstruction" as a **part-level feed-forward prediction** problem. Using a set of learnable part slots, it decodes geometry, texture, and explicit motion parameters (axis/pivot/motion type) for each rigid part from sparse multi-view, multi-state RGB images in a single pass. This category-agnostic approach eliminates per-object optimization and significantly outperforms both feed-f…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Object Reconstruction"
+  - "Feed-forward Transformer"
+  - "Part-level Prediction"
+  - "Kinematic Structure"
+  - "Simulation Assets"
 date: 2026-05-08
-content_hash: 04385891449ce381
+content_hash: ef1cb405a306cfb2
 ---
+
 # ART: Articulated Reconstruction Transformer
 
 **Conference**: CVPR 2026  
@@ -141,10 +147,10 @@ On the PartNet-Mobility hold-out set (>130 sequences), with "w/o pre-train" (mul
 ## Related Papers
 
 - [\[CVPR 2026\] Mirror Illusion Art](mirror_illusion_art.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] LitePT: Lighter Yet Stronger Point Transformer](litept_lighter_yet_stronger_point_transformer.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[CVPR 2026\] SPARK: Sim-ready Part-level Articulated Reconstruction with VLM Knowledge](spark_sim-ready_part-level_articulated_reconstruction_with_vlm_knowledge.md)
+- [\[CVPR 2026\] ArtPro: Self-Supervised Articulated Object Reconstruction with Adaptive Integration of Mobility Proposals](artpro_self-supervised_articulated_object_reconstruction_with_adaptive_integrati.md)
 - [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
+- [\[CVPR 2026\] Voxify3D: Pixel Art Meets Volumetric Rendering](voxify3d_pixel_art_meets_volumetric_rendering.md)
 
 </div>
 

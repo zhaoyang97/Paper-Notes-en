@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Does Mixing Help? Analyzing Query Embedding Interpolation in Multilingual Dense Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][mMARCO] This paper employs "embedding-level interpolation" as a controllable proxy to investigate the sensitivity of multilingual dense retrieval to mixed-language queries. By systematically varying the mixing ratio of two parallel queries on mMARCO, the study finds that the optimal mixing ratio outperforms the best monolingua
+  [ACL2026][Information Retrieval & RAG][Multilingual Dense Retrieval] This paper employs "embedding-level interpolation" as a controllable proxy to investigate the sensitivity of multilingual dense retrieval to mixed-language queries. By systematically varying the mixing ratio of two parallel queries on mMARCO, the study finds that the optimal mixing ratio outperforms the best monolingual query in 88/105 settings. This gain is highly structured: English plays the role of the "…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - mMARCO
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Multilingual Dense Retrieval"
+  - "Code-mixed Queries"
+  - "Embedding Interpolation"
+  - "mMARCO"
+  - "English Dominance"
 date: 2026-05-08
-content_hash: 0eb3457a973b6f6c
+content_hash: dd57141b99f378aa
 ---
+
 # When Does Mixing Help? Analyzing Query Embedding Interpolation in Multilingual Dense Retrieval
 
 **Conference**: ACL2026  
@@ -131,7 +136,7 @@ The optimal mixing ratio exceeds the best monolingual query in 88/105 (83.8%) se
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 - [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
 - [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](test-time_training_for_zero-resource_dense_retrieval_reranking.md)
-- [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAB: Transformer Attention Bottlenecks enable User Intervention and Debugging in Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][attention bottleneck] This paper proposes TAB (Transformer Attention Bottleneck), a single-head co-attention bottleneck layer inserted after standard MHSA. By removing the skip connection and…
+  [ICCV 2025][Multimodal VLM][attention bottleneck] This paper proposes TAB (Transformer Attention Bottleneck), a single-head co-attention bottleneck layer inserted after standard MHSA. By removing the skip connection and constraining attention values to $[0,1]$, TAB enables precise attention visualization, ground-truth-supervised training, and test-time user editing intervention in VLMs. On change captioning tasks, it establishes for the first time a causal relationship betwee…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "user intervention"
   - "debugging"
 date: 2026-05-08
-content_hash: 086717b4edf28c3a
+content_hash: 7024ef72fa1dc043
 ---
 
 # TAB: Transformer Attention Bottlenecks enable User Intervention and Debugging in Vision-Language Models
@@ -159,10 +159,10 @@ ZeroAttention converts all outputs to "no change" (change accuracy drops to 0%, 
 ## Related Papers
 
 - [\[ICCV 2025\] Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy](dita_scaling_diffusion_transformer_for_generalist_visionlang.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
-- [\[ICML 2026\] Uncovering Visual Counting Bottlenecks in Vision-Language Models](../../ICML2026/multimodal_vlm/unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](../../ICML2026/multimodal_vlm/unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
+- [\[ECCV 2024\] REVISION: Rendering Tools Enable Spatial Fidelity in Vision-Language Models](../../ECCV2024/multimodal_vlm/revision_rendering_tools_enable_spatial_fidelity_in_vision-language_models.md)
 - [\[ACL 2026\] Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention](../../ACL2026/multimodal_vlm/towards_visually_grounded_multimodal_summarization_via_cross-modal_transformer_a.md)
-- [\[ICCV 2025\] Attention to the Burstiness in Visual Prompt Tuning!](attention_to_the_burstiness_in_visual_prompt_tuning.md)
+- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](../../ACL2026/multimodal_vlm/efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
 
 </div>
 

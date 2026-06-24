@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching
 description: >-
-  [NeurIPS 2025][Robotics][VLA acceleration] This paper proposes VLA-Cache, a training-free inference acceleration method for VLA models that identifies and caches KV representations of static visual tokens across frames…
+  [NeurIPS 2025][Robotics][VLA acceleration] This paper proposes VLA-Cache, a training-free inference acceleration method for VLA models that identifies and caches KV representations of static visual tokens across frames, filters out task-relevant tokens, and adaptively adjusts the reuse ratio per layer, achieving 1.7× speedup with negligible loss in task success rate.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "robotic manipulation"
 date: 2026-05-08
-content_hash: d90d38d6dbdc708f
+content_hash: b09d240f07162b4b
 ---
 
 # VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching
@@ -132,10 +132,10 @@ VLA-Cache is a **fully training-free** method with no loss function design or ad
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
-- [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
 - [\[AAAI 2026\] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](../../AAAI2026/robotics/ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)
+- [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
+- [\[CVPR 2025\] CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models](../../CVPR2025/robotics/cot-vla_visual_chain-of-thought_reasoning_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[NeurIPS 2025\] SAFE: Multitask Failure Detection for Vision-Language-Action Models](safe_multitask_failure_detection_for_vision-language-action_models.md)
 
 </div>
 

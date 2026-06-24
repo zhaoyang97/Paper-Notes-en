@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Collective Narrative Grounding: Community-Coordinated Data Contributions to Improve Local AI Systems
 description: >-
-  [NeurIPS 2025][LLM Safety][local knowledge] This paper proposes the Collective Narrative Grounding protocol, which collects community narratives through participatory workshops and structures them into "narrative units."…
+  [NeurIPS 2025][LLM Safety][local knowledge] This paper proposes the Collective Narrative Grounding protocol, which collects community narratives through participatory workshops and structures them into "narrative units." A RAG pipeline then injects this local knowledge into LLM-based QA systems. Experiments on LocalBench reveal that 76.7% of errors can be directly remediated by local narratives, and GPT-5 achieves only 21% accuracy on the participatory QA set…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "community governance"
   - "RAG"
 date: 2026-05-08
-content_hash: 5aa24e3948b7b237
+content_hash: 1d209bd56147f354
 ---
 
 # Collective Narrative Grounding: Community-Coordinated Data Contributions to Improve Local AI Systems
@@ -140,7 +140,7 @@ Annotator agreement: 84.2%, Cohen's $\kappa = 0.812$.
 - [\[NeurIPS 2025\] Stop DDoS Attacking the Research Community with AI-Generated Survey Papers](stop_ddos_attacking_the_research_community_with_ai-generated_survey_papers.md)
 - [\[NeurIPS 2025\] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma](position_the_complexity_of_perfect_ai_alignment_--_formalizing_the_rlhf_trilemma.md)
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
-- [\[NeurIPS 2025\] DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm](dna-detectllm_unveiling_ai-generated_text_via_a_dna-inspired_mutation-repair_par.md)
+- [\[ICLR 2026\] Building a Foundational Guardrail for General Agentic Systems via Synthetic Data](../../ICLR2026/llm_safety/building_a_foundational_guardrail_for_general_agentic_systems_via_synthetic_data.md)
 - [\[NeurIPS 2025\] When AI Democratizes Exploitation: LLM-Assisted Strategic Manipulation of Fair Division Algorithms](when_ai_democratizes_exploitation_llm-assisted_strategic_manipulation_of_fair_di.md)
 
 </div>

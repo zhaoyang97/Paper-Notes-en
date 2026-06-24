@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF
 description: >-
-  [ACL 2026][AI Safety][RLAIF] This paper proposes Reverse Constitutional AI (R-CAI), which synthesizes automated, controllable, and multi-dimensional adversarial toxic data by inverting the principles of Constitutional AI into a "Toxic Constitution." Combined with a critique-revision loop and a probability-clamped RLAIF mechanism, R-CAI effectively
+  [ACL 2026 Findings][AI Safety][Red Teaming] This paper proposes Reverse Constitutional AI (R-CAI), which synthesizes automated, controllable, and multi-dimensional adversarial toxic data by inverting the principles of Constitutional AI into a "Toxic Constitution." Combined with a critique-revision loop and a probability-clamped RLAIF mechanism, R-CAI effectively mitigates semantic degradation caused by reward hacking, achieving a 15% improvement in semantic coherence.
 tags:
-  - ACL 2026
-  - AI Safety
-  - RLAIF
+  - "ACL 2026 Findings"
+  - "AI Safety"
+  - "Red Teaming"
+  - "Adversarial Data Synthesis"
+  - "Reverse Constitutional AI"
+  - "Probability Clamping"
+  - "RLAIF"
 date: 2026-05-08
-content_hash: 4f5e22fcfd14faa1
+content_hash: 5cf2f3c81a21e3a2
 ---
+
 # Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF
 
 **Conference**: ACL 2026 Findings  
@@ -135,10 +140,10 @@ The reward model employs the clamped Bradley-Terry loss $\mathcal{L}_{\text{RM}}
 ## Related Papers
 
 - [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](../../CVPR2026/ai_safety/reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)
-- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](../../CVPR2026/ai_safety/unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
+- [\[ICLR 2026\] A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis](../../ICLR2026/ai_safety/a_bayesian_nonparametric_framework_for_private_fair_and_balanced_tabular_data_sy.md)
 - [\[ICML 2026\] Memetic Capture: A Pluralistic Policy Framework for Governing AI-Driven Cultural Disempowerment](../../ICML2026/ai_safety/memetic_capture_a_pluralistic_policy_framework_for_governing_ai-driven_cultural_.md)
-- [\[CVPR 2026\] Forensic-Friendly Image Manipulation via Controllable Latent Diffusion](../../CVPR2026/ai_safety/forensic-friendly_image_manipulation_via_controllable_latent_diffusion.md)
-- [\[CVPR 2026\] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测](../../CVPR2026/ai_safety/saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
+- [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](../../ICLR2026/ai_safety/nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
+- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](../../CVPR2026/ai_safety/unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
 
 </div>
 

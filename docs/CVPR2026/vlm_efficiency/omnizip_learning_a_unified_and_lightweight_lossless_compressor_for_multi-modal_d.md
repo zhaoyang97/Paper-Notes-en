@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data
 description: >-
-  [CVPR 2026][Multimodal VLM][RWKV] OmniZip utilizes a lightweight RWKV backbone (ranging from several MB to 152M parameters) combined with "unified modality tokenization + modality-routed MoE." It achieves lossless compression for seven modalities (image, text, speech, tactile, gene, and database) within a single model. It improves compression rates by
+  [CVPR 2026][Multimodal Efficiency][Lossless compression] OmniZip utilizes a lightweight RWKV backbone (ranging from several MB to 152M parameters) combined with "unified modality tokenization + modality-routed MoE." It achieves lossless compression for seven modalities (image, text, speech, tactile, gene, and database) within a single model. It improves compression rates by 42%–62% over gzip and achieves near real-time speeds of approximately 1MB/s on MacBook CPUs and iPhone…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RWKV
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Lossless compression"
+  - "Multimodal"
+  - "RWKV"
+  - "Mixture of Experts (MoE)"
+  - "Lightweight"
 date: 2026-05-08
-content_hash: 94552cac635ce1d6
+content_hash: d35131440a0d9691
 ---
+
 # OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data
 
 **Conference**: CVPR 2026  
@@ -140,15 +145,16 @@ Evaluation on OmniZip-S (bits/Byte, MacBook CPU, batch 128):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
-- [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
-- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[CVPR 2026\] MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data and Training Recipes](minicpm-v_45_cooking_efficient_mllms_via_architecture_data_and_training_recipe.md)
 - [\[CVPR 2026\] MM-SeR: Multimodal Self-Refinement for Lightweight Image Captioning](mm-ser_multimodal_self-refinement_for_lightweight_image_captioning.md)
-- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
+- [\[CVPR 2026\] Adapting Lightweight Image-based Counting Models for Video Crowd Counting](adapting_lightweight_image-based_counting_models_for_video_crowd_counting.md)
+- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](../../ICCV2025/vlm_efficiency/folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
 
 </div>
 

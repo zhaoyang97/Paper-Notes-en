@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable Policy-Based RL Algorithms for POMDPs
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][POMDP] This paper proposes approximating POMDPs as finite-state Superstate MDPs (where states are truncated histories)…
+  [NeurIPS 2025][Reinforcement Learning][POMDP] This paper proposes approximating POMDPs as finite-state Superstate MDPs (where states are truncated histories), derives a tighter upper bound on the optimal value function gap (decaying exponentially with history length), and provides the first finite-time convergence guarantees for standard TD learning combined with policy optimization under non-Markovian sampling.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Superstate MDP"
   - "Linear Function Approximation"
 date: 2026-05-08
-content_hash: 78ad95da6f9c3797
+content_hash: 9edab76d62d5ed02
 ---
 
 # Scalable Policy-Based RL Algorithms for POMDPs
@@ -53,13 +53,13 @@ Partially Observable Markov Decision Processes (POMDPs) serve as a general frame
 
 1. **Improved Approximation Guarantee (Theorem 2)**:
    Under the uniform filter stability condition (Assumption 1):
-   $$\|V^*({\pi}(H)) - \tilde{V}(\mathcal{G}(H))\|_\infty \leq \frac{2\bar{r}(1-\rho)^l}{1-\gamma} + \frac{2\bar{r}\gamma(1-\rho)^l}{(1-\gamma)((1-\gamma)+\gamma(1-\rho)^l)}$$
+    $\|V^*({\pi}(H)) - \tilde{V}(\mathcal{G}(H))\|_\infty \leq \frac{2\bar{r}(1-\rho)^l}{1-\gamma} + \frac{2\bar{r}\gamma(1-\rho)^l}{(1-\gamma)((1-\gamma)+\gamma(1-\rho)^l)}$
 
    **Key Improvement**: Prior bounds scale with $(1-\gamma)^{-2}$ or $(1-\gamma)^{-3}$; the proposed bound approximates $\frac{2\bar{r}(1-\rho)^l}{1-\gamma}$ when $(1-\rho)^l$ is sufficiently small, reducing the horizon dependence from quadratic to linear. Moreover, this is a worst-case bound rather than an expectation bound.
 
 2. **Key Algebraic Lemma (Lemma 2)**:
    For positive vectors $\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}$ with $\sum a_i = \sum c_i = 1$:
-   $$|\sum a_i b_i - \sum c_i d_i| \leq \frac{\|a-c\|_1}{2}\max(\|b\|_\infty, \|d\|_\infty) + \|b-d\|_\infty - \frac{\|a-c\|_1}{4}\|b-d\|_\infty$$
+    $|\sum a_i b_i - \sum c_i d_i| \leq \frac{\|a-c\|_1}{2}\max(\|b\|_\infty, \|d\|_\infty) + \|b-d\|_\infty - \frac{\|a-c\|_1}{4}\|b-d\|_\infty$
 
    Conventional decomposition-based triangle inequality arguments introduce looseness; this inequality exploits the normalization of probability mass functions to obtain a tighter bound. The lemma has independent value and can also improve results of Subramanian & Mahajan (2019).
 
@@ -140,9 +140,9 @@ Total regret: $\mathcal{R}_T \leq T \cdot (\xi_{\text{FA}} + \xi_{\text{HA}}) + 
 
 - [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
 - [\[NeurIPS 2025\] Horizon Reduction Makes RL Scalable](horizon_reduction_makes_rl_scalable.md)
-- [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
+- [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
+- [\[ICLR 2026\] Jackpot: Align Actor-Policy Distribution for Scalable and Stable RL for LLM](../../ICLR2026/reinforcement_learning/jackpot_align_actor-policy_distribution_for_scalable_and_stable_rl_for_llm.md)
 
 </div>
 

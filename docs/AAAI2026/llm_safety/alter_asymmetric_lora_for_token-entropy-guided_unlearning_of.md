@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs
 description: >-
-  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes ALTER, a framework that combines an asymmetric LoRA architecture with token-level Tsallis entropy guidance to achieve precise unlearning of target knowledge…
+  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes ALTER, a framework that combines an asymmetric LoRA architecture with token-level Tsallis entropy guidance to achieve precise unlearning of target knowledge in LLMs. A parameter isolation mechanism is employed to preserve the model's general capabilities, achieving state-of-the-art performance on three benchmarks: TOFU, WMDP, and MUSE.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Parameter Isolation"
   - "Knowledge Decoupling"
 date: 2026-05-08
-content_hash: 540fd691d4380354
+content_hash: 55eae0df5b50db95
 ---
 
 # ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs
@@ -159,10 +159,10 @@ Core advantage: Methods such as GA/RL can reduce WMDP accuracy to ~25%, but caus
 ## Related Papers
 
 - [\[ACL 2026\] Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem](../../ACL2026/llm_safety/modeling_llm_unlearning_as_an_asymmetric_two-task_learning_problem.md)
+- [\[ACL 2025\] Lacuna Inc. at SemEval-2025 Task 4: LoRA-Enhanced Influence-Based Unlearning for LLMs](../../ACL2025/llm_safety/lacuna_inc_at_semeval-2025_task_4_lora-enhanced_influence-based_unlearning_for_l.md)
+- [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](../../ACL2026/llm_safety/red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](../../ACL2026/llm_safety/representation-guided_parameter-efficient_llm_unlearning.md)
 - [\[ACL 2026\] Maximizing Local Entropy Where It Matters: Prefix-Aware Localized LLM Unlearning](../../ACL2026/llm_safety/maximizing_local_entropy_where_it_matters_prefix-aware_localized_llm_unlearning.md)
-- [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](../../ACL2026/llm_safety/red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
-- [\[AAAI 2026\] WaterMod: Modular Token-Rank Partitioning for Probability-Balanced LLM Watermarking](watermod_modular_token-rank_partitioning_for_probability-balanced_llm_watermarki.md)
 
 </div>
 

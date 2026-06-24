@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance
 description: >-
-  [ICCV 2025][Image Generation][Image Fusion] MMAIF proposes a unified multi-task, multi-degradation, language-guided image fusion framework that operates in latent space via a realistic degradation pipeline and a moderniz…
+  [ICCV 2025][Image Generation][Image Fusion] MMAIF proposes a unified multi-task, multi-degradation, language-guided image fusion framework that operates in latent space via a realistic degradation pipeline and a modernized DiT architecture. It offers both a regression and a Flow Matching variant, surpassing existing restoration+fusion pipelines across diverse degraded fusion tasks.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "Flow Matching"
   - "MoE"
 date: 2026-05-08
-content_hash: c61c2cd3bc134a18
+content_hash: 92da5e5ea3202904
 ---
 
 # MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance
@@ -152,11 +152,11 @@ MMAIF substantially outperforms existing methods while simplifying the inference
 
 ## Related Papers
 
+- [\[CVPR 2025\] GenDeg: Diffusion-based Degradation Synthesis for Generalizable All-In-One Image Restoration](../../CVPR2025/image_generation/gendeg_diffusion-based_degradation_synthesis_for_generalizable_all-in-one_image_.md)
 - [\[ICCV 2025\] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization](m2sformer_multi-spectral_and_multi-scale_attention_with_edge-aware_difficulty_gu.md)
 - [\[ICCV 2025\] StyleMotif: Multi-Modal Motion Stylization using Style-Content Cross Fusion](stylemotif_multi-modal_motion_stylization_using_style-content_cross_fusion.md)
 - [\[ICCV 2025\] Multi-turn Consistent Image Editing](multi-turn_consistent_image_editing.md)
 - [\[ICCV 2025\] UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer](unicombine_unified_multi-conditional_combination_with_diffusion_transformer.md)
-- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](generating_multi-image_synthetic_data_for_text-to-image_customization.md)
 
 </div>
 

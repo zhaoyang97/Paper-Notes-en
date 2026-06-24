@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Resurfacing the Instance-only Dependent Label Noise Model through Loss Correction
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper re-enables the "instance-only dependent, label-independent" noise model (IDN). Based on risk consistency, it designs an instance-aware corrected loss $\tilde{\ell}$ for any classification-calibrated loss. This approach strictly bridges "Empirical Risk Minimization (ERM) on noisy labels" to "True Risk Minimiz
+  [ICLR 2026][Learning Theory][Label Noise] This paper re-enables the "instance-only dependent, label-independent" noise model (IDN). Based on risk consistency, it designs an instance-aware corrected loss $\tilde{\ell}$ for any classification-calibrated loss. This approach strictly bridges "Empirical Risk Minimization (ERM) on noisy labels" to "True Risk Minimization on clean labels." Unlike prior methods, it only requires estimating a scalar flip rate $\rho_x$ per sample inste…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Learning with Noisy Labels"
+  - "Label Noise"
+  - "Loss Correction"
+  - "Risk Consistency"
+  - "Instance-dependent Noise"
+  - "Generalization Bounds"
 date: 2026-05-08
-content_hash: 614cc44f25e5df67
+content_hash: 91e5dd88d60277a4
 ---
+
 # Resurfacing the Instance-only Dependent Label Noise Model through Loss Correction
 
 **Conference**: ICLR 2026  
@@ -143,9 +150,9 @@ Baselines include Normal (pure logistic), BCN, UB, DMI, Peer, APL, PTD, BLTM, GC
 
 - [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
 - [\[ICLR 2026\] Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model](learning_shrinks_the_hard_tail_trainingdependent_inference_scaling_in_a_solvable.md)
-- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
-- [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
-- [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
+- [\[ICLR 2026\] Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap](theoretical_modeling_of_large_language_model_self-improvement_training_dynamics_.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
+- [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](metric_k-clustering_using_only_weak_comparison_oracles.md)
 
 </div>
 

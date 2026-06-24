@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] RigidSSL represents the protein backbone as a residue-level rigid body sequence. It first learns stable geometric priors under $SE(3)$ perturbations on static structures from AFDB, and then learns realistic conformational transitions using MD trajectories. This enhances the designability, diversity, and biophysical pla
+  [ICLR2026][Computational Biology][Protein Design] RigidSSL represents the protein backbone as a residue-level rigid body sequence. It first learns stable geometric priors under $SE(3)$ perturbations on static structures from AFDB, and then learns realistic conformational transitions using MD trajectories. This enhances the designability, diversity, and biophysical plausibility of protein backbone generation, motif scaffolding, and GPCR conformational ensemble generation.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Protein Design"
+  - "Geometric Pretraining"
+  - "SE(3) Rigid Body Representation"
+  - "Flow Matching"
+  - "Conformational Ensemble"
 date: 2026-05-08
-content_hash: 5965281c6529b969
+content_hash: 47494fcd92c08a12
 ---
+
 # Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles
 
 **Conference**: ICLR2026  
@@ -173,13 +178,14 @@ The second ablation shows that noise scales are not "the bigger the better." Wit
 - Value: ⭐⭐⭐⭐⭐ Highly practical for protein generation as a plug-and-play geometric pretraining paradigm, showing how designability and conformational realism can be biased via pretraining data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
-- [\[ICLR 2026\] Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining](decoding_dynamic_visual_experience_from_calcium_imaging_via_cell-pattern-aware_p.md)
 - [\[NeurIPS 2025\] Learning Conformational Ensembles of Proteins Based on Backbone Geometry](../../NeurIPS2025/computational_biology/learning_conformational_ensembles_of_proteins_based_on_backbone_geometry.md)
+- [\[ICLR 2026\] Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining](decoding_dynamic_visual_experience_from_calcium_imaging_via_cell-pattern-aware_p.md)
+- [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
 - [\[ICLR 2026\] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space](beyond_ensembles_simulating_all-atom_protein_dynamics_in_a_learned_latent_space.md)
 - [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
 

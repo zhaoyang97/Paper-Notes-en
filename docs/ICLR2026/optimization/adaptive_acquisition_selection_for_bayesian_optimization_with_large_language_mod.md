@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes LMABO, which utilizes a pre-trained Large Language Model (LLM) as a "zero-shot online strategist" for the Bayesian Optimization (BO) process. In each iteration, the optimization state is serialized into a structured text prompt, enabling the LLM to select the most suitable acquisition function (AF)
+  [ICLR2026][Optimization][Bayesian optimization] This paper proposes LMABO, which utilizes a pre-trained Large Language Model (LLM) as a "zero-shot online strategist" for the Bayesian Optimization (BO) process. In each iteration, the optimization state is serialized into a structured text prompt, enabling the LLM to select the most suitable acquisition function (AF) from a portfolio. LMABO consistently outperforms static AFs, adaptive portfolios…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Bayesian optimization"
+  - "acquisition function selection"
+  - "Large Language Models"
+  - "zero-shot decision making"
+  - "state serialization"
 date: 2026-05-08
-content_hash: 38923ee13e7edcd5
+content_hash: bed9936163706892
 ---
+
 # Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models
 
 **Conference**: ICLR2026  
@@ -140,15 +146,14 @@ Replacing the backbone LLM: LMABO-8B (Qwen2-7B) showed a perceived decline (RP 1
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
 - [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
+- [\[ICLR 2026\] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models](hbo_hierarchical_balancing_optimization_for_fine-tuning_large_language_models.md)
 - [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
 - [\[ICLR 2026\] BoGrape: Bayesian optimization over graphs with shortest-path encoded](bogrape_bayesian_optimization_over_graphs_with_shortest-path_encoded.md)
-- [\[ICML 2026\] Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm](../../ICML2026/optimization/towards_understanding_continual_factual_knowledge_acquisition_of_language_models.md)
-- [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] APPO: Attention-guided Perception Policy Optimization for Video Reasoning
 description: >-
-  [CVPR 2026][LLM Reasoning][Reinforcement Learning] APPO identifies that "the bottleneck of video reasoning lies in perception rather than reasoning." It leverages the model's own attention on video frames to convert sparse outcome rewards into token-level dense rewards. By applying differential weighted learning to "intra-group perception tokens" that focus on the same
+  [CVPR 2026][Reasoning][Video Reasoning] APPO identifies that "the bottleneck of video reasoning lies in perception rather than reasoning." It leverages the model's own attention on video frames to convert sparse outcome rewards into token-level dense rewards. By applying differential weighted learning to "intra-group perception tokens" that focus on the same key frames across different responses based on reward disparities, it consistently outperforms GRPO and DAPO on Qwen2.5…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Video Reasoning"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Attention-guided"
+  - "token-level dense reward"
 date: 2026-05-08
-content_hash: 353f79714278469e
+content_hash: b60811dfab472bbc
 ---
+
 # APPO: Attention-guided Perception Policy Optimization for Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Hyperparameter sweep based on SEED-Bench-R1 + Qwen2.5-VL-7B:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](../../ACL2026/llm_reasoning/think_outside_the_policy_in-context_steered_policy_optimization.md)
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](../../ICML2026/llm_reasoning/ucpo_uncertainty-aware_policy_optimization.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](../../ACL2026/llm_reasoning/calibration-aware_policy_optimization_for_reasoning_llms.md)
-- [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](../../ICLR2026/llm_reasoning/scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
+- [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](../../ICLR2026/llm_reasoning/inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
 
 </div>
 

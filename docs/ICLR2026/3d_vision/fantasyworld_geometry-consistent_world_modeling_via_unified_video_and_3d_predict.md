@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction
 description: >-
-  [ICLR 2026][3D Vision][World Models] FantasyWorld attaches a trainable geometric branch alongside a frozen video foundation model (Wan2.1). In a single forward pass, it simultaneously outputs camera-conditioned video frames and an implicit 3D field (depth/point maps/camera poses). Through bidirectional cross-attention, geometric constraints guide the vide
+  [ICLR 2026][3D Vision][World models] FantasyWorld attaches a trainable geometric branch alongside a frozen video foundation model (Wan2.1). In a single forward pass, it simultaneously outputs camera-conditioned video frames and an implicit 3D field (depth/point maps/camera poses). Through bidirectional cross-attention, geometric constraints guide the video while video priors complement the geometry, exceeding recent geometry-consistent baselines in Multi-view and Style Consis…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - World Models
+  - "ICLR 2026"
+  - "3D Vision"
+  - "World models"
+  - "Geometry-consistent"
+  - "Video diffusion"
+  - "Feed-forward 3D reconstruction"
+  - "Cross-branch supervision"
 date: 2026-05-08
-content_hash: 57e054126400c162
+content_hash: 2728e558911caeab
 ---
+
 # FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction
 
 **Conference**: ICLR 2026  
@@ -163,8 +168,8 @@ Without the geometric branch and bidirectional cross-attention, Photo/Style Cons
 - [\[ICLR 2026\] Unified 3D Scene Understanding Through Physical World Modeling](unified_3d_scene_understanding_through_physical_world_modeling.md)
 - [\[ICLR 2026\] CHROMA: Consistent Harmonization of Multi-View Appearance via Bilateral Grid Prediction](chroma_consistent_harmonization_of_multi-view_appearance_via_bilateral_grid_pred.md)
 - [\[ICLR 2026\] OmniWorld: A Multi-Domain and Multi-Modal Dataset for 4D World Modeling](omniworld_a_multi-domain_and_multi-modal_dataset_for_4d_world_modeling.md)
+- [\[CVPR 2026\] P3Sim: Perceptual 3D Simulation with Physical World Modeling](../../CVPR2026/3d_vision/perceptual_3d_simulation_with_physical_world_modeling.md)
 - [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](../../CVPR2026/3d_vision/orbital_video_3d_foundation_priors.md)
-- [\[ICLR 2026\] Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation](lyra_generative_3d_scene_reconstruction_via_video_diffusion_model_self-distillat.md)
 
 </div>
 

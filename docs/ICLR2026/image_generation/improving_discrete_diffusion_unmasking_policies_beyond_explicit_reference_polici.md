@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)
 description: >-
-  [ICLR 2026][Image Generation][Masked Diffusion Models] This paper proposes Unmasking Policy Optimization (UPO), which models the denoising process of Masked Diffusion Models as a KL-regularized MDP. By training a lightweight unmasking policy model using reinforcement learning to replace heuristic schedulers like max-confidence, the study demonstrates theoretically and expe
+  [ICLR 2026][Image Generation][Masked Diffusion Models] This paper proposes Unmasking Policy Optimization (UPO), which models the denoising process of Masked Diffusion Models as a KL-regularized MDP. By training a lightweight unmasking policy model using reinforcement learning to replace heuristic schedulers like max-confidence, the study demonstrates theoretically and experimentally that the learned policy generates samples closer to the true data distribution.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Masked Diffusion Models
-  - Unmasking Policy
-  - reinforcement-learning
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Masked Diffusion Models"
+  - "Unmasking Policy"
+  - "reinforcement-learning"
+  - "KL-regularized MDP"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 2326bfc631d68c04
+content_hash: d08c96a98cd06a44
 ---
+
 # Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)
 
 **Conference**: ICLR 2026  
@@ -151,9 +153,9 @@ The implementation provides three reference policies: max-confidence (with CE re
 
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 - [\[ICML 2026\] Recovering Hidden Reward in Diffusion-Based Policies](../../ICML2026/image_generation/recovering_hidden_reward_in_diffusion-based_policies.md)
+- [\[ICLR 2026\] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling](variational_autoencoding_discrete_diffusion_with_enhanced_dimensional_correlatio.md)
 - [\[AAAI 2026\] PADiff: Predictive and Adaptive Diffusion Policies for Ad Hoc Teamwork](../../AAAI2026/image_generation/padiff_predictive_and_adaptive_diffusion_policies_for_ad_hoc_teamwork.md)
-- [\[ICLR 2026\] Multiplicative Diffusion Models: Beyond Gaussian Latents](multiplicative_diffusion_models_beyond_gaussian_latents.md)
-- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
+- [\[ICLR 2026\] Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance](routing_matters_in_moe_scaling_diffusion_transformers_with_explicit_routing_guid.md)
 
 </div>
 

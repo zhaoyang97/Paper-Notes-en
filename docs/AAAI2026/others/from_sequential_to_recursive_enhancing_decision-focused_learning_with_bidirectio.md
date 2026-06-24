@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback
 description: >-
-  [AAAI 2026][Decision-Focused Learning] This paper proposes the first Recursive Decision-Focused Learning (R-DFL) framework, which introduces a bidirectional feedback loop between the prediction module and the optimizatio…
+  [AAAI 2026][Decision-Focused Learning] This paper proposes the first Recursive Decision-Focused Learning (R-DFL) framework, which introduces a bidirectional feedback loop between the prediction module and the optimization module, breaking the unidirectional information flow of conventional sequential DFL. Two gradient propagation methods—explicit unrolling and implicit differentiation—are designed, achieving significant improvements in final decision quality on the newsvendor…
 tags:
   - "AAAI 2026"
   - "Decision-Focused Learning"
@@ -11,7 +11,7 @@ tags:
   - "Implicit Differentiation"
   - "Bidirectional Feedback"
 date: 2026-05-08
-content_hash: d2efa7d33fd2ad50
+content_hash: 118e67ed6d5e2fba
 ---
 
 # From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback
@@ -133,11 +133,11 @@ Sensitivity analysis on unrolling depth shows diminishing marginal accuracy gain
 
 ## Related Papers
 
-- [\[ICML 2026\] Sequential Group Composition: A Window into the Mechanics of Deep Learning](../../ICML2026/others/sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)
 - [\[ICML 2026\] Decision Tree Learning on Product Spaces](../../ICML2026/others/decision_tree_learning_on_product_spaces.md)
+- [\[ICML 2026\] Sequential Group Composition: A Window into the Mechanics of Deep Learning](../../ICML2026/others/sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)
 - [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
-- [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
 - [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
+- [\[ECCV 2024\] Bidirectional Uncertainty-Based Active Learning for Open-Set Annotation](../../ECCV2024/others/bidirectional_uncertainty-based_active_learning_for_open-set_annotation.md)
 
 </div>
 

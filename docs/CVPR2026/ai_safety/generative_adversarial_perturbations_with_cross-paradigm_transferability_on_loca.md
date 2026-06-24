@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] The paper proposes CrowdGen, the first adversarial attack framework with cross-paradigm (density map + point regression) transferability. By utilizing a lightweight UNet generator and a multi-task loss (logit suppression + density suppression + GradCAM guidance + frequency domain constraints), it achieves high transfer
+  [CVPR 2026][AI Safety][Adversarial attack] The paper proposes CrowdGen, the first adversarial attack framework with cross-paradigm (density map + point regression) transferability. By utilizing a lightweight UNet generator and a multi-task loss (logit suppression + density suppression + GradCAM guidance + frequency domain constraints), it achieves high transferability (TR up to 1.69) across seven SOTA crowd counting models while maintaining visual stealthiness (~19dB PSNR)…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial attack"
+  - "Crowd counting"
+  - "Cross-paradigm transferability"
+  - "Generative adversarial perturbations"
+  - "Black-box attack"
 date: 2026-05-08
-content_hash: 1225daaf5dfa6221
+content_hash: 6ea1364c0f80896a
 ---
+
 # Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ Total loss: $\mathcal{L}_{attack} = \alpha \cdot \mathcal{L}_{model} + \beta \cd
 ## Related Papers
 
 - [\[CVPR 2026\] Improving Adversarial Transferability with Local Perturbation Augmentation](improving_adversarial_transferability_with_local_perturbation_augmentation.md)
+- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 - [\[CVPR 2026\] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models](transform_to_transfer_boosting_adversarial_attack_transferability_on_vision-lang.md)
 - [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
 - [\[NeurIPS 2025\] Boosting Adversarial Transferability with Spatial Adversarial Alignment](../../NeurIPS2025/ai_safety/boosting_adversarial_transferability_with_spatial_adversarial_alignment.md)
-- [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](gvis_generative_vector_image_steganography.md)
 
 </div>
 

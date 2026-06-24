@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper systematically investigates the efficiency-effectiveness trade-offs of listwise reranking in deep search agents. By introducing the Effective Token Cost (ETC) metric, the study finds that moderate-depth reranking is generally more cost-effective than increasing search-time reasoning budgets, achieving compar
+  [ACL 2026 Findings][Information Retrieval & RAG][Deep Search Agents] This paper systematically investigates the efficiency-effectiveness trade-offs of listwise reranking in deep search agents. By introducing the Effective Token Cost (ETC) metric, the study finds that moderate-depth reranking is generally more cost-effective than increasing search-time reasoning budgets, achieving comparable or higher end-to-end accuracy with lower token overhead.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Deep Search Agents"
+  - "Reranking"
+  - "Reasoning Budget Allocation"
+  - "Effective Token Cost"
+  - "Retrieval-Augmented Reasoning"
 date: 2026-05-08
-content_hash: 0a6de2075fdfa187
+content_hash: 5be432acb87b2163
 ---
+
 # Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents
 
 **Conference**: ACL 2026 Findings  
@@ -123,7 +129,7 @@ Fixed experimental settings: Reranking is based on the RankLLM framework (window
 - [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
 - [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](../../ICLR2026/information_retrieval/hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)
 - [\[ICML 2026\] ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards](../../ICML2026/information_retrieval/reseek_a_self-correcting_framework_for_search_agents_with_instructive_rewards.md)
-- [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
+- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](../../ICLR2026/information_retrieval/beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes a new paradigm called "Reasoning Editing"—modifying a specific reasoning pattern in LLMs without affecting other reasoning capabilities. It identifies the "Circuit-Interference Law" (the more neural circuits of two reasoning patterns overlap, the stronger the editing interference). Based on this, it
+  [ICLR 2026][Interpretability][Reasoning Editing] This paper proposes a new paradigm called "Reasoning Editing"—modifying a specific reasoning pattern in LLMs without affecting other reasoning capabilities. It identifies the "Circuit-Interference Law" (the more neural circuits of two reasoning patterns overlap, the stronger the editing interference). Based on this, it introduces REdit: actively "reshaping circuits" via contrastive learning to decouple overlapping circuits befo…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning Editing"
+  - "Neural Circuits"
+  - "Contrastive Learning"
+  - "Model Editing"
+  - "Propositional Logic"
 date: 2026-05-08
-content_hash: e7a5a0d180f5336a
+content_hash: 41a5c9a9b9ac87ba
 ---
+
 # Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,20 @@ REdit achieves the best or tied-best performance across all metrics and difficul
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)
+- [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
+- [\[ICLR 2026\] Can LLMs Reason Soundly in Law? Auditing Inference Patterns for Legal Judgment](can_llms_reason_soundly_in_law_auditing_inference_patterns_for_legal_judgment.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
+- [\[ICLR 2026\] CoT Vectors: Transferring and Probing the Reasoning Mechanisms of LLMs](cot_vectors_transferring_and_probing_the_reasoning_mechanisms_of_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)

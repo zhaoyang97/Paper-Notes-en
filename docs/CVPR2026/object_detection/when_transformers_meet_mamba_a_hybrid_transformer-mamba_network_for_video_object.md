@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Transformers Meet Mamba: A Hybrid Transformer-Mamba Network for Video Object Detection
 description: >-
-  [CVPR 2026][Object Detection][State Space Model] TMambaDet establishes a clear division of labor between Transformer and Mamba in video object detection: intra-frame spatial modeling is performed by an adaptive deformable Transformer, inter-frame temporal modeling is handled by a bidirectional Mamba with linear complexity, and the decoder interleaves both to align qu
+  [CVPR 2026][Object Detection][Video object detection] TMambaDet establishes a clear division of labor between Transformer and Mamba in video object detection: intra-frame spatial modeling is performed by an adaptive deformable Transformer, inter-frame temporal modeling is handled by a bidirectional Mamba with linear complexity, and the decoder interleaves both to align queries with spatio-temporal features. It achieves 87.9% mAP on ImageNet VID with ResNet-101 at 20.6 ms per…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - State Space Model
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Video object detection"
+  - "Transformer-Mamba hybrid"
+  - "State Space Model"
+  - "Deformable Attention"
+  - "Temporal modeling"
 date: 2026-05-08
-content_hash: 1758110d372b15c2
+content_hash: 001c798511734cff
 ---
+
 # When Transformers Meet Mamba: A Hybrid Transformer-Mamba Network for Video Object Detection
 
 **Conference**: CVPR 2026  
@@ -170,15 +175,15 @@ Scanning algorithm comparison:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
 - [\[CVPR 2026\] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection](da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d.md)
-- [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](tri-modal_fusion_transformers_for_uav-based_object_detection.md)
 - [\[ICML 2025\] When Every Millisecond Counts: Real-Time Anomaly Detection via the Multimodal Asynchronous Hybrid Network](../../ICML2025/object_detection/when_every_millisecond_counts_real-time_anomaly_detection_via_the_multimodal_asy.md)
+- [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](tri-modal_fusion_transformers_for_uav-based_object_detection.md)
+- [\[CVPR 2026\] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection](beyond_duality_a_hybrid_framework_of_leveraging_shared_and_private_features_for_.md)
 
 </div>
 

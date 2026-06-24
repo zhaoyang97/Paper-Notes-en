@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases
 description: >-
-  [ICCV 2025][Video Understanding][optical flow estimation] FlowSeek integrates the prior knowledge of a depth foundation model (Depth Anything V2) and classical low-dimensional motion parameterization (motion bases) into…
+  [ICCV 2025][Video Understanding][optical flow estimation] FlowSeek integrates the prior knowledge of a depth foundation model (Depth Anything V2) and classical low-dimensional motion parameterization (motion bases) into an optical flow network, achieving state-of-the-art cross-dataset generalization while training on a single consumer-grade GPU.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "low-resource training"
   - "cross-dataset generalization"
 date: 2026-05-08
-content_hash: 21b24562f91e5d32
+content_hash: 7174f410f1b8107c
 ---
 
 # FlowSeek: Optical Flow Made Easier with Depth Foundation Models and Motion Bases
@@ -164,7 +164,7 @@ Key finding: BaseNet (motion bases) is the most critical component for performan
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 - [\[ICCV 2025\] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View](prior-flow_enhancing_primitive_panoramic_optical_flow_with_orthogonal_view.md)
 - [\[ICCV 2025\] MEMFOF: High-Resolution Training for Memory-Efficient Multi-Frame Optical Flow Estimation](memfof_high-resolution_training_for_memory-efficient_multi-frame_optical_flow_es.md)
-- [\[NeurIPS 2025\] MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models](../../NeurIPS2025/video_understanding/mimeqa_towards_socially-intelligent_nonverbal_foundation_models.md)
+- [\[CVPR 2025\] DPFlow: Adaptive Optical Flow Estimation with a Dual-Pyramid Framework](../../CVPR2025/video_understanding/dpflow_adaptive_optical_flow_estimation_with_a_dual-pyramid_framework.md)
 
 </div>
 

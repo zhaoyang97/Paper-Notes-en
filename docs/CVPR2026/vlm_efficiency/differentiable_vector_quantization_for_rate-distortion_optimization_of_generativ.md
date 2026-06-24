@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] RDVQ replaces the non-differentiable nearest neighbor indexing in vector quantization with a "distance-aware soft distribution," allowing rate loss gradients to flow back to the encoder. This achieves the first end-to-end rate-distortion joint optimization for VQ compression. Combined with a masked autoregressive entro
+  [CVPR 2026][Multimodal Efficiency][Vector Quantization] RDVQ replaces the non-differentiable nearest neighbor indexing in vector quantization with a "distance-aware soft distribution," allowing rate loss gradients to flow back to the encoder. This achieves the first end-to-end rate-distortion joint optimization for VQ compression. Combined with a masked autoregressive entropy model, it obtains superior perceptual quality at ultra-low bitrates with less than 20% of the paramet…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Vector Quantization"
+  - "Rate-Distortion Optimization"
+  - "Differentiable Relaxation"
+  - "Entropy Model"
+  - "Ultra-low Bitrate Compression"
 date: 2026-05-08
-content_hash: b79336550aff5a88
+content_hash: 35a255ea33fea123
 ---
+
 # Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Comparison on DIV2K-val (Lower is better for DISTS / LPIPS / FID):
 
 ## Related Papers
 
-- [\[CVPR 2026\] RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](rdvq_differentiable_vq_image_compression.md)
-- [\[CVPR 2026\] ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)
-- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
-- [\[CVPR 2026\] Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)
-- [\[AAAI 2026\] Reinforced Rate Control for Neural Video Compression via Inter-Frame Rate-Distortion Awareness](../../AAAI2026/model_compression/reinforced_rate_control_for_neural_video_compression_via_inter-frame_rate-distor.md)
+- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/vlm_efficiency/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[CVPR 2026\] Adapting Lightweight Image-based Counting Models for Video Crowd Counting](adapting_lightweight_image-based_counting_models_for_video_crowd_counting.md)
+- [\[CVPR 2026\] MM-SeR: Multimodal Self-Refinement for Lightweight Image Captioning](mm-ser_multimodal_self-refinement_for_lightweight_image_captioning.md)
+- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
+- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
 
 </div>
 

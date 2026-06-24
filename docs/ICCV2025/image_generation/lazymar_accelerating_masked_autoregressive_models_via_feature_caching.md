@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching
 description: >-
-  [ICCV 2025][Image Generation][MAR acceleration] LazyMAR addresses the inference efficiency bottleneck of Masked Autoregressive (MAR) models by exploiting two types of redundancy: token redundancy (most token features are…
+  [ICCV 2025][Image Generation][MAR acceleration] LazyMAR addresses the inference efficiency bottleneck of Masked Autoregressive (MAR) models by exploiting two types of redundancy: token redundancy (most token features are highly similar across adjacent decoding steps) and condition redundancy (the residual between conditional and unconditional outputs in classifier-free guidance changes minimally between adjacent steps). Based on these observations…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "condition redundancy"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: d0ef989cc00ea0da
+content_hash: 672dece6fd40ab8b
 ---
 
 # LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching
@@ -134,11 +134,11 @@ LazyMAR introduces two caching mechanisms into MAR's iterative decoding process,
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](../../NeurIPS2025/image_generation/predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
+- [\[CVPR 2025\] DreamCache: Finetuning-Free Lightweight Personalized Image Generation via Feature Caching](../../CVPR2025/image_generation/dreamcache_finetuning-free_lightweight_personalized_image_generation_via_feature.md)
 - [\[ICCV 2025\] From Reusing to Forecasting: Accelerating Diffusion Models with TaylorSeers](from_reusing_to_forecasting_accelerating_diffusion_models_with_taylorseers.md)
+- [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](../../NeurIPS2025/image_generation/predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
+- [\[ICLR 2026\] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling](../../ICLR2026/image_generation/generation_then_reconstruction_accelerating_masked_autoregressive_models_via_two.md)
 - [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
-- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
-- [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
 
 </div>
 

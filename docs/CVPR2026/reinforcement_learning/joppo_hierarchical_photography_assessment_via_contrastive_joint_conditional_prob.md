@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] JoPPO: Hierarchical Photography Assessment via Contrastive Joint Conditional Probabilistic Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][GRPO] JoPPO upgrades "using VLMs to score image aesthetics" from regressing a single global score to modeling the joint Gaussian distribution of attribute scores and total scores across a batch. By deriving attribute-conditional pairwise win rates and utilizing them as rewards in GRPO to train the judge, the model provides i
+  [CVPR 2026][Reinforcement Learning][Image Aesthetic Assessment] JoPPO upgrades "using VLMs to score image aesthetics" from regressing a single global score to modeling the joint Gaussian distribution of attribute scores and total scores across a batch. By deriving attribute-conditional pairwise win rates and utilizing them as rewards in GRPO to train the judge, the model provides interpretable multi-attribute sub-scores while significantly exceeding GPT-4o in ranking consiste…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Image Aesthetic Assessment"
+  - "GRPO"
+  - "Conditional Gaussian"
+  - "Pairwise Win Rate"
+  - "VLM Judge"
 date: 2026-05-08
-content_hash: 8493493c7aa6bb59
+content_hash: aee0b694bc38242a
 ---
+
 # JoPPO: Hierarchical Photography Assessment via Contrastive Joint Conditional Probabilistic Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ In the ablation on Attr $\rightarrow$ Total (W/O JoPPO vs Ours, PLCC): Comp 0.73
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeMPO: Constrained Reinforcement Learning via Probabilistic Incremental Improvement](../../ICLR2026/reinforcement_learning/safempo_constrained_reinforcement_learning_with_probabilistic_incremental_improv.md)
+- [\[ICLR 2026\] GRACE: Generative Representation Learning via Contrastive Policy Optimization](../../ICLR2026/reinforcement_learning/grace_generative_representation_learning_via_contrastive_policy_optimization.md)
 - [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](../../ICLR2026/reinforcement_learning/cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)
-- [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](../../ICLR2026/reinforcement_learning/reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
 - [\[ICLR 2026\] PreferThinker: Reasoning-based Personalized Image Preference Assessment](../../ICLR2026/reinforcement_learning/preferthinker_reasoning-based_personalized_image_preference_assessment.md)
-- [\[ICML 2025\] Hierarchical Reinforcement Learning with Targeted Causal Interventions](../../ICML2025/reinforcement_learning/hierarchical_reinforcement_learning_with_targeted_causal_interventions.md)
-- [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](../../AAAI2026/reinforcement_learning/hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
+- [\[ICLR 2026\] PoLi-RL: A Point-to-List Reinforcement Learning Framework for Conditional Semantic Textual Similarity](../../ICLR2026/reinforcement_learning/poli-rl_a_point-to-list_reinforcement_learning_framework_for_conditional_semanti.md)
 
 </div>
 

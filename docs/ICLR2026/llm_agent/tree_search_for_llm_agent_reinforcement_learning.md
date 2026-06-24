@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tree Search for LLM Agent Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Agent][GRPO] The authors replace "independent chain sampling" in multi-turn agent RL with "agent-step tree search sampling." By sharing prefixes, approximately $1.5\times$ trajectories are sampled under a fixed token/tool-call budget. The tree branching structure implicitly converts sparse outcome rewards into step-level process su
+  [ICLR 2026][LLM Agent][Agent RL] The authors replace "independent chain sampling" in multi-turn agent RL with "agent-step tree search sampling." By sharing prefixes, approximately $1.5\times$ trajectories are sampled under a fixed token/tool-call budget. The tree branching structure implicitly converts sparse outcome rewards into step-level process supervision (theoretically equivalent to step-level DPO), consistently outperforming chain-based GRPO across 11 QA datasets.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent RL"
+  - "Tree Search"
+  - "Process Supervision"
+  - "GRPO"
+  - "Multi-turn Tool Use"
 date: 2026-05-08
-content_hash: acb68822445a7eec
+content_hash: c3ac248ff1e18189
 ---
+
 # Tree Search for LLM Agent Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -153,11 +158,11 @@ Advantage configuration ablation (Budget ≈4) validates the necessity of two-le
 
 ## Related Papers
 
-- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
 - [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
 - [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](../../ACL2026/llm_agent/lits_a_modular_framework_for_llm_tree_search.md)
 - [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
+- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
 
 </div>
 

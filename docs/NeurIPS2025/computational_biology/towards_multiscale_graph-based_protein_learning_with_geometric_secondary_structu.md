@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs
 description: >-
-  [NeurIPS 2025][Computational Biology][protein representation learning] This paper proposes SSHG (Secondary Structure-based Hierarchical Graph), a framework that constructs two-level hierarchical graph representations fro…
+  [NeurIPS 2025][Computational Biology][protein representation learning] This paper proposes SSHG (Secondary Structure-based Hierarchical Graph), a framework that constructs two-level hierarchical graph representations from protein secondary structure motifs — an intra-motif residue-level graph and an inter-motif global graph — and employs a two-stage GNN to learn local and global features respectively. Theoretical guarantees of maximal expressiveness are provided…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "secondary structure"
   - "hierarchical graph"
 date: 2026-05-08
-content_hash: 48415dbb48ad0b13
+content_hash: db1b6b73c9d079c8
 ---
 
 # Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs
@@ -148,10 +148,10 @@ Loss functions are selected according to the downstream task: cross-entropy for 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
-- [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
 - [\[NeurIPS 2025\] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning](generative_distribution_embeddings_lifting_autoencoders_to_the_space_of_distribu.md)
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
-- [\[NeurIPS 2025\] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation](aanet_virtual_screening_under_structural_uncertainty_via_alignment_and_aggregati.md)
+- [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
+- [\[ICML 2025\] Geometric Generative Modeling with Noise-Conditioned Graph Networks](../../ICML2025/computational_biology/geometric_generative_modeling_with_noise-conditioned_graph_networks.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Weight Grafting: Localizing Finetuned Factual Knowledge in Transformers
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes Dynamic Weight Grafting to locate the retrieval mechanisms of fine-tuned factual knowledge in LLMs by temporarily replacing weights based on token position and Transformer components during generation. It finds that new knowledge is primarily retrieved via two paths: enrichment at the entity positio
+  [ICLR2026][Interpretability][Dynamic Weight Grafting] This paper proposes Dynamic Weight Grafting to locate the retrieval mechanisms of fine-tuned factual knowledge in LLMs by temporarily replacing weights based on token position and Transformer components during generation. It finds that new knowledge is primarily retrieved via two paths: enrichment at the entity position and recall at the final token.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Dynamic Weight Grafting"
+  - "Factual Knowledge Localization"
+  - "Fine-tuned Knowledge"
+  - "Transformer Mechanistic Interpretation"
+  - "Relation Completion"
 date: 2026-05-08
-content_hash: 5b60870edfc505bd
+content_hash: 9c2907a2438846cb
 ---
+
 # Dynamic Weight Grafting: Localizing Finetuned Factual Knowledge in Transformers
 
 **Conference**: ICLR2026  
@@ -137,14 +143,17 @@ In Gemma and Llama3, the $O$ matrix and FFN jointly restore nearly the same perf
 
 <div class="related-papers" markdown="1">
 
-- **Locating and Editing Factual Associations in GPT (ROME)** (Meng et al., 2022)
-- **Mass-Editing Memory in a Transformer (MEMIT)** (Meng et al., 2023)
-- **Transformer Feed-Forward Layers Are Key-Value Memories** (Geva et al., 2021)
+## Related Papers
+
+- [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](../../ACL2026/interpretability/through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
+- [\[ACL 2025\] Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models](../../ACL2025/interpretability/degenerate_knowledge_neurons.md)
+- [\[ICLR 2026\] Learning to Interpret Weight Differences in Language Models](learning_to_interpret_weight_differences_in_language_models.md)
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](learning_to_weight_parameters_for_training_data_attribution.md)
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](../../ACL2026/interpretability/through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)

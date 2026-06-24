@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evolving Graph Structured Programs for Circuit Generation with Large Language Models
 description: >-
-  [ICLR 2026][Code Intelligence][EDA] CircuitEvo encodes circuit graphs into "Graph-structured Programs," an LLM-friendly text format, and iteratively generates compact circuits using LLM + evolutionary prompting strategies. It features a theoretically guaranteed "Structure-aware Functional Completion" module to ensure correctness, making it the first LLM-
+  [ICLR 2026][Code Intelligence][Logic Synthesis] CircuitEvo encodes circuit graphs into "Graph-structured Programs," an LLM-friendly text format, and iteratively generates compact circuits using LLM + evolutionary prompting strategies. It features a theoretically guaranteed "Structure-aware Functional Completion" module to ensure correctness, making it the first LLM-based logic synthesis method capable of continuously compressing circuit size while guaranteeing 100% functional…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - EDA
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Logic Synthesis"
+  - "Circuit Generation"
+  - "LLM-based Algorithm Design"
+  - "Evolutionary Program Generation"
+  - "EDA"
 date: 2026-05-08
-content_hash: caf5d5433dee0dff
+content_hash: 5d11b021d5a0ec10
 ---
+
 # Evolving Graph Structured Programs for Circuit Generation with Large Language Models
 
 **Conference**: ICLR 2026  
@@ -118,7 +123,7 @@ Evaluations were conducted on 16 circuits across Arithmetic / Random / LogicNets
 - [\[ICLR 2026\] From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph](from_large_to_small_transferring_cuda_optimization_expertise_via_reasoning_graph.md)
 - [\[ACL 2025\] Tree-of-Evolution: Tree-Structured Instruction Evolution for Code Generation in Large Language Models](../../ACL2025/code_intelligence/tree_of_evolution_code_gen.md)
 - [\[ICLR 2026\] LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models](learnat_learning_nl2sql_with_ast-guided_task_decomposition_for_large_language_mo.md)
-- [\[ACL 2025\] GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding](../../ACL2025/code_intelligence/galla_graph_aligned_large_language_models.md)
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
 
 </div>
 

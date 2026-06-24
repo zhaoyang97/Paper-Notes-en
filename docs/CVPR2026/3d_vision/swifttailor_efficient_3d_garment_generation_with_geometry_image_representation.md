@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation
 description: >-
-  [CVPR 2026][3D Vision][VLM] Ours proposes SwiftTailor, a two-stage lightweight framework that generates 3D garment meshes by predicting sewing patterns via PatternMaker and converting them into Garment Geometry Images (GGI) in a unified UV space via GarmentSewer. Combined with inverse mapping and dynamic stitching, it achieves SOTA quality with i
+  [CVPR2026][3D Vision][3D Garment Generation] Ours proposes SwiftTailor, a two-stage lightweight framework that generates 3D garment meshes by predicting sewing patterns via PatternMaker and converting them into Garment Geometry Images (GGI) in a unified UV space via GarmentSewer. Combined with inverse mapping and dynamic stitching, it achieves SOTA quality with inference speeds tens of times faster than existing methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VLM
-  - Dense Prediction Transformer
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Garment Generation"
+  - "Geometry Image"
+  - "Sewing Patterns"
+  - "VLM"
+  - "Dense Prediction Transformer"
 date: 2026-05-08
-content_hash: bf758ec921438947
+content_hash: 413007046bfdc2c4
 ---
+
 # SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation
 
 **Conference**: CVPR2026  
@@ -143,11 +147,11 @@ Ablation results demonstrate the necessity of the GGI representation, dynamic st
 
 ## Related Papers
 
-- [\[CVPR 2026\] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation](sgi_structured_2d_gaussians_for_efficient_and_compact_large_image_representation.md)
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
+- [\[CVPR 2026\] NI-Tex: Non-isometric Image-based Garment Texture Generation](ni-tex_non-isometric_image-based_garment_texture_generation.md)
 - [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
+- [\[CVPR 2026\] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation](sgi_structured_2d_gaussians_for_efficient_and_compact_large_image_representation.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
 
 </div>
 

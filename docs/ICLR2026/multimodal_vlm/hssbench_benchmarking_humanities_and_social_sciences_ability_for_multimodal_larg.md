@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HSSBench: Benchmarking Humanities and Social Sciences Ability for Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][VQA Benchmark] Ours proposes HSSBench—the first large-scale multimodal benchmark focused on Humanities and Social Sciences (HSS), covering 6 main categories and 45 subcategories with 13,152 multiple-choice questions in the six official UN languages. Constructed through an "Expert + Multi-agent" collaborative pipeline, HSSBench demons
+  [ICLR 2026][Multimodal VLM][Multimodal Large Language Models] Ours proposes HSSBench—the first large-scale multimodal benchmark focused on Humanities and Social Sciences (HSS), covering 6 main categories and 45 subcategories with 13,152 multiple-choice questions in the six official UN languages. Constructed through an "Expert + Multi-agent" collaborative pipeline, HSSBench demonstrates that HSS tasks remain a significant challenge for current mainstream MLLMs (with accuracies…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VQA Benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Humanities and Social Sciences"
+  - "VQA Benchmark"
+  - "Multilingual Evaluation"
+  - "Multi-agent Data Generation"
 date: 2026-05-08
-content_hash: ebffa7da25353771
+content_hash: 0da6848061b6f522
 ---
+
 # HSSBench: Benchmarking Humanities and Social Sciences Ability for Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -105,10 +110,17 @@ The strongest models reach only ~54% in choice questions, significantly trailing
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](benchmarking_large_vision-language_models_on_fine-grained_image_tasks_a_comprehe.md)
+- [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](../../CVPR2026/multimodal_vlm/venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
+- [\[ICLR 2026\] Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection](thinking_as_society_multi-social-agent_self-distillation_for_multimodal_misinfor.md)
+- [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
+- [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SD-PSFNet: Sequential and Dynamic Point Spread Function Network for Image Deraining
 description: >-
-  [AAAI 2026][Image Restoration][image deraining] SD-PSFNet is a cascaded CNN-based deraining network driven by a dynamic PSF mechanism. It models the optical effects of raindrops via a multi-scale learnable PSF dictionary…
+  [AAAI 2026][Image Restoration][image deraining] SD-PSFNet is a cascaded CNN-based deraining network driven by a dynamic PSF mechanism. It models the optical effects of raindrops via a multi-scale learnable PSF dictionary, combined with a sequential restoration architecture featuring adaptive gated fusion. The method achieves SOTA performance of 33.12 dB on Rain100H and 42.28 dB on RealRain-1k-L, yielding a cumulative gain of 5.04 dB (13.5%) over the baseline MPRNet.
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "multi-stage restoration"
   - "dynamic filtering"
 date: 2026-05-08
-content_hash: 187bc90fc2bf5911
+content_hash: 2ea712b5fd7f0aeb
 ---
 
 # SD-PSFNet: Sequential and Dynamic Point Spread Function Network for Image Deraining
@@ -127,9 +127,9 @@ The Charbonnier loss provides pixel-level supervision, the edge-aware loss prese
 
 - [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
 - [\[AAAI 2026\] SpatioTemporal Difference Network for Video Depth Super-Resolution](spatiotemporal_difference_network_for_video_depth_super-resolution.md)
-- [\[ICCV 2025\] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising](../../ICCV2025/image_restoration/idf_iterative_dynamic_filtering_networks_for_generalizable_image_denoising.md)
-- [\[CVPR 2026\] UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization](../../CVPR2026/image_restoration/unirain_unified_image_deraining_rag_dataset_distillation.md)
-- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](../../CVPR2026/image_restoration/blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](../../CVPR2026/image_restoration/dynamic_exposure_burst_image_restoration.md)
+- [\[CVPR 2026\] Unpaired Image Deraining Using Reward-Guided Self-Reinforcement Strategy](../../CVPR2026/image_restoration/unpaired_image_deraining_using_reward-guided_self-reinforcement_strategy.md)
+- [\[CVPR 2026\] DVAR: Dynamic Visual Autoregressive Modeling for Image Super-Resolution](../../CVPR2026/image_restoration/dvar_dynamic_visual_autoregressive_modeling_for_image_super-resolution.md)
 
 </div>
 

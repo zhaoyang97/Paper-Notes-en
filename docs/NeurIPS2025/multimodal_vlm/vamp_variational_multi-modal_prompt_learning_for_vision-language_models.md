@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Prompt Learning] This paper proposes VaMP, a variational multi-modal prompt learning framework that models text-side prompts as latent variables and performs instance-level uncertainty mode…
+  [NeurIPS 2025][Multimodal VLM][Prompt Learning] This paper proposes VaMP, a variational multi-modal prompt learning framework that models text-side prompts as latent variables and performs instance-level uncertainty modeling via variational inference. Combined with a class-aware prior for regularizing the latent space, VaMP significantly improves CLIP's downstream adaptation under few-shot and domain generalization settings.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Few-Shot Learning"
   - "Domain Generalization"
 date: 2026-05-08
-content_hash: 76c0fcfca82ba82c
+content_hash: 6e55151a68305819
 ---
 
 # VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models
@@ -149,11 +149,11 @@ VaMP surpasses MMRL on Novel classes by **1.51%** and improves the harmonic mean
 
 ## Related Papers
 
+- [\[CVPR 2025\] MMRL: Multi-Modal Representation Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/mmrl_multi-modal_representation_learning_for_vision-language_models.md)
+- [\[CVPR 2025\] NLPrompt: Noise-Label Prompt Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/nlprompt_noise-label_prompt_learning_for_vision-language_models.md)
+- [\[CVPR 2025\] Vision-Language Model IP Protection via Prompt-based Learning](../../CVPR2025/multimodal_vlm/vision-language_model_ip_protection_via_prompt-based_learning.md)
 - [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](../../CVPR2026/multimodal_vlm/noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
-- [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](../../AAAI2026/multimodal_vlm/rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
-- [\[ICCV 2025\] FA: Forced Prompt Learning of Vision-Language Models for Out-of-Distribution Detection](../../ICCV2025/multimodal_vlm/fa_forced_prompt_learning_of_vision-language_models_for_out-of-distribution_dete.md)
 - [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
-- [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](../../ICCV2025/multimodal_vlm/advancing_textual_prompt_learning_with_anchored_attributes.md)
 
 </div>
 

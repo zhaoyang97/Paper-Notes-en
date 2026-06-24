@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation
 description: >-
-  [CVPR 2026][Hallucination Detection][LVLM] The authors propose the LTS-FS (Locate-Then-Sparsify for Feature Steering) framework, which utilizes a causal intervention attribution method to locate hallucination-related layers. It applies layer-wise sparse control of feature steering intensity based on attribution scores, effectively mitigating LVLM hallucinations
+  [CVPR 2026][Hallucination Detection][Visual Hallucination] The authors propose the LTS-FS (Locate-Then-Sparsify for Feature Steering) framework, which utilizes a causal intervention attribution method to locate hallucination-related layers. It applies layer-wise sparse control of feature steering intensity based on attribution scores, effectively mitigating LVLM hallucinations while preserving model generalization.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - LVLM
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Visual Hallucination"
+  - "Feature Steering"
+  - "Layer-wise Attribution"
+  - "Sparse Adjustment"
+  - "LVLM"
 date: 2026-05-08
-content_hash: 812eeac2bb2798aa
+content_hash: f11bf4d600d1f7a1
 ---
+
 # Locate-then-Sparsify: Attribution Guided Sparse Strategy for Visual Hallucination Mitigation
 
 **Conference**: CVPR 2026  
@@ -132,9 +137,9 @@ Attribution requires only 200 calibration samples. Once calculated, the steering
 
 - [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
 - [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
-- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
-- [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](../../ACL2026/hallucination/spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
 - [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
+- [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](../../ACL2026/hallucination/spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
 
 </div>
 

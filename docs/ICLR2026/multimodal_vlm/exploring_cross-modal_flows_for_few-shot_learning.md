@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Exploring Cross-Modal Flows for Few-Shot Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Few-Shot Learning] This work reformulates image-to-text alignment from the "one-step adjustment" characteristic of existing PEFT methods into a "multi-step iterative correction" via Flow Matching. By employing a plug-and-play velocity field, it gradually aligns entangled cross-modal distributions on difficult datasets, significantly impr
+  [ICLR 2026][Multimodal VLM][Few-Shot Learning] This work reformulates image-to-text alignment from the "one-step adjustment" characteristic of existing PEFT methods into a "multi-step iterative correction" via Flow Matching. By employing a plug-and-play velocity field, it gradually aligns entangled cross-modal distributions on difficult datasets, significantly improving few-shot classification.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Few-Shot Learning
-  - CLIP
-  - PEFT
-  - Flow Matching
-  - Cross-Modal Alignment
-  - Velocity Field
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Few-Shot Learning"
+  - "CLIP"
+  - "PEFT"
+  - "Flow Matching"
+  - "Cross-Modal Alignment"
+  - "Velocity Field"
 date: 2026-05-08
-content_hash: c209aa78521de548
+content_hash: a7faa4c91f588711
 ---
+
 # Exploring Cross-Modal Flows for Few-Shot Learning
 
 **Conference**: ICLR 2026  
@@ -106,12 +107,13 @@ FMA improves performance across all backbones. The gain on zero-shot CLIP for di
 - **Value**: ⭐⭐⭐⭐ Plug-and-play and effective on difficult datasets; offers a new paradigm for cross-modal alignment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](../../CVPR2026/multimodal_vlm/flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
 - [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
+- [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](../../CVPR2026/multimodal_vlm/flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
 - [\[ICLR 2026\] Preserve and Sculpt: Manifold-Aligned Fine-tuning of Vision-Language Models for Few-Shot Learning](preserve_and_sculpt_manifold-aligned_fine-tuning_of_vision-language_models_for_f.md)
 - [\[ICLR 2026\] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)
 - [\[ICLR 2026\] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows](flowbind_efficient_any-to-any_generation_with_bidirectional_flows.md)

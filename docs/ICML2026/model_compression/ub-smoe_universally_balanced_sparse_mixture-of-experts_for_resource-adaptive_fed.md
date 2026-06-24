@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UB-SMoE: Universally Balanced Sparse Mixture-of-Experts for Resource-Adaptive Federated Fine-tuning of Foundation Models
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors observe that directly applying Sparse MoE to heterogeneous federated LoRA fine-tuning leads to two critical issues: "expert utilization imbalance" and "non-differentiability of Top-K". They propose Dynamic Modulated Routing (DMR) to rebalance expert activation and Universal Pseudo-Gradient (PG) to provide s
+  [ICML 2026][Model Compression][Federated Fine-tuning] The authors observe that directly applying Sparse MoE to heterogeneous federated LoRA fine-tuning leads to two critical issues: "expert utilization imbalance" and "non-differentiability of Top-K". They propose Dynamic Modulated Routing (DMR) to rebalance expert activation and Universal Pseudo-Gradient (PG) to provide signals for inactive experts, forming a self-reinforcing cycle. This allows low-compute clients to achieve…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Federated Fine-tuning"
+  - "Sparse MoE"
+  - "Heterogeneous Clients"
+  - "Dynamic Routing"
+  - "Pseudo-Gradient"
 date: 2026-05-08
-content_hash: eb4ad658733e8169
+content_hash: 0715d8962740bf12
 ---
+
 # UB-SMoE: Universally Balanced Sparse Mixture-of-Experts for Resource-Adaptive Federated Fine-tuning of Foundation Models
 
 **Conference**: ICML 2026  
@@ -135,9 +141,9 @@ Low-compute performance jumped from 0.0079 (HetLoRA) to 0.3936 (approx. 8.7×), 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
 - [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](../../ICLR2026/model_compression/abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
-- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](../../CVPR2026/model_compression/mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](../../ICLR2026/model_compression/unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 

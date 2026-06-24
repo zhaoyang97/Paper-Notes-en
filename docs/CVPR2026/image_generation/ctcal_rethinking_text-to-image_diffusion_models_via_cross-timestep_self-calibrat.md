@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Proposes CTCal (Cross-Timestep Self-Calibration), which utilizes reliable text-image alignment (cross-attention maps) formed at small timesteps (low noise) to calibrate representation learning at large timesteps (high noise). This provide explicit cross-timestep self-supervision for text-to-image generation, outperform
+  [CVPR 2026][Image Generation][Text-to-Image Generation] Proposes CTCal (Cross-Timestep Self-Calibration), which utilizes reliable text-image alignment (cross-attention maps) formed at small timesteps (low noise) to calibrate representation learning at large timesteps (high noise). This provide explicit cross-timestep self-supervision for text-to-image generation, outperforming existing methods on T2I-CompBench++ and GenEval.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image Generation"
+  - "Diffusion Models"
+  - "Cross-Attention Alignment"
+  - "Self-Calibration"
+  - "Compositional Generation"
 date: 2026-05-08
-content_hash: 567b3dd82beafb32
+content_hash: d74d35014d304afc
 ---
+
 # CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration
 
 **Conference**: CVPR 2026  
@@ -153,7 +158,7 @@ CTCal prioritizes large timesteps where alignment is degraded. At small timestep
 ## Related Papers
 
 - [\[CVPR 2026\] RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits](rebrl_reinforcing_discrete_visual_diffusion_models_with_rebalanced_timestep_cred.md)
-- [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 - [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)

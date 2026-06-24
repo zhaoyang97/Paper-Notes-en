@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Machine Unlearning under Retain–Forget Entanglement
 description: >-
-  [ICLR 2026][AI Safety][machine unlearning] To address the "collateral damage" to related samples caused by semantic entanglement between the forget and retain sets, a two-stage optimization framework is proposed: the first stage uses an augmented Lagrangian method for aggressive unlearning and locking irrelevant retain samples, while the second stage employs gr
+  [ICLR 2026][AI Safety][machine unlearning] To address the "collateral damage" to related samples caused by semantic entanglement between the forget and retain sets, a two-stage optimization framework is proposed: the first stage uses an augmented Lagrangian method for aggressive unlearning and locking irrelevant retain samples, while the second stage employs gradient projection regularized by Wasserstein-2 distance to restore the accuracy of semantically adjacent retain sampl…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - machine unlearning
-  - retain-forget entanglement
-  - augmented Lagrangian
-  - gradient projection
-  - Wasserstein-2 distance
+  - "ICLR 2026"
+  - "AI Safety"
+  - "machine unlearning"
+  - "retain-forget entanglement"
+  - "augmented Lagrangian"
+  - "gradient projection"
+  - "Wasserstein-2 distance"
 date: 2026-05-08
-content_hash: d270590bd903a408
+content_hash: 49faed3c8622866c
 ---
+
 # Machine Unlearning under Retain–Forget Entanglement
 
 **Conference**: ICLR 2026  
@@ -121,15 +122,14 @@ flowchart LR
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](mitigating_privacy_risk_via_forget_set-free_unlearning.md)
 - [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
-- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
+- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
+- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
 - [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
-- [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
 
 </div>
 

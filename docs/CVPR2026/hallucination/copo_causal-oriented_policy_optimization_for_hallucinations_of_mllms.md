@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs
 description: >-
-  [CVPR 2026][Hallucination Detection][GRPO] The authors discovered that MLLMs, when post-trained with GRPO (using only outcome rewards based on final answer correctness), tend to over-focus on image backgrounds, forming spurious "background $\to$ answer" correlations that lead to hallucinations. They propose COPO, which calculates a "causal completeness" reward
+  [CVPR 2026][Hallucination Detection][Multimodal Hallucination] The authors discovered that MLLMs, when post-trained with GRPO (using only outcome rewards based on final answer correctness), tend to over-focus on image backgrounds, forming spurious "background $\to$ answer" correlations that lead to hallucinations. They propose COPO, which calculates a "causal completeness" reward (sufficiency + necessity) for each reasoning token and injects it into the GRPO advantage functio…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - GRPO
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "GRPO"
+  - "Causal Sufficiency and Necessity"
+  - "Token-level Reward"
+  - "Spurious Correlation"
 date: 2026-05-08
-content_hash: 65aa2505e9f56eed
+content_hash: c081b7b642e0d2fe
 ---
+
 # COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs
 
 **Conference**: CVPR 2026  
@@ -167,8 +172,8 @@ Removing components of the causal completeness reward (on LLaVA-1.5, including M
 - [\[CVPR 2025\] Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding](../../CVPR2025/hallucination/seeing_far_and_clearly_mitigating_hallucinations_in_mllms_with_attention_causal_.md)
 - [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
+- [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](../../ICLR2026/hallucination/cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[CVPR 2026\] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)
 
 </div>
 

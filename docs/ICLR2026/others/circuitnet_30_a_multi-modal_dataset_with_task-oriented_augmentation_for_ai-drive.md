@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design
 description: >-
-  [ICLR 2026][Others][EDA] CircuitNet 3.0 is the first large-scale open-source AI4EDA benchmark for timing and power prediction. It leverages 8,659 validated open-source RTL designs, augmented via Verilog AST mutations and task-oriented filtering into 15,863 multi-modal instances across Register-Transfer Level (RTL), Netlist, and Layout stages.
+  [ICLR 2026][Chip Design] CircuitNet 3.0 is the first large-scale open-source AI4EDA benchmark for timing and power prediction. It leverages 8,659 validated open-source RTL designs, augmented via Verilog AST mutations and task-oriented filtering into 15,863 multi-modal instances across Register-Transfer Level (RTL), Netlist, and Layout stages.
 tags:
-  - ICLR 2026
-  - Others
-  - EDA
+  - "ICLR 2026"
+  - "Chip Design"
+  - "EDA"
+  - "Multi-Modal Dataset"
+  - "Timing Prediction"
+  - "Power Prediction"
+  - "AST Data Augmentation"
+  - "Cross-Stage Representation Learning"
 date: 2026-05-08
-content_hash: 1678d53492056af7
+content_hash: bc3e9ff87ac3695e
 ---
+
 # CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design
 
 **Conference**: ICLR 2026  

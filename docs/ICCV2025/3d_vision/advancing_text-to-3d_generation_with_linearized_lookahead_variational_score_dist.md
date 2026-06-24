@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation
 description: >-
-  [ICCV 2025][3D Vision][Score Distillation] By identifying the optimization order mismatch between the LoRA model and the 3D model in VSD, this paper proposes a linearized lookahead correction term, $L^2$-VSD…
+  [ICCV 2025][3D Vision][Score Distillation] By identifying the optimization order mismatch between the LoRA model and the 3D model in VSD, this paper proposes a linearized lookahead correction term, $L^2$-VSD, which significantly improves text-to-3D generation quality at the cost of only one additional forward pass.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "Forward-mode Autodiff"
 date: 2026-05-08
-content_hash: 6c74446326836f81
+content_hash: 9b3a7b50a643bf75
 ---
 
 # Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation
@@ -141,10 +141,10 @@ Evaluation is conducted on 20 prompts from the DreamFusion gallery at resolution
 ## Related Papers
 
 - [\[ICCV 2025\] Stable Score Distillation](stable_score_distillation.md)
+- [\[ECCV 2024\] JointDreamer: Ensuring Geometry Consistency and Text Congruence in Text-to-3D Generation via Joint Score Distillation](../../ECCV2024/3d_vision/jointdreamer_ensuring_geometry_consistency_and_text_congruence_in_text-to-3d_gen.md)
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
 - [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
-- [\[ICCV 2025\] Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation](benchmarking_and_learning_multi-dimensional_quality_evaluator_for_text-to-3d_gen.md)
-- [\[ICCV 2025\] Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting](text2vdm_text_to_vector_displacement_maps_for_expressive_and_interactive_3d_scul.md)
+- [\[ECCV 2024\] AnimatableDreamer: Text-Guided Non-rigid 3D Model Generation and Reconstruction with Canonical Score Distillation](../../ECCV2024/3d_vision/animatabledreamer_text-guided_non-rigid_3d_model_generation_and_reconstruction_w.md)
 
 </div>
 

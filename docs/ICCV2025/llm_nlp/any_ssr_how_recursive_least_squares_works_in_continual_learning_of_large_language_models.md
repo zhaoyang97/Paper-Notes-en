@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models
 description: >-
-  [ICCV 2025][LLM/NLP][continual learning] This paper proposes Analytic Subspace Routing (Any-SSR), which assigns an independent LoRA subspace to each new task to eliminate knowledge interference…
+  [ICCV 2025][LLM (Other)][continual learning] This paper proposes Analytic Subspace Routing (Any-SSR), which assigns an independent LoRA subspace to each new task to eliminate knowledge interference, while employing an analytic router based on a recursive least squares (RLS) closed-form solution to dynamically select subspaces. The approach provides theoretical guarantees against forgetting prior task knowledge, enabling replay-free continual learning for LLMs.
 tags:
   - "ICCV 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "continual learning"
   - "LLM"
   - "recursive least squares"
   - "LoRA"
   - "catastrophic forgetting"
 date: 2026-05-08
-content_hash: 115c116f73c47199
+content_hash: 886ce6ed0d0ae455
 ---
 
 # Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models
@@ -109,11 +109,11 @@ Any-SSR achieves state-of-the-art performance on the Trace metric with near-perf
 
 ## Related Papers
 
+- [\[ACL 2025\] GORP: Continual Gradient Low-Rank Projection Fine-Tuning for LLMs](../../ACL2025/llm_nlp/gorp_continual_gradient_projection.md)
+- [\[ACL 2025\] Recurrent Knowledge Identification and Fusion for Language Model Continual Learning](../../ACL2025/llm_nlp/recurrent_kif_continual_learning.md)
+- [\[ACL 2025\] HFT: Half Fine-Tuning for Large Language Models](../../ACL2025/llm_nlp/hft_half_fine-tuning_for_large_language_models.md)
 - [\[ICCV 2025\] VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models](va_gpt_aligning_effective_tokens_video_anomaly.md)
 - [\[ICCV 2025\] VIM: Versatile Interactive Motion-Language Model](vim_versatile_interactive_motion_language_model.md)
-- [\[ICCV 2025\] ShadowHack: Hacking Shadows via Luminance-Color Divide and Conquer](shadowhack_hacking_shadows_via_luminance-color_divide_and_conquer.md)
-- [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
-- [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](../../NeurIPS2025/llm_nlp/c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
 
 </div>
 

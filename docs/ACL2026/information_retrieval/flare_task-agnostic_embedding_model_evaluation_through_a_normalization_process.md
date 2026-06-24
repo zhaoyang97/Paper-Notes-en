@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] The FLARE framework is proposed, utilizing Normalizing Flows for label-free text embedding model evaluation. By directly estimating information sufficiency from log-likelihood, it avoids the collapse of distance-based density estimation in high-dimensional spaces, achieving a Spearman $\rho$ of 0.90 with supervised ben
+  [ACL 2026 Findings][Information Retrieval & RAG][Embedding Model Evaluation] The FLARE framework is proposed, utilizing Normalizing Flows for label-free text embedding model evaluation. By directly estimating information sufficiency from log-likelihood, it avoids the collapse of distance-based density estimation in high-dimensional spaces, achieving a Spearman $\rho$ of 0.90 with supervised benchmarks across 11 datasets.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Embedding Model Evaluation"
+  - "Label-free Evaluation"
+  - "Normalizing Flows"
+  - "Information Sufficiency"
+  - "High-dimensional Density Estimation"
 date: 2026-05-08
-content_hash: 6689a43978d0133b
+content_hash: bf22f7d82f5a09f2
 ---
+
 # FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows
 
 **Conference**: ACL 2026 Findings  
@@ -126,10 +132,10 @@ Comparison of Spearman $\rho$ against supervised rankings:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Task-Agnostic Representations through Multi-Teacher Distillation](../../NeurIPS2025/information_retrieval/learning_task-agnostic_representations_through_multi-teacher_distillation.md)
-- [\[CVPR 2026\] ProM3E: Probabilistic Masked MultiModal Embedding Model for Ecology](../../CVPR2026/information_retrieval/prom3e_probabilistic_masked_multimodal_embedding_model_for_ecology.md)
 - [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
-- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](../../CVPR2026/information_retrieval/muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
+- [\[ICLR 2026\] KaLM-Embedding-V2: Superior Training Techniques and Data Inspire A Versatile Embedding Model](../../ICLR2026/information_retrieval/kalm-embedding-v2_superior_training_techniques_and_data_inspire_a_versatile_embe.md)
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](../../ICLR2026/information_retrieval/hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
+- [\[ACL 2026\] Reliable Evaluation Protocol for Low-Precision Retrieval](reliable_evaluation_protocol_for_low-precision_retrieval.md)
 
 </div>
 

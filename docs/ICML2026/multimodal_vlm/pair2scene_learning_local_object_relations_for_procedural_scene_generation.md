@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] Pair2Scene reformulates 3D indoor scene generation from "directly fitting a global joint distribution" to "learning one-to-one local object relations (support + functional) and recursively assembling them via a scene hierarchy tree." Combined with point cloud geometric encoding, Mixture-of-Logistics probability heads,
+  [ICML 2026][Multimodal VLM][3D Scene Generation] Pair2Scene reformulates 3D indoor scene generation from "directly fitting a global joint distribution" to "learning one-to-one local object relations (support + functional) and recursively assembling them via a scene hierarchy tree." Combined with point cloud geometric encoding, Mixture-of-Logistics probability heads, and collision-aware rejection sampling, it enables complex scene generation—increasing object counts from ~4 to…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "3D Scene Generation"
+  - "Local Object Relations"
+  - "Support Relations"
+  - "Functional Relations"
+  - "MoL Distribution"
+  - "Rejection Sampling"
 date: 2026-05-08
-content_hash: 1aca64d5885af448
+content_hash: 61f73555985e0597
 ---
+
 # Pair2Scene: Learning Local Object Relations for Procedural Scene Generation
 
 **Conference**: ICML 2026  
@@ -139,10 +146,10 @@ In a 22-person user study, Ours-Beyond ranked first in nearly all metrics (SA, P
 ## Related Papers
 
 - [\[CVPR 2025\] Global-Local Tree Search in VLMs for 3D Indoor Scene Generation](../../CVPR2025/multimodal_vlm/global-local_tree_search_in_vlms_for_3d_indoor_scene_generation.md)
-- [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](../../CVPR2026/multimodal_vlm/can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](../../CVPR2026/multimodal_vlm/hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
-- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
+- [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](../../CVPR2026/multimodal_vlm/can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
 - [\[ICLR 2026\] Procedural Mistake Detection via Action Effect Modeling](../../ICLR2026/multimodal_vlm/procedural_mistake_detection_via_action_effect_modeling.md)
+- [\[ICCV 2025\] Global and Local Entailment Learning for Natural World Imagery](../../ICCV2025/multimodal_vlm/global_and_local_entailment_learning_for_natural_world_imagery.md)
 
 </div>
 

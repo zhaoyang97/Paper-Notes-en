@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Improved Convergence Analysis of Topology Dependence in Decentralized SGD
 description: >-
-  [ICML 2026][Optimization & Theory][Decentralized SGD] This paper provides a tighter convergence analysis for Decentralized SGD by replacing the topological factor—previously determined solely by the "spectral gap (second largest eigenvalue)"—with the "entire spectrum of the mixing matrix." This theoretically explains for the first time why sparse topologies like rings per
+  [ICML 2026][Optimization][Decentralized SGD] This paper provides a tighter convergence analysis for Decentralized SGD by replacing the topological factor—previously determined solely by the "spectral gap (second largest eigenvalue)"—with the "entire spectrum of the mixing matrix." This theoretically explains for the first time why sparse topologies like rings perform significantly better in training than pessimistic predictions suggest when data is near-homogeneous.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Decentralized SGD
-  - gossip averaging
+  - "ICML 2026"
+  - "Optimization"
+  - "Decentralized SGD"
+  - "gossip averaging"
+  - "network topology"
+  - "spectral gap"
+  - "mixing matrix spectrum"
 date: 2026-05-08
-content_hash: 79ae159c9f182465
+content_hash: b47ef03f3fec78c7
 ---
+
 # Improved Convergence Analysis of Topology Dependence in Decentralized SGD
 
 **Conference**: ICML 2026  
@@ -121,15 +125,15 @@ Sparse topologies (Ring) show the most significant improvement, consistent with 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication](../../AAAI2026/optimization/a_unified_convergence_analysis_for_semi-decentralized_learni.md)
-- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](../../ICLR2026/optimization/a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
+- [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](../../ICLR2026/optimization/sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
 - [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](../../NeurIPS2025/optimization/unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
 - [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
-- [\[ICML 2025\] Improved Last-Iterate Convergence of Shuffling Gradient Methods for Nonsmooth Convex Optimization](../../ICML2025/optimization/improved_last-iterate_convergence_of_shuffling_gradient_methods_for_nonsmooth_co.md)
+- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](../../ICLR2026/optimization/a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
 
 </div>
 

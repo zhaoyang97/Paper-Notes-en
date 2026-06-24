@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model
 description: >-
-  [CVPR 2026][Multimodal VLM][token transition] TransPrune proposes using "the changes in token representations during internal propagation" (token transition) to determine the importance of visual tokens. By combining two complementary signals—TTV (Token Transition Variation), which assesses the magnitude and direction changes of tokens, and IGA (Instruction-Guided
+  [CVPR 2026][Multimodal Efficiency][Visual token pruning] TransPrune proposes using "the changes in token representations during internal propagation" (token transition) to determine the importance of visual tokens. By combining two complementary signals—TTV (Token Transition Variation), which assesses the magnitude and direction changes of tokens, and IGA (Instruction-Guided Attention), which measures image token attention relative to instructions—the method achieves training…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - token transition
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token pruning"
+  - "Large Vision-Language Model"
+  - "token transition"
+  - "inference acceleration"
+  - "training-free"
 date: 2026-05-08
-content_hash: 8e8ca0f05ef8333a
+content_hash: 15fbc4f363fb6bdb
 ---
+
 # TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model
 
 **Conference**: CVPR 2026  
@@ -147,11 +151,11 @@ TransPrune-High matches the original model's accuracy with only ~41% computation
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 - [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
-- [\[ICML 2026\] CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models](../../ICML2026/multimodal_vlm/clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
-- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
 
 </div>
 

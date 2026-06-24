@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Text-to-image generation] CoMPaSS leverages the SCOP data engine to curate spatially unambiguous training data and introduces the parameter-free TENOR module to inject token ordering informa…
+  [ICCV 2025][Image Generation][Text-to-image generation] CoMPaSS leverages the SCOP data engine to curate spatially unambiguous training data and introduces the parameter-free TENOR module to inject token ordering information into the attention mechanism, substantially improving spatial relationship generation accuracy in T2I diffusion models (VISOR +98%, GenEval Position +131%).
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "data engine"
   - "token positional encoding"
 date: 2026-05-08
-content_hash: a2f08e127b32af4a
+content_hash: 0827ccac83029dd2
 ---
 
 # CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models
@@ -134,10 +134,10 @@ Data efficiency ablation: using only 500 images, FLUX.1's GenEval Position impro
 ## Related Papers
 
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](../../CVPR2026/image_generation/enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
+- [\[CVPR 2025\] Compass Control: Multi Object Orientation Control for Text-to-Image Generation](../../CVPR2025/image_generation/compass_control_multi_object_orientation_control_for_text-to-image_generation.md)
 - [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](../../CVPR2026/image_generation/spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
 - [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
 - [\[ICCV 2025\] Understanding Flatness in Generative Models: Its Role and Benefits](understanding_flatness_in_generative_models_its_role_and_benefits.md)
-- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
 
 </div>
 

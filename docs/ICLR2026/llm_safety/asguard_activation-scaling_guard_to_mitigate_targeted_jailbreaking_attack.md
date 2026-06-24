@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] ASGuard utilizes circuit analysis to locate a few attention heads responsible for "tense rewriting jailbreaks," trains a channel-level scaling vector to suppress these heads, and performs proactive fine-tuning while the scaling is active (the "disabled state") to help the model internalize a more robust refusal mechani
+  [ICLR 2026][LLM Safety][tense jailbreaking] ASGuard utilizes circuit analysis to locate a few attention heads responsible for "tense rewriting jailbreaks," trains a channel-level scaling vector to suppress these heads, and performs proactive fine-tuning while the scaling is active (the "disabled state") to help the model internalize a more robust refusal mechanism. Finally, the scaling vector is unloaded, precisely patching specific vulnerabilities with minimal loss of genera…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "tense jailbreaking"
+  - "attention head circuit analysis"
+  - "activation scaling"
+  - "proactive fine-tuning"
+  - "safety-utility trade-off"
 date: 2026-05-08
-content_hash: 87c60780f7cbd884
+content_hash: 0b3bc5b90ecf8ae2
 ---
+
 # ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack
 
 **Conference**: ICLR 2026  
@@ -103,15 +109,15 @@ On Llama, ASGuard reduces other attacks simultaneously: Tense 42%→8%, GCG 15%�
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion](jailbreaking_the_matrix_nullspace_steering_for_controlled_model_subversion.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
 - [\[ICLR 2026\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
-- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](../../ACL2026/llm_safety/jailbreaking_large_language_models_with_morality_attacks.md)
 - [\[AAAI 2026\] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users](../../AAAI2026/llm_safety/llm_targeted_underperformance_disproportionately_impacts_vulnerable_users.md)
-- [\[NeurIPS 2025\] TRAP: Targeted Redirecting of Agentic Preferences](../../NeurIPS2025/llm_safety/trap_targeted_redirecting_of_agentic_preferences.md)
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video
 description: >-
-  [NeurIPS 2025][Video Understanding][point tracking] This paper introduces the TAPVid-360 task and dataset, requiring models to track the 3D direction of query points (including those outside the field of view) in narrow…
+  [NeurIPS 2025][Video Understanding][point tracking] This paper introduces the TAPVid-360 task and dataset, requiring models to track the 3D direction of query points (including those outside the field of view) in narrow field-of-view video. By leveraging 360° video to generate training data and fine-tuning CoTracker3 for directional prediction, the proposed approach substantially outperforms existing methods on out-of-field-of-view tracking.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "spatial representation"
   - "panoramic understanding"
 date: 2026-05-08
-content_hash: 0a018a0530fe2a92
+content_hash: 51fb26125b5d9de2
 ---
 
 # TAPVid-360: Tracking Any Point in 360 from Narrow Field of View Video
@@ -134,11 +134,11 @@ The pipeline consists of three stages:
 
 ## Related Papers
 
+- [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](../../CVPR2026/video_understanding/mv-tap_tracking_any_point_in_multi-view_videos.md)
+- [\[CVPR 2025\] ETAP: Event-based Tracking of Any Point](../../CVPR2025/video_understanding/etap_event-based_tracking_of_any_point.md)
 - [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](../../ICCV2025/video_understanding/beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
-- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](../../ICCV2025/video_understanding/online_dense_point_tracking_with_streaming_memory.md)
-- [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](../../ICCV2025/video_understanding/alltracker_efficient_dense_point_tracking_at_high_resolution.md)
-- [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](../../CVPR2026/video_understanding/realworld_point_tracking_with_verifierguided_pseud.md)
-- [\[NeurIPS 2025\] Tracking and Understanding Object Transformations](tracking_and_understanding_object_transformations.md)
+- [\[ECCV 2024\] Self-Supervised Any-Point Tracking by Contrastive Random Walks](../../ECCV2024/video_understanding/self-supervised_any-point_tracking_by_contrastive_random_walks.md)
+- [\[CVPR 2026\] Generative Point Tracking and Forecasting](../../CVPR2026/video_understanding/generative_point_tracking_and_forecasting.md)
 
 </div>
 

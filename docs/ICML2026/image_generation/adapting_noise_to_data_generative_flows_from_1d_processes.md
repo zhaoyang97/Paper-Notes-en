@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adapting Noise to Data: Generative Flows from Learned 1D Processes
 description: >-
-  [ICML 2026][Image Generation][flow matching] This paper argues that the default Gaussian latent in flow/diffusion models is not always suitable for the data distribution. It proposes constructing a data-adaptive product prior using learnable 1D quantile functions to jointly learn the noise and velocity field in flow matching, thereby shortening the transport path
+  [ICML 2026][Image Generation][flow matching] This paper argues that the default Gaussian latent in flow/diffusion models is not always suitable for the data distribution. It proposes constructing a data-adaptive product prior using learnable 1D quantile functions to jointly learn the noise and velocity field in flow matching, thereby shortening the transport path and improving performance on heavy-tailed weather data and low-capacity image generation.
 tags:
-  - ICML 2026
-  - Image Generation
-  - flow matching
-  - quantile function
+  - "ICML 2026"
+  - "Image Generation"
+  - "flow matching"
+  - "data-adaptive noise"
+  - "quantile function"
+  - "non-Gaussian prior"
+  - "heavy-tailed generative modeling"
 date: 2026-05-08
-content_hash: 5dae00c1cc933023
+content_hash: 92e1fc54dd90bb04
 ---
+
 # Adapting Noise to Data: Generative Flows from Learned 1D Processes
 
 **Conference**: ICML 2026  
@@ -136,11 +140,11 @@ The authors scanned the entropy regularization strength $\beta$ on CIFAR-10. Mos
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improved Mean Flows: On the Challenges of Fastforward Generative Models](../../CVPR2026/image_generation/improved_mean_flows_on_the_challenges_of_fastforward_generative_models.md)
+- [\[ICML 2026\] Compositional Generative Modeling from Decentralized Data](compositional_generative_modeling_from_decentralized_data.md)
+- [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](../../ICLR2026/image_generation/mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
+- [\[ICLR 2026\] Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster](../../ICLR2026/image_generation/forward-learned_discrete_diffusion_learning_how_to_noise_to_denoise_faster.md)
 - [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
 - [\[ICML 2026\] Path-Coupled Bellman Flows for Distributional Reinforcement Learning](path-coupled_bellman_flows_for_distributional_reinforcement_learning.md)
-- [\[CVPR 2026\] Bidirectional Normalizing Flow: From Data to Noise and Back](../../CVPR2026/image_generation/bidirectional_normalizing_flow_from_data_to_noise_and_back.md)
-- [\[NeurIPS 2025\] Flow Matching Neural Processes](../../NeurIPS2025/image_generation/flow_matching_neural_processes.md)
 
 </div>
 

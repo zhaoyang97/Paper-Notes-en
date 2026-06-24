@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges
 description: >-
-  [ICML 2026][Image Restoration][Latent diffusion bridge] SDB reframes modality translation as "selecting a coupling from the set $\mathcal{P}$ of all couplings satisfying marginal constraints." Built upon LDDBM, it incorporates marginal matching (WTA + capacity constraints) and dual-layer cycle consistency (endpoint and trajectory levels). Paired supervision is treated as an
+  [ICML 2026][Image Restoration][Latent diffusion bridge] SDB reframes modality translation as "selecting a coupling from the set $\mathcal{P}$ of all couplings satisfying marginal constraints." Built upon LDDBM, it incorporates marginal matching (WTA + capacity constraints) and dual-layer cycle consistency (endpoint and trajectory levels). Paired supervision is treated as an optional heuristic, enabling the model to function under zero, semi, and fully paired budgets. Even und…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Latent diffusion bridge
-  - Marginal matching
-  - Cycle consistency
-  - Winner-takes-all
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Latent diffusion bridge"
+  - "Marginal matching"
+  - "Cycle consistency"
+  - "Winner-takes-all"
+  - "Semi-paired training"
 date: 2026-05-08
-content_hash: 172b4e0f50016f2b
+content_hash: d5e8449de8774b9f
 ---
+
 # Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges
 
 **Conference**: ICML 2026  
@@ -145,7 +147,7 @@ Impact of structural constraints on coupling quality on synthetic benchmarks ($\
 - [\[ICML 2026\] Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models](early_decisions_matter_proximity_bias_and_initial_trajectory_shaping_in_non-auto.md)
 - [\[ICML 2026\] Consistent Diffusion Language Models](consistent_diffusion_language_models.md)
 - [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
-- [\[ICML 2026\] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](plan_for_speed_dilated_scheduling_for_masked_diffusion_language_models.md)
+- [\[ICML 2026\] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs](dapd_dependency-aware_parallel_decoding_via_attention_for_diffusion_llms.md)
 
 </div>
 

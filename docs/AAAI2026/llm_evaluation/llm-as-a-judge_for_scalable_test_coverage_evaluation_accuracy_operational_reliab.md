@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM-as-a-Judge for Scalable Test Coverage Evaluation
 description: >-
-  [AAAI 2026][LLM Evaluation][LLM-as-Judge] This paper applies the LLM-as-Judge paradigm to Gherkin acceptance test coverage evaluation…
+  [AAAI 2026][LLM Evaluation][LLM-as-Judge] This paper applies the LLM-as-Judge paradigm to Gherkin acceptance test coverage evaluation, systematically quantifying accuracy–reliability–cost trade-offs across 20 model configurations × 500 evaluations. It finds that GPT-4o Mini achieves the optimal production balance with a MAAE of 6.07, an ECR@1 of 96.6%, and a cost of \$1.01 per 1K evaluations—approximately 1/78th the cost of GPT-5 at high reasoning effort.
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Automated Evaluation"
   - "Gherkin"
 date: 2026-05-08
-content_hash: 131ddb605dc6be1f
+content_hash: 3d74787eb5c1ecdb
 ---
 
 # LLM-as-a-Judge for Scalable Test Coverage Evaluation
@@ -137,10 +137,10 @@ The LLM-as-a-Judge (LAJ) framework receives a Jira requirement together with a G
 ## Related Papers
 
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
+- [\[ICLR 2026\] VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding](../../ICLR2026/llm_evaluation/videojudge_bootstrapping_enables_scalable_supervision_of_mllm-as-a-judge_for_vid.md)
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](test-time_diverse_reasoning_by_riemannian_activation_steering.md)
 - [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](../../ACL2026/llm_evaluation/taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ICML 2026\] CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting](../../ICML2026/llm_evaluation/capbencher_give_your_llm_benchmark_a_built-in_alarm_for_test-set_overfitting.md)
 
 </div>
 

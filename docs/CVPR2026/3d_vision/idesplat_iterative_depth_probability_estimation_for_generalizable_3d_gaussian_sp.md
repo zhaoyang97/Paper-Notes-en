@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] IDESplat replaces "single-warp depth estimation" with "multi-cascade warp iterative depth probability boosting." This improves the accuracy of Gaussian center (depth) prediction for feed-forward generalizable 3DGS. On the RE10K dataset, it surpasses DepthSplat by 0.33 dB PSNR with only ~1/10 of the parameters and achie
+  [CVPR 2026][3D Vision][Generalizable 3DGS] IDESplat replaces "single-warp depth estimation" with "multi-cascade warp iterative depth probability boosting." This improves the accuracy of Gaussian center (depth) prediction for feed-forward generalizable 3DGS. On the RE10K dataset, it surpasses DepthSplat by 0.33 dB PSNR with only ~1/10 of the parameters and achieves a significant 2.95 dB gain on the cross-dataset DTU benchmark.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Generalizable 3DGS"
+  - "Feed-forward Gaussian Reconstruction"
+  - "Depth Probability Estimation"
+  - "Iterative Warp"
+  - "Sparse Attention"
 date: 2026-05-08
-content_hash: 2e3e5c5634df2c3b
+content_hash: fa12cf37c6b32dcc
 ---
+
 # IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -141,9 +147,9 @@ Iteration rounds (Table 6): 0 rounds (single warp) 26.63 → 1 round 27.08 (+0.4
 
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
 - [\[CVPR 2026\] Eulerian Gaussian Splatting using Hashed Probability Pyramids](eulerian_gaussian_splatting_using_hashed_probability_pyramids.md)
+- [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
 - [\[CVPR 2026\] iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
+- [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
 
 </div>
 

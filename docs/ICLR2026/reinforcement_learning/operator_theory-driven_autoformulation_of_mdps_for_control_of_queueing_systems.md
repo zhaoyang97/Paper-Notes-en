@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Operator Theory-Driven Autoformulation of MDPs for Control of Queueing Systems
 description: >-
-  [ICLR 2026][Reinforcement Learning][MDP] This paper utilizes Large Language Models (LLMs) to automatically translate natural language descriptions of queueing control problems into Bellman equations in the form of "operator graphs." By leveraging a rigorously proven "universal three-layer topology" to prune the vast modeling search space, it employs a customi
+  [ICLR 2026][Reinforcement Learning][Autoformulation] This paper utilizes Large Language Models (LLMs) to automatically translate natural language descriptions of queueing control problems into Bellman equations in the form of "operator graphs." By leveraging a rigorously proven "universal three-layer topology" to prune the vast modeling search space, it employs a customized MCTS for graph construction and low-complexity dynamic programming to automatically identify the struct…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - MDP
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Autoformulation"
+  - "MDP"
+  - "Operator Theory"
+  - "Queueing Systems"
+  - "Monte Carlo Tree Search"
 date: 2026-05-08
-content_hash: 3fc62fb497824604
+content_hash: dc7fbe35a6efcea9
 ---
+
 # Operator Theory-Driven Autoformulation of MDPs for Control of Queueing Systems
 
 **Conference**: ICLR 2026  
@@ -133,7 +138,7 @@ Grammar checks (SC) were the primary driver of performance: once added, all form
 - [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
 - [\[ICLR 2026\] Is Pure Exploitation Sufficient in Exogenous MDPs with Linear Function Approximation?](is_pure_exploitation_sufficient_in_exogenous_mdps_with_linear_function_approxima.md)
 - [\[ICLR 2026\] Optimal Robust Subsidy Policies for Irrational Agent in Principal-Agent MDPs](optimal_robust_subsidy_policies_for_irrational_agent_in_principal-agent_mdps.md)
-- [\[ICLR 2026\] APC-RL: Exceeding Data-Driven Behavior Priors with Adaptive Policy Composition](apc-rl_exceeding_data-driven_behavior_priors_with_adaptive_policy_composition.md)
+- [\[ICLR 2026\] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models](cde_curiosity-driven_exploration_for_efficient_reinforcement_learning_in_large_l.md)
 
 </div>
 

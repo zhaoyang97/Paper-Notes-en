@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CR-Net: Scaling Parameter-Efficient Training with Cross-Layer Low-Rank Structure
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] CR-Net discovers that the "difference between adjacent layer activations" possesses a strong low-rank structure. Consequently, it reformulates every linear mapping as "previous layer activation × learnable scaling + low-rank increment." This design reduces parameters by half without losing high-rank information. When c
+  [ICLR2026][LLM Efficiency][Low-rank structure] CR-Net discovers that the "difference between adjacent layer activations" possesses a strong low-rank structure. Consequently, it reformulates every linear mapping as "previous layer activation × learnable scaling + low-rank increment." This design reduces parameters by half without losing high-rank information. When combined with an activation recomputation strategy specifically designed for this cross-layer dependency…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Low-rank structure"
+  - "Cross-layer residual"
+  - "Efficient pre-training"
+  - "Activation recomputation"
+  - "Memory optimization"
 date: 2026-05-08
-content_hash: 131164e76fa25200
+content_hash: b4c4b2a4ab1f563b
 ---
+
 # CR-Net: Scaling Parameter-Efficient Training with Cross-Layer Low-Rank Structure
 
 **Conference**: ICLR2026  

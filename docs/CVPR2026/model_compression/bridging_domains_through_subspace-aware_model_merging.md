@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Domains through Subspace-Aware Model Merging
 description: >-
-  [CVPR 2026][Model Compression][CLIP] This paper discovers that merging models fine-tuned on different domains to generalize to unseen domains produces much stronger singular subspace conflicts than conventional multi-task merging. It proposes SCORE: a method that performs a change-of-basis using a shared orthogonal basis constructed from the concatenated
+  [CVPR 2026][Model Compression][Model Merging] This paper discovers that merging models fine-tuned on different domains to generalize to unseen domains produces much stronger singular subspace conflicts than conventional multi-task merging. It proposes SCORE: a method that performs a change-of-basis using a shared orthogonal basis constructed from the concatenated principal singular vectors of all models. By retaining diagonal elements (consistent directions) and trimming off-…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - CLIP
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Domain Generalization"
+  - "Singular Value Decomposition"
+  - "Subspace Conflict"
+  - "CLIP"
 date: 2026-05-08
-content_hash: a859970b94a8fc2e
+content_hash: da6d109ea9e34365
 ---
+
 # Bridging Domains through Subspace-Aware Model Merging
 
 **Conference**: CVPR 2026  
@@ -140,10 +145,10 @@ Ablation on which elements of $\Sigma_{\text{score}}$ to retain (using Diagonal-
 
 ## Related Papers
 
-- [\[CVPR 2026\] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy](preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire.md)
-- [\[CVPR 2026\] Model Merging on Loss Landscape: A Geometry Perspective](model_merging_on_loss_landscape_a_geometry_perspective.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
-- [\[ICLR 2026\] RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following Through Model Merging](../../ICLR2026/model_compression/rain-merging_a_gradient-free_method_to_enhance_instruction_following_through_mod.md)
+- [\[CVPR 2026\] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy](preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire.md)
+- [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](../../ICLR2026/model_compression/mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
+- [\[ICLR 2026\] MASS: MoErging through Adaptive Subspace Selection](../../ICLR2026/model_compression/mass_moerging_through_adaptive_subspace_selection.md)
 - [\[CVPR 2026\] Continual Distillation of Teachers from Different Domains](continual_distillation_of_teachers_from_different_domains.md)
 
 </div>

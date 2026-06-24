@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learning Credal Ensembles via Distributionally Robust Optimization
 description: >-
-  [ICML 2026][learning_theory][Paper Note] CreDRO redefines "epistemic uncertainty" (EU) as **disagreement between models under different training-test distribution shift hypotheses**. Using Distributionally Robust Optimization (DRO), it assigns varying shift intensities to train ensemble members. Their softmax outputs are transformed into class probability int
+  [ICML2026][Learning Theory][Epistemic Uncertainty] CreDRO redefines "epistemic uncertainty" (EU) as **disagreement between models under different training-test distribution shift hypotheses**. Using Distributionally Robust Optimization (DRO), it assigns varying shift intensities to train ensemble members. Their softmax outputs are transformed into class probability intervals to form a box credal set for quantifying uncertainty, consistently outperforming existing credal metho…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Uncertainty Quantification"
+  - "Epistemic Uncertainty"
+  - "Credal Sets"
+  - "Distributionally Robust Optimization"
+  - "Deep Ensembles"
+  - "OOD Detection"
 date: 2026-05-08
-content_hash: 28d1cb0d7eb2c6cb
+content_hash: 57022f9745391536
 ---
+
 # Learning Credal Ensembles via Distributionally Robust Optimization
 
 **Conference**: ICML2026  
@@ -145,14 +152,17 @@ The authors verified design choices from multiple perspectives:
 
 <div class="related-papers" markdown="1">
 
-[1] Lakshminarayanan, B., et al. "Simple and scalable predictive uncertainty estimation using deep ensembles." NeurIPS 2017.
-[2] Wang, K., et al. "Credal deep ensembles." Pre-print (cited as prior SOTA).
-[3] Shaker, M. H., & Hüllermeier, E. "Aleatoric and epistemic uncertainty with credal sets." 2020.
+## Related Papers
+
+- [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](../../ICLR2026/learning_theory/noise_tolerance_of_distributionally_robust_learning.md)
+- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
+- [\[ICLR 2026\] Efficient Credal Prediction through Decalibration](../../ICLR2026/learning_theory/efficient_credal_prediction_through_decalibration.md)
+- [\[ICLR 2026\] Stop Guessing: Choosing the Optimization-Consistent Uncertainty Measurement for Evidential Deep Learning](../../ICLR2026/learning_theory/stop_guessing_choosing_the_optimization-consistent_uncertainty_measurement_for_e.md)
+- [\[ICML 2026\] On Regret Bounds of Thompson Sampling for Bayesian Optimization](on_regret_bounds_of_thompson_sampling_for_bayesian_optimization.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Bandit Learning in Matching Markets Robust to Adversarial Corruptions](../../ICLR2026/learning_theory/bandit_learning_in_matching_markets_robust_to_adversarial_corruptions.md)

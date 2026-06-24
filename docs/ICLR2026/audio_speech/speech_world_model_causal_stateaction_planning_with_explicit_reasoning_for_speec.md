@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Speech World Model: Causal State–Action Planning with Explicit Reasoning for Speech
 description: >-
-  [ICLR 2026][Audio & Speech][World Models] This paper proposes the Speech World Model (SWM), which decomposes speech understanding into four modules: World Model Activation, Theory of Mind, Speech Act, and Pragmatic Intent. These modules infer states through a Causal Directed Acyclic Graph (DAG). The resulting structured states serve as explicit prompts for ins
+  [ICLR 2026][Audio & Speech][Speech Language Models] This paper proposes the Speech World Model (SWM), which decomposes speech understanding into four modules: World Model Activation, Theory of Mind, Speech Act, and Pragmatic Intent. These modules infer states through a Causal Directed Acyclic Graph (DAG). The resulting structured states serve as explicit prompts for instruction-tuned Speech Language Models (SLMs), achieving speech reasoning performance comparable to Gemini 2.…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - World Models
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech Language Models"
+  - "Causal Graphs"
+  - "World Models"
+  - "Explicit Reasoning"
+  - "Semi-supervised Learning"
 date: 2026-05-08
-content_hash: eb2fb035953f951e
+content_hash: af869afb35732432
 ---
+
 # Speech World Model: Causal State–Action Planning with Explicit Reasoning for Speech
 
 **Conference**: ICLR 2026  
@@ -145,14 +150,12 @@ Node accuracy and edge validity:
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
 - [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
-- [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
 - [\[AAAI 2026\] DeformTrace: A Deformable State Space Model with Relay Tokens for Temporal Forgery Localization](../../AAAI2026/audio_speech/deformtrace_a_deformable_state_space_model_with_relay_tokens_for_temporal_forger.md)
+- [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
 - [\[ICLR 2026\] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations](drvoice_parallel_speech-text_voice_conversation_model_via_dual-resolution_speech.md)
 
 </div>

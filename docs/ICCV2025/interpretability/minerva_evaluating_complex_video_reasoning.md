@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Minerva: Evaluating Complex Video Reasoning
 description: >-
-  [ICCV 2025][Interpretability][video reasoning] This paper introduces Minerva — a manually annotated benchmark of 1,515 complex video reasoning QA pairs, each with 5 answer choices and a detailed reasoning trace…
+  [ICCV 2025][Interpretability][video reasoning] This paper introduces Minerva — a manually annotated benchmark of 1,515 complex video reasoning QA pairs, each with 5 answer choices and a detailed reasoning trace, designed to evaluate the video reasoning capabilities of multimodal large language models. It further establishes a video reasoning error taxonomy (Temporal / Perceptual / Logical / Completeness) and the MiRA automated evaluation framework.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "reasoning error taxonomy"
 date: 2026-05-08
-content_hash: d696cb1ffed0da1a
+content_hash: f4a1ad472149a63d
 ---
 
 # Minerva: Evaluating Complex Video Reasoning
@@ -163,11 +163,11 @@ This paper presents an evaluation benchmark and does not involve model training.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](../../CVPR2026/interpretability/back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](../../ACL2026/interpretability/meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
 - [\[NeurIPS 2025\] Evaluating LLMs in Open-Source Games](../../NeurIPS2025/interpretability/evaluating_llms_in_open-source_games.md)
-- [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_alignment.md)
-- [\[ACL 2026\] Flattery in Motion: Benchmarking and Analyzing Sycophancy in Video-LLMs](../../ACL2026/interpretability/flattery_in_motion_benchmarking_and_analyzing_sycophancy_in_video-llms.md)
-- [\[ICLR 2026\] When Machine Learning Gets Personal: Evaluating Prediction and Explanation](../../ICLR2026/interpretability/when_machine_learning_gets_personal_evaluating_prediction_and_explanation.md)
+- [\[ICML 2025\] Evaluating Neuron Explanations: A Unified Framework with Sanity Checks](../../ICML2025/interpretability/evaluating_neuron_explanations_a_unified_framework_with_sanity_checks.md)
+- [\[CVPR 2025\] KVQ: Boosting Video Quality Assessment via Saliency-Guided Local Perception](../../CVPR2025/interpretability/kvq_boosting_video_quality_assessment_via_saliency-guided_local_perception.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the flaw of "single-level alignment" in CLIP visual reprogramming (which only trains visual prompts at the input while freezing the black-box CLIP), this paper proposes DGA. DGA extracts two overlooked types of structural information—semantic granularity (label hierarchy) and visual granularity (multi-scale)
+  [CVPR 2026][Multimodal VLM][Visual Reprogramming] Addressing the flaw of "single-level alignment" in CLIP visual reprogramming (which only trains visual prompts at the input while freezing the black-box CLIP), this paper proposes DGA. DGA extracts two overlooked types of structural information—semantic granularity (label hierarchy) and visual granularity (multi-scale). It uses PLH+HKP for hierarchical semantic alignment and multi-scale cropping + UPF for uncertainty-weighted…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Reprogramming"
+  - "CLIP Few-shot"
+  - "Label Hierarchy"
+  - "Multi-scale Alignment"
+  - "Uncertainty Weighting"
 date: 2026-05-08
-content_hash: e6cffa87b8873fa0
+content_hash: 76fe26900c68a4b6
 ---
+
 # Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ Averaged across SUN, UCF, Pets, and Aircraft:
 - Value: ⭐⭐⭐⭐ Black-box friendly and robust; a practical step for CLIP few-shot adaptation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
 - [\[CVPR 2026\] Granulon: Awakening Pixel-Level Visual Encoders with Adaptive Multi-Granularity Semantics for MLLM](granulon_awakening_pixel-level_visual_encoders_with_adaptive_multi-granularity_s.md)
-- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
-- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
+- [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
 - [\[CVPR 2026\] Boosting Document Parsing Efficiency and Performance with Coarse-to-Fine Visual Processing](boosting_document_parsing_efficiency_and_performance_with_coarse-to-fine_visual_.md)
+- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
+- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
 
 </div>
 

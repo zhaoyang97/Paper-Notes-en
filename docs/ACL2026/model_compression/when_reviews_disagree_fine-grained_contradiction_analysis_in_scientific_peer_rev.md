@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
 description: >-
-  [ACL 2026][Model Compression][Knowledge Distillation] This paper advances reviewer disagreement analysis from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews, utilizing the IMPACT multi-agent teacher to distill a TIDE student model deployable via a single forward pass.
+  [ACL2026][Model Compression][Peer Review] This paper advances reviewer disagreement analysis from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews, utilizing the IMPACT multi-agent teacher to distill a TIDE student model deployable via a single forward pass.
 tags:
-  - ACL 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ACL2026"
+  - "Model Compression"
+  - "Peer Review"
+  - "Contradiction Detection"
+  - "Intensity Scoring"
+  - "Multi-Agent Deliberation"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 26e20f0356c7b773
+content_hash: e4799ee4d8149472
 ---
+
 # When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
 
 **Conference**: ACL2026  
@@ -148,8 +153,8 @@ The authors ablate IMPACT and TIDE separately to verify the effects of aspect co
 - [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
 - [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](../../CVPR2026/model_compression/dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
 - [\[CVPR 2026\] DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge](../../CVPR2026/model_compression/dit-distill_open-set_fine-grained_retrieval_via_generative_curriculum_knowledge.md)
-- [\[ACL 2025\] BlockPruner: Fine-grained Pruning for Large Language Models](../../ACL2025/model_compression/blockpruner_fine-grained_pruning_for_large_language_models.md)
 - [\[ICLR 2026\] Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences](../../ICLR2026/model_compression/paper_copilot_tracking_the_evolution_of_peer_review_in_ai_conferences.md)
+- [\[ACL 2025\] BlockPruner: Fine-grained Pruning for Large Language Models](../../ACL2025/model_compression/blockpruner_fine-grained_pruning_for_large_language_models.md)
 
 </div>
 

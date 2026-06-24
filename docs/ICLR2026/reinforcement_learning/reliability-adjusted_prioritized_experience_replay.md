@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliability-Adjusted Prioritized Experience Replay
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The authors argue that using absolute Temporal Difference Error (TDE) as sampling weights in PER can "mislead learning" if the target Q-values themselves are inaccurate. They propose a "reliability score" $R_t$ based on the sum of subsequent TDEs within a trajectory, modifying the sampling weights to "Reliability × Abs
+  [ICLR 2026][Reinforcement Learning][Experience Replay] The authors argue that using absolute Temporal Difference Error (TDE) as sampling weights in PER can "mislead learning" if the target Q-values themselves are inaccurate. They propose a "reliability score" $R_t$ based on the sum of subsequent TDEs within a trajectory, modifying the sampling weights to "Reliability × Absolute TDE." Theoretically, the convergence error is proven to be strictly superior to PER…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Experience Replay"
+  - "Prioritized Sampling"
+  - "Temporal Difference Error"
+  - "Target Reliability"
+  - "Off-policy RL"
 date: 2026-05-08
-content_hash: 6d80771e43c7bc8a
+content_hash: 03ec1717d5d6c160
 ---
+
 # Reliability-Adjusted Prioritized Experience Replay
 
 **Conference**: ICLR 2026  
@@ -138,8 +144,8 @@ In three continuous control environments, ReaPER required 16.6%–32.6% fewer st
 - [\[ICLR 2026\] ExGRPO: Learning to Reason from Experience](exgrpo_learning_to_reason_from_experience.md)
 - [\[ICML 2026\] Agent Learning via Early Experience](../../ICML2026/reinforcement_learning/agent_learning_via_early_experience.md)
 - [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](../../ACL2026/reinforcement_learning/deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
-- [\[ICLR 2026\] The Rank and Gradient Lost in Non-stationarity: Sample Weight Decay for Mitigating Plasticity Loss in Reinforcement Learning](the_rank_and_gradient_lost_in_non-stationarity_sample_weight_decay_for_mitigatin.md)
-- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
+- [\[ICLR 2026\] Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model](squeeze_the_soaked_sponge_efficient_off-policy_rft_for_large_language_model.md)
 
 </div>
 

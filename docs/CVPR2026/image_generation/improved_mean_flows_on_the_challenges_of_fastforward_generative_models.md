@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Improved Mean Flows: On the Challenges of Fastforward Generative Models
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] The paper diagnoses two root causes of failures in MeanFlow (a one-step generation framework): the training objective's dependence on the network itself and the hard-coded CFG guidance scale before training. By rewriting the objective as a network-independent v-loss using the predicted marginal velocity as the JVP inpu
+  [CVPR 2026][Image Generation][One-step generation] The paper diagnoses two root causes of failures in MeanFlow (a one-step generation framework): the training objective's dependence on the network itself and the hard-coded CFG guidance scale before training. By rewriting the objective as a network-independent v-loss using the predicted marginal velocity as the JVP input, and treating the guidance scale as a variable condition injected via multi-token in-context conditioning…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MeanFlow
-  - flow matching
-  - classifier-free guidance
-  - 1-NFE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "One-step generation"
+  - "MeanFlow"
+  - "flow matching"
+  - "classifier-free guidance"
+  - "1-NFE"
 date: 2026-05-08
-content_hash: 9d4200baf23ec1a6
+content_hash: a802956b5549d7ad
 ---
+
 # Improved Mean Flows: On the Challenges of Fastforward Generative Models
 
 **Conference**: CVPR 2026  
@@ -126,9 +128,9 @@ iMF-XL/2 achieves a 1.72 FID (approx. 50% improvement over MF). Interestingly, i
 
 - [\[CVPR 2026\] CaTok: Taming Mean Flows for One-Dimensional Causal Image Tokenization](catok_taming_mean_flows_for_one-dimensional_causal_image_tokenization.md)
 - [\[CVPR 2026\] Functional Mean Flow in Hilbert Space](functional_mean_flow_in_hilbert_space.md)
-- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
-- [\[ICML 2025\] Normalizing Flows are Capable Generative Models](../../ICML2025/image_generation/normalizing_flows_are_capable_generative_models.md)
-- [\[ICML 2026\] Adapting Noise to Data: Generative Flows from Learned 1D Processes](../../ICML2026/image_generation/adapting_noise_to_data_generative_flows_from_1d_processes.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
+- [\[CVPR 2026\] Nonlinear Color Transfer via Learnable Bezier Flows](nonlinear_color_transfer_via_learnable_bezier_flows.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
 
 </div>
 

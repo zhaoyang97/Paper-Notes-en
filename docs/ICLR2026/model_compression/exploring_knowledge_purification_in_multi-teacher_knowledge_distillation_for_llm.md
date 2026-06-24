@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Addressing the knowledge conflict problem in multi-teacher distillation where "more teachers lead to worse performance," this paper proposes the concept of "Knowledge Purification"—merging rationales from multiple teacher LLMs into a single unified rationale before distillation. By systematically comparing five purific
+  [ICLR 2026][Model Compression][Multi-Teacher Knowledge Distillation] Addressing the knowledge conflict problem in multi-teacher distillation where "more teachers lead to worse performance," this paper proposes the concept of "Knowledge Purification"—merging rationales from multiple teacher LLMs into a single unified rationale before distillation. By systematically comparing five purification methods across three categories (aggregation, routing, and RL selection)…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Multi-Teacher Knowledge Distillation"
+  - "Knowledge Purification"
+  - "LLM Routing"
+  - "RL Teacher Selection"
+  - "Knowledge Conflict"
 date: 2026-05-08
-content_hash: afb654dd9d187013
+content_hash: 6c60fa2107bc4f09
 ---
+
 # Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs
 
 **Conference**: ICLR 2026  
@@ -123,10 +129,10 @@ CMV measures the average improvement over TinyLLM as the number of teachers incr
 ## Related Papers
 
 - [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
+- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with $\alpha$-mixture Assistant Distribution](amid_knowledge_distillation_for_llms_with_alpha-mixture_assistant_distribution.md)
+- [\[ICLR 2026\] Inheriting Generalizable Knowledge from LLMs to Diverse Vertical Tasks](inheriting_generalizable_knowledge_from_llms_to_diverse_vertical_tasks.md)
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
 - [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
-- [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](../../ICCV2025/model_compression/a_good_teacher_adapts_their_knowledge_for_distillation.md)
-- [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 
 </div>
 

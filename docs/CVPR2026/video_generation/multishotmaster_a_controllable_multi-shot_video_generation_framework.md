@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework
 description: >-
-  [CVPR 2026][Video Generation][RoPE] MultiShotMaster adapts a pre-trained ~1B parameter single-shot T2V model by implementing two types of RoPE (narrative phase shift + spatiotemporal positioning) and an attention mask. It achieves multi-shot video generation with variable shot counts/durations, independent per-shot text, specified subject positioning/mot
+  [CVPR 2026][Video Generation][Multi-shot video generation] MultiShotMaster adapts a pre-trained ~1B parameter single-shot T2V model by implementing two types of RoPE (narrative phase shift + spatiotemporal positioning) and an attention mask. It achieves multi-shot video generation with variable shot counts/durations, independent per-shot text, specified subject positioning/motion, and customizable backgrounds without additional adapters. It significantly outperforms CineTrans…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - RoPE
-  - DiT
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-shot video generation"
+  - "RoPE"
+  - "reference injection"
+  - "narrative consistency"
+  - "DiT"
 date: 2026-05-08
-content_hash: 1ab3237946f39e81
+content_hash: c0aab194f844f2bc
 ---
+
 # MultiShotMaster: A Controllable Multi-Shot Video Generation Framework
 
 **Conference**: CVPR 2026  
@@ -141,6 +145,7 @@ Independent inference methods (VACE/Phantom) suffer from poor scene consistency 
 - Value: ⭐⭐⭐⭐⭐ Vital for professional content creation; the "control via RoPE injection" paradigm is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Dynamic Novel View Synthesis in High Dynamic Range
 description: >-
-  [ICLR 2026][3D Vision][HDR] The first paper to formalize the HDR Dynamic Novel View Synthesis (HDR DNVS) problem and design the HDR-4DGS framework. By introducing a dynamic tone mapping module, the method achieves temporally consistent HDR radiance field reconstruction in time-varying scenes, outperforming existing methods on both synthetic and r
+  [ICLR2026][3D Vision][HDR] The first paper to formalize the HDR Dynamic Novel View Synthesis (HDR DNVS) problem and design the HDR-4DGS framework. By introducing a dynamic tone mapping module, the method achieves temporally consistent HDR radiance field reconstruction in time-varying scenes, outperforming existing methods on both synthetic and real-world datasets.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - HDR
-  - Dynamic Novel View Synthesis
-  - 4D Gaussian Splatting
-  - Tone Mapping
-  - Radiance Field
+  - "ICLR2026"
+  - "3D Vision"
+  - "HDR"
+  - "Dynamic Novel View Synthesis"
+  - "4D Gaussian Splatting"
+  - "Tone Mapping"
+  - "Radiance Field"
 date: 2026-05-08
-content_hash: 5f58545c970280f2
+content_hash: 612fee013276dca4
 ---
+
 # Dynamic Novel View Synthesis in High Dynamic Range
 
 **Conference**: ICLR2026  
@@ -147,16 +148,16 @@ The overall objective is a weighted sum of LDR and HDR supervision: $\mathcal{L}
 - Value: ⭐⭐⭐⭐ — Opens the HDR DNVS direction, provides a solid benchmark, and open-source code.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
+- [\[CVPR 2026\] PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis](../../CVPR2026/3d_vision/physgaia_a_physics-aware_benchmark_with_multi-body_interactions_for_dynamic_nove.md)
 - [\[ICML 2025\] High Dynamic Range Novel View Synthesis with Single Exposure](../../ICML2025/3d_vision/high_dynamic_range_novel_view_synthesis_with_single_exposure.md)
 - [\[ICLR 2026\] HDR-NSFF: High Dynamic Range Neural Scene Flow Fields](hdr-nsff_high_dynamic_range_neural_scene_flow_fields.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](../../CVPR2026/3d_vision/dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[ICLR 2026\] EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis](ea3d_event-augmented_3d_diffusion_for_generalizable_novel_view_synthesis.md)
 
 </div>
 

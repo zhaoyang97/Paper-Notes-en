@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] TOGA attaches an "image-patch-text" heterogeneous graph teacher during the training phase for fine-grained cross-modal reasoning. These relational insights are distilled into the key-value cache of a Tip-Adapter student. During inference, the entire graph teacher is discarded, keeping the inference path identical to Ti
+  [CVPR 2026][Multimodal VLM][Few-shot learning] TOGA attaches an "image-patch-text" heterogeneous graph teacher during the training phase for fine-grained cross-modal reasoning. These relational insights are distilled into the key-value cache of a Tip-Adapter student. During inference, the entire graph teacher is discarded, keeping the inference path identical to Tip-Adapter (zero extra latency or VRAM). It achieves new SOTA results on 11 benchmarks across 1–16 shot settings.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Few-shot learning"
+  - "CLIP adapter"
+  - "Heterogeneous graph"
+  - "Cross-modal distillation"
+  - "Training-time supervision"
 date: 2026-05-08
-content_hash: b26b4b974c6d19bf
+content_hash: 31251532c85a90ec
 ---
+
 # Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ On FGVC-Aircraft, TOGA outperforms CCA by +9.8% in the 2-shot setting. On EuroSA
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
 - [\[CVPR 2026\] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](tipsv2_patch_text_alignment.md)
+- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
 - [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
+- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
 - [\[AAAI 2026\] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation](../../AAAI2026/multimodal_vlm/few-shot_precise_event_spotting_via_unified_multi-entity_graph_and_distillation.md)
-- [\[NeurIPS 2025\] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning](../../NeurIPS2025/multimodal_vlm/vt-fsl_bridging_vision_and_text_with_llms_for_few-shot_learning.md)
 
 </div>
 

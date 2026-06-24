@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] EquAct proposes the first multi-task, language-conditioned keyframe manipulation policy that achieves continuous SE(3) equivariance (rotation + translation) within a single unified model. By utilizing an equivariant point Transformer U-Net, spherical harmonic Fourier features, and an SE(3)-invariant iFiLM language modu
+  [ICLR 2026][Robotics][SE(3)-equivariant] EquAct proposes the first multi-task, language-conditioned keyframe manipulation policy that achieves continuous SE(3) equivariance (rotation + translation) within a single unified model. By utilizing an equivariant point Transformer U-Net, spherical harmonic Fourier features, and an SE(3)-invariant iFiLM language modulation layer, it achieves SOTA performance across 18 RLBench tasks (including SE(3) perturbations) and 4 real-world tas…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "SE(3)-equivariant"
+  - "multi-task policy"
+  - "keyframe actions"
+  - "spherical harmonic Fourier features"
+  - "language conditioning"
 date: 2026-05-08
-content_hash: 6e337dac2ec3db36
+content_hash: dfe6ca9af204291a
 ---
+
 # EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation
 
 **Conference**: ICLR 2026  

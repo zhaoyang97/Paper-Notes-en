@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PropFly: Learning to Propagate via On-the-Fly Supervision from Pre-trained Video Diffusion Models
 description: >-
-  [CVPR 2026][Video Generation][Flow Matching] PropFly utilizes a frozen pre-trained Video Diffusion Model (VDM) as its own "supervision source": it performs one-step denoising estimates on the same noisy latent using two different CFG scales (low and high) to obtain structure-aligned but semantically distinct "source/target" video pairs. Subsequently, a new GMFM l
+  [CVPR 2026][Video Generation][Propagation-based Video Editing] PropFly utilizes a frozen pre-trained Video Diffusion Model (VDM) as its own "supervision source": it performs one-step denoising estimates on the same noisy latent using two different CFG scales (low and high) to obtain structure-aligned but semantically distinct "source/target" video pairs. Subsequently, a new GMFM loss is used to train an adapter to learn to propagate the "edited first frame" to the entire vide…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Flow Matching
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Propagation-based Video Editing"
+  - "Video Diffusion Models"
+  - "Flow Matching"
+  - "Classifier-Free Guidance"
+  - "On-the-fly Supervision"
 date: 2026-05-08
-content_hash: 399bf4ca82ca47db
+content_hash: eb3e75d24dcaef97
 ---
+
 # PropFly: Learning to Propagate via On-the-Fly Supervision from Pre-trained Video Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -136,10 +140,20 @@ Evaluated on EditVerseBench-Appearance using Wan2.1-1.3B:
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the paired data bottleneck in video editing with a transferable paradigm.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ECCV 2024\] Exploring Pre-trained Text-to-Video Diffusion Models for Referring Video Object Segmentation](../../ECCV2024/video_generation/exploring_pre-trained_text-to-video_diffusion_models_for_referring_video_object_.md)
+- [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](generative_neural_video_compression_via_video_diffusion_prior.md)
+- [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
+- [\[CVPR 2026\] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models](mind_the_generative_details_direct_localized_detail_preference_optimization_for_.md)
+- [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)

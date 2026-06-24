@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IF-VidCap: Can Video Caption Models Follow Instructions?
 description: >-
-  [ICLR 2026][Video Understanding][Benchmark] This paper proposes IF-VidCap—the first instruction-following evaluation benchmark for "controllable video captioning," featuring 1,400 composite instructions with an average of 6 constraints each. Using a systematic "format correctness + content correctness" dual-dimension automatic evaluation protocol to test 26 MLLM
+  [ICLR 2026][Video Understanding][Controllable Video Captioning] This paper proposes IF-VidCap—the first instruction-following evaluation benchmark for "controllable video captioning," featuring 1,400 composite instructions with an average of 6 constraints each. Using a systematic "format correctness + content correctness" dual-dimension automatic evaluation protocol to test 26 MLLMs, it was discovered that models specialized for dense captioning actually underperform general…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Benchmark
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Controllable Video Captioning"
+  - "Instruction Following"
+  - "MLLM Evaluation"
+  - "Benchmark"
+  - "Constraint Satisfaction Rate"
 date: 2026-05-08
-content_hash: 2b05a7efc25f904f
+content_hash: a83833c0f2c5e2b6
 ---
+
 # IF-VidCap: Can Video Caption Models Follow Instructions?
 
 **Conference**: ICLR 2026  
@@ -127,8 +132,8 @@ where $s_i^j=1$ indicates the $j$-th constraint of the $i$-th instruction is sat
 - [\[CVPR 2026\] Time Blindness: Why Video-Language Models Can't See What Humans Can?](../../CVPR2026/video_understanding/time_blindness_why_video-language_models_cant_see_what_humans_can.md)
 - [\[ICLR 2026\] Point Prompting: Counterfactual Tracking with Video Diffusion Models](point_prompting_counterfactual_tracking_with_video_diffusion_models.md)
 - [\[ICLR 2026\] Video-LevelGauge: Investigating Contextual Positional Bias in Video Language Models](video-levelgauge_investigating_contextual_positional_bias_in_video_language_mode.md)
+- [\[ICLR 2026\] VidBridge-R1: Bridging QA and Captioning for RL-based Video Understanding Models with Intermediate Proxy Tasks](vidbridge-r1_bridging_qa_and_captioning_for_rl-based_video_understanding_models_.md)
 - [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](../../CVPR2026/video_understanding/sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
-- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
 
 </div>
 

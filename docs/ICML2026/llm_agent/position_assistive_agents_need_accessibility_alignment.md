@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Position: Assistive Agents Need Accessibility Alignment
 description: >-
-  [ICML 2026][LLM Agent][accessibility alignment] This position paper presents a systematic review of 778 blind assistive task instances across 417 publications. It argues that "accessibility alignment" should be a first-class alignment objective for Agents, alongside helpfulness, harmlessness, and honesty. The authors propose a design pipeline covering four dimension
+  [ICML 2026][LLM Agent][Blind assistance] This position paper presents a systematic review of 778 blind assistive task instances across 417 publications. It argues that "accessibility alignment" should be a first-class alignment objective for Agents, alongside helpfulness, harmlessness, and honesty. The authors propose a design pipeline covering four dimensions: goal, interaction, risk, and lifecycle.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - accessibility alignment
-  - agentic AI
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Blind assistance"
+  - "accessibility alignment"
+  - "agentic AI"
+  - "risk calibration"
+  - "lifecycle design"
 date: 2026-05-08
-content_hash: bdcac41b5f884b46
+content_hash: c3308d4375ceaa19
 ---
+
 # Position: Assistive Agents Need Accessibility Alignment
 
 **Conference**: ICML 2026  
@@ -124,8 +128,8 @@ A comparison between a non-aligned baseline and accessibility-aligned design acr
 ## Related Papers
 
 - [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](position_modular_memory_is_the_key_to_continual_learning_agents.md)
-- [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](../../ACL2026/llm_agent/taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
 - [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
+- [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](../../ACL2026/llm_agent/taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
 - [\[ACL 2025\] Multiple LLM Agents Debate for Equitable Cultural Alignment](../../ACL2025/llm_agent/multiple_llm_agents_debate_for_equitable.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
 

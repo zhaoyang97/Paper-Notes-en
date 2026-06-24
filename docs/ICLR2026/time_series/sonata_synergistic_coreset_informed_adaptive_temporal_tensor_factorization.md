@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization
 description: >-
-  [ICLR 2026][Time Series][Paper Note] SONATA unifies "expressive dynamic embedding modeling" and "adaptive coreset sample selection" into a streaming tensor factorization framework. It employs Linear Dynamical Systems (LDS) derived from Matérn kernels to characterize the multi-scale temporal evolution of entity embeddings. By utilizing a four-criterion sco
+  [ICLR 2026][Time Series][Dynamic Tensor Streams] SONATA unifies "expressive dynamic embedding modeling" and "adaptive coreset sample selection" into a streaming tensor factorization framework. It employs Linear Dynamical Systems (LDS) derived from Matérn kernels to characterize the multi-scale temporal evolution of entity embeddings. By utilizing a four-criterion scoring system comprising "Uncertainty + Influence + Novelty + Information Gain" in conjunction with the Bellman e…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Dynamic Tensor Streams"
+  - "Tensor Factorization"
+  - "Coreset Selection"
+  - "Linear Dynamical Systems"
+  - "Bayesian Streaming Inference"
 date: 2026-05-08
-content_hash: 287b6f725f0c32ea
+content_hash: 56ed13c75a2d4b51
 ---
+
 # SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization
 
 **Conference**: ICLR 2026  
@@ -139,11 +145,11 @@ Compared to static methods (requiring multiple passes) and recent continuous-tim
 
 ## Related Papers
 
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
 - [\[ICLR 2026\] Tensor learning with orthogonal, Lorentz, and symplectic symmetries](tensor_learning_with_orthogonal_lorentz_and_symplectic_symmetries.md)
 - [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](improving_extreme_wind_prediction_with_frequency-informed_learning.md)
 - [\[ICLR 2026\] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method](learning_mixtures_of_linear_dynamical_systems_via_hybrid_tensor-em_method.md)
 - [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
-- [\[ICLR 2026\] JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows](japan_joint_adaptive_prediction_areas_with_normalising_flow.md)
 
 </div>
 

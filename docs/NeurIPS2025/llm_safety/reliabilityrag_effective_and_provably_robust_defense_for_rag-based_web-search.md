@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search
 description: >-
-  [NeurIPS 2025][LLM Safety][RAG security] ReliabilityRAG proposes a RAG framework that leverages document reliability signals (e.g.…
+  [NeurIPS 2025][LLM Safety][RAG security] ReliabilityRAG proposes a RAG framework that leverages document reliability signals (e.g., search ranking) for adversarial defense. It identifies a consistent document subset by finding the Maximum Independent Set (MIS) on a contradiction graph while prioritizing high-reliability documents, providing provable robustness guarantees alongside high accuracy on benign scenarios and long-form generation tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "provable defense"
   - "document reliability"
 date: 2026-05-08
-content_hash: 4280ed7add001792
+content_hash: ba525fbd99c51c7a
 ---
 
 # ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search
@@ -146,10 +146,10 @@ Under a perfect NLI model ($\epsilon_1 = \epsilon_2 = 0$), as long as $k' < k/2$
 ## Related Papers
 
 - [\[NeurIPS 2025\] AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents](agentdam_privacy_leakage_evaluation_for_autonomous_web_agent.md)
+- [\[ACL 2025\] Towards Effective Extraction and Evaluation of Factual Claims](../../ACL2025/llm_safety/towards_effective_extraction_and_evaluation_of_factual_claims.md)
 - [\[NeurIPS 2025\] DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents](drift_dynamic_rulebased_defense_with_injection_isolation_for.md)
+- [\[ACL 2025\] AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection](../../ACL2025/llm_safety/agrail_a_lifelong_agent_guardrail_with_effective_and_adaptive_safety_detection.md)
 - [\[ICCV 2025\] Adversarial Robust Memory-Based Continual Learner](../../ICCV2025/llm_safety/adversarial_robust_memory-based_continual_learner.md)
-- [\[NeurIPS 2025\] Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions](robust_or_suggestible_exploring_non-clinical_induction_in_llm_drug-safety_decisi.md)
-- [\[ICML 2026\] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model](../../ICML2026/llm_safety/anchored_decoding_provably_reducing_copyright_risk_for_any_language_model.md)
 
 </div>
 

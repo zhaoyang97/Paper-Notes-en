@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation
 description: >-
-  [ACL 2026][Interpretability][Knowledge Distillation] By constructing a verifiable intermediate reasoning chain dataset using a rule-based problem decomposition method, this work reveals that the semantic correctness of CoT reasoning chains is unreliably correlated with final answer accuracy (correct chains lead to correct answers only 28% of the time). Furthermore, the m
+  [ACL 2026][Interpretability][CoT reasoning chains] By constructing a verifiable intermediate reasoning chain dataset using a rule-based problem decomposition method, this work reveals that the semantic correctness of CoT reasoning chains is unreliably correlated with final answer accuracy (correct chains lead to correct answers only 28% of the time). Furthermore, the most interpretable reasoning chains are not the most performance-enhancing—lengthy R1 chains perform best but…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Knowledge Distillation
+  - "ACL 2026"
+  - "Interpretability"
+  - "CoT reasoning chains"
+  - "knowledge distillation"
+  - "semantic correctness"
+  - "explainability"
+  - "reasoning chain faithfulness"
 date: 2026-05-08
-content_hash: 259833a5a10c2c82
+content_hash: f420adf4b7bdff42
 ---
+
 # Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation
 
 **Conference**: ACL 2026  
@@ -142,7 +147,7 @@ Results on the CoTemp QA dataset:
 - [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
 - [\[ACL 2026\] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective](investigating_more_explainable_and_partition-free_compositionality_estimation_fo.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 
 </div>
 

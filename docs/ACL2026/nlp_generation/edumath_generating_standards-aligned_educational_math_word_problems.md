@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EDUMATH: Generating Standards-aligned Educational Math Word Problems
 description: >-
-  [ACL 2026][Text Generation][KTO] The authors systematize the task of "generating math word problems (MWP) aligned with K-12 math curriculum standards," collecting 11,000+ STEM MWP training data points annotated by real US teachers. Through an SFT + KTO + ModernBERT filtering pipeline, they trained two open-source SOTA generators, EDUMATH-12B/30B. They
+  [ACL 2026][Text Generation][Math Word Problem Generation] The authors systematize the task of "generating math word problems (MWP) aligned with K-12 math curriculum standards," collecting 11,000+ STEM MWP training data points annotated by real US teachers. Through an SFT + KTO + ModernBERT filtering pipeline, they trained two open-source SOTA generators, EDUMATH-12B/30B. They conducted the first RCT on actual 3rd-5th grade students, finding that while student accuracy was com…
 tags:
-  - ACL 2026
-  - Text Generation
-  - KTO
+  - "ACL 2026"
+  - "Text Generation"
+  - "Math Word Problem Generation"
+  - "Standards Alignment"
+  - "Teacher Annotation"
+  - "KTO"
+  - "ModernBERT Filtering"
 date: 2026-05-08
-content_hash: b7a6f262d9a7202f
+content_hash: 87dc6ebc4ff5073b
 ---
+
 # EDUMATH: Generating Standards-aligned Educational Math Word Problems
 
 **Conference**: ACL 2026  

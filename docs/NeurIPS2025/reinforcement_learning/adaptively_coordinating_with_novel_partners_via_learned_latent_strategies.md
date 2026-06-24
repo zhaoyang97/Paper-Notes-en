@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptively Coordinating with Novel Partners via Learned Latent Strategies
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][zero-shot coordination] This paper proposes the TALENTS framework, which learns a latent strategy space via a VAE, discovers strategy types through K-Means clustering…
+  [NeurIPS 2025][Reinforcement Learning][zero-shot coordination] This paper proposes the TALENTS framework, which learns a latent strategy space via a VAE, discovers strategy types through K-Means clustering, and performs online teammate-type inference using the Fixed-Share regret minimization algorithm, enabling zero-shot real-time adaptive coordination with unknown human or agent teammates.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "regret minimization"
   - "human-agent collaboration"
 date: 2026-05-08
-content_hash: 4d9d6e740686f595
+content_hash: 122b92f9af342780
 ---
 
 # Adaptively Coordinating with Novel Partners via Learned Latent Strategies
@@ -152,11 +152,11 @@ An enhanced version of Overcooked-ai is used, incorporating order timers and fas
 
 ## Related Papers
 
+- [\[ICML 2025\] KEA: Keeping Exploration Alive by Proactively Coordinating Exploration Strategies](../../ICML2025/reinforcement_learning/kea_keeping_exploration_alive_by_proactively_coordinating_exploration_strategies.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems](inverse_optimization_latent_variable_models_for_learning_costs_applied_to_route_.md)
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
-- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](../../ACL2026/reinforcement_learning/spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
-- [\[ACL 2026\] Glance-or-Gaze: Incentivizing LMMs to Adaptively Focus Search via Reinforcement Learning](../../ACL2026/reinforcement_learning/glance-or-gaze_incentivizing_lmms_to_adaptively_focus_search_via_reinforcement_l.md)
+- [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](../../ICLR2026/reinforcement_learning/rl_for_reasoning_by_adaptively_revealing_rationales.md)
 
 </div>
 

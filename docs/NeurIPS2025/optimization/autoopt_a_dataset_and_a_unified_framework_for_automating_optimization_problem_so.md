@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving
 description: >-
-  [NeurIPS 2025][Optimization][Image OCR] AutoOpt introduces the first end-to-end framework for converting optimization problem images to executable code — comprising the AutoOpt-11k dataset of 11…
+  [NeurIPS 2025][Optimization][Image OCR] AutoOpt introduces the first end-to-end framework for converting optimization problem images to executable code — comprising the AutoOpt-11k dataset of 11,554 optimization formula images (handwritten + printed), an M1 hybrid encoder (ResNet+Swin→mBART) for image-to-LaTeX conversion (BLEU 96.70), an M2 DeepSeek-Coder module for LaTeX-to-PYOMO translation, and an M3 bilevel decomposition solver, achieving an overall pipeline success rate…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Mathematical Programming"
   - "Handwriting Recognition"
 date: 2026-05-08
-content_hash: 856cfbc27b7f7148
+content_hash: b3c85e5d1a777f2e
 ---
 
 # AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving
@@ -132,10 +132,10 @@ Optimization formula image → **M1**: ResNet-101 + Swin Transformer hybrid enco
 ## Related Papers
 
 - [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
-- [\[AAAI 2026\] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets](../../AAAI2026/optimization/ghost_solving_the_traveling_salesman_problem_on_graphs_of_convex_sets.md)
+- [\[ICML 2026\] Selecting Samples on Graphs: A Unified Dataset Pruning Framework for Lossless Training Acceleration](../../ICML2026/optimization/selecting_samples_on_graphs_a_unified_dataset_pruning_framework_for_lossless_tra.md)
 - [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](a_unified_approach_to_submodular_maximization_under_noise.md)
-- [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
-- [\[ICLR 2026\] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving](../../ICLR2026/optimization/cogflow_bridging_perception_and_reasoning_through_knowledge_internalization_for_.md)
+- [\[AAAI 2026\] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets](../../AAAI2026/optimization/ghost_solving_the_traveling_salesman_problem_on_graphs_of_convex_sets.md)
+- [\[ICLR 2026\] Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations](../../ICLR2026/optimization/solving_the_2-norm_k-hyperplane_clustering_problem_via_multi-norm_formulations.md)
 
 </div>
 

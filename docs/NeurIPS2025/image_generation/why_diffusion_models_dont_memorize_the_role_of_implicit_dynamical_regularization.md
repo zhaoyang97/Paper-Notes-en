@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] Through numerical experiments and theoretical analysis, this paper identifies two critical timescales in diffusion model training — a generalization time $\tau_{\text{ge…
+  [NeurIPS 2025 Oral][Image Generation][Diffusion models] Through numerical experiments and theoretical analysis, this paper identifies two critical timescales in diffusion model training — a generalization time $\tau_{\text{gen}}$ and a memorization time $\tau_{\text{mem}}$ — where the latter scales linearly with training set size $n$ while the former remains constant. The resulting implicit dynamical regularization enables early stopping to prevent memorization even in heavil…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Image Generation"
   - "Diffusion models"
   - "memorization"
@@ -14,7 +14,7 @@ tags:
   - "random features"
   - "early stopping"
 date: 2026-05-08
-content_hash: 5994a2cf54639aa2
+content_hash: 7ee52b7a3939e021
 ---
 
 # Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training
@@ -169,10 +169,10 @@ Key findings:
 ## Related Papers
 
 - [\[ICCV 2025\] Understanding Flatness in Generative Models: Its Role and Benefits](../../ICCV2025/image_generation/understanding_flatness_in_generative_models_its_role_and_benefits.md)
-- [\[NeurIPS 2025\] Moment- and Power-Spectrum-Based Gaussianity Regularization for Text-to-Image Models](moment-_and_power-spectrum-based_gaussianity_regularization_for_text-to-image_mo.md)
+- [\[ICLR 2026\] Why Adversarially Train Diffusion Models?](../../ICLR2026/image_generation/why_adversarially_train_diffusion_models.md)
+- [\[ICML 2025\] When Diffusion Models Memorize: Inductive Biases in Probability Flow of Minimum-Norm Shallow Neural Nets](../../ICML2025/image_generation/when_diffusion_models_memorize_inductive_biases_in_probability_flow_of_minimum-n.md)
+- [\[ECCV 2024\] Implicit Concept Removal of Diffusion Models](../../ECCV2024/image_generation/implicit_concept_removal_of_diffusion_models.md)
 - [\[NeurIPS 2025\] What We Don't C: Manifold Disentanglement for Structured Discovery](what_we_dont_c_manifold_disentanglement_for_structured_discovery.md)
-- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
 
 </div>
 

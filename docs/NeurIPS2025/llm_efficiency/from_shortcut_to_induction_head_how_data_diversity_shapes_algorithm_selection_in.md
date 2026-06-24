@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Induction Head] This paper provides rigorous theoretical analysis demonstrating that the diversity of pretraining data—characterized by the *max-sum ratio*—determines whether a single-layer…
+  [NeurIPS 2025][LLM Efficiency][Induction Head] This paper provides rigorous theoretical analysis demonstrating that the diversity of pretraining data—characterized by the *max-sum ratio*—determines whether a single-layer Transformer learns a generalizable induction head or a non-OOD-generalizing positional shortcut, and derives a closed-form optimal pretraining distribution that promotes induction head formation.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Algorithm Selection"
   - "OOD Generalization"
 date: 2026-05-08
-content_hash: 5f5a05bc95d631cf
+content_hash: bbd26126d776c512
 ---
 
 # From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers
@@ -134,11 +134,11 @@ A three-layer Transformer with separate KQ matrices, MLP, and residual connectio
 
 ## Related Papers
 
-- [\[ACL 2026\] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs](../../ACL2026/llm_efficiency/bosch_black-box_binary_optimization_for_short-context_attention-head_selection_i.md)
-- [\[NeurIPS 2025\] The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition](the_emergence_of_sparse_attention_impact_of_data_distribution_and_benefits_of_re.md)
+- [\[ICLR 2026\] LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation](../../ICLR2026/llm_efficiency/loopformer_elastic-depth_looped_transformers_for_latent_reasoning_via_shortcut_m.md)
+- [\[ICML 2025\] MoH: Multi-Head Attention as Mixture-of-Head Attention](../../ICML2025/llm_efficiency/moh_multi-head_attention_as_mixture-of-head_attention.md)
 - [\[NeurIPS 2025\] Constant Bit-Size Transformers Are Turing Complete](constant_bit-size_transformers_are_turing_complete.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
-- [\[AAAI 2026\] How Many Experts Are Enough? Towards Optimal Semantic Specialization for Mixture-of-Experts](../../AAAI2026/llm_efficiency/how_many_experts_are_enough_towards_optimal_semantic_specialization_for_mixture-.md)
+- [\[ACL 2025\] LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs](../../ACL2025/llm_efficiency/ladm_long_context_data.md)
+- [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](../../ICLR2026/llm_efficiency/difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
 
 </div>
 

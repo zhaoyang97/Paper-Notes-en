@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LEGION: Learning to Ground and Explain for Synthetic Image Detection
 description: >-
-  [ICCV 2025][Segmentation][Synthetic Image Detection] This paper proposes the LEGION framework and the SynthScars dataset, leveraging a multimodal large language model (MLLM) to unify artifact detection…
+  [ICCV 2025][Segmentation][Synthetic Image Detection] This paper proposes the LEGION framework and the SynthScars dataset, leveraging a multimodal large language model (MLLM) to unify artifact detection, pixel-level segmentation, and textual explanation for synthetic image detection. It further innovatively extends the role of the detector from a "Defender" to a "Controller," guiding generative models to produce higher-quality images.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Explainability"
   - "Image Refinement"
 date: 2026-05-08
-content_hash: 89943b610a7c8047
+content_hash: 7642fc9fdbe07bd5
 ---
 
 # LEGION: Learning to Ground and Explain for Synthetic Image Detection
@@ -147,11 +147,11 @@ On SynthScars, LEGION surpasses the strongest traditional expert (PAL4VST) by **
 
 ## Related Papers
 
+- [\[CVPR 2026\] Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding](../../CVPR2026/segmentation/synthetic_object_compositions_for_scalable_and_accurate_learning_in_detection_se.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
-- [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
-- [\[ICML 2026\] What Makes Synthetic Data Effective in Image Segmentation](../../ICML2026/segmentation/what_makes_synthetic_data_effective_in_image_segmentation.md)
-- [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
+- [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
+- [\[ICLR 2026\] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data](../../ICLR2026/segmentation/s3od_towards_generalizable_salient_object_detection_with_synthetic_data.md)
 
 </div>
 

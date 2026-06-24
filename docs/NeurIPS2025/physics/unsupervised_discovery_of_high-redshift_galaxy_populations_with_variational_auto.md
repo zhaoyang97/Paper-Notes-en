@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders
 description: >-
-  [NEURIPS2025][Physics & Scientific Computing][high-redshift galaxies] A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 JWST high-redshift ($z>4$) galaxy spectra…
+  [NEURIPS2025][Physics & Scientific Computing][high-redshift galaxies] A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 JWST high-redshift ($z>4$) galaxy spectra, uncovering 12 distinct astrophysical categories and more than doubling the known sample sizes of rare populations including post-starburst galaxies, Lyman-α emitters, extreme emission line galaxies, and Little Red Dots.
 tags:
   - "NEURIPS2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised discovery"
   - "spectral clustering"
 date: 2026-05-08
-content_hash: df60865fd07f298f
+content_hash: a4880ce9334c22ca
 ---
 
 # Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders
@@ -152,9 +152,9 @@ A variational autoencoder (VAE) is applied to unsupervised clustering of 2,743 J
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
+- [\[ICML 2025\] Mixture-of-Expert Variational Autoencoders for Cross-Modality Embedding of Type Ia Supernova Data](../../ICML2025/physics/mixture-of-expert_variational_autoencoders_for_cross-modality_embedding_of_type_.md)
 - [\[NeurIPS 2025\] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows](from_images_to_physics_probabilistic_inference_of_galaxy_parameters_and_emission.md)
 - [\[NeurIPS 2025\] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)
-- [\[NeurIPS 2025\] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 
 </div>

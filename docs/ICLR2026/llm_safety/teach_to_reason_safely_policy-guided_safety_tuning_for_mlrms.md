@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Teach to Reason Safely: Policy-Guided Safety Tuning for MLRMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper identifies a counter-intuitive trade-off where "stronger reasoning capability leads to poorer safety," attributed to two mechanisms: visual attention drift and unsafe reasoning patterns. It proposes a two-stage alignment framework, PST (Policy-guided SFT + Safety Reasoning Preference Optimization), which emb
+  [ICLR 2026][LLM Safety][Multimodal Large Reasoning Models] This paper identifies a counter-intuitive trade-off where "stronger reasoning capability leads to poorer safety," attributed to two mechanisms: visual attention drift and unsafe reasoning patterns. It proposes a two-stage alignment framework, PST (Policy-guided SFT + Safety Reasoning Preference Optimization), which embeds explicit safety policies into the reasoning chain. PST reduces the harmful rate to single digits…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multimodal Large Reasoning Models"
+  - "Safety Alignment"
+  - "Policy Guidance"
+  - "Preference Optimization"
+  - "Visual Attention Drift"
 date: 2026-05-08
-content_hash: 0bb6ea709fcd992c
+content_hash: 43de78fd91e72d06
 ---
+
 # Teach to Reason Safely: Policy-Guided Safety Tuning for MLRMs
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,15 @@ Failure counts (Table 5, R1-Onevision on BeaverTails-V): VAD dropped from 57 to 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
 - [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
 - [\[ICLR 2026\] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language](all_code_no_thought_language_models_struggle_to_reason_in_ciphered_language.md)
-- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Backward Spreading to Forward Replay: Revisiting Target Construction in LLM Parameter Editing
 description: >-
-  [ICML 2026][Knowledge Editing][MEMIT] This paper systematically analyzes why backward spreading in locate-then-edit works and where it falls short. It proposes forward replay: treating the hidden state of the first decisive layer as an optimization variable and performing a standard forward pass to obtain targets for subsequent layers. This achieves consis
+  [ICML 2026][Knowledge Editing][Parameter Editing] This paper systematically analyzes why backward spreading in locate-then-edit works and where it falls short. It proposes forward replay: treating the hidden state of the first decisive layer as an optimization variable and performing a standard forward pass to obtain targets for subsequent layers. This achieves consistent performance gains over MEMIT/RECT/PRUNE/AlphaEdit without additional computational overhead.
 tags:
-  - ICML 2026
-  - Knowledge Editing
-  - MEMIT
-  - hidden state
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Parameter Editing"
+  - "MEMIT"
+  - "Multi-layer Coordination"
+  - "Forward Propagation"
+  - "Hidden State"
 date: 2026-05-08
-content_hash: ce2d7285915458b8
+content_hash: 3fd4b63300e1f2e2
 ---
+
 # From Backward Spreading to Forward Replay: Revisiting Target Construction in LLM Parameter Editing
 
 **Conference**: ICML 2026  

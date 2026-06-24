@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes
 description: >-
-  [ICLR 2026][LLM Reasoning][3D reasoning] Ours proposes SceneCOT, the first framework to introduce Chain-of-Thought reasoning into 3D scene understanding. By employing a four-stage reasoning pipeline (task recognition → region localization → entity grounding → grounded reasoning), it explicitly associates intermediate reasoning steps with visual grounding, ach
+  [ICLR 2026][Reasoning][3D reasoning] Ours proposes SceneCOT, the first framework to introduce Chain-of-Thought reasoning into 3D scene understanding. By employing a four-stage reasoning pipeline (task recognition → region localization → entity grounding → grounded reasoning), it explicitly associates intermediate reasoning steps with visual grounding, achieving 34.7% Good Coherence on Beacon3D (over 70% higher than the strongest baseline's 20.4%).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - 3D reasoning
-  - chain-of-thought
-  - grounded QA
-  - 3D-LLM
-  - scene understanding
+  - "ICLR 2026"
+  - "Reasoning"
+  - "3D reasoning"
+  - "chain-of-thought"
+  - "grounded QA"
+  - "3D-LLM"
+  - "scene understanding"
 date: 2026-05-08
-content_hash: 4f2c73ba006e8eaa
+content_hash: 78017637a9b86cc7
 ---
+
 # SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes
 
 **Conference**: ICLR 2026  
@@ -123,11 +124,11 @@ The training objective jointly optimizes three components—CoT supervision, the
 
 ## Related Papers
 
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
 - [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
 - [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
-- [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
-- [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
+- [\[CVPR 2025\] Argus: Vision-Centric Reasoning with Grounded Chain-of-Thought](../../CVPR2025/llm_reasoning/argus_vision-centric_reasoning_with_grounded_chain-of-thought.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SegGBC: Justifiable Coarse-to-Fine Granular-Ball Computing for Enhancing Clustering Image Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] SegGBC introduces the "Granular-Ball Computing (GBC)" paradigm, a coarse-to-fine multi-granularity clustering approach, to image segmentation for the first time. It explicitly models inherent image uncertainty using Intuitionistic Fuzzy Sets (IFS) and guides granular-ball splitting and merging with a semantic-aware "Se
+  [CVPR 2026][Segmentation][Granular-Ball Computing] SegGBC introduces the "Granular-Ball Computing (GBC)" paradigm, a coarse-to-fine multi-granularity clustering approach, to image segmentation for the first time. It explicitly models inherent image uncertainty using Intuitionistic Fuzzy Sets (IFS) and guides granular-ball splitting and merging with a semantic-aware "Semantic Compactness Measure for Granular Balls (SCMGB)." It can perform unsupervised segmentation independentl…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Granular-Ball Computing"
+  - "Unsupervised Segmentation"
+  - "Clustering Segmentation"
+  - "Intuitionistic Fuzzy Sets"
+  - "Multi-granularity Representation"
 date: 2026-05-08
-content_hash: 2013dffade46f26d
+content_hash: 3179ea32d3907556
 ---
+
 # SegGBC: Justifiable Coarse-to-Fine Granular-Ball Computing for Enhancing Clustering Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -171,7 +177,7 @@ The conservative lower bounds are gains of +3.25% SA and +3.92% mIoU across stan
 - [\[ECCV 2024\] Active Coarse-to-Fine Segmentation of Moveable Parts from Real Images](../../ECCV2024/segmentation/active_coarsetofine_segmentation_of_moveable_parts_from_real.md)
 - [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
 - [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
-- [\[CVPR 2026\] CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling](cdics_delving_into_fine-grained_attribute_for_in-context_segmentation_via_compos.md)
+- [\[ICLR 2026\] Enhancing Image-Conditional Coverage in Segmentation: Adaptive Thresholding via Differentiable Miscoverage Loss](../../ICLR2026/segmentation/enhancing_image-conditional_coverage_in_segmentation_adaptive_thresholding_via_d.md)
 
 </div>
 

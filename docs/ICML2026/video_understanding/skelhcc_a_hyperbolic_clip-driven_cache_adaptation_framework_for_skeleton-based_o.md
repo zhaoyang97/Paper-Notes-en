@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition
 description: >-
-  [ICML 2026][Video Understanding][Hyperbolic CLIP] SkelHCC maps CLIP to Hyperbolic space to explicitly align skeleton-language representations across three granularities: "Joint → Body Part → Full Body." It utilizes LLM-generated body part importance masks for training-free multi-granularity voting cache inference, achieving a 9% improvement over Prev. SOTA on NTU120 o
+  [ICML 2026][Video Understanding][Skeleton-based Action Recognition] SkelHCC maps CLIP to Hyperbolic space to explicitly align skeleton-language representations across three granularities: "Joint → Body Part → Full Body." It utilizes LLM-generated body part importance masks for training-free multi-granularity voting cache inference, achieving a 9% improvement over Prev. SOTA on NTU120 one-shot action recognition with only 0.5M trainable parameters.
 tags:
-  - ICML 2026
-  - Video Understanding
-  - Hyperbolic CLIP
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Skeleton-based Action Recognition"
+  - "One-Shot Learning"
+  - "Hyperbolic CLIP"
+  - "LLM-guided"
+  - "Multi-granularity Cache"
 date: 2026-05-08
-content_hash: c5c576671fbfee13
+content_hash: 56defa02c790833f
 ---
+
 # SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition
 
 **Conference**: ICML 2026  
@@ -169,9 +174,9 @@ Mask Type Comparison (NTU120, 100 Base classes):
 
 - [\[ECCV 2024\] CrossGLG: LLM Guides One-Shot Skeleton-Based 3D Action Recognition in a Cross-Level Manner](../../ECCV2024/video_understanding/crossglg_llm_guides_one-shot_skeleton-based_3d_action_recognition_in_a_cross-lev.md)
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[ECCV 2024\] SA-DVAE: Improving Zero-Shot Skeleton-Based Action Recognition by Disentangled Variational Autoencoders](../../ECCV2024/video_understanding/sa-dvae_improving_zero-shot_skeleton-based_action_recognition_by_disentangled_va.md)
 - [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](../../AAAI2026/video_understanding/sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
-- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](../../CVPR2026/video_understanding/one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
-- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](../../CVPR2026/video_understanding/spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](../../CVPR2026/video_understanding/exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
 
 </div>
 

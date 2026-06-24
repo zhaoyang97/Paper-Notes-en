@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-judge] The TED (Talk, Evaluate, Diagnose) framework is proposed to achieve user-aware dynamic Agent evaluation through general and reusable expert/non-expert persona templates. It utilizes new indicators such as grading notes + LLM-as-judge + MaxProgressRate@k for fine-grained efficiency assessment, while providing actionable
+  [ICLR 2026][LLM Evaluation][Agent evaluation] The TED (Talk, Evaluate, Diagnose) framework is proposed to achieve user-aware dynamic Agent evaluation through general and reusable expert/non-expert persona templates. It utilizes new indicators such as grading notes + LLM-as-judge + MaxProgressRate@k for fine-grained efficiency assessment, while providing actionable improvement feedback through automated error discovery and clustering. Evaluation results on τ²-bench and ToolSan…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Agent evaluation"
+  - "User-aware"
+  - "LLM-as-judge"
+  - "Error analysis"
+  - "Efficiency metrics"
 date: 2026-05-08
-content_hash: 3c62a7a5db184263
+content_hash: 47663a8ebc13b57f
 ---
+
 # Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis
 
 **Conference**: ICLR 2026  

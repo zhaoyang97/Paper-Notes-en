@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] VIM: Versatile Interactive Motion-Language Model
 description: >-
-  [ICCV 2025][LLM/NLP][interactive motion generation] This paper proposes VIM, the first multimodal large language model capable of simultaneously understanding and generating dyadic interactive motion and text within a un…
+  [ICCV 2025][LLM (Other)][interactive motion generation] This paper proposes VIM, the first multimodal large language model capable of simultaneously understanding and generating dyadic interactive motion and text within a unified framework. Accompanied by the Inter-MT² dataset containing 82.7K multi-turn interactive motion instruction samples, VIM supports a diverse set of tasks including text-to-motion, motion-to-text, reaction generation, motion editing…
 tags:
   - "ICCV 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "interactive motion generation"
   - "motion-language model"
   - "multi-turn dialogue"
   - "RQ-VAE"
   - "dyadic interaction"
 date: 2026-05-08
-content_hash: b36282b77b9113cf
+content_hash: 9aa09ef1f98bed9b
 ---
 
 # VIM: Versatile Interactive Motion-Language Model
@@ -117,11 +117,11 @@ This paper proposes VIM, the first multimodal large language model capable of si
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model](../../NeurIPS2025/llm_nlp/streambridge_turning_your_offline_video_large_language_model_into_a_proactive_st.md)
-- [\[NeurIPS 2025\] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance](../../NeurIPS2025/llm_nlp/the_last_vote_a_multi-stakeholder_framework_for_language_model_governance.md)
-- [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
-- [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](../../ICML2026/llm_nlp/the_cylindrical_representation_hypothesis_for_language_model_steering.md)
-- [\[NeurIPS 2025\] SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies](../../NeurIPS2025/llm_nlp/symphony_synergistic_multi-agent_planning_with_heterogeneous_language_model_asse.md)
+- [\[ACL 2025\] Interactive and Expressive Code-Augmented Planning with Large Language Models](../../ACL2025/llm_nlp/interactive_and_expressive_code-augmented_planning_with_large_language_models.md)
+- [\[ACL 2025\] INTERACT: Enabling Interactive, Question-Driven Learning in Large Language Models](../../ACL2025/llm_nlp/interact_enabling_interactive_question-driven_learning_in_large_language_models.md)
+- [\[ACL 2025\] Towards Enhanced Immersion and Agency for LLM-based Interactive Drama](../../ACL2025/llm_nlp/towards_enhanced_immersion_and_agency_for_llm-based_interactive_drama.md)
+- [\[CVPR 2025\] MG-MotionLLM: A Unified Framework for Motion Comprehension and Generation across Multiple Granularities](../../CVPR2025/llm_nlp/mg-motionllm_a_unified_framework_for_motion_comprehension_and_generation_across_.md)
+- [\[ACL 2025\] MIRAGE: Exploring How Large Language Models Perform in Complex Social Interactive Environments](../../ACL2025/llm_nlp/mirage_exploring_how_large_language_models_perform_in_complex_social_interactive.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] NetArena: Dynamic Benchmarks for AI Agents in Network Automation
 description: >-
-  [ICLR 2026][LLM Agent][AI Agent] NetArena utilizes a unified "state-action" abstraction and network simulator integration to transform network operation and maintenance tasks into a live benchmark that can infinitely generate dynamic queries and automatically verify correctness, safety, and latency in simulation, revealing that current AI agents achie
+  [ICLR 2026][LLM Agent][AI Agent] NetArena utilizes a unified "state-action" abstraction and network simulator integration to transform network operation and maintenance tasks into a live benchmark that can infinitely generate dynamic queries and automatically verify correctness, safety, and latency in simulation, revealing that current AI agents achieve only 13–38% accuracy on realistic large-scale network tasks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - AI Agent
-  - Network Automation
-  - Dynamic Benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "AI Agent"
+  - "Network Automation"
+  - "Dynamic Benchmark"
+  - "State-Action Abstraction"
+  - "Safety Evaluation"
+  - "Network Simulator"
 date: 2026-05-08
-content_hash: 32719d329f6ee256
+content_hash: 27deabc5f3eb0152
 ---
+
 # NetArena: Dynamic Benchmarks for AI Agents in Network Automation
 
 **Conference**: ICLR 2026  
@@ -113,8 +117,6 @@ flowchart LR
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

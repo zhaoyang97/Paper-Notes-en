@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph Diffusion that can Insert and Delete
 description: >-
-  [NeurIPS 2025][Computational Biology][graph diffusion] This paper proposes GrIDDD, the first model to extend discrete denoising diffusion probabilistic models (DDPM) to support **dynamic insertion and deletion of graph n…
+  [NeurIPS 2025][Computational Biology][graph diffusion] This paper proposes GrIDDD, the first model to extend discrete denoising diffusion probabilistic models (DDPM) to support **dynamic insertion and deletion of graph nodes** during generation, allowing molecular graph size to adapt throughout the diffusion process. GrIDDD matches or surpasses existing methods on property targeting and molecular optimization tasks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "property targeting"
   - "molecular optimization"
 date: 2026-05-08
-content_hash: db5e52095f7e3c61
+content_hash: b1b54e161bdef113
 ---
 
 # Graph Diffusion that can Insert and Delete
@@ -206,10 +206,10 @@ Dynamic size adjustment enables the model to generate molecules with more divers
 ## Related Papers
 
 - [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
-- [\[NeurIPS 2025\] Generalizable Insights for Graph Transformers in Theory and Practice](generalizable_insights_for_graph_transformers_in_theory_and_practice.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
+- [\[ICML 2025\] Supercharging Graph Transformers with Advective Diffusion](../../ICML2025/computational_biology/supercharging_graph_transformers_with_advective_diffusion.md)
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](constrained_discrete_diffusion.md)
+- [\[CVPR 2025\] DiffVsgg: Diffusion-Driven Online Video Scene Graph Generation](../../CVPR2025/computational_biology/diffvsgg_diffusion-driven_online_video_scene_graph_generation.md)
+- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
 
 </div>
 

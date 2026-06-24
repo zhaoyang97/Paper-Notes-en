@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] MILR migrates "reasoning-enhanced image generation" into a **unified latent vector space** shared by text and images. At test-time, it utilizes policy gradient (REINFORCE) in conjunction with image quality critics to jointly optimize intermediate representations of text/image tokens. Without modifying any model paramet
+  [ICLR 2026][Image Generation][Multimodal Image Generation] MILR migrates "reasoning-enhanced image generation" into a **unified latent vector space** shared by text and images. At test-time, it utilizes policy gradient (REINFORCE) in conjunction with image quality critics to jointly optimize intermediate representations of text/image tokens. Without modifying any model parameters, the method achieves SOTA performance across GenEval/T2I-CompBench/WISE…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multimodal Image Generation"
+  - "Test-Time Reasoning"
+  - "Latent Space Reasoning"
+  - "Policy Gradient"
+  - "Unified Understanding and Generation"
 date: 2026-05-08
-content_hash: 26c9309e8e21170c
+content_hash: e0174b78d13da650
 ---
+
 # MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning
 
 **Conference**: ICLR 2026  
@@ -118,8 +124,8 @@ The base model is Janus-Pro-7B. Each benchmark uses its native evaluation tool a
 - [\[ICLR 2026\] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model](vfscale_intrinsic_reasoning_through_verifier-free_test-time_scalable_diffusion_m.md)
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
+- [\[ICLR 2026\] Projected Coupled Diffusion for Test-Time Constrained Joint Generation](projected_coupled_diffusion_for_test-time_constrained_joint_generation.md)
 - [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](../../CVPR2026/image_generation/progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
-- [\[ICLR 2026\] Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment](mitigating_semantic_collapse_in_generative_personalization_with_test-time_embedd.md)
 
 </div>
 

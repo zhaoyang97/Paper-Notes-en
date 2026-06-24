@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection
 description: >-
-  [ICML 2026][Object Detection][Paper Note] The authors point out that "class-split" anomaly detection benchmarks are ill-posed when the anomaly class and the normal mixture distribution overlap in the representation space—AUROC collapses to random or even reverses, with the direction depending on the unknown anomaly class. A training-free "neighborhood class le
+  [ICML2026][Object Detection][Anomaly Detection] The authors point out that "class-split" anomaly detection benchmarks are ill-posed when the anomaly class and the normal mixture distribution overlap in the representation space—AUROC collapses to random or even reverses, with the direction depending on the unknown anomaly class. A training-free "neighborhood class leakage" metric $L_k$ is proposed to diagnose such benchmark failure before evaluation.
 tags:
-  - ICML 2026
-  - Object Detection
+  - "ICML2026"
+  - "Object Detection"
+  - "Anomaly Detection"
+  - "OOD Detection"
+  - "Class-Split Benchmark"
+  - "AUROC Reversal"
+  - "Score-Direction Instability"
+  - "Neighborhood Class Leakage"
 date: 2026-05-08
-content_hash: 0f497c1f92e1644f
+content_hash: 53b828381fb03394
 ---
+
 # Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection
 
 **Conference**: ICML2026  
@@ -114,8 +121,8 @@ No new training objectives are introduced. VAEs use standard ELBO on the normal 
 - [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](../../CVPR2026/object_detection/unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
 - [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](../../AAAI2026/object_detection/correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
 - [\[CVPR 2025\] AnomalyNCD: Towards Novel Anomaly Class Discovery in Industrial Scenarios](../../CVPR2025/object_detection/anomalyncd_towards_novel_anomaly_class_discovery_in_industrial_scenarios.md)
-- [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](../../NeurIPS2025/object_detection/autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
 - [\[ICCV 2025\] Toward Long-Tailed Online Anomaly Detection through Class-Agnostic Concepts](../../ICCV2025/object_detection/toward_long-tailed_online_anomaly_detection_through_class-agnostic_concepts.md)
+- [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](../../NeurIPS2025/object_detection/autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
 
 </div>
 

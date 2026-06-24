@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Residual Connections Harm Generative Representation Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] The authors discover that the "identity shortcut" in residual connections injects shallow high-frequency details directly into deep layers, suppressing semantic abstraction. They propose **Decayed Identity Shortcuts**—an architectural modification where the weight of the identity shortcut decays monotonically with laye
+  [CVPR2026][Self-Supervised Learning][Residual Connections] The authors discover that the "identity shortcut" in residual connections injects shallow high-frequency details directly into deep layers, suppressing semantic abstraction. They propose **Decayed Identity Shortcuts**—an architectural modification where the weight of the identity shortcut decays monotonically with layer depth. With only one additional hyperparameter $\alpha_{\min}$ and zero extra parameters…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR2026"
+  - "Self-Supervised Learning"
+  - "Residual Connections"
+  - "Decayed Identity Shortcuts"
+  - "Masked Autoencoders"
+  - "Feature Abstraction"
+  - "Effective Rank"
 date: 2026-05-08
-content_hash: c1486c92a1588d1d
+content_hash: f40849bad6819ac4
 ---
+
 # Residual Connections Harm Generative Representation Learning
 
 **Conference**: CVPR2026  
@@ -135,15 +141,16 @@ Linear Probing of MAE (ViT-B/16) on ImageNet-100:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
 - [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
 - [\[ACL 2025\] Magnet: Augmenting Generative Decoders with Representation Learning and Infilling Capabilities](../../ACL2025/self_supervised/magnet_augmenting_generative_decoders_with_representation_learning_and_infilling.md)
-- [\[CVPR 2026\] Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physica.md)
+- [\[ICLR 2026\] Disentanglement of Variations with Multimodal Generative Modeling](../../ICLR2026/self_supervised/disentanglement_of_variations_with_multimodal_generative_modeling.md)
 - [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
+- [\[CVPR 2026\] Weight Space Representation Learning via Neural Field Adaptation](weight_space_representation_learning_via_neural_field_adaptation.md)
 
 </div>
 

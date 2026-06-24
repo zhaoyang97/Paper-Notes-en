@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][factuality evaluation] SimpleVQA is the first VQA benchmark designed for comprehensive multimodal factuality evaluation of MLLMs. It spans 9 task types and 9 thematic domains…
+  [ICCV 2025][Multimodal VLM][factuality evaluation] SimpleVQA is the first VQA benchmark designed for comprehensive multimodal factuality evaluation of MLLMs. It spans 9 task types and 9 thematic domains, and employs a short-answer design with deterministic references alongside an LLM-as-a-judge scoring protocol to systematically assess the factual capabilities of 18 MLLMs and 8 text-only LLMs.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "large language models"
   - "hallucination detection"
 date: 2026-05-08
-content_hash: b3e84e7b868a5739
+content_hash: 30e7b8ff1121404f
 ---
 
 # SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models
@@ -139,9 +139,9 @@ Comprehensive evaluation results across 18 MLLMs and 8 text-only LLMs:
 
 - [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
 - [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[ICCV 2025\] VisNumBench: Evaluating Number Sense of Multimodal Large Language Models](visnumbench_evaluating_number_sense_of_multimodal_large_language_models.md)
 - [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
-- [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
-- [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
 
 </div>
 

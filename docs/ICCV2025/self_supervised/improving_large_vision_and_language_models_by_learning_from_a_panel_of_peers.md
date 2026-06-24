@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improving Large Vision and Language Models by Learning from a Panel of Peers
 description: >-
-  [ICCV2025][Self-Supervised Learning][Self-improvement] This paper proposes the Panel-of-Peers (PoP) learning framework, in which multiple LVLMs of comparable capability mutually generate candidate responses and score eac…
+  [ICCV2025][Self-Supervised Learning][Self-improvement] This paper proposes the Panel-of-Peers (PoP) learning framework, in which multiple LVLMs of comparable capability mutually generate candidate responses and score each other to construct preference data. Combined with iterative self-improvement via SimPO, PoP raises the average score across 15 benchmarks from 48% to 57% without any human-annotated data.
 tags:
   - "ICCV2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "LVLM"
   - "Reward Modeling"
 date: 2026-05-08
-content_hash: 356fc99e37827c92
+content_hash: 9d672d759c0f381b
 ---
 
 # Improving Large Vision and Language Models by Learning from a Panel of Peers
@@ -159,7 +159,7 @@ The LLaMA3 member improves from 48.7% to 58.2% (+9.5 absolute points), demonstra
 - [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](../../NeurIPS2025/self_supervised/m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
 - [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
 - [\[ICCV 2025\] Scaling Language-Free Visual Representation Learning](scaling_languagefree_visual_representation_learning.md)
-- [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](../../NeurIPS2025/self_supervised/implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
+- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](../../CVPR2026/self_supervised/quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
 
 </div>
 

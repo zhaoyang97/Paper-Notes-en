@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas
 description: >-
-  [ICLR 2026][LLM (Other)][diffusion language model] DreamOn resolves the fixed-length generation constraint of Diffusion Language Models (DLMs) by introducing two special states, `[expand]` and `[delete]`. This enables variable-length code infilling without architectural modifications, achieving a 26.4% average improvement on HumanEval-Infilling compared to diffusion ba
+  [ICLR 2026][LLM (Other)][diffusion language model] DreamOn resolves the fixed-length generation constraint of Diffusion Language Models (DLMs) by introducing two special states, `[expand]` and `[delete]`. This enables variable-length code infilling without architectural modifications, achieving a 26.4% average improvement on HumanEval-Infilling compared to diffusion baselines and reaching performance parity with state-of-the-art (SOTA) autoregressive models.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - diffusion language model
-  - code infilling
-  - variable-length generation
-  - discrete diffusion
-  - DLM
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "diffusion language model"
+  - "code infilling"
+  - "variable-length generation"
+  - "discrete diffusion"
+  - "DLM"
 date: 2026-05-08
-content_hash: 8ea96f46a0599207
+content_hash: 4ac0ac24244423d2
 ---
+
 # DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas
 
 **Conference**: ICLR 2026  
@@ -152,11 +153,11 @@ DreamOn enables DLMs to **outperform** SOTA AR models in multi-line infilling.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
-- [\[ICLR 2026\] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding](stopping_computation_for_converged_tokens_in_masked_diffusion-lm_decoding.md)
+- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
 - [\[ICLR 2026\] Rethinking Code Similarity for Automated Algorithm Design with LLMs](rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)
+- [\[ICLR 2026\] Beyond the Known: An Unknown-Aware Large Language Model for Open-Set Text Classification](beyond_the_known_an_unknown-aware_large_language_model_for_open-set_text_classif.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] A rapidly rotating spoke-patterned neutral density filter (SpokeND) is placed in front of a spike camera, allowing each pixel to periodically sample light intensity at multiple attenuation levels. A two-stage ReST-Net (ReGain for spatial de-attenuation + ReFine for temporal flicker suppression) is then used to reconstr
+  [CVPR 2026][Image Restoration][Spike Camera] A rapidly rotating spoke-patterned neutral density filter (SpokeND) is placed in front of a spike camera, allowing each pixel to periodically sample light intensity at multiple attenuation levels. A two-stage ReST-Net (ReGain for spatial de-attenuation + ReFine for temporal flicker suppression) is then used to reconstruct high frame rate (HFR, up to 2000 FPS) and high dynamic range (HDR) video from these "multi-attenuated spikes."
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Spike Camera"
+  - "HDR Video Reconstruction"
+  - "High Frame Rate"
+  - "SpokeND Filter"
+  - "Multi-attenuated Modulation"
 date: 2026-05-08
-content_hash: 3a8649a66073bc01
+content_hash: 76766d1e319f59ac
 ---
+
 # HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Both modules contribute, but **ReGain is the primary driver**: removing it drops
 
 ## Related Papers
 
-- [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)
 - [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
+- [\[ICLR 2026\] DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences](../../ICLR2026/image_restoration/dealthdr_learning_hdr_video_reconstruction_from_degraded_alternating_exposure_se.md)
 - [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
 - [\[CVPR 2026\] Gyro-based Deep Video Deblurring](gyro-based_deep_video_deblurring.md)
-- [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
+- [\[CVPR 2026\] ShreddingNet: Coarse-to-Fine Restoration for Multi-Source Shredded Manuscripts](shreddingnet_coarse-to-fine_restoration_for_multi-source_shredded_manuscripts.md)
 
 </div>
 

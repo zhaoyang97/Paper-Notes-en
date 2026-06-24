@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Interpreting ResNet-based CLIP via Neuron-Attention Decomposition
 description: >-
-  [NeurIPS 2025][Segmentation][CLIP interpretability] This paper proposes a neuron-attention decomposition method to interpret CLIP-ResNet by decomposing model outputs into pairwise contribution paths of neurons and attent…
+  [NeurIPS 2025][Segmentation][CLIP interpretability] This paper proposes a neuron-attention decomposition method to interpret CLIP-ResNet by decomposing model outputs into pairwise contribution paths of neurons and attention pooling heads. The resulting neuron-head pairs are shown to admit rank-1 approximations, exhibit sparsity, and capture sub-concepts. The method is applied to training-free semantic segmentation (mIoU 26.2% on PASCAL Context…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "ResNet"
   - "mechanistic interpretability"
 date: 2026-05-08
-content_hash: 7ea5a57ca5cc5db9
+content_hash: 0cd889ff542e07e6
 ---
 
 # Interpreting ResNet-based CLIP via Neuron-Attention Decomposition
@@ -165,11 +165,11 @@ Neuron-head pairs require only one principal component for perfect reconstructio
 
 ## Related Papers
 
-- [\[CVPR 2026\] CLIP Is Shortsighted: Paying Attention Beyond the First Sentence](../../CVPR2026/segmentation/clip_shortsighted_beyond_first_sentence.md)
+- [\[ECCV 2024\] Attention Decomposition for Cross-Domain Semantic Segmentation](../../ECCV2024/segmentation/attention_decomposition_for_cross-domain_semantic_segmentation.md)
+- [\[CVPR 2026\] DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence](../../CVPR2026/segmentation/clip_shortsighted_beyond_first_sentence.md)
 - [\[NeurIPS 2025\] Attention (as Discrete-Time Markov) Chains](attention_as_discrete-time_markov_chains.md)
-- [\[ICCV 2025\] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/corrclip_reconstructing_patch_correlations_in_clip_for_openv.md)
-- [\[ICCV 2025\] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](../../ICCV2025/segmentation/know_no_better_a_data-driven_approach_for_enhancing_negation_awareness_in_clip.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
+- [\[CVPR 2025\] DFormerv2: Geometry Self-Attention for RGBD Semantic Segmentation](../../CVPR2025/segmentation/dformerv2_geometry_self-attention_for_rgbd_semantic_segmentation.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](../../CVPR2026/segmentation/reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 
 </div>
 

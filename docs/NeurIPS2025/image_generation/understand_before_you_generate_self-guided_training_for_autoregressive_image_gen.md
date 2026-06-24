@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Autoregressive models] By systematically analyzing three key properties that hinder visual semantic learning in autoregressive image generation — local conditional dependency…
+  [NeurIPS 2025][Image Generation][Autoregressive models] By systematically analyzing three key properties that hinder visual semantic learning in autoregressive image generation — local conditional dependency, inter-step semantic inconsistency, and the absence of spatial invariance — this paper proposes ST-AR, a training framework that incorporates masked image modeling and contrastive learning into the next-token prediction objective. Without relying on any pretrained represe…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "masked image modeling"
   - "LlamaGen"
 date: 2026-05-08
-content_hash: 158361c075c1f6dc
+content_hash: 0a4398f34b96104d
 ---
 
 # Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation
@@ -146,11 +146,11 @@ ST-AR enables LlamaGen-XL (775M) trained for only 50 epochs to approach the perf
 
 ## Related Papers
 
+- [\[CVPR 2026\] Align Images Before You Generate](../../CVPR2026/image_generation/align_images_before_you_generate.md)
 - [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
 - [\[NeurIPS 2025\] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model](argenseg_image_segmentation_with_autoregressive_image_generation_model.md)
 - [\[NeurIPS 2025\] Conditional Panoramic Image Generation via Masked Autoregressive Modeling](conditional_panoramic_image_generation_via_masked_autoregres.md)
-- [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](../../ICCV2025/image_generation/holistic_tokenizer_for_autoregressive_image_generation.md)
-- [\[CVPR 2026\] RewardFlow: Generate Images by Optimizing What You Reward](../../CVPR2026/image_generation/rewardflow_generate_images_by_optimizing_what_you_reward.md)
+- [\[NeurIPS 2025\] BitMark: Watermarking Bitwise Autoregressive Image Generative Models](bitmark_watermarking_bitwise_autoregressive_image_generative_models.md)
 
 </div>
 

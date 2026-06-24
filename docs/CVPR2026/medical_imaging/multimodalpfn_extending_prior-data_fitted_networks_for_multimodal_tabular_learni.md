@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
 description: >-
-  [CVPR 2026][Medical Imaging][TabPFN] MMPFN is proposed to extend the pretrained tabular foundation model TabPFN to multimodal (tabular + image/text) scenarios for the first time. It addresses non-tabular embedding over-compression and token count imbalance through a Multi-Head Gated MLP (MGM) and a Cross-Attention Pooler (CAP), outperforming SOTA on medic
+  [CVPR 2026][Medical Imaging][Tabular Learning] MMPFN is proposed to extend the pretrained tabular foundation model TabPFN to multimodal (tabular + image/text) scenarios for the first time. It addresses non-tabular embedding over-compression and token count imbalance through a Multi-Head Gated MLP (MGM) and a Cross-Attention Pooler (CAP), outperforming SOTA on medical and general datasets.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - TabPFN
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Tabular Learning"
+  - "Multimodal Fusion"
+  - "TabPFN"
+  - "Attention Imbalance"
+  - "Modality Projection"
 date: 2026-05-08
-content_hash: 0d04cb112981d2c1
+content_hash: ff91f5a97c229297
 ---
+
 # MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
 
 **Conference**: CVPR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Power Ensemble Aggregation for Improved Extreme Event AI Prediction
 description: >-
-  [NeurIPS 2025][Earth Science][extreme event prediction] This paper proposes an adaptive ensemble aggregation method based on the power mean. By applying nonlinear aggregation (power exponent $p>1$) to the score of ensemb…
+  [NeurIPS 2025][Earth Science][extreme event prediction] This paper proposes an adaptive ensemble aggregation method based on the power mean. By applying nonlinear aggregation (power exponent $p>1$) to the score of ensemble members from generative weather prediction models, the method significantly improves classification performance for extreme high-temperature events, with greater gains at higher quantile thresholds.
 tags:
   - "NeurIPS 2025"
   - "Earth Science"
@@ -12,7 +12,7 @@ tags:
   - "heat wave classification"
   - "climate prediction"
 date: 2026-05-08
-content_hash: 8ef595897a647126
+content_hash: 561e17e4e71f5c18
 ---
 
 # Power Ensemble Aggregation for Improved Extreme Event AI Prediction
@@ -57,7 +57,7 @@ The system consists of three components: (1) a U-Net-based deterministic weather
 
    Given local anomaly predictions $\{\hat{x}_i\}_{i=1}^n$ from $n$ ensemble members, the score for each member is first computed as $\hat{s}_i = \Phi(\hat{x}_i)$, and power mean aggregation is then applied:
 
-   $$\hat{s} = \left(\frac{1}{n}\sum_{i=1}^n \hat{s}_i^p\right)^{1/p}$$
+    $\hat{s} = \left(\frac{1}{n}\sum_{i=1}^n \hat{s}_i^p\right)^{1/p}$
 
    When $p=1$, this reduces to the arithmetic mean; as $p \to \infty$, it approaches the maximum. The parameter $p \geq 1$ controls the degree to which the aggregation is skewed toward extreme-predicting members.
 

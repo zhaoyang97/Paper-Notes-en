@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: Learning a Shared Primitive Space for Transferable Skeleton Action Representation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] PRISM represents skeleton actions as a "weighted combination of reusable atomic motion primitives" (primitive coefficient space). It first learns this physically interpretable, view-invariant structured representation using multi-view synthetic data through a generative objective, then sequentially transfers the same r
+  [CVPR 2026][Human Understanding][Skeleton Actions] PRISM represents skeleton actions as a "weighted combination of reusable atomic motion primitives" (primitive coefficient space). It first learns this physically interpretable, view-invariant structured representation using multi-view synthetic data through a generative objective, then sequentially transfers the same representation to classification and frame-wise detection via lightweight task heads. It consistently outperfo…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Skeleton Actions"
+  - "Motion Primitives"
+  - "Transferable Representation"
+  - "Motion-Static Decoupling"
+  - "Long-tail Recognition"
 date: 2026-05-08
-content_hash: 675ebda89e257f7b
+content_hash: 8089329104b25289
 ---
+
 # PRISM: Learning a Shared Primitive Space for Transferable Skeleton Action Representation
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Evaluation of regularization terms on Mixamo cross-view motion transfer (Metric:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors](beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio.md)
-- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
+- [\[CVPR 2026\] Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements](action_motifs_self-supervised_hierarchical_representation_of_human_body_movement.md)
+- [\[ICLR 2026\] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis](../../ICLR2026/human_understanding/from_pixels_to_semantics_unified_facial_action_representation_learning_for_micro.md)
+- [\[ICLR 2026\] Curvature-Guided Task Synergy for Skeleton based Temporal Action Segmentation](../../ICLR2026/human_understanding/curvature-guided_task_synergy_for_skeleton_based_temporal_action_segmentation.md)
 - [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised HOI Detection](regformer_transferable_relational_grounding_for_weakly-supervised_hoi_detection.md)
-- [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised Human-Object Interaction Detection](regformer_transferable_relational_grounding_for_efficient_weakly-supervised_huma.md)
-- [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
+- [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
 
 </div>
 

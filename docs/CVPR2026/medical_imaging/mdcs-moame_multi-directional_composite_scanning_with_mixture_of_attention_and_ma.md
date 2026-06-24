@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MDCS-MoAME: Multi-directional Composite Scanning with Mixture of Attention and Mamba Experts for Cancer Survival Prediction
 description: >-
-  [CVPR 2026][Medical Imaging][Mamba] Addressing "gigapixel WSI + sparse genomes" for cancer survival prediction, MDCS-MoAME proposes a composite scanning strategy (five directions for images, interval scanning for genes) using Mamba to capture long-range dependencies. It employs a "Mixture of Attention and Mamba Experts" to dynamically select experts for
+  [CVPR 2026][Medical Imaging][Whole Slide Images] Addressing "gigapixel WSI + sparse genomes" for cancer survival prediction, MDCS-MoAME proposes a composite scanning strategy (five directions for images, interval scanning for genes) using Mamba to capture long-range dependencies. It employs a "Mixture of Attention and Mamba Experts" to dynamically select experts for cross-modal fusion based on modality pairs, incorporating alignment constraints to reduce redundancy. This appr…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Mamba
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Images"
+  - "Genomes"
+  - "Survival Prediction"
+  - "Mamba"
+  - "Mixture of Experts"
+  - "Multi-directional Scanning"
 date: 2026-05-08
-content_hash: 633bb93afe1a4296
+content_hash: f69acc62df39b1ab
 ---
+
 # MDCS-MoAME: Multi-directional Composite Scanning with Mixture of Attention and Mamba Experts for Cancer Survival Prediction
 
 **Conference**: CVPR 2026  
@@ -135,7 +141,7 @@ Main module ablation on LUAD / UCEC:
 
 - [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
 - [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
-- [\[NeurIPS 2025\] Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis](../../NeurIPS2025/medical_imaging/dual_mixture-of-experts_framework_for_discrete-time_survival_analysis.md)
+- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](../../AAAI2026/medical_imaging/grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
 - [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
 

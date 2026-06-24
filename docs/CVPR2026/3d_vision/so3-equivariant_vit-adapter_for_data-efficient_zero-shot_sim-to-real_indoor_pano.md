@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SO(3)-Equivariant ViT-Adapter for Data-Efficient Zero-Shot Sim-to-Real Indoor Panoramic Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][ViT-Adapter] Add an **SO(3)-equivariant adapter** to a frozen perspective pre-trained ViT (Depth Anything V2). By training on only 6.5K synthetic panoramas with zero real data, the framework transfers the zero-shot generalization capabilities of perspective models to 360° panoramas, outperforming real-data-dependent PanDA in zero-s
+  [CVPR 2026][3D Vision][Panoramic depth estimation] Add an **SO(3)-equivariant adapter** to a frozen perspective pre-trained ViT (Depth Anything V2). By training on only 6.5K synthetic panoramas with zero real data, the framework transfers the zero-shot generalization capabilities of perspective models to 360° panoramas, outperforming real-data-dependent PanDA in zero-shot sim-to-real on Matterport3D / Stanford2D3D.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - ViT-Adapter
-  - Sim-to-Real
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic depth estimation"
+  - "SO(3)-equivariant"
+  - "ViT-Adapter"
+  - "Zero-shot"
+  - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 8f631532c05b66e9
+content_hash: a9fa79fd42b1fefa
 ---
+
 # SO(3)-Equivariant ViT-Adapter for Data-Efficient Zero-Shot Sim-to-Real Indoor Panoramic Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -132,7 +136,7 @@ Vertical Rotation Robustness (RMSE@20° changes): Ours without augmentation (RMS
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -140,7 +144,7 @@ Vertical Rotation Robustness (RMSE@20° changes): Ours without augmentation (RMS
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
 - [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
 - [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
-- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Harmonized Feature Conditioning and Frequency-Prompt Personalization for Multi-Rater Medical Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the issue that "different doctors draw different contours for the same lesion," this paper employs a lightweight Harmonizer network to first "remove" scanning device noise/artifacts from features. It then uses a high-frequency prompt module in the wavelet frequency domain to capture the stylistic preferences
+  [CVPR 2026][Medical Imaging][Multi-rater segmentation] Addressing the issue that "different doctors draw different contours for the same lesion," this paper employs a lightweight Harmonizer network to first "remove" scanning device noise/artifacts from features. It then uses a high-frequency prompt module in the wavelet frequency domain to capture the stylistic preferences of each doctor. Finally, it employs GED regularization to align the model’s predicted distribution with…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multi-rater segmentation"
+  - "device artifact decoupling"
+  - "frequency-domain personalization"
+  - "GED regularization"
+  - "uncertainty calibration"
 date: 2026-05-08
-content_hash: e59520461e4e38c4
+content_hash: f531f69a78034541
 ---
+
 # Harmonized Feature Conditioning and Frequency-Prompt Personalization for Multi-Rater Medical Segmentation
 
 **Conference**: CVPR 2026  
@@ -152,8 +158,8 @@ The full ablation table is in the supplementary material; observations from the 
 - [\[CVPR 2026\] Virtual Immunohistochemistry Staining with Dual-Aligned Multi-Task Feature Guidance](virtual_immunohistochemistry_staining_with_dual-aligned_multi-task_feature_guida.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
 - [\[AAAI 2026\] CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution](../../AAAI2026/medical_imaging/cd-dpe_dual-prompt_expert_network_based_on_convolutional_dictionary_feature_deco.md)
-- [\[CVPR 2026\] MedFG-VQA: Low-Frequency Memory and Graph Attention for Lightweight Medical VQA](medfg-vqa_low-frequency_memory_and_graph_attention_for_lightweight_medical_vqa.md)
 - [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
+- [\[CVPR 2026\] MedFG-VQA: Low-Frequency Memory and Graph Attention for Lightweight Medical VQA](medfg-vqa_low-frequency_memory_and_graph_attention_for_lightweight_medical_vqa.md)
 
 </div>
 

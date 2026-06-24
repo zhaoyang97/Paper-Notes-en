@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Attention Purification for Backdoored Large Vision Language Models
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] It is discovered that the essence of backdoor behavior in LVLMs is cross-modal attention hijacking (where trigger visual tokens seize attention from text tokens). This study proposes CleanSight—the first training-free test-time backdoor defense framework—which eliminates backdoor effects by detecting and pruning visual
+  [CVPR 2026][Multimodal VLM][Backdoor Defense] It is discovered that the essence of backdoor behavior in LVLMs is cross-modal attention hijacking (where trigger visual tokens seize attention from text tokens). This study proposes CleanSight—the first training-free test-time backdoor defense framework—which eliminates backdoor effects by detecting and pruning visual tokens with abnormally high attention.
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Backdoor Defense"
+  - "Attention Purification"
+  - "LVLM Security"
+  - "Test-time Defense"
+  - "Visual Token Pruning"
 date: 2026-05-08
-content_hash: 398c8f3e09e7ddd1
+content_hash: 80dc874f940b769a
 ---
+
 # Test-Time Attention Purification for Backdoored Large Vision Language Models
 
 **Conference**: CVPR 2026  
@@ -126,11 +132,11 @@ CleanSight is a completely training-free test-time method, involving no paramete
 
 ## Related Papers
 
-- [\[CVPR 2025\] CleanSight: Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2025/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/llm_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
-- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
-- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
+- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
+- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
+- [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
 
 </div>
 

@@ -1,14 +1,18 @@
 ---
 title: >-
-  [Paper Note] UniVocal：统一的语音-歌唱代码混用合成
+  [Paper Note] UniVocal: Unified Speech-Singing Code-Mixed Synthesis
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] UniVocal achieves SOTA performance on the newly constructed SCSBench benchmark by utilizing fine-grained cent tokens and two-stage curriculum learning, enabling the model to automatically infer speech/singing switching points from raw text semantics without explicit labels.
+  [ACL 2026][Audio & Speech][Speech-Singing Code-Mixing] UniVocal achieves SOTA performance on the newly constructed SCSBench benchmark by utilizing fine-grained cent tokens and two-stage curriculum learning, enabling the model to automatically infer speech/singing switching points from raw text semantics without explicit labels.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Speech-Singing Code-Mixing"
+  - "Chain-of-Thought Generation"
+  - "Fine-grained Pitch Representation"
 date: 2026-05-08
-content_hash: 972838643e6b9aa2
+content_hash: 8b13c1845c028794
 ---
+
 # UniVocal: Unified Speech-Singing Code-Mixed Synthesis
 
 **Conference**: ACL 2026  
@@ -140,15 +144,15 @@ Removing CoT improves switching stability (F1 $\rightarrow$ 0.810) at the cost o
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] UniSRM：用于细粒度语音评估的统一语音奖励模型](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
-- [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
-- [\[ACL 2026\] SpeechLLM-as-Judges: Towards General and Interpretable Speech Quality Evaluation](speechllm-as-judges_towards_general_and_interpretable_speech_quality_evaluation.md)
-- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
-- [\[ACL 2026\] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](mind_the_pause_disfluency-aware_objective_tuning_for_multilingual_speech_correct.md)
+- [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](../../NeurIPS2025/audio_speech/adapting_speech_language_model_to_singing_voice_synthesis.md)
+- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
+- [\[ACL 2025\] TCSinger 2: Customizable Multilingual Zero-shot Singing Voice Synthesis](../../ACL2025/audio_speech/tcsinger_2_customizable_multilingual_zero-shot_singing_voice_synthesis.md)
+- [\[ACL 2026\] From Isolation to Entanglement: When Do Interpretability Methods Identify and Disentangle Known Concepts?](from_isolation_to_entanglement_when_do_interpretability_methods_identify_and_dis.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 
 </div>
 

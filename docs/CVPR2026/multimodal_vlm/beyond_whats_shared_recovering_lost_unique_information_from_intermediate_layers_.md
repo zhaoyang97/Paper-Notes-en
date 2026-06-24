@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond What's Shared: Recovering Lost Unique Information from Intermediate Layers to Boost Multimodal Geo-Foundation Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors observe that the intermediate layers of multimodal contrastive models (e.g., SatCLIP) retain modality-specific (unique) information that is discarded by the final alignment layers. Consequently, they propose BWS (Beyond What's Shared), which performs deep weighted concatenation of intermediate and final lay
+  [CVPR 2026][Multimodal VLM][Geo-foundation models] The authors observe that the intermediate layers of multimodal contrastive models (e.g., SatCLIP) retain modality-specific (unique) information that is discarded by the final alignment layers. Consequently, they propose BWS (Beyond What's Shared), which performs deep weighted concatenation of intermediate and final layer representations. Without any additional training objectives or external models…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Geo-foundation models"
+  - "Contrastive learning"
+  - "Information bottleneck"
+  - "Hierarchical fusion"
+  - "Modality-specific information"
 date: 2026-05-08
-content_hash: c0b7c1a2195b1c04
+content_hash: 2a4f61ee8f0aebb2
 ---
+
 # Beyond What's Shared: Recovering Lost Unique Information from Intermediate Layers to Boost Multimodal Geo-Foundation Models
 
 **Conference**: CVPR 2026  
@@ -141,16 +147,14 @@ $\alpha$ and Layer Selection (Table 3/4):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
 - [\[ICLR 2026\] BioCAP: Exploiting Synthetic Captions Beyond Labels in Biological Foundation Models](../../ICLR2026/multimodal_vlm/biocap_exploiting_synthetic_captions_beyond_labels_in_biological_foundation_mode.md)
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
-- [\[CVPR 2026\] Information-Theoretic Decomposition for Multimodal Interaction Learning](information-theoretic_decomposition_for_multimodal_interaction_learning.md)
 
 </div>
 

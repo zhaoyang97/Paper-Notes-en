@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data
 description: >-
-  [ICLR 2026][Causal Inference][F-PAG] This paper identifies a long-ignored challenge in interventional causal discovery: **post-treatment selection** (e.g., in single-cell experiments, only high-activity cells are retained according to quality control standards after intervention). This selection mimics causal responses, causing existing methods to misclas
+  [ICLR2026][Causal Inference][Post-treatment selection bias] This paper identifies a long-ignored challenge in interventional causal discovery: **post-treatment selection** (e.g., in single-cell experiments, only high-activity cells are retained according to quality control standards after intervention). This selection mimics causal responses, causing existing methods to misclassify the presence and absence of direct causal edges into the same equivalence class. The authors ex…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - F-PAG
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Post-treatment selection bias"
+  - "latent confounding"
+  - "interventional causal discovery"
+  - "Markov equivalence class"
+  - "F-PAG"
 date: 2026-05-08
-content_hash: b695d3d90943c553
+content_hash: 3afe949839058277
 ---
+
 # Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data
 
 **Conference**: ICLR2026  
@@ -113,9 +118,9 @@ Baselines trail because they misinterpret spurious dependencies induced by laten
 
 - [\[NeurIPS 2025\] Characterization and Learning of Causal Graphs from Hard Interventions](../../NeurIPS2025/causal_inference/characterization_and_learning_of_causal_graphs_from_hard_interventions.md)
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
 - [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
-- [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
-- [\[ICML 2025\] Latent Variable Causal Discovery under Selection Bias](../../ICML2025/causal_inference/latent_variable_causal_discovery_under_selection_bias.md)
 
 </div>
 

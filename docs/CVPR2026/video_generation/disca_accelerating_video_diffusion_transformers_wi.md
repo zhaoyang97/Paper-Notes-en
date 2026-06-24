@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching
 description: >-
-  [CVPR 2026][Video Generation][MeanFlow] DisCa for the first time unifies learnable feature caching and step distillation into a compatible framework, replacing manual caching strategies with a lightweight neural predictor (<4% model parameters). Accompanied by Restricted MeanFlow to stabilize the distillation of large-scale video DiTs, it achieves 11.8× near
+  [CVPR 2026][Video Generation][Feature Caching] DisCa for the first time unifies learnable feature caching and step distillation into a compatible framework, replacing manual caching strategies with a lightweight neural predictor (<4% model parameters). Accompanied by Restricted MeanFlow to stabilize the distillation of large-scale video DiTs, it achieves 11.8× near-lossless acceleration on HunyuanVideo.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - MeanFlow
-  - HunyuanVideo
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Feature Caching"
+  - "Step Distillation"
+  - "MeanFlow"
+  - "Learnable Predictor"
+  - "HunyuanVideo"
 date: 2026-05-08
-content_hash: 246d3a85e9036ae3
+content_hash: 33dfa614aebf1af2
 ---
+
 # DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching
 
 **Conference**: CVPR 2026  
@@ -163,11 +167,11 @@ Experiments were conducted on HunyuanVideo, generating 5-second videos at 704×7
 
 ## Related Papers
 
+- [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](../../ICLR2026/video_generation/bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
 - [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
+- [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
 - [\[ICLR 2026\] PreciseCache: Precise Feature Caching for Efficient and High-fidelity Video Generation](../../ICLR2026/video_generation/precisecache_precise_feature_caching_for_efficient_and_high-fidelity_video_gener.md)
 - [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](../../ICML2026/video_generation/worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
-- [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
-- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
 
 </div>
 

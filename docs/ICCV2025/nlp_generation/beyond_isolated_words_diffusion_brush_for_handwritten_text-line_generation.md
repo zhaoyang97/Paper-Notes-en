@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation
 description: >-
-  [ICCV 2025][Text Generation][Handwritten text generation] This paper proposes DiffBrush, the first diffusion-based method for handwritten text-line generation. Through content-decoupled style learning (column/row masking…
+  [ICCV 2025][Text Generation][Handwritten text generation] This paper proposes DiffBrush, the first diffusion-based method for handwritten text-line generation. Through content-decoupled style learning (column/row masking) and a multi-scale content discriminator (line/word level), DiffBrush substantially outperforms existing methods in both style imitation and content accuracy.
 tags:
   - "ICCV 2025"
   - "Text Generation"
@@ -12,7 +12,7 @@ tags:
   - "style imitation"
   - "content accuracy"
 date: 2026-05-08
-content_hash: f012d65b5e3be722
+content_hash: 6b16f6460aab0db6
 ---
 
 # Beyond Isolated Words: Diffusion Brush for Handwritten Text-Line Generation
@@ -146,9 +146,9 @@ Evaluated on the IAM and CVL English handwriting datasets:
 
 - [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](../../ACL2026/nlp_generation/planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
-- [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
-- [\[AAAI 2026\] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation](../../AAAI2026/nlp_generation/c3tg_conflict-aware_composite_and_collaborative_controlled_text_generation.md)
-- [\[ACL 2026\] Frankentext: Stitching Random Text Fragments into Long-Form Narratives](../../ACL2026/nlp_generation/frankentext_stitching_random_text_fragments_into_long-form_narratives.md)
+- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](../../ICLR2026/nlp_generation/unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
+- [\[ICML 2025\] Understanding and Mitigating Memorization in Diffusion Models for Tabular Data](../../ICML2025/nlp_generation/understanding_and_mitigating_memorization_in_diffusion_models_for_tabular_data.md)
+- [\[ACL 2025\] ATGen: A Framework for Active Text Generation](../../ACL2025/nlp_generation/atgen_a_framework_for_active_text_generation.md)
 
 </div>
 

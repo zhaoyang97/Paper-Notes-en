@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Block-wise Adaptive Caching for Accelerating Diffusion Policy
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Diffusion Policy] BAC adapts the "feature caching" concept from image diffusion to Diffusion Policy. It utilizes dynamic programming to schedule cache update intervals for each Transformer sub-block individually and introduces the Bubbling Union Algorithm to intercept inter-block error propagation in FFN blocks. This training-free, plug
+  [ICLR 2026][Robotics][Diffusion Policy] BAC adapts the "feature caching" concept from image diffusion to Diffusion Policy. It utilizes dynamic programming to schedule cache update intervals for each Transformer sub-block individually and introduces the Bubbling Union Algorithm to intercept inter-block error propagation in FFN blocks. This training-free, plug-and-play method accelerates diffusion policy inference by 3× with almost no loss in success rate.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Diffusion Policy
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Diffusion Policy"
+  - "Feature Caching"
+  - "Training-free Acceleration"
+  - "VLA"
+  - "Dynamic Programming"
+  - "Error Propagation"
 date: 2026-05-08
-content_hash: c290eb841c43da19
+content_hash: 6d743ed72dd581c6
 ---
+
 # Block-wise Adaptive Caching for Accelerating Diffusion Policy
 
 **Conference**: ICLR 2026  
@@ -117,10 +122,10 @@ Real-world (Franka Research 3 grasping a soft bag): **BAC(S=7) achieved a 71% su
 ## Related Papers
 
 - [\[ICLR 2026\] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning](h3dp_triplyhierarchical_diffusion_policy_for_visuomotor_learning.md)
+- [\[ICLR 2026\] FASTer: Toward Powerful and Efficient Autoregressive Vision-Language-Action Models with Learnable Action Tokenizer and Block-wise Decoding](faster_toward_powerful_and_efficient_autoregressive_visionlanguageaction_models_.md)
 - [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
 - [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](../../CVPR2026/robotics/graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](../../NeurIPS2025/robotics/vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
 
 </div>
 

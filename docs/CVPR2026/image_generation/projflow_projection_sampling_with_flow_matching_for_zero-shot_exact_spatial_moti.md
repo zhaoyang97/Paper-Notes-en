@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control
 description: >-
-  [CVPR 2026][Human Understanding][Flow Matching] The authors unify a broad category of human motion control tasks (trajectory following, 2D→3D lifting, motion completion, cyclic actions, etc.) into linear inverse problems. They propose ProjFlow—a training-free flow matching sampler that utilizes closed-form projections at each denoising step to pull "clean motion est
+  [CVPR 2026][Image Generation][Flow Matching] The authors unify a broad category of human motion control tasks (trajectory following, 2D→3D lifting, motion completion, cyclic actions, etc.) into linear inverse problems. They propose ProjFlow—a training-free flow matching sampler that utilizes closed-form projections at each denoising step to pull "clean motion estimates" onto the constraint set. By incorporating a "kinematic-aware metric" that encodes skeleton topology…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Spatial Motion Control"
+  - "Linear Inverse Problems"
+  - "Projection Sampling"
+  - "Kinematic Metric"
 date: 2026-05-08
-content_hash: 08659195937a6250
+content_hash: 5c4150fcb6bb2bd2
 ---
+
 # ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,13 @@ Removing components in a motion completion task (all variants still satisfy cons
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
-- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
-- [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
-- [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
+- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
+- [\[CVPR 2026\] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
+- [\[CVPR 2026\] Few-shot Acoustic Synthesis with Multimodal Flow Matching](few-shot_acoustic_synthesis_with_multimodal_flow_matching.md)
+- [\[ICLR 2026\] Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching](../../ICLR2026/image_generation/discrete_guidance_matching_exact_guidance_for_discrete_flow_matching.md)
+- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
 
 </div>
 

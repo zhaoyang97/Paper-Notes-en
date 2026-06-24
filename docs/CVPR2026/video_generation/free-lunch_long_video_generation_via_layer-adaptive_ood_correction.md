@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] FreeLOC introduces a training-free, layer-adaptive framework that identifies the varying sensitivities of different layers in Video DiTs to "frame-level relative position OOD" and "context length OOD." By selectively applying Multi-granularity Positional Recoding (VRPR) and Tiered Sparse Attention (TSA) to sensitive la
+  [CVPR 2026][Video Generation][Long Video Generation] FreeLOC introduces a training-free, layer-adaptive framework that identifies the varying sensitivities of different layers in Video DiTs to "frame-level relative position OOD" and "context length OOD." By selectively applying Multi-granularity Positional Recoding (VRPR) and Tiered Sparse Attention (TSA) to sensitive layers, it achieves SOTA long video generation quality without additional training costs.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Long Video Generation"
+  - "Training-free"
+  - "Positional Encoding Extrapolation"
+  - "Sparse Attention"
+  - "Layer-adaptive"
 date: 2026-05-08
-content_hash: 021a7b9dc61c70d4
+content_hash: aa94226b0dd76db8
 ---
+
 # Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,20 @@ Ours is entirely training-free. VRPR and TSA are only active during inference. P
 - Value: ⭐⭐⭐⭐ (Practical training-free solution for the community).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Foresight: Adaptive Layer Reuse for Accelerated and High-Quality Text-to-Video Generation](../../NeurIPS2025/video_generation/foresight_adaptive_layer_reuse_for_accelerated_and_highquali.md)
+- [\[ICML 2025\] RIFLEx: A Free Lunch for Length Extrapolation in Video Diffusion Transformers](../../ICML2025/video_generation/riflex_a_free_lunch_for_length_extrapolation_in_video_diffusion_transformers.md)
+- [\[CVPR 2026\] AdaCluster: Adaptive Query-Key Clustering for Sparse Attention in Video Generation](adacluster_adaptive_query-key_clustering_for_sparse_attention_in_video_generatio.md)
+- [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](../../ICML2026/video_generation/enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
+- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] AdaCluster: Adaptive Query-Key Clustering for Sparse Attention in Video Generation](adacluster_adaptive_query-key_clustering_for_sparse_attention_in_video_generatio.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IF-GUIDE: Influence Function-Guided Detoxification of LLMs
 description: >-
-  [NeurIPS 2025][Social Computing][LLM detoxification] This paper proposes IF-Guide, which leverages influence functions to identify toxic content in training data at the token granularity and actively suppresses the model…
+  [NeurIPS 2025][Social Computing][LLM detoxification] This paper proposes IF-Guide, which leverages influence functions to identify toxic content in training data at the token granularity and actively suppresses the model from learning toxic behaviors during pre-training or fine-tuning via a penalty-based training objective, substantially outperforming passive alignment methods such as DPO and RAD.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "token-level suppression"
   - "proactive safety"
 date: 2026-05-08
-content_hash: e465b9129c69854d
+content_hash: 5e1f396b294ccae4
 ---
 
 # IF-GUIDE: Influence Function-Guided Detoxification of LLMs
@@ -163,10 +163,10 @@ IF-Guide also outperforms RAD on implicit toxicity, achieving $2.2\times$ EMT an
 ## Related Papers
 
 - [\[NeurIPS 2025\] Position Paper: If Innovation in AI Systematically Violates Fundamental Rights, Is It Innovation at All?](position_paper_if_innovation_in_ai_systematically_violates_fundamental_rights_is.md)
+- [\[CVPR 2025\] Classifier-guided CLIP Distillation for Unsupervised Multi-label Classification](../../CVPR2025/social_computing/classifier-guided_clip_distillation_for_unsupervised_multi-label_classification.md)
 - [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
 - [\[AAAI 2026\] FactGuard: Event-Centric and Commonsense-Guided Fake News Detection](../../AAAI2026/social_computing/factguard_event-centric_and_commonsense-guided_fake_news_detection.md)
-- [\[ICLR 2026\] Tracing and Reversing Edits in LLMs](../../ICLR2026/social_computing/tracing_and_reversing_edits_in_llms.md)
-- [\[ICML 2026\] FLIPS: Instance-Fingerprinting for LLMs via Pseudo-Random Sequences](../../ICML2026/social_computing/flips_instance-fingerprinting_for_llms_via_pseudo-random_sequences.md)
+- [\[ACL 2025\] Exploring the Impact of Instruction-Tuning on LLMs' Susceptibility to Misinformation](../../ACL2025/social_computing/exploring_the_impact_of_instruction-tuning_on_llms_susceptibility_to_misinformat.md)
 
 </div>
 

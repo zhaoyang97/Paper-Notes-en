@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SegAnyPET: Universal Promptable Segmentation from Positron Emission Tomography Images
 description: >-
-  [ICCV 2025][Medical Imaging][PET segmentation] This paper introduces PETS-5k, the largest PET segmentation dataset to date (5,731 3D whole-body PET scans, over 1.3 million 2D slices)…
+  [ICCV 2025][Medical Imaging][PET segmentation] This paper introduces PETS-5k, the largest PET segmentation dataset to date (5,731 3D whole-body PET scans, over 1.3 million 2D slices), and proposes SegAnyPET — the first 3D promptable segmentation foundation model tailored for PET imaging. Through a Cross-Prompt Confidence Learning (CPCL) strategy to handle inconsistent annotation quality, SegAnyPET substantially outperforms existing foundation models and task-specific models o…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "noisy label learning"
   - "SAM adaptation"
 date: 2026-05-08
-content_hash: a64e2ec001411990
+content_hash: 359180ae83c838af
 ---
 
 # SegAnyPET: Universal Promptable Segmentation from Positron Emission Tomography Images
@@ -132,11 +132,11 @@ The SegAnyPET pipeline takes a 3D PET volume and positional prompts (points or b
 
 ## Related Papers
 
-- [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
+- [\[CVPR 2025\] Developing Foundation Models for Universal Segmentation from 3D Whole-Body Positron Emission Tomography](../../CVPR2025/medical_imaging/developing_foundation_models_for_universal_segmentation_from_3d_whole-body_posit.md)
 - [\[ICCV 2025\] Coordinate-based Speed of Sound Recovery for Aberration-Corrected Photoacoustic Computed Tomography](coordinate-based_speed_of_sound_recovery_for_aberration-corrected_photoacoustic_.md)
-- [\[NeurIPS 2025\] FOXES: A Framework For Operational X-ray Emission Synthesis](../../NeurIPS2025/medical_imaging/foxes_a_framework_for_operational_x-ray_emission_synthesis.md)
-- [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](../../AAAI2026/medical_imaging/propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
-- [\[NeurIPS 2025\] Zebra: Towards Zero-Shot Cross-Subject Generalization for Universal Brain Visual Decoding](../../NeurIPS2025/medical_imaging/zebra_towards_zero-shot_cross-subject_generalization_for_universal_brain_visual_.md)
+- [\[CVPR 2025\] vesselFM: A Foundation Model for Universal 3D Blood Vessel Segmentation](../../CVPR2025/medical_imaging/vesselfm_a_foundation_model_for_universal_3d_blood_vessel_segmentation.md)
+- [\[CVPR 2026\] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation](../../CVPR2026/medical_imaging/voxtell_free-text_promptable_universal_3d_medical_image_segmentation.md)
+- [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
 
 </div>
 

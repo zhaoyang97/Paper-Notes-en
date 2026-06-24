@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mirror Illusion Art
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes AutoMIA: given two 2D target images ("front view" and "mirror reflection"), it automatically optimizes a 3D-printable voxel model that satisfies both shape and color constraints. This allows the same object to present two seemingly completely different patterns before and after the mirror. The desig
+  [CVPR 2026][3D Vision][Mirror Illusion] This paper proposes AutoMIA: given two 2D target images ("front view" and "mirror reflection"), it automatically optimizes a 3D-printable voxel model that satisfies both shape and color constraints. This allows the same object to present two seemingly completely different patterns before and after the mirror. The design is completed in approximately 76 seconds with 2.6 GB VRAM on a single RTX 3090.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Mirror Illusion"
+  - "Inverse Design"
+  - "3D Voxel Optimization"
+  - "Joint Shape-Color Optimization"
+  - "3D Printing"
 date: 2026-05-08
-content_hash: 35c322d06ae75719
+content_hash: fe43fe8d299880da
 ---
+
 # Mirror Illusion Art
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ AutoMIA outperforms baselines significantly: SS improved from 0.668 to 0.931, NL
 ## Related Papers
 
 - [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views](ff3r_feedforward_feature_3d_reconstruction_from_unconstrained_views.md)
-- [\[CVPR 2026\] CUBE: Representing 3D Faces with Learnable B-Spline Volumes](cube_bspline_3d_faces.md)
-- [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
-- [\[CVPR 2026\] Chorus: Multi-Teacher Pretraining for Holistic 3D Gaussian Scene Encoding](chorus_multi-teacher_pretraining_for_holistic_3d_gaussian_scene_encoding.md)
+- [\[CVPR 2026\] Voxify3D: Pixel Art Meets Volumetric Rendering](voxify3d_pixel_art_meets_volumetric_rendering.md)
+- [\[NeurIPS 2025\] 3D Visual Illusion Depth Estimation](../../NeurIPS2025/3d_vision/3d_visual_illusion_depth_estimation.md)
+- [\[ICML 2026\] SIMPC: Learning Self-Induced Mirror-Point Consistency for Unsupervised Point Cloud Denoising](../../ICML2026/3d_vision/simpc_learning_self-induced_mirror-point_consistency_for_unsupervised_point_clou.md)
+- [\[CVPR 2025\] RASP: Revisiting 3D Anamorphic Art for Shadow-Guided Packing of Irregular Objects](../../CVPR2025/3d_vision/rasp_revisiting_3d_anamorphic_art_for_shadow-guided_packing_of_irregular_objects.md)
 
 </div>
 

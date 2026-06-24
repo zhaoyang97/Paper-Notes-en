@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Point4Cast utilizes a "continuously evolving latent spatio-temporal representation" to uniformly process streaming video frames. It can reconstruct 3D pointmaps for past and current frames while feed-forwardly **forecasting pointmaps and camera parameters for future timestamps**. It also derives scene flow in a trainin
+  [CVPR 2026][3D Vision][Streaming Reconstruction] Point4Cast utilizes a "continuously evolving latent spatio-temporal representation" to uniformly process streaming video frames. It can reconstruct 3D pointmaps for past and current frames while feed-forwardly **forecasting pointmaps and camera parameters for future timestamps**. It also derives scene flow in a training-free manner, setting new SOTA benchmarks on PointOdyssey and TAPVid-3D for both dynamic scene reconstruction…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Streaming Reconstruction"
+  - "Dynamic Scenes"
+  - "Pointmap Forecasting"
+  - "Spatio-Temporal Representation"
+  - "Feed-forward 3D"
 date: 2026-05-08
-content_hash: 610480af3b1b2907
+content_hash: 69603891044f83d1
 ---
+
 # Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting
 
 **Conference**: CVPR 2026  
@@ -164,9 +170,9 @@ Ablation of temporal conditioning methods (PointOdyssey, Acc./Comp. lower is bet
 
 - [\[CVPR 2026\] SLARM: Streaming and Language-Aligned Reconstruction Model for Dynamic Scenes](slarm_streaming_and_language-aligned_reconstruction_model_for_dynamic_scenes.md)
 - [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
+- [\[CVPR 2026\] Stabilizing Streaming Video Geometry via Dynamic Feature Normalization](stabilizing_streaming_video_geometry_via_dynamic_feature_normalization.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 - [\[CVPR 2026\] ReFlow: Self-correction Motion Learning for Dynamic Scene Reconstruction](reflow_self-correction_motion_learning_for_dynamic_scene_reconstruction.md)
-- [\[CVPR 2026\] MOSAIC-GS: Monocular Scene Reconstruction via Advanced Initialization for Complex Dynamic Environments](mosaic-gs_monocular_scene_reconstruction_via_advanced_initialization_for_complex.md)
 
 </div>
 

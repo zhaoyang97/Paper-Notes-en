@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision
 description: >-
-  [ICML 2026][LLM (Other)][GRPO] This paper proposes Compute as Teacher (CaT): it "synthesizes" a pseudo-reference answer from $G$ rollouts already sampled by GRPO using a frozen anchor model. In non-verifiable domains, the model uses binary rubrics self-derived from this pseudo-reference to score each rollout as an RL reward. This directly converts i
+  [ICML 2026][LLM (Other)][GRPO] This paper proposes Compute as Teacher (CaT): it "synthesizes" a pseudo-reference answer from $G$ rollouts already sampled by GRPO using a frozen anchor model. In non-verifiable domains, the model uses binary rubrics self-derived from this pseudo-reference to score each rollout as an RL reward. This directly converts inference compute into supervision signals without any human annotation, achieving up to a 30% improvement over baselines on Healt…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - GRPO
-  - HealthBench
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "GRPO"
+  - "self-synthesized reference"
+  - "self-proposed rubric"
+  - "non-verifiable reward"
+  - "HealthBench"
 date: 2026-05-08
-content_hash: 10302552161b59e7
+content_hash: f6f5151ad8fd3a1f
 ---
+
 # Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision
 
 **Conference**: ICML 2026  
@@ -140,8 +144,8 @@ To prove CaT is a unified paradigm rather than a healthcare-specific trick, the 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](../../NeurIPS2025/llm_nlp/wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
-- [\[ACL 2025\] SkillAggregation: Reference-free LLM-Dependent Aggregation](../../ACL2025/llm_nlp/skillaggregation_reference-free_llm-dependent_aggregation.md)
 - [\[NeurIPS 2025\] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers](../../NeurIPS2025/llm_nlp/dont_be_lazy_completep_enables_compute-efficient_deep_transformers.md)
+- [\[ACL 2025\] SkillAggregation: Reference-free LLM-Dependent Aggregation](../../ACL2025/llm_nlp/skillaggregation_reference-free_llm-dependent_aggregation.md)
 - [\[ICML 2025\] BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](../../ICML2025/llm_nlp/best-route_adaptive_llm_routing_with_test-time_optimal_compute.md)
 - [\[ICML 2026\] Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions](scheduling_llm_inference_with_uncertainty-aware_output_length_predictions.md)
 

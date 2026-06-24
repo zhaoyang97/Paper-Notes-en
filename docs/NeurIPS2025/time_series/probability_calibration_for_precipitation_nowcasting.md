@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Probability Calibration for Precipitation Nowcasting
 description: >-
-  [NeurIPS 2025][Time Series][Probability Calibration] This paper proposes the Expected Threshold Calibration Error (ETCE) as a more appropriate metric for probability calibration in precipitation nowcasting…
+  [NeurIPS 2025][Time Series][Probability Calibration] This paper proposes the Expected Threshold Calibration Error (ETCE) as a more appropriate metric for probability calibration in precipitation nowcasting, and extends post-hoc calibration techniques from computer vision to the forecasting domain. By incorporating a lead-time-conditioned Selective Scaling method, the proposed approach reduces model calibration error by up to 23.5%.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Calibration Error"
   - "Neural Weather Models"
 date: 2026-05-08
-content_hash: 474cca78457ce43f
+content_hash: c498f14d27fefafe
 ---
 
 # Probability Calibration for Precipitation Nowcasting
@@ -162,11 +162,11 @@ Larger Segformer classifiers yield only ~1.3% additional ETCE improvement at sub
 
 ## Related Papers
 
+- [\[CVPR 2026\] Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](../../CVPR2026/time_series/probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)
+- [\[ICLR 2026\] Extreme Weather Nowcasting via Local Precipitation Pattern Prediction](../../ICLR2026/time_series/extreme_weather_nowcasting_via_local_precipitation_pattern_prediction.md)
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
-- [\[CVPR 2026\] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](../../CVPR2026/time_series/sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[ICML 2025\] TCP-Diffusion: A Multi-modal Diffusion Model for Global Tropical Cyclone Precipitation Forecasting with Change Awareness](../../ICML2025/time_series/tcp-diffusion_a_multi-modal_diffusion_model_for_global_tropical_cyclone_precipit.md)
 - [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
-- [\[NeurIPS 2025\] Towards Self-Supervised Foundation Models for Critical Care Time Series](towards_self-supervised_foundation_models_for_critical_care_time_series.md)
 
 </div>
 

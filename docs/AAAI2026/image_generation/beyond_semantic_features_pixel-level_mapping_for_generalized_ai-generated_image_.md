@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection
 description: >-
-  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes a pixel-level mapping preprocessing method that suppresses low-frequency semantic bias and enhances high-frequency generation artifacts by b…
+  [AAAI 2026][Image Generation][AI-generated image detection] This paper proposes a pixel-level mapping preprocessing method that suppresses low-frequency semantic bias and enhances high-frequency generation artifacts by breaking the monotonic ordering of pixel values, achieving a cross-model generalization accuracy of 98.4% in AI-generated image detection.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "high-frequency artifacts"
   - "cross-model generalization"
 date: 2026-05-08
-content_hash: 955d3a3b026a8f3a
+content_hash: 13a94ef7ee1f7cca
 ---
 
 # Beyond Semantic Features: Pixel-Level Mapping for Generalized AI-Generated Image Detection
@@ -164,10 +164,10 @@ A key finding is that random mapping achieves detection accuracy comparable to f
 ## Related Papers
 
 - [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[CVPR 2025\] Co-Spy: Combining Semantic and Pixel Features to Detect Synthetic Images by AI](../../CVPR2025/image_generation/co-spy_combining_semantic_and_pixel_features_to_detect_synthetic_images_by_ai.md)
 - [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](../../ICML2026/image_generation/omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
-- [\[AAAI 2026\] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](aedr_training-free_ai-generated_image_attribution_via_autoen.md)
-- [\[CVPR 2026\] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control](../../CVPR2026/image_generation/beyond_pixel_simulation_pathology_image_generation_via_diagnostic_semantic_token.md)
-- [\[AAAI 2026\] Exposing DeepFakes via Hyperspectral Domain Mapping](exposing_deepfakes_via_hyperspectral_domain_mapping.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
+- [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation
 description: >-
-  [ICLR 2026][LLM Reasoning][prompting] This paper proposes String Seed of Thought (SSoT), a concise prompting method where LLMs first generate a random string and then extract randomness to select an answer. It significantly improves distribution faithfulness in Probabilistic Instruction Following (PIF) and response diversity in Diverse Answer Generation (D
+  [ICLR 2026][Reasoning][prompting] This paper proposes String Seed of Thought (SSoT), a concise prompting method where LLMs first generate a random string and then extract randomness to select an answer. It significantly improves distribution faithfulness in Probabilistic Instruction Following (PIF) and response diversity in Diverse Answer Generation (DAG). Theoretically, the TV distance decays exponentially with string length, and experiments show that reasoning-heavy LLMs pe…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - prompting
-  - probabilistic instruction following
-  - diversity
-  - randomness
+  - "ICLR 2026"
+  - "Reasoning"
+  - "prompting"
+  - "probabilistic instruction following"
+  - "diversity"
+  - "LLM reasoning"
+  - "randomness"
 date: 2026-05-08
-content_hash: e67df4709bcd42a6
+content_hash: c7edb51ac6d9dabd
 ---
+
 # String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation
 
 **Conference**: ICLR 2026  
@@ -144,9 +146,9 @@ Sequential sampling appends history to the prompt, which breaks independence and
 ## Related Papers
 
 - [\[AAAI 2026\] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation](../../AAAI2026/llm_reasoning/intention_chain-of-thought_prompting_with_dynamic_routing_for_code_generation.md)
+- [\[ECCV 2024\] Controllable Navigation Instruction Generation with Chain of Thought Prompting](../../ECCV2024/llm_reasoning/controllable_navigation_instruction_generation_with_chain_of_thought_prompting.md)
 - [\[ICLR 2026\] Expanding Reasoning Potential in Foundation Model by Learning Diverse Chains of Thought Patterns](expanding_reasoning_potential_in_foundation_model_by_learning_diverse_chains_of_.md)
 - [\[ICLR 2026\] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization](proofflow_a_dependency_graph_approach_to_faithful_proof_autoformalization.md)
-- [\[ECCV 2024\] Controllable Navigation Instruction Generation with Chain of Thought Prompting](../../ECCV2024/llm_reasoning/controllable_navigation_instruction_generation_with_chain_of_thought_prompting.md)
 - [\[ICLR 2026\] Reasoning Scaffolding: Distilling the Flow of Thought from LLMs](reasoning_scaffolding_distilling_the_flow_of_thought_from_llms.md)
 
 </div>

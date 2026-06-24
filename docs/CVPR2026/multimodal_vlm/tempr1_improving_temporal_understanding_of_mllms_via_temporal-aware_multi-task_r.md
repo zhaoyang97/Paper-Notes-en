@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] TempR1 unifies five video temporal tasks (Temporal Grounding TG, Dense Temporal Grounding DTG, Temporal Action Localization TAL, Video Highlight Detection VHD, and Grounded Video QA GVQA) into a multi-task reinforcement learning framework based on GRPO. The key lies in designing localization rewards based on three type
+  [CVPR 2026][Multimodal VLM][Video Temporal Understanding] TempR1 unifies five video temporal tasks (Temporal Grounding TG, Dense Temporal Grounding DTG, Temporal Action Localization TAL, Video Highlight Detection VHD, and Grounded Video QA GVQA) into a multi-task reinforcement learning framework based on GRPO. The key lies in designing localization rewards based on three types of "predicted interval ↔ ground-truth instance" mappings (one-to-one, many-to-one…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video Temporal Understanding"
+  - "Multi-modal Large Language Models"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Multi-task Reward Design"
 date: 2026-05-08
-content_hash: f89ef0f4d07179cd
+content_hash: 09fe7fb22df15add
 ---
+
 # TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ Multi-task synergy (gradually adding tasks, overall evaluation across five tasks
 
 ## Related Papers
 
-- [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
+- [\[CVPR 2026\] InstAP: Instance-Aware Vision-Language Pre-Train for Spatial-Temporal Understanding](instap_instance-aware_vision-language_pre-train_for_spatial-temporal_understandi.md)
 - [\[CVPR 2026\] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs](sparrow_learning_spatial_precision_and_temporal_referential_consistency_in_pixel.md)
 - [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
+- [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
 
 </div>
 

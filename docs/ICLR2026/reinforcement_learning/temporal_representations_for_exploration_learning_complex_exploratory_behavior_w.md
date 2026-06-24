@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Representations for Exploration: Learning Complex Exploratory Behavior without Extrinsic Rewards
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes C-TeC, which utilizes temporal contrastive representations to estimate the similarity between current state-action pairs and future states. By converting the degree to which "future outcomes are difficult to predict in the representation space" into intrinsic rewards, it learns complex exploratory b
+  [ICLR2026][Reinforcement Learning][Temporal Contrastive Learning] This paper proposes C-TeC, which utilizes temporal contrastive representations to estimate the similarity between current state-action pairs and future states. By converting the degree to which "future outcomes are difficult to predict in the representation space" into intrinsic rewards, it learns complex exploratory behaviors in maze coverage, robotic arm pick-and-place, and Craftax survival games without extr…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Temporal Contrastive Learning"
+  - "Intrinsic Rewards"
+  - "Unsupervised Reinforcement Learning"
+  - "State Coverage"
+  - "Exploratory Representations"
 date: 2026-05-08
-content_hash: 472c3792d1fc4c29
+content_hash: 4c6c7572df07f780
 ---
+
 # Temporal Representations for Exploration: Learning Complex Exploratory Behavior without Extrinsic Rewards
 
 **Conference**: ICLR2026  
@@ -161,9 +167,9 @@ C-TeC also demonstrates strong state coverage with limited environment steps.
 
 - [\[ICLR 2026\] Exploratory Diffusion Model for Unsupervised Reinforcement Learning](exploratory_diffusion_model_for_unsupervised_reinforcement_learning.md)
 - [\[ICLR 2026\] Lookahead Tree-Based Rollouts for Enhanced Trajectory-Level Exploration in Reinforcement Learning with Verifiable Rewards](lookahead_tree-based_rollouts_for_enhanced_trajectory-level_exploration_in_reinf.md)
-- [\[ICLR 2026\] Diversity-Incentivized Exploration for Versatile Reasoning](diversity-incentivized_exploration_for_versatile_reasoning.md)
-- [\[ICLR 2026\] Beyond Noisy-TVs: Noise-Robust Exploration Via Learning Progress Monitoring](beyond_noisy-tvs_noise-robust_exploration_via_learning_progress_monitoring.md)
 - [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
+- [\[ICLR 2026\] Accelerated Learning with Linear Temporal Logic using Differentiable Simulation](accelerated_learning_with_linear_temporal_logic_using_differentiable_simulation.md)
+- [\[ICLR 2026\] DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Tree-based Search](deepsearch_overcome_the_bottleneck_of_reinforcement_learning_with_verifiable_rew.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] VisMem equips Vision-Language Models (VLMs) with a "latent vision memory" system. Based on cognitive psychology, memory is bifurcated into "short-term/vision-led" and "long-term/semantic-led" types. These are dynamically triggered by special tokens during autoregressive generation to instantly generate latent memory ve
+  [CVPR 2026][Multimodal VLM][Vision-Language Models] VisMem equips Vision-Language Models (VLMs) with a "latent vision memory" system. Based on cognitive psychology, memory is bifurcated into "short-term/vision-led" and "long-term/semantic-led" types. These are dynamically triggered by special tokens during autoregressive generation to instantly generate latent memory vectors for context insertion. Trained via two-stage reinforcement learning…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Latent Memory"
+  - "Long-short-term Memory"
+  - "Visual Processing Bottleneck"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 244da6f3fe38a6af
+content_hash: 1415d6a4805416ca
 ---
+
 # VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -150,6 +154,7 @@ Consistent gains across 9 backbones (3B to 38B); smaller models benefit more (e.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -157,8 +162,8 @@ Consistent gains across 9 backbones (3B to 38B); smaller models benefit more (e.
 - [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
 - [\[AAAI 2026\] OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding](../../AAAI2026/multimodal_vlm/omnipt_unleashing_the_potential_of_large_vision_language_models_for_pedestrian_t.md)
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
+- [\[CVPR 2026\] MVLM: Template-Free Tracking via Vision-Language Margin Confidence and Memory-Gated Tracking](mvlm_template-free_tracking_via_vision-language_margin_confidence_and_memory-gat.md)
+- [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](simpact_simulation-enabled_action_planning_using_vision-language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tokenizing Single-Channel EEG with Time-Frequency Motif Learning
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Ours proposes TFM-Tokenizer, the first framework to learn a time-frequency motif vocabulary from single-channel EEG and encode it into discrete tokens. It consistently improves performance on tasks such as event classification and seizure detection and serves as a plug-and-play component to enhance existing EEG foundat
+  [ICLR 2026][Interpretability][EEG signal analysis] Ours proposes TFM-Tokenizer, the first framework to learn a time-frequency motif vocabulary from single-channel EEG and encode it into discrete tokens. It consistently improves performance on tasks such as event classification and seizure detection and serves as a plug-and-play component to enhance existing EEG foundation models.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "EEG signal analysis"
+  - "discrete tokenization"
+  - "time-frequency motif"
+  - "vector quantization"
+  - "foundation models"
 date: 2026-05-08
-content_hash: 150a0f3bb4f02ca8
+content_hash: 5aef2fdde7f7c85a
 ---
+
 # Tokenizing Single-Channel EEG with Time-Frequency Motif Learning
 
 **Conference**: ICLR 2026  
@@ -167,8 +173,8 @@ Unlike methods that discard the tokenizer after training, the learned tokens are
 - [\[ICLR 2026\] Frequency Bands in RoPE: Base Frequency and Context Length Shape the Interpolation–Extrapolation Trade-off](frequency_bands_in_rope_base_frequency_and_context_length_shape_the_interpolatio.md)
 - [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](probing_rotary_position_embeddings_through_frequency_entropy.md)
 - [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)
+- [\[ICML 2026\] Universal 1/3 Time Scaling in Learning Spiked Distributions](../../ICML2026/interpretability/universal_one-third_time_scaling_in_learning_peaked_distributions.md)
 - [\[NeurIPS 2025\] FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed](../../NeurIPS2025/interpretability/fastdinov2_frequency_based_curriculum_learning_improves_robustness_and_training_.md)
-- [\[ICLR 2026\] TreeGrad-Ranker: Feature Ranking via O(L)-Time Gradients for Decision Trees](treegrad-ranker_feature_ranking_via_ol-time_gradients_for_decision_trees.md)
 
 </div>
 

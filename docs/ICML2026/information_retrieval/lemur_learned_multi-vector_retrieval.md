@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LEMUR: Learned Multi-Vector Retrieval
 description: >-
-  [ICML 2026][Information Retrieval & RAG][MaxSim] Lemur transforms multi-vector similarity search into a supervised learning problem. By using a two-layer MLP to map token-level embeddings to a low-dimensional latent space and leveraging existing single-vector ANNS indices for retrieval, it achieves speeds an order of magnitude faster than methods like PLAID and MUVER
+  [ICML 2026][Information Retrieval & RAG][Multi-vector retrieval] Lemur transforms multi-vector similarity search into a supervised learning problem. By using a two-layer MLP to map token-level embeddings to a low-dimensional latent space and leveraging existing single-vector ANNS indices for retrieval, it achieves speeds an order of magnitude faster than methods like PLAID and MUVERA.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - MaxSim
-  - ColBERT
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-vector retrieval"
+  - "approximate nearest neighbor search (ANNS)"
+  - "MaxSim"
+  - "supervised dimensionality reduction"
+  - "ColBERT"
 date: 2026-05-08
-content_hash: c4068f1833950a8a
+content_hash: 611192ed0156a40f
 ---
+
 # LEMUR: Learned Multi-Vector Retrieval
 
 **Conference**: ICML 2026  
@@ -123,9 +127,9 @@ End-to-end training of an MLP with $m$ outputs is memory-intensive for large cor
 
 - [\[ACL 2026\] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy](../../ACL2026/information_retrieval/hybrid-vector_retrieval_for_visually_rich_documents_combining_single-vector_effi.md)
 - [\[ICML 2025\] POQD: Performance-Oriented Query Decomposer for Multi-Vector Retrieval](../../ICML2025/information_retrieval/poqd_performance-oriented_query_decomposer_for_multi-vector_retrieval.md)
+- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometric Consistency](vector_linking_via_cross-model_local_isometric_consistency.md)
+- [\[ICLR 2026\] MILCO: Learned Sparse Retrieval Across Languages via a Multilingual Connector](../../ICLR2026/information_retrieval/milco_learned_sparse_retrieval_across_languages_via_a_multilingual_connector.md)
 - [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
-- [\[CVPR 2025\] LotusFilter: Fast Diverse Nearest Neighbor Search via a Learned Cutoff Table](../../CVPR2025/information_retrieval/lotusfilter_fast_diverse_nearest_neighbor_search_via_a_learned_cutoff_table.md)
-- [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
 
 </div>
 

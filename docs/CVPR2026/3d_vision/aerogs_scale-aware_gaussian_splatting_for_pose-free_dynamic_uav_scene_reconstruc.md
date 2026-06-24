@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AeroGS utilizes "Scale-Aware Spatio-Temporal Anchors" (S2A-Anchors) to **simultaneously** estimate camera trajectories and reconstruct dynamic 4D scenes containing moving objects from pose-free monocular UAV videos. By relying on three decoupling mechanisms (ego-motion vs. object motion, appearance vs. deformation, and
+  [CVPR 2026][3D Vision][Gaussian Splatting] AeroGS utilizes "Scale-Aware Spatio-Temporal Anchors" (S2A-Anchors) to **simultaneously** estimate camera trajectories and reconstruct dynamic 4D scenes containing moving objects from pose-free monocular UAV videos. By relying on three decoupling mechanisms (ego-motion vs. object motion, appearance vs. deformation, and scale vs. complexity) to stabilize joint optimization, it achieves SOTA performance in both rendering PSNR and traje…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Pose-Free Reconstruction"
+  - "Dynamic Scenes"
+  - "UAV Video"
+  - "Scale-Aware"
 date: 2026-05-08
-content_hash: 4dddaea978ff9330
+content_hash: 0e5d2f05c665d38a
 ---
+
 # AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction
 
 **Conference**: CVPR 2026  
@@ -161,10 +167,10 @@ Ablation on UAVDT (cumulative modules):
 ## Related Papers
 
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
+- [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
+- [\[CVPR 2026\] Pose-Free Omnidirectional Gaussian Splatting for 360-Degree Videos with Consistent Depth Priors](pose-free_omnidirectional_gaussian_splatting_for_360-degree_videos_with_consiste.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
+- [\[CVPR 2026\] MAPo: Motion-Aware Partitioning of Deformable 3D Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction](mapo_motion-aware_partitioning_of_deformable_3d_gaussian_splatting_for_high-fide.md)
 
 </div>
 

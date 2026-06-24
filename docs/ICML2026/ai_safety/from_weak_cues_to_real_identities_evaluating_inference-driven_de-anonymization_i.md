@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents
 description: >-
-  [ICML 2026][AI Safety][LLM Agent] The paper argues that LLM agents can cross-reference fragmented, non-identifiable cues with public evidence to re-link anonymized data to specific real-world identities. This "inference-driven de-anonymization" risk is systematically quantified through three scenarios: replication of classic cases, a controlled benchma
+  [ICML 2026][AI Safety][De-anonymization] The paper argues that LLM agents can cross-reference fragmented, non-identifiable cues with public evidence to re-link anonymized data to specific real-world identities. This "inference-driven de-anonymization" risk is systematically quantified through three scenarios: replication of classic cases, a controlled benchmark (InferLink), and real-world human-computer dialogue logs.
 tags:
-  - ICML 2026
-  - AI Safety
-  - LLM Agent
+  - "ICML 2026"
+  - "AI Safety"
+  - "De-anonymization"
+  - "LLM Agent"
+  - "Inference-driven Linkage"
+  - "Privacy-Utility Trade-off"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: d48d008aef65e7fc
+content_hash: 937796d6e9137c5d
 ---
+
 # From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents
 
 **Conference**: ICML 2026  
@@ -148,15 +153,16 @@ While defense prompts reduce LSR to near zero, Claude 4.5 suffers a massive 0.54
 - Value: ⭐⭐⭐⭐⭐ Provides a standard evaluation protocol and utility baselines for developers and auditors.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Helpful to a Fault: Measuring Illicit Assistance in Multi-Turn, Multilingual LLM Agents](helpful_to_a_fault_measuring_illicit_assistance_in_multi-turn_multilingual_llm_a.md)
-- [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 - [\[ICLR 2026\] Comparing AI Agents to Cybersecurity Professionals in Real-World Penetration Testing](../../ICLR2026/ai_safety/comparing_ai_agents_to_cybersecurity_professionals_in_real-world_penetration_tes.md)
+- [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
 - [\[CVPR 2026\] DualMirage: Hunting Stealthy Multimodal LLM Agents via CAPTCHAs with Contour and Adversarial Illusions](../../CVPR2026/ai_safety/dualmirage_hunting_stealthy_multimodal_llm_agents_via_captchas_with_contour_and_.md)
+- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 
 </div>
 

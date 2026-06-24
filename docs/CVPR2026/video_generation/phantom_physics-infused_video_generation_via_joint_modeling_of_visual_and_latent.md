@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics
 description: >-
-  [CVPR 2026][Video Generation][Flow Matching] The Phantom framework is proposed, adding a physical dynamics branch to the pretrained video diffusion model (Wan2.2-TI2V). By utilizing physical-aware embeddings extracted by V-JEPA2 as latent physical states, it jointly models visual content and physical dynamics evolution via bidirectional cross-attention. It signif
+  [CVPR 2026][Video Generation][Physically Consistent Video Generation] The Phantom framework is proposed, adding a physical dynamics branch to the pretrained video diffusion model (Wan2.2-TI2V). By utilizing physical-aware embeddings extracted by V-JEPA2 as latent physical states, it jointly models visual content and physical dynamics evolution via bidirectional cross-attention. It significantly outperforms baselines on physical consistency benchmarks (50.4% improvement on Vid…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Flow Matching
-  - V-JEPA2
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Physically Consistent Video Generation"
+  - "Flow Matching"
+  - "Dual-branch Architecture"
+  - "V-JEPA2"
+  - "Latent Physics Dynamics"
 date: 2026-05-08
-content_hash: 9c4a56168e5bed23
+content_hash: f0fc8fa49fc275fa
 ---
+
 # Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics
 
 **Conference**: CVPR 2026  
@@ -155,7 +159,7 @@ Note: Achieved the highest VideoPhy PC (37.9) among all methods, surpassing dedi
 - [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[CVPR 2026\] Physical Simulator In-the-Loop Video Generation](physical_simulator_in-the-loop_video_generation.md)
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](../../ICLR2026/video_generation/javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
-- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
+- [\[ICLR 2026\] Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers](../../ICLR2026/video_generation/syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
 
 </div>
 

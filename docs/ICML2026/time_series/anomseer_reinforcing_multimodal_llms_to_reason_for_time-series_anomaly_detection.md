@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection
 description: >-
-  [ICML 2026][Time Series][Reinforcement Learning] AnomSeer formalizes statistical evidence from classical time-series anomaly detection into expert reasoning trajectories and reinforces Multimodal LLMs (MLLMs) via TimerPO. This enables the model to simultaneously perform anomaly type classification, interval localization, and fine-grained explanation based on line cha
+  [ICML2026][Time Series][Time-series Anomaly Detection] AnomSeer formalizes statistical evidence from classical time-series anomaly detection into expert reasoning trajectories and reinforces Multimodal LLMs (MLLMs) via TimerPO. This enables the model to simultaneously perform anomaly type classification, interval localization, and fine-grained explanation based on line chart inputs.
 tags:
-  - ICML 2026
-  - Time Series
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Time Series"
+  - "Time-series Anomaly Detection"
+  - "Multimodal Large Language Models"
+  - "Reinforcement Learning"
+  - "Expert Chain-of-Thought"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: c02b68efefbad17c
+content_hash: c0c45a83a78b11be
 ---
+
 # AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection
 
 **Conference**: ICML2026  
@@ -137,15 +142,15 @@ The ablation confirms all modules are essential. ExpCoT is crucial for "frequenc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](../../ICLR2026/time_series/towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
 - [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
-- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](../../ICLR2026/time_series/complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
-- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](../../ICLR2026/time_series/everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
-- [\[ACL 2026\] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback](../../ACL2026/time_series/time-ra_towards_time_series_reasoning_for_anomaly_diagnosis_with_llm_feedback.md)
-- [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](../../ICLR2026/time_series/scits_scientific_time_series_understanding_and_generation_with_llms.md)
+- [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](../../ICLR2026/time_series/icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](../../ICLR2026/time_series/point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
+- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](../../ICLR2026/time_series/when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
 
 </div>
 

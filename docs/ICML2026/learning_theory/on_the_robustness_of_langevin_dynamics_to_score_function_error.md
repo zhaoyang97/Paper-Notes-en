@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] On the Robustness of Langevin Dynamics to Score Function Error
 description: >-
-  [ICML 2026][learning_theory][Diffusion Model] This paper proves a counter-intuitive negative result: even when the $L^2$ (or even $L^p$) estimation error of the score function is arbitrarily small, Langevin dynamics in high dimensions may fail to sample from the target distribution in any polynomial time (with a Total Variation distance as high as $1-e^{-\Omega(d)
+  [ICML 2026][Learning Theory][Langevin Dynamics] This paper proves a counter-intuitive negative result: even when the $L^2$ (or even $L^p$) estimation error of the score function is arbitrarily small, Langevin dynamics in high dimensions may fail to sample from the target distribution in any polynomial time (with a Total Variation distance as high as $1-e^{-\Omega(d)}$). Conversely, diffusion models succeed in polynomial time under similar conditions—arguing from a new perspec…
 tags:
-  - ICML 2026
-  - learning_theory
-  - Diffusion Model
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Generative Models"
+  - "Score-based Sampling"
+  - "Langevin Dynamics"
+  - "Diffusion Models"
+  - "Score Estimation Error"
+  - "Total Variation Distance"
+  - "Data Initialization"
 date: 2026-05-08
-content_hash: b3e5cc059a63be64
+content_hash: 245ddfe811947a53
 ---
+
 # On the Robustness of Langevin Dynamics to Score Function Error
 
 **Conference**: ICML 2026  
@@ -108,11 +115,20 @@ Synthetic experiments verify the qualitative predictions of Thm 7. Target distri
 - Value: ⭐⭐⭐⭐⭐ Practical warnings for model training vs. sampling.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](../../ICLR2026/learning_theory/improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
+- [\[ICLR 2026\] Convergence Dynamics of Over-Parameterized Score Matching for a Single Gaussian](../../ICLR2026/learning_theory/convergence_dynamics_of_over-parameterized_score_matching_for_a_single_gaussian.md)
+- [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](robustness_of_mixtures_of_experts_to_feature_noise.md)
+- [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
+- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Revenue Guarantees of No-Swap-Regret Dynamics in First Price Auctions](revenue_guarantees_of_no-swap-regret_dynamics_in_first_price_auctions.md)

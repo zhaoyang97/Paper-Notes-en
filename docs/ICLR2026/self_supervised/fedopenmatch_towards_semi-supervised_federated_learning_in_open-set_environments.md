@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments
 description: >-
-  [ICLR 2026][Self-Supervised Learning][open-set] This paper formally introduces the "Open-Set Semi-Supervised Federated Learning" (OSSFL) problem, where unlabeled data at clients contains unknown category samples outside the label space. It proposes FedOpenMatch, the first framework for this task, which employs a one-vs-all (OVA) outlier detector reinforced by "gradi
+  [ICLR 2026][Self-Supervised Learning][open-set] This paper formally introduces the "Open-Set Semi-Supervised Federated Learning" (OSSFL) problem, where unlabeled data at clients contains unknown category samples outside the label space. It proposes FedOpenMatch, the first framework for this task, which employs a one-vs-all (OVA) outlier detector reinforced by "gradient stop + logit adjustment" combined with logit consistency regularization, improving open-set accuracy by up t…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - open-set
-  - semi-supervised federated learning
-  - OVA classifier
-  - logit adjustment
-  - pseudo-labeling
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "open-set"
+  - "semi-supervised federated learning"
+  - "OVA classifier"
+  - "logit adjustment"
+  - "pseudo-labeling"
 date: 2026-05-08
-content_hash: 6ce0881252699e94
+content_hash: 7c1d909d3b46ee24
 ---
+
 # FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments
 
 **Conference**: ICLR 2026  
@@ -121,10 +122,10 @@ The three components added sequentially each bring stable gains, with LCR contri
 ## Related Papers
 
 - [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](../../CVPR2026/self_supervised/paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
-- [\[ICLR 2026\] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning](cola_co-calibrated_logit_adjustment_for_long-tailed_semi-supervised_learning.md)
 - [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](../../AAAI2026/self_supervised/let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
+- [\[ICLR 2026\] SCAD: Super-Class-Aware Debiasing for Long-Tailed Semi-Supervised Learning](scad_super-class-aware_debiasing_for_long-tailed_semi-supervised_learning.md)
+- [\[ICLR 2026\] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning](cola_co-calibrated_logit_adjustment_for_long-tailed_semi-supervised_learning.md)
 - [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](../../CVPR2026/self_supervised/secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
-- [\[ICLR 2026\] Boosting Open Set Recognition Performance through Modulated Representation Learning](boosting_open_set_recognition_performance_through_modulated_representation_learn.md)
 
 </div>
 

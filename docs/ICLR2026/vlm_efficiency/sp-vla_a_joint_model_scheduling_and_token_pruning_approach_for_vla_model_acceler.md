@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] SP-VLA categorizes VLA action sequences into "deliberative" and "intuitive" types. Deliberative types invoke the large model, while intuitive types are approximated by lightweight Ridge Regression. Simultaneously, spatial-semantic dual-perceptive token pruning is applied, achieving 1.5× lossless acceleration on LIBERO
+  [ICLR 2026][Multimodal Efficiency][VLA Acceleration] SP-VLA categorizes VLA action sequences into "deliberative" and "intuitive" types. Deliberative types invoke the large model, while intuitive types are approximated by lightweight Ridge Regression. Simultaneously, spatial-semantic dual-perceptive token pruning is applied, achieving 1.5× lossless acceleration on LIBERO and 2.4× acceleration on SimplerEnv.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "VLA Acceleration"
+  - "Model Scheduling"
+  - "Token Pruning"
+  - "Embodied Reasoning"
+  - "Temporal Redundancy"
 date: 2026-05-08
-content_hash: eb6802d8be923f92
+content_hash: 05065ca1288d8f1b
 ---
+
 # SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration
 
 **Conference**: ICLR 2026  
@@ -126,11 +132,11 @@ More importantly, the discovery of VLA's sensitivity to spatial token ordering v
 
 ## Related Papers
 
+- [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](../../ICCV2025/vlm_efficiency/feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/vlm_efficiency/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[ICLR 2026\] LearnPruner: Rethinking Attention-based Token Pruning in Vision Language Models](learnpruner_rethinking_attention-based_token_pruning_in_vision_language_models.md)
 - [\[ICLR 2026\] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration](visiontrim_unified_vision_token_compression_for_training-free_mllm_acceleration.md)
 - [\[ICLR 2026\] Tiny but Mighty: A Software-Hardware Co-Design Approach for Efficient Multimodal Inference on Battery-Powered Small Devices](tiny_but_mighty_a_software-hardware_co-design_approach_for_efficient_multimodal_.md)
-- [\[ICLR 2026\] Nüwa: Mending the Spatial Integrity Torn by VLM Token Pruning](nüwa_mending_the_spatial_integrity_torn_by_vlm_token_pruning.md)
-- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
-- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
 
 </div>
 

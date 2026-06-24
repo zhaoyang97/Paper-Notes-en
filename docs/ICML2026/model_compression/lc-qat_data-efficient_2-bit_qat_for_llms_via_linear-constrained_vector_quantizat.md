@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LC-QAT: Data-Efficient 2-Bit QAT for LLMs via Linear-Constrained Vector Quantization
 description: >-
-  [ICML 2026][Model Compression][QAT] LC-QAT employs a parameterization of "shared linear transformation + discrete integer vectors" to reformulate the codebook lookup of Vector Quantization (VQ) as a differentiable round-and-project operation. This enables, for the first time, end-to-end QAT for 2-bit VQ. Leveraged by high-quality PTQ initialization, it m
+  [ICML2026][Model Compression][2-bit quantization] LC-QAT employs a parameterization of "shared linear transformation + discrete integer vectors" to reformulate the codebook lookup of Vector Quantization (VQ) as a differentiable round-and-project operation. This enables, for the first time, end-to-end QAT for 2-bit VQ. Leveraged by high-quality PTQ initialization, it matches or surpasses existing SOTA quantization methods using only 0.1%–10% of the training data.
 tags:
-  - ICML 2026
-  - Model Compression
-  - QAT
+  - "ICML2026"
+  - "Model Compression"
+  - "2-bit quantization"
+  - "vector quantization"
+  - "QAT"
+  - "linear-constrained codebook"
+  - "data-efficient"
 date: 2026-05-08
 content_hash: aeb40a1e5ed42f9d
 ---
+
 # LC-QAT: Data-Efficient 2-Bit QAT for LLMs via Linear-Constrained Vector Quantization
 
 **Conference**: ICML2026  
@@ -137,10 +142,10 @@ Similar trends are observed on Qwen-3-1.7B: SQ methods (GPTQ PPL 2.80e4 / Avg 36
 ## Related Papers
 
 - [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](unisvq_2-bit_unified_scalar-vector_quantization.md)
-- [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
-- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
 - [\[ICML 2026\] ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training](reqat_achieving_full-precision_reasoning_accuracy_with_4-bit_floating-point_quan.md)
-- [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
+- [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
+- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Accelerating Parallel Diffusion Model Serving with Residual Compression
 description: >-
-  [NeurIPS 2025][Image Generation][parallel inference] This paper proposes CompactFusion, a framework that eliminates communication redundancy in parallel diffusion inference via residual compression—transmitting only the…
+  [NeurIPS 2025][Image Generation][parallel inference] This paper proposes CompactFusion, a framework that eliminates communication redundancy in parallel diffusion inference via residual compression—transmitting only the activation differences between adjacent denoising steps rather than full activations. It achieves a 3.0× speedup on 4×L20 GPUs with generation quality significantly superior to DistriFusion, a 6.7× speedup under simulated Ethernet bandwidth…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model serving"
   - "sequence parallelism"
 date: 2026-05-08
-content_hash: 9a09a826e0f01371
+content_hash: a16978aa47d06664
 ---
 
 # Accelerating Parallel Diffusion Model Serving with Residual Compression
@@ -146,9 +146,9 @@ Transmitting less than 1% of the original data still yields higher quality than 
 
 - [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
 - [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](gspn-2_efficient_parallel_sequence_modeling.md)
-- [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
-- [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](../../CVPR2026/image_generation/cod_a_diffusion_foundation_model_for_image_compression.md)
-- [\[ICCV 2025\] Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal](../../ICCV2025/image_generation/compression-aware_one-step_diffusion_model_for_jpeg_artifact_removal.md)
+- [\[CVPR 2025\] Random Conditioning for Diffusion Model Compression with Distillation](../../CVPR2025/image_generation/random_conditioning_for_diffusion_model_compression_with_distillation.md)
+- [\[CVPR 2025\] PCM: Picard Consistency Model for Fast Parallel Sampling of Diffusion Models](../../CVPR2025/image_generation/pcm_picard_consistency_model_for_fast_parallel_sampling_of_diffusion_models.md)
+- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](../../CVPR2026/image_generation/residual_diffusion_bridge_model_for_image_restoration.md)
 
 </div>
 

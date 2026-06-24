@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment
 description: >-
-  [AAAI 2026][knowledge distillation] This paper proposes an Adaptive Teaching Paradigm (ATS) in which a residual-free bottleneck module, ShrinkAdapter…
+  [AAAI 2026][Medical Imaging][knowledge distillation] This paper proposes an Adaptive Teaching Paradigm (ATS) in which a residual-free bottleneck module, ShrinkAdapter, enables the visual "teacher" to actively shrink and restructure its knowledge to match the learning capacity of the EEG "student," achieving 60.2% Top-1 accuracy on zero-shot brain-image retrieval and surpassing the previous SOTA by 9.8 percentage points.
 tags:
   - "AAAI 2026"
+  - "Medical Imaging"
   - "knowledge distillation"
   - "EEG decoding"
   - "cross-modal alignment"
   - "information bottleneck"
   - "brain-computer interface"
 date: 2026-05-08
-content_hash: 45e19b005b8bb67d
+content_hash: 5a7b5cd351a26a35
 ---
 
 # Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment
@@ -163,11 +164,11 @@ $$\mathcal{L}_{SCE} = -\frac{1}{2N}\sum_{i=1}^{N}\left[\log\frac{\exp(z_{v,i}^\t
 
 ## Related Papers
 
+- [\[CVPR 2026\] EEGiT: Teaching Vision Transformers to Understand the EEG signal](../../CVPR2026/medical_imaging/eegit_teaching_vision_transformers_to_understand_the_eeg_signal.md)
 - [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
-- [\[AAAI 2026\] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities](dia-gnostic_vlvae_disentangled_alignment-constrained_vision_language_variational.md)
-- [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
+- [\[CVPR 2026\] D$^2$-FOSA: Dual-Diffusion Guided EEG-to-Image Reconstruction with Frequency-Oriented Semantic Alignment](../../CVPR2026/medical_imaging/d2-fosa_dual-diffusion_guided_eeg-to-image_reconstruction_with_frequency-oriente.md)
 - [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
-- [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](../../ICLR2026/medical_imaging/heegnet_hyperbolic_embeddings_for_eeg.md)
+- [\[AAAI 2026\] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities](dia-gnostic_vlvae_disentangled_alignment-constrained_vision_language_variational.md)
 
 </div>
 

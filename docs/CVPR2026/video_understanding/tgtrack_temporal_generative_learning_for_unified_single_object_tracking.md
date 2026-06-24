@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TGTrack: Temporal Generative Learning for Unified Single Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] TGTrack introduces a parallel generative supervision task of "predicting the next frame" into a unified single object tracking framework. By utilizing an autoregressive generative decoder with gated fusion and polar temporal tokens, it converts traditional implicit and passive temporal modeling into explicit and active
+  [CVPR 2026][Video Understanding][Single Object Tracking] TGTrack introduces a parallel generative supervision task of "predicting the next frame" into a unified single object tracking framework. By utilizing an autoregressive generative decoder with gated fusion and polar temporal tokens, it converts traditional implicit and passive temporal modeling into explicit and active temporal learning, achieving SOTA results across 11 benchmarks in 5 modalities (e.g.…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Single Object Tracking"
+  - "Temporal Modeling"
+  - "Generative Learning"
+  - "Autoregressive Prediction"
+  - "Unified Multi-modal Tracking"
 date: 2026-05-08
-content_hash: 36a8d2dbea5ee5b5
+content_hash: 21290194c6bde81f
 ---
+
 # TGTrack: Temporal Generative Learning for Unified Single Object Tracking
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,10 @@ TGTrack-L256 achieved 75.8% AUC on LaSOT, surpassing the unified SUTrack-L224 by
 ## Related Papers
 
 - [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
+- [\[CVPR 2026\] Generative Point Tracking and Forecasting](generative_point_tracking_and_forecasting.md)
 - [\[CVPR 2026\] Toward Low-Cost yet Effective Temporal Learning for UAV Tracking](toward_low-cost_yet_effective_temporal_learning_for_uav_tracking.md)
+- [\[CVPR 2026\] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
-- [\[CVPR 2026\] Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)
-- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
 
 </div>
 

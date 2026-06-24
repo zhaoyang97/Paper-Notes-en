@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Refined Generalization Analysis for Extreme Multi-class Supervised Contrastive Representation Learning
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] This paper improves the sample complexity upper bound for supervised contrastive learning (where tuples are constructed from a finite labeled data pool). By employing two distinct U-statistic estimators, it achieves a breakthrough from bounds dependent on the minimum class probability to bounds that depend only on the
+  [ICML 2026][Self-Supervised Learning][Contrastive learning] This paper improves the sample complexity upper bound for supervised contrastive learning (where tuples are constructed from a finite labeled data pool). By employing two distinct U-statistic estimators, it achieves a breakthrough from bounds dependent on the minimum class probability to bounds that depend only on the number of classes or the sample scale in extreme multi-class scenarios.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Contrastive learning"
+  - "Generalization bounds"
+  - "U-statistics"
+  - "Extreme multi-class"
+  - "Sample complexity"
 date: 2026-05-08
-content_hash: 83750fff079ed19a
+content_hash: 762ba62bec698f97
 ---
+
 # A Refined Generalization Analysis for Extreme Multi-class Supervised Contrastive Representation Learning
 
 **Conference**: ICML 2026  
@@ -118,7 +124,7 @@ Where $\hat{\theta}_{k+2}=\Pr[\rho_r\leq 2/(k+2)]$ represents the proportion of 
 - [\[ICML 2025\] Generalization Analysis for Supervised Contrastive Representation Learning under Non-IID Settings](../../ICML2025/self_supervised/generalization_analysis_for_supervised_contrastive_representation_learning_under.md)
 - [\[ICML 2026\] When Softmax Fails at the Top: Extreme Value Corrections for InfoNCE](when_softmax_fails_at_the_top_extreme_value_corrections_for_infonce.md)
 - [\[ICML 2026\] Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data](inconsistency-aware_minimization_improving_generalization_with_unlabeled_data.md)
-- [\[ECCV 2024\] Adaptive Multi-head Contrastive Learning](../../ECCV2024/self_supervised/adaptive_multihead_contrastive_learning.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](../../ICLR2026/self_supervised/on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 
 </div>
 

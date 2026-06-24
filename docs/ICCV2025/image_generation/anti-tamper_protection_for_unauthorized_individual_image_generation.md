@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Anti-Tamper Protection for Unauthorized Individual Image Generation
 description: >-
-  [ICCV 2025][Image Generation][anti-tamper protection] This paper proposes Anti-Tamper Perturbation (ATP), which decouples protection perturbations (preventing forged generation) and authorization perturbations (detecting…
+  [ICCV 2025][Image Generation][anti-tamper protection] This paper proposes Anti-Tamper Perturbation (ATP), which decouples protection perturbations (preventing forged generation) and authorization perturbations (detecting purified tampering) into separate frequency-domain regions. When an attacker attempts to purify the protective signal, the anti-tamper mechanism is triggered to deny service, achieving a 100% protection success rate against various purification attacks.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "frequency-domain watermarking"
   - "image copyright"
 date: 2026-05-08
-content_hash: d0823c4791c0a061
+content_hash: 47f277266eaf57ee
 ---
 
 # Anti-Tamper Protection for Unauthorized Individual Image Generation
@@ -151,11 +151,11 @@ Protection performance without purification (CelebA-HQ):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models](../../NeurIPS2025/image_generation/perturb_a_model_not_an_image_towards_robust_privacy_protection_via_anti-personal.md)
 - [\[NeurIPS 2025\] StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models](../../NeurIPS2025/image_generation/stableguard_towards_unified_copyright_protection_and_tamper_localization_in_late.md)
+- [\[NeurIPS 2025\] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models](../../NeurIPS2025/image_generation/perturb_a_model_not_an_image_towards_robust_privacy_protection_via_anti-personal.md)
 - [\[NeurIPS 2025\] BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit](../../NeurIPS2025/image_generation/blurguard_a_simple_approach_for_robustifying_image_protection_against_ai-powered.md)
-- [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](holistic_tokenizer_for_autoregressive_image_generation.md)
-- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
+- [\[CVPR 2026\] Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation](../../CVPR2026/image_generation/adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u.md)
+- [\[CVPR 2025\] Nearly Zero-Cost Protection Against Mimicry by Personalized Diffusion Models](../../CVPR2025/image_generation/nearly_zero-cost_protection_against_mimicry_by_personalized_diffusion_models.md)
 
 </div>
 

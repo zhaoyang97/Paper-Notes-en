@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] RoboCasa365 constructs a large-scale simulation benchmark consisting of 365 daily kitchen tasks, 2,500 diverse kitchen scenes, and over 2,000 hours of robot interaction data. It systematically evaluates the performance of generalist robot policies under three paradigms—multi-task learning, foundation model training, an
+  [ICLR 2026][Robotics][Simulation platform] RoboCasa365 constructs a large-scale simulation benchmark consisting of 365 daily kitchen tasks, 2,500 diverse kitchen scenes, and over 2,000 hours of robot interaction data. It systematically evaluates the performance of generalist robot policies under three paradigms—multi-task learning, foundation model training, and lifelong learning—finding that the task diversity in pre-training data is a key factor in improving downstream gene…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Simulation platform"
+  - "Household mobile manipulation"
+  - "Multi-task learning"
+  - "Foundation model training"
+  - "Lifelong learning"
 date: 2026-05-08
-content_hash: d0d7a06121001d06
+content_hash: 6029a8db51f38929
 ---
+
 # RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots
 
 **Conference**: ICLR 2026  
@@ -169,11 +175,11 @@ Joint training with simulation data increased the average success rate from 61.8
 
 ## Related Papers
 
+- [\[ICLR 2026\] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots](manipulation_as_in_simulation_enabling_accurate_geometry_perception_in_robots.md)
 - [\[ICLR 2026\] Emergent Dexterity via Diverse Resets and Large-Scale Reinforcement Learning](emergent_dexterity_via_diverse_resets_and_large-scale_reinforcement_learning.md)
 - [\[ICLR 2026\] Rethinking Policy Diversity in Ensemble Policy Gradient in Large-Scale Reinforcement Learning](rethinking_policy_diversity_in_ensemble_policy_gradient_in_large-scale_reinforce.md)
 - [\[ICLR 2026\] Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control](towards_bridging_the_gap_between_large-scale_pretraining_and_efficient_finetunin.md)
 - [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](../../ICML2026/robotics/robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
-- [\[CVPR 2026\] When Robots Should Say "I Don't Know": Benchmarking Abstention in Embodied Question Answering](../../CVPR2026/robotics/when_robots_should_say_i_dont_know_benchmarking_abstention_in_embodied_question_.md)
 
 </div>
 

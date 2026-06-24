@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StressTest: Can YOUR Speech LM Handle the Stress?
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] The authors propose the StressTest benchmark to evaluate the ability of Speech Language Models (SLMs) to understand the meaning of sentence stress. Findings indicate that existing models struggle to reason about speaker intent based on stress patterns. StresSLM, trained via the Stress-17k synthetic data pipeline, signi
+  [ACL 2026][Audio & Speech][Sentence Stress] The authors propose the StressTest benchmark to evaluate the ability of Speech Language Models (SLMs) to understand the meaning of sentence stress. Findings indicate that existing models struggle to reason about speaker intent based on stress patterns. StresSLM, trained via the Stress-17k synthetic data pipeline, significantly outperforms frontier models on stress detection and reasoning tasks.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Sentence Stress"
+  - "Speech Language Models"
+  - "Prosody Understanding"
+  - "Benchmarking"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: 4e44fbde4d2172f6
+content_hash: 5d5e044791ba6867
 ---
+
 # StressTest: Can YOUR Speech LM Handle the Stress?
 
 **Conference**: ACL 2026  
@@ -127,11 +133,11 @@ flowchart TD
 
 ## Related Papers
 
+- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](../../ICLR2026/audio_speech/uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
+- [\[ICLR 2026\] Can Speech LLMs Think while Listening?](../../ICLR2026/audio_speech/can_speech_llms_think_while_listening.md)
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 - [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](../../CVPR2026/audio_speech/how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
 - [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
-- [\[NeurIPS 2025\] Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation](../../NeurIPS2025/audio_speech/can_llms_outshine_conventional_recommenders_a_comparative_evaluation.md)
-- [\[ACL 2025\] Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models](../../ACL2025/audio_speech/does_your_voice_assistant_remember_analyzing_conversational_context_recall_and_u.md)
 
 </div>
 

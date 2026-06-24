@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold
 description: >-
-  [CVPR 2026][Computational Biology][Diffusion Model] Ours proposes cryoSENSE, the first computational framework for compressive imaging in cryo-EM. It demonstrates that protein cryo-EM images can be reconstructed with high fidelity from undersampled measurements using both sparse priors (DCT/Wavelet/TV) and generative priors (Diffusion Models), achieving up to 2.5× throu
+  [CVPR 2026][Computational Biology][Cryo-EM] Ours proposes cryoSENSE, the first computational framework for compressive imaging in cryo-EM. It demonstrates that protein cryo-EM images can be reconstructed with high fidelity from undersampled measurements using both sparse priors (DCT/Wavelet/TV) and generative priors (Diffusion Models), achieving up to 2.5× throughput gain while maintaining 3D reconstruction resolution.
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Cryo-EM"
+  - "Compressive Sensing"
+  - "Diffusion Models"
+  - "Sparse Priors"
+  - "High-throughput Microscopy"
 date: 2026-05-08
-content_hash: fe601ea82a2d66c9
+content_hash: 911f2d5942a367c5
 ---
+
 # cryoSENSE: Compressive Sensing Enables High-throughput Microscopy with Sparse and Generative Priors on the Protein Cryo-EM Image Manifold
 
 **Conference**: CVPR 2026  
@@ -160,10 +165,10 @@ with Nesterov accelerated gradients used to enhance sampling efficiency. Compare
 ## Related Papers
 
 - [\[CVPR 2026\] CryoHype: Reconstructing a Thousand Cryo-EM Structures with Transformer-Based Hypernetworks](cryohype_reconstructing_a_thousand_cryo-em_structures_with_transformer-based_hyp.md)
+- [\[ICLR 2026\] CryoSplat: Gaussian Splatting for Cryo-EM Homogeneous Reconstruction](../../ICLR2026/computational_biology/cryosplat_gaussian_splatting_for_cryo-em_homogeneous_reconstruction.md)
 - [\[CVPR 2026\] CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](../../NeurIPS2025/computational_biology/multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
-- [\[ICCV 2025\] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines](../../ICCV2025/computational_biology/integrating_biological_knowledge_for_robust_microscopy_image_profiling_on_de_nov.md)
-- [\[ICML 2025\] DeepSeq: High-Throughput Single-Cell RNA Sequencing Data Labeling via Web Search-Augmented Agentic Generative AI Foundation Models](../../ICML2025/computational_biology/deepseq_high-throughput_single-cell_rna_sequencing_data_labeling_via_web_search-.md)
+- [\[ICCV 2025\] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy](../../ICCV2025/computational_biology/cryofastar_fast_cryoem_ab_initio_reconstruction_made_easy.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][V2U] V2U4Real is the first real-world, large-scale, multi-modal dataset for Vehicle-to-UAV (V2U) cooperative perception. Collected by a ground vehicle and a UAV equipped with multi-beam LiDAR and RGB cameras, it provides 56k LiDAR frames, 56k images, and 700k manual 3D bounding box annotations. Benchmarks for single-agent/c
+  [CVPR 2026][Autonomous Driving][Vehicle-to-UAV Cooperation] V2U4Real is the first real-world, large-scale, multi-modal dataset for Vehicle-to-UAV (V2U) cooperative perception. Collected by a ground vehicle and a UAV equipped with multi-beam LiDAR and RGB cameras, it provides 56k LiDAR frames, 56k images, and 700k manual 3D bounding box annotations. Benchmarks for single-agent/cooperative 3D detection and tracking demonstrate that the bird's-eye view (BEV) from UAVs significan…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - V2U
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Vehicle-to-UAV Cooperation"
+  - "V2U"
+  - "Real-world Dataset"
+  - "3D Object Detection"
+  - "Multi-agent Tracking"
 date: 2026-05-08
-content_hash: ad7a6d56923aa594
+content_hash: 9416ea0741da2445
 ---
+
 # V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception
 
 **Conference**: CVPR 2026  
@@ -128,11 +133,11 @@ Cooperative methods significantly outperform single-agent baselines, with CoAlig
 
 ## Related Papers
 
-- [\[CVPR 2026\] SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving](searchad_large-scale_rare_image_retrieval_dataset_for_autonomous_driving.md)
 - [\[NeurIPS 2025\] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception](../../NeurIPS2025/autonomous_driving/urbaning-v2x_a_large-scale_multi-vehicle_multi-infrastructure_dataset_across_mul.md)
+- [\[CVPR 2026\] SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving](searchad_large-scale_rare_image_retrieval_dataset_for_autonomous_driving.md)
 - [\[CVPR 2026\] Ghost-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Ghost Detection and Removal](ghost-fwl_a_large-scale_full-waveform_lidar_dataset_for_ghost_detection_and_remo.md)
-- [\[CVPR 2026\] Real-World On-Vehicle Evaluation of Embedding-Based Anomaly Detection](real-world_on-vehicle_evaluation_of_embedding-based_anomaly_detection.md)
 - [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
+- [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
 
 </div>
 

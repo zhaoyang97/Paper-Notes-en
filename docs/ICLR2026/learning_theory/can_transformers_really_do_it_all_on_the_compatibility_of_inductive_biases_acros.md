@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can Transformers Really Do It All? On the Compatibility of Inductive Biases Across Tasks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper replaces the most critical nonlinear modules in Transformers with learnable spline functions and uses a two-stage training process to find suitable architectural biases for specific datasets. The authors discover that algorithmic tasks require highly specialized biases, whereas the bias compatibility between
+  [ICLR 2026][Learning Theory][Architecture Search] This paper replaces the most critical nonlinear modules in Transformers with learnable spline functions and uses a two-stage training process to find suitable architectural biases for specific datasets. The authors discover that algorithmic tasks require highly specialized biases, whereas the bias compatibility between language and code modeling is significantly higher.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Inductive Bias"
+  - "Architecture Search"
+  - "Learnable Activation Functions"
+  - "Algorithmic Reasoning"
+  - "Cross-task Transfer"
 date: 2026-05-08
-content_hash: 9c54ccd2944055a8
+content_hash: 60e8294b6b1b48e2
 ---
+
 # Can Transformers Really Do It All? On the Compatibility of Inductive Biases Across Tasks
 
 **Conference**: ICLR 2026  
@@ -140,15 +146,16 @@ Architetural optimization yields significant gains in algorithmic tasks, particu
 - Value: ⭐⭐⭐⭐⭐ Provides an operational framework for diagnosing architectural suitability across diverse tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
+- [\[ICLR 2026\] Does the Data Processing Inequality Reflect Practice? On the Utility of Low-Level Tasks](does_the_data_processing_inequality_reflect_practice_on_the_utility_of_low-level.md)
 - [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
-- [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
-- [\[ICLR 2026\] Probability Distributions Computed by Autoregressive Transformers](probability_distributions_computed_by_autoregressive_transformers.md)
-- [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
+- [\[ICLR 2026\] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval](discounted_online_convex_optimization_uniform_regret_across_a_continuous_interva.md)
+- [\[ICLR 2026\] Memorizing Long-tail Data Can Help Generalization Through Composition](memorizing_long-tail_data_can_help_generalization_through_composition.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] M3Grounder transforms "answer localization" in Document QA from coarse bounding boxes to pixel-level segmentation. While the VLM generates answers, it emits `[GROUND]` tokens. Each token drives a promptable segmentation module via three MLP heads (phrase, line, and block levels) to produce nested multi-granular evidenc
+  [CVPR 2026][Multimodal VLM][Document QA] M3Grounder transforms "answer localization" in Document QA from coarse bounding boxes to pixel-level segmentation. While the VLM generates answers, it emits `[GROUND]` tokens. Each token drives a promptable segmentation module via three MLP heads (phrase, line, and block levels) to produce nested multi-granular evidence masks, achieving SOTA results across four benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Document QA"
+  - "pixel-level grounding"
+  - "segmentation"
+  - "multi-granularity"
+  - "data engine"
 date: 2026-05-08
-content_hash: 037fb8059a65087b
+content_hash: 524217a76335e819
 ---
+
 # M3Grounder: Mask-Based Multi-Span and Multi-Granular Grounding for Document QA
 
 **Conference**: CVPR 2026  
@@ -146,14 +152,20 @@ Tested on hierarchy, loss terms, and finetuning strategies.
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- [DOGR: Document Grounding with Large Vision-Language Models](https://arxiv.org/abs/2410.xxxx)
-- [Qwen2-VL: To See the World More Clearly](https://arxiv.org/abs/2410.xxxx)
+## Related Papers
+
+- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
+- [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
+- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
+- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[CVPR 2025\] MARTEN: Visual Question Answering with Mask Generation for Multi-Modal Document Understanding](../../CVPR2025/multimodal_vlm/marten_visual_question_answering_with_mask_generation_for_multi-modal_document_u.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)

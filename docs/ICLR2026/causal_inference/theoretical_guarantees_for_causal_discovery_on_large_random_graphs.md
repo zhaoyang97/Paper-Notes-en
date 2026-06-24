@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Theoretical Guarantees for Causal Discovery on Large Random Graphs
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper introduces the first **finite-dimensional deviation concentration bounds** (rather than asymptotic consistency or worst-case bounds) for causal orientation using random single-variable interventions. On sparse Erdős–Rényi and generalized Barabási–Albert random graphs, the False Negative Rate (FNR) of orienta
+  [ICLR 2026][Causal Inference][Causal Discovery] This paper introduces the first **finite-dimensional deviation concentration bounds** (rather than asymptotic consistency or worst-case bounds) for causal orientation using random single-variable interventions. On sparse Erdős–Rényi and generalized Barabási–Albert random graphs, the False Negative Rate (FNR) of orientation errors concentrates increasingly—or even vanishes—as the dimension $d$ increases…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "False Negative Rate (FNR)"
+  - "Deviation Concentration Inequalities"
+  - "Random Graph Models"
+  - "Intervention Experimental Design"
 date: 2026-05-08
-content_hash: 71b061164dc269de
+content_hash: 0c6d7af867657e19
 ---
+
 # Theoretical Guarantees for Causal Discovery on Large Random Graphs
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,10 @@ Simulations were conducted on three types of random DAGs with scale $d$ from 30 
 ## Related Papers
 
 - [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
-- [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
-- [\[ICLR 2026\] Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach](causal_discovery_in_the_wild_a_voting-theoretic_ensemble_approach.md)
-- [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
 - [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
+- [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
+- [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
 
 </div>
 

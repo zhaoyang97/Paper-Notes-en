@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PositionIC: Unified Position and Identity Consistency for Image Customization
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] PositionIC utilizes an automated data synthesis pipeline (BMPDS) to generate multi-subject paired data with positional annotations. It then employs a NeRF-inspired "Visibility-Aware Attention" mechanism to restrict each reference subject's attention range within a specified bounding box. This approach achieves SOTA ide
+  [CVPR 2026][Image Generation][Subject Customization] PositionIC utilizes an automated data synthesis pipeline (BMPDS) to generate multi-subject paired data with positional annotations. It then employs a NeRF-inspired "Visibility-Aware Attention" mechanism to restrict each reference subject's attention range within a specified bounding box. This approach achieves SOTA identity fidelity and spatial controllability for multi-subject customization without introducing additional t…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject Customization"
+  - "Position Control"
+  - "Identity Consistency"
+  - "Visibility-Aware Attention"
+  - "Volume Rendering"
 date: 2026-05-08
-content_hash: 18accc7515d63bd8
+content_hash: 290d2d409630f9bc
 ---
+
 # PositionIC: Unified Position and Identity Consistency for Image Customization
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,17 @@ Ours exceeds all baselines in multi-subject mIoU and AP. Methods like MS-Diffusi
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)
+- [\[CVPR 2026\] Resolving the Identity Crisis in Text-to-Image Generation](resolving_the_identity_crisis_in_text-to-image_generation.md)
+- [\[CVPR 2026\] PureCC: Pure Learning for Text-to-Image Concept Customization](purecc_pure_learning_for_text-to-image_concept_customization.md)
+- [\[CVPR 2026\] Image Diffusion Preview with Consistency Solver](image_diffusion_preview_with_consistency_solver.md)
+- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Scaling Multi-Identity Consistency for Image Customization via Multi-to-Multi Matching Paradigm](scaling_multi-identity_consistency_for_image_customization_via_multi-to-multi_ma.md)

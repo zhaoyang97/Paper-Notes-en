@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ROADWork: A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones
 description: >-
-  [ICCV 2025][Segmentation][Work Zone Perception] This paper introduces ROADWork, the first large-scale work zone dataset comprising 4,375 video clips, 9,650 richly annotated images…
+  [ICCV 2025][Segmentation][Work Zone Perception] This paper introduces ROADWork, the first large-scale work zone dataset comprising 4,375 video clips, 9,650 richly annotated images, and 129K images with drivable path annotations. It reveals that foundation models fail severely in work zone scenarios (AP of only 2.9–4.2), while fine-tuning yields substantial improvements (+32.2 AP), and proposes a four-level cognitive framework of Recognize, Observe, Analyze, and Drive.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Long-Tail Scenarios"
   - "Foundation Models"
 date: 2026-05-08
-content_hash: eb5b4f71d4c62a3f
+content_hash: 506d0f8cb5a7ea06
 ---
 
 # ROADWork: A Dataset and Benchmark for Learning to Recognize, Observe, Analyze and Drive Through Work Zones
@@ -157,9 +157,9 @@ Manual annotation remains necessary, with more pronounced advantages on rare cat
 
 - [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](what_if_understanding_motion_through_sparse_interactions.md)
+- [\[CVPR 2025\] SketchFusion: Learning Universal Sketch Features through Fusing Foundation Models](../../CVPR2025/segmentation/sketchfusion_learning_universal_sketch_features_through_fusing_foundation_models.md)
 - [\[ICCV 2025\] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping](ragnet_large-scale_reasoning-based_affordance_segmentation_benchmark_towards_gen.md)
 - [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
-- [\[NeurIPS 2025\] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset](../../NeurIPS2025/segmentation/gtpbd_a_fine-grained_global_terraced_parcel_and_boundary_dataset.md)
 
 </div>
 

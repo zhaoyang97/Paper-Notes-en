@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Real-Time Robot Execution with Masked Action Chunking
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] REMAC is proposed to systematically address intra-chunk inconsistency and inter-chunk discontinuity under asynchronous inference through a masked action chunking training strategy and a prefix-preserving sampling pipeline, achieving more reliable real-time robot control without introducing hardware-dependent inference
+  [ICLR 2026][Robotics][Real-time Execution] REMAC is proposed to systematically address intra-chunk inconsistency and inter-chunk discontinuity under asynchronous inference through a masked action chunking training strategy and a prefix-preserving sampling pipeline, achieving more reliable real-time robot control without introducing hardware-dependent inference latency.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Flow Matching
-  - LoRA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Real-time Execution"
+  - "Action Chunking"
+  - "Asynchronous Inference"
+  - "VLA"
+  - "Flow Matching"
+  - "LoRA"
 date: 2026-05-08
-content_hash: ddd7de7f5499244c
+content_hash: e2d392aeae8a3539
 ---
+
 # Real-Time Robot Execution with Masked Action Chunking
 
 **Conference**: ICLR 2026  
@@ -173,10 +177,20 @@ TE smooths boundaries via weighted averages. **Difference**: TE is heuristic and
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for real-world VLA deployment with zero overhead.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed](time_optimal_execution_of_action_chunk_policies_beyond_demonstration_speed.md)
+- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
+- [\[ICML 2026\] Mixture of Horizons in Action Chunking](../../ICML2026/robotics/mixture_of_horizons_in_action_chunking.md)
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](verifier-free_test-time_sampling_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control](action_chunking_and_data_augmentation_yield_exponential_improvements_in_behavior.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed](time_optimal_execution_of_action_chunk_policies_beyond_demonstration_speed.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Causal-JEPA: Learning World Models through Object-Level Latent Masking
 description: >-
-  [ICML 2026][Causal Inference][World Models] Ours proposes C-JEPA, which extends JEPA's mask prediction from image patch-level to object-level latent representations. By using object-level masking as latent interventions, the model is forced to learn interaction-dependent dynamics. It achieves approximately a 20% gain in counterfactual reasoning over non-masked b
+  [ICML2026][Causal Inference][World Models] Ours proposes C-JEPA, which extends JEPA's mask prediction from image patch-level to object-level latent representations. By using object-level masking as latent interventions, the model is forced to learn interaction-dependent dynamics. It achieves approximately a 20% gain in counterfactual reasoning over non-masked baselines and reaches comparable performance in control tasks using only 1% of tokens with over 8x planning accelerati…
 tags:
-  - ICML 2026
-  - Causal Inference
-  - World Models
-  - JEPA
+  - "ICML2026"
+  - "Causal Inference"
+  - "World Models"
+  - "Object-level Masking"
+  - "JEPA"
+  - "Causal Inductive Bias"
+  - "Object-centric Representations"
 date: 2026-05-08
-content_hash: a0d4582e7b79658b
+content_hash: c0b40968d4e8cbf6
 ---
+
 # Causal-JEPA: Learning World Models through Object-Level Latent Masking
 
 **Conference**: ICML2026  
@@ -122,8 +126,8 @@ How to feed action and proprioception signals is a common pitfall—concatenatin
 
 - [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](../../ICLR2026/causal_inference/distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](../../ICLR2026/causal_inference/beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](../../ICLR2026/causal_inference/causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](../../NeurIPS2025/causal_inference/bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
-- [\[ECCV 2024\] Understanding Physical Dynamics with Counterfactual World Modeling](../../ECCV2024/causal_inference/understanding_physical_dynamics_with_counterfactual_world_modeling.md)
 - [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](../../ICLR2026/causal_inference/adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>

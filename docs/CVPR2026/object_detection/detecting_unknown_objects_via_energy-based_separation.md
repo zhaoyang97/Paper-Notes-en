@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Ours proposes the DEUS framework, which effectively separates known, unknown, and background proposals in geometrically orthogonal known/unknown subspaces via ETF-Subspace Unknown Separation (EUS). It further introduces Energy-based Known Distinction (EKD) loss to reduce cross-interference between old and new classes d
+  [CVPR 2026][Object Detection][Open World Object Detection] Ours proposes the DEUS framework, which effectively separates known, unknown, and background proposals in geometrically orthogonal known/unknown subspaces via ETF-Subspace Unknown Separation (EUS). It further introduces Energy-based Known Distinction (EKD) loss to reduce cross-interference between old and new classes during incremental learning, significantly improving unknown object recall on OWOD benchmarks.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open World Object Detection"
+  - "Energy Function"
+  - "Unknown Object Detection"
+  - "Incremental Learning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 75899792bc2bbd52
+content_hash: 8d8be105047e71c1
 ---
+
 # Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection
 
 **Conference**: CVPR 2026  
@@ -192,10 +198,10 @@ DEUS nearly doubles U-Rec (e.g., M-OWODB T1: 36.3→65.1) while maintaining comp
 ## Related Papers
 
 - [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
-- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](show_dont_tell_detecting_novel_objects_by_watching.md)
 - [\[CVPR 2026\] ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer](elasticformer_detecting_objects_in_hrw_shots_via_elastic_computing_vision_transf.md)
 - [\[AAAI 2026\] CountVid: Open-World Object Counting in Videos](../../AAAI2026/object_detection/open-world_object_counting_in_videos.md)
-- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
+- [\[ICCV 2025\] SFUOD: Source-Free Unknown Object Detection](../../ICCV2025/object_detection/sfuod_source-free_unknown_object_detection.md)
 
 </div>
 

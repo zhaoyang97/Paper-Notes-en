@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Open-vocabulary action recognition] This paper proposes Open-MeDe, a meta-learning-based framework for open-vocabulary action recognition (OVAR). By simulating "known-to-open" generalizat…
+  [ICCV 2025][Video Understanding][Open-vocabulary action recognition] This paper proposes Open-MeDe, a meta-learning-based framework for open-vocabulary action recognition (OVAR). By simulating "known-to-open" generalization tasks via cross-batch meta-optimization and stabilizing training with a Gaussian weight averaging strategy, the framework improves generalization in both in-context and out-of-context settings without relying on CLIP regularization.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "CLIP adaptation"
   - "self-ensemble"
 date: 2026-05-08
-content_hash: 7ad365990323ca2c
+content_hash: d344dc541e81dbba
 ---
 
 # Learning to Generalize Without Bias for Open-Vocabulary Action Recognition
@@ -136,11 +136,11 @@ Cross-dataset zero-shot evaluation (trained on K400, tested on other datasets):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Video-STAR: Reinforcing Open-Vocabulary Action Recognition with Tools](../../ICLR2026/video_understanding/video-star_reinforcing_open-vocabulary_action_recognition_with_tools.md)
 - [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
 - [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](../../NeurIPS2025/video_understanding/seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
+- [\[CVPR 2025\] Anomize: Better Open Vocabulary Video Anomaly Detection](../../CVPR2025/video_understanding/anomize_better_open_vocabulary_video_anomaly_detection.md)
 - [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
-- [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](../../CVPR2026/video_understanding/decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
-- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
 
 </div>
 

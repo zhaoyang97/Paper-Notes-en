@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] CH-SNN integrates the Cannistraci-Hebb link prediction theory from brain science into the sparse training of Spiking Neural Networks (SNNs). Utilizing a four-stage pipeline—"Correlation-based Topological Initialization + Spike-aware Weight Initialization + Hybrid Scoring Pruning + CH3-L3 Topological Regrowth"—it achiev
+  [ICLR2026][Model Compression][Dynamic Sparse Training] CH-SNN integrates the Cannistraci-Hebb link prediction theory from brain science into the sparse training of Spiking Neural Networks (SNNs). Utilizing a four-stage pipeline—"Correlation-based Topological Initialization + Spike-aware Weight Initialization + Hybrid Scoring Pruning + CH3-L3 Topological Regrowth"—it achieves 97.75% structural sparsity across all linear layers while outperforming fully connected networks by 0.…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR2026"
+  - "Model Compression"
+  - "Dynamic Sparse Training"
+  - "Spiking Neural Networks"
+  - "Cannistraci-Hebb Theory"
+  - "Structural Connectivity Sparsity"
+  - "Neuromorphic Computing"
 date: 2026-05-08
-content_hash: 161b5d6db9e520a2
+content_hash: 0f1d93d736d85a6d
 ---
+
 # Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks
 
 **Conference**: ICLR2026  
@@ -154,8 +160,8 @@ On DVS-Gesture, the sparse network achieves **+2.27% accuracy with only 1/97.5 t
 - [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
 - [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 - [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](../../NeurIPS2025/model_compression/spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
-- [\[ICLR 2026\] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks](many_eyes_one_mind_temporal_multi-perspective_and_progressive_distillation_for_s.md)
+- [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
+- [\[ICLR 2026\] SAFA-SNN: Sparse-aware Fast Adaptive Spiking Neural Network for On-device Few-Shot Class-Incremental Learning](safa-snn_sparsity-aware_on-device_few-shot_class-incremental_learning_with_fast-.md)
 
 </div>
 

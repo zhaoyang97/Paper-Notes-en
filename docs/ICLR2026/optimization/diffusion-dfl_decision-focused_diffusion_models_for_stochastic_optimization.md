@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Diffusion Model] This paper integrates diffusion models into the Decision-focused Learning (DFL) framework for the first time. It uses conditional diffusion models to characterize the full distribution of uncertain parameters and solves stochastic optimization using samples from this distribution. Two end-to-end gradient algorithms are
+  [ICLR2026][Optimization][Decision-focused learning] This paper integrates diffusion models into the Decision-focused Learning (DFL) framework for the first time. It uses conditional diffusion models to characterize the full distribution of uncertain parameters and solves stochastic optimization using samples from this distribution. Two end-to-end gradient algorithms are proposed: an exact but memory-intensive reparameterization estimator, and a lightweight score function esti…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Diffusion Model
+  - "ICLR2026"
+  - "Optimization"
+  - "Decision-focused learning"
+  - "diffusion models"
+  - "stochastic optimization"
+  - "score function estimation"
+  - "reparameterization"
 date: 2026-05-08
-content_hash: 3f2bb8ba0c50513b
+content_hash: 39b493f9819c5dfe
 ---
+
 # Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization
 
 **Conference**: ICLR2026  
@@ -138,11 +143,11 @@ Ours (both variants) achieve the best or second-best performance across all task
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making](gen-dfl_decision-focused_generative_learning_for_robust_decision_making.md)
 - [\[ICLR 2026\] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization](nexco_native_solution_expansion_for_diffusion-based_combinatorial_optimization.md)
-- [\[CVPR 2026\] Learning to Learn Weight Generation via Local Consistency Diffusion](../../CVPR2026/optimization/learning_to_learn_weight_generation_via_local_consistency_diffusion.md)
-- [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](../../CVPR2026/optimization/dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
-- [\[NeurIPS 2025\] MDNS: Masked Diffusion Neural Sampler via Stochastic Optimal Control](../../NeurIPS2025/optimization/mdns_masked_diffusion_neural_sampler_via_stochastic_optimal_control.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
+- [\[CVPR 2026\] Learning to Learn Weight Generation via Local Consistency Diffusion](../../CVPR2026/optimization/learning_to_learn_weight_generation_via_local_consistency_diffusion.md)
+- [\[ICLR 2026\] SPREAD: Efficient Sampling-based Adaptive Diffusion Pareto Frontier Refinement](spread_sampling-based_pareto_front_refinement_via_efficient_adaptive_diffusion.md)
 
 </div>
 

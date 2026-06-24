@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] NTK-Guided Implicit Neural Teaching
 description: >-
-  [CVPR 2026][3D Vision][Implicit Neural Representations] Ours proposes NINT, which utilizes row vectors of the Neural Tangent Kernel (NTK) to measure the influence of each coordinate on global function updates. This allows for the dynamic selection of coordinates that exhibit both high fitting error and high global influence for training, reducing INR training time by nearly
+  [CVPR 2026][3D Vision][Implicit Neural Representations] Ours proposes NINT, which utilizes row vectors of the Neural Tangent Kernel (NTK) to measure the influence of each coordinate on global function updates. This allows for the dynamic selection of coordinates that exhibit both high fitting error and high global influence for training, reducing INR training time by nearly half without sacrificing reconstruction quality.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Implicit Neural Representations
-  - Neural Tangent Kernel
-  - INR
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Implicit Neural Representations"
+  - "Neural Tangent Kernel"
+  - "Training Acceleration"
+  - "Coordinate Sampling"
+  - "INR"
 date: 2026-05-08
-content_hash: fd8d139f5e16087b
+content_hash: 50c2857a6be46de7
 ---
+
 # NTK-Guided Implicit Neural Teaching
 
 **Conference**: CVPR 2026  
@@ -165,11 +168,11 @@ Computing the full $N \times N$ NTK at each step is impractical. Thus, NINT spli
 
 ## Related Papers
 
+- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
+- [\[CVPR 2026\] InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields](infinidepth_arbitrary-resolution_and_fine-grained_depth_estimation_with_neural_i.md)
 - [\[ECCV 2024\] A Probability-guided Sampler for Neural Implicit Surface Rendering](../../ECCV2024/3d_vision/a_probabilityguided_sampler_for_neural_implicit_surface_rend.md)
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
+- [\[CVPR 2025\] End-to-End Implicit Neural Representations for Classification](../../CVPR2025/3d_vision/end-to-end_implicit_neural_representations_for_classification.md)
 - [\[CVPR 2026\] 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience](3drawagent_teaching_llm_to_draw_in_3d_with_early_contrastive_experience.md)
-- [\[CVPR 2026\] MU-GeNeRF: Multi-view Uncertainty-guided Generalizable Neural Radiance Fields for Distractor-aware Scene](mu-generf_multi-view_uncertainty-guided_generalizable_neural_radiance_fields_for.md)
-- [\[CVPR 2025\] SiNR: Sparsity Driven Compressed Implicit Neural Representations](../../CVPR2025/3d_vision/sinr_sparsity_driven_compressed_implicit_neural_representations.md)
 
 </div>
 

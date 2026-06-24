@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] DCFlow shifts unsupervised cross-modal optical flow estimation from "implicit learning via appearance similarity" to "decoupled optimization + explicit motion supervision." By utilizing geo-aware single-image data synthesis, it generates reliable synthetic flow labels for the flow network, allowing the modality transla
+  [ICLR 2026][Self-Supervised Learning][Cross-modal optical flow] DCFlow shifts unsupervised cross-modal optical flow estimation from "implicit learning via appearance similarity" to "decoupled optimization + explicit motion supervision." By utilizing geo-aware single-image data synthesis, it generates reliable synthetic flow labels for the flow network, allowing the modality translation and flow networks to train on their respective sub-tasks independently. These are then join…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Cross-modal optical flow"
+  - "self-supervised"
+  - "decoupled optimization"
+  - "data synthesis"
+  - "consistency constraint"
 date: 2026-05-08
-content_hash: 65b4a7d45a540d12
+content_hash: d53b0ce9f4bddde6
 ---
+
 # Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint
 
 **Conference**: ICLR 2026  
@@ -139,8 +145,8 @@ Synthesis strategies: 2D transforms (EPE 13.12), 3D Gaussian Splatting (5.11), G
 - Value: ⭐⭐⭐⭐⭐ A general, network-agnostic framework with high practical utility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

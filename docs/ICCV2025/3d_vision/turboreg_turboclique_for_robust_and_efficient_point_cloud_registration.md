@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration
 description: >-
-  [ICCV 2025][3D Vision][Point cloud registration] TurboReg is proposed, a framework that replaces traditional maximum clique enumeration with lightweight 3-cliques (TurboCliques) and introduces a highly parallelizable Piv…
+  [ICCV 2025][3D Vision][Point cloud registration] TurboReg is proposed, a framework that replaces traditional maximum clique enumeration with lightweight 3-cliques (TurboCliques) and introduces a highly parallelizable Pivot-Guided Search (PGS) algorithm, achieving state-of-the-art registration accuracy while delivering over 208× speedup.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "spatial consistency"
   - "robust estimation"
 date: 2026-05-08
-content_hash: d40aaa0134423064
+content_hash: 94462cfa7d5a3f75
 ---
 
 # TurboReg: TurboClique for Robust and Efficient Point Cloud Registration
@@ -140,11 +140,11 @@ Key hyperparameters: the number of pivots $K_1$ is set to 1K/2K (indoor) or 0.25
 
 ## Related Papers
 
-- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
 - [\[ICCV 2025\] BUFFER-X: Towards Zero-Shot Point Cloud Registration in Diverse Scenes](bufferx_towards_zeroshot_point_cloud_registration_in_diverse.md)
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
+- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
+- [\[CVPR 2025\] ColabSfM: Collaborative Structure-from-Motion by Point Cloud Registration](../../CVPR2025/3d_vision/colabsfm_collaborative_structure-from-motion_by_point_cloud_registration.md)
 - [\[CVPR 2026\] MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](../../CVPR2026/3d_vision/mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)
-- [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
 
 </div>
 

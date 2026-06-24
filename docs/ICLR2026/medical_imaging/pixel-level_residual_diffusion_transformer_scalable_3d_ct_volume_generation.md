@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion Transformer] PRDiT proposes a two-stage residual diffusion framework to generate high-resolution 3D CT volumes **directly at the voxel level**. It utilizes a lightweight MLP "Local Denoiser" to estimate low-frequency coarse structures from overlapping 3D patches, followed by a "Global Residual DiT" to recover high-frequency residua
+  [ICLR 2026][Medical Imaging][3D CT Generation] PRDiT proposes a two-stage residual diffusion framework to generate high-resolution 3D CT volumes **directly at the voxel level**. It utilizes a lightweight MLP "Local Denoiser" to estimate low-frequency coarse structures from overlapping 3D patches, followed by a "Global Residual DiT" to recover high-frequency residuals using a global field of view. Combined with a hot predictor-corrector sampling and a scaling strategy that reu…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "3D CT Generation"
+  - "Residual Diffusion"
+  - "Diffusion Transformer"
+  - "Voxel-level Generation"
+  - "High-resolution Scaling"
 date: 2026-05-08
-content_hash: 92e3d2432a962342
+content_hash: c33bec6b3f2d9839
 ---
+
 # Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation
 
 **Conference**: ICLR 2026  
@@ -165,9 +170,9 @@ High-resolution scaling strategy: Training PRDiT-128 from scratch costs 80 GPUh 
 
 - [\[ICLR 2026\] Modeling the Density of Pixel-level Self-supervised Embeddings for Unsupervised Pathology Segmentation in Medical CT](modeling_the_density_of_pixel-level_self-supervised_embeddings_for_unsupervised_.md)
 - [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](../../CVPR2026/medical_imaging/sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
-- [\[CVPR 2026\] SPECTRE：面向体积 CT Transformer 的自监督与跨模态预训练](../../CVPR2026/medical_imaging/scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[ICLR 2026\] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis](omnict_towards_a_unified_slice-volume_lvlm_for_comprehensive_ct_analysis.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
+- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
 
 </div>
 

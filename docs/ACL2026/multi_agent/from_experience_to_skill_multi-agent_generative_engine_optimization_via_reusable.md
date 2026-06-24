@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper reformulates Generative Engine Optimization (GEO) from instance-wise heuristic optimization into a strategy learning problem. It proposes the MAGEO multi-agent framework—where the execution layer consists of collaboration between preference/planning/editing/evaluator agents, and the learning layer distills v
+  [ACL 2026 Findings][Multi-Agent][Generative Engine Optimization] This paper reformulates Generative Engine Optimization (GEO) from instance-wise heuristic optimization into a strategy learning problem. It proposes the MAGEO multi-agent framework—where the execution layer consists of collaboration between preference/planning/editing/evaluator agents, and the learning layer distills validated editing patterns into reusable engine-specific strategy skills. By introducing the Twi…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "Generative Engine Optimization"
+  - "Multi-agent framework"
+  - "Strategy reuse"
+  - "Citation faithfulness"
+  - "Visibility optimization"
 date: 2026-05-08
-content_hash: 6c1b5d7a288ee01e
+content_hash: 00afa5aedcdbefce
 ---
+
 # MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning
 
 **Conference**: ACL 2026 Findings  
@@ -164,9 +170,9 @@ MAGEO is an LLM-based multi-agent reasoning framework and does not involve neura
 
 - [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](../../ICLR2026/multi_agent/adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 - [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](../../AAAI2026/multi_agent/safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
+- [\[ICLR 2026\] MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems](../../ICLR2026/multi_agent/mas2_self-generative_self-configuring_self-rectifying_multi-agent_systems.md)
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](../../ICML2026/multi_agent/omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
 
 </div>
 

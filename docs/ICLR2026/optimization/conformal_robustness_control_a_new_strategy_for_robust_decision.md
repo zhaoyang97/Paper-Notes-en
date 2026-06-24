@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conformal Robustness Control: A New Strategy for Robust Decision
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Targeting the pain point of "overly conservative coverage constraints" when using conformal prediction for robust decision-making, this paper proposes Conformal Robustness Control (CRC). It optimizes prediction set construction **directly under explicit robustness constraints** (rather than requiring set coverage). The
+  [ICLR 2026][Optimization][Conformal Prediction] Targeting the pain point of "overly conservative coverage constraints" when using conformal prediction for robust decision-making, this paper proposes Conformal Robustness Control (CRC). It optimizes prediction set construction **directly under explicit robustness constraints** (rather than requiring set coverage). The problem is solved using smooth proxies and alternating Lagrangian gradients, with non-asymptotic theoretical gu…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Conformal Prediction"
+  - "Conditional Robust Optimization"
+  - "Risk-Sensitive Decision Making"
+  - "Prediction Set Optimization"
+  - "Finite-Sample Guarantees"
 date: 2026-05-08
-content_hash: 9e174b31671316aa
+content_hash: e05b9a76de714f31
 ---
+
 # Conformal Robustness Control: A New Strategy for Robust Decision
 
 **Conference**: ICLR 2026  
@@ -130,11 +136,11 @@ Rather than module removal, the paper validates via **varying the nominal level 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making](gen-dfl_decision-focused_generative_learning_for_robust_decision_making.md)
 - [\[ICLR 2026\] Multilevel Control Functional](multilevel_control_functional.md)
+- [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](../../NeurIPS2025/optimization/one_sample_is_enough_to_make_conformal_prediction_robust.md)
 - [\[ICLR 2026\] LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning](legacy_a_lightweight_dynamic_gradient_compression_strategy_for_distributed_deep_.md)
 - [\[ICLR 2026\] Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction](proving_the_limited_scalability_of_centralized_distributed_optimization_via_a_ne.md)
-- [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](../../NeurIPS2025/optimization/one_sample_is_enough_to_make_conformal_prediction_robust.md)
-- [\[ICLR 2026\] Differentiable Model Predictive Control on the GPU](differentiable_model_predictive_control_on_the_gpu.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training
 description: >-
-  [NeurIPS 2025][LLM Efficiency][critical batch size] This paper proposes a branched training method to directly measure the critical batch size (CBS) empirically…
+  [NeurIPS 2025][LLM Efficiency][critical batch size] This paper proposes a branched training method to directly measure the critical batch size (CBS) empirically, finding that CBS grows rapidly in early training before plateauing and is independent of model scale. Based on this insight, a batch size warmup strategy is designed that achieves equivalent or superior training loss with 43% fewer gradient steps.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -13,7 +13,7 @@ tags:
   - "gradient noise scale"
   - "OLMo"
 date: 2026-05-08
-content_hash: c13139e0a2048119
+content_hash: fab625b3c6e5bd7e
 ---
 
 # Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training
@@ -144,11 +144,11 @@ From any checkpoint during training, multiple branches are forked, each using a 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Scaling and Transferability of Annealing Strategies in Large Language Model Training](../../AAAI2026/llm_efficiency/scaling_and_transferability_of_annealing_strategies_in_large_language_model_trai.md)
 - [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](../../ICLR2026/llm_efficiency/fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
+- [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
 - [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
-- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
 - [\[NeurIPS 2025\] Constant Bit-Size Transformers Are Turing Complete](constant_bit-size_transformers_are_turing_complete.md)
+- [\[ICLR 2026\] Reasoning Language Model Inference Serving Unveiled: An Empirical Study](../../ICLR2026/llm_efficiency/reasoning_language_model_inference_serving_unveiled_an_empirical_study.md)
 
 </div>
 

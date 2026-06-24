@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Batch Pruning by Activation Stability
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The paper proposes B-PAS—a method that monitors the variance of ReLU activations for each batch across epochs during training. It dynamically discards entire batches whose "activations have stabilized and no longer contribute to effective learning." On ResNet, CvT, and GPT-2, it achieves up to 57% data savings and 61%
+  [ICLR 2026][Model Compression][Data Pruning] The paper proposes B-PAS—a method that monitors the variance of ReLU activations for each batch across epochs during training. It dynamically discards entire batches whose "activations have stabilized and no longer contribute to effective learning." On ResNet, CvT, and GPT-2, it achieves up to 57% data savings and 61% GPU node-hour reduction with maintained or slightly improved accuracy.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Data Pruning"
+  - "Activation Stability"
+  - "Dynamic Batch Pruning"
+  - "Training Acceleration"
+  - "Neural Collapse"
 date: 2026-05-08
-content_hash: 85e2d00f5b90a65c
+content_hash: 4a9abf12e8d2773e
 ---
+
 # Batch Pruning by Activation Stability
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] This paper introduces HalluAudio, the first large-scale cross-domain (speech/ambient/music) benchmark for audio hallucination detection. It features 5,000+ human-verified QA pairs and systematic adversarial prompt designs. By evaluating mainstream LALMs using multi-dimensional metrics (Accuracy, Hallucination Rate, Yes
+  [ACL 2026][Hallucination Detection][Audio Hallucination] This paper introduces HalluAudio, the first large-scale cross-domain (speech/ambient/music) benchmark for audio hallucination detection. It features 5,000+ human-verified QA pairs and systematic adversarial prompt designs. By evaluating mainstream LALMs using multi-dimensional metrics (Accuracy, Hallucination Rate, Yes-No Bias, Refusal Rate, and Error Types), the study reveals significant deficiencies in current models…
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Audio Hallucination"
+  - "Large Audio-Language Models"
+  - "Benchmark"
+  - "Adversarial Prompting"
+  - "Multi-dimensional Analysis"
 date: 2026-05-08
-content_hash: f59af57fced8051b
+content_hash: 3fe4caf2b8022742
 ---
+
 # HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models
 
 **Conference**: ACL 2026  
@@ -133,8 +139,8 @@ HalluAudio is an evaluation benchmark and does not involve model training. It em
 - [\[ACL 2025\] ReefKnot: A Comprehensive Benchmark for Relation Hallucination Evaluation, Analysis and Mitigation in Multimodal Large Language Models](../../ACL2025/hallucination/reefknot_a_comprehensive_benchmark_for_relation_hallucination_evaluation_analysi.md)
 - [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](../../CVPR2026/hallucination/svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
+- [\[ACL 2025\] CCHall: A Novel Benchmark for Joint Cross-Lingual and Cross-Modal Hallucinations Detection in Large Language Models](../../ACL2025/hallucination/cchall_a_novel_benchmark_for_joint_cross-lingual_and_cross-modal_hallucinations_.md)
 - [\[ACL 2026\] Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights](rethinking_evaluation_for_llm_hallucination_detection_a_desiderata_a_new_rag-bas.md)
-- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 
 </div>
 

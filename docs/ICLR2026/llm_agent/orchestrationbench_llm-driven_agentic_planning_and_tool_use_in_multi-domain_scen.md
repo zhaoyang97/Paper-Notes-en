@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] OrchestrationBench is proposed—a fully manually annotated English/Korean bilingual benchmark. It decomposes service-level orchestration (where a "Main LLM decomposes requests $\rightarrow$ assigns to Sub-LLMs $\rightarrow$ Sub-LLMs call tools") into two independent dimensions: **Workflow Planning** and **Constraint-Awa
+  [ICLR 2026][LLM Agent][Multi-Agent Orchestration] OrchestrationBench is proposed—a fully manually annotated English/Korean bilingual benchmark. It decomposes service-level orchestration (where a "Main LLM decomposes requests $\rightarrow$ assigns to Sub-LLMs $\rightarrow$ Sub-LLMs call tools") into two independent dimensions: **Workflow Planning** and **Constraint-Aware Tool Execution**. Findings indicate that while function calling capabilities are similar across major model…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-Agent Orchestration"
+  - "Workflow Planning"
+  - "Tool Use"
+  - "Constraint Validation"
+  - "Bilingual Evaluation"
 date: 2026-05-08
-content_hash: 2f592923bbf5ec78
+content_hash: 0cdb04295d7d4fc1
 ---
+
 # OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios
 
 **Conference**: ICLR 2026  
@@ -127,15 +133,16 @@ The correlation between C/R decisions and Planning scores is noticeably weaker (
 - Value: ⭐⭐⭐⭐ Strong practical guidance for evaluating service-level agent orchestration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use](in-the-flow_agentic_system_optimization_for_effective_planning_and_tool_use.md)
 - [\[ICLR 2026\] Code Driven Planning with Domain-Adaptive Selector](code_driven_planning_with_domain-adaptive_selector.md)
 - [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
+- [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](../../ACL2026/llm_agent/feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 
 </div>
 

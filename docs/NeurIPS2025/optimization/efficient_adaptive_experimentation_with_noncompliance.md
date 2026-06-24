@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Adaptive Experimentation with Noncompliance
 description: >-
-  [NeurIPS 2025][Optimization][adaptive experimentation] This paper proposes AMRIV — the first semiparametrically efficient, multiply robust ATE estimator for adaptive experiments with noncompliance — combined with a varia…
+  [NeurIPS 2025][Optimization][adaptive experimentation] This paper proposes AMRIV — the first semiparametrically efficient, multiply robust ATE estimator for adaptive experiments with noncompliance — combined with a variance-optimal instrumental variable allocation strategy and sequential inference guarantees.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "semiparametric efficiency"
   - "causal inference"
 date: 2026-05-08
-content_hash: 21f4ef89a8687a1e
+content_hash: 8583a6c3f133ae96
 ---
 
 # Efficient Adaptive Experimentation with Noncompliance
@@ -169,9 +169,9 @@ Results are consistent with the synthetic experiments: adaptive IV allocation im
 
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[NeurIPS 2025\] Oracle-Efficient Combinatorial Semi-Bandits](oracle-efficient_combinatorial_semi-bandits.md)
-- [\[NeurIPS 2025\] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization](dartquant_efficient_rotational_distribution_calibration_for_llm_quantization.md)
 - [\[NeurIPS 2025\] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds](an_adaptive_algorithm_for_bilevel_optimization_on_riemannian_manifolds.md)
-- [\[NeurIPS 2025\] MAR-FL: A Communication Efficient Peer-to-Peer Federated Learning System](mar-fl_a_communication_efficient_peer-to-peer_federated_learning_system.md)
+- [\[NeurIPS 2025\] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization](dartquant_efficient_rotational_distribution_calibration_for_llm_quantization.md)
+- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 
 </div>
 

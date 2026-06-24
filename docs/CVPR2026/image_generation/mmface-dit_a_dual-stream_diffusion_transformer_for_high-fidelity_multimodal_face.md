@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] MMFace-DiT utilizes a dual-stream DiT that **parallelly and equally processes** a "text semantic stream" and a "mask/sketch spatial stream" within the same Transformer. Through layer-wise deep fusion using shared RoPE attention and a Modality Embedder that allows switching between mask/sketch conditions without retrain
+  [CVPR 2026][Image Generation][Diffusion Transformer] MMFace-DiT utilizes a dual-stream DiT that **parallelly and equally processes** a "text semantic stream" and a "mask/sketch spatial stream" within the same Transformer. Through layer-wise deep fusion using shared RoPE attention and a Modality Embedder that allows switching between mask/sketch conditions without retraining, the model improves FID and other metrics by approximately 40% compared to 6 SOTA methods in both text+…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Dual-stream fusion"
+  - "RoPE Attention"
+  - "Multimodal controllable generation"
+  - "Face synthesis"
 date: 2026-05-08
-content_hash: 844e9ad8055ec7af
+content_hash: 02438126c8240073
 ---
+
 # MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Embracing Discrete Search: A Reasonable Approach to Causal Structure Learning
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Ours proposes FLOP (Fast Learning of Order and Parents), a score-based causal discovery algorithm for linear models. By employing fast parent selection and iterative Cholesky score updates, it significantly reduces runtime, making Iterative Local Search (ILS) feasible. It achieves near-perfect graph recovery on standar
+  [ICLR 2026][Image Generation][Causal Structure Learning] Ours proposes FLOP (Fast Learning of Order and Parents), a score-based causal discovery algorithm for linear models. By employing fast parent selection and iterative Cholesky score updates, it significantly reduces runtime, making Iterative Local Search (ILS) feasible. It achieves near-perfect graph recovery on standard causal discovery benchmarks, re-establishing the validity of discrete search in causal discovery.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Causal Structure Learning"
+  - "Discrete Search"
+  - "Score Optimization"
+  - "DAG Learning"
+  - "Linear Models"
 date: 2026-05-08
-content_hash: a7021d5d9a4e74f4
+content_hash: 654bf10a632b353c
 ---
+
 # Embracing Discrete Search: A Reasonable Approach to Causal Structure Learning
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Breaking the Encoder Barrier for Seamless Video-Language Understanding
 description: >-
-  [ICCV 2025][Video Understanding][encoder-free] This paper proposes ELVA, the first encoder-free Video Large Language Model (Video-LLM)…
+  [ICCV 2025][Video Understanding][encoder-free] This paper proposes ELVA, the first encoder-free Video Large Language Model (Video-LLM), which achieves performance comparable to encoder-based architectures through hierarchical token merging, video guidance supervision, and hybrid resolution inference, using only 7M publicly available video-text pairs while reducing FLOPs by 95% and inference latency by 92%.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "video guidance"
   - "hybrid resolution"
 date: 2026-05-08
-content_hash: 8e4b3301c141acf5
+content_hash: 5830b201c2a805ba
 ---
 
 # Breaking the Encoder Barrier for Seamless Video-Language Understanding
@@ -164,9 +164,9 @@ The gains are even more pronounced at 128 frames: FLOPs are reduced by 96%, and 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Video-Panda: Parameter-efficient Alignment for Encoder-free Video-Language Models](../../CVPR2025/video_understanding/video-panda_parameter-efficient_alignment_for_encoder-free_video-language_models.md)
 - [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](4d_bench_benchmarking_multimodal_llms_for_4d_object_understanding.md)
-- [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](../../NeurIPS2025/video_understanding/unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
 - [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
 

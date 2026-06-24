@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation
 description: >-
-  [CVPR 2026][Medical Imaging][DreamBooth] Constructed RDFace, a standardized benchmark dataset containing 456 pediatric facial images covering 103 rare genetic diseases. This work systematically investigates the effectiveness of phenotype-aware synthetic data augmentation (DreamBooth/FastGAN) for diagnosis under ultra-low sample conditions, demonstrating that
+  [CVPR 2026][Medical Imaging][Rare disease facial recognition] Constructed RDFace, a standardized benchmark dataset containing 456 pediatric facial images covering 103 rare genetic diseases. This work systematically investigates the effectiveness of phenotype-aware synthetic data augmentation (DreamBooth/FastGAN) for diagnosis under ultra-low sample conditions, demonstrating that DreamBooth augmentation improves diagnostic accuracy by up to 13.7% in extreme low-data scenarios.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - DreamBooth
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Rare disease facial recognition"
+  - "Extreme data scarcity"
+  - "Synthetic data augmentation"
+  - "Phenotype alignment"
+  - "DreamBooth"
 date: 2026-05-08
-content_hash: ef12c0acc29fa42d
+content_hash: 1f3e88ee5514fb2a
 ---
+
 # RDFace: A Benchmark Dataset for Rare Disease Facial Image Analysis under Extreme Data Scarcity and Phenotype-Aware Synthetic Generation
 
 **Conference**: CVPR 2026  
@@ -145,10 +150,10 @@ Few-Shot Learning 5-way 1-shot (Real+DB Augmentation):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Few-Shot Synthetic Data Generation with Diffusion Models for Downstream Vision Tasks](few-shot_synthetic_data_generation_with_diffusion_models_for_downstream_vision_t.md)
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
+- [\[ICML 2026\] Which Anatomy Matters Under Limited Labels? A Data-Efficient Anatomy-Aware Benchmark for Cardiac Pathology Prediction](../../ICML2026/medical_imaging/which_anatomy_matters_under_limited_labels_a_data-efficient_anatomy-aware_benchm.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 
 </div>

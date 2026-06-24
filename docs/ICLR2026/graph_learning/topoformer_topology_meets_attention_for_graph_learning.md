@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] TopoFormer: Topology Meets Attention for Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][Topo-Scan] TopoFormer segments a graph into a sequence of local topological slices based on node or edge filtration functions. It constructs a short token sequence using Betti numbers and scale statistics from each slice, which is then processed by a Transformer to learn graph-level representations. This approach achieves perform
+  [ICLR2026][Graph Learning][Topological Data Analysis] TopoFormer segments a graph into a sequence of local topological slices based on node or edge filtration functions. It constructs a short token sequence using Betti numbers and scale statistics from each slice, which is then processed by a Transformer to learn graph-level representations. This approach achieves performance comparable to or exceeding strong baselines in graph classification and molecular property prediction…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Topo-Scan
-  - Transformer
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Topological Data Analysis"
+  - "Topo-Scan"
+  - "Transformer"
+  - "Molecular Property Prediction"
 date: 2026-05-08
-content_hash: ecc68df2fdaab098
+content_hash: ff0b0899b782f753
 ---
+
 # TopoFormer: Topology Meets Attention for Graph Learning
 
 **Conference**: ICLR2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models
 description: >-
-  [ACL 2026][Hallucination Detection][Diffusion Language Model] This study presents the first systematic comparison of hallucination patterns between diffusion Large Language Models (dLLMs) and their autoregressive (AR) counterparts. It reveals that current dLLMs exhibit a higher propensity for hallucination and identifies three diffusion-specific failure modes: Premature Terminati
+  [ACL 2026 Findings][Hallucination Detection][Diffusion Large Language Models] This study presents the first systematic comparison of hallucination patterns between diffusion Large Language Models (dLLMs) and their autoregressive (AR) counterparts. It reveals that current dLLMs exhibit a higher propensity for hallucination and identifies three diffusion-specific failure modes: Premature Termination, Incomplete Denoising, and Contextual Intrusion.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Diffusion Language Model
+  - "ACL 2026 Findings"
+  - "Hallucination Detection"
+  - "Diffusion Large Language Models"
+  - "Hallucination"
+  - "Non-autoregressive generation"
+  - "Failure modes"
+  - "Scaling Inference-time Compute"
 date: 2026-05-08
-content_hash: 9de82504540ebb46
+content_hash: e5b7cf6fd8c8b2c5
 ---
+
 # Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -117,11 +122,11 @@ This is an analytical work and does not involve model training. Evaluation is co
 
 ## Related Papers
 
+- [\[ICLR 2026\] TraceDet: Hallucination Detection from the Decoding Trace of Diffusion Large Language Models](../../ICLR2026/hallucination/tracedet_hallucination_detection_from_the_decoding_trace_of_diffusion_large_lang.md)
 - [\[CVPR 2026\] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](../../CVPR2026/hallucination/fighting_hallucinations_with_counterfactuals_diffusion-guided_perturbations_for_.md)
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 - [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
 - [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
-- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 
 </div>
 

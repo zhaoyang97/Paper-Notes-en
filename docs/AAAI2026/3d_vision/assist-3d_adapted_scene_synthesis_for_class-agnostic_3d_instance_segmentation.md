@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation
 description: >-
-  [AAAI 2026][3D Vision][class-agnostic 3D instance segmentation] This paper proposes ASSIST-3D, a synthetic data pipeline that generates high-quality annotated data for class-agnostic 3D instance segmentation through thre…
+  [AAAI 2026][3D Vision][class-agnostic 3D instance segmentation] This paper proposes the ASSIST-3D synthetic data pipeline, which generates high-quality annotated data for class-agnostic 3D instance segmentation through three stages: heterogeneous object selection, LLM-guided scene layout generation, and realistic point cloud construction, significantly improving model generalization.
 tags:
   - "AAAI 2026"
   - "3D Vision"
@@ -12,124 +12,124 @@ tags:
   - "point cloud"
   - "LLM-guided layout"
 date: 2026-05-08
-content_hash: 61cbb0d6b3ee072b
+content_hash: 95debbb83969fe7a
 ---
 
 # ASSIST-3D: Adapted Scene Synthesis for Class-Agnostic 3D Instance Segmentation
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2512.09364](https://arxiv.org/abs/2512.09364)  
-**Code**: Not released  
-**Area**: 3D Vision
+**Code**: Not open-sourced  
+**Area**: 3D Vision  
 **Keywords**: class-agnostic 3D instance segmentation, 3D scene synthesis, synthetic data, point cloud, LLM-guided layout
 
 ## TL;DR
 
-This paper proposes ASSIST-3D, a synthetic data pipeline that generates high-quality annotated data for class-agnostic 3D instance segmentation through three stages: heterogeneous object selection, LLM-guided scene layout generation, and realistic point cloud construction, significantly improving model generalization.
+This paper proposes the ASSIST-3D synthetic data pipeline, which generates high-quality annotated data for class-agnostic 3D instance segmentation through three stages: heterogeneous object selection, LLM-guided scene layout generation, and realistic point cloud construction, significantly improving model generalization.
 
 ## Background & Motivation
 
-**Class-agnostic 3D instance segmentation** aims to segment all object instances in a scene without relying on semantic categories, including categories unseen during training. Existing methods are hampered by data scarcity and noise from 2D segmentation.
+**Class-agnostic 3D instance segmentation** aims to segment all object instances in a scene (including unseen categories during training) without relying on semantic categories. However, existing methods suffer from data scarcity and 2D segmentation noise.
 
-**Traditional class-aware methods** depend on annotations over predefined categories, covering only dozens of classes, and thus fail to handle the thousands of unseen objects encountered in the real world.
+**Traditional class-aware methods** rely on annotations of predefined categories, which only cover dozens of classes and fail to handle thousands of unseen objects in the real world.
 
-**Methods based on 2D foundation models** (e.g., SAM) exhibit strong generalization but suffer from inherent 2D segmentation errors and multi-view fusion inconsistencies, making reliable lifting to 3D segmentation difficult.
+**Based on 2D foundation models** (such as SAM), although possessing strong generalization capabilities, existing methods have inherent flaws in 2D segmentation errors and multi-view consistency fusion, making it difficult to reliably map them to 3D segmentation results.
 
-**Real 3D data acquisition is costly**, annotations are incomplete, and scene complexity is limited, directly constraining data diversity and the generalization ceiling of trained models.
+**Collecting real 3D data is expensive**, resulting in incomplete annotations and limited scene complexity, which directly restricts the model's data diversity and generalization upper bound.
 
-**Existing 3D scene synthesis methods are insufficient**: Holodeck uses LLMs to select objects, biasing toward common categories with insufficient geometric diversity and contextual complexity; RandomRooms places objects randomly, resulting in implausible layouts.
+**Existing 3D scene synthesis methods do not meet requirements**: Holodeck leverages LLMs to select objects, which biases toward common categories (lacking geometric diversity and contextual complexity), while RandomRooms places objects randomly, leading to unrealistic layouts.
 
-**Core Insight**: Data diversity is the key driver for improving generalization in class-agnostic segmentation, and must simultaneously satisfy three principles: **geometric diversity**, **contextual complexity**, and **layout plausibility**.
+**Key Insight**: Data diversity is the key driving force for improving the generalization ability of class-agnostic segmentation, which must simultaneously satisfy three principles: **geometric diversity**, **contextual complexity**, and **layout plausibility**.
 
 ## Method
 
 ### Overall Architecture
 
-ASSIST-3D consists of three stages: (1) heterogeneous object selection → (2) scene layout generation → (3) realistic point cloud construction. Synthetic data is jointly trained with real data (ScanNetV2) using Mask3D (with the multi-class head replaced by a binary objectness classifier), and the optimization objective combines real and synthetic losses with weight $\alpha=0.5$.
+ASSIST-3D consists of three phases: (1) heterogeneous object selection $\rightarrow$ (2) scene layout generation $\rightarrow$ (3) realistic point cloud construction. The synthetic data and real data (ScanNetV2) are jointly trained on Mask3D (replacing the multi-class classification head with a binary objectness classifier), and the optimization objective merges real and synthetic losses with a weight ($\alpha=0.5$).
 
 ### Key Design 1: Heterogeneous Object Selection
 
-- Uses a subset of Objaverse (50,000 3D models across 800 categories) as the asset pool, partitioned into three groups by placement: $\mathcal{O}_{\text{floor}}$ (floor objects such as furniture), $\mathcal{O}_{\text{wall}}$ (wall-mounted objects such as paintings), and $\mathcal{O}_{\text{obj}}$ (objects placeable on top of the former two).
-- Each scene uniformly samples $M_1=100$ floor objects and $M_2=50$ wall objects, with 5 small objects further sampled per large object, yielding approximately $5(M_1+M_2)$ additional objects.
-- **Breaking conventional category co-occurrence patterns** enhances contextual complexity; an alternating complementary sampling strategy (with probability 0.7 to prioritize categories present in real data) mitigates incomplete annotation issues.
+- A subset of Objaverse (50,000 3D models across 800 categories) is used as the asset library, divided into three groups based on placement: $\mathcal{O}_{\text{floor}}$ (floor objects such as furniture), $\mathcal{O}_{\text{wall}}$ (wall objects such as paintings), and $\mathcal{O}_{\text{obj}}$ (objects that can be placed on top of the first two groups).
+- For each scene, $M_1=100$ floor objects and $M_2=50$ wall objects are uniformly sampled. For each large object, 5 small objects are further sampled, resulting in approximately $5(M_1+M_2)$ additional objects.
+- Contextual complexity is enhanced by **breaking conventional category co-occurrence patterns**; complementary sampling strategies are used alternately (prioritizing categories that appear in real data with a probability of 0.7) to compensate for incomplete annotations.
 
 ### Key Design 2: Scene Layout Generation
 
-- **GPT-4** is used to infer plausible spatial relationships (orientation and relative position) between objects, but absolute coordinates are not directly output due to the limited spatial reasoning capacity of LLMs.
-- A **depth-first search (DFS)** strategy sequentially places objects: the floor is discretized into a uniform grid, and starting from the first object, feasible grid cells are iteratively found for each subsequent object, with backtracking upon constraint violation.
-- Among all feasible configurations, the one that **accommodates the most objects** is selected; wall-mounted and surface objects are handled by the same procedure.
+- **GPT-4** is utilized to infer reasonable spatial relationships (orientations and relative positions) between objects, but it does not directly output absolute coordinates (due to the LLM's limited spatial reasoning capability).
+- A **depth-first search (DFS)** strategy is adopted to place objects one by one: the floor is discretized into a uniform grid, starting from the first object, and feasible grids are progressively found to place the current object, backtracking if constraints are not met.
+- Among all feasible solutions, the one that **places the most objects** is selected. Wall and surface objects are processed using the same pipeline.
 
 ### Key Design 3: Realistic Point Cloud Construction
 
-- Rather than directly sampling points from mesh surfaces (which produces overly uniform distributions lacking noise and occlusion), the pipeline simulates the acquisition process of a real SLAM system.
-- The mid-height plane of the scene is uniformly divided into $0.1 \times 0.1\text{m}^2$ grids, from which 5 optimal viewpoints are selected via FPS.
-- From each viewpoint, 12 RGB-D images are rendered at $30°$ intervals (60 images total); the final point cloud and instance annotations are generated via depth projection, coordinate transformation, and voxel downsampling.
+- Instead of directly sampling point clouds from mesh surfaces (which are overly uniform and lack noise and occlusion), the acquisition process of a real SLAM system is simulated.
+- The middle height plane of the scene is uniformly partitioned into a grid of $0.1 \times 0.1\text{m}^2$, and 5 optimal observation points are selected using FPS (Farthest Point Sampling).
+- At each observation point, 12 RGB-D images are rendered at $30°$ intervals (60 images in total). The final point cloud and instance annotations are generated through depth projection, coordinate transformation, and voxel downsampling.
 
 ### Loss & Training
 
-- Built on the Mask3D framework, using a combination of **binary cross-entropy loss + dice loss + mask loss** as the optimization objective.
-- Real and synthetic data are trained jointly, with synthetic data loss weight $\alpha=0.5$.
-- Total training: 600 epochs, batch size 36, distributed across 6 A100 GPUs.
+- Based on the Mask3D framework, a combination of **binary cross-entropy loss + dice loss + mask loss** is used as the optimization objective.
+- Joint training is conducted on real and synthetic data, with the synthetic data loss weight set to $\alpha=0.5$.
+- The model is trained for 600 epochs with a batch size of 36, using distributed training across 6 A100 GPUs.
 - The synthetic dataset contains 2,000 scenes with approximately 134,000 object instances, averaging 67 objects per scene.
 
 ## Key Experimental Results
 
-### Main Results: Comparison with SOTA Methods (Class-Agnostic 3D Instance Segmentation)
+### Table 1: Comparison with SOTA methods (Class-Agnostic 3D Instance Segmentation)
 
 | Method | ScanNet++ AP | ScanNet++ AP50 | S3DIS AP | S3DIS AP50 | ScanNetV2 AP | ScanNetV2 AP50 |
-|--------|:-----------:|:--------------:|:--------:|:----------:|:------------:|:--------------:|
+|------|:-----------:|:--------------:|:--------:|:----------:|:------------:|:--------------:|
 | Baseline (Mask3D) | 12.0 | 21.7 | 13.6 | 23.2 | 46.6 | 69.0 |
 | SA3DIP | 19.6 | 32.4 | 25.7 | 42.4 | 41.6 | 64.6 |
 | SAI3D | 17.1 | 31.1 | 24.8 | 42.4 | 30.8 | 50.5 |
 | **ASSIST-3D** | **22.2** | **35.5** | **29.0** | **43.9** | **48.1** | **70.7** |
 
-ASSIST-3D outperforms all SOTA methods across all three benchmarks, with particularly notable improvements in cross-domain generalization (ScanNet++ / S3DIS).
+ASSIST-3D comprehensively outperforms SOTA methods across three datasets, showing particularly remarkable improvements in cross-domain generalization (ScanNet++/S3DIS).
 
-### Comparison with Other 3D Scene Synthesis Methods
+### Table 2: Comparison with other 3D scene synthesis methods
 
 | Method | Geometric Diversity | Contextual Complexity | Layout Plausibility | ScanNet++ AP | S3DIS AP |
-|--------|:------------------:|:--------------------:|:------------------:|:-----------:|:--------:|
+|------|:---------:|:----------:|:---------:|:-----------:|:--------:|
 | Holodeck | ✗ (0.85) | ✗ (0.38) | ✓ (72) | 14.2 | 18.2 |
 | RandomRooms | ✓ (4.37) | ✓ (0.04) | ✗ (23) | 16.6 | 23.5 |
 | **ASSIST-3D** | **✓ (4.15)** | **✓ (0.08)** | **✓ (62)** | **22.2** | **29.0** |
 
-ASSIST-3D is the only method that satisfies all three principles simultaneously, substantially outperforming both Holodeck and RandomRooms.
+ASSIST-3D is the only method that satisfies all three principles simultaneously, significantly outperforming Holodeck and RandomRooms.
 
-### Ablation Study
+### Ablation Study Highlights
 
-- **Geometric diversity**: Expanding from 1 cluster to 5 clusters improves ScanNet++ AP from 14.6 to 22.2 (+52%).
-- **Contextual complexity**: Reducing co-occurrence probability from 100% to 0% improves ScanNet++ AP from 17.2 to 22.2.
-- **Realistic point cloud construction**: Direct mesh sampling yields AP of only 14.2, while the rendering-based approach achieves 22.2 (+56%), substantially closing the domain gap.
-- **Data scalability**: More object categories and more synthetic scenes consistently yield further performance gains.
+- **Geometric Diversity**: Expanding from 1 cluster to 5 clusters improves ScanNet++ AP from 14.6 to 22.2 (+52%).
+- **Contextual Complexity**: Reducing the co-occurrence probability from 100% to 0% improves ScanNet++ AP from 17.2 to 22.2.
+- **Realistic Point Cloud Construction**: Sampling directly from the mesh yields an AP of only 14.2, whereas the rendering method achieves 22.2 (+56%), greatly narrowing the domain gap.
+- **Data Scalability**: More object categories and synthetic scenes continuously bring performance gains.
 
 ## Highlights & Insights
 
-1. **Systematic framework**: The paper explicitly proposes three principles that synthetic 3D data should satisfy (geometric diversity, contextual complexity, layout plausibility) and designs corresponding technical solutions for each.
-2. **LLM + DFS layout generation** cleverly combines LLM commonsense reasoning with physics-constraint checking via search algorithms, yielding layouts that are both plausible and controllable.
-3. **Realistic point cloud construction** simulates a real SLAM acquisition pipeline, effectively bridging the synthetic-to-real domain gap — a design with broad applicability to synthetic data training in general.
-4. **Thorough ablation study**: Each of the three principles is validated with fine-grained quantitative experiments, making the contribution of each component clearly measurable.
-5. **Strong cross-domain generalization**: The improvements on ScanNet++ and S3DIS are particularly prominent, validating the generalization benefit of synthetic data for unseen categories.
+1. **Systematic Framework**: Explicitly proposes three principles for 3D synthetic data (geometric diversity, contextual complexity, and layout plausibility) and designs corresponding technical solutions.
+2. **LLM + DFS Layout Generation** cleverly combines the common-sense reasoning of LLMs with the physical constraint checking of search algorithms, achieving both plausibility and controllability.
+3. **Realistic Point Cloud Construction** simulates the real SLAM acquisition process to effectively bridge the synthetic-to-real domain gap, serving as a general reference for training on synthetic data.
+4. **Thorough Ablation Experiments**: Detailed quantitative verification is performed for each of the three principles, making the contribution of each component clear and measurable.
+5. **Strong Cross-Domain Generalization**: The improvement on ScanNet++/S3DIS is particularly prominent, validating the generalization gains of synthetic data on unseen categories.
 
 ## Limitations & Future Work
 
-1. **Reliance on GPT-4 inference** constrains the cost and speed of scene layout generation due to LLM API calls.
-2. **Asset pool remains limited**: Although 50,000 models across 800 categories surpass real annotated data in diversity, coverage of long-tail real-world scenes remains incomplete.
-3. **Only indoor scenes are evaluated**; applicability to outdoor or larger-scale scenes (e.g., city-level) is not explored.
-4. **Texture and material realism of synthetic point clouds** is not thoroughly discussed; domain gaps at the color level may still persist.
-5. **Scalability of DFS-based layout**: As the number of objects per scene increases, the search space grows exponentially; practical efficiency is not reported in detail.
+1. **Reliance on GPT-4 Reasoning**: The cost and speed of scene layout generation are constrained by LLM API usage.
+2. **Limited Asset Library**: Although 50,000 models across 800 categories are richer than real data, there is still a gap in covering long-tail real-world scenarios.
+3. **Indoor-Only Verification**: The applicability to outdoor or larger-scale scenes (e.g., city-scale) is yet to be explored.
+4. **Realism of Texture and Material in Synthetic Point Clouds**: Not fully discussed; domain gaps in terms of color may still persist.
+5. **Scalability of DFS Layouts**: As the number of objects in a scene increases, the search space grows exponentially, and its practical efficiency is not reported in detail.
 
 ## Related Work & Insights
 
-- **Class-agnostic 3D segmentation**: OpenMask3D replaces the classification head with a binary classifier but has limited generalization; SAI3D and SA3DIP leverage SAM for 2D→3D lifting but are affected by 2D errors; Segment3D uses pseudo-label pretraining. ASSIST-3D addresses the problem from a data generation perspective and is complementary to the above methods.
-- **3D scene synthesis**: Holodeck uses LLMs for end-to-end generation of high-quality scenes but lacks object diversity; RandomRooms introduces diversity through randomization but at the cost of layout plausibility. ASSIST-3D combines the strengths of both.
-- **Synthetic data training**: Simulating real sensor acquisition pipelines to construct point clouds is an established practice in autonomous driving; this paper introduces the approach to indoor 3D segmentation.
+- **Class-agnostic 3D Segmentation**: OpenMask3D replaces the classification head with a binary classifier, but its generalization is limited; SAI3D/SA3DIP utilize SAM for 2D$\rightarrow$3D uplifting but are susceptible to 2D errors; Segment3D uses pseudo-labels for pre-training. ASSIST-3D addresses the problem from the perspective of data generation, complementing these methods.
+- **3D Scene Synthesis**: Holodeck uses LLMs to generate high-quality scenes end-to-end but lacks object diversity; RandomRooms introduces diversity through randomization but suffers from unrealistic layouts. ASSIST-3D merges the advantages of both.
+- **Synthetic Data Training**: The practice of simulating real sensor acquisition workflows to construct point clouds has precedents in autonomous driving; this paper introduces this concept to indoor 3D segmentation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Reframes 3D scene synthesis as a data augmentation strategy for class-agnostic segmentation; the three-principle formulation and LLM+DFS layout design are original contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive validation across three benchmarks with fine-grained ablations analyzing each component and principle.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure with rigorous problem definition and principled motivation.
-- Value: ⭐⭐⭐⭐ — The three principles for synthetic data generation and the realistic point cloud construction pipeline offer broadly applicable reference value for the 3D vision community.
+- Novelty: ⭐⭐⭐⭐ — Repositions 3D scene synthesis as a data augmentation solution for class-agnostic segmentation; the extraction of the three principles and the LLM+DFS layout design are highly innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensively validated across three benchmarks, with fine-grained ablation studies analyzing each component and principle.
+- Writing Quality: ⭐⭐⭐⭐ — Structurally clear, with rigorous logic in problem formulation and derivation of principles.
+- Value: ⭐⭐⭐⭐ — The three principles for synthetic data generation and the realistic point cloud construction provide universal reference value for the 3D vision community.
 
 <!-- RELATED:START -->
 
@@ -137,11 +137,11 @@ ASSIST-3D is the only method that satisfies all three principles simultaneously,
 
 ## Related Papers
 
-- [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
+- [\[CVPR 2025\] Any3DIS: Class-Agnostic 3D Instance Segmentation by 2D Mask Tracking](../../CVPR2025/3d_vision/any3dis_class-agnostic_3d_instance_segmentation_by_2d_mask_tracking.md)
 - [\[AAAI 2026\] UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning](unic-lift_unified_3d_instance_segmentation_via_contrastive_learning.md)
 - [\[AAAI 2026\] Retrieving Objects from 3D Scenes with Box-Guided Open-Vocabulary Instance Segmentation](retrieving_objects_from_3d_scenes_with_box-guided_open-vocabulary_instance_segme.md)
-- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](../../CVPR2026/3d_vision/evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](../../CVPR2026/3d_vision/i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
+- [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
+- [\[AAAI 2026\] 3DTeethSAM: Taming SAM2 for 3D Teeth Segmentation](3dteethsam_taming_sam2_for_3d_teeth_segmentation.md)
 
 </div>
 

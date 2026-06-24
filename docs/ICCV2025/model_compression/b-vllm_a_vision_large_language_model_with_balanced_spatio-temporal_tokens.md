@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens
 description: >-
-  [ICCV 2025][Model Compression][Vision Large Language Model] This paper proposes B-VLLM, a framework that dynamically balances spatio-temporal cues within the context window constraints of VLLMs via three modules: text-co…
+  [ICCV 2025][Model Compression][Vision Large Language Model] This paper proposes B-VLLM, a framework that dynamically balances spatio-temporal cues within the context window constraints of VLLMs via three modules: text-conditioned adaptive frame selection, temporal frame token merging, and spatial token sampling. The approach achieves a 10% performance improvement on MVBench.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Frame Selection"
   - "Token Merging"
 date: 2026-05-08
-content_hash: 5c54507dcfb1230b
+content_hash: 8500c1396582f78f
 ---
 
 # B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens
@@ -143,9 +143,9 @@ Gains are most pronounced in long-video settings: LLaMA-VID achieves an 8.1% imp
 
 - [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](../../NeurIPS2025/model_compression/vision-centric_token_compression_in_large_language_model.md)
 - [\[NeurIPS 2025\] Learning to Factorize and Adapt: A Versatile Approach Toward Universal Spatio-Temporal Foundation Models](../../NeurIPS2025/model_compression/learning_to_factorize_and_adapt_a_versatile_approach_toward_universal_spatio-tem.md)
-- [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
-- [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
-- [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
+- [\[CVPR 2025\] DyCoke: Dynamic Compression of Tokens for Fast Video Large Language Models](../../CVPR2025/model_compression/dycoke_dynamic_compression_of_tokens_for_fast_video_large_language_models.md)
+- [\[ICML 2025\] From Language Models over Tokens to Language Models over Characters](../../ICML2025/model_compression/from_language_models_over_tokens_to_language_models_over_characters.md)
+- [\[CVPR 2026\] TimeRipples: Accelerating vDiTs by Understanding the Spatio-Temporal Correlations in Latent Space](../../CVPR2026/model_compression/timeripples_accelerating_vdits_by_understanding_the_spatio-temporal_correlations.md)
 
 </div>
 

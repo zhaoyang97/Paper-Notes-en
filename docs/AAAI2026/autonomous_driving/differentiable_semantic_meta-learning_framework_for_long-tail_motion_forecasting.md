@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][Long-tail distribution] SAML is proposed as the first framework to provide a differentiable semantic definition of "long-tailedness" in motion prediction — quantifying rarity via five intr…
+  [AAAI 2026][Autonomous Driving][Long-tail distribution] SAML is proposed as the first framework to provide a differentiable semantic definition of "long-tailedness" in motion prediction — quantifying rarity via five intrinsic/interactive attributes, fusing them into a continuous Tail Index through a Bayesian Tail Perceiver, and driving MAML-based meta-learning adaptation. On the nuScenes worst-case top 1% subset, SAML achieves a minADE 17.2% lower than the second-best method.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "MAML"
   - "tail-awareness"
 date: 2026-05-08
-content_hash: 14894e06f4df83dd
+content_hash: 67ce9acfb31bd0b2
 ---
 
 # SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction
@@ -159,7 +159,7 @@ On the top 1% hardest samples, SAML achieves minADE₅ = 6.21 m, which is 17.2% 
 - [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](../../ICCV2025/autonomous_driving/generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
 - [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](../../NeurIPS2025/autonomous_driving/unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
 - [\[AAAI 2026\] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions](walking_further_semantic-aware_multimodal_gait_recognition_under_long-range_cond.md)
-- [\[AAAI 2026\] Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction](visiononly_gaussian_splatting_for_collaborative_semantic_occupancy_p.md)
+- [\[AAAI 2026\] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion](towards_3d_object-centric_feature_learning_for_semantic_scene_completion.md)
 
 </div>
 

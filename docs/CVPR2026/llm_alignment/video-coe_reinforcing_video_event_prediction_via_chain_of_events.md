@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Video-CoE: Reinforcing Video Event Prediction via Chain of Events
 description: >-
-  [CVPR 2026][Video Understanding][GRPO] Addressing the issues where Multi-modal Large Language Models (MLLMs) lack logical reasoning and ignore visual content in Video Event Prediction (VEP), this paper proposes the Chain of Events (CoE) paradigm. It requires the model to segment videos into timestamped historical event chains and perform causal reasoning ba
+  [CVPR 2026][LLM Alignment][Video Event Prediction] Addressing the issues where Multi-modal Large Language Models (MLLMs) lack logical reasoning and ignore visual content in Video Event Prediction (VEP), this paper proposes the Chain of Events (CoE) paradigm. It requires the model to segment videos into timestamped historical event chains and perform causal reasoning based on them. Through a two-stage training process (CoE-SFT for reasoning injection + CoE-GRPO for reinforcing…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Video Event Prediction"
+  - "Multi-modal Large Language Models"
+  - "Chain of Events"
+  - "GRPO"
+  - "Temporal Modeling"
 date: 2026-05-08
-content_hash: bc583e39179aece6
+content_hash: d64af4625aea91c0
 ---
+
 # Video-CoE: Reinforcing Video Event Prediction via Chain of Events
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ Note: The full CoE in the ablation table ($G=4, L=3$) is recorded as 74.61, whic
 
 ## Related Papers
 
-- [\[ICLR 2026\] Video-KTR: Reinforcing Video Reasoning via Key Token Attribution](../../ICLR2026/video_understanding/video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
-- [\[CVPR 2026\] VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale](vidtag_temporally_aligned_video_to_gps_geolocalization_with_denoising_sequence_p.md)
-- [\[CVPR 2026\] Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)
-- [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
+- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
+- [\[NeurIPS 2025\] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO](../../NeurIPS2025/llm_alignment/deepvideor1_video_reinforcement_finetuning_via_difficultyawa.md)
+- [\[ICCV 2025\] MagicID: Hybrid Preference Optimization for ID-Consistent and Dynamic-Preserved Video Customization](../../ICCV2025/llm_alignment/magicid_hybrid_preference_optimization_for_id-consistent_and_dynamic-preserved_v.md)
+- [\[ACL 2025\] Fine-grained Video Dubbing Duration Alignment with Segment Supervised Preference Optimization](../../ACL2025/llm_alignment/fine-grained_video_dubbing_duration_alignment_with_segment_supervised_preference.md)
+- [\[ACL 2025\] Chain-of-Jailbreak Attack for Image Generation Models via Editing Step by Step](../../ACL2025/llm_alignment/chain-of-jailbreak_attack_for_image_generation_models_via_editing_step_by_step.md)
 
 </div>
 

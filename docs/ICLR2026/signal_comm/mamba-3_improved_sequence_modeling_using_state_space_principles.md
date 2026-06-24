@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Mamba-3: Improved Sequence Modeling using State Space Principles
 description: >-
-  [ICLR 2026][Signal & Communications][State Space Model] Three core improvements are proposed from an SSM perspective: exponential-trapezoidal discretization, complex-valued state spaces, and Multi-Input Multi-Output (MIMO) formulation. These enhance model quality and state-tracking capabilities significantly without increasing decoding latency, pushing the performance-effic
+  [ICLR 2026][Signal & Communication][State Space Models] Three core improvements are proposed from an SSM perspective: exponential-trapezoidal discretization, complex-valued state spaces, and Multi-Input Multi-Output (MIMO) formulation. These enhance model quality and state-tracking capabilities significantly without increasing decoding latency, pushing the performance-efficiency Pareto frontier forward.
 tags:
-  - ICLR 2026
-  - Signal & Communications
-  - State Space Model
-  - Mamba
-  - MIMO
+  - "ICLR 2026"
+  - "Signal & Communication"
+  - "State Space Models"
+  - "Mamba"
+  - "Sequence Modeling"
+  - "Inference Efficiency"
+  - "MIMO"
 date: 2026-05-08
-content_hash: 90d77f8396de300b
+content_hash: b8de1abcbe0fd978
 ---
+
 # Mamba-3: Improved Sequence Modeling using State Space Principles
 
 **Conference**: ICLR 2026  

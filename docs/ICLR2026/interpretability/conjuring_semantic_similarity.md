@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Conjuring Semantic Similarity
 description: >-
-  [ICLR 2026][Interpretability][semantic similarity] The paper proposes a visual imagination-based metric for text semantic similarity. It measures semantic distance by calculating the Jeffreys divergence between the path measures of reverse SDEs induced by a text-conditioned diffusion model under two prompts. This metric can be directly computed via Monte-Carlo sampling
+  [ICLR2026][Interpretability][semantic similarity] The paper proposes a visual imagination-based metric for text semantic similarity. It measures semantic distance by calculating the Jeffreys divergence between the path measures of reverse SDEs induced by a text-conditioned diffusion model under two prompts. This metric can be directly computed via Monte-Carlo sampling and quantifies for the first time the alignment between the semantic space learned by diffusion models and hu…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - semantic similarity
-  - diffusion model
-  - Jeffreys divergence
-  - SDE
-  - text-to-image
+  - "ICLR2026"
+  - "Interpretability"
+  - "semantic similarity"
+  - "diffusion model"
+  - "Jeffreys divergence"
+  - "SDE"
+  - "text-to-image"
 date: 2026-05-08
-content_hash: 2f09d5911a0506ea
+content_hash: 8ace31eb9020ae09
 ---
+
 # Conjuring Semantic Similarity
 
 **Conference**: ICLR2026  
@@ -130,7 +131,7 @@ Unlike text embedding methods that return uninterpretable vector distances, this
 - [\[ICLR 2026\] Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity](rethinking_layer_relevance_in_large_language_models_beyond_cosine_similarity.md)
 - [\[ICLR 2026\] LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data](lore_jointly_learning_the_intrinsic_dimensionality_and_relative_similarity_struc.md)
 - [\[ICLR 2026\] Semantic Regexes: Auto-Interpreting LLM Features with a Structured Language](semantic_regexes_auto-interpreting_llm_features_with_a_structured_language_of_re.md)
-- [\[CVPR 2026\] Make it SING: Analyzing Semantic Invariants in Classifiers](../../CVPR2026/interpretability/make_it_sing_analyzing_semantic_invariants_in_classifiers.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](../../ICML2026/interpretability/formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 
 </div>
 

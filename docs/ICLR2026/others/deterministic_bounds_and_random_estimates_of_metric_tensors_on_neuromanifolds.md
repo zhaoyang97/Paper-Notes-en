@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper analyzes the spectral properties of the Fisher Information Matrix (FIM) in the kernel space of low-dimensional probability distributions to establish deterministic upper and lower bounds for the metric tensor on the parameter space (neuromanifold). Based on the Hutchinson trace estimator, it introduces a fam
+  [ICLR 2026][Fisher Information Matrix] This paper analyzes the spectral properties of the Fisher Information Matrix (FIM) in the kernel space of low-dimensional probability distributions to establish deterministic upper and lower bounds for the metric tensor on the parameter space (neuromanifold). Based on the Hutchinson trace estimator, it introduces a family of unbiased stochastic estimators with bounded variance that require only a single backpropagation for efficient comp…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Fisher Information Matrix"
+  - "Neuromanifold"
+  - "Hutchinson estimator"
+  - "Metric tensor"
+  - "Spectral analysis"
 date: 2026-05-08
-content_hash: bd373dd392cefd4a
+content_hash: c2f25e16eb5de8a1
 ---
+
 # Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds
 
 **Conference**: ICLR 2026  
@@ -113,9 +118,9 @@ Numerical simulations were performed on DistilBERT using AG News (4 classes) and
 
 - [\[ICLR 2026\] From Fields to Random Trees](from_fields_to_random_trees.md)
 - [\[NeurIPS 2025\] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](../../NeurIPS2025/others/tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)
+- [\[ICLR 2026\] Energy-Efficient Random Variate Generation via Compressed Lookup Tables](energy-efficient_random_variate_generation_via_compressed_lookup_tables.md)
 - [\[ICLR 2026\] Non-Clashing Teaching in Graphs: Algorithms, Complexity, and Bounds](non-clashing_teaching_in_graphs_algorithms_complexity_and_bounds.md)
 - [\[ICLR 2026\] How NOT to benchmark your SITE metric: Beyond Static Leaderboards and Towards Realistic Evaluation](how_not_to_benchmark_your_site_metric_beyond_static_leaderboards_and_towards_rea.md)
-- [\[ICLR 2026\] Random Anchors with Low-rank Decorrelated Learning: A Minimalist Pipeline for Class-Incremental Medical Image Classification](random_anchors_with_low-rank_decorrelated_learning_a_minimalist_pipeline_for_cla.md)
 
 </div>
 

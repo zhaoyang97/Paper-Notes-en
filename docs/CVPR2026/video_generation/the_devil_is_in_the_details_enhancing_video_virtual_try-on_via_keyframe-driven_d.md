@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] The Devil is in the Details: Enhancing Video Virtual Try-On via Keyframe-Driven Details Injection
 description: >-
-  [CVPR 2026][Video Generation][video virtual try-on] The KeyTailor framework is proposed, which utilizes a keyframe-driven detail injection strategy (garment dynamic enhancement + collaborative background optimization) to significantly improve garment fidelity and background integrity in video virtual try-on without altering the DiT architecture. The study also introduce
+  [CVPR2026][Video Generation][video virtual try-on] The KeyTailor framework is proposed, which utilizes a keyframe-driven detail injection strategy (garment dynamic enhancement + collaborative background optimization) to significantly improve garment fidelity and background integrity in video virtual try-on without altering the DiT architecture. The study also introduces ViT-HD, a high-definition dataset containing 15K samples.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - video virtual try-on
-  - diffusion transformer
-  - keyframe injection
-  - garment fidelity
-  - background integrity
+  - "CVPR2026"
+  - "Video Generation"
+  - "video virtual try-on"
+  - "diffusion transformer"
+  - "keyframe injection"
+  - "garment fidelity"
+  - "background integrity"
 date: 2026-05-08
-content_hash: f3c9e273a34591f9
+content_hash: c1debccacea55f07
 ---
+
 # The Devil is in the Details: Enhancing Video Virtual Try-On via Keyframe-Driven Details Injection
 
 **Conference**: CVPR2026  
@@ -160,15 +161,15 @@ Removing the distillation component $\mathcal{D}$ had the largest impact (VFID 7
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
 - [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](../../ICML2026/video_generation/itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
 - [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
-- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
+- [\[CVPR 2026\] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)
+- [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](../../ICML2026/video_generation/enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][CARLA] This paper identifies that the root cause of the "student failing to learn the privileged expert" in CARLA is not insufficient model capacity, but rather the expert's use of privileged information that is invisible or unmeasurable for the student, combined with sparse navigation intent. By constraining the expert's per
+  [CVPR 2026][Autonomous Driving][End-to-end Driving] This paper identifies that the root cause of the "student failing to learn the privileged expert" in CARLA is not insufficient model capacity, but rather the expert's use of privileged information that is invisible or unmeasurable for the student, combined with sparse navigation intent. By constraining the expert's perception and decision-making to the student's observable range (LEAD expert + dataset) and restructuring the…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - CARLA
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end Driving"
+  - "Imitation Learning"
+  - "Privileged Expert"
+  - "CARLA"
+  - "Closed-loop Evaluation"
 date: 2026-05-08
-content_hash: 51663457bc0dad6d
+content_hash: c4e9c89fa40836bf
 ---
+
 # LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ Removing LiDAR/Radar and replacing LiDAR with positional encoding (LTF setting):
 
 ## Related Papers
 
-- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
-- [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
-- [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](../../NeurIPS2025/robotics/suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
-- [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](../../NeurIPS2025/robotics/autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
-- [\[CVPR 2025\] TinyNav: End-to-End TinyML for Real-Time Autonomous Navigation on Microcontrollers](../../CVPR2025/robotics/tinynav_end-to-end_tinyml_for_real-time_autonomous_navigation_on_microcontroller.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
+- [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
+- [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
+- [\[CVPR 2026\] WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios](wod-e2e_waymo_open_dataset_for_end-to-end_driving_in_challenging_long-tail_scena.md)
+- [\[ICLR 2026\] VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning](../../ICLR2026/autonomous_driving/vadv2_end-to-end_vectorized_autonomous_driving_via_probabilistic_planning.md)
 
 </div>
 

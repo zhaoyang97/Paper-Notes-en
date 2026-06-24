@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LIMMT: Less is More for Motion Tracking
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Less-is-More] This paper investigates physics-based humanoid motion tracking from a "data-centric" perspective and proposes a three-stage filtering framework, GQS (Physical Feasibility Filtering → Semantic Motion Embedding → Complexity-Weighted Subset Sampling). It demonstrates that **training with less than 3% of the AMASS dataset
+  [ICML2026][Robotics][Humanoid Robots] This paper investigates physics-based humanoid motion tracking from a "data-centric" perspective and proposes a three-stage filtering framework, GQS (Physical Feasibility Filtering → Semantic Motion Embedding → Complexity-Weighted Subset Sampling). It demonstrates that **training with less than 3% of the AMASS dataset achieves tracking performance superior to using the full dataset**, and this filtering approach can be migrated to various…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Less-is-More
+  - "ICML2026"
+  - "Robotics"
+  - "Humanoid Robots"
+  - "Motion Tracking"
+  - "Data Pruning"
+  - "Physical Feasibility"
+  - "Less-is-More"
 date: 2026-05-08
-content_hash: 41abda4cfd339a78
+content_hash: b3e1d647dfa50d9f
 ---
+
 # LIMMT: Less is More for Motion Tracking
 
 **Conference**: ICML2026  
@@ -144,9 +149,9 @@ On AMASS (~14K training segments, 140 test trajectories) for general motion trac
 
 - [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](../../CVPR2026/robotics/humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 - [\[ICML 2026\] Think Less, Act Early: Reinforced Latent Reasoning with Early Exit in Vision-Language-Action Models](think_less_act_early_reinforced_latent_reasoning_with_early_exit_in_vision-langu.md)
+- [\[ICLR 2026\] When a Robot is More Capable than a Human: Learning from Constrained Demonstrators](../../ICLR2026/robotics/when_a_robot_is_more_capable_than_a_human_learning_from_constrained_demonstrator.md)
 - [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](../../CVPR2026/robotics/adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
 - [\[CVPR 2026\] UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs](../../CVPR2026/robotics/uast_unified_active_search_and_tracking_for_arbitrary_targets_with_uavs.md)
-- [\[CVPR 2026\] VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling](../../CVPR2026/robotics/vla_models_are_more_generalizable_than_you_think_revisiting_physical_and_spatial.md)
 
 </div>
 

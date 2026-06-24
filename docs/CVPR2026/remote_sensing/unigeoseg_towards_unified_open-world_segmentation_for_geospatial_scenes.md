@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] The authors construct the first million-scale remote sensing instruction segmentation dataset, GeoSeg-1M (590K images, 117 categories, 1.1M triplets), along with the companion GeoSeg-Bench. They propose a unified framework, UniGeoSeg, which integrates referring, interactive, and reasoning segmentation into a single mod
+  [CVPR 2026][Remote Sensing][Remote sensing segmentation] The authors construct the first million-scale remote sensing instruction segmentation dataset, GeoSeg-1M (590K images, 117 categories, 1.1M triplets), along with the companion GeoSeg-Bench. They propose a unified framework, UniGeoSeg, which integrates referring, interactive, and reasoning segmentation into a single model using Task-Adaptive Text Enhancement (TATE), Latent Knowledge Memory (LKM)…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Remote sensing segmentation"
+  - "Instruction-driven segmentation"
+  - "Reasoning segmentation"
+  - "Million-scale dataset"
+  - "Unified multi-task framework"
 date: 2026-05-08
-content_hash: cedc639df97ad12b
+content_hash: 491fd3f3df291a63
 ---
+
 # UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,20 @@ Internal TATE branch ablation shows that using a single unified branch for all t
 - Value: ⭐⭐⭐⭐⭐ (Open-source dataset and strong baseline provide a scalable foundation for the community.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)
+- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
+- [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)

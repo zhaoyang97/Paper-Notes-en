@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation
 description: >-
-  [ICCV 2025][Model Compression][Autoregressive generation] This paper proposes TokenBridge, which converts continuous tokens into discrete tokens by applying post-training dimension-wise quantization to pre-trained contin…
+  [ICCV 2025][Model Compression][Autoregressive generation] This paper proposes TokenBridge, which converts continuous tokens into discrete tokens by applying post-training dimension-wise quantization to pre-trained continuous VAE features. The approach preserves the high-fidelity representation capability of continuous tokens while enabling straightforward autoregressive modeling with standard cross-entropy loss, achieving generation quality on ImageNet 256×256 comparable to c…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "discrete-continuous bridging"
   - "dimension-wise autoregression"
 date: 2026-05-08
-content_hash: 59d83c96ae4618c5
+content_hash: 522730496c728472
 ---
 
 # Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation
@@ -135,8 +135,8 @@ TokenBridge consists of two core components: (1) a post-training dimension-wise 
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 - [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
 - [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](../../NeurIPS2025/model_compression/when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
+- [\[ICLR 2026\] Shift-and-Sum Quantization for Visual Autoregressive Models](../../ICLR2026/model_compression/shift-and-sum_quantization_for_visual_autoregressive_models.md)
 - [\[ICCV 2025\] B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens](b-vllm_a_vision_large_language_model_with_balanced_spatio-temporal_tokens.md)
-- [\[ICCV 2025\] Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification](competitive_distillation_a_simple_learning_strategy_for_improving_visual_classif.md)
 
 </div>
 

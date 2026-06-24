@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution
 description: >-
-  [ICML 2026][Interpretability][integrated gradients] This paper proposes MA-GIG: moving the "feature selection based on low gradient magnitude" strategy of Guided IG from pixel space to the latent space of a pre-trained VAE. By utilizing the decoder Jacobian to map axis-aligned updates in the latent space to updates in the tangent space of the data manifold, the method a
+  [ICML 2026][Interpretability][integrated gradients] This paper proposes MA-GIG: moving the "feature selection based on low gradient magnitude" strategy of Guided IG from pixel space to the latent space of a pre-trained VAE. By utilizing the decoder Jacobian to map axis-aligned updates in the latent space to updates in the tangent space of the data manifold, the method avoids high-gradient noise regions while ensuring the integration path remains close to the true data manifol…
 tags:
-  - ICML 2026
-  - Interpretability
-  - integrated gradients
-  - guided IG
-  - VAE
+  - "ICML 2026"
+  - "Interpretability"
+  - "integrated gradients"
+  - "guided IG"
+  - "data manifold"
+  - "VAE"
+  - "path methods"
 date: 2026-05-08
-content_hash: 2511c64136a16968
+content_hash: b71dcf73256cd6a9
 ---
+
 # Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution
 
 **Conference**: ICML 2026  
@@ -133,11 +136,11 @@ Evaluated on ImageNet, Oxford-IIIT Pet, and Oxford 102 Flower with ResNet18, VGG
 
 ## Related Papers
 
-- [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
+- [\[ICLR 2026\] TreeGrad-Ranker: Feature Ranking via O(L)-Time Gradients for Decision Trees](../../ICLR2026/interpretability/treegrad-ranker_feature_ranking_via_ol-time_gradients_for_decision_trees.md)
 - [\[ICML 2026\] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality](muse_resolving_manifold_misalignment_in_visual_tokenization_via_topological_orth.md)
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](../../ICLR2026/interpretability/missingness_bias_calibration_in_feature_attribution_explanations.md)
+- [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
 - [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](../../CVPR2026/interpretability/h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
-- [\[ACL 2025\] Normalized AOPC: Fixing Misleading Faithfulness Metrics for Feature Attribution Explainability](../../ACL2025/interpretability/normalized_aopc_faithfulness_metrics.md)
-- [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
 
 </div>
 

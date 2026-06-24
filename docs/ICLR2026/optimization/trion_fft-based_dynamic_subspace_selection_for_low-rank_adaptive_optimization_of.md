@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Trion: FFT-based Dynamic Subspace Selection for Low-Rank Adaptive Optimization of LLMs
 description: >-
-  [ICLR 2026][Optimization & Theory][DCT] This paper uses a **fixed Discrete Cosine Transform (DCT) orthogonal matrix + dynamic column selection** to replace the expensive SVD/QR projections in low-rank optimizers such as GaLore and Dion. By storing only $r$ integer indices per layer instead of full projection matrices, the authors develop two optimizers, Trio
+  [ICLR 2026][Optimization][Low-Rank Optimization] This paper uses a **fixed Discrete Cosine Transform (DCT) orthogonal matrix + dynamic column selection** to replace the expensive SVD/QR projections in low-rank optimizers such as GaLore and Dion. By storing only $r$ integer indices per layer instead of full projection matrices, the authors develop two optimizers, Trion and DCT-AdamW, achieving rank-independent runtime and up to a 25% reduction in memory without sacrificing acc…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - DCT
-  - FFT
+  - "ICLR 2026"
+  - "Optimization"
+  - "Low-Rank Optimization"
+  - "DCT"
+  - "Dynamic Column Selection"
+  - "Optimizer State Compression"
+  - "FFT"
 date: 2026-05-08
-content_hash: 52a9756ae15d4af5
+content_hash: 0853a0b537ea7c99
 ---
+
 # Trion: FFT-based Dynamic Subspace Selection for Low-Rank Adaptive Optimization of LLMs
 
 **Conference**: ICLR 2026  

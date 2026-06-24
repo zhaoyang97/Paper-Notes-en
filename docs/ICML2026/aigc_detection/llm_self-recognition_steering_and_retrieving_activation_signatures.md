@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM Self-Recognition: Steering and Retrieving Activation Signatures
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] Instead of watermarking at the token level, this paper injects a random sparse steering vector into the LLM residual stream during generation, creating a detectable "activation signature." The signature is retrieved by re-feeding the text into the same model and calculating cosine similarity or using a lightweight clas
+  [ICML 2026][AIGC Detection][AI Text Detection] Instead of watermarking at the token level, this paper injects a random sparse steering vector into the LLM residual stream during generation, creating a detectable "activation signature." The signature is retrieved by re-feeding the text into the same model and calculating cosine similarity or using a lightweight classifier, achieving over 98% accuracy across multiple detection settings with negligible impact on text quality.
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "AI Text Detection"
+  - "Activation Steering"
+  - "Self-Recognition"
+  - "Sparse Steering Vectors"
+  - "Model Attribution"
 date: 2026-05-08
-content_hash: 06439ad537ad6c91
+content_hash: 2dcb891d7ae98c82
 ---
+
 # LLM Self-Recognition: Steering and Retrieving Activation Signatures
 
 **Conference**: ICML 2026  
@@ -141,8 +147,8 @@ Detection performance increases with model scale, and text-level results (majori
 
 - [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](../../CVPR2026/aigc_detection/enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[ICLR 2026\] Calibrating Verbalized Confidence with Self-Generated Distractors](../../ICLR2026/aigc_detection/calibrating_verbalized_confidence_with_self-generated_distractors.md)
-- [\[CVPR 2026\] Investigating Self-Supervised Representations for Audio-Visual Deepfake Detection](../../CVPR2026/aigc_detection/investigating_self-supervised_representations_for_audio-visual_deepfake_detectio.md)
 - [\[ACL 2026\] REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control](../../ACL2026/aigc_detection/reflex_self-refining_explainable_fact-checking_via_verdict-anchored_style_contro.md)
+- [\[CVPR 2026\] Investigating Self-Supervised Representations for Audio-Visual Deepfake Detection](../../CVPR2026/aigc_detection/investigating_self-supervised_representations_for_audio-visual_deepfake_detectio.md)
 - [\[NeurIPS 2025\] QiMeng-NeuComBack: Self-Evolving Translation from IR to Assembly Code](../../NeurIPS2025/aigc_detection/qimeng-neucomback_self-evolving_translation_from_ir_to_assembly_code.md)
 
 </div>

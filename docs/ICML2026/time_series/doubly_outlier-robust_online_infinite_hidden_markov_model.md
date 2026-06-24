@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Doubly Outlier-Robust Online Infinite Hidden Markov Model
 description: >-
-  [ICML 2026][Time Series][Posterior Influence Function] This paper proposes BR-iHMM, which combines "robust observation updates (WoLF)" with "batched state inference (degenerate sticky HDP prior)." It provides bounded Posterior Influence Functions (PIFs) in both the observation and state spaces for online infinite Hidden Markov Models. On streaming data containing outliers—
+  [ICML 2026][Time Series][Infinite Hidden Markov Model] This paper proposes BR-iHMM, which combines "robust observation updates (WoLF)" with "batched state inference (degenerate sticky HDP prior)." It provides bounded Posterior Influence Functions (PIFs) in both the observation and state spaces for online infinite Hidden Markov Models. On streaming data containing outliers—including financial order books, electricity loads, and synthetic regressions—it reduces one-step-ahead p…
 tags:
-  - ICML 2026
-  - Time Series
-  - Posterior Influence Function
+  - "ICML 2026"
+  - "Time Series"
+  - "Infinite Hidden Markov Model"
+  - "Online Inference"
+  - "Robust Bayes"
+  - "Outliers"
+  - "Posterior Influence Function"
 date: 2026-05-08
-content_hash: 9bdb6143604b4372
+content_hash: 60f51ec9ebbe073c
 ---
+
 # Doubly Outlier-Robust Online Infinite Hidden Markov Model
 
 **Conference**: ICML 2026  
@@ -138,8 +143,8 @@ On the Synthetic task, BR-iHMM reduces RMSE by approximately 55% compared to iHM
 - [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
 - [\[ICML 2026\] Divide and Contrast: Learning Robust Temporal Features Without Augmentation](divide_and_contrast_learning_robust_temporal_features_without_augmentation.md)
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](../../ICLR2026/time_series/online_time_series_prediction_using_feature_adjustment.md)
+- [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](../../ICLR2026/time_series/st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
 - [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](../../ICLR2026/time_series/delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
 
 </div>
 

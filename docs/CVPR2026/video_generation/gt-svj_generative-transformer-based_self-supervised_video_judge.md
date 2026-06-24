@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge For Efficient Video Reward Modeling
 description: >-
-  [CVPR 2026][Video Generation][RLHF] This paper repurposes an off-the-shelf video generation model (CogVideoX) into a video reward model. By using an Energy-Based Model (EBM) with contrastive learning to train a "real/degraded" video discriminator followed by two-step preference alignment, the method outperforms VLM-based reward models trained on millions
+  [CVPR 2026][Video Generation][Video Reward Model] This paper repurposes an off-the-shelf video generation model (CogVideoX) into a video reward model. By using an Energy-Based Model (EBM) with contrastive learning to train a "real/degraded" video discriminator followed by two-step preference alignment, the method outperforms VLM-based reward models trained on millions of samples using only 30K human annotations on GenAI-Bench and MonteBench.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - RLHF
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Reward Model"
+  - "Energy-Based Model"
+  - "Contrastive Learning"
+  - "Temporal Alignment"
+  - "RLHF"
 date: 2026-05-08
-content_hash: 3326c1a69659778c
+content_hash: 2a8b000fd77d8f75
 ---
+
 # GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge For Efficient Video Reward Modeling
 
 **Conference**: CVPR 2026  
@@ -129,15 +134,16 @@ GT-SVJ outperforms existing models on GenAI-Bench by ~24.6% and MonteBench by ~3
 - **Value**: ⭐⭐⭐⭐⭐ Significant improvement in annotation efficiency for video reward modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
 - [\[CVPR 2026\] SoliReward: Mitigating Susceptibility to Reward Hacking and Annotation Noise in Video Generation Reward Models](solireward_mitigating_susceptibility_to_reward_hacking_and_annotation_noise_in_v.md)
+- [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
-- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
-- [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
+- [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)
+- [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][CLIP] To address domain drift caused by differences in equipment, lighting, and imaging modalities in medical images, this paper explicitly models these differences as "confounders." By constructing a confounder dictionary using CLIP text prompts and performing causal intervention through backdoor adjustment, the method impr
+  [CVPR 2026][Medical Imaging][Causal Intervention] To address domain drift caused by differences in equipment, lighting, and imaging modalities in medical images, this paper explicitly models these differences as "confounders." By constructing a confounder dictionary using CLIP text prompts and performing causal intervention through backdoor adjustment, the method improves the cross-domain average mDice by 2.0% over the strongest baseline in endoscopic segmentation.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CLIP
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Causal Intervention"
+  - "Confounder Dictionary"
+  - "Domain Generalization"
+  - "CLIP"
+  - "Endoscopic Segmentation"
 date: 2026-05-08
-content_hash: e568c92997ad7f34
+content_hash: 920f8666db57354d
 ---
+
 # Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -168,8 +173,8 @@ Causal network depth (Table 5): As layers increase from 1 to 5, Average Dice goe
 - [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
 - [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
 - [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
-- [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
 - [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
+- [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
 
 </div>
 

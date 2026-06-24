@@ -2,15 +2,13 @@
 title: >-
   [Paper Note] WebDS: An End-to-End Benchmark for Web-based Data Science
 description: >-
-  [ICLR 2026][Multimodal VLM][web agent] The authors propose WebDS, the first end-to-end web-based data science benchmark (870 tasks, 29 websites, 10 domains). The current strongest Agent (BrowserUse + GPT-4o) completes only 15% of tasks compared to 90% achieved by humans, revealing a significant performance gap in real-world data science workflows.
+  [Multimodal VLM] The authors propose WebDS, the first end-to-end web-based data science benchmark (870 tasks, 29 websites, 10 domains). The current strongest Agent (BrowserUse + GPT-4o) completes only 15% of tasks compared to 90% achieved by humans, revealing a significant performance gap in real-world data science workflows.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - web agent
-  - benchmark
+  - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 438604d84753b27d
+content_hash: c5450af8c4161d64
 ---
+
 # WebDS: An End-to-End Benchmark for Web-based Data Science
 
 ## Meta Information
@@ -129,7 +127,6 @@ Since data science outputs like reports are open-ended, WebDS uses three layers 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

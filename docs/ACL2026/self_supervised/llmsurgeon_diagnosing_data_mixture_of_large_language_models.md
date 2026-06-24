@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLMSurgeon: Diagnosing Data Mixture of Large Language Models
 description: >-
-  [ACL 2026][Self-Supervised Learning][Paper Note] LLMSurgeon formalizes the question "what data was this LLM trained on" as Data Mixture Surgery. By using the soft confusion matrix of a proxy classifier to invert the domain distribution within generated text, it estimates pre-training data mixture proportions while only requiring access to model outputs.
+  [ACL2026][Self-Supervised Learning][Data mixture auditing] LLMSurgeon formalizes the question "what data was this LLM trained on" as Data Mixture Surgery. By using the soft confusion matrix of a proxy classifier to invert the domain distribution within generated text, it estimates pre-training data mixture proportions while only requiring access to model outputs.
 tags:
-  - ACL 2026
-  - Self-Supervised Learning
+  - "ACL2026"
+  - "Self-Supervised Learning"
+  - "Data mixture auditing"
+  - "training corpus composition"
+  - "label shift"
+  - "confusion matrix"
+  - "black-box auditing"
 date: 2026-05-08
-content_hash: 82f3f5db93faa6ec
+content_hash: 026769cf857c58f7
 ---
+
 # LLMSurgeon: Diagnosing Data Mixture of Large Language Models
 
 **Conference**: ACL2026  
@@ -133,7 +139,7 @@ The proxy classifier is trained on reference domain data. The core estimation ob
 - [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](../../NeurIPS2025/self_supervised/m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
 - [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](../../ICLR2026/self_supervised/ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
 - [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](../../CVPR2026/self_supervised/spectral_mixture-of-experts_for_continual_learning.md)
-- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](../../CVPR2026/self_supervised/quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
+- [\[ICLR 2026\] Better Together: Leveraging Unpaired Multimodal Data for Stronger Unimodal Models](../../ICLR2026/self_supervised/better_together_leveraging_unpaired_multimodal_data_for_stronger_unimodal_models.md)
 
 </div>
 

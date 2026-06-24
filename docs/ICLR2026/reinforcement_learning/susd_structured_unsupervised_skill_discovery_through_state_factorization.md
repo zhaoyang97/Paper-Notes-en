@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SUSD: Structured Unsupervised Skill Discovery through State Factorization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Proposes SUSD (Structured Unsupervised Skill Discovery), which factorizes the state space into independent factors and assigns exclusive skill variables to each. Combined with a curiosity-driven factor weighting mechanism, it achieves the discovery of diverse skills covering all controllable factors in complex multi-ob
+  [ICLR 2026][Reinforcement Learning][Unsupervised Skill Discovery] Proposes SUSD (Structured Unsupervised Skill Discovery), which factorizes the state space into independent factors and assigns exclusive skill variables to each. Combined with a curiosity-driven factor weighting mechanism, it achieves the discovery of diverse skills covering all controllable factors in complex multi-object/multi-agent environments.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised Skill Discovery"
+  - "State Factorization"
+  - "Distance Maximization"
+  - "Curiosity-driven"
+  - "Hierarchical Reinforcement Learning"
 date: 2026-05-08
-content_hash: d8f8abf3469cefb3
+content_hash: 81d9ddf5c9c6437a
 ---
+
 # SUSD: Structured Unsupervised Skill Discovery through State Factorization
 
 **Conference**: ICLR 2026  
@@ -153,7 +159,7 @@ SUSD's latent skill embeddings contain the most factor-relevant information.
 - [\[ICML 2026\] COLLIE: Guiding Skill Discovery in Semantically Coherent Latent Space](../../ICML2026/reinforcement_learning/collie_guiding_skill_discovery_in_semantically_coherent_latent_space.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
 - [\[ICLR 2026\] Exploratory Diffusion Model for Unsupervised Reinforcement Learning](exploratory_diffusion_model_for_unsupervised_reinforcement_learning.md)
-- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 
 </div>
 

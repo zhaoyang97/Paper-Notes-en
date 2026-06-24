@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SoftCFG: Uncertainty-guided Stable Guidance for Visual Autoregressive Model
 description: >-
-  [ICLR 2026][Image Generation][Classifier-Free Guidance] To address the "guidance diminishing" and "over-guidance" issues in Visual Autoregressive (AR) models using CFG, SoftCFG applies weighted perturbations to the value cache of the unconditional branch based on the confidence of each generated token and constrains cumulative perturbations with "Step-Normalization." This t
+  [ICLR 2026][Image Generation][Visual Autoregression] To address the "guidance diminishing" and "over-guidance" issues in Visual Autoregressive (AR) models using CFG, SoftCFG applies weighted perturbations to the value cache of the unconditional branch based on the confidence of each generated token and constrains cumulative perturbations with "Step-Normalization." This training-free and architecture-agnostic approach improves the FID of AR models on ImageNet 256×256 from 1.37…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Autoregression"
+  - "Classifier-Free Guidance"
+  - "Uncertainty"
+  - "Inference Guidance"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 7ec3be2145128705
+content_hash: 1505bee93c0c3bb1
 ---
+
 # SoftCFG: Uncertainty-guided Stable Guidance for Visual Autoregressive Model
 
 **Conference**: ICLR 2026  
@@ -140,11 +145,11 @@ Breakdown on AliTok-XL ($\gamma=13, k=1.4$):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
-- [\[ICLR 2026\] From Broad Exploration to Stable Synthesis: Entropy-Guided Optimization for Autoregressive Image Generation](from_broad_exploration_to_stable_synthesis_entropy-guided_optimization_for_autor.md)
 - [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
-- [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
+- [\[ICLR 2026\] From Broad Exploration to Stable Synthesis: Entropy-Guided Optimization for Autoregressive Image Generation](from_broad_exploration_to_stable_synthesis_entropy-guided_optimization_for_autor.md)
+- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
 - [\[ICLR 2026\] Deconstructing Guidance: A Semantic Hierarchy for Precise Diffusion Model Editing](deconstructing_guidance_a_semantic_hierarchy_for_precise_diffusion_model_editing.md)
+- [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](bar_refactor_the_basis_of_autoregressive_visual_generation.md)
 
 </div>
 

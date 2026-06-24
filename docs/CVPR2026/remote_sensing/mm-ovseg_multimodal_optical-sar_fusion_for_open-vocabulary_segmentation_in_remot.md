@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] MM-OVSeg introduces SAR into open-vocabulary segmentation (OVS) for remote sensing. It utilizes contrastive distillation to align SAR features into the representation space of an RGB visual foundation model (CMU) and employs a dual-encoder fusion module to align CLIP global semantics and DINO dense structural features
+  [CVPR 2026][Remote Sensing][Open-vocabulary segmentation] MM-OVSeg introduces SAR into open-vocabulary segmentation (OVS) for remote sensing. It utilizes contrastive distillation to align SAR features into the representation space of an RGB visual foundation model (CMU) and employs a dual-encoder fusion module to align CLIP global semantics and DINO dense structural features with text (DEF). This enables pixel-level segmentation according to arbitrary text categories even und…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Open-vocabulary segmentation"
+  - "Optical-SAR fusion"
+  - "Cross-modal alignment"
+  - "Cloud-occlusion robustness"
 date: 2026-05-08
-content_hash: b8bd98f6846181f7
+content_hash: ea499a3b42292e4d
 ---
+
 # MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Comparison of CMU stage loss functions (Table 4):
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[CVPR 2026\] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes](unigeoseg_towards_unified_open-world_segmentation_for_geospatial_scenes.md)
 - [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
 - [\[CVPR 2026\] ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition](orsatr-x_a_foundation_model_based_on_differential-and-excitation_networks_for_op.md)
 - [\[CVPR 2026\] SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 
 </div>
 

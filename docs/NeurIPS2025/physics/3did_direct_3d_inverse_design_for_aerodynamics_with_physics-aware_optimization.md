@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization
 description: >-
-  [NeurIPS 2025][3D inverse design] This paper proposes the 3DID framework, which learns a unified physics-geometry triplane latent representation, performs objective-gradient-guided diffusion sampling…
+  [NeurIPS 2025][Physics & Scientific Computing][3D inverse design] This paper proposes the 3DID framework, which learns a unified physics-geometry triplane latent representation, performs objective-gradient-guided diffusion sampling, and applies a two-stage topology-preserving refinement strategy to conduct inverse design directly in the full 3D space starting from random noise. On vehicle aerodynamic shape optimization, 3DID reduces simulated drag (Sim-Drag) by 13.6% compared…
 tags:
   - "NeurIPS 2025"
+  - "Physics & Scientific Computing"
   - "3D inverse design"
   - "diffusion model"
   - "aerodynamic optimization"
   - "physics-geometry representation"
   - "topology-preserving refinement"
 date: 2026-05-08
-content_hash: 57312d8141f90e91
+content_hash: e97c130f45178c45
 ---
 
 # 3DID: Direct 3D Inverse Design for Aerodynamics with Physics-Aware Optimization
@@ -142,11 +143,11 @@ The full 3DID model achieves a Sim-Drag of 0.3536, representing a **13.6%** redu
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios](bayesian_surrogates_for_risk-aware_pre-assessment_of_aging_bridge_portfolios.md)
 - [\[NeurIPS 2025\] A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees](a_regularized_newton_method_for_nonconvex_optimization_with.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](../../ICLR2026/physics/uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
+- [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](../../ICLR2026/physics/physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
+- [\[NeurIPS 2025\] Bayesian Surrogates for Risk-Aware Pre-Assessment of Aging Bridge Portfolios](bayesian_surrogates_for_risk-aware_pre-assessment_of_aging_bridge_portfolios.md)
 - [\[AAAI 2026\] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids](../../AAAI2026/physics/phys-liquid_a_physics-informed_dataset_for_estimating_3d_geometry_and_volume_of_.md)
-- [\[NeurIPS 2025\] Neuro-Spectral Architectures for Causal Physics-Informed Networks](neuro-spectral_architectures_for_causal_physics-informed_networks.md)
-- [\[ICLR 2026\] Learning-guided Kansa Collocation for Forward and Inverse PDE Problems](../../ICLR2026/physics/learning-guided_kansa_collocation_for_forward_and_inverse_pde_problems.md)
 
 </div>
 

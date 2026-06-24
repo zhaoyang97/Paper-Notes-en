@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] StochasTok: Improving Fine-Grained Subword Understanding in LLMs
 description: >-
-  [ICLR 2026][Pretraining][BPE] StochasTok adds a lightweight post-processing step after tokenization—randomly splitting tokens into equivalent smaller token pairs from the vocabulary based on probability. This allows LLMs to "see" the internal structure of tokens during pre-training, significantly outperforming deterministic tokenization and BPE-dro
+  [ICLR 2026][LLM Pretraining][Stochastic tokenization] StochasTok adds a lightweight post-processing step after tokenization—randomly splitting tokens into equivalent smaller token pairs from the vocabulary based on probability. This allows LLMs to "see" the internal structure of tokens during pre-training, significantly outperforming deterministic tokenization and BPE-dropout on fine-grained subword tasks like letter counting, substring search…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - BPE
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Stochastic tokenization"
+  - "subword understanding"
+  - "pre-training"
+  - "character-level tasks"
+  - "BPE"
 date: 2026-05-08
-content_hash: a29ec2b937222e2d
+content_hash: f0eeb585bb68562e
 ---
+
 # StochasTok: Improving Fine-Grained Subword Understanding in LLMs
 
 **Conference**: ICLR 2026  
@@ -129,10 +134,10 @@ While character-level tokenization can grok character-level problems, it fails n
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization](understanding_and_improving_shampoo_and_soap_via_kullback-leibler_minimization.md)
+- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
 - [\[ICLR 2026\] TNT: Improving Chunkwise Training for Test-Time Memorization](tnt_improving_chunkwise_training_for_test-time_memorization.md)
 - [\[ICLR 2026\] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors](understanding_the_emergence_of_seemingly_useless_features_in_next-token_predicto.md)
-- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
-- [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
+- [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
 
 </div>
 

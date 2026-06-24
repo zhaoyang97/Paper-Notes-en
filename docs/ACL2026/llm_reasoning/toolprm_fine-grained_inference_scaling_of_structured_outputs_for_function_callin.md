@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling
 description: >-
-  [ACL 2026][LLM Reasoning][Beam Search] ToolPRM decomposes function calling into fine-grained decisions such as function name selection, parameter name selection, and parameter value assignment. It trains an intra-call process reward model to guide beam search and proposes an inference scaling principle for structured outputs: "explore more but retain less."
+  [ACL2026][Reasoning][Function Calling] ToolPRM decomposes function calling into fine-grained decisions such as function name selection, parameter name selection, and parameter value assignment. It trains an intra-call process reward model to guide beam search and proposes an inference scaling principle for structured outputs: "explore more but retain less." This approach consistently improves the Hammer2.1 series tool-calling models on BFCL and ToolAlpaca.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Beam Search
+  - "ACL2026"
+  - "Reasoning"
+  - "Function Calling"
+  - "Process Reward Model"
+  - "Structured Output"
+  - "Inference Scaling"
+  - "Beam Search"
 date: 2026-05-08
-content_hash: 4ff523129d5b0686
+content_hash: 442a906b4caf4523
 ---
+
 # ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling
 
 **Conference**: ACL2026  
@@ -146,11 +151,11 @@ Budget analysis further validates "explore more but retain less": with $N=4$ fix
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Limits of Inference Scaling Through Resampling](../../ICLR2026/llm_reasoning/the_limits_of_inference_scaling_through_resampling.md)
 - [\[ACL 2026\] DVMap: Fine-Grained Pluralistic Value Alignment via High-Consensus Demographic-Value Mapping](dvmap_fine-grained_pluralistic_value_alignment_via_high-consensus_demographic-va.md)
-- [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
 - [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
-- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
-- [\[ACL 2025\] Fine-Tuning on Diverse Reasoning Chains Drives Within-Inference CoT Refinement in LLMs](../../ACL2025/llm_reasoning/dcot_diverse_cot_refinement.md)
+- [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
+- [\[ICML 2026\] Attention Illuminates LLM Reasoning: The Preplan-and-Anchor Rhythm Enables Fine-Grained Policy Optimization](../../ICML2026/llm_reasoning/attention_illuminates_llm_reasoning_the_preplan-and-anchor_rhythm_enables_fine-g.md)
 
 </div>
 

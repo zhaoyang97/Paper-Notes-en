@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels
 description: >-
-  [NeurIPS 2025][3D tracking] This paper presents TrackingWorld, a pipeline for dense 3D tracking of almost all pixels from monocular video. It lifts sparse 2D trajectories to dense ones via a tracking upsampler…
+  [NeurIPS 2025][3D tracking] This paper presents TrackingWorld, a pipeline for dense 3D tracking of almost all pixels from monocular video. It lifts sparse 2D trajectories to dense ones via a tracking upsampler, iteratively tracks newly appearing objects across all frames, and employs an optimization-based framework to lift 2D trajectories into world-coordinate 3D space with explicit decoupling of camera motion and object motion.
 tags:
   - "NeurIPS 2025"
   - "3D tracking"
@@ -11,7 +11,7 @@ tags:
   - "dense tracking"
   - "camera pose estimation"
 date: 2026-05-08
-content_hash: 4660758895a84992
+content_hash: 348b8f5461bfde5c
 ---
 
 # TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels
@@ -180,7 +180,7 @@ The overall framework is optimization-based rather than learning-based. Processi
 - [\[NeurIPS 2025\] Ultrametric Cluster Hierarchies: I Want 'em All!](ultrametric_cluster_hierarchies_i_want_em_all.md)
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
 - [\[NeurIPS 2025\] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation](metafind_scene-aware_3d_asset_retrieval_for_coherent_metaverse_scene_generation.md)
-- [\[NeurIPS 2025\] egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](../../CVPR2026/others/multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
 - [\[ICCV 2025\] Recovering Parametric Scenes from Very Few Time-of-Flight Pixels](../../ICCV2025/others/recovering_parametric_scenes_from_very_few_time-of-flight_pixels.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper observes the intrinsic link between image layer decomposition and image inpainting/outpainting tasks. It proposes the Outpaint-and-Remove method, which efficiently adapts a pre-trained inpainting DiT model (FLUX.1-Fill-dev) into a layer decomposition model via lightweight LoRA fine-tuning. By introducing a m
+  [CVPR 2026][Image Generation][Layer Decomposition] This paper observes the intrinsic link between image layer decomposition and image inpainting/outpainting tasks. It proposes the Outpaint-and-Remove method, which efficiently adapts a pre-trained inpainting DiT model (FLUX.1-Fill-dev) into a layer decomposition model via lightweight LoRA fine-tuning. By introducing a multimodal context fusion module to preserve details and using only 100,000 synthetic training samples…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Layer Decomposition"
+  - "Image Inpainting"
+  - "Diffusion Models"
+  - "Foreground Extraction"
+  - "Parameter-Efficient Fine-Tuning"
 date: 2026-05-08
-content_hash: e2e7c834c4f0ffdb
+content_hash: 1ad6cbf30d2789cb
 ---
+
 # From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition
 
 **Conference**: CVPR 2026  
@@ -136,9 +141,9 @@ Ours achieves a 1.71dB PSNR improvement and a 9.99 reduction in FID compared to 
 
 - [\[CVPR 2026\] Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](qwen-image-layered_towards_inherent_editability_via_layer_decomposition.md)
 - [\[ICLR 2026\] Referring Layer Decomposition](../../ICLR2026/image_generation/referring_layer_decomposition.md)
+- [\[CVPR 2026\] Illustrator's Depth: Monocular Layer Index Prediction for Image Decomposition](illustrators_depth_monocular_layer_index_prediction_for_image_decomposition.md)
 - [\[CVPR 2025\] Generative Image Layer Decomposition with Visual Effects](../../CVPR2025/image_generation/generative_image_layer_decomposition_with_visual_effects.md)
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
-- [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
 
 </div>
 

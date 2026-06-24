@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology
 description: >-
-  [AAAI 2026][Computational Biology][Spatial Transcriptomics] This paper proposes HiFusion, a framework comprising two complementary modules — Hierarchical Intra-Spot Modeling (HISM) and Context-Aware Cross-Scale Fusion (C…
+  [AAAI 2026][Computational Biology][Spatial Transcriptomics] This paper proposes HiFusion, a framework comprising two complementary modules — Hierarchical Intra-Spot Modeling (HISM) and Context-Aware Cross-Scale Fusion (CCF) — to accurately predict spatial gene expression from H&E-stained whole-slide images, achieving state-of-the-art performance on two benchmark datasets under both 2D cross-validation and 3D sample-specific evaluation settings.
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Histopathology"
   - "Cross-Attention"
 date: 2026-05-08
-content_hash: 59f8d24b160bbaab
+content_hash: 3ac39803f17c2555
 ---
 
 # HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology
@@ -164,11 +164,11 @@ The method is clearly designed and well-motivated; the combination of hierarchic
 
 ## Related Papers
 
+- [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](../../CVPR2026/computational_biology/from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
+- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](../../CVPR2026/computational_biology/hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](../../CVPR2026/computational_biology/multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
 - [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
 - [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](../../CVPR2026/computational_biology/cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
-- [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](../../NeurIPS2025/computational_biology/learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
-- [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 
 </div>
 

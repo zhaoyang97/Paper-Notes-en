@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio
 description: >-
-  [ICML 2026][AI Safety][Paper Note] MedMosaic constructs a medical audio QA benchmark (46,701 QAs, 10 question types) covering physiological sounds and real/synthetic clinical dialogues via a synthetic pipeline. Systematic evaluation of 13 audio/multimodal models reveals that even Gemini-2.5-Pro achieves only approximately 68.1% weighted accuracy, uncove
+  [ICML 2026][AI Safety][Medical Audio QA] MedMosaic constructs a medical audio QA benchmark (46,701 QAs, 10 question types) covering physiological sounds and real/synthetic clinical dialogues via a synthetic pipeline. Systematic evaluation of 13 audio/multimodal models reveals that even Gemini-2.5-Pro achieves only approximately 68.1% weighted accuracy, uncovering fundamental shortfalls of contemporary LALMs in medical audio reasoning.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Medical Audio QA"
+  - "Synthetic Clinical Speech"
+  - "Multi-turn reasoning"
+  - "Open-ended response"
+  - "Embedded Voice QA"
 date: 2026-05-08
-content_hash: 487dc6f425debaed
+content_hash: 8bbe119155091093
 ---
+
 # MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio
 
 **Conference**: ICML 2026  
@@ -131,10 +137,10 @@ The strongest commercial model, Gemini-2.5-Pro, only reached 68.1% weighted aver
 ## Related Papers
 
 - [\[CVPR 2026\] AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs](../../CVPR2026/ai_safety/avfakebench_a_comprehensive_audio-video_forgery_detection_benchmark_for_av-lmms.md)
+- [\[ICML 2026\] ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity](abc-bench_an_agentic_bio-capabilities_benchmark_for_biosecurity.md)
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
-- [\[ICML 2026\] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors](foeglass_simple_in-context_learning_is_enough_for_red_teaming_audio_deepfake_det.md)
-- [\[ICML 2026\] Stable-GFlowNet: Toward Diverse and Robust LLM Red-Teaming via Contrastive Trajectory Balance](stable-gflownet_toward_diverse_and_robust_llm_red-teaming_via_contrastive_trajec.md)
-- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
+- [\[CVPR 2026\] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors](../../CVPR2026/ai_safety/unlearning_without_forgetting_securely_removing_targeted_concepts_from_large-sca.md)
+- [\[ICML 2026\] Hidden in Plain Tokens: Simply Robust, Gradient-Free Watermark for Synthetic Audio](hidden_in_plain_tokens_simply_robust_gradient-free_watermark_for_synthetic_audio.md)
 
 </div>
 

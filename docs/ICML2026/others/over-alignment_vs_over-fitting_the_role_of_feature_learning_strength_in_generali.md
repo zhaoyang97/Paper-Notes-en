@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Over-Alignment vs Over-Fitting: The Role of Feature Learning Strength in Generalization
 description: >-
-  [ICML 2026][Others][Paper Note] This work provides the first empirical discovery in standard classification tasks that an "optimal value for Feature Learning Strength (FLS)" exists—it is neither "the larger the better" nor "the smaller the better." Through finite-time gradient flow analysis of two-layer ReLU networks under logistic loss, the authors
+  [ICML2026][Feature Learning Strength] This work provides the first empirical discovery in standard classification tasks that an "optimal value for Feature Learning Strength (FLS)" exists—it is neither "the larger the better" nor "the smaller the better." Through finite-time gradient flow analysis of two-layer ReLU networks under logistic loss, the authors decompose the error into two quantifiable opposing terms: over-fitting caused by excessive FLS and "over-alignment" caused…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Feature Learning Strength"
+  - "Implicit Bias"
+  - "Neuron Alignment"
+  - "Gradient Flow"
+  - "Over-Alignment"
 date: 2026-05-08
-content_hash: 56a1392210a92fbe
+content_hash: e76812cb3a6636f1
 ---
+
 # Over-Alignment vs Over-Fitting: The Role of Feature Learning Strength in Generalization
 
 **Conference**: ICML2026  
@@ -121,9 +126,9 @@ Theoretical assumptions: (i) Data $\mathbf{x}_i = \kappa y_i \mathbf{s}_i + \sig
 
 - [\[ACL 2025\] Revisiting Weak-to-Strong Generalization: Reverse KL vs. Forward KL](../../ACL2025/others/revisiting_weak-to-strong_generalization_in_theory_and_practice_reverse_kl_vs_fo.md)
 - [\[ICML 2026\] Return-to-Go is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning](return-to-go_is_more_than_a_number_q-guided_alignment_for_return-conditioned_sup.md)
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](../../ICLR2026/others/noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
+- [\[ICLR 2026\] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees](../../ICLR2026/others/scaling_direct_feedback_learning_with_jacobian_alignment_guarantees.md)
 - [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](../../CVPR2026/others/data-centric_meta-learning_for_robust_few-shot_generalization.md)
-- [\[CVPR 2025\] TraF-Align: Trajectory-aware Feature Alignment for Asynchronous Multi-agent Perception](../../CVPR2025/others/traf-align_trajectory-aware_feature_alignment_for_asynchronous_multi-agent_perce.md)
+- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](../../ICLR2026/others/noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
 
 </div>
 

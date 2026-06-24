@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SoFlow: Solution Flow Models for One-Step Generative Modeling
 description: >-
-  [ICLR 2026][Image Restoration][solution function] The paper proposes Solution Flow Models (SoFlow), which directly learn the solution function $f(x_t, t, s)$ of a velocity ODE (mapping $x_t$ at time $t$ to the solution at time $s$). Trained from scratch using a combination of Flow Matching loss and a JVP-free solution consistency loss, it achieves superior 1-NFE FID c
+  [ICLR 2026][Image Restoration][solution function] The paper proposes Solution Flow Models (SoFlow), which directly learn the solution function $f(x_t, t, s)$ of a velocity ODE (mapping $x_t$ at time $t$ to the solution at time $s$). Trained from scratch using a combination of Flow Matching loss and a JVP-free solution consistency loss, it achieves superior 1-NFE FID compared to MeanFlow on ImageNet 256 (XL/2: 2.96 vs 3.43).
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - solution function
-  - flow matching
-  - one-step generation
-  - consistency loss
-  - JVP-free
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "solution function"
+  - "flow matching"
+  - "one-step generation"
+  - "consistency loss"
+  - "JVP-free"
 date: 2026-05-08
-content_hash: 48a51b9dc68f0d7d
+content_hash: 649d7da7de114a6a
 ---
+
 # SoFlow: Solution Flow Models for One-Step Generative Modeling
 
 **Conference**: ICLR 2026  
@@ -135,15 +136,15 @@ Since 1-NFE generation lacks intermediate states for CFG application during infe
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] One-Step Flow for Image Super-Resolution with Tunable Fidelity-Realism Trade-offs](one-step_flow_for_image_super-resolution_with_tunable_fidelity-realism_trade-off.md)
 - [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](../../CVPR2026/image_restoration/expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
+- [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](../../ICML2026/image_restoration/solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
 - [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](../../CVPR2026/image_restoration/gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)
 - [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
-- [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](../../ICML2026/image_restoration/solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
 
 </div>
 

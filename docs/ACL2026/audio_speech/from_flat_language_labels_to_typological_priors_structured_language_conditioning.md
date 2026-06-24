@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation
 description: >-
-  [ACL 2026][Audio & Speech][Dual-CTC] This paper introduces S2ST-Omni 2, which replaces flat language labels in multilingual speech translation with structured typological priors. These priors are injected across three levels: representation, acoustic modulation, and LLM decoding. The approach achieves improvements in BLEU, ASR-BLEU, COMET, and BLASER 2.0
+  [ACL2026 Findings][Audio & Speech][Speech-to-Speech Translation] This paper introduces S2ST-Omni 2, which replaces flat language labels in multilingual speech translation with structured typological priors. These priors are injected across three levels: representation, acoustic modulation, and LLM decoding. The approach achieves improvements in BLEU, ASR-BLEU, COMET, and BLASER 2.0 on CVSS-C, with significant gains for low-resource languages and those with high typological di…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Dual-CTC
+  - "ACL2026 Findings"
+  - "Audio & Speech"
+  - "Speech-to-Speech Translation"
+  - "Typological Priors"
+  - "Multilingual Conditioning"
+  - "Dual-CTC"
+  - "Low-resource Adaptation"
 date: 2026-05-08
-content_hash: 867fdfb068929078
+content_hash: 12d39ad690bbf745
 ---
+
 # From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation
 
 **Conference**: ACL2026 Findings  
@@ -130,15 +135,14 @@ Training utilized Whisper-Large-V3 and Qwen3-4B with an effective batch size of 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](../../ICLR2026/audio_speech/scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
 - [\[ACL 2025\] Leveraging Unit Language Guidance to Advance Speech Modeling in Textless Speech-to-Speech Translation](../../ACL2025/audio_speech/leveraging_unit_language_guidance_to_advance_speech_modeling_in_textless_speech-.md)
+- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](../../ICLR2026/audio_speech/uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
-- [\[ACL 2026\] Do We Need Distinct Representations for Every Speech Token? Unveiling and Exploiting Redundancy in Large Speech Language Models](do_we_need_distinct_representations_for_every_speech_token_unveiling_and_exploit.md)
 
 </div>
 

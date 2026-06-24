@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] Addressing the cross-domain conflict in multi-domain RL training for LLMs (e.g., "improving math degrades writing"), CGPO draws on the idea of Newton's method using curvature to precondition gradients. Instead of explicitly computing the Hessian, CGPO splits a batch into domain-specific sub-batches and **performs seria
+  [ICLR2026][Reinforcement Learning][Multi-domain RL] Addressing the cross-domain conflict in multi-domain RL training for LLMs (e.g., "improving math degrades writing"), CGPO draws on the idea of Newton's method using curvature to precondition gradients. Instead of explicitly computing the Hessian, CGPO splits a batch into domain-specific sub-batches and **performs serial updates in a random order**. Domains updated later naturally perceive the curvature perturbations left by…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Multi-domain RL"
+  - "Cross-domain conflict"
+  - "Curvature guidance"
+  - "Gradient alignment"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 5f86784a610ac1a0
+content_hash: 4aa83bdeb3836818
 ---
+
 # Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization
 
 **Conference**: ICLR2026  

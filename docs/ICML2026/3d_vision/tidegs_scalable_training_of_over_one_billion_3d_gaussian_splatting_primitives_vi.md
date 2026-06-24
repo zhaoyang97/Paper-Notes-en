@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TideGS: Scalable Training of Over One Billion 3D Gaussian Splatting Primitives via Out-of-Core Optimization
 description: >-
-  [ICML 2026][3D Vision][3DGS] TideGS migrates the 3DGS parameter table to an SSD, virtualizing it into "blocks" while utilizing GPU VRAM as a cache for the view-frustum visibility working set. Coupled with a three-stage asynchronous pipeline and trajectory-adaptive differential streaming, it pushes the scale of trainable Gaussians from approximatel
+  [ICML 2026 Spotlight][3D Vision][3DGS] TideGS migrates the 3DGS parameter table to an SSD, virtualizing it into "blocks" while utilizing GPU VRAM as a cache for the view-frustum visibility working set. Coupled with a three-stage asynchronous pipeline and trajectory-adaptive differential streaming, it pushes the scale of trainable Gaussians from approximately 11M (native 3DGS) or 105M (CLM) to **over 1 billion** on a single 24 GB GPU, achieving large-scene reconstruction quali…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - 3DGS
-  - out-of-core
+  - "ICML 2026 Spotlight"
+  - "3D Vision"
+  - "3DGS"
+  - "out-of-core"
+  - "SSD-CPU-GPU tiered storage"
+  - "visibility sparsity"
+  - "trajectory differential streaming"
 date: 2026-05-08
-content_hash: f936e9aa9a9b8c92
+content_hash: a550b2f177849db4
 ---
+
 # TideGS: Scalable Training of Over One Billion 3D Gaussian Splatting Primitives via Out-of-Core Optimization
 
 **Conference**: ICML 2026 Spotlight  
@@ -153,7 +157,7 @@ Quality alignment (Mip-NeRF 360): TideGS achieves 28.92 dB PSNR vs. Native 29.03
 - [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](../../CVPR2026/3d_vision/off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](../../CVPR2026/3d_vision/scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
 - [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](../../CVPR2026/3d_vision/fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](../../CVPR2026/3d_vision/faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](../../CVPR2026/3d_vision/3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
 
 </div>
 

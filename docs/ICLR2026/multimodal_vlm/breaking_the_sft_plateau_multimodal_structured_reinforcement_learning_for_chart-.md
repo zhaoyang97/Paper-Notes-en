@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][Chart-to-Code] To address the performance plateau of SFT in chart-to-code generation, Multimodal Structured Reinforcement Learning (MSRL) is proposed. By utilizing a dual-layer text+visual reward function and a two-stage RL strategy, it achieves a 6.2% and 9.9% improvement in high-level metrics on ChartMimic and ReachQA respectively,
+  [ICLR 2026][Multimodal VLM][Chart-to-Code] To address the performance plateau of SFT in chart-to-code generation, Multimodal Structured Reinforcement Learning (MSRL) is proposed. By utilizing a dual-layer text+visual reward function and a two-stage RL strategy, it achieves a 6.2% and 9.9% improvement in high-level metrics on ChartMimic and ReachQA respectively, reaching open-source SOTA and matching GPT-4o.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Chart-to-Code
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Chart-to-Code"
+  - "Reinforcement Learning"
+  - "SFT Plateau"
+  - "Multi-granularity Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 95870f90eadda3d4
+content_hash: daf931a99479a35d
 ---
+
 # Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation
 
 **Conference**: ICLR 2026  
@@ -153,10 +156,10 @@ Reward strategy comparison: Pure visual RL performs best but requires 1344 GPU h
 ## Related Papers
 
 - [\[CVPR 2026\] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction](../../CVPR2026/multimodal_vlm/mm-recoder_advancing_chart-to-code_generation_with_reinforcement_learning_and_se.md)
+- [\[ACL 2026\] CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution](../../ACL2026/multimodal_vlm/chartide_data-centric_chart-to-code_generation_via_tri-perspective_tuning_and_in.md)
+- [\[ACL 2026\] Aligned Multi-View Scripts for Universal Chart-to-Code Generation](../../ACL2026/multimodal_vlm/aligned_multi-view_scripts_for_universal_chart-to-code_generation.md)
 - [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
 - [\[ICLR 2026\] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning](guirlvg_incentivize_gui_visual_grounding_via_empirical_exploration_on_reinforcem.md)
-- [\[ICLR 2026\] VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models](viscodex_unified_multimodal_code_generation_via_merging_vision_and_coding_models.md)
-- [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Safe and Stable Control via Lyapunov-Guided Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes S²Diff, a model-based diffusion planning framework that leverages Control Lyapunov Barrier Functions (CLBF) to guide diffusion sampling for generatin…
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes S²Diff, a model-based diffusion planning framework that leverages Control Lyapunov Barrier Functions (CLBF) to guide diffusion sampling for generating trajectory-level control policies. Without requiring control-affine assumptions or quadratic programming, S²Diff simultaneously guarantees safety and stability on a variety of nonlinear dynamical systems, achieving an average safety rate of 98.75%.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "certificate functions"
   - "Almost Lyapunov theory"
 date: 2026-05-08
-content_hash: 56aae182e2776175
+content_hash: 9c0c038d8c63b4e4
 ---
 
 # Safe and Stable Control via Lyapunov-Guided Diffusion Models
@@ -141,10 +141,10 @@ Comparison with rCLBF-QP, MPC, and MBD on 8 nonlinear dynamical systems (includi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](../../CVPR2026/image_generation/stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
 - [\[NeurIPS 2025\] Training-Free Constrained Generation with Stable Diffusion Models](training-free_constrained_generation_with_stable_diffusion_models.md)
 - [\[NeurIPS 2025\] One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting](one_stone_with_two_birds_a_null-text-null_frequency-aware_diffusion_models_for_t.md)
-- [\[NeurIPS 2025\] Tree-Guided Diffusion Planner](tree-guided_diffusion_planner.md)
-- [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](../../ICLR2026/image_generation/safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
+- [\[CVPR 2025\] Enhancing Creative Generation on Stable Diffusion-based Models](../../CVPR2025/image_generation/enhancing_creative_generation_on_stable_diffusion-based_models.md)
 
 </div>
 

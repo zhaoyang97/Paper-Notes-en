@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] To Sink or Not to Sink: Visual Information Pathways in Large Vision-Language Models
 description: >-
-  [ICLR 2026][Interpretability][ViT attention sink] This paper discovers that ViT sink tokens in Large Vision-Language Models (LVLMs) are not merely noise but propagate into the LLM, carrying coarse-grained high-level visual semantics. It proposes a training-free "sink-to-the-front" strategy and a trainable DIYSink framework to enable models to better utilize sink and n
+  [ICLR2026][Interpretability][ViT attention sink] This paper discovers that ViT sink tokens in Large Vision-Language Models (LVLMs) are not merely noise but propagate into the LLM, carrying coarse-grained high-level visual semantics. It proposes a training-free "sink-to-the-front" strategy and a trainable DIYSink framework to enable models to better utilize sink and non-sink visual information based on task requirements.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - ViT attention sink
-  - DIYSink
+  - "ICLR2026"
+  - "Interpretability"
+  - "ViT attention sink"
+  - "LVLM information flow"
+  - "visual token interpretation"
+  - "dynamic token selection"
+  - "DIYSink"
 date: 2026-05-08
-content_hash: dbc46215aecd8597
+content_hash: 681f56b2cbb3f921
 ---
+
 # To Sink or Not to Sink: Visual Information Pathways in Large Vision-Language Models
 
 **Conference**: ICLR2026  

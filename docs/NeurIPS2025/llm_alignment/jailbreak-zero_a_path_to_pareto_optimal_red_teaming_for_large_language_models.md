@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][Red teaming] This paper proposes a policy-based (rather than example-based) evaluation framework for LLM red teaming…
+  [NeurIPS 2025][LLM Alignment][Red teaming] This paper proposes a policy-based (rather than example-based) evaluation framework for LLM red teaming, along with the Jailbreak-Zero method. By employing a simple large-scale parallel sampling strategy—requiring no manually crafted jailbreak tactics—the method achieves attack success rates of 99.5% on GPT-4o and 96.0% on Claude 3.5 on HarmBench, while attaining Pareto optimality across three objectives—coverage, diversity…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "policy-based evaluation"
   - "automated red teaming"
 date: 2026-05-08
-content_hash: 40f76f90bf6204c4
+content_hash: 1fec6ecb1271e6ba
 ---
 
 # Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models
@@ -192,11 +192,11 @@ The choice of attack LLM has a substantial impact, with Gemma 3 performing best;
 
 ## Related Papers
 
+- [\[ACL 2025\] M2S: Multi-turn to Single-turn jailbreak in Red Teaming for LLMs](../../ACL2025/llm_alignment/m2s_multiturn_to_singleturn_jailbreak_in.md)
 - [\[NeurIPS 2025\] PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors](polyjuice_makes_it_real_black-box_universal_red_teaming_for_synthetic_image_dete.md)
+- [\[ACL 2025\] SQL Injection Jailbreak: A Structural Disaster of Large Language Models](../../ACL2025/llm_alignment/sql_injection_jailbreak_a_structural_disaster_of_large_language_models.md)
+- [\[ACL 2025\] Constitutional Classifiers: Defending Against Universal Jailbreaks Across Thousands of Hours of Red Teaming](../../ACL2025/llm_alignment/constitutional_classifiers_defending_against_universal_jailbreaks_across_thousan.md)
 - [\[NeurIPS 2025\] Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency](adjacent_words_divergent_intents_jailbreaking_large_language_models_via_task_con.md)
-- [\[NeurIPS 2025\] Alignment of Large Language Models with Constrained Learning](alignment_of_large_language_models_with_constrained_learning.md)
-- [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](../../ICLR2026/llm_alignment/capability-based_scaling_trends_for_llm-based_red-teaming.md)
-- [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
 
 </div>
 

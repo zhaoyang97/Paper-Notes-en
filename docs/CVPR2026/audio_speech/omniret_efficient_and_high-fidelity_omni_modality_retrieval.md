@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval
 description: >-
-  [CVPR 2026][Audio & Speech][omni-modal retrieval] Ours proposes OmniRet, the first unified retrieval model supporting text-vision-audio tri-modal composed queries. It enhances computational efficiency via a Shared Media Resampler and introduces Attention Sliced Wasserstein Pooling (ASWP) to preserve fine-grained information, achieving leading results on 12 out of 13 r
+  [CVPR 2026][Audio & Speech][omni-modal retrieval] Ours proposes OmniRet, the first unified retrieval model supporting text-vision-audio tri-modal composed queries. It enhances computational efficiency via a Shared Media Resampler and introduces Attention Sliced Wasserstein Pooling (ASWP) to preserve fine-grained information, achieving leading results on 12 out of 13 retrieval tasks.
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - omni-modal retrieval
-  - multimodal embedding
-  - Sliced Wasserstein
-  - composed query
-  - audio retrieval
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "omni-modal retrieval"
+  - "multimodal embedding"
+  - "Sliced Wasserstein"
+  - "composed query"
+  - "audio retrieval"
 date: 2026-05-08
-content_hash: 8abd60f7a317b344
+content_hash: d3bd95c9a6e7530a
 ---
+
 # OmniRet: Efficient and High-Fidelity Omni Modality Retrieval
 
 **Conference**: CVPR 2026  
@@ -155,15 +156,15 @@ Ours significantly leads in composed audio retrieval (A,T→A) and is competitiv
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICCV 2025\] Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition](../../ICCV2025/audio_speech/lyra_an_efficient_and_speechcentric_framework_for_omnicognit.md)
 - [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](../../ACL2026/audio_speech/omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
+- [\[ICCV 2025\] Lyra: An Efficient and Speech-Centric Framework for Omni-Cognition](../../ICCV2025/audio_speech/lyra_an_efficient_and_speechcentric_framework_for_omnicognit.md)
 - [\[CVPR 2026\] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding](omni-mmsi_toward_identity-attributed_social_interaction_understanding.md)
 - [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/audio_speech/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
-- [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
+- [\[AAAI 2026\] SpikCommander: A High-Performance Spiking Transformer with Multi-View Learning for Efficient Speech Command Recognition](../../AAAI2026/audio_speech/spikcommander_a_high-performance_spiking_transformer_with_multi-view_learning_fo.md)
 
 </div>
 

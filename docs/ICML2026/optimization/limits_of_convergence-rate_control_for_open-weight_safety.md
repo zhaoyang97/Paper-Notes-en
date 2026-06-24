@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Limits of Convergence-Rate Control for Open-Weight Safety
 description: >-
-  [ICML 2026][Optimization & Theory][open-weight safety] The authors formalize "open-weight safety" as "how to delay the convergence of malicious fine-tuning," proving that the maximum singular value of the Hessian is lower-bounded by the weight spectrum. They design the SpecDef algorithm to strictly decelerate first/second-order optimization but simultaneously prove that an
+  [ICML 2026][Optimization][open-weight safety] The authors formalize "open-weight safety" as "how to delay the convergence of malicious fine-tuning," proving that the maximum singular value of the Hessian is lower-bounded by the weight spectrum. They design the SpecDef algorithm to strictly decelerate first/second-order optimization but simultaneously prove that any such convergence-rate control method can be bypassed by an adversary at the cost of a "linear increase in model…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - open-weight safety
-  - convergence rate
-  - spectral reparameterization
-  - tamper resistance
+  - "ICML 2026"
+  - "Optimization"
+  - "open-weight safety"
+  - "convergence rate"
+  - "Hessian spectrum"
+  - "spectral reparameterization"
+  - "tamper resistance"
 date: 2026-05-08
-content_hash: 89afeab024fd1d89
+content_hash: 6dc54dbd9d7c048e
 ---
+
 # Limits of Convergence-Rate Control for Open-Weight Safety
 
 **Conference**: ICML 2026  
@@ -147,10 +149,10 @@ SpecDef itself requires no training and is a one-time algebraic operation. The p
 ## Related Papers
 
 - [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](on_the_convergence_rate_of_lora_gradient_descent.md)
-- [\[ICML 2026\] Sign Lock-In: Randomly Initialized Weight Signs Persist and Bottleneck Sub-Bit Model Compression](sign_lock-in_randomly_initialized_weight_signs_persist_and_bottleneck_sub-bit_mo.md)
-- [\[ICML 2026\] Towards Understanding Adam Convergence on Highly Degenerate Polynomials](towards_understanding_adam_convergence_on_highly_degenerate_polynomials.md)
-- [\[CVPR 2026\] Learning to Learn Weight Generation via Local Consistency Diffusion](../../CVPR2026/optimization/learning_to_learn_weight_generation_via_local_consistency_diffusion.md)
-- [\[ICML 2026\] Balanced LoRA: Removing Parameter Invariance to Accelerate Convergence](balanced_lora_removing_parameter_invariance_to_accelerate_convergence.md)
+- [\[ICLR 2026\] Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice](../../ICLR2026/optimization/weight_decay_may_matter_more_than_µp_for_learning_rate_transfer_in_practice.md)
+- [\[ICLR 2026\] Multilevel Control Functional](../../ICLR2026/optimization/multilevel_control_functional.md)
+- [\[ICLR 2026\] Cautious Weight Decay](../../ICLR2026/optimization/cautious_weight_decay.md)
+- [\[ICML 2026\] Improved Convergence Analysis of Topology Dependence in Decentralized SGD](improved_convergence_analysis_of_topology_dependence_in_decentralized_sgd.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PRO-VPT: Distribution-Adaptive Visual Prompt Tuning via Prompt Relocation
 description: >-
-  [ICCV 2025][Multimodal VLM][Visual prompt tuning] This paper proposes PRO-VPT, a framework that co-designs Adaptive Distribution Optimization (ADO) with Visual Prompt Tuning (VPT) via nested optimization. By iteratively…
+  [ICCV 2025][Multimodal VLM][Visual prompt tuning] This paper proposes PRO-VPT, a framework that co-designs Adaptive Distribution Optimization (ADO) with Visual Prompt Tuning (VPT) via nested optimization. By iteratively relocating prompts through idleness score-based pruning and a reinforcement learning-based allocation strategy, PRO-VPT achieves gains of 1.6 pp and 2.0 pp over VPT on VTAB-1k and FGVC, respectively.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "prompt relocation"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: 9c20fbad495e4750
+content_hash: 30a0b95568a82980
 ---
 
 # PRO-VPT: Distribution-Adaptive Visual Prompt Tuning via Prompt Relocation

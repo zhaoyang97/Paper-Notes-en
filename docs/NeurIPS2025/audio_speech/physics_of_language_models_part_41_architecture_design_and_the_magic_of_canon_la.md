@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers
 description: >-
-  [NeurIPS 2025][Audio & Speech][Canon layer] This work systematically compares language model architectures via controlled synthetic pretraining tasks…
+  [NeurIPS 2025][Audio & Speech][Canon layer] This work systematically compares language model architectures via controlled synthetic pretraining tasks, and finds that the Canon layer—a lightweight component performing weighted summation over neighboring tokens—significantly enhances core capabilities including reasoning depth (2–4×), reasoning breadth, and knowledge capacity, enabling NoPE to match RoPE and GLA to rival Mamba2/GDN.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "architecture comparison"
   - "linear attention"
 date: 2026-05-08
-content_hash: 6c1b25e5496cb8fd
+content_hash: 501263e71e7c12f5
 ---
 
 # Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers
@@ -158,11 +158,11 @@ Canon layer component ablation (Figure 10):
 
 ## Related Papers
 
+- [\[ICML 2025\] ETTA: Elucidating the Design Space of Text-to-Audio Models](../../ICML2025/audio_speech/etta_elucidating_the_design_space_of_text-to-audio_models.md)
 - [\[NeurIPS 2025\] MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation](megadance_mixture-of-experts_architecture_for_genre-aware_3d_dance_generation.md)
 - [\[NeurIPS 2025\] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound](audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o.md)
 - [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
-- [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
-- [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](../../ACL2026/audio_speech/generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](../../CVPR2026/audio_speech/pavas_physics-aware_video-to-audio_synthesis.md)
 
 </div>
 

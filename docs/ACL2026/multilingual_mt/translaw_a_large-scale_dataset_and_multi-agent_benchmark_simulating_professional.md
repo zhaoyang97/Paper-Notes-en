@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law
 description: >-
-  [ACL 2026][Multilingual & Translation][Multi-Agent] This paper constructs the first sentence-level parallel dataset, HKCFA Judgement 97-22, specifically for English-Chinese translation of Hong Kong Court of Final Appeal judgements. It proposes the TransLaw multi-agent system, which simulates professional legal translation workflows. TransLaw significantly outperforms si
+  [ACL2026][Multilingual & Machine Translation][Legal Translation] This paper constructs the first sentence-level parallel dataset, HKCFA Judgement 97-22, specifically for English-Chinese translation of Hong Kong Court of Final Appeal judgements. It proposes the TransLaw multi-agent system, which simulates professional legal translation workflows. TransLaw significantly outperforms single-agent benchmarks in automatic metrics, professional legal translator evaluations…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Multi-Agent
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Legal Translation"
+  - "Hong Kong Case Law"
+  - "Multi-agent"
+  - "RAG Terminology Retrieval"
+  - "Human Evaluation"
 date: 2026-05-08
-content_hash: 204c4a07d426dc1f
+content_hash: 00711b8ff7448593
 ---
+
 # TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law
 
 **Conference**: ACL2026  

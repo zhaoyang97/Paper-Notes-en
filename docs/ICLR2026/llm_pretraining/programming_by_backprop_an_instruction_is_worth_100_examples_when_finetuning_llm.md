@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Programming by Backprop: An Instruction is Worth 100 Examples when Finetuning LLMs
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] The paper proposes Programming by Backprop (PBB)—a two-stage training curriculum that allows LLMs to "compile" corresponding executable behaviors into weights using only "declarative instructions" (such as a Python source code snippet or a set of grammar rules) in the training data, without providing execution examples
+  [ICLR 2026][LLM Pretraining][Declarative knowledge] The paper proposes Programming by Backprop (PBB)—a two-stage training curriculum that allows LLMs to "compile" corresponding executable behaviors into weights using only "declarative instructions" (such as a Python source code snippet or a set of grammar rules) in the training data, without providing execution examples. Experiments demonstrate that a single instruction can be worth up to 100 execution samples…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Declarative knowledge"
+  - "procedural knowledge"
+  - "training curriculum"
+  - "sample efficiency"
+  - "data safety"
 date: 2026-05-08
-content_hash: ae01497b0fb1e712
+content_hash: c3ae1ffda0737d78
 ---
+
 # Programming by Backprop: An Instruction is Worth 100 Examples when Finetuning LLMs
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ The authors verify PBB on three synthetic datasets across two domains and one re
 - [\[ICLR 2026\] Not All Documents Are What You Need for Extracting Instruction Tuning Data](not_all_documents_are_what_you_need_for_extracting_instruction_tuning_data.md)
 - [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
 - [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
-- [\[ICLR 2026\] StochasTok: Improving Fine-Grained Subword Understanding in LLMs](stochastok_improving_fine-grained_subword_understanding_in_llms.md)
 - [\[ICLR 2026\] GneissWeb: Preparing High Quality Data for LLMs at Scale](gneissweb_preparing_high_quality_data_for_llms_at_scale.md)
+- [\[ICLR 2026\] StochasTok: Improving Fine-Grained Subword Understanding in LLMs](stochastok_improving_fine-grained_subword_understanding_in_llms.md)
 
 </div>
 

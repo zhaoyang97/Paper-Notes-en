@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation
 description: >-
-  [ICCV 2025][Audio & Speech][Diffusion Models] This paper proposes SaFa (Swap Forward), a modality-agnostic and efficient method that replaces the averaging operation in conventional joint diffusion with two latent swap o…
+  [ICCV 2025][Audio & Speech][Diffusion Models] This paper proposes SaFa (Swap Forward), a modality-agnostic and efficient method that replaces the averaging operation in conventional joint diffusion with two latent swap operators—Self-Loop Latent Swap and Reference-Guided Latent Swap—to address spectrum aliasing and preserve cross-view consistency, achieving significant improvements over existing methods in both long audio and panoramic image generation.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Joint Diffusion"
   - "Latent Swap"
 date: 2026-05-08
-content_hash: ff3c867ebc48cd59
+content_hash: 7f2745a37cde9216
 ---
 
 # Latent Swap Joint Diffusion for 2D Long-Form Latent Generation
@@ -135,10 +135,10 @@ SaFa is approximately 12.5× faster than SyncDiffusion while substantially outpe
 ## Related Papers
 
 - [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](../../NeurIPS2025/audio_speech/mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
+- [\[CVPR 2025\] Enhancing Dance-to-Music Generation via Negative Conditioning Latent Diffusion Model](../../CVPR2025/audio_speech/enhancing_dance-to-music_generation_via_negative_conditioning_latent_diffusion_m.md)
+- [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
 - [\[NeurIPS 2025\] Latent Space Factorization in LoRA](../../NeurIPS2025/audio_speech/latent_space_factorization_in_lora.md)
 - [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](../../NeurIPS2025/audio_speech/multi-head_temporal_latent_attention.md)
-- [\[ACL 2026\] Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios](../../ACL2026/audio_speech/comprehensive_benchmarking_of_long-form_speech_generation_in_diverse_scenarios.md)
-- [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](../../ACL2026/audio_speech/planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
 
 </div>
 

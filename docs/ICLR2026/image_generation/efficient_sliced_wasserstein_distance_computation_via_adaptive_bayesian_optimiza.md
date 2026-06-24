@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Efficient Sliced Wasserstein Distance Computation via Adaptive Bayesian Optimization
 description: >-
-  [ICLR 2026][Image Generation][Sliced Wasserstein] This paper transforms the "projection direction selection" in Sliced Wasserstein distance from fixed low-discrepancy sampling into a learnable Bayesian Optimization process. It proposes four plug-and-play strategies (BOSW/RBOSW/ABOSW/ARBOSW), achieving or approaching SOTA in multiple SW-in-the-loop tasks without modify
+  [ICLR 2026][Image Generation][Sliced Wasserstein] This paper transforms the "projection direction selection" in Sliced Wasserstein distance from fixed low-discrepancy sampling into a learnable Bayesian Optimization process. It proposes four plug-and-play strategies (BOSW/RBOSW/ABOSW/ARBOSW), achieving or approaching SOTA in multiple SW-in-the-loop tasks without modifying downstream losses or gradient formulations.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Sliced Wasserstein
-  - Bayesian Optimization
-  - QSW
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Sliced Wasserstein"
+  - "Bayesian Optimization"
+  - "QSW"
+  - "direction sampling"
+  - "optimal transport"
 date: 2026-05-08
-content_hash: c98e5a80b08db24f
+content_hash: 8d7424698db474ef
 ---
+
 # Efficient Sliced Wasserstein Distance Computation via Adaptive Bayesian Optimization
 
 **Conference**: ICLR 2026  
@@ -172,15 +175,17 @@ ABOSW provides the lowest reconstruction error across multiple checkpoints, sugg
 
 <div class="related-papers" markdown="1">
 
-| Paper | Relationship | Key Difference |
-|-------|--------------|----------------|
-| QSW (Nguyen et al., 2024) | Baseline | Uses fixed low-discrepancy sequences vs. adaptive BO |
-| Max-SW (Deshpande et al., 2019) | Related | Optimization for the *worst* direction vs. average with BO |
+## Related Papers
+
+- [\[ICML 2025\] Tree-Sliced Wasserstein Distance: A Geometric Perspective](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_a_geometric_perspective.md)
+- [\[ICML 2025\] Tree-Sliced Wasserstein Distance with Nonlinear Projection](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_with_nonlinear_projection.md)
+- [\[ICLR 2026\] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing](regione_adaptive_region-aware_generation_for_efficient_image_editing.md)
+- [\[ICLR 2026\] Learning a Distance Measure from the Information-Estimation Geometry of Data](learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md)
+- [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2025\] Tree-Sliced Wasserstein Distance: A Geometric Perspective](../../ICML2025/image_generation/tree-sliced_wasserstein_distance_a_geometric_perspective.md)

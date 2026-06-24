@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prune-then-Quantize or Quantize-then-Prune? Understanding the Impact of Compression Order in Joint Model Compression
 description: >-
-  [ICLR 2026][Model Compression][Quantization] When combining pruning and quantization into a single pipeline, the order of execution significantly impacts final accuracy. This paper formalizes the long-neglected problem of "compression order optimization," proposes the "Progressive Intensity Hypothesis" (weaker perturbations first, stronger perturbations later), a
+  [ICLR 2026][Model Compression][Joint Compression] When combining pruning and quantization into a single pipeline, the order of execution significantly impacts final accuracy. This paper formalizes the long-neglected problem of "compression order optimization," proposes the "Progressive Intensity Hypothesis" (weaker perturbations first, stronger perturbations later), and provides theoretical proof alongside extensive empirical support across language and vision models.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Quantization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Joint Compression"
+  - "Compression Order"
+  - "Pruning"
+  - "Quantization"
+  - "Progressive Intensity Hypothesis"
 date: 2026-05-08
-content_hash: 3f3eda03a2735198
+content_hash: 2fd58adc1e8210a3
 ---
+
 # Prune-then-Quantize or Quantize-then-Prune? Understanding the Impact of Compression Order in Joint Model Compression
 
 **Conference**: ICLR 2026  

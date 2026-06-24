@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Addressing the performance gap where recurrent LLMs (linear complexity with fixed memory) underperform self-attention LLMs on long-context tasks, this paper proposes Smooth Reading. It transforms the "single-pass reading" of the entire context into an "End-to-End Multi-Round (EMR)" inference paradigm—involving chunk-ba
+  [ICLR 2026][LLM Efficiency][Recurrent LLM] Addressing the performance gap where recurrent LLMs (linear complexity with fixed memory) underperform self-attention LLMs on long-context tasks, this paper proposes Smooth Reading. It transforms the "single-pass reading" of the entire context into an "End-to-End Multi-Round (EMR)" inference paradigm—involving chunk-based processing, summarizing-while-reading, and cross-round hidden state accumulation. Furthermore…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Recurrent LLM"
+  - "Long Context"
+  - "Multi-round Inference"
+  - "Architecture-Inference Co-design"
+  - "Sliding Window Attention"
 date: 2026-05-08
-content_hash: ee43192919ed539f
+content_hash: d16b0c0b23fcf336
 ---
+
 # Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding
 
 **Conference**: ICLR 2026  
@@ -154,10 +160,10 @@ Efficiency: With $W$=4096, increasing $C$ from 512 to 4096 reduced total time fr
 ## Related Papers
 
 - [\[ICLR 2026\] DiSRouter: Distributed Self-Routing for LLM Selections](disrouter_distributed_self-routing_for_llm_selections.md)
-- [\[ICLR 2026\] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study](cartridges_lightweight_and_general-purpose_long_context_representations_via_self.md)
+- [\[ICLR 2026\] When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework](when_does_divide_and_conquer_work_for_long_context_llm_a_noise_decomposition_fra.md)
 - [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)
+- [\[ICLR 2026\] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study](cartridges_lightweight_and_general-purpose_long_context_representations_via_self.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
 
 </div>
 

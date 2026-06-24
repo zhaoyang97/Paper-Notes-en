@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Music Flamingo: Scaling Music Understanding in Audio Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][Large Audio-Language Model] By constructing a 5-million-scale multi-cultural, full-length, hierarchically-annotated music dataset (MF-Skills + MF-Think) and applying a "SFT → CoT Cold Start → GRPO Reinforcement Learning" training recipe onto an enhanced Audio Flamingo 3 backbone, Music Flamingo elevates audio language models from "identifying sur
+  [ICLR 2026][Audio & Speech][Large Audio-Language Model] By constructing a 5-million-scale multi-cultural, full-length, hierarchically-annotated music dataset (MF-Skills + MF-Think) and applying a "SFT → CoT Cold Start → GRPO Reinforcement Learning" training recipe onto an enhanced Audio Flamingo 3 backbone, Music Flamingo elevates audio language models from "identifying surface attributes" to "performing hierarchical, theory-aware music reasoning like a trained musician…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Large Audio-Language Model
-  - Music Understanding
-  - Chain-of-Thought
-  - GRPO
-  - MF-Skills
-  - MF-Think
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Large Audio-Language Model"
+  - "Music Understanding"
+  - "Chain-of-Thought"
+  - "GRPO"
+  - "MF-Skills"
+  - "MF-Think"
 date: 2026-05-08
-content_hash: d75020e0de8b2a58
+content_hash: 2d8b2e3f3642f6b1
 ---
+
 # Music Flamingo: Scaling Music Understanding in Audio Language Models
 
 **Conference**: ICLR 2026  
@@ -137,10 +138,10 @@ Advantages $A_i$ are normalized within the group: $A_i=\frac{r_i-\text{mean}(\{r
 ## Related Papers
 
 - [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](yue_scaling_open_foundation_models_for_long-form_music_generation.md)
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
 - [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
 - [\[ICLR 2026\] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models](measuring_audios_impact_on_correctness_audio-contribution-aware_post-training_of.md)
 - [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
-- [\[ICLR 2026\] Discovering and Steering Interpretable Concepts in Large Generative Music Models](discovering_and_steering_interpretable_concepts_in_large_generative_music_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models
 description: >-
-  [CVPR 2026][Image Generation][benchmark] This paper introduces MICON-Bench, a multi-image context generation benchmark covering 6 tasks (1043 cases) paired with an MLLM-driven Evaluation-by-Checkpoint automated framework. Simultaneously, it proposes DAR (Dynamic Attention Rebalancing), a training-free mechanism that enhances multi-image consistency and genera
+  [CVPR 2026][Image Generation][Multi-image Context Generation] This paper introduces MICON-Bench, a multi-image context generation benchmark covering 6 tasks (1043 cases) paired with an MLLM-driven Evaluation-by-Checkpoint automated framework. Simultaneously, it proposes DAR (Dynamic Attention Rebalancing), a training-free mechanism that enhances multi-image consistency and generation quality in UMMs by dynamically adjusting inference-time attention weights.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - benchmark
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-image Context Generation"
+  - "Unified Multimodal Models"
+  - "benchmark"
+  - "Dynamic Attention Rebalancing"
+  - "Checkpoint Evaluation"
 date: 2026-05-08
-content_hash: 10bd17db8c1cc6d7
+content_hash: d40edc1754d9a2f9
 ---
+
 # MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -127,9 +132,9 @@ DAR addresses the diagnostic finding that UMMs pay indiscriminate attention to i
 
 - [\[CVPR 2026\] SCIEval: Evaluating and Benchmarking the Faithfulness of Scientific Image Generation and Interpretation with Large Multimodal Models](scieval_evaluating_and_benchmarking_the_faithfulness_of_scientific_image_generat.md)
 - [\[CVPR 2026\] Omni IIE Bench: Benchmarking the Practical Capabilities of Image Editing Models](omni_iie_bench_benchmarking_the_practical_capabilities_of_image_editing_models.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
-- [\[CVPR 2026\] Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception](enhancing_image_aesthetics_with_dualconditioned_di.md)
-- [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](consistcompose_multimodal_layout_control.md)
+- [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT
 description: >-
-  [ICLR 2026][Reinforcement Learning][cold-start SFT] This paper reveals that the "optimal SFT checkpoint" and the "best RL starting point" are inconsistent during the RL cold-start phase—models lose RL potential due to **distribution forgetting** even while evaluation scores are still rising. It proposes using diversity metrics (Entropy / self-BLEU) for early stopping an
+  [ICLR 2026][Reinforcement Learning][cold-start SFT] This paper reveals that the "optimal SFT checkpoint" and the "best RL starting point" are inconsistent during the RL cold-start phase—models lose RL potential due to **distribution forgetting** even while evaluation scores are still rising. It proposes using diversity metrics (Entropy / self-BLEU) for early stopping and designs an adaptive weighted loss (AESL) at the token and sub-sequence levels to balance new pattern learn…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - cold-start SFT
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "cold-start SFT"
+  - "RLVR"
+  - "distribution forgetting"
+  - "diversity early stopping"
+  - "GRPO"
+  - "mathematical reasoning"
 date: 2026-05-08
-content_hash: 36b958cbe087a7e6
+content_hash: 6d82a09273ae8a72
 ---
+
 # Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT
 
 **Conference**: ICLR 2026  

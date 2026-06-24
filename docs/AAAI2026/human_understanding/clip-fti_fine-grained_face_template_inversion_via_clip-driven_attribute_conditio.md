@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning
 description: >-
-  [AAAI 2026][Human Understanding][Face Template Inversion] This paper presents the first approach to leverage CLIP-extracted fine-grained facial semantic attribute embeddings for Face Template Inversion (FTI). A cross-mod…
+  [AAAI 2026][Human Understanding][Face Template Inversion] This paper presents the first approach to leverage CLIP-extracted fine-grained facial semantic attribute embeddings for Face Template Inversion (FTI). A cross-modal feature interaction network fuses leaked templates with attribute embeddings and projects them into the StyleGAN latent space, synthesizing identity-consistent face images with richer attribute details. The method surpasses state-of-the-art in recognition a…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Adversarial Attack"
   - "Cross-Model Transferability"
 date: 2026-05-08
-content_hash: bfac3480db57cc40
+content_hash: 1523f65612cad68a
 ---
 
 # CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning
@@ -152,11 +152,11 @@ Optimized with Adam (lr=0.1) + StepLR on a single RTX 3090; StyleGAN3 generates 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection](../../NeurIPS2025/human_understanding/part-aware_bottom-up_group_reasoning_for_fine-grained_social_interaction_detecti.md)
+- [\[CVPR 2026\] VRCLIP: Multimodal Canonical Correlation Alignment for CLIP-Driven Vision-Radio Person Re-Identification](../../CVPR2026/human_understanding/vrclip_multimodal_canonical_correlation_alignment_for_clip-driven_vision-radio_p.md)
+- [\[ECCV 2024\] TF-FAS: Twofold-Element Fine-Grained Semantic Guidance for Generalizable Face Anti-Spoofing](../../ECCV2024/human_understanding/tf-fas_twofold-element_fine-grained_semantic_guidance_for_generalizable_face_ant.md)
 - [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](generating_attribute-aware_human_motions_from_textual_prompt.md)
-- [\[ICCV 2025\] IDFace: Face Template Protection for Efficient and Secure Identification](../../ICCV2025/human_understanding/idface_face_template_protection_for_efficient_and_secure_identification.md)
-- [\[AAAI 2026\] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition](new_synthetic_goldmine_hand_joint_angle-driven_emg_data_generation_framework_for.md)
-- [\[AAAI 2026\] AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification](ahan_asymmetric_hierarchical_attention_network_for_identical.md)
+- [\[CVPR 2026\] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](../../CVPR2026/human_understanding/mobind_motion_binding_for_fine-grained_imu-video_pose_alignment.md)
+- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](../../CVPR2026/human_understanding/mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
 
 </div>
 

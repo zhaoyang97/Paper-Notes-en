@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficiency Follows Global-Local Decoupling
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] ConvNeur decouples the tasks of "global reasoning" and "preserving local details" into two independent branches: a convolutional branch dedicated to retaining local textural details, and a compressed "neural memory" branch that aggregates image-level context using a chunked approach with sub-quadratic complexity. A lea
+  [CVPR 2026][Model Compression][Global-Local Decoupling] ConvNeur decouples the tasks of "global reasoning" and "preserving local details" into two independent branches: a convolutional branch dedicated to retaining local textural details, and a compressed "neural memory" branch that aggregates image-level context using a chunked approach with sub-quadratic complexity. A learned gating mechanism allows the global signal to **modulate** rather than overwrite local features. It…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Global-Local Decoupling"
+  - "Neural Memory"
+  - "Chunked Aggregation"
+  - "Gated Modulation"
+  - "Efficient Backbone"
 date: 2026-05-08
-content_hash: 2600992243dda2c2
+content_hash: 45b4aaf52b243c73
 ---
+
 # Efficiency Follows Global-Local Decoupling
 
 **Conference**: CVPR 2026  

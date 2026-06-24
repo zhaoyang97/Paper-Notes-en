@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting
 description: >-
-  [Image Generation] This paper proposes Trans-Adapter, a plug-and-play adapter module that enables diffusion-based image inpainting models to directly process transparent (RGBA) images. It also introduces the LayerBench b…
+  [Image Generation] This paper proposes Trans-Adapter, a plug-and-play adapter module that enables diffusion-based image inpainting models to directly process transparent (RGBA) images. It also introduces the LayerBench benchmark and the Alpha Edge Quality (AEQ) metric.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: fa65d068193cd6bb
+content_hash: 80dd59bfdec1a666
 ---
 
 # Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting
@@ -193,10 +193,10 @@ Key findings:
 ## Related Papers
 
 - [\[ICCV 2025\] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models](loraverse_a_submodular_framework_to_retrieve_diverse_adapters_for_diffusion_mode.md)
+- [\[CVPR 2025\] EasyCraft: A Robust and Efficient Framework for Automatic Avatar Crafting](../../CVPR2025/image_generation/easycraft_a_robust_and_efficient_framework_for_automatic_avatar_crafting.md)
 - [\[ICCV 2025\] FlowTok: Flowing Seamlessly Across Text and Image Tokens](flowtok_flowing_seamlessly_across_text_and_image_tokens.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
-- [\[ICCV 2025\] EEdit: Rethinking the Spatial and Temporal Redundancy for Efficient Image Editing](eedit_rethinking_the_spatial_and_temporal_redundancy_for_efficient_image_editing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] By focusing on weights rather than activations—specifically by performing SVD on the weight difference $\Delta W$ between a fine-tuned model and its base model—the authors find that top singular vectors precisely encode behaviors learned during fine-tuning. This allows for monitoring, steering, and even recovering thes
+  [ICLR 2026][Interpretability][Weight Interpretability] By focusing on weights rather than activations—specifically by performing SVD on the weight difference $\Delta W$ between a fine-tuned model and its base model—the authors find that top singular vectors precisely encode behaviors learned during fine-tuning. This allows for monitoring, steering, and even recovering these behaviors without any fine-tuning data, achieving up to 100% backdoor detection (FPR < 1%) and 95.42% d…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Weight Interpretability"
+  - "Backdoor Detection"
+  - "Unlearning Verification"
+  - "SVD"
+  - "Activation Steering"
 date: 2026-05-08
-content_hash: b5a7d1ce02715d53
+content_hash: 97f94630fd09886d
 ---
+
 # Watch the Weights: Unsupervised Monitoring and Control of Fine-tuned LLMs
 
 **Conference**: ICLR 2026  
@@ -166,8 +172,8 @@ Rather than traditional module-wise ablation, the paper uses a **comparative par
 - [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](gavel_towards_rule-based_safety_through_activation_monitoring.md)
 - [\[ICLR 2026\] Persona Features Control Emergent Misalignment](persona_features_control_emergent_misalignment.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
+- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
 - [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
-- [\[AAAI 2026\] SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs](../../AAAI2026/interpretability/scope_intrinsic_semantic_space_control_for_mitigating_copyright_infringement_in_.md)
 
 </div>
 

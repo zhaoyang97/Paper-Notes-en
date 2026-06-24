@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes the first scene change detection (SCD) method that is simultaneously online, pose-agnostic, label-free, and multi-view consistent. By integrating pixel-level and feature-level change cues into a 3DGS change representation via a self-supervised fusion loss, it surpasses the detection accuracy of all existi
+  [CVPR 2026][3D Vision][Scene Change Detection] Ours proposes the first scene change detection (SCD) method that is simultaneously online, pose-agnostic, label-free, and multi-view consistent. By integrating pixel-level and feature-level change cues into a 3DGS change representation via a self-supervised fusion loss, it surpasses the detection accuracy of all existing offline methods while operating at a real-time rate exceeding 10 FPS.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Change Detection"
+  - "3D Gaussian Splatting"
+  - "Online Inference"
+  - "Self-supervised Fusion"
+  - "Scene Update"
 date: 2026-05-08
-content_hash: 3a1d2c6f4a36c935
+content_hash: fb984af0097ae0bd
 ---
+
 # Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
 
 **Conference**: CVPR 2026  
@@ -168,11 +174,11 @@ Scene representation updates (PASLCD + CL-Splats):
 
 ## Related Papers
 
+- [\[CVPR 2026\] ChronoGS: Disentangling Invariants and Changes in Multi-Period Scenes](chronogs_disentangling_invariants_and_changes_in_multi-period_scenes.md)
 - [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
+- [\[CVPR 2026\] SRGCD: Stability-Driven Region Growth Framework for 3D Change Detection](srgcd_stability-driven_region_growth_framework_for_3d_change_detection.md)
+- [\[CVPR 2026\] SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything](samosaic3d_modular_scene_assembly_for_real-time_3d_segment_anything.md)
+- [\[CVPR 2026\] Real-Time Dynamic Scene Rendering with Controlled Compressibility and Contact Awareness](real-time_dynamic_scene_rendering_with_controlled_compressibility_and_contact_aw.md)
 
 </div>
 

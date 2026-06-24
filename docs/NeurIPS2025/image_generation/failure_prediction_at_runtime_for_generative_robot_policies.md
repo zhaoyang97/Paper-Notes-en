@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Failure Prediction at Runtime for Generative Robot Policies
 description: >-
-  [NeurIPS 2025][Image Generation][Failure Prediction] This paper proposes FIPER, a framework for runtime failure prediction in generative robot policies (diffusion/flow matching). It jointly evaluates an observation-side…
+  [NeurIPS 2025][Image Generation][Failure Prediction] This paper proposes FIPER, a framework for runtime failure prediction in generative robot policies (diffusion/flow matching). It jointly evaluates an observation-side metric RND-OE (OOD detection) and an action-side metric ACE (Action Chunk Entropy) to enable early and accurate failure prediction without any failure data, with statistical guarantees provided via conformal prediction.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Action Chunk Entropy"
   - "Conformal Prediction"
 date: 2026-05-08
-content_hash: 5cb97c69a5123d2a
+content_hash: 01fb4271465f6ec7
 ---
 
 # Failure Prediction at Runtime for Generative Robot Policies
@@ -176,10 +176,10 @@ tags:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
+- [\[ICML 2025\] Video Prediction Policy: A Generalist Robot Policy with Predictive Visual Representations](../../ICML2025/image_generation/video_prediction_policy_a_generalist_robot_policy_with_predictive_visual_represe.md)
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](../../ICLR2026/image_generation/compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
 - [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](real-time_execution_of_action_chunking_flow_policies.md)
-- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
-- [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
+- [\[NeurIPS 2025\] FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges](finegrain_evaluating_failure_modes_of_text-to-image_models_with_vision_language_.md)
 
 </div>
 

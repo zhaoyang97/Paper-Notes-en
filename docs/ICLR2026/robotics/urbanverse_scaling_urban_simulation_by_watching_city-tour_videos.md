@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][real-to-sim] UrbanVerse is a data-driven real-to-sim system that transforms crowdsourced city-tour videos into physically-aware interactive simulation scenes. This system comprises a library of 100K+ annotated 3D assets and an automated scene construction pipeline. It generates 160 high-quality scenes in IsaacSim, where trained PPO
+  [ICLR 2026][Robotics][Urban Simulation] UrbanVerse is a data-driven real-to-sim system that transforms crowdsourced city-tour videos into physically-aware interactive simulation scenes. This system comprises a library of 100K+ annotated 3D assets and an automated scene construction pipeline. It generates 160 high-quality scenes in IsaacSim, where trained PPO navigation policies achieve an 89.7% success rate in zero-shot real-world transfer, completing 337m long-distance tasks…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - real-to-sim
-  - Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Urban Simulation"
+  - "real-to-sim"
+  - "Embodied AI"
+  - "3D Asset Library"
+  - "Navigation Policy"
 date: 2026-05-08
-content_hash: 3cc69ccb1199d106
+content_hash: f81d6498d3bded8b
 ---
+
 # UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos
 
 **Conference**: ICLR 2026  
@@ -161,10 +165,10 @@ Optimized using PPO with an adaptive learning rate of 1e-4, $\gamma=0.99$, GAE $
 ## Related Papers
 
 - [\[CVPR 2025\] CityWalker: Learning Embodied Urban Navigation from Web-Scale Videos](../../CVPR2025/robotics/citywalker_learning_embodied_urban_navigation_from_web-scale_videos.md)
-- [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](../../NeurIPS2025/robotics/spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
-- [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
-- [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
 - [\[ICLR 2026\] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)
+- [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](../../NeurIPS2025/robotics/spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
+- [\[ICLR 2026\] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots](manipulation_as_in_simulation_enabling_accurate_geometry_perception_in_robots.md)
 
 </div>
 

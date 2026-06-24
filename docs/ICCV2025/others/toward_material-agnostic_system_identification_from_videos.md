@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward Material-Agnostic System Identification from Videos
 description: >-
-  [ICCV2025][system identification] This paper proposes MASIV, the first visual system identification framework that requires no predefined material priors. It replaces hand-crafted elastic/plastic equations with a learnab…
+  [ICCV2025][system identification] This paper proposes MASIV, the first visual system identification framework that requires no predefined material priors. It replaces hand-crafted elastic/plastic equations with a learnable neural constitutive model, reconstructs dense continuum particle trajectories to provide temporally rich geometric supervision, and infers the intrinsic dynamic properties of objects from multi-view videos.
 tags:
   - "ICCV2025"
   - "system identification"
@@ -11,7 +11,7 @@ tags:
   - "3D Gaussian splatting"
   - "differentiable simulation"
 date: 2026-05-08
-content_hash: 33384dc14011e9bd
+content_hash: bd147d90ceb9ea81
 ---
 
 # Toward Material-Agnostic System Identification from Videos
@@ -175,11 +175,11 @@ Qualitative analysis shows that sparse supervision can lead to physically implau
 
 ## Related Papers
 
+- [\[ACL 2025\] A Measure of the System Dependence of Automated Metrics](../../ACL2025/others/a_measure_of_the_system_dependence_of_automated_metrics.md)
+- [\[CVPR 2025\] Scene-Agnostic Pose Regression for Visual Localization](../../CVPR2025/others/scene-agnostic_pose_regression_for_visual_localization.md)
 - [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
 - [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](../../NeurIPS2025/others/recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
-- [\[ICML 2026\] Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification](../../ICML2026/others/target-agnostic_calibration_under_distribution_shift_with_frequency-aware_gradie.md)
-- [\[AAAI 2026\] Clinician-in-the-Loop Smart Home System to Detect Urinary Tract Infection Flare-Ups via Uncertainty-Aware Decision Support](../../AAAI2026/others/clinician-in-the-loop_smart_home_system_to_detect_urinary_tract_infection_flare-.md)
-- [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](lacoot_layer_collapse_through_optimal_transport.md)
+- [\[ACL 2025\] GeNRe: A French Gender-Neutral Rewriting System Using Collective Nouns](../../ACL2025/others/genre_a_french_gender-neutral_rewriting_system_using_collective_nouns.md)
 
 </div>
 

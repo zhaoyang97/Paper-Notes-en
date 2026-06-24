@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sparse Additive Model Pruning for Order-Based Causal Structure Learning
 description: >-
-  [AAAI2026][Causal Inference][causal discovery] This paper proposes SARTRE, a framework that employs randomized tree embeddings and group-sparse regression to learn sparse additive models…
+  [AAAI2026][Causal Inference][causal discovery] This paper proposes SARTRE, a framework that employs randomized tree embeddings and group-sparse regression to learn sparse additive models, replacing the hypothesis-testing-based redundant edge pruning in CAM-pruning for order-based causal structure learning. SARTRE achieves significant speedups without sacrificing accuracy.
 tags:
   - "AAAI2026"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "group lasso"
   - "randomized tree embedding"
 date: 2026-05-08
-content_hash: d0473e9a25d9572a
+content_hash: 181a915657eac1b1
 ---
 
 # Sparse Additive Model Pruning for Order-Based Causal Structure Learning
@@ -145,10 +145,10 @@ The combination of **randomized tree embeddings and linear models** represents a
 ## Related Papers
 
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](../../ICLR2026/causal_inference/carl_preserving_causal_structure_in_representation_learning.md)
 - [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
-- [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](../../NeurIPS2025/causal_inference/differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
-- [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
-- [\[ICML 2026\] Investigating Memory in Model-Free RL with POPGym Arcade](../../ICML2026/causal_inference/investigating_memory_in_model-free_rl_with_popgym_arcade.md)
+- [\[ICLR 2026\] Query-Specific Causal Graph Pruning under Tiered Knowledge](../../ICLR2026/causal_inference/query-specific_causal_graph_pruning_under_tiered_knowledge.md)
+- [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](../../ICLR2026/causal_inference/beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
 
 </div>
 

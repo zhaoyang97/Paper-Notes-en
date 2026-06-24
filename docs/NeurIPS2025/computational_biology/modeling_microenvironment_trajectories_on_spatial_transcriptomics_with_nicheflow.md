@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow
 description: >-
-  [NeurIPS 2025][Computational Biology][Spatial Transcriptomics] NicheFlow is a Flow Matching-based generative model that represents cellular microenvironments as point clouds and jointly models the temporal evolution of c…
+  [NeurIPS 2025][Computational Biology][Spatial Transcriptomics] NicheFlow is a Flow Matching-based generative model that represents cellular microenvironments as point clouds and jointly models the temporal evolution of cell states and spatial coordinates via Variational Flow Matching and optimal transport, substantially outperforming single-cell-level trajectory inference methods on embryonic development, brain development, and aging datasets.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "Point Cloud Generation"
   - "Cell Niche"
 date: 2026-05-08
-content_hash: cf20a8f5959f0609
+content_hash: c388c4d9ad65652b
 ---
 
 # Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow
@@ -147,10 +147,10 @@ NicheFlow's trajectory predictions substantially outperform the exact-OT-based m
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
-- [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
-- [\[AAAI 2026\] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection](../../AAAI2026/computational_biology/spacrd_multimodal_deep_fusion_of_histology_and_spatial_transcriptomics_for_cance.md)
-- [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
-- [\[NeurIPS 2025\] ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression](confrover_simultaneous_modeling_of_protein_conformation_and_dynamics_via_autoreg.md)
+- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](../../CVPR2026/computational_biology/predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](../../CVPR2026/computational_biology/multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
+- [\[ICML 2025\] Scalable Generation of Spatial Transcriptomics from Histology Images via Whole-Slide Flow Matching](../../ICML2025/computational_biology/scalable_generation_of_spatial_transcriptomics_from_histology_images_via_whole-s.md)
+- [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
 
 </div>
 

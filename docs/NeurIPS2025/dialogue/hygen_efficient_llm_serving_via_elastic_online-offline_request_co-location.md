@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location
 description: >-
-  [NeurIPS 2025][Dialogue Systems][online-offline co-location] This paper proposes HyGen, an interference-aware LLM inference system that achieves elastic co-location of online and offline workloads through an accurate bat…
+  [NeurIPS 2025][Dialogue Systems][online-offline co-location] This paper proposes HyGen, an interference-aware LLM inference system that achieves elastic co-location of online and offline workloads through an accurate batch latency predictor, an SLO-aware performance profiler, and a prefix-sharing-maximization scheduling strategy, delivering 3.87–5.84× throughput gains while strictly guaranteeing SLO compliance.
 tags:
   - "NeurIPS 2025"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "prefix sharing"
   - "elastic scheduling"
 date: 2026-05-08
-content_hash: 76e7097a655a9e31
+content_hash: f2b1a19079ff0b78
 ---
 
 # HyGen: Efficient LLM Serving via Elastic Online-Offline Request Co-location
@@ -137,9 +137,9 @@ The latency predictor is trained via linear regression: training data are collec
 
 - [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](../../ICML2026/dialogue/not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
 - [\[NeurIPS 2025\] Bridging Human and LLM Judgments: Understanding and Narrowing the Gap](bridging_human_and_llm_judgments_understanding_and_narrowing_the_gap.md)
+- [\[ICML 2025\] Investigating Non-Transitivity in LLM-as-a-Judge](../../ICML2025/dialogue/investigating_non-transitivity_in_llm-as-a-judge.md)
 - [\[AAAI 2026\] Auto-PRE: An Automatic and Cost-Efficient Peer-Review Framework for Language Generation Evaluation](../../AAAI2026/dialogue/auto-pre_an_automatic_and_cost-efficient_peer-review_framework_for_language_gene.md)
 - [\[ICML 2026\] Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives](../../ICML2026/dialogue/is_your_llm_overcharging_you_tokenization_transparency_and_incentives.md)
-- [\[NeurIPS 2025\] AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs](aclora_almost_trainingfree_access_controlaware_multimodal_ll.md)
 
 </div>
 

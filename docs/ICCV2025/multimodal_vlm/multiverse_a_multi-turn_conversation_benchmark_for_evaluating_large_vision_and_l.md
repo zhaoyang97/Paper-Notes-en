@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][multi-turn dialogue] This paper proposes MultiVerse, a multi-turn conversation evaluation benchmark comprising 647 dialogues collected from 12 VLM evaluation datasets…
+  [ICCV 2025][Multimodal VLM][multi-turn dialogue] This paper proposes MultiVerse, a multi-turn conversation evaluation benchmark comprising 647 dialogues collected from 12 VLM evaluation datasets, spanning 484 task types and 484 interaction goals. Using a checklist-based evaluation approach, the benchmark reveals that even the strongest model, GPT-4o, achieves only ~50% success rate on complex multi-turn conversations.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "checklist evaluation"
   - "in-context learning"
 date: 2026-05-08
-content_hash: 0554cdff6f1f1006
+content_hash: 621252382301bed9
 ---
 
 # MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models
@@ -179,9 +179,9 @@ The linear correlation $R^2$ between response length and performance under the G
 ## Related Papers
 
 - [\[ICCV 2025\] CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting](capture_evaluating_spatial_reasoning_in_vision_language_models_via_occluded_obje.md)
-- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[ICCV 2025\] VisNumBench: Evaluating Number Sense of Multimodal Large Language Models](visnumbench_evaluating_number_sense_of_multimodal_large_language_models.md)
+- [\[ACL 2025\] AlignMMBench: Evaluating Chinese Multimodal Alignment in Large Vision-Language Models](../../ACL2025/multimodal_vlm/alignmmbench_evaluating_chinese_multimodal_alignment_in_large_vision-language_mo.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
 - [\[CVPR 2026\] LLaVAShield: Safeguarding Multimodal Multi-Turn Dialogues in Vision-Language Models](../../CVPR2026/multimodal_vlm/llavashield_multimodal_multiturn_safety.md)
 
 </div>

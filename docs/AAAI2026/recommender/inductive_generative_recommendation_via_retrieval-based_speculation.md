@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inductive Generative Recommendation via Retrieval-based Speculation
 description: >-
-  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper identifies a critical limitation of Generative Recommendation (GR) models — their inability to recommend items unseen during training — and pr…
+  [AAAI 2026 (Oral)][Recommender Systems][Generative Recommendation] This paper identifies a critical limitation of Generative Recommendation (GR) models — their inability to recommend items unseen during training — and proposes SpecGR, a plug-and-play framework in which an inductively capable drafter model proposes candidate items (including new ones) while the GR model serves as a verifier to rank and validate candidates. A guided re-drafting mechanism further improves verifi…
 tags:
   - "AAAI 2026 (Oral)"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "New Item Recommendation"
   - "Retrieval Augmentation"
 date: 2026-05-08
-content_hash: e745505a75c68736
+content_hash: 7c8abb27c1903287
 ---
 
 # Inductive Generative Recommendation via Retrieval-based Speculation
@@ -135,7 +135,7 @@ Evaluated on three real-world datasets.
 - [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
 - [\[ACL 2026\] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation](../../ACL2026/recommender/from_past_to_path_masked_history_learning_for_next-item_prediction_in_generative.md)
 - [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](../../ACL2026/recommender/bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
-- [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](../../NeurIPS2025/recommender/semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
+- [\[ACL 2025\] GRAM: Generative Recommendation via Semantic-aware Multi-granular Late Fusion](../../ACL2025/recommender/gram_generative_recommendation.md)
 
 </div>
 

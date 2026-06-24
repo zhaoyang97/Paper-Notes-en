@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] The paper proposes ReasoningBank, a memory framework that distills generalizable reasoning strategies from success and failure experiences judged by the agent itself. It also introduces memory-aware test-time scaling (MaTTS) to establish a synergy between memory and test-time expansion, consistently outperforming basel
+  [ICLR 2026][Code Intelligence][Agent Memory] The paper proposes ReasoningBank, a memory framework that distills generalizable reasoning strategies from success and failure experiences judged by the agent itself. It also introduces memory-aware test-time scaling (MaTTS) to establish a synergy between memory and test-time expansion, consistently outperforming baselines on WebArena, Mind2Web, and SWE-Bench (up to 34.2% relative gain) while reducing interaction steps by 16%.
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Agent Memory"
+  - "Reasoning Strategy"
+  - "Test-time Scaling"
+  - "Self-evolution"
+  - "Experiential Learning"
 date: 2026-05-08
-content_hash: a6390e4613527cd6
+content_hash: 759ae240c31a17fa
 ---
+
 # ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
 
 **Conference**: ICLR 2026  
@@ -144,11 +150,11 @@ Common practices simply concatenate test-time scaling with memory—running mult
 
 ## Related Papers
 
+- [\[ACL 2026\] CreativeBench: Benchmarking and Enhancing Machine Creativity via Self-Evolving Challenges](../../ACL2026/code_intelligence/creativebench_benchmarking_and_enhancing_machine_creativity_via_self-evolving_ch.md)
 - [\[ICLR 2026\] Improving Code Localization with Repository Memory](improving_code_localization_with_repository_memory.md)
 - [\[NeurIPS 2025\] A Self-Improving Coding Agent](../../NeurIPS2025/code_intelligence/a_selfimproving_coding_agent.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
 - [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
-- [\[ICLR 2026\] Code2Bench: Scaling Source and Rigor for Dynamic Benchmark Construction](code2bench_scaling_source_and_rigor_for_dynamic_benchmark_construction.md)
 
 </div>
 

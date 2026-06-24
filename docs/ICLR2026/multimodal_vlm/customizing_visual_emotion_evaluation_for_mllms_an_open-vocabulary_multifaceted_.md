@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach
 description: >-
-  [ICLR 2026][Multimodal VLM][Visual Emotion] The authors propose the Emotion Statement Judgment (ESJ) task and the INSETS automatic labeling pipeline, reframing visual emotion evaluation from "open-ended classification" to "statement truth judgment." They constructed the MVEI benchmark (3,086 samples, 424 emotion labels, across four cognitive dimensions). Systema
+  [ICLR 2026][Multimodal VLM][Visual Emotion] The authors propose the Emotion Statement Judgment (ESJ) task and the INSETS automatic labeling pipeline, reframing visual emotion evaluation from "open-ended classification" to "statement truth judgment." They constructed the MVEI benchmark (3,086 samples, 424 emotion labels, across four cognitive dimensions). Systematic evaluation of 19 MLLMs reveals that even GPT-4o exhibits a 13.3% accuracy gap compared to humans (91.6%).
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Visual Emotion
-  - MLLM Evaluation
-  - Open-vocabulary
-  - ESJ
-  - MVEI Benchmark
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Visual Emotion"
+  - "MLLM Evaluation"
+  - "Open-vocabulary"
+  - "ESJ"
+  - "MVEI Benchmark"
 date: 2026-05-08
-content_hash: d1be24be19dacdec
+content_hash: 11215fe28b41b192
 ---
+
 # Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach
 
 **Conference**: ICLR 2026  
@@ -140,15 +141,16 @@ To ensure benchmark reliability, 3,164 samples from INSETS-462k were sampled and
 - Value: ⭐⭐⭐⭐ Practical contribution via the MVEI benchmark and INSETS-462k corpus.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
-- [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](../../AAAI2026/multimodal_vlm/o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
 - [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](../../CVPR2026/multimodal_vlm/vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
+- [\[AAAI 2026\] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](../../AAAI2026/multimodal_vlm/o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)
 - [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
-- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](../../CVPR2026/multimodal_vlm/towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
+- [\[CVPR 2025\] Compositional Caching for Training-free Open-vocabulary Attribute Detection](../../CVPR2025/multimodal_vlm/compositional_caching_for_training-free_open-vocabulary_attribute_detection.md)
 
 </div>
 

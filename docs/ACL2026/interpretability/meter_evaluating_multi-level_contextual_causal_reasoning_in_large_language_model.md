@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][LLM Evaluation] METER is the first benchmark to systematically evaluate LLMs' three-level causal reasoning (discovery / intervention / counterfactual) under a **unified context**. Utilizing 4,145 samples constructed via human-LLM collaboration, saliency-based information flow analysis reveals that LLM performance drops from 93% to 73%
+  [ACL 2026][Interpretability][Contextual Causal Reasoning] METER is the first benchmark to systematically evaluate LLMs' three-level causal reasoning (discovery / intervention / counterfactual) under a **unified context**. Utilizing 4,145 samples constructed via human-LLM collaboration, saliency-based information flow analysis reveals that LLM performance drops from 93% to 73% as they ascend the causal ladder. The root causes are interference from irrelevant facts during the d…
 tags:
-  - ACL 2026
-  - Interpretability
-  - LLM Evaluation
+  - "ACL 2026"
+  - "Interpretability"
+  - "Contextual Causal Reasoning"
+  - "Causal Ladder"
+  - "Information Flow Analysis"
+  - "Saliency Score"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 7ecf89abd21d1a34
+content_hash: e09b66c53b8471c8
 ---
+
 # METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models
 
 **Conference**: ACL 2026  
@@ -164,8 +169,8 @@ Masking $E\to O$ flow in shallow layers (1-24) drops Discovery accuracy from 0.8
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](jacobian_scopes_token-level_causal_attributions_in_llms.md)
 - [\[ACL 2026\] Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models](sparse_feature_coactivation_reveals_causal_semantic_modules_in_large_language_mo.md)
+- [\[ICLR 2026\] Neuron-Level Analysis of Cultural Understanding in Large Language Models](../../ICLR2026/interpretability/neuron-level_analysis_of_cultural_understanding_in_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
 
 </div>
 

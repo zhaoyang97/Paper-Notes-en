@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate
 description: >-
-  [ACL 2026][Multi-Agent][Knowledge Distillation] The Internalized Multi-Agent Debate (IMAD) framework is proposed, utilizing a two-stage post-training pipeline (SFT + GRPO) to "internalize" multi-agent debate into a single LLM. This approach reduces token consumption by up to 93% and demonstrates through activation steering that the internalized model retains separab
+  [ACL 2026][Multi-Agent][Multi-Agent Debate] The Internalized Multi-Agent Debate (IMAD) framework is proposed, utilizing a two-stage post-training pipeline (SFT + GRPO) to "internalize" multi-agent debate into a single LLM. This approach reduces token consumption by up to 93% and demonstrates through activation steering that the internalized model retains separable and controllable "agent subspaces" within its latent space.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - Knowledge Distillation
-  - GRPO
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Multi-Agent Debate"
+  - "Knowledge Distillation"
+  - "Activation Steering"
+  - "Agent Subspace"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 528bb5f159780f26
+content_hash: 14d4e3c3ee4a9b1d
 ---
+
 # Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate
 
 **Conference**: ACL 2026  
@@ -153,10 +157,10 @@ Across three models, IMAD achieves comparable or better accuracy than Debate usi
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search](efficient_multi-agent_system_training_with_data_influence-oriented_tree_search.md)
+- [\[ICLR 2026\] MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference](../../ICLR2026/multi_agent/marti_a_framework_for_multi-agent_llm_systems_reinforced_training_and_inference.md)
+- [\[ICLR 2026\] Multi-Agent Debate with Memory Masking (MAD-M²)](../../ICLR2026/multi_agent/multi-agent_debate_with_memory_masking.md)
 - [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
 - [\[ACL 2026\] HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents](hachimi_scalable_and_controllable_student_persona_generation_via_orchestrated_ag.md)
-- [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
-- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
 
 </div>
 

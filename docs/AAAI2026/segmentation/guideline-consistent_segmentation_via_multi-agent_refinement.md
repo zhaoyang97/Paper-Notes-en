@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Guideline-Consistent Segmentation via Multi-Agent Refinement
 description: >-
-  [AAAI 2026][Segmentation][guideline-consistent segmentation] A training-free multi-agent framework is proposed that achieves guideline-consistent semantic segmentation through an iterative Worker (segmentation execution)…
+  [AAAI 2026][Segmentation][guideline-consistent segmentation] A training-free multi-agent framework is proposed that achieves guideline-consistent semantic segmentation through an iterative Worker (segmentation execution) and Supervisor (guideline verification) loop coupled with an RL-based adaptive stopping strategy, surpassing prior SOTA by 8.61 and 5.5 gIoU on Waymo and ReasonSeg, respectively.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "reinforcement learning"
   - "training-free framework"
 date: 2026-05-08
-content_hash: 59afddbe911de030
+content_hash: f189d9fd0a43109f
 ---
 
 # Guideline-Consistent Segmentation via Multi-Agent Refinement
@@ -174,11 +174,11 @@ AiRC effect: Dynamic stopping resolves 110% more violations than fixed 2-iterati
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Context-Aware Image Anonymization with Multi-Agent Reasoning](../../CVPR2026/segmentation/towards_context-aware_image_anonymization_with_multi-agent_reasoning.md)
 - [\[CVPR 2026\] EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection](../../CVPR2026/segmentation/erecu_pseudolabel_evolution_unsupervised_camouflage.md)
-- [\[CVPR 2026\] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction](../../CVPR2026/segmentation/learning_cross-view_object_correspondence_via_cycle-consistent_mask_prediction.md)
-- [\[ICML 2026\] MVR-cache: Optimizing Semantic Caching via Multi-Vector Retrieval and Learned Prompt Segmentation](../../ICML2026/segmentation/mvr-cache_optimizing_semantic_caching_via_multi-vector_retrieval_and_learned_pro.md)
-- [\[ICLR 2026\] RegionReasoner: Region-Grounded Multi-Round Visual Reasoning](../../ICLR2026/segmentation/regionreasoner_region-grounded_multi-round_visual_reasoning.md)
+- [\[ICLR 2026\] Object-Centric Refinement for Enhanced Zero-Shot Segmentation](../../ICLR2026/segmentation/object-centric_refinement_for_enhanced_zero-shot_segmentation.md)
+- [\[ICLR 2026\] SAM-Veteran: An MLLM-based Human-like SAM Agent for Reasoning Segmentation](../../ICLR2026/segmentation/sam-veteran_an_mllm-based_human-like_sam_agent_for_reasoning_segmentation.md)
+- [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](../../CVPR2026/segmentation/promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
+- [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](../../CVPR2026/segmentation/pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
 
 </div>
 

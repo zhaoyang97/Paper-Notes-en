@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] QeRL: Quantization-enhanced Low-rank Reinforcement Learning for LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][Quantization] QeRL combines NVFP4 quantization with LoRA to train the reasoning capabilities of LLMs. It unexpectedly discovers that quantization noise can increase policy entropy and enhance RL exploration. By incorporating a schedulable Adaptive Quantization Noise (AQN) mechanism, 4-bit models achieve higher accuracy in mathematic
+  [ICLR 2026][Reinforcement Learning][Quantization] QeRL combines NVFP4 quantization with LoRA to train the reasoning capabilities of LLMs. It unexpectedly discovers that quantization noise can increase policy entropy and enhance RL exploration. By incorporating a schedulable Adaptive Quantization Noise (AQN) mechanism, 4-bit models achieve higher accuracy in mathematical reasoning than 16-bit LoRA while being significantly faster (1.5× rollout speedup…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Quantization
-  - RL
-  - LoRA
-  - NVFP4
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Quantization"
+  - "RL"
+  - "LoRA"
+  - "NVFP4"
+  - "Exploration"
 date: 2026-05-08
-content_hash: 88457fdd53495258
+content_hash: 668e7adf895ee14c
 ---
+
 # QeRL: Quantization-enhanced Low-rank Reinforcement Learning for LLMs
 
 **Conference**: ICLR 2026  
@@ -140,15 +142,16 @@ Per-stage timing (Table 4, 7B, seconds per step): **Ours** rollout took only 4.0
 - **Value**: ⭐⭐⭐⭐⭐ (First to run 32B RL on a single H100 card, practical high efficiency and performance)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits](online_minimization_of_polarization_and_disagreement_via_low-rank_matrix_bandits.md)
+- [\[ICLR 2026\] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs](do_not_let_low-probability_tokens_over-dominate_in_rl_for_llms.md)
 - [\[ACL 2026\] GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR](../../ACL2026/reinforcement_learning/geora_geometry-aware_low-rank_adaptation_for_rlvr.md)
 - [\[ICLR 2026\] QuRL: Low-Precision Reinforcement Learning for Efficient Reasoning](qurl_low-precision_reinforcement_learning_for_efficient_reasoning.md)
 - [\[NeurIPS 2025\] Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/shift_before_you_learn_enabling_low-rank_representations_in_reinforcement_learni.md)
-- [\[ICLR 2026\] Lookahead Tree-Based Rollouts for Enhanced Trajectory-Level Exploration in Reinforcement Learning with Verifiable Rewards](lookahead_tree-based_rollouts_for_enhanced_trajectory-level_exploration_in_reinf.md)
 
 </div>
 

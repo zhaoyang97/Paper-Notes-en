@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation
 description: >-
-  [NeurIPS 2025][Image Generation][subject-driven generation] This paper proposes a framework for decoupling semantic and visual features from a pretrained diffusion model backbone to enable visual correspondence matching.…
+  [NeurIPS 2025 Spotlight][Image Generation][subject-driven generation] This paper proposes a framework for decoupling semantic and visual features from a pretrained diffusion model backbone to enable visual correspondence matching. Building on this, it introduces the Visual Semantic Matching (VSM) metric, which for the first time simultaneously supports **quantification and spatial localization** of visual inconsistencies in subject-driven image generation.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "subject-driven generation"
   - "visual correspondence"
@@ -12,7 +12,7 @@ tags:
   - "metric"
   - "inconsistency detection"
 date: 2026-05-08
-content_hash: 98e696929d740e0b
+content_hash: 3cd0ece32617e0b3
 ---
 
 # Mind-the-Glitch: Visual Correspondence for Detecting Inconsistencies in Subject-Driven Generation
@@ -153,9 +153,9 @@ VSM substantially outperforms all existing metrics in correlation with the Oracl
 
 - [\[NeurIPS 2025\] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations](unleashing_diffusion_transformers_for_visual_correspondence_by_modulating_massiv.md)
 - [\[NeurIPS 2025\] Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling](track_inpaint_resplat_subject-driven_3d_and_4d_generation_with_progressive_textu.md)
-- [\[NeurIPS 2025\] OmniVCus: Feedforward Subject-driven Video Customization with Multimodal Control Conditions](omnivcus_feedforward_subject-driven_video_customization_with_multimodal_control_.md)
-- [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](../../ICCV2025/image_generation/freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
-- [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](detecting_generated_images_by_fitting_natural_image_distributions.md)
+- [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](../../CVPR2026/image_generation/flowfixer_towards_detail-preserving_subject-driven_generation.md)
+- [\[ECCV 2024\] HybridBooth: Hybrid Prompt Inversion for Efficient Subject-Driven Generation](../../ECCV2024/image_generation/hybridbooth_hybrid_prompt_inversion_for_efficient_subject-driven_generation.md)
+- [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](../../ICLR2026/image_generation/mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
 
 </div>
 

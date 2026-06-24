@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CogniLoad: A Synthetic Natural Language Reasoning Benchmark With Tunable Length, Intrinsic Difficulty, and Distractor Density
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] CogniLoad is a synthetic natural language reasoning benchmark built on Cognitive Load Theory (CLT). It employs three independent and tunable parameters—intrinsic difficulty $d$, distractor density $\rho$, and task length $N$—to manipulate intrinsic, extraneous, and germane cognitive loads (the latter represented as mai
+  [ICLR2026][LLM Evaluation][Cognitive Load Theory] CogniLoad is a synthetic natural language reasoning benchmark built on Cognitive Load Theory (CLT). It employs three independent and tunable parameters—intrinsic difficulty $d$, distractor density $\rho$, and task length $N$—to manipulate intrinsic, extraneous, and germane cognitive loads (the latter represented as maintenance burden). This allows for precise attribution of long-context reasoning failures to specific dimension…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Cognitive Load Theory"
+  - "Long-context Reasoning"
+  - "Logic Puzzles"
+  - "Controllable Synthetic Data"
+  - "Failure Attribution"
 date: 2026-05-08
-content_hash: c7e793f944f25942
+content_hash: 6312077fafb15458
 ---
+
 # CogniLoad: A Synthetic Natural Language Reasoning Benchmark With Tunable Length, Intrinsic Difficulty, and Distractor Density
 
 **Conference**: ICLR2026  
@@ -140,11 +146,11 @@ Regression findings:
 
 ## Related Papers
 
+- [\[ICLR 2026\] JQBench: A Benchmark for Reading and Writing JSON from Natural Language and/or Examples](jqbench_a_benchmark_for_reading_and_editing_json_from_natural_language_andor_exa.md)
+- [\[ACL 2025\] MDBench: A Synthetic Multi-Document Reasoning Benchmark Generated with Knowledge Guidance](../../ACL2025/llm_evaluation/mdbench_a_synthetic_multi-document_reasoning_benchmark_generated_with_knowledge_.md)
 - [\[ACL 2025\] BelarusianGLUE: Towards a Natural Language Understanding Benchmark for Belarusian](../../ACL2025/llm_evaluation/belarusian_glue.md)
 - [\[ACL 2025\] MisMatched: A Benchmark for Scientific Natural Language Inference](../../ACL2025/llm_evaluation/a_mismatched_benchmark_for_scientific_natural_language_inference.md)
 - [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
-- [\[ACL 2025\] MDBench: A Synthetic Multi-Document Reasoning Benchmark Generated with Knowledge Guidance](../../ACL2025/llm_evaluation/mdbench_a_synthetic_multi-document_reasoning_benchmark_generated_with_knowledge_.md)
-- [\[ICLR 2026\] EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty](eip_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
 
 </div>
 

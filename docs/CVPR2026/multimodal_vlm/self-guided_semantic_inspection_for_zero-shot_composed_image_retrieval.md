@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the training-inference mismatch in Zero-Shot Composed Image Retrieval (ZS-CIR)—where models are trained on "aligned image-text pairs" but must handle "unaligned reference images + modified text" during inference—this paper proposes DiffComp. It introduces a "Differentiate-then-Compose" self-supervised paradi
+  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] Addressing the training-inference mismatch in Zero-Shot Composed Image Retrieval (ZS-CIR)—where models are trained on "aligned image-text pairs" but must handle "unaligned reference images + modified text" during inference—this paper proposes DiffComp. It introduces a "Differentiate-then-Compose" self-supervised paradigm that actively masks visual regions aligned with text phrases during training to artificially introduce…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Zero-Shot"
+  - "Cross-modal Difference"
+  - "Self-supervision"
+  - "Adaptive Fusion"
 date: 2026-05-08
-content_hash: bd71d3bb1419a911
+content_hash: 549c21a3bf516cdc
 ---
+
 # Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -152,9 +158,9 @@ Module combinations and variant configurations (FashionIQ R@10 / CIRR R@1):
 
 - [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 - [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
 - [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
-- [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
 
 </div>
 

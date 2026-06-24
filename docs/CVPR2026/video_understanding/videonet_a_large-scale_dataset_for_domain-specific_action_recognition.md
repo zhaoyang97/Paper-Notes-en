@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] VideoNet constructs a video action recognition benchmark covering 37 domains and 1,000 fine-grained "domain-specific actions" (offering both multiple-choice and binary few-shot protocols). Using a fully automated pipeline, it collects nearly 500,000 VQA training pairs, bringing the "forgotten task" of domain-specific a
+  [CVPR 2026][Video Understanding][Action Recognition] VideoNet constructs a video action recognition benchmark covering 37 domains and 1,000 fine-grained "domain-specific actions" (offering both multiple-choice and binary few-shot protocols). Using a fully automated pipeline, it collects nearly 500,000 VQA training pairs, bringing the "forgotten task" of domain-specific action recognition back into the VLM evaluation spotlight. The results show that open-source 8B VLMs achieve…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Action Recognition"
+  - "Domain-Specific Actions"
+  - "VLM Benchmark"
+  - "Few-shot Learning"
+  - "Hard Negatives"
 date: 2026-05-08
-content_hash: 5346e9fdf68e824c
+content_hash: afa78c26375186c4
 ---
+
 # VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition
 
 **Conference**: CVPR 2026  

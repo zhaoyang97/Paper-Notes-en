@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges
 description: >-
-  [NeurIPS 2025][Image Generation][Dexterous Grasp Transfer] This paper proposes modeling cross-morphology visual dexterous grasp transfer as a Schrödinger Bridge problem. By learning Score and Flow Matching ([SF]²M) in a…
+  [NeurIPS 2025][Image Generation][Dexterous Grasp Transfer] This paper proposes modeling cross-morphology visual dexterous grasp transfer as a Schrödinger Bridge problem. By learning Score and Flow Matching ([SF]²M) in a latent space and designing physics-aware optimal transport cost functions (over pose, contact maps, grasp wrench space, and Jacobian manipulability), the method achieves distribution-level transfer of grasp intent across different robot hands without requiring…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Score and Flow Matching"
   - "Physics-Guided Cost Function"
 date: 2026-05-08
-content_hash: 2fdc218d8f58e35f
+content_hash: 0741c51e480d2be7
 ---
 
 # Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges
@@ -231,7 +231,7 @@ The most significant limitation lies in the VAE decoder's implicit binding to th
 - [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
 - [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](../../ICML2026/image_generation/geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
 - [\[ICLR 2026\] Branched Schrödinger Bridge Matching](../../ICLR2026/image_generation/branched_schrödinger_bridge_matching.md)
-- [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
+- [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](../../ICLR2026/image_generation/diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
 
 </div>
 

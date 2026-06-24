@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling
 description: >-
-  [ICLR 2026][Image Restoration][Adam] The Adam adaptive moment estimation from standard optimizers is directly applied to the guidance gradients of diffusion sampling. By maintaining the exponential moving average (EMA) of the first and second moments of likelihood score estimates across sampling steps, the noisy gradients of plug-and-play methods like DPS
+  [ICLR2026][Image Restoration][Plug-and-play guidance] The Adam adaptive moment estimation from standard optimizers is directly applied to the guidance gradients of diffusion sampling. By maintaining the exponential moving average (EMA) of the first and second moments of likelihood score estimates across sampling steps, the noisy gradients of plug-and-play methods like DPS and CG are stabilized at almost zero extra cost. This approach outperforms several more complex and slowe…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Adam
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Plug-and-play guidance"
+  - "diffusion sampling"
+  - "likelihood score"
+  - "Adam"
+  - "inverse problems"
 date: 2026-05-08
-content_hash: b9a4a1b64cff1b68
+content_hash: ab48acfef7e6b7e5
 ---
+
 # Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling
 
 **Conference**: ICLR2026  
@@ -141,11 +146,11 @@ Datasets: ImageNet, CIFAR-10, Cats. Reconstruction tasks: $16\times$ SR, Gaussia
 
 ## Related Papers
 
+- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
 - [\[ICLR 2026\] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework](taming_score-based_denoisers_in_admm_a_convergent_plug-and-play_framework.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](../../CVPR2026/image_restoration/pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
 - [\[ICLR 2026\] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms](a_statistical_benchmark_for_diffusion-posterior-sampling_algorithms.md)
 - [\[ECCV 2024\] BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion](../../ECCV2024/image_restoration/brushnet_a_plug-and-play_image_inpainting_model_with_decomposed_dual-branch_diff.md)
-- [\[ICLR 2026\] CL-DPS: A Contrastive Learning Approach to Blind Nonlinear Inverse Problem Solving via Diffusion Posterior Sampling](cl-dps_a_contrastive_learning_approach_to_blind_nonlinear_inverse_problem_solvin.md)
 
 </div>
 

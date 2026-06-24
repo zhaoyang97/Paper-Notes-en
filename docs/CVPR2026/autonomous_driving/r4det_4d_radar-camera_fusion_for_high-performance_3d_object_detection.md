@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] R4Det is proposed to systematically address three major challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-less temporal fusion, and small object detection—via three plug-and-play BEV modules: Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refineme
+  [CVPR 2026][Autonomous Driving][4D Radar] R4Det is proposed to systematically address three major challenges in 4D radar-camera fusion—inaccurate depth estimation, pose-less temporal fusion, and small object detection—via three plug-and-play BEV modules: Panoramic Depth Fusion (PDF), Deformable Gated Temporal Fusion (DGTF), and Instance-Guided Dynamic Refinement (IGDR). It achieves 47.29% 3D mAP (+5.47%) on TJ4DRadSet and 66.69% mAP on VoD.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D Radar"
+  - "Radar-Camera Fusion"
+  - "3D Object Detection"
+  - "Depth Estimation"
+  - "Temporal Fusion"
 date: 2026-05-08
-content_hash: 585110ac9da5c464
+content_hash: 771d13c9ded98787
 ---
+
 # R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -184,9 +190,9 @@ $$F_{final} = (1 - G_{bg}) \odot F_{RC} + G_{bg} \odot F_{calibrated}$$
 ## Related Papers
 
 - [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 - [\[CVPR 2025\] RaCFormer: Towards High-Quality 3D Object Detection via Query-based Radar-Camera Fusion](../../CVPR2025/autonomous_driving/racformer_towards_high-quality_3d_object_detection_via_query-based_radar-camera_.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](../../ICCV2025/autonomous_driving/cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
+- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
 - [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
 
 </div>

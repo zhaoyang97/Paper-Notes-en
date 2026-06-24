@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] This paper discovers that hallucinations in Multimodal Large Reasoning Models (MLRMs) are highly concentrated around transition words like `because/however/wait`, which correspond to high-entropy (high-uncertainty) steps. Consequently, a training-free LEAD decoding strategy is proposed: at high-entropy steps, the singl
+  [CVPR 2026][Hallucination Detection][Multimodal Reasoning Models] This paper discovers that hallucinations in Multimodal Large Reasoning Models (MLRMs) are highly concentrated around transition words like `because/however/wait`, which correspond to high-entropy (high-uncertainty) steps. Consequently, a training-free LEAD decoding strategy is proposed: at high-entropy steps, the single sampled token is replaced with "probability-weighted continuous embeddings" to preserve mult…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Multimodal Reasoning Models"
+  - "Hallucination Mitigation"
+  - "Entropy-Aware Decoding"
+  - "Latent Superposed Reasoning"
+  - "Visual Anchor Injection"
 date: 2026-05-08
-content_hash: 8072581e33fc2fdf
+content_hash: c373667717eebd4c
 ---
+
 # Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding
 
 **Conference**: CVPR 2026  
@@ -140,9 +146,9 @@ General reasoning and understanding improved by an average of +3.6%, while hallu
 
 - [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs](hulluedit_subspace_editing_hallucination.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
+- [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/hallucination/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
+- [\[CVPR 2025\] Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding](../../CVPR2025/hallucination/seeing_far_and_clearly_mitigating_hallucinations_in_mllms_with_attention_causal_.md)
 
 </div>
 

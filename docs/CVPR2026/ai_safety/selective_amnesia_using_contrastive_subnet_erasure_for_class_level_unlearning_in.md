@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Selective Amnesia using Contrastive Subnet Erasure for Class Level Unlearning in Vision Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] CSE addresses "class-level concept unlearning" for pre-trained vision models—making the model completely unable to recognize an entire semantic category (rather than just forgetting specific training samples). It avoids training and does not modify task heads; instead, it employs contrastive subnet discovery to identif
+  [CVPR 2026][AI Safety][Concept Unlearning] CSE addresses "class-level concept unlearning" for pre-trained vision models—making the model completely unable to recognize an entire semantic category (rather than just forgetting specific training samples). It avoids training and does not modify task heads; instead, it employs contrastive subnet discovery to identify a small subset of channels responsible for the target class, applies calibrated attenuation…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Concept Unlearning"
+  - "Class-level unlearning"
+  - "Channel editing"
+  - "Generalized eigenvalue analysis"
+  - "Cross-dataset evaluation"
 date: 2026-05-08
-content_hash: a45b75662cec24ec
+content_hash: afdcd7647afd8f57
 ---
+
 # Selective Amnesia using Contrastive Subnet Erasure for Class Level Unlearning in Vision Models
 
 **Conference**: CVPR 2026  
@@ -125,9 +131,9 @@ CSE reduces $A_{ft}$ to .01–.02 across three datasets (more thorough than all 
 
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
 - [\[CVPR 2026\] Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction](towards_highly_transferable_vision-language_attack_via_semantic-augmented_dynami.md)
+- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](../../ICLR2026/ai_safety/distributional_machine_unlearning_via_selective_data_removal.md)
 - [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
 
 </div>
 

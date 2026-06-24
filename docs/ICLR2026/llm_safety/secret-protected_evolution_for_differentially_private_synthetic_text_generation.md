@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Secret-Protected Evolution for Differentially Private Synthetic Text Generation
 description: >-
-  [ICLR 2026][LLM Safety][Private Evolution] To address the utility loss and computational waste caused by Differential Privacy (DP) synthetic text generation "treating non-sensitive content the same as sensitive content by adding uniform noise," this paper proposes **SecPE (Secret-Protected Evolution)**. It shifts the protection target from "membership" to "pred
+  [ICLR 2026][LLM Safety][Differential Privacy] To address the utility loss and computational waste caused by Differential Privacy (DP) synthetic text generation "treating non-sensitive content the same as sensitive content by adding uniform noise," this paper proposes **SecPE (Secret-Protected Evolution)**. It shifts the protection target from "membership" to "predefined secrets," utilizes single-point relaxation of Gaussian DP (GDP) to reduce noise…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Private Evolution
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Differential Privacy"
+  - "Synthetic Text"
+  - "Secret Protection"
+  - "Private Evolution"
+  - "GDP Relaxation"
 date: 2026-05-08
-content_hash: 24bfd686aae20c47
+content_hash: 076ade6690a39f43
 ---
+
 # Secret-Protected Evolution for Differentially Private Synthetic Text Generation
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks
 description: >-
-  [ICML 2026][Optimization & Theory][RFLO] This paper derives analytical ODEs for the updates of BPTT, one-step tBPTT, and RFLO in student–teacher data-aligned linear RNNs. By comparing their fixed-point manifolds, stability, and convergence rates, it is found that RFLO lacks the non-optimal saddle manifold of BPTT/tBPTT but at the cost of sign-dependent stabil
+  [ICML 2026][Optimization][Linear RNN] This paper derives analytical ODEs for the updates of BPTT, one-step tBPTT, and RFLO in student–teacher data-aligned linear RNNs. By comparing their fixed-point manifolds, stability, and convergence rates, it is found that RFLO lacks the non-optimal saddle manifold of BPTT/tBPTT but at the cost of sign-dependent stability and slower convergence. Furthermore, RFLO is **intrinsically limited to low-rank perturbations of initial weights**…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - RFLO
-  - tBPTT
+  - "ICML 2026"
+  - "Optimization"
+  - "Linear RNN"
+  - "RFLO"
+  - "tBPTT"
+  - "Learning Dynamics"
+  - "Low-rank constraints"
 date: 2026-05-08
-content_hash: ff92969505c17649
+content_hash: 87766aaeeb32bfe4
 ---
+
 # Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks
 
 **Conference**: ICML 2026  
@@ -123,9 +127,9 @@ Comparison between experimental trajectories and theoretical ODE predictions in 
 
 - [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
 - [\[AAAI 2026\] On the Learning Dynamics of Two-Layer Linear Networks with Label Noise SGD](../../AAAI2026/optimization/on_the_learning_dynamics_of_two-layer_linear_networks_with_label_noise_sgd.md)
+- [\[ICML 2026\] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway](gradient_descent_with_large_step_size_restores_symmetry_in_deep_linear_networks_.md)
 - [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
 - [\[ICML 2026\] Ubiquity of Emergent Hebbian Dynamics in Regularized Learning](ubiquity_of_emergent_hebbian_dynamics_in_regularized_learning.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 
 </div>
 

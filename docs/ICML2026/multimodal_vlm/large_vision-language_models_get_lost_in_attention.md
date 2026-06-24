@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Large Vision-Language Models Get Lost in Attention
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper quantitatively diagnoses the residual streams of LVLMs using a geometric information theory framework of "Information Complexity (eRank) + Subspace Support." It finds that Attention primarily performs intra-subspace reconfiguration while FFN injects new semantic dimensions. More surprisingly, replacing learn
+  [ICML 2026][Multimodal VLM][LVLM Interpretability] This paper quantitatively diagnoses the residual streams of LVLMs using a geometric information theory framework of "Information Complexity (eRank) + Subspace Support." It finds that Attention primarily performs intra-subspace reconfiguration while FFN injects new semantic dimensions. More surprisingly, replacing learned attention weights with Gaussian noise maintains or even improves performance on most vision tasks…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "LVLM Interpretability"
+  - "Attention Redundancy"
+  - "Information Theory"
+  - "Subspace Analysis"
+  - "Attention Replacement"
 date: 2026-05-08
-content_hash: e77fd30d50cd101d
+content_hash: 45bd6b476358e040
 ---
+
 # Large Vision-Language Models Get Lost in Attention
 
 **Conference**: ICML 2026  
@@ -111,11 +117,11 @@ On most vision tasks, **replacing learned visual attention weights with Gaussian
 
 ## Related Papers
 
+- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/multimodal_vlm/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
 - [\[ECCV 2024\] Attention Prompting on Image for Large Vision-Language Models](../../ECCV2024/multimodal_vlm/attention_prompting_on_image_for_large_visionlanguage_models.md)
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
-- [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](smoothing_slot_attention_iterations_and_recurrences.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/multimodal_vlm/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
 - [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
+- [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](smoothing_slot_attention_iterations_and_recurrences.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Material Recognition from Local Appearance
 description: >-
-  [ICCV 2025][3D Vision][material recognition] This paper proposes a hierarchical material taxonomy designed for visual applications alongside a new in-the-wild dataset, Matador (~7,200 material images with depth maps…
+  [ICCV 2025][3D Vision][material recognition] This paper proposes a hierarchical material taxonomy designed for visual applications alongside a new in-the-wild dataset, Matador (~7,200 material images with depth maps, 57 categories). A graph attention network (GAT) leverages the taxonomic hierarchy for material recognition, achieving state-of-the-art results on multiple benchmarks while supporting few-shot learning of novel materials and material probing at arbitrary scene poi…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -14,7 +14,7 @@ tags:
   - "novel view synthesis"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: 0a9748de010a263b
+content_hash: 666bccad670082a9
 ---
 
 # Hierarchical Material Recognition from Local Appearance
@@ -179,9 +179,9 @@ State-of-the-art performance is achieved on all four standard benchmarks.
 
 ## Related Papers
 
+- [\[CVPR 2025\] On Denoising Walking Videos for Gait Recognition](../../CVPR2025/3d_vision/on_denoising_walking_videos_for_gait_recognition.md)
 - [\[ICCV 2025\] Sequential Gaussian Avatars with Hierarchical Motion Context](sequential_gaussian_avatars_with_hierarchical_motion_context.md)
 - [\[ICCV 2025\] CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization](cl-splats_continual_learning_of_gaussian_splatting_with_local_optimization.md)
-- [\[NeurIPS 2025\] WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild](../../NeurIPS2025/3d_vision/wildcat3d_appearance-aware_multi-view_diffusion_in_the_wild.md)
 - [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
 - [\[ICCV 2025\] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates](supermat_physically_consistent_pbr_material_estimation_at_interactive_rates.md)
 

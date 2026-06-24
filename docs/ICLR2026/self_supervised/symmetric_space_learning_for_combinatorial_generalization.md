@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Symmetric Space Learning for Combinatorial Generalization
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Flow Matching]] This paper proposes CartanFM, which constrains the latent representation space to a symmetric space. By utilizing Cartan decomposition and geodesic symmetry consistency, the model extrapolates symmetries from observed combinations to unobserved ones. It significantly outperforms VAEs and existing symmetry learning meth
+  [ICLR 2026][Self-Supervised Learning][Combinatorial Generalization] This paper proposes CartanFM, which constrains the latent representation space to a symmetric space. By utilizing Cartan decomposition and geodesic symmetry consistency, the model extrapolates symmetries from observed combinations to unobserved ones. It significantly outperforms VAEs and existing symmetry learning methods on combinatorial generalization benchmarks such as dSprites, 3D Shapes, and MPI3D.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Flow Matching]
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Combinatorial Generalization"
+  - "Symmetric Spaces"
+  - "Lie Algebra"
+  - "Geodesic Symmetry"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 86fd4f91b0938ae3
+content_hash: d6549676bb207fb6
 ---
+
 # Symmetric Space Learning for Combinatorial Generalization
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,20 @@ Ablations analyze the contributions of $L_{Cartan}$ and $L_{GSC}$. Both improve 
 - **Value**: ⭐⭐⭐⭐⭐ Significant implications for representation learning beyond simple benchmarks.
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Self-Predictive Representations for Combinatorial Generalization in Behavioral Cloning](self-predictive_representations_for_combinatorial_generalization_in_behavioral_c.md)
+- [\[ICLR 2026\] MaskCO: Masked Generation Drives Effective Representation Learning and Exploiting for Combinatorial Optimization](maskco_masked_generation_drives_effective_representation_learning_and_exploiting.md)
+- [\[ICLR 2026\] SplitLoRA: Balancing Stability and Plasticity in Continual Learning Through Gradient Space Splitting](splitlora_balancing_stability_and_plasticity_in_continual_learning_through_gradi.md)
+- [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
+- [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](../../CVPR2026/self_supervised/learning_by_analogy_a_causal_framework_for_compositional_generalization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Self-Predictive Representations for Combinatorial Generalization in Behavioral Cloning](self-predictive_representations_for_combinatorial_generalization_in_behavioral_c.md)

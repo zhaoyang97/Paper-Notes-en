@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning
 description: >-
-  [ICCV 2025][3D Vision][3D Object Detection] This paper proposes tgGBC (trim keys gradually Guided By Classification scores), a zero-shot runtime pruning method that computes key importance by element-wise multiplication…
+  [ICCV 2025][3D Vision][3D Object Detection] This paper proposes tgGBC (trim keys gradually Guided By Classification scores), a zero-shot runtime pruning method that computes key importance by element-wise multiplication of classification scores and attention maps, progressively pruning unimportant keys across layers. It achieves nearly 2× acceleration of the Transformer decoder on multiple 3D detectors with less than 1% performance degradation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Zero-Shot Acceleration"
   - "Autonomous Driving"
 date: 2026-05-08
-content_hash: ca9df180d12bc9f2
+content_hash: 5317f79be5ca3f13
 ---
 
 # Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning
@@ -134,11 +134,11 @@ On FocalPETR, tgGBC even improves mAP (42.38% vs. 42.36%), suggesting that moder
 
 ## Related Papers
 
+- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](../../CVPR2026/3d_vision/zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
 - [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
 - [\[ICCV 2025\] Diorama: Unleashing Zero-shot Single-view 3D Indoor Scene Modeling](diorama_unleashing_zeroshot_singleview_3d_indoor_scene_model.md)
 - [\[ICCV 2025\] Zero-Shot Inexact CAD Model Alignment from a Single Image](zero-shot_inexact_cad_model_alignment_from_a_single_image.md)
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
-- [\[ICCV 2025\] Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction](boosting_multiview_indoor_3d_object_detection_via_adaptive_3.md)
 
 </div>
 

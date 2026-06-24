@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][end-to-end autonomous driving] This paper proposes MPA, a framework that generates counterfactual trajectory data via 3DGS simulation…
+  [NeurIPS 2025][Autonomous Driving][end-to-end autonomous driving] This paper proposes MPA, a framework that generates counterfactual trajectory data via 3DGS simulation, trains a diffusion policy adapter and a multi-principle Q-value model, and uses them at inference time to guide a pretrained E2E driving model toward improved safety and generalization in closed-loop scenarios.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "diffusion policy"
   - "Q-value guidance"
 date: 2026-05-08
-content_hash: 643b8abcffb72181
+content_hash: 63580b0bcf51bc4c
 ---
 
 # Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving
@@ -154,9 +154,9 @@ MPA improves HDScore from 16.0 to 74.7 (over the VAD baseline) in safety-critica
 
 - [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
 - [\[NeurIPS 2025\] Prioritizing Perception-Guided Self-Supervision: A New Paradigm for Causal Modeling in End-to-End Autonomous Driving](prioritizing_perception-guided_self-supervision_a_new_paradigm_for_causal_modeli.md)
+- [\[CVPR 2025\] DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving](../../CVPR2025/autonomous_driving/diffusiondrive_truncated_diffusion_model_for_end-to-end_autonomous_driving.md)
 - [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](../../ICCV2025/autonomous_driving/unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
-- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
-- [\[ICCV 2025\] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model](../../ICCV2025/autonomous_driving/world4drive_end-to-end_autonomous_driving_via_intention-aware_physical_latent_wo.md)
+- [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
 
 </div>
 

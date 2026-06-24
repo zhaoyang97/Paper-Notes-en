@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PA-Attack: Guiding Gray-Box Attacks on LVLM Vision Encoders with Prototypes and Attention
 description: >-
-  [CVPR 2026][AI Safety][LVLM] This paper conducts gray-box attacks on shared vision encoders of LVLMs. By employing "Prototype-Anchored Guidance + Class Token Attention Weighting + Two-stage Attention Refreshing," small perturbations ($\epsilon=2/255$) can universally disrupt models across tasks, achieving an average Score Decline Rate (SRR) of 75.
+  [CVPR 2026][AI Safety][Gray-box Adversarial Attack] This paper conducts gray-box attacks on shared vision encoders of LVLMs. By employing "Prototype-Anchored Guidance + Class Token Attention Weighting + Two-stage Attention Refreshing," small perturbations ($\epsilon=2/255$) can universally disrupt models across tasks, achieving an average Score Decline Rate (SRR) of 75.1%, significantly outperforming existing gray-box and black-box methods.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - LVLM
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Gray-box Adversarial Attack"
+  - "LVLM"
+  - "Vision Encoder"
+  - "Prototype Guidance"
+  - "Attention Enhancement"
 date: 2026-05-08
-content_hash: 5d869e29dd07feb0
+content_hash: a74baa0fd5b3abcc
 ---
+
 # PA-Attack: Guiding Gray-Box Attacks on LVLM Vision Encoders with Prototypes and Attention
 
 **Conference**: CVPR 2026  
@@ -142,8 +147,6 @@ Weight $\lambda$ ablation: SRR is 81.7% at $\lambda=0.5$ and peaks at $\lambda=1
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation
 description: >-
-  [AAAI 2026][Medical Imaging][chest X-ray report generation] This paper proposes a two-stage disease-aware framework that learns 14 Disease-Aware Semantic Tokens (DASTs) corresponding to pathology categories for explicit…
+  [AAAI 2026][Medical Imaging][chest X-ray report generation] This paper proposes a two-stage disease-aware framework that learns 14 Disease-Aware Semantic Tokens (DASTs) corresponding to pathology categories for explicit disease representation. It further employs a Disease-Visual Attention Fusion (DVAF) module and a Dual-Modal Similarity Retrieval (DMSR) mechanism to assist an LLM in generating clinically accurate chest X-ray reports, achieving state-of-the-art performance on…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "retrieval-augmented generation"
   - "state space models"
 date: 2026-05-08
-content_hash: 6bd86bbb950d6133
+content_hash: 5b8ca91d9dc810c3
 ---
 
 # A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation
@@ -141,10 +141,10 @@ The framework consists of two stages:
 ## Related Papers
 
 - [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
+- [\[CVPR 2026\] Phrase-grounded APO for Improving Chest X-ray Report Generation](../../CVPR2026/medical_imaging/phrase-grounded_apo_for_improving_chest_x-ray_report_generation.md)
+- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](../../ICLR2026/medical_imaging/learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
 - [\[AAAI 2026\] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)
-- [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
-- [\[AAAI 2026\] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis](vascular_anatomy-aware_self-supervised_pre-training_for_x-ray_angiogram_analysis.md)
-- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
+- [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](../../CVPR2026/medical_imaging/biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 
 </div>
 

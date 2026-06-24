@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning
 description: >-
-  [AAAI 2026][Medical Imaging][Tooth alignment] This paper proposes TAlignDiff, a unified framework that integrates a geometry-constrained point cloud regression network (PRN) with a diffusion-based transformation matrix d…
+  [AAAI 2026][Medical Imaging][Tooth alignment] This paper proposes TAlignDiff, a unified framework that integrates a geometry-constrained point cloud regression network (PRN) with a diffusion-based transformation matrix denoising module (DTMD) under a joint training paradigm. Through a bidirectional feedback mechanism, the framework achieves superior automatic tooth alignment on small-scale clinical datasets compared to existing methods.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "transformation matrix"
   - "point cloud regression"
 date: 2026-05-08
-content_hash: 4a90a43decaaa873
+content_hash: 274d04a69be24575
 ---
 
 # TAlignDiff: Automatic Tooth Alignment assisted by Diffusion-based Transformation Learning
@@ -133,11 +133,11 @@ Four loss functions are employed: (1) point cloud reconstruction loss $L_{rec} =
 
 ## Related Papers
 
-- [\[ICLR 2026\] LaVCa: LLM-assisted Visual Cortex Captioning](../../ICLR2026/medical_imaging/lavca_llm-assisted_visual_cortex_captioning.md)
-- [\[AAAI 2026\] WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images](wdt-md_wavelet_diffusion_transformers_for_microaneurysm_detection_in_fundus_imag.md)
-- [\[AAAI 2026\] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization](spa_achieving_consensus_in_llm_alignment_via_self-priority_optimization.md)
-- [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](learning_with_preserving_for_continual_multitask_learning.md)
+- [\[AAAI 2026\] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](shrinking_the_teacher_an_adaptive_teaching_paradigm_for_asymmetric_eeg-vision_al.md)
 - [\[AAAI 2026\] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation](divide_conquer_and_unite_hierarchical_style-recalibrated_prototype_alignment_for.md)
+- [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](learning_with_preserving_for_continual_multitask_learning.md)
+- [\[AAAI 2026\] WDT-MD: Wavelet Diffusion Transformers for Microaneurysm Detection in Fundus Images](wdt-md_wavelet_diffusion_transformers_for_microaneurysm_detection_in_fundus_imag.md)
+- [\[AAAI 2026\] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities](dia-gnostic_vlvae_disentangled_alignment-constrained_vision_language_variational.md)
 
 </div>
 

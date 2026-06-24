@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective
 description: >-
-  [NeurIPS 2025][Medical Imaging][Fairness] FairTTE is the first comprehensive framework to systematically investigate fairness in time-to-event (TTE) prediction for medical imaging. It leverages causal analysis to quantif…
+  [NeurIPS 2025][Medical Imaging][Fairness] FairTTE is the first comprehensive framework to systematically investigate fairness in time-to-event (TTE) prediction for medical imaging. It leverages causal analysis to quantify five sources of bias, and through training over 20,000 models, reveals the limitations of existing fairness methods — particularly the fundamental challenge of maintaining fairness under distribution shift.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -11,7 +11,7 @@ tags:
   - "Causal Analysis"
   - "Distribution Shift"
 date: 2026-05-08
-content_hash: 26a967ac234b178f
+content_hash: b9fa795ad63fac64
 ---
 
 # The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective
@@ -141,11 +141,11 @@ The FairTTE framework comprises three levels: (1) a theoretical bias analysis fr
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] FairGRPO: Fair Reinforcement Learning for Equitable Clinical Reasoning](fairgrpo_fair_reinforcement_learning_for_equitable_clinical_reasoning.md)
 - [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](../../AAAI2026/medical_imaging/dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
-- [\[NeurIPS 2025\] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)
 - [\[NeurIPS 2025\] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling](dynamic_causal_discovery_in_alzheimers_disease_through_latent_pseudotime_modelli.md)
-- [\[NeurIPS 2025\] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation](lomix_learnable_weighted_multi-scale_logits_mixing_for_medical_image_segmentatio.md)
-- [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
+- [\[NeurIPS 2025\] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)
+- [\[CVPR 2025\] CholecTrack20: A Multi-Perspective Tracking Dataset for Surgical Tools](../../CVPR2025/medical_imaging/cholectrack20_a_multi-perspective_tracking_dataset_for_surgical_tools.md)
 
 </div>
 

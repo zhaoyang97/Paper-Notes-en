@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Content-Aware Dynamic Patchification for Efficient Video Diffusion
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] DynaPatch employs a lightweight router within the 3D VAE latent space to **adaptively select patch sizes** for each spatio-temporal region (fine patches for detailed areas and coarse patches for static areas). By jointly training the router with the diffusion model end-to-end, it eliminates redundant computation during
+  [CVPR 2026][Video Generation][Dynamic Patchification] DynaPatch employs a lightweight router within the 3D VAE latent space to **adaptively select patch sizes** for each spatio-temporal region (fine patches for detailed areas and coarse patches for static areas). By jointly training the router with the diffusion model end-to-end, it eliminates redundant computation during the token creation stage. On VBench, it achieves a total score of 83.42 with a 30% token reduction…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Dynamic Patchification"
+  - "Video Diffusion"
+  - "DiT Acceleration"
+  - "Router"
+  - "Token Reduction"
 date: 2026-05-08
-content_hash: b852f358fd9d00e8
+content_hash: d483e75650e54d45
 ---
+
 # Content-Aware Dynamic Patchification for Efficient Video Diffusion
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Across all reduction rates, DynaPatch leads the competition, with the gap wideni
 
 ## Related Papers
 
-- [\[CVPR 2026\] FrameDiT: Diffusion Transformer with Matrix Attention for Efficient Video Generation](framedit_diffusion_transformer_with_matrix_attention_for_efficient_video_generat.md)
 - [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
-- [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](first_frame_is_the_place_to_go_for_video_content_customization.md)
-- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
 - [\[CVPR 2026\] Pantheon360: Taming Digital Twin Generation via 3D-Aware 360° Video Diffusion](pantheon360_taming_digital_twin_generation_via_3d-aware_360_video_diffusion.md)
+- [\[CVPR 2026\] RAPID: Reusing Attention Sparsity with Inter-step Adaptation for Efficient Video Diffusion](rapid_reusing_attention_sparsity_with_inter-step_adaptation_for_efficient_video_.md)
+- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
+- [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 
 </div>
 

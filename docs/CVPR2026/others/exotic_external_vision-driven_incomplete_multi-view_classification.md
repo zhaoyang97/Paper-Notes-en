@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] EXOTIC: External Vision-driven Incomplete Multi-view Classification
 description: >-
-  [CVPR 2026][Others][Paper Note] EXOTIC introduces an "external visual knowledge base" to Incomplete Multi-view Classification (IMVC) for the first time. It utilizes pre-trained vision-language models to transform unlabeled image collections into semantic priors. After filtering and purification, these priors are used to complete missing views, breaki
+  [CVPR 2026][Incomplete Multi-view Classification] EXOTIC introduces an "external visual knowledge base" to Incomplete Multi-view Classification (IMVC) for the first time. It utilizes pre-trained vision-language models to transform unlabeled image collections into semantic priors. After filtering and purification, these priors are used to complete missing views, breaking the performance ceiling inherent in "internal-only supervision" methods—showing particularly significant im…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Incomplete Multi-view Classification"
+  - "External Visual Knowledge"
+  - "Missing View Completion"
+  - "Knowledge Purification"
+  - "Dual-channel Decoupling"
 date: 2026-05-08
-content_hash: 3deb49cc50e60c03
+content_hash: be24d2579b1fe439
 ---
+
 # EXOTIC: External Vision-driven Incomplete Multi-view Classification
 
 **Conference**: CVPR 2026  
@@ -138,16 +143,16 @@ Conducted at 0.9 missing rate (EXOTIC-1: w/o $L_{kc}$; EXOTIC-2: w/o $L_{vc}$; E
 - Value: ⭐⭐⭐⭐ The paradigm of using unlabeled images as external knowledge is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 - [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
 - [\[CVPR 2026\] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization](plug-and-play_incomplete_multi-view_clustering_via_janus-faced_affinity_learning.md)
-- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](../../AAAI2026/others/deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
+- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking Positive Transfer in Incrementally Learning Surgical Instruments: A Self-reflection Hierarchical Prompt Framework
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper transforms the prompt parameters of each instrument class from "isolated independent prompts" into a "tree structure where shared knowledge is decomposed layer by layer." This enables new instruments to inherit existing knowledge for rapid learning while allowing new knowledge to conversely and gently refine
+  [CVPR 2026][Medical Imaging][Class-incremental Segmentation] This paper transforms the prompt parameters of each instrument class from "isolated independent prompts" into a "tree structure where shared knowledge is decomposed layer by layer." This enables new instruments to inherit existing knowledge for rapid learning while allowing new knowledge to conversely and gently refine old knowledge. Consequently, it simultaneously enhances performance across new, common…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Class-incremental Segmentation"
+  - "Surgical Instruments"
+  - "Hierarchical Prompts"
+  - "Positive Transfer"
+  - "Backward Transfer"
 date: 2026-05-08
-content_hash: 3169f75163a37c81
+content_hash: 9eef68d8905cbf19
 ---
+
 # Unlocking Positive Transfer in Incrementally Learning Surgical Instruments: A Self-reflection Hierarchical Prompt Framework
 
 **Conference**: CVPR 2026  

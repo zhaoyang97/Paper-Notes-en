@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Kalman Linear Attention: Parallel Bayesian Filtering For Efficient Language Modelling and State Tracking
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This work reinterprets sequence mixing as exact Bayesian filtering. By utilizing the "information form" of the Kalman filter, it reformulates the sequential recursive update into a parallelizable prefix scan using Möbius (fractional linear) mappings. The resulting KLA is a plug-and-play, linear-complexity sequence mixi
+  [ICML2026][LLM Efficiency][Kalman Filter] This work reinterprets sequence mixing as exact Bayesian filtering. By utilizing the "information form" of the Kalman filter, it reformulates the sequential recursive update into a parallelizable prefix scan using Möbius (fractional linear) mappings. The resulting KLA is a plug-and-play, linear-complexity sequence mixing layer that is more expressive than GLA and provides explicit state uncertainty.
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Kalman Filter"
+  - "Information Form"
+  - "Möbius Scan"
+  - "Uncertainty Gating"
+  - "State Tracking"
 date: 2026-05-08
-content_hash: 0b2fbca3c61c48b1
+content_hash: b3895706e17eb82b
 ---
+
 # Kalman Linear Attention: Parallel Bayesian Filtering For Efficient Language Modelling and State Tracking
 
 **Conference**: ICML2026  
@@ -134,11 +140,11 @@ KLA is among the first stacked Bayesian filtering primitives pretrained at the *
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](../../ICLR2026/llm_efficiency/scaling_linear_attention_capacity_with_sparse_state_expansion.md)
 - [\[ICML 2026\] Dynamic Linear Attention](dynamic_linear_attention.md)
 - [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
-- [\[NeurIPS 2025\] Tiled Flash Linear Attention: More Efficient Linear RNN and xLSTM Kernels](../../NeurIPS2025/llm_efficiency/tiled_flash_linear_attention_more_efficient_linear_rnn_and_xlstm_kernels.md)
-- [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](ir3de_a_linear_router_for_large_language_models.md)
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](../../NeurIPS2025/llm_efficiency/zeros_zero-sum_linear_attention_for_efficient_transformers.md)
+- [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
+- [\[ICML 2026\] Q-Delta: Beyond Key–Value Associative State Evolution](q-delta_beyond_key-value_associative_state_evolution.md)
 
 </div>
 

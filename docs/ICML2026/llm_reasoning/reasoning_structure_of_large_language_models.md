@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reasoning Structure of Large Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper converts the free-text Chain-of-Thought (CoT) of Large Reasoning Models (LRMs) into a verifiable DAG of "atomic claims + deductive dependencies." By defining a reasoning flow efficiency metric $\eta$ based on the structural entropy of absorbing Markov chains, it demonstrates that even in regions where accura
+  [ICML2026][Reasoning][Reasoning Graph] This paper converts the free-text Chain-of-Thought (CoT) of Large Reasoning Models (LRMs) into a verifiable DAG of "atomic claims + deductive dependencies." By defining a reasoning flow efficiency metric $\eta$ based on the structural entropy of absorbing Markov chains, it demonstrates that even in regions where accuracy and token counts are saturated or overlapping, $\eta$ can still distinguish between "focused reasoning" and "divergent…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Reasoning Graph"
+  - "Structural Entropy"
+  - "Efficiency Metrics"
+  - "Logic Puzzles"
+  - "Process Evaluation"
 date: 2026-05-08
-content_hash: ca01514fec2e9156
+content_hash: aba47e93ca35efda
 ---
+
 # Reasoning Structure of Large Language Models
 
 **Conference**: ICML2026  
@@ -147,11 +153,11 @@ While width, $|V|$, and tokens are strongly negatively correlated with accuracy,
 
 ## Related Papers
 
+- [\[ICML 2026\] Inference-Time Conformal Reasoning with Valid Factuality Control for Large Language Models](inference-time_conformal_reasoning_with_valid_factuality_control_for_large_langu.md)
 - [\[ICML 2026\] Scaling-Aware Adapter for Structure-Grounded LLM Reasoning](scaling-aware_adapter_for_structure-grounded_llm_reasoning.md)
 - [\[ICML 2026\] DecepChain: Inducing Deceptive Reasoning in Large Language Models](decepchain_inducing_deceptive_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](../../ACL2026/llm_reasoning/selar_selective_latent_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](../../ACL2026/llm_reasoning/foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
-- [\[ICML 2026\] Are Large Reasoning Models Interruptible?](are_large_reasoning_models_interruptible.md)
+- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](../../ICLR2026/llm_reasoning/on_the_thinking-language_modeling_gap_in_large_language_models.md)
+- [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](../../ICLR2026/llm_reasoning/characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
 
 </div>
 

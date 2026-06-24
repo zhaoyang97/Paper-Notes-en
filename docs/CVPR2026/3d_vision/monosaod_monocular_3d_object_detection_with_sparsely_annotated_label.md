@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours first defines and addresses the problem of monocular 3D object detection with sparsely annotated labels, proposing Road-Aware Patch Augmentation (RAPA) and Prototype-based Filtering (PBF) modules. It significantly outperforms existing 2D SAOD methods under the KITTI 30% annotation setting (AP3D Easy: 21.28 vs 17.1
+  [CVPR 2026][3D Vision][Monocular 3D Detection] Ours first defines and addresses the problem of monocular 3D object detection with sparsely annotated labels, proposing Road-Aware Patch Augmentation (RAPA) and Prototype-based Filtering (PBF) modules. It significantly outperforms existing 2D SAOD methods under the KITTI 30% annotation setting (AP3D Easy: 21.28 vs 17.14).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular 3D Detection"
+  - "Sparse Annotation"
+  - "Data Augmentation"
+  - "Pseudo-labeling"
+  - "Prototype Filtering"
 date: 2026-05-08
-content_hash: d89115357816ec4c
+content_hash: 7271d3db6fb59d5f
 ---
+
 # MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ The improvements are most significant in the most difficult 30% annotation setti
 
 ## Related Papers
 
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
-- [\[CVPR 2026\] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network](ev-cgnet_co-visible_focused_3d-guided_2d_event_keypoint_detection_network.md)
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
+- [\[CVPR 2025\] MonoPlace3D: Learning 3D-Aware Object Placement for 3D Monocular Detection](../../CVPR2025/3d_vision/monoplace3d_learning_3d-aware_object_placement_for_3d_monocular_detection.md)
 
 </div>
 

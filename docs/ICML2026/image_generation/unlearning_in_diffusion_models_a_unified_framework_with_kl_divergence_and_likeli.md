@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 扩散模型中的遗忘：基于 KL 散度和似然约束的统一框架
+  [Paper Note] Forgetting in Diffusion Models: A Unified Framework via KL Divergence and Likelihood Constraints
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper proposes a unified constrained optimization framework that formalizes machine unlearning in diffusion models as minimizing the deviation from a pre-trained model subject to explicit separation conditions from the unlearning distribution. Through three constraint forms (Reverse KL, Forward KL, and Likelihood
+  [ICML 2026][Image Generation][Machine Unlearning] This paper proposes a unified constrained optimization framework that formalizes machine unlearning in diffusion models as minimizing the deviation from a pre-trained model subject to explicit separation conditions from the unlearning distribution. Through three constraint forms (Reverse KL, Forward KL, and Likelihood constraints), it uniformly handles concept and data unlearning while proving strong duality.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Machine Unlearning"
+  - "Diffusion Models"
+  - "KL Divergence Constraint"
+  - "Likelihood Constraint"
+  - "Strong Duality"
 date: 2026-05-08
-content_hash: 03ca5022898ecba5
+content_hash: 52acf67614a5e49c
 ---
+
 # Forgetting in Diffusion Models: A Unified Framework via KL Divergence and Likelihood Constraints
 
 **Conference**: ICML 2026  
@@ -104,11 +109,11 @@ As closed-form solutions exist in distribution space while actual training invol
 
 ## Related Papers
 
+- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
 - [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
-- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
-- [\[ICML 2026\] SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders](saemnesia_erasing_concepts_in_diffusion_models_with_supervised_sparse_autoencode.md)
-- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
-- [\[ICML 2026\] Local Hessian Spectral Filtering for Robust Intrinsic Dimension Estimation](local_hessian_spectral_filtering_for_robust_intrinsic_dimension_estimation.md)
+- [\[ICLR 2026\] Avoid Catastrophic Forgetting with Rank-1 Fisher from Diffusion Models](../../ICLR2026/image_generation/avoid_catastrophic_forgetting_with_rank-1_fisher_from_diffusion_models.md)
+- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
+- [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](../../ICLR2026/image_generation/quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
 
 </div>
 

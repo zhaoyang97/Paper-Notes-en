@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] Hyper-ICL provides a structural prior for multimodal LVLM in-context learning by lifting **CLIP embeddings into hyperbolic space** to form structured "hyperspherical anchors," combined with **hierarchy-aware distillation attention**—consistently surpassing traditional demo selection strategies on tasks like VQA, Captio
+  [ICML 2026][Multimodal VLM][Multimodal ICL] Hyper-ICL provides a structural prior for multimodal LVLM in-context learning by lifting **CLIP embeddings into hyperbolic space** to form structured "hyperspherical anchors," combined with **hierarchy-aware distillation attention**—consistently surpassing traditional demo selection strategies on tasks like VQA, Captioning, and Caption Editing.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Multimodal ICL"
+  - "Hyperbolic Embedding"
+  - "Attention Calibration"
+  - "Cross-modal Hierarchy"
 date: 2026-05-08
-content_hash: 4459be71484a8c60
+content_hash: 232f1c946b8c3a6f
 ---
+
 # Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL
 
 **Conference**: ICML 2026  

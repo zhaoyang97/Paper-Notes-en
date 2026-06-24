@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations
 description: >-
-  [ICML 2026][vlm_reasoning][3D Layout Generation] R³L attributes two types of systemic errors in multi-hop "relative spatial relation" reasoning of MLLMs (semantic drift and metric drift) to "recurrent reference frame transformations." Through three modules—Invariant Spatial Decomposition (shortening relation chains), Consistent Spatial Imagination (an imagine-and-rev
+  [ICML 2026][VLM Reasoning][3D Layout Generation] R³L attributes two types of systemic errors in multi-hop "relative spatial relation" reasoning of MLLMs (semantic drift and metric drift) to "recurrent reference frame transformations." Through three modules—Invariant Spatial Decomposition (shortening relation chains), Consistent Spatial Imagination (an imagine-and-revise loop to eliminate conflicts), and Supportive Spatial Optimization (global-to-local pose re-parameterization…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - 3D Layout Generation
-  - MLLM
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "3D Layout Generation"
+  - "MLLM"
+  - "Relational Reasoning"
+  - "Frame Transformation"
+  - "Self-consistency"
 date: 2026-05-08
-content_hash: 314d5bbcc4123da0
+content_hash: 2b7e331ce80df957
 ---
+
 # R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations
 
 **Conference**: ICML 2026  
@@ -142,9 +146,9 @@ Ours achieves %CR=%OR=0 across all scenes, while semantic scores significantly o
 ## Related Papers
 
 - [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
-- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](../../CVPR2026/vlm_reasoning/beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/vlm_reasoning/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
 - [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
+- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](../../ICLR2026/vlm_reasoning/metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
+- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](../../CVPR2026/vlm_reasoning/beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
 - [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](../../CVPR2026/vlm_reasoning/think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 
 </div>

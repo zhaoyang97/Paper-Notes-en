@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Hallucination Detection in LLMs via Adaptive Token Selection
 description: >-
-  [NeurIPS 2025][Hallucination Detection][multiple instance learning] HaMI frames hallucination detection as a Multiple Instance Learning (MIL) problem…
+  [NeurIPS 2025][Hallucination Detection][multiple instance learning] HaMI frames hallucination detection as a Multiple Instance Learning (MIL) problem, treating each generated sequence as a bag of token instances. By jointly optimizing token selection and hallucination detection, it adaptively identifies the most informative tokens, achieving substantial AUROC improvements over all existing methods across four QA benchmarks (up to 11.9%).
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -11,7 +11,7 @@ tags:
   - "internal representation"
   - "predictive uncertainty"
 date: 2026-05-08
-content_hash: b0878107c49168ef
+content_hash: 5dd0c526bc77dcc2
 ---
 
 # Robust Hallucination Detection in LLMs via Adaptive Token Selection
@@ -176,8 +176,8 @@ The HaMI framework consists of two main modules:
 
 - [\[NeurIPS 2025\] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT](beyond_token_probes_hallucination_detection_via_activation_tensors_with_act-vit.md)
 - [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](../../ICML2026/hallucination/automatic_layer_selection_for_hallucination_detection.md)
-- [\[NeurIPS 2025\] Teaming LLMs to Detect and Mitigate Hallucinations](teaming_llms_to_detect_and_mitigate_hallucinations.md)
-- [\[NeurIPS 2025\] Benford's Curse: Tracing Digit Bias to Numerical Hallucination in LLMs](benfords_curse_tracing_digit_bias_to_numerical_hallucination_in_llms.md)
+- [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
+- [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](../../ICLR2026/hallucination/cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](../../CVPR2026/hallucination/beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
 
 </div>

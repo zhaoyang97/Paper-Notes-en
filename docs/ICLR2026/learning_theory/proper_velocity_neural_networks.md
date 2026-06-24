@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Proper Velocity Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][Proper Velocity] This paper introduces the "Proper Velocity (PV)" space, originating from special relativity, into machine learning. It completes the full Riemannian toolbox for PV (closed-form solutions for exponential/logarithmic maps, parallel transport, and geodesic distance) and constructs core layers including MLR, fully connecte
+  [ICLR 2026][Geometric Deep Learning][Hyperbolic Geometry] This paper introduces the "Proper Velocity (PV)" space, originating from special relativity, into machine learning. It completes the full Riemannian toolbox for PV (closed-form solutions for exponential/logarithmic maps, parallel transport, and geodesic distance) and constructs core layers including MLR, fully connected, convolutional, activation, and batch normalization. The resulting Proper Velocity Neural Network (P…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Proper Velocity
-  - GyroBN
+  - "ICLR 2026"
+  - "Geometric Deep Learning"
+  - "Hyperbolic Neural Networks"
+  - "Hyperbolic Geometry"
+  - "Proper Velocity"
+  - "Riemannian Operators"
+  - "GyroBN"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: c1c42e8511b94bd7
+content_hash: f489767cd0086022
 ---
+
 # Proper Velocity Neural Networks
 
 **Conference**: ICLR 2026  
@@ -156,10 +161,10 @@ PV MLR leads in CIFAR-100 (where gains are greatest at complex decision boundari
 ## Related Papers
 
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 - [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
+- [\[ICLR 2026\] Some Neural Networks Inherently Preserve Subspace Clustering Structure](some_neural_networks_inherently_preserve_subspace_clustering_structure.md)
 - [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
-- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
-- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
 
 </div>
 

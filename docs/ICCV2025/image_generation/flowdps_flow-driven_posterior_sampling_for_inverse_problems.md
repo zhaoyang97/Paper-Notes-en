@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems
 description: >-
-  [ICCV 2025][Image Generation][Flow Matching] FlowDPS derives a Tweedie formula for flow models to decompose the Flow ODE into a clean image estimation component and a noise estimation component. Likelihood gradients are…
+  [ICCV 2025][Image Generation][Flow Matching] FlowDPS derives a Tweedie formula for flow models to decompose the Flow ODE into a clean image estimation component and a noise estimation component. Likelihood gradients are injected into the clean image component while stochastic noise is introduced into the noise component, enabling principled posterior sampling for inverse problems under the flow matching framework. FlowDPS surpasses all prior methods on four linear inverse pro…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Tweedie Formula"
   - "Stable Diffusion 3.0"
 date: 2026-05-08
-content_hash: c7b6d99be5fd4224
+content_hash: af90392b5d8f77ab
 ---
 
 # FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems
@@ -151,7 +151,7 @@ FlowDPS is a **zero-shot method** requiring no additional training. It directly 
 - [\[ICCV 2025\] LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling](ld-rps_zero-shot_unified_image_restoration_via_latent_diffusion_recurrent_poster.md)
 - [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](../../NeurIPS2025/image_generation/a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](../../ICML2026/image_generation/saving_foundation_flow-matching_priors_for_inverse_problems.md)
-- [\[ICCV 2025\] FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait](float_generative_motion_latent_flow_matching_for_audio-driven_talking_portrait.md)
+- [\[ICLR 2026\] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo](../../ICLR2026/image_generation/efficient_approximate_posterior_sampling_with_annealed_langevin_monte_carlo.md)
 
 </div>
 

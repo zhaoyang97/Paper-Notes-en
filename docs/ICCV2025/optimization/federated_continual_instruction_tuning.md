@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Federated Continual Instruction Tuning
 description: >-
-  [Optimization] This paper introduces the first Federated Continual Instruction Tuning (FCIT) benchmark, covering 2 scenarios, 4 settings, and 12 datasets, and proposes the DISCO framework…
+  [Optimization] This paper introduces the first Federated Continual Instruction Tuning (FCIT) benchmark, covering 2 scenarios, 4 settings, and 12 datasets, and proposes the DISCO framework, which addresses data heterogeneity and catastrophic forgetting via Dynamic Knowledge Organization (DKO) and Subspace Selective Activation (SSA).
 tags:
   - "Optimization"
 date: 2026-05-08
-content_hash: 8d2a576ad6bcf0ec
+content_hash: 0f656d49bbe4c8c6
 ---
 
 # Federated Continual Instruction Tuning
@@ -189,11 +189,11 @@ Softmax normalization achieves the best results; direct concatenation introduces
 
 ## Related Papers
 
+- [\[ICML 2025\] Widening the Network Mitigates the Impact of Data Heterogeneity on FedAvg](../../ICML2025/optimization/widening_the_network_mitigates_the_impact_of_data_heterogeneity_on_fedavg.md)
+- [\[ICML 2025\] Sparse Causal Discovery with Generative Intervention for Unsupervised Graph Domain Adaptation](../../ICML2025/optimization/sparse_causal_discovery_with_generative_intervention_for_unsupervised_graph_doma.md)
+- [\[ICML 2025\] The Butterfly Effect: Neural Network Training Trajectories Are Highly Sensitive to Initial Conditions](../../ICML2025/optimization/the_butterfly_effect_neural_network_training_trajectories_are_highly_sensitive_t.md)
 - [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
 - [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
-- [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](../../ICLR2026/optimization/lca_local_classifier_alignment_for_continual_learning.md)
-- [\[NeurIPS 2025\] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning](../../NeurIPS2025/optimization/train_with_perturbation_infer_after_merging_a_two-stage_framework_for_continual_.md)
-- [\[NeurIPS 2025\] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](../../NeurIPS2025/optimization/cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)
 
 </div>
 

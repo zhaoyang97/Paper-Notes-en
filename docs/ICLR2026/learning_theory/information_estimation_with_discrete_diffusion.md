@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Information Estimation with Discrete Diffusion
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The paper proposes INFO-SEDD, which connects the score function of discrete diffusion (Continuous-Time Markov Chains) to the Dynkin's formula. This allows for the direct estimation of KL divergence, mutual information, and entropy on discrete data, bypassing the conventional "embedding into continuous space" approach.
+  [ICLR 2026][Learning Theory][Mutual Information Estimation] The paper proposes INFO-SEDD, which connects the score function of discrete diffusion (Continuous-Time Markov Chains) to the Dynkin's formula. This allows for the direct estimation of KL divergence, mutual information, and entropy on discrete data, bypassing the conventional "embedding into continuous space" approach. It is significantly more accurate and stable in high-dimensional and high-mutual information scenari…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Information Theoretic Estimation"
+  - "Discrete Diffusion"
+  - "Mutual Information Estimation"
+  - "Entropy Estimation"
+  - "Continuous-Time Markov Chains"
+  - "KL Divergence"
 date: 2026-05-08
-content_hash: 584f6f208afa56da
+content_hash: 32189b01efe8a2b8
 ---
+
 # Information Estimation with Discrete Diffusion
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] SkyReels-Text models "text replacement" as a region-level editing task. By using a user-cropped glyph patch as an explicit visual condition injected through a dual-stream VAE, it achieves zero-shot font transfer. This approach accurately replaces text content while precisely replicating arbitrary fonts (including handw
+  [CVPR 2026][Image Generation][Text Editing] SkyReels-Text models "text replacement" as a region-level editing task. By using a user-cropped glyph patch as an explicit visual condition injected through a dual-stream VAE, it achieves zero-shot font transfer. This approach accurately replaces text content while precisely replicating arbitrary fonts (including handwriting and artistic styles), achieving SOTA in text fidelity and font consistency across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text Editing"
+  - "Font Controllability"
+  - "Poster Design"
+  - "Dual-stream Visual Conditioning"
+  - "Style-Content Decoupling"
 date: 2026-05-08
-content_hash: 8c80e96f6f3369e5
+content_hash: ee7f1202f3f85adc
 ---
+
 # SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design
 
 **Conference**: CVPR 2026  
@@ -169,11 +175,11 @@ Zero-shot handwriting generation (IAM / CVL, without specialized training):
 
 ## Related Papers
 
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 - [\[CVPR 2026\] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward](promptenhancer_taming_your_rewriter_for_text-to-image_generation_via_fine-graine.md)
 - [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
 - [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
+- [\[CVPR 2026\] Delta Rectified Flow Sampling for Text-to-Image Editing](delta_rectified_flow_sampling_for_text-to-image_editing.md)
 
 </div>
 

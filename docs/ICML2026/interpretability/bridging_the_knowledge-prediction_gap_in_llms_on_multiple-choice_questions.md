@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper reveals a widespread "knowledge-prediction gap" in LLMs on MCQs—correct answers are already linearly encoded in hidden layers, but the final predictions deviate. Through geometric analysis, this gap is attributed to the misalignment between knowledge and prediction subspaces. The authors propose KAPPA, which
+  [ICML 2026][Interpretability][knowledge-prediction gap] This paper reveals a widespread "knowledge-prediction gap" in LLMs on MCQs—correct answers are already linearly encoded in hidden layers, but the final predictions deviate. Through geometric analysis, this gap is attributed to the misalignment between knowledge and prediction subspaces. The authors propose KAPPA, which uses closed-form affine transformations to align these subspaces during inference…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "knowledge-prediction gap"
+  - "linear probes"
+  - "subspace alignment"
+  - "inference-time intervention"
+  - "multiple-choice questions"
 date: 2026-05-08
-content_hash: 8c06f8c51e59c51b
+content_hash: 15691f76b0359b0b
 ---
+
 # Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions
 
 **Conference**: ICML 2026  
@@ -129,7 +135,7 @@ Cross-model TruthfulQA results (KAPPA(6) vs Base):
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](../../ACL2026/interpretability/rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ICML 2026\] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence](pine_pruning_boosted_tree_ensembles_with_conformal_in-distribution_prediction_eq.md)
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](../../ICLR2026/interpretability/bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
-- [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](../../ACL2026/interpretability/tracing_relational_knowledge_recall_in_large_language_models.md)
+- [\[ICLR 2026\] Multiple Token Divergence: Measuring and Steering In-Context Computation Density](../../ICLR2026/interpretability/multiple_token_divergence_measuring_and_steering_in-context_computation_density.md)
 - [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 
 </div>

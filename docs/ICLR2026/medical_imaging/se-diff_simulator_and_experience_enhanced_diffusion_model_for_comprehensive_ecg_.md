@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SE-Diff: Simulator and Experience Enhanced Diffusion Model for Comprehensive ECG Generation
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion Model] SE-Diff integrates a lightweight ODE ECG simulator and an LLM-based retrieval enhancement based on EHR case experience into a conditional latent diffusion model. This allows for the generation of 12-lead, 10-second ECGs from clinical text that conform to both the physical mechanisms of cardiac electrical activity and r
+  [ICLR 2026][Medical Imaging][ECG Generation] SE-Diff integrates a lightweight ODE ECG simulator and an LLM-based retrieval enhancement based on EHR case experience into a conditional latent diffusion model. This allows for the generation of 12-lead, 10-second ECGs from clinical text that conform to both the physical mechanisms of cardiac electrical activity and real-world clinical experience, outperforming previous text-to-ECG methods in signal fidelity, text alignment…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "ECG Generation"
+  - "Text-to-ECG"
+  - "Diffusion Model"
+  - "ODE Physics Simulation"
+  - "Retrieval Augmented"
 date: 2026-05-08
-content_hash: d0596abdbf5e0d07
+content_hash: 59880203681ee38d
 ---
+
 # SE-Diff: Simulator and Experience Enhanced Diffusion Model for Comprehensive ECG Generation
 
 **Conference**: ICLR 2026  
@@ -142,8 +147,8 @@ Downstream classification (Table 3, augmenting minority classes with synthetic d
 - [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
 - [\[CVPR 2026\] Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization](../../CVPR2026/medical_imaging/diffusion-based_native_adversarial_synthesis_for_enhanced_medical_segmentation_g.md)
 - [\[ICLR 2026\] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis](omnict_towards_a_unified_slice-volume_lvlm_for_comprehensive_ct_analysis.md)
-- [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
-- [\[ICLR 2026\] Cross-Timestep: 3D Diffusion Model with Trans-temporal Memory LSTM and Adaptive Priori Decoding Strategy for Medical Segmentation](cross-timestep_3d_diffusion_model_with_trans-temporal_memory_lstm_and_adaptive_p.md)
+- [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](../../CVPR2026/medical_imaging/must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
+- [\[CVPR 2026\] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation](../../CVPR2026/medical_imaging/sketch2ct_multimodal_diffusion_for_structure-aware_3d_medical_volume_generation.md)
 
 </div>
 

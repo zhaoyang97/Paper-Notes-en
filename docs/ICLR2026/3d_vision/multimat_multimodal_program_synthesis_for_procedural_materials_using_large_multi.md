@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models
 description: >-
-  [ICLR 2026][3D Vision][Substance Designer] MultiMat is proposed as the first framework to utilize Large Multimodal Models (LMMs) for synthesizing procedural material node graphs. By integrating visual rendering feedback from intermediate nodes during the autoregressive generation process (via Mixed and Graph conditioning modes) and employing incremental constra
+  [ICLR 2026][3D Vision][Procedural Materials] MultiMat is proposed as the first framework to utilize Large Multimodal Models (LMMs) for synthesizing procedural material node graphs. By integrating visual rendering feedback from intermediate nodes during the autoregressive generation process (via Mixed and Graph conditioning modes) and employing incremental constrained tree search for real-time validation and backtracking, the model significantly outperforms text-only baselines…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Substance Designer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Procedural Materials"
+  - "Node Graphs"
+  - "Multimodal Generation"
+  - "Constrained Tree Search"
+  - "Substance Designer"
 date: 2026-05-08
-content_hash: a770698ed425c2fb
+content_hash: bd9315676cae3c5a
 ---
+
 # MultiMat: Multimodal Program Synthesis for Procedural Materials using Large Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -152,10 +157,10 @@ Incremental tree search is another elegant design—turning "post-hoc validation
 ## Related Papers
 
 - [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
-- [\[ICLR 2026\] DiffTrans: Differentiable Geometry-Materials Decomposition for Reconstructing Transparent Objects](difftrans_differentiable_geometry-materials_decomposition_for_reconstructing_tra.md)
-- [\[ICLR 2026\] Large Depth Completion Model from Sparse Observations](large_depth_completion_model_from_sparse_observations.md)
-- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
-- [\[ICLR 2026\] Do 3D Large Language Models Really Understand 3D Spatial Relationships?](do_3d_large_language_models_really_understand_3d_spatial_relationships.md)
+- [\[CVPR 2026\] Towards Generalized Multimodal Homography Estimation](../../CVPR2026/3d_vision/towards_generalized_multimodal_homography_estimation.md)
+- [\[CVPR 2025\] Perception Tokens Enhance Visual Reasoning in Multimodal Language Models](../../CVPR2025/3d_vision/perception_tokens_enhance_visual_reasoning_in_multimodal_language_models.md)
+- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
+- [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](../../AAAI2026/3d_vision/point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
 
 </div>
 

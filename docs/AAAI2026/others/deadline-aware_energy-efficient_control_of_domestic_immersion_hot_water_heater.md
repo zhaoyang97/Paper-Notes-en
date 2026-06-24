@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters
 description: >-
-  [AAAI 2026][Energy Efficiency] This paper proposes a deadline-aware energy-efficient control method for domestic hot water heaters. Using a Gymnasium-based simulation environment, it benchmarks a bang-bang baseline…
+  [AAAI 2026][Energy Efficiency] This paper proposes a deadline-aware energy-efficient control method for domestic hot water heaters. Using a Gymnasium-based simulation environment, it benchmarks a bang-bang baseline, an MCTS planner, and a PPO policy, demonstrating that PPO achieves up to 69% energy savings under identical physical conditions.
 tags:
   - "AAAI 2026"
   - "Energy Efficiency"
@@ -11,7 +11,7 @@ tags:
   - "PPO"
   - "MCTS"
 date: 2026-05-08
-content_hash: 15e7f1c59eefdf9f
+content_hash: 1ca1daa6f4d2039c
 ---
 
 # Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters
@@ -131,11 +131,11 @@ This paper applies the "optimal start" intuition from building control to device
 
 ## Related Papers
 
+- [\[ICLR 2026\] Energy-Efficient Random Variate Generation via Compressed Lookup Tables](../../ICLR2026/others/energy-efficient_random_variate_generation_via_compressed_lookup_tables.md)
 - [\[AAAI 2026\] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States](enhancing_control_policy_smoothness_by_aligning_actions_with_predictions_from_pr.md)
 - [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
-- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](../../NeurIPS2025/others/frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
+- [\[ICML 2025\] Time-Aware World Model for Adaptive Prediction and Control](../../ICML2025/others/time-aware_world_model_for_adaptive_prediction_and_control.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] RedCodeAgent is the first fully automated red-teaming agent designed specifically for "code agents." It utilizes a memory module to accumulate successful experiences, a toolbox combining general jailbreak and code-substitution tools, and real execution evaluations within Docker sandboxes. By adaptively selecting and co
+  [ICLR 2026][LLM Safety][Code agent] RedCodeAgent is the first fully automated red-teaming agent designed specifically for "code agents." It utilizes a memory module to accumulate successful experiences, a toolbox combining general jailbreak and code-substitution tools, and real execution evaluations within Docker sandboxes. By adaptively selecting and combining tools, it achieves higher attack success rates and lower refusal rates than single-method approaches across multiple…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Code agent"
+  - "automated red-teaming"
+  - "jailbreak attack"
+  - "memory module"
+  - "sandbox evaluation"
 date: 2026-05-08
-content_hash: 8b22851d38d41570
+content_hash: c9b1093ede70b9be
 ---
+
 # RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents
 
 **Conference**: ICLR 2026  
@@ -114,6 +120,7 @@ On commercial agents: Cursor ASR increased from 62.60% to **72.72%**; Codeium fr
 - **Value**: ⭐⭐⭐⭐⭐ Provides a reusable paradigm for code agent security assessment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -122,7 +129,7 @@ On commercial agents: Cursor ASR increased from 62.60% to **72.72%**; Codeium fr
 - [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
 - [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
 - [\[ICLR 2026\] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)](tree-based_dialogue_reinforced_policy_optimization_for_red-teaming_attacks.md)
-- [\[ACL 2026\] STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming](../../ACL2026/llm_safety/star-teaming_a_strategy-response_multiplex_network_approach_to_automated_llm_red.md)
+- [\[ICLR 2026\] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks](safedialbench_a_fine-grained_safety_evaluation_benchmark_for_large_language_mode.md)
 
 </div>
 

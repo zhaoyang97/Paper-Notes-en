@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 通用骨架理解：可微渲染与 MLLMs
+  [Paper Note] Universal Skeleton Understanding: Differentiable Rendering and MLLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] By rendering skeleton sequences into images, MLLMs are enabled to understand various skeleton data formats—achieving universal skeleton understanding and resolving cross-modal and format heterogeneity issues.
+  [ICML 2026][Multimodal VLM][Skeleton Understanding] By rendering skeleton sequences into images, MLLMs are enabled to understand various skeleton data formats—achieving universal skeleton understanding and resolving cross-modal and format heterogeneity issues.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Skeleton Understanding"
+  - "Differentiable Rendering"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "Action Recognition"
+  - "Format Agnosticism"
 date: 2026-05-08
-content_hash: 4085e6cd838c8f57
+content_hash: af13a69eaccdf0d9
 ---
+
 # Universal Skeleton Understanding: Differentiable Rendering and MLLMs
 
 **Conference**: ICML 2026  
@@ -122,11 +128,11 @@ A randomly initialized renderer initially produces noise that a pre-trained MLLM
 
 ## Related Papers
 
-- [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](freeret_mllms_as_training-free_retrievers.md)
-- [\[ICML 2026\] Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives](multimodal_continual_learning_with_mllms_from_multi-scenario_perspectives.md)
-- [\[CVPR 2026\] Linking Perception, Confidence and Accuracy in MLLMs](../../CVPR2026/multimodal_vlm/linking_perception_confidence_and_accuracy_in_mllms.md)
-- [\[ICML 2026\] Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression](injecting_distributional_awareness_into_mllms_via_reinforcement_learning_for_dee.md)
-- [\[ICML 2026\] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs](slq_bridging_modalities_via_shared_latent_queries_for_retrieval_with_frozen_mllm.md)
+- [\[CVPR 2025\] LayoutVLM: Differentiable Optimization of 3D Layout via Vision-Language Models](../../CVPR2025/multimodal_vlm/layoutvlm_differentiable_optimization_of_3d_layout_via_vision-language_models.md)
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](../../ICLR2026/multimodal_vlm/omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
+- [\[CVPR 2025\] PEACE: Empowering Geologic Map Holistic Understanding with MLLMs](../../CVPR2025/multimodal_vlm/peace_empowering_geologic_map_holistic_understanding_with_mllms.md)
+- [\[ICML 2026\] Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?](robust-u1_can_mllms_self-recover_corrupted_visual_content_for_robust_understandi.md)
+- [\[ECCV 2024\] REVISION: Rendering Tools Enable Spatial Fidelity in Vision-Language Models](../../ECCV2024/multimodal_vlm/revision_rendering_tools_enable_spatial_fidelity_in_vision-language_models.md)
 
 </div>
 

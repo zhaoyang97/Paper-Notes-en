@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Detecting High-Stakes Interactions with Activation Probes
 description: >-
-  [NeurIPS 2025][LLM/NLP][activation probes] Linear activation probes (lightweight classifiers trained on LLM internal representations) are used to detect "high-stakes interactions" from users. Trained on synthetic data…
+  [NeurIPS 2025][LLM (Other)][activation probes] Linear activation probes (lightweight classifiers trained on LLM internal representations) are used to detect "high-stakes interactions" from users. Trained on synthetic data, these probes achieve AUROC of 0.88–0.92 across 6 real-world datasets, matching fine-tuned 8–12B LLMs at a computational cost six orders of magnitude lower. A cascaded architecture (probe pre-filtering + LLM refinement) further surpasses either component use…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "activation probes"
   - "high-stakes detection"
   - "cascaded monitoring"
   - "synthetic data"
   - "LLM safety"
 date: 2026-05-08
-content_hash: 1a3502c2ee0f2411
+content_hash: 704513a297d6acb5
 ---
 
 # Detecting High-Stakes Interactions with Activation Probes
@@ -128,11 +128,11 @@ Binary cross-entropy loss. Probes are trained on synthetic data and evaluated on
 
 ## Related Papers
 
+- [\[ACL 2025\] Retrospective Learning from Interactions](../../ACL2025/llm_nlp/retrospective_learning_from_interactions.md)
 - [\[NeurIPS 2025\] Polar Sparsity: High Throughput Batched LLM Inferencing with Scalable Contextual Sparsity](polar_sparsity_high_throughput_batched_llm_inferencing_with_scalable_contextual_.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
-- [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](../../ICML2026/llm_nlp/resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
-- [\[ACL 2026\] Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design](../../ACL2026/llm_nlp/solver-independent_automated_problem_formulation_via_llms_for_high-cost_simulati.md)
+- [\[ICML 2025\] LaRoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation](../../ICML2025/llm_nlp/la_rosa_enhancing_llm_efficiency_via_layerwise_rotated_sparse_activation.md)
+- [\[ACL 2025\] Improving Preference Extraction In LLMs By Identifying Latent Knowledge Through Classifying Probes](../../ACL2025/llm_nlp/improving_preference_extraction_in_llms_by_identifying_latent_knowledge_through_.md)
+- [\[ICML 2025\] B-score: Detecting biases in large language models using response history](../../ICML2025/llm_nlp/b-score_detecting_biases_in_large_language_models_using_response_history.md)
 
 </div>
 

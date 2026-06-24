@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This work replaces Random Fourier Coding in Implicit Neural Representations (INR) with a set of differentiable "adaptive rectangular bins." By explicitly incorporating the rectangular shape priors common in industrial objects into the coordinate encoding, the position, size, rotation, and steepness of each bin are lear
+  [ICLR 2026][Medical Imaging][Sparse-view CT] This work replaces Random Fourier Coding in Implicit Neural Representations (INR) with a set of differentiable "adaptive rectangular bins." By explicitly incorporating the rectangular shape priors common in industrial objects into the coordinate encoding, the position, size, rotation, and steepness of each bin are learned end-to-end from projection data. This approach significantly outperforms INR baselines in sparse-view CT recons…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Sparse-view CT"
+  - "Shape Prior"
+  - "Adaptive Binning"
+  - "Coordinate Encoding"
+  - "Implicit Neural Representation"
+  - "Industrial CT"
 date: 2026-05-08
-content_hash: e799dcf5dd7dfc1e
+content_hash: 621b98899290d741
 ---
+
 # NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction
 
 **Conference**: ICLR 2026  

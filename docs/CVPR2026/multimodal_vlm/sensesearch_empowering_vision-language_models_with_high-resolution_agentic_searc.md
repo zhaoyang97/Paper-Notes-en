@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning
 description: >-
-  [CVPR 2026][LLM Agent][agentic VLM] SenseSearch enables a 7B VLM to autonomously coordinate three tools—"text search + image search + image crop"—during multi-turn reasoning. Through two-stage training (cold-start SFT + self-developed BN-GSPO reinforcement learning), the model learns to address both "knowledge-intensive" and "high-resolution fine-grained
+  [CVPR 2026][Multimodal VLM][agentic VLM] SenseSearch enables a 7B VLM to autonomously coordinate three tools—"text search + image search + image crop"—during multi-turn reasoning. Through two-stage training (cold-start SFT + self-developed BN-GSPO reinforcement learning), the model learns to address both "knowledge-intensive" and "high-resolution fine-grained perception" challenges, outperforming same-scale baselines by 19.18 points on the new HR-MMSearch benchmark.
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - agentic VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "agentic VLM"
+  - "multi-tool coordination"
+  - "reinforcement learning"
+  - "high-resolution vision"
+  - "search-augmented reasoning"
 date: 2026-05-08
-content_hash: 505995ed7dfb8814
+content_hash: 18c67144f4ce883a
 ---
+
 # SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -146,11 +150,11 @@ BN-GSPO vs. GRPO/GSPO (Pure RL, Table 3):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
-- [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
-- [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
-- [\[ACL 2025\] Auto-TA: Towards Scalable Automated Thematic Analysis (TA) via Multi-Agent Large Language Models with Reinforcement Learning](../../ACL2025/llm_agent/auto-ta_towards_scalable_automated_thematic_analysis_ta_via_multi-agent_large_la.md)
+- [\[ICML 2026\] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception](../../ICML2026/multimodal_vlm/cvsearch_empowering_multimodal_llms_with_cognitive_visual_search_for_high-resolu.md)
+- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](../../ICLR2026/multimodal_vlm/ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
+- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
+- [\[CVPR 2026\] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation](training_high-level_schedulers_with_execution-feedback_reinforcement_learning_fo.md)
 
 </div>
 

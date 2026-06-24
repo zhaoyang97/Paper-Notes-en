@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Learning Spatial Decay for Vision Transformers
 description: >-
-  [AAAI 2026][LLM/NLP][Vision Transformer] This paper proposes the Spatial Decay Transformer (SDT), which for the first time adapts data-dependent spatial decay mechanisms from 1D sequence modeling to 2D vision Transformer…
+  [AAAI 2026][LLM (Other)][Vision Transformer] This paper proposes the Spatial Decay Transformer (SDT), which for the first time adapts data-dependent spatial decay mechanisms from 1D sequence modeling to 2D vision Transformers. Through a Context-Aware Gating (CAG) module that generates dynamic, content-dependent decay intensities for patch interactions, SDT consistently outperforms strong baselines such as RMT on ImageNet-1K classification and generation tasks.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Vision Transformer"
   - "spatial decay"
   - "attention mechanism"
   - "content-aware gating"
   - "image classification"
 date: 2026-05-08
-content_hash: 518f9cba4082a2e2
+content_hash: 566ab143b84bfc6e
 ---
 
 # Learning Spatial Decay for Vision Transformers
@@ -131,10 +131,10 @@ Standard training on ImageNet-1K for 300 epochs with the AdamW optimizer. RoPE a
 ## Related Papers
 
 - [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](vision_transformers_are_circulant_attention_learners.md)
-- [\[ICLR 2026\] Weight Decay may matter more than μP for Learning Rate Transfer in Practice](../../ICLR2026/llm_nlp/weight_decay_may_matter_more_than_mup_for_learning_rate_transfer_in_practice.md)
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[ICLR 2026\] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning](../../ICLR2026/llm_nlp/compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason.md)
-- [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](../../NeurIPS2025/llm_nlp/in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
+- [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
+- [\[CVPR 2025\] Spiking Transformer with Spatial-Temporal Attention](../../CVPR2025/llm_nlp/spiking_transformer_with_spatial-temporal_attention.md)
 
 </div>
 

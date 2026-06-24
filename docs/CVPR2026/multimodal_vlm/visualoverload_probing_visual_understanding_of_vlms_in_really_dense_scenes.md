@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes
 description: >-
-  [CVPR 2026][Multimodal VLM][VQA benchmark] This paper constructs VisualOverload using 150 public domain paintings with ultra 4K resolution and highly dense human activities. It is a VQA benchmark featuring 2,720 human-annotated QA pairs with private ground truth, specifically designed to test foundational perception (Activity/Attribute/Counting/OCR/Reasoning/Sc
+  [CVPR 2026][Multimodal VLM][VQA benchmark] This paper constructs VisualOverload using 150 public domain paintings with ultra 4K resolution and highly dense human activities. It is a VQA benchmark featuring 2,720 human-annotated QA pairs with private ground truth, specifically designed to test foundational perception (Activity/Attribute/Counting/OCR/Reasoning/Scene Classification) of VLMs in "visual overload" scenarios. Experimental results across 37 models show that even the…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VQA benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VQA benchmark"
+  - "Dense scenes"
+  - "Fine-grained perception"
+  - "Counting/OCR"
+  - "Logical consistency"
 date: 2026-05-08
-content_hash: 5cbd48b67cbb4633
+content_hash: 544754bb2aa53410
 ---
+
 # VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes
 
 **Conference**: CVPR 2026  
@@ -132,10 +137,10 @@ While it lacks traditional model ablations, the paper includes several analyses 
 ## Related Papers
 
 - [\[CVPR 2026\] Do VLMs Perceive or Recall? Probing Visual Perception vs. Memory with Classic Visual Illusions](do_vlms_perceive_or_recall_probing_visual_perception_vs_memory_with_classic_visu.md)
+- [\[ICLR 2026\] HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes](../../ICLR2026/multimodal_vlm/humanpcr_probing_mllm_capabilities_in_diverse_human-centric_scenes.md)
 - [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
-- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
-- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
 - [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](structural_graph_probing_of_vision-language_models.md)
+- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
 
 </div>
 

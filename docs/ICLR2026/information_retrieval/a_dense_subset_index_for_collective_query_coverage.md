@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Dense Subset Index for Collective Query Coverage
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] DISCO models "multiple documents collaboratively covering a complex query" as a monotonic submodular coverage objective. Through vector augmentation and random projection, it rewrites the marginal gain of each greedy iteration into an indexable inner product form. This enables a modified multi-vector IVF index to appro
+  [ICLR2026][Information Retrieval & RAG][Set Coverage Retrieval] DISCO models "multiple documents collaboratively covering a complex query" as a monotonic submodular coverage objective. Through vector augmentation and random projection, it rewrites the marginal gain of each greedy iteration into an indexable inner product form. This enables a modified multi-vector IVF index to approximate greedy solutions in sublinear time, achieving over $100\times$ speedup compared to standa…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Set Coverage Retrieval"
+  - "Submodular Maximization"
+  - "Multi-vector Retrieval"
+  - "Random Projection"
+  - "ANN Indexing"
 date: 2026-05-08
-content_hash: c9314450784c5cc2
+content_hash: 278cd23dfcfbd6fe
 ---
+
 # A Dense Subset Index for Collective Query Coverage
 
 **Conference**: ICLR2026  
@@ -147,10 +153,20 @@ DISCO achieves the lowest Error(F) and highest MAP, showing it retrieves subsets
 - Value: ⭐⭐⭐⭐⭐ Practical solution for multi-hop/collective retrieval in production vector databases.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] When Does Mixing Help? Analyzing Query Embedding Interpolation in Multilingual Dense Retrieval](../../ACL2026/information_retrieval/when_does_mixing_help_analyzing_query_embedding_interpolation_in_multilingual_de.md)
+- [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](query-level_uncertainty_in_large_language_models.md)
+- [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](revela_dense_retriever_learning_via_language_modeling.md)
+- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
+- [\[ICLR 2026\] LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference](lightretriever_a_llm-based_text_retrieval_architecture_with_extremely_faster_que.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] When Does Mixing Help? Analyzing Query Embedding Interpolation in Multilingual Dense Retrieval](../../ACL2026/information_retrieval/when_does_mixing_help_analyzing_query_embedding_interpolation_in_multilingual_de.md)

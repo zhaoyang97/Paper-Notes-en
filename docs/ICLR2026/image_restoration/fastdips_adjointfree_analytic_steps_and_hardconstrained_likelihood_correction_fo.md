@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FAST-DIPS: Adjoint-Free Analytic Steps and Hard-Constrained Likelihood Correction for Diffusion-Prior Inverse Problems
 description: >-
-  [ICLR 2026][Image Restoration][ADMM] FAST-DIPS replaces expensive inner MCMC or multi-step gradient loops in training-free diffusion inverse problem solvers with a set of "adjoint-free hard-constrained likelihood corrections." For each noise level, it performs a few-step ADMM correction near the denoiser prediction using closed-form projections and analyt
+  [ICLR 2026][Image Restoration][Diffusion Prior] FAST-DIPS replaces expensive inner MCMC or multi-step gradient loops in training-free diffusion inverse problem solvers with a set of "adjoint-free hard-constrained likelihood corrections." For each noise level, it performs a few-step ADMM correction near the denoiser prediction using closed-form projections and analytically optimal step sizes. This minimizes the per-layer computational budget while achieving comparable or bette…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - ADMM
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Diffusion Prior"
+  - "Inverse Problems"
+  - "Adjoint-free"
+  - "ADMM"
+  - "Analytic Steps"
 date: 2026-05-08
-content_hash: 4b8b65bbe2112e21
+content_hash: ccbdb3b8cec09b39
 ---
+
 # FAST-DIPS: Adjoint-Free Analytic Steps and Hard-Constrained Likelihood Correction for Diffusion-Prior Inverse Problems
 
 **Conference**: ICLR 2026  
@@ -139,9 +144,20 @@ The study investigates two internal factors under matched computational budgets:
 - Value: ⭐⭐⭐⭐ Up to 19.5× speedup and no manual adjoints; high practical value for nonlinear or simulator-based inverse problems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)
+- [\[ICLR 2026\] Flower: A Flow-Matching Solver for Inverse Problems](flower_a_flow-matching_solver_for_inverse_problems.md)
+- [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](../../CVPR2026/image_restoration/pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
+- [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](../../CVPR2026/image_restoration/outlier-robust_diffusion_solvers_for_inverse_problems.md)
+- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] HACHIMI formalizes "student persona generation" as the TAD-PG (Theory-Aligned and Distribution-Controllable) task. By employing a "propose-validate-revise" multi-agent framework integrated with neuro-symbolic validators and stratified sampling, it produces 1 million synthetic student personas for grades 1–12. Group-lev
+  [ACL 2026][Multi-Agent][Student Persona] HACHIMI formalizes "student persona generation" as the TAD-PG (Theory-Aligned and Distribution-Controllable) task. By employing a "propose-validate-revise" multi-agent framework integrated with neuro-symbolic validators and stratified sampling, it produces 1 million synthetic student personas for grades 1–12. Group-level evaluations on CEPS / PISA 2022 reveal a distinct "fidelity gradient"—high alignment for constructs like mathematics…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Student Persona"
+  - "Neuro-symbolic Verification"
+  - "Stratified Sampling"
+  - "Population Consistency"
 date: 2026-05-08
-content_hash: 665c8af7edb348c5
+content_hash: b5960e5a0e254868
 ---
+
 # HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents
 
 **Conference**: ACL 2026  
@@ -155,11 +160,11 @@ Generality was verified in PISA 2022 across 5 regions (East Asia, West Europe, S
 
 ## Related Papers
 
+- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
+- [\[ICML 2026\] Does Persona Make LLMs K-pop Fans? A Pilot Study of LLM-Based Online Concert Audience Agents](../../ICML2026/multi_agent/does_persona_make_llms_k-pop_fans_a_pilot_study_of_llm-based_online_concert_audi.md)
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
-- [\[ACL 2026\] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation](a_multi-agent_framework_for_feature-constrained_difficulty_control_in_reading_co.md)
-- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
+- [\[ACL 2026\] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](latent_agents_a_post-training_procedure_for_internalized_multi-agent_debate.md)
+- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 
 </div>
 

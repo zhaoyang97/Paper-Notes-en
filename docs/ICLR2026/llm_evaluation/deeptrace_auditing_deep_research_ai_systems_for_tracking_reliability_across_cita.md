@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepTRACE: Auditing Deep Research AI Systems for Tracking Reliability Across Citations and Evidence
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] DeepTRACE translates real-world failure modes identified by the community into 8 computable metrics to perform end-to-end auditing of Generative Search Engines (GSE) and Deep Research (DR) agents. It reveals that these systems generally suffer from one-sided expression, overconfidence, and a high volume of statements t
+  [ICLR2026][LLM Evaluation][Deep Research Agents] DeepTRACE translates real-world failure modes identified by the community into 8 computable metrics to perform end-to-end auditing of Generative Search Engines (GSE) and Deep Research (DR) agents. It reveals that these systems generally suffer from one-sided expression, overconfidence, and a high volume of statements that "cite sources without actually being supported by them," with citation accuracy ranging only between 40–80%…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Deep Research Agents"
+  - "Generative Search Engines"
+  - "Citation Reliability"
+  - "Factual Support"
+  - "Sociotechnical Evaluation"
 date: 2026-05-08
-content_hash: c078ab32eba6dc70
+content_hash: 1beed3d2fc1bf5b7
 ---
+
 # DeepTRACE: Auditing Deep Research AI Systems for Tracking Reliability Across Citations and Evidence
 
 **Conference**: ICLR2026  
@@ -150,11 +156,11 @@ Key results for Deep Research Agents (DR):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Characterizing Deep Research: A Benchmark and Formal Definition](characterizing_deep_research_a_benchmark_and_formal_definition.md)
 - [\[ICLR 2026\] Towards Personalized Deep Research: Benchmarks and Evaluations](towards_personalized_deep_research_benchmarks_and_evaluations.md)
-- [\[ICLR 2026\] DRBench: A Realistic Benchmark for Enterprise Deep Research](drbench_a_realistic_benchmark_for_enterprise_deep_research.md)
+- [\[ICLR 2026\] Characterizing Deep Research: A Benchmark and Formal Definition](characterizing_deep_research_a_benchmark_and_formal_definition.md)
 - [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
-- [\[ICLR 2026\] AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation](airqa_a_comprehensive_qa_dataset_for_ai_research_with_instance-level_evaluation.md)
+- [\[ICLR 2026\] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents](researchrubrics_a_benchmark_of_prompts_and_rubrics_for_evaluating_deep_research_.md)
+- [\[ICLR 2026\] DRBench: A Realistic Benchmark for Enterprise Deep Research](drbench_a_realistic_benchmark_for_enterprise_deep_research.md)
 
 </div>
 

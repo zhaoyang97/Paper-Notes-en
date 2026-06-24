@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting
 description: >-
-  [ICLR 2026][Image Generation][Schrödinger Bridge] This paper reveals that the "alternating forward-backward" heuristic used in practice to stabilize IMF training implicitly involves IPF iterations. By unifying IMF and IPF into **IPMF (Iterative Proportional Markovian Fitting)**, the authors provide the first convergence proof for bidirectional IMF and transform the "i
+  [ICLR 2026][Image Generation][Schrödinger Bridge] This paper reveals that the "alternating forward-backward" heuristic used in practice to stabilize IMF training implicitly involves IPF iterations. By unifying IMF and IPF into **IPMF (Iterative Proportional Markovian Fitting)**, the authors provide the first convergence proof for bidirectional IMF and transform the "initial coupling" into a tunable knob to navigate the trade-off between generation quality and input-output sim…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Schrödinger Bridge
-  - Iterative Markovian Fitting
-  - Iterative Proportional Fitting
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Schrödinger Bridge"
+  - "Iterative Markovian Fitting"
+  - "Iterative Proportional Fitting"
+  - "Entropic Optimal Transport"
+  - "Unpaired Image Translation"
+  - "Diffusion Bridge"
 date: 2026-05-08
-content_hash: 6a6228f4a1ffabd5
+content_hash: 2ca7adb04d13917c
 ---
+
 # Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting
 
 **Conference**: ICLR 2026  
@@ -109,8 +113,8 @@ Varying initial couplings under the same solver to observe the quality-similarit
 - **Value**: ⭐⭐⭐⭐⭐ — Unifies the SB solver family, explains critical engineering tricks, and introduces a practical knob for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

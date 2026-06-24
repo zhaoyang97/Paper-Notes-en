@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] DRP allows a "Short-CoT teacher (GPT-4o)" to perform skill-level step decomposition and pruning/rewriting on the "Long-CoT student's (R1-Distill-Qwen)" own reasoning trajectories. By distilling these trajectories—which remove redundancy while preserving the student's speaking style—back into the student, DRP reduces th
+  [ACL 2026][Reasoning][Long-CoT Pruning] DRP allows a "Short-CoT teacher (GPT-4o)" to perform skill-level step decomposition and pruning/rewriting on the "Long-CoT student's (R1-Distill-Qwen)" own reasoning trajectories. By distilling these trajectories—which remove redundancy while preserving the student's speaking style—back into the student, DRP reduces the tokens of a 7B model on GSM8K from 917 to 328 (−64%) while increasing Pass@1 from 91.7% to 94.1%. It simultaneously re…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Long-CoT Pruning"
+  - "Skill-aware Step Decomposition"
+  - "Distillation"
+  - "Overthinking"
+  - "Short-CoT Teacher"
 date: 2026-05-08
-content_hash: a9d5b06637de734f
+content_hash: b0eaa77ef4c3a544
 ---
+
 # DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models
 
 **Conference**: ACL 2026  
@@ -143,10 +149,17 @@ RQ2 (Tab.4) DRP vs. Direct GPT-4o Distillation:
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
+- [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
+- [\[ICLR 2026\] Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners](../../ICLR2026/llm_reasoning/thinking-free_policy_initialization_makes_distilled_reasoning_models_more_effect.md)
+- [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
+- [\[ACL 2026\] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting](merlin39s_whisper_enabling_efficient_reasoning_in_large_language_models_via_blac.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)

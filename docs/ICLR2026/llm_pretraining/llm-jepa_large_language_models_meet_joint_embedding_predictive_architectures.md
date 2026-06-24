@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures
 description: >-
-  [ICLR 2026][Pretraining][JEPA] The successful Joint Embedding Predictive Architecture (JEPA) from computer vision is adapted for LLMs for the first time. By adding a latent space objective—"predicting Code embeddings from Text embeddings"—alongside the standard next-token reconstruction loss, this method significantly outperforms standard fine-tunin
+  [ICLR 2026][LLM Pretraining][JEPA] The successful Joint Embedding Predictive Architecture (JEPA) from computer vision is adapted for LLMs for the first time. By adding a latent space objective—"predicting Code embeddings from Text embeddings"—alongside the standard next-token reconstruction loss, this method significantly outperforms standard fine-tuning and pre-training across four model families and four datasets without sacrificing generative capabilities or suffering from…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - JEPA
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "JEPA"
+  - "latent space training"
+  - "joint embedding prediction"
+  - "multi-view"
+  - "LLM fine-tuning and pre-training"
 date: 2026-05-08
-content_hash: 740dd5a27b47968f
+content_hash: b31da2ec52ab2227
 ---
+
 # LLM-JEPA: Large Language Models Meet Joint Embedding Predictive Architectures
 
 **Conference**: ICLR 2026  
@@ -141,8 +146,8 @@ Statistically significant improvements are achieved even on QA tasks without nat
 ## Related Papers
 
 - [\[ICLR 2026\] Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning](joint_selection_for_large-scale_pre-training_data_via_policy_gradient-based_mask.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](../../NeurIPS2025/llm_pretraining/scaling_embedding_layers_in_language_models.md)
 - [\[ICLR 2026\] Selective Rotary Position Embedding](selective_rotary_position_embedding.md)
+- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](../../NeurIPS2025/llm_pretraining/scaling_embedding_layers_in_language_models.md)
 - [\[ICLR 2026\] MrRoPE: Mixed-radix Rotary Position Embedding](mrrope_mixed-radix_rotary_position_embedding.md)
 - [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
 

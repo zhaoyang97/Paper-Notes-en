@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ANTIC: Adaptive Neural Temporal In-situ Compressor
 description: >-
-  [ICML 2026][Physics & Scientific Computing][LoRA] To compress PB-EB scale PDE simulation data "on-the-fly," this paper proposes ANTIC: it utilizes a physics-aware temporal selector to retain only physically significant snapshots, and employs neural fields with LoRA continual fine-tuning to encode residuals between adjacent snapshots. It achieves $435\times$ compressio
+  [ICML 2026][Physics & Scientific Computing][Online Compression] To compress PB-EB scale PDE simulation data "on-the-fly," this paper proposes ANTIC: it utilizes a physics-aware temporal selector to retain only physically significant snapshots, and employs neural fields with LoRA continual fine-tuning to encode residuals between adjacent snapshots. It achieves $435\times$ compression on 2D Kolmogorov flows and $6807\times$ spatio-temporal joint compression on a 4.2 TiB 3D bina…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - LoRA
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Online Compression"
+  - "Neural Fields"
+  - "Continual Fine-tuning"
+  - "LoRA"
+  - "PDE Simulation"
 date: 2026-05-08
-content_hash: 61ba5352f3ee5a6e
+content_hash: 9316ad6e06adda91
 ---
+
 # ANTIC: Adaptive Neural Temporal In-situ Compressor
 
 **Conference**: ICML 2026  
@@ -147,9 +152,9 @@ PATS-LoRA outperforms traditional compressors and fixed-interval neural compress
 
 - [\[ICLR 2026\] Adaptive Mamba Neural Operators](../../ICLR2026/physics/adaptive_mamba_neural_operators.md)
 - [\[ICML 2026\] A Call to Lagrangian Action: Learning Population Mechanics from Temporal Snapshots](a_call_to_lagrangian_action_learning_population_mechanics_from_temporal_snapshot.md)
-- [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
 - [\[ICML 2026\] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields](ballast_bayesian_active_learning_with_look-ahead_amendment_for_sea-drifter_traje.md)
+- [\[ICLR 2026\] ARROW: An Adaptive Rollout and Routing Method for Global Weather Forecasting](../../ICLR2026/physics/arrow_an_adaptive_rollout_and_routing_method_for_global_weather_forecasting.md)
+- [\[CVPR 2025\] ATP: Adaptive Threshold Pruning for Efficient Data Encoding in Quantum Neural Networks](../../CVPR2025/physics/atp_adaptive_threshold_pruning_for_efficient_data_encoding_in_quantum_neural_net.md)
 
 </div>
 

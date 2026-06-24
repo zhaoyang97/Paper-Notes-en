@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Statistical Consistency and Generalization of Contrastive Representation Learning
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] This paper establishes the Fisher/statistical consistency for Contrastive Representation Learning (CRL) for the first time, proving that minimizing upstream contrastive loss is equivalent to optimizing downstream AUC-type retrieval performance. It provides refined generalization bounds of $O(1/m+1/\sqrt n)$ (supervised
+  [ICML 2026][Self-Supervised Learning][Contrastive Learning] This paper establishes the Fisher/statistical consistency for Contrastive Representation Learning (CRL) for the first time, proving that minimizing upstream contrastive loss is equivalent to optimizing downstream AUC-type retrieval performance. It provides refined generalization bounds of $O(1/m+1/\sqrt n)$ (supervised) and $O(1/\sqrt m+1/\sqrt n)$ (self-supervised) depending on the number of positive samples $n$ and…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Contrastive Learning"
+  - "Statistical Consistency"
+  - "Calibration Inequalities"
+  - "Generalization Bounds"
+  - "Number of Negative Samples"
 date: 2026-05-08
-content_hash: 50be3f38a8b7f204
+content_hash: 4014c67c718608e9
 ---
+
 # Statistical Consistency and Generalization of Contrastive Representation Learning
 
 **Conference**: ICML 2026  
@@ -103,7 +109,7 @@ The theoretical scaling predictions are validated using large-scale vision-langu
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

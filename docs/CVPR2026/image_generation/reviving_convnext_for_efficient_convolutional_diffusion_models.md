@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Reviving ConvNeXt for Efficient Convolutional Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper proposes FCDM (Fully Convolutional Diffusion Model), adapting the ConvNeXt architecture as a conditional diffusion model backbone. Using only 50% of the FLOPs of DiT-XL, it achieves a competitive FID (2.03) on ImageNet and allows training an XL-sized model on four RTX 4090 GPUs, demonstrating the significant
+  [CVPR 2026][Image Generation][Diffusion Models] This paper proposes FCDM (Fully Convolutional Diffusion Model), adapting the ConvNeXt architecture as a conditional diffusion model backbone. Using only 50% of the FLOPs of DiT-XL, it achieves a competitive FID (2.03) on ImageNet and allows training an XL-sized model on four RTX 4090 GPUs, demonstrating the significantly undervalued efficiency advantages of fully convolutional architectures in generative modeling.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - ConvNeXt
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "ConvNeXt"
+  - "Fully Convolutional"
+  - "Efficient Generation"
 date: 2026-05-08
-content_hash: 9bd9f2ca63ed40c4
+content_hash: 7106565a1b2ed50c
 ---
+
 # Reviving ConvNeXt for Efficient Convolutional Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -166,9 +169,9 @@ FCDM-XL can be trained on 256×256 ImageNet using 4 RTX 4090s (consumer GPUs) wi
 
 - [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
 - [\[CVPR 2026\] Efficient Weighted Sampling via Score-based Generative Models](efficient_weighted_sampling_via_score-based_generative_models.md)
-- [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](ditic_aligned_diffusion_transformer_for_efficient.md)
 - [\[CVPR 2026\] Beyond Fixed Formulas: Data-Driven Linear Predictor for Efficient Diffusion Models](beyond_fixed_formulas_data-driven_linear_predictor_for_efficient_diffusion_model.md)
 - [\[CVPR 2025\] DiG: Scalable and Efficient Diffusion Models with Gated Linear Attention](../../CVPR2025/image_generation/dig_scalable_and_efficient_diffusion_models_with_gated_linear_attention.md)
+- [\[CVPR 2026\] Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation](decoupled_residual_denoising_diffusion_models_for_unified_and_data_efficient_ima.md)
 
 </div>
 

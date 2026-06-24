@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WaLRUS: Wavelets for Long-range Representation Using SSMs
 description: >-
-  [NeurIPS 2025][Time Series][State Space Models] This paper proposes WaLRUS, a state space model (SSM) built upon Daubechies wavelets as a novel instantiation of the SaFARi framework…
+  [NeurIPS 2025][Time Series][State Space Models] This paper proposes WaLRUS, a state space model (SSM) built upon Daubechies wavelets as a novel instantiation of the SaFARi framework, expanding the diversity of the SSM family and demonstrating unique advantages in long-range dependency modeling.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "HiPPO"
   - "SaFARi"
 date: 2026-05-08
-content_hash: 0972e1b5e8705273
+content_hash: 876759100f53680f
 ---
 
 # WaLRUS: Wavelets for Long-range Representation Using SSMs
@@ -156,11 +156,11 @@ Depending on the downstream task:
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](../../ICML2026/time_series/learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
+- [\[ICLR 2026\] Long-range Modeling and Processing of Multimodal Event Sequences](../../ICLR2026/time_series/long-range_modeling_and_processing_of_multimodal_event_sequences.md)
 - [\[NeurIPS 2025\] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning](universal_spectral_tokenization_via_self-supervised_panchromatic_representation_.md)
 - [\[NeurIPS 2025\] Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions](scalable_signature_kernel_computations_for_long_time_series_via_local_neumann_se.md)
+- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](../../ICML2026/time_series/learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
 - [\[NeurIPS 2025\] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)
-- [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](../../ICML2026/time_series/fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
 
 </div>
 

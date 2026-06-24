@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Diffusion Driven Blind Imaging
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] DeblurSDI extends "self-diffusion" (a reverse problem solver requiring no pretraining) from non-blind scenarios with known degradation operators to blind scenarios. Using two randomly initialized networks without pretraining, it **simultaneously** reconstructs the sharp image and the Point Spread Function (PSF) during
+  [CVPR 2026][Image Restoration][Blind Deconvolution] DeblurSDI extends "self-diffusion" (a reverse problem solver requiring no pretraining) from non-blind scenarios with known degradation operators to blind scenarios. Using two randomly initialized networks without pretraining, it **simultaneously** reconstructs the sharp image and the Point Spread Function (PSF) during a reverse diffusion process starting from pure noise. The noise scheduling naturally stabilizes the joint op…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Blind Deconvolution"
+  - "Self-Diffusion"
+  - "PSF Estimation"
+  - "Zero-shot"
+  - "Optical Aberrations"
 date: 2026-05-08
-content_hash: 044028b3e1445dcb
+content_hash: 360adfe8e75d848a
 ---
+
 # Self-Diffusion Driven Blind Imaging
 
 **Conference**: CVPR 2026  
@@ -145,15 +151,14 @@ DeblurSDI leads significantly in almost all categories, outperforming the next b
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
 - [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
+- [\[CVPR 2026\] SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging](sgde_self-supervised_geometry_degradation_estimation_framework_for_coded_apertur.md)
 - [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
 - [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
-- [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
-- [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
 
 </div>
 

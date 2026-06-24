@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval
 description: >-
-  [ICLR 2026][LLM Safety][Labeled PSI] Pisces is the first **cryptography-based** private RAG retrieval framework that supports dual-path "semantic + lexical" retrieval. It utilizes SimHash + oblivious filter for semantic coarse filtering and multi-instance labeled PSI to calculate all word frequencies required for BM25 in a single execution. While protecti
+  [ICLR 2026][LLM Safety][Private RAG] Pisces is the first **cryptography-based** private RAG retrieval framework that supports dual-path "semantic + lexical" retrieval. It utilizes SimHash + oblivious filter for semantic coarse filtering and multi-instance labeled PSI to calculate all word frequencies required for BM25 in a single execution. While protecting both user queries and the knowledge base, it maintains retrieval accuracy within 1.87% of the plaintext baseline.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Labeled PSI
-  - BM25
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Private RAG"
+  - "Secure Multi-party Computation"
+  - "Labeled PSI"
+  - "Dual-path Retrieval"
+  - "BM25"
 date: 2026-05-08
-content_hash: e240bed1a8ac7131
+content_hash: eb2da088f2695527
 ---
+
 # Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MARQUIS: A Three-Stage Pipeline for Video Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] MARQUIS decomposes multi-video retrieval-augmented article generation into a three-stage pipeline: "Query Decomposition and Reranking Retrieval—Calibrated Structured Evidence Extraction—Article Generation with Citations." It also employs an RLM controller for iterative evidence management. On MAGMaR2026, it improved re
+  [ACL2026][Audio & Speech][Video Retrieval-Augmented Generation] MARQUIS decomposes multi-video retrieval-augmented article generation into a three-stage pipeline: "Query Decomposition and Reranking Retrieval—Calibrated Structured Evidence Extraction—Article Generation with Citations." It also employs an RLM controller for iterative evidence management. On MAGMaR2026, it improved retrieval nDCG@10 from 0.195 to 0.759, while the Iter-QA-Base variant achieved a human rating of 3…
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Video Retrieval-Augmented Generation"
+  - "Query Decomposition"
+  - "Evidence Extraction"
+  - "Uncertainty Calibration"
+  - "RLM Controller"
 date: 2026-05-08
-content_hash: 5ade194a00d5926b
+content_hash: 84ed478313c90496
 ---
+
 # MARQUIS: A Three-Stage Pipeline for Video Retrieval-Augmented Generation
 
 **Conference**: ACL2026  
@@ -166,7 +172,7 @@ Generation results comparing 8 systems under oracle relevant videos:
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[ACL 2025\] WavRAG: Audio-Integrated Retrieval Augmented Generation for Spoken Dialogue Models](../../ACL2025/audio_speech/wavrag_audio-integrated_retrieval_augmented_generation_for_spoken_dialogue_model.md)
 - [\[AAAI 2026\] Hearing More with Less: Multi-Modal Retrieval-and-Selection Augmented Conversational LLM-Based ASR](../../AAAI2026/audio_speech/hearing_more_with_less_multi-modal_retrieval-and-selection_augmented_conversatio.md)
-- [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](../../CVPR2026/audio_speech/hierarchical_codec_diffusion_for_video-to-speech_generation.md)
+- [\[ACL 2026\] FIGMA: Towards Fine-Grained Music Retrieval](figma_towards_fine-grained_music_retrieval.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language-Action] FSD transforms the task of "predicting grasp points/trajectories" in robotic manipulation into an **explicit spatial reasoning process**: it first utilizes a spatial relationship graph for visual Chain-of-Thought (SrCoT) and then generates embodiment-agnostic intermediate visual affordances (affordance boxes/points + v
+  [ICLR 2026][Robotics][Vision-Language-Action] FSD transforms the task of "predicting grasp points/trajectories" in robotic manipulation into an **explicit spatial reasoning process**: it first utilizes a spatial relationship graph for visual Chain-of-Thought (SrCoT) and then generates embodiment-agnostic intermediate visual affordances (affordance boxes/points + visual trajectories). This enables zero-shot manipulation without fine-tuning and significantly outperforms afforda…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language-Action
-  - Visual Chain-of-Thought
-  - Affordance
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "Spatial Reasoning"
+  - "Visual Chain-of-Thought"
+  - "Visual Affordance"
+  - "Zero-shot Manipulation"
+  - "Affordance"
 date: 2026-05-08
-content_hash: 06407c99ca84d500
+content_hash: f40d8bde13a772d7
 ---
+
 # From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation
 
 **Conference**: ICLR 2026  
@@ -155,7 +159,7 @@ FSD achieves 40.6% in zero-shot, far exceeding the zero-shot baseline RoboPoint 
 - [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](../../CVPR2026/robotics/localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 - [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](../../CVPR2026/robotics/action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
-- [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](../../CVPR2026/robotics/obstruction_reasoning_for_robotic_grasping.md)
+- [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
 
 </div>
 

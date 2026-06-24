@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Setting Up for Failure: Automatic Discovery of the Neural Mechanisms of Cognitive Errors
 description: >-
-  [ICLR 2026][Interpretability][Diffusion Model] Instead of training RNNs to perform cognitive tasks "correctly," this paper trains them to "make human-like errors." By using a non-parametric generative model (BNS) to create synthetic behavioral data with swap errors and a diffusion model (DDPM) objective to treat the second delay period as a denoising process, the a
+  [ICLR 2026][Interpretability][Recurrent Neural Networks] Instead of training RNNs to perform cognitive tasks "correctly," this paper trains them to "make human-like errors." By using a non-parametric generative model (BNS) to create synthetic behavioral data with swap errors and a diffusion model (DDPM) objective to treat the second delay period as a denoising process, the authors automatically discover neural dynamics underlying visual working memory. The resulting neural ge…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Diffusion Model
-  - swap error
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Recurrent Neural Networks"
+  - "Working Memory"
+  - "Diffusion Models"
+  - "swap error"
+  - "neural mechanism discovery"
 date: 2026-05-08
-content_hash: 58af8902c364409f
+content_hash: 944b830a3864702a
 ---
+
 # Setting Up for Failure: Automatic Discovery of the Neural Mechanisms of Cognitive Errors
 
 **Conference**: ICLR 2026  
@@ -136,7 +140,7 @@ The testbed is a two-item delayed estimation task compared with LPFC data from t
 - [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 - [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
 - [\[ICLR 2026\] Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context](mixing_mechanisms_how_language_models_retrieve_bound_entities_in-context.md)
-- [\[ICLR 2026\] Provably Explaining Neural Additive Models](provably_explaining_neural_additive_models.md)
+- [\[ACL 2026\] Interpretability from the Ground Up](../../ACL2026/interpretability/interpretability_from_the_ground_up_stakeholder-centric_design_of_automated_scor.md)
 
 </div>
 

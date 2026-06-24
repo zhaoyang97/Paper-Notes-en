@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 基于跨模型局部等距一致性的向量链接
+  [Paper Note] Vector Linking based on Cross-Model Local Isometric Consistency
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] This paper introduces the problem of vector linking—discovering object correspondences between embedding clouds produced by two different encoders under black-box constraints. The core observation is that independently trained contrastive learning encoders maintain local isometric consistency (similarity preserved up t
+  [ICML 2026][Information Retrieval & RAG][Vector Linking] This paper introduces the problem of vector linking—discovering object correspondences between embedding clouds produced by two different encoders under black-box constraints. The core observation is that independently trained contrastive learning encoders maintain local isometric consistency (similarity preserved up to a scaling factor) over short distances. Based on this, a multi-view geometric hashing bootstrap frame…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Vector Linking"
+  - "Local Geometric Consistency"
+  - "Embedding Alignment"
+  - "Multi-view Hashing"
+  - "Bootstrapping"
 date: 2026-05-08
-content_hash: 4acad4ad384d95ca
+content_hash: e6a8fd2461e1491e
 ---
+
 # Vector Linking based on Cross-Model Local Isometric Consistency
 
 **Conference**: ICML 2026  
@@ -120,11 +126,11 @@ The 15 seed pairs cannot cover the global space, and excessively large single vi
 
 ## Related Papers
 
-- [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
-- [\[ICML 2026\] ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards](reseek_a_self-correcting_framework_for_search_agents_with_instructive_rewards.md)
-- [\[ICML 2026\] Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning](graph-r1_towards_agentic_graphrag_framework_via_end-to-end_reinforcement_learnin.md)
-- [\[ICML 2026\] ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs](pariskv_fast_and_drift-robust_kv-cache_retrieval_for_long-context_llms.md)
-- [\[ICML 2026\] ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World](ml-embed_inclusive_and_efficient_embeddings_for_a_multilingual_world.md)
+- [\[ICML 2026\] LEMUR: Learned Multi-Vector Retrieval](lemur_learned_multi-vector_retrieval.md)
+- [\[ACL 2026\] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy](../../ACL2026/information_retrieval/hybrid-vector_retrieval_for_visually_rich_documents_combining_single-vector_effi.md)
+- [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
+- [\[ICML 2026\] Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference](understand_and_accelerate_memory_processing_pipeline_for_disaggregated_llm_infer.md)
+- [\[ICLR 2026\] ELViS: Efficient Visual Similarity from Local Descriptors that Generalizes Across Domains](../../ICLR2026/information_retrieval/elvis_efficient_visual_similarity_from_local_descriptors_that_generalizes_across.md)
 
 </div>
 

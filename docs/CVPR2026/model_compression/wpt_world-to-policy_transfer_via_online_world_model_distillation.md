@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WPT: World-to-Policy Transfer via Online World Model Distillation
 description: >-
-  [CVPR 2026][Model Compression][World Models] WPT proposes a world-to-policy transfer training paradigm. It injects future prediction knowledge from a world model into a teacher policy via a trainable reward model, and subsequently transfers this knowledge to a lightweight student policy through policy distillation and world reward distillation, achieving a 79.23
+  [CVPR 2026][Model Compression][World Model] WPT proposes a world-to-policy transfer training paradigm. It injects future prediction knowledge from a world model into a teacher policy via a trainable reward model, and subsequently transfers this knowledge to a lightweight student policy through policy distillation and world reward distillation, achieving a 79.23 driving score (closed-loop) and a 4.9x inference speedup.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - World Models
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Model Compression"
+  - "World Model"
+  - "Policy Distillation"
+  - "Reward Model"
+  - "Autonomous Driving"
+  - "Online Distillation"
 date: 2026-05-08
-content_hash: 5b32d15faa55ba39
+content_hash: b7af2beb869db478
 ---
+
 # WPT: World-to-Policy Transfer via Online World Model Distillation
 
 **Conference**: CVPR 2026  
@@ -117,10 +121,10 @@ Teacher training is driven by a combination of rewards: imitation reward (aligni
 ## Related Papers
 
 - [\[CVPR 2026\] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model](planning_in_8_tokens_a_compact_discrete_tokenizer_for_latent_world_model.md)
-- [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](memory_efficient_transfer_learning_with_fading_side_networks.md)
+- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
 - [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
+- [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](memory_efficient_transfer_learning_with_fading_side_networks.md)
 - [\[CVPR 2026\] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer](taskit_memory-efficient_fine-tuning_of_multi-lora_llms_via_cross-task_importance.md)
-- [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](../../ICML2026/model_compression/entropy-aware_on-policy_distillation_of_language_models.md)
 
 </div>
 

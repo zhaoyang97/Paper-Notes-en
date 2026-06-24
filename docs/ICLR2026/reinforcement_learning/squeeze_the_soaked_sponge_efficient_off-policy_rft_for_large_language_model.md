@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes ReMix, which transforms naturally on-policy reinforcement fine-tuning (RFT) methods like PPO/GRPO into mixed-policy algorithms capable of reusing historical rollouts. Utilizing a trio of Mix-PPG, KL-Convex constraints, and policy reincarnation, it achieves SOTA-level accuracy across five mathematica
+  [ICLR 2026][Reinforcement Learning][Off-policy RL] This paper proposes ReMix, which transforms naturally on-policy reinforcement fine-tuning (RFT) methods like PPO/GRPO into mixed-policy algorithms capable of reusing historical rollouts. Utilizing a trio of Mix-PPG, KL-Convex constraints, and policy reincarnation, it achieves SOTA-level accuracy across five mathematical reasoning benchmarks with 30×–450× less rollout data.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Off-policy RL"
+  - "Reinforcement Fine-Tuning (RFT)"
+  - "Mathematical Reasoning"
+  - "Sample Efficiency"
+  - "Policy Reincarnation"
 date: 2026-05-08
-content_hash: ea10c52b84c51062
+content_hash: e6b430fdfe9307a1
 ---
+
 # Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model
 
 **Conference**: ICLR 2026  
@@ -145,8 +151,8 @@ Based on ReMix-PPO (1.5B, within 500 steps) removing components one by one:
 - [\[ICLR 2026\] Toward Efficient Exploration by Large Language Model Agents](toward_efficient_exploration_by_large_language_model_agents.md)
 - [\[ICLR 2026\] Buffer Matters: Unleashing the Power of Off-Policy Reinforcement Learning in Large Language Model Reasoning](buffer_matters_unleashing_the_power_of_off-policy_reinforcement_learning_in_larg.md)
 - [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
-- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
+- [\[ICLR 2026\] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models](cde_curiosity-driven_exploration_for_efficient_reinforcement_learning_in_large_l.md)
+- [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
 
 </div>
 

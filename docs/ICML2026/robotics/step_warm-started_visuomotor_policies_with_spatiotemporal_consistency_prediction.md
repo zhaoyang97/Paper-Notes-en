@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction
 description: >-
-  [ICML 2026][Robotics & Embodied AI][diffusion policy] STEP attaches a lightweight Transformer predictor ("previous action history + current observation → next action") to the diffusion policy. Its output serves as a denoising starting point (warm-start), compressing 100 denoising steps to 2. It also includes a "velocity-aware" execution deadlock defense mechanism that inj
+  [ICML 2026][Robotics][diffusion policy] STEP attaches a lightweight Transformer predictor ("previous action history + current observation → next action") to the diffusion policy. Its output serves as a denoising starting point (warm-start), compressing 100 denoising steps to 2. It also includes a "velocity-aware" execution deadlock defense mechanism that injects noise when action changes are too small. It outperforms BRIDGER/DDIM by an average of 21.6% / 27.5% in success rate…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - diffusion policy
-  - warm-start
+  - "ICML 2026"
+  - "Robotics"
+  - "diffusion policy"
+  - "warm-start"
+  - "spatiotemporal consistency"
+  - "local contraction"
+  - "velocity-aware perturbation"
 date: 2026-05-08
-content_hash: 535aa0070d052a94
+content_hash: def0176d057f3656
 ---
+
 # STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction
 
 **Conference**: ICML 2026  
@@ -145,10 +149,10 @@ Key conclusions: STEP with 2 steps outperforms BRIDGER by 21.6% and Falcon by 48
 ## Related Papers
 
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
-- [\[CVPR 2026\] SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead](../../CVPR2026/robotics/swiftvla_unlocking_spatiotemporal_dynamics_for_lightweight_vla_models_at_minimal.md)
+- [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
+- [\[ICLR 2026\] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning](../../ICLR2026/robotics/h3dp_triplyhierarchical_diffusion_policy_for_visuomotor_learning.md)
+- [\[ICLR 2026\] ViPRA: Video Prediction for Robot Actions](../../ICLR2026/robotics/vipra_video_prediction_for_robot_actions.md)
 - [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 
 </div>
 

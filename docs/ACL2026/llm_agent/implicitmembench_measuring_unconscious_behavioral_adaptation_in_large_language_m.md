@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] Ours proposes ImplicitMemBench, the first benchmark for systematically evaluating implicit memory in LLMs. It includes 300 test items across three cognitive paradigms: procedural memory, priming, and classical conditioning. Evaluations across 17 models reveal severe limitations: the best model achieves only 66% overall
+  [ACL 2026][LLM Agent][Implicit memory] Ours proposes ImplicitMemBench, the first benchmark for systematically evaluating implicit memory in LLMs. It includes 300 test items across three cognitive paradigms: procedural memory, priming, and classical conditioning. Evaluations across 17 models reveal severe limitations: the best model achieves only 66% overall accuracy, far below the human baseline.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Implicit memory"
+  - "behavioral adaptation"
+  - "procedural memory"
+  - "priming effect"
+  - "classical conditioning"
 date: 2026-05-08
-content_hash: 949ed5f67dab1fff
+content_hash: 4fc8ca0f1fe201ef
 ---
+
 # ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models
 
 **Conference**: ACL 2026  
@@ -136,7 +142,7 @@ Overall performance of 17 models:
 - [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
 - [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 - [\[ACL 2026\] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models](anchormem_anchored_facts_with_associative_contexts_for_building_memory_in_large_.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
+- [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](../../ICML2026/llm_agent/towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
 
 </div>
 

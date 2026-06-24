@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models
 description: >-
-  [AAAI 2026][Robotics][VLA] TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel difference an…
+  [AAAI 2026][Robotics][VLA] TTF-VLA proposes a training-free temporal token fusion method that selectively reuses visual tokens from historical frames via a dual-dimension mechanism combining grayscale pixel difference and attention-based semantic detection, improving inference quality of VLA models on robotic manipulation tasks with an average gain of 4.0 percentage points on LIBERO.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Dual-Dimension Detection"
   - "Keyframe Mechanism"
 date: 2026-05-08
-content_hash: 4c63621ffb4af4d5
+content_hash: f67d5cbebb223e95
 ---
 
 # TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models
@@ -130,11 +130,11 @@ The method is entirely training-free and operates exclusively at inference time 
 
 ## Related Papers
 
+- [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](../../CVPR2026/robotics/trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
 - [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/robotics/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
+- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](../../CVPR2026/robotics/acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](../../ICML2026/robotics/latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[AAAI 2026\] 10 Open Challenges Steering the Future of Vision-Language-Action Models](10_open_challenges_steering_the_future_of_vision-language-ac.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](../../ICML2026/robotics/discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[ICML 2026\] SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning](../../ICML2026/robotics/specprune-vla_accelerating_vision-language-action_models_via_action-aware_self-s.md)
+- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](../../CVPR2026/robotics/at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
 
 </div>
 

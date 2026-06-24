@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Inducing Dyslexia in Vision Language Models
 description: >-
-  [ICLR 2026][Interpretability][Qwen2-VL] By "functionally localizing" units with visual word form selectivity in Vision-Language Models and ablating them, the authors reproduce core features of human dyslexia (selective reading deficits + phonological-leaning impairments) without damaging general visual and reasoning abilities, proving these units predict rea
+  [ICLR 2026][Interpretability][Visual Word Form Area (VWFA)] By "functionally localizing" units with visual word form selectivity in Vision-Language Models and ablating them, the authors reproduce core features of human dyslexia (selective reading deficits + phonological-leaning impairments) without damaging general visual and reasoning abilities, proving these units predict real human VWFA fMRI responses.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Qwen2-VL
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Visual Word Form Area (VWFA)"
+  - "functional localization"
+  - "unit ablation"
+  - "dyslexia modeling"
+  - "Qwen2-VL"
+  - "computational modeling of brain diseases"
 date: 2026-05-08
-content_hash: 2edf55b9ae26c5bd
+content_hash: ed69562ad5335928
 ---
+
 # Inducing Dyslexia in Vision Language Models
 
 **Conference**: ICLR 2026  

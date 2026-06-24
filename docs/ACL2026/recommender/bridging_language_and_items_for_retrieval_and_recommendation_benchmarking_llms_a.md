@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders
 description: >-
-  [ACL 2026][Recommender Systems][BLaIR] This paper introduces the Amazon Reviews 2023 large-scale dataset (570M reviews / 48M items) and constructs the BLaIR benchmark. Covering Sequential Recommendation, Collaborative Filtering, and Item Search (short and complex queries), the study benchmarks 11 top-tier LLMs as semantic encoders. It reveals that model ran
+  [ACL 2026][Recommender Systems][BLaIR] This paper introduces the Amazon Reviews 2023 large-scale dataset (570M reviews / 48M items) and constructs the BLaIR benchmark. Covering Sequential Recommendation, Collaborative Filtering, and Item Search (short and complex queries), the study benchmarks 11 top-tier LLMs as semantic encoders. It reveals that model rankings on BLaIR are almost uncorrelated with MTEB (Spearman -0.476), highlighting the unique requirements of recommendatio…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - BLaIR
-  - Amazon Reviews 2023
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "BLaIR"
+  - "Amazon Reviews 2023"
+  - "Semantic Encoders"
+  - "Complex Query Search"
+  - "MTEB Correlation"
 date: 2026-05-08
-content_hash: caabd8ee1a3ac137
+content_hash: 644999a86001a07c
 ---
+
 # Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders
 
 **Conference**: ACL 2026  
@@ -145,10 +149,10 @@ PCA performs better in complex downstream tasks (Transformer SeqRec) as whitenin
 ## Related Papers
 
 - [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](../../NeurIPS2025/recommender/semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
+- [\[ACL 2026\] GraphLoRA: Structure-Aware Low-Rank Adaptation for Large Language Model Recommendation](graphlora_structure-aware_low-rank_adaptation_for_large_language_model_recommend.md)
 - [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
 - [\[AAAI 2026\] Inductive Generative Recommendation via Retrieval-based Speculation](../../AAAI2026/recommender/inductive_generative_recommendation_via_retrieval-based_speculation.md)
 - [\[ACL 2026\] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment](hsuga_llm-enhanced_recommendation_with_hierarchical_semantic_understanding_and_g.md)
-- [\[ACL 2026\] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents](from_recall_to_forgetting_benchmarking_long-term_memory_for_personalized_agents.md)
 
 </div>
 

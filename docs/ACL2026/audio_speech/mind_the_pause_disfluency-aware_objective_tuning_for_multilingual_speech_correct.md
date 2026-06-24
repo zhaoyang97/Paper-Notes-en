@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs
 description: >-
-  [ACL 2026][Audio & Speech][disfluency correction] The authors propose a multilingual disfluency correction pipeline: first using MuRIL for token-level fluent/disfluent labeling, then feeding the "original transcript + token labels" into Llama-3.2-3B / Qwen2.5-3B for instruction fine-tuning. The key innovation is an **anti-disfluency contrastive loss** that explicitly
+  [ACL 2026][Audio & Speech][disfluency correction] The authors propose a multilingual disfluency correction pipeline: first using MuRIL for token-level fluent/disfluent labeling, then feeding the "original transcript + token labels" into Llama-3.2-3B / Qwen2.5-3B for instruction fine-tuning. The key innovation is an **anti-disfluency contrastive loss** that explicitly penalizes the probability of generating disfluent tokens ($-\log(1-\sum_v w_v P_\theta(v))$). On real Hindi/Be…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - disfluency correction
-  - contrastive loss
-  - MuRIL
-  - instruction tuning
-  - Hindi/Bengali/Marathi
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "disfluency correction"
+  - "contrastive loss"
+  - "MuRIL"
+  - "instruction tuning"
+  - "Hindi/Bengali/Marathi"
 date: 2026-05-08
-content_hash: 784f2ae1553355e1
+content_hash: 2e757d9977e2f79b
 ---
+
 # Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs
 
 **Conference**: ACL 2026  
@@ -131,11 +132,20 @@ LLM-as-Judge (Pairwise comparison using Qwen2.5-3B):
 - Value: ⭐⭐⭐⭐ Significant practical utility for Indic ASR; the 3B vs. GPT-4o results are highly relevant for efficient deployment.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
+- [\[AAAI 2026\] A Mind Cannot Be Smeared Across Time](../../AAAI2026/audio_speech/a_mind_cannot_be_smeared_across_time.md)
+- [\[ACL 2026\] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](from_flat_language_labels_to_typological_priors_structured_language_conditioning.md)
+- [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition](pseudo2real_task_arithmetic_for_pseudo-label_correction_in_automatic_speech_reco.md)

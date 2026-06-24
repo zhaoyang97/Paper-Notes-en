@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expert Heads: Robust Evidence Identification for Large Language Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] By analyzing attention distributions under document permutation perturbations, the authors identify a small subset of "Expert Heads" that consistently focus on gold documents regardless of their position. Using these heads' votes as a zero-shot signal for document retrieval and ranking significantly outperforms dense r
+  [ICLR 2026][Information Retrieval & RAG][Attention Heads] By analyzing attention distributions under document permutation perturbations, the authors identify a small subset of "Expert Heads" that consistently focus on gold documents regardless of their position. Using these heads' votes as a zero-shot signal for document retrieval and ranking significantly outperforms dense retrievers on HotpotQA, 2Wiki, and MuSiQue.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Attention Heads"
+  - "Evidence Identification"
+  - "Position Sensitivity"
+  - "Document Ranking"
+  - "Hallucination Detection"
 date: 2026-05-08
-content_hash: 787f6769e9b35c06
+content_hash: 1b664d8682fce45e
 ---
+
 # Expert Heads: Robust Evidence Identification for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,17 @@ Layer and threshold ablations on LLaMA-3-8B / HotpotQA:
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
+- [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](tokmem_one-token_procedural_memory_for_large_language_models.md)
+- [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](query-level_uncertainty_in_large_language_models.md)
+- [\[ICLR 2026\] DeepRAG: Thinking to Retrieve Step by Step for Large Language Models](deeprag_thinking_to_retrieve_step_by_step_for_large_language_models.md)
+- [\[ACL 2026\] How Large Language Models Balance Internal Knowledge with User and Document Assertions](../../ACL2026/information_retrieval/how_large_language_models_balance_internal_knowledge_with_user_and_document_asse.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)

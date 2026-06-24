@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI
 description: >-
-  [NeurIPS 2025][AI Safety][algorithmic fairness] Through causal graphical modeling, this paper demonstrates that performance disparities across subgroups in disaggregated evaluations do not necessarily indicate unfairness…
+  [NeurIPS 2025][AI Safety][algorithmic fairness] Through causal graphical modeling, this paper demonstrates that performance disparities across subgroups in disaggregated evaluations do not necessarily indicate unfairness, but may instead reflect natural consequences of distributional differences in the data-generating process. The authors recommend supplementing standard disaggregated evaluations with causal assumptions and weighted evaluation methods.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "distribution shift"
   - "subgroup performance"
 date: 2026-05-08
-content_hash: 3fa5ad5ee37442ce
+content_hash: 02be4629461e5a9a
 ---
 
 # Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI
@@ -155,9 +155,9 @@ Subgroup-specific Bayes-optimal predictors satisfy sufficiency across all settin
 
 - [\[NeurIPS 2025\] CTRL-ALT-DECEIT: Sabotage Evaluations for Automated AI R&D](ctrl-alt-deceit_sabotage_evaluations_for_automated_ai_rd.md)
 - [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
-- [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
+- [\[ICML 2025\] Distributed and Decentralised Training: Technical Governance Challenges in a Shifting AI Landscape](../../ICML2025/ai_safety/distributed_and_decentralised_training_technical_governance_challenges_in_a_shif.md)
 - [\[NeurIPS 2025\] Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification](keep_it_real_challenges_in_attacking_compression-based_adversarial_purification.md)
-- [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
+- [\[NeurIPS 2025\] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits](understanding_and_improving_adversarial_robustness_of_neural_probabilistic_circu.md)
 
 </div>
 

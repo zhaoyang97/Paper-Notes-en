@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution
 description: >-
-  [AAAI2026][Interpretability][multimodal conflict detection] CrossCheck-Bench is a three-level hierarchical benchmark comprising 15k adversarial QA samples. It diagnoses compositional reasoning failures of VLMs in multimo…
+  [AAAI2026][Interpretability][multimodal conflict detection] CrossCheck-Bench is a three-level hierarchical benchmark comprising 15k adversarial QA samples. It diagnoses compositional reasoning failures of VLMs in multimodal conflict resolution via 7 atomic capabilities and 15 tasks, revealing systematic performance degradation from perception (L1) to reasoning (L3) and exposing the limitations of conventional prompting strategies.
 tags:
   - "AAAI2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "vision-language models"
   - "hierarchical benchmark"
 date: 2026-05-08
-content_hash: afb73ff5201b22cc
+content_hash: d8241b61ebb15089
 ---
 
 # CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution
@@ -129,11 +129,11 @@ This work complements traditional alignment-oriented benchmarks such as VCR and 
 
 ## Related Papers
 
-- [\[ACL 2026\] Interpretable Coreference Resolution Evaluation Using Explicit Semantics](../../ACL2026/interpretability/interpretable_coreference_resolution_evaluation_using_explicit_semantics.md)
+- [\[ICLR 2026\] Diagnosing Generalization Failures from Representational Geometry Markers](../../ICLR2026/interpretability/diagnosing_generalization_failures_from_representational_geometry_markers.md)
 - [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](../../ACL2026/interpretability/mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
-- [\[ICML 2026\] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](../../ICML2026/interpretability/diagnosing_the_reliability_of_llm-as-a-judge_via_item_response_theory.md)
 - [\[ACL 2026\] Constructing Interpretable Features from Compositional Neuron Groups](../../ACL2026/interpretability/constructing_interpretable_features_from_compositional_neuron_groups.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](../../CVPR2026/interpretability/towards_faithful_multimodal_concept_bottleneck_models.md)
+- [\[ACL 2026\] Interpretable Coreference Resolution Evaluation Using Explicit Semantics](../../ACL2026/interpretability/interpretable_coreference_resolution_evaluation_using_explicit_semantics.md)
+- [\[AAAI 2026\] Can LLMs Truly Embody Human Personality? Analyzing AI and Human Behavior Alignment in Dispute Resolution](can_llms_truly_embody_human_personality_analyzing_ai_and_human_behavior_alignmen.md)
 
 </div>
 

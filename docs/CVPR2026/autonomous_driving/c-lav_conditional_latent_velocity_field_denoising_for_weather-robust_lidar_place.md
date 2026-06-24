@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition
 description: >-
-  [CVPR 2026][Autonomous Driving][Flow Matching] C-LaV compensates for LiDAR degradation caused by rain, snow, and fog within the BEV latent space of a frozen DINOv2. By learning a velocity field via conditional Flow Matching and solving a probability flow ODE, it deterministically transports "weather-noisy latent representations" back to "clear-day latent representa
+  [CVPR 2026][Autonomous Driving][LiDAR Place Recognition] C-LaV compensates for LiDAR degradation caused by rain, snow, and fog within the BEV latent space of a frozen DINOv2. By learning a velocity field via conditional Flow Matching and solving a probability flow ODE, it deterministically transports "weather-noisy latent representations" back to "clear-day latent representations." Using a SALAD clustering head for global descriptor retrieval…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Flow Matching
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Place Recognition"
+  - "Weather-Robust"
+  - "Flow Matching"
+  - "Latent Space Denoising"
+  - "BEV Retrieval"
 date: 2026-05-08
-content_hash: 2bdeba481377a364
+content_hash: 96cfadd007290ebf
 ---
+
 # C-LaV: Conditional Latent Velocity Field Denoising for Weather-Robust LiDAR Place Recognition
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,14 @@ Stepwise replacement of BEV Encoder / Latent Denoiser / Descriptor Head (Average
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)
-- [\[CVPR 2026\] Learning Geometric and Photometric Features from Panoramic LiDAR Scans for Outdoor Place Categorization](learning_geometric_and_photometric_features_from_p.md)
-- [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](rauf_learning_the_spatial_uncertainty_field_of_radar.md)
 - [\[CVPR 2025\] ForestLPR: LiDAR Place Recognition in Forests Attentioning Multiple BEV Density Images](../../CVPR2025/autonomous_driving/forestlpr_lidar_place_recognition_in_forests_attentioning_multiple_bev_density_i.md)
+- [\[ICLR 2026\] Adaptive Augmentation-Aware Latent Learning for Robust LiDAR Semantic Segmentation](../../ICLR2026/autonomous_driving/adaptive_augmentation-aware_latent_learning_for_robust_lidar_semantic_segmentati.md)
+- [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
 
 </div>
 

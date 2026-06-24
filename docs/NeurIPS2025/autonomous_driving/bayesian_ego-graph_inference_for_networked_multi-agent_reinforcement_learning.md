@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Bayesian inference] BayesG enables each agent in networked MARL to learn the dynamic structure of its local communication graph via Bayesian variational inference — sampling edge masks…
+  [NeurIPS 2025][Autonomous Driving][Bayesian inference] BayesG enables each agent in networked MARL to learn the dynamic structure of its local communication graph via Bayesian variational inference — sampling edge masks with Gumbel-Softmax and jointly optimizing policy and graph structure under an ELBO objective — achieving 50%+ reward improvement over the best baseline in a 167-agent New York traffic scenario.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "dynamic communication graph"
   - "decentralization"
 date: 2026-05-08
-content_hash: 295088048ce4d398
+content_hash: 317868534337ade3
 ---
 
 # BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning
@@ -107,11 +107,11 @@ Agent $i$'s policy is conditioned on a sampled subgraph: $\pi_i(u_i, G_{\mathcal
 
 ## Related Papers
 
+- [\[ICML 2025\] R3DM: Enabling Role Discovery and Diversity Through Dynamics Models in Multi-agent Reinforcement Learning](../../ICML2025/autonomous_driving/r3dm_enabling_role_discovery_and_diversity_through_dynamics_models_in_multi-agen.md)
 - [\[NeurIPS 2025\] Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems](causality_meets_locality_provably_generalizable_and_scalable_policy_learning_for.md)
+- [\[ICML 2025\] GoIRL: Graph-Oriented Inverse Reinforcement Learning for Multimodal Trajectory Prediction](../../ICML2025/autonomous_driving/goirl_graph-oriented_inverse_reinforcement_learning_for_multimodal_trajectory_pr.md)
 - [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
-- [\[NeurIPS 2025\] Regret Lower Bounds for Decentralized Multi-Agent Stochastic Shortest Path Problems](regret_lower_bounds_for_decentralized_multi-agent_stochastic_shortest_path_probl.md)
-- [\[NeurIPS 2025\] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving](raw2drive_reinforcement_learning_with_aligned_world_models_for_end-to-end_autono.md)
-- [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
+- [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](../../CVPR2026/autonomous_driving/rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
 
 </div>
 

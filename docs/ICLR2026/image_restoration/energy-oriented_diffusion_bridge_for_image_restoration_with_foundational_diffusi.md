@@ -4,15 +4,16 @@ title: >-
 description: >-
   [ICLR 2026][Image Restoration][diffusion bridge] The E-Bridge framework is proposed, which achieves optimal performance for multi-task image restoration under single-step inference by constructing low-energy manifold geodesic trajectories and a closed-form one-step consistency solver.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - diffusion bridge
-  - geodesic trajectory
-  - consistency model
-  - single-step inference
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "diffusion bridge"
+  - "geodesic trajectory"
+  - "consistency model"
+  - "single-step inference"
 date: 2026-05-08
-content_hash: cbe1bbef4736d97c
+content_hash: 83483b8528b8c8e4
 ---
+
 # Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -146,9 +147,9 @@ E-Bridge's advantage is most significant in the single-step (NFE=1) setting: SR 
 
 - [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](text-aware_image_restoration_with_diffusion_models.md)
 - [\[ICLR 2026\] SFBD-OMNI: Bridge Models for Lossy Measurement Restoration with Limited Clean Samples](sfbd-omni_bridge_models_for_lossy_measurement_restoration_with_limited_clean_sam.md)
-- [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/image_restoration/consistent_diffusion_language_models.md)
+- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](../../CVPR2026/image_restoration/bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
 - [\[ICLR 2026\] Horizon Imagination: Efficient On-Policy Rollout in Diffusion World Models](horizon_imagination_efficient_on-policy_rollout_in_diffusion_world_models.md)
-- [\[ICLR 2026\] LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion](livemoments_reselected_key_photo_restoration_in_live_photos_via_reference-guided.md)
+- [\[CVPR 2025\] Prior Does Matter: Visual Navigation via Denoising Diffusion Bridge Models](../../CVPR2025/image_restoration/prior_does_matter_visual_navigation_via_denoising_diffusion_bridge_models.md)
 
 </div>
 

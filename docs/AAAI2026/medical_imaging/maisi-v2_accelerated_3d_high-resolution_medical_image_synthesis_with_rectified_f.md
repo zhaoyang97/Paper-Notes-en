@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss
 description: >-
-  [AAAI 2026][Medical Imaging][3D Medical Image Synthesis] This paper presents MAISI-v2, the first framework to introduce Rectified Flow into 3D medical image synthesis. By replacing DDPM with Rectified Flow…
+  [AAAI 2026][Medical Imaging][3D Medical Image Synthesis] This paper presents MAISI-v2, the first framework to introduce Rectified Flow into 3D medical image synthesis. By replacing DDPM with Rectified Flow, it achieves a 33× speedup, and a novel region-specific contrastive loss is designed to improve conditioning fidelity for small regions such as tumors. The utility of synthesized data is validated on downstream tumor segmentation tasks.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Latent Diffusion Model"
   - "Data Augmentation"
 date: 2026-05-08
-content_hash: 648b1066831b61a8
+content_hash: 7841540e2293b159
 ---
 
 # MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss
@@ -166,8 +166,8 @@ ControlNet without contrastive loss yields a negative gain on colon tumor (−4.
 - [\[AAAI 2026\] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation](ambiguity-aware_truncated_flow_matching_for_ambiguous_medica.md)
 - [\[AAAI 2026\] CoCoLIT: ControlNet-Conditioned Latent Image Translation for MRI to Amyloid PET Synthesis](cocolit_controlnet-conditioned_latent_image_translation_for_mri_to_amyloid_pet_s.md)
 - [\[AAAI 2026\] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI](pings-x_physics-informed_normalized_gaussian_splatting_with_axes_alignment_for_e.md)
+- [\[ECCV 2024\] A Cephalometric Landmark Regression Method Based on Dual-Encoder for High-Resolution X-Ray Image](../../ECCV2024/medical_imaging/a_cephalometric_landmark_regression_method_based_on_dual-encoder_for_high-resolu.md)
 - [\[NeurIPS 2025\] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface](../../NeurIPS2025/medical_imaging/surf2ct_cascaded_3d_flow_matching_models_for_torso_3d_ct_synthesis_from_skin_sur.md)
-- [\[AAAI 2026\] EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services](egoems_a_high-fidelity_multimodal_egocentric_dataset_for_cognitive_assistance_in.md)
 
 </div>
 

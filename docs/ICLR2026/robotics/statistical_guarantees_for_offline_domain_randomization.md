@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Statistical Guarantees for Offline Domain Randomization
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This work formalizes Offline Domain Randomization (ODR) as a Maximum Likelihood Estimation (MLE) problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it proves weak consistency (convergence in probability) and, by adding a uniform Lipschitz continuity assumption, est
+  [ICLR 2026][Robotics][Domain Randomization] This work formalizes Offline Domain Randomization (ODR) as a Maximum Likelihood Estimation (MLE) problem over a parameterized family of simulators. Under mild regularity and identifiability assumptions, it proves weak consistency (convergence in probability) and, by adding a uniform Lipschitz continuity assumption, establishes strong consistency (almost sure convergence), providing the first theoretical foundation for the empirical…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Domain Randomization"
+  - "sim-to-real transfer"
+  - "maximum likelihood estimation"
+  - "consistency"
+  - "offline RL"
 date: 2026-05-08
-content_hash: a505680540957352
+content_hash: 111522b3e391d3c9
 ---
+
 # Statistical Guarantees for Offline Domain Randomization
 
 **Conference**: ICLR 2026  
@@ -151,8 +157,8 @@ As a theoretical work, the core contribution is statistical guarantees.
 ## Related Papers
 
 - [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
-- [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](../../ICML2026/robotics/dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
 - [\[ICLR 2026\] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control](hierarchical_value-decomposed_offline_reinforcement_learning_for_whole-body_cont.md)
+- [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](../../ICML2026/robotics/dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
 - [\[ICLR 2026\] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration](one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo.md)
 - [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](../../ICML2026/robotics/towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
 

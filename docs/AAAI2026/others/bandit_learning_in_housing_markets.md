@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Bandit Learning in Housing Markets
 description: >-
-  [AAAI 2026][multi-armed-bandit] This paper is the first to introduce the multi-armed bandit (MAB) framework into housing markets (one-sided matching markets). It defines regret based on the core solution concept…
+  [AAAI 2026 Oral][multi-armed-bandit] This paper is the first to introduce the multi-armed bandit (MAB) framework into housing markets (one-sided matching markets). It defines regret based on the core solution concept, proposes a decentralized ETC algorithm and a centralized UCB algorithm, proves a decentralized regret upper bound of $\mathcal{O}(N\log T / \Delta_{\min}^2)$ along with a matching lower bound, and establishes order-optimality.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "multi-armed-bandit"
   - "housing-market"
   - "matching"
   - "online-learning"
   - "game-theory"
 date: 2026-05-08
-content_hash: d77f69d85470faef
+content_hash: 4a3bc47ea11ff819
 ---
 
 # Bandit Learning in Housing Markets
@@ -177,11 +177,11 @@ This is a purely theoretical paper with no experimental data. The core theoretic
 
 ## Related Papers
 
+- [\[ICML 2025\] Fixed-Confidence Multiple Change Point Identification under Bandit Feedback](../../ICML2025/others/fixed-confidence_multiple_change_point_identification_under_bandit_feedback.md)
+- [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](../../CVPR2026/others/adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 - [\[AAAI 2026\] Why Isn't Relational Learning Taking Over the World?](why_isnt_relational_learning_taking_over_the_world.md)
 - [\[AAAI 2026\] Learning Network Dismantling Without Handcrafted Inputs](learning_network_dismantling_without_handcrafted_inputs.md)
-- [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
-- [\[AAAI 2026\] ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations](parameta_towards_learning_disentangled_paralinguistic_speaking_styles_representa.md)
 
 </div>
 

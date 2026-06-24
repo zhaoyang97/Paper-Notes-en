@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] BEV-CAR introduces a "training-only, inference-removed" context-aware rasterization mechanism that rearranges decoder outputs into rays along the lines of sight. Using discrete sampling via the Bresenham algorithm and ray-wise supervision, combined with a dual-branch (depth + global) BEV feature fusion, it achieves SOT
+  [CVPR 2026][Autonomous Driving][Monocular BEV Segmentation] BEV-CAR introduces a "training-only, inference-removed" context-aware rasterization mechanism that rearranges decoder outputs into rays along the lines of sight. Using discrete sampling via the Bresenham algorithm and ray-wise supervision, combined with a dual-branch (depth + global) BEV feature fusion, it achieves SOTA results on nuScenes (31.5% mIoU) and Argoverse (29.9% mIoU) with zero additional inference overhea…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Monocular BEV Segmentation"
+  - "Context-Aware Rasterization"
+  - "Occlusion Reasoning"
+  - "Ray Supervision"
+  - "Depth Perception"
 date: 2026-05-08
-content_hash: add43a2951820d40
+content_hash: 8ff73634d9dd097c
 ---
+
 # BEV-CAR: Enhancing Monocular Bird's Eye View Segmentation with Context-Aware Rasterization
 
 **Conference**: CVPR 2026  
@@ -150,6 +156,7 @@ Plug-and-play generalization: Adding CAR to PYVA improved Mean IoU from 22.13 to
 - Value: ⭐⭐⭐⭐ (Real-time compatibility and plug-and-play nature for practical deployment)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -157,8 +164,8 @@ Plug-and-play generalization: Adding CAR to PYVA improved Mean IoU from 22.13 to
 - [\[CVPR 2026\] BEV-SLD: Self-Supervised Scene Landmark Detection for Global Localization with LiDAR Bird's-Eye View Images](bev-sld_self-supervised_scene_landmark_detection_for_global_localization_with_li.md)
 - [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
 - [\[CVPR 2026\] Spe-BEVHead: Rethinking the Detection Head Design for Bird's-Eye-View Object Detection](spe-bevhead_rethinking_the_detection_head_design_for_birds-eye-view_object_detec.md)
-- [\[CVPR 2026\] MTA: Multimodal Task Alignment for BEV Perception and Captioning](mta_multimodal_task_alignment_for_bev_perception_and_captioning.md)
-- [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
+- [\[ICLR 2026\] Bird's-eye-view Informed Reasoning Driver (BIRDriver)](../../ICLR2026/autonomous_driving/birds-eye-view_informed_reasoning_driver.md)
+- [\[ICLR 2026\] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model](../../ICLR2026/autonomous_driving/arinbev_birds-eye_view_layout_estimation_with_conditional_autoregressive_model.md)
 
 </div>
 

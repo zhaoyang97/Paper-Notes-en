@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] GaussM2ASR reformulates multi-contrast MRI arbitrary-scale super-resolution (ASSR) from "INR direct regression of pixel intensity" to "learning parameters for a set of anisotropic 2D Gaussian kernels." By using narrow kernels to fit high-frequency anatomical boundaries and wide kernels for smooth low-frequency regions,
+  [CVPR 2026][Medical Imaging][Multi-contrast MRI] GaussM2ASR reformulates multi-contrast MRI arbitrary-scale super-resolution (ASSR) from "INR direct regression of pixel intensity" to "learning parameters for a set of anisotropic 2D Gaussian kernels." By using narrow kernels to fit high-frequency anatomical boundaries and wide kernels for smooth low-frequency regions, combined with three anatomy-driven modules to align structures with high-resolution reference images…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Multi-contrast MRI"
+  - "Arbitrary-scale super-resolution"
+  - "2D Gaussian Splatting"
+  - "Spectral bias"
+  - "Anatomical prior"
 date: 2026-05-08
-content_hash: 8ec1152d33e99d02
+content_hash: 6df5e38932797ec8
 ---
+
 # Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance
 
 **Conference**: CVPR 2026  

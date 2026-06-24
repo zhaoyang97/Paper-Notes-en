@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICML 2026][Model Compression][Mixture-of-Experts] Replaces the standard "weighted sum" aggregation of top-$K$ expert outputs in MoE with structural aggregation via a dynamically learned Directed Acyclic Graph (DAG), significantly enhancing MoE expressivity and downstream inference performance with negligible increases in routing or parameter overhead.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Mixture-of-Experts
-  - DAG
+  - "ICML 2026"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Structural Aggregation"
+  - "DAG"
+  - "Multi-step Reasoning"
+  - "Sparse Routing"
 date: 2026-05-08
-content_hash: 90a55b8399b20fdd
+content_hash: 2b8a855165494529
 ---
+
 # DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -138,10 +142,10 @@ Large-scale training on 40B tokens compared DAG-MoE-l ($d_g=256, L=2$) vs. MoE-l
 ## Related Papers
 
 - [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](../../ICLR2026/model_compression/mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
-- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
-- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
-- [\[ICML 2026\] UB-SMoE: Universally Balanced Sparse Mixture-of-Experts for Resource-Adaptive Federated Fine-tuning of Foundation Models](ub-smoe_universally_balanced_sparse_mixture-of-experts_for_resource-adaptive_fed.md)
 - [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
+- [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](../../ICLR2026/model_compression/unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
+- [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](../../NeurIPS2025/model_compression/dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
 
 </div>
 

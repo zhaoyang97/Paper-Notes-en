@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment
 description: >-
-  [AAAI 2026][LLM Pretraining][NR-IQA] This paper proposes MA-CLIP, which discovers and exploits the **magnitude information** of CLIP image features as a complementary perceptual quality cue. Combined with cosine similari…
+  [AAAI 2026][LLM Pretraining][NR-IQA] This paper proposes MA-CLIP, which discovers and exploits the **magnitude information** of CLIP image features as a complementary perceptual quality cue. Combined with cosine similarity, it achieves training-free adaptive dual-cue fusion for image quality assessment.
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Box-Cox transformation"
   - "zero-shot quality assessment"
 date: 2026-05-08
-content_hash: 6b6f1e53b8f78bc7
+content_hash: c3d743c18bb8d7df
 ---
 
 # Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment
@@ -136,7 +136,7 @@ MA-CLIP achieves an average SRCC improvement of 9.6% and PLCC improvement of 4.0
 - [\[AAAI 2026\] No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding](no-regret_strategy_solving_in_imperfect-information_games_via_pre-trained_embedd.md)
 - [\[AAAI 2026\] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding](learning_procedural-aware_video_representations_through_state-grounded_hierarchy.md)
 - [\[AAAI 2026\] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri.md)
-- [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](../../ICLR2026/llm_pretraining/a_law_of_data_reconstruction_for_random_features_and_beyond.md)
+- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](../../CVPR2026/llm_pretraining/reconstructing_clip_for_open-vocabulary_dense_perception.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model
 description: >-
-  [ICLR 2026][Reinforcement Learning][RL for Reasoning] The authors argue that popular mathematical reasoning benchmarks (MATH-500, AIME24) are already almost entirely solved by open-source base models under $pass@1024$. Consequently, RL fine-tuning merely "sharpens" existing solutions rather than "discovering" new capabilities. To address this, they constructed MATH-Beyond
+  [ICLR 2026][Reinforcement Learning][RL for Reasoning] The authors argue that popular mathematical reasoning benchmarks (MATH-500, AIME24) are already almost entirely solved by open-source base models under $pass@1024$. Consequently, RL fine-tuning merely "sharpens" existing solutions rather than "discovering" new capabilities. To address this, they constructed MATH-Beyond—a set of high school competition problems that $\le 8B$ open-source models consistently fail to solve eve…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RL for Reasoning
-  - Exploration
-  - pass@k
-  - Expansion Rate
-  - Benchmark
-  - Math Reasoning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL for Reasoning"
+  - "Exploration"
+  - "pass@k"
+  - "Expansion Rate"
+  - "Benchmark"
+  - "Math Reasoning"
 date: 2026-05-08
-content_hash: 6c0cea2d8cbb14a6
+content_hash: 42c152c7d707e984
 ---
+
 # MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model
 
 **Conference**: ICLR 2026  
@@ -116,8 +117,8 @@ flowchart TD
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[ICLR 2026\] Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains RLVR](beyond_pass_1_self-play_with_variational_problem_synthesis_sustains_rlvr.md)
 - [\[ICLR 2026\] Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning](beyond_distributions_geometric_action_control_for_continuous_reinforcement_learn.md)
-- [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 - [\[ICLR 2026\] Beyond Softmax and Entropy: Convergence Rates of Policy Gradients with $f$-SoftArgmax Parameterization & Coupled Regularization](beyond_softmax_and_entropy_convergence_rates_of_policy_gradients_with_boldsymbol.md)
+- [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 
 </div>
 

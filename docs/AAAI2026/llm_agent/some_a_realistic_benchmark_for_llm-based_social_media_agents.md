@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SoMe: A Realistic Benchmark for LLM-based Social Media Agents
 description: >-
-  [AAAI 2026][LLM Agent][social media agent] This paper introduces SoMe, the first comprehensive benchmark for social media agents, comprising 8 tasks, over 9 million real-world posts, and 17…
+  [AAAI 2026][LLM Agent][social media agent] This paper introduces SoMe, the first comprehensive benchmark for social media agents, comprising 8 tasks, over 9 million real-world posts, and 17,869 annotated queries. It evaluates 13 mainstream LLMs on social media agent capabilities and reveals substantial performance gaps on complex social tasks.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "agent evaluation"
   - "social media analysis"
 date: 2026-05-08
-content_hash: 94f28599af591587
+content_hash: 19af85465fde5c76
 ---
 
 # SoMe: A Realistic Benchmark for LLM-based Social Media Agents
@@ -157,11 +157,11 @@ Performance of 13 mainstream LLMs across 8 tasks (scores ranging from 0 to 100):
 
 ## Related Papers
 
-- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](../../ICLR2026/llm_agent/fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](../../ICLR2026/llm_agent/simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
-- [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](../../ICML2026/llm_agent/reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
-- [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](../../ICLR2026/llm_agent/a_benchmark_for_deep_information_synthesis.md)
-- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
+- [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](../../ICLR2026/llm_agent/mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
+- [\[ICLR 2026\] Social Agents: Collective Intelligence Improves LLM Predictions](../../ICLR2026/llm_agent/social_agents_collective_intelligence_improves_llm_predictions.md)
+- [\[ICLR 2026\] When AI Agents Collude Online: Financial Fraud Risks by Collaborative LLM Agents on Social Platforms](../../ICLR2026/llm_agent/when_ai_agents_collude_online_financial_fraud_risks_by_collaborative_llm_agents_.md)
+- [\[CVPR 2026\] Agent4FaceForgery: Multi-Agent LLM Framework for Realistic Face Forgery Detection](../../CVPR2026/llm_agent/agent4faceforgery_multi-agent_llm_framework_for_realistic_face_forgery_detection.md)
+- [\[ICLR 2026\] FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](../../ICLR2026/llm_agent/futurex_an_advanced_live_benchmark_for_llm_agents_in_future_prediction.md)
 
 </div>
 

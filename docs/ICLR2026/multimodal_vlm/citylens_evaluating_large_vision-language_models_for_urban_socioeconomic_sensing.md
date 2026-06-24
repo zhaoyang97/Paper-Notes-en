@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing
 description: >-
-  [ICLR 2026][Multimodal VLM][urban computing] The authors construct CityLens, the largest urban socioeconomic sensing benchmark to date (covering 17 cities, 6 domains, and 11 prediction tasks). It evaluates 17 LVLMs across three paradigms—direct prediction, normalized estimation, and feature-based regression—to infer socioeconomic indicators from satellite and str
+  [ICLR2026][Multimodal VLM][urban computing] The authors construct CityLens, the largest urban socioeconomic sensing benchmark to date (covering 17 cities, 6 domains, and 11 prediction tasks). It evaluates 17 LVLMs across three paradigms—direct prediction, normalized estimation, and feature-based regression—to infer socioeconomic indicators from satellite and street-view images. The results reveal that general LVLMs still lag behind domain-specific contrastive learning methods…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - urban computing
-  - socioeconomic sensing
-  - benchmark
-  - vision-language model
-  - street view
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "urban computing"
+  - "socioeconomic sensing"
+  - "benchmark"
+  - "vision-language model"
+  - "street view"
 date: 2026-05-08
-content_hash: 690e6963768cbc16
+content_hash: efa8897218c15005
 ---
+
 # CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing
 
 **Conference**: ICLR2026  
@@ -138,7 +139,7 @@ Instead of predicting indicators directly, this paradigm uses LVLMs as feature e
 - [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
 - [\[ICML 2026\] Benchmarks for Vision-Language Models in Urban Perception Should Be Reliability-Aware and Negotiated](../../ICML2026/multimodal_vlm/benchmarks_for_vision-language_models_in_urban_perception_should_be_reliability-.md)
 - [\[ICLR 2026\] Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification](detecting_misbehaviors_of_large_vision-language_models_by_evidential_uncertainty.md)
-- [\[ICLR 2026\] CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?](cityseeker_how_do_vlms_explore_embodied_urban_navigation_with_implicit_human_nee.md)
+- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](../../CVPR2026/multimodal_vlm/vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
 
 </div>
 

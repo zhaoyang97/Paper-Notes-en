@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Buckingham $\pi$-Invariant Test-Time Projection for Robust PDE Surrogate Modeling
 description: >-
-  [ICLR 2026][Others][Paper Note] Utilizing the Buckingham π theorem, this work identifies "OOD shifts caused by different units/scales" as physically equivalent scaling transformations. It proposes a **training-free, model-agnostic** test-time projection: translating test samples along $\pi$-preserving equivalence classes in log space to the nearest t
+  [ICLR 2026][PDE surrogate models] Utilizing the Buckingham π theorem, this work identifies "OOD shifts caused by different units/scales" as physically equivalent scaling transformations. It proposes a **training-free, model-agnostic** test-time projection: translating test samples along $\pi$-preserving equivalence classes in log space to the nearest training class. This approach reduces the MAE of surrogate models such as FNO/U-Net by up to 91% under extreme OOD conditions.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "PDE surrogate models"
+  - "Buckingham π theorem"
+  - "dimensional analysis"
+  - "test-time projection"
+  - "OOD generalization"
+  - "neural operators"
 date: 2026-05-08
-content_hash: b55179ae46511c49
+content_hash: 793d871b508f346e
 ---
+
 # Buckingham $\pi$-Invariant Test-Time Projection for Robust PDE Surrogate Modeling
 
 **Conference**: ICLR 2026  
@@ -124,8 +130,8 @@ As the number of candidates increases, the MAE of clustered projection converges
 - [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](prior-free_tabular_test-time_adaptation.md)
 - [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
 - [\[ICLR 2026\] Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](exposing_mixture_and_annotating_confusion_for_active_universal_test-time_adaptat.md)
+- [\[ICLR 2026\] Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute](scaling_atomistic_protein_binder_design_with_generative_pretraining_and_test-tim.md)
 - [\[ECCV 2024\] MemBN: Robust Test-Time Adaptation via Batch Norm with Statistics Memory](../../ECCV2024/others/membn_robust_test-time_adaptation_via_batch_norm_with_statistics_memory.md)
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
 
 </div>
 

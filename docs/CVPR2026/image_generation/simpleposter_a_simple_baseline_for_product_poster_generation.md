@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SimplePoster: A Simple Baseline for Product Poster Generation
 description: >-
-  [CVPR 2026][Image Generation][inpainting] Aiming at the two primary requirements of e-commerce product poster generation—no distortion of the subject and precise placement of multi-line text—SimplePoster removes the stacked ControlNet / OCR encoders used in existing methods. By relying solely on "full-parameter fine-tuning of FLUX-Fill" to eliminate subject ex
+  [CVPR 2026][Image Generation][Product Poster Generation] Aiming at the two primary requirements of e-commerce product poster generation—no distortion of the subject and precise placement of multi-line text—SimplePoster removes the stacked ControlNet / OCR encoders used in existing methods. By relying solely on "full-parameter fine-tuning of FLUX-Fill" to eliminate subject extension and "zero-cost Character Position Encoding" to achieve layout-controllable text…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - inpainting
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Product Poster Generation"
+  - "Inpainting"
+  - "Full-parameter Fine-tuning"
+  - "Subject Fidelity"
+  - "Character-level Position Encoding"
 date: 2026-05-08
-content_hash: b53141694834263e
+content_hash: 8dcdbc3af87ba6d5
 ---
+
 # SimplePoster: A Simple Baseline for Product Poster Generation
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Comparison of strategies for eliminating subject extension (Section 3, using a 3
 
 ## Related Papers
 
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 - [\[CVPR 2026\] InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation](innoads-composer_efficient_condition_composition_for_e-commerce_poster_generatio.md)
-- [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
+- [\[ICLR 2026\] Product of Experts for Visual Generation](../../ICLR2026/image_generation/product_of_experts_for_visual_generation.md)
 - [\[CVPR 2026\] PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback](posteromni_generalized_artistic_poster_creation_via_task_distillation_and_unifie.md)
 - [\[CVPR 2026\] SkyReels-Text: Fine-Grained Font-Controllable Text Editing for Poster Design](skyreels-text_fine-grained_font-controllable_text_editing_for_poster_design.md)
+- [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
 
 </div>
 

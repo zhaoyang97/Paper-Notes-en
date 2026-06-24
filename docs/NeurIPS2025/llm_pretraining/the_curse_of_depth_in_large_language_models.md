@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Curse of Depth in Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Pre-Layer Normalization] This paper identifies the root cause of deep-layer degradation in Pre-LN Transformers—exponential growth of output variance causing deep layers to collapse into id…
+  [NeurIPS 2025][LLM Pretraining][Pre-Layer Normalization] This paper identifies the root cause of deep-layer degradation in Pre-LN Transformers—exponential growth of output variance causing deep layers to collapse into identity mappings—and proposes a parameter-free LayerNorm Scaling (LNS) strategy that multiplies the LayerNorm output by $1/\sqrt{\ell}$, compressing variance growth from exponential to polynomial. LNS consistently improves perplexity by 5–8% across scales from…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "LayerNorm Scaling"
   - "Transformer"
 date: 2026-05-08
-content_hash: 6909a690b0c9a163
+content_hash: 1998fc0949b01891
 ---
 
 # The Curse of Depth in Large Language Models
@@ -129,8 +129,8 @@ DeepNorm and Mix-LN diverge at larger scales, while LNS remains consistently sta
 - [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
 - [\[NeurIPS 2025\] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models](ricl_temporal_credit.md)
 - [\[NeurIPS 2025\] Leveraging Importance Sampling to Detach Alignment Modules from Large Language Models](leveraging_importance_sampling_to_detach_alignment_modules_from_large_language_m.md)
-- [\[NeurIPS 2025\] Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification](breaking_the_gradient_barrier_unveiling_large_language_models_for_strategic_clas.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
+- [\[ACL 2025\] Large Vocabulary Size Improves Large Language Models](../../ACL2025/llm_pretraining/large_vocabulary_size_improves_large_language_models.md)
+- [\[ACL 2025\] Retrofitting Large Language Models with Dynamic Tokenization](../../ACL2025/llm_pretraining/retrofitting_large_language_models_with_dynamic_tokenization.md)
 
 </div>
 

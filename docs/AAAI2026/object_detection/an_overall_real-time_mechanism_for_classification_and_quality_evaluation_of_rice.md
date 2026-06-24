@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice
 description: >-
-  [AAAI2026][Object Detection][rice quality evaluation] This paper proposes a real-time overall mechanism for rice quality evaluation, integrating three modules: an improved YOLO-v5 (variety detection)…
+  [AAAI2026][Object Detection][rice quality evaluation] This paper proposes a real-time overall mechanism for rice quality evaluation, integrating three modules: an improved YOLO-v5 (variety detection), an improved ConvNeXt-Tiny (intactness grading), and K-means (chalkiness region quantification). The system achieves 99.14% mAP and 97.89% detection accuracy on a self-constructed dataset of 20,000 images spanning six rice varieties.
 tags:
   - "AAAI2026"
   - "Object Detection"
@@ -13,7 +13,7 @@ tags:
   - "SimAM"
   - "ECA"
 date: 2026-05-08
-content_hash: 2a7b1fd86e1ac1e7
+content_hash: b3bafab61cabb6af
 ---
 
 # An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice
@@ -166,10 +166,10 @@ Compared to single-task methods, the proposed system's strength lies in its syst
 ## Related Papers
 
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](yolo-iod_towards_real_time_incremental_object_detection.md)
+- [\[CVPR 2025\] MI-DETR: An Object Detection Model with Multi-time Inquiries Mechanism](../../CVPR2025/object_detection/mi-detr_an_object_detection_model_with_multi-time_inquiries_mechanism.md)
 - [\[ICCV 2025\] YOLOE: Real-Time Seeing Anything](../../ICCV2025/object_detection/yoloe_realtime_seeing_anything.md)
 - [\[NeurIPS 2025\] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](../../NeurIPS2025/object_detection/scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)
-- [\[CVPR 2026\] RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation](../../CVPR2026/object_detection/rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)
+- [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](../../CVPR2026/object_detection/yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
 
 </div>
 

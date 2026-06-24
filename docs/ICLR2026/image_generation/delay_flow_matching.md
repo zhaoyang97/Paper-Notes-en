@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Delay Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] The authors replace the Ordinary Differential Equation (ODE) underlying Flow Matching (FM) with a **Delay Differential Equation (DDE)**. By making the vector field dependent on historical states, the framework naturally supports trajectory crossings, precise transfer between heterogeneous distributions, and modeling of
+  [ICLR 2026][Image Generation][Flow Matching] The authors replace the Ordinary Differential Equation (ODE) underlying Flow Matching (FM) with a **Delay Differential Equation (DDE)**. By making the vector field dependent on historical states, the framework naturally supports trajectory crossings, precise transfer between heterogeneous distributions, and modeling of delayed dynamical systems. It outperforms the ODE-based FM on synthetic data, single-cell trajectory inference…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Delay Differential Equations (DDE)"
+  - "Trajectory Crossing"
+  - "Heterogeneous Distributions"
+  - "Single-cell Trajectory Inference"
 date: 2026-05-08
-content_hash: 624b3ad833fd3684
+content_hash: 160c123d88395b45
 ---
+
 # Delay Flow Matching
 
 **Conference**: ICLR 2026  
@@ -156,10 +161,10 @@ MNIST semi-paired image translation (source $\to$ negative, 10% pairs as keypoin
 ## Related Papers
 
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
 - [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
-- [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
 
 </div>
 

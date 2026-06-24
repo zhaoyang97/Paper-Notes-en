@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoWeaver: Multimodal Multi-View Video-to-Video Transfer for Embodied Agents
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] VideoWeaver extends single-view video-to-video (V2V) style transfer to multiple synchronized cameras. By injecting 4D point cloud coordinates predicted by Pi3 into the latent space of a flow model, it unifies the appearance across views. Coupled with "heterogeneous timestep" training, the model learns both joint and co
+  [CVPR 2026][Video Generation][Multi-view V2V] VideoWeaver extends single-view video-to-video (V2V) style transfer to multiple synchronized cameras. By injecting 4D point cloud coordinates predicted by Pi3 into the latent space of a flow model, it unifies the appearance across views. Coupled with "heterogeneous timestep" training, the model learns both joint and conditional distributions, enabling consistent batch re-rendering of multi-view embodied demonstration videos while…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-view V2V"
+  - "Flow Models"
+  - "4D Point Clouds"
+  - "Heterogeneous Timesteps"
+  - "Domain Randomization"
 date: 2026-05-08
-content_hash: 9b6c27411811f867
+content_hash: 88db55f92104f777
 ---
+
 # VideoWeaver: Multimodal Multi-View Video-to-Video Transfer for Embodied Agents
 
 **Conference**: CVPR 2026  
@@ -125,14 +131,15 @@ VideoWeaver leads in **alignment and realism** (Edge-F1, Depth, JEDi), even agai
 - Value: ⭐⭐⭐⭐⭐ (Directly addresses multi-view data augmentation needs for embodied policy training.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
 - [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
 - [\[CVPR 2026\] Thinking with Video: Video Generation as a Promising Multimodal Reasoning Paradigm](thinking_with_video_video_generation_as_a_promising_multimodal_reasoning_paradig.md)
+- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
 - [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It finds that performance decline is not solely caused by increasing context length; the instance count itself exerts a stronger influence on success rates. Specifically, almost all models collapse when processin
+  [ACL2026][LLM Efficiency][Multi-instance Processing] This paper systematically evaluates the degradation patterns of 16 LLMs in multi-instance processing (MIP). It finds that performance decline is not solely caused by increasing context length; the instance count itself exerts a stronger influence on success rates. Specifically, almost all models collapse when processing over 1,000 instances and rarely proactively alert the user.
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL2026"
+  - "LLM Efficiency"
+  - "Multi-instance Processing"
+  - "Long Context"
+  - "Aggregated Reasoning"
+  - "Failure Modes"
+  - "Instance Count"
 date: 2026-05-08
-content_hash: 9cc3193f21108422
+content_hash: 0437fe5c9d414354
 ---
+
 # Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length
 
 **Conference**: ACL2026  
@@ -121,11 +127,11 @@ Key analyses compared failure types and context length effects. Results indicate
 
 ## Related Papers
 
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](../../ICLR2026/llm_efficiency/smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
+- [\[ICLR 2026\] From Collapse to Control: Understanding and Extending Context Length in Emerging Hybrid Models via Universal Position Interpolation](../../ICLR2026/llm_efficiency/from_collapse_to_control_understanding_and_extending_context_length_in_emerging_.md)
+- [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](../../ICLR2026/llm_efficiency/memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)
 - [\[ACL 2025\] Squeezed Attention: Accelerating Long Context Length LLM Inference](../../ACL2025/llm_efficiency/squeezed_attention_accelerating_long_context_length_llm_inference.md)
-- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
-- [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
 
 </div>
 

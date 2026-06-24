@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Planned Diffusion
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] The model first generates a "plan" autoregressively to partition the response into several semantically independent blocks, and then performs parallel diffusion denoising on all blocks. This allows the model to determine its own denoising order. On AlpacaEval, it achieves a $1.27\times$ to $1.81\times$ speedup relative
+  [ICLR 2026][LLM Efficiency][Discrete Diffusion Language Models] The model first generates a "plan" autoregressively to partition the response into several semantically independent blocks, and then performs parallel diffusion denoising on all blocks. This allows the model to determine its own denoising order. On AlpacaEval, it achieves a $1.27\times$ to $1.81\times$ speedup relative to autoregressive models with only a $0.87\%$ to $5.4\%$ win rate drop…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Discrete Diffusion Language Models"
+  - "Parallel Generation"
+  - "Denoising Order"
+  - "Semantic Parallelism"
+  - "Quality-Latency Trade-off"
 date: 2026-05-08
-content_hash: e69f85c7e304395e
+content_hash: 8ce5e29c733f57df
 ---
+
 # Planned Diffusion
 
 **Conference**: ICLR 2026  
@@ -133,15 +139,15 @@ Critical path analysis: AR average critical path is 367.3 steps, while PD is onl
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 - [\[ICLR 2026\] Diffusion LLMs Can Do Faster-Than-AR Inference via Discrete Diffusion Forcing](diffusion_llms_can_do_faster-than-ar_inference_via_discrete_diffusion_forcing.md)
 - [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
 - [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
-- [\[ICLR 2026\] Parallel Sampling from Masked Diffusion Models via Conditional Independence Testing](parallel_sampling_from_masked_diffusion_models_via_conditional_independence_test.md)
 
 </div>
 

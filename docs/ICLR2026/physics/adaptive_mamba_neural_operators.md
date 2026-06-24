@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Mamba Neural Operators
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][State Space Model] AMO explicitly parameterizes the transfer function of Mamba/SSM as orthogonal kernels of the Takenaka-Malmquist (TM) system within a Reproducing Kernel Hilbert Space (RKHS), making the entire network equivalent to an "Adaptive Fourier Decomposition" (AFD). This approach reduces the average relative L2 error by approxim
+  [ICLR2026][Physics & Scientific Computing][neural operators] AMO explicitly parameterizes the transfer function of Mamba/SSM as orthogonal kernels of the Takenaka-Malmquist (TM) system within a Reproducing Kernel Hilbert Space (RKHS), making the entire network equivalent to an "Adaptive Fourier Decomposition" (AFD). This approach reduces the average relative L2 error by approximately 28% across regular grids, point clouds, irregular domains, and financial PDEs with singularit…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - State Space Model
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "neural operators"
+  - "partial differential equations"
+  - "state space models"
+  - "adaptive Fourier decomposition"
+  - "frequency-domain interpretability"
 date: 2026-05-08
-content_hash: 2bdea1ec9c54d474
+content_hash: 19a83c871523146c
 ---
+
 # Adaptive Mamba Neural Operators
 
 **Conference**: ICLR2026  
@@ -139,10 +144,10 @@ In financial scenarios (European option pricing via Black-Scholes with terminal 
 ## Related Papers
 
 - [\[ICLR 2026\] CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators](cfo_learning_continuous-time_pde_dynamics_via_flow-matched_neural_operators.md)
+- [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
 - [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](../../ICML2026/physics/antic_adaptive_neural_temporal_in-situ_compressor.md)
+- [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
 - [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
-- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](../../ICML2026/physics/eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Periodic Skill Discovery
 description: >-
-  [NeurIPS 2025][Robotics][Unsupervised skill discovery] This paper proposes Periodic Skill Discovery (PSD), a framework that maps states onto a circular latent space to naturally encode periodicity…
+  [NeurIPS 2025][Robotics][Unsupervised skill discovery] This paper proposes Periodic Skill Discovery (PSD), a framework that maps states onto a circular latent space to naturally encode periodicity, enabling unsupervised discovery of diverse locomotion skills with varying periods.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -11,7 +11,7 @@ tags:
   - "circular latent space"
   - "locomotion control"
 date: 2026-05-08
-content_hash: a06934cc9f7894cc
+content_hash: 70a113806a9fc4cb
 ---
 
 # Periodic Skill Discovery
@@ -171,8 +171,8 @@ Downstream task (hurdle crossing) performance:
 - [\[NeurIPS 2025\] Policy Compatible Skill Incremental Learning via Lazy Learning Interface](policy_compatible_skill_incremental_learning_via_lazy_learning_interface.md)
 - [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](../../ICCV2025/robotics/imanip_skill-incremental_learning_for_robotic_manipulation.md)
 - [\[AAAI 2026\] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search](../../AAAI2026/robotics/human-centric_open-future_task_discovery_formulation_benchmark_and_scalable_tree.md)
+- [\[CVPR 2025\] Let Humanoids Hike! Integrative Skill Development on Complex Trails](../../CVPR2025/robotics/let_humanoids_hike_integrative_skill_development_on_complex_trails.md)
 - [\[CVPR 2026\] AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](../../CVPR2026/robotics/atomicvla_unlocking_the_potential_of_atomic_skill_learning_in_robots.md)
-- [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](../../ACL2026/robotics/breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
 
 </div>
 

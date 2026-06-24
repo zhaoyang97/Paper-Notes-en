@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] Coded-E2LF: Coded Aperture Light Field Imaging from Events
 description: >-
-  [CVPR 2026][Others][light field imaging] This paper demonstrates for the first time that pixel-level accuracy 4D light fields can be reconstructed using only an event camera (without traditional intensity images). The proposed Coded-E2LF system triggers events by accumulating sequences of coded aperture patterns into event images. By utilizing a "black-first"
+  [CVPR2026][light field imaging] This paper demonstrates for the first time that pixel-level accuracy 4D light fields can be reconstructed using only an event camera (without traditional intensity images). The proposed Coded-E2LF system triggers events by accumulating sequences of coded aperture patterns into event images. By utilizing a "black-first" pattern, the authors establish the mathematical equivalence between event-based and intensity-based coded aperture imaging. Com…
 tags:
-  - CVPR 2026
-  - Others
-  - light field imaging
-  - event camera
-  - coded aperture
-  - deep optics
-  - end-to-end optimization
-  - black-first coding sequence
+  - "CVPR2026"
+  - "light field imaging"
+  - "event camera"
+  - "coded aperture"
+  - "deep optics"
+  - "end-to-end optimization"
+  - "black-first coding sequence"
 date: 2026-05-08
-content_hash: 1d3ca17fe38d8a8f
+content_hash: 515e2947da595ed9
 ---
+
 # Coded-E2LF: Coded Aperture Light Field Imaging from Events
 
 **Conference**: CVPR2026  
@@ -169,11 +169,11 @@ The AcqNet-RecNet pipeline is trained to minimize the **Mean Squared Error (MSE)
 
 ## Related Papers
 
-- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
+- [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](rauf_learning_the_spatial_uncertainty_field_of_radar.md)
 - [\[ICML 2025\] Revisiting the Predictability of Performative, Social Events](../../ICML2025/others/revisiting_the_predictability_of_performative_social_events.md)
+- [\[CVPR 2025\] Event Ellipsometer: Event-based Mueller-Matrix Video Imaging](../../CVPR2025/others/event_ellipsometer_event-based_mueller-matrix_video_imaging.md)
 - [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](../../AAAI2026/others/spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
 - [\[CVPR 2025\] Potential Field Based Deep Metric Learning](../../CVPR2025/others/potential_field_based_deep_metric_learning.md)
-- [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
 
 </div>
 

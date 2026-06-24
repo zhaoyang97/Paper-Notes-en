@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Open Data Synthesis for Deep Research
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper proposes the InfoSeek data synthesis framework, formalizing the "deep research" task as a **Hierarchical Constraint Satisfaction Problem (HCSP)**. Using a two-stage "Diffusion–Retrospection" approach, it automatically grows research trees from seed webpages and retroactively weaves them into QA pairs requiri
+  [ICLR 2026][LLM Agent][Agentic Search] This paper proposes the InfoSeek data synthesis framework, formalizing the "deep research" task as a **Hierarchical Constraint Satisfaction Problem (HCSP)**. Using a two-stage "Diffusion–Retrospection" approach, it automatically grows research trees from seed webpages and retroactively weaves them into QA pairs requiring multi-layer reasoning with unique, verifiable answers. By training an InfoSeeker agent of only 3B parameters with 50k+…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agentic Search"
+  - "Deep Research"
+  - "Data Synthesis"
+  - "Hierarchical Constraint Satisfaction"
+  - "Verifiable QA"
 date: 2026-05-08
-content_hash: 850e1f05d230d53f
+content_hash: 6a3e3c25bf93086d
 ---
+
 # Open Data Synthesis for Deep Research
 
 **Conference**: ICLR 2026  
@@ -161,8 +167,8 @@ InfoSeeker-3B reaches 15.3%, surpassing closed-source systems like GPT-4o-mini a
 
 ## Related Papers
 
-- [\[ICLR 2026\] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research](webweaver_structuring_web-scale_evidence_with_dynamic_outlines_for_open-ended_de.md)
 - [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)
+- [\[ICLR 2026\] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research](webweaver_structuring_web-scale_evidence_with_dynamic_outlines_for_open-ended_de.md)
 - [\[ICLR 2026\] Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs](deep_ignorance_filtering_pretraining_data_builds_tamper-resistant_safeguards_int.md)
 - [\[ICML 2026\] Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models](../../ICML2026/llm_agent/hunt_instead_of_wait_evaluating_deep_data_research_on_large_language_models.md)
 - [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)

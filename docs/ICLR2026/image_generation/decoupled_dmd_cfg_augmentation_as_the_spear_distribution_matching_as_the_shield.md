@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Decoupled DMD: CFG Augmentation as the Spear, Distribution Matching as the Shield
 description: >-
-  [ICLR 2026][Image Generation][DMD] The authors perform a rigorous gradient decomposition of the widely used DMD distillation objective and discover that the actual "engine" compressing multi-step diffusion models into few-step generators is not distribution matching, but a long-overlooked CFG Augmentation term. Distribution matching acts merely as a "re
+  [ICLR2026][Image Generation][Diffusion Distillation] The authors perform a rigorous gradient decomposition of the widely used DMD distillation objective and discover that the actual "engine" compressing multi-step diffusion models into few-step generators is not distribution matching, but a long-overlooked CFG Augmentation term. Distribution matching acts merely as a "regularizer" for stable training. Based on this "Spear/Shield" division of labor…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DMD
-  - CFG
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "DMD"
+  - "CFG"
+  - "Few-step Generation"
+  - "Distribution Matching"
 date: 2026-05-08
-content_hash: cc8d5899059a0326
+content_hash: 9c64ecd9a9e1fc97
 ---
+
 # Decoupled DMD: CFG Augmentation as the Spear, Distribution Matching as the Shield
 
 **Conference**: ICLR2026  
@@ -136,15 +140,16 @@ Lumina-Image-2.0 schedule ablation:
 - Value: ⭐⭐⭐⭐⭐ Provides both theoretical insight and a zero-cost practical performance gain.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](../../ICCV2025/image_generation/learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
 - [\[ICLR 2026\] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation](senseflow_scaling_distribution_matching_for_flow-based_text-to-image_distillatio.md)
+- [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](../../ICCV2025/image_generation/learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
 - [\[ICLR 2026\] Bridging the Distribution Gap to Harness Pretrained Diffusion Priors for Super-Resolution](bridging_the_distribution_gap_to_harness_pretrained_diffusion_priors_for_super-r.md)
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](../../ICCV2025/image_generation/unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
-- [\[ICLR 2026\] Decoupled MeanFlow: Turning Flow Models into Flow Maps for Accelerated Sampling](decoupled_meanflow_turning_flow_models_into_flow_maps_for_accelerated_sampling.md)
+- [\[ICML 2025\] Expressive Score-Based Priors for Distribution Matching with Geometry-Preserving Regularization](../../ICML2025/image_generation/expressive_score-based_priors_for_distribution_matching_with_geometry-preserving.md)
 
 </div>
 

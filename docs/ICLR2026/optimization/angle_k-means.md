@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Angle k-means：用角度关系加速精确 k-means
+  [Paper Note] Angle k-means: Accelerating Exact k-means via Angular Relationships
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes **Angle k-means**, which accelerates the assignment step by precomputing distances and angles between centroids. By utilizing a geometric inequality involving only angular comparisons to prune distant candidate centroids, it runs faster than SOTA methods like Ball k-means and Exp-ns without introduc
+  [ICLR 2026][Optimization][k-means acceleration] This paper proposes **Angle k-means**, which accelerates the assignment step by precomputing distances and angles between centroids. By utilizing a geometric inequality involving only angular comparisons to prune distant candidate centroids, it runs faster than SOTA methods like Ball k-means and Exp-ns without introducing any hyperparameters or altering the final clustering results.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "k-means acceleration"
+  - "exact clustering"
+  - "geometric pruning"
+  - "angular relationships"
+  - "parameter-free"
 date: 2026-05-08
-content_hash: d9dda9a778ea60af
+content_hash: 0ed1ac95002f45f2
 ---
+
 # Angle k-means: Accelerating Exact k-means via Angular Relationships
 
 **Conference**: ICLR 2026  
@@ -118,9 +124,9 @@ Only centroids whose cosine exceeds this distance ratio "might" be closer than t
 
 - [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
 - [\[AAAI 2026\] Convex Clustering Redefined: Robust Learning with the Median of Means Estimator](../../AAAI2026/optimization/convex_clustering_redefined_robust_learning_with_higher_order_norms_and_beyond.md)
-- [\[ICLR 2026\] Submodular Function Minimization with Dueling Oracle](submodular_function_minimization_with_dueling_oracle.md)
-- [\[ICLR 2026\] Bayesian Parameter Shift Rules in Variational Quantum Eigensolvers](bayesian_parameter_shift_rules_in_variational_quantum_eigensolvers.md)
-- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
+- [\[ICLR 2026\] Seesaw: Accelerating Training by Balancing Learning Rate and Batch Size Scheduling](seesaw_accelerating_training_by_balancing_batch_size_and_learning_rate_schedulin.md)
+- [\[ICLR 2026\] DADA: Dual Averaging with Distance Adaptation](dada_dual_averaging_with_distance_adaptation.md)
+- [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](../../ICML2026/optimization/balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
 
 </div>
 

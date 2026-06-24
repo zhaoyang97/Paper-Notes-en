@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FINER: MLLMs Hallucinate under Fine-grained Negative Queries
 description: >-
-  [CVPR 2026][Hallucination Detection][DPO] The study identifies a sharp increase in MLLM hallucination rates under fine-grained negative queries (queries with a single subtle error among multiple objects/attributes/relations). It proposes the FINER benchmark and the FINER-Tuning method (based on DPO), achieving a maximum improvement of 24.2% on InternVL3.5-14B.
+  [CVPR 2026][Hallucination Detection][MLLM Hallucination] The study identifies a sharp increase in MLLM hallucination rates under fine-grained negative queries (queries with a single subtle error among multiple objects/attributes/relations). It proposes the FINER benchmark and the FINER-Tuning method (based on DPO), achieving a maximum improvement of 24.2% on InternVL3.5-14B.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - DPO
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "MLLM Hallucination"
+  - "Fine-grained Negative Queries"
+  - "DPO"
+  - "Scene Graphs"
+  - "Hallucination Benchmark"
 date: 2026-05-08
-content_hash: b7db58f8be391834
+content_hash: 1c5028ac35582732
 ---
+
 # FINER: MLLMs Hallucinate under Fine-grained Negative Queries
 
 **Conference**: CVPR 2026  
@@ -126,11 +131,11 @@ The DPO parameter $\beta$ is set to 0.1. Pixmo-caption serves as the fixed data 
 
 ## Related Papers
 
+- [\[ICLR 2026\] FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs](../../ICLR2026/hallucination/freak_a_fine-grained_hallucination_evaluation_benchmark_for_advanced_mllms.md)
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
 - [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](fine-grained_multi_image_object_hallucination_benchmark.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
-- [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[CVPR 2026\] COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs](copo_causal-oriented_policy_optimization_for_hallucinations_of_mllms.md)
+- [\[CVPR 2026\] One Token, Two Fates: A Unified Framework via Vision Token Manipulation Against MLLMs Hallucination](one_token_two_fates_a_unified_framework_via_vision_token_manipulation_against_ml.md)
 
 </div>
 

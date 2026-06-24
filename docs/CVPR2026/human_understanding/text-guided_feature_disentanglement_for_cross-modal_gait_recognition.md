@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Text-guided Feature Disentanglement for Cross-modal Gait Recognition
 description: >-
-  [CVPR 2026][Human Understanding][CLIP] This work generates a "modality+view"-aware gait text dictionary using LLMs and leverages CLIP to use text as semantic anchors for guiding visual feature disentanglement. It decomposes gait features from LiDAR and camera modalities into "modality-specific" and "modality-shared" components, performing retrieval using on
+  [CVPR 2026][Human Understanding][Gait Recognition] This work generates a "modality+view"-aware gait text dictionary using LLMs and leverages CLIP to use text as semantic anchors for guiding visual feature disentanglement. It decomposes gait features from LiDAR and camera modalities into "modality-specific" and "modality-shared" components, performing retrieval using only the shared features. This approach achieves new SOTA results on the SUSTech1K and FreeGait benchmarks (e.g…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - CLIP
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gait Recognition"
+  - "LiDAR-Camera Cross-modal"
+  - "Feature Disentanglement"
+  - "CLIP"
+  - "Text Prior"
 date: 2026-05-08
-content_hash: 0bfa7211bdadfb77
+content_hash: 58c20afcea9ac30e
 ---
+
 # Text-guided Feature Disentanglement for Cross-modal Gait Recognition
 
 **Conference**: CVPR 2026  

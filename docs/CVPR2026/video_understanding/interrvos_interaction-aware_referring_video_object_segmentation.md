@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InterRVOS: Interaction-Aware Referring Video Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][actor-target] This work extends Referring Video Object Segmentation (RVOS) from segmenting only the referred subject (actor) to a new task, InterRVOS, which simultaneously segments both the actor and target in an interaction. The authors constructed InterRVOS-127K, a dataset with 127,000 actor-target dual-mask annotations, and propo
+  [CVPR 2026][Video Understanding][Referring Video Object Segmentation] This work extends Referring Video Object Segmentation (RVOS) from segmenting only the referred subject (actor) to a new task, InterRVOS, which simultaneously segments both the actor and target in an interaction. The authors constructed InterRVOS-127K, a dataset with 127,000 actor-target dual-mask annotations, and proposed ReVIOSa, an MLLM-based architecture. ReVIOSa explicitly models interaction directional…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - actor-target
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Video Object Segmentation"
+  - "Interaction Modeling"
+  - "Actor-Target"
+  - "Multimodal Large Language Models"
+  - "Attention Supervision"
 date: 2026-05-08
-content_hash: df92a2dcab1c9100
+content_hash: 5a4c7428f954b14a
 ---
+
 # InterRVOS: Interaction-Aware Referring Video Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -148,15 +153,16 @@ Zero-shot experiments also demonstrated that forcing standard models (VISA, Vide
 - Value: ⭐⭐⭐⭐ (Task definition and attention supervision strategy are highly reusable).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
 - [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
-- [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](wsrvos_weakly_supervised_rvos.md)
 - [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
-- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
+- [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
 
 </div>
 

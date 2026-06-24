@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SO-Bench: A Structural Output Evaluation of Multimodal LLM
 description: >-
-  [CVPR 2026][Multimodal VLM][JSON Schema] This is the first benchmark proposed by Apple to systematically evaluate the capability of Multimodal Large Language Models (MLLMs) to convert visual inputs into structured outputs conforming to predefined JSON Schemas. Using a three-stage automated annotation pipeline, SO-Bench constructs 1.8K "Image–Schema–Instructio
+  [CVPR 2026][Multimodal VLM][Structured output] This is the first benchmark proposed by Apple to systematically evaluate the capability of Multimodal Large Language Models (MLLMs) to convert visual inputs into structured outputs conforming to predefined JSON Schemas. Using a three-stage automated annotation pipeline, SO-Bench constructs 1.8K "Image–Schema–Instruction" triplets from 112K images across four domains and 6.5K JSON Schemas. Accompanied by a three-level evaluation m…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - JSON Schema
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Structured output"
+  - "JSON Schema"
+  - "Multimodal evaluation benchmark"
+  - "Information extraction"
+  - "Agentic tool calling"
 date: 2026-05-08
-content_hash: 5641fdb5b303b915
+content_hash: 60bd0986000804bf
 ---
+
 # SO-Bench: A Structural Output Evaluation of Multimodal LLM
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ SFT boosts Schema compliance by ~20 points and Field Matching by ~13 points. Aft
 
 ## Related Papers
 
-- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 - [\[CVPR 2026\] StructXLIP: Enhancing Vision-Language Models with Multimodal Structural Cues](structxlip_enhancing_vision-language_models_with_multimodal_structural_cues.md)
+- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
 - [\[CVPR 2026\] Breaking Multimodal LLM Safety via Video-Driven Prompting](breaking_multimodal_llm_safety_via_video-driven_prompting.md)
 - [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](structural_graph_probing_of_vision-language_models.md)
-- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
 
 </div>
 

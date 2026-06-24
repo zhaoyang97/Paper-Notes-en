@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses
 description: >-
-  [ICCV 2025][Image Generation][Human image animation] DreamDance proposes a human image animation framework that takes only 2D skeleton pose sequences as input. It first generates mutually aligned depth maps and normal ma…
+  [ICCV 2025][Image Generation][Human image animation] DreamDance proposes a human image animation framework that takes only 2D skeleton pose sequences as input. It first generates mutually aligned depth maps and normal maps from 2D poses via a Mutually Aligned Geometry Diffusion Model to enrich 3D geometric guidance, then integrates multi-level guidance signals through an SVD-based Cross-Domain Controlled Video Diffusion Model to synthesize high-quality human animations. The m…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "SVD ControlNet"
   - "cross-domain controller"
 date: 2026-05-08
-content_hash: 83679905ca70cef4
+content_hash: b6a4de6c5a081794
 ---
 
 # DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses
@@ -182,10 +182,10 @@ Runtime is comparable, yet DreamDance consolidates all steps into a single diffu
 ## Related Papers
 
 - [\[ICCV 2025\] Generative Modeling of Shape-Dependent Self-Contact Human Poses](generative_modeling_of_shape-dependent_self-contact_human_poses.md)
+- [\[CVPR 2025\] Move-in-2D: 2D-Conditioned Human Motion Generation](../../CVPR2025/image_generation/move-in-2d_2d-conditioned_human_motion_generation.md)
+- [\[CVPR 2025\] Lifting Motion to the 3D World via 2D Diffusion](../../CVPR2025/image_generation/lifting_motion_to_the_3d_world_via_2d_diffusion.md)
 - [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](../../ICLR2026/image_generation/direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
 - [\[ICCV 2025\] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior](dposer-x_diffusion_model_as_robust_3d_whole-body_human_pose_prior.md)
-- [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
-- [\[ICCV 2025\] CompleteMe: Reference-based Human Image Completion](completeme_reference-based_human_image_completion.md)
 
 </div>
 

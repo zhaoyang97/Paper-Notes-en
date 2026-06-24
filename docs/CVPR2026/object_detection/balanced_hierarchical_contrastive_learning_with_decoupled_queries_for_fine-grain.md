@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images
 description: >-
-  [CVPR 2026][Object Detection][DETR] Ours embeds the hierarchical label tree from remote sensing fine-grained detection into the representation space of DETR. A "Balanced Hierarchical Contrastive Loss" (BHCL) is proposed to achieve gradient balancing via learnable class prototypes, combined with a strategy that decouples classification and localization qu
+  [CVPR 2026][Object Detection][Fine-grained object detection] Ours embeds the hierarchical label tree from remote sensing fine-grained detection into the representation space of DETR. A "Balanced Hierarchical Contrastive Loss" (BHCL) is proposed to achieve gradient balancing via learnable class prototypes, combined with a strategy that decouples classification and localization queries. This allows contrastive learning to act solely on the classification branch without interfer…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - DETR
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Fine-grained object detection"
+  - "Hierarchical contrastive learning"
+  - "DETR"
+  - "Remote sensing"
+  - "Class imbalance"
 date: 2026-05-08
-content_hash: 9606a8da0e7fd310
+content_hash: 46db0c367c18accb
 ---
+
 # Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images
 
 **Conference**: CVPR 2026  
@@ -139,15 +143,16 @@ Prototype implementation comparison:
 - Value: ⭐⭐⭐⭐ Plug-and-play loss/structure with cross-architecture validation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
 - [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
+- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
 - [\[ICCV 2025\] OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images](../../ICCV2025/object_detection/openrsd_towards_open-prompts_for_object_detection_in_remote_sensing_images.md)
 - [\[ECCV 2024\] MutDet: Mutually Optimizing Pre-training for Remote Sensing Object Detection](../../ECCV2024/object_detection/mutdet_mutually_optimizing_pre-training_for_remote_sensing_object_detection.md)
-- [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
 
 </div>
 

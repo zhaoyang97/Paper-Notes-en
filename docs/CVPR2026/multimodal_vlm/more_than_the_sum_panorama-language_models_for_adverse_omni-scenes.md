@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] More than the Sum: Panorama-Language Models for Adverse Omni-Scenes
 description: >-
-  [CVPR 2026][Multimodal VLM][VQA] This paper proposes the Panorama-Language Modeling (PLM) paradigm and the PanoVQA large-scale panoramic VQA dataset (653K QA pairs). It designs a plug-and-play Panorama Sparse Attention (PSA) module that allows existing VLMs to handle equirectangular projection (ERP) panoramas without retraining, achieving global reaso
+  [CVPR 2026][Multimodal VLM][Panoramic image understanding] This paper proposes the Panorama-Language Modeling (PLM) paradigm and the PanoVQA large-scale panoramic VQA dataset (653K QA pairs). It designs a plug-and-play Panorama Sparse Attention (PSA) module that allows existing VLMs to handle equirectangular projection (ERP) panoramas without retraining, achieving global reasoning superior to multi-view stitching schemes in adverse scenarios such as occlusions and accidents.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VQA
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Panoramic image understanding"
+  - "360-degree vision"
+  - "VQA"
+  - "Sparse attention"
+  - "Autonomous driving"
 date: 2026-05-08
-content_hash: 89d87f4688d926b6
+content_hash: 41c90eebd1be232f
 ---
+
 # More than the Sum: Panorama-Language Models for Adverse Omni-Scenes
 
 **Conference**: CVPR 2026  
@@ -133,10 +137,10 @@ The PHA module can be fine-tuned on PanoVQA or used as a plug-and-play component
 ## Related Papers
 
 - [\[ACL 2026\] More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage](../../ACL2026/multimodal_vlm/more_than_meets_the_eye_measuring_the_semiotic_gap_in_vision-language_models_via.md)
+- [\[ICLR 2026\] Seeing What's Not There: Negation Understanding Needs More Than Training](../../ICLR2026/multimodal_vlm/seeing_whats_not_there_negation_understanding_needs_more_than_training.md)
 - [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
-- [\[CVPR 2026\] Efficient and High-Fidelity Omni Modality Retrieval](efficient_and_high-fidelity_omni_modality_retrieval.md)
-- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
 - [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](a_more_word-like_image_tokenization_for_mllms.md)
+- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Reconstruction and Secrecy under Approximate Distance Queries
 description: >-
-  [NeurIPS 2025][AI Safety][Reconstruction attacks] Under the approximate distance query model, this paper studies the reconstruction game from a learning-theoretic perspective…
+  [NeurIPS 2025 Spotlight][AI Safety][Reconstruction attacks] Under the approximate distance query model, this paper studies the reconstruction game from a learning-theoretic perspective, proves a geometric characterization of the optimal reconstruction error as the Chebyshev radius, and provides a complete classification of pseudo-finiteness for Euclidean convex spaces.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "AI Safety"
   - "Reconstruction attacks"
   - "privacy protection"
@@ -13,7 +13,7 @@ tags:
   - "Chebyshev radius"
   - "pseudo-finite spaces"
 date: 2026-05-08
-content_hash: 35380372890c1da3
+content_hash: 5e85e9f481a696d9
 ---
 
 # Reconstruction and Secrecy under Approximate Distance Queries
@@ -159,10 +159,10 @@ Convergence rate summary:
 ## Related Papers
 
 - [\[NeurIPS 2025\] OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction](omnifc_rethinking_federated_clustering_via_lossless_and_secure_distance_reconstr.md)
-- [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
 - [\[AAAI 2026\] Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints](../../AAAI2026/ai_safety/truth_justice_and_secrecy_cake_cutting_under_privacy_constraints.md)
+- [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
+- [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](../../ICCV2025/ai_safety/backdoor_mitigation_by_distance-driven_detoxification.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
-- [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions
 description: >-
-  [AAAI 2026][LLM Safety][Multi-Agent System] This paper presents the first systematic study of persona-induced bias in LLM-based multi-agent interactions. Through controlled experiments on collaborative problem solving an…
+  [AAAI 2026][LLM Safety][Multi-Agent System] This paper presents the first systematic study of persona-induced bias in LLM-based multi-agent interactions. Through controlled experiments on collaborative problem solving and persuasion tasks, three key findings are revealed: (1) different personas exhibit significant divergence in trustworthiness and insistence (dominant groups such as males and White individuals are perceived as less trustworthy)…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "In-group Favoritism"
   - "Social Identity Theory"
 date: 2026-05-08
-content_hash: 997e637145dbd2d3
+content_hash: ffdfaed45d230416
 ---
 
 # From Single to Societal: Analyzing Persona-Induced Bias in Multi-Agent Interactions
@@ -142,11 +142,11 @@ A three-stage progressive analysis: (1) isolating the effect of individual perso
 
 ## Related Papers
 
+- [\[ICLR 2026\] A2ASecBench: A Protocol-Aware Security Benchmark for Agent-to-Agent Multi-Agent Systems](../../ICLR2026/llm_safety/a2asecbench_a_protocol-aware_security_benchmark_for_agent-to-agent_multi-agent_s.md)
+- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](../../ACL2026/llm_safety/privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 - [\[ACL 2026\] MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](../../ACL2026/llm_safety/memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)
 - [\[ACL 2026\] Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage](../../ACL2026/llm_safety/lying_with_truths_open-channel_multi-agent_collusion_for_belief_manipulation_via.md)
-- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
-- [\[AAAI 2026\] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs](the_confidence_trap_gender_bias_and_predictive_certainty_in_llms.md)
 
 </div>
 

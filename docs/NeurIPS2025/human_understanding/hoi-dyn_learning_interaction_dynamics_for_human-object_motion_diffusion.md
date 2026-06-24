@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion
 description: >-
-  [NeurIPS 2025][Human Understanding][Human-Object Interaction] This paper models human-object interaction (HOI) generation as a Driver-Responder system…
+  [NeurIPS 2025][Human Understanding][Human-Object Interaction] This paper models human-object interaction (HOI) generation as a Driver-Responder system, employing a lightweight Transformer-based interaction dynamics model to explicitly predict how objects respond to human actions. A residual dynamics loss is introduced during training to enforce causal consistency, while inference efficiency is preserved.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Driver-Responder"
   - "Transformer"
 date: 2026-05-08
-content_hash: 730cc0244574177b
+content_hash: e25be492dd00cad9
 ---
 
 # HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion
@@ -166,11 +166,11 @@ The dynamics model is **not used at inference**, preserving runtime efficiency.
 
 ## Related Papers
 
-- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](../../ICCV2025/human_understanding/raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
-- [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](../../CVPR2026/human_understanding/remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
-- [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](mospa_human_motion_generation_driven_by_spatial_audio.md)
-- [\[CVPR 2026\] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](../../CVPR2026/human_understanding/teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)
+- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](../../CVPR2026/human_understanding/imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
+- [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](../../ICLR2026/human_understanding/human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](../../ICLR2026/human_understanding/link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
+- [\[CVPR 2025\] Homogeneous Dynamics Space for Heterogeneous Humans](../../CVPR2025/human_understanding/homogeneous_dynamics_space_for_heterogeneous_humans.md)
+- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](../../CVPR2026/human_understanding/decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
 
 </div>
 

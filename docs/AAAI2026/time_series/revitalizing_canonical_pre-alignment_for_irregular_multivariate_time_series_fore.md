@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Irregular Multivariate Time Series] This paper is the first to argue that Canonical Pre-Alignment (CPA) should not be abandoned for Irregular Multivariate Time Series (IMTS) forecasting. It propo…
+  [AAAI 2026][Time Series][Irregular Multivariate Time Series] This paper is the first to argue that Canonical Pre-Alignment (CPA) should not be abandoned for Irregular Multivariate Time Series (IMTS) forecasting. It proposes KAFNet, which addresses the efficiency bottleneck of CPA via three modules—Pre-Convolution smoothing, Temporal Kernel Aggregation (TKA), and Frequency-domain Linear Attention (FLA)—achieving state-of-the-art accuracy on 4 IMTS benchmarks while reducing par…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Frequency-domain Linear Attention"
   - "Efficient Forecasting"
 date: 2026-05-08
-content_hash: e2b397fb97fe838f
+content_hash: a4266bc44682fafb
 ---
 
 # Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting
@@ -187,11 +187,11 @@ KAFNet achieves a 7.2× reduction in parameters and an 8.4× speedup in training
 
 ## Related Papers
 
+- [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
+- [\[ICML 2025\] HyperIMTS: Hypergraph Neural Network for Irregular Multivariate Time Series Forecasting](../../ICML2025/time_series/hyperimts_hypergraph_neural_network_for_irregular_multivariate_time_series_forec.md)
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](../../ICML2026/time_series/latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
 - [\[AAAI 2026\] Transparent Networks for Multivariate Time Series](transparent_networks_for_multivariate_time_series.md)
-- [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
-- [\[ICML 2026\] QuITE: Query-based Irregular Time Series Embedding](../../ICML2026/time_series/quite_query-based_irregular_time_series_embedding.md)
 
 </div>
 

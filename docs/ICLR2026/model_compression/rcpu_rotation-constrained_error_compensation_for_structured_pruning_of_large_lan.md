@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] RCPU applies a "rotation-constrained" closed-form parameter update (Orthogonal Procrustes problem) after structured column pruning to realign the pruned subspace with the original output. This compensates for errors without destroying the geometric structure of pre-trained representations using only a small amount of c
+  [ICLR 2026][Model Compression][Structured Pruning] RCPU applies a "rotation-constrained" closed-form parameter update (Orthogonal Procrustes problem) after structured column pruning to realign the pruned subspace with the original output. This compensates for errors without destroying the geometric structure of pre-trained representations using only a small amount of calibration data. Combined with a column importance score that considers input variance…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Structured Pruning"
+  - "Error Compensation"
+  - "Orthogonal Procrustes"
+  - "Rotation Constraint"
+  - "Geometry Preservation"
 date: 2026-05-08
-content_hash: abb95507eac9c2bc
+content_hash: 115cd4832cc064cd
 ---
+
 # RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models
 
 **Conference**: ICLR 2026  
@@ -151,8 +157,8 @@ Cross-comparison of scoring and compensation methods (Figure 3): With $N_{calib}
 - [\[AAAI 2026\] First-Order Error Matters: Accurate Compensation for Quantized Large Language Models](../../AAAI2026/model_compression/first-order_error_matters_accurate_compensation_for_quantized_large_language_mod.md)
 - [\[ACL 2026\] GRASPrune: Global Gating for Budgeted Structured Pruning of Large Language Models](../../ACL2026/model_compression/grasprune_global_gating_for_budgeted_structured_pruning_of_large_language_models.md)
 - [\[ICML 2025\] SlimLLM: Accurate Structured Pruning for Large Language Models](../../ICML2025/model_compression/slimllm_accurate_structured_pruning_for_large_language_models.md)
-- [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
-- [\[ICML 2025\] Olica: Efficient Structured Pruning of Large Language Models without Retraining](../../ICML2025/model_compression/olica_efficient_structured_pruning_of_large_language_models_without_retraining.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
 
 </div>
 

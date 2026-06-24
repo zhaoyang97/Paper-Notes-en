@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness
 description: >-
-  [AAAI 2026][LLM Agent][implicit bias] The first systematic case study demonstrating that demographically grounded persona assignment causes up to 26.2% performance degradation in LLM agent task execution across 5 operati…
+  [AAAI 2026][LLM Agent][implicit bias] The first systematic case study demonstrating that demographically grounded persona assignment causes up to 26.2% performance degradation in LLM agent task execution across 5 operational domains, establishing that persona-induced bias extends beyond text generation into action decision-making.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "demographic bias"
   - "robustness"
 date: 2026-05-08
-content_hash: 3880087512442fd0
+content_hash: eb74716340b4fd6b
 ---
 
 # From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness
@@ -132,8 +132,8 @@ Technical tasks (OS, Database) remain relatively stable with 2–5% fluctuation;
 - [\[AAAI 2026\] D-GARA: A Dynamic Benchmarking Framework for GUI Agent Robustness in Real-World Anomalies](d-gara_a_dynamic_benchmarking_framework_for_gui_agent_robust.md)
 - [\[ACL 2026\] Do LLM Agents Mirror Socio-Cognitive Effects in Power-Asymmetric Conversations?](../../ACL2026/llm_agent/do_llm_agents_mirror_socio-cognitive_effects_in_power-asymmetric_conversations.md)
 - [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](../../ACL2026/llm_agent/towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
+- [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](../../ICLR2026/llm_agent/llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
 - [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
-- [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
 
 </div>
 

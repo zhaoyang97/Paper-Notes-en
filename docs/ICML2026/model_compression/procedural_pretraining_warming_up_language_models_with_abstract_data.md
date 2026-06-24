@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Procedural Pretraining: Warming Up Language Models with Abstract Data
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Injecting a lightweight "procedural data" warm-up (formal languages, stacks, cellular automata, etc.) before standard language/code/math pretraining consistently improves downstream performance with only 0.1–0.3% additional tokens. This strategy enables models to replicate the same loss using only 55–86% of the origina
+  [ICML 2026][Model Compression][Procedural data] Injecting a lightweight "procedural data" warm-up (formal languages, stacks, cellular automata, etc.) before standard language/code/math pretraining consistently improves downstream performance with only 0.1–0.3% additional tokens. This strategy enables models to replicate the same loss using only 55–86% of the original data, representing a pretraining strategy that decouples "reasoning scaffolds" from "knowledge."
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Procedural data"
+  - "Warm-up pretraining"
+  - "Algorithmic skills"
+  - "Formal languages"
+  - "Data efficiency"
 date: 2026-05-08
-content_hash: 66be2a1e1061dcb0
+content_hash: 66216515dc22320f
 ---
+
 # Procedural Pretraining: Warming Up Language Models with Abstract Data
 
 **Conference**: ICML 2026  

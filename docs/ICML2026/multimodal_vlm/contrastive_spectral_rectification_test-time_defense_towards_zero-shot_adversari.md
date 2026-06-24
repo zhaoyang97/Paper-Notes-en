@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Contrastive Spectral Rectification: Test-Time Defense towards Zero-shot Adversarial Robustness of CLIP
 description: >-
-  [ICML 2026][Multimodal VLM][CLIP] The authors discover that adversarial features collapse sharply when middle and high frequencies are gradually removed (unlike clean samples). Based on this, they propose CSR, a test-time defense: it utilizes "spectral consistency" as a gate to detect adversarial samples and then optimizes a rectification perturbation
+  [ICML2026][Multimodal VLM][CLIP] The authors discover that adversarial features collapse sharply when middle and high frequencies are gradually removed (unlike clean samples). Based on this, they propose CSR, a test-time defense: it utilizes "spectral consistency" as a gate to detect adversarial samples and then optimizes a rectification perturbation on the input using a contrastive objective—pulling features toward low-pass anchors and pushing them away from original adversa…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Adversarial Examples"
+  - "Test-Time Defense"
+  - "Frequency Domain"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 511ac80c6e4858fe
+content_hash: ebe2b46684c22527
 ---
+
 # Contrastive Spectral Rectification: Test-Time Defense towards Zero-shot Adversarial Robustness of CLIP
 
 **Conference**: ICML2026  
@@ -120,15 +125,16 @@ Evaluated on 16 zero-shot benchmarks across General, Fine-Grained, Scene, and Do
 - Value: ⭐⭐⭐⭐⭐ Plug-and-play and cross-task utility make it highly practical for secure CLIP deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](../../CVPR2026/multimodal_vlm/agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/multimodal_vlm/explaining_clip_zero-shot_predictions_through_concepts.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](../../NeurIPS2025/multimodal_vlm/tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](../../NeurIPS2025/multimodal_vlm/test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
 - [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](../../CVPR2026/multimodal_vlm/multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
-- [\[ICML 2026\] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs](density-aware_translation_of_spurious_correlations_in_zero-shot_vlms.md)
+- [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](../../CVPR2026/multimodal_vlm/controllable_federated_prompt_learning_at_test_time.md)
 
 </div>
 

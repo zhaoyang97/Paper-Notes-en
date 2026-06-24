@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reward Modeling for Scientific Writing Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][GRPO] This paper proposes SciRM and SciRM-Ref, two open-source reward models specifically designed for scientific writing evaluation. By employing a two-stage reinforcement learning (GRPO) approach, the models optimize evaluation preferences and reasoning capabilities respectively, achieving fine-grained multi-aspect evaluat
+  [ACL 2026][LLM Evaluation][Reward Model] This paper proposes SciRM and SciRM-Ref, two open-source reward models specifically designed for scientific writing evaluation. By employing a two-stage reinforcement learning (GRPO) approach, the models optimize evaluation preferences and reasoning capabilities respectively, achieving fine-grained multi-aspect evaluation across various scientific writing tasks and generalizing to unseen evaluation tasks and criteria.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - GRPO
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Reward Model"
+  - "Scientific Writing Evaluation"
+  - "GRPO"
+  - "Multi-aspect Evaluation"
+  - "Reasoning Enhancement"
 date: 2026-05-08
-content_hash: 5007bee2d02da159
+content_hash: 45b7d7171ac28abc
 ---
+
 # Reward Modeling for Scientific Writing Evaluation
 
 **Conference**: ACL 2026  

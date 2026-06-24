@@ -4,17 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][Post-Training Quantization] This paper improves Post-Training Quantization (PTQ) for diffusion models by learning a set of importance weights for calibration samples across different timesteps via meta-learning. This aligns gradient directions and mitigates gradient conflicts across timesteps in the quantized model.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Post-Training Quantization
-  - Diffusion Models
-  - Gradient Conflict
-  - Sample Reweighting
-  - Meta-Learning
-  - Bi-level Optimization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Diffusion Models"
+  - "Gradient Conflict"
+  - "Sample Reweighting"
+  - "Meta-Learning"
+  - "Bi-level Optimization"
 date: 2026-05-08
-content_hash: 40c389f2ec327ae5
+content_hash: 1ea977dd80c4732a
 ---
+
 # Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -141,10 +142,10 @@ Few-timestep scenarios (ImageNet 4/32, DDIM):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
+- [\[ICLR 2026\] Beyond Uniformity: Sample and Frequency Meta Weighting for Post-Training Quantization of Diffusion Models](beyond_uniformity_sample_and_frequency_meta_weighting_for_post-training_quantiza.md)
 - [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](../../ICML2026/model_compression/fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 
 </div>

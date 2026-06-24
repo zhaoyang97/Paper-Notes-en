@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The PokeAgent Challenge: Competitive and Long-Context Learning at Scale
 description: >-
-  [NeurIPS 2025][Multi-Agent][Game AI Benchmark] This paper introduces the PokéAgent Challenge, a large-scale dual-track AI benchmark built on Pokémon competitive battling and RPG speedrunning. Validated through the NeurIP…
+  [NeurIPS 2025][Multi-Agent][Game AI Benchmark] This paper introduces the PokéAgent Challenge, a large-scale dual-track AI benchmark built on Pokémon competitive battling and RPG speedrunning. Validated through the NeurIPS 2025 competition, it demonstrates that specialist RL methods substantially outperform general-purpose LLM approaches, and reveals that the capabilities measured by Pokémon battling are nearly orthogonal to those assessed by 49 existing LLM benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "LLM Agent"
 date: 2026-05-08
-content_hash: 16da4e82e33d4092
+content_hash: 9c56298297d9759c
 ---
 
 # The PokeAgent Challenge: Competitive and Long-Context Learning at Scale
@@ -177,11 +177,11 @@ The PokéAgent Challenge comprises two complementary tracks:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](../../ICLR2026/multi_agent/context_learning_for_multi-agent_discussion.md)
+- [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](../../ICLR2026/multi_agent/learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
 - [\[ICML 2026\] CoOT: Learning to Coordinate In-Context with Coordination Transformers](../../ICML2026/multi_agent/coot_learning_to_coordinate_in-context_with_coordination_transformers.md)
-- [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
 - [\[NeurIPS 2025\] Multi-Agent Collaboration via Evolving Orchestration](multi-agent_collaboration_via_evolving_orchestration.md)
 - [\[NeurIPS 2025\] MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting](masfin_a_multi-agent_system_for_decomposed_financial_reasoning_and_forecasting.md)
-- [\[ACL 2026\] EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution](../../ACL2026/multi_agent/evospark_endogenous_interactive_agent_societies_for_unified_long-horizon_narrati.md)
 
 </div>
 

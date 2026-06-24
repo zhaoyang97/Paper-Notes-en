@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SuperDec: 3D Scene Decomposition with Superquadric Primitives
 description: >-
-  [ICCV 2025][3D Vision][Superquadrics] SuperDec is a Transformer-based learning approach that decomposes point clouds into compact sets of superquadric primitives. Trained on ShapeNet…
+  [ICCV 2025][3D Vision][Superquadrics] SuperDec is a Transformer-based learning approach that decomposes point clouds into compact sets of superquadric primitives. Trained on ShapeNet, it generalizes to real-world scenes and supports downstream applications including robot manipulation and controllable generation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "robot manipulation"
 date: 2026-05-08
-content_hash: fc658b5b40f9a4b1
+content_hash: 6c6293eaa7f3de70
 ---
 
 # SuperDec: 3D Scene Decomposition with Superquadric Primitives

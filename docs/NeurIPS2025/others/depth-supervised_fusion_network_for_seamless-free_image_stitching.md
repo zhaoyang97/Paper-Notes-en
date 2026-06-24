@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Depth-Supervised Fusion Network for Seamless-Free Image Stitching
 description: >-
-  [NeurIPS 2025][image stitching] DSFN proposes a seamless image stitching method with depth consistency constraints: a depth-aware two-stage transformation estimation addresses large-parallax alignment…
+  [NeurIPS 2025][image stitching] DSFN proposes a seamless image stitching method with depth consistency constraints: a depth-aware two-stage transformation estimation addresses large-parallax alignment, soft-seam region diffusion enables natural blending, and a re-parameterization strategy improves efficiency. The method comprehensively surpasses the state of the art on the UDIS-D and IVSD datasets.
 tags:
   - "NeurIPS 2025"
   - "image stitching"
@@ -11,7 +11,7 @@ tags:
   - "soft-seam fusion"
   - "re-parameterization"
 date: 2026-05-08
-content_hash: 5eb20a92780b69d4
+content_hash: 01013532c457178f
 ---
 
 # Depth-Supervised Fusion Network for Seamless-Free Image Stitching
@@ -176,11 +176,11 @@ Removing the mesh constraint yields marginally higher metrics (due to relaxed de
 
 ## Related Papers
 
-- [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](../../ICCV2025/others/revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
+- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](../../CVPR2026/others/customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
 - [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
+- [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](../../ICCV2025/others/revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](../../CVPR2026/others/omnifood8k_nutrition_estimation.md)
-- [\[NeurIPS 2025\] FSNet: Feasibility-Seeking Neural Network for Constrained Optimization with Guarantees](fsnet_feasibility-seeking_neural_network_for_constrained_optimization_with_guara.md)
+- [\[ECCV 2024\] Momentum Auxiliary Network for Supervised Local Learning](../../ECCV2024/others/momentum_auxiliary_network_for_supervised_local_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Laws for Native Multimodal Models
 description: >-
-  [ICCV 2025 (Oral)][Multimodal VLM][native multimodal] By training 457 models across diverse architectures, scales, and training data mixtures…
+  [ICCV 2025 (Oral)][Multimodal VLM][native multimodal] By training 457 models across diverse architectures, scales, and training data mixtures, this paper systematically investigates scaling laws for Native Multimodal Models (NMMs). It finds that early-fusion architectures (without pretrained visual encoders) outperform late-fusion counterparts at small parameter scales, are more training-efficient, and simpler to deploy; incorporating MoE further yields substantial performanc…
 tags:
   - "ICCV 2025 (Oral)"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "scaling laws"
   - "MoE"
 date: 2026-05-08
-content_hash: 671fcb51ea10bddd
+content_hash: 6ea5899fb83ab884
 ---
 
 # Scaling Laws for Native Multimodal Models
@@ -136,10 +136,10 @@ Standard next-token prediction is used for text; visual loss configurations vary
 ## Related Papers
 
 - [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](../../NeurIPS2025/multimodal_vlm/navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
+- [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](../../NeurIPS2025/multimodal_vlm/the_narrow_gate_localized_imagetext_communication_in_native.md)
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](../../CVPR2026/multimodal_vlm/scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[ICCV 2025\] Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy](dita_scaling_diffusion_transformer_for_generalist_visionlang.md)
-- [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inferencetime_search_with_vision_value_model_for_imp.md)
-- [\[NeurIPS 2025\] SITCOM: Scaling Inference-Time COMpute for VLAs](../../NeurIPS2025/multimodal_vlm/sitcom_scaling_inference-time_compute_for_vlas.md)
+- [\[ICCV 2025\] VQ-VLA: Improving Vision-Language-Action Models via Scaling Vector-Quantized Action Tokenizers](vq-vla_improving_vision-language-action_models_via_scaling_vector-quantized_acti.md)
+- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](../../CVPR2026/multimodal_vlm/tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
 
 </div>
 

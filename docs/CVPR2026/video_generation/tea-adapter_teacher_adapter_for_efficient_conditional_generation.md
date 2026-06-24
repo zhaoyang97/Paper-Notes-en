@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tea-Adapter: Teacher Adapter for Efficient Conditional Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Tea-Adapter is a plug-and-play adapter that employs "inverse distillation" to transfer control knowledge from a small, efficiently fine-tuned teacher video diffusion model with multi-condition control capabilities into a frozen large student video diffusion model. It utilizes a "Mixture of Condition Experts (MCE)" laye
+  [CVPR 2026][Video Generation][Video Diffusion] Tea-Adapter is a plug-and-play adapter that employs "inverse distillation" to transfer control knowledge from a small, efficiently fine-tuned teacher video diffusion model with multi-condition control capabilities into a frozen large student video diffusion model. It utilizes a "Mixture of Condition Experts (MCE)" layer for dynamic routing of multiple conditions within a unified architecture and a "Feature Propagation Module" to…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Controllable Generation"
+  - "Inverse Distillation"
+  - "Mixture of Condition Experts (MCE)"
+  - "Plug-and-play Adapter"
 date: 2026-05-08
-content_hash: 2db6c2c0f083f87d
+content_hash: 20225d050a4e5b6e
 ---
+
 # Tea-Adapter: Teacher Adapter for Efficient Conditional Generation
 
 **Conference**: CVPR 2026  
@@ -125,11 +131,11 @@ Key Takeaways: Tea-Adapter comprehensively outperforms X-Adapter and Ctrl-Adapte
 
 ## Related Papers
 
-- [\[CVPR 2026\] FrameDiT: Diffusion Transformer with Matrix Attention for Efficient Video Generation](framedit_diffusion_transformer_with_matrix_attention_for_efficient_video_generat.md)
+- [\[CVPR 2026\] IP-Adapter Is All You Need: Towards Fine-Tuning-Free Diffusion-Based Talking Face Generation](ip-adapter_is_all_you_need_towards_fine-tuning-free_diffusion-based_talking_face.md)
 - [\[CVPR 2026\] Less is More: Data-Efficient Adaptation for Controllable Text-to-Video Generation](less_is_more_data-efficient_adaptation_for_controllable_text-to-video_generation.md)
-- [\[CVPR 2026\] HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis](hvg-3d_bridging_real_and_simulation_domains_for_3d-conditional_hand-object_inter.md)
-- [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
 - [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
+- [\[CVPR 2026\] HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis](hvg-3d_bridging_real_and_simulation_domains_for_3d-conditional_hand-object_inter.md)
+- [\[CVPR 2026\] RAPID: Reusing Attention Sparsity with Inter-step Adaptation for Efficient Video Diffusion](rapid_reusing_attention_sparsity_with_inter-step_adaptation_for_efficient_video_.md)
 
 </div>
 

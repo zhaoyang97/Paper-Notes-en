@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 description: >-
-  [CVPR 2026][Image Generation][training-free] Ours formulates diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and using dynamic programming to select the optimal sequence of key timesteps, ours achieves 4.87× training-free acceleration with generation quality exceeding the full-step baseline.
+  [CVPR 2026][Image Generation][Diffusion model acceleration] Ours formulates diffusion model sampling acceleration as a global path planning problem. By constructing a Path-Aware Cost Tensor (PACT) and using dynamic programming to select the optimal sequence of key timesteps, ours achieves 4.87× training-free acceleration with generation quality exceeding the full-step baseline.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - training-free
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "feature caching"
+  - "dynamic programming"
+  - "path planning"
+  - "training-free"
 date: 2026-05-08
-content_hash: d93434c1a6755c3a
+content_hash: 9d818b5c6092df7c
 ---
+
 # Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ DPCache is completely training-free. The calibration phase only runs standard fo
 ## Related Papers
 
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
 - [\[CVPR 2026\] TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration](tc-padé_trajectory-consistent_padé_approximation_for_diffusion_acceleration.md)
-- [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
 
 </div>
 

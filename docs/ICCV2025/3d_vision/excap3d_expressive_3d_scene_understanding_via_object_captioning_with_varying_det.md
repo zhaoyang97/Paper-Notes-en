@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes ExCap3D, a method for generating multi-granularity captions for objects in 3D indoor scenes at both object-level and part-level description layers. Throu…
+  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes ExCap3D, a method for generating multi-granularity captions for objects in 3D indoor scenes at both object-level and part-level description layers. Through part-to-object information sharing and semantic/textual consistency losses, the approach ensures caption accuracy and coherence. On a newly constructed dataset of 190K captions, CIDEr scores improve by 17% and 124% over the prior SOTA at the object and part…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "joint object-part generation"
   - "3D Gaussian"
 date: 2026-05-08
-content_hash: 7528483a411cfbd8
+content_hash: b46657c8fafea7a7
 ---
 
 # ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail
@@ -201,8 +201,8 @@ Value ★★★★☆: The 190K dataset is highly valuable, though it relies on 
 - [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
 - [\[ICCV 2025\] 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding](3dgraphllm_combining_semantic_graphs_and_large_language_models_for_3d_scene_unde.md)
-- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](../../CVPR2026/3d_vision/curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
 - [\[ICCV 2025\] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding](his-gpt_towards_3d_human-in-scene_multimodal_understanding.md)
+- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](../../CVPR2026/3d_vision/curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
 
 </div>
 

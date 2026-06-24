@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VEENA: Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow
 description: >-
-  [ICML 2026][Multimodal VLM][steering vector] VEENA utilizes a steering-vector causal attribution framework to locate emotional circuits in LVLMs. It uncovers a three-stage mechanism: "Adapt (shallow modal alignment) → Aggregate (middle-layer emotion-specific heads) → Execute (deep-layer emotion-general heads + neurons)." Based on this, it introduces training-free
+  [ICML 2026][Multimodal VLM][Emotional Circuits] VEENA utilizes a steering-vector causal attribution framework to locate emotional circuits in LVLMs. It uncovers a three-stage mechanism: "Adapt (shallow modal alignment) → Aggregate (middle-layer emotion-specific heads) → Execute (deep-layer emotion-general heads + neurons)." Based on this, it introduces training-free inference-time interventions—"Visual Emotion Enhancement" and "Emotional Neuron Augmentation"—to significantly…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - steering vector
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Emotional Circuits"
+  - "Steering Vector"
+  - "Causal Intervention"
+  - "Attention Head Localization"
+  - "Training-free Inference Intervention"
 date: 2026-05-08
-content_hash: 040be1aa804110ed
+content_hash: f1138845e62ffe50
 ---
+
 # VEENA: Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow
 
 **Conference**: ICML 2026  
@@ -142,6 +147,7 @@ VEENA outperforms RLHF and other training-based methods by 4-5 points without an
 - Value: ⭐⭐⭐⭐ Significant engineering value for training-free deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

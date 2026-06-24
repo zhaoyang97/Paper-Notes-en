@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] The universal uniform/mask noise prior is replaced with a family-specific Dirichlet prior obtained via Ancestral Sequence Reconstruction (ASR). This allows Dirichlet flow matching to perform structured mutations starting from an "evolved scaffold," followed by a mutate–select–amplify rerouting at an intermediate timest
+  [ICML 2026][Computational Biology][Flow Matching] The universal uniform/mask noise prior is replaced with a family-specific Dirichlet prior obtained via Ancestral Sequence Reconstruction (ASR). This allows Dirichlet flow matching to perform structured mutations starting from an "evolved scaffold," followed by a mutate–select–amplify rerouting at an intermediate timestep. Across 8,886 Pfam families, this approach pushes family recognition accuracy close to natural sequences (9…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Flow Matching"
+  - "Dirichlet Prior"
+  - "Ancestral Sequence Reconstruction"
+  - "Protein Family"
+  - "Directed Evolution"
 date: 2026-05-08
-content_hash: f12c057eb0605c7c
+content_hash: c26c631c5d68d237
 ---
+
 # LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation
 
 **Conference**: ICML 2026  
@@ -133,11 +138,11 @@ A single average cross-entropy $\mathcal{L}(\theta)$ is used. $t \sim \mathcal{U
 
 ## Related Papers
 
-- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[ICML 2026\] Protein Language Model Embeddings Improve Generalization of Implicit Transfer Operators](protein_language_model_embeddings_improve_generalization_of_implicit_transfer_op.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[ICML 2026\] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling](demystifying_multimodal_biomolecular_co-design_with_intrinsic_geodesic_coupling.md)
+- [\[ICLR 2026\] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](../../ICLR2026/computational_biology/la-proteina_atomistic_protein_generation_via_partially_latent_flow_matching.md)
+- [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](../../ICLR2026/computational_biology/riemannian_variational_flow_matching_for_material_and_protein_design.md)
+- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
+- [\[ICML 2025\] Improving Flow Matching by Aligning Flow Divergence](../../ICML2025/computational_biology/improving_flow_matching_by_aligning_flow_divergence.md)
+- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](../../NeurIPS2025/computational_biology/prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
 
 </div>
 

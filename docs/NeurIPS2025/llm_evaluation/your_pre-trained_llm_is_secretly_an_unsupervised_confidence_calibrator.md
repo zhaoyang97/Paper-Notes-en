@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator
 description: >-
-  [NeurIPS 2025][LLM Evaluation][confidence calibration] This paper identifies that post-training (SFT/RLHF/DPO) degrades the confidence calibration of pre-trained language models, and proposes DACA…
+  [NeurIPS 2025][LLM Evaluation][confidence calibration] This paper identifies that post-training (SFT/RLHF/DPO) degrades the confidence calibration of pre-trained language models, and proposes DACA, a method that exploits the well-calibrated nature of pre-trained models by aligning confidence distributions exclusively on prediction-consistent samples, achieving label-free calibration of post-trained models with up to 15.08% ECE improvement.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "unsupervised calibration"
   - "DACA"
 date: 2026-05-08
-content_hash: ec64a0e29c495bac
+content_hash: a863ae7fe5f6ab5e
 ---
 
 # Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator
@@ -188,11 +188,11 @@ For open-ended question answering, the P(True) method is adopted to obtain confi
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] ConfTuner: Training Large Language Models to Express Their Confidence Verbally](conftuner_training_large_language_models_to_express_their_confidence_verbally.md)
 - [\[NeurIPS 2025\] Exploiting Vocabulary Frequency Imbalance in Language Model Pre-training](exploiting_vocabulary_frequency_imbalance_in_language_model_pre-training.md)
 - [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](../../ICML2026/llm_evaluation/margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
+- [\[ACL 2025\] Improving the Calibration of Confidence Scores in Text Generation Using the Output Distribution's Characteristics](../../ACL2025/llm_evaluation/calibration_confidence_text_gen.md)
 - [\[ICML 2026\] CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting](../../ICML2026/llm_evaluation/capbencher_give_your_llm_benchmark_a_built-in_alarm_for_test-set_overfitting.md)
-- [\[ACL 2026\] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models](../../ACL2026/llm_evaluation/how_hypocritical_is_your_llm_judge_listener-speaker_asymmetries_in_the_pragmatic.md)
-- [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
 
 </div>
 

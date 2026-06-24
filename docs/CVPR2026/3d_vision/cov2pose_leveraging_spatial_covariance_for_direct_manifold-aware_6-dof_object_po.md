@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] For 6-DoF object pose estimation from a single RGB image, this paper proposes Cov2Pose: using **spatial covariance pooling** to encode backbone features into a Symmetric Positive Definite (SPD) matrix to preserve second-order statistics, which is then compressed into a compact SPD code via manifold-aware BiMap+ReEig la
+  [CVPR 2026][3D Vision][6-DoF Pose Estimation] For 6-DoF object pose estimation from a single RGB image, this paper proposes Cov2Pose: using **spatial covariance pooling** to encode backbone features into a Symmetric Positive Definite (SPD) matrix to preserve second-order statistics, which is then compressed into a compact SPD code via manifold-aware BiMap+ReEig layers. Finally, a **differentiable Cholesky decomposition** maps the SPD matrix one-to-one into continuous 6D rotat…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "6-DoF Pose Estimation"
+  - "Spatial Covariance"
+  - "SPD Manifold"
+  - "Cholesky Decomposition"
+  - "Direct Pose Regression"
 date: 2026-05-08
-content_hash: eebbcb3e5b7b57dd
+content_hash: c488e49b5b670376
 ---
+
 # Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Performed on LM-O, average ADD(-S) across all classes.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
+- [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
+- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
+- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models
 description: >-
-  [ICML 2026][Model Compression][Paper Note] FRISM refines "VLM × LRM merging" from layer-wise granularity to SVD subspace granularity. It utilizes the SVD subspaces of LRM task vectors as reasoning priors and employs an unlabeled self-distillation process (using KL divergence to preserve vision and spectral magnitude maximization to absorb reasoning) with learna
+  [ICML 2026][Model Compression][Model Merging] FRISM refines "VLM × LRM merging" from layer-wise granularity to SVD subspace granularity. It utilizes the SVD subspaces of LRM task vectors as reasoning priors and employs an unlabeled self-distillation process (using KL divergence to preserve vision and spectral magnitude maximization to absorb reasoning) with learnable gates to find the optimal injection intensity. This significantly enhances VL reasoning performance without a…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "SVD Subspace"
+  - "Reasoning Injection"
+  - "Vision Preservation"
+  - "Unlabeled Self-Distillation"
 date: 2026-05-08
-content_hash: 785f162141753e8c
+content_hash: ac65795f3e969fdd
 ---
+
 # FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models
 
 **Conference**: ICML 2026  
@@ -152,10 +158,10 @@ Only gates $\mathbf{g}^l$ are updated, involving negligible parameters. In $\mat
 ## Related Papers
 
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
+- [\[ICML 2026\] Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
+- [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
 - [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](../../CVPR2026/model_compression/bridging_domains_through_subspace-aware_model_merging.md)
-- [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
-- [\[ACL 2025\] BlockPruner: Fine-grained Pruning for Large Language Models](../../ACL2025/model_compression/blockpruner_fine-grained_pruning_for_large_language_models.md)
 
 </div>
 

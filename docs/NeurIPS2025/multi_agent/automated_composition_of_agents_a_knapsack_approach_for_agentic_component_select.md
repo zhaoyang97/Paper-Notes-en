@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection
 description: >-
-  [NeurIPS 2025][Multi-Agent][agent composition] This paper formalizes the agent component selection problem as an online knapsack problem and proposes the Composer Agent framework…
+  [NeurIPS 2025][Multi-Agent][agent composition] This paper formalizes the agent component selection problem as an online knapsack problem and proposes the Composer Agent framework, which evaluates true component capabilities via sandbox testing (rather than static semantic retrieval) and dynamically selects optimal component combinations under budget constraints using the ZCL online algorithm. The approach achieves up to a 31.6% improvement in single-agent tool selection succe…
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "online optimization"
   - "sandbox testing"
 date: 2026-05-08
-content_hash: 2e33cd4346375cb7
+content_hash: 8400cae96a39fbcf
 ---
 
 # Automated Composition of Agents: A Knapsack Approach for Agentic Component Selection
@@ -138,11 +138,11 @@ Consistent advantages are observed across Claude 3.5 Haiku, Claude 3.7 Sonnet, L
 
 ## Related Papers
 
+- [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
+- [\[ICLR 2026\] WideSearch: Benchmarking Agentic Broad Info-Seeking](../../ICLR2026/multi_agent/widesearch_benchmarking_agentic_broad_info-seeking.md)
+- [\[ICLR 2026\] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](../../ICLR2026/multi_agent/aegis_automated_error_generation_and_attribution_for_multi-agent_systems.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
-- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
-- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
-- [\[ACL 2026\] HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents](../../ACL2026/multi_agent/hachimi_scalable_and_controllable_student_persona_generation_via_orchestrated_ag.md)
+- [\[ICLR 2026\] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](../../ICLR2026/multi_agent/graphplanner_graph_memory-augmented_agentic_routing_for_multi-agent_llms.md)
 
 </div>
 

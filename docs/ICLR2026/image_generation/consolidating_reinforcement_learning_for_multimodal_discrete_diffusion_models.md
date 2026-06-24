@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][GRPO] This paper proposes MaskGRPO, the first GRPO reinforcement learning framework capable of stably scaling to multimodal Discrete Diffusion Models (DDM). By providing a computable importance estimation and KL approximation for the intractable likelihood of DDM, and customizing re-masking and sampling strategies for "langu
+  [ICLR2026][Image Generation][Discrete Diffusion] This paper proposes MaskGRPO, the first GRPO reinforcement learning framework capable of stably scaling to multimodal Discrete Diffusion Models (DDM). By providing a computable importance estimation and KL approximation for the intractable likelihood of DDM, and customizing re-masking and sampling strategies for "language" and "vision" modalities—fading-out AR re-masking for text and high-truncation random re-masking with the e…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - GRPO
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "GRPO"
+  - "Reinforcement Learning"
+  - "Importance Sampling"
+  - "Text-Image Alignment"
 date: 2026-05-08
-content_hash: f857a93e50988153
+content_hash: 6f8664407d6704a2
 ---
+
 # Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models
 
 **Conference**: ICLR2026  
@@ -154,10 +158,10 @@ MaskGRPO is the first method to effectively optimize "aesthetic quality + text-i
 ## Related Papers
 
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](../../NeurIPS2025/image_generation/coreinforcement_learning_for_unified_multimodal_understandin.md)
+- [\[ECCV 2024\] Enhancing Diffusion Models with Text-Encoder Reinforcement Learning](../../ECCV2024/image_generation/enhancing_diffusion_models_with_text-encoder_reinforcement_learning.md)
 - [\[ICLR 2026\] RePrompt: Reasoning-Augmented Reprompting for Text-to-Image Generation via Reinforcement Learning](reprompt_reasoning-augmented_reprompting_for_text-to-image_generation_via_reinfo.md)
-- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
 - [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](../../CVPR2026/image_generation/leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](../../CVPR2026/image_generation/goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
+- [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] HSGDet enables remote sensing detectors to discover unknown objects during deployment without any text prompts. By utilizing a "Hierarchical Semantic Graph + Scene Co-occurrence Context," it automatically synthesizes CLIP semantic labels for unknowns and integrates new classes into the vocabulary. It outperforms SOTA b
+  [CVPR 2026][Remote Sensing][Open World Detection] HSGDet enables remote sensing detectors to discover unknown objects during deployment without any text prompts. By utilizing a "Hierarchical Semantic Graph + Scene Co-occurrence Context," it automatically synthesizes CLIP semantic labels for unknowns and integrates new classes into the vocabulary. It outperforms SOTA by 6.6 points in Known mAP, 9.9 points in Unknown Recall, and reduces Wilderness Impact by 36%.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Open World Detection"
+  - "Hierarchical Semantic Graph"
+  - "Contextual Co-occurrence"
+  - "Prompt-free Annotation"
 date: 2026-05-08
-content_hash: 3ed9e0b6715b10e1
+content_hash: a2185071dbbf11eb
 ---
+
 # Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,16 @@ CR2T source fusion ablation (TA = Textual Alignment via cosine similarity with G
 - Value: ⭐⭐⭐⭐⭐ Addresses the "discovery is easy, naming is hard" pain point in RS; the prompt-free expansion paradigm is highly valuable for open-world deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[CVPR 2026\] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes](unigeoseg_towards_unified_open-world_segmentation_for_geospatial_scenes.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
-- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
-- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
+- [\[ICLR 2026\] Object Fidelity Diffusion for Remote Sensing Image Generation](../../ICLR2026/remote_sensing/object_fidelity_diffusion_for_remote_sensing_image_generation.md)
+- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
 
 </div>
 

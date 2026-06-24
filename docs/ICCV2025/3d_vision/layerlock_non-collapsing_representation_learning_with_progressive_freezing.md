@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] LayerLock: Non-collapsing Representation Learning with Progressive Freezing
 description: >-
-  [3D Vision] This paper proposes LayerLock, a self-supervised video representation learning method that progressively freezes network layers while dynamically shifting prediction targets from pixels to increasingly deep i…
+  [3D Vision] This paper proposes LayerLock, a self-supervised video representation learning method that progressively freezes network layers while dynamically shifting prediction targets from pixels to increasingly deep intermediate layer features. It combines the training stability of pixel prediction with the semantic efficiency of latent variable prediction, and is applied to video models with up to 4B parameters.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 2ef7d00ad5767541
+content_hash: 60430557bf822749
 ---
 
 # LayerLock: Non-collapsing Representation Learning with Progressive Freezing

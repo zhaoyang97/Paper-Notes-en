@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProxyAttn: Guided Sparse Attention via Representative Heads
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] ProxyAttn observes that multiple attention heads in long contexts "focus on highly consistent tokens but differ in sparsity levels." It utilizes token-level scores from a few "proxy heads" to approximate block importance for all heads, while assigning independent budgets to each head for differentiated sparse masks. Wi
+  [ICLR 2026][LLM Efficiency][Sparse Attention] ProxyAttn observes that multiple attention heads in long contexts "focus on highly consistent tokens but differ in sparsity levels." It utilizes token-level scores from a few "proxy heads" to approximate block importance for all heads, while assigning independent budgets to each head for differentiated sparse masks. Without training, it preserves performance while achieving up to 10.3× attention speedup and 2.4× end-to-end prefill…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "Long Context Prefilling"
+  - "Attention Head Similarity"
+  - "Block-level Importance Estimation"
+  - "Training-free"
 date: 2026-05-08
 content_hash: fd1f6b983a367657
 ---
+
 # ProxyAttn: Guided Sparse Attention via Representative Heads
 
 **Conference**: ICLR 2026  
@@ -126,11 +132,11 @@ Evaluated on RULER synthetic long context (4K–128K), Weighted Average (wAvg) b
 
 ## Related Papers
 
-- [\[ICLR 2026\] Distilling to Hybrid Attention Models via KL-Guided Layer Selection](distilling_to_hybrid_attention_models_via_kl-guided_layer_selection.md)
-- [\[ICLR 2026\] Scaling Linear Attention Capacity with Sparse State Expansion](scaling_linear_attention_capacity_with_sparse_state_expansion.md)
-- [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
-- [\[ICLR 2026\] Predicting LLM Output Length via Entropy-Guided Representations](predicting_llm_output_length_via_entropy-guided_representations.md)
 - [\[ICLR 2026\] vAttention: Verified Sparse Attention via Sampling](vattention_verified_sparse_attention_via_sampling.md)
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 
 </div>
 

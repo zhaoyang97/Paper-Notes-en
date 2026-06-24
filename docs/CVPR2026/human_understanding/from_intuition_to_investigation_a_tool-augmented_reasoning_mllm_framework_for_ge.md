@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing
 description: >-
-  [CVPR 2026][Human Understanding][Reinforcement Learning] The TAR-FAS framework is proposed, reconstructing the Face Anti-Spoofing (FAS) task into a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time. This allows MLLMs to adaptively invoke external visual tools (LBP/FFT/HOG, etc.) during reasoning, upgrading from "intuitive judgment" to "fine-grained inve
+  [CVPR 2026][Human Understanding][Face Anti-Spoofing] The TAR-FAS framework is proposed, reconstructing the Face Anti-Spoofing (FAS) task into a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time. This allows MLLMs to adaptively invoke external visual tools (LBP/FFT/HOG, etc.) during reasoning, upgrading from "intuitive judgment" to "fine-grained investigation," achieving SOTA on the 1-to-11 cross-domain protocol.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Face Anti-Spoofing"
+  - "Multimodal Large Language Model"
+  - "Tool-Augmented Reasoning"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: c7f089f71a5cdf20
+content_hash: 89f1e0cf63940378
 ---
+
 # From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing
 
 **Conference**: CVPR 2026  
@@ -152,7 +157,7 @@ Compared to the Prev. SOTA I-FAS, HTER is reduced by 33% and AUC is improved by 
 - [\[AAAI 2026\] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning](../../AAAI2026/human_understanding/pa-fas_towards_interpretable_and_generalizable_multimodal_face_anti-spoofing_via.md)
 - [\[ECCV 2024\] TF-FAS: Twofold-Element Fine-Grained Semantic Guidance for Generalizable Face Anti-Spoofing](../../ECCV2024/human_understanding/tf-fas_twofold-element_fine-grained_semantic_guidance_for_generalizable_face_ant.md)
 - [\[ICCV 2025\] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing](../../ICCV2025/human_understanding/dadm_dual_alignment_of_domain_and_modality_for_face_anti-spoofing.md)
-- [\[CVPR 2026\] rPPG-VQA: A Video Quality Assessment Framework for Unsupervised rPPG Training](rppg_vqa_video_quality_assessment.md)
+- [\[CVPR 2026\] Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection](learning_to_diversify_and_focus_a_reinforcement_framework_for_open-vocabulary_ho.md)
 
 </div>
 

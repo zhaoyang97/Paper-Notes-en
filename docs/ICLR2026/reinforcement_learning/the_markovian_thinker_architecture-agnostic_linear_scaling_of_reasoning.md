@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes **Delethink**: a method that enables reasoning LLMs to break an ultra-long Chain-of-Thought (CoT) into several fixed-length "chunks." Each chunk carries only a small number of tokens from the end of the previous chunk as a "Markovian state" while deleting the rest of the history. This reduces reason
+  [ICLR 2026][Reinforcement Learning][Markovian Thinking] This paper proposes **Delethink**: a method that enables reasoning LLMs to break an ultra-long Chain-of-Thought (CoT) into several fixed-length "chunks." Each chunk carries only a small number of tokens from the end of the previous chunk as a "Markovian state" while deleting the rest of the history. This reduces reasoning computation from quadratic to linear and maintains constant memory usage **without modifying any mod…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - KV cache
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Markovian Thinking"
+  - "Long-Chain-of-Thought"
+  - "RLVR"
+  - "Linear Computation"
+  - "KV cache"
 date: 2026-05-08
-content_hash: f9595cdc52c21ce4
+content_hash: 65b6f9737bac738a
 ---
+
 # The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning
 
 **Conference**: ICLR 2026  
@@ -147,10 +151,10 @@ Core Conclusion: LongCoT metrics grow quadratically with thinking length, while 
 ## Related Papers
 
 - [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
+- [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](../../NeurIPS2025/reinforcement_learning/decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
 - [\[ICLR 2026\] Chessformer: A Unified Architecture for Chess Modeling](chessformer_a_unified_architecture_for_chess_modeling.md)
 - [\[ICLR 2026\] RESCHED: Rethinking Flexible Job Shop Scheduling from a Transformer-based Architecture with Simplified States](resched_rethinking_flexible_job_shop_scheduling_from_a_transformer-based_archite.md)
 - [\[ICLR 2026\] The Art of Scaling Reinforcement Learning Compute for LLMs](the_art_of_scaling_reinforcement_learning_compute_for_llms.md)
-- [\[ICLR 2026\] Replicable Reinforcement Learning with Linear Function Approximation](replicable_reinforcement_learning_with_linear_function_approximation.md)
 
 </div>
 

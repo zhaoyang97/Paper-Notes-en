@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LumiTex: Towards High-Fidelity PBR Texture Generation with Illumination Context
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] LumiTex focuses on PBR texture generation given a mesh and a reference image, integrating multi-view illumination context, branched albedo/metallic-roughness material inference, and geometry-guided view completion based on LVSM into a single pipeline. It outperforms open-source and commercial baselines in texture quali
+  [ICLR2026][3D Vision][PBR Materials] LumiTex focuses on PBR texture generation given a mesh and a reference image, integrating multi-view illumination context, branched albedo/metallic-roughness material inference, and geometry-guided view completion based on LVSM into a single pipeline. It outperforms open-source and commercial baselines in texture quality, relighting consistency, and human preference.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "PBR Materials"
+  - "Illumination Context"
+  - "Multi-view Diffusion"
+  - "Material Decomposition"
+  - "Texture Completion"
 date: 2026-05-08
-content_hash: 7e1a2c66fb5c9c12
+content_hash: 584280a8cf78fe75
 ---
+
 # LumiTex: Towards High-Fidelity PBR Texture Generation with Illumination Context
 
 **Conference**: ICLR2026  
@@ -160,7 +166,7 @@ User studies with 3D modelers also ranked LumiTex highest across quality, comple
 - [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](../../ICCV2025/3d_vision/materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
 - [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](../../CVPR2026/3d_vision/lattice_democratize_high-fidelity_3d_generation_at_scale.md)
 - [\[CVPR 2025\] Towards High-fidelity 3D Talking Avatar with Personalized Dynamic Texture](../../CVPR2025/3d_vision/towards_high-fidelity_3d_talking_avatar_with_personalized_dynamic_texture.md)
-- [\[CVPR 2026\] NI-Tex: Non-isometric Image-based Garment Texture Generation](../../CVPR2026/3d_vision/ni-tex_non-isometric_image-based_garment_texture_generation.md)
+- [\[CVPR 2026\] MV2UV: Generating High-quality UV Texture Maps with Multiview Prompts](../../CVPR2026/3d_vision/mv2uv_generating_high-quality_uv_texture_maps_with_multiview_prompts.md)
 
 </div>
 

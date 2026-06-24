@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset
 description: >-
-  [NeurIPS 2025][Segmentation][Terraced parcel extraction] This paper introduces GTPBD, the first fine-grained global terraced parcel and boundary dataset, comprising 47,537 high-resolution images (0.5–0.7 m) with over 200…
+  [NeurIPS 2025][Segmentation][Terraced parcel extraction] This paper introduces GTPBD, the first fine-grained global terraced parcel and boundary dataset, comprising 47,537 high-resolution images (0.5–0.7 m) with over 200,000 manually annotated parcels. It provides three-level labels supporting four tasks—semantic segmentation, edge detection, agricultural parcel extraction, and unsupervised domain adaptation—and presents comprehensive benchmarks across 20 methods.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised domain adaptation"
   - "remote sensing dataset"
 date: 2026-05-08
-content_hash: c7ec9a800d3fccbd
+content_hash: 74c208955a08aa78
 ---
 
 # GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset
@@ -173,7 +173,7 @@ UDA performance in the N→S direction is substantially better than S→N (PiPa:
 - [\[NeurIPS 2025\] FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning](finers_fine-grained_reasoning_and_segmentation_of_small_objects_with_reinforceme.md)
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
 - [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[NeurIPS 2025\] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning](fast_and_fluent_diffusion_language_models_via_convolutional_decoding_and_rejecti.md)
+- [\[CVPR 2025\] Fine-Grained Image-Text Correspondence with Cost Aggregation for Open-Vocabulary Part Segmentation](../../CVPR2025/segmentation/fine-grained_image-text_correspondence_with_cost_aggregation_for_open-vocabulary.md)
 
 </div>
 

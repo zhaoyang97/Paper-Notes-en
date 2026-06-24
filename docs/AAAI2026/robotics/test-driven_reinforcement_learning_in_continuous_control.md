@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Test-driven Reinforcement Learning in Continuous Control
 description: >-
-  [AAAI 2026 (Oral)][Robotics][Test-driven RL] This paper proposes the Test-driven Reinforcement Learning (TdRL) framework, which replaces a single reward function with multiple test functions — pass-fail tests defining op…
+  [AAAI 2026 (Oral)][Robotics][Test-driven RL] This paper proposes the Test-driven Reinforcement Learning (TdRL) framework, which replaces a single reward function with multiple test functions — pass-fail tests defining optimality criteria and indicative tests guiding learning — to represent task objectives. A return function is learned via lexicographic-heuristic trajectory comparison, matching or surpassing hand-crafted reward methods on the DeepMind Control Suite while natur…
 tags:
   - "AAAI 2026 (Oral)"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Trajectory Return Function"
   - "Lexicographic Comparison"
 date: 2026-05-08
-content_hash: 945cf5503b080059
+content_hash: b2798a508d02a9c5
 ---
 
 # Test-driven Reinforcement Learning in Continuous Control
@@ -178,11 +178,11 @@ An Oral paper with novel concepts and solid theoretical contributions. However, 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](../../ICLR2026/robotics/scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
 - [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
-- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](continuous_vision-language-action_co-learning_with_semantic-.md)
-- [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](../../CVPR2026/robotics/como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
-- [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
+- [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](../../ICLR2026/robotics/scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
+- [\[ICLR 2026\] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control](../../ICLR2026/robotics/hierarchical_value-decomposed_offline_reinforcement_learning_for_whole-body_cont.md)
+- [\[ICLR 2026\] BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning](../../ICLR2026/robotics/bfm-zero_a_promptable_behavioral_foundation_model_for_humanoid_control_using_uns.md)
+- [\[ICLR 2026\] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control](../../ICLR2026/robotics/action_chunking_and_data_augmentation_yield_exponential_improvements_in_behavior.md)
 
 </div>
 

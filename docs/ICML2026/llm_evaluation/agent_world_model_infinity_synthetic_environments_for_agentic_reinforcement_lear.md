@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning
 description: >-
-  [ICML 2026][LLM Evaluation][MCP] This paper proposes Agent World Model, a fully synthetic pipeline encompassing scenarios, tasks, databases, MCP tool interfaces, and verifiers. It generates 1,000 executable, database-driven environments used to train tool-calling agents, achieving superior out-of-distribution generalization on BFCLv3, $\tau^2$-bench,
+  [ICML2026][LLM Evaluation][Agent Environment Synthesis] This paper proposes Agent World Model, a fully synthetic pipeline encompassing scenarios, tasks, databases, MCP tool interfaces, and verifiers. It generates 1,000 executable, database-driven environments used to train tool-calling agents, achieving superior out-of-distribution generalization on BFCLv3, $\tau^2$-bench, and MCP-Universe.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - MCP
-  - Reinforcement Learning
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Agent Environment Synthesis"
+  - "Tool Use"
+  - "MCP"
+  - "Reinforcement Learning"
+  - "Executable World Models"
 date: 2026-05-08
-content_hash: 2b5b2d7512a632fe
+content_hash: 982bbf20dcb40cec
 ---
+
 # Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -149,9 +153,9 @@ To unify environments, the agent sees two meta-tools: `list_tools` to enumerate 
 
 - [\[ICML 2026\] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](beyond_trajectory-level_attribution_graph-based_credit_assignment_for_agentic_re.md)
 - [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
+- [\[ICLR 2026\] ResiliBench: Evaluating Agentic Workflow Adaptation in Stochastic Environments](../../ICLR2026/llm_evaluation/resilibench_evaluating_agentic_workflow_adaptation_in_stochastic_environments.md)
 - [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
-- [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
-- [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](../../ACL2026/llm_evaluation/multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
+- [\[ICLR 2026\] Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models](../../ICLR2026/llm_evaluation/rewarding_doubt_a_reinforcement_learning_approach_to_calibrated_confidence_expre.md)
 
 </div>
 

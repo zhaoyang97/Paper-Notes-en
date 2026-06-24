@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation
 description: >-
-  [ACL 2026][LLM Safety][GMM] AGSC proposes an uncertainty quantification (UQ) framework for long-text generation that triggers adaptive granularity decomposition via NLI neutral probability (reducing inference time by 60%) and utilizes GMM soft clustering to capture latent semantic topics for topic-aware weighted aggregation, achieving SOTA factua
+  [ACL 2026][LLM Safety][Uncertainty Quantification] AGSC proposes an uncertainty quantification (UQ) framework for long-text generation that triggers adaptive granularity decomposition via NLI neutral probability (reducing inference time by 60%) and utilizes GMM soft clustering to capture latent semantic topics for topic-aware weighted aggregation, achieving SOTA factuality correlation on BIO and LongFact benchmarks.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - GMM
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Uncertainty Quantification"
+  - "Long-text Generation"
+  - "Adaptive Granularity"
+  - "Semantic Clustering"
+  - "GMM"
 date: 2026-05-08
-content_hash: c0f63347d407a262
+content_hash: d66c92f6f7c358a8
 ---
+
 # AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation
 
 **Conference**: ACL 2026  
@@ -122,15 +127,15 @@ Does not involve model training. Uses pre-trained NLI and embedding models. The 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models](from_passive_metric_to_active_signal_the_evolving_role_of_uncertainty_quantifica.md)
-- [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[ACL 2026\] SAGE: Sparse Adaptive Guidance for Dependency-Aware Tabular Data Generation](sage_sparse_adaptive_guidance_for_dependency-aware_tabular_data_generation.md)
 - [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
+- [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](../../ICLR2026/llm_safety/secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
 
 </div>
 

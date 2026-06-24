@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IDLM: Inverse-distilled Diffusion Language Models
 description: >-
-  [ICML 2026][Model Compression][Diffusion Language Model] This paper extends "Inverse Distillation" from continuous diffusion to discrete text diffusion models. By proving that the unique optimal solution for the IDLM loss under SEDD/MDLM/Duo is the true data distribution $p^*$, and combining simplex relaxation with Gaussian reparameterization to solve the instability of disc
+  [ICML 2026][Model Compression][Diffusion Language Models] This paper extends "Inverse Distillation" from continuous diffusion to discrete text diffusion models. By proving that the unique optimal solution for the IDLM loss under SEDD/MDLM/Duo is the true data distribution $p^*$, and combining simplex relaxation with Gaussian reparameterization to solve the instability of discrete backpropagation, it compresses a 1024-step teacher DLM to 16 or even 4 steps while maintaining Ge…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Diffusion Language Model
-  - MDLM/Duo
+  - "ICML 2026"
+  - "Model Compression"
+  - "Diffusion Language Models"
+  - "Inverse Distillation"
+  - "Discrete Diffusion"
+  - "Few-step Sampling"
+  - "MDLM/Duo"
 date: 2026-05-08
-content_hash: 88b213230a508e20
+content_hash: b711b115eed1dd02
 ---
+
 # IDLM: Inverse-distilled Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -140,7 +144,7 @@ The few-step student **slightly outperforms** the teacher's accuracy despite a m
 - [\[ICML 2026\] DIVER: Diving Deeper into Distilled Data via Expressive Semantic Recovery](diverdiving_deeper_into_distilled_data_via_expressive_semantic_recovery.md)
 - [\[ICML 2026\] Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?](mind_your_margin_and_boundary_are_your_distilled_datasets_truly_robust.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
-- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
+- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
 
 </div>
 

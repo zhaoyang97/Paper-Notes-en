@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Explainable LLM Unlearning through Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][LLM Unlearning] Addressing the "out of control" pain points (uncontrollable unlearning scope and gibberish outputs) of gradient ascent-based methods, this paper uses strong reasoning models to automatically generate "reasoning chain + explainable refusal" as **reasoning-based unlearning targets**. By using cross-entropy supervision lo
+  [ICLR 2026][LLM Safety][LLM Unlearning] Addressing the "out of control" pain points (uncontrollable unlearning scope and gibberish outputs) of gradient ascent-based methods, this paper uses strong reasoning models to automatically generate "reasoning chain + explainable refusal" as **reasoning-based unlearning targets**. By using cross-entropy supervision loss to internalize this reasoning capability into the model and combining it with GA loss for complete knowledge erasure…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM Unlearning
-  - Reasoning
-  - Gradient Ascent
-  - Scope Control
-  - Explainable Refusal
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Reasoning"
+  - "Gradient Ascent"
+  - "Scope Control"
+  - "Explainable Refusal"
 date: 2026-05-08
-content_hash: bf7afe84cac9bdb6
+content_hash: 66bfb13afc0f8eb0
 ---
+
 # Explainable LLM Unlearning through Reasoning
 
 **Conference**: ICLR 2026  
@@ -121,11 +122,11 @@ Average results for WMDP-Bio and TOFU-Forget05:
 
 ## Related Papers
 
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 - [\[ICLR 2026\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
 - [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](unlearning_evaluation_through_subset_statistical_independence.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 - [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](../../ACL2026/llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
-- [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
+- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fine-Grained GRPO for Precise Preference Alignment in Flow Models
 description: >-
-  [CVPR 2026][Image Generation][GRPO] G²RPO (Granular-GRPO) transforms the sparse reward paradigm in flow-based GRPO training—where SDE noise is injected at every step and terminal rewards are averaged across the trajectory—into a "Singular Stochastic Sampling" approach where randomness is injected only at one step while others follow deterministic ODEs. B
+  [CVPR 2026][Image Generation][GRPO] G²RPO (Granular-GRPO) transforms the sparse reward paradigm in flow-based GRPO training—where SDE noise is injected at every step and terminal rewards are averaged across the trajectory—into a "Singular Stochastic Sampling" approach where randomness is injected only at one step while others follow deterministic ODEs. By calculating and fusing advantages across multiple denoising granularities for the same direction…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "Flow Model Alignment"
+  - "Sparse Reward"
+  - "Credit Assignment"
+  - "Multi-granularity Denoising"
 date: 2026-05-08
-content_hash: ecee00935493f1b9
+content_hash: ee09a77b744abb60
 ---
+
 # Fine-Grained GRPO for Precise Preference Alignment in Flow Models
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ G²RPO maintains its lead even at lower inference budgets (10 steps), proving th
 
 ## Related Papers
 
-- [\[CVPR 2026\] Stepwise-Flow-GRPO：给流匹配模型的去噪步逐步分配信用](stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
 - [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
 - [\[CVPR 2026\] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
+- [\[CVPR 2026\] Stepwise-Flow-GRPO: Assigning Stepwise Credit to Denoising Steps in Flow-Matching Models](stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
 
 </div>

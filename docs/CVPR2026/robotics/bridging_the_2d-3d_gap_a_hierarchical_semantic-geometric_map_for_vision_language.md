@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] This paper proposes HSGM—a hierarchical map that rasterizes 3D geometric information into multi-channel 2D top-down views readable by VLMs. This allows the VLM to focus on high-level semantic decisions ("picking the next waypoint on the map") while an A* algorithm handles low-level collision-free movement. In a complet
+  [CVPR 2026][Robotics][Vision-Language Navigation] This paper proposes HSGM—a hierarchical map that rasterizes 3D geometric information into multi-channel 2D top-down views readable by VLMs. This allows the VLM to focus on high-level semantic decisions ("picking the next waypoint on the map") while an A* algorithm handles low-level collision-free movement. In a completely training-free zero-shot setting, it achieves 47.9% / 41.8% SR on R2R-CE / RxR-CE…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Zero-shot VLN-CE"
+  - "Semantic-Geometric Map"
+  - "VLM High-level Planning"
+  - "Decoupled Control"
 date: 2026-05-08
-content_hash: d9aa9496da8d730f
+content_hash: 4ee710b4fcfd7930
 ---
+
 # Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ On R2R-CE, the SR is 15.1% higher than the strongest zero-shot baseline (DreamNa
 
 ## Related Papers
 
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 - [\[CVPR 2026\] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation](trajrag_retrieving_geometric-semantic_experience_for_zero-shot_object_navigation.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
-- [\[CVPR 2026\] D3D-VLP: Dynamic 3D Vision-Language-Planning Model for Embodied Grounding and Navigation](d3d-vlp_dynamic_3d_vision-language-planning_model_for_embodied_grounding_and_nav.md)
+- [\[CVPR 2026\] NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction](navforesee_a_unified_vision-language_world_model_for_hierarchical_planning_and_d.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](../../ICLR2026/robotics/uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 - [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions](learning_to_control_physically-simulated_3d_characters_via_generating_and_mimick.md)
 
 </div>
 

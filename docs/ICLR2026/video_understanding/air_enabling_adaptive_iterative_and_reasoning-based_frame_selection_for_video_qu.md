@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering
 description: >-
-  [ICLR 2026][Video Understanding][video QA] Ours proposes A.I.R., a training-free adaptive-iterative-reasoning-driven frame selection framework. It addresses the dual dilemma of inaccurate similarity in lightweight models (CLIP) and explosive costs of VLM analysis in VideoQA through a two-stage strategy (GMM adaptive initial sampling + iterative VLM fine-grained
+  [ICLR 2026][Video Understanding][video QA] Ours proposes A.I.R., a training-free adaptive-iterative-reasoning-driven frame selection framework. It addresses the dual dilemma of inaccurate similarity in lightweight models (CLIP) and explosive costs of VLM analysis in VideoQA through a two-stage strategy (GMM adaptive initial sampling + iterative VLM fine-grained analysis). Even in the worst-case scenario, it only requires analyzing 72 frames (vs. the 128-frame baseline) while…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - video QA
-  - frame selection
-  - VLM
-  - iterative search
-  - computational efficiency
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "video QA"
+  - "frame selection"
+  - "VLM"
+  - "iterative search"
+  - "computational efficiency"
 date: 2026-05-08
-content_hash: f6735c464d50b84e
+content_hash: 089fd4bd03428d52
 ---
+
 # A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering
 
 **Conference**: ICLR 2026  
@@ -137,11 +138,11 @@ Training-free. It is plug-and-play and compatible with VLMs such as VILA, Qwen-V
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task](../../NeurIPS2025/video_understanding/toolaugmented_spatiotemporal_reasoning_for_streamlining_vide.md)
-- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](../../CVPR2026/video_understanding/efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[ACL 2025\] Addressing Blind Guessing: Calibration of Selection Bias in Multiple-Choice Question Answering by Video Language Models](../../ACL2025/video_understanding/addressing_blind_guessing_calibration_of_selection_bias_in_multiple-choice_quest.md)
 - [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](../../CVPR2026/video_understanding/herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
+- [\[NeurIPS 2025\] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task](../../NeurIPS2025/video_understanding/toolaugmented_spatiotemporal_reasoning_for_streamlining_vide.md)
+- [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](../../CVPR2026/video_understanding/wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
+- [\[CVPR 2025\] M-LLM Based Video Frame Selection for Efficient Video Understanding](../../CVPR2025/video_understanding/m-llm_based_video_frame_selection_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](../../CVPR2026/video_understanding/divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
 
 </div>
 

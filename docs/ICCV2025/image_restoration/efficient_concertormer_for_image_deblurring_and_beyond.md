@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Concertormer for Image Deblurring and Beyond
 description: >-
-  [ICCV 2025][Image Restoration][Image deblurring] This paper proposes Concertormer, which decomposes self-attention into a global Concertino component and a local Ripieno component…
+  [ICCV 2025][Image Restoration][Image deblurring] This paper proposes Concertormer, which decomposes self-attention into a global Concertino component and a local Ripieno component, and further introduces a Cross-Dimensional Communication module and a Gated Depthwise Convolution MLP. The method achieves global-local feature modeling at linear complexity, attaining state-of-the-art performance on image deblurring and other restoration tasks.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "feed-forward network"
 date: 2026-05-08
-content_hash: 913b60b8a4964f61
+content_hash: b329badb0df7ef1e
 ---
 
 # Efficient Concertormer for Image Deblurring and Beyond
@@ -149,11 +149,11 @@ State-of-the-art performance is also achieved on image deraining: average 34.60/
 
 ## Related Papers
 
+- [\[CVPR 2025\] Efficient Visual State Space Model for Image Deblurring](../../CVPR2025/image_restoration/efficient_visual_state_space_model_for_image_deblurring.md)
 - [\[ICCV 2025\] Blind Noisy Image Deblurring Using Residual Guidance Strategy](blind_noisy_image_deblurring_using_residual_guidance_strateg.md)
+- [\[CVPR 2025\] Gyro-based Neural Single Image Deblurring](../../CVPR2025/image_restoration/gyro-based_neural_single_image_deblurring.md)
 - [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
-- [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
-- [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](../../CVPR2026/image_restoration/beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
-- [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](../../CVPR2026/image_restoration/bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
+- [\[ICLR 2026\] FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring](../../ICLR2026/image_restoration/fidediff_efficient_diffusion_model_for_high-fidelity_image_motion_deblurring.md)
 
 </div>
 

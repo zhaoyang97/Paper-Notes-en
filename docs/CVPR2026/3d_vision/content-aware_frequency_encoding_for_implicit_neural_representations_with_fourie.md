@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features
 description: >-
-  [CVPR 2026][Others][Paper Note] To address the inefficiency where Implicit Neural Representations (INRs) use fixed Fourier bases and force the MLP to "synthesize" target frequencies, this paper proposes CAFE. By passing Fourier features through multiple parallel linear layers followed by Hadamard products for frequency multiplication, the representab
+  [CVPR 2026][3D Vision][Implicit Neural Representations] To address the inefficiency where Implicit Neural Representations (INRs) use fixed Fourier bases and force the MLP to "synthesize" target frequencies, this paper proposes CAFE. By passing Fourier features through multiple parallel linear layers followed by Hadamard products for frequency multiplication, the representable frequency set is expanded exponentially from $M$ fixed bases to $O(MN3^{N-1})$…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Implicit Neural Representations"
+  - "Spectral Bias"
+  - "Fourier Features"
+  - "Chebyshev Polynomials"
+  - "Frequency Encoding"
 date: 2026-05-08
-content_hash: 9635300ce49c9c5b
+content_hash: c996aad958b4a3fc
 ---
+
 # Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ Backbone MLP depth ablation (PSNR / dB, mean of 3 images):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Convolutional Neural Networks Driven by Content Similarity](convolutional_neural_networks_driven_by_content_similarity.md)
-- [\[CVPR 2026\] When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence](when_lines_meet_textures_spatial-frequency_aligned_diffusion_features_for_cross-.md)
-- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
-- [\[ICLR 2026\] FastLSQ: Solving PDEs in One Shot via Fourier Features with Exact Analytical Derivatives](../../ICLR2026/others/fastlsq_solving_pdes_in_one_shot_via_fourier_features_with_exact_analytical_deri.md)
-- [\[CVPR 2025\] EVOS: Efficient Implicit Neural Training via EVOlutionary Selector](../../CVPR2025/others/evos_efficient_implicit_neural_training_via_evolutionary_selector.md)
+- [\[CVPR 2026\] NTK-Guided Implicit Neural Teaching](ntk-guided_implicit_neural_teaching.md)
+- [\[CVPR 2025\] End-to-End Implicit Neural Representations for Classification](../../CVPR2025/3d_vision/end-to-end_implicit_neural_representations_for_classification.md)
+- [\[CVPR 2026\] Task-Driven Implicit Representations for Automated Design of LiDAR Systems](task-driven_implicit_representations_for_automated_design_of_lidar_systems.md)
+- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
+- [\[ECCV 2024\] G2fR: Frequency Regularization in Grid-Based Feature Encoding Neural Radiance Fields](../../ECCV2024/3d_vision/g2fr_frequency_regularization_in_grid-based_feature_encoding_neural_radiance_fie.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RLAP-CLIP: Continual Multimodal Learning with Prototype Adaptation and Difficulty-Aware Routing
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] RLAP-CLIP addresses class-incremental multimodal continual learning for CLIP by replacing simple mean category prototypes with reinforcement learning-based weighted optimization. It utilizes vision-text dual-modal prompts and difficulty-aware MoE routing to process samples of varying complexity, consistently outperform
+  [ICLR2026][Multimodal VLM][CLIP Continual Learning] RLAP-CLIP addresses class-incremental multimodal continual learning for CLIP by replacing simple mean category prototypes with reinforcement learning-based weighted optimization. It utilizes vision-text dual-modal prompts and difficulty-aware MoE routing to process samples of varying complexity, consistently outperforming methods like PROOF and C-CLIP across eight classification datasets.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "CLIP Continual Learning"
+  - "Prototype Optimization"
+  - "Dual-modal Prompts"
+  - "Difficulty-Aware Routing"
+  - "Mixture of Experts (MoE)"
 date: 2026-05-08
-content_hash: 0ec0a6a7e185b048
+content_hash: ccb8931d1ce4e245
 ---
+
 # RLAP-CLIP: Continual Multimodal Learning with Prototype Adaptation and Difficulty-Aware Routing
 
 **Conference**: ICLR2026  
@@ -130,14 +136,20 @@ Significant gains are observed in fine-grained datasets (Aircraft, CUB-200) wher
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **PROOF**: Prompt-based Learning for Open-world Recognition, ICLR 2023.
-- **C-CLIP**: Continual Learning for CLIP, CVPR 2024.
-- **MaPLe**: Multi-modal Prompt Learning, CVPR 2023.
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)
+- [\[CVPR 2026\] Label What Matters: Modality-Balanced and Difficulty-Aware Multimodal Active Learning](../../CVPR2026/multimodal_vlm/label_what_matters_modality-balanced_and_difficulty-aware_multimodal_active_lear.md)
+- [\[ICLR 2026\] Bilateral Information-aware Test-time Adaptation for Vision-Language Models](bilateral_information-aware_test-time_adaptation_for_vision-language_models.md)
+- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
+- [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](../../AAAI2026/multimodal_vlm/harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)

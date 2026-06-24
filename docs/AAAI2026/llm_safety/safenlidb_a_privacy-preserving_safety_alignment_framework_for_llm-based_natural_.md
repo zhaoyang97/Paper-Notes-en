@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces
 description: >-
-  [AAAI 2026][LLM Safety][Database Security] This paper proposes SafeNlidb, a framework that jointly optimizes safety reasoning and SQL generation in LLM-driven Natural Language Interfaces to Databases (NLIDBs) through a s…
+  [AAAI 2026][LLM Safety][Database Security] This paper proposes SafeNlidb, a framework that jointly optimizes safety reasoning and SQL generation in LLM-driven Natural Language Interfaces to Databases (NLIDBs) through a safety-aware data synthesis pipeline and an alternating preference optimization strategy, effectively defending against privacy leakage under implicit inference attacks.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Preference Optimization"
   - "Safety Alignment"
 date: 2026-05-08
-content_hash: d4a63b0a62a7414a
+content_hash: 2980a8c9e915cc31
 ---
 
 # SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces
@@ -157,11 +157,11 @@ The problem is important and clearly defined. The end-to-end solution (data synt
 
 ## Related Papers
 
+- [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](../../ICLR2026/llm_safety/natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
 - [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](../../ACL2026/llm_safety/safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
-- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](../../ACL2026/llm_safety/sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
+- [\[ICLR 2026\] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting](../../ICLR2026/llm_safety/operationalizing_data_minimization_for_privacy-preserving_llm_prompting.md)
 - [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](an_llm-based_simulation_framework_for_embodied_conversationa.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](../../ACL2026/llm_safety/reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](../../ICLR2026/llm_safety/secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
+- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](../../ACL2026/llm_safety/sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
 
 </div>
 

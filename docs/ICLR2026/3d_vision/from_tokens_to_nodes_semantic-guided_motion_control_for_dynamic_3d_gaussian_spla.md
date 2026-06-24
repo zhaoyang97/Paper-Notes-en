@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This work utilizes semantic and motion priors from Visual Foundation Models (VFMs) to allocate control points based on "motion complexity" rather than "geometric uniformity." By replacing MLP deformation fields with cubic spline-parameterized node trajectories, the method achieves fast and high-quality dynamic 3DGS rec
+  [ICLR 2026][3D Vision][Dynamic 3D Gaussian Splatting] This work utilizes semantic and motion priors from Visual Foundation Models (VFMs) to allocate control points based on "motion complexity" rather than "geometric uniformity." By replacing MLP deformation fields with cubic spline-parameterized node trajectories, the method achieves fast and high-quality dynamic 3DGS reconstruction from monocular videos.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dynamic 3D Gaussian Splatting"
+  - "Sparse Control Points"
+  - "Visual Foundation Models"
+  - "Motion-Adaptive"
+  - "Spline Trajectories"
 date: 2026-05-08
-content_hash: 021efe617b844ca0
+content_hash: d6030fdaa9b6601d
 ---
+
 # From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -127,7 +133,6 @@ Ablation on Hyper-NeRF:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

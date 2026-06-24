@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design
 description: >-
-  [AAAI 2026][LLM Agent][physics-informed agent] This paper proposes PHIA, a system in which an LLM planner collects design requirements via a chat interface and autonomously coordinates a physics-informed neural network s…
+  [AAAI 2026][LLM Agent][physics-informed agent] This paper proposes PHIA, a system in which an LLM planner collects design requirements via a chat interface and autonomously coordinates a physics-informed neural network surrogate model (hierarchical PINN) with optimization algorithms to iteratively generate power converter modulation designs, achieving a 63.2% reduction in MAE, a 33× speedup in design time, and usability validated by 20 domain experts.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "PINN"
   - "explainability"
 date: 2026-05-08
-content_hash: db3a53f5d60144ad
+content_hash: 6475e53f8dc30daf
 ---
 
 # Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design
@@ -130,11 +130,11 @@ The front end consists of a chat interface and a GPT-4 reasoning engine; the bac
 
 ## Related Papers
 
-- [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](autoglm_autonomous_foundation_agents_for_guis.md)
+- [\[CVPR 2026\] AeroAgent: A Vision-Physics-Decision Framework for Aerodynamic Vehicle Design](../../CVPR2026/llm_agent/aeroagent_a_vision-physics-decision_framework_for_aerodynamic_vehicle_design.md)
 - [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
-- [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](../../ICLR2026/llm_agent/physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
+- [\[AAAI 2026\] AutoGLM: Autonomous Foundation Agents for GUIs](autoglm_autonomous_foundation_agents_for_guis.md)
 - [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
-- [\[ACL 2026\] Do LLM Agents Mirror Socio-Cognitive Effects in Power-Asymmetric Conversations?](../../ACL2026/llm_agent/do_llm_agents_mirror_socio-cognitive_effects_in_power-asymmetric_conversations.md)
+- [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](../../ICLR2026/llm_agent/physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
 
 </div>
 

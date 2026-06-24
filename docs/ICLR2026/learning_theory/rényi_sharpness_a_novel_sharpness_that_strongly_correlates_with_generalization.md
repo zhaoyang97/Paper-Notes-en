@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Rényi Sharpness: A Novel Sharpness That Strongly Correlates with Generalization
 description: >-
-  [ICLR 2026][learning_theory][Sharpness-Aware Minimization] This paper identifies that the true determinant of generalization is the "average dispersion/unevenness" of the Hessian spectrum. It defines **Rényi sharpness** (the negative Rényi entropy of the normalized Hessian spectrum) using information theory and demonstrates its strong correlation with generalization across var
+  [ICLR 2026][Learning Theory][Sharpness] This paper identifies that the true determinant of generalization is the "average dispersion/unevenness" of the Hessian spectrum. It defines **Rényi sharpness** (the negative Rényi entropy of the normalized Hessian spectrum) using information theory and demonstrates its strong correlation with generalization across various scenarios (Kendall’s $\tau$ typically between 0.6–0.9, significantly outperforming older metrics like trace, SAM…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Sharpness-Aware Minimization
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Generalization"
+  - "Loss Landscape"
+  - "Sharpness"
+  - "Generalization Bound"
+  - "Hessian Spectrum"
+  - "Rényi Entropy"
+  - "Sharpness-Aware Minimization"
 date: 2026-05-08
-content_hash: 3df13b4e4a047a9e
+content_hash: f5d5aff305f9f59f
 ---
+
 # Rényi Sharpness: A Novel Sharpness That Strongly Correlates with Generalization
 
 **Conference**: ICLR 2026  
@@ -147,14 +154,14 @@ Across tasks, Rényi sharpness $\tau$ typically falls between 0.6–0.9, while t
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
-- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
 - [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
+- [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
 - [\[ICLR 2026\] Bound by Semanticity: Universal Laws Governing the Generalization-Identification Tradeoff](bound_by_semanticity_universal_laws_governing_the_generalization-identification_.md)
 
 </div>

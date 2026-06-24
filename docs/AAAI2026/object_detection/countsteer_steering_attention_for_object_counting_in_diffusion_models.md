@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CountSteer: Steering Attention for Object Counting in Diffusion Models
 description: >-
-  [AAAI2026][Object Detection][diffusion models] This paper proposes CountSteer, a training-free inference-time method that injects adaptive steering vectors into the cross-attention hidden states of diffusion models…
+  [AAAI2026][Object Detection][diffusion models] This paper proposes CountSteer, a training-free inference-time method that injects adaptive steering vectors into the cross-attention hidden states of diffusion models, improving object counting accuracy by approximately 4% without degrading image quality.
 tags:
   - "AAAI2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "cross-attention"
   - "training-free"
 date: 2026-05-08
-content_hash: 8784f437261e0480
+content_hash: 3f0f52bcbca0bce6
 ---
 
 # CountSteer: Steering Attention for Object Counting in Diffusion Models
@@ -142,9 +142,9 @@ Injection is applied only during the first 10 denoising steps ($k=10$), consiste
 
 - [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](../../ICLR2026/object_detection/fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/object_detection/invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
+- [\[CVPR 2025\] Generalized Diffusion Detector: Mining Robust Features from Diffusion Models for Domain-Generalized Detection](../../CVPR2025/object_detection/generalized_diffusion_detector_mining_robust_features_from_diffusion_models_for_.md)
 - [\[AAAI 2026\] CountVid: Open-World Object Counting in Videos](open-world_object_counting_in_videos.md)
-- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting (WS-COC)](../../ICLR2026/object_detection/bootstrapping_mllm_for_weakly-supervised_class-agnostic_object_counting.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)
+- [\[ECCV 2024\] Shifted Autoencoders for Point Annotation Restoration in Object Counting](../../ECCV2024/object_detection/shifted_autoencoders_for_point_annotation_restoration_in_object_counting.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][occupancy prediction] Dr.Occ is proposed as a unified vision-only 3D occupancy prediction framework. It leverages high-quality depth priors from MoGe-2 for precise geometric alignment via a Depth-guided Dual-projected View Transformer (D2-VFormer). Furthermore, it introduces region-guided MoE/MoR expert Transformers (R-EFormer / R2-EFormer)
+  [CVPR 2026][Autonomous Driving][occupancy prediction] Dr.Occ is proposed as a unified vision-only 3D occupancy prediction framework. It leverages high-quality depth priors from MoGe-2 for precise geometric alignment via a Depth-guided Dual-projected View Transformer (D2-VFormer). Furthermore, it introduces region-guided MoE/MoR expert Transformers (R-EFormer / R2-EFormer) to adaptively assign experts to specific spatial regions, addressing spatial-semantic imbalance. It impro…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - occupancy prediction
-  - depth guidance
-  - MoGe-2
-  - Mixture-of-Experts
-  - region-guided
-  - view transformation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "occupancy prediction"
+  - "depth guidance"
+  - "MoGe-2"
+  - "Mixture-of-Experts"
+  - "region-guided"
+  - "view transformation"
 date: 2026-05-08
-content_hash: 0b44bcfa92918300
+content_hash: f3530113aaa55c7d
 ---
+
 # Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -181,10 +182,10 @@ Key Observations:
 ## Related Papers
 
 - [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
-- [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
 - [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
 - [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
-- [\[CVPR 2026\] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System](knowval_a_knowledge-augmented_and_value-guided_autonomous_driving_system.md)
+- [\[ICLR 2026\] OccDriver: Future Occupancy Guided Dual-branch Trajectory Planner in Autonomous Driving](../../ICLR2026/autonomous_driving/occdriver_future_occupancy_guided_dual-branch_trajectory_planner_in_autonomous_d.md)
 
 </div>
 

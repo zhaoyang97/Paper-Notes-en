@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation
 description: >-
-  [CVPR 2026][Image Generation][Classifier-Free Guidance] Instead of modifying model weights or perturbing noise/latents, this method optimizes only the "null-text embedding" within Classifier-Free Guidance (CFG). This allows the diffusion model to align with target rewards during the inference phase. Since the text embedding space is a structured semantic manifold, this appr
+  [CVPR 2026][Image Generation][Test-time alignment] Instead of modifying model weights or perturbing noise/latents, this method optimizes only the "null-text embedding" within Classifier-Free Guidance (CFG). This allows the diffusion model to align with target rewards during the inference phase. Since the text embedding space is a structured semantic manifold, this approach achieves SOTA rewards without "cheating" via non-semantic noise (reward hacking).
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Test-time alignment"
+  - "reward alignment"
+  - "null-text embedding"
+  - "Classifier-Free Guidance"
+  - "reward hacking"
 date: 2026-05-08
-content_hash: a4b24894e85e0a5c
+content_hash: 1739ce08449db27a
 ---
+
 # Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation
 
 **Conference**: CVPR 2026  
@@ -137,11 +142,11 @@ To reach an HPSv2 of 0.375, Null-TTA (8m40s) is more than twice as fast as the s
 
 ## Related Papers
 
+- [\[CVPR 2026\] NEAF: Natural Image Editing with Attention Fusion for Generalizable Test-time Optimization in Text-Guided Image Editing](neaf_natural_image_editing_with_attention_fusion_for_generalizable_test-time_opt.md)
 - [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
 - [\[CVPR 2026\] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)
 - [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)
 - [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 
 </div>
 

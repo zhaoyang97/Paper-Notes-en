@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Computable Universal Online Learning
 description: >-
-  [NeurIPS 2025][Other][universal online learning] This paper introduces computability constraints into the universal online learning framework…
+  [NeurIPS 2025][Other][universal online learning] This paper introduces computability constraints into the universal online learning framework, proving that "mathematically learnable" does not imply "learnable by a computer program," and provides precise characterizations of computable learning under both agnostic and proper variants.
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -13,7 +13,7 @@ tags:
   - "agnostic learning"
   - "proper learning"
 date: 2026-05-08
-content_hash: f96b004375b29bf5
+content_hash: c739f27ca911804d
 ---
 
 # Computable Universal Online Learning
@@ -133,9 +133,9 @@ The closure $\overline{\mathcal{H}}$ and its computability properties serve as t
 
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
+- [\[ICML 2025\] Avoiding Catastrophe in Online Learning by Asking for Help](../../ICML2025/learning_theory/avoiding_catastrophe_in_online_learning_by_asking_for_help.md)
 - [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
-- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
+- [\[ICLR 2026\] Online Decision-Focused Learning](../../ICLR2026/learning_theory/online_decision-focused_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][TDC] This paper establishes the stability and almost sure (a.s.) convergence of general two-timescale stochastic approximation (SA) under Markovian noise without relying on any projection operators. Consequently, it provides the first a.s. convergence result for the TDC($\lambda$) algorithm under off-policy linear function
+  [ICML 2026][Reinforcement Learning][Two-timescale] This paper establishes the stability and almost sure (a.s.) convergence of general two-timescale stochastic approximation (SA) under Markovian noise without relying on any projection operators. Consequently, it provides the first a.s. convergence result for the TDC($\lambda$) algorithm under off-policy linear function approximation.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - TDC
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Two-timescale"
+  - "Stochastic Approximation"
+  - "ODE method"
+  - "Markovian noise"
+  - "TDC"
 date: 2026-05-08
-content_hash: 34ef8cf354dbb92c
+content_hash: 4b85635dd1fa098f
 ---
+
 # Convergence of Two-Timescale Markovian Stochastic Approximations with Applications in Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -134,7 +139,7 @@ As a theoretical paper, there is no training. Key assumptions include: step size
 - [\[ICML 2026\] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games](revisiting_regularized_policy_optimization_for_stable_and_efficient_reinforcemen.md)
 - [\[ICML 2026\] Global Policy-Space Response Oracles for Two-Player Zero-Sum Games](global_policy-space_response_oracles_for_two-player_zero-sum_games.md)
 - [\[ICML 2026\] Convergence of Steepest Descent and Adam under Non-Uniform Smoothness](convergence_of_steepest_descent_and_adam_under_non-uniform_smoothness.md)
-- [\[NeurIPS 2025\] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/convergence_theorems_for_entropy-regularized_and_distributional_reinforcement_le.md)
+- [\[ICLR 2026\] The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning](../../ICLR2026/reinforcement_learning/the_markovian_thinker_architecture-agnostic_linear_scaling_of_reasoning.md)
 
 </div>
 

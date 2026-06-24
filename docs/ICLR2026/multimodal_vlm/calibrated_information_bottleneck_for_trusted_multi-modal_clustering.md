@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Calibrated Information Bottleneck for Trusted Multi-modal Clustering
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the heavy reliance of Information Bottleneck (IB) multi-modal clustering on "accurate mutual information estimation" and "clean pseudo-labels," this paper proposes CLIB. By using a parallel multi-head structure with "one main clustering head + multiple modal calibration heads," the model enables mutual error
+  [ICLR2026][Multimodal VLM][Information Bottleneck] Addressing the heavy reliance of Information Bottleneck (IB) multi-modal clustering on "accurate mutual information estimation" and "clean pseudo-labels," this paper proposes CLIB. By using a parallel multi-head structure with "one main clustering head + multiple modal calibration heads," the model enables mutual error correction between modalities. Combined with a dynamic pseudo-label filtering mechanism based on information…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Information Bottleneck"
+  - "Multi-modal Clustering"
+  - "Confidence Calibration"
+  - "Pseudo-label Filtering"
+  - "Trusted Clustering"
 date: 2026-05-08
-content_hash: 7388aef552fc2205
+content_hash: 9593d30053620f78
 ---
+
 # Calibrated Information Bottleneck for Trusted Multi-modal Clustering
 
 **Conference**: ICLR2026  
@@ -149,8 +155,8 @@ The ECE advantage is particularly striking: ECE on ESP-Game and MIRFlickr is mor
 - Value: ⭐⭐⭐⭐ Significant practical value for safety-critical unsupervised applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

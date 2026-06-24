@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] The EMMA benchmark is proposed to systematically evaluate concept erasure methods for T2I models across five dimensions (erasing ability, retaining ability, efficiency, quality, and bias) with 12 metrics. Covering 206 concept categories across 5 domains, it reveals for the first time the "shallow erasure" nature of exi
+  [CVPR 2026][Image Generation][Concept Erasure] The EMMA benchmark is proposed to systematically evaluate concept erasure methods for T2I models across five dimensions (erasing ability, retaining ability, efficiency, quality, and bias) with 12 metrics. Covering 206 concept categories across 5 domains, it reveals for the first time the "shallow erasure" nature of existing methods under implicit prompts and the issue of bias amplification.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-to-Image Generation"
+  - "Benchmark"
+  - "Implicit Prompt"
+  - "Bias Evaluation"
 date: 2026-05-08
-content_hash: 6cf4609eae57d9df
+content_hash: 4ec20b1d4d9612a0
 ---
+
 # EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories
 
 **Conference**: CVPR 2026  
@@ -127,7 +132,7 @@ EMMA is an evaluation benchmark and does not involve training. The five concept 
 ## Related Papers
 
 - [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](maproute_semantic_routing_concept_erasure.md)
-- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
 - [\[CVPR 2026\] RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark](realunify_do_unified_models_truly_benefit_from_unification_a_comprehensive_bench.md)

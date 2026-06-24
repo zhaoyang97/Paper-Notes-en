@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper proposes AGG-RL, which projects "Audio-Geometry Representations" and "Grid Representations" into a shared latent space and generates spatial spectra via inner product similarity. Combined with two physical prior components (Learnable Non-uniform DFT and Relative Microphone Position Encoding), it achieves **u
+  [ICLR 2026][Audio & Speech][Sound Source Localization] This paper proposes AGG-RL, which projects "Audio-Geometry Representations" and "Grid Representations" into a shared latent space and generates spatial spectra via inner product similarity. Combined with two physical prior components (Learnable Non-uniform DFT and Relative Microphone Position Encoding), it achieves **universal sound source localization without retraining for any array geometry or DOA grid**…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Sound Source Localization"
+  - "Representation Learning"
+  - "Physical Priors"
+  - "Microphone Array"
+  - "Geometry Invariant"
 date: 2026-05-08
-content_hash: cdf99cf630b38dc3
+content_hash: cf24c78efd3fbfab
 ---
+
 # Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization
 
 **Conference**: ICLR 2026  

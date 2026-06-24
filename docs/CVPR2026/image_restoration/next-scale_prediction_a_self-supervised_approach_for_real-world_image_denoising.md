@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Inspired by "Next-Scale Prediction" in visual autoregression, NSP allows a Blind-Spot Network (BSN) to take **low-resolution, decorrelated** sub-images (derived from a large downsampling factor) as input to predict **high-resolution, detail-preserving** targets (corresponding to a small downsampling factor). This decou
+  [CVPR 2026][Image Restoration][Self-Supervised Denoising] Inspired by "Next-Scale Prediction" in visual autoregression, NSP allows a Blind-Spot Network (BSN) to take **low-resolution, decorrelated** sub-images (derived from a large downsampling factor) as input to predict **high-resolution, detail-preserving** targets (corresponding to a small downsampling factor). This decouples "noise decorrelation" and "detail preservation"—two traditionally conflicting objectives—across d…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Self-Supervised Denoising"
+  - "Blind-Spot Network"
+  - "Pixel-shuffle Downsampling"
+  - "Cross-scale Training Pairs"
+  - "Real-world Noise"
 date: 2026-05-08
-content_hash: 9c6a75b5c068c6c7
+content_hash: 20f880598d64857f
 ---
+
 # Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising
 
 **Conference**: CVPR 2026  
@@ -124,14 +130,15 @@ Analysis of target construction strategy, number of targets $n$, and upsampling 
 - Value: ⭐⭐⭐⭐ Self-supervised SOTA on real denoising with free SR potential.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
 - [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
-- [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
 - [\[ECCV 2024\] Asymmetric Mask Scheme for Self-supervised Real Image Denoising](../../ECCV2024/image_restoration/asymmetric_mask_scheme_for_self-supervised_real_image_denoising.md)
+- [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
 - [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
 
 </div>

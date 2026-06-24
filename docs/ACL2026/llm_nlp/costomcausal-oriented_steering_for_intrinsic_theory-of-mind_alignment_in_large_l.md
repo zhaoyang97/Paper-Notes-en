@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] The authors propose the CoSToM framework, which first uses causal tracing to locate key layers encoding Theory of Mind (ToM) features within LLMs (finding they reside primarily in early layers), and then performs lightweight alignment via activation steering on these layers. This significantly improves the quality of s
+  [ACL 2026][LLM (Other)][Theory of Mind] The authors propose the CoSToM framework, which first uses causal tracing to locate key layers encoding Theory of Mind (ToM) features within LLMs (finding they reside primarily in early layers), and then performs lightweight alignment via activation steering on these layers. This significantly improves the quality of social reasoning in negotiation and persuasion dialogues—shifting the model from "knowing but not applying" to "knowing a…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Theory of Mind"
+  - "Causal Tracing"
+  - "Activation Steering"
+  - "Dialogue Systems"
+  - "Social Reasoning"
 date: 2026-05-08
-content_hash: 7530b6681151bc8f
+content_hash: 08ec14127c4dbeba
 ---
+
 # CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models
 
 **Conference**: ACL 2026  
@@ -135,10 +141,10 @@ In a negotiation scenario where "the user actually wants firewood": during the i
 ## Related Papers
 
 - [\[ACL 2025\] Theory of Mind in Large Language Models: Assessment and Enhancement](../../ACL2025/llm_nlp/theory_of_mind_llm.md)
+- [\[ICML 2026\] Creative Collision: Directorial Persona Steering and Competition in Large Language Models](../../ICML2026/llm_nlp/creative_collision_directorial_persona_steering_and_competition_in_large_languag.md)
+- [\[ACL 2026\] SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities](how_controllable_are_large_language_models_a_unified_evaluation_across_behaviora.md)
 - [\[ACL 2026\] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models](mind_the_gap_how_elicitation_protocols_shape_the_stated-revealed_preference_gap_.md)
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
-- [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
 
 </div>
 

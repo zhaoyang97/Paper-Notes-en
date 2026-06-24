@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Closed-Form Concept Erasure via Double Projections
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] This paper proposes Double Projections (DP), which reformulates "concept erasure" for diffusion/flow-matching models into a two-step closed-form projection. It first projects target concepts into a "safe subspace" to obtain proxy vectors, and then constrains weight updates within the left null-space of preserved concep
+  [CVPR 2026][Image Generation][Concept Erasure] This paper proposes Double Projections (DP), which reformulates "concept erasure" for diffusion/flow-matching models into a two-step closed-form projection. It first projects target concepts into a "safe subspace" to obtain proxy vectors, and then constrains weight updates within the left null-space of preserved concepts. This achieves clean erasure of target concepts with near-zero damage to unrelated concepts in seconds without…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "Closed-Form Solution"
+  - "Null-Space Projection"
+  - "Model Editing"
 date: 2026-05-08
-content_hash: bc4f9b65b14ad580
+content_hash: a8b2c1fbc6bef444
 ---
+
 # Closed-Form Concept Erasure via Double Projections
 
 **Conference**: CVPR 2026  

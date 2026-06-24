@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Segment, Embed, and Align: A Universal Recipe for Aligning Subtitles to Signing
 description: >-
-  [ACL 2026][Multimodal VLM][SignCLIP] SEA decomposes continuous sign language video subtitle alignment into sign segmentation, text-sign embedding, and episode-level dynamic programming. It achieves SOTA F1@0.50 on BOBSL, How2Sign, WMT-SLT SRF, and SwissSLi datasets, and can efficiently process long videos on CPUs.
+  [ACL2026][Multimodal VLM][Sign-subtitle alignment] SEA decomposes continuous sign language video subtitle alignment into sign segmentation, text-sign embedding, and episode-level dynamic programming. It achieves SOTA F1@0.50 on BOBSL, How2Sign, WMT-SLT SRF, and SwissSLi datasets, and can efficiently process long videos on CPUs.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - SignCLIP
-  - subtitle alignment
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Sign-subtitle alignment"
+  - "SignCLIP"
+  - "Dynamic Programming"
+  - "Cross-lingual Transfer"
+  - "subtitle alignment"
 date: 2026-05-08
-content_hash: 573817dff654a59a
+content_hash: fdfcd38a87e55aec
 ---
+
 # Segment, Embed, and Align: A Universal Recipe for Aligning Subtitles to Signing
 
 **Conference**: ACL2026  
@@ -142,10 +146,10 @@ Ablations show that segmentation "boundary detection scores" do not equate to al
 ## Related Papers
 
 - [\[AAAI 2026\] To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](../../AAAI2026/multimodal_vlm/to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)
+- [\[ICML 2026\] VLANeXt: A Recipe for Building Robust VLA Models](../../ICML2026/multimodal_vlm/vlanext_recipes_for_building_strong_vla_models.md)
 - [\[ACL 2026\] Aligned Multi-View Scripts for Universal Chart-to-Code Generation](aligned_multi-view_scripts_for_universal_chart-to-code_generation.md)
 - [\[CVPR 2026\] Illuminating Visual Identity in Universal Multimodal Embeddings](../../CVPR2026/multimodal_vlm/illuminating_visual_identity_in_universal_multimodal_embeddings.md)
-- [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](../../CVPR2026/multimodal_vlm/orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
-- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](../../CVPR2026/multimodal_vlm/cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[ICML 2026\] Universal Skeleton Understanding: Differentiable Rendering and MLLMs](../../ICML2026/multimodal_vlm/universal_skeleton_understanding_via_differentiable_rendering_and_mllms.md)
 
 </div>
 

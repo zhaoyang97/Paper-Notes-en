@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection
 description: >-
-  [NeurIPS 2025][Object Detection][Multivariate time series] This paper proposes OracleAD, a framework that learns causal embeddings for each variable (via LSTM encoding and attention pooling) and constructs a Stable Laten…
+  [NeurIPS 2025][Object Detection][Multivariate time series] This paper proposes OracleAD, a framework that learns causal embeddings for each variable (via LSTM encoding and attention pooling) and constructs a Stable Latent Structure (SLS) to model inter-variable relationships under normal conditions. A dual scoring mechanism combining prediction error and SLS deviation enables interpretable multivariate time series anomaly detection and root cause localization.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -14,7 +14,7 @@ tags:
   - "LSTM"
   - "self-attention"
 date: 2026-05-08
-content_hash: a157d04ce306ad66
+content_hash: 0411dd41c82e7c23
 ---
 
 # Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection
@@ -167,11 +167,11 @@ OracleAD F1 gains: PSM +19.95 pp, SMD +10.87 pp, SWaT +0.9 pp. VUS-PR gains: PSM
 
 ## Related Papers
 
+- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
 - [\[NeurIPS 2025\] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)
-- [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/object_detection/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
-- [\[NeurIPS 2025\] Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection](spatio-temporal_graphs_beyond_grids_benchmark_for_maritime_anomaly_detection.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] PGRF-Net: A Prototype-Guided Relational Fusion Network for Diagnostic Multivariate Time-Series Anomaly Detection](../../ICLR2026/object_detection/pgrf-net_a_prototype-guided_relational_fusion_network_for_diagnostic_multivariat.md)
+- [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
+- [\[NeurIPS 2025\] EPHAD: An Evidence-Based Post-Hoc Adjustment Framework for Anomaly Detection Under Data Contamination](an_evidence-based_post-hoc_adjustment_framework_for_anomaly_detection_under_data.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Failure Detection] This paper extends confidence estimation to multi-step tasks, demonstrating that step-level evaluation detects reasoning failures more effectively than response-level eval…
+  [NeurIPS 2025][Reasoning][Failure Detection] This paper extends confidence estimation to multi-step tasks, demonstrating that step-level evaluation detects reasoning failures more effectively than response-level evaluation, achieving a 15% relative AUC-ROC improvement over holistic evaluation on CoQA, and providing a practical framework for trustworthy deployment of multi-step reasoning systems.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Failure Detection"
   - "Step-Level Evaluation"
   - "Self-Teaching"
   - "Multi-Hop Reasoning"
   - "Confidence Estimation"
 date: 2026-05-08
-content_hash: 2831eff685b823ba
+content_hash: 3ad3c79006b5634e
 ---
 
 # Note 6: Self-Evaluating LLMs - Step-Level Confidence Estimation for Multi-Step Tasks
@@ -128,10 +128,10 @@ At inference time, gold references are unavailable; the method relies entirely o
 ## Related Papers
 
 - [\[NeurIPS 2025\] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context](self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
-- [\[NeurIPS 2025\] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](time_a_multilevel_benchmark_for_temporal_reasoning_of_llms_i.md)
 - [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](../../ICML2026/llm_reasoning/diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
 - [\[NeurIPS 2025\] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics](realmath_a_continuous_benchmark_for_evaluating_language_models_on_research-level.md)
-- [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
+- [\[ACL 2025\] Entropy-based Exploration Conduction for Multi-step Reasoning](../../ACL2025/llm_reasoning/entropy-based_exploration_conduction_for_multi-step_reasoning.md)
+- [\[ICLR 2026\] TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks](../../ICLR2026/llm_reasoning/trim_hybrid_inference_via_targeted_stepwise_routing_in_multi-step_reasoning_task.md)
 
 </div>
 

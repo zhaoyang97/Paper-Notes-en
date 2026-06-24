@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning GUI Grounding with Spatial Reasoning from Visual Feedback
 description: >-
-  [ICML 2026][vlm_reasoning][GUI grounding] Gui-Cursor reformulates GUI grounding from "one-shot coordinate prediction" into an interactive search of "moving the cursor on the screen to find the target." By training the VLM with GRPO using a dense reward with trajectory penalties, the model leverages visual feedback from rendered cursors to align numerical coord
+  [ICML 2026][VLM Reasoning][GUI grounding] Gui-Cursor reformulates GUI grounding from "one-shot coordinate prediction" into an interactive search of "moving the cursor on the screen to find the target." By training the VLM with GRPO using a dense reward with trajectory penalties, the model leverages visual feedback from rendered cursors to align numerical coordinates with screen positions. With only 8K samples, it improves GTA1's performance on ScreenSpot-Pro from 50.1% to 58.…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - GUI grounding
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "GUI grounding"
+  - "virtual cursor"
+  - "visual feedback"
+  - "GRPO"
+  - "spatial reasoning"
 date: 2026-05-08
-content_hash: 6a137caf4a1294c1
+content_hash: f9bd981c09c9fd68
 ---
+
 # Learning GUI Grounding with Spatial Reasoning from Visual Feedback
 
 **Conference**: ICML 2026  
@@ -134,15 +138,15 @@ GRPO optimizes $R_T$ + format rewards. 12 trajectories are sampled per instructi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](../../ICLR2026/vlm_reasoning/stvg-r1_incentivizing_instance-level_reasoning_and_grounding_in_videos_via_reinf.md)
+- [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](../../ACL2026/vlm_reasoning/arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
+- [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/vlm_reasoning/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
 - [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 - [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
-- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
-- [\[NeurIPS 2025\] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation](../../NeurIPS2025/vlm_reasoning/gui-rise_structured_reasoning_and_history_summarization_for_gui_navigation.md)
-- [\[ICML 2026\] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning](ivgr_internalizing_visually_grounded_reasoning_for_mllms_with_reinforcement_lear.md)
 
 </div>
 

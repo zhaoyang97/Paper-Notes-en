@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MPL: Match-guided Prototype Learning for Few-shot Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the issue where prototype learning and video matching operate independently and incompatibly in few-shot action recognition, MPL utilizes matching results as guidance signals for prototype construction. By sequentially applying sample-level E-Match for query-semantic enhancement, cross-sample attention for s
+  [CVPR 2026][Video Understanding][Few-shot action recognition] Addressing the issue where prototype learning and video matching operate independently and incompatibly in few-shot action recognition, MPL utilizes matching results as guidance signals for prototype construction. By sequentially applying sample-level E-Match for query-semantic enhancement, cross-sample attention for shared action pattern aggregation, and frame-level K-Match for refinement…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Few-shot action recognition"
+  - "prototype learning"
+  - "video matching"
+  - "cross-sample attention"
+  - "keyframes"
 date: 2026-05-08
-content_hash: ad8195d9cb95a0f2
+content_hash: 04e00432add1d199
 ---
+
 # MPL: Match-guided Prototype Learning for Few-shot Action Recognition
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Using ResNet-50, MPL achieves state-of-the-art across most settings: UCF101 1-sh
 
 ## Related Papers
 
-- [\[CVPR 2026\] Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition](protect_to_adapt_orthogonal_subspace_control_with_ranked_negative-prompt_curricu.md)
+- [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](../../ICCV2025/video_understanding/beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 - [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](../../AAAI2026/video_understanding/task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
 - [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
-- [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](../../ICCV2025/video_understanding/beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 - [\[CVPR 2025\] Temporal Alignment-Free Video Matching for Few-Shot Action Recognition](../../CVPR2025/video_understanding/temporal_alignment-free_video_matching_for_few-shot_action_recognition.md)
+- [\[ECCV 2024\] Efficient Few-Shot Action Recognition via Multi-Level Post-Reasoning](../../ECCV2024/video_understanding/efficient_few-shot_action_recognition_via_multi-level_post-reasoning.md)
 
 </div>
 

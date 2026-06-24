@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How Do LLMs and VLMs Understand Viewpoint Rotation Without Vision? An Interpretability Study
 description: >-
-  [ACL 2026][Multimodal VLM][probing] This paper introduces VRUBench, a textual viewpoint rotation understanding (VRU) benchmark. Using layer-wise probing and head-wise path patching, it reveals that the near-random performance of LLMs/VLMs on this task stems from the failure of critical heads in mid-to-late layers to bind "perceived orientation" with "cor
+  [ACL 2026][Multimodal VLM][Viewpoint Rotation Understanding] This paper introduces VRUBench, a textual viewpoint rotation understanding (VRU) benchmark. Using layer-wise probing and head-wise path patching, it reveals that the near-random performance of LLMs/VLMs on this task stems from the failure of critical heads in mid-to-late layers to bind "perceived orientation" with "corresponding observations." By fine-tuning only 32 key heads, the authors achieve performance compara…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - probing
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Viewpoint Rotation Understanding"
+  - "Path Patching"
+  - "Probing"
+  - "Attention Heads"
+  - "Selective Fine-tuning"
 date: 2026-05-08
-content_hash: 15599a64dbdfa06f
+content_hash: 46b9d1e23a685070
 ---
+
 # How Do LLMs and VLMs Understand Viewpoint Rotation Without Vision? An Interpretability Study
 
 **Conference**: ACL 2026  
@@ -131,10 +136,10 @@ Standard Cross-Entropy SFT with Adam, lr $2 \times 10^{-5}$, batch size 32, warm
 ## Related Papers
 
 - [\[ICLR 2026\] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](../../ICLR2026/multimodal_vlm/how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)
+- [\[ICLR 2026\] CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?](../../ICLR2026/multimodal_vlm/cityseeker_how_do_vlms_explore_embodied_urban_navigation_with_implicit_human_nee.md)
 - [\[CVPR 2025\] Vision-Language Models Do Not Understand Negation](../../CVPR2025/multimodal_vlm/vision-language_models_do_not_understand_negation.md)
 - [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
 - [\[ICML 2025\] Do Vision-Language Models Really Understand Visual Language?](../../ICML2025/multimodal_vlm/do_vision-language_models_really_understand_visual_language.md)
-- [\[ACL 2026\] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?](i_see_what_you_did_there_can_large_vision-language_models_understand_multimodal_.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RIDER: 3D RNA Inverse Design with Reinforcement Learning-Guided Diffusion
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] The RIDER framework is proposed, marking the first introduction of reinforcement learning into RNA 3D inverse design. It first pre-trains a conditional diffusion model, RIDE, to learn sequence-structure relationships, and then fine-tunes it using RL to directly optimize 3D structural similarity rather than Native Seque
+  [ICLR 2026][Image Generation][RNA Inverse Design] The RIDER framework is proposed, marking the first introduction of reinforcement learning into RNA 3D inverse design. It first pre-trains a conditional diffusion model, RIDE, to learn sequence-structure relationships, and then fine-tunes it using RL to directly optimize 3D structural similarity rather than Native Sequence Recovery (NSR), achieving over 100% improvement across all 3D self-consistency metrics.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - DDPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "RNA Inverse Design"
+  - "3D Structural Similarity"
+  - "Diffusion Models"
+  - "Reinforcement Learning Fine-tuning"
+  - "DDPO"
 date: 2026-05-08
-content_hash: bafe3706d3652f18
+content_hash: d02e00ae561623a5
 ---
+
 # RIDER: 3D RNA Inverse Design with Reinforcement Learning-Guided Diffusion
 
 **Conference**: ICLR 2026  
@@ -123,10 +127,17 @@ Percentages represent the proportion exceeding the design threshold. RIDER achie
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
+- [\[AAAI 2026\] Structure-based RNA Design by Step-wise Optimization of Latent Diffusion Model](../../AAAI2026/image_generation/structure-based_rna_design_by_step-wise_optimization_of_latent_diffusion_model.md)
+- [\[ICLR 2026\] Learning AND-OR Templates for Compositional Representation in Art and Design](learning_andor_templates_for_compositional_representation_in_art_and_design.md)
+- [\[CVPR 2026\] Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning](../../CVPR2026/image_generation/refining_few-step_text-to-multiview_diffusion_via_reinforcement_learning.md)
+- [\[ICML 2025\] Hierarchical Reinforcement Learning with Uncertainty-Guided Diffusional Subgoals](../../ICML2025/image_generation/hierarchical_reinforcement_learning_with_uncertainty-guided_diffusional_subgoals.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] The authors systematically analyze the impact of image compression distortion on Multimodal Large Language Models (MLLMs), identifying "cross-level features" as the most vulnerable. Consequently, they propose CoTAM, an image codec tailored for MLLMs. It utilizes shallow CLIP attention for semantic rate allocation at th
+  [ICLR 2026][Multimodal VLM][MLLM Image Coding] The authors systematically analyze the impact of image compression distortion on Multimodal Large Language Models (MLLMs), identifying "cross-level features" as the most vulnerable. Consequently, they propose CoTAM, an image codec tailored for MLLMs. It utilizes shallow CLIP attention for semantic rate allocation at the encoder and preserves multi-level information via a reconstruction prior, adapters…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM Image Coding"
+  - "Compression Distortion"
+  - "Rate Allocation"
+  - "CLIP Semantic Prior"
+  - "Cross-level Features"
 date: 2026-05-08
-content_hash: 69ed9ab05c8a5f19
+content_hash: a9c195f4b67b815c
 ---
+
 # When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ Universality is verified using two learned compression models, ELIC and DCAE, as
 - [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
 - [\[AAAI 2026\] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?](../../AAAI2026/multimodal_vlm/when_eyes_and_ears_disagree_can_mllms_discern_audio-visual_confusion.md)
 - [\[ICLR 2026\] EventFlash: Towards Efficient MLLMs for Event-Based Vision](eventflash_towards_efficient_mllms_for_event-based_vision.md)
+- [\[CVPR 2026\] Where Does Vision Meet Language? Understanding and Refining Visual Fusion in MLLMs via Contrastive Attention](../../CVPR2026/multimodal_vlm/where_does_vision_meet_language_understanding_and_refining_visual_fusion_in_mllm.md)
 - [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
-- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
 
 </div>
 

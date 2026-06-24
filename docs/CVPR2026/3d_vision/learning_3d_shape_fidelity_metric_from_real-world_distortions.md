@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning 3D Shape Fidelity Metric from Real-world Distortions
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes LoCaSE, a learnable 3D shape fidelity metric. It captures details using local attention on mesh topology and mitigates model bias through LoRA-style pre-training and fine-tuning. Accompanied by the RSF dataset featuring real-world distortions and human annotations, the metric aligns significantly cl
+  [CVPR 2026][3D Vision][Shape fidelity] This paper proposes LoCaSE, a learnable 3D shape fidelity metric. It captures details using local attention on mesh topology and mitigates model bias through LoRA-style pre-training and fine-tuning. Accompanied by the RSF dataset featuring real-world distortions and human annotations, the metric aligns significantly closer to human perception than geometric metrics like Chamfer Distance.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Shape fidelity"
+  - "perceptual metric"
+  - "mesh local connection"
+  - "LoRA fine-tuning"
+  - "human-annotated dataset"
 date: 2026-05-08
-content_hash: c60ce61cf25a1e60
+content_hash: 938729d56077f332
 ---
+
 # Learning 3D Shape Fidelity Metric from Real-world Distortions
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Most traditional metrics show negative correlations during cross-domain evaluati
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
 - [\[CVPR 2026\] AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)
-- [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] X-Part: High Fidelity And Structure Coherent Shape Decomposition And Completion](x-part_high_fidelity_and_structure_coherent_shape_decomposition_and_completion.md)
+- [\[CVPR 2026\] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects](ictpolarreal_a_polarized_reflection_and_material_dataset_of_real_world_objects.md)
+- [\[CVPR 2026\] UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](unitex_universal_high_fidelity_generative_texturing_for_3d_shapes.md)
 
 </div>
 

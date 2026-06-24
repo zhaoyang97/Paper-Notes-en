@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
 description: >-
-  [ICLR 2026][Model Compression][LoRA] Ours proposes ABBA-Adapters, which parameterize weight updates as the Hadamard product of two independent learnable low-rank matrices $\Delta W = s(B_1A_1) \odot (B_2A_2)$. This achieves an effective rank significantly higher than LoRA ($r_1 \cdot r_2$ vs. $r$) under the same parameter budget. Through Khatri-Rao recons
+  [ICLR 2026][Model Compression][Parameter-efficient fine-tuning] Ours proposes ABBA-Adapters, which parameterize weight updates as the Hadamard product of two independent learnable low-rank matrices $\Delta W = s(B_1A_1) \odot (B_2A_2)$. This achieves an effective rank significantly higher than LoRA ($r_1 \cdot r_2$ vs. $r$) under the same parameter budget. Through Khatri-Rao reconstruction, it maintains memory efficiency comparable to LoRA and significantly outperforms existi…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Parameter-efficient fine-tuning"
+  - "LoRA"
+  - "Hadamard product"
+  - "low-rank adaptation"
+  - "Khatri-Rao decomposition"
 date: 2026-05-08
-content_hash: 548fd01489429521
+content_hash: c4c99098ea109f14
 ---
+
 # ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
 
 **Conference**: ICLR 2026  
@@ -131,15 +136,14 @@ Standard fine-tuning loss is used. Training hyperparameters are identical to LoR
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
 - [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
 - [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](../../CVPR2026/model_compression/mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
-- [\[ICLR 2026\] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis](sumra_parameter_efficient_fine-tuning_with_singular_value_decomposition_and_summ.md)
-- [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
+- [\[ICLR 2026\] Expressive yet Efficient Feature Expansion with Adaptive Cross-Hadamard Products](expressive_yet_efficient_feature_expansion_with_adaptive_cross-hadamard_products.md)
 
 </div>
 

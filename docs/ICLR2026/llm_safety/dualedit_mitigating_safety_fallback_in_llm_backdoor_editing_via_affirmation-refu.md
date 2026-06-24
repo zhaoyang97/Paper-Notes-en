@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] DualEdit identifies that backdoor attacks based on model editing are often pulled back to refusal by safety alignment mid-generation (safety fallback). It remodels backdoor activation as dual-objective editing that simultaneously "boosts affirmation tokens and suppresses refusal tokens," employing dynamic loss weightin
+  [ICLR 2026][LLM Safety][Backdoor attack] DualEdit identifies that backdoor attacks based on model editing are often pulled back to refusal by safety alignment mid-generation (safety fallback). It remodels backdoor activation as dual-objective editing that simultaneously "boosts affirmation tokens and suppresses refusal tokens," employing dynamic loss weighting and value anchoring to stabilize optimization. It improves the attack success rate by approximately 10% and reduces t…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Backdoor attack"
+  - "Model editing"
+  - "Safety alignment"
+  - "Safety fallback"
+  - "Dual-objective optimization"
 date: 2026-05-08
-content_hash: 9abad3a27508e976
+content_hash: 343964de91432ed1
 ---
+
 # DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation
 
 **Conference**: ICLR 2026  
@@ -138,15 +144,16 @@ Overall, compared to the strongest baselines, DualEdit's average ASRw increased 
 - Value: ⭐⭐⭐⭐ Significant insights for red-teaming and alignment robustness research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
-- [\[ICLR 2026\] Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement](discern_truth_from_falsehood_reducing_over-refusal_via_contrastive_refinement.md)
-- [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](../../ACL2026/llm_safety/please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
 - [\[ACL 2025\] MEGen: Generative Backdoor into Large Language Models via Model Editing](../../ACL2025/llm_safety/megen_generative_backdoor_into_large_language_models_via_model_editing.md)
-- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
+- [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](../../ACL2026/llm_safety/please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
+- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
+- [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][in-context learning] For zero-shot robotic manipulation transferring from trained tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as intermediate representations. They utilize a dual-library (dynamic library retrieving by visual/planning similarity + static library completing missing skill
+  [ICML 2026][Robotics][Atomic Skills] For zero-shot robotic manipulation transferring from trained tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as intermediate representations. They utilize a dual-library (dynamic library retrieving by visual/planning similarity + static library completing missing skill tokens via IDF weighting) to provide LLMs with skill-comprehensive in-context demonstrations…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - in-context learning
+  - "ICML 2026"
+  - "Robotics"
+  - "Atomic Skills"
+  - "In-Context Learning"
+  - "Zero-Shot Cross-Task"
+  - "Dynamic/Static Dual-Library"
+  - "Skill Coverage"
 date: 2026-05-08
-content_hash: 1264aeb258fc2b6e
+content_hash: f3790d7bb68a00cc
 ---
+
 # Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation
 
 **Conference**: ICML 2026  
@@ -143,10 +148,10 @@ Overall conclusion: On 23 unseen tasks (13 Level-1 + 10 Level-2), Ours shows com
 ## Related Papers
 
 - [\[ICML 2026\] TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation](tapsampling_inference-time_sampling_with_a_task-progress-understanding_verifier_.md)
+- [\[ICLR 2026\] From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation](../../ICLR2026/robotics/from_seeing_to_doing_bridging_reasoning_and_decision_for_robotic_manipulation.md)
+- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](../../ICLR2026/robotics/equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
+- [\[ICLR 2026\] Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation](../../ICLR2026/robotics/embodied-r1_reinforced_embodied_reasoning_for_general_robotic_manipulation.md)
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](../../CVPR2026/robotics/action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](../../CVPR2026/robotics/learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
-- [\[CVPR 2026\] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning](../../CVPR2026/robotics/cross-domain_demo-to-code_via_neurosymbolic_counterfactual_reasoning.md)
-- [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](../../CVPR2026/robotics/obstruction_reasoning_for_robotic_grasping.md)
 
 </div>
 

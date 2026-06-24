@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper points out that the "narrative flow imitation" paradigm in report generation causes VLMs to over-rely on language priors and weakens visual grounding. The authors propose LLaVA-TA: decomposing the report into independent topics organized by anatomical regions, where each topic generates a single finding sent
+  [ICLR 2026][Medical Imaging][Radiology Report Generation] This paper points out that the "narrative flow imitation" paradigm in report generation causes VLMs to over-rely on language priors and weakens visual grounding. The authors propose LLaVA-TA: decomposing the report into independent topics organized by anatomical regions, where each topic generates a single finding sentence based on the full image and a corresponding anatomical mask. This approach significantly improves…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Radiology Report Generation"
+  - "Visual Grounding"
+  - "Topic Decomposition"
+  - "Anatomical Segmentation"
+  - "Hallucination Suppression"
 date: 2026-05-08
-content_hash: dcad70cc4941dbb2
+content_hash: a346aa5c7fc0fc22
 ---
+
 # Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings
 
 **Conference**: ICLR 2026  
@@ -122,14 +128,14 @@ In the PEFT setting (only training MLP, freezing vision encoder and LLM), differ
 - Value: ⭐⭐⭐⭐ The approach of restructuring supervision granularity instead of scaling parameters offers strong lessons for medical VLMs and structured fact generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](../../CVPR2026/medical_imaging/cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](../../CVPR2026/medical_imaging/biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
-- [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](../../CVPR2026/medical_imaging/cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](../../CVPR2026/medical_imaging/sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
 - [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](../../CVPR2026/medical_imaging/orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
 

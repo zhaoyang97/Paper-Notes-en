@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Addressing the ill-posed nature of single-frame RGB deblurring and the issues of saturation and edge/motion entanglement in event cameras, this paper utilizes the high-frame-rate Spatial Difference (SD, encoding structural edges) and Temporal Difference (TD, encoding motion) captured synchronously by the Tianmouc Compl
+  [CVPR 2026][Image Restoration][Motion deblurring] Addressing the ill-posed nature of single-frame RGB deblurring and the issues of saturation and edge/motion entanglement in event cameras, this paper utilizes the high-frame-rate Spatial Difference (SD, encoding structural edges) and Temporal Difference (TD, encoding motion) captured synchronously by the Tianmouc Complementary Vision Sensor (CVS) within a single RGB exposure. The authors design STGDNet…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Motion deblurring"
+  - "Complementary Vision Sensor"
+  - "Spatio-temporal difference"
+  - "Recursive refinement"
+  - "Cross-modal attention fusion"
 date: 2026-05-08
-content_hash: e9ddc4bc16444afa
+content_hash: 6821a6c23263b39d
 ---
+
 # Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor
 
 **Conference**: CVPR 2026  
@@ -131,10 +137,10 @@ Breakdown on the N=11 test set:
 ## Related Papers
 
 - [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](motionaware_animatable_gaussian_avatars_deblurring.md)
+- [\[CVPR 2026\] OMoBlur: An Object Motion Blur Dataset and Benchmark for Real-World Local Motion Deblurring](omoblur_an_object_motion_blur_dataset_and_benchmark_for_real-world_local_motion_.md)
 - [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
-- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
-- [\[CVPR 2026\] Gyro-based Deep Video Deblurring](gyro-based_deep_video_deblurring.md)
+- [\[ICLR 2026\] FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring](../../ICLR2026/image_restoration/fidediff_efficient_diffusion_model_for_high-fidelity_image_motion_deblurring.md)
+- [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
 
 </div>
 

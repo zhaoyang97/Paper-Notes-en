@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 description: >-
-  [ACL 2026][LLM Agent][GUI Agent] This paper proposes the LAMO framework, which trains a lightweight 3B MLLM into a GUI Agent capable of flexible multi-role orchestration through role-oriented data synthesis and two-stage training (SFT with Perplexity-Weighted Cross-Entropy + Multi-task RL). Operating in three modes—monolithic inference, multi-agent co
+  [ACL 2026 Findings][LLM Agent][GUI Agent] This paper proposes the LAMO framework, which trains a lightweight 3B MLLM into a GUI Agent capable of flexible multi-role orchestration through role-oriented data synthesis and two-stage training (SFT with Perplexity-Weighted Cross-Entropy + Multi-task RL). Operating in three modes—monolithic inference, multi-agent collaboration, and plug-and-play policy executor——it achieves a 77.6% success rate on AndroidWorld when paired with a GP…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GUI Agent
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Lightweight Model"
+  - "Multi-role Orchestration"
+  - "Policy Executor"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 2a30bad4de0583e9
+content_hash: 258676b00603ae6a
 ---
+
 # Towards Scalable Lightweight GUI Agents via Multi-role Orchestration
 
 **Conference**: ACL 2026 Findings  
@@ -172,10 +176,10 @@ SFT Stage: 1 epoch, learning rate 4e-6, warmup ratio 0.03, global batch size 256
 ## Related Papers
 
 - [\[ICML 2026\] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration](../../ICML2026/llm_agent/naviagent_graph-driven_bilevel_planning_for_scalable_tool_orchestration.md)
-- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](../../CVPR2026/llm_agent/mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
 - [\[CVPR 2026\] iSHIFT: Lightweight Slow-Fast GUI Agent with Adaptive Perception](../../CVPR2026/llm_agent/ishift_lightweight_slow-fast_gui_agent_with_adaptive_perception.md)
-- [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
+- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](../../CVPR2026/llm_agent/mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
 
 </div>
 

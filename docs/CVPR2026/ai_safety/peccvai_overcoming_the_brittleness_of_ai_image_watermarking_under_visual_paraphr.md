@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PECCAVI: Overcoming the Brittleness of AI Image Watermarking Under Visual Paraphrasing Attacks
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper first proposes a "Visual Paraphrasing Attack" (VPA) that can easily remove existing AI image watermarks (by captioning the image and then using a diffusion model to redraw it based on the text, creating a semantically identical but watermark-free image). It then designs PECCAVI, which embeds multi-channel wa
+  [CVPR 2026][AI Safety][AI Image Watermarking] This paper first proposes a "Visual Paraphrasing Attack" (VPA) that can easily remove existing AI image watermarks (by captioning the image and then using a diffusion model to redraw it based on the text, creating a semantically identical but watermark-free image). It then designs PECCAVI, which embeds multi-channel watermarks into the frequency domain of "Non-Melting Points" (NMP)—saliency regions that remain stable after paraphr…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "AI Image Watermarking"
+  - "Visual Paraphrasing Attack"
+  - "Frequency Domain Watermarking"
+  - "Robustness"
+  - "Generative Content Provenance"
 date: 2026-05-08
-content_hash: 5bbc8343d00f1853
+content_hash: 5c72764fcb235aca
 ---
+
 # PECCAVI: Overcoming the Brittleness of AI Image Watermarking Under Visual Paraphrasing Attacks
 
 **Conference**: CVPR 2026  
@@ -126,6 +132,7 @@ Comparison of three saliency backends (Vanilla IG / MSI-Net / XRAI) and three pa
 - Value: ⭐⭐⭐⭐⭐ Highly relevant given AI regulatory legislation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -134,7 +141,7 @@ Comparison of three saliency backends (Vanilla IG / MSI-Net / XRAI) and three pa
 - [\[CVPR 2026\] Detect Any AI-Counterfeited Text Image](detect_any_ai-counterfeited_text_image.md)
 - [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
 - [\[ACL 2025\] WET: Overcoming Paraphrasing Vulnerabilities in Embeddings-as-a-Service with Linear Transformation Watermark](../../ACL2025/ai_safety/wet_eaas_watermark.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
+- [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
 
 </div>
 

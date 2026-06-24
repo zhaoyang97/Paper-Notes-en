@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction
 description: >-
-  [ICLR 2026][Computational Biology][AlphaFold 3] This paper transforms the AlphaFold 3 architecture from "generative structure prediction" into a "representation learner," proposing the All-atom Diffusion Transformer (ADiT). By utilizing unified tokenization to encode both proteins and small molecules, removing the heavy conditional trunk and MSA/template dependencie
+  [ICLR 2026][Computational Biology][Binding Affinity] This paper transforms the AlphaFold 3 architecture from "generative structure prediction" into a "representation learner," proposing the All-atom Diffusion Transformer (ADiT). By utilizing unified tokenization to encode both proteins and small molecules, removing the heavy conditional trunk and MSA/template dependencies, and performing denoising pre-training on PDB, a single model achieves or approaches SOTA across four typ…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - AlphaFold 3
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Binding Affinity"
+  - "AlphaFold 3"
+  - "Diffusion Transformer"
+  - "All-atom Modeling"
+  - "Denoising Pre-training"
 date: 2026-05-08
-content_hash: 7d4bb9b34fe64aba
+content_hash: dab00fb6d3765f66
 ---
+
 # Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction
 
 **Conference**: ICLR 2026  
@@ -141,9 +146,9 @@ A single-factor ablation based on ADiT-M on SKEMPIv2 (Table 4).
 
 - [\[ICLR 2026\] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins](pallatom-ligand_an_all-atom_diffusion_model_for_designing_ligand-binding_protein.md)
 - [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
-- [\[ICLR 2026\] Riemannian High-Order Pooling for Brain Foundation Models](riemannian_high-order_pooling_for_brain_foundation_models.md)
-- [\[ICLR 2026\] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space](beyond_ensembles_simulating_all-atom_protein_dynamics_in_a_learned_latent_space.md)
-- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
+- [\[ICLR 2026\] PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design](peptri_tri-guided_all-atom_diffusion_for_peptide_design_via_physics_evolution_an.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
+- [\[ICLR 2026\] Triangle Multiplication is All You Need for Biomolecular Structure Representations](triangle_multiplication_is_all_you_need_for_biomolecular_structure_representatio.md)
 
 </div>
 

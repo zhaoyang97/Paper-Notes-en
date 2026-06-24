@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Partial Action Replacement: Tackling Distribution Shift in Offline MARL
 description: >-
-  [AAAI 2026][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes the Partial Action Replacement (PAR) principle, theoretically proving that under a factorized behavior policy…
+  [AAAI 2026][Reinforcement Learning][Offline Multi-Agent Reinforcement Learning] This paper proposes the Partial Action Replacement (PAR) principle, theoretically proving that under a factorized behavior policy, distribution shift grows linearly with the number of deviating agents (rather than exponentially in the joint action space). Building on this, the SPaCQL algorithm is developed to dynamically weight different PAR operators via Q-ensemble uncertainty…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Conservative Q-Learning"
   - "Uncertainty Estimation"
 date: 2026-05-08
-content_hash: 670557d88ccae6f3
+content_hash: 6d1415a0fcf2dc91
 ---
 
 # Partial Action Replacement: Tackling Distribution Shift in Offline MARL
@@ -177,10 +177,10 @@ ICQL-QS vs. CFCQL validates the core trade-off:
 ## Related Papers
 
 - [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](../../ICML2026/reinforcement_learning/safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
+- [\[ICLR 2026\] Who Matters Matters: Agent-Specific Conservative Offline MARL](../../ICLR2026/reinforcement_learning/who_matters_matters_agent-specific_conservative_offline_marl.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](../../ICLR2026/reinforcement_learning/scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[NeurIPS 2025\] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL](../../NeurIPS2025/reinforcement_learning/oryx_a_scalable_sequence_model_for_many-agent_coordination_in_offline_marl.md)
 - [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](efficient_multiagent_planning_via_shared_action_suggestions.md)
-- [\[AAAI 2026\] Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation](intention-guided_cognitive_reasoning_for_egocentric_long-term_action_anticipatio.md)
-- [\[AAAI 2026\] SafeMIL: Learning Offline Safe Imitation Policy from Non-Preferred Trajectories](safemil_learning_offline_safe_imitation_policy_from_non-preferred_trajectories.md)
 
 </div>
 

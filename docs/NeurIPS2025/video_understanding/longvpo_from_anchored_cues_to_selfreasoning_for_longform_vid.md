@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization
 description: >-
-  [NeurIPS 2025][Video Understanding][Long video understanding] LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video preference data by anchoring short clips and introduces an anchor-only refere…
+  [NeurIPS 2025][Video Understanding][Long video understanding] LongVPO proposes a two-stage DPO framework. Stage 1 constructs pseudo-long-video preference data by anchoring short clips and introduces an anchor-only reference model approximation to address context-length mismatch. Stage 2 performs self-training on real long videos via recursive captioning and multi-clip reasoning tasks. Using only 16K synthetic samples, the method surpasses long-video models trained with large-…
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "preference optimization"
   - "short-to-long transfer"
 date: 2026-05-08
-content_hash: ebb4d986d02234f3
+content_hash: f4056a219b76a62a
 ---
 
 # LongVPO: From Anchored Cues to Self-Reasoning for Long-Form Video Preference Optimization
@@ -128,7 +128,7 @@ LongVPO outperforms models trained with large-scale supervised data on multiple 
 - [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
 - [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)
 - [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
-- [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
+- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](../../AAAI2026/video_understanding/tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
 
 </div>
 

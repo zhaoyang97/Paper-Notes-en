@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparsity as a Key: Unlocking New Insights from Latent Structures for Out-of-Distribution Detection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper applies Top-k Sparse Autoencoders (SAE) to the ViT [CLS] token for the first time, disentangling entangled dense features into an interpretable sparse latent space. It finds that ID samples of the same class form stable "Class Activation Profiles" (CAP), whereas OOD samples, despite activating core features
+  [CVPR 2026][AI Safety][Sparse Autoencoders] This paper applies Top-k Sparse Autoencoders (SAE) to the ViT [CLS] token for the first time, disentangling entangled dense features into an interpretable sparse latent space. It finds that ID samples of the same class form stable "Class Activation Profiles" (CAP), whereas OOD samples, despite activating core features of the predicted class, fail to replicate the energy distribution shape. Based on this, it proposes the EPD score…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Sparse Autoencoders"
+  - "OOD Detection"
+  - "ViT Interpretability"
+  - "Class Activation Profiles"
+  - "KL Divergence Score"
 date: 2026-05-08
-content_hash: 3bee2bdde145eeb0
+content_hash: 4593f7c43ef6256c
 ---
+
 # Sparsity as a Key: Unlocking New Insights from Latent Structures for Out-of-Distribution Detection
 
 **Conference**: CVPR 2026  
@@ -135,14 +141,14 @@ Ours achieves the overall best average FPR95 (40.96%), with an AUROC of 87.26% (
 - Value: ⭐⭐⭐⭐ High practical value due to best-in-class FPR95 and low overhead, though backbone dependency is a minor constraint.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] RankOOD: Class Ranking-based Out-of-Distribution Detection](rankood_-_class_ranking-based_out-of-distribution_detection.md)
-- [\[CVPR 2026\] Learning Latent Concepts for Detecting Out-of-Distribution Objects](learning_latent_concepts_for_detecting_out-of-distribution_objects.md)
 - [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
+- [\[CVPR 2026\] Learning Latent Concepts for Detecting Out-of-Distribution Objects](learning_latent_concepts_for_detecting_out-of-distribution_objects.md)
 - [\[CVPR 2026\] Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport](bypassing_the_transport_plan_dynamic_reweighting_for_out-of-distribution_detecti.md)
 - [\[NeurIPS 2025\] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis](../../NeurIPS2025/ai_safety/double_descent_meets_out-of-distribution_detection_theoretical_insights_and_empi.md)
 

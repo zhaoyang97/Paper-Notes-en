@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] On the Spectral Differences Between NTK and CNTK and Their Implications for Point Cloud Recognition
 description: >-
-  [ICLR 2026][learning_theory][NTK] Under the assumption of tensor data in arbitrary dimensions, this paper provides two **distribution-independent** spectral difference theorems for NTK and CNTK (NTK eigenvalues have a larger mean and a more concentrated spectrum). Based on these, it defines a "Convolutional Suitability" metric to measure "how suitable
+  [ICLR 2026][Learning Theory][NTK] Under the assumption of tensor data in arbitrary dimensions, this paper provides two **distribution-independent** spectral difference theorems for NTK and CNTK (NTK eigenvalues have a larger mean and a more concentrated spectrum). Based on these, it defines a "Convolutional Suitability" metric to measure "how suitable data is for convolution" and infers that point clouds depend more on convolutional structures than images. Finally…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - NTK
-  - CNTK
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Neural Tangent Kernel"
+  - "NTK"
+  - "CNTK"
+  - "Spectral Analysis"
+  - "Convolutional Suitability"
+  - "Point Cloud Recognition"
 date: 2026-05-08
-content_hash: fb8fdd5cc31e2624
+content_hash: 7e1c45a432765081
 ---
+
 # On the Spectral Differences Between NTK and CNTK and Their Implications for Point Cloud Recognition
 
 **Conference**: ICLR 2026  
@@ -156,11 +161,11 @@ Fixed at 500 samples, ablating network depth and kernel size.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Separable Neural Networks: Approximation Theory, NTK Regime, and Preconditioned Gradient Descent](separable_neural_networks_approximation_theory_ntk_regime_and_preconditioned_gra.md)
 - [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
 - [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
-- [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
-- [\[ICLR 2026\] From Predictors to Samplers via the Training Trajectory](from_predictors_to_samplers_via_the_training_trajectory.md)
+- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
 
 </div>
 

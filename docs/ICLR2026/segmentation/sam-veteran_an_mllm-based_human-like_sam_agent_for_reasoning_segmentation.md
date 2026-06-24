@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SAM-Veteran: An MLLM-based Human-like SAM Agent for Reasoning Segmentation
 description: >-
-  [ICLR 2026][Segmentation][SAM] SAM-Veteran trains an MLLM to become a "seasoned SAM user" by imitating a human-like interactive segmentation workflow: "generating initial boxes $\rightarrow$ observing SAM masks for iterative refinement via points $\rightarrow$ adaptive termination." This behavior is learned through a multi-task reinforcement learnin
+  [ICLR 2026][Segmentation][Reasoning Segmentation] SAM-Veteran trains an MLLM to become a "seasoned SAM user" by imitating a human-like interactive segmentation workflow: "generating initial boxes $\rightarrow$ observing SAM masks for iterative refinement via points $\rightarrow$ adaptive termination." This behavior is learned through a multi-task reinforcement learning framework based on GRPO, achieving new SOTA on both in-distribution and out-of-distribution reasoning segmen…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - SAM
-  - MLLM
-  - GRPO
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Reasoning Segmentation"
+  - "SAM"
+  - "MLLM"
+  - "GRPO"
+  - "Interactive Segmentation"
 date: 2026-05-08
-content_hash: 23cd67c8627a353b
+content_hash: 7c158cf41b63de2d
 ---
+
 # SAM-Veteran: An MLLM-based Human-like SAM Agent for Reasoning Segmentation
 
 **Conference**: ICLR 2026  
@@ -162,11 +165,11 @@ Removing $R^{SAM}$, $R^{DCS}$, or $R^\Delta$ results in performance drops to 71.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Urban Socio-Semantic Segmentation with Vision-Language Reasoning](urban_socio-semantic_segmentation_with_vision-language_reasoning.md)
-- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](sam_3_segment_anything_with_concepts.md)
 - [\[NeurIPS 2025\] SAM-R1: Leveraging SAM for Reward Feedback in Multimodal Segmentation via Reinforcement Learning](../../NeurIPS2025/segmentation/sam-r1_leveraging_sam_for_reward_feedback_in_multimodal_segmentation_via_reinfor.md)
+- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](sam_3_segment_anything_with_concepts.md)
+- [\[ICLR 2026\] Urban Socio-Semantic Segmentation with Vision-Language Reasoning](urban_socio-semantic_segmentation_with_vision-language_reasoning.md)
 - [\[ICLR 2026\] Detective SAM: Adaptive AI-Image Forgery Localization](detective_sam_adaptive_ai-image_forgery_localization.md)
-- [\[ICLR 2026\] Panoptic Pairwise Distortion Graph](panoptic_pairwise_distortion_graph.md)
+- [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](../../AAAI2026/segmentation/saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
 
 </div>
 

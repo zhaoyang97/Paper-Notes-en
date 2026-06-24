@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising
 description: >-
-  [ICCV 2025][Image Restoration][Image Denoising] This paper proposes Noise2VST, a framework that learns a model-free variance-stabilizing transformation (VST) via self-supervised learning…
+  [ICCV 2025][Image Restoration][Image Denoising] This paper proposes Noise2VST, a framework that learns a model-free variance-stabilizing transformation (VST) via self-supervised learning, enabling off-the-shelf Gaussian denoisers to handle real-world noisy images without any additional training.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Blind-Spot Denoising"
   - "Spline Modeling"
 date: 2026-05-08
-content_hash: 1f9b067c60af6636
+content_hash: d7f2834dd7cc7e85
 ---
 
 # Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising
@@ -157,11 +157,11 @@ During training, a blind-spot denoiser $\bar{D}$ with frozen weights is used; at
 
 ## Related Papers
 
-- [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](../../CVPR2026/image_restoration/tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
-- [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](blind2sound_self-supervised_image_denoising_without_residual_noise.md)
+- [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](../../CVPR2026/image_restoration/next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
 - [\[ICCV 2025\] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising](idf_iterative_dynamic_filtering_networks_for_generalizable_image_denoising.md)
-- [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
-- [\[ICCV 2025\] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement](learning_pixel-adaptive_multi-layer_perceptrons_for_real-time_image_enhancement.md)
+- [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](blind2sound_self-supervised_image_denoising_without_residual_noise.md)
+- [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](../../CVPR2026/image_restoration/tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
+- [\[ECCV 2024\] Asymmetric Mask Scheme for Self-supervised Real Image Denoising](../../ECCV2024/image_restoration/asymmetric_mask_scheme_for_self-supervised_real_image_denoising.md)
 
 </div>
 

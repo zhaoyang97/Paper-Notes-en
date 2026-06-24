@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
 description: >-
-  [ICML 2026][Model Compression][Diffusion Language Model] Addressing the "write-once, no-edit" vulnerability in Diffusion Large Language Models (dLLMs), FAIR-Calib utilizes a full-precision teacher to detect a "frontier-aware position prior." This prior is then applied as weights for layer-wise hidden-state MSE calibration. By specifically protecting boundary tokens that, onc
+  [ICML2026][Model Compression][Post-Training Quantization] Addressing the "write-once, no-edit" vulnerability in Diffusion Large Language Models (dLLMs), FAIR-Calib utilizes a full-precision teacher to detect a "frontier-aware position prior." This prior is then applied as weights for layer-wise hidden-state MSE calibration. By specifically protecting boundary tokens that, once flipped by quantization errors, would be permanently locked and amplified…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Diffusion Language Model
-  - W4A4
+  - "ICML2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Diffusion Large Language Models"
+  - "W4A4"
+  - "Calibration"
+  - "KL Proxy Objective"
 date: 2026-05-08
-content_hash: 70c569cf24d93f31
+content_hash: 4a2891806c69d1ef
 ---
+
 # FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models
 
 **Conference**: ICML2026  
@@ -136,11 +140,11 @@ On the Dream-Base 10-benchmark average, decoupling the two signals:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](../../ICLR2026/model_compression/gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](../../ICLR2026/model_compression/quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
 - [\[ICML 2026\] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points](winq_accelerating_quantization-aware_training_of_language_models_around_saddle_p.md)
-- [\[CVPR 2026\] Sampling-Aware Quantization for Diffusion Models](../../CVPR2026/model_compression/sampling-aware_quantization_for_diffusion_models.md)
-- [\[ACL 2026\] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](../../ACL2026/model_compression/improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)
-- [\[ACL 2025\] EfficientQAT: Efficient Quantization-Aware Training for Large Language Models](../../ACL2025/model_compression/efficientqat.md)
-- [\[CVPR 2025\] Q-DiT: Accurate Post-Training Quantization for Diffusion Transformers](../../CVPR2025/model_compression/q-dit_accurate_post-training_quantization_for_diffusion_transformers.md)
+- [\[ICLR 2026\] Beyond Uniformity: Sample and Frequency Meta Weighting for Post-Training Quantization of Diffusion Models](../../ICLR2026/model_compression/beyond_uniformity_sample_and_frequency_meta_weighting_for_post-training_quantiza.md)
+- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
 
 </div>
 

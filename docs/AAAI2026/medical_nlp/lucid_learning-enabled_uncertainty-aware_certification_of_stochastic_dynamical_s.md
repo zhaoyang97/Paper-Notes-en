@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems
 description: >-
-  [AAAI 2026][Medical NLP][Safety Certification] This paper proposes LUCID, the first verification engine capable of providing quantified safety guarantees for black-box stochastic dynamical systems. By combining data-driv…
+  [AAAI 2026][Medical LLM][Safety Certification] This paper proposes LUCID, the first verification engine capable of providing quantified safety guarantees for black-box stochastic dynamical systems. By combining data-driven control barrier certificates, conditional mean embeddings, and finite Fourier kernel expansions, LUCID reformulates a semi-infinite non-convex optimization problem into a tractable linear program.
 tags:
   - "AAAI 2026"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Safety Certification"
   - "Stochastic Systems"
   - "Control Barrier Certificates"
   - "Kernel Methods"
   - "Robust Verification"
 date: 2026-05-08
-content_hash: bdfe9e0ba1675924
+content_hash: 25ce5e75b1f9d6f0
 ---
 
 # LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems
@@ -131,10 +131,10 @@ Validated on multiple challenging benchmarks.
 ## Related Papers
 
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](learning_cell-aware_hierarchical_multi-modal_representations.md)
-- [\[AAAI 2026\] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives](bica_effective_biomedical_dense_retrieval_with_citation-aware_hard_negatives.md)
 - [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
 - [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](../../ACL2026/medical_nlp/cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
 - [\[ACL 2026\] Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering](../../ACL2026/medical_nlp/beyond_prompt_fine-grained_simulation_of_cognitively_impaired_standardized_patie.md)
+- [\[AAAI 2026\] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives](bica_effective_biomedical_dense_retrieval_with_citation-aware_hard_negatives.md)
 
 </div>
 

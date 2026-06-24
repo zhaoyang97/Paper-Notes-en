@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Retrieval Heads are Dynamic
 description: >-
-  [ACL 2026][Interpretability][retrieval heads] This paper demonstrates that the retrieval heads in LLMs responsible for extracting information from the context are not a fixed set but change dynamically across generation steps. They cannot be replaced by static heads and can be predicted from hidden states, which can enhance the retrieval performance of dynamic RAG
+  [ACL2026][Interpretability][retrieval heads] This paper demonstrates that the retrieval heads in LLMs responsible for extracting information from the context are not a fixed set but change dynamically across generation steps. They cannot be replaced by static heads and can be predicted from hidden states, which can enhance the retrieval performance of dynamic RAG.
 tags:
-  - ACL 2026
-  - Interpretability
-  - retrieval heads
-  - HotpotQA
+  - "ACL2026"
+  - "Interpretability"
+  - "retrieval heads"
+  - "dynamic attention heads"
+  - "long context"
+  - "HotpotQA"
+  - "dynamic RAG"
 date: 2026-05-08
-content_hash: c0fe0de1771c0337
+content_hash: d40aaf88e7782af6
 ---
+
 # Retrieval Heads are Dynamic
 
 **Conference**: ACL2026  
@@ -155,8 +159,8 @@ The Dynamic RAG case study on HotpotQA compares dynamic heads, static heads, ran
 - [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[ICML 2026\] Singular Vectors of Attention Heads Align with Features](../../ICML2026/interpretability/singular_vectors_of_attention_heads_align_with_features.md)
 - [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
+- [\[AAAI 2026\] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval](../../AAAI2026/interpretability/adaptive_evidential_learning_for_temporal-semantic_robustnes.md)
 
 </div>
 

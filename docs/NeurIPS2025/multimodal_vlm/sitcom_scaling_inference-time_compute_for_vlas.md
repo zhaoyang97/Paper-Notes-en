@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SITCOM: Scaling Inference-Time COMpute for VLAs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Inference-time compute scaling] SITCOM proposes an inference-time compute scaling framework inspired by Model Predictive Control (MPC). It performs multi-step rollout simulation of a pretra…
+  [NeurIPS 2025][Multimodal VLM][Inference-time compute scaling] SITCOM proposes an inference-time compute scaling framework inspired by Model Predictive Control (MPC). It performs multi-step rollout simulation of a pretrained VLA using a learned dynamics model and selects optimal trajectories via a reward model, transforming a single-step VLA into a robust long-horizon planner. On the SIMPLER benchmark, it improves task success rate from 48% to 72%.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "model predictive control"
   - "robotic manipulation"
 date: 2026-05-08
-content_hash: 7f2a480a18c1126a
+content_hash: a35a8907aaea4e7b
 ---
 
 # SITCOM: Scaling Inference-Time COMpute for VLAs
@@ -143,9 +143,9 @@ Default configuration: rollout length of 10 steps, 5 candidate trajectories. Pla
 ## Related Papers
 
 - [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](../../ICCV2025/multimodal_vlm/scaling_inferencetime_search_with_vision_value_model_for_imp.md)
-- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](../../CVPR2026/multimodal_vlm/scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
+- [\[ACL 2025\] Inference Compute-Optimal Video Vision Language Models](../../ACL2025/multimodal_vlm/inference_compute_optimal_video_vlm.md)
 - [\[NeurIPS 2025\] ADMN: A Layer-Wise Adaptive Multimodal Network for Dynamic Input Noise and Compute Resources](admn_a_layerwise_adaptive_multimodal_network_for_dynamic_inp.md)
-- [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
+- [\[NeurIPS 2025\] NaViL: Rethinking Scaling Properties of Native Multimodal Large Language Models under Data Constraints](navil_rethinking_scaling_properties_of_native_multimodal_large_language_models_u.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 
 </div>

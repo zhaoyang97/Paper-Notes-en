@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Thompson Sampling via Fine-Tuning of LLMs
 description: >-
-  [ICLR 2026][Computational Biology][Thompson Sampling] ToSFiT is proposed to directly parameterize the Probability of Maximality (PoM) by fine-tuning Large Language Models (LLMs), extending Thompson Sampling to large-scale unstructured discrete spaces and bypassing the challenges of acquisition function maximization.
+  [Computational Biology] ToSFiT is proposed to directly parameterize the Probability of Maximality (PoM) by fine-tuning Large Language Models (LLMs), extending Thompson Sampling to large-scale unstructured discrete spaces and bypassing the challenges of acquisition function maximization.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Thompson Sampling
-  - Bayesian Optimization
-  - LLM Fine-Tuning
-  - Probability of Maximality
-  - VBOS
+  - "Computational Biology"
 date: 2026-05-08
-content_hash: 43117c22e2473e7b
+content_hash: d0a02848bc6fb419
 ---
+
 # Thompson Sampling via Fine-Tuning of LLMs
 
 - **Conference**: ICLR 2026

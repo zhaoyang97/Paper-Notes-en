@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment
 description: >-
-  [AAAI 2026][Image Generation][Autoregressive image generation] This paper proposes ARRA (Autoregressive Representation Alignment), a training framework that distills global visual representations from an external vision…
+  [AAAI 2026 Oral][Image Generation][Autoregressive image generation] This paper proposes ARRA (Autoregressive Representation Alignment), a training framework that distills global visual representations from an external vision foundation model into the hidden states of an autoregressive LLM via a hybrid token \<HYBNEXT\>, significantly improving text-to-image generation quality without any architectural modification.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "Autoregressive image generation"
   - "representation alignment"
@@ -12,7 +12,7 @@ tags:
   - "text-to-image"
   - "global consistency"
 date: 2026-05-08
-content_hash: 8ad68f3e975374e7
+content_hash: d7e8e70de403f085
 ---
 
 # Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment
@@ -143,11 +143,11 @@ Key design decisions:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment](flowing_backwards_improving_normalizing_flows_via_reverse_representation_alignme.md)
+- [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](../../CVPR2026/image_generation/curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
+- [\[ECCV 2024\] TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](../../ECCV2024/image_generation/textdiffuser-2_unleashing_the_power_of_language_models_for_text_rendering.md)
 - [\[ACL 2026\] Multimodal Large Language Models for Multi-Subject In-Context Image Generation](../../ACL2026/image_generation/multimodal_large_language_models_for_multi-subject_in-context_image_generation.md)
-- [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
-- [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](../../CVPR2026/image_generation/emf_meanflow_text_to_image.md)
-- [\[AAAI 2026\] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation](right_looks_wrong_reasons_compositional_fidelity_in_text-to-image_generation.md)
+- [\[AAAI 2026\] Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment](flowing_backwards_improving_normalizing_flows_via_reverse_representation_alignme.md)
+- [\[ICLR 2026\] GoT-R1: Unleashing Reasoning Capability of Autoregressive Visual Generation with Reinforcement Learning](../../ICLR2026/image_generation/got-r1_unleashing_reasoning_capability_of_autoregressive_visual_generation_with_.md)
 
 </div>
 

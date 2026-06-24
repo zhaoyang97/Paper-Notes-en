@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Image Editing] This paper proposes ELECT (Early-timestep Latent Evaluation for Candidate selecTion), a zero-shot framework that selects the optimal seed by estimating background inconsistenc…
+  [ICCV 2025][Image Generation][Image Editing] This paper proposes ELECT (Early-timestep Latent Evaluation for Candidate selecTion), a zero-shot framework that selects the optimal seed by estimating background inconsistency at early denoising timesteps, reducing computational overhead by 41% (up to 61%) while improving background consistency and instruction-following quality, without requiring external supervision or additional training.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Background Consistency"
   - "Zero-Shot"
 date: 2026-05-08
-content_hash: abf6d03d214f1100
+content_hash: 395a74ff53ab6d0f
 ---
 
 # Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing
@@ -184,7 +184,7 @@ Computational efficiency (NFE required for Best-of-N to match ELECT performance)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
 - [\[ICCV 2025\] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation](adiee_automatic_dataset_creation_and_scorer_for_instruction-guided_image_editing.md)
 - [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
-- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
+- [\[CVPR 2025\] Z-Magic: Zero-shot Multiple Attributes Guided Image Creator](../../CVPR2025/image_generation/z-magic_zero-shot_multiple_attributes_guided_image_creator.md)
 - [\[ICCV 2025\] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](superedit_rectifying_and_facilitating_supervision_for_instruction-based_image_ed.md)
 
 </div>

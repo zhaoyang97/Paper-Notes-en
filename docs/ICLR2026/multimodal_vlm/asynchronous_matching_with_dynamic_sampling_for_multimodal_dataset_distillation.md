@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the "asynchronous optimization rhythms of image and text networks" in image-text dataset distillation, this paper proposes the AMD framework. It decouples the sampling origins of image and text expert trajectories for **asynchronous trajectory matching**, utilizes MMD to measure convergence speed differences
+  [ICLR2026][Multimodal VLM][Multimodal Dataset Distillation] Addressing the "asynchronous optimization rhythms of image and text networks" in image-text dataset distillation, this paper proposes the AMD framework. It decouples the sampling origins of image and text expert trajectories for **asynchronous trajectory matching**, utilizes MMD to measure convergence speed differences to **dynamically determine the sampling range for each modality**…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Multimodal Dataset Distillation"
+  - "Trajectory Matching"
+  - "Asynchronous Sampling"
+  - "Prototype Mining"
+  - "Cross-modal Retrieval"
 date: 2026-05-08
-content_hash: 0ac0b947fac97c4d
+content_hash: fa230ca7b8513ad4
 ---
+
 # Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation
 
 **Conference**: ICLR2026  
@@ -144,6 +150,7 @@ AMD remains superior on COCO (200-pair IR@1/@5/@10 gains +1.4/+4.1/+5.9 vs LoRS)
 - Value: ⭐⭐⭐⭐ A plug-and-play modification with virtually zero cost and significant gains for MDD.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -152,7 +159,7 @@ AMD remains superior on COCO (200-pair IR@1/@5/@10 gains +1.4/+4.1/+5.9 vs LoRS)
 - [\[ICLR 2026\] Multimodal Dataset Distillation via Phased Teacher Models](multimodal_dataset_distillation_via_phased_teacher_models.md)
 - [\[ICLR 2026\] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis](multimodal_dataset_distillation_made_simple_by_prototype-guided_data_synthesis.md)
 - [\[ICLR 2026\] NExT-OMNI: Towards Any-to-Any Omnimodal Foundation Models with Discrete Flow Matching](next-omni_towards_any-to-any_omnimodal_foundation_models_with_discrete_flow_matc.md)
-- [\[ICLR 2026\] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization](importance_sampling_for_multi-negative_multimodal_direct_preference_optimization.md)
+- [\[ICLR 2026\] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation](chartgalaxy_a_dataset_for_infographic_chart_understanding_and_generation.md)
 
 </div>
 

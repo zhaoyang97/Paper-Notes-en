@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Deformable Gaussian Occupancy: Decoupling Rigid and Nonrigid Motion with Factorized Distillation
 description: >-
-  [CVPR 2026][Autonomous Driving][VGGT] DeGO introduces a "soft-rigid mask" for every 3D Gaussian in weakly-supervised camera-based occupancy prediction, allowing adaptive selection between "rigid displacement" and "non-rigid deformation." By distilling factorized cross-camera and cross-frame features from the VGGT 4D foundation model, it achieves a 10.9% im
+  [CVPR 2026][Autonomous Driving][Weakly-supervised occupancy prediction] DeGO introduces a "soft-rigid mask" for every 3D Gaussian in weakly-supervised camera-based occupancy prediction, allowing adaptive selection between "rigid displacement" and "non-rigid deformation." By distilling factorized cross-camera and cross-frame features from the VGGT 4D foundation model, it achieves a 10.9% improvement in overall mIoU and a 13.5% increase in human-centric metrics on Occ3D-NuScene…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - VGGT
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Weakly-supervised occupancy prediction"
+  - "Deformable Gaussians"
+  - "Rigid/Non-rigid decoupling"
+  - "4D foundation model distillation"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 7f88081154770813
+content_hash: 7517f613acf1145e
 ---
+
 # Deformable Gaussian Occupancy: Decoupling Rigid and Nonrigid Motion with Factorized Distillation
 
 **Conference**: CVPR 2026  
@@ -141,7 +146,7 @@ DeGO outperforms the previous SOTA across all metrics. The significant boost in 
 - [\[CVPR 2026\] GEM: Generating LiDAR World Model via Deformable Mamba](gem_generating_lidar_world_model_via_deformable_mamba.md)
 - [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[CVPR 2025\] Spatiotemporal Decoupling for Efficient Vision-Based Occupancy Forecasting](../../CVPR2025/autonomous_driving/spatiotemporal_decoupling_for_efficient_vision-based_occupancy_forecasting.md)
-- [\[CVPR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](remot_reinforcement_learning_with_motion_contrast_triplets.md)
+- [\[ICLR 2026\] S2GO: Streaming Sparse Gaussian Occupancy](../../ICLR2026/autonomous_driving/s2go_streaming_sparse_gaussian_occupancy.md)
 
 </div>
 

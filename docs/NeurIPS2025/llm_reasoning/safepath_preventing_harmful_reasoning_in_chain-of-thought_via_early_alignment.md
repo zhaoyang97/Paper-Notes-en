@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SafePath: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment
 description: >-
-  [NeurIPS 2025][LLM Reasoning][LRM safety] SafePath proposes fine-tuning only an 8-token "Safety Primer" ("Let's think about safety first") at the very beginning of the reasoning chain…
+  [NeurIPS 2025][Reasoning][LRM safety] SafePath proposes fine-tuning only an 8-token "Safety Primer" ("Let's think about safety first") at the very beginning of the reasoning chain, effectively steering Large Reasoning Models (LRMs) toward safe reasoning paths. On DeepSeek-R1-Distill, it reduces harmful outputs by 90% while requiring only 1/296 of the training compute of Direct Refusal.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "LRM safety"
   - "chain-of-thought"
   - "safety alignment"
   - "jailbreak defense"
   - "safety primer"
 date: 2026-05-08
-content_hash: e857ff693a7d8567
+content_hash: 226aeaaf393a0d12
 ---
 
 # SafePath: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment
@@ -127,7 +127,7 @@ Training data consists of two parts: (1) Safety Trigger Set (harmful prompts →
 - [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
 - [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
 - [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
-- [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
+- [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](../../ICLR2026/llm_reasoning/dynamic_early_exit_in_reasoning_models.md)
 
 </div>
 

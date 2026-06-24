@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Sample is Enough to Make Conformal Prediction Robust
 description: >-
-  [NeurIPS 2025][Optimization][conformal prediction] This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requirin…
+  [NeurIPS 2025][Optimization][conformal prediction] This paper proposes RCP1 (Robust Conformal Prediction with One sample), which certifies the conformal procedure itself rather than individual conformity scores. Requiring only a single randomly perturbed forward pass at inference, RCP1 yields smaller robust prediction sets than state-of-the-art methods that require 100 forward passes.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "prediction sets"
   - "conformal risk control"
 date: 2026-05-08
-content_hash: 1794a406d5e01e88
+content_hash: f676c60e54cbc8a7
 ---
 
 # One Sample is Enough to Make Conformal Prediction Robust
@@ -134,10 +134,10 @@ Given a black-box model $f$ and noise radius $\epsilon$:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Conformal Prediction for Causal Effects of Continuous Treatments](conformal_prediction_for_causal_effects_of_continuous_treatments.md)
-- [\[CVPR 2026\] Semi-Supervised Conformal Prediction With Unlabeled Nonconformity Score](../../CVPR2026/optimization/semi-supervised_conformal_prediction_with_unlabeled_nonconformity_score.md)
-- [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/optimization/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
-- [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
-- [\[ICML 2026\] Colorful Pinball: Density-Weighted Quantile Regression for Conditional Guarantee of Conformal Prediction](../../ICML2026/optimization/colorful_pinball_density-weighted_quantile_regression_for_conditional_guarantee_.md)
+- [\[NeurIPS 2025\] Conformal Prediction in The Loop: A Feedback-Based Uncertainty Model for Trajectory Optimization](conformal_prediction_in_the_loop_a_feedback-based_uncertainty_model_for_trajecto.md)
+- [\[ICML 2025\] Conformal Prediction as Bayesian Quadrature](../../ICML2025/optimization/conformal_prediction_as_bayesian_quadrature.md)
+- [\[CVPR 2025\] Conformal Prediction for Zero-Shot Models](../../CVPR2025/optimization/conformal_prediction_for_zero-shot_models.md)
+- [\[ICML 2025\] On Temperature Scaling and Conformal Prediction of Deep Classifiers](../../ICML2025/optimization/on_temperature_scaling_and_conformal_prediction_of_deep_classifiers.md)
 
 </div>
 

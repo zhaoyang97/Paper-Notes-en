@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FisherPoser: Human Motion Estimation from Sparse Observations with Hierarchical Region-Wise Fisher-Matrix Uncertainty Modeling
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] FisherPoser models the estimation of full-body poses from three 6-DoF signals (HMD + two controllers) as probabilistic inference on the $SO(3)$ manifold. Instead of a single rotation, each joint outputs a Matrix-Fisher distribution. By utilizing "five-region tokens + parent-to-child recursion along kinematic chains," b
+  [CVPR 2026][Human Understanding][Sparse VR Motion Capture] FisherPoser models the estimation of full-body poses from three 6-DoF signals (HMD + two controllers) as probabilistic inference on the $SO(3)$ manifold. Instead of a single rotation, each joint outputs a Matrix-Fisher distribution. By utilizing "five-region tokens + parent-to-child recursion along kinematic chains," both pose and uncertainty are propagated hierarchically. This approach sets new SOTA records for MPJPE…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Sparse VR Motion Capture"
+  - "Matrix-Fisher Distribution"
+  - "SO(3) Uncertainty"
+  - "Regional Modeling"
+  - "Kinematic Hierarchical Decoding"
 date: 2026-05-08
-content_hash: 8779803b627ab057
+content_hash: 512f763695de204d
 ---
+
 # FisherPoser: Human Motion Estimation from Sparse Observations with Hierarchical Region-Wise Fisher-Matrix Uncertainty Modeling
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Uncertainty parameterization comparison:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bézier Degradation Modeling for LiDAR-based Human Motion Capture](bézier_degradation_modeling_for_lidar-based_human_motion_capture.md)
-- [\[CVPR 2026\] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)
-- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
-- [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
+- [\[CVPR 2026\] Pressure2Motion: Hierarchical Human Motion Reconstruction from Ground Pressure with Text Guidance](pressure2motion_hierarchical_human_motion_reconstruction_from_ground_pressure_wi.md)
+- [\[CVPR 2026\] Ground Reaction Inertial Poser: Physics-based Human Motion Capture from Sparse IMUs and Insole Pressure Sensors](ground_reaction_inertial_poser_physics-based_human_motion_capture_from_sparse_im.md)
 - [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
+- [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
+- [\[CVPR 2026\] Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements](action_motifs_self-supervised_hierarchical_representation_of_human_body_movement.md)
 
 </div>
 

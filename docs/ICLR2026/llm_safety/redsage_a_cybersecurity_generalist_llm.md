@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] RedSage: A Cybersecurity Generalist LLM
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] RedSage is proposed—the first full-stack open-source cybersecurity generalist LLM. Through 11.7B token large-scale domain continual pre-training, 266K samples of Agentic data-augmented SFT, and the first comprehensive benchmark RedSage-Bench covering knowledge, skills, and tools, the 8B parameter model outperforms same
+  [ICLR 2026][LLM Safety][Cybersecurity LLM] RedSage is proposed—the first full-stack open-source cybersecurity generalist LLM. Through 11.7B token large-scale domain continual pre-training, 266K samples of Agentic data-augmented SFT, and the first comprehensive benchmark RedSage-Bench covering knowledge, skills, and tools, the 8B parameter model outperforms same-scale SOTA (+5.4pp) on cybersecurity benchmarks and approaches Qwen3-32B, while general capabilities improve rather…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Cybersecurity LLM"
+  - "Continual Pre-training"
+  - "Agentic data augmentation"
+  - "Security evaluation benchmark"
 date: 2026-05-08
-content_hash: 1d09b31238b21850
+content_hash: fedc9b98bce9368c
 ---
+
 # RedSage: A Cybersecurity Generalist LLM
 
 **Conference**: ICLR 2026  
@@ -161,10 +166,10 @@ General Capability Maintenance (Open LLM Leaderboard mean for instruct models %)
 ## Related Papers
 
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
-- [\[ICLR 2026\] Trust The Typical：把 LLM 安全护栏当作分布外检测来做](trust_the_typical.md)
 - [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
 - [\[ICLR 2026\] LLM Fingerprinting via Semantically Conditioned Watermarks](llm_fingerprinting_via_semantically_conditioned_watermarks.md)
 - [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](reliable_weak-to-strong_monitoring_of_llm_agents.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](searching_for_privacy_risks_in_llm_agents_via_simulation.md)
 
 </div>
 

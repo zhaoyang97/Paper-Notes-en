@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Test-Time Training for Zero-Resource Dense Retrieval Reranking
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] DART is proposed to adaptively adjust the scoring function of dense retrievers using a bilinear matrix at inference time. By utilizing retrieval results as pseudo-labels for zero-shot unlabeled reranking, it achieves an average improvement of 2.1% NDCG@10 on the BEIR benchmark with latency controlled under 10ms.
+  [ACL2026][Information Retrieval & RAG][Zero-shot Reranking] DART is proposed to adaptively adjust the scoring function of dense retrievers using a bilinear matrix at inference time. By utilizing retrieval results as pseudo-labels for zero-shot unlabeled reranking, it achieves an average improvement of 2.1% NDCG@10 on the BEIR benchmark with latency controlled under 10ms.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Zero-shot Reranking"
+  - "Test-Time Adaptation"
+  - "Dense Retrieval"
+  - "Bilinear Scoring Matrix"
 date: 2026-05-08
-content_hash: cfcf9e7a4b16daba
+content_hash: d2ee780e1c0f4b17
 ---
+
 # Test-Time Training for Zero-Resource Dense Retrieval Reranking
 
 **Conference**: ACL2026  
@@ -152,11 +157,11 @@ DART outperforms the dense retrieval baseline on 5/6 datasets, with the largest 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](../../NeurIPS2025/information_retrieval/retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
-- [\[ACL 2026\] CRAFT: Training-Free Cascaded Retrieval for Tabular QA](craft_training-free_cascaded_retrieval_for_tabular_qa.md)
-- [\[ACL 2026\] ChunQiuTR: Time-Keyed Temporal Retrieval in Classical Chinese Annals](chunqiutr_time-keyed_temporal_retrieval_in_classical_chinese_annals.md)
-- [\[ICML 2026\] BlitzRank: Principled Zero-shot Ranking Agents with Tournament Graphs](../../ICML2026/information_retrieval/blitzrank_principled_zero-shot_ranking_agents_with_tournament_graphs.md)
-- [\[ACL 2026\] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering](counterrefine_answer-conditioned_counterevidence_retrieval_for_inference-time_kn.md)
+- [\[ICLR 2026\] Reusing Pre-training Data at Test Time is a Compute Multiplier](../../ICLR2026/information_retrieval/reusing_pre-training_data_at_test_time_is_a_compute_multiplier.md)
+- [\[ICLR 2026\] Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts](../../ICLR2026/information_retrieval/robust_test-time_video-text_retrieval_benchmarking_and_adapting_for_query_shifts.md)
+- [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](../../ICLR2026/information_retrieval/metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
+- [\[ACL 2026\] Low-Resource Language Dilemma in Multilingual Retrieval: Evidence from Amharic](the_multilingual_curse_at_the_retrieval_layer_evidence_from_amharic.md)
+- [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 
 </div>
 

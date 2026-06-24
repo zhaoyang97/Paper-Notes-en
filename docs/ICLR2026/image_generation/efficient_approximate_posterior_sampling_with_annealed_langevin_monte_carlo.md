@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This work proposes a provable version of Annealed Langevin Monte Carlo (ALMC): starting with a warm start on a strongly convex objective that considers only "measurement consistency," it then anneals along the "posterior path of the noisy prior." This achieves both "KL proximity to the noisy posterior" and "Fisher prox
+  [ICLR2026][Image Generation][posterior sampling] This work proposes a provable version of Annealed Langevin Monte Carlo (ALMC): starting with a warm start on a strongly convex objective that considers only "measurement consistency," it then anneals along the "posterior path of the noisy prior." This achieves both "KL proximity to the noisy posterior" and "Fisher proximity to the true posterior" within polynomial time.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - Annealed Langevin
+  - "ICLR2026"
+  - "Image Generation"
+  - "posterior sampling"
+  - "diffusion models"
+  - "Annealed Langevin"
+  - "KL-FI dual guarantee"
+  - "inverse problems"
 date: 2026-05-08
-content_hash: a361510f95ada985
+content_hash: 8c7fd72acd971fa1
 ---
+
 # Efficient Approximate Posterior Sampling with Annealed Langevin Monte Carlo
 
 **Conference**: ICLR2026  
@@ -167,10 +171,10 @@ The authors perform "theoretical component ablations" rather than standard deep 
 ## Related Papers
 
 - [\[ICLR 2026\] One Step Further with Monte-Carlo Sampler to Guide Diffusion Better](one_step_further_with_monte-carlo_sampler_to_guide_diffusion_better.md)
-- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 - [\[ICLR 2026\] Quasi-Monte Carlo Methods Enable Extremely Low-Dimensional Deep Generative Models](quasi-monte_carlo_methods_enable_extremely_low-dimensional_deep_generative_model.md)
+- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
+- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
 - [\[ICML 2026\] Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures](../../ICML2026/image_generation/simple_approximation_and_derivative_free_inference-time_scaling_for_diffusion_mo.md)
-- [\[ICLR 2026\] Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance](error_as_signal_stiffness-aware_diffusion_sampling_via_embedded_runge-kutta_guid.md)
 
 </div>
 

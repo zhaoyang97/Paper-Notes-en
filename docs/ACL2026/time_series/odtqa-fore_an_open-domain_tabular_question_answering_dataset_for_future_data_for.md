@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning
 description: >-
-  [ACL 2026][Time Series][open-domain tabular QA] ODTQA-FoRe introduces an open-domain tabular question answering task focused on future numerical forecasting and post-forecast reasoning. It provides the TimeFore three-agent framework, which chains table retrieval, SQL data acquisition, specialized time-series forecasting, and answer normalization into an evaluable ba
+  [ACL2026 Findings][Time Series][open-domain tabular QA] ODTQA-FoRe introduces an open-domain tabular question answering task focused on future numerical forecasting and post-forecast reasoning. It provides the TimeFore three-agent framework, which chains table retrieval, SQL data acquisition, specialized time-series forecasting, and answer normalization into an evaluable baseline.
 tags:
-  - ACL 2026
-  - Time Series
-  - open-domain tabular QA
-  - time-series forecasting
-  - LLM agent
-  - text-to-SQL
-  - real estate
+  - "ACL2026 Findings"
+  - "Time Series"
+  - "open-domain tabular QA"
+  - "time-series forecasting"
+  - "LLM agent"
+  - "text-to-SQL"
+  - "real estate"
 date: 2026-05-08
-content_hash: bbb9bed3499c98d2
+content_hash: 5b91d1482f8f3a58
 ---
+
 # ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning
 
 **Conference**: ACL2026 Findings  

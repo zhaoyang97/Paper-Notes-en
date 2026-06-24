@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Leap Prediction] L-MTP introduces a leap mechanism into multi-token prediction (MTP) by predicting tokens at non-adjacent positions (e.g., positions 1, 3, 5, 7 instead of 1, 2, 3…
+  [NeurIPS 2025][LLM Efficiency][Leap Prediction] L-MTP introduces a leap mechanism into multi-token prediction (MTP) by predicting tokens at non-adjacent positions (e.g., positions 1, 3, 5, 7 instead of 1, 2, 3, 4). A "looking backward" decoding strategy reuses prior predictions to fill the gaps, achieving a 22% inference speedup on 3B–12B models while maintaining or improving task performance.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Head Prediction"
   - "Tree Attention"
 date: 2026-05-08
-content_hash: 14de28b39dc45f05
+content_hash: 08947c11820e645d
 ---
 
 # L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models
@@ -139,10 +139,10 @@ L-MTP outperforms MTP in the vast majority of settings, with particularly notabl
 ## Related Papers
 
 - [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](../../ICML2026/llm_efficiency/efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
-- [\[NeurIPS 2025\] SPARTA Alignment: Collectively Aligning Multiple Language Models through Combat](sparta_alignment_collectively_aligning_multiple_language_models_through_combat.md)
+- [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](../../ICLR2026/llm_efficiency/beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)
+- [\[ACL 2025\] LongReward: Improving Long-context Large Language Models with AI Feedback](../../ACL2025/llm_efficiency/longreward_improving_long-context_large_language_models_with_ai_feedback.md)
+- [\[ACL 2025\] LongSafety: Evaluating Long-Context Safety of Large Language Models](../../ACL2025/llm_efficiency/longsafety_evaluating_long-context_safety_of_large_language_models.md)
 - [\[NeurIPS 2025\] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads](let_the_experts_speak_improving_survival_prediction_calibration_via_mixture-of-e.md)
-- [\[NeurIPS 2025\] Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training](critical_batch_size_revisited_a_simple_empirical_approach_to_large-batch_languag.md)
-- [\[NeurIPS 2025\] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context](technical_debt_in_in-context_learning_diminishing_efficiency_in_long_context.md)
 
 </div>
 

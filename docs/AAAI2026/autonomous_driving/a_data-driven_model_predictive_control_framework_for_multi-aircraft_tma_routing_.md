@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Data-Driven Model Predictive Control Framework for Multi-Aircraft TMA Routing Under Travel Time Uncertainty
 description: >-
-  [AAAI 2026][Autonomous Driving][TMA operations] A closed-loop MPC framework is proposed for conflict-free multi-aircraft routing and scheduling within the 50 NM Terminal Maneuvering Area (TMA) of Changi Airport. The fram…
+  [AAAI 2026][Autonomous Driving][TMA operations] A closed-loop MPC framework is proposed for conflict-free multi-aircraft routing and scheduling within the 50 NM Terminal Maneuvering Area (TMA) of Changi Airport. The framework integrates XGBoost-based TMA boundary arrival time prediction, MILP optimization (incorporating route selection, speed adjustment, holding control, and separation constraints), and a receding-horizon simulator. Under peak congestion scenarios of 36 aircr…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "model predictive control"
   - "MILP"
 date: 2026-05-08
-content_hash: a0833d86639eda4d
+content_hash: 57ae28d2c86fd218
 ---
 
 # A Data-Driven Model Predictive Control Framework for Multi-Aircraft TMA Routing Under Travel Time Uncertainty
@@ -140,10 +140,10 @@ The system comprises four components: a historical database, an XGBoost traffic 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](../../ICCV2025/autonomous_driving/adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
 - [\[CVPR 2026\] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction](../../CVPR2026/autonomous_driving/den_tp_a_density_balanced_data_curation_and_evaluation_framework_for_trajectory.md)
-- [\[AAAI 2026\] Drive As You Like: Strategy-Level Motion Planning Based on A Multi-Head Diffusion Model](drive_as_you_like_strategy-level_motion_planning_based_on_a_multi-head_diffusion.md)
+- [\[CVPR 2026\] Test-Time Training for LiDAR Semantic Segmentation under Corruption via Geometric Inlier Discrimination](../../CVPR2026/autonomous_driving/test-time_training_for_lidar_semantic_segmentation_under_corruption_via_geometri.md)
 - [\[AAAI 2026\] TimeBill: Time-Budgeted Inference for Large Language Models](timebill_time-budgeted_inference_for_large_language_models.md)
 
 </div>

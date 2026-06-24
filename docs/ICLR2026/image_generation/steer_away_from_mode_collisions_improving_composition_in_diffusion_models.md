@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Steer Away From Mode Collisions: Improving Composition In Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Mode Collision] To address concept omission or collision in multi-concept prompts for diffusion models, this paper proposes the "Mode Collision" hypothesis (mode overlap between joint and single-concept distributions). It introduces CO3 (Concept Contrasting Corrector), which steers generation away from degenerate modes by composing a
+  [ICLR 2026][Image Generation][Compositional Generation] To address concept omission or collision in multi-concept prompts for diffusion models, this paper proposes the "Mode Collision" hypothesis (mode overlap between joint and single-concept distributions). It introduces CO3 (Concept Contrasting Corrector), which steers generation away from degenerate modes by composing a corrected distribution $\tilde{p}(x|C) \propto p(x|C) / \prod_i p(x|c_i)$ in the Tweedie mean space…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Mode Collision
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Compositional Generation"
+  - "Mode Collision"
+  - "Tweedie Mean Composition"
+  - "Gradient-free correction"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 0f77ca6f2cb59d5b
+content_hash: 023d5daa5ef2f74a
 ---
+
 # Steer Away From Mode Collisions: Improving Composition In Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -164,14 +169,17 @@ This is a training-free method. Based on SDXL with 50-step DDIM sampling, guidan
 
 <div class="related-papers" markdown="1">
 
-- **Attend-and-Excite**: Attention-based correction (CVPR 2023)
-- **Composable Diffusion**: Score-based composition (ICLR 2023)
-- **Tweedie's Formula**: The mathematical basis for denoising (Original theory)
+## Related Papers
+
+- [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
+- [\[ICLR 2026\] Composition of Pretrained Diffusion Models: A Logic-Based Calculus](composition_of_pretrained_diffusion_models_a_logic-based_calculus.md)
+- [\[ICLR 2026\] Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models](foresight_diffusion_improving_sampling_consistency_in_predictive_diffusion_model.md)
+- [\[ICLR 2026\] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value](diagnosing_and_improving_diffusion_models_by_estimating_the_optimal_loss_value.md)
+- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)

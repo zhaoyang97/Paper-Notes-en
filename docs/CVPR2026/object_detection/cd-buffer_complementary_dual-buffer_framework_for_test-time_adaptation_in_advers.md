@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] The CD-Buffer framework is proposed, which achieves robust test-time object detection adaptation across varying adverse weather severities by driving the complementary collaboration of a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) through a unified domain discrepan
+  [CVPR 2026][Object Detection][Test-Time Adaptation] The CD-Buffer framework is proposed, which achieves robust test-time object detection adaptation across varying adverse weather severities by driving the complementary collaboration of a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) through a unified domain discrepancy metric.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Test-Time Adaptation"
+  - "Adverse Weather"
+  - "Channel Adaptation"
+  - "Additive-Subtractive Complementarity"
 date: 2026-05-08
-content_hash: 848d3cebe874abcf
+content_hash: c70d85526a472fc0
 ---
+
 # CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection
 
 **Conference**: CVPR 2026  
@@ -169,8 +174,8 @@ $\mathcal{L}_{align}$ is the L1 alignment term for source and target feature mea
 - [\[CVPR 2026\] InsCal: Calibrated Multi-Source Fully Test-Time Prompt Tuning for Object Detection](inscal_calibrated_multi-source_fully_test-time_prompt_tuning_for_object_detectio.md)
 - [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](../../NeurIPS2025/object_detection/test-time_adaptive_object_detection_with_foundation_model.md)
 - [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
-- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
 - [\[CVPR 2026\] BDNet: Bio-Inspired Dual-Backbone Small Object Detection Network](bdnetbio-inspired_dual-backbone_small_object_detection_network.md)
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
 
 </div>
 

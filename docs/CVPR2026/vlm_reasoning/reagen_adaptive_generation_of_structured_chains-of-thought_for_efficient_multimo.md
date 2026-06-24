@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] ReaGEN does not fine-tune the base Vision-Language Model (VLM). Instead, it employs a lightweight generator with only 18M parameters to adaptively "output" a structured chain-of-thought (determining which reasoning stages to use and in what order) based on the attention flow of each problem. This achieves accuracy clos
+  [CVPR 2026][VLM Reasoning][Multimodal Reasoning] ReaGEN does not fine-tune the base Vision-Language Model (VLM). Instead, it employs a lightweight generator with only 18M parameters to adaptively "output" a structured chain-of-thought (determining which reasoning stages to use and in what order) based on the attention flow of each problem. This achieves accuracy close to deep search with a single inference pass—yielding a maximum improvement of +26 accuracy points over VReST…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Structured Chain-of-Thought"
+  - "Attention Feedback"
+  - "Evolutionary Search"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 3c5074de7eccb3eb
+content_hash: 82dc31a6debff0a1
 ---
+
 # ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ In terms of cross-dataset generalization (GEN trained only on MathVision and eva
 
 ## Related Papers
 
-- [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 - [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker](seatrack_multimodal_tracker.md)
-- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/multimodal_vlm/astar_boosting_multimodal_reasoning_with_automated_structure.md)
-- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[ICLR 2026\] SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models](../../ICLR2026/vlm_reasoning/sketchthinker-r1_towards_efficient_sketch-style_reasoning_in_large_multimodal_mo.md)
+- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
 
 </div>
 

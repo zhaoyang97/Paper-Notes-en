@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning
 description: >-
-  [AAAI 2026][Interpretability][zero-shot stance detection] This paper proposes the CIRF framework, which abstracts transferable reasoning patterns from LLM-generated first-order logic via unsupervised schema induction (US…
+  [AAAI 2026][Interpretability][zero-shot stance detection] This paper proposes the CIRF framework, which abstracts transferable reasoning patterns from LLM-generated first-order logic via unsupervised schema induction (USI), and performs explainable zero-shot stance reasoning through structural alignment using a schema-enhanced graph kernel model (SEGKM). The method achieves state-of-the-art performance on three benchmarks while requiring only 30% of labeled data.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "graph kernel"
   - "low-resource"
 date: 2026-05-08
-content_hash: 02c31ff5717c3c59
+content_hash: 3e3ae00983de355c
 ---
 
 # Induce, Align, Predict: Zero-Shot Stance Detection via Cognitive Inductive Reasoning
@@ -153,10 +153,10 @@ Performance gaps across all ablated components are more pronounced under the VAS
 ## Related Papers
 
 - [\[ICCV 2025\] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning](../../ICCV2025/interpretability/svip_semantically_contextualized_visual_patches_for_zero-shot_learning.md)
+- [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](../../ICLR2026/interpretability/mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
+- [\[CVPR 2025\] L-SWAG: Layer-Sample Wise Activation with Gradients information for Zero-Shot NAS on Vision Transformers](../../CVPR2025/interpretability/lswag_zero_shot_nas.md)
 - [\[ICML 2026\] Singular Vectors of Attention Heads Align with Features](../../ICML2026/interpretability/singular_vectors_of_attention_heads_align_with_features.md)
-- [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
-- [\[ICML 2026\] Cognitive Fatigue in Autoregressive Transformers: Formalization and Measurement](../../ICML2026/interpretability/cognitive_fatigue_in_autoregressive_transformers_formalization_and_measurement.md)
-- [\[ICLR 2026\] ExPO-HM: Learning to Explain-then-Detect for Hateful Meme Detection](../../ICLR2026/interpretability/expo-hm_learning_to_explain-then-detect_for_hateful_meme_detection.md)
+- [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](../../ICLR2026/interpretability/priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules
 description: >-
-  [NeurIPS 2025][Optimization][learning rules] This paper proposes treating learning rules as optimal navigation policies in a (partially observable) loss landscape. By solving a continuous-time optimal control problem via…
+  [NeurIPS 2025][Optimization][learning rules] This paper proposes treating learning rules as optimal navigation policies in a (partially observable) loss landscape. By solving a continuous-time optimal control problem via variational calculus, it derives gradient descent, momentum, natural gradient, Adam, and continual learning strategies within a unified framework.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "momentum"
   - "adaptive optimizers"
 date: 2026-05-08
-content_hash: 8431fd01378cd042
+content_hash: dcb676f541e5774f
 ---
 
 # Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules
@@ -128,10 +128,10 @@ This objective comprises three core components: a cost on parameter change (kine
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
+- [\[CVPR 2026\] Globscope: Toward a Global View of the Loss Landscape](../../CVPR2026/optimization/globscope_toward_a_global_view_of_the_loss_landscape.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
 - [\[NeurIPS 2025\] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression](large_stepsizes_accelerate_gradient_descent_for_regularized_logistic_regression.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
-- [\[NeurIPS 2025\] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)
 
 </div>
 

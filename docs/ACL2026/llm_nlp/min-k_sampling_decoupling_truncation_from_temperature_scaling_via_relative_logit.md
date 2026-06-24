@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Min-k Sampling: Decoupling Truncation from Temperature Scaling via Relative Logit Dynamics
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] Min-k Sampling detects the "semantic cliff" (the boundary between high-confidence candidates and low-quality tail noise) by analyzing the local structure of sorted logit distributions. It achieves strict temperature-invariant truncation, maintaining robust reasoning and creative writing quality even at extreme temperat
+  [ACL 2026][LLM (Other)][Sampling Strategy] Min-k Sampling detects the "semantic cliff" (the boundary between high-confidence candidates and low-quality tail noise) by analyzing the local structure of sorted logit distributions. It achieves strict temperature-invariant truncation, maintaining robust reasoning and creative writing quality even at extreme temperatures.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Sampling Strategy"
+  - "Temperature Invariance"
+  - "Semantic Cliff Detection"
+  - "Dynamic Truncation"
+  - "Logit Space"
 date: 2026-05-08
-content_hash: b70f5a4c34b0229f
+content_hash: 8c3bb26093da18eb
 ---
+
 # Min-k Sampling: Decoupling Truncation from Temperature Scaling via Relative Logit Dynamics
 
 **Conference**: ACL 2026  

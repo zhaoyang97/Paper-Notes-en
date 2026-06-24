@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inverting the Shield: Systematically Generating Safety Tests from Policy Specifications
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] POLARIS compiles natural language safety policies into first-order logic specifications, constructs semantic policy graphs, and systematically traverses them to generate test queries. This shifts LLM safety evaluation from heuristic red-teaming to traceable, coverage-guaranteed, and reproducible specification-driven te
+  [ACL2026][LLM Evaluation][Safety policy specification] POLARIS compiles natural language safety policies into first-order logic specifications, constructs semantic policy graphs, and systematically traverses them to generate test queries. This shifts LLM safety evaluation from heuristic red-teaming to traceable, coverage-guaranteed, and reproducible specification-driven testing.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Safety policy specification"
+  - "formal testing"
+  - "red-teaming"
+  - "first-order logic"
+  - "coverage-driven generation"
 date: 2026-05-08
-content_hash: c75cacc662dd4256
+content_hash: cfc79ffc5a3eb884
 ---
+
 # Inverting the Shield: Systematically Generating Safety Tests from Policy Specifications
 
 **Conference**: ACL2026  
@@ -137,11 +143,11 @@ POLARIS does not train the target LLM but constructs a test generation system. E
 
 ## Related Papers
 
+- [\[ICLR 2026\] Agentic Reinforced Policy Optimization](../../ICLR2026/llm_evaluation/agentic_reinforced_policy_optimization.md)
 - [\[ACL 2026\] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models](policyllm_towards_excellent_comprehension_of_public_policy_for_large_language_mo.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
 - [\[ICML 2026\] Reliable to Expressive: A Curriculum for Rubric-Following Safety Judges](../../ICML2026/llm_evaluation/reliable_to_expressive_a_curriculum_for_rubric-following_safety_judges.md)
-- [\[ACL 2026\] Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges](stability_vs_manipulability_evaluating_robustness_under_post-decision_interactio.md)
-- [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
-- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](../../ICLR2026/llm_evaluation/sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 
 </div>
 

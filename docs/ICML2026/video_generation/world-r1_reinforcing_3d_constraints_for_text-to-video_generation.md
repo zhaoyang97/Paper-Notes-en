@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation
 description: >-
-  [ICML 2026][Video Generation][Reinforcement Learning] World-R1 transforms the 3D consistency problem of text-to-video models into reinforcement learning (RL) post-training. By using implicit camera conditioning and 3D-aware rewards to perform Flow-GRPO alignment on video foundation models like Wan 2.1, it significantly reduces geometric hallucinations without altering mod
+  [ICML 2026][Video Generation][Text-to-Video Generation] World-R1 transforms the 3D consistency problem of text-to-video models into reinforcement learning (RL) post-training. By using implicit camera conditioning and 3D-aware rewards to perform Flow-GRPO alignment on video foundation models like Wan 2.1, it significantly reduces geometric hallucinations without altering model architecture or inference pipelines, while maintaining general video generation quality.
 tags:
-  - ICML 2026
-  - Video Generation
-  - Reinforcement Learning
-  - Flow-GRPO
+  - "ICML 2026"
+  - "Video Generation"
+  - "Text-to-Video Generation"
+  - "3D Consistency"
+  - "Reinforcement Learning"
+  - "Flow-GRPO"
+  - "Camera Control"
 date: 2026-05-08
-content_hash: b41bc5390602ff5e
+content_hash: d326dc8fff3faa5b
 ---
+
 # World-R1: Reinforcing 3D Constraints for Text-to-Video Generation
 
 **Conference**: ICML 2026  
@@ -172,9 +176,9 @@ Ablations of reward components and training strategies show that each component 
 
 - [\[CVPR 2026\] ExPose: Reinforcing Video Generation Models for Extreme Pose Estimation](../../CVPR2026/video_generation/expose_reinforcing_video_generation_models_for_extreme_pose_estimation.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](../../CVPR2026/video_generation/endless_world_real-time_3d-aware_long_video_generation.md)
+- [\[ICML 2026\] VideoGPA: Distilling Geometry Priors for 3D-Consistent Video Generation](videogpa_distilling_geometry_priors_for_3d-consistent_video_generation.md)
 - [\[AAAI 2026\] 3D4D: An Interactive Editable 4D World Model via 3D Video Generation](../../AAAI2026/video_generation/3d4d_an_interactive_editable_4d_world_model_via_3d_video_generation.md)
 - [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](../../CVPR2026/video_generation/yume15_a_text-controlled_interactive_world_generation_model.md)
-- [\[ICML 2026\] OLAF-World: Orienting Latent Actions for Video World Modeling](olaf-world_orienting_latent_actions_for_video_world_modeling.md)
 
 </div>
 

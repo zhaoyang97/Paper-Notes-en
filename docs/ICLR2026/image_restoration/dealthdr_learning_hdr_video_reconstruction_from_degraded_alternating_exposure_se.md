@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] DeAltHDR is the first to directly address the neglected reality that "alternating exposure LDR frames inherently contain noise and motion blur." By employing a Flow-Guided Masked Attention (FGMA) module, it performs cross-frame alignment only in occlusion areas where optical flow is unreliable, while utilizing cheap op
+  [ICLR2026][Image Restoration][HDR Video Reconstruction] DeAltHDR is the first to directly address the neglected reality that "alternating exposure LDR frames inherently contain noise and motion blur." By employing a Flow-Guided Masked Attention (FGMA) module, it performs cross-frame alignment only in occlusion areas where optical flow is unreliable, while utilizing cheap optical flow warping elsewhere. This achieves a tunable trade-off between efficiency and quality. Coupled…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "HDR Video Reconstruction"
+  - "Alternating Exposure"
+  - "Flow-Guided Masked Attention"
+  - "Self-supervised Adaptation"
+  - "Degradation Modeling"
 date: 2026-05-08
-content_hash: e27832a8a38802d3
+content_hash: b252f415c9de4f48
 ---
+
 # DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences
 
 **Conference**: ICLR2026  
@@ -147,14 +153,17 @@ Self-supervised adaptation: Ours achieves CLIPIQA 0.2679 / MANIQA 0.2774, outper
 
 <div class="related-papers" markdown="1">
 
-- **BracketIRE**: (CVPR 2024) First to consider noise/blur in burst HDR, but focuses on static images.
-- **HDRFlow**: (CVPR 2023) High-performance optical flow-based HDR video reconstruction.
-- **Turtle**: (Technique report/GitHub) The backbone architecture focus on efficient multi-scale video processing.
+## Related Papers
+
+- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](../../CVPR2026/image_restoration/lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
+- [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](../../CVPR2026/image_restoration/expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
+- [\[CVPR 2026\] HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter](../../CVPR2026/image_restoration/hfr_and_hdr_video_from_multi-attenuated_spikes_using_a_rapidly_rotating_spokend_.md)
+- [\[ECCV 2024\] Intrinsic Single-Image HDR Reconstruction](../../ECCV2024/image_restoration/intrinsic_single-image_hdr_reconstruction.md)
+- [\[ICLR 2026\] DeLiVR: Differential Spatiotemporal Lie Bias for Efficient Video Deraining](delivr_differential_spatiotemporal_lie_bias_for_efficient_video_deraining.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](../../CVPR2026/image_restoration/lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)

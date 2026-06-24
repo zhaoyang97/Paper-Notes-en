@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Where am I? Cross-View Geo-localization with Natural Language Descriptions
 description: >-
-  [ICCV 2025][Autonomous Driving][Cross-View Geo-localization] This paper introduces a novel task of cross-view geo-localization via natural language descriptions, constructs the CVG-Text multimodal dataset covering 30…
+  [ICCV 2025][Autonomous Driving][Cross-View Geo-localization] This paper introduces a novel task of cross-view geo-localization via natural language descriptions, constructs the CVG-Text multimodal dataset covering 30,000+ coordinates across 3 cities (street-view + satellite + OSM + text), and proposes CrossText2Loc — a method employing Extended Positional Embedding for long-text handling and an Explainable Retrieval Module for localization rationale…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -14,7 +14,7 @@ tags:
   - "LMM"
   - "Explainable Retrieval"
 date: 2026-05-08
-content_hash: bc79bac523cef9ef
+content_hash: 6dbeab1d05a9dfdb
 ---
 
 # Where am I? Cross-View Geo-localization with Natural Language Descriptions
@@ -182,11 +182,11 @@ The text branch provides complementary information to conventional cross-view re
 
 ## Related Papers
 
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
 - [\[ICCV 2025\] Where, What, Why: Towards Explainable Driver Attention Prediction](where_what_why_towards_explainable_driver_attention_prediction.md)
-- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](../../CVPR2026/autonomous_driving/vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
+- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
+- [\[ICLR 2026\] Loc²: Interpretable Cross-View Localization via Depth-Lifted Local Feature Matching](../../ICLR2026/autonomous_driving/loc2_interpretable_cross-view_localization_via_depth-lifted_local_feature_matchi.md)
 - [\[ICCV 2025\] Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations](beyond_one_shot_beyond_one_perspective_cross-view_and_long-horizon_distillation_.md)
-- [\[ICCV 2025\] RTMap: Real-Time Recursive Mapping with Change Detection and Localization](rtmap_real-time_recursive_mapping_with_change_detection_and_localization.md)
+- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](../../CVPR2026/autonomous_driving/vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
 
 </div>
 

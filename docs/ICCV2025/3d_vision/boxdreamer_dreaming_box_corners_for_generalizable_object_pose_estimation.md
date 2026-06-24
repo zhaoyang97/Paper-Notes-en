@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation
 description: >-
-  [ICCV 2025][3D Vision][Object Pose Estimation] This paper proposes BoxDreamer, which adopts 3D bounding box corners as an intermediate representation. A reference-view-based corner synthesizer predicts 2D corner projecti…
+  [ICCV 2025][3D Vision][Object Pose Estimation] This paper proposes BoxDreamer, which adopts 3D bounding box corners as an intermediate representation. A reference-view-based corner synthesizer predicts 2D corner projections in query images, and 6DoF poses are recovered via PnP using the resulting 2D–3D correspondences. The method significantly outperforms existing approaches under sparse-view and heavy-occlusion conditions.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Occlusion Handling"
   - "Generalizable"
 date: 2026-05-08
-content_hash: 5d65d74d996ade02
+content_hash: 1de78d9a5115fd42
 ---
 
 # BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation
@@ -144,8 +144,8 @@ Transformer component ablations (in supplementary material) cover decoder depth,
 - [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
 - [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
 - [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
-- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](../../CVPR2026/3d_vision/exploring_6d_object_pose_estimation_with_deformation.md)
 - [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
+- [\[ICCV 2025\] PersPose: 3D Human Pose Estimation with Perspective Encoding and Perspective Rotation](perspose_3d_human_pose_estimation_with_perspective_encoding_and_perspective_rota.md)
 
 </div>
 

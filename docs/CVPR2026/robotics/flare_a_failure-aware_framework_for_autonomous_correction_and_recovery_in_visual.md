@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] FLARE categorizes robotic VLA failures into "robot pose error (ID)" and "environmental destruction (OOD)." It uses perturbation-bridge data augmentation to provide models with endogenous "retry" capabilities and MLLM-driven offline mining of failure videos to automatically learn object-level "reset" skills. An online M
+  [CVPR 2026][Robotics][VLA] FLARE categorizes robotic VLA failures into "robot pose error (ID)" and "environmental destruction (OOD)." It uses perturbation-bridge data augmentation to provide models with endogenous "retry" capabilities and MLLM-driven offline mining of failure videos to automatically learn object-level "reset" skills. An online MLLM monitor then orchestrates closed-loop switching between these skills, improving the average success rate of $\pi_{0.5}$ on 9 cont…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Failure Recovery"
+  - "Data Augmentation"
+  - "MLLM Monitoring"
+  - "Closed-loop Error Correction"
 date: 2026-05-08
-content_hash: 50dc0ec9d2531fb9
+content_hash: 081b039db96c6a52
 ---
+
 # FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -128,6 +133,7 @@ Decomposing contributions on Coffee and ThreePieceAssembly:
 - Value: ⭐⭐⭐⭐⭐ Failure recovery is a critical bottleneck for VLA deployment; this data-centric approach is highly reusable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -135,8 +141,8 @@ Decomposing contributions on Coffee and ThreePieceAssembly:
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
 - [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
-- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
 - [\[CVPR 2026\] EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment](egoroc_towards_egocentric_robotic_control_via_task-agnostic_visual_alignment.md)
+- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
 
 </div>
 

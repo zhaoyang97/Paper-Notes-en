@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models
 description: >-
-  [NeurIPS 2025][Human Understanding][Motion Generation] This paper proposes VimoRAG, a framework that leverages large-scale in-the-wild video databases as 2D motion priors to enhance 3D motion generation. Two core bottlen…
+  [NeurIPS 2025][Human Understanding][Motion Generation] This paper proposes VimoRAG, a framework that leverages large-scale in-the-wild video databases as 2D motion priors to enhance 3D motion generation. Two core bottlenecks—human motion video retrieval and error propagation—are addressed via the Gemini-MVR retriever and the McDPO training strategy.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Motion Language Model"
   - "DPO"
 date: 2026-05-08
-content_hash: 8550f33cd6aa0476
+content_hash: 06c6729d98693a9e
 ---
 
 # VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models
@@ -48,9 +48,9 @@ VimoRAG is a two-stage pipeline: (1) given a motion description text, Gemini-MVR
 1. **Gemini Motion Video Retriever (Gemini-MVR)**
 
    A dual-channel retrieval architecture is designed:
-   - **Action-level retriever**: Extracts 2D human keypoints from video via a pretrained AlphaPose detector and MotionBERT encoder to obtain frame-level features; these are combined with positional embeddings and passed through a Transformer temporal encoder (with residual connections) to produce an action embedding $\mathbf{a}$. On the text side, a predicate semantic extractor $\theta_\mathcal{P}$ initialized from the InternVideo text encoder produces embedding $\mathbf{p}$. Trained with contrastive loss: $\mathcal{L}_{action} = \mathcal{L}_{p2a} + \mathcal{L}_{a2p}$.
-   - **Object-level retriever**: Directly adopts InternVideo as the VFM, leveraging the rich general knowledge acquired during large-scale pretraining.
-   - **Action-aware router $\mathcal{I}$**: A lightweight linear model that adaptively assigns weights to the two retrievers based on the action embedding:
+    - **Action-level retriever**: Extracts 2D human keypoints from video via a pretrained AlphaPose detector and MotionBERT encoder to obtain frame-level features; these are combined with positional embeddings and passed through a Transformer temporal encoder (with residual connections) to produce an action embedding $\mathbf{a}$. On the text side, a predicate semantic extractor $\theta_\mathcal{P}$ initialized from the InternVideo text encoder produces embedding $\mathbf{p}$. Trained with contrastive loss: $\mathcal{L}_{action} = \mathcal{L}_{p2a} + \mathcal{L}_{a2p}$.
+    - **Object-level retriever**: Directly adopts InternVideo as the VFM, leveraging the rich general knowledge acquired during large-scale pretraining.
+    - **Action-aware router $\mathcal{I}$**: A lightweight linear model that adaptively assigns weights to the two retrievers based on the action embedding:
 
    $s(t,v) = \frac{\mathcal{I}_0(\mathbf{a}) \cdot s(\mathbf{p},\mathbf{a})}{\mathcal{I}_0(\mathbf{a})+\mathcal{I}_1(\mathbf{a})} + \frac{\mathcal{I}_1(\mathbf{a}) \cdot s(\mathbf{g},\mathbf{o})}{\mathcal{I}_0(\mathbf{a})+\mathcal{I}_1(\mathbf{a})}$
 
@@ -59,8 +59,8 @@ VimoRAG is a two-stage pipeline: (1) given a motion description text, Gemini-MVR
 2. **Motion-centric Dual-alignment DPO Trainer (McDPO)**
 
    The LLM is trained in two stages:
-   - **Stage 1 — Visual demonstration-enhanced instruction tuning**: The text $x$, retrieved video $v$, and system prompt are concatenated and fed into the LLM; motion tokens $y$ encoded by VQ-VAE serve as the target under standard autoregressive loss $\mathcal{L}_{sft} = -\sum_n \log p_\theta(y_n | y_{<n}, E^f)$.
-   - **Stage 2 — Dual-alignment DPO training**: Given the Stage 1 baseline model $\pi_{ref}$, $\kappa$ candidate motions are sampled. A **dual-alignment reward model** is defined as:
+    - **Stage 1 — Visual demonstration-enhanced instruction tuning**: The text $x$, retrieved video $v$, and system prompt are concatenated and fed into the LLM; motion tokens $y$ encoded by VQ-VAE serve as the target under standard autoregressive loss $\mathcal{L}_{sft} = -\sum_n \log p_\theta(y_n | y_{<n}, E^f)$.
+    - **Stage 2 — Dual-alignment DPO training**: Given the Stage 1 baseline model $\pi_{ref}$, $\kappa$ candidate motions are sampled. A **dual-alignment reward model** is defined as:
 
    $r(x,v,\hat{y_i}) = -\left(w_\ell \frac{\ell(\hat{y_i}, y)}{\sum_{j\in\kappa}\ell(\hat{y}_j, y)} + w_d \frac{d(\hat{y}_i, x)}{\sum_{j\in\kappa}d(\hat{y}_j, x)}\right)$
 
@@ -152,11 +152,11 @@ Retriever comparison (R@1):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](mospa_human_motion_generation_driven_by_spatial_audio.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
 - [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](../../ICCV2025/human_understanding/gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
 - [\[ICCV 2025\] Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator](../../ICCV2025/human_understanding/signs_as_tokens_a_retrieval-enhanced_multilingual_sign_language_generator.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](../../CVPR2026/human_understanding/next-scale_autoregressive_models_for_text-to-motion_generation.md)
+- [\[CVPR 2025\] ChatGarment: Garment Estimation, Generation and Editing via Large Language Models](../../CVPR2025/human_understanding/chatgarment_garment_estimation_generation_and_editing_via_large_language_models.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](../../CVPR2026/human_understanding/causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](mospa_human_motion_generation_driven_by_spatial_audio.md)
 
 </div>
 

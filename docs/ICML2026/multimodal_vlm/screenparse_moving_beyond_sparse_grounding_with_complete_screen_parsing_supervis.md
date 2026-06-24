@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
 description: >-
-  [ICML 2026][Multimodal VLM][Computer-Use Agent] To address the loss of full-screen structure in "sparse grounding" labels commonly used by GUI agents, this paper constructs ScreenParse, a dense screen parsing dataset with 771K screenshots, 21M elements, and 55 classes via an automated Webshot pipeline. The authors further train ScreenVLM (316M parameters) to parse e
+  [ICML 2026][Multimodal VLM][Screen Parsing] To address the loss of full-screen structure in "sparse grounding" labels commonly used by GUI agents, this paper constructs ScreenParse, a dense screen parsing dataset with 771K screenshots, 21M elements, and 55 classes via an automated Webshot pipeline. The authors further train ScreenVLM (316M parameters) to parse entire screens into ScreenTag structural sequences, outperforming 8B-scale foundation VLMs on dense parsing and spars…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Computer-Use Agent
-  - UI grounding
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Screen Parsing"
+  - "Computer-Use Agent"
+  - "UI grounding"
+  - "Compact VLM"
+  - "Structure-aware loss"
 date: 2026-05-08
-content_hash: 449a7e4119176889
+content_hash: 4e41e4a2b4bddd4b
 ---
+
 # ScreenParse: Moving Beyond Sparse Grounding with Complete Screen Parsing Supervision
 
 **Conference**: ICML 2026  
@@ -147,8 +151,8 @@ Efficiency (H100 + vLLM, average of 128 samples):
 - [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](../../CVPR2026/multimodal_vlm/learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
 - [\[CVPR 2026\] Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection](../../CVPR2026/multimodal_vlm/beyond_weak_supervision_mllms-guided_graded_knowledge_distillation_for_unsupervi.md)
 - [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](../../CVPR2026/multimodal_vlm/sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
+- [\[ICLR 2026\] SigLIP-HD by Fine-to-Coarse Supervision](../../ICLR2026/multimodal_vlm/siglip-hd_by_fine-to-coarse_supervision.md)
 - [\[ICML 2026\] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling](beyond_vlm-based_rewards_diffusion-native_latent_reward_modeling.md)
-- [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](../../CVPR2026/multimodal_vlm/sparse_spectral_lora_routed_experts_for_medical_vlms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play
 description: >-
-  [ACL 2026][LLM Reasoning][self-play] Instead of reinforcing models based solely on win/loss outcomes in text-style game self-play, Stratagem modulates the advantage signal using "abstract transferability" and "reasoning evolution." This ensures that policies learned from games transfer effectively to mathematics, general reasoning, and code generation tas
+  [ACL2026][Reasoning][self-play] Instead of reinforcing models based solely on win/loss outcomes in text-style game self-play, Stratagem modulates the advantage signal using "abstract transferability" and "reasoning evolution." This ensures that policies learned from games transfer effectively to mathematics, general reasoning, and code generation tasks.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - self-play
+  - "ACL2026"
+  - "Reasoning"
+  - "self-play"
+  - "transferable reasoning"
+  - "trajectory advantage modulation"
+  - "mathematical reasoning"
+  - "code generation"
 date: 2026-05-08
-content_hash: d160ad657ffbd54d
+content_hash: b4e59cfbefb549a0
 ---
+
 # Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play
 
 **Conference**: ACL2026  
@@ -143,15 +148,14 @@ The most significant gains are in competition math: AIME24 increased from 10.00 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain](../../ICML2026/llm_reasoning/self-play_only_evolves_when_self-synthetic_pipeline_ensures_learnable_informatio.md)
 - [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
-- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
 - [\[ICML 2025\] Improving Rationality in the Reasoning Process of Language Models through Self-playing Game](../../ICML2025/llm_reasoning/improving_rationality_in_the_reasoning_process_of_language_models_through_self-p.md)
-- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
+- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
+- [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](../../ICLR2026/llm_reasoning/off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
 
 </div>
 

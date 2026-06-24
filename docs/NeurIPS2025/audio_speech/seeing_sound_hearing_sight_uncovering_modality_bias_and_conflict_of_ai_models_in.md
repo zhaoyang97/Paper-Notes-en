@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization
 description: >-
-  [NeurIPS 2025][Audio & Speech][Sound Source Localization] This work systematically reveals that AI SSL models suffer from severe visual bias—degrading to near-random performance under audio-visual conflict—and proposes E…
+  [NeurIPS 2025 Spotlight][Audio & Speech][Sound Source Localization] This work systematically reveals that AI SSL models suffer from severe visual bias—degrading to near-random performance under audio-visual conflict—and proposes EchoPin, a neuroscience-inspired model (HRTF filtering + cochleagram + stereo audio) that substantially outperforms prior methods on AudioCOCO and exhibits a human-like horizontal-over-vertical localization accuracy asymmetry.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Audio & Speech"
   - "Sound Source Localization"
   - "Modality Bias"
@@ -13,7 +13,7 @@ tags:
   - "HRTF"
   - "Cochleagram"
 date: 2026-05-08
-content_hash: 74b70e4987c33d32
+content_hash: 810421ac56893ebc
 ---
 
 # Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization
@@ -108,11 +108,11 @@ EchoPin exhibits a human-like pattern of horizontal localization accuracy exceed
 
 ## Related Papers
 
+- [\[CVPR 2025\] Object-aware Sound Source Localization via Audio-Visual Scene Understanding](../../CVPR2025/audio_speech/object-aware_sound_source_localization_via_audio-visual_scene_understanding.md)
+- [\[CVPR 2025\] Improving Sound Source Localization with Joint Slot Attention on Image and Audio](../../CVPR2025/audio_speech/improving_sound_source_localization_with_joint_slot_attention_on_image_and_audio.md)
 - [\[NeurIPS 2025\] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound](audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o.md)
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
-- [\[ICCV 2025\] How Would It Sound? Material-Controlled Multimodal Acoustic Profile Generation for Objects](../../ICCV2025/audio_speech/how_would_it_sound_material-controlled_multimodal_acoustic_profile_generation_fo.md)
-- [\[NeurIPS 2025\] Accelerate Creation of Product Claims Using Generative AI](accelerate_creation_of_product_claims_using_generative_ai.md)
-- [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
+- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](../../ICLR2026/audio_speech/physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
+- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](../../CVPR2026/audio_speech/how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
 
 </div>
 

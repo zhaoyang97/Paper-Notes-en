@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation
 description: >-
-  [AAAI 2026][Image Generation][Compositional generation] This paper systematically investigates fundamental deficiencies in compositional fidelity of text-to-image (T2I) models, focusing on three basic primitives—negation…
+  [AAAI 2026][Image Generation][Compositional generation] This paper systematically investigates fundamental deficiencies in compositional fidelity of text-to-image (T2I) models, focusing on three basic primitives—negation, counting, and spatial relations. It reveals a "submultiplicative" interference phenomenon in which models perform adequately on individual primitives but suffer dramatic performance degradation under joint composition, attributing this to training data scarc…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "counting"
   - "spatial relations"
 date: 2026-05-08
-content_hash: 7d34f00cf40ff9c6
+content_hash: 8c5672c96f3c74a6
 ---
 
 # Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation
@@ -188,11 +188,11 @@ The paper synthesizes analyses across 15 benchmarks; the table below summarizes 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](../../CVPR2026/image_generation/synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
+- [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](../../ICLR2026/image_generation/long-text-to-image_generation_via_compositional_prompt_decomposition.md)
 - [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](../../NeurIPS2025/image_generation/evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
-- [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
-- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
-- [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
-- [\[AAAI 2026\] SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation](saga_learning_signal-aligned_distributions_for_improved_text-to-image_generation.md)
+- [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](../../CVPR2026/image_generation/compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[CVPR 2025\] coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation](../../CVPR2025/image_generation/codrawagents_a_multi-agent_dialogue_framework_for_compositional_image_generation.md)
 
 </div>
 

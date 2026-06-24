@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction
 description: >-
-  [NeurIPS 2025][AI Safety][Federated Clustering] OmniFC is proposed as a model-agnostic federated clustering framework that exactly reconstructs the global pairwise distance matrix over a finite field via Lagrange coded c…
+  [NeurIPS 2025][AI Safety][Federated Clustering] OmniFC is proposed as a model-agnostic federated clustering framework that exactly reconstructs the global pairwise distance matrix over a finite field via Lagrange coded computing, enabling any centralized clustering method (K-Means / Spectral Clustering / DBSCAN / Hierarchical Clustering, etc.) to run directly on the reconstructed matrix. The framework requires only a single communication round…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Lossless Aggregation"
   - "Secure Computation"
 date: 2026-05-08
-content_hash: c9ee33b536f63c14
+content_hash: b377ad04b4620c86
 ---
 
 # OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction
@@ -134,8 +134,8 @@ For distance-dependent algorithms (KMed/DBSCAN/HC), OmniFC achieves Kappa values
 - [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](reconstruction_and_secrecy_under_approximate_distance_queries.md)
 - [\[NeurIPS 2025\] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering](unifying_proportional_fairness_in_centroid_and_non-centroid_clustering.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
+- [\[ICML 2025\] SecEmb: Sparsity-Aware Secure Federated Learning of On-Device Recommender System with Large Embedding](../../ICML2025/ai_safety/secemb_sparsity-aware_secure_federated_learning_of_on-device_recommender_system_.md)
 - [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](../../ICCV2025/ai_safety/backdoor_mitigation_by_distance-driven_detoxification.md)
-- [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
 
 </div>
 

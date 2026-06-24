@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues
 description: >-
-  [ACL 2026][Dialogue Systems][strategy induction] Metro automatically induces expert dialogue transcripts into a "Strategy Forest"—a collection of trees rooted in K-Means clustered dialogue states. Each node represents an LLM-expanded micro-principle action, and branches represent complete action trajectories pruned by Wilson confidence lower bounds and MCTS-style val
+  [ACL 2026][Dialogue Systems][strategy induction] Metro automatically induces expert dialogue transcripts into a "Strategy Forest"—a collection of trees rooted in K-Means clustered dialogue states. Each node represents an LLM-expanded micro-principle action, and branches represent complete action trajectories pruned by Wilson confidence lower bounds and MCTS-style value backpropagation. During inference, it retrieves a specific tree to extract short-term (breadth) and long-ter…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - strategy induction
-  - Strategy Forest
-  - planning logic
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "strategy induction"
+  - "Strategy Forest"
+  - "negotiation"
+  - "persuasion"
+  - "planning logic"
 date: 2026-05-08
-content_hash: 7cd870cfad9a33a4
+content_hash: e6d4b782ea65cefc
 ---
+
 # Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues
 
 **Conference**: ACL 2026  
@@ -129,6 +132,7 @@ Decomposition of Planning Logic (Table 2):
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TokMem: One-Token Procedural Memory for Large Language Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] TokMem is proposed to compile reusable task procedures into a single trainable memory token. This token serves as both a procedure index and a generation control signal, enabling efficient invocation of 1000+ task procedures without long prompts while supporting continual expansion without forgetting.
+  [ICLR 2026][Information Retrieval & RAG][Procedural Memory] TokMem is proposed to compile reusable task procedures into a single trainable memory token. This token serves as both a procedure index and a generation control signal, enabling efficient invocation of 1000+ task procedures without long prompts while supporting continual expansion without forgetting.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Procedural Memory"
+  - "Memory Token"
+  - "Continual Learning"
+  - "Context Compression"
+  - "Tool Calling"
 date: 2026-05-08
-content_hash: 4fdcc85d486d1bb1
+content_hash: 97508b6734eb720d
 ---
+
 # TokMem: One-Token Procedural Memory for Large Language Models
 
 **Conference**: ICLR 2026  

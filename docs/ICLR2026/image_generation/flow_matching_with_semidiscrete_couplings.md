@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Flow Matching with Semidiscrete Couplings
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] Replaces the "batch-wise $n \times n$ optimal transport" in OT-guided Flow Matching with a one-time fit of an $N$-dimensional dual potential vector and an online Maximum Inner Product Search (MIPS) to assign noise to data points. By removing the quadratic dependence on batch size $n$ found in OT-FM, this method consist
+  [ICLR 2026][Image Generation][Flow Matching] Replaces the "batch-wise $n \times n$ optimal transport" in OT-guided Flow Matching with a one-time fit of an $N$-dimensional dual potential vector and an online Maximum Inner Product Search (MIPS) to assign noise to data points. By removing the quadratic dependence on batch size $n$ found in OT-FM, this method consistently outperforms standard FM and OT-FM across multiple datasets, conditional/unconditional tasks…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Optimal Transport
-  - Semidiscrete OT
-  - Generative Models
-  - MIPS
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Optimal Transport"
+  - "Semidiscrete OT"
+  - "Generative Models"
+  - "MIPS"
 date: 2026-05-08
-content_hash: a4960294b9e56a67
+content_hash: def6ff18d5a30ad6
 ---
+
 # Flow Matching with Semidiscrete Couplings
 
 **Conference**: ICLR 2026  
@@ -126,11 +127,11 @@ The improvements are most significant at low NFE (Euler 4/8)—the exact "infere
 
 ## Related Papers
 
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
 - [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
-- [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
-- [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
+- [\[ICML 2025\] ContinualFlow: Learning and Unlearning with Neural Flow Matching](../../ICML2025/image_generation/continualflow_learning_and_unlearning_with_neural_flow_matching.md)
 
 </div>
 

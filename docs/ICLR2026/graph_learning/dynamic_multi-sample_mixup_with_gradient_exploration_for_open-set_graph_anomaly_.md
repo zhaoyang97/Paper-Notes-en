@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Multi-sample Mixup with Gradient Exploration for Open-set Graph Anomaly Detection
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Addressing the challenge of open-set graph anomaly detection (GAD)—where models only see a few anomaly types during training but must detect never-before-seen anomalies during inference—this paper proposes DEMO. It uses dynamic multi-sample Mixup to fuse seen anomalies into diverse synthetic anomalies to expand decisio
+  [ICLR2026][Graph Learning][Open-set Graph Anomaly Detection] Addressing the challenge of open-set graph anomaly detection (GAD)—where models only see a few anomaly types during training but must detect never-before-seen anomalies during inference—this paper proposes DEMO. It uses dynamic multi-sample Mixup to fuse seen anomalies into diverse synthetic anomalies to expand decision boundaries, employs energy gradient feedback to dynamically reweight samples…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Open-set Graph Anomaly Detection"
+  - "Multi-sample Mixup"
+  - "Energy Gradient"
+  - "Pseudo-labeling"
+  - "Memory Bank"
 date: 2026-05-08
-content_hash: 0982e620da95ada2
+content_hash: 736c52a51cf0faae
 ---
+
 # Dynamic Multi-sample Mixup with Gradient Exploration for Open-set Graph Anomaly Detection
 
 **Conference**: ICLR2026  
@@ -146,10 +152,20 @@ Ablation on Photo / Computers (AR=AUC-ROC, AP=AUC-PR):
 - Value: ⭐⭐⭐⭐ Addresses an undervalued real-world problem with high data efficiency and open-source code.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
+- [\[ICLR 2026\] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection](dr-ggad_dual_residual_centering_for_mitigating_anomaly_nondiscriminativity_in_ge.md)
+- [\[ICLR 2026\] Discrete Bayesian Sample Inference for Graph Generation](discrete_bayesian_sample_inference_for_graph_generation.md)
+- [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](../../ICML2026/graph_learning/generalist_graph_anomaly_detection_via_prototype-based_distillation.md)
+- [\[ICLR 2026\] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering](dual-branch_representations_with_dynamic_gated_fusion_and_triple-granularity_ali.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)

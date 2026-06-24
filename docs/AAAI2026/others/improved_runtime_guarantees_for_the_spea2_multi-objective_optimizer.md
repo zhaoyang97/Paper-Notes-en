@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer
 description: >-
-  [AAAI 2026][SPEA2] By rigorously analyzing the more complex selection mechanism of SPEA2, this paper demonstrates that its population dynamics are fundamentally different from those of NSGA-II — the σ-criterion induces a…
+  [AAAI 2026][SPEA2] By rigorously analyzing the more complex selection mechanism of SPEA2, this paper demonstrates that its population dynamics are fundamentally different from those of NSGA-II — the σ-criterion induces a uniform distribution of objective values across the population — yielding runtime upper bounds with a substantially weaker dependence on population size, indicating that SPEA2 is more robust to parameter choices.
 tags:
   - "AAAI 2026"
   - "SPEA2"
@@ -11,7 +11,7 @@ tags:
   - "population dynamics"
   - "Pareto front"
 date: 2026-05-08
-content_hash: 9f632587b3e72fc6
+content_hash: 0544ee923c3bb79c
 ---
 
 # Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer
@@ -134,9 +134,9 @@ This is a purely theoretical paper; results are stated as theorems. The followin
 
 - [\[AAAI 2026\] Center-Outward q-Dominance: A Sample-Computable Proxy for Strong Stochastic Dominance in Multi-Objective Optimisation](center-outward_q-dominance_a_sample-computable_proxy_for_strong_stochastic_domin.md)
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](improved_differentially_private_algorithms_for_rank_aggregation.md)
+- [\[ICML 2025\] Runtime Analysis of Evolutionary NAS for Multiclass Classification](../../ICML2025/others/runtime_analysis_of_evolutionary_nas_for_multiclass_classification.md)
 - [\[AAAI 2026\] Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds](towards_a_rigorous_understanding_of_the_population_dynamics_of_the_nsga-iii_tigh.md)
-- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
-- [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
+- [\[ICML 2026\] How the Optimizer Shapes Learned Solutions in Equivariant Neural Networks](../../ICML2026/others/how_the_optimizer_shapes_learned_solutions_in_equivariant_neural_networks.md)
 
 </div>
 

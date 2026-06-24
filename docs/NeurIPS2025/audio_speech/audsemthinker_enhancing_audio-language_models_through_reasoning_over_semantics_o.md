@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound
 description: >-
-  [NeurIPS 2025][Audio & Speech][Audio Reasoning] AudSemThinker introduces a structured semantic reasoning framework for audio-language models by defining 9 categories of sound semantic descriptors (who/what/how/when/where…
+  [NeurIPS 2025][Audio & Speech][Audio Reasoning] AudSemThinker introduces a structured semantic reasoning framework for audio-language models by defining 9 categories of sound semantic descriptors (who/what/how/when/where, etc.). Built on Qwen2.5-Omni-7B and trained via SFT + GRPO (with verifiable rewards and length constraints), the model produces three-stage outputs in the format \<think\>\<semantic_elements\>\<answer\>, achieving 66.70% on the MMAU benchmark—surpassing Audi…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Chain-of-Thought"
   - "Multimodal"
 date: 2026-05-08
-content_hash: 9e6dfc0712ec5644
+content_hash: 26b7ca5c1f661ba0
 ---
 
 # AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound
@@ -131,10 +131,10 @@ Base model: Qwen2.5-Omni-7B → **SFT** (LoRA fine-tuning of projection layers, 
 ## Related Papers
 
 - [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
-- [\[NeurIPS 2025\] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)
+- [\[ACL 2025\] Investigating and Enhancing Vision-Audio Capability in Omnimodal Large Language Models](../../ACL2025/audio_speech/investigating_and_enhancing_vision-audio_capability_in_omnimodal_large_language_.md)
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](../../ICLR2026/audio_speech/owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
 - [\[NeurIPS 2025\] Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments](target_speaker_extraction_through_comparing_noisy_positive_and_negative_audio_en.md)
-- [\[ICLR 2026\] Stitch: Simultaneous Thinking and Talking with Chunked Reasoning for Spoken Language Models](../../ICLR2026/audio_speech/stitch_simultaneous_thinking_and_talking_with_chunked_reasoning_for_spoken_langu.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[NeurIPS 2025\] Seeing Sound, Hearing Sight: Uncovering Modality Bias and Conflict of AI Models in Sound Localization](seeing_sound_hearing_sight_uncovering_modality_bias_and_conflict_of_ai_models_in.md)
 
 </div>
 

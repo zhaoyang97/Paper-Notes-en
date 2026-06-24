@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Verifying Neural Network Robustness with Dual Perturbations
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] VeriDou integrates "arbitrary continuous convolutional perturbations (e.g., motion blur at various angles)" and "pixel-independent noise" into a unified perturbation space, encoded as an affine network layer prepended to the original network. This allows existing DNN verifiers (αβ-CROWN / Venus / NeuralSAT) to verify r
+  [CVPR 2026][AI Safety][Formal Verification] VeriDou integrates "arbitrary continuous convolutional perturbations (e.g., motion blur at various angles)" and "pixel-independent noise" into a unified perturbation space, encoded as an affine network layer prepended to the original network. This allows existing DNN verifiers (αβ-CROWN / Venus / NeuralSAT) to verify robustness under such "dual perturbations" in a single pass. The results reveal that many networks judged 100% robust…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Formal Verification"
+  - "Robustness"
+  - "Convolutional Perturbations"
+  - "Adversarial Examples"
+  - "Abstract Interpretation"
 date: 2026-05-08
-content_hash: eb8a52fd04cb9d76
+content_hash: a7da81d33c434de2
 ---
+
 # Verifying Neural Network Robustness with Dual Perturbations
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Stability (Tab. 2, Motion 0°, VeriDou$_{NS}$, SAT Ratio):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
 - [\[CVPR 2026\] RevINN: An End-to-End Invertible Neural Network for Reversible Adversarial Examples Generation](revinn_an_end-to-end_invertible_neural_network_for_reversible_adversarial_exampl.md)
+- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
+- [\[ICLR 2026\] Expressiveness of Multi-Neuron Convex Relaxations in Neural Network Certification](../../ICLR2026/ai_safety/expressiveness_of_multi-neuron_convex_relaxations_in_neural_network_certificatio.md)
 - [\[CVPR 2026\] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting](generative_adversarial_perturbations_with_cross-paradigm_transferability_on_loca.md)
-- [\[CVPR 2026\] IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness](irisfp_adversarial-example-based_model_fingerprinting_with_enhanced_uniqueness_a.md)
 - [\[AAAI 2026\] FairGSE: Fairness-Aware Graph Neural Network without High False Positive Rates](../../AAAI2026/ai_safety/fairgse_fairness-aware_graph_neural_network_without_high_false_positive_rates.md)
 
 </div>

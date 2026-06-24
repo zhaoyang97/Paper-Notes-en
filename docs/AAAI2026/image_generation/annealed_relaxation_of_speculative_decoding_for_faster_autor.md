@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation
 description: >-
-  [AAAI 2026][Image Generation][speculative decoding] This paper proposes Cool-SD, a theoretically grounded annealed relaxation framework for speculative decoding. By deriving a tight upper bound on the TV distance…
+  [AAAI 2026][Image Generation][speculative decoding] This paper proposes Cool-SD, a theoretically grounded annealed relaxation framework for speculative decoding. By deriving a tight upper bound on the TV distance, it obtains the optimal resampling distribution and proves that a decreasing acceptance probability schedule yields smaller distributional shift than a uniform schedule. Cool-SD achieves a superior speed–quality trade-off over LANTERN++ on LlamaGen and Lumina-mGPT.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "total variation distance"
   - "inference acceleration"
 date: 2026-05-08
-content_hash: 0e9944bca88c854f
+content_hash: a95b0345ad86e0bf
 ---
 
 # Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation
@@ -114,10 +114,10 @@ Cool-SD requires no additional training; it only modifies the verification and r
 ## Related Papers
 
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
+- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](../../CVPR2026/image_generation/sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
 - [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](../../ICLR2026/image_generation/autoregressive_image_generation_with_randomized_parallel_decoding.md)
-- [\[ICML 2026\] DFlash: Block Diffusion for Flash Speculative Decoding](../../ICML2026/image_generation/dflash_block_diffusion_for_flash_speculative_decoding.md)
 
 </div>
 

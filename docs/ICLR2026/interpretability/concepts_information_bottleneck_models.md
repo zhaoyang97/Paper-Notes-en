@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Concepts' Information Bottleneck Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Information Bottleneck (IB) regularization is introduced at the concept layer of Concept Bottleneck Models (CBM) to learn minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. This consistently improves predictive performance and concept intervention reliability across six CBM var
+  [ICLR 2026][Interpretability][Concept Bottleneck Models] Information Bottleneck (IB) regularization is introduced at the concept layer of Concept Bottleneck Models (CBM) to learn minimal sufficient concept representations by penalizing $I(X;C)$ while preserving $I(C;Y)$. This consistently improves predictive performance and concept intervention reliability across six CBM variants and three benchmarks.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Information Bottleneck"
+  - "Regularization"
+  - "Concept Leakage"
 date: 2026-05-08
-content_hash: c443e9a3335c6ea1
+content_hash: 48f08a44e2bde478
 ---
+
 # Concepts' Information Bottleneck Models
 
 **Conference**: ICLR 2026  
@@ -136,9 +141,9 @@ On all six CBM families and across three benchmarks, the IB-regularized versions
 
 - [\[ICLR 2026\] There Was Never a Bottleneck in Concept Bottleneck Models](there_was_never_a_bottleneck_in_concept_bottleneck_models.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
+- [\[ICLR 2026\] Information Shapes Koopman Representation](information_shapes_koopman_representation.md)
 - [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
-- [\[ICML 2026\] In Defense of Information Leakage in Concept-based Models](../../ICML2026/interpretability/in_defense_of_information_leakage_in_concept-based_models.md)
 
 </div>
 

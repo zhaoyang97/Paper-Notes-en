@@ -1,16 +1,21 @@
 ---
 title: >-
-  [Paper Note] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡
+  [Paper Note] Carré du champ Flow Matching: Improving the Quality-Generalisation Trade-off in Generative Models via Geometry-Aware Noise
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes **CDC-FM (Carré du champ Flow Matching)**, which replaces the isotropic homogeneous Gaussian noise in standard Flow Matching with **anisotropic, spatially varying noise** determined by the local geometry of the data manifold. This significantly suppresses memorisation and enhances generalisation wit
+  [ICLR 2026][Image Generation][Flow Matching] This paper proposes **CDC-FM (Carré du champ Flow Matching)**, which replaces the isotropic homogeneous Gaussian noise in standard Flow Matching with **anisotropic, spatially varying noise** determined by the local geometry of the data manifold. This significantly suppresses memorisation and enhances generalisation without sacrificing sample quality, making it particularly suitable for scientific scenarios with sparse data or stron…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - Carré du champ
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Memorisation"
+  - "Generalisation"
+  - "Data Manifold"
+  - "Anisotropic Noise"
+  - "Carré du champ"
 date: 2026-05-08
-content_hash: 7feef8619ee30dfb
+content_hash: d02ccbed39134f1d
 ---
+
 # Carré du champ Flow Matching: Improving the Quality-Generalisation Trade-off in Generative Models via Geometry-Aware Noise
 
 **Conference**: ICLR 2026  
@@ -114,11 +119,11 @@ At 3k epochs, once both models stabilise, CDC-FM simultaneously improves quality
 
 ## Related Papers
 
+- [\[ICML 2026\] Hölder++: Improving the Quality-Coherence Trade-off in Multimodal VAEs](../../ICML2026/image_generation/hölder_improving_the_quality-coherence_trade-off_in_multimodal_vaes.md)
+- [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
+- [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
+- [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
-- [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](../../ICML2026/image_generation/a_kinetic_energy_perspective_of_flow_matching.md)
-- [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
 
 </div>
 

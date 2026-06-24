@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning
 description: >-
-  [ICLR 2026][Time Series][Paper Note] TRIDENT utilizes a unified architecture (GCN spatial embedding + Date2Vec temporal embedding + Bi-directional Cross-Attention Encoder + non-linear tanh projection pooling) to simultaneously model continuous GPS trajectories and discrete badminton hit-point trajectories. It introduces a "Distance-Preserving Multi-kernel
+  [ICLR 2026][Time Series][Trajectory Similarity] TRIDENT utilizes a unified architecture (GCN spatial embedding + Date2Vec temporal embedding + Bi-directional Cross-Attention Encoder + non-linear tanh projection pooling) to simultaneously model continuous GPS trajectories and discrete badminton hit-point trajectories. It introduces a "Distance-Preserving Multi-kernel Triplet Loss" to align distances in the embedding space with the original trajectory space…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Trajectory Similarity"
+  - "Spatio-Temporal Representation"
+  - "Triplet Learning"
+  - "Distance Preservation"
+  - "Cross-Domain Generalization"
 date: 2026-05-08
-content_hash: bb874ec21ac77077
+content_hash: bb02b9d533e7d06a
 ---
+
 # TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,10 @@ On average, TRIDENT outperforms baseline means by 271% / 96% / 127% on Badminton
 
 ## Related Papers
 
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
 - [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
 - [\[ICLR 2026\] GTM: A General Time-series Model for Enhanced Representation Learning](gtm_a_general_time-series_model_for_enhanced_representation_learning_of_time-series.md)
-- [\[AAAI 2026\] HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction](../../AAAI2026/time_series/hydrodcm_hydrological_domain-conditioned_modulation_for_cross-reservoir_inflow_p.md)
-- [\[ICLR 2026\] Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective](enabling_arbitrary_inference_in_spatio-temporal_dynamic_systems_a_physics-inspir.md)
+- [\[ICLR 2026\] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction](ten-dm_topology-enhanced_diffusion_model_for_spatio-temporal_event_prediction.md)
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
 
 </div>

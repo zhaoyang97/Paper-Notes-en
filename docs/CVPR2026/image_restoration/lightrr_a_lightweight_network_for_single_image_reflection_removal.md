@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LightRR: A Lightweight Network for Single Image Reflection Removal
 description: >-
-  [CVPR 2026][Image Restoration][Knowledge Distillation] To address the issues of excessive size and slow speed in Single Image Reflection Removal (SIRR) models, LightRR employs wavelet frequency division to process low-frequency components (where reflections are concentrated) using a Mamba State Space Model, while high-frequency components pass through a lightweight bypass.
+  [CVPR 2026][Image Restoration][Single Image Reflection Removal] To address the issues of excessive size and slow speed in Single Image Reflection Removal (SIRR) models, LightRR employs wavelet frequency division to process low-frequency components (where reflections are concentrated) using a Mamba State Space Model, while high-frequency components pass through a lightweight bypass. During training, a knowledge distillation strategy allows a small encoder to learn from large p…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Single Image Reflection Removal"
+  - "Mamba State Space Model"
+  - "Wavelet Transform"
+  - "Knowledge Distillation"
+  - "Lightweight"
 date: 2026-05-08
-content_hash: b1b8fdb9dbb487f6
+content_hash: 0e11716437ae0fc8
 ---
+
 # LightRR: A Lightweight Network for Single Image Reflection Removal
 
 **Conference**: CVPR 2026  
@@ -123,16 +128,16 @@ Knowledge distillation (KD) ablation: (A) No pre-trained features → worst perf
 - Value: ⭐⭐⭐⭐⭐ Highly practical for mobile/edge deployment by reducing computation by two orders of magnitude with minimal accuracy loss.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] GFRRN: Explore the Gaps in Single Image Reflection Removal](gfrrn_explore_the_gaps_in_single_image_reflection_removal.md)
+- [\[CVPR 2026\] Rectifying Latent Space for Generative Single-Image Reflection Removal](rectifying_latent_space_for_generative_single-image_reflection_removal.md)
 - [\[CVPR 2025\] Reversible Decoupling Network for Single Image Reflection Removal](../../CVPR2025/image_restoration/reversible_decoupling_network_for_single_image_reflection_removal.md)
 - [\[CVPR 2026\] Reflection Separation from a Single Image via Joint Latent Diffusion](reflection_separation_from_a_single_image_via_joint_latent_diffusion.md)
 - [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
-- [\[CVPR 2026\] Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction](polarization_state_tracing_for_reflection_removal_and_color-consistent_reconstru.md)
-- [\[CVPR 2026\] UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution](ucan_unified_convolutional_attention_lightweight_sr.md)
 
 </div>
 

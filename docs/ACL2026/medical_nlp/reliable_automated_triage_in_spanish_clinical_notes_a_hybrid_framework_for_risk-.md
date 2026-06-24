@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliable Automated Triage in Spanish Clinical Notes: A Hybrid Framework for Risk-Aware HIV Suspicion Identification
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper proposes a dual-validation selective triage framework for early HIV suspicion identification in Spanish clinical notes, utilizing MCP to handle aleatoric uncertainty and MCMD geometric veto to handle epistemic uncertainty. The system automatically processes 67.7% of cases while achieving a 0.982 Clear $F_2$
+  [ACL2026][Medical LLM][Clinical NLP] This paper proposes a dual-validation selective triage framework for early HIV suspicion identification in Spanish clinical notes, utilizing MCP to handle aleatoric uncertainty and MCMD geometric veto to handle epistemic uncertainty. The system automatically processes 67.7% of cases while achieving a 0.982 Clear $F_2$ under strict safety constraints.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL2026"
+  - "Medical LLM"
+  - "Clinical NLP"
+  - "Selective Classification"
+  - "Uncertainty Quantification"
+  - "HIV Suspicion Identification"
+  - "Spanish EHRs"
 date: 2026-05-08
-content_hash: 8b5b7a15ac679fe6
+content_hash: ffaddc7efe31fb5e
 ---
+
 # Reliable Automated Triage in Spanish Clinical Notes: A Hybrid Framework for Risk-Aware HIV Suspicion Identification
 
 **Conference**: ACL2026  
@@ -138,10 +144,20 @@ The ablation primarily verifies the necessity of the dual veto and the utility o
 - Value: ⭐⭐⭐⭐⭐ Highly valuable for high-risk medical NLP deployment, particularly the design philosophy of "not forcing the model to answer every case."
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
+- [\[ACL 2026\] Anonpsy: A Graph-Based Framework for Structure-Preserving De-identification of Psychiatric Narratives](anonpsy_a_graph-based_framework_for_structure-preserving_de-identification_of_ps.md)
+- [\[ACL 2025\] RedactX: An LLM-Powered Framework for Automatic Clinical Data De-Identification](../../ACL2025/medical_nlp/redactor_an_llm-powered_framework_for_automatic_clinical_data_de-identification.md)
+- [\[ACL 2025\] ReflecTool: Towards Reflection-Aware Tool-Augmented Clinical Agents](../../ACL2025/medical_nlp/reflectool_clinical_agent.md)
+- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)

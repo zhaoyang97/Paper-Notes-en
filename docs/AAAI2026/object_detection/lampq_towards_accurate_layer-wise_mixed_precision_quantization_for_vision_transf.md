@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LampQ: Towards Accurate Layer-wise Mixed Precision Quantization for Vision Transformers
 description: >-
-  [AAAI 2026][Object Detection][Mixed Precision Quantization] This paper proposes LampQ, a metric-based layer-wise mixed precision quantization method that measures the quantization sensitivity of each ViT layer via a type…
+  [AAAI 2026][Object Detection][Mixed Precision Quantization] This paper proposes LampQ, a metric-based layer-wise mixed precision quantization method that measures the quantization sensitivity of each ViT layer via a type-aware Fisher information metric, combines integer linear programming to optimize bit-width allocation, and iteratively refines the allocation. LampQ achieves state-of-the-art performance across image classification, object detection…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Fisher Information"
   - "Integer Linear Programming"
 date: 2026-05-08
-content_hash: 279a341928ce8883
+content_hash: 5732d1e5ec08f9fd
 ---
 
 # LampQ: Towards Accurate Layer-wise Mixed Precision Quantization for Vision Transformers
@@ -129,11 +129,11 @@ LampQ is a post-training quantization (PTQ) method and requires no retraining. A
 
 ## Related Papers
 
-- [\[ICCV 2025\] Adversarial Attention Perturbations for Large Object Detection Transformers](../../ICCV2025/object_detection/adversarial_attention_perturbations_for_large_object_detection_transformers.md)
+- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](../../ICLR2026/object_detection/enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 - [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)
 - [\[AAAI 2026\] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection](beyond_boundaries_leveraging_vision_foundation_models_for_so.md)
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
-- [\[CVPR 2026\] Random Wins All: Rethinking Grouping Strategies for Vision Tokens](../../CVPR2026/object_detection/random_wins_all_rethinking_grouping_strategies_for_vision_tokens.md)
+- [\[CVPR 2026\] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](../../CVPR2026/object_detection/online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)
 
 </div>
 

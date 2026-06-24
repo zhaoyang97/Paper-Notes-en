@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding
 description: >-
-  [ICLR 2026][Graph Learning][Self-Supervised Learning] HarmonyGNNs achieves goal harmony via "Teacher-Student Prediction SSL (JEPA-style) + Node Difficulty-Driven Dynamic Masking" and representation harmony via "Linear/MLP Projection + Weighted GCN + Feature-level Self-Attention + Hierarchical Fusion," allowing a single unlabeled framework to achieve SOTA on both homophili
+  [ICLR 2026][Graph Learning][Graph Neural Networks] HarmonyGNNs achieves goal harmony via "Teacher-Student Prediction SSL (JEPA-style) + Node Difficulty-Driven Dynamic Masking" and representation harmony via "Linear/MLP Projection + Weighted GCN + Feature-level Self-Attention + Hierarchical Fusion," allowing a single unlabeled framework to achieve SOTA on both homophilic and heterophilic graphs simultaneously.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Self-Supervised Learning
-  - JEPA
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Self-Supervised Learning"
+  - "Heterophilic Graphs"
+  - "Homophilic Graphs"
+  - "Teacher-Student Prediction Architecture"
+  - "JEPA"
+  - "Dynamic Masking"
 date: 2026-05-08
-content_hash: 737cfab12d7db8f2
+content_hash: b52fa2f7dc3407fe
 ---
+
 # HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding
 
 **Conference**: ICLR 2026  
@@ -132,11 +138,11 @@ Compared to the previous SOTA, improvements include +7.1% on Texas, +9.6% on Rom
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Consistency Improves the Trustworthiness of Self-Interpretable GNNs](self-consistency_improves_the_trustworthiness_of_self-interpretable_gnns.md)
 - [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
-- [\[NeurIPS 2025\] Geometric Imbalance in Semi-Supervised Node Classification](../../NeurIPS2025/graph_learning/geometric_imbalance_in_semi-supervised_node_classification.md)
 - [\[AAAI 2026\] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption](../../AAAI2026/graph_learning/feature-centric_unsupervised_node_representation_learning_without_homophily_assu.md)
-- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](../../NeurIPS2025/graph_learning/self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
+- [\[ICML 2025\] HGOT: Self-supervised Heterogeneous Graph Neural Network with Optimal Transport](../../ICML2025/graph_learning/hgot_self-supervised_heterogeneous_graph_neural_network_with_optimal_transport.md)
 
 </div>
 

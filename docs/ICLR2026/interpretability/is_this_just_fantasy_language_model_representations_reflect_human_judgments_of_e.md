@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Is This Just Fantasy? Language Model Representations Reflect Human Judgments of Event Plausibility
 description: >-
-  [ICLR 2026][Interpretability][World Models] The authors utilize Contrastive Activation Addition (CAA) to extract **modal difference vectors** from the hidden states of various LMs to distinguish between modal categories such as "probable / impossible / inconceivable." This demonstrates that LM internal judgments of sentence modality are significantly more reliab
+  [ICLR 2026][Interpretability][Modal categories] The authors utilize Contrastive Activation Addition (CAA) to extract **modal difference vectors** from the hidden states of various LMs to distinguish between modal categories such as "probable / impossible / inconceivable." This demonstrates that LM internal judgments of sentence modality are significantly more reliable than previously suggested. These vectors emerge in a coarse-to-fine order across training, layers, and scale…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - World Models
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Modal categories"
+  - "linear representations"
+  - "contrastive activations"
+  - "difference vectors"
+  - "world models"
+  - "modeling human judgment"
 date: 2026-05-08
-content_hash: 90e137efc9146eb8
+content_hash: 93fa759c36838627
 ---
+
 # Is This Just Fantasy? Language Model Representations Reflect Human Judgments of Event Plausibility
 
 **Conference**: ICLR 2026  

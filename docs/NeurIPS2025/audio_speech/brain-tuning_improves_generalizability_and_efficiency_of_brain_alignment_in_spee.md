@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models
 description: >-
-  [NEURIPS2025][Audio & Speech][brain-tuning] This paper proposes Multi-brain-tuning, a method that jointly fine-tunes pretrained speech models on fMRI data from multiple participants…
+  [NEURIPS2025][Audio & Speech][brain-tuning] This paper proposes Multi-brain-tuning, a method that jointly fine-tunes pretrained speech models on fMRI data from multiple participants, reducing the data required for brain alignment by 5×, improving alignment by up to 50%, and generalizing to unseen participants and datasets.
 tags:
   - "NEURIPS2025"
   - "Audio & Speech"
@@ -13,7 +13,7 @@ tags:
   - "multi-participant"
   - "LoRA"
 date: 2026-05-08
-content_hash: b875c3a5608454de
+content_hash: 1bb7d21f0db94db9
 ---
 
 # Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models
@@ -133,10 +133,10 @@ The unified projection head combined with anchor-stimulus training is transferab
 ## Related Papers
 
 - [\[ACL 2026\] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models](../../ACL2026/audio_speech/generalizable_prompt_tuning_for_audio-language_models_via_semantic_expansion.md)
+- [\[ACL 2025\] Soundwave: Less is More for Speech-Text Alignment in LLMs](../../ACL2025/audio_speech/soundwave_less_is_more_for_speech-text_alignment_in_llms.md)
 - [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](levo_high-quality_song_generation_with_multi-processing_refined_supervision.md)
-- [\[NeurIPS 2025\] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity](a_triangle_enables_multimodal_alignment_beyond_cosine_simila.md)
 - [\[ACL 2026\] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](../../ACL2026/audio_speech/mind_the_pause_disfluency-aware_objective_tuning_for_multilingual_speech_correct.md)
-- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
+- [\[NeurIPS 2025\] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity](a_triangle_enables_multimodal_alignment_beyond_cosine_simila.md)
 
 </div>
 

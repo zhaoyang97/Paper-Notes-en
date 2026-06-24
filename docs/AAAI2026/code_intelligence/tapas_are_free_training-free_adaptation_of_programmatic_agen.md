@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAPA: Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments
 description: >-
-  [AAAI 2026][Code Intelligence][Programmatic Agent] TAPA positions LLMs as "intelligent modulators" of the symbolic action space rather than direct decision-makers. Through LLM-guided program synthesis…
+  [AAAI 2026][Code Intelligence][Programmatic Agent] TAPA positions LLMs as "intelligent modulators" of the symbolic action space rather than direct decision-makers. Through LLM-guided program synthesis, it dynamically adapts the symbolic actions of programmatic agents without retraining, achieving strong performance in cybersecurity DDoS defense (77.7% network uptime) and swarm intelligence formation control.
 tags:
   - "AAAI 2026"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "logical primitives"
   - "symbolic action space"
 date: 2026-05-08
-content_hash: f42435bb1a58a910
+content_hash: 03dabab6093b4012
 ---
 
 # TAPA: Training-Free Adaptation of Programmatic Agents via LLM-Guided Program Synthesis in Dynamic Environments
@@ -129,11 +129,11 @@ The meta-agent uses a TiT (Transformer-in-Transformer) architecture trained in t
 
 ## Related Papers
 
+- [\[ICLR 2026\] LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design](../../ICLR2026/code_intelligence/llm-guided_evolutionary_program_synthesis_for_quasi-monte_carlo_design.md)
 - [\[ICCV 2025\] TikZero: Zero-Shot Text-Guided Graphics Program Synthesis](../../ICCV2025/code_intelligence/tikzero_zero-shot_text-guided_graphics_program_synthesis.md)
+- [\[ICLR 2026\] RefineStat: Efficient Exploration for Probabilistic Program Synthesis](../../ICLR2026/code_intelligence/refinestat_efficient_exploration_for_probabilistic_program_synthesis.md)
+- [\[ICLR 2026\] Gradient-Based Program Synthesis with Neurally Interpreted Languages](../../ICLR2026/code_intelligence/gradient-based_program_synthesis_with_neurally_interpreted_languages.md)
 - [\[ACL 2026\] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency](../../ACL2026/code_intelligence/dpc_training-free_text-to-sql_candidate_selection_via_dual-paradigm_consistency.md)
-- [\[NeurIPS 2025\] Program Synthesis via Test-Time Transduction](../../NeurIPS2025/code_intelligence/program_synthesis_via_test-time_transduction.md)
-- [\[AAAI 2026\] DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation](diffbench_meets_diffagent_end-to-end_llm-driven_diffusion_ac.md)
-- [\[NeurIPS 2025\] Once Upon an Input: Reasoning via Per-Instance Program Synthesis](../../NeurIPS2025/code_intelligence/once_upon_an_input_reasoning_via_per-instance_program_synthesis.md)
 
 </div>
 

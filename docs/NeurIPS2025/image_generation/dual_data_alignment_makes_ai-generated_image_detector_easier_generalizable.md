@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes Dual Data Alignment (DDA), which generates synthetic training images via pixel-domain and frequency-domain dual alignment to eliminate sp…
+  [NeurIPS 2025 Spotlight][Image Generation][AI-generated image detection] This paper proposes Dual Data Alignment (DDA), which generates synthetic training images via pixel-domain and frequency-domain dual alignment to eliminate spurious correlations caused by dataset bias. By forcing the detector to learn only forgery-relevant features, DDA achieves an average accuracy of 90.7% across 11 benchmarks, substantially outperforming existing methods.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "AI-generated image detection"
   - "data alignment"
@@ -13,7 +13,7 @@ tags:
   - "VAE reconstruction"
   - "dataset bias"
 date: 2026-05-08
-content_hash: 63610dc21072fcce
+content_hash: 6aa1945c938b7865
 ---
 
 # Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable
@@ -152,10 +152,10 @@ DDA demonstrates strong cross-architecture generalizability on the latest genera
 ## Related Papers
 
 - [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
+- [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
+- [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](../../AAAI2026/image_generation/aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
 - [\[NeurIPS 2025\] GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data](geneman_generalizable_single-image_3d_human_reconstruction_from_multi-source_hum.md)
-- [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](epistemic_uncertainty_for_generated_image_detection.md)
-- [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
-- [\[NeurIPS 2025\] Is Artificial Intelligence Generated Image Detection a Solved Problem?](is_artificial_intelligence_generated_image_detection_a_solved_problem.md)
 
 </div>
 

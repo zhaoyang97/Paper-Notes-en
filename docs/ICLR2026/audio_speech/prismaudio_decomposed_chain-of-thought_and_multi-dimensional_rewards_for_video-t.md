@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PrismAudio: Decomposed Chain-of-Thought and Multi-dimensional Rewards for Video-to-Audio Generation
 description: >-
-  [ICLR 2026][Audio & Speech][GRPO] PrismAudio decomposes video-to-audio (V2A) generation into four specialized Chains-of-Thought (CoT): semantic, temporal, aesthetic, and spatial. Each CoT is paired with a corresponding reward function, and the model is optimized via multi-dimensional reinforcement learning using efficient Fast-GRPO. It achieves SOTA ac
+  [ICLR 2026][Audio & Speech][Video foley] PrismAudio decomposes video-to-audio (V2A) generation into four specialized Chains-of-Thought (CoT): semantic, temporal, aesthetic, and spatial. Each CoT is paired with a corresponding reward function, and the model is optimized via multi-dimensional reinforcement learning using efficient Fast-GRPO. It achieves SOTA across four perceptual dimensions on VGGSound and the self-built AudioCanvas with fewer parameters and faster inference.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - GRPO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Video foley"
+  - "Decomposed Chain-of-Thought"
+  - "Multi-dimensional rewards"
+  - "GRPO"
+  - "Flow matching diffusion"
 date: 2026-05-08
-content_hash: 620520d719409617
+content_hash: ce05021eca0eef38
 ---
+
 # PrismAudio: Decomposed Chain-of-Thought and Multi-dimensional Rewards for Video-to-Audio Generation
 
 **Conference**: ICLR 2026  
@@ -142,15 +147,16 @@ On the out-of-distribution (OOD) AudioCanvas benchmark, PrismAudio maintains sta
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards](incentivizing_consistent_effective_and_scalable_reasoning_capability_in_audio_ll.md)
 - [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](../../NeurIPS2025/audio_speech/thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
 - [\[ICLR 2026\] SyncTrack: Rhythmic Stability and Synchronization in Multi-Track Music Generation](synctrack_rhythmic_stability_and_synchronization_in_multi-track_music_generation.md)
 - [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
 - [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
-- [\[ICML 2026\] Two-Dimensional Quantization for Geometry-Aware Audio Coding](../../ICML2026/audio_speech/two-dimensional_quantization_for_geometry-aware_audio_coding.md)
 
 </div>
 

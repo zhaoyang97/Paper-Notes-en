@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory
 description: >-
-  [CVPR 2026][Video Generation][I2V] OneStory reformulates Multi-Shot video generation (MSV) as a "shot-by-shot autoregressive next-shot generation" task. It employs a **Frame Selection module** to select semantically relevant frames from the entire historical shot sequence and an **Adaptive Conditioner** to compress these non-contiguous frames into compa
+  [CVPR 2026][Video Generation][Multi-shot video generation] OneStory reformulates Multi-Shot video generation (MSV) as a "shot-by-shot autoregressive next-shot generation" task. It employs a **Frame Selection module** to select semantically relevant frames from the entire historical shot sequence and an **Adaptive Conditioner** to compress these non-contiguous frames into compact context tokens based on importance. These tokens are directly fed into the DiT…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - I2V
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-shot video generation"
+  - "Autoregressive generation"
+  - "Adaptive memory"
+  - "Frame selection"
+  - "I2V"
 date: 2026-05-08
-content_hash: b152b73be0911386
+content_hash: f94affbf5168cc03
 ---
+
 # OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory
 
 **Conference**: CVPR 2026  

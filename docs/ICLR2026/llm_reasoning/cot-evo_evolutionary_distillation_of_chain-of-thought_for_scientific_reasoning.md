@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] CoT-Evo reformulates "multi-teacher Chain-of-Thought (CoT) distillation" into a genetic algorithm. It first generates a pool of reasoning trajectories using multiple LLM thinkers and retrieved knowledge, then scores them via a fitness function based on correctness, length appropriateness, and knowledge utilization. Sel
+  [ICLR2026][Reasoning][Chain-of-Thought Distillation] CoT-Evo reformulates "multi-teacher Chain-of-Thought (CoT) distillation" into a genetic algorithm. It first generates a pool of reasoning trajectories using multiple LLM thinkers and retrieved knowledge, then scores them via a fitness function based on correctness, length appropriateness, and knowledge utilization. Selecting parents through novelty-driven search ensures diversity and quality…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Chain-of-Thought Distillation"
+  - "Scientific Reasoning"
+  - "Evolutionary Algorithms"
+  - "Novelty Search"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: a969472a39993331
+content_hash: a5c8d3430b4d38f3
 ---
+
 # CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning
 
 **Conference**: ICLR2026  
@@ -136,15 +142,16 @@ CoT-Evo maintains >70% usable data with significantly higher quality scores.
 - Value: ⭐⭐⭐⭐⭐ (Provides a scalable path for high-fidelity scientific data synthesis).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
+- [\[ICLR 2026\] The Quest for Efficient Reasoning: A Data-Centric Benchmark to CoT Distillation](the_quest_for_efficient_reasoning_a_data-centric_benchmark_to_cot_distillation.md)
 - [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
 - [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
 - [\[ICLR 2026\] SCI-Verifier: Scientific Verifier with Thinking](sci-verifier_scientific_verifier_with_thinking.md)
-- [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
 
 </div>
 

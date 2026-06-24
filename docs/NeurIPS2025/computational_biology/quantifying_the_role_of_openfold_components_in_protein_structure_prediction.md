@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantifying the Role of OpenFold Components in Protein Structure Prediction
 description: >-
-  [NeurIPS 2025 (Workshop)][Computational Biology][OpenFold] This paper proposes a systematic methodology for evaluating the contribution of individual Evoformer components in OpenFold/AlphaFold2 to protein structure predi…
+  [NeurIPS 2025 (Workshop)][Computational Biology][OpenFold] This paper proposes a systematic methodology for evaluating the contribution of individual Evoformer components in OpenFold/AlphaFold2 to protein structure prediction accuracy. The study finds that MSA column attention and MLP Transition layers are the most critical components, and that the importance of multiple components is significantly correlated with protein sequence length.
 tags:
   - "NeurIPS 2025 (Workshop)"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Component Ablation"
   - "Protein Length"
 date: 2026-05-08
-content_hash: ede717efd11558a4
+content_hash: 0f274f1006fd5dea
 ---
 
 # Quantifying the Role of OpenFold Components in Protein Structure Prediction
@@ -150,10 +150,10 @@ OpenFold model_1_ptm weights and original AlphaFold2 JAX weights are used. Zero 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[NeurIPS 2025\] GraphFLA: Augmenting Biological Fitness Prediction Benchmarks with Landscape Features](augmenting_biological_fitness_prediction_benchmarks_with_landscapes_features_fro.md)
-- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](../../ICML2026/computational_biology/learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
-- [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](protein_design_with_dynamic_protein_vocabulary.md)
+- [\[ICML 2025\] Protein Structure Tokenization: Benchmarking and New Recipe](../../ICML2025/computational_biology/protein_structure_tokenization_benchmarking_and_new_recipe.md)
+- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
+- [\[ICML 2026\] Flexible Kernels for Protein Property Prediction](../../ICML2026/computational_biology/flexible_kernels_for_protein_property_prediction.md)
+- [\[ICML 2025\] Protriever: End-to-End Differentiable Protein Homology Search for Fitness Prediction](../../ICML2025/computational_biology/protriever_end-to-end_differentiable_protein_homology_search_for_fitness_predict.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond World Models: Rethinking Understanding in AI Models
 description: >-
-  [AAAI 2026][World Models] Through three case studies drawn from the philosophy of science — a domino computer, a mathematical proof…
+  [AAAI 2026][World Models] Through three case studies drawn from the philosophy of science — a domino computer, a mathematical proof, and Bohr's atomic theory — this paper argues that the world model framework is insufficient to characterize human-level "understanding," demonstrating that tracking states and state transitions alone cannot capture the abstract reasoning, motivational insight, and problem-context awareness that understanding requires.
 tags:
   - "AAAI 2026"
   - "World Models"
@@ -11,7 +11,7 @@ tags:
   - "Cognitive Science"
   - "Representation Learning"
 date: 2026-05-08
-content_hash: 222f8ef4fc854f3b
+content_hash: d18f4237a6016897
 ---
 
 # Beyond World Models: Rethinking Understanding in AI Models
@@ -142,11 +142,11 @@ This is a purely theoretical/philosophical paper and contains no quantitative ex
 
 ## Related Papers
 
-- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
-- [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](../../ICLR2026/others/building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
+- [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
 - [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](../../ICLR2026/others/building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
+- [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](../../ICLR2026/others/latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
 - [\[AAAI 2026\] TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models](taylorpoda_a_taylor_expansion-based_method_to_improve_post-hoc_attributions_for_.md)
-- [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](../../ICML2026/others/beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
 
 </div>
 

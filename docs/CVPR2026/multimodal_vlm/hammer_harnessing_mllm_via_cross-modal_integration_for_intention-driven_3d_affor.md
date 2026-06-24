@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] HAMMER is proposed to achieve interaction-image-based 3D affordance grounding by extracting contact-aware intention embeddings from MLLMs, enhancing point cloud features via hierarchical cross-modal fusion, and injecting 3D spatial information into intention embeddings through a multi-granularity geometry lifting modul
+  [CVPR 2026][Multimodal VLM][3D Affordance] HAMMER is proposed to achieve interaction-image-based 3D affordance grounding by extracting contact-aware intention embeddings from MLLMs, enhancing point cloud features via hierarchical cross-modal fusion, and injecting 3D spatial information into intention embeddings through a multi-granularity geometry lifting module, significantly outperforming existing methods on the PIAD benchmark.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D Affordance"
+  - "MLLM"
+  - "Cross-modal Fusion"
+  - "Point Cloud"
+  - "Intention Understanding"
 date: 2026-05-08
-content_hash: 921ea5469f0b1b2a
+content_hash: dad9f59a4bf4358e
 ---
+
 # HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ $\mathcal{L} = \lambda_{txt}\mathcal{L}_{txt} + \lambda_{aff}\mathcal{L}_{aff}$:
 - Value: ⭐⭐⭐⭐ Provides a valuable design paradigm for MLLM applications in 3D understanding.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
+- [\[ICLR 2026\] FLARE: Fully Integration of Vision-Language Representations for Deep Cross-Modal Understanding](../../ICLR2026/multimodal_vlm/flare_fully_integration_of_vision-language_representations_for_deep_cross-modal_.md)
+- [\[ICLR 2026\] PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](../../ICLR2026/multimodal_vlm/physllm_harnessing_large_language_models_for_cross-modal_remote_physiological_se.md)
+- [\[ICCV 2025\] Visual Intention Grounding for Egocentric Assistants](../../ICCV2025/multimodal_vlm/visual_intention_grounding_for_egocentric_assistants.md)
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
 - [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](../../NeurIPS2025/multimodal_vlm/guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
-- [\[ICCV 2025\] Visual Intention Grounding for Egocentric Assistants](../../ICCV2025/multimodal_vlm/visual_intention_grounding_for_egocentric_assistants.md)
-- [\[CVPR 2026\] Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation](rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation.md)
 
 </div>
 

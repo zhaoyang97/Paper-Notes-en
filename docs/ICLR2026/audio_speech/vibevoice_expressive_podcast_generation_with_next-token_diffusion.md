@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VibeVoice: Expressive Podcast Generation with Next-Token Diffusion
 description: >-
-  [ICLR 2026][Audio & Speech][next-token diffusion] VibeVoice utilizes an ultra-low frame rate (7.5 Hz) continuous speech tokenizer to compress long audio into extremely short sequences. It then employs an LLM in a "next-token diffusion" framework to predict acoustic latents segment-by-segment, enabling zero-shot synthesis of podcasts up to 90 minutes with up to 4 speak
+  [ICLR 2026][Audio & Speech][Podcast Generation] VibeVoice utilizes an ultra-low frame rate (7.5 Hz) continuous speech tokenizer to compress long audio into extremely short sequences. It then employs an LLM in a "next-token diffusion" framework to predict acoustic latents segment-by-segment, enabling zero-shot synthesis of podcasts up to 90 minutes with up to 4 speakers, including natural turn-taking and non-lexical details like breathing and lip-smacking.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - next-token diffusion
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Podcast Generation"
+  - "Long-form Speech Synthesis"
+  - "next-token diffusion"
+  - "Continuous Speech Tokenizer"
+  - "Multi-speaker TTS"
 date: 2026-05-08
-content_hash: 8b0544e3339ceda9
+content_hash: 11513b4c45225f40
 ---
+
 # VibeVoice: Expressive Podcast Generation with Next-Token Diffusion
 
 **Conference**: ICLR 2026  
@@ -137,8 +142,8 @@ The 7B version achieved the highest subjective average (3.76), leading in authen
 
 - [\[ICLR 2026\] Token-based Audio Inpainting via Discrete Diffusion](token-based_audio_inpainting_via_discrete_diffusion.md)
 - [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
-- [\[ICLR 2026\] Scaling Speech Tokenizers with Diffusion Autoencoders](scaling_speech_tokenizers_with_diffusion_autoencoders.md)
 - [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
+- [\[ICLR 2026\] Scaling Speech Tokenizers with Diffusion Autoencoders](scaling_speech_tokenizers_with_diffusion_autoencoders.md)
 - [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](../../CVPR2026/audio_speech/hierarchical_codec_diffusion_for_video-to-speech_generation.md)
 
 </div>

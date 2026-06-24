@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-identity Human Image Animation with Structural Video Diffusion
 description: >-
-  [ICCV 2025][Video Generation][Multi-identity human animation] This paper proposes the Structural Video Diffusion framework, which maintains multi-person appearance consistency via mask-guided identity-specific embeddings…
+  [ICCV 2025][Video Generation][Multi-identity human animation] This paper proposes the Structural Video Diffusion framework, which maintains multi-person appearance consistency via mask-guided identity-specific embeddings, jointly learns RGB/depth/normal tri-modal geometric structure to model human–object interactions, and introduces the Multi-HumanVid dataset of 25K multi-person interaction videos to enable multi-identity human video generation.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "joint depth-normal learning"
   - "human interaction"
 date: 2026-05-08
-content_hash: e5854f3538f06d5c
+content_hash: 1213da491971f525
 ---
 
 # Multi-identity Human Image Animation with Structural Video Diffusion
@@ -121,8 +121,8 @@ Modality ablation: adding depth alone yields the best results (+Depth: FID 30.57
 - [\[ICCV 2025\] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models](omnihuman-1_rethinking_the_scaling-up_of_one-stage_conditioned_human_animation_m.md)
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](../../CVPR2026/video_generation/vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
 - [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
+- [\[ICLR 2026\] MotionWeaver: Holistic 4D-Anchored Framework for Multi-Humanoid Image Animation](../../ICLR2026/video_generation/motionweaver_holistic_4d-anchored_framework_for_multi-humanoid_image_animation.md)
 - [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
-- [\[ICCV 2025\] DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization](dualreal_adaptive_joint_training_for_lossless_identity-motion_fusion_in_video_cu.md)
 
 </div>
 

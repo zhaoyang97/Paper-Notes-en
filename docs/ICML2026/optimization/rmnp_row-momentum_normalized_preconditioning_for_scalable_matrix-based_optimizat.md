@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][Preconditioning] Based on the "row-block diagonal dominant" structure of the Transformer layer-wise Hessian, this paper replaces the expensive Newton-Schulz orthogonalization in the Muon optimizer with a single row-level $\ell_2$ normalization. This reduces the per-step preconditioning complexity from $\mathcal{O}(mn\min(m,n))$ to $\ma
+  [ICML 2026][Optimization][Preconditioning] Based on the "row-block diagonal dominant" structure of the Transformer layer-wise Hessian, this paper replaces the expensive Newton-Schulz orthogonalization in the Muon optimizer with a single row-level $\ell_2$ normalization. This reduces the per-step preconditioning complexity from $\mathcal{O}(mn\min(m,n))$ to $\mathcal{O}(mn)$, resulting in a 13–44× wall-clock speedup in GPT-2 / LLaMA pre-training with slightly improved perplexi…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Preconditioning
-  - Muon
-  - Newton-Schulz
-  - Transformer Hessian
+  - "ICML 2026"
+  - "Optimization"
+  - "Preconditioning"
+  - "Muon"
+  - "Newton-Schulz"
+  - "Row Normalization"
+  - "Transformer Hessian"
 date: 2026-05-08
-content_hash: ccdd42ad4c2d646f
+content_hash: b7a87dd2e72e6a9a
 ---
+
 # RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization
 
 **Conference**: ICML 2026  
@@ -131,11 +133,11 @@ Standard LLM pre-training CE loss. Optimizer settings: cosine annealing schedule
 
 ## Related Papers
 
+- [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](../../ICLR2026/optimization/sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
+- [\[ICLR 2026\] DNT: a Deeply Normalized Transformer that can be trained by Momentum SGD](../../ICLR2026/optimization/dnt_a_deeply_normalized_transformer_that_can_be_trained_by_momentum_sgd.md)
 - [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
+- [\[ICLR 2026\] Riemannian Optimization on Relaxed Indicator Matrix Manifold](../../ICLR2026/optimization/riemannian_optimization_on_relaxed_indicator_matrix_manifold.md)
 - [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
-- [\[AAAI 2026\] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions](../../AAAI2026/optimization/ecpv2_fast_efficient_and_scalable_global_optimization_of_lipschitz_functions.md)
-- [\[ACL 2025\] ScaleBiO: Scalable Bilevel Optimization for LLM Data Reweighting](../../ACL2025/optimization/scalebio_bilevel_data_reweighting.md)
-- [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](../../ICLR2026/optimization/high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses
 description: >-
-  [AAAI 2026][Reinforcement Learning][multi-agent bandit] This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a lo…
+  [AAAI 2026][Reinforcement Learning][multi-agent bandit] This paper proposes MACO, a multi-agent conversational bandit framework that achieves online evaluation and user preference alignment for LLM responses through a local-agent phase elimination mechanism and an adaptive preference query strategy on a cloud server, attaining a near-optimal regret bound of $\tilde{O}(\sqrt{dMT})$.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "user preference alignment"
   - "regret bound"
 date: 2026-05-08
-content_hash: 580eb907c02cc818
+content_hash: 82a80fe169fa58a1
 ---
 
 # A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses
@@ -122,9 +122,9 @@ Cumulative regret on the StyleEval dataset across different embedding models and
 ## Related Papers
 
 - [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking](../../ICLR2026/reinforcement_learning/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agent-based_conversat.md)
-- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](perturbing_best_responses_in_zero-sum_games.md)
+- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] SocialJax: An Evaluation Suite for Multi-Agent Reinforcement Learning in Sequential Social Dilemmas](../../ICLR2026/reinforcement_learning/socialjax_an_evaluation_suite_for_multi-agent_reinforcement_learning_in_sequenti.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 
 </div>

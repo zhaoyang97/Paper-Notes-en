@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion
 description: >-
-  [ACL 2026][Multilingual & Translation][Proxy Tuning] TriMix decomposes Low-Resource Language (LRL) adaptation into three logit benefit vectors: "language capability + task capability + scaling dividends." It only requires continual pre-training (CPT) on a small model. At inference time, weights are dynamically determined via perplexity. It consistently outperforms single
+  [ACL 2026][Multilingual & Machine Translation][Low-resource languages] TriMix decomposes Low-Resource Language (LRL) adaptation into three logit benefit vectors: "language capability + task capability + scaling dividends." It only requires continual pre-training (CPT) on a small model. At inference time, weights are dynamically determined via perplexity. It consistently outperforms single-model baselines and Proxy Tuning across 4 model families and 8 LRLs. A core empirical di…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Proxy Tuning
-  - Logit Fusion
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Low-resource languages"
+  - "Proxy Tuning"
+  - "Logit Fusion"
+  - "Dynamic weights"
+  - "Continual Pre-training"
 date: 2026-05-08
-content_hash: e9419ed40f2e2050
+content_hash: ce2dd00e7fa64a9a
 ---
+
 # Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion
 
 **Conference**: ACL 2026  
@@ -156,7 +160,7 @@ Thus, the **optimal strategy is the exact opposite of the Proxy Tuning assumptio
 
 - [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
 - [\[ACL 2026\] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates](mitigating_catastrophic_forgetting_in_target_language_adaptation_of_llms_via_sou.md)
-- [\[ACL 2026\] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax](reinforcement_learning_with_semantic_rewards_enables_low-resource_language_expan.md)
+- [\[ACL 2026\] Modular Monolingual Adaptation using Pretrained Language Models](modular_monolingual_adaptation_using_pretrained_language_models.md)
 - [\[ACL 2025\] Language Fusion for Parameter-Efficient Cross-lingual Transfer (FLARE)](../../ACL2025/multilingual_mt/flare_crosslingual_lora.md)
 - [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
 

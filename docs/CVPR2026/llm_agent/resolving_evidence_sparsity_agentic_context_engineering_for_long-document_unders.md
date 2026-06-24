@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding
 description: >-
-  [CVPR 2026][LLM Agent][Multi-Agent] Addressing the pain points of "sparse and scattered key evidence" and "redundant context interference" in long-document QA, this paper proposes SLEUTH, a training-free multi-agent framework. It utilizes a coarse-to-fine pipeline of "Retrieval → Clue Mining + Visual Screening → Difficulty Assessment → Decision" to disti
+  [CVPR 2026][LLM Agent][Long-document understanding] Addressing the pain points of "sparse and scattered key evidence" and "redundant context interference" in long-document QA, this paper proposes SLEUTH, a training-free multi-agent framework. It utilizes a coarse-to-fine pipeline of "Retrieval → Clue Mining + Visual Screening → Difficulty Assessment → Decision" to distill noisy top-K retrieved pages into concise, evidence-dense multimodal contexts…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Multi-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Long-document understanding"
+  - "Multi-agent"
+  - "Context Engineering"
+  - "Evidence Sparsity"
+  - "Training-free"
 date: 2026-05-08
-content_hash: fa9d58fa7ff3838f
+content_hash: a866f8328fc16513
 ---
+
 # Resolving Evidence Sparsity: Agentic Context Engineering for Long-Document Understanding
 
 **Conference**: CVPR 2026  
@@ -138,8 +143,8 @@ Ablation on MMLongBench-Doc and LongDocURL by activating agents (C: Clue, P: Pag
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
 - [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
 - [\[ACL 2025\] Self-Taught Agentic Long-Context Understanding](../../ACL2025/llm_agent/self_taught_agentic_long_ctx.md)
-- [\[CVPR 2026\] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](orca_orchestrated_reasoning_with_collaborative_agents_for_document_visual_questi.md)
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](../../ICLR2026/llm_agent/agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
+- [\[CVPR 2026\] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](orca_orchestrated_reasoning_with_collaborative_agents_for_document_visual_questi.md)
 
 </div>
 

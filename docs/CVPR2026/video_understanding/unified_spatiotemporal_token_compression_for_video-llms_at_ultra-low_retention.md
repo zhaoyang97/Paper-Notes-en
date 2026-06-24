@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention
 description: >-
-  [CVPR 2026][Video Understanding][Inference Acceleration] This paper proposes a unified spatiotemporal token compression method that jointly evaluates token contribution and semantic redundancy via a global retention pool. By introducing text-aware merging within the LLM, the method maintains 90.1% of baseline performance at an extreme 2% visual token retention rate, while re
+  [CVPR 2026][Video Understanding][Visual token compression] This paper proposes a unified spatiotemporal token compression method that jointly evaluates token contribution and semantic redundancy via a global retention pool. By introducing text-aware merging within the LLM, the method maintains 90.1% of baseline performance at an extreme 2% visual token retention rate, while reducing FLOPs to approximately 2.6%.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Visual token compression"
+  - "Video large language models"
+  - "Unified spatiotemporal compression"
+  - "Inference acceleration"
+  - "Training-free"
 date: 2026-05-08
-content_hash: b3f3ed28d22a4598
+content_hash: 80ca86c1e865ebb0
 ---
+
 # Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention
 
 **Conference**: CVPR 2026  
@@ -122,10 +127,20 @@ Cross-backbone performance (LLaVA-Video-7B, 2% Retention):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] EarlyTom: Early Token Compression Completes Fast Video Understanding](earlytom_early_token_compression_completes_fast_video_understanding.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
+- [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](../../ICLR2026/video_understanding/flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
+- [\[CVPR 2026\] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking](utptrack_towards_simple_and_unified_token_pruning_for_visual_tracking.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] EarlyTom: Early Token Compression Completes Fast Video Understanding](earlytom_early_token_compression_completes_fast_video_understanding.md)

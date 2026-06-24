@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][KV cache] Tactic replaces fixed token budgets in sparse attention with a "cumulative attention score" target $P$. It selects tokens in descending order of attention scores until the cumulative sum reaches $P$. To efficiently approximate this selection during decoding, it employs K-means clustering for similarity-based sorting an
+  [ICLR 2026][LLM Efficiency][Sparse Attention] Tactic replaces fixed token budgets in sparse attention with a "cumulative attention score" target $P$. It selects tokens in descending order of attention scores until the cumulative sum reaches $P$. To efficiently approximate this selection during decoding, it employs K-means clustering for similarity-based sorting and distribution fitting to estimate token scores. This approach achieves up to 7.29× speedup in decoding attention…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "Long Context"
+  - "KV cache"
+  - "Cumulative Attention Score"
+  - "K-means Clustering"
 date: 2026-05-08
-content_hash: ef2ade2667729f1c
+content_hash: 08a11f2febf6de94
 ---
+
 # Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs
 
 **Conference**: ICLR 2026  
@@ -137,14 +142,17 @@ Data on token counts and success rates (Tab. 3) shows Tactic's token selection i
 
 <div class="related-papers" markdown="1">
 
-1. **Quest: Efficient Long-Context LLM Inference via Learnable KV Cache Sparsification** (ArXiv 2024)
-2. **MagicPIG: LSH-Based Dynamic Sparsity for LLM Acceleration** (ArXiv 2024)
-3. **PyramidKV: Dynamic KV Cache Compression with Pyramid Budget Allocation** (ArXiv 2024)
+## Related Papers
+
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
+- [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ICLR 2026\] vAttention: Verified Sparse Attention via Sampling](vattention_verified_sparse_attention_via_sampling.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)

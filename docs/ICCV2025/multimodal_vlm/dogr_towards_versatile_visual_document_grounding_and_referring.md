@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DOGR: Towards Versatile Visual Document Grounding and Referring
 description: >-
-  [ICCV 2025][Multimodal VLM][Document Understanding] This paper proposes DOGR-Engine, a data engine for document grounding and referring, constructs DOGR-Bench — the first comprehensive benchmark evaluating document groun…
+  [ICCV 2025][Multimodal VLM][Document Understanding] This paper proposes DOGR-Engine, a data engine for document grounding and referring, constructs DOGR-Bench — the first comprehensive benchmark evaluating document grounding and referring capabilities across 7 task types × 3 document types — and develops DOGR, the first document understanding MLLM that integrates precise text localization with interactive grounding and referring capabilities.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Data Engine"
   - "OCR"
 date: 2026-05-08
-content_hash: 43496fcadd97c133
+content_hash: 4795b8da7d6e4f3d
 ---
 
 # DOGR: Towards Versatile Visual Document Grounding and Referring
@@ -152,11 +152,11 @@ Multi-granularity parsing data improves localization and recognition performance
 
 ## Related Papers
 
-- [\[ICCV 2025\] ChartPoint: Guiding MLLMs with Grounding Reflection for Chart Reasoning](chartpoint_guiding_mllms_with_grounding_reflection_for_chart_reasoning.md)
+- [\[CVPR 2025\] MIMO: A Medical Vision Language Model with Visual Referring Multimodal Input and Pixel Grounding Multimodal Output](../../CVPR2025/multimodal_vlm/mimo_a_medical_vision_language_model_with_visual_referring_multimodal_input_and_.md)
+- [\[ICCV 2025\] Visual Intention Grounding for Egocentric Assistants](visual_intention_grounding_for_egocentric_assistants.md)
+- [\[CVPR 2025\] Relation-Rich Visual Document Generator for Visual Information Extraction](../../CVPR2025/multimodal_vlm/relation-rich_visual_document_generator_for_visual_information_extraction.md)
+- [\[ICCV 2025\] ViewSRD: 3D Visual Grounding via Structured Multi-View Decomposition](viewsrd_3d_visual_grounding_via_structured_multi-view_decomposition.md)
 - [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
-- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](../../CVPR2026/multimodal_vlm/docseeker_long_document_understanding.md)
-- [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](docthinker_explainable_multimodal_large_language_models_with.md)
-- [\[ICLR 2026\] Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks](../../ICLR2026/multimodal_vlm/ref-adv_exploring_mllm_visual_reasoning_in_referring_expression_tasks.md)
 
 </div>
 

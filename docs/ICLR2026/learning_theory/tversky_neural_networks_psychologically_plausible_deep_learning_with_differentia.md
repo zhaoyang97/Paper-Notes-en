@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper reformulates Tversky's "common features + distinctive features" psychological similarity theory into a neural network layer trainable via gradient descent. By replacing linear projections with Tversky Projections, it demonstrates stronger expressivity, parameter efficiency, and improved interpretability acro
+  [ICLR 2026][Learning Theory][Tversky Similarity] This paper reformulates Tversky's "common features + distinctive features" psychological similarity theory into a neural network layer trainable via gradient descent. By replacing linear projections with Tversky Projections, it demonstrates stronger expressivity, parameter efficiency, and improved interpretability across GPT-2 language modeling and ResNet-50 image classification.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Interpretable Neural Networks"
+  - "Tversky Similarity"
+  - "Psychological Similarity"
+  - "Prototype Learning"
+  - "Language Modeling"
 date: 2026-05-08
-content_hash: e2ba6097300263e7
+content_hash: dd56df4564e13759
 ---
+
 # Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity
 
 **Conference**: ICLR 2026  
@@ -128,8 +134,8 @@ Evaluation spans GPT-2 on PTB and ResNet-50 on NABirds/MNIST.
 - **Value**: ⭐⭐⭐⭐ Potentially a significant alternative to linear layers for researchers focused on XAI and cognitive-inspired AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] The authors observe that VLA inference is compute-bound, making pruning the optimal acceleration path. Given the high overlap of visual information between consecutive action steps, they propose SpecPrune-VLA. This training-free method uses a three-way fusion (previous global attention + current early-layer local atten
+  [ICML 2026][Robotics][VLA acceleration] The authors observe that VLA inference is compute-bound, making pruning the optimal acceleration path. Given the high overlap of visual information between consecutive action steps, they propose SpecPrune-VLA. This training-free method uses a three-way fusion (previous global attention + current early-layer local attention + frame-difference dynamic tokens) for static pruning, combined with intra-layer dynamic pruning and a velocity-awa…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA acceleration"
+  - "Token pruning"
+  - "Self-speculative"
+  - "Spatio-temporal consistency"
+  - "Action granularity"
 date: 2026-05-08
-content_hash: b852c4caf8de9232
+content_hash: db206cac5a65e89b
 ---
+
 # SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning
 
 **Conference**: ICML 2026  
@@ -142,11 +148,11 @@ On SimplerEnv (DB-OFT backbone), Ours achieved 1.44× speedup with 70.1% SR (bas
 
 ## Related Papers
 
-- [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 - [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](../../ICLR2026/robotics/action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
+- [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
+- [\[ICML 2026\] SCALE: Self-uncertainty Conditioned Adaptive Looking and Execution for Vision-Language-Action Models](scale_self-uncertainty_conditioned_adaptive_looking_and_execution_for_vision-lan.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
-- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
 
 </div>
 

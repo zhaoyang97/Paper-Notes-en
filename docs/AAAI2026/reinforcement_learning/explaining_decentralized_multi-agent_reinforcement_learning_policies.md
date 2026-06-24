@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explaining Decentralized Multi-Agent Reinforcement Learning Policies
 description: >-
-  [AAAI 2026][Reinforcement Learning][Explainable AI] This paper proposes the first explainability method for decentralized multi-agent reinforcement learning (MARL) policies…
+  [AAAI 2026][Reinforcement Learning][Explainable AI] This paper proposes the first explainability method for decentralized multi-agent reinforcement learning (MARL) policies, comprising Hasse diagram-based policy summarization and query-based natural language explanations (When / Why Not / What). The approach is demonstrated across four MARL domains, showing both generality and computational efficiency. A user study confirms that it significantly improves human understanding o…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Hasse Diagram"
   - "Policy Summarization"
 date: 2026-05-08
-content_hash: a543fd08d39731d3
+content_hash: 201cc58e899de299
 ---
 
 # Explaining Decentralized Multi-Agent Reinforcement Learning Policies
@@ -179,9 +179,9 @@ Subjective ratings are significantly superior to the baseline across all 7 dimen
 
 - [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
 - [\[AAAI 2026\] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning](beyond_monotonicity_revisiting_factorization_principles_in_multi-agent_q-learnin.md)
 - [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
-- [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
 
 </div>
 

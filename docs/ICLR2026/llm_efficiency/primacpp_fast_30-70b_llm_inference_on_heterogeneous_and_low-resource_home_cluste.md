@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] prima.cpp assembles home laptops, desktops, phones, and tablets into a heterogeneous low-end cluster. By utilizing "Pipeline Ring Parallelism (PRP) + Prefetching," it hides disk loading latency within computation time. The Halda scheduler solves for the optimal layering scheme based on real-world device compute, memory
+  [ICLR 2026][LLM Efficiency][On-device Inference] prima.cpp assembles home laptops, desktops, phones, and tablets into a heterogeneous low-end cluster. By utilizing "Pipeline Ring Parallelism (PRP) + Prefetching," it hides disk loading latency within computation time. The Halda scheduler solves for the optimal layering scheme based on real-world device compute, memory, and disk capacity via Integer Linear Programming (ILP). This enables running 30-70B models on common home clu…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "On-device Inference"
+  - "Pipeline Ring Parallelism"
+  - "Disk Offloading"
+  - "Heterogeneous Scheduling"
+  - "Integer Linear Programming"
 date: 2026-05-08
-content_hash: ba56d926563928ba
+content_hash: a814ea1892305e00
 ---
+
 # Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters
 
 **Conference**: ICLR 2026  
@@ -134,8 +140,8 @@ On the 70B model, prima.cpp reduces llama.cpp's TPOT from 10120 to 674 ms/token 
 
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
 - [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
-- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
 - [\[ICLR 2026\] SpareTrain: Fault-Tolerant LLM Training via Low-Cost Dual Modular Redundancy](sparetrain_fault-tolerant_llm_training_via_low-cost_dual_modular_redundancy.md)
+- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
 - [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules
 description: >-
-  [ICML 2026][Image Restoration][GRPO] This paper systematically treats the three forces long considered constants in diffusion posterior sampling—Data Consistency (DC) guidance, Classifier-Free Guidance (CFG), and stochasticity—as a **coupled time-varying triadic system** for the first time. It provides theoretical and empirical proof that early-stage CFG
+  [ICML 2026][Image Restoration][Diffusion Posterior Sampling] This paper systematically treats the three forces long considered constants in diffusion posterior sampling—Data Consistency (DC) guidance, Classifier-Free Guidance (CFG), and stochasticity—as a **coupled time-varying triadic system** for the first time. It provides theoretical and empirical proof that early-stage CFG conflicts with DC directions, while stochasticity pulls trajectories back toward high-probability m…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - GRPO
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Diffusion Posterior Sampling"
+  - "CFG Scheduling"
+  - "Stochasticity Regularization"
+  - "GRPO"
+  - "Inverse Problems"
 date: 2026-05-08
-content_hash: cde01d839af63422
+content_hash: f3cd5df4c9b9ee91
 ---
+
 # Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules
 
 **Conference**: ICML 2026  
@@ -134,10 +139,17 @@ Schedules learned by GRPO remain superior to baselines on unseen degradation ope
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms](../../ICLR2026/image_restoration/a_statistical_benchmark_for_diffusion-posterior-sampling_algorithms.md)
+- [\[ICLR 2026\] CL-DPS: A Contrastive Learning Approach to Blind Nonlinear Inverse Problem Solving via Diffusion Posterior Sampling](../../ICLR2026/image_restoration/cl-dps_a_contrastive_learning_approach_to_blind_nonlinear_inverse_problem_solvin.md)
+- [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)
+- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](../../ICLR2026/image_restoration/noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](../../CVPR2026/image_restoration/dual_ascent_diffusion_for_inverse_problems.md)

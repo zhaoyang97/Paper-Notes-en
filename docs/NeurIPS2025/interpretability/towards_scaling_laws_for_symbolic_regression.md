@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Scaling Laws for Symbolic Regression
 description: >-
-  [NeurIPS 2025][Interpretability][Symbolic Regression] This work presents the first systematic study of scaling laws for symbolic regression (SR)…
+  [NeurIPS 2025][Interpretability][Symbolic Regression] This work presents the first systematic study of scaling laws for symbolic regression (SR), demonstrating that end-to-end Transformer-based SR follows power-law scaling trends across three orders of magnitude of compute, and derives empirical rules for the optimal token-to-parameter ratio ($\approx 15$), as well as batch size and learning rate scaling with model size.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Power Law"
   - "Compute-Optimal"
 date: 2026-05-08
-content_hash: 68ce99f6416e41a8
+content_hash: 422e2e1a66f0da9a
 ---
 
 # Towards Scaling Laws for Symbolic Regression
@@ -149,7 +149,7 @@ Best performance of each model at maximum compute budget:
 
 - [\[NeurIPS 2025\] Sloth: Scaling Laws for LLM Skills to Predict Multi-Benchmark Performance Across Families](sloth_scaling_laws_for_llm_skills_to_predict_multi-benchmark_performance_across_.md)
 - [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](../../ICML2026/interpretability/breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
-- [\[ICLR 2026\] Closing the Curvature Gap: Full Transformer Hessians and Their Implications for Scaling Laws](../../ICLR2026/interpretability/closing_the_curvature_gap_full_transformer_hessians_and_their_implications_for_s.md)
+- [\[ICML 2025\] Ab Initio Nonparametric Variable Selection for Scalable Symbolic Regression with Large p](../../ICML2025/interpretability/ab_initio_nonparametric_variable_selection_for_scalable_symbolic_regression_with.md)
 - [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](superposition_yields_robust_neural_scaling.md)
 - [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
 

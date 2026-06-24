@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Good-for-MDP State Reduction for Stochastic LTL Planning
 description: >-
-  [AAAI 2026][Reinforcement Learning][LTL planning] This paper proposes a novel Good-for-MDP (GFM) automaton state reduction technique that significantly reduces automaton state counts via a GFM→DBA→DCA→GFG minimization→0/…
+  [AAAI 2026][Reinforcement Learning][LTL planning] This paper proposes a novel Good-for-MDP (GFM) automaton state reduction technique that significantly reduces automaton state counts via a GFM→DBA→DCA→GFG minimization→0/1-PA transformation pipeline. Additionally, for formulas of the form $\textsf{GF}\varphi$ where $\varphi$ is a co-safety formula, a direct singly-exponential construction is provided, achieving an exponential reduction in state count compared to the general do…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Good-for-MDP"
   - "formal methods"
 date: 2026-05-08
-content_hash: ed1442605b4c773b
+content_hash: 897d8e3bcc4fc40d
 ---
 
 # Good-for-MDP State Reduction for Stochastic LTL Planning
@@ -184,7 +184,7 @@ Direct $\textsf{GF}\varphi$ construction vs. state-of-the-art reduction methods 
 - [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](efficient_multiagent_planning_via_shared_action_suggestions.md)
 - [\[ACL 2026\] Good Reasoning Makes Good Demonstrations: Implicit Reasoning Quality Supervision via In-Context Reinforcement Learning](../../ACL2026/reinforcement_learning/good_reasoning_makes_good_demonstrations_implicit_reasoning_quality_supervision_.md)
 - [\[NeurIPS 2025\] Horizon Reduction Makes RL Scalable](../../NeurIPS2025/reinforcement_learning/horizon_reduction_makes_rl_scalable.md)
-- [\[ICML 2026\] Laplacian Representations for Decision-Time Planning](../../ICML2026/reinforcement_learning/laplacian_representations_for_decision-time_planning.md)
+- [\[ICLR 2026\] Distributional value gradients for stochastic environments](../../ICLR2026/reinforcement_learning/distributional_value_gradients_for_stochastic_environments.md)
 
 </div>
 

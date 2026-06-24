@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Dual-Space Smoothness for Robust and Balanced LLM Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] PRISM models LLM unlearning as a min–max game, expanding the "margins" that attackers must cross by employing dual-space smoothing: **representation space** (pushing forbidden samples into "harmless zones" via adversarially trained robust probes) and **parameter space** (flattening the unlearning loss surface via SAM-s
+  [ICLR2026][LLM Safety][Machine Unlearning] PRISM models LLM unlearning as a min–max game, expanding the "margins" that attackers must cross by employing dual-space smoothing: **representation space** (pushing forbidden samples into "harmless zones" via adversarially trained robust probes) and **parameter space** (flattening the unlearning loss surface via SAM-style smoothing). Coupled with gradient conflict decoupling to mitigate catastrophic forgetting…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Dual-Space Smoothness"
+  - "Robustness"
+  - "Jailbreak Attacks"
+  - "Relearning Attacks"
+  - "Gradient Conflict Decoupling"
 date: 2026-05-08
-content_hash: a97d799e7d61cb23
+content_hash: e53fda53c9e389eb
 ---
+
 # Dual-Space Smoothness for Robust and Balanced LLM Unlearning
 
 **Conference**: ICLR2026  
@@ -139,15 +146,15 @@ Ablations on MUSE-Books removing Representation Smoothing (RS), Parameter Smooth
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](../../ACL2026/llm_safety/from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
 - [\[ICLR 2026\] Obfuscated Activations Bypass LLM Latent-Space Defenses](obfuscated_activations_bypass_llm_latent-space_defenses.md)
+- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
 - [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 - [\[ICLR 2026\] DUET: Distilled LLM Unlearning from an Efficiently Contextualized Teacher](duet_distilled_llm_unlearning_from_an_efficiently_contextualized_teacher.md)
-- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
 
 </div>
 

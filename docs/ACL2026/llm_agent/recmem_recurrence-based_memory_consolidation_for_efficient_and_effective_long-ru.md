@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] RecMem draws from the "consolidation through repetition" principle in human memory, placing raw interactions into a lightweight subconscious memory first. It only invokes the LLM to generate episodic and semantic memory upon detecting semantic recurrence, thereby reaching or exceeding the QA accuracy of mainstream memo
+  [ACL2026 Findings][LLM Agent][Long-horizon Agent] RecMem draws from the "consolidation through repetition" principle in human memory, placing raw interactions into a lightweight subconscious memory first. It only invokes the LLM to generate episodic and semantic memory upon detecting semantic recurrence, thereby reaching or exceeding the QA accuracy of mainstream memory systems on LoCoMo and LongMemEval-S at significantly lower construction token costs.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL2026 Findings"
+  - "LLM Agent"
+  - "Long-horizon Agent"
+  - "Memory Consolidation"
+  - "Recurrence Triggering"
+  - "Semantic Memory"
+  - "Cost Efficiency"
 date: 2026-05-08
-content_hash: 0d32f64f974171a5
+content_hash: e11e9d5ca69039fa
 ---
+
 # RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents
 
 **Conference**: ACL2026 Findings  
@@ -143,10 +149,10 @@ RecMem is a training-free external memory system and does not require LLM fine-t
 ## Related Papers
 
 - [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
+- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 - [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
 
 </div>
 

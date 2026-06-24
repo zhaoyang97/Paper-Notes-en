@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LVFace: Progressive Cluster Optimization for Large Vision Models in Face Recognition
 description: >-
-  [ICCV 2025][Human Understanding][face recognition] This paper proposes LVFace, which addresses training instability of ViT in large-scale face recognition via a Progressive Cluster Optimization (PCO) strategy. The traini…
+  [ICCV 2025][Human Understanding][face recognition] This paper proposes LVFace, which addresses training instability of ViT in large-scale face recognition via a Progressive Cluster Optimization (PCO) strategy. The training process is decomposed into three stages — feature alignment, centroid stabilization, and boundary refinement — achieving state-of-the-art results on multiple benchmarks.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "large vision model"
   - "margin-based loss"
 date: 2026-05-08
-content_hash: 0fafb13b405cac96
+content_hash: 87fc1c67183cd2ef
 ---
 
 # LVFace: Progressive Cluster Optimization for Large Vision Models in Face Recognition
@@ -180,10 +180,10 @@ LVFace adopts a standard ViT as the backbone, paired with an MLP head (two 512-d
 ## Related Papers
 
 - [\[ICCV 2025\] Bi-Level Optimization for Self-Supervised AI-Generated Face Detection](bi-level_optimization_for_self-supervised_ai-generated_face_detection.md)
-- [\[ICML 2026\] Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets](../../ICML2026/human_understanding/efficient_validation-free_intrinsic_quality_estimation_for_large-scale_face_reco.md)
-- [\[ICCV 2025\] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling](imhead_a_large-scale_implicit_morphable_model_for_localized_head_modeling.md)
-- [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
-- [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
+- [\[CVPR 2026\] Unlocking Motion from Large Vision Models with a Semantic and Kinematic Duality for Gait Recognition](../../CVPR2026/human_understanding/unlocking_motion_from_large_vision_models_with_a_semantic_and_kinematic_duality_.md)
+- [\[CVPR 2025\] CryptoFace: End-to-End Encrypted Face Recognition](../../CVPR2025/human_understanding/cryptoface_end-to-end_encrypted_face_recognition.md)
+- [\[CVPR 2025\] ChatGarment: Garment Estimation, Generation and Editing via Large Language Models](../../CVPR2025/human_understanding/chatgarment_garment_estimation_generation_and_editing_via_large_language_models.md)
+- [\[ICML 2025\] Scaling Large Motion Models with Million-Level Human Motions](../../ICML2025/human_understanding/scaling_large_motion_models_with_million-level_human_motions.md)
 
 </div>
 

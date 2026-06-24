@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Chain-of-Thought Reasoning in the Wild Is Not Always Faithful
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper reveals two types of unfaithful behavior in frontier LLM Chain-of-Thought (CoT) under **non-adversarial, naturally phrased** prompts (without human-injected bias): **Implicit Post-hoc Rationalization** (generating contradictory but seemingly plausible arguments for the same comparative question pairs) and **
+  [ICML2026][Reasoning][Chain-of-Thought Faithfulness] This paper reveals two types of unfaithful behavior in frontier LLM Chain-of-Thought (CoT) under **non-adversarial, naturally phrased** prompts (without human-injected bias): **Implicit Post-hoc Rationalization** (generating contradictory but seemingly plausible arguments for the same comparative question pairs) and **Unfaithful Irlogical Shortcuts** (skipping critical reasoning steps in difficult math problems while still…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML2026"
+  - "Reasoning"
+  - "Chain-of-Thought Faithfulness"
+  - "Post-hoc Rationalization"
+  - "Unfaithful Shortcuts"
+  - "Process Supervision"
+  - "AI Safety"
 date: 2026-05-08
-content_hash: 0b0bf29511e70c41
+content_hash: f5e326378e63eef6
 ---
+
 # Chain-of-Thought Reasoning in the Wild Is Not Always Faithful
 
 **Conference**: ICML2026  

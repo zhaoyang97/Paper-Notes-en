@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mass Concept Erasure in Diffusion Models with Concept Hierarchy
 description: >-
-  [AAAI2026][Image Generation][Concept Erasure] This paper proposes a grouped erasure strategy based on supertype-subtype concept hierarchy and Supertype-Preserving LoRA (SuPLoRA). By freezing the down-projection matrix (o…
+  [AAAI2026][Image Generation][Concept Erasure] This paper proposes a grouped erasure strategy based on supertype-subtype concept hierarchy and Supertype-Preserving LoRA (SuPLoRA). By freezing the down-projection matrix (orthogonal to the supertype subspace) and training only the up-projection matrix, the method achieves an optimal balance between erasure effectiveness and generation quality in large-scale, multi-domain concept erasure.
 tags:
   - "AAAI2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Concept Hierarchy"
   - "Safe Generation"
 date: 2026-05-08
-content_hash: dac323c0aa941093
+content_hash: 0819f006ca41a8b8
 ---
 
 # Mass Concept Erasure in Diffusion Models with Concept Hierarchy
@@ -179,8 +179,8 @@ Under the 20/20 setting, in-domain object retention improves by **+14.76%**.
 - [\[NeurIPS 2025\] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](../../NeurIPS2025/image_generation/semantic_surgery_zero-shot_concept_erasure_in_diffusion_models.md)
 - [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](../../ICML2026/image_generation/orthogonal_concept_erasure_for_diffusion_models.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](../../CVPR2026/image_generation/neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](../../CVPR2026/image_generation/closed-form_concept_erasure_via_double_projections.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](../../CVPR2026/image_generation/prototype-guided_concept_erasure_in_diffusion_models.md)
-- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](../../CVPR2026/image_generation/groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
 
 </div>
 

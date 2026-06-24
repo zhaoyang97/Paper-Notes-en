@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Identifiability Challenges in Sparse Linear Ordinary Differential Equations
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper revisits the classical conclusion that "linear ODEs can almost always be identified from a single trajectory," pointing out that this conclusion only covers dense matrix cases. In sparse linear ODEs that are closer to biological networks, social networks, and physical interaction systems, systems are unident
+  [ICLR 2026][Learning Theory][Sparse linear ODEs] This paper revisits the classical conclusion that "linear ODEs can almost always be identified from a single trajectory," pointing out that this conclusion only covers dense matrix cases. In sparse linear ODEs that are closer to biological networks, social networks, and physical interaction systems, systems are unidentifiable with positive probability. This theoretical unidentifiability manifests as structural recovery failure…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Dynamical Systems Identifiability"
+  - "Sparse linear ODEs"
+  - "Identifiability"
+  - "Dynamical systems"
+  - "Matrix rank"
+  - "Near-unidentifiability"
 date: 2026-05-08
-content_hash: c2782d39771cfee1
+content_hash: bd6543ca9482b5cb
 ---
+
 # Identifiability Challenges in Sparse Linear Ordinary Differential Equations
 
 **Conference**: ICLR 2026  
@@ -175,9 +182,9 @@ Data generation covers $n\in\{3,5,10,20,30,40,50\}$ and $p\in\{0.1,0.2,\ldots,0.
 
 - [\[ICLR 2026\] Statistical and Structural Identifiability in Representation Learning](statistical_and_structural_identifiability_in_representation_learning.md)
 - [\[ICLR 2026\] Prediction with Expert Advice under Local Differential Privacy](prediction_with_expert_advice_under_local_differential_privacy.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 - [\[ICLR 2026\] Price of Quality: Sufficient Conditions for Sparse Recovery using Mixed-Quality Data](price_of_quality_sufficient_conditions_for_sparse_recovery_using_mixed-quality_d.md)
 - [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
-- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 
 </div>
 

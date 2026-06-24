@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Long-Text-to-Image Generation via Compositional Prompt Decomposition
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] PRISM "refracts" a lengthy descriptive prompt into several semantic components within the text representation space. It allows frozen pre-trained T2I models to independently denoise each component and adopts the concept conjunction of energy-based models to sum the noise predictions into a single-step compositional den
+  [ICLR 2026][Image Generation][Long Text-to-Image] PRISM "refracts" a lengthy descriptive prompt into several semantic components within the text representation space. It allows frozen pre-trained T2I models to independently denoise each component and adopts the concept conjunction of energy-based models to sum the noise predictions into a single-step compositional denoising. This enables T2I models to render long paragraphs exceeding 500+ tokens without fine-tuning the backbo…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Long Text-to-Image"
+  - "Compositional Generation"
+  - "Energy-Based Models"
+  - "Prompt Decomposition"
+  - "Diffusion Models"
+  - "Training-Free Generalization"
 date: 2026-05-08
-content_hash: 3abacd9df5e3d5ab
+content_hash: 04ee94d30cbee169
 ---
+
 # Long-Text-to-Image Generation via Compositional Prompt Decomposition
 
 **Conference**: ICLR 2026  
@@ -121,9 +127,9 @@ flowchart TD
 
 - [\[ICLR 2026\] TIPO: Text to Image with Text Pre-sampling for Prompt Optimization](tipo_text_to_image_with_text_pre-sampling_for_prompt_optimization.md)
 - [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](../../CVPR2026/image_generation/synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
-- [\[ICLR 2026\] Referring Layer Decomposition](referring_layer_decomposition.md)
-- [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](../../AAAI2026/image_generation/longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
-- [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
+- [\[AAAI 2026\] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation](../../AAAI2026/image_generation/right_looks_wrong_reasons_compositional_fidelity_in_text-to-image_generation.md)
+- [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](../../CVPR2026/image_generation/compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[ICLR 2026\] VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis](visualprompter_semantic-aware_prompt_optimization_with_visual_feedback_for_text-.md)
 
 </div>
 

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 变分适配器跨模态相似度表示
+  [Paper Note] Variational Adapter for Cross-modal Similarity Representation
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] Learning continuous cross-modal similarity distributions through a variational inference framework—mitigating false negative issues caused by binary labeling with adaptive uncertainty weights, significantly enhancing VLM performance in cross-modal retrieval and domain generalization tasks.
+  [ICML 2026][Optimization][Cross-modal Retrieval] Learning continuous cross-modal similarity distributions through a variational inference framework—mitigating false negative issues caused by binary labeling with adaptive uncertainty weights, significantly enhancing VLM performance in cross-modal retrieval and domain generalization tasks.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Cross-modal Retrieval"
+  - "Variational Autoencoder"
+  - "Binary Labeling Problem"
+  - "False Negatives"
+  - "CLIP Fine-tuning"
 date: 2026-05-08
-content_hash: c12476553fcb67c5
+content_hash: 4a93394c264b8860
 ---
+
 # Variational Adapter for Cross-modal Similarity Representation
 
 **Conference**: ICML 2026  
@@ -125,11 +131,11 @@ The reconstruction term employs Gaussian likelihood (equivalent to MSE), natural
 
 ## Related Papers
 
-- [\[ICML 2026\] URS：统一的神经路由求解器](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
-- [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
-- [\[ICML 2026\] Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality](adaptive_estimation_and_inference_in_semi-parametric_heterogeneous_clustered_mul.md)
-- [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](on_the_convergence_rate_of_lora_gradient_descent.md)
-- [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
+- [\[ICLR 2026\] Constraint Matters: Multi-Modal Representation for Reducing Mixed-Integer Linear programming](../../ICLR2026/optimization/constraint_matters_multi-modal_representation_for_reducing_mixed-integer_linear_.md)
+- [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
+- [\[ICLR 2026\] Align-SAM: Seeking Flatter Minima for Better Cross-Subset Alignment](../../ICLR2026/optimization/align-sam_seeking_flatter_minima_for_better_cross-subset_alignment.md)
+- [\[ICLR 2026\] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems](../../ICLR2026/optimization/combination-of-experts_with_knowledge_sharing_for_cross-task_vehicle_routing_pro.md)
+- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](../../CVPR2026/optimization/label-free_cross-task_lora_merging_with_null-space_compression.md)
 
 </div>
 

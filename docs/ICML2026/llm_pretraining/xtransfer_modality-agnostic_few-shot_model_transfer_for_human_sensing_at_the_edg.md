@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] XTransfer: Modality-Agnostic Few-Shot Model Transfer for Human Sensing at the Edge
 description: >-
-  [ICML 2026][Pretraining][human sensing] XTransfer targets human sensing tasks on edge devices by transferring pre-trained models from any modality (image, text, audio, or sensors) using limited target sensor data. It mitigates cross-modality feature misalignment through layer-wise model repairing and resource-constrained layer recombining, simultaneously imp
+  [ICML2026][LLM Pretraining][human sensing] XTransfer targets human sensing tasks on edge devices by transferring pre-trained models from any modality (image, text, audio, or sensors) using limited target sensor data. It mitigates cross-modality feature misalignment through layer-wise model repairing and resource-constrained layer recombining, simultaneously improving few-shot accuracy and edge deployment efficiency.
 tags:
-  - ICML 2026
-  - Pretraining
-  - human sensing
-  - few-shot transfer
-  - cross-modality
-  - edge deployment
-  - layer recombining
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "human sensing"
+  - "few-shot transfer"
+  - "cross-modality"
+  - "edge deployment"
+  - "layer recombining"
 date: 2026-05-08
-content_hash: bb8511433cc2cb62
+content_hash: 7639f4f13f69baf6
 ---
+
 # XTransfer: Modality-Agnostic Few-Shot Model Transfer for Human Sensing at the Edge
 
 **Conference**: ICML2026  
@@ -138,14 +139,17 @@ The paper analyzes SRR, channel removal, LWS, and efficient search independently
 
 <div class="related-papers" markdown="1">
 
-1. **MetaSense**: A few-shot transfer learning framework for scalar sensor data, primarily focusing on intra-modality domain adaptation.
-2. **DAPN**: Domain-Agnostic Prototypical Networks designed for cross-domain few-shot recognition.
-3. **SemiCMT**: A semi-supervised cross-modality transfer approach that typically requires some level of modality bridge or paired alignment.
+## Related Papers
+
+- [\[ECCV 2024\] Learning to Obstruct Few-Shot Image Classification over Restricted Classes](../../ECCV2024/llm_pretraining/learning_to_obstruct_few-shot_image_classification_over_restricted_classes.md)
+- [\[ICML 2025\] Revisiting Continuity of Image Tokens for Cross-Domain Few-Shot Learning](../../ICML2025/llm_pretraining/revisiting_continuity_of_image_tokens_for_cross-domain_few-shot_learning.md)
+- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
+- [\[CVPR 2026\] Linking Modality Isolation in Heterogeneous Collaborative Perception](../../CVPR2026/llm_pretraining/linking_modality_isolation_in_heterogeneous_collaborative_perception.md)
+- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ECCV 2024\] Learning to Obstruct Few-Shot Image Classification over Restricted Classes](../../ECCV2024/llm_pretraining/learning_to_obstruct_few-shot_image_classification_over_restricted_classes.md)

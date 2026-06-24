@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes VAUQ, which measures whether LVLM responses truly rely on visual evidence using image information scores and attention-driven core region masking. This enables more reliable multimodal self-evaluation and hallucination detection without requiring training or external evaluators.
+  [ACL2026 Findings][Multimodal VLM][LVLM Self-Evaluation] This paper proposes VAUQ, which measures whether LVLM responses truly rely on visual evidence using image information scores and attention-driven core region masking. This enables more reliable multimodal self-evaluation and hallucination detection without requiring training or external evaluators.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026 Findings"
+  - "Multimodal VLM"
+  - "LVLM Self-Evaluation"
+  - "Uncertainty Quantification"
+  - "Hallucination Detection"
+  - "Visual Evidence"
+  - "Attention Masking"
 date: 2026-05-08
-content_hash: ef60709dc8b40b1b
+content_hash: e15871189e46bea0
 ---
+
 # VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation
 
 **Conference**: ACL2026 Findings  
@@ -156,6 +162,7 @@ Masking strategy comparisons on VisualCoT show random masking degrades performan
 - Value: ⭐⭐⭐⭐⭐ Training-free, interpretable, and efficient for real-world reliability checks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -164,7 +171,7 @@ Masking strategy comparisons on VisualCoT show random masking degrades performan
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 - [\[ACL 2026\] Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models](almieyar-oryx-bloombench_a_bilingual_multimodal_benchmark_for_cognitively_inform.md)
-- [\[CVPR 2025\] Taxonomy-Aware Evaluation of Vision-Language Models](../../CVPR2025/multimodal_vlm/taxonomy-aware_evaluation_of_vision-language_models.md)
+- [\[ACL 2026\] Revisit What You See: Revealing Visual Semantics in Vision Tokens to Guide LVLM Decoding](revisit_what_you_see_revealing_visual_semantics_in_vision_tokens_to_guide_lvlm_d.md)
 
 </div>
 

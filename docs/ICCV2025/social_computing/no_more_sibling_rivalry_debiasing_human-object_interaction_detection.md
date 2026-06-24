@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] No More Sibling Rivalry: Debiasing Human-Object Interaction Detection
 description: >-
-  [ICCV 2025][Social Computing][Human-Object Interaction Detection] This paper identifies and systematically analyzes the "Toxic Siblings Bias" in HOI detection—highly similar HOI triplets that mutually interfere and compe…
+  [ICCV 2025][Social Computing][Human-Object Interaction Detection] This paper identifies and systematically analyzes the "Toxic Siblings Bias" in HOI detection—highly similar HOI triplets that mutually interfere and compete at both the input and output levels. Two debiasing learning objectives are proposed: Contrastive-then-Calibration (C2C) and Merge-then-Split (M2S), achieving +9.18% mAP over the baseline and +3.59% over the previous state-of-the-art on HICO-DET.
 tags:
   - "ICCV 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Merge-then-Split Strategy"
   - "Debiasing"
 date: 2026-05-08
-content_hash: 2b1b0ee32ba48bc7
+content_hash: 6da8e308c40a05fd
 ---
 
 # No More Sibling Rivalry: Debiasing Human-Object Interaction Detection
@@ -163,10 +163,10 @@ Hyperparameter ablations confirm $k_1=2, k_2=10, M_1 \times M_2 = 5 \times 5$ as
 ## Related Papers
 
 - [\[ICLR 2026\] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction](../../ICLR2026/social_computing/human_or_machine_a_preliminary_turing_test_for_speech-to-speech_interaction.md)
+- [\[ACL 2025\] Detection of Human and Machine-Authored Fake News in Urdu](../../ACL2025/social_computing/detection_of_human_and_machine-authored_fake_news_in_urdu.md)
+- [\[ACL 2025\] FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering](../../ACL2025/social_computing/fairsteer_inference_time_debiasing_for_llms_with_dynamic_activation_steering.md)
 - [\[ICML 2026\] ObjEmbed: Towards Universal Multimodal Object Embeddings](../../ICML2026/social_computing/objembed_towards_universal_multimodal_object_embeddings.md)
 - [\[ICLR 2026\] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation](../../ICLR2026/social_computing/adaptive_debiasing_tsallis_entropy_for_test-time_adaptation.md)
-- [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](gradient_extrapolation_for_debiased_representation_learning.md)
-- [\[NeurIPS 2025\] Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector](../../NeurIPS2025/social_computing/any_large_language_model_can_be_a_reliable_judge_debiasing_w.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accurate and Efficient Statistical Testing for Word Semantic Breadth
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper identifies that directly comparing the semantic breadth of two words using permutation tests in contextual embedding space severely inflates Type-I errors due to differences in mean directions. It proposes using Householder reflections to align mean directions before permutation, reducing Type-I errors by 32
+  [ACL 2026][NLP Understanding][Word semantic breadth] This paper identifies that directly comparing the semantic breadth of two words using permutation tests in contextual embedding space severely inflates Type-I errors due to differences in mean directions. It proposes using Householder reflections to align mean directions before permutation, reducing Type-I errors by 32.5%, and provides a GPU batch implementation achieving a 23x speedup.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Word semantic breadth"
+  - "permutation test"
+  - "Householder transformation"
+  - "contextual embeddings"
+  - "GPU acceleration"
 date: 2026-05-08
-content_hash: 0bc0bc3126b0432b
+content_hash: a74131e0a20ad1f5
 ---
+
 # Accurate and Efficient Statistical Testing for Word Semantic Breadth
 
 **Conference**: ACL 2026  

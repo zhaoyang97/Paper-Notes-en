@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MITRA: An AI Assistant for Knowledge Retrieval in Physics Collaborations
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes MITRA, a locally deployed RAG system for large physics experiment collaborations (e.g., CERN CMS)…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes MITRA, a locally deployed RAG system for large physics experiment collaborations (e.g., CERN CMS), featuring a two-tier vector database architecture (abstract store + full-text store) and a fully on-premise deployment strategy. MITRA substantially outperforms traditional keyword-based search (BM25) on semantic retrieval tasks, improving Precision@1 from 0.13 to 0.75.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Retrieval"
   - "Physics Experiments"
 date: 2026-05-08
-content_hash: 1396cc2bc68f3ab4
+content_hash: ae1595e39a5e9ffb
 ---
 
 # MITRA: An AI Assistant for Knowledge Retrieval in Physics Collaborations
@@ -158,9 +158,9 @@ No formal ablation experiments are included; however, the comparison between Set
 
 - [\[ICML 2026\] Position: Reliable AI Needs to Externalize Implicit Knowledge: A Human-AI Collaboration Perspective](../../ICML2026/information_retrieval/reliable_ai_needs_to_externalize_implicit_knowledge_a_human-ai_collaboration_per.md)
 - [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
+- [\[ACL 2025\] PersonaBench: Evaluating AI Models on Understanding Personal Information through Accessing (Synthetic) Private User Data](../../ACL2025/information_retrieval/personabench_evaluating_ai_models_on_understanding_personal_information_through_.md)
 - [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
 - [\[NeurIPS 2025\] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation](reliable_decision_making_via_calibration_oriented_retrieval_augmented_generation.md)
-- [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
 
 </div>
 

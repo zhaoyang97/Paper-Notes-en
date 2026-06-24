@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code
 description: >-
-  [ICLR 2026][Code Intelligence][Dafny] To address the issue where "verifiable code generation" evaluation is limited by the scale and errors of manually annotated ground-truth specifications, this paper proposes an **equivalence score**. It uses the Dafny verifier to automatically check the **bidirectional entailment** between code and specifications, enabl
+  [ICLR 2026][Code Intelligence][Verifiable code generation] To address the issue where "verifiable code generation" evaluation is limited by the scale and errors of manually annotated ground-truth specifications, this paper proposes an **equivalence score**. It uses the Dafny verifier to automatically check the **bidirectional entailment** between code and specifications, enabling quality assessment without ground truth. Based on this, VeriEquivBench is constructed with 2…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Dafny
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Verifiable code generation"
+  - "formal specification"
+  - "equivalence score"
+  - "Dafny"
+  - "ground-truth-free evaluation"
 date: 2026-05-08
-content_hash: 9b4b5a9f86bf5312
+content_hash: d622c509b4011658
 ---
+
 # VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code
 
 **Conference**: ICLR 2026  
@@ -143,7 +148,7 @@ Furthermore, in 50 expert verifiable codes from DafnySynthesis, the equivalence 
 - [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 - [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
 - [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
-- [\[ICML 2026\] SWE-IF: Aligning Code Evaluation with Human Preference](../../ICML2026/code_intelligence/swe-if_aligning_code_evaluation_with_human_preference.md)
+- [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
 
 </div>
 

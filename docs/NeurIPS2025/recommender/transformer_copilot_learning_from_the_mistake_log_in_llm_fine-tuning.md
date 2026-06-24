@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning
 description: >-
-  [NeurIPS 2025][Recommender Systems][Mistake Log] This paper proposes the Transformer Copilot framework, which systematically records a "Mistake Log" during LLM fine-tuning…
+  [NeurIPS 2025 Spotlight][Recommender Systems][Mistake Log] This paper proposes the Transformer Copilot framework, which systematically records a "Mistake Log" during LLM fine-tuning, trains an auxiliary Copilot model to learn the Pilot's error patterns, and rectifies logits at inference time to improve generation quality, achieving up to 34.5% improvement across 12 benchmarks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Recommender Systems"
   - "Mistake Log"
   - "Pilot-Copilot"
@@ -12,7 +12,7 @@ tags:
   - "fine-tuning"
   - "error-aware"
 date: 2026-05-08
-content_hash: 865d0f036510b0c3
+content_hash: 096445313661de39
 ---
 
 # Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning
@@ -137,11 +137,11 @@ Under the mild condition that Copilot error $\epsilon_C < \sqrt{\epsilon_P^2 + \
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning](overcoming_sparsity_artifacts_in_crosscoders_to_interpret_chat-tuning.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/recommender/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
-- [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
-- [\[NeurIPS 2025\] Validating LLM-as-a-Judge Systems under Rating Indeterminacy](validating_llm-as-a-judge_systems_under_rating_indeterminacy.md)
-- [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
+- [\[NeurIPS 2025\] Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning](overcoming_sparsity_artifacts_in_crosscoders_to_interpret_chat-tuning.md)
+- [\[ACL 2025\] Laser: Bi-Tuning with Collaborative Information for Controllable LLM-Based Sequential Recommendation](../../ACL2025/recommender/bi-tuning_with_collaborative_information_for_controllable_llm-based_sequential_r.md)
+- [\[ACL 2025\] RecLM: Recommendation Instruction Tuning](../../ACL2025/recommender/reclm_recommendation_instruction_tuning.md)
+- [\[NeurIPS 2025\] Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints](wide-horizon_thinking_and_simulation-based_evaluation_for_real-world_llm_plannin.md)
 
 </div>
 

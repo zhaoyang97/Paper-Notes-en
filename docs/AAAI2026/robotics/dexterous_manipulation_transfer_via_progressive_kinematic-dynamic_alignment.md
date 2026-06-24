@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment
 description: >-
-  [AAAI2026][Robotics][dexterous manipulation] This paper proposes the PKDA framework, which automatically converts human hand manipulation videos into high-quality manipulation trajectories for multi-fingered dexterous ha…
+  [AAAI2026][Robotics][dexterous manipulation] This paper proposes the PKDA framework, which automatically converts human hand manipulation videos into high-quality manipulation trajectories for multi-fingered dexterous hands via progressive kinematic-dynamic alignment, achieving an average transfer success rate of 73%.
 tags:
   - "AAAI2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "hand-object interaction"
   - "sim-to-real transfer"
 date: 2026-05-08
-content_hash: b41f92661682c584
+content_hash: 0db51e7b5cd22f25
 ---
 
 # Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment
@@ -172,11 +172,11 @@ Compared to PGDM: PGDM treats object trajectories as hard constraints for precis
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](../../NeurIPS2025/robotics/dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
+- [\[CVPR 2026\] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking](../../CVPR2026/robotics/adadextrack_dynamic_modulation_for_adaptive_and_generalizable_dexterous_manipula.md)
+- [\[CVPR 2025\] ManipTrans: Efficient Dexterous Bimanual Manipulation Transfer via Residual Learning](../../CVPR2025/robotics/maniptrans_efficient_dexterous_bimanual_manipulation_transfer_via_residual_learn.md)
+- [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](../../CVPR2026/robotics/structural_action_transformer_for_3d_dexterous_manipulation.md)
 - [\[AAAI 2026\] Cross Modal Fine-Grained Alignment via Granularity-Aware and Region-Uncertain Modeling](cross_modal_fine-grained_alignment_via_granularity-aware_and_region-uncertain_mo.md)
-- [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[CVPR 2026\] GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer](../../CVPR2026/robotics/gecosrt_geometryaware_continual_adaptation_for_rob.md)
-- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](continuous_vision-language-action_co-learning_with_semantic-.md)
+- [\[ICLR 2026\] Latent Adaptation of Foundation Policies for Sim-to-Real Transfer](../../ICLR2026/robotics/latent_adaptation_of_foundation_policies_for_sim-to-real_transfer.md)
 
 </div>
 

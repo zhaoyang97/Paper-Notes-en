@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Textual Bayes: Quantifying Prompt Uncertainty in LLM-based Systems
 description: >-
-  [ICLR 2026][LLM Evaluation][MCMC] This paper treats prompts in LLM systems as "textual parameters $\theta$" within a statistical model and performs Bayesian inference using a small training set. It proposes a textual MCMC algorithm, MHLP (Metropolis-Hastings through LLM Proposals), to sample from the prompt posterior. This achieves principled quantific
+  [ICLR 2026][LLM Evaluation][Bayesian Inference] This paper treats prompts in LLM systems as "textual parameters $\theta$" within a statistical model and performs Bayesian inference using a small training set. It proposes a textual MCMC algorithm, MHLP (Metropolis-Hastings through LLM Proposals), to sample from the prompt posterior. This achieves principled quantification of predictions and uncertainty for black-box LLMs, outperforming several frequentist baselines in both acc…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - MCMC
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Bayesian Inference"
+  - "Prompt Uncertainty"
+  - "MCMC"
+  - "Calibration"
+  - "Black-box LLMs"
 date: 2026-05-08
-content_hash: 985d93538b7f3e4f
+content_hash: 2fa0ac842492aa0d
 ---
+
 # Textual Bayes: Quantifying Prompt Uncertainty in LLM-based Systems
 
 **Conference**: ICLR 2026  
@@ -137,15 +142,15 @@ A second experiment applied MHLP to a different scenario—**Conformal Factualit
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">ob
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty](eip_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
 - [\[ICML 2025\] Are LLM Belief Updates Consistent with Bayes' Theorem?](../../ICML2025/llm_evaluation/are_llm_belief_updates_consistent_with_bayes_theorem.md)
 - [\[ICLR 2026\] Prompt and Parameter Co-Optimization for Large Language Models](prompt_and_parameter_co-optimization_for_large_language_models.md)
-- [\[ICLR 2026\] vCache: Verified Semantic Prompt Caching](vcache_verified_semantic_prompt_caching.md)
-- [\[ICLR 2026\] Complementing Self-Consistency with Cross-Model Disagreement for Uncertainty Quantification](complementing_self-consistency_with_cross-model_disagreement_for_uncertainty_qua.md)
+- [\[ICLR 2026\] SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems](sysmobench_evaluating_ai_on_formally_specifying_complex_real-world_systems.md)
+- [\[ICLR 2026\] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation](addressing_pitfalls_in_the_evaluation_of_uncertainty_estimation_methods_for_natu.md)
 
 </div>
 

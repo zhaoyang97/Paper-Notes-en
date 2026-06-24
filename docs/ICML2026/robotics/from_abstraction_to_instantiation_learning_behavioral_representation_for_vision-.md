@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] BehaviorVLA utilizes a causal triple-stream Mamba encoder (VBE) to compress long-horizon demonstrations into a time-invariant "behavioral prototype $z_{\text{proto}}$" and a time-variant "phase state $z_{\text{phase}}$". A phase-conditioned behavior decoder (PBD) then expands the behavioral skeleton into phase-aligned
+  [ICML 2026 Oral][Robotics][VLA] BehaviorVLA utilizes a causal triple-stream Mamba encoder (VBE) to compress long-horizon demonstrations into a time-invariant "behavioral prototype $z_{\text{proto}}$" and a time-variant "phase state $z_{\text{phase}}$". A phase-conditioned behavior decoder (PBD) then expands the behavioral skeleton into phase-aligned Gaussian priors via a Predictor-Corrector mechanism to guide the flow matching strategy. It sets new SOTA benchmarks on LIBERO…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Mamba
-  - Flow Matching
-  - Sim-to-Real
+  - "ICML 2026 Oral"
+  - "Robotics"
+  - "VLA"
+  - "Behavioral Representation"
+  - "Mamba"
+  - "Flow Matching"
+  - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 28c740de0a75098c
+content_hash: a64798d364e2e554
 ---
+
 # From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model
 
 **Conference**: ICML 2026 Oral  
@@ -158,16 +160,16 @@ Ours achieves a 63% higher success rate on 8 real-world tasks compared to strong
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](../../ICLR2026/robotics/spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
-- [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](../../ICLR2026/robotics/autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
 - [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](../../AAAI2026/robotics/continuous_vision-language-action_co-learning_with_semantic-.md)
-- [\[ICML 2026\] Seeing Realism from Simulation: Efficient Video Transfer for Vision-Language-Action Data Augmentation](seeing_realism_from_simulation_efficient_video_transfer_for_vision-language-acti.md)
+- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](../../ICLR2026/robotics/on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
 
 </div>
 

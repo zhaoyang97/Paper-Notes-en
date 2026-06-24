@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the issues of irreversible RGB degradation and subsequent hallucinations in Multimodal Large Language Models (MLLMs) under overexposed/extremely dark conditions, Event-MLLM introduces event streams as a complementary modality. It utilizes an "illumination indicator" learned from a DINOv2 branch to adaptively
+  [CVPR 2026][Multimodal VLM][Event Camera] To address the issues of irreversible RGB degradation and subsequent hallucinations in Multimodal Large Language Models (MLLMs) under overexposed/extremely dark conditions, Event-MLLM introduces event streams as a complementary modality. It utilizes an "illumination indicator" learned from a DINOv2 branch to adaptively regulate Event-RGB fusion, combined with an "Illumination Correction Loss" to align fused features with normal illumi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Event Camera"
+  - "Extreme Illumination"
+  - "MLLM"
+  - "Adaptive Fusion"
+  - "Feature Alignment"
 date: 2026-05-08
-content_hash: d8ba28f74a810ea9
+content_hash: 67d0c617abaafd9e
 ---
+
 # Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,14 @@ Fusion strategy comparison: Pixel-level Pre-fusion yields only 14.85% MC Acc. (w
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
-- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
 - [\[CVPR 2025\] EventGPT: Event Stream Understanding with Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/eventgpt_event_stream_understanding_with_multimodal_large_language_models.md)
 - [\[CVPR 2026\] ROSE: Rotate Your Large Language Model to See](rose_rotate_your_large_language_model_to_see.md)
-- [\[CVPR 2026\] Streaming Video Instruction Tuning (Streamo)](streaming_video_instruction_tuning.md)
+- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
+- [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
+- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 
 </div>
 

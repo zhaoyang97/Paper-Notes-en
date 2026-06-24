@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms
 description: >-
-  [ICLR 2026][learning_theory][CVaR] This paper introduces "distance measures" and "risk measures" from decision theory into the analysis of online algorithms with predictions. By using a quantifiable metric relative to an "ideal algorithm," it identifies the "globally best" algorithm from a family of otherwise incomparable Pareto-optimal/smooth algorithm
+  [ICLR2026][Learning Theory][Decision Theory] This paper introduces "distance measures" and "risk measures" from decision theory into the analysis of online algorithms with predictions. By using a quantifiable metric relative to an "ideal algorithm," it identifies the "globally best" algorithm from a family of otherwise incomparable Pareto-optimal/smooth algorithms. It provides computable optimal thresholds for three classical problems: ski rental, unimodal search…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - CVaR
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Learning-Augmented Algorithms"
+  - "Online Algorithms"
+  - "Decision Theory"
+  - "CVaR"
+  - "Consistency-Robustness Trade-off"
+  - "Online Decision Making"
 date: 2026-05-08
-content_hash: 670d0ca2242cbba4
+content_hash: 0824396f65774d19
 ---
+
 # Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms
 
 **Conference**: ICLR2026  

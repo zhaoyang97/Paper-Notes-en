@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes FastKV, which decouples context reduction (Token-Selective Propagation during prefill) from KV cache compression (layer-wise KV retention during decoding). It achieves 1.82× prefill and 2.87× decoding speedup on LLaMA-3.1-8B-Instruct, while maintaining accuracy within a 1% drop on LongBench.
+  [ACL 2026 Findings][Model Compression][KV Cache Compression] This paper proposes FastKV, which decouples context reduction (Token-Selective Propagation during prefill) from KV cache compression (layer-wise KV retention during decoding). It achieves 1.82× prefill and 2.87× decoding speedup on LLaMA-3.1-8B-Instruct, while maintaining accuracy within a 1% drop on LongBench.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Prefill Acceleration"
+  - "Token-Selective Propagation"
+  - "Inter-layer Context Dynamics"
+  - "Decoding Acceleration"
 date: 2026-05-08
-content_hash: 66fbf17374f3467c
+content_hash: 9aa2918d33f41f87
 ---
+
 # FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration
 
 **Conference**: ACL 2026 Findings  
@@ -131,11 +137,11 @@ FastKV is a training-free method applied only during inference. It was primarily
 
 ## Related Papers
 
+- [\[ACL 2026\] The Pitfalls of KV Cache Compression](the_pitfalls_of_kv_cache_compression.md)
 - [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
 - [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
-- [\[ACL 2026\] The Pitfalls of KV Cache Compression](the_pitfalls_of_kv_cache_compression.md)
+- [\[NeurIPS 2025\] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction](../../NeurIPS2025/model_compression/kvzip_query-agnostic_kv_cache_compression_with_context_reconstruction.md)
 - [\[ACL 2026\] No-Worse Context-Aware Decoding: Preventing Neutral Regression in Context-Conditioned Generation](no-worse_context-aware_decoding_preventing_neutral_regression_in_context-conditi.md)
-- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
 
 </div>
 

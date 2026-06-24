@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Reinforcement Learning] To address the problem of "unfaithful reasoning trajectories induced by outcome-reward RL training in multimodal multiple-choice tasks…
+  [NeurIPS 2025][VLM Reasoning][Reinforcement Learning] To address the problem of "unfaithful reasoning trajectories induced by outcome-reward RL training in multimodal multiple-choice tasks," this paper proposes Self-Consistency Sampling (SCS), which obtains consistency rewards via truncation-resampling and visual perturbation to penalize spurious reasoning. When combined with RLOO, SCS achieves an average improvement of 7.7 percentage points across six benchmarks.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Reinforcement Learning"
   - "Self-Consistency Sampling"
   - "Reasoning Faithfulness"
   - "Multimodal Reasoning"
   - "Outcome Reward"
 date: 2026-05-08
-content_hash: 2dd8e40b93d04774
+content_hash: 1986eed6d8ec6a66
 ---
 
 # Enhancing Outcome Reward-Based RL Training of MLLMs with Self-Consistency Sampling
@@ -184,11 +184,11 @@ Each component contributes approximately 5 points individually; their combinatio
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] What Can RL Bring to VLA Generalization? An Empirical Study](what_can_rl_bring_to_vla_generalization_an_empirical_study.md)
-- [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
-- [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
-- [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/multimodal_vlm/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
-- [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](../../ICML2026/multimodal_vlm/med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
+- [\[ACL 2025\] VReST: Enhancing Reasoning in Large Vision-Language Models through Tree Search and Self-Reward Mechanism](../../ACL2025/vlm_reasoning/vrest_tree_search_vlm_reasoning.md)
+- [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/vlm_reasoning/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
+- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
+- [\[ICLR 2026\] VisualPRM400K: An Effective Dataset for Training Multimodal Process Reward Models](../../ICLR2026/vlm_reasoning/visualprm400k_an_effective_dataset_for_training_multimodal_process_reward_models.md)
+- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
 
 </div>
 

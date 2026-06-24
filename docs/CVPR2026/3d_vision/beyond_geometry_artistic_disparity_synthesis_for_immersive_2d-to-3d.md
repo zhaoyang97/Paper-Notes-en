@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. Through a dual-path architecture that decouples global depth style and local artistic effects, the model learns directorial intent from professional 3D movie
+  [CVPR 2026][3D Vision][2D-to-3D Conversion] A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. Through a dual-path architecture that decouples global depth style and local artistic effects, the model learns directorial intent from professional 3D movie data.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "2D-to-3D Conversion"
+  - "Artistic Disparity Synthesis"
+  - "Stereoscopic Cinema"
+  - "Dual-path Architecture"
+  - "Depth Style"
 date: 2026-05-08
-content_hash: 9b1adc9cd26168c5
+content_hash: a07fb72eee90d1f4
 ---
+
 # Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Art3D consistently achieves a DDC-IoU of 0.83~0.89 in the right-view coordinate 
 ## Related Papers
 
 - [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
-- [\[CVPR 2026\] DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval](dino_eats_clip_adapting_beyond_knowns_for_open-set_3d_object_retrieval.md)
-- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
-- [\[CVPR 2026\] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network](ev-cgnet_co-visible_focused_3d-guided_2d_event_keypoint_detection_network.md)
-- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
+- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
+- [\[CVPR 2026\] Beyond Reassembly: Fractured Object Recovery with Missing Parts](beyond_reassembly_fractured_object_recovery_with_missing_parts.md)
+- [\[CVPR 2026\] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer](meshflow_efficient_artistic_mesh_generation_via_meshvae_and_flow-based_diffusion.md)
+- [\[CVPR 2026\] LagerNVS: Latent Geometry for Fully Neural Real-time Novel View Synthesis](lagernvs_latent_geometry_for_fully_neural_real-time_novel_view_synthesis.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)
 description: >-
-  [AAAI 2026][Model Compression][generalised planning] This paper presents the Moose planner, which synthesises generalised planning programs from training problems via goal regression. It decomposes multi-goal problems in…
+  [AAAI 2026][Model Compression][generalised planning] This paper presents the Moose planner, which synthesises generalised planning programs from training problems via goal regression. It decomposes multi-goal problems into single-goal subproblems, solves each optimally, and applies regression followed by lifting to produce a set of first-order condition-action rules. These rules support either satisficing planning (direct rule execution) or optimal planning (encoded as axioms…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "search pruning"
   - "planning domains"
 date: 2026-05-08
-content_hash: 88d8f7c512ef0823
+content_hash: 5e1a4009e8b05287
 ---
 
 # Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)
@@ -177,10 +177,10 @@ This work does not involve neural network training. Rule synthesis is based on:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](lightweight_optimal-transport_harmonization_on_edge_devices.md)
-- [\[ICML 2026\] QHyer: Q-conditioned Hybrid Attention-mamba Transformer for Offline Goal-conditioned RL](../../ICML2026/model_compression/qhyer_q-conditioned_hybrid_attention-mamba_transformer_for_offline_goal-conditio.md)
 - [\[ICLR 2026\] ACPBench Hard: Unrestrained Reasoning about Action, Change, and Planning](../../ICLR2026/model_compression/acpbench_hard_unrestrained_reasoning_about_action_change_and_planning.md)
+- [\[ICML 2026\] QHyer: Q-conditioned Hybrid Attention-mamba Transformer for Offline Goal-conditioned RL](../../ICML2026/model_compression/qhyer_q-conditioned_hybrid_attention-mamba_transformer_for_offline_goal-conditio.md)
 - [\[CVPR 2026\] Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model](../../CVPR2026/model_compression/planning_in_8_tokens_a_compact_discrete_tokenizer_for_latent_world_model.md)
+- [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](lightweight_optimal-transport_harmonization_on_edge_devices.md)
 - [\[ACL 2026\] No-Worse Context-Aware Decoding: Preventing Neutral Regression in Context-Conditioned Generation](../../ACL2026/model_compression/no-worse_context-aware_decoding_preventing_neutral_regression_in_context-conditi.md)
 
 </div>

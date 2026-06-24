@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first theoretical analysis showing that a single-layer linear Transformer, adversarially pretrained on multiple classification tasks, can achieve adversarial robustness on unseen new classification tasks using only clean in-context learning (ICL) examples—without any additional adversarial train
+  [ICLR 2026][Learning Theory][Adversarial Training] This paper provides the first theoretical analysis showing that a single-layer linear Transformer, adversarially pretrained on multiple classification tasks, can achieve adversarial robustness on unseen new classification tasks using only clean in-context learning (ICL) examples—without any additional adversarial training or adversarial examples, as the model learns to adaptively focus on "robust features."
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Adversarial Robustness"
+  - "In-Context Learning"
+  - "Adversarial Training"
+  - "Linear Transformer"
+  - "Robust Features"
+  - "Universal Robustness"
 date: 2026-05-08
-content_hash: 5dd6b5a930d1e05f
+content_hash: 06c4a08f7eeaf817
 ---
+
 # Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners
 
 **Conference**: ICLR 2026  
@@ -129,15 +136,16 @@ Using parameters from Theorem 3.4 on synthetic and real data (averaging 45 binar
 - Value: ⭐⭐⭐⭐ Provides a clear mechanistic explanation for the "universal robustness" direction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
-- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
-- [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
 - [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
+- [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
+- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 
 </div>
 

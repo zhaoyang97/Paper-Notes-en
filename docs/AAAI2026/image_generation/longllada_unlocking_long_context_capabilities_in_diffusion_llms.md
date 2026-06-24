@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Language Models] This paper presents the first systematic study of long-context capabilities in diffusion large language models (diffusion LLMs)…
+  [AAAI 2026][Image Generation][Diffusion Language Models] This paper presents the first systematic study of long-context capabilities in diffusion large language models (diffusion LLMs), revealing stable perplexity under direct extrapolation and a "local awareness" phenomenon. It further proposes LongLLaDA, a training-free method that successfully extends the context window by 6× (to 24k tokens) via NTK-based RoPE extrapolation.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "NTK Extrapolation"
   - "LLaDA"
 date: 2026-05-08
-content_hash: cf1b19f1c11a23f6
+content_hash: ffc2755d93ec24df
 ---
 
 # LongLLaDA: Unlocking Long Context Capabilities in Diffusion LLMs
@@ -188,8 +188,8 @@ This paper establishes a systematic comparative framework between diffusion LLMs
 - [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](../../ICCV2025/image_generation/less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
 - [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
 - [\[ICCV 2025\] SliderSpace: Decomposing the Visual Capabilities of Diffusion Models](../../ICCV2025/image_generation/sliderspace_decomposing_the_visual_capabilities_of_diffusion_models.md)
-- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 - [\[ICML 2026\] A Systematic Investigation of RL-Jailbreaking in LLMs](../../ICML2026/image_generation/a_systematic_investigation_of_rl-jailbreaking_in_llms.md)
+- [\[ICML 2026\] Esoteric Language Models: A Family of Any-Order Diffusion LLMs](../../ICML2026/image_generation/esoteric_language_models_a_family_of_any-order_diffusion_llms.md)
 
 </div>
 

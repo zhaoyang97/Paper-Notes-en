@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Adaptive Bandit Algorithms for Contextual Matching Markets
 description: >-
-  [ICML 2026][Reinforcement Learning][contextual bandit] This paper studies online matching markets with contexts, treating players' linear preferences for dynamic arm contexts as the bandit learning objective. It proposes BARB for stochastic contexts and AdECO for adversarial contexts, providing adaptive upper bounds for player-optimal stable regret and tight $\tilde O(T^{2
+  [ICML 2026][Reinforcement Learning][contextual bandit] This paper studies online matching markets with contexts, treating players' linear preferences for dynamic arm contexts as the bandit learning objective. It proposes BARB for stochastic contexts and AdECO for adversarial contexts, providing adaptive upper bounds for player-optimal stable regret and tight $\tilde O(T^{2/3})$ theoretical results.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - contextual bandit
-  - matching market
-  - stable matching
-  - regret bound
-  - adaptive exploration
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "contextual bandit"
+  - "matching market"
+  - "stable matching"
+  - "regret bound"
+  - "adaptive exploration"
 date: 2026-05-08
-content_hash: 5fd60f2ce8e21545
+content_hash: e6be7c2b36bf568e
 ---
+
 # Adaptive Bandit Algorithms for Contextual Matching Markets
 
 **Conference**: ICML 2026  
@@ -140,15 +141,14 @@ There is no traditional model ablation; focus is on comparing different algorith
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](../../AAAI2026/reinforcement_learning/provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](../../NeurIPS2025/reinforcement_learning/thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
-- [\[ICML 2026\] Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control](plug-and-play_benchmarking_of_reinforcement_learning_algorithms_for_large-scale_.md)
+- [\[AAAI 2026\] Provably Efficient Multi-Objective Bandit Algorithms under Preference-Centric Customization](../../AAAI2026/reinforcement_learning/provably_efficient_multi-objective_bandit_algorithms_under_preference-centric_cu.md)
 - [\[ICML 2026\] Turning Bias into Bugs: Bandit-Guided Style Manipulation Attacks on LLM Judges](turning_bias_into_bugs_bandit-guided_style_manipulation_attacks_on_llm_judges.md)
-- [\[ICML 2026\] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search](rl4rla_teaching_ml_to_discover_randomized_linear_algebra_algorithms_through_curr.md)
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](moment_matching_q-learning.md)
+- [\[ICML 2026\] Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control](plug-and-play_benchmarking_of_reinforcement_learning_algorithms_for_large-scale_.md)
 
 </div>
 

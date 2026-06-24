@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][KB-VQA] This paper proposes Wiki-PRF, a three-stage (Processing–Retrieval–Filtering) multimodal RAG framework that trains a VLM via reinforcement learning to autonomously invoke vis…
+  [NeurIPS 2025][Reinforcement Learning][KB-VQA] This paper proposes Wiki-PRF, a three-stage (Processing–Retrieval–Filtering) multimodal RAG framework that trains a VLM via reinforcement learning to autonomously invoke visual tools and filter retrieved results, achieving state-of-the-art performance on E-VQA and InfoSeek.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Multimodal Retrieval"
   - "Tool Calling"
 date: 2026-05-08
-content_hash: e81be61340c0e7bb
+content_hash: f017a608a8a78332
 ---
 
 # Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering

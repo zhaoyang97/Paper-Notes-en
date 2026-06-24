@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Charts Are Not Images: On the Challenges of Scientific Chart Editing
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper argues that "charts are not images"—charts are structured data renderings constrained by graphical grammars, and editing them is essentially a structural transformation rather than a pixel manipulation. Accordingly, it proposes FigEdit, a benchmark with over 30K samples covering 10 chart types and five progr
+  [ICLR 2026][Image Generation][Chart editing] This paper argues that "charts are not images"—charts are structured data renderings constrained by graphical grammars, and editing them is essentially a structural transformation rather than a pixel manipulation. Accordingly, it proposes FigEdit, a benchmark with over 30K samples covering 10 chart types and five progressive tasks, revealing that mainstream image editing models exhibit inflated pixel-based scores while frequently f…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Chart editing"
+  - "structural transformation"
+  - "grammar of graphics"
+  - "benchmark"
+  - "semantic evaluation"
+  - "instruction editing"
 date: 2026-05-08
-content_hash: bc1553f3a8432735
+content_hash: b83a984b75fe8abd
 ---
+
 # Charts Are Not Images: On the Challenges of Scientific Chart Editing
 
 **Conference**: ICLR 2026  
@@ -121,10 +128,10 @@ The evaluation targets 4 representative instruction editing models (GPT-Image, I
 ## Related Papers
 
 - [\[CVPR 2026\] Group Editing: Edit Multiple Images in One Go](../../CVPR2026/image_generation/group_editing_edit_multiple_images_in_one_go.md)
+- [\[ICLR 2026\] Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?](easier_painting_than_thinking_can_text-to-image_models_set_the_stage_but_not_dir.md)
 - [\[CVPR 2026\] Improved Mean Flows: On the Challenges of Fastforward Generative Models](../../CVPR2026/image_generation/improved_mean_flows_on_the_challenges_of_fastforward_generative_models.md)
 - [\[CVPR 2026\] ChArtist: Generating Pictorial Charts with Unified Spatial and Subject Control](../../CVPR2026/image_generation/chartist_generating_pictorial_charts_with_unified_spatial_and_subject_control.md)
 - [\[CVPR 2025\] Science-T2I: Addressing Scientific Illusions in Image Synthesis](../../CVPR2025/image_generation/science-t2i_addressing_scientific_illusions_in_image_synthesis.md)
-- [\[CVPR 2026\] OrionEdit: Bridging Reference and Source Images for Generalized Cross-Image Editing](../../CVPR2026/image_generation/orionedit_bridging_reference_and_source_images_for_generalized_cross-image_editi.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models
 description: >-
-  [ICML 2026][Image Restoration][dLLM] This paper systematically characterizes the failure mechanism of masked diffusion language models (dLLM) under **fully non-autoregressive (NAR) decoding**. It identifies that proximity bias causes confidence-based sampling to degenerate into reverse autoregrssion, which is prematurely saturated by EOS tokens. By using
+  [ICML 2026][Image Restoration][dLLM] This paper systematically characterizes the failure mechanism of masked diffusion language models (dLLM) under **fully non-autoregressive (NAR) decoding**. It identifies that proximity bias causes confidence-based sampling to degenerate into reverse autoregrssion, which is prematurely saturated by EOS tokens. By using a 5M-parameter lightweight planner and EOS temperature annealing to intervene in unmasking positions **only at the first st…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - dLLM
-  - proximity bias
-  - EOS overflow
+  - "ICML 2026"
+  - "Image Restoration"
+  - "dLLM"
+  - "non-autoregressive decoding"
+  - "proximity bias"
+  - "EOS overflow"
+  - "lightweight planner"
 date: 2026-05-08
-content_hash: 3363c3910f5680e8
+content_hash: fb2ce73316a66a58
 ---
+
 # Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -134,8 +137,8 @@ Baselines drop under higher compute budgets (aggravated EOS dominance), while th
 - [\[ICML 2026\] Consistent Diffusion Language Models](consistent_diffusion_language_models.md)
 - [\[ICML 2026\] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](plan_for_speed_dilated_scheduling_for_masked_diffusion_language_models.md)
 - [\[ICML 2026\] Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges](structured_diffusion_bridges_inductive_bias_for_denoising_diffusion_bridges.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
 - [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](../../CVPR2026/image_restoration/evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
+- [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] The authors redefine a "synthetic image" as an image generated directly in digital space without a physical world source. They propose a self-supervised method using only real RAW–RGB data pairs to learn a forensic feature called an "alignment trace"—which characterizes "whether this RGB can be traced back to a legitim
+  [CVPR 2026][AI-Generated Image Detection] The authors redefine a "synthetic image" as an image generated directly in digital space without a physical world source. They propose a self-supervised method using only real RAW–RGB data pairs to learn a forensic feature called an "alignment trace"—which characterizes "whether this RGB can be traced back to a legitimate RAW source"—achieving zero-shot SOTA performance (Clustering NMI 0.964, Similarity AUC 0.925) without exposure to…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI-Generated Image Detection"
+  - "Image Forensics"
+  - "Zero-shot"
+  - "RAW Signals"
+  - "ISP Pipeline"
 date: 2026-05-08
-content_hash: 9f90600819ce40c7
+content_hash: 77386ae9a04f6754
 ---
+
 # Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ In zero-shot clustering, RAW reconstruction baselines (R2LCM/ReRAW) only worked 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
-- [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
-- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
-- [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
+- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
+- [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
+- [\[ACL 2025\] Zero-Shot Conversational Stance Detection: Dataset and Approaches](../../ACL2025/others/zero-shot_conversational_stance_detection_dataset_and_approaches.md)
+- [\[CVPR 2026\] A Difference-in-Difference Approach to Detecting AI-Generated Images](a_difference-in-difference_approach_to_detecting_ai-generated_images.md)
+- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
 
 </div>
 

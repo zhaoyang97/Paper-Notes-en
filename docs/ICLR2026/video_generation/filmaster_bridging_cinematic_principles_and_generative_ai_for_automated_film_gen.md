@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] FilMaster is an end-to-end system for automatically generating editable films from text and character/scene reference images. It explicitly introduces cinematic language and professional post-production workflows from real films into the generation pipeline, significantly outperforming Anim-Director, MovieAgent, and LT
+  [ICLR2026][Video Generation][Automated Film Generation] FilMaster is an end-to-end system for automatically generating editable films from text and character/scene reference images. It explicitly introduces cinematic language and professional post-production workflows from real films into the generation pipeline, significantly outperforming Anim-Director, MovieAgent, and LTX-Studio in both camera language and cinematic rhythm.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Automated Film Generation"
+  - "Cinematic Language"
+  - "Scene-level RAG"
+  - "Audio-visual Rhythm"
 date: 2026-05-08
-content_hash: 506502c8bf625971
+content_hash: 06c4b4701eb2ecec
 ---
+
 # FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation
 
 **Conference**: ICLR2026  
@@ -153,8 +158,8 @@ In user studies, FilMaster achieved an average score of 3.79, significantly high
 - Value: ⭐⭐⭐⭐⭐ Advances the field from "clip generation" to "editable, rhythmic film production."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

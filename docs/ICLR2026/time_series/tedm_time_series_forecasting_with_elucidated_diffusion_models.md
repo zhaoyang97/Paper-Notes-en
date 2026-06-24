@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] TEDM: 用阐明化扩散模型做时间序列预测
+  [Paper Note] TEDM: Elucidated Diffusion Models for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][EDM] TEDM ports the EDM (Elucidated Diffusion Models) framework from image generation to multivariate time series forecasting. The key is to **align the diffusion time axis with the physical time axis** and replace manually preset schedules with **empirically estimated noise/scale schedules from data**. This reduces samplin
+  [ICLR 2026][Time Series][Diffusion forecasting] TEDM ports the EDM (Elucidated Diffusion Models) framework from image generation to multivariate time series forecasting. The key is to **align the diffusion time axis with the physical time axis** and replace manually preset schedules with **empirically estimated noise/scale schedules from data**. This reduces sampling complexity from $O(SH)$ to $O(H)$, achieving SOTA results across multiple long-sequence forecasting benchmarks…
 tags:
-  - ICLR 2026
-  - Time Series
-  - EDM
-  - Autoregressive
+  - "ICLR 2026"
+  - "Time Series"
+  - "Diffusion forecasting"
+  - "EDM"
+  - "Data-driven noise scheduling"
+  - "Autoregressive"
+  - "Probabilistic forecasting"
 date: 2026-05-08
-content_hash: 1efd03f842fe3d09
+content_hash: 95e3a35f6557cfa4
 ---
+
 # TEDM: Elucidated Diffusion Models for Time Series Forecasting
 
 **Conference**: ICLR 2026  
@@ -147,11 +151,11 @@ Efficiency Comparison (ETTm2, per batch average): TEDM Training 0.004s / 21.3MB,
 
 ## Related Papers
 
-- [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
-- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
+- [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
 - [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
+- [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
+- [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
 
 </div>
 

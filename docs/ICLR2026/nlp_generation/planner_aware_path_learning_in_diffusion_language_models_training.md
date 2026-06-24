@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Planner Aware Path Learning in Diffusion Language Models Training
 description: >-
-  [ICLR 2026][Text Generation][Diffusion Language Model] This paper points out the mismatch between the default "random unmasking paths" used in training and the actual "planner-guided paths" used during inference in masked diffusion language models. It proposes Planner-Aware Path Learning (PAPL), which reweights the masked diffusion loss using planner confidence to align tr
+  [ICLR2026][Text Generation][Diffusion Language Models] This paper points out the mismatch between the default "random unmasking paths" used in training and the actual "planner-guided paths" used during inference in masked diffusion language models. It proposes Planner-Aware Path Learning (PAPL), which reweights the masked diffusion loss using planner confidence to align training more closely with the inference path. This leads to steady quality improvements in protein sequenc…
 tags:
-  - ICLR 2026
-  - Text Generation
-  - Diffusion Language Model
-  - P-ELBO
+  - "ICLR2026"
+  - "Text Generation"
+  - "Diffusion Language Models"
+  - "Path Planning"
+  - "Masked Diffusion"
+  - "P-ELBO"
+  - "Code Generation"
 date: 2026-05-08
-content_hash: e9e42dd615f89ac2
+content_hash: 538c132c89e6ee4d
 ---
+
 # Planner Aware Path Learning in Diffusion Language Models Training
 
 **Conference**: ICLR2026  

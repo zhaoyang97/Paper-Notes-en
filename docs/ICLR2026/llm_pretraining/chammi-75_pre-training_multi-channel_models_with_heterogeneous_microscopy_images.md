@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images
 description: >-
-  [ICLR 2026][Pretraining][microscopy] The authors construct CHAMMI-75—the largest heterogeneous multi-channel microscopy image pre-training dataset (2.8M images, 75 sources, 25 channel types, 16 species)—demonstrating that imaging modality diversity is the key factor for improving multi-channel model generalization. The trained MorphEm model achieves SOTA
+  [ICLR2026][LLM Pretraining][microscopy] The authors construct CHAMMI-75—the largest heterogeneous multi-channel microscopy image pre-training dataset (2.8M images, 75 sources, 25 channel types, 16 species)—demonstrating that imaging modality diversity is the key factor for improving multi-channel model generalization. The trained MorphEm model achieves SOTA on 6 out of 7 benchmarks.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - microscopy
-  - multi-channel imaging
-  - dataset curation
-  - self-supervised learning
-  - cell morphology
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "microscopy"
+  - "multi-channel imaging"
+  - "dataset curation"
+  - "self-supervised learning"
+  - "cell morphology"
 date: 2026-05-08
-content_hash: 38a33b1c9bf52476
+content_hash: 37553a6a013cdc76
 ---
+
 # CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images
 
 **Conference**: ICLR2026  

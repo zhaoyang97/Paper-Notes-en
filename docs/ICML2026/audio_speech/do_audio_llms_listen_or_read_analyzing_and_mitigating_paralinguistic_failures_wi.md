@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox
 description: >-
-  [ICML 2026][Audio & Speech][Audio LLM] The authors construct VoxParadox, a benchmark of 2,000 Multiple Choice Questions (MCQs) designed with intentional contradictions between "what the text says" and "what the audio sounds like." They demonstrate that current Audio LLMs almost exclusively "read but do not listen" in paralinguistic tasks. By introducing PCL
+  [ICML 2026][Audio & Speech][Audio LLM] The authors construct VoxParadox, a benchmark of 2,000 Multiple Choice Questions (MCQs) designed with intentional contradictions between "what the text says" and "what the audio sounds like." They demonstrate that current Audio LLMs almost exclusively "read but do not listen" in paralinguistic tasks. By introducing PCLM, a lightweight module that adaptively mixes intermediate audio encoder features based on the prompt, combined with DPO…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - Audio LLM
-  - DPO
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Audio LLM"
+  - "Paralinguistics"
+  - "Adversarial Benchmark"
+  - "Layer-wise Mixing"
+  - "DPO"
 date: 2026-05-08
-content_hash: b84369bfd5a80813
+content_hash: c903410cd9c747ed
 ---
+
 # Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox
 
 **Conference**: ICML 2026  
@@ -133,9 +137,9 @@ VoxParadox covers 10 tasks including age, gender, emotion, pitch, volume, speed,
 ## Related Papers
 
 - [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
+- [\[ICML 2026\] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](focus_then_listen_an_empirical_study_of_plug-and-play_audio_enhancer_for_noise-r.md)
 - [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 - [\[AAAI 2026\] Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning](../../AAAI2026/audio_speech/do_llms_feel_teaching_emotion_recognition_with_prompts_retrieval_and_curriculum_.md)
-- [\[ICML 2026\] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](focus_then_listen_an_empirical_study_of_plug-and-play_audio_enhancer_for_noise-r.md)
 - [\[ACL 2026\] Protecting Bystander Privacy via Selective Hearing in Audio LLMs](../../ACL2026/audio_speech/protecting_bystander_privacy_via_selective_hearing_in_audio_llms.md)
 
 </div>

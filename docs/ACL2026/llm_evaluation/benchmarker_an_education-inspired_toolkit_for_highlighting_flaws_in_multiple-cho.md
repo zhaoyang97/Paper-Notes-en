@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] BenchMarker: An Education-Inspired Toolkit for Highlighting Flaws in Multiple-Choice Benchmarks
 description: >-
-  [ACL 2026][LLM Evaluation][MCQA] Drawing on mature quality control frameworks for multiple-choice questions (MCQs) from the field of education, this work constructs BenchMarker. This tool uses LLM-as-judge to audit 12 mainstream NLP MCQA benchmarks across three dimensions: "contamination + shortcuts + writing errors." The study finds that 47% of Truth
+  [ACL 2026][LLM Evaluation][MCQA] Drawing on mature quality control frameworks for multiple-choice questions (MCQs) from the field of education, this work constructs BenchMarker. This tool uses LLM-as-judge to audit 12 mainstream NLP MCQA benchmarks across three dimensions: "contamination + shortcuts + writing errors." The study finds that 47% of TruthfulQA questions can be found directly online, while 100% of HellaSwag questions violate multiple writing rules. It empirically…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - MCQA
-  - LLM-as-judge
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "MCQA"
+  - "benchmark auditing"
+  - "LLM-as-judge"
+  - "writing errors"
+  - "data contamination"
+  - "shortcut detection"
 date: 2026-05-08
-content_hash: 7dad4b63f72e9ee9
+content_hash: 5268ad70bea10337
 ---
+
 # BenchMarker: An Education-Inspired Toolkit for Highlighting Flaws in Multiple-Choice Benchmarks
 
 **Conference**: ACL 2026  

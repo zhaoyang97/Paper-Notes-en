@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structure-Centric Graph Foundation Model via Geometric Bases
 description: >-
-  [ICML 2026][Graph Learning][Sliced GW] SCGFM reformulates cross-domain graph foundation models as a "triangulation" problem in metric-measure spaces: it learns a set of $K$ trainable geometric bases $\{B_k\}$, where each graph is mapped to a set of structural coordinates $\mathbf{w}$ via a softmax of its Gromov–Wasserstein distances $\delta_k$ to each basis
+  [ICML 2026][Graph Learning][Structure-Centric GFM] SCGFM reformulates cross-domain graph foundation models as a "triangulation" problem in metric-measure spaces: it learns a set of $K$ trainable geometric bases $\{B_k\}$, where each graph is mapped to a set of structural coordinates $\mathbf{w}$ via a softmax of its Gromov–Wasserstein distances $\delta_k$ to each basis. Node features are then aggregated into a uniform dimension using OT plans on the bases. This approach moves…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - Sliced GW
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Structure-Centric GFM"
+  - "Geometric Bases"
+  - "Sliced GW"
+  - "Structural Coordinates"
+  - "Feature Re-encoding"
 date: 2026-05-08
-content_hash: d03e7f8f987ec314
+content_hash: edcc40e8eeccf46a
 ---
+
 # Structure-Centric Graph Foundation Model via Geometric Bases
 
 **Conference**: ICML 2026  
@@ -130,11 +135,11 @@ Pre-training is performed only on source domain graphs using $\mathcal{L}_{total
 
 ## Related Papers
 
-- [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
 - [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
-- [\[ACL 2025\] Beyond Completion: A Foundation Model for General Knowledge Graph Reasoning](../../ACL2025/graph_learning/beyond_completion_a_foundation_model_for_general_knowledge_graph_reasoning.md)
-- [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](../../NeurIPS2025/graph_learning/gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
-- [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
+- [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
+- [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](../../ICLR2026/graph_learning/towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
+- [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](../../ICLR2026/graph_learning/flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
+- [\[ICLR 2026\] HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs](../../ICLR2026/graph_learning/hyper_a_foundation_model_for_inductive_link_prediction_with_knowledge_hypergraph.md)
 
 </div>
 

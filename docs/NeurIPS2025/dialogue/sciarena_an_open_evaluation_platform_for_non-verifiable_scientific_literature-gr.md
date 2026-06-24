@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SciArena: An Open Evaluation Platform for Non-Verifiable Scientific Literature-Grounded Tasks
 description: >-
-  [NeurIPS 2025 (Datasets & Benchmarks Track, Spotlight)][Dialogue Systems][scientific literature evaluation] SciArena is a community-driven open evaluation platform for scientific literature tasks. It adopts a Chatbot Are…
+  [NeurIPS 2025 (Datasets & Benchmarks Track, Spotlight)][Dialogue Systems][scientific literature evaluation] SciArena is a community-driven open evaluation platform for scientific literature tasks. It adopts a Chatbot Arena-style human preference voting paradigm to rank 47 foundation models, collecting over 20,000 votes, and releases SciArena-Eval as a meta-benchmark for assessing the ability of automated evaluation systems to judge answer quality on literature-grounded tasks.
 tags:
   - "NeurIPS 2025 (Datasets & Benchmarks Track, Spotlight)"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "Chatbot Arena"
   - "meta-benchmark"
 date: 2026-05-08
-content_hash: 475bce88a53a7be8
+content_hash: e4fec247d177aa0d
 ---
 
 # SciArena: An Open Evaluation Platform for Non-Verifiable Scientific Literature-Grounded Tasks
@@ -125,11 +125,11 @@ The platform employs vote consistency analysis and statistical testing to verify
 
 ## Related Papers
 
+- [\[ICML 2025\] Investigating Non-Transitivity in LLM-as-a-Judge](../../ICML2025/dialogue/investigating_non-transitivity_in_llm-as-a-judge.md)
 - [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](../../AAAI2026/dialogue/teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
+- [\[ACL 2025\] PersonaLens: A Benchmark for Personalization Evaluation in Conversational AI Assistants](../../ACL2025/dialogue/personalens_a_benchmark_for_personalization_evaluation_in_conversational_ai_assi.md)
+- [\[ACL 2025\] SHARE: Shared Memory-Aware Open-Domain Long-Term Dialogue Dataset Constructed from Movie Script](../../ACL2025/dialogue/share_shared_memory-aware_open-domain_long-term_dialogue_dataset_constructed_fro.md)
 - [\[ACL 2026\] STRIDE-ED: A Strategy-Grounded Stepwise Reasoning Framework for Empathetic Dialogue Systems](../../ACL2026/dialogue/stride-ed_a_strategy-grounded_stepwise_reasoning_framework_for_empathetic_dialog.md)
-- [\[ICLR 2026\] Non-Collaborative User Simulators for Tool Agents](../../ICLR2026/dialogue/non-collaborative_user_simulators_for_tool_agents.md)
-- [\[ACL 2026\] Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue](../../ACL2026/dialogue/context-agent_dynamic_discourse_trees_for_non-linear_dialogue.md)
-- [\[ACL 2026\] Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues](../../ACL2026/dialogue/metro_towards_strategy_induction_from_expert_dialogue_transcripts_for_non-collab.md)
 
 </div>
 

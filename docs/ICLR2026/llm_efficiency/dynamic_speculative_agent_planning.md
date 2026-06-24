@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Speculative Agent Planning
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Addressing the issue where fixed speculative step length $k$ in "plan-while-speculating" LLM agents either fails to save time or wastes excessive redundant tokens, this paper proposes DSP. DSP utilizes a lightweight DistilBERT regressor to predict the optimal speculation distance for each step online (without pre-deplo
+  [ICLR2026][LLM Efficiency][Speculative Planning] Addressing the issue where fixed speculative step length $k$ in "plan-while-speculating" LLM agents either fails to save time or wastes excessive redundant tokens, this paper proposes DSP. DSP utilizes a lightweight DistilBERT regressor to predict the optimal speculation distance for each step online (without pre-deployment preparation). The prediction is modeled as a state-value function in reinforcement learning and updated u…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Speculative Planning"
+  - "LLM Agent Acceleration"
+  - "Online Reinforcement Learning"
+  - "Latency-Cost Trade-off"
+  - "TD Learning"
 date: 2026-05-08
-content_hash: c3b4951442494b4c
+content_hash: 2b8ab94678f886f6
 ---
+
 # Dynamic Speculative Agent Planning
 
 **Conference**: ICLR2026  
@@ -134,15 +140,14 @@ The key conclusion is **strict Pareto dominance**: In setting 1, Dyn.($\tau=0.99
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
 - [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](../../ACL2026/llm_efficiency/tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
 - [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[ICML 2026\] GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving](../../ICML2026/llm_efficiency/graphflow_a_graph-based_workflow_management_for_efficient_llm-agent_serving.md)
-- [\[ICML 2026\] Dynamic Linear Attention](../../ICML2026/llm_efficiency/dynamic_linear_attention.md)
 
 </div>
 

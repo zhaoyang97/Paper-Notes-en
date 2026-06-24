@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Multimodal masked autoencoders] This paper applies a Multimodal Masked Autoencoder (MMAE) to jointly model galaxy images (HSC-PDR2, five bands) and spectra (DESI-DR1)…
+  [NeurIPS 2025][Physics & Scientific Computing][Multimodal masked autoencoders] This paper applies a Multimodal Masked Autoencoder (MMAE) to jointly model galaxy images (HSC-PDR2, five bands) and spectra (DESI-DR1), constructing a cross-modal dataset GalaxiesML-Spectra of 134,533 galaxies. Under a 75% masking ratio, the model reconstructs major spectral emission lines and image morphology. When spectra are entirely absent at inference, the model achieves $\sigma_{\text{NMAD}}=…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "redshift regression"
   - "missing modality"
 date: 2026-05-08
-content_hash: cb486ac8b91cdf51
+content_hash: b37850df7fe6540d
 ---
 
 # Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology
@@ -139,7 +139,7 @@ AdamW optimizer (weight decay 0.01, lr 0.0001) with gradient clipping. Dataset s
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 - [\[NeurIPS 2025\] Neural Deprojection of Galaxy Stellar Mass Profiles](neural_deprojection_of_galaxy_stellar_mass_profiles.md)
 - [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
-- [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
+- [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](../../ICLR2026/physics/self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
 
 </div>
 

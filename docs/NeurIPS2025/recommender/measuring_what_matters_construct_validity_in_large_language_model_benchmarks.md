@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Measuring What Matters: Construct Validity in Large Language Model Benchmarks
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM evaluation] This paper presents a systematic review of 445 LLM benchmark papers conducted by 29 experts…
+  [NeurIPS 2025][Recommender Systems][LLM evaluation] This paper presents a systematic review of 445 LLM benchmark papers conducted by 29 experts, examining existing LLM evaluation benchmarks through the lens of construct validity across four dimensions — phenomenon definition, task design, scoring metrics, and conclusion claims — and proposes 8 actionable recommendations for improvement.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "systematic review"
   - "evaluation methodology"
 date: 2026-05-08
-content_hash: f7ff57a48d875342
+content_hash: e5a4c72f01a38e7c
 ---
 
 # Measuring What Matters: Construct Validity in Large Language Model Benchmarks
@@ -136,9 +136,9 @@ This paper adopts a systematic review methodology. From a corpus of 46,114 paper
 ## Related Papers
 
 - [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](inference-time_reward_hacking_in_large_language_models.md)
-- [\[ICLR 2026\] GoalRank: Group-Relative Optimization for a Large Ranking Model](../../ICLR2026/recommender/goalrank_group-relative_optimization_for_a_large_ranking_model.md)
+- [\[ACL 2026\] GraphLoRA: Structure-Aware Low-Rank Adaptation for Large Language Model Recommendation](../../ACL2026/recommender/graphlora_structure-aware_low-rank_adaptation_for_large_language_model_recommend.md)
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
-- [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](../../ICLR2026/recommender/from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
+- [\[ICML 2025\] Deprecating Benchmarks: Criteria and Framework](../../ICML2025/recommender/deprecating_benchmarks_criteria_and_framework.md)
 - [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer
 description: >-
-  [ICCV 2025][Image Generation][Multi-condition generation] UniCombine proposes a DiT-based multi-condition controllable generation framework that achieves unified generation under arbitrary condition combinations (text +…
+  [ICCV 2025][Image Generation][Multi-condition generation] UniCombine proposes a DiT-based multi-condition controllable generation framework that achieves unified generation under arbitrary condition combinations (text + spatial map + subject image) via a Conditional MMDiT Attention mechanism and a LoRA Switching module. It supports both training-free and training-based modes, and introduces SubjectSpatial200K, the first dataset for multi-condition generation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Subject-driven generation"
   - "Spatial control"
 date: 2026-05-08
-content_hash: f28071215e2ec77e
+content_hash: a6832b2839f322ef
 ---
 
 # UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer
@@ -177,11 +177,11 @@ UniCombine requires only 29–44M additional parameters and negligible memory ov
 
 ## Related Papers
 
-- [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
+- [\[ICLR 2026\] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design](../../ICLR2026/image_generation/creatidesign_a_unified_multi-conditional_diffusion_transformer_for_creative_grap.md)
 - [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
+- [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
 - [\[ICCV 2025\] Guiding Noisy Label Conditional Diffusion Models with Score-based Discriminator Correction](guiding_noisy_label_conditional_diffusion_models_with_score-based_discriminator_.md)
-- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
-- [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
+- [\[ICCV 2025\] MMAIF: Multi-task and Multi-degradation All-in-One for Image Fusion with Language Guidance](mmaif_multi-task_and_multi-degradation_all-in-one_for_image_fusion_with_language.md)
 
 </div>
 

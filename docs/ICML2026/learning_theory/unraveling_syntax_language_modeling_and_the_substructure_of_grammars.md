@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Unraveling Syntax: Language Modeling and the Substructure of Grammars
 description: >-
-  [ICML 2026][learning_theory][PCFG] This paper establishes a foundational set of theorems linking "language modeling loss" to the "substructures of Context-Free Grammars (CFG)," proving that the KL divergence of language modeling can be linearly decomposed recursively along the subgrammar hierarchy. Through training small transformers on synthetic PCFGs,
+  [ICML 2026][Learning Theory][Context-Free Grammar] This paper establishes a foundational set of theorems linking "language modeling loss" to the "substructures of Context-Free Grammars (CFG)," proving that the KL divergence of language modeling can be linearly decomposed recursively along the subgrammar hierarchy. Through training small transformers on synthetic PCFGs, it is discovered that models learn all subgrammars **in parallel** (unlike children who master simple struct…
 tags:
-  - ICML 2026
-  - learning_theory
-  - PCFG
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Language Model Learning Dynamics"
+  - "Formal Languages"
+  - "Context-Free Grammar"
+  - "PCFG"
+  - "Subgrammar"
+  - "Loss Decomposition"
+  - "Parallel Learning"
 date: 2026-05-08
-content_hash: f1f2c8507443d4d6
+content_hash: 5f3a6d9fd0121913
 ---
+
 # Unraveling Syntax: Language Modeling and the Substructure of Grammars
 
 **Conference**: ICML 2026  
@@ -137,15 +144,16 @@ Surprisingly: **Spending a few epochs specifically on subgrammars leads the mode
 - Value: ⭐⭐⭐⭐⭐ Provides a quantifiable coordinate system for LM learning dynamics research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap](../../ICLR2026/learning_theory/theoretical_modeling_of_large_language_model_self-improvement_training_dynamics_.md)
 - [\[ICML 2026\] Formalizing Learning from Language Feedback with Provable Guarantees](formalizing_learning_from_language_feedback_with_provable_guarantees.md)
-- [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
-- [\[ICML 2026\] Revenue Guarantees of No-Swap-Regret Dynamics in First Price Auctions](revenue_guarantees_of_no-swap-regret_dynamics_in_first_price_auctions.md)
-- [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](robustness_of_mixtures_of_experts_to_feature_noise.md)
+- [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](../../ICLR2026/learning_theory/language_identification_in_the_limit_with_computational_trace.md)
+- [\[ICLR 2026\] Automata Learning and Identification of the Support of Language Models](../../ICLR2026/learning_theory/automata_learning_and_identification_of_the_support_of_language_models.md)
+- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](../../ICLR2026/learning_theory/diffusion_language_models_are_provably_optimal_parallel_samplers.md)
 
 </div>
 

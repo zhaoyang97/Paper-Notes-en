@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models
 description: >-
-  [ACL 2026][Reinforcement Learning][Diffusion Language Model] This paper identifies that in diffusion language models (dLLMs), "tokens that attend more to determined contexts exhibit more stable generation and are more critical for reasoning." Consequently, it proposes AGDO—a method that derives denoising order from attention and emphasizes these "attention hub" tokens via weight
+  [ACL 2026][Reinforcement Learning][Diffusion Language Models] This paper identifies that in diffusion language models (dLLMs), "tokens that attend more to determined contexts exhibit more stable generation and are more critical for reasoning." Consequently, it proposes AGDO—a method that derives denoising order from attention and emphasizes these "attention hub" tokens via weighting during supervised fine-tuning (SFT) and reinforcement learning (RL). This approach consistentl…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Diffusion Language Model
-  - GRPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Diffusion Language Models"
+  - "Attention-Guided Denoising"
+  - "Masking Strategy"
+  - "GRPO"
+  - "Reasoning Enhancement"
 date: 2026-05-08
-content_hash: f99a5f0db1721fb5
+content_hash: c90fa2833630eb3e
 ---
+
 # Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models
 
 **Conference**: ACL 2026  
@@ -149,7 +153,7 @@ AGDO-SFT achieved 36.0%, surpassing blockwise SFT (34.4%) and providing a 3.0% g
 
 - [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 - [\[ACL 2026\] AttnPO: Attention-Guided Process Supervision for Efficient Reasoning](attnpo_attention-guided_process_supervision_for_efficient_reasoning.md)
-- [\[ICML 2026\] Noise-Guided Transport: Imitation Learning from Random Priors](../../ICML2026/reinforcement_learning/noise-guided_transport_for_imitation_learning.md)
+- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](../../NeurIPS2025/reinforcement_learning/mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 

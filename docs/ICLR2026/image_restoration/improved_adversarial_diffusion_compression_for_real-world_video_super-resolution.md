@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Real-VSR] The 11B 3D DiT video super-resolution teacher DOVE is compressed into a 0.57B "2D+1D" student network, AdcVSR. By utilizing dual-head dual-discriminator adversarial distillation, the conflicting objectives of "rich details" and "temporal consistency" are decoupled and optimized, achieving a 95% parameter reduction and
+  [ICLR 2026][Image Restoration][Real-VSR] The 11B 3D DiT video super-resolution teacher DOVE is compressed into a 0.57B "2D+1D" student network, AdcVSR. By utilizing dual-head dual-discriminator adversarial distillation, the conflicting objectives of "rich details" and "temporal consistency" are decoupled and optimized, achieving a 95% parameter reduction and an 8x speedup with almost no loss in image quality.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Real-VSR
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Real-VSR"
+  - "Diffusion Model Compression"
+  - "Adversarial Distillation"
+  - "One-step Diffusion"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: cbd1d1b22324e497
+content_hash: 1383c0783162f8f5
 ---
+
 # Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -127,7 +132,7 @@ AdcVSR achieves the **lowest warping error** (best temporal consistency) while h
 - [\[ICLR 2026\] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution](learning_heterogeneous_degradation_representation_for_real-world_super-resolutio.md)
 - [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](../../CVPR2026/image_restoration/one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](../../CVPR2026/image_restoration/textovsr_text-guided_real-world_opera_video_super-resolution.md)
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](../../CVPR2026/image_restoration/time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 
 </div>
 

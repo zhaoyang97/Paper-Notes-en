@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal alignment] This paper proposes BACL (Boundary-Aware Curriculum with Local Attention), which combines a learnable boundary-aware negative sampler (via easy-to-hard curriculum lear…
+  [NeurIPS 2025][Multimodal VLM][multimodal alignment] This paper proposes BACL (Boundary-Aware Curriculum with Local Attention), which combines a learnable boundary-aware negative sampler (via easy-to-hard curriculum learning) with a contrastive local attention loss (for token-level mismatch localization). On LAION-400M, BACL yields a +32% R@1 improvement over CLIP and achieves state-of-the-art results on four large-scale benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "hard negatives"
   - "boundary-aware sampling"
 date: 2026-05-08
-content_hash: 3ea84c8be265d823
+content_hash: 4001379850f1c3bd
 ---
 
 # Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment
@@ -124,11 +124,11 @@ CLIP+BACL improves R@1 on LAION-400M from 35.2 to 46.5 (+32% relative gain).
 
 ## Related Papers
 
+- [\[ICML 2025\] MMedPO: Aligning Medical Vision-Language Models with Clinical-Aware Multimodal Preference Optimization](../../ICML2025/multimodal_vlm/mmedpo_aligning_medical_vision-language_models_with_clinical-aware_multimodal_pr.md)
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
+- [\[ACL 2025\] DALR: Dual-level Alignment Learning for Multimodal Sentence Representation Learning](../../ACL2025/multimodal_vlm/dalr_dual-level_alignment_learning_for_multimodal_sentence_representation_learni.md)
+- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
 - [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
-- [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](../../AAAI2026/multimodal_vlm/aligning_the_true_semantics_constrained_decoupling_and_distr.md)
-- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](../../CVPR2026/multimodal_vlm/falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
-- [\[NeurIPS 2025\] Multimodal Negative Learning](multimodal_negative_learning.md)
 
 </div>
 

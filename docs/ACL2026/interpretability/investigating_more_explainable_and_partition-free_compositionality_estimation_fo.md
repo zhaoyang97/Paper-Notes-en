@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective
 description: >-
-  [ACL 2026][Interpretability][Paper Note] The paper moves beyond the traditional paradigm of "constructing test sets for compositional generalization testing." Instead, it requires LLMs to generate a Python program as a mapping rule for an entire dataset. By using $\mathcal{C}(\text{P})$ based on the upper bound of Kolmogorov complexity, the "program compactne
+  [ACL 2026][Interpretability][Compositional Generalization] The paper moves beyond the traditional paradigm of "constructing test sets for compositional generalization testing." Instead, it requires LLMs to generate a Python program as a mapping rule for an entire dataset. By using $\mathcal{C}(\text{P})$ based on the upper bound of Kolmogorov complexity, the "program compactness + accuracy" is converted into a compositionality score of 0–100. This shifts the focus from "check…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Compositional Generalization"
+  - "Kolmogorov Complexity"
+  - "Rule Generation"
+  - "Program Length"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 30111c95c348dc75
+content_hash: d6e667df3266c75e
 ---
+
 # Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective
 
 **Conference**: ACL 2026  
@@ -142,11 +148,11 @@ RI(H) = Randomizing index mapping (e.g., instead of pos $i$ to row $i$). Most re
 
 ## Related Papers
 
+- [\[ICLR 2026\] Explainable Mixture Models through Differentiable Rule Learning](../../ICLR2026/interpretability/explainable_mixture_models_through_differentiable_rule_learning.md)
 - [\[AAAI 2026\] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation](../../AAAI2026/interpretability/explainable_melanoma_diagnosis_with_contrastive_learning_and_llm-based_report_ge.md)
 - [\[ACL 2026\] Interpretable Traces, Unexpected Outcomes: Investigating the Disconnect in Trace-Based Knowledge Distillation](interpretable_traces_unexpected_outcomes_investigating_the_disconnect_in_trace-b.md)
 - [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
 - [\[ACL 2026\] Evian: Towards Explainable Visual Instruction-tuning Data Auditing](evian_towards_explainable_visual_instruction-tuning_data_auditing.md)
-- [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](../../ICLR2026/interpretability/gavel_towards_rule-based_safety_through_activation_monitoring.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contrastive Flow Matching (ΔFM)
 description: >-
-  [ICCV 2025][Image Generation][Flow Matching] A contrastive regularization term is introduced into the Flow Matching training objective to enforce separation between velocity fields of different conditions…
+  [ICCV 2025][Image Generation][Flow Matching] A contrastive regularization term is introduced into the Flow Matching training objective to enforce separation between velocity fields of different conditions, achieving 9× training acceleration, 5× fewer sampling steps, and up to 8.9 FID reduction with zero additional inference overhead.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -11,7 +11,7 @@ tags:
   - "Conditional Generation"
   - "Training Acceleration"
 date: 2026-05-08
-content_hash: 4d23afaf73f332ba
+content_hash: 809839c1c98f6a84
 ---
 
 # Contrastive Flow Matching (ΔFM)
@@ -162,11 +162,11 @@ Excessively large $\lambda$ causes the model to over-focus on pushing away negat
 
 ## Related Papers
 
-- [\[CVPR 2026\] VeCoR — Velocity Contrastive Regularization for Flow Matching](../../CVPR2026/image_generation/vecor_--_velocity_contrastive_regularization_for_flow_matching.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/image_generation/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](../../NeurIPS2025/image_generation/flow_matching_neural_processes.md)
-- [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
+- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
 - [\[ICCV 2025\] FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait](float_generative_motion_latent_flow_matching_for_audio-driven_talking_portrait.md)
+- [\[ICCV 2025\] EC-Flow: Enabling Versatile Robotic Manipulation from Action-Unlabeled Videos via Equivariant Flow Matching](ec-flow_enabling_versatile_robotic_manipulation_from_action-unlabeled_videos_via.md)
+- [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
 
 </div>
 

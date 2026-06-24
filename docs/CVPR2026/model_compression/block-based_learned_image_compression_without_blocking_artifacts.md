@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Block-based Learned Image Compression without Blocking Artifacts
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper utilizes a set of analytical recurrence formulas to precisely calculate the **minimum overlap** required for each layer when a CNN-based image compression model is executed block-wise. This enables off-the-shelf models to run on a per-block basis without retraining, reducing peak memory to approximately 13%
+  [CVPR 2026][Model Compression][Learned image compression] This paper utilizes a set of analytical recurrence formulas to precisely calculate the **minimum overlap** required for each layer when a CNN-based image compression model is executed block-wise. This enables off-the-shelf models to run on a per-block basis without retraining, reducing peak memory to approximately 13% while achieving bit-to-bit consistency with full-image inference and completely eliminating block boun…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Learned image compression"
+  - "block-based encoding"
+  - "overlapping propagation"
+  - "peak memory"
+  - "retraining-free"
 date: 2026-05-08
-content_hash: e84ab9b36ea5bf9b
+content_hash: 200a99a6cd1c5fb8
 ---
+
 # Block-based Learned Image Compression without Blocking Artifacts
 
 **Conference**: CVPR 2026  
@@ -135,16 +141,16 @@ Reducing overlap by even 1 pixel leads to catastrophic RD degradation, confirmin
 - Value: ⭐⭐⭐⭐⭐ (Retraining-free, plug-and-play, reduces peak memory to ~13%; high practical utility)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](what_matters_in_practical_learned_image_compression.md)
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](../../ICML2026/model_compression/efficient_learned_image_compression_without_entropy_coding.md)
 - [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
+- [\[CVPR 2025\] Learned Image Compression with Dictionary-based Entropy Model](../../CVPR2025/model_compression/learned_image_compression_with_dictionary-based_entropy_model.md)
 - [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
-- [\[CVPR 2026\] On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)
-- [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
 
 </div>
 

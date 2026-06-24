@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes LegoOcc, which utilizes Language-Embedded Gaussians (LE-Gaussians) as a unified geometric-semantic intermediate representation. Combined with a Poisson-process-based Gaussian-to-Occupancy (G2O) operator and a progressive temperature decay strategy, it achieves monocular open-vocabulary occupancy predictio
+  [CVPR 2026][Autonomous Driving][Open-vocabulary occupancy prediction] Ours proposes LegoOcc, which utilizes Language-Embedded Gaussians (LE-Gaussians) as a unified geometric-semantic intermediate representation. Combined with a Poisson-process-based Gaussian-to-Occupancy (G2O) operator and a progressive temperature decay strategy, it achieves monocular open-vocabulary occupancy prediction for indoor scenes using only binary occupancy labels (no semantic annotations)…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Open-vocabulary occupancy prediction"
+  - "3D Gaussian representation"
+  - "Poisson aggregation"
+  - "Temperature decay"
+  - "Indoor scenes"
 date: 2026-05-08
-content_hash: 79d42db861e7211c
+content_hash: c93e40bb127cc015
 ---
+
 # Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ Under the open-vocabulary setting, LegoOcc outperforms all methods in IoU (inclu
 
 ## Related Papers
 
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
 - [\[ECCV 2024\] Monocular Occupancy Prediction for Scalable Indoor Scenes](../../ECCV2024/autonomous_driving/monocular_occupancy_prediction_for_scalable_indoor_scenes.md)
 - [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
 - [\[CVPR 2026\] ReScene4D: Temporally Consistent Semantic Instance Segmentation of Evolving Indoor 3D Scenes](rescene4d_temporally_consistent_semantic_instance_segmentation_of_evolving_indoo.md)
-- [\[CVPR 2026\] EditSSC: Toward Editable Semantic Occupancy Scenes with Unconditional Diffusion Models](editssc_toward_editable_semantic_occupancy_scenes_with_unconditional_diffusion_m.md)
+- [\[CVPR 2025\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](../../CVPR2025/autonomous_driving/o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
+- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
 
 </div>
 

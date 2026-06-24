@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BNMusic: Blending Environmental Noises into Personalized Music
 description: >-
-  [NeurIPS 2025][Audio & Speech][noise blending] This paper proposes BNMusic, a two-stage framework that blends environmental noises into personalized generated music. Stage 1 generates rhythm-aligned music via mel-spectro…
+  [NeurIPS 2025][Audio & Speech][noise blending] This paper proposes BNMusic, a two-stage framework that blends environmental noises into personalized generated music. Stage 1 generates rhythm-aligned music via mel-spectrogram outpainting and inpainting; Stage 2 adaptively amplifies the music signal based on auditory masking theory to reduce noise perception. The approach requires no additional training and significantly outperforms baselines on EPIC-SOUNDS and ESC-50.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "spectrogram inpainting"
   - "psychoacoustics"
 date: 2026-05-08
-content_hash: 07b6facaaacb2401
+content_hash: 9620ee6e5b635ea8
 ---
 
 # BNMusic: Blending Environmental Noises into Personalized Music
@@ -137,7 +137,7 @@ No training is required. Stage 1 uses Riffusion's LDM inference (DDPM denoising)
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
 - [\[NeurIPS 2025\] Ethics Statements in AI Music Papers: The Effective and the Ineffective](ethics_statements_in_ai_music_papers_the_effective_and_the_ineffective.md)
 - [\[NeurIPS 2025\] Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization](unifying_symbolic_music_arrangement_track-aware_reconstruction_and_structured_to.md)
-- [\[NeurIPS 2025\] Perceptually Aligning Representations of Music via Noise-Augmented Autoencoders](perceptually_aligning_representations_of_music_via_noise-augmented_autoencoders.md)
+- [\[ICML 2025\] MuseControlLite: Multifunctional Music Generation with Lightweight Conditioners](../../ICML2025/audio_speech/musecontrollite_multifunctional_music_generation_with_lightweight_conditioners.md)
 
 </div>
 

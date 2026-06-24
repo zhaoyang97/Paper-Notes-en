@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models
 description: >-
-  [ICML 2026][AI Safety][CLIP] A-TPT utilizes an adversarial-hardened Gradient Attention Rollout to extract "semantic anchors" from the CLIP vision end. These focus maps guide spatially non-uniform multi-view augmentations and weighted ensemble based on the Total Variation of attention, simultaneously improving adversarial and clean accuracy across
+  [ICML 2026][AI Safety][CLIP] A-TPT utilizes an adversarial-hardened Gradient Attention Rollout to extract "semantic anchors" from the CLIP vision end. These focus maps guide spatially non-uniform multi-view augmentations and weighted ensemble based on the Total Variation of attention, simultaneously improving adversarial and clean accuracy across 9 datasets in fine-grained scenarios.
 tags:
-  - ICML 2026
-  - AI Safety
-  - CLIP
+  - "ICML 2026"
+  - "AI Safety"
+  - "CLIP"
+  - "Test-time prompt tuning"
+  - "Adversarial robustness"
+  - "Attention rollout"
+  - "Fine-grained classification"
 date: 2026-05-08
-content_hash: 77e24a6d73032f41
+content_hash: fa7f3618dacf8677
 ---
+
 # Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -127,15 +132,16 @@ A-TPT also achieves the highest average clean accuracy (63.0 vs R-TPT 61.1 on Vi
 - Value: ⭐⭐⭐⭐ (Deployment-friendly; no extra training needed)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](../../CVPR2026/ai_safety/a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
-- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ICLR 2026\] Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models](../../ICLR2026/ai_safety/adversarial_attacks_already_tell_the_answer_directional_bias-guided_test-time_de.md)
+- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](../../CVPR2026/ai_safety/ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
 - [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
-- [\[ICML 2026\] HEDP: A Hybrid Energy-Distance Prompt-based Framework for Domain Incremental Learning](hedp_a_hybrid_energy-distance_prompt-based_framework_for_domain_incremental_lear.md)
-- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
+- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
 
 </div>
 

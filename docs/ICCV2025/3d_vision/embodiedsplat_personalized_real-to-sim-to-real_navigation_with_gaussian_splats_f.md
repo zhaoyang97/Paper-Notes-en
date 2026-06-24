@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, a complete pipeline that captures real environments via iPhone video → reconstructs 3D Gaussian Splat meshes → fine-tunes navigation polici…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes EmbodiedSplat, a complete pipeline that captures real environments via iPhone video → reconstructs 3D Gaussian Splat meshes → fine-tunes navigation policies in Habitat-Sim → deploys to the real world. The approach achieves 20%–40% absolute success rate improvement over zero-shot baselines on real-scene ImageNav tasks, with a sim-vs-real Spearman rank correlation coefficient of 0.87–0.97.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Personalized Policy Training"
   - "ImageNav"
 date: 2026-05-08
-content_hash: 1331d0e4459d8321
+content_hash: a48ac8bd6720d93c
 ---
 
 # EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device
@@ -143,11 +143,11 @@ After fine-tuning, simulation success rates reach 90%+ across all scenes, **requ
 
 ## Related Papers
 
+- [\[CVPR 2025\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](../../CVPR2025/3d_vision/mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
 - [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
 - [\[ICCV 2025\] HouseTour: A Virtual Real Estate A(I)gent](housetour_a_virtual_real_estate_aigent.md)
-- [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
-- [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](radiant_foam_real-time_differentiable_ray_tracing.md)
 - [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
+- [\[CVPR 2026\] Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices](../../CVPR2026/3d_vision/seele_a_unified_acceleration_framework_for_real-time_gaussian_splatting_on_mobil.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reimagining Anomalies: What if Anomalies Were Normal?
 description: >-
-  [AAAI2026][Object Detection][anomaly detection] This paper proposes the first counterfactual explanation framework for unsupervised image anomaly detection. By training a generator to modify anomalous samples into multip…
+  [AAAI2026][Object Detection][anomaly detection] This paper proposes the first counterfactual explanation framework for unsupervised image anomaly detection. By training a generator to modify anomalous samples into multiple disentangled counterfactuals perceived as normal by the detector, the framework answers at the semantic level: "What would an anomaly look like if it were normal?" This provides a depth of interpretability far exceeding traditional heatmap-based approaches.
 tags:
   - "AAAI2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "GAN"
   - "diffusion model"
 date: 2026-05-08
-content_hash: 0b96e7ac8fdb5029
+content_hash: 5c9e3284a63ab1f0
 ---
 
 # Reimagining Anomalies: What if Anomalies Were Normal?
@@ -159,8 +159,8 @@ A supervised classifier trained only on blue anomalies is compared against an un
 ## Related Papers
 
 - [\[NeurIPS 2025\] Normal-Abnormal Guided Generalist Anomaly Detection](../../NeurIPS2025/object_detection/normal-abnormal_guided_generalist_anomaly_detection.md)
-- [\[AAAI 2026\] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection](sm3det_a_unified_model_for_multi-modal_remote_sensing_object_detection.md)
-- [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](harnessing_vision-language_models_for_time_series_anomaly_detection.md)
+- [\[ECCV 2024\] YOLOv9: Learning What You Want to Learn Using Programmable Gradient Information](../../ECCV2024/object_detection/yolov9_learning_what_you_want_to_learn_using_programmable_gradient_information.md)
+- [\[CVPR 2026\] See What We Cannot See: A Geo-guided Reasoning Benchmark for Object Counting under Adverse Earth Observation Conditions](../../CVPR2026/object_detection/see_what_we_cannot_see_a_geo-guided_reasoning_benchmark_for_object_counting_unde.md)
 - [\[AAAI 2026\] Commonality in Few: Few-Shot Multimodal Anomaly Detection via Hypergraph-Enhanced Memory](commonality_in_few_few-shot_multimodal_anomaly_detection_via_hypergraph-enhanced.md)
 - [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
 

@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Interpretability][rich dynamics] The authors propose $\mathcal{D}_{LR}$, a computationally efficient and performance-independent metric for dynamical richness. It measures rich/lazy training dynamics by comparing activations before and after the final layer and demonstrates that neural collapse is a special case of this metric.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - rich dynamics
-  - lazy training
-  - neural collapse
-  - feature learning
-  - CKA
+  - "ICLR 2026"
+  - "Interpretability"
+  - "rich dynamics"
+  - "lazy training"
+  - "neural collapse"
+  - "feature learning"
+  - "CKA"
 date: 2026-05-08
-content_hash: 3923d33b6b3ef019
+content_hash: d8bf37d631fbd3a7
 ---
+
 # Decoupling Dynamical Richness from Representation Learning: Towards Practical Measurement
 
 **Conference**: ICLR 2026  

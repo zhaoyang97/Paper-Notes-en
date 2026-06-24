@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-judge] This paper points out that the mainstream QA selective prediction evaluation for NLG uncertainty estimation is significantly biased by approximate correctness functions. It proposes using SP-MoJI, structured tasks, OOD/perturbation detection, and Elo aggregation to make evaluation conclusions more robust.
+  [ICLR 2026][LLM Evaluation][Uncertainty Estimation] This paper points out that the mainstream QA selective prediction evaluation for NLG uncertainty estimation is significantly biased by approximate correctness functions. It proposes using SP-MoJI, structured tasks, OOD/perturbation detection, and Elo aggregation to make evaluation conclusions more robust.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Uncertainty Estimation"
+  - "NLG Evaluation"
+  - "LLM-as-a-judge"
+  - "Risk-related"
+  - "Elo Aggregation"
 date: 2026-05-08
-content_hash: 63294d4406b646d4
+content_hash: 35fa675ace692a89
 ---
+
 # Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation
 
 **Conference**: ICLR 2026  
@@ -168,10 +173,10 @@ The experiments cover two types of questions: proving that legacy QA protocols a
 ## Related Papers
 
 - [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](pitfalls_in_evaluating_language_model_forecasters.md)
-- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 - [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
-- [\[ICLR 2026\] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning](finsearchcomp_towards_a_realistic_expert-level_evaluation_of_financial_search_an.md)
 - [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
+- [\[ACL 2025\] Benchmarking Uncertainty Quantification Methods for Large Language Models with LM-Polygraph](../../ACL2025/llm_evaluation/benchmarking_uncertainty_quantification_methods_for_large_language_models_with_l.md)
+- [\[ICLR 2026\] JQBench: A Benchmark for Reading and Writing JSON from Natural Language and/or Examples](jqbench_a_benchmark_for_reading_and_editing_json_from_natural_language_andor_exa.md)
 
 </div>
 

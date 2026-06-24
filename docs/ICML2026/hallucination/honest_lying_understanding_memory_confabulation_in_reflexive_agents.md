@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Honest Lying: Understanding Memory Confabulation in Reflexive Agents
 description: >-
-  [ICML 2026][Hallucination Detection][Reflexion] This paper uncovers a systematic failure mode in Reflexion-style agents termed "memory confabulation": agents write incorrect task understandings into reflective memory and reuse them across trials. The authors quantify this phenomenon using the Reflection Repetition Rate (RRR) and replace open-ended self-diagnosis wit
+  [ICML 2026][Hallucination Detection][Reflexion] This paper uncovers a systematic failure mode in Reflexion-style agents termed "memory confabulation": agents write incorrect task understandings into reflective memory and reuse them across trials. The authors quantify this phenomenon using the Reflection Repetition Rate (RRR) and replace open-ended self-diagnosis with programmatic feedback extraction, which increases the correct object mention rate from 0% to 86% and reduces R…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - Reflexion
-  - RRR
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Reflexion"
+  - "Memory Confabulation"
+  - "RRR"
+  - "Grounded Feedback"
+  - "Self-diagnosis Failure"
 date: 2026-05-08
-content_hash: 471c94d018abf6eb
+content_hash: e3e61cc1ca97ecf9
 ---
+
 # Honest Lying: Understanding Memory Confabulation in Reflexive Agents
 
 **Conference**: ICML 2026  
@@ -144,15 +148,14 @@ The frozen memory phenomenon was reproduced across four domains: ALFWorld, WebSh
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets (CAIA)](when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
 - [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](../../CVPR2026/hallucination/understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
+- [\[ACL 2026\] Parametric Knowledge is Not All You Need: Toward Honest Large Language Models via Retrieval of Pretraining Data](../../ACL2026/hallucination/parametric_knowledge_is_not_all_you_need_toward_honest_large_language_models_via.md)
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/hallucination/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[AAAI 2026\] When Hallucination Costs Millions: Benchmarking AI Agents in High-Stakes Adversarial Financial Markets](../../AAAI2026/hallucination/when_hallucination_costs_millions_benchmarking_ai_agents_in_high-stakes_adversar.md)
 
 </div>
 

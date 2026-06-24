@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking
 description: >-
-  [ICML 2026][AI Safety][Spearman footrule] Under the Spearman footrule distance, this work proves that the ILP constraint matrix is totally unimodular, providing the first polynomial-time optimal algorithm for fair top-$k$ rank aggregation. It further improves the approximation ratio for fair (full) rank aggregation from 3 to 2 using a two-step strategy: solvin
+  [ICML 2026][AI Safety][Fair rank aggregation] Under the Spearman footrule distance, this work proves that the ILP constraint matrix is totally unimodular, providing the first polynomial-time optimal algorithm for fair top-$k$ rank aggregation. It further improves the approximation ratio for fair (full) rank aggregation from 3 to 2 using a two-step strategy: solving fair top-$k$ first and then completing it into a full permutation via minimum-cost perfect matching.
 tags:
-  - ICML 2026
-  - AI Safety
-  - Spearman footrule
-  - Top-k
+  - "ICML 2026"
+  - "AI Safety"
+  - "Fair rank aggregation"
+  - "Spearman footrule"
+  - "Top-k"
+  - "Totally Unimodular Matrix"
+  - "LP relaxation"
 date: 2026-05-08
-content_hash: f3c88bb8c2da188a
+content_hash: b8249cf460266bbd
 ---
+
 # Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking
 
 **Conference**: ICML 2026  
@@ -126,7 +130,7 @@ Datasets: (i) Movielens subset—preference rankings from 7 users for 268 movies
 - [\[CVPR 2026\] RankOOD: Class Ranking-based Out-of-Distribution Detection](../../CVPR2026/ai_safety/rankood_-_class_ranking-based_out-of-distribution_detection.md)
 - [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
 - [\[ICML 2026\] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency](fair_decisions_from_calibrated_scores_achieving_optimal_classification_while_sat.md)
-- [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
+- [\[ICLR 2026\] Certifying the Full YOLO Pipeline: A Probabilistic Verification Approach](../../ICLR2026/ai_safety/certifying_the_full_yolo_pipeline_a_probabilistic_verification_approach.md)
 
 </div>
 

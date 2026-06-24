@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Mix-ECom: Towards Mixed-Type E-Commerce Dialogues with Complex Domain Rules
 description: >-
-  [ICLR 2026][LLM Agent][ReAct] This paper constructs the first customer service benchmark **Mix-ECom**, which features "four dialogue types mixed in a single conversation + 82 real-world e-commerce domain rules." It proposes a **dynamic rule filtering module** placed before ReAct/Plan-and-Solve to suppress hallucinations caused by complex rules, rev
+  [ICLR 2026][LLM Agent][E-commerce Agent] This paper constructs the first customer service benchmark **Mix-ECom**, which features "four dialogue types mixed in a single conversation + 82 real-world e-commerce domain rules." It proposes a **dynamic rule filtering module** placed before ReAct/Plan-and-Solve to suppress hallucinations caused by complex rules, revealing that the current strongest multimodal LLM Agents still achieve a total score of only 62% on real e-commerce serv…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - ReAct
-  - Plan-and-Solve
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "E-commerce Agent"
+  - "Mixed-type dialogues"
+  - "Complex domain rules"
+  - "ReAct"
+  - "Plan-and-Solve"
+  - "Tool invocation"
+  - "Hallucination suppression"
 date: 2026-05-08
-content_hash: f418d391d3259a74
+content_hash: 47da33e17d46b55b
 ---
+
 # Mix-ECom: Towards Mixed-Type E-Commerce Dialogues with Complex Domain Rules
 
 **Conference**: ICLR 2026  
@@ -125,8 +131,8 @@ Removing multimodal input only caused a 3.3/6.0 point drop, suggesting models ra
 ## Related Papers
 
 - [\[ICLR 2026\] Type-Compliant Adaptation Cascades: Adapting Programmatic LM Workflows to Data](type-compliant_adaptation_cascades.md)
-- [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
 - [\[ICLR 2026\] Code Driven Planning with Domain-Adaptive Selector](code_driven_planning_with_domain-adaptive_selector.md)
+- [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
 - [\[ICLR 2026\] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development](membership_privacy_risks_of_sharpness_aware_minimization.md)
 - [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](../../ACL2026/llm_agent/shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 

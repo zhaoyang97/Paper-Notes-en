@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why
 description: >-
-  [ICML 2026][AI Safety][Node2Vec] This paper demonstrates that when Transformer / Mamba models memorize graph edges, they do not simply degenerate into lookup tables (associative memory). Instead, they spontaneously organize node embeddings into a "geometric memory" that encodes multi-hop global structures. Through path-star experiments, the authors pr
+  [ICML 2026][AI Safety][Geometric Memory] This paper demonstrates that when Transformer / Mamba models memorize graph edges, they do not simply degenerate into lookup tables (associative memory). Instead, they spontaneously organize node embeddings into a "geometric memory" that encodes multi-hop global structures. Through path-star experiments, the authors prove this geometry makes implicit reasoning abnormally easy, yet its emergence cannot be attributed to supervision…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Node2Vec
-  - Transformer
+  - "ICML 2026"
+  - "AI Safety"
+  - "Geometric Memory"
+  - "Associative Memory"
+  - "Implicit Reasoning"
+  - "Spectral Bias"
+  - "Node2Vec"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 9142a442c21fe1c2
+content_hash: 297071997cc94e24
 ---
+
 # Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why
 
 **Conference**: ICML 2026  
@@ -115,7 +120,7 @@ On the in-weights path-star task, both Transformer (GPT-mid) and Mamba architect
 - [\[ICML 2026\] Geometrically Constrained Outlier Synthesis](geometrically_constrained_outlier_synthesis.md)
 - [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
 - [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
-- [\[NeurIPS 2025\] Factor Decorrelation Enhanced Data Removal from Deep Predictive Models](../../NeurIPS2025/ai_safety/factor_decorrelation_enhanced_data_removal_from_deep_predictive_models.md)
+- [\[ICLR 2026\] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information](../../ICLR2026/ai_safety/why_do_unlearnable_examples_work_a_novel_perspective_of_mutual_information.md)
 - [\[ICML 2026\] Angel or Demon: Investigating the Plasticity Interventions' Impact on Backdoor Threats in Deep Reinforcement Learning](angel_or_demon_investigating_the_plasticity_interventions_impact_on_backdoor_thr.md)
 
 </div>

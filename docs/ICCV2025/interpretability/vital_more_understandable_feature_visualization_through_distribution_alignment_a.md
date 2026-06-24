@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow
 description: >-
-  [ICCV 2025][Interpretability][Feature Visualization] This paper proposes VITAL, a feature visualization method that reframes the problem as aligning intermediate feature distributions with those of real images (rather th…
+  [ICCV 2025][Interpretability][Feature Visualization] This paper proposes VITAL, a feature visualization method that reframes the problem as aligning intermediate feature distributions with those of real images (rather than conventional activation maximization), and incorporates relevance scores to filter irrelevant features, producing neuron visualizations that are more interpretable to humans.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Layer-wise Relevance Propagation"
   - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: fe83cada4379154d
+content_hash: 55722202ad769dff
 ---
 
 # VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow
@@ -149,11 +149,11 @@ Human user study (58 participants, three-part evaluation):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flow-Disentangled Feature Importance](../../ICLR2026/interpretability/flow-disentangled_feature_importance.md)
 - [\[ACL 2026\] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models](../../ACL2026/interpretability/follow_the_flow_on_information_flow_across_textual_tokens_in_text-to-image_model.md)
 - [\[AAAI 2026\] Distribution-Based Feature Attribution for Explaining the Predictions of Any Classifier](../../AAAI2026/interpretability/distribution-based_feature_attribution_for_explaining_the_predictions_of_any_cla.md)
+- [\[CVPR 2025\] Towards Human-Understandable Multi-Dimensional Concept Discovery](../../CVPR2025/interpretability/towards_human-understandable_multi-dimensional_concept_discovery.md)
 - [\[ICCV 2025\] ArgoTweak: Towards Self-Updating HD Maps through Structured Priors](argotweak_towards_self-updating_hd_maps_through_structured_priors.md)
-- [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](../../AAAI2026/interpretability/unsupervised_feature_selection_through_group_discovery.md)
-- [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reformulation for Pretraining Data Augmentation
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] To address the scarcity of high-quality pre-training corpora and the performance degradation caused by repeating data, this paper proposes **MGA (Massive Genre-Audience reformulation)**. Utilizing a lightweight 3.3B MoE model, MGA adaptively generates multiple "Genre-Audience" pairs for each original document to rewrit
+  [ICLR 2026][LLM Pretraining][Data Augmentation] To address the scarcity of high-quality pre-training corpora and the performance degradation caused by repeating data, this paper proposes **MGA (Massive Genre-Audience reformulation)**. Utilizing a lightweight 3.3B MoE model, MGA adaptively generates multiple "Genre-Audience" pairs for each original document to rewrite it into five distinct gaya versions while maintaining factual consistency. This expands 195B high-quality toke…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data Augmentation"
+  - "Pre-training Corpus"
+  - "Genre-Audience reformulation"
+  - "Synthetic Data"
+  - "Data Reuse Bottleneck"
 date: 2026-05-08
-content_hash: 50cc2b212c01e933
+content_hash: 8ed27f6721a39dfd
 ---
+
 # Reformulation for Pretraining Data Augmentation
 
 **Conference**: ICLR 2026  
@@ -145,10 +151,10 @@ Complementarity (1.7B, 800B tokens, 35% budget replacement): Exp C (+Nemotron-Sy
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining](how_learning_rate_decay_wastes_your_best_data_in_curriculum-based_llm_pretrainin.md)
 - [\[ICLR 2026\] Synthetic Bootstrapped Pretraining](synthetic_bootstrapped_pretraining.md)
+- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](llm_pretraining_with_continuous_concepts.md)
 - [\[ICLR 2026\] Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling](distilled_pretraining_a_modern_lens_of_data_in-context_learning_and_test-time_sc.md)
-- [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
-- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 
 </div>
 

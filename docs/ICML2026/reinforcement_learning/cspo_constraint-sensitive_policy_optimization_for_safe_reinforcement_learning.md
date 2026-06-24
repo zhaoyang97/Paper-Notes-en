@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][CMDP] Addressing the "dual-lag → delayed constraint correction → oscillation near boundaries" issue in primal-dual methods for Safe RL, CSPO incorporates the "shortest signed distance to the safety boundary" as a constraint-sensitive correction term into the policy update. It adaptively adjusts the correction intensity based
+  [ICML2026][Reinforcement Learning][Safe RL] Addressing the "dual-lag → delayed constraint correction → oscillation near boundaries" issue in primal-dual methods for Safe RL, CSPO incorporates the "shortest signed distance to the safety boundary" as a constraint-sensitive correction term into the policy update. It adaptively adjusts the correction intensity based on the constraint gradient norm, enabling faster and more stable returns to the feasible region without altering th…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - CMDP
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Safe RL"
+  - "CMDP"
+  - "Primal-Dual"
+  - "Constraint-Sensitive"
+  - "Lagrangian Multipliers"
 date: 2026-05-08
-content_hash: 72a744d02ceb9a06
+content_hash: 2934a3c6d2c818f9
 ---
+
 # CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -140,10 +145,10 @@ Experiments show CSPO reaches the feasible region faster (TTS), preserves reward
 ## Related Papers
 
 - [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
-- [\[ICML 2025\] Extreme Value Policy Optimization for Safe Reinforcement Learning](../../ICML2025/reinforcement_learning/extreme_value_policy_optimization_for_safe_reinforcement_learning.md)
 - [\[ICML 2026\] Safe In-Context Reinforcement Learning](safe_in-context_reinforcement_learning.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](learning_to_route_languages_for_multilingual_policy_optimization.md)
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/online_optimization_for_offline_safe_reinforcement_learning.md)
+- [\[ICML 2025\] Extreme Value Policy Optimization for Safe Reinforcement Learning](../../ICML2025/reinforcement_learning/extreme_value_policy_optimization_for_safe_reinforcement_learning.md)
+- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](../../ICLR2026/reinforcement_learning/off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
+- [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](../../ICLR2026/reinforcement_learning/shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
 
 </div>
 

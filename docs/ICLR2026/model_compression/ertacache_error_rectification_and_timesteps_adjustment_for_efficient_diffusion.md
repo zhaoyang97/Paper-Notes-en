@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Model] ERTACache formalizes "quality degradation caused by cache acceleration" into two categories: **feature shift error** and **step amplification error**. It employs a "three-piece set" consisting of offline strategy calibration, trajectory-aware step adjustment, and closed-form residual linearization correction to suppres
+  [ICLR 2026][Model Compression][Diffusion models] ERTACache formalizes "quality degradation caused by cache acceleration" into two categories: **feature shift error** and **step amplification error**. It employs a "three-piece set" consisting of offline strategy calibration, trajectory-aware step adjustment, and closed-form residual linearization correction to suppress these errors simultaneously, achieving over 2× acceleration with near-lossless quality on video and image dif…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Model
-  - Inference Acceleration
-  - Video Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Diffusion models"
+  - "feature caching"
+  - "inference acceleration"
+  - "video generation"
+  - "error rectification"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: e69fc2b6b5b6f4f8
+content_hash: 781bfd48812d58fd
 ---
+
 # ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion
 
 **Conference**: ICLR 2026  

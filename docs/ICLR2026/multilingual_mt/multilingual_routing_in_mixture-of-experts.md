@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Multilingual Routing in Mixture-of-Experts
 description: >-
-  [ICLR 2026][Multilingual & Translation][mixture-of-experts] This paper systematically analyzes multilingual routing patterns in MoE large language models, discovering that middle layers contain cross-lingually shared experts and that linguistic performance is strongly correlated with alignment to English routing. Based on this, an inference-time routing intervention method is p
+  [ICLR 2026][Multilingual & Machine Translation][mixture-of-experts] This paper systematically analyzes multilingual routing patterns in MoE large language models, discovering that middle layers contain cross-lingually shared experts and that linguistic performance is strongly correlated with alignment to English routing. Based on this, an inference-time routing intervention method is proposed to activate English task-specific experts in middle layers…
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - mixture-of-experts
-  - multilingual routing
-  - cross-lingual transfer
-  - expert steering
-  - interpretability
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "mixture-of-experts"
+  - "multilingual routing"
+  - "cross-lingual transfer"
+  - "expert steering"
+  - "interpretability"
 date: 2026-05-08
-content_hash: be1ca70b0c0cbe7d
+content_hash: 84f177a5161968e7
 ---
+
 # Multilingual Routing in Mixture-of-Experts
 
 **Conference**: ICLR 2026  

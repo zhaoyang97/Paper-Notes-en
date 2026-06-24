@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Locality-Attending Vision Transformer
 description: >-
-  [ICLR 2026][Segmentation][Vision Transformer] This paper proposes the LocAt modular plugin (GAug + PRR), which focuses attention on local neighborhoods and refines patch representations through learnable Gaussian kernel biases. Without modifying the training objective, it improves ViT performance on ADE20K segmentation by over 6% while simultaneously maintaining o
+  [ICLR 2026][Segmentation][Vision Transformer] This paper proposes the LocAt modular plugin (GAug + PRR), which focuses attention on local neighborhoods and refines patch representations through learnable Gaussian kernel biases. Without modifying the training objective, it improves ViT performance on ADE20K segmentation by over 6% while simultaneously maintaining or increasing classification accuracy.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Vision Transformer"
+  - "Local Attention"
+  - "Gaussian Kernel"
+  - "Patch Representation Refinement"
+  - "Dense Prediction"
+  - "Segmentation Improvement"
 date: 2026-05-08
-content_hash: a00461507b6d6729
+content_hash: a2238b301fb8955b
 ---
+
 # Locality-Attending Vision Transformer
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ The overhead is minimal: only two small matrices $\mathbf{W}^\sigma \in \mathbb{
 
 ## Related Papers
 
+- [\[ECCV 2024\] Rotary Position Embedding for Vision Transformer](../../ECCV2024/segmentation/rotary_position_embedding_for_vision_transformer.md)
+- [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
 - [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
-- [\[ICLR 2026\] Urban Socio-Semantic Segmentation with Vision-Language Reasoning](urban_socio-semantic_segmentation_with_vision-language_reasoning.md)
-- [\[ICLR 2026\] Salient Object Ranking via Cyclical Perception-Viewing Interaction Modeling](salient_object_ranking_via_cyclical_perception-viewing_interaction_modeling.md)
-- [\[ICLR 2026\] Benchmarking Open-ended Segmentation](benchmarking_open-ended_segmentation.md)
-- [\[ICLR 2026\] LiFR-Seg: Anytime High-Frame-Rate Segmentation via Event-Guided Propagation](lifr-seg_anytime_high-frame-rate_segmentation_via_event-guided_propagation.md)
+- [\[CVPR 2025\] MambaVision: A Hybrid Mamba-Transformer Vision Backbone](../../CVPR2025/segmentation/mambavision_a_hybrid_mamba-transformer_vision_backbone.md)
+- [\[CVPR 2025\] Revisiting Audio-Visual Segmentation with Vision-Centric Transformer](../../CVPR2025/segmentation/revisiting_audio-visual_segmentation_with_vision-centric_transformer.md)
 
 </div>
 

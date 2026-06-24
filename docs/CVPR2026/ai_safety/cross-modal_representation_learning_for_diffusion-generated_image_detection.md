@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-modal Representation Learning for Diffusion-generated Image Detection
 description: >-
-  [CVPR 2026][AI Safety][NPR] This work utilizes RGB and NPR (Neighborhood Pixel Relationship) modalities for representation learning—employing Cross-modal Contrastive Learning (CMCL) to increase inter-class separation and Cross-modal Mutual Distillation (CMMD) to tighten intra-class structures. Together, they learn a "forgery-detection-oriented" e
+  [CVPR 2026][AI Safety][Diffusion-generated image detection] This work utilizes RGB and NPR (Neighborhood Pixel Relationship) modalities for representation learning—employing Cross-modal Contrastive Learning (CMCL) to increase inter-class separation and Cross-modal Mutual Distillation (CMMD) to tighten intra-class structures. Together, they learn a "forgery-detection-oriented" embedding space, reaching SOTA performance on three benchmarks: GenImage, DRCT-2M, and Co-Spy-Bench.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - NPR
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Diffusion-generated image detection"
+  - "cross-modal representation learning"
+  - "contrastive learning"
+  - "mutual distillation"
+  - "NPR"
 date: 2026-05-08
-content_hash: 47025472f434350b
+content_hash: 5eea592e3347698d
 ---
+
 # Cross-modal Representation Learning for Diffusion-generated Image Detection
 
 **Conference**: CVPR 2026  
@@ -161,11 +166,11 @@ Additionally, Table 6 shows that when only RGB features are used for prediction 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
-- [\[CVPR 2026\] Forensic-Friendly Image Manipulation via Controllable Latent Diffusion](forensic-friendly_image_manipulation_via_controllable_latent_diffusion.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 - [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
+- [\[CVPR 2026\] Forensic-Friendly Image Manipulation via Controllable Latent Diffusion](forensic-friendly_image_manipulation_via_controllable_latent_diffusion.md)
+- [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
 
 </div>
 

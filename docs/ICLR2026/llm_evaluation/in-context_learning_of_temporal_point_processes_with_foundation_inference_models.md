@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] In-Context Learning of Temporal Point Processes with Foundation Inference Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] Proposes FIM-PP—the first foundation inference model for Marked Temporal Point Processes (MTPP). By pre-training a Transformer on 72K synthetic point processes (14.4 million events) to perform in-context inference of conditional intensity functions, it achieves zero-shot performance comparable to specialized models tra
+  [ICLR 2026][LLM Evaluation][Temporal Point Processes] Proposes FIM-PP—the first foundation inference model for Marked Temporal Point Processes (MTPP). By pre-training a Transformer on 72K synthetic point processes (14.4 million events) to perform in-context inference of conditional intensity functions, it achieves zero-shot performance comparable to specialized models trained for hours. After minutes of fine-tuning, it sets a new SOTA across four real-world datasets for multi…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Temporal Point Processes"
+  - "Foundation Inference Models"
+  - "In-Context Learning"
+  - "Hawkes Processes"
+  - "Conditional Intensity Function"
 date: 2026-05-08
-content_hash: 8aacb986095138d0
+content_hash: a84a69040f10e71d
 ---
+
 # In-Context Learning of Temporal Point Processes with Foundation Inference Models
 
 **Conference**: ICLR 2026  
@@ -171,8 +177,8 @@ Core Insight: **The design quality of the synthetic prior determines the general
 - [\[ICLR 2026\] In-Context Learning for Pure Exploration](in-context_learning_for_pure_exploration.md)
 - [\[ICLR 2026\] Detecting Data Contamination in LLMs via In-Context Learning](detecting_data_contamination_in_llms_via_in-context_learning.md)
 - [\[ICML 2025\] Sample Efficient Demonstration Selection for In-Context Learning](../../ICML2025/llm_evaluation/sample_efficient_demonstration_selection_for_in-context_learning.md)
+- [\[ICLR 2026\] Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models](rewarding_doubt_a_reinforcement_learning_approach_to_calibrated_confidence_expre.md)
 - [\[ICLR 2026\] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 
 </div>
 

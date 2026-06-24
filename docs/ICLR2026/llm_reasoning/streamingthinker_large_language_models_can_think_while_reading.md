@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] StreamingThinker: Large Language Models Can Think While Reading
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] StreamingThinker enables LLMs to "think while reading" similarly to humans—synchronously generating sequentially aligned reasoning segments as input arrives sentence-by-sentence, followed by deepening thoughts after reading as needed. Through a combination of a streaming CoT data construction pipeline, streaming attent
+  [ICLR2026][Reasoning][Streaming Reasoning] StreamingThinker enables LLMs to "think while reading" similarly to humans—synchronously generating sequentially aligned reasoning segments as input arrives sentence-by-sentence, followed by deepening thoughts after reading as needed. Through a combination of a streaming CoT data construction pipeline, streaming attention mask/positional encoding training, and parallel KV cache inference, it maintains accuracy comparable to tradition…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICLR2026"
+  - "Reasoning"
+  - "Streaming Reasoning"
+  - "Chain-of-Thought"
+  - "Attention Mask"
+  - "Parallel KV cache"
+  - "Low-latency Inference"
 date: 2026-05-08
-content_hash: afdef45d6b196e35
+content_hash: 9adb605b00923ba3
 ---
+
 # StreamingThinker: Large Language Models Can Think While Reading
 
 **Conference**: ICLR2026  
@@ -134,15 +139,16 @@ Effect of reasoning depth levels (Qwen3-4B, Acc in batch setting):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
 - [\[CVPR 2026\] Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models](../../CVPR2026/llm_reasoning/think-as-you-see_streaming_chain-of-thought_reasoning_for_large_vision-language_.md)
 - [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
+- [\[NeurIPS 2025\] Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning](../../NeurIPS2025/llm_reasoning/adaptive_dual_reasoner_large_reasoning_models_can_think_efficiently_by_hybrid_re.md)
 - [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
 
 </div>
 

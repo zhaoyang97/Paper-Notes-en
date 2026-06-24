@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: Partial-label Relational Inference with Spatial and Spectral Cues
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] PRISM addresses the Partial-label Graph Learning (PLGL) problem, where each graph is assigned a candidate label set containing the ground truth. By extracting spatial cues through prototype-guided substructure alignment and spectral cues via multi-band spectral attention, the model constructs a hybrid relationship grap
+  [ICLR 2026][Graph Learning][Partial-label learning] PRISM addresses the Partial-label Graph Learning (PLGL) problem, where each graph is assigned a candidate label set containing the ground truth. By extracting spatial cues through prototype-guided substructure alignment and spectral cues via multi-band spectral attention, the model constructs a hybrid relationship graph. It then performs iterative label propagation under candidate constraints to effectively disambiguate labe…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Partial-label learning"
+  - "Graph Neural Networks"
+  - "Spectral graphs"
+  - "Label propagation"
+  - "Relational inference"
 date: 2026-05-08
-content_hash: a5ee30a889de66a4
+content_hash: bd70896732d9a44e
 ---
+
 # PRISM: Partial-label Relational Inference with Spatial and Spectral Cues
 
 **Conference**: ICLR 2026  

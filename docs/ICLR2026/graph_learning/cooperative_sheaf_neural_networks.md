@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Graph Learning][Sheaf Neural Networks] This paper proposes defining in/out-degree Laplacians for cellular sheaves on directed graphs to construct the Cooperative Sheaf Neural Network (CSNN). This allows nodes to independently choose information propagation or reception strategies, simultaneously mitigating oversquashing and addressing heterophilic tasks.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Sheaf Neural Networks
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Sheaf Neural Networks"
+  - "Cooperative Behavior"
+  - "Directed Graphs"
+  - "Oversquashing"
+  - "Heterophilic Graphs"
 date: 2026-05-08
-content_hash: 43e890ba700ac2e2
+content_hash: 257b8858d56811a5
 ---
+
 # Cooperative Sheaf Neural Networks
 
 **Conference**: ICLR 2026  
@@ -128,9 +133,9 @@ Traditional GNNs only reach $t$-hop neighbors with $t$ layers, and information i
 
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
 - [\[ICML 2026\] Deep Neural Sheaf Diffusion](../../ICML2026/graph_learning/deep_neural_sheaf_diffusion.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
+- [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](../../ICML2026/graph_learning/polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
 - [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
-- [\[ICLR 2026\] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks](logicxgnn_grounded_logical_rules_for_explaining_graph_neural_networks.md)
+- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
 
 </div>
 

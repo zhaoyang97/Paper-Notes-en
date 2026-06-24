@@ -35,7 +35,7 @@ item_total: 7
 
 **🔬 ICLR2026** · **7** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🧪 ICML2026 (2)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/earth_science/index.md) · [🧪 ICML2026 (2)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md) · [📷 CVPR2025 (1)](../../CVPR2025/earth_science/index.md) · [🎞️ ECCV2024 (1)](../../ECCV2024/earth_science/index.md)
 
 **[GeoFAR: Geography-Informed Frequency-Aware Super-Resolution for Climate Data](geofar_geography-informed_frequency-aware_super-resolution_for_climate_data.md)**
 

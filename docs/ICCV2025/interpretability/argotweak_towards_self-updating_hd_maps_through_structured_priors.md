@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ArgoTweak: Towards Self-Updating HD Maps through Structured Priors
 description: >-
-  [ICCV 2025][Interpretability][HD Map] This paper proposes ArgoTweak, the first HD map dataset providing complete triplets of "prior map + current sensor data + up-to-date ground-truth map." It decomposes large-scale map…
+  [ICCV 2025][Interpretability][HD Map] This paper proposes ArgoTweak, the first HD map dataset providing complete triplets of "prior map + current sensor data + up-to-date ground-truth map." It decomposes large-scale map modifications into element-level atomic changes via a bijective change mapping framework, and introduces interpretable evaluation metrics (mAPC/mACC). Models trained on ArgoTweak reduce the sim2real gap by more than 10× compared to synthetic-prior baselines.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Dataset"
   - "Autonomous Driving"
 date: 2026-05-08
-content_hash: 5cd9fa69aaad473c
+content_hash: 78dfbbe3fd491604
 ---
 
 # ArgoTweak: Towards Self-Updating HD Maps through Structured Priors
@@ -152,8 +152,8 @@ The sim2real gap is reduced by more than 10× when training on ArgoTweak.
 - [\[ICCV 2025\] CE-FAM: Concept-Based Explanation via Fusion of Activation Maps](ce-fam_concept-based_explanation_via_fusion_of_activation_maps.md)
 - [\[ICCV 2025\] AIM: Amending Inherent Interpretability via Self-Supervised Masking](aim_amending_inherent_interpretability_via_self-supervised_masking.md)
 - [\[ICML 2026\] Adaptive Querying with AI Persona Priors](../../ICML2026/interpretability/adaptive_querying_with_ai_persona_priors.md)
-- [\[ICCV 2025\] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow](vital_more_understandable_feature_visualization_through_distribution_alignment_a.md)
-- [\[ICML 2026\] LLMs Lean on Priors, Not Programming Language Semantics](../../ICML2026/interpretability/llms_lean_on_priors_not_programming_language_semantics.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](../../ICLR2026/interpretability/medical_interpretability_and_knowledge_maps_of_large_language_models.md)
+- [\[NeurIPS 2025\] Geometric Priors for Generalizable World Models via Vector Symbolic Architecture](../../NeurIPS2025/interpretability/geometric_priors_for_generalizable_world_models_via_vector_symbolic_architecture.md)
 
 </div>
 

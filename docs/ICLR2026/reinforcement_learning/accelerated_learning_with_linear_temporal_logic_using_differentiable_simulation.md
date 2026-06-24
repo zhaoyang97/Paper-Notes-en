@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Accelerated Learning with Linear Temporal Logic using Differentiable Simulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper bridges the gap between Linear Temporal Logic (LTL) specifications and differentiable physics simulators for the first time. By applying "soft-label" relaxation to the discrete transitions of the automaton, the authors derive rewards and state representations that are differentiable with respect to states an
+  [ICLR 2026][Reinforcement Learning][Linear Temporal Logic (LTL)] This paper bridges the gap between Linear Temporal Logic (LTL) specifications and differentiable physics simulators for the first time. By applying "soft-label" relaxation to the discrete transitions of the automaton, the authors derive rewards and state representations that are differentiable with respect to states and actions. This allows first-order gradient algorithms (SHAC/AHAC) to learn efficiently directl…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Linear Temporal Logic (LTL)"
+  - "Differentiable Simulation"
+  - "Safe Reinforcement Learning"
+  - "Sparse Rewards"
+  - "Büchi Automaton"
+  - "Soft Labels"
 date: 2026-05-08
-content_hash: b5c6c455e9a50aac
+content_hash: 25e6d97753e96fdf
 ---
+
 # Accelerated Learning with Linear Temporal Logic using Differentiable Simulation
 
 **Conference**: ICLR 2026  
@@ -114,9 +121,9 @@ Overall: $\partial$RL outperformed others in maximum return and convergence spee
 
 - [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](../../AAAI2026/reinforcement_learning/do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
 - [\[ICLR 2026\] OCTAX: Accelerated CHIP-8 Arcade Environments for Reinforcement Learning in JAX](octax_accelerated_chip-8_arcade_environments_for_reinforcement_learning_in_jax.md)
+- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
 - [\[ICLR 2026\] Replicable Reinforcement Learning with Linear Function Approximation](replicable_reinforcement_learning_with_linear_function_approximation.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
 
 </div>
 

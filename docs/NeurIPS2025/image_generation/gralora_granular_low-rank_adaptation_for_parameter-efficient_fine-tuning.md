@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning
 description: >-
-  [NEURIPS2025][Image Generation][LoRA] This paper proposes GraLoRA, which partitions the LoRA weight update matrix into $k^2$ independent sub-blocks…
+  [NEURIPS2025][Image Generation][LoRA] This paper proposes GraLoRA, which partitions the LoRA weight update matrix into $k^2$ independent sub-blocks, each equipped with its own low-rank adapter pair. Without increasing parameter count or computational cost, GraLoRA elevates the effective rank from $r$ to $kr$, addressing the performance degradation caused by gradient entanglement in high-rank LoRA. On code generation, Pass@1 improves by up to +8.5%.
 tags:
   - "NEURIPS2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "block decomposition"
   - "high-rank expressiveness"
 date: 2026-05-08
-content_hash: ed3e8e6caffcc890
+content_hash: 828577ac24ee6c60
 ---
 
 # GraLoRA: Granular Low-Rank Adaptation for Parameter-Efficient Fine-Tuning
@@ -181,11 +181,11 @@ Best GraLoRA achieves an average of 86.0%, surpassing LoRA (84.2%), VeRA (85.2%)
 
 ## Related Papers
 
+- [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)
+- [\[ICML 2025\] Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape](../../ICML2025/image_generation/flat-lora_low-rank_adaptation_over_a_flat_loss_landscape.md)
 - [\[NeurIPS 2025\] StelLA: Subspace Learning in Low-rank Adaptation using Stiefel Manifold](stella_subspace_learning_in_low-rank_adaptation_using_stiefel_manifold.md)
+- [\[ICML 2025\] IntLoRA: Integral Low-rank Adaptation of Quantized Diffusion Models](../../ICML2025/image_generation/intlora_integral_low-rank_adaptation_of_quantized_diffusion_models.md)
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](../../ICCV2025/image_generation/transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
-- [\[NeurIPS 2025\] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models](deft_decompositional_efficient_finetuning_for_texttoimage_mo.md)
-- [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
-- [\[ICCV 2025\] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning](../../ICCV2025/image_generation/shortft_diffusion_model_alignment_via_shortcut-based_fine-tuning.md)
 
 </div>
 

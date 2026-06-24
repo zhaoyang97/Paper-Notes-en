@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes PaGKD, a pairing-free group-level knowledge distillation framework that eliminates the dependency on paired data in conventional NBI→WLI cross-mo…
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes PaGKD, a pairing-free group-level knowledge distillation framework that eliminates the dependency on paired data in conventional NBI→WLI cross-modal distillation. It introduces group-level prototype distillation (GKD-Pro, which extracts modality-invariant semantic prototypes via a shared lesion query Transformer) and group-level dense distillation (GKD-Den, which achieves dense spatial alignment throug…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -14,7 +14,7 @@ tags:
   - "Group-level Distillation"
   - "Gastrointestinal Lesion Classification"
 date: 2026-05-08
-content_hash: 810ee0f6212928c1
+content_hash: 712396cb2fe1814b
 ---
 
 # Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy
@@ -212,10 +212,10 @@ Group-level distillation consistently outperforms image-level distillation acros
 ## Related Papers
 
 - [\[AAAI 2026\] MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)
+- [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](../../ICLR2026/model_compression/knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 - [\[ACL 2026\] Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions](../../ACL2026/model_compression/cognitive-uncertainty_guided_knowledge_distillation_for_accurate_classification_.md)
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](../../NeurIPS2025/model_compression/preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
 - [\[AAAI 2026\] Condensed Data Expansion Using Model Inversion for Knowledge Distillation](condensed_data_expansion_using_model_inversion_for_knowledge_distillation.md)
-- [\[ICML 2026\] Critique-Guided Distillation for Robust Reasoning via Refinement](../../ICML2026/model_compression/critique-guided_distillation_for_robust_reasoning_via_refinement.md)
 
 </div>
 

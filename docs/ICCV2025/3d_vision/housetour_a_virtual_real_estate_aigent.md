@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HouseTour: A Virtual Real Estate A(I)gent
 description: >-
-  [ICCV 2025][3D Vision][Camera Trajectory Generation] HouseTour is proposed to jointly generate human-like 3D camera trajectories and real estate textual descriptions given a set of indoor images with known poses. The sys…
+  [ICCV 2025][3D Vision][Camera Trajectory Generation] HouseTour is proposed to jointly generate human-like 3D camera trajectories and real estate textual descriptions given a set of indoor images with known poses. The system employs a Residual Diffuser for diffusion-based trajectory planning and integrates spatial features into Qwen2-VL-3D to produce 3D-grounded text summaries.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "VLM"
   - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: df50ede9ba77540d
+content_hash: dec962c290bedd17
 ---
 
 # HouseTour: A Virtual Real Estate A(I)gent

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Systematic Reward Gap Optimization for Mitigating VLM Hallucinations
 description: >-
-  [NeurIPS 2025][Hallucination Detection][VLM hallucination] This paper proposes Topic-level Preference Rewriting (TPR), which systematically optimizes the reward gap configuration in preference data through fine-grained s…
+  [NeurIPS 2025][Hallucination Detection][VLM hallucination] This paper proposes Topic-level Preference Rewriting (TPR), which systematically optimizes the reward gap configuration in preference data through fine-grained semantic control at the topic level, combined with a curriculum learning strategy that progressively increases the difficulty of negative samples, achieving approximately 93% hallucination reduction across multiple hallucination benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "topic-level rewriting"
   - "curriculum learning"
 date: 2026-05-08
-content_hash: 00913fc273917042
+content_hash: bf04ba098a4d8991
 ---
 
 # Systematic Reward Gap Optimization for Mitigating VLM Hallucinations

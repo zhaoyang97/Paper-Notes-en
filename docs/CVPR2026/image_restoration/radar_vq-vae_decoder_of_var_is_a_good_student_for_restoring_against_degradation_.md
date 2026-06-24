@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RADAR: VQ-VAE Decoder of VAR is a Good Student for Restoring Against Degradation by Acceleration
 description: >-
-  [CVPR 2026][Image Restoration][Knowledge Distillation] To address the issue of latent representation degradation and decreased image quality in Visual Autoregressive (VAR) models after acceleration, this paper proposes RADAR, a two-stage framework. First, the Semantic Cost-Aware Mask (SCA-Mask) converts attention pruning into an optimization problem of "retaining maximum s
+  [CVPR 2026][Image Restoration][VAR Acceleration] To address the issue of latent representation degradation and decreased image quality in Visual Autoregressive (VAR) models after acceleration, this paper proposes RADAR, a two-stage framework. First, the Semantic Cost-Aware Mask (SCA-Mask) converts attention pruning into an optimization problem of "retaining maximum semantic information under budget constraints." Second, Post-Acceleration Adaptation (PAA) utilizes a LoRA attac…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Knowledge Distillation
-  - LoRA
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "VAR Acceleration"
+  - "Attention Masking"
+  - "Knowledge Distillation"
+  - "VQ-VAE Decoder"
+  - "LoRA"
 date: 2026-05-08
-content_hash: f139711a7f9ad08f
+content_hash: a5c54d32d82b3cc2
 ---
+
 # RADAR: VQ-VAE Decoder of VAR is a Good Student for Restoring Against Degradation by Acceleration
 
 **Conference**: CVPR 2026  
@@ -151,11 +155,11 @@ VAR-d20 @256×256, average of 10 runs:
 
 ## Related Papers
 
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 - [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
 - [\[ICML 2025\] ε-VAE: Denoising as Visual Decoding](../../ICML2025/image_restoration/epsilon-vae_denoising_as_visual_decoding.md)
+- [\[CVPR 2026\] Physically-Grounded Turbulence Mitigation with Frame-Shared Degradation Parameters](physically-grounded_turbulence_mitigation_with_frame-shared_degradation_paramete.md)
+- [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](../../ICLR2026/image_restoration/varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
 - [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](rawdomain_degradation_models_smartphone_sr.md)
-- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] CoTyle conjures novel and reproducible visual styles using a single numeric code. It accomplishes "one number = one style" for the first time in the open-source community by training a discrete style codebook to compress images into style indices, a T2I diffusion model to generate images conditioned on these indices, a
+  [CVPR 2026][Image Generation][Style Generation] CoTyle conjures novel and reproducible visual styles using a single numeric code. It accomplishes "one number = one style" for the first time in the open-source community by training a discrete style codebook to compress images into style indices, a T2I diffusion model to generate images conditioned on these indices, and an autoregressive generator to create new style index sequences from scratch.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style Generation"
+  - "Discrete Codebook"
+  - "Autoregressive Generation"
+  - "Code-to-Style"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 9f77752cd8c8c726
+content_hash: 2b3b2c598707e39a
 ---
+
 # A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space
 
 **Conference**: CVPR 2026  
@@ -131,15 +136,15 @@ In code-to-style, CoTyle (Ours) achieves significantly higher consistency (0.600
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] RegionRoute: Regional Style Transfer with Diffusion Model](regionroute_regional_style_transfer_with_diffusion_model.md)
 - [\[CVPR 2026\] Evaluating Generative Models via One-Dimensional Code Distributions](evaluating_generative_models_via_one-dimensional_code_distributions.md)
 - [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
-- [\[CVPR 2026\] StyleTextGen: Style-Conditioned Multilingual Scene Text Generation](styletextgen_style-conditioned_multilingual_scene_text_generation.md)
-- [\[CVPR 2026\] SplitFlux: Learning to Decouple Content and Style from a Single Image](splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)
-- [\[CVPR 2026\] StyleDoctor: Towards Specialist Reward Model for Style-centric Generation Tasks](styledoctor_towards_specialist_reward_model_for_style-centric_generation_tasks.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
+- [\[CVPR 2026\] Hint2Gen: Bridging Understanding and Generation via Code-structured Hints](hint2gen_bridging_understanding_and_generation_via_code-structured_hints.md)
 
 </div>
 

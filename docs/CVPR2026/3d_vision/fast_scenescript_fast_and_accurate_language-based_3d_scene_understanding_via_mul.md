@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction
 description: >-
-  [CVPR 2026][3D Vision][Inference Acceleration] This paper proposes Fast SceneScript, which achieves inference acceleration for 3D scene understanding by introducing Multi-Token Prediction (MTP) into structured language models. Combined with Self-Speculative Decoding (SSD) and Confidence-Guided Decoding (CGD) to filter unreliable tokens, along with a parameter-effic
+  [CVPR 2026][3D Vision][3D scene understanding] This paper proposes Fast SceneScript, which achieves inference acceleration for 3D scene understanding by introducing Multi-Token Prediction (MTP) into structured language models. Combined with Self-Speculative Decoding (SSD) and Confidence-Guided Decoding (CGD) to filter unreliable tokens, along with a parameter-efficient head-sharing mechanism, it achieves 5.09× and 5.14× speedups for layout estimation and object detection…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "multi-token prediction"
+  - "structured language models"
+  - "inference acceleration"
+  - "self-speculative decoding"
 date: 2026-05-08
-content_hash: 55b25fbea57da997
+content_hash: fb4196c415c300ed
 ---
+
 # Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ $$\mathcal{L}_c = -\sum_{i,k} \lambda_h^{i-1} \big(\hat{c}_{k+i} \log c_{k+i} + 
 ## Related Papers
 
 - [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] Geometry-Guided 3D Visual Token Pruning for Video-Language Models](geometry-guided_3d_visual_token_pruning_for_video-language_models.md)
+- [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing](rap_fast_feedforward_rendering-free_attribute-guided_primitive_importance_score_.md)
 
 </div>
 

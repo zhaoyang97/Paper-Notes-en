@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Potential of CoT for Reasoning: A Closer Look at Trace Dynamics
 description: >-
-  [ICLR 2026][Interpretability][CoT] This paper proposes using "potential" to measure the conditional improvement of a given CoT prefix on final accuracy. Through trace analysis on mathematical, scientific QA, and coding tasks, it discovers that CoT effectiveness is often concentrated in a few reasoning insights, accompanied by relevant but harmful reason
+  [ICLR2026][Interpretability][CoT] This paper proposes using "potential" to measure the conditional improvement of a given CoT prefix on final accuracy. Through trace analysis on mathematical, scientific QA, and coding tasks, it discovers that CoT effectiveness is often concentrated in a few reasoning insights, accompanied by relevant but harmful reasoning tangents, jumps difficult for humans to interpret, and lucky guesses.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - CoT
-  - potential
+  - "ICLR2026"
+  - "Interpretability"
+  - "CoT"
+  - "Reasoning Traces"
+  - "Potential"
+  - "Reasoning Insights"
+  - "CoT Transferability"
 date: 2026-05-08
-content_hash: b352033239a523bc
+content_hash: 0b604ae341cc1e08
 ---
+
 # The Potential of CoT for Reasoning: A Closer Look at Trace Dynamics
 
 **Conference**: ICLR2026  

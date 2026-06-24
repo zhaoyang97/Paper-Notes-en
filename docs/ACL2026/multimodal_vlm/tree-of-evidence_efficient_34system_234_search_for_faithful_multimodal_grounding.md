@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes Tree-of-Evidence (ToE), an inference-time discrete beam search algorithm that formalizes multimodal model interpretability as a discrete optimization problem over coarse-grained evidence units (vital sign time windows, radiology report snippets). Using only 5 evidence units, it retains over 98% of t
+  [ACL 2026 Findings][Multimodal VLM][Multimodal interpretability] This paper proposes Tree-of-Evidence (ToE), an inference-time discrete beam search algorithm that formalizes multimodal model interpretability as a discrete optimization problem over coarse-grained evidence units (vital sign time windows, radiology report snippets). Using only 5 evidence units, it retains over 98% of the AUROC of the full-input model while generating auditable evidence tracking paths.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Multimodal interpretability"
+  - "evidence search"
+  - "clinical prediction"
+  - "beam search"
+  - "concept bottleneck"
 date: 2026-05-08
-content_hash: 195b85bfac60a5f5
+content_hash: 901066577bce02b1
 ---
+
 # Tree-of-Evidence: Efficient "System 2" Search for Faithful Multimodal Grounding
 
 **Conference**: ACL 2026 Findings  
@@ -146,9 +152,9 @@ Phase I uses class-balanced binary cross-entropy to independently train the two 
 
 - [\[ACL 2025\] Evaluating Multimodal Large Language Models on Video Captioning via Monte Carlo Tree Search](../../ACL2025/multimodal_vlm/mcts_video_captioning_eval.md)
 - [\[CVPR 2025\] Global-Local Tree Search in VLMs for 3D Indoor Scene Generation](../../CVPR2025/multimodal_vlm/global-local_tree_search_in_vlms_for_3d_indoor_scene_generation.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](../../CVPR2026/multimodal_vlm/drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 - [\[CVPR 2026\] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning](../../CVPR2026/multimodal_vlm/similarity-as-evidence_calibrating_overconfident_vlms_for_interpretable_and_labe.md)
-- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
 
 </div>
 

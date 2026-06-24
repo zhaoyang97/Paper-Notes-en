@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DIVER: Diving Deeper into Distilled Data via Expressive Semantic Recovery
 description: >-
-  [ICML 2026][Model Compression][Paper Note] DIVER transforms the classic Dataset Distillation (DD) from a "single-stage direct evaluation" into a two-stage paradigm: "distill first, then revive semantics with pretrained diffusion models." Through a three-step process of semantic inheritance, guidance, and fusion, it recovers suppressed high-level semantics from
+  [ICML 2026][Model Compression][Dataset Distillation] DIVER transforms the classic Dataset Distillation (DD) from a "single-stage direct evaluation" into a two-stage paradigm: "distill first, then revive semantics with pretrained diffusion models." Through a three-step process of semantic inheritance, guidance, and fusion, it recovers suppressed high-level semantics from "gibberish" images distilled via ConvNets. This improves the accuracy of the same distilled data on heterog…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Diffusion Model Priors"
+  - "Cross-architecture Generalization"
+  - "Semantic Recovery"
+  - "Two-stage Distillation"
 date: 2026-05-08
-content_hash: ccc3c5e97204813c
+content_hash: 735700e9979b2d50
 ---
+
 # DIVER: Diving Deeper into Distilled Data via Expressive Semantic Recovery
 
 **Conference**: ICML 2026  
@@ -144,7 +150,7 @@ Efficiency: On a single RTX-4090, 2.48s per synthetic image with 4.02 GB VRAM us
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

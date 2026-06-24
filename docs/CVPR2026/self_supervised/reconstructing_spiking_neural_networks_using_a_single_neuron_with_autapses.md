@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 用带自突触的单个神经元重构脉冲神经网络
+  [Paper Note] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses
 description: >-
-  [CVPR 2026][Others][Paper Note] Inspired by the autaptic self-feedback of cerebellar Purkinje cells, this paper introduces a set of "Time-Delay Autapses" to LIF neurons (TDA-LIF). By expanding a **single** spiking neuron in the temporal dimension and applying specific pruning/sharing strategies to the autapses, the authors equivalently reconstruct th
+  [CVPR 2026][Self-Supervised Learning][Spiking Neural Networks] Inspired by the autaptic self-feedback of cerebellar Purkinje cells, this paper introduces a set of "Time-Delay Autapses" to LIF neurons (TDA-LIF). By expanding a **single** spiking neuron in the temporal dimension and applying specific pruning/sharing strategies to the autapses, the authors equivalently reconstruct three SNN architectures: Reservoir Computing (RC), Multilayer Perceptron (MLP)…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Spiking Neural Networks"
+  - "Autapses"
+  - "Time-delay feedback"
+  - "Single-neuron computing"
+  - "Spatio-temporal multiplexing"
 date: 2026-05-08
-content_hash: 6386004944c9214d
+content_hash: 6faae29b3610cf51
 ---
+
 # Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses
 
 **Conference**: CVPR 2026  
@@ -150,16 +156,16 @@ TDA-SNN reduces the neurons per layer to **1**, increasing information density b
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
-- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
 - [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
-- [\[CVPR 2026\] Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification](differences_that_matter_auditing_models_for_capability_gap_discovery_and_rectifi.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
+- [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](../../ICLR2026/self_supervised/prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
+- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
 
 </div>
 

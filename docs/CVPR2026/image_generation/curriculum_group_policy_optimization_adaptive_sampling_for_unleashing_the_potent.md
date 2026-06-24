@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][GRPO] To address the issue in GRPO training for text-to-image (T2I) where "uniform sampling causes half the prompts to yield no learning gain," CGPO utilizes the **reward variance** of an image group per prompt as an online signal for "partially mastered but unstable" learning. By adaptively increase sampling for prompts in
+  [CVPR 2026][Image Generation][GRPO] To address the issue in GRPO training for text-to-image (T2I) where "uniform sampling causes half the prompts to yield no learning gain," CGPO utilizes the **reward variance** of an image group per prompt as an online signal for "partially mastered but unstable" learning. By adaptively increase sampling for prompts in this learning "sweet spot" and applying proportional fairness for category calibration, CGPO achieves performance gains and…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GRPO"
+  - "T2I"
+  - "Curriculum Learning"
+  - "Adaptive Sampling"
+  - "Reward Variance"
 date: 2026-05-08
-content_hash: e57320a54482b622
+content_hash: 669dd01f1e159c2a
 ---
+
 # Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -149,15 +154,16 @@ Incremental gains on GenEval starting from Flow-GRPO (94.42%):
 - Value: ⭐⭐⭐⭐ Plug-and-play sampling improvement with 2x training acceleration for T2I RL fine-tuning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
-- [\[CVPR 2026\] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation](maskfocus_focusing_policy_optimization_on_critical_steps_for_masked_image_genera.md)
 - [\[CVPR 2026\] POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation](poca_pareto-optimal_curriculum_alignment_for_visual_text_generation.md)
+- [\[ICLR 2026\] Group Critical-token Policy Optimization for Autoregressive Image Generation](../../ICLR2026/image_generation/group_critical-token_policy_optimization_for_autoregressive_image_generation.md)
+- [\[CVPR 2026\] MaskFocus: Focusing Policy Optimization on Critical Steps for Masked Image Generation](maskfocus_focusing_policy_optimization_on_critical_steps_for_masked_image_genera.md)
 - [\[CVPR 2026\] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)
-- [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 
 </div>
 

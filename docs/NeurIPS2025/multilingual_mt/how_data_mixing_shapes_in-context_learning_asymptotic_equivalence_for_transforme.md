@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][In-context learning] Under a high-dimensional asymptotic framework, this paper proves that Transformers with nonlinear MLP heads are asymptotically equivalent to structu…
+  [NeurIPS 2025][Multilingual & Machine Translation][In-context learning] Under a high-dimensional asymptotic framework, this paper proves that Transformers with nonlinear MLP heads are asymptotically equivalent to structured polynomial predictors in terms of ICL error, revealing the gain mechanism of nonlinear MLPs on nonlinear tasks and establishing that low noise and structured covariance are key characteristics of high-quality data sources in multi-source data mixing.
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "polynomial equivalence"
   - "feature learning"
 date: 2026-05-08
-content_hash: 77913215ae7ce548
+content_hash: dbda51b98013ca32
 ---
 
 # How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs
@@ -137,11 +137,11 @@ A standard Transformer architecture is considered: linear attention with a two-l
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages](helpsteer3-preference_open_human-annotated_preference_data_across_diverse_tasks_.md)
+- [\[ACL 2025\] Blessing of Multilinguality: A Systematic Analysis of Multilingual In-Context Learning](../../ACL2025/multilingual_mt/blessing_of_multilinguality_a_systematic_analysis_of_multilingual_in-context_lea.md)
+- [\[ACL 2025\] GrammaMT: Improving Machine Translation with Grammar-Informed In-Context Learning](../../ACL2025/multilingual_mt/grammamt_improving_machine_translation_with_grammar-informed_in-context_learning.md)
 - [\[NeurIPS 2025\] Quantifying Climate Policy Action and Its Links to Development Outcomes: A Cross-National Data-Driven Analysis](quantifying_climate_policy_action_and_its_links_to_development_outcomes_a_cross-.md)
-- [\[ACL 2026\] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning](../../ACL2026/multilingual_mt/clewr_curriculum_learning_with_restarts_for_machine_translation_preference_learn.md)
-- [\[ACL 2026\] Syntax as a Rosetta Stone: Universal Dependencies for In-Context Coptic Translation](../../ACL2026/multilingual_mt/syntax_as_a_rosetta_stone_universal_dependencies_for_in-context_coptic_translati.md)
-- [\[AAAI 2026\] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective](../../AAAI2026/multilingual_mt/how_does_alignment_enhance_llms_multilingual_capabilities_a_language_neurons_per.md)
+- [\[NeurIPS 2025\] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages](helpsteer3-preference_open_human-annotated_preference_data_across_diverse_tasks_.md)
+- [\[ACL 2025\] Exploring In-context Example Generation for Machine Translation](../../ACL2025/multilingual_mt/exploring_in-context_example_generation_for_machine_translation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] GlowQ transforms the paradigm of "independent low-rank error correction for every layer" into "sharing a right factor $B$ per input group, caching the projection $BX$ once for reuse across modules," while selectively recovering specific groups/layers based on benefit. This significantly reduces first-token latency and
+  [ICLR 2026][Model Compression][Low-rank compensation] GlowQ transforms the paradigm of "independent low-rank error correction for every layer" into "sharing a right factor $B$ per input group, caching the projection $BX$ once for reuse across modules," while selectively recovering specific groups/layers based on benefit. This significantly reduces first-token latency and increases throughput for quantized LLMs with negligible accuracy loss.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Low-rank compensation"
+  - "Post-training quantization"
+  - "Shared right factor"
+  - "Covariance alignment"
+  - "Selective recovery"
 date: 2026-05-08
-content_hash: a8956df12788590e
+content_hash: ae89a0b052e298d9
 ---
+
 # GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs
 
 **Conference**: ICLR 2026  
@@ -120,9 +126,9 @@ GlowQ achieved the best or tied-best results in 9 out of 11 variants.
 
 ## Related Papers
 
-- [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
-- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Language Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
+- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Learning Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
 - [\[ICLR 2026\] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation](taming_momentum_rethinking_optimizer_states_through_low-rank_approximation.md)
+- [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
 - [\[ACL 2025\] GSQ-Tuning: Group-Shared Exponents Integer in Fully Quantized Training for LLMs On-Device Fine-tuning](../../ACL2025/model_compression/gsq-tuning_group-shared_exponents_integer_in_fully_quantized_training_for_llms_o.md)
 - [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
 

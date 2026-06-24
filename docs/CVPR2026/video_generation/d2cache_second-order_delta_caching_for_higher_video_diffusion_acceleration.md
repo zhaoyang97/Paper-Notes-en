@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] D2Cache: Second-Order Delta Caching for Higher Video Diffusion Acceleration
 description: >-
-  [CVPR 2026][Video Generation][DiT] D2Cache is a training-free, plug-and-play video diffusion cache acceleration method. It identifies that the "second-order difference" (residual of the first-order residuals) between outputs of adjacent timesteps is significantly smoother than the first-order residual. By adding a second-order correction term to the fir
+  [CVPR 2026][Video Generation][Video Diffusion] D2Cache is a training-free, plug-and-play video diffusion cache acceleration method. It identifies that the "second-order difference" (residual of the first-order residuals) between outputs of adjacent timesteps is significantly smoother than the first-order residual. By adding a second-order correction term to the first-order residual reuse, the method reduces cache prediction error from $O((\Delta t)^2)$ to $O((\Delta t)^3)$. F…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - DiT
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Cache Acceleration"
+  - "Second-Order Residual"
+  - "Training-Free"
+  - "DiT"
 date: 2026-05-08
-content_hash: edcb35e8f3627c6b
+content_hash: b93e0acc224b8b6c
 ---
+
 # D2Cache: Second-Order Delta Caching for Higher Video Diffusion Acceleration
 
 **Conference**: CVPR 2026  
@@ -151,9 +156,9 @@ Ablation of scaling factor $s$ on Latte / superfast:
 
 - [\[ICCV 2025\] D3: Training-Free AI-Generated Video Detection Using Second-Order Features](../../ICCV2025/video_generation/d3_training-free_ai-generated_video_detection_using_second-order_features.md)
 - [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](disca_accelerating_video_diffusion_transformers_wi.md)
-- [\[CVPR 2026\] FrameDiT: Diffusion Transformer with Matrix Attention for Efficient Video Generation](framedit_diffusion_transformer_with_matrix_attention_for_efficient_video_generat.md)
-- [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
+- [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
+- [\[ICLR 2026\] Astraea: A Token-wise Acceleration Framework for Video Diffusion Transformers](../../ICLR2026/video_generation/astraea_a_token-wise_acceleration_framework_for_video_diffusion_transformers.md)
 
 </div>
 

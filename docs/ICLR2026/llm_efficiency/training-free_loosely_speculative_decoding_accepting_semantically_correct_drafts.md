@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training-Free Loosely Speculative Decoding: Accepting Semantically Correct Drafts Beyond Exact Match
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Addressing the issue where standard Speculative Decoding (SPD) "exact match" rules prematurely reject semantically correct drafts, FLy utilizes the target model's own entropy and "self-correction" behavior to accept tokens that differ in phrasing but are semantically equivalent without any training. While maintaining $
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] Addressing the issue where standard Speculative Decoding (SPD) "exact match" rules prematurely reject semantically correct drafts, FLy utilizes the target model's own entropy and "self-correction" behavior to accept tokens that differ in phrasing but are semantically equivalent without any training. While maintaining $\ge 99\%$ accuracy, it accelerates Llama-3.1-70B by 2.81× and 405B by 5.07× on average…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Loose Verification"
+  - "Entropy Gating"
+  - "Self-Correction"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: 3d9cf06f4df6f535
+content_hash: 87ded13692c06279
 ---
+
 # Training-Free Loosely Speculative Decoding: Accepting Semantically Correct Drafts Beyond Exact Match
 
 **Conference**: ICLR 2026  
@@ -147,10 +153,20 @@ FLy 70B outperforms EAGLE-2 in ID tasks. While slightly behind the highly optimi
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-### Related Papers
-*(Internal placeholder for related academic literature)*
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
+- [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)
+- [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models](beyond_fixed_training-free_variable-length_denoising_for_diffusion_large_languag.md)

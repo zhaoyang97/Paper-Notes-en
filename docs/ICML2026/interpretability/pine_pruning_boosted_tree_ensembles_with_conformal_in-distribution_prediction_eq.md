@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence
 description: >-
-  [ICML 2026][Interpretability][Paper Note] PINE contracts the "equivalence constraint" of faithful pruning for boosted tree ensembles from the entire input space to an "in-distribution region" $\mathcal{X}_{\text{ID}}(\alpha)$ defined by Chow-Liu tree likelihood and split conformal calibration. Using a single parameter $\alpha$ to smoothly control the compressi
+  [ICML 2026][Interpretability][Tree Ensemble Pruning] PINE contracts the "equivalence constraint" of faithful pruning for boosted tree ensembles from the entire input space to an "in-distribution region" $\mathcal{X}_{\text{ID}}(\alpha)$ defined by Chow-Liu tree likelihood and split conformal calibration. Using a single parameter $\alpha$ to smoothly control the compression-fidelity trade-off, it improves compression rates by up to 30% relative to FIPE across 12 public tabular…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Tree Ensemble Pruning"
+  - "Faithful Pruning"
+  - "Conformal Prediction"
+  - "In-Distribution Equivalence"
+  - "Chow-Liu Tree"
 date: 2026-05-08
-content_hash: 94e8f4afe59a37fc
+content_hash: 93a0742efeac1ee0
 ---
+
 # PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence
 
 **Conference**: ICML 2026  

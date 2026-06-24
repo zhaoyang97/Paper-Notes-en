@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] The SeDiR framework is proposed to achieve semantically disentangled unified 3D anomaly detection through three modules: Coarse-to-Fine Global Tokenization (CFGT), Category-Conditional Contrastive Learning (C3L), and Geometric-Guided Decoder (GGD). It addresses the Inter-Category Entanglement (ICE) problem and outperfo
+  [CVPR 2026][Object Detection][3D Anomaly Detection] The SeDiR framework is proposed to achieve semantically disentangled unified 3D anomaly detection through three modules: Coarse-to-Fine Global Tokenization (CFGT), Category-Conditional Contrastive Learning (C3L), and Geometric-Guided Decoder (GGD). It addresses the Inter-Category Entanglement (ICE) problem and outperforms SOTA by 2.8% and 9.1% AUROC on Real3D-AD and Anomaly-ShapeNet, respectively.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "3D Anomaly Detection"
+  - "Unified Model"
+  - "Semantic Disentanglement"
+  - "Inter-category Entanglement"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 24cc1e84396cb2d0
+content_hash: 9092123d04cd0b1f
 ---
+
 # A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -135,9 +141,9 @@ The reconstruction loss uses the L2 error of the base resolution features: $\mat
 ## Related Papers
 
 - [\[AAAI 2026\] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection](../../AAAI2026/object_detection/sm3det_a_unified_model_for_multi-modal_remote_sensing_object_detection.md)
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 - [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
 - [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
+- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
 
 </div>

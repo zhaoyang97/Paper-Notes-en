@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies
 description: >-
-  [NeurIPS 2025][Object Detection][event camera] This paper proposes FlexEvent, a framework that achieves flexible object detection with event cameras across varying operational frequencies through an adaptive event-frame…
+  [NeurIPS 2025][Object Detection][event camera] This paper proposes FlexEvent, a framework that achieves flexible object detection with event cameras across varying operational frequencies through an adaptive event-frame fusion module (FlexFuse) and a frequency-adaptive fine-tuning mechanism (FlexTune). The framework maintains robust performance in the range of 20Hz to 180Hz, significantly outperforming existing methods.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -11,7 +11,7 @@ tags:
   - "frequency adaptation"
   - "self-training"
 date: 2026-05-08
-content_hash: 5ddb704bd1ed127e
+content_hash: b7f78cf81d889469
 ---
 
 # FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies
@@ -182,11 +182,11 @@ Despite the larger parameter count, inference speed is comparable to SAST and fa
 
 ## Related Papers
 
+- [\[CVPR 2025\] Efficient Event-Based Object Detection: A Hybrid Neural Network with Spatial and Temporal Attention](../../CVPR2025/object_detection/efficient_event-based_object_detection_a_hybrid_neural_network_with_spatial_and_.md)
+- [\[CVPR 2026\] Spike-driven Discrete Aggregation for Event-based Object Detection](../../CVPR2026/object_detection/spike-driven_discrete_aggregation_for_event-based_object_detection.md)
+- [\[CVPR 2025\] Object Detection using Event Camera: A MoE Heat Conduction based Detector and A New Benchmark Dataset](../../CVPR2025/object_detection/object_detection_using_event_camera_a_moe_heat_conduction_based_detector_and_a_n.md)
+- [\[CVPR 2026\] Towards Persistence: Learning Topological Constraints for Event-based Small Object Detection](../../CVPR2026/object_detection/towards_persistence_learning_topological_constraints_for_event-based_small_objec.md)
 - [\[ICCV 2025\] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](../../ICCV2025/object_detection/evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)
-- [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](test-time_adaptive_object_detection_with_foundation_model.md)
-- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
-- [\[NeurIPS 2025\] DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection](dithub_a_modular_framework_for_incremental_openvocabulary_ob.md)
-- [\[NeurIPS 2025\] Delving into Cascaded Instability: A Lipschitz Continuity View on Image Restoration and Object Detection Synergy](lr_yolo_lipschitz_continuity_image_restoration_object_detection.md)
 
 </div>
 

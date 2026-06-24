@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation
 description: >-
-  [ICCV 2025][Image Generation][image editing evaluation] This paper proposes ADIEE, an automated pipeline for constructing a training dataset of over 100…
+  [ICCV 2025][Image Generation][image editing evaluation] This paper proposes ADIEE, an automated pipeline for constructing a training dataset of over 100,000 samples for image editing evaluation. It fine-tunes LLaVA-NeXT-8B as an editing quality scorer and surpasses open-source VLMs and Gemini-Pro 1.5 on multiple benchmarks. The resulting scorer can also serve as a reward model to improve editing model performance.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "reward model"
   - "instruction-guided editing"
 date: 2026-05-08
-content_hash: 17c5124917d5a1f4
+content_hash: df926e2bd9e07af4
 ---
 
 # ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation
@@ -110,8 +110,8 @@ Compared to the previous SOTA: AURORA-Bench correlation +0.0696 (+17.24%), GenAI
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[ICCV 2025\] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](superedit_rectifying_and_facilitating_supervision_for_instruction-based_image_ed.md)
 - [\[ICCV 2025\] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction](aid_adapting_image2video_diffusion_models_for_instruction-guided_video_predictio.md)
-- [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
 - [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
+- [\[ICCV 2025\] LUSD: Localized Update Score Distillation for Text-Guided Image Editing](lusd_localized_update_score_distillation_for_text-guided_image_editing.md)
 
 </div>
 

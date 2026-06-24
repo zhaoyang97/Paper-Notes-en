@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stability Implies Redundancy: Delta Attention Selective Halting for Efficient Long-Context Prefilling
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] Proposes DASH (Delta Attention Selective Halting), a training-free inference acceleration method that monitors layer-wise update magnitudes $\Delta_{attn}$ to identify "semantically solidified" tokens and halt their subsequent computations. It achieves significant prefill acceleration on long-context text and vision-la
+  [ACL2026][Multimodal VLM][Long-context inference] Proposes DASH (Delta Attention Selective Halting), a training-free inference acceleration method that monitors layer-wise update magnitudes $\Delta_{attn}$ to identify "semantically solidified" tokens and halt their subsequent computations. It achieves significant prefill acceleration on long-context text and vision-language benchmarks with almost no loss in accuracy.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Long-context inference"
+  - "Prefill acceleration"
+  - "Token pruning"
+  - "Attention redundancy"
+  - "Vision-language models"
 date: 2026-05-08
-content_hash: e529982f921d26cd
+content_hash: bf131cce809aebd6
 ---
+
 # Stability Implies Redundancy: Delta Attention Selective Halting for Efficient Long-Context Prefilling
 
 **Conference**: ACL2026  
@@ -135,11 +140,11 @@ Kernel Compatibility Verification (40% pruning ratio):
 
 ## Related Papers
 
+- [\[ICML 2026\] Very Efficient Listwise Multimodal Reranking for Long Documents](../../ICML2026/multimodal_vlm/very_efficient_listwise_multimodal_reranking_for_long_documents.md)
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](../../ICLR2026/multimodal_vlm/videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
 - [\[NeurIPS 2025\] Breaking the Compression Ceiling: Data-Free Pipeline for Ultra-Efficient Delta Compression](../../NeurIPS2025/multimodal_vlm/breaking_the_compression_ceiling_data-free_pipeline_for_ultra-efficient_delta_co.md)
 - [\[NeurIPS 2025\] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models](../../NeurIPS2025/multimodal_vlm/hope_hybrid_of_position_embedding_for_long_context_visionlan.md)
 - [\[NeurIPS 2025\] NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables](../../NeurIPS2025/multimodal_vlm/needleinatable_exploring_long-context_capability_of_large_language_models_toward.md)
-- [\[ACL 2025\] Redundancy Principles for MLLMs Benchmarks](../../ACL2025/multimodal_vlm/redundancy_principles_for_mllms_benchmarks.md)
-- [\[ICML 2026\] Very Efficient Listwise Multimodal Reranking for Long Documents](../../ICML2026/multimodal_vlm/very_efficient_listwise_multimodal_reranking_for_long_documents.md)
 
 </div>
 

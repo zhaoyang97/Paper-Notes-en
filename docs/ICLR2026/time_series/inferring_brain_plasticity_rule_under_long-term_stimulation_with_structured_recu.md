@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Inferring brain plasticity rule under long-term stimulation with structured recurrent dynamics
 description: >-
-  [ICLR 2026][Time Series][recurrent dynamics] This paper proposes STEER, which models brain network reorganization under long-term neural stimulation as a stimulus-conditioned slow-timescale dynamical law. By utilizing structured low-rank RNNs to interpret fast intra-session neural activity, it enables the inference of interpretable plasticity rules from longitudi
+  [ICLR2026][Time Series][Brain Plasticity] This paper proposes STEER, which models brain network reorganization under long-term neural stimulation as a stimulus-conditioned slow-timescale dynamical law. By utilizing structured low-rank RNNs to interpret fast intra-session neural activity, it enables the inference of interpretable plasticity rules from longitudinal recordings. The model predicts network evolution under unseen stimulation protocols in Lorenz systems, BCM rules…
 tags:
-  - ICLR 2026
-  - Time Series
-  - recurrent dynamics
+  - "ICLR2026"
+  - "Time Series"
+  - "Brain Plasticity"
+  - "Long-term Stimulation"
+  - "Recurrent Dynamics"
+  - "Low-rank Dynamical Systems"
+  - "Deep Brain Stimulation"
 date: 2026-05-08
-content_hash: a03bfaa6f498aea7
+content_hash: 29ec16e9accfc2da
 ---
+
 # Inferring brain plasticity rule under long-term stimulation with structured recurrent dynamics
 
 **Conference**: ICLR2026  
@@ -146,6 +151,7 @@ For counterfactual prediction, the model does not require future real embeddings
 - Value: ⭐⭐⭐⭐⭐ Significant potential for neural dynamics, longitudinal intervention modeling, and closed-loop DBS design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

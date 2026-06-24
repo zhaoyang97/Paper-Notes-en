@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Tensor learning with orthogonal, Lorentz, and symplectic symmetries
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper provides a complete parametrization of equivariant polynomial functions under the diagonal action of the orthogonal group $O(d)$, indefinite orthogonal groups (including the Lorentz group), and the symplectic group $Sp(d)$ on tensors. These characterizations are applied to design learnable sparse vector reco
+  [ICLR 2026][Time Series][Equivariant learning] This paper provides a complete parametrization of equivariant polynomial functions under the diagonal action of the orthogonal group $O(d)$, indefinite orthogonal groups (including the Lorentz group), and the symplectic group $Sp(d)$ on tensors. These characterizations are applied to design learnable sparse vector recovery algorithms that outperform existing sum-of-squares spectral methods across various data-generating assumptio…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Equivariant learning"
+  - "Tensor functions"
+  - "Orthogonal groups"
+  - "Lorentz groups"
+  - "Symplectic groups"
+  - "Sparse vector recovery"
 date: 2026-05-08
-content_hash: 173ea553972f23ad
+content_hash: a1e8ef80a54a0e2e
 ---
+
 # Tensor learning with orthogonal, Lorentz, and symplectic symmetries
 
 **Conference**: ICLR 2026  
@@ -144,7 +151,7 @@ Experimental settings: $n=100$, $d=5$, $\epsilon=0.25$, with four sparse vector 
 - [\[ICLR 2026\] SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization](sonata_synergistic_coreset_informed_adaptive_temporal_tensor_factorization.md)
 - [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](learning_koopman_representations_with_controllability_guarantees.md)
 - [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
-- [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](improving_extreme_wind_prediction_with_frequency-informed_learning.md)
+- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][Knowledge Distillation] Proposes the Multi-Stage Reinforcement Learning (MSRL) method, which first learns reward reasoning capabilities on large-scale text preference data and then progressively transfers them to multimodal tasks. This addresses the bottleneck of scarce annotated data in multimodal reward model training, improving accuracy on
+  [CVPR 2026][Reinforcement Learning][Multimodal Reward Model] Proposes the Multi-Stage Reinforcement Learning (MSRL) method, which first learns reward reasoning capabilities on large-scale text preference data and then progressively transfers them to multimodal tasks. This addresses the bottleneck of scarce annotated data in multimodal reward model training, improving accuracy on VL-RewardBench from 66.6% to 75.9%.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Multimodal Reward Model"
+  - "Cross-modal Transfer"
+  - "Knowledge Distillation"
+  - "Preference Alignment"
 date: 2026-05-08
-content_hash: 0499b67fb6f545b3
+content_hash: 6a15abbe1ac2c5cd
 ---
+
 # MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -136,10 +140,10 @@ MSRL 8B + voting@16 reaches 77.5% on VL-RewardBench, even surpassing Claude-3.7-
 ## Related Papers
 
 - [\[CVPR 2026\] Incentivizing Generative Zero-Shot Learning via Outcome-Reward Reinforcement Learning with Visual Cues](incentivizing_generative_zero-shot_learning_via_outcome-reward_reinforcement_lea.md)
+- [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](../../ICLR2026/reinforcement_learning/r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](../../ICLR2026/reinforcement_learning/p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](../../ICLR2026/reinforcement_learning/rm-r1_reward_modeling_as_reasoning.md)
 - [\[CVPR 2026\] CME-CAD: Heterogeneous Collaborative Multi-Expert Reinforcement Learning for CAD Code Generation](cme-cad_heterogeneous_collaborative_multi-expert_reinforcement_learning_for_cad_code_gen.md)
-- [\[ICML 2026\] CAMEL: Confidence-Gated Reflection for Reward Modeling](../../ICML2026/reinforcement_learning/camel_confidence-gated_reflection_for_reward_modeling.md)
 
 </div>
 

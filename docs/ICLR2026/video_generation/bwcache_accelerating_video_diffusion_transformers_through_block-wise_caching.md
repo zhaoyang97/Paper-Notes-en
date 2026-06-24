@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Transformer] BWCache identifies that features of individual blocks in video DiTs exhibit a U-shaped similarity curve across adjacent timesteps (highly redundant in intermediate steps). Consequently, it caches and reuses features at the block granularity, using a lightweight similarity metric to dynamically decide when to reuse. Thi
+  [ICLR 2026][Video Generation][Diffusion Transformer] BWCache identifies that features of individual blocks in video DiTs exhibit a U-shaped similarity curve across adjacent timesteps (highly redundant in intermediate steps). Consequently, it caches and reuses features at the block granularity, using a lightweight similarity metric to dynamically decide when to reuse. This achieve a training-free, plug-and-play acceleration of up to 2.6× with almost no drop in visual quality.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Transformer
-  - DiT block
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Diffusion Transformer"
+  - "Training-free Acceleration"
+  - "Feature Caching"
+  - "DiT block"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: e6744be668e83b0f
+content_hash: 356d3d1850f43978
 ---
+
 # BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching
 
 **Conference**: ICLR 2026  
@@ -134,7 +137,7 @@ Trade-offs between threshold $\delta$ (reuse rate) and interval $R$ (Open-Sora):
 - [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](../../CVPR2026/video_generation/accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
 - [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](../../CVPR2026/video_generation/disca_accelerating_video_diffusion_transformers_wi.md)
 - [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](../../ICML2026/video_generation/worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
-- [\[ICLR 2026\] UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers](ultravico_breaking_extrapolation_limits_in_video_diffusion_transformers.md)
+- [\[ICLR 2026\] Astraea: A Token-wise Acceleration Framework for Video Diffusion Transformers](astraea_a_token-wise_acceleration_framework_for_video_diffusion_transformers.md)
 
 </div>
 

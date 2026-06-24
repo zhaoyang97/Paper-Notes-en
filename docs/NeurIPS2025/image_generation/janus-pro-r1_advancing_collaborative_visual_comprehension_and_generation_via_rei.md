@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Image Generation][MLLM] This paper proposes Janus-Pro-R1, which achieves synergistic advancement in visual understanding and generation through a two-stage training pipeline (SFT + RL). The approach enable…
+  [NeurIPS 2025][Image Generation][MLLM] This paper proposes Janus-Pro-R1, which achieves synergistic advancement in visual understanding and generation through a two-stage training pipeline (SFT + RL). The approach enables MLLMs to form genuine Chain-of-Thought reasoning and trigger Aha Moments during text-to-image generation, surpassing GPT-4o on GenEval while extending naturally to image editing tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Chain-of-Thought"
   - "Aha Moment"
 date: 2026-05-08
-content_hash: b0eaf6823543d5f8
+content_hash: da9ea211e2f0b7ed
 ---
 
 # Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning
@@ -138,11 +138,11 @@ Janus-Pro-R1 adopts a two-stage training pipeline:
 
 ## Related Papers
 
+- [\[ICLR 2026\] GoT-R1: Unleashing Reasoning Capability of Autoregressive Visual Generation with Reinforcement Learning](../../ICLR2026/image_generation/got-r1_unleashing_reasoning_capability_of_autoregressive_visual_generation_with_.md)
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
 - [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](rlvr-world_training_world_models_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data](composite_flow_matching_for_reinforcement_learning_with_shifted-dynamics_data.md)
-- [\[ICCV 2025\] GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning](../../ICCV2025/image_generation/genflowrl_shaping_rewards_with_generative_object-centric_flow_in_visual_reinforc.md)
+- [\[CVPR 2025\] GraphGPT-o: Synergistic Multimodal Comprehension and Generation on Graphs](../../CVPR2025/image_generation/graphgpt-o_synergistic_multimodal_comprehension_and_generation_on_graphs.md)
 
 </div>
 

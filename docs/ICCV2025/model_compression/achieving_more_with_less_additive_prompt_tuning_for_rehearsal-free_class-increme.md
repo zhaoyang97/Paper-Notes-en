@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning
 description: >-
-  [ICCV 2025][Model Compression][Class-Incremental Learning] This paper proposes APT (Additive Prompt Tuning), which replaces the conventional prompt concatenation paradigm with an additive operation. By introducing only t…
+  [ICCV 2025][Model Compression][Class-Incremental Learning] This paper proposes APT (Additive Prompt Tuning), which replaces the conventional prompt concatenation paradigm with an additive operation. By introducing only two learnable vectors added to the key/value projections of the CLS token, APT achieves state-of-the-art class-incremental learning performance while substantially reducing computational overhead (41.5% reduction in GFLOPs) and trainable parameters (78.2% reduc…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: b0522e06cfb60238
+content_hash: c9ded1aec4eef677
 ---
 
 # Achieving More with Less: Additive Prompt Tuning for Rehearsal-Free Class-Incremental Learning
@@ -173,11 +173,11 @@ General recognition (non-CIL setting, compared with VPT):
 
 ## Related Papers
 
+- [\[CVPR 2025\] CL-LoRA: Continual Low-Rank Adaptation for Rehearsal-Free Class-Incremental Learning](../../CVPR2025/model_compression/cl-lora_continual_low-rank_adaptation_for_rehearsal-free_class-incremental_learn.md)
 - [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
-- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
+- [\[ICML 2025\] Semantic Shift Estimation via Dual-Projection and Classifier Reconstruction for Exemplar-Free Class-Incremental Learning](../../ICML2025/model_compression/semantic_shift_estimation_via_dual-projection_and_classifier_reconstruction_for_.md)
 - [\[NeurIPS 2025\] REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning](../../NeurIPS2025/model_compression/rep_resource-efficient_prompting_for_rehearsal-free_continual_learning.md)
-- [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](../../AAAI2026/model_compression/compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
-- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](../../ICML2026/model_compression/area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
+- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
 
 </div>
 

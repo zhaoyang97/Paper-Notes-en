@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Flatness-Guided Test-Time Adaptation for Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Test-Time Adaptation] This paper proposes the **Flatness-Guided Adaptation (FGA)** framework: the training phase employs sharpness-aware prompt tuning to locate flat minima, while the testing phase avoids updating any parameters. Instead, it uses a "perturb-score-filter" approach to enhance samples, aligning the flat minima of selected test
+  [ICLR 2026][Multimodal VLM][Test-Time Adaptation] This paper proposes the **Flatness-Guided Adaptation (FGA)** framework: the training phase employs sharpness-aware prompt tuning to locate flat minima, while the testing phase avoids updating any parameters. Instead, it uses a "perturb-score-filter" approach to enhance samples, aligning the flat minima of selected test loss landscapes with the training flat minima. This significantly improves CLIP's out-of-distribution general…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Test-Time Adaptation
-  - Vision-Language Models
-  - CLIP
-  - Sharpness-Aware Minimization
-  - Loss Landscape Flatness
-  - Prompt Tuning
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Test-Time Adaptation"
+  - "Vision-Language Models"
+  - "CLIP"
+  - "Sharpness-Aware Minimization"
+  - "Loss Landscape Flatness"
+  - "Prompt Tuning"
 date: 2026-05-08
-content_hash: d0eda293f392fc6b
+content_hash: ac96e8803774274f
 ---
+
 # Flatness-Guided Test-Time Adaptation for Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -119,15 +120,14 @@ STSS is the primary driver of performance gains; stacking STSS on top of SAPT yi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Bilateral Information-aware Test-time Adaptation for Vision-Language Models](bilateral_information-aware_test-time_adaptation_for_vision-language_models.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](../../CVPR2026/multimodal_vlm/improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
-- [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](../../CVPR2026/multimodal_vlm/star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](../../AAAI2026/multimodal_vlm/panda_test-time_adaptation_with_negative_data_augmentation.md)
-- [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](long-tailed_test-time_adaptation_for_vision-language_models.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](../../CVPR2026/multimodal_vlm/dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 
 </div>
 

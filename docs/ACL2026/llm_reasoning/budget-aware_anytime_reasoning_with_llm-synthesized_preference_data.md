@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data
 description: >-
-  [ACL 2026][LLM Reasoning][Anytime Index] This paper proposes a budget-aware anytime reasoning framework and an Anytime Index metric to quantify the quality-efficiency trade-off of LLMs under limited token budgets. It also designs a reasoning-time self-improvement method (PDP) based on LLM-synthesized preference data, significantly improving the quality of int
+  [ACL 2026 Findings][Reasoning][Budget-aware reasoning] This paper proposes a budget-aware anytime reasoning framework and an Anytime Index metric to quantify the quality-efficiency trade-off of LLMs under limited token budgets. It also designs a reasoning-time self-improvement method (PDP) based on LLM-synthesized preference data, significantly improving the quality of intermediate and final solutions across planning, mathematics, and science QA tasks.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Anytime Index
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Budget-aware reasoning"
+  - "Anytime Index"
+  - "Preference data prompting"
+  - "Test-time scaling"
+  - "Reasoning efficiency"
 date: 2026-05-08
-content_hash: 1ea8a64818466f6f
+content_hash: 53f8730b6786bfc6
 ---
+
 # Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data
 
 **Conference**: ACL 2026 Findings  
@@ -145,10 +150,10 @@ PDP is a pure inference-time method and does not involve model training. Prefere
 ## Related Papers
 
 - [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
+- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 - [\[ACL 2026\] CoAct: Co-Active LLM Preference Learning with Human-AI Synergy](coact_co-active_llm_preference_learning_with_human-ai_synergy.md)
 - [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
 - [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
-- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](../../ICLR2026/llm_reasoning/plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 
 </div>
 

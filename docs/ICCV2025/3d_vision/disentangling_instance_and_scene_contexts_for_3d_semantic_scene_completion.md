@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion
 description: >-
-  [3D Vision] This paper proposes DISC, a category-aware dual-stream architecture for 3D semantic scene completion that disentangles instance and scene categories into separate query streams with dedicated decoding modules…
+  [3D Vision] This paper proposes DISC, a category-aware dual-stream architecture for 3D semantic scene completion that disentangles instance and scene categories into separate query streams with dedicated decoding modules. Using only single-frame input, DISC surpasses multi-frame state-of-the-art methods on SemanticKITTI, achieving a 17.9% improvement in instance category mIoU.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: ddb5b2d4e4f0a91c
+content_hash: 90ef0f6bc7da6487
 ---
 
 # Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion

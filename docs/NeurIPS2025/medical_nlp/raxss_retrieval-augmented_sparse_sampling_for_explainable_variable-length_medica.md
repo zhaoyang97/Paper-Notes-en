@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification
 description: >-
-  [Medical NLP] This paper proposes RAxSS, a framework that integrates retrieval augmentation into the random sparse sampling (SSS) pipeline. By replacing uniform averaging with intra-window similarity-weighted aggregation…
+  [Medical LLM] This paper proposes RAxSS, a framework that integrates retrieval augmentation into the random sparse sampling (SSS) pipeline. By replacing uniform averaging with intra-window similarity-weighted aggregation, RAxSS maintains competitive performance on variable-length medical time series classification while providing an interpretable evidence chain spanning from "where" to "why."
 tags:
-  - "Medical NLP"
+  - "Medical LLM"
 date: 2026-05-08
-content_hash: 2be589f5260d7b36
+content_hash: 7a9f67628e83f89d
 ---
 
 # RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification
@@ -130,11 +130,11 @@ Clinicians may select accordingly: cosine favors AUC discrimination, while Pears
 
 ## Related Papers
 
+- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_for_biomedical_lite.md)
 - [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 - [\[NeurIPS 2025\] LLM-Assisted Emergency Triage Benchmark: Bridging Hospital-Rich and MCI-Like Field Simulation](llm-assisted_emergency_triage_benchmark_bridging_hospital-rich_and_mci-like_fiel.md)
 - [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](../../AAAI2026/medical_nlp/gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 - [\[NeurIPS 2025\] Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series](time-imm_a_dataset_and_benchmark_for_irregular_multimodal_multivariate_time_seri.md)
-- [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](../../AAAI2026/medical_nlp/mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
 
 </div>
 

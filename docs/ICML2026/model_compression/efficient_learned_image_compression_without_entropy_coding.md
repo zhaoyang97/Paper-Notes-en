@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Learned Image Compression without Entropy Coding
 description: >-
-  [ICML 2026][Model Compression][Paper Note] EF-LIC replaces the slow and serial entropy coding module in the learned image compression pipeline with a two-step approach: "unconstrained vector quantization to maximize index entropy + representation-domain context reparameterization to eliminate latent correlations." It is theoretically proven that its R–D perform
+  [ICML 2026][Model Compression][Learned image compression] EF-LIC replaces the slow and serial entropy coding module in the learned image compression pipeline with a two-step approach: "unconstrained vector quantization to maximize index entropy + representation-domain context reparameterization to eliminate latent correlations." It is theoretically proven that its R–D performance can approach that of entropy coding schemes. In practice, it saves 67.86% bitrate compared to MS-…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Learned image compression"
+  - "entropy-free coding"
+  - "vector quantization"
+  - "context reparameterization"
+  - "GPU parallelism"
 date: 2026-05-08
-content_hash: b3dc2de94662c7f7
+content_hash: aa645c7db6dca322
 ---
+
 # Efficient Learned Image Compression without Entropy Coding
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ Per-module runtime decomposition: In UQ+EC, entropy coding alone accounts for 10
 
 ## Related Papers
 
-- [\[ICML 2026\] Float8@2bits: Entropy Coding Enables Data-Free Model Compression](float82bits_entropy_coding_enables_data-free_model_compression.md)
 - [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](../../CVPR2026/model_compression/block-based_learned_image_compression_without_blocking_artifacts.md)
 - [\[CVPR 2025\] Learned Image Compression with Dictionary-based Entropy Model](../../CVPR2025/model_compression/learned_image_compression_with_dictionary-based_entropy_model.md)
+- [\[ICML 2026\] Float8@2bits: Entropy Coding Enables Data-Free Model Compression](float82bits_entropy_coding_enables_data-free_model_compression.md)
 - [\[CVPR 2026\] What Matters in Practical Learned Image Compression](../../CVPR2026/model_compression/what_matters_in_practical_learned_image_compression.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
+- [\[ICML 2026\] Learned Subspace Compression for Communication-Efficient Pipeline Parallelism](learned_subspace_compression_for_communication-efficient_pipeline_parallelism.md)
 
 </div>
 

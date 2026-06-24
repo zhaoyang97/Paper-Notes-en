@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniCVR: A Benchmark for Omni-Composed Video Retrieval with Vision, Audio, and Text
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] To address the neglect of audio in existing "Composed Video Retrieval" (CoVR) benchmarks, this paper constructs OmniCVR—the first large-scale CoVR benchmark treating vision, audio, and text as first-class modalities (50K triplets / 5K gold standard test set). It proposes AudioVLM2Vec, which converts audio into textual
+  [ICLR 2026][Video Understanding][Composed Video Retrieval] To address the neglect of audio in existing "Composed Video Retrieval" (CoVR) benchmarks, this paper constructs OmniCVR—the first large-scale CoVR benchmark treating vision, audio, and text as first-class modalities (50K triplets / 5K gold standard test set). It proposes AudioVLM2Vec, which converts audio into textual descriptions for VLM embedding, boosting R@1 from 12.4 to 77.2 on audio-centric queries.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Composed Video Retrieval"
+  - "Audio-Visual Multimodal"
+  - "Benchmark Construction"
+  - "Audio Semantics"
+  - "Contrastive Retrieval"
 date: 2026-05-08
-content_hash: 88b8d2eaa6f6e4ba
+content_hash: 896d6bb81aba3fdc
 ---
+
 # OmniCVR: A Benchmark for Omni-Composed Video Retrieval with Vision, Audio, and Text
 
 **Conference**: ICLR 2026  
@@ -137,11 +143,11 @@ The Overall R@1 is +28.5 points higher than VLM2Vec; in audio-centric settings, 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Learning Audio-Guided Video Representation with Gated Attention for Video-Text Retrieval](../../CVPR2025/video_understanding/learning_audio-guided_video_representation_with_gated_attention_for_video-text_r.md)
 - [\[ICLR 2026\] CaReBench: A Fine-grained Benchmark for Video Captioning and Retrieval](carebench_a_fine-grained_benchmark_for_video_captioning_and_retrieval.md)
+- [\[ICLR 2026\] OmniSTVG: Toward Spatio-Temporal Omni-Object Video Grounding](omnistvg_toward_spatio-temporal_omni-object_video_grounding.md)
+- [\[CVPR 2026\] Hear What Matters! Text-conditioned Selective Video-to-Audio Generation](../../CVPR2026/video_understanding/hear_what_matters_text-conditioned_selective_video-to-audio_generation.md)
 - [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
-- [\[ICLR 2026\] Beyond Static Vision: Scene Dynamic Field Unlocks Intuitive Physics Understanding in Multi-modal Large Language Models](beyond_static_vision_scene_dynamic_field_unlocks_intuitive_physics_understanding.md)
-- [\[ICLR 2026\] Video-LevelGauge: Investigating Contextual Positional Bias in Video Language Models](video-levelgauge_investigating_contextual_positional_bias_in_video_language_mode.md)
-- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 description: >-
-  [CVPR 2026][AI Safety][collaborative perception] Ours proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By utilizing inter-frame temporal consistency as a self-reference signal through pseudo-random grouping and Bayesian inference, the system efficiently identifies and excludes
+  [CVPR 2026][AI Safety][collaborative perception] Ours proposes the Pseudo-Random Bayesian Inference (PRBI) framework for collaborative perception scenarios where **all vehicles are untrusted**. By utilizing inter-frame temporal consistency as a self-reference signal through pseudo-random grouping and Bayesian inference, the system efficiently identifies and excludes malicious vehicles with an average of only 2.5 verifications per frame, restoring detection accuracy to 79.4%–8…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - collaborative perception
-  - adversarial defense
-  - Bayesian inference
-  - autonomous driving
-  - V2V communication
+  - "CVPR 2026"
+  - "AI Safety"
+  - "collaborative perception"
+  - "adversarial defense"
+  - "Bayesian inference"
+  - "autonomous driving"
+  - "V2V communication"
 date: 2026-05-08
-content_hash: 979577d829c136de
+content_hash: af068c0be1ea196b
 ---
+
 # All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 
 **Conference**: CVPR 2026  
@@ -185,10 +186,10 @@ where $\Delta$ constrains the perturbation magnitude and $\mathcal{L}_{\text{det
 ## Related Papers
 
 - [\[ICML 2026\] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception](../../ICML2026/ai_safety/one_model_to_translate_them_all_universal_any-to-any_translation_for_heterogeneo.md)
+- [\[ICLR 2026\] A Fair Bayesian Inference through Matched Gibbs Posterior](../../ICLR2026/ai_safety/a_fair_bayesian_inference_through_matched_gibbs_posterior.md)
+- [\[ICML 2026\] PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding](../../ICML2026/ai_safety/pipesd_an_efficient_cloud-edge_collaborative_pipeline_inference_framework_with_s.md)
 - [\[CVPR 2026\] RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning](rapa_enhancing_transferable_targeted_attacks_via_random_parameter_pruning.md)
-- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/ai_safety/how_does_bayesian_sampling_help_membership_inference_attacks.md)
-- [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
-- [\[AAAI 2026\] Detect All-Type Deepfake Audio: Wavelet Prompt Tuning for Enhanced Auditory Perception](../../AAAI2026/ai_safety/detect_all-type_deepfake_audio_wavelet_prompt_tuning_for_enhanced_auditory_perce.md)
+- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 
 </div>
 

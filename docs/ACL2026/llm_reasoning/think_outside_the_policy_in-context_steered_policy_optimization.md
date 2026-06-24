@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Think Outside the Policy: In-Context Steered Policy Optimization
 description: >-
-  [ACL 2026][LLM Reasoning][Reinforcement Learning] Ours proposes ICPO (In-Context Steered Policy Optimization), which leverages the large language model's inherent in-context learning (ICL) capability as an implicit expert steer to expand the policy exploration space during RLVR training, without depending on reasoning trajectories from external stronger models.
+  [ACL 2026 Findings][Reasoning][Reinforcement Learning] Ours proposes ICPO (In-Context Steered Policy Optimization), which leverages the large language model's inherent in-context learning (ICL) capability as an implicit expert steer to expand the policy exploration space during RLVR training, without depending on reasoning trajectories from external stronger models.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Reinforcement Learning"
+  - "In-Context Steering"
+  - "Policy Optimization"
+  - "Exploration Enhancement"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 88bfe09df2763135
+content_hash: caf8e37e35b85105
 ---
+
 # Think Outside the Policy: In-Context Steered Policy Optimization
 
 **Conference**: ACL 2026 Findings  
@@ -134,9 +139,9 @@ The final objective function $\mathcal{J}_{\mathrm{ICPO}}(\theta)$ consists of o
 
 ## Related Papers
 
-- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](../../ICML2026/llm_reasoning/ucpo_uncertainty-aware_policy_optimization.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
+- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
 - [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](../../CVPR2026/llm_reasoning/appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
 - [\[ACL 2026\] N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization](n-grpo_embedding-level_neighbor_mixing_for_enhanced_policy_optimization.md)
 

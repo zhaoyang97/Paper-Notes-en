@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Why DPO is a Misspecified Estimator and How to Fix It
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] This paper proves from an information geometry perspective that DPO is essentially a misspecified statistical estimation problem under parameterized (non-tabular) policy classes. It demonstrates that DPO projects the true reward function onto an implicit reward manifold via KL divergence, which leads to preference reve
+  [ICLR 2026 Oral][LLM Alignment][DPO] This paper proves from an information geometry perspective that DPO is essentially a misspecified statistical estimation problem under parameterized (non-tabular) policy classes. It demonstrates that DPO projects the true reward function onto an implicit reward manifold via KL divergence, which leads to preference reversal and reward degradation when the reward is unachievable. The authors propose AuxDPO to fix this issue by introducing au…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
-  - RLHF
-  - misspecification
-  - reward alignment
-  - AuxDPO
+  - "ICLR 2026 Oral"
+  - "LLM Alignment"
+  - "DPO"
+  - "RLHF"
+  - "misspecification"
+  - "reward alignment"
+  - "AuxDPO"
 date: 2026-05-08
-content_hash: 5986c2c46ce66608
+content_hash: 1be3f7153bc2e8be
 ---
+
 # Why DPO is a Misspecified Estimator and How to Fix It
 
 **Conference**: ICLR 2026 Oral  
@@ -131,6 +132,7 @@ AuxDPO loss: $\mathcal{L}(\theta, \delta) = -\frac{1}{n} \sum_i \log \sigma(m_i(
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

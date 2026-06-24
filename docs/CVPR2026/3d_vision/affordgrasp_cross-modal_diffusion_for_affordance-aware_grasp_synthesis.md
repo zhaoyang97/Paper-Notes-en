@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AffordGrasp presents a diffusion-based cross-modal framework that synthesizes physically feasible and semantically consistent human hand grasp poses from text instructions and object point clouds. By leveraging affordance-guided latent space diffusion and a Distribution Adjustment Module (DAM), it significantly outperf
+  [CVPR 2026][3D Vision][Grasp Synthesis] AffordGrasp presents a diffusion-based cross-modal framework that synthesizes physically feasible and semantically consistent human hand grasp poses from text instructions and object point clouds. By leveraging affordance-guided latent space diffusion and a Distribution Adjustment Module (DAM), it significantly outperforms existing methods across four benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Grasp Synthesis"
+  - "Affordance"
+  - "Cross-Modal Diffusion"
+  - "Hand-Object Interaction"
+  - "Semantic Instructions"
 date: 2026-05-08
-content_hash: 2d2c2c1d450d72fc
+content_hash: 8a419af87113e025
 ---
+
 # AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis
 
 **Conference**: CVPR 2026  
@@ -129,7 +135,7 @@ The framework employs two-stage training: the diffusion model is trained first w
 
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
 - [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[CVPR 2025\] GEAL: Generalizable 3D Affordance Learning with Cross-Modal Consistency](../../CVPR2025/3d_vision/geal_generalizable_3d_affordance_learning_with_cross-modal_consistency.md)
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
 - [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
 

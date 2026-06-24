@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] For Visible-Infrared (RGBT) tiny object detection, DyFCLT first decouples cross-modal features into low/mid/high-frequency sub-bands using learnable dynamic frequency bands, performs Band-Wise Frequency Cross-modal Attention (DFCA) within each sub-band, and utilizes a foreground mask-guided Selective Smoothing and Enha
+  [CVPR 2026][Object Detection][RGBT Tiny Object Detection] For Visible-Infrared (RGBT) tiny object detection, DyFCLT first decouples cross-modal features into low/mid/high-frequency sub-bands using learnable dynamic frequency bands, performs Band-Wise Frequency Cross-modal Attention (DFCA) within each sub-band, and utilizes a foreground mask-guided Selective Smoothing and Enhancement (SSE) module to suppress background noise and enhance foreground details. It achieves SOTA AP…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "RGBT Tiny Object Detection"
+  - "Frequency Domain Learning"
+  - "Cross-Modal Attention"
+  - "Dynamic Frequency Band Decoupling"
+  - "Noise Suppression"
 date: 2026-05-08
-content_hash: d22458e925de0be1
+content_hash: ad85b6708512c18f
 ---
+
 # DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection
 
 **Conference**: CVPR 2026  
@@ -149,15 +155,14 @@ Band count/type ablation: $B=3$ (learnable) is optimal 48.2 AP; $B=1$ (none) 46.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
 - [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
+- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
 - [\[CVPR 2026\] Balanced Hierarchical Contrastive Learning with Decoupled Queries for Fine-grained Object Detection in Remote Sensing Images](balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain.md)
+- [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](tri-modal_fusion_transformers_for_uav-based_object_detection.md)
 
 </div>
 

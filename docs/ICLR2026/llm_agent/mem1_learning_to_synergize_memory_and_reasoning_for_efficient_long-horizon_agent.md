@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] MEM1 uses end-to-end reinforcement learning to train LLM agents to embed "memory consolidation" into "reasoning" itself. By maintaining a single, continuously rewritten compact internal state per round and discarding old observations, it maintains near-constant context across arbitrarily long multi-turn tasks, achievin
+  [ICLR 2026][LLM Agent][Long-horizon agents] MEM1 uses end-to-end reinforcement learning to train LLM agents to embed "memory consolidation" into "reasoning" itself. By maintaining a single, continuously rewritten compact internal state per round and discarding old observations, it maintains near-constant context across arbitrarily long multi-turn tasks, achieving higher performance, lower memory usage, and faster inference.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Long-horizon agents"
+  - "memory integration"
+  - "reinforcement learning"
+  - "context compression"
+  - "multi-objective tasks"
 date: 2026-05-08
-content_hash: b7e3b5d16bfe67e1
+content_hash: 4dc72ecb0d75bc1d
 ---
+
 # MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents
 
 **Conference**: ICLR 2026  
@@ -120,10 +125,10 @@ MEM1-7B's reward exceeds the strongest baseline AgentLM and even the double-para
 ## Related Papers
 
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
+- [\[ICLR 2026\] Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory](seeing_listening_remembering_and_reasoning_a_multimodal_agent_with_long-term_mem.md)
 - [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](../../CVPR2026/llm_agent/sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 - [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](../../ACL2026/llm_agent/structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
-- [\[ICLR 2026\] REMem: Reasoning with Episodic Memory in Language Agents](remem_reasoning_with_episodic_memory_in_language_agent.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference
 description: >-
-  [ICLR 2026][Multi-Agent][Multi-Agent System] MARTI unifies "multi-agent reasoning" and "distributed RL training" into an open-source framework. By utilizing centralized environment interaction and reward allocation, it dispatches each agent's trajectories and rewards back to their respective policy trainers. This enables multiple LLM agents to be trained together
+  [ICLR 2026][Multi-Agent][Multi-Agent System] MARTI unifies "multi-agent reasoning" and "distributed RL training" into an open-source framework. By utilizing centralized environment interaction and reward allocation, it dispatches each agent's trajectories and rewards back to their respective policy trainers. This enables multiple LLM agents to be trained together via RL during collaboration, achieving a higher mathematical reasoning upper bound than a single agent under the s…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Multi-Agent System
-  - Reinforcement Learning
-  - LLM Reasoning
-  - Credit Assignment
-  - Reward Shaping
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-Agent System"
+  - "Reinforcement Learning"
+  - "LLM Reasoning"
+  - "Credit Assignment"
+  - "Reward Shaping"
 date: 2026-05-08
-content_hash: 0144331769931e56
+content_hash: 0473ec944bea8ad2
 ---
+
 # MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference
 
 **Conference**: ICLR 2026  

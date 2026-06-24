@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Strategy-Induct: Task-Level Strategy Induction for Instruction Generation
 description: >-
-  [ACL 2026][LLM Reasoning][question-only] Strategy-Induct proposes a framework for inducing task-level instructions using only a few input questions without requiring ground-truth labels. By first generating reasoning strategies for individual questions and then inducing reusable task instructions from strategy-question pairs, the method surpasses current SOTA
+  [ACL2026 Findings][Reasoning][Instruction Induction] Strategy-Induct proposes a framework for inducing task-level instructions using only a few input questions without requiring ground-truth labels. By first generating reasoning strategies for individual questions and then inducing reusable task instructions from strategy-question pairs, the method surpasses current SOTA approaches on BBH-Induct, Evals-Induct, and Shift Cipher benchmarks.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - question-only
+  - "ACL2026 Findings"
+  - "Reasoning"
+  - "Instruction Induction"
+  - "Reasoning Strategy"
+  - "Prompt Engineering"
+  - "Question-only"
+  - "Task-level Instructions"
+  - "Cross-model Generalization"
 date: 2026-05-08
-content_hash: cd526ea6bf944d0e
+content_hash: b1adb99714cdd9ba
 ---
+
 # Strategy-Induct: Task-Level Strategy Induction for Instruction Generation
 
 **Conference**: ACL2026 Findings  
@@ -132,11 +138,11 @@ N=3 is the optimal balance point—N=1 lacks diversity, while N=5 may exceed the
 
 ## Related Papers
 
+- [\[ICLR 2026\] DeepCompress: A Dual Reward Strategy for Dynamically Exploring and Compressing Reasoning Chains](../../ICLR2026/llm_reasoning/deepcompress_a_dual_reward_strategy_for_dynamically_exploring_and_compressing_re.md)
 - [\[ECCV 2024\] Controllable Navigation Instruction Generation with Chain of Thought Prompting](../../ECCV2024/llm_reasoning/controllable_navigation_instruction_generation_with_chain_of_thought_prompting.md)
 - [\[ACL 2026\] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs](chairo_contextual_hierarchical_analogical_induction_and_reasoning_optimization_f.md)
 - [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 - [\[ACL 2026\] Stabilizing Efficient Reasoning with Step-Level Advantage Selection](stabilizing_efficient_reasoning_with_step-level_advantage_selection.md)
-- [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
 
 </div>
 

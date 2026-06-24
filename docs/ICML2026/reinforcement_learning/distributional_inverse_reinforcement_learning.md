@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distributional Inverse Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper proposes DistIRL: it models rewards as conditional distributions in offline Inverse Reinforcement Learning and upgrades the "expert is superior to the learner" constraint from expectation to First-order Stochastic Dominance (FSD). By relaxing the intractable 0/1 indicator function of FSD into an optimizable
+  [ICML 2026 Oral][Reinforcement Learning][Offline IRL] This paper proposes DistIRL: it models rewards as conditional distributions in offline Inverse Reinforcement Learning and upgrades the "expert is superior to the learner" constraint from expectation to First-order Stochastic Dominance (FSD). By relaxing the intractable 0/1 indicator function of FSD into an optimizable risk-weighted objective using Distortion Risk Measures (DRM), the framework systematically learns both com…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026 Oral"
+  - "Reinforcement Learning"
+  - "Offline IRL"
+  - "Reward Distribution"
+  - "First-order Stochastic Dominance (FSD)"
+  - "Distortion Risk Measures (DRM)"
+  - "Neural Behavioral Modeling"
 date: 2026-05-08
-content_hash: 9e7e30c1347b4453
+content_hash: e693f794e85a0ce1
 ---
+
 # Distributional Inverse Reinforcement Learning
 
 **Conference**: ICML 2026 Oral  
@@ -136,11 +142,11 @@ HalfCheetah + Right-skewed Gaussian reward + risk-averse expert, normalized scor
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/convergence_theorems_for_entropy-regularized_and_distributional_reinforcement_le.md)
+- [\[ICLR 2026\] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning](../../ICLR2026/reinforcement_learning/grace_a_language_model_framework_for_explainable_inverse_reinforcement_learning.md)
 - [\[ICML 2026\] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation](drive_distributional_and_retrieval-augmented_bidding_with_value_evaluation.md)
+- [\[NeurIPS 2025\] Convergence Theorems for Entropy-Regularized and Distributional Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/convergence_theorems_for_entropy-regularized_and_distributional_reinforcement_le.md)
+- [\[ICLR 2026\] Distributional value gradients for stochastic environments](../../ICLR2026/reinforcement_learning/distributional_value_gradients_for_stochastic_environments.md)
 - [\[NeurIPS 2025\] Inverse Optimization Latent Variable Models for Learning Costs Applied to Route Problems](../../NeurIPS2025/reinforcement_learning/inverse_optimization_latent_variable_models_for_learning_costs_applied_to_route_.md)
-- [\[ICML 2025\] Decoding Rewards in Competitive Games: Inverse Game Theory with Entropy Regularization](../../ICML2025/reinforcement_learning/decoding_rewards_in_competitive_games_inverse_game_theory_with_entropy_regulariz.md)
-- [\[ICML 2026\] Safe In-Context Reinforcement Learning](safe_in-context_reinforcement_learning.md)
 
 </div>
 

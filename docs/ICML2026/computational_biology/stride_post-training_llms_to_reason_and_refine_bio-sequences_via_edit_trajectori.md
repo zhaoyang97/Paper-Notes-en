@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories
 description: >-
-  [ICML 2026][Computational Biology][GRPO] STRIDE reformulates "protein/molecule sequence optimization" as "trajectory planning in edit space." It trains an LLM to explicitly generate executable atomic edit scripts (INSERT/DELETE/REPLACE). By using Levenshtein shortest edit paths for SFT and GRPO-style reinforcement learning to align with task rewards, STRIDE i
+  [ICML2026][Computational Biology][Bio-sequence optimization] STRIDE reformulates "protein/molecule sequence optimization" as "trajectory planning in edit space." It trains an LLM to explicitly generate executable atomic edit scripts (INSERT/DELETE/REPLACE). By using Levenshtein shortest edit paths for SFT and GRPO-style reinforcement learning to align with task rewards, STRIDE increases the success rate of protein all-action stress tests from 42% to 89% and novelty from 47% t…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - GRPO
+  - "ICML2026"
+  - "Computational Biology"
+  - "Bio-sequence optimization"
+  - "edit trajectories"
+  - "post-training"
+  - "GRPO"
+  - "protein/molecule design"
 date: 2026-05-08
-content_hash: 59884535775aec00
+content_hash: d802553c1782dd84
 ---
+
 # STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories
 
 **Conference**: ICML2026  
@@ -145,8 +150,20 @@ GSPO alignment significantly improves validity, strict success rate, and control
 - Value: ⭐⭐⭐⭐⭐ Provides a controllable, verifiable, and variable-length interface for discrete sequence engineering.
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] CDBridge: A Cross-omics Post-training Bridge Strategy for Context-aware Biological Modeling](../../ICLR2026/computational_biology/cdbridge_a_cross-omics_post-training_bridge_strategy_for_context-aware_biologica.md)
+- [\[ICML 2026\] CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences](conditionally_site-independent_neural_evolution_of_antibody_sequences.md)
+- [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](../../ICLR2026/computational_biology/thompson_sampling_via_fine-tuning_of_llms.md)
+- [\[ICML 2026\] Active Timepoint Selection for Learning Measure-Valued Trajectories](active_timepoint_selection_for_learning_measure-valued_trajectories.md)
+- [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](../../ICLR2026/computational_biology/cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Protein as a Second Language for LLMs](../../ICLR2026/computational_biology/protein_as_a_second_language_for_llms.md)

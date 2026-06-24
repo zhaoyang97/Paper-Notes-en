@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes the first primal-dual policy optimization algorithm for finite-horizon linear CMDPs with adversarial losses and stochastic costs. By employing a novel "weighted LogSumExp softmax policy" combined with periodic policy mixing and regularized dual updates, it achieves sublinear regret and constraint vi
+  [ICLR 2026][Reinforcement Learning][Linear CMDP] This paper proposes the first primal-dual policy optimization algorithm for finite-horizon linear CMDPs with adversarial losses and stochastic costs. By employing a novel "weighted LogSumExp softmax policy" combined with periodic policy mixing and regularized dual updates, it achieves sublinear regret and constraint violation (both $\tilde{O}(K^{3/4})$) while controlling the covering number of the policy class and the dual vari…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Linear CMDP"
+  - "Adversarial Losses"
+  - "Primal-Dual"
+  - "Policy Optimization"
+  - "Covering Number"
 date: 2026-05-08
-content_hash: a0c7082ff0519f25
+content_hash: e4ff83f6a99d7449
 ---
+
 # Primal-Dual Policy Optimization for Linear CMDPs with Adversarial Losses
 
 **Conference**: ICLR 2026  
@@ -122,10 +128,17 @@ As a theoretical study, numerical experiments verify trends rather than provide 
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
+- [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
+- [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
+- [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](../../NeurIPS2025/reinforcement_learning/global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)

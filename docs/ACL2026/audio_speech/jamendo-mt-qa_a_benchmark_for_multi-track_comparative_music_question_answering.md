@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Jamendo-MT-QA: A Benchmark for Multi-Track Comparative Music Question Answering
 description: >-
-  [ACL 2026][Audio & Speech][LLM-as-a-Judge] Construcs Jamendo-MT-QA, a multi-track comparative music QA benchmark containing 36,519 comparative QA pairs (covering 12,173 track pairs), to systematically evaluate the cross-track comparative reasoning capabilities of audio-language models for the first time, revealing significant deficiencies of existing models in
+  [ACL 2026 Findings][Audio & Speech][Music Question Answering] Construcs Jamendo-MT-QA, a multi-track comparative music QA benchmark containing 36,519 comparative QA pairs (covering 12,173 track pairs), to systematically evaluate the cross-track comparative reasoning capabilities of audio-language models for the first time, revealing significant deficiencies of existing models in sentence-level comparison generation.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - LLM-as-a-Judge
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Music Question Answering"
+  - "Multi-track Comparative Reasoning"
+  - "Audio-Language Models"
+  - "Benchmark Datasets"
+  - "LLM-as-a-Judge"
 date: 2026-05-08
-content_hash: 48a9fc16a5b80608
+content_hash: dbc52ccd7ba3b76d
 ---
+
 # Jamendo-MT-QA: A Benchmark for Multi-Track Comparative Music Question Answering
 
 **Conference**: ACL 2026 Findings  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 description: >-
-  [CVPR 2026][Remote Sensing][hyperspectral video] The Lumosaic system is proposed for active hyperspectral video, synchronizing a 12-narrowband LED array with a Coded-Exposure Pixel (CEP) camera at microsecond precision. By jointly encoding spatial-temporal-spectral information across 158 sub-frames per frame, it achieves motion-robust reconstruction of 31-channel (40
+  [CVPR 2026][3D Vision][hyperspectral video] The Lumosaic system is proposed for active hyperspectral video, synchronizing a 12-narrowband LED array with a Coded-Exposure Pixel (CEP) camera at microsecond precision. By jointly encoding spatial-temporal-spectral information across 158 sub-frames per frame, it achieves motion-robust reconstruction of 31-channel (400–700nm) hyperspectral video at 30fps VGA resolution, surpassing passive snapshot systems by over 10dB in PSNR.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - hyperspectral video
-  - coded-exposure pixel
-  - active illumination
-  - motion-robust
-  - spectral reconstruction
+  - "CVPR 2026"
+  - "3D Vision"
+  - "hyperspectral video"
+  - "coded-exposure pixel"
+  - "active illumination"
+  - "motion-robust"
+  - "spectral reconstruction"
 date: 2026-05-08
-content_hash: ceaea840e9034690
+content_hash: 74d3e922e528a3c5
 ---
+
 # Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 
 **Conference**: CVPR 2026  
@@ -170,11 +171,11 @@ $\mathcal{L}_1$ loss, Adam optimizer (lr=1e-4), batch size 14 with 2-step gradie
 
 ## Related Papers
 
-- [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
-- [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
-- [\[CVPR 2026\] No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors](no_labels_no_look-ahead_unsupervised_online_video_stabilization_with_classical_p.md)
-- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
-- [\[CVPR 2026\] MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging](metaspectra_a_compact_broadband_metasurface_camera_for_snapshot_hyperspectral_im.md)
+- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
+- [\[CVPR 2026\] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)
+- [\[CVPR 2026\] VENI: Variational Encoder for Natural Illumination](veni_variational_encoder_for_natural_illumination.md)
+- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
+- [\[CVPR 2026\] TokenGS: Decoupling 3D Gaussian Prediction from Pixels with Learnable Tokens](tokengs_decoupling_3d_gaussian_prediction_from_pixels_with_learnable_tokens.md)
 
 </div>
 

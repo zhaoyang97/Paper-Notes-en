@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IDFace: Face Template Protection for Efficient and Secure Identification
 description: >-
-  [ICCV 2025][Human Understanding][face template protection] This paper proposes IDFace, a homomorphic encryption (HE)-based face template protection method that achieves retrieval over 1 million encrypted templates in onl…
+  [ICCV 2025][Human Understanding][face template protection] This paper proposes IDFace, a homomorphic encryption (HE)-based face template protection method that achieves retrieval over 1 million encrypted templates in only 126ms — incurring merely a 2× overhead compared to unprotected retrieval — through two key techniques: a near-isometric transformation (real-valued vector → ternary vector) and a space-efficient encoding scheme.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "large-scale identification"
   - "ternary quantization"
 date: 2026-05-08
-content_hash: e06b68054842e5f7
+content_hash: 5eb18f88c599d9af
 ---
 
 # IDFace: Face Template Protection for Efficient and Secure Identification
@@ -123,11 +123,11 @@ Accuracy degradation on LFW, CFP-FP, and AgeDB remains below 1% even under the m
 
 ## Related Papers
 
-- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
+- [\[CVPR 2025\] Efficient Video Face Enhancement with Enhanced Spatial-Temporal Consistency](../../CVPR2025/human_understanding/efficient_video_face_enhancement_with_enhanced_spatial-temporal_consistency.md)
 - [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
 - [\[AAAI 2026\] CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning](../../AAAI2026/human_understanding/clip-fti_fine-grained_face_template_inversion_via_clip-driven_attribute_conditio.md)
+- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
 - [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
-- [\[ICML 2026\] Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets](../../ICML2026/human_understanding/efficient_validation-free_intrinsic_quality_estimation_for_large-scale_face_reco.md)
 
 </div>
 

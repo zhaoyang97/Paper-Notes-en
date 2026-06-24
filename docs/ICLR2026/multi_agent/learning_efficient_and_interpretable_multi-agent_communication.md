@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Efficient and Interpretable Multi-Agent Communication
 description: >-
-  [ICLR 2026][Multi-Agent][Interpretability] GLC unifies "discrete autoencoder compression + LLM offline semantic anchoring + inter-agent contrastive alignment" into an Information Bottleneck framework. This allows learned multi-agent communication protocols to achieve extreme bandwidth efficiency, strong task performance, and human readability simultaneously, br
+  [ICLR 2026][Multi-Agent][Multi-agent communication] GLC unifies "discrete autoencoder compression + LLM offline semantic anchoring + inter-agent contrastive alignment" into an Information Bottleneck framework. This allows learned multi-agent communication protocols to achieve extreme bandwidth efficiency, strong task performance, and human readability simultaneously, breaking the "trilemma" of communication efficiency, utility, and interpretability.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Interpretability
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent communication"
+  - "discrete communication protocols"
+  - "Information Bottleneck"
+  - "LLM semantic alignment"
+  - "contrastive learning"
+  - "interpretability"
 date: 2026-05-08
-content_hash: 61789229dd72c184
+content_hash: 4269378598e31816
 ---
+
 # Learning Efficient and Interpretable Multi-Agent Communication
 
 **Conference**: ICLR 2026  
@@ -146,7 +152,7 @@ Dynamic annealing leads to faster task completion and lower total communication 
 - [\[ICLR 2026\] Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems](stop_wasting_your_tokens_towards_efficient_runtime_multi-agent_systems.md)
 - [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
 - [\[AAAI 2026\] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](../../AAAI2026/multi_agent/arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment.md)
-- [\[ICLR 2026\] Benefits and Limitations of Communication in Multi-Agent Reasoning](benefits_and_limitations_of_communication_in_multi-agent_reasoning.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 
 </div>
 

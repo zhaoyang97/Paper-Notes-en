@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] Unlearning Evaluation through Subset Statistical Independence
 description: >-
-  [ICLR 2026][LLM Safety][HSIC] Proposes Split-half Dependence Evaluation (SDE), which utilizes HSIC statistical independence tests to evaluate machine unlearning effectiveness at the subset level without requiring model retraining or auxiliary classifiers.
+  [LLM Safety] Proposes Split-half Dependence Evaluation (SDE), which utilizes HSIC statistical independence tests to evaluate machine unlearning effectiveness at the subset level without requiring model retraining or auxiliary classifiers.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - HSIC
+  - "LLM Safety"
 date: 2026-05-08
-content_hash: c4f471cfb0835b8e
+content_hash: fc54e2747a51a3cb
 ---
+
 # Unlearning Evaluation through Subset Statistical Independence
 
 ## Paper Information

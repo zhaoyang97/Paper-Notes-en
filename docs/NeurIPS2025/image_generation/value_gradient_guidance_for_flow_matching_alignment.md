@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Value Gradient Guidance for Flow Matching Alignment
 description: >-
-  [NeurIPS 2025][Image Generation][Flow Matching] This paper proposes VGG-Flow, which leverages the Hamilton-Jacobi-Bellman (HJB) equation from optimal control theory to reformulate flow matching alignment as a gradient ma…
+  [NeurIPS 2025][Image Generation][Flow Matching] This paper proposes VGG-Flow, which leverages the Hamilton-Jacobi-Bellman (HJB) equation from optimal control theory to reformulate flow matching alignment as a gradient matching task—matching the residual velocity field to the gradient of the value function—enabling efficient reward alignment while preserving the prior distribution.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "HJB Equation"
   - "Value Function Gradient"
 date: 2026-05-08
-content_hash: d01a11fe8cb4e3e1
+content_hash: aacba65804a97016
 ---
 
 # Value Gradient Guidance for Flow Matching Alignment
@@ -149,9 +149,9 @@ The training pipeline proceeds as follows: simulate ODE trajectories → update 
 
 - [\[NeurIPS 2025\] Flow Matching Neural Processes](flow_matching_neural_processes.md)
 - [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
-- [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](../../ICLR2026/image_generation/densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
+- [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](../../ICLR2026/image_generation/value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
-- [\[NeurIPS 2025\] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models](gradient_variance_reveals_failure_modes_in_flow-based_generative_models.md)
+- [\[NeurIPS 2025\] Shortcutting Pre-trained Flow Matching Diffusion Models is Almost Free Lunch](shortcutting_pre-trained_flow_matching_diffusion_models_is_almost_free_lunch.md)
 
 </div>
 

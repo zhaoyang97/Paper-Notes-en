@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How can embedding models bind concepts?
 description: >-
-  [ICML 2026][Information Retrieval & RAG][CLIP] This paper formalizes the question of "why embedding models fail to bind concepts" as a "complexity problem of the binding function." Through geometric analysis, it demonstrates that CLIP's scene embeddings decompose additively into objects and concepts (explaining why they are probeable in unimodal settings but fail c
+  [ICML2026][Information Retrieval & RAG][Concept Binding] This paper formalizes the question of "why embedding models fail to bind concepts" as a "complexity problem of the binding function." Through geometric analysis, it demonstrates that CLIP's scene embeddings decompose additively into objects and concepts (explaining why they are probeable in unimodal settings but fail cross-modally). Furthermore, it proves on controlled Transformers that with sufficient data coverage…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - CLIP
+  - "ICML2026"
+  - "Information Retrieval & RAG"
+  - "Concept Binding"
+  - "CLIP"
+  - "Embedding Geometry"
+  - "Compositional Generalization"
+  - "Multimodal Alignment"
 date: 2026-05-08
-content_hash: 7603715adbece563
+content_hash: e54647404d098c22
 ---
+
 # How can embedding models bind concepts?
 
 **Conference**: ICML2026  
@@ -131,9 +136,9 @@ This table provides the definitive causal evidence: object-level components carr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/information_retrieval/explaining_clip_zero-shot_predictions_through_concepts.md)
 - [\[ACL 2026\] How Large Language Models Balance Internal Knowledge with User and Document Assertions](../../ACL2026/information_retrieval/how_large_language_models_balance_internal_knowledge_with_user_and_document_asse.md)
 - [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](../../ACL2026/information_retrieval/can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
+- [\[ICML 2026\] Seeing to Generalize: How Visual Data Corrects Binding Shortcuts](seeing_to_generalize_how_visual_data_corrects_binding_shortcuts.md)
 - [\[ACL 2025\] Semantic Outlier Removal with Embedding Models and LLMs](../../ACL2025/information_retrieval/semantic_outlier_removal_with_embedding_models_and_llms.md)
 - [\[ACL 2025\] Length-Induced Embedding Collapse in PLM-based Models](../../ACL2025/information_retrieval/length-induced_embedding_collapse_in_plm-based_models.md)
 

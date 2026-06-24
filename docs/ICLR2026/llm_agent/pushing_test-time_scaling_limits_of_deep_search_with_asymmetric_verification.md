@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification
 description: >-
-  [ICLR 2026][LLM Agent][Best-of-K] This paper systematically investigates test-time compute scaling for deep search agents. Identifying the "hard to search, easy to verify" asymmetry, it proposes allocating compute from the search agent to a verifier agent to efficiently filter candidate answers. This approach upgrades open-source models like GLM-4.5, K
+  [ICLR 2026][LLM Agent][Deep Search Agents] This paper systematically investigates test-time compute scaling for deep search agents. Identifying the "hard to search, easy to verify" asymmetry, it proposes allocating compute from the search agent to a verifier agent to efficiently filter candidate answers. This approach upgrades open-source models like GLM-4.5, K2, Qwen3-2507, and Tongyi-DeepResearch to "Heavy" versions, achieving improvements of up to 20+ percentage points on…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Best-of-K
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Deep Search Agents"
+  - "Test-Time Scaling"
+  - "Asymmetric Verification"
+  - "Best-of-K"
+  - "Compute-Optimal"
 date: 2026-05-08
-content_hash: fbe7795779169ae7
+content_hash: ab6856e6f54b9930
 ---
+
 # Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification
 
 **Conference**: ICLR 2026  
@@ -142,9 +147,9 @@ Comparison of verifier scaling strategies (using GLM-4.5 starting from vanilla $
 
 - [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](gta1_gui_test-time_scaling_agent.md)
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
+- [\[ICLR 2026\] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](search_self-play_pushing_the_frontier_of_agent_capability_without_supervision.md)
 - [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
-- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
-- [\[ICLR 2026\] Open Data Synthesis for Deep Research](open_data_synthesis_for_deep_research.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 
 </div>
 

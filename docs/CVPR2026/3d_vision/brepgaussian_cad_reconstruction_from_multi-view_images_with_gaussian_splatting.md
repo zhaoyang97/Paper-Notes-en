@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][B-rep] BRepGaussian achieves for the first time the direct reconstruction of complete B-rep CAD models from multi-view images. It learns edge and patch features through two-stage 2D Gaussian Splatting, followed by parametric fitting to generate watertight boundary representations without requiring point cloud supervision.
+  [CVPR 2026][3D Vision][CAD reconstruction] BRepGaussian achieves for the first time the direct reconstruction of complete B-rep CAD models from multi-view images. It learns edge and patch features through two-stage 2D Gaussian Splatting, followed by parametric fitting to generate watertight boundary representations without requiring point cloud supervision.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - B-rep
+  - "CVPR 2026"
+  - "3D Vision"
+  - "CAD reconstruction"
+  - "B-rep"
+  - "Gaussian Splatting"
+  - "Parametric surface fitting"
+  - "Contrastive learning"
 date: 2026-05-08
-content_hash: ae9a251a52d4e137
+content_hash: d1c1f77c7dd5978a
 ---
+
 # BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ CAD reconstruction quality comparison ($D_c$: Chamfer Distance $\times 10^{-2}$,
 
 ## Related Papers
 
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
 - [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
-- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
+- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
 
 </div>
 

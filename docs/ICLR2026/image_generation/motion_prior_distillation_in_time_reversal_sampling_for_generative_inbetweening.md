@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening
 description: >-
-  [ICLR 2026][Image Generation][SVD] Ours proposes Motion Prior Distillation (MPD), an inference-time distillation method that distills motion residuals from the forward path into the backward path. This fundamentally resolves the motion prior conflict in time reversal sampling, enabling more coherent generative frame interpolation without additional trai
+  [ICLR 2026][Image Generation][Generative Frame Interpolation] Ours proposes Motion Prior Distillation (MPD), an inference-time distillation method that distills motion residuals from the forward path into the backward path. This fundamentally resolves the motion prior conflict in time reversal sampling, enabling more coherent generative frame interpolation without additional training.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - SVD
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Generative Frame Interpolation"
+  - "Motion Prior"
+  - "Time Reversal Sampling"
+  - "Inference-time Distillation"
+  - "SVD"
 date: 2026-05-08
-content_hash: d4366c8c6820f80c
+content_hash: aecce012fdd48487
 ---
+
 # Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening
 
 **Conference**: ICLR 2026  
@@ -142,7 +147,7 @@ MPD is a purely inference-time method requiring no training. Its effect is parti
 - [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
 - [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
 - [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](../../ICCV2025/image_generation/inference-time_diffusion_model_distillation.md)
-- [\[CVPR 2026\] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening](../../CVPR2026/image_generation/anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening.md)
+- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
 - [\[ICLR 2026\] Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment](mitigating_semantic_collapse_in_generative_personalization_with_test-time_embedd.md)
 
 </div>

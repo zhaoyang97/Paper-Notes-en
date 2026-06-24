@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Data Verification is the Future of Quantum Computing Copilots
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][quantum circuit optimization] This position paper argues that data verification must be elevated from a post-hoc filtering step to a foundational architectural principle in qua…
+  [AAAI 2026][Physics & Scientific Computing][quantum circuit optimization] This position paper argues that data verification must be elevated from a post-hoc filtering step to a foundational architectural principle in quantum computing AI copilots. Three positions are advanced: (1) verified data is a minimum requirement; (2) prior constraints outperform posterior filtering; (3) scientific domains governed by physical laws require verification-aware architectures. Experiments d…
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "data quality"
   - "verification-first architecture"
 date: 2026-05-08
-content_hash: aa88e513c5ec27a5
+content_hash: 2f2cb4410149314c
 ---
 
 # Data Verification is the Future of Quantum Computing Copilots
@@ -126,11 +126,11 @@ Performance of 34 LLMs on quantum circuit optimization multiple-choice questions
 
 ## Related Papers
 
+- [\[ICLR 2026\] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers](../../ICLR2026/physics/aqer_a_scalable_and_efficient_data_loader_for_digital_quantum_computers.md)
+- [\[ICML 2025\] OmniArch: Building Foundation Model For Scientific Computing](../../ICML2025/physics/omniarch_building_foundation_model_for_scientific_computing.md)
 - [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
+- [\[CVPR 2025\] ATP: Adaptive Threshold Pruning for Efficient Data Encoding in Quantum Neural Networks](../../CVPR2025/physics/atp_adaptive_threshold_pruning_for_efficient_data_encoding_in_quantum_neural_net.md)
 - [\[AAAI 2026\] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
-- [\[NeurIPS 2025\] Quantum Doubly Stochastic Transformers](../../NeurIPS2025/physics/quantum_doubly_stochastic_transformers.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/physics/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 
 </div>
 

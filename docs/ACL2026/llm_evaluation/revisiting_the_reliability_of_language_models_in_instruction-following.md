@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Revisiting the Reliability of Language Models in Instruction-Following
 description: >-
-  [ACL 2026][LLM Evaluation][IFEval++] This paper introduces nuance-oriented reliability and the reliable@k metric, utilizing IFEval++ to examine whether models can consistently handle "cousin prompts" with similar semantics but varying details. It reveals that even high-performing models experience significant performance drops under subtle prompt variatio
+  [ACL2026][LLM Evaluation][Instruction following] This paper introduces nuance-oriented reliability and the reliable@k metric, utilizing IFEval++ to examine whether models can consistently handle "cousin prompts" with similar semantics but varying details. It reveals that even high-performing models experience significant performance drops under subtle prompt variations.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - IFEval++
-  - cousin prompts
-  - reliable@k
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Instruction following"
+  - "reliability evaluation"
+  - "IFEval++"
+  - "cousin prompts"
+  - "reliable@k"
 date: 2026-05-08
-content_hash: f305ba04c1da2e9a
+content_hash: 34f53df2fba80d09
 ---
+
 # Revisiting the Reliability of Language Models in Instruction-Following
 
 **Conference**: ACL2026  
@@ -143,10 +146,10 @@ The paper tests three types of methods for reliability improvement: prediction, 
 
 ## Related Papers
 
-- [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
 - [\[ACL 2026\] WildIFEval: Instruction Following in the Wild](wildifeval_instruction_following_in_the_wild.md)
-- [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
+- [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
+- [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 - [\[ACL 2025\] StructFlowBench: A Structured Flow Benchmark for Multi-turn Instruction Following](../../ACL2025/llm_evaluation/structflowbench_a_structured_flow_benchmark_for_multi-turn_instruction_following.md)
 
 </div>

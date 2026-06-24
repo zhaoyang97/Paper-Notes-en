@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GuidedBench: Measuring and Mitigating the Evaluation Discrepancies of In-the-wild LLM Jailbreak Methods
 description: >-
-  [ICLR 2026][Alignment & RLHF][jailbreak evaluation] By systematically measuring 37 jailbreak studies, this paper reveals that existing jailbreak evaluations are severely distorted due to a "lack of case-specific standards." It proposes GuidedBench—an evaluation system with per-question scoring guidelines that transforms the subjective judgment of "whether a jailbreak su
+  [ICLR 2026][LLM Alignment][jailbreak evaluation] By systematically measuring 37 jailbreak studies, this paper reveals that existing jailbreak evaluations are severely distorted due to a "lack of case-specific standards." It proposes GuidedBench—an evaluation system with per-question scoring guidelines that transforms the subjective judgment of "whether a jailbreak succeeded" into an objective check of "whether guideline points were hit," reducing inter-evaluator variance by a…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - jailbreak evaluation
-  - LLM safety
-  - benchmark
-  - LLM-as-a-judge
-  - attack success rate
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "jailbreak evaluation"
+  - "LLM safety"
+  - "benchmark"
+  - "LLM-as-a-judge"
+  - "attack success rate"
 date: 2026-05-08
-content_hash: 2bc5c235face1127
+content_hash: f4d2e65a4b78ae1b
 ---
+
 # GuidedBench: Measuring and Mitigating the Evaluation Discrepancies of In-the-wild LLM Jailbreak Methods
 
 **Conference**: ICLR 2026  
@@ -133,9 +134,9 @@ where $m$ is the evaluator LLM, $G_i$ is the set of scoring points for question 
 
 - [\[ICLR 2026\] ELEPHANT: Measuring and Understanding Social Sycophancy in LLMs](elephant_measuring_and_understanding_social_sycophancy_in_llms.md)
 - [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
 - [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
-- [\[NeurIPS 2025\] EvoRefuse: Evolutionary Prompt Optimization for Evaluation and Mitigation of LLM Over-Refusal to Pseudo-Malicious Instructions](../../NeurIPS2025/llm_alignment/evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)
+- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
+- [\[NeurIPS 2025\] EvoRefuse: Evaluating and Mitigating LLM Over-Refusal via Evolutionary Prompt Optimization](../../NeurIPS2025/llm_alignment/evorefuse_evolutionary_prompt_optimization_for_evaluation_and_mitigation_of_llm_.md)
 
 </div>
 

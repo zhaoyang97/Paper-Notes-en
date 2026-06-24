@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][DiT] SeeThrough3D is proposed to condition the FLUX model via an Occlusion-aware Scene Representation (OSCR) rendered from semi-transparent 3D bounding boxes, achieving precise 3D layout control and occlusion-consistent text-to-image generation.
+  [CVPR2026][Image Generation][3D Layout Control] SeeThrough3D is proposed to condition the FLUX model via an Occlusion-aware Scene Representation (OSCR) rendered from semi-transparent 3D bounding boxes, achieving precise 3D layout control and occlusion-consistent text-to-image generation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DiT
-  - FLUX
+  - "CVPR2026"
+  - "Image Generation"
+  - "3D Layout Control"
+  - "Occlusion Awareness"
+  - "Text-to-Image Generation"
+  - "DiT"
+  - "FLUX"
+  - "Attention Masking"
+  - "LoRA"
 date: 2026-05-08
-content_hash: ae4b864e451b12e4
+content_hash: 62cb5467fcb5bea2
 ---
+
 # SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation
 
 **Conference**: CVPR2026  
@@ -143,11 +149,11 @@ SeeThrough3D significantly outperforms existing methods across all five metrics.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers](layer-wise_instance_binding_for_regional_and_occlusion_control_in_text-to-image_.md)
 - [\[CVPR 2026\] 3D Space as a Scratchpad for Editable Text-to-Image Generation](3d_space_as_a_scratchpad_for_editable_text-to-image_generation.md)
 - [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](../../ICCV2025/image_generation/larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
+- [\[CVPR 2026\] Camera Control for Text-to-Image Generation via Learning Viewpoint Tokens](camera_control_for_text-to-image_generation_via_learning_viewpoint_tokens.md)
 - [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
-- [\[CVPR 2026\] Taming Video Models for 3D and 4D Generation via Zero-Shot Camera Control](taming_video_models_for_3d_and_4d_generation_via_zero-shot_camera_control.md)
-- [\[CVPR 2025\] Compass Control: Multi Object Orientation Control for Text-to-Image Generation](../../CVPR2025/image_generation/compass_control_multi_object_orientation_control_for_text-to-image_generation.md)
 
 </div>
 

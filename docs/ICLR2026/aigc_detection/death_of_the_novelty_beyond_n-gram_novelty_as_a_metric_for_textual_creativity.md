@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Death of the Novel(ty): Beyond n-Gram Novelty as a Metric for Textual Creativity
 description: >-
-  [ICLR 2026][AIGC Detection][textual creativity] Through close reading annotations of 8,618 expressions by 26 professional writers, this study reveals that n-gram novelty is insufficient to measure textual creativity—approximately 91% of expressions with high n-gram novelty are not considered creative, and a negative correlation exists between high n-gram novelty and
+  [ICLR 2026][AIGC Detection][textual creativity] Through close reading annotations of 8,618 expressions by 26 professional writers, this study reveals that n-gram novelty is insufficient to measure textual creativity—approximately 91% of expressions with high n-gram novelty are not considered creative, and a negative correlation exists between high n-gram novelty and low pragmaticality in open-source LLMs.
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - textual creativity
-  - n-gram novelty
-  - LLM evaluation
-  - close reading
-  - pragmaticality
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "textual creativity"
+  - "n-gram novelty"
+  - "LLM evaluation"
+  - "close reading"
+  - "pragmaticality"
 date: 2026-05-08
-content_hash: 114bbe0e82e0c457
+content_hash: 586ad5d9185137e3
 ---
+
 # Death of the Novel(ty): Beyond n-Gram Novelty as a Metric for Textual Creativity
 
 **Conference**: ICLR 2026  
@@ -154,8 +155,8 @@ The probability of an expression being judged as creative was significantly lowe
 - [\[ICLR 2026\] Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection](beyond_raw_detection_scores_markov-informed_calibration_for_boosting_machine-gen.md)
 - [\[NeurIPS 2025\] CLAWS: Creativity Detection for LLM-Generated Solutions Using Attention Window of Sections](../../NeurIPS2025/aigc_detection/clawscreativity_detection_for_llm-generated_solutions_using_attention_window_of_.md)
 - [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](../../ACL2026/aigc_detection/beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
-- [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
-- [\[ICLR 2026\] Preserving Forgery Artifacts: AI-Generated Video Detection at Native Scale](preserving_forgery_artifacts_ai-generated_video_detection_at_native_scale.md)
+- [\[ICLR 2026\] PoliCon: Evaluating LLMs on Achieving Diverse Political Consensus Objectives](policon_evaluating_llms_on_achieving_diverse_political_consensus_objectives.md)
+- [\[ICLR 2026\] Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models](spherical_watermark_encryption-free_lossless_watermarking_for_diffusion_models.md)
 
 </div>
 

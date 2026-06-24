@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Landing with the Score: Riemannian Optimization through Denoising
 description: >-
-  [ICLR 2026][Optimization & Theory][Diffusion Model] When a manifold is only implicitly provided via data samples, this paper utilizes the score function and its Jacobian learned by diffusion models to approximate the "nearest point projection" and "tangent space projection" on the manifold. This translates classical Riemannian optimization to scenarios with only data an
+  [ICLR 2026][Optimization][Riemannian optimization] When a manifold is only implicitly provided via data samples, this paper utilizes the score function and its Jacobian learned by diffusion models to approximate the "nearest point projection" and "tangent space projection" on the manifold. This translates classical Riemannian optimization to scenarios with only data and no explicit geometry, providing two inference-time algorithms (DLF / DRGD) with non-asymptotic convergence…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Diffusion Model
-  - score function
-  - Denoising
+  - "ICLR 2026"
+  - "Optimization"
+  - "Riemannian optimization"
+  - "diffusion models"
+  - "score function"
+  - "data manifold"
+  - "denoising"
+  - "data-driven control"
 date: 2026-05-08
-content_hash: 7fd7dbeb9a00c65c
+content_hash: 91a59c3c5c8afcc3
 ---
+
 # Landing with the Score: Riemannian Optimization through Denoising
 
 **Conference**: ICLR 2026  
@@ -113,8 +117,8 @@ Key Conclusion: Using the trajectory with the minimum objective in the training 
 - [\[ICLR 2026\] Riemannian Optimization on Relaxed Indicator Matrix Manifold](riemannian_optimization_on_relaxed_indicator_matrix_manifold.md)
 - [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
 - [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
-- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
 - [\[ICLR 2026\] Provably Accelerated Imaging with Restarted Inertia and Score-based Image Priors](provably_accelerated_imaging_with_restarted_inertia_and_score-based_image_priors.md)
+- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](strongly_convex_sets_in_riemannian_manifolds.md)
 
 </div>
 

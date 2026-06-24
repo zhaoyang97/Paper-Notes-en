@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] The authors **precisely decompose** the basis of the Graph Fourier Transform (GFT) into "local GFTs for each subgraph $\times$ a sequence of Cauchy matrices," reducing the $O(n^3)$ eigendecomposition complexity to $O(kn^2)$ (where $k$ is the number of cut edges between subgraphs). By interleaving learnable spectral fil
+  [ICML 2026][Graph Learning][Spectral GNNs] The authors **precisely decompose** the basis of the Graph Fourier Transform (GFT) into "local GFTs for each subgraph $\times$ a sequence of Cauchy matrices," reducing the $O(n^3)$ eigendecomposition complexity to $O(kn^2)$ (where $k$ is the number of cut edges between subgraphs). By interleaving learnable spectral filters within this factorization, they develop a family of local-to-global spectral GNNs capable of running on large gr…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Spectral GNNs"
+  - "Graph Fourier Transform"
+  - "Cauchy Factorization"
+  - "Hierarchical Partitioning"
+  - "Long-range Dependencies"
 date: 2026-05-08
-content_hash: 134734d26f2fde30
+content_hash: bb865142f8a60493
 ---
+
 # L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations
 
 **Conference**: ICML 2026  
@@ -146,11 +152,11 @@ Standard losses are used (cross-entropy/AUC for classification, MAE for regressi
 
 ## Related Papers
 
-- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
-- [\[NeurIPS 2025\] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion](../../NeurIPS2025/graph_learning/duetgraph_coarse-to-fine_knowledge_graph_reasoning_with_dual-pathway_global-loca.md)
+- [\[ICLR 2026\] Global and Local Topology-Aware Graph Generation via Dual Conditioning Diffusion](../../ICLR2026/graph_learning/global_and_local_topology-aware_graph_generation_via_dual_conditioning_diffusion.md)
 - [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
-- [\[ICML 2025\] Hyperbolic-PDE GNN: Spectral Graph Neural Networks in the Perspective of A System of Hyperbolic Partial Differential Equations](../../ICML2025/graph_learning/hyperbolic-pde_gnn_spectral_graph_neural_networks_in_the_perspective_of_a_system.md)
+- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[ICML 2026\] Understanding Truncated Positional Encodings for Graph Neural Networks](understanding_truncated_positional_encodings_for_graph_neural_networks.md)
 
 </div>
 

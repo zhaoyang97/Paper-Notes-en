@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NSF-SciFy: Mining the NSF Awards Database for Scientific Claims
 description: >-
-  [ACL 2026][Others][Paper Note] NSF-SciFy extracts 2.8M scientific claims and investigation proposals from NSF award abstracts, building a resource orders of magnitude larger than existing scientific claim datasets and demonstrating significant performance gains for claim and proposal extraction models.
+  [ACL2026][Scientific Claim Extraction] NSF-SciFy extracts 2.8M scientific claims and investigation proposals from NSF award abstracts, building a resource orders of magnitude larger than existing scientific claim datasets and demonstrating significant performance gains for claim and proposal extraction models.
 tags:
-  - ACL 2026
-  - Others
+  - "ACL2026"
+  - "Scientific Claim Extraction"
+  - "NSF Award Abstracts"
+  - "Scientific Feasibility"
+  - "LoRA Fine-tuning"
+  - "Metascience"
 date: 2026-05-08
-content_hash: 0a9aec4027b174db
+content_hash: 33ff486f62735526
 ---
+
 # NSF-SciFy: Mining the NSF Awards Database for Scientific Claims
 
 **Conference**: ACL2026  

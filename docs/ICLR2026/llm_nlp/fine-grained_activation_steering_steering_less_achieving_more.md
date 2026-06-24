@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fine-Grained Activation Steering: Steering Less, Achieving More
 description: >-
-  [ICLR 2026][LLM (Other)][Interpretability] AUSteer discovers that block-level activation steering is inherently heterogeneous—different dimensions control different token distributions, and mixed steering amplifies both beneficial and harmful signals. It proposes fine-grained steering at the Atomic Unit (AU) level: using activation momentum to locate discrimina
+  [ICLR 2026][LLM (Other)][Activation Steering] AUSteer discovers that block-level activation steering is inherently heterogeneous—different dimensions control different token distributions, and mixed steering amplifies both beneficial and harmful signals. It proposes fine-grained steering at the Atomic Unit (AU) level: using activation momentum to locate discriminative dimensions and adaptively adjusting steering strength. By steering $\leq 100$ dimensions…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Interpretability
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Activation Steering"
+  - "Atomic Unit"
+  - "Fine-grained Intervention"
+  - "Interpretability"
+  - "Inference-time Alignment"
 date: 2026-05-08
-content_hash: e8df450df47658e6
+content_hash: b5e4d5c79da98914
 ---
+
 # Fine-Grained Activation Steering: Steering Less, Achieving More
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ The method is entirely training-free, requiring no gradient updates. All informa
 
 ## Related Papers
 
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
 - [\[ACL 2025\] Steering off Course: Reliability Challenges in Steering Language Models](../../ACL2025/llm_nlp/steering_off_course_reliability_challenges_in_steering_language_models.md)
 - [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)
-- [\[ICLR 2026\] Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models](parameters_vs_context_fine-grained_control_of_knowledge_reliance_in_language_mod.md)
 - [\[ICML 2026\] The Cylindrical Representation Hypothesis for Language Model Steering](../../ICML2026/llm_nlp/the_cylindrical_representation_hypothesis_for_language_model_steering.md)
-- [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](../../ACL2026/llm_nlp/costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
+- [\[ICLR 2026\] Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models](parameters_vs_context_fine-grained_control_of_knowledge_reliance_in_language_mod.md)
 
 </div>
 

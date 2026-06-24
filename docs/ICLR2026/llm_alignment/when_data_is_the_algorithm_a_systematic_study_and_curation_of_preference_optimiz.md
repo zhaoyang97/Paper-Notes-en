@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] This paper conducts the first systematic "sample-level" horizontal audit of 5 commonly used open-source DPO preference datasets. By using Magpie to annotate task category/difficulty/input quality and an independent reward model to assign "preference reward" scores to each pair, the authors find that 20–30% of samples c
+  [ICLR 2026][LLM Alignment][DPO] This paper conducts the first systematic "sample-level" horizontal audit of 5 commonly used open-source DPO preference datasets. By using Magpie to annotate task category/difficulty/input quality and an independent reward model to assign "preference reward" scores to each pair, the authors find that 20–30% of samples contain "chosen responses that are actually inferior to the rejected ones." Based on these diagnostic signals…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "preference data"
+  - "data-centric"
+  - "reward model"
+  - "data selection"
 date: 2026-05-08
-content_hash: a040a3d768830530
+content_hash: 1ccf4d0b0a7ce74b
 ---
+
 # When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets
 
 **Conference**: ICLR 2026  
@@ -121,9 +126,9 @@ UltraMix-190k consistently outperformed the strongest single dataset, TuluDPO, a
 
 - [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
 - [\[ICLR 2026\] When Weak LLMs Speak with Confidence, Preference Alignment Gets Stronger](when_weak_llms_speak_with_confidence_preference_alignment_gets_stronger.md)
-- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
-- [\[ICLR 2026\] What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data](whats_in_my_human_feedback_learning_interpretable_descriptions_of_preference_dat.md)
 - [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
+- [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
+- [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](../../ACL2026/llm_alignment/alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
 
 </div>
 

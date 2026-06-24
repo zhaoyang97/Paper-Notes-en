@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCUBA: Salesforce Computer Use Benchmark
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] SCUBA is a benchmark for computer-use agents built on authentic Salesforce sandbox environments, containing $300$ CRM tasks derived from real-world user interviews. It features resettable environments, fine-grained milestone evaluations, and human demonstrations. The study reveals a significant performance gap between
+  [ICLR 2026][LLM Agent][Computer-use Agents] SCUBA is a benchmark for computer-use agents built on authentic Salesforce sandbox environments, containing $300$ CRM tasks derived from real-world user interviews. It features resettable environments, fine-grained milestone evaluations, and human demonstrations. The study reveals a significant performance gap between open-source and closed-source models, as well as between browser-based and desktop-based agents (open-source success…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Computer-use Agents"
+  - "CRM Workflows"
+  - "Enterprise Software"
+  - "Process Rewards"
+  - "Demonstration Augmentation"
 date: 2026-05-08
-content_hash: 51794697d53a847c
+content_hash: cb5922d4dabc6440
 ---
+
 # SCUBA: Salesforce Computer Use Benchmark
 
 **Conference**: ICLR 2026  
@@ -136,11 +142,11 @@ Demonstrations generally improve success rates and typically reduce latency and 
 
 ## Related Papers
 
-- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
-- [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
+- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
+- [\[ICLR 2026\] Programming with Pixels: Can Computer-Use Agents do Software Engineering?](programming_with_pixels_can_computer-use_agents_do_software_engineering.md)
 - [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
-- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](grounding_computer_use_agents_on_human_demonstrations.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
 
 </div>
 

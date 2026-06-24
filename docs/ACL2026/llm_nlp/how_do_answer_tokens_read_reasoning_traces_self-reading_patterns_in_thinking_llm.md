@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Do Answer Tokens Read Reasoning Traces? Self-Reading Patterns in Thinking LLMs
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper identifies a "benign self-reading" pattern in reasoning LLMs (such as DeepSeek-R1) during quantitative reasoning. Answer tokens exhibit a forward drift (advancing step-by-step along the reasoning chain) and concentration on semantic anchors (repeatedly revisiting key steps) when attending to reasoning traces
+  [ACL 2026 Findings][LLM (Other)][Reasoning models] This paper identifies a "benign self-reading" pattern in reasoning LLMs (such as DeepSeek-R1) during quantitative reasoning. Answer tokens exhibit a forward drift (advancing step-by-step along the reasoning chain) and concentration on semantic anchors (repeatedly revisiting key steps) when attending to reasoning traces, a pattern strongly correlated with correctness. Based on this, a training-free activation steering method d…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Reasoning models"
+  - "self-reading patterns"
+  - "attention analysis"
+  - "activation steering"
+  - "quantitative reasoning"
 date: 2026-05-08
-content_hash: fda8017039bdb2bc
+content_hash: de6a843668c762cc
 ---
+
 # How Do Answer Tokens Read Reasoning Traces? Self-Reading Patterns in Thinking LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -148,8 +154,8 @@ Completely training-free. Steering vectors are extracted from activation differe
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](../../NeurIPS2025/llm_nlp/acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
 - [\[ACL 2025\] How Numerical Precision Affects Arithmetical Reasoning Capabilities of LLMs](../../ACL2025/llm_nlp/how_numerical_precision_affects_arithmetical_reasoning_capabilities_of_llms.md)
+- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](../../NeurIPS2025/llm_nlp/acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
 - [\[ACL 2025\] Unlocking Recursive Thinking of LLMs: Alignment via Refinement](../../ACL2025/llm_nlp/unlocking_recursive_thinking_of_llms_alignment_via_refinement.md)
 - [\[ICLR 2026\] How Far Are LLMs from Professional Poker Players? Revisiting Game-Theoretic Reasoning with Agentic Tool Use](../../ICLR2026/llm_nlp/how_far_are_llms_from_professional_poker_players_revisiting_game-theoretic_reaso.md)
 - [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](../../ICML2026/llm_nlp/reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)

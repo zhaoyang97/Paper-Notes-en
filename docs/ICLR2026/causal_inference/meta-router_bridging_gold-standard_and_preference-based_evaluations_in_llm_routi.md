@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Meta-Router: Bridging Gold-standard and Preference-based Evaluations in LLM Routing
 description: >-
-  [ICLR 2026][Causal Inference][LLM Routing] This paper reinterprets the differences between "gold-standard vs. preference-based" data sources as treatment assignment in causal inference. Consequently, the bias in preference data is proven to be exactly the Conditional Average Treatment Effect (CATE). By estimating and correcting this bias using R-/DR-learner met
+  [ICLR 2026][Causal Inference][LLM Routing] This paper reinterprets the differences between "gold-standard vs. preference-based" data sources as treatment assignment in causal inference. Consequently, the bias in preference data is proven to be exactly the Conditional Average Treatment Effect (CATE). By estimating and correcting this bias using R-/DR-learner meta-learners, a highly accurate and sample-efficient LLM router is trained.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - LLM Routing
-  - CATE
-  - Meta-Learner
-  - Bias Correction
-  - Data Integration
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "LLM Routing"
+  - "CATE"
+  - "Meta-Learner"
+  - "Bias Correction"
+  - "Data Integration"
 date: 2026-05-08
-content_hash: fc28b21867470712
+content_hash: a1f7bad43dceecc9
 ---
+
 # Meta-Router: Bridging Gold-standard and Preference-based Evaluations in LLM Routing
 
 **Conference**: ICLR 2026  
@@ -133,9 +134,9 @@ Key phenomenon: Predictive routers using direct pooling or only PB data show alm
 
 - [\[ICLR 2026\] NextQuill: Causal Preference Modeling for Enhancing LLM Personalization](nextquill_causal_preference_modeling_for_enhancing_llm_personalization.md)
 - [\[ICLR 2026\] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time](overlap-weighted_orthogonal_meta-learner_for_treatment_effect_estimation_over_ti.md)
+- [\[ICLR 2026\] Counterfactual LLM-based Framework for Measuring Rhetorical Style](counterfactual_llm-based_framework_for_measuring_rhetorical_style.md)
 - [\[ICLR 2026\] Flattery, Fluff, and Fog: Diagnosing and Mitigating Idiosyncratic Biases in Preference Models](flattery_fluff_and_fog_diagnosing_and_mitigating_idiosyncratic_biases_in_prefere.md)
-- [\[ECCV 2024\] Distill Gold from Massive Ores: Bi-level Data Pruning towards Efficient Dataset Distillation](../../ECCV2024/causal_inference/distill_gold_from_massive_ores_bi-level_data_pruning_towards_efficient_dataset_d.md)
-- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
+- [\[ICLR 2026\] Foundation Models for Causal Inference via Prior-Data Fitted Networks](foundation_models_for_causal_inference_via_prior-data_fitted_networks.md)
 
 </div>
 

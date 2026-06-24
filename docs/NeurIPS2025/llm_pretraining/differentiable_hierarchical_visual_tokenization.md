@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Differentiable Hierarchical Visual Tokenization
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Pretraining][Visual Tokenizer] This paper proposes an end-to-end differentiable hierarchical visual tokenizer that adaptively partitions images into tokens at pixel-level granularity. It le…
+  [NeurIPS 2025 (Spotlight)][LLM Pretraining][Visual Tokenizer] This paper proposes an end-to-end differentiable hierarchical visual tokenizer that adaptively partitions images into tokens at pixel-level granularity. It leverages information criteria for hierarchical model selection, serves as a drop-in replacement for the fixed patch tokenization in ViT, and additionally supports raster-to-vector conversion.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Superpixel"
   - "Information Criterion"
 date: 2026-05-08
-content_hash: 3142072aa39a7ff7
+content_hash: 0c77165c2f36cb7f
 ---
 
 # Differentiable Hierarchical Visual Tokenization
@@ -206,11 +206,11 @@ BIC's penalty term best balances token count and representation quality.
 
 ## Related Papers
 
+- [\[ACL 2025\] Adversarial Tokenization](../../ACL2025/llm_pretraining/adversarial_tokenization.md)
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[ICML 2026\] Incremental BPE Tokenization](../../ICML2026/llm_pretraining/incremental_bpe_tokenization.md)
-- [\[NeurIPS 2025\] Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization](broken_tokens_your_language_model_can_secretly_handle_non-canonical_tokenization.md)
-- [\[ICCV 2025\] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](../../ICCV2025/llm_pretraining/flow_to_the_mode_mode-seeking_diffusion_autoencoders_for_state-of-the-art_image_.md)
-- [\[ICLR 2026\] SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook](../../ICLR2026/llm_pretraining/semhitok_a_unified_image_tokenizer_via_semantic-guided_hierarchical_codebook_for.md)
+- [\[ACL 2025\] Tokenization is Sensitive to Language Variation](../../ACL2025/llm_pretraining/tokenization_is_sensitive_to_language_variation.md)
+- [\[ACL 2025\] Splintering Nonconcatenative Languages for Better Tokenization](../../ACL2025/llm_pretraining/splintering_nonconcatenative_languages_for_better_tokenization.md)
+- [\[ACL 2025\] Incorporating Domain Knowledge into Materials Tokenization](../../ACL2025/llm_pretraining/incorporating_domain_knowledge_into_materials_tokenization.md)
 
 </div>
 

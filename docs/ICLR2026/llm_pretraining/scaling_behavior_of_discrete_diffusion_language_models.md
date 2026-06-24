@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Behavior of Discrete Diffusion Language Models
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper systematically investigates the scaling laws of discrete diffusion language models (DLMs) under various noise types. By employing a unified diffusion framework parameterized by signal-to-noise ratio (SNR) that smoothly interpolates between masked and uniform diffusion, and carefully calibrating batch size an
+  [ICLR 2026][LLM Pretraining][Discrete Diffusion] This paper systematically investigates the scaling laws of discrete diffusion language models (DLMs) under various noise types. By employing a unified diffusion framework parameterized by signal-to-noise ratio (SNR) that smoothly interpolates between masked and uniform diffusion, and carefully calibrating batch size and learning rate, the authors find that DLM scaling behavior heavily depends on the noise type. Uniform diffusio…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Discrete Diffusion"
+  - "Scaling Laws"
+  - "Uniform Diffusion"
+  - "Masked Diffusion"
+  - "Compute-optimal"
 date: 2026-05-08
-content_hash: b309c9f0b6f6122c
+content_hash: 3b20aef84155f226
 ---
+
 # Scaling Behavior of Discrete Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -132,8 +138,8 @@ All diffusion types are more parameter-heavy/data-light than ALM, with uniform d
 
 ## Related Papers
 
-- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
 - [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
+- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
 - [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
 - [\[ICLR 2026\] Autoregressive Models Rival Diffusion Models at Any-Order Generation](autoregressive_models_rival_diffusion_models_at_any-order_generation.md)
 - [\[ICLR 2026\] The Diffusion Duality, Chapter II: Ψ-Samplers](the_diffusion_duality_chapter_ii_psi-samplers.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning
 description: >-
-  [ICLR 2026][Model Compression][LLM-as-a-Judge] Proposes TIR-Judge, an end-to-end RL framework that trains LLM judge models to alternate between reasoning and code execution tools during the evaluation process. It outperforms 32B reasoning reward models with only 8B parameters across 7 public benchmarks, and TIR-Judge-Zero enables self-bootstrapped improvement witho
+  [ICLR 2026][Model Compression][LLM-as-a-Judge] Proposes TIR-Judge, an end-to-end RL framework that trains LLM judge models to alternate between reasoning and code execution tools during the evaluation process. It outperforms 32B reasoning reward models with only 8B parameters across 7 public benchmarks, and TIR-Judge-Zero enables self-bootstrapped improvement without distillation.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LLM-as-a-Judge
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM-as-a-Judge"
+  - "Tool-Integrated Reasoning"
+  - "Reinforcement Learning"
+  - "Code Execution"
+  - "Evaluation"
 date: 2026-05-08
-content_hash: b8d31fa82ed2cd24
+content_hash: 4e474a844a532022
 ---
+
 # Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -132,8 +136,8 @@ The backbones are Qwen3-8B and Qwen3-4B. For stability, code error messages are 
 - [\[ICLR 2026\] Multi-View Encoders for Performance Prediction in LLM-Based Agentic Workflows](multi-view_encoders_for_performance_prediction_in_llm-based_agentic_workflows.md)
 - [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
 - [\[ICLR 2026\] LeSTD: LLM Compression via Learning-based Sparse Tensor Decomposition](lestd_llm_compression_via_learning-based_sparse_tensor_decomposition.md)
+- [\[ICLR 2026\] IGU-LoRA: Adaptive Rank Allocation via Integrated Gradients and Uncertainty-Aware Scoring](igu-lora_adaptive_rank_allocation_via_integrated_gradients_and_uncertainty-aware.md)
 - [\[ACL 2026\] ProActor: Timing-Aware Reinforcement Learning for Proactive Task Scheduling Agents](../../ACL2026/model_compression/proactor_timing-aware_reinforcement_learning_for_proactive_task_scheduling_agent.md)
-- [\[ICLR 2026\] A Fano-Style Accuracy Upper Bound for LLM Single-Pass Reasoning in Multi-Hop QA](a_fano-style_accuracy_upper_bound_for_llm_single-pass_reasoning_in_multi-hop_qa.md)
 
 </div>
 

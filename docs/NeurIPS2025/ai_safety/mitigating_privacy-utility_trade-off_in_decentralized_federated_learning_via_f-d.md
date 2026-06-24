@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][Decentralized Federated Learning] This paper proposes two privacy accounting methods for decentralized federated learning under the f-DP framework—PN-f-DP and Sec-f-LDP—which leverage hypothesis…
+  [NeurIPS 2025 Spotlight][AI Safety][Decentralized Federated Learning] This paper proposes two privacy accounting methods for decentralized federated learning under the f-DP framework—PN-f-DP and Sec-f-LDP—which leverage hypothesis-testing-based privacy measures to consistently yield tighter privacy bounds than Rényi DP, thereby reducing noise injection and improving model utility under equivalent privacy guarantees.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "AI Safety"
   - "Decentralized Federated Learning"
   - "f-Differential Privacy"
@@ -12,7 +12,7 @@ tags:
   - "Random Walk"
   - "Correlated Noise"
 date: 2026-05-08
-content_hash: be595c7d748a8102
+content_hash: 90cc5795effd27c6
 ---
 
 # Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy
@@ -122,11 +122,11 @@ During DP-SGD training, gradients are clipped (with sensitivity $\Delta$) and Ga
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
+- [\[ICML 2025\] Clients Collaborate: Flexible Differentially Private Federated Learning with Guaranteed Improvement of Utility-Privacy Trade-off](../../ICML2025/ai_safety/clients_collaborate_flexible_differentially_private_federated_learning_with_guar.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](../../ICML2026/ai_safety/position_embodied_ai_requires_a_privacy-utility_trade-off.md)
+- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
+- [\[ICLR 2026\] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization](../../ICLR2026/ai_safety/unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization.md)
 - [\[NeurIPS 2025\] Multi-Class Support Vector Machine with Differential Privacy](multi-class_support_vector_machine_with_differential_privacy.md)
-- [\[NeurIPS 2025\] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming](differential_privacy_for_euclidean_jordan_algebra_with_applications_to_private_s.md)
-- [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
 
 </div>
 

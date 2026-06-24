@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This work introduces Endogenous In-Context Learning (EICL), a setting where label noise $\epsilon$ correlates with features $X$ due to hidden confounding. It theoretically proves that Transformers pretrained on such data exhibit ICL prediction bias proportional to the confounding strength and proposes Double-Debiasing
+  [ICLR 2026][Learning Theory][hidden confounding] This work introduces Endogenous In-Context Learning (EICL), a setting where label noise $\epsilon$ correlates with features $X$ due to hidden confounding. It theoretically proves that Transformers pretrained on such data exhibit ICL prediction bias proportional to the confounding strength and proposes Double-Debiasing (DDbias): a fine-tuning-free method that "prompts the model twice" (once for the original label and once for th…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "hidden confounding"
+  - "endogeneity"
+  - "prediction bias"
+  - "gradient-free debiasing"
 date: 2026-05-08
-content_hash: df6da69935c5df0e
+content_hash: 70eaa56d279b2a6a
 ---
+
 # Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation
 
 **Conference**: ICLR 2026  
@@ -144,9 +150,9 @@ Robustness to partial confounding (Weak Conf@0.10): The sample proportion requir
 ## Related Papers
 
 - [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
-- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 - [\[ICLR 2026\] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners](adversarially_pretrained_transformers_may_be_universally_robust_in-context_learn.md)
+- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
 
 </div>

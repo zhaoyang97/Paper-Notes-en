@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Speculative Sampling with Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][Speculative Sampling] This paper proposes Re-SpS, the first framework to formulate the draft tree hyperparameter optimization of Speculative Sampling (SpS) as an MDP and solve it via r…
+  [AAAI 2026][Reinforcement Learning][Speculative Sampling] This paper proposes Re-SpS, the first framework to formulate the draft tree hyperparameter optimization of Speculative Sampling (SpS) as an MDP and solve it via reinforcement learning. Through two key designs—feature reuse and action caching—Re-SpS achieves up to 1.12× additional speedup over EAGLE-3 without any loss in output fidelity.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Draft Tree Optimization"
   - "PPO"
 date: 2026-05-08
-content_hash: d6ada54ff2947f34
+content_hash: ac6e9527da934c7b
 ---
 
 # Speculative Sampling with Reinforcement Learning
@@ -175,10 +175,10 @@ All $p$-values $< 10^{-4}$ (Wilcoxon signed-rank test), indicating highly statis
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
+- [\[ICLR 2026\] Q-learning with Posterior Sampling](../../ICLR2026/reinforcement_learning/q-learning_with_posterior_sampling.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
-- [\[NeurIPS 2025\] Distribution Learning Meets Graph Structure Sampling](../../NeurIPS2025/reinforcement_learning/distribution_learning_meets_graph_structure_sampling.md)
-- [\[NeurIPS 2025\] Learning from Demonstrations via Capability-Aware Goal Sampling](../../NeurIPS2025/reinforcement_learning/learning_from_demonstrations_via_capability-aware_goal_sampling.md)
+- [\[ICLR 2026\] Policy Likelihood-based Query Sampling and Critic-Exploited Reset for Efficient Preference-based Reinforcement Learning](../../ICLR2026/reinforcement_learning/policy_likelihood-based_query_sampling_and_critic-exploited_reset_for_efficient_.md)
+- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICML 2026\] Reinforced Sequential Monte Carlo for Amortised Sampling](../../ICML2026/reinforcement_learning/reinforced_sequential_monte_carlo_for_amortised_sampling.md)
 
 </div>

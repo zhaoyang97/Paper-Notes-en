@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models
 description: >-
-  [ICML 2026][LLM Reasoning][Looped Language Model] Aiming at the characteristic of Looped Language Models (LoopLM) iteratively regenerating latent representations $T_{\max}$ times before each token output, this paper proposes RLTT. By modifying the "final-loop-only" strategy gradient in GRPO to "weight each loop's next-token distribution $P^{(t)}$ with $\omega_t$," the
+  [ICML 2026][Reasoning][Looped Language Model] Aiming at the characteristic of Looped Language Models (LoopLM) iteratively regenerating latent representations $T_{\max}$ times before each token output, this paper proposes RLTT. By modifying the "final-loop-only" strategy gradient in GRPO to "weight each loop's next-token distribution $P^{(t)}$ with $\omega_t$," the method improves the average accuracy of Ouro-2.6B on MATH/AIME/BeyondAIME by +10.9% without external verifiers or…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Looped Language Model
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "Looped Language Model"
+  - "Implicit Reasoning"
+  - "Trajectory-level Credit Assignment"
+  - "GRPO"
+  - "Process Reward"
 date: 2026-05-08
-content_hash: 3270cebd40ceecff
+content_hash: a523022e4567d404
 ---
+
 # Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models
 
 **Conference**: ICML 2026  
@@ -132,15 +136,16 @@ Ouro-2.6B+RLTT outperformed GRPO by +16.6%, +10.0%, and +10.0% on AIME24, AIME26
 - Value: ⭐⭐⭐⭐⭐ Establishes a strong baseline for the latent reasoning + RL trajectory.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models](stabilizing_recurrent_dynamics_for_test-time_scalable_latent_reasoning_in_looped.md)
 - [\[ICML 2026\] GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)
+- [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](../../ICLR2026/llm_reasoning/rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
+- [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](../../ICLR2026/llm_reasoning/co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
 - [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](../../ACL2026/llm_reasoning/large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
-- [\[NeurIPS 2025\] Smaller Models, Smarter Rewards: A Two-Sided Approach to Process and Outcome Rewards](../../NeurIPS2025/llm_reasoning/smaller_models_smarter_rewards_a_two-sided_approach_to_process_and_outcome_rewar.md)
-- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
 
 </div>
 

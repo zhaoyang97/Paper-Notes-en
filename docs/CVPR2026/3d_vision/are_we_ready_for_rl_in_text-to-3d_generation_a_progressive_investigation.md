@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation
 description: >-
-  [CVPR 2026][3D Vision][Reinforcement Learning] This paper systematically introduces reinforcement learning (RL) into text-to-3D autoregressive generation for the first time. By decomposing the problem into four dimensions—reward design, RL algorithms, evaluation benchmarks, and RL paradigms—it proposes a hierarchical coarse-to-fine framework, Hi-GRPO. The resulting
+  [CVPR 2026][3D Vision][Text-to-3D Generation] This paper systematically introduces reinforcement learning (RL) into text-to-3D autoregressive generation for the first time. By decomposing the problem into four dimensions—reward design, RL algorithms, evaluation benchmarks, and RL paradigms—it proposes a hierarchical coarse-to-fine framework, Hi-GRPO. The resulting RL-enhanced model, AR3D-R1, outperforms Trellis on Toys4K and the new MME-3DR benchmark.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-3D Generation"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Reward Model"
+  - "Autoregressive Generation"
 date: 2026-05-08
-content_hash: df007a2382608d3d
+content_hash: 1c0589093ad7dcba
 ---
+
 # Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation
 
 **Conference**: CVPR 2026  
@@ -149,11 +153,11 @@ Reward ensembles (Table 1, GRPO + G=8) and RL algorithms (Table 2):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
+- [\[CVPR 2026\] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation](multimodal_semantic_bias_mitigation_for_diverse_text-to-3d_generation.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)
-- [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
 
 </div>
 

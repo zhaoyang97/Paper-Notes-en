@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces
 description: >-
-  [ICCV 2025][Optimization][Zeroth-order optimization] This paper proposes SubZero (random **Sub**space **Zero**th-order), which estimates gradients in random subspaces via per-layer low-rank perturbations…
+  [ICCV 2025][Optimization][Zeroth-order optimization] This paper proposes SubZero (random **Sub**space **Zero**th-order), which estimates gradients in random subspaces via per-layer low-rank perturbations, significantly reducing gradient variance and angular error in zeroth-order optimization, enabling memory-efficient LLM fine-tuning at a cost close to inference.
 tags:
   - "ICCV 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "low-rank perturbation"
   - "memory-efficient"
 date: 2026-05-08
-content_hash: 2db0942de733b570
+content_hash: edc0de31ede286ae
 ---
 
 # Zeroth-Order Fine-Tuning of LLMs in Random Subspaces
@@ -127,10 +127,10 @@ SubZero improves over MeZO by 7.1% on LLaMA-7B full fine-tuning, even surpassing
 ## Related Papers
 
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](../../ICML2026/optimization/learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
+- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](../../ICLR2026/optimization/fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
 - [\[NeurIPS 2025\] Private Zeroth-Order Optimization with Public Data](../../NeurIPS2025/optimization/private_zeroth-order_optimization_with_public_data.md)
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](../../NeurIPS2025/optimization/improving_the_straight-through_estimator_with_zeroth-order_information.md)
-- [\[ICCV 2025\] Federated Continual Instruction Tuning](federated_continual_instruction_tuning.md)
-- [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
+- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
 
 </div>
 

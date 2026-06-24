@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] The authors propose ProxyFL, a framework that leverages classifier weights as a unified proxy to simultaneously mitigate external heterogeneity (inter-client distribution shifts) and internal heterogeneity (labeled/unlabeled distribution mismatch) in Federated Semi-Supervised Learning (FSSL), significantly outperformin
+  [CVPR 2026][AI Safety][Federated Learning] The authors propose ProxyFL, a framework that leverages classifier weights as a unified proxy to simultaneously mitigate external heterogeneity (inter-client distribution shifts) and internal heterogeneity (labeled/unlabeled distribution mismatch) in Federated Semi-Supervised Learning (FSSL), significantly outperforming existing FSSL methods across multiple datasets.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Semi-Supervised Learning"
+  - "Data Heterogeneity"
+  - "Proxy Learning"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: d7f7f135de8ee344
+content_hash: bd08e1b5b1e72b00
 ---
+
 # ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning
 
 **Conference**: CVPR 2026  
@@ -155,8 +161,8 @@ Comparison of Indecisive Category Set designs ($\alpha=0.1$):
 
 - [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
 - [\[CVPR 2025\] Geometric Knowledge-Guided Localized Global Distribution Alignment for Federated Learning](../../CVPR2025/ai_safety/geometric_knowledge-guided_localized_global_distribution_alignment_for_federated.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
+- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
 - [\[ICML 2025\] Generalization in Federated Learning: A Conditional Mutual Information Framework](../../ICML2025/ai_safety/generalization_in_federated_learning_a_conditional_mutual_information_framework.md)
 
 </div>

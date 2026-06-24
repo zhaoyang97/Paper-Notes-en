@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] QAQ starts from the reverse semantic consistency of "whether the answer can infer the question," utilizing stratified RMI and disagreement between strong and weak models to filter synthetic code instructions. Using only 25% of WarriorCoder data, it approaches full-scale training performance and significantly outperform
+  [ACL2026][Code Intelligence][Synthetic Code Instructions] QAQ starts from the reverse semantic consistency of "whether the answer can infer the question," utilizing stratified RMI and disagreement between strong and weak models to filter synthetic code instructions. Using only 25% of WarriorCoder data, it approaches full-scale training performance and significantly outperforms traditional data selection metrics like IFD.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Synthetic Code Instructions"
+  - "Data Selection"
+  - "Reverse Mutual Information"
+  - "Hard Samples"
+  - "Model Disagreement"
 date: 2026-05-08
-content_hash: 1aa690306805a6bf
+content_hash: 17ccc1cddf6b0cc0
 ---
+
 # QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions
 
 **Conference**: ACL2026  
@@ -138,11 +144,11 @@ QAQ is a data selection strategy and does not change the loss function of downst
 
 ## Related Papers
 
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](../../ICLR2026/code_intelligence/tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
+- [\[ICLR 2026\] HARDTESTGEN: A High-Quality RL Verifier Generation Pipeline for LLM Algorithmic Coding](../../ICLR2026/code_intelligence/hardtestgen_a_high-quality_rl_verifier_generation_pipeline_for_llm_algorithmic_c.md)
 - [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
 - [\[ACL 2026\] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](deepguard_secure_code_generation_via_multi-layer_semantic_aggregation.md)
 - [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
-- [\[ACL 2026\] ChatHLS: Towards Systematic Design Automation and Optimization for High-Level Synthesis](chathls_towards_systematic_design_automation_and_optimization_for_high-level_syn.md)
-- [\[ACL 2026\] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels](cubridge_an_llm-based_framework_for_understanding_and_reconstructing_high-perfor.md)
 
 </div>
 

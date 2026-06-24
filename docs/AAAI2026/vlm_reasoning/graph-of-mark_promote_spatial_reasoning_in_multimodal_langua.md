@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting
 description: >-
-  [AAAI 2026 (Main Track)][Multimodal VLM][Visual Prompting] This paper proposes Graph-of-Mark (GoM), a training-free pixel-level visual prompting method that explicitly encodes inter-object spatial relationships by overla…
+  [AAAI 2026 (Main Track)][VLM Reasoning][Visual Prompting] This paper proposes Graph-of-Mark (GoM), a training-free pixel-level visual prompting method that explicitly encodes inter-object spatial relationships by overlaying a depth-aware scene graph (comprising nodes and directed edges) directly onto input images, achieving up to an 11 percentage point improvement in zero-shot spatial reasoning accuracy for multimodal language models on VQA and grounding tasks.
 tags:
   - "AAAI 2026 (Main Track)"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Visual Prompting"
   - "Spatial Reasoning"
   - "Scene Graph"
   - "Multimodal Language Models"
   - "Zero-Shot Reasoning"
 date: 2026-05-08
-content_hash: 94d183ee30a11b00
+content_hash: df12bd626263f158
 ---
 
 # Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting
@@ -127,11 +127,11 @@ The method is evaluated on 3 open-source MLMs (LlamaV-o1, Qwen-2.5-VL, Gemma-3) 
 
 ## Related Papers
 
-- [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](../../CVPR2026/multimodal_vlm/graphvlm_benchmark_vlm_graph_learning.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
-- [\[CVPR 2026\] DynamicGTR: Leveraging Graph Topology Representation Preferences to Boost VLM Capabilities on Graph QAs](../../CVPR2026/multimodal_vlm/dynamicgtr_leveraging_graph_topology_representation_preferences_to_boost_vlm_cap.md)
-- [\[AAAI 2026\] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation](few-shot_precise_event_spotting_via_unified_multi-entity_graph_and_distillation.md)
-- [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](../../ICCV2025/multimodal_vlm/grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
+- [\[ACL 2026\] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models](../../ACL2026/vlm_reasoning/capruner_conceptual-adjacent_scene_graph_pruner_for_enhancing_3d_spatial_reasoni.md)
+- [\[ACL 2025\] Benchmarking and Improving Large Vision-Language Models for Fundamental Visual Graph Understanding and Reasoning](../../ACL2025/vlm_reasoning/benchmarking_and_improving_large_vision-language_models_for_fundamental_visual_g.md)
+- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](../../CVPR2026/vlm_reasoning/graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
+- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/vlm_reasoning/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reasoning Fails Where Step Flow Breaks
 description: >-
-  [ACL 2026][LLM Reasoning][Attention] This work proposes Step-Saliency, a diagnostic tool discovered two depth-related information flow failure modes (Shallow Lock-in and Deep Decay) in Large Reasoning Models (LRMs), and designs StepFlow, a test-time intervention method that repairs information propagation and improves reasoning accuracy without retraining
+  [ACL 2026][Reasoning][Reasoning Model Interpretability] This work proposes Step-Saliency, a diagnostic tool discovered two depth-related information flow failure modes (Shallow Lock-in and Deep Decay) in Large Reasoning Models (LRMs), and designs StepFlow, a test-time intervention method that repairs information propagation and improves reasoning accuracy without retraining.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Attention
-  - Chain-of-Thought
+  - "ACL 2026"
+  - "Reasoning"
+  - "Reasoning Model Interpretability"
+  - "Information Flow Analysis"
+  - "Test-time Intervention"
+  - "Attention Mechanism"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 2908c01558386850
+content_hash: 8cbd4907fdaa2856
 ---
+
 # Reasoning Fails Where Step Flow Breaks
 
 **Conference**: ACL 2026  
@@ -134,11 +138,11 @@ StepFlow is a pure test-time intervention and **requires no training or backprop
 
 ## Related Papers
 
-- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
-- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
-- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](../../ICML2026/llm_reasoning/the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
 - [\[ACL 2026\] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals](llm_reasoning_as_trajectories_step-specific_representation_geometry_and_correctn.md)
-- [\[ACL 2026\] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](drp_distilled_reasoning_pruning_with_skill-aware_step_decomposition_for_efficien.md)
+- [\[ACL 2026\] How Chain-of-Thought Works? Tracing Information Flow from Decoding, Projection, and Activation](how_chain-of-thought_works_tracing_information_flow_from_decoding_projection_and.md)
+- [\[ICLR 2026\] Reasoning Scaffolding: Distilling the Flow of Thought from LLMs](../../ICLR2026/llm_reasoning/reasoning_scaffolding_distilling_the_flow_of_thought_from_llms.md)
+- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](../../ICML2026/llm_reasoning/the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
+- [\[ICLR 2026\] Where Did This Sentence Come From? Tracing Provenance in LLM Reasoning Distillation](../../ICLR2026/llm_reasoning/where_did_this_sentence_come_from_tracing_provenance_in_llm_reasoning_distillati.md)
 
 </div>
 

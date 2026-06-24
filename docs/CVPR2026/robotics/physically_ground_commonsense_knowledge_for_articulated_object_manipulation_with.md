@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][MLLM] This paper proposes "analytic concepts"—a procedural representation of object structure and manipulation knowledge defined via mathematical symbols, directly computable and simulatable by machines. It grounds semantic-level commonsense reasoned by MLLMs into the physical world to guide robots in manipulating articulate
+  [CVPR 2026][Robotics][Articulated Object Manipulation] This paper proposes "analytic concepts"—a procedural representation of object structure and manipulation knowledge defined via mathematical symbols, directly computable and simulatable by machines. It grounds semantic-level commonsense reasoned by MLLMs into the physical world to guide robots in manipulating articulated objects, achieving approximately a 27% improvement over A3VLM on unseen categories in simulation.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - MLLM
+  - "CVPR 2026"
+  - "Robotics"
+  - "Articulated Object Manipulation"
+  - "Commonsense Knowledge Grounding"
+  - "Analytic Concepts"
+  - "MLLM"
+  - "6-DoF Pose Estimation"
 date: 2026-05-08
-content_hash: cb7b2e6ac1980344
+content_hash: 65a418cf7494c7c0
 ---
+
 # Physically Ground Commonsense Knowledge for Articulated Object Manipulation with Analytic Concepts
 
 **Conference**: CVPR 2026  
@@ -117,11 +122,11 @@ The proximity of results in training and testing categories indicates effective 
 
 ## Related Papers
 
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](../../ICLR2026/robotics/pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
 - [\[ICCV 2025\] Adaptive Articulated Object Manipulation On The Fly with Foundation Model Reasoning and Part Grounding](../../ICCV2025/robotics/adaptive_articulated_object_manipulation_on_the_fly_with_foundation_model_reason.md)
-- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
-- [\[CVPR 2026\] Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions](learning_to_control_physically-simulated_3d_characters_via_generating_and_mimick.md)
-- [\[CVPR 2026\] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation](trajrag_retrieving_geometric-semantic_experience_for_zero-shot_object_navigation.md)
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
 
 </div>
 

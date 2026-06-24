@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking
 description: >-
-  [ICLR 2026][Computational Biology][cross-docking] PoseX constructs an open-source docking benchmark covering both self-docking and the more realistic cross-docking scenarios. Utilizing 718 + 1312 new crystal structures free of training leakage, evaluation of 23 docking methods across three major categories, a meticulously designed energy relaxation post-processing pip
+  [ICLR 2026][Computational Biology][Protein-ligand docking] PoseX constructs an open-source docking benchmark covering both self-docking and the more realistic cross-docking scenarios. Utilizing 718 + 1312 new crystal structures free of training leakage, evaluation of 23 docking methods across three major categories, a meticulously designed energy relaxation post-processing pipeline, and a real-time leaderboard, it systematically demonstrates that AI methods have comprehensive…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - cross-docking
-  - benchmark
-  - AI co-folding
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein-ligand docking"
+  - "cross-docking"
+  - "benchmark"
+  - "energy relaxation"
+  - "AI co-folding"
 date: 2026-05-08
-content_hash: 08248e3c85ba2fe3
+content_hash: 90d6ae485b6cd82e
 ---
+
 # PoseX: AI Defeats Physics-based Methods on Protein Ligand Cross-Docking
 
 **Conference**: ICLR 2026  

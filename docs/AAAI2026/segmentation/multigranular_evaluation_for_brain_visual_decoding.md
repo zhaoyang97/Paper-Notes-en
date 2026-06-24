@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Multigranular Evaluation for Brain Visual Decoding
 description: >-
-  [AAAI 2026][Segmentation][brain decoding] This paper proposes BASIC, a multigranular evaluation framework that unifies the assessment of brain visual decoding quality along two axes — structural (multi-level segmentation…
+  [AAAI 2026 Oral][Segmentation][brain decoding] This paper proposes BASIC, a multigranular evaluation framework that unifies the assessment of brain visual decoding quality along two axes — structural (multi-level segmentation mask matching across four granularities) and semantic (precision/recall/F1 over object/attribute/relation graphs extracted by MLLMs) — covering six modality combinations of fMRI/EEG × Image/Video/3D, thereby addressing the limitations of metric saturatio…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Segmentation"
   - "brain decoding"
   - "evaluation metric"
   - "semantic matching"
   - "MLLM"
 date: 2026-05-08
-content_hash: f1d304d4bd2c0aea
+content_hash: d7fe6185baaa4c23
 ---
 
 # Multigranular Evaluation for Brain Visual Decoding
@@ -149,11 +149,11 @@ The idea of using MLLMs for automated evaluation is generalizable to image gener
 
 ## Related Papers
 
+- [\[CVPR 2025\] Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging](../../CVPR2025/segmentation/comparative_evaluation_of_traditional_methods_and_deep_learning_for_brain_glioma.md)
+- [\[AAAI 2026\] LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention](lwganet_addressing_spatial_and_channel_redundancy_in_remote_sensing_visual_tasks.md)
+- [\[CVPR 2026\] PIX-TAB: Efficient PIXel-Precise TABle Structure Recognition Approach with Speculative Decoding and Region-Based Image Segmentation](../../CVPR2026/segmentation/pix-tab_efficient_pixel-precise_table_structure_recognition_approach_with_specul.md)
 - [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](../../ICCV2025/segmentation/learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
 - [\[NeurIPS 2025\] STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking](../../NeurIPS2025/segmentation/step_a_unified_spiking_transformer_evaluation_platform_for_fair_and_reproducible.md)
-- [\[NeurIPS 2025\] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning](../../NeurIPS2025/segmentation/fast_and_fluent_diffusion_language_models_via_convolutional_decoding_and_rejecti.md)
-- [\[AAAI 2026\] EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization](eagle_episodic_appearance-_and_geometry-aware_memory_for_unified_2d-3d_visual_qu.md)
-- [\[AAAI 2026\] LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention](lwganet_addressing_spatial_and_channel_redundancy_in_remote_sensing_visual_tasks.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient and Reliable Hitting-Set Computations for the Implicit Hitting Set Approach
 description: >-
-  [AAAI2026][Optimization][implicit hitting set] To address numerical instability arising from the reliance on commercial IP solvers in the hitting-set component of the implicit hitting set (IHS) framework…
+  [AAAI2026][Optimization][implicit hitting set] To address numerical instability arising from the reliance on commercial IP solvers in the hitting-set component of the implicit hitting set (IHS) framework, this paper proposes alternative approaches based on pseudo-Boolean (PB) reasoning and stochastic local search (SLS), as well as hybrid strategies. The work realizes the first certifiable IHS computation and demonstrates effective trade-offs between efficiency and reliability…
 tags:
   - "AAAI2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "stochastic local search"
   - "IP solver"
 date: 2026-05-08
-content_hash: 17b2aa555825d3b5
+content_hash: fb4b15ae6cf04e3c
 ---
 
 # Efficient and Reliable Hitting-Set Computations for the Implicit Hitting Set Approach
@@ -125,11 +125,11 @@ This paper sits at the intersection of several research threads: IHS methods for
 
 ## Related Papers
 
+- [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](../../ICML2026/optimization/diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
 - [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](../../NeurIPS2025/optimization/set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
 - [\[AAAI 2026\] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions](ecpv2_fast_efficient_and_scalable_global_optimization_of_lipschitz_functions.md)
-- [\[ICML 2026\] On the Interaction of Batch Noise, Adaptivity, and Compression, under $(L_0,L_1)$-Smoothness: An SDE Approach](../../ICML2026/optimization/on_the_interaction_of_batch_noise_adaptivity_and_compression_under_l_0l_1-smooth.md)
-- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
+- [\[ICLR 2026\] Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking](../../ICLR2026/optimization/egalitarian_gradient_descent_a_simple_approach_to_accelerated_grokking.md)
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](../../ICLR2026/optimization/composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 
 </div>
 

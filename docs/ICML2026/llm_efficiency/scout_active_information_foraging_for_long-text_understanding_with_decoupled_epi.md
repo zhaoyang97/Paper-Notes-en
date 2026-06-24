@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scout: Active Information Foraging for Long-Text Understanding with Decoupled Epistemic States
 description: >-
-  [ICML 2026][LLM Efficiency][Agent] Scout remodels million-token long-text understanding (LTU) as an "active information foraging" process. It introduces a provenance-anchored epistemic state $\mathcal{E}_t$, decoupled from the interaction trajectory, as the sole base for reasoning. Through gap-diagnosed self-evaluation, it iteratively converges to a suf
+  [ICML 2026][LLM Efficiency][Long-Text Understanding] Scout remodels million-token long-text understanding (LTU) as an "active information foraging" process. It introduces a provenance-anchored epistemic state $\mathcal{E}_t$, decoupled from the interaction trajectory, as the sole base for reasoning. Through gap-diagnosed self-evaluation, it iteratively converges to a sufficient subset of information. On LooGLE-v2 and $\infty$Bench, Scout matches or exceeds frontier models lik…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Agent
-  - Epistemic State
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Long-Text Understanding"
+  - "Information Foraging"
+  - "Agent"
+  - "Epistemic State"
+  - "ReAct Decoupling"
 date: 2026-05-08
-content_hash: 7a5e751ed013b9c5
+content_hash: 4455fdcdf2e396ae
 ---
+
 # Scout: Active Information Foraging for Long-Text Understanding with Decoupled Epistemic States
 
 **Conference**: ICML 2026  
@@ -130,15 +134,16 @@ Ablations on LooGLE-v2 for core components.
 - Value: ⭐⭐⭐⭐⭐ Achieves SOTA on million-token tasks while reducing costs by an order of magnitude; provides a paradigm shift for long-text agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
-- [\[ACL 2025\] FocusLLM: Precise Understanding of Long Context by Dynamic Condensing](../../ACL2025/llm_efficiency/focusllm_precise_understanding_of_long_context_by_dynamic_condensing.md)
+- [\[ICLR 2026\] Gumbel Distillation for Parallel Text Generation](../../ICLR2026/llm_efficiency/gumbel_distillation_for_parallel_text_generation.md)
 - [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
-- [\[ICLR 2026\] Universe Routing: Why Self-Evolving Agents Need Epistemic Control](../../ICLR2026/llm_efficiency/universe_routing_why_self-evolving_agents_need_epistemic_control.md)
-- [\[ACL 2025\] LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks](../../ACL2025/llm_efficiency/longbench_v2_towards_deeper_understanding_and_reasoning_on_realistic_long-contex.md)
+- [\[ACL 2025\] FocusLLM: Precise Understanding of Long Context by Dynamic Condensing](../../ACL2025/llm_efficiency/focusllm_precise_understanding_of_long_context_by_dynamic_condensing.md)
+- [\[ACL 2025\] Boosting Long-Context Information Seeking via Query-Guided Activation Refilling](../../ACL2025/llm_efficiency/boosting_long-context_information_seeking_via_query-guided_activation_refilling.md)
 
 </div>
 

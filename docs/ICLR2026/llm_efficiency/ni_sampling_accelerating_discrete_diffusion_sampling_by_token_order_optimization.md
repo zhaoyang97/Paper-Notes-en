@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization
 description: >-
-  [ICLR 2026][LLM Efficiency][Inference Acceleration] The study transforms the conservative "unlocking only a few tokens per step" sampling of Discrete Diffusion Language Models (dLLMs) into "unlocking all correctly predictable tokens at once." It replaces fixed confidence thresholds with a lightweight neural network (Neural Indicator) to perform this judgment. Compared t
+  [ICLR 2026][LLM Efficiency][Discrete Diffusion (dLLM)] The study transforms the conservative "unlocking only a few tokens per step" sampling of Discrete Diffusion Language Models (dLLMs) into "unlocking all correctly predictable tokens at once." It replaces fixed confidence thresholds with a lightweight neural network (Neural Indicator) to perform this judgment. Compared to full-step sampling, it achieves up to 14.3× acceleration (25.0× when combined with KV caching) on LLaDA…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Discrete Diffusion (dLLM)"
+  - "Sampling Order Optimization"
+  - "Parallel Decoding"
+  - "Neural Indicator"
+  - "Trajectory Preservation"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 6692ae6f42d59e70
+content_hash: d29e5708bddc594c
 ---
+
 # NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization
 
 **Conference**: ICLR 2026  
@@ -128,11 +134,11 @@ When combined with Fast-dLLM’s Dual Cache, it achieves up to 25.0× speedup. I
 
 ## Related Papers
 
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
 - [\[ICLR 2026\] Parallel Sampling from Masked Diffusion Models via Conditional Independence Testing](parallel_sampling_from_masked_diffusion_models_via_conditional_independence_test.md)
 - [\[ICLR 2026\] Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization](global_resolution_optimal_multi-draft_speculative_sampling_via_convex_optimizati.md)
 - [\[ICLR 2026\] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling](cactus_accelerating_auto-regressive_decoding_with_constrained_acceptance_specula.md)
 - [\[ICLR 2026\] vAttention: Verified Sparse Attention via Sampling](vattention_verified_sparse_attention_via_sampling.md)
-- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 
 </div>
 

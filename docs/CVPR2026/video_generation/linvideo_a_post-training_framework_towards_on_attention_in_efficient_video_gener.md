@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LinVideo: A Post-Training Framework towards O(n) Attention in Efficient Video Generation
 description: >-
-  [CVPR 2026][Video Generation][linear attention] LinVideo is proposed as a data-free post-training framework that selectively replaces quadratic attention with linear attention in video diffusion models. It achieves a 1.43–1.71× speedup (up to 15.9–20.9× when combined with distillation) while maintaining generation quality.
+  [CVPR2026][Video Generation][linear attention] LinVideo is proposed as a data-free post-training framework that selectively replaces quadratic attention with linear attention in video diffusion models. It achieves a 1.43–1.71× speedup (up to 15.9–20.9× when combined with distillation) while maintaining generation quality.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - linear attention
-  - video diffusion
-  - post-training
-  - efficient inference
-  - distribution matching
+  - "CVPR2026"
+  - "Video Generation"
+  - "linear attention"
+  - "video diffusion"
+  - "post-training"
+  - "efficient inference"
+  - "distribution matching"
 date: 2026-05-08
-content_hash: 6455c4db04f90d55
+content_hash: db59098054952b36
 ---
+
 # LinVideo: A Post-Training Framework towards O(n) Attention in Efficient Video Generation
 
 **Conference**: CVPR2026  
@@ -155,11 +156,11 @@ Automated layer selection results: Replaced layers include $\{2\text{–}8, 10\t
 
 ## Related Papers
 
-- [\[CVPR 2026\] FrameDiT: Diffusion Transformer with Matrix Attention for Efficient Video Generation](framedit_diffusion_transformer_with_matrix_attention_for_efficient_video_generat.md)
+- [\[ICML 2025\] Diffusion Adversarial Post-Training for One-Step Video Generation](../../ICML2025/video_generation/diffusion_adversarial_post-training_for_one-step_video_generation.md)
+- [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
 - [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
-- [\[CVPR 2026\] Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](efficient_long-context_modeling_in_diffusion_language_models_via_block_approxima.md)
+- [\[CVPR 2026\] RAPID: Reusing Attention Sparsity with Inter-step Adaptation for Efficient Video Diffusion](rapid_reusing_attention_sparsity_with_inter-step_adaptation_for_efficient_video_.md)
 - [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] TIPS utilizes a "lagged copy of the policy itself" as a teacher to provide a dense reward for each "reasoning + retrieval" turn based on the incremental log-likelihood of the answer. This is formulated as Potential-Based Reward Shaping (PBRS) injected into PPO to solve the sparse reward and credit assignment challenges
+  [ICLR 2026][Reinforcement Learning][Reward Shaping] TIPS utilizes a "lagged copy of the policy itself" as a teacher to provide a dense reward for each "reasoning + retrieval" turn based on the incremental log-likelihood of the answer. This is formulated as Potential-Based Reward Shaping (PBRS) injected into PPO to solve the sparse reward and credit assignment challenges in multi-turn tool-use RL without training an additional reward model—achieving an average EM 11.8% higher…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Reward Shaping"
+  - "Search-Augmented LLM"
+  - "Credit Assignment"
+  - "Tool Use"
 date: 2026-05-08
-content_hash: 4e233631c925b39b
+content_hash: 1f5c6aba1dbaf724
 ---
+
 # TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs
 
 **Conference**: ICLR 2026  

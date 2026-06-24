@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][GRPO] This paper proposes SAGE: automatically synthesizing large-scale navigation tasks and IF-THEN experience rules within a physics-constrained semantic sandbox. These experiences are distilled into a VLM policy using GRPO with mixed-prompt sampling and asymmetric adaptive clipping, improving the LLM-Match success rate on
+  [ICML 2026][Robotics][Physics Sandbox] This paper proposes SAGE: automatically synthesizing large-scale navigation tasks and IF-THEN experience rules within a physics-constrained semantic sandbox. These experiences are distilled into a VLM policy using GRPO with mixed-prompt sampling and asymmetric adaptive clipping, improving the LLM-Match success rate on A-EQA from 43.5% to 53.2% (2B) / 60.2% (4B), with successful zero-shot transfer to real indoor robots.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - GRPO
-  - A-EQA
-  - GOAT-Bench
+  - "ICML 2026"
+  - "Robotics"
+  - "Physics Sandbox"
+  - "Generative Experience"
+  - "GRPO"
+  - "Asymmetric Clipping"
+  - "A-EQA"
+  - "GOAT-Bench"
 date: 2026-05-08
-content_hash: 1911abbe20a5bf56
+content_hash: 1bf4acfee6e562c1
 ---
+
 # Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation
 
 **Conference**: ICML 2026  
@@ -167,10 +171,10 @@ SAGE-2B outperforms 3D-Mem (GPT-4o version) in A-EQA SR† while nearly doubling
 ## Related Papers
 
 - [\[CVPR 2026\] Dejavu: Towards Experience Feedback Learning for Embodied Intelligence](../../CVPR2026/robotics/dejavu_towards_experience_feedback_learning_for_embodied_intelligence.md)
-- [\[ICML 2026\] DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics](dlo-lab_benchmarking_deformable_linear_object_manipulations_with_differentiable_.md)
+- [\[ICLR 2026\] Lifelong Embodied Navigation Learning](../../ICLR2026/robotics/lifelong_embodied_navigation_learning.md)
 - [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](../../CVPR2026/robotics/floverse_floor_plan-guided_multi-modal_navigation.md)
 - [\[ICML 2026\] R2R2: Robust Representation for Intensive Experience Reuse via Redundancy Reduction in Self-Predictive Learning](r2r2_robust_representation_for_intensive_experience_reuse_via_redundancy_reducti.md)
-- [\[CVPR 2026\] OctoNav: Towards Generalist Embodied Navigation](../../CVPR2026/robotics/octonav_towards_generalist_embodied_navigation.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
 
 </div>
 

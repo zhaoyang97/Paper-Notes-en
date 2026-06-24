@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] From Sequential to Parallel: Reformulating Dynamic Programming as GPU Kernels for Large-Scale Stochastic Combinatorial Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The bottleneck of "sequentially solving second-stage integer subproblems per scenario" in stochastic combinatorial optimization is reformulated as matrix-vector multiplication over the $(\min, +)$ semiring. By designing hardware-aware GPU kernels for scenario batching, Bellman updates for over $10^6$ scenarios are eval
+  [ICLR 2026][Optimization][Stochastic Programming] The bottleneck of "sequentially solving second-stage integer subproblems per scenario" in stochastic combinatorial optimization is reformulated as matrix-vector multiplication over the $(\min, +)$ semiring. By designing hardware-aware GPU kernels for scenario batching, Bellman updates for over $10^6$ scenarios are evaluated in parallel within a single GPU pass, achieving speedups of one to five orders of magnitude.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Stochastic Programming"
+  - "Sample Average Approximation (SAA)"
+  - "Dynamic Programming"
+  - "GPU Kernels"
+  - "min-plus Semiring"
+  - "Vehicle Routing"
+  - "Inventory Routing"
 date: 2026-05-08
-content_hash: 3f54889787c3a7db
+content_hash: aae0413483577f90
 ---
+
 # From Sequential to Parallel: Reformulating Dynamic Programming as GPU Kernels for Large-Scale Stochastic Combinatorial Optimization
 
 **Conference**: ICLR 2026  

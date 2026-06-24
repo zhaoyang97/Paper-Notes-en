@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding
 description: >-
-  [ICML 2026][Object Detection][Ego-IRG] EARL utilizes a two-stage MLLM framework of "coarse interpretation and fine response" to consolidate egocentric interaction reasoning tasks (description + Q&A + pixel mask) into a unified pipeline. The first stage outputs a global interaction description of the full image and treats the last hidden state as a semantic
+  [ICML 2026][Object Detection][Ego-IRG] EARL utilizes a two-stage MLLM framework of "coarse interpretation and fine response" to consolidate egocentric interaction reasoning tasks (description + Q&A + pixel mask) into a unified pipeline. The first stage outputs a global interaction description of the full image and treats the last hidden state as a semantic prior. This is injected into the second stage through a novel Analysis-guided Feature Synthesizer (AFS). The system is jo…
 tags:
-  - ICML 2026
-  - Object Detection
-  - Ego-IRG
-  - coarse-to-fine
-  - Analysis-guided Feature Synthesizer
-  - SAM2
+  - "ICML 2026"
+  - "Object Detection"
+  - "Ego-IRG"
+  - "coarse-to-fine"
+  - "Analysis-guided Feature Synthesizer"
+  - "multi-faceted rewards"
+  - "SAM2"
 date: 2026-05-08
-content_hash: 802777f4d3f4c2b4
+content_hash: 9ff6e381ac3750ef
 ---
+
 # EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding
 
 **Conference**: ICML 2026  
@@ -149,8 +151,8 @@ Ablations focused on AFS and reward design (details in Sec 4.3):
 ## Related Papers
 
 - [\[AAAI 2026\] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning](../../AAAI2026/object_detection/connecting_the_dots_training-free_visual_grounding_via_agent.md)
+- [\[ICLR 2026\] Self-Guided Low Light Object Detection Framework](../../ICLR2026/object_detection/self-guided_low_light_object_detection_framework.md)
 - [\[ICML 2025\] Outlier Gradient Analysis: Efficiently Identifying Detrimental Training Samples for Deep Learning Models](../../ICML2025/object_detection/outlier_gradient_analysis_efficiently_identifying_detrimental_training_samples_f.md)
-- [\[ECCV 2024\] Nonverbal Interaction Detection](../../ECCV2024/object_detection/nonverbal_interaction_detection.md)
 - [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/object_detection/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
 - [\[CVPR 2026\] See What We Cannot See: A Geo-guided Reasoning Benchmark for Object Counting under Adverse Earth Observation Conditions](../../CVPR2026/object_detection/see_what_we_cannot_see_a_geo-guided_reasoning_benchmark_for_object_counting_unde.md)
 

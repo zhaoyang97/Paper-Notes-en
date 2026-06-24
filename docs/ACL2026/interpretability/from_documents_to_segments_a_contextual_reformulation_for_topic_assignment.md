@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Documents to Segments: A Contextual Reformulation for Topic Assignment
 description: >-
-  [ACL 2026][Interpretability][SemEval-STM] This paper shifts the fundamental unit of topic assignment from documents to segments, proposing SBTA and the SemEval-STM dataset. It demonstrates that assigning topics based on semantic segments in multi-topic short texts significantly improves topic purity, interpretability, and downstream retrieval utility.
+  [ACL2026 Findings][Interpretability][Topic Modeling] This paper shifts the fundamental unit of topic assignment from documents to segments, proposing SBTA and the SemEval-STM dataset. It demonstrates that assigning topics based on semantic segments in multi-topic short texts significantly improves topic purity, interpretability, and downstream retrieval utility.
 tags:
-  - ACL 2026
-  - Interpretability
-  - SemEval-STM
-  - segment intrusion
+  - "ACL2026 Findings"
+  - "Interpretability"
+  - "Topic Modeling"
+  - "Text Segmentation"
+  - "Topic Contamination"
+  - "SemEval-STM"
+  - "segment intrusion"
 date: 2026-05-08
-content_hash: 81adcb5311518e9c
+content_hash: 1e90fe2c0bdc145e
 ---
+
 # From Documents to Segments: A Contextual Reformulation for Topic Assignment
 
 **Conference**: ACL2026 Findings  
@@ -149,9 +153,9 @@ This paper does not propose an end-to-end neural training loss but rather focuse
 
 - [\[ICML 2026\] Sparse Autoencoders are Topic Models](../../ICML2026/interpretability/sparse_autoencoders_are_topic_models.md)
 - [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
+- [\[ICLR 2026\] Uncertainty as Feature Gaps: Epistemic Uncertainty Quantification of LLMs in Contextual Question-Answering](../../ICLR2026/interpretability/uncertainty_as_feature_gaps_epistemic_uncertainty_quantification_of_llms_in_cont.md)
 - [\[ACL 2025\] Llama See, Llama Do: A Mechanistic Perspective on Contextual Entrainment and Distraction in LLMs](../../ACL2025/interpretability/llama_see_llama_do_entrainment.md)
 - [\[ACL 2026\] Interpreting Style Representations via Style-Eliciting Prompts](interpreting_style_representations_via_style-eliciting_prompts.md)
-- [\[ACL 2026\] DPN-LE: Dual Personality Neuron Localization and Editing for Large Language Models](dpn-le_dual_personality_neuron_localization_and_editing_for_large_language_model.md)
 
 </div>
 

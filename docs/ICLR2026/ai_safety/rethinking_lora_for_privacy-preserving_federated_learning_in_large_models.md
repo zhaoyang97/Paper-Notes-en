@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models
 description: >-
-  [ICLR 2026][AI Safety][LoRA] Aiming at the performance collapse of directly applying LoRA in Differentially Private Federated Learning (DPFL), this paper identifies three root causes—gradient coupling, noise multiplicative amplification, and entrapment in sharp minima after aggregation. It proposes LA-LoRA, which alternately updates two low-rank m
+  [ICLR 2026][AI Safety][Differentially Private Federated Learning] Aiming at the performance collapse of directly applying LoRA in Differentially Private Federated Learning (DPFL), this paper identifies three root causes—gradient coupling, noise multiplicative amplification, and entrapment in sharp minima after aggregation. It proposes LA-LoRA, which alternately updates two low-rank matrices within each local round and smooths noisy gradients using a fixed Gaussian low-pass fi…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - LoRA
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differentially Private Federated Learning"
+  - "LoRA"
+  - "Gradient Decoupling"
+  - "Noise Amplification"
+  - "Flat Minima"
 date: 2026-05-08
-content_hash: 40ea21db8f90986f
+content_hash: 88d787da1be4564e
 ---
+
 # Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models
 
 **Conference**: ICLR 2026  

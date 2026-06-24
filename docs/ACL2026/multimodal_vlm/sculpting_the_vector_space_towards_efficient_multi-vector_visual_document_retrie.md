@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval
 description: >-
-  [ACL 2026][Multimodal VLM][ColPali] This paper proposes Prune-then-Merge, a two-stage training-free multi-vector document compression framework. It first removes low-information patches via adaptive attention pruning, then merges the remaining high-signal patches through hierarchical agglomerative clustering. It extends the near-lossless compression rang
+  [ACL 2026 Findings][Multimodal VLM][Visual Document Retrieval] This paper proposes Prune-then-Merge, a two-stage training-free multi-vector document compression framework. It first removes low-information patches via adaptive attention pruning, then merges the remaining high-signal patches through hierarchical agglomerative clustering. It extends the near-lossless compression range from 50-60% to 60-70% across 29 VDR datasets and significantly outperforms single-stage methods…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - ColPali
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Visual Document Retrieval"
+  - "Multi-vector compression"
+  - "adaptive pruning"
+  - "hierarchical aggregation"
+  - "ColPali"
 date: 2026-05-08
-content_hash: 8d83fc325b34fa84
+content_hash: f27367f55a2a517b
 ---
+
 # Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval
 
 **Conference**: ACL 2026 Findings  
@@ -136,7 +141,7 @@ Prune-then-Merge is a completely training-free post-processing framework. It inv
 - [\[ACL 2025\] Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings](../../ACL2025/multimodal_vlm/towards_storage-efficient_visual_document_retrieval_an_empirical_study_on_reduci.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[CVPR 2026\] Evo-Retriever: LLM-Guided Curriculum Evolution with Viewpoint-Pathway Collaboration for Multimodal Document Retrieval](../../CVPR2026/multimodal_vlm/evo-retriever_llm-guided_curriculum_evolution_with_viewpoint-pathway_collaborati.md)
 - [\[CVPR 2026\] Prime Once, then Reprogram Locally: An Efficient Alternative to Black-Box Service Model Adaptation](../../CVPR2026/multimodal_vlm/prime_once_then_reprogram_locally_an_efficient_alternative_to_black-box_service_.md)
 
 </div>

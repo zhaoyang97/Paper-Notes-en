@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series
 description: >-
-  [ICLR 2026][Time Series][Time Series Pre-trained Model] Ours proposes TSPulse, an ultra-lightweight time series pre-trained model with only 1M parameters. Through dual-space masked reconstruction and dual-embedding disentanglement strategies, it outperforms models 10-100 times larger in four major tasks: classification (+5-16%), anomaly detection (+20%), imputation (+50%),
+  [ICLR 2026][Time Series][Time Series Pre-trained Model] Ours proposes TSPulse, an ultra-lightweight time series pre-trained model with only 1M parameters. Through dual-space masked reconstruction and dual-embedding disentanglement strategies, it outperforms models 10-100 times larger in four major tasks: classification (+5-16%), anomaly detection (+20%), imputation (+50%), and similarity retrieval (+25%).
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time Series Pre-trained Model
-  - Disentangled Representations
-  - Dual-Space Reconstruction
-  - Anomaly Detection
-  - Tiny Model
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Pre-trained Model"
+  - "Disentangled Representations"
+  - "Dual-Space Reconstruction"
+  - "Anomaly Detection"
+  - "Tiny Model"
 date: 2026-05-08
-content_hash: 84605f80863efab9
+content_hash: 1df8352f70c38220
 ---
+
 # TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series
 
 **Conference**: ICLR 2026  
@@ -185,15 +186,13 @@ For training, pre-training uses a channel-independent mode to ensure generality,
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning](swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi.md)
 - [\[ICLR 2026\] SRT: Super-Resolution for Time Series via Disentangled Rectified Flow](srt_super-resolution_for_time_series_via_disentangled_rectified_flow.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
+- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
 - [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](learning_koopman_representations_with_controllability_guarantees.md)
-- [\[ICLR 2026\] Can we generate portable representations for clinical time series data using LLMs?](can_we_generate_portable_representations_for_clinical_time_series_data_using_llm.md)
 
 </div>
 

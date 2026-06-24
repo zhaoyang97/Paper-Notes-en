@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations
 description: >-
-  [ICCV 2025][Explainability] This paper proposes a unified spectral framework to systematically analyze and quantify the trade-off between the smoothness (complexity) and faithfulness of gradient-based explanations. It in…
+  [ICCV 2025][Explainability] This paper proposes a unified spectral framework to systematically analyze and quantify the trade-off between the smoothness (complexity) and faithfulness of gradient-based explanations. It introduces Expected Frequency (EF) to measure a network's reliance on high-frequency information, controls explanation complexity by convolving ReLU with a Gaussian function, and defines an "explanation gap" to quantify the faithfulness loss induced by surrogate…
 tags:
   - "ICCV 2025"
   - "Explainability"
@@ -11,7 +11,7 @@ tags:
   - "Faithfulness-Complexity Trade-off"
   - "ReLU Networks"
 date: 2026-05-08
-content_hash: 2a411c6d4a6e3395
+content_hash: 9a7e78055e72ed1a
 ---
 
 # On the Complexity-Faithfulness Trade-off of Gradient-Based Explanations
@@ -191,9 +191,9 @@ This paper introduces no new loss function design. The core technical contributi
 
 - [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](../../AAAI2026/others/forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](../../NeurIPS2025/others/the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
+- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](../../CVPR2026/others/more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
 - [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](../../NeurIPS2025/others/the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
-- [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](../../NeurIPS2025/others/statistical_inference_for_gradient_boosting_regression.md)
-- [\[NeurIPS 2025\] Manipulating Feature Visualizations with Gradient Slingshots](../../NeurIPS2025/others/manipulating_feature_visualizations_with_gradient_slingshots.md)
+- [\[ICML 2026\] Guaranteed Optimal Compositional Explanations for Neurons](../../ICML2026/others/guaranteed_optimal_compositional_explanations_for_neurons.md)
 
 </div>
 

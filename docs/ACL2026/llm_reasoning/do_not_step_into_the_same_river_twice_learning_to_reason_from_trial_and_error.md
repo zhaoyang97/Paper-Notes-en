@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error
 description: >-
-  [ACL 2026][LLM Reasoning][Reinforcement Learning] Ours proposes LTE (Learning to reason from Trial and Error), which effectively mitigates the exploration stagnation problem in RLVR without relying on external experts by using the model's own incorrect answers as prompts to guide additional rollouts.
+  [ACL 2026][Reasoning][Exploration Stagnation] Ours proposes LTE (Learning to reason from Trial and Error), which effectively mitigates the exploration stagnation problem in RLVR without relying on external experts by using the model's own incorrect answers as prompts to guide additional rollouts.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Exploration Stagnation"
+  - "Trial-and-Error Learning"
+  - "Reinforcement Learning"
+  - "Prompt-guided Exploration"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 20ccf7f2894f73e3
+content_hash: 59fd560d2d1d8441
 ---
+
 # Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error
 
 **Conference**: ACL 2026  
@@ -148,11 +153,11 @@ The objective function for LTE is a hybrid strategy version of GRPO: the on-poli
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](../../ICLR2026/llm_reasoning/learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](../../ICML2026/llm_reasoning/hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
+- [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](../../ICLR2026/llm_reasoning/learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](reasoning_fails_where_step_flow_breaks.md)
-- [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 
 </div>
 

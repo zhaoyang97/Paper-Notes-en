@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] SEASON is a **training-free** decoding method for VideoLLMs. It constructs "temporally homogenized" hard negatives that disrupt temporal information while preserving spatial structure. A per-token self-diagnostic mechanism determines whether a token is prone to temporal or spatial hallucination, adaptively applying con
+  [CVPR 2026][Video Understanding][Video Hallucination] SEASON is a **training-free** decoding method for VideoLLMs. It constructs "temporally homogenized" hard negatives that disrupt temporal information while preserving spatial structure. A per-token self-diagnostic mechanism determines whether a token is prone to temporal or spatial hallucination, adaptively applying contrastive decoding. It outperforms all training-free methods on three hallucination benchmarks without degr…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Hallucination"
+  - "Temporal Hallucination"
+  - "Contrastive Decoding"
+  - "Training-free"
+  - "Per-token Diagnosis"
 date: 2026-05-08
-content_hash: 692647c27a5147e1
+content_hash: a8a27988ef57efb7
 ---
+
 # SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding
 
 **Conference**: CVPR 2026  
@@ -155,16 +161,16 @@ Evaluated across three hallucination benchmarks (VidHalluc, VideoHallucer, Event
 - Value: ⭐⭐⭐⭐⭐ Training-free, compatible with 72B models; high utility for reliable video understanding in fields like autonomous driving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
-- [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
-- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
-- [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
+- [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
+- [\[CVPR 2026\] Unstitching the Chimera: Frame-Level Risk and Train-Free Mitigation for Video Hallucination](unstitching_the_chimera_frame-level_risk_and_train-free_mitigation_for_video_hal.md)
+- [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
+- [\[NeurIPS 2025\] Self-alignment of Large Video Language Models with Refined Regularized Preference Optimization](../../NeurIPS2025/video_understanding/self-alignment_of_large_video_language_models_with_refined_regularized_preferenc.md)
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
 
 </div>
 

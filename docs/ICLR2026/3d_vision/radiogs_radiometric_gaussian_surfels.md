@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering
 description: >-
-  [ICLR 2026][3D Vision][Gaussian Splatting] RadioGS proposes radiometric consistency loss—a mechanism that minimizes the residual between the learned radiance of each Gaussian surfel and its physically rendered radiance. This provides a physics-based supervision signal for unobserved directions, constructing a self-correcting feedback loop that achieves accurate
+  [ICLR 2026 Oral][3D Vision][Inverse Rendering] RadioGS proposes radiometric consistency loss—a mechanism that minimizes the residual between the learned radiance of each Gaussian surfel and its physically rendered radiance. This provides a physics-based supervision signal for unobserved directions, constructing a self-correcting feedback loop that achieves accurate indirect illumination and material decomposition, supporting efficient re-lighting in minutes.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Gaussian Splatting
+  - "ICLR 2026 Oral"
+  - "3D Vision"
+  - "Inverse Rendering"
+  - "Gaussian Splatting"
+  - "Indirect Illumination"
+  - "Radiometric Consistency"
+  - "Ray Tracing"
 date: 2026-05-08
-content_hash: 4c3631246907ad71
+content_hash: 8ee2a20dc8711204
 ---
+
 # RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering
 
 **Conference**: ICLR 2026 Oral  
@@ -135,6 +140,7 @@ RadioGS outperforms existing GS and NeRF methods across almost all metrics on th
 - Value: ⭐⭐⭐⭐⭐ Significant progress in accurately modeling indirect illumination for GS inverse rendering.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,8 +148,8 @@ RadioGS outperforms existing GS and NeRF methods across almost all metrics on th
 - [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](../../CVPR2026/3d_vision/sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
 - [\[CVPR 2025\] SVG-IR: Spatially-Varying Gaussian Splatting for Inverse Rendering](../../CVPR2025/3d_vision/svg-ir_spatially-varying_gaussian_splatting_for_inverse_rendering.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](../../ICCV2025/3d_vision/geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
+- [\[CVPR 2026\] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors](../../CVPR2026/3d_vision/ir-hgp_physically-aware_gaussian_inverse_rendering_for_high-illumination_scenes_.md)
 - [\[CVPR 2026\] MVInverse: Feed-forward Multiview Inverse Rendering in Seconds](../../CVPR2026/3d_vision/mvinverse_feed-forward_multiview_inverse_rendering_in_seconds.md)
-- [\[CVPR 2025\] PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields](../../CVPR2025/3d_vision/pbr-nerf_inverse_rendering_with_physics-based_neural_fields.md)
 
 </div>
 

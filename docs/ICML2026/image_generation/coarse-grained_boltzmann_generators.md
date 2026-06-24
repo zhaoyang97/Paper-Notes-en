@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Coarse-Grained Boltzmann Generators
 description: >-
-  [ICML 2026][Image Generation][Boltzmann Generator] The authors propose Coarse-Grained Boltzmann Generators (CG-BGs), which combine normalizing flow generative models with learned Potential of Mean Force (PMF) in coarse-grained coordinate space for importance sampling. This achieves asymptotically correct equilibrium sampling at a significantly lower computational cost
+  [ICML 2026][Image Generation][Boltzmann Generator] The authors propose Coarse-Grained Boltzmann Generators (CG-BGs), which combine normalizing flow generative models with learned Potential of Mean Force (PMF) in coarse-grained coordinate space for importance sampling. This achieves asymptotically correct equilibrium sampling at a significantly lower computational cost compared to all-atom BGs.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Boltzmann Generator
+  - "ICML 2026"
+  - "Image Generation"
+  - "Boltzmann Generator"
+  - "Coarse-grained modeling"
+  - "Importance sampling"
+  - "Potential of Mean Force (PMF)"
+  - "Normalizing Flows"
 date: 2026-05-08
-content_hash: 2c4098619386fcfa
+content_hash: 4c744548959a5aa9
 ---
+
 # Coarse-Grained Boltzmann Generators
 
 **Conference**: ICML 2026  
@@ -126,7 +131,6 @@ Evaluations were performed on alanine dipeptide (22 atoms), tripeptide (42 atoms
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -134,7 +138,7 @@ Evaluations were performed on alanine dipeptide (22 atoms), tripeptide (42 atoms
 - [\[NeurIPS 2025\] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators](../../NeurIPS2025/image_generation/flatten_graphs_as_sequences_transformers_are_scalable_graph_generators.md)
 - [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](../../NeurIPS2025/image_generation/progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
 - [\[CVPR 2025\] Community Forensics: Using Thousands of Generators to Train Fake Image Detectors](../../CVPR2025/image_generation/community_forensics_using_thousands_of_generators_to_train_fake_image_detectors.md)
-- [\[CVPR 2026\] SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](../../CVPR2026/image_generation/slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)
+- [\[ECCV 2024\] DreamDrone: Text-to-Image Diffusion Models are Zero-shot Perpetual View Generators](../../ECCV2024/image_generation/dreamdrone_text-to-image_diffusion_models_are_zero-shot_perpetual_view_generator.md)
 
 </div>
 

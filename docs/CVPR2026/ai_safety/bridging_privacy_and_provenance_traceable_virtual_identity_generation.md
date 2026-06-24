@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Privacy and Provenance: Traceable Virtual Identity Generation
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] This paper proposes a diffusion-based framework to generate "stable, reproducible, yet unrecognizable" virtual faces for users. By embedding a 128-bit invisible watermark as an identity fingerprint during generation, users can verify "this virtual face belongs to me" with a secret key without exposing their real faces,
+  [CVPR 2026][AI Safety][Virtual Identity] This paper proposes a diffusion-based framework to generate "stable, reproducible, yet unrecognizable" virtual faces for users. By embedding a 128-bit invisible watermark as an identity fingerprint during generation, users can verify "this virtual face belongs to me" with a secret key without exposing their real faces, simultaneously achieving anonymity and traceability.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Virtual Identity"
+  - "Face Anonymization"
+  - "Digital Watermarking"
+  - "Traceability"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 84a458c499435ae4
+content_hash: d6a6dc287d086bf9
 ---
+
 # Bridging Privacy and Provenance: Traceable Virtual Identity Generation
 
 **Conference**: CVPR 2026  
@@ -158,9 +163,20 @@ Decoding accuracy reaches 0.998 bits with minimal image degradation (PSNR > 39.6
 - Value: ⭐⭐⭐⭐⭐ (Directly addresses real-world virtual identity authentication needs).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)
+- [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
+- [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
+- [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
+- [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](../../ICLR2026/ai_safety/traceable_black-box_watermarks_for_federated_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)

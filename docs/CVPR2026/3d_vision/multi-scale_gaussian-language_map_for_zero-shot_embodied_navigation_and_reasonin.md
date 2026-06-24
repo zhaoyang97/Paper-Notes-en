@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes the Multi-Scale Gaussian-Language Map (GLMap), which organizes environment representation via a "2D indexing grid + instance/region dual-layer semantic units." Each semantic unit simultaneously stores "natural language descriptions + 3D Gaussians," allowing direct reading by LLM/VLM/MLLM without add
+  [CVPR2026][3D Vision][Semantic Mapping] This paper proposes the Multi-Scale Gaussian-Language Map (GLMap), which organizes environment representation via a "2D indexing grid + instance/region dual-layer semantic units." Each semantic unit simultaneously stores "natural language descriptions + 3D Gaussians," allowing direct reading by LLM/VLM/MLLM without additional projection training. An analytical Gaussian Estimator is used to fit Gaussian parameters directly from point clo…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Semantic Mapping"
+  - "3D Gaussian Splatting"
+  - "Embodied Navigation"
+  - "Zero-shot"
+  - "Multi-scale Semantics"
 date: 2026-05-08
-content_hash: 5db9c89819584631
+content_hash: 03dee95b4618a35e
 ---
+
 # Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning
 
 **Conference**: CVPR2026  
@@ -144,14 +150,17 @@ Comparison of map structures (under zero-shot downstream tasks):
 
 <div class="related-papers" markdown="1">
 
-- **ConceptGraphs**: Open-Vocabulary 3D Scene Graphs for Perception and Planning, ICRA 2024.
-- **GS-SLAM**: Dense Visual SLAM with 3D Gaussian Splatting, CVPR 2024.
-- **VLFM**: Visual Language Frequency Maps for Embodied AI, CVPR 2024.
+## Related Papers
+
+- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
+- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
+- [\[ICLR 2026\] Towards Physically Executable 3D Gaussian for Embodied Navigation](../../ICLR2026/3d_vision/towards_physically_executable_3d_gaussian_for_embodied_navigation.md)
+- [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](../../ICCV2025/3d_vision/3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
+- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)

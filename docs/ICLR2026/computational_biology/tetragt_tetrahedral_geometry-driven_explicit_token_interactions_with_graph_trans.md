@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TetraGT: Tetrahedral Geometry-Driven Explicit Token Interactions with Graph Transformer for Molecular Representation Learning
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] TetraGT is the first to feed molecular bond and dihedral angles as explicit tokens into a Graph Transformer. It employs "Spatial Tetrahedral Attention" constrained by tetrahedral geometry to allow direct communication between angle tokens. Combined with a Directed Cycle Angle Loss for chirality discrimination and hiera
+  [ICLR 2026][Computational Biology][Molecular Geometry] TetraGT is the first to feed molecular bond and dihedral angles as explicit tokens into a Graph Transformer. It employs "Spatial Tetrahedral Attention" constrained by tetrahedral geometry to allow direct communication between angle tokens. Combined with a Directed Cycle Angle Loss for chirality discrimination and hierarchical virtual nodes, it achieves SOTA on quantum chemistry benchmarks like PCQM4Mv2 and OC20 IS2RE…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Geometry"
+  - "Bond and Dihedral Angles"
+  - "Tetrahedral Attention"
+  - "Chirality Discrimination"
+  - "Conformation Pre-training"
 date: 2026-05-08
-content_hash: 00ce6c9cb52a0d6b
+content_hash: a71ef1d5ce08f6f1
 ---
+
 # TetraGT: Tetrahedral Geometry-Driven Explicit Token Interactions with Graph Transformer for Molecular Representation Learning
 
 **Conference**: ICLR 2026  
@@ -165,8 +171,8 @@ Ablation of major designs (PCQM4Mv2, Table 8):
 
 - [\[ICLR 2026\] Enhancing Molecular Property Predictions by Learning from Bond Modelling and Interactions](enhancing_molecular_property_predictions_by_learning_from_bond_modelling_and_int.md)
 - [\[ICLR 2026\] Learning Explicit Single-Cell Dynamics Using ODE Representations](learning_explicit_single-cell_dynamics_using_ode_representations.md)
-- [\[ICLR 2026\] Learning Brain Representation with Hierarchical Visual Embeddings](learning_brain_representation_with_hierarchical_visual_embeddings.md)
 - [\[ICLR 2026\] SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset](sair_enabling_deep_learning_for_protein-ligand_interactions_with_a_synthetic_str.md)
+- [\[ICLR 2026\] Learning Brain Representation with Hierarchical Visual Embeddings](learning_brain_representation_with_hierarchical_visual_embeddings.md)
 - [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
 
 </div>

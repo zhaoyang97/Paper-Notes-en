@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Incomplete Data, Complete Dynamics: A Diffusion Approach
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Diffusion Model] A conditional diffusion framework **trainable using only incomplete observations** is proposed. By employing a "context-query" partitioning strategy designed according to the observation distribution structure, the diffusion model approximates the conditional expectation of the true complete data without ever seeing fu
+  [ICLR 2026][Physics & Scientific Computing][Diffusion Models] A conditional diffusion framework **trainable using only incomplete observations** is proposed. By employing a "context-query" partitioning strategy designed according to the observation distribution structure, the diffusion model approximates the conditional expectation of the true complete data without ever seeing full samples. Theoretical guarantees for asymptotic convergence are provided…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Diffusion Models"
+  - "Missing Data"
+  - "Physical Dynamics"
+  - "Data Imputation"
+  - "Conditional Generation"
+  - "Convergence Guarantees"
 date: 2026-05-08
-content_hash: 2b7f0386155a002b
+content_hash: bddeeeb3dd74d720
 ---
+
 # Incomplete Data, Complete Dynamics: A Diffusion Approach
 
 **Conference**: ICLR 2026  

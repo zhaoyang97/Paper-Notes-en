@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis
 description: >-
-  [ICLR 2026][Video Generation][NeRV] This work compresses a video into the "weights of a small convolutional network" (i.e., NeRV, an Implicit Neural Representation). A diffusion Transformer then performs denoising directly on these Gaussian-distributed weight tokens to generate new videos. This approach bypasses the frame-wise feature maps and cross-fram
+  [ICLR 2026][Video Generation][NeRV] This work compresses a video into the "weights of a small convolutional network" (i.e., NeRV, an Implicit Neural Representation). A diffusion Transformer then performs denoising directly on these Gaussian-distributed weight tokens to generate new videos. This approach bypasses the frame-wise feature maps and cross-frame attention of traditional video tokenizers, resulting in a more compact framework with faster decoding and sub-linear growt…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - NeRV
-  - INR
-  - DiT
+  - "ICLR 2026"
+  - "Video Generation"
+  - "NeRV"
+  - "INR"
+  - "Video Diffusion"
+  - "Weight Generation"
+  - "Implicit Tokenizer"
+  - "DiT"
 date: 2026-05-08
-content_hash: 5ae72ecd6694d10c
+content_hash: 95b6727502a60a33
 ---
+
 # NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis
 
 **Conference**: ICLR 2026  
@@ -135,12 +139,11 @@ Token counts are only 128~160 (two orders of magnitude fewer than SD-VAE), with 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
 - [\[CVPR 2026\] CineScene: Implicit 3D as Effective Scene Representation for Cinematic Video Generation](../../CVPR2026/video_generation/cinescene_implicit_3d_as_effective_scene_representation_for_cinematic_video_gene.md)
+- [\[ICLR 2026\] Geometry Forcing: Marrying Video Diffusion and 3D Representation for Consistent World Modeling](geometry_forcing_marrying_video_diffusion_and_3d_representation_for_consistent_w.md)
 - [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
 - [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](../../CVPR2026/video_generation/generative_neural_video_compression_via_video_diffusion_prior.md)
 - [\[ICLR 2026\] NewtonGen: Physics-consistent and Controllable Text-to-Video Generation via Neural Newtonian Dynamics](newtongen_physics-consistent_and_controllable_text-to-video_generation_via_neura.md)

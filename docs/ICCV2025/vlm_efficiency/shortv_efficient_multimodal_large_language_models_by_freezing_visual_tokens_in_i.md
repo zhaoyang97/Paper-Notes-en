@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers
 description: >-
-  [ICCV 2025][Multimodal VLM][multimodal large language models] This work identifies significant **layer-level redundancy** in MLLMs—most layers contribute minimally to the transformation of visual tokens—and proposes Shor…
+  [ICCV 2025][Multimodal Efficiency][multimodal large language models] This work identifies significant **layer-level redundancy** in MLLMs—most layers contribute minimally to the transformation of visual tokens—and proposes ShortV: freezing visual tokens (skipping their attention and FFN computations) in approximately 60% of layers. On LLaVA-NeXT-13B, this achieves a 50% reduction in FLOPs with negligible performance degradation. The method is training-free and orthogonal to t…
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "multimodal large language models"
   - "inference efficiency"
   - "layer redundancy"
@@ -13,7 +13,7 @@ tags:
   - "training-free"
   - "MLLM acceleration"
 date: 2026-05-08
-content_hash: a8147dead295d6db
+content_hash: 60ac0405215ee8cc
 ---
 
 # ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers
@@ -175,11 +175,11 @@ Combining both methods reduces FLOPs to 29% while maintaining reasonable perform
 
 ## Related Papers
 
-- [\[ICCV 2025\] CompCap: Improving Multimodal Large Language Models with Composite Captions](compcap_improving_multimodal_large_language_models_with_composite_captions.md)
 - [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
-- [\[ICCV 2025\] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers](falcon_resolving_visual_redundancy_and_fragmentation_in_high.md)
-- [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
-- [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi-holmes_towards_explainable_and_generalizable_ai-generated_image_detection_v.md)
+- [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](../../CVPR2026/vlm_efficiency/what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
+- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](../../CVPR2026/vlm_efficiency/modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
+- [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
+- [\[ICLR 2026\] iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](../../ICLR2026/vlm_efficiency/illava_an_image_is_worth_fewer_than_13_input_tokens_in_large_multimodal_models.md)
 
 </div>
 

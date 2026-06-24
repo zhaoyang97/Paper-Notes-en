@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models
 description: >-
-  [NeurIPS 2025][Image Generation][watermark forging] This paper proposes a black-box watermark forging method based on image preference models. Given only a single watermarked image…
+  [NeurIPS 2025][Image Generation][watermark forging] This paper proposes a black-box watermark forging method based on image preference models. Given only a single watermarked image, the method extracts the watermark via backpropagation and transfers it to arbitrary new images, effectively forging multiple post-hoc watermarking schemes without access to the underlying watermarking algorithm.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "black-box attack"
   - "post-hoc watermarking"
 date: 2026-05-08
-content_hash: 1006cf57781b40df
+content_hash: a47dcef825367a0d
 ---
 
 # Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models
@@ -134,10 +134,10 @@ A two-stage pipeline: (1) train an image preference model $R$ to distinguish "ar
 ## Related Papers
 
 - [\[NeurIPS 2025\] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images](wmcopier_forging_invisible_image_watermarks_on_arbitrary_images.md)
-- [\[CVPR 2026\] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation](../../CVPR2026/image_generation/blackmirror_black-box_backdoor_detection_for_text-to-image_models_via_instructio.md)
+- [\[ICML 2025\] PPO-MI: Efficient Black-Box Model Inversion via Proximal Policy Optimization](../../ICML2025/image_generation/ppo-mi_efficient_black-box_model_inversion_via_proximal_policy_optimization.md)
+- [\[CVPR 2026\] Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models](../../CVPR2026/image_generation/black-box_membership_inference_attacks_on_the_pre-training_data_of_image-generat.md)
+- [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](../../CVPR2026/image_generation/csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
 - [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
-- [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](../../ICML2026/image_generation/support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
-- [\[NeurIPS 2025\] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](semantic_surgery_zero-shot_concept_erasure_in_diffusion_models.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data
 description: >-
-  [NeurIPS 2025][Optimization][implicit bias] This paper provides the first complete characterization of the implicit bias of Normalized Steepest Descent (NSD) and Normalized Momentum Descent (NMD) on multiclass linearly s…
+  [NeurIPS 2025 Spotlight][Optimization][implicit bias] This paper provides the first complete characterization of the implicit bias of Normalized Steepest Descent (NSD) and Normalized Momentum Descent (NMD) on multiclass linearly separable data: these algorithms converge to the maximum-margin solution under the corresponding $p$-norm at a rate of $\mathcal{O}(1/\sqrt{t})$, with Spectral Descent (spectral norm) and Muon as special cases, and further extended to Adam (max-norm m…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Optimization"
   - "implicit bias"
   - "spectral descent"
@@ -13,7 +13,7 @@ tags:
   - "multiclass classification"
   - "Schatten norm"
 date: 2026-05-08
-content_hash: 7067bcd709da8902
+content_hash: 4c9e8e2f0dbb9b44
 ---
 
 # Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data
@@ -140,11 +140,11 @@ This avoids an extra factor of $k$ that would arise in a naive analysis.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/optimization/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
+- [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
+- [\[ICLR 2026\] How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data](../../ICLR2026/optimization/how_muons_spectral_design_benefits_generalization_a_study_on_imbalanced_data.md)
 - [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
-- [\[NeurIPS 2025\] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias](a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe.md)
 
 </div>
 

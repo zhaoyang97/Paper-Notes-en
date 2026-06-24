@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mechanism Design for LLM Fine-tuning with Multiple Reward Models
 description: >-
-  [NeurIPS 2025][LLM Alignment][mechanism design] This paper formulates multi-party preference aggregation in RLHF fine-tuning as a mechanism design problem. It proves that under social-welfare-maximizing training rules…
+  [NeurIPS 2025][LLM Alignment][mechanism design] This paper formulates multi-party preference aggregation in RLHF fine-tuning as a mechanism design problem. It proves that under social-welfare-maximizing training rules, participants have incentives to misreport their preferences, and achieves dominant-strategy incentive compatibility (DSIC) via an extended VCG payment mechanism that ensures truthful reporting.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "VCG payment"
   - "incentive compatibility"
 date: 2026-05-08
-content_hash: 05321cfe15b20618
+content_hash: daef81970e0a105b
 ---
 
 # Mechanism Design for LLM Fine-tuning with Multiple Reward Models

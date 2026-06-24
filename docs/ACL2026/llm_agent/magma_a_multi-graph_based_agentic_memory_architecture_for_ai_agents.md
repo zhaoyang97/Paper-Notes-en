@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents
 description: >-
-  [ACL 2026][LLM Agent][agentic memory] MAGMA decouples the memory of LLM agents into four orthogonal relation graphs: semantic, temporal, causal, and entity. It employs intent routing and adaptive beam search for policy-guided traversal across the appropriate graphs, complemented by a dual-stream writing mechanism ("Fast Path" for synchronous ingestion and
+  [ACL 2026][LLM Agent][Multi-graph memory] MAGMA decouples the memory of LLM agents into four orthogonal relation graphs: semantic, temporal, causal, and entity. It employs intent routing and adaptive beam search for policy-guided traversal across the appropriate graphs, complemented by a dual-stream writing mechanism ("Fast Path" for synchronous ingestion and "Slow Path" for asynchronous LLM consolidation). On LoCoMo, it achieves a Judge score of 0.700…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - agentic memory
-  - LoCoMo
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Multi-graph memory"
+  - "agentic memory"
+  - "intent-aware"
+  - "dual-stream writing"
+  - "LoCoMo"
 date: 2026-05-08
-content_hash: 06810305178a2044
+content_hash: 4c84f970d38d4a5f
 ---
+
 # MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents
 
 **Conference**: ACL 2026  
@@ -163,10 +167,10 @@ Removing the Adaptive Policy caused the largest drop (-0.063), proving intent ro
 ## Related Papers
 
 - [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
-- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 - [\[ICML 2026\] Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents](../../ICML2026/llm_agent/memory_is_reconstructed_not_retrieved_graph_memory_for_llm_agents.md)
+- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[CVPR 2026\] RAAS: LLM Agentic System Architecture Search with GRPO](../../CVPR2026/llm_agent/raas_llm_agentic_system_architecture_search_with_grpo.md)
-- [\[ACL 2026\] How Adversarial Environments Mislead Agentic AI](how_adversarial_environments_mislead_agentic_ai.md)
 
 </div>
 

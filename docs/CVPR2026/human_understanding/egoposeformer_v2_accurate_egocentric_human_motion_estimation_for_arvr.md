@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR
 description: >-
-  [CVPR 2026][Human Understanding][Transformer] Ours proposes EgoPoseFormer v2 (EPFv2), achieving SOTA accuracy in egocentric 3D human motion estimation (MPJPE 4.02cm, a 15-22% improvement over its predecessor) on the EgoBody3M benchmark with 0.8ms GPU latency. This is realized through an end-to-end Transformer architecture (Single Global Query + Causal Temporal Att
+  [CVPR2026][Human Understanding][Egocentric Pose Estimation] Ours proposes EgoPoseFormer v2 (EPFv2), achieving SOTA accuracy in egocentric 3D human motion estimation (MPJPE 4.02cm, a 15-22% improvement over its predecessor) on the EgoBody3M benchmark with 0.8ms GPU latency. This is realized through an end-to-end Transformer architecture (Single Global Query + Causal Temporal Attention + Conditional Multi-view Cross-Attention) and an automatic labeling system based on uncertain…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Transformer
-  - AR/VR
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Egocentric Pose Estimation"
+  - "Transformer"
+  - "Semi-Supervised Learning"
+  - "Automatic Labeling"
+  - "AR/VR"
+  - "Temporal Modeling"
 date: 2026-05-08
-content_hash: 405f4c00436e39de
+content_hash: 168b31ea25681af0
 ---
+
 # EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR
 
 **Conference**: CVPR2026  
@@ -153,11 +158,11 @@ Beyond supervised training, Ours includes an **Automatic Labeling System (ALS)**
 
 ## Related Papers
 
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
 - [\[CVPR 2026\] GazeShift: Unsupervised Gaze Estimation and Dataset for VR](gazeshift_unsupervised_gaze_estimation_and_dataset_for_vr.md)
 - [\[CVPR 2026\] MAMMA: Markerless Accurate Multi-person Motion Acquisition](mamma_markerless_accurate_multi-person_motion_acquisition.md)
 - [\[ECCV 2024\] MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion Estimation](../../ECCV2024/human_understanding/manikin_biomechanically_accurate_neural_inverse_kinematics_for_human_motion_esti.md)
+- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
 
 </div>
 

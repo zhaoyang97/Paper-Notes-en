@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AstroLoc: Robust Space to Ground Image Localizer
 description: >-
-  [ICCV 2025][Remote Sensing][astronaut photo localization] This paper proposes AstroLoc, the first space-to-ground localization model trained on 300K manually annotated astronaut photographs. Through a query-satellite pai…
+  [ICCV 2025][Remote Sensing][astronaut photo localization] This paper proposes AstroLoc, the first space-to-ground localization model trained on 300K manually annotated astronaut photographs. Through a query-satellite pairwise loss and unsupervised mining technique, the model learns robust representations of Earth's surface, achieving an average improvement of 35% in Recall@1, consistently exceeding 99% in Recall@100, and has already localized over 500K photographs in real-wor…
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised mining"
   - "space-to-ground observation"
 date: 2026-05-08
-content_hash: ba5cee4257936b98
+content_hash: ed46b519b5c68d2e
 ---
 
 # AstroLoc: Robust Space to Ground Image Localizer
@@ -150,11 +150,11 @@ On the extended test sets (more challenging, containing all queries), Recall@100
 
 ## Related Papers
 
+- [\[ECCV 2024\] ConGeo: Robust Cross-View Geo-Localization Across Ground View Variations](../../ECCV2024/remote_sensing/congeo_robust_cross-view_geo-localization_across_ground_view_variations.md)
+- [\[ECCV 2024\] Weakly-Supervised Camera Localization by Ground-to-Satellite Image Registration](../../ECCV2024/remote_sensing/weakly-supervised_camera_localization_by_ground-to-satellite_image_registration.md)
 - [\[ICCV 2025\] WildSAT: Learning Satellite Image Representations from Wildlife Observations](wildsat_learning_satellite_image_representations_from_wildlife_observations.md)
-- [\[NeurIPS 2025\] Scaling Image Geo-Localization to Continent Level](../../NeurIPS2025/remote_sensing/scaling_image_geo-localization_to_continent_level.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](../../CVPR2026/remote_sensing/rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[AAAI 2026\] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data](../../AAAI2026/remote_sensing/debiasing_machine_learning_predictions_for_causal_inference_without_additional_g.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
+- [\[CVPR 2026\] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](../../CVPR2026/remote_sensing/robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)
+- [\[CVPR 2025\] Learning Occlusion-Robust Vision Transformers for Real-Time UAV Tracking](../../CVPR2025/remote_sensing/learning_occlusion-robust_vision_transformers_for_real-time_uav_tracking.md)
 
 </div>
 

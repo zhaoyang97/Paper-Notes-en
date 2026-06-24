@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FigSIM: A Dataset for Fine-grained Suicide Severity and Figurative Language in Suicide Memes
 description: >-
-  [ACL 2026][Social Computing][suicide memes] FigSIM constructs the first fine-grained multimodal dataset for suicide-related memes, annotating figurative phenomena, suicide severity, and suicide-related content. Experiments with 16 types of models verify that current models systematically underestimate high-severity risks involving metaphors, irony, and sarcasm.
+  [ACL2026 Findings][Social Computing][suicide memes] FigSIM constructs the first fine-grained multimodal dataset for suicide-related memes, annotating figurative phenomena, suicide severity, and suicide-related content. Experiments with 16 types of models verify that current models systematically underestimate high-severity risks involving metaphors, irony, and sarcasm.
 tags:
-  - ACL 2026
-  - Social Computing
-  - suicide memes
+  - "ACL2026 Findings"
+  - "Social Computing"
+  - "suicide memes"
+  - "fine-grained risk annotation"
+  - "figurative language"
+  - "multimodal moderation"
+  - "mental health safety"
 date: 2026-05-08
-content_hash: ecf5f185006cee82
+content_hash: 19bece6d54f8ab4f
 ---
+
 # FigSIM: A Dataset for Fine-grained Suicide Severity and Figurative Language in Suicide Memes
 
 **Conference**: ACL2026 Findings  

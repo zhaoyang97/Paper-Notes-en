@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] NVIDIA systematically decomposes the synergistic relationship between "Supervised Fine-Tuning (SFT) + Large-scale Reinforcement Learning (RL)" in building reasoning models. By expanding SFT data, tuning RL sampling temperature to target "entropy $\approx 0.3$", and staging response lengths, a 7B model (AceReason-Nemotr
+  [ICLR2026][Reasoning][Math and Code Reasoning] NVIDIA systematically decomposes the synergistic relationship between "Supervised Fine-Tuning (SFT) + Large-scale Reinforcement Learning (RL)" in building reasoning models. By expanding SFT data, tuning RL sampling temperature to target "entropy $\approx 0.3$", and staging response lengths, a 7B model (AceReason-Nemotron-1.1) achieves new SOTA results for math/code reasoning among 7B-scale models (AIME25 64.8…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Math and Code Reasoning"
+  - "SFT-RL Synergy"
+  - "Curriculum RL"
+  - "Sampling Temperature"
+  - "Overlength Filtering"
 date: 2026-05-08
-content_hash: ce6754ebedaf738f
+content_hash: dee1f6780e7a0724
 ---
+
 # AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy
 
 **Conference**: ICLR2026  

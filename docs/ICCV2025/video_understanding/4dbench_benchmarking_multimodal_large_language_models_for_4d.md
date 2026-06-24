@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
 description: >-
-  [ICCV 2025][Video Understanding][4D understanding] This paper introduces 4D-Bench, the first benchmark for evaluating multimodal large language models (MLLMs) on 4D object understanding (i.e.…
+  [ICCV 2025][Video Understanding][4D understanding] This paper introduces 4D-Bench, the first benchmark for evaluating multimodal large language models (MLLMs) on 4D object understanding (i.e., 3D objects with temporal evolution). It comprises two core tasks: 4D Object QA (751 QA pairs) and 4D Object Captioning (580 objects × 5 annotations). Evaluation reveals that even the state-of-the-art GPT-4o achieves only 63% accuracy compared to 91% for humans…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "multi-view temporal understanding"
   - "4D object QA"
 date: 2026-05-08
-content_hash: 06d3c1f87d2dabde
+content_hash: 1f6a8073c79d2c1c
 ---
 
 # 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
@@ -159,8 +159,8 @@ Compared to T3Bench (which evaluates text-to-3D generation), 4D-Bench focuses on
 
 - [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
 - [\[ICCV 2025\] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning](aim_adaptive_inference_of_multi-modal_llms_via_token_merging_and_pruning.md)
-- [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
+- [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[ICCV 2025\] Multi-modal Multi-platform Person Re-Identification: Benchmark and Method](multi-modal_multi-platform_person_re-identification_benchmark_and_method.md)
 
 </div>

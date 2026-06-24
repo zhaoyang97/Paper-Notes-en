@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graph Reasoning] DuetGraph proposes a dual-pathway (message passing + global attention) parallel fusion model and a coarse-to-fine reasoning optimization strategy. By separating r…
+  [NeurIPS 2025][Graph Learning][Knowledge Graph Reasoning] DuetGraph proposes a dual-pathway (message passing + global attention) parallel fusion model and a coarse-to-fine reasoning optimization strategy. By separating rather than stacking local/global information processing, it mitigates score over-smoothing in KG reasoning, achieving SOTA on both inductive and transductive tasks with up to 8.7% MRR improvement and 1.8× training speedup.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Over-Smoothing"
   - "Graph Neural Networks"
 date: 2026-05-08
-content_hash: 80c1656d19af6807
+content_hash: 9d3c5b876dfdc99a
 ---
 
 # DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion
@@ -136,11 +136,11 @@ The input is a knowledge graph $\mathcal{G}=\{\mathcal{V},\mathcal{E},\mathcal{R
 
 ## Related Papers
 
+- [\[ICLR 2026\] Global and Local Topology-Aware Graph Generation via Dual Conditioning Diffusion](../../ICLR2026/graph_learning/global_and_local_topology-aware_graph_generation_via_dual_conditioning_diffusion.md)
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
-- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](../../ICML2026/graph_learning/l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](../../ICML2026/graph_learning/dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
+- [\[NeurIPS 2025\] When No Paths Lead to Rome: Benchmarking Systematic Neural Relational Reasoning](when_no_paths_lead_to_rome_benchmarking_systematic_neural_relational_reasoning.md)
 - [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
-- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](../../CVPR2026/graph_learning/graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
+- [\[NeurIPS 2025\] SPOT-Trip: Dual-Preference Driven Out-of-Town Trip Recommendation](spot-trip_dual-preference_driven_out-of-town_trip_recommendation.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][Elastic-MoT] Lavida-O utilizes a single Masked Diffusion Model (MDM) to simultaneously bridge image understanding, object grounding, image editing, and 1024px high-definition text-to-image generation. By employing an "Elastic Mixture-of-Transformers" (Elastic-MoT) architecture, it efficiently integrates an 8B understanding branch w
+  [ICLR 2026][Multimodal VLM][Masked Diffusion Models] Lavida-O utilizes a single Masked Diffusion Model (MDM) to simultaneously bridge image understanding, object grounding, image editing, and 1024px high-definition text-to-image generation. By employing an "Elastic Mixture-of-Transformers" (Elastic-MoT) architecture, it efficiently integrates an 8B understanding branch with a 2.4B lightweight generation branch. Furthermore, it introduces planning and self-reflection mechanism…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Elastic-MoT
-  - Image Editing
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Masked Diffusion Models"
+  - "Unified Multimodality"
+  - "Elastic-MoT"
+  - "Image Editing"
+  - "Object Grounding"
+  - "Self-Reflective Generation"
 date: 2026-05-08
-content_hash: 86e9ee4ae3d7ae3d
+content_hash: ed849ea91709fe61
 ---
+
 # Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ This is a new paradigm in Lavida-O. In the planning phase, the model first gener
 
 ## Related Papers
 
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](../../CVPR2026/multimodal_vlm/sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
 - [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
 - [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
 - [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
-- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 
 </div>
 

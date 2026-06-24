@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LayerAnimate: Layer-level Control for Animation
 description: >-
-  [ICCV 2025][Segmentation][Animation Video Generation] This paper proposes LayerAnimate, a framework that integrates the layer-separation paradigm of traditional animation production with video diffusion models to enable…
+  [ICCV 2025][Segmentation][Animation Video Generation] This paper proposes LayerAnimate, a framework that integrates the layer-separation paradigm of traditional animation production with video diffusion models to enable fine-grained layer-level control (motion scores, trajectories, sketches). An automated data curation pipeline is designed to address the scarcity of layered animation data. The framework comprehensively outperforms existing methods across six video generation…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Data Curation"
   - "ControlNet"
 date: 2026-05-08
-content_hash: df8b76c92159f48d
+content_hash: ce479454e5bd8064
 ---
 
 # LayerAnimate: Layer-level Control for Animation
@@ -145,10 +145,10 @@ Ablation over layer capacity, motion scores, and trajectory representations:
 ## Related Papers
 
 - [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](object-level_correlation_for_few-shot_segmentation.md)
-- [\[NeurIPS 2025\] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding](../../NeurIPS2025/segmentation/partonomy_large_multimodal_models_with_part-level_visual_understanding.md)
+- [\[ACL 2025\] Pixel-Level Reasoning Segmentation via Multi-turn Conversations](../../ACL2025/segmentation/pixel-level_reasoning_segmentation_via_multi-turn_conversations.md)
+- [\[ECCV 2024\] Segmentation-Guided Layer-Wise Image Vectorization with Gradient Fills](../../ECCV2024/segmentation/segmentation-guided_layer-wise_image_vectorization_with_gradient_fills.md)
+- [\[CVPR 2025\] MaSS13K: A Matting-level Semantic Segmentation Benchmark](../../CVPR2025/segmentation/mass13k_a_matting-level_semantic_segmentation_benchmark.md)
 - [\[CVPR 2026\] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](../../CVPR2026/segmentation/semlayer_semantic-aware_generative_segmentation_and_layer_construction_for_abstr.md)
-- [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](../../NeurIPS2025/segmentation/unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
-- [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](../../CVPR2026/segmentation/task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
 
 </div>
 

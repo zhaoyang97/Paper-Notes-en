@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PrefDisco: Benchmarking Proactive Personalized Reasoning
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper proposes PrefDisco—a suite of evaluation methods that transform any static reasoning benchmark into an "interactive personalized task." It requires models to proactively ask questions to discover hidden user preferences under cold-start conditions (no history), adjust reasoning chains accordingly, and measur
+  [ICLR 2026][LLM Evaluation][Personalized reasoning] This paper proposes PrefDisco—a suite of evaluation methods that transform any static reasoning benchmark into an "interactive personalized task." It requires models to proactively ask questions to discover hidden user preferences under cold-start conditions (no history), adjust reasoning chains accordingly, and measure the degree of alignment using fine-grained rubric metrics (PrefAlign). Testing 21 frontier models across 1…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Personalized reasoning"
+  - "preference discovery"
+  - "cold start"
+  - "rubric evaluation"
+  - "proactive questioning"
 date: 2026-05-08
-content_hash: b955fdced826dd1d
+content_hash: 3432e3808d00e609
 ---
+
 # PrefDisco: Benchmarking Proactive Personalized Reasoning
 
 **Conference**: ICLR 2026  
@@ -143,7 +149,7 @@ Overall: Across 210 "model $\times$ task" combinations, **61 (29.0%) resulted in
 - [\[ICLR 2026\] Towards Personalized Deep Research: Benchmarks and Evaluations](towards_personalized_deep_research_benchmarks_and_evaluations.md)
 - [\[ACL 2025\] Mis-prompt: Benchmarking Large Language Models for Proactive Error Handling](../../ACL2025/llm_evaluation/mis-prompt_benchmarking_large_language_models_for_proactive_error_handling.md)
 - [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)
-- [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
+- [\[ICLR 2026\] LogiConBench: Benchmarking Logical Consistencies of LLMs](logiconbench_benchmarking_logical_consistencies_of_llms.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration
 description: >-
-  [CVPR 2026][Image Generation][Visual AutoRegressive] This paper performs a systematic analysis of attention activation patterns in VAR models, revealing three major sparsity characteristics (attention sinks, cross-scale similarity, and spatial locality). It proposes the SparVAR training-free acceleration framework, which incorporates two plug-and-play modules—Cross-Scale
+  [CVPR 2026][Image Generation][Visual AutoRegressive] This paper performs a systematic analysis of attention activation patterns in VAR models, revealing three major sparsity characteristics (attention sinks, cross-scale similarity, and spatial locality). It proposes the SparVAR training-free acceleration framework, which incorporates two plug-and-play modules—Cross-Scale Self-Similar Sparse Attention (CS⁴A) and Cross-Scale Local Sparse Attention (CSLA)—to achieve 1-second lev…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Visual AutoRegressive
-  - Sparse Attention
-  - Training-Free Acceleration
-  - Cross-Scale Sparsity
-  - KV Cache
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual AutoRegressive"
+  - "Sparse Attention"
+  - "Training-Free Acceleration"
+  - "Cross-Scale Sparsity"
+  - "KV Cache"
 date: 2026-05-08
-content_hash: aac18ae689890b3d
+content_hash: 29ce9082699481af
 ---
+
 # SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration
 
 **Conference**: CVPR 2026  
@@ -155,8 +156,8 @@ Training-free. SparVAR is a pure inference-time acceleration framework. All spar
 
 ## Related Papers
 
-- [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 - [\[CVPR 2026\] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling](fvar_next-focus_prediction_for_visual_autoregressive_modeling.md)
+- [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](../../ICML2026/image_generation/speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
 - [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](../../ICLR2026/image_generation/toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)

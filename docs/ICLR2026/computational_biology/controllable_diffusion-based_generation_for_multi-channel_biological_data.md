@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Controllable Diffusion-based Generation for Multi-channel Biological Data
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Ours proposes MCD, a multi-channel diffusion framework that uses "random channel masking training + multi-resolution spatial condition injection + dual channel attention." This allows a single diffusion model to complete full channel panels under any combination of "observed/missing channels," achieving SOTA in spatial
+  [ICLR2026][Computational Biology][Multi-channel Diffusion] Ours proposes MCD, a multi-channel diffusion framework that uses "random channel masking training + multi-resolution spatial condition injection + dual channel attention." This allows a single diffusion model to complete full channel panels under any combination of "observed/missing channels," achieving SOTA in spatial proteomics, single-cell gene-to-protein translation, and missing MRI modality synthesis.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Multi-channel Diffusion"
+  - "Spatial Omics Completion"
+  - "Random Channel Masking"
+  - "Channel Attention"
+  - "Amortized Conditional Generation"
 date: 2026-05-08
-content_hash: 58192bb2b503d6b1
+content_hash: 9bbd51d2ec63b9ea
 ---
+
 # Controllable Diffusion-based Generation for Multi-channel Biological Data
 
 **Conference**: ICLR2026  
@@ -152,7 +158,7 @@ Missing MRI modality synthesis (BraTS): MCD achieves DICE 0.738 and SSIM$_\text{
 - [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
 - [\[ICML 2026\] CountsDiff: A Diffusion Model on the Natural Numbers for Generation and Imputation of Count-Based Data](../../ICML2026/computational_biology/countsdiff_a_diffusion_model_on_the_natural_numbers_for_generation_and_imputatio.md)
 - [\[ICLR 2026\] VCWorld: A Biological World Model for Virtual Cell Simulation](vcworld_a_biological_world_model_for_virtual_cell_simulation.md)
-- [\[AAAI 2026\] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale](../../AAAI2026/computational_biology/investigating_data_pruning_for_pretraining_biological_foundation_models_at_scale.md)
+- [\[ICLR 2026\] SpectraLLM: Uncovering the Ability of LLMs for Molecular Structure Elucidation from Multi-Spectral Data](spectrallm_uncovering_the_ability_of_llms_for_molecular_structure_elucidation_fr.md)
 
 </div>
 

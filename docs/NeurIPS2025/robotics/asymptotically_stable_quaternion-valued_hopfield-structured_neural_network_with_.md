@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning
 description: >-
-  [NeurIPS 2025][Robotics][quaternion neural network] This paper proposes a Quaternion-valued Supervised Hopfield-structured Neural Network (QSHNN) that employs a periodic projection strategy to maintain the quaternionic s…
+  [NeurIPS 2025][Robotics][quaternion neural network] This paper proposes a Quaternion-valued Supervised Hopfield-structured Neural Network (QSHNN) that employs a periodic projection strategy to maintain the quaternionic structural consistency of the weight matrix. The existence and uniqueness of fixed points and their asymptotic stability are established via Lyapunov theory, while bounded trajectory curvature guarantees path smoothness for robotic path planning.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "manifold learning"
   - "robotic path planning"
 date: 2026-05-08
-content_hash: 0681dfb74a0909a8
+content_hash: 5751e08eb327ea7c
 ---
 
 # Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning
@@ -133,9 +133,9 @@ Experiments are conducted on a network of 4 quaternionic neurons (16 real-valued
 ## Related Papers
 
 - [\[NeurIPS 2025\] MaNGO: Adaptable Graph Network Simulators via Meta-Learning](mango_-_adaptable_graph_network_simulators_via_meta-learning.md)
-- [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
-- [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](../../ICCV2025/robotics/weakly-supervised_learning_of_dense_functional_correspondences.md)
 - [\[NeurIPS 2025\] Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing](adaptive_frontier_exploration_on_graphs_with_applications_to_network-based_disea.md)
+- [\[ECCV 2024\] Hierarchically Structured Neural Bones for Reconstructing Animatable Objects from Casual Videos](../../ECCV2024/robotics/hierarchically_structured_neural_bones_for_reconstructing_animatable_objects_fro.md)
+- [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](../../ICCV2025/robotics/weakly-supervised_learning_of_dense_functional_correspondences.md)
 - [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](../../ICCV2025/robotics/selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
 
 </div>

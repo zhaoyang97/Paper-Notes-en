@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TGM: A Modular and Efficient Library for Machine Learning on Temporal Graphs
 description: >-
-  [ICLR 2026][Graph Learning][CTDG] TGM is the first temporal graph learning research framework to unify Continuous-Time Dynamic Graphs (CTDG) and Discrete-Time Dynamic Graphs (DTDG) under the same data abstraction. By using "event streams + time granularity iteration" to unify both paradigms and a composable Hook mechanism to standardize data transforma
+  [ICLR 2026][Graph Learning][Temporal Graph Learning] TGM is the first temporal graph learning research framework to unify Continuous-Time Dynamic Graphs (CTDG) and Discrete-Time Dynamic Graphs (DTDG) under the same data abstraction. By using "event streams + time granularity iteration" to unify both paradigms and a composable Hook mechanism to standardize data transformations, it achieves an average end-to-end training speedup of 7.8× over the widely used library DyGLib…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - CTDG
-  - DTDG
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal Graph Learning"
+  - "CTDG"
+  - "DTDG"
+  - "Hook Mechanism"
+  - "Graph Discretization"
 date: 2026-05-08
-content_hash: 35cf8046959adaee
+content_hash: fdb5d40c8ab77447
 ---
+
 # TGM: A Modular and Efficient Library for Machine Learning on Temporal Graphs
 
 **Conference**: ICLR 2026  

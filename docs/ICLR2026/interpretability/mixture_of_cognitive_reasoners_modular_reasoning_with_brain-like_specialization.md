@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization
 description: >-
-  [ICLR 2026][Interpretability][Mixture-of-Experts] Each layer of a pre-trained LLM is decomposed into four expert modules corresponding to the human brain's cognitive networks: "Language, Logic, Social, and World Knowledge." Using a three-stage curriculum training process, this brain-like functional specialization is "forced" out, resulting in MICRO—a modular language
+  [ICLR 2026][Interpretability][Functional Specialization] Each layer of a pre-trained LLM is decomposed into four expert modules corresponding to the human brain's cognitive networks: "Language, Logic, Social, and World Knowledge." Using a three-stage curriculum training process, this brain-like functional specialization is "forced" out, resulting in MICRO—a modular language model that is interpretable, allows for behavioral regulation via expert routing during inference…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Functional Specialization"
+  - "Brain-inspired Architecture"
+  - "Mixture-of-Experts"
+  - "Controllable Generation"
+  - "Causal Ablation"
 date: 2026-05-08
-content_hash: fdfa90582ebd4df4
+content_hash: 824b3b22b5d8f0e2
 ---
+
 # Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization
 
 **Conference**: ICLR 2026  
@@ -111,15 +116,13 @@ Behavioral alignment uses a newly proposed Similarity via Bounded Relative Error
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization](../../CVPR2026/interpretability/ermoe_eigen-reparameterized_mixture-of-experts_for_stable_routing.md)
 - [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
-- [\[ICML 2026\] Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning](../../ICML2026/interpretability/equilibrium_reasoners_learning_attractors_enables_scalable_reasoning.md)
 - [\[ICLR 2026\] On The Geometry and Topology of Representations: the Manifolds of Modular Addition](on_the_geometry_and_topology_of_representations_the_manifolds_of_modular_additio.md)
-- [\[ICLR 2026\] Explainable Mixture Models through Differentiable Rule Learning](explainable_mixture_models_through_differentiable_rule_learning.md)
+- [\[ICML 2026\] Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning](../../ICML2026/interpretability/equilibrium_reasoners_learning_attractors_enables_scalable_reasoning.md)
+- [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)
 
 </div>
 

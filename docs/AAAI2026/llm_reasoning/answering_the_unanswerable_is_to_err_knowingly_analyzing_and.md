@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Large Reasoning Models] This paper systematically analyzes abstention failures in Large Reasoning Models (LRMs) when confronted with unanswerable math problems. It finds that LRMs possess suffi…
+  [AAAI 2026][Reasoning][Large Reasoning Models] This paper systematically analyzes abstention failures in Large Reasoning Models (LRMs) when confronted with unanswerable math problems. It finds that LRMs possess sufficient internal cognitive capacity to recognize unsolvability (linear probe classification accuracy >80%), yet their external behavior remains biased toward forced answering. A two-stage approach combining cognitive monitoring and inference-time intervention is pro…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Large Reasoning Models"
   - "Abstention Failure"
   - "Unanswerable Questions"
   - "Cognitive Monitoring"
   - "Inference-Time Intervention"
 date: 2026-05-08
-content_hash: be46a7a5858b9034
+content_hash: 975c1e1b15f27e34
 ---
 
 # Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models
@@ -128,11 +128,11 @@ The core advantage of this work lies in going beyond early exit by **explicitly 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](../../ICLR2026/llm_reasoning/characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
 - [\[AAAI 2026\] Text-to-Scene with Large Reasoning Models](text-to-scene_with_large_reasoning_models.md)
 - [\[AAAI 2026\] Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities](trade-offs_in_large_reasoning_models_an_empirical_analysis_of_deliberative_and_a.md)
+- [\[ICLR 2026\] The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models](../../ICLR2026/llm_reasoning/the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
 - [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](../../ICLR2026/llm_reasoning/towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
-- [\[ICML 2026\] Are Large Reasoning Models Interruptible?](../../ICML2026/llm_reasoning/are_large_reasoning_models_interruptible.md)
 
 </div>
 

@@ -22,7 +22,7 @@ item_total: 2
 
 **🧪 ICML2026** · **2** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/earth_science/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md) · [📷 CVPR2025 (1)](../../CVPR2025/earth_science/index.md) · [🎞️ ECCV2024 (1)](../../ECCV2024/earth_science/index.md)
 
 **[Scaling Laws of Global Weather Models](scaling_laws_of_global_weather_models.md)**
 

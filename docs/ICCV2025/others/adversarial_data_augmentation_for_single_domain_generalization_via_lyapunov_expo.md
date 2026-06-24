@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents
 description: >-
-  [ICCV 2025][single domain generalization] This paper proposes LEAwareSGD, an optimizer that dynamically adjusts the learning rate using Lyapunov exponents (LE) to guide model training toward the edge of chaos…
+  [ICCV 2025][single domain generalization] This paper proposes LEAwareSGD, an optimizer that dynamically adjusts the learning rate using Lyapunov exponents (LE) to guide model training toward the edge of chaos, enabling broader exploration of the parameter space within an adversarial data augmentation framework and achieving significant improvements in single domain generalization (SDG).
 tags:
   - "ICCV 2025"
   - "single domain generalization"
@@ -11,7 +11,7 @@ tags:
   - "edge of chaos"
   - "optimizer"
 date: 2026-05-08
-content_hash: d739de6612a9b28f
+content_hash: 4fa408df88f16258
 ---
 
 # Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents
@@ -142,11 +142,11 @@ Evaluated on three standard SDG benchmarks — PACS, OfficeHome, and DomainNet �
 
 ## Related Papers
 
+- [\[CVPR 2025\] Gradient-Guided Annealing for Domain Generalization](../../CVPR2025/others/gradient-guided_annealing_for_domain_generalization.md)
+- [\[ICML 2025\] Curvature Enhanced Data Augmentation for Regression](../../ICML2025/others/curvature_enhanced_data_augmentation_for_regression.md)
 - [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/others/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
-- [\[ICCV 2025\] NAPPure: Adversarial Purification for Robust Image Classification under Non-Additive Perturbations](nappure_adversarial_purification_for_robust_image_classification_under_non-addit.md)
-- [\[ICCV 2025\] Φ-GAN: Physics-Inspired GAN for Generating SAR Images Under Limited Data](ph-gan_physics-inspired_gan_for_generating_sar_images_under_limited_data.md)
-- [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](../../NeurIPS2025/others/impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
-- [\[NeurIPS 2025\] Aggregation Hides OOD Generalization Failures from Spurious Correlations](../../NeurIPS2025/others/aggregation_hides_out-of-distribution_generalization_failures_from_spurious_corr.md)
+- [\[ICML 2025\] Set-Valued Predictions for Robust Domain Generalization](../../ICML2025/others/set_valued_predictions_for_robust_domain_generalization.md)
+- [\[ACL 2025\] Is Linguistically-Motivated Data Augmentation Worth It?](../../ACL2025/others/is_linguistically-motivated_data_augmentation_worth_it.md)
 
 </div>
 

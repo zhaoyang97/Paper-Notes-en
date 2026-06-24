@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection
 description: >-
-  [ICML 2026][Self-Supervised Learning][Prior-Fitted Networks] This paper proposes OutFormer, a tabular Prior-Fitted Network (PFN) pretrained on a mixture of three synthetic priors (GMM, SCM, and Copula) and stabilized through a Multi-Armed Bandit-based Self-Evolving Curriculum. It achieves zero-shot tabular outlier detection by processing training data in-context and generating l
+  [ICML 2026][Self-Supervised Learning][Zero-Shot Outlier Detection] This paper proposes OutFormer, a tabular Prior-Fitted Network (PFN) pretrained on a mixture of three synthetic priors (GMM, SCM, and Copula) and stabilized through a Multi-Armed Bandit-based Self-Evolving Curriculum. It achieves zero-shot tabular outlier detection by processing training data in-context and generating labels in a single forward pass. OutFormer achieves SOTA rankings across ADBench and two new b…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - Prior-Fitted Networks
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Zero-Shot Outlier Detection"
+  - "Prior-Fitted Networks"
+  - "Synthetic Prior Mixture"
+  - "Self-Evolving Curriculum"
+  - "Multi-Armed Bandit"
 date: 2026-05-08
-content_hash: 743e106b887af80d
+content_hash: be39b5e3584df5ed
 ---
+
 # From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection
 
 **Conference**: ICML 2026  
@@ -137,9 +142,9 @@ SEC restores GMM performance (0.930 vs 0.873) while simultaneously boosting Mixe
 
 - [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
 - [\[ICML 2026\] Zero-Flow Encoders](zero-flow_encoders.md)
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](towards_one-for-all_anomaly_detection_for_tabular_data.md)
 - [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
 - [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
-- [\[ICCV 2025\] CObL: Toward Zero-Shot Ordinal Layering without User Prompting](../../ICCV2025/self_supervised/cobl_toward_zero-shot_ordinal_layering_without_user_prompting.md)
 
 </div>
 

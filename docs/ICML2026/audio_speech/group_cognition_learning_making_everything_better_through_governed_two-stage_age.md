@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] To address the chronic issues of "modality dominance" and "spurious modality coupling" in centralized multimodal fusion, GCL reformulates multimodal learning as a **governed two-stage four-agent collaborative protocol**. The first stage uses Routing/Auditing agents to decide which cross-modal communications are permitt
+  [ICML 2026][Audio & Speech][Multimodal Fusion] To address the chronic issues of "modality dominance" and "spurious modality coupling" in centralized multimodal fusion, GCL reformulates multimodal learning as a **governed two-stage four-agent collaborative protocol**. The first stage uses Routing/Auditing agents to decide which cross-modal communications are permitted per sample based on marginal prediction gain. The second stage uses Public-Factor/Aggregation agents to decoup…
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Multimodal Fusion"
+  - "Modality Dominance"
+  - "Spurious Coupling"
+  - "Marginal Gain Gating"
+  - "Routing Auditing"
 date: 2026-05-08
-content_hash: 1d25dafab92eada6
+content_hash: 6831717d58fc43ae
 ---
+
 # Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration
 
 **Conference**: ICML 2026  

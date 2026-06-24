@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REVIVE 3D: Refinement via Encoded Voluminous Inflated prior for Volume Enhancement
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] REVIVE 3D utilizes a "two-stage, plug-and-play" pipeline to transform flat images lacking 3D cues (cartoons, line art, flat illustrations) into voluminous 3D meshes. It first inflates the image into a volumetric "inflated prior" mesh, then performs noise injection and denoising refinement within the latent space of a p
+  [CVPR 2026][3D Vision][Single-image to 3D] REVIVE 3D utilizes a "two-stage, plug-and-play" pipeline to transform flat images lacking 3D cues (cartoons, line art, flat illustrations) into voluminous 3D meshes. It first inflates the image into a volumetric "inflated prior" mesh, then performs noise injection and denoising refinement within the latent space of a pre-trained 3D latent diffusion backbone. The method also introduces two reference-free metrics…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image to 3D"
+  - "flat images"
+  - "inflated prior"
+  - "3D latent refinement"
+  - "volumetric metrics"
 date: 2026-05-08
-content_hash: ebab5435bf922d57
+content_hash: 0896681eacf3f764
 ---
+
 # REVIVE 3D: Refinement via Encoded Voluminous Inflated prior for Volume Enhancement
 
 **Conference**: CVPR 2026  

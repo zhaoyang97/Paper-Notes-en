@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Projected Coupled Diffusion for Test-Time Constrained Joint Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] **Background**: Diffusion models have become universal modeling tools for generation tasks involving images, videos, language, graphs, and robot trajectories. Many practical systems require more than just "unconditional sample generation" but involve incorporating additional objectives during inference—such as classifi
+  [ICLR2026][Image Generation][Test-time Constrained Generation] **Background**: Diffusion models have become universal modeling tools for generation tasks involving images, videos, language, graphs, and robot trajectories. Many practical systems require more than just "unconditional sample generation" but involve incorporating additional objectives during inference—such as classifier guidance, inpainting, reward guidance, or projected diffusion—to guide existing models toward…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Test-time Constrained Generation"
+  - "Joint Generation"
+  - "Projected Diffusion"
+  - "Coupled Diffusion"
+  - "Multi-model Collaboration"
 date: 2026-05-08
-content_hash: 819e5e50263d1c32
+content_hash: 5daf669d0a2fb631
 ---
+
 <!-- 由 src/conference/gen_openreview_stubs.py 自动生成 -->
 # Projected Coupled Diffusion for Test-Time Constrained Joint Generation
 

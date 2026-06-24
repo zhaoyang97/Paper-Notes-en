@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Coverage Optimization for Camera View Selection
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] Starting from Fisher Information Gain (FIG), this paper performs a series of analytical approximations to prove that "selecting the most informative next view" is mathematically equivalent to "selecting a view observing geometry worst covered by existing cameras." This yields CONVERGE, a lightweight, visualizable metri
+  [CVPR 2026][3D Vision][Active view selection] Starting from Fisher Information Gain (FIG), this paper performs a series of analytical approximations to prove that "selecting the most informative next view" is mathematically equivalent to "selecting a view observing geometry worst covered by existing cameras." This yields CONVERGE, a lightweight, visualizable metric requiring no custom CUDA kernels. On 15 real scenes, it consistently outperforms FisherRF and random baselines i…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Active view selection"
+  - "Radiance field reconstruction"
+  - "Fisher information gain"
+  - "Geometric coverage"
+  - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: 04d63a4744d502dc
+content_hash: 79acaba07f17b325
 ---
+
 # Coverage Optimization for Camera View Selection
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ Tested under Sparse (1 initial view) and Embodied (kNN-based movement) settings:
 
 ## Related Papers
 
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
+- [\[CVPR 2026\] PRIMU: Uncertainty Estimation for Novel Views in Gaussian Splatting from Primitive-Based Representations of Error and Coverage](primu_uncertainty_estimation_for_novel_views_in_gaussian_splatting_from_primitiv.md)
 - [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] Aesthetic Camera Viewpoint Suggestion with 3D Aesthetic Field](aesthetic_camera_viewpoint_suggestion_with_3d_aesthetic_field.md)
 
 </div>
 

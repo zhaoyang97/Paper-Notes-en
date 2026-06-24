@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Local Success Does Not Compose: Benchmarking Large Language Models for Compositional Formal Verification
 description: >-
-  [ICLR 2026][Code Intelligence][Dafny] This paper introduces **DAFNYCOMP**, the first benchmark for compositional formal specification generation across multi-function programs. It reveals that while leading LLMs achieve over 58% pass rates on single-function Dafny verification, their end-to-end success rates drop nearly to zero (strongest model Pass@8 is o
+  [ICLR 2026][Code Intelligence][Formal Verification] This paper introduces **DAFNYCOMP**, the first benchmark for compositional formal specification generation across multi-function programs. It reveals that while leading LLMs achieve over 58% pass rates on single-function Dafny verification, their end-to-end success rates drop nearly to zero (strongest model Pass@8 is only 2%) when 2–5 functions are composed into a call chain, proving that "local success does not compose."
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Dafny
-  - Benchmark
-  - Pass@k
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Formal Verification"
+  - "Dafny"
+  - "Compositional Reasoning"
+  - "Specification Generation"
+  - "Benchmark"
+  - "Pass@k"
 date: 2026-05-08
-content_hash: 28c5d995900d0a24
+content_hash: a85a6c4527e402ed
 ---
+
 # Local Success Does Not Compose: Benchmarking Large Language Models for Compositional Formal Verification
 
 **Conference**: ICLR 2026  
@@ -133,9 +137,9 @@ Comparison: Leading models achieve Syntax $>99\%$ and Verified $>58\%$ on single
 ## Related Papers
 
 - [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
-- [\[AAAI 2026\] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models](../../AAAI2026/code_intelligence/span_benchmarking_and_improving_cross-calendar_temporal_reasoning_of_large_langu.md)
 - [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
 - [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
+- [\[AAAI 2026\] SPAN: Benchmarking and Improving Cross-Calendar Temporal Reasoning of Large Language Models](../../AAAI2026/code_intelligence/span_benchmarking_and_improving_cross-calendar_temporal_reasoning_of_large_langu.md)
 - [\[ICLR 2026\] LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models](learnat_learning_nl2sql_with_ast-guided_task_decomposition_for_large_language_mo.md)
 
 </div>

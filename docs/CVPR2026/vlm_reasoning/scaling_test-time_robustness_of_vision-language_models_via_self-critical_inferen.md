@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes the Self-Critical Inference (SCI) framework, which addresses both language bias and language sensitivity in LVLMs through logit aggregation of multi-round textual and visual counterfactual reasoning. It also introduces DRBench, a dynamic robustness benchmark for model-specific evaluation. Increasing
+  [CVPR 2026][VLM Reasoning][LVLM Robustness] This paper proposes the Self-Critical Inference (SCI) framework, which addresses both language bias and language sensitivity in LVLMs through logit aggregation of multi-round textual and visual counterfactual reasoning. It also introduces DRBench, a dynamic robustness benchmark for model-specific evaluation. Increasing counterfactual reasoning rounds consistently improves robustness, opening a new direction for test-time scaling.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "LVLM Robustness"
+  - "Counterfactual Reasoning"
+  - "Language Bias"
+  - "Language Sensitivity"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 74a99d2480e92053
+content_hash: dcdfade3420aa809
 ---
+
 # Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ This is a training-free inference-time method. Temperature parameters $\tau_1, \
 - Value: ⭐⭐⭐⭐ (Practical inference-time robustness enhancement)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
-- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
 - [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](self-critical_distillation_network_for_video-based_commonsense_captioning.md)
 
 </div>
 

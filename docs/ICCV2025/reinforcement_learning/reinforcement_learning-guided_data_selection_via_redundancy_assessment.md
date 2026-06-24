@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment
 description: >-
-  [ICCV 2025][Reinforcement Learning][Data Selection] This paper proposes RL-Selector, which introduces the ε-sample cover concept to quantify sample redundancy and formulates data selection as a reinforcement learning pro…
+  [ICCV 2025][Reinforcement Learning][Data Selection] This paper proposes RL-Selector, which introduces the ε-sample cover concept to quantify sample redundancy and formulates data selection as a reinforcement learning problem. A lightweight A2C policy network adaptively optimizes the selection strategy, achieving generalization performance comparable to or surpassing full-data training with significantly fewer samples across multiple benchmark datasets.
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "A2C"
   - "Training Efficiency"
 date: 2026-05-08
-content_hash: e3e2f7e5b5b0f0cd
+content_hash: f39f065062335816
 ---
 
 # RL-Selector: Reinforcement Learning-Guided Data Selection via Redundancy Assessment
@@ -167,8 +167,8 @@ Models trained on subsets selected from ImageNet-1k **outperform models trained 
 - [\[ACL 2026\] LearnAlign: Data Selection for LLM Reinforcement Learning with Improved Gradient Alignment](../../ACL2026/reinforcement_learning/learnalign_data_selection_for_llm_reinforcement_learning_with_improved_gradient_.md)
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](../../ICML2026/reinforcement_learning/single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
 - [\[ICCV 2025\] mDP3: A Training-free Approach for List-wise Frame Selection in Video-LLMs](mdp3_a_training-free_approach_for_list-wise_frame_selection_in_video-llms.md)
-- [\[ICCV 2025\] Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement](progressor_a_perceptually_guided_reward_estimator_with_self-supervised_online_re.md)
-- [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](../../ICLR2026/reinforcement_learning/reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
+- [\[ICLR 2026\] Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR](../../ICLR2026/reinforcement_learning/learn_more_with_less_uncertainty_consistency_guided_query_selection_for_rlvr.md)
+- [\[ICLR 2026\] Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels](../../ICLR2026/reinforcement_learning/webscale-rl_automated_data_pipeline_for_scaling_rl_data_to_pretraining_levels.md)
 
 </div>
 

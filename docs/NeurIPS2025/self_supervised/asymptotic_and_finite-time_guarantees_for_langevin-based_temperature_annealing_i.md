@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Asymptotic and Finite-Time Guarantees for Langevin-Based Temperature Annealing in InfoNCE
 description: >-
-  [NeurIPS 2025 (Optimization for Machine Learning Workshop)][Self-Supervised Learning][Contrastive Learning] By modeling embedding evolution as Langevin dynamics on a compact Riemannian manifold…
+  [NeurIPS 2025 (Optimization for Machine Learning Workshop)][Self-Supervised Learning][Contrastive Learning] By modeling embedding evolution as Langevin dynamics on a compact Riemannian manifold, this paper proves that the convergence guarantees of classical simulated annealing extend to the temperature scheduling setting in contrastive learning: a sufficiently slow logarithmic inverse-temperature schedule guarantees probabilistic convergence to the globally optimal representa…
 tags:
   - "NeurIPS 2025 (Optimization for Machine Learning Workshop)"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Langevin Dynamics"
   - "Simulated Annealing"
 date: 2026-05-08
-content_hash: c4c55508c8f714ae
+content_hash: 9b2b290398140dfc
 ---
 
 # Asymptotic and Finite-Time Guarantees for Langevin-Based Temperature Annealing in InfoNCE
@@ -155,10 +155,10 @@ As a workshop paper with a theoretical focus, the experimental section is relati
 ## Related Papers
 
 - [\[ICLR 2026\] InfoNCE Induces Gaussian Distribution](../../ICLR2026/self_supervised/infonce_induces_gaussian_distribution.md)
-- [\[NeurIPS 2025\] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees](adv-ssl_adversarial_self-supervised_representation_learning_with_theoretical_gua.md)
 - [\[ICML 2026\] When Softmax Fails at the Top: Extreme Value Corrections for InfoNCE](../../ICML2026/self_supervised/when_softmax_fails_at_the_top_extreme_value_corrections_for_infonce.md)
+- [\[NeurIPS 2025\] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees](adv-ssl_adversarial_self-supervised_representation_learning_with_theoretical_gua.md)
+- [\[CVPR 2026\] Tunable Soft Equivariance with Guarantees](../../CVPR2026/self_supervised/tunable_soft_equivariance_with_guarantees.md)
 - [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](../../ICLR2026/self_supervised/test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
-- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](../../CVPR2026/self_supervised/a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
 
 </div>
 

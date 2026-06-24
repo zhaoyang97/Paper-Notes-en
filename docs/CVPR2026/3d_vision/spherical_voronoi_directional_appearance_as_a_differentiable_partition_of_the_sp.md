@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spherical Voronoi: Directional Appearance as a Differentiable Partition of the Sphere
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the limitation of Spherical Harmonics (SH) in representing high-frequency specular reflections for "view-dependent appearance" in radiance fields, this paper proposes **Spherical Voronoi (SV)**. By using a set of learnable sites to softly partition the sphere into regions, SV serves as an explicit spherical
+  [CVPR 2026][3D Vision][Novel View Synthesis] Addressing the limitation of Spherical Harmonics (SH) in representing high-frequency specular reflections for "view-dependent appearance" in radiance fields, this paper proposes **Spherical Voronoi (SV)**. By using a set of learnable sites to softly partition the sphere into regions, SV serves as an explicit spherical function representation that is easier to optimize than SH or Spherical Gaussians (SG) while sharply modeling glint…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "3D Gaussian Splatting"
+  - "Spherical Representation"
+  - "Specular Reflection"
+  - "Differentiable Voronoi"
 date: 2026-05-08
-content_hash: b956f0a40d3a49c9
+content_hash: d779e228b262f18f
 ---
+
 # Spherical Voronoi: Directional Appearance as a Differentiable Partition of the Sphere
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Replacing the spherical representation in light probes while keeping parameters 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Differentiable Hierarchies in 3D Gaussian Splatting](learning_differentiable_hierarchies_in_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
+- [\[CVPR 2026\] Learning Differentiable Hierarchies in 3D Gaussian Splatting](learning_differentiable_hierarchies_in_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
 - [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
-- [\[CVPR 2026\] Velox: Learning Representations of 4D Geometry and Appearance](velox_learning_representations_of_4d_geometry_and_appearance.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Differentiable Model Predictive Control on the GPU
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The authors propose DiffMPC, a solver that completely ports differentiable Model Predictive Control (MPC) to the GPU. By employing Sequential Quadratic Programming (SQP) for the forward pass, a Preconditioned Conjugate Gradient (PCG) with a "stair" preconditioner to solve the KKT linear system in parallel across the ti
+  [ICLR2026][Optimization][Differentiable MPC] The authors propose DiffMPC, a solver that completely ports differentiable Model Predictive Control (MPC) to the GPU. By employing Sequential Quadratic Programming (SQP) for the forward pass, a Preconditioned Conjugate Gradient (PCG) with a "stair" preconditioner to solve the KKT linear system in parallel across the time dimension, and the Implicit Function Theorem (IFT) to reuse the same KKT matrix for gradient computation…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Differentiable MPC"
+  - "GPU Parallelism"
+  - "Sequential Quadratic Programming"
+  - "Preconditioned Conjugate Gradient"
+  - "Implicit Function Theorem"
 date: 2026-05-08
-content_hash: 596630c1f71bbbb3
+content_hash: 3718c7088c388b74
 ---
+
 # Differentiable Model Predictive Control on the GPU
 
 **Conference**: ICLR2026  
@@ -149,7 +155,6 @@ DiffMPC is **4×** faster than the fastest baseline on GPU. In other tasks like 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

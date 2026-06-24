@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Less is More: Empowering GUI Agent with Context-Aware Simplification
 description: >-
-  [ICCV 2025][LLM Agent][GUI Agent] This paper proposes SimpAgent — a context-aware simplification framework that achieves SOTA on multiple GUI navigation benchmarks while reducing FLOPs by 27%…
+  [ICCV 2025][LLM Agent][GUI Agent] This paper proposes SimpAgent — a context-aware simplification framework that achieves SOTA on multiple GUI navigation benchmarks while reducing FLOPs by 27%, via masking-based element pruning (randomly masking irrelevant element regions during training) and consistency-guided history compression (directly dropping historical visual tokens at intermediate LLM layers with a KL divergence consistency constraint).
 tags:
   - "ICCV 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "History Compression"
   - "Computational Efficiency"
 date: 2026-05-08
-content_hash: 014cc7ce961305b8
+content_hash: 3aa1f43773d9eb7e
 ---
 
 # Less is More: Empowering GUI Agent with Context-Aware Simplification
@@ -176,11 +176,11 @@ AndroidControl results:
 
 ## Related Papers
 
+- [\[CVPR 2025\] GUI-Xplore: Empowering Generalizable GUI Agents with One Exploration](../../CVPR2025/llm_agent/gui-xplore_empowering_generalizable_gui_agents_with_one_exploration.md)
+- [\[ACL 2025\] GUI-explorer: Autonomous Exploration and Mining of Transition-aware Knowledge for GUI Agent](../../ACL2025/llm_agent/gui_explorer_autonomous.md)
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
-- [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](../../CVPR2026/llm_agent/hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
-- [\[NeurIPS 2025\] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions](../../NeurIPS2025/llm_agent/contextagent_context-aware_proactive_llm_agents_with_open-world_sensory_percepti.md)
-- [\[ICCV 2025\] UIPro: Unleashing Superior Interaction Capability for GUI Agents](uipro_unleashing_superior_interaction_capability_for_gui_agents.md)
-- [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](../../AAAI2026/llm_agent/agent-sama_state-aware_mobile_assistant.md)
+- [\[ICLR 2026\] Sculptor: Empowering LLMs with Cognitive Agency via Active Context Management](../../ICLR2026/llm_agent/sculptor_empowering_llms_with_cognitive_agency_via_active_context_management.md)
+- [\[CVPR 2026\] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing](../../CVPR2026/llm_agent/refact_empowering_multimodal_web_agents_with_visual_and_context_focusing.md)
 
 </div>
 

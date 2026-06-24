@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research
 description: >-
-  [NeurIPS 2025][Code Intelligence][AI research agents] This paper proposes MLR-Bench, a comprehensive benchmark comprising 201 open-ended ML research tasks…
+  [NeurIPS 2025][Code Intelligence][AI research agents] This paper proposes MLR-Bench, a comprehensive benchmark comprising 201 open-ended ML research tasks, accompanied by MLR-Judge (an LLM-based evaluation framework) and MLR-Agent (a modular research agent). The study finds that state-of-the-art coding agents fabricate or fail to verify experimental results in approximately 80% of cases, exposing a fundamental bottleneck in AI-automated scientific research.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "automated scientific discovery"
   - "experimental result hallucination"
 date: 2026-05-08
-content_hash: b4ecedd10fb4b57d
+content_hash: a36186215ac3a20e
 ---
 
 # MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research
@@ -180,10 +180,10 @@ This paper does not involve model training. MLR-Agent adopts a simple prompt des
 ## Related Papers
 
 - [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
+- [\[ACL 2025\] FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation](../../ACL2025/code_intelligence/feabench_repo_code_gen.md)
+- [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
 - [\[ICML 2026\] MARS: Modular Agent with Reflective Search for Automated AI Research](../../ICML2026/code_intelligence/mars_modular_agent_with_reflective_search_for_automated_ai_research.md)
 - [\[ACL 2026\] AutoMonitor-Bench: Evaluating the Reliability of LLM-Based Misbehavior Monitor](../../ACL2026/code_intelligence/automonitor-bench_evaluating_the_reliability_of_llm-based_misbehavior_monitor.md)
-- [\[ICLR 2026\] InnoGym: Benchmarking the Innovation Potential of AI Agents](../../ICLR2026/code_intelligence/innogym_benchmarking_the_innovation_potential_of_ai_agents.md)
-- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](../../ACL2026/code_intelligence/securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
 
 </div>
 

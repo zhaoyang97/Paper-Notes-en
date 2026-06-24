@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Block-Wise LLM Quantization by 4-bit Block-Wise Optimal Float (BOF4): Analysis and Variations
 description: >-
-  [ICLR 2026][Model Compression][QLoRA] This paper revisits the block-wise absmax quantization (NF4 / AF4) commonly used in QLoRA. It uses a Lloyd-style EM algorithm to directly solve for a 4-bit codebook (BOF4) that is **optimal for end-to-end weight error**. Combined with two simple modifications—"Signed Normalization" (BOF4-S) and "Outlier-Preserved Quant
+  [ICLR 2026][Model Compression][Block-wise quantization] This paper revisits the block-wise absmax quantization (NF4 / AF4) commonly used in QLoRA. It uses a Lloyd-style EM algorithm to directly solve for a 4-bit codebook (BOF4) that is **optimal for end-to-end weight error**. Combined with two simple modifications—"Signed Normalization" (BOF4-S) and "Outlier-Preserved Quantization" (OPQ)—it pushes quantization error and perplexity to the best levels among 4-bit block-wise qua…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - QLoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Block-wise quantization"
+  - "4-bit quantization"
+  - "QLoRA"
+  - "Optimal codebook"
+  - "Outlier preservation"
 date: 2026-05-08
-content_hash: c472e168c4b69e8a
+content_hash: be9b4f2084002074
 ---
+
 # Improving Block-Wise LLM Quantization by 4-bit Block-Wise Optimal Float (BOF4): Analysis and Variations
 
 **Conference**: ICLR 2026  
@@ -129,7 +134,7 @@ Quantization error (MAE/MSE) and WikiText-2 perplexity (PPL) were compared acros
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] GraphShield: Graph-Theoretic Modeling of Network-Level Dynamics for Robust Jailbreak Detection
 description: >-
-  [ICLR 2026][LLM Safety][jailbreak detection] GraphShield models internal LLM information routing as a "token-layer" directed graph, quantifying whether "refusal semantics are effectively transmitted to the output" via refusal anchors (e.g., "cannot"). By extracting multi-scale structural and semantic features for a lightweight SVM classifier, it reduces the Attac
+  [ICLR 2026][LLM Safety][jailbreak detection] GraphShield models internal LLM information routing as a "token-layer" directed graph, quantifying whether "refusal semantics are effectively transmitted to the output" via refusal anchors (e.g., "cannot"). By extracting multi-scale structural and semantic features for a lightweight SVM classifier, it reduces the Attack Success Rate (ASR) on LLaMA-2 and Vicuna to 1.9% and 7.8%, respectively, using only a single forward pass.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - jailbreak detection
-  - token-layer graph
-  - attention rollout
-  - graph-theoretic features
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "jailbreak detection"
+  - "token-layer graph"
+  - "attention rollout"
+  - "graph-theoretic features"
 date: 2026-05-08
-content_hash: a249af4cacee976b
+content_hash: 8f0f52cb74d09378
 ---
+
 # GraphShield: Graph-Theoretic Modeling of Network-Level Dynamics for Robust Jailbreak Detection
 
 **Conference**: ICLR 2026  
@@ -147,8 +148,8 @@ Removing either anchor conditions or the graph structure leads to performance de
 - [\[ICLR 2026\] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints](pmark_towards_robust_and_distortion-free_semantic-level_watermarking_with_channe.md)
 - [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](../../ACL2026/llm_safety/rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
+- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
 - [\[ACL 2026\] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](../../ACL2026/llm_safety/trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)
-- [\[ICLR 2026\] Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies](automatic_dialectic_jailbreak_a_framework_for_generating_effective_jailbreak_str.md)
 
 </div>
 

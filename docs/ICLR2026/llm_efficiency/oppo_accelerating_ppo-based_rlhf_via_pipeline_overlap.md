@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] OPPO: Accelerating PPO-based RLHF via Pipeline Overlap
 description: >-
-  [ICLR 2026][LLM Efficiency][PPO] OPPO is a lightweight, model-agnostic framework for accelerating PPO-RLHF training. By overlapping actor generation and reward scoring via chunked streaming within a single step and utilizing inter-step "overcommitment" to defer tail latencies, it achieves training speedups of 1.8×–2.8× and increases GPU utilization by
+  [ICLR 2026][LLM Efficiency][PPO] OPPO is a lightweight, model-agnostic framework for accelerating PPO-RLHF training. By overlapping actor generation and reward scoring via chunked streaming within a single step and utilizing inter-step "overcommitment" to defer tail latencies, it achieves training speedups of 1.8×–2.8× and increases GPU utilization by 1.4×–2.1× without altering PPO updates or degrading convergence quality.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - PPO
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "PPO"
+  - "RLHF"
+  - "Pipeline Overlap"
+  - "Tail Latency"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: fff28958452d1894
+content_hash: 17e677ce6583f9bf
 ---
+
 # OPPO: Accelerating PPO-based RLHF via Pipeline Overlap
 
 **Conference**: ICLR 2026  
@@ -140,14 +144,17 @@ GPU Utilization: On Stack-Exchange, 7B-Instruct increased from 50.6%→71.0% (1.
 
 <div class="related-papers" markdown="1">
 
-[1] Schulman et al. **Proximal Policy Optimization Algorithms**. arXiv 2017.
-[2] Dou et al. **AReaL: Asynchronous RLHF Framework for LLM Training**. arXiv 2024.
-[3] Sheng et al. **VeRL: Volcano Engine Reinforcement Learning for LLMs**. GitHub 2024.
+## Related Papers
+
+- [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
+- [\[ICLR 2026\] SonicMoE: Accelerating MoE with IO and Tile-aware Optimizations](sonicmoe_accelerating_moe_with_io_and_tile-aware_optimizations.md)
+- [\[ICLR 2026\] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling](cactus_accelerating_auto-regressive_decoding_with_constrained_acceptance_specula.md)
+- [\[ICLR 2026\] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](ni_sampling_accelerating_discrete_diffusion_sampling_by_token_order_optimization.md)
+- [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](../../NeurIPS2025/llm_efficiency/flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)

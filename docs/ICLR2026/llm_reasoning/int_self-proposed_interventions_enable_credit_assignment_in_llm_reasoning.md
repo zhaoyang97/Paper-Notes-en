@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InT: Self-Proposed Interventions Enable Credit Assignment in LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] Addressing the credit assignment challenge in outcome-reward RL where "entire trajectories are rewarded or punished together, failing to distinguish correct from incorrect steps," this paper has the model self-verify against a reference answer to propose a **single-step corrective intervention** for the first error in
+  [ICLR 2026][Reasoning][Credit Assignment] Addressing the credit assignment challenge in outcome-reward RL where "entire trajectories are rewarded or punished together, failing to distinguish correct from incorrect steps," this paper has the model self-verify against a reference answer to propose a **single-step corrective intervention** for the first error in a failed trajectory. By "patching" these interventions into the base model via SFT followed by RL…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Credit Assignment"
+  - "Reinforcement Learning"
+  - "Self-verification"
+  - "One-step Intervention"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 13117b8cfa40cf42
+content_hash: 4066dad7920bbcbd
 ---
+
 # InT: Self-Proposed Interventions Enable Credit Assignment in LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -134,9 +139,9 @@ Effectiveness of the intervention itself (334 problems): Appending the intervent
 
 - [\[NeurIPS 2025\] Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](../../NeurIPS2025/llm_reasoning/stop_summation_minform_credit_assignment_is_all_process_rewa.md)
 - [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[NeurIPS 2025\] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models](../../NeurIPS2025/llm_reasoning/segment_policy_optimization_effective_segment-level_credit_assignment_in_rl_for_.md)
 - [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[NeurIPS 2025\] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models](../../NeurIPS2025/llm_reasoning/segment_policy_optimization_effective_segment-level_credit_assignment_in_rl_for_.md)
 
 </div>
 

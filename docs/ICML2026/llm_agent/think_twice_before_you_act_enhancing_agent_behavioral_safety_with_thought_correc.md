@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction
 description: >-
-  [ICML 2026][LLM Agent][Thought-Aligner] This paper proposes Thought-Aligner—a lightweight (1.5B/7B) plug-and-play safety model that performs causal debiasing of intermediate thoughts within the LLM agent's think-act-observe loop. By intervening before actions are executed, it improves the behavioral safety rate of six mainstream LLMs from approximately 50% t
+  [ICML 2026][LLM Agent][Thought-Aligner] This paper proposes Thought-Aligner—a lightweight (1.5B/7B) plug-and-play safety model that performs causal debiasing of intermediate thoughts within the LLM agent's think-act-observe loop. By intervening before actions are executed, it improves the behavioral safety rate of six mainstream LLMs from approximately 50% to approximately 90% on ToolEmu/Agent-SafetyBench, while simultaneously increasing helpfulness by about 5%.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Thought-Aligner
-  - ReAct
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Thought-Aligner"
+  - "Thought-level Intervention"
+  - "Agent Safety"
+  - "Preference Contrastive Learning"
+  - "ReAct"
 date: 2026-05-08
-content_hash: 9e4a02819be9a375
+content_hash: ff35229e0c3daf19
 ---
+
 # Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction
 
 **Conference**: ICML 2026  
@@ -158,10 +162,10 @@ Further comparisons of "Single-stage SFT," "No warm-up," and "No human filtering
 ## Related Papers
 
 - [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](../../ACL2026/llm_agent/don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)
-- [\[ACL 2025\] Enhancing LLM Agent Safety via Causal Influence Prompting](../../ACL2025/llm_agent/enhancing_llm_agent_safety_via_causal_influence_prompting.md)
 - [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
+- [\[ACL 2025\] Enhancing LLM Agent Safety via Causal Influence Prompting](../../ACL2025/llm_agent/enhancing_llm_agent_safety_via_causal_influence_prompting.md)
+- [\[ICML 2026\] A Systematic Study of Behavioral Cloning for Scientific Data Annotation](a_systematic_study_of_behavioral_cloning_for_scientific_data_annotation.md)
 - [\[ICCV 2025\] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training](../../ICCV2025/llm_agent/gtr_guided_thought_reinforcement_prevents_thought_collapse_i.md)
-- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](../../CVPR2026/llm_agent/think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
 
 </div>
 

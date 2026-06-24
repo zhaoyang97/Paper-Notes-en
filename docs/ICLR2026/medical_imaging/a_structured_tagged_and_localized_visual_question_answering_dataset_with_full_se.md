@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Structured, Tagged, and Localized Visual Question Answering Dataset with Full Sentence Answers and Scene Graphs for Chest X-ray Images
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper automatically constructs CXR-QBA from MIMIC-CXR radiology reports—a large-scale chest X-ray VQA dataset featuring 42.2 million QA pairs. Each answer includes full sentences, bounding boxes, and structured labels (findings, regions, certainty, etc.). Produced via a three-stage pipeline ("Scene Graph Construct
+  [ICLR2026][Medical Imaging][Chest X-ray VQA] This paper automatically constructs CXR-QBA from MIMIC-CXR radiology reports—a large-scale chest X-ray VQA dataset featuring 42.2 million QA pairs. Each answer includes full sentences, bounding boxes, and structured labels (findings, regions, certainty, etc.). Produced via a three-stage pipeline ("Scene Graph Construction → Templated QA Generation → LLM-based Quality Assurance"), the dataset provides two subsets—a 31.2 million pre-…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Chest X-ray VQA"
+  - "Scene Graphs"
+  - "Report Information Extraction"
+  - "Bounding Box Localization"
+  - "Structured Annotation"
 date: 2026-05-08
-content_hash: f1a8f211a81ef6e6
+content_hash: f2f7603238802045
 ---
+
 # A Structured, Tagged, and Localized Visual Question Answering Dataset with Full Sentence Answers and Scene Graphs for Chest X-ray Images
 
 **Conference**: ICLR2026  
@@ -124,15 +130,16 @@ Key Findings:
 - **Value**: ⭐⭐⭐⭐⭐ 42M scale + bboxes + structured tags + open pipeline represents a highly valuable resource for medical multimodal pre-training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] MedVLSynther: Synthesizing High-Quality Medical Visual Question Answering from Biomedical Literature with Generator-Verifier LMMs](synthesizing_high-quality_visual_question_answering_from_medical_documents_with_.md)
 - [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](../../AAAI2026/medical_imaging/q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
 - [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](../../CVPR2026/medical_imaging/dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
 - [\[CVPR 2026\] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering](../../CVPR2026/medical_imaging/mr-rag_multimodal_relevance-aware_retrieval-augmented_generation_for_medical_vis.md)
 - [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
-- [\[ICML 2026\] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](../../ICML2026/medical_imaging/semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] MIMIC decomposes "generating manipulation videos" into two stages: first, an Interaction-Motion-Aware (IMA) attention mechanism learns a sequence of semantic masks from a reference video to serve as motion trajectories; second, Pair Prompt Control renders these masks into frames, generating high-fidelity and controllab
+  [ICLR 2026][Video Generation][Manipulation Video Generation] MIMIC decomposes "generating manipulation videos" into two stages: first, an Interaction-Motion-Aware (IMA) attention mechanism learns a sequence of semantic masks from a reference video to serve as motion trajectories; second, Pair Prompt Control renders these masks into frames, generating high-fidelity and controllable manipulation videos while preserving contact-rich interaction semantics.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Manipulation Video Generation"
+  - "Reference Video-Driven"
+  - "Interaction Mask"
+  - "Image-to-Video Diffusion"
+  - "Motion Decoupling"
 date: 2026-05-08
-content_hash: f61724eb516e0f78
+content_hash: 6c5b48d1d6546ba9
 ---
+
 # MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control
 
 **Conference**: ICLR 2026  
@@ -130,9 +136,9 @@ On a custom manipulation video benchmark (240 evaluation samples, both reference
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)
+- [\[ICLR 2026\] MATRIX: Mask Track Alignment for Interaction-aware Video Generation](matrix_mask_track_alignment_for_interaction-aware_video_generation.md)
 - [\[AAAI 2026\] Mask2IV: Interaction-Centric Video Generation via Mask Trajectories](../../AAAI2026/video_generation/mask2iv_interaction-centric_video_generation_via_mask_trajectories.md)
 - [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](geometry-aware_4d_video_generation_for_robot_manipulation.md)
-- [\[ICLR 2026\] MoCa: Modeling Object Consistency for 3D Camera Control in Video Generation](moca_modeling_object_consistency_for_3d_camera_control_in_video_generation.md)
 - [\[ICLR 2026\] Streaming Drag-Oriented Interactive Video Manipulation: Drag Anything, Anytime!](streaming_drag-oriented_interactive_video_manipulation_drag_anything_anytime.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling between Responses and Self-Judgments
 description: >-
-  [ACL 2026][Hallucination Detection][Self-Judgment] This work treats an LLM's self-judgment ("Does it think its previous answer was correct?") as another potentially hallucinated generation. It first trains a "meta-judgment detector" using intrinsic features to estimate self-judgment credibility. Then, by applying the logical rule "if self-judgment says True → labels ar
+  [ACL 2026][Hallucination Detection][Self-Judgment] This work treats an LLM's self-judgment ("Does it think its previous answer was correct?") as another potentially hallucinated generation. It first trains a "meta-judgment detector" using intrinsic features to estimate self-judgment credibility. Then, by applying the logical rule "if self-judgment says True → labels are identical" and "if False → labels are opposite," the response detector and meta-judgment detector are joint…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Self-Judgment
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Self-Judgment"
+  - "Meta-Judgment"
+  - "Logical Constraints"
+  - "Mutual Learning"
+  - "Intrinsic Features"
 date: 2026-05-08
-content_hash: 219a99c15d2895f0
+content_hash: 44a0e584d08c6c4b
 ---
+
 # Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling between Responses and Self-Judgments
 
 **Conference**: ACL 2026  
@@ -135,10 +140,20 @@ Key ablation findings:
 - **Value**: ⭐⭐⭐⭐ (Practical zero-cost inference improvement)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing](multihaludet_multilingual_hallucination_detection_via_llm_hidden_state_probing.md)
+- [\[ACL 2026\] Aligning with Your Own Voice: Self-Corrected Preference Learning for Hallucination Mitigation in LVLMs](aligning_with_your_own_voice_self-corrected_preference_learning_for_hallucinatio.md)
+- [\[ACL 2026\] Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights](rethinking_evaluation_for_llm_hallucination_detection_a_desiderata_a_new_rag-bas.md)
+- [\[ICML 2025\] Steer LLM Latents for Hallucination Detection](../../ICML2025/hallucination/steer_llm_latents_for_hallucination_detection.md)
+- [\[ICML 2026\] Zero-source LLM Hallucination Detection with Human-like Criteria Probing](../../ICML2026/hallucination/zero-source_llm_hallucination_detection_with_human-like_criteria_probing.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)

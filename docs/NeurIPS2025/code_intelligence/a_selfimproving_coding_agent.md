@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Self-Improving Coding Agent
 description: >-
-  [NeurIPS 2025][Code Intelligence][self-improving agent] This paper proposes SICA (Self-Improving Coding Agent), a coding agent capable of autonomously editing its own codebase to improve performance. By eliminating the d…
+  [NeurIPS 2025][Code Intelligence][self-improving agent] This paper proposes SICA (Self-Improving Coding Agent), a coding agent capable of autonomously editing its own codebase to improve performance. By eliminating the distinction between meta-agent and target-agent, SICA achieves iterative self-improvement, advancing from 17% to 53% on a subset of SWE-Bench Verified.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "automated agent design"
   - "self-referential"
 date: 2026-05-08
-content_hash: 759cad923a03788a
+content_hash: 2263269891509574
 ---
 
 # A Self-Improving Coding Agent
@@ -117,11 +117,11 @@ The self-referential self-improvement paradigm has broad implications for agent 
 
 ## Related Papers
 
+- [\[ACL 2025\] SceneGenAgent: Precise Industrial Scene Generation with Coding Agent](../../ACL2025/code_intelligence/scenegenagent_precise_industrial_scene_generation_with_coding_agent.md)
 - [\[ICLR 2026\] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory](../../ICLR2026/code_intelligence/reasoningbank_scaling_agent_self-evolving_with_reasoning_memory.md)
+- [\[ACL 2025\] Revisit Self-Debugging with Self-Generated Tests for Code Generation](../../ACL2025/code_intelligence/revisit_self-debugging_with_self-generated_tests_for_code_generation.md)
 - [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](automated_multi-agent_workflows_for_rtl_design.md)
-- [\[ICLR 2026\] Improving Code Localization with Repository Memory](../../ICLR2026/code_intelligence/improving_code_localization_with_repository_memory.md)
-- [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
-- [\[AAAI 2026\] MoSE: Hierarchical Self-Distillation Enhances Early Layer Embeddings](../../AAAI2026/code_intelligence/mose_hierarchical_self-distillation_enhances_early_layer_embeddings.md)
+- [\[ACL 2025\] DARS: Dynamic Action Re-Sampling to Enhance Coding Agent Performance by Adaptive Tree Traversal](../../ACL2025/code_intelligence/dars_dynamic_action_re-sampling_to_enhance_coding_agent_performance_by_adaptive_.md)
 
 </div>
 

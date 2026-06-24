@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][POMDP] This paper proposes a nested Sequential Monte Carlo (SMC) algorithm grounded in non-Markovian Feynman-Kac models for policy optimization in continuous POMDPs…
+  [NeurIPS 2025][Reinforcement Learning][POMDP] This paper proposes a nested Sequential Monte Carlo (SMC) algorithm grounded in non-Markovian Feynman-Kac models for policy optimization in continuous POMDPs, naturally capturing the value of information gathering without hand-crafted heuristics.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "partial observability"
   - "Feynman-Kac"
 date: 2026-05-08
-content_hash: 3184af12226b35bc
+content_hash: f67438d356d6500c
 ---
 
 # Sequential Monte Carlo for Policy Optimization in Continuous POMDPs
@@ -136,8 +136,8 @@ POMDP policy optimization is mapped to probabilistic inference within a non-Mark
 - [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
 - [\[ICML 2026\] Reinforced Sequential Monte Carlo for Amortised Sampling](../../ICML2026/reinforcement_learning/reinforced_sequential_monte_carlo_for_amortised_sampling.md)
 - [\[NeurIPS 2025\] Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown](feel-good_thompson_sampling_for_contextual_bandits_a_markov_chain_monte_carlo_sh.md)
-- [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
 - [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](sequential_multi-agent_dynamic_algorithm_configuration.md)
+- [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
 
 </div>
 

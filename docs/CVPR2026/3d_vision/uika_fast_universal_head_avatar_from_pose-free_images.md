@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] UIKA: Fast Universal Head Avatar from Pose-Free Images
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] UIKA proposes a feed-forward drivable 3D Gaussian head avatar model. It projects an arbitrary number of "pose-free" input images (single image, multi-view, or mobile video) into a shared UV space via per-pixel face UV correspondence. A UV attention branch aggregates multi-view information to decode canonical space Gaus
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] UIKA proposes a feed-forward drivable 3D Gaussian head avatar model. It projects an arbitrary number of "pose-free" input images (single image, multi-view, or mobile video) into a shared UV space via per-pixel face UV correspondence. A UV attention branch aggregates multi-view information to decode canonical space Gaussians, enabling reconstruction in a single forward pass and real-time driving at 220 FPS. It outperforms existing…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Head Avatar"
+  - "Feed-forward Reconstruction"
+  - "Pose-free"
+  - "UV Attention"
+  - "Drivable Avatar"
 date: 2026-05-08
-content_hash: c45ff26e78bd72a8
+content_hash: 22b9b6205e0699ae
 ---
+
 # UIKA: Fast Universal Head Avatar from Pose-Free Images
 
 **Conference**: CVPR 2026  
@@ -148,11 +155,11 @@ On monocular NeRSemble-v2, self reenactment (Table 4):
 
 ## Related Papers
 
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
+- [\[CVPR 2026\] FHAvatar: Fast and High-Fidelity Reconstruction of Face-and-Hair Composable 3D Head Avatar from Few Casual Captures](fhavatar_fast_and_high-fidelity_reconstruction_of_face-and-hair_composable_3d_he.md)
 - [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
 - [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling](fresco_frequency-spatial_consistent_optimization_for_fine-grained_head_avatar_mo.md)
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization](learning_scene_coordinate_reconstruction_from_unposed_images_via_pose_graph_opti.md)
+- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rao-Blackwellized Score Matching on Manifolds
 description: >-
-  [ICML 2026][Image Generation][Rao-Blackwell] When the data distribution lies on an embedded manifold $M\subset\mathbb{R}^D$, the tangential target learned by ambient Gaussian Denoising Score Matching (DSM) contains normal noise channels with variance diverging as $d/\sigma^2$. This paper proves that a single Rao-Blackwell conditioning step on the nearest-point pr
+  [ICML 2026][Image Generation][Denoising score matching] When the data distribution lies on an embedded manifold $M\subset\mathbb{R}^D$, the tangential target learned by ambient Gaussian Denoising Score Matching (DSM) contains normal noise channels with variance diverging as $d/\sigma^2$. This paper proves that a single Rao-Blackwell conditioning step on the nearest-point projection $\pi(X)$ cleanly removes this singular channel and expands the remaining target precisely as "i…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Rao-Blackwell
+  - "ICML 2026"
+  - "Image Generation"
+  - "Denoising score matching"
+  - "Manifold hypothesis"
+  - "Rao-Blackwell"
+  - "Riemannian score"
+  - "Extrinsic curvature"
 date: 2026-05-08
-content_hash: f5c7ea108bc98bb1
+content_hash: 70ceb0d6671b2a5e
 ---
+
 # Rao-Blackwellized Score Matching on Manifolds
 
 **Conference**: ICML 2026  

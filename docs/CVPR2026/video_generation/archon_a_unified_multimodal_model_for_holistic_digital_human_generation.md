@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Archon: A Unified Multimodal Model for Holistic Digital Human Generation
 description: >-
-  [CVPR 2026][Video Generation][Autoregressive] Archon discretizes seven modalities involved in digital humans (description, text script, speech, 3DMM animation, semantic video, image, and video) into tokens. A single autoregressive large model is pre-trained on 72 tasks to achieve any-to-any modality generation, understanding, and editing. It addresses token explos
+  [CVPR 2026][Video Generation][Digital Human Generation] Archon discretizes seven modalities involved in digital humans (description, text script, speech, 3DMM animation, semantic video, image, and video) into tokens. A single autoregressive large model is pre-trained on 72 tasks to achieve any-to-any modality generation, understanding, and editing. It addresses token explosion in high-frame-rate talking videos using a $4\times$ semantic video token compression and semantic-dr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Autoregressive
-  - Thinking in Modality
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Digital Human Generation"
+  - "Unified Multimodal Model"
+  - "Autoregression"
+  - "Semantic Video"
+  - "Thinking in Modality"
 date: 2026-05-08
-content_hash: bdefe04f6c24dedd
+content_hash: 86e95534f242e9dc
 ---
+
 # Archon: A Unified Multimodal Model for Holistic Digital Human Generation
 
 **Conference**: CVPR 2026  
@@ -138,7 +142,7 @@ Ablation of Thinking in Modality on CelebV-HQ and HDTF (Table 3):
 - [\[CVPR 2026\] Soul: Breathe Life into Digital Human for High-fidelity Long-term Multimodal Animation](soul_breathe_life_into_digital_human_for_high-fidelity_long-term_multimodal_anim.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
-- [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](../../ICLR2026/video_generation/lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
+- [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
 - [\[CVPR 2026\] HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives](holocine_holistic_generation_of_cinematic_multi-shot_long_video_narratives.md)
 
 </div>

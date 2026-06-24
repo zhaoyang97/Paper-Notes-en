@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition
 description: >-
-  [AAAI 2026][Video Understanding][Skeleton-based action recognition] This paper proposes the SUGAR paradigm, which leverages GPT-generated **motion descriptions** and **visual descriptions** as prior knowledge to supervis…
+  [AAAI 2026][Video Understanding][Skeleton-based action recognition] This paper proposes the SUGAR paradigm, which leverages GPT-generated **motion descriptions** and **visual descriptions** as prior knowledge to supervise skeleton encoders via contrastive learning, producing more discriminative representations. These representations are then fed into an LLM (LLaMA2-7B) with untouched pretrained weights as the classifier, complemented by a newly designed Temporal Query Project…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "zero-shot recognition"
 date: 2026-05-08
-content_hash: f3130a252b6ec20c
+content_hash: fc4548d135769b0f
 ---
 
 # SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition
@@ -192,11 +192,11 @@ Two-stage training:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[CVPR 2025\] Heterogeneous Skeleton-Based Action Representation Learning](../../CVPR2025/video_understanding/heterogeneous_skeleton-based_action_representation_learning.md)
 - [\[AAAI 2026\] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion](finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d.md)
-- [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](../../ICCV2025/video_understanding/adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
-- [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
-- [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](../../ICLR2026/video_understanding/from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
+- [\[CVPR 2026\] SkeletonContext: Skeleton-side Context Prompt Learning for Zero-Shot Skeleton-based Action Recognition](../../CVPR2026/video_understanding/skeletoncontext_skeleton-side_context_prompt_learning_for_zero-shot_skeleton-bas.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](../../CVPR2026/video_understanding/exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
+- [\[CVPR 2025\] H-MoRe: Learning Human-centric Motion Representation for Action Analysis](../../CVPR2025/video_understanding/h-more_learning_human-centric_motion_representation_for_action_analysis.md)
 
 </div>
 

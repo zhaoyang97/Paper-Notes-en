@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts
 description: >-
-  [ACL 2026][Model Compression][step-wise routing] This paper proposes **GlimpRouter**: in step-level LRM collaborative inference, the small model first decodes only the "first token" of each reasoning step. Its entropy $\mathbf{H}_{\text{init}}$ is used to estimate step difficulty; if low, the small model continues; if high, it switches to the large model. It is train
+  [ACL 2026 Findings][Model Compression][Collaborative Inference] This paper proposes **GlimpRouter**: in step-level LRM collaborative inference, the small model first decodes only the "first token" of each reasoning step. Its entropy $\mathbf{H}_{\text{init}}$ is used to estimate step difficulty; if low, the small model continues; if high, it switches to the large model. It is training-free, requires no large model verifier, achieves +10.7% accuracy with −25.9% latency improve…
 tags:
-  - ACL 2026
-  - Model Compression
-  - step-wise routing
-  - Aha Moment
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Collaborative Inference"
+  - "Speculative Decoding"
+  - "step-wise routing"
+  - "initial token entropy"
+  - "Aha Moment"
 date: 2026-05-08
-content_hash: 69e638f8990b4b53
+content_hash: fe6135272a2db6b4
 ---
+
 # GlimpRouter: Efficient Collaborative Inference by Glimpsing One Token of Thoughts
 
 **Conference**: ACL 2026 Findings  

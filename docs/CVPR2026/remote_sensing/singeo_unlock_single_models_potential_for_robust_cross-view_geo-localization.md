@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] SinGeo utilizes "Dual Discriminative Learning + Curriculum Learning" to enable a **single model** to simultaneously adapt to cross-view geo-localization with arbitrary orientations and FoVs, eliminating the need to train separate models for different FoVs. It pushes R@1 past 70%/50% for extreme narrow fields (FoV=90°/7
+  [CVPR 2026][Remote Sensing][Cross-View Geo-Localization] SinGeo utilizes "Dual Discriminative Learning + Curriculum Learning" to enable a **single model** to simultaneously adapt to cross-view geo-localization with arbitrary orientations and FoVs, eliminating the need to train separate models for different FoVs. It pushes R@1 past 70%/50% for extreme narrow fields (FoV=90°/70°) on CVUSA for the first time and provides plug-and-play robustness improvements for ViT/CNN/hybrid a…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geo-Localization"
+  - "Robustness"
+  - "Curriculum Learning"
+  - "Contrastive Learning"
+  - "Self-Supervised"
 date: 2026-05-08
-content_hash: 757953c54ab1c64d
+content_hash: f80c66d6edfadc30
 ---
+
 # SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ The single-model SinGeo sets new SOTAs in almost all scenarios and **pushes R@1 
 
 ## Related Papers
 
-- [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)
-- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
 - [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
+- [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)
 - [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
+- [\[ECCV 2024\] ConGeo: Robust Cross-View Geo-Localization Across Ground View Variations](../../ECCV2024/remote_sensing/congeo_robust_cross-view_geo-localization_across_ground_view_variations.md)
 - [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlowComposer: Composable Flows for Compositional Zero-Shot Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Flow Matching] FlowComposer introduces Flow Matching to Compositional Zero-Shot Learning (CZSL) for the first time. It learns two primitive flows (attribute flow and object flow) to transport visual features into the corresponding text embedding space. It explicitly composes velocity fields through a learnable Composer and utilizes a
+  [CVPR 2026][Multimodal VLM][Compositional Zero-Shot Learning] FlowComposer introduces Flow Matching to Compositional Zero-Shot Learning (CZSL) for the first time. It learns two primitive flows (attribute flow and object flow) to transport visual features into the corresponding text embedding space. It explicitly composes velocity fields through a learnable Composer and utilizes a leakage-guided augmentation strategy to transform imperfect feature decoupling into auxiliary sup…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Flow Matching
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Compositional Zero-Shot Learning"
+  - "Flow Matching"
+  - "CLIP"
+  - "Velocity Field Composition"
+  - "Leakage-guided Augmentation"
 date: 2026-05-08
-content_hash: a0955a10a46664c6
+content_hash: 62c9d40aaddee1f7
 ---
+
 # FlowComposer: Composable Flows for Compositional Zero-Shot Learning
 
 **Conference**: CVPR 2026  
@@ -128,10 +132,10 @@ Significant improvements are also observed on the CSP baseline: C-GQA HM increas
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
+- [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](../../ICLR2026/multimodal_vlm/decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](../../NeurIPS2025/multimodal_vlm/tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
-- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
-- [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 
 </div>
 

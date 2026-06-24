@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CLIP-GS, the first multimodal representation learning framework based on 3D Gaussian Splatting (3DGS). It serializes 3DGS into tokens via a GS Tokenizer a…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes CLIP-GS, the first multimodal representation learning framework based on 3D Gaussian Splatting (3DGS). It serializes 3DGS into tokens via a GS Tokenizer and aligns multimodal representations using an Image Voting Loss, achieving comprehensive improvements over point-cloud-based methods on cross-modal retrieval, zero-shot, and few-shot 3D classification tasks.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "zero-shot classification"
 date: 2026-05-08
-content_hash: 3f9618827a48bb6a
+content_hash: 0777723c26f1fb19
 ---
 
 # CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting
@@ -134,9 +134,9 @@ Directly using all 3DGS attributes degrades performance (44.8 vs. 46.9). The GS 
 
 - [\[ICCV 2025\] Online Language Splatting](online_language_splatting.md)
 - [\[ICCV 2025\] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation](3d_gaussian_map_with_openset_semantic_grouping_for_visionlan.md)
-- [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](../../NeurIPS2025/3d_vision/va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
 - [\[ICCV 2025\] InsideOut: Integrated RGB-Radiative Gaussian Splatting for Comprehensive 3D Object Representation](insideout_integrated_rgb-radiative_gaussian_splatting_for_comprehensive_3d_objec.md)
 - [\[ICCV 2025\] AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting](autoocc_automatic_openended_semantic_occupancy_annotation_vi.md)
+- [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](../../NeurIPS2025/3d_vision/va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
 
 </div>
 

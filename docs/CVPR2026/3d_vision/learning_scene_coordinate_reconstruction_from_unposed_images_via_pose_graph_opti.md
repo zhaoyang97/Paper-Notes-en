@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization
 description: >-
-  [CVPR 2026][3D Vision][ACE-Zero] Introduces Pose Graph Optimization (PGO) on top of the unsupervised scene coordinate regression framework ACE-Zero. It automatically constructs edges using predicted scene coordinates and estimates confidence for each edge via a dual geometric prior (epipolar + optical flow) for weighted global optimization. This pulls
+  [CVPR 2026][3D Vision][Scene coordinate regression] Introduces Pose Graph Optimization (PGO) on top of the unsupervised scene coordinate regression framework ACE-Zero. It automatically constructs edges using predicted scene coordinates and estimates confidence for each edge via a dual geometric prior (epipolar + optical flow) for weighted global optimization. This pulls locally refined, drift-prone camera poses into global consistency, matching or exceeding COLMAP in PSNR whi…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - ACE-Zero
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene coordinate regression"
+  - "Pose graph optimization"
+  - "Unsupervised SfM"
+  - "Uncertainty modeling"
+  - "ACE-Zero"
 date: 2026-05-08
-content_hash: d80af772a7b52eff
+content_hash: b5beb4c60680b0ca
 ---
+
 # Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization
 
 **Conference**: CVPR 2026  
@@ -122,7 +127,7 @@ Gradually adding components on 7-Scenes / Mip-NeRF 360 (PSNR↑):
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](unisplat_3d_representations_unposed.md)
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
 - [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
 - [\[ICCV 2025\] Scene Coordinate Reconstruction Priors](../../ICCV2025/3d_vision/scene_coordinate_reconstruction_priors.md)
 - [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)

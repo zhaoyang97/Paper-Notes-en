@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] Speech-Hands is proposed as a learnable speech agent framework. By generating explicit action tokens (`<internal>`/`<external>`/`<rewrite>`) at inference time to decide whether to trust internal perception or external ASR hypotheses, it achieves an average WER reduction of 12.1% across 7 benchmarks on the OpenASR leade
+  [ACL2026 Oral][Audio & Speech][Speech Recognition] Speech-Hands is proposed as a learnable speech agent framework. By generating explicit action tokens (`<internal>`/`<external>`/`<rewrite>`) at inference time to decide whether to trust internal perception or external ASR hypotheses, it achieves an average WER reduction of 12.1% across 7 benchmarks on the OpenASR leaderboard and reaches 77.37% accuracy on Audio QA.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026 Oral"
+  - "Audio & Speech"
+  - "Speech Recognition"
+  - "Audio Reasoning"
+  - "Multi-modal Agent"
+  - "Self-reflection"
+  - "Generative Error Correction"
 date: 2026-05-08
-content_hash: c13830ddf3b719fa
+content_hash: 1b50e50decf871b4
 ---
+
 # Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception
 
 **Conference**: ACL2026 Oral  
@@ -149,7 +155,7 @@ Audio QA Task (Accuracy%):
 - [\[ACL 2026\] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models](vapo_end-to-end_slide-enhanced_speech_recognition_with_omni-modal_large_language.md)
 - [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ACL 2026\] \[b\] = \[d\] − \[t\] + \[p\]: Self-supervised Speech Models Discover Phonological Vector Arithmetic](bd-tp_self-supervised_speech_models_discover_phonological_vector_arithmetic.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[ACL 2026\] Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs](beyond_transcription_unified_audio_schema_for_perception-aware_audiollms.md)
 - [\[ACL 2025\] SpeechIQ: Speech-Agentic Intelligence Quotient Across Cognitive Levels in Voice Understanding by Large Language Models](../../ACL2025/audio_speech/speechiq_speechagentic_intelligence_quotient_across_cognitive.md)
 
 </div>

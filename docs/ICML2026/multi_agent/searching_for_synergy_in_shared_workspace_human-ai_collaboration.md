@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Searching for Synergy in Shared Workspace Human-AI Collaboration
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] This paper identifies a counter-intuitive phenomenon in shared-workspace human-AI collaboration environments: **adding (simulated) human collaborators with relevant expertise can actually degrade performance**. The root cause is identified as "process loss" resulting from a lack of coordination structure. By borrowing
+  [ICML 2026 (Workshop on Human-AI Co-Creativity)][Multi-Agent][Human-AI Collaboration] This paper identifies a counter-intuitive phenomenon in shared-workspace human-AI collaboration environments: **adding (simulated) human collaborators with relevant expertise can actually degrade performance**. The root cause is identified as "process loss" resulting from a lack of coordination structure. By borrowing two mechanisms from group psychology—Shared Group Memory and Simulated HIT…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML 2026 (Workshop on Human-AI Co-Creativity)"
+  - "Multi-Agent"
+  - "Human-AI Collaboration"
+  - "Shared Workspace"
+  - "Process Loss"
+  - "Group Memory"
+  - "Human-in-the-loop Gating"
 date: 2026-05-08
-content_hash: 88214699308a9bcb
+content_hash: 1922a2c0906ea34c
 ---
+
 # Searching for Synergy in Shared Workspace Human-AI Collaboration
 
 **Conference**: ICML 2026 (Workshop on Human-AI Co-Creativity)  

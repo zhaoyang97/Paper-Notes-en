@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoLLMLight: Cooperative Large Language Model Agents for Network-Wide Traffic Signal Control
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] CoLLMLight assigns an LLM agent to each intersection in a road network, enabling cooperation through a dual-module "Asynchronous Spatio-temporal Reasoning + Real-time Decision-making" architecture (rather than controlling intersections in isolation). By employing "Cost-aware Optimization" (Adaptive Reasoning-chain SFT
+  [ICLR2026][LLM Agent][Cooperative LLM Agents] CoLLMLight assigns an LLM agent to each intersection in a road network, enabling cooperation through a dual-module "Asynchronous Spatio-temporal Reasoning + Real-time Decision-making" architecture (rather than controlling intersections in isolation). By employing "Cost-aware Optimization" (Adaptive Reasoning-chain SFT + PPO), reasoning depth automatically scales with traffic complexity. In zero-shot evaluations across four real-wo…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Cooperative LLM Agents"
+  - "Traffic Signal Control (TSC)"
+  - "Spatio-temporal Reasoning"
+  - "Asynchronous Decision-making"
+  - "Cost-aware Optimization"
 date: 2026-05-08
-content_hash: c465a0744d77765a
+content_hash: b97636f3bbe46dfa
 ---
+
 # CoLLMLight: Cooperative Large Language Model Agents for Network-Wide Traffic Signal Control
 
 **Conference**: ICLR2026  
@@ -160,7 +166,7 @@ Without SR, ATT in NY rises significantly (1000→1155), proving the value of co
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](../../AAAI2026/llm_agent/autotool_efficient_tool_selection_for_large_language_model_agents.md)
 - [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/llm_agent/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
-- [\[ICLR 2026\] NetArena: Dynamic Benchmarks for AI Agents in Network Automation](netarena_dynamic_benchmarks_for_ai_agents_in_network_automation.md)
+- [\[ICLR 2026\] Do Large Language Models Know What They Are Capable Of?](do_large_language_models_know_what_they_are_capable_of.md)
 
 </div>
 

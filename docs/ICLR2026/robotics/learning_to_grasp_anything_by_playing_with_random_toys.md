@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Grasp Anything By Playing with Random Toys
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] LEGO trains a grasping policy using 3D-printed "toys" randomly assembled from four shape primitives: spheres, boxes, cylinders, and rings. By employing a Detection Pooling (DetPool) mechanism that constrains visual attention to target objects to learn object-centric representations, it achieves a 67% zero-shot success
+  [ICLR 2026][Robotics][Object-centric representation] LEGO trains a grasping policy using 3D-printed "toys" randomly assembled from four shape primitives: spheres, boxes, cylinders, and rings. By employing a Detection Pooling (DetPool) mechanism that constrains visual attention to target objects to learn object-centric representations, it achieves a 67% zero-shot success rate on real-world YCB objects, outperforming VLA models that use significantly more data and parameters.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Object-centric representation"
+  - "Shape primitives"
+  - "Zero-shot grasping"
+  - "Detection pooling"
+  - "Behavior Cloning"
 date: 2026-05-08
-content_hash: c2585f81d936a175
+content_hash: dede85f2d3de883b
 ---
+
 # Learning to Grasp Anything By Playing with Random Toys
 
 **Conference**: ICLR 2026  
@@ -131,8 +137,8 @@ The sphere is the most critical primitive; its removal causes the largest perfor
 ## Related Papers
 
 - [\[CVPR 2025\] DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](../../CVPR2025/robotics/dexgrasp_anything_towards_universal_robotic_dexterous_grasping_with_physics_awar.md)
-- [\[ECCV 2024\] An Economic Framework for 6-DoF Grasp Detection](../../ECCV2024/robotics/an_economic_framework_for_6-dof_grasp_detection.md)
 - [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](../../CVPR2026/robotics/dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
+- [\[ECCV 2024\] An Economic Framework for 6-DoF Grasp Detection](../../ECCV2024/robotics/an_economic_framework_for_6-dof_grasp_detection.md)
 - [\[CVPR 2026\] MaskDexGrasp: Generative Masked Modeling for Part-Aware Dexterous Grasp Synthesis](../../CVPR2026/robotics/maskdexgrasp_generative_masked_modeling_for_part-aware_dexterous_grasp_synthesis.md)
 - [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](../../CVPR2026/robotics/a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
 

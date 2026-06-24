@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynFaceRestore: Balancing Fidelity and Quality in Diffusion-Guided Blind Face Restoration
 description: >-
-  [ICCV 2025][Human Understanding][Blind face restoration] This paper proposes DynFaceRestore, which reformulates blind degradation as a Gaussian deblurring problem via Dynamic Blur Level Mapping (DBLM)…
+  [ICCV 2025][Human Understanding][Blind face restoration] This paper proposes DynFaceRestore, which reformulates blind degradation as a Gaussian deblurring problem via Dynamic Blur Level Mapping (DBLM), and achieves an optimal fidelity-quality trade-off during diffusion model sampling through a Dynamic Starting Step lookup table (DSST) and a Dynamic Guidance Scaling Adjuster (DGSA).
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "fidelity-quality balance"
   - "region-adaptive guidance"
 date: 2026-05-08
-content_hash: b963b0f276c207ca
+content_hash: b196c32182f53bde
 ---
 
 # DynFaceRestore: Balancing Fidelity and Quality in Diffusion-Guided Blind Face Restoration
@@ -148,11 +148,11 @@ $$x_{t-1} = x'_{t-1} - A_t \times \nabla_{x_t} \| \acute{y} - k_t \otimes x^0_t 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing](../../CVPR2025/human_understanding/optimal_transport-guided_source-free_adaptation_for_face_anti-spoofing.md)
 - [\[ICCV 2025\] Avat3r: Large Animatable Gaussian Reconstruction Model for High-fidelity 3D Head Avatars](avat3r_large_animatable_gaussian_reconstruction_model_for_hi.md)
 - [\[ICML 2026\] Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets](../../ICML2026/human_understanding/efficient_validation-free_intrinsic_quality_estimation_for_large-scale_face_reco.md)
+- [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](../../CVPR2026/human_understanding/towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
 - [\[ICCV 2025\] IDFace: Face Template Protection for Efficient and Secure Identification](idface_face_template_protection_for_efficient_and_secure_identification.md)
-- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[ICCV 2025\] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing](dadm_dual_alignment_of_domain_and_modality_for_face_anti-spoofing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Boosting Entropy with Bell Box Quantization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes Bell Box Quantization (BBQ), the first quantization method to simultaneously satisfy "Information-Theoretic Optimality" (ITO) and "compute-efficiency." The core insight is that learning is domain-agnostic—the output domain of a quantizer does not need to match the input domain. Consequently, ITO qua
+  [ICLR 2026][Model Compression][Quantization-Aware Pre-training] This paper proposes Bell Box Quantization (BBQ), the first quantization method to simultaneously satisfy "Information-Theoretic Optimality" (ITO) and "compute-efficiency." The core insight is that learning is domain-agnostic—the output domain of a quantizer does not need to match the input domain. Consequently, ITO quantization is performed in the input domain to maximize entropy…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Quantization-Aware Pre-training"
+  - "Information-Theoretic Optimal Quantization"
+  - "Compute-Efficient Data Types"
+  - "Entropy Maximization"
+  - "Low-Precision Inference"
 date: 2026-05-08
-content_hash: 62aa644cb9bc6948
+content_hash: f32974460725ea6d
 ---
+
 # Boosting Entropy with Bell Box Quantization
 
 **Conference**: ICLR 2026  
@@ -143,10 +149,10 @@ Ablations on 2-bit LLaMA-95M (3B tokens):
 ## Related Papers
 
 - [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 - [\[ICLR 2026\] Entropy-Monitored Kernelized Token Distillation for Audio-Visual Compression](entropy-monitored_kernelized_token_distillation_for_audio-visual_compression.md)
-- [\[ICLR 2026\] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems](rejuvenating_cross-entropy_loss_in_knowledge_distillation_for_recommender_system.md)
 - [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](../../ICML2026/model_compression/lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
-- [\[CVPR 2026\] Rank-Guided Pseudo-Bias Learning for Robust Black-Box Adaptation](../../CVPR2026/model_compression/rank-guided_pseudo-bias_learning_for_robust_black-box_adaptation.md)
+- [\[ICLR 2026\] Rejuvenating Cross-Entropy Loss in Knowledge Distillation for Recommender Systems](rejuvenating_cross-entropy_loss_in_knowledge_distillation_for_recommender_system.md)
 
 </div>
 

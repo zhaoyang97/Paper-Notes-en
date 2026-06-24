@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ContextIF: Enhancing Instruction-Following through Context Reward
 description: >-
-  [ICLR 2026][Alignment & RLHF][GRPO] ContextIF trains a "context generator" using reinforcement learning to automatically produce constraint summaries and parallel demonstrations for each instruction. This generated context is then fed into a frozen target model for In-Context Learning (ICL). Guided by a composite "Context Reward" that evaluates both stru
+  [ICLR2026][LLM Alignment][Instruction Following] ContextIF trains a "context generator" using reinforcement learning to automatically produce constraint summaries and parallel demonstrations for each instruction. This generated context is then fed into a frozen target model for In-Context Learning (ICL). Guided by a composite "Context Reward" that evaluates both structure and semantics, it improves an 8B model's IFEval score from 77.11 to 83.35 while maintaining or even enhan…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Instruction Following"
+  - "In-Context Learning"
+  - "Context Reward"
+  - "GRPO"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 6eae4de4803c5ea0
+content_hash: 09b699c5eff4f5ab
 ---
+
 # ContextIF: Enhancing Instruction-Following through Context Reward
 
 **Conference**: ICLR2026  
@@ -150,7 +155,7 @@ IFEval scores increased by 6.24 points over the base. In the multi-turn Multi-IF
 - [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
 - [\[ICLR 2026\] RECAST: Expanding the Boundaries of LLMs' Complex Instruction Following with Multi-Constraint Data](recast_expanding_the_boundaries_of_llms_complex_instruction_following_with_multi.md)
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
-- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](../../CVPR2026/llm_alignment/from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
+- [\[ACL 2025\] IOPO: Empowering LLMs with Complex Instruction Following via Input-Output Preference Optimization](../../ACL2025/llm_alignment/iopo_input_output_preference.md)
 
 </div>
 

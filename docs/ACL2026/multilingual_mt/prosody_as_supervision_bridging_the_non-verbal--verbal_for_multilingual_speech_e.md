@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper proposes NOVA-ARC, which models multilingual Speech Emotion Recognition (SER) for the first time as an unsupervised transfer problem from labeled Non-Verbal Vocalizations (NVV) to unlabeled Verbal Speech (UVS). It achieves cross-modal emotion transfer through a prosodic vector quantization codebook in hyperb
+  [ACL 2026][Multilingual & Machine Translation][Non-verbal speech supervision] This paper proposes NOVA-ARC, which models multilingual Speech Emotion Recognition (SER) for the first time as an unsupervised transfer problem from labeled Non-Verbal Vocalizations (NVV) to unlabeled Verbal Speech (UVS). It achieves cross-modal emotion transfer through a prosodic vector quantization codebook in hyperbolic space, a hyperbolic emotion lens, and optimal transport prototype alignment…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Non-verbal speech supervision"
+  - "hyperbolic representation learning"
+  - "optimal transport alignment"
+  - "prosodic codebook"
+  - "cross-lingual emotion transfer"
 date: 2026-05-08
-content_hash: 3bd730b0ad607802
+content_hash: c2040fb66ec88e3f
 ---
+
 # Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition
 
 **Conference**: ACL 2026  
@@ -135,8 +141,8 @@ Total objective: $\mathcal{L} = L_S(\mathcal{B}_S) + \lambda_{\text{OPT}} L_{\te
 ## Related Papers
 
 - [\[ACL 2026\] Evaluating the Impact of Verbal Multiword Expressions on Machine Translation](evaluating_the_impact_of_verbal_multiword_expressions_on_machine_translation.md)
-- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation](beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
 - [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
+- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Evaluation Evaluation](beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
 - [\[ACL 2026\] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech](hierarchical_policy_optimization_for_simultaneous_translation_of_unbounded_speec.md)
 - [\[ACL 2026\] Efficient Training for Cross-lingual Speech Language Models](efficient_training_for_cross-lingual_speech_language_models.md)
 

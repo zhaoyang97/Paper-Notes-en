@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction
 description: >-
-  [ICML 2026][LLM Agent][Agentic Workflow Reconstruction] The authors define the task of "inferring an equivalent white-box workflow from a black-box agent system" as AWR. They utilize MCTS to search within the sequence space of agent primitives, combined with dynamic Red-Black pruning based on scoring to balance search depth and width, achieving interpretable white-box recon
+  [ICML 2026][LLM Agent][Agentic Workflow Reconstruction] The authors define the task of "inferring an equivalent white-box workflow from a black-box agent system" as AWR. They utilize MCTS to search within the sequence space of agent primitives, combined with dynamic Red-Black pruning based on scoring to balance search depth and width, achieving interpretable white-box reconstruction across five real-world domains.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Agentic Workflow Reconstruction
-  - MCTS
-  - Red-Black Pruning
-  - Multi-Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Agentic Workflow Reconstruction"
+  - "MCTS"
+  - "Red-Black Pruning"
+  - "Black-box Explanation"
+  - "Multi-agent"
 date: 2026-05-08
-content_hash: b8a34dd32530a4e8
+content_hash: 742c2b113dd07268
 ---
+
 # AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction
 
 **Conference**: ICML 2026  
@@ -141,9 +143,9 @@ Five domains and five target systems: Software Development (ChatDev), Data Analy
 
 - [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
 - [\[ICML 2026\] Answer Only as Precisely as Justified: Calibrated Claim-Level Specificity Control for Agentic Systems](answer_only_as_precisely_as_justified_calibrated_claim-level_specificity_control.md)
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](../../ICLR2026/llm_agent/coda_agentic_systems_for_collaborative_data_visualization.md)
+- [\[ICLR 2026\] MedAgent-Pro: Towards Evidence-based Multi-modal Medical Diagnosis via Reasoning Agentic Workflow](../../ICLR2026/llm_agent/medagent-pro_towards_evidence-based_multi-modal_medical_diagnosis_via_reasoning_.md)
 - [\[ICLR 2026\] AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?](../../ICLR2026/llm_agent/agentracer_who_is_inducing_failure_in_the_llm_agentic_systems.md)
-- [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](../../ACL2026/llm_agent/rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
-- [\[AAAI 2026\] With Great Capabilities Come Great Responsibilities: Introducing the Agentic Risk & Capability Framework for Governing Agentic AI Systems](../../AAAI2026/llm_agent/with_great_capabilities_come_great_responsibilities_introducing_the_agentic_risk.md)
 
 </div>
 

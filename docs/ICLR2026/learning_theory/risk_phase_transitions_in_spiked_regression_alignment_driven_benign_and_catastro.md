@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Risk Phase Transitions in Spiked Regression: Alignment Driven Benign and Catastrophic Overfitting
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides a closed-form generalization risk formula for the minimum-norm interpolation solution in rank-one spiked covariance linear regression. It demonstrates that spike intensity, alignment between the target and spike direction, model misspecification, and covariate shift collectively trigger phase transi
+  [ICLR2026][Statistical Learning Theory][Spiked covariance] This paper provides a closed-form generalization risk formula for the minimum-norm interpolation solution in rank-one spiked covariance linear regression. It demonstrates that spike intensity, alignment between the target and spike direction, model misspecification, and covariate shift collectively trigger phase transitions from benign to catastrophic overfitting.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Statistical Learning Theory"
+  - "Overparameterized Generalization"
+  - "Spiked covariance"
+  - "Benign overfitting"
+  - "Catastrophic overfitting"
+  - "Target alignment"
+  - "Minimum-norm interpolation"
 date: 2026-05-08
-content_hash: fedee9b5f20e1734
+content_hash: 51f300d9822da5f5
 ---
+
 # Risk Phase Transitions in Spiked Regression: Alignment Driven Benign and Catastrophic Overfitting
 
 **Conference**: ICLR2026  

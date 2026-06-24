@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis
 description: >-
-  [NeurIPS 2025][Optimization][nonlinear preconditioning] Under the anisotropic descent inequality framework, this paper introduces heavy ball momentum into nonlinearly preconditioned gradient methods and analyzes the conv…
+  [NeurIPS 2025][Optimization][nonlinear preconditioning] Under the anisotropic descent inequality framework, this paper introduces heavy ball momentum into nonlinearly preconditioned gradient methods and analyzes the convergence properties of their stochastic variants under multiple noise assumptions, thereby unifying the theoretical analysis of gradient clipping and normalized gradient methods.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "heavy ball momentum"
   - "stochastic optimization"
 date: 2026-05-08
-content_hash: 5be73fbdd050af8a
+content_hash: 1525f8f7966779e2
 ---
 
 # Nonlinearly Preconditioned Gradient Methods: Momentum and Stochastic Analysis
@@ -150,9 +150,9 @@ Two core algorithms are proposed:
 
 - [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](../../ICLR2026/optimization/faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
-- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
 - [\[ICCV 2025\] Memory-Efficient 4-bit Preconditioned Stochastic Optimization](../../ICCV2025/optimization/memory-efficient_4-bit_preconditioned_stochastic_optimization.md)
-- [\[NeurIPS 2025\] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks](understanding_the_generalization_of_stochastic_gradient_adam_in_learning_neural_.md)
+- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
+- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](../../ICLR2026/optimization/clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
 
 </div>
 

@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] New Bounds for Kernel Sums via Fast Spherical Embeddings
 description: >-
-  [ICML 2026][Others][KDE] The authors accelerate the "randomized Nash device" spherical embedding theorem of Bartal-Recht-Schulman 2011 using iterative Fastfood transforms (time $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$). This serves as a preprocessing step for Gaussian KDE to compress the effective diameter to $\widetilde{O}(1/\sqrt{\v
+  [ICML 2026][KDE] The authors accelerate the "randomized Nash device" spherical embedding theorem of Bartal-Recht-Schulman 2011 using iterative Fastfood transforms (time $\widetilde{O}(d + \Lambda^2 + \varepsilon^{-2})$). This serves as a preprocessing step for Gaussian KDE to compress the effective diameter to $\widetilde{O}(1/\sqrt{\varepsilon})$, yielding a new Gaussian KDE query time bound of $\widetilde{O}(d + \varepsilon \Delta_\sigma^2 + 1/\varepsilon^3)$…
 tags:
-  - ICML 2026
-  - Others
-  - KDE
-  - Gaussian kernel
-  - Fastfood
-  - Wiener chaos
+  - "ICML 2026"
+  - "KDE"
+  - "Gaussian kernel"
+  - "Fastfood"
+  - "Randomized Hadamard Transform"
+  - "Wiener chaos"
 date: 2026-05-08
-content_hash: 061e0e28d8b21264
+content_hash: cbb0a83ccee4c5a6
 ---
+
 # New Bounds for Kernel Sums via Fast Spherical Embeddings
 
 **Conference**: ICML 2026  
@@ -140,7 +141,7 @@ Two extensions verify the core technology (fast spherical embedding): IMQ uses f
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](../../ICLR2026/others/probabilistic_kernel_function_for_fast_angle_testing.md)
 - [\[ICML 2026\] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)
 - [\[ICML 2026\] MalTree: Tracing Malware Evolution from Embeddings at Scale](maltree_tracing_malware_evolution_from_embeddings_at_scale.md)
-- [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](../../ICLR2026/others/a_new_approach_to_controlling_linear_dynamical_systems.md)
+- [\[ICLR 2026\] QUEST: A Robust Attention Formulation Using Query-Modulated Spherical Attention](../../ICLR2026/others/quest_a_robust_attention_formulation_using_query-modulated_spherical_attention.md)
 - [\[ICML 2025\] K²IE: Kernel Method-based Kernel Intensity Estimators for Inhomogeneous Poisson Processes](../../ICML2025/others/k2ie_kernel_method-based_kernel_intensity_estimators_for_inhomogeneous_poisson_p.md)
 
 </div>

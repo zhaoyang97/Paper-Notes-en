@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] This paper identifies that the excessive attention of text tokens toward irrelevant vision tokens is the root cause of the "seeing but perceiving incorrectly" phenomenon in VLMs. It proposes Adaptive Information Flow (AIF), a training-free method based on token dynamic entropy that regulates information flow by modifyi
+  [CVPR 2026][Multimodal VLM][Vision-Language Models] This paper identifies that the excessive attention of text tokens toward irrelevant vision tokens is the root cause of the "seeing but perceiving incorrectly" phenomenon in VLMs. It proposes Adaptive Information Flow (AIF), a training-free method based on token dynamic entropy that regulates information flow by modifying the causal mask at inference time to block irrelevant vision-to-text connections…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Information Flow Regulation"
+  - "Token Dynamics"
+  - "Causal Mask"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 7ca30efaa9ba39a5
+content_hash: 31773627c6ca9399
 ---
+
 # Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow
 
 **Conference**: CVPR 2026  
@@ -131,10 +136,10 @@ A completely training-free inference-time method. It requires only one additiona
 ## Related Papers
 
 - [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
-- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Beyond What's Shared: Recovering Lost Unique Information from Intermediate Layers to Boost Multimodal Geo-Foundation Models](beyond_whats_shared_recovering_lost_unique_information_from_intermediate_layers_.md)
-- [\[ACL 2026\] Revisit What You See: Revealing Visual Semantics in Vision Tokens to Guide LVLM Decoding](../../ACL2026/multimodal_vlm/revisit_what_you_see_revealing_visual_semantics_in_vision_tokens_to_guide_lvlm_d.md)
+- [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
+- [\[CVPR 2026\] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](vlm_model_inversion_adaptive_token_weight.md)
 - [\[CVPR 2026\] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](llmind_bio-inspired_training-free_adaptive_visual_representations_for_vision-lan.md)
+- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
 
 </div>
 

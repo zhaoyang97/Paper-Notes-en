@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Make Me Happier: Evoking Emotions Through Image Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Affective Image Editing] EmoEditor presents the first systematic **emotion-driven image generation** framework…
+  [ICCV 2025][Image Generation][Affective Image Editing] EmoEditor presents the first systematic **emotion-driven image generation** framework, employing a dual-branch diffusion model (global emotion conditioning + local semantic features) to generate target-emotion images from only a source image and a target emotion label — without manual text instructions or reference images. The work also introduces the EmoPair dataset containing 340K emotion-annotated image pairs.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Dual-Branch Architecture"
   - "Iterative Emotion Inference"
 date: 2026-05-08
-content_hash: 55e5c41b32552858
+content_hash: cf816cb2961fcdaf
 ---
 
 # Make Me Happier: Evoking Emotions Through Image Diffusion Models
@@ -160,11 +160,11 @@ Total loss = latent diffusion noise prediction loss + $0.5 \times$ emotion–tex
 
 ## Related Papers
 
+- [\[CVPR 2025\] EmoEdit: Evoking Emotions through Image Manipulation](../../CVPR2025/image_generation/emoedit_evoking_emotions_through_image_manipulation.md)
 - [\[ICCV 2025\] DiffDoctor: Diagnosing Image Diffusion Models Before Treating](diffdoctor_diagnosing_image_diffusion_models_before_treating.md)
-- [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](../../NeurIPS2025/image_generation/shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](../../NeurIPS2025/image_generation/enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
+- [\[ICCV 2025\] MoFRR: Mixture of Diffusion Models for Face Retouching Restoration](mofrr_mixture_of_diffusion_models_for_face_retouching_restoration.md)
 
 </div>
 

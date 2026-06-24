@@ -4,12 +4,16 @@ title: >-
 description: >-
   [ACL 2026][Graph Learning][Reinforcement Learning] AgentGL is proposed as the first reinforcement learning-based Agentic Graph Learning (AGL) framework. It enables LLM agents to autonomously navigate Text-Attributed Graphs (TAGs) using graph-native search tools, achieving absolute accuracy improvements of up to 17.5% in node classification and 28.4% in link prediction.
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Reinforcement Learning"
+  - "Agent Navigation"
+  - "Text-Attributed Graphs"
+  - "Tool Use"
 date: 2026-05-08
-content_hash: 7b2508f91bbcc227
+content_hash: 89bcbfbcbc33a4eb
 ---
+
 # AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -128,9 +132,9 @@ The two-stage reward design corresponds to "learning to search" then "learning t
 ## Related Papers
 
 - [\[ICML 2026\] Graph-GRPO: Training Graph Flow Models with Reinforcement Learning](../../ICML2026/graph_learning/graph-grpo_training_graph_flow_models_with_reinforcement_learning.md)
-- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
+- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](../../ICLR2026/graph_learning/gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](graph-based_alternatives_to_llms_for_human_simulation.md)
-- [\[ACL 2026\] ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning](ark_answer-centric_retriever_tuning_via_kg-augmented_curriculum_learning.md)
+- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
 - [\[ACL 2026\] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks](evaluating_llms_on_large-scale_graph_property_estimation_via_random_walks.md)
 
 </div>

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Regret-Guided Search Control for Efficient Learning in AlphaZero
 description: >-
-  [ICLR 2026][Reinforcement Learning][AlphaZero] The Regret-Guided Search Control (RGSC) framework is proposed to identify high-regret states by training a regret network and prioritize restarting self-play from these states. This simulates the human learning method of "repeatedly reviewing mistakes," outperforming AlphaZero by an average of 77 Elo in 9×9 Go, 10×10 O
+  [ICLR 2026][Reinforcement Learning][AlphaZero] The Regret-Guided Search Control (RGSC) framework is proposed to identify high-regret states by training a regret network and prioritize restarting self-play from these states. This simulates the human learning method of "repeatedly reviewing mistakes," outperforming AlphaZero by an average of 77 Elo in 9×9 Go, 10×10 Othello, and 11×11 Hex.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - AlphaZero
-  - search control
-  - regret network
-  - MCTS
-  - board games
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "AlphaZero"
+  - "search control"
+  - "regret network"
+  - "MCTS"
+  - "board games"
 date: 2026-05-08
-content_hash: f85dc873b19a305f
+content_hash: 1f5c92fb3e0a62df
 ---
+
 # Regret-Guided Search Control for Efficient Learning in AlphaZero
 
 **Conference**: ICLR 2026  
@@ -155,7 +156,7 @@ Both the ranking and value heads are trained jointly as additional outputs of th
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

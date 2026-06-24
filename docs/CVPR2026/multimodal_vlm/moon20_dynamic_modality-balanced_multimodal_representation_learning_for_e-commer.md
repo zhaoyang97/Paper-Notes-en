@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the pain points in e-commerce multimodal representation learning—"fixed-ratio mixed training leading to modality imbalance, neglect of intra-product image-text alignment, and high noise in raw data"—MOON2.0 utilizes a modality-driven MoE for end-to-end multimodal joint learning. It employs dual-level alignme
+  [CVPR 2026][Multimodal VLM][E-commerce Representation Learning] To address the pain points in e-commerce multimodal representation learning—"fixed-ratio mixed training leading to modality imbalance, neglect of intra-product image-text alignment, and high noise in raw data"—MOON2.0 utilizes a modality-driven MoE for end-to-end multimodal joint learning. It employs dual-level alignment to simultaneously align inter-product and intra-product relations…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "E-commerce Representation Learning"
+  - "Modality Imbalance"
+  - "Modality-driven MoE"
+  - "Dual-level Alignment"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: e09fdccfde948f01
+content_hash: b2c665f7714506e5
 ---
+
 # MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding
 
 **Conference**: CVPR 2026  
@@ -128,10 +134,10 @@ Removing components one by one on MBE2.0 (R@10 / Acc):
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
+- [\[CVPR 2026\] Label What Matters: Modality-Balanced and Difficulty-Aware Multimodal Active Learning](label_what_matters_modality-balanced_and_difficulty-aware_multimodal_active_lear.md)
 - [\[CVPR 2026\] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation](guiding_diffusion-based_reconstruction_with_contrastive_signals_for_balanced_vis.md)
 - [\[ACL 2026\] AFMRL: Attribute-Enhanced Fine-Grained Multi-Modal Representation Learning in E-commerce](../../ACL2026/multimodal_vlm/afmrl_attribute-enhanced_fine-grained_multi-modal_representation_learning_in_e-c.md)
 - [\[CVPR 2026\] BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates](balm_a_model-agnostic_framework_for_balanced_multimodal_learning_under_imbalance.md)
-- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
 
 </div>
 

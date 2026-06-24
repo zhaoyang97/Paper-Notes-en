@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind
 description: >-
-  [ACL 2026][LLM Evaluation][Latent State-Trait] The authors construct the Chameleon psychological profile dataset covering 1,667 users across multiple subreddit contexts. Using ICC decomposition, they demonstrate that 72-74% of psychological variation stems from "state (context)" rather than "trait (personality)." They further reveal that LLMs are nearly blind to th
+  [ACL 2026 Findings][LLM Evaluation][Latent State-Trait] The authors construct the Chameleon psychological profile dataset covering 1,667 users across multiple subreddit contexts. Using ICC decomposition, they demonstrate that 72-74% of psychological variation stems from "state (context)" rather than "trait (personality)." They further reveal that LLMs are nearly blind to these states, while reward models react to states in contradictory directions—consequently…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Latent State-Trait
-  - persona
-  - reward model
-  - RLHF
-  - state-blind
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Latent State-Trait"
+  - "persona"
+  - "reward model"
+  - "RLHF"
+  - "state-blind"
 date: 2026-05-08
-content_hash: 4659e5b09230e9fa
+content_hash: 6a54774559336d56
 ---
+
 # Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind
 
 **Conference**: ACL 2026 Findings  
@@ -148,9 +149,9 @@ For the same Distressed-Vulnerable user, ArmoRM shows high preference while Skyw
 
 - [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
 - [\[ACL 2026\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
-- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
 - [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
-- [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
+- [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
+- [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
 
 </div>
 

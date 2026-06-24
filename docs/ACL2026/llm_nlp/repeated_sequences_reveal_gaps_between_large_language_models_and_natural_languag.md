@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes an evaluation framework based on repeated subsequence distributions, characterizing the entropy growth behavior of text through high-order Rényi entropy. It finds that natural language exhibits a stable sub-linear entropy growth pattern, while the entropy indices of GPT-generated text increase monot
+  [ACL 2026][LLM (Other)][Repeated subsequences] This paper proposes an evaluation framework based on repeated subsequence distributions, characterizing the entropy growth behavior of text through high-order Rényi entropy. It finds that natural language exhibits a stable sub-linear entropy growth pattern, while the entropy indices of GPT-generated text increase monotonically with model scale, revealing systematic differences in long-range statistical organization between LLMs a…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Repeated subsequences"
+  - "Rényi entropy"
+  - "LLM evaluation"
+  - "long-range structure"
+  - "entropy growth analysis"
 date: 2026-05-08
-content_hash: 4b6db6b61d251eeb
+content_hash: c106161d8371a090
 ---
+
 # Repeated Sequences Reveal Gaps between Large Language Models and Natural Language
 
 **Conference**: ACL 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Eagle is proposed as a lightweight black-box attribution framework that performs spatial attribution for MLLM autoregressive token generation using a unified objective function of insight score (sufficiency) and necessity score (indispensability). It quantifies whether each token relies on language priors or perceptual
+  [CVPR 2026][Multimodal VLM][MLLM Interpretability] Eagle is proposed as a lightweight black-box attribution framework that performs spatial attribution for MLLM autoregressive token generation using a unified objective function of insight score (sufficiency) and necessity score (indispensability). It quantifies whether each token relies on language priors or perceptual evidence, significantly outperforming existing methods in faithfulness, localization…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM Interpretability"
+  - "Attribution Analysis"
+  - "Hallucination Diagnosis"
+  - "Language Prior vs. Perceptual Evidence"
+  - "Black-box Method"
 date: 2026-05-08
-content_hash: c25cd15be38cd463
+content_hash: 631d0431179137c6
 ---
+
 # Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,10 @@ A high $I_{t_i}$ indicates the word is supported by visual evidence (e.g., "red,
 ## Related Papers
 
 - [\[CVPR 2026\] From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs](from_where_things_are_to_what_they_are_for_benchmarking_spatial-functional_intel.md)
+- [\[CVPR 2026\] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](vlm_model_inversion_adaptive_token_weight.md)
 - [\[CVPR 2026\] Where Does Vision Meet Language? Understanding and Refining Visual Fusion in MLLMs via Contrastive Attention](where_does_vision_meet_language_understanding_and_refining_visual_fusion_in_mllm.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 - [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 
 </div>
 

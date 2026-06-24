@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper constructs a benchmark for ancient Chinese character evolution analysis containing 11 tasks and over 130,000 instances. After evaluating 19 MLLMs, it is observed that existing models have limited capabilities in glyph-level recognition and evolutionary reasoning. Consequently, the authors propose GEVO, a gly
+  [ACL 2026][Multimodal VLM][Ancient Chinese Character Evolution] This paper constructs a benchmark for ancient Chinese character evolution analysis containing 11 tasks and over 130,000 instances. After evaluating 19 MLLMs, it is observed that existing models have limited capabilities in glyph-level recognition and evolutionary reasoning. Consequently, the authors propose GEVO, a glyph-driven contrastive fine-tuning framework, achieving full-task improvements on a 2B model.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Ancient Chinese Character Evolution"
+  - "MLLMs"
+  - "Glyph Contrastive Fine-Tuning"
+  - "Oracle Bone Script"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 6b46a4f0b5375ee3
+content_hash: ed76ad8553a6b2f5
 ---
+
 # Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning
 
 **Conference**: ACL 2026  
@@ -134,11 +140,11 @@ The contrastive loss for Stage 1 is shown in Equation (1): $\mathcal{L}_{con}=-\
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
 - [\[ACL 2026\] CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution](chartide_data-centric_chart-to-code_generation_via_tri-perspective_tuning_and_in.md)
 - [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](../../CVPR2026/multimodal_vlm/deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
-- [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
+- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](../../CVPR2026/multimodal_vlm/language-driven_fine-grained_retrieval.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Quantum Doubly Stochastic Transformers
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Variational quantum circuits] This paper proposes QDSFormer (Quantum Doubly Stochastic Transformer), replacing softmax with a variational quantum circuit QontOT to generate…
+  [NeurIPS 2025 Spotlight][Physics & Scientific Computing][Variational quantum circuits] This paper proposes QDSFormer (Quantum Doubly Stochastic Transformer), replacing softmax with a variational quantum circuit QontOT to generate doubly stochastic attention matrices. Both theoretical analysis and experiments demonstrate that quantum-circuit-generated DSMs are more diverse and better at preserving information, consistently outperforming standard ViT and Sinkformer on multiple…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Physics & Scientific Computing"
   - "Variational quantum circuits"
   - "doubly stochastic matrices"
@@ -12,7 +12,7 @@ tags:
   - "ViT"
   - "Birkhoff polytope"
 date: 2026-05-08
-content_hash: 9325a668bd5e851a
+content_hash: d611be70f87c5d65
 ---
 
 # Quantum Doubly Stochastic Transformers
@@ -138,7 +138,7 @@ MedMNIST (7 datasets): QontOT achieves best performance on 5 out of 7 datasets.
 - [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
 - [\[NeurIPS 2025\] AstroCo: Self-Supervised Conformer-Style Transformers for Light-Curve Embeddings](astroco_self-supervised_conformer-style_transformers_for_light-curve_embeddings.md)
 - [\[ICML 2026\] REX: A Family of Reversible Exponential Stochastic Runge-Kutta Solvers](../../ICML2026/physics/rex_a_family_of_reversible_exponential_stochastic_runge-kutta_solvers.md)
-- [\[ICML 2026\] Distribution Transformers: Fast Approximate Bayesian Inference With On-The-Fly Prior Adaptation](../../ICML2026/physics/distribution_transformers_fast_approximate_bayesian_inference_with_on-the-fly_pr.md)
+- [\[ICML 2025\] Compact Matrix Quantum Group Equivariant Neural Networks](../../ICML2025/physics/compact_matrix_quantum_group_equivariant_neural_networks.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration
 description: >-
-  [ICML 2026][Audio & Speech][Ideal Ratio Mask] Polyphonia extends zero-shot timbre transfer from single-track to dense multitrack mixes. By utilizing the Ideal Ratio Mask (IRM) obtained through Blind Source Separation (BSS) as an external acoustic prior, it performs "source interpolation + acoustic modulation" within the pre-softmax attention logits. This allows th
+  [ICML 2026][Audio & Speech][Timbre Transfer] Polyphonia extends zero-shot timbre transfer from single-track to dense multitrack mixes. By utilizing the Ideal Ratio Mask (IRM) obtained through Blind Source Separation (BSS) as an external acoustic prior, it performs "source interpolation + acoustic modulation" within the pre-softmax attention logits. This allows the spectrum of the target part (e.g., vocals) to be replaced by a new timbre (e.g.…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - Ideal Ratio Mask
-  - AudioLDM 2
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Timbre Transfer"
+  - "Attention Calibration"
+  - "Ideal Ratio Mask"
+  - "Multitrack Mixing"
+  - "AudioLDM 2"
 date: 2026-05-08
-content_hash: 1488c621696fc5a6
+content_hash: c4c6a30c1eddc3c0
 ---
+
 # Polyphonia: Zero-Shot Timbre Transfer in Polyphonic Music with Acoustic-Informed Attention Calibration
 
 **Conference**: ICML 2026  
@@ -151,10 +155,10 @@ CLAP (Target Timbre Alignment) increased by ~15.5% compared to the strongest bas
 ## Related Papers
 
 - [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](musicdet_zero-shot_ai-generated_music_detection.md)
-- [\[ICML 2026\] VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition for Single-Source Audio](vocsim_a_training-free_benchmark_for_zero-shot_content_identity_in_single-source.md)
-- [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](../../ACL2026/audio_speech/fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
-- [\[ICML 2026\] NAACA: Training-Free NeuroAuditory Attentive Cognitive Architecture with Oscillatory Working Memory for Salience-Driven Attention Gating](naaca_training-free_neuroauditory_attentive_cognitive_architecture_with_oscillat.md)
+- [\[ICLR 2026\] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer](../../ICLR2026/audio_speech/ac-foley_reference-audio-guided_video-to-audio_synthesis_with_acoustic_transfer.md)
+- [\[ICML 2026\] VocSim: A Training-Free Benchmark for Zero-Shot Content Identity Recognition for Single-Source Audio](vocsim_a_training-free_benchmark_for_zero-shot_content_identity_in_single-source.md)
+- [\[ACL 2025\] ControlSpeech: Towards Simultaneous and Independent Zero-shot Speaker Cloning and Zero-shot Language Style Control](../../ACL2025/audio_speech/controlspeech_zero_shot.md)
 
 </div>
 

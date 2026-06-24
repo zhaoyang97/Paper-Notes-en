@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][articulated objects] The PD²GS framework is proposed to achieve part-level decoupling, reconstruction, and continuous control of articulated objects by learning a shared canonical Gaussian field and modeling each interaction state as its continuous deformation. It employs coarse-to-fine motion trajectory clustering and SAM-guided boundary
+  [ICLR 2026][3D Vision][articulated objects] The PD²GS framework is proposed to achieve part-level decoupling, reconstruction, and continuous control of articulated objects by learning a shared canonical Gaussian field and modeling each interaction state as its continuous deformation. It employs coarse-to-fine motion trajectory clustering and SAM-guided boundary refinement without manual supervision.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - articulated objects
-  - 3D Gaussian Splatting
-  - part segmentation
-  - continuous deformation
-  - SAM
+  - "ICLR 2026"
+  - "3D Vision"
+  - "articulated objects"
+  - "3D Gaussian Splatting"
+  - "part segmentation"
+  - "continuous deformation"
+  - "SAM"
 date: 2026-05-08
-content_hash: 6e01da6386b83e8e
+content_hash: cdf552b2c70c18b7
 ---
+
 # PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -127,9 +128,9 @@ The training target is $\mathcal{L}_{total} = \mathcal{L}_{photo} + \mathcal{L}_
 
 - [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](../../CVPR2026/3d_vision/part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](partsam_a_scalable_promptable_part_segmentation_model_trained_on_native_3d_data.md)
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
 - [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
 
 </div>
 

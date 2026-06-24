@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SceneSmith: Agentic Generation of Simulation-Ready Indoor Scenes
 description: >-
-  [ICML 2026][Image Generation][VLM Agent] SceneSmith utilizes a designer-critic-orchestrator VLM agent triangle to construct indoor scenes layer-by-layer on a hierarchical tree of "layout $\rightarrow$ furniture $\rightarrow$ small objects." It deeply couples text-to-3D generation, articulated object retrieval, and physical property estimation into the agent t
+  [ICML 2026 Spotlight][Image Generation][Indoor Scene Synthesis] SceneSmith utilizes a designer-critic-orchestrator VLM agent triangle to construct indoor scenes layer-by-layer on a hierarchical tree of "layout $\rightarrow$ furniture $\rightarrow$ small objects." It deeply couples text-to-3D generation, articulated object retrieval, and physical property estimation into the agent toolchain. Generating directly from a single natural language prompt, it produces dense…
 tags:
-  - ICML 2026
-  - Image Generation
-  - VLM Agent
+  - "ICML 2026 Spotlight"
+  - "Image Generation"
+  - "Indoor Scene Synthesis"
+  - "VLM Agent"
+  - "Robotics Simulation"
+  - "Text-to-3D"
+  - "Hierarchical Generation"
 date: 2026-05-08
-content_hash: c2c64cc64f8bd077
+content_hash: 1cdd9b82d981f3e1
 ---
+
 # SceneSmith: Agentic Generation of Simulation-Ready Indoor Scenes
 
 **Conference**: ICML 2026 Spotlight  

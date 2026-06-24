@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LRHDR: Learning Representation-enhanced HDR Video Reconstruction
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] LRHDR reconstructs HDR video from LDR video frames with alternating exposures. It replaces the traditional "align-then-fuse" paradigm with a "map-to-unified-representation and vote-to-fuse" approach: it uses the ACCR network to align features from different exposures into an exposure-agnostic unified representation dom
+  [CVPR 2026][Image Restoration][HDR video] LRHDR reconstructs HDR video from LDR video frames with alternating exposures. It replaces the traditional "align-then-fuse" paradigm with a "map-to-unified-representation and vote-to-fuse" approach: it uses the ACCR network to align features from different exposures into an exposure-agnostic unified representation domain via pixel-wise affine modulation, while the APSWF reformulates fusion as pixel-wise sparse candidate selection. It…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "HDR video"
+  - "multi-exposure fusion"
+  - "cross-exposure representation"
+  - "sparse weighted fusion"
+  - "ghosting suppression"
 date: 2026-05-08
-content_hash: 14c4a6fd515db6ff
+content_hash: e5d43143ba819f03
 ---
+
 # LRHDR: Learning Representation-enhanced HDR Video Reconstruction
 
 **Conference**: CVPR 2026  
@@ -143,14 +149,17 @@ Ablations on the DeepHDRVideo dynamic subset (DeepHDRVideo-D) and Cinematic Vide
 
 <div class="related-papers" markdown="1">
 
-1. **CVPR 2023** - *NECHDR: Neural Exposure Completion for High Dynamic Range Video Reconstruction*
-2. **TIP 2022** - *Deep HDR Video Reconstruction with Propagation and Alignment*
-3. **ICCV 2021** - *HDRFlow: Real-Time HDR Video Reconstruction with Large Motions*
+## Related Papers
+
+- [\[ICLR 2026\] DeAltHDR: Learning HDR Video Reconstruction from Degraded Alternating Exposure Sequences](../../ICLR2026/image_restoration/dealthdr_learning_hdr_video_reconstruction_from_degraded_alternating_exposure_se.md)
+- [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
+- [\[CVPR 2026\] Coordinate Denoising for Non-Equilibrium Molecular Representation Learning](coordinate_denoising_for_non-equilibrium_molecular_representation_learning.md)
+- [\[CVPR 2026\] HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter](hfr_and_hdr_video_from_multi-attenuated_spikes_using_a_rapidly_rotating_spokend_.md)
+- [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)

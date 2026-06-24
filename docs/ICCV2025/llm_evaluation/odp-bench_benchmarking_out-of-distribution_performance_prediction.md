@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction
 description: >-
-  [ICCV 2025][LLM Evaluation][OOD performance prediction] This paper presents ODP-Bench, the first comprehensive benchmark for OOD performance prediction, covering 29 OOD datasets, 10 prediction algorithms, and 1…
+  [ICCV 2025][LLM Evaluation][OOD performance prediction] This paper presents ODP-Bench, the first comprehensive benchmark for OOD performance prediction, covering 29 OOD datasets, 10 prediction algorithms, and 1,444 pretrained models. It reveals a key finding that existing algorithms perform reasonably well on synthetic corruptions but consistently fail under natural distribution shifts.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "robustness assessment"
   - "model selection"
 date: 2026-05-08
-content_hash: bd9e741547e72a52
+content_hash: 7dbdcfcf8302cacd
 ---
 
 # ODP-Bench: Benchmarking Out-of-Distribution Performance Prediction
@@ -139,10 +139,10 @@ ODP-Bench consists of three components: (1) 29 OOD datasets covering diverse dis
 ## Related Papers
 
 - [\[ICCV 2025\] DisCoPatch: Taming Adversarially-driven Batch Statistics for Improved Out-of-Distribution Detection](discopatch_taming_adversarially-driven_batch_statistics_for_improved_out-of-dist.md)
+- [\[ECCV 2024\] Gradient-Regularized Out-of-Distribution Detection](../../ECCV2024/llm_evaluation/gradient-regularized_out-of-distribution_detection.md)
+- [\[ACL 2025\] CalibraEval: Calibrating Prediction Distribution to Mitigate Selection Bias in LLMs-as-Judges](../../ACL2025/llm_evaluation/calibraeval_calibrating_prediction_distribution_to_mitigate_selection_bias_in_ll.md)
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](../../NeurIPS2025/llm_evaluation/leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
-- [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](../../ACL2026/llm_evaluation/aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
-- [\[NeurIPS 2025\] Predicting the Performance of Black-Box LLMs through Follow-Up Queries](../../NeurIPS2025/llm_evaluation/predicting_the_performance_of_black-box_llms_through_follow-up_queries.md)
-- [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](../../NeurIPS2025/llm_evaluation/ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
+- [\[ACL 2025\] Where Are We? Evaluating LLM Performance on African Languages](../../ACL2025/llm_evaluation/where_are_we_evaluating_llm_performance_on_african_languages.md)
 
 </div>
 

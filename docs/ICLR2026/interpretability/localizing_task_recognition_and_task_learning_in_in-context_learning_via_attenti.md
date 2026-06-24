@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis
 description: >-
-  [ICLR 2026][Interpretability][TSLA] This paper proposes Task Subspace Logit Attribution (TSLA) to localize Task Recognition (TR) and Task Learning (TL) in in-context learning to different attention heads. Through correlation, ablation, input perturbation, task vector steering, and geometric analysis of hidden states, the authors demonstrate that TR heads
+  [ICLR 2026][Interpretability][Attention Head Analysis] This paper proposes Task Subspace Logit Attribution (TSLA) to localize Task Recognition (TR) and Task Learning (TL) in in-context learning to different attention heads. Through correlation, ablation, input perturbation, task vector steering, and geometric analysis of hidden states, the authors demonstrate that TR heads are responsible for pulling states toward the task label subspace, while TL heads steering toward the co…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - TSLA
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Attention Head Analysis"
+  - "Task Recognition"
+  - "Task Learning"
+  - "TSLA"
+  - "ICL Mechanism"
 date: 2026-05-08
-content_hash: f729c78436618c6d
+content_hash: 8249f71ef8e88ced
 ---
+
 # Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis
 
 **Conference**: ICLR 2026  
@@ -139,9 +144,9 @@ Geometric experiments show that TR outputs significantly increase the cosine ali
 
 - [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
 - [\[ICLR 2026\] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICLR 2026\] Task Vectors, Learned Not Extracted: Performance Gains and Mechanistic Insights](task_vectors_learned_not_extracted_performance_gains_and_mechanistic_insights.md)
 - [\[ACL 2026\] SITE: Soft Head Selection for Injecting ICL-Derived Task Embeddings](../../ACL2026/interpretability/soft_head_selection_for_injecting_icl-derived_task_embeddings.md)
-- [\[ICLR 2026\] Comparing the learning dynamics of in-context learning and fine-tuning in language models](comparing_the_learning_dynamics_of_in-context_learning_and_fine-tuning_in_langua.md)
 
 </div>
 

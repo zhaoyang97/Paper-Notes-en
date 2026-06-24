@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Ours proposes MixerCSeg, which decouples channels into global/local branches by analyzing the implicit attention mechanism of Mamba. These branches are respectively enhanced with Self-Attention and CNN, combined with direction-guided edge gated convolutions. It achieves SOTA performance in crack segmentation with 2.05
+  [CVPR 2026][Segmentation][Crack segmentation] Ours proposes MixerCSeg, which decouples channels into global/local branches by analyzing the implicit attention mechanism of Mamba. These branches are respectively enhanced with Self-Attention and CNN, combined with direction-guided edge gated convolutions. It achieves SOTA performance in crack segmentation with 2.05 GFLOPs and 2.54M parameters.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Crack segmentation"
+  - "Hybrid architecture"
+  - "Mamba attention decoupling"
+  - "Direction-guided edge convolution"
+  - "Lightweight and efficient"
 date: 2026-05-08
-content_hash: d9b372b130069b70
+content_hash: 5cd5e6cae8a63403
 ---
+
 # MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
 
 **Conference**: CVPR 2026  
@@ -147,9 +153,9 @@ In direct multi-scale feature concatenation, high-resolution edge details are ea
 
 - [\[CVPR 2026\] CrackSSM: Reviving SSMs for Crack Segmentation via Dynamic Scanning](crackssm_reviving_ssms_for_crack_segmentation_via_dynamic_scanning.md)
 - [\[CVPR 2026\] Annotation-Efficient Coreset Selection for Context-dependent Segmentation](annotation-efficient_coreset_selection_for_context-dependent_segmentation.md)
-- [\[CVPR 2026\] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation](lemma_laplacian_pyramids_for_efficient_marine_semantic_segmentation.md)
-- [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](../../ICCV2025/segmentation/inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
 - [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
+- [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](../../ICCV2025/segmentation/inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
+- [\[CVPR 2026\] MARSS: Radar Semantic Segmentation via Modular Attention and State Space Models](marss_radar_semantic_segmentation_via_modular_attention_and_state_space_models.md)
 
 </div>
 

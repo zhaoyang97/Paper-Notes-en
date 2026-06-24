@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CaRe-BN: Precise Moving Statistics for Stabilizing Spiking Neural Networks in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] To address the training instability in Spiking Neural Networks (SNNs) caused by inaccurate Batch Normalization (BN) moving statistics in online Reinforcement Learning (RL), this paper proposes CaRe-BN. The method utilizes "Confidence-aware Adaptation" (Kalman-style weighting) for real-time, low-variance estimation of B
+  [ICLR2026][Reinforcement Learning][Spiking Neural Networks] To address the training instability in Spiking Neural Networks (SNNs) caused by inaccurate Batch Normalization (BN) moving statistics in online Reinforcement Learning (RL), this paper proposes CaRe-BN. The method utilizes "Confidence-aware Adaptation" (Kalman-style weighting) for real-time, low-variance estimation of BN statistics, and "Periodic Recalibration" (resampling large batches from the replay buffer) for bia…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Spiking Neural Networks"
+  - "Online Reinforcement Learning"
+  - "Batch Normalization"
+  - "Moving Statistics"
+  - "Confidence-aware Adaptation"
 date: 2026-05-08
-content_hash: a40f842564860d74
+content_hash: a5a421534c165fc5
 ---
+
 # CaRe-BN: Precise Moving Statistics for Stabilizing Spiking Neural Networks in Reinforcement Learning
 
 **Conference**: ICLR2026  

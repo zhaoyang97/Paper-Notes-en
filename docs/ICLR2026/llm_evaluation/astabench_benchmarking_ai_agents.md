@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite
 description: >-
-  [ICLR 2026][LLM Evaluation][AI for Science] The AI2 team addresses five methodological flaws in existing scientific agent benchmarks by constructing AstaBench, the first evaluation suite covering the full scientific research process. It includes 4 categories of 11 sub-benchmarks with a total of 2400+ problems, equipped with a production-grade controlled search t
+  [ICLR 2026 Oral][LLM Evaluation][Agent Benchmarks] The AI2 team addresses five methodological flaws in existing scientific agent benchmarks by constructing AstaBench, the first evaluation suite covering the full scientific research process. It includes 4 categories of 11 sub-benchmarks with a total of 2400+ problems, equipped with a production-grade controlled search tool based on Semantic Scholar and 9 types of research-optimized Asta Agent baselines. Conducted as the larges…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - AI for Science
+  - "ICLR 2026 Oral"
+  - "LLM Evaluation"
+  - "Agent Benchmarks"
+  - "Scientific Research Automation"
+  - "Reproducible Evaluation"
+  - "AI for Science"
 date: 2026-05-08
-content_hash: a19cc59ed58d4175
+content_hash: bef2b51cc5cdd7c3
 ---
+
 # AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite
 
 **Conference**: ICLR 2026 Oral  
@@ -135,6 +139,7 @@ AstaBench open-sources 9 research-optimized Asta Agent architectures (e.g., ReAc
 - Value: ⭐⭐⭐⭐⭐ (Established standardized evaluation infrastructure for AI-for-Science agents)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] T2SGrid transforms Video Temporal Grounding (VTG) from "frame-by-frame processing" to "grid-by-grid processing." By using a sliding window to concatenate continuous frames into a 2D grid in row-major order, it enables Vision-LLMs to utilize their superior spatial reasoning for temporal interpretation. Combined with a "
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] T2SGrid transforms Video Temporal Grounding (VTG) from "frame-by-frame processing" to "grid-by-grid processing." By using a sliding window to concatenate continuous frames into a 2D grid in row-major order, it enables Vision-LLMs to utilize their superior spatial reasoning for temporal interpretation. Combined with a "composite text timestamp shared by the entire grid" for absolute time perception…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Gridification"
+  - "Multi-modal LLM"
+  - "Temporal Modeling"
+  - "Sliding Window"
 date: 2026-05-08
-content_hash: 9fa41ad9c1e87051
+content_hash: 5987146b5c7ef838
 ---
+
 # T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding
 
 **Conference**: CVPR 2026  
@@ -122,13 +128,17 @@ Component ablation (Charades-STA, Qwen2-VL-7B):
 
 <div class="related-papers" markdown="1">
 
-1. **IG-VLM**: [arXiv:2312.11234] (Using grids for coarse VQA)
-2. **Qwen2-VL**: [arXiv:2409.12191] (Baseline Vision-LLM)
+## Related Papers
+
+- [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
+- [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
+- [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
+- [\[CVPR 2026\] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](videoitg_multimodal_video_understanding_with_instructed_temporal_grounding.md)
+- [\[CVPR 2026\] Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding](learning_to_refuse_refusal-aware_reinforcement_fine-tuning_for_hard-irrelevant_q.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)

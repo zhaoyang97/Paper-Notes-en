@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Streaming Drag-Oriented Interactive Video Manipulation: Drag Anything, Anytime!
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] This paper introduces the REVEL task—allowing users to "drag anything, anytime" during the streaming generation of autoregressive video diffusion models—and proposes DragStream, a training-free method that suppresses latent space drift caused by dragging accumulation via "Adaptive Distribution Self-Rectification" and m
+  [ICLR 2026][Video Generation][Streaming Video Generation] This paper introduces the REVEL task—allowing users to "drag anything, anytime" during the streaming generation of autoregressive video diffusion models—and proposes DragStream, a training-free method that suppresses latent space drift caused by dragging accumulation via "Adaptive Distribution Self-Rectification" and mitigates context frame interference via "Spatio-Frequency Selective Optimization."
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Streaming Video Generation"
+  - "Dragging Operations"
+  - "Autoregressive Diffusion"
+  - "Training-free"
+  - "Latent Space Drift"
 date: 2026-05-08
-content_hash: 71c1fe0a81ba2880
+content_hash: b65a74919c9f5c4c
 ---
+
 # Streaming Drag-Oriented Interactive Video Manipulation: Drag Anything, Anytime!
 
 **Conference**: ICLR 2026  
@@ -135,6 +141,7 @@ Ours shows significant improvements in motion control (ObjMC) and spatial accura
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,7 +150,7 @@ Ours shows significant improvements in motion control (ObjMC) and spatial accura
 - [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](streaming_autoregressive_video_generation_via_diagonal_distillation.md)
 - [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)
 - [\[ICLR 2026\] MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control](mimic_mask-injected_manipulation_video_generation_with_interaction_control.md)
-- [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
+- [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](motionstream_real-time_video_generation_with_interactive_motion_controls.md)
 
 </div>
 

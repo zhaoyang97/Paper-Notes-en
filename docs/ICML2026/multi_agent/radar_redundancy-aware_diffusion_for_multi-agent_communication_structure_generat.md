@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation
 description: >-
-  [ICML 2026][Multi-Agent][effective size] RADAR models the communication topology design of multi-LLM-agent systems as a "redundancy-aware" discrete graph diffusion process. By using effective size as a guiding signal to incrementally generate query-adaptive collaboration graphs, it achieves higher accuracy, lower token consumption, and stronger robustness acr
+  [ICML 2026][Multi-Agent][Multi-agent collaboration] RADAR models the communication topology design of multi-LLM-agent systems as a "redundancy-aware" discrete graph diffusion process. By using effective size as a guiding signal to incrementally generate query-adaptive collaboration graphs, it achieves higher accuracy, lower token consumption, and stronger robustness across six benchmarks.
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - effective size
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Multi-agent collaboration"
+  - "graph diffusion"
+  - "communication topology"
+  - "effective size"
+  - "redundancy-aware"
 date: 2026-05-08
-content_hash: e4fe67b1b0fc5fea
+content_hash: 384700382a175007
 ---
+
 # RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation
 
 **Conference**: ICML 2026  
@@ -128,16 +133,16 @@ Ours outperforms the strongest learning-based baseline (ARG-Designer) by an aver
 - **Value**: ⭐⭐⭐⭐ Addresses real pain points in token costs and multi-agent robustness.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](../../AAAI2026/multi_agent/assemble_your_crew_automatic_multi-agent_communication_topol.md)
-- [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](../../ACL2026/multi_agent/bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)
 - [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](../../AAAI2026/multi_agent/bamas_structuring_budget-aware_multi-agent_systems.md)
-- [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](../../NeurIPS2025/multi_agent/gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
-- [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](../../ACL2026/multi_agent/posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
+- [\[ICLR 2026\] GlobeDiff: State Diffusion Process for Partial Observability in Multi-Agent Systems](../../ICLR2026/multi_agent/globediff_state_diffusion_process_for_partial_observability_in_multi-agent_syste.md)
+- [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](../../ACL2026/multi_agent/bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)
+- [\[ICLR 2026\] BRIDGE: Bi-level Reinforcement Learning for Dynamic Group Structure in Coalition Formation Games](../../ICLR2026/multi_agent/bridge_bi-level_reinforcement_learning_for_dynamic_group_structure_in_coalition_.md)
 
 </div>
 

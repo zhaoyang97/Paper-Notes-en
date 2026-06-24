@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion Model] Proposes DM4CT—the first systematic benchmark for diffusion models in CT reconstruction, covering ten diffusion methods and seven baseline approaches evaluated across medical, industrial, and synchrotron datasets, revealing the strengths and limitations of diffusion models in CT.
+  [ICLR 2026][Medical Imaging][CT reconstruction] Proposes DM4CT—the first systematic benchmark for diffusion models in CT reconstruction, covering ten diffusion methods and seven baseline approaches evaluated across medical, industrial, and synchrotron datasets, revealing the strengths and limitations of diffusion models in CT.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion Model
-  - benchmark
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "CT reconstruction"
+  - "Diffusion models"
+  - "benchmark"
+  - "inverse problems"
+  - "sparse-view reconstruction"
 date: 2026-05-08
-content_hash: 9e5faa3f808421a1
+content_hash: 013017ccc1556d7c
 ---
+
 # DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction
 
 **Conference**: ICLR 2026  
@@ -133,8 +137,8 @@ To determine the gain brought by diffusion, the benchmark includes: analytical F
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](../../NeurIPS2025/medical_imaging/are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
 - [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
+- [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](../../NeurIPS2025/medical_imaging/are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
 - [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
 - [\[ICLR 2026\] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](moving_beyond_diffusion_hierarchy-to-hierarchy_autoregression_for_fmri-to-image_.md)
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Sketch2CT enables users to use a single 2D sketch and a text description to first generate anatomically consistent 3D segmentation masks through dual-modal fusion, and then synthesize corresponding 3D CT volumes using segmentation-conditioned latent diffusion, achieving low-cost, controllable, and structure-preserved m
+  [CVPR 2026][Medical Imaging][Medical Image Synthesis] Sketch2CT enables users to use a single 2D sketch and a text description to first generate anatomically consistent 3D segmentation masks through dual-modal fusion, and then synthesize corresponding 3D CT volumes using segmentation-conditioned latent diffusion, achieving low-cost, controllable, and structure-preserved medical volume data augmentation.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Image Synthesis"
+  - "Latent Diffusion"
+  - "Sketch & Text Conditioning"
+  - "3D Volume Generation"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: 60bdde255b38031c
+content_hash: f8beff4151a26969
 ---
+
 # Sketch2CT: Multimodal Diffusion for Structure-Aware 3D Medical Volume Generation
 
 **Conference**: CVPR 2026  
@@ -113,10 +119,20 @@ Sketch2CT achieves the best FID/LPIPS on most datasets; it leads significantly o
 - Value: ⭐⭐⭐⭐ Provides a low-cost, controllable path for medical volume data augmentation, with downstream segmentation performance approaching the upper bound of real data.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](../../ICLR2026/medical_imaging/pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
+- [\[CVPR 2026\] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering](mr-rag_multimodal_relevance-aware_retrieval-augmented_generation_for_medical_vis.md)
+- [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
+- [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
+- [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering](mr-rag_multimodal_relevance-aware_retrieval-augmented_generation_for_medical_vis.md)

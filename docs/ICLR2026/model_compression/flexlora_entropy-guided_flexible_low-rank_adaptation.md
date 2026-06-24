@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation
 description: >-
-  [ICLR 2026][Model Compression][LoRA] FlexLoRA utilizes "spectral energy entropy" to measure the importance of each LoRA low-rank update at the **matrix level**. Under a global rank budget, it can both **prune redundant ranks** and **extend new ranks** for critical layers. Furthermore, a "Zero-Impact Initialization" strategy is employed to ensure training
+  [ICLR 2026][Model Compression][LoRA] FlexLoRA utilizes "spectral energy entropy" to measure the importance of each LoRA low-rank update at the **matrix level**. Under a global rank budget, it can both **prune redundant ranks** and **extend new ranks** for critical layers. Furthermore, a "Zero-Impact Initialization" strategy is employed to ensure training stability during capacity expansion, allowing for more efficient utilization of the parameter budget compared to fixed-rank…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Dynamic Rank Allocation"
+  - "Spectral Entropy"
+  - "PEFT"
+  - "Rank Pruning and Extension"
 date: 2026-05-08
-content_hash: 0b93efc180dc1a40
+content_hash: 19a7901df5818bee
 ---
+
 # FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation
 
 **Conference**: ICLR 2026  
@@ -126,8 +131,8 @@ Conducted on GLUE (DeBERTaV3-base).
 - [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
 - [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
 - [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
 
 </div>
 

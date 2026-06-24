@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal Retrieval] This paper proposes Retrv-R1, the first R1-style reasoning-based multimodal retrieval framework. It reduces token consumption via an Information Compression Module (IC…
+  [NeurIPS 2025][VLM Reasoning][Multimodal Retrieval] This paper proposes Retrv-R1, the first R1-style reasoning-based multimodal retrieval framework. It reduces token consumption via an Information Compression Module (ICM), preserves complete information for hard candidates through a Details Inspection Mechanism (DIM), and employs a curriculum-based RL reward to balance effectiveness and efficiency, achieving state-of-the-art performance on universal multimodal retrieval bench…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Multimodal Retrieval"
   - "Reinforcement Learning"
   - "Reasoning MLLM"
   - "Information Compression"
   - "DeepSeek-R1"
 date: 2026-05-08
-content_hash: b061e5da4acc31b5
+content_hash: 1b45e9ada95955d6
 ---
 
 # Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval
@@ -51,10 +51,10 @@ Retrv-R1 adopts a two-stage retrieval pipeline. The first stage uses an embeddin
 
    The core idea is to compress the token sequence of each candidate into 2 tokens, freeing up context space for CoT reasoning. The ICM is placed before the language model of the MLLM and generates two types of compressed tokens for each candidate $c_k$:
 
-   - **Content token** $t_{con}^{c_k}$: A learnable embedding $e_{con}$ serves as the query, and the candidate token sequence $T_{c_k}$ serves as key/value. Compression is performed via two-layer attention:
+    - **Content token** $t_{con}^{c_k}$: A learnable embedding $e_{con}$ serves as the query, and the candidate token sequence $T_{c_k}$ serves as key/value. Compression is performed via two-layer attention:
    $t_{con}^{c_k} = \text{ATT}_1(\mathbf{Q}_{e_{con}}, \mathbf{K}_{T_{c_k}}, \mathbf{V}_{T_{c_k}})$
 
-   - **Relation token** $t_{rel}^{c_k}$: Cross-attention is first applied using the candidate tokens to attend over query tokens, modeling a relational feature $R_{q,c_k}$, which is then compressed into a single token:
+    - **Relation token** $t_{rel}^{c_k}$: Cross-attention is first applied using the candidate tokens to attend over query tokens, modeling a relational feature $R_{q,c_k}$, which is then compressed into a single token:
    $R_{q,c_k} = \text{ATT}_2(\mathbf{Q}_{T_{c_k}}, \mathbf{K}_{T_q}, \mathbf{V}_{T_q})$
 
    The ICM is pre-trained via a self-alignment strategy: the language model is frozen, and a cross-entropy loss constrains the LM outputs from compressed tokens to match those from the original full token sequences, ensuring that retrieval-critical information is preserved after compression.
@@ -157,11 +157,11 @@ Note: The 3B model surpasses all 7B baselines.
 
 ## Related Papers
 
+- [\[ICLR 2026\] SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models](../../ICLR2026/vlm_reasoning/sketchthinker-r1_towards_efficient_sketch-style_reasoning_in_large_multimodal_mo.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] ElasticMM: Efficient MLLM Serving with Elastic Multimodal Parallelism](elasticmm_efficient_multimodal_llms_serving_with_elastic_multimodal_parallelism.md)
-- [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](../../ICLR2026/multimodal_vlm/shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
-- [\[ICLR 2026\] U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning](../../ICLR2026/multimodal_vlm/u-marvel_unveiling_key_factors_for_universal_multimodal_retrieval_via_embedding_.md)
+- [\[ACL 2025\] Progressive Multimodal Reasoning via Active Retrieval](../../ACL2025/vlm_reasoning/progressive_multimodal_reasoning_via_active_retrieval.md)
 - [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
+- [\[ICLR 2026\] Generative Universal Verifier as Multimodal Meta-Reasoner](../../ICLR2026/vlm_reasoning/generative_universal_verifier_as_multimodal_meta-reasoner.md)
 
 </div>
 

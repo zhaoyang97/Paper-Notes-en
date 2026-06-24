@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] CycleMimic is proposed to learn a latent action tokenizer from unlabeled videos using "Action-centric Cycle Consistency (AC3)." By establishing a closed loop of "sampling latent actions → generating future frames → predicting the action back from the original and generated frames," the method enforces a semantically co
+  [CVPR 2026][Robotics][Latent Action] CycleMimic is proposed to learn a latent action tokenizer from unlabeled videos using "Action-centric Cycle Consistency (AC3)." By establishing a closed loop of "sampling latent actions → generating future frames → predicting the action back from the original and generated frames," the method enforces a semantically consistent and unified cross-embodiment latent action space. It improves performance over OpenVLA by 20.1% on LIBERO and incr…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "Latent Action"
+  - "Video Pre-training"
+  - "Cycle Consistency"
+  - "VLA"
+  - "Cross-embodiment"
 date: 2026-05-08
-content_hash: 5f23570a9115d962
+content_hash: 1d2b42c5d5987e75
 ---
+
 # Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency
 
 **Conference**: CVPR 2026  
@@ -147,6 +152,7 @@ Conducted on Bridge pre-training + LIBERO fine-tuning:
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

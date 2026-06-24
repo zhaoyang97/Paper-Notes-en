@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning
 description: >-
-  [ICLR 2026][Code Intelligence][Text-to-TikZ] TikZilla surpasses GPT-4o in Text-to-TikZ scientific graphics generation and exceeds GPT-5 on automatic metrics by constructing the million-scale high-quality TikZ dataset DaTikZ-V4 and further training small Qwen models using GRPO with an inverse graphics image encoder-based reward after SFT. This significantly improv
+  [ICLR2026][Code Intelligence][Text-to-TikZ] TikZilla surpasses GPT-4o in Text-to-TikZ scientific graphics generation and exceeds GPT-5 on automatic metrics by constructing the million-scale high-quality TikZ dataset DaTikZ-V4 and further training small Qwen models using GRPO with an inverse graphics image encoder-based reward after SFT. This significantly improves compilation rates and graphical semantic alignment.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Text-to-TikZ
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Text-to-TikZ"
+  - "Code Generation"
+  - "Scientific Graphics"
+  - "Reinforcement Learning"
+  - "Inverse Graphics Reward"
 date: 2026-05-08
-content_hash: 41a79506883d7f7d
+content_hash: 927ebc9a185bb085
 ---
+
 # TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning
 
 **Conference**: ICLR2026  

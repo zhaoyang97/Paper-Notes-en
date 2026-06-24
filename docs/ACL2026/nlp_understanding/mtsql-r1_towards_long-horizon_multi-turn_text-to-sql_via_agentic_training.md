@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MTSQL-R1: Towards Long-Horizon Multi-Turn Text-to-SQL via Agentic Training
 description: >-
-  [ACL 2026][NLP Understanding][Reinforcement Learning] MTSQL-R1 transforms multi-turn Text-to-SQL from "one-shot translation" into a long-horizon agent training problem that interacts with databases and dialogue memory. Through self-teaching warm-start SFT and multi-level GRPO rewards, small-scale Qwen3 models outperform strong closed-source prompting baselines and short-h
+  [ACL2026][NLP Understanding][Multi-Turn Text-to-SQL] MTSQL-R1 transforms multi-turn Text-to-SQL from "one-shot translation" into a long-horizon agent training problem that interacts with databases and dialogue memory. Through self-teaching warm-start SFT and multi-level GRPO rewards, small-scale Qwen3 models outperform strong closed-source prompting baselines and short-horizon SFT/RL baselines on CoSQL and SParC.
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - Reinforcement Learning
+  - "ACL2026"
+  - "NLP Understanding"
+  - "Multi-Turn Text-to-SQL"
+  - "Long-Horizon Reasoning"
+  - "Database Execution Feedback"
+  - "Dialogue Memory"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 92855f69035ba048
+content_hash: 2aa02531307e4f9d
 ---
+
 # MTSQL-R1: Towards Long-Horizon Multi-Turn Text-to-SQL via Agentic Training
 
 **Conference**: ACL2026  
@@ -175,10 +180,10 @@ A notable phenomenon is that short-horizon SFT sometimes yields decent EM, but i
 ## Related Papers
 
 - [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
-- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 - [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 - [\[ACL 2025\] ReSCORE: Label-free Iterative Retriever Training for Multi-hop Question Answering with Relevance-Consistency Supervision](../../ACL2025/nlp_understanding/rescore_multihop_qa.md)
-- [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
+- [\[ACL 2026\] Revealing Temporal Framing in News Text](uncovering_temporal_framing_in_the_news.md)
+- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 
 </div>
 

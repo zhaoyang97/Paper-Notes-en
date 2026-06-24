@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs
 description: >-
-  [ICLR 2026][Multi-Agent][GRPO] MARSHAL utilizes a GRPO modification specifically designed for "multi-turn + multi-agent" scenarios (**turn-level advantage estimation with summation before normalization** + **role-based group normalization**). By training Qwen3-4B through self-play in cooperative and competitive strategic games, the model acquires re
+  [ICLR 2026][Multi-Agent][Multi-agent reasoning] MARSHAL utilizes a GRPO modification specifically designed for "multi-turn + multi-agent" scenarios (**turn-level advantage estimation with summation before normalization** + **role-based group normalization**). By training Qwen3-4B through self-play in cooperative and competitive strategic games, the model acquires reasoning capabilities that zero-shot transfer to multi-agent systems like MAD/AutoGen…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - GRPO
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent reasoning"
+  - "Self-play"
+  - "GRPO"
+  - "Credit assignment"
+  - "Advantage estimation"
+  - "Strategic games"
 date: 2026-05-08
-content_hash: 221f4acc4ec42b8a
+content_hash: 7ef3701eebbd6c0a
 ---
+
 # MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs
 
 **Conference**: ICLR 2026  
@@ -119,8 +125,8 @@ Representative gains: The Generalist improved GPQA-Diamond by 7.57% under the MA
 - [\[ICLR 2026\] Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters](strategic_planning_and_rationalizing_on_trees_make_llms_better_debaters.md)
 - [\[ICLR 2026\] MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems](mas2_self-generative_self-configuring_self-rectifying_multi-agent_systems.md)
 - [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](stochastic_self-organization_in_multi-agent_systems.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 - [\[ICML 2026\] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning](../../ICML2026/multi_agent/toward_culturally_aligned_llms_through_ontology-guided_multi-agent_reasoning.md)
-- [\[ICLR 2026\] Unlocking the Power of Multi-Agent LLM for Reasoning: From Lazy Agents to Deliberation](unlocking_the_power_of_multi-agent_llm_for_reasoning_from_lazy_agents_to_deliber.md)
 
 </div>
 

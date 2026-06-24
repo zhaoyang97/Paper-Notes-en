@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated?
 description: >-
-  [ICLR 2026][Time Series][PCE] The authors evaluate 5 Time Series Foundation Models (TSFMs) and 2 traditional baselines using a metric system specifically designed to measure "calibration rather than sharpness." They find that TSFMs not only provide more accurate point predictions but also consistently outperform baselines in probabilistic calibrati
+  [ICLR 2026][Time Series][Time Series Foundation Models] The authors evaluate 5 Time Series Foundation Models (TSFMs) and 2 traditional baselines using a metric system specifically designed to measure "calibration rather than sharpness." They find that TSFMs not only provide more accurate point predictions but also consistently outperform baselines in probabilistic calibration, without exhibiting the systematic overconfidence typical of vision or language foundation models.
 tags:
-  - ICLR 2026
-  - Time Series
-  - PCE
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Probabilistic Calibration"
+  - "PCE"
+  - "Overconfidence"
+  - "Autoregressive Forecasting"
+  - "Prediction Heads"
 date: 2026-05-08
-content_hash: f5d1841d98eaf669
+content_hash: f2955c096984cea0
 ---
+
 # Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated?
 
 **Conference**: ICLR 2026  
@@ -117,10 +123,10 @@ This work connects two threads: calibration research in deep learning (e.g., Guo
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
+- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
 - [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
 - [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
-- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
-- [\[ICML 2026\] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density](../../ICML2026/time_series/olivia_harmonizing_time_series_foundation_models_with_power_spectral_density.md)
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models
 description: >-
-  [NeurIPS 2025][Image Generation][Strong gravitational lensing] This work presents the first application of score-based generative model priors to blind strong gravitational lensing inversion — jointly inferring the morph…
+  [NeurIPS 2025][Image Generation][Strong gravitational lensing] This work presents the first application of score-based generative model priors to blind strong gravitational lensing inversion — jointly inferring the morphology of background source galaxies and lens mass distribution parameters. By extending GibbsDDRM to the continuous-time domain, the method achieves reconstruction residuals consistent with observational noise and unbiased marginal posteriors over lens paramet…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "joint inference"
   - "dark matter"
 date: 2026-05-08
-content_hash: 567d713e1c1751ba
+content_hash: 3bb63cb3da29a979
 ---
 
 # Blind Strong Gravitational Lensing Inversion: Joint Inference of Source and Lens Mass with Score-Based Models
@@ -130,11 +130,11 @@ Reconstruction quality on simulated strong lensing systems:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
 - [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
+- [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
 - [\[NeurIPS 2025\] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models](psi-sampler_initial_particle_sampling_for_smc-based_inference-time_reward_alignm.md)
+- [\[ECCV 2024\] Source Prompt Disentangled Inversion for Boosting Image Editability with Diffusion Models](../../ECCV2024/image_generation/source_prompt_disentangled_inversion_for_boosting_image_editability_with_diffusi.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
-- [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
 
 </div>
 

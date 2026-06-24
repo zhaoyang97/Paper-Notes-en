@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks
 description: >-
-  [NeurIPS 2025][LLM/NLP][Logic Gate Networks] This paper proposes Gumbel Logic Gate Networks (Gumbel LGNs), which inject Gumbel noise into logic gate selection and employ a straight-through (ST) estimator to reduce the di…
+  [NeurIPS 2025][LLM (Other)][Logic Gate Networks] This paper proposes Gumbel Logic Gate Networks (Gumbel LGNs), which inject Gumbel noise into logic gate selection and employ a straight-through (ST) estimator to reduce the discretization gap of differentiable logic gate networks by 98%, achieve a 4.5× speedup in training, and reduce the proportion of unused neurons to 0%.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Logic Gate Networks"
   - "Gumbel-Softmax"
   - "Discretization Gap"
   - "Efficient Inference"
   - "Loss Landscape Smoothing"
 date: 2026-05-08
-content_hash: a66775d1fa45937a
+content_hash: 8527570455a02fc5
 ---
 
 # Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks
@@ -160,11 +160,11 @@ Experiments are conducted on CIFAR-10 and CIFAR-100 with a default configuration
 
 ## Related Papers
 
+- [\[ACL 2025\] Mind the (Belief) Gap: Group Identity in the World of LLMs](../../ACL2025/llm_nlp/mind_the_belief_gap_group_identity_in_the_world_of_llms.md)
 - [\[ACL 2026\] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models](../../ACL2026/llm_nlp/mind_the_gap_how_elicitation_protocols_shape_the_stated-revealed_preference_gap_.md)
 - [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
 - [\[NeurIPS 2025\] Opinion Maximization in Social Networks by Modifying Internal Opinions](opinion_maximization_in_social_networks_by_modifying_internal_opinions.md)
-- [\[NeurIPS 2025\] msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML](msf-cnn_patch-based_multi-stage_fusion_with_convolutional_neural_networks_for_ti.md)
-- [\[ACL 2026\] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal](../../ACL2026/llm_nlp/clozing_the_gap_exploring_why_language_model_surprisal_outperforms_cloze_surpris.md)
+- [\[ACL 2025\] NewsInterview: a Dataset and a Playground to Evaluate LLMs' Grounding Gap via Informational Interviews](../../ACL2025/llm_nlp/newsinterview_a_dataset_and_a_playground_to_evaluate_llms_grounding_gap_via_info.md)
 
 </div>
 

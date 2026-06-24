@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] IsoCLIP theoretically analyzes the structure of CLIP projectors and discovers that the cosine similarity calculation implicitly involves an inter-modal operator $\Psi = W_i^\top W_t$ responsible for cross-modal alignment and an intra-modal operator $\Psi_i = W_i^\top W_i$ that only targets normalization without promoti
+  [CVPR 2026][Multimodal VLM][CLIP] IsoCLIP theoretically analyzes the structure of CLIP projectors and discovers that the cosine similarity calculation implicitly involves an inter-modal operator $\Psi = W_i^\top W_t$ responsible for cross-modal alignment and an intra-modal operator $\Psi_i = W_i^\top W_i$ that only targets normalization without promoting intra-modal alignment. By applying Singular Value Decomposition (SVD) to $\Psi$, the study identifies an approximately isot…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Intra-modal Alignment"
+  - "Projector Analysis"
+  - "SVD"
+  - "Isotropic Subspace"
 date: 2026-05-08
-content_hash: eefee2c76a9d4c80
+content_hash: ba78ea049e7224d6
 ---
+
 # IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment
 
 **Conference**: CVPR 2026  
@@ -127,9 +132,9 @@ IsoCLIP significantly outperforms the original CLIP on both image-to-image and t
 
 - [\[CVPR 2026\] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP](reevaluating_the_intra-modal_misalignment_hypothesis_in_clip.md)
 - [\[CVPR 2026\] DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles](dear_fine-grained_vlm_adaptation_by_decomposing_attention_head_roles.md)
-- [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
 - [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
-- [\[CVPR 2026\] Reconstructing CLIP for Open-Vocabulary Dense Perception](reconstructing_clip_for_open-vocabulary_dense_perception.md)
+- [\[CVPR 2026\] Intra-class Distribution-guided Generative Hashing with Neighbor Refinement for Cross-modal Retrieval](intra-class_distribution-guided_generative_hashing_with_neighbor_refinement_for_.md)
+- [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
 
 </div>
 

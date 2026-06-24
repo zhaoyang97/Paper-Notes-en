@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Interpretable Queries for Explainable Image Classification with Information Pursuit
 description: >-
-  [ICCV 2025][Optimization][Explainable classification] This paper parameterizes the query dictionary of Information Pursuit (IP) as learnable vectors in the CLIP semantic embedding space…
+  [ICCV 2025][Optimization][Explainable classification] This paper parameterizes the query dictionary of Information Pursuit (IP) as learnable vectors in the CLIP semantic embedding space, and learns a task-sufficient interpretable query dictionary via an alternating optimization algorithm, substantially closing the performance gap between interpretable classifiers and black-box classifiers.
 tags:
   - "ICCV 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "query dictionary optimization"
 date: 2026-05-08
-content_hash: 95dd1406d1366efc
+content_hash: 5a523e2d6e51b7c3
 ---
 
 # Learning Interpretable Queries for Explainable Image Classification with Information Pursuit
@@ -143,10 +143,10 @@ K-Learned outperforms or is competitive with all four state-of-the-art concept b
 ## Related Papers
 
 - [\[NeurIPS 2025\] CHiQPM: Calibrated Hierarchical Interpretable Image Classification](../../NeurIPS2025/optimization/chiqpm_calibrated_hierarchical_interpretable_image_classification.md)
+- [\[NeurIPS 2025\] From Information to Generative Exponent: Learning Rate Induces Phase Transitions in SGD](../../NeurIPS2025/optimization/from_information_to_generative_exponent_learning_rate_induces_phase_transitions_.md)
 - [\[NeurIPS 2025\] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis](../../NeurIPS2025/optimization/learning_orthogonal_multi-index_models_a_fine-grained_information_exponent_analy.md)
+- [\[ICML 2025\] Synonymous Variational Inference for Perceptual Image Compression](../../ICML2025/optimization/synonymous_variational_inference_for_perceptual_image_compression.md)
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](../../NeurIPS2025/optimization/improving_the_straight-through_estimator_with_zeroth-order_information.md)
-- [\[ICCV 2025\] Addressing Representation Collapse in Vector Quantized Models with One Linear Layer](addressing_representation_collapse_in_vector_quantized_models_with_one_linear_la.md)
-- [\[ICCV 2025\] Class-Wise Federated Averaging for Efficient Personalization](class-wise_federated_averaging_for_efficient_personalization.md)
 
 </div>
 

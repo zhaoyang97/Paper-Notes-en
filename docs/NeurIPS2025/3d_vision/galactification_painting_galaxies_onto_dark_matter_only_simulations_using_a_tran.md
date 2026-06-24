@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Galactification: Painting Galaxies onto Dark Matter Only Simulations Using a Transformer-Based Model
 description: >-
-  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a multimodal Transformer encoder–decoder framework that takes density and velocity fields from inexpensive dark matter N-body simulations as input an…
+  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a multimodal Transformer encoder–decoder framework that takes density and velocity fields from inexpensive dark matter N-body simulations as input and autoregressively generates galaxy catalogs (positions + physical properties). The model faithfully reproduces hydrodynamical simulation results across multiple statistical metrics while achieving approximately 100× computational speedup.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "galaxy generation"
   - "conditional generative model"
 date: 2026-05-08
-content_hash: c1e4e612b6a3b535
+content_hash: 26dfd33c0f11b8ac
 ---
 
 # Galactification: Painting Galaxies onto Dark Matter Only Simulations Using a Transformer-Based Model
@@ -131,11 +131,11 @@ The paper validates results using multi-level summary statistics without a conve
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes](rgb-only_supervised_camera_parameter_optimization_in_dynamic_scenes.md)
 - [\[ICML 2026\] PLAID: A Unified Data Model for Machine Learning on Heterogeneous Physics Simulations](../../ICML2026/3d_vision/plaid_a_unified_data_model_for_machine_learning_on_heterogeneous_physics_simulat.md)
-- [\[NeurIPS 2025\] Locality-Sensitive Hashing-Based Efficient Point Transformer for Charged Particle Reconstruction](locality-sensitive_hashing-based_efficient_point_transformer_for_charged_particl.md)
-- [\[NeurIPS 2025\] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos](4dgt_learning_a_4d_gaussian_transformer_using_realworld_mono.md)
-- [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
+- [\[ICLR 2026\] DiMeR: Disentangled Mesh Reconstruction Model with Normal-only Geometry Training](../../ICLR2026/3d_vision/dimer_disentangled_mesh_reconstruction_model_with_normal-only_geometry_training.md)
+- [\[NeurIPS 2025\] RGB-Only Supervised Camera Parameter Optimization in Dynamic Scenes](rgb-only_supervised_camera_parameter_optimization_in_dynamic_scenes.md)
+- [\[CVPR 2025\] MVPaint: Synchronized Multi-View Diffusion for Painting Anything 3D](../../CVPR2025/3d_vision/mvpaint_synchronized_multi-view_diffusion_for_painting_anything_3d.md)
+- [\[ICLR 2026\] YoNoSplat: You Only Need One Model for Feedforward 3D Gaussian Splatting](../../ICLR2026/3d_vision/yonosplat_you_only_need_one_model_for_feedforward_3d_gaussian_splatting.md)
 
 </div>
 

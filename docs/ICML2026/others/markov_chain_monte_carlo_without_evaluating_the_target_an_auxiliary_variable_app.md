@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach
 description: >-
-  [ICML 2026][Others][doubly-intractable] The authors unify three categories of "target-free" MCMC—exchange, PoissonMH, and TunaMH—into a meta-algorithm using auxiliary variables. By introducing auxiliary randomness in both the proposal and the acceptance rate, they design gradient-based MCMC methods (Poisson–Barker, Poisson–MALA, Tuna–SGLD) that maintain exac
+  [ICML 2026 Oral][Auxiliary variables] The authors unify three categories of "target-free" MCMC—exchange, PoissonMH, and TunaMH—into a meta-algorithm using auxiliary variables. By introducing auxiliary randomness in both the proposal and the acceptance rate, they design gradient-based MCMC methods (Poisson–Barker, Poisson–MALA, Tuna–SGLD) that maintain exact stationary distributions under minibatch data, significantly outperforming baselines such as PoissonMH/TunaMH/SGLD.
 tags:
-  - ICML 2026
-  - Others
-  - doubly-intractable
+  - "ICML 2026 Oral"
+  - "Auxiliary variables"
+  - "minibatch MCMC"
+  - "gradient-based proposals"
+  - "doubly-intractable"
+  - "Peskun ordering"
 date: 2026-05-08
-content_hash: 69acda81dbfdfd0f
+content_hash: 46f65a5bb25d6d68
 ---
+
 # Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach
 
 **Conference**: ICML 2026 Oral  
@@ -155,13 +159,20 @@ Poisson–Barker improves by 1.37–7.12× over PoissonMH and up to 70× over ra
 - Value: ⭐⭐⭐⭐⭐ (Both a conceptual unification and a source of practical algorithms).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **PoissonMH**: Zhang & De Sa, ICML 2019.
-- **TunaMH**: Zhang et al., ICML 2020.
-- **Involutive MCMC**: Neklyudov et al., 2020.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search](nonzero_interaction-guided_exploration_for_multi-agent_monte_carlo_tree_search.md)
+- [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](../../AAAI2026/others/extreme_value_monte_carlo_tree_search_for_classical_planning.md)
+- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](../../ICLR2026/others/deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
+- [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](variable_clustering_via_distributionally_robust_nodewise_regression.md)
+- [\[ICML 2026\] Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification](target-agnostic_calibration_under_distribution_shift_with_frequency-aware_gradie.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search](nonzero_interaction-guided_exploration_for_multi-agent_monte_carlo_tree_search.md)

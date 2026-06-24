@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] GAR: Generative Adversarial Reinforcement Learning for Formal Theorem Proving
 description: >-
-  [ICLR 2026][Reinforcement Learning][Lean4] GAR integrates a "statement fuser" and a "prover" into a joint adversarial RL closed-loop. The fuser is rewarded for synthesizing "harder but solvable" theorems, while the prover is rewarded for solving them. This automatically forms an implicit curriculum where the problem difficulty continuously scales with the prove
+  [ICLR 2026][Reinforcement Learning][Formal Theorem Proving] GAR integrates a "statement fuser" and a "prover" into a joint adversarial RL closed-loop. The fuser is rewarded for synthesizing "harder but solvable" theorems, while the prover is rewarded for solving them. This automatically forms an implicit curriculum where the problem difficulty continuously scales with the prover's current capabilities.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Lean4
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Formal Theorem Proving"
+  - "Lean4"
+  - "Adversarial Reinforcement Learning"
+  - "Curriculum Learning"
+  - "GRPO"
+  - "Auto-formalization"
 date: 2026-05-08
-content_hash: 24f1b64f64fbff47
+content_hash: 9c0f220e31d0e4f5
 ---
+
 # GAR: Generative Adversarial Reinforcement Learning for Formal Theorem Proving
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement
 description: >-
-  [CVPR 2026][Human Understanding][ViT] Using only a frozen DINOv2 ViT and a TriHead module with fewer than 800K trainable parameters, this method achieves new SOTA results in WSOL. It achieves this by disentangling patch features into foreground, background, and ambiguous regions and introducing an adversarial background loss.
+  [CVPR 2026][Human Understanding][Weakly Supervised Object Localization (WSOL)] Using only a frozen DINOv2 ViT and a TriHead module with fewer than 800K trainable parameters, this method achieves new SOTA results in WSOL. It achieves this by disentangling patch features into foreground, background, and ambiguous regions and introducing an adversarial background loss.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - ViT
-  - DINOv2
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Weakly Supervised Object Localization (WSOL)"
+  - "ViT"
+  - "DINOv2"
+  - "Tri-region Disentanglement"
+  - "Parameter-efficient"
 date: 2026-05-08
-content_hash: 355fb5cc5d46fc64
+content_hash: 6154527521172dd2
 ---
+
 # TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement
 
 **Conference**: CVPR 2026  
@@ -136,11 +140,11 @@ The total loss is a weighted sum: $\mathcal{L} = \mathcal{L}_{fg} + \alpha \math
 
 ## Related Papers
 
-- [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
 - [\[ECCV 2024\] EDTalk: Efficient Disentanglement for Emotional Talking Head Synthesis](../../ECCV2024/human_understanding/edtalk_efficient_disentanglement_for_emotional_talking_head_synthesis.md)
+- [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
 - [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
 - [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
-- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
+- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
 
 </div>
 

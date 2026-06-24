@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data
 description: >-
-  [ICCV 2025][3D Vision][multi-view diffusion model] This paper proposes Bootstrap3D, a framework that leverages video diffusion models to generate synthetic multi-view data…
+  [ICCV 2025][3D Vision][multi-view diffusion model] This paper proposes Bootstrap3D, a framework that leverages video diffusion models to generate synthetic multi-view data, employs a fine-tuned MV-LLaVA for quality filtering and dense caption rewriting, and introduces a Training Timestep Reschedule (TTR) strategy for training multi-view diffusion models — substantially improving image quality and text alignment without sacrificing view consistency.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D generation"
   - "multimodal large language model"
 date: 2026-05-08
-content_hash: d887efc97c4e1779
+content_hash: 23007a00a935d5d6
 ---
 
 # Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data
@@ -153,9 +153,9 @@ Bootstrap3D comprises three core modules:
 
 - [\[ICCV 2025\] DAViD: Data-efficient and Accurate Vision Models from Synthetic Data](david_data-efficient_and_accurate_vision_models_from_synthetic_data.md)
 - [\[ICCV 2025\] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](seeing_and_seeing_through_the_glass_real_and_synthetic_data_for_multi-layer_dept.md)
+- [\[CVPR 2025\] Sharp-It: A Multi-view to Multi-view Diffusion Model for 3D Synthesis and Manipulation](../../CVPR2025/3d_vision/sharp-it_a_multi-view_to_multi-view_diffusion_model_for_3d_synthesis_and_manipul.md)
 - [\[ICCV 2025\] MaterialMVP: Illumination-Invariant Material Generation via Multi-view PBR Diffusion](materialmvp_illumination-invariant_material_generation_via_multi-view_pbr_diffus.md)
-- [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
-- [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
+- [\[CVPR 2025\] MVGenMaster: Scaling Multi-View Generation from Any Image via 3D Priors Enhanced Diffusion Model](../../CVPR2025/3d_vision/mvgenmaster_scaling_multi-view_generation_from_any_image_via_3d_priors_enhanced_.md)
 
 </div>
 

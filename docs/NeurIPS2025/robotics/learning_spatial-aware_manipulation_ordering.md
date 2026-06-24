@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Spatial-Aware Manipulation Ordering
 description: >-
-  [NeurIPS 2025][Robotics][manipulation ordering] This paper proposes OrderMind, a unified framework that learns manipulation ordering of objects in cluttered scenes directly from RGB-D images via a Spatial Context Underst…
+  [NeurIPS 2025][Robotics][manipulation ordering] This paper proposes OrderMind, a unified framework that learns manipulation ordering of objects in cluttered scenes directly from RGB-D images via a Spatial Context Understanding encoder and a Temporal Priority Structuring module. Training annotations are generated through VLM distillation with spatial priors. OrderMind significantly outperforms VLM baselines in both simulation and real-world environments while supporting real-t…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "VLM distillation"
   - "real-time inference"
 date: 2026-05-08
-content_hash: 043334aa11335548
+content_hash: 273a60cc6ed5208f
 ---
 
 # Learning Spatial-Aware Manipulation Ordering
@@ -203,7 +203,7 @@ Sources of failure during 30-minute real-world operation:
 
 - [\[NeurIPS 2025\] Spatial-Aware Decision-Making with Ring Attractors in Reinforcement Learning Systems](spatial-aware_decision-making_with_ring_attractors_in_reinforcement_learning_sys.md)
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
-- [\[NeurIPS 2025\] Spatial Understanding from Videos: Structured Prompts Meet Simulation Data](spatial_understanding_from_videos_structured_prompts_meet_simulation_data.md)
+- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](../../CVPR2026/robotics/learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
 - [\[NeurIPS 2025\] MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning](mesatask_towards_task-driven_tabletop_scene_generation_via_3d_spatial_reasoning.md)
 - [\[NeurIPS 2025\] Rethinking the Simulation vs. Rendering Dichotomy: No Free Lunch in Spatial World Modelling](rethinking_the_simulation_vs_rendering_dichotomy_no_free_lunch_in_spatial_world_.md)
 

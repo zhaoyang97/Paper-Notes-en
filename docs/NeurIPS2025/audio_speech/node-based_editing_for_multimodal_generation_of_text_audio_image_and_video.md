@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video
 description: >-
-  [NeurIPS 2025][Audio & Speech][Node graph interface] This paper proposes a node-graph-based story editing system that allows creators to iteratively generate, edit, and compare multimodal content (text, audio, image…
+  [NeurIPS 2025][Audio & Speech][Node graph interface] This paper proposes a node-graph-based story editing system that allows creators to iteratively generate, edit, and compare multimodal content (text, audio, image, and video) through natural language and node-level operations, supporting both linear and branching narrative structures.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -11,7 +11,7 @@ tags:
   - "multimodal generation"
   - "human-AI collaboration"
 date: 2026-05-08
-content_hash: c4d5fbd7b3449ed5
+content_hash: 4e1c03f57c9008fb
 ---
 
 # Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video
@@ -128,10 +128,10 @@ The system operates entirely via inference over pretrained models (GPT-4, Sora, 
 ## Related Papers
 
 - [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
-- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](../../CVPR2026/audio_speech/omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
+- [\[CVPR 2025\] VinTAGe: Joint Video and Text Conditioning for Holistic Audio Generation](../../CVPR2025/audio_speech/vintage_joint_video_and_text_conditioning_for_holistic_audio_generation.md)
+- [\[ICML 2025\] Sounding that Object: Interactive Object-Aware Image to Audio Generation](../../ICML2025/audio_speech/sounding_that_object_interactive_object-aware_image_to_audio_generation.md)
 - [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[NeurIPS 2025\] Instance-Specific Test-Time Training for Speech Editing in the Wild](instance-specific_test-time_training_for_speech_editing_in_the_wild.md)
+- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
 
 </div>
 

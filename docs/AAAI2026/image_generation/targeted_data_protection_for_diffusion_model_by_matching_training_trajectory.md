@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Targeted Data Protection for Diffusion Model by Matching Training Trajectory
 description: >-
-  [AAAI 2026][Image Generation][Diffusion model data protection] TAFAP achieves, for the first time, effective Targeted Data Protection (TDP) for diffusion models by generating adversarial perturbations via training trajec…
+  [AAAI 2026][Image Generation][Diffusion model data protection] TAFAP achieves, for the first time, effective Targeted Data Protection (TDP) for diffusion models by generating adversarial perturbations via training trajectory matching, redirecting unauthorized fine-tuning outputs toward a user-specified target concept while maintaining high image quality.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "dataset distillation"
   - "targeted protection"
 date: 2026-05-08
-content_hash: 9c1ad872448863b7
+content_hash: 46edd9c8c7398f9b
 ---
 
 # Targeted Data Protection for Diffusion Model by Matching Training Trajectory
@@ -119,10 +119,10 @@ Trajectory matching loss $\mathcal{L} = \sum_t \|\theta_t(x+\delta) - \theta_t^*
 ## Related Papers
 
 - [\[AAAI 2026\] Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data](difficulty_controlled_diffusion_model_for_synthesizing_effec.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](../../ICLR2026/image_generation/do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
+- [\[CVPR 2025\] Training Data Provenance Verification: Did Your Model Use Synthetic Data from My Generative Model for Training?](../../CVPR2025/image_generation/training_data_provenance_verification_did_your_model_use_synthetic_data_from_my_.md)
 - [\[AAAI 2026\] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation](retrysql_text-to-sql_training_with_retry_data_for_self-correcting_query_generati.md)
-- [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](../../ICLR2026/image_generation/training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
-- [\[AAAI 2026\] Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection](diffusion_reconstruction-based_data_likelihood_estimation_for_core-set_selection.md)
 
 </div>
 

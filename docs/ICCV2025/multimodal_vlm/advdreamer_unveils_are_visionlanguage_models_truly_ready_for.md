@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM robustness] This paper proposes AdvDreamer, a framework that generates physically reproducible adversarial 3D transformation (Adv-3DT) samples from single images via zero-shot monocular po…
+  [ICCV 2025][Multimodal VLM][VLM robustness] This paper proposes AdvDreamer, a framework that generates physically reproducible adversarial 3D transformation (Adv-3DT) samples from single images via zero-shot monocular pose manipulation, a naturalness reward model, and an inverse semantic probability loss. The framework reveals that current VLMs—including GPT-4o—suffer performance drops of 50–80% under 3D variations, and establishes MM3DTBench…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "naturalness reward model"
   - "visual grounding"
 date: 2026-05-08
-content_hash: 6ba33c489a6adb20
+content_hash: 346b188d37a9fd1f
 ---
 
 # AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?
@@ -107,10 +107,10 @@ Single natural image → foreground-background segmentation (Grounded-SAM) → L
 ## Related Papers
 
 - [\[ICCV 2025\] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?](sti-bench_are_mllms_ready_for_precise_spatial-temporal_world_understanding.md)
+- [\[CVPR 2025\] STING-BEE: Towards Vision-Language Model for Real-World X-ray Baggage Security Inspection](../../CVPR2025/multimodal_vlm/sting-bee_towards_vision-language_model_for_real-world_x-ray_baggage_security_in.md)
 - [\[NeurIPS 2025\] Are Vision Language Models Ready for Clinical Diagnosis? A 3D Medical Benchmark for Tumor-centric Visual Question Answering](../../NeurIPS2025/multimodal_vlm/are_vision_language_models_ready_for_clinical_diagnosis_a_3d_medical_benchmark_f.md)
+- [\[ACL 2025\] REAL-MM-RAG: A Real-World Multi-Modal Retrieval Benchmark](../../ACL2025/multimodal_vlm/real-mm-rag_a_real-world_multi-modal_retrieval_benchmark.md)
 - [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](../../NeurIPS2025/multimodal_vlm/learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
-- [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
-- [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](../../ICML2026/multimodal_vlm/timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Missing modality segmentation] This paper proposes UniMRSeg, a unified missing-modality segmentation framework that employs a Hierarchical Self-Supervised Compensation (HSSC) mechanism—spa…
+  [NeurIPS 2025][Medical Imaging][Missing modality segmentation] This paper proposes UniMRSeg, a unified missing-modality segmentation framework that employs a Hierarchical Self-Supervised Compensation (HSSC) mechanism—spanning input-level modality reconstruction, feature-level contrastive learning, and output-level consistency regularization—to achieve optimal average performance and minimal performance variance across all possible modality combinations using 100% shared param…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "reverse attention adapter"
   - "unified parameters"
 date: 2026-05-08
-content_hash: 513a36a41091c78f
+content_hash: 71a660e797740617
 ---
 
 # UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation

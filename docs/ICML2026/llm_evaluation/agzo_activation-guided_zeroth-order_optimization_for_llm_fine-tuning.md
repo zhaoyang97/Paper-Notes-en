@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] AGZO discovers that the row space of linear layer gradients is constrained by the forward activation subspace. Based on this, it perturbs parameters only along activation-guided low-rank directions during zeroth-order fine-tuning, thereby improving gradient alignment and downstream task performance while maintaining me
+  [ICML2026][LLM Evaluation][Zeroth-Order Fine-tuning] AGZO discovers that the row space of linear layer gradients is constrained by the forward activation subspace. Based on this, it perturbs parameters only along activation-guided low-rank directions during zeroth-order fine-tuning, thereby improving gradient alignment and downstream task performance while maintaining memory usage levels nearly identical to MeZO.
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "Zeroth-Order Fine-tuning"
+  - "Activation Subspace"
+  - "Low-Rank Perturbation"
+  - "Memory-Efficient Training"
+  - "LLM Optimization"
 date: 2026-05-08
-content_hash: 1d57db6e6c555002
+content_hash: beb25997e11f24db
 ---
+
 # AGZO: Activation-Guided Zeroth-Order Optimization for LLM Fine-Tuning
 
 **Conference**: ICML2026  
@@ -143,9 +149,9 @@ In experiments, all ZO methods were trained for 20,000 steps. The Qwen3 model ut
 
 - [\[AAAI 2026\] Low-Rank Curvature for Zeroth-Order Optimization in LLM Fine-Tuning](../../AAAI2026/llm_evaluation/low-rank_curvature_for_zeroth-order_optimization_in_llm_fine-tuning.md)
 - [\[ICML 2026\] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum](beyond_log_likelihood_probability-based_objectives_for_supervised_fine-tuning_ac.md)
+- [\[ICML 2026\] RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing](routejudge_an_open_platform_for_reproducible_and_preference-aware_llm_routing.md)
 - [\[ICML 2026\] Spherical Steering: Geometry-Aware Activation Rotation for Language Models](spherical_steering_geometry-aware_activation_rotation_for_language_models.md)
-- [\[ICML 2026\] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts](whose_alignment_comparing_llm_process_alignment_across_diverse_organizational_de.md)
-- [\[ICCV 2025\] On the Robustness Tradeoff in Fine-Tuning](../../ICCV2025/llm_evaluation/on_the_robustness_tradeoff_in_fine-tuning.md)
+- [\[ICML 2026\] Correcting Prompt Dependence in LLM Benchmarks: A Bayesian Hierarchical Model with Embedding-Space Clustering](correcting_prompt_dependence_in_llm_benchmarks_a_bayesian_hierarchical_model_wit.md)
 
 </div>
 

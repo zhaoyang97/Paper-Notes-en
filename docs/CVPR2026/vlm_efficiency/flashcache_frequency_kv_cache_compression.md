@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] FlashCache is proposed as the first method to analyze the importance distribution of multimodal KV Cache from a frequency-domain perspective. It discovers that "Outlier KVs" deviating from low-frequency principal components encode critical features for inference. By identifying and prioritizing Outlier KVs through DCT
+  [CVPR 2026][Multimodal Efficiency][KV Cache Compression] FlashCache is proposed as the first method to analyze the importance distribution of multimodal KV Cache from a frequency-domain perspective. It discovers that "Outlier KVs" deviating from low-frequency principal components encode critical features for inference. By identifying and prioritizing Outlier KVs through DCT low-pass filtering and performing dynamic layer-wise budget allocation…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "KV Cache Compression"
+  - "Frequency Domain Analysis"
+  - "Outlier KV"
+  - "Dynamic Budget Allocation"
+  - "FlashAttention Compatibility"
 date: 2026-05-08
-content_hash: 647a772d42804f19
+content_hash: 55cc5960cf71a0cf
 ---
+
 # FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression
 
 **Conference**: CVPR 2026  
@@ -166,11 +172,11 @@ Ablation of Dynamic Budget Allocation (DBA) module:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/multimodal_vlm/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/vlm_efficiency/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
 - [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
-- [\[ICCV 2025\] AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/multimodal_vlm/aircache_activating_inter_modal_relevancy_kv_cache_compression_for_efficient_large_vision_language_model.md)
-- [\[ICML 2026\] TGV-KV: Text-Grounded KV Eviction for Vision-Language Models](../../ICML2026/multimodal_vlm/tgv-kv_text-grounded_kv_eviction_for_vision-language_models.md)
-- [\[CVPR 2026\] Language-guided Frequency Modulation for Large Vision-Language Models](language-guided_frequency_modulation_for_large_vision-language_models.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/vlm_efficiency/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
+- [\[ICCV 2025\] AirCache: Activating Inter-Modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/vlm_efficiency/aircache_activating_inter-modal_relevancy_kv_cache_compression_for_efficient_lar.md)
+- [\[ACL 2025\] MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference](../../ACL2025/vlm_efficiency/madakv_adaptive_modality-perception_kv_cache_eviction_for_efficient_multimodal_l.md)
 
 </div>
 

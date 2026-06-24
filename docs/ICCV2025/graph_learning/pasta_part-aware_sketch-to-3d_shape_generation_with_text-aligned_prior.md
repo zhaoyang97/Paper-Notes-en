@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior
 description: >-
-  [ICCV 2025][Graph Learning][Sketch-to-3D Generation] This paper proposes the PASTA framework, which integrates VLM-derived text priors to compensate for semantic deficiencies in sketches…
+  [ICCV 2025][Graph Learning][Sketch-to-3D Generation] This paper proposes the PASTA framework, which integrates VLM-derived text priors to compensate for semantic deficiencies in sketches, and introduces ISG-Net (a dual graph convolutional network comprising IndivGCN and PartGCN) to model inter-part structural relationships, achieving state-of-the-art sketch-to-3D shape generation and part-level editing.
 tags:
   - "ICCV 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Graph Convolutional Network"
   - "Gaussian Mixture Model"
 date: 2026-05-08
-content_hash: c6dbcead6672a94f
+content_hash: d50926720fe49d2e
 ---
 
 # PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior
@@ -122,11 +122,11 @@ $\mathcal{L} = \lambda_{align}\mathcal{L}_{align} + \lambda_{indiv}\mathcal{L}_{
 
 ## Related Papers
 
+- [\[ECCV 2024\] Synchronous Diffusion for Unsupervised Smooth Non-Rigid 3D Shape Matching](../../ECCV2024/graph_learning/synchronous_diffusion_for_unsupervised_smooth_non-rigid_3d_shape_matching.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](../../NeurIPS2025/graph_learning/sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
 - [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](../../NeurIPS2025/graph_learning/unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
 - [\[NeurIPS 2025\] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks](../../NeurIPS2025/graph_learning/sketch-augmented_features_improve_learning_long-range_dependencies_in_graph_neur.md)
 - [\[NeurIPS 2025\] Nonlinear Laplacians: Tunable Principal Component Analysis under Directional Prior Information](../../NeurIPS2025/graph_learning/nonlinear_laplacians_tunable_principal_component_analysis_under_directional_prio.md)
-- [\[AAAI 2026\] Format as a Prior: Quantifying and Analyzing Bias in LLMs for Heterogeneous Data](../../AAAI2026/graph_learning/format_as_a_prior_quantifying_and_analyzing_bias_in_llms_for_heterogeneous_data.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EXP-Bench: Can AI Conduct AI Research Experiments?
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] EXP-Bench semi-automatically extracts 461 "complete AI research experiment" tasks from 51 NeurIPS/ICLR 2024 papers and their open-source code. It forces Agents to complete the full pipeline of "hypothesize $\rightarrow$ design experiment $\rightarrow$ write code $\rightarrow$ execute $\rightarrow$ draw conclusions." Re
+  [ICLR 2026][LLM Agent][End-to-end experiments] EXP-Bench semi-automatically extracts 461 "complete AI research experiment" tasks from 51 NeurIPS/ICLR 2024 papers and their open-source code. It forces Agents to complete the full pipeline of "hypothesize $\rightarrow$ design experiment $\rightarrow$ write code $\rightarrow$ execute $\rightarrow$ draw conclusions." Results show that the current strongest Agent achieves a success rate of only **0.5%** in completing fully executab…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "End-to-end experiments"
+  - "Research Agent"
+  - "Semi-automatic data construction"
+  - "Conjunctive evaluation"
+  - "Executability verification"
 date: 2026-05-08
-content_hash: e528a01b95572d06
+content_hash: 4c3ead2f30d420bb
 ---
+
 # EXP-Bench: Can AI Conduct AI Research Experiments?
 
 **Conference**: ICLR 2026  
@@ -118,11 +124,11 @@ The collapse trajectory of average scores as conjunctive metrics are tightened (
 
 ## Related Papers
 
+- [\[ICLR 2026\] InnovatorBench: Evaluating Agents' Ability to Conduct Innovative AI Research](innovatorbench_evaluating_agents_ability_to_conduct_innovative_ai_research.md)
 - [\[ICLR 2026\] A Framework for Studying AI Agent Behavior: Evidence from Consumer Choice Experiments](a_framework_for_studying_ai_agent_behavior_evidence_from_consumer_choice_experim.md)
 - [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science Research?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_research_claims.md)
+- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](../../NeurIPS2025/llm_agent/mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
-- [\[ICLR 2026\] NetArena: Dynamic Benchmarks for AI Agents in Network Automation](netarena_dynamic_benchmarks_for_ai_agents_in_network_automation.md)
-- [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_social_science_.md)
 
 </div>
 

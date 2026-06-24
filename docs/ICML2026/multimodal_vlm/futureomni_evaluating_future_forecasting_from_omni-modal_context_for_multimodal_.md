@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FutureOmni: Evaluating Future Forecasting from Omni-Modal Context for Multimodal LLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper introduces FutureOmni, the first benchmark evaluating MLLMs' ability to forecast future events from audio-visual context (919 videos / 1,034 MCQs). Results show even the strongest model, Gemini 3 Flash, achieves only 64.8% accuracy. The authors propose OFF, a rationale-infused instruction tuning method that
+  [ICML2026][Multimodal VLM][Audio-Visual Understanding] This paper introduces FutureOmni, the first benchmark evaluating MLLMs' ability to forecast future events from audio-visual context (919 videos / 1,034 MCQs). Results show even the strongest model, Gemini 3 Flash, achieves only 64.8% accuracy. The authors propose OFF, a rationale-infused instruction tuning method that significantly enhances both forecasting and generalization for open-source models.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Audio-Visual Understanding"
+  - "Future Forecasting"
+  - "Omni-modal Benchmark"
+  - "Causal Reasoning"
+  - "Instruction Tuning"
 date: 2026-05-08
-content_hash: d6a80f35fc21f31e
+content_hash: d7e9f054b4be8e36
 ---
+
 # FutureOmni: Evaluating Future Forecasting from Omni-Modal Context for Multimodal LLMs
 
 **Conference**: ICML2026  
@@ -130,16 +136,16 @@ Modality ablation confirms the necessity of audio-visual synergy. Removing eithe
 - **Value**: ⭐⭐⭐⭐⭐ Provides a scalable benchmark and a practical training paradigm for omni-modal causal reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](../../CVPR2026/multimodal_vlm/multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
-- [\[ICML 2025\] Context is Key: A Benchmark for Forecasting with Essential Textual Information](../../ICML2025/multimodal_vlm/context_is_key_a_benchmark_for_forecasting_with_essential_textual_information.md)
-- [\[ICML 2026\] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning](task-aware_structured_memory_for_dynamic_multi-modal_in-context_learning.md)
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
-- [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
+- [\[ICML 2025\] Context is Key: A Benchmark for Forecasting with Essential Textual Information](../../ICML2025/multimodal_vlm/context_is_key_a_benchmark_for_forecasting_with_essential_textual_information.md)
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
+- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](../../ICLR2026/multimodal_vlm/omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] MTRouter models the selection of "which LLM to invoke at each turn" within multi-turn agent tasks as a per-turn routing problem under cost constraints. By using history-model joint embeddings to predict the contribution of candidate models to the final task outcome, it improves task performance while significantly redu
+  [ACL 2026][LLM Efficiency][Multi-turn LLM Routing] MTRouter models the selection of "which LLM to invoke at each turn" within multi-turn agent tasks as a per-turn routing problem under cost constraints. By using history-model joint embeddings to predict the contribution of candidate models to the final task outcome, it improves task performance while significantly reducing total invocation costs on ScienceWorld and HLE.
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Multi-turn LLM Routing"
+  - "Cost-Aware Inference"
+  - "History-Model Joint Embedding"
+  - "Offline Trajectory Learning"
+  - "Tool-use Agents"
 date: 2026-05-08
-content_hash: 4a6cc1d777dcc7e7
+content_hash: 52e9b7bd22867541
 ---
+
 # MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings
 
 **Conference**: ACL 2026  
@@ -158,10 +164,10 @@ These results indicate that MTRouter does not merely trade capability for cost. 
 ## Related Papers
 
 - [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
+- [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](../../ICLR2026/llm_efficiency/universal_model_routing_for_efficient_llm_inference.md)
+- [\[ICLR 2026\] PARD: Accelerating LLM Inference with Low-Cost Parallel Draft Model Adaptation](../../ICLR2026/llm_efficiency/pard_accelerating_llm_inference_with_lowcost_parallel_draft_model_adaptation.md)
 - [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
-- [\[ICLR 2026\] Did You Check the Right Pocket? Cost-Sensitive Store Routing for Memory-Augmented Agents](../../ICLR2026/llm_efficiency/did_you_check_the_right_pocket_cost-sensitive_store_routing_for_memory-augmented.md)
-- [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](../../NeurIPS2025/llm_efficiency/efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
-- [\[ACL 2026\] Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length](understanding_llm_performance_degradation_in_multi-instance_processing_the_roles.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](../../ICLR2026/llm_efficiency/inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 
 </div>
 

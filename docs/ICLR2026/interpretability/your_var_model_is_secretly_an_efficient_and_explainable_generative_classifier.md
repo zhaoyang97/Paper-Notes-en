@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Your VAR Model is Secretly an Efficient and Explainable Generative Classifier
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] By treating the computable likelihood of Visual Autoregressive (VAR) models directly as a generative classifier and employing a combination of "Likelihood Smoothing + Partial Scale Candidate Pruning + CCA Fine-tuning" to form A-VARC+, the method achieves accuracy comparable to DiT-based diffusion classifiers on ImageNe
+  [ICLR 2026][Interpretability][Generative Classifier] By treating the computable likelihood of Visual Autoregressive (VAR) models directly as a generative classifier and employing a combination of "Likelihood Smoothing + Partial Scale Candidate Pruning + CCA Fine-tuning" to form A-VARC+, the method achieves accuracy comparable to DiT-based diffusion classifiers on ImageNet-100 (gap <1%) while reducing computation by 89×. It further provides visual interpretability via token-le…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Generative Classifier"
+  - "Visual Autoregressive (VAR)"
+  - "Likelihood Smoothing"
+  - "Candidate Pruning"
+  - "Token-wise Mutual Information (TMI)"
 date: 2026-05-08
-content_hash: 4125c2580dffac08
+content_hash: 17f85edd6d0d638d
 ---
+
 # Your VAR Model is Secretly an Efficient and Explainable Generative Classifier
 
 **Conference**: ICLR 2026  
@@ -144,9 +150,9 @@ Class-incremental Learning (Table 4, ImageNet 10-class 2-task, no replay data): 
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
+- [\[ICLR 2026\] GenCtrl — A Formal Controllability Toolkit for Generative Models](genctrl_--_a_formal_controllability_toolkit_for_generative_models.md)
 - [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
 - [\[ICLR 2026\] Explainable Mixture Models through Differentiable Rule Learning](explainable_mixture_models_through_differentiable_rule_learning.md)
-- [\[ICML 2026\] Riemannian Generative Decoder](../../ICML2026/interpretability/riemannian_generative_decoder.md)
 - [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 
 </div>

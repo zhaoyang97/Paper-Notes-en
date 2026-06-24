@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][4D Gaussian Splatting] CoDa-4DGS augments the 4D Gaussian Splatting (4DGS) framework with context awareness (self-supervised 4D semantic features from 2D foundation models) and temporal de…
+  [ICCV 2025][Autonomous Driving][4D Gaussian Splatting] CoDa-4DGS augments the 4D Gaussian Splatting (4DGS) framework with context awareness (self-supervised 4D semantic features from 2D foundation models) and temporal deformation awareness (tracking per-Gaussian deformation between adjacent frames). By jointly encoding semantic and deformation features as dynamic compensation cues for each Gaussian, the method captures finer-grained details in autonomous driving dynamic scene…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "temporal deformation tracking"
   - "autonomous driving simulation"
 date: 2026-05-08
-content_hash: c6569e5584eb0c65
+content_hash: 03e0a7b3330c09dd
 ---
 
 # CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving

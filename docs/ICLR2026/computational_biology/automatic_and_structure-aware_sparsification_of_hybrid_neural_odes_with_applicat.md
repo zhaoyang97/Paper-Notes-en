@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Addressing the pain points of "excessive latent variables and overfitting on small datasets" when embedding mechanistic models into neural ODEs, this paper proposes a three-step hybrid graph sparsification algorithm, HGS (Merging Strongly Connected Components → Adding Shortcuts → L1/L2 Regularization for edge pruning).
+  [ICLR 2026][Computational Biology][Mechanistic Neural ODEs] Addressing the pain points of "excessive latent variables and overfitting on small datasets" when embedding mechanistic models into neural ODEs, this paper proposes a three-step hybrid graph sparsification algorithm, HGS (Merging Strongly Connected Components → Adding Shortcuts → L1/L2 Regularization for edge pruning). It automatically selects subgraphs that are both sparse and maintain mechanistic interpretability…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Mechanistic Neural ODEs"
+  - "Graph Sparsification"
+  - "L1/L2 Regularization"
+  - "Glucose Prediction"
+  - "Model Reduction"
 date: 2026-05-08
-content_hash: 1a1eec753795b830
+content_hash: 2afb16e938c9c60a
 ---
+
 # Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data
 description: >-
-  [ACL 2026][Alignment & RLHF][GRPO] This paper points out that strong reasoning models stop learning during GRPO on training sets that are "too easy and nearly all correct" because intra-group reward variance disappears. It proposes Mixed-CUTS, which mixes standard rollouts with constrained Top-K uniform sampling to recreate meaningful exploration differ
+  [ACL2026][LLM Alignment][Saturated reasoning data] This paper points out that strong reasoning models stop learning during GRPO on training sets that are "too easy and nearly all correct" because intra-group reward variance disappears. It proposes Mixed-CUTS, which mixes standard rollouts with constrained Top-K uniform sampling to recreate meaningful exploration differences. On Qwen3-4B, this method improves AIME25 Pass@1 by 15.1% compared to standard GRPO.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - GRPO
-  - CUTS
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Saturated reasoning data"
+  - "GRPO"
+  - "CUTS"
+  - "Exploration diversity"
+  - "Mode collapse"
 date: 2026-05-08
-content_hash: b1e5d765e52e46cb
+content_hash: afb23152a2374dbc
 ---
+
 # Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data
 
 **Conference**: ACL2026  
@@ -144,9 +148,9 @@ Training dynamics analysis supports the mechanism hypothesis: standard GRPO poli
 
 - [\[ICML 2026\] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards](../../ICML2026/llm_alignment/decoupling_reasoning_and_confidence_resurrecting_calibration_in_reinforcement_le.md)
 - [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
+- [\[ICML 2026\] TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning](../../ICML2026/llm_alignment/truthrl_incentivizing_truthful_llms_via_reinforcement_learning.md)
 - [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
 - [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
-- [\[ACL 2026\] Better Literary Translation: A Multi-Aspect Data Generation and LLM Training Approach](better_literary_translation_a_multi-aspect_data_generation_and_llm_training_appr.md)
 
 </div>
 

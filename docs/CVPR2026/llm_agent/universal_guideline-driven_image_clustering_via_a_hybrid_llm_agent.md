@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Universal Guideline-Driven Image Clustering via a Hybrid LLM Agent
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] This paper proposes the first training-free hybrid LLM agent that unifies various image clustering scenarios (general / fine-grained / multi-view / long-tail) via "text guidelines." It first uses an MLLM to translate images into "concept-proxy captions" and then passes them to an instruction-aware embedding model, resu
+  [CVPR 2026][LLM Agent][Text-guided clustering] This paper proposes the first training-free hybrid LLM agent that unifies various image clustering scenarios (general / fine-grained / multi-view / long-tail) via "text guidelines." It first uses an MLLM to translate images into "concept-proxy captions" and then passes them to an instruction-aware embedding model, resulting in guideline-aligned embeddings fed directly into traditional clustering algorithms. When the number of clu…
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Text-guided clustering"
+  - "concept-proxy"
+  - "instruction-aware embedding"
+  - "minimum spanning tree (MST)"
+  - "training-free"
 date: 2026-05-08
-content_hash: a3556722f9f0f7a3
+content_hash: c79b6febf06e75c7
 ---
+
 # Universal Guideline-Driven Image Clustering via a Hybrid LLM Agent
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ Value of GCPM Concept-proxy Captions (NMI %):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -166,7 +172,7 @@ Value of GCPM Concept-proxy Captions (NMI %):
 - [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](../../ACL2026/llm_agent/clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
 - [\[CVPR 2026\] RetouchIQ: MLLM Agents for Instruction-Based Image Retouching with Generalist Reward](retouchiq_mllm_agents_for_instruction-based_image_retouching_with_generalist_rew.md)
-- [\[ACL 2025\] GuideBench: Benchmarking Domain-Oriented Guideline Following for LLM Agents](../../ACL2025/llm_agent/guidebench_guideline_following.md)
+- [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](../../ICLR2026/llm_agent/a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
 
 </div>
 

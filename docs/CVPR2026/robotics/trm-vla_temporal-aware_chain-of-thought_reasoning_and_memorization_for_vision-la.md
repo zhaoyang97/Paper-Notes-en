@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] TRM-VLA enables VLA models to perform hierarchical Chain-of-Thought (CoT) reasoning only at "keyframes" and utilizes a granularity-adaptive memory buffer to retrieve historical reasoning across frames. This achieves a new state-of-the-art success rate (72.9% on SIMPLER) while reducing the CoT token count per step by ap
+  [CVPR 2026][Robotics][VLA] TRM-VLA enables VLA models to perform hierarchical Chain-of-Thought (CoT) reasoning only at "keyframes" and utilizes a granularity-adaptive memory buffer to retrieve historical reasoning across frames. This achieves a new state-of-the-art success rate (72.9% on SIMPLER) while reducing the CoT token count per step by approximately 4× across SIMPLER, LIBERO-90, and four real-world robot tasks.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Chain-of-Thought reasoning"
+  - "Keyframe triggering"
+  - "Contextual memory"
+  - "Temporal consistency"
 date: 2026-05-08
-content_hash: 65f1ad197fdfc14e
+content_hash: 56875705cc888677
 ---
+
 # TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -138,6 +143,7 @@ Decomposing KTR and GCM on SIMPLER:
 - Value: ⭐⭐⭐⭐ (4× token reduction is highly practical for real-time deployment.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -146,7 +152,7 @@ Decomposing KTR and GCM on SIMPLER:
 - [\[CVPR 2025\] CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models](../../CVPR2025/robotics/cot-vla_visual_chain-of-thought_reasoning_for_vision-language-action_models.md)
 - [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 - [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
+- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Moment- and Power-Spectrum-Based Gaussianity Regularization for Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Gaussianity Regularization] This paper proposes a unified Gaussianity regularization framework that combines moment matching in the spatial domain with power spectrum matching in the freq…
+  [NeurIPS 2025][Image Generation][Gaussianity Regularization] This paper proposes a unified Gaussianity regularization framework that combines moment matching in the spatial domain with power spectrum matching in the frequency domain. It subsumes existing regularizers (KL divergence, kurtosis, norm) as special cases, and achieves the equivalent effect of PRNO's $\mathcal{O}(D^2)$ approach at $\mathcal{O}(D\log D)$ complexity, significantly outperforming all baselines on reward…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Moment Matching"
   - "Reward Alignment"
 date: 2026-05-08
-content_hash: 3c77ef18d6d953e4
+content_hash: efee604255e97fd5
 ---
 
 # Moment- and Power-Spectrum-Based Gaussianity Regularization for Text-to-Image Models
@@ -166,9 +166,9 @@ $$\mathcal{L}_{\mathcal{N}(0,I)} = \sum_{n \in \mathcal{K}} \mathcal{L}_n + \lam
 
 ## Related Papers
 
+- [\[ECCV 2024\] TextDiffuser-2: Unleashing the Power of Language Models for Text Rendering](../../ECCV2024/image_generation/textdiffuser-2_unleashing_the_power_of_language_models_for_text_rendering.md)
 - [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](../../ICLR2026/image_generation/continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 - [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
-- [\[NeurIPS 2025\] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training](why_diffusion_models_dont_memorize_the_role_of_implicit_dynamical_regularization.md)
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 

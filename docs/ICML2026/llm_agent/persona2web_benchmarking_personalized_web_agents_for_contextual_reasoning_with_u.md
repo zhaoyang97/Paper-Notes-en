@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History
 description: >-
-  [ICML 2026][LLM Agent][clarify-to-personalize] This paper proposes Persona2Web, the first open-web benchmark for personalized web agents. It utilizes "implicit user history + three levels of ambiguous queries + reasoning-aware scoring" to compel agents to infer user preferences from browsing records to disambiguate queries. Evaluations of five mainstream models, in
+  [ICML 2026][LLM Agent][Personalized web agent] This paper proposes Persona2Web, the first open-web benchmark for personalized web agents. It utilizes "implicit user history + three levels of ambiguous queries + reasoning-aware scoring" to compel agents to infer user preferences from browsing records to disambiguate queries. Evaluations of five mainstream models, including GPT-4.1 and o3, reveal that the success rate for Level 2 queries is only 13% even when history is provide…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - clarify-to-personalize
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Personalized web agent"
+  - "user history"
+  - "ambiguous query"
+  - "clarify-to-personalize"
+  - "reasoning-aware evaluation"
 date: 2026-05-08
-content_hash: 80f156bf3f7796e4
+content_hash: 3bb126bf54200e63
 ---
+
 # Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History
 
 **Conference**: ICML 2026  
@@ -131,14 +136,14 @@ Without history, success rates are 0%. Even with history, the strongest configur
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
 - [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
-- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ACL 2026\] Grounding Agent Memory in Contextual Intent](../../ACL2026/llm_agent/grounding_agent_memory_in_contextual_intent.md)
 - [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
 
 </div>

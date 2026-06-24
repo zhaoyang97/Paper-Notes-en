@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NeurIPS Should Lead Scientific Consensus on AI Policy
 description: >-
-  [NeurIPS 2025][Recommender Systems][Scientific Consensus] This position paper argues that NeurIPS should proactively assume the role of facilitating scientific consensus in AI policy…
+  [NeurIPS 2025][Recommender Systems][Scientific Consensus] This position paper argues that NeurIPS should proactively assume the role of facilitating scientific consensus in AI policy, drawing on the successful experience of the IPCC (Intergovernmental Panel on Climate Change) in climate science to fill the current gap in AI policy consensus mechanisms.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "NeurIPS"
   - "Evidence-Based Policy"
 date: 2026-05-08
-content_hash: 078ec84467661918
+content_hash: 3a3c8b0a89463f46
 ---
 
 # NeurIPS Should Lead Scientific Consensus on AI Policy
@@ -150,7 +150,7 @@ This paper presents no traditional experimental data. However, two concrete cons
 - [\[NeurIPS 2025\] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration](empathia_multi-faceted_human-ai_collaboration_for_refugee_integration.md)
 - [\[AAAI 2026\] SlideTailor: Personalized Presentation Slide Generation for Scientific Papers](../../AAAI2026/recommender/slidetailor_personalized_presentation_slide_generation_for_scientific_papers.md)
 - [\[ICML 2026\] Prompts for Public-Sector LLMs Should Be Governed as Commons](../../ICML2026/recommender/prompts_for_public-sector_llms_should_be_governed_as_commons.md)
-- [\[NeurIPS 2025\] The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems](the_more_you_automate_the_less_you_see_hidden_pitfalls_of_ai_scientist_systems.md)
+- [\[ICML 2025\] Position: The Right to AI](../../ICML2025/recommender/the_right_to_ai.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] LILA utilizes a frozen DINOv2 encoder and a DPT decoder to learn pixel-wise features from unlabeled videos. The core training signal is "linear in-context learning": an optimal linear projection is fitted on context frames to map features to depth, optical flow, and self-distillation cues. **By forcing the same project
+  [CVPR 2026][3D Vision][Pixel-level features] LILA utilizes a frozen DINOv2 encoder and a DPT decoder to learn pixel-wise features from unlabeled videos. The core training signal is "linear in-context learning": an optimal linear projection is fitted on context frames to map features to depth, optical flow, and self-distillation cues. **By forcing the same projection to reconstruct corresponding cues on adjacent query frames**, the model compresses geometric, semantic…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Pixel-level features"
+  - "Video self-supervision"
+  - "Linear in-context learning"
+  - "Depth and optical flow cues"
+  - "Temporal consistency"
 date: 2026-05-08
-content_hash: aa7bf3ea8e5231ff
+content_hash: 7e8e97528cbc59db
 ---
+
 # Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners
 
 **Conference**: CVPR 2026  
@@ -163,11 +169,11 @@ LILA consistently outperforms FlowFeat across all backbones and metrics for norm
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
 - [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
+- [\[CVPR 2026\] Linear Fundamental Matrix Estimation from 7 or 5 Points](linear_fundamental_matrix_estimation_from_7_or_5_points.md)
+- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
 - [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
 
 </div>
 

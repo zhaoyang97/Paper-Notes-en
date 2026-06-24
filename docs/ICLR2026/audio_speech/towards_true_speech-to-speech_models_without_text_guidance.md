@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards True Speech-to-Speech Models Without Text Guidance
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper proposes a **true speech-to-speech large model**: starting from a pre-trained text LLM (Qwen3-8B), it utilizes "modality-based layer split" and "frozen pre-training" to directly understand and generate speech without relying on intermediate text. It achieves SOTA performance in speech QA while almost complet
+  [ICLR 2026][Audio & Speech][Speech-to-speech] This paper proposes a **true speech-to-speech large model**: starting from a pre-trained text LLM (Qwen3-8B), it utilizes "modality-based layer split" and "frozen pre-training" to directly understand and generate speech without relying on intermediate text. It achieves SOTA performance in speech QA while almost completely recovering from the text capability degradation commonly seen when extending to new modalities.
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech-to-speech"
+  - "end-to-end speech LLM"
+  - "modality-based layer split"
+  - "frozen pre-training"
+  - "streaming tokenizer"
 date: 2026-05-08
-content_hash: a2fdd4295828d62b
+content_hash: 418a3b1cdce0197f
 ---
+
 # Towards True Speech-to-Speech Models Without Text Guidance
 
 **Conference**: ICLR 2026  
@@ -140,9 +146,9 @@ Note: S→S denotes Speech-in/Speech-out. GLM-4-Voice∗'s S→S results used te
 ## Related Papers
 
 - [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
+- [\[ACL 2025\] Leveraging Unit Language Guidance to Advance Speech Modeling in Textless Speech-to-Speech Translation](../../ACL2025/audio_speech/leveraging_unit_language_guidance_to_advance_speech_modeling_in_textless_speech-.md)
 - [\[ICLR 2026\] Latent Speech-Text Transformer](latent_speech_text_transformer.md)
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
-- [\[ACL 2025\] Leveraging Unit Language Guidance to Advance Speech Modeling in Textless Speech-to-Speech Translation](../../ACL2025/audio_speech/leveraging_unit_language_guidance_to_advance_speech_modeling_in_textless_speech-.md)
 - [\[ACL 2025\] Autoregressive Speech Synthesis without Vector Quantization](../../ACL2025/audio_speech/autoregressive_speech_synthesis_without_vq.md)
 
 </div>

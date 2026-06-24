@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis
 description: >-
-  [AAAI 2026][Model Compression][MoE compression] This paper introduces the concept of "micro-expert" to decompose MoE layer outputs as cross-matrix (up/gate/down_proj) linear combinations…
+  [AAAI 2026][Model Compression][MoE compression] This paper introduces the concept of "micro-expert" to decompose MoE layer outputs as cross-matrix (up/gate/down_proj) linear combinations, enabling structured pruning (Camera-P) and mixed-precision quantization (Camera-Q) based on energy ranking. On Deepseek-MoE-16B, Qwen2-57B, and Qwen3-30B at 20%–60% sparsity, the method comprehensively outperforms NAEE and D²-MoE; analysis of Qwen2-57B requires less than 5 minutes on a singl…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "mixed-precision quantization"
   - "training-free"
 date: 2026-05-08
-content_hash: fa1982542236cbac
+content_hash: 5e0ce742b7007baa
 ---
 
 # CAMERA: Multi-Matrix Joint Compression for MoE Models via Micro-Expert Redundancy Analysis
@@ -107,9 +107,9 @@ Camera-Q (2.25-bit average) achieves an average score of 56.56 on Deepseek-MoE-1
 
 - [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](../../ICLR2026/model_compression/sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
 - [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](../../ICML2026/model_compression/breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](../../ICLR2026/model_compression/td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](../../ICML2026/model_compression/gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
 - [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
-- [\[ACL 2026\] Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis](../../ACL2026/model_compression/analytical_ffn-to-moe_restructuring_via_activation_pattern_analysis.md)
 
 </div>
 

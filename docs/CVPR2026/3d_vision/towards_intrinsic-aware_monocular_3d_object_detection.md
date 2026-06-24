@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Intrinsic-Aware Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MonoIA proposes transforming numerical camera intrinsics into language-guided semantic representations (generated via LLM descriptions + CLIP encoding). These are integrated into the detection network through a hierarchical adaptation module, achieving zero-shot generalization to unseen focal lengths and unified cross-
+  [CVPR 2026][3D Vision][Monocular 3D Detection] MonoIA proposes transforming numerical camera intrinsics into language-guided semantic representations (generated via LLM descriptions + CLIP encoding). These are integrated into the detection network through a hierarchical adaptation module, achieving zero-shot generalization to unseen focal lengths and unified cross-dataset training, reaching new SOTA on KITTI, Waymo, and nuScenes.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular 3D Detection"
+  - "Camera Intrinsics"
+  - "Language-Guided Representation"
+  - "Cross-Dataset Training"
+  - "Focal Length Generalization"
 date: 2026-05-08
-content_hash: cb39b64cb84204c4
+content_hash: 434c99c88c307f70
 ---
+
 # Towards Intrinsic-Aware Monocular 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -165,7 +171,7 @@ For inference, a **Hybrid Interpolation Strategy** is used: for a test intrinsic
 - [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
 - [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
+- [\[CVPR 2026\] GOR-IS: 3D Gaussian Object Removal In the Intrinsic Space](gor-is_3d_gaussian_object_removal_in_the_intrinsic_space.md)
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](../../AAAI2026/3d_vision/monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
 
 </div>

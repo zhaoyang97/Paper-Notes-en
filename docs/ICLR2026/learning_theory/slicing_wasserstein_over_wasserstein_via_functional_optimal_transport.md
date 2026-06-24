@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Slicing Wasserstein over Wasserstein via Functional Optimal Transport
 description: >-
-  [ICLR 2026][learning_theory][Wasserstein over Wasserstein] This paper proposes the **Double-Sliced Wasserstein (DSW)** distance, which efficiently approximates the costly Wasserstein over Wasserstein (WoW) distance using a two-layered slicing approach: "spherical domain slicing + $L^2$ Gaussian process slicing of quantile functions." It proves that minimizing DSW is equivalent
+  [ICLR 2026][Optimal Transport][Wasserstein over Wasserstein] This paper proposes the **Double-Sliced Wasserstein (DSW)** distance, which efficiently approximates the costly Wasserstein over Wasserstein (WoW) distance using a two-layered slicing approach: "spherical domain slicing + $L^2$ Gaussian process slicing of quantile functions." It proves that minimizing DSW is equivalent to minimizing WoW on discrete meta-measures, avoiding the numerical instabilities of existing slic…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Wasserstein over Wasserstein
+  - "ICLR 2026"
+  - "Optimal Transport"
+  - "Learning Theory"
+  - "Wasserstein over Wasserstein"
+  - "Sliced Wasserstein"
+  - "Meta-measure"
+  - "Gaussian Process"
 date: 2026-05-08
-content_hash: af2d049b5fc4d42b
+content_hash: 513270dda7ec6376
 ---
+
 # Slicing Wasserstein over Wasserstein via Functional Optimal Transport
 
 **Conference**: ICLR 2026  
@@ -154,11 +159,11 @@ SQW achieves accuracy comparable to exact WoW while offering significant runtime
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Wasserstein Geodesic Principal Component Analysis of probability measures](on_the_wasserstein_geodesic_principal_component_analysis_of_probability_measures.md)
 - [\[ICLR 2026\] Revisiting Tree-Sliced Wasserstein Distance through the Lens of the Fermat–Weber Problem](revisiting_tree-sliced_wasserstein_distance_through_the_lens_of_the_fermatweber_.md)
 - [\[ICLR 2026\] Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality](test-time_verification_via_optimal_transport_coverage_roc_sub-optimality.md)
 - [\[ICLR 2026\] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation](an_efficient_sep-invariant_transport_metric_driven_by_polar_transport_discrepanc.md)
 - [\[ICLR 2026\] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers](a_statistical_learning_perspective_on_semi-dual_adversarial_neural_optimal_trans.md)
-- [\[ICLR 2026\] Curse of Slicing: Why Sliced Mutual Information is a Deceptive Measure of Statistical Dependence](curse_of_slicing_why_sliced_mutual_information_is_a_deceptive_measure_of_statist.md)
 
 </div>
 

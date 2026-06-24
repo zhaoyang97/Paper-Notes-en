@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception
 description: >-
-  [ICML 2026][AI Safety][Paper Note] UniTrans reformulates the traditional collaborative perception translation paradigm from "training an adapter for every pair of vehicle-side modalities" to "inferring mapping in a modality-intrinsic latent space $\rightarrow$ linearly combining a set of expert parameters via a router $\rightarrow$ instantiating a mappi
+  [ICML 2026][AI Safety][Collaborative Perception] UniTrans reformulates the traditional collaborative perception translation paradigm from "training an adapter for every pair of vehicle-side modalities" to "inferring mapping in a modality-intrinsic latent space $\rightarrow$ linearly combining a set of expert parameters via a router $\rightarrow$ instantiating a mapping-specific translator on the fly." This achieves zero-shot BEV feature translation for unseen new vehicle mode…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Collaborative Perception"
+  - "Heterogeneous Features"
+  - "Modality Mapping"
+  - "Zero-shot Translation"
+  - "Parameter-level MoE"
 date: 2026-05-08
-content_hash: 61d799e2a57f917f
+content_hash: ff0957f4e35c231d
 ---
+
 # One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception
 
 **Conference**: ICML 2026  
@@ -138,9 +144,9 @@ Inference cost is significantly lower (OPV2V-H): UniTrans requires 109.3 GFLOPs 
 
 - [\[ICML 2026\] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model](anchored_decoding_provably_reducing_copyright_risk_for_any_language_model.md)
 - [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
-- [\[ICLR 2026\] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients](../../ICLR2026/ai_safety/co-lora_collaborative_model_personalization_on_heterogeneous_multi-modal_clients.md)
+- [\[CVPR 2026\] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference](../../CVPR2026/ai_safety/all_vehicles_can_lie_efficient_adversarial_defense_in_fully_untrusted-vehicle_co.md)
 - [\[CVPR 2026\] Detect Any AI-Counterfeited Text Image](../../CVPR2026/ai_safety/detect_any_ai-counterfeited_text_image.md)
-- [\[ICML 2025\] Can One Safety Loop Guard Them All? Agentic Guard Rails for Federated Computing](../../ICML2025/ai_safety/can_one_safety_loop_guard_them_all_agentic_guard_rails_for_federated_computing.md)
+- [\[ICLR 2026\] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients](../../ICLR2026/ai_safety/co-lora_collaborative_model_personalization_on_heterogeneous_multi-modal_clients.md)
 
 </div>
 

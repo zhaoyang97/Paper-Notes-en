@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines
 description: >-
-  [ACL 2026][NLP Understanding][Tsetlin Machine] This paper proposes an LLM-guided semantic bootstrapping framework. By utilizing LLMs to generate sub-intents and three-stage curriculum synthetic data, the authors train a Non-Negated Tsetlin Machine (NTM) to extract high-confidence symbolic features. These features are injected into real data, allowing a standard TM
+  [ACL 2026 Findings][NLP Understanding][Tsetlin Machine] This paper proposes an LLM-guided semantic bootstrapping framework. By utilizing LLMs to generate sub-intents and three-stage curriculum synthetic data, the authors train a Non-Negated Tsetlin Machine (NTM) to extract high-confidence symbolic features. These features are injected into real data, allowing a standard TM to approach BERT-level classification performance while maintaining full interpretability.
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - Tsetlin Machine
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "Tsetlin Machine"
+  - "Semantic Guidance"
+  - "Symbolic Learning"
+  - "Sub-intent Discovery"
+  - "Interpretable Classification"
 date: 2026-05-08
-content_hash: e45987ecd7b574da
+content_hash: ecac141e58eaa604
 ---
+
 # LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines
 
 **Conference**: ACL 2026 Findings  
@@ -146,9 +151,9 @@ The NTM is trained using modified Type I/II feedback (150 clauses per sub-intent
 
 - [\[ACL 2026\] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction](hcre_llm-based_hierarchical_classification_for_cross-document_relation_extractio.md)
 - [\[ACL 2026\] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification](made_a_living_benchmark_for_multi-label_text_classification_with_uncertainty_qua.md)
-- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
+- [\[ICLR 2026\] LANE: Label-Aware Noise Elimination for Fine-Grained Text Classification](../../ICLR2026/nlp_understanding/lane_label-aware_noise_elimination_for_fine-grained_text_classification.md)
 - [\[ACL 2025\] Rethinking Semantic Parsing for Large Language Models: Enhancing LLM Performance with Semantic Hints](../../ACL2025/nlp_understanding/rethinking_semantic_parsing_for_large_language_models_enhancing_llm_performance_.md)
-- [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
+- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
 
 </div>
 

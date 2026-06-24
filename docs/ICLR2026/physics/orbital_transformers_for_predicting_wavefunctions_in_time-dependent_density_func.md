@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][TDDFT] This paper proposes OrbEvo—an equivariant graph Transformer that learns the time evolution of Kohn-Sham wavefunctions (represented by coefficients of linear combinations of atomic orbitals) for all occupied states in real-time time-dependent density functional theory (RT-TDDFT). It replaces hours of numerical propagati
+  [ICLR 2026][Physics & Scientific Computing][TDDFT] This paper proposes OrbEvo—an equivariant graph Transformer that learns the time evolution of Kohn-Sham wavefunctions (represented by coefficients of linear combinations of atomic orbitals) for all occupied states in real-time time-dependent density functional theory (RT-TDDFT). It replaces hours of numerical propagation with approximately 1 second of network inference while generalizing across QM9 and accurately recovering d…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - TDDFT
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "TDDFT"
+  - "Wavefunction Evolution"
+  - "SO(2) Equivariance"
+  - "Density Matrix"
+  - "Autoregressive Rollout"
 date: 2026-05-08
-content_hash: 59c511cf8a31c0c6
+content_hash: ff9dedb589dcdb30
 ---
+
 # Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory
 
 **Conference**: ICLR 2026  

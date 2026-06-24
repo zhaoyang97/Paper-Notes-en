@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] PateGAIL++ dynamically allocates the privacy budget based on "per-sample privacy sensitivity" within a federated differential privacy imitation learning framework, injects adaptive Laplace noise, and utilizes WGAN-GP to stabilize policy training under discrete trajectories. This significantly improves the "privacy-util
+  [ICLR 2026][AI Safety][Differential Privacy] PateGAIL++ dynamically allocates the privacy budget based on "per-sample privacy sensitivity" within a federated differential privacy imitation learning framework, injects adaptive Laplace noise, and utilizes WGAN-GP to stabilize policy training under discrete trajectories. This significantly improves the "privacy-utility" tradeoff of synthetic mobility trajectories under the same privacy budget and renders membership inference att…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Trajectory Generation"
+  - "Imitation Learning"
+  - "Federated Learning"
+  - "Membership Inference Attack"
 date: 2026-05-08
-content_hash: 4dd6af112bd4135c
+content_hash: 6d66fd1b9076f05e
 ---
+
 # PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,17 @@ PATEGAIL shows significant leakage at low noise (AUC 0.72), allowing attackers t
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
+- [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
+- [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](private_rate-constrained_optimization_with_applications_to_fair_learning.md)
+- [\[ICML 2025\] Clients Collaborate: Flexible Differentially Private Federated Learning with Guaranteed Improvement of Utility-Privacy Trade-off](../../ICML2025/ai_safety/clients_collaborate_flexible_differentially_private_federated_learning_with_guar.md)
+- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)

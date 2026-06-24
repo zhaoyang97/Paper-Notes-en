@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAS: Estimating the Target Accuracy Before Domain Adaptation
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes **PAS (Potential Adaptability Score)**—an asymmetric score computed **before actual domain adaptation training** using only pre-trained model embeddings. It measures the transferability of a source domain and a pre-trained model to an unlabeled target task by evaluating the "relative margin between
+  [ICLR 2026][Self-Supervised Learning][Transferability Estimation] This paper proposes **PAS (Potential Adaptability Score)**—an asymmetric score computed **before actual domain adaptation training** using only pre-trained model embeddings. It measures the transferability of a source domain and a pre-trained model to an unlabeled target task by evaluating the "relative margin between the nearest and second-nearest distances" from target samples to source class centroids. This…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Transferability Estimation"
+  - "Unsupervised Domain Adaptation"
+  - "Pre-trained Features"
+  - "Source Selection"
+  - "Silhouette Coefficient"
 date: 2026-05-08
-content_hash: e978b455e7621986
+content_hash: ac9318e4d3c159d0
 ---
+
 # PAS: Estimating the Target Accuracy Before Domain Adaptation
 
 **Conference**: ICLR 2026  
@@ -134,14 +140,15 @@ Replacing cosine with Euclidean distance or "distance to centroid" with "mean pa
 - Value: ⭐⭐⭐⭐ Directly addresses the engineering challenge of model selection in UDA with zero training cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Measure The Feature Universe: Topology-based Pseudo Labeling and Gravity Consistency for Source-Free Domain Adaptation](../../CVPR2026/self_supervised/measure_the_feature_universe_topology-based_pseudo_labeling_and_gravity_consiste.md)
+- [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
 - [\[ICML 2026\] Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch](../../ICML2026/self_supervised/provable_accuracy_collapse_in_embedding-based_representations_under_dimensionali.md)
 - [\[ICML 2026\] Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise](../../ICML2026/self_supervised/data_augmentation_of_contrastive_learning_is_estimating_positive-incentive_noise.md)
-- [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
 - [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 
 </div>

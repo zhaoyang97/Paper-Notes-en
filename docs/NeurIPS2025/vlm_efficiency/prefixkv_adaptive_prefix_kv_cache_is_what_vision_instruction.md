@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][KV cache compression] PrefixKV identifies that the importance distributions of KV caches vary substantially across layers…
+  [NeurIPS 2025][Multimodal Efficiency][KV cache compression] PrefixKV identifies that the importance distributions of KV caches vary substantially across layers, and formalizes the per-layer cache sizing problem as a global prefix configuration search. A binary search is employed to find the optimal cumulative priority threshold that maximizes contextual information retention in each layer. At a 20% retention ratio, PrefixKV incurs only a 0.49 PPL degradation while delivering…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "KV cache compression"
   - "adaptive layer-wise allocation"
   - "prefix configuration"
   - "binary search"
   - "vision-language models"
 date: 2026-05-08
-content_hash: 0e0e5e53f88ac50e
+content_hash: 06e9abdd3cbeb84f
 ---
 
 # PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation
@@ -140,11 +140,11 @@ Inference speedup: At a 20% retention ratio, LLaVA-1.5-7B achieves a 1.8× throu
 
 ## Related Papers
 
-- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
-- [\[ICCV 2025\] AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/multimodal_vlm/aircache_activating_inter_modal_relevancy_kv_cache_compression_for_efficient_large_vision_language_model.md)
-- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/multimodal_vlm/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
-- [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/multimodal_vlm/flashcache_frequency_kv_cache_compression.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
+- [\[ACL 2025\] MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference](../../ACL2025/vlm_efficiency/madakv_adaptive_modality-perception_kv_cache_eviction_for_efficient_multimodal_l.md)
+- [\[ICCV 2025\] AirCache: Activating Inter-modal Relevancy KV Cache Compression for Efficient Large Vision-Language Model Inference](../../ICCV2025/vlm_efficiency/aircache_activating_inter_modal_relevancy_kv_cache_compression_for_efficient_large_vision_language_model.md)
+- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/vlm_efficiency/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
+- [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/vlm_efficiency/flashcache_frequency_kv_cache_compression.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/vlm_efficiency/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 
 </div>
 

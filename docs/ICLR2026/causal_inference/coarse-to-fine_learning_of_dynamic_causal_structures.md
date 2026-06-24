@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Coarse-to-Fine Learning of Dynamic Causal Structures
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes **DyCausal**, which utilizes sliding convolutional windows to first capture "coarse-grained" causal structures of time series across multiple time steps. It then refines the causal matrices for each time step using first-order Taylor linear interpolation, coupled with an "always differentiable" acyc
+  [ICLR2026][Causal Inference][Dynamic causal structures] This paper proposes **DyCausal**, which utilizes sliding convolutional windows to first capture "coarse-grained" causal structures of time series across multiple time steps. It then refines the causal matrices for each time step using first-order Taylor linear interpolation, coupled with an "always differentiable" acyclicity constraint $h_\text{norm}$ based on matrix 1-norm scaling. This approach enables the stable and e…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Dynamic causal structures"
+  - "Granger causality"
+  - "acyclicity constraints"
+  - "linear interpolation"
+  - "time-varying graphs"
 date: 2026-05-08
-content_hash: b100e763397d5117
+content_hash: a13847d0d4770666
 ---
+
 # Coarse-to-Fine Learning of Dynamic Causal Structures
 
 **Conference**: ICLR2026  
@@ -152,8 +158,8 @@ Ours ranked first in Precision and F1 across all scenarios. High Precision is pa
 - [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
 - [\[ACL 2026\] ClimateCause: Complex and Implicit Causal Structures in Climate Reports](../../ACL2026/causal_inference/climatecause_complex_and_implicit_causal_structures_in_climate_reports.md)
 - [\[ICLR 2026\] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment](modeling_interference_for_treatment_effect_estimation_in_network_dynamic_environ.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](carl_preserving_causal_structure_in_representation_learning.md)
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
-- [\[ICLR 2026\] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding](causal_imitation_learning_under_expert-observable_and_expert-unobservable_confou.md)
 
 </div>
 

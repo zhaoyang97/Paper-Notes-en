@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders
 description: >-
-  [ICLR 2026][Interpretability][CLIP] Standard Sparse Autoencoders (SAEs) learned on aligned multimodal embeddings (like CLIP/CLAP) produce "split dictionaries"—where most concepts activate for only a single modality. This paper uses **cross-modal random masking + group-sparse regularization** to force paired samples to share a sparse support, learning tru
+  [ICLR 2026][Interpretability][Sparse Autoencoders] Standard Sparse Autoencoders (SAEs) learned on aligned multimodal embeddings (like CLIP/CLAP) produce "split dictionaries"—where most concepts activate for only a single modality. This paper uses **cross-modal random masking + group-sparse regularization** to force paired samples to share a sparse support, learning truly multimodal concept dictionaries while reducing dead neurons and improving semanticity and cross-modal zero…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - CLIP
-  - CLAP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Multimodal Alignment"
+  - "Dictionary Learning"
+  - "Group Sparsity"
+  - "CLIP"
+  - "CLAP"
+  - "Conceptual Interpretability"
 date: 2026-05-08
-content_hash: 2b1b96170ce52f27
+content_hash: 9c89c3f24922b268
 ---
+
 # Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders
 
 **Conference**: ICLR 2026  
@@ -140,7 +146,7 @@ Music-Text (CLAP, Accuracy / MRR for FMACaps):
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 - [\[ICLR 2026\] On the Limits of Sparse Autoencoders: A Theoretical Framework and Reweighted Remedy](on_the_limits_of_sparse_autoencoders_a_theoretical_framework_and_reweighted_reme.md)
 - [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
-- [\[ICML 2026\] Ensembling Sparse Autoencoders](../../ICML2026/interpretability/ensembling_sparse_autoencoders.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](the_price_of_amortized_inference_in_sparse_autoencoders.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding
 description: >-
-  [NeurIPS 2025][Segmentation][part-level understanding] This paper introduces the Partonomy part-level segmentation benchmark (862 part labels / 534 object labels) and the Plum model…
+  [NeurIPS 2025 Spotlight][Segmentation][part-level understanding] This paper introduces the Partonomy part-level segmentation benchmark (862 part labels / 534 object labels) and the Plum model, which replaces the [SEG] token with BIO span tagging and incorporates a mask feedback loop. The study reveals that state-of-the-art segmentation LMMs achieve only 5.9% gIoU on part understanding; Plum achieves significant improvements by avoiding distribution shift and leveraging histor…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Segmentation"
   - "part-level understanding"
   - "LMM"
@@ -13,7 +13,7 @@ tags:
   - "mask feedback"
   - "benchmark"
 date: 2026-05-08
-content_hash: 23f14dad1a14c7ba
+content_hash: 22125065018dda1f
 ---
 
 # PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding
@@ -128,11 +128,11 @@ The segmentation loss employs Focal-Tversky loss with recall-biased weighting ($
 
 ## Related Papers
 
+- [\[CVPR 2025\] F-LMM: Grounding Frozen Large Multimodal Models](../../CVPR2025/segmentation/f-lmm_grounding_frozen_large_multimodal_models.md)
 - [\[NeurIPS 2025\] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](partnext_a_next-generation_dataset_for_fine-grained_and_hierarchical_3d_part_und.md)
+- [\[ECCV 2024\] OpenPSG: Open-set Panoptic Scene Graph Generation via Large Multimodal Models](../../ECCV2024/segmentation/openpsg_open-set_panoptic_scene_graph_generation_via_large_multimodal_models.md)
 - [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
 - [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](../../ICCV2025/segmentation/himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
-- [\[NeurIPS 2025\] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation](langhops_language_grounded_hierarchical_open-vocabulary_part_segmentation.md)
-- [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](../../ICCV2025/segmentation/advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
 
 </div>
 

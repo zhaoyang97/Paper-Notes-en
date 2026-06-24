@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Evaluating, Synthesizing, and Enhancing for Customer Support Conversation
 description: >-
-  [AAAI 2026][LLM Reasoning][Customer support conversation] This paper defines five dialogue phases and twelve support strategies based on the COPC industry standard, generates 11…
+  [AAAI 2026][Reasoning][Customer support conversation] This paper defines five dialogue phases and twelve support strategies based on the COPC industry standard, generates 11,232 strategy-rich synthetic dialogues (RoleCS) via five-agent role-playing, and constructs a 1,855-sample evaluation set (CSConv) by rewriting real conversations. Fine-tuning on these resources substantially improves strategy-aligned response quality and issue resolution rates.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Customer support conversation"
   - "COPC standard"
   - "role-playing"
   - "data synthesis"
   - "strategy alignment"
 date: 2026-05-08
-content_hash: f1c93beada601dd0
+content_hash: 081aeed46be59bf8
 ---
 
 # Evaluating, Synthesizing, and Enhancing for Customer Support Conversation
@@ -131,11 +131,11 @@ Given a customer service scenario description and customer profile as input, the
 
 ## Related Papers
 
+- [\[ICLR 2026\] OptimalThinkingBench: Evaluating Over and Underthinking in LLMs](../../ICLR2026/llm_reasoning/optimalthinkingbench_evaluating_over_and_underthinking_in_llms.md)
 - [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
 - [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](../../ICML2026/llm_reasoning/evaluating_relational_reasoning_in_llms_with_rel.md)
+- [\[ICML 2025\] Emergent Symbolic Mechanisms Support Abstract Reasoning in Large Language Models](../../ICML2025/llm_reasoning/emergent_symbolic_mechanisms_support_abstract_reasoning_in_large_language_models.md)
 - [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
-- [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
-- [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](../../ICLR2026/llm_reasoning/scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
 
 </div>
 

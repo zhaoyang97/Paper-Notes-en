@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Causal Fine-Tuning under Latent Confounded Shift
 description: >-
-  [ICML 2026][NLP Understanding][BERT] This paper proposes Causal Fine-Tuning (CFT): an SCM-inspired decomposition of "high-level stable features $C$ + low-level confounding-sensitive features $\Phi$" is embedded into standard BERT fine-tuning. By utilizing a front-door style do-calculus adjustment for prediction, it significantly outperforms single-domain
+  [ICML 2026][NLP Understanding][Causal Fine-Tuning] This paper proposes Causal Fine-Tuning (CFT): an SCM-inspired decomposition of "high-level stable features $C$ + low-level confounding-sensitive features $\Phi$" is embedded into standard BERT fine-tuning. By utilizing a front-door style do-calculus adjustment for prediction, it significantly outperforms single-domain generalization baselines such as SFT/SWA/WISE under text spurious correlation injection attacks.
 tags:
-  - ICML 2026
-  - NLP Understanding
-  - BERT
+  - "ICML 2026"
+  - "NLP Understanding"
+  - "Causal Fine-Tuning"
+  - "Latent Confounding"
+  - "Front-door Adjustment"
+  - "Single-domain Generalization"
+  - "BERT"
 date: 2026-05-08
-content_hash: 24d9ec685a4ebeb3
+content_hash: 9d916347102af47b
 ---
+
 # Causal Fine-Tuning under Latent Confounded Shift
 
 **Conference**: ICML 2026  
@@ -138,9 +143,9 @@ On ID (90% spurious), CFT is nearly tied with SWA/SFT. However, as OOD becomes m
 
 - [\[NeurIPS 2025\] Weak-to-Strong Generalization under Distribution Shifts](../../NeurIPS2025/nlp_understanding/weak-to-strong_generalization_under_distribution_shifts.md)
 - [\[ACL 2026\] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models](../../ACL2026/nlp_understanding/lost_in_the_prompt_order_revealing_the_limitations_of_causal_attention_in_langua.md)
+- [\[ICLR 2026\] LANE: Label-Aware Noise Elimination for Fine-Grained Text Classification](../../ICLR2026/nlp_understanding/lane_label-aware_noise_elimination_for_fine-grained_text_classification.md)
 - [\[ICML 2026\] Controlling the Risk of Corrupted Contexts for Language Models via Early-Exiting](controlling_the_risk_of_corrupted_contexts_for_language_models_via_early-exiting.md)
-- [\[ACL 2026\] LexRel: Benchmarking Legal Relation Extraction for Chinese Civil Cases](../../ACL2026/nlp_understanding/lexrel_benchmarking_legal_relation_extraction_for_chinese_civil_cases.md)
-- [\[ACL 2026\] MetFuse: Figurative Fusion between Metonymy and Metaphor](../../ACL2026/nlp_understanding/metfuse_figurative_fusion_between_metonymy_and_metaphor.md)
+- [\[ACL 2026\] Beyond Chunking: Discourse-Aware Hierarchical Retrieval for Long Document Question Answering](../../ACL2026/nlp_understanding/beyond_chunking_discourse-aware_hierarchical_retrieval_for_long_document_questio.md)
 
 </div>
 

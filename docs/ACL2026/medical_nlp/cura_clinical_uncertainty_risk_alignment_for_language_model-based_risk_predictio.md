@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] CURA proposes a dual-level uncertainty calibration framework: the individual level aligns prediction uncertainty with error probability, while the cohort level regularizes predictions via neighborhood risk rates in the embedding space. It consistently improves calibration metrics across five clinical risk prediction ta
+  [ACL 2026][Medical LLM][Clinical Risk Prediction] CURA proposes a dual-level uncertainty calibration framework: the individual level aligns prediction uncertainty with error probability, while the cohort level regularizes predictions via neighborhood risk rates in the embedding space. It consistently improves calibration metrics across five clinical risk prediction tasks on MIMIC-IV without sacrificing discriminative performance.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Clinical Risk Prediction"
+  - "Uncertainty Calibration"
+  - "Dual-level Alignment"
+  - "Cohort-aware"
+  - "Clinical Language Models"
 date: 2026-05-08
-content_hash: 15499d123ecdc028
+content_hash: e9f631aed8b381af
 ---
+
 # CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction
 
 **Conference**: ACL 2026  
@@ -135,8 +141,8 @@ The total loss is $L_{total} = L_{base} + L_{ind} + L_{coh}$. $L_{base}$ is weig
 - [\[ACL 2026\] Reliable Automated Triage in Spanish Clinical Notes: A Hybrid Framework for Risk-Aware HIV Suspicion Identification](reliable_automated_triage_in_spanish_clinical_notes_a_hybrid_framework_for_risk-.md)
 - [\[ACL 2026\] ReMedi: Reasoner for Medical Clinical Prediction](remedi_reasoner_for_medical_clinical_prediction.md)
 - [\[ACL 2025\] A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment](../../ACL2025/medical_nlp/a_modular_approach_for_clinical_slms_driven_by_synthetic_data_with_pre-instructi.md)
-- [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](../../NeurIPS2025/medical_nlp/cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
+- [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](../../NeurIPS2025/medical_nlp/cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
 
 </div>
 

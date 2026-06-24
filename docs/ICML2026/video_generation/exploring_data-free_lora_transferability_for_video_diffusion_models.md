@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Exploring Data-Free LoRA Transferability for Video Diffusion Models
 description: >-
-  [ICML 2026][Video Generation][Video Diffusion] This paper presents the first weight-space analysis of Full Fine-Tuning (FFT) and LoRA for Video Diffusion Models (VDMs). It discovers that both "preserve the singular spectrum and only rotate the singular subspaces," but exhibit conflicting routing directions on head clusters. Based on this, the authors propose CASA—a
+  [ICML 2026][Video Generation][Video Diffusion] This paper presents the first weight-space analysis of Full Fine-Tuning (FFT) and LoRA for Video Diffusion Models (VDMs). It discovers that both "preserve the singular spectrum and only rotate the singular subspaces," but exhibit conflicting routing directions on head clusters. Based on this, the authors propose CASA—a data-free "spectral arbitration by clustering" LoRA transfer method that allows LoRA trained on base models like…
 tags:
-  - ICML 2026
-  - Video Generation
-  - Video Diffusion
-  - Spectral Routing
-  - Data-Free
+  - "ICML 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "LoRA Transfer"
+  - "SVD Singular Subspace"
+  - "Spectral Routing"
+  - "Data-Free"
 date: 2026-05-08
-content_hash: 68ac8aaea20ed2b3
+content_hash: 8623ae89205114da
 ---
+
 # Exploring Data-Free LoRA Transferability for Video Diffusion Models
 
 **Conference**: ICML 2026  
@@ -145,14 +148,14 @@ CASA consistently outperforms Direct Reuse in both quality and style similarity 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
-- [\[ICLR 2026\] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/lora-edit_controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine.md)
 - [\[ECCV 2024\] Exploring Pre-trained Text-to-Video Diffusion Models for Referring Video Object Segmentation](../../ECCV2024/video_generation/exploring_pre-trained_text-to-video_diffusion_models_for_referring_video_object_.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](../../ICLR2026/video_generation/frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
+- [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](../../ICLR2026/video_generation/vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
 - [\[ICML 2026\] Where Concept Erasure Should Occur: Concept-Layer Alignment in Text-to-Video Diffusion Models](where_concept_erasure_should_occur_concept-layer_alignment_in_text-to-video_diff.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamic Reflections: Probing Video Representations with Text Alignment
 description: >-
-  [ICLR 2026][Interpretability][Self-Supervised Learning] Ours provides the first expansion of the Platonic Representation Hypothesis (PRH) from static images to the spatiotemporal video-text domain. Through a systematic evaluation of 121 vision and language models, it reveals that increasing the number of frames and descriptions at test-time can nearly double alignment score
+  [ICLR 2026][Interpretability][Video representation alignment] Ours provides the first expansion of the Platonic Representation Hypothesis (PRH) from static images to the spatiotemporal video-text domain. Through a systematic evaluation of 121 vision and language models, it reveals that increasing the number of frames and descriptions at test-time can nearly double alignment scores, and proposes a saturated scaling law with $R^2 > 0.98$ to quantify this behavior.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Video representation alignment"
+  - "Platonic Representation Hypothesis"
+  - "Test-time scaling laws"
+  - "Cross-modal alignment"
+  - "Self-supervised learning"
 date: 2026-05-08
-content_hash: e446066959a9db5c
+content_hash: 7c1f6054ec9b2381
 ---
+
 # Dynamic Reflections: Probing Video Representations with Text Alignment
 
 **Conference**: ICLR 2026  

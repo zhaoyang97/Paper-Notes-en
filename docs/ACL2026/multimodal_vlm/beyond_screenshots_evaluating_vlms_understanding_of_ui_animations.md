@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations
 description: >-
-  [ACL 2026][Multimodal VLM][AniMINT] This work constructs AniMINT, the first evaluation set for UI animation understanding (300 densely annotated animation videos + 3 experts + 300 user annotations). After systematically testing nine SOTA VLMs, it was found that while basic motion effects are recognizable, significant gaps remain in functional classificat
+  [ACL 2026 Findings][Multimodal VLM][UI Animation] This work constructs AniMINT, the first evaluation set for UI animation understanding (300 densely annotated animation videos + 3 experts + 300 user annotations). After systematically testing nine SOTA VLMs, it was found that while basic motion effects are recognizable, significant gaps remain in functional classification and high-level semantic interpretation compared to humans. Furthermore, enhancing Gemini-2.5-Flash with Mo…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - AniMINT
-  - motion blending
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "UI Animation"
+  - "VLM Evaluation"
+  - "AniMINT"
+  - "Rhetorical Structure"
+  - "Motion Blending"
 date: 2026-05-08
-content_hash: 5552d2287b69a95c
+content_hash: 95aa883084d70dc8
 ---
+
 # Beyond Screenshots: Evaluating VLMs' Understanding of UI Animations
 
 **Conference**: ACL 2026 Findings  
@@ -164,10 +168,10 @@ The combination of all three signals is significantly superior to any single or 
 ## Related Papers
 
 - [\[ACL 2026\] Measuring What Matters Beyond Text: Evaluating Multimodal Summaries by Quality, Alignment, and Diversity (MM-Eval)](measuring_what_matters_beyond_text_evaluating_multimodal_summaries_by_quality_al.md)
+- [\[ICLR 2026\] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](../../ICLR2026/multimodal_vlm/indicvisionbench_benchmarking_cultural_and_multilingual_understanding_in_vlms.md)
+- [\[CVPR 2026\] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance](../../CVPR2026/multimodal_vlm/ui-lens_assessing_general_mllms_potential_to_automate_ui_display_quality_assuran.md)
 - [\[ACL 2026\] Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs](long_story_short_disentangling_compositionality_and_long-caption_understanding_i.md)
 - [\[ACL 2026\] Do MLLMs Capture How Interfaces Guide User Behavior? A Benchmark for Multimodal UI/UX Design Understanding](do_mllms_capture_how_interfaces_guide_user_behavior_a_benchmark_for_multimodal_u.md)
-- [\[CVPR 2026\] UI-Lens: Assessing General MLLMs' Potential to Automate UI Display Quality Assurance](../../CVPR2026/multimodal_vlm/ui-lens_assessing_general_mllms_potential_to_automate_ui_display_quality_assuran.md)
-- [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](../../CVPR2026/multimodal_vlm/vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
 
 </div>
 

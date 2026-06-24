@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Routing, Cascades, and User Choice for LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM routing] LLM routing is modeled as a provider-user Stackelberg game. It is proved that optimal routing is almost always a static threshold rule without cascading. The study reveals systematic user-provider misalignment when quality/cost rankings are inconsistent, and shows that under low churn penalties, providers are incentivi
+  [ICLR 2026][Reinforcement Learning][LLM routing] LLM routing is modeled as a provider-user Stackelberg game. It is proved that optimal routing is almost always a static threshold rule without cascading. The study reveals systematic user-provider misalignment when quality/cost rankings are inconsistent, and shows that under low churn penalties, providers are incentivized to reduce costs through throttling latency, which harms user utility.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM routing
-  - cascading
-  - Stackelberg game
-  - user-provider misalignment
-  - throttling
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "LLM routing"
+  - "cascading"
+  - "Stackelberg game"
+  - "user-provider misalignment"
+  - "throttling"
 date: 2026-05-08
-content_hash: dbda224c698fa5d2
+content_hash: ed05560189597d67
 ---
+
 # Routing, Cascades, and User Choice for LLMs
 
 **Conference**: ICLR 2026  
@@ -132,8 +133,8 @@ The provider may actively worsen service (Proposition 2): when the churn penalty
 
 ## Related Papers
 
-- [\[ICLR 2026\] The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward](the_choice_of_divergence_a_neglected_key_to_mitigating_diversity_collapse_in_rei.md)
 - [\[NeurIPS 2025\] Router-R1: Teaching LLMs Multi-Round Routing and Aggregation via Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/router-r1_teaching_llms_multi-round_routing_and_aggregation_via_reinforcement_le.md)
+- [\[ICLR 2026\] The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward](the_choice_of_divergence_a_neglected_key_to_mitigating_diversity_collapse_in_rei.md)
 - [\[ICLR 2026\] GEM: A Gym for Agentic LLMs](gem_a_gym_for_generalist_llms.md)
 - [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 - [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](reasoning_boosts_opinion_alignment_in_llms.md)

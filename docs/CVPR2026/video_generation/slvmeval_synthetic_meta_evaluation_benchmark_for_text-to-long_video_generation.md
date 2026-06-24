@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Text-to-Video] Proposes the SLVMEval meta-evaluation benchmark, which tests the ability of existing T2V evaluation systems to identify quality differences in long videos (up to ~3 hours). By synthesizing controlled "high-quality vs. low-quality" video pairs from dense video captioning datasets, it reveals that humans achieve 84.7%-96
+  [CVPR 2026][Video Generation][Long video generation evaluation] Proposes the SLVMEval meta-evaluation benchmark, which tests the ability of existing T2V evaluation systems to identify quality differences in long videos (up to ~3 hours). By synthesizing controlled "high-quality vs. low-quality" video pairs from dense video captioning datasets, it reveals that humans achieve 84.7%-96.8% accuracy across 10 dimensions, while existing automated systems lag behind in 9/10 dimension…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Text-to-Video
-  - VLM-as-a-judge
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Long video generation evaluation"
+  - "meta-evaluation benchmark"
+  - "text-to-video"
+  - "synthetic degradation"
+  - "VLM-as-a-judge"
 date: 2026-05-08
-content_hash: b9f3a33c2bf4bed1
+content_hash: 9b93b91339ad1b1b
 ---
+
 # SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation
 
 **Conference**: CVPR 2026  
@@ -139,15 +143,16 @@ Relationship between video duration and accuracy:
 - Value: ⭐⭐⭐⭐ Precisely identifies bottlenecks in long video evaluation (semantics + temporal), providing a clear research direction for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation](vga_bench_unified_benchmark_for_video_aesthetics_and_generation_quality.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
 - [\[CVPR 2026\] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos](videorealbench_a_chain-of-thought_realism_evaluation_benchmark_for_generated_hum.md)
+- [\[CVPR 2026\] SVBench: Evaluation of Video Generation Models on Social Reasoning](svbench_evaluation_of_video_generation_models_on_social_reasoning.md)
+- [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](../../ICML2026/video_generation/v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
 - [\[CVPR 2026\] Ref4D-VideoBench: Four-Dimensional Reference-Based Evaluation of Text-to-Video Generative Models](ref4d-videobench_four-dimensional_reference-based_evaluation_of_text-to-video_ge.md)
-- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](../../ICCV2025/video_generation/worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
 
 </div>
 

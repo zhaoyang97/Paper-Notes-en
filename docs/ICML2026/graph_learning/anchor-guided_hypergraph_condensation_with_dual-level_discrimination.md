@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Anchor-guided Hypergraph Condensation with Dual-level Discrimination
 description: >-
-  [ICML 2026][Graph Learning][hypergraph condensation] AHGCDD reformulates hypergraph condensation (HGC) from a decoupled paradigm of "training a structure generator then matching trajectories" into an end-to-end framework. It embeds structural information into initial features using Heat-Kernel-PageRank, synthesizes sparse learnable hyperedges via an anchor-guided approac
+  [ICML 2026][Graph Learning][hypergraph condensation] AHGCDD reformulates hypergraph condensation (HGC) from a decoupled paradigm of "training a structure generator then matching trajectories" into an end-to-end framework. It embeds structural information into initial features using Heat-Kernel-PageRank, synthesizes sparse learnable hyperedges via an anchor-guided approach based on feature distances, and replaces expensive HNN retraining with a dual-level discrimination loss (…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - hypergraph condensation
-  - HKPR diffusion
-  - anchor-guided hyperedge
-  - dual-level discrimination
-  - MMD
+  - "ICML 2026"
+  - "Graph Learning"
+  - "hypergraph condensation"
+  - "HKPR diffusion"
+  - "anchor-guided hyperedge"
+  - "dual-level discrimination"
+  - "MMD"
 date: 2026-05-08
-content_hash: 29c51fcd596918d5
+content_hash: c1a4f500b4698871
 ---
+
 # Anchor-guided Hypergraph Condensation with Dual-level Discrimination
 
 **Conference**: ICML 2026  
@@ -147,11 +148,11 @@ The authors compared SOTA HGC (HG-Cond) and several GC methods across 5 hypergra
 
 ## Related Papers
 
+- [\[ICLR 2026\] Federated Graph-Level Clustering Network with Dual Knowledge Separation](../../ICLR2026/graph_learning/federated_graph-level_clustering_network_with_dual_knowledge_separation.md)
+- [\[ICLR 2026\] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment](../../ICLR2026/graph_learning/learning_with_dual-level_noisy_correspondence_for_multi-modal_entity_alignment.md)
 - [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
 - [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
-- [\[ICLR 2026\] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding](../../ICLR2026/graph_learning/pairwise_is_not_enough_hypergraph_neural_networks_for_multi-agent_pathfinding.md)
-- [\[AAAI 2026\] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks](../../AAAI2026/graph_learning/bugsweeper_function-level_detection_of_smart_contract_vulnerabilities_using_grap.md)
-- [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](../../ACL2026/graph_learning/tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning](../../ICLR2026/graph_learning/dhg-bench_a_comprehensive_benchmark_for_deep_hypergraph_learning.md)
 
 </div>
 

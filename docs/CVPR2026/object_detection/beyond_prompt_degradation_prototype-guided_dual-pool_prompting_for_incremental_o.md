@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] The PDP framework is proposed to address prompt degradation caused by prompt coupling and prompt drift in incremental object detection. By utilizing dual-pool prompt decoupling (shared pool + private pool) and Prototype-Guided Pseudo-labeling (PPG), the method achieves SOTA performance on MS-COCO and PASCAL VOC.
+  [CVPR 2026][Object Detection][Incremental Object Detection] The PDP framework is proposed to address prompt degradation caused by prompt coupling and prompt drift in incremental object detection. By utilizing dual-pool prompt decoupling (shared pool + private pool) and Prototype-Guided Pseudo-labeling (PPG), the method achieves SOTA performance on MS-COCO and PASCAL VOC.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Incremental Object Detection"
+  - "Prompt Learning"
+  - "Dual-pool Paradigm"
+  - "Prototype Pseudo-labeling"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 61e886b16562c1bf
+content_hash: 21254bc50b8f9ca9
 ---
+
 # Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection
 
 **Conference**: CVPR 2026  
@@ -166,10 +172,10 @@ PPG improves old knowledge retention (mAP@P) by +13.9% and new class adaptation 
 ## Related Papers
 
 - [\[CVPR 2026\] Parameterized Prompt for Incremental Object Detection](parameterized_prompt_for_incremental_object_detection.md)
-- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
 - [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
 - [\[CVPR 2026\] BDNet: Bio-Inspired Dual-Backbone Small Object Detection Network](bdnetbio-inspired_dual-backbone_small_object_detection_network.md)
+- [\[CVPR 2026\] Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](visual_prototype_conditioned_focal_region_generation_for_uav-based_object_detect.md)
 
 </div>
 

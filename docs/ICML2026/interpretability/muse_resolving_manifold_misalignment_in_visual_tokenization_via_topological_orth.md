@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality
 description: >-
-  [ICML 2026][Interpretability][Paper Note] MUSE attributes the "understanding-generation" zero-sum dilemma in unified visual tokenizers to manifold misalignment. It proposes the Gradient Orthogonality Hypothesis—injecting semantics into $W_V$ while routing structural gradients through $W_{Q,K}$. Through Synergistic Blocks, DINOv3 topological alignment, and NCE
+  [ICML 2026][Interpretability][Unified visual tokenizer] MUSE attributes the "understanding-generation" zero-sum dilemma in unified visual tokenizers to manifold misalignment. It proposes the Gradient Orthogonality Hypothesis—injecting semantics into $W_V$ while routing structural gradients through $W_{Q,K}$. Through Synergistic Blocks, DINOv3 topological alignment, and NCE semantic anchoring, it achieves complete decoupling. Consequently, gFID 3.08 and 85.2% linear probing (s…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Unified visual tokenizer"
+  - "manifold alignment"
+  - "gradient orthogonality"
+  - "topological alignment"
+  - "multimodal understanding-generation"
 date: 2026-05-08
-content_hash: b78fe9b72e588f4f
+content_hash: db84042decc75877
 ---
+
 # MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality
 
 **Conference**: ICML 2026  
@@ -136,10 +142,10 @@ Key figures: linear probing 85.2% > Teacher 82.5%, with gFID comparable to VTP a
 ## Related Papers
 
 - [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
-- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
 - [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
-- [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment](../../ICLR2026/interpretability/when_thinking_backfires_mechanistic_insights_into_reasoning-induced_misalignment.md)
-- [\[CVPR 2026\] Draft and Refine with Visual Experts](../../CVPR2026/interpretability/draft_and_refine_with_visual_experts.md)
+- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
+- [\[ICLR 2026\] Persona Features Control Emergent Misalignment](../../ICLR2026/interpretability/persona_features_control_emergent_misalignment.md)
+- [\[ICML 2026\] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs](latentlens_revealing_highly_interpretable_visual_tokens_in_llms.md)
 
 </div>
 

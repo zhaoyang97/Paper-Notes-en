@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Entropy-Monitored Kernelized Token Distillation for Audio-Visual Compression
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] Instead of directly distilling latent space features or outputs of the teacher, this work distills pairwise similarity relations between tokens using kernel functions (Gram matrices). It adaptively adjusts distillation weights based on the predicted entropy of each modality, achieving architecture-agnostic audio-visual
+  [ICLR 2026][Model Compression][Knowledge Distillation] Instead of directly distilling latent space features or outputs of the teacher, this work distills pairwise similarity relations between tokens using kernel functions (Gram matrices). It adaptively adjusts distillation weights based on the predicted entropy of each modality, achieving architecture-agnostic audio-visual model compression that retains ~97% performance with a 94% parameter reduction.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Kernel Methods"
+  - "Audio-Visual"
+  - "Token Distillation"
+  - "Entropy Adaptation"
 date: 2026-05-08
-content_hash: af24d8752dbd499c
+content_hash: d8cc1241c91cd4d4
 ---
+
 # Entropy-Monitored Kernelized Token Distillation for Audio-Visual Compression
 
 **Conference**: ICLR 2026  

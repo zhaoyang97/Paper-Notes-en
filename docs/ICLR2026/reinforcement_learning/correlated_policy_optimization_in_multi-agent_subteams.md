@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Correlated Policy Optimization in Multi-Agent Subteams
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The joint policy in cooperative multi-agent systems is decomposed using a Directed Acyclic Graph (DAG/Bayesian Network) where agents are fully correlated within "subteams" and independent across teams. Under the condition of decomposable rewards/transitions, it is proven that regularized policy gradients converge to ne
+  [ICLR2026][Reinforcement Learning][Multi-Agent RL] The joint policy in cooperative multi-agent systems is decomposed using a Directed Acyclic Graph (DAG/Bayesian Network) where agents are fully correlated within "subteams" and independent across teams. Under the condition of decomposable rewards/transitions, it is proven that regularized policy gradients converge to near-optimal policies. A heuristic for dynamic subteam assembly based on "dependency scores + edge budget" is p…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent RL"
+  - "Bayesian Network Policy"
+  - "Subteams"
+  - "Policy Gradient Convergence"
+  - "Decomposability"
 date: 2026-05-08
-content_hash: c3859e7ad2c72d87
+content_hash: ce616c67f3bdd311
 ---
+
 # Correlated Policy Optimization in Multi-Agent Subteams
 
 **Conference**: ICLR2026  
@@ -129,12 +135,20 @@ The relationship between "decomposition error $\leftrightarrow$ final performanc
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Chen & Zhang, "On the Convergence of Correlated Policy Gradient," 2023.
-- Dou et al., "Theoretical Analysis of Value Decomposition," 2022.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)
+- [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](../../AAAI2026/reinforcement_learning/hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
+- [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](heterogeneous_agent_q-weighted_policy_optimization.md)
+- [\[ICLR 2026\] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization](boosting_multi-domain_reasoning_of_llms_via_curvature-guided_policy_optimization.md)
+- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)

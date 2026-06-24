@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory
 description: >-
-  [ICLR 2026][LLM Evaluation][subgoal completion] This paper introduces **FormalML**, the first Lean 4 benchmark dedicated to "subgoal completion." By employing a self-developed `to_theorem` translation strategy, the authors automatically extract 4,937 proof fragment problems from formalization libraries of machine learning theory (Optimization + Probability). This be
+  [ICLR 2026][LLM Evaluation][subgoal completion] This paper introduces **FormalML**, the first Lean 4 benchmark dedicated to "subgoal completion." By employing a self-developed `to_theorem` translation strategy, the authors automatically extract 4,937 proof fragment problems from formalization libraries of machine learning theory (Optimization + Probability). This benchmark systematically exposes the real-world shortcomings of current LLM provers in handling complex contexts…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - subgoal completion
-  - Lean 4
-  - theorem proving
-  - ML theory
-  - premise utilization
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "subgoal completion"
+  - "Lean 4"
+  - "theorem proving"
+  - "ML theory"
+  - "premise utilization"
 date: 2026-05-08
-content_hash: 0b1fb0323dd271c2
+content_hash: b788e68f5ac49501
 ---
+
 # FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory
 
 **Conference**: ICLR 2026  

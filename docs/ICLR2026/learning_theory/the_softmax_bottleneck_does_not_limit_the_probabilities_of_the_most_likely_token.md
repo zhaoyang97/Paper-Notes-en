@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper theoretically revisits the "softmax bottleneck": it proves that even randomly initialized output projection matrices can assign arbitrarily accurate probabilities to a significant number of top tokens (approx. 26 for GPT-2 scale, 95 in practice, and over 1000 for Llama2), questioning whether the softmax bott
+  [ICLR 2026][Learning Theory][softmax bottleneck] This paper theoretically revisits the "softmax bottleneck": it proves that even randomly initialized output projection matrices can assign arbitrarily accurate probabilities to a significant number of top tokens (approx. 26 for GPT-2 scale, 95 in practice, and over 1000 for Llama2), questioning whether the softmax bottleneck significantly limits LLM capabilities in realistic scenarios.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "LLM Expressivity Analysis"
+  - "softmax bottleneck"
+  - "output projection matrix"
+  - "random matrices"
+  - "sign rank"
+  - "embedding dimension"
 date: 2026-05-08
-content_hash: 9ebaa27427a94f26
+content_hash: f409519121af007a
 ---
+
 # The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens
 
 **Conference**: ICLR 2026  
@@ -129,16 +136,16 @@ The LP measurements are several times higher than the theoretical lower bounds b
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](language_identification_in_the_limit_with_computational_trace.md)
+- [\[ICLR 2026\] Softmax is not Enough (for Adaptive Conformal Classification)](softmax_is_not_enough_for_adaptive_conformal_classification.md)
 - [\[ICLR 2026\] Softmax Transformers are Turing-Complete](softmax_transformers_are_turing-complete.md)
+- [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](language_identification_in_the_limit_with_computational_trace.md)
 - [\[ICLR 2026\] Testing Most Influential Sets](testing_most_influential_sets.md)
 - [\[ICLR 2026\] To Augment or Not to Augment? Diagnosing Distributional Symmetry Breaking](to_augment_or_not_to_augment_diagnosing_distributional_symmetry_breaking.md)
-- [\[ICLR 2026\] FlowNIB: An Information Bottleneck Analysis of Bidirectional vs. Unidirectional Language Models](flownib_an_information_bottleneck_analysis_of_bidirectional_vs_unidirectional_la.md)
 
 </div>
 

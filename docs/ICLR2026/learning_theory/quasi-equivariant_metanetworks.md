@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Quasi-Equivariant Metanetworks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] To address the issue that "metanetworks become sparse and limited in expressivity when strictly equivariant," this paper proposes **quasi-equivariance**: relaxing the requirement "output follows the same group transformation as the input" to "output follows a **data-dependent** group transformation," thereby liberating
+  [ICLR 2026][Learning Theory][Metanetworks] To address the issue that "metanetworks become sparse and limited in expressivity when strictly equivariant," this paper proposes **quasi-equivariance**: relaxing the requirement "output follows the same group transformation as the input" to "output follows a **data-dependent** group transformation," thereby liberating expressivity while strictly preserving functional equivalence. This is implemented as a learnable group-valued scali…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Weight Space Learning"
+  - "Equivariant Networks"
+  - "Metanetworks"
+  - "Functional Equivalence"
+  - "Maximal Symmetry Group"
+  - "Quasi-Equivariant"
 date: 2026-05-08
-content_hash: d0b113f87678444b
+content_hash: 33a4b2ff65a90f98
 ---
+
 # Quasi-Equivariant Metanetworks
 
 **Conference**: ICLR 2026  
@@ -137,6 +144,7 @@ The paper primarily uses the **"Large Version" vs. "Quasi-equivariant Version"**
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -144,8 +152,8 @@ The paper primarily uses the **"Large Version" vs. "Quasi-equivariant Version"**
 - [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
 - [\[ICLR 2026\] To Augment or Not to Augment? Diagnosing Distributional Symmetry Breaking](to_augment_or_not_to_augment_diagnosing_distributional_symmetry_breaking.md)
-- [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
-- [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
+- [\[ICLR 2026\] Characterizing Pattern Matching and Its Limits on Compositional Task Structures](characterizing_pattern_matching_and_its_limits_on_compositional_task_structures.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
 
 </div>
 

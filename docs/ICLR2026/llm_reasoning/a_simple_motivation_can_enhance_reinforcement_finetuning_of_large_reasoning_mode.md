@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] MeRF writes verifiable reward functions into prompts as a "rulebook" in natural language. By explicitly informing the model of optimization goals during RL training, it moves away from blind trial-and-error, significantly outperforming RLVR baselines in logic and mathematical reasoning tasks.
+  [ICLR 2026][Reasoning][RLVR] MeRF writes verifiable reward functions into prompts as a "rulebook" in natural language. By explicitly informing the model of optimization goals during RL training, it moves away from blind trial-and-error, significantly outperforming RLVR baselines in logic and mathematical reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "In-context Learning"
+  - "Reward Function Description"
+  - "GRPO"
+  - "Verifiable Reward"
+  - "Exploration Efficiency"
 date: 2026-05-08
-content_hash: 055d75652fe28b09
+content_hash: b164c20640e21e79
 ---
+
 # A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -127,7 +132,7 @@ Average gains for pass@1/2/4/8 were +3.40 / +1.13 / +3.50 / +4.50 respectively.
 - [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
 - [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
-- [\[ICLR 2026\] R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?](r-horizon_how_far_can_your_large_reasoning_model_really_go_in_breadth_and_depth.md)
+- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 
 </div>
 

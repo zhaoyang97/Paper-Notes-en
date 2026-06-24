@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces Think360, a multimodal benchmark focusing on "reasoning width"—specifically a model's capability in multi-path searching, multi-constraint pruning, and trial-and-error backtracking. It contains 1200+ high-quality samples and utilizes a fine-grained Tree-of-Thought evaluation protocol, revealing si
+  [CVPR 2026][VLM Reasoning][Multimodal Reasoning] This paper introduces Think360, a multimodal benchmark focusing on "reasoning width"—specifically a model's capability in multi-path searching, multi-constraint pruning, and trial-and-error backtracking. It contains 1200+ high-quality samples and utilizes a fine-grained Tree-of-Thought evaluation protocol, revealing significant weaknesses in the width-dimension reasoning of current MLLMs.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Reasoning Width"
+  - "Tree-of-Thought Evaluation"
+  - "Benchmark"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: 5b62e7cb2d609692
+content_hash: bbdb60440d40bdac
 ---
+
 # Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth
 
 **Conference**: CVPR 2026  
@@ -153,15 +159,15 @@ The evaluation covers 12 major model series (GPT, Gemini, Claude, Grok, Doubao, 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
-- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/multimodal_vlm/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
+- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/vlm_reasoning/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
+- [\[ICLR 2026\] Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks](../../ICLR2026/vlm_reasoning/agent-x_evaluating_deep_multimodal_reasoning_in_vision-centric_agentic_tasks.md)
 - [\[CVPR 2026\] EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy](egoprox_evaluating_mllms_on_egocentric_3d_proximity_reasoning_across_a_cognitive.md)
 - [\[CVPR 2026\] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs](beyond_perceptual_shortcuts_causal-inspired_debiasing_optimization_for_generaliz.md)
-- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
 
 </div>
 

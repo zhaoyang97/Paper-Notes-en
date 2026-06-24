@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM] Ours proposes the EvoQuality framework, which generates pseudo-ranking labels through pairwise majority voting combined with GRPO self-iterative optimization. This allows VLMs to autonomously improve image quality perception without human annotation, achieving a 31.8% PLCC improvement in zero-shot performance and surpa
+  [ICLR 2026][Multimodal VLM][VLM] Ours proposes the EvoQuality framework, which generates pseudo-ranking labels through pairwise majority voting combined with GRPO self-iterative optimization. This allows VLMs to autonomously improve image quality perception without human annotation, achieving a 31.8% PLCC improvement in zero-shot performance and surpassing supervised SOTA on 5 out of 7 IQA benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLM
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM"
+  - "Image Quality Assessment"
+  - "Self-supervised"
+  - "GRPO"
+  - "Voting and Ranking"
 date: 2026-05-08
-content_hash: 2b9a0f77988f0022
+content_hash: 8cdf57b45202c85a
 ---
+
 # Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking
 
 **Conference**: ICLR 2026  

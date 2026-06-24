@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Style over Story: Measuring LLM Narrative Preferences via Structured Selection
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This work designs an experimental paradigm based on constrained selection to measure the narrative preferences of LLMs. Using a library of 200 constraints constructed from narratology theory, 6 LLMs were evaluated across different instruction types. The study found that models systematically prioritize "Style" over con
+  [ACL 2026 Findings][Interpretability][Narrative Preferences] This work designs an experimental paradigm based on constrained selection to measure the narrative preferences of LLMs. Using a library of 200 constraints constructed from narratology theory, 6 LLMs were evaluated across different instruction types. The study found that models systematically prioritize "Style" over content elements such as "Event," "Character," and "Setting."
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Narrative Preferences"
+  - "LLM Bias"
+  - "Constrained Selection"
+  - "Narratology"
+  - "Style Preference"
 date: 2026-05-08
-content_hash: d13d7bf0fde2fe34
+content_hash: 27004f1806fac0c1
 ---
+
 # Style over Story: Measuring LLM Narrative Preferences via Structured Selection
 
 **Conference**: ACL 2026 Findings  

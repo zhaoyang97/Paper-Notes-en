@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions
 description: >-
-  [ICLR 2026][LLM Agent][RAG] Based on memory and cognitive sciences, the authors decompose the capabilities required by memory agents into four core dimensions: "Accurate Retrieval, Test-Time Learning, Long-Range Understanding, and Selective Forgetting." They construct **MemoryAgentBench**, the first unified benchmark that simulates multi-turn int
+  [ICLR 2026][LLM Agent][Memory Agent] Based on memory and cognitive sciences, the authors decompose the capabilities required by memory agents into four core dimensions: "Accurate Retrieval, Test-Time Learning, Long-Range Understanding, and Selective Forgetting." They construct **MemoryAgentBench**, the first unified benchmark that simulates multi-turn interaction by chunking long texts and feeding them incrementally to agents. The study finds that no existing long-context mod…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - RAG
-  - MemoryAgentBench
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Memory Agent"
+  - "Multi-turn Interaction"
+  - "Incremental Memory Evaluation"
+  - "RAG"
+  - "MemoryAgentBench"
 date: 2026-05-08
-content_hash: b781045d7057ba73
+content_hash: 5354454c0d0bdfb4
 ---
+
 # Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions
 
 **Conference**: ICLR 2026  
@@ -118,8 +122,8 @@ RAG generally outperforms the backbone-equivalent GPT-4o-mini in AR (segment ext
 - [\[AAAI 2026\] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance](../../AAAI2026/llm_agent/towards_trustworthy_multi-turn_llm_agents_via_behavioral_guidance.md)
 - [\[ICLR 2026\] ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction](toolace-mt_non-autoregressive_generation_for_agentic_multi-turn_interaction.md)
 - [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
+- [\[ICLR 2026\] Look Back to Reason Forward: Revisitable Memory for Long-Context LLM Agents](look_back_to_reason_forward_revisitable_memory_for_long-context_llm_agents.md)
 - [\[ICLR 2026\] FaSTA*: Fast-Slow Toolpath Agent with Subroutine Mining for Efficient Multi-turn Image Editing](fasta_fast-slow_toolpath_agent_with_subroutine_mining_for_efficient_multi-turn_i.md)
-- [\[ICLR 2026\] From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents](from_single_to_multi-granularity_toward_long-term_memory_association_and_selecti.md)
 
 </div>
 

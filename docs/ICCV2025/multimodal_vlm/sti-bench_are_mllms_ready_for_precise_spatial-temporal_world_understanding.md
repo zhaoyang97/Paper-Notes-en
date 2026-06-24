@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM benchmark] This paper proposes STI-Bench, a benchmark for evaluating the precise spatial-temporal understanding capabilities of multimodal large language models (MLLMs)…
+  [ICCV 2025][Multimodal VLM][MLLM benchmark] This paper proposes STI-Bench, a benchmark for evaluating the precise spatial-temporal understanding capabilities of multimodal large language models (MLLMs), covering three scene categories (desktop/indoor/outdoor), eight static and dynamic task types, and over 2,000 QA pairs. The benchmark reveals that the current state-of-the-art MLLM (Gemini-2.5-Pro) achieves an average accuracy of only 41.4%, exposing fundamental deficiencies i…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "video QA"
   - "autonomous driving"
 date: 2026-05-08
-content_hash: b47001871c8dbee4
+content_hash: cea9569d34d625a1
 ---
 
 # STI-Bench: Are MLLMs Ready for Precise Spatial-Temporal World Understanding?
@@ -53,16 +53,16 @@ STI-Bench comprises 300+ real-world videos and 2,064 QA pairs, spanning three sc
 1. **Eight-task taxonomy**: Tasks are divided into static understanding (3 types) and dynamic understanding (5 types):
 
    **Static Understanding**:
-   - **Dimension Measurement (Dim. Meas.)**: Inferring physical dimensions from 2D pixels, e.g., "How tall is this box?"
-   - **Spatial Relation**: Determining relative positions among objects, e.g., "Is the chair to the left or right of the table?"
-   - **3D Video Grounding**: Retrieving 3D bounding boxes given semantic descriptions
+    - **Dimension Measurement (Dim. Meas.)**: Inferring physical dimensions from 2D pixels, e.g., "How tall is this box?"
+    - **Spatial Relation**: Determining relative positions among objects, e.g., "Is the chair to the left or right of the table?"
+    - **3D Video Grounding**: Retrieving 3D bounding boxes given semantic descriptions
 
    **Dynamic Understanding**:
-   - **Displacement & Path Length (Disp. & P.L.)**: Tracking motion distances across frames
-   - **Speed & Acceleration (Speed & Acc.)**: Computing motion parameters by integrating spatial displacement and temporal intervals
-   - **Egocentric Orientation (Ego Orient.)**: Understanding horizontal azimuth changes of the camera
-   - **Trajectory Description (Traj. Desc.)**: Abstracting motion paths into natural language
-   - **Pose Estimation (Pose Est.)**: Estimating camera pose at a specific moment given an initial pose
+    - **Displacement & Path Length (Disp. & P.L.)**: Tracking motion distances across frames
+    - **Speed & Acceleration (Speed & Acc.)**: Computing motion parameters by integrating spatial displacement and temporal intervals
+    - **Egocentric Orientation (Ego Orient.)**: Understanding horizontal azimuth changes of the camera
+    - **Trajectory Description (Traj. Desc.)**: Abstracting motion paths into natural language
+    - **Pose Estimation (Pose Est.)**: Estimating camera pose at a specific moment given an initial pose
 
 2. **Data sources and multi-scale design**: Three datasets covering different spatial scales:
 
@@ -72,7 +72,7 @@ STI-Bench comprises 300+ real-world videos and 2,064 QA pairs, spanning three sc
 
 3. **Refined distractor design**: Different error ranges are specified per scene type (Desktop: 0.5–5 cm, Indoor: 5–50 cm, Outdoor: 0.5–5 m), with distractors generated via logarithmic sampling:
 
-   $$e = E_{min} \cdot (E_{max}/E_{min})^u, \quad u \sim \mathcal{U}(0,1)$$
+    $e = E_{min} \cdot (E_{max}/E_{min})^u, \quad u \sim \mathcal{U}(0,1)$
 
    Weighted averaging is applied to adjust the distance between distractors and the correct answer, ensuring the minimum distance equals the sampled error value $e$. Design motivation: precision requirements vary greatly across scenes, and a uniform distractor generation strategy would render some scenes trivially easy or prohibitively difficult.
 
@@ -163,8 +163,8 @@ This is a benchmark paper and does not involve model training. Evaluation protoc
 ## Related Papers
 
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](spatial_preference_rewarding_for_mllms_spatial_understanding.md)
-- [\[ICCV 2025\] AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?](advdreamer_unveils_are_visionlanguage_models_truly_ready_for.md)
 - [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
+- [\[ICCV 2025\] AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?](advdreamer_unveils_are_visionlanguage_models_truly_ready_for.md)
 - [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
 - [\[AAAI 2026\] VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction](../../AAAI2026/multimodal_vlm/vir-bench_evaluating_geospatial_and_temporal_understanding_of_mllms_via_travel_v.md)
 

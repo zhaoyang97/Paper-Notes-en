@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DistillKac: Few-Step Image Generation via Damped Wave Equations
 description: >-
-  [ICLR 2026][Image Generation][damped wave equation] The telegrapher equation (damped wave equation) and its stochastic Kac representation are proposed as the foundation for generative probability flows to replace the Fokker-Planck equation. This framework achieves finite-speed propagation, and an endpoint distillation method is introduced for few-step generation, achiev
+  [ICLR 2026][Image Generation][damped wave equation] The telegrapher equation (damped wave equation) and its stochastic Kac representation are proposed as the foundation for generative probability flows to replace the Fokker-Planck equation. This framework achieves finite-speed propagation, and an endpoint distillation method is introduced for few-step generation, achieving FID=4.14 in 4 steps and FID=5.66 in 1 step on CIFAR-10.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - damped wave equation
-  - Kac process
-  - finite-speed flow
-  - endpoint distillation
-  - few-step generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "damped wave equation"
+  - "Kac process"
+  - "finite-speed flow"
+  - "endpoint distillation"
+  - "few-step generation"
 date: 2026-05-08
-content_hash: 32a64004f6eb305e
+content_hash: 03f35faa282c182d
 ---
+
 # DistillKac: Few-Step Image Generation via Damped Wave Equations
 
 **Conference**: ICLR 2026  
@@ -120,15 +121,16 @@ The teacher is a 100-step Guided Kac Flow integrated using AB-2 (second-order Ad
 - Value: ⭐⭐⭐⭐ Opens a new direction (hyperbolic generative models), though large-scale feasibility requires further validation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
+- [\[ICLR 2026\] VSF: Simple, Efficient, and Effective Negative Guidance in Few-Step Image Generation Models By Value Sign Flip](vsf_simple_efficient_and_effective_negative_guidance_in_few-step_image_generatio.md)
 - [\[ICLR 2026\] PairFlow: Closed-Form Source-Target Coupling for Few-Step Generation in Discrete Flow Models](pairflow_closed-form_source-target_coupling_for_few-step_generation_in_discrete_.md)
 - [\[ICLR 2026\] BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation](bézierflow_learning_bézier_stochastic_interpolant_schedulers_for_few-step_genera.md)
-- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
-- [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](../../CVPR2026/image_generation/uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
 
 </div>
 

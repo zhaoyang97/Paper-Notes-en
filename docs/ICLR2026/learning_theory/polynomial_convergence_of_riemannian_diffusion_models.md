@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Polynomial Convergence of Riemannian Diffusion Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This work proves that Riemannian Score-based Generative Models (RSGMs) on manifolds require only **polynomial-scale** step counts to achieve accurate sampling under **Total Variation (TV) distance**. It relaxes the restrictive guarantees of De Bortoli et al. (2022)—which previously required "exponentially small steps +
+  [ICLR 2026][Learning Theory][Riemannian Diffusion Models] This work proves that Riemannian Score-based Generative Models (RSGMs) on manifolds require only **polynomial-scale** step counts to achieve accurate sampling under **Total Variation (TV) distance**. It relaxes the restrictive guarantees of De Bortoli et al. (2022)—which previously required "exponentially small steps + $L_\infty$ score precision + smooth strictly positive data distribution"—to "polynomial steps + $L_2$…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Diffusion Model Convergence"
+  - "Riemannian Diffusion Models"
+  - "Convergence Analysis"
+  - "Total Variation Distance"
+  - "Heat Kernel"
+  - "Discretization Error"
 date: 2026-05-08
-content_hash: 5731c346530f7f4f
+content_hash: 16b22c3e7696d51c
 ---
+
 # Polynomial Convergence of Riemannian Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -127,6 +134,7 @@ The Fokker-Planck equation shows these kernels are solutions to heat equations w
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -135,7 +143,7 @@ The Fokker-Planck equation shows these kernels are solutions to heat equations w
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
 - [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
-- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
+- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
 
 </div>
 

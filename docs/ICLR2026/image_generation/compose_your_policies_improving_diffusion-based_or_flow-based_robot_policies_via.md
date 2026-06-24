@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes General Policy Composition (GPC), which performs a convex combination of distribution scores from multiple pre-trained diffusion or flow policies at test time. This approach yields a stronger policy surpassing any single parent without extra training. It theoretically proves that convex combinations
+  [ICLR 2026][Image Generation][Policy Composition] This paper proposes General Policy Composition (GPC), which performs a convex combination of distribution scores from multiple pre-trained diffusion or flow policies at test time. This approach yields a stronger policy surpassing any single parent without extra training. It theoretically proves that convex combinations can improve single-step score errors, which propagate to the entire trajectory via Grönwall bounds.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Policy Composition"
+  - "Diffusion Policy"
+  - "Distribution-level Composition"
+  - "Test-time Search"
+  - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 4c661f533e73142c
+content_hash: 0448c358cbba438b
 ---
+
 # Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition
 
 **Conference**: ICLR 2026  
@@ -144,15 +150,16 @@ Benchmarks include Robomimic (6 tasks), PushT, and RoboTwin:
 - Value: ⭐⭐⭐⭐ Highly practical "free lunch" method applicable to existing robotic systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Improving Discrete Diffusion Unmasking Policies Beyond Explicit Reference Policies (UPO)](improving_discrete_diffusion_unmasking_policies_beyond_explicit_reference_polici.md)
+- [\[ICML 2026\] Recovering Hidden Reward in Diffusion-Based Policies](../../ICML2026/image_generation/recovering_hidden_reward_in_diffusion-based_policies.md)
 - [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
 - [\[NeurIPS 2025\] Failure Prediction at Runtime for Generative Robot Policies](../../NeurIPS2025/image_generation/failure_prediction_at_runtime_for_generative_robot_policies.md)
 - [\[NeurIPS 2025\] Real-Time Execution of Action Chunking Flow Policies](../../NeurIPS2025/image_generation/real-time_execution_of_action_chunking_flow_policies.md)
-- [\[ICLR 2026\] Steer Away From Mode Collisions: Improving Composition In Diffusion Models](steer_away_from_mode_collisions_improving_composition_in_diffusion_models.md)
 
 </div>
 

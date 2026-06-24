@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model
 description: >-
-  [AAAI 2026][Image Generation][T2I Safety] This paper constructs T2I-RiskyPrompt — a comprehensive benchmark comprising 6,432 valid risky prompts spanning 6 major categories and 14 subcategories…
+  [AAAI 2026][Image Generation][T2I Safety] This paper constructs T2I-RiskyPrompt — a comprehensive benchmark comprising 6,432 valid risky prompts spanning 6 major categories and 14 subcategories, each annotated with hierarchical labels and detailed risk rationales. A reason-driven MLLM-based risk detection method is proposed (achieving 91.8% accuracy with a 3B model), and a systematic evaluation is conducted across 8 T2I models, 9 defense methods, 5 safety filters…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Jailbreak Attack"
   - "Safety Filter"
 date: 2026-05-08
-content_hash: b1a30221e593b2ae
+content_hash: 601b1604879214a2
 ---
 
 # T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model
@@ -127,11 +127,11 @@ Risk rates (proportion of prompts that generate risky images) across 8 T2I model
 
 ## Related Papers
 
+- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](../../CVPR2026/image_generation/gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
 - [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](../../NeurIPS2025/image_generation/overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](../../ICCV2025/image_generation/holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
 - [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
 - [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](../../CVPR2026/image_generation/when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
-- [\[AAAI 2026\] MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models](macprompt_maraconic-guided_jailbreak_against_text-to-image_models.md)
 
 </div>
 

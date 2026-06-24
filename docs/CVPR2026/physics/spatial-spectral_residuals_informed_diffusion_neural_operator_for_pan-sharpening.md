@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] SRINO replaces the attention-based denoising backbone of diffusion models for pan-sharpening with a Galerkin-type Neural Operator (transferring the generation process to a continuous function space to significantly save FLOPs and memory). It treats pixel-level spatial/spectral consistency residuals directly as conditio
+  [CVPR 2026][Physics & Scientific Computing][Pan-sharpening] SRINO replaces the attention-based denoising backbone of diffusion models for pan-sharpening with a Galerkin-type Neural Operator (transferring the generation process to a continuous function space to significantly save FLOPs and memory). It treats pixel-level spatial/spectral consistency residuals directly as conditions fed into each step of the reverse sampling process for closed-loop guidance. On WV3/GF2/QB datase…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Physics & Scientific Computing"
+  - "Pan-sharpening"
+  - "Neural Operator"
+  - "Function Space Diffusion"
+  - "Spatial-Spectral Residuals"
+  - "Galerkin Attention"
 date: 2026-05-08
-content_hash: eb4c849b6d152669
+content_hash: 0f1569e703d97d71
 ---
+
 # Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,15 @@ Backbone Ablation: CNN performed worst, FNO was intermediate, and Galerkin NO (O
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Multigrain-aware Semantic Prototype Scanning and Tri-Token Prompt Learning Embraced High-Order RWKV for Pan-Sharpening](multigrain-aware_semantic_prototype_scanning_and_tri-token_prompt_learning_embra.md)
-- [\[ICCV 2025\] Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening](../../ICCV2025/remote_sensing/pan-crafter_learning_modality-consistent_alignment_for_pan-sharpening.md)
-- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
-- [\[CVPR 2026\] LNEM: Lunar Neural Elevation Model](lnem_lunar_neural_elevation_model.md)
-- [\[CVPR 2026\] Semantic-Adaptive Diffusion for Dynamic Spatiotemporal Fusion](semantic-adaptive_diffusion_for_dynamic_spatiotemporal_fusion.md)
+- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
+- [\[CVPR 2025\] DiffFNO: Diffusion Fourier Neural Operator](../../CVPR2025/physics/difffno_diffusion_fourier_neural_operator.md)
+- [\[NeurIPS 2025\] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery](../../NeurIPS2025/physics/score-informed_neural_operator_for_enhancing_ordering-based_causal_discovery.md)
+- [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](../../ICML2026/physics/generative_neural_operators_through_diffusion_last_layer.md)
+- [\[ICLR 2026\] Proximal Diffusion Neural Sampler](../../ICLR2026/physics/proximal_diffusion_neural_sampler.md)
 
 </div>
 

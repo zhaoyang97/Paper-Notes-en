@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GH-NAF: Grid-Adaptive Hash-Level-Attended Neural Attenuation Fields for Discrepancy-Aware CBCT
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] GH-NAF introduces a "spatial-position adaptive hash resolution level selection" attention mechanism to NeRF-style CBCT reconstruction. Combined with differentiable discrepancy-aware rendering and uncertainty-weighted supervision, the model suppresses high-frequency noise in homogeneous tissues while preserving details
+  [CVPR 2026][Medical Imaging][Sparse-view CBCT Reconstruction] GH-NAF introduces a "spatial-position adaptive hash resolution level selection" attention mechanism to NeRF-style CBCT reconstruction. Combined with differentiable discrepancy-aware rendering and uncertainty-weighted supervision, the model suppresses high-frequency noise in homogeneous tissues while preserving details at structural boundaries, improving both intra-material contrast and edge sharpness in real CBCT.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Sparse-view CBCT Reconstruction"
+  - "Neural Attenuation Fields"
+  - "Multiresolution Hash Encoding"
+  - "Hash-Level Attention"
+  - "Projection Discrepancy Modeling"
 date: 2026-05-08
-content_hash: fdf0568c19106b74
+content_hash: 1f5d2e50026d0268
 ---
+
 # GH-NAF: Grid-Adaptive Hash-Level-Attended Neural Attenuation Fields for Discrepancy-Aware CBCT
 
 **Conference**: CVPR 2026  
@@ -161,15 +167,15 @@ Ablations on loss terms (synthetic dataset):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
 - [\[CVPR 2026\] Splat-Based Metal Artifact Reduction in Cone-Beam CT via Compact Attenuation Modeling](splat-based_metal_artifact_reduction_in_cone-beam_ct_via_compact_attenuation_mod.md)
 - [\[ECCV 2024\] NePhi: Neural Deformation Fields for Approximately Diffeomorphic Medical Image Registration](../../ECCV2024/medical_imaging/textttnephi_neural_deformation_fields_for_approximately_diff.md)
+- [\[ICLR 2026\] NAB: Neural Adaptive Binning for Sparse-View CT Reconstruction](../../ICLR2026/medical_imaging/nab_neural_adaptive_binning_for_sparse-view_ct_reconstruction.md)
 - [\[CVPR 2026\] CMR-RD: Long-Tailed Adaptive VLM for Explainable CMR Diagnosis](cmr-rd_long-tailed_adaptive_vlm_for_explainable_cmr_diagnosis.md)
-- [\[CVPR 2026\] Event-Level Detection of Surgical Instrument Handovers in Videos](event_level_detection_of_surgical_instrument_handovers_in_videos.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Characterizing the Effect of Noise in Language Generation in the Limit
 description: >-
-  [ICML 2026][Text Generation][Paper Note] Under the Kleinberg-Mullainathan formal framework of "language generation in the limit," this paper proves that for both uniform and non-uniform generation, noise level 1 is equivalent to any finite noise level $i \geq 1$ (hierarchy collapse), while a strict separation exists between the noise-free case and noise level
+  [ICML2026][Text Generation][Language generation in the limit] Under the Kleinberg-Mullainathan formal framework of "language generation in the limit," this paper proves that for both uniform and non-uniform generation, noise level 1 is equivalent to any finite noise level $i \geq 1$ (hierarchy collapse), while a strict separation exists between the noise-free case and noise level 1. Furthermore, it provides the first complete characterization of non-uniform noise-dependent ge…
 tags:
-  - ICML 2026
-  - Text Generation
+  - "ICML2026"
+  - "Text Generation"
+  - "Language generation in the limit"
+  - "noise robustness"
+  - "closure dimension"
+  - "uniform generation"
+  - "non-uniform generation"
 date: 2026-05-08
-content_hash: 941d33a2c7a8f2af
+content_hash: 560dba06d279bb94
 ---
+
 # Characterizing the Effect of Noise in Language Generation in the Limit
 
 **Conference**: ICML2026  
@@ -117,10 +123,10 @@ This is a purely theoretical paper. The core contributions are the following the
 ## Related Papers
 
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](../../AAAI2026/nlp_generation/structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
+- [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](../../ICLR2026/nlp_generation/unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
 - [\[ACL 2026\] Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models](../../ACL2026/nlp_generation/investigating_the_representation_of_backchannels_and_fillers_in_fine-tuned_langu.md)
-- [\[ACL 2025\] An Empirical Study of Many-to-Many Summarization with Large Language Models](../../ACL2025/nlp_generation/an_empirical_study_of_manytomany_summarization.md)
-- [\[ACL 2025\] Theme-Explanation Structure for Table Summarization Using Large Language Models](../../ACL2025/nlp_generation/theme-explanation_structure_for_table_summarization_using_large_language_models_.md)
+- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](../../ICLR2026/nlp_generation/planner_aware_path_learning_in_diffusion_language_models_training.md)
 
 </div>
 

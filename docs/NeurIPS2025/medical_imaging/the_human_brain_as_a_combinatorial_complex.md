@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Human Brain as a Combinatorial Complex
 description: >-
-  [NeurIPS 2025 (Workshop: NeurReps)][Medical Imaging][Combinatorial Complexes] This paper proposes a data-driven framework that constructs Combinatorial Complexes (CCs) directly from fMRI time series using information-the…
+  [NeurIPS 2025 (Workshop: NeurReps)][Medical Imaging][Combinatorial Complexes] This paper proposes a data-driven framework that constructs Combinatorial Complexes (CCs) directly from fMRI time series using information-theoretic measures—namely S-information and O-information—encoding higher-order synergistic interactions among brain regions into topological structures, thereby laying the groundwork for applying topological deep learning to brain network analysis.
 tags:
   - "NeurIPS 2025 (Workshop: NeurReps)"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "O-Information"
   - "fMRI"
 date: 2026-05-08
-content_hash: 24b030abb9980c35
+content_hash: 3b358f95b481dfa9
 ---
 
 # The Human Brain as a Combinatorial Complex
@@ -135,11 +135,11 @@ Rank-1 edges are constructed based on pairwise mutual information with threshold
 
 ## Related Papers
 
+- [\[CVPR 2025\] SapiensID: Foundation for Human Recognition](../../CVPR2025/medical_imaging/sapiensid_foundation_for_human_recognition.md)
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
-- [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
-- [\[NeurIPS 2025\] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)
-- [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](../../ICCV2025/medical_imaging/neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
-- [\[AAAI 2026\] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](../../AAAI2026/medical_imaging/human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)
+- [\[ICML 2025\] Bayesian Inference for Correlated Human Experts and Classifiers](../../ICML2025/medical_imaging/bayesian_inference_for_correlated_human_experts_and_classifiers.md)
+- [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](../../CVPR2026/medical_imaging/dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
+- [\[CVPR 2025\] Human Knowledge Integrated Multi-modal Learning for Single Source Domain Generalization](../../CVPR2025/medical_imaging/human_knowledge_integrated_multi-modal_learning_for_single_source_domain_general.md)
 
 </div>
 

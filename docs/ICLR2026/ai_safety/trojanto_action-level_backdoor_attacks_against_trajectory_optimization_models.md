@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models
 description: >-
-  [ICLR 2026][AI Safety][Decision Transformer] The authors propose TrojanTO, the first action-level backdoor attack against Trajectory Optimization (TO) models such as the Decision Transformer. As a "post-training" attack, it requires poisoning only 0.3% of trajectories without manipulating reward signals. By employing "Trajectory Filtering + Batch Poisoning + Alte
+  [ICLR 2026][AI Safety][Backdoor Attack] The authors propose TrojanTO, the first action-level backdoor attack against Trajectory Optimization (TO) models such as the Decision Transformer. As a "post-training" attack, it requires poisoning only 0.3% of trajectories without manipulating reward signals. By employing "Trajectory Filtering + Batch Poisoning + Alternating Training," it establishes a strong coupling between the trigger and target actions. Across six D4RL tasks and th…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Decision Transformer
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Trajectory Optimization Models"
+  - "Offline RL"
+  - "Post-training Attack"
+  - "Decision Transformer"
 date: 2026-05-08
-content_hash: 2d91f52b84485968
+content_hash: c61a4f61013feacd
 ---
+
 # TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models
 
 **Conference**: ICLR 2026  
@@ -127,10 +132,20 @@ TrojanTO achieves an average CP of 0.701, a 105% improvement over Baffle (0.342)
 - **Value**: ⭐⭐⭐⭐ High practical significance for securing decision-making foundation models.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)
+- [\[ICLR 2026\] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models](stediff_revealing_the_spatial_and_temporal_redundancy_of_backdoor_attacks_in_tex.md)
+- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](../../CVPR2026/ai_safety/flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
+- [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[ICML 2025\] Adversarial Inception Backdoor Attacks against Reinforcement Learning](../../ICML2025/ai_safety/adversarial_inception_backdoor_attacks_against_reinforcement_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)

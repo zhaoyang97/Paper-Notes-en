@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] ARMS is the first adaptive red-teaming agent for Vision-Language Models (VLMs) capable of controllable generation of attack samples based on "risk definitions." It encapsulates 17 multimodal attacks into MCP servers for plug-and-play orchestration, utilizes a "Risk Category × Attack Strategy" two-dimensional hierarchic
+  [ICLR 2026][LLM Safety][Multimodal Red-teaming] ARMS is the first adaptive red-teaming agent for Vision-Language Models (VLMs) capable of controllable generation of attack samples based on "risk definitions." It encapsulates 17 multimodal attacks into MCP servers for plug-and-play orchestration, utilizes a "Risk Category × Attack Strategy" two-dimensional hierarchical memory coupled with $\epsilon$-greedy exploration to counter mode collapse and maximize attack diversity. It…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multimodal Red-teaming"
+  - "VLM Security"
+  - "Adaptive Attack"
+  - "Hierarchical Memory"
+  - "MCP Plug-and-Play"
 date: 2026-05-08
-content_hash: 02b75b16f779508e
+content_hash: 9d96de0af7d1482e
 ---
+
 # ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks
 
 **Conference**: ICLR 2026  
@@ -157,9 +163,9 @@ Fine-tuning with ARMS-BENCH achieved the best trade-off between robustness and u
 
 - [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
 - [\[ICLR 2026\] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)](tree-based_dialogue_reinforced_policy_optimization_for_red-teaming_attacks.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
 - [\[ICLR 2026\] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model](star_strategy-driven_automatic_jailbreak_red-teaming_for_large_language_model.md)
 - [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
-- [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
 
 </div>
 

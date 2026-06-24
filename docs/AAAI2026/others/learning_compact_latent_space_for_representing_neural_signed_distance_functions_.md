@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details
 description: >-
-  [AAAI 2026][Neural Signed Distance Function] This paper proposes a dual-branch architecture (generalization branch + overfitting branch) to learn a compact latent space over multiple neural SDFs. By combining a shared sp…
+  [AAAI 2026][Neural Signed Distance Function] This paper proposes a dual-branch architecture (generalization branch + overfitting branch) to learn a compact latent space over multiple neural SDFs. By combining a shared spatial feature grid with a novel bandwidth-based sampling strategy, the method recovers high-fidelity geometric details while maintaining compact latent codes, achieving state-of-the-art performance on Stanford Models, ShapeNet, and D-FAUST.
 tags:
   - "AAAI 2026"
   - "Neural Signed Distance Function"
@@ -11,7 +11,7 @@ tags:
   - "Volumetric Grid"
   - "Geometric Detail"
 date: 2026-05-08
-content_hash: 78abe2bae8a42ab8
+content_hash: 7429ef8f06e99f8b
 ---
 
 # Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details
@@ -163,11 +163,11 @@ Training details: grid feature learning rate $10^{-1}$, shape code learning rate
 
 ## Related Papers
 
+- [\[CVPR 2026\] InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space](../../CVPR2026/others/instantretouch_efficient_and_high-fidelity_instruction-guided_image_retouching_w.md)
 - [\[ICLR 2026\] Out of the Shadows: Exploring a Latent Space for Neural Network Verification](../../ICLR2026/others/out_of_the_shadows_exploring_a_latent_space_for_neural_network_verification.md)
 - [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](../../ICLR2026/others/a_single_architecture_for_representing_invariance_under_any_space_group.md)
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
-- [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](formal_abductive_latent_explanations_for_prototype-based_networks.md)
-- [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](../../ICML2026/others/disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
+- [\[CVPR 2025\] HotSpot: Signed Distance Function Optimization with an Asymptotically Sufficient Condition](../../CVPR2025/others/hotspot_signed_distance_function_optimization_with_an_asymptotically_sufficient_.md)
 
 </div>
 

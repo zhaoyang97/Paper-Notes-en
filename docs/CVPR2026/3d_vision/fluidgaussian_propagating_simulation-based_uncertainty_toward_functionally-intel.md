@@ -4,12 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][3D Gaussian Splatting] FluidGaussian is proposed to guide active view selection in 3D reconstruction through uncertainty metrics propagated via fluid simulation, ensuring that reconstruction results are not only visually realistic but also physically plausible for interactions.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Physics-aware Reconstruction"
+  - "Fluid Simulation"
+  - "Active View Selection"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: 3244d220f0330d24
+content_hash: 6ba98014d8f3aa15
 ---
+
 # FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ Visual PSNR achieved a maximum Gain of +8.6%, while velocity field divergence wa
 
 ## Related Papers
 
-- [\[CVPR 2026\] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer](diffusionharmonizer_bridging_neural_reconstruction_and_photorealistic_simulation.md)
+- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
+- [\[ICML 2026\] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction](../../ICML2026/3d_vision/trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t.md)
+- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](../../ICLR2026/3d_vision/uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
 - [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
 
 </div>
 

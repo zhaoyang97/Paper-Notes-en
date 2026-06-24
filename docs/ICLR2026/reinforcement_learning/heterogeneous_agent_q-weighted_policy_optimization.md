@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Heterogeneous Agent Q-weighted Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] HAQO integrates sequential advantage updates, Q-weighted diffusion policies, and entropy regularization into a unified framework. This allows heterogeneous agents to represent multimodal policies using diffusion models while ensuring monotonic improvement of joint returns, similar to trust region methods.
+  [ICLR 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] HAQO integrates sequential advantage updates, Q-weighted diffusion policies, and entropy regularization into a unified framework. This allows heterogeneous agents to represent multimodal policies using diffusion models while ensuring monotonic improvement of joint returns, similar to trust region methods.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent Reinforcement Learning"
+  - "Heterogeneous agents"
+  - "Diffusion policy"
+  - "Q-weighted variational objective"
+  - "Sequential updates"
+  - "Trust region"
+  - "Monotonic improvement guarantees"
 date: 2026-05-08
-content_hash: 5062ee07aebfa6f8
+content_hash: 62642725cdcad4bb
 ---
+
 # Heterogeneous Agent Q-weighted Policy Optimization
 
 **Conference**: ICLR 2026  

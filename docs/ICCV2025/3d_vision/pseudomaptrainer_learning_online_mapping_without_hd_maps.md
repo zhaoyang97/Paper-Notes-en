@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PseudoMapTrainer: Learning Online Mapping without HD Maps
 description: >-
-  [ICCV2025][3D Vision][Online Mapping] This paper proposes PseudoMapTrainer, the first framework to train online mapping models **entirely without GT HD Maps**: it reconstructs road surfaces from multi-camera images via 2…
+  [ICCV2025][3D Vision][Online Mapping] This paper proposes PseudoMapTrainer, the first framework to train online mapping models **entirely without GT HD Maps**: it reconstructs road surfaces from multi-camera images via 2D Gaussian Splatting (RoGS) and combines a pretrained semantic segmentation model (Mask2Former) to generate vectorized pseudo labels. A mask-aware matching algorithm and loss function are further designed to handle partially occluded pseudo labels…
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Semi-Supervised Learning"
   - "Vectorized Map"
 date: 2026-05-08
-content_hash: bd7290719184f04d
+content_hash: 4d6ffd6a5bef0f81
 ---
 
 # PseudoMapTrainer: Learning Online Mapping without HD Maps
@@ -171,8 +171,8 @@ The core challenge of pseudo labels lies in **partial observability**: due to oc
 - [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
 - [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](../../CVPR2026/3d_vision/onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Online Language Splatting](online_language_splatting.md)
-- [\[ICCV 2025\] IM360: Large-scale Indoor Mapping with 360 Cameras](im360_large-scale_indoor_mapping_with_360_cameras.md)
-- [\[ICCV 2025\] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction](dynamic_point_maps_a_versatile_representation_for_dynamic_3d_reconstruction.md)
+- [\[CVPR 2025\] GaussHDR: High Dynamic Range Gaussian Splatting via Learning Unified 3D and 2D Local Tone Mapping](../../CVPR2025/3d_vision/gausshdr_high_dynamic_range_gaussian_splatting_via_learning_unified_3d_and_2d_lo.md)
+- [\[CVPR 2025\] HD-EPIC: A Highly-Detailed Egocentric Video Dataset](../../CVPR2025/3d_vision/hd-epic_a_highly-detailed_egocentric_video_dataset.md)
 
 </div>
 

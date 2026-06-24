@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] Addressing the issue that hour-long videos cannot fit into the context window of Multi-modal Large Language Models (MLLMs), this paper proposes a **training-free** input-side framework. It utilizes a video-text retrieval model to score the relevance of video segments, followed by **Adaptive Frame Sampling** (AFS) and *
+  [ICLR2026][Video Understanding][Long Video Understanding] Addressing the issue that hour-long videos cannot fit into the context window of Multi-modal Large Language Models (MLLMs), this paper proposes a **training-free** input-side framework. It utilizes a video-text retrieval model to score the relevance of video segments, followed by **Adaptive Frame Sampling** (AFS) and **Dynamic Resolution Allocation** (DRA). The relevance estimation is refined by incorporating candidate…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Long Video Understanding"
+  - "Training-Free"
+  - "Keyframe Retrieval"
+  - "Adaptive Sampling"
+  - "Multi-modal Large Language Model"
 date: 2026-05-08
-content_hash: 3256f394b3a8062a
+content_hash: 3415c0eed03ae4c5
 ---
+
 # A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity
 
 **Conference**: ICLR2026  
@@ -132,15 +138,16 @@ Incremental component stacking (∆avg relative to previous row):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
+- [\[CVPR 2026\] Video Panels for Long Video Understanding](../../CVPR2026/video_understanding/video_panels_for_long_video_understanding.md)
+- [\[ICLR 2026\] QueryStream: Advancing Streaming Video Understanding with Query-Aware Pruning and Proactive Response](querystream_advancing_streaming_video_understanding_with_query-aware_pruning_and.md)
 - [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](../../CVPR2026/video_understanding/divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
-- [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](../../NeurIPS2025/video_understanding/unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
-- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](../../ICML2026/video_understanding/video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
-- [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][few-shot action recognition] This paper proposes the Language-Guided Action Anatomy (LGA) framework, which leverages large language models to decompose action labels into atomic-level act…
+  [ICCV 2025][Video Understanding][few-shot action recognition] This paper proposes the Language-Guided Action Anatomy (LGA) framework, which leverages large language models to decompose action labels into atomic-level action descriptions encoded as subject–motion–object triplets. On the video side, a clustering-based segmentation strategy partitions frame sequences into corresponding atomic action stages. Multimodal fusion and matching are then performed at the atomic level…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "multimodal fusion"
   - "metric learning"
 date: 2026-05-08
-content_hash: d8f408731caa1487
+content_hash: 76471665855e65df
 ---
 
 # Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition
@@ -142,10 +142,10 @@ The LGA framework consists of three core modules: **Action Anatomy**, **Fine-gra
 ## Related Papers
 
 - [\[ICCV 2025\] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition](trokens_semantic-aware_relational_trajectory_tokens_for_few-shot_action_recognit.md)
-- [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](../../AAAI2026/video_understanding/task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
+- [\[CVPR 2026\] MPL: Match-guided Prototype Learning for Few-shot Action Recognition](../../CVPR2026/video_understanding/mpl_match-guided_prototype_learning_for_few-shot_action_recognition.md)
+- [\[CVPR 2025\] Temporal Alignment-Free Video Matching for Few-Shot Action Recognition](../../CVPR2025/video_understanding/temporal_alignment-free_video_matching_for_few-shot_action_recognition.md)
 - [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
-- [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](../../NeurIPS2025/video_understanding/seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
-- [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
+- [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](../../AAAI2026/video_understanding/task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
 
 </div>
 

@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization
 description: >-
-  [ICLR 2026][Others][Noise-Aware Generalization] First formalizes the Noise-Aware Generalization (NAG) problem—simultaneously pursuing in-domain robustness and out-of-domain generalization under label noise—and proposes the DL4ND method to detect noisy labels through cross-domain comparison, achieving an improvement of up to 12.5% across 7 datasets.
+  [ICLR 2026][Noise-Aware Generalization] First formalizes the Noise-Aware Generalization (NAG) problem—simultaneously pursuing in-domain robustness and out-of-domain generalization under label noise—and proposes the DL4ND method to detect noisy labels through cross-domain comparison, achieving an improvement of up to 12.5% across 7 datasets.
 tags:
-  - ICLR 2026
-  - Others
-  - Noise-Aware Generalization
-  - Domain Generalization
-  - Learning with Noisy Labels
-  - Cross-Domain Noise Detection
-  - DL4ND
+  - "ICLR 2026"
+  - "Noise-Aware Generalization"
+  - "Domain Generalization"
+  - "Learning with Noisy Labels"
+  - "Cross-Domain Noise Detection"
+  - "DL4ND"
 date: 2026-05-08
-content_hash: d0fa07ee1697525c
+content_hash: ce9c14a0a0f01474
 ---
+
 # Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization
 
 **Conference**: ICLR 2026  
@@ -149,8 +149,8 @@ Each component contributes 2-4% to performance. The cross-domain comparison abla
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bridging Domain Expertise and Generalization for Performance Estimation](../../CVPR2026/others/bridging_domain_expertise_and_generalization_for_performance_estimation.md)
 - [\[CVPR 2025\] Gradient-Guided Annealing for Domain Generalization](../../CVPR2025/others/gradient-guided_annealing_for_domain_generalization.md)
+- [\[CVPR 2026\] Bridging Domain Expertise and Generalization for Performance Estimation](../../CVPR2026/others/bridging_domain_expertise_and_generalization_for_performance_estimation.md)
 - [\[ICML 2025\] Set-Valued Predictions for Robust Domain Generalization](../../ICML2025/others/set_valued_predictions_for_robust_domain_generalization.md)
 - [\[ICML 2025\] FEDTAIL: Federated Long-Tailed Domain Generalization with Sharpness-Guided Gradient Matching](../../ICML2025/others/fedtail_federated_long-tailed_domain_generalization_with_sharpness-guided_gradie.md)
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)

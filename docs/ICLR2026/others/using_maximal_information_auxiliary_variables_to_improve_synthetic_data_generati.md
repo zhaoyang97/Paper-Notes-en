@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models
 description: >-
-  [ICLR 2026][Others][TabPFN] This paper identifies that direct use of TabPFN for tabular synthetic data generation fails on weakly correlated variables. It proposes Maximal Information Auxiliary Variables (MIAV): by rank-matching random noise to real variables as auxiliary inputs, TabPFN only needs to learn the univariate relationship between $X_j
+  [ICLR2026][TabPFN] This paper identifies that direct use of TabPFN for tabular synthetic data generation fails on weakly correlated variables. It proposes Maximal Information Auxiliary Variables (MIAV): by rank-matching random noise to real variables as auxiliary inputs, TabPFN only needs to learn the univariate relationship between $X_j$ and $M_j$, enabling stable and efficient generation of synthetic data that preserves marginal distributions and association structures.
 tags:
-  - ICLR 2026
-  - Others
-  - TabPFN
-  - in-context learning
+  - "ICLR2026"
+  - "TabPFN"
+  - "Tabular Synthetic Data Generation"
+  - "Maximal Information Auxiliary Variables"
+  - "Privacy Protection"
+  - "In-context Learning"
 date: 2026-05-08
-content_hash: b57cdc75b9c43276
+content_hash: dc1b45a624a34e17
 ---
+
 # Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models
 
 **Conference**: ICLR2026  
@@ -156,9 +159,9 @@ Rather than traditional "module removal," the authors validate MIAV through diff
 
 ## Related Papers
 
+- [\[ACL 2025\] TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data](../../ACL2025/others/targa_targeted_synthetic_data_generation_for_practical_reasoning_over_structured.md)
 - [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](../../ICML2026/others/gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](../../AAAI2026/others/faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
-- [\[ACL 2025\] TARGA: Targeted Synthetic Data Generation for Practical Reasoning over Structured Data](../../ACL2025/others/targa_targeted_synthetic_data_generation_for_practical_reasoning_over_structured.md)
 - [\[ICML 2026\] TabMGP: Martingale Posterior with TabPFN](../../ICML2026/others/tabmgp_martingale_posterior_with_tabpfn.md)
 - [\[ACL 2025\] Generating Synthetic Relational Tabular Data via Structural Causal Models](../../ACL2025/others/generating_synthetic_relational_tabular_data_via_structural_causal_models.md)
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] FreeViS: Training-free Video Stylization with Inconsistent References
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] FreeViS incorporates multiple "mutually inconsistent" stylized reference frames into a pre-trained I2V diffusion model. Using a trio of isolated attention, high-frequency compensation, and optical flow guidance, it solves propagation errors found in single-reference methods under completely training-free conditions, pr
+  [ICLR 2026][Video Generation][Video Stylization] FreeViS incorporates multiple "mutually inconsistent" stylized reference frames into a pre-trained I2V diffusion model. Using a trio of isolated attention, high-frequency compensation, and optical flow guidance, it solves propagation errors found in single-reference methods under completely training-free conditions, producing video stylization with rich stylistic details and strong temporal consistency.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Stylization"
+  - "Training-free"
+  - "Diffusion Inversion"
+  - "I2V Models"
+  - "Multi-reference Frames"
+  - "Optical Flow Guidance"
 date: 2026-05-08
-content_hash: dcab204e1219b7e0
+content_hash: 644489793718b728
 ---
+
 # FreeViS: Training-free Video Stylization with Inconsistent References
 
 **Conference**: ICLR 2026  
@@ -146,8 +153,8 @@ Components were verified individually: Removing **IHC** leads to inaccurate scen
 - [\[ICLR 2026\] LightCtrl: Training-free Controllable Video Relighting](lightctrl_training-free_controllable_video_relighting.md)
 - [\[CVPR 2026\] DreamStyle: A Unified Framework for Video Stylization](../../CVPR2026/video_generation/dreamstyle_a_unified_framework_for_video_stylization.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](../../CVPR2026/video_generation/flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
+- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](../../CVPR2026/video_generation/flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training
 description: >-
-  [NeurIPS 2025][LLM Alignment][RL post-training] This paper proposes TBA (Trajectory Balance with Asynchrony), which combines the GFlowNet Trajectory Balance (TB) objective with an asynchronous distributed RL architecture…
+  [NeurIPS 2025][LLM Alignment][RL post-training] This paper proposes TBA (Trajectory Balance with Asynchrony), which combines the GFlowNet Trajectory Balance (TB) objective with an asynchronous distributed RL architecture to decouple exploration and learning in LLM post-training, achieving 4–50× speedups without performance degradation across mathematical reasoning, preference fine-tuning, and automated red-teaming tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "off-policy learning"
   - "GFlowNet"
 date: 2026-05-08
-content_hash: 8ef2ef410e8dc176
+content_hash: 7e333847c572d77f
 ---
 
 # Trajectory Balance with Asynchrony: Decoupling Exploration and Learning for Fast, Scalable LLM Post-Training
@@ -139,8 +139,8 @@ The TBA architecture consists of two types of nodes: multiple **Searcher nodes**
 - [\[NeurIPS 2025\] GVPO: Group Variance Policy Optimization for Large Language Model Post-Training](gvpo_group_variance_policy_optimization_for_large_language_model_post-training.md)
 - [\[AAAI 2026\] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF](../../AAAI2026/llm_alignment/decorl_decoupling_reasoning_chains_via_parallel_sub-step_gen.md)
 - [\[ICLR 2026\] Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability](../../ICLR2026/llm_alignment/spectrum_tuning_post-training_for_distributional_coverage_and_in-context_steerab.md)
-- [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](../../ICLR2026/llm_alignment/chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
 - [\[ICML 2026\] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards](../../ICML2026/llm_alignment/decoupling_reasoning_and_confidence_resurrecting_calibration_in_reinforcement_le.md)
+- [\[ICLR 2026\] Fluent Alignment with Disfluent Judges: Post-training for Lower-Resource Languages](../../ICLR2026/llm_alignment/fluent_alignment_with_disfluent_judges_post-training_for_lower-resource_language.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HistLens: Mapping Idea Change across Concepts and Corpora
 description: >-
-  [ACL 2026][Interpretability][Paper Note] The HistLens framework is proposed to decompose conceptual representations into interpretable semantic basis vectors using Sparse Autoencoders (SAE). It tracks the diachronic evolution trajectories of multiple concepts and corpora within a shared coordinate system and supports implicit concept computation, providing qu
+  [ACL 2026][Interpretability][Conceptual history analysis] The HistLens framework is proposed to decompose conceptual representations into interpretable semantic basis vectors using Sparse Autoencoders (SAE). It tracks the diachronic evolution trajectories of multiple concepts and corpora within a shared coordinate system and supports implicit concept computation, providing quantifiable and comparable analytical tools for digital humanities and conceptual history research.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Conceptual history analysis"
+  - "Sparse Autoencoders"
+  - "Diachronic semantic change"
+  - "Cross-corpus comparison"
+  - "Implicit concept computation"
 date: 2026-05-08
-content_hash: b4c049c8796ba72a
+content_hash: b7edadfd7a5a1cd3
 ---
+
 # HistLens: Mapping Idea Change across Concepts and Corpora
 
 **Conference**: ACL 2026  
@@ -125,8 +131,8 @@ Analysis of four concepts—"Individual," "Society," "State," and "World"—in t
 - [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
 - [\[ACL 2026\] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models](follow_the_flow_on_information_flow_across_textual_tokens_in_text-to-image_model.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](../../ICLR2026/interpretability/concepts_information_bottleneck_models.md)
-- [\[AAAI 2026\] LLM Circuit Analyses Are Consistent Across Training and Scale](../../AAAI2026/interpretability/llm_circuit_analyses_consistent_across_training_and_scale.md)
 - [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](../../ICLR2026/interpretability/evolution_of_concepts_in_language_model_pre-training.md)
+- [\[ICLR 2026\] Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs](../../ICLR2026/interpretability/hedonic_neurons_a_mechanistic_mapping_of_latent_coalitions_in_transformer_mlps.md)
 
 </div>
 

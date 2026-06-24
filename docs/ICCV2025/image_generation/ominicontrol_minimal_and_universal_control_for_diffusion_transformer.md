@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] OminiControl: Minimal and Universal Control for Diffusion Transformer
 description: >-
-  [Image Generation] OminiControl is proposed to unify spatially aligned and non-aligned image control tasks on the DiT architecture with only 0.1% additional parameters. Core innovations include unified sequence processin…
+  [Image Generation] OminiControl is proposed to unify spatially aligned and non-aligned image control tasks on the DiT architecture with only 0.1% additional parameters. Core innovations include unified sequence processing, dynamic positional encoding, and an attention bias control mechanism.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 58744c7a821b2fd5
+content_hash: 90f4e7393fd490f0
 ---
 
 # OminiControl: Minimal and Universal Control for Diffusion Transformer
@@ -138,10 +138,10 @@ OminiControl achieves superior performance with only 1% of ControlNet's paramete
 ## Related Papers
 
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
+- [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](joint_diffusion_models_in_continual_learning.md)
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
-- [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
 
 </div>
 

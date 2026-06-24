@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent
 description: >-
-  [ICLR 2026][LLM Efficiency][Multi-Conv DAPO] MemAgent segments "unbounded long documents" into fixed-length chunks for streaming processing, replacing the ever-expanding context with a fixed-length, overwritable token memory. By utilizing an extended version of Multi-Conv DAPO for end-to-end training of memory read/write strategies, 8K window models can extrapola
+  [ICLR 2026][LLM Efficiency][Long context] MemAgent segments "unbounded long documents" into fixed-length chunks for streaming processing, replacing the ever-expanding context with a fixed-length, overwritable token memory. By utilizing an extended version of Multi-Conv DAPO for end-to-end training of memory read/write strategies, 8K window models can extrapolate to 3.5M token QA tasks with nearly no performance loss and strictly linear inference complexity.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Multi-Conv DAPO
-  - RLVR
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long context"
+  - "fixed-length memory"
+  - "linear complexity"
+  - "length extrapolation"
+  - "Multi-Conv DAPO"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 85c1cc28c67447f0
+content_hash: 367a2b47b4ab3bef
 ---
+
 # MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent
 
 **Conference**: ICLR 2026  
@@ -122,14 +127,14 @@ This work lies at the intersection of and transcends three long-context routes (
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers](rmaat_astrocyte-inspired_memory_compression_and_replay_for_efficient_long-contex.md)
 - [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
+- [\[ICLR 2026\] When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework](when_does_divide_and_conquer_work_for_long_context_llm_a_noise_decomposition_fra.md)
 - [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
 - [\[ICLR 2026\] Dynamic Speculative Agent Planning](dynamic_speculative_agent_planning.md)
 
 </div>

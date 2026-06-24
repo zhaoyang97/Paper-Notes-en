@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Image Guides Images: Consistent Video Amodal Completion with Rectified In-Context Exemplar Guidance
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] IC-Amodal proposes a **training-free** framework for Video Amodal Completion (VAC). By leveraging a pre-trained image inpainting model (Flux.1-Fill), it reformulates VAC as "rectified in-context learning." It utilizes dual-frame collaboration to construct reliable exemplars to address the cold-start problem, followed b
+  [CVPR 2026][Video Understanding][Video amodal completion] IC-Amodal proposes a **training-free** framework for Video Amodal Completion (VAC). By leveraging a pre-trained image inpainting model (Flux.1-Fill), it reformulates VAC as "rectified in-context learning." It utilizes dual-frame collaboration to construct reliable exemplars to address the cold-start problem, followed by sub-region attention weight modulation to anchor the model's focus on the exemplars. This achieves b…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video amodal completion"
+  - "training-free"
+  - "visual in-context"
+  - "attention modulation"
+  - "diffusion completion"
 date: 2026-05-08
-content_hash: c0324e77e16625fe
+content_hash: f95ee235ed056a84
 ---
+
 # Image Guides Images: Consistent Video Amodal Completion with Rectified In-Context Exemplar Guidance
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ Incremental impact of In-Context (IC), Sec 3.2 (Calibrated Rectification), and S
 
 ## Related Papers
 
+- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
+- [\[CVPR 2026\] VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer](vidprism_heterogeneous_mixture_of_experts_for_image-to-video_transfer.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
 - [\[CVPR 2026\] Seeing Conversations: Communication Context Identification in Egocentric Video](seeing_conversations_communication_context_identification_in_egocentric_video.md)
-- [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] Towards Data-Efficient Video Pre-training with Frozen Image Foundation Models](towards_data-efficient_video_pre-training_with_frozen_image_foundation_models.md)
-- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
-- [\[CVPR 2026\] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)
+- [\[CVPR 2026\] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)
 
 </div>
 

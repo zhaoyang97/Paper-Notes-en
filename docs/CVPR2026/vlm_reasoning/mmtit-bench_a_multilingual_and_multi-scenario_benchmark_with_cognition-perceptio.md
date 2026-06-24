@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation
 description: >-
-  [CVPR 2026][Multilingual & Translation][Paper Note] Constructed MMTIT-Bench, a multilingual and multi-scenario text-image machine translation benchmark covering 14 non-English and non-Chinese languages. Proposed the CPR-Trans data paradigm (Cognition → Perception → Translation Reasoning), which significantly improves end-to-end translation quality on 3B and 7B models, w
+  [CVPR 2026][VLM Reasoning][Text-Image Translation] Constructed MMTIT-Bench, a multilingual and multi-scenario text-image machine translation benchmark covering 14 non-English and non-Chinese languages. Proposed the CPR-Trans data paradigm (Cognition → Perception → Translation Reasoning), which significantly improves end-to-end translation quality on 3B and 7B models, with the 7B model achieving performance competitive with a 235B model.
 tags:
-  - CVPR 2026
-  - Multilingual & Translation
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Text-Image Translation"
+  - "Multilingual Benchmark"
+  - "Chain-of-Thought"
+  - "Cognition-Perception-Reasoning"
+  - "VLLM Evaluation"
 date: 2026-05-08
-content_hash: 75cdccb7d58707f3
+content_hash: 8e53b173c4c315ab
 ---
+
 # MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation
 
 **Conference**: CVPR 2026  
@@ -157,15 +163,16 @@ Ablation of reasoning components (7B, Gemini judge other2en):
 -   Value: ⭐⭐⭐⭐ Fills a gap in multilingual TIMT evaluation; the CPR-Trans paradigm has broad transferability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] SEA-Vision: A Multilingual Benchmark for Document and Scene Text Understanding in Southeast Asia](sea-vision_a_multilingual_benchmark_for_comprehensive_document_and_scene_text_un.md)
-- [\[ACL 2025\] CruxEval-X: A Benchmark for Multilingual Code Reasoning, Understanding and Execution](../../ACL2025/multilingual_mt/cruxeval-x_a_benchmark_for_multilingual_code_reasoning_understanding_and_executi.md)
-- [\[ACL 2025\] Exploring In-Image Machine Translation with Real-World Background](../../ACL2025/multilingual_mt/exploring_in-image_machine_translation_with_real-world_background.md)
-- [\[ACL 2026\] Why Do Multilingual Reasoning Gaps Emerge in Reasoning Language Models?](../../ACL2026/multilingual_mt/why_do_multilingual_reasoning_gaps_emerge_in_reasoning_language_models.md)
-- [\[ACL 2026\] TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law](../../ACL2026/multilingual_mt/translaw_a_large-scale_dataset_and_multi-agent_benchmark_simulating_professional.md)
+- [\[CVPR 2026\] Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding](mimic_human_cognition_master_multi-image_reasoning_a_meta-action_framework_for_e.md)
+- [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](../../ICLR2026/vlm_reasoning/iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
+- [\[CVPR 2026\] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](minerva-cultural_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
+- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
+- [\[CVPR 2026\] VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image](visionleaf_entropy-guided_leaf-first_reasoning_for_efficient_and_accurate_think-.md)
 
 </div>
 

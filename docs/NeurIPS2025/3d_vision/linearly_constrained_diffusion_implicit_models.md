@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Linearly Constrained Diffusion Implicit Models
 description: >-
-  [NeurIPS 2025][3D Vision][diffusion models] This paper proposes CDIM, a DDIM-based algorithm for solving linear inverse problems. By aligning the residual energy with the $\chi^2$ distribution of the forward diffusion pr…
+  [NeurIPS 2025][3D Vision][diffusion models] This paper proposes CDIM, a DDIM-based algorithm for solving linear inverse problems. By aligning the residual energy with the $\chi^2$ distribution of the forward diffusion process, CDIM adaptively controls the number and step size of projection steps, achieving inference speeds 10–50× faster than DPS while exactly satisfying measurement constraints in the noiseless case.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "DDIM"
   - "accelerated sampling"
 date: 2026-05-08
-content_hash: 5a89dab5f08430c1
+content_hash: 1ef0ba8152df0296
 ---
 
 # Linearly Constrained Diffusion Implicit Models
@@ -170,10 +170,10 @@ CDIM achieves comparable or superior quality while running ~28× faster than DPS
 ## Related Papers
 
 - [\[NeurIPS 2025\] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans](micadangelo_fine-grained_reconstruction_of_constrained_cad_models_from_3d_scans.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](../../CVPR2026/3d_vision/i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
+- [\[CVPR 2025\] Difix3D+: Improving 3D Reconstructions with Single-Step Diffusion Models](../../CVPR2025/3d_vision/difix3d_improving_3d_reconstructions_with_single-step_diffusion_models.md)
+- [\[NeurIPS 2025\] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis](umami_unifying_masked_autoregressive_models_and_deterministic_rendering_for_view.md)
 - [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](../../ICCV2025/3d_vision/spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](../../ICCV2025/3d_vision/repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
-- [\[NeurIPS 2025\] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis](umami_unifying_masked_autoregressive_models_and_deterministic_rendering_for_view.md)
 
 </div>
 

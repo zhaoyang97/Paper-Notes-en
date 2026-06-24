@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Synthetic Bootstrapped Pretraining
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] SBP (Synthetic Bootstrapped Pretraining) extracts semantically similar document pairs from pretraining corpora, trains a conditional synthesizer to "generate related $d_2$ given $d_1$," and then scales it across the entire corpus to synthesize a large volume of new documents for joint pretraining with real data. In com
+  [ICLR 2026][LLM Pretraining][Synthetic Pretraining] SBP (Synthetic Bootstrapped Pretraining) extracts semantically similar document pairs from pretraining corpora, trains a conditional synthesizer to "generate related $d_2$ given $d_1$," and then scales it across the entire corpus to synthesize a large volume of new documents for joint pretraining with real data. In compute-matched 1T token settings for 3B and 6B models, it consistently exceeds strong repetition baselines and…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Synthetic Pretraining"
+  - "Inter-document Correlation"
+  - "Bootstrapping"
+  - "Conditional Synthesizer"
+  - "Bayesian Concept Model"
 date: 2026-05-08
-content_hash: 522d7db30a72d789
+content_hash: 0c04886ce4a4f946
 ---
+
 # Synthetic Bootstrapped Pretraining
 
 **Conference**: ICLR 2026  
@@ -126,10 +132,10 @@ SBP gains vary across benchmarks: at 200B-scale, WebQS (+3.74), TriviaQA (+3.36)
 ## Related Papers
 
 - [\[ICLR 2026\] OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation](optimsyn_influence-guided_rubrics_optimization_for_synthetic_data_generation.md)
-- [\[ECCV 2024\] Scaling Backwards: Minimal Synthetic Pre-training?](../../ECCV2024/llm_pretraining/scaling_backwards_minimal_synthetic_pre-training.md)
 - [\[ICLR 2026\] Reformulation for Pretraining Data Augmentation](reformulation_for_pretraining_data_augmentation.md)
+- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](llm_pretraining_with_continuous_concepts.md)
+- [\[ECCV 2024\] Scaling Backwards: Minimal Synthetic Pre-training?](../../ECCV2024/llm_pretraining/scaling_backwards_minimal_synthetic_pre-training.md)
 - [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
-- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
 
 </div>
 

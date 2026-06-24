@@ -2,14 +2,23 @@
 title: >-
   [Paper Note] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][Quantization] The authors propose AdaRadar, an online adaptive radar data compression framework based on DCT spectral pruning and zeroth-order proxy gradients. It achieves over 100× compression with only ~1%p loss in detection/segmentation performance, effectively alleviating the bandwidth bottleneck between radar sensors and comput
+  [CVPR2026][Autonomous Driving][Radar Perception] The authors propose AdaRadar, an online adaptive radar data compression framework based on DCT spectral pruning and zeroth-order proxy gradients. It achieves over 100× compression with only ~1%p loss in detection/segmentation performance, effectively alleviating the bandwidth bottleneck between radar sensors and compute units.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Quantization
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Radar Perception"
+  - "Adaptive Compression"
+  - "Spectral Pruning"
+  - "Zeroth-order Gradient"
+  - "Bitrate Control"
+  - "Quantization"
+  - "DCT"
+  - "Object Detection"
+  - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: 21aba688c0abf766
+content_hash: 1ce00269df4910c1
 ---
+
 # AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception
 
 **Conference**: CVPR2026  
@@ -149,11 +158,11 @@ The online optimization goal is $\max_{\{r_t\}} \mathbb{E}[J_t(r_t)]$, where $J_
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
-- [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
+- [\[ICLR 2026\] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception](../../ICLR2026/autonomous_driving/rate-distortion_optimized_pragmatic_communication_for_collaborative_perception.md)
 - [\[AAAI 2026\] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving](../../AAAI2026/autonomous_driving/radarmp_motion_perception_for_4d_mmwave_radar_in_autonomous_driving.md)
+- [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
-- [\[CVPR 2026\] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](sgnlf_spectralgeometric_neural_fields_for_posefre.md)
+- [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
 
 </div>
 

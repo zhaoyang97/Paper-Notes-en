@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference
 description: >-
-  [ICML 2026][learning_theory][testing-by-betting] The authors point out that the "fixed sample size" concentration inequalities used by the classic Hoeffding Tree (HT) for splitting on data streams are violated by its own "data-dependent stopping rule." They reformulate the split criterion using testing-by-betting + Universal Portfolio, allowing both single trees and
+  [ICML 2026 Spotlight][Data Stream Learning][Online Decision Trees] The authors point out that the "fixed sample size" concentration inequalities used by the classic Hoeffding Tree (HT) for splitting on data streams are violated by its own "data-dependent stopping rule." They reformulate the split criterion using testing-by-betting + Universal Portfolio, allowing both single trees and Adaptive Random Forests to maintain controlled Type-I errors at any stopping time…
 tags:
-  - ICML 2026
-  - learning_theory
-  - testing-by-betting
-  - Hoeffding Tree
-  - Adaptive Random Forest
+  - "ICML 2026 Spotlight"
+  - "Data Stream Learning"
+  - "Decision Trees"
+  - "Sequential Inference"
+  - "Online Decision Trees"
+  - "anytime-valid inference"
+  - "testing-by-betting"
+  - "Hoeffding Tree"
+  - "Adaptive Random Forest"
 date: 2026-05-08
-content_hash: 00fa189e9d500f26
+content_hash: a13ccad436a5f251
 ---
+
 # Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference
 
 **Conference**: ICML 2026 Spotlight  
@@ -139,11 +144,11 @@ A warm-up experiment (RandomTree, 10 numerical + 10 categorical features, depth 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Online Decision-Focused Learning](../../ICLR2026/learning_theory/online_decision-focused_learning.md)
+- [\[ICLR 2026\] Online Decision Making with Generative Action Sets](../../ICLR2026/learning_theory/online_decision_making_with_generative_action_sets.md)
 - [\[ICML 2026\] When Sample Selection Bias Precipitates Model Collapse](when_sample_selection_bias_precipitates_model_collapse.md)
 - [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](active_learning_with_low-rank_structure_for_data_selection.md)
-- [\[AAAI 2026\] Generalizing Analogical Inference from Boolean to Continuous Domains](../../AAAI2026/learning_theory/generalizing_analogical_inference_from_boolean_to_continuous_domains.md)
-- [\[ICLR 2026\] An Improved Model-free Decision-estimation Coefficient with Applications in Adversarial MDPs](../../ICLR2026/learning_theory/an_improved_model-free_decision-estimation_coefficient_with_applications_in_adve.md)
-- [\[ICLR 2026\] Branch and Bound Search for Exact MAP Inference in Credal Networks](../../ICLR2026/learning_theory/branch_and_bound_search_for_exact_map_inference_in_credal_networks.md)
+- [\[ICLR 2026\] Multi-Condition Conformal Selection](../../ICLR2026/learning_theory/multi-condition_conformal_selection.md)
 
 </div>
 

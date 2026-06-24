@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] For Operations Research (OR) modeling tasks, the authors observed that over 30% of labels in existing OR datasets are severely incorrect, rendering directly trained PRMs nearly ineffective. They first cleaned seed data using a three-stage verification, then constructed the first OR-ProcessQA dataset with step-level cor
+  [ICLR 2026][Reasoning][Process Reward Model] For Operations Research (OR) modeling tasks, the authors observed that over 30% of labels in existing OR datasets are severely incorrect, rendering directly trained PRMs nearly ineffective. They first cleaned seed data using a three-stage verification, then constructed the first OR-ProcessQA dataset with step-level correctness labels using MCTS and GPT-4o. This enabled the training of the first generative process reward model for O…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Process Reward Model"
+  - "Operations Research"
+  - "Step-level Supervision"
+  - "Data Synthesis"
+  - "Generative PRM"
 date: 2026-05-08
-content_hash: 089b880726cf96f6
+content_hash: 15d6ec93071dfcb8
 ---
+
 # OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research
 
 **Conference**: ICLR 2026  
@@ -123,10 +129,20 @@ Analyzing DPO and performance variations on Qwen2.5-14B:
 - Value: ⭐⭐⭐⭐ Provides a reusable pipeline for data cleaning and step-level supervision in verifiable reasoning domains.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models](steporlm_a_self-evolving_framework_with_generative_process_supervision_for_opera.md)
+- [\[ACL 2025\] Dynamic and Generalizable Process Reward Modeling (DG-PRM)](../../ACL2025/llm_reasoning/dgprm_dynamic_process_reward.md)
+- [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
+- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
+- [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models](steporlm_a_self-evolving_framework_with_generative_process_supervision_for_opera.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Synthetic Data] This paper proposes SceneCrafter, a unified 3DGS-based simulation framework that simultaneously supports synthetic data generation and closed-loop evaluation via an adaptiv…
+  [ICCV 2025][Autonomous Driving][Synthetic Data] This paper proposes SceneCrafter, a unified 3DGS-based simulation framework that simultaneously supports synthetic data generation and closed-loop evaluation via an adaptive kinematic model and bidirectional interactive agent control. Experiments demonstrate that synthetic data significantly improves the generalization of end-to-end autonomous driving models, yielding up to 18% improvement in Route Completion.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Closed-Loop Evaluation"
   - "Interactive Simulation"
 date: 2026-05-08
-content_hash: dccb4c4bcc7bf575
+content_hash: 42caabf2caa82ac2
 ---
 
 # Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving
@@ -147,8 +147,8 @@ AKM parameters are learned from real IMU data. Background and foreground 3DGS mo
 - [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](../../CVPR2026/autonomous_driving/scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
 - [\[ICCV 2025\] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model](world4drive_end-to-end_autonomous_driving_via_intention-aware_physical_latent_wo.md)
+- [\[CVPR 2025\] DiffusionDrive: Truncated Diffusion Model for End-to-End Autonomous Driving](../../CVPR2025/autonomous_driving/diffusiondrive_truncated_diffusion_model_for_end-to-end_autonomous_driving.md)
 - [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
-- [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
 
 </div>
 

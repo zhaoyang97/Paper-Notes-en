@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Supervised Graph Contrastive Learning for Gene Regulatory Networks
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] The authors treat "gene knockdown experiments" as supervisory signals for graph contrastive learning. By ensuring that graph augmentations for Gene Regulatory Networks (GRN) are based on real biological perturbations rather than random noise, the method achieves clearer disease subtype clustering on patient-specific GR
+  [ICML2026][Computational Biology][Gene Regulatory Networks] The authors treat "gene knockdown experiments" as supervisory signals for graph contrastive learning. By ensuring that graph augmentations for Gene Regulatory Networks (GRN) are based on real biological perturbations rather than random noise, the method achieves clearer disease subtype clustering on patient-specific GRNs and consistently outperforms existing graph representation learning baselines across 13 downstrea…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Gene Regulatory Networks"
+  - "Graph Contrastive Learning"
+  - "Gene Knockdown"
+  - "Supervised Augmentation"
+  - "Cancer Subtypes"
 date: 2026-05-08
-content_hash: e2d44e5eabc8e526
+content_hash: b95ce03d485a22cb
 ---
+
 # Supervised Graph Contrastive Learning for Gene Regulatory Networks
 
 **Conference**: ICML2026  
@@ -130,6 +136,7 @@ SupGCL outperforms baselines including GAE (reconstructive), GraphCL (graph-leve
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

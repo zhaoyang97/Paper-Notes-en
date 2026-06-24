@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Meta-RL Induces Exploration in Language Agents
 description: >-
-  [ICLR 2026][LLM Agent][Meta-RL] The LaMer framework is proposed to introduce Meta-Reinforcement Learning (Meta-RL) into LLM agent training. By optimizing cross-episode rewards and employing reflection-based in-context policy adaptation, the framework enables language agents to actively explore environments, achieving absolute performance improvements
+  [ICLR 2026][LLM Agent][Meta-RL] The LaMer framework is proposed to introduce Meta-Reinforcement Learning (Meta-RL) into LLM agent training. By optimizing cross-episode rewards and employing reflection-based in-context policy adaptation, the framework enables language agents to actively explore environments, achieving absolute performance improvements of 11%, 14%, and 19% on Sokoban, MineSweeper, and Webshop, respectively.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Meta-RL
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Meta-RL"
+  - "Exploration & Exploitation"
+  - "Multi-round Interaction"
+  - "Cross-episode Training"
+  - "Self-reflection"
 date: 2026-05-08
-content_hash: 717a1ce997ab9a5c
+content_hash: e9d7c6fe261b7b8c
 ---
+
 # Meta-RL Induces Exploration in Language Agents
 
 **Conference**: ICLR 2026  
@@ -163,11 +168,11 @@ Reflections provide significant gains; "Reflection only" even outperforms the de
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Synthetic Task Generation for Agents via Exploration](scaling_synthetic_task_generation_for_agents_via_exploration.md)
 - [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](go-browse_training_web_agents_with_structured_exploration.md)
 - [\[ICLR 2026\] Dual-Scale World Memory for LLM Agents towards Hard-Exploration Problems](dual-scale_world_memory_for_llm_agents_towards_hard-exploration_problems.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](../../ACL2026/llm_agent/meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
 - [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
-- [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deformation-based In-Context Learning for Point Cloud Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes DeformPIC, which redefines point cloud In-Context Learning from the "mask reconstruction" paradigm to a "deformation transfer" paradigm. By utilizing a Deformation Extraction Network to extract task semantics and a Deformation Transfer Network to migrate deformations to query point clouds, it reduces CD b
+  [CVPR 2026][3D Vision][Point Cloud In-Context Learning] Ours proposes DeformPIC, which redefines point cloud In-Context Learning from the "mask reconstruction" paradigm to a "deformation transfer" paradigm. By utilizing a Deformation Extraction Network to extract task semantics and a Deformation Transfer Network to migrate deformations to query point clouds, it reduces CD by 1.6, 1.8, and 4.7 in reconstruction, denoising, and registration tasks, respectively.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point Cloud In-Context Learning"
+  - "Deformation Networks"
+  - "Geometric Reasoning"
+  - "Masked Point Modeling"
+  - "Multi-task Generalist Model"
 date: 2026-05-08
-content_hash: 7bc89e1ab288b97c
+content_hash: d01d075f895b0f87
 ---
+
 # Deformation-based In-Context Learning for Point Cloud Understanding
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Consider a registration task. Given a prompt pair where the input is a tilted ai
 
 ## Related Papers
 
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[ECCV 2024\] DG-PIC: Domain Generalized Point-In-Context Learning for Point Cloud Understanding](../../ECCV2024/3d_vision/dg-pic_domain_generalized_point-in-context_learning_for_point_cloud_understandin.md)
+- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
+- [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
 
 </div>
 

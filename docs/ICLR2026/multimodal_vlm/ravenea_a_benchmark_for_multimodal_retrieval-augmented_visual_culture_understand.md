@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Ravenea is the first benchmark constructed to evaluate multimodal retrieval-augmented cultural understanding. It consists of 1,868 instances and 11,396 human-ranked Wikipedia documents covering 11 categories across 8 countries. Evaluations of 7 multimodal retrievers and 17 VLMs demonstrate that culture-aware RAG improv
+  [ICLR 2026][Multimodal VLM][Retrieval-Augmented Generation] Ravenea is the first benchmark constructed to evaluate multimodal retrieval-augmented cultural understanding. It consists of 1,868 instances and 11,396 human-ranked Wikipedia documents covering 11 categories across 8 countries. Evaluations of 7 multimodal retrievers and 17 VLMs demonstrate that culture-aware RAG improves performance by an average of 6% on cVQA and 11% on cIC.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Retrieval-Augmented Generation"
+  - "Cultural Understanding"
+  - "Multimodal Benchmark"
+  - "Visual Question Answering"
+  - "Image Captioning"
 date: 2026-05-08
-content_hash: 8c893ddc60a92460
+content_hash: d51f873470c5a0b1
 ---
+
 # RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,10 @@ Downstream Tasks (17 VLMs, w/ vs w/o RAG):
 ## Related Papers
 
 - [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](../../ACL2026/multimodal_vlm/universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
 - [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/multimodal_vlm/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
-- [\[CVPR 2025\] RAP: Retrieval-Augmented Personalization for Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/rap_retrieval-augmented_personalization_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/multimodal_vlm/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
-- [\[ICLR 2026\] DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies](dualtoken_towards_unifying_visual_understanding_and_generation_with_dual_visual_.md)
+- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/multimodal_vlm/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 
 </div>
 

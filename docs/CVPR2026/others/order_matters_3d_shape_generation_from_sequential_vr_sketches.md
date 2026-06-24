@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Order Matters: 3D Shape Generation from Sequential VR Sketches
 description: >-
-  [CVPR 2026][3D Vision][VR sketching] The authors propose VRSketch2Shape, a framework that models temporal stroke information of VR sketches for the first time. Utilizing a sequence-aware BERT encoder and a diffusion-based 3D generator (SDFusion), it generates high-fidelity 3D shapes from ordered VR sketches. The work also contributes a multi-category data
+  [CVPR 2026][VR sketching] The authors propose VRSketch2Shape, a framework that models temporal stroke information of VR sketches for the first time. Utilizing a sequence-aware BERT encoder and a diffusion-based 3D generator (SDFusion), it generates high-fidelity 3D shapes from ordered VR sketches. The work also contributes a multi-category dataset containing 20k synthetic and 900 real sketches.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VR sketching
-  - 3D shape generation
-  - stroke order
-  - diffusion model
-  - sketch-to-shape
+  - "CVPR 2026"
+  - "VR sketching"
+  - "3D shape generation"
+  - "stroke order"
+  - "diffusion model"
+  - "sketch-to-shape"
 date: 2026-05-08
-content_hash: a2bef9ce13f4fb36
+content_hash: 605d31b85f59873a
 ---
+
 # Order Matters: 3D Shape Generation from Sequential VR Sketches
 
 **Conference**: CVPR 2026  
@@ -153,11 +153,11 @@ Keeping only the first 50% of sketch points achieves performance close to full s
 
 ## Related Papers
 
-- [\[CVPR 2026\] ShapeR: Robust Conditional 3D Shape Generation from Casual Captures](shaper_robust_conditional_3d_shape_generation_from_casual_captures.md)
-- [\[CVPR 2026\] Parallel Rigidity Matters for Bundle Adjustment](parallel_rigidity_matters_for_bundle_adjustment.md)
-- [\[ECCV 2024\] Forest2Seq: Revitalizing Order Prior for Sequential Indoor Scene Synthesis](../../ECCV2024/3d_vision/forest2seq_revitalizing_order_prior_for_sequential_indoor_scene_synthesis.md)
-- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)
+- [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
+- [\[CVPR 2026\] Hearing the Room Through the Shape of the Drum: Modal-Guided Sound Recovery from Multi-Point Surface Vibrations](hearing_the_room_through_the_shape_of_the_drum_modal-guided_sound_recovery_from_.md)
+- [\[AAAI 2026\] Higher-Order Responsibility](../../AAAI2026/others/higher-order_responsibility.md)
+- [\[ECCV 2024\] High-Fidelity 3D Textured Shapes Generation by Sparse Encoding and Adversarial Decoding](../../ECCV2024/others/high-fidelity_3d_textured_shapes_generation_by_sparse_encoding_and_adversarial_d.md)
 
 </div>
 

@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Fair Classification by Direct Intervention on Operating Characteristics
 description: >-
-  [ICLR 2026][AI Safety][demographic parity] Instead of searching in the classifier space, this work directly performs geometric optimization on the **group-level ROC convex hulls (operating characteristic space)** of a pre-trained classifier. It first locates the optimal operating point that satisfies multiple fairness constraints and then post-processes the bas
+  [ICLR 2026][AI Safety][Group fairness] Instead of searching in the classifier space, this work directly performs geometric optimization on the **group-level ROC convex hulls (operating characteristic space)** of a pre-trained classifier. It first locates the optimal operating point that satisfies multiple fairness constraints and then post-processes the base classifier using minimal label flipping to reach that point, satisfying multiple fairness metrics like DP, EO…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - demographic parity
-  - equalized odds
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Group fairness"
+  - "ROC convex hull"
+  - "post-processing"
+  - "linear fractional constraints"
+  - "demographic parity"
+  - "equalized odds"
+  - "predictive parity"
 date: 2026-05-08
-content_hash: bab9636582f6bf29
+content_hash: 6536f12425fd5b65
 ---
+
 # Fair Classification by Direct Intervention on Operating Characteristics
 
 **Conference**: ICLR 2026  
@@ -134,8 +140,8 @@ Note: ✗ indicates that the fairness constraint was not satisfied.
 
 - [\[ICLR 2026\] Rethinking Pareto Frontier: On the Optimal Trade-offs in Fair Classification](rethinking_pareto_frontier_on_the_optimal_trade-offs_in_fair_classification.md)
 - [\[ICLR 2026\] Fair Conformal Classification via Learning Representation-Based Groups](fair_conformal_classification_via_learning_representation-based_groups.md)
-- [\[ICML 2026\] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency](../../ICML2026/ai_safety/fair_decisions_from_calibrated_scores_achieving_optimal_classification_while_sat.md)
 - [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](../../ICML2026/ai_safety/demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
+- [\[ICML 2026\] Fair Decisions from Calibrated Scores: Achieving Optimal Classification While Satisfying Sufficiency](../../ICML2026/ai_safety/fair_decisions_from_calibrated_scores_achieving_optimal_classification_while_sat.md)
 - [\[ICLR 2026\] Private Rate-Constrained Optimization with Applications to Fair Learning](private_rate-constrained_optimization_with_applications_to_fair_learning.md)
 
 </div>

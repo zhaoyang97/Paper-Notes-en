@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jacobian Aligned Random Forests
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] JARF estimates the Expected Jacobian Outer Product (EJOP) of class probability gradients using a random forest to obtain a **globally shared linear preconditioning matrix**. This rotates "oblique" splitting directions toward the coordinate axes, allowing standard axis-aligned random forests to achieve the accuracy of o
+  [ICLR 2026][Optimization][Random Forest] JARF estimates the Expected Jacobian Outer Product (EJOP) of class probability gradients using a random forest to obtain a **globally shared linear preconditioning matrix**. This rotates "oblique" splitting directions toward the coordinate axes, allowing standard axis-aligned random forests to achieve the accuracy of oblique decision trees with almost no additional training cost.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Random Forest"
+  - "Oblique Decision Trees"
+  - "Expected Jacobian Outer Product (EJOP)"
+  - "Global Preconditioning"
+  - "Supervised Dimension Reduction"
 date: 2026-05-08
-content_hash: b0ccedfbf3abb379
+content_hash: 02b50ea4e5ef9a9f
 ---
+
 # Jacobian Aligned Random Forests
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,7 @@ JARF achieved the best performance in 12 out of 15 tasks and never performed sig
 - [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
 - [\[ICLR 2026\] Matched Data, Better Models: Target Aligned Data Filtering with Sparse Autoencoders](matched_data_better_models_target_aligned_data_filtering_with_sparse_autoencoder.md)
 - [\[ICML 2025\] Random Feature Representation Boosting](../../ICML2025/optimization/random_feature_representation_boosting.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
 
 </div>
 

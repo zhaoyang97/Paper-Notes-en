@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML
 description: >-
-  [NeurIPS 2025][LLM/NLP][TinyML] This paper proposes msf-CNN, a multi-stage patch-based fusion optimization technique based on a directed acyclic graph (DAG) shortest-path algorithm. By efficiently searching for the optim…
+  [NeurIPS 2025][LLM (Other)][TinyML] This paper proposes msf-CNN, a multi-stage patch-based fusion optimization technique based on a directed acyclic graph (DAG) shortest-path algorithm. By efficiently searching for the optimal fusion configuration of CNNs, msf-CNN achieves 50%–87% reduction in peak RAM usage compared to existing methods (MCUNetV2, StreamNet) across various microcontrollers (ARM Cortex-M, RISC-V, ESP32), while maintaining controllable computational overhead.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "TinyML"
   - "CNN fusion"
   - "microcontroller"
@@ -14,7 +14,7 @@ tags:
   - "DAG shortest path"
   - "IoT"
 date: 2026-05-08
-content_hash: f6200143dd384911
+content_hash: 4a3cd65dc5478326
 ---
 
 # msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML
@@ -174,11 +174,11 @@ The heuristic method (MCUNetV2, fusing only head layers) achieves 32.08 kB RAM /
 
 ## Related Papers
 
+- [\[CVPR 2025\] STAA-SNN: Spatial-Temporal Attention Aggregator for Spiking Neural Networks](../../CVPR2025/llm_nlp/staa-snn_spatial-temporal_attention_aggregator_for_spiking_neural_networks.md)
 - [\[NeurIPS 2025\] CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers](cat_circular-convolutional_attention_for_sub-quadratic_transformers.md)
 - [\[NeurIPS 2025\] Opinion Maximization in Social Networks by Modifying Internal Opinions](opinion_maximization_in_social_networks_by_modifying_internal_opinions.md)
 - [\[NeurIPS 2025\] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks](mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ.md)
 - [\[NeurIPS 2025\] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance](the_last_vote_a_multi-stakeholder_framework_for_language_model_governance.md)
-- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](../../AAAI2026/llm_nlp/profuser_progressive_fusion_of_large_language_models.md)
 
 </div>
 

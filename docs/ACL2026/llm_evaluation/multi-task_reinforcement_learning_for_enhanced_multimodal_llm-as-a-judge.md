@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge
 description: >-
-  [ACL 2026][LLM Evaluation][MLLM-as-a-Judge] This paper proposes MT-RL-Judge, a multi-task reinforcement learning framework that jointly optimizes multiple evaluation tasks using GRPO to train a unified MLLM-as-a-Judge model. It consistently outperforms SFT baselines across six benchmarks, including text-image alignment, safety compliance, and visual quality asse
+  [ACL 2026][LLM Evaluation][MLLM-as-a-Judge] This paper proposes MT-RL-Judge, a multi-task reinforcement learning framework that jointly optimizes multiple evaluation tasks using GRPO to train a unified MLLM-as-a-Judge model. It consistently outperforms SFT baselines across six benchmarks, including text-image alignment, safety compliance, and visual quality assessment. Furthermore, it demonstrates robust out-of-distribution generalization on the unseen MJ-Bench pairwise compa…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - MLLM-as-a-Judge
-  - GRPO
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "MLLM-as-a-Judge"
+  - "Multi-task Reinforcement Learning"
+  - "GRPO"
+  - "Unified Evaluation"
+  - "Out-of-Distribution Generalization"
 date: 2026-05-08
-content_hash: 93332592f0d1d1c2
+content_hash: 18cac7f92d19890d
 ---
+
 # Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge
 
 **Conference**: ACL 2026  
@@ -137,11 +141,11 @@ The SFT phase uses AdamW with a learning rate of $1.0\times10^{-5}$, a batch siz
 
 ## Related Papers
 
-- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
 - [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
 - [\[ACL 2026\] Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases](reasoning_model_is_superior_llm-judge_yet_suffers_from_biases.md)
-- [\[ICML 2026\] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/beyond_trajectory-level_attribution_graph-based_credit_assignment_for_agentic_re.md)
+- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
 - [\[ACL 2026\] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark](sessionintentbench_a_multi-task_inter-session_intention-shift_modeling_benchmark.md)
+- [\[ICLR 2026\] Detecting Data Contamination from Reinforcement Learning Post-training for Large Language Models](../../ICLR2026/llm_evaluation/detecting_data_contamination_from_reinforcement_learning_post-training_for_large.md)
 
 </div>
 

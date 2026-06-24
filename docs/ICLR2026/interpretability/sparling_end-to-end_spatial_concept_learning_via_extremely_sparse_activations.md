@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations
 description: >-
-  [ICLR 2026][Interpretability][motif] This paper proves a "Motif Identifiability Theorem"—asserting that as long as intermediate concepts are local, sparse, and sufficient/necessary for the output, they can be precisely recovered using only end-to-end supervision (without any intermediate concept labels). The authors introduce the SPARLING algorithm, which
+  [ICLR 2026][Interpretability][motif] This paper proves a "Motif Identifiability Theorem"—asserting that as long as intermediate concepts are local, sparse, and sufficient/necessary for the output, they can be precisely recovered using only end-to-end supervision (without any intermediate concept labels). The authors introduce the SPARLING algorithm, which approximates this optimal solution using a "Spatial Sparsity Layer" that forces activations to $99\%+$ sparsity combined w…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - motif
+  - "ICLR 2026"
+  - "Interpretability"
+  - "motif"
+  - "spatial concepts"
+  - "extreme sparsity"
+  - "identifiability"
+  - "concept bottleneck"
 date: 2026-05-08
-content_hash: 8a2a90e8fb5787f3
+content_hash: 3385f28aa85822c4
 ---
+
 # Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations
 
 **Conference**: ICLR 2026  
@@ -134,6 +139,7 @@ A critical finding is the trade-off between E2EE and CE: increasing density by 2
 - Value: ⭐⭐⭐⭐ Provides rare theoretical guarantees for unsupervised concept discovery; the sparsity layer has independent utility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

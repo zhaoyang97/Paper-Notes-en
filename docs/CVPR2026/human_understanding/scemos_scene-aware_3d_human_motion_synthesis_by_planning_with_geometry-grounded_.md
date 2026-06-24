@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens
 description: >-
-  [CVPR 2026][Human Understanding][BEV] SceMoS replaces expensive 3D voxel/point cloud supervision with two lightweight 2D scene cues—DINOv2 features from Birds-Eye-View (BEV) for global semantic planning and local 2D height maps to embed surface physics directly into the motion token vocabulary. It achieves SOTA motion realism and contact accuracy on TRUMAN
+  [CVPR 2026][Human Understanding][Scene-aware motion synthesis] SceMoS replaces expensive 3D voxel/point cloud supervision with two lightweight 2D scene cues—DINOv2 features from Birds-Eye-View (BEV) for global semantic planning and local 2D height maps to embed surface physics directly into the motion token vocabulary. It achieves SOTA motion realism and contact accuracy on TRUMANS while reducing trainable scene encoding parameters by an order of magnitude (~4M vs. ~50M).
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - BEV
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Scene-aware motion synthesis"
+  - "human-scene interaction"
+  - "BEV"
+  - "height map"
+  - "geometry-grounded tokenization"
 date: 2026-05-08
-content_hash: 85d90e5726b1099e
+content_hash: b3a01be755f900b0
 ---
+
 # SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ VQ reconstruction quality (MPJPE/MPJVE in mm) ablation to verify scene geometry 
 
 ## Related Papers
 
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
 - [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
 - [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
-- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
 - [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
-- [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](party_part-guidance_for_expressive_text-to-motion_synthesis.md)
+- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
 
 </div>
 

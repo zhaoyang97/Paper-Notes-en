@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] This paper proposes Location Preference Optimization (LPO), which optimizes the spatial localization accuracy of GUI agents through entropy-based window rewards and physical distance-based dynamic location rewards integrated with the GRPO framework, achieving SOTA performance in both offline and online evaluations.
+  [ACL 2026 Findings][LLM Agent][GUI Interaction] This paper proposes Location Preference Optimization (LPO), which optimizes the spatial localization accuracy of GUI agents through entropy-based window rewards and physical distance-based dynamic location rewards integrated with the GRPO framework, achieving SOTA performance in both offline and online evaluations.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "GUI Interaction"
+  - "Location Preference Optimization"
+  - "Reinforcement Learning"
+  - "Information Entropy"
+  - "GRPO"
 date: 2026-05-08
-content_hash: df887aaee62a766a
+content_hash: 2f9c5d842261bcf5
 ---
+
 # LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization
 
 **Conference**: ACL 2026 Findings  
@@ -131,7 +135,7 @@ The SFT stage utilizes multiple internal datasets to train basic interaction cap
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

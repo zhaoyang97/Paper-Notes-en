@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Background Invariance Testing According to Semantic Proximity
 description: >-
-  [ICCV 2025][Multimodal VLM][background invariance testing] This paper proposes a background invariance testing method based on semantic proximity. It constructs a keyword ontology via association analysis to systematical…
+  [ICCV 2025][Multimodal VLM][background invariance testing] This paper proposes a background invariance testing method based on semantic proximity. It constructs a keyword ontology via association analysis to systematically sample background scenes, achieving an optimal balance between test diversity (recall) and consistency with human judgment (precision). The work further demonstrates that visualization-based testing frameworks are more informative than global statistical me…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "visualization-based testing"
   - "neuron coverage"
 date: 2026-05-08
-content_hash: 9e68b8105b694661
+content_hash: f3e73e398af56303
 ---
 
 # Background Invariance Testing According to Semantic Proximity
@@ -151,10 +151,10 @@ The IRR score of automated judgment is comparable to that among human annotators
 ## Related Papers
 
 - [\[ICCV 2025\] MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding](musevl_modeling_unified_vlm_through_semantic_discrete_encodi.md)
+- [\[ECCV 2024\] Omniview-Tuning: Boosting Viewpoint Invariance of Vision-Language Pre-training Models](../../ECCV2024/multimodal_vlm/omniview-tuning_boosting_viewpoint_invariance_of_vision-language_pre-training_mo.md)
 - [\[ICCV 2025\] OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography](oraclefusion_assisting_the_decipherment_of_oracle_bone_script_with_structurally_.md)
-- [\[AAAI 2026\] Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference](../../AAAI2026/multimodal_vlm/tri-bench_stress-testing_vlm_reliability_on_spatial_reasoning_under_camera_tilt_.md)
-- [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
-- [\[AAAI 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](../../AAAI2026/multimodal_vlm/empowering_semantic-sensitive_underwater_image_enhancement_with_vlm.md)
+- [\[CVPR 2025\] ASAP: Advancing Semantic Alignment for Multi-Modal Manipulation Detection](../../CVPR2025/multimodal_vlm/asap_advancing_semantic_alignment_promotes_multi-modal_manipulation_detecting_an.md)
+- [\[ICML 2025\] Vision Graph Prompting via Semantic Low-Rank Decomposition](../../ICML2025/multimodal_vlm/vision_graph_prompting_via_semantic_low-rank_decomposition.md)
 
 </div>
 

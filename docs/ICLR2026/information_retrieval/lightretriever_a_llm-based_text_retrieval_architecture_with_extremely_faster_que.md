@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] LightRetriever is proposed as an extremely asymmetric LLM retrieval architecture: while the document side retains the full LLM encoder, the query side completely removes deep modeling—dense retrieval requires only embedding lookup plus averaging, and sparse retrieval requires only token counting. This achieves a $1000
+  [ICLR 2026][Information Retrieval & RAG][LLM Retrieval] LightRetriever is proposed as an extremely asymmetric LLM retrieval architecture: while the document side retains the full LLM encoder, the query side completely removes deep modeling—dense retrieval requires only embedding lookup plus averaging, and sparse retrieval requires only token counting. This achieves a $1000 \times$ speedup in query encoding and a $10 \times$ improvement in end-to-end throughput while maintaini…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "LLM Retrieval"
+  - "Asymmetric Encoder"
+  - "Fast Query Inference"
+  - "Hybrid Retrieval"
+  - "Embedding Cache"
 date: 2026-05-08
-content_hash: 075d7c0760573a76
+content_hash: dc9b569e22fbe085
 ---
+
 # LightRetriever: A LLM-based Text Retrieval Architecture with Extremely Faster Query Inference
 
 **Conference**: ICLR 2026  
@@ -141,6 +147,7 @@ The training objective is contrastive loss combined with FLOPs regularization fo
 - Value: ⭐⭐⭐⭐⭐ Significant value for practical retrieval system deployment; the $1000 \times$ speedup is highly attractive.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -149,7 +156,7 @@ The training objective is contrastive loss combined with FLOPs regularization fo
 - [\[ICLR 2026\] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference](raee_a_robust_retrieval-augmented_early_exit_framework_for_efficient_inference.md)
 - [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
 - [\[ACL 2025\] Hypothetical Documents or Knowledge Leakage? Rethinking LLM-based Query Expansion](../../ACL2025/information_retrieval/hypothetical_documents_or_knowledge_leakage_rethinking_llm-based_query_expansion.md)
-- [\[ICLR 2026\] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving](adacache_adaptive_caching_and_context_augmentation_for_efficient_llm_serving.md)
+- [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
 
 </div>
 

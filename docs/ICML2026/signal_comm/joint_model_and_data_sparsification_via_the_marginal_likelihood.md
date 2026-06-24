@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Joint Model and Data Sparsification via the Marginal Likelihood
 description: >-
-  [ICML 2026][Signal & Communications][Paper Note] JMDS achieves simultaneous model and data sparsification through a unified objective of **maximizing marginal likelihood**. By avoiding the sub-optimality of multi-stage pipes, it maintains performance superior to independent sparsification across CIFAR, ImageNet, and WikiText at 5-10× joint compression ratios.
+  [ICML 2026][Signal & Communication][Joint Sparsification] JMDS achieves simultaneous model and data sparsification through a unified objective of **maximizing marginal likelihood**. By avoiding the sub-optimality of multi-stage pipes, it maintains performance superior to independent sparsification across CIFAR, ImageNet, and WikiText at 5-10× joint compression ratios.
 tags:
-  - ICML 2026
-  - Signal & Communications
+  - "ICML 2026"
+  - "Signal & Communication"
+  - "Joint Sparsification"
+  - "Marginal Likelihood"
+  - "Laplace Approximation"
+  - "Neural Tangent Kernel"
 date: 2026-05-08
-content_hash: 2107d0a2b492d5b3
+content_hash: b7f0b8309fa6f965
 ---
+
 # Joint Model and Data Sparsification via the Marginal Likelihood
 
 **Conference**: ICML 2026  
@@ -135,10 +140,10 @@ Optimizing $\theta, \mathbf{m}$, and $\mathbf{s}$ jointly is a non-convex proble
 ## Related Papers
 
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
+- [\[ICLR 2026\] Synchronizing Probabilities in Model-Driven Lossless Compression](../../ICLR2026/signal_comm/synchronizing_probabilities_in_model-driven_lossless_compression.md)
+- [\[ICLR 2026\] TS-DDAE: A Novel Temporal-Spectral Denoising Diffusion AutoEncoder for Wireless Signal Recognition Model Pre-training](../../ICLR2026/signal_comm/ts-ddae_a_novel_temporal-spectral_denoising_diffusion_autoencoder_for_wireless_s.md)
 - [\[ECCV 2024\] RAW-Adapter: Adapting Pre-trained Visual Model to Camera RAW Images](../../ECCV2024/signal_comm/raw-adapter_adapting_pre-trained_visual_model_to_camera_raw_images.md)
 - [\[ICML 2025\] Large Language Model (LLM)-enabled In-context Learning for Wireless Network Optimization](../../ICML2025/signal_comm/large_language_model_llm-enabled_in-context_learning_for_wireless_network_optimi.md)
-- [\[ICML 2026\] Meta-learning Structure-Preserving Dynamics](meta-learning_structure-preserving_dynamics.md)
-- [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](../../AAAI2026/signal_comm/balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
 
 </div>
 

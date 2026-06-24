@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] Possibilistic Predictive Uncertainty for Deep Learning
 description: >-
-  [ICML 2026][Others][Dirichlet] This paper replaces the Bayesian probabilistic framework with possibility theory to propose DAPPr. By projecting the possibilistic posterior in the parameter space onto the predictive space via supremum and fitting it with a learnable Dirichlet possibility function, the authors derive a method for modeling epistemic un
+  [ICML 2026][Epistemic Uncertainty] This paper replaces the Bayesian probabilistic framework with possibility theory to propose DAPPr. By projecting the possibilistic posterior in the parameter space onto the predictive space via supremum and fitting it with a learnable Dirichlet possibility function, the authors derive a method for modeling epistemic uncertainty that requires only 10 lines of code, directly replaces cross-entropy, and outperforms the EDL family in OOD detecti…
 tags:
-  - ICML 2026
-  - Others
-  - Dirichlet
-  - second-order predictor
-  - EDL
+  - "ICML 2026"
+  - "Epistemic Uncertainty"
+  - "Possibility Theory"
+  - "Dirichlet"
+  - "Second-order Predictor"
+  - "EDL"
 date: 2026-05-08
-content_hash: 85799ec2245ed909
+content_hash: 7d2bf76e2d69ee3f
 ---
+
 # Possibilistic Predictive Uncertainty for Deep Learning
 
 **Conference**: ICML 2026  
@@ -137,7 +139,7 @@ The paper includes empirical validation of the over-parameterization assumption,
 - [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
 - [\[NeurIPS 2025\] Uncertainty Estimation by Flexible Evidential Deep Learning](../../NeurIPS2025/others/uncertainty_estimation_by_flexible_evidential_deep_learning.md)
 - [\[ICML 2026\] Sequential Group Composition: A Window into the Mechanics of Deep Learning](sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)
-- [\[ICML 2026\] Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations](rectified_lpjepa_joint-embedding_predictive_architectures_with_sparse_and_maximu.md)
+- [\[ICLR 2026\] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors](../../ICLR2026/others/stable_and_scalable_deep_predictive_coding_networks_with_meta-prediction_errors.md)
 
 </div>
 

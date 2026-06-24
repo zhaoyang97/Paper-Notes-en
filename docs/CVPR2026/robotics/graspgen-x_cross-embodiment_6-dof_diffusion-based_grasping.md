@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Diffusion Model] GraspGen-X conditions a diffusion-based 6-DOF grasp model on "gripper representation"—a 12-dimensional Swept Volume heuristic describing the space the fingers sweep through during closing. By training on 25 procedurally generated grippers and 395 million simulated grasps, it achieves zero-shot 6-DOF grasping for **unse
+  [CVPR 2026][Robotics][6-DOF Grasping] GraspGen-X conditions a diffusion-based 6-DOF grasp model on "gripper representation"—a 12-dimensional Swept Volume heuristic describing the space the fingers sweep through during closing. By training on 25 procedurally generated grippers and 395 million simulated grasps, it achieves zero-shot 6-DOF grasping for **unseen real grippers + unseen objects** for the first time, with a real-robot success rate of 79%…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Robotics"
+  - "6-DOF Grasping"
+  - "Cross-embodiment"
+  - "Diffusion Models"
+  - "Gripper Representation (Swept Volume)"
+  - "Procedural Generation"
 date: 2026-05-08
-content_hash: 32bd247900bade3e
+content_hash: 9b6c9a750bff3dce
 ---
+
 # GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping
 
 **Conference**: CVPR 2026  
@@ -147,9 +152,9 @@ Trained only on simulation data, it generalized to a real-world new gripper. Suc
 
 - [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
 - [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
+- [\[ECCV 2024\] Learning Cross-Hand Policies of High-DOF Reaching and Grasping](../../ECCV2024/robotics/learning_cross-hand_policies_of_high-dof_reaching_and_grasping.md)
 - [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
 - [\[CVPR 2026\] TraceGen: World Modeling in 3D Trace Space Enables Learning from Cross-Embodiment Videos](tracegen_world_modeling_in_3d_trace_space_enables_learning_from_cross-embodiment.md)
-- [\[ECCV 2024\] Learning Cross-Hand Policies of High-DOF Reaching and Grasping](../../ECCV2024/robotics/learning_cross-hand_policies_of_high-dof_reaching_and_grasping.md)
 
 </div>
 

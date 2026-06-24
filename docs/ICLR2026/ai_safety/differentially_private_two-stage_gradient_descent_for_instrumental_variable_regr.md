@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Differentially Private Two-Stage Gradient Descent for Instrumental Variable Regression
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper proposes DP-2S-GD—the first differentially private algorithm for Instrumental Variable Regression (IVaR). It rewrites the classic Two-Stage Least Squares (2SLS) as a two-stage gradient descent process, performing per-sample clipping and injecting calibrated Gaussian noise in each gradient update step to sati
+  [ICLR2026][AI Safety][Differential Privacy] This paper proposes DP-2S-GD—the first differentially private algorithm for Instrumental Variable Regression (IVaR). It rewrites the classic Two-Stage Least Squares (2SLS) as a two-stage gradient descent process, performing per-sample clipping and injecting calibrated Gaussian noise in each gradient update step to satisfy $\rho$-zCDP. The authors provide finite-sample convergence rates that explicitly characterize the optimization-p…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Instrumental Variable Regression"
+  - "Two-Stage Least Squares"
+  - "Gradient Perturbation"
+  - "Finite-Sample Convergence"
 date: 2026-05-08
-content_hash: bf2f56ae6e3cc9ee
+content_hash: aadd525ba630c46f
 ---
+
 # Differentially Private Two-Stage Gradient Descent for Instrumental Variable Regression
 
 **Conference**: ICLR2026  
@@ -118,8 +124,6 @@ The authors validate the theory on synthetic and real data. Privacy intensity le
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

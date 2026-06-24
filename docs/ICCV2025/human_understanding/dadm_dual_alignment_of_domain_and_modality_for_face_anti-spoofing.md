@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing
 description: >-
-  [ICCV 2025][Human Understanding][Face Anti-Spoofing] This paper proposes the DADM framework, which simultaneously addresses intra-domain modality misalignment and inter-domain modality misalignment in multimodal face ant…
+  [ICCV 2025][Human Understanding][Face Anti-Spoofing] This paper proposes the DADM framework, which simultaneously addresses intra-domain modality misalignment and inter-domain modality misalignment in multimodal face anti-spoofing via a Mutual Information Mask (MIM) module and a dual domain-modality alignment optimization strategy, achieving state-of-the-art performance across four evaluation protocols.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Mutual Information"
   - "Invariant Risk Minimization"
 date: 2026-05-08
-content_hash: 8407e5b42a9c8e90
+content_hash: 22b4680d0698f4e0
 ---
 
 # DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing
@@ -148,10 +148,10 @@ MI loss comparison: The proposed simplified MI estimator (13.63/92.96) outperfor
 ## Related Papers
 
 - [\[AAAI 2026\] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning](../../AAAI2026/human_understanding/pa-fas_towards_interpretable_and_generalizable_multimodal_face_anti-spoofing_via.md)
+- [\[ECCV 2024\] Towards Unified Representation of Invariant-Specific Features in Missing Modality Face Anti-Spoofing](../../ECCV2024/human_understanding/towards_unified_representation_of_invariant-specific_features_in_missing_modalit.md)
+- [\[CVPR 2025\] Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing](../../CVPR2025/human_understanding/optimal_transport-guided_source-free_adaptation_for_face_anti-spoofing.md)
 - [\[CVPR 2026\] FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing](../../CVPR2026/human_understanding/facecot_cot_reasoning_face_anti_spoofing.md)
 - [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](../../CVPR2026/human_understanding/from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](../../CVPR2026/human_understanding/a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
-- [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
 
 </div>
 

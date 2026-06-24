@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Source-Free CDFSL] This paper reveals that in cross-domain few-shot fine-tuning of VLMs, enhancing visual discriminability actually harms cross-modal alignment (the "discriminability trap"). It proposes two plug-and-play modules, SVL and RA, to suppress visual learning shortcuts and guide cross-modal alignment, achieving SOTA on 4 CDFSL
+  [CVPR2026][Medical Imaging][Source-Free CDFSL] This paper reveals that in cross-domain few-shot fine-tuning of VLMs, enhancing visual discriminability actually harms cross-modal alignment (the "discriminability trap"). It proposes two plug-and-play modules, SVL and RA, to suppress visual learning shortcuts and guide cross-modal alignment, achieving SOTA on 4 CDFSL datasets and 11 FSL datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Source-Free CDFSL
-  - Vision-Language Model
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Source-Free CDFSL"
+  - "Vision-Language Model"
+  - "Cross-modal Alignment"
+  - "Visual Discriminability Trap"
+  - "CLIP Fine-tuning"
 date: 2026-05-08
-content_hash: a03671260377dc1b
+content_hash: 94cfe0cf14da59dd
 ---
+
 # Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning
 
 **Conference**: CVPR2026  
@@ -155,11 +159,11 @@ A smaller Gap indicates better alignment. Enhancing visual learning worsens alig
 
 ## Related Papers
 
-- [\[CVPR 2026\] Addressing Exacerbated Attention Sink for Source-Free Cross-Domain Few-Shot Learning](addressing_exacerbated_attention_sink_for_source-free_cross-domain_few-shot_lear.md)
-- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
-- [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
-- [\[CVPR 2026\] Towards Multimodal Domain Generalization with Few Labels](towards_multimodal_domain_generalization_with_few_labels.md)
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
+- [\[CVPR 2026\] Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning](reclaiming_lost_text_layers_for_source-free_cross-domain_few-shot_learning.md)
+- [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
+- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
+- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 
 </div>
 

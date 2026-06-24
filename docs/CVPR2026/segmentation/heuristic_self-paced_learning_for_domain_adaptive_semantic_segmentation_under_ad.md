@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions
 description: >-
-  [CVPR 2026][Segmentation][Reinforcement Learning] This paper reformulates class-level curriculum learning in unsupervised domain adaptation as a sequential decision-making problem in reinforcement learning. It proposes the HeuSCM framework, which achieves autonomous curriculum planning through high-dimensional semantic state perception and a class-fair policy gradient
+  [CVPR 2026][Segmentation][Unsupervised Domain Adaptation] This paper reformulates class-level curriculum learning in unsupervised domain adaptation as a sequential decision-making problem in reinforcement learning. It proposes the HeuSCM framework, which achieves autonomous curriculum planning through high-dimensional semantic state perception and a class-fair policy gradient, reaching SOTA performance on ACDC, Dark Zurich, and Nighttime Driving (72.9 mIoU).
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Unsupervised Domain Adaptation"
+  - "Semantic Segmentation"
+  - "Curriculum Learning"
+  - "Reinforcement Learning"
+  - "Adverse Weather"
 date: 2026-05-08
-content_hash: 19d1e4af27b9db92
+content_hash: 33cca1455fde1e43
 ---
+
 # Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions
 
 **Conference**: CVPR 2026  
@@ -155,15 +160,14 @@ where the class-level reward $r_c(t)$ considers both transferability (cosine sim
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ECCV 2024\] FREST: Feature Restoration for Semantic Segmentation under Multiple Adverse Conditions](../../ECCV2024/segmentation/frest_feature_restoration_for_semantic_segmentation_under_multiple_adverse_condi.md)
 - [\[CVPR 2026\] Masked Representation Modeling for Domain-Adaptive Segmentation](mrm_masked_representation_modeling_domain_adaptive.md)
-- [\[CVPR 2026\] GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth](geomprompt_rgbd_segmentation.md)
+- [\[ECCV 2024\] FREST: Feature Restoration for Semantic Segmentation under Multiple Adverse Conditions](../../ECCV2024/segmentation/frest_feature_restoration_for_semantic_segmentation_under_multiple_adverse_condi.md)
+- [\[ICML 2025\] Balanced Learning for Domain Adaptive Semantic Segmentation](../../ICML2025/segmentation/balanced_learning_for_domain_adaptive_semantic_segmentation.md)
 - [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
-- [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
+- [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] This paper identifies "hallucination snowballing" in VLM Multi-Agent Systems (MAS)—where a visual misjudgment by one agent is progressively amplified by subsequent agents via pure text streams. Through turn-wise, layer-wise, and token-level attention analysis, the authors locate "middle-layer unimodal visual tokens" as
+  [ICLR 2026][Hallucination Detection][Multi-Agent Systems] This paper identifies "hallucination snowballing" in VLM Multi-Agent Systems (MAS)—where a visual misjudgment by one agent is progressively amplified by subsequent agents via pure text streams. Through turn-wise, layer-wise, and token-level attention analysis, the authors locate "middle-layer unimodal visual tokens" as the critical carriers of visual evidence. They propose ViF: establishing an additional "visual flow"…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Multi-Agent Systems"
+  - "Visual Hallucination"
+  - "Hallucination Snowballing"
+  - "Visual Relay Tokens"
+  - "Attention Reallocation"
 date: 2026-05-08
-content_hash: f89349df8f3fab1e
+content_hash: 65ac033ead4590cd
 ---
+
 # Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling
 description: >-
-  [CVPR 2026][Others][Classifier-Free Guidance] Addressing the pain points of "sub-linear speedup and quality degradation" in multi-GPU diffusion inference, this paper leverages the inherent "conditional/unconditional dual-path" of Classifier-Free Guidance as the data parallelism splitting dimension (Conditional Partitioning). It then uses a metric for noise discrep
+  [CVPR 2026][Image Generation][Diffusion model acceleration] Addressing the pain points of "sub-linear speedup and quality degradation" in multi-GPU diffusion inference, this paper leverages the inherent "conditional/unconditional dual-path" of Classifier-Free Guidance as the data parallelism splitting dimension (Conditional Partitioning). It then uses a metric for noise discrepancy (rel-MAE) to adaptively determine when to enable pipeline parallelism. On two RTX 3090 GPUs…
 tags:
-  - CVPR 2026
-  - Others
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "Hybrid parallelism"
+  - "Conditional partitioning"
+  - "Pipeline parallelism"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: 70d86451dcc7917b
+content_hash: cff6a99d5deeedf5
 ---
+
 # Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling
 
 **Conference**: CVPR 2026  
@@ -128,8 +133,21 @@ SDXL, 1024×1024, 2 GPUs:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] FastHybrid: Accelerating Hybrid Autoregressive Image Generation with Lookahead and Guided Decoding](fasthybrid_accelerating_hybrid_autoregressive_image_generation_with_lookahead_an.md)
+- [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
+- [\[CVPR 2025\] Rectified Diffusion Guidance for Conditional Generation](../../CVPR2025/image_generation/rectified_diffusion_guidance_for_conditional_generation.md)
+- [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
+- [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](../../NeurIPS2025/image_generation/tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

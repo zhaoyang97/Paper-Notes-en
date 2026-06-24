@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] Inserting a cheap initialization stage called TFPI between SFT-distilled long CoT models and standard RLVR—by simply appending `</think>` during rollouts to skip explicit thinking and using multi-stage RL with short contexts—enables models to be both more accurate and token-efficient in slow-thinking mode. This also im
+  [ICLR 2026][Reasoning][RLVR] Inserting a cheap initialization stage called TFPI between SFT-distilled long CoT models and standard RLVR—by simply appending `</think>` during rollouts to skip explicit thinking and using multi-stage RL with short contexts—enables models to be both more accurate and token-efficient in slow-thinking mode. This also improves the convergence speed and performance ceiling of subsequent standard RLVR (a 4B model achieves 89.0% on AIME24 using less th…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "Long CoT"
+  - "Efficient Reasoning"
+  - "Policy Initialization"
+  - "Token Efficiency"
 date: 2026-05-08
-content_hash: 5ce31ed4d68e984e
+content_hash: a5363f9954fcbcf0
 ---
+
 # Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners
 
 **Conference**: ICLR 2026  
@@ -153,11 +158,11 @@ TFPI Stage 3 increased Thinking-Free AIME24 accuracy from 12.4% to 37.5% with on
 
 ## Related Papers
 
-- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 - [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 - [\[ACL 2026\] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners](../../ACL2026/llm_reasoning/rsat_structured_attribution_makes_small_language_models_faithful_table_reasoners.md)
-- [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
-- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
+- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
+- [\[AAAI 2026\] SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger](../../AAAI2026/llm_reasoning/sapo_self-adaptive_process_optimization_makes_small_reasoners_stronger.md)
 
 </div>
 

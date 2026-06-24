@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy
 description: >-
-  [ICCV 2025][Multimodal VLM][VLA] This paper proposes Dita (Diffusion Transformer Policy), which, unlike prior methods that denoise on compressed embeddings using shallow networks…
+  [ICCV 2025][Multimodal VLM][VLA] This paper proposes Dita (Diffusion Transformer Policy), which, unlike prior methods that denoise on compressed embeddings using shallow networks, adopts in-context conditioning to directly condition denoising on raw visual tokens. A causal Transformer processes the full token sequence of language, images, timesteps, and noisy actions. With 334M parameters, Dita achieves state-of-the-art or competitive performance on SimplerEnv zero-shot…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "in-context conditioning"
   - "cross-embodiment"
 date: 2026-05-08
-content_hash: ae48ec0ddfed1d42
+content_hash: 715726e0f47480b0
 ---
 
 # Dita: Scaling Diffusion Transformer for Generalist Vision-Language-Action Policy
@@ -129,11 +129,11 @@ Standard DDPM diffusion objective: $\min \|\epsilon - \epsilon_\theta(z_t, t, c)
 
 ## Related Papers
 
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
+- [\[ICCV 2025\] VQ-VLA: Improving Vision-Language-Action Models via Scaling Vector-Quantized Action Tokenizers](vq-vla_improving_vision-language-action_models_via_scaling_vector-quantized_acti.md)
 - [\[ICCV 2025\] CoA-VLA: Improving Vision-Language-Action Models via Visual-Textual Chain-of-Affordance](coavla_improving_visionlanguageaction_models_via_visualtext.md)
 - [\[ICCV 2025\] TAB: Transformer Attention Bottlenecks enable User Intervention and Debugging in Vision-Language Models](tab_transformer_attention_bottlenecks_enable_user_intervention_and_debugging_in_.md)
 - [\[ICCV 2025\] Chimera: Improving Generalist Model with Domain-Specific Experts](chimera_improving_generalist_model_with_domain-specific_experts.md)
-- [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inferencetime_search_with_vision_value_model_for_imp.md)
+- [\[CVPR 2025\] Optimus-2: Multimodal Minecraft Agent with Goal-Observation-Action Conditioned Policy](../../CVPR2025/multimodal_vlm/optimus-2_multimodal_minecraft_agent_with_goal-observation-action_conditioned_po.md)
 
 </div>
 

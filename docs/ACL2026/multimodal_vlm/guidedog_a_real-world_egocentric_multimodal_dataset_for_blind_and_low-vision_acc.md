@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GuideDog: A Real-World Egocentric Multimodal Dataset for Blind and Low-Vision Accessibility-Aware Guidance
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] GuideDog utilizes an "expert-norm-driven silver-label generation + manual verification for gold labels" pipeline to construct 22K egocentric pedestrian scene image-text pairs (including an 818-question QA benchmark) from 269 global walking videos. This provides the first scaled, geographically diverse, and standardized
+  [ACL 2026][Multimodal VLM][BLV Navigation] GuideDog utilizes an "expert-norm-driven silver-label generation + manual verification for gold labels" pipeline to construct 22K egocentric pedestrian scene image-text pairs (including an 818-question QA benchmark) from 269 global walking videos. This provides the first scaled, geographically diverse, and standardized training and evaluation data for MLLMs in BLV (Blind and Low-Vision) navigation tasks.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "BLV Navigation"
+  - "Egocentric"
+  - "MLLM Evaluation"
+  - "Depth Perception"
+  - "Human-AI Collaborative Annotation"
 date: 2026-05-08
-content_hash: e2fe47b8b1dd4533
+content_hash: ec83c58fd1014d28
 ---
+
 # GuideDog: A Real-World Egocentric Multimodal Dataset for Blind and Low-Vision Accessibility-Aware Guidance
 
 **Conference**: ACL 2026  
@@ -139,11 +145,11 @@ Separating "Recognition vs. Depth" reveals capability misalignment in current ML
 
 ## Related Papers
 
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[CVPR 2026\] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training](../../CVPR2026/multimodal_vlm/towards_real-world_document_parsing_via_realistic_scene_synthesis_and_document-a.md)
 - [\[ACL 2026\] EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions](edu-circuit-hw_evaluating_multimodal_large_language_models_on_real-world_univers.md)
 - [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](../../NeurIPS2025/multimodal_vlm/wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
 - [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](../../CVPR2026/multimodal_vlm/mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
-- [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
 
 </div>
 

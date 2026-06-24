@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Better Estimation of the Kullback-Leibler Divergence Between Language Models
 description: >-
-  [NeurIPS 2025][Interpretability][KL divergence estimation] This paper proposes a Rao-Blackwellized Monte Carlo estimator for KL divergence—computing the exact KL over the next-token distribution at each position (rather…
+  [NeurIPS 2025][Interpretability][KL divergence estimation] This paper proposes a Rao-Blackwellized Monte Carlo estimator for KL divergence—computing the exact KL over the next-token distribution at each position (rather than relying solely on the sampled token). The estimator is theoretically proven to be unbiased with variance strictly no greater than the standard MC estimator, incurs zero additional computational overhead, and yields more stable training in an RLHF sentimen…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "variance reduction"
   - "language models"
 date: 2026-05-08
-content_hash: ba2bedbc9e5a5029
+content_hash: 2504d990a36a6394
 ---
 
 # Better Estimation of the Kullback-Leibler Divergence Between Language Models
@@ -134,8 +134,8 @@ In the region KL < 5, RB models occupy **95%** of the Pareto frontier.
 - [\[NeurIPS 2025\] ARC-JSD: Attributing Response to Context via Jensen-Shannon Divergence Driven Mechanistic Study](attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
 - [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
-- [\[NeurIPS 2025\] ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization for Speech Multi-Metric Estimation](arecho_autoregressive_evaluation_via_chain-based_hypothesis_optimization_for_spe.md)
-- [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)
+- [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](emergence_of_linear_truth_encodings_in_language_models.md)
+- [\[AAAI 2026\] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models](../../AAAI2026/interpretability/som_directions_are_better_than_one_multi-directional_refusal_suppression_in_lang.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Landscapes for Better Minima along Valleys
 description: >-
-  [NeurIPS 2025][Optimization][Loss landscape exploration] This paper proposes an optimizer adapter "E" that incorporates an exponential moving average of gradient differences $\mathbf{a}_k = \text{EMA}(\mathbf{g}_k - \mat…
+  [NeurIPS 2025][Optimization][Loss landscape exploration] This paper proposes an optimizer adapter "E" that incorporates an exponential moving average of gradient differences $\mathbf{a}_k = \text{EMA}(\mathbf{g}_k - \mathbf{g}_{k-1})$ into the gradient update, enabling optimizers to continue exploring "valleys" in the loss landscape for lower and flatter minima after reaching a local minimum. The resulting ALTO optimizer achieves an average improvement of 2.5% in test accurac…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "ALTO optimizer"
   - "gradient difference"
 date: 2026-05-08
-content_hash: fa7ed389ce94b025
+content_hash: ab11fe10dd830b7a
 ---
 
 # Exploring Landscapes for Better Minima along Valleys
@@ -153,11 +153,11 @@ The E-adaptor is a plug-in module compatible with any gradient-based optimizer. 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)
+- [\[ICLR 2026\] Align-SAM: Seeking Flatter Minima for Better Cross-Subset Alignment](../../ICLR2026/optimization/align-sam_seeking_flatter_minima_for_better_cross-subset_alignment.md)
 - [\[NeurIPS 2025\] Stable Coresets via Posterior Sampling: Aligning Induced and Full Loss Landscapes](stable_coresets_via_posterior_sampling_aligning_induced_and_full_loss_landscapes.md)
+- [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)
 - [\[NeurIPS 2025\] Better NTK Conditioning: A Free Lunch from ReLU Nonlinear Activation in Wide Neural Networks](better_ntk_conditioning_a_free_lunch_from_relu_nonlinear_activation_in_wide_neur.md)
-- [\[ICLR 2026\] When to Restart? Exploring Escalating Restarts on Convergence](../../ICLR2026/optimization/when_to_restart_exploring_escalating_restarts_on_convergence.md)
-- [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](../../ICLR2026/optimization/exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
+- [\[ICLR 2026\] Exploring Mode Connectivity in Krylov Subspace for Domain Generalization](../../ICLR2026/optimization/exploring_mode_connectivity_in_krylov_subspace_for_domain_generalization.md)
 
 </div>
 

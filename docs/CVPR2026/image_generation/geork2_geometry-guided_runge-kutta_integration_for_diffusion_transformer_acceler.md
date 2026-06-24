@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Transformer] GeoRK2 reformulates the few-step sampling of Diffusion Transformers as "second-order Runge-Kutta integration on a Riemannian manifold induced by feature covariance." It replaces the default numerical updates of existing samplers with a training-free, plug-and-play "Predictor-Corrector" module, achieving 4–5× accelerati
+  [CVPR 2026][Image Generation][Diffusion Acceleration] GeoRK2 reformulates the few-step sampling of Diffusion Transformers as "second-order Runge-Kutta integration on a Riemannian manifold induced by feature covariance." It replaces the default numerical updates of existing samplers with a training-free, plug-and-play "Predictor-Corrector" module, achieving 4–5× acceleration on ImageNet/FLUX/HunyuanVideo with almost no quality loss ($\Delta$FID≈0.81).
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Acceleration"
+  - "Diffusion Transformer"
+  - "Riemannian Manifold"
+  - "Runge-Kutta Integration"
+  - "Training-free Sampling"
 date: 2026-05-08
-content_hash: 1a7d217d26a00d1d
+content_hash: b1ec6ff124131d42
 ---
+
 # GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration
 
 **Conference**: CVPR 2026  
@@ -138,8 +143,8 @@ Additionally, using an **instantaneous metric without temporal averaging** incre
 - [\[ICLR 2026\] Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance](../../ICLR2026/image_generation/error_as_signal_stiffness-aware_diffusion_sampling_via_embedded_runge-kutta_guid.md)
 - [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
+- [\[CVPR 2026\] From Sketch to Fresco: Efficient Diffusion Transformer with Progressive Resolution](from_sketch_to_fresco_efficient_diffusion_transformer_with_progressive_resolutio.md)
 
 </div>
 

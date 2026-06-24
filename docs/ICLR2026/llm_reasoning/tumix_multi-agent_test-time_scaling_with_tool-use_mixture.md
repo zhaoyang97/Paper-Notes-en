@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture
 description: >-
-  [ICLR 2026][LLM Reasoning][Code Interpreter] TUMIX enables a single LLM to derive 15 agents with distinct tool-use strategies (pure text / code / search / code+search, etc.), letting them answer in parallel and refine answers across rounds via sharing. It uses LLM-as-Judge for adaptive early stopping plus majority voting to select the final answer. On HLE, GPQA,
+  [ICLR 2026][Reasoning][Tool-Augmentation] TUMIX enables a single LLM to derive 15 agents with distinct tool-use strategies (pure text / code / search / code+search, etc.), letting them answer in parallel and refine answers across rounds via sharing. It uses LLM-as-Judge for adaptive early stopping plus majority voting to select the final answer. On HLE, GPQA, and AIME, it achieves an average improvement of 3.55% over the strongest tool-augmented test-time scaling baselines wi…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Code Interpreter
-  - Web Search
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Tool-Augmentation"
+  - "Test-Time Scaling"
+  - "Multi-Agent Ensemble"
+  - "Code Interpreter"
+  - "Web Search"
+  - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: 0ebb7d2e6a4811cf
+content_hash: b61b6d7db5cb1a64
 ---
+
 # TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture
 
 **Conference**: ICLR 2026  
@@ -145,10 +149,10 @@ TUMIX outperforms the strongest baselines by 2.0% (Pro) and 5.9% (Flash) on aver
 ## Related Papers
 
 - [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
-- [\[ICLR 2026\] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning](modr_mixture-of-depth-recurrent_transformers_for_test-time_reasoning.md)
-- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
-- [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
 - [\[ICLR 2026\] ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling](contextprm_leveraging_contextual_coherence_for_multi-domain_test-time_scaling.md)
+- [\[ICLR 2026\] MoDr: Mixture-of-Depth-Recurrent Transformers for Test-Time Reasoning](modr_mixture-of-depth-recurrent_transformers_for_test-time_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
 
 </div>
 

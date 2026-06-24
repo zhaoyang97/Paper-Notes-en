@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Lost in Transmission: When and Why LLMs Fail to Reason Globally
 description: >-
-  [NeurIPS 2025 (Spotlight)][LLM Reasoning][communication complexity] This paper proposes the Bounded Attention Prefix Oracle (BAPO) computational framework…
+  [NeurIPS 2025 (Spotlight)][Reasoning][communication complexity] This paper proposes the Bounded Attention Prefix Oracle (BAPO) computational framework, which models LLM attention heads as finite-bandwidth communication channels. It proves that global reasoning problems such as graph reachability are BAPO-hard (requiring super-constant bandwidth), and shows that Chain-of-Thought (CoT) can transform any BAPO-hard problem into a BAPO-easy one. Theoretical predictions are validat…
 tags:
   - "NeurIPS 2025 (Spotlight)"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "communication complexity"
   - "bounded attention"
   - "chain-of-thought"
   - "LLM limitations"
   - "computational framework"
 date: 2026-05-08
-content_hash: a47044107b1d7d96
+content_hash: a597bd878059ddcf
 ---
 
 # Lost in Transmission: When and Why LLMs Fail to Reason Globally
@@ -131,10 +131,10 @@ This paper proposes the Bounded Attention Prefix Oracle (BAPO) computational fra
 ## Related Papers
 
 - [\[ICML 2026\] Biases in the Blind Spot: Detecting What LLMs Fail to Mention](../../ICML2026/llm_reasoning/biases_in_the_blind_spot_detecting_what_llms_fail_to_mention.md)
-- [\[ICLR 2026\] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models](../../ICLR2026/llm_reasoning/when_reasoning_meets_compression_understanding_the_effects_of_pruning_and_quant.md)
-- [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](../../ICLR2026/llm_reasoning/why_is_your_language_model_a_poor_implicit_reward_model.md)
-- [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](../../ACL2026/llm_reasoning/which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
-- [\[NeurIPS 2025\] Many LLMs Are More Utilitarian Than One](many_llms_are_more_utilitarian_than_one.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](../../ICLR2026/llm_reasoning/when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
+- [\[ICLR 2026\] When Silence is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?](../../ICLR2026/llm_reasoning/when_silence_is_golden_can_llms_learn_to_abstain_in_temporal_qa_and_beyond.md)
+- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](../../ICLR2026/llm_reasoning/learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
+- [\[CVPR 2025\] Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2025/llm_reasoning/osrcir_reflective_cot.md)
 
 </div>
 

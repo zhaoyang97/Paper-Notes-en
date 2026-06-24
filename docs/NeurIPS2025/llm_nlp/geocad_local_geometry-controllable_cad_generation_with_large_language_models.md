@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][CAD generation] GeoCAD is proposed as the first method for locally geometry-controllable CAD generation. It introduces a complementary captioning strategy to generate geometric instructions for lo…
+  [NeurIPS 2025][LLM (Other)][CAD generation] GeoCAD is proposed as the first method for locally geometry-controllable CAD generation. It introduces a complementary captioning strategy to generate geometric instructions for local parts and fine-tunes an LLM to enable precise modification of local CAD components according to user-defined text instructions.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "CAD generation"
   - "local geometry control"
   - "large language models"
   - "text-to-CAD"
   - "complementary captioning"
 date: 2026-05-08
-content_hash: 785d52822904c4c3
+content_hash: 7fb91c77bff4b9af
 ---
 
 # GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models
@@ -155,11 +155,11 @@ GeoCAD substantially outperforms baselines on text–CAD consistency metrics:
 
 ## Related Papers
 
+- [\[ACL 2025\] Automated CAD Modeling Sequence Generation from Text Descriptions via Transformer-Based Large Language Models](../../ACL2025/llm_nlp/cadllm_cad_modeling_from_text.md)
+- [\[ACL 2025\] DiffLM: Controllable Synthetic Data Generation via Diffusion Language Models](../../ACL2025/llm_nlp/difflm_controllable_synthetic_data_generation_via_diffusion_language_models.md)
+- [\[ACL 2025\] Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models](../../ACL2025/llm_nlp/segment_level_diffusion.md)
 - [\[NeurIPS 2025\] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models](the_rise_of_parameter_specialization_for_knowledge_storage_in_large_language_mod.md)
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
-- [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
-- [\[ACL 2026\] SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities](../../ACL2026/llm_nlp/how_controllable_are_large_language_models_a_unified_evaluation_across_behaviora.md)
-- [\[NeurIPS 2025\] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models](space_noise_contrastive_estimation_stabilizes_self-play_fine-tuning_for_large_la.md)
+- [\[ACL 2025\] An Empirical Study of Large Language Models for Automated Review Generation](../../ACL2025/llm_nlp/an_empirical_study_of_large_language_models_for_automated_review_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget
 description: >-
-  [NeurIPS 2025][Model Compression][concept drift] This paper proposes RCCDA, a lightweight model update policy based on the Lyapunov drift-plus-penalty framework. Under concept drift scenarios where the data distribution…
+  [NeurIPS 2025][Model Compression][concept drift] This paper proposes RCCDA, a lightweight model update policy based on the Lyapunov drift-plus-penalty framework. Under concept drift scenarios where the data distribution shifts over time, RCCDA greedily determines when to retrain the model using only historical inference loss and a tunable threshold, while provably satisfying strict resource budget constraints.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Lyapunov optimization"
   - "online learning"
 date: 2026-05-08
-content_hash: 68669d5c4271017f
+content_hash: a96dcba0fd01736d
 ---
 
 # RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget
@@ -132,9 +132,9 @@ This paper proposes RCCDA, a lightweight model update policy based on the Lyapun
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Granular Study of Safety Pretraining under Model Abliteration](a_granular_study_of_safety_pretraining_under_model_abliteration.md)
-- [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
 - [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
-- [\[ICML 2026\] Memory-Efficient Partitioned DNN Inference on Resource-Constrained Android Crowds](../../ICML2026/model_compression/memory-efficient_partitioned_dnn_inference_on_resource-constrained_android_crowd.md)
+- [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
+- [\[ICLR 2026\] Boosted Trees on a Diet: Compact Models for Resource-Constrained Devices](../../ICLR2026/model_compression/boosted_trees_on_a_diet_compact_models_for_resource-constrained_devices.md)
 - [\[NeurIPS 2025\] Perturbation Bounds for Low-Rank Inverse Approximations under Noise](perturbation_bounds_for_low-rank_inverse_approximations_under_noise.md)
 
 </div>

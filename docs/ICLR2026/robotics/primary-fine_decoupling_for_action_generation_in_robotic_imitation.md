@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Primary-Fine Decoupling for Action Generation in Robotic Imitation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][MeanFlow] PF-DAG decouples action generation in robotic imitation learning into a two-stage process: first selecting a coarse mode from discrete prototypes using a lightweight classifier, and then filling in continuous intra-modal details with a single-step MeanFlow generator. This approach avoids the precision loss of discretiz
+  [ICLR 2026][Robotics][Imitation Learning] PF-DAG decouples action generation in robotic imitation learning into a two-stage process: first selecting a coarse mode from discrete prototypes using a lightweight classifier, and then filling in continuous intra-modal details with a single-step MeanFlow generator. This approach avoids the precision loss of discretization while eliminating the mode bouncing issues typical of single-stage generative policies. It outperforms diffusion…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - MeanFlow
+  - "ICLR 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Multi-modal Actions"
+  - "Vector Quantization"
+  - "MeanFlow"
+  - "Closed-loop Control"
 date: 2026-05-08
-content_hash: 166c04635a998e6c
+content_hash: bb4f533d7acb2769
 ---
+
 # Primary-Fine Decoupling for Action Generation in Robotic Imitation
 
 **Conference**: ICLR 2026  

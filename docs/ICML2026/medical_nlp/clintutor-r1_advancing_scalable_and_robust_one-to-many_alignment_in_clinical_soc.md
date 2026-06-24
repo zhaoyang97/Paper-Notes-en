@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education
 description: >-
-  [ICML 2026][Medical NLP][Vision-Language Model] This paper proposes ClinTutor-R1, the first vision-language agent for one-to-many alignment in clinical Socratic education. By constructing the 48k ClinTeach dialogue dataset via the ClinEdu multi-agent simulator, and utilizing explicit Theory of Mind (ToM) reasoning alongside three-axis rubric reinforcement learning,
+  [ICML 2026 Spotlight][Medical LLM][Clinical Education] This paper proposes ClinTutor-R1, the first vision-language agent for one-to-many alignment in clinical Socratic education. By constructing the 48k ClinTeach dialogue dataset via the ClinEdu multi-agent simulator, and utilizing explicit Theory of Mind (ToM) reasoning alongside three-axis rubric reinforcement learning, the model maintains stable teaching quality even when scaled to 10 students…
 tags:
-  - ICML 2026
-  - Medical NLP
-  - Vision-Language Model
+  - "ICML 2026 Spotlight"
+  - "Medical LLM"
+  - "Clinical Education"
+  - "One-to-Many Alignment"
+  - "Socratic Teaching"
+  - "Multi-Agent Simulation"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: 04002624db85341e
+content_hash: bedaa3c9779bf298
 ---
+
 # ClinTutor-R1: Advancing Scalable and Robust One-to-Many Alignment in Clinical Socratic Education
 
 **Conference**: ICML 2026 Spotlight  
@@ -133,11 +138,11 @@ Ours exceeds GPT-4o on MVME (8.49 vs 8.47) and significantly outperforms GPT-4o 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](../../ICLR2026/medical_nlp/doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](../../ACL2026/medical_nlp/cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](../../ACL2026/medical_nlp/principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](../../AAAI2026/medical_nlp/learning_cell-aware_hierarchical_multi-modal_representations.md)
-- [\[ACL 2025\] A Modular Approach for Clinical SLMs Driven by Synthetic Data with Pre-Instruction Tuning, Model Merging, and Clinical-Tasks Alignment](../../ACL2025/medical_nlp/a_modular_approach_for_clinical_slms_driven_by_synthetic_data_with_pre-instructi.md)
-- [\[ACL 2025\] One Size Fits None: Rethinking Fairness in Medical AI](../../ACL2025/medical_nlp/one_size_fits_none_rethinking_fairness_in_medical_ai.md)
+- [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
 
 </div>
 

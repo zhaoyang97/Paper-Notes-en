@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Certifying the Full YOLO Pipeline: A Probabilistic Verification Approach
 description: >-
-  [ICLR 2026][AI Safety][NMS] This paper proposes ODPV—the first PAC probabilistic verification framework capable of verifying the robustness of the full YOLO detection pipeline (including NMS post-processing) against "object disappearance" attacks at a **practical scale**. It transforms the certification of high-dimensional detection networks into
+  [ICLR 2026][AI Safety][Object detection verification] This paper proposes ODPV—the first PAC probabilistic verification framework capable of verifying the robustness of the full YOLO detection pipeline (including NMS post-processing) against "object disappearance" attacks at a **practical scale**. It transforms the certification of high-dimensional detection networks into a feasible sampling problem via three steps: "output approximation → formal NMS verification → counterexa…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - NMS
-  - YOLO
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Object detection verification"
+  - "PAC verification"
+  - "Object disappearance threat"
+  - "NMS"
+  - "YOLO"
+  - "probabilistic robustness guarantees"
 date: 2026-05-08
-content_hash: 4ebedecaf95c6395
+content_hash: a91290ea17143593
 ---
+
 # Certifying the Full YOLO Pipeline: A Probabilistic Verification Approach
 
 **Conference**: ICLR 2026  
@@ -107,16 +112,16 @@ $\Delta$PGD represents the mean absolute difference of the IoU lower bound relat
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses robustness certification needs for safety-critical deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2025\] Solving Probabilistic Verification Problems of Neural Networks Using Branch and Bound](../../ICML2025/ai_safety/solving_probabilistic_verification_problems_of_neural_networks_using_branch_and_.md)
 - [\[ICLR 2026\] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm](pluriharms_benchmarking_the_full_spectrum_of_human_judgments_on_ai_harm.md)
+- [\[ICLR 2026\] Doubly-Regressing Approach for Subgroup Fairness](doubly-regressing_approach_for_subgroup_fairness.md)
 - [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
-- [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](../../AAAI2026/ai_safety/problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
-- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](../../ICML2026/ai_safety/fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
+- [\[ICLR 2026\] Fingerprinting Deep Neural Networks for Ownership Protection: An Analytical Approach](fingerprinting_deep_neural_networks_for_ownership_protection_an_analytical_appro.md)
 
 </div>
 

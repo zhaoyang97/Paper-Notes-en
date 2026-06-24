@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper generalizes Multiple Wasserstein Gradient Descent into continuous-time gradient flows and introduces Nesterov-style momentum acceleration to obtain A-MWGraD. Theoretically, it improves the convergence rate to the weak Pareto optimum from $O(1/t)$ to $O(1/t^2)$ in geodesically convex scenarios. Empirically, i
+  [ICML 2026][Optimization][Wasserstein gradient flow] This paper generalizes Multiple Wasserstein Gradient Descent into continuous-time gradient flows and introduces Nesterov-style momentum acceleration to obtain A-MWGraD. Theoretically, it improves the convergence rate to the weak Pareto optimum from $O(1/t)$ to $O(1/t^2)$ in geodesically convex scenarios. Empirically, it accelerates convergence in multi-target sampling and Bayesian multi-task learning.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Wasserstein gradient flow"
+  - "multi-objective optimization"
+  - "distributional optimization"
+  - "Nesterov acceleration"
+  - "particle sampling"
 date: 2026-05-08
-content_hash: 7b76da82c70d8908
+content_hash: 6507277bc46c6103
 ---
+
 # Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization
 
 **Conference**: ICML 2026  
@@ -116,11 +122,11 @@ In Bayesian multi-task learning experiments on Multi-Fashion+MNIST, Multi-MNIST,
 
 ## Related Papers
 
+- [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
+- [\[ICLR 2026\] In-Context Multi-Objective Optimization](../../ICLR2026/optimization/in-context_multi-objective_optimization.md)
 - [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
 - [\[ICLR 2026\] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective](../../ICLR2026/optimization/gradient-based_diversity_optimization_with_differentiable_top-k_objective.md)
-- [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
-- [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](../../NeurIPS2025/optimization/mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
-- [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](../../AAAI2026/optimization/pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
+- [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](../../ICLR2026/optimization/neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
 
 </div>
 

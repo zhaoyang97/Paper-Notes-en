@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Point Prompting: Counterfactual Tracking with Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Understanding][SDEdit] This paper discovers that pre-trained image-conditioned video diffusion models possess inherent "zero-shot point tracking" capabilities. By painting a conspicuous red dot on the target point in the first frame and regenerating subsequent frames using SDEdit, the red dot is propagated through each frame to trace a traje
+  [ICLR 2026][Video Understanding][Point Tracking] This paper discovers that pre-trained image-conditioned video diffusion models possess inherent "zero-shot point tracking" capabilities. By painting a conspicuous red dot on the target point in the first frame and regenerating subsequent frames using SDEdit, the red dot is propagated through each frame to trace a trajectory. Combined with "counterfactual enhancement using the original frame as a negative prompt…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - SDEdit
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Point Tracking"
+  - "Video Diffusion Models"
+  - "Counterfactual Modeling"
+  - "Zero-shot"
+  - "SDEdit"
 date: 2026-05-08
-content_hash: 06203c7e9ac1ba9b
+content_hash: 5a10b69aebd94891
 ---
+
 # Point Prompting: Counterfactual Tracking with Video Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -142,9 +147,9 @@ Video model ablation: Wan2.1-14B (48.60) > Wan2.1-1.3B (44.58) > CogVideoX (24.1
 
 - [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](../../CVPR2026/video_understanding/motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
 - [\[CVPR 2026\] Generative Point Tracking and Forecasting](../../CVPR2026/video_understanding/generative_point_tracking_and_forecasting.md)
-- [\[ECCV 2024\] DINO-Tracker: Taming DINO for Self-Supervised Point Tracking in a Single Video](../../ECCV2024/video_understanding/dino-tracker_taming_dino_for_self-supervised_point_tracking_in_a_single_video.md)
-- [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](../../CVPR2026/video_understanding/mv-tap_tracking_any_point_in_multi-view_videos.md)
 - [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](../../CVPR2026/video_understanding/realworld_point_tracking_with_verifierguided_pseud.md)
+- [\[ICLR 2026\] TAPTRv3: Spatial and Temporal Context Foster Robust Tracking of Any Point in Long Video](taptrv3_spatial_and_temporal_context_foster_robust_tracking_of_any_point_in_long.md)
+- [\[ECCV 2024\] Local All-Pair Correspondence for Point Tracking](../../ECCV2024/video_understanding/local_all-pair_correspondence_for_point_tracking.md)
 
 </div>
 

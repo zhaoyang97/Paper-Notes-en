@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal
 description: >-
-  [CVPR 2026][Image Restoration][Burst Flicker Removal] This work reveals that flicker artifacts possess two inherent physical properties: periodicity and directionality. It designs the Flickerformer with three modules (PFM/AFFN/WDAM) to model inter-frame/intra-frame periodicity and directionality respectively. With only 3.92M parameters, it achieves 31.226dB PSNR on the Bu
+  [CVPR 2026][Image Restoration][Burst Flicker Removal] This work reveals that flicker artifacts possess two inherent physical properties: periodicity and directionality. It designs the Flickerformer with three modules (PFM/AFFN/WDAM) to model inter-frame/intra-frame periodicity and directionality respectively. With only 3.92M parameters, it achieves 31.226dB PSNR on the BurstDeflicker benchmark, surpassing the runner-up AST by +0.580dB using only 19.70% of its parameters.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Burst Flicker Removal
-  - Phase Correlation
-  - Autocorrelation
-  - Wavelet Attention
-  - Transformer
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Burst Flicker Removal"
+  - "Phase Correlation"
+  - "Autocorrelation"
+  - "Wavelet Attention"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 0236e878b96f5c89
+content_hash: 56850e9094fcef28
 ---
+
 # Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal
 
 **Conference**: CVPR 2026  
@@ -183,9 +184,9 @@ Flickerformer achieves the best performance across all three metrics. PSNR excee
 
 - [\[CVPR 2026\] Dynamic Exposure Burst Image Restoration](dynamic_exposure_burst_image_restoration.md)
 - [\[CVPR 2026\] LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)
+- [\[CVPR 2026\] UniSER: A Foundation Model for Unified Soft Effects Removal](uniser_a_foundation_model_for_unified_soft_effects_removal.md)
+- [\[CVPR 2026\] GFRRN: Explore the Gaps in Single Image Reflection Removal](gfrrn_explore_the_gaps_in_single_image_reflection_removal.md)
 - [\[CVPR 2026\] PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors](phasr_generalized_image_shadow_removal_with_physically_aligned_priors.md)
-- [\[CVPR 2026\] Polarization State Tracing for Reflection Removal and Color-Consistent Reconstruction](polarization_state_tracing_for_reflection_removal_and_color-consistent_reconstru.md)
-- [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
 
 </div>
 

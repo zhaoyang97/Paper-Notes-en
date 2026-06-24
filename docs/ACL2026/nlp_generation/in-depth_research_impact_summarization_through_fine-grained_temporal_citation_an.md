@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis
 description: >-
-  [ACL 2026][Text Generation][citation context] This paper proposes the "Scientific Impact Summarization" task: first identifying fine-grained intents that truly reveal impact from the citation contexts of a paper, and then generating an impact narrative that evolves over time. This approach better illustrates how a paper is adopted, criticized, and transformed by s
+  [ACL2026][Text Generation][Scientific Impact Summarization] This paper proposes the "Scientific Impact Summarization" task: first identifying fine-grained intents that truly reveal impact from the citation contexts of a paper, and then generating an impact narrative that evolves over time. This approach better illustrates how a paper is adopted, criticized, and transformed by subsequent work compared to simple citation counts.
 tags:
-  - ACL 2026
-  - Text Generation
-  - citation context
+  - "ACL2026"
+  - "Text Generation"
+  - "Scientific Impact Summarization"
+  - "Citation Intent"
+  - "Time-aware Summarization"
+  - "citation context"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 30e2908f28c6e68a
+content_hash: aba23c8ada738130
 ---
+
 # In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis
 
 **Conference**: ACL2026  

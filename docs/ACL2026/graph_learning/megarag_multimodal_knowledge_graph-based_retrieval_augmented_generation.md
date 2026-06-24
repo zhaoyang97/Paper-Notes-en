@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation
 description: >-
-  [ACL 2026][Graph Learning][RAG] MegaRAG utilizes MLLMs to perform parallel entity-relation extraction from each page of long documents, merging them into a Multimodal Knowledge Graph (MMKG). It uses a "subgraph-guided" refinement round to complete cross-modal and cross-page relations. Combined with dual-path retrieval and two-stage answer generation,
+  [ACL 2026][Graph Learning][Multimodal Knowledge Graph] MegaRAG utilizes MLLMs to perform parallel entity-relation extraction from each page of long documents, merging them into a Multimodal Knowledge Graph (MMKG). It uses a "subgraph-guided" refinement round to complete cross-modal and cross-page relations. Combined with dual-path retrieval and two-stage answer generation, it significantly outperforms GraphRAG/LightRAG/VisRAG, achieving 64.85% accuracy on SlideVQA(2k) (compar…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - RAG
-  - MLLM
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Multimodal Knowledge Graph"
+  - "RAG"
+  - "Cross-modal Reasoning"
+  - "Visual Document QA"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 504f2612090092c8
+content_hash: 11f8c5d6a8816773
 ---
+
 # MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation
 
 **Conference**: ACL 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping
 description: >-
-  [ICLR 2026][LLM Reasoning][GenPRM] To address three major pitfalls of Generative Process Reward Models (GenPRM) in Reinforcement Learning (RL)—scoring dependence on reasoning ability, dense step rewards triggering reward hacking, and static rewards suppressing exploration—this paper proposes "using intrinsic semantic signals (reflection/matching) in rea
+  [ICLR 2026][Reasoning][Process Reward] To address three major pitfalls of Generative Process Reward Models (GenPRM) in Reinforcement Learning (RL)—scoring dependence on reasoning ability, dense step rewards triggering reward hacking, and static rewards suppressing exploration—this paper proposes "using intrinsic semantic signals (reflection/matching) in reasoning trajectories to determine correctness" + "merging consecutive steps with the same correctness into 'thoughts' befo…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GenPRM
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Process Reward"
+  - "GenPRM"
+  - "Reinforcement Learning"
+  - "Mathematical Reasoning"
+  - "Training Efficiency"
 date: 2026-05-08
-content_hash: b42f89d4a3e8272a
+content_hash: 4bc6a34aef8ba879
 ---
+
 # Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping
 
 **Conference**: ICLR 2026  
@@ -141,8 +145,8 @@ Reward component ablation (Table 4): Using only correct solution rewards perform
 
 - [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 - [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
-- [\[ICLR 2026\] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models](steporlm_a_self-evolving_framework_with_generative_process_supervision_for_opera.md)
 - [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
+- [\[ICLR 2026\] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models](steporlm_a_self-evolving_framework_with_generative_process_supervision_for_opera.md)
 - [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 
 </div>

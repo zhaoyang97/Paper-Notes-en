@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks
 description: >-
-  [NeurIPS 2025][Segmentation][Mars science] This paper presents Mars-Bench — the first comprehensive benchmark for Mars science tasks, encompassing 20 datasets across three task types (classification, segmentation…
+  [NeurIPS 2025][Segmentation][Mars science] This paper presents Mars-Bench — the first comprehensive benchmark for Mars science tasks, encompassing 20 datasets across three task types (classification, segmentation, and object detection). It systematically evaluates ImageNet-pretrained models, Earth observation foundation models, and vision-language models on Martian data, revealing significant gaps in current general-purpose models and calling for the development of Mars-speci…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "remote sensing segmentation"
   - "planetary science"
 date: 2026-05-08
-content_hash: 99f89fd33cbc3315
+content_hash: 344d8fd8d49a4a4b
 ---
 
 # Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks
@@ -125,11 +125,11 @@ The first standardized benchmark for Mars science, filling an important gap with
 
 ## Related Papers
 
+- [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](../../ICLR2026/segmentation/how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
 - [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
 - [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
-- [\[CVPR 2026\] Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks](../../CVPR2026/segmentation/kαlos_finds_consensus_a_meta-algorithm_for_evaluating_inter-annotator_agreement_.md)
 - [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](../../ICCV2025/segmentation/tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
-- [\[NeurIPS 2025\] PARTONOMY: Large Multimodal Models with Part-Level Visual Understanding](partonomy_large_multimodal_models_with_part-level_visual_understanding.md)
+- [\[CVPR 2026\] Kαlos finds Consensus: A Meta-Algorithm for Evaluating Inter-Annotator Agreement in Complex Vision Tasks](../../CVPR2026/segmentation/kαlos_finds_consensus_a_meta-algorithm_for_evaluating_inter-annotator_agreement_.md)
 
 </div>
 

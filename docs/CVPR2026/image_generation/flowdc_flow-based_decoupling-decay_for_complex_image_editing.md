@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlowDC: Flow-Based Decoupling-Decay for Complex Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] FlowDC decomposes complex target prompts with multiple editing goals into a sequence of progressive sub-prompts. It calculates "editing directions" for each goal along parallel trajectories and orthogonalizes them into a basis. By projecting the original editing velocity onto this basis, it **retains components within
+  [CVPR 2026][Image Generation][Complex Image Editing] FlowDC decomposes complex target prompts with multiple editing goals into a sequence of progressive sub-prompts. It calculates "editing directions" for each goal along parallel trajectories and orthogonalizes them into a basis. By projecting the original editing velocity onto this basis, it **retains components within the subspace and decays components orthogonal to the editing directions**…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
-  - Rectified Flow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Complex Image Editing"
+  - "Flow Matching"
+  - "Velocity Decoupling"
+  - "Orthogonal Decay"
+  - "Rectified Flow"
 date: 2026-05-08
-content_hash: 2cb95bdcacce6646
+content_hash: d2cf3827b31bf871
 ---
+
 # FlowDC: Flow-Based Decoupling-Decay for Complex Image Editing
 
 **Conference**: CVPR 2026  
@@ -145,9 +149,9 @@ Evaluation uses PIE-Bench++ and the newly constructed **Complex-PIE-Bench** (4 t
 
 - [\[CVPR 2026\] Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)
 - [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
+- [\[CVPR 2026\] Delta Rectified Flow Sampling for Text-to-Image Editing](delta_rectified_flow_sampling_for_text-to-image_editing.md)
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
 - [\[CVPR 2026\] The Devil is in Attention Sharing: Improving Complex Non-rigid Image Editing Faithfulness via Attention Synergy](the_devil_is_in_attention_sharing_improving_complex_non-rigid_image_editing_fait.md)
-- [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
 
 </div>
 

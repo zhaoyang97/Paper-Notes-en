@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unleashing Vision-Language Semantics for Deepfake Video Detection
 description: >-
-  [CVPR 2026][Human Understanding][CLIP] This paper proposes VLAForge, which independently learns diverse forgery cues and localization maps through ForgePerceiver and integrates an identity-aware Vision-Language Alignment (VLA) scoring mechanism. By unleashing the potential of cross-modal semantics from Vision-Language Models (VLMs) to enhance discriminative
+  [CVPR 2026][Human Understanding][Deepfake Detection] This paper proposes VLAForge, which independently learns diverse forgery cues and localization maps through ForgePerceiver and integrates an identity-aware Vision-Language Alignment (VLA) scoring mechanism. By unleashing the potential of cross-modal semantics from Vision-Language Models (VLMs) to enhance discriminative capabilities, the method consistently outperforms existing SOTA methods across nine datasets.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - CLIP
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Deepfake Detection"
+  - "Vision-Language Alignment"
+  - "CLIP"
+  - "Attention Module"
+  - "Identity-Aware"
 date: 2026-05-08
-content_hash: 14633e18bce7e041
+content_hash: cdf4c882f39d75ad
 ---
+
 # Unleashing Vision-Language Semantics for Deepfake Video Detection
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Element-wise fusion with the localization map from step 2 produces the local VLA
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 - [\[CVPR 2026\] All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark](all_in_one_unifying_deepfake_detection_tampering_localization_and_source_tracing.md)
+- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](../../ICLR2026/human_understanding/link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
+- [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
 - [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
-- [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
-- [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)
 
 </div>
 

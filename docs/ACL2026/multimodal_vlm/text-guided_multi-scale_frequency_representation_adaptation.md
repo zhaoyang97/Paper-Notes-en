@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Text-Guided Multi-Scale Frequency Representation Adaptation
 description: >-
-  [ACL 2026][Multimodal VLM][DCT] This paper proposes FreqAdapter, which transforms visual and textual embeddings of CLIP/LLaVA into the DCT frequency domain. It employs text-guided multi-scale global adaptation and cross-modal modulation to fine-tune visual frequency representations. With approximately 0.11% additional parameters, it consistently outp
+  [ACL2026][Multimodal VLM][Frequency Domain Adaptation] This paper proposes FreqAdapter, which transforms visual and textual embeddings of CLIP/LLaVA into the DCT frequency domain. It employs text-guided multi-scale global adaptation and cross-modal modulation to fine-tune visual frequency representations. With approximately 0.11% additional parameters, it consistently outperforms common prompt/adapter methods in image-text retrieval and VQA.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - DCT
-  - CLIP/LLaVA
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Frequency Domain Adaptation"
+  - "DCT"
+  - "Multi-scale Features"
+  - "Text-guided"
+  - "CLIP/LLaVA"
 date: 2026-05-08
-content_hash: 10997b54d26fa95a
+content_hash: aafe41c19dff0317
 ---
+
 # Text-Guided Multi-Scale Frequency Representation Adaptation
 
 **Conference**: ACL2026  
@@ -176,9 +180,9 @@ In terms of computational complexity, FreqAdapter is very lightweight in both pa
 
 - [\[CVPR 2026\] Language-guided Frequency Modulation for Large Vision-Language Models](../../CVPR2026/multimodal_vlm/language-guided_frequency_modulation_for_large_vision-language_models.md)
 - [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](../../CVPR2026/multimodal_vlm/orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
 - [\[ACL 2026\] AFMRL: Attribute-Enhanced Fine-Grained Multi-Modal Representation Learning in E-commerce](afmrl_attribute-enhanced_fine-grained_multi-modal_representation_learning_in_e-c.md)
 - [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
-- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](../../CVPR2026/multimodal_vlm/vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
 
 </div>
 

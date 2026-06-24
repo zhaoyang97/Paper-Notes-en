@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inferring Compositional 4D Scenes without Ever Seeing One
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] COM4D reconstructs complete, persistent 4D scenes comprising "multiple static objects + multiple dynamic objects" from a single monocular video. The key lies in decoupling spatial compositional reasoning and single-object temporal dynamics into two distinct attention mechanisms learned from two types of readily availab
+  [CVPR 2026][3D Vision][4D Scene Reconstruction] COM4D reconstructs complete, persistent 4D scenes comprising "multiple static objects + multiple dynamic objects" from a single monocular video. The key lies in decoupling spatial compositional reasoning and single-object temporal dynamics into two distinct attention mechanisms learned from two types of readily available data, then combining them via **Attention Mixing** during inference—all without ever being exposed to 4D comp…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Scene Reconstruction"
+  - "Compositional Generation"
+  - "Diffusion Transformer"
+  - "Attention Mixing"
+  - "Monocular Video"
 date: 2026-05-08
-content_hash: 5375ec071a0b9511
+content_hash: 11fc8292b28f00e4
 ---
+
 # Inferring Compositional 4D Scenes without Ever Seeing One
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ Comparison with MIDI and PartCrafter.
 
 ## Related Papers
 
+- [\[CVPR 2026\] OMGTex: One-stage Multi-style Facial Texture Reconstruction without Geometry Guidance](omgtex_one-stage_multi-style_facial_texture_reconstruction_without_geometry_guid.md)
 - [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
-- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
 
 </div>
 

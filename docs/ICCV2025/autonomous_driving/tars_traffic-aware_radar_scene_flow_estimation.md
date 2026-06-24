@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TARS: Traffic-Aware Radar Scene Flow Estimation
 description: >-
-  [ICCV2025][Autonomous Driving][Radar scene flow] This paper proposes TARS, a traffic-aware radar scene flow estimation method that constructs a Traffic Vector Field (TVF) via joint object detection…
+  [ICCV2025][Autonomous Driving][Radar scene flow] This paper proposes TARS, a traffic-aware radar scene flow estimation method that constructs a Traffic Vector Field (TVF) via joint object detection, capturing rigid-body motion at the traffic level rather than the instance level. TARS surpasses the state of the art by 15% and 23% on the VOD and a proprietary dataset, respectively.
 tags:
   - "ICCV2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "multi-task learning"
   - "autonomous driving perception"
 date: 2026-05-08
-content_hash: f8f59bd037023bf1
+content_hash: 035583b21919e590
 ---
 
 # TARS: Traffic-Aware Radar Scene Flow Estimation
@@ -198,10 +198,10 @@ Key Findings:
 ## Related Papers
 
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
+- [\[ACL 2025\] Embracing Large Language Models in Traffic Flow Forecasting](../../ACL2025/autonomous_driving/embracing_large_language_models_in_traffic_flow_forecasting.md)
+- [\[CVPR 2025\] TacoDepth: Towards Efficient Radar-Camera Depth Estimation with One-Stage Fusion](../../CVPR2025/autonomous_driving/tacodepth_towards_efficient_radar-camera_depth_estimation_with_one-stage_fusion.md)
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](../../AAAI2026/autonomous_driving/meta_dynamic_graph_for_traffic_flow_prediction.md)
-- [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
-- [\[NeurIPS 2025\] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance](../../NeurIPS2025/autonomous_driving/learning_temporal_3d_semantic_scene_completion_via_optical_flow_guidance.md)
-- [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](../../NeurIPS2025/autonomous_driving/spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
+- [\[CVPR 2025\] VoteFlow: Enforcing Local Rigidity in Self-Supervised Scene Flow](../../CVPR2025/autonomous_driving/voteflow_enforcing_local_rigidity_in_self-supervised_scene_flow.md)
 
 </div>
 

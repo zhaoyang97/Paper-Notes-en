@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning to Answer from Correct Demonstrations
 description: >-
-  [ICLR 2026][learning_theory][SFT] This paper formalizes SFT for LLMs as "imitation learning from optimal demonstrations in contextual bandits." It proves that it is sufficient for the **reward model** (which answers are correct) to belong to a low-complexity class, rather than the demonstrator's strategy—a much weaker assumption. The authors demonstrat
+  [ICLR 2026][Learning Theory][Apprenticeship Learning] This paper formalizes SFT for LLMs as "imitation learning from optimal demonstrations in contextual bandits." It proves that it is sufficient for the **reward model** (which answers are correct) to belong to a low-complexity class, rather than the demonstrator's strategy—a much weaker assumption. The authors demonstrate that Maximum Likelihood Estimation (MLE)/SFT fails under this assumption and propose a single-pass onlin…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - SFT
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Imitation Learning"
+  - "Contextual Bandits"
+  - "Apprenticeship Learning"
+  - "SFT"
+  - "Maximum Likelihood"
+  - "Reward-class Assumption"
 date: 2026-05-08
-content_hash: c49e511b95845068
+content_hash: 45adf6f9d5d86338
 ---
+
 # Learning to Answer from Correct Demonstrations
 
 **Conference**: ICLR 2026  
@@ -125,8 +131,8 @@ The grayed-out slow term interpolates between $1/\sqrt m$ (worst case) and $1/m$
 - [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
 - [\[ICLR 2026\] Learning to Adapt: In-Context Learning Beyond Stationarity](learning_to_adapt_in-context_learning_beyond_stationarity.md)
 - [\[ICLR 2026\] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization](sharp_asymptotic_theory_for_q-learning_with_textttld2z_learning_rate_and_its_gen.md)
+- [\[ICLR 2026\] How Reinforcement Learning after Next-Token Prediction Facilitates Learning](how_reinforcement_learning_after_next-token_prediction_facilitates_learning.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
-- [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SimULi: Real-Time LiDAR and Camera Simulation with Unscented Transforms
 description: >-
-  [ICLR 2026][Autonomous Driving][3D Gaussian Splatting] SimULi utilizes factorized 3D Gaussian representations to separately carry camera and LiDAR information, extending 3DGUT to the irregular sampling of spinning LiDAR, thereby achieving real-time autonomous driving sensor simulation that supports complex camera models and LiDAR scanning simultaneously.
+  [ICLR 2026][Autonomous Driving][LiDAR Simulation] SimULi utilizes factorized 3D Gaussian representations to separately carry camera and LiDAR information, extending 3DGUT to the irregular sampling of spinning LiDAR, thereby achieving real-time autonomous driving sensor simulation that supports complex camera models and LiDAR scanning simultaneously.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - Unscented Transform
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Simulation"
+  - "Camera Simulation"
+  - "3D Gaussian Splatting"
+  - "Unscented Transform"
+  - "Multi-sensor Reconstruction"
 date: 2026-05-08
-content_hash: c4a23608c2da1807
+content_hash: 17385ad05ce0517e
 ---
+
 # SimULi: Real-Time LiDAR and Camera Simulation with Unscented Transforms
 
 **Conference**: ICLR 2026  
@@ -138,15 +142,16 @@ In Waymo Interp, SimULi exceeds all baselines by over 2 dB in PSNR while maintai
 - Value: ⭐⭐⭐⭐⭐ High potential for direct application in autonomous driving simulation and closed-loop evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2025\] RENO: Real-Time Neural Compression for 3D LiDAR Point Clouds](../../CVPR2025/autonomous_driving/reno_real-time_neural_compression_for_3d_lidar_point_clouds.md)
-- [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](../../CVPR2026/autonomous_driving/simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
 - [\[CVPR 2026\] Unposed-to-3D: Learning Simulation-Ready Vehicles from Real-World Images](../../CVPR2026/autonomous_driving/unposed-to-3d_learning_simulation-ready_vehicles_from_real-world_images.md)
 - [\[ICCV 2025\] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](../../ICCV2025/autonomous_driving/gs-livm_real-time_photo-realistic_lidar-inertial-visual_mapping_with_gaussian_sp.md)
-- [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
+- [\[CVPR 2025\] RENO: Real-Time Neural Compression for 3D LiDAR Point Clouds](../../CVPR2025/autonomous_driving/reno_real-time_neural_compression_for_3d_lidar_point_clouds.md)
+- [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](../../CVPR2026/autonomous_driving/simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
+- [\[CVPR 2025\] FreeSim: Toward Free-Viewpoint Camera Simulation in Driving Scenes](../../CVPR2025/autonomous_driving/freesim_toward_free-viewpoint_camera_simulation_in_driving_scenes.md)
 
 </div>
 

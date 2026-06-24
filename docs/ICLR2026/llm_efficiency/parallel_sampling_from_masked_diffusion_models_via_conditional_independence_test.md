@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Parallel Sampling from Masked Diffusion Models via Conditional Independence Testing
 description: >-
-  [ICLR 2026][LLM Efficiency][Inference Acceleration] PUNT is a training-free and model-agnostic sampler for Masked Diffusion Models (MDMs). In each step, it utilizes "contextual independence" testing combined with divide-and-conquer pruning to select a batch of non-interfering, high-confidence tokens for simultaneous decoding in only $O(\log |M|)$ forward passes. It achi
+  [ICLR 2026][LLM Efficiency][Masked Diffusion Models] PUNT is a training-free and model-agnostic sampler for Masked Diffusion Models (MDMs). In each step, it utilizes "contextual independence" testing combined with divide-and-conquer pruning to select a batch of non-interfering, high-confidence tokens for simultaneous decoding in only $O(\log |M|)$ forward passes. It achieves higher generation quality with fewer forward passes on long-text alignment benchmarks (up to 16% highe…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Masked Diffusion Models"
+  - "Parallel Sampling"
+  - "Conditional Independence"
+  - "Training-free Sampler"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 78137f14442a028f
+content_hash: 3066ceb629c7471c
 ---
+
 # Parallel Sampling from Masked Diffusion Models via Conditional Independence Testing
 
 **Conference**: ICLR 2026  
@@ -149,9 +154,9 @@ measuring the information lost by assuming $r_i$ is independent of other synchro
 
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ICLR 2026\] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](ni_sampling_accelerating_discrete_diffusion_sampling_by_token_order_optimization.md)
-- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
 - [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
-- [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
+- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting
 description: >-
-  [CVPR 2026][3D Vision][2DGS] Addressing dark scenes with "camera-mounted moving light sources," this paper utilizes 2DGS and albedo attributes to decouple illumination from intrinsic appearance. Through a three-stage training process—incorporating "illumination-weighted loss → image-space tiled shading → albedo-guided geometric prior refinement"—i
+  [CVPR 2026][3D Vision][Gaussian Splatting] Addressing dark scenes with "camera-mounted moving light sources," this paper utilizes 2DGS and albedo attributes to decouple illumination from intrinsic appearance. Through a three-stage training process—incorporating "illumination-weighted loss → image-space tiled shading → albedo-guided geometric prior refinement"—it outperforms methods like DarkGS across PSNR/SSIM/LPIPS while achieving faster training and rendering.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 2DGS
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Dark Scene Reconstruction"
+  - "Active Lighting"
+  - "Illumination Decoupling"
+  - "2DGS"
 date: 2026-05-08
-content_hash: 8ea09ac7cc76990c
+content_hash: 578c1c84e1d830bb
 ---
+
 # SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting
 
 **Conference**: CVPR 2026  
@@ -129,14 +134,17 @@ Efficiency (DarkRobotic):
 
 <div class="related-papers" markdown="1">
 
-- **DarkGS**: Learning to Reconstruct 3D Scenes from Dark Multi-view Images (CVPR 2025)
-- **2DGS**: 2D Gaussian Splatting for Geometrically Accurate Radiance Fields (SIGGRAPH 2024)
-- **GS-W**: Gaussian Splatting in the Wild (ArXiv 2024)
+## Related Papers
+
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
+- [\[CVPR 2026\] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors](ir-hgp_physically-aware_gaussian_inverse_rendering_for_high-illumination_scenes_.md)
+- [\[CVPR 2026\] LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes](luxremix_lighting_decomposition_and_remixing_for_indoor_scenes.md)
+- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
+- [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes](luxremix_lighting_decomposition_and_remixing_for_indoor_scenes.md)

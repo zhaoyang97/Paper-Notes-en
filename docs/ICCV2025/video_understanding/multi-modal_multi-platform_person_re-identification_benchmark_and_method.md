@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-modal Multi-platform Person Re-Identification: Benchmark and Method
 description: >-
-  [ICCV 2025][Video Understanding][Person Re-Identification] This paper presents MP-ReID, the first multi-modal multi-platform person re-identification benchmark encompassing three modalities (RGB, infrared…
+  [ICCV 2025][Video Understanding][Person Re-Identification] This paper presents MP-ReID, the first multi-modal multi-platform person re-identification benchmark encompassing three modalities (RGB, infrared, thermal) and two platforms (ground and UAV), along with a unified prompt learning framework, Uni-Prompt ReID, which leverages modality-aware, platform-aware, and visual-enhanced prompts to substantially improve ReID performance under complex real-world conditions.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Prompt Learning"
   - "CLIP"
 date: 2026-05-08
-content_hash: 08ae92bc2801f593
+content_hash: 2fb3b04c8c14f7ea
 ---
 
 # Multi-modal Multi-platform Person Re-Identification: Benchmark and Method
@@ -55,10 +55,10 @@ Uni-Prompt ReID is built upon the CLIP vision-language model and is fine-tuned t
 1. **MP-ReID Dataset Construction**
 
    The dataset spans 3 modalities × 2 platforms:
-   - Ground RGB (6 Hikvision 1920×1080 full-color cameras)
-   - Ground infrared (6 cameras in infrared night-vision mode)
-   - UAV RGB (DJI Mavic 3T, 3840×2160)
-   - UAV thermal (DJI Mavic 3T thermal camera, 640×512)
+    - Ground RGB (6 Hikvision 1920×1080 full-color cameras)
+    - Ground infrared (6 cameras in infrared night-vision mode)
+    - UAV RGB (DJI Mavic 3T, 3840×2160)
+    - UAV thermal (DJI Mavic 3T thermal camera, 640×512)
 
    Dataset scale: 1,930 identities, 136,156 annotated bounding boxes, 14 cameras, and over 13 hours of total video footage. UAV data was collected at three altitudes (5 m / 7 m / 10 m) with pitch angles ranging from 30° to 80°. All data underwent facial mosaicking and original footage deletion to protect privacy.
 
@@ -68,9 +68,9 @@ Uni-Prompt ReID is built upon the CLIP vision-language model and is fine-tuned t
 
    $t_i(a) = X_1(a) \cdots X_M(a) \; P_1(a) \cdots P_R(a) \; M_1(a) \cdots M_B(a), \text{person}_i$
 
-   - **Specific ReID Prompt** ($X$): encodes individual-specific information (identity level)
-   - **Modality-Aware Prompt** ($M$): captures modality-specific details (RGB vs. infrared vs. thermal)
-   - **Platform-Aware Prompt** ($P$): incorporates platform-specific context (ground vs. aerial)
+    - **Specific ReID Prompt** ($X$): encodes individual-specific information (identity level)
+    - **Modality-Aware Prompt** ($M$): captures modality-specific details (RGB vs. infrared vs. thermal)
+    - **Platform-Aware Prompt** ($P$): incorporates platform-specific context (ground vs. aerial)
 
 3. **Visual-Enhanced Network**
 

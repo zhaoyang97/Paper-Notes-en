@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery
 description: >-
-  [CVPR 2026][Remote Sensing][polygonal vectorization] Ours proposes ACPV-Net, the first framework to generate topologically consistent all-class polygonal vector maps from aerial imagery in a single pass. It utilizes a Semantic Supervised Conditioning (SSC) diffusion model to generate vertex heatmaps and ensures zero-gap/zero-overlap through proposition-driven PSLG recons
+  [CVPR 2026][Remote Sensing][polygonal vectorization] Ours proposes ACPV-Net, the first framework to generate topologically consistent all-class polygonal vector maps from aerial imagery in a single pass. It utilizes a Semantic Supervised Conditioning (SSC) diffusion model to generate vertex heatmaps and ensures zero-gap/zero-overlap through proposition-driven PSLG reconstruction.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - polygonal vectorization
-  - vector map generation
-  - planar partition
-  - conditional diffusion
-  - topological consistency
-  - aerial imagery
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "polygonal vectorization"
+  - "vector map generation"
+  - "planar partition"
+  - "conditional diffusion"
+  - "topological consistency"
+  - "aerial imagery"
 date: 2026-05-08
-content_hash: 290e37dde2caf668
+content_hash: 88a5789591b61c63
 ---
+
 # ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery
 
 **Conference**: CVPR 2026  
@@ -164,11 +165,11 @@ The framework applies to single-class scenarios without architectural changes, a
 
 ## Related Papers
 
+- [\[ICLR 2026\] SatDreamer360: Multiview-Consistent Generation of Ground-Level Scenes from Satellite Imagery](../../ICLR2026/remote_sensing/satdreamer360_multiview-consistent_generation_of_ground-level_scenes_from_satell.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
 - [\[CVPR 2026\] Spectrally Distilled Representations Aligned with Instruction-Augmented LLMs for Satellite Imagery](spectrally_distilled_representations_aligned_with_instruction-augmented_llms_for.md)
 - [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
-- [\[ICML 2025\] MapEval: A Map-Based Evaluation of Geo-Spatial Reasoning in Foundation Models](../../ICML2025/remote_sensing/mapeval_a_map-based_evaluation_of_geo-spatial_reasoning_in_foundation_models.md)
-- [\[CVPR 2026\] APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation](apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig.md)
 
 </div>
 

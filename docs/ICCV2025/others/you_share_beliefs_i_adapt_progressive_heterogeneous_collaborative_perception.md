@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception
 description: >-
-  [ICCV2025][heterogeneous collaborative perception] This paper proposes PHCP, the first framework that addresses the domain gap in heterogeneous collaborative perception at inference time. By leveraging collaborating agen…
+  [ICCV2025][heterogeneous collaborative perception] This paper proposes PHCP, the first framework that addresses the domain gap in heterogeneous collaborative perception at inference time. By leveraging collaborating agents' pseudo labels for few-shot unsupervised domain adaptation, PHCP trains lightweight adapters via self-training to align feature spaces—requiring no joint training—and achieves near-SOTA (HEAL) performance on OPV2V with only a small number of unlabeled sampl…
 tags:
   - "ICCV2025"
   - "heterogeneous collaborative perception"
@@ -11,7 +11,7 @@ tags:
   - "pseudo labels"
   - "inference-time adaptation"
 date: 2026-05-08
-content_hash: cbe1d8df82251fea
+content_hash: f8251b82f0775ade
 ---
 
 # You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception
@@ -177,9 +177,9 @@ This paper proposes PHCP, the first framework that addresses the domain gap in h
 
 - [\[ICCV 2025\] I Am Big, You Are Little; I Am Right, You Are Wrong](i_am_big_you_are_little_i_am_right_you_are_wrong.md)
 - [\[NeurIPS 2025\] ResNets Are Deeper Than You Think](../../NeurIPS2025/others/resnets_are_deeper_than_you_think.md)
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](../../CVPR2026/others/progressive_neural_architecture_generation.md)
+- [\[CVPR 2025\] Regor: Progressive Correspondence Regenerator for Robust 3D Registration](../../CVPR2025/others/progressive_correspondence_regenerator_for_robust_3d_registration.md)
 - [\[NeurIPS 2025\] Contextual Dynamic Pricing with Heterogeneous Buyers](../../NeurIPS2025/others/contextual_dynamic_pricing_with_heterogeneous_buyers.md)
-- [\[NeurIPS 2025\] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](../../NeurIPS2025/others/brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)
-- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](../../AAAI2026/others/area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
 
 </div>
 

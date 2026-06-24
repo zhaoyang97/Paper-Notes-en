@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SIM-CoT: Supervised Implicit Chain-of-Thought
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] SIM-CoT identifies that implicit Chain-of-Thought (CoT) suffers from latent representation collapse when increasing reasoning tokens due to a lack of fine-grained supervision. It introduces a "disposable" auxiliary decoder during training to align each implicit latent with its corresponding explicit reasoning step. Thi
+  [ICLR 2026][Reasoning][Implicit Chain-of-Thought] SIM-CoT identifies that implicit Chain-of-Thought (CoT) suffers from latent representation collapse when increasing reasoning tokens due to a lack of fine-grained supervision. It introduces a "disposable" auxiliary decoder during training to align each implicit latent with its corresponding explicit reasoning step. This stabilizes training and enriches semantics, improving Coconut by +8.2% on GPT-2 and allowing implicit CoT to…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Implicit Chain-of-Thought"
+  - "Step-level Supervision"
+  - "Latent Representation Collapse"
+  - "Token Efficiency"
+  - "Auxiliary Decoder"
 date: 2026-05-08
-content_hash: 164822f36b149269
+content_hash: f850abe42747520b
 ---
+
 # SIM-CoT: Supervised Implicit Chain-of-Thought
 
 **Conference**: ICLR 2026  
@@ -134,7 +140,7 @@ On GPT-2 and LLaMA 3 (1B/3B/8B), in-domain (GSM8k-Aug) and out-of-domain (GSM-Ha
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -142,7 +148,7 @@ On GPT-2 and LLaMA 3 (1B/3B/8B), in-domain (GSM8k-Aug) and out-of-domain (GSM-Ha
 - [\[ICLR 2026\] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning](cot-evo_evolutionary_distillation_of_chain-of-thought_for_scientific_reasoning.md)
 - [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
-- [\[ICLR 2026\] The CoT Encyclopedia：分析、预测并控制推理模型的思考方式](the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](agentic_reinforcement_learning_with_implicit_step_rewards.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations
 description: >-
-  [ICLR 2026][Graph Learning][Geo-GNN] This paper introduces graph heat diffusion equations into geometric graph neural networks, utilizing "equivariant gradient operators + equivariant diffusion operators" to perform all-to-all node information flow on fully connected molecular graphs. Acting as a plug-and-play module, it captures geometric topological inv
+  [ICLR 2026][Graph Learning][Geo-GNN] This paper introduces graph heat diffusion equations into geometric graph neural networks, utilizing "equivariant gradient operators + equivariant diffusion operators" to perform all-to-all node information flow on fully connected molecular graphs. Acting as a plug-and-play module, it captures geometric topological invariant features insensitive to conformational changes, thereby enabling machine learning force fields to run stable long-ra…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Geo-GNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Geo-GNN"
+  - "Molecular Dynamics"
+  - "Equivariance"
+  - "Graph Diffusion"
+  - "Conformational Extrapolation"
+  - "Simulation Stability"
 date: 2026-05-08
-content_hash: d84eb113668e1f8d
+content_hash: 45db72ba4268f2b4
 ---
+
 # Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,10 @@ SAMD23 Semiconductor dataset (SiN/HfO, direct comparison of GGND with SOTA, E/A 
 ## Related Papers
 
 - [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
+- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
 - [\[NeurIPS 2025\] Graph Neural Networks for Interferometer Simulations](../../NeurIPS2025/graph_learning/graph_neural_networks_for_interferometer_simulations.md)
 - [\[ICML 2026\] Deep Neural Sheaf Diffusion](../../ICML2026/graph_learning/deep_neural_sheaf_diffusion.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
-- [\[ICLR 2026\] FSD-CAP: Fractional Subgraph Diffusion with Class-Aware Propagation for Graph Feature Imputation](fsd-cap_fractional_subgraph_diffusion_with_class-aware_propagation_for_graph_fea.md)
+- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
 
 </div>
 

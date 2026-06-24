@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper systematically measures five types of biases—length, uncertainty, position, sycophancy, and model style—across five high-quality RMs (including SOTA Skywork-Reward-V2). It categorizes them into "low complexity (linearly repairable)" and "high complexity (linearly non-repairable)" and proposes mechanistic rew
+  [ICML 2026][Reinforcement Learning][Reward Models] This paper systematically measures five types of biases—length, uncertainty, position, sycophancy, and model style—across five high-quality RMs (including SOTA Skywork-Reward-V2). It categorizes them into "low complexity (linearly repairable)" and "high complexity (linearly non-repairable)" and proposes mechanistic reward shaping. By using DiffMean linear probes to perform null-space projection on the final-layer hidden state…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Reward Models"
+  - "Reward Hacking"
+  - "Linear Probes"
+  - "Null-space Projection"
+  - "RM Bias"
 date: 2026-05-08
-content_hash: 327910e0e84929d3
+content_hash: 593c2d17b75d84d3
 ---
+
 # One Bias After Another: Mechanistic Reward Shaping and Persistent Biases in Language Reward Models
 
 **Conference**: ICML 2026  
@@ -117,15 +123,16 @@ Ours is **entirely training-free**. All interventions are inference-time linear 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] CAMEL: Confidence-Gated Reflection for Reward Modeling](camel_confidence-gated_reflection_for_reward_modeling.md)
-- [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](../../NeurIPS2025/reinforcement_learning/checklists_are_better_than_reward_models_for_aligning_langua.md)
+- [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](../../ICLR2026/reinforcement_learning/learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)
 - [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](../../ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
 - [\[ICML 2025\] Automatic Reward Shaping from Confounded Offline Data](../../ICML2025/reinforcement_learning/automatic_reward_shaping_from_confounded_offline_data.md)
-- [\[ICML 2025\] Action-Dependent Optimality-Preserving Reward Shaping (ADOPS)](../../ICML2025/reinforcement_learning/action-dependent_optimality-preserving_reward_shaping.md)
+- [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](../../NeurIPS2025/reinforcement_learning/checklists_are_better_than_reward_models_for_aligning_langua.md)
+- [\[ICML 2026\] CAMEL: Confidence-Gated Reflection for Reward Modeling](camel_confidence-gated_reflection_for_reward_modeling.md)
 
 </div>
 

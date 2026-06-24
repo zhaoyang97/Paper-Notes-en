@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation
 description: >-
-  [AAAI 2026 (Oral)][Hallucination Detection][Day-to-night translation] This paper is the first to systematically address the "target-class hallucination" problem in unpaired day-to-night image translation. By combining a…
+  [AAAI 2026 (Oral)][Hallucination Detection][Day-to-night translation] This paper is the first to systematically address the "target-class hallucination" problem in unpaired day-to-night image translation. By combining a dual-head discriminator (style head + SAM2 pseudo-label segmentation head) for hallucination detection and class-prototype contrastive learning for suppression, the method improves mAP from 15.08 to 17.40 (+15.5%) on BDD100K day-to-night domain adaptation dete…
 tags:
   - "AAAI 2026 (Oral)"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "SAM2 pseudo-labels"
   - "prototype contrastive learning"
 date: 2026-05-08
-content_hash: c50138884625cb73
+content_hash: 93a766bc20d9dc88
 ---
 
 # Bridging Day and Night: Target-Class Hallucination Suppression in Unpaired Image Translation
@@ -132,10 +132,10 @@ Total loss: $\mathcal{L}_{total} = \lambda_1 \mathcal{L}_{adv} + \lambda_2 \math
 ## Related Papers
 
 - [\[CVPR 2026\] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](../../CVPR2026/hallucination/fighting_hallucinations_with_counterfactuals_diffusion-guided_perturbations_for_.md)
-- [\[NeurIPS 2025\] Hallucination as an Upper Bound: A New Perspective on Text-to-Image Evaluation](../../NeurIPS2025/hallucination/hallucination_as_an_upper_bound_a_new_perspective_on_text-to-image_evaluation.md)
-- [\[AAAI 2026\] PASE: Leveraging the Phonological Prior of WavLM for Low-Hallucination Generative Speech Enhancement](pase_leveraging_the_phonological_prior_of_wavlm_for_low-hallucination_generative.md)
-- [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](../../ICML2026/hallucination/tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
-- [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
+- [\[ICLR 2026\] Grounding or Guessing? Visual Signals for Detecting Hallucinations in Sign Language Translation](../../ICLR2026/hallucination/grounding_or_guessing_visual_signals_for_detecting_hallucinations_in_sign_langua.md)
+- [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](../../CVPR2026/hallucination/fine-grained_multi_image_object_hallucination_benchmark.md)
+- [\[CVPR 2025\] Stop Learning It All to Mitigate Visual Hallucination, Focus on the Hallucination Target](../../CVPR2025/hallucination/stop_learning_it_all_to_mitigate_visual_hallucination_focus_on_the_hallucination.md)
+- [\[ICLR 2026\] GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs](../../ICLR2026/hallucination/ghost_hallucination-inducing_image_generation_for_multimodal_llms.md)
 
 </div>
 

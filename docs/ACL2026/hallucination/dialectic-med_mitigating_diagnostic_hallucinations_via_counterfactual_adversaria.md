@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] Ours proposes Dialectic-Med, a multi-agent medical diagnostic framework inspired by Popper’s falsificationism. Through adversarial dialectical reasoning among a Proposer (diagnostic hypothesis), an Opponent (Visual Falsification Module actively retrieving contradictory evidence), and a Mediator (weighted consensus grap
+  [ACL 2026][Hallucination Detection][Medical Hallucination] Ours proposes Dialectic-Med, a multi-agent medical diagnostic framework inspired by Popper’s falsificationism. Through adversarial dialectical reasoning among a Proposer (diagnostic hypothesis), an Opponent (Visual Falsification Module actively retrieving contradictory evidence), and a Mediator (weighted consensus graph decision), it achieves SOTA on MIMIC-CXR-VQA, VQA-RAD, and PathVQA…
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Medical Hallucination"
+  - "Multi-Agent Debate"
+  - "Counterfactual Reasoning"
+  - "Visual Falsification"
+  - "Confirmation Bias"
 date: 2026-05-08
-content_hash: 83012fb49b57a66e
+content_hash: d76ba403acc77864
 ---
+
 # Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate
 
 **Conference**: ACL 2026  
@@ -132,9 +138,9 @@ Consider a chest X-ray with an initial hypothesis of "pneumonia": The Proposer o
 ## Related Papers
 
 - [\[AAAI 2026\] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning](../../AAAI2026/hallucination/multi-agent_undercover_gaming_hallucination_removal_via_coun.md)
+- [\[ICLR 2026\] Visual Multi-Agent System: Mitigating Hallucination Snowballing via Visual Flow](../../ICLR2026/hallucination/visual_multi-agent_system_mitigating_hallucination_snowballing_via_visual_flow.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](../../AAAI2026/hallucination/inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
-- [\[ACL 2025\] Removal of Hallucination on Hallucination: Debate-Augmented RAG](../../ACL2025/hallucination/removal_of_hallucination_on_hallucination_debate-augmented_rag.md)
 - [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/hallucination/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
 
 </div>

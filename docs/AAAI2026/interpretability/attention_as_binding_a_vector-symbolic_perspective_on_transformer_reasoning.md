@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning
 description: >-
-  [AAAI 2026][Interpretability][Vector Symbolic Architecture (VSA)] This paper proposes reinterpreting the Transformer self-attention mechanism as a soft binding/unbinding operator in Vector Symbolic Architectures (VSA) —…
+  [AAAI 2026][Interpretability][Vector Symbolic Architecture (VSA)] This paper proposes reinterpreting the Transformer self-attention mechanism as a soft binding/unbinding operator in Vector Symbolic Architectures (VSA) — where Query/Key define a role space, Value encodes fillers, attention weights implement differentiable unbinding, and residual connections implement superposition — thereby providing an algebraic perspective that unifies explanations of LLM capability and frag…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "hyperdimensional computing"
   - "Transformer interpretability"
 date: 2026-05-08
-content_hash: 627a3ce68bdbefa9
+content_hash: f09dd716070ae2f2
 ---
 
 # Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning
@@ -155,10 +155,10 @@ This work is a theoretical survey and conceptual synthesis; it does not include 
 ## Related Papers
 
 - [\[AAAI 2026\] Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning](share_your_attention_transformer_weight_sharing_via_matrix-based_dictionary_lear.md)
-- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
+- [\[ICLR 2026\] Decoupling Positional and Symbolic Attention in Transformers](../../ICLR2026/interpretability/decoupling_positional_and_symbolic_attention_in_transformers.md)
+- [\[NeurIPS 2025\] Geometric Priors for Generalizable World Models via Vector Symbolic Architecture](../../NeurIPS2025/interpretability/geometric_priors_for_generalizable_world_models_via_vector_symbolic_architecture.md)
 - [\[ICML 2026\] Formalizing the Binding Problem](../../ICML2026/interpretability/formalizing_the_binding_problem.md)
-- [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](../../NeurIPS2025/interpretability/reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 
 </div>
 

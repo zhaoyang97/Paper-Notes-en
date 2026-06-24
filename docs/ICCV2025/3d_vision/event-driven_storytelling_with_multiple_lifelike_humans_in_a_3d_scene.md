@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene
 description: >-
-  [ICCV 2025][3D Vision][Multi-Human Motion] This paper proposes an event-driven LLM framework that decomposes multi-character behavior planning in 3D scenes into two modules — a Narrator for event-by-event generation and…
+  [ICCV 2025][3D Vision][Multi-Human Motion] This paper proposes an event-driven LLM framework that decomposes multi-character behavior planning in 3D scenes into two modules — a Narrator for event-by-event generation and an Event Parser for fine-grained spatial reasoning — achieving, for the first time, long-horizon natural interaction motion generation for 4–5+ characters in large-scale multi-room 3D scenes.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Scene-Aware"
   - "3D Scene Graph"
 date: 2026-05-08
-content_hash: fad8e73ec2483bfd
+content_hash: e01c533d8d07a4a9
 ---
 
 # Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene
@@ -137,7 +137,7 @@ OA = Object Arrangement Reasoning, RC = Regional Context Reasoning, SS = Scene S
 - [\[ICCV 2025\] TriDi: Trilateral Diffusion of 3D Humans, Objects, and Interactions](tridi_trilateral_diffusion_of_3d_humans_objects_and_interactions.md)
 - [\[ICCV 2025\] ETCH: Generalizing Body Fitting to Clothed Humans via Equivariant Tightness](etch_generalizing_body_fitting_to_clothed_humans_via_equivariant_tightness.md)
 - [\[ICCV 2025\] 3D Test-time Adaptation via Graph Spectral Driven Point Shift](3d_testtime_adaptation_via_graph_spectral_driven_point_shift.md)
-- [\[ICCV 2025\] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization](memorytalker_personalized_speech-driven_3d_facial_animation_via_audio-guided_sty.md)
+- [\[CVPR 2025\] Reconstructing Humans with a Biomechanically Accurate Skeleton](../../CVPR2025/3d_vision/reconstructing_humans_with_a_biomechanically_accurate_skeleton.md)
 
 </div>
 

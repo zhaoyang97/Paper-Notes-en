@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion
 description: >-
-  [ICCV 2025][Autonomous Driving][Structure-from-Motion] This paper proposes MGSfM, a global Structure-from-Motion (SfM) framework for multi-camera systems. By exploiting multi-camera rigid constraints through two core mod…
+  [ICCV 2025][Autonomous Driving][Structure-from-Motion] This paper proposes MGSfM, a global Structure-from-Motion (SfM) framework for multi-camera systems. By exploiting multi-camera rigid constraints through two core modules — **Decoupled Multi-camera Rotation Averaging (DMRA)** and **Multi-camera Geometry driven Position estimation (MGP)** — MGSfM achieves accuracy comparable to or better than incremental SfM on large-scale scenes while being approximately 10× faster.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "translation averaging"
   - "3D reconstruction"
 date: 2026-05-08
-content_hash: 1c67fafbe213db2c
+content_hash: 5d7f6cb9a0e28f29
 ---
 
 # MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion
@@ -173,11 +173,11 @@ Six configurations are compared on KITTI Odometry (relative translations only / 
 
 ## Related Papers
 
+- [\[ICML 2025\] Geometry-to-Image Synthesis-Driven Generative Point Cloud Registration](../../ICML2025/autonomous_driving/geometry-to-image_synthesis-driven_generative_point_cloud_registration.md)
 - [\[ICCV 2025\] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation](3d_gaussian_splatting_driven_multiview_robust_physical_adver.md)
 - [\[ICCV 2025\] Language Driven Occupancy Prediction (LOcc)](language_driven_occupancy_prediction.md)
-- [\[ICCV 2025\] SAM4D: Segment Anything in Camera and LiDAR Streams](sam4d_segment_anything_in_camera_and_lidar_streams.md)
 - [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
-- [\[ICCV 2025\] OD-RASE: Ontology-Driven Risk Assessment and Safety Enhancement for Autonomous Driving](od-rase_ontology-driven_risk_assessment_and_safety_enhancement_for_autonomous_dr.md)
+- [\[ICCV 2025\] SAM4D: Segment Anything in Camera and LiDAR Streams](sam4d_segment_anything_in_camera_and_lidar_streams.md)
 
 </div>
 

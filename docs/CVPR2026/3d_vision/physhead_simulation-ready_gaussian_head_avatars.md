@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhysHead: Simulation-Ready Gaussian Head Avatars
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PhysHead is proposed as the first method to combine physics-driven hair dynamics with animatable 3DGS head avatars. It models the expressible face using FLAME meshes and 3DGS, models hair appearance using strands and 3DGS, and drives hair animation via a physics engine. Layered optimization for the face and hair is ach
+  [CVPR 2026][3D Vision][Head Avatar Reconstruction] PhysHead is proposed as the first method to combine physics-driven hair dynamics with animatable 3DGS head avatars. It models the expressible face using FLAME meshes and 3DGS, models hair appearance using strands and 3DGS, and drives hair animation via a physics engine. Layered optimization for the face and hair is achieved through VLM-generated bald images.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Head Avatar Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Hair Physics Simulation"
+  - "Layered Representation"
+  - "VLM-assisted"
 date: 2026-05-08
-content_hash: 2e215ea6a8405750
+content_hash: 4124aa2223ad5d2a
 ---
+
 # PhysHead: Simulation-Ready Gaussian Head Avatars
 
 **Conference**: CVPR 2026  
@@ -144,7 +150,7 @@ Note: Color consistency loss is best enabled after 5000 iterations to allow visi
 - [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
 - [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
 - [\[CVPR 2026\] Motion-Aware Animatable Gaussian Avatars Deblurring](motion-aware_animatable_gaussian_avatars_deblurring.md)
-- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
 
 </div>
 

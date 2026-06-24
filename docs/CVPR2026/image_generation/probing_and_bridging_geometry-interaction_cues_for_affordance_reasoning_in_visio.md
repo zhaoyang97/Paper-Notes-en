@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This work systematically probes affordance capabilities within Vision Foundation Models (VFMs). It discovers that DINO encodes part-level geometric structures while Flux encodes verb-conditioned interaction priors. By fusing both in a training-free manner, the authors achieve zero-shot affordance estimation competitive
+  [CVPR 2026][Image Generation][Affordance Reasoning] This work systematically probes affordance capabilities within Vision Foundation Models (VFMs). It discovers that DINO encodes part-level geometric structures while Flux encodes verb-conditioned interaction priors. By fusing both in a training-free manner, the authors achieve zero-shot affordance estimation competitive with weakly supervised methods.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Affordance Reasoning"
+  - "Vision Foundation Models"
+  - "Geometry Awareness"
+  - "Interaction Priors"
+  - "Zero-shot Fusion"
 date: 2026-05-08
-content_hash: 840f9fbe1ca52f2e
+content_hash: 28a1e8aa5e292fcd
 ---
+
 # Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,14 @@ The approach is entirely training-free, requiring no affordance annotations or f
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_models.md)
-- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
 - [\[CVPR 2026\] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)
-- [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](cinematic_audio_source_separation_using_visual_cues.md)
+- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
+- [\[ICCV 2025\] Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching](../../ICCV2025/image_generation/mind_the_gap_aligning_vision_foundation_models_to_image_feature_matching.md)
 - [\[NeurIPS 2025\] DEXTER: Diffusion-Guided EXplanations with TExtual Reasoning for Vision Models](../../NeurIPS2025/image_generation/dexter_diffusion-guided_explanations_with_textual_reasoning_for_vision_models.md)
+- [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](cinematic_audio_source_separation_using_visual_cues.md)
 
 </div>
 

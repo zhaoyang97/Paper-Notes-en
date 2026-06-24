@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Beyond Membership: Limitations of Add/Remove Adjacency in Differential Privacy
 description: >-
-  [ICLR 2026][AI Safety][DP-SGD] The paper argues that the **add/remove adjacency** used by mainstream DP libraries only protects "whether a member is in the training set." For attacks aiming to "infer attributes/labels of samples known to be in the set," it only provides much weaker protection under **substitute adjacency**. The authors design a cana
+  [ICLR 2026][AI Safety][Differential Privacy] The paper argues that the **add/remove adjacency** used by mainstream DP libraries only protects "whether a member is in the training set." For attacks aiming to "infer attributes/labels of samples known to be in the set," it only provides much weaker protection under **substitute adjacency**. The authors design a canary auditing toolkit for substitute adjacency, empirically demonstrating that privacy leakage can **exceed the $\var…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DP-SGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "add/remove adjacency"
+  - "substitute adjacency"
+  - "attribute inference"
+  - "DP-SGD"
+  - "privacy auditing"
+  - "canary"
 date: 2026-05-08
-content_hash: 330bc317673a0086
+content_hash: 49e30b86c071a620
 ---
+
 # Beyond Membership: Limitations of Add/Remove Adjacency in Differential Privacy
 
 **Conference**: ICLR 2026  
@@ -113,13 +120,13 @@ The adversary uses $\log\Pr(g_T\mid D)-\log\Pr(g_T\mid D')$ as the divergence sc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](privacy_beyond_pixels_latent_anonymization_for_privacy-preserving_video_understa.md)
-- [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](sam_membership_privacy_risks.md)
 - [\[ICLR 2026\] INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy](ino-sgd_addressing_utility_imbalance_under_individualized_differential_privacy.md)
+- [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](sam_membership_privacy_risks.md)
 - [\[ICLR 2026\] Exponential-Wrapped Mechanisms: Differential Privacy on Hadamard Manifolds Made Practical](exponential-wrapped_mechanisms_differential_privacy_on_hadamard_manifolds_made_p.md)
 - [\[ICLR 2026\] Optimizing Canaries for Privacy Auditing with Metagradient Descent](optimizing_canaries_for_privacy_auditing_with_metagradient_descent.md)
 

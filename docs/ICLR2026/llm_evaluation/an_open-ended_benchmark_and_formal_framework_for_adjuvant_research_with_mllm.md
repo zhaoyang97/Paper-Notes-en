@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] Addressing the "vaccine adjuvant" field long neglected by AI, this work constructs the first expert-annotated open-ended QA benchmark (1294 QA pairs + 1364 formal descriptions). It systematically evaluates 11 closed-source and 19 open-source MLLMs and proposes a formal framework that encodes adjuvant design principles
+  [ICLR 2026][LLM Evaluation][Adjuvant research] Addressing the "vaccine adjuvant" field long neglected by AI, this work constructs the first expert-annotated open-ended QA benchmark (1294 QA pairs + 1364 formal descriptions). It systematically evaluates 11 closed-source and 19 open-source MLLMs and proposes a formal framework that encodes adjuvant design principles and immune mechanisms into structured variables and functions.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Adjuvant research"
+  - "Open-ended QA"
+  - "Hallucination rejection"
+  - "Formal description"
+  - "MLLM evaluation"
 date: 2026-05-08
-content_hash: 44623120a253cfe0
+content_hash: 7890c058cf2e13ed
 ---
+
 # An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM
 
 **Conference**: ICLR 2026  

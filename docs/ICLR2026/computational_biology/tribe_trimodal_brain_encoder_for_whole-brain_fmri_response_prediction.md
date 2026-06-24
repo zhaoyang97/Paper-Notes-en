@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TRIBE: Trimodal Brain Encoder for Whole-Brain fMRI Response Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Transformer] TRIBE feeds intermediate layer representations from three pre-trained foundation models (text, audio, and video) into a temporal Transformer to predict fMRI responses of 1000 brain parcels end-to-end. By integrating "nonlinear + cross-subject + multimodal" designs, it won the Algonauts 2025 Brain Encoding Competition w
+  [ICLR 2026][Computational Biology][Brain Encoding] TRIBE feeds intermediate layer representations from three pre-trained foundation models (text, audio, and video) into a temporal Transformer to predict fMRI responses of 1000 brain parcels end-to-end. By integrating "nonlinear + cross-subject + multimodal" designs, it won the Algonauts 2025 Brain Encoding Competition with a significant lead among 267 teams.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Transformer
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Brain Encoding"
+  - "fMRI Response Prediction"
+  - "Multimodal Fusion"
+  - "Transformer"
+  - "Cross-subject Modeling"
 date: 2026-05-08
-content_hash: 4fb26bffc325a2c4
+content_hash: e6d7da1a58e3d08f
 ---
+
 # TRIBE: Trimodal Brain Encoder for Whole-Brain fMRI Response Prediction
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] MoMaGen models demonstration data generation for bimanual mobile manipulation as a constrained optimization problem. By synergizing hard constraints (reachability, collision-free, visibility) and soft constraints (object visibility during navigation, compact retracted poses), it automatically generates large-scale dive
+  [ICLR 2026][Robotics][Mobile manipulation] MoMaGen models demonstration data generation for bimanual mobile manipulation as a constrained optimization problem. By synergizing hard constraints (reachability, collision-free, visibility) and soft constraints (object visibility during navigation, compact retracted poses), it automatically generates large-scale diverse datasets from a single human teleoperated demonstration. The trained visuo-motor policy can be deployed on physic…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Mobile manipulation"
+  - "bimanual coordination"
+  - "constrained optimization"
+  - "automated data generation"
+  - "imitation learning"
 date: 2026-05-08
-content_hash: c690748127a00242
+content_hash: 5d60c03f95bc9e31
 ---
+
 # MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation
 
 **Conference**: ICLR 2026  
@@ -169,11 +175,11 @@ Increasing data volume under D1 randomization brings significant performance gai
 
 ## Related Papers
 
-- [\[ICLR 2026\] Differentiable Simulation of Hard Contacts with Soft Gradients for Learning and Control](differentiable_simulation_of_hard_contacts_with_soft_gradients_for_learning_and_.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](../../CVPR2026/robotics/affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
+- [\[ICLR 2026\] Differentiable Simulation of Hard Contacts with Soft Gradients for Learning and Control](differentiable_simulation_of_hard_contacts_with_soft_gradients_for_learning_and_.md)
+- [\[ICLR 2026\] Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations](robotic_manipulation_by_imitating_generated_videos_without_physical_demonstratio.md)
 - [\[ICML 2025\] Learning Dynamics under Environmental Constraints via Measurement-Induced Bundle Structures](../../ICML2025/robotics/learning_dynamics_under_environmental_constraints_via_measurement-induced_bundle.md)
 - [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](../../CVPR2026/robotics/scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
-- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
 
 </div>
 

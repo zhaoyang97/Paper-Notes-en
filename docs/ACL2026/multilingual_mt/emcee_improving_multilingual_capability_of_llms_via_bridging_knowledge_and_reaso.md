@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context
 description: >-
-  [ACL 2026][Multilingual & Translation][multilingual prompting] EMCEE enables LLMs to first extract synthetic multilingual context related to non-English queries from their internal parameters, then merges context-augmented responses with CoT reasoning responses via an LLM-as-a-Judge, significantly improving performance on low-resource languages across four multilingual tasks.
+  [ACL 2026][Multilingual & Machine Translation][multilingual prompting] EMCEE enables LLMs to first extract synthetic multilingual context related to non-English queries from their internal parameters, then merges context-augmented responses with CoT reasoning responses via an LLM-as-a-Judge, significantly improving performance on low-resource languages across four multilingual tasks.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - multilingual prompting
-  - synthetic context
-  - LLM-as-a-Judge
-  - low-resource languages
-  - cultural knowledge
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "multilingual prompting"
+  - "synthetic context"
+  - "LLM-as-a-Judge"
+  - "low-resource languages"
+  - "cultural knowledge"
 date: 2026-05-08
-content_hash: 2b8b7a19976e2af9
+content_hash: 1c9be08f8347fe08
 ---
+
 # EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context
 
 **Conference**: ACL 2026  
@@ -158,10 +159,10 @@ Ablations on M3-Exam decoupled CoT, ExT (Extraction), and MeR (Merging). while E
 ## Related Papers
 
 - [\[ACL 2026\] Why Do Multilingual Reasoning Gaps Emerge in Reasoning Language Models?](why_do_multilingual_reasoning_gaps_emerge_in_reasoning_language_models.md)
-- [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
-- [\[ACL 2025\] Blessing of Multilinguality: A Systematic Analysis of Multilingual In-Context Learning](../../ACL2025/multilingual_mt/blessing_of_multilinguality_a_systematic_analysis_of_multilingual_in-context_lea.md)
+- [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
 - [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
-- [\[ACL 2026\] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs](niutranslmt_toward_inclusive_and_scalable_multilingual_machine_translation_with_.md)
+- [\[ACL 2025\] GrammaMT: Improving Machine Translation with Grammar-Informed In-Context Learning](../../ACL2025/multilingual_mt/grammamt_improving_machine_translation_with_grammar-informed_in-context_learning.md)
+- [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](../../AAAI2026/multilingual_mt/bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
 
 </div>
 

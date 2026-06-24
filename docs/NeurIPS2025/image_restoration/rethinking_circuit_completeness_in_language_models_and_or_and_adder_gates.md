@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates
 description: >-
-  [NeurIPS 2025][Image Restoration][circuit discovery] This paper systematically introduces AND, OR, and ADDER gates to decompose language model circuits…
+  [NeurIPS 2025][Image Restoration][circuit discovery] This paper systematically introduces AND, OR, and ADDER gates to decompose language model circuits, reveals that circuit incompleteness primarily stems from the omission of OR gates, and proposes a framework combining noising and denoising interventions to fully recover all three gate types while guaranteeing both faithfulness and completeness.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "completeness"
   - "faithfulness"
 date: 2026-05-08
-content_hash: 64d02fbcbbb29800
+content_hash: 65b9b85f060000da
 ---
 
 # Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates
@@ -126,10 +126,10 @@ This paper systematically introduces AND, OR, and ADDER gates to decompose langu
 ## Related Papers
 
 - [\[NeurIPS 2025\] Encoder-Decoder Diffusion Language Models for Efficient Training and Inference](encoder-decoder_diffusion_language_models_for_efficient_training_and_inference.md)
-- [\[NeurIPS 2025\] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation](rethinking_nighttime_image_deraining_via_learnable_color_space_transformation.md)
 - [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/image_restoration/consistent_diffusion_language_models.md)
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
+- [\[NeurIPS 2025\] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation](rethinking_nighttime_image_deraining_via_learnable_color_space_transformation.md)
 - [\[NeurIPS 2025\] Adaptive Discretization for Consistency Models](adaptive_discretization_for_consistency_models.md)
+- [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
 
 </div>
 

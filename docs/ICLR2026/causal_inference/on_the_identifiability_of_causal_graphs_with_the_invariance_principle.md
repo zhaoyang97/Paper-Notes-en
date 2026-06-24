@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Identifiability of Causal Graphs with the Invariance Principle
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proves that under the conditions of invariant mechanisms and sufficient noise variance scaling across environments, the complete causal graph of any nonlinear invertible structural causal model (SCM) can be uniquely identified using one base environment and two auxiliary environments. This identifiability ph
+  [ICLR2026][Causal Inference][Causal Discovery] This paper proves that under the conditions of invariant mechanisms and sufficient noise variance scaling across environments, the complete causal graph of any nonlinear invertible structural causal model (SCM) can be uniquely identified using one base environment and two auxiliary environments. This identifiability phenomenon is verified through synthetic experiments following the proof logic.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Multi-environment Data"
+  - "Invariance Principle"
+  - "Causal Graph Identifiability"
+  - "Nonlinear ICA"
 date: 2026-05-08
-content_hash: eb992243e4689b62
+content_hash: 65be2643e8e13780
 ---
+
 # On the Identifiability of Causal Graphs with the Invariance Principle
 
 **Conference**: ICLR2026  

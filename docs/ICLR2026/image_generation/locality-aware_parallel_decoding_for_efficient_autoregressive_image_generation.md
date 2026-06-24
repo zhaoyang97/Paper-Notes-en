@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The authors propose Locality-aware Parallel Decoding (LPD), which reduces the generation steps for $256 \times 256$ images from 256 to 20 by flexibly parallelizing the autoregressive modeling architecture and employing locality-aware generation order scheduling, achieving at least a $3.4\times$ reduction in latency.
+  [ICLR 2026 Oral][Image Generation][Parallel decoding] The authors propose Locality-aware Parallel Decoding (LPD), which reduces the generation steps for $256 \times 256$ images from 256 to 20 by flexibly parallelizing the autoregressive modeling architecture and employing locality-aware generation order scheduling, achieving at least a $3.4\times$ reduction in latency.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "Parallel decoding"
+  - "autoregressive modeling"
+  - "spatial locality"
+  - "position query"
+  - "efficient inference"
 date: 2026-05-08
-content_hash: 516b5e826b2de0c9
+content_hash: 9bf45938b26f7f95
 ---
+
 # Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation
 
 **Conference**: ICLR 2026 Oral  
@@ -129,7 +135,7 @@ The model is trained using a grouped autoregressive objective. Dividing $N$ toke
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -137,7 +143,7 @@ The model is trained using a grouped autoregressive objective. Dividing $N$ toke
 - [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](../../CVPR2026/image_generation/parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
 - [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
-- [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
+- [\[ICLR 2026\] RegionE: Adaptive Region-Aware Generation for Efficient Image Editing](regione_adaptive_region-aware_generation_for_efficient_image_editing.md)
 
 </div>
 

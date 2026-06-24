@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Ordinal Probabilistic Reward from Preferences (OPRM)
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper proposes the Ordinal Probabilistic Reward Model (OPRM), which discretizes response quality into ordinal levels 1-9 and learns the full probability distribution. Combined with Region Flooding Tuning (RgFT), it achieves data-efficient training. It reaches 89.3% on RewardBench, an improvement of 2.9%-7.4% over
+  [ICLR 2026][LLM Alignment][Ordinal rewards] This paper proposes the Ordinal Probabilistic Reward Model (OPRM), which discretizes response quality into ordinal levels 1-9 and learns the full probability distribution. Combined with Region Flooding Tuning (RgFT), it achieves data-efficient training. It reaches 89.3% on RewardBench, an improvement of 2.9%-7.4% over existing RMs, while providing uncertainty estimation and label disagreement detection.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Ordinal rewards"
+  - "probability distribution"
+  - "Region Flooding Tuning"
+  - "reward model"
+  - "uncertainty estimation"
 date: 2026-05-08
-content_hash: f41040a871889e31
+content_hash: 23320b1bf9e97b7c
 ---
+
 # Learning Ordinal Probabilistic Reward from Preferences (OPRM)
 
 **Conference**: ICLR 2026  
@@ -131,9 +137,9 @@ Preference pairs indicate which response is better but do not specify absolute q
 
 - [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
 - [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
 - [\[ICLR 2026\] Aligning Deep Implicit Preferences by Learning to Reason Defensively](aligning_deep_implicit_preferences_by_learning_to_reason_defensively.md)
 - [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
-- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
 
 </div>
 

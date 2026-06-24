@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Equivariant Splitting: Self-supervised learning from incomplete data
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] By combining the invariance prior of "Equivariant Imaging (EI)" with the efficient unbiased properties of "measurement splitting," this paper proposes the Equivariant Splitting (ES) loss. This allows training a reconstructor that approximates the MMSE using only a **single highly under-sampled forward operator**, witho
+  [ICLR 2026][Self-Supervised Learning][inverse problems] By combining the invariance prior of "Equivariant Imaging (EI)" with the efficient unbiased properties of "measurement splitting," this paper proposes the Equivariant Splitting (ES) loss. This allows training a reconstructor that approximates the MMSE using only a **single highly under-sampled forward operator**, without requiring multiple forward evaluations as in EI.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "inverse problems"
+  - "equivariant networks"
+  - "measurement splitting"
+  - "MMSE estimation"
 date: 2026-05-08
-content_hash: 55dbe42bafae8e0e
+content_hash: 63bd3798ad971478
 ---
+
 # Equivariant Splitting: Self-supervised learning from incomplete data
 
 **Conference**: ICLR 2026  

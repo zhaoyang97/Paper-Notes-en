@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IntroLM: Introspective Language Models via Prefilling-Time Self-Evaluation
 description: >-
-  [ACL 2026][Model Compression][prefilling] IntroLM appends special `[CPX]` introspective tokens to the end of a prompt and utilizes a "token-conditional LoRA" that is active only for these tokens. It calculates the probability of the model answering correctly during the prefilling stage. This self-evaluation does not enter the KV cache and does not affect gener
+  [ACL 2026 Findings][Model Compression][Self-evaluation] IntroLM appends special `[CPX]` introspective tokens to the end of a prompt and utilizes a "token-conditional LoRA" that is active only for these tokens. It calculates the probability of the model answering correctly during the prefilling stage. This self-evaluation does not enter the KV cache and does not affect generation. On long-context QA tasks like HotpotQA, it achieves a ROC-AUC 14 points higher than DeBERTa-v3-La…
 tags:
-  - ACL 2026
-  - Model Compression
-  - prefilling
-  - token-conditional LoRA
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Self-evaluation"
+  - "Complexity prediction"
+  - "prefilling"
+  - "token-conditional LoRA"
+  - "LLM routing"
 date: 2026-05-08
-content_hash: f06d5bed79bca109
+content_hash: 20ae49192c6858d8
 ---
+
 # IntroLM: Introspective Language Models via Prefilling-Time Self-Evaluation
 
 **Conference**: ACL 2026 Findings  
@@ -149,6 +153,7 @@ Token-conditional LoRA target ablation (General QA, Qwen3-8B):
 - Value: ⭐⭐⭐⭐⭐ High practical value; saving 33% latency and half of large model calls is significant for LLM serving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

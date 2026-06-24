@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Based on Qwen-Image, the One-Step Diffusion Transformer (ODTSR) utilizes "Noise-Mixed Visual Streams" (NVS) to achieve simultaneous fidelity and prompt controllability, continuously adjustable via a fidelity weight $f$. Combined with "Fidelity-Aware Adversarial Training" (FAA) to compress multi-step denoising into sing
+  [CVPR 2026][Image Restoration][Real-World Image Super-Resolution] Based on Qwen-Image, the One-Step Diffusion Transformer (ODTSR) utilizes "Noise-Mixed Visual Streams" (NVS) to achieve simultaneous fidelity and prompt controllability, continuously adjustable via a fidelity weight $f$. Combined with "Fidelity-Aware Adversarial Training" (FAA) to compress multi-step denoising into single-step inference, it achieves SOTA performance in both general Real-ISR and Chinese/English s…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Real-World Image Super-Resolution"
+  - "One-Step Diffusion"
+  - "Diffusion Transformer"
+  - "Controllable Generation"
+  - "Adversarial Training"
 date: 2026-05-08
-content_hash: 5f6ff1c79161d5a8
+content_hash: 31c777bf4a2e038a
 ---
+
 # One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -132,9 +138,20 @@ Effectiveness of FAA (RealSR, w/ Prompt; vs. Fixed GAN Weights):
 - **Value**: ⭐⭐⭐⭐⭐ Strong practical impact as the first 20B+ bilingual one-step Real-ISR model.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
+- [\[CVPR 2026\] DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)
+- [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
+- [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](../../ICLR2026/image_restoration/varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)

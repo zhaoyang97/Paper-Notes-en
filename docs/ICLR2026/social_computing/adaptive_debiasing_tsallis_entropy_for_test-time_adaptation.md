@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation
 description: >-
-  [ICLR 2026][Social Computing][Tsallis entropy] This paper proposes introducing Tsallis entropy (a generalized form of Shannon entropy) into Test-Time Adaptation (TTA) for VLMs, further developing it into Adaptive Debiasing Tsallis Entropy (ADTE). By customizing the debiasing parameter $q^l$ for each category, ADTE selects more reliable high-confidence views than Sh
+  [ICLR 2026][Social Computing][Test-time adaptation] This paper proposes introducing Tsallis entropy (a generalized form of Shannon entropy) into Test-Time Adaptation (TTA) for VLMs, further developing it into Adaptive Debiasing Tsallis Entropy (ADTE). By customizing the debiasing parameter $q^l$ for each category, ADTE selects more reliable high-confidence views than Shannon entropy without distribution-specific hyperparameters. It outperforms SOTA on ImageNet…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Tsallis entropy
-  - CLIP
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Test-time adaptation"
+  - "Tsallis entropy"
+  - "CLIP"
+  - "debiasing"
+  - "uncertainty estimation"
 date: 2026-05-08
-content_hash: 277fedfb03245273
+content_hash: 453265fe97fa7f2e
 ---
+
 # Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation
 
 **Conference**: ICLR 2026  
@@ -127,9 +131,9 @@ Training-free. ADTE is a pure inference-time method that replaces Shannon entrop
 
 ## Related Papers
 
+- [\[ACL 2025\] FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering](../../ACL2025/social_computing/fairsteer_inference_time_debiasing_for_llms_with_dynamic_activation_steering.md)
 - [\[ICLR 2026\] Scalable Multi-Task Low-Rank Model Adaptation](scalable_multi-task_low-rank_model_adaptation.md)
 - [\[ICLR 2026\] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction](human_or_machine_a_preliminary_turing_test_for_speech-to-speech_interaction.md)
-- [\[ACL 2025\] FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering](../../ACL2025/social_computing/fairsteer_inference_time_debiasing_for_llms_with_dynamic_activation_steering.md)
 - [\[ICLR 2026\] SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition](sage_spatial-visual_adaptive_graph_exploration_for_efficient_visual_place_recogn.md)
 - [\[AAAI 2026\] SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation](../../AAAI2026/social_computing/scenejaileval_a_scenario-adaptive_multi-dimensional_framework_for_jailbreak_eval.md)
 

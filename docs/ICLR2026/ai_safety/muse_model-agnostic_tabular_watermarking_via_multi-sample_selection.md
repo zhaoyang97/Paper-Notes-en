@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MUSE: Model-Agnostic Tabular Watermarking via Multi-Sample Selection
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] MUSE proposes a "multi-sample selection" paradigm for tabular data watermarking: generating multiple candidate samples for each row and selecting the one with the highest score via a keyed scoring function. This bypasses the unreliability of DDIM inversion in diffusion models, achieving a model-agnostic, calibratable,
+  [ICLR 2026][AI Safety][Tabular Data Watermarking] MUSE proposes a "multi-sample selection" paradigm for tabular data watermarking: generating multiple candidate samples for each row and selecting the one with the highest score via a keyed scoring function. This bypasses the unreliability of DDIM inversion in diffusion models, achieving a model-agnostic, calibratable, and low-distortion solution.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Tabular Data Watermarking"
+  - "Generative Watermarking"
+  - "Multi-Sample Selection"
+  - "Distribution-Preserving"
+  - "Model-Agnostic"
 date: 2026-05-08
-content_hash: c7d8283062be6f9f
+content_hash: 97e723c0700a8c7e
 ---
+
 # MUSE: Model-Agnostic Tabular Watermarking via Multi-Sample Selection
 
 **Conference**: ICLR 2026  

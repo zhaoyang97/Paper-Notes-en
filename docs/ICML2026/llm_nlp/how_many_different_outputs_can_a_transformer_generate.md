@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Many Different Outputs Can a Transformer Generate?
 description: >-
-  [ICML 2026][LLM (Other)][packing number] Starting from two fundamental architectural facts—finite precision and bounded embedding support—this paper proves that any Transformer can only generate a finite number of "accessible sequences." It provides a tight upper bound where the length of accessible sequences grows linearly with prompt length, after which the
+  [ICML 2026 Spotlight][LLM (Other)][accessible sequences] Starting from two fundamental architectural facts—finite precision and bounded embedding support—this paper proves that any Transformer can only generate a finite number of "accessible sequences." It provides a tight upper bound where the length of accessible sequences grows linearly with prompt length, after which the proportion of accessible sequences decays exponentially at a rate of $1/|V|^n$. Experiments on Pythia…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - packing number
-  - copying / cramming
+  - "ICML 2026 Spotlight"
+  - "LLM (Other)"
+  - "accessible sequences"
+  - "packing number"
+  - "embedding space geometry"
+  - "copying / cramming"
+  - "finite precision"
 date: 2026-05-08
-content_hash: dad5a585f524f04d
+content_hash: bd42c5f910f03395
 ---
+
 # How Many Different Outputs Can a Transformer Generate?
 
 **Conference**: ICML 2026 Spotlight  
@@ -119,10 +123,10 @@ Models include Pythia (160M–2.8B), Qwen-2.5 (0.5B / 1.5B), Llama-3.2 (1B / 3B)
 ## Related Papers
 
 - [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](../../ACL2026/llm_nlp/one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
-- [\[ICML 2026\] "I've Seen How This Goes"：用渐进条件惊奇度刻画 LLM 与人类写作的多样性](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
 - [\[ACL 2025\] Can Large Language Models Accurately Generate Answer Keys for Health-related Questions?](../../ACL2025/llm_nlp/can_large_language_models_accurately_generate_answer_keys_for_health-related_que.md)
 - [\[ACL 2025\] LLM Meets Scene Graph: Can Large Language Models Understand and Generate Scene Graphs?](../../ACL2025/llm_nlp/llm_meets_scene_graph_can_large_language_models_understand_and_generate_scene_gr.md)
-- [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
+- [\[ICML 2026\] Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models](masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
 
 </div>
 

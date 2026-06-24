@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] DTKG bisects multi-hop QA into "parallel fact verification vs. chain reasoning." It first routes questions to the appropriate branch using a few-shot classifier. The parallel branch verifies atomic facts using KG triples, while the chain branch performs DFS path expansion with scoring-based pruning on Wikidata. Combine
+  [ICML 2026][Graph Learning][Knowledge Graph] DTKG bisects multi-hop QA into "parallel fact verification vs. chain reasoning." It first routes questions to the appropriate branch using a few-shot classifier. The parallel branch verifies atomic facts using KG triples, while the chain branch performs DFS path expansion with scoring-based pruning on Wikidata. Combined with "task-aware" denoising, it achieves a performance gain of 5%–29.5% over single-strategy baselines like KGR a…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Knowledge Graph"
+  - "Multi-Hop Reasoning"
+  - "Dual-Process Theory"
+  - "Fact Verification"
+  - "Path Pruning"
 date: 2026-05-08
-content_hash: fce79357fc14c78a
+content_hash: 7447bb2c1a4fc605
 ---
+
 # DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA
 
 **Conference**: ICML 2026  
@@ -129,7 +135,7 @@ Classifier ablation (Llama-3-8B, EM/ACC):
 - [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](../../AAAI2026/graph_learning/rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
 - [\[ACL 2026\] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection](../../ACL2026/graph_learning/compliancenlp_knowledge-graph-augmented_rag_for_multi-framework_regulatory_gap_d.md)
 - [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](../../AAAI2026/graph_learning/pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
-- [\[ICML 2026\] Anchor-guided Hypergraph Condensation with Dual-level Discrimination](anchor-guided_hypergraph_condensation_with_dual-level_discrimination.md)
+- [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](../../ICLR2026/graph_learning/knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents the first integration of event cameras with deformable 3D Gaussian Splatting (3D-GS) for dynamic scene reconstruction. It introduces a GS-Threshold Joint…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper presents the first integration of event cameras with deformable 3D Gaussian Splatting (3D-GS) for dynamic scene reconstruction. It introduces a GS-Threshold Joint Modeling (GTJM) strategy and a Dynamic-Static Decomposition (DSD) strategy, achieving state-of-the-art rendering quality and speed on a newly constructed event-4D benchmark (average PSNR improvement of 2.73 dB on synthetic data…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "threshold modeling"
   - "dynamic-static decomposition"
 date: 2026-05-08
-content_hash: dc0c582d8d269cf1
+content_hash: 6cdae9008bb41095
 ---
 
 # Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction
@@ -177,8 +177,8 @@ Value ★★★☆☆: Relies on event camera hardware, limiting applicability t
 - [\[ICCV 2025\] TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction](timeformer_capturing_temporal_relationships_of_deformable_3d_gaussians_for_robus.md)
 - [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
+- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](../../CVPR2026/3d_vision/fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
 - [\[ICCV 2025\] Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians](can3tok_canonical_3d_tokenization_and_latent_modeling_of_scene-level_3d_gaussian.md)
-- [\[ICCV 2025\] EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images](evagaussians_event_stream_assisted_gaussian_splatting_from_blurry_images.md)
 
 </div>
 

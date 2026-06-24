@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging
 description: >-
-  [CVPR 2026][Remote Sensing][HDR] MetaSpectra+ proposes a metasurface-refractive lens hybrid optical paradigm. By independently controlling 4-channel dispersion, exposure, and polarization via double-layer metasurfaces, it achieves 250nm broadband snapshot hyperspectral+ HDR/polarization imaging within a minimal 17mm optical path. It reaches a PSNR of
+  [CVPR 2026][Remote Sensing][Metasurface Imaging] MetaSpectra+ proposes a metasurface-refractive lens hybrid optical paradigm. By independently controlling 4-channel dispersion, exposure, and polarization via double-layer metasurfaces, it achieves 250nm broadband snapshot hyperspectral+ HDR/polarization imaging within a minimal 17mm optical path. It reaches a PSNR of 33.31dB on the KAUST benchmark, outperforming existing snapshot hyperspectral systems.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - HDR
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Metasurface Imaging"
+  - "Hyperspectral Reconstruction"
+  - "Snapshot Imaging"
+  - "HDR"
+  - "Polarization Imaging"
 date: 2026-05-08
-content_hash: 20aa34b24e7f80ee
+content_hash: 219c55f5143ae9a4
 ---
+
 # MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging
 
 **Conference**: CVPR 2026  
@@ -145,10 +150,10 @@ Comparison with existing snapshot hyperspectral imaging systems on the KAUST ben
 
 ## Related Papers
 
-- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
-- [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
 - [\[CVPR 2026\] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data](orthogonal_spatial-aware_multi-view_anchor_graph_clustering_for_incomplete_remot.md)
 - [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
 
 </div>

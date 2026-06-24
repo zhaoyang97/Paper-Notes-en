@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events
 description: >-
-  [ACL 2026][Social Computing][MBTI] The authors constructed Persona-E2, the first large-scale dataset linking personality traits (MBTI + Big Five) with reader emotional responses. It contains 112,000 annotations from 3,111 events $\times$ 36 annotators, revealing "personality illusion" in LLMs during simulated emotional responses and demonstrating that B
+  [ACL 2026][Social Computing][Personality Modeling] The authors constructed Persona-E2, the first large-scale dataset linking personality traits (MBTI + Big Five) with reader emotional responses. It contains 112,000 annotations from 3,111 events $\times$ 36 annotators, revealing "personality illusion" in LLMs during simulated emotional responses and demonstrating that Big Five traits mitigate this issue more effectively than MBTI.
 tags:
-  - ACL 2026
-  - Social Computing
-  - MBTI
+  - "ACL 2026"
+  - "Social Computing"
+  - "Personality Modeling"
+  - "Affective Evaluation"
+  - "Reader Perspective"
+  - "MBTI"
+  - "Big Five"
 date: 2026-05-08
-content_hash: 2dde80caca866a44
+content_hash: 60e09e4563571541
 ---
+
 # Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events
 
 **Conference**: ACL 2026  

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection
 description: >-
-  [ACL 2026][Audio & Speech][Mamba] The XLSR-MamBo framework is proposed to systematically explore four topological designs and various SSM variants (Mamba2, Hydra, GDN) within hybrid Mamba-Attention architectures for audio deepfake detection. Among these, MamBo-3-Hydra utilizes the native bidirectional modeling of Hydra to achieve competitive performanc
+  [ACL 2026 Findings][Audio & Speech][Audio Deepfake Detection] The XLSR-MamBo framework is proposed to systematically explore four topological designs and various SSM variants (Mamba2, Hydra, GDN) within hybrid Mamba-Attention architectures for audio deepfake detection. Among these, MamBo-3-Hydra utilizes the native bidirectional modeling of Hydra to achieve competitive performance across multiple benchmarks, while increasing backbone depth effectively mitigates the performanc…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Mamba
-  - State Space Model
-  - XLSR
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Audio Deepfake Detection"
+  - "Mamba"
+  - "Hybrid Architecture"
+  - "State Space Models"
+  - "XLSR"
 date: 2026-05-08
-content_hash: 10fb85ac7758760b
+content_hash: 9ef9dd920c480714
 ---
+
 # XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection
 
 **Conference**: ACL 2026 Findings  
@@ -133,8 +136,8 @@ FocalLoss is used to handle class imbalance. The AdamW optimizer is employed ($l
 ## Related Papers
 
 - [\[ACL 2026\] HCFD: A Benchmark for Audio Deepfake Detection in Healthcare](hcfd_a_benchmark_for_audio_deepfake_detection_in_healthcare.md)
-- [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ACL 2026\] RTCFake: Speech Deepfake Detection in Real-Time Communication](rtcfake_speech_deepfake_detection_in_real-time_communication.md)
+- [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ACL 2026\] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation](analyzing_reasoning_shifts_in_audio_deepfake_detection_under_adversarial_attacks.md)
 - [\[ACL 2026\] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling](semi-supervised_diseased_detection_from_speech_dialogues_with_multi-level_data_m.md)
 

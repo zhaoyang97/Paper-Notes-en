@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Pixels to Views: Learning Angular-Aware and Physics-Consistent Representations for Light Field Microscopy
 description: >-
-  [NeurIPS 2025][3D Vision][Light Field Microscopy] This paper proposes XLFM-Former, which learns angular–spatial priors of XLFM through **view-level Masked View Modeling (MVM-LF)** self-supervised pretraining…
+  [NeurIPS 2025][3D Vision][Light Field Microscopy] This paper proposes XLFM-Former, which learns angular–spatial priors of XLFM through **view-level Masked View Modeling (MVM-LF)** self-supervised pretraining, and introduces an **Optical Rendering Consistency Loss (ORC Loss)** based on PSF differentiable rendering to constrain the physical plausibility of the reconstructed volume. On the first standardized XLFM-Zebrafish benchmark constructed by the authors…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "PSF"
   - "Self-supervised Pretraining"
 date: 2026-05-08
-content_hash: ac01ba341b41bf9b
+content_hash: cb6459001496250f
 ---
 
 # From Pixels to Views: Learning Angular-Aware and Physics-Consistent Representations for Light Field Microscopy
@@ -189,11 +189,11 @@ Robustness to missing views (using MVM-LF pretraining):
 
 ## Related Papers
 
-- [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](../../ICLR2026/3d_vision/lito_surface_light_field_tokenization.md)
+- [\[CVPR 2025\] ProbeSDF: Light Field Probes for Neural Surface Reconstruction](../../CVPR2025/3d_vision/probesdf_light_field_probes_for_neural_surface_reconstruction.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
+- [\[ICML 2025\] PhysicsNeRF: Physics-Guided 3D Reconstruction from Sparse Views](../../ICML2025/3d_vision/physicsnerf_physics-guided_3d_reconstruction_from_sparse_views.md)
 - [\[NeurIPS 2025\] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations](concerto_joint_2d-3d_self-supervised_learning_emerges_spatial_representations.md)
-- [\[NeurIPS 2025\] Motion4D: Learning 3D-Consistent Motion and Semantics for 4D Scene Understanding](motion4d_learning_3d-consistent_motion_and_semantics_for_4d_scene_understanding.md)
-- [\[ICCV 2025\] Relative Illumination Fields: Learning Medium and Light Independent Underwater Scenes](../../ICCV2025/3d_vision/relative_illumination_fields_learning_medium_and_light_independent_underwater_sc.md)
+- [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](../../ICLR2026/3d_vision/lito_surface_light_field_tokenization.md)
 
 </div>
 

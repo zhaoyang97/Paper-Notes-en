@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Finding Most Influential Sets
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] Finding the size-$k$ subset whose removal maximizes the change in a specific estimator (Most Influential Set, MIS) originally required exhaustive search over $\binom{n}{k}$ subsets, which is computationally intractable. This paper proves that as long as the leave-set-out effect can be expressed in a **linear-fractional
+  [ICML2026][Causal Inference][Most Influential Sets (MIS)] Finding the size-$k$ subset whose removal maximizes the change in a specific estimator (Most Influential Set, MIS) originally required exhaustive search over $\binom{n}{k}$ subsets, which is computationally intractable. This paper proves that as long as the leave-set-out effect can be expressed in a **linear-fractional** form, MIS selection collapses into a sequence of "top-$k$ selection" subproblems. Utilizing Dinkelb…
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML2026"
+  - "Causal Inference"
+  - "Most Influential Sets (MIS)"
+  - "Leave-set-out"
+  - "Linear-fractional Optimization"
+  - "Dinkelbach’s Method"
+  - "Partially Linear Models"
+  - "Neyman Orthogonality"
 date: 2026-05-08
-content_hash: 64c9896fcd3d30c8
+content_hash: 115e56699b4e1746
 ---
+
 # Finding Most Influential Sets
 
 **Conference**: ICML2026  
@@ -134,9 +141,9 @@ Accuracy and Scalability (Simulation):
 
 - [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
 - [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](../../AAAI2026/causal_inference/i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
-- [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
 - [\[ICML 2026\] An Odd Estimator for Shapley Values](an_odd_estimator_for_shapley_values.md)
-- [\[ICML 2026\] Investigating Memory in Model-Free RL with POPGym Arcade](investigating_memory_in_model-free_rl_with_popgym_arcade.md)
+- [\[ICML 2026\] Causal Modeling of Selection in Evolution](causal_modeling_of_selection_in_evolution.md)
+- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
 
 </div>
 

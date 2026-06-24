@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression
 description: >-
-  [CVPR 2026][Object Detection][Mixture-of-Experts] UniMMAD is proposed as the first unified framework capable of handling multi-modal and multi-class anomaly detection using a single set of parameters. Its core is an MoE-driven feature decompression mechanism that adaptively decomposes general multi-modal encoded features into domain-specific single-modal reconstructio
+  [CVPR2026][Object Detection][Anomaly Detection] UniMMAD is proposed as the first unified framework capable of handling multi-modal and multi-class anomaly detection using a single set of parameters. Its core is an MoE-driven feature decompression mechanism that adaptively decomposes general multi-modal encoded features into domain-specific single-modal reconstructions. It achieves SOTA performance across 9 datasets involving 3 domains, 12 modalities, and 66 categories.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Mixture-of-Experts
+  - "CVPR2026"
+  - "Object Detection"
+  - "Anomaly Detection"
+  - "Multi-Modal Fusion"
+  - "Mixture-of-Experts"
+  - "Feature Decompression"
+  - "Unified Framework"
+  - "Multi-Class Anomaly Detection"
 date: 2026-05-08
-content_hash: a7fb6e29f9d329a2
+content_hash: e46754a834afe96a
 ---
+
 # UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression
 
 **Conference**: CVPR2026  
@@ -148,7 +154,7 @@ Comprehensive evaluation across 9 datasets covering industrial (MVTec-3D, Eyecan
 - [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
 - [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
+- [\[CVPR 2025\] Mr. DETR++: Instructive Multi-Route Training for Detection Transformers with MoE](../../CVPR2025/object_detection/mr_detr_instructive_multi-route_training_for_detection_transformers.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][State Space Model] This paper proposes TS-Mamba, which combines "video trajectory modeling" with "low-complexity Mamba" for online video super-resolution: it first selects the most similar tokens to the current token from historical frames along trajectories, then aggregates them spatio-temporally using a set of "shifted" State Space Mod
+  [ICLR 2026][Image Restoration][Online Video Super-Resolution] This paper proposes TS-Mamba, which combines "video trajectory modeling" with "low-complexity Mamba" for online video super-resolution: it first selects the most similar tokens to the current token from historical frames along trajectories, then aggregates them spatio-temporally using a set of "shifted" State Space Model blocks. While maintaining long-range temporal modeling capabilities…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - State Space Model
-  - Mamba
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Online Video Super-Resolution"
+  - "State Space Models"
+  - "Mamba"
+  - "Trajectory Modeling"
+  - "Hilbert Scanning"
 date: 2026-05-08
-content_hash: 6a7844129739f0d9
+content_hash: 8c7dbf4abca1ff5d
 ---
+
 # Trajectory-aware Shifted State Space Models for Online Video Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -147,10 +151,10 @@ Ablation on token count $s$: $s=1\to30.64, s=2\to30.68, s=3\to30.73, s=4\to30.74
 ## Related Papers
 
 - [\[ICLR 2026\] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](continuous_space-time_video_super-resolution_with_3d_fourier_fields.md)
-- [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](../../AAAI2026/image_restoration/mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
 - [\[CVPR 2025\] QMambaBSR: Burst Image Super-Resolution with Query State Space Model](../../CVPR2025/image_restoration/qmambabsr_burst_image_super-resolution_with_query_state_space_model.md)
 - [\[ICLR 2026\] Text-Aware Image Restoration with Diffusion Models](text-aware_image_restoration_with_diffusion_models.md)
-- [\[CVPR 2025\] Efficient Visual State Space Model for Image Deblurring](../../CVPR2025/image_restoration/efficient_visual_state_space_model_for_image_deblurring.md)
+- [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
 
 </div>
 

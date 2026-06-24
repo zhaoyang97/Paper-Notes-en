@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Output Supervision Can Obfuscate the Chain of Thought
 description: >-
-  [ICLR 2026][LLM Safety][Mind & Face] This paper demonstrates that even when supervised training is applied only to the model's **final output** (without examining the CoT), the chain of thought becomes "obfuscated" through "feedback spillover." By decomposing two spillover mechanisms from the perspective of policy gradients, the authors propose two mitiga
+  [ICLR 2026][LLM Safety][Chain-of-Thought Monitoring] This paper demonstrates that even when supervised training is applied only to the model's **final output** (without examining the CoT), the chain of thought becomes "obfuscated" through "feedback spillover." By decomposing two spillover mechanisms from the perspective of policy gradients, the authors propose two mitigations—"Reward Targeting" and "Mind & Face"—achieving Pareto improvements in both monitorability and task pe…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Mind & Face
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Chain-of-Thought Monitoring"
+  - "Feedback Spillover"
+  - "Reward Targeting"
+  - "Mind & Face"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 153ade7fa408789f
+content_hash: 9900288a135efb1a
 ---
+
 # Output Supervision Can Obfuscate the Chain of Thought
 
 **Conference**: ICLR 2026  
@@ -144,11 +148,11 @@ Here, all mitigations maintained high task rewards and low output penalties whil
 
 ## Related Papers
 
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](../../AAAI2026/llm_safety/badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
 - [\[ICLR 2026\] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language](all_code_no_thought_language_models_struggle_to_reason_in_ciphered_language.md)
-- [\[ACL 2026\] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](../../ACL2026/llm_safety/know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)
 - [\[ICLR 2026\] Hey, That's My Model! Introducing Chain & Hash, An LLM Fingerprinting Technique](hey_thats_my_model_introducing_chain_hash_an_llm_fingerprinting_technique.md)
-- [\[ICLR 2026\] LLMs Can Hide Text in Other Text of the Same Length](llms_can_hide_text_in_other_text_of_the_same_length.md)
+- [\[ACL 2026\] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](../../ACL2026/llm_safety/know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors diagnose the root cause of VQ-VAE codebook collapse as "codebook vector $\ell_2$ norm imbalance + geometric clustering." They propose SAMP: Ball-Bounded Norm Regularization to constrain all codebook vectors within a time-varying Euclidean ball, and ArcCosine Additive Margin Loss—drawing inspiration from Arc
+  [ICML 2026][Model Compression][Codebook Collapse] The authors diagnose the root cause of VQ-VAE codebook collapse as "codebook vector $\ell_2$ norm imbalance + geometric clustering." They propose SAMP: Ball-Bounded Norm Regularization to constrain all codebook vectors within a time-varying Euclidean ball, and ArcCosine Additive Margin Loss—drawing inspiration from ArcFace—to push latent vectors apart on the sphere. This results in uniformly distributed codebooks and significa…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Codebook Collapse"
+  - "Angular Margin"
+  - "Spherical Learning"
+  - "Norm Regularization"
+  - "Codebook Utilization"
 date: 2026-05-08
-content_hash: 0bc053a2a0fe7d5c
+content_hash: c29496ebdd88ad09
 ---
+
 # ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin
 
 **Conference**: ICML 2026  
@@ -144,11 +150,11 @@ MNIST / CIFAR10 Reconstruction Comparison:
 
 ## Related Papers
 
-- [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
-- [\[ICML 2026\] Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?](mind_your_margin_and_boundary_are_your_distilled_datasets_truly_robust.md)
-- [\[ICLR 2026\] Embedding Compression via Spherical Coordinates](../../ICLR2026/model_compression/embedding_compression_via_spherical_coordinates.md)
 - [\[ICML 2026\] UniSVQ: 2-bit Unified Scalar-Vector Quantization](unisvq_2-bit_unified_scalar-vector_quantization.md)
-- [\[ICML 2026\] Event2Vec: Processing Neuromorphic Events Directly by Representations in Vector Space](event2vec_processing_neuromorphic_events_directly_by_representations_in_vector_s.md)
+- [\[ICML 2026\] Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?](mind_your_margin_and_boundary_are_your_distilled_datasets_truly_robust.md)
+- [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICML 2026\] LC-QAT: Data-Efficient 2-Bit QAT for LLMs via Linear-Constrained Vector Quantization](lc-qat_data-efficient_2-bit_qat_for_llms_via_linear-constrained_vector_quantizat.md)
+- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](../../ICLR2026/model_compression/turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
 
 </div>
 

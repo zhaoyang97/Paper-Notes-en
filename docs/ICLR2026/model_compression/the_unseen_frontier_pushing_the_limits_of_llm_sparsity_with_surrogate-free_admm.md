@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM
 description: >-
-  [ICLR 2026][Model Compression][ADMM] The Elsa method is proposed to directly solve the sparsity-constrained problem through ADMM-based constrained optimization without surrogate objectives. It breaks the 50-60% "sparsity wall" bottleneck in LLM pruning, maintaining high model fidelity even at 90% sparsity.
+  [ICLR 2026][Model Compression][LLM Pruning] The Elsa method is proposed to directly solve the sparsity-constrained problem through ADMM-based constrained optimization without surrogate objectives. It breaks the 50-60% "sparsity wall" bottleneck in LLM pruning, maintaining high model fidelity even at 90% sparsity.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - ADMM
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM Pruning"
+  - "Extreme Sparsity"
+  - "ADMM"
+  - "Surrogate-free Objective"
+  - "Network Compression"
 date: 2026-05-08
-content_hash: 91d70bad7ac180d2
+content_hash: 6acab2a2d344afa0
 ---
+
 # The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM
 
 **Conference**: ICLR 2026  
@@ -154,9 +159,9 @@ Naive Elsa requires storing the full model parameters, auxiliary variable $z$, a
 
 - [\[ICLR 2026\] To Compress or Not? Pushing the Frontier of Lossless GenAI Model Weights Compression with Exponent Concentration](to_compress_or_not_pushing_the_frontier_of_lossless_genai_model_weights_compress.md)
 - [\[ICLR 2026\] Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM](alignment-enhanced_integration_of_connectivity_and_spectral_sparsity_in_dynamic_.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
 - [\[ICLR 2026\] Is Finer Better? The Limits of Microscaling Formats in Large Language Models](is_finer_better_the_limits_of_microscaling_formats_in_large_language_models.md)
 - [\[ICLR 2026\] Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework for Multi-step LLM Function Calling](towards_reliable_benchmarking_a_contamination_free_controllable_evaluation_frame.md)
-- [\[ICLR 2026\] Learnable Sparsity for Vision Generative Models](learnable_sparsity_for_vision_generative_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] UniPixie reformulates "inferring physical properties from vision" from deterministic point estimation to controllable probabilistic distribution modeling. Using a shared Perceiver-IO encoder and a conditional Flow Matching decoder, it generates physical parameters along a "soft-to-hard" continuum from a single visual i
+  [CVPR 2026][3D Vision][Physical Property Prediction] UniPixie reformulates "inferring physical properties from vision" from deterministic point estimation to controllable probabilistic distribution modeling. Using a shared Perceiver-IO encoder and a conditional Flow Matching decoder, it generates physical parameters along a "soft-to-hard" continuum from a single visual input. It is the first unified architecture to simultaneously produce plug-and-play parameters for MPM, LBS…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Physical Property Prediction"
+  - "Flow Matching"
+  - "Controllable Generation"
+  - "Multi-Solver"
+  - "Soft-to-Hard Continuum"
 date: 2026-05-08
-content_hash: 36d9a2402b9c8c4b
+content_hash: 0af287aa795028a9
 ---
+
 # UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ A single unified model generally matches or exceeds dedicated models across thre
 ## Related Papers
 
 - [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
-- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
 - [\[CVPR 2026\] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis](geodesicnvs_probability_density_geodesic_flow_matching_for_novel_view_synthesis.md)
+- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
 - [\[ICML 2026\] PLAID: A Unified Data Model for Machine Learning on Heterogeneous Physics Simulations](../../ICML2026/3d_vision/plaid_a_unified_data_model_for_machine_learning_on_heterogeneous_physics_simulat.md)
-- [\[CVPR 2025\] Flow-NeRF: Joint Learning of Geometry, Poses, and Dense Flow within Unified Neural Representations](../../CVPR2025/3d_vision/flow-nerf_joint_learning_of_geometry_poses_and_dense_flow_within_unified_neural_.md)
+- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
 
 </div>
 

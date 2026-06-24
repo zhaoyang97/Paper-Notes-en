@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Generalization: A Reality Check
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper systematically evaluates the practice of interpolating or extrapolating future model parameters using historical checkpoints under a strict "no future data" setting. It finds that model averaging and Taylor extrapolation are generally inferior to simply using the most recent model; while simple parameter sca
+  [ICLR 2026][Time Series][Temporal Generalization] This paper systematically evaluates the practice of interpolating or extrapolating future model parameters using historical checkpoints under a strict "no future data" setting. It finds that model averaging and Taylor extrapolation are generally inferior to simply using the most recent model; while simple parameter scaling is relatively stable for some language tasks, it is not a universal solution.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Temporal Generalization"
+  - "Distribution Shift"
+  - "Parameter Interpolation"
+  - "Parameter Extrapolation"
+  - "Continual Learning"
 date: 2026-05-08
-content_hash: 8445c4f0866c6b21
+content_hash: 533f9a16963c7c40
 ---
+
 # Temporal Generalization: A Reality Check
 
 **Conference**: ICLR 2026  

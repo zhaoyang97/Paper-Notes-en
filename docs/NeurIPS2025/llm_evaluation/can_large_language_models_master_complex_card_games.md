@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can Large Language Models Master Complex Card Games?
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM game capability] This paper systematically evaluates the ability of LLMs to learn eight complex card games. It finds that through SFT on high-quality game trajectory data…
+  [NeurIPS 2025][LLM Evaluation][LLM game capability] This paper systematically evaluates the ability of LLMs to learn eight complex card games. It finds that through SFT on high-quality game trajectory data, LLMs can approach the performance of strong game AIs and simultaneously master multiple games, though general capabilities degrade — a decline that can be mitigated by mixing in general instruction data.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "multi-task learning"
   - "general capability retention"
 date: 2026-05-08
-content_hash: d90b433610676ccf
+content_hash: df99c3a921e25699
 ---
 
 # Can Large Language Models Master Complex Card Games?
@@ -143,11 +143,11 @@ The fine-tuned 7B model comprehensively outperforms GPT-4o and DeepSeek-R1 acros
 
 ## Related Papers
 
+- [\[ACL 2025\] Com2: A Causal-Guided Benchmark for Exploring Complex Commonsense Reasoning in Large Language Models](../../ACL2025/llm_evaluation/com2_causal_commonsense.md)
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
+- [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](../../ICLR2026/llm_evaluation/evaluating_language_models_evaluations_of_games.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
-- [\[NeurIPS 2025\] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models](creativity_or_brute_force_using_brainteasers_as_a_window_into_the_problem-solvin.md)
-- [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
-- [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](bayesian_evaluation_of_large_language_model_behavior.md)
+- [\[NeurIPS 2025\] ConfTuner: Training Large Language Models to Express Their Confidence Verbally](conftuner_training_large_language_models_to_express_their_confidence_verbally.md)
 
 </div>
 

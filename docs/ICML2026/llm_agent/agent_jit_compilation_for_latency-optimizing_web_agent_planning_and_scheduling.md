@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling
 description: >-
-  [ICML 2026][LLM Agent][computer-use agent] This paper transforms the web Computer-Use Agent from a step-by-step screenshot-LLM call-execution loop into a system similar to a JIT compiler: compiling natural language tasks into verifiable, cacheable, and parallel-schedulable code plans. This allows JIT-Planner to be 10.4× faster than Browser-Use with 28pp higher
+  [ICML 2026][LLM Agent][computer-use agent] This paper transforms the web Computer-Use Agent from a step-by-step screenshot-LLM call-execution loop into a system similar to a JIT compiler: compiling natural language tasks into verifiable, cacheable, and parallel-schedulable code plans. This allows JIT-Planner to be 10.4× faster than Browser-Use with 28pp higher accuracy, and JIT-Scheduler to be 2.4× faster than OpenAI CUA with 9pp higher accuracy.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - computer-use agent
-  - JIT compilation
-  - web automation
-  - tool protocol
-  - cost-aware scheduling
+  - "ICML 2026"
+  - "LLM Agent"
+  - "computer-use agent"
+  - "JIT compilation"
+  - "web automation"
+  - "tool protocol"
+  - "cost-aware scheduling"
 date: 2026-05-08
-content_hash: 7b97780b05335c71
+content_hash: de534a9a7f499101
 ---
+
 # Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling
 
 **Conference**: ICML 2026  
@@ -144,10 +145,10 @@ This is a systems paper without model training losses. The optimization objectiv
 
 ## Related Papers
 
-- [\[ICML 2026\] Weasel: 通过重要性-多样性数据选择实现 Web Agent 的域外泛化](weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
+- [\[ICML 2026\] It's a TRAP! Task-Redirecting Agent Persuasion Benchmark for Web Agents](its_a_trap_task-redirecting_agent_persuasion_benchmark_for_web_agents.md)
+- [\[ACL 2026\] Why LLM Web Agents Fail: A Hierarchical Planning Perspective](../../ACL2026/llm_agent/why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
 - [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
 - [\[ACL 2026\] TheraAgent: Self-Improving Therapeutic Agent for Precise and Comprehensive Treatment Planning](../../ACL2026/llm_agent/theraagent_self-improving_therapeutic_agent_for_precise_and_comprehensive_treatm.md)
-- [\[ICML 2026\] NaviAgent: Graph-Driven Bilevel Planning for Scalable Tool Orchestration](naviagent_graph-driven_bilevel_planning_for_scalable_tool_orchestration.md)
 - [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
 
 </div>

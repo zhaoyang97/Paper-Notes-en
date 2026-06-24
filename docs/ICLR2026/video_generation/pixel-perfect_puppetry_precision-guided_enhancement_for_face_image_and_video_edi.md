@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing
 description: >-
-  [ICLR 2026][Video Generation][Video Editing] FlowGuide explicitly extracts semantic directions induced by editing conditions in the diffusion UNet bottleneck as orthogonal bases, then uses the geometric alignment between the reconstruction and editing paths to dynamically correct the denoising noise. This enables more precise attribute modification in facial imag
+  [ICLR2026][Video Generation][Face Editing] FlowGuide explicitly extracts semantic directions induced by editing conditions in the diffusion UNet bottleneck as orthogonal bases, then uses the geometric alignment between the reconstruction and editing paths to dynamically correct the denoising noise. This enables more precise attribute modification in facial images and videos while preserving identity, background, and temporal consistency.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Editing
-  - Diffusion Model
+  - "ICLR2026"
+  - "Video Generation"
+  - "Face Editing"
+  - "Video Editing"
+  - "Diffusion Models"
+  - "Latent Geometry"
+  - "Identity Preservation"
 date: 2026-05-08
-content_hash: 6a7b9da45625b456
+content_hash: 7fa4bf7c949d7edf
 ---
+
 # Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing
 
 **Conference**: ICLR2026  
@@ -157,7 +161,6 @@ In image experiments, the Pearson version of FlowGuide achieves a high CLIP Sim 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

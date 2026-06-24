@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research
 description: >-
-  [ICML 2026][Reinforcement Learning][solver-in-the-loop] The authors formalize "repairing an infeasible operations research model" as a solver-in-the-loop MDP where each modification step requires re-running Gurobi to obtain Irreducible Infeasible Subsystem (IIS) feedback. They release the ORLoopBench benchmark (5362 LP/MILP repair instances + inventory decision bias evaluat
+  [ICML 2026][Reinforcement Learning][solver-in-the-loop] The authors formalize "repairing an infeasible operations research model" as a solver-in-the-loop MDP where each modification step requires re-running Gurobi to obtain Irreducible Infeasible Subsystem (IIS) feedback. They release the ORLoopBench benchmark (5362 LP/MILP repair instances + inventory decision bias evaluation) and utilize RLVR to train an 8B model that outperforms closed-source APIs (92.4%) with a 95.3% RR@5…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - solver-in-the-loop
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "solver-in-the-loop"
+  - "IIS feedback"
+  - "self-correction"
+  - "GRPO"
+  - "newsvendor bias"
 date: 2026-05-08
-content_hash: e995bcc1c3271e05
+content_hash: b7fceb170da9a50c
 ---
+
 # ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research
 
 **Conference**: ICML 2026  
@@ -155,11 +159,11 @@ MILP Transfer: The LP-trained model achieved 78.8% RR@5 zero-shot; MILP-specific
 
 ## Related Papers
 
+- [\[ICLR 2026\] Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction](../../ICLR2026/reinforcement_learning/goedel-prover-v2_scaling_formal_theorem_proving_with_scaffolded_data_synthesis_a.md)
 - [\[ICML 2026\] Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research](dr_tulu_reinforcement_learning_with_evolving_rubrics_for_deep_research.md)
-- [\[NeurIPS 2025\] ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[CVPR 2026\] PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning](../../CVPR2026/reinforcement_learning/plannerrft_reinforcing_diffusion_planners.md)
+- [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](../../NeurIPS2025/reinforcement_learning/research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
 - [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
-- [\[ICML 2026\] Making Expert Reasoning Learnable with Self-Distillation](making_expert_reasoning_learnable_with_self-distillation.md)
+- [\[CVPR 2026\] PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning](../../CVPR2026/reinforcement_learning/plannerrft_reinforcing_diffusion_planners.md)
 
 </div>
 

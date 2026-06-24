@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QKV Projections Require a Fraction of Their Memory
 description: >-
-  [ICLR 2026][Model Compression][Attention] PAMM (Point-Approximate Matrix Multiplication) is proposed as an activation compression technique that approximates QKV projection layer activations by randomly selecting a small number of representative tokens. It achieves up to 512× compression without compromising model performance.
+  [ICLR 2026][Model Compression][Training memory compression] PAMM (Point-Approximate Matrix Multiplication) is proposed as an activation compression technique that approximates QKV projection layer activations by randomly selecting a small number of representative tokens. It achieves up to 512× compression without compromising model performance.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Attention
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Training memory compression"
+  - "Attention mechanism"
+  - "Matrix multiplication approximation"
+  - "Activation compression"
+  - "LLM training"
 date: 2026-05-08
-content_hash: 1ca2066b4d15d3c5
+content_hash: b35cddf2d8244401
 ---
+
 # QKV Projections Require a Fraction of Their Memory
 
 **Conference**: ICLR 2026  
@@ -143,6 +148,7 @@ PAMM is a plug-and-play replacement for backpropagation. it introduces no additi
 - Value: ⭐⭐⭐⭐⭐ A practical memory optimization tool for LLM training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

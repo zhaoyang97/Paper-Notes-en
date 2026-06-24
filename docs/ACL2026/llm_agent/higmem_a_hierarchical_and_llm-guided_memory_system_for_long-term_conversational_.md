@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes HiGMem, a two-layer event-turn memory system. By enabling the LLM to browse event summaries first before predicting which fine-grained dialogue turns are worth reading, it achieves state-of-the-art F1 scores in four out of five categories on the LoCoMo10 benchmark with an order of magnitude lower re
+  [ACL 2026 Findings][LLM Agent][Long-term conversational memory] This paper proposes HiGMem, a two-layer event-turn memory system. By enabling the LLM to browse event summaries first before predicting which fine-grained dialogue turns are worth reading, it achieves state-of-the-art F1 scores in four out of five categories on the LoCoMo10 benchmark with an order of magnitude lower retrieval volume.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Long-term conversational memory"
+  - "hierarchical memory system"
+  - "LLM-guided retrieval"
+  - "evidence streamlining"
+  - "event-turn architecture"
 date: 2026-05-08
-content_hash: a882b895b8373aa4
+content_hash: 05988f8a7a607169
 ---
+
 # HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents
 
 **Conference**: ACL 2026 Findings  
@@ -150,10 +156,10 @@ Retrieval Efficiency Comparison:
 ## Related Papers
 
 - [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
-- [\[ACL 2026\] RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents](recmem_recurrence-based_memory_consolidation_for_efficient_and_effective_long-ru.md)
+- [\[ICLR 2026\] From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents](../../ICLR2026/llm_agent/from_single_to_multi-granularity_toward_long-term_memory_association_and_selecti.md)
+- [\[ICLR 2026\] Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory](../../ICLR2026/llm_agent/seeing_listening_remembering_and_reasoning_a_multimodal_agent_with_long-term_mem.md)
 - [\[ACL 2026\] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search](what_makes_an_llm_a_good_optimizer_a_trajectory_analysis_of_llm-guided_evolution.md)
-- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
-- [\[AAAI 2026\] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search](../../AAAI2026/llm_agent/agentswift_efficient_llm_agent_design_via_value-guided_hierarchical_search.md)
+- [\[ACL 2026\] RecMem: Recurrence-based Memory Consolidation for Efficient and Effective Long-Running LLM Agents](recmem_recurrence-based_memory_consolidation_for_efficient_and_effective_long-ru.md)
 
 </div>
 

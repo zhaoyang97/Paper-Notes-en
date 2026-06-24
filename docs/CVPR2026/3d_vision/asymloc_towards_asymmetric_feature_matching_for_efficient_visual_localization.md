@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization
 description: >-
-  [CVPR 2026][3D Vision][Knowledge Distillation] AsymLoc proposes "Asymmetric Visual Localization"—using a large Teacher to process the map database offline and an extremely small Student for online query images. By employing a geometric matching loss and joint detector-descriptor distillation, Student features are aligned with Teacher features, enabling direct param
+  [CVPR 2026][3D Vision][Visual Localization] AsymLoc proposes "Asymmetric Visual Localization"—using a large Teacher to process the map database offline and an extremely small Student for online query images. By employing a geometric matching loss and joint detector-descriptor distillation, Student features are aligned with Teacher features, enabling direct parameter-free mutual nearest neighbor matching while retaining ~95% of the Teacher’s localization accuracy despite a ten…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Localization"
+  - "Asymmetric Feature Matching"
+  - "Knowledge Distillation"
+  - "Edge Devices"
+  - "6-DoF Pose"
 date: 2026-05-08
-content_hash: 95266a100243e5dd
+content_hash: 39ecbe7da3b4fe5b
 ---
+
 # AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Key takeaway: The 0.13M AsymLoc outperforms the same-sized symmetric Standard mo
 
 ## Related Papers
 
-- [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
+- [\[CVPR 2026\] Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization](simple_but_effective_triplet-based_compression_strategies_for_compact_visual_loc.md)
 - [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
-- [\[CVPR 2026\] EfficientVPR: Toward Efficient Visual Place Recognition via Scene-Aware Prompt Tuning and Adaptive Feature Enhancement](efficientvpr_toward_efficient_visual_place_recognition_via_scene-aware_prompt_tu.md)
+- [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
+- [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
 
 </div>
 

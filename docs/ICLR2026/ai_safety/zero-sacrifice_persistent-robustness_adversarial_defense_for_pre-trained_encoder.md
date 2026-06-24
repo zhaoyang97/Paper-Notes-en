@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Zero-Sacrifice Persistent-Robustness Adversarial Defense for Pre-Trained Encoders
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] ZePAD utilizes two complementary branches (an adversarially fine-tuned multi-encoder branch + a benign branch trained only on clean data) paired with a confidence-based federated decision mechanism. This allows pre-trained encoders to defend against "Downstream-Agnostic Adversarial Examples" (DAE) across multiple downs
+  [ICLR 2026][AI Safety][Adversarial Defense] ZePAD utilizes two complementary branches (an adversarially fine-tuned multi-encoder branch + a benign branch trained only on clean data) paired with a confidence-based federated decision mechanism. This allows pre-trained encoders to defend against "Downstream-Agnostic Adversarial Examples" (DAE) across multiple downstream tasks with a **single fine-tuning step**, while maintaining or even improving clean accuracy and providing fre…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Adversarial Defense"
+  - "Downstream-Agnostic Adversarial Examples (DAE)"
+  - "Pre-trained Encoders"
+  - "Confidence"
+  - "Dual-branch"
 date: 2026-05-08
-content_hash: 11a320b9eba831e4
+content_hash: 464a210488a72976
 ---
+
 # Zero-Sacrifice Persistent-Robustness Adversarial Defense for Pre-Trained Encoders
 
 **Conference**: ICLR 2026  
@@ -160,7 +166,6 @@ Cross-task effectiveness (Adversarial Fine-tuning set ≠ Downstream set): After
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

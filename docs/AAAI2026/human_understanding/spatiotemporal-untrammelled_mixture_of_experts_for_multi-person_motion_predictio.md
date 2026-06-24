@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction
 description: >-
-  [AAAI 2026][Human Understanding][Multi-person motion prediction] This paper proposes ST-MoE, the first framework to combine Mixture of Experts (MoE) with bidirectional spatiotemporal Mamba for multi-person motion predict…
+  [AAAI 2026 Oral][Human Understanding][Multi-person motion prediction] This paper proposes ST-MoE, the first framework to combine Mixture of Experts (MoE) with bidirectional spatiotemporal Mamba for multi-person motion prediction. Four heterogeneous spatiotemporal experts flexibly capture complex spatiotemporal dependencies, achieving state-of-the-art accuracy while reducing parameter count by 41.38% and accelerating training by 3.6×.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Human Understanding"
   - "Multi-person motion prediction"
   - "Mixture of Experts"
@@ -12,7 +12,7 @@ tags:
   - "spatiotemporal modeling"
   - "efficient inference"
 date: 2026-05-08
-content_hash: af8f2388a7441489
+content_hash: 11711928a21a4e89
 ---
 
 # Spatiotemporal-Untrammelled Mixture of Experts for Multi-Person Motion Prediction
@@ -212,11 +212,11 @@ Bidirectional scanning reduces JPE by 4.3 mm and APE by 3.9 mm compared to unidi
 
 ## Related Papers
 
+- [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](../../CVPR2026/human_understanding/gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
+- [\[CVPR 2025\] MoEE: Mixture of Emotion Experts for Audio-Driven Portrait Animation](../../CVPR2025/human_understanding/moee_mixture_of_emotion_experts_for_audio-driven_portrait_animation.md)
 - [\[AAAI 2026\] mmPred: Radar-based Human Motion Prediction in the Dark](mmpred_radar-based_human_motion_prediction_in_the_dark.md)
+- [\[CVPR 2026\] MAMMA: Markerless Accurate Multi-person Motion Acquisition](../../CVPR2026/human_understanding/mamma_markerless_accurate_multi-person_motion_acquisition.md)
 - [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
-- [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](../../CVPR2026/human_understanding/gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
-- [\[AAAI 2026\] Improving Sparse IMU-based Motion Capture with Motion Label Smoothing](improving_sparse_imu-based_motion_capture_with_motion_label_smoothing.md)
-- [\[AAAI 2026\] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification](modality-aware_bias_mitigation_and_invariance_learning_for_unsupervised_visible-.md)
 
 </div>
 

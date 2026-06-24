@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] The authors propose the Collaborative Battleship task to evaluate the information-seeking capabilities of language models. They design three Bayesian inference strategies (Bayes-Q/M/D) to enhance LM questioning, acting, and decision-making, enabling a weak model (Llama-4-Scout) to achieve superhuman performance (82% wi
+  [ICLR 2026][LLM Agent][Information-seeking agents] The authors propose the Collaborative Battleship task to evaluate the information-seeking capabilities of language models. They design three Bayesian inference strategies (Bayes-Q/M/D) to enhance LM questioning, acting, and decision-making, enabling a weak model (Llama-4-Scout) to achieve superhuman performance (82% win rate) at approximately 1% of the cost of GPT-5.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Information-seeking agents"
+  - "Bayesian experimental design"
+  - "language model reasoning"
+  - "exploration-exploitation trade-off"
+  - "Monte Carlo inference"
 date: 2026-05-08
-content_hash: d8c06ffd37e6ccee
+content_hash: b6ba09afbc10c149
 ---
+
 # Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People
 
 **Conference**: ICLR 2026  

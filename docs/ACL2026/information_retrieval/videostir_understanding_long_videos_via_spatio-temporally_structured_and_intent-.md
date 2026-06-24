@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] VideoStir proposes a structured and intent-aware long video RAG framework. It models videos as spatio-temporal graphs for multi-hop clip retrieval and trains an intent relevance scorer for frame-level filtering. It achieves performance comparable to SOTA long video RAG methods without relying on auxiliary text tools.
+  [ACL 2026][Information Retrieval & RAG][Long video understanding] VideoStir proposes a structured and intent-aware long video RAG framework. It models videos as spatio-temporal graphs for multi-hop clip retrieval and trains an intent relevance scorer for frame-level filtering. It achieves performance comparable to SOTA long video RAG methods without relying on auxiliary text tools.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Long video understanding"
+  - "Retrieval-augmented generation"
+  - "Spatio-temporal graph structure"
+  - "Intent-aware retrieval"
+  - "Multi-hop reasoning"
 date: 2026-05-08
-content_hash: 8c996f2e48e5ad2e
+content_hash: 4f6e2d782291e22e
 ---
+
 # VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG
 
 **Conference**: ACL 2026  
@@ -138,9 +144,9 @@ where $\ell$ iterates through 1-5 levels of relevance, $y_t$ is the teacher labe
 
 - [\[ACL 2026\] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)
 - [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs](../../ICLR2026/information_retrieval/long-document_qa_with_chain-of-structured-thought_and_fine-tuned_slms.md)
 - [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ACL 2025\] The Distracting Effect: Understanding Irrelevant Passages in RAG](../../ACL2025/information_retrieval/the_distracting_effect_understanding_irrelevant_passages_in_rag.md)
-- [\[ACL 2026\] S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](s2g-rag_structured_sufficiency_and_gap_judging_for_iterative_retrieval-augmented.md)
 
 </div>
 

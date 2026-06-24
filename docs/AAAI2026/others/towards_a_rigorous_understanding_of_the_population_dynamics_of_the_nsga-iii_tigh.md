@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds
 description: >-
-  This paper establishes the first tight runtime bound $\Theta(n^2 \ln n / \mu)$ for NSGA-III on the classical bi-objective OneMinMax benchmark, reveals the population dynamics of NSGA-III…
+  This paper establishes the first tight runtime bound $\Theta(n^2 \ln n / \mu)$ for NSGA-III on the classical bi-objective OneMinMax benchmark, reveals the population dynamics of NSGA-III, and proves that it outperforms NSGA-II under appropriate population sizes.
 tags:
 
 date: 2026-05-08
-content_hash: b5614c0abd9f10f2
+content_hash: 22aca0d81cf4820b
 ---
 
 # Towards a Rigorous Understanding of the Population Dynamics of the NSGA-III: Tight Runtime Bounds
@@ -146,8 +146,8 @@ where $S_m = (2n/m+1)^{m/2}$. Key improvements:
 - [\[NeurIPS 2025\] Tight Lower Bounds and Improved Convergence in Performative Prediction](../../NeurIPS2025/others/tight_lower_bounds_and_improved_convergence_in_performative_prediction.md)
 - [\[NeurIPS 2025\] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](../../NeurIPS2025/others/tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)
 - [\[AAAI 2026\] Improved Runtime Guarantees for the SPEA2 Multi-Objective Optimizer](improved_runtime_guarantees_for_the_spea2_multi-objective_optimizer.md)
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](deviation_dynamics_in_cardinal_hedonic_games.md)
+- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](beyond_world_models_rethinking_understanding_in_ai_models.md)
 
 </div>
 

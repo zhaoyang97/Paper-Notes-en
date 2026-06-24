@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] In-Context Multi-Objective Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Transformer] TAMO transforms the Multi-Objective Bayesian Optimization (MOBO) workflow—which traditionally requires re-fitting a surrogate and optimizing an acquisition function for every new task—into an offline-trained, dimension-agnostic Transformer policy. During testing, it generates the next query via a single forward pass ba
+  [ICLR2026][Optimization][Multi-objective Optimization] TAMO transforms the Multi-Objective Bayesian Optimization (MOBO) workflow—which traditionally requires re-fitting a surrogate and optimizing an acquisition function for every new task—into an offline-trained, dimension-agnostic Transformer policy. During testing, it generates the next query via a single forward pass based only on historical observations and a candidate pool, maintaining comparable or superior Pareto quali…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Transformer
+  - "ICLR2026"
+  - "Optimization"
+  - "Multi-objective Optimization"
+  - "Bayesian Optimization"
+  - "Amortized Optimization"
+  - "Transformer"
+  - "Pareto Frontier"
 date: 2026-05-08
-content_hash: c03350167275c262
+content_hash: a1eebc90eea9793c
 ---
+
 # In-Context Multi-Objective Optimization
 
 **Conference**: ICLR2026  
@@ -148,7 +153,8 @@ TAMO was compared against BOFormer, qNEHVI, qNParEGO, qHVKG, and Random on synth
 - **Value**: ⭐⭐⭐⭐⭐ (High potential for automated science and high-throughput screening).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

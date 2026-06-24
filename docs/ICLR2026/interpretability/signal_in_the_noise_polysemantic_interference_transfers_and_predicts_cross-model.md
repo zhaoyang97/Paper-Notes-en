@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Signal in the Noise: Polysemantic Interference Transfers and Predicts Cross-Model Influence
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper maps polysemantic interference structures in small language models using SAEs, discovering that certain features—semantically unrelated but mutually interfering in activation space—can consistently alter the next-token distribution of target semantics. Furthermore, these intervention signals transfer to larg
+  [ICLR 2026][Interpretability][polysemantic interference] This paper maps polysemantic interference structures in small language models using SAEs, discovering that certain features—semantically unrelated but mutually interfering in activation space—can consistently alter the next-token distribution of target semantics. Furthermore, these intervention signals transfer to larger instruction-tuned models, suggesting that polysemanticity is not mere random noise but likely contai…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "polysemantic interference"
+  - "Sparse Autoencoders (SAE)"
+  - "representation space"
+  - "model intervention"
+  - "cross-model transfer"
 date: 2026-05-08
-content_hash: 0fb662df6d4cbec0
+content_hash: e576034631f27620
 ---
+
 # Signal in the Noise: Polysemantic Interference Transfers and Predicts Cross-Model Influence
 
 **Conference**: ICLR 2026  
@@ -158,10 +164,10 @@ Quantitative results for cross-model prompt injection show that certain target c
 ## Related Papers
 
 - [\[ICLR 2026\] Noise Stability of Transformer Models](noise_stability_of_transformer_models.md)
-- [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 - [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
-- [\[ICLR 2026\] SAE as a Crystal Ball: Interpretable Features Predict Cross-domain Transferability of LLMs without Training](sae_as_a_crystal_ball_interpretable_features_predict_cross-domain_transferabilit.md)
+- [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 - [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 
 </div>
 

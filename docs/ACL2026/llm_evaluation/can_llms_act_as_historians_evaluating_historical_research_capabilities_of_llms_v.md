@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination
 description: >-
-  [ACL 2026][LLM Evaluation][ProHist-Bench] This paper constructs ProHist-Bench: anchored by the 1,300-year history of the Chinese Imperial Examination, it features 400 expert-level questions handwritten by historians and 10,891 fine-grained rubrics to evaluate the professional historical research capabilities of 18 SOTA LLMs. Even the strongest models, Gemini-3
+  [ACL 2026][LLM Evaluation][ProHist-Bench] This paper constructs ProHist-Bench: anchored by the 1,300-year history of the Chinese Imperial Examination, it features 400 expert-level questions handwritten by historians and 10,891 fine-grained rubrics to evaluate the professional historical research capabilities of 18 SOTA LLMs. Even the strongest models, Gemini-3-Pro and Qwen3-235B, achieved Rubric Scores of only approximately 28, significantly lower than those of open-book hist…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - ProHist-Bench
-  - LLM-as-judge
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "ProHist-Bench"
+  - "Imperial Examination"
+  - "Rubric Evaluation"
+  - "LLM-as-judge"
+  - "Historical Reasoning"
 date: 2026-05-08
-content_hash: de42727eec071ea3
+content_hash: 06d9897a09afe58d
 ---
+
 # Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination
 
 **Conference**: ACL 2026  
@@ -136,8 +140,8 @@ Average RS under 4 prompt strategies:
 - [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
 - [\[ACL 2026\] Exploring the Capability Boundaries of LLMs in Mastering of Chinese Chouxiang Language](exploring_the_capability_boundaries_of_llms_in_mastering_of_chinese_chouxiang_la.md)
 - [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
-- [\[ACL 2026\] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users](language_models_dont_know_what_you_want_evaluating_personalization_in_deep_resea.md)
-- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
+- [\[ICLR 2026\] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities](../../ICLR2026/llm_evaluation/sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
+- [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
 
 </div>
 

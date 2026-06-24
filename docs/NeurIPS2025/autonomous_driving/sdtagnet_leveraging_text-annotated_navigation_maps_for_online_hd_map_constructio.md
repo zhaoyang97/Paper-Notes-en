@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction
 description: >-
-  [NeurIPS 2025][Autonomous Driving][HD map] This paper proposes SDTagNet, the first method to encode OpenStreetMap text annotations (road names, lane counts, one-way indicators…
+  [NeurIPS 2025][Autonomous Driving][HD map] This paper proposes SDTagNet, the first method to encode OpenStreetMap text annotations (road names, lane counts, one-way indicators, etc.) via BERT and to unify all SD map elements (points, polylines, and relations) through a point-level graph Transformer. On long-range HD map construction, SDTagNet achieves +5.9 mAP (+45%) over prior-free baselines and +3.2 mAP (+20%) over existing SD map prior methods.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "graph transformer"
   - "SD map prior"
 date: 2026-05-08
-content_hash: 5307c1a145c34b9f
+content_hash: 22b827b52e9b06d1
 ---
 
 # SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction
@@ -128,10 +128,10 @@ Comparison with state-of-the-art non-SD-prior methods (short range): SDTagNet ac
 ## Related Papers
 
 - [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
+- [\[CVPR 2025\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2025/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_representations_for_online_vectorized.md)
 - [\[ICCV 2025\] DAMap: Distance-aware MapNet for High Quality HD Map Construction](../../ICCV2025/autonomous_driving/damap_distance-aware_mapnet_for_high_quality_hd_map_construction.md)
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2026/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_represe.md)
-- [\[NeurIPS 2025\] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation](leveraging_depth_and_language_for_open-vocabulary_domain-generalized_semantic_se.md)
-- [\[NeurIPS 2025\] StreamForest: Efficient Online Video Understanding with Persistent Event Memory](streamforest_efficient_online_video_understanding_with_persistent_event_memory.md)
+- [\[ICML 2025\] SafeMap: Robust HD Map Construction from Incomplete Observations](../../ICML2025/autonomous_driving/safemap_robust_hd_map_construction_from_incomplete_observations.md)
+- [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](../../CVPR2026/autonomous_driving/amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Frozen Policy Iteration: Computationally Efficient RL under Linear $Q^{\pi}$ Realizability for Deterministic Dynamics
 description: >-
-  [ICLR 2026][Reinforcement Learning][linear $Q^\pi$ realizability] Under the mild assumption that "the Q-function of any policy is linearly representable" (linear $Q^\pi$ realizability), this paper proposes **Frozen Policy Iteration (FPI)**—the first computationally and statistically efficient online RL algorithm without a simulator for deterministic MDPs. It achieves a regret of $\ti
+  [ICLR 2026][Reinforcement Learning][linear $Q^\pi$ realizability] Under the mild assumption that "the Q-function of any policy is linearly representable" (linear $Q^\pi$ realizability), this paper proposes **Frozen Policy Iteration (FPI)**—the first computationally and statistically efficient online RL algorithm without a simulator for deterministic MDPs. It achieves a regret of $\tilde O(\sqrt{d^2 H^6 T})$, answering an open problem posed by Weisz et al. (2023).
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - linear $Q^\pi$ realizability
-  - policy iteration
-  - online RL
-  - regret bound
-  - deterministic dynamics
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "linear $Q^\\pi$ realizability"
+  - "policy iteration"
+  - "online RL"
+  - "regret bound"
+  - "deterministic dynamics"
 date: 2026-05-08
-content_hash: f60029cd5fa10ec4
+content_hash: d28108ee98efe8d6
 ---
+
 # Frozen Policy Iteration: Computationally Efficient RL under Linear $Q^{\pi}$ Realizability for Deterministic Dynamics
 
 **Conference**: ICLR 2026  
@@ -117,9 +118,9 @@ which is the index of the data point that first causes all actions of $s$ to be 
 
 - [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
 - [\[NeurIPS 2025\] Computational Hardness of Reinforcement Learning with Partial $q^\pi$-Realizability](../../NeurIPS2025/reinforcement_learning/computational_hardness_of_reinforcement_learning_with_partial_qπ-realizability.md)
+- [\[ICLR 2026\] REA-RL: Reflection-Aware Online Reinforcement Learning for Efficient Reasoning](rea-rl_reflection-aware_online_reinforcement_learning_for_efficient_reasoning.md)
 - [\[ICLR 2026\] Guided Policy Optimization under Partial Observability](guided_policy_optimization_under_partial_observability.md)
 - [\[ICLR 2026\] A Unifying View of Coverage in Linear Off-Policy Evaluation](a_unifying_view_of_coverage_in_linear_off-policy_evaluation.md)
-- [\[ICLR 2026\] Breaking Safety Paradox with Feasible Dual Policy Iteration](breaking_safety_paradox_with_feasible_dual_policy_iteration.md)
 
 </div>
 

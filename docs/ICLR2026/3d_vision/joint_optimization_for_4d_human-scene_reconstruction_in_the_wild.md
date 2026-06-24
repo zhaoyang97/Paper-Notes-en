@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Joint Optimization for 4D Human-Scene Reconstruction in the Wild
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] JOSH proposes using "human-scene contact" as a bridge to integrate camera pose, global human motion, and dense scene point clouds into a **single-stage joint optimization**. It reconstructs physically consistent 4D human-scene interactions from casual monocular web videos and further utilizes JOSH to generate pseudo-la
+  [ICLR 2026][3D Vision][4D reconstruction] JOSH proposes using "human-scene contact" as a bridge to integrate camera pose, global human motion, and dense scene point clouds into a **single-stage joint optimization**. It reconstructs physically consistent 4D human-scene interactions from casual monocular web videos and further utilizes JOSH to generate pseudo-labels for 20 hours of web video to train JOSH3R, an end-to-end model capable of real-time inference.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D reconstruction"
+  - "global human motion estimation"
+  - "dense scene reconstruction"
+  - "human-scene contact constraints"
+  - "joint optimization"
+  - "monocular video"
 date: 2026-05-08
-content_hash: 9bcfe40063e009a9
+content_hash: e3f8c2a472c9bdc8
 ---
+
 # Joint Optimization for 4D Human-Scene Reconstruction in the Wild
 
 **Conference**: ICLR 2026  
@@ -127,14 +134,14 @@ With the same initialization, JOSH1 outperforms SynCHMR⋆ across the board, not
 - **Value**: ⭐⭐⭐⭐ — Sets a new SOTA for global motion and provides a scalable path for training with web videos, relevant for embodied AI and autonomous driving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents](../../CVPR2026/3d_vision/embodmocap_in-the-wild_4d_human-scene_reconstruction_for_embodied_agents.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](../../CVPR2026/3d_vision/cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
 - [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](../../CVPR2026/3d_vision/4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](../../CVPR2026/3d_vision/cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
 - [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
 - [\[ICLR 2026\] A Step to Decouple Optimization in 3DGS](a_step_to_decouple_optimization_in_3dgs.md)
 

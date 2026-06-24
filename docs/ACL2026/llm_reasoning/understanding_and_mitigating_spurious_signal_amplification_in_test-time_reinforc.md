@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding and Mitigating Spurious Signal Amplification in Test-Time Reinforcement Learning for Math Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper systematically analyzes the sources and amplification mechanisms of spurious signals in Test-Time Reinforcement Learning (TTRL). It identifies that the ambiguous regions formed by mid-frequency answers are the primary noise sources, and that group-relative normalization in GRPO amplifies these spurious signa
+  [ACL 2026 Findings][Reasoning][Test-Time Reinforcement Learning] This paper systematically analyzes the sources and amplification mechanisms of spurious signals in Test-Time Reinforcement Learning (TTRL). It identifies that the ambiguous regions formed by mid-frequency answers are the primary noise sources, and that group-relative normalization in GRPO amplifies these spurious signals. The proposed DDRL framework mitigates these issues through a three-pronged approach: balanc…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Test-Time Reinforcement Learning"
+  - "Pseudo-label Noise"
+  - "GRPO Bias"
+  - "Denoising and Debiasing"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 46b6115e9c0a14bc
+content_hash: 497550109da7b259
 ---
+
 # Understanding and Mitigating Spurious Signal Amplification in Test-Time Reinforcement Learning for Math Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -127,11 +133,11 @@ The RL phase utilizes the modified GRPO (fixed advantage + balanced sampling), w
 
 ## Related Papers
 
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](../../ICLR2026/llm_reasoning/nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
+- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
+- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](../../ICLR2026/llm_reasoning/rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 
 </div>
 

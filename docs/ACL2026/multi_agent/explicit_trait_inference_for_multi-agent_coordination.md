@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Explicit Trait Inference for Multi-Agent Coordination
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the Explicit Trait Inference (ETI) method, which enables LLM agents to reason about and track the behavioral characteristics of partners based on the psychological dimensions of warmth and competence. This approach reduces payoff losses by 45-77% in economic games and improves task performance by 3-
+  [ACL 2026][Multi-Agent][Multi-agent coordination] This paper proposes the Explicit Trait Inference (ETI) method, which enables LLM agents to reason about and track the behavioral characteristics of partners based on the psychological dimensions of warmth and competence. This approach reduces payoff losses by 45-77% in economic games and improves task performance by 3-29% on MultiAgentBench.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Multi-agent coordination"
+  - "trait inference"
+  - "warmth-competence dimensions"
+  - "social cognition"
+  - "game theory"
 date: 2026-05-08
-content_hash: b3ded6cc7e9a23c4
+content_hash: dff42e3f1abf4249
 ---
+
 # Explicit Trait Inference for Multi-Agent Coordination
 
 **Conference**: ACL 2026  
@@ -140,11 +146,11 @@ On MultiAgentBench:
 
 ## Related Papers
 
-- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](../../AAAI2026/multi_agent/imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](../../ICLR2026/multi_agent/multi-agent_coordination_via_flow_matching.md)
+- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](../../AAAI2026/multi_agent/imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
+- [\[ICLR 2026\] MARTI: A Framework for Multi-Agent LLM Systems Reinforced Training and Inference](../../ICLR2026/multi_agent/marti_a_framework_for_multi-agent_llm_systems_reinforced_training_and_inference.md)
+- [\[ICLR 2026\] Emergent Coordination in Multi-Agent Language Models](../../ICLR2026/multi_agent/emergent_coordination_in_multi-agent_language_models.md)
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
-- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](../../AAAI2026/multi_agent/adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
 
 </div>
 

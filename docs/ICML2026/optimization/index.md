@@ -83,7 +83,7 @@ item_total: 88
 
 **🧪 ICML2026** · **88** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (22)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (222)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (121)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (22)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (222)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [🧠 NeurIPS2025 (126)](../../NeurIPS2025/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md) · [🧪 ICML2025 (61)](../../ICML2025/optimization/index.md)
 
 🔥 **Top topics:** Federated Learning ×5 · LLM ×4 · Adversarial Robustness ×2 · Agents ×2 · Alignment/RLHF ×2
 

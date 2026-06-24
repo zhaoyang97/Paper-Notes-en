@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] 等等，还有出路：一个对话脱轨预测的决策机制
+  [Paper Note] Wait, There’s a Way Out: A Decision Mechanism for Dialogue Derailment Prediction
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] The paper decouples "belief estimation" from "trigger decision" in dialogue derailment prediction. By using forward simulation to identify recoverable tense moments, the authors achieve a significant reduction in false alarm rates (from 36.2% to 26.7%) without sacrificing overall accuracy.
+  [ACL 2026][LLM (Other)][Dialogue derailment prediction] The paper decouples "belief estimation" from "trigger decision" in dialogue derailment prediction. By using forward simulation to identify recoverable tense moments, the authors achieve a significant reduction in false alarm rates (from 36.2% to 26.7%) without sacrificing overall accuracy.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Dialogue derailment prediction"
+  - "decision mechanism"
+  - "forward simulation"
+  - "false alarm rate"
 date: 2026-05-08
-content_hash: cfadf369255bd4c2
+content_hash: 5d1c3c08bf91680d
 ---
+
 # Wait, There’s a Way Out: A Decision Mechanism for Dialogue Derailment Prediction
 
 **Conference**: ACL 2026  
@@ -153,15 +158,14 @@ Key Findings: **Selective deferral reduces the false alarm rate from 34.3% to 26
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
-- [\[ACL 2026\] Identifying the Periodicity of Information in Natural Language](identifying_the_periodicity_of_information_in_natural_language.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
-- [\[ACL 2026\] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment](alphacontext_an_evolutionary_tree-based_psychometric_context_generator_for_creat.md)
-- [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
+- [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
+- [\[ACL 2025\] Biased LLMs Can Influence Political Decision-Making](../../ACL2025/llm_nlp/biased_llms_can_influence_political_decision-making.md)
+- [\[ACL 2025\] Beyond Dialogue: A Profile-Dialogue Alignment Framework Towards General Role-Playing Language Model](../../ACL2025/llm_nlp/beyond_dialogue_a_profile-dialogue_alignment_framework_towards_general_role-play.md)
+- [\[ACL 2026\] Nürnberg NLP at PsyDefDetect: Multi-Axis Voter Ensembles for Psychological Defence Mechanism Classification](nürnberg_nlp_at_psydefdetect_multi-axis_voter_ensembles_for_psychological_defenc.md)
+- [\[ACL 2025\] Collaborative Performance Prediction for Large Language Models](../../ACL2025/llm_nlp/collaborative_performance_prediction_for_large_language_models.md)
 
 </div>
 

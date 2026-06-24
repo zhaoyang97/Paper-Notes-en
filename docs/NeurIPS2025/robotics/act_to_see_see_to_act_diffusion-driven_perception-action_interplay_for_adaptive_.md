@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies
 description: >-
-  [NeurIPS 2025][Robotics][diffusion policy] This paper proposes DP-AG (Action-Guided Diffusion Policy), which uses the Vector-Jacobian Product (VJP) of a diffusion policy's noise prediction as a structured stochastic forc…
+  [NeurIPS 2025][Robotics][diffusion policy] This paper proposes DP-AG (Action-Guided Diffusion Policy), which uses the Vector-Jacobian Product (VJP) of a diffusion policy's noise prediction as a structured stochastic force to drive dynamic evolution of latent observation features across diffusion steps, and closes the perception-action loop via a cycle-consistent contrastive loss. DP-AG achieves +6% on Push-T, +13% on Dynamic Push-T, and +23%+ success rate on a real UR5 robot.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "variational inference"
   - "imitation learning"
 date: 2026-05-08
-content_hash: 9bbf6c8ab697a55a
+content_hash: 1ce9752505163796
 ---
 
 # Act to See, See to Act: Diffusion-Driven Perception-Action Interplay for Adaptive Policies
@@ -133,10 +133,10 @@ Push-T image modality: 0.87 → **0.93** (+6%); Dynamic Push-T: 0.65 → **0.80*
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](../../CVPR2026/robotics/learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
-- [\[NeurIPS 2025\] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination](inner_speech_as_behavior_guides_steerable_imitation_of_diverse_behaviors_for_hum.md)
-- [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
-- [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
-- [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
+- [\[ICLR 2026\] Contractive Diffusion Policies](../../ICLR2026/robotics/contractive_diffusion_policies.md)
+- [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](../../CVPR2026/robotics/mm-act_learn_from_multimodal_parallel_generation_to_act.md)
+- [\[CVPR 2025\] Think Small, Act Big: Primitive Prompt Learning for Lifelong Robot Manipulation](../../CVPR2025/robotics/think_small_act_big_primitive_prompt_learning_for_lifelong_robot_manipulation.md)
+- [\[ICML 2026\] Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation](../../ICML2026/robotics/sample_from_what_you_see_visuomotor_policy_learning_via_diffusion_bridge_with_ob.md)
 
 </div>
 

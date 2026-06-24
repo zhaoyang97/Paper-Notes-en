@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Flow Map Distillation Without Data
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Conventional methods for distilling pretrained flow/diffusion teachers into "one-step" flow maps require sampling from external datasets, which this paper identifies as causing **Teacher-Data Mismatch** (where the data distribution differs from the teacher's true generation distribution). This work proposes sampling **
+  [CVPR 2026][Image Generation][Flow map distillation] Conventional methods for distilling pretrained flow/diffusion teachers into "one-step" flow maps require sampling from external datasets, which this paper identifies as causing **Teacher-Data Mismatch** (where the data distribution differs from the teacher's true generation distribution). This work proposes sampling **exclusively from the prior noise** and using a "predictor-corrector" dual objective to keep the student on…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow map distillation"
+  - "data-free distillation"
+  - "one-step generation"
+  - "predictor-corrector"
+  - "diffusion acceleration"
 date: 2026-05-08
-content_hash: e5b573f5c24f185b
+content_hash: 1e4fca78722f7cf2
 ---
+
 # Flow Map Distillation Without Data
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Evaluated on ImageNet 256×256 / 512×512 using FID-50K. SiT-XL/2 series teacher
 
 ## Related Papers
 
-- [\[ICLR 2026\] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation](../../ICLR2026/model_compression/pi-flow_policy-based_few-step_generation_via_imitation_distillation.md)
-- [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](block-based_learned_image_compression_without_blocking_artifacts.md)
-- [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
-- [\[CVPR 2026\] TWEO: Transformers Without Extreme Outliers Enables FP8 Training And Quantization For Dummies](tweo_transformers_without_extreme_outliers_enables_fp8_training_and_quantization.md)
+- [\[ICLR 2026\] RealUID: Supervising the Distillation of All Matching Models with Real Data (Without GAN)](../../ICLR2026/image_generation/universal_inverse_distillation_for_matching_models_with_real-data_supervision_no.md)
+- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
+- [\[ICLR 2026\] Flow Map Learning via Non-Gradient Vector Flow](../../ICLR2026/image_generation/flow_map_learning_via_non-gradient_vector_flow.md)
+- [\[CVPR 2026\] Bidirectional Normalizing Flow: From Data to Noise and Back](bidirectional_normalizing_flow_from_data_to_noise_and_back.md)
+- [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
 
 </div>
 

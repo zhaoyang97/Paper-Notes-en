@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?
 description: >-
-  [NeurIPS 2025][Image Generation][Knowledge Graph] This paper proposes GraphFlow, a framework that models retrieval over knowledge graphs as a flow-matching problem under GFlowNet…
+  [NeurIPS 2025 Spotlight][Image Generation][Knowledge Graph] This paper proposes GraphFlow, a framework that models retrieval over knowledge graphs as a flow-matching problem under GFlowNet, jointly training a retrieval policy and flow estimator via a detailed balance objective and local exploration strategy. On the STaRK benchmark, GraphFlow surpasses GPT-4o by approximately 10% in both retrieval accuracy and diversity.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Knowledge Graph"
   - "Retrieval-Augmented Generation"
@@ -12,7 +12,7 @@ tags:
   - "Process Reward Model"
   - "Optimal Transport"
 date: 2026-05-08
-content_hash: cf6fa95cc8f53521
+content_hash: 8d134473c812610c
 ---
 
 # Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?
@@ -146,9 +146,9 @@ The introduction of GFlowNet into KG-RAG is highly innovative, the theoretical f
 
 - [\[AAAI 2026\] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs](../../AAAI2026/image_generation/truthfulrag_resolving_factual-level_conflicts_in_retrieval-augmented_generation_.md)
 - [\[NeurIPS 2025\] Graph Distance as Surprise: Free Energy Minimization in Knowledge Graph Reasoning](graph_distance_as_surprise_free_energy_minimization_in_knowledge_graph_reasoning.md)
-- [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
 - [\[AAAI 2026\] Improved Masked Image Generation with Knowledge-Augmented Token Representations](../../AAAI2026/image_generation/improved_masked_image_generation_with_knowledge-augmented_token_representations.md)
-- [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
+- [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
+- [\[CVPR 2026\] ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](../../CVPR2026/image_generation/imageragturbo_towards_one-step_text-to-image_generation_with_retrieval-augmented.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConViS-Bench: Estimating Video Similarity Through Semantic Concepts
 description: >-
-  [NeurIPS 2025][Video Understanding][video similarity] This paper introduces ConViS, a concept-based video similarity estimation task, along with its accompanying benchmark ConViS-Bench (610 video pairs, 16 domains…
+  [NeurIPS 2025][Video Understanding][video similarity] This paper introduces ConViS, a concept-based video similarity estimation task, along with its accompanying benchmark ConViS-Bench (610 video pairs, 16 domains, 5 concepts). It systematically evaluates 10+ mainstream models on concept-conditioned video comparison, revealing significant deficiencies in current models' understanding of temporal structure and spatial context.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Large Multimodal Models"
   - "video retrieval"
 date: 2026-05-08
-content_hash: cda0c24551916480
+content_hash: 30c77a1de0696fff
 ---
 
 # ConViS-Bench: Estimating Video Similarity Through Semantic Concepts
@@ -135,10 +135,10 @@ LLaVA-OV-7B achieves P@1 of 66.4% on main subjects and 68.7% on location, substa
 ## Related Papers
 
 - [\[NeurIPS 2025\] Disentangled Concepts Speak Louder Than Words: Explainable Video Action Recognition](disentangled_concepts_speak_louder_than_words_explainable_video_action_recogniti.md)
+- [\[CVPR 2025\] Q-Bench-Video: Benchmark the Video Quality Understanding of LMMs](../../CVPR2025/video_understanding/q-bench-video_benchmark_the_video_quality_understanding_of_lmms.md)
 - [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](enhancing_temporal_understanding_in_videollms_through_stacke.md)
-- [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](../../ICCV2025/video_understanding/4d_bench_benchmarking_multimodal_llms_for_4d_object_understanding.md)
-- [\[ICML 2026\] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](../../ICML2026/video_understanding/privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)
-- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](../../CVPR2026/video_understanding/sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
+- [\[CVPR 2025\] OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?](../../CVPR2025/video_understanding/ovo-bench_how_far_is_your_video-llms_from_real-world_online_video_understanding.md)
+- [\[CVPR 2025\] Similarity-Guided Layer-Adaptive Vision Transformer for UAV Tracking](../../CVPR2025/video_understanding/similarity-guided_layer-adaptive_vision_transformer_for_uav_tracking.md)
 
 </div>
 

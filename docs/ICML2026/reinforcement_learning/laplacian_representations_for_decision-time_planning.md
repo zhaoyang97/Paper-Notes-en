@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Laplacian Representations for Decision-Time Planning
 description: >-
-  [ICML 2026][Reinforcement Learning][CEM] This paper introduces ALPS, which utilizes the eigenvector space of the graph Laplacian (scaled to approximate commute-time distance) as a latent space for hierarchical decision-time planning. It first discovers subgoals using k-means in this space and generates high-level paths via Dijkstra, then performs short-range
+  [ICML 2026][Reinforcement Learning][Laplacian Representations] This paper introduces ALPS, which utilizes the eigenvector space of the graph Laplacian (scaled to approximate commute-time distance) as a latent space for hierarchical decision-time planning. It first discovers subgoals using k-means in this space and generates high-level paths via Dijkstra, then performs short-range low-level planning in the original state space using CEM with behavior priors. On OGBench offline…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - CEM
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Laplacian Representations"
+  - "Hierarchical Planning"
+  - "Decision-Time Planning"
+  - "CEM"
+  - "Offline Goal-Conditioned RL"
 date: 2026-05-08
-content_hash: 50fb60cf4044f22b
+content_hash: 8f69a4094883b8af
 ---
+
 # Laplacian Representations for Decision-Time Planning
 
 **Conference**: ICML 2026  
@@ -132,10 +137,10 @@ In OGBench overall, ALPS significantly outperforms all model-free baselines (GCB
 
 ## Related Papers
 
+- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](../../ICLR2026/reinforcement_learning/solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
 - [\[ICML 2026\] Learning to Search and Searching to Learn for Generalization in Planning](learning_to_search_and_searching_to_learn_for_generalization_in_planning.md)
-- [\[ICML 2026\] Quantifying and Optimizing Simplicity via Polynomial Representations](quantifying_and_optimizing_simplicity_via_polynomial_representations.md)
 - [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](debiased_model-based_representations_for_sample-efficient_continuous_control.md)
-- [\[ICLR 2026\] Dual Goal Representations](../../ICLR2026/reinforcement_learning/dual_goal_representations.md)
+- [\[ICML 2026\] Quantifying and Optimizing Simplicity via Polynomial Representations](quantifying_and_optimizing_simplicity_via_polynomial_representations.md)
 - [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][GRPO] WAM-Flow reformulates trajectory planning for end-to-end autonomous driving as "Discrete Flow Matching (DFM) in a discrete token space." By replacing autoregressive token-by-token decoding with fully parallel, bidirectional denoising, it achieves "coarse-to-fine" planning with an adjustable number of steps—obtaining 89
+  [CVPR 2026][Autonomous Driving][Discrete Flow Matching] WAM-Flow reformulates trajectory planning for end-to-end autonomous driving as "Discrete Flow Matching (DFM) in a discrete token space." By replacing autoregressive token-by-token decoding with fully parallel, bidirectional denoising, it achieves "coarse-to-fine" planning with an adjustable number of steps—obtaining 89.1 PDMS with a single denoising step (approx. 4.67× faster than autoregressive baselines) and refining t…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - GRPO
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Discrete Flow Matching"
+  - "Vision-Language-Action Model"
+  - "Trajectory Planning"
+  - "Numerical Tokenizer"
+  - "GRPO"
 date: 2026-05-08
-content_hash: d0c476f932e6e27a
+content_hash: 623f1d8f78d1d718
 ---
+
 # WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -171,15 +176,15 @@ A monotonic trade-off exists between denoising steps and precision/latency; 1 st
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
 - [\[CVPR 2026\] ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving](colavla_leveraging_cognitive_latent_reasoning_for_hierarchical_parallel_trajecto.md)
-- [\[NeurIPS 2025\] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](../../NeurIPS2025/autonomous_driving/flow_matching-based_autonomous_driving_planning_with_advanced_interactive_behavi.md)
 - [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](../../AAAI2026/autonomous_driving/diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
-- [\[CVPR 2026\] Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures](unleashing_vla_potentials_in_autonomous_driving_via_explicit_learning_from_failu.md)
+- [\[NeurIPS 2025\] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](../../NeurIPS2025/autonomous_driving/flow_matching-based_autonomous_driving_planning_with_advanced_interactive_behavi.md)
+- [\[CVPR 2026\] Percept-WAM: Perception-Enhanced World-Awareness-Action Model for Robust End-to-End Autonomous Driving](percept-wam_perception-enhanced_world-awareness-action_model_for_robust_end-to-e.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][DFT] NextHAM utilizes a "Step-0 Hamiltonian" as a physical-prior-informed input descriptor, combined with an E(3)-equivariant Transformer and a joint real-space + reciprocal-space training loss. It achieves DFT-level accuracy for electronic structure Hamiltonian prediction across 60+ elements (overall Gauge MAE 1.417 meV, S
+  [ICLR 2026][Physics & Scientific Computing][Hamiltonian Prediction] NextHAM utilizes a "Step-0 Hamiltonian" as a physical-prior-informed input descriptor, combined with an E(3)-equivariant Transformer and a joint real-space + reciprocal-space training loss. It achieves DFT-level accuracy for electronic structure Hamiltonian prediction across 60+ elements (overall Gauge MAE 1.417 meV, SOC blocks at sub-µeV) and releases Materials-HAM-SOC, a benchmark containing 17…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - DFT
-  - delta-learning
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Hamiltonian Prediction"
+  - "E(3)-equivariant"
+  - "DFT"
+  - "Spin-Orbit Coupling (SOC)"
+  - "Delta-learning"
+  - "Ghost States"
 date: 2026-05-08
-content_hash: bb6a154c025a9683
+content_hash: 354cacdf793b8d7b
 ---
+
 # Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials
 
 **Conference**: ICLR 2026  
@@ -128,7 +133,7 @@ The total loss is $\mathrm{loss}_{all} = \mathrm{loss}^{(R)} + \mathrm{loss}^{(k
 - [\[ICLR 2026\] OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction](oxtal_an_all-atom_diffusion_model_for_organic_crystal_structure_prediction.md)
 - [\[ICLR 2026\] Deep Learning for Subspace Regression](deep_learning_for_subspace_regression.md)
 - [\[ICLR 2026\] Beyond Structure: Invariant Crystal Property Prediction with Pseudo-Particle Ray Diffraction](beyond_structure_invariant_crystal_property_prediction_with_pseudo-particle_ray_.md)
-- [\[ICLR 2026\] MoMa: A Simple Modular Learning Framework for Material Property Prediction](moma_a_simple_modular_learning_framework_for_material_property_prediction.md)
+- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](../../NeurIPS2025/physics/high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
 
 </div>
 

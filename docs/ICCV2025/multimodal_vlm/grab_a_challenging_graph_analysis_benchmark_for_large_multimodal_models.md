@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models
 description: >-
-  [ICCV 2025][Multimodal VLM][graph analysis] GRAB is a graph analysis benchmark for large multimodal models (LMMs), comprising 3,284 synthetically generated questions spanning 5 tasks and 23 graph properties. The stronges…
+  [ICCV 2025][Multimodal VLM][graph analysis] GRAB is a graph analysis benchmark for large multimodal models (LMMs), comprising 3,284 synthetically generated questions spanning 5 tasks and 23 graph properties. The strongest model evaluated, Claude 3.5 Sonnet, achieves only 21.0% accuracy, revealing critical deficiencies in LMMs' capacity for visual analytical reasoning.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "synthetic data"
   - "visual reasoning"
 date: 2026-05-08
-content_hash: af7d6d64895f282f
+content_hash: 35673293e06b8942
 ---
 
 # GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models
@@ -174,10 +174,10 @@ All 20 evaluated LMMs perform extremely poorly. The strongest model, Claude 3.5 
 
 ## Related Papers
 
-- [\[ICCV 2025\] FinMMR: Make Financial Numerical Reasoning More Multimodal, Comprehensive, and Challenging](finmmr_make_financial_numerical_reasoning_more_multimodal_comprehensive_and_chal.md)
+- [\[CVPR 2025\] Mosaic of Modalities: A Comprehensive Benchmark for Multimodal Graph Learning](../../CVPR2025/multimodal_vlm/mosaic_of_modalities_a_comprehensive_benchmark_for_multimodal_graph_learning.md)
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
-- [\[ICCV 2025\] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models](llava-prumerge_adaptive_token_reduction_for_efficient_large_multimodal_models.md)
 - [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
+- [\[CVPR 2026\] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models](../../CVPR2026/multimodal_vlm/vkg-qa_visual_knowledge_graph-based_question_answer_for_large_multimodal_models.md)
 - [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
 
 </div>

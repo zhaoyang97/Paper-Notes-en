@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Constrained and Robust Policy Synthesis with Satisfiability-Modulo-Probabilistic-Model-Checking
 description: >-
-  [AAAI 2026][Reinforcement Learning][Markov Decision Processes] This paper proposes the first framework capable of efficiently computing robust policies under arbitrary structural constraints. By tightly integrating a SAT…
+  [AAAI 2026][Reinforcement Learning][Markov Decision Processes] This paper proposes the first framework capable of efficiently computing robust policies under arbitrary structural constraints. By tightly integrating a SAT solver with probabilistic model checking algorithms, the framework enables constrained and robust policy synthesis for finite Markov Decision Processes (MDPs), with feasibility and competitiveness validated across hundreds of benchmarks.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Probabilistic Model Checking"
   - "SAT Solving"
 date: 2026-05-08
-content_hash: 4e74988a6feef83e
+content_hash: 0063c7ee85999385
 ---
 
 # Constrained and Robust Policy Synthesis with Satisfiability-Modulo-Probabilistic-Model-Checking
@@ -132,11 +132,11 @@ Evaluation is conducted on hundreds of benchmarks covering two major problem cla
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeMPO: Constrained Reinforcement Learning via Probabilistic Incremental Improvement](../../ICLR2026/reinforcement_learning/safempo_constrained_reinforcement_learning_with_probabilistic_incremental_improv.md)
 - [\[ICLR 2026\] Boolean Satisfiability via Imitation Learning](../../ICLR2026/reinforcement_learning/boolean_satisfiability_via_imitation_learning.md)
-- [\[ICML 2026\] Beyond Scalar Rewards: Dense Feedback for LLM Policy Synthesis in Sequential Social Dilemmas](../../ICML2026/reinforcement_learning/beyond_scalar_rewards_dense_feedback_for_llm_policy_synthesis_in_sequential_soci.md)
+- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](../../ICLR2026/reinforcement_learning/off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
+- [\[AAAI 2026\] G-UBS: Towards Robust Understanding of Implicit Feedback via Group-Aware User Behavior Simulation](g-ubs_towards_robust_understanding_of_implicit_feedback_via_group-aware_user_beh.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](../../ICLR2026/reinforcement_learning/model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ACL 2026\] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning](../../ACL2026/reinforcement_learning/bridging_sft_and_rl_dynamic_policy_optimization_for_robust_reasoning.md)
-- [\[NeurIPS 2025\] Bootstrap Off-policy with World Model (BOOM)](../../NeurIPS2025/reinforcement_learning/bootstrap_off-policy_with_world_model.md)
 
 </div>
 

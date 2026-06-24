@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes DAP (Depth Any Panoramas), a foundation model for panoramic **metric** depth estimation. Utilizing a "data-in-the-loop" approach, it feeds 2M indoor/outdoor and synthetic/real panoramic images into a three-stage pseudo-label distillation pipeline. Combined with a DINOv3 backbone, a plug-and-play dis
+  [CVPR 2026][3D Vision][Panoramic Depth Estimation] This paper proposes DAP (Depth Any Panoramas), a foundation model for panoramic **metric** depth estimation. Utilizing a "data-in-the-loop" approach, it feeds 2M indoor/outdoor and synthetic/real panoramic images into a three-stage pseudo-label distillation pipeline. Combined with a DINOv3 backbone, a plug-and-play distance mask head, and a set of distortion-aware geometric/sharpness losses, DAP achieves zero-shot SOTA on mul…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic Depth Estimation"
+  - "Metric Depth"
+  - "Foundation Model"
+  - "Pseudo-label"
+  - "Equirectangular Distortion"
 date: 2026-05-08
-content_hash: 5f245e5db2260b6a
+content_hash: 547fe3cd0c1b86d6
 ---
+
 # Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ Distance mask head threshold ablation (DAP-2M-Labeled / Deep360):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
-- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
+- [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
+- [\[CVPR 2026\] SO(3)-Equivariant ViT-Adapter for Data-Efficient Zero-Shot Sim-to-Real Indoor Panoramic Depth Estimation](so3-equivariant_vit-adapter_for_data-efficient_zero-shot_sim-to-real_indoor_pano.md)
+- [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
+- [\[ICLR 2026\] Depth Anything with Any Prior](../../ICLR2026/3d_vision/depth_anything_with_any_prior.md)
 
 </div>
 

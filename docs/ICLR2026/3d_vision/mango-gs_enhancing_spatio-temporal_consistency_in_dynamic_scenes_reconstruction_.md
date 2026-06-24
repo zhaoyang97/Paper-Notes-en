@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][4D Gaussian Splatting] Mango-GS drives dense 4D Gaussians using a set of sparse control nodes with decoupled "position + latent code," and performs multi-frame temporal Transformer operations in the node space. By shifting from "frame-by-frame memorization of transients" to "modeling motion trends," it achieves SOTA image quality, optimal te
+  [ICLR 2026][3D Vision][4D Gaussian Splatting] Mango-GS drives dense 4D Gaussians using a set of sparse control nodes with decoupled "position + latent code," and performs multi-frame temporal Transformer operations in the node space. By shifting from "frame-by-frame memorization of transients" to "modeling motion trends," it achieves SOTA image quality, optimal temporal consistency, and 149.5 FPS real-time rendering for dynamic scene reconstruction.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 4D Gaussian Splatting
-  - Temporal Transformer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Dynamic scenes"
+  - "Temporal consistency"
+  - "Control nodes"
+  - "Temporal Transformer"
+  - "Multi-frame modeling"
 date: 2026-05-08
-content_hash: a6a15420681f0ac4
+content_hash: deea0edd03f1a7c7
 ---
+
 # Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -146,10 +151,10 @@ Incremental contribution of core components:
 ## Related Papers
 
 - [\[AAAI 2026\] Sparse4DGS: 4D Gaussian Splatting for Sparse-Frame Dynamic Scene Reconstruction](../../AAAI2026/3d_vision/sparse4dgs_4d_gaussian_splatting_for_sparse-frame_dynamic_scene_reconstruction.md)
-- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
-- [\[CVPR 2026\] LangField4D: Learning Identity-Adaptive and Spatio-Temporal Continuous 4D Language Fields for Dynamic Scenes](../../CVPR2026/3d_vision/langfield4d_learning_identity-adaptive_and_spatio-temporal_continuous_4d_languag.md)
-- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](../../CVPR2026/3d_vision/st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 - [\[ICLR 2026\] Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements](implicit_4d_gaussian_splatting_for_fast_motion_with_large_inter-frame_displaceme.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](../../CVPR2026/3d_vision/st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] LangField4D: Learning Identity-Adaptive and Spatio-Temporal Continuous 4D Language Fields for Dynamic Scenes](../../CVPR2026/3d_vision/langfield4d_learning_identity-adaptive_and_spatio-temporal_continuous_4d_languag.md)
+- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
 
 </div>
 

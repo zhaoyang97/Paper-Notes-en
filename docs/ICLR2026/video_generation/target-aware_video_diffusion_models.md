@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Target-Aware Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] A target-aware video diffusion model is proposed that generates videos of actors interacting with a specified target using only an input image and a segmentation mask of the target object. The core innovation involves introducing a special [TGT] token and designing a selective cross-attention loss to focus the model on
+  [ICLR 2026][Video Generation][Video Diffusion Models] A target-aware video diffusion model is proposed that generates videos of actors interacting with a specified target using only an input image and a segmentation mask of the target object. The core innovation involves introducing a special [TGT] token and designing a selective cross-attention loss to focus the model on the target's spatial location, outperforming baselines in both target alignment and video quality.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Target-Aware"
+  - "Cross-Attention Loss"
+  - "Human Interaction"
+  - "Action Planning"
 date: 2026-05-08
-content_hash: e415e8e6f7e5975e
+content_hash: 042a7667f83e8c47
 ---
+
 # Target-Aware Video Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,16 @@ The base model is frozen; only LoRA layers (rank=128, $\alpha=64$) and the expan
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
 - [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
 - [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
 
 </div>
 

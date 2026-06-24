@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Demo2Tutorial: From Human Experience to Multimodal Software Tutorials
 description: >-
-  [CVPR 2026][Multimodal VLM][GUI Agent] Demo2Tutorial is an agentic framework that automatically distills raw screen recordings and low-level operation logs of human software usage into structured, interleaved image-text tutorials. The generated tutorials outperform official human-authored tutorials in quality (86.2 vs. 79.1) on a self-built benchmark. They
+  [CVPR 2026][Multimodal VLM][Software Tutorial Generation] Demo2Tutorial is an agentic framework that automatically distills raw screen recordings and low-level operation logs of human software usage into structured, interleaved image-text tutorials. The generated tutorials outperform official human-authored tutorials in quality (86.2 vs. 79.1) on a self-built benchmark. They significantly improve the planning success rate of GUI Agents on OSWorld (GPT-5 on Chrome: 52.9% $\rig…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GUI Agent
-  - Actor-Critic
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Software Tutorial Generation"
+  - "Screen Recording"
+  - "GUI Agent"
+  - "Multimodal Document"
+  - "Actor-Critic"
 date: 2026-05-08
-content_hash: 6c9fc2d929a1be50
+content_hash: e7c248995538094c
 ---
+
 # Demo2Tutorial: From Human Experience to Multimodal Software Tutorials
 
 **Conference**: CVPR 2026  
@@ -130,10 +134,10 @@ Adding text alone (+Text) provides minimal gains, while full image-text tutorial
 ## Related Papers
 
 - [\[CVPR 2026\] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments](prosoftarena_benchmarking_hierarchical_capabilities_of_multi-modal_agents_in_pro.md)
+- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
 - [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
-- [\[CVPR 2026\] Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding](mimic_human_cognition_master_multi-image_reasoning_a_meta-action_framework_for_e.md)
+- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
 - [\[CVPR 2026\] VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery](vlm-guided_group_preference_alignment_for_diffusion-based_human_mesh_recovery.md)
-- [\[NeurIPS 2025\] Face-Human-Bench: A Comprehensive Benchmark of Face and Human Understanding for Multi-modal Assistants](../../NeurIPS2025/multimodal_vlm/face-human-bench_a_comprehensive_benchmark_of_face_and_human_understanding_for_m.md)
 
 </div>
 

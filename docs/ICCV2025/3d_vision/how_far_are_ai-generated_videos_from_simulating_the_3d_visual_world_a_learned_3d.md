@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Far are AI-generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach
 description: >-
-  [ICCV 2025][3D Vision][Video Evaluation] This paper proposes Learned 3D Evaluation (L3DE), an objective and quantifiable evaluation framework based on monocular 3D cues (motion, depth…
+  [ICCV 2025][3D Vision][Video Evaluation] This paper proposes Learned 3D Evaluation (L3DE), an objective and quantifiable evaluation framework based on monocular 3D cues (motion, depth, appearance) and contrastive learning, designed to measure the gap between AI-generated videos and real videos in terms of 3D visual consistency, without requiring manual annotation of artifacts or quality labels.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Deepfake Detection"
 date: 2026-05-08
-content_hash: dd3da3528768dcde
+content_hash: 36f4facde7650679
 ---
 
 # How Far are AI-generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach
@@ -145,10 +145,10 @@ The L3DE Fusion score substantially outperforms existing metrics in correlation 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Gen3DEval: Using vLLMs for Automatic Evaluation of Generated 3D Objects](../../CVPR2025/3d_vision/gen3deval_using_vllms_for_automatic_evaluation_of_generated_3d_objects.md)
+- [\[CVPR 2025\] Stereo4D: Learning How Things Move in 3D from Internet Stereo Videos](../../CVPR2025/3d_vision/stereo4d_learning_how_things_move_in_3d_from_internet_stereo_videos.md)
+- [\[CVPR 2025\] SimVS: Simulating World Inconsistencies for Robust View Synthesis](../../CVPR2025/3d_vision/simvs_simulating_world_inconsistencies_for_robust_view_synthesis.md)
 - [\[ICCV 2025\] Noise2Score3D: Tweedie's Approach for Unsupervised Point Cloud Denoising](noise2score3d_tweedies_approach_for_unsupervised_point_cloud_denoising.md)
-- [\[NeurIPS 2025\] EA3D: Online Open-World 3D Object Extraction from Streaming Videos](../../NeurIPS2025/3d_vision/ea3d_online_open-world_3d_object_extraction_from_streaming_videos.md)
-- [\[ICCV 2025\] From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos](from_gallery_to_wrist_realistic_3d_bracelet_insertion_in_videos.md)
-- [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
 - [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
 
 </div>

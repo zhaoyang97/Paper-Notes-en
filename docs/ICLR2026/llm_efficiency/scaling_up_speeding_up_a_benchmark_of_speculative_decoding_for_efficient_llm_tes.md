@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling
 description: >-
-  [ICLR 2026][LLM Efficiency][N-gram] This paper constructs the first benchmark specifically for evaluating "speculative decoding for accelerating LLM test-time scaling." By comparing 9 speculative decoding methods under a unified protocol across Best-of-N (BoN) and multi-round thinking paradigms, the study finds that reasoning trajectories in test-time sc
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] This paper constructs the first benchmark specifically for evaluating "speculative decoding for accelerating LLM test-time scaling." By comparing 9 speculative decoding methods under a unified protocol across Best-of-N (BoN) and multi-round thinking paradigms, the study finds that reasoning trajectories in test-time scaling are highly redundant. Consequently, simple N-gram-based methods (particularly SAM) can approach or even…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - N-gram
-  - Best-of-N
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Test-Time Scaling"
+  - "N-gram"
+  - "Best-of-N"
+  - "Multi-round Thinking"
 date: 2026-05-08
-content_hash: 5abff4080cfa46ce
+content_hash: 7a69896a918edba4
 ---
+
 # Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling
 
 **Conference**: ICLR 2026  
@@ -115,15 +119,16 @@ Key observation: SpS has the highest MAT (7.07) but actual Speed is 0.87× (slow
 - Value: ⭐⭐⭐⭐⭐ (Directly actionable selection guide for accelerating Reasoning Models)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
+- [\[ICLR 2026\] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling](trimr_verifier-based_training-free_thinking_trimming_for_efficient_test-time_sca.md)
 - [\[ICLR 2026\] Fast Catch-Up, Late Switching: Optimal Batch Size Scheduling via Functional Scaling Laws](fast_catch-up_late_switching_optimal_batch_size_scheduling_via_functional_scalin.md)
-- [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
-- [\[ICLR 2026\] Scaling Attention via Feature Sparsity](scaling_attention_via_feature_sparsity.md)
-- [\[ICLR 2026\] Scaling Laws Meet Model Architecture: Toward Inference-Efficient LLMs](scaling_laws_meet_model_architecture_toward_inference-efficient_llms.md)
-- [\[ICLR 2026\] xLSTM Scaling Laws: Competitive Performance with Linear Time-Complexity](xlstm_scaling_laws_competitive_performance_with_linear_time-complexity.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
+- [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
 
 </div>
 

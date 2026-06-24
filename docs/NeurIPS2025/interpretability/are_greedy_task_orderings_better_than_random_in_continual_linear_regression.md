@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?
 description: >-
-  [NeurIPS 2025][Interpretability][Continual Learning] This paper systematically analyzes the convergence differences between greedy task orderings (maximizing dissimilarity between consecutive tasks) and random orderings…
+  [NeurIPS 2025][Interpretability][Continual Learning] This paper systematically analyzes the convergence differences between greedy task orderings (maximizing dissimilarity between consecutive tasks) and random orderings in continual linear regression. It reveals that greedy orderings are competitive with random orderings in the full-rank setting, but single-pass greedy ordering can fail catastrophically in the general-rank setting, whereas greedy ordering with repetition achi…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Kaczmarz Method"
   - "Greedy Strategy"
 date: 2026-05-08
-content_hash: 3e82d94364aade98
+content_hash: 3fb34df8e48e5d99
 ---
 
 # Are Greedy Task Orderings Better Than Random in Continual Linear Regression?
@@ -133,11 +133,11 @@ where $i_k$ is the index of the task selected at step $k$, and $A_{i_k}^\dagger$
 
 ## Related Papers
 
+- [\[ACL 2025\] The Knowledge Microscope: Features as Better Analytical Lenses than Neurons](../../ACL2025/interpretability/the_knowledge_microscope_features_as_better_analytical_lenses_than_neurons.md)
 - [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](towards_scaling_laws_for_symbolic_regression.md)
-- [\[AAAI 2026\] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models](../../AAAI2026/interpretability/som_directions_are_better_than_one_multi-directional_refusal_suppression_in_lang.md)
-- [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
-- [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)
 - [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](emergence_of_linear_truth_encodings_in_language_models.md)
+- [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)
+- [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
 
 </div>
 

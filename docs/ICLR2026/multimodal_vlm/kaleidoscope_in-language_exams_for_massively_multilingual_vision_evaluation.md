@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation
 description: >-
-  [ICLR 2026][Multimodal VLM][MCQA] KALEIDOSCOPE, built through global open-science collaboration, manually collects 20,911 real-world multiple-choice exam questions across 18 languages and 14 subjects (55% requiring visual context). It establishes the largest "in-language" multilingual multimodal VLM benchmark to date, revealing systematic deficiencies
+  [ICLR 2026][Multimodal VLM][Multilingual] KALEIDOSCOPE, built through global open-science collaboration, manually collects 20,911 real-world multiple-choice exam questions across 18 languages and 14 subjects (55% requiring visual context). It establishes the largest "in-language" multilingual multimodal VLM benchmark to date, revealing systematic deficiencies in current VLMs regarding low-resource languages, multimodal reasoning, and STEM subjects.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MCQA
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multilingual"
+  - "Multimodal"
+  - "VLM Evaluation"
+  - "In-language Exams"
+  - "Cultural Inclusivity"
+  - "MCQA"
 date: 2026-05-08
-content_hash: 61872141ab4b7449
+content_hash: 7185881c0effde9f
 ---
+
 # Kaleidoscope: In-language Exams for Massively Multilingual Vision Evaluation
 
 **Conference**: ICLR 2026  
@@ -124,9 +130,9 @@ Models perform well on Tables (76.5%) and Photos (81.5%), but struggle significa
 
 - [\[ICLR 2026\] IndicVisionBench: Benchmarking Cultural and Multilingual Understanding in VLMs](indicvisionbench_benchmarking_cultural_and_multilingual_understanding_in_vlms.md)
 - [\[ICLR 2026\] Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts](massively_multimodal_foundation_models_a_framework_for_capturing_interactions_wi.md)
+- [\[ICLR 2026\] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](benchmarking_large_vision-language_models_on_fine-grained_image_tasks_a_comprehe.md)
+- [\[CVPR 2025\] Taxonomy-Aware Evaluation of Vision-Language Models](../../CVPR2025/multimodal_vlm/taxonomy-aware_evaluation_of_vision-language_models.md)
 - [\[ACL 2025\] Centurio: On Drivers of Multilingual Ability of Large Vision-Language Model](../../ACL2025/multimodal_vlm/centurio_multilingual_vlm.md)
-- [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
-- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
 
 </div>
 

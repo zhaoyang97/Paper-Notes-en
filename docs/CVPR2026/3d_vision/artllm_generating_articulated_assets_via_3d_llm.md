@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ArtLLM: Generating Articulated Assets via 3D LLM
 description: >-
-  [CVPR 2026][3D Vision][Articulated Object] ArtLLM models articulated object generation as a language generation problem. It uses a 3D multi-modal LLM to autoregressively predict part layouts and kinematic joint parameters (quantized as tokens) from point clouds. Combined with XPart for high-fidelity part geometry synthesis, it significantly outperforms existing
+  [CVPR 2026][3D Vision][Articulated Object] ArtLLM models articulated object generation as a language generation problem. It uses a 3D multi-modal LLM to autoregressively predict part layouts and kinematic joint parameters (quantized as tokens) from point clouds. Combined with XPart for high-fidelity part geometry synthesis, it significantly outperforms existing methods on the PartNet-Mobility dataset (mIoU 0.69, inference in only 19 seconds).
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Articulated Object
-  - 3D LLM
-  - URDF
-  - Autoregressive
-  - Part-Aware Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Object"
+  - "3D LLM"
+  - "URDF"
+  - "Autoregressive"
+  - "Part-Aware Generation"
 date: 2026-05-08
-content_hash: 9a7a17d21aefb141
+content_hash: 83a99870d21d9ce0
 ---
+
 # ArtLLM: Generating Articulated Assets via 3D LLM
 
 **Conference**: CVPR 2026  
@@ -142,11 +143,11 @@ LLMs predict in a single step and may output motion ranges that are physically i
 
 ## Related Papers
 
+- [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
 - [\[CVPR 2026\] LAM: Language Articulated Object Modelers](lam_language_articulated_object_modelers.md)
-- [\[CVPR 2026\] 3DrawAgent: Teaching LLM to Draw in 3D with Early Contrastive Experience](3drawagent_teaching_llm_to_draw_in_3d_with_early_contrastive_experience.md)
 - [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
 - [\[CVPR 2026\] Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface](real2edit2real_generating_robotic_demonstrations_via_a_3d_control_interface.md)
+- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding and Enhancing Mask-Based Pretraining towards Universal Representations
 description: >-
-  [NEURIPS2025][Computational Biology][masked autoencoder] This paper employs high-dimensional linear regression theory to precisely characterize the effect of masking ratio on test risk in mask-based pretraining via a bia…
+  [NEURIPS2025][Computational Biology][masked autoencoder] This paper employs high-dimensional linear regression theory to precisely characterize the effect of masking ratio on test risk in mask-based pretraining via a bias-variance decomposition, revealing that the optimal masking ratio depends on both the downstream task and model size. Building on this theory, the paper proposes R2MAE (Random Ratio MAE), which consistently outperforms fixed masking ratios across vision…
 tags:
   - "NEURIPS2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "bias-variance tradeoff"
   - "R2MAE"
 date: 2026-05-08
-content_hash: 66a88e6d64cd689a
+content_hash: 922357bda30c87df
 ---
 
 # Understanding and Enhancing Mask-Based Pretraining towards Universal Representations
@@ -102,11 +102,11 @@ Each feature reconstruction in masked autoencoding is modeled as a high-dimensio
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](../../ICLR2026/computational_biology/towards_understanding_the_shape_of_representations_in_protein_language_models.md)
 - [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
+- [\[ICML 2025\] ExLM: Rethinking the Impact of \[MASK\] Tokens in Masked Language Models](../../ICML2025/computational_biology/exlm_rethinking_the_impact_of_mask_tokens_in_masked_language_models.md)
 - [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](learning_repetition-invariant_representations_for_polymer_informatics.md)
 - [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
-- [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
-- [\[NeurIPS 2025\] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation](bidirectional_representations_augmented_autoregressive_biological_sequence_gener.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper systematically dissects what Reinforcement Learning from Verifiable Rewards (RLVR) genuinely modifies in models through the lens of token-level distributional shifts. It reveals that RL fine-tuning significantly alters the next-token prediction distribution at only a very small fraction of token positions (~
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper systematically dissects what Reinforcement Learning from Verifiable Rewards (RLVR) genuinely modifies in models through the lens of token-level distributional shifts. It reveals that RL fine-tuning significantly alters the next-token prediction distribution at only a very small fraction of token positions (~17% in DAPO, less than 2% in SimpleRL). Through "crossover sampling" interventions…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "token-level distributional shift"
+  - "JS divergence"
+  - "crossover sampling"
+  - "sparsity"
 date: 2026-05-08
-content_hash: 3abb1134d25cf88f
+content_hash: 215d43b160e72b87
 ---
+
 # Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,10 @@ Interpretation: Injecting only a single-digit percentage of RL tokens is suffici
 ## Related Papers
 
 - [\[ICLR 2026\] Proximal Supervised Fine-Tuning](proximal_supervised_fine-tuning.md)
+- [\[ICLR 2026\] Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning](fine-tuning_behavioral_cloning_policies_with_preferencebased_reinforcement_learn.md)
 - [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
 - [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
 - [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
-- [\[ICLR 2026\] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning](rewardmap_tackling_sparse_rewards_in_fine-grained_visual_reasoning_via_multi-sta.md)
 
 </div>
 

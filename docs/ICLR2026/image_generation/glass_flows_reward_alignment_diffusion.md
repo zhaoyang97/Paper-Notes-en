@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][flow matching] Ours proposes GLASS (Gaussian Latent Sufficient Statistic) Flows—a new "flow-within-a-flow" sampling paradigm. By reparameterizing stochastic Markov transitions $p_{t'|t}(x_{t'} | x_t)$ as inner ODE solving problems via Gaussian sufficient statistics (reusing pretrained denoisers without retraining), it achieves Feynma
+  [ICLR 2026 Oral][Image Generation][flow matching] Ours proposes GLASS (Gaussian Latent Sufficient Statistic) Flows—a new "flow-within-a-flow" sampling paradigm. By reparameterizing stochastic Markov transitions $p_{t'|t}(x_{t'} | x_t)$ as inner ODE solving problems via Gaussian sufficient statistics (reusing pretrained denoisers without retraining), it achieves Feynman-Kac Steering without the trade-off between ODE efficiency and SDE randomness. This consistently outperforms…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - flow matching
-  - diffusion models
-  - reward alignment
-  - Feynman-Kac steering
-  - GLASS
-  - stochastic transitions
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "flow matching"
+  - "diffusion models"
+  - "reward alignment"
+  - "Feynman-Kac steering"
+  - "GLASS"
+  - "stochastic transitions"
+  - "inference-time scaling"
 date: 2026-05-08
-content_hash: 584ca539a36201d0
+content_hash: 4a4c58d89a47b743
 ---
+
 # GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models
 
 **Conference**: ICLR 2026 Oral  
@@ -160,8 +162,8 @@ The GLASS transition kernel is a drop-in replacement. Any SDE-based method can b
 - [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
 - [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](../../CVPR2026/image_generation/learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
 - [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
-- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
-- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
+- [\[ICLR 2026\] Sample Reward Soups: Query-efficient Multi-Reward Guidance for Text-to-Image Diffusion Models](sample_reward_soups_query-efficient_multi-reward_guidance_for_text-to-image_diff.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PT2-LLM: Post-Training Ternarization for Large Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] Ours proposes PT2-LLM, the first Post-Training Ternarization framework for LLMs. By employing an asymmetric ternary quantizer (comprising Iterative Ternary Fitting and Activation-aware Grid Alignment) alongside a Structural Similarity Reordering strategy, it achieves superior performance at 1.58-bit compared to 2-bit P
+  [ICLR 2026][LLM (Other)][Ternarization] Ours proposes PT2-LLM, the first Post-Training Ternarization framework for LLMs. By employing an asymmetric ternary quantizer (comprising Iterative Ternary Fitting and Activation-aware Grid Alignment) alongside a Structural Similarity Reordering strategy, it achieves superior performance at 1.58-bit compared to 2-bit PTQ methods.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Ternarization"
+  - "Post-Training Quantization"
+  - "Extreme Low-bit"
+  - "LLM Compression"
+  - "Column Reordering"
 date: 2026-05-08
-content_hash: 2905d53fa0a2ec33
+content_hash: d4dcd93c746d4070
 ---
+
 # PT2-LLM: Post-Training Ternarization for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -130,8 +136,8 @@ The two stages have different optimization objectives: ITF minimizes weight quan
 - Value: ⭐⭐⭐⭐ Provides a new option for extreme low-bit LLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -139,7 +145,7 @@ The two stages have different optimization objectives: ITF minimizes weight quan
 - [\[ICLR 2026\] COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models](cosmos_a_hybrid_adaptive_optimizer_for_efficient_training_of_large_language_mode.md)
 - [\[ICLR 2026\] Massive Editing for Large Language Models Based on Dynamic Weight Generation](massive_editing_for_large_language_models_based_on_dynamic_weight_generation.md)
 - [\[ICLR 2026\] Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models](cite_pretrain_retrieval-free_knowledge_attribution_for_large_language_models.md)
-- [\[ICLR 2026\] Transducing Language Models](transducing_language_models.md)
+- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
 
 </div>
 

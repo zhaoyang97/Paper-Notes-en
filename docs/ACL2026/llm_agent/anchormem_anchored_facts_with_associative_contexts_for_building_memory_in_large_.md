@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] The AnchorMem memory framework is proposed, inspired by the Proust phenomenon. It decouples the retrieval unit (atomic facts) from the generation context (original interactions) and connects fragmented memories via an associative event graph. It significantly outperforms existing systems like A-Mem and Mem0 on the LoCo
+  [ACL 2026 Findings][LLM Agent][LLM Memory] The AnchorMem memory framework is proposed, inspired by the Proust phenomenon. It decouples the retrieval unit (atomic facts) from the generation context (original interactions) and connects fragmented memories via an associative event graph. It significantly outperforms existing systems like A-Mem and Mem0 on the LoCoMo benchmark.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "LLM Memory"
+  - "Atomic Facts"
+  - "Associative Event Graph"
+  - "Retrieval-Augmented Generation"
+  - "Long-term Conversation"
 date: 2026-05-08
-content_hash: a3d09f2fa24d3315
+content_hash: cefa44272a818a0d
 ---
+
 # AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -148,9 +154,9 @@ Evaluated on the LoCoMo benchmark using GPT-4o-mini:
 ## Related Papers
 
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
-- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](../../ICLR2026/llm_agent/agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
+- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
+- [\[ACL 2026\] HeLa-Mem: Hebbian Learning and Associative Memory for LLM Agents](hela-mem_hebbian_learning_and_associative_memory_for_llm_agents.md)
 - [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
 
 </div>

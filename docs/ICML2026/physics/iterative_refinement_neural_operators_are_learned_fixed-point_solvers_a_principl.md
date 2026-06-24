@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation
 description: >-
-  [ICML 2026][Physics & Scientific Computing][FNO] The paper proposes an external weight-sharing U-Net refinement module $\Phi_\theta$ for pre-trained neural operators (FNO/TFNO/WDSR, etc.). During inference, it iteratively updates the solution via $h_{k+1}=h_k+\alpha\Phi_\theta(x,h_k)$, transforming a single forward pass into a "learned residual solver" that converges
+  [ICML 2026 Spotlight][Physics & Scientific Computing][Neural Operators] The paper proposes an external weight-sharing U-Net refinement module $\Phi_\theta$ for pre-trained neural operators (FNO/TFNO/WDSR, etc.). During inference, it iteratively updates the solution via $h_{k+1}=h_k+\alpha\Phi_\theta(x,h_k)$, transforming a single forward pass into a "learned residual solver" that converges to a unique fixed point. This approach reduces errors by 34%–80% in tasks like turbulen…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - FNO
+  - "ICML 2026 Spotlight"
+  - "Physics & Scientific Computing"
+  - "Neural Operators"
+  - "Fixed-Point Iteration"
+  - "Spectral Bias"
+  - "Inference-Time Iteration"
+  - "FNO"
 date: 2026-05-08
-content_hash: c4badaee7cd29652
+content_hash: c1b580fe57d0a633
 ---
+
 # Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation
 
 **Conference**: ICML 2026 Spotlight  
@@ -153,10 +158,10 @@ In cross-operator transfer experiments, IRNO$_{\text{TFNO}}$ used to refine FNO 
 ## Related Papers
 
 - [\[ICML 2026\] Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting](learning_to_refine_spectral-decoupled_iterative_refinement_framework_for_precipi.md)
-- [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](generative_neural_operators_through_diffusion_last_layer.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](../../CVPR2026/physics/spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
+- [\[ICLR 2026\] The False Promise of Zero-Shot Super-Resolution in Machine-Learned Operators](../../ICLR2026/physics/the_false_promise_of_zero-shot_super-resolution_in_machine-learned_operators.md)
+- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](../../ICLR2026/physics/iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
+- [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](../../ICLR2026/physics/learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
+- [\[ICLR 2026\] Adaptive Mamba Neural Operators](../../ICLR2026/physics/adaptive_mamba_neural_operators.md)
 
 </div>
 

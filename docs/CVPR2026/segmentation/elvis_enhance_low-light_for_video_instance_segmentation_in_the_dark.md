@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] ELVIS proposes the first low-light Video Instance Segmentation (VIS) framework, which achieves gains of +3.7 AP and +2.8 AP on synthetic and real low-light videos, respectively. This is accomplished through a physics-driven synthetic low-light video pipeline with motion blur modeling, an uncalibrated degradation parame
+  [CVPR 2026][Segmentation][Low-light video instance segmentation] ELVIS proposes the first low-light Video Instance Segmentation (VIS) framework, which achieves gains of +3.7 AP and +2.8 AP on synthetic and real low-light videos, respectively. This is accomplished through a physics-driven synthetic low-light video pipeline with motion blur modeling, an uncalibrated degradation parameter estimation network (VDP-Net), and an enhancement decoder integrated into the VIS architectu…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Low-light video instance segmentation"
+  - "synthetic low-light pipeline"
+  - "degradation estimation"
+  - "domain adaptation"
+  - "enhancement decoder"
 date: 2026-05-08
-content_hash: ffda8a6b579d6b09
+content_hash: 9ac3919b60f30d53
 ---
+
 # ELVIS: Enhance Low-Light for Video Instance Segmentation in the Dark
 
 **Conference**: CVPR 2026  
@@ -181,15 +187,13 @@ Parameters estimated by VDP-Net provide a gain of +14.6 AP / +1.9 AP over random
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2025\] LiVOS: Light Video Object Segmentation with Gated Linear Matching](../../CVPR2025/segmentation/livos_light_video_object_segmentation_with_gated_linear_matching.md)
-- [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](phrase-instance_alignment_for_generalized_referring_segmentation.md)
 - [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
 - [\[CVPR 2026\] DIMOS: Disentangling Instance-level Moving Object Segmentation](dimos_disentangling_instance-level_moving_object_segmentation.md)
 - [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
+- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](live_interactive_training_for_video_segmentation.md)
 
 </div>
 

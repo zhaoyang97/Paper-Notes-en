@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] ReMoGen is proposed as a modular framework for real-time human interaction-to-reaction motion generation. It leverages a frozen general motion prior learned from large-scale single-person motion data, adapts to different interaction domains (human-human/human-scene) via independently trained Meta-Interaction modules, a
+  [CVPR 2026][Human Understanding][Interaction Reaction Generation] ReMoGen is proposed as a modular framework for real-time human interaction-to-reaction motion generation. It leverages a frozen general motion prior learned from large-scale single-person motion data, adapts to different interaction domains (human-human/human-scene) via independently trained Meta-Interaction modules, and introduces Frame-wise Segment Refinement to achieve low-latency online updates (0.047s/fram…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Interaction Reaction Generation"
+  - "Modular Learning"
+  - "Motion Prior"
+  - "Real-time Generation"
+  - "Human-Human/Human-Scene Interaction"
 date: 2026-05-08
-content_hash: fbfe43596ec0acf7
+content_hash: 0722424585b862b6
 ---
+
 # ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data
 
 **Conference**: CVPR 2026  
@@ -162,15 +168,15 @@ Only the prediction at the current frame is taken, and the history buffer is upd
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
 - [\[CVPR 2026\] PolySLGen: Online Multimodal Speaking-Listening Reaction Generation in Polyadic Interaction](polyslgen_online_multimodal_speaking-listening_reaction_generation_in_polyadic_i.md)
 - [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
-- [\[CVPR 2026\] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)
 - [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 
 </div>
 

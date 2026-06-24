@@ -7,7 +7,7 @@ tags:
   - ICLR 2026
   - Reinforcement Learning
 date: 2026-05-08
-content_hash: 8c09cb4cabc2b0e0
+content_hash: 504b43a11a92bf2e
 ---
 Taking $s_k$ from the same trajectory as $s_i, s_j$ as the intermediate subgoal $w$. TRL utilizes the **transitive Bellman update**:
 $$V(s, g) \leftarrow \max_{w}\, V(s, w)\,V(w, g)$$
@@ -97,10 +97,10 @@ TRL significantly outperforms existing TD-based and MC-based GCRL methods on lon
 ## Related Papers
 
 - [\[ICLR 2026\] Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models](divide_harmonize_then_conquer_it_shooting_multi-commodity_flow_problems_with_mul.md)
-- [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
-- [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
-- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
+- [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
+- [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 
 </div>
 

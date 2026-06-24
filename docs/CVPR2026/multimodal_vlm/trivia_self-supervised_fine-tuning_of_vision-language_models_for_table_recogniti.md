@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] The TRivia self-supervised fine-tuning framework is proposed, which enables VLMs to learn table recognition directly from unlabeled table images through table Question Answering (QA)-driven GRPO reinforcement learning. With 3B parameters, TRivia-3B outperforms proprietary models such as Gemini 2.5 Pro and GPT-5 across
+  [CVPR 2026][Multimodal VLM][Table recognition] The TRivia self-supervised fine-tuning framework is proposed, which enables VLMs to learn table recognition directly from unlabeled table images through table Question Answering (QA)-driven GRPO reinforcement learning. With 3B parameters, TRivia-3B outperforms proprietary models such as Gemini 2.5 Pro and GPT-5 across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Table recognition"
+  - "self-supervised fine-tuning"
+  - "GRPO"
+  - "vision-language models"
+  - "reinforcement learning"
 date: 2026-05-08
-content_hash: 85e3cc01f0664b08
+content_hash: 47f192d9482780bf
 ---
+
 # TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition
 
 **Conference**: CVPR 2026  
@@ -152,9 +155,9 @@ A three-stage training strategy is employed: Stage 1 utilizes 700K synthetic and
 
 - [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
 - [\[CVPR 2026\] Phrase-Grounding-Aware Supervised Fine-Tuning for Chart Recognition via Side-Masked Attention](phrase-grounding-aware_supervised_fine-tuning_for_chart_recognition_via_side-mas.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
+- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
+- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAM: Recover Any 3D Human Motion in-the-Wild
 description: >-
-  [CVPR 2026][Human Understanding][SAM2] RAM proposes a unified multi-person 3D motion recovery framework that integrates a motion-aware semantic tracker SegFollow (based on SAM2 + adaptive Kalman filtering), a memory-enhanced temporal human mesh recovery module T-HMR, a lightweight motion predictor, and a gated combiner. It achieves SOTA zero-shot tracking s
+  [CVPR 2026][Human Understanding][Multi-person 3D motion recovery] RAM proposes a unified multi-person 3D motion recovery framework that integrates a motion-aware semantic tracker SegFollow (based on SAM2 + adaptive Kalman filtering), a memory-enhanced temporal human mesh recovery module T-HMR, a lightweight motion predictor, and a gated combiner. It achieves SOTA zero-shot tracking stability and 3D accuracy on benchmarks such as PoseTrack and 3DPW…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - SAM2
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-person 3D motion recovery"
+  - "zero-shot tracking"
+  - "SAM2"
+  - "Temporal Human Mesh Recovery"
+  - "motion prediction"
 date: 2026-05-08
-content_hash: 6d45658eb541e451
+content_hash: 319fa160630f636a
 ---
+
 # RAM: Recover Any 3D Human Motion in-the-Wild
 
 **Conference**: CVPR 2026  
@@ -143,10 +148,10 @@ RAM significantly leads in both tracking stability (MOTA/IDF1) and 3D accuracy (
 
 ## Related Papers
 
-- [\[CVPR 2026\] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)
 - [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
 - [\[CVPR 2026\] SceMoS: Scene-Aware 3D Human Motion Synthesis by Planning with Geometry-Grounded Tokens](scemos_scene-aware_3d_human_motion_synthesis_by_planning_with_geometry-grounded_.md)
 - [\[CVPR 2026\] Superman: Unifying Skeleton and Vision for Human Motion Perception and Generation](superman_unifying_skeleton_and_vision_for_human_motion_perception_and_generation.md)
+- [\[CVPR 2025\] WildAvatar: Learning In-the-Wild 3D Avatars from the Web](../../CVPR2025/human_understanding/wildavatar_learning_in-the-wild_3d_avatars_from_the_web.md)
 - [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
 
 </div>

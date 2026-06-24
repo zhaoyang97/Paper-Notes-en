@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Building Arabic NLP from the Ground Up: Twenty Years of Lessons, Failures, and Open Problems
 description: >-
-  [ACL 2026][Social Computing][Arabic NLP] This is a reflective paper rather than an experimental one. The authors review twenty years of Arabic NLP construction, pointing out that the most difficult problems in low-resource languages are often not linguistics or model technology, but community, institutions, deployment governance, and modes of knowledge produc
+  [ACL2026][Social Computing][Arabic NLP] This is a reflective paper rather than an experimental one. The authors review twenty years of Arabic NLP construction, pointing out that the most difficult problems in low-resource languages are often not linguistics or model technology, but community, institutions, deployment governance, and modes of knowledge production.
 tags:
-  - ACL 2026
-  - Social Computing
-  - Arabic NLP
-  - shared task
+  - "ACL2026"
+  - "Social Computing"
+  - "Arabic NLP"
+  - "Low-resource languages"
+  - "data community"
+  - "shared task"
+  - "research reflection"
 date: 2026-05-08
-content_hash: 303b11fb80e02e9d
+content_hash: 6d1c7bbb3a978a2a
 ---
+
 # Building Arabic NLP from the Ground Up: Twenty Years of Lessons, Failures, and Open Problems
 
 **Conference**: ACL2026  
@@ -118,9 +122,9 @@ The paper has no ablation experiments. Its equivalent "error analysis" consists 
 ## Related Papers
 
 - [\[ACL 2026\] Understanding the Sociocultural Dimensions of Mental Health Discourse in Arabic-Language X Communities](understanding_the_sociocultural_dimensions_of_mental_health_discourse_in_arabic-.md)
+- [\[ICML 2026\] Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data](../../ICML2026/social_computing/three_years_of_rchatgpt_societal_impact_evaluations_from_social_media_data.md)
 - [\[CVPR 2026\] Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning](../../CVPR2026/social_computing/revisiting_unknowns_towards_effective_and_efficient_open-set_active_learning.md)
 - [\[AAAI 2026\] Bias Association Discovery Framework for Open-Ended LLM Generations](../../AAAI2026/social_computing/bias_association_discovery_framework_for_open-ended_llm_generations.md)
-- [\[ICML 2026\] Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data](../../ICML2026/social_computing/three_years_of_rchatgpt_societal_impact_evaluations_from_social_media_data.md)
 - [\[ACL 2026\] RV-HATE: Reinforced Multi-Module Voting for Implicit Hate Speech Detection](rv-hate_reinforced_multi-module_voting_for_implicit_hate_speech_detection.md)
 
 </div>

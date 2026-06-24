@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond the Static-World: Lifelong Learning for All-in-One Medical Image Restoration
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] To address the simultaneous "modality conflict" and "catastrophic forgetting" encountered in real-world clinical data streams for all-in-one medical image restoration (sharing one model for MRI SR, CT denoising, and PET synthesis), this paper proposes the ROME framework. It first maps different modalities to a unified
+  [CVPR 2026][Medical Imaging][All-in-one Medical Image Restoration] To address the simultaneous "modality conflict" and "catastrophic forgetting" encountered in real-world clinical data streams for all-in-one medical image restoration (sharing one model for MRI SR, CT denoising, and PET synthesis), this paper proposes the ROME framework. It first maps different modalities to a unified Modality-Agnostic Manifold (MIDAB) via adversarial balancing…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "All-in-one Medical Image Restoration"
+  - "Lifelong Learning"
+  - "Catastrophic Forgetting"
+  - "Modality Decoupling"
+  - "Adversarial Balancing"
 date: 2026-05-08
-content_hash: d9c716533f106122
+content_hash: 6e3c73160f1ed4a6
 ---
+
 # Beyond the Static-World: Lifelong Learning for All-in-One Medical Image Restoration
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,10 @@ Cumulative ablation (Average PSNR across three modality tasks):
 ## Related Papers
 
 - [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
 - [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
 - [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
 - [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
+- [\[CVPR 2026\] Decoding 3D Perception via BrainSSD: Synergistic Fusion of EEG Representations from Static and Dynamic Visual Streams](decoding_3d_perception_via_brainssd_synergistic_fusion_of_eeg_representations_fr.md)
 
 </div>
 

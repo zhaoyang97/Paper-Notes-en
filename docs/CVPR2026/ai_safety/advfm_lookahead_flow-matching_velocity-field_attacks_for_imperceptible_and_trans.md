@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdvFM: Lookahead Flow-Matching Velocity-Field Attacks for Imperceptible and Transferable Adversarial Examples
 description: >-
-  [CVPR 2026][AI Safety][flow matching] Unrestricted adversarial attacks are implemented within the continuous-time velocity field of flow matching. Instead of perturbing pixels directly or using diffusion-based "denoising-then-re-noising," PGD perturbations on reconstructed images are translated into velocity field perturbations propagated deterministically
+  [CVPR 2026][AI Safety][Adversarial examples] Unrestricted adversarial attacks are implemented within the continuous-time velocity field of flow matching. Instead of perturbing pixels directly or using diffusion-based "denoising-then-re-noising," PGD perturbations on reconstructed images are translated into velocity field perturbations propagated deterministically along probability flow ODEs. A "lookahead two-point objective" corrects temporal mismatch…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - flow matching
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial examples"
+  - "flow matching"
+  - "velocity-field attack"
+  - "black-box transferability"
+  - "purification defense"
 date: 2026-05-08
-content_hash: 6d4a15c961b2a0ae
+content_hash: 1f57be69ef8c787d
 ---
+
 # AdvFM: Lookahead Flow-Matching Velocity-Field Attacks for Imperceptible and Transferable Adversarial Examples
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,16 @@ Effect of Lookahead Two-Point Objective (ResNet50 proxy):
 - Value: ⭐⭐⭐⭐ Provides a stronger, harder-to-purify baseline for evaluating generative adversarial robustness.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 - [\[CVPR 2026\] RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning](rapa_enhancing_transferable_targeted_attacks_via_random_parameter_pruning.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
+- [\[NeurIPS 2025\] Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization](../../NeurIPS2025/ai_safety/dual-flow_transferable_multi-target_instance-agnostic_attacks_via_in-the-wild_ca.md)
 - [\[CVPR 2026\] DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples](dash_a_meta-attack_framework_for_synthesizing_effective_and_stealthy_adversarial.md)
-- [\[CVPR 2026\] CamPI: Physical Adversarial Examples through Camera Power Signal Injection](campi_physical_adversarial_examples_through_camera_power_signal_injection.md)
 
 </div>
 

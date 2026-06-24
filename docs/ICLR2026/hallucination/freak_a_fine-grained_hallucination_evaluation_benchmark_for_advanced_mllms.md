@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs
 description: >-
-  [ICLR 2026][Hallucination Detection][CCS] FREAK utilizes an automated "generate-then-edit" pipeline to create 1,786 photorealistic counter-commonsense (CCS) images and 1,799 questions. It specifically targets the fine-grained visual perception hallucinations of SOTA MLLMs—even the strongest models achieve only 45% accuracy, significantly lower than the human b
+  [ICLR 2026][Hallucination Detection][Fine-grained Hallucination] FREAK utilizes an automated "generate-then-edit" pipeline to create 1,786 photorealistic counter-commonsense (CCS) images and 1,799 questions. It specifically targets the fine-grained visual perception hallucinations of SOTA MLLMs—even the strongest models achieve only 45% accuracy, significantly lower than the human baseline of 86.71%, while confirming that CoT reasoning tends to degrade performance on such tas…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - CCS
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Fine-grained Hallucination"
+  - "Counter-commonsense Images"
+  - "CCS"
+  - "MLLM Evaluation"
+  - "CoT Degradation"
 date: 2026-05-08
-content_hash: c8cfbe1edbb785aa
+content_hash: 6c90a2fc6fdde786
 ---
+
 # FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs
 
 **Conference**: ICLR 2026  
@@ -122,6 +127,7 @@ FREAK continues the line of work (HallusionBench, PhD, WHOOPS, VLind-Bench) usin
 - **Value**: ⭐⭐⭐⭐ Provides a non-saturated, discriminative benchmark for SOTA models and empirically challenges the efficacy of CoT in visual detail tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

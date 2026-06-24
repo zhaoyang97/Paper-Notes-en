@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Test-time scaling] This paper demonstrates theoretically and empirically that there exist reasoning tasks (graph connectivity) for which a single long CoT (sequential scaling) is equivalent…
+  [NeurIPS 2025][Reasoning][Test-time scaling] This paper demonstrates theoretically and empirically that there exist reasoning tasks (graph connectivity) for which a single long CoT (sequential scaling) is equivalent in capability to exponentially many short CoTs (parallel scaling)—i.e., reducing CoT length by even a small amount requires an exponential increase in parallel samples to achieve the same accuracy.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Test-time scaling"
   - "sequential scaling vs. parallel scaling"
   - "chain-of-thought"
   - "complexity theory"
   - "graph connectivity"
 date: 2026-05-08
-content_hash: c3cc1bdee0d897e3
+content_hash: 3f1ec639570c4bdc
 ---
 
 # Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones
@@ -132,11 +132,11 @@ Small Transformers (4-layer Mistral, 128-dimensional hidden layer) are trained o
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Adaptive Dual Reasoner: Large Reasoning Models Can Think Efficiently by Hybrid Reasoning](adaptive_dual_reasoner_large_reasoning_models_can_think_efficiently_by_hybrid_re.md)
+- [\[ICML 2025\] PENCIL: Long Thoughts with Short Memory](../../ICML2025/llm_reasoning/pencil_long_thoughts_with_short_memory.md)
 - [\[NeurIPS 2025\] ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs](reasonfluxprm_trajectoryaware_prms_for_long_chainofthought_r.md)
 - [\[NeurIPS 2025\] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)
+- [\[ACL 2025\] Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?](../../ACL2025/llm_reasoning/can_large_language_models_detect_errors_in_long_chain-of-thought_reasoning.md)
 - [\[NeurIPS 2025\] Let LRMs Break Free from Overthinking via Self-Braking Tuning](let_lrms_break_free_from_overthinking_via_self-braking_tuning.md)
-- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](../../ACL2026/llm_reasoning/is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
 
 </div>
 

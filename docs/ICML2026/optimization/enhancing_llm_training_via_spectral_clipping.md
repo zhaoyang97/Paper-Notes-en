@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Enhancing LLM Training via Spectral Clipping
 description: >-
-  [ICML 2026][Optimization & Theory][Frank-Wolfe] This paper proposes SPECTRA: an optimizer-agnostic wrapper that applies **post-spectral clipping** to the update matrix and optional **pre-spectral clipping** to the original gradients. Theoretically equivalent to the composite Frank-Wolfe algorithm with weight regularization, it consistently reduces validation loss fo
+  [ICML 2026][Optimization][Spectral Clipping] This paper proposes SPECTRA: an optimizer-agnostic wrapper that applies **post-spectral clipping** to the update matrix and optional **pre-spectral clipping** to the original gradients. Theoretically equivalent to the composite Frank-Wolfe algorithm with weight regularization, it consistently reduces validation loss for AdamW / Signum / Mars / AdEMAMix in 124M–1.5B LLM pre-training.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Frank-Wolfe
-  - Newton-Schulz
-  - AdamW
+  - "ICML 2026"
+  - "Optimization"
+  - "Spectral Clipping"
+  - "Frank-Wolfe"
+  - "Newton-Schulz"
+  - "LLM Pre-training"
+  - "AdamW"
 date: 2026-05-08
-content_hash: 1973769d65ea9554
+content_hash: 542e7402d96ab49e
 ---
+
 # Enhancing LLM Training via Spectral Clipping
 
 **Conference**: ICML 2026  
@@ -134,15 +137,15 @@ Pre-training 124M–1.5B LLaMA-style Transformers using Chinchilla-optimal token
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping](adagc_enhancing_llm_pretraining_stability_via_adaptive_gradient_clipping.md)
 - [\[NeurIPS 2025\] MeCeFO: Enhancing LLM Training Robustness via Fault-Tolerant Optimization](../../NeurIPS2025/optimization/mecefo_enhancing_llm_training_robustness_via_fault-tolerant_optimization.md)
 - [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
+- [\[ICML 2026\] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning](utility-diversity_aware_online_batch_selection_for_llm_supervised_fine-tuning.md)
 - [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
-- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
 
 </div>
 

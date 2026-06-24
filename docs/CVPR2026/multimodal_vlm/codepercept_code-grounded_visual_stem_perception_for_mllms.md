@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] CodePercept: Code-Grounded Visual STEM Perception for MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Perception Enhancement] Through systematic scaling analysis, it is discovered that perception, rather than reasoning, is the true bottleneck for MLLMs in the STEM field. The CodePercept paradigm is proposed using executable Python code as an anchoring medium. It constructs a million-scale ICC-1M dataset and the STEM2Code-Eval benchmark. Follo
+  [CVPR 2026][Multimodal VLM][STEM Visual Perception] Through systematic scaling analysis, it is discovered that perception, rather than reasoning, is the true bottleneck for MLLMs in the STEM field. The CodePercept paradigm is proposed using executable Python code as an anchoring medium. It constructs a million-scale ICC-1M dataset and the STEM2Code-Eval benchmark. Following two-stage training (SFT+RL), the STEM visual perception and downstream reasoning capabilities of MLLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Perception Enhancement
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "STEM Visual Perception"
+  - "Executable Code"
+  - "Image Reconstruction"
+  - "Code-Grounded Captioning"
+  - "Multimodal Large Model"
+  - "Perception Enhancement"
 date: 2026-05-08
-content_hash: 5628e105d4641148
+content_hash: 5f33757e449922e8
 ---
+
 # CodePercept: Code-Grounded Visual STEM Perception for MLLMs
 
 **Conference**: CVPR 2026  
@@ -163,11 +169,11 @@ Code complements natural language by directly expressing geometric relationships
 
 ## Related Papers
 
-- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
+- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
 - [\[CVPR 2026\] Linking Perception, Confidence and Accuracy in MLLMs](linking_perception_confidence_and_accuracy_in_mllms.md)
 - [\[CVPR 2026\] Widget2Code: From Visual Widgets to UI Code via Multimodal LLMs](widget2code_from_visual_widgets_to_ui_code_via_multimodal_llms.md)
-- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
-- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
+- [\[CVPR 2026\] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs](sparrow_learning_spatial_precision_and_temporal_referential_consistency_in_pixel.md)
+- [\[CVPR 2026\] Enhancing Descriptive Captions with Visual Attributes for Multimodal Perception](enhancing_descriptive_captions_with_visual_attributes_for_multimodal_perception.md)
 
 </div>
 

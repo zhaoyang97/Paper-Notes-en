@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Empowering Decision Trees via Shape Function Branching
 description: >-
-  [NeurIPS 2025][Interpretability][Decision Trees] This paper proposes the Shape Generalized Tree (SGT), which replaces the conventional linear threshold split at each internal node of a decision tree with a learnable axis…
+  [NeurIPS 2025][Interpretability][Decision Trees] This paper proposes the Shape Generalized Tree (SGT), which replaces the conventional linear threshold split at each internal node of a decision tree with a learnable axis-aligned shape function, enabling the capture of nonlinear feature effects within more compact tree structures while preserving interpretability.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Tabular Data"
   - "Nonlinear Splitting"
 date: 2026-05-08
-content_hash: 20bcf5009655694c
+content_hash: 092a9f994bbeeeac
 ---
 
 # Empowering Decision Trees via Shape Function Branching
@@ -164,11 +164,11 @@ Evaluated on 26 real-world classification datasets at depths 2–6.
 
 ## Related Papers
 
+- [\[ICML 2025\] Leveraging Predictive Equivalence in Decision Trees](../../ICML2025/interpretability/leveraging_predictive_equivalence_in_decision_trees.md)
+- [\[ICML 2025\] Near-Optimal Decision Trees in a SPLIT Second](../../ICML2025/interpretability/near_optimal_decision_trees_in_a_split_second.md)
 - [\[NeurIPS 2025\] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making](valuepilot_a_two-phase_framework_for_value-driven_decision-making.md)
+- [\[ICLR 2026\] TreeGrad-Ranker: Feature Ranking via O(L)-Time Gradients for Decision Trees](../../ICLR2026/interpretability/treegrad-ranker_feature_ranking_via_ol-time_gradients_for_decision_trees.md)
 - [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
-- [\[ACL 2026\] SSA: Improving Performance With a Better Scoring Function](../../ACL2026/interpretability/ssa_improving_performance_with_a_better_scoring_function.md)
-- [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](../../AAAI2026/interpretability/shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[ICLR 2026\] Uncovering Grounding IDs: How External Cues Shape Multimodal Binding](../../ICLR2026/interpretability/uncovering_grounding_ids_how_external_cues_shape_multimodal_binding.md)
 
 </div>
 

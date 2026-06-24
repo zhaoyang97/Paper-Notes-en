@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Randomized Reductions
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper formalizes the manual task of "discovering a Randomized Self-Reduction (RSR) for a function $f$," which has been stagnant for forty years, into a learning problem based on correlated sampling. The authors construct the Bitween framework: it first utilizes sparse linear regression to mine RSRs within a fixed
+  [ICML 2026 Spotlight][Optimization][Randomized Self-Reduction] This paper formalizes the manual task of "discovering a Randomized Self-Reduction (RSR) for a function $f$," which has been stagnant for forty years, into a learning problem based on correlated sampling. The authors construct the Bitween framework: it first utilizes sparse linear regression to mine RSRs within a fixed query set $\{x+r, x-r, x \cdot r, x, r\}$, and then employs an LLM agent to search in a larger qu…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026 Spotlight"
+  - "Optimization"
+  - "Randomized Self-Reduction"
+  - "Self-correcting programs"
+  - "Neuro-symbolic"
+  - "Symbolic Regression"
+  - "LLM Agents"
 date: 2026-05-08
-content_hash: b17f091470fd1a5a
+content_hash: 60645d39e9107d1d
 ---
+
 # Learning Randomized Reductions
 
 **Conference**: ICML 2026 Spotlight  
@@ -147,8 +153,8 @@ Based on the number of RSRs by category (comparing A-Bitween and N-Research with
 - [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
 - [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](../../ICLR2026/optimization/convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
 - [\[ICML 2026\] Interpretability and Generalization Bounds for Learning Spatial Physics](interpretability_and_generalization_bounds_for_learning_spatial_physics.md)
+- [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](α-pfn_fast_entropy_search_via_in-context_learning.md)
 - [\[ICML 2026\] Ubiquity of Emergent Hebbian Dynamics in Regularized Learning](ubiquity_of_emergent_hebbian_dynamics_in_regularized_learning.md)
-- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
 
 </div>
 

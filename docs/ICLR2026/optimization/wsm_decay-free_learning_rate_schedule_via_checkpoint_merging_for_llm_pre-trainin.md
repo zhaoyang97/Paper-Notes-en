@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WSM: Decay-free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training
 description: >-
-  [ICLR 2026][Optimization & Theory][checkpoint merging] WSM theoretically equates "learning rate decay" with "weighted checkpoint merging"—showing that constant learning rate training followed by merging recent checkpoints with derived weights can simulate any decay curve (cosine, linear, 1-sqrt, etc.). This removes the decay phase from training entirely and consistently ou
+  [ICLR 2026][Optimization][LR schedule] WSM theoretically equates "learning rate decay" with "weighted checkpoint merging"—showing that constant learning rate training followed by merging recent checkpoints with derived weights can simulate any decay curve (cosine, linear, 1-sqrt, etc.). This removes the decay phase from training entirely and consistently outperforms the mainstream WSD scheme on benchmarks like MATH, HumanEval, and MMLU-Pro.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - checkpoint merging
-  - decay-free
+  - "ICLR 2026"
+  - "Optimization"
+  - "LR schedule"
+  - "checkpoint merging"
+  - "model averaging"
+  - "decay-free"
+  - "pre-training annealing"
 date: 2026-05-08
-content_hash: bccac2903af2f990
+content_hash: 329e55972b4bd220
 ---
+
 # WSM: Decay-free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training
 
 **Conference**: ICLR 2026  
@@ -164,9 +168,9 @@ Comparison of Merging Granularity (Table 4, fixed 80B token window; (Interval, C
 
 - [\[ICLR 2026\] Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice](weight_decay_may_matter_more_than_µp_for_learning_rate_transfer_in_practice.md)
 - [\[ICLR 2026\] Seesaw: Accelerating Training by Balancing Learning Rate and Batch Size Scheduling](seesaw_accelerating_training_by_balancing_batch_size_and_learning_rate_schedulin.md)
-- [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
 - [\[ICLR 2026\] Cutting the Skip: Training Residual-Free Transformers](cutting_the_skip_training_residual-free_transformers.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/optimization/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
+- [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
 
 </div>
 

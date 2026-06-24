@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning
 description: >-
-  [ICLR 2026][Model Compression][SVD] This paper proposes OSFT (Orthogonal Subspace Fine-Tuning): performing SVD on each layer's weights, freezing the "high-rank subspace" corresponding to large singular values as old knowledge, and performing full-parameter updates only in the orthogonal "low-rank subspace." This enables continuous learning of new tasks w
+  [ICLR 2026][Model Compression][Continual Learning] This paper proposes OSFT (Orthogonal Subspace Fine-Tuning): performing SVD on each layer's weights, freezing the "high-rank subspace" corresponding to large singular values as old knowledge, and performing full-parameter updates only in the orthogonal "low-rank subspace." This enables continuous learning of new tasks with fixed parameters and no task-gradient storage, achieving near-zero forgetting. It outperforms O-LoRA by 1…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - SVD
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "SVD"
+  - "Orthogonal Gradient Projection"
+  - "PEFT"
 date: 2026-05-08
-content_hash: ca62f399d8bca50c
+content_hash: dfeb1a9e87edc356
 ---
+
 # Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning
 
 **Conference**: ICLR 2026  
@@ -154,10 +159,10 @@ Win/Tie/Lose for Instruction Following and Safety (relative to LLaMA-2-7B-Chat b
 ## Related Papers
 
 - [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](ider_idempotent_experience_replay_for_reliable_continual_learning.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)](study_of_training_dynamics_for_memory-constrained_fine-tuning.md)
 - [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
-- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](quantized_gradient_projection_for_memory-efficient_continual_learning.md)
-- [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](../../CVPR2026/model_compression/mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
+- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
 
 </div>
 

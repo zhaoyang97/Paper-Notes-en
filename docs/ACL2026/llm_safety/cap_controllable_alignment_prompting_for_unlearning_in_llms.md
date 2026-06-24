@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CAP: Controllable Alignment Prompting for Unlearning in LLMs
 description: >-
-  [ACL 2026][LLM Safety][Reinforcement Learning] This paper proposes the CAP framework, which guides frozen LLMs to selectively unlearn target knowledge by training a lightweight SLM to generate controllable prompt prefixes. This approach requires no modification to model parameters, achieving reversible and transferable LLM knowledge unlearning.
+  [ACL 2026][LLM Safety][LLM Unlearning] This paper proposes the CAP framework, which guides frozen LLMs to selectively unlearn target knowledge by training a lightweight SLM to generate controllable prompt prefixes. This approach requires no modification to model parameters, achieving reversible and transferable LLM knowledge unlearning.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Prompt-driven"
+  - "Reinforcement Learning"
+  - "Controllable Alignment"
+  - "Knowledge Elimination"
 date: 2026-05-08
-content_hash: 0f911387c063343b
+content_hash: 5d022fda23826cb1
 ---
+
 # CAP: Controllable Alignment Prompting for Unlearning in LLMs
 
 **Conference**: ACL 2026  
@@ -144,11 +149,11 @@ The total reward function is defined as $\mathcal{R} = \lambda_{VIB} \cdot \math
 
 ## Related Papers
 
-- [\[ICLR 2026\] Inoculation Prompting: Eliciting Traits from LLMs during Training Can Suppress Them at Test-Time](../../ICLR2026/llm_safety/inoculation_prompting_eliciting_traits_from_llms_during_training_can_suppress_th.md)
-- [\[ACL 2026\] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment](can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener.md)
-- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](../../CVPR2026/llm_safety/sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
 - [\[ICLR 2026\] Any-Depth Alignment: Unlocking Innate Safety Alignment of LLMs to Any-Depth](../../ICLR2026/llm_safety/any-depth_alignment_unlocking_innate_safety_alignment_of_llms_to_any-depth.md)
-- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
+- [\[ACL 2026\] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment](can_persona-prompted_llms_emulate_subgroup_values_an_empirical_analysis_of_gener.md)
+- [\[ICLR 2026\] Inoculation Prompting: Eliciting traits from LLMs during training can reduce trait expression at test-time](../../ICLR2026/llm_safety/inoculation_prompting_eliciting_traits_from_llms_during_training_can_reduce_trai.md)
+- [\[ICLR 2026\] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting](../../ICLR2026/llm_safety/operationalizing_data_minimization_for_privacy-preserving_llm_prompting.md)
+- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](../../CVPR2026/llm_safety/sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
 
 </div>
 

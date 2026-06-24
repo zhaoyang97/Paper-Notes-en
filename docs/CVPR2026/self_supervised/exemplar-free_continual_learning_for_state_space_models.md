@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exemplar-Free Continual Learning for State Space Models
 description: >-
-  [CVPR 2026][Others][State Space Model] This paper proposes Inf-SSM—a geometric-aware, exemplar-free regularization method that encodes the "infinite-time behavior" of SSMs (e.g., Vim/Mamba) as a point on an extended observability subspace. By constraining the distance between subspaces of new and old tasks on an infinite-dimensional Grassmann manifold and r
+  [CVPR 2026][Self-Supervised Learning][Continual Learning] This paper proposes Inf-SSM—a geometric-aware, exemplar-free regularization method that encodes the "infinite-time behavior" of SSMs (e.g., Vim/Mamba) as a point on an extended observability subspace. By constraining the distance between subspaces of new and old tasks on an infinite-dimensional Grassmann manifold and reducing the computational cost from $\mathcal{O}(n^3)$ to $\mathcal{O}(n^2)$…
 tags:
-  - CVPR 2026
-  - Others
-  - State Space Model
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "State Space Models"
+  - "Extended Observability Subspace"
+  - "Infinite-dimensional Grassmann Manifold"
 date: 2026-05-08
-content_hash: f439f9fb5f0d7aac
+content_hash: 937711ab22401c90
 ---
+
 # Exemplar-Free Continual Learning for State Space Models
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ Even when only regularizing $(\mathbf{A},\mathbf{C})$, Inf-SSM outperforms other
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
+- [\[AAAI 2026\] Expandable and Differentiable Dual Memories with Orthogonal Regularization for Exemplar-free Continual Learning](../../AAAI2026/self_supervised/expandable_and_differentiable_dual_memories_with_orthogonal_regularization_for_e.md)
+- [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
+- [\[ECCV 2024\] Exemplar-Free Continual Representation Learning via Learnable Drift Compensation](../../ECCV2024/self_supervised/exemplar-free_continual_representation_learning_via_learnable_drift_compensation.md)
 - [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
-- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
-- [\[CVPR 2026\] Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis](subspace_alignment_for_clip-based_continual_learning_via_canonical_correlation_a.md)
-- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
 
 </div>
 

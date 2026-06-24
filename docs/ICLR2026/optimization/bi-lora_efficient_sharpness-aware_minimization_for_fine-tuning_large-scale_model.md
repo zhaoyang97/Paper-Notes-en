@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models
 description: >-
-  [ICLR 2026][Optimization & Theory][LoRA] Bi-LoRA utilizes an additional "adversarial LoRA module" to specifically carry SAM's adversarial perturbations, merging the original sequential two-step "perturb-then-descend" process into a single parallel forward-backward pass. This enables SAM to be practically applied to large-scale model LoRA fine-tuning with almo
+  [ICLR 2026][Optimization][LoRA] Bi-LoRA utilizes an additional "adversarial LoRA module" to specifically carry SAM's adversarial perturbations, merging the original sequential two-step "perturb-then-descend" process into a single parallel forward-backward pass. This enables SAM to be practically applied to large-scale model LoRA fine-tuning with almost no added cost, while escaping the restricted subspace of LoRA-SAM to find flatter minima.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - LoRA
-  - Sharpness-Aware Minimization
+  - "ICLR 2026"
+  - "Optimization"
+  - "LoRA"
+  - "Sharpness-Aware Minimization"
+  - "flat minima"
+  - "Parameter-Efficient Fine-Tuning"
+  - "adversarial perturbation"
+  - "generalization"
 date: 2026-05-08
-content_hash: 51ce9990c95cad2f
+content_hash: 06937c02a76fc524
 ---
+
 # Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models
 
 **Conference**: ICLR 2026  
@@ -126,11 +131,11 @@ Llama 3.1-8B instruction following, decomposing "extra branch vs. adversarial as
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
 - [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
 - [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
-- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
-- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
 - [\[ICML 2025\] Tilted Sharpness-Aware Minimization](../../ICML2025/optimization/tilted_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization](minor_first_major_last_a_depth-induced_implicit_bias_of_sharpness-aware_minimiza.md)
 
 </div>
 

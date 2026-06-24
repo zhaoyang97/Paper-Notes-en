@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Imitation Game: Turing Machine Imitator is Length Generalizable Reasoner
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes TAIL (Turing mAchine Imitation Learning), which uses Python programs to automatically synthesize Chain-of-Thought (CoT) data that mimics the execution process of a Turing Machine. By decomposing reasoning into three structures—linear expansion, atomic states, and explicit data fetching—and fine-tuni
+  [ICLR 2026][Reasoning][Length Generalization] This paper proposes TAIL (Turing mAchine Imitation Learning), which uses Python programs to automatically synthesize Chain-of-Thought (CoT) data that mimics the execution process of a Turing Machine. By decomposing reasoning into three structures—linear expansion, atomic states, and explicit data fetching—and fine-tuning Qwen2.5-7B solely on synthetic data, the model achieves stable generalization to sequences longer than those se…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Length Generalization"
+  - "Turing Machine Imitation"
+  - "Chain-of-Thought Synthesis"
+  - "Computable Problems"
+  - "Supervised Fine-Tuning"
 date: 2026-05-08
-content_hash: 61198d442b136a08
+content_hash: 65a3b5778f14246e
 ---
+
 # The Imitation Game: Turing Machine Imitator is Length Generalizable Reasoner
 
 **Conference**: ICLR 2026  
@@ -124,12 +130,12 @@ Representative tasks were selected from four algorithm categories, with pass@1 e
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 - [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 - [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 - [\[ICLR 2026\] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym](generalizable_end-to-end_tool-use_rl_with_synthetic_codegym.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)

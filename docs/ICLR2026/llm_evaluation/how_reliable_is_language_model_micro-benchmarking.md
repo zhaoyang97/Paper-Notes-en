@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] How Reliable is Language Model Micro-Benchmarking?
 description: >-
-  [ICLR 2026][LLM Evaluation][micro-benchmarking] Ours proposes the Minimum Detectable Ability Difference (MDAD) meta-evaluation metric, systematically revealing that micro-benchmarks cannot reliably distinguish model pairs with small performance gaps at extremely small scales, and that random sampling performs comparably to sophisticated micro-benchmark methods when
+  [ICLR2026][LLM Evaluation][micro-benchmarking] Ours proposes the Minimum Detectable Ability Difference (MDAD) meta-evaluation metric, systematically revealing that micro-benchmarks cannot reliably distinguish model pairs with small performance gaps at extremely small scales, and that random sampling performs comparably to sophisticated micro-benchmark methods when the sample size reaches ~250.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - micro-benchmarking
-  - evaluation reliability
-  - MDAD
-  - pairwise ranking
-  - random sampling
-  - MMLU-Pro
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "micro-benchmarking"
+  - "evaluation reliability"
+  - "MDAD"
+  - "pairwise ranking"
+  - "random sampling"
+  - "MMLU-Pro"
+  - "BIG-bench Hard"
 date: 2026-05-08
-content_hash: e65c1fa4dfa42d86
+content_hash: 1f2aa632a2826606
 ---
+
 # How Reliable is Language Model Micro-Benchmarking?
 
 **Conference**: ICLR2026  
@@ -164,8 +166,8 @@ To determine when random sampling is sufficient, Ours compares two categories of
 - [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
 - [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](pitfalls_in_evaluating_language_model_forecasters.md)
 - [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
+- [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
 - [\[ICLR 2026\] Train-before-Test Harmonizes Language Model Rankings](train-before-test_harmonizes_language_model_rankings.md)
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 
 </div>
 

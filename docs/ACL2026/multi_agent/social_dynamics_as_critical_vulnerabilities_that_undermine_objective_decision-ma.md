@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proves that representative agents in LLM multi-agent systems are not only limited by their own reasoning capabilities but are also significantly influenced by "social dynamics"—such as the number of peers, peer capabilities, argument length, and rhetorical style—leading to incorrect decisions on tasks with o
+  [ACL2026][Multi-Agent][Multi-agent systems] This paper proves that representative agents in LLM multi-agent systems are not only limited by their own reasoning capabilities but are also significantly influenced by "social dynamics"—such as the number of peers, peer capabilities, argument length, and rhetorical style—leading to incorrect decisions on tasks with objective answers.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL2026"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "social conformity"
+  - "adversarial peers"
+  - "representative agents"
+  - "decision robustness"
 date: 2026-05-08
-content_hash: 585b217769a3df8d
+content_hash: 269be0bcb40fe071
 ---
+
 # Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives
 
 **Conference**: ACL2026  
@@ -131,8 +137,8 @@ In RQ4, the effect of rhetorical strategies depends on the representative model'
 - [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
 - [\[ACL 2026\] OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction](oxygent_making_multi-agent_systems_modular_observable_and_evolvable_via_oxy_abst.md)
 - [\[ICML 2026\] EduMirror: Modeling Educational Social Dynamics with Value-driven Multi-agent Simulation](../../ICML2026/multi_agent/edumirror_modeling_educational_social_dynamics_with_value-driven_multi-agent_sim.md)
-- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 - [\[ACL 2026\] PROTEA: Offline Evaluation and Iterative Refinement for Multi-Agent LLM Workflows](protea_offline_evaluation_and_iterative_refinement_for_multi-agent_llm_workflows.md)
+- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 
 </div>
 

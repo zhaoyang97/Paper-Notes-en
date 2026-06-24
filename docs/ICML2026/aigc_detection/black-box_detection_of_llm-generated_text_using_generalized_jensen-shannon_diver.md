@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] SurpMark reformulates "AI text detection" as a likelihood-free hypothesis test: it uses a proxy LM to calculate token surprisal, discretizes them into $k$ states via k-means, estimates a first-order Markov transition matrix, and compares it with pre-built "human-written / machine-written" reference matrices using Gener
+  [ICML 2026][AIGC Detection][Black-box AI text detection] SurpMark reformulates "AI text detection" as a likelihood-free hypothesis test: it uses a proxy LM to calculate token surprisal, discretizes them into $k$ states via k-means, estimates a first-order Markov transition matrix, and compares it with pre-built "human-written / machine-written" reference matrices using Generalized Jensen-Shannon Divergence (GJS). It provides black-box, zero-retraining…
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "Black-box AI text detection"
+  - "surprisal discretization"
+  - "Markov state transition"
+  - "Generalized JS Divergence"
 date: 2026-05-08
-content_hash: 6e881a8554a83fee
+content_hash: 3d3d65c87227e404
 ---
+
 # Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence
 
 **Conference**: ICML 2026  
@@ -142,10 +147,10 @@ SurpMark **consistently matches or surpasses baselines**, especially in cross-do
 
 ## Related Papers
 
+- [\[ICLR 2026\] D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call](../../ICLR2026/aigc_detection/dr_recovery-based_ai-generated_text_detection_via_a_single_black-box_llm_call.md)
 - [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](../../ACL2026/aigc_detection/mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
 - [\[ACL 2025\] Learning to Rewrite: Generalized LLM-Generated Text Detection](../../ACL2025/aigc_detection/learning_to_rewrite_generalized_llm-generated_text_detection.md)
 - [\[ICML 2026\] On the Salience of Low-Probability Tokens for AI-Generated Text Detection: A Multiscale Uncertainty Perspective](on_the_salience_of_low-probability_tokens_for_ai-generated_text_detection_a_mult.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](../../CVPR2026/aigc_detection/enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Test-Time Reasoners Are Strategic Multiple-Choice Test-Takers
 description: >-
-  [ACL 2026][NLP Understanding][partial-input] This paper systematically compares 12 reasoning LLMs on full multiple-choice questions (MCQs) versus choices-only MCQs. It finds that test-time reasoning (TTR) indeed allows models to perform above chance in choices-only scenarios. However, reasoning traces reveal that this is not entirely shallow cheating but includes
+  [ACL2026][NLP Understanding][Multiple-Choice Evaluation] This paper systematically compares 12 reasoning LLMs on full multiple-choice questions (MCQs) versus choices-only MCQs. It finds that test-time reasoning (TTR) indeed allows models to perform above chance in choices-only scenarios. However, reasoning traces reveal that this is not entirely shallow cheating but includes "strategic test-taking" behaviors such as inferring missing questions, eliminating incorrect options…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - partial-input
-  - choices-only
+  - "ACL2026"
+  - "NLP Understanding"
+  - "Multiple-Choice Evaluation"
+  - "Test-Time Reasoning"
+  - "partial-input"
+  - "choices-only"
+  - "Reasoning Traces"
 date: 2026-05-08
-content_hash: 3cef3bfbe821fa14
+content_hash: 9d215b0a74b273bc
 ---
+
 # Test-Time Reasoners Are Strategic Multiple-Choice Test-Takers
 
 **Conference**: ACL2026  
@@ -138,8 +142,8 @@ Qualitative coding indicates that choices-only reasoning is not limited to shall
 - Value: ⭐⭐⭐⭐⭐ Useful for MCQ evaluation, benchmark refinement, and reasoning trace analysis.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

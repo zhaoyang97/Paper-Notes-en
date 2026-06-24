@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision
 description: >-
-  [CVPR 2026][Video Generation][Dual Module] Vanast proposes a unified framework that simultaneously performs garment transfer and human animation generation within a single stage. Utilizing a Dual Module architecture (HAM + GTM) and a three-stage synthetic data construction pipeline, it achieves a PSNR of 17.95dB (+5.5dB vs. the best two-stage solution) and an L
+  [CVPR 2026][Video Generation][Virtual Try-On] Vanast proposes a unified framework that simultaneously performs garment transfer and human animation generation within a single stage. Utilizing a Dual Module architecture (HAM + GTM) and a three-stage synthetic data construction pipeline, it achieves a PSNR of 17.95dB (+5.5dB vs. the best two-stage solution) and an LPIPS of 0.237 on Internet datasets.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Dual Module
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Virtual Try-On"
+  - "Human Animation"
+  - "Synthetic Triplet"
+  - "Dual Module"
+  - "Video Diffusion"
 date: 2026-05-08
-content_hash: ca4c6afc738b7ea5
+content_hash: b937dbdc97b38896
 ---
+
 # Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision
 
 **Conference**: CVPR 2026  
@@ -149,10 +154,10 @@ The training objective follows the standard diffusion denoising loss (v-predicti
 ## Related Papers
 
 - [\[CVPR 2026\] The Devil is in the Details: Enhancing Video Virtual Try-On via Keyframe-Driven Details Injection](the_devil_is_in_the_details_enhancing_video_virtual_try-on_via_keyframe-driven_d.md)
-- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
 - [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](../../ICML2026/video_generation/itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
 - [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
 - [\[CVPR 2026\] PersonaLive! Expressive Portrait Image Animation for Live Streaming](personalive_expressive_portrait_image_animation_for_live_streaming.md)
+- [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
 
 </div>
 

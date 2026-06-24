@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Estimating the Black-box LLM Uncertainty with Distribution-Aligned Adversarial Distillation
 description: >-
-  [ACL 2026][Social Computing][Paper Note] DisAAD is proposed: a small proxy model (only 1% of the target model's size) learns whether a "black-box LLM knows the answer" through "distribution alignment + adversarial distillation." By leveraging Evidential Deep Learning (EDL) to decompose proxy logits into epistemic and aleatoric uncertainty, real-time uncertain
+  [ACL 2026][Social Computing][Black-box Uncertainty] DisAAD is proposed: a small proxy model (only 1% of the target model's size) learns whether a "black-box LLM knows the answer" through "distribution alignment + adversarial distillation." By leveraging Evidential Deep Learning (EDL) to decompose proxy logits into epistemic and aleatoric uncertainty, real-time uncertainty for closed-source models like GPT-4/Claude can be estimated with a single response. This achieves an aver…
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Black-box Uncertainty"
+  - "Adversarial Distillation"
+  - "Proxy Model"
+  - "Evidential Deep Learning"
+  - "Hallucination Detection"
 date: 2026-05-08
-content_hash: 081ebb5d6a1aadc1
+content_hash: ed7014340e1c0501
 ---
+
 # Estimating the Black-box LLM Uncertainty with Distribution-Aligned Adversarial Distillation
 
 **Conference**: ACL 2026  
@@ -148,9 +154,9 @@ Comparison in black-box hallucination detection / reliability prediction:
 
 - [\[ACL 2026\] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection](toxitrace_gradient-aligned_training_for_explainable_chinese_toxicity_detection.md)
 - [\[ACL 2026\] Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning](prompt-level_distillation_a_non-parametric_alternative_to_model_fine-tuning_for_.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](../../ICML2026/social_computing/ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
 - [\[ICML 2025\] Learning Survival Distributions with the Asymmetric Laplace Distribution](../../ICML2025/social_computing/learning_survival_distributions_with_the_asymmetric_laplace_distribution.md)
-- [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
 
 </div>
 

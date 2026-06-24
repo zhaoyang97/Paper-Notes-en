@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] It's Never Too Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the mode collapse problem where text-to-image diffusion models produce nearly identical outputs for the same prompt across different samples, this paper proposes an end-to-end gradient optimization of initial noise to push a set of samples apart. Combined with a "Pink Noise" initialization that concentrates
+  [CVPR 2026][Image Generation][Mode Collapse] To address the mode collapse problem where text-to-image diffusion models produce nearly identical outputs for the same prompt across different samples, this paper proposes an end-to-end gradient optimization of initial noise to push a set of samples apart. Combined with a "Pink Noise" initialization that concentrates energy in low frequencies, the method significantly enhances generation diversity without modifying the model or pr…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Mode Collapse"
+  - "Noise Optimization"
+  - "Inference-time Scaling"
+  - "Generative Diversity"
+  - "Pink Noise"
 date: 2026-05-08
-content_hash: f5bb534ac64589ff
+content_hash: 97f9d88a5b4b2dde
 ---
+
 # It's Never Too Late: Noise Optimization for Collapse Recovery in Trained Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -136,13 +142,17 @@ In SDXL-Turbo, Vendi reaches the saturation value of 4.0. Flux.1 [schnell] is mo
 
 <div class="related-papers" markdown="1">
 
-- [Parmar et al. 2024] On the Diversity of Text-to-Image Diffusion Models
-- [Vendi Score 2023] The Vendi Score: A Diversity Measure for the Machine Learning Era
+## Related Papers
+
+- [\[CVPR 2026\] What Is It Like to Be a Noise? An Entropy-based Gaussian Noise Regularization for Diffusion Models](what_is_it_like_to_be_a_noise_an_entropy-based_gaussian_noise_regularization_for.md)
+- [\[CVPR 2026\] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning](taming_preference_mode_collapse_via_directional_decoupling_alignment_in_diffusio.md)
+- [\[CVPR 2026\] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO](diversegrpo_mitigating_mode_collapse_in_image_generation_via_diversity-aware_grp.md)
+- [\[CVPR 2026\] Elucidating the Design Space of Arbitrary-Noise-Based Diffusion Models](eda_arbitrary_noise_diffusion_design_space.md)
+- [\[CVPR 2026\] Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity](too_vivid_to_be_real_benchmarking_and_calibrating_generative_color_fidelity.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning](taming_preference_mode_collapse_via_directional_decoupling_alignment_in_diffusio.md)

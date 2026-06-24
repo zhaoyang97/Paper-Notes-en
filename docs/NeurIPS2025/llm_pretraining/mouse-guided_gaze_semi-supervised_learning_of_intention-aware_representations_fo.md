@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection
 description: >-
-  [NeurIPS 2025 (Workshop: Foundation Models for the Brain and Body)][LLM Pretraining][Semi-supervised learning] This paper proposes a semi-supervised framework that uses mouse trajectories as weak supervision signals to p…
+  [NeurIPS 2025 (Workshop: Foundation Models for the Brain and Body)][LLM Pretraining][Semi-supervised learning] This paper proposes a semi-supervised framework that uses mouse trajectories as weak supervision signals to pretrain gaze representations, followed by fine-tuning on labeled data to distinguish reading from scanning behavior. At inference time, only gaze signals are used, enabling hands-free assistive reading detection.
 tags:
   - "NeurIPS 2025 (Workshop: Foundation Models for the Brain and Body)"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "reading behavior classification"
   - "accessibility"
 date: 2026-05-08
-content_hash: 660aeb531f1c383b
+content_hash: a682032134fd9769
 ---
 
 # Mouse-Guided Gaze: Semi-Supervised Learning of Intention-Aware Representations for Reading Detection
@@ -154,11 +154,11 @@ Based on the dataset of Tang et al., containing synchronized gaze and mouse reco
 
 ## Related Papers
 
+- [\[ICML 2025\] Density Ratio Estimation-based Bayesian Optimization with Semi-Supervised Learning](../../ICML2025/llm_pretraining/density_ratio_estimation-based_bayesian_optimization_with_semi-supervised_learni.md)
+- [\[CVPR 2025\] A Unified Framework for Heterogeneous Semi-supervised Learning](../../CVPR2025/llm_pretraining/a_unified_framework_for_heterogeneous_semi-supervised_learning.md)
+- [\[ICML 2025\] A Square Peg in a Square Hole: Meta-Expert for Long-Tailed Semi-Supervised Learning](../../ICML2025/llm_pretraining/a_square_peg_in_a_square_hole_meta-expert_for_long-tailed_semi-supervised_learni.md)
 - [\[AAAI 2026\] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding](../../AAAI2026/llm_pretraining/learning_procedural-aware_video_representations_through_state-grounded_hierarchy.md)
-- [\[NeurIPS 2025\] Optimal Online Change Detection via Random Fourier Features](optimal_online_change_detection_via_random_fourier_features.md)
-- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[NeurIPS 2025\] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs](efficient_pre-training_of_llms_via_topology-aware_communication_alignment_on_mor.md)
-- [\[NeurIPS 2025\] AI Progress Should Be Measured by Capability-Per-Resource, Not Scale Alone: A Framework for Gradient-Guided Resource Allocation in LLMs](ai_progress_should_be_measured_by_capability-per-resource_not_scale_alone_a_fram.md)
+- [\[ICLR 2026\] Learning Facts at Scale with Active Reading](../../ICLR2026/llm_pretraining/learning_facts_at_scale_with_active_reading.md)
 
 </div>
 

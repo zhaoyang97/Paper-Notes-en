@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SmartDJ: Declarative Audio Editing with Audio Language Model
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] SmartDJ proposes a "declarative audio editing" paradigm — where users specify only the desired outcome (e.g., "transform this recording into a sunny forest"). An Audio Language Model (ALM) acts as a planner to decompose high-level instructions into a sequence of atomic editing steps, which are then incrementally execut
+  [ICLR 2026][Audio & Speech][Declarative editing] SmartDJ proposes a "declarative audio editing" paradigm — where users specify only the desired outcome (e.g., "transform this recording into a sunny forest"). An Audio Language Model (ALM) acts as a planner to decompose high-level instructions into a sequence of atomic editing steps, which are then incrementally executed by a Stereo Latent Diffusion Model (LDM). It significantly outperforms previous audio editing methods in per…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Declarative editing"
+  - "Stereo audio"
+  - "Audio Language Model"
+  - "Latent Diffusion"
+  - "Atomic editing operations"
 date: 2026-05-08
-content_hash: 2a63e16e65f64b72
+content_hash: 3acfe77d35ac0436
 ---
+
 # SmartDJ: Declarative Audio Editing with Audio Language Model
 
 **Conference**: ICLR 2026  

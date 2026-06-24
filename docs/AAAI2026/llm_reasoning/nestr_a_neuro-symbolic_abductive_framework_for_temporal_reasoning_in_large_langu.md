@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models
 description: >-
-  [AAAI 2026][LLM Reasoning][Temporal QA] This paper proposes NeSTR, a neuro-symbolic prompting strategy that converts natural language temporal facts into structured symbolic predicates…
+  [AAAI 2026][Reasoning][Temporal QA] This paper proposes NeSTR, a neuro-symbolic prompting strategy that converts natural language temporal facts into structured symbolic predicates, combined with consistency verification and abductive reflection for error correction. Under a zero-shot setting, NeSTR enables LLMs to achieve high-quality temporal reasoning, attaining an average F1 of 89.7 on GPT-4o-mini, compared to 64.9 for vanilla prompting and 85.8 for TISER.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Temporal QA"
   - "Neuro-Symbolic Reasoning"
   - "Abductive Reasoning"
   - "LLM Prompting"
   - "Consistency Verification"
 date: 2026-05-08
-content_hash: ccc2bd1a11d1adcf
+content_hash: 96258dfa50f7b53b
 ---
 
 # NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models
@@ -137,7 +137,7 @@ Evaluated on four temporal question answering benchmarks — TimeQA-Easy/Hard an
 
 ## Related Papers
 
-- [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](../../ACL2026/llm_reasoning/accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
+- [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](../../ICLR2026/llm_reasoning/a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
 - [\[AAAI 2026\] The Curious Case of Analogies: Investigating Analogical Reasoning in Large Language Models](the_curious_case_of_analogies_investigating_analogical_reasoning_in_large_langua.md)
 - [\[AAAI 2026\] ActiShade: Activating Overshadowed Knowledge to Guide Multi-Hop Reasoning in Large Language Models](actishade_activating_overshadowed_knowledge_to_guide_multi-h.md)
 - [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)

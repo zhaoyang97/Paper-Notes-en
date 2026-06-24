@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling
 description: >-
-  [ICLR 2026][LLM Reasoning][Best-of-N] This paper utilizes the classical ROC curve to provide a precise theoretical characterization of how Best-of-N and Rejection Sampling scale under imperfect verifiers. It proves two counter-intuitive conclusions: Rejection Sampling outperforms Best-of-N at fixed compute budgets, and high-compute performance cannot be ex
+  [ICLR 2026][Reasoning][Test-time scaling] This paper utilizes the classical ROC curve to provide a precise theoretical characterization of how Best-of-N and Rejection Sampling scale under imperfect verifiers. It proves two counter-intuitive conclusions: Rejection Sampling outperforms Best-of-N at fixed compute budgets, and high-compute performance cannot be extrapolated from low-compute observations.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Best-of-N
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "Verifier"
+  - "ROC curve"
+  - "Rejection sampling"
+  - "Best-of-N"
 date: 2026-05-08
-content_hash: cb5aafa5d650b1d0
+content_hash: 847aab1919404035
 ---
+
 # ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling
 
 **Conference**: ICLR 2026  
@@ -113,15 +118,16 @@ Experiments used Qwen3 and LLaMA series models as both generators and verifiers,
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
 - [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
 - [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
-- [\[ICLR 2026\] Mode-conditioning unlocks superior test-time compute scaling](mode-conditioning_unlocks_superior_test-time_compute_scaling.md)
-- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
 
 </div>
 

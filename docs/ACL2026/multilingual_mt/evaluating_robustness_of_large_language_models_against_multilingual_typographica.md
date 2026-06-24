@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors
 description: >-
-  [ACL 2026][Multilingual & Translation][MulTypo] This paper proposes MulTypo—a multilingual typo generation algorithm based on language-specific keyboard layouts and 10-finger typing habits. It systematically evaluates the robustness of 18 open-source LLMs across 12 languages and 5 downstream tasks, demonstrating that typos significantly impact generation and reasoni
+  [ACL 2026][Multilingual & Machine Translation][Multilingual typo] This paper proposes MulTypo—a multilingual typo generation algorithm based on language-specific keyboard layouts and 10-finger typing habits. It systematically evaluates the robustness of 18 open-source LLMs across 12 languages and 5 downstream tasks, demonstrating that typos significantly impact generation and reasoning tasks, instruction-tuned models are more fragile, and typo effects exhibit cross-lingual an…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - MulTypo
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual typo"
+  - "keyboard layout"
+  - "robustness evaluation"
+  - "MulTypo"
+  - "instruction tuning"
 date: 2026-05-08
-content_hash: 54c6666f452fe067
+content_hash: 9d476aafe459d0b2
 ---
+
 # Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors
 
 **Conference**: ACL 2026  
@@ -132,10 +137,10 @@ MulTypo's performance drop generally falls between the naive baseline and WikiTy
 ## Related Papers
 
 - [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
+- [\[ACL 2026\] Multilingual Refusal Alignment for Safer Large Language Models](multilingual_refusal_alignment_for_safer_large_language_models.md)
 - [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
 - [\[ACL 2025\] Disentangling Language and Culture for Evaluating Multilingual Large Language Models](../../ACL2025/multilingual_mt/disentangle_language_culture.md)
 - [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
-- [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](../../NeurIPS2025/multilingual_mt/xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
 
 </div>
 

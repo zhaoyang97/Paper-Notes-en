@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory
 description: >-
-  [ICLR 2026][vlm_reasoning][Item Response Theory] Classic Item Response Theory (IRT) is extended into "modality-decomposed" versions (M2IRT / M3IRT), where model ability and item difficulty are decomposed into "image-only / text-only / cross-modal integration" components. This enables the identification of tasks requiring genuine cross-modal reasoning, the elimination
+  [ICLR 2026][VLM Reasoning][Item Response Theory] Classic Item Response Theory (IRT) is extended into "modality-decomposed" versions (M2IRT / M3IRT), where model ability and item difficulty are decomposed into "image-only / text-only / cross-modal integration" components. This enables the identification of tasks requiring genuine cross-modal reasoning, the elimination of shortcut items solvable via single modalities, and the restoration of model rankings using only 1%–10% of t…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Item Response Theory
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Item Response Theory"
+  - "Cross-modal Reasoning"
+  - "Benchmark Refinement"
+  - "Computerized Adaptive Testing"
+  - "shortcut problems"
 date: 2026-05-08
-content_hash: c1014e4e3843e51e
+content_hash: 29da6efc0408211b
 ---
+
 # Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory
 
 **Conference**: ICLR 2026  
@@ -111,11 +116,11 @@ With the low-quality item ratio varying from 0% to 100%, the AUC of M2IRT/M3IRT 
 
 ## Related Papers
 
-- [\[ICLR 2026\] MMReD: A Cross-Modal Benchmark for Dense Context Reasoning](mmred_a_cross-modal_benchmark_for_dense_context_reasoning.md)
+- [\[ICLR 2026\] ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation](rover_benchmarking_reciprocal_cross-modal_reasoning_for_omnimodal_generation.md)
 - [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](../../CVPR2026/vlm_reasoning/can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
 - [\[ICLR 2026\] No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers](no_labels_no_problem_training_visual_reasoners_with_multimodal_verifiers.md)
-- [\[ICLR 2026\] AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning](autogps_automated_geometry_problem_solving_via_multimodal_formalization_and_dedu.md)
-- [\[ICLR 2026\] Unfolding Spatial Cognition: Evaluating Multimodal Models on Visual Simulations](unfolding_spatial_cognition_evaluating_multimodal_models_on_visual_simulations.md)
+- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/vlm_reasoning/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](../../AAAI2026/vlm_reasoning/crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
 
 </div>
 

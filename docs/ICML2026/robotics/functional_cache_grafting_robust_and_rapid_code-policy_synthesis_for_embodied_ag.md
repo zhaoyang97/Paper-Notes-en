@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Code-as-Policies] Addressing the dual issues of Code-as-Policies (CaP)—specifically, their slow response (repeated prefilling of long prompts) and fragility (API mismatches, lack of safety checks) due to generating code from scratch—FCGraft maintains a library of "function-level verified code skeletons + corresponding KV caches." It uti
+  [ICML 2026][Robotics][Embodied agent] Addressing the dual issues of Code-as-Policies (CaP)—specifically, their slow response (repeated prefilling of long prompts) and fragility (API mismatches, lack of safety checks) due to generating code from scratch—FCGraft maintains a library of "function-level verified code skeletons + corresponding KV caches." It utilizes cache-stitching to assemble the KV pairs of cached functions into new policies and cache-patching to locally regener…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Code-as-Policies
-  - cache-stitching
-  - cache-patching
+  - "ICML 2026"
+  - "Robotics"
+  - "Embodied agent"
+  - "Code-as-Policies"
+  - "function-level KV cache"
+  - "cache-stitching"
+  - "cache-patching"
 date: 2026-05-08
-content_hash: 92a85d8c5fefa86c
+content_hash: 938cd1676a1d7a64
 ---
+
 # Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents
 
 **Conference**: ICML 2026  
@@ -127,14 +130,14 @@ Conducted a real-world desk organization and cooking station preparation (the la
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] EMBGuard: Constructing Hazard-Aware Guardrails for Safe Planning in Embodied Agents](embguard_constructing_hazard-aware_guardrails_for_safe_planning_in_embodied_agen.md)
-- [\[CVPR 2026\] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](../../CVPR2026/robotics/agentsafe_benchmarking_the_safety_of_embodied_agents_on_hazardous_instructions.md)
-- [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](../../NeurIPS2025/robotics/opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
 - [\[NeurIPS 2025\] Towards Reliable Code-as-Policies: A Neuro-Symbolic Framework for Embodied Task Planning](../../NeurIPS2025/robotics/towards_reliable_code-as-policies_a_neuro-symbolic_framework_for_embodied_task_p.md)
+- [\[CVPR 2026\] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning](../../CVPR2026/robotics/cross-domain_demo-to-code_via_neurosymbolic_counterfactual_reasoning.md)
+- [\[CVPR 2026\] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](../../CVPR2026/robotics/agentsafe_benchmarking_the_safety_of_embodied_agents_on_hazardous_instructions.md)
 - [\[ICML 2026\] Efficient Skill Grounding via Code Refactoring with Small Language Models](efficient_skill_grounding_via_code_refactoring_with_small_language_models.md)
 
 </div>

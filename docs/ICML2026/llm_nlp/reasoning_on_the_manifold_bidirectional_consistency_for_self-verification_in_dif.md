@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models
 description: >-
-  [ICML 2026][LLM (Other)][Diffusion Language Model] This paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric based on the geometric perspective that "valid reasoning trajectories are stable attractors on the learned distribution." By performing a "forward re-masking + backward few-step reconstruction" on the outputs of a Diffus
+  [ICML2026][LLM (Other)][Diffusion Language Models] This paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric based on the geometric perspective that "valid reasoning trajectories are stable attractors on the learned distribution." By performing a "forward re-masking + backward few-step reconstruction" on the outputs of a Diffusion Language Model (dLLM), reconstruction stability is used for scoring. BMC supports error diagnosis…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Diffusion Language Model
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Diffusion Language Models"
+  - "Manifold Geometry"
+  - "Bidirectional Consistency"
+  - "Reasoning Self-Verification"
+  - "Reinforcement Learning Alignment"
 date: 2026-05-08
-content_hash: 1cc7d6c735b20296
+content_hash: 8cc32519faf1401e
 ---
+
 # Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models
 
 **Conference**: ICML2026  
@@ -137,10 +142,10 @@ On LLaDA, BMC's advantage over SC increases from +2.1% on GSM8K to +13.9% on GPQ
 
 ## Related Papers
 
+- [\[ICLR 2026\] Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models](../../ICLR2026/llm_nlp/dont_settle_too_early_self-reflective_remasking_for_diffusion_language_models.md)
+- [\[ICML 2026\] Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models](masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models.md)
 - [\[ACL 2025\] Self-Training Elicits Concise Reasoning in Large Language Models](../../ACL2025/llm_nlp/self-training_elicits_concise_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
-- [\[ICML 2026\] Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models](masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models.md)
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 
 </div>

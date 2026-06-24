@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation
 description: >-
-  [NeurIPS 2025][LLM Safety][Retrieval-Augmented Image Generation] This paper proposes the ImageSentinel framework, which synthesizes sentinel images that are visually consistent with a private dataset and binds them to ra…
+  [NeurIPS 2025][LLM Safety][Retrieval-Augmented Image Generation] This paper proposes the ImageSentinel framework, which synthesizes sentinel images that are visually consistent with a private dataset and binds them to randomly generated character retrieval keys, enabling reliable detection of unauthorized use of private datasets by retrieval-augmented image generation (RAIG) systems—achieving near-100% AUC with only 3–10 queries.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "Copyright Detection"
   - "RAIG"
 date: 2026-05-08
-content_hash: a081904ab186f75b
+content_hash: 029d6a3969d23455
 ---
 
 # ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation
@@ -199,10 +199,10 @@ The core advantages are: (1) avoidance of the fundamental problem of watermarks 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Watermarking Autoregressive Image Generation](watermarking_autoregressive_image_generation.md)
+- [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](../../ICLR2026/llm_safety/pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
 - [\[ACL 2026\] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](../../ACL2026/llm_safety/beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)
-- [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](../../ACL2026/llm_safety/knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
 
 </div>
 

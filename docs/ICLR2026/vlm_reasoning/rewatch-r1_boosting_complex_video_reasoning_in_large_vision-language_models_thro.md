@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReWatch-R1: Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis
 description: >-
-  [ICLR 2026][vlm_reasoning][RLVR] To address the bottleneck of high-quality training data for complex video reasoning, this paper develops a multi-stage "agentic data synthesis" pipeline to create the ReWatch dataset (hierarchical captions + high-difficulty QA + re-watching CoT). By applying SFT followed by RLVR with an "Observation & Reasoning (O&R)"
+  [ICLR 2026][VLM Reasoning][Video Reasoning] To address the bottleneck of high-quality training data for complex video reasoning, this paper develops a multi-stage "agentic data synthesis" pipeline to create the ReWatch dataset (hierarchical captions + high-difficulty QA + re-watching CoT). By applying SFT followed by RLVR with an "Observation & Reasoning (O&R)" reward, Qwen2.5-VL-7B is trained into ReWatch-R1, achieving SOTA performance among models of similar size across fiv…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - RLVR
-  - ReAct
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "RLVR"
+  - "Agentic Data Synthesis"
+  - "ReAct"
+  - "Process Rewards"
 date: 2026-05-08
-content_hash: 40c3e65ac1186603
+content_hash: 5e3f3258313d7add
 ---
+
 # ReWatch-R1: Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis
 
 **Conference**: ICLR 2026  
@@ -137,11 +141,11 @@ Ablation of CoT data and QA quality (Mean Accuracy: All / Reasoning / Understand
 
 ## Related Papers
 
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
 - [\[ICLR 2026\] Composition-Grounded Data Synthesis for Visual Reasoning](composition-grounded_data_synthesis_for_visual_reasoning.md)
 - [\[CVPR 2026\] Boosting Reasoning in Large Multimodal Models via Activation Replay](../../CVPR2026/vlm_reasoning/boosting_reasoning_in_large_multimodal_models_via_activation_replay.md)
+- [\[ICLR 2026\] SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models](sketchthinker-r1_towards_efficient_sketch-style_reasoning_in_large_multimodal_mo.md)
 - [\[ICLR 2026\] Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models](agentic_jigsaw_interaction_learning_for_enhancing_visual_perception_and_reasonin.md)
-- [\[ICLR 2026\] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](vidguard-r1_ai-generated_video_detection_and_explanation_via_reasoning_mllms_and.md)
-- [\[CVPR 2026\] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](../../CVPR2026/vlm_reasoning/vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)
 
 </div>
 

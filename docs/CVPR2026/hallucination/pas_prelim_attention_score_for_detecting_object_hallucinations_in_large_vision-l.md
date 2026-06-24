@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][LVLM] This study discovers that when Large Vision-Language Models (LVLMs) generate object hallucinations, they tend to "ignore the image and instead rely on previously generated tokens (prelim)". Based on this, it proposes the Prelim Attention Score (PAS), a training-free method requiring no additional forward passes. By sum
+  [CVPR 2026][Hallucination Detection][Object Hallucination Detection] This study discovers that when Large Vision-Language Models (LVLMs) generate object hallucinations, they tend to "ignore the image and instead rely on previously generated tokens (prelim)". Based on this, it proposes the Prelim Attention Score (PAS), a training-free method requiring no additional forward passes. By summing the attention weights of prelim tokens as the hallucination score…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - LVLM
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination Detection"
+  - "LVLM"
+  - "Attention"
+  - "Mutual Information"
+  - "Training-free"
 date: 2026-05-08
-content_hash: bb405ff48f097774
+content_hash: e5cdf70dfd737db6
 ---
+
 # PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ Detection capability (average AUROC %) of attention scores for different token t
 ## Related Papers
 
 - [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
-- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 - [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
 
 </div>
 

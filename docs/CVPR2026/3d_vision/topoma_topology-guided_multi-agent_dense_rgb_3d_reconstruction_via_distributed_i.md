@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TopoMA: Topology-Guided Multi-Agent Dense RGB 3D Reconstruction via Distributed Inference
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] TopoMA utilizes persistent homology to learn a "scene topological skeleton" connecting subgraphs of various agents. This skeleton serves as a unified coordination core for attention bias, loop closure gating, and residual transmission. This allows multiple agents to reconstruct and incrementally optimize local maps und
+  [CVPR 2026][3D Vision][Multi-agent 3D reconstruction] TopoMA utilizes persistent homology to learn a "scene topological skeleton" connecting subgraphs of various agents. This skeleton serves as a unified coordination core for attention bias, loop closure gating, and residual transmission. This allows multiple agents to reconstruct and incrementally optimize local maps under purely distributed, server-free conditions, achieving globally consistent large-scale RGB dense reconst…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-agent 3D reconstruction"
+  - "Topological skeleton"
+  - "Distributed inference"
+  - "Loop closure detection"
+  - "End-to-end SLAM"
 date: 2026-05-08
-content_hash: 73c386a54e49913d
+content_hash: 47f5957d9281db8a
 ---
+
 # TopoMA: Topology-Guided Multi-Agent Dense RGB 3D Reconstruction via Distributed Inference
 
 **Conference**: CVPR 2026  
@@ -168,15 +174,14 @@ Residual Transmission Ablation (Replica apartment-00, average of 5 runs):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
+- [\[CVPR 2026\] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code](nerfify_multiagent_nerf_paper_to_code.md)
 - [\[CVPR 2026\] Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos](ov3r_open-vocabulary_semantic_3d_reconstruction_from_rgb_videos.md)
 - [\[CVPR 2026\] S2D: Sparse to Dense Lifting for 3D Reconstruction with Minimal Inputs](s2d_sparse_to_dense_lifting_for_3d_reconstruction_with_minimal_inputs.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction](reweaver_towards_simulation-ready_and_topology-accurate_garment_reconstruction.md)
+- [\[CVPR 2026\] AREA3D: Active Reconstruction Agent with Unified Feed-Forward 3D Perception and Vision-Language Guidance](area3d_active_reconstruction_agent_with_unified_feed-forward_3d_perception_and_v.md)
 
 </div>
 

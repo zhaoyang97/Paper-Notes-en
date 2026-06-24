@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] Addressing the paradoxical phenomenon where Multimodal Large Language Models (MLLMs) underperform text-only models in table reasoning, TableMix adopts a data-centric approach: it simultaneously mixes three types of data—multimodal table reasoning, text-only mathematical reasoning, and simple table perception—within eac
+  [CVPR 2026][VLM Reasoning][Multimodal Table Reasoning] Addressing the paradoxical phenomenon where Multimodal Large Language Models (MLLMs) underperform text-only models in table reasoning, TableMix adopts a data-centric approach: it simultaneously mixes three types of data—multimodal table reasoning, text-only mathematical reasoning, and simple table perception—within each training batch. This restores the reasoning capability weakened by alignment pre-training while preserv…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Table Reasoning"
+  - "MLLM"
+  - "Data Mixing"
+  - "GRPO"
+  - "Reward Shaping"
 date: 2026-05-08
-content_hash: b2d0b02cd6f5f1d9
+content_hash: 13716839c91d99a0
 ---
+
 # TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective
 
 **Conference**: CVPR 2026  
@@ -131,15 +135,16 @@ Ours not only achieves SOTA among multimodal models but also **surpasses** the s
 - Value: ⭐⭐⭐⭐⭐ Successfully closes the gap between multimodal and text-only table reasoning SOTAs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
-- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
-- [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/multimodal_vlm/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
-- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
+- [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/vlm_reasoning/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)
 
 </div>
 

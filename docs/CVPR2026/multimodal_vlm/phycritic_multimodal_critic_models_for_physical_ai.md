@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PhyCritic: Multimodal Critic Models for Physical AI
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] PhyCritic utilizes a two-stage RLVR pipeline comprising "physical skill warmup + self-referential critic fine-tuning" to train a 7B multimodal model into a critic specialized for physical AI tasks (perception/causality/planning). The core mechanism involves the critic "solving the problem first, then using its own solu
+  [CVPR 2026][Multimodal VLM][Multimodal Critic Model] PhyCritic utilizes a two-stage RLVR pipeline comprising "physical skill warmup + self-referential critic fine-tuning" to train a 7B multimodal model into a critic specialized for physical AI tasks (perception/causality/planning). The core mechanism involves the critic "solving the problem first, then using its own solution as a reference to judge which of two responses is superior." It achieves state-of-the-art performance…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Critic Model"
+  - "Physical AI"
+  - "RLVR"
+  - "GRPO"
+  - "Self-referential Evaluation"
 date: 2026-05-08
-content_hash: 7d7f517539ee8ed4
+content_hash: a4e6941dd5d871c0
 ---
+
 # PhyCritic: Multimodal Critic Models for Physical AI
 
 **Conference**: CVPR 2026  
@@ -138,15 +142,16 @@ RL strategy (s1=80 steps, s2=300 steps) and self-reference ablations:
 - Value: ⭐⭐⭐⭐ Provides the first dedicated physical AI critic model and benchmark; highly practical for embodied and driving evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 - [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
-- [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
+- [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](benchmarking_single-factor_physical_video-to-audio_generation.md)
 - [\[CVPR 2026\] LifeEval: A Multimodal Benchmark for Assistive AI in Egocentric Daily Life Tasks](lifeeval_a_multimodal_benchmark_for_assistive_ai_in_egocentric_daily_life_tasks.md)
-- [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
+- [\[CVPR 2025\] LLaVA-Critic: Learning to Evaluate Multimodal Models](../../CVPR2025/multimodal_vlm/llava-critic_learning_to_evaluate_multimodal_models.md)
+- [\[CVPR 2026\] Unified Multimodal Models as Auto-Encoders](unified_multimodal_models_as_auto-encoders.md)
 
 </div>
 

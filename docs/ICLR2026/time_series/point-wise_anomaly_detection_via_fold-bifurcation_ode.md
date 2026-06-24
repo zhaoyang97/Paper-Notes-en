@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Point-wise Anomaly Detection via Fold-bifurcation ODE
 description: >-
-  [ICLR 2026][Time Series][ODE] FOLD reformulates time series anomaly detection as "tracking how far the system is from a critical transition." It extracts "sensitivity + uncertainty" stress signals from a frozen prediction model and injects them into an ODE inspired by fold-bifurcation to evolve a risk state $z(t)$. An anomaly is detected when $z(t)
+  [ICLR 2026][Time Series][Point-wise anomaly detection] FOLD reformulates time series anomaly detection as "tracking how far the system is from a critical transition." It extracts "sensitivity + uncertainty" stress signals from a frozen prediction model and injects them into an ODE inspired by fold-bifurcation to evolve a risk state $z(t)$. An anomaly is detected when $z(t)$ crosses a threshold calibrated only on normal data. The entire process requires no anomaly labels or de…
 tags:
-  - ICLR 2026
-  - Time Series
-  - ODE
+  - "ICLR 2026"
+  - "Time Series"
+  - "Point-wise anomaly detection"
+  - "Fold-bifurcation"
+  - "ODE"
+  - "Stress signals"
+  - "Critical transitions"
 date: 2026-05-08
-content_hash: d1f4b92975ab389b
+content_hash: 059f62bca4c8fd1d
 ---
+
 # Point-wise Anomaly Detection via Fold-bifurcation ODE
 
 **Conference**: ICLR 2026  

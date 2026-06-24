@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Flow Matching] This paper proposes Physics-Constrained Flow Matching (PCFM), a zero-shot inference framework that enforces arbitrary nonlinear equality constraints to machin…
+  [NeurIPS 2025][Physics & Scientific Computing][Flow Matching] This paper proposes Physics-Constrained Flow Matching (PCFM), a zero-shot inference framework that enforces arbitrary nonlinear equality constraints to machine precision during sampling from pretrained flow matching models. The framework alternates among forward shooting with projection, OT-interpolation backward updates, and relaxed penalty correction at each sub-step, achieving up to 99.5% improvement over baseli…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "PDE Solving"
   - "Zero-Shot Inference"
 date: 2026-05-08
-content_hash: 40d7f5d04660d9b3
+content_hash: 484b3ff26b07fa6f
 ---
 
 # Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints
@@ -143,11 +143,11 @@ PCFM augments a pretrained Functional Flow Matching (FFM) model with zero-shot i
 
 ## Related Papers
 
+- [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](../../ICLR2026/physics/physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
+- [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](../../ICLR2026/physics/physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
 - [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
-- [\[NeurIPS 2025\] Balanced Conic Rectified Flow](balanced_conic_rectified_flow.md)
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
-- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 - [\[NeurIPS 2025\] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling](adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling.md)
+- [\[NeurIPS 2025\] Balanced Conic Rectified Flow](balanced_conic_rectified_flow.md)
 
 </div>
 

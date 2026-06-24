@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models
 description: >-
-  [AAAI 2026][Interpretability][Refusal suppression] This paper demonstrates that refusal behavior in LLMs is not encoded by a single direction but rather forms a low-dimensional manifold. It employs self-organizing maps (…
+  [AAAI 2026][Interpretability][Refusal suppression] This paper demonstrates that refusal behavior in LLMs is not encoded by a single direction but rather forms a low-dimensional manifold. It employs self-organizing maps (SOM) to extract multiple refusal directions and applies Bayesian optimization to search for the optimal ablation combination, surpassing single-direction baselines and dedicated jailbreak algorithms across multiple models.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "representation space"
   - "jailbreak attack"
 date: 2026-05-08
-content_hash: 3bedb620fa2809a1
+content_hash: a7cd5c28290c406c
 ---
 
 # SOM Directions are Better than One: Multi-Directional Refusal Suppression in Language Models
@@ -147,9 +147,9 @@ Strong novelty—the first work to apply SOM to refusal direction extraction, th
 ## Related Papers
 
 - [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](toc_tree-of-claims_search_with_multi-agent_language_models.md)
+- [\[ACL 2025\] The Knowledge Microscope: Features as Better Analytical Lenses than Neurons](../../ACL2025/interpretability/the_knowledge_microscope_features_as_better_analytical_lenses_than_neurons.md)
 - [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](../../NeurIPS2025/interpretability/are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
-- [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](../../NeurIPS2025/interpretability/better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
 - [\[ICML 2026\] Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection](../../ICML2026/interpretability/tracing_the_dynamics_of_refusal_exploiting_latent_refusal_trajectories_for_robus.md)
 
 </div>

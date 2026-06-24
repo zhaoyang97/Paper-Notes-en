@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 正确信念的瓦解：临床压力下 LLM 的认知韧性研究
+  [Paper Note] Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] By designing a multi-turn adversarial stress evaluation framework Med-Stress, this paper reveals that high medical knowledge does not guarantee LLM belief stability. It proposes two defense strategies—inference-time RBED and training-time R-FT—to enhance the cognitive resilience of LLMs in clinical dialogues.
+  [ACL 2026][LLM Evaluation][Clinical Sycophancy] By designing a multi-turn adversarial stress evaluation framework Med-Stress, this paper reveals that high medical knowledge does not guarantee LLM belief stability. It proposes two defense strategies—inference-time RBED and training-time R-FT—to enhance the cognitive resilience of LLMs in clinical dialogues.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Clinical Sycophancy"
+  - "Multi-turn Dialogue Stress"
+  - "Belief Stability"
+  - "Representation Engineering"
+  - "Knowledge-Robustness Gap"
 date: 2026-05-08
-content_hash: 1e2395b58be37aad
+content_hash: 5658f3731a035f88
 ---
+
 # Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress
 
 **Conference**: ACL 2026  
@@ -149,11 +155,11 @@ In generalization experiments on "unseen" adversarial prompts, R-FT maintains an
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)
-- [\[ACL 2026\] Common to Whom? Regional Cultural Commonsense and LLM Bias in India](common_to_whom_regional_cultural_commonsense_and_llm_bias_in_india.md)
-- [\[ACL 2026\] Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases](reasoning_model_is_superior_llm-judge_yet_suffers_from_biases.md)
+- [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
 - [\[ACL 2026\] HumanLLM: Benchmarking and Improving LLM Anthropomorphism via Human Cognitive Patterns](humanllm_benchmarking_and_improving_llm_anthropomorphism_via_human_cognitive_pat.md)
-- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
+- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
+- [\[ACL 2026\] Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges](stability_vs_manipulability_evaluating_robustness_under_post-decision_interactio.md)
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 
 </div>
 

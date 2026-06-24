@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] PERSIST: Persistent Instability in LLM's Personality Measurements
 description: >-
-  [AAAI 2026][LLM/NLP][LLM personality measurement] The PERSIST framework systematically evaluates personality measurement stability across 29 LLMs (1B–685B) on over 2 million responses…
+  [AAAI 2026][LLM (Other)][LLM personality measurement] The PERSIST framework systematically evaluates personality measurement stability across 29 LLMs (1B–685B) on over 2 million responses, revealing a "reasoning paradox" in which CoT reasoning increases variability while reducing perplexity, as well as a scale-dependent effect whereby conversational history exerts opposite influences on large versus small models—collectively indicating that current LLMs lack the architectural…
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM personality measurement"
   - "behavioral consistency"
   - "reasoning mode"
   - "alignment evaluation"
   - "psychometrics"
 date: 2026-05-08
-content_hash: 52da12a9a3c077c0
+content_hash: 6616d95cb114e295
 ---
 
 # PERSIST: Persistent Instability in LLM's Personality Measurements
@@ -151,9 +151,9 @@ Core finding: CoT makes models more confident at the token level (PPL↓) while 
 
 - [\[AAAI 2026\] Collaborative LLM Numerical Reasoning with Local Data Protection](collaborative_llm_numerical_reasoning_with_local_data_protection.md)
 - [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](icl-router_in-context_learned_model_representations_for_llm_routing.md)
-- [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
 - [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
-- [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](../../ICML2026/llm_nlp/token-efficient_change_detection_in_llm_apis.md)
+- [\[AAAI 2026\] VSPO: Validating Semantic Pitfalls in Ontology via LLM-Based CQ Generation](vspo_validating_semantic_pitfalls_in_ontology_via_llm-based_cq_generation.md)
+- [\[ACL 2025\] LLM-AT: Automatic Transmission for LLM Tiers Optimizing Cost and Accuracy](../../ACL2025/llm_nlp/automatic_transmission_for_llm_tiers_optimizing_cost_and_accuracy_in_large_langu.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper identifies co-adaptation among Gaussians as the root cause of appearance artifacts in sparse-view 3D Gaussian Splatting…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper identifies co-adaptation among Gaussians as the root cause of appearance artifacts in sparse-view 3D Gaussian Splatting, proposes the Co-Adaptation Score (CA) metric to quantify this entanglement, and introduces two plug-and-play regularization strategies—Gaussian Dropout and multiplicative opacity noise injection—that consistently reduce co-adaptation and improve novel view rendering quality across five baseline met…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Dropout"
   - "novel view synthesis"
 date: 2026-05-08
-content_hash: 87c702855baac991
+content_hash: 290ce5a16532e755
 ---
 
 # Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting
@@ -186,11 +186,11 @@ The two strategies are validated on LLFF (3 views), DTU (3 views), and Blender (
 
 ## Related Papers
 
-- [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
-- [\[ICCV 2025\] PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations](../../ICCV2025/3d_vision/pcr-gs_colmap-free_3d_gaussian_splatting_via_pose_co-regularizations.md)
+- [\[ECCV 2024\] CoR-GS: Sparse-View 3D Gaussian Splatting via Co-Regularization](../../ECCV2024/3d_vision/cor-gs_sparse-view_3d_gaussian_splatting_via_co-regularization.md)
+- [\[CVPR 2025\] S2Gaussian: Sparse-View Super-Resolution 3D Gaussian Splatting](../../CVPR2025/3d_vision/s2gaussian_sparse-view_super-resolution_3d_gaussian_splatting.md)
+- [\[CVPR 2025\] DropGaussian: Structural Regularization for Sparse-view Gaussian Splatting](../../CVPR2025/3d_vision/dropgaussian_structural_regularization_for_sparse-view_gaussian_splatting.md)
 - [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
-- [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
 
 </div>
 

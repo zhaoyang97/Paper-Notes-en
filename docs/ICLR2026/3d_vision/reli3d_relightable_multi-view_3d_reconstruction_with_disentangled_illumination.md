@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReLi3D: Relightable Multi-View 3D Reconstruction with Disentangled Illumination
 description: >-
-  [ICLR 2026][3D Vision][svBRDF] ReLi3D is the first end-to-end feed-forward system capable of simultaneously reconstructing complete geometry, spatially-varying PBR materials, and consistent HDR environment lighting from sparse multi-view images in less than 1 second. The core idea is to utilize "multi-view constraints" as the primary driver for mate
+  [ICLR 2026][3D Vision][Feed-forward 3D reconstruction] ReLi3D is the first end-to-end feed-forward system capable of simultaneously reconstructing complete geometry, spatially-varying PBR materials, and consistent HDR environment lighting from sparse multi-view images in less than 1 second. The core idea is to utilize "multi-view constraints" as the primary driver for material-illumination disentanglement, transforming the inherently ill-posed single-image inverse rendering p…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - svBRDF
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D reconstruction"
+  - "inverse rendering"
+  - "material-illumination disentanglement"
+  - "svBRDF"
+  - "multi-view fusion"
 date: 2026-05-08
-content_hash: 572c1fc429885427
+content_hash: b05808c747479bde
 ---
+
 # ReLi3D: Relightable Multi-View 3D Reconstruction with Disentangled Illumination
 
 **Conference**: ICLR 2026  
@@ -144,10 +149,10 @@ The impact of multi-view constraints is systematically validated across varying 
 ## Related Papers
 
 - [\[ICLR 2026\] ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation](reconviagen_towards_accurate_multi-view_3d_object_reconstruction_via_generation.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](../../CVPR2026/3d_vision/intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
 - [\[ICLR 2026\] Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator](text-to-3d_by_stitching_a_multi-view_reconstruction_network_to_a_video_generator.md)
 - [\[CVPR 2026\] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations](../../CVPR2026/3d_vision/reliev3r_relieving_feed-forward_3d_reconstruction_from_multi-view_geometric_annot.md)
 - [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] DiMeR: Disentangled Mesh Reconstruction Model with Normal-only Geometry Training](dimer_disentangled_mesh_reconstruction_model_with_normal-only_geometry_training.md)
 
 </div>
 

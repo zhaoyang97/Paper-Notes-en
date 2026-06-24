@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation
 description: >-
-  [ACL 2026][Audio & Speech][Audio Language Model] This paper designs a "three-dimensional forensic auditing" framework (Acoustic Perception / Cognitive Coherence / Cognitive Dissonance) for Audio Language Models (ALMs) performing deepfake detection with reasoning chains. It finds that CoT reasoning is not a universal enhancement—it acts as a "Reasoning Shield" for mod
+  [ACL 2026][Audio & Speech][Audio Language Model] This paper designs a "three-dimensional forensic auditing" framework (Acoustic Perception / Cognitive Coherence / Cognitive Dissonance) for Audio Language Models (ALMs) performing deepfake detection with reasoning chains. It finds that CoT reasoning is not a universal enhancement—it acts as a "Reasoning Shield" for models with strong acoustic perception (Qwen2-Audio), but becomes a "Reasoning Tax" for those with weak perception…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Audio Language Model
-  - Chain-of-Thought
-  - Adversarial Robustness
-  - Cognitive Dissonance
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Audio Language Model"
+  - "Chain-of-Thought"
+  - "Adversarial Robustness"
+  - "Cognitive Dissonance"
+  - "Forensic Auditing"
 date: 2026-05-08
-content_hash: 0b2a04d10c0220e7
+content_hash: d44f4bc3c55af250
 ---
+
 # Analyzing Reasoning Shifts in Audio Deepfake Detection under Adversarial Attacks: The Reasoning Tax versus Shield Bifurcation
 
 **Conference**: ACL 2026  
@@ -142,7 +144,7 @@ A dramatic case: Gemma had an ASR of 100% under an "American Female" linguistic 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -150,7 +152,7 @@ A dramatic case: Gemma had an ASR of 100% under an "American Female" linguistic 
 - [\[ACL 2026\] RTCFake: Speech Deepfake Detection in Real-Time Communication](rtcfake_speech_deepfake_detection_in_real-time_communication.md)
 - [\[ACL 2026\] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection](xlsr-mambo_scaling_the_hybrid_mamba-attention_backbone_for_audio_deepfake_detect.md)
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
-- [\[ICLR 2026\] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning](../../ICLR2026/audio_speech/emotionthinker_prosody-aware_reinforcement_learning_for_explainable_speech_emoti.md)
+- [\[ICLR 2026\] Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards](../../ICLR2026/audio_speech/incentivizing_consistent_effective_and_scalable_reasoning_capability_in_audio_ll.md)
 
 </div>
 

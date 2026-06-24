@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] SmellNet: A Large-scale Dataset for Real-world Smell Recognition
 description: >-
-  [ICLR 2026][Others][GC-MS] SmellNet establishes a machine olfaction benchmark using low-cost portable gas sensors to collect real-world temporal signals from 50 natural ingredients and 43 categories of odor mixtures, proposes SCENTFORMER which integrates temporal differencing, sliding windows, and GC-MS chemical priors.
+  [ICLR2026][Machine Olfaction] SmellNet establishes a machine olfaction benchmark using low-cost portable gas sensors to collect real-world temporal signals from 50 natural ingredients and 43 categories of odor mixtures, proposes SCENTFORMER which integrates temporal differencing, sliding windows, and GC-MS chemical priors.
 tags:
-  - ICLR 2026
-  - Others
-  - GC-MS
+  - "ICLR2026"
+  - "Machine Olfaction"
+  - "Gas Sensors"
+  - "Time-series Modeling"
+  - "GC-MS"
+  - "Mixture Recognition"
 date: 2026-05-08
-content_hash: 2a27ff38e4badfb5
+content_hash: 0112368f21231293
 ---
+
 # SmellNet: A Large-scale Dataset for Real-world Smell Recognition
 
 **Conference**: ICLR2026  
@@ -146,11 +150,11 @@ MIXTURE tasks predict a 12-dimensional normalized ratio vector. The training los
 
 ## Related Papers
 
-- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
-- [\[ICLR 2026\] The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?](the_hot_mess_of_ai_how_does_misalignment_scale_with_model_intelligence_and_task_.md)
-- [\[ICLR 2026\] OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation](osiris_bridging_analog_circuit_design_and_machine_learning_with_scalable_dataset.md)
-- [\[ICLR 2026\] CircuitNet 3.0: A Multi-Modal Dataset with Task-Oriented Augmentation for AI-Driven Circuit Design](circuitnet_30_a_multi-modal_dataset_with_task-oriented_augmentation_for_ai-drive.md)
+- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](../../CVPR2026/others/immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
 - [\[CVPR 2026\] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](../../CVPR2026/others/unimernet_a_universal_network_for_real-world_mathematical_expression_recognition.md)
+- [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](../../CVPR2026/others/mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](../../CVPR2026/others/multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
+- [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](../../ICML2026/others/torus_graphs_for_large_scale_neural_phase_analysis.md)
 
 </div>
 

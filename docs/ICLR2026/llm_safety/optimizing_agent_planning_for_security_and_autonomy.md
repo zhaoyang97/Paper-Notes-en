@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimizing Agent Planning for Security and Autonomy
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing the bias that "deterministic security defenses make Agents appear expensive (low task completion rates, frequent human intervention)," this paper proposes an **autonomy** metric to redefine the benefits of defense. It designs PRUDENTIA, an Agent that is "policy-aware" during planning. Through policy awarenes
+  [ICLR 2026][LLM Safety][Indirect Prompt Injection] Addressing the bias that "deterministic security defenses make Agents appear expensive (low task completion rates, frequent human intervention)," this paper proposes an **autonomy** metric to redefine the benefits of defense. It designs PRUDENTIA, an Agent that is "policy-aware" during planning. Through policy awareness, prudent variable expansion, and "endorsement instead of per-action approval…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Indirect Prompt Injection"
+  - "Information-Flow Control"
+  - "Deterministic Defense"
+  - "Human-in-the-loop"
+  - "Agent Autonomy"
 date: 2026-05-08
-content_hash: 4eff1ef7b50af28a
+content_hash: 7a2194953d538351
 ---
+
 # Optimizing Agent Planning for Security and Autonomy
 
 **Conference**: ICLR 2026  
@@ -132,7 +138,7 @@ PRUDENTIA demonstrates superior TCR compared to Basic with zero HITL and zero at
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

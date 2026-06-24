@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning
 description: >-
-  [ICML 2026][Medical Imaging][KFAC] This paper proposes DP-KFC: based on the observation that "the scaling of the Fisher matrix is determined by the architecture, and the correlation structure can be approximated by modality-level spectral statistics," it reconstructs KFAC preconditioners by probing the network with structured synthetic noise (1/f^\alpha
+  [ICML 2026][Medical Imaging][Differential Privacy] This paper proposes DP-KFC: based on the observation that "the scaling of the Fisher matrix is determined by the architecture, and the correlation structure can be approximated by modality-level spectral statistics," it reconstructs KFAC preconditioners by probing the network with structured synthetic noise (1/f^\alpha pink noise for images, Zipf sampling for text). This approach neither consumes the privacy budget nor introd…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - KFAC
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Differential Privacy"
+  - "KFAC"
+  - "Fisher Information Matrix"
+  - "Preconditioner"
+  - "Synthetic Noise"
 date: 2026-05-08
-content_hash: f78aedc871e73386
+content_hash: e73e90d26d4eab65
 ---
+
 # DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning
 
 **Conference**: ICML 2026  

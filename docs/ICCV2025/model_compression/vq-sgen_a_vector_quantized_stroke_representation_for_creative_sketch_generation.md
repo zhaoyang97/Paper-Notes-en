@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation
 description: >-
-  [ICCV 2025][Model Compression][sketch generation] > VQ-SGen treats each stroke as an independent entity and decouples its shape from positional information. By applying vector quantization (VQ)…
+  [ICCV 2025][Model Compression][sketch generation] > VQ-SGen treats each stroke as an independent entity and decouples its shape from positional information. By applying vector quantization (VQ), it constructs a compact discrete stroke codebook, and employs a cascaded autoregressive Transformer to sequentially generate semantic labels, shape codes, and position codes for each stroke. The method significantly outperforms existing approaches on the CreativeSketch dataset.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "autoregressive"
   - "creative sketch"
 date: 2026-05-08
-content_hash: 5350ec563a4e74f3
+content_hash: 8e4ac176af08416f
 ---
 
 # VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation
@@ -159,11 +159,11 @@ UMAP visualization reveals that the shape codebook automatically forms semantica
 
 ## Related Papers
 
-- [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
+- [\[ACL 2025\] BrainECHO: Semantic Brain Signal Decoding through Vector-Quantized Spectrogram Reconstruction for Whisper-Enhanced Text Generation](../../ACL2025/model_compression/brainecho_semantic_brain_signal_decoding_through_vector-quantized_spectrogram_re.md)
 - [\[ICCV 2025\] SSVQ: Unleashing the Potential of Vector Quantization with Sign-Splitting](ssvq_unleashing_the_potential_of_vector_quantization_with_sign-splitting.md)
+- [\[ICCV 2025\] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning](multi-object_sketch_animation_by_scene_decomposition_and_motion_planning.md)
+- [\[CVPR 2025\] Sketch Down the FLOPs: Towards Efficient Networks for Human Sketch](../../CVPR2025/model_compression/sketch_down_the_flops_towards_efficient_networks_for_human_sketch.md)
 - [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](representation_shift_unifying_token_compression_with_flashattention.md)
-- [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
-- [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
 
 </div>
 

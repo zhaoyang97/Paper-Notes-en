@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RewardFlow: Generate Images by Optimizing What You Reward
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] RewardFlow proposes an inversion-free inference-time framework that integrates multiple differentiable reward signals—including semantic alignment, perceptual fidelity, local positioning, object consistency, and human preference—via multi-reward Langevin dynamics. It achieves SOTA editing fidelity and compositional ali
+  [CVPR 2026][Image Generation][Reward-guided generation] RewardFlow proposes an inversion-free inference-time framework that integrates multiple differentiable reward signals—including semantic alignment, perceptual fidelity, local positioning, object consistency, and human preference—via multi-reward Langevin dynamics. It achieves SOTA editing fidelity and compositional alignment in image editing and compositional generation tasks.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Image Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Reward-guided generation"
+  - "Diffusion models"
+  - "Langevin dynamics"
+  - "Image editing"
+  - "Compositional generation"
 date: 2026-05-08
-content_hash: f657085fedbbe963
+content_hash: 5a5fc3c12c53aade
 ---
+
 # RewardFlow: Generate Images by Optimizing What You Reward
 
 **Conference**: CVPR 2026  
@@ -154,8 +158,8 @@ RewardFlow is a pure inference-time framework and requires no additional trainin
 - [\[CVPR 2026\] Align Images Before You Generate](align_images_before_you_generate.md)
 - [\[CVPR 2026\] Low-Resolution Editing is All You Need for High-Resolution Editing](low-resolution_editing_is_all_you_need_for_high-resolution_editing.md)
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
-- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
-- [\[CVPR 2026\] Pixel Motion Diffusion Is What We Need for Robot Control](pixel_motion_diffusion_is_what_we_need_for_robot_control.md)
+- [\[CVPR 2026\] UniGen-1.5: Enhancing Image Generation and Editing through Reward Unification in RL](unigen-15_enhancing_image_generation_and_editing_through_reward_unification_in_r.md)
+- [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
 
 </div>
 

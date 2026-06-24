@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][machine unlearning] This paper reveals the "shallow alignment" issue in mainstream LLM unlearning methods—they suppress the display of target knowledge by generating "spurious unlearning neurons" rather than truly erasing it, which allows knowledge to be easily recovered through subsequent fine-tuning; it proposes the Ssiuu method to prev
+  [ICLR 2026][LLM Safety][machine unlearning] This paper reveals the "shallow alignment" issue in mainstream LLM unlearning methods—they suppress the display of target knowledge by generating "spurious unlearning neurons" rather than truly erasing it, which allows knowledge to be easily recovered through subsequent fine-tuning; it proposes the Ssiuu method to prevent the inflation of negative influence through attribution-guided regularization, achieving robust unlearning.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - machine unlearning
-  - spurious neurons
-  - shallow alignment
-  - attribution
-  - privacy
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "machine unlearning"
+  - "spurious neurons"
+  - "shallow alignment"
+  - "attribution"
+  - "privacy"
 date: 2026-05-08
-content_hash: 0925eb881093470f
+content_hash: ae947a9f732a6217
 ---
+
 # Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning
 
 **Conference**: ICLR 2026  
@@ -122,15 +123,14 @@ Here, $\mathcal{I}^-$ is the set of neurons with negative attribution in the cur
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 - [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
 - [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
+- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 - [\[ICLR 2026\] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs](unlearning_isnt_invisible_detecting_unlearning_traces_in_llms_from_model_outputs.md)
-- [\[ICLR 2026\] LLMs Can Hide Text in Other Text of the Same Length](llms_can_hide_text_in_other_text_of_the_same_length.md)
+- [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] InTrain: Intrinsic Trainability for Zero-Cost Neural Architecture Search
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] InTrain formalizes "whether an architecture can be trained effectively" as an intrinsic invariant independent of the training process. By combining the **Geometric Capacity** (via Participation Ratio) of forward activations and the **Optimization Resilience** (via Gradient Health) of backward gradients through scale-in
+  [CVPR 2026][Zero-cost proxies] InTrain formalizes "whether an architecture can be trained effectively" as an intrinsic invariant independent of the training process. By combining the **Geometric Capacity** (via Participation Ratio) of forward activations and the **Optimization Resilience** (via Gradient Health) of backward gradients through scale-invariant **multiplicative coupling**, it achieves ranking correlations on NAS-Bench-101/201 that match ensemble proxies and surpas…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Zero-cost proxies"
+  - "Neural Architecture Search"
+  - "Trainability"
+  - "Participation Ratio"
+  - "Gradient Health"
 date: 2026-05-08
-content_hash: fa6b9975a0bd19b0
+content_hash: 73f0fe89703e4655
 ---
+
 # InTrain: Intrinsic Trainability for Zero-Cost Neural Architecture Search
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ Decomposition of the two components and coupling methods on NAS-Bench-201 (KT / 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
+- [\[ICCV 2025\] Loss Functions for Predictor-based Neural Architecture Search](../../ICCV2025/others/loss_functions_for_predictor-based_neural_architecture_search.md)
+- [\[CVPR 2025\] Subnet-Aware Dynamic Supernet Training for Neural Architecture Search](../../CVPR2025/others/subnet-aware_dynamic_supernet_training_for_neural_architecture_search.md)
 - [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
-- [\[CVPR 2026\] GR-Gauge: Cost-efficient Training Configuration By Gauging the Gradient Redundancy](gr-gauge_cost-efficient_training_configuration_by_gauging_the_gradient_redundanc.md)
-- [\[NeurIPS 2025\] In Search of Adam's Secret Sauce](../../NeurIPS2025/optimization/in_search_of_adams_secret_sauce.md)
-- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
-- [\[CVPR 2025\] Conformal Prediction for Zero-Shot Models](../../CVPR2025/optimization/conformal_prediction_for_zero-shot_models.md)
+- [\[CVPR 2025\] VKDNW: Training-free Neural Architecture Search through Variance of Knowledge of Deep Network Weights](../../CVPR2025/others/training-free_neural_architecture_search_through_variance_of_knowledge_of_deep_n.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Think Straight, Stop Smart: Structured Reasoning for Efficient Multi-Hop RAG
 description: >-
-  [NeurIPS 2025 Workshop][Information Retrieval & RAG][Multi-hop RAG] This paper proposes the TSSS (Think Straight, Stop Smart) framework, which achieves state-of-the-art accuracy and competitive efficiency on multi-hop RA…
+  [NeurIPS 2025 Workshop][Information Retrieval & RAG][Multi-hop RAG] This paper proposes the TSSS (Think Straight, Stop Smart) framework, which achieves state-of-the-art accuracy and competitive efficiency on multi-hop RAG benchmarks through (i) template-based reasoning that caches repeated prefixes and anchors sub-queries to the main question, and (ii) a retriever-based deterministic terminator that halts reasoning upon sub-query repetition.
 tags:
   - "NeurIPS 2025 Workshop"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "termination control"
   - "inference efficiency"
 date: 2026-05-08
-content_hash: b263461530cab38c
+content_hash: 09292b62847c4954
 ---
 
 # Think Straight, Stop Smart: Structured Reasoning for Efficient Multi-Hop RAG
@@ -154,11 +154,11 @@ Performance across different LLM backends:
 
 ## Related Papers
 
+- [\[ACL 2025\] Mitigating Lost-in-Retrieval Problems in RAG Multi-Hop QA](../../ACL2025/information_retrieval/mitigating_lost-in-retrieval_problems_in_retrieval_augmented_multi-hop_question_.md)
+- [\[CVPR 2025\] Towards Smart Point-and-Shoot Photography](../../CVPR2025/information_retrieval/towards_smart_point-and-shoot_photography.md)
+- [\[ICLR 2026\] MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG](../../ICLR2026/information_retrieval/mergeprag_orthogonal_merging_of_passage-experts_for_multi-hop_parametric_rag.md)
+- [\[ACL 2025\] Toward Structured Knowledge Reasoning: Contrastive Retrieval-Augmented Generation on Experience](../../ACL2025/information_retrieval/toward_structured_knowledge_reasoning_contrastive_retrieval-augmented_generation.md)
 - [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](../../AAAI2026/information_retrieval/reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
-- [\[AAAI 2026\] OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval](../../AAAI2026/information_retrieval/opera_a_reinforcement_learning--enhanced_orchestrated_planner-executor_architect.md)
-- [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
-- [\[ICLR 2026\] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge](../../ICLR2026/information_retrieval/g-reasoner_foundation_models_for_unified_reasoning_over_graph-structured_knowled.md)
-- [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
 
 </div>
 

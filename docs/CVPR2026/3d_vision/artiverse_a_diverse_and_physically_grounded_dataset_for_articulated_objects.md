@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Artiverse employs a semi-automatic annotation pipeline—integrating few-shot segmentation, geometric reasoning, and multi-stage human verification—to filter 5,402 high-quality articulated objects (88 categories, 24,607 parts) from 10 static 3D repositories. It provides part-level annotations for functional semantics, ar
+  [CVPR 2026][3D Vision][Articulated objects] Artiverse employs a semi-automatic annotation pipeline—integrating few-shot segmentation, geometric reasoning, and multi-stage human verification—to filter 5,402 high-quality articulated objects (88 categories, 24,607 parts) from 10 static 3D repositories. It provides part-level annotations for functional semantics, articulated joints (including multi-DoF), and physical properties (material, mass, metric scale)…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated objects"
+  - "3D dataset"
+  - "Semi-automatic annotation"
+  - "Physical properties"
+  - "Kinematic modeling"
 date: 2026-05-08
-content_hash: 5247c55ba193fa4c
+content_hash: cecd9f6fc8b14ae7
 ---
+
 # Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Comparing Articulate-Anything (AA, pure VLM) and SINGAPO (SG, retrained on Artiv
 
 ## Related Papers
 
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] AssemblyBench: Physics-Aware Assembly of Complex Industrial Objects](assemblybench_physics-aware_assembly_of_complex_industrial_objects.md)
-- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] PhyGaP: Physically-Grounded Gaussians with Polarization Cues](phygap_physically-grounded_gaussians_with_polarization_cues.md)
+- [\[CVPR 2026\] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects](ictpolarreal_a_polarized_reflection_and_material_dataset_of_real_world_objects.md)
+- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
+- [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](../../ICLR2026/3d_vision/pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dataset Ownership Verification for Pre-trained Masked Models
 description: >-
-  [ICCV 2025][LLM Pretraining][dataset ownership verification] DOV4MM proposes the first dataset ownership verification method tailored for masked pre-trained models. By comparing the embedding reconstruction difficulty of…
+  [ICCV 2025][LLM Pretraining][dataset ownership verification] DOV4MM proposes the first dataset ownership verification method tailored for masked pre-trained models. By comparing the embedding reconstruction difficulty of seen versus unseen samples, and applying a paired t-test, the method determines whether a black-box model was pre-trained on a specific dataset. It achieves p-values well below 0.05 across 10 masked image models and 4 masked language models.
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "hypothesis testing"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: 4bcdf063be537907
+content_hash: f1f8854aff7d833a
 ---
 
 # Dataset Ownership Verification for Pre-trained Masked Models
@@ -147,11 +147,11 @@ All 10 MIM methods across 4 architectures are successfully verified using only 3
 
 ## Related Papers
 
+- [\[ACL 2025\] LEANCODE: Understanding Models Better for Code Simplification of Pre-trained Large Language Models](../../ACL2025/llm_pretraining/leancode_understanding_models_better_for_code_simplification_of_pre-trained_larg.md)
+- [\[ACL 2025\] Chinese Grammatical Error Correction With Pre-trained Models and Linguistic Clues](../../ACL2025/llm_pretraining/chinese_grammatical_error_correction_with_pre-trained_models_and_linguistic_clue.md)
+- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](../../ICLR2026/llm_pretraining/soft-masked_diffusion_language_models.md)
 - [\[NeurIPS 2025\] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](../../NeurIPS2025/llm_pretraining/how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)
 - [\[ACL 2026\] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](../../ACL2026/llm_pretraining/script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)
-- [\[AAAI 2026\] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer](../../AAAI2026/llm_pretraining/prefixgpt_prefix_adder_optimization_by_a_generative_pre-trained_transformer.md)
-- [\[AAAI 2026\] No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding](../../AAAI2026/llm_pretraining/no-regret_strategy_solving_in_imperfect-information_games_via_pre-trained_embedd.md)
-- [\[ICML 2026\] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity](../../ICML2026/llm_pretraining/tuning_the_implicit_regularizer_of_masked_diffusion_language_models_enhancing_ge.md)
 
 </div>
 

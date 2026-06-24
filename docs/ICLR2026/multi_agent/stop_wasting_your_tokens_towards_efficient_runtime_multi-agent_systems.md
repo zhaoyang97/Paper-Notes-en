@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] Proposes SupervisorAgent, a lightweight real-time adaptive supervision framework. It uses an LLM-free adaptive filter to proactively intervene (error correction, guidance, observation purification) at critical interaction nodes. It reduces the token consumption of Smolagent by 29.68% on the GAIA benchmark without compr
+  [ICLR 2026][Multi-Agent][Multi-Agent Systems] Proposes SupervisorAgent, a lightweight real-time adaptive supervision framework. It uses an LLM-free adaptive filter to proactively intervene (error correction, guidance, observation purification) at critical interaction nodes. It reduces the token consumption of Smolagent by 29.68% on the GAIA benchmark without compromising success rates.
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Token Efficiency"
+  - "Runtime Supervision"
+  - "Adaptive Filtering"
+  - "Error Correction"
 date: 2026-05-08
-content_hash: af445a9f503b7fcf
+content_hash: 7dc1e2dd5ccd35be
 ---
+
 # Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems
 
 **Conference**: ICLR 2026  
@@ -135,9 +141,9 @@ In a typical web search task on GAIA: a supervised agent calls a browsing tool a
 
 - [\[ICLR 2026\] Learning Efficient and Interpretable Multi-Agent Communication](learning_efficient_and_interpretable_multi-agent_communication.md)
 - [\[ICLR 2026\] KVComm: Enabling Efficient LLM Communication through Selective KV Sharing](kvcomm_enabling_efficient_llm_communication_through_selective_kv_sharing.md)
+- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](../../AAAI2026/multi_agent/imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
 - [\[ACL 2026\] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search](../../ACL2026/multi_agent/efficient_multi-agent_system_training_with_data_influence-oriented_tree_search.md)
-- [\[ICLR 2026\] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](aegis_automated_error_generation_and_attribution_for_multi-agent_systems.md)
-- [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](../../AAAI2026/multi_agent/assemble_your_crew_automatic_multi-agent_communication_topol.md)
+- [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](stochastic_self-organization_in_multi-agent_systems.md)
 
 </div>
 

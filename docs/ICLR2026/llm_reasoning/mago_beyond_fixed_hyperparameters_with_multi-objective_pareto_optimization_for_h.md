@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MAGO: Beyond Fixed Hyperparameters with Multi-Objective Pareto Optimization for Hybrid LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] MAGO reformulates the hybrid reasoning problem—deciding "whether to enable long-chain reasoning"—as a multi-objective optimization problem. By maintaining a Pareto frontier and using correlation-aware dynamic weights, it automatically balances accuracy, efficiency, and decision calibration during training. This elimina
+  [ICLR 2026][Reasoning][Hybrid Reasoning] MAGO reformulates the hybrid reasoning problem—deciding "whether to enable long-chain reasoning"—as a multi-objective optimization problem. By maintaining a Pareto frontier and using correlation-aware dynamic weights, it automatically balances accuracy, efficiency, and decision calibration during training. This eliminates manual hyperparameter tuning and achieves 2.2×–3× token savings during inference with zero extra overhead.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Hybrid Reasoning"
+  - "Multi-Objective Optimization"
+  - "Pareto Frontier"
+  - "Adaptive Weights"
+  - "GRPO"
+  - "token efficiency"
 date: 2026-05-08
-content_hash: 7d840174c936f781
+content_hash: b11ee143ccde9fdd
 ---
+
 # MAGO: Beyond Fixed Hyperparameters with Multi-Objective Pareto Optimization for Hybrid LLM Reasoning
 
 **Conference**: ICLR 2026  

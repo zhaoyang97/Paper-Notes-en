@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Contrastive Learning] This paper theoretically proves that self-supervised contrastive learning (DCL) is approximately equivalent to a supervised contrastive loss (NSCL)…
+  [NeurIPS 2025][Self-Supervised Learning][Contrastive Learning] This paper theoretically proves that self-supervised contrastive learning (DCL) is approximately equivalent to a supervised contrastive loss (NSCL), with the gap vanishing at rate $O(1/C)$ as the number of classes increases. It further proves that the global optimum of NSCL satisfies Neural Collapse (augmentation collapse + within-class collapse + Simplex ETF), and proposes a tighter few-shot error bound based on…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -11,7 +11,7 @@ tags:
   - "Neural Collapse"
   - "Few-Shot Learning"
 date: 2026-05-08
-content_hash: 6c1273a90cff607c
+content_hash: 1138a378249f1a08
 ---
 
 # Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning
@@ -126,11 +126,11 @@ This is a theory-driven work. Three core contributions build on each other: firs
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The Complexity of Finding Local Optima in Contrastive Learning](the_complexity_of_finding_local_optima_in_contrastive_learning.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](../../ICLR2026/self_supervised/on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[ICML 2025\] Discovering Global False Negatives On the Fly for Self-supervised Contrastive Learning](../../ICML2025/self_supervised/discovering_global_false_negatives_on_the_fly_for_self-supervised_contrastive_le.md)
 - [\[NeurIPS 2025\] Adv-SSL: Adversarial Self-Supervised Representation Learning with Theoretical Guarantees](adv-ssl_adversarial_self-supervised_representation_learning_with_theoretical_gua.md)
+- [\[NeurIPS 2025\] The Complexity of Finding Local Optima in Contrastive Learning](the_complexity_of_finding_local_optima_in_contrastive_learning.md)
 - [\[NeurIPS 2025\] Contrastive Representations for Temporal Reasoning](contrastive_representations_for_temporal_reasoning.md)
-- [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
-- [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
 
 </div>
 

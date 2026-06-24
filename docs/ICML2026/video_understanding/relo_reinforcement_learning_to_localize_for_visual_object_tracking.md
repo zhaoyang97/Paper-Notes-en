@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RELO: Reinforcement Learning to Localize for Visual Object Tracking
 description: >-
-  [ICML 2026][Video Understanding][MDP] RELO reformulates the "where is the target" problem in single object tracking as an MDP on a spatial feature map. It treats each spatial position as an action and replaces traditional manual center heatmap supervision with actor-critic + direct IoU/AUC rewards. Coupled with two stabilization designs—"regression warmup"
+  [ICML 2026][Video Understanding][Visual Tracking] RELO reformulates the "where is the target" problem in single object tracking as an MDP on a spatial feature map. It treats each spatial position as an action and replaces traditional manual center heatmap supervision with actor-critic + direct IoU/AUC rewards. Coupled with two stabilization designs—"regression warmup" and "layer-aligned temporal token propagation"—it achieves SOTA with 57.5% AUC on LaSOText.
 tags:
-  - ICML 2026
-  - Video Understanding
-  - MDP
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Visual Tracking"
+  - "RL Localization"
+  - "MDP"
+  - "AUC Reward"
+  - "Temporal Token Propagation"
 date: 2026-05-08
-content_hash: 759ab733427b89b5
+content_hash: c9de28aba522eb45
 ---
+
 # RELO: Reinforcement Learning to Localize for Visual Object Tracking
 
 **Conference**: ICML 2026  
@@ -136,6 +141,7 @@ flowchart TD
 *   Value: ⭐⭐⭐⭐ The shift towards "Training-Metric Alignment" via RL provides significant inspiration for the perception community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

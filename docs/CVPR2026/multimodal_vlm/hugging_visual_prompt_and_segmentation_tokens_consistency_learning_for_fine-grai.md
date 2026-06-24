@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] The authors propose FCLM, identifying that the visual prompt embedding `<VP>` in region captioning and the segmentation token `[SEG]` in grounding actually point to the same region but represent opposite input/output directions. By utilizing a self-reconstruction loss and a latent space cosine consistency loss to align
+  [CVPR 2026][Multimodal VLM][MLLM] The authors propose FCLM, identifying that the visual prompt embedding `<VP>` in region captioning and the segmentation token `[SEG]` in grounding actually point to the same region but represent opposite input/output directions. By utilizing a self-reconstruction loss and a latent space cosine consistency loss to align the two, combined with a progressive hybrid region extractor and a two-stage training strategy…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Consistency Learning"
+  - "Visual Prompt Embedding"
+  - "Segmentation Tokens"
+  - "Region Description"
+  - "Referring Expression Segmentation"
 date: 2026-05-08
-content_hash: fd3b313955daef97
+content_hash: e2199dcdf763f71c
 ---
+
 # Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs
 
 **Conference**: CVPR 2026  
@@ -124,15 +130,13 @@ The highlight is that **FCLM-3B generally matches or exceeds 7B/13B specialized 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
 - [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
-- [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
-- [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
+- [\[ICML 2026\] MoDA: Modulation Adapter for Fine-Grained Visual Grounding in Instructional MLLMs](../../ICML2026/multimodal_vlm/moda_modulation_adapter_for_fine-grained_visual_grounding_in_instructional_mllms.md)
+- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
+- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
 
 </div>
 

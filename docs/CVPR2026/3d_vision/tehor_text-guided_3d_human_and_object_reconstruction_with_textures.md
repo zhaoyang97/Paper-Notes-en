@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures
 description: >-
-  [CVPR 2026][3D Vision][3D Human-Object Reconstruction] TeHOR utilizes text descriptions as semantic guidance to jointly optimize the geometry and texture of 3D humans and objects through Score Distillation Sampling from pre-trained diffusion models. It breaks the reliance of traditional methods on contact information, achieving accurate and semantically consistent 3D recon
+  [3D Vision] TeHOR utilizes text descriptions as semantic guidance to jointly optimize the geometry and texture of 3D humans and objects through Score Distillation Sampling from pre-trained diffusion models. It breaks the reliance of traditional methods on contact information, achieving accurate and semantically consistent 3D reconstruction for both contact-based and non-contact interactions.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Human-Object Reconstruction
-  - Text-Guided Optimization
-  - Score Distillation Sampling
-  - 3D Gaussian Splatting
-  - Human-Object Interaction
+  - "3D Vision"
 date: 2026-05-08
-content_hash: d37304aff5cb1ede
+content_hash: febebaf86f06383c
 ---
+
 # TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures
 
 ## Basic Information
@@ -175,8 +170,8 @@ The advantage is even more pronounced in non-contact scenarios, where object CD 
 - [\[ICCV 2025\] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors](../../ICCV2025/3d_vision/strandhead_text_to_hair-disentangled_3d_head_avatars_using_human-centric_priors.md)
 - [\[ICCV 2025\] PlaceIt3D: Language-Guided Object Placement in Real 3D Scenes](../../ICCV2025/3d_vision/placeit3d_language-guided_object_placement_in_real_3d_scenes.md)
 - [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
-- [\[ICCV 2025\] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization](../../ICCV2025/3d_vision/memorytalker_personalized_speech-driven_3d_facial_animation_via_audio-guided_sty.md)
 - [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](../../ICCV2025/3d_vision/rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
+- [\[ICCV 2025\] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization](../../ICCV2025/3d_vision/memorytalker_personalized_speech-driven_3d_facial_animation_via_audio-guided_sty.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine
 description: >-
-  [ICLR 2026][Medical NLP][Paper Note] This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeable priors), a mathematically rigorous method that models personalized medical treatment design as a conditional black-box optimization problem. It guides an LLM to serve as a zero-shot optimizer for personalized treatment plans without fine
+  [ICLR 2026][Medical LLM][Large Language Model Optimization] This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeable priors), a mathematically rigorous method that models personalized medical treatment design as a conditional black-box optimization problem. It guides an LLM to serve as a zero-shot optimizer for personalized treatment plans without fine-tuning, utilizing entropy constraints and an adversarial source critic model.
 tags:
-  - ICLR 2026
-  - Medical NLP
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Large Language Model Optimization"
+  - "Personalized Medicine"
+  - "Black-Box Optimization"
+  - "Distribution Shift"
+  - "Prior Knowledge"
 date: 2026-05-08
-content_hash: f8b0e9f3dfee6497
+content_hash: 89b8ebae62f0c8a1
 ---
+
 # Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,20 @@ Evaluated on 5 real-world personalized medicine optimization tasks under distrib
 - **Value**: ⭐⭐⭐ High dependency on external knowledge sources and APIs may present deployment hurdles.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
+- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
+- [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
+- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](../../ACL2026/medical_nlp/beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)

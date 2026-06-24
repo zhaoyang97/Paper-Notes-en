@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper revisits Out-of-Distribution (OoD) detection through the lens of Riemannian information geometry, treating the network's prediction for an input as a statistical manifold. It is discovered that OoD inputs exhibit **higher local Fisher-Rao sensitivity** at the trained parameters. The authors quantify this sen
+  [ICLR 2026][AI Safety][Out-of-Distribution Detection] This paper revisits Out-of-Distribution (OoD) detection through the lens of Riemannian information geometry, treating the network's prediction for an input as a statistical manifold. It is discovered that OoD inputs exhibit **higher local Fisher-Rao sensitivity** at the trained parameters. The authors quantify this sensitivity using the trace of the Fisher Information Matrix (FIM). Theoretically…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Out-of-Distribution Detection"
+  - "Information Geometry"
+  - "Fisher-Rao Metric"
+  - "Fisher Information Matrix"
+  - "Post-hoc Detector"
 date: 2026-05-08
-content_hash: afc97339aa42c8a7
+content_hash: a1254fa5f75d736e
 ---
+
 # Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks
 
 **Conference**: ICLR 2026  
@@ -134,8 +140,21 @@ The additive score is on par with ViM and GradOrth, outperforming the standard/t
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)
+- [\[ICLR 2026\] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection](gradpca_leveraging_ntk_alignment_for_reliable_out-of-distribution_detection.md)
+- [\[ICLR 2026\] Fingerprinting Deep Neural Networks for Ownership Protection: An Analytical Approach](fingerprinting_deep_neural_networks_for_ownership_protection_an_analytical_appro.md)
+- [\[ICLR 2026\] Benchmarking Stochastic Approximation Algorithms for Fairness-Constrained Training of Deep Neural Networks](benchmarking_stochastic_approximation_algorithms_for_fairness-constrained_traini.md)
+- [\[ICLR 2026\] SCOPED: Score–Curvature Out-of-Distribution Proximity Evaluator for Diffusion](scoped_scorecurvature_out-of-distribution_proximity_evaluator_for_diffusion.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

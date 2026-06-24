@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper identifies a "transferability tradeoff" in self-supervised pre-training—where intermediate checkpoints exhibit stronger out-of-distribution (OOD) generalization than final ones. Drawing on the biological and supervised learning concept of "critical periods," the authors characterize SSL through three stages—
+  [ICLR 2026][Self-Supervised Learning][critical periods] This paper identifies a "transferability tradeoff" in self-supervised pre-training—where intermediate checkpoints exhibit stronger out-of-distribution (OOD) generalization than final ones. Drawing on the biological and supervised learning concept of "critical periods," the authors characterize SSL through three stages—plasticity, consolidation, and over-specialization—using deficit injection and Fisher Information (FI) p…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "critical periods"
+  - "Fisher information"
+  - "transferability tradeoff"
+  - "checkpoint selection"
 date: 2026-05-08
-content_hash: 41816b9c6f21c0eb
+content_hash: 84175551f86500c6
 ---
+
 # Understanding the Learning Phases in Self-Supervised Learning via Critical Periods
 
 **Conference**: ICLR 2026  
@@ -129,8 +134,6 @@ The final checkpoint yields the highest ID but significantly degraded OOD. The C
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

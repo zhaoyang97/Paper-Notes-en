@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PatchRefiner V2: Fast and Lightweight Real-Domain High-Resolution Metric Depth Estimation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] PatchRefiner V2 replaces the "large and slow" refinement branch in the tile-based high-resolution metric depth framework with a lightweight encoder. It recovers the resulting accuracy loss through a Coarse-to-Fine denoising module + Noisy Pre-training, and enhances boundary quality using a local window gradient matchin
+  [ICLR 2026][3D Vision][High-Resolution Depth Estimation] PatchRefiner V2 replaces the "large and slow" refinement branch in the tile-based high-resolution metric depth framework with a lightweight encoder. It recovers the resulting accuracy loss through a Coarse-to-Fine denoising module + Noisy Pre-training, and enhances boundary quality using a local window gradient matching loss during the synthetic-to-real transfer stage—achieving higher accuracy than the previous SOTA on…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "High-Resolution Depth Estimation"
+  - "Metric Depth"
+  - "Lightweight"
+  - "Feature Denoising"
+  - "Synthetic-to-Real Transfer"
 date: 2026-05-08
-content_hash: 57969eb1729e7a9e
+content_hash: b311689aca0df457
 ---
+
 # PatchRefiner V2: Fast and Lightweight Real-Domain High-Resolution Metric Depth Estimation
 
 **Conference**: ICLR 2026  
@@ -150,10 +156,10 @@ The $L_{\text{silog}}$ loss is used on synthetic data. The pipeline is: coarse n
 ## Related Papers
 
 - [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](../../CVPR2026/3d_vision/litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](depthlm_metric_depth_from_vision_language_models.md)
 - [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](../../CVPR2026/3d_vision/radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
 - [\[ICLR 2026\] Fast Estimation of Wasserstein Distances via Regression on Sliced Wasserstein Distances](fast_estimation_of_wasserstein_distances_via_regression_on_sliced_wasserstein_di.md)
-- [\[CVPR 2026\] The Midas Touch for Metric Depth](../../CVPR2026/3d_vision/the_midas_touch_for_metric_depth.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](../../CVPR2026/3d_vision/md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 
 </div>
 

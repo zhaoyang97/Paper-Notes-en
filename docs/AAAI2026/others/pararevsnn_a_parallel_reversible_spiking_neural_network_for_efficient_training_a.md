@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference
 description: >-
-  [AAAI 2026][spiking neural networks] This paper proposes ParaRevSNN, a parallel reversible spiking neural network architecture that decouples sequential computation constraints by redesigning the data dependencies betwee…
+  [AAAI 2026][spiking neural networks] This paper proposes ParaRevSNN, a parallel reversible spiking neural network architecture that decouples sequential computation constraints by redesigning the data dependencies between reversible blocks, achieving inter-block parallelism while preserving reversibility (memory efficiency). Training time is reduced by up to 35.2% and inference time to 18.15%.
 tags:
   - "AAAI 2026"
   - "spiking neural networks"
@@ -11,7 +11,7 @@ tags:
   - "memory efficiency"
   - "edge deployment"
 date: 2026-05-08
-content_hash: f52d85cc61a8645e
+content_hash: 2ef7c4247d7f0091
 ---
 
 # ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference
@@ -183,11 +183,11 @@ Memory advantages emerge progressively with depth: at 165 layers, ParaRevSNN use
 
 ## Related Papers
 
-- [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
+- [\[ICLR 2026\] Fractional-Order Spiking Neural Network](../../ICLR2026/others/fractional-order_spiking_neural_network.md)
 - [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
+- [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
+- [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](../../ICLR2026/others/online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](../../ICLR2026/others/training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
 
 </div>
 

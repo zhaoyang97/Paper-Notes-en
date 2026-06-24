@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VGA: Empowering Aerial-Ground Localization by Visual Geometry Alignment
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] VGA addresses extreme wide-baseline 6-DoF relative pose estimation between uncalibrated aerial drone views and ground views. It learns two additional physical priors on top of a MASt3R backbone—a gravity alignment prior derived from perspective fields and a planar orientation prior from Procrustes alignment of views pr
+  [CVPR 2026][3D Vision][Aerial-ground localization] VGA addresses extreme wide-baseline 6-DoF relative pose estimation between uncalibrated aerial drone views and ground views. It learns two additional physical priors on top of a MASt3R backbone—a gravity alignment prior derived from perspective fields and a planar orientation prior from Procrustes alignment of views projected onto a shared top-down plane. These are used as geometric constraints in test-time joint optimization…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Aerial-ground localization"
+  - "relative size estimation"
+  - "gravity prior"
+  - "BEV alignment"
+  - "test-time optimization"
 date: 2026-05-08
-content_hash: b4e2397105dce161
+content_hash: 7fae0c578af15307
 ---
+
 # VGA: Empowering Aerial-Ground Localization by Visual Geometry Alignment
 
 **Conference**: CVPR 2026  
@@ -136,6 +142,7 @@ On MatrixCity (BigCity), isolating the two priors (Baseline = MASt3R feed-forwar
 - Value: ⭐⭐⭐⭐ Addresses a practical challenge in air-ground coordination with a methodology transferable to other wide-baseline pose tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -144,7 +151,7 @@ On MatrixCity (BigCity), isolating the two priors (Baseline = MASt3R feed-forwar
 - [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
 - [\[CVPR 2026\] PV-Ground: Text-Guided Point-Voxel Interaction for 3D Visual Grounding](pv-ground_text-guided_point-voxel_interaction_for_3d_visual_grounding.md)
 - [\[AAAI 2026\] Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark](../../AAAI2026/3d_vision/griffin_aerial-ground_cooperative_detection_and_tracking_dataset_and_benchmark.md)
-- [\[CVPR 2026\] Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization](simple_but_effective_triplet-based_compression_strategies_for_compact_visual_loc.md)
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DaVinci: Reinforcing Visual-Structural Syntax in MLLMs for Generalized Scientific Diagram Parsing
 description: >-
-  [ICLR 2026][Multimodal VLM][Reinforcement Learning] DaVinci trains a 7B MLLM using a two-stage framework consisting of "SFT for learning visual primitives + GRPO for learning structural relationships." By translating scientific diagrams into compilable TikZ code using the self-constructed TikZ30K dataset (standardizing drawing order + injecting comments) and a hybrid re
+  [ICLR 2026][Multimodal VLM][Diagram Parsing] DaVinci trains a 7B MLLM using a two-stage framework consisting of "SFT for learning visual primitives + GRPO for learning structural relationships." By translating scientific diagrams into compilable TikZ code using the self-constructed TikZ30K dataset (standardizing drawing order + injecting comments) and a hybrid reward system that extracts error-free signals from vectorized representations, DaVinci surpasses closed-source model…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Diagram Parsing"
+  - "TikZ Code Generation"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Vectorized Reward"
 date: 2026-05-08
-content_hash: 005e31a74ffc29d4
+content_hash: f76917a1dfeaaf0e
 ---
+
 # DaVinci: Reinforcing Visual-Structural Syntax in MLLMs for Generalized Scientific Diagram Parsing
 
 **Conference**: ICLR 2026  
@@ -146,8 +150,8 @@ Adding $R_{text}$ and $R_{geom}$ significantly improved textual and geometric sc
 ## Related Papers
 
 - [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
-- [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
 - [\[CVPR 2026\] RxnCaption: Reformulating Reaction Diagram Parsing as Visual Prompt Guided Captioning](../../CVPR2026/multimodal_vlm/rxncaption_reformulating_reaction_diagram_parsing_as_visual_prompt_guided_captio.md)
+- [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
 - [\[ICLR 2026\] InSight-o3: Empowering Multimodal Foundation Models with Generalized Visual Search](insight-o3_empowering_multimodal_foundation_models_with_generalized_visual_searc.md)
 - [\[ICLR 2026\] Visual Jigsaw Post-Training Improves MLLMs](visual_jigsaw_post-training_improves_mllms.md)
 

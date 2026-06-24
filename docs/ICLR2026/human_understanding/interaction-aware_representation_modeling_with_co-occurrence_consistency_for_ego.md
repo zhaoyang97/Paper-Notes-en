@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Interaction-aware Representation Modeling With Co-Occurrence Consistency for Egocentric Hand-Object Parsing
 description: >-
-  [ICLR 2026][Human Understanding][egocentric vision] For pixel-level segmentation of hands and active objects in egocentric images, this paper proposes InterFormer. It utilizes interaction boundary priors to dynamically generate "interaction-aware queries," purifies decoding features, and incorporates a "conditional co-occurrence loss" to encode the physical common sense
+  [ICLR 2026][Human Understanding][egocentric vision] For pixel-level segmentation of hands and active objects in egocentric images, this paper proposes InterFormer. It utilizes interaction boundary priors to dynamically generate "interaction-aware queries," purifies decoding features, and incorporates a "conditional co-occurrence loss" to encode the physical common sense that "an active object should not appear if its interacting hand is not detected" into training. It achieve…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - egocentric vision
-  - hand-object segmentation
-  - interaction-aware query
-  - transformer decoder
-  - physical consistency
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "egocentric vision"
+  - "hand-object segmentation"
+  - "interaction-aware query"
+  - "transformer decoder"
+  - "physical consistency"
 date: 2026-05-08
-content_hash: 8c23dbcd4ad224ed
+content_hash: cb4a9db845dd47ef
 ---
+
 # Interaction-aware Representation Modeling With Co-Occurrence Consistency for Egocentric Hand-Object Parsing
 
 **Conference**: ICLR 2026  
@@ -122,10 +123,10 @@ All four components bring incremental gains; IPP serves as the prerequisite prio
 ## Related Papers
 
 - [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
+- [\[ICLR 2026\] UniHand: A Unified Model for Diverse Controlled 4D Hand Motion Modeling](unihand_a_unified_model_for_diverse_controlled_4d_hand_motion_modeling.md)
 - [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](../../CVPR2026/human_understanding/decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
 - [\[ICLR 2026\] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation](unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md)
-- [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
-- [\[ICLR 2026\] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement](infbagel_human-object-scene_interaction_generation_with_dynamic_perception_and_i.md)
+- [\[ICLR 2026\] TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions](touch_text-guided_controllable_generation_of_free-form_hand-object_interactions.md)
 
 </div>
 

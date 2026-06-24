@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis
 description: >-
-  [ICCV 2025][Human-Object Interaction] This paper proposes SyncDiff, a unified multi-body human-object interaction (HOI) motion synthesis framework that achieves precise multi-body synchronization via alignment scores and…
+  [ICCV 2025][Human-Object Interaction] This paper proposes SyncDiff, a unified multi-body human-object interaction (HOI) motion synthesis framework that achieves precise multi-body synchronization via alignment scores and an explicit synchronization strategy, while introducing frequency-domain decomposition to model high-frequency interaction semantics.
 tags:
   - "ICCV 2025"
   - "Human-Object Interaction"
@@ -11,7 +11,7 @@ tags:
   - "Multi-Body Synchronization"
   - "Frequency Decomposition"
 date: 2026-05-08
-content_hash: 754b6f3a4001455b
+content_hash: f87fd9fdf75b92fd
 ---
 
 # SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis
@@ -141,10 +141,10 @@ Evaluated on 5 datasets (TACO, CORE4D, GRAB, OAKINK2, BEHAVE), covering both han
 ## Related Papers
 
 - [\[ICCV 2025\] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](layertracer_cognitive-aligned_layered_svg_synthesis_via_diffusion_transformer.md)
-- [\[ICCV 2025\] Jigsaw++: Imagining Complete Shape Priors for Object Reassembly](jigsaw_imagining_complete_shape_priors_for_object_reassembly.md)
+- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](../../CVPR2026/others/moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
 - [\[ICCV 2025\] A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks](a_linear_n-point_solver_for_structure_and_motion_from_asynchronous_tracks.md)
-- [\[AAAI 2026\] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](../../AAAI2026/others/human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
+- [\[ICCV 2025\] Jigsaw++: Imagining Complete Shape Priors for Object Reassembly](jigsaw_imagining_complete_shape_priors_for_object_reassembly.md)
+- [\[ACL 2025\] Visual Cues Enhance Predictive Turn-Taking for Two-Party Human Interaction](../../ACL2025/others/visual_cues_enhance_predictive_turn-taking_for_two-party_human_interaction.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users
 description: >-
-  [AAAI 2026][LLM Safety][user bias] Systematic experiments demonstrate that mainstream LLMs (GPT-4, Claude 3 Opus, Llama 3-8B) exhibit significant discriminatory degradation in information accuracy, truthfulness…
+  [AAAI 2026][LLM Safety][user bias] Systematic experiments demonstrate that mainstream LLMs (GPT-4, Claude 3 Opus, Llama 3-8B) exhibit significant discriminatory degradation in information accuracy, truthfulness, and refusal rates toward users with lower English proficiency, lower educational attainment, and non-US backgrounds, making the most vulnerable users the least reliably served.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "sycophancy"
   - "targeted underperformance"
 date: 2026-05-08
-content_hash: c0ff003e341fe506
+content_hash: 8dad9235914c860a
 ---
 
 # LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users
@@ -141,10 +141,10 @@ The research question is of considerable social significance, the experimental d
 ## Related Papers
 
 - [\[NeurIPS 2025\] TRAP: Targeted Redirecting of Agentic Preferences](../../NeurIPS2025/llm_safety/trap_targeted_redirecting_of_agentic_preferences.md)
+- [\[ICLR 2026\] ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack](../../ICLR2026/llm_safety/asguard_activation-scaling_guard_to_mitigate_targeted_jailbreaking_attack.md)
+- [\[ICML 2025\] Targeted Unlearning with Single Layer Unlearning Gradient](../../ICML2025/llm_safety/targeted_unlearning_with_single_layer_unlearning_gradient.md)
 - [\[AAAI 2026\] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification](iseal_encrypted_fingerprinting_for_reliable_llm_ownership_verification.md)
 - [\[AAAI 2026\] Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability](democratizing_llm_efficiency_from_hyperscale_optimizations_to_universal_deployab.md)
-- [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](an_llm-based_simulation_framework_for_embodied_conversationa.md)
-- [\[AAAI 2026\] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans](principles2plan_llm-guided_system_for_operationalising_ethical_principles_into_p.md)
 
 </div>
 

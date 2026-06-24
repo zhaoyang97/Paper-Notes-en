@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies
 description: >-
-  [ICLR 2026][Recommender Systems][Off-Policy Evaluation] Addressing the issue where "completely deterministic" logging policies in industrial ranking systems cause severe bias in traditional IPS-based estimators, this paper proposes the CIPS estimator (and its doubly robust extension CDR). By replacing the "policy probability ratio" with the "user click probability ratio" as
+  [ICLR 2026][Recommender Systems][Off-Policy Evaluation] Addressing the issue where "completely deterministic" logging policies in industrial ranking systems cause severe bias in traditional IPS-based estimators, this paper proposes the CIPS estimator (and its doubly robust extension CDR). By replacing the "policy probability ratio" with the "user click probability ratio" as the importance weight, it relaxes the support condition required for unbiasedness from "stochastic logg…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - Off-Policy Evaluation
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Off-Policy Evaluation"
+  - "Ranking Policies"
+  - "Deterministic Logging Policies"
+  - "Click Importance Weights"
+  - "Doubly Robust"
 date: 2026-05-08
-content_hash: 4b6d5fdd2549b813
+content_hash: 8683aad059d99267
 ---
+
 # Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies
 
 **Conference**: ICLR 2026  

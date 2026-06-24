@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PLAID: A Unified Data Model for Machine Learning on Heterogeneous Physics Simulations
 description: >-
-  [ICML 2026][3D Vision][Paper Note] PLAID proposes a unified data model and open-source library for heterogeneous physical simulation data, releasing six industrial-grade datasets covering structural mechanics and CFD alongside reproducible benchmarks. It transforms real-world "variable mesh, variable topology, and variable dimension" simulation data int
+  [ICML 2026][3D Vision][Physics-ML] PLAID proposes a unified data model and open-source library for heterogeneous physical simulation data, releasing six industrial-grade datasets covering structural mechanics and CFD alongside reproducible benchmarks. It transforms real-world "variable mesh, variable topology, and variable dimension" simulation data into standardized benchmarks accessible to the machine learning community.
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Physics-ML"
+  - "Heterogeneous Meshes"
+  - "Surrogate Models"
+  - "Data Standards"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: 6cb9c687fd92b9b3
+content_hash: 4a2081a202f571f6
 ---
+
 # PLAID: A Unified Data Model for Machine Learning on Heterogeneous Physics Simulations
 
 **Conference**: ICML 2026  

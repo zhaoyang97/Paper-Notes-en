@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach
 description: >-
-  [ACL 2026][Medical NLP][GRPO] This paper proposes the MedSSR framework, which efficiently enhances the medical reasoning capabilities of LLMs through controllable data synthesis injected with rare disease knowledge and a "Self-supervised RL $\rightarrow$ Supervised RL" semi-supervised training paradigm. It achieves a maximum improvement of +5.93% o
+  [ACL 2026 Findings][Medical LLM][Medical Reasoning] This paper proposes the MedSSR framework, which efficiently enhances the medical reasoning capabilities of LLMs through controllable data synthesis injected with rare disease knowledge and a "Self-supervised RL $\rightarrow$ Supervised RL" semi-supervised training paradigm. It achieves a maximum improvement of +5.93% on rare disease tasks, breaking the +3% improvement ceiling of existing methods.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - GRPO
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Medical Reasoning"
+  - "Rare Diseases"
+  - "Data Synthesis"
+  - "Semi-supervised Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 9a172612051680c4
+content_hash: 329eb3c0c8155347
 ---
+
 # Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach
 
 **Conference**: ACL 2026 Findings  
@@ -139,7 +144,7 @@ Optimized using GRPO, with a verification reward $r(y, y') = \mathbb{I}[\text{an
 - [\[ACL 2026\] CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning](cure-med_curriculum-informed_reinforcement_learning_for_multilingual_medical_rea.md)
 - [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
 - [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
-- [\[ACL 2026\] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings](rads_reinforcement_learning-based_sample_selection_improves_transfer_learning_in.md)
+- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
 - [\[ACL 2026\] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)
 
 </div>

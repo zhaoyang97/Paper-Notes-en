@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Navigating the Latent Space Dynamics of Neural Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper interprets autoencoders as dynamical systems acting on a latent manifold: repeatedly executing $f(z)=E(D(z))$ induces a latent vector field whose attractors and trajectories explain the model's memorization-generalization state, probe prior information in pre-trained weights without data, and facilitate out-
+  [ICLR2026][Learning Theory][Latent Space Dynamics] This paper interprets autoencoders as dynamical systems acting on a latent manifold: repeatedly executing $f(z)=E(D(z))$ induces a latent vector field whose attractors and trajectories explain the model's memorization-generalization state, probe prior information in pre-trained weights without data, and facilitate out-of-distribution (OOD) detection.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Representation Learning Analysis"
+  - "Latent Space Dynamics"
+  - "Autoencoders"
+  - "Attractors"
+  - "Memorization and Generalization"
+  - "Out-of-Distribution Detection"
 date: 2026-05-08
-content_hash: 060d4435eb3bf871
+content_hash: a7e84a73210bbe74
 ---
+
 # Navigating the Latent Space Dynamics of Neural Models
 
 **Conference**: ICLR2026  
@@ -182,11 +189,11 @@ Rather than "removing modules," the authors ablate regularization strength, init
 
 ## Related Papers
 
-- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
-- [\[ICLR 2026\] Neural Posterior Estimation with Latent Basis Expansions](neural_posterior_estimation_with_latent_basis_expansions.md)
-- [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
-- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
+- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
+- [\[ICLR 2026\] On the Expressiveness of State Space Models via Temporal Logics](on_the_expressiveness_of_state_space_models_via_temporal_logics.md)
+- [\[ICLR 2026\] Neural Posterior Estimation with Latent Basis Expansions](neural_posterior_estimation_with_latent_basis_expansions.md)
+- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 
 </div>
 

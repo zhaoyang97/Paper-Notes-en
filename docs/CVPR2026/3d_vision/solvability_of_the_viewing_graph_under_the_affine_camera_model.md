@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Solvability of the Viewing Graph Under the Affine Camera Model
 description: >-
-  [CVPR 2026][3D Vision][viewing graph] This paper conducts the first study on the solvability of the viewing graph under the affine camera model. It characterizes the problem of "whether a given set of two-view relations uniquely determines all cameras" as a **linear system** $Ax=b$. Consequently, a practical testing algorithm based on matrix rank is provid
+  [CVPR 2026][3D Vision][viewing graph] This paper conducts the first study on the solvability of the viewing graph under the affine camera model. It characterizes the problem of "whether a given set of two-view relations uniquely determines all cameras" as a **linear system** $Ax=b$. Consequently, a practical testing algorithm based on matrix rank is provided along with several necessary/sufficient conditions. Finally, it is conjectured that "affine solvability = 2D parallel r…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - viewing graph
-  - SfM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "viewing graph"
+  - "affine camera"
+  - "SfM"
+  - "solvability"
+  - "parallel rigidity"
 date: 2026-05-08
-content_hash: ce018e54e17eb7c2
+content_hash: 56494bbdead3a567
 ---
+
 # Solvability of the Viewing Graph Under the Affine Camera Model
 
 **Conference**: CVPR 2026  
@@ -159,10 +163,10 @@ Tests on real viewing graphs from SfM datasets [29,41] (using the maximal 2-conn
 ## Related Papers
 
 - [\[ECCV 2024\] A Direct Approach to Viewing Graph Solvability](../../ECCV2024/3d_vision/a_direct_approach_to_viewing_graph_solvability.md)
+- [\[CVPR 2026\] Affine Perspective-Three-Point Problem](affine_perspective-three-point_problem.md)
 - [\[CVPR 2026\] Variational Graph-based Normal Integration](variational_graph-based_normal_integration.md)
 - [\[CVPR 2026\] Sky2Ground: A Benchmark for Site Modeling under Varying Altitude](sky2ground_a_benchmark_for_site_modeling_under_varying_altitude.md)
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Coverage Optimization for Camera View Selection](coverage_optimization_for_camera_view_selection.md)
 
 </div>
 

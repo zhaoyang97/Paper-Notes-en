@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper uses a solvable linear attention model for in-context linear regression to derive an exact high-dimensional formula for ICL generalization error under arbitrary mismatch between the pretraining task covariance $C_{\text{train}}$ and the test task covariance $C_{\text{test}}$. From this, a "task alignment met
+  [ICLR 2026][Learning Theory][Generalization Error] This paper uses a solvable linear attention model for in-context linear regression to derive an exact high-dimensional formula for ICL generalization error under arbitrary mismatch between the pretraining task covariance $C_{\text{train}}$ and the test task covariance $C_{\text{test}}$. From this, a "task alignment metric" is extracted, which accurately predicts ICL performance not only in solvable models but also in nonlinea…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "Generalization Error"
+  - "Task Alignment"
+  - "Linear Attention"
+  - "High-Dimensional Theory"
 date: 2026-05-08
-content_hash: f5b070f04c59e3a3
+content_hash: 407eef93bb0d6209
 ---
+
 # Pretrain–Test Task Alignment Governs Generalization in In-Context Learning
 
 **Conference**: ICLR 2026  
@@ -132,14 +138,12 @@ focusing on the minimum-norm predictor ($\lambda\to 0$). Nonlinear Transformer e
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
-- [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
 - [\[ICLR 2026\] Neural Collapse in Multi-Task Learning](neural_collapse_in_multi-task_learning.md)
 
 </div>

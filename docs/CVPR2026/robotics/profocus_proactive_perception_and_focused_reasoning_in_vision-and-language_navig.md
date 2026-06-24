@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLN] The study proposes ProFocus, a training-free progressive framework that achieves SOTA performance for zero-shot methods on R2R and REVERIE benchmarks. It utilizes proactive perception (converting panoramas to semantic maps + LLM-generated targeted visual queries) and focused reasoning (BD-MCTS to filter top-k high-valu
+  [CVPR 2026][Robotics][VLN] The study proposes ProFocus, a training-free progressive framework that achieves SOTA performance for zero-shot methods on R2R and REVERIE benchmarks. It utilizes proactive perception (converting panoramas to semantic maps + LLM-generated targeted visual queries) and focused reasoning (BD-MCTS to filter top-k high-value candidates from extensive historical waypoints).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLN
-  - proactive perception
-  - MCTS
-  - zero-shot navigation
-  - LLM agent
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLN"
+  - "proactive perception"
+  - "MCTS"
+  - "zero-shot navigation"
+  - "LLM agent"
 date: 2026-05-08
-content_hash: f2ec6a48aa5e5d57
+content_hash: d416e90cd325dfd9
 ---
+
 # ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -151,11 +152,11 @@ Results on R2R validation unseen set:
 
 ## Related Papers
 
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
 - [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
+- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
-- [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
+- [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
 
 </div>
 

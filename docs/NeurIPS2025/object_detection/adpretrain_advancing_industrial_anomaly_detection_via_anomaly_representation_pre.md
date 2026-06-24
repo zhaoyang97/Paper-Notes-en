@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining
 description: >-
-  [NeurIPS 2025][Object Detection][anomaly representation pretraining] This work presents ADPretrain, the first dedicated representation pretraining framework for industrial anomaly detection. By learning residual feature…
+  [NeurIPS 2025][Object Detection][anomaly representation pretraining] This work presents ADPretrain, the first dedicated representation pretraining framework for industrial anomaly detection. By learning residual feature representations via angle-oriented and norm-oriented contrastive losses on the large-scale RealIAD dataset, the pretrained features consistently improve five mainstream embedding-based AD methods across five datasets and five backbone networks when substituted…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "industrial anomaly detection"
   - "feature pretraining"
 date: 2026-05-08
-content_hash: bddd210ba24f4a99
+content_hash: 3455903c3212292a
 ---
 
 # ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining
@@ -159,11 +159,11 @@ Comprehensive evaluation across 5 backbones (DINOv2-Base/Large, CLIP-Base/Large,
 
 ## Related Papers
 
+- [\[CVPR 2025\] AnomalyNCD: Towards Novel Anomaly Class Discovery in Industrial Scenarios](../../CVPR2025/object_detection/anomalyncd_towards_novel_anomaly_class_discovery_in_industrial_scenarios.md)
+- [\[CVPR 2026\] Omni-AD: A Large-scale and Versatile Benchmark for Industrial Anomaly Detection](../../CVPR2026/object_detection/omni-ad_a_large-scale_and_versatile_benchmark_for_industrial_anomaly_detection.md)
+- [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](../../CVPR2026/object_detection/fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
 - [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
-- [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](../../AAAI2026/object_detection/rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
-- [\[NeurIPS 2025\] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection](scatterad_temporal-topological_scattering_mechanism_for_time_series_anomaly_dete.md)
-- [\[NeurIPS 2025\] Normal-Abnormal Guided Generalist Anomaly Detection](normal-abnormal_guided_generalist_anomaly_detection.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
+- [\[CVPR 2025\] Integration of deep generative Anomaly Detection algorithm in high-speed industrial line](../../CVPR2025/object_detection/integration_of_deep_generative_anomaly_detection_algorithm_in_high-speed_industr.md)
 
 </div>
 

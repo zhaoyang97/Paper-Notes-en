@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] Ours proposes the OwlEye framework, which utilizes cross-domain feature alignment based on pairwise distance statistics to map heterogeneous graph embeddings into a shared space. It extracts attribute-level and structure-level normal patterns from multiple graphs into an extensible dictionary and detects anomalous node
+  [ICLR 2026][Object Detection][Graph Anomaly Detection] Ours proposes the OwlEye framework, which utilizes cross-domain feature alignment based on pairwise distance statistics to map heterogeneous graph embeddings into a shared space. It extracts attribute-level and structure-level normal patterns from multiple graphs into an extensible dictionary and detects anomalous nodes in unseen graphs under strictly zero-shot conditions through a truncated attention reconstruction mecha…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Graph Anomaly Detection"
+  - "Zero-Shot Learning"
+  - "Cross-Domain Feature Alignment"
+  - "Dictionary Learning"
+  - "Continual Learning"
 date: 2026-05-08
-content_hash: 043da4371b7867d5
+content_hash: e36a377714ecf36e
 ---
+
 # OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection
 
 **Conference**: ICLR 2026  

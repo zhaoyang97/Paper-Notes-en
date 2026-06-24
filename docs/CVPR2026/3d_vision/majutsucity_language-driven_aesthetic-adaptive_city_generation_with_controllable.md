@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MajutsuCity utilizes a four-stage pipeline—"Text → Scene Design → Layout/Heightmap → Assets & Materials → Scene Assembly"—to transform natural language directly into explicit 3D cities with structural consistency, adjustable styles, and object-level editability. It introduces the MajutsuDataset, the MajutsuAgent editin
+  [CVPR 2026][3D Vision][3D City Generation] MajutsuCity utilizes a four-stage pipeline—"Text → Scene Design → Layout/Heightmap → Assets & Materials → Scene Assembly"—to transform natural language directly into explicit 3D cities with structural consistency, adjustable styles, and object-level editability. It introduces the MajutsuDataset, the MajutsuAgent editing agent, and a set of VLM evaluation metrics (AQS/RDR), achieving an 83.7% reduction in layout FID compared to CityDr…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D City Generation"
+  - "Language-driven"
+  - "Controllable Layout"
+  - "Explicit Mesh"
+  - "Interactive Editing"
 date: 2026-05-08
-content_hash: b478bd9ed3309dd3
+content_hash: 366cf9f32735aa9a
 ---
+
 # MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ Ablation of the layout generation module:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding](elastic3d_controllable_stereo_video_conversion_with_guided_latent_decoding.md)
-- [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
+- [\[CVPR 2026\] Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion](yocity_personalized_and_boundless_3d_realistic_city_scene_generation_via_self-cr.md)
+- [\[CVPR 2026\] Aesthetic Camera Viewpoint Suggestion with 3D Aesthetic Field](aesthetic_camera_viewpoint_suggestion_with_3d_aesthetic_field.md)
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[CVPR 2026\] M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation](m3dlayout_a_multi-source_dataset_of_3d_indoor_layouts_and_structured_description.md)
+- [\[CVPR 2026\] PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes](pritti_primitive-based_generation_of_controllable_and_editable_3d_semantic_urban.md)
 
 </div>
 

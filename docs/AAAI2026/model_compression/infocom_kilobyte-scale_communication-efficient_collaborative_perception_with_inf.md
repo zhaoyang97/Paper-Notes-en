@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression
 description: >-
-  [AAAI 2026][Model Compression][Collaborative Perception] This paper proposes InfoCom, a framework that applies an extended information bottleneck (IB) principle to compress the communication payload of collaborative perc…
+  [AAAI 2026][Model Compression][Collaborative Perception] This paper proposes InfoCom, a framework that applies an extended information bottleneck (IB) principle to compress the communication payload of collaborative perception from the MB scale to the KB scale—a 440× reduction compared to Where2comm—while maintaining near-lossless perception performance. The framework consists of three core modules: information-aware encoding, sparse mask generation, and multi-scale decoding.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Feature Compression"
   - "3D Object Detection"
 date: 2026-05-08
-content_hash: 5810cdf48de9a264
+content_hash: 69cd73938328fc54
 ---
 
 # InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression
@@ -139,10 +139,10 @@ The total loss is $\mathcal{L} = \mathcal{L}_{detect} + \beta \text{KL}(p(E|Z) \
 ## Related Papers
 
 - [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
-- [\[ACL 2026\] Efficient Learned Data Compression via Dual-Stream Feature Decoupling](../../ACL2026/model_compression/efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)
+- [\[ICML 2026\] Learned Subspace Compression for Communication-Efficient Pipeline Parallelism](../../ICML2026/model_compression/learned_subspace_compression_for_communication-efficient_pipeline_parallelism.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](distilling_cross-modal_knowledge_via_feature_disentanglement.md)
-- [\[ICLR 2026\] COMI: Coarse-to-fine Context Compression via Marginal Information Gain](../../ICLR2026/model_compression/comi_coarse-to-fine_context_compression_via_marginal_information_gain.md)
+- [\[ICML 2026\] Unifying Dataset Pruning and Distillation for Efficient Large-scale Compression](../../ICML2026/model_compression/unifying_dataset_pruning_and_distillation_for_efficient_large-scale_compression.md)
+- [\[ACL 2026\] Efficient Learned Data Compression via Dual-Stream Feature Decoupling](../../ACL2026/model_compression/efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)
 
 </div>
 

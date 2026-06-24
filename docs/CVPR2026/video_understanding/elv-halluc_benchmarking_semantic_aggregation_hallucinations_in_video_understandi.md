@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding
 description: >-
-  [CVPR 2026][Hallucination Detection][DPO] This paper identifies "Semantic Aggregation Hallucinations (SAH)," an overlooked type of video hallucination where a model perceives each frame correctly but misattributes semantics during cross-event aggregation. The authors construct ELV-Halluc, the first benchmark targeting SAH (348 multi-event videos, adversarial t
+  [CVPR 2026][Video Understanding][Video hallucination] This paper identifies "Semantic Aggregation Hallucinations (SAH)," an overlooked type of video hallucination where a model perceives each frame correctly but misattributes semantics during cross-event aggregation. The authors construct ELV-Halluc, the first benchmark targeting SAH (348 multi-event videos, adversarial triplet Q&A). Systematic evaluation of 19 MLLMs proves that SAH increases with semantic complexity. By empl…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - DPO
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video hallucination"
+  - "Semantic Aggregation Hallucination"
+  - "benchmark"
+  - "adversarial Q&A"
+  - "DPO"
 date: 2026-05-08
-content_hash: 61f958f43ac3fa64
+content_hash: e7417a10ea330ab1
 ---
+
 # ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding
 
 **Conference**: CVPR 2026  
@@ -163,11 +168,11 @@ DPO Mitigation (Base: Qwen2.5-VL-7B):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
-- [\[CVPR 2026\] Unstitching the Chimera: Frame-Level Risk and Train-Free Mitigation for Video Hallucination](unstitching_the_chimera_frame-level_risk_and_train-free_mitigation_for_video_hal.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
-- [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/hallucination/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
+- [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](../../AAAI2026/video_understanding/uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
+- [\[CVPR 2026\] D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)
+- [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
+- [\[CVPR 2025\] MLVU: Benchmarking Multi-task Long Video Understanding](../../CVPR2025/video_understanding/mlvu_benchmarking_multi-task_long_video_understanding.md)
+- [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
 
 </div>
 

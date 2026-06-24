@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SITE: towards Spatial Intelligence Thorough Evaluation
 description: >-
-  [ICCV2025][Robotics][Spatial Intelligence] This paper presents SITE, a comprehensive spatial intelligence benchmark grounded in a tripartite cognitive-science taxonomy. It comprises 8…
+  [ICCV2025][Robotics][Spatial Intelligence] This paper presents SITE, a comprehensive spatial intelligence benchmark grounded in a tripartite cognitive-science taxonomy. It comprises 8,068 multiple-choice VQA tasks spanning 31 datasets (images and videos). Evaluation results show that the strongest VLM (GPT-4o) still lags human experts by approximately 32% on overall spatial reasoning, and VLM spatial intelligence scores are highly correlated with robotic manipulation success…
 tags:
   - "ICCV2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Cognitive Science"
   - "Embodied AI"
 date: 2026-05-08
-content_hash: 42407cbf273c147d
+content_hash: 35c5b26139335dac
 ---
 
 # SITE: towards Spatial Intelligence Thorough Evaluation
@@ -150,11 +150,11 @@ The Pearson correlation coefficient $r = 0.902$ indicates a strong positive corr
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dejavu: Towards Experience Feedback Learning for Embodied Intelligence](../../CVPR2026/robotics/dejavu_towards_experience_feedback_learning_for_embodied_intelligence.md)
 - [\[NeurIPS 2025\] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation](../../NeurIPS2025/robotics/robocerebra_a_large-scale_benchmark_for_long-horizon_robotic_manipulation_evalua.md)
-- [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](../../NeurIPS2025/robotics/learning_spatial-aware_manipulation_ordering.md)
 - [\[NeurIPS 2025\] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](../../NeurIPS2025/robotics/mineanybuild_benchmarking_spatial_planning_for_openworld_ai.md)
-- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](../../ICLR2026/robotics/from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
-- [\[ACL 2026\] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](../../ACL2026/robotics/groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)
+- [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](../../ICLR2026/robotics/worldgym_world_model_as_an_environment_for_policy_evaluation.md)
+- [\[NeurIPS 2025\] Learning Spatial-Aware Manipulation Ordering](../../NeurIPS2025/robotics/learning_spatial-aware_manipulation_ordering.md)
 
 </div>
 

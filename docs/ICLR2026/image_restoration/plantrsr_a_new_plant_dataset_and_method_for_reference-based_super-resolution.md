@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] PlantRSR：面向参考引导超分辨率的新植物数据集与方法
+  [Paper Note] PlantRSR: A New Plant Dataset and Method for Reference-based Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Dataset] This paper constructs PlantRSR, the first reference-based super-resolution (RefSR) dataset for plant scenes (containing 16,585 pairs of manually aligned HR–Ref training patches). It proposes a method specifically designed for irregular plant textures: Selective Key Region Matching (SKRM) performs matching only in textu
+  [ICLR 2026][Image Restoration][Reference Super-Resolution] This paper constructs PlantRSR, the first reference-based super-resolution (RefSR) dataset for plant scenes (containing 16,585 pairs of manually aligned HR–Ref training patches). It proposes a method specifically designed for irregular plant textures: Selective Key Region Matching (SKRM) performs matching only in texture-rich areas to significantly reduce computational costs, and the Texture-Guided Diffusion Module (T…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Dataset
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Reference Super-Resolution"
+  - "Plant Images"
+  - "Selective Matching"
+  - "Texture-Guided Diffusion"
+  - "Dataset"
 date: 2026-05-08
-content_hash: 28928690f38a19b3
+content_hash: de56af7631b36b1c
 ---
+
 # PlantRSR: A New Plant Dataset and Method for Reference-based Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -140,11 +145,11 @@ A notable observation: every method shows consistent performance gains when trai
 
 ## Related Papers
 
-- [\[ICLR 2026\] Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models](energy-oriented_diffusion_bridge_for_image_restoration_with_foundational_diffusi.md)
+- [\[ECCV 2024\] A New Dataset and Framework for Real-World Blurred Images Super-Resolution](../../ECCV2024/image_restoration/a_new_dataset_and_framework_for_real-world_blurred_images_super-resolution.md)
 - [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
-- [\[ICLR 2026\] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework](taming_score-based_denoisers_in_admm_a_convergent_plug-and-play_framework.md)
-- [\[ICLR 2026\] Sharpness-Aware Machine Unlearning](sharpness-aware_machine_unlearning.md)
-- [\[ICLR 2026\] FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring](fidediff_efficient_diffusion_model_for_high-fidelity_image_motion_deblurring.md)
+- [\[ICLR 2026\] LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion](livemoments_reselected_key_photo_restoration_in_live_photos_via_reference-guided.md)
+- [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](test-time_domain_generalization_for_image_super-resolution.md)
+- [\[ICLR 2026\] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution](learning_heterogeneous_degradation_representation_for_real-world_super-resolutio.md)
 
 </div>
 

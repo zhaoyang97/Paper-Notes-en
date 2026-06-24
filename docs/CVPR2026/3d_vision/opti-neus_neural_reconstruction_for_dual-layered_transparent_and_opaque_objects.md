@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Opti-NeuS: Neural Reconstruction for Dual-Layered Transparent and Opaque Objects
 description: >-
-  [CVPR 2026][3D Vision][SDF] Opti-NeuS utilizes "two-stage layered reconstruction + a learnable Index of Refraction network (IoRNetwork)" to decouple and reconstruct dual-layered objects consisting of a transparent shell and an opaque core without controlled environments or extra inputs. By first suppressing refraction to reconstruct the outer sur
+  [CVPR 2026][3D Vision][Transparent object reconstruction] Opti-NeuS utilizes "two-stage layered reconstruction + a learnable Index of Refraction network (IoRNetwork)" to decouple and reconstruct dual-layered objects consisting of a transparent shell and an opaque core without controlled environments or extra inputs. By first suppressing refraction to reconstruct the outer surface and then using Snell's Law to trace refractive rays for the interior…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SDF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Transparent object reconstruction"
+  - "neural implicit surfaces"
+  - "refractive ray tracing"
+  - "SDF"
+  - "multi-view reconstruction"
 date: 2026-05-08
-content_hash: d5fe0bf3a9e0cba0
+content_hash: 55f0a7b3d0c9f29f
 ---
+
 # Opti-NeuS: Neural Reconstruction for Dual-Layered Transparent and Opaque Objects
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ Compared to the full model's average CD of 1.906, removing any of the three modu
 
 ## Related Papers
 
+- [\[ICLR 2026\] DiffTrans: Differentiable Geometry-Materials Decomposition for Reconstructing Transparent Objects](../../ICLR2026/3d_vision/difftrans_differentiable_geometry-materials_decomposition_for_reconstructing_tra.md)
 - [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 - [\[ECCV 2024\] PISR: Polarimetric Neural Implicit Surface Reconstruction for Textureless and Specular Objects](../../ECCV2024/3d_vision/pisr_polarimetric_neural_implicit_surface_reconstruction_for_textureless_and_spe.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
-- [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
-- [\[CVPR 2026\] JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
+- [\[CVPR 2026\] MatMart: Material Reconstruction of 3D Objects via Diffusion](matmart_material_reconstruction_of_3d_objects_via_diffusion.md)
 
 </div>
 

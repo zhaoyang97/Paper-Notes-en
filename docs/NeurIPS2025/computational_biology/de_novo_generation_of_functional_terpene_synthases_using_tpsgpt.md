@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] De novo generation of functional terpene synthases using TpsGPT
 description: >-
-  [NeurIPS 2025][Computational Biology][terpene synthase] TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene synthase (TPS) sequences to generate 28K candidate sequences…
+  [NeurIPS 2025][Computational Biology][terpene synthase] TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene synthase (TPS) sequences to generate 28K candidate sequences, which are subsequently filtered through a multi-stage pipeline (perplexity / pLDDT / EnzymeExplorer / CLEAN / InterPro / Foldseek) to yield 7 de novo TPS sequences that are evolutionarily distant (<60% sequence identity) yet structurally conserved. Wet-lab experiments confirm that 2…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "de novo design"
   - "wet-lab validation"
 date: 2026-05-08
-content_hash: 9c1efd2b866e48c7
+content_hash: 66718174b68e7b28
 ---
 
 # De novo generation of functional terpene synthases using TpsGPT
@@ -151,10 +151,10 @@ TpsGPT fine-tunes a distilled ProtGPT2 Tiny (38.9M parameters) on 79K terpene sy
 ## Related Papers
 
 - [\[NeurIPS 2025\] One Small Step with Fingerprints, One Giant Leap for De Novo Molecule Generation from Mass Spectra](one_small_step_with_fingerprints_one_giant_leap_for_de_novo_molecule_generation_.md)
+- [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
-- [\[ICCV 2025\] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines](../../ICCV2025/computational_biology/integrating_biological_knowledge_for_robust_microscopy_image_profiling_on_de_nov.md)
-- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
-- [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](amortized_active_generation_of_pareto_sets.md)
+- [\[ICML 2025\] UniMoMo: Unified Generative Modeling of 3D Molecules for De Novo Binder Design](../../ICML2025/computational_biology/unimomo_unified_generative_modeling_of_3d_molecules_for_de_novo_binder_design.md)
+- [\[ICML 2025\] Latent Imputation before Prediction: A New Computational Paradigm for De Novo Peptide Sequencing](../../ICML2025/computational_biology/latent_imputation_before_prediction_a_new_computational_paradigm_for_de_novo_pep.md)
 
 </div>
 

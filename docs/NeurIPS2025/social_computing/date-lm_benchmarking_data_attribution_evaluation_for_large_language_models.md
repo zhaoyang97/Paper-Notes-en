@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models
 description: >-
-  [NeurIPS 2025][Social Computing][data attribution] DATE-LM introduces the first unified benchmark for evaluating data attribution methods in LLMs. Through three application-driven tasks—training data selection…
+  [NeurIPS 2025][Social Computing][data attribution] DATE-LM introduces the first unified benchmark for evaluating data attribution methods in LLMs. Through three application-driven tasks—training data selection, toxicity filtering, and factual attribution—it systematically compares multiple attribution approaches, finding that no single method dominates across all tasks and that simple baselines can match attribution methods in certain settings.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "data selection"
   - "factual provenance"
 date: 2026-05-08
-content_hash: 233990f04fa09f77
+content_hash: 2d2d7e62081a62f2
 ---
 
 # DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models
@@ -125,9 +125,9 @@ DATE-LM comprises a unified three-stage pipeline: (1) **Attribution Scoring**—
 
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](uncovering_strategic_egoism_behaviors_in_large_language_models.md)
 - [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
+- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
 - [\[ACL 2026\] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models](../../ACL2026/social_computing/smarter_a_data-efficient_framework_to_improve_toxicity_detection_with_explanatio.md)
-- [\[NeurIPS 2025\] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation](redefining_experts_interpretable_decomposition_of_language_models_for_toxicity_m.md)
-- [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](../../ACL2026/social_computing/inertia_in_moral_and_value_judgments_of_large_language_models.md)
+- [\[ACL 2025\] Exploring Gender Bias in Large Language Models: An In-depth Dive into the German Language](../../ACL2025/social_computing/exploring_gender_bias_in_large_language_models_an_in-depth_dive_into_the_german_.md)
 
 </div>
 

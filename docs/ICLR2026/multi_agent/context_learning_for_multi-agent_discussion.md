@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Context Learning for Multi-Agent Discussion
 description: >-
-  [ICLR 2026][Multi-Agent][MAD] M2CL learns a "context generator" for each LLM in Multi-Agent Discussion (MAD), allowing round-wise instruction contexts to be automatically organized and refined based on discussion progress. This approach prevents early convergence on "majority noise" while gradually aligning multiple LLMs toward the correct consensu
+  [ICLR2026][Multi-Agent][Multi-agent discussion] M2CL learns a "context generator" for each LLM in Multi-Agent Discussion (MAD), allowing round-wise instruction contexts to be automatically organized and refined based on discussion progress. This approach prevents early convergence on "majority noise" while gradually aligning multiple LLMs toward the correct consensus, outperforming existing methods by 20%–50% across 9 benchmarks.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - MAD
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-agent discussion"
+  - "in-context learning"
+  - "consensus alignment"
+  - "self-adaptive balance"
+  - "MAD"
 date: 2026-05-08
-content_hash: b78ba2841c6e6ecd
+content_hash: c092fbd62c8f05d6
 ---
+
 # Context Learning for Multi-Agent Discussion
 
 **Conference**: ICLR2026  

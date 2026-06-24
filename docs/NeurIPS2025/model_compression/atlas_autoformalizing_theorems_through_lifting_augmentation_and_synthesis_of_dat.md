@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data
 description: >-
-  [NeurIPS 2025][Model Compression][Autoformalization] ATLAS proposes a data generation framework based on a concept repository, expert iteration with knowledge distillation…
+  [NeurIPS 2025][Model Compression][Autoformalization] ATLAS proposes a data generation framework based on a concept repository, expert iteration with knowledge distillation, and two novel augmentation strategies. It constructs a parallel corpus of 117K theorem statements, and achieves SOTA on all autoformalization benchmarks after fine-tuning Llama3.1-8B-Instruct.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Expert Iteration"
   - "Data Augmentation"
 date: 2026-05-08
-content_hash: 8e7b725301be6872
+content_hash: 72827dab7b5f2d8c
 ---
 
 # ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data
@@ -174,11 +174,11 @@ All comparisons are statistically significant ($p < 0.05$, two-tailed t-test).
 
 ## Related Papers
 
+- [\[ICML 2025\] A Cross Modal Knowledge Distillation & Data Augmentation Recipe for Improving Transcriptomics Representations through Morphological Features](../../ICML2025/model_compression/a_cross_modal_knowledge_distillation_data_augmentation_recipe_for_improving_tran.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
+- [\[ECCV 2024\] MetaAug: Meta-Data Augmentation for Post-Training Quantization](../../ECCV2024/model_compression/metaaug_meta-data_augmentation_for_post-training_quantization.md)
 - [\[NeurIPS 2025\] Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling](skrull_towards_efficient_long_context_fine-tuning_through_dynamic_data_schedulin.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](../../ICLR2026/model_compression/pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
-- [\[NeurIPS 2025\] A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone](a_token_is_worth_over_1000_tokens_efficient_knowledge_distillation_through_low-r.md)
-- [\[ACL 2026\] Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](../../ACL2026/model_compression/find_your_optimal_teacher_personalized_data_synthesis_via_router-guided_multi-te.md)
 
 </div>
 

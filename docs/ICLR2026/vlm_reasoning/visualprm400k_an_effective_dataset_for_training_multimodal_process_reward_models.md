@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VisualPRM400K: An Effective Dataset for Training Multimodal Process Reward Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Best-of-N] The authors constructed VisualPRM400K, the first multimodal process supervision dataset with approximately 400,000 samples, using a Monte Carlo automatic annotation pipeline. An 8B multimodal process reward model (PRM), named VisualPRM, was trained as a "judge" for Best-of-N evaluation. This model consistently improves
+  [ICLR 2026][VLM Reasoning][Multimodal Process Reward Model] The authors constructed VisualPRM400K, the first multimodal process supervision dataset with approximately 400,000 samples, using a Monte Carlo automatic annotation pipeline. An 8B multimodal process reward model (PRM), named VisualPRM, was trained as a "judge" for Best-of-N evaluation. This model consistently improves the reasoning capabilities of various MLLM families and scales (e.g.…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Best-of-N
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Process Reward Model"
+  - "Test-Time Scaling"
+  - "Best-of-N"
+  - "Monte Carlo Annotation"
+  - "Process Supervision Benchmark"
 date: 2026-05-08
-content_hash: 04a379a0950cf855
+content_hash: 8904d3e618cb108b
 ---
+
 # VisualPRM400K: An Effective Dataset for Training Multimodal Process Reward Models
 
 **Conference**: ICLR 2026  
@@ -138,15 +143,15 @@ On VisualProcessBench, the 8B VisualPRM outperformed several proprietary models:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](../../CVPR2026/vlm_reasoning/improving_vision-language_models_with_perception-centric_process_reward_models.md)
 - [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](../../CVPR2026/vlm_reasoning/hierarchical_process_reward_models_are_symbolic_vision_learners.md)
+- [\[ICLR 2026\] Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning](zebra-cot_a_dataset_for_interleaved_vision-language_reasoning.md)
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
-- [\[ICLR 2026\] No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers](no_labels_no_problem_training_visual_reasoners_with_multimodal_verifiers.md)
-- [\[ICLR 2026\] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
 
 </div>
 

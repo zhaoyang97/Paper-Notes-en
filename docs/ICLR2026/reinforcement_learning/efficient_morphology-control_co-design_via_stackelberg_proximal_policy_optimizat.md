@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] The study reformulates the joint optimization of "robot morphology design + control policy" as a **Phase-Separated Stackelberg Game** (where morphology acts as the leader and control as the follower). It derives Stackelberg policy gradients capable of propagating through "non-differentiable morphology editing interface
+  [ICLR 2026][Reinforcement Learning][morphology-control co-design] The study reformulates the joint optimization of "robot morphology design + control policy" as a **Phase-Separated Stackelberg Game** (where morphology acts as the leader and control as the follower). It derives Stackelberg policy gradients capable of propagating through "non-differentiable morphology editing interfaces," encapsulated into Stackelberg PPO. This allows morphology updates to actively anticipate h…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
-  - Embodied AI
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "morphology-control co-design"
+  - "Stackelberg Game"
+  - "implicit differentiation"
+  - "PPO"
+  - "bi-level optimization"
+  - "embodied AI"
 date: 2026-05-08
-content_hash: 500b49e4b4a94626
+content_hash: 3c5ec792fe778c03
 ---
+
 # Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ Leader horizon $T$ comparison (Stepper-Regular, Stackelberg PPO vs BodyGen):
 - [\[ICLR 2026\] Proximal Supervised Fine-Tuning](proximal_supervised_fine-tuning.md)
 - [\[ICLR 2026\] Parameter-Efficient Reinforcement Learning using Prefix Optimization](parameter-efficient_reinforcement_learning_using_prefix_optimization.md)
 - [\[ICLR 2026\] Regret-Guided Search Control for Efficient Learning in AlphaZero](regret-guided_search_control_for_efficient_learning_in_alphazero.md)
-- [\[ICLR 2026\] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning](stackelberg_coupling_of_online_representation_learning_and_reinforcement_learnin.md)
+- [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
 
 </div>
 

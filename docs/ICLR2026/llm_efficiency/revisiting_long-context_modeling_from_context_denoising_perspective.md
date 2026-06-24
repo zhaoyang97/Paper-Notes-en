@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Long-context Modeling from Context Denoising Perspective
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper treats long-context modeling as a "signal denoising" problem: it uses Integrated Gradient (IG) scores to precisely locate critical tokens that truly influence predictions and employs a lightweight denoising strategy, CDT, to suppress irrelevant tokens at the input. This allows an 8B open-source model to achi
+  [ICLR 2026][LLM Efficiency][Long-context Modeling] This paper treats long-context modeling as a "signal denoising" problem: it uses Integrated Gradient (IG) scores to precisely locate critical tokens that truly influence predictions and employs a lightweight denoising strategy, CDT, to suppress irrelevant tokens at the input. This allows an 8B open-source model to achieve a score of 50.92 on LongBench-E, nearing GPT-4o's 51.00.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long-context Modeling"
+  - "Context Denoising"
+  - "Integrated Gradients"
+  - "Key Token Detection"
+  - "Post-training"
 date: 2026-05-08
-content_hash: 2185a5011b7c1c62
+content_hash: ba97fe47e638f591
 ---
+
 # Revisiting Long-context Modeling from Context Denoising Perspective
 
 **Conference**: ICLR 2026  
@@ -140,6 +146,7 @@ CDT also led on RULER (32K–128K), LongPPL, and BABILong:
 - Value: ⭐⭐⭐⭐⭐ Practical and lightweight; enables 8B models to compete with GPT-4o.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

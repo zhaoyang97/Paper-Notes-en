@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] Visual signals are encoded as Low-Rank Adaptation (LoRA) parameters on a frozen diffusion foundation model and compressed into a single compact vector via hash mapping. This achieves high perceptual quality video compression at extremely low bitrates while supporting inference-time scaling and generative editing.
+  [ICML 2026][Image Generation][Implicit Representation] Visual signals are encoded as Low-Rank Adaptation (LoRA) parameters on a frozen diffusion foundation model and compressed into a single compact vector via hash mapping. This achieves high perceptual quality video compression at extremely low bitrates while supporting inference-time scaling and generative editing.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - LoRA
+  - "ICML 2026"
+  - "Image Generation"
+  - "Implicit Representation"
+  - "Diffusion Models"
+  - "Visual Compression"
+  - "LoRA"
+  - "Inference-time Scaling"
 date: 2026-05-08
-content_hash: 14738b4fbb493401
+content_hash: b181d6888d172d74
 ---
+
 # Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models
 
 **Conference**: ICML 2026  
@@ -121,10 +125,10 @@ The paper provides an information-theoretic explanation for why "encoding only t
 ## Related Papers
 
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](visual_implicit_autoregressive_modeling.md)
-- [\[ICLR 2026\] AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligntok_aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
 - [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](../../CVPR2026/image_generation/cod_a_diffusion_foundation_model_for_image_compression.md)
 - [\[ICLR 2026\] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
-- [\[ECCV 2024\] Implicit Concept Removal of Diffusion Models](../../ECCV2024/image_generation/implicit_concept_removal_of_diffusion_models.md)
+- [\[ICML 2026\] Direct 3D-Aware Object Insertion via Decomposed Visual Proxies](direct_3d-aware_object_insertion_via_decomposed_visual_proxies.md)
+- [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
 
 </div>
 

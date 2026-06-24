@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] THINKMERGE is proposed: it allows an LLM to run $K$ reasoning chains in parallel. After each chain finishes its "thinking" phase, their next-token logits are arithmetically averaged and sampled during the "answer" stage. This extends "Majority Voting" from closed-ended questions to open-ended tasks like code generation
+  [ICLR 2026][Reasoning][Parallel Test-time Scaling] THINKMERGE is proposed: it allows an LLM to run $K$ reasoning chains in parallel. After each chain finishes its "thinking" phase, their next-token logits are arithmetically averaged and sampled during the "answer" stage. This extends "Majority Voting" from closed-ended questions to open-ended tasks like code generation and deep research agents where a "majority" cannot be defined. It is training-free and plug-and-play.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Parallel Test-time Scaling"
+  - "Logit Ensemble"
+  - "Open-Ended Reasoning"
+  - "Majority Voting"
+  - "Thought Traces"
 date: 2026-05-08
-content_hash: 3df4f3a7a7a458e6
+content_hash: eb32afab4d47c2d9
 ---
+
 # Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,14 @@ On closed-ended tasks (AIME'25 / GPQA Diamond), THINKMERGE matches or slightly o
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Reverse-Engineered Reasoning for Open-Ended Generation](reverse-engineered_reasoning_for_open-ended_generation.md)
 - [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
+- [\[ICLR 2026\] Deep Think with Confidence](deep_think_with_confidence.md)
+- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
 - [\[ICLR 2026\] Generalized Parallel Scaling with Interdependent Generations](generalized_parallel_scaling_with_interdependent_generations.md)
-- [\[ICLR 2026\] Continuous Chain of Thought Enables Parallel Exploration and Reasoning](continuous_chain_of_thought_enables_parallel_exploration_and_reasoning.md)
-- [\[ICLR 2026\] Reasoning with Sampling: Your Base Model is Smarter Than You Think](reasoning_with_sampling_your_base_model_is_smarter_than_you_think.md)
 
 </div>
 

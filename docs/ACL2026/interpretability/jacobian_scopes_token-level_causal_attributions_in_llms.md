@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Jacobian Scopes: Token-Level Causal Attributions in LLMs
 description: >-
-  [ACL 2026][Interpretability][Jacobian] The authors propose Jacobian Scopes—a unified framework that uses the "projection of the Jacobian from input token embeddings to the last-layer hidden state onto a specific vector" as token attribution strength. Accompanied by three scopes (Semantic / Fisher / Temperature) to explain how a "target logit / entire predic
+  [ACL 2026][Interpretability][Jacobian] The authors propose Jacobian Scopes—a unified framework that uses the "projection of the Jacobian from input token embeddings to the last-layer hidden state onto a specific vector" as token attribution strength. Accompanied by three scopes (Semantic / Fisher / Temperature) to explain how a "target logit / entire prediction distribution / model confidence" is driven by various input tokens, it requires only one backpropagation. On AOPC me…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Jacobian
-  - vector-Jacobian product
+  - "ACL 2026"
+  - "Interpretability"
+  - "Jacobian"
+  - "vector-Jacobian product"
+  - "Fisher Information"
+  - "Effective Temperature"
+  - "token attribution"
 date: 2026-05-08
-content_hash: 896e65989a63bfe3
+content_hash: 8c34b062e1297424
 ---
+
 # Jacobian Scopes: Token-Level Causal Attributions in LLMs
 
 **Conference**: ACL 2026  
@@ -142,10 +146,10 @@ AOPC (Area Over Perturbation Curve): The drop in target token log-prob after zer
 ## Related Papers
 
 - [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
-- [\[NeurIPS 2025\] Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning](../../NeurIPS2025/interpretability/learning_to_focus_causal_attention_distillation_via_gradient-guided_token_prunin.md)
+- [\[ICLR 2026\] Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive LLMs](../../ICLR2026/interpretability/hessian-enhanced_token_attribution_heta_interpreting_autoregressive_llms.md)
 - [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2026/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
 - [\[ACL 2026\] How Context Shapes Truth: Geometric Transformations of Statement-level Truth Representations in LLMs](how_context_shapes_truth_geometric_transformations_of_statement-level_truth_repr.md)
-- [\[ICML 2025\] Towards Attributions of Input Variables in a Coalition](../../ICML2025/interpretability/towards_attributions_of_input_variables_in_a_coalition.md)
+- [\[NeurIPS 2025\] Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning](../../NeurIPS2025/interpretability/learning_to_focus_causal_attention_distillation_via_gradient-guided_token_prunin.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context
 description: >-
-  [ACL 2026][Recommender Systems][DPO] This paper reveals that existing LLM-based recommendation systems lose critical information—preference intensity and temporal context—due to binary preference modeling. It proposes the RecPO framework, which incorporates these two factors into preference optimization through an adaptive reward margin, significantly out
+  [ACL 2026][Recommender Systems][Sequential Recommendation] This paper reveals that existing LLM-based recommendation systems lose critical information—preference intensity and temporal context—due to binary preference modeling. It proposes the RecPO framework, which incorporates these two factors into preference optimization through an adaptive reward margin, significantly outperforming baselines like S-DPO across five datasets.
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - DPO
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "Preference Alignment"
+  - "Preference Intensity"
+  - "Temporal Context"
+  - "DPO"
 date: 2026-05-08
-content_hash: f67bc193aceea18e
+content_hash: 36082d5853a5ca05
 ---
+
 # What Makes LLMs Effective Sequential Recommenders? A Study on Preference Intensity and Temporal Context
 
 **Conference**: ACL 2026  
@@ -137,9 +142,9 @@ RecPO similarly outperforms all baselines on Qwen-7B, with HR@1 gains ranging be
 
 - [\[ACL 2026\] What Makes an Ideal Quote? Recommending "Unexpected yet Rational" Quotations via Novelty](what_makes_an_ideal_quote_recommending_34unexpected_yet_rational34_quotations_vi.md)
 - [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
+- [\[ICLR 2026\] Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders](../../ICLR2026/recommender/massive_memorization_with_hundreds_of_trillions_of_parameters_for_sequential_tra.md)
 - [\[ACL 2026\] Where and What: Reasoning Dynamic and Implicit Preferences in Situated Conversational Recommendation](where_and_what_reasoning_dynamic_and_implicit_preferences_in_situated_conversati.md)
 - [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
-- [\[ACL 2026\] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation](mirroring_users_towards_building_preference-aligned_user_simulator_with_user_fee.md)
 
 </div>
 

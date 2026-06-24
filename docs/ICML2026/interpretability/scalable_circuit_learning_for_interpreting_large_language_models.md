@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable Circuit Learning for Interpreting Large Language Models
 description: >-
-  [ICML 2026][Interpretability][Lasso] CircuitLasso transforms "circuit discovery in mechanistic interpretability" from expensive intervention-based methods into a **sparse linear regression (Lasso) surrogate**. By using only observational data and relying on $\ell_1$ penalties plus block upper-triangular constraints to identify sparse dependency skeletons
+  [ICML2026][Interpretability][Mechanistic Interpretability] CircuitLasso transforms "circuit discovery in mechanistic interpretability" from expensive intervention-based methods into a **sparse linear regression (Lasso) surrogate**. By using only observational data and relying on $\ell_1$ penalties plus block upper-triangular constraints to identify sparse dependency skeletons between components, it enables circuit discovery directly in high-dimensional SAE feature spaces for…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Lasso
+  - "ICML2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Circuit Discovery"
+  - "Sparse Autoencoders"
+  - "Sparse Regression"
+  - "Lasso"
 date: 2026-05-08
-content_hash: cda880d9786720c0
+content_hash: a4aef9a9c64a7499
 ---
+
 # Scalable Circuit Learning for Interpreting Large Language Models
 
 **Conference**: ICML2026  
@@ -139,9 +144,9 @@ SAE feature comparison with SHIFT (excluding manual interpretation time):
 
 - [\[ICML 2025\] Inference-Time Decomposition of Activations (ITDA): A Scalable Approach to Interpreting Large Language Models](../../ICML2025/interpretability/inference-time_decomposition_of_activations_itda_a_scalable_approach_to_interpre.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](towards_atoms_of_large_language_models.md)
-- [\[ICML 2026\] Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning](equilibrium_reasoners_learning_attractors_enables_scalable_reasoning.md)
-- [\[ICML 2026\] The Expert Strikes Back: Interpreting Mixture-of-Experts Language Models at Expert Level](the_expert_strikes_back_interpreting_mixture-of-experts_language_models_at_exper.md)
-- [\[ICML 2026\] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers](dissecting_multimodal_in-context_learning_modality_asymmetries_and_circuit_dynam.md)
+- [\[ICML 2026\] How Language Models Process Negation](how_language_models_process_negation.md)
+- [\[ICML 2026\] Textual Supervision Enhances Geospatial Representations in Vision-Language Models](textual_supervision_enhances_geospatial_representations_in_vision-language_model.md)
+- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
 
 </div>
 

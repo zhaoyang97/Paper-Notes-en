@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Unsafe content mitigation] This paper proposes Distorting Embedding Space (DES), a text-encoder-based defense framework that achieves state-of-the-art sexual content mitigation on FLUX.1…
+  [NeurIPS 2025][Image Generation][Unsafe content mitigation] This paper proposes Distorting Embedding Space (DES), a text-encoder-based defense framework that achieves state-of-the-art sexual content mitigation on FLUX.1 and SD v1.5 (reducing ASR to 9.47% and 0.52%, respectively) by transforming unsafe embeddings into safe regions, preserving safe embeddings, and neutralizing "nudity" semantics, while maintaining high-quality benign image generation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "adversarial attack defense"
   - "NSFW filtering"
 date: 2026-05-08
-content_hash: e860e8dc7000920c
+content_hash: 063de7d4e1cc7aa8
 ---
 
 # Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models
@@ -50,27 +50,27 @@ DES consists of two stages: (1) **Target vector generation**: computing an optim
 1. **Target Vector Generation**
 
    For each unsafe vector $u_i$, the safe vector with the lowest cosine similarity is identified:
-   $$s_i^* = \arg\min_{s_i} \frac{u_i \cdot s_i}{\|u_i\|\|s_i\|}$$
+    $s_i^* = \arg\min_{s_i} \frac{u_i \cdot s_i}{\|u_i\|\|s_i\|}$
 
    The "nudity" direction ($n$ being the "nudity" vector) is then subtracted to produce an anti-correlated target vector:
-   $$t_i = s_i^* - \alpha \frac{n}{\|n\|}$$
+    $t_i = s_i^* - \alpha \frac{n}{\|n\|}$
 
    where $\alpha$ is a scaling factor ($\alpha = 200$). **Design Motivation**: selecting the least similar safe vector as a base, then subtracting the nudity direction, ensures the target vector is anti-correlated with nudity concepts and maximizes embedding space distortion for greater robustness. The authors observe that even the selected safe vectors exhibit positive correlation with the nudity vector, making the subtraction operation necessary.
 
 2. **Unsafe Embedding Space Distortion + Safe Embedding Preservation**
 
    **Unsafe loss**: aligns the current unsafe vector to its target safe vector:
-   $$\mathcal{L}_u = \frac{1}{B}\sum_{i=1}^B \left(1 - \frac{\tilde{u}_i \cdot t_i}{\|\tilde{u}_i\|\|t_i\|}\right)$$
+    $\mathcal{L}_u = \frac{1}{B}\sum_{i=1}^B \left(1 - \frac{\tilde{u}_i \cdot t_i}{\|\tilde{u}_i\|\|t_i\|}\right)$
 
    **Safe loss** (with adaptive weighting): preserves safe vectors relative to their originals, and employs a nudity-integrated vector $\tilde{s}'_i = \tilde{s}_i + \alpha\frac{n}{\|n\|}$ for adaptive weighting:
-   $$\mathcal{L}_s = \frac{1}{B}\sum_{i=1}^B \left[\left(1 - \frac{\tilde{s}_i \cdot s_i}{\|\tilde{s}_i\|\|s_i\|}\right) + \left(1 - \frac{\tilde{s}'_i \cdot s_i}{\|\tilde{s}'_i\|\|s_i\|}\right)\right]$$
+    $\mathcal{L}_s = \frac{1}{B}\sum_{i=1}^B \left[\left(1 - \frac{\tilde{s}_i \cdot s_i}{\|\tilde{s}_i\|\|s_i\|}\right) + \left(1 - \frac{\tilde{s}'_i \cdot s_i}{\|\tilde{s}'_i\|\|s_i\|}\right)\right]$
 
    Adaptive mechanism: safe vectors with low correlation to the nudity vector receive a stronger preservation penalty, while those with high correlation are adjusted more leniently, as they may carry latent unsafe semantics.
 
 3. **Nudity Neutralization**
 
    The "nudity" vector is aligned to a neutral empty vector $e_0$ (the embedding corresponding to the empty string ""):
-   $$\mathcal{L}_n = 1 - \frac{\tilde{n} \cdot e_0}{\|\tilde{n}\|\|e_0\|}$$
+    $\mathcal{L}_n = 1 - \frac{\tilde{n} \cdot e_0}{\|\tilde{n}\|\|e_0\|}$
 
    **Motivation**: this prevents concept-extraction-based attacks (e.g., Ring-A-Bell, which uses a genetic algorithm to find prompts similar to nudity concepts). After neutralization, attackers can only extract semantically meaningless embeddings.
 
@@ -168,8 +168,8 @@ Training is highly efficient: only **90 seconds** with **zero inference overhead
 
 - [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
 - [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](../../ICCV2025/image_generation/text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
+- [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
 - [\[NeurIPS 2025\] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models](more_than_generation_unifying_generation_and_depth_estimation_via_text-to-image_.md)
 
 </div>

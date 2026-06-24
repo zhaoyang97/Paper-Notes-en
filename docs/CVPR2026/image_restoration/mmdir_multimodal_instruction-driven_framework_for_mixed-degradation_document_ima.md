@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] MMDIR integrates the process of "inquiring the model via text instructions about the presence/types of degradations in a document image" into the restoration pipeline. A degraded document image is paired with a text instruction; after joint processing by a vision encoder and an LLM, the LLM first outputs a diagnostic t
+  [CVPR 2026][Image Restoration][Document Image Restoration] MMDIR integrates the process of "inquiring the model via text instructions about the presence/types of degradations in a document image" into the restoration pipeline. A degraded document image is paired with a text instruction; after joint processing by a vision encoder and an LLM, the LLM first outputs a diagnostic text identifying the existing degradations. These semantic features then guide the vision decoder for…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Document Image Restoration"
+  - "Mixed Degradation"
+  - "Instruction-Driven"
+  - "Multimodal Large Language Model"
+  - "Degradation Identification"
 date: 2026-05-08
-content_hash: b8c23053e1c5b4ba
+content_hash: 66ace7824e957382
 ---
+
 # MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration
 
 **Conference**: CVPR 2026  
@@ -144,10 +150,20 @@ Effect of text instructions (Inst.) on different benchmarks:
 - Value: ⭐⭐⭐⭐ Provides the MixedDoc benchmark and an interpretable unified restoration paradigm.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[CVPR 2026\] Restore, Assess, Repeat: A Unified Framework for Iterative Image Restoration](restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)
+- [\[CVPR 2026\] Hybrid Agents for Image Restoration](hybrid_agents_for_image_restoration.md)
+- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging](sgde_self-supervised_geometry_degradation_estimation_framework_for_coded_apertur.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)

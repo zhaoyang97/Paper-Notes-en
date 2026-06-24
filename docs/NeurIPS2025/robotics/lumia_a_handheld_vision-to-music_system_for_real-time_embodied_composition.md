@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition
 description: >-
-  [NeurIPS 2025][Robotics][vision-to-music] This paper presents Lumia — a handheld camera-shaped device that analyzes captured frames via GPT-4 Vision to generate structured prompts…
+  [NeurIPS 2025][Robotics][vision-to-music] This paper presents Lumia — a handheld camera-shaped device that analyzes captured frames via GPT-4 Vision to generate structured prompts, which are then fed to Stable Audio to synthesize loopable music segments, enabling a real-time, embodied improvisation workflow from visual input to music.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "embodied interaction"
   - "multimodal generation"
 date: 2026-05-08
-content_hash: 5df5cc71a54042b3
+content_hash: 433cc61e1680322d
 ---
 
 # LUMIA: A Handheld Vision-to-Music System for Real-Time, Embodied Composition
@@ -153,11 +153,11 @@ Three professional audio engineers (4–6 years of experience) each composed a m
 
 ## Related Papers
 
+- [\[CVPR 2025\] SortScrews: A Dataset and Baseline for Real-time Screw Classification](../../CVPR2025/robotics/sortscrews_a_dataset_and_baseline_for_real-time_screw_classification.md)
+- [\[CVPR 2025\] TinyNav: End-to-End TinyML for Real-Time Autonomous Navigation on Microcontrollers](../../CVPR2025/robotics/tinynav_end-to-end_tinyml_for_real-time_autonomous_navigation_on_microcontroller.md)
 - [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](../../ICLR2026/robotics/real-time_robot_execution_with_masked_action_chunking.md)
-- [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
-- [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
+- [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
 
 </div>
 

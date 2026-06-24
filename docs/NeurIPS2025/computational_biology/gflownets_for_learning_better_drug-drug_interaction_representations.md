@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GFlowNets for Learning Better Drug-Drug Interaction Representations
 description: >-
-  [NeurIPS 2025][Medical Imaging][Drug-drug interaction] To address the severe class imbalance in drug-drug interaction (DDI) prediction, this paper proposes combining GFlowNet with a variational graph autoencoder (VGAE).…
+  [NeurIPS 2025][Computational Biology][Drug-drug interaction] To address the severe class imbalance in drug-drug interaction (DDI) prediction, this paper proposes combining GFlowNet with a variational graph autoencoder (VGAE). By reward-guided generative sampling, the framework synthesizes training samples for rare interaction types, thereby enhancing predictive performance on infrequent yet clinically critical interaction categories.
 tags:
   - "NeurIPS 2025"
-  - "Medical Imaging"
+  - "Computational Biology"
   - "Drug-drug interaction"
   - "GFlowNet"
   - "variational graph autoencoder"
   - "class imbalance"
   - "graph generation"
 date: 2026-05-08
-content_hash: 550441606f9b7c16
+content_hash: 4710bed32d2c1fe0
 ---
 
 # GFlowNets for Learning Better Drug-Drug Interaction Representations
@@ -149,10 +149,10 @@ No ablation table is provided; key conclusions are drawn by comparing classifica
 ## Related Papers
 
 - [\[NeurIPS 2025\] Interpreting GFlowNets for Drug Discovery: Extracting Actionable Insights for Medicinal Chemistry](interpreting_gflownets_for_drug_discovery_extracting_actionable_insights_for_med.md)
+- [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](../../ICLR2026/computational_biology/i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
-- [\[NeurIPS 2025\] Compressing Biology: Evaluating the Stable Diffusion VAE for Phenotypic Drug Discovery](compressing_biology_evaluating_the_stable_diffusion_vae_for_phenotypic_drug_disc.md)
 - [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](learning_repetition-invariant_representations_for_polymer_informatics.md)
-- [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
+- [\[NeurIPS 2025\] Compressing Biology: Evaluating the Stable Diffusion VAE for Phenotypic Drug Discovery](compressing_biology_evaluating_the_stable_diffusion_vae_for_phenotypic_drug_disc.md)
 
 </div>
 

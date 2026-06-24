@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories
 description: >-
-  [CVPR 2026][Image Generation][flow matching] The paper proposes LeapAlign, which shortens long generation paths into two-step jump trajectories. This enables reward gradients to backpropagate directly to early generation steps. Combined with trajectory similarity weighting and gradient discounting strategies, it achieves efficient post-training alignment for flow
+  [CVPR 2026][Image Generation][flow matching] The paper proposes LeapAlign, which shortens long generation paths into two-step jump trajectories. This enables reward gradients to backpropagate directly to early generation steps. Combined with trajectory similarity weighting and gradient discounting strategies, it achieves efficient post-training alignment for flow matching models.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - flow matching
-  - post-training
-  - reward alignment
-  - human preference
-  - diffusion model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "flow matching"
+  - "post-training"
+  - "reward alignment"
+  - "human preference"
+  - "diffusion model"
 date: 2026-05-08
-content_hash: b80ce3b6c5ff47bd
+content_hash: e7a9f966f4556de6
 ---
+
 # LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories
 
 **Conference**: CVPR 2026  
@@ -124,9 +125,9 @@ The method consistently outperforms GRPO and direct gradient methods across all 
 
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
-- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] FlowSteer: Guiding Few-Step Image Synthesis with Authentic Trajectories](flowsteer_guiding_few-step_image_synthesis_with_authentic_trajectories.md)
-- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
+- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
 
 </div>
 

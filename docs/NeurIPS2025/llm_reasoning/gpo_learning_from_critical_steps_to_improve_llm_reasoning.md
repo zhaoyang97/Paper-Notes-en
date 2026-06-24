@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GPO: Learning from Critical Steps to Improve LLM Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Critical step identification] GPO estimates the advantage function for each step in a reasoning trajectory via Monte Carlo simulation to identify "critical steps" (the turning points where t…
+  [NeurIPS 2025][Reasoning][Critical step identification] GPO estimates the advantage function for each step in a reasoning trajectory via Monte Carlo simulation to identify "critical steps" (the turning points where the model makes errors), then resets from those critical steps and resamples new trajectories for training. This plug-and-play approach consistently improves multiple optimization algorithms—including PPO, DPO, KTO, SimPO, and ORPO—on reasoning tasks.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Critical step identification"
   - "reinforcement learning"
   - "reasoning optimization"
   - "advantage function"
   - "process-level optimization"
 date: 2026-05-08
-content_hash: fce8ad1f926dbffe
+content_hash: d0a12cd4fe5fb255
 ---
 
 # GPO: Learning from Critical Steps to Improve LLM Reasoning
@@ -134,10 +134,10 @@ Base model: DeepSeek-R1-Distill-Qwen-7B, fine-tuned with LoRA.
 ## Related Papers
 
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
+- [\[ACL 2025\] Improve Vision Language Model Chain-of-thought Reasoning](../../ACL2025/llm_reasoning/improve_vlm_cot_reasoning.md)
 - [\[NeurIPS 2025\] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution](swe-rl_advancing_llm_reasoning_via_reinforcement_learning_on_open_software_evolu.md)
-- [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
-- [\[NeurIPS 2025\] Curriculum Abductive Learning](curriculum_abductive_learning.md)
-- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](../../ACL2026/llm_reasoning/does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
+- [\[ICLR 2026\] Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning](../../ICLR2026/llm_reasoning/sample_lottery_unsupervised_discovery_of_critical_instances_for_llm_reasoning.md)
+- [\[ACL 2025\] Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning](../../ACL2025/llm_reasoning/enhancing_chain-of-thought_reasoning_with_critical_representation_fine-tuning.md)
 
 </div>
 

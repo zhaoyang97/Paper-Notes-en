@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable Training for Vector-Quantized Networks with 100% Codebook Utilization
 description: >-
-  [ICLR 2026][Image Generation][VQBridge] This paper addresses the long-standing issues of training instability and low codebook utilization in Vector Quantized (VQ) tokenizers. It proposes VQBridge (a compress–process–recover projector), which is used only during training and discarded at inference. Combined with learning rate annealing, this approach achieve
+  [ICLR 2026][Image Generation][Vector Quantization] This paper addresses the long-standing issues of training instability and low codebook utilization in Vector Quantized (VQ) tokenizers. It proposes VQBridge (a compress–process–recover projector), which is used only during training and discarded at inference. Combined with learning rate annealing, this approach achieves **100% codebook utilization** across various configurations from 16k to 262k entries…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VQBridge
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Vector Quantization"
+  - "Codebook Utilization"
+  - "Discrete Tokenizer"
+  - "Autoregressive Image Generation"
+  - "VQBridge"
 date: 2026-05-08
-content_hash: 66bce2574ca9b882
+content_hash: af95707a3826ed26
 ---
+
 # Scalable Training for Vector-Quantized Networks with 100% Codebook Utilization
 
 **Conference**: ICLR 2026  

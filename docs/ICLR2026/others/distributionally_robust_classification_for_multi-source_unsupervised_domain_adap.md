@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation
 description: >-
-  [ICLR 2026][Others][Paper Note] A distributionally robust learning framework is proposed to significantly enhance generalization performance in UDA scenarios with extreme target data scarcity or spurious correlations in the source domain by jointly modeling the uncertainty of target covariate distributions and conditional label distributions.
+  [ICLR 2026][Distributionally Robust Optimization] A distributionally robust learning framework is proposed to significantly enhance generalization performance in UDA scenarios with extreme target data scarcity or spurious correlations in the source domain by jointly modeling the uncertainty of target covariate distributions and conditional label distributions.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Distributionally Robust Optimization"
+  - "Unsupervised Domain Adaptation"
+  - "Multi-source Domain Adaptation"
+  - "Wasserstein Distance"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 58f474a3fdc15d0d
+content_hash: 4de0ca2299164694
 ---
+
 # Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation
 
 **Conference**: ICLR 2026  
@@ -170,10 +175,10 @@ Compared to ERM, Waterbirds +38.9%, CelebA +49.5%. It significantly outperforms 
 ## Related Papers
 
 - [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
+- [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](../../ICML2026/others/variable_clustering_via_distributionally_robust_nodewise_regression.md)
 - [\[NeurIPS 2025\] Distributionally Robust Feature Selection](../../NeurIPS2025/others/distributionally_robust_feature_selection.md)
 - [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
 - [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
-- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
 
 </div>
 

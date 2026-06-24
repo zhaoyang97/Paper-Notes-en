@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Reinforcement Learning] TemplateRL abstracts structured reasoning templates from a small seed set using MCTS and introduces these templates as explicit guidance during reinforcement learning training. This significantly improves the efficiency and stability of multi-step reasoning in LLMs, achieving a 99% improvement over GRPO on AIME.
+  [ACL 2026][Reasoning][Reinforcement Learning] TemplateRL abstracts structured reasoning templates from a small seed set using MCTS and introduces these templates as explicit guidance during reinforcement learning training. This significantly improves the efficiency and stability of multi-step reasoning in LLMs, achieving a 99% improvement over GRPO on AIME.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "Reinforcement Learning"
+  - "Template-Guided"
+  - "Reasoning Path"
+  - "LLM Optimization"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a9681ad74a78dbcb
+content_hash: 3229ffafe0fc8906
 ---
+
 # TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning
 
 **Conference**: ACL 2026  
@@ -153,15 +157,15 @@ TemplateRL outperforms the GRPO baseline across all benchmarks, with the most si
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](../../ICLR2026/llm_reasoning/curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](../../ICLR2026/llm_reasoning/nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
+- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](../../ICLR2026/llm_reasoning/learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](../../ICLR2026/llm_reasoning/emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](../../NeurIPS2025/llm_reasoning/srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
-- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[NeurIPS 2025\] ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning](../../NeurIPS2025/llm_reasoning/expo_unlocking_hard_reasoning_with_self-explanation-guided_reinforcement_learnin.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
-- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](../../ICML2026/llm_reasoning/resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
 
 </div>
 

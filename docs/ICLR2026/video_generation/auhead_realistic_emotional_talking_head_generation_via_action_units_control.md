@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AUHead: Realistic Emotional Talking Head Generation via Action Units Control
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] AUHead decomposes the "audio $\to$ emotional video" generation problem into two stages: first, an audio language model (ALM) "perceives emotion" from speech and reasons a discrete Facial Action Units (AU) sequence; then, an AU-driven controllable diffusion model renders these AUs into talking head videos that are both
+  [ICLR 2026][Video Generation][Talking Head Generation] AUHead decomposes the "audio $\to$ emotional video" generation problem into two stages: first, an audio language model (ALM) "perceives emotion" from speech and reasons a discrete Facial Action Units (AU) sequence; then, an AU-driven controllable diffusion model renders these AUs into talking head videos that are both synchronized and carry nuanced expressions. It outperforms existing methods in emotional realism and lip-…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Talking Head Generation"
+  - "Emotional Expression"
+  - "Facial Action Units (AU)"
+  - "Audio Language Model"
+  - "Controllable Diffusion"
 date: 2026-05-08
-content_hash: 86e13dd5a50ba85f
+content_hash: cd75892ef8e02172
 ---
+
 # AUHead: Realistic Emotional Talking Head Generation via Action Units Control
 
 **Conference**: ICLR 2026  
@@ -127,6 +133,7 @@ On MEAD and CREMA datasets (25 fps, 512×512), AUHead using MEMO as the backbone
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

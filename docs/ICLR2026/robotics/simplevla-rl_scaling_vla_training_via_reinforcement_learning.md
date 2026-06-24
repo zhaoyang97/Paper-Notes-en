@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] SimpleVLA-RL adapts outcome-driven online RL from the LLM domain into a closed-loop robotic training framework suitable for Vision-Language-Action (VLA) models. By utilizing interactive trajectory sampling, binary success rewards, and exploration-enhanced GRPO, it significantly improves data efficiency, generalization,
+  [ICLR2026][Robotics][VLA] SimpleVLA-RL adapts outcome-driven online RL from the LLM domain into a closed-loop robotic training framework suitable for Vision-Language-Action (VLA) models. By utilizing interactive trajectory sampling, binary success rewards, and exploration-enhanced GRPO, it significantly improves data efficiency, generalization, and success rates for long-horizon manipulation across LIBERO, RoboTwin, and real-world robotic tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - GRPO
+  - "ICLR2026"
+  - "Robotics"
+  - "VLA"
+  - "Robot Manipulation"
+  - "Online RL"
+  - "GRPO"
+  - "Sparse Rewards"
 date: 2026-05-08
-content_hash: 738d7441a7fbe45d
+content_hash: 496fe987da9c500c
 ---
+
 # SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -173,10 +177,10 @@ Failure mode analysis reveals that SimpleVLA-RL does not create capability from 
 ## Related Papers
 
 - [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
-- [\[ICLR 2026\] Spatially Guided Training for Vision-Language-Action Model](spatially_guided_training_for_vision-language-action_model.md)
 - [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](../../NeurIPS2025/robotics/the_impact_of_scaling_training_data_on_adversarial_robustness.md)
 - [\[ICLR 2026\] On Entropy Control in LLM-RL Algorithms](on_entropy_control_in_llm-rl_algorithms.md)
 - [\[CVPR 2026\] Training One Model to Master Cross-Level Agentic Actions via Reinforcement Learning](../../CVPR2026/robotics/training_one_model_to_master_cross-level_agentic_actions_via_reinforcement_learn.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 
 </div>
 

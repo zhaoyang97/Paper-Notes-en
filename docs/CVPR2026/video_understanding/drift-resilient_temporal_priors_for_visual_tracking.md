@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Drift-Resilient Temporal Priors for Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Transformer] Ours proposes DTPTrack—a lightweight plug-and-play temporal modeling module that assigns reliability scores to historical frames via a Temporal Reliability Calibrator (TRC) to filter noise, and synthesizes calibrated historical information into dynamic prior tokens via a Temporal Guidance Synthesizer (TGS) to suppress
+  [CVPR 2026][Video Understanding][Visual Tracking] Ours proposes DTPTrack—a lightweight plug-and-play temporal modeling module that assigns reliability scores to historical frames via a Temporal Reliability Calibrator (TRC) to filter noise, and synthesizes calibrated historical information into dynamic prior tokens via a Temporal Guidance Synthesizer (TGS) to suppress tracking drift, achieving SOTA performance across multiple benchmarks.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Transformer
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Visual Tracking"
+  - "Model Drift"
+  - "Temporal Modeling"
+  - "Transformer"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 2250ccd5c92e7784
+content_hash: 408d39219ec5143a
 ---
+
 # Drift-Resilient Temporal Priors for Visual Tracking
 
 **Conference**: CVPR 2026  
@@ -146,7 +151,7 @@ The backbone (DINOv2 ViT) is frozen throughout. Only the DTPTrack module, SSLA a
 - [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
 - [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
-- [\[CVPR 2026\] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking](utptrack_towards_simple_and_unified_token_pruning_for_visual_tracking.md)
+- [\[CVPR 2026\] Toward Low-Cost yet Effective Temporal Learning for UAV Tracking](toward_low-cost_yet_effective_temporal_learning_for_uav_tracking.md)
 
 </div>
 

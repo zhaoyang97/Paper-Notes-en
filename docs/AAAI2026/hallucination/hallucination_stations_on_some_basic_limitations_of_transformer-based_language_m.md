@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models
 description: >-
-  [AAAI 2026][Hallucination Detection][Hallucination] This paper employs computational complexity theory to demonstrate that the per-step inference complexity of Transformer-based LLMs is $O(N^2 \cdot d)$. Grounded in the…
+  [AAAI 2026][Hallucination Detection][Hallucination] This paper employs computational complexity theory to demonstrate that the per-step inference complexity of Transformer-based LLMs is $O(N^2 \cdot d)$. Grounded in the Hartmanis–Stearns Time Hierarchy Theorem, it proves that any computational task exceeding this complexity bound—such as $O(n^3)$ matrix multiplication, $O(n^k)$ token enumeration, or TSP verification—necessarily causes hallucination. Furthermore…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -13,7 +13,7 @@ tags:
   - "Agentic AI"
   - "Verification Impossibility"
 date: 2026-05-08
-content_hash: 715b035e59cfa0b8
+content_hash: ecfc60445b41d608
 ---
 
 # Hallucination Stations: On Some Basic Limitations of Transformer-Based Language Models
@@ -131,8 +131,8 @@ The authors argue that reasoning models (o3, R1) cannot overcome this limitation
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](../../ACL2026/hallucination/benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
 - [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](../../ACL2026/hallucination/mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 - [\[AAAI 2026\] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models](hallucinate_less_by_thinking_more_aspect-based_causal_absten.md)
+- [\[ACL 2026\] Lost in Diffusion: Uncovering Hallucination Patterns and Failure Modes in Diffusion Large Language Models](../../ACL2026/hallucination/lost_in_diffusion_uncovering_hallucination_patterns_and_failure_modes_in_diffusi.md)
 - [\[AAAI 2026\] Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models](verb_mirage_unveiling_and_assessing_verb_concept_hallucinations_in_multimodal_la.md)
-- [\[AAAI 2026\] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](beyond_hallucinations_a_composite_score_for_measuring_reliability_in_open-source.md)
 
 </div>
 

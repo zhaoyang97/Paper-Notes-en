@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play
 description: >-
-  [ICLR 2026][Multimodal VLM][RLVR] Bringing "Who is the Spy" into the visual world—providing real images to Citizens and blank ones to Spies, allowing VLMs to generate training data automatically through multi-role adversarial play. By alternating Self-Play and RLVR optimization (Iterative-SPO), Qwen2.5-VL-7B simultaneously outperforms SOTA models train
+  [ICLR 2026][Multimodal VLM][VLM Self-Evolution] Bringing "Who is the Spy" into the visual world—providing real images to Citizens and blank ones to Spies, allowing VLMs to generate training data automatically through multi-role adversarial play. By alternating Self-Play and RLVR optimization (Iterative-SPO), Qwen2.5-VL-7B simultaneously outperforms SOTA models trained on expensive human-annotated data in reasoning, charts, and vision-centric tasks under a completely zero-anno…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - RLVR
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM Self-Evolution"
+  - "Multi-Agent Self-Play"
+  - "Social Reasoning Games"
+  - "RLVR"
+  - "Zero-Label Training"
 date: 2026-05-08
-content_hash: 56ee22b527f7e198
+content_hash: 932f368e51ca9e64
 ---
+
 # Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Woofs to Words: Towards Intelligent Robotic Guide Dogs with Verbal Communication
 description: >-
-  [AAAI 2026][Robotics][Robotic Guide Dog] This paper proposes a dialogue system for robotic guide dogs that leverages LLMs and a task planner to achieve **Plan Verbalization** and **Scene Verbalization**…
+  [AAAI 2026][Robotics][Robotic Guide Dog] This paper proposes a dialogue system for robotic guide dogs that leverages LLMs and a task planner to achieve **Plan Verbalization** and **Scene Verbalization**, supporting multi-turn natural language dialogue to assist visually impaired users in navigation decision-making. The system's effectiveness is validated through a real-user study and simulation experiments.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Task Planning"
   - "Scene Verbalization"
 date: 2026-05-08
-content_hash: ed975ac31849d1c0
+content_hash: 5ad1954f1ebfc860
 ---
 
 # From Woofs to Words: Towards Intelligent Robotic Guide Dogs with Verbal Communication
@@ -171,10 +171,10 @@ Including planning information increases dialogue length but reduces navigation 
 ## Related Papers
 
 - [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
+- [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](../../CVPR2026/robotics/obstruction_reasoning_for_robotic_grasping.md)
 - [\[AAAI 2026\] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)
 - [\[AAAI 2026\] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)
-- [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
-- [\[ICLR 2026\] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation](../../ICLR2026/robotics/robointer_a_holistic_intermediate_representation_suite_towards_robotic_manipulat.md)
+- [\[ICLR 2026\] Masked Generative Policy for Robotic Control](../../ICLR2026/robotics/masked_generative_policy_for_robotic_control.md)
 
 </div>
 

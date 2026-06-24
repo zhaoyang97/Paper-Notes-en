@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CLAWS: Creativity Detection for LLM-Generated Solutions Using Attention Window of Sections
 description: >-
-  [NeurIPS 2025][AIGC Detection][LLM creativity detection] This paper proposes CLAWS, a method that analyzes the attention weight distribution of LLMs across different prompt sections during mathematical solution generatio…
+  [NeurIPS 2025][AIGC Detection][LLM creativity detection] This paper proposes CLAWS, a method that analyzes the attention weight distribution of LLMs across different prompt sections during mathematical solution generation to classify outputs as "creative," "typical," or "hallucinated," without requiring human evaluation.
 tags:
   - "NeurIPS 2025"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "hallucination detection"
   - "white-box method"
 date: 2026-05-08
-content_hash: fabe7d8fd53f4835
+content_hash: ecff49e63bfa6fd9
 ---
 
 # CLAWS: Creativity Detection for LLM-Generated Solutions Using Attention Window of Sections
@@ -145,11 +145,11 @@ CLAWS is evaluated against five baseline methods across five RLMs (7–8B parame
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 - [\[ICLR 2026\] Death of the Novel(ty): Beyond n-Gram Novelty as a Metric for Textual Creativity](../../ICLR2026/aigc_detection/death_of_the_novelty_beyond_n-gram_novelty_as_a_metric_for_textual_creativity.md)
+- [\[ACL 2025\] Learning to Rewrite: Generalized LLM-Generated Text Detection](../../ACL2025/aigc_detection/learning_to_rewrite_generalized_llm-generated_text_detection.md)
+- [\[ICLR 2026\] RelayFormer: A Unified Local-Global Attention Framework for Scalable Image and Video Manipulation Localization](../../ICLR2026/aigc_detection/relayformer_a_unified_local-global_attention_framework_for_scalable_image_and_vi.md)
 - [\[NeurIPS 2025\] Classical Planning with LLM-Generated Heuristics: Challenging the State of the Art with Python Code](classical_planning_with_llm-generated_heuristics_challenging_the_state_of_the_ar.md)
-- [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](../../ACL2026/aigc_detection/detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
-- [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](../../ICML2026/aigc_detection/black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
+- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 
 </div>
 

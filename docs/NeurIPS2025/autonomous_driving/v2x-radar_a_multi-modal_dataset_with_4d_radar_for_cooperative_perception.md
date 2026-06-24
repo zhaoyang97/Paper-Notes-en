@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception
 description: >-
-  [NeurIPS 2025][Autonomous Driving][cooperative perception] This paper presents V2X-Radar, the first large-scale real-world multi-modal vehicle-to-everything (V2X) cooperative perception dataset incorporating 4D radar…
+  [NeurIPS 2025 Spotlight][Autonomous Driving][cooperative perception] This paper presents V2X-Radar, the first large-scale real-world multi-modal vehicle-to-everything (V2X) cooperative perception dataset incorporating 4D radar, LiDAR, and multi-view camera data. The dataset covers diverse weather and lighting conditions, providing 20K LiDAR frames, 40K camera images, 20K 4D radar scans, and 350K annotated bounding boxes, along with comprehensive benchmarks across three sub-da…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Autonomous Driving"
   - "cooperative perception"
   - "4D radar"
@@ -12,7 +12,7 @@ tags:
   - "multi-modal dataset"
   - "3D object detection"
 date: 2026-05-08
-content_hash: 4713b7ae97bda12a
+content_hash: d9775773177c9d0c
 ---
 
 # V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception
@@ -148,10 +148,10 @@ Cooperative perception vs. single-vehicle perception (vehicle category, AP@0.5):
 ## Related Papers
 
 - [\[NeurIPS 2025\] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception](urbaning-v2x_a_large-scale_multi-vehicle_multi-infrastructure_dataset_across_mul.md)
+- [\[CVPR 2025\] V2X-R: Cooperative LiDAR-4D Radar Fusion with Denoising Diffusion for 3D Object Detection](../../CVPR2025/autonomous_driving/v2x-r_cooperative_lidar-4d_radar_fusion_with_denoising_diffusion_for_3d_object_d.md)
+- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](../../CVPR2026/autonomous_driving/dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
+- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](../../CVPR2026/autonomous_driving/rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
 - [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](../../ICCV2025/autonomous_driving/uavscenes_a_multi-modal_dataset_for_uavs.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](../../ICCV2025/autonomous_driving/cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[AAAI 2026\] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving](../../AAAI2026/autonomous_driving/radarmp_motion_perception_for_4d_mmwave_radar_in_autonomous_driving.md)
-- [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](../../ICCV2025/autonomous_driving/cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
 
 </div>
 

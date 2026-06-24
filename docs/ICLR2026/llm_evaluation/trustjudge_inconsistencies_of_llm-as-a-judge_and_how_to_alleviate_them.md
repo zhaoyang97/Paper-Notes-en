@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] TrustJudge systematically reveals two long-overlooked "self-contradictions" within the LLM-as-a-judge framework: conflicts between scoring and pairwise comparisons, and transitivity cycles in pairwise comparisons. By attributing root causes to information loss in discrete scoring and ambiguous ties, the authors introdu
+  [ICLR 2026][LLM Evaluation][scoring inconsistency] TrustJudge systematically reveals two long-overlooked "self-contradictions" within the LLM-as-a-judge framework: conflicts between scoring and pairwise comparisons, and transitivity cycles in pairwise comparisons. By attributing root causes to information loss in discrete scoring and ambiguous ties, the authors introduce "distribution-sensitive scoring + likelihood-aware aggregation" to significantly reduce inconsistency rate…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "scoring inconsistency"
+  - "transitivity"
+  - "probabilistic scoring"
+  - "perplexity"
 date: 2026-05-08
-content_hash: 6faad0d5038836c6
+content_hash: 334a07359c60b3f9
 ---
+
 # TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them
 
 **Conference**: ICLR 2026  

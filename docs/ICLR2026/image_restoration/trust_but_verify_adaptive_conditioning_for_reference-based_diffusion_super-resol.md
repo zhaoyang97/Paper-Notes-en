@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Reference-based Super-Resolution] Ada-RefSR is proposed as a single-step reference-guided diffusion super-resolution framework based on the "Trust but Verify" principle. It utilizes an Adaptive Implicit Correlation Gating (AICG) mechanism to leverage reliable reference information while suppressing erroneous fusion, with only a 0.13% increase in comput
+  [ICLR 2026][Image Restoration][Reference-based Super-Resolution] Ada-RefSR is proposed as a single-step reference-guided diffusion super-resolution framework based on the "Trust but Verify" principle. It utilizes an Adaptive Implicit Correlation Gating (AICG) mechanism to leverage reliable reference information while suppressing erroneous fusion, with only a 0.13% increase in computational overhead.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Reference-based Super-Resolution
-  - diffusion model
-  - Adaptive Gating
-  - Implicit Correlation
-  - Single-step Diffusion
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Reference-based Super-Resolution"
+  - "diffusion model"
+  - "Adaptive Gating"
+  - "Implicit Correlation"
+  - "Single-step Diffusion"
 date: 2026-05-08
-content_hash: 3ee12a59d0cf8cd4
+content_hash: 8fe705329beb73b7
 ---
+
 # Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -190,9 +191,9 @@ Where $\mathcal{L}_{rec}$ is the L2 reconstruction loss, $\mathcal{L}_{per}$ is 
 
 - [\[ICLR 2026\] PlantRSR: A New Plant Dataset and Method for Reference-based Super-Resolution](plantrsr_a_new_plant_dataset_and_method_for_reference-based_super-resolution.md)
 - [\[ICLR 2026\] LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion](livemoments_reselected_key_photo_restoration_in_live_photos_via_reference-guided.md)
-- [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
+- [\[ICLR 2026\] KernelFusion: Zero-Shot Blind Super-Resolution via Patch Diffusion](kernelfusion_zero-shot_blind_super-resolution_via_patch_diffusion.md)
 - [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
-- [\[ICLR 2026\] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning](noise-adaptive_diffusion_sampling_for_inverse_problems_without_task-specific_tun.md)
+- [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
 
 </div>
 

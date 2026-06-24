@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia
 description: >-
-  [AAAI 2026][Credit Scoring] This paper proposes an end-to-end cash flow underwriting workflow based on bank transaction data and constructs the first Malaysian MSME bank statement dataset (611 loan records). It demonstra…
+  [AAAI 2026][Credit Scoring] This paper proposes an end-to-end cash flow underwriting workflow based on bank transaction data and constructs the first Malaysian MSME bank statement dataset (611 loan records). It demonstrates that features derived from bank transactions improve a logistic regression model's AUROC from 0.672 to 0.850 compared to traditional application information alone, significantly enhancing credit assessment capability for MSMEs lacking credit histories.
 tags:
   - "AAAI 2026"
   - "Credit Scoring"
@@ -11,7 +11,7 @@ tags:
   - "MSMEs"
   - "Cash Flow Underwriting"
 date: 2026-05-08
-content_hash: 26acd07219da5c3c
+content_hash: 37d2f56e2d0b43be
 ---
 
 # Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia
@@ -193,11 +193,11 @@ Nine out of ten bank statement features rank higher than all application form fe
 
 ## Related Papers
 
-- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](../../ICML2026/others/cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
 - [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
+- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](../../ICML2026/others/cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
+- [\[ACL 2025\] Statistical Deficiency for Task Inclusion Estimation](../../ACL2025/others/statistical_deficiency_task_inclusion.md)
+- [\[ACL 2025\] Advancing Sequential Numerical Prediction in Autoregressive Models](../../ACL2025/others/advancing_sequential_numerical_prediction_in_autoregressive_models.md)
 - [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](provably_data-driven_projection_method_for_quadratic_programming.md)
-- [\[AAAI 2026\] Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics](data_complexity_of_querying_description_logic_knowledge_bases_under_cost-based_s.md)
-- [\[AAAI 2026\] Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering](break_the_tie_learning_cluster-customized_category_relationships_for_categorical.md)
 
 </div>
 

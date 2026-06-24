@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] CLIP-FMoE scales CLIP using a "Fused MoE" pipeline where specialized experts are pre-trained via two-level semantic clustering and subsequently frozen while training the router. By employing a Fusion Gate to fuse the pre-trained MLP with domain-specific experts per-token, the model enhances image-text retrieval and lon
+  [ICLR 2026][Multimodal VLM][CLIP] CLIP-FMoE scales CLIP using a "Fused MoE" pipeline where specialized experts are pre-trained via two-level semantic clustering and subsequently frozen while training the router. By employing a Fusion Gate to fuse the pre-trained MLP with domain-specific experts per-token, the model enhances image-text retrieval and long-text understanding while preserving the original CLIP's zero-shot classification capabilities.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Mixture-of-Experts"
+  - "Vision-Language Pre-training"
+  - "Expert Specialization"
+  - "Long-text Retrieval"
 date: 2026-05-08
-content_hash: 6b591405d62fe0d7
+content_hash: 63729dc5d5cfa8dd
 ---
+
 # CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,10 @@ Ablations confirm that ICCL produces complementary experts rather than redundant
 
 ## Related Papers
 
-- [\[ICLR 2026\] UniLIP：改造 CLIP 以统一多模态理解、生成与编辑](unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
 - [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](../../ICML2026/multimodal_vlm/toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
-- [\[ICLR 2026\] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification](unlocking_the_power_of_co-occurrence_in_clip_a_dualprompt-driven_method_for_trai.md)
 - [\[ICLR 2026\] Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts](massively_multimodal_foundation_models_a_framework_for_capturing_interactions_wi.md)
+- [\[ICLR 2026\] UniLIP: Revamping CLIP to Unify Multimodal Understanding, Generation, and Editing](unilip_adapting_clip_for_unified_multimodal_understanding_generation_and_editing.md)
+- [\[ICLR 2026\] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification](unlocking_the_power_of_co-occurrence_in_clip_a_dualprompt-driven_method_for_trai.md)
 - [\[ICML 2025\] LADA: Scalable Label-Specific CLIP Adapter for Continual Learning](../../ICML2025/multimodal_vlm/lada_scalable_label-specific_clip_adapter_for_continual_learning.md)
 
 </div>

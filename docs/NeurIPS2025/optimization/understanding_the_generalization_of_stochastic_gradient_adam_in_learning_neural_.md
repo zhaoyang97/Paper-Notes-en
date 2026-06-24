@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks
 description: >-
-  [NeurIPS 2025][Optimization][Adam] This work presents the first theoretical analysis of the generalization behavior of mini-batch Adam. It proves that large-batch Adam/AdamW converges to solutions with high test error ev…
+  [NeurIPS 2025][Optimization][Adam] This work presents the first theoretical analysis of the generalization behavior of mini-batch Adam. It proves that large-batch Adam/AdamW converges to solutions with high test error even with weight decay, whereas small-batch variants achieve near-zero test error through a combination of implicit regularization from stochastic gradients and explicit regularization from weight decay. Moreover, the effective weight decay upper bound for Adam…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "generalization"
   - "feature learning"
 date: 2026-05-08
-content_hash: be1d7d9ec7a2f59c
+content_hash: 765a2a4e95550a71
 ---
 
 # Understanding the Generalization of Stochastic Gradient Adam in Learning Neural Networks
@@ -140,9 +140,9 @@ This work presents the first theoretical analysis of the generalization behavior
 
 - [\[NeurIPS 2025\] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)
 - [\[NeurIPS 2025\] Understanding Adam Requires Better Rotation Dependent Assumptions](understanding_adam_requires_better_rotation_dependent_assumptions.md)
-- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
 - [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
+- [\[NeurIPS 2025\] Unveiling m-Sharpness Through the Structure of Stochastic Gradient Noise](unveiling_m-sharpness_through_the_structure_of_stochastic_gradient_noise.md)
 
 </div>
 

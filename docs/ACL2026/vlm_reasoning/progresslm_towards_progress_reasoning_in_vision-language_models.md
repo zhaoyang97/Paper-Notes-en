@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PROGRESSLM: Towards Progress Reasoning in Vision-Language Models
 description: >-
-  [ACL 2026][vlm_reasoning][Embodied AI] This paper defines the ability to "judge task completion stages from a single-frame observation" as the VLM's progress reasoning capability. It constructs Progress-Bench and ProgressLM-45K, demonstrating that explicit learning of "episodic retrieval + mental simulation" is more stable than simple prompt-based reasoning
+  [ACL2026][VLM Reasoning][Progress Reasoning] This paper defines the ability to "judge task completion stages from a single-frame observation" as the VLM's progress reasoning capability. It constructs Progress-Bench and ProgressLM-45K, demonstrating that explicit learning of "episodic retrieval + mental simulation" is more stable than simple prompt-based reasoning.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Embodied AI
+  - "ACL2026"
+  - "VLM Reasoning"
+  - "Progress Reasoning"
+  - "VLM Evaluation"
+  - "Embodied AI"
+  - "Two-Stage Reasoning"
+  - "RL Fine-tuning"
 date: 2026-05-08
-content_hash: d3b58c2745a83cb6
+content_hash: c4044121d6bcd0ab
 ---
+
 # PROGRESSLM: Towards Progress Reasoning in Vision-Language Models
 
 **Conference**: ACL2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] ShieldedCode is proposed as the first protection-aware code representation learning framework. By utilizing hierarchical dependency modeling (intra-instruction, preceding, and inter-instruction layers) and joint functional-aware plus protection-aware contrastive learning, it enables LLMs to generate, compare, and reaso
+  [ICLR 2026][Code Intelligence][Virtual Machine Protection] ShieldedCode is proposed as the first protection-aware code representation learning framework. By utilizing hierarchical dependency modeling (intra-instruction, preceding, and inter-instruction layers) and joint functional-aware plus protection-aware contrastive learning, it enables LLMs to generate, compare, and reason about virtual machine protected code. It outperforms existing methods in VM code generation (Pass@1…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Virtual Machine Protection"
+  - "Code Representation Learning"
+  - "Contrastive Learning"
+  - "Polymorphic Generation"
+  - "Software Security"
 date: 2026-05-08
-content_hash: 0614afaf93ea3e06
+content_hash: a11988266b18dcc2
 ---
+
 # ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code
 
 **Conference**: ICLR 2026  
@@ -155,10 +161,10 @@ $$L_{\text{vmp}} = L_{\text{lm}} + \lambda(L_{\text{fcl}} + L_{\text{pcl}})$$
 ## Related Papers
 
 - [\[ICLR 2026\] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning](paper2code_automating_code_generation_from_scientific_papers_in_machine_learning.md)
+- [\[ICML 2026\] UniRTL: Unified Code and Graph for Robust RTL Representation Learning](../../ICML2026/code_intelligence/unirtl_unifying_code_and_graph_for_robust_rtl_representation_learning.md)
 - [\[ICML 2025\] Robust Learning of Diverse Code Edits (NextCoder)](../../ICML2025/code_intelligence/robust_learning_of_diverse_code_edits.md)
 - [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
 - [\[ICLR 2026\] The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning](the_natural_geometry_of_code_hyperbolic_representation_learning_for_program_reas.md)
-- [\[ICLR 2026\] Learning to Reason without External Rewards](learning_to_reason_without_external_rewards.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition
 description: >-
-  [ACL 2026][Audio & Speech][Whisper] This paper proposes Pseudo2Real, a parameter space correction method that calculates a "correction vector" by computing the weight difference between a real-label model and a pseudo-label model in the source domain. This vector is then applied to a target domain model fine-tuned on pseudo-labels to rectify systematic p
+  [ACL 2026 Findings][Audio & Speech][Pseudo-Label Correction] This paper proposes Pseudo2Real, a parameter space correction method that calculates a "correction vector" by computing the weight difference between a real-label model and a pseudo-label model in the source domain. This vector is then applied to a target domain model fine-tuned on pseudo-labels to rectify systematic pseudo-label biases, achieving up to a 35% relative Word Error Rate (WER) reduction across ten Afric…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Whisper
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Pseudo-Label Correction"
+  - "Task Arithmetic"
+  - "Parameter Space Correction"
+  - "Accent Adaptation"
+  - "Whisper"
 date: 2026-05-08
-content_hash: 169b576efaf6f607
+content_hash: a53d34129f72d50b
 ---
+
 # Pseudo2Real: Task Arithmetic for Pseudo-Label Correction in Automatic Speech Recognition
 
 **Conference**: ACL 2026 Findings  
@@ -146,7 +151,7 @@ The evaluation is designed to be challenging: the 10 most frequent accents in Af
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

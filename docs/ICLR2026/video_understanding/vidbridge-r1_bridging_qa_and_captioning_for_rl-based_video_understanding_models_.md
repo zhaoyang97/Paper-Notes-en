@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] VidBridge-R1: Bridging QA and Captioning for RL-based Video Understanding Models with Intermediate Proxy Tasks
 description: >-
-  [ICLR 2026][Video Understanding][Reinforcement Learning] VidBridge-R1 discovers a conflict between convergent answering in Video QA and divergent description in video captioning during RL training. It bridges these through two intermediate proxy tasks, DarkEventInfer and MixVidQA, simultaneously enhancing QA, reasoning, and captioning capabilities within a Reason-Then-Respon
+  [ICLR 2026][Video Understanding][Reinforcement Learning] VidBridge-R1 discovers a conflict between convergent answering in Video QA and divergent description in video captioning during RL training. It bridges these through two intermediate proxy tasks, DarkEventInfer and MixVidQA, simultaneously enhancing QA, reasoning, and captioning capabilities within a Reason-Then-Respond video model.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Reinforcement Learning"
+  - "Video QA"
+  - "Video Captioning"
+  - "Intermediate Proxy Tasks"
 date: 2026-05-08
-content_hash: acbcb1f8b64c06cc
+content_hash: 83e5d51bb92e9990
 ---
+
 # VidBridge-R1: Bridging QA and Captioning for RL-based Video Understanding Models with Intermediate Proxy Tasks
 
 **Conference**: ICLR 2026  
@@ -156,6 +160,7 @@ The "VideoQA + Caption" ablation confirms the "objective conflict": mixing these
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -164,7 +169,7 @@ The "VideoQA + Caption" ablation confirms the "objective conflict": mixing these
 - [\[ICLR 2026\] SPIKE-RL: Video-LLMs Meet Bayesian Surprise](spike-rl_video-llms_meet_bayesian_surprise.md)
 - [\[CVPR 2026\] LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding](../../CVPR2026/video_understanding/longvideo-r1_smart_navigation_for_low-cost_long_video_understanding.md)
 - [\[ICLR 2026\] CaReBench: A Fine-grained Benchmark for Video Captioning and Retrieval](carebench_a_fine-grained_benchmark_for_video_captioning_and_retrieval.md)
-- [\[ICLR 2026\] VUDG: A Dataset for Video Understanding Domain Generalization](vudg_a_dataset_for_video_understanding_domain_generalization.md)
+- [\[ICCV 2025\] TOGA: Temporally Grounded Open-Ended Video QA with Weak Supervision](../../ICCV2025/video_understanding/toga_temporally_grounded_open-ended_video_qa_with_weak_supervision.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] The LaDA framework is proposed to decouple continuous 7-DoF actions into interpretable primitives (translation, rotation, and gripper) using natural language as a semantic bridge. By employing soft-label contrastive learning to align cross-task action representations in a shared embedding space, the model achieves a 93
+  [CVPR 2026][Robotics][Action Decoupling] The LaDA framework is proposed to decouple continuous 7-DoF actions into interpretable primitives (translation, rotation, and gripper) using natural language as a semantic bridge. By employing soft-label contrastive learning to align cross-task action representations in a shared embedding space, the model achieves a 93.6% success rate on LIBERO with only 0.6B parameters, surpassing all baselines ranging from 1.3B to 8.5B parameters.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "Action Decoupling"
+  - "Language Semantic Bridge"
+  - "Soft-label Contrastive Learning"
+  - "VLA"
+  - "Cross-task Generalization"
 date: 2026-05-08
-content_hash: beb3b0cc14621db7
+content_hash: 6bb0c4fe1250c4cf
 ---
+
 # Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)
 
 **Conference**: CVPR 2026  
@@ -161,7 +166,7 @@ The final loss is $\mathcal{L}_{total} = w_{CL} \mathcal{L}_{CL} + w_{IL} \mathc
 - [\[CVPR 2026\] INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic Manipulation](insight_bench_towards_grounded_in-situ_guidance_for_robotic_manipulation.md)
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
 - [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
-- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 
 </div>
 

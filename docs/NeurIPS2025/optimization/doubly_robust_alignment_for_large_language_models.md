@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Doubly Robust Alignment for Large Language Models
 description: >-
-  [NeurIPS 2025][Optimization][RLHF] DRPO draws on doubly robust estimation from causal inference to propose a preference optimization algorithm that maintains consistency whenever either the preference model or the refere…
+  [NeurIPS 2025][Optimization][RLHF] DRPO draws on doubly robust estimation from causal inference to propose a preference optimization algorithm that maintains consistency whenever either the preference model or the reference policy is correctly specified, outperforming PPO/DPO and their variants both theoretically and empirically.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "model robustness"
 date: 2026-05-08
-content_hash: 159822d7c7b56296
+content_hash: 96971be6ce45bf02
 ---
 
 # Doubly Robust Alignment for Large Language Models
@@ -58,16 +58,16 @@ Given a dataset $\mathcal{D} = \{(X, Y^{(1)}, Y^{(2)}, Z)\}$ (prompts, two respo
     - **Function**: Combine DM and IS to construct an estimator that is robust to misspecification of either model.
     - **Mechanism**: The estimating function is
 $$\psi = \frac{1}{2}\sum_{a=1}^2 \mathbb{E}_{y \sim \pi}[\hat{g}(X,y,Y^{(a)})] + \frac{1}{2}\sum_{a=1}^2 (-1)^{a-1} \frac{\pi(Y^{(a)}|X)}{\hat{\pi}_\text{ref}(Y^{(a)}|X)}[Z - \hat{g}(X,Y^{(1)},Y^{(2)})]$$
-     The first term is the DM component; the second is an augmentation term that uses the preference residual $Z - \hat{g}$ to correct the bias of the DM.
-   - **Design Motivation**: When $\hat{g} = g^*$, the augmentation term has zero expectation (DM is already correct). When $\hat{\pi}_\text{ref} = \pi_\text{ref}$, the augmentation term automatically recovers the IS estimate. Correctness of either model guarantees consistency.
-   - **Distinction from bandit DR**: In pairwise comparisons, each data tuple is used twice (in both directions), effectively reducing variance.
+      The first term is the DM component; the second is an augmentation term that uses the preference residual $Z - \hat{g}$ to correct the bias of the DM.
+    - **Design Motivation**: When $\hat{g} = g^*$, the augmentation term has zero expectation (DM is already correct). When $\hat{\pi}_\text{ref} = \pi_\text{ref}$, the augmentation term automatically recovers the IS estimate. Correctness of either model guarantees consistency.
+    - **Distinction from bandit DR**: In pairwise comparisons, each data tuple is used twice (in both directions), effectively reducing variance.
 
 3. **DRPO Preference Optimization**
 
     - **Function**: Solve for the optimal policy using the DR estimator.
     - **Mechanism**:
 $$\hat{\pi} = \arg\max_{\pi \in \Pi} \{\hat{p}_\text{DR}(\pi) - \beta \mathbb{E}_X D_\text{KL}[\pi(\cdot|X) \| \hat{\pi}_\text{ref}(\cdot|X)]\}$$
-   - **Implementation Details**: (a) IS ratios are clipped to prevent extreme values; (b) a surrogate objective is designed to support Monte Carlo sampling from the target policy; (c) GRPO-style variance reduction is applied to the KL divergence term.
+    - **Implementation Details**: (a) IS ratios are clipped to prevent extreme values; (b) a surrogate objective is designed to support Monte Carlo sampling from the target policy; (c) GRPO-style variance reduction is applied to the KL divergence term.
 
 ### Theoretical Guarantees
 - **Theorem 2 (MSE)**: The MSE of the DR estimator equals the semiparametric efficiency bound (SEB) plus a product bias term $O(\|\hat{\pi}_\text{ref}/\pi_\text{ref}-1\|^2 \cdot \|\hat{g}-g^*\|^2)$, so the bias is the product of the two individual errors.

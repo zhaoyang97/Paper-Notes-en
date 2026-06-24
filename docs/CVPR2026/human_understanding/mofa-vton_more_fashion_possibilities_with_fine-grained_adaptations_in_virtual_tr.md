@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] MOFA-VTON enables users to control "how to style tops and bottoms" (e.g., tucked in, tucked out, or various hemline styles) using a single hand-drawn curve sketch. It converts the sketch into a "dual-region mask" for layout guidance and utilizes "Layout Adaptation blocks" to spatially align upper and lower body feature
+  [CVPR2026][Human Understanding][Virtual Try-On] MOFA-VTON enables users to control "how to style tops and bottoms" (e.g., tucked in, tucked out, or various hemline styles) using a single hand-drawn curve sketch. It converts the sketch into a "dual-region mask" for layout guidance and utilizes "Layout Adaptation blocks" to spatially align upper and lower body features at the feature level. It achieves SOTA image quality on VITON-HD and DressCode while unlocking styling diversi…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Virtual Try-On"
+  - "Controllable Generation"
+  - "Dual-Region Mask"
+  - "Layout Adjustment"
+  - "User Sketch Interaction"
 date: 2026-05-08
-content_hash: 899f91a391a941ee
+content_hash: e3934777fcd1f8ca
 ---
+
 # MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On
 
 **Conference**: CVPR2026  
@@ -143,10 +149,17 @@ Three variants removing the dual-region mask, LA block, and feature expansion/fi
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile_vton_ondevice_virtual_tryon.md)
+- [\[CVPR 2026\] MV-Fashion: Towards Enabling Virtual Try-On and Size Estimation with Multi-View Paired Data](mv-fashion_towards_enabling_virtual_try-on_and_size_estimation_with_multi-view_p.md)
+- [\[CVPR 2026\] RefTon: Reference Person Shot Assist Virtual Try-on](refton_reference_person_shot_assist_virtual_try-on.md)
+- [\[CVPR 2025\] VTON 360: High-Fidelity Virtual Try-On from Any Viewing Direction](../../CVPR2025/human_understanding/vton_360_high-fidelity_virtual_try-on_from_any_viewing_direction.md)
+- [\[CVPR 2026\] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](mobind_motion_binding_for_fine-grained_imu-video_pose_alignment.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Mobile-VTON: High-Fidelity On-Device Virtual Try-On](mobile_vton_ondevice_virtual_tryon.md)

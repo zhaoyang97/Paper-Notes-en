@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][sparse reward] This paper proposes DISCOVER, a goal selection strategy for sparse-reward long-horizon RL that simultaneously balances achievability, novelty…
+  [NeurIPS 2025][Reinforcement Learning][sparse reward] This paper proposes DISCOVER, a goal selection strategy for sparse-reward long-horizon RL that simultaneously balances achievability, novelty, and relevance to construct curricula directed toward a target task. The authors theoretically prove that the number of steps to reach the goal scales linearly with goal distance rather than with the volume of the search space, and demonstrate significant improvements over prior stat…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "curriculum learning"
   - "goal-conditioned RL"
 date: 2026-05-08
-content_hash: e9e15ab908554351
+content_hash: 5b6c8dd0f974e966
 ---
 
 # DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning
@@ -156,11 +156,11 @@ Methods such as TD3 + curiosity, TD3 + RND, and TD3 + count-based exploration fa
 
 ## Related Papers
 
-- [\[ICLR 2026\] Thermodynamics of Reinforcement Learning Curricula](../../ICLR2026/reinforcement_learning/thermodynamics_of_reinforcement_learning_curricula.md)
 - [\[NeurIPS 2025\] Learning Interestingness in Automated Mathematical Theory Formation](learning_interestingness_in_automated_mathematical_theory_formation.md)
 - [\[NeurIPS 2025\] Risk-Averse Total-Reward Reinforcement Learning](risk-averse_total-reward_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
 - [\[ICLR 2026\] ARM-FM: Automated Reward Machines via Foundation Models for Compositional Reinforcement Learning](../../ICLR2026/reinforcement_learning/arm-fm_automated_reward_machines_via_foundation_models_for_compositional_reinfor.md)
+- [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](../../ICLR2026/reinforcement_learning/preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
 
 </div>
 

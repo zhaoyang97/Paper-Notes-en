@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM Evaluation][MLE Agent] MLE-Smith utilizes a three-stage "generation–verification–execution" multi-agent pipeline to automatically transform raw datasets into competition-style Machine Learning Engineering (MLE) tasks. It produces 606 high-quality, executable, and discriminative benchmark tasks without human intervention.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - MLE Agent
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "MLE Agent"
+  - "Automated Task Generation"
+  - "Multi-agent Pipeline"
+  - "Benchmark Construction"
+  - "Verification Mechanism"
 date: 2026-05-08
-content_hash: 6cc557616b5e4440
+content_hash: 7445ce4b7b69ed85
 ---
+
 # MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline
 
 **Conference**: ICLR 2026  

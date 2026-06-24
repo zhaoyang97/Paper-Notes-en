@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Data-to-Energy Stochastic Dynamics
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes the first "data-to-energy" Schrödinger Bridge (SB) solver: when the target distribution is only given as an unnormalized density (energy function) and no samples are available, the classic Iterative Proportional Fitting (IPF) is generalized to the data-free setting. By replacing the maximum likeliho
+  [ICLR2026][Probabilistic Methods][Schrödinger Bridge] This paper proposes the first "data-to-energy" Schrödinger Bridge (SB) solver: when the target distribution is only given as an unnormalized density (energy function) and no samples are available, the classic Iterative Proportional Fitting (IPF) is generalized to the data-free setting. By replacing the maximum likelihood step—which traditionally requires samples—with an off-policy reinforcement learning loss (log-variance…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Probabilistic Methods"
+  - "Generative Modeling"
+  - "Stochastic Optimal Transport"
+  - "Schrödinger Bridge"
+  - "Iterative Proportional Fitting"
+  - "Diffusion Sampler"
+  - "off-policy Reinforcement Learning"
+  - "data-free"
 date: 2026-05-08
-content_hash: ca9251f9a3957831
+content_hash: 139a600899d48470
 ---
+
 # Data-to-Energy Stochastic Dynamics
 
 **Conference**: ICLR2026  
@@ -155,8 +163,8 @@ Ablation of off-policy techniques on SN-GAN outsourced sampling (learning single
 - [\[ICLR 2026\] Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint](pseudo-non-linear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
 - [\[ICLR 2026\] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging](improved_high-dimensional_estimation_with_langevin_dynamics_and_stochastic_weigh.md)
 - [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
-- [\[ICLR 2026\] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data](fast_escape_slow_convergence_learning_dynamics_of_phase_retrieval_under_power-la.md)
 - [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](lipschitz_bandits_with_stochastic_delayed_feedback.md)
+- [\[ICLR 2026\] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data](fast_escape_slow_convergence_learning_dynamics_of_phase_retrieval_under_power-la.md)
 
 </div>
 

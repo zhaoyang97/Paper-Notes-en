@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training
 description: >-
-  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Easi3R, a training-free plug-and-play method that analyzes and manipulates the implicit motion information encoded in DUSt3R's cross-attention layers to achie…
+  [ICCV 2025][3D Vision][4D Reconstruction] This paper proposes Easi3R, a training-free plug-and-play method that analyzes and manipulates the implicit motion information encoded in DUSt3R's cross-attention layers to achieve dynamic object segmentation, camera pose estimation, and 4D dense point cloud reconstruction.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Segmentation"
   - "Training-Free"
 date: 2026-05-08
-content_hash: c2b87dede1a8236f
+content_hash: 81628f7832899058
 ---
 
 # Easi3R: Estimating Disentangled Motion from DUSt3R Without Training
@@ -123,9 +123,9 @@ Easi3R surpasses methods that require training or fine-tuning on dynamic data ac
 
 - [\[ICCV 2025\] Estimating 2D Camera Motion with Hybrid Motion Basis](estimating_2d_camera_motion_with_hybrid_motion_basis.md)
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)
+- [\[CVPR 2025\] Estimating Body and Hand Motion in an Ego-sensed World](../../CVPR2025/3d_vision/estimating_body_and_hand_motion_in_an_ego-sensed_world.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
 - [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
-- [\[ICCV 2025\] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors](strandhead_text_to_hair-disentangled_3d_head_avatars_using_human-centric_priors.md)
 
 </div>
 

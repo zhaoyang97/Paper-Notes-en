@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Photorealistic and Efficient Bokeh Rendering via Diffusion Framework
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] MagicBokeh unifies "Super-resolution for high digital zoom" and "Bokeh rendering" within a single-step diffusion framework. It resolves optimization conflicts between the two tasks through an alternating training strategy and focus-aware masked attention, while employing a degradation-aware depth module to estimate rel
+  [CVPR 2026][Image Generation][Bokeh Rendering] MagicBokeh unifies "Super-resolution for high digital zoom" and "Bokeh rendering" within a single-step diffusion framework. It resolves optimization conflicts between the two tasks through an alternating training strategy and focus-aware masked attention, while employing a degradation-aware depth module to estimate reliable disparity maps from low-quality inputs. The model achieves more realistic bokeh than "SR followed by Bokeh"…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Bokeh Rendering"
+  - "Single-step Diffusion"
+  - "Super-resolution"
+  - "Focus-aware Attention"
+  - "Depth Estimation"
 date: 2026-05-08
-content_hash: ad0f37bab9c637d3
+content_hash: 80753abf08dab509
 ---
+
 # Towards Photorealistic and Efficient Bokeh Rendering via Diffusion Framework
 
 **Conference**: CVPR 2026  
@@ -145,8 +151,8 @@ Tested on EBB400-LQ: FAMA = Focus-aware Masked Attention, Strategy = Alternating
 - [\[CVPR 2026\] IntroSVG: Learning from Rendering Feedback for Text-to-SVG Generation via an Introspective Generator-Critic Framework](introsvg_learning_from_rendering_feedback_for_text-to-svg_generation_via_an_intr.md)
 - [\[CVPR 2026\] RenderFlow: Single-Step Neural Rendering via Flow Matching](renderflow_single-step_neural_rendering_via_flow_matching.md)
 - [\[CVPR 2026\] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling](ani3dhuman_photorealistic_3d_human_animation_with_self-guided_stochastic_samplin.md)
-- [\[CVPR 2025\] EasyCraft: A Robust and Efficient Framework for Automatic Avatar Crafting](../../CVPR2025/image_generation/easycraft_a_robust_and_efficient_framework_for_automatic_avatar_crafting.md)
 - [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
+- [\[CVPR 2025\] EasyCraft: A Robust and Efficient Framework for Automatic Avatar Crafting](../../CVPR2025/image_generation/easycraft_a_robust_and_efficient_framework_for_automatic_avatar_crafting.md)
 
 </div>
 

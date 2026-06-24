@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] STORM: Segment, Track, and Object Re-Localization from a Single Image
 description: >-
-  [ICML 2026][Video Understanding][Reference-conditioned 6D tracking] STORM proposes a 6D pose tracking framework that "runs with only a single reference image": it utilizes Hierarchical Spatial Fusion Attention (HSFA) for reference-query feature alignment (producing segmentation masks + SAM3D meshes) and trains a Tracking Verifier using BCE binary classification. The negative logit is d
+  [ICML 2026][Video Understanding][Reference-conditioned 6D tracking] STORM proposes a 6D pose tracking framework that "runs with only a single reference image": it utilizes Hierarchical Spatial Fusion Attention (HSFA) for reference-query feature alignment (producing segmentation masks + SAM3D meshes) and trains a Tracking Verifier using BCE binary classification. The negative logit is defined as the energy score $E=-g_\theta$, and re-localization is automatically triggered whe…
 tags:
-  - ICML 2026
-  - Video Understanding
-  - Reference-conditioned 6D tracking
-  - HSFA
-  - Tracking verifier
-  - Energy-like score
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Reference-conditioned 6D tracking"
+  - "HSFA"
+  - "Tracking verifier"
+  - "Energy-like score"
+  - "Zero-shot registration"
 date: 2026-05-08
-content_hash: 903602a76864dad0
+content_hash: 1ebd535b90a78a6d
 ---
+
 # STORM: Segment, Track, and Object Re-Localization from a Single Image
 
 **Conference**: ICML 2026  
@@ -161,8 +163,8 @@ BOP instance segmentation (Mean AP across 5 datasets, annotation-free segment):
 
 ## Related Papers
 
-- [\[CVPR 2026\] TGTrack: Temporal Generative Learning for Unified Single Object Tracking](../../CVPR2026/video_understanding/tgtrack_temporal_generative_learning_for_unified_single_object_tracking.md)
 - [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](../../CVPR2026/video_understanding/uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
+- [\[CVPR 2026\] TGTrack: Temporal Generative Learning for Unified Single Object Tracking](../../CVPR2026/video_understanding/tgtrack_temporal_generative_learning_for_unified_single_object_tracking.md)
 - [\[CVPR 2026\] Out of Sight, Out of Track: Adversarial Attacks on Propagation-based Multi-Object Trackers via Query State Manipulation](../../CVPR2026/video_understanding/out_of_sight_out_of_track_adversarial_attacks_on_propagation-based_multi-object_.md)
 - [\[CVPR 2025\] MUST: The First Dataset and Unified Framework for Multispectral UAV Single Object Tracking](../../CVPR2025/video_understanding/must_the_first_dataset_and_unified_framework_for_multispectral_uav_single_object.md)
 - [\[CVPR 2025\] FC-Track: Overlap-Aware Post-Association Correction for Online Multi-Object Tracking](../../CVPR2025/video_understanding/fc-track_overlap-aware_post-association_correction_for_online_multi-object_track.md)

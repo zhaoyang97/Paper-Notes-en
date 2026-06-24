@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] PosterOmni decomposes "image-to-poster" generation into six tasks across two categories: local editing (expansion/inpainting/scaling/identity preservation) and global creation (layout/style transfer). It first trains local and global experts, then integrates them into a single student model via task distillation. Final
+  [CVPR 2026][Image Generation][Image-to-Poster Generation] PosterOmni decomposes "image-to-poster" generation into six tasks across two categories: local editing (expansion/inpainting/scaling/identity preservation) and global creation (layout/style transfer). It first trains local and global experts, then integrates them into a single student model via task distillation. Finally, a unified reward model and DiffusionNFT reinforcement learning are used to align aesthetics and in…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image-to-Poster Generation"
+  - "Task Distillation"
+  - "Reward Feedback"
+  - "Diffusion RL"
+  - "Unified Model"
 date: 2026-05-08
-content_hash: f4aa754edb1591b4
+content_hash: 4edee5347ab98fb8
 ---
+
 # PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback
 
 **Conference**: CVPR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation
 description: >-
-  [CVPR 2026][Computational Biology][Diffusion Language Model] Building upon the discrete diffusion protein language model DPLM, MMCP-GEN designs a composable conditional mechanism featuring a "Modality-Indicator Head + Learnable Query fusion." This mechanism unifies heterogeneous biological conditions—such as structure, ligands, functional annotations, and free text—into a shared
+  [CVPR 2026][Computational Biology][Protein design] Building upon the discrete diffusion protein language model DPLM, MMCP-GEN designs a composable conditional mechanism featuring a "Modality-Indicator Head + Learnable Query fusion." This mechanism unifies heterogeneous biological conditions—such as structure, ligands, functional annotations, and free text—into a shared condition space. It allows for the addition of new modalities without retraining the backbone. Combined with…
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - Diffusion Language Model
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Protein design"
+  - "Diffusion language model"
+  - "Multimodal conditions"
+  - "Learnable queries"
+  - "Modality extensibility"
 date: 2026-05-08
-content_hash: d503408bdf2ff6b5
+content_hash: d411e6ec2860b65a
 ---
+
 # MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,10 @@ The stepwise ablation for inverse folding clearly shows the marginal contributio
 ## Related Papers
 
 - [\[ICML 2025\] CFP-Gen: Combinatorial Functional Protein Generation via Diffusion Language Models](../../ICML2025/computational_biology/cfp-gen_combinatorial_functional_protein_generation_via_diffusion_language_model.md)
+- [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](../../ICLR2026/computational_biology/protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
 - [\[CVPR 2026\] Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation](multimodal_protein_language_models_for_enzyme_kinetic_parameters_from_substrate_.md)
 - [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 - [\[ICLR 2026\] Reverse Distillation: Consistently Scaling Protein Language Model Representations](../../ICLR2026/computational_biology/reverse_distillation_consistently_scaling_protein_language_model_representations.md)
-- [\[ICLR 2026\] Protein as a Second Language for LLMs](../../ICLR2026/computational_biology/protein_as_a_second_language_for_llms.md)
 
 </div>
 

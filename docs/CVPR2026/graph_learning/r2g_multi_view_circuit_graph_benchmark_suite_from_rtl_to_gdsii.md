@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][Graph Learning][circuit graph] Ours proposes R2G, the first standardized multi-view circuit graph benchmark suite, providing five stage-aware graph representations (with information equivalence) across 30 IP cores. Systematic research reveals that the choice of graph representation has a greater impact on performance than the choice of GNN model.
 tags:
-  - CVPR 2026
-  - Graph Learning
-  - circuit graph
-  - GNN benchmark
-  - multi-view
-  - physical design
-  - EDA
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "circuit graph"
+  - "GNN benchmark"
+  - "multi-view"
+  - "physical design"
+  - "EDA"
 date: 2026-05-08
-content_hash: 2f0d4a109c905865
+content_hash: b67b0a9e37709a8d
 ---
+
 # R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII
 
 **Conference**: CVPR 2026  
@@ -117,11 +118,11 @@ Standard regression losses are used for node-level placement tasks (HPWL predict
 
 ## Related Papers
 
-- [\[ICML 2026\] View Space：跨任意图的表示学习](../../ICML2026/graph_learning/view_space_learning_representation_across_arbitrary_graphs.md)
-- [\[AAAI 2026\] Skill Path: Unveiling Language Skills from Circuit Graphs](../../AAAI2026/graph_learning/skill_path_unveiling_language_skills_from_circuit_graphs.md)
+- [\[ICLR 2026\] Topology Matters in RTL Circuit Representation Learning](../../ICLR2026/graph_learning/topology_matters_in_rtl_circuit_representation_learning.md)
+- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](../../ICLR2026/graph_learning/multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
+- [\[ICLR 2026\] Confident Block Diagonal Structure-Aware Invariable Graph Completion for Incomplete Multi-view Clustering](../../ICLR2026/graph_learning/confident_block_diagonal_structure-aware_invariable_graph_completion_for_incompl.md)
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
-- [\[NeurIPS 2025\] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design](../../NeurIPS2025/graph_learning/falcon_an_ml_framework_for_fully_automated_layout-constrained_analog_circuit_des.md)
-- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
+- [\[ICLR 2026\] Si-GT: Fast Interconnect Signal Integrity Analysis for Integrated Circuit Design via Graph Transformers](../../ICLR2026/graph_learning/si-gt_fast_interconnect_signal_integrity_analysis_for_integrated_circuit_design_.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ShortageSim: Simulating Drug Shortages under Information Asymmetry
 description: >-
-  [AAAI 2026][Medical NLP][drug shortage] This paper proposes ShortageSim, the first **LLM-based multi-agent** simulation framework for drug shortages. It models strategic decision-making among FDA regulators…
+  [AAAI 2026 Oral][Medical LLM][drug shortage] This paper proposes ShortageSim, the first **LLM-based multi-agent** simulation framework for drug shortages. It models strategic decision-making among FDA regulators, manufacturers, and buyers under information asymmetry, achieving an 84% improvement in predicting resolution lag time on historical shortage data, and provides a controlled testbed for evaluating regulatory strategies.
 tags:
-  - "AAAI 2026"
-  - "Medical NLP"
+  - "AAAI 2026 Oral"
+  - "Medical LLM"
   - "drug shortage"
   - "multi-agent simulation"
   - "large language models"
   - "information asymmetry"
   - "regulatory policy"
 date: 2026-05-08
-content_hash: 3cf819cc5a9618a6
+content_hash: 2a0f62a5cd59b80b
 ---
 
 # ShortageSim: Simulating Drug Shortages under Information Asymmetry
@@ -130,10 +130,10 @@ No training is required. GPT-4o, Gemini 2.5 Flash, Claude Sonnet 4.5, and DeepSe
 ## Related Papers
 
 - [\[ACL 2026\] Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](../../ACL2026/medical_nlp/faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)
-- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
-- [\[AAAI 2026\] Real-Time Trust Verification for Safe Agentic Actions Using TrustBench](real-time_trust_verification_for_safe_agentic_actions_using_trustbench.md)
 - [\[AAAI 2026\] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives](bica_effective_biomedical_dense_retrieval_with_citation-aware_hard_negatives.md)
-- [\[AAAI 2026\] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment](a_principle-driven_adaptive_policy_for_group_cognitive_stimu.md)
+- [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
+- [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](learning_cell-aware_hierarchical_multi-modal_representations.md)
+- [\[AAAI 2026\] GEM: Generative Entropy-Guided Preference Modeling for Few-shot Alignment of LLMs](gem_generative_entropy-guided_preference_modeling_for_few-shot_alignment_of_llms.md)
 
 </div>
 

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Rethinking Evaluation of Infrared Small Target Detection
 description: >-
-  [NeurIPS 2025][Infrared small target detection] This paper systematically identifies three critical limitations in existing evaluation protocols for infrared small target detection (IRSTD)…
+  [NeurIPS 2025][Object Detection][Infrared small target detection] This paper systematically identifies three critical limitations in existing evaluation protocols for infrared small target detection (IRSTD), and proposes a hierarchical analysis framework comprising the hybrid-level metric hIoU, a systematic error analysis methodology, and a cross-dataset evaluation setting.
 tags:
   - "NeurIPS 2025"
+  - "Object Detection"
   - "Infrared small target detection"
   - "evaluation metrics"
   - "cross-dataset evaluation"
   - "hierarchical IoU"
   - "error analysis"
 date: 2026-05-08
-content_hash: 13b629629abe6a4f
+content_hash: 09b73bc583a1bfe7
 ---
 
 # Rethinking Evaluation of Infrared Small Target Detection
@@ -157,11 +158,11 @@ Cross-dataset evaluation reveals significant performance degradation across all 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](../../CVPR2026/object_detection/target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
 - [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](../../ICCV2025/object_detection/from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
-- [\[ICCV 2025\] Uncertainty-Aware Gradient Stabilization for Small Object Detection](../../ICCV2025/object_detection/uncertainty-aware_gradient_stabilization_for_small_object_detection.md)
-- [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](../../ICCV2025/object_detection/automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
-- [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
-- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
+- [\[CVPR 2025\] Small Target Detection Based on Mask-Enhanced Attention Fusion of Visible and Infrared Remote Sensing Images](../../CVPR2025/object_detection/small_target_detection_based_on_mask-enhanced_attention_fusion_of_visible_and_in.md)
+- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](../../CVPR2026/object_detection/chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
+- [\[CVPR 2026\] Seeing Through the Noise: Improving Infrared Small Target Detection and Segmentation from Noise Suppression Perspective](../../CVPR2026/object_detection/seeing_through_the_noise_improving_infrared_small_target_detection_and_segmentat.md)
 
 </div>
 

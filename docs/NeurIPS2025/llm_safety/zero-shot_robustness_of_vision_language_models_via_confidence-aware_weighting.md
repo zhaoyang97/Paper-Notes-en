@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting
 description: >-
-  [NeurIPS 2025][LLM Safety][CLIP] This paper proposes CAW (Confidence-Aware Weighting), an adversarial fine-tuning loss function for CLIP that focuses on hard adversarial examples via confidence-aware weighting…
+  [NeurIPS 2025][LLM Safety][CLIP] This paper proposes CAW (Confidence-Aware Weighting), an adversarial fine-tuning loss function for CLIP that focuses on hard adversarial examples via confidence-aware weighting, combined with feature alignment regularization to preserve pre-trained semantic knowledge. CAW achieves state-of-the-art zero-shot robustness under AutoAttack with lower memory overhead.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "adversarial fine-tuning"
   - "confidence-aware weighting"
 date: 2026-05-08
-content_hash: c8250cd88c5cbb4c
+content_hash: 50c0d59be0f61a78
 ---
 
 # Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting
@@ -147,10 +147,10 @@ CAW employs a frozen original CLIP model alongside a fine-tunable target CLIP mo
 ## Related Papers
 
 - [\[NeurIPS 2025\] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks](on_the_robustness_of_verbal_confidence_of_llms_in_adversarial_attacks.md)
+- [\[ICML 2025\] Visual Language Models as Zero-Shot Deepfake Detectors](../../ICML2025/llm_safety/visual_language_models_as_zero-shot_deepfake_detectors.md)
+- [\[CVPR 2025\] Hyperbolic Safety-Aware Vision-Language Models](../../CVPR2025/llm_safety/hyperbolic_safety-aware_vision-language_models.md)
 - [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](approximate_domain_unlearning_for_visionlanguage_models.md)
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/llm_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 - [\[NeurIPS 2025\] Enhancing CLIP Robustness via Cross-Modality Alignment](enhancing_clip_robustness_via_crossmodality_alignment.md)
-- [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 
 </div>
 

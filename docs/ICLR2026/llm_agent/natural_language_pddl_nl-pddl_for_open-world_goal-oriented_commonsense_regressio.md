@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Natural Language PDDL (NL-PDDL): Open-world Goal-oriented Commonsense Regression Planning in Embodied AI
 description: >-
-  [ICLR 2026][LLM Agent][PDDL] The symbolic predicates of classical PDDL are replaced with "typed natural language predicates," and first-order regression planning is driven by LLM entailment judgments. This preserves the correctness of symbolic planning while gaining the commonsense generalization of LLMs in partially observable open worlds where g
+  [ICLR 2026][LLM Agent][PDDL] The symbolic predicates of classical PDDL are replaced with "typed natural language predicates," and first-order regression planning is driven by LLM entailment judgments. This preserves the correctness of symbolic planning while gaining the commonsense generalization of LLMs in partially observable open worlds where goals and action descriptions are misaligned.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - PDDL
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "PDDL"
+  - "regression planning"
+  - "open-world planning"
+  - "commonsense entailment"
+  - "Embodied AI"
+  - "lifted planning"
 date: 2026-05-08
-content_hash: 409d4c0e093952ca
+content_hash: 0d28a7d24d5a09c5
 ---
+
 # Natural Language PDDL (NL-PDDL): Open-world Goal-oriented Commonsense Regression Planning in Embodied AI
 
 **Conference**: ICLR 2026  
@@ -114,15 +120,13 @@ Closed-world Blocksworld: NL-PDDL achieves a stable **70% SR with 0 tokens** acr
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] ChinaTravel: An Open-Ended Travel Planning Benchmark with Compositional Constraint Validation for Language Agents](chinatravel_an_open-ended_travel_planning_benchmark_with_compositional_constrain.md)
 - [\[CVPR 2025\] TANGO: Training-free Embodied AI Agents for Open-world Tasks](../../CVPR2025/llm_agent/tango_training-free_embodied_ai_agents_for_open-world_tasks.md)
+- [\[ICLR 2026\] ChinaTravel: An Open-Ended Travel Planning Benchmark with Compositional Constraint Validation for Language Agents](chinatravel_an_open-ended_travel_planning_benchmark_with_compositional_constrain.md)
+- [\[ICLR 2026\] OmniActor: A Generalist GUI and Embodied Agent for 2D&3D Worlds](omniactor_a_generalist_gui_and_embodied_agent_for_2d3d_worlds.md)
 - [\[ACL 2026\] GOAT: A Training Framework for Goal-Oriented Agent with Tools](../../ACL2026/llm_agent/goat_a_training_framework_for_goal-oriented_agent_with_tools.md)
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
-- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] This paper identifies two critical flaws in "Expected Calibration Error (ECE)" as a trust metric: its inability to distinguish between an oracle and an uninformative "base-rate" estimator, and its insensitivity to task risk. To address this, the authors propose a new metric, `euro` (Oracle-normalized Expected Utility),
+  [ICML 2026][LLM Evaluation][Confidence estimation] This paper identifies two critical flaws in "Expected Calibration Error (ECE)" as a trust metric: its inability to distinguish between an oracle and an uninformative "base-rate" estimator, and its insensitivity to task risk. To address this, the authors propose a new metric, `euro` (Oracle-normalized Expected Utility), which links calibration with decision utility. They further introduce the `acute` protocol…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Confidence estimation"
+  - "Calibration"
+  - "Decision utility"
+  - "Activation probing"
+  - "Trustworthiness"
 date: 2026-05-08
-content_hash: 2d9ab24961af36f3
+content_hash: 60438db180809bbc
 ---
+
 # The ACUTE Protocol: Operationalizing Language Model Activations for Better Calibration, Utility, and Trust
 
 **Conference**: ICML 2026  
@@ -120,15 +126,16 @@ Comparing feature views (auc-euro all):
 - Value: ⭐⭐⭐⭐ (Directly applicable to trustworthy deployment).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] Communicating Activations Between Language Model Agents](../../ICML2025/llm_evaluation/communicating_activations_between_language_model_agents.md)
 - [\[ICML 2026\] Who can we trust? LLM-as-a-jury for Comparative Assessment](who_can_we_trust_llm-as-a-jury_for_comparative_assessment.md)
+- [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
 - [\[ACL 2025\] GRACE: A Granular Benchmark for Evaluating Model Calibration Against Human Calibration](../../ACL2025/llm_evaluation/grace_a_granular_benchmark_for_evaluating_model_calibration_against_human_calibr.md)
 - [\[ICML 2026\] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](prescriptive_scaling_reveals_the_evolution_of_language_model_capabilities.md)
-- [\[ICML 2026\] Estimating Tail Risks in Language Model Output Distributions](estimating_tail_risks_in_language_model_output_distributions.md)
 
 </div>
 

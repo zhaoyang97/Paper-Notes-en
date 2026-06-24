@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] GeoFlow is proposed as a lightweight cross-view fine-grained geolocalization framework inspired by flow matching. By learning a probabilistic displacement field combined with an Iterative Refinement Sampling (IRS) algorithm, it achieves precise 2-DoF localization from ground-level images to satellite images in continuo
+  [CVPR 2026][Remote Sensing][Cross-View Geolocalization] GeoFlow is proposed as a lightweight cross-view fine-grained geolocalization framework inspired by flow matching. By learning a probabilistic displacement field combined with an Iterative Refinement Sampling (IRS) algorithm, it achieves precise 2-DoF localization from ground-level images to satellite images in continuous space, reaching 29 FPS real-time speed with accuracy comparable to SOTA.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geolocalization"
+  - "Flow Field Regression"
+  - "Iterative Refinement Sampling"
+  - "Real-Time Inference"
+  - "Probabilistic Displacement Prediction"
 date: 2026-05-08
-content_hash: a5088e823665235d
+content_hash: b253623874b4cff8
 ---
+
 # GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction
 
 **Conference**: CVPR 2026  
@@ -183,14 +189,17 @@ This is more robust than simple L2 angular regression. The total loss is $\mathc
 
 <div class="related-papers" markdown="1">
 
-- **FG2**: Deep Fine-Grained Geolocalization, CVPR 2022.
-- **HC-Net**: Hierarchical Cross-View Geolocalization, TPAMI 2023.
-- **CCVPE**: Cross-View Positional Encoding for 2-DoF Localization, ICCV 2023.
+## Related Papers
+
+- [\[ECCV 2024\] Adapting Fine-Grained Cross-View Localization to Areas without Fine Ground Truth](../../ECCV2024/remote_sensing/adapting_fine-grained_cross-view_localization_to_areas_without_fine_ground_truth.md)
+- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
+- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
+- [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
+- [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ECCV 2024\] Adapting Fine-Grained Cross-View Localization to Areas without Fine Ground Truth](../../ECCV2024/remote_sensing/adapting_fine-grained_cross-view_localization_to_areas_without_fine_ground_truth.md)

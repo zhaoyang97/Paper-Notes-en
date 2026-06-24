@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] Addressing the core challenge that "no direct target policy samples exist in online RL," this paper proposes Reverse Flow Matching (RFM). By transforming the training of diffusion/flow policies to fit Boltzmann distributions into a "posterior mean estimation given intermediate noise" problem, it uses Langevin Stein ope
+  [ICML 2026][Reinforcement Learning][Reverse Flow Matching] Addressing the core challenge that "no direct target policy samples exist in online RL," this paper proposes Reverse Flow Matching (RFM). By transforming the training of diffusion/flow policies to fit Boltzmann distributions into a "posterior mean estimation given intermediate noise" problem, it uses Langevin Stein operators to construct zero-mean control variables. This unifies existing "noise expectation" and "gradiâ€¦
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Reverse Flow Matching"
+  - "Boltzmann Distribution"
+  - "Posterior Mean Estimation"
+  - "Langevin Stein Operator"
+  - "Control Variables"
 date: 2026-05-08
-content_hash: 52ee8b51acf2bff4
+content_hash: e5c93688bc27bb9f
 ---
+
 # Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ The main paper presents stability comparisons via training curves (Fig. 2, minâ€
 
 ## Related Papers
 
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](moment_matching_q-learning.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](../../ICLR2026/reinforcement_learning/flow_matching_policy_gradients.md)
 - [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](../../ICLR2026/reinforcement_learning/bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
-- [\[ICML 2026\] How Does Reasoning Flow? Tracing Attention-Induced Information Flow for Targeted RL in LLMs](how_does_reasoning_flow_tracing_attention-induced_information_flow_for_targeted_.md)
-- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
 - [\[ICML 2026\] Perceptual Flow Network for Visually Grounded Reasoning](perceptual_flow_network_for_visually_grounded_reasoning.md)
-- [\[ICML 2026\] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning](fast_and_highly_expressive_policy_learning_for_offline_reinforcement_learning_vi.md)
+- [\[ICML 2026\] Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control](plug-and-play_benchmarking_of_reinforcement_learning_algorithms_for_large-scale_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports
 description: >-
-  [AAAI 2026][Time Series][Urban incident prediction] This paper proposes URBAN, a multi-view multi-output GNN model that jointly leverages sparse but unbiased government inspection rating data and dense but biased crowdso…
+  [AAAI 2026][Time Series][Urban incident prediction] This paper proposes URBAN, a multi-view multi-output GNN model that jointly leverages sparse but unbiased government inspection rating data and dense but biased crowdsourced report data to predict the true latent state of urban incidents. Validated on 9.6M+ reports and 1M+ inspections in New York City, the model achieves a 5.3× higher prediction correlation than using report data alone.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "multi-view learning"
   - "latent state estimation"
 date: 2026-05-08
-content_hash: 99457cad8c3bb4a2
+content_hash: 9df2bfc27b48e2dc
 ---
 
 # Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports
@@ -125,11 +125,11 @@ The loss consists of four weighted terms; weights $\gamma_1, \gamma_2, \gamma_3$
 
 ## Related Papers
 
-- [\[ICLR 2026\] WARP: Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
+- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
 - [\[AAAI 2026\] Transparent Networks for Multivariate Time Series](transparent_networks_for_multivariate_time_series.md)
 - [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](../../NeurIPS2025/time_series/graph-based_neural_space_weather_forecasting.md)
-- [\[NeurIPS 2025\] A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](../../NeurIPS2025/time_series/a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)
 - [\[AAAI 2026\] SELDON: Supernova Explosions Learned by Deep ODE Networks](seldon_supernova_explosions_learned_by_deep_ode_networks.md)
+- [\[ICLR 2026\] Tuning the burn-in phase in training recurrent neural networks improves their performance](../../ICLR2026/time_series/tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
 
 </div>
 

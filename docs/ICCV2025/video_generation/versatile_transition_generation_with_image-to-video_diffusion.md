@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Versatile Transition Generation with Image-to-Video Diffusion
 description: >-
-  [ICCV 2025][Video Generation][video transition generation] This paper proposes VTG, a unified video transition generation framework built upon an image-to-video diffusion model. VTG achieves smooth…
+  [ICCV 2025][Video Generation][video transition generation] This paper proposes VTG, a unified video transition generation framework built upon an image-to-video diffusion model. VTG achieves smooth, high-fidelity transitions across four task categories — object morphing, motion prediction, concept blending, and scene transition — via interpolation-based initialization (noise SLERP + LoRA interpolation + text SLERP), bidirectional motion fine-tuning…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "LoRA interpolation"
   - "representation alignment regularization"
 date: 2026-05-08
-content_hash: 4d7fd997528e6fce
+content_hash: 7a96e24df9a0f783
 ---
 
 # Versatile Transition Generation with Image-to-Video Diffusion
@@ -119,10 +119,10 @@ Lightweight fine-tuning on only 150 high-quality videos. BMP fine-tunes temporal
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](../../CVPR2026/video_generation/transition_matching_distillation_for_fast_video_generation.md)
 - [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
 - [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
-- [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 
 </div>
 

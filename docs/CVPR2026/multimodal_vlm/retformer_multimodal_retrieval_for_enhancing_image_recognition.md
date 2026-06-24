@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RetFormer: Multimodal Retrieval for Enhancing Image Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] RetFormer shifts world knowledge from "compressed model weights" to an "external image-text knowledge base." It performs k-NN retrieval for query images, calculates the contribution of each neighbor using an image-text cross-fusion attention module, and merges this with the backbone branch. This approach improves the o
+  [CVPR 2026][Multimodal VLM][Retrieval-Augmented Classification] RetFormer shifts world knowledge from "compressed model weights" to an "external image-text knowledge base." It performs k-NN retrieval for query images, calculates the contribution of each neighbor using an image-text cross-fusion attention module, and merges this with the backbone branch. This approach improves the overall accuracy on ImageNet-LT from 78.3% to 81.9% in long-tail recognition and noisy label lear…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Retrieval-Augmented Classification"
+  - "Image-Text Multimodal"
+  - "Long-tail Recognition"
+  - "Noisy Labels"
+  - "Cross-attention"
 date: 2026-05-08
-content_hash: a7ffa5625046f6e8
+content_hash: e9d2a6c1d9f472e6
 ---
+
 # RetFormer: Multimodal Retrieval for Enhancing Image Recognition
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ Modality Ablation (ImageNet-LT):
 
 ## Related Papers
 
-- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
 - [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
+- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
 - [\[CVPR 2026\] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval](codemmr_bridging_natural_language_code_and_image_for_unified_retrieval.md)
-- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 
 </div>
 

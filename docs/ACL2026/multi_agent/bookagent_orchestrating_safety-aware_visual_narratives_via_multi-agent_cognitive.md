@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] BookAgent is a safety-aware multi-agent framework that utilizes a three-stage closed-loop architecture consisting of a **Value-Aligned Storyboard (VAS) + Iterative Cross-modal Refinement (ICR) + Temporal Cognitive Calibration (TCC)** to generate high-quality, character-consistent, and safety-compliant picture book stor
+  [ACL 2026][Multi-Agent][Picture book generation] BookAgent is a safety-aware multi-agent framework that utilizes a three-stage closed-loop architecture consisting of a **Value-Aligned Storyboard (VAS) + Iterative Cross-modal Refinement (ICR) + Temporal Cognitive Calibration (TCC)** to generate high-quality, character-consistent, and safety-compliant picture book stories end-to-end from user drafts.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Picture book generation"
+  - "multi-agent collaboration"
+  - "safety alignment"
+  - "cross-frame consistency"
+  - "visual storytelling"
 date: 2026-05-08
-content_hash: e1fad4699bb827d7
+content_hash: 1d59457bf2cc8af3
 ---
+
 # BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration
 
 **Conference**: ACL 2026  
@@ -142,9 +148,9 @@ The framework is training-free, utilizing multi-agent collaboration during infer
 
 - [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
-- [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](../../ICML2026/multi_agent/radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
-- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 - [\[AAAI 2026\] BAMAS: Structuring Budget-Aware Multi-Agent Systems](../../AAAI2026/multi_agent/bamas_structuring_budget-aware_multi-agent_systems.md)
+- [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](../../ICML2026/multi_agent/radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
+- [\[ICLR 2026\] PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images](../../ICLR2026/multi_agent/pixelcraft_a_multi-agent_system_for_high-fidelity_visual_reasoning_on_structured.md)
 
 </div>
 

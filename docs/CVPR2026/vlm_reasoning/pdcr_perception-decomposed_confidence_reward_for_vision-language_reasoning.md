@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] Addressing the issue where directly migrating "confidence growth process rewards" from the language domain to vision-language reasoning fails because sparse visual perception steps are overwhelmed by the statistics of dense textual reasoning steps (mixture-induced signal degradation). PDCR uses a model-internal Visual
+  [CVPR 2026][VLM Reasoning][Vision-Language Reasoning] Addressing the issue where directly migrating "confidence growth process rewards" from the language domain to vision-language reasoning fails because sparse visual perception steps are overwhelmed by the statistics of dense textual reasoning steps (mixture-induced signal degradation). PDCR uses a model-internal Visual Dependence Score combined with an Otsu threshold to cluster steps into "perception" and "reasoning" in an…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Vision-Language Reasoning"
+  - "RLVR"
+  - "Process Reward"
+  - "Confidence Growth"
+  - "Skill Decomposition"
 date: 2026-05-08
-content_hash: ae53d034fe08a364
+content_hash: cc3f85edf0673203
 ---
+
 # PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Random decomposition performs similarly to PACR, proving that the gain comes fro
 
 ## Related Papers
 
-- [\[CVPR 2026\] Linking Perception, Confidence and Accuracy in MLLMs](linking_perception_confidence_and_accuracy_in_mllms.md)
-- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](../../ICML2026/multimodal_vlm/decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
-- [\[CVPR 2026\] CICA: Coupling Confidence-Aware Pretraining with Confidence-Informed Attention for Robust Multimodal Sentiment Analysis](cica_coupling_confidence-aware_pretraining_with_confidence-informed_attention_fo.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](../../ICLR2026/vlm_reasoning/perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](hierarchical_process_reward_models_are_symbolic_vision_learners.md)
+- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](../../ICML2026/vlm_reasoning/decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
+- [\[ACL 2026\] VL-Calibration: Decoupled Confidence Calibration for Large Vision-Language Models Reasoning](../../ACL2026/vlm_reasoning/vl-calibration_decoupled_confidence_calibration_for_large_vision-language_models.md)
 
 </div>
 

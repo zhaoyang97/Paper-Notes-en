@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Predicting Training Re-evaluation Curves Enables Effective Data Curriculums
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] The authors propose the Training Re-evaluation Curve (TREC) as a diagnostic tool. By analyzing the loss of training data at each timestamp using the final model, they guide the optimal placement of high-quality data. They demonstrate that the shape of the TREC can be predicted via the implicit EMA coefficient of AdamW,
+  [ICLR 2026][LLM Pretraining][Training Re-evaluation Curve] The authors propose the Training Re-evaluation Curve (TREC) as a diagnostic tool. By analyzing the loss of training data at each timestamp using the final model, they guide the optimal placement of high-quality data. They demonstrate that the shape of the TREC can be predicted via the implicit EMA coefficient of AdamW, enabling the design of data curriculums without actual training.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Training Re-evaluation Curve"
+  - "Data Curriculum Learning"
+  - "AdamW Time Scale"
+  - "High-quality Data Placement"
+  - "Continued Pre-training"
 date: 2026-05-08
-content_hash: 480d878c1b88922d
+content_hash: 8b950b9eaa99c10f
 ---
+
 # Predicting Training Re-evaluation Curves Enables Effective Data Curriculums
 
 **Conference**: ICLR 2026  
@@ -154,11 +160,11 @@ For each learning rate schedule, 10 models were trained, each inserting 5B of co
 
 ## Related Papers
 
-- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/llm_pretraining/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 - [\[ACL 2025\] Model Performance-Guided Evaluation Data Selection for Effective Prompt Optimization](../../ACL2025/llm_pretraining/model_performance-guided_evaluation_data_selection_for_effective_prompt_optimiza.md)
 - [\[ICLR 2026\] DUET: Optimizing LLM Training Data Mixtures via Noisy Feedback from Unseen, Downstream Evaluation Tasks](duet_optimizing_llm_training_data_mixtures_via_noisy_feedback_from_unseen_downst.md)
-- [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
+- [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](../../ACL2026/llm_pretraining/data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
 - [\[ICLR 2026\] Accessible, Realistic, and Fair Evaluation of Positive-Unlabeled Learning Algorithms](accessible_realistic_and_fair_evaluation_of_positive-unlabeled_learning_algorith.md)
+- [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Image Intrinsic Scale Assessment: Bridging the Gap Between Quality and Resolution
 description: >-
-  [ICCV 2025][LLM Pretraining][Image Quality Assessment] This paper introduces Image Intrinsic Scale (IIS)—the maximum scaling factor at which an image exhibits its highest perceptual quality—and proposes the IISA task…
+  [ICCV 2025][LLM Pretraining][Image Quality Assessment] This paper introduces Image Intrinsic Scale (IIS)—the maximum scaling factor at which an image exhibits its highest perceptual quality—and proposes the IISA task, constructs a dataset of 785 images with expert annotations, and presents a weak-label training strategy (WIISA) that consistently improves IIS prediction across multiple NR-IQA methods.
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Scale Perception"
   - "Subjective Annotation"
 date: 2026-05-08
-content_hash: 3b32b57e44ef7180
+content_hash: bafcfc8efb5321fc
 ---
 
 # Image Intrinsic Scale Assessment: Bridging the Gap Between Quality and Resolution
@@ -149,11 +149,11 @@ WIISA consistently improves performance across all 6 methods, with a maximum rel
 
 ## Related Papers
 
+- [\[CVPR 2025\] Bridging the Vision-Brain Gap with an Uncertainty-Aware Blur Prior](../../CVPR2025/llm_pretraining/bridging_the_vision-brain_gap_with_an_uncertainty-aware_blur_prior.md)
 - [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_pretraining/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
 - [\[ICCV 2025\] FlowMo: Flow to the Mode — Mode-Seeking Diffusion Autoencoders for State-of-the-Art Image Tokenization](flow_to_the_mode_mode-seeking_diffusion_autoencoders_for_state-of-the-art_image_.md)
+- [\[ICLR 2026\] GneissWeb: Preparing High Quality Data for LLMs at Scale](../../ICLR2026/llm_pretraining/gneissweb_preparing_high_quality_data_for_llms_at_scale.md)
 - [\[NeurIPS 2025\] Memory Mosaics at Scale](../../NeurIPS2025/llm_pretraining/memory_mosaics_at_scale.md)
-- [\[NeurIPS 2025\] Predict Training Data Quality via Its Geometry in Metric Space](../../NeurIPS2025/llm_pretraining/predict_training_data_quality_via_its_geometry_in_metric_space.md)
-- [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](../../NeurIPS2025/llm_pretraining/next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
 
 </div>
 

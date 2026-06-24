@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper derives the Maximal Update Parametrization ($\mu$P) for two state-of-the-art learned optimizers (small_fc_lopt and VeLO) and pairs it with a low-cost "multi-width single-task" meta-training recipe. This allows optimizers meta-trained only on small MLPs to generalize to much wider, deeper, and longer-trained
+  [ICLR 2026][Optimization][Learned Optimizer (LO)] This paper derives the Maximal Update Parametrization ($\mu$P) for two state-of-the-art learned optimizers (small_fc_lopt and VeLO) and pairs it with a low-cost "multi-width single-task" meta-training recipe. This allows optimizers meta-trained only on small MLPs to generalize to much wider, deeper, and longer-trained unseen tasks with zero additional computational overhead.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Learned Optimizer (LO)"
+  - "Maximal Update Parametrization ($\\mu$P)"
+  - "Meta-generalization"
+  - "Hyperparameter Transfer"
+  - "Width Extrapolation"
 date: 2026-05-08
-content_hash: f223678da60e469d
+content_hash: 3108614ca42a2ab6
 ---
+
 # $\mu$LO: Compute-Efficient Meta-Generalization of Learned Optimizers
 
 **Conference**: ICLR 2026  

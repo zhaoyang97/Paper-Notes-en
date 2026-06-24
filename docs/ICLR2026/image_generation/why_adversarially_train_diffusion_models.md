@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Why Adversarially Train Diffusion Models?
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper reformulates adversarial training from classifiers into an "equivariant smoothing" regularizer for diffusion models, enabling the denoising network to generate samples along cleaner and more stable score fields even when training data is highly contaminated or sampling trajectories are attacked.
+  [ICLR 2026][Image Generation][Adversarial Training] This paper reformulates adversarial training from classifiers into an "equivariant smoothing" regularizer for diffusion models, enabling the denoising network to generate samples along cleaner and more stable score fields even when training data is highly contaminated or sampling trajectories are attacked.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Adversarial Training"
+  - "Diffusion Models"
+  - "Robust Generation"
+  - "Data Contamination"
+  - "Equivariant Regularization"
 date: 2026-05-08
-content_hash: 3e9c7d7eec70260b
+content_hash: aa79efc256f85f2e
 ---
+
 # Why Adversarially Train Diffusion Models?
 
 **Conference**: ICLR 2026  
@@ -164,15 +169,16 @@ Note that in the clean setting, Robustadv's FID is worse, confirming it is not a
 - Value: ⭐⭐⭐⭐⭐ (A strong foundation for future research in robust diffusion training and anti-memorization).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] The Drift Kernel: Why Diffusion Models Change Even When Told Not To](../../CVPR2026/image_generation/the_drift_kernel_why_diffusion_models_change_even_when_told_not_to.md)
 - [\[NeurIPS 2025\] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training](../../NeurIPS2025/image_generation/why_diffusion_models_dont_memorize_the_role_of_implicit_dynamical_regularization.md)
-- [\[ICLR 2026\] D-AR: Diffusion via Autoregressive Models](d-ar_diffusion_via_autoregressive_models.md)
 - [\[ICLR 2026\] Reconciling Visual Perception and Generation in Diffusion Models](reconciling_visual_perception_and_generation_in_diffusion_models.md)
 - [\[ICLR 2026\] Secure Inference for Diffusion Models via Unconditional Scores](secure_inference_for_diffusion_models_via_unconditional_scores.md)
+- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 
 </div>
 

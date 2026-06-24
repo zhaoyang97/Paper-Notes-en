@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] LFQA-E: Carefully Benchmarking Long-form QA Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][Long-Form QA] The authors constructed LFQA-E, a long-form QA evaluation benchmark featuring expert reference answers, covering 15 domains in both Chinese and English, with 1,618 questions and 7,323 comparison pairs. The study systematically demonstrates that none of the 17 existing automatic evaluation metrics can approximate human
+  [ICLR 2026][LLM Evaluation][Long-Form QA] The authors constructed LFQA-E, a long-form QA evaluation benchmark featuring expert reference answers, covering 15 domains in both Chinese and English, with 1,618 questions and 7,323 comparison pairs. The study systematically demonstrates that none of the 17 existing automatic evaluation metrics can approximate human judgment and analyzes the root causes of their failure.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Long-Form QA
-  - LLM-as-a-Judge
-  - Reward Model
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Long-Form QA"
+  - "automatic evaluation metrics"
+  - "reference answers"
+  - "multilingual benchmark"
+  - "LLM-as-a-Judge"
+  - "Reward Model"
 date: 2026-05-08
-content_hash: e7fa519511339091
+content_hash: 06ae4f972de0abcf
 ---
+
 # LFQA-E: Carefully Benchmarking Long-form QA Evaluation
 
 **Conference**: ICLR 2026  

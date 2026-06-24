@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper discovers through linear probing that the hidden representations of VLMs encode rich multi-level aesthetic attribute information (lighting, color, composition, etc.), which propagates to the language decoder layers. Based on this, it proposes achieved training-free Personalized Image Aesthetics Assessment (P
+  [ACL 2026 Findings][Multimodal VLM][Personalized Image Aesthetics Assessment] This paper discovers through linear probing that the hidden representations of VLMs encode rich multi-level aesthetic attribute information (lighting, color, composition, etc.), which propagates to the language decoder layers. Based on this, it proposes achieved training-free Personalized Image Aesthetics Assessment (PIAA) using simple linear regression, which significantly outperforms few-shot and…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Personalized Image Aesthetics Assessment"
+  - "Vision-Language Models"
+  - "Linear Probing"
+  - "Hidden Representations"
+  - "Image Aesthetics"
 date: 2026-05-08
-content_hash: 9259eca0ec5b346e
+content_hash: eb0e11e57c512874
 ---
+
 # What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?
 
 **Conference**: ACL 2026 Findings  
@@ -138,8 +143,8 @@ Ridge regression (linear regression with L2 regularization) is used, requiring n
 - [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](../../CVPR2026/multimodal_vlm/probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
 - [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](../../ICLR2026/multimodal_vlm/visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
 - [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](../../CVPR2026/multimodal_vlm/artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
-- [\[CVPR 2026\] R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment](../../CVPR2026/multimodal_vlm/r4-cgqa_retrieval-based_vision_language_models_for_computer_graphics_image_quali.md)
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
+- [\[CVPR 2026\] Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](../../CVPR2026/multimodal_vlm/vlm_model_inversion_adaptive_token_weight.md)
 
 </div>
 

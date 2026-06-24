@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sample-Adaptivity Tradeoff in On-Demand Sampling
 description: >-
-  [NeurIPS 2025][Other][Multi-distribution learning] This paper systematically studies the tradeoff between sample complexity and adaptive rounds in on-demand sampling. In the realizable setting…
+  [NeurIPS 2025][Other][Multi-distribution learning] This paper systematically studies the tradeoff between sample complexity and adaptive rounds in on-demand sampling. In the realizable setting, it proves that the optimal sample complexity of $r$-round algorithms is $dk^{\Theta(1/r)}/\varepsilon$. In the agnostic setting, it proposes the LazyHedge algorithm that achieves near-optimal sample complexity in only $\widetilde{O}(\sqrt{k})$ rounds, and introduces the OODS abstract f…
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -13,7 +13,7 @@ tags:
   - "online optimization"
   - "Boosting"
 date: 2026-05-08
-content_hash: c5aa661741daf178
+content_hash: 6fcdf80ed90e78d6
 ---
 
 # Sample-Adaptivity Tradeoff in On-Demand Sampling
@@ -178,11 +178,11 @@ This paper is the first to achieve near-optimal sample complexity with round com
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](../../ICLR2026/learning_theory/sampling_complexity_of_td_and_ppo_in_rkhs.md)
+- [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](../../ICLR2026/learning_theory/memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
+- [\[ICLR 2026\] Bound by Semanticity: Universal Laws Governing the Generalization-Identification Tradeoff](../../ICLR2026/learning_theory/bound_by_semanticity_universal_laws_governing_the_generalization-identification_.md)
+- [\[ICLR 2026\] Revenue Maximization under Sequential Price Competition via the Estimation of s-Concave Demand Functions](../../ICLR2026/learning_theory/revenue_maximization_under_sequential_price_competition_via_the_estimation_of_s-.md)
 - [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
-- [\[NeurIPS 2025\] Revisiting Agnostic Boosting](revisiting_agnostic_boosting.md)
-- [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
 
 </div>
 

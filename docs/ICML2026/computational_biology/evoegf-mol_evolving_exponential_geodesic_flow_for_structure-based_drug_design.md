@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] EvoEGF-Mol maps the continuous coordinates and discrete atom/bond types of SBDD into the same natural parameter space of the exponential family. By replacing singular Dirac endpoints with dynamically tightening target distributions and evolving them synchronously along exponential geodesics under the Fisher-Rao geometr
+  [ICML 2026][Computational Biology][Information Geometry] EvoEGF-Mol maps the continuous coordinates and discrete atom/bond types of SBDD into the same natural parameter space of the exponential family. By replacing singular Dirac endpoints with dynamically tightening target distributions and evolving them synchronously along exponential geodesics under the Fisher-Rao geometry, it pushes the PoseBusters pass rate on CrossDock to 93.4%, approaching the level of reference molecu…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
-  - SBDD
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Information Geometry"
+  - "Exponential Geodesic"
+  - "Fisher-Rao Metric"
+  - "Flow Matching"
+  - "SBDD"
 date: 2026-05-08
-content_hash: 049fdd25a8c28961
+content_hash: e3b9039c52cb418e
 ---
+
 # EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design
 
 **Conference**: ICML 2026  
@@ -118,10 +122,10 @@ The PoseBusters pass rate of 93.4% is close to the 95.0% of the reference molecu
 ## Related Papers
 
 - [\[ICML 2026\] Demystifying Multimodal Biomolecular Co-design with Intrinsic Geodesic Coupling](demystifying_multimodal_biomolecular_co-design_with_intrinsic_geodesic_coupling.md)
+- [\[ICLR 2026\] SYNC: Measuring and Advancing Synthesizability in Structure-Based Drug Design](../../ICLR2026/computational_biology/sync_measuring_and_advancing_synthesizability_in_structure-based_drug_design.md)
+- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
 - [\[ICML 2026\] From Holo Pockets to Electron Density: GPT-style Drug Design with Density](from_holo_pockets_to_electron_density_gpt-style_drug_design_with_density.md)
-- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
-- [\[ICML 2025\] Piloting Structure-Based Drug Design via Modality-Specific Optimal Schedule](../../ICML2025/computational_biology/piloting_structure-based_drug_design_via_modality-specific_optimal_schedule.md)
 
 </div>
 

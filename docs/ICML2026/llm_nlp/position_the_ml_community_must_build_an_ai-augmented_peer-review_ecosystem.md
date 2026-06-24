@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This is a position paper arguing that the machine learning community must urgently build an "AI-augmented" peer-review ecosystem—treating LLMs as collaborative assistants for authors, reviewers, and Area Chairs (ACs) rather than replacements. The paper identifies that the primary near-term bottleneck is not the lack of
+  [ICML2026][LLM (Other)][Peer review] This is a position paper arguing that the machine learning community must urgently build an "AI-augmented" peer-review ecosystem—treating LLMs as collaborative assistants for authors, reviewers, and Area Chairs (ACs) rather than replacements. The paper identifies that the primary near-term bottleneck is not the lack of stronger models, but the absence of structured process data that records "why scores changed" or "which specific rebuttal…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Peer review"
+  - "LLM assistance"
+  - "review ecosystem"
+  - "process data"
+  - "position paper"
 date: 2026-05-08
-content_hash: 0b8d36a094f4c995
+content_hash: 298c764f7b3770d3
 ---
+
 # Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem
 
 **Conference**: ICML2026  
@@ -117,11 +123,11 @@ Predicting initial scores, final scores, and score changes using few-shot ICL ($
 
 ## Related Papers
 
+- [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](../../AAAI2026/llm_nlp/position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
 - [\[ACL 2026\] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future](../../ACL2026/llm_nlp/can_ai_be_a_good_peer_reviewer_a_survey_of_peer_review_process_evaluation_and_th.md)
 - [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
 - [\[ICML 2026\] Stop Automating Peer Review Without Rigorous Evaluation](stop_automating_peer_review_without_rigorous_evaluation.md)
-- [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](../../AAAI2026/llm_nlp/position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
-- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
+- [\[ICML 2026\] Preregistration for Experiments with AI Agents](preregistration_for_experiments_with_ai_agents.md)
 
 </div>
 

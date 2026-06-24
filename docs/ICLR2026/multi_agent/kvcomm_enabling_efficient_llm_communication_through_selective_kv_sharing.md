@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] KVComm: Enabling Efficient LLM Communication through Selective KV Sharing
 description: >-
-  [ICLR 2026][Multi-Agent][LLM communication] The KVComm framework is proposed to enable efficient communication between LLMs through selective sharing of KV pairs. It identifies an "information concentration bias" in hidden states that makes them unsuitable for cross-model transmission and designs a layer selection strategy based on attention importance paired wi
+  [ICLR 2026][Multi-Agent][LLM communication] The KVComm framework is proposed to enable efficient communication between LLMs through selective sharing of KV pairs. It identifies an "information concentration bias" in hidden states that makes them unsuitable for cross-model transmission and designs a layer selection strategy based on attention importance paired with a Gaussian prior. Transmitting only 30% of layers outperforms most baselines.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LLM communication
-  - KV cache sharing
-  - multi-agent LLM
-  - selective layer
-  - attention importance
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "LLM communication"
+  - "KV cache sharing"
+  - "multi-agent LLM"
+  - "selective layer"
+  - "attention importance"
 date: 2026-05-08
-content_hash: 7fa5d4dc8e4831d1
+content_hash: c6c269f996a14357
 ---
+
 # KVComm: Enabling Efficient LLM Communication through Selective KV Sharing
 
 **Conference**: ICLR 2026  

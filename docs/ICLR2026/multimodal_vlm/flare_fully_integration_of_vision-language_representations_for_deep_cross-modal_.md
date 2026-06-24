@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FLARE: Fully Integration of Vision-Language Representations for Deep Cross-Modal Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] FLARE permeates "deep vision-language fusion" throughout the entire VLM workflow—guiding vision with text during encoding, dynamically aggregating vision based on text context during decoding, bridging modality spaces with dual reconstruction losses, and feeding training with "text-first" data synthesis. This enables a
+  [ICLR 2026][Multimodal VLM][Vision-Language Model] FLARE permeates "deep vision-language fusion" throughout the entire VLM workflow—guiding vision with text during encoding, dynamically aggregating vision based on text context during decoding, bridging modality spaces with dual reconstruction losses, and feeding training with "text-first" data synthesis. This enables a 3B model to outperform Cambrian-1 8B and Florence-VL 8B using only 630 visual tokens.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Model"
+  - "Modality Alignment"
+  - "Text-Guided Vision Encoding"
+  - "Cross-Modal Fusion"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: f8dd939f3e554477
+content_hash: 943bc60ca2f7a471
 ---
+
 # FLARE: Fully Integration of Vision-Language Representations for Deep Cross-Modal Understanding
 
 **Conference**: ICLR 2026  
@@ -119,14 +124,17 @@ flowchart LR
 
 <div class="related-papers" markdown="1">
 
-- **Cambrian-1**: [https://arxiv.org/abs/2406.10149](https://arxiv.org/abs/2406.10149)
-- **Florence-VL**: [https://arxiv.org/abs/2412.04424](https://arxiv.org/abs/2412.04424)
-- **Qwen2.5-VL**: [https://arxiv.org/abs/2412.18171](https://arxiv.org/abs/2412.18171)
+## Related Papers
+
+- [\[CVPR 2026\] HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](../../CVPR2026/multimodal_vlm/hammer_harnessing_mllm_via_cross-modal_integration_for_intention-driven_3d_affor.md)
+- [\[ICML 2025\] Vision-Language Models Create Cross-Modal Task Representations](../../ICML2025/multimodal_vlm/vision-language_models_create_cross-modal_task_representations.md)
+- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
+- [\[ICLR 2026\] WebWatcher: Breaking New Frontiers of Vision-Language Deep Research Agent](webwatcher_breaking_new_frontiers_of_vision-language_deep_research_agent.md)
+- [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](../../CVPR2026/multimodal_vlm/hammer_harnessing_mllm_via_cross-modal_integration_for_intention-driven_3d_affor.md)

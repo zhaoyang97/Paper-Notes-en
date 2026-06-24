@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes Visualize-then-Retrieve (VisRet), a new paradigm that converts text queries into visual images via T2I generation models before performing retrieval within the image modality. It achieves an average nDCG@30 improvement of 0.125 (CLIP) and 0.121 (E5-V) across four benchmarks, and increases downstream
+  [ACL 2026][Information Retrieval & RAG][Text-to-image retrieval] This paper proposes Visualize-then-Retrieve (VisRet), a new paradigm that converts text queries into visual images via T2I generation models before performing retrieval within the image modality. It achieves an average nDCG@30 improvement of 0.125 (CLIP) and 0.121 (E5-V) across four benchmarks, and increases downstream VQA accuracy by 15.7% on Visual-RAG-ME.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Text-to-image retrieval"
+  - "visualized queries"
+  - "cross-modal alignment"
+  - "retrieval-augmented generation"
+  - "modality projection"
 date: 2026-05-08
-content_hash: b6194d339013cd0b
+content_hash: a19a000d713f58d1
 ---
+
 # VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval
 
 **Conference**: ACL 2026  
@@ -161,11 +167,11 @@ VisRet is a training-free, plug-and-play method. it requires no modifications to
 
 ## Related Papers
 
+- [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](../../ICLR2026/information_retrieval/frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
 - [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
-- [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
-- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](../../ICLR2026/information_retrieval/beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
-- [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 - [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](../../ICML2026/information_retrieval/lare_low-attention_region_encoding_for_text-image_retrieval.md)
+- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](../../ICLR2026/information_retrieval/beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
+- [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
 
 </div>
 

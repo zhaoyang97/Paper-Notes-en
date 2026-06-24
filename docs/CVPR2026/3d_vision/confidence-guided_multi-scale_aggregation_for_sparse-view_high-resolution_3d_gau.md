@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper reveals the resolution trade-off in sparse-view 3DGS where low-resolution provides stable structures while high-resolution provides details but introduces noise. It proposes CAGS: using a low-resolution Gaussian field as an anchor, re-weighting the opacity of high-resolution Gaussians via a cross-scale confi
+  [CVPR 2026][3D Vision][Sparse-view reconstruction] This paper reveals the resolution trade-off in sparse-view 3DGS where low-resolution provides stable structures while high-resolution provides details but introduces noise. It proposes CAGS: using a low-resolution Gaussian field as an anchor, re-weighting the opacity of high-resolution Gaussians via a cross-scale confidence chain, and incorporating multi-scale pseudo-view regularization. This enables high-resolution reconstru…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse-view reconstruction"
+  - "3D Gaussian Splatting"
+  - "Multi-scale aggregation"
+  - "Confidence guidance"
+  - "High resolution"
 date: 2026-05-08
-content_hash: e5656b5ad14c45c3
+content_hash: c553d3da1e5c1132
 ---
+
 # Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Breakdown of the two core modules (Original Res / 1/2):
 
 ## Related Papers
 
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields](turbo-gs_accelerating_3d_gaussian_fitting_for_high-quality_radiance_fields.md)
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting](langref3dgs_natural_language-guided_3d_referential_segmentation_from_partial_obs.md)
+- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](../../ICLR2026/3d_vision/d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
+- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
 
 </div>
 

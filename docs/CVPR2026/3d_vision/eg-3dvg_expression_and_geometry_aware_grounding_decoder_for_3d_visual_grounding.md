@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EG-3DVG embeds two complementary attention modules—PECA, which injects 3D positions into text tokens, and GMA, which filters visual tokens based on geometric relations—within a 3D visual grounding decoder. Complemented by Expression Contrastive Learning (ECL) to distinguish intra-category distractors, it specifically a
+  [CVPR 2026][3D Vision][3D Visual Grounding] EG-3DVG embeds two complementary attention modules—PECA, which injects 3D positions into text tokens, and GMA, which filters visual tokens based on geometric relations—within a 3D visual grounding decoder. Complemented by Expression Contrastive Learning (ECL) to distinguish intra-category distractors, it specifically addresses "cross-modal misalignment, intra-category confusion, and geometric reasoning errors…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Visual Grounding"
+  - "Cross-modal Alignment"
+  - "Geometry-aware Attention"
+  - "Contrastive Learning"
+  - "Point Cloud"
 date: 2026-05-08
-content_hash: eb308001aa97fb26
+content_hash: 4b5b41bce52053a1
 ---
+
 # EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ GMA mask generation ablation:
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllm_via_cross-modal_integration_for_intention-driven_3d_affor.md)
-- [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
-- [\[CVPR 2026\] VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction](vgent_visual_grounding_via_modular_design_for_disentangling_reasoning_and_predic.md)
-- [\[ICCV 2025\] ViewSRD: 3D Visual Grounding via Structured Multi-View Decomposition](../../ICCV2025/multimodal_vlm/viewsrd_3d_visual_grounding_via_structured_multi-view_decomposition.md)
-- [\[CVPR 2026\] Phrase-Grounding-Aware Supervised Fine-Tuning for Chart Recognition via Side-Masked Attention](phrase-grounding-aware_supervised_fine-tuning_for_chart_recognition_via_side-mas.md)
+- [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
+- [\[CVPR 2026\] UZ3DVG: Unaided Zero-Shot 3D Visual Grounding with Generated Language Conditions](uz3dvg_unaided_zero-shot_3d_visual_grounding_with_generated_language_conditions.md)
+- [\[CVPR 2026\] PV-Ground: Text-Guided Point-Voxel Interaction for 3D Visual Grounding](pv-ground_text-guided_point-voxel_interaction_for_3d_visual_grounding.md)
+- [\[CVPR 2026\] S$^2$-MLLM: Boosting Spatial Reasoning Capability of MLLMs for 3D Visual Grounding with Structural Guidance](s2-mllm_boosting_spatial_reasoning_capability_of_mllms_for_3d_visual_grounding_w.md)
+- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
 
 </div>
 

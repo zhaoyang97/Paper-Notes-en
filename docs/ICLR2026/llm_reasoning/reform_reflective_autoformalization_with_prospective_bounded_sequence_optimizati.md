@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][autoformalization] ReForm is proposed as a reflective autoformalization paradigm that transforms the process of translating natural language mathematics problems into Lean formal statements from a single-pass generation into a "generation → semantic self-verification → correction" iterative cycle. It utilizes the PBSO algorithm to optimi
+  [ICLR 2026][Reasoning][autoformalization] ReForm is proposed as a reflective autoformalization paradigm that transforms the process of translating natural language mathematics problems into Lean formal statements from a single-pass generation into a "generation → semantic self-verification → correction" iterative cycle. It utilizes the PBSO algorithm to optimize heterogeneous reward signals, achieving an average improvement of 22.6 percentage points over the strongest baselin…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - autoformalization
-  - Lean
-  - semantic consistency
-  - self-correction
-  - reinforcement-learning
-  - heterogeneous reward
+  - "ICLR 2026"
+  - "Reasoning"
+  - "autoformalization"
+  - "Lean"
+  - "semantic consistency"
+  - "self-correction"
+  - "reinforcement-learning"
+  - "heterogeneous reward"
+  - "PBSO"
 date: 2026-05-08
-content_hash: 028c7edc8a81dece
+content_hash: dd52af4750acc86c
 ---
+
 # ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization
 
 **Conference**: ICLR 2026  
@@ -156,11 +158,11 @@ ReForm-8B achieved an average semantic consistency improvement of **+14.8pp** ov
 
 ## Related Papers
 
+- [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
 - [\[ICLR 2026\] LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction](loc-decomp_llm_autoformalization_via_logical_concept_decomposition_and_iterative.md)
 - [\[ICLR 2026\] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization](proofflow_a_dependency_graph_approach_to_faithful_proof_autoformalization.md)
-- [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
 - [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](../../ACL2026/llm_reasoning/jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
-- [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 
 </div>
 

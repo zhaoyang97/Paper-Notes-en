@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Systematizing LLM Persona Design: A Four-Quadrant Technical Taxonomy for AI Companions
 description: >-
-  [NeurIPS 2025 (LLM Persona Workshop)][LLM/NLP][LLM Persona] This paper proposes a four-quadrant technical taxonomy for LLM persona design, organized along two axes—"virtual vs. embodied" and "emotional companionship vs.…
+  [NeurIPS 2025 (LLM Persona Workshop)][LLM (Other)][LLM Persona] This paper proposes a four-quadrant technical taxonomy for LLM persona design, organized along two axes—"virtual vs. embodied" and "emotional companionship vs. functional augmentation"—to systematically analyze the technology stacks, core challenges, and ethical risks across diverse scenarios ranging from virtual companions and game NPCs to caregiving robots.
 tags:
   - "NeurIPS 2025 (LLM Persona Workshop)"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM Persona"
   - "AI Companion"
   - "Taxonomy"
   - "Virtual Companionship"
   - "Embodied Intelligence"
 date: 2026-05-08
-content_hash: b97de280c13e9030
+content_hash: 2d21c333fc1bb9f4
 ---
 
 # Systematizing LLM Persona Design: A Four-Quadrant Technical Taxonomy for AI Companions
@@ -243,11 +243,11 @@ This paper is a taxonomy survey paper with no specific loss function design. The
 
 ## Related Papers
 
+- [\[ACL 2025\] TaxoAdapt: Aligning LLM-Based Multidimensional Taxonomy Construction to Evolving Research Corpora](../../ACL2025/llm_nlp/taxoadapt_aligning_llm-based_multidimensional_taxonomy_construction_to_evolving_.md)
+- [\[ACL 2025\] LLMs + Persona-Plug = Personalized LLMs](../../ACL2025/llm_nlp/llms_persona-plug_personalized_llms.md)
+- [\[ACL 2025\] Rank, Chunk, and Expand: Lineage-Oriented Reasoning for Taxonomy Expansion](../../ACL2025/llm_nlp/rank_chunk_and_expand_lineage-oriented_reasoning_for_taxonomy_expansion.md)
+- [\[ACL 2025\] Ranking Unraveled: Recipes for LLM Rankings in Head-to-Head AI Combat](../../ACL2025/llm_nlp/ranking_unraveled_recipes_for_llm_rankings_in_head-to-head_ai_combat.md)
 - [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
-- [\[NeurIPS 2025\] Writing in Symbiosis: Mapping Human Creative Agency in the AI Era](writing_in_symbiosis_mapping_human_creative_agency_in_the_ai_era.md)
-- [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](../../ACL2026/llm_nlp/one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
-- [\[ICLR 2026\] Rethinking Code Similarity for Automated Algorithm Design with LLMs](../../ICLR2026/llm_nlp/rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)
-- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/llm_nlp/speculative_actions_faster_ai_agents.md)
 
 </div>
 

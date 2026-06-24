@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Automated Reproducibility Has a Problem Statement Problem
 description: >-
-  [AAAI 2026][Reproducibility] This paper proposes a formalized problem definition of reproducibility grounded in the scientific method…
+  [AAAI 2026][Reproducibility] This paper proposes a formalized problem definition of reproducibility grounded in the scientific method, representing empirical AI research as a hypothesis–experiment–interpretation graph structure. An LLM is used to automatically extract this structure from 20 papers, and the extracted results are validated through review by the original authors.
 tags:
   - "AAAI 2026"
   - "Reproducibility"
@@ -11,7 +11,7 @@ tags:
   - "LLM Automation"
   - "Empirical Study"
 date: 2026-05-08
-content_hash: 3b1e846d552086c2
+content_hash: 26bd84e96168c106
 ---
 
 # Automated Reproducibility Has a Problem Statement Problem

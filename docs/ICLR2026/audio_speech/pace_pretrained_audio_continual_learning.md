@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PACE: Pretrained Audio Continual Learning
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This work systematically constructs the first audio continual learning benchmark and reveals an upstream-downstream mismatch caused by the dominance of low-level time-frequency features in pretrained audio models. The proposed PACE method (Improved First-Session Adaptation + Adaptive Subspace Orthogonal PEFT + Boundary
+  [ICLR 2026][Audio & Speech][Audio Continual Learning] This work systematically constructs the first audio continual learning benchmark and reveals an upstream-downstream mismatch caused by the dominance of low-level time-frequency features in pretrained audio models. The proposed PACE method (Improved First-Session Adaptation + Adaptive Subspace Orthogonal PEFT + Boundary-aware Perturbation) significantly outperforms the SOTA across 6 audio CL benchmarks.
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio Continual Learning"
+  - "Pretrained Models"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Analytic Classifier"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: e63bee4cca991c05
+content_hash: 59b43d2ba68ea1d5
 ---
+
 # PACE: Pretrained Audio Continual Learning
 
 **Conference**: ICLR 2026  

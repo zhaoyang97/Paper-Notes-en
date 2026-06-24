@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Out-of-Distribution Detection with Extended Logit Normalization
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper identifies that LogitNorm leads to two types of feature collapse (dimensional collapse and origin collapse) during training. It proposes a hyperparameter-free Extended Logit Normalization (ELogitNorm), which replaces the distance-to-origin scaling factor with the distance from features to decision boundaries
+  [CVPR 2026][AI Safety][OOD Detection] This paper identifies that LogitNorm leads to two types of feature collapse (dimensional collapse and origin collapse) during training. It proposes a hyperparameter-free Extended Logit Normalization (ELogitNorm), which replaces the distance-to-origin scaling factor with the distance from features to decision boundaries. This significantly enhances the performance of various post-hoc OOD detection methods and improves confidence calibratio…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "OOD Detection"
+  - "Logit Normalization"
+  - "Feature Collapse"
+  - "Decision Boundary"
+  - "Model Calibration"
 date: 2026-05-08
-content_hash: 8875496a0979f25b
+content_hash: c152b8151a870e8f
 ---
+
 # Enhancing Out-of-Distribution Detection with Extended Logit Normalization
 
 **Conference**: CVPR 2026  

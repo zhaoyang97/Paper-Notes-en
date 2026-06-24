@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Source-Guided Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes the SGFM framework, which reformulates the "guided generation" problem in flow matching as "sampling from a modified source distribution." By modifying only the source distribution while leaving the pre-trained vector field untouched, the method accurately recovers the target distribution, preserves
+  [ICLR 2026][Image Generation][Flow Matching] This paper proposes the SGFM framework, which reformulates the "guided generation" problem in flow matching as "sampling from a modified source distribution." By modifying only the source distribution while leaving the pre-trained vector field untouched, the method accurately recovers the target distribution, preserves the straight-line trajectories of optimal transport vector fields (enabling fast inference)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Guided Generation"
+  - "Optimal Transport"
+  - "Source Distribution Sampling"
+  - "Inverse Problems"
 date: 2026-05-08
-content_hash: af0e698809aa563b
+content_hash: f16fbf660e5f1507
 ---
+
 # Source-Guided Flow Matching
 
 **Conference**: ICLR 2026  
@@ -156,11 +161,11 @@ SGFM variants outperform g-covA/g-covG across all tasks. Compared to the imaging
 
 ## Related Papers
 
-- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
+- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
 - [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
+- [\[CVPR 2026\] PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose](../../CVPR2026/image_generation/posed-flow_versatile_and_guided_flow_matching_model_of_human_pose.md)
 
 </div>
 

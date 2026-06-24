@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes the principle of Conditional Independent Component Analysis (CICA)—extracting components that are mutually independent given a set of latent variables—and proves that by selecting its sparsest solution and applying row permutation, one can identify latent variable positions and all causal edges in l
+  [ICLR2026][Causal Inference][Causal Discovery] This paper proposes the principle of Conditional Independent Component Analysis (CICA)—extracting components that are mutually independent given a set of latent variables—and proves that by selecting its sparsest solution and applying row permutation, one can identify latent variable positions and all causal edges in linear non-Gaussian acyclic models with latent confounders, thereby breaking the reliance on "purity assumptions"…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Causal Discovery"
+  - "Latent Variables"
+  - "Conditional Independent Component Analysis"
+  - "Non-Gaussian Linear Model"
+  - "Identifiability"
 date: 2026-05-08
-content_hash: 637874f9364e13f5
+content_hash: 8e22f9a88a151e52
 ---
+
 # Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables
 
 **Conference**: ICLR2026  
@@ -130,11 +136,11 @@ For $n=6$, the true solution $I-B_{X,X}$ averages $13.5$ non-zeros (Sum0/Graphs)
 
 ## Related Papers
 
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](carl_preserving_causal_structure_in_representation_learning.md)
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
-- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
-- [\[ICLR 2026\] Characterization and Learning of Causal Graphs with Latent Confounders and Post-treatment Selection from Interventional Data](characterization_and_learning_of_causal_graphs_with_latent_confounders_and_post-.md)
-- [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](causal_score_conditioning_for_multi-resolution_latent_systems.md)
+- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
 
 </div>
 

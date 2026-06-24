@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Image Tokenization for Multi-Scale Image Super Resolution
 description: >-
-  [ICML 2026][Model Compression][VAR] H-VAR reslices the VAR paradigm, which uses residual quantization for multi-scale generation, into Hierarchical Image Tokenization (HIT). This allows a small 310M model to output three meaningful intermediate resolutions (128 / 256 / 512) in a single forward pass. Combined with a DPO regularization term that favors HR
+  [ICML 2026][Model Compression][VAR] H-VAR reslices the VAR paradigm, which uses residual quantization for multi-scale generation, into Hierarchical Image Tokenization (HIT). This allows a small 310M model to output three meaningful intermediate resolutions (128 / 256 / 512) in a single forward pass. Combined with a DPO regularization term that favors HR outputs without requiring external reward models, it competes with the 1B-parameter VARSR on standard ISR datasets.
 tags:
-  - ICML 2026
-  - Model Compression
-  - VAR
+  - "ICML 2026"
+  - "Model Compression"
+  - "VAR"
+  - "Residual Quantization"
+  - "Multi-scale Super-Resolution"
+  - "Hierarchical Tokenization"
+  - "DPO Regularization"
 date: 2026-05-08
-content_hash: c2ff60c0db28466b
+content_hash: be0fd724b32c2373
 ---
+
 # Hierarchical Image Tokenization for Multi-Scale Image Super Resolution
 
 **Conference**: ICML 2026  
@@ -140,11 +145,11 @@ Since HR and LR tokens heavily overlap at lower scales, VAR models tend to "lazi
 
 ## Related Papers
 
+- [\[ICLR 2026\] SPR$^2$Q: Static Priority-based Rectifier Routing Quantization for Image Super-Resolution](../../ICLR2026/model_compression/spr2q_static_priority-based_rectifier_routing_quantization_for_image_super-resol.md)
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](../../AAAI2026/model_compression/hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](efficient_learned_image_compression_without_entropy_coding.md)
-- [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
 - [\[ICML 2026\] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers](from_per-image_low-rank_to_encoding_mismatch_rethinking_feature_distillation_in_.md)
-- [\[CVPR 2026\] Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning](../../CVPR2026/model_compression/towards_generalizable_ai-generated_image_detection_via_image-adaptive_prompt_lea.md)
+- [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
 
 </div>
 

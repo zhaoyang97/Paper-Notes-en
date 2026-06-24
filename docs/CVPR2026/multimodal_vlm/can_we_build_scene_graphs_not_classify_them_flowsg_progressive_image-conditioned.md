@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching
 description: >-
-  [CVPR 2026][Multimodal VLM][Flow Matching] FlowSG reformulates Scene Graph Generation (SGG) from "one-shot classification" into "progressive generation." By using hybrid discrete-continuous flow matching, a noise-polluted graph gradually evolves into object boxes (via continuous CFM) and predicate labels (via discrete DFM) over time. It outperforms the SOTA (US
+  [CVPR 2026][Multimodal VLM][Scene Graph Generation] FlowSG reformulates Scene Graph Generation (SGG) from "one-shot classification" into "progressive generation." By using hybrid discrete-continuous flow matching, a noise-polluted graph gradually evolves into object boxes (via continuous CFM) and predicate labels (via discrete DFM) over time. It outperforms the SOTA (USG-Par) by an average of 3 points across closed-set and open-vocabulary settings on VG and PSG datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Flow Matching
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Scene Graph Generation"
+  - "Flow Matching"
+  - "Discrete-Continuous Hybrid Generation"
+  - "Graph Transformer"
+  - "Open-Vocabulary"
 date: 2026-05-08
-content_hash: d61f4085ceb75998
+content_hash: c6031fec492beff3
 ---
+
 # Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching
 
 **Conference**: CVPR 2026  
@@ -132,15 +137,15 @@ Tokenization Ablation: Increasing the codebook size from 32×256 to 64×256 yiel
 - Value: ⭐⭐⭐⭐ The combination of progressive generation and language-aligned codebooks offers significant insights for the SGG community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
 - [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models](flowhijack_dynamics_aware_backdoor_attack_on_flow_matching_vla_models.md)
-- [\[ICML 2026\] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation](../../ICML2026/multimodal_vlm/pair2scene_learning_local_object_relations_for_procedural_scene_generation.md)
+- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
+- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
+- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](../../ACL2026/multimodal_vlm/response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
 - [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
 
 </div>

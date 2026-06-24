@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes MQE (Multistep Quasimetric Estimation), which integrates multistep Monte Carlo returns into a quasimetric distance architecture. It learns a goal-conditioned Q-function that satisfies the triangle inequality end-to-end. This enables non-hierarchical, planner-free "stitching" and compositional genera
+  [ICLR 2026][Reinforcement Learning][Goal-Conditioned Reinforcement Learning] This paper proposes MQE (Multistep Quasimetric Estimation), which integrates multistep Monte Carlo returns into a quasimetric distance architecture. It learns a goal-conditioned Q-function that satisfies the triangle inequality end-to-end. This enables non-hierarchical, planner-free "stitching" and compositional generalization for the first time in offline GCRL tasks spanning up to 4000 steps and rea…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Goal-Conditioned Reinforcement Learning"
+  - "Quasimetric Learning"
+  - "Multistep Returns"
+  - "Temporal Distance"
+  - "Long-range Generalization"
 date: 2026-05-08
-content_hash: 11ad7d4d8d86b28b
+content_hash: 650cde03ac3a228c
 ---
+
 # Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -164,7 +170,7 @@ Conducted on humanoidmaze-giant-stitch (Success %):
 - [\[ICLR 2026\] Goal Reaching with Eikonal-Constrained Hierarchical Quasimetric Reinforcement Learning](goal_reaching_with_eikonal-constrained_hierarchical_quasimetric_reinforcement_le.md)
 - [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
 - [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
-- [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
+- [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
 - [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
 
 </div>

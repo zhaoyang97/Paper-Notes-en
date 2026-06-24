@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Memorization Through the Lens of Sample Gradients
 description: >-
-  [ICLR 2026][AI Safety][memorization] This paper proposes **Cumulative Sample Gradient (CSG)**—the accumulation of the "loss gradient with respect to the input" throughout the training process—as an efficient proxy for Feldman's memorization score. Theoretically, it proves that CSG is linearly bounded by both the degree of memorization and the learning tim
+  [ICLR 2026][AI Safety][memorization] This paper proposes **Cumulative Sample Gradient (CSG)**—the accumulation of the "loss gradient with respect to the input" throughout the training process—as an efficient proxy for Feldman's memorization score. Theoretically, it proves that CSG is linearly bounded by both the degree of memorization and the learning time. This leads to the discovery of an early stopping criterion at the peak of the weight norm…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - memorization
-  - sample gradient
-  - generalization
-  - privacy
-  - double descent
-  - early stopping
+  - "ICLR 2026"
+  - "AI Safety"
+  - "memorization"
+  - "sample gradient"
+  - "generalization"
+  - "privacy"
+  - "double descent"
+  - "early stopping"
 date: 2026-05-08
-content_hash: 8213cbcb411f622c
+content_hash: 9dd4264f10eed1c1
 ---
+
 # Memorization Through the Lens of Sample Gradients
 
 **Conference**: ICLR 2026  
@@ -114,8 +115,8 @@ CSG achieves optimal or joint-optimal performance across all noise levels, valid
 - **Value**: ⭐⭐⭐⭐ — Accelerating memorization estimation by 5 orders of magnitude while maintaining high correlation offers direct utility for privacy auditing and data diagnostics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

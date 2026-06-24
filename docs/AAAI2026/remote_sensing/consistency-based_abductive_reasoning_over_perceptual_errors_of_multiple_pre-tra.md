@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments
 description: >-
-  [AAAI 2026][Remote Sensing][Abductive Reasoning] This paper models conflicting predictions from multiple pre-trained perception models in novel environments as a consistency-based abductive reasoning problem. Error detec…
+  [AAAI 2026][Remote Sensing][Abductive Reasoning] This paper models conflicting predictions from multiple pre-trained perception models in novel environments as a consistency-based abductive reasoning problem. Error detection rules and domain constraints for each model are encoded as logic programs, and an optimal hypothesis is sought that maximizes prediction coverage while keeping the inconsistency rate below a threshold. The approach achieves an average F1 improvement of 13…
 tags:
   - "AAAI 2026"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Model Ensemble"
   - "Logic Programming"
 date: 2026-05-08
-content_hash: 061b734194818de7
+content_hash: c9486521877bef69
 ---
 
 # Consistency-based Abductive Reasoning over Perceptual Errors of Multiple Pre-trained Models in Novel Environments
@@ -134,11 +134,11 @@ F1-Score comparison across 15 aerial test sets (6 DeTR models, 4-class object de
 
 ## Related Papers
 
+- [\[ICML 2025\] MapEval: A Map-Based Evaluation of Geo-Spatial Reasoning in Foundation Models](../../ICML2025/remote_sensing/mapeval_a_map-based_evaluation_of_geo-spatial_reasoning_in_foundation_models.md)
 - [\[AAAI 2026\] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction](m3sr_multi-scale_multi-perceptual_mamba_for_efficient_spectral_reconstruction.md)
+- [\[ICLR 2026\] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models](../../ICLR2026/remote_sensing/towards_faithful_reasoning_in_remote_sensing_a_perceptually-grounded_geospatial_.md)
 - [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](../../CVPR2026/remote_sensing/olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
-- [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
-- [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
-- [\[AAAI 2026\] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data](debiasing_machine_learning_predictions_for_causal_inference_without_additional_g.md)
+- [\[CVPR 2026\] Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency](../../CVPR2026/remote_sensing/beyond_tie_points_satellite_image_block_adjustment_based_on_dense_feature_consis.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Test-Time Adaptation by Causal Trimming
 description: >-
-  [NeurIPS 2025][test-time adaptation] This paper proposes TACT, a method that identifies non-causal directions in the representation space via data augmentation and PCA…
+  [NeurIPS 2025][test-time adaptation] This paper proposes TACT, a method that identifies non-causal directions in the representation space via data augmentation and PCA, then removes the projections of both test representations and class prototypes along these directions at test time. This reduces model reliance on non-causal features and significantly improves prediction performance under distribution shift.
 tags:
   - "NeurIPS 2025"
   - "test-time adaptation"
@@ -11,7 +11,7 @@ tags:
   - "non-causal feature trimming"
   - "distribution shift"
 date: 2026-05-08
-content_hash: 9a9c264d58efb919
+content_hash: 59dab847ea340846
 ---
 
 # Test-Time Adaptation by Causal Trimming
@@ -129,10 +129,10 @@ Both representation trimming and prototype trimming contribute individually, and
 ## Related Papers
 
 - [\[NeurIPS 2025\] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks](space_spike-aware_consistency_enhancement_for_test-time_adaptation_in_spiking_ne.md)
+- [\[ICML 2025\] Beyond Entropy: Region Confidence Proxy for Wild Test-Time Adaptation](../../ICML2025/others/beyond_entropy_region_confidence_proxy_for_wild_test-time_adaptation.md)
+- [\[ICML 2025\] Ranked Entropy Minimization for Continual Test-Time Adaptation](../../ICML2025/others/ranked_entropy_minimization_for_continual_test-time_adaptation.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
-- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
-- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
-- [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
+- [\[CVPR 2025\] Effortless Active Labeling for Long-Term Test-Time Adaptation](../../CVPR2025/others/effortless_active_labeling_for_long-term_test-time_adaptation.md)
 
 </div>
 

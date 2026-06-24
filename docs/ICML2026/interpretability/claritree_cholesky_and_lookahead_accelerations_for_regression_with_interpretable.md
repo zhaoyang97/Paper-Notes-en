@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLARITree: Cholesky and Lookahead Accelerations for Regression with Interpretable Piecewise Linear Trees
 description: >-
-  [ICML 2026][Interpretability][Paper Note] Addressing the dilemma where "greedy regression trees are fast but inaccurate, while optimal regression trees are accurate but computationally prohibitive," CLARITree combines one-step lookahead search with rank-one Cholesky updates of the Ridge Regression Gram matrix. It learns near-optimal, sparse regression trees wi
+  [ICML 2026][Interpretability][Regression Trees] Addressing the dilemma where "greedy regression trees are fast but inaccurate, while optimal regression trees are accurate but computationally prohibitive," CLARITree combines one-step lookahead search with rank-one Cholesky updates of the Ridge Regression Gram matrix. It learns near-optimal, sparse regression trees with linear models at the leaves, achieving accuracy close to optimal solutions while scaling an order of magnitud…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Regression Trees"
+  - "Piecewise Linear"
+  - "Lookahead Search"
+  - "Rank-one Cholesky Update"
+  - "Near-optimal Trees"
 date: 2026-05-08
-content_hash: 4aac1c19f1871933
+content_hash: 340b4c66c074cfb2
 ---
+
 # CLARITree: Cholesky and Lookahead Accelerations for Regression with Interpretable Piecewise Linear Trees
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ On small/medium scales, CLARITree is nearly identical to optimal DP (e.g., Airfo
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](../../NeurIPS2025/interpretability/are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
 - [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
+- [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](../../NeurIPS2025/interpretability/are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
+- [\[ICML 2026\] MAAT: Heterogeneous Partial Observation State Reconstruction Based on Knowledge-Guided Kernel Regression](knowledge-informed_kernel_state_reconstruction_from_heterogeneous_partial_observ.md)
 - [\[ICML 2026\] Why Linear Interpretability Works: Invariant Subspaces as a Result of Architectural Constraints](why_linear_interpretability_works_invariant_subspaces_as_a_result_of_architectur.md)
-- [\[ICLR 2026\] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression](../../ICLR2026/interpretability/polyshap_extending_kernelshap_with_interaction-informed_polynomial_regression.md)
-- [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
+- [\[ICML 2026\] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs](latentlens_revealing_highly_interpretable_visual_tokens_in_llms.md)
 
 </div>
 

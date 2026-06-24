@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking UMM Visual Generation: Masked Modeling for Efficient Image-Only Pre-training
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] Addressing the bottlenecks of "scarcity of image-text pairs" and "inefficient training" in the visual generation components of Unified Multimodal Models (UMM), this paper proposes IOMM, a two-stage framework. It first pre-trains on massive unlabeled images using image semantics as self-conditions via masked reconstruct
+  [CVPR 2026][Image Generation][Unified Multimodal Models (UMM)] Addressing the bottlenecks of "scarcity of image-text pairs" and "inefficient training" in the visual generation components of Unified Multimodal Models (UMM), this paper proposes IOMM, a two-stage framework. It first pre-trains on massive unlabeled images using image semantics as self-conditions via masked reconstruction, followed by hybrid fine-tuning with limited high-quality image-text pairs. Using only ~1050…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Models (UMM)"
+  - "Image-Only Pre-training"
+  - "Masked Image Modeling"
+  - "Self-Supervised Conditioning"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: ae90330b5f6e8cfb
+content_hash: 0a39e01b48ebc7e1
 ---
+
 # Rethinking UMM Visual Generation: Masked Modeling for Efficient Image-Only Pre-training
 
 **Conference**: CVPR 2026  
@@ -136,10 +141,10 @@ IOMM-B (512px) with a 1.6B backbone, using only public data and ~1050 H800 GPU h
 ## Related Papers
 
 - [\[CVPR 2026\] Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models](black-box_membership_inference_attacks_on_the_pre-training_data_of_image-generat.md)
-- [\[CVPR 2026\] Depth Adaptive Efficient Visual Autoregressive Modeling](depthvar_depth_adaptive_var.md)
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 - [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
+- [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Tricks or Traps? A Deep Dive into RL for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][RL4LLM] This paper isolates "tricks" commonly used in RL4LLM—such as normalization, clipping, loss aggregation, and length filtering—within a unified open-source framework through 160+ sets of controlled experiments. It clarifies their applicable scenarios and discovers that combining "group-mean + batch-std advantage normaliz
+  [ICLR 2026][Reasoning][RL4LLM] This paper isolates "tricks" commonly used in RL4LLM—such as normalization, clipping, loss aggregation, and length filtering—within a unified open-source framework through 160+ sets of controlled experiments. It clarifies their applicable scenarios and discovers that combining "group-mean + batch-std advantage normalization" with "token-level loss aggregation" (termed Lite PPO) consistently outperforms more complex methods like GRPO and DAPO und…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RL4LLM
-  - Clip-Higher
-  - Lite PPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RL4LLM"
+  - "Advantage Normalization"
+  - "Clip-Higher"
+  - "Loss Aggregation"
+  - "Lite PPO"
 date: 2026-05-08
-content_hash: 820ea332d729779b
+content_hash: fa1041ec089da2a3
 ---
+
 # Tricks or Traps? A Deep Dive into RL for LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -147,11 +150,11 @@ The core quantitative findings regarding training stability and final accuracy a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deep Think with Confidence](deep_think_with_confidence.md)
 - [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 - [\[ICLR 2026\] Beyond Markovian: Reflective Exploration via Bayes-Adaptive RL for LLM Reasoning](beyond_markovian_reflective_exploration_via_bayes-adaptive_rl_for_llm_reasoning.md)
 - [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
-- [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
 
 </div>
 

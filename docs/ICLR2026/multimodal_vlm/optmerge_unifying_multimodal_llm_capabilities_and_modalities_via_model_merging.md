@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper establishes the first benchmark for Multimodal Large Language Model (MLLM) merging with clearly defined capability and modality dimensions. It proposes OptMerge, which utilizes SVD low-rank denoising and robust task vector optimization to merge multiple expert MLLMs into a unified model without data, achievi
+  [ICLR 2026][Multimodal VLM][Model Merging] This paper establishes the first benchmark for Multimodal Large Language Model (MLLM) merging with clearly defined capability and modality dimensions. It proposes OptMerge, which utilizes SVD low-rank denoising and robust task vector optimization to merge multiple expert MLLMs into a unified model without data, achieving an average gain of 2.48% and even surpassing mixture-of-data training.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Model Merging"
+  - "MLLM"
+  - "Task Vectors"
+  - "Low-rank Denoising"
+  - "Omni Models"
 date: 2026-05-08
-content_hash: 125804981de01d61
+content_hash: 32fd7d844956465b
 ---
+
 # OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging
 
 **Conference**: ICLR 2026  
@@ -146,15 +152,16 @@ Ablation on Qwen2-VL (LoRA) and Vicuna-7B (Modality):
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models](viscodex_unified_multimodal_code_generation_via_merging_vision_and_coding_models.md)
+- [\[ICLR 2026\] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs](multimodal_prompt_optimization_why_not_leverage_multiple_modalities_for_mllms.md)
 - [\[NeurIPS 2025\] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness](../../NeurIPS2025/multimodal_vlm/robustmerge_parameter-efficient_model_merging_for_mllms_with_direction_robustnes.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](../../CVPR2026/multimodal_vlm/beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[ICLR 2026\] DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies](dualtoken_towards_unifying_visual_understanding_and_generation_with_dual_visual_.md)
-- [\[ACL 2025\] Transferring Textual Preferences to Vision-Language Understanding through Model Merging](../../ACL2025/multimodal_vlm/transferring_textual_preferences_to_vision-language_understanding_through_model_.md)
-- [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
 
 </div>
 

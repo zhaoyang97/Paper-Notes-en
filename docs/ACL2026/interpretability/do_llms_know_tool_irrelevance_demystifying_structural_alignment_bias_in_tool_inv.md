@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper identifies and formalizes "Structural Alignment Bias" in LLM tool invocation—a phenomenon where LLMs tend to call a tool when query attributes can be effectively mapped to tool parameters, even if the tool's function is irrelevant to the user's goal. The authors construct the SABEval dataset to decouple stru
+  [ACL 2026][Interpretability][Tool invocation] This paper identifies and formalizes "Structural Alignment Bias" in LLM tool invocation—a phenomenon where LLMs tend to call a tool when query attributes can be effectively mapped to tool parameters, even if the tool's function is irrelevant to the user's goal. The authors construct the SABEval dataset to decouple structural alignment from semantic relevance. Using Contrastive Attention Attribution…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Tool invocation"
+  - "Structural Alignment Bias"
+  - "Irrelevant tool rejection"
+  - "Attention attribution"
 date: 2026-05-08
-content_hash: 38b90cda42786e64
+content_hash: afb8bb2a369a9f2c
 ---
+
 # Do LLMs Know Tool Irrelevance? Demystifying Structural Alignment Bias in Tool Invocations
 
 **Conference**: ACL 2026  
@@ -117,14 +122,13 @@ flowchart TD
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
+- [\[ICLR 2026\] What Do Large Language Models Know About Opinions?](../../ICLR2026/interpretability/what_do_large_language_models_know_about_opinions.md)
 - [\[ACL 2026\] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)
-- [\[NeurIPS 2025\] Distributional Autoencoders Know the Score](../../NeurIPS2025/interpretability/distributional_autoencoders_know_the_score.md)
-- [\[AAAI 2026\] Hypothesis Generation via LLM-Automated Language Bias for ILP](../../AAAI2026/interpretability/hypothesis_generation_via_llm-automated_language_bias_for_ilp.md)
+- [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
+- [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](../../ICLR2026/interpretability/llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)
 - [\[ACL 2026\] Dual Alignment Between Language Model Layers and Human Sentence Processing](dual_alignment_between_language_model_layers_and_human_sentence_processing.md)
 
 </div>

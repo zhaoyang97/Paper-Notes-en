@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Estimating Correlation Clustering Cost in Node-Arrival Stream
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper investigates the problem of approximating correlation clustering cost under the "node-arrival" streaming model. The authors propose the C4Approx algorithm, which utilizes **sublinear** space of $O(n^{(3+\alpha)/4}\log n)$ words and a constant number of passes to achieve an $(O(1), n^{1-\alpha})$-approximatio
+  [ICML 2026][Algorithmic Theory][Correlation Clustering] This paper investigates the problem of approximating correlation clustering cost under the "node-arrival" streaming model. The authors propose the C4Approx algorithm, which utilizes **sublinear** space of $O(n^{(3+\alpha)/4}\log n)$ words and a constant number of passes to achieve an $(O(1), n^{1-\alpha})$-approximation. They also provide two matching lower bounds proving that multiple passes and additive error are both…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Algorithmic Theory"
+  - "Data Stream Algorithms"
+  - "Graph Clustering"
+  - "Correlation Clustering"
+  - "Node-Arrival Stream"
+  - "Sublinear Space"
+  - "Pivot Algorithm"
+  - "Reference Set Sampling"
 date: 2026-05-08
-content_hash: 6cbd2769e4b47c8e
+content_hash: e651f5c0aed03186
 ---
+
 # Estimating Correlation Clustering Cost in Node-Arrival Stream
 
 **Conference**: ICML 2026  
@@ -126,9 +134,9 @@ The authors compared C4Approx with Pivot, PrunedPivot, and the algorithm by Assa
 
 - [\[ICML 2025\] Sparse-Pivot: Dynamic Correlation Clustering for Node Insertions](../../ICML2025/learning_theory/sparse-pivot_dynamic_correlation_clustering_for_node_insertions.md)
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](../../ICLR2026/learning_theory/efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 - [\[ICML 2026\] Is Spurious Correlation Removal Always Learnable?](is_spurious_correlation_removal_always_learnable.md)
-- [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/learning_theory/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
 
 </div>
 

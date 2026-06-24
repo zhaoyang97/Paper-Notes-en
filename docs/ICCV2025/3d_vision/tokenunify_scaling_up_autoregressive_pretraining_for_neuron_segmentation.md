@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TokenUnify: Scaling Up Autoregressive Pretraining for Neuron Segmentation
 description: >-
-  [ICCV 2025][3D Vision][Autoregressive pretraining] TokenUnify is proposed to unify three complementary learning objectives—random token prediction, next-token prediction…
+  [ICCV 2025][3D Vision][Autoregressive pretraining] TokenUnify is proposed to unify three complementary learning objectives—random token prediction, next-token prediction, and next-all-token prediction—enabling hierarchical predictive coding on large-scale electron microscopy data. The method reduces autoregressive error accumulation from $O(K)$ to $O(\sqrt{K})$, achieving a 44% improvement on downstream neuron segmentation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Mamba architecture"
   - "hierarchical predictive coding"
 date: 2026-05-08
-content_hash: b4d6783f099e28ae
+content_hash: ab5087c6898490cb
 ---
 
 # TokenUnify: Scaling Up Autoregressive Pretraining for Neuron Segmentation
@@ -157,11 +157,11 @@ Mamba blocks are the most critical component (core of sequence modeling capabili
 
 ## Related Papers
 
+- [\[CVPR 2025\] MegaSynth: Scaling Up 3D Scene Reconstruction with Synthesized Data](../../CVPR2025/3d_vision/megasynth_scaling_up_3d_scene_reconstruction_with_synthesized_data.md)
 - [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](egom2p_egocentric_multimodal_multitask_pretraining.md)
 - [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](panst3r_multi-view_consistent_panoptic_segmentation.md)
-- [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](../../NeurIPS2025/3d_vision/enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
 - [\[ICCV 2025\] Trace3D: Consistent Segmentation Lifting via Gaussian Instance Tracing](trace3d_consistent_segmentation_lifting_via_gaussian_instance_tracing.md)
-- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](../../CVPR2026/3d_vision/hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
+- [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](../../NeurIPS2025/3d_vision/enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
 
 </div>
 

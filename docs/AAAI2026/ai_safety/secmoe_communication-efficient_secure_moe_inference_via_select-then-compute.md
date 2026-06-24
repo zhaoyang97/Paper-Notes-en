@@ -2,166 +2,166 @@
 title: >-
   [Paper Note] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute
 description: >-
-  [AAAI 2026][AI Safety][MoE] This paper proposes the SecMoE framework, which efficiently enables sparse MoE inference under two-party secure computation via a Select-Then-Compute paradigm…
+  [AAAI 2026][AI Safety][MoE] This paper proposes the SecMoE framework, which efficiently implements sparse MoE inference in secure two-party computation (2-PC) via the Select-Then-Compute paradigm. It avoids redundant expert computation, reducing communication overhead by up to 29.8× and achieving up to 16.1× end-to-end acceleration.
 tags:
   - "AAAI 2026"
   - "AI Safety"
   - "MoE"
-  - "privacy-preserving inference"
-  - "secure multi-party computation"
-  - "homomorphic encryption"
+  - "Privacy-Preserving Inference"
+  - "Secure Multi-Party Computation"
+  - "Homomorphic Encryption"
   - "Select-Then-Compute"
 date: 2026-05-08
-content_hash: 2ab7cf541246d8dc
+content_hash: d229ce265c3fb67c
 ---
 
 # SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2601.06790](https://arxiv.org/abs/2601.06790)  
-**Code**: Not released  
-**Area**: AI Safety / Privacy-Preserving Machine Learning
-**Keywords**: MoE, privacy-preserving inference, secure multi-party computation, homomorphic encryption, Select-Then-Compute
+**Code**: Unreleased  
+**Area**: AI Safety / Privacy-Preserving Machine Learning  
+**Keywords**: MoE, Privacy-Preserving Inference, Secure Multi-Party Computation, Homomorphic Encryption, Select-Then-Compute
 
 ## TL;DR
 
-This paper proposes the SecMoE framework, which efficiently enables sparse MoE inference under two-party secure computation via a Select-Then-Compute paradigm, eliminating redundant expert computation and achieving up to 29.8× communication reduction and up to 16.1× end-to-end speedup.
+This paper proposes the SecMoE framework, which efficiently implements sparse MoE inference in secure two-party computation (2-PC) via the Select-Then-Compute paradigm. It avoids redundant expert computation, reducing communication overhead by up to 29.8× and achieving up to 16.1× end-to-end acceleration.
 
 ## Background & Motivation
 
 ### Core Problem
-Privacy-preserving inference for Transformer models is increasingly critical, yet existing secure two-party computation (2-PC) frameworks primarily target small models such as BERT and GPT-2, leaving a gap of roughly two orders of magnitude relative to practically deployed large models. The Mixture of Experts (MoE) architecture, which scales model capacity at low computational cost through sparse activation, is a promising approach to bridging this gap.
+Privacy-preserving inference for Transformer models is increasingly important. However, existing secure two-party computation (2-PC) frameworks primarily target small models like BERT and GPT-2, leaving a hundred-fold gap compared to actual large-scale models. The Mixture of Experts (MoE) architecture, which scales model capacity with low computational overhead through sparse activation, is a potential solution to bridge this gap.
 
-### Privacy Leakage Risk
-In standard 2-PC protocols, the server holds plaintext weights and computes FFN layers via homomorphic encryption. In the MoE setting, however, if the server learns which expert is activated, it can infer token-level private information about the client's input. This constitutes a novel privacy threat that prior work has not adequately addressed.
+### Privacy Leakage Risks
+In standard 2-PC protocols, the server calculates FFN layers via homomorphic encryption using plaintext weights. However, in MoE scenarios, if the server learns which expert is activated, it can infer token-level private information about the client's input. This represents a novel privacy threat that has not been adequately addressed before.
 
-### Limitations of the Naïve Approach
-The most straightforward protection strategy—evaluating all experts before selection—entirely negates the core computational efficiency advantage of sparse MoE. For a 128-expert model, the naïve scheme requires computing all 128 expert FFNs, incurring prohibitive overhead.
+### Limitations of Naive Approaches
+The most straightforward protection method is to evaluate all experts before selection, which completely negates the core benefit of sparse MoE—computational efficiency. For instance, in a 128-expert model, the naive approach requires computing the FFNs of all 128 experts, incurring massive overhead.
 
 ## Method
 
 ### Core Paradigm: Select-Then-Compute
 
-The central idea of SecMoE is to decompose secure computation into two stages: a **Selection Phase** and a **Compute Phase**.
+The core idea of SecMoE is to decompose secure computation into two steps: the **Selection Phase** and the **Compute Phase**:
 
-1. **Selection Phase**: Unifies multiple computation entries into a common circuit structure, extracts their parameters as candidates, and performs oblivious selection over ciphertext vectors.
-2. **Compute Phase**: Executes encrypted computation on only the single selected entry.
+1. **Selection Phase**: Multiple computation entries are unified into the same circuit structure. Parameters of each entry are extracted as candidates, and an oblivious selection is performed using ciphertext vectors.
+2. **Compute Phase**: Encrypted computation is performed only on the single selected entry.
 
-This paradigm is applied to both the secure sparse MoE layer and the secure piecewise polynomial evaluation.
+This paradigm is applied to both secure sparse MoE layers and secure piecewise polynomial evaluation.
 
 ### Design 1: Secure Sparse MoE Protocol
 
-The threat model assumes a semi-honest two-party setting where client $C$ holds private inputs and server $S$ holds model weights.
+The threat model is a semi-honest two-party setting: the client $C$ holds the private input, and the server $S$ holds the model weights.
 
 **Selection Phase**:
-- The client and server obtain secret-shared top-$k$ expert indices via the $\Pi_{\text{Topk}}$ protocol.
-- A one-hot Boolean vector $t^b$ of length $N_{\text{exp}}$ is generated via $\Pi_{\text{onehot}}$.
+- The client and the server obtain secret-shared indices of the top-k experts using the $\Pi_{\text{Topk}}$ protocol.
+- A one-hot boolean vector $t^b$ of length $N_{\text{exp}}$ is generated using the $\Pi_{\text{onehot}}$ protocol.
 - The vector is converted to arithmetic form $t^a$ via $\Pi_{\text{B2A}}$, encrypted by the client, and sent to the server.
-- The server exploits the communication-free local advantage of homomorphic encryption to compute the encrypted weights of the selected expert:
+- Leveraging the communication-free property of local homomorphic encryption, the server computes the encrypted weights of the selected experts:
 
 $$[\![W_r^1]\!] = \sum_{i=0}^{N_{\text{exp}}-1} W_i^1 \cdot [\![t^a]\!]$$
 
-The same procedure is applied to $V_i$ and $W_i^2$, requiring only a single selection vector of length $N_{\text{exp}}$ to be transmitted.
+This operation is analogously performed for $V_i$ and $W_i^2$, requiring the transmission of only a single selection vector of length $N_{\text{exp}}$.
 
 **Compute Phase**:
-- The client encrypts its input share $[\![\langle x \rangle_c]\!]$ and sends it to the server.
-- The server performs ciphertext–ciphertext matrix multiplications $[\![W_r^1]\!] \cdot [\![x]\!]$ and $[\![V_r]\!] \cdot [\![x]\!]$.
-- After GeLU activation and GLU gating, a further ciphertext multiplication $[\![W_r^2]\!] \cdot [\![\text{GLU}]\!]$ is performed.
-- A random mask $R$ protects intermediate results, and both parties ultimately obtain output shares.
+- The client encrypts the input share $[\![\langle x \rangle_c]\!]$ and sends it to the server.
+- The server performs ciphertext-ciphertext matrix multiplications $[\![W_r^1]\!] \cdot [\![x]\!]$ and $[\![V_r]\!] \cdot [\![x]\!]$.
+- After GeLU activation and GLU gating, another ciphertext multiplication $[\![W_r^2]\!] \cdot [\![\text{GLU}]\!]$ is executed.
+- The intermediate results are protected using a random mask $R$, and eventually, both parties obtain their respective output shares.
 
-Key advantage: As the number of experts grows from 32 to 128, SecMoE's computation increases by only 24%, whereas Iron/BumbleBee increases by 178%.
+Key Advantage: When scaling from 32 to 128 experts, the computation for SecMoE increases by only 24%, whereas Iron/BumbleBee increases by 178%.
 
 ### Design 2: Secure Piecewise Polynomial Selection (Secure GeLU)
 
-The GeLU function is approximated via piecewise quadratic polynomials:
+The GeLU function is approximated using piecewise quadratic polynomials:
 
 $$\text{GeLU}(x) = \begin{cases} 0 & x \in (-\infty, -5] \\ P_1(x) & x \in (-5, -3] \\ P_2(x) & x \in (-3, -1] \\ P_3(x) & x \in (-1, 1] \\ P_4(x) & x \in (1, 3] \\ x & x \in (3, \infty) \end{cases}$$
 
 **Selection Phase**:
-- All piecewise polynomial coefficients are collected into a matrix, with row index $i$ denoting the segment and column index $j$ denoting the coefficient (from highest to lowest degree).
-- Lower-degree polynomials are zero-padded to the highest degree.
-- Secure comparisons $\Pi_{\text{comp}}\{x < b_i\}$ generate a one-hot segment selector.
-- A single masked matrix–vector product retrieves the target coefficient row.
+- All piecewise polynomial coefficients are collected into a matrix, where the row index $i$ represents the interval and the column index $j$ represents the coefficients (from the highest degree to the constant term).
+- Lower-degree polynomials are padded with zeros to match the highest degree.
+- A one-hot segment selector is generated via secure comparisons $\Pi_{\text{comp}}\{x < b_i\}$.
+- The target coefficient row is retrieved using a single masked matrix-vector product.
 
 **Compute Phase**:
-- The squared input $\langle x^2 \rangle := \Pi_{\text{Mul}}(x, x)$ is computed.
-- Quadratic polynomial evaluation using the selected coefficients: $\langle y \rangle = \Pi_{\text{Mul}}(\langle x^2 \rangle, \langle c_r \rangle_0) + \Pi_{\text{Mul}}(\langle x \rangle, \langle c_r \rangle_1) + \langle c_r \rangle_2$
-- Maximum absolute error: $1.2 \times 10^{-2}$; mean absolute error: $1.7 \times 10^{-3}$.
+- The input self-multiplication is computed: $\langle x^2 \rangle := \Pi_{\text{Mul}}(x, x)$.
+- Then, the quadratic polynomial evaluation is executed with the selected coefficients: $\langle y \rangle = \Pi_{\text{Mul}}(\langle x^2 \rangle, \langle c_r \rangle_0) + \Pi_{\text{Mul}}(\langle x \rangle, \langle c_r \rangle_1) + \langle c_r \rangle_2$.
+- The maximum absolute error is $1.2 \times 10^{-2}$, with a mean absolute error of $1.7 \times 10^{-3}$.
 
-**Further optimizations**: Breakpoint comparisons are unified and their results reused to reduce communication rounds; zero entries in the coefficient matrix are exploited to skip $\Pi_{\text{MUX}}$ operations.
+**Further Optimization**: Unifying breakpoint comparisons and reusing the results reduces the communication rounds for secure comparisons; utilizing zero elements in the coefficient matrix allows skipping $\Pi_{\text{MUX}}$ operations.
 
 ## Key Experimental Results
 
 ### Experimental Setup
-- Setting: ring $\mathbb{Z}_{2^{64}}$, fixed-point precision $s=18$, two nodes (64 vCPU + 128 GB RAM)
-- Network: LAN (1 Gbps, 0.5 ms) and WAN (400 Mbps, 4 ms)
-- Baselines: Iron (NeurIPS 2022), BumbleBee (NDSS 2025)
-- Models: MoE-Small (124M, 8 experts), Switch-Base (0.62B–7B, 8–128 experts)
+- Environment: $\mathbb{Z}_{2^{64}}$ ring, fixed-point precision $s=18$, dual-node setting (64 vCPUs + 128GB RAM).
+- Network: LAN (1Gbps, 0.5ms) and WAN (400Mbps, 4ms).
+- Baselines: Iron (NeurIPS 2022), BumbleBee (NDSS 2025).
+- Models: MoE-Small (124M, 8 experts), Switch-Base (0.62B-7B, 8-128 experts).
 
-### Table 1: Runtime Comparison (minutes, 128-expert setting)
+### Table 1: Running Time Comparison (minutes, 128-expert setting)
 
 | Method | MoE-Small LAN | MoE-Small WAN | Switch-Base LAN | Switch-Base WAN |
-|--------|---------------|---------------|-----------------|-----------------|
+|------|---------|---------|----------|----------|
 | Iron | 12.07 (4.7×) | 59.14 (16.1×) | 35.5 (2.9×) | 143.78 (9.7×) |
 | BumbleBee | 9.76 (3.8×) | 13.88 (3.8×) | 32.3 (2.6×) | 34.89 (2.3×) |
 | **SecMoE** | **2.52** | **3.68** | **12.1** | **14.73** |
 
-### Table 2: Communication Volume Comparison (GB)
+### Table 2: Communication Overhead Comparison (GB)
 
-| Method | 16 experts | 32 experts | 64 experts | 128 experts |
-|--------|-----------|-----------|-----------|------------|
+| Method | 16 Experts | 32 Experts | 64 Experts | 128 Experts |
+|------|--------|--------|--------|---------|
 | Iron | 7.13 (8.9×) | 9.44 (11.2×) | 17.19 (21.2×) | 24.17 (29.4×) |
 | BumbleBee | 1.42 (1.8×) | 2.04 (2.4×) | 3.37 (4.2×) | 5.81 (7.1×) |
 | **SecMoE** | **0.81** | **0.84** | **0.81** | **0.82** |
 
-SecMoE's communication volume is nearly constant with respect to the number of experts (varying from only 0.81 GB at 16 experts to 0.82 GB at 128 experts), whereas Iron's volume grows by 3.4×.
+SecMoE's communication overhead barely grows with the number of experts (it only increases from 0.81 GB to 0.82 GB from 16 to 128 experts), while Iron increases by 3.4×.
 
 ### Accuracy Validation (MoE-Small on GLUE)
 
 | Dataset | Metric | Plaintext Baseline | SecMoE |
-|---------|--------|--------------------|--------|
+|--------|------|---------|--------|
 | CoLA | MCC | 41.0 | 41.0 |
 | QNLI | ACC | 90.3 | 90.2 |
 | RTE | ACC | 69.9 | 70.0 |
 
-Accuracy degradation is ≤0.1%, which is negligible.
+The accuracy loss is $\le0.1\%$, which is negligible.
 
 ## Key Findings
 
-1. **Near-constant communication**: SecMoE's communication volume is essentially independent of the number of experts—a direct consequence of the Select-Then-Compute paradigm, which transmits only a single selection vector and executes computation for a single expert.
-2. **Excellent scalability**: A 63× increase in model parameters results in only a 15.2× increase in end-to-end runtime.
-3. **Greater advantage on WAN**: In bandwidth-constrained WAN environments, SecMoE's communication savings translate into more pronounced speedups (up to 16.1×), making it well-suited for practical deployment.
-4. **GeLU optimization effectiveness**: Under Switch-Base with 128 experts, SecMoE's GeLU protocol is 7.1× faster than BumbleBee with 81% less communication.
+1. **Near-Constant Communication**: The communication overhead of SecMoE is almost independent of the number of experts. This is a direct consequence of the Select-Then-Compute paradigm, which only transmits a single selection vector and executes computation for only one expert.
+2. **Excellent Scalability**: When scaling model parameters by 63×, the end-to-end running time increases by only 15.2×.
+3. **Greater Advantages in WAN**: In bandwidth-constrained WAN environments, the communication savings of SecMoE translate into more significant speedups (up to 16.1×), making it highly suitable for practical deployment.
+4. **GeLU Optimization Performance**: Under the Switch-Base 128-expert setting, the GeLU protocol in SecMoE is 7.1× faster than BumbleBee, with an 81% reduction in communication.
 
 ## Highlights & Insights
 
-- **First practical secure MoE inference protocol**: Fills the gap in 2-PC secure inference for MoE architectures.
-- **Elegant unified abstraction**: The Select-Then-Compute paradigm unifies MoE expert selection and piecewise polynomial evaluation under a single design principle.
-- **Lossless accuracy**: Inference accuracy on the GLUE benchmark is virtually identical to plaintext inference.
-- **Communication constant in the number of experts**: Breaks the linear scaling bottleneck of existing methods.
+- **First Practical Secure MoE Inference Protocol**: Fills the gap in 2-PC secure inference for MoE architectures.
+- **Elegant Unified Abstraction**: Select-Then-Compute unifies both MoE expert selection and piecewise polynomial evaluation into the same paradigm with a clean design.
+- **Negligible Accuracy Loss**: Achieves almost identical precision to plaintext inference on the GLUE benchmark.
+- **Constant Communication w.r.t. Number of Experts**: Overcomes the bottleneck in existing approaches where communication scales linearly with the number of experts.
 
 ## Limitations & Future Work
 
-1. **Semi-honest model only**: The protocol assumes both parties follow the protocol while attempting to learn private information; malicious adversary settings are not considered.
-2. **Memory bottleneck**: Configurations with 256+ experts exhaust memory due to model parameter loading and Beaver triple storage.
-3. **Top-1 expert restriction**: Experiments only validate $K_{\text{exp}}=1$; multi-expert activation scenarios such as Top-2 are not sufficiently explored.
-4. **Limited model scale**: The largest tested model is Switch-Base at 7B parameters; models exceeding tens of billions of parameters are not evaluated.
-5. **Softmax not optimized**: High-order Taylor expansion of the exponential function is incompatible with Select-Then-Compute, so the original scheme is retained.
+1. **Semi-Honest Model Limitation**: Assumes both parties follow the protocol but attempt to extract information, without considering malicious adversaries.
+2. **Memory Bottleneck**: Models with 256+ experts suffer from out-of-memory (OOM) issues due to loading model parameters and storing Beaver's triples.
+3. **Top-1 Expert Restriction**: The experiments only evaluate $K_{\text{exp}}=1$, leaving multi-expert activation scenarios such as Top-2 inadequately explored.
+4. **Limited Model Scale**: The largest evaluated model is Switch-Base 7B, without validating models beyond tens of billions of parameters.
+5. **Unoptimized Softmax**: The high-order Taylor expansion of exponential functions is not suitable for Select-Then-Compute, thus retaining the original scheme.
 
 ## Related Work & Insights
 
-- **Secure neural network inference**: MiniONN, Gazelle, CrypTFlow2, and others established the foundations of 2-PC secure NN inference.
-- **Secure Transformer inference**: Iron first introduced HE into Transformer linear layers; BumbleBee optimized lattice-based additive HE; BOLT and SHAFT improved nonlinear layers and the preprocessing phase, respectively.
-- **MoE architectures**: Sparse MoE (Shazeer 2017) and Switch Transformer (Fedus 2022) serve as the model foundations for this work.
+- **Secure Neural Network Inference**: MiniONN, Gazelle, CrypTFlow2, etc., established the foundation for 2-PC secure NN inference.
+- **Secure Transformer Inference**: Iron first introduced HE to the linear layers of Transformers; BumbleBee optimized lattice-based additive HE; BOLT and SHAFT improved non-linear layers and preprocessing phases, respectively.
+- **MoE Architectures**: Sparse MoE (Shazeer 2017) and Switch Transformer (Fedus 2022) serve as the architectural foundation of this work.
 
 ## Rating
 
 ⭐⭐⭐⭐ (4/5)
 
-- **Novelty**: ⭐⭐⭐⭐ — The Select-Then-Compute paradigm is original and elegantly addresses both privacy and efficiency in MoE inference.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive evaluation across multiple models, expert counts, and LAN/WAN settings; larger models and real-deployment evaluations are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Protocol descriptions are rigorous and figures are clear.
-- **Value**: ⭐⭐⭐ — Practical applicability is constrained by the semi-honest assumption and memory limitations.
+- Novelty: ⭐⭐⭐⭐ — The Select-Then-Compute paradigm is novel, uniformly addressing both privacy and efficiency in MoE.
+- Evaluation: ⭐⭐⭐⭐ — Comprehensive settings with multiple models, expert counts, and LAN/WAN conditions, though evaluations on larger models and real-world deployments are missing.
+- Writing Quality: ⭐⭐⭐⭐ — Rigorous protocol descriptions with clear illustrations.
+- Practicality: ⭐⭐⭐ — The semi-honest assumption and memory limits constrain real-world applications.
 
 <!-- RELATED:START -->
 
@@ -169,11 +169,11 @@ Accuracy degradation is ≤0.1%, which is negligible.
 
 ## Related Papers
 
+- [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](../../ICML2026/ai_safety/fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
+- [\[ICLR 2026\] Secure Outlier-Aware Large Language Model Inference](../../ICLR2026/ai_safety/secure_outlier-aware_large_language_model_inference.md)
 - [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
+- [\[ICLR 2026\] Get RICH or Die Scaling: Profitably Trading Inference Compute for Robustness](../../ICLR2026/ai_safety/get_rich_or_die_scaling_profitably_trading_inference_compute_for_robustness.md)
 - [\[CVPR 2026\] Computation and Communication Efficient Federated Unlearning via On-server Gradient Conflict Mitigation and Expression](../../CVPR2026/ai_safety/computation_and_communication_efficient_federated_unlearning_via_on-server_gradi.md)
-- [\[AAAI 2026\] Plug-and-Play Parameter-Efficient Tuning of Embeddings for Federated Recommendation](plug-and-play_parameter-efficient_tuning_of_embeddings_for_federated_recommendat.md)
-- [\[AAAI 2026\] Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference](diversifying_counterattacks_orthogonal_exploration_for_robust_clip_inference.md)
-- [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
 
 </div>
 

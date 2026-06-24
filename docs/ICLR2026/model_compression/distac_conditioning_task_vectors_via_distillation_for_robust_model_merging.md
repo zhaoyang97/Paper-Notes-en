@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging
 description: >-
-  [ICLR 2026][Model Compression][task vector] This paper reveals two hidden failure modes of model merging—task vector norm discrepancy and low source model confidence—and proposes DisTaC: "pre-conditioning" task vectors via knowledge distillation (rescaling norms + boosting confidence) before merging, enabling existing SOTA merging methods to function in realisti
+  [ICLR 2026][Model Compression][task vector] This paper reveals two hidden failure modes of model merging—task vector norm discrepancy and low source model confidence—and proposes DisTaC: "pre-conditioning" task vectors via knowledge distillation (rescaling norms + boosting confidence) before merging, enabling existing SOTA merging methods to function in realistic scenarios where they would otherwise fail.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - task vector
-  - model merging
-  - knowledge distillation
-  - robustness
-  - task vector norm
-  - model confidence
+  - "ICLR 2026"
+  - "Model Compression"
+  - "task vector"
+  - "model merging"
+  - "knowledge distillation"
+  - "robustness"
+  - "task vector norm"
+  - "model confidence"
 date: 2026-05-08
-content_hash: 45deae05871dabaa
+content_hash: ff0e9036c3873487
 ---
+
 # DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging
 
 **Conference**: ICLR 2026  
@@ -117,9 +118,9 @@ DisTaC restores almost all methods to near-Original performance in both adverse 
 
 - [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
 - [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
+- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 - [\[ICLR 2026\] Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking](expert_merging_model_merging_with_unsupervised_expert_alignment_and_importance-g.md)
-- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
-- [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
+- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
 
 </div>
 

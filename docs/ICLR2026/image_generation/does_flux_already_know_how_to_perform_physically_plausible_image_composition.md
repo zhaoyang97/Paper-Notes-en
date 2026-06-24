@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Does FLUX Already Know How to Perform Physically Plausible Image Composition?
 description: >-
-  [ICLR 2026][Image Generation][image composition] The paper proposes SHINE, a training-free image composition framework. By utilizing three components—Manifold-Steered Anchor Loss, Degradation-Suppression Guidance, and Adaptive Background Blending—it leverages the inherent physical priors of pre-trained T2I models (such as FLUX) to achieve high-quality object insertio
+  [ICLR2026][Image Generation][image composition] The paper proposes SHINE, a training-free image composition framework. By utilizing three components—Manifold-Steered Anchor Loss, Degradation-Suppression Guidance, and Adaptive Background Blending—it leverages the inherent physical priors of pre-trained T2I models (such as FLUX) to achieve high-quality object insertion under complex lighting conditions (shadows, water reflections, etc.).
 tags:
-  - ICLR 2026
-  - Image Generation
-  - image composition
-  - training-free
-  - diffusion model
-  - FLUX
-  - physically plausible
+  - "ICLR2026"
+  - "Image Generation"
+  - "image composition"
+  - "training-free"
+  - "diffusion model"
+  - "FLUX"
+  - "physically plausible"
 date: 2026-05-08
-content_hash: ae02bd6ba7e0dd7c
+content_hash: eb513bfd43caa021
 ---
+
 # Does FLUX Already Know How to Perform Physically Plausible Image Composition?
 
 **Conference**: ICLR2026  
@@ -127,7 +128,7 @@ Ours significantly outperforms all baselines across human preference alignment m
 
 - [\[ICLR 2026\] PICABench: How Far are We from Physically Realistic Image Editing?](picabench_how_far_are_we_from_physical_realistic_image_editing.md)
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](../../ICCV2025/image_generation/scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
-- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](../../CVPR2026/image_generation/sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
+- [\[ICLR 2026\] Composition of Pretrained Diffusion Models: A Logic-Based Calculus](composition_of_pretrained_diffusion_models_a_logic-based_calculus.md)
 - [\[ICLR 2026\] FLUX-Reason-6M & PRISM-Bench: A Million-Scale Text-to-Image Reasoning Dataset and Comprehensive Benchmark](flux-reason-6m_prism-bench_a_million-scale_text-to-image_reasoning_dataset_and_c.md)
 - [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
 

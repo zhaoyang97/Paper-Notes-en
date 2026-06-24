@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ROSETTA: Constructing Code-Based Reward from Unconstrained Language Preference
 description: >-
-  [ICLR 2026][Alignment & RLHF][Reinforcement Learning] ROSETTA decomposes spontaneous, time-varying natural language preferences in robot interactions into three steps: "preference grounding, reward staging, and code generation/verification," generating online trainable code reward functions that achieve an 87% success rate and 86% human satisfaction across 116 preferences
+  [ICLR 2026][LLM Alignment][Language Preference Alignment] ROSETTA decomposes spontaneous, time-varying natural language preferences in robot interactions into three steps: "preference grounding, reward staging, and code generation/verification," generating online trainable code reward functions that achieve an 87% success rate and 86% human satisfaction across 116 preferences.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Reinforcement Learning
-  - Embodied AI
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Language Preference Alignment"
+  - "Code Reward"
+  - "Reinforcement Learning"
+  - "Embodied AI"
+  - "Human Feedback"
 date: 2026-05-08
-content_hash: 2dd8bd02bc4e112e
+content_hash: 9e85953630529568
 ---
+
 # ROSETTA: Constructing Code-Based Reward from Unconstrained Language Preference
 
 **Conference**: ICLR 2026  
@@ -141,11 +145,11 @@ ROSETTA significantly outperforms baselines like Eureka/Text2Reward particularly
 
 ## Related Papers
 
-- [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
+- [\[ACL 2025\] Dynamic Scaling of Unit Tests for Code Reward Modeling](../../ACL2025/llm_alignment/dynamic_scaling_of_unit_tests_for_code_reward_modeling.md)
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
-- [\[ICLR 2026\] PALC: Preference Alignment via Logit Calibration](palc_preference_alignment_via_logit_calibration.md)
-- [\[ICLR 2026\] Semi-Supervised Preference Optimization with Limited Feedback](semi-supervised_preference_optimization_with_limited_feedback.md)
-- [\[ICLR 2026\] Robust Preference Alignment via Directional Neighborhood Consensus](robust_preference_alignment_via_directional_neighborhood_consensus.md)
+- [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
+- [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
+- [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
 
 </div>
 

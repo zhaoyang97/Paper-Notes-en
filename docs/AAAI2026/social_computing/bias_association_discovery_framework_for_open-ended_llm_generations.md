@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bias Association Discovery Framework for Open-Ended LLM Generations
 description: >-
-  [AAAI 2026][Social Computing][Social Bias] This paper proposes the Bias Association Discovery Framework (BADF), which systematically extracts both known and unknown bias associations between demographic identities and de…
+  [AAAI 2026][Social Computing][Social Bias] This paper proposes the Bias Association Discovery Framework (BADF), which systematically extracts both known and unknown bias associations between demographic identities and descriptive concepts from LLM open-ended story generation, overcoming the limitation of prior methods that rely on predefined bias concepts.
 tags:
   - "AAAI 2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Open-Ended Generation"
   - "Demographic Identity"
 date: 2026-05-08
-content_hash: ff4c3afe24c3e669
+content_hash: 24970b4a93a8731e
 ---
 
 # Bias Association Discovery Framework for Open-Ended LLM Generations
@@ -142,11 +142,11 @@ The work is rigorous, systematic, and conducted at large scale. The proposed BAD
 
 ## Related Papers
 
+- [\[ICLR 2026\] Steering the Herd: A Framework for LLM-Based Control of Social Learning](../../ICLR2026/social_computing/steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md)
 - [\[AAAI 2026\] SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation](scenejaileval_a_scenario-adaptive_multi-dimensional_framework_for_jailbreak_eval.md)
 - [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](../../NeurIPS2025/social_computing/auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
 - [\[ACL 2026\] Justice in Judgment: Unveiling (Hidden) Bias in LLM-assisted Peer Reviews](../../ACL2026/social_computing/justice_in_judgment_unveiling_hidden_bias_in_llm-assisted_peer_reviews.md)
 - [\[AAAI 2026\] Argumentative Debates for Transparent Bias Detection](argumentative_debates_for_transparent_bias_detection_technic.md)
-- [\[ACL 2026\] Confident, Calibrated, or Complicit: Safety Alignment and Ideological Bias in LLM Hate Speech Detection](../../ACL2026/social_computing/confident_calibrated_or_complicit_safety_alignment_and_ideological_bias_in_llm_h.md)
 
 </div>
 

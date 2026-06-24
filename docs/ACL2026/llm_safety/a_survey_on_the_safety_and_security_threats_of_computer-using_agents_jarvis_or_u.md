@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?
 description: >-
-  [ACL 2026][LLM Safety][Computer-Using Agent] This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)," organizing 124 relevant papers into a four-dimensional framework of "Internal Threats × External Threats × Defense × Evaluation," and highlighting that the primary gaps in existing CUAs are UI grounding robustness and
+  [ACL 2026][LLM Safety][Computer-Using Agent] This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)," organizing 124 relevant papers into a four-dimensional framework of "Internal Threats × External Threats × Defense × Evaluation," and highlighting that the primary gaps in existing CUAs are UI grounding robustness and cross-platform adversarial evaluation.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Computer-Using Agent
-  - prompt injection
-  - defense taxonomy
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Computer-Using Agent"
+  - "GUI Agent"
+  - "Safety and Security"
+  - "prompt injection"
+  - "defense taxonomy"
 date: 2026-05-08
-content_hash: 8d71fca23171daf0
+content_hash: b7765ce8875e57c5
 ---
+
 # A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?
 
 **Conference**: ACL 2026  
@@ -124,11 +127,11 @@ This paper is a survey and does not involve independent training. The authors su
 
 ## Related Papers
 
-- [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](why_agents_compromise_safety_under_pressure.md)
-- [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](on_safety_risks_in_experience-driven_self-evolving_agents.md)
 - [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
 - [\[ICLR 2026\] Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents](../../ICLR2026/llm_safety/breaking_agent_backbones_evaluating_the_security_of_backbone_llms_in_ai_agents.md)
-- [\[ACL 2026\] AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)
+- [\[ACL 2026\] Why Agents Compromise Safety Under Pressure](why_agents_compromise_safety_under_pressure.md)
+- [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](on_safety_risks_in_experience-driven_self-evolving_agents.md)
+- [\[ACL 2026\] RISK: A Framework for GUI Agents in E-commerce Risk Management](risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)
 
 </div>
 

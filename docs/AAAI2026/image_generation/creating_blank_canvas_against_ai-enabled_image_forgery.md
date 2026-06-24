@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Creating Blank Canvas Against AI-Enabled Image Forgery
 description: >-
-  [AAAI 2026][Image Generation][Image Tampering Localization] This paper proposes a "blank canvas" mechanism that applies adversarial perturbations to make SAM "see nothing" in protected images. When a protected image is t…
+  [AAAI 2026][Image Generation][Image Tampering Localization] This paper proposes a "blank canvas" mechanism that applies adversarial perturbations to make SAM "see nothing" in protected images. When a protected image is tampered with, the tampered regions disrupt the perturbations and become automatically detectable by SAM, enabling proactive tampering localization without requiring any tampered training data.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Frequency-Aware Optimization"
   - "Proactive Protection"
 date: 2026-05-08
-content_hash: 1f012ce9271827a3
+content_hash: 355a4a069694a780
 ---
 
 # Creating Blank Canvas Against AI-Enabled Image Forgery
@@ -175,11 +175,11 @@ Under AIGC editing scenarios, the proposed method achieves F1 > 95% and IoU ≈ 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Robust Content Watermarking Against Removal and Forgery Attacks](../../CVPR2026/image_generation/towards_robust_content_watermarking_against_removal_and_forgery_attacks.md)
 - [\[NeurIPS 2025\] BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit](../../NeurIPS2025/image_generation/blurguard_a_simple_approach_for_robustifying_image_protection_against_ai-powered.md)
-- [\[AAAI 2026\] MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models](macprompt_maraconic-guided_jailbreak_against_text-to-image_models.md)
 - [\[ICML 2026\] Order within Chaos: Capturing Intrinsic Energy Anomalies for AI-Manipulated Image Forgery Localization](../../ICML2026/image_generation/order_within_chaos_capturing_intrinsic_energy_anomalies_for_ai-manipulated_image.md)
+- [\[AAAI 2026\] MacPrompt: Maraconic-guided Jailbreak against Text-to-Image Models](macprompt_maraconic-guided_jailbreak_against_text-to-image_models.md)
 - [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[CVPR 2026\] Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing](../../CVPR2026/image_generation/rel-zero_harnessing_patch-pair_invariance_for_robust_zero-watermarking_against_a.md)
 
 </div>
 

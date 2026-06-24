@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FS-KAN: Permutation Equivariant Kolmogorov-Arnold Networks via Function Sharing
 description: >-
-  [ICLR 2026][Graph Learning][Kolmogorov-Arnold Networks] This paper generalizes the classic "parameter sharing" scheme in equivariant networks to KANs, proposing FS-KAN which **shares learnable univariate functions** (rather than scalar weights) based on group actions. It unifies various existing equivariant KANs and proves that its expressive power is equivalent to paramete
+  [ICLR 2026][Graph Learning][Permutation Equivariance] This paper generalizes the classic "parameter sharing" scheme in equivariant networks to KANs, proposing FS-KAN which **shares learnable univariate functions** (rather than scalar weights) based on group actions. It unifies various existing equivariant KANs and proves that its expressive power is equivalent to parameter-sharing MLPs, thereby achieving significantly higher sample efficiency in low-data scenarios.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Kolmogorov-Arnold Networks
-  - DeepSets
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Permutation Equivariance"
+  - "Kolmogorov-Arnold Networks"
+  - "Parameter Sharing"
+  - "Function Sharing"
+  - "DeepSets"
+  - "Data-efficient"
 date: 2026-05-08
-content_hash: b882940f00c36efb
+content_hash: c53721b123180475
 ---
+
 # FS-KAN: Permutation Equivariant Kolmogorov-Arnold Networks via Function Sharing
 
 **Conference**: ICLR 2026  

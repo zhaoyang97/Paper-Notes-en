@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes DiffEye, the first diffusion-based framework that directly utilizes raw eye-tracking data to generate continuous and diverse eye movement trajectorie…
+  [NeurIPS 2025][Image Generation][Diffusion models] This paper proposes DiffEye, the first diffusion-based framework that directly utilizes raw eye-tracking data to generate continuous and diverse eye movement trajectories conditioned on natural images, while introducing Corresponding Position Embedding (CPE) to align the gaze space with the image semantic space.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "visual attention modeling"
   - "corresponding position embedding"
 date: 2026-05-08
-content_hash: 5f837d155592d3f4
+content_hash: 6386c7ff75608f4b
 ---
 
 # DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images
@@ -156,9 +156,9 @@ DiffEye is trained on substantially fewer trajectories (8,934) than the baseline
 ## Related Papers
 
 - [\[NeurIPS 2025\] Detecting Generated Images by Fitting Natural Image Distributions](detecting_generated_images_by_fitting_natural_image_distributions.md)
+- [\[NeurIPS 2025\] SAO-Instruct: Free-form Audio Editing using Natural Language Instructions](sao-instruct_free-form_audio_editing_using_natural_language_instructions.md)
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
 - [\[NeurIPS 2025\] Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models](mitigating_sexual_content_generation_via_embedding_distortion_in_text-conditione.md)
-- [\[NeurIPS 2025\] SAO-Instruct: Free-form Audio Editing using Natural Language Instructions](sao-instruct_free-form_audio_editing_using_natural_language_instructions.md)
 - [\[NeurIPS 2025\] WMCopier: Forging Invisible Image Watermarks on Arbitrary Images](wmcopier_forging_invisible_image_watermarks_on_arbitrary_images.md)
 
 </div>

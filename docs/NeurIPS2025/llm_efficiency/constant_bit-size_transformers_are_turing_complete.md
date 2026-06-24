@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Constant Bit-Size Transformers Are Turing Complete
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Turing completeness] This paper provides the first proof that a Transformer with constant bit-size precision and a fixed number of parameters — permitting only context window growth — is Tu…
+  [NeurIPS 2025][LLM Efficiency][Turing completeness] This paper provides the first proof that a Transformer with constant bit-size precision and a fixed number of parameters — permitting only context window growth — is Turing complete. It establishes the exact complexity equivalence WINDOW[s(n)] = SPACE[s(n)], demonstrating that expanding the context window, rather than model size, suffices for universal computation.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Post machines"
   - "context window"
 date: 2026-05-08
-content_hash: fc516acff5246a70
+content_hash: 1c2192fb669a2e41
 ---
 
 # Constant Bit-Size Transformers Are Turing Complete
@@ -121,11 +121,11 @@ The proof proceeds in two directions: (1) WINDOW[s(n)] ⊆ SPACE[s(n)]: a Turing
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 - [\[NeurIPS 2025\] Critical Batch Size Revisited: A Simple Empirical Approach to Large-Batch Language Model Training](critical_batch_size_revisited_a_simple_empirical_approach_to_large-batch_languag.md)
+- [\[NeurIPS 2025\] ZeroS: Zero-Sum Linear Attention for Efficient Transformers](zeros_zero-sum_linear_attention_for_efficient_transformers.md)
 - [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
-- [\[ICLR 2026\] Efficient Resource-Constrained Training of Transformers via Subspace Optimization](../../ICLR2026/llm_efficiency/efficient_resource-constrained_training_of_transformers_via_subspace_optimizatio.md)
-- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](../../ICML2026/llm_efficiency/variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
+- [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](../../ICLR2026/llm_efficiency/stem_scaling_transformers_with_embedding_modules.md)
+- [\[ICLR 2026\] MeSH: Memory-as-State-Highways for Recursive Transformers](../../ICLR2026/llm_efficiency/mesh_memory-as-state-highways_for_recursive_transformers.md)
 
 </div>
 

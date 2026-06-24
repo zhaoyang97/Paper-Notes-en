@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] GTool: Graph Enhanced Tool Planning with Large Language Model
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] GTool constructs a request-specific tool graph representing "dependencies between tools," encodes it into a `<graph token>` using a GNN to feed into a frozen LLM, and designs a Missing Dependency Prediction task to counteract incomplete dependencies, allowing 7B small models to outperform SOTA tool planning performance
+  [ICLR 2026][LLM Agent][Tool planning] GTool constructs a request-specific tool graph representing "dependencies between tools," encodes it into a `<graph token>` using a GNN to feed into a frozen LLM, and designs a Missing Dependency Prediction task to counteract incomplete dependencies, allowing 7B small models to outperform SOTA tool planning performance by 29.6%.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool planning"
+  - "tool dependency graph"
+  - "Graph Neural Network"
+  - "missing dependency prediction"
 date: 2026-05-08
-content_hash: 0c5468d6c300b5da
+content_hash: 00a9d1efac9029bb
 ---
+
 # GTool: Graph Enhanced Tool Planning with Large Language Model
 
 **Conference**: ICLR 2026  

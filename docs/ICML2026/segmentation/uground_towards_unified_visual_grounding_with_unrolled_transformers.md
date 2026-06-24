@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UGround: Towards Unified Visual Grounding with Unrolled Transformers
 description: >-
-  [ICML 2026][Segmentation][SAM] UGround flips the LMM-based visual grounding paradigm from "using the $\langle\text{SEG}\rangle$ token of the last layer as a prompt" to "using the similarity maps of dynamically selected intermediate layers as prompts." Through a reinforcement learning strategy (SSC), the $\langle\text{SEG}\rangle$ token slides throug
+  [ICML 2026][Segmentation][Visual Grounding] UGround flips the LMM-based visual grounding paradigm from "using the $\langle\text{SEG}\rangle$ token of the last layer as a prompt" to "using the similarity maps of dynamically selected intermediate layers as prompts." Through a reinforcement learning strategy (SSC), the $\langle\text{SEG}\rangle$ token slides through all transformer layers, treating the similarity map simultaneously as a soft logit mask for SAM and a backward sup…
 tags:
-  - ICML 2026
-  - Segmentation
-  - SAM
+  - "ICML 2026"
+  - "Segmentation"
+  - "Visual Grounding"
+  - "Reasoning Segmentation"
+  - "Similarity Map"
+  - "Reinforcement Learning Layer Selection"
+  - "SAM"
 date: 2026-05-08
-content_hash: 8e4f20245451c3d0
+content_hash: 0b5a1e020e90ae75
 ---
+
 # UGround: Towards Unified Visual Grounding with Unrolled Transformers
 
 **Conference**: ICML 2026  
@@ -133,8 +138,8 @@ Analysis of similarity maps (Table 2): Raw, un-trained similarity maps as SAM pr
 - **Value**: ⭐⭐⭐⭐⭐ Offers SOTA results and open-source code; the "intermediate layer + similarity map" paradigm has long-term potential.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

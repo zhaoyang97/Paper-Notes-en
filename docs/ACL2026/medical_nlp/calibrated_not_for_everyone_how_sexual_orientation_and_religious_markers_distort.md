@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] Ours investigates how social identity markers (sexual orientation and religious beliefs) distort the accuracy and confidence calibration of LLMs in medical QA. It is found that "homosexual" markers consistently lead to performance degradation and calibration crises across 9 LLMs, and intersectional identities produce n
+  [ACL 2026][Medical LLM][Calibration Bias] Ours investigates how social identity markers (sexual orientation and religious beliefs) distort the accuracy and confidence calibration of LLMs in medical QA. It is found that "homosexual" markers consistently lead to performance degradation and calibration crises across 9 LLMs, and intersectional identities produce non-additive, specific harm.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Calibration Bias"
+  - "Social Identity Markers"
+  - "Medical QA"
+  - "Uncertainty Estimation"
+  - "Intersectionality"
 date: 2026-05-08
-content_hash: 9ed039a3de2f56b1
+content_hash: caf5985b93282046
 ---
+
 # Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA
 
 **Conference**: ACL 2026  
@@ -141,7 +147,7 @@ Relative change in Brier score (Higher = worse calibration):
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
 - [\[AAAI 2026\] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology](../../AAAI2026/medical_nlp/measuring_stability_beyond_accuracy_in_small_open-source_medical_large_language_.md)
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
-- [\[ACL 2025\] MedBioRAG: Semantic Search and Retrieval-Augmented Generation with Large Language Models for Medical and Biological QA](../../ACL2025/medical_nlp/medbiorag_semantic_search_and_retrieval-augmented_generation_for_biomedical_lite.md)
+- [\[ACL 2025\] AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset](../../ACL2025/medical_nlp/afrimed_qa_pan_african.md)
 
 </div>
 

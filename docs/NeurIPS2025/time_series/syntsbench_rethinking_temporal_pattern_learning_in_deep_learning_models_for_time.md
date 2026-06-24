@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series
 description: >-
-  [NeurIPS 2025][Time Series][time series forecasting] This paper proposes SynTSBench, a synthetic data-driven evaluation paradigm that systematically assesses the actual modeling capabilities of time series forecasting mo…
+  [NeurIPS 2025][Time Series][time series forecasting] This paper proposes SynTSBench, a synthetic data-driven evaluation paradigm that systematically assesses the actual modeling capabilities of time series forecasting models across dimensions such as trend, periodicity, dependency, and noise robustness, through programmable feature configurations and theoretically optimal benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "theoretical optimal benchmark"
   - "robustness analysis"
 date: 2026-05-08
-content_hash: 179d6d147be3281a
+content_hash: 59f49852e5291a2f
 ---
 
 # SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series

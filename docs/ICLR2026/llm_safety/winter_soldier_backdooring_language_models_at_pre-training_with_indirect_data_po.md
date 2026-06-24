@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Winter Soldier: Backdooring Language Models at Pre-training with Indirect Data Poisoning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes "Winter Soldier": a method using prompt-tuning based on gradient matching to create poisoned samples. It enables an LLM to learn a "secret key prompt → secret key answer" mapping that **never appeared in the training corpus** during pre-training. With $<0.005\%$ poisoning tokens, it can detect wheth
+  [ICLR 2026][LLM Safety][Indirect Data Poisoning] This paper proposes "Winter Soldier": a method using prompt-tuning based on gradient matching to create poisoned samples. It enables an LLM to learn a "secret key prompt → secret key answer" mapping that **never appeared in the training corpus** during pre-training. With $<0.005\%$ poisoning tokens, it can detect whether a model used a specific dataset with a falsifiable probability of $p<10^{-55}$ without compromising the mode…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Indirect Data Poisoning"
+  - "Dataset Ownership Verification"
+  - "Gradient Matching"
+  - "Pre-training Backdoor"
+  - "top-ℓ Detection"
 date: 2026-05-08
-content_hash: 40d334279e55d5d4
+content_hash: 41059a08cfdef935
 ---
+
 # Winter Soldier: Backdooring Language Models at Pre-training with Indirect Data Poisoning
 
 **Conference**: ICLR 2026  
@@ -139,6 +145,7 @@ Injection Effectiveness (360M model, $\alpha=0.003\%$): Ours achieved p-values a
 - Value: ⭐⭐⭐⭐⭐ Provides a low-cost, falsifiable forensic tool for data owners.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -147,7 +154,7 @@ Injection Effectiveness (360M model, $\alpha=0.003\%$): Ours achieved p-values a
 - [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
 - [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
 - [\[ICLR 2026\] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated](ghost_in_the_cloud_your_geo-distributed_large_language_models_training_is_easily.md)
-- [\[ACL 2025\] Exploring Forgetting in Large Language Model Pre-Training](../../ACL2025/llm_safety/exploring_forgetting_in_large_language_model_pre-training.md)
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
 
 </div>
 

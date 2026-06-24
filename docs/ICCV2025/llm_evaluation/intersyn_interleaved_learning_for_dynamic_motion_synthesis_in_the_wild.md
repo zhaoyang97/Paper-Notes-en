@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild
 description: >-
-  [ICCV 2025][LLM Evaluation][Text-to-motion generation] This paper proposes the InterSyn framework, which jointly models single-person and multi-person motions within a unified interleaved sequence via an Interleaved Lear…
+  [ICCV 2025][LLM Evaluation][Text-to-motion generation] This paper proposes the InterSyn framework, which jointly models single-person and multi-person motions within a unified interleaved sequence via an Interleaved Learning strategy, combined with a Relative Coordination Refinement (REC) module, to generate more natural and coordinated human interaction motions. On the InterHuman test set, FID is reduced by 6.1% and R Precision Top-1 is improved by 2.8% compared to FreeMotio…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "interleaved learning"
   - "motion coordination"
 date: 2026-05-08
-content_hash: b4e43ed8a1048bd3
+content_hash: 9696727066ede30e
 ---
 
 # InterSyn: Interleaved Learning for Dynamic Motion Synthesis in the Wild
@@ -133,10 +133,10 @@ Two-stage training:
 ## Related Papers
 
 - [\[ICCV 2025\] DISTA-Net: Dynamic Closely-Spaced Infrared Small Target Unmixing](dista-net_dynamic_closely-spaced_infrared_small_target_unmixing.md)
+- [\[ACL 2025\] CoPrUS: Consistency Preserving Utterance Synthesis Towards More Realistic Benchmark](../../ACL2025/llm_evaluation/coprus_consistency_preserving_utterance_synthesis_towards_more_realistic_benchma.md)
+- [\[ACL 2026\] WildIFEval: Instruction Following in the Wild](../../ACL2026/llm_evaluation/wildifeval_instruction_following_in_the_wild.md)
 - [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](a_conditional_probability_framework_for_compositional_zerosh.md)
-- [\[AAAI 2026\] MindVote: When AI Meets the Wild West of Social Media Opinion](../../AAAI2026/llm_evaluation/mindvote_when_ai_meets_the_wild_west_of_social_media_opinion.md)
-- [\[NeurIPS 2025\] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments](../../NeurIPS2025/llm_evaluation/memtrack_evaluating_long-term_memory_and_state_tracking_in_multi-platform_dynami.md)
-- [\[ACL 2026\] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models](../../ACL2026/llm_evaluation/dynamic_infilling_anchors_for_format-constrained_generation_in_diffusion_large_l.md)
+- [\[ICLR 2026\] Mapping Overlaps in Benchmarks through Perplexity in the Wild](../../ICLR2026/llm_evaluation/mapping_overlaps_in_benchmarks_through_perplexity_in_the_wild.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SE-GA: Memory-Augmented Self-Evolution for GUI Agents
 description: >-
-  [ICML 2026][LLM Agent][GUI Agent] SE-GA equips VLM-based GUI agents with a triple-tier memory (TTME: episodic + semantic + experiential) and a two-stage memory-augmented self-evolution training pipeline (MASE: SFT → improved GRPO). This approach pushes Qwen2.5-VL-7B to 89.0 on ScreenSpot, 75.8 on AndroidControl-High, and 39.0 on AndroidWorld, comprehen
+  [ICML 2026][LLM Agent][GUI Agent] SE-GA equips VLM-based GUI agents with a triple-tier memory (TTME: episodic + semantic + experiential) and a two-stage memory-augmented self-evolution training pipeline (MASE: SFT → improved GRPO). This approach pushes Qwen2.5-VL-7B to 89.0 on ScreenSpot, 75.8 on AndroidControl-High, and 39.0 on AndroidWorld, comprehensively outperforming same-scale baselines and matching the performance of 72B models.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - GUI Agent
-  - GRPO
-  - Hindsight Goal-Shifting
+  - "ICML 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Hierarchical Memory"
+  - "Self-evolution"
+  - "GRPO"
+  - "Hindsight Goal-Shifting"
 date: 2026-05-08
-content_hash: 42878b41b9a36635
+content_hash: d64361308c7c7d04
 ---
+
 # SE-GA: Memory-Augmented Self-Evolution for GUI Agents
 
 **Conference**: ICML 2026  
@@ -148,10 +151,10 @@ Stage I SFT: lr=2e-6, global batch=16. Stage II GRPO: lr=2e-5, global batch=256,
 ## Related Papers
 
 - [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](../../AAAI2026/llm_agent/co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](../../ICLR2026/llm_agent/gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
-- [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](../../ACL2026/llm_agent/from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
-- [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
-- [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](../../ICLR2026/llm_agent/darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](../../ICLR2026/llm_agent/alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The Domain Expansion framework is proposed to reconstruct the latent space into mutually orthogonal subspaces via Orthogonal Pooling. This structurally prevents gradient conflicts and representation collapse in multi-objective training, enabling interpretable and composable concept algebra.
+  [ICLR 2026][Interpretability][Multi-task learning] The Domain Expansion framework is proposed to reconstruct the latent space into mutually orthogonal subspaces via Orthogonal Pooling. This structurally prevents gradient conflicts and representation collapse in multi-objective training, enabling interpretable and composable concept algebra.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Multi-task learning"
+  - "Orthogonal Pooling"
+  - "Latent space construction"
+  - "Representation collapse"
+  - "Composable representations"
 date: 2026-05-08
-content_hash: 6a93358d5351b426
+content_hash: dadcda4b10327848
 ---
+
 # Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning
 
 **Conference**: ICLR 2026  
@@ -125,11 +131,11 @@ Regression concepts (azimuth, elevation, rotation) use Rank-N-Contrast (RNC) los
 
 ## Related Papers
 
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
 - [\[ICLR 2026\] Decomposing Representation Space into Interpretable Subspaces with Unsupervised Learning](decomposing_representation_space_into_interpretable_subspaces_with_unsupervised_.md)
 - [\[ICLR 2026\] Emotions Where Art Thou: Understanding and Characterizing the Emotional Latent Space of Large Language Models](emotions_where_art_thou_understanding_and_characterizing_the_emotional_latent_sp.md)
 - [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
-- [\[ICLR 2026\] Paradigm Shift of GNN Explainer from Label Space to Prototypical Representation Space](paradigm_shift_of_gnn_explainer_from_label_space_to_prototypical_representation_.md)
-- [\[ICLR 2026\] Latent Thinking Optimization: Your Latent Reasoning Language Model Secretly Encodes Reward Signals in Its Latent Thoughts](latent_thinking_optimization_your_latent_reasoning_language_model_secretly_encod.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
 
 </div>
 

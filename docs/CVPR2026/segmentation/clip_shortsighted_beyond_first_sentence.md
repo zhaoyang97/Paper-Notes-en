@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence
 description: >-
-  [CVPR 2026][Segmentation][CLIP] It is discovered that CLIP models exhibit a heavy bias towards encoding summary sentences and early tokens in long-text scenarios ("shortsighted" behavior). By employing three zero-parameter incremental training augmentation strategies — summary removal, random sentence sampling, and token prefix padding — the proposed
+  [CVPR 2026][Segmentation][CLIP] It is discovered that CLIP models exhibit a heavy bias towards encoding summary sentences and early tokens in long-text scenarios ("shortsighted" behavior). By employing three zero-parameter incremental training augmentation strategies — summary removal, random sentence sampling, and token prefix padding — the proposed method achieves comprehensive SOTA performance in long-text retrieval while simultaneously improving short-text retrieval.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "CLIP"
+  - "Long-text Retrieval"
+  - "Attention Bias"
+  - "First-sentence Bias"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: d1e2c8b2177bdd22
+content_hash: 510a8d9b4729e2b4
 ---
+
 # DeBias-CLIP: CLIP Is Shortsighted — Paying Attention Beyond the First Sentence
 
 **Conference**: CVPR 2026  

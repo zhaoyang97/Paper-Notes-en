@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials
 description: >-
-  [NeurIPS 2025][Image Generation][Vision Transformer] This paper proposes Visual-Contrast Attention (VCA), which generates compact positive/negative visual-contrast tokens via spatial pooling and performs differential int…
+  [NeurIPS 2025][Image Generation][Vision Transformer] This paper proposes Visual-Contrast Attention (VCA), which generates compact positive/negative visual-contrast tokens via spatial pooling and performs differential interaction, reducing self-attention complexity from $O(N^2C)$ to $O(NnC)$ ($n \ll N$), while achieving consistent improvements on both image classification and generation tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -11,7 +11,7 @@ tags:
   - "Differential Attention"
   - "Image Classification"
 date: 2026-05-08
-content_hash: 14a6db84a5995f20
+content_hash: a8251db580e088eb
 ---
 
 # Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials
@@ -136,9 +136,9 @@ VCA serves as a plug-and-play replacement for MHSA and operates in two stages: S
 
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](../../ICCV2025/image_generation/lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
 - [\[ICML 2026\] Linearizing Vision Transformer with Test-Time Training](../../ICML2026/image_generation/linearizing_vision_transformer_with_test-time_training.md)
+- [\[CVPR 2025\] LaVin-DiT: Large Vision Diffusion Transformer](../../CVPR2025/image_generation/lavin-dit_large_vision_diffusion_transformer.md)
 - [\[NeurIPS 2025\] On the Emergence of Linear Analogies in Word Embeddings](on_the_emergence_of_linear_analogies_in_word_embeddings.md)
 - [\[NeurIPS 2025\] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model](pairwise_optimal_transports_for_training_all-to-all_flow-based_condition_transfe.md)
-- [\[NeurIPS 2025\] Janus-Pro-R1: Advancing Collaborative Visual Comprehension and Generation via Reinforcement Learning](janus-pro-r1_advancing_collaborative_visual_comprehension_and_generation_via_rei.md)
 
 </div>
 

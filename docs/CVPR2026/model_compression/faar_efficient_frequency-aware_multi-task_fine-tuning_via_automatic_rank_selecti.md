@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection
 description: >-
-  [CVPR 2026][Signal & Communications][LoRA] FAAR is proposed as a frequency-aware multi-task parameter-efficient fine-tuning method. It dynamically selects the optimal rank for each task and layer through Performance-Driven Rank Shrinking (PDRS) and enhances spatial awareness and cross-task consistency using the Task-Spectral Pyramidal Decoder (TS-PD) with FFT f
+  [CVPR 2026][Model Compression][LoRA] FAAR is proposed as a frequency-aware multi-task parameter-efficient fine-tuning method. It dynamically selects the optimal rank for each task and layer through Performance-Driven Rank Shrinking (PDRS) and enhances spatial awareness and cross-task consistency using the Task-Spectral Pyramidal Decoder (TS-PD) with FFT frequency information. It achieves superior performance with only 1/9 of the parameters compared to traditional fine-tuning.
 tags:
-  - CVPR 2026
-  - Signal & Communications
-  - LoRA
-  - FFT
-  - multi-task learning
-  - PEFT
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Automatic Rank Selection"
+  - "FFT"
+  - "multi-task learning"
+  - "PEFT"
 date: 2026-05-08
-content_hash: 50214e5702d4cb65
+content_hash: 6b67f3f285f69fca
 ---
+
 # FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection
 
 **Conference**: CVPR 2026  
@@ -168,16 +170,16 @@ Component ablation on PASCAL-Context:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2025\] DiTASK: Multi-Task Fine-Tuning with Diffeomorphic Transformations](../../CVPR2025/signal_comm/ditask_multi-task_fine-tuning_with_diffeomorphic_transformations.md)
-- [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](../../AAAI2026/signal_comm/task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
-- [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
-- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
-- [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
+- [\[CVPR 2026\] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning](frequency_switching_mechanism_for_parameter-ecient_multi-task_learning.md)
+- [\[CVPR 2026\] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer](taskit_memory-efficient_fine-tuning_of_multi-lora_llms_via_cross-task_importance.md)
+- [\[CVPR 2026\] FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)
+- [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
+- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](../../ACL2026/model_compression/tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
 
 </div>
 

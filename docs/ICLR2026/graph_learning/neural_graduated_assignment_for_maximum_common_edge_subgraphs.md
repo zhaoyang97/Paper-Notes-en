@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Neural Graduated Assignment for Maximum Common Edge Subgraphs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper reformulates the NP-complete Maximum Common Edge Subgraph (MCES) problem as a Quadratic Assignment Problem (QAP) on an Associated Common Graph. It introduces a "Neural Graduated Assignment" network with fully learnable high-dimensional temperature parameters to approximate the optimal solution in polynomial
+  [ICLR 2026][Graph Learning][Maximum Common Edge Subgraph (MCES)] This paper reformulates the NP-complete Maximum Common Edge Subgraph (MCES) problem as a Quadratic Assignment Problem (QAP) on an Associated Common Graph. It introduces a "Neural Graduated Assignment" network with fully learnable high-dimensional temperature parameters to approximate the optimal solution in polynomial time without supervision, outperforming traditional search solvers in both speed and accuracy.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Maximum Common Edge Subgraph (MCES)"
+  - "Quadratic Assignment Problem (QAP)"
+  - "Graph Matching"
+  - "Unsupervised Learning"
+  - "Annealing Mechanism"
+  - "Learnable Temperature"
 date: 2026-05-08
-content_hash: f99a82dd410d4e67
+content_hash: b3bf8f19f2a8517b
 ---
+
 # Neural Graduated Assignment for Maximum Common Edge Subgraphs
 
 **Conference**: ICLR 2026  
@@ -126,9 +133,9 @@ Final parameters set to $m=4$, $d=32$. Extra experiments on QAPLIB subsets show 
 
 - [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](../../ICML2026/graph_learning/are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
 - [\[AAAI 2026\] Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks](../../AAAI2026/graph_learning/kernelized_edge_attention_addressing_semantic_attention_blurring_in_temporal_gra.md)
+- [\[ICLR 2026\] Escaping the Homophily Trap: A Threshold-free Graph Outlier Detection Framework via Clustering-guided Edge Reweighting](escaping_the_homophily_trap_a_threshold-free_graph_outlier_detection_framework_v.md)
 - [\[ICML 2026\] RADE: Random Add-Drop Edge as a Regularizer](../../ICML2026/graph_learning/rade_random_add-drop_edge_as_a_regularizer.md)
-- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
-- [\[ACL 2025\] SimGRAG: Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation](../../ACL2025/graph_learning/simgrag_leveraging_similar_subgraphs_for_knowledge_graphs_driven_retrieval-augme.md)
+- [\[ICLR 2026\] Gelato: Graph Edit Distance via Autoregressive Neural Combinatorial Optimization](gelato_graph_edit_distance_via_autoregressive_neural_combinatorial_optimization.md)
 
 </div>
 

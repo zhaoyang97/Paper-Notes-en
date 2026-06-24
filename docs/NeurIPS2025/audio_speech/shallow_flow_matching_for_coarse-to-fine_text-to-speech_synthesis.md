@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis
 description: >-
-  [NeurIPS 2025][Audio & Speech][Flow Matching] This paper proposes Shallow Flow Matching (SFM), which leverages weak generator outputs to construct intermediate states within a flow matching framework for coarse-to-fine T…
+  [NeurIPS 2025][Audio & Speech][Flow Matching] This paper proposes Shallow Flow Matching (SFM), which leverages weak generator outputs to construct intermediate states within a flow matching framework for coarse-to-fine TTS. Inference begins from these intermediate states rather than pure noise, simultaneously improving synthesis quality and accelerating inference.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Shallow Inference"
   - "ODE Solving"
 date: 2026-05-08
-content_hash: 2969d89c942d04e5
+content_hash: e835f8ac7b5105ad
 ---
 
 # Shallow Flow Matching for Coarse-to-Fine Text-to-Speech Synthesis
@@ -121,11 +121,11 @@ Evaluated on LJ Speech, VCTK, and LibriTTS across multiple backbone models inclu
 
 ## Related Papers
 
-- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
+- [\[ICML 2025\] BinauralFlow: A Causal and Streamable Approach for High-Quality Binaural Speech Synthesis with Flow Matching Models](../../ICML2025/audio_speech/binauralflow_a_causal_and_streamable_approach_for_high-quality_binaural_speech_s.md)
 - [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](adapting_speech_language_model_to_singing_voice_synthesis.md)
-- [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](../../ICLR2026/audio_speech/flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
-- [\[NeurIPS 2025\] E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis](e2e-vguard_adversarial_prevention_for_production_llm-based_end-to-end_speech_syn.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
+- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
+- [\[ICLR 2026\] AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching](../../ICLR2026/audio_speech/alignsep_temporally-aligned_video-queried_sound_separation_with_flow_matching.md)
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](../../ICLR2026/audio_speech/tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 
 </div>
 

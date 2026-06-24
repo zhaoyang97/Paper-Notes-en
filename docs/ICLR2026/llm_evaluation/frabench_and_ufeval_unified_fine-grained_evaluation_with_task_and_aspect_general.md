@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization
 description: >-
-  [ICLR 2026][LLM Evaluation][MLLM-as-a-Judge] The authors propose a hierarchical "Aspect Tree" covering 112 evaluation aspects and construct FRABench, a fine-grained evaluation dataset with 60.4k pairs and 325k labels spanning four task categories: text generation, image understanding, image generation, and interleaved image-text generation. They further train UFE
+  [ICLR 2026][LLM Evaluation][MLLM-as-a-Judge] The authors propose a hierarchical "Aspect Tree" covering 112 evaluation aspects and construct FRABench, a fine-grained evaluation dataset with 60.4k pairs and 325k labels spanning four task categories: text generation, image understanding, image generation, and interleaved image-text generation. They further train UFEval, the first unified judge model with dual "task + aspect" generalization capabilities. The core thesis is that e…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - MLLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "MLLM-as-a-Judge"
+  - "Fine-grained Evaluation"
+  - "Aspect Generalization"
+  - "Task Generalization"
+  - "Evaluation Benchmark"
+  - "DPO Preference Alignment"
 date: 2026-05-08
-content_hash: f0ea358b0398467b
+content_hash: fd486505b02ca6ae
 ---
+
 # FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization
 
 **Conference**: ICLR 2026  
@@ -115,10 +121,10 @@ The 7B UFEval approaches or matches GPT-4o/Claude-3.5 on most tasks, significant
 ## Related Papers
 
 - [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](../../ACL2026/llm_evaluation/if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
 - [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](../../ACL2026/llm_evaluation/locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
 - [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](../../ACL2026/llm_evaluation/rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
-- [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](../../ACL2026/llm_evaluation/k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
 
 </div>
 

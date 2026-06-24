@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] VOLD utilizes a text-only teacher LLM (Qwen3-8B) to train the reasoning capabilities of a vision-language student model (Qwen2.5-VL-3B). It first performs distribution alignment via SFT using teacher-generated reasoning trajectories, then integrates GRPO reinforcement learning with "on-policy distillation" (reverse KL)
+  [CVPR 2026][VLM Reasoning][Reasoning Transfer] VOLD utilizes a text-only teacher LLM (Qwen3-8B) to train the reasoning capabilities of a vision-language student model (Qwen2.5-VL-3B). It first performs distribution alignment via SFT using teacher-generated reasoning trajectories, then integrates GRPO reinforcement learning with "on-policy distillation" (reverse KL) for joint optimization on the same rollouts. **Without using any vision-language reasoning data during the entir…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Reasoning Transfer"
+  - "On-policy Distillation"
+  - "GRPO"
+  - "Text-only Training"
 date: 2026-05-08
-content_hash: 174f51ddc0f8e8c6
+content_hash: 65c083aaa2a1834d
 ---
+
 # VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation
 
 **Conference**: CVPR 2026  
@@ -140,16 +144,16 @@ Policy Alignment Ablation (Table 2): When using standard MoT (DeepSeek-R1) for S
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](../../ICML2026/multimodal_vlm/decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
-- [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
-- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
+- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](../../ICML2026/vlm_reasoning/decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 
 </div>
 

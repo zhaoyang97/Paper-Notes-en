@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Align-SAM: Seeking Flatter Minima for Better Cross-Subset Alignment
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Align-SAM reframes "generalization" as the "consistency of updates across two random subsets of the same distribution." Building on SAM's pursuit of flat minima, it introduces an auxiliary mini-batch and ensures the gradient of the primary training batch is "congruent" with the gradient of the auxiliary batch. This app
+  [ICLR2026][Optimization][Sharpness-aware minimization] Align-SAM reframes "generalization" as the "consistency of updates across two random subsets of the same distribution." Building on SAM's pursuit of flat minima, it introduces an auxiliary mini-batch and ensures the gradient of the primary training batch is "congruent" with the gradient of the auxiliary batch. This approach consistently and moderately outperforms SAM/ASAM across various settings, including classification…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Sharpness-aware minimization"
+  - "flat minima"
+  - "gradient alignment"
+  - "generalization"
+  - "optimizer"
 date: 2026-05-08
-content_hash: 36c8b2acb5c2a787
+content_hash: 5a16429679a95d1f
 ---
+
 # Align-SAM: Seeking Flatter Minima for Better Cross-Subset Alignment
 
 **Conference**: ICLR2026  
@@ -158,7 +164,7 @@ Transfer learning (ImageNet pre-training, fine-tuned for 50 epochs): Align-SAM a
 - [\[ICLR 2026\] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems](combination-of-experts_with_knowledge_sharing_for_cross-task_vehicle_routing_pro.md)
 - [\[NeurIPS 2025\] Clean First, Align Later: Benchmarking Preference Data Cleaning for Reliable LLM Alignment](../../NeurIPS2025/optimization/clean_first_align_later_benchmarking_preference_data_cleaning_for_reliable_llm_a.md)
 - [\[ICLR 2026\] Deep Latent Variable Model based Vertical Federated Learning with Flexible Alignment and Labeling Scenarios](deep_latent_variable_model_based_vertical_federated_learning_with_flexible_align.md)
-- [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](lca_local_classifier_alignment_for_continual_learning.md)
+- [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
 
 </div>
 

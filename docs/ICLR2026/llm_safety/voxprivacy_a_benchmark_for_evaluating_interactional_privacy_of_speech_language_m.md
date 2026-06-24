@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VoxPrivacy: A Benchmark for Evaluating Interactional Privacy of Speech Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] VoxPrivacy is the first benchmark to evaluate the "interactional privacy" capabilities of Speech Language Models (SLMs)—the ability to withhold a secret shared privately by one user from other users in a multi-user shared environment. Utilizing a 32-hour bilingual audio dataset across three levels of increasing difficu
+  [ICLR 2026][LLM Safety][Speech Language Models] VoxPrivacy is the first benchmark to evaluate the "interactional privacy" capabilities of Speech Language Models (SLMs)—the ability to withhold a secret shared privately by one user from other users in a multi-user shared environment. Utilizing a 32-hour bilingual audio dataset across three levels of increasing difficulty, it evaluates 9 SLMs and finds that most open-source models perform near random chance (approx. 50% accuracy…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Speech Language Models"
+  - "Interactional Privacy"
+  - "Speaker Perception"
+  - "Contextual Integrity"
+  - "Privacy Benchmark"
 date: 2026-05-08
-content_hash: e6d3e04d9173b89d
+content_hash: c6bd5a108e48dd63
 ---
+
 # VoxPrivacy: A Benchmark for Evaluating Interactional Privacy of Speech Language Models
 
 **Conference**: ICLR 2026  
@@ -139,7 +145,7 @@ Ablation of the mixed-task strategy to prevent catastrophic forgetting:
 - [\[ICLR 2026\] LLMs on Trial: Evaluating Judicial Fairness for Large Language Models](llms_on_trial_evaluating_judicial_fairness_for_large_language_models.md)
 - [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
 - [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
-- [\[ICLR 2026\] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models](benchmarking_empirical_privacy_protection_for_adaptations_of_large_language_mode.md)
+- [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
 
 </div>
 

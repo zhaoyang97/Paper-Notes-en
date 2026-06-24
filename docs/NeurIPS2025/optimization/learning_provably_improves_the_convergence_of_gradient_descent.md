@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Provably Improves the Convergence of Gradient Descent
 description: >-
-  [NeurIPS 2025][Optimization][Learn to Optimize] This paper presents the first rigorous proof of training convergence for an unrolling-based Learn to Optimize (L2O) framework (Math-L2O). By leveraging NTK theory…
+  [NeurIPS 2025][Optimization][Learn to Optimize] This paper presents the first rigorous proof of training convergence for an unrolling-based Learn to Optimize (L2O) framework (Math-L2O). By leveraging NTK theory, it establishes a linear convergence rate and proposes a deterministic initialization strategy that provably ensures L2O improves upon the convergence performance of gradient descent. Experiments demonstrate over 50% improvement in optimality compared to standard GD.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Convergence Proof"
   - "Initialization Strategy"
 date: 2026-05-08
-content_hash: ec9d889b396ea28c
+content_hash: 4518cf259e6ad810
 ---
 
 # Learning Provably Improves the Convergence of Gradient Descent
@@ -146,10 +146,10 @@ The experiments precisely validate Corollary C.1: $e$ and $\eta$ exhibit an inve
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent](multi-head_transformers_provably_learn_symbolic_multi-step_reasoning_via_gradien.md)
+- [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](../../ICLR2026/optimization/on_the_convergence_direction_of_gradient_descent.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
+- [\[ICLR 2026\] On the Convergence Behavior of Preconditioned Gradient Descent Toward the Rich Learning Regime](../../ICLR2026/optimization/on_the_convergence_behavior_of_preconditioned_gradient_descent_toward_the_rich_l.md)
 - [\[NeurIPS 2025\] Large Stepsizes Accelerate Gradient Descent for Regularized Logistic Regression](large_stepsizes_accelerate_gradient_descent_for_regularized_logistic_regression.md)
-- [\[NeurIPS 2025\] OrthoGrad Improves Neural Calibration](orthograd_improves_neural_calibration.md)
-- [\[NeurIPS 2025\] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)
 
 </div>
 

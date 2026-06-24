@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Remote Sensing] This paper proposes CHOICE, a large-scale multi-level VLM benchmark for the remote sensing domain, comprising 10…
+  [NeurIPS 2025][Multimodal VLM][Remote Sensing] This paper proposes CHOICE, a large-scale multi-level VLM benchmark for the remote sensing domain, comprising 10,507 newly collected questions spanning 2 top-level dimensions, 6 sub-dimensions, and 23 leaf tasks across perception and reasoning, enabling the first systematic and objective evaluation of VLM remote sensing capabilities.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multiple Choice Questions"
   - "Visual Reasoning"
 date: 2026-05-08
-content_hash: c508229e29cbf72e
+content_hash: 4173590b79f83759
 ---
 
 # CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models
@@ -135,11 +135,11 @@ Each question is formatted as $P_i = [Q_i, C_i, I_i, L_i]$, where $Q_i$ denotes 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
-- [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
-- [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
-- [\[ICLR 2026\] CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing](../../ICLR2026/multimodal_vlm/citylens_evaluating_large_vision-language_models_for_urban_socioeconomic_sensing.md)
+- [\[ICLR 2026\] PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](../../ICLR2026/multimodal_vlm/physllm_harnessing_large_language_models_for_cross-modal_remote_physiological_se.md)
+- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](../../CVPR2026/multimodal_vlm/vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
 - [\[ICCV 2025\] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves](../../ICCV2025/multimodal_vlm/ideator_jailbreaking_and_benchmarking_large_visionlanguage_m.md)
+- [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
+- [\[ICLR 2026\] CityLens: Evaluating Large Vision-Language Models for Urban Socioeconomic Sensing](../../ICLR2026/multimodal_vlm/citylens_evaluating_large_vision-language_models_for_urban_socioeconomic_sensing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] ChipSeek proposes a hierarchical reward RL framework that integrates the EDA toolchain directly into the training loop. Through Curriculum-driven Dynamic Policy Optimization (CDPO), it enables LLMs to generate RTL code that meets both functional correctness and PPA (Power-Performance-Area) optimization objectives, achi
+  [ACL 2026][Code Intelligence][Verilog generation] ChipSeek proposes a hierarchical reward RL framework that integrates the EDA toolchain directly into the training loop. Through Curriculum-driven Dynamic Policy Optimization (CDPO), it enables LLMs to generate RTL code that meets both functional correctness and PPA (Power-Performance-Area) optimization objectives, achieving SOTA on standard benchmarks.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Verilog generation"
+  - "EDA integration"
+  - "Hierarchical reward"
+  - "PPA optimization"
+  - "Curriculum-driven policy optimization"
 date: 2026-05-08
-content_hash: d4b63176699ac8e0
+content_hash: 1084bb47c9a3dc24
 ---
+
 # ChipSeek: Optimizing Verilog Generation via EDA-Integrated Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -122,8 +128,8 @@ The framework utilizes GRPO as the backbone for policy optimization, combined wi
 
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
 - [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](../../NeurIPS2025/code_intelligence/qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
-- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[ICLR 2026\] ATGen: Adversarial Reinforcement Learning for Test Case Generation](../../ICLR2026/code_intelligence/atgen_adversarial_reinforcement_learning_for_test_case_generation.md)
+- [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
 
 </div>

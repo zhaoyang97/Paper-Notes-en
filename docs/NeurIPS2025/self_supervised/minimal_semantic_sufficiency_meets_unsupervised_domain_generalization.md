@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Unsupervised Domain Generalization] MS-UDG operates without class or domain labels, decomposing representations into semantic and variation components via an Information Disentang…
+  [NeurIPS 2025][Self-Supervised Learning][Unsupervised Domain Generalization] MS-UDG operates without class or domain labels, decomposing representations into semantic and variation components via an Information Disentanglement Module (IDM). Coupled with a Semantic Representation Optimization Module (SROM) that simultaneously maximizes semantic information and minimizes variation interference, the method achieves 72.89% accuracy on PACS (+1.5% vs. CycleMAE). Theoretical analys…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Minimality"
   - "Fourier Augmentation"
 date: 2026-05-08
-content_hash: 850e1fcc4999ec62
+content_hash: 2c2a08a248241c33
 ---
 
 # Minimal Semantic Sufficiency Meets Unsupervised Domain Generalization
@@ -119,11 +119,11 @@ Input image $x$ → Fourier augmentation generates domain-shifted views $(x_1, x
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2026/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
+- [\[CVPR 2025\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2025/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
-- [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](../../ICML2026/self_supervised/statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
 - [\[AAAI 2026\] CATFormer: When Continual Learning Meets Spiking Transformers With Dynamic Thresholds](../../AAAI2026/self_supervised/catformer_when_continual_learning_meets_spiking_transformers_with_dynamic_thresh.md)
-- [\[ICLR 2026\] Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective](../../ICLR2026/self_supervised/difficult_examples_hurt_unsupervised_contrastive_learning_a_theoretical_perspect.md)
+- [\[ICLR 2026\] Symmetric Space Learning for Combinatorial Generalization](../../ICLR2026/self_supervised/symmetric_space_learning_for_combinatorial_generalization.md)
 
 </div>
 

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Automata Learning and Identification of the Support of Language Models
 description: >-
-  [ICLR 2026][learning_theory][Next Symbol Prediction] This paper systematically characterizes the learnability of regular languages under "Next Symbol Prediction (NSP)" supervision. It proves that while NSP labels ensure identifiability, they cannot bypass computational hardness. Furthermore, it proposes the L*_nsp algorithm—leveraging a language model as a "teacher" to e
+  [ICLR 2026][Learning Theory][DFA Learning] This paper systematically characterizes the learnability of regular languages under "Next Symbol Prediction (NSP)" supervision. It proves that while NSP labels ensure identifiability, they cannot bypass computational hardness. Furthermore, it proposes the L*_nsp algorithm—leveraging a language model as a "teacher" to efficiently extract a DFA that approximately characterizes its generative support set.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Next Symbol Prediction
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Automata Learning"
+  - "DFA Learning"
+  - "Next Symbol Prediction"
+  - "Support Identification"
+  - "L* Algorithm"
+  - "PAC Learning"
+  - "Language Model Interpretability"
 date: 2026-05-08
-content_hash: 0f053e46457b3c2d
+content_hash: 94966784d2cccb97
 ---
+
 # Automata Learning and Identification of the Support of Language Models
 
 **Conference**: ICLR 2026  
@@ -107,10 +114,10 @@ Comparison of NSP labels vs. binary labels (classic L*) on 6 languages, sampling
 ## Related Papers
 
 - [\[ICLR 2026\] Language Identification in the Limit with Computational Trace](language_identification_in_the_limit_with_computational_trace.md)
+- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
 - [\[ICLR 2026\] Unveiling the Basin-like Loss Landscape in Large Language Models](unveiling_the_basin-like_loss_landscape_in_large_language_models.md)
 - [\[ICLR 2026\] FlowNIB: An Information Bottleneck Analysis of Bidirectional vs. Unidirectional Language Models](flownib_an_information_bottleneck_analysis_of_bidirectional_vs_unidirectional_la.md)
-- [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
-- [\[ICLR 2026\] Learning Correlated Reward Models: Statistical Barriers and Opportunities](learning_correlated_reward_models_statistical_barriers_and_opportunities.md)
+- [\[ICLR 2026\] Learning-Augmented Moment Estimation on Time-Decay Models](learning-augmented_moment_estimation_on_time-decay_models.md)
 
 </div>
 

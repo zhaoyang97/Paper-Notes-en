@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction
 description: >-
-  [AAAI2026][Autonomous Driving][traffic prediction] This work introduces the RAG paradigm into spatio-temporal forecasting by maintaining a dual-dimensional memory bank to store historical spatio-temporal patterns and ret…
+  [AAAI2026][Autonomous Driving][traffic prediction] This work introduces the RAG paradigm into spatio-temporal forecasting by maintaining a dual-dimensional memory bank to store historical spatio-temporal patterns and retrieving them at inference time for fusion. The resulting general-purpose retrieval-augmented spatio-temporal prediction framework, RAST, achieves state-of-the-art performance on six traffic datasets while requiring only 1/12 the GPU memory of competing methods…
 tags:
   - "AAAI2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "memory bank"
   - "STGNN"
 date: 2026-05-08
-content_hash: 026dbceab78edaac
+content_hash: 42543c1e21ee41fb
 ---
 
 # RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction
@@ -136,11 +136,11 @@ Efficiency comparison on the SD dataset: RAST trains at 45.53 s/epoch, infers in
 
 ## Related Papers
 
+- [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](../../CVPR2026/autonomous_driving/rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)
 - [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
-- [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](../../CVPR2026/autonomous_driving/spatial_retrieval_augmented_autonomous_driving.md)
 - [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](../../CVPR2026/autonomous_driving/a_prediction-as-perception_framework_for_3d_object_detection.md)
-- [\[ICLR 2026\] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping](../../ICLR2026/autonomous_driving/nemo-map_neural_implicit_flow_fields_for_spatio-temporal_motion_mapping.md)
+- [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
 
 </div>
 

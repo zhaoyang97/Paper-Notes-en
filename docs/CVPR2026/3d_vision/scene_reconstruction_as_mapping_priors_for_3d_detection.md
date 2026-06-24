@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scene Reconstruction as Mapping Priors for 3D Detection
 description: >-
-  [CVPR 2026][3D Vision][3DGS] This work repurposes "maps" originally intended for planning in autonomous driving for perception—utilizing automatically reconstructed surfel/3DGS scenes as "mapping priors" to replace expensive manual HD maps. A gated fusion module adaptively integrates these priors with LiDAR/camera inputs, outperforming temporal fu
+  [CVPR 2026][3D Vision][3D Detection] This work repurposes "maps" originally intended for planning in autonomous driving for perception—utilizing automatically reconstructed surfel/3DGS scenes as "mapping priors" to replace expensive manual HD maps. A gated fusion module adaptively integrates these priors with LiDAR/camera inputs, outperforming temporal fusion SOTA using 100 frames with only 4 frames on the Waymo Open Dataset.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3DGS
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Detection"
+  - "Scene Reconstruction"
+  - "Mapping Priors"
+  - "3DGS"
+  - "Gated Fusion"
 date: 2026-05-08
-content_hash: fdbf97cdcd835f6f
+content_hash: 52d9f47f44cafa41
 ---
+
 # Scene Reconstruction as Mapping Priors for 3D Detection
 
 **Conference**: CVPR 2026  
@@ -175,7 +180,7 @@ Notably, MPA3D using only **4 frames** outperforms MAD using **100 frames** by +
 - [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
 - [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
 - [\[CVPR 2026\] NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)
-- [\[CVPR 2026\] Paparazzo: Active Mapping of Moving 3D Objects](paparazzo_active_mapping_of_moving_3d_objects.md)
+- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 
 </div>
 

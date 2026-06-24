@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gradient Extrapolation for Debiased Representation Learning
 description: >-
-  [ICCV 2025][Social Computing][debiasing] This paper proposes GERNE, a method that constructs two batches with different degrees of spurious correlation and performs linear extrapolation on their gradients to guide the mo…
+  [ICCV 2025][Social Computing][debiasing] This paper proposes GERNE, a method that constructs two batches with different degrees of spurious correlation and performs linear extrapolation on their gradients to guide the model toward learning debiased representations, outperforming state-of-the-art methods under both known and unknown attribute settings.
 tags:
   - "ICCV 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "robustness"
   - "representation learning"
 date: 2026-05-08
-content_hash: 2ce86bc3d4388539
+content_hash: fef6677114090331
 ---
 
 # Gradient Extrapolation for Debiased Representation Learning
@@ -168,7 +168,7 @@ Variance analysis comparing GERNE and Resampling shows that GERNE escapes sharp 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](../../CVPR2026/social_computing/learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)
+- [\[CVPR 2025\] Learning from Neighbors: Category Extrapolation for Long-Tail Learning](../../CVPR2025/social_computing/learning_from_neighbors_category_extrapolation_for_long-tail_learning.md)
 - [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](learning_visual_proxy_for_compositional_zero-shot_learning.md)
 - [\[ICML 2026\] The Geometric Mechanics of Contrastive Representation Learning: Alignment Potentials, Entropic Dispersion, and Cross-modal Divergence](../../ICML2026/social_computing/the_geometric_mechanics_of_contrastive_representation_learning_alignment_potenti.md)
 - [\[ICCV 2025\] No More Sibling Rivalry: Debiasing Human-Object Interaction Detection](no_more_sibling_rivalry_debiasing_human-object_interaction_detection.md)

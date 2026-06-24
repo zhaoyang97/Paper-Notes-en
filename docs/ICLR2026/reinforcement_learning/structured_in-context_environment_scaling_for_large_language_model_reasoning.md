@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Structured In-context Environment Scaling for Large Language Model Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes the **Structured In-context Environment (SIE)** framework, which automatically constructs scalable, generalizable, and verifiable LLM reasoning environments from large-scale Knowledge Graphs (KGs). By treating supporting subgraphs as soft constraints within prompts and employing GRPO for RL fine-tun
+  [ICLR 2026][Reinforcement Learning][RL Fine-tuning Environment] This paper proposes the **Structured In-context Environment (SIE)** framework, which automatically constructs scalable, generalizable, and verifiable LLM reasoning environments from large-scale Knowledge Graphs (KGs). By treating supporting subgraphs as soft constraints within prompts and employing GRPO for RL fine-tuning, the method significantly enhances performance on structured reasoning tasks and transfers c…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL Fine-tuning Environment"
+  - "Structured Data"
+  - "Knowledge Graph"
+  - "Compositional Reasoning"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 5565195a3f4be630
+content_hash: e492cf28bf71c0bc
 ---
+
 # Structured In-context Environment Scaling for Large Language Model Reasoning
 
 **Conference**: ICLR 2026  

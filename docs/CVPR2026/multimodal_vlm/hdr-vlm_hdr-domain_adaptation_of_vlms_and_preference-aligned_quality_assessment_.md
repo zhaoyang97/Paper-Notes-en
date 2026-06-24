@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HDR-VLM: HDR-Domain Adaptation of VLMs and Preference-Aligned Quality Assessment for HDR Video Color Grading
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] HDR-VLM is the first method to adapt pre-trained VLMs—which have only seen SDR—to the HDR domain for evaluating HDR video color grading quality. The first stage utilizes **HLG unified encoding + progressive unfreezing** to supplement HDR perception, while the second stage employs **GRPO with curriculum rewards** to ali
+  [CVPR 2026][Multimodal VLM][HDR Color Grading] HDR-VLM is the first method to adapt pre-trained VLMs—which have only seen SDR—to the HDR domain for evaluating HDR video color grading quality. The first stage utilizes **HLG unified encoding + progressive unfreezing** to supplement HDR perception, while the second stage employs **GRPO with curriculum rewards** to align model scoring with noisy human subjective preferences. It achieves PLCC 0.9033 / SROCC 0.8667 on a realistic p…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "HDR Color Grading"
+  - "Video Quality Assessment"
+  - "VLM Domain Adaptation"
+  - "HLG Encoding"
+  - "GRPO Curriculum Rewards"
 date: 2026-05-08
-content_hash: 37c341ecd13997a2
+content_hash: b008fc7d1367ef64
 ---
+
 # HDR-VLM: HDR-Domain Adaptation of VLMs and Preference-Aligned Quality Assessment for HDR Video Color Grading
 
 **Conference**: CVPR 2026  

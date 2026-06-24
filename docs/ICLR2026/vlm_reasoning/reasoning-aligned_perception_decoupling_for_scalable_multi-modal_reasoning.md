@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] RAPID repositions the role of Multi-modal Large Language Models (MLLMs) as "perceptors"—responsible only for translating images into text (query-related captions + tentative solutions), which is then handed over to any external text-only LLM for reasoning. A reinforcement learning algorithm named VPO is used to optimiz
+  [ICLR 2026][VLM Reasoning][Multimodal Reasoning] RAPID repositions the role of Multi-modal Large Language Models (MLLMs) as "perceptors"—responsible only for translating images into text (query-related captions + tentative solutions), which is then handed over to any external text-only LLM for reasoning. A reinforcement learning algorithm named VPO is used to optimize these text outputs based on the "final correctness of the external LLM," allowing a single trained MLLM to be…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Perception-Reasoning Decoupling"
+  - "Reinforcement Learning"
+  - "Inference-time Scaling"
+  - "Caption Generation"
 date: 2026-05-08
-content_hash: 1ae1bc4a6a4ea913
+content_hash: cc9df1ec1c64546b
 ---
+
 # Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning
 
 **Conference**: ICLR 2026  
@@ -147,10 +152,10 @@ Based on Qwen2.5-VL-7B, components were added sequentially (AVG):
 ## Related Papers
 
 - [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](../../ICML2026/vlm_reasoning/vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
+- [\[ICLR 2026\] SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning](space-eval_a_benchmark_for_real-world_multi-modal_reasoning.md)
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](perception-aware_policy_optimization_for_multimodal_reasoning.md)
 - [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
-- [\[ICLR 2026\] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning](mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md)
 
 </div>
 

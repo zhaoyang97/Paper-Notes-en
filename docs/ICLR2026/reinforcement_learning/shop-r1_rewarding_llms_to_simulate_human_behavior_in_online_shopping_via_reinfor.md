@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM] The authors propose Shop-R1, a framework that utilizes a hierarchical reward mechanism and difficulty-aware scaling in reinforcement learning to significantly enhance the ability of LLMs to simulate real human online shopping behavior. Compared to SFT baselines, it achieves an improvement of over 65% in exact action ma
+  [Reinforcement Learning] The authors propose Shop-R1, a framework that utilizes a hierarchical reward mechanism and difficulty-aware scaling in reinforcement learning to significantly enhance the ability of LLMs to simulate real human online shopping behavior. Compared to SFT baselines, it achieves an improvement of over 65% in exact action matching.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM
-  - human behavior simulation
-  - online shopping
-  - hierarchical reward
-  - GRPO
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 75a47dd75f7fbccd
+content_hash: 201f7dd117a1c1f1
 ---
+
 # Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning
 
 ## Meta Information

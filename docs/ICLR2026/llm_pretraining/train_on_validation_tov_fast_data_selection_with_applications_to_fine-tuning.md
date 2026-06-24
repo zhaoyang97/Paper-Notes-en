@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] ToV **reverses** the process of "estimating the impact of each sample on validation loss" by leveraging train-validation symmetry revealed through first-order Taylor expansion. It fine-tunes on a small validation set for one step and identifies samples in the training pool with the largest loss reduction—using only for
+  [ICLR 2026][LLM Pretraining][Data selection] ToV **reverses** the process of "estimating the impact of each sample on validation loss" by leveraging train-validation symmetry revealed through first-order Taylor expansion. It fine-tunes on a small validation set for one step and identifies samples in the training pool with the largest loss reduction—using only forward loss evaluations without requiring per-sample gradients or Hessians. This achieves 2–6× speedups over LESS whi…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data selection"
+  - "Instruction tuning"
+  - "Influence functions"
+  - "Train-validation symmetry"
+  - "Forward loss"
 date: 2026-05-08
-content_hash: 1b02a3f5085dc0d1
+content_hash: 80aff6379d6974f4
 ---
+
 # Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -144,8 +150,8 @@ ToV reduces runtime by 2–6× and disk storage by 2.5–16× compared to LESS.
 
 - [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
 - [\[ICLR 2026\] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning](task-aware_data_selection_via_proxy-label_enhanced_distribution_matching_for_llm.md)
-- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 - [\[ICLR 2026\] How to Train Data-Efficient LLMs](how_to_train_data-efficient_llms.md)
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 - [\[ICLR 2026\] SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training](spice_submodular_penalized_informationconflict_selection_for_efficient_large_lan.md)
 
 </div>

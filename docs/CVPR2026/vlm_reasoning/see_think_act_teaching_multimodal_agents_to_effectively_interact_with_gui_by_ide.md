@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles
 description: >-
-  [CVPR 2026][Multimodal VLM][GUI Agent] State-aware Reasoning (StaR) is proposed to improve GUI toggle control accuracy by over 30% without compromising general agent performance. This is achieved by teaching multimodal agents a three-step reasoning chain: "perceive current state → analyze target state → decide whether to act."
+  [CVPR 2026][VLM Reasoning][GUI Agent] State-aware Reasoning (StaR) is proposed to improve GUI toggle control accuracy by over 30% without compromising general agent performance. This is achieved by teaching multimodal agents a three-step reasoning chain: "perceive current state → analyze target state → decide whether to act."
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GUI Agent
-  - Toggle Control
-  - State-aware Reasoning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "GUI Agent"
+  - "Toggle Control"
+  - "Multimodal Reasoning"
+  - "State-aware Reasoning"
 date: 2026-05-08
-content_hash: 8198b3c5f4739945
+content_hash: 5bc50efcc9aca187
 ---
+
 # See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles
 
 **Conference**: CVPR 2026  
@@ -189,11 +191,11 @@ This prevents the introduction of out-of-distribution samples, as these benchmar
 
 ## Related Papers
 
-- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
-- [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/multimodal_vlm/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
-- [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
-- [\[AAAI 2026\] See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay](../../AAAI2026/multimodal_vlm/see_symbolize_act_grounding_vlms_with_spatial_representations_for_better_gamepla.md)
 - [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
+- [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/vlm_reasoning/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
+- [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
+- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
+- [\[CVPR 2026\] MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents](mindpower_enabling_theoryofmind_reasoning_in_vlmba.md)
 
 </div>
 

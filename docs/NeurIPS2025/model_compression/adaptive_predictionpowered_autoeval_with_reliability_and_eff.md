@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees
 description: >-
-  [NeurIPS 2025][Model Compression][LLM evaluation] This paper proposes the R-AutoEval+ framework, which introduces an adaptive weighting mechanism within the testing-by-betting framework to dynamically regulate reliance o…
+  [NeurIPS 2025 Spotlight][Model Compression][LLM evaluation] This paper proposes the R-AutoEval+ framework, which introduces an adaptive weighting mechanism within the testing-by-betting framework to dynamically regulate reliance on LLM-judge-generated synthetic data. It is the first method to simultaneously guarantee evaluation reliability and sampling efficiency no worse than approaches using only real data under finite samples, validated across three scenarios: LLM quantiza…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "LLM evaluation"
   - "prediction-powered inference"
@@ -12,7 +12,7 @@ tags:
   - "e-value"
   - "testing-by-betting"
 date: 2026-05-08
-content_hash: b8af98ab592ee106
+content_hash: 1c89510256b8044d
 ---
 
 # Adaptive Prediction-Powered AutoEval with Reliability and Efficiency Guarantees
@@ -114,10 +114,10 @@ The method requires no training. Betting variables are set adaptively via the UP
 ## Related Papers
 
 - [\[NeurIPS 2025\] RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling](rat_bridging_rnn_efficiency_and_attention_accuracy_via_chunk-based_sequence_mode.md)
+- [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](../../ICLR2026/model_compression/efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
 - [\[NeurIPS 2025\] Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency](mixed_monotonicity_reachability_analysis_of_neural_ode_a_trade-off_between_tight.md)
-- [\[ICLR 2026\] Parallel Token Prediction for Language Models](../../ICLR2026/model_compression/parallel_token_prediction_for_language_models.md)
-- [\[NeurIPS 2025\] Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning](twilight_adaptive_attention_sparsity_with_hierarchical_top-p_pruning.md)
-- [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
+- [\[ACL 2025\] Predicting Through Generation: Why Generation Is Better for Prediction](../../ACL2025/model_compression/predicting_through_generation_why_generation_is_better_for_prediction.md)
+- [\[CVPR 2026\] Efficiency Follows Global-Local Decoupling](../../CVPR2026/model_compression/efficiency_follows_global-local_decoupling.md)
 
 </div>
 

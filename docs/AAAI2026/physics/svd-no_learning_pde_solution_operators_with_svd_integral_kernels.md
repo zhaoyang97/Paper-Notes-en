@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels
 description: >-
-  [AAAI 2026][Neural Operators] This paper proposes SVD-NO, a neural operator that explicitly parameterizes the SVD decomposition of integral kernels…
+  [AAAI 2026][Physics & Scientific Computing][Neural Operators] This paper proposes SVD-NO, a neural operator that explicitly parameterizes the SVD decomposition of integral kernels, achieving $O(ndL)$ linear computational complexity while maintaining high expressiveness, and attaining new state-of-the-art performance on 5 PDE benchmarks.
 tags:
   - "AAAI 2026"
+  - "Physics & Scientific Computing"
   - "Neural Operators"
   - "Singular Value Decomposition"
   - "Partial Differential Equations"
   - "Integral Kernels"
   - "Low-Rank Approximation"
 date: 2026-05-08
-content_hash: 13468028efa79752
+content_hash: 954f66eadba5bf2d
 ---
 
 # SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels
@@ -142,11 +143,11 @@ All improvements are statistically significant at the 0.05 level via paired t-te
 
 ## Related Papers
 
+- [\[ICLR 2026\] CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators](../../ICLR2026/physics/cfo_learning_continuous-time_pde_dynamics_via_flow-matched_neural_operators.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
-- [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
-- [\[ICLR 2026\] Learning-guided Kansa Collocation for Forward and Inverse PDE Problems](../../ICLR2026/physics/learning-guided_kansa_collocation_for_forward_and_inverse_pde_problems.md)
-- [\[AAAI 2026\] Learning Fair Representations with Kolmogorov-Arnold Networks](learning_fair_representations_with_kolmogorov-arnold_networks.md)
-- [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](../../ICML2026/physics/generative_neural_operators_through_diffusion_last_layer.md)
+- [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](../../ICLR2026/physics/locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
+- [\[ICLR 2026\] Adaptive Mamba Neural Operators](../../ICLR2026/physics/adaptive_mamba_neural_operators.md)
+- [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](../../ICLR2026/physics/learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery
 description: >-
-  [ICLR 2026][Causal Inference][conditional independence test] The E-CIT (Ensemble Conditional Independence Test) framework is proposed. By splitting data into subsets, executing tests independently, and merging results based on a p-value aggregation method for **stable distributions**, it reduces the computational complexity of any conditional independence test to linear with res
+  [ICLR 2026][Causal Inference][conditional independence test] The E-CIT (Ensemble Conditional Independence Test) framework is proposed. By splitting data into subsets, executing tests independently, and merging results based on a p-value aggregation method for **stable distributions**, it reduces the computational complexity of any conditional independence test to linear with respect to sample size. Simultaneously, it maintains or even enhances test power in complex scenarios…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - conditional independence test
-  - causal discovery
-  - ensemble method
-  - stable distribution
-  - p-value combination
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "conditional independence test"
+  - "causal discovery"
+  - "ensemble method"
+  - "stable distribution"
+  - "p-value combination"
 date: 2026-05-08
-content_hash: cc4ecc4b974cf26e
+content_hash: f974dab3bff3d265
 ---
+
 # Efficient Ensemble Conditional Independence Test Framework for Causal Discovery
 
 **Conference**: ICLR 2026  
@@ -166,11 +167,11 @@ Data generation: Post-nonlinear models, $Z$ follows Normal or Laplace, noise fol
 
 ## Related Papers
 
+- [\[ICLR 2026\] Independence Test for Linear Non-Gaussian Data and Applications in Causal Discovery](independence_test_for_linear_non-gaussian_data_and_applications_in_causal_discov.md)
 - [\[ICLR 2026\] Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach](causal_discovery_in_the_wild_a_voting-theoretic_ensemble_approach.md)
-- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](../../ICML2026/causal_inference/toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
-- [\[ACL 2025\] IRIS: An Iterative and Integrated Framework for Verifiable Causal Discovery](../../ACL2025/causal_inference/iris_an_iterative_and_integrated_framework.md)
-- [\[CVPR 2026\] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems](../../CVPR2026/causal_inference/a_polynomial_chaos_framework_for_causal_discovery_in_nonlinear_uncertain_systems.md)
 - [\[ICLR 2026\] Theoretical Guarantees for Causal Discovery on Large Random Graphs](theoretical_guarantees_for_causal_discovery_on_large_random_graphs.md)
+- [\[CVPR 2026\] A Polynomial Chaos Framework for Causal Discovery in Nonlinear Uncertain Systems](../../CVPR2026/causal_inference/a_polynomial_chaos_framework_for_causal_discovery_in_nonlinear_uncertain_systems.md)
+- [\[ICML 2026\] Toward Scalable and Valid Conditional Independence Testing with Spectral Representations](../../ICML2026/causal_inference/toward_scalable_and_valid_conditional_independence_testing_with_spectral_represe.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] ReST-KV redefines KV cache eviction as a "layer-wise output reconstruction" problem. It treats the error increment in the attention output of the current layer after deleting a specific KV pair as the importance metric, explicitly capturing the redistribution effect ignored by prior work. Combined with exponential movi
+  [ICLR 2026][LLM Efficiency][KV Cache] ReST-KV redefines KV cache eviction as a "layer-wise output reconstruction" problem. It treats the error increment in the attention output of the current layer after deleting a specific KV pair as the importance metric, explicitly capturing the redistribution effect ignored by prior work. Combined with exponential moving average (EMA) temporal smoothing and adaptive window spatial (AWS) smoothing, it achieves a robust eviction strategy. I…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache"
+  - "Cache Eviction"
+  - "Long Context"
+  - "Attention Redistribution"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: c528bb1c5166fc10
+content_hash: c163de50a365292e
 ---
+
 # ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing
 
 **Conference**: ICLR 2026  
@@ -132,16 +136,16 @@ On LongBench (Llama3.1-8B, B=128L):
 - Value: ⭐⭐⭐⭐⭐ Training-free, 10x speedup, and robust for 128k context.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
 - [\[ICLR 2026\] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences](louiskv_efficient_kv_cache_retrieval_for_long_input-output_sequences.md)
 - [\[ICLR 2026\] Reconstructing KV Caches with Cross-Layer Fusion for Enhanced Transformers](reconstructing_kv_caches_with_cross-layer_fusion_for_enhanced_transformers.md)
-- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 
 </div>
 

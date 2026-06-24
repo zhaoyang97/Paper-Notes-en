@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WorldSplat: Gaussian-Centric Feed-Forward 4D Scene Generation for Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] WorldSplat unifies "driving video generation" and "3D/4D scene reconstruction": it first utilizes a 4D-aware latent diffusion model to generate multimodal latents containing RGB, depth, and semantics from conditions such as layout, text, and trajectories. A feed-forward decoder then produces pixel-aligned 4D Gaussian f
+  [ICLR 2026][Autonomous Driving][Driving World Models] WorldSplat unifies "driving video generation" and "3D/4D scene reconstruction": it first utilizes a 4D-aware latent diffusion model to generate multimodal latents containing RGB, depth, and semantics from conditions such as layout, text, and trajectories. A feed-forward decoder then produces pixel-aligned 4D Gaussian fields in a single pass, enabling the rendering of geometrically consistent multi-track novel-view videos a…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Driving World Models"
+  - "Feed-Forward 4D Gaussians"
+  - "Novel View Synthesis"
+  - "Latent Diffusion"
+  - "Static-Dynamic Decomposition"
 date: 2026-05-08
-content_hash: 1c8227b30af81bcf
+content_hash: 8e5fa20963164201
 ---
+
 # WorldSplat: Gaussian-Centric Feed-Forward 4D Scene Generation for Autonomous Driving
 
 **Conference**: ICLR 2026  
@@ -153,7 +159,7 @@ Ablation of components under $\pm2$m novel view synthesis (Version F is the full
 - [\[CVPR 2026\] UFO: Unifying Feed-Forward and Optimization-based Methods for Large Driving Scene Modeling](../../CVPR2026/autonomous_driving/ufo_unifying_feed-forward_and_optimization-based_methods_for_large_driving_scene.md)
 - [\[CVPR 2025\] PanSplat: 4K Panorama Synthesis with Feed-Forward Gaussian Splatting](../../CVPR2025/autonomous_driving/pansplat_4k_panorama_synthesis_with_feed-forward_gaussian_splatting.md)
 - [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](../../ICCV2025/autonomous_driving/dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
-- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](../../CVPR2026/autonomous_driving/gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
+- [\[ICLR 2026\] FlowAD: Ego-Scene Interactive Modeling for Autonomous Driving](flowad_ego-scene_interactive_modeling_for_autonomous_driving.md)
 - [\[CVPR 2025\] UniScene: Unified Occupancy-centric Driving Scene Generation](../../CVPR2025/autonomous_driving/uniscene_unified_occupancy-centric_driving_scene_generation.md)
 
 </div>

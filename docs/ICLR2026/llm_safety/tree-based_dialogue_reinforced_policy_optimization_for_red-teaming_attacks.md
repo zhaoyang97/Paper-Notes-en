@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)
 description: >-
-  [ICLR 2026][LLM Safety][Reinforcement Learning] This paper proposes DialTree, which models multi-turn red-teaming as a goal-oriented dialogue policy optimization problem. By exploring the attack trajectory space through tree-based rollout and quality pruning, combined with adaptive masking to prevent format forgetting, it achieves an average ASR of 81.5% across 12 t
+  [ICLR 2026][LLM Safety][Multi-turn Jailbreak] This paper proposes DialTree, which models multi-turn red-teaming as a goal-oriented dialogue policy optimization problem. By exploring the attack trajectory space through tree-based rollout and quality pruning, combined with adaptive masking to prevent format forgetting, it achieves an average ASR of 81.5% across 12 target models—44.2% higher than previous SOTA—even reaching 71% ASR on Claude-4-Sonnet.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multi-turn Jailbreak"
+  - "Red-Teaming"
+  - "Reinforcement Learning"
+  - "Tree Search"
+  - "Dialogue Policy Optimization"
 date: 2026-05-08
-content_hash: eb3d94e8bad89f12
+content_hash: 129d2f5a43e51b40
 ---
+
 # Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)
 
 **Conference**: ICLR 2026  
@@ -161,11 +166,11 @@ When advantage $A < 0$, tokens in the format vocabulary $\mathcal{V}_{\text{fmt}
 
 ## Related Papers
 
-- [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
 - [\[ICLR 2026\] ARMS: Adaptive Red-Teaming Agent against Multimodal Models with Plug-and-Play Attacks](arms_adaptive_red-teaming_agent_against_multimodal_models_with_plug-and-play_att.md)
+- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 - [\[ICLR 2026\] EEPO: Exploration-Enhanced Policy Optimization via Sample-then-Forget](eepo_exploration-enhanced_policy_optimization_via_sample-then-forget.md)
 - [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
-- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
+- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
 
 </div>
 

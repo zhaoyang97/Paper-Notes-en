@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Infinite Horizon Markov Economies
 description: >-
-  [ICLR 2026][learning_theory][Markov pseudo-game] This paper proposes the **Markov Pseudo-Game (MPG)** as a unified framework that integrates "dynamic uncertainty" (Markov games) and "action-dependent feasibility" (pseudo-games). It proves the existence of equilibria and provides a polynomial-time first-order algorithm. Consequently, it establishes the existence of Re
+  [ICLR 2026][Learning Theory][Markov pseudo-game] This paper proposes the **Markov Pseudo-Game (MPG)** as a unified framework that integrates "dynamic uncertainty" (Markov games) and "action-dependent feasibility" (pseudo-games). It proves the existence of equilibria and provides a polynomial-time first-order algorithm. Consequently, it establishes the existence of Recursive Radner Equilibrium in generalized infinite-horizon incomplete market economies for the first time and c…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Markov pseudo-game
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Game Equilibrium Computation"
+  - "Computational Economics"
+  - "Markov pseudo-game"
+  - "Generalized Markov Perfect Equilibrium (GMPE)"
+  - "Recursive Radner Equilibrium"
+  - "Incomplete markets"
+  - "Policy gradient"
+  - "Generative Adversarial Policy Network"
 date: 2026-05-08
-content_hash: 6c150899341a0101
+content_hash: 7d29e045999fb9e2
 ---
+
 # Infinite Horizon Markov Economies
 
 **Conference**: ICLR 2026  
@@ -124,11 +132,11 @@ The framework scales to a larger economy with **20 consumers / 20 goods / 5 asse
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Markov to Laplace: How Mamba In-Context Learns Markov Chains](from_markov_to_laplace_how_mamba_in-context_learns_markov_chains.md)
 - [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
+- [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
-- [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
-- [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
-- [\[ICLR 2026\] Random-Projection Ensemble Dimension Reduction](random-projection_ensemble_dimension_reduction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Rank and Gradient Lost in Non-stationarity: Sample Weight Decay for Mitigating Plasticity Loss in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] From a theoretical optimization perspective, this paper decomposes "plasticity loss" in deep reinforcement learning into two mechanisms: rank collapse of the NTK Gram matrix and $\Theta(1/k)$ decay of gradient magnitude. For the latter, a lightweight Sample Weight Decay (SWD) is proposed, which linearly decreases playb
+  [ICLR 2026][Reinforcement Learning][Plasticity Loss] From a theoretical optimization perspective, this paper decomposes "plasticity loss" in deep reinforcement learning into two mechanisms: rank collapse of the NTK Gram matrix and $\Theta(1/k)$ decay of gradient magnitude. For the latter, a lightweight Sample Weight Decay (SWD) is proposed, which linearly decreases playback sampling probability with sample "age" to compensate for gradient decay and maintain learning capacity…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Plasticity Loss"
+  - "Neural Tangent Kernel"
+  - "Gradient Decay"
+  - "Experience Replay"
+  - "Sample Weighting"
 date: 2026-05-08
-content_hash: 03de131781400607
+content_hash: 8507d9db43b1bee3
 ---
+
 # The Rank and Gradient Lost in Non-stationarity: Sample Weight Decay for Mitigating Plasticity Loss in Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -127,8 +133,8 @@ Experiments addressed five questions: universal improvement (Q1), impact on plas
 
 ## Related Papers
 
-- [\[ICML 2026\] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](../../ICML2026/reinforcement_learning/sphere_mitigating_the_loss_of_spectral_plasticity_in_mixture-of-experts_for_deep.md)
 - [\[ICML 2025\] Mitigating Plasticity Loss in Continual Reinforcement Learning by Reducing Churn](../../ICML2025/reinforcement_learning/mitigating_plasticity_loss_in_continual_reinforcement_learning_by_reducing_churn.md)
+- [\[ICML 2026\] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](../../ICML2026/reinforcement_learning/sphere_mitigating_the_loss_of_spectral_plasticity_in_mixture-of-experts_for_deep.md)
 - [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
 - [\[ICLR 2026\] QeRL: Quantization-enhanced Low-rank Reinforcement Learning for LLMs](qerl_beyond_efficiency_-_quantization-enhanced_reinforcement_learning_for_llms.md)
 - [\[ICLR 2026\] Wavelet Predictive Representations for Non-Stationary Reinforcement Learning](wavelet_predictive_representations_for_non-stationary_reinforcement_learning.md)

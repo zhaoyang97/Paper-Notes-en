@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning from Demonstrations via Capability-Aware Goal Sampling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Imitation Learning] This paper proposes Cago, a method that dynamically tracks an agent's attainment capability along expert demonstration trajectories and adaptively samples interm…
+  [NeurIPS 2025][Reinforcement Learning][Imitation Learning] This paper proposes Cago, a method that dynamically tracks an agent's attainment capability along expert demonstration trajectories and adaptively samples intermediate goals near the capability frontier, constructing an implicit curriculum to guide learning in long-horizon, sparse-reward tasks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Capability-Awareness"
   - "World Model"
 date: 2026-05-08
-content_hash: 0a59a6b7293b6282
+content_hash: 5e367af8c126c3eb
 ---
 
 # Learning from Demonstrations via Capability-Aware Goal Sampling
@@ -177,8 +177,8 @@ The framework operates as a three-step closed loop: (1) **Observation Visit Trac
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
 - [\[NeurIPS 2025\] Open-World Drone Active Tracking with Goal-Centered Rewards](open-world_drone_active_tracking_with_goal-centered_rewards.md)
 - [\[NeurIPS 2025\] Distribution Learning Meets Graph Structure Sampling](distribution_learning_meets_graph_structure_sampling.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
+- [\[CVPR 2025\] SkillMimic: Learning Basketball Interaction Skills from Demonstrations](../../CVPR2025/reinforcement_learning/skillmimic_learning_basketball_interaction_skills_from_demonstrations.md)
 
 </div>
 

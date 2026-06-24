@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Text2Grad: Reinforcement Learning from Natural Language Feedback
 description: >-
-  [ICLR 2026][Alignment & RLHF][PPO] The paper aligns free-form textual criticism with output token segments, converts them into token-level pseudo-rewards, and constructs "Natural Language Gradients" to drive PPO updates. This approach ensures the model modifies only the "criticized tokens" rather than making global haphazard adjustments. It outperforms
+  [ICLR 2026][LLM Alignment][Natural Language Feedback] The paper aligns free-form textual criticism with output token segments, converts them into token-level pseudo-rewards, and constructs "Natural Language Gradients" to drive PPO updates. This approach ensures the model modifies only the "criticized tokens" rather than making global haphazard adjustments. It outperforms scalar reward RL and pure prompting-based reflection baselines across summarization, code generation…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - PPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Natural Language Feedback"
+  - "span-level reward"
+  - "token-level credit assignment"
+  - "PPO"
+  - "generative reward models"
 date: 2026-05-08
-content_hash: a90883f5111b40fa
+content_hash: 2f37b0708044dce8
 ---
+
 # Text2Grad: Reinforcement Learning from Natural Language Feedback
 
 **Conference**: ICLR 2026  

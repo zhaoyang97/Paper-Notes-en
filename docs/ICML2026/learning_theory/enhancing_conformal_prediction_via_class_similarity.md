@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Enhancing Conformal Prediction via Class Similarity
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper incorporates an "out-of-group penalty" into any arbitrary Conformal Prediction (CP) scoring function, penalizing candidate labels that belong to different semantic groups than the top-1 predicted class. It theoretically demonstrates that this penalty reduces the number of semantic groups in the prediction se
+  [ICML2026][Learning Theory][Prediction Set Size] This paper incorporates an "out-of-group penalty" into any arbitrary Conformal Prediction (CP) scoring function, penalizing candidate labels that belong to different semantic groups than the top-1 predicted class. It theoretically demonstrates that this penalty reduces the number of semantic groups in the prediction set while maintaining coverage and **unexpectedly shrinking the average prediction set size**. Furthermore…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Uncertainty Quantification"
+  - "Conformal Prediction"
+  - "Prediction Set Size"
+  - "Class Similarity"
+  - "Coverage Guarantee"
+  - "Neural Collapse"
 date: 2026-05-08
-content_hash: ac732f3374785afc
+content_hash: 3f6d627c1fd4f8a9
 ---
+
 # Enhancing Conformal Prediction via Class Similarity
 
 **Conference**: ICML2026  
@@ -129,11 +136,11 @@ To avoid binarizing thresholds, the penalty is softened to $d_{MS}(y,y'):=1-M_{y
 
 ## Related Papers
 
-- [\[ICLR 2026\] Efficient Credal Prediction through Decalibration](../../ICLR2026/learning_theory/efficient_credal_prediction_through_decalibration.md)
-- [\[ICML 2026\] Cutting LLM Evaluation Costs with SySRs: A Bandit Algorithm that Provably Exploits Model Similarity](cutting_llm_evaluation_costs_with_sysrs_a_bandit_algorithm_that_provably_exploit.md)
-- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](../../NeurIPS2025/learning_theory/conformal_online_learning_of_deep_koopman_linear_embeddings.md)
-- [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](../../NeurIPS2025/learning_theory/prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
-- [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](quantum_algorithms_for_triangle_cut_sparsification.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](../../ICLR2026/learning_theory/adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
+- [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](../../ICLR2026/learning_theory/distribution-informed_online_conformal_prediction.md)
+- [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](../../ICLR2026/learning_theory/conformal_prediction_for_long-tailed_classification.md)
+- [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](../../ICLR2026/learning_theory/singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Conformal Prediction with Corrupted Labels: Uncertain Imputation and Robust Re-weighting](../../ICLR2026/learning_theory/conformal_prediction_with_corrupted_labels_uncertain_imputation_and_robust_re-we.md)
 
 </div>
 

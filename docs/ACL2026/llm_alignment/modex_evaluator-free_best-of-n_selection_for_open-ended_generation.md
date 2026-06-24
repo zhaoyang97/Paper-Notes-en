@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ModeX: Evaluator-Free Best-of-N Selection for Open-Ended Generation
 description: >-
-  [ACL 2026][Alignment & RLHF][Best-of-N] ModeX models Best-of-N selection for open-ended text generation as a problem of "finding modal clusters on a generated text similarity graph." By using n-gram Jaccard graph construction, recursive spectral clustering with Fiedler vectors, and centrality-based centroid selection, it generalizes self-consistency to tasks
+  [ACL 2026][LLM Alignment][Best-of-N] ModeX models Best-of-N selection for open-ended text generation as a problem of "finding modal clusters on a generated text similarity graph." By using n-gram Jaccard graph construction, recursive spectral clustering with Fiedler vectors, and centrality-based centroid selection, it generalizes self-consistency to tasks without standard answers (e.g., summarization, code, math) without requiring any reward models or LLM-judges.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - Best-of-N
-  - Self-consistency
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Best-of-N"
+  - "Self-consistency"
+  - "Spectral Clustering"
+  - "Mode Extraction"
+  - "Evaluator-free"
 date: 2026-05-08
-content_hash: 7b0c785586f07860
+content_hash: 8cb23250ea03b942
 ---
+
 # ModeX: Evaluator-Free Best-of-N Selection for Open-Ended Generation
 
 **Conference**: ACL 2026  
@@ -132,8 +136,21 @@ Complexity comparison (Single CNN/DM sample, Qwen-7B): Single Path 5.5s / Self-R
 - Value: ⭐⭐⭐⭐⭐ Training-free, evaluator-free, and $\mathcal{O}(N^2)$ complexity; highly practical for reliable LLM systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)](../../NeurIPS2025/llm_alignment/artificial_hivemind_the_open-ended_homogeneity_of_language_models_and_beyond.md)
+- [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
+- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](../../CVPR2026/llm_alignment/unlocking_token_rewards_via_training-free_reward_attribution.md)
+- [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
+- [\[ACL 2026\] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms](towards_bridging_the_reward-generation_gap_in_direct_alignment_algorithms.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

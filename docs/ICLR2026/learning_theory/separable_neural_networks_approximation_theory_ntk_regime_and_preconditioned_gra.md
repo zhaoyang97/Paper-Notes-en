@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Separable Neural Networks: Approximation Theory, NTK Regime, and Preconditioned Gradient Descent
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The paper systematically establishes the theoretical foundation for Separable Neural Networks (SepNN): it proves that CP/TT/Tucker-type SepNNs possess universal approximation capabilities, derives their NTK regimes under infinite-width/infinite-rank and fixed-rank settings, and proposes SepPGD. This method utilizes low
+  [ICLR 2026][Learning Theory][Separable Neural Networks] The paper systematically establishes the theoretical foundation for Separable Neural Networks (SepNN): it proves that CP/TT/Tucker-type SepNNs possess universal approximation capabilities, derives their NTK regimes under infinite-width/infinite-rank and fixed-rank settings, and proposes SepPGD. This method utilizes low-dimensional separable preconditioning matrices to adjust the NTK spectrum…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "NTK"
+  - "Optimization"
+  - "Separable Neural Networks"
+  - "Universal Approximation"
+  - "Neural Tangent Kernel"
+  - "Spectral Bias"
+  - "Preconditioned Gradient Descent"
 date: 2026-05-08
-content_hash: 4af43b64db6096f1
+content_hash: 9652365992cdfa55
 ---
+
 # Separable Neural Networks: Approximation Theory, NTK Regime, and Preconditioned Gradient Descent
 
 **Conference**: ICLR 2026  
@@ -134,15 +142,15 @@ The experiments cover KRR, image INR, 3D surface occupancy, and 3D separable PIN
 - Value: ⭐⭐⭐⭐⭐ Essential for users of separable coordinate networks and PINNs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
-- [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
 - [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
-- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
+- [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
+- [\[ICLR 2026\] On the Spectral Differences Between NTK and CNTK and Their Implications for Point Cloud Recognition](on_the_spectral_differences_between_ntk_and_cntk_and_their_implications_for_poin.md)
 - [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 
 </div>

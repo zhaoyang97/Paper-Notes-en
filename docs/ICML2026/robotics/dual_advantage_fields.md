@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual Advantage Fields
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] This paper observes that in the bilinear goal-conditioned value model $V_\theta(s,g)=\psi_\theta(s)^\top\phi_\theta(g)$, the goal embedding $\phi_\theta(g)$ is exactly the gradient direction of the value field with respect to the state embedding. By utilizing an "action-feature displacement predictor" $u_\xi(s,a)\appro
+  [ICML 2026 Workshop on Decision Making][Robotics][Offline GCRL] This paper observes that in the bilinear goal-conditioned value model $V_\theta(s,g)=\psi_\theta(s)^\top\phi_\theta(g)$, the goal embedding $\phi_\theta(g)$ is exactly the gradient direction of the value field with respect to the state embedding. By utilizing an "action-feature displacement predictor" $u_\xi(s,a)\approx\gamma\psi(s')-\psi(s)$ and taking its inner product with the goal embedding…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026 Workshop on Decision Making"
+  - "Robotics"
+  - "Offline GCRL"
+  - "dual goal representation"
+  - "bilinear value"
+  - "advantage weighted regression"
+  - "policy extraction"
 date: 2026-05-08
-content_hash: 1321c3a2cbf6ebe5
+content_hash: b97fc1dc15467350
 ---
+
 # Dual Advantage Fields
 
 **Conference**: ICML 2026 Workshop on Decision Making  
@@ -134,15 +140,16 @@ DAF learns that the **local subgoal $\neq$ final goal** geometry by producing a 
 - **Value**: ⭐⭐⭐⭐ (Provides a lightweight, Q-network-free policy extraction paradigm)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Dual Quaternion SE(3) Synchronization with Recovery Guarantees](dual_quaternion_se3_synchronization_with_recovery_guarantees.md)
+- [\[ICLR 2026\] RoboMD: Uncovering Robot Vulnerabilities through Semantic Potential Fields](../../ICLR2026/robotics/robomd_uncovering_robot_vulnerabilities_through_semantic_potential_fields.md)
 - [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[CVPR 2025\] g3D-LF: Generalizable 3D-Language Feature Fields for Embodied Tasks](../../CVPR2025/robotics/g3d-lf_generalizable_3d-language_feature_fields_for_embodied_tasks.md)
-- [\[ACL 2026\] Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](../../ACL2026/robotics/libra-vla_achieving_learning_equilibrium_via_asynchronous_coarse-to-fine_dual-sy.md)
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](../../ICLR2026/robotics/pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
 
 </div>
 

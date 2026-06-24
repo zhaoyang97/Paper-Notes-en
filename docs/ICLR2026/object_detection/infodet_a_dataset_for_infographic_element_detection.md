@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] InfoDet: A Dataset for Infographic Element Detection
 description: >-
-  [ICLR 2026][Object Detection][Dataset] A large-scale infographic element detection dataset (101,264 infographics, 14.2M annotations) is constructed, covering two major categories: charts and human-recognizable objects. A Grounded CoT method is proposed to leverage detection results to enhance VLM chart understanding capabilities.
+  [ICLR 2026][Object Detection][Infographic Detection] A large-scale infographic element detection dataset (101,264 infographics, 14.2M annotations) is constructed, covering two major categories: charts and human-recognizable objects. A Grounded CoT method is proposed to leverage detection results to enhance VLM chart understanding capabilities.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Dataset
-  - Grounded CoT
-  - VLM
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Infographic Detection"
+  - "Chart Understanding"
+  - "Dataset"
+  - "Grounded CoT"
+  - "VLM"
 date: 2026-05-08
-content_hash: 57dbe4e05e606ba6
+content_hash: ee53c201375de38a
 ---
+
 # InfoDet: A Dataset for Infographic Element Detection
 
 **Conference**: ICLR 2026  
@@ -141,9 +144,9 @@ Detectors (Co-DETR, RTMDet) undergo standard training on InfoDet with no special
 
 - [\[ICLR 2026\] ForestPersons: A Large-Scale Dataset for Under-Canopy Missing Person Detection](forestpersons_a_large-scale_dataset_for_under-canopy_missing_person_detection.md)
 - [\[ICLR 2026\] OD3: Optimization-Free Dataset Distillation for Object Detection](od3_optimization-free_dataset_distillation_for_object_detection.md)
+- [\[NeurIPS 2025\] BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes](../../NeurIPS2025/object_detection/burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes.md)
 - [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](../../ICCV2025/object_detection/kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 - [\[CVPR 2026\] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](../../CVPR2026/object_detection/online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)
-- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](../../CVPR2026/object_detection/mmrad_multimodal_anomaly_detection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper proposes HypEHR, a Lorentz hyperbolic model with only 22M parameters. It embeds medical codes, visit records, and questions into hyperbolic space and aligns them with the ICD ontology structure via hierarchy-aware regularization, achieving performance close to LLM-based methods on the MIMIC-IV EHR-QA task.
+  [ACL 2026 (Findings)][Medical LLM][EHR-QA] This paper proposes HypEHR, a Lorentz hyperbolic model with only 22M parameters. It embeds medical codes, visit records, and questions into hyperbolic space and aligns them with the ICD ontology structure via hierarchy-aware regularization, achieving performance close to LLM-based methods on the MIMIC-IV EHR-QA task.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 (Findings)"
+  - "Medical LLM"
+  - "EHR-QA"
+  - "Hyperbolic Space"
+  - "Lorentz Model"
+  - "ICD Hierarchical Modeling"
+  - "Lightweight Clinical Model"
 date: 2026-05-08
-content_hash: 8ed02283b99916e4
+content_hash: 7615bf82e1e512c1
 ---
+
 # HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering
 
 **Conference**: ACL 2026 (Findings)  
@@ -142,8 +148,8 @@ Pre-training uses a joint loss of next-visit diagnosis prediction (Binary Cross-
 - [\[AAAI 2026\] CliCARE: Grounding Large Language Models in Clinical Guidelines for Decision Support over Longitudinal Cancer Electronic Health Records](../../AAAI2026/medical_nlp/clicare_grounding_large_language_models_in_clinical_guidelines_for_decision_supp.md)
 - [\[ACL 2026\] Empathy Applicability Modeling for General Health Queries](empathy_applicability_modeling_for_general_health_queries.md)
 - [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
-- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_nlp/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
-- [\[ACL 2026\] Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction](efficient_and_effective_internal_memory_retrieval_for_llm-based_healthcare_predi.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](../../ICLR2026/medical_nlp/medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
 
 </div>
 

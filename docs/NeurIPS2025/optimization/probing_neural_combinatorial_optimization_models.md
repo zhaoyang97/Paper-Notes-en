@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Probing Neural Combinatorial Optimization Models
 description: >-
-  [NeurIPS 2025][Optimization][Neural Combinatorial Optimization] This work is the first to systematically introduce probing methodology into the study of neural combinatorial optimization (NCO) models. It proposes a CS-Pr…
+  [NeurIPS 2025 Spotlight][Optimization][Neural Combinatorial Optimization] This work is the first to systematically introduce probing methodology into the study of neural combinatorial optimization (NCO) models. It proposes a CS-Probing framework to analyze the decision-relevant knowledge, inductive biases, and generalization mechanisms encoded in model representations, and identifies critical embedding dimensions that can be leveraged to improve model generalization.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Optimization"
   - "Neural Combinatorial Optimization"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Embedding Representations"
   - "Generalization"
 date: 2026-05-08
-content_hash: 09a7b57cb4d60e90
+content_hash: 157abd3eec467f66
 ---
 
 # Probing Neural Combinatorial Optimization Models
@@ -138,9 +138,9 @@ Probe models use linear regression (Task 1) or linear classification (Task 2), w
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
+- [\[ICML 2025\] BOPO: Neural Combinatorial Optimization via Best-anchored and Objective-guided Preference Optimization](../../ICML2025/optimization/bopo_neural_combinatorial_optimization_via_best-anchored_and_objective-guided_pr.md)
+- [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](../../ICLR2026/optimization/multi-action_self-improvement_for_neural_combinatorial_optimization.md)
 - [\[NeurIPS 2025\] Fantastic Features and Where to Find Them: A Probing Method to Combine Features from Multiple Foundation Models](fantastic_features_and_where_to_find_them_a_probing_method_to_combine_features_f.md)
-- [\[NeurIPS 2025\] Evaluating LLMs for Combinatorial Optimization: One-Phase and Two-Phase Heuristics for 2D Bin-Packing](evaluating_llms_for_combinatorial_optimization_one-phase_and_two-phase_heuristic.md)
-- [\[NeurIPS 2025\] Oracle-Efficient Combinatorial Semi-Bandits](oracle-efficient_combinatorial_semi-bandits.md)
 - [\[ICML 2026\] Probing Neural TSP Representations for Prescriptive Decision Support](../../ICML2026/optimization/probing_neural_tsp_representations_for_prescriptive_decision_support.md)
 
 </div>

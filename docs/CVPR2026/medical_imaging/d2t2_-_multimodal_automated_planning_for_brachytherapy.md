@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] D2T2 - Multimodal Automated Planning for Brachytherapy
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] D2T2 utilizes a two-stage network—where a DiT predicts dwell times for each position and a physical layer linearly combines these into dose—to directly predict clinically deliverable brachytherapy machine parameters. Combined with a proxy network that renders the Gamma index into a differentiable loss, the model achiev
+  [CVPR 2026][Medical Imaging][Brachytherapy] D2T2 utilizes a two-stage network—where a DiT predicts dwell times for each position and a physical layer linearly combines these into dose—to directly predict clinically deliverable brachytherapy machine parameters. Combined with a proxy network that renders the Gamma index into a differentiable loss, the model achieves higher accuracy than current SOTA and reduces planning time from tens of minutes to 0.1 seconds in a single forwa…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brachytherapy"
+  - "Automated Planning"
+  - "Physics-Constrained Networks"
+  - "Concept Bottleneck"
+  - "Differentiable Gamma Loss"
 date: 2026-05-08
-content_hash: faf94a40dc7e3e62
+content_hash: 298fe2fb80406f18
 ---
+
 # D2T2 - Multimodal Automated Planning for Brachytherapy
 
 **Conference**: CVPR 2026  

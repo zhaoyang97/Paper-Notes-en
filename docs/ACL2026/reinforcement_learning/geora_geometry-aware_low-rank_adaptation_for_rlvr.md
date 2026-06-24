@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR
 description: >-
-  [ACL 2026][Reinforcement Learning][RLVR] This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning from Verifiable Rewards (RLVR). By constructing a geometric constraint matrix (fusing spectral and Euclidean priors) to extract the principal directions of the RL update subspace for SVD initialization and freezing
+  [ACL 2026][Reinforcement Learning][Low-Rank Adaptation] This paper proposes GeoRA, a low-rank adaptation method specifically designed for Reinforcement Learning from Verifiable Rewards (RLVR). By constructing a geometric constraint matrix (fusing spectral and Euclidean priors) to extract the principal directions of the RL update subspace for SVD initialization and freezing the residual matrix as a structural anchor, GeoRA consistently outperforms baselines like LoRA, PiSSA…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Low-Rank Adaptation"
+  - "RLVR"
+  - "Geometry-Aware"
+  - "SVD Initialization"
+  - "PEFT"
 date: 2026-05-08
-content_hash: 0a227e52f0630e46
+content_hash: 5da6ec223ec99325
 ---
+
 # GeoRA: Geometry-Aware Low-Rank Adaptation for RLVR
 
 **Conference**: ACL 2026  
@@ -136,15 +141,16 @@ The GRPO algorithm is used for RLVR training. The rank is fixed at $r=16$ with a
 - Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for parameter-efficient training in the RLVR era; geometric insights are generalizable to other RL settings.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits](../../ICLR2026/reinforcement_learning/online_minimization_of_polarization_and_disagreement_via_low-rank_matrix_bandits.md)
+- [\[ICLR 2026\] QeRL: Quantization-enhanced Low-rank Reinforcement Learning for LLMs](../../ICLR2026/reinforcement_learning/qerl_beyond_efficiency_-_quantization-enhanced_reinforcement_learning_for_llms.md)
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
 - [\[NeurIPS 2025\] Shift Before You Learn: Enabling Low-Rank Representations in Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/shift_before_you_learn_enabling_low-rank_representations_in_reinforcement_learni.md)
 - [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
-- [\[NeurIPS 2025\] The Path Not Taken: RLVR Provably Learns Off the Principals](../../NeurIPS2025/reinforcement_learning/the_path_not_taken_rlvr_provably_learns_off_the_principals.md)
 
 </div>
 

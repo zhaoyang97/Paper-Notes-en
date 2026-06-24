@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] OmniCT utilizes a Spatial Consistency Enhancement (SCE) module comprising "slice composition + tri-axial positional encoding + MoE hybrid projection" to unify 2D slices and 3D volumes into a single LVLM token space. It further incorporates Organ-level Semantic Enhancement (OSE) to explicitly inject anatomical region pr
+  [ICLR 2026][Medical Imaging][CT Understanding] OmniCT utilizes a Spatial Consistency Enhancement (SCE) module comprising "slice composition + tri-axial positional encoding + MoE hybrid projection" to unify 2D slices and 3D volumes into a single LVLM token space. It further incorporates Organ-level Semantic Enhancement (OSE) to explicitly inject anatomical region priors into representations. Combined with the MedEval-CT dataset of 1.7 million samples and a hybrid benchmark…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "CT Understanding"
+  - "Slice-Volume Unification"
+  - "Large Vision-Language Model"
+  - "Organ-level Semantics"
+  - "Medical Evaluation Benchmark"
 date: 2026-05-08
-content_hash: ee685ffdffc265be
+content_hash: 51f68372da1308d7
 ---
+
 # OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis
 
 **Conference**: ICLR 2026  
@@ -142,10 +148,10 @@ Fixing VSC and MHP (viewed as the 2D/3D coupling foundation), SCE and OSE were a
 ## Related Papers
 
 - [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
-- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
+- [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
 - [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](../../CVPR2026/medical_imaging/gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
+- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](../../AAAI2026/medical_imaging/guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
 - [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
-- [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](../../CVPR2026/medical_imaging/omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
 
 </div>
 

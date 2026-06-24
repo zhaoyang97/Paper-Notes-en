@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation
 description: >-
-  [ICML 2026][Video Generation][Paper Note] T2AV-Compass is the first comprehensive evaluation benchmark for Text-to-Audio-Video (T2AV) generation. It features 500 complex prompts and a dual-level evaluation framework combining low-level signal metrics with high-level MLLM diagnostics. By evaluating 15 cutting-edge T2AV systems, it quantitatively reveals an "aud
+  [ICML 2026][Video Generation][Text-to-Audio-Video Generation] T2AV-Compass is the first comprehensive evaluation benchmark for Text-to-Audio-Video (T2AV) generation. It features 500 complex prompts and a dual-level evaluation framework combining low-level signal metrics with high-level MLLM diagnostics. By evaluating 15 cutting-edge T2AV systems, it quantitatively reveals an "audio realism bottleneck," where even top-tier models achieve over 85% realism in video but only appr…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Text-to-Audio-Video Generation"
+  - "Cross-modal Alignment"
+  - "Evaluation Benchmark"
+  - "MLLM-as-Judge"
+  - "Audio-Visual Imbalance"
 date: 2026-05-08
-content_hash: 3f85341effb93b6f
+content_hash: 0976678665274a36
 ---
+
 # T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation
 
 **Conference**: ICML 2026  
@@ -138,8 +144,8 @@ Closed-source models dominate the top, but no single model reigns supreme in all
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](../../ICLR2026/video_generation/javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](../../CVPR2026/video_generation/uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
 - [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](../../ICCV2025/video_generation/worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
-- [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](../../CVPR2026/video_generation/vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
-- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](../../CVPR2026/video_generation/vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
+- [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
+- [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](../../CVPR2026/video_generation/slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
 
 </div>
 

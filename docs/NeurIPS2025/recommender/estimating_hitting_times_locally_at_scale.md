@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Estimating Hitting Times Locally At Scale
 description: >-
-  [NeurIPS 2025][Recommender Systems][hitting time] Two local (sublinear) algorithms are proposed for estimating hitting times on graphs — Algorithm 1 based on meeting times and Algorithm 3 based on spectral truncation. Bo…
+  [NeurIPS 2025][Recommender Systems][hitting time] Two local (sublinear) algorithms are proposed for estimating hitting times on graphs — Algorithm 1 based on meeting times and Algorithm 3 based on spectral truncation. Both require only short random walks centered at $u$ and $v$ without full graph access, achieving relative error <1.4% on synthetic and real-world graphs. An optimal sample complexity lower bound for walk-based estimation is also established.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "sublinear complexity"
   - "spectral methods"
 date: 2026-05-08
-content_hash: 898874163467209d
+content_hash: 224dd11aaa25c4df
 ---
 
 # Estimating Hitting Times Locally At Scale
@@ -123,10 +123,10 @@ Two algorithms are presented. **Algorithm 1** (primary): launches $\ell$ random 
 ## Related Papers
 
 - [\[NeurIPS 2025\] ASAP: An Agentic Solution to Auto-Optimize Performance of Large-Scale LLM Training](asap_an_agentic_solution_to_auto-optimize_performance_of_large-scale_llm_trainin.md)
+- [\[ICML 2025\] How to Set AdamW's Weight Decay as You Scale Model and Dataset Size](../../ICML2025/recommender/how_to_set_adamws_weight_decay_as_you_scale_model_and_dataset_size.md)
+- [\[ICLR 2026\] Adaptive Regularization for Large-Scale Sparse Feature Embedding Models](../../ICLR2026/recommender/adaptive_regularization_for_large-scale_sparse_feature_embedding_models.md)
 - [\[AAAI 2026\] TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning](../../AAAI2026/recommender/travellama_a_multimodal_travel_assistant_with_large-scale_dataset_and_structured.md)
-- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
 - [\[NeurIPS 2025\] Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning](overcoming_sparsity_artifacts_in_crosscoders_to_interpret_chat-tuning.md)
-- [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
 
 </div>
 

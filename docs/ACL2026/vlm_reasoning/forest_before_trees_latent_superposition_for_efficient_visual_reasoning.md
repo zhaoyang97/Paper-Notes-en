@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper proposes Laser, which performs visual reasoning in latent space via Dynamic Window Alignment Learning (DWAL). By maintaining a "probabilistic superposition" of future semantics rather than precise token-by-token prediction, the model achieves a "global-to-local" cognitive hierarchy. Laser reaches SOTA among
+  [ACL 2026][VLM Reasoning][Latent reasoning] This paper proposes Laser, which performs visual reasoning in latent space via Dynamic Window Alignment Learning (DWAL). By maintaining a "probabilistic superposition" of future semantics rather than precise token-by-token prediction, the model achieves a "global-to-local" cognitive hierarchy. Laser reaches SOTA among latent reasoning methods across six benchmarks using only 6 reasoning tokens (a 97%+ reduction)…
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Latent reasoning"
+  - "dynamic window alignment"
+  - "semantic superposition"
+  - "visual reasoning"
+  - "token efficiency"
 date: 2026-05-08
-content_hash: 34fec857d603ecaf
+content_hash: 04adf879e2490d74
 ---
+
 # Forest Before Trees: Latent Superposition for Efficient Visual Reasoning
 
 **Conference**: ACL 2026  
@@ -143,11 +149,11 @@ The total loss is $\mathcal{L}_{Total} = \mathcal{L}_{DWAL} + \mathcal{L}_{CE}$.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Latent Visual Reasoning](../../ICLR2026/vlm_reasoning/latent_visual_reasoning.md)
 - [\[CVPR 2026\] Latent Implicit Visual Reasoning](../../CVPR2026/vlm_reasoning/latent_implicit_visual_reasoning.md)
-- [\[ACL 2026\] DRIFT: Transferring Reasoning Priors for Efficient MLLM Fine-Tuning](drift_transferring_reasoning_priors_for_efficient_mllm_fine-tuning.md)
 - [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](../../CVPR2026/vlm_reasoning/monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
+- [\[ACL 2026\] DRIFT: Transferring Reasoning Priors for Efficient MLLM Fine-Tuning](drift_transferring_reasoning_priors_for_efficient_mllm_fine-tuning.md)
 - [\[CVPR 2026\] Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens](../../CVPR2026/vlm_reasoning/machine_mental_imagery_empower_multimodal_reasoning_with_latent_visual_tokens.md)
-- [\[ICML 2026\] Imagination Helps Visual Reasoning, But Not Yet in Latent Space](../../ICML2026/vlm_reasoning/imagination_helps_visual_reasoning_but_not_yet_in_latent_space.md)
 
 </div>
 

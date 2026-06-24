@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] A Primer on SO(3) Action Representations in Deep Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][SO(3)] This paper systematically evaluates various parameterizations of SO(3) rotation actions in Deep Reinforcement Learning (Euler angles / Quaternions / Rotation Matrices / Lie algebra tangent vectors). Through large-scale experiments on PPO, SAC, and TD3 under dense and sparse rewards, it demonstrates that "delta tangent
+  [ICLR 2026][Robotics][SO(3)] This paper systematically evaluates various parameterizations of SO(3) rotation actions in Deep Reinforcement Learning (Euler angles / Quaternions / Rotation Matrices / Lie algebra tangent vectors). Through large-scale experiments on PPO, SAC, and TD3 under dense and sparse rewards, it demonstrates that "delta tangent vector actions in the local coordinate frame" are the most robust across nearly all algorithms and tasks…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - SO(3)
-  - PPO/SAC/TD3
+  - "ICLR 2026"
+  - "Robotics"
+  - "SO(3)"
+  - "rotation action representations"
+  - "continuous control"
+  - "PPO/SAC/TD3"
+  - "exploration dynamics"
+  - "tangent space actions"
 date: 2026-05-08
-content_hash: 3a3566b03d7dc279
+content_hash: 081f6e02bcf8fb1d
 ---
+
 # A Primer on SO(3) Action Representations in Deep Reinforcement Learning
 
 **Conference**: ICLR 2026  

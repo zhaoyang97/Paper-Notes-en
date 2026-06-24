@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation
 description: >-
-  [AAAI 2026][Image Generation][multi-object image generation] This paper identifies four failure scenarios in multi-object generation (similar shapes/textures, dissimilar background biases, many objects)…
+  [AAAI 2026][Image Generation][multi-object image generation] This paper identifies four failure scenarios in multi-object generation (similar shapes/textures, dissimilar background biases, many objects), constructs directional separation vectors to modify three types of CLIP text embeddings (semantic token / EOT / pooled), achieves a 16–25% improvement in success rate and a 3–12% reduction in mixing rate on SDXL, with inference speed close to baseline (~4× faster than Attend-…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "CLIP embeddings"
   - "directional separation"
 date: 2026-05-08
-content_hash: a32a293af78cd03e
+content_hash: 279d5368b3fd4aba
 ---
 
 # DOS: Directional Object Separation in Text Embeddings for Multi-Object Image Generation
@@ -133,11 +133,11 @@ Inference speed (Table 3): DOS 13.87s vs. A&E 58.83s vs. CONFORM 58.48s (~4× sp
 
 ## Related Papers
 
-- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](../../CVPR2026/image_generation/object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
-- [\[NeurIPS 2025\] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation](../../NeurIPS2025/image_generation/scenedesigner_controllable_multi-object_image_generation_with_9-dof_pose_manipul.md)
+- [\[CVPR 2025\] Compass Control: Multi Object Orientation Control for Text-to-Image Generation](../../CVPR2025/image_generation/compass_control_multi_object_orientation_control_for_text-to-image_generation.md)
+- [\[CVPR 2025\] Multitwine: Multi-Object Compositing with Text and Layout Control](../../CVPR2025/image_generation/multitwine_multi-object_compositing_with_text_and_layout_control.md)
 - [\[ICLR 2026\] Directional Textual Inversion for Personalized Text-to-Image Generation](../../ICLR2026/image_generation/directional_textual_inversion_for_personalized_text-to-image_generation.md)
-- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](dice_distilling_classifier-free_guidance_into_text_embedding.md)
-- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](../../CVPR2026/image_generation/egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
+- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](../../CVPR2026/image_generation/ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
+- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](../../CVPR2026/image_generation/object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 
 </div>
 

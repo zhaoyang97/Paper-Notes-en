@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structuring The Future: Diffusion LLM Speculative Decoding via Calibrated Draft Graphs
 description: >-
-  [ICML 2026][LLM Efficiency][Diffusion Language Model] Spiffy adapts speculative decoding for Diffusion Language Models (dLLMs): instead of training a separate draft model, it utilizes the target model's own distribution for "auto-speculation." It organizes multi-step denoising states into a **Directed Draft Graph** and maximizes the acceptance rate using an offline-calibr
+  [ICML2026][LLM Efficiency][Diffusion Language Models] Spiffy adapts speculative decoding for Diffusion Language Models (dLLMs): instead of training a separate draft model, it utilizes the target model's own distribution for "auto-speculation." It organizes multi-step denoising states into a **Directed Draft Graph** and maximizes the acceptance rate using an offline-calibrated graph structure. This achieves up to a 8.6× reduction in model forward passes and a 6.3× speedup in t…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Diffusion Language Model
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Speculative Decoding"
+  - "Directed Draft Graphs"
+  - "Lossless Acceleration"
+  - "Offline Calibration"
 date: 2026-05-08
-content_hash: 7308889b5a59d64b
+content_hash: 48d5a0a00d072bc9
 ---
+
 # Structuring The Future: Diffusion LLM Speculative Decoding via Calibrated Draft Graphs
 
 **Conference**: ICML2026  
@@ -124,11 +129,11 @@ Spiffy provides a 1.3–1.6× Gain over dynamic unmasking, with NFE reduction up
 
 ## Related Papers
 
-- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
-- [\[ICLR 2026\] Bridging Draft Policy Misalignment: Group Tree Optimization for Speculative Decoding](../../ICLR2026/llm_efficiency/bridging_draft_policy_misalignment_group_tree_optimization_for_speculative_decod.md)
-- [\[ACL 2025\] Accelerating Speculative Decoding via Efficient Context-Aware Draft Generation](../../ACL2025/llm_efficiency/accelerating_speculative_decoding_via_efficient_context-aware_draft_generation.md)
-- [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](../../ICLR2026/llm_efficiency/learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+- [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](../../ICLR2026/llm_efficiency/repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
+- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
 - [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
+- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
 
 </div>
 

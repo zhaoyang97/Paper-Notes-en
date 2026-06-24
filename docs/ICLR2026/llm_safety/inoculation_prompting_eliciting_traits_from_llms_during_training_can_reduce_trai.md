@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Inoculation Prompting: Eliciting traits from LLMs during training can reduce trait expression at test-time
 description: >-
-  [ICLR 2026][LLM Safety][Fine-tuning] By prepending a system prompt that "actively elicits unwanted traits" (e.g., "You always speak Spanish") during fine-tuning and removing it at test-time, the model learns the desired traits while barely expressing the "inoculated" bad trait—a minimalist selective learning technique that requires no changes to training
+  [ICLR 2026][LLM Safety][Inoculation Prompting] By prepending a system prompt that "actively elicits unwanted traits" (e.g., "You always speak Spanish") during fine-tuning and removing it at test-time, the model learns the desired traits while barely expressing the "inoculated" bad trait—a minimalist selective learning technique that requires no changes to training objectives, additional data, or internal weight manipulation.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Fine-tuning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Inoculation Prompting"
+  - "Emergent Misaligned"
+  - "Backdoor Defense"
+  - "Selective Learning"
+  - "Fine-tuning"
+  - "Generalization"
 date: 2026-05-08
-content_hash: f878fd2a2afccd34
+content_hash: abb5f3dc95604527
 ---
+
 # Inoculation Prompting: Eliciting traits from LLMs during training can reduce trait expression at test-time
 
 **Conference**: ICLR 2026  
@@ -118,11 +124,11 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning-Time Encoding Shapes Unlearning in LLMs](learning-time_encoding_shapes_unlearning_in_llms.md)
 - [\[ICLR 2026\] ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases](impossiblebench_measuring_llms_propensity_of_exploiting_test_cases.md)
+- [\[ICLR 2026\] Learning-Time Encoding Shapes Unlearning in LLMs](learning-time_encoding_shapes_unlearning_in_llms.md)
 - [\[NeurIPS 2025\] Buffer Layers for Test-Time Adaptation](../../NeurIPS2025/llm_safety/buffer_layers_for_test-time_adaptation.md)
-- [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
 - [\[ICLR 2026\] Operationalizing Data Minimization for Privacy-Preserving LLM Prompting](operationalizing_data_minimization_for_privacy-preserving_llm_prompting.md)
+- [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Unified In-Context Video Editing
 description: >-
-  [ICLR 2026][Video Generation][in-context video editing] UNIC represents the source video, multimodal editing conditions, and target video noise latents as a single token sequence. This allows the video DiT to perform ID insertion/replacement/deletion, stylization, first-frame propagation, and re-camera control using native full attention within the context, while mitigating
+  [ICLR2026][Video Generation][in-context video editing] UNIC represents the source video, multimodal editing conditions, and target video noise latents as a single token sequence. This allows the video DiT to perform ID insertion/replacement/deletion, stylization, first-frame propagation, and re-camera control using native full attention within the context, while mitigating multi-task confusion through Task-aware RoPE and Condition Bias.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - in-context video editing
-  - Video Editing
-  - DiT
+  - "ICLR2026"
+  - "Video Generation"
+  - "in-context video editing"
+  - "video editing"
+  - "multi-task unification"
+  - "DiT"
+  - "conditional control"
 date: 2026-05-08
-content_hash: f6b86f7138439421
+content_hash: 2ce7b7256f43a5ea
 ---
+
 # Unified In-Context Video Editing
 
 **Conference**: ICLR2026  
@@ -151,13 +154,14 @@ A benchmark was constructed covering six tasks: ID Insert, ID Swap, ID Delete, R
 - Value: ⭐⭐⭐⭐⭐ Highly relevant for unified video models, specifically the tokenization and curriculum training strategies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
 - [\[ICLR 2026\] EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning](editverse_unifying_image_and_video_editing_and_generation_with_in-context_learni.md)
 - [\[ICLR 2026\] UniVideo: Unified Understanding, Generation, and Editing for Videos](univideo_unified_understanding_generation_and_editing_for_videos.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
 - [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
 - [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
 

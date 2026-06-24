@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining
 description: >-
-  [ACL 2026][Interpretability][sparse crosscoder] By training a shared feature dictionary across multiple pretraining checkpoints of the same LLM using a sparse crosscoder, this work proposes the Relative Indirect Effect (RelIE) to measure how the causal importance of individual features "emerges, persists, or vanishes" over token counts. This study provides the first
+  [ACL 2026][Interpretability][sparse crosscoder] By training a shared feature dictionary across multiple pretraining checkpoints of the same LLM using a sparse crosscoder, this work proposes the Relative Indirect Effect (RelIE) to measure how the causal importance of individual features "emerges, persists, or vanishes" over token counts. This study provides the first observation of the concept-level evolutionary trajectory in Pythia, OLMo, and BLOOM—from "specific subword dete…
 tags:
-  - ACL 2026
-  - Interpretability
-  - sparse crosscoder
-  - pretraining dynamics
-  - RelIE
+  - "ACL 2026"
+  - "Interpretability"
+  - "sparse crosscoder"
+  - "pretraining dynamics"
+  - "RelIE"
+  - "causal attribution"
+  - "syntax concept emergence"
 date: 2026-05-08
-content_hash: e4fdaa139dad72ef
+content_hash: 2d2ec15c49e7b7dc
 ---
+
 # Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining
 
 **Conference**: ACL 2026  
@@ -155,8 +158,8 @@ Quantitatively: Pythia-1B BLiMP accuracy jumps from ~50% to >90% between 128M an
 - [\[ICLR 2026\] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test](../../ICLR2026/interpretability/grokking_in_llm_pretraining_monitor_memorization-to-generalization_without_test.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 - [\[ACL 2026\] Do LLMs Capture Embodied Cognition and Cultural Variation? Cross-Linguistic Evidence from Demonstratives](do_llms_capture_embodied_cognition_and_cultural_variation_cross-linguistic_evide.md)
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 - [\[ICML 2026\] Memorization Dynamics of Fill-in-the-Middle Pretraining](../../ICML2026/interpretability/memorization_dynamics_of_fill-in-the-middle_pretraining.md)
+- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 
 </div>
 

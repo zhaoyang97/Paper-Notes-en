@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science
 description: >-
-  [ICLR 2026][Medical NLP][biomedical data science] The authors constructed MedAgentGym, the first unified Agent training environment for biomedical data science. It comprises 72,413 task instances covering 12 real-world scenarios across 129 categories, equipped with executable sandboxes and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs revealed
+  [ICLR 2026 Oral][Medical LLM][biomedical data science] The authors constructed MedAgentGym, the first unified Agent training environment for biomedical data science. It comprises 72,413 task instances covering 12 real-world scenarios across 129 categories, equipped with executable sandboxes and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs revealed a gap between commercial and open-source models. By employing efficient multi-threaded trajectory samplin…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - biomedical data science
-  - agentic training
-  - code-centric reasoning
-  - reinforcement-learning
-  - Med-Copilot
-  - LLM agent
+  - "ICLR 2026 Oral"
+  - "Medical LLM"
+  - "biomedical data science"
+  - "agentic training"
+  - "code-centric reasoning"
+  - "reinforcement-learning"
+  - "Med-Copilot"
+  - "LLM agent"
 date: 2026-05-08
-content_hash: 058ba9aebdd9540f
+content_hash: 6a0611f08380f06a
 ---
+
 # MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science
 
 **Conference**: ICLR 2026 Oral  
@@ -152,8 +153,8 @@ Using Qwen2.5-7B/14B-Instruct as backbones, the process involves "SFT warm start
 
 - [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](../../ACL2026/medical_nlp/ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
 - [\[CVPR 2026\] Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data](../../CVPR2026/medical_nlp/towards_efficient_medical_reasoning_with_minimal_fine-tuning_data.md)
-- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[NeurIPS 2025\] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](../../NeurIPS2025/medical_nlp/cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 
 </div>

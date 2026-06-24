@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes Spectrum Projection Score (SPS), a training-free metric that evaluates retrieval summary quality by measuring the alignment bet…
+  [AAAI 2026 Oral][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper proposes Spectrum Projection Score (SPS), a training-free metric that evaluates retrieval summary quality by measuring the alignment between summary token embeddings and the principal subspace of the reader LLM, serving as a replacement for conventional perplexity-based metrics. Combined with the xCompress inference-time controller, SPS achieves substantial improvements over perplexity-ba…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Information Retrieval & RAG"
   - "Retrieval-Augmented Generation"
   - "Perplexity"
@@ -12,7 +12,7 @@ tags:
   - "Summary Compression"
   - "Representation Space Alignment"
 date: 2026-05-08
-content_hash: a8d97390d70d0238
+content_hash: 0ae37cb69ab2a266
 ---
 
 # Beyond Perplexity: Let the Reader Select Retrieval Summaries via Spectrum Projection Score
@@ -113,10 +113,10 @@ This is a training-free method. SPS relies solely on a one-time SVD decompositio
 ## Related Papers
 
 - [\[ICLR 2026\] Summaries as Centroids for Interpretable and Scalable Text Clustering](../../ICLR2026/information_retrieval/summaries_as_centroids_for_interpretable_and_scalable_text_clustering.md)
-- [\[CVPR 2026\] Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval](../../CVPR2026/information_retrieval/beyond_global_similarity_towards_fine-grained_multi-condition_multimodal_retriev.md)
-- [\[ACL 2026\] Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation](../../ACL2026/information_retrieval/beyond_black-box_interventions_latent_probing_for_faithful_retrieval-augmented_g.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
-- [\[AAAI 2026\] ComLQ: Benchmarking Complex Logical Queries in Information Retrieval](comlq_benchmarking_complex_logical_queries_in_information_retrieval.md)
+- [\[ACL 2026\] Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking](../../ACL2026/information_retrieval/beyond_chunks_and_graphs_retrieval-augmented_generation_through_triplet-driven_t.md)
+- [\[ICLR 2026\] Beyond Text-Only: Towards Multimodal Table Retrieval in Open-World](../../ICLR2026/information_retrieval/beyond_text-only_towards_multimodal_table_retrieval_in_open-world.md)
+- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](../../ICLR2026/information_retrieval/let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
+- [\[ICLR 2026\] Interact-RAG: Reason and Interact with the Corpus, Beyond Black-Box Retrieval](../../ICLR2026/information_retrieval/interact-rag_reason_and_interact_with_the_corpus_beyond_black-box_retrieval.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Probing Neural TSP Representations for Prescriptive Decision Support
 description: >-
-  [ICML 2026][Optimization & Theory][TSP] The authors treat trained TSP neural solvers as "transferable encoders," using frozen representations and lightweight probes to predict two types of expensive operational sensitivity queries (node removal and edge forbidding). They systematically demonstrate that probe accuracy improves monotonically with solver qualit
+  [ICML 2026][Optimization][TSP] The authors treat trained TSP neural solvers as "transferable encoders," using frozen representations and lightweight probes to predict two types of expensive operational sensitivity queries (node removal and edge forbidding). They systematically demonstrate that probe accuracy improves monotonically with solver quality and achieves Prev. SOTA through integration with traditional heuristics.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - TSP
-  - neural CO
-  - probing
-  - sensitivity analysis
-  - transfer learning
+  - "ICML 2026"
+  - "Optimization"
+  - "TSP"
+  - "neural CO"
+  - "probing"
+  - "sensitivity analysis"
+  - "transfer learning"
 date: 2026-05-08
-content_hash: 5f68a98111829e15
+content_hash: 6afdbd77502dfa73
 ---
+
 # Probing Neural TSP Representations for Prescriptive Decision Support
 
 **Conference**: ICML 2026  
@@ -136,10 +137,10 @@ Top-1 / Top-5 accuracy and Spearman $\rho$ for node-removal and edge-forbid on T
 ## Related Papers
 
 - [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](../../NeurIPS2025/optimization/probing_neural_combinatorial_optimization_models.md)
+- [\[ICLR 2026\] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making](../../ICLR2026/optimization/gen-dfl_decision-focused_generative_learning_for_robust_decision_making.md)
 - [\[NeurIPS 2025\] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations](../../NeurIPS2025/optimization/contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[ICML 2026\] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts](learning-augmented_scalable_linear_assignment_problem_optimization_via_neural_du.md)
-- [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
+- [\[ICLR 2026\] Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers](../../ICLR2026/optimization/beyond_the_heatmap_a_rigorous_evaluation_of_component_impact_in_mcts-based_tsp_s.md)
 
 </div>
 

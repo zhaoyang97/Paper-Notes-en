@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration
 description: >-
-  [AAAI 2026][human-AI collaboration] This paper reveals a fundamental trade-off between *complementarity* and *alignment* in human-AI collaboration—no single model can simultaneously optimize both objectives. It proposes…
+  [AAAI 2026][human-AI collaboration] This paper reveals a fundamental trade-off between *complementarity* and *alignment* in human-AI collaboration—no single model can simultaneously optimize both objectives. It proposes an adaptive AI ensemble framework that dynamically switches between an alignment model and a complementarity model via a Rational Routing Shortcut (RRS) mechanism, achieving up to 9% improvement in team accuracy over standard AI.
 tags:
   - "AAAI 2026"
   - "human-AI collaboration"
@@ -11,7 +11,7 @@ tags:
   - "trust modeling"
   - "behavior-aware AI"
 date: 2026-05-08
-content_hash: f529e70e508043e8
+content_hash: 9e7fdf376fbfbde3
 ---
 
 # Align When They Want, Complement When They Need! Human-Centered Ensembles for Adaptive Human-AI Collaboration
@@ -118,11 +118,11 @@ Two specialist models are trained—an alignment expert $m_a$ and a complementar
 
 ## Related Papers
 
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
+- [\[ICLR 2026\] AtC: Aggregate-then-Calibrate for Human-centered Assessment](../../ICLR2026/others/atc_aggregate-then-calibrate_for_human-centered_assessment.md)
 - [\[AAAI 2026\] How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?](how_hard_is_it_to_rig_a_tournament_when_few_players_can_beat_or_be_beaten_by_the.md)
+- [\[ICLR 2026\] What happens when generative AI models train recursively on each others' outputs?](../../ICLR2026/others/what_happens_when_generative_ai_models_train_recursively_on_each_others_outputs.md)
 - [\[AAAI 2026\] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)
-- [\[ICLR 2026\] When to Retrain after Drift: A Data-Only Test of Post-Drift Data Size Sufficiency](../../ICLR2026/others/when_to_retrain_after_drift_a_data-only_test_of_post-drift_data_size_sufficiency.md)
-- [\[AAAI 2026\] STEM Faculty Perspectives on Generative AI in Higher Education](stem_faculty_perspectives_on_generative_ai_in_higher_education.md)
+- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
 
 </div>
 

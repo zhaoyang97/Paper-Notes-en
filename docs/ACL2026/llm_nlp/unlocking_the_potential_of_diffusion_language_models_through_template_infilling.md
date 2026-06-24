@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Potential of Diffusion Language Models through Template Infilling
 description: >-
-  [ACL 2026][LLM (Other)][Diffusion Language Model] This paper proposes Template Infilling, which transforms the generation constraints of Diffusion Language Models (DLMs) from a single prefix into structural anchors distributed throughout the output. By utilizing dynamic span allocation to reserve space for complex reasoning, the method significantly stabilizes and enh
+  [ACL2026][LLM (Other)][Diffusion Language Models] This paper proposes Template Infilling, which transforms the generation constraints of Diffusion Language Models (DLMs) from a single prefix into structural anchors distributed throughout the output. By utilizing dynamic span allocation to reserve space for complex reasoning, the method significantly stabilizes and enhances parallel generation quality in mathematical reasoning, code generation, and global planning tasks.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - Diffusion Language Model
+  - "ACL2026"
+  - "LLM (Other)"
+  - "Diffusion Language Models"
+  - "template infilling"
+  - "structured generation"
+  - "dynamic span allocation"
+  - "code generation"
 date: 2026-05-08
-content_hash: ea95bf4741c6dc76
+content_hash: b0df05680d5c8bc4
 ---
+
 # Unlocking the Potential of Diffusion Language Models through Template Infilling
 
 **Conference**: ACL2026  
@@ -143,10 +148,10 @@ The authors also tested anchor position perturbations. Accuracy was 0.4458 for t
 ## Related Papers
 
 - [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](../../ICLR2026/llm_nlp/dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
+- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 - [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](../../ICML2026/llm_nlp/reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)
 - [\[ACL 2026\] Leveraging Pretrained Language Models as Energy Functions for Glauber Dynamics Text Diffusion](leveraging_pretrained_language_models_as_energy_functions_for_glauber_dynamics_t.md)
 - [\[ACL 2026\] FastDiSS: Few-step Match Many-step Diffusion Language Model on Sequence-to-Sequence Generation](fastdiss_few-step_match_many-step_diffusion_language_model_on_sequence-to-sequen.md)
-- [\[ACL 2025\] Self-Instructed Derived Prompt Generation Meets In-Context Learning: Unlocking New Potential of Black-Box LLMs](../../ACL2025/llm_nlp/self-instructed_derived_prompt_generation_meets_in-context_learning_unlocking_ne.md)
 
 </div>
 

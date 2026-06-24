@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Federated Learning] To address the two key challenges in federated medical image segmentation — *layerwise style bias accumulation* and *incomplete contextual representation* — this paper pro…
+  [AAAI 2026][Medical Imaging][Federated Learning] To address the two key challenges in federated medical image segmentation — *layerwise style bias accumulation* and *incomplete contextual representation* — this paper proposes FedBCS: a framework that constructs domain-invariant prototypes via Frequency-domain adaptive Style Recalibration (FSR) and designs Context-aware Dual-level Prototype Alignment (CDPA) to fuse multi-level semantics from both encoder and decoder. FedBCS ac…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Frequency-domain Style Calibration"
   - "Feature Heterogeneity"
 date: 2026-05-08
-content_hash: 729a31f315b0a219
+content_hash: de4c1b41268a8d27
 ---
 
 # Divide, Conquer and Unite: Hierarchical Style-Recalibrated Prototype Alignment for Federated Medical Segmentation
@@ -132,11 +132,11 @@ Training spans 400 communication rounds with 1 local epoch per round. SGD (lr=0.
 
 ## Related Papers
 
-- [\[ICCV 2025\] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation](../../ICCV2025/medical_imaging/alleviating_textual_reliance_in_medical_language-guided_segmentation_via_prototy.md)
+- [\[CVPR 2026\] Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/divide_conquer_and_aggregate_asymmetric_experts_for_class-imbalanced_semi-superv.md)
 - [\[AAAI 2026\] MPA: Multimodal Prototype Augmentation for Few-Shot Learning](mpa_multimodal_prototype_augmentation_for_few-shot_learning.md)
-- [\[CVPR 2026\] OmniFM: Toward Modality-Robust and Task-Agnostic Federated Learning for Heterogeneous Medical Imaging](../../CVPR2026/medical_imaging/omnifm_toward_modality-robust_and_task-agnostic_federated_learning_for_heterogen.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
 - [\[AAAI 2026\] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation](funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se.md)
+- [\[ICML 2026\] Shift-Dependent Asymmetry: Orthogonal Inverse Low-Rank Adaptation for Federated Medical Segmentation](../../ICML2026/medical_imaging/shift-dependent_asymmetry_orthogonal_inverse_low-rank_adaptation_for_federated_m.md)
 
 </div>
 

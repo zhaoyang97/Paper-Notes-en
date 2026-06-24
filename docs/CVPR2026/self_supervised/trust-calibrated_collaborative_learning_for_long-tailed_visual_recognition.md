@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing the issues in multi-expert "mutual distillation" for long-tailed recognition—where errors from a single expert propagate to the entire group (bias propagation) or the entire group collectively confirms errors with high confidence (error consolidation)—this paper proposes TCL. It employs a "Knowledge Quality
+  [CVPR 2026][Self-Supervised Learning][Long-Tailed Recognition] Addressing the issues in multi-expert "mutual distillation" for long-tailed recognition—where errors from a single expert propagate to the entire group (bias propagation) or the entire group collectively confirms errors with high confidence (error consolidation)—this paper proposes TCL. It employs a "Knowledge Quality Gate + Tail-Class Knowledge Compensation" to ensure only correct experts propagate knowledge whil…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Long-Tailed Recognition"
+  - "Multi-Expert Models"
+  - "Mutual Distillation"
+  - "Trust Calibration"
+  - "Consensus Error Correction"
 date: 2026-05-08
-content_hash: 0356d71645329ed6
+content_hash: ce0ab97fd55b34d0
 ---
+
 # Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition
 
 **Conference**: CVPR 2026  
@@ -153,15 +159,14 @@ Component ablation (CIFAR100-LT IF=100, All Accuracy):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](../../ICLR2026/self_supervised/guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](../../AAAI2026/self_supervised/bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
-- [\[CVPR 2026\] Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)
-- [\[NeurIPS 2025\] Long-Tailed Recognition via Information-Preservable Two-Stage Learning](../../NeurIPS2025/self_supervised/long-tailed_recognition_via_information-preservable_two-stage_learning.md)
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)
-- [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
+- [\[ICLR 2026\] CoLA: Co-Calibrated Logit Adjustment for Long-Tailed Semi-Supervised Learning](../../ICLR2026/self_supervised/cola_co-calibrated_logit_adjustment_for_long-tailed_semi-supervised_learning.md)
 
 </div>
 

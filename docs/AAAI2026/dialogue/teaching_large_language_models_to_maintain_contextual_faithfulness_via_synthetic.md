@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL
 description: >-
-  [AAAI 2026][Dialogue Systems][Contextual faithfulness] This paper proposes the Canoe framework, which synthesizes four types of verifiable short-form QA data from Wikidata triples and applies Dual-GRPO (incorporating acc…
+  [AAAI 2026 Oral][Dialogue Systems][Contextual faithfulness] This paper proposes the Canoe framework, which synthesizes four types of verifiable short-form QA data from Wikidata triples and applies Dual-GRPO (incorporating accuracy reward, long-form proxy reward, and format reward) to jointly optimize faithfulness in both short- and long-form generation. The approach improves Llama-3-8B by an average of 22.6% across 11 downstream tasks, surpassing GPT-4o.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Dialogue Systems"
   - "Contextual faithfulness"
   - "reinforcement learning"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "hallucination suppression"
 date: 2026-05-08
-content_hash: f48c76fe9709f3c6
+content_hash: fdac9938afd4740b
 ---
 
 # Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL
@@ -133,7 +133,7 @@ The framework consists of two components: (1) synthesizing training data (10K pa
 - [\[AAAI 2026\] Chatsparent: An Interactive System for Detecting and Mitigating Cognitive Fatigue in LLMs](chatsparent_an_interactive_system_for_detecting_and_mitigating_cognitive_fatigue.md)
 - [\[AAAI 2026\] Emergent Persuasion: Will LLMs Persuade Without Being Prompted?](emergent_persuasion_will_llms_persuade_without_being_prompted.md)
 - [\[NeurIPS 2025\] Less is More: Local Intrinsic Dimensions of Contextual Language Models](../../NeurIPS2025/dialogue/less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)
-- [\[NeurIPS 2025\] SciArena: An Open Evaluation Platform for Non-Verifiable Scientific Literature-Grounded Tasks](../../NeurIPS2025/dialogue/sciarena_an_open_evaluation_platform_for_non-verifiable_scientific_literature-gr.md)
+- [\[ACL 2025\] ReflectDiffu: Reflect between Emotion-intent Contagion and Mimicry for Empathetic Response Generation via a RL-Diffusion Framework](../../ACL2025/dialogue/reflectdiffu_empathetic_response.md)
 
 </div>
 

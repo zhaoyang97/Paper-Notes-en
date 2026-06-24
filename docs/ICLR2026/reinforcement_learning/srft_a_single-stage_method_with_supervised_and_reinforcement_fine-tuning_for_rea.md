@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] SRFT uses entropy as a dynamic indicator to simultaneously apply SFT and RL losses to both demonstration data and self-exploration rollouts in a **single stage**. This avoids the "learning tax" of the SFT→RL two-stage paradigm and outperforms the zero-RL baseline by an average of 9.0 points across five mathematical rea
+  [ICLR 2026][Reinforcement Learning][SFT+RL Integration] SRFT uses entropy as a dynamic indicator to simultaneously apply SFT and RL losses to both demonstration data and self-exploration rollouts in a **single stage**. This avoids the "learning tax" of the SFT→RL two-stage paradigm and outperforms the zero-RL baseline by an average of 9.0 points across five mathematical reasoning benchmarks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "SFT+RL Integration"
+  - "Single-Stage Fine-tuning"
+  - "Entropy-Adaptive Weighting"
+  - "GRPO"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 347ed88fd32b5017
+content_hash: affad78b6c4199ed
 ---
+
 # SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning
 
 **Conference**: ICLR 2026  
@@ -152,7 +157,7 @@ SRFT outperforms the strongest zero-RL baseline by +9.0 points on ID and is +4.8
 - [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
 - [\[ICLR 2026\] R1-Code-Interpreter: LLMs Reason with Code via Supervised and Multi-stage Reinforcement Learning](r1-code-interpreter_llms_reason_with_code_via_supervised_and_multi-stage_reinfor.md)
 - [\[ICLR 2026\] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning](rewardmap_tackling_sparse_rewards_in_fine-grained_visual_reasoning_via_multi-sta.md)
-- [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
+- [\[ICLR 2026\] Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning](fine-tuning_behavioral_cloning_policies_with_preferencebased_reinforcement_learn.md)
 
 </div>
 

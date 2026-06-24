@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] No Outlier Channels but with Outlier Blocks
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper points out that outliers in non-uniform quantization are no longer concentrated in "outlier channels" as in uniform quantization, but appear scattered as "outlier blocks." Accordingly, it proposes NuBitQ, a flexible arbitrary bit-width quantization framework, with an external Hessian-free and fine-tuning-fre
+  [ICLR 2026][Model Compression][Non-uniform quantization] This paper points out that outliers in non-uniform quantization are no longer concentrated in "outlier channels" as in uniform quantization, but appear scattered as "outlier blocks." Accordingly, it proposes NuBitQ, a flexible arbitrary bit-width quantization framework, with an external Hessian-free and fine-tuning-free Outlier Compensation Plug-in (OCP). It achieves near-lossless 4-bit quantization and significantly ou…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Non-uniform quantization"
+  - "Vector quantization"
+  - "Outlier compensation"
+  - "Arbitrary bit-width"
+  - "LLM compression"
+  - "Codebook"
 date: 2026-05-08
-content_hash: e7e9792af7e52e56
+content_hash: ab59fd1fdcb2bdf8
 ---
+
 # No Outlier Channels but with Outlier Blocks
 
 **Conference**: ICLR 2026  

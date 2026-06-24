@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] HyCa conceptualizes the evolution of latent features in Diffusion Transformers as a hybrid system where "different dimensions follow different ODEs." By offline selecting the most appropriate numerical solver for each cluster of dimensions to predict or reuse features, it achieves 5.5× to 6.2× near-lossless training-fr
+  [ICLR 2026][Image Generation][Diffusion Transformer] HyCa conceptualizes the evolution of latent features in Diffusion Transformers as a hybrid system where "different dimensions follow different ODEs." By offline selecting the most appropriate numerical solver for each cluster of dimensions to predict or reuse features, it achieves 5.5× to 6.2× near-lossless training-free acceleration on FLUX, HunyuanVideo, and Qwen-Image.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Feature Caching"
+  - "ODE Solver"
+  - "Training-free Acceleration"
+  - "Dimension-level Caching"
 date: 2026-05-08
-content_hash: c493187f91bc4a52
+content_hash: 06c4336fab513e1b
 ---
+
 # Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -140,7 +145,7 @@ Qwen-Image-Edit (GEdit-Bench Overall Score): Ours (N=8) at 6.24× yields CN/EN s
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](../../CVPR2026/image_generation/resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
 - [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
-- [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
+- [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](../../NeurIPS2025/image_generation/predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
 
 </div>
 

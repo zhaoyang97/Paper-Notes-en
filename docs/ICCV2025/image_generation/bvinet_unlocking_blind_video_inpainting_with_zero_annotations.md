@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BVINet: Unlocking Blind Video Inpainting with Zero Annotations
 description: >-
-  [ICCV 2025][Image Generation][blind video inpainting] This paper is the first to formally define and address the task of *blind video inpainting*—simultaneously predicting *where* to restore and *how* to restore…
+  [ICCV 2025][Image Generation][blind video inpainting] This paper is the first to formally define and address the task of *blind video inpainting*—simultaneously predicting *where* to restore and *how* to restore, end-to-end, without any annotation of corrupted regions. A mask prediction network and a video completion network mutually reinforce each other via a consistency constraint, achieving strong results on both synthetic data and real-world applications (danmaku removal…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "video completion"
   - "consistency loss"
 date: 2026-05-08
-content_hash: 8699eb7a17ce27ea
+content_hash: 3bcb205008305af7
 ---
 
 # BVINet: Unlocking Blind Video Inpainting with Zero Annotations
@@ -181,9 +181,9 @@ Sparse attention + consistency loss ablation:
 
 - [\[ICCV 2025\] Unlocking the Potential of Diffusion Priors in Blind Face Restoration](unlocking_the_potential_of_diffusion_priors_in_blind_face_restoration.md)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
-- [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 - [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
 - [\[ICCV 2025\] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers](repa-e_unlocking_vae_for_end-to-end_tuning_of_latent_diffusion_transformers.md)
+- [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
 
 </div>
 

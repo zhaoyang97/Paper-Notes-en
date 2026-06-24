@@ -2,17 +2,22 @@
 title: >-
   [Paper Note] Non-Asymptotic Analysis of (Sticky) Track-and-Stop
 description: >-
-  [ICLR 2026][learning_theory][pure exploration] This paper provides the first **non-asymptotic (finite-confidence) sample complexity upper bounds** for two classic algorithms in the pure exploration field: Track-and-Stop (TAS) and Sticky Track-and-Stop (S-TAS). It fills the theoretical gap where these algorithms were proven optimal only as $\delta\to0$, with unknown
+  [ICLR 2026][Learning Theory][best-arm identification] This paper provides the first **non-asymptotic (finite-confidence) sample complexity upper bounds** for two classic algorithms in the pure exploration field: Track-and-Stop (TAS) and Sticky Track-and-Stop (S-TAS). It fills the theoretical gap where these algorithms were proven optimal only as $\delta\to0$, with unknown performance for finite $\delta$.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - pure exploration
-  - best-arm identification
-  - Track-and-Stop
-  - Sticky Track-and-Stop
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Pure Exploration"
+  - "Multi-Armed Bandits"
+  - "best-arm identification"
+  - "Track-and-Stop"
+  - "Sticky Track-and-Stop"
+  - "finite confidence"
+  - "sample complexity"
+  - "non-asymptotic analysis"
 date: 2026-05-08
-content_hash: 71db7486ff2232ae
+content_hash: 9c89cac6180b5cae
 ---
+
 # Non-Asymptotic Analysis of (Sticky) Track-and-Stop
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models
 description: >-
-  [ACL 2026][Interpretability][Text-to-Image] This paper systematically investigates the token-level information distribution in text encoder outputs within text-to-image models using a causal intervention framework. It finds that the semantics of lexical items are typically concentrated on 1-2 representative tokens, and cross-item information flow leads to semant
+  [ACL 2026][Interpretability][Text-to-Image] This paper systematically investigates the token-level information distribution in text encoder outputs within text-to-image models using a causal intervention framework. It finds that the semantics of lexical items are typically concentrated on 1-2 representative tokens, and cross-item information flow leads to semantic leakage and image misinterpretation in 11% of cases. A simple yet effective token-level intervention method is pr…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Text-to-Image
+  - "ACL 2026"
+  - "Interpretability"
+  - "Text-to-Image"
+  - "Information Flow"
+  - "Token Representation"
+  - "Semantic Leakage"
+  - "Text Encoder"
 date: 2026-05-08
-content_hash: 1f86c43e28dbe872
+content_hash: 3667196fa6382abe
 ---
+
 # Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models
 
 **Conference**: ACL 2026  
@@ -132,10 +137,10 @@ To avoid running generation every time to find redundant tokens, the authors tra
 
 ## Related Papers
 
-- [\[ICCV 2025\] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow](../../ICCV2025/interpretability/vital_more_understandable_feature_visualization_through_distribution_alignment_a.md)
+- [\[ICLR 2026\] Flow-Disentangled Feature Importance](../../ICLR2026/interpretability/flow-disentangled_feature_importance.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
+- [\[ICCV 2025\] VITAL: More Understandable Feature Visualization through Distribution Alignment and Relevant Information Flow](../../ICCV2025/interpretability/vital_more_understandable_feature_visualization_through_distribution_alignment_a.md)
 - [\[ACL 2026\] HistLens: Mapping Idea Change across Concepts and Corpora](histlens_mapping_idea_change_across_concepts_and_corpora.md)
-- [\[ICLR 2026\] Concepts' Information Bottleneck Models](../../ICLR2026/interpretability/concepts_information_bottleneck_models.md)
 - [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 
 </div>

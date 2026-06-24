@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Designing to Forget: Deep Semi-parametric Models for Unlearning
 description: >-
-  [CVPR 2026][LLM Safety][Diffusion Model] This paper proposes the "Designing to Forget" philosophy, introducing a family of Deep Semi-parametric Models (SPM). By simply removing training samples at inference time without modifying model weights, SPM reduces the prediction gap compared to retraining baselines by 11% on ImageNet and accelerates unlearning by mor
+  [CVPR 2026][LLM Safety][Machine Unlearning] This paper proposes the "Designing to Forget" philosophy, introducing a family of Deep Semi-parametric Models (SPM). By simply removing training samples at inference time without modifying model weights, SPM reduces the prediction gap compared to retraining baselines by 11% on ImageNet and accelerates unlearning by more than 10x.
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Semi-parametric Models"
+  - "Test-time Deletion"
+  - "Data Privacy"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 07fb4a28f4669700
+content_hash: 0c7a44087003706d
 ---
+
 # Designing to Forget: Deep Semi-parametric Models for Unlearning
 
 **Conference**: CVPR 2026  
@@ -160,10 +165,10 @@ Now, an unlearning request is received: forget the "Golden Retriever" training d
 ## Related Papers
 
 - [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](../../ACL2026/llm_safety/vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
-- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
 - [\[ACL 2026\] Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens](../../ACL2026/llm_safety/forget_what_matters_keep_the_rest_selective_unlearning_of_informative_tokens.md)
-- [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](../../ICML2026/llm_safety/forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
+- [\[ACL 2025\] Answer When Needed, Forget When Not: Language Models Pretend to Forget via In-Context Knowledge Unlearning](../../ACL2025/llm_safety/answer_when_needed_forget_when_not_language_models_pretend_to_forget_via_in-cont.md)
+- [\[ICML 2025\] System-Aware Unlearning Algorithms: Use Lesser, Forget Faster](../../ICML2025/llm_safety/system-aware_unlearning_algorithms_use_lesser_forget_faster.md)
+- [\[AAAI 2026\] Designing Truthful Mechanisms for Asymptotic Fair Division](../../AAAI2026/llm_safety/designing_truthful_mechanisms_for_asymptotic_fair_division.md)
 
 </div>
 

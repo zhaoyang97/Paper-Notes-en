@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] HEAVEN proposes a plug-and-play two-stage hybrid vector framework. It accelerates single-vector coarse retrieval via Visual Summary Pages (VS-Pages) and reduces multi-vector re-ranking computation through POS-based query token filtering. This approach maintains 99.87% of multi-vector Recall@1 while reducing per-query F
+  [ACL 2026 Findings][Information Retrieval & RAG][Visual Document Retrieval] HEAVEN proposes a plug-and-play two-stage hybrid vector framework. It accelerates single-vector coarse retrieval via Visual Summary Pages (VS-Pages) and reduces multi-vector re-ranking computation through POS-based query token filtering. This approach maintains 99.87% of multi-vector Recall@1 while reducing per-query FLOPs by 99.82% across four benchmarks.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Visual Document Retrieval"
+  - "Hybrid-Vector Retrieval"
+  - "Efficiency-Accuracy Trade-off"
+  - "Visual Summary Pages"
+  - "Query Token Filtering"
 date: 2026-05-08
-content_hash: 59cd9ab7e0b1ee05
+content_hash: c40ac5ca5539fafe
 ---
+
 # Hybrid-Vector Retrieval for Visually Rich Documents: Combining Single-Vector Efficiency and Multi-Vector Accuracy
 
 **Conference**: ACL 2026 Findings  
@@ -142,10 +148,10 @@ HEAVEN is a training-free, plug-and-play framework. Encoders for both stages use
 ## Related Papers
 
 - [\[ICML 2026\] LEMUR: Learned Multi-Vector Retrieval](../../ICML2026/information_retrieval/lemur_learned_multi-vector_retrieval.md)
-- [\[ICML 2025\] POQD: Performance-Oriented Query Decomposer for Multi-Vector Retrieval](../../ICML2025/information_retrieval/poqd_performance-oriented_query_decomposer_for_multi-vector_retrieval.md)
+- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometric Consistency](../../ICML2026/information_retrieval/vector_linking_via_cross-model_local_isometric_consistency.md)
 - [\[CVPR 2025\] VDocRAG: Retrieval-Augmented Generation over Visually-Rich Documents](../../CVPR2025/information_retrieval/vdocrag_retrieval-augmented_generation_over_visually-rich_documents.md)
+- [\[ICML 2025\] POQD: Performance-Oriented Query Decomposer for Multi-Vector Retrieval](../../ICML2025/information_retrieval/poqd_performance-oriented_query_decomposer_for_multi-vector_retrieval.md)
 - [\[ACL 2026\] Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths](why_these_documents_explainable_generative_retrieval_with_hierarchical_category_.md)
-- [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs
 description: >-
-  [ICLR 2026][Model Compression][(N:M)-sparsity] MaskPro reduces the logit storage for learned (N:M) semi-structured sparsity from $O\!\left(\binom{M}{N}\frac{d}{M}\right)$ used in MaskLLM to linear $O(d)$. It employs a forward-only policy gradient (enhanced with loss-residual and a moving average tracker for variance reduction) to train masks. This achieves (2:4) sp
+  [ICLR 2026][Model Compression][(N:M)-sparsity] MaskPro reduces the logit storage for learned (N:M) semi-structured sparsity from $O\!\left(\binom{M}{N}\frac{d}{M}\right)$ used in MaskLLM to linear $O(d)$. It employs a forward-only policy gradient (enhanced with loss-residual and a moving average tracker for variance reduction) to train masks. This achieves (2:4) sparse masks approximating the performance of MaskLLM with memory costs comparable to rule-based methods and signif…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - (N:M)-sparsity
-  - semi-structured pruning
-  - policy gradient
-  - LLM compression
-  - variance reduction
+  - "ICLR 2026"
+  - "Model Compression"
+  - "(N:M)-sparsity"
+  - "semi-structured pruning"
+  - "policy gradient"
+  - "LLM compression"
+  - "variance reduction"
 date: 2026-05-08
-content_hash: 4892470f41d50a9d
+content_hash: ef1fc1ce00f06ca0
 ---
+
 # MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs
 
 **Conference**: ICLR 2026  
@@ -118,10 +119,10 @@ This centers the residual distribution around 0. Theoretically (Theorem 2), the 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Semi-Structured Sparsity for LLMs via Shared and Context-Aware Hypernetwork](learning_semi-structured_sparsity_for_llms_via_shared_and_context-aware_hypernet.md)
-- [\[ICLR 2026\] KDP: Simplifying Representation Dynamics in Kernel Space](kdp_simplifying_representation_dynamics_in_kernel_space.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
 - [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
-- [\[ICLR 2026\] NLI: Non-uniform Linear Interpolation Approximation of Nonlinear Operations for Efficient LLMs Inference](nli_non-uniform_linear_interpolation_approximation_of_nonlinear_operations_for_e.md)
 - [\[ICLR 2026\] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size](topology_and_geometry_of_the_learning_space_of_relu_networks_connectivity_and_si.md)
+- [\[ICLR 2026\] NLI: Non-uniform Linear Interpolation Approximation of Nonlinear Operations for Efficient LLMs Inference](nli_non-uniform_linear_interpolation_approximation_of_nonlinear_operations_for_e.md)
 
 </div>
 

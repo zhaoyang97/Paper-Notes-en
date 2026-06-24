@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models
 description: >-
-  [AAAI 2026][Recommender Systems][Inference-Aware Optimization] This paper reveals a non-trivial interaction between prompt selection and inference strategies (Best-of-N, Majority Voting)…
+  [AAAI 2026][Recommender Systems][Inference-Aware Optimization] This paper reveals a non-trivial interaction between prompt selection and inference strategies (Best-of-N, Majority Voting), proposes the IAPO framework that jointly optimizes prompt design and inference scaling as a contextual best-arm identification problem, and introduces PSST—a fixed-budget training algorithm—achieving up to 50% improvement over inference-agnostic methods across 6 tasks.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Contextual Bandits"
   - "Black-Box Alignment"
 date: 2026-05-08
-content_hash: c67983507e0bcac1
+content_hash: c7c78b97910f3e3f
 ---
 
 # Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models
@@ -131,11 +131,11 @@ Across all 6 environments, PSST and Top-K screening significantly outperform all
 
 ## Related Papers
 
+- [\[ICLR 2026\] RPM: Reasoning-Level Personalization for Black-Box Large Language Models](../../ICLR2026/recommender/rpm_reasoning-level_personalization_for_black-box_large_language_models.md)
 - [\[NeurIPS 2025\] Inference-Time Reward Hacking in Large Language Models](../../NeurIPS2025/recommender/inference-time_reward_hacking_in_large_language_models.md)
 - [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
-- [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](../../ICLR2026/recommender/from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
 - [\[AAAI 2026\] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback](moral_change_or_noise_on_problems_of_aligning_ai_with_temporally_unstable_human_.md)
-- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
+- [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](../../ICLR2026/recommender/from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
 
 </div>
 

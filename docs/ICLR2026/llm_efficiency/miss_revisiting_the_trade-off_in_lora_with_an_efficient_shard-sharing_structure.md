@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MiSS: Revisiting the Trade-off in LoRA with an Efficient Shard-Sharing Structure
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] MiSS replaces the dual-matrix $BA$ update of LoRA with a shard-sharing structure "expanded" from a single zero-initialized small matrix $D$. This approach accelerates convergence while simultaneously excelling in memory and computational efficiency, thereby achieving a superior trade-off in the performance–memory–effic
+  [ICLR 2026][LLM Efficiency][LoRA] MiSS replaces the dual-matrix $BA$ update of LoRA with a shard-sharing structure "expanded" from a single zero-initialized small matrix $D$. This approach accelerates convergence while simultaneously excelling in memory and computational efficiency, thereby achieving a superior trade-off in the performance–memory–efficiency triangle.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "Parameter-Efficient Fine-tuning"
+  - "Single Matrix"
+  - "Shard-sharing"
+  - "Convergence"
+  - "Pareto Frontier"
 date: 2026-05-08
-content_hash: 9335a8da220e2666
+content_hash: ee4db5097616c2d1
 ---
+
 # MiSS: Revisiting the Trade-off in LoRA with an Efficient Shard-Sharing Structure
 
 **Conference**: ICLR 2026  
@@ -134,7 +140,7 @@ Vision tasks (VTAB-1K): MiSS achieved an average score of 88.02 for images and 7
 - [\[ICLR 2026\] PLoP: Precise LoRA Placement for Efficient Finetuning of Large Models](plop_precise_lora_placement_for_efficient_finetuning_of_large_models.md)
 - [\[ICLR 2026\] LoRA-S: An Efficient Low Rank Adaptation scheme via Sylvester equation](lora-s_an_efficient_low_rank_adaptation_scheme_via_sylvester_equation.md)
 - [\[ICLR 2026\] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs](on-the-fly_adaptation_to_quantization_configuration-aware_lora_for_efficient_fin.md)
-- [\[ICLR 2026\] Merge before Forget: A Single LoRA Continual Learning via Continual Merging](merge_before_forget_a_single_lora_continual_learning_via_continual_merging.md)
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
 
 </div>
 

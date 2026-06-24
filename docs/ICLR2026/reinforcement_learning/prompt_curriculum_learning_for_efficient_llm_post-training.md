@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prompt Curriculum Learning for Efficient LLM Post-Training
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper systematically investigates how "batch size" and "prompt difficulty" jointly affect convergence during the RL post-training of LLMs. It discovers the existence of an optimal batch size and identifies that medium-difficulty prompts (with a success rate of approximately 50%) are the most efficient. Based on th
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper systematically investigates how "batch size" and "prompt difficulty" jointly affect convergence during the RL post-training of LLMs. It discovers the existence of an optimal batch size and identifies that medium-difficulty prompts (with a success rate of approximately 50%) are the most efficient. Based on these findings, the authors propose PCL, a lightweight algorithm that employs an online-learned value model to predict p…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Curriculum Learning"
+  - "Value Model"
+  - "Prompt Difficulty"
+  - "Batch Size"
 date: 2026-05-08
-content_hash: b3a2c98723ca8b6c
+content_hash: de0c4a29c11df09a
 ---
+
 # Prompt Curriculum Learning for Efficient LLM Post-Training
 
 **Conference**: ICLR 2026  
@@ -131,11 +136,11 @@ PCL achieved the highest MATH500 accuracy across four models on MATH and signifi
 
 ## Related Papers
 
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICML 2026\] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](../../ICML2026/reinforcement_learning/provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)
 - [\[ICLR 2026\] Scheduling Your LLM Reinforcement Learning with Reasoning Trees](scheduling_your_llm_reinforcement_learning_with_reasoning_trees.md)
+- [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
-- [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](../../ACL2026/reinforcement_learning/scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
-- [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
 
 </div>
 

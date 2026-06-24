@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anchoring the Mind of Multimodal Reasoners: Cognitive Bias as a Vector for Jailbreak Attacks
 description: >-
-  [CVPR 2026][Alignment & RLHF][Paper Note] This paper discovers an "anchoring effect" in the safety judgments of Multimodal Large Reasoning Models (MLRMs)—where the model is significantly biased by the first information it encounters. Based on this, RA-Attack is proposed: it first anchors the model's reasoning chain to a "safe tone" using a "seemingly safe" str
+  [CVPR 2026][LLM Alignment][Jailbreak Attack] This paper discovers an "anchoring effect" in the safety judgments of Multimodal Large Reasoning Models (MLRMs)—where the model is significantly biased by the first information it encounters. Based on this, RA-Attack is proposed: it first anchors the model's reasoning chain to a "safe tone" using a "seemingly safe" structured mind map and educational context text, then smoothly packages harmful intent as a natural extension of this…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Jailbreak Attack"
+  - "Anchoring Effect"
+  - "Cognitive Bias"
+  - "Multimodal Reasoning Models"
+  - "Reasoning Chain Hijacking"
 date: 2026-05-08
-content_hash: 90947bfe08dcb34d
+content_hash: f17ce32414e44349
 ---
+
 # Anchoring the Mind of Multimodal Reasoners: Cognitive Bias as a Vector for Jailbreak Attacks
 
 **Conference**: CVPR 2026  
@@ -160,15 +166,14 @@ ADP drastically reduces ASR while barely affecting general capabilities (MM-Vet 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICCV 2025\] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models](../../ICCV2025/llm_alignment/heuristic-induced_multimodal_risk_distribution_jailbreak_attack_for_multimodal_l.md)
 - [\[AAAI 2026\] AlignTree: Efficient Defense Against LLM Jailbreak Attacks](../../AAAI2026/llm_alignment/aligntree_efficient_defense_against_llm_jailbreak_attacks.md)
-- [\[ACL 2025\] JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs](../../ACL2025/llm_alignment/jailbreakradar_comprehensive_assessment_jailbreak_attacks.md)
-- [\[ICLR 2026\] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks](../../ICLR2026/llm_alignment/jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde.md)
 - [\[ICLR 2026\] Toward Universal and Transferable Jailbreak Attacks on Vision-Language Models (UltraBreak)](../../ICLR2026/llm_alignment/toward_universal_and_transferable_jailbreak_attacks_on_vision-language_models.md)
+- [\[ICLR 2026\] SEMA: Simple yet Effective Learning for Multi-Turn Jailbreak Attacks](../../ICLR2026/llm_alignment/sema_simple_yet_effective_learning_for_multi-turn_jailbreak_attacks.md)
+- [\[ICML 2026\] New Wide-Net-Casting Jailbreak Attacks Risk Large Models](../../ICML2026/llm_alignment/new_wide-net-casting_jailbreak_attacks_risk_large_models.md)
 
 </div>
 

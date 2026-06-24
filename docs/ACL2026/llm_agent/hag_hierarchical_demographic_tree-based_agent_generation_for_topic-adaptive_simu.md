@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation
 description: >-
-  [ACL 2026][LLM Agent][Agent-Based Modeling] The HAG framework is proposed, formalizing population Agent generation as a two-stage hierarchical decision process. It uses a world knowledge model to construct a topic-adaptive demographic distribution tree for macro-distribution alignment, followed by real data retrieval and Agent augmentation to ensure micro-level
+  [ACL 2026][LLM Agent][Agent Generation] The HAG framework is proposed, formalizing population Agent generation as a two-stage hierarchical decision process. It uses a world knowledge model to construct a topic-adaptive demographic distribution tree for macro-distribution alignment, followed by real data retrieval and Agent augmentation to ensure micro-level individual consistency. On multi-domain benchmarks, it reduces aggregate alignment error by an average of 37.7% and impr…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Agent-Based Modeling
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Agent Generation"
+  - "Population Simulation"
+  - "Hierarchical Decision-making"
+  - "Topic-Adaptive"
+  - "Agent-Based Modeling"
 date: 2026-05-08
-content_hash: cbc0d2b2ddb68c42
+content_hash: 65a2ec0a85f864ca
 ---
+
 # HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation
 
 **Conference**: ACL 2026  
@@ -135,14 +140,14 @@ Evaluation across three domains: Bluesky (social simulation), Amazon (product re
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
-- [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](../../ICLR2026/llm_agent/tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
-- [\[CVPR 2025\] ATA: Adaptive Transformation Agent for Text-Guided Subject-Position Variable Background Generation](../../CVPR2025/llm_agent/ata_adaptive_transformation_agent_for_text-guided_subject-position_variable_back.md)
+- [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
 - [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
 
 </div>

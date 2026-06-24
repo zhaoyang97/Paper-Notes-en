@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning Survival Distributions with Individually Calibrated Asymmetric Laplace Distribution
 description: >-
-  [ICLR 2026][Others][pinball loss] This paper proposes ICALD, which reinterprets the pinball loss of quantile regression as the negative log-likelihood (NLL) of the Asymmetric Laplace Distribution (ALD). This allows a parametric framework to simultaneously capture the smoothness of parametric methods and the flexibility of non-parametric methods. It the
+  [ICLR 2026][Survival Analysis] This paper proposes ICALD, which reinterprets the pinball loss of quantile regression as the negative log-likelihood (NLL) of the Asymmetric Laplace Distribution (ALD). This allows a parametric framework to simultaneously capture the smoothness of parametric methods and the flexibility of non-parametric methods. It theoretically proves that the resulting survival model is "Probably Approximately Individually Calibrated" (PAIC) and outperforms 12…
 tags:
-  - ICLR 2026
-  - Others
-  - pinball loss
-  - PAIC
+  - "ICLR 2026"
+  - "Survival Analysis"
+  - "Individual Calibration"
+  - "Asymmetric Laplace Distribution"
+  - "Quantile Regression"
+  - "pinball loss"
+  - "PAIC"
 date: 2026-05-08
-content_hash: 3bde4798f832842c
+content_hash: e64ae4e58ed05dca
 ---
+
 # Learning Survival Distributions with Individually Calibrated Asymmetric Laplace Distribution
 
 **Conference**: ICLR 2026  

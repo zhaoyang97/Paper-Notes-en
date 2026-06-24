@@ -83,7 +83,7 @@ item_total: 34
 
 **💬 ACL2026** · **34** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (2)](../../ICLR2026/nlp_understanding/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [🧠 NeurIPS2025 (3)](../../NeurIPS2025/nlp_understanding/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_understanding/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (2)](../../ICLR2026/nlp_understanding/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [🧠 NeurIPS2025 (3)](../../NeurIPS2025/nlp_understanding/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_understanding/index.md) · [🧪 ICML2025 (1)](../../ICML2025/nlp_understanding/index.md)
 
 🔥 **Top topics:** LLM ×6 · Question Answering ×5 · Reasoning ×4 · Information Extraction ×4 · Sentiment Analysis ×2
 

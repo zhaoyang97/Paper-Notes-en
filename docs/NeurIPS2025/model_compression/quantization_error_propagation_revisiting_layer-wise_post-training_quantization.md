@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization
 description: >-
-  [NeurIPS 2025][Model Compression][post-training quantization] This paper identifies a critical bottleneck in existing layer-wise PTQ methods—namely…
+  [NeurIPS 2025][Model Compression][post-training quantization] This paper identifies a critical bottleneck in existing layer-wise PTQ methods—namely, their neglect of cross-layer accumulation and growth of quantization errors—and proposes the QEP framework, which explicitly corrects accumulated errors via error propagation and compensation, achieving substantial performance gains under extremely low-bit settings (INT2/INT3).
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "layer-wise quantization"
   - "low-bit"
 date: 2026-05-08
-content_hash: b137364ee4071b3c
+content_hash: 7d8d534ca1bf8b60
 ---
 
 # Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization
@@ -127,11 +127,11 @@ QEP does not introduce any new training procedure. The core optimization objecti
 
 ## Related Papers
 
-- [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](../../AAAI2026/model_compression/post_training_quantization_for_efficient_dataset_condensation.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
-- [\[NeurIPS 2025\] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment](dp-llm_runtime_model_adaptation_with_dynamic_layer-wise_precision_assignment.md)
-- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
+- [\[ACL 2025\] PTQ1.61: Push the Real Limit of Extremely Low-Bit Post-Training Quantization Methods for Large Language Models](../../ACL2025/model_compression/ptq161_low_bit_quantization.md)
+- [\[CVPR 2025\] Q-DiT: Accurate Post-Training Quantization for Diffusion Transformers](../../CVPR2025/model_compression/q-dit_accurate_post-training_quantization_for_diffusion_transformers.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](../../ICLR2026/model_compression/post-training_quantization_for_video_matting.md)
+- [\[ICML 2025\] BoA: Attention-aware Post-training Quantization without Backpropagation](../../ICML2025/model_compression/boa_attention-aware_post-training_quantization_without_backpropagation.md)
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](../../ICLR2026/model_compression/training_dynamics_impact_post-training_quantization_robustness.md)
 
 </div>
 

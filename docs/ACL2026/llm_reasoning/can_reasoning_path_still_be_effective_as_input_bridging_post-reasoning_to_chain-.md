@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Can Reasoning Path still be Effective as Input? Bridging Post-Reasoning to Chain-of-Thought Compression
 description: >-
-  [ACL 2026][LLM Reasoning][post-reasoning] This paper proposes post-reasoning and UCoT: a lightweight compressor first generates soft tokens representing the reasoning path via a single forward pass, and then an executor uses these soft tokens as input context to perform short-output reasoning, significantly reducing CoT tokens and latency while maintaining rea
+  [ACL2026][Reasoning][post-reasoning] This paper proposes post-reasoning and UCoT: a lightweight compressor first generates soft tokens representing the reasoning path via a single forward pass, and then an executor uses these soft tokens as input context to perform short-output reasoning, significantly reducing CoT tokens and latency while maintaining reasoning accuracy.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - post-reasoning
-  - soft tokens
-  - UCoT
+  - "ACL2026"
+  - "Reasoning"
+  - "post-reasoning"
+  - "CoT compression"
+  - "soft tokens"
+  - "inference latency"
+  - "UCoT"
 date: 2026-05-08
-content_hash: ca318218d81f156b
+content_hash: d036d9d7d02f3d70
 ---
+
 # Can Reasoning Path still be Effective as Input? Bridging Post-Reasoning to Chain-of-Thought Compression
 
 **Conference**: ACL2026  
@@ -144,8 +147,8 @@ The compressor stage minimizes the reconstructive objective $L_c=E_D[-\log P_{M_
 ## Related Papers
 
 - [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
-- [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](../../NeurIPS2025/llm_reasoning/mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
 - [\[ICLR 2026\] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models](../../ICLR2026/llm_reasoning/when_reasoning_meets_compression_understanding_the_effects_of_pruning_and_quant.md)
+- [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](../../NeurIPS2025/llm_reasoning/mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
 - [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 - [\[ACL 2025\] Can Large Language Models Detect Errors in Long Chain-of-Thought Reasoning?](../../ACL2025/llm_reasoning/can_large_language_models_detect_errors_in_long_chain-of-thought_reasoning.md)
 

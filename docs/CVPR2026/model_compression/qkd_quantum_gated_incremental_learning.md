@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Knowledge Distillation] QKD introduces quantum gating to class-incremental learning, modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits. This guides cross-task knowledge distillation and inference-time adapter fusion, achieving SOTA performance across five benchmarks.
+  [CVPR 2026][Model Compression][Class-incremental learning] QKD introduces quantum gating to class-incremental learning, modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits. This guides cross-task knowledge distillation and inference-time adapter fusion, achieving SOTA performance across five benchmarks.
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Class-incremental learning"
+  - "quantum computing"
+  - "knowledge distillation"
+  - "pre-trained models"
+  - "adapters"
 date: 2026-05-08
-content_hash: 4a8b7da47b4d592b
+content_hash: f6cdde7a0e7c6d2b
 ---
+
 # QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning
 
 **Conference**: CVPR 2026  
@@ -130,11 +135,11 @@ Total loss: $\mathcal{L}_{\text{total}}=\mathcal{L}_{\text{CE}}+\lambda_{\text{k
 
 ## Related Papers
 
-- [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](../../AAAI2026/physics/scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](../../NeurIPS2025/physics/simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[NeurIPS 2025\] Knowledge is Overrated: A Zero-Knowledge ML and Cryptographic Hashing-Based Framework for Verifiable, Low Latency Inference at the LHC](../../NeurIPS2025/physics/knowledge_is_overrated_a_zero-knowledge_machine_learning_and_cryptographic_hashi.md)
-- [\[ICML 2025\] Liger: Linearizing Large Language Models to Gated Recurrent Structures](../../ICML2025/physics/liger_linearizing_large_language_models_to_gated_recurrent_structures.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
+- [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](../../AAAI2026/model_compression/compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
+- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
+- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](../../ICML2026/model_compression/area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
+- [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](../../ICCV2025/model_compression/integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
+- [\[CVPR 2025\] CL-LoRA: Continual Low-Rank Adaptation for Rehearsal-Free Class-Incremental Learning](../../CVPR2025/model_compression/cl-lora_continual_low-rank_adaptation_for_rehearsal-free_class-incremental_learn.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the lack of data and methods for human action recognition under nighttime/low-light conditions, the authors construct the first large-scale paired RGB-Thermal video dataset, DarkAct (12,778 video pairs, 27 action classes). They further propose DarkAct-Net, a fusion framework that extracts motion-salient regi
+  [CVPR 2026][Video Understanding][Low-light action recognition] To address the lack of data and methods for human action recognition under nighttime/low-light conditions, the authors construct the first large-scale paired RGB-Thermal video dataset, DarkAct (12,778 video pairs, 27 action classes). They further propose DarkAct-Net, a fusion framework that extracts motion-salient regions using motion-aware attention and dynamically integrates the two modalities based on reliabili…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Low-light action recognition"
+  - "RGB-thermal fusion"
+  - "Multimodal dataset"
+  - "Motion attention"
+  - "Illumination-adaptive fusion"
 date: 2026-05-08
-content_hash: b906e2f7f72a3fa6
+content_hash: c43729611eb96cbd
 ---
+
 # DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition
 
 **Conference**: CVPR 2026  
@@ -144,7 +150,6 @@ DarkAct-Net vs. Single/Multimodal methods (Top-1 %):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

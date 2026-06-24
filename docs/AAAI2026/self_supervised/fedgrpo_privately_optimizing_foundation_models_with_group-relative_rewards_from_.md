@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Federated Learning] This paper proposes FedGRPO, which reformulates foundation model optimization as a reward-based evaluation process. Through competence-aware expert selection and…
+  [AAAI 2026 Oral][Self-Supervised Learning][Federated Learning] This paper proposes FedGRPO, which reformulates foundation model optimization as a reward-based evaluation process. Through competence-aware expert selection and federated group-relative policy optimization (transmitting only scalar reward signals), FedGRPO achieves privacy-preserving, communication-efficient federated foundation model optimization, approaching or surpassing centralized GRPO on mathematical reason…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Self-Supervised Learning"
   - "Federated Learning"
   - "Foundation Models"
@@ -12,7 +12,7 @@ tags:
   - "Privacy Preservation"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 9e7b8aa5cf8aa0aa
+content_hash: 194ab0fa88819a94
 ---
 
 # FedGRPO: Privately Optimizing Foundation Models with Group-Relative Rewards from Domain Clients
@@ -159,9 +159,9 @@ FedGRPO operates as a three-step cycle:
 
 - [\[AAAI 2026\] Robust Tabular Foundation Models](robust_tabular_foundation_models.md)
 - [\[AAAI 2026\] From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models without Finetuning](from_pretrain_to_pain_adversarial_vulnerability_of_video_foundation_models_witho.md)
+- [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](../../CVPR2026/self_supervised/scaling_parallel_sequence_models_to_vision_foundation_models.md)
+- [\[ICLR 2026\] Disentangled representation learning through unsupervised symmetry group discovery](../../ICLR2026/self_supervised/disentangled_representation_learning_through_unsupervised_symmetry_group_discove.md)
 - [\[ICLR 2026\] Chart Deep Research in LVLMs via Parallel Relative Policy Optimization](../../ICLR2026/self_supervised/chart_deep_research_in_lvlms_via_parallel_relative_policy_optimization.md)
-- [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](../../CVPR2026/self_supervised/com_pt_chain_of_models_pretraining.md)
-- [\[CVPR 2026\] Robustness of Vision Foundation Models to Common Perturbations](../../CVPR2026/self_supervised/robustness_of_vision_foundation_models_to_common_perturbations.md)
 
 </div>
 

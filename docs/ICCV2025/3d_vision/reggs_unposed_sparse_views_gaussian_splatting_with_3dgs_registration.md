@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] RegGS is proposed as a framework that incrementally aligns locally generated 3D Gaussians from a feed-forward network into a globally consistent 3D representation via a diffe…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] RegGS is proposed as a framework that incrementally aligns locally generated 3D Gaussians from a feed-forward network into a globally consistent 3D representation via a differentiable 3DGS registration module based on the optimal-transport MW2 distance, enabling high-quality 3D reconstruction from unposed sparse views.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "optimal transport"
   - "Gaussian registration"
 date: 2026-05-08
-content_hash: c1bd842ec3b9b5ed
+content_hash: b59189cd2e04151b
 ---
 
 # RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration
@@ -163,8 +163,8 @@ The three registration losses are jointly optimized, with gradients backpropagat
 ## Related Papers
 
 - [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
-- [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
 - [\[ICCV 2025\] 3DGS-LM: Faster Gaussian-Splatting Optimization with Levenberg-Marquardt](3dgslm_faster_gaussiansplatting_optimization_with_levenbergm.md)
+- [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
 - [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
 - [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
 

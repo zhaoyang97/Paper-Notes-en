@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ResNets Are Deeper Than You Think
 description: >-
-  [NeurIPS 2025][Residual networks] This paper proves that residual networks and feedforward networks occupy distinct function spaces (i.e., ResNets are not a simple reparameterization of feedforward networks)…
+  [NeurIPS 2025][Residual networks] This paper proves that residual networks and feedforward networks occupy distinct function spaces (i.e., ResNets are not a simple reparameterization of feedforward networks), and demonstrates through post-training partial linearization experiments that variable-depth architectures (ResNet-like) consistently outperform fixed-depth architectures even after controlling for trainability differences, suggesting that residual connections provide in…
 tags:
   - "NeurIPS 2025"
   - "Residual networks"
@@ -11,7 +11,7 @@ tags:
   - "trainability"
   - "variable-depth networks"
 date: 2026-05-08
-content_hash: 17a0cf6c36969906
+content_hash: dcdb36df05745db4
 ---
 
 # ResNets Are Deeper Than You Think
@@ -129,8 +129,8 @@ Training proceeds in two stages: (1) standard training to convergence using cros
 - [\[ICCV 2025\] I Am Big, You Are Little; I Am Right, You Are Wrong](../../ICCV2025/others/i_am_big_you_are_little_i_am_right_you_are_wrong.md)
 - [\[AAAI 2026\] Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution](../../AAAI2026/others/think_how_your_teammates_think_active_inference_can_benefit_decentralized_execut.md)
 - [\[ICCV 2025\] You Share Beliefs, I Adapt: Progressive Heterogeneous Collaborative Perception](../../ICCV2025/others/you_share_beliefs_i_adapt_progressive_heterogeneous_collaborative_perception.md)
-- [\[AAAI 2026\] More Than Irrational: Modeling Belief-Biased Agents](../../AAAI2026/others/more_than_irrational_modeling_belief-biased_agents.md)
-- [\[ICML 2026\] Return-to-Go is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning](../../ICML2026/others/return-to-go_is_more_than_a_number_q-guided_alignment_for_return-conditioned_sup.md)
+- [\[ACL 2025\] Meta-Learning Neural Mechanisms rather than Bayesian Priors](../../ACL2025/others/meta-learning_neural_mechanisms_rather_than_bayesian_priors.md)
+- [\[ACL 2025\] Are Any-to-Any Models More Consistent Across Modality Transfers Than Specialists?](../../ACL2025/others/are_any-to-any_models_more_consistent_across_modality_transfers_than_specialists.md)
 
 </div>
 

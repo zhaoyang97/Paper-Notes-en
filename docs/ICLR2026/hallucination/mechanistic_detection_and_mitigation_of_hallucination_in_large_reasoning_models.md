@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models
 description: >-
-  [ICLR 2026][Hallucination Detection][Reasoning Hallucination] This paper proposes a mechanistic interpretability-based **Reasoning Score** (using LogitLens to measure the distribution drift of late-layer logits to characterize "reasoning depth"). Based on this, it reveals three internal patterns of reasoning hallucinations, constructs the RHD detection framework, and adapts GRPO
+  [ICLR 2026][Hallucination Detection][Reasoning Hallucination] This paper proposes a mechanistic interpretability-based **Reasoning Score** (using LogitLens to measure the distribution drift of late-layer logits to characterize "reasoning depth"). Based on this, it reveals three internal patterns of reasoning hallucinations, constructs the RHD detection framework, and adapts GRPO into GRPO-R using potential-based reward shaping to mitigate hallucinations.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - Reasoning Hallucination
-  - Large Reasoning Models
-  - Mechanistic Interpretability
-  - LogitLens
-  - GRPO
-  - Reward Shaping
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Reasoning Hallucination"
+  - "Large Reasoning Models"
+  - "Mechanistic Interpretability"
+  - "LogitLens"
+  - "GRPO"
+  - "Reward Shaping"
 date: 2026-05-08
-content_hash: f83ae961c53ae380
+content_hash: f143f1c6d441182e
 ---
+
 # Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -117,11 +118,11 @@ GRPO-R outperforms standard GRPO on most tasks, with particularly significant ga
 
 ## Related Papers
 
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
+- [\[ICLR 2026\] BARREL: Boundary-Aware Reasoning for Factual and Reliable LRMs](barrel_boundary-aware_reasoning_for_factual_and_reliable_lrms.md)
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](../../ACL2026/hallucination/why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
 - [\[ICLR 2026\] TraceDet: Hallucination Detection from the Decoding Trace of Diffusion Large Language Models](tracedet_hallucination_detection_from_the_decoding_trace_of_diffusion_large_lang.md)
-- [\[ICLR 2026\] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation](look_carefully_adaptive_visual_reinforcements_in_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
-- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] A Unified Total Variation Framework for Membrane Potential Perturbation Dynamic
 description: >-
-  [ICLR 2026][AI Safety][Spiking Neural Network] This paper proves that the "Membrane Potential Perturbation Dynamic (MPPD)" used to characterize adversarial perturbations in Spiking Neural Networks (SNNs) is essentially a Total Variation (TV) operator. Consequently, existing mean-square MPPD regularization is equivalent to a TV-$\ell_2$ framework. The authors propos
+  [ICLR 2026][AI Safety][Spiking Neural Network] This paper proves that the "Membrane Potential Perturbation Dynamic (MPPD)" used to characterize adversarial perturbations in Spiking Neural Networks (SNNs) is essentially a Total Variation (TV) operator. Consequently, existing mean-square MPPD regularization is equivalent to a TV-$\ell_2$ framework. The authors propose a stronger **TV-$\ell_1$ framework**—leveraging the coarea formula to achieve better suppression of sharp adver…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Spiking Neural Network
-  - Membrane Potential
-  - Total Variation
-  - Adversarial Robustness
-  - Coarea Formula
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Spiking Neural Network"
+  - "Membrane Potential"
+  - "Total Variation"
+  - "Adversarial Robustness"
+  - "Coarea Formula"
 date: 2026-05-08
-content_hash: 4b6e785074dfc613
+content_hash: 701efa2ebeae5519
 ---
+
 # A Unified Total Variation Framework for Membrane Potential Perturbation Dynamic
 
 **Conference**: ICLR 2026  
@@ -107,6 +108,7 @@ Settings: VGG11 / WRN16 + DLIF neurons, 8 time-steps; datasets CIFAR-10/100, Tin
 - **Value**: ⭐⭐⭐⭐ — Provides a theoretically sound, plug-and-play regularizer for SNN robustness and demonstrates a generalizable research paradigm of "identify and upgrade."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -115,7 +117,7 @@ Settings: VGG11 / WRN16 + DLIF neurons, 8 time-steps; datasets CIFAR-10/100, Tin
 - [\[ICLR 2026\] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization](unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization.md)
 - [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
 - [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
-- [\[ICLR 2026\] DPQuant: Efficient and Private Model Training via Dynamic Quantization Scheduling](dpquant_efficient_and_private_model_training_via_dynamic_quantization_scheduling.md)
+- [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
 
 </div>
 

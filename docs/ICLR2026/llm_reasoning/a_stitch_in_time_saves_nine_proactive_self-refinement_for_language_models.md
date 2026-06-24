@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Stitch in Time Saves Nine: Proactive Self-Refinement for Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] PASR uses Reinforcement Learning (GRPO) to train LLMs to proactively decide "whether, when, and how" to refine their reasoning trajectories **during the generation process** (rather than post-hoc rework). By designing a "contrastive refinement reward" to encourage valuable corrections, it reduces average token consumpt
+  [ICLR2026][Reasoning][Self-Refinement] PASR uses Reinforcement Learning (GRPO) to train LLMs to proactively decide "whether, when, and how" to refine their reasoning trajectories **during the generation process** (rather than post-hoc rework). By designing a "contrastive refinement reward" to encourage valuable corrections, it reduces average token consumption by 41.6% while improving accuracy by 8.2% on Qwen3-8B compared to standard generation.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR2026"
+  - "Reasoning"
+  - "Self-Refinement"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "In-process Refinement"
+  - "Reward Design"
 date: 2026-05-08
-content_hash: 1fd0f9ce985cf9de
+content_hash: 7b1de71c14dc977b
 ---
+
 # A Stitch in Time Saves Nine: Proactive Self-Refinement for Language Models
 
 **Conference**: ICLR2026  
@@ -155,15 +159,16 @@ Refinement reward design ablation (Qwen2.5-7B):
 - Value: ⭐⭐⭐⭐⭐ Simultaneously saves tokens and improves accuracy without external feedback; reward design logic is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
+- [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
 - [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
 - [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
+- [\[ACL 2026\] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness](../../ACL2026/llm_reasoning/self-awareness_before_action_mitigating_logical_inertia_via_proactive_cognitive_.md)
 
 </div>
 

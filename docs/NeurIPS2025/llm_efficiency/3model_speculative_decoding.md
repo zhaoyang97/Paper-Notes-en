@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3-Model Speculative Decoding (PyramidSD)
 description: >-
-  [NeurIPS 2025][LLM Efficiency][speculative decoding] PyramidSD introduces a three-tier pyramid decoding architecture by inserting an intermediate "qualifier" model between the draft model ($M_D$) and target model ($M_T$)…
+  [NeurIPS 2025][LLM Efficiency][speculative decoding] PyramidSD introduces a three-tier pyramid decoding architecture by inserting an intermediate "qualifier" model between the draft model ($M_D$) and target model ($M_T$) in standard speculative decoding. The method exploits the natural entropy gradient across model scales within a model family to hierarchically filter tokens, and employs a fuzzy acceptance criterion to relax the matching threshold…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -11,7 +11,7 @@ tags:
   - "fuzzy acceptance criterion"
   - "LLM inference optimization"
 date: 2026-05-08
-content_hash: 10fb5331a539063e
+content_hash: 78d062db27d6e8c7
 ---
 
 # 3-Model Speculative Decoding (PyramidSD)
@@ -126,11 +126,11 @@ The core distinction from Fuzzy SD is that FSD applies fuzzy relaxation over a s
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
+- [\[ACL 2025\] SAM Decoding: Speculative Decoding via Suffix Automaton](../../ACL2025/llm_efficiency/sam_decoding_speculative_decoding_via_suffix_automaton.md)
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
+- [\[ICML 2026\] VIA-SD: Verification via Intra-Model Routing for Speculative Decoding](../../ICML2026/llm_efficiency/via-sd_verification_via_intra-model_routing_for_speculative_decoding.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](../../ICLR2026/llm_efficiency/speculative_speculative_decoding.md)
 - [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](../../ACL2026/llm_efficiency/tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
 
 </div>
 

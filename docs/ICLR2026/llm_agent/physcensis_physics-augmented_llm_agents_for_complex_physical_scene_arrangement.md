@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement
 description: >-
-  [ICLR 2026][LLM Agent][3D scene generation] Ours proposes PhyScensis, an LLM agent framework integrated with a physics engine. By utilizing a solver driven by spatial and physical predicates, it generates high-complexity, physically accurate 3D scenes. It significantly outperforms prior methods in visual quality, semantic correctness, and physical precision, and
+  [ICLR 2026][LLM Agent][3D scene generation] Ours proposes PhyScensis, an LLM agent framework integrated with a physics engine. By utilizing a solver driven by spatial and physical predicates, it generates high-complexity, physically accurate 3D scenes. It significantly outperforms prior methods in visual quality, semantic correctness, and physical precision, and has been successfully applied to robot manipulation policy training.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - 3D scene generation
-  - physics engine
-  - physical plausibility
-  - predicate-based placement
-  - probabilistic programming
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "3D scene generation"
+  - "physics engine"
+  - "physical plausibility"
+  - "predicate-based placement"
+  - "probabilistic programming"
+  - "robotic manipulation"
 date: 2026-05-08
-content_hash: 566a4d150a167d12
+content_hash: fd0cc7d75785c22f
 ---
+
 # PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement
 
 **Conference**: ICLR 2026  

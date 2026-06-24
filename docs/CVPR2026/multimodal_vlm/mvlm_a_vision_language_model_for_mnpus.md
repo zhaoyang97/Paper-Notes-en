@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] µVLM: A Vision Language Model for µNPUs
 description: >-
-  [CVPR 2026][Multimodal VLM][µNPU] µVLM is the first vision-language model designed specifically for "µNPUs" (MCU-level, mW power consumption, tens of MBs memory). By replacing hardware-unsupported self-attention with NPU-friendly OverMod encoders and AttSSM decoders, it achieves 117.8 CIDEr on COCO Karpathy while realizing millisecond-level VLM inferen
+  [CVPR 2026][Multimodal VLM][µNPU] µVLM is the first vision-language model designed specifically for "µNPUs" (MCU-level, mW power consumption, tens of MBs memory). By replacing hardware-unsupported self-attention with NPU-friendly OverMod encoders and AttSSM decoders, it achieves 117.8 CIDEr on COCO Karpathy while realizing millisecond-level VLM inference (TBT 21 ms, power <300 mW) on µNPUs for the first time.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - µNPU
-  - State Space Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "µNPU"
+  - "On-device Image Captioning"
+  - "Lightweight VLM"
+  - "State Space Model"
+  - "Hardware-aware Quantization"
 date: 2026-05-08
-content_hash: a00435d64e92dadf
+content_hash: f94e4ee0c0baa289
 ---
+
 # µVLM: A Vision Language Model for µNPUs
 
 **Conference**: CVPR 2026  
@@ -147,10 +151,10 @@ Encoder OverMod ablation (Table 4): ED blocks, Dilated RepConv, GRN, and Layer S
 ## Related Papers
 
 - [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
-- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[CVPR 2026\] VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models](vlm-loc_localization_in_point_cloud_maps_via_vision-language_models.md)
+- [\[CVPR 2026\] Beyond Graph Model: Reliable VLM Fine-Tuning via Random Graph Adapter](beyond_graph_model_reliable_vlm_fine-tuning_via_random_graph_adapter.md)
 - [\[CVPR 2026\] VL-RouterBench: A Benchmark for Vision-Language Model Routing](vl-routerbench_a_benchmark_for_vision-language_model_routing.md)
-- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
 
 </div>
 

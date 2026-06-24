@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How to Build a Consistency Model: Learning Flow Maps via Self-Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Flow Map] This paper proposes a unified self-distillation framework for directly learning flow maps (the generalized form of consistency models). By exploiting the tangent condition…
+  [NeurIPS 2025][Model Compression][Flow Map] This paper proposes a unified self-distillation framework for directly learning flow maps (the generalized form of consistency models). By exploiting the tangent condition, any distillation scheme is converted into a direct training algorithm that requires no pretrained teacher. Three algorithm families are derived (Eulerian / Lagrangian / Progressive), among which the Lagrangian method avoids spatial gradients and bootstrapping…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Accelerated Inference"
   - "Flow Matching"
 date: 2026-05-08
-content_hash: f5c6048c3686c887
+content_hash: a84042576342eb9a
 ---
 
 # How to Build a Consistency Model: Learning Flow Maps via Self-Distillation
@@ -230,8 +230,8 @@ This paper uses a single network $v_{s,t}$ to simultaneously represent the veloc
 - [\[NeurIPS 2025\] Robustifying Learning-Augmented Caching Efficiently without Compromising 1-Consistency](robustifying_learning-augmented_caching_efficiently_without_compromising_1-consi.md)
 - [\[NeurIPS 2025\] Learning to Better Search with Language Models via Guided Reinforced Self-Training](learning_to_better_search_with_language_models_via_guided_reinforced_self-traini.md)
 - [\[NeurIPS 2025\] SCAN: Self-Denoising Monte Carlo Annotation for Robust Process Reward Learning](scan_self-denoising_monte_carlo_annotation_for_robust_process_reward_learning.md)
-- [\[NeurIPS 2025\] DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method](deltaflow_an_efficient_multi-frame_scene_flow_estimation_method.md)
-- [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
+- [\[ICML 2026\] FedSDR: Federated Self-Distillation with Rectification](../../ICML2026/model_compression/fedsdr_federated_self-distillation_with_rectification.md)
+- [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ORION: ORthonormal Text Encoding for Universal VLM Adaptation
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] ORION performs LoRA fine-tuning on the CLIP text encoder using only category names (without accessing any images). By adding a Frobenius penalty to the loss to push various text prototypes toward pairwise orthonormality while constraining them from deviating from the original zero-shot prototypes, it creates a set of "
+  [CVPR 2026][Multimodal VLM][CLIP] ORION performs LoRA fine-tuning on the CLIP text encoder using only category names (without accessing any images). By adding a Frobenius penalty to the loss to push various text prototypes toward pairwise orthonormality while constraining them from deviating from the original zero-shot prototypes, it creates a set of "universal text classifiers" with more dispersed angles and stronger discriminative power. This serves as a plug-and-play repla…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
-  - LoRA
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Text Encoder Fine-tuning"
+  - "Orthogonal Regularization"
+  - "LoRA"
+  - "Plug-and-play Classifier"
 date: 2026-05-08
-content_hash: 6841c623266addee
+content_hash: 1c535b1241ce1b86
 ---
+
 # ORION: ORthonormal Text Encoding for Universal VLM Adaptation
 
 **Conference**: CVPR 2026  
@@ -126,15 +130,16 @@ Test-time Adaptation (11-set Avg, ViT-B/16): MTA 65.87→67.53 (+1.66), TPT 65.0
 - Value: ⭐⭐⭐⭐⭐ Plug-and-play, zero visual supervision required, and highly stackable with existing methods.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
 - [\[CVPR 2026\] DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles](dear_fine-grained_vlm_adaptation_by_decomposing_attention_head_roles.md)
-- [\[ACL 2026\] Text-Guided Multi-Scale Frequency Representation Adaptation](../../ACL2026/multimodal_vlm/text-guided_multi-scale_frequency_representation_adaptation.md)
 - [\[CVPR 2026\] RNED: Rotary Number Encoding and Decoding for Medical VLMs](rned_rotary_number_encoding_and_decoding_for_medical_vlms.md)
-- [\[CVPR 2026\] Illuminating Visual Identity in Universal Multimodal Embeddings](illuminating_visual_identity_in_universal_multimodal_embeddings.md)
+- [\[CVPR 2026\] HDR-VLM: HDR-Domain Adaptation of VLMs and Preference-Aligned Quality Assessment for HDR Video Color Grading](hdr-vlm_hdr-domain_adaptation_of_vlms_and_preference-aligned_quality_assessment_.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Weight Weaving: Parameter Pooling for Data-Free Model Merging
 description: >-
-  [NeurIPS 2025][Model Compression][model merging] This paper proposes Weight Weaving, a plug-and-play data-free model merging enhancement method that eliminates the dependency on evaluation data by pooling model parameter…
+  [NeurIPS 2025][Model Compression][model merging] This paper proposes Weight Weaving, a plug-and-play data-free model merging enhancement method that eliminates the dependency on evaluation data by pooling model parameters (e.g., via averaging or random selection) over the scaling factor search space. Across three scenarios — multi-task learning, continual learning, and domain generalization — the method achieves an average accuracy improvement of up to 15.9 percentage points.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "parameter pooling"
   - "task vectors"
 date: 2026-05-08
-content_hash: 32e053a539b9ebcc
+content_hash: c2b962f11033cab1
 ---
 
 # Weight Weaving: Parameter Pooling for Data-Free Model Merging
@@ -138,7 +138,7 @@ Weight Weaving takes three user-defined inputs: (1) a base merging function $f_{
 - [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](../../ICLR2026/model_compression/null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 - [\[AAAI 2026\] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging](../../AAAI2026/model_compression/from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m.md)
-- [\[ICLR 2026\] RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following Through Model Merging](../../ICLR2026/model_compression/rain-merging_a_gradient-free_method_to_enhance_instruction_following_through_mod.md)
+- [\[CVPR 2025\] Task Singular Vectors: Reducing Task Interference in Model Merging](../../CVPR2025/model_compression/task_singular_vectors_reducing_task_interference_in_model_merging.md)
 
 </div>
 

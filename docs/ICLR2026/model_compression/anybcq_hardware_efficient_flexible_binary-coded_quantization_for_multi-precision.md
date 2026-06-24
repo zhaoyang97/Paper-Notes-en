@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The authors propose AnyBCQ, a multi-precision LLM quantization framework based on binary-coded quantization (BCQ). By employing progressive precision expansion (freezing existing bit-planes and adding residual bit-planes), it supports dynamic switching between 2-4 bits for a single model. Dedicated CUDA kernels perform
+  [ICLR 2026][Model Compression][Binary-coded quantization] The authors propose AnyBCQ, a multi-precision LLM quantization framework based on binary-coded quantization (BCQ). By employing progressive precision expansion (freezing existing bit-planes and adding residual bit-planes), it supports dynamic switching between 2-4 bits for a single model. Dedicated CUDA kernels perform computations directly at the bit-plane level to avoid lookup table (LUT) and transposition overhead.…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Binary-coded quantization"
+  - "multi-precision inference"
+  - "bit-plane operations"
+  - "LLM deployment"
+  - "CUDA kernel"
 date: 2026-05-08
-content_hash: 0645efa304c7888a
+content_hash: d5e9999c07b0cada
 ---
+
 # AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs
 
 **Conference**: ICLR 2026  
@@ -120,12 +126,10 @@ AnyBCQ outperforms competitors by over 10 percentage points in 2-bit MMLU while 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
 - [\[ICLR 2026\] Highly Efficient and Effective LLMs with Multi-Boolean Architectures](highly_efficient_and_effective_llms_with_multi-boolean_architectures.md)
+- [\[ICLR 2026\] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs](pm-kvq_progressive_mixed-precision_kv_cache_quantization_for_long-cot_llms.md)
 - [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
 - [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 - [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)

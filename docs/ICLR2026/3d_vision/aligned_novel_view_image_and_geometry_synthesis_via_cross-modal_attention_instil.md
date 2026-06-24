@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation
 description: >-
-  [ICLR 2026][3D Vision][novel view synthesis] The authors reformulate multi-view novel view synthesis as a dual-branch diffusion inpainting task of "image + geometry." By utilizing **MoAI (cross-Modal Attention Instillation)** to inject attention maps from the image branch into the geometry branch, the method generates aligned novel view images and point clouds di
+  [ICLR 2026][3D Vision][novel view synthesis] The authors reformulate multi-view novel view synthesis as a dual-branch diffusion inpainting task of "image + geometry." By utilizing **MoAI (cross-Modal Attention Instillation)** to inject attention maps from the image branch into the geometry branch, the method generates aligned novel view images and point clouds directly from pose-free reference images, achieving SOTA performance in camera extrapolation settings.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - novel view synthesis
-  - geometry completion
-  - diffusion
-  - cross-modal attention
-  - warping-and-inpainting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "novel view synthesis"
+  - "geometry completion"
+  - "diffusion"
+  - "cross-modal attention"
+  - "warping-and-inpainting"
 date: 2026-05-08
-content_hash: 8253cf8a34e4aa6a
+content_hash: fb8b6d11feeb8488
 ---
+
 # Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation
 
 **Conference**: ICLR 2026  
@@ -129,11 +130,11 @@ Each component provides incremental gains, with MoAI delivering the final perfor
 
 ## Related Papers
 
-- [\[ICLR 2026\] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention](efficient-lvsm_faster_cheaper_and_better_large_view_synthesis_model_via_decouple.md)
 - [\[ICLR 2026\] True Self-Supervised Novel View Synthesis is Transferable](true_self-supervised_novel_view_synthesis_is_transferable.md)
+- [\[CVPR 2026\] LagerNVS: Latent Geometry for Fully Neural Real-time Novel View Synthesis](../../CVPR2026/3d_vision/lagernvs_latent_geometry_for_fully_neural_real-time_novel_view_synthesis.md)
 - [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](../../CVPR2026/3d_vision/pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
+- [\[ICLR 2026\] EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis](ea3d_event-augmented_3d_diffusion_for_generalizable_novel_view_synthesis.md)
 - [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](../../CVPR2026/3d_vision/affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
-- [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](dynamic_novel_view_synthesis_in_high_dynamic_range.md)
 
 </div>
 

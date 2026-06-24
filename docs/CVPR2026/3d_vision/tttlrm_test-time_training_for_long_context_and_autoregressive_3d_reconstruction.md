@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Test-Time Training] tttLRM introduces Test-Time Training (TTT) into large-scale 3D reconstruction models for the first time. By utilizing LaCT layers, it achieves long-context and autoregressive 3D Gaussian reconstruction with linear complexity. It compresses multi-view observations into TTT fast weights to form an implicit 3D representat
+  [CVPR 2026][3D Vision][3D Reconstruction] tttLRM introduces Test-Time Training (TTT) into large-scale 3D reconstruction models for the first time. By utilizing LaCT layers, it achieves long-context and autoregressive 3D Gaussian reconstruction with linear complexity. It compresses multi-view observations into TTT fast weights to form an implicit 3D representation, which is then decoded into explicit formats like 3DGS, achieving SOTA performance on both object-level and scene-…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Test-Time Training
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Test-Time Training"
+  - "Large Reconstruction Model"
+  - "Gaussian Splatting"
+  - "Autoregressive Reconstruction"
 date: 2026-05-08
-content_hash: 5da719366d379c09
+content_hash: 19519e37013a8092
 ---
+
 # tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -173,10 +178,10 @@ This is a forward-looking work. Introducing TTT to 3D reconstruction is a natura
 ## Related Papers
 
 - [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
 - [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
+- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](../../ICLR2026/3d_vision/ttt3r_3d_reconstruction_as_test-time_training.md)
 - [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
 
 </div>
 

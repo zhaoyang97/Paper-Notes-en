@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery
 description: >-
-  [CVPR 2026][3D Vision][SLAM] Proposes OnlineHMR, the first online world-grounded human mesh recovery framework that simultaneously satisfies four criteria: system causality, faithfulness, temporal consistency, and efficiency. It achieves streaming camera-coordinate HMR through sliding window causal learning + KV cache inference, combined with huma
+  [CVPR 2026][3D Vision][Human Mesh Recovery] Proposes OnlineHMR, the first online world-grounded human mesh recovery framework that simultaneously satisfies four criteria: system causality, faithfulness, temporal consistency, and efficiency. It achieves streaming camera-coordinate HMR through sliding window causal learning + KV cache inference, combined with human-centric incremental SLAM and EMA trajectory correction for online global localization.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human Mesh Recovery"
+  - "Online Inference"
+  - "SLAM"
+  - "World Coordinates"
+  - "Causal Reasoning"
+  - "KV Cache"
 date: 2026-05-08
-content_hash: 7df020729e06c68a
+content_hash: 5a9a060bb1f34207
 ---
+
 # OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery
 
 **Conference**: CVPR 2026  
@@ -228,10 +234,10 @@ Training data includes BEDLAM + 3DPW + H3.6M, converging in approximately 52K it
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](fall_risk_gait_analysis_hmr.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)
-- [\[CVPR 2025\] PromptHMR: Promptable Human Mesh Recovery](../../CVPR2025/3d_vision/prompthmr_promptable_human_mesh_recovery.md)
+- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
 - [\[CVPR 2026\] ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss](resihmr_residual-limb_aware_single-image_3d_human_mesh_recovery_for_individuals_.md)
+- [\[CVPR 2025\] PromptHMR: Promptable Human Mesh Recovery](../../CVPR2025/3d_vision/prompthmr_promptable_human_mesh_recovery.md)
+- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
 - [\[ECCV 2024\] Global-to-Pixel Regression for Human Mesh Recovery](../../ECCV2024/3d_vision/global-to-pixel_regression_for_human_mesh_recovery.md)
 
 </div>

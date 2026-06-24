@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement
 description: >-
-  [ICLR 2026][Computational Biology][AlphaFold3] HIERAFOLD uses PAE to automatically segment rigid subunits and cross-chain interfaces from coarse-grained pairwise predictions, performs high-precision refinement only on "focal chain + relevant interface subunits," and finally assembles them via confidence-weighted alignment. This reduces the peak VRAM of large protei
+  [ICLR 2026][Computational Biology][Protein Complex Prediction] HIERAFOLD uses PAE to automatically segment rigid subunits and cross-chain interfaces from coarse-grained pairwise predictions, performs high-precision refinement only on "focal chain + relevant interface subunits," and finally assembles them via confidence-weighted alignment. This reduces the peak VRAM of large protein complexes to a runnable range while maintaining accuracy close to AlphaFold3.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - AlphaFold3
-  - PAE
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Complex Prediction"
+  - "AlphaFold3"
+  - "PAE"
+  - "Subunit Decomposition"
+  - "Large-scale Structural Assembly"
 date: 2026-05-08
-content_hash: 4cc564a6c3917010
+content_hash: 116e49ec0f57f756
 ---
+
 # Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement
 
 **Conference**: ICLR 2026  
@@ -168,8 +172,8 @@ Ablations show that components of HIERAFOLD are essential. Using a full diffusio
 - Value: ⭐⭐⭐⭐⭐ Extremely practical for users needing to predict complexes exceeding 5,000 tokens.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

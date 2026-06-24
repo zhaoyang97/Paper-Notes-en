@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][MANO] The first work to introduce the In-Context Learning (ICL) paradigm to 3D hand reconstruction. Through VLM-guided template retrieval, a multi-modal ICL tokenizer, and an MAE-driven reconstruction pipeline, it significantly outperforms SOTA methods on ARCTIC and EgoExo4D benchmarks.
+  [ICLR 2026][Multimodal VLM][Egocentric perspective] The first work to introduce the In-Context Learning (ICL) paradigm to 3D hand reconstruction. Through VLM-guided template retrieval, a multi-modal ICL tokenizer, and an MAE-driven reconstruction pipeline, it significantly outperforms SOTA methods on ARCTIC and EgoExo4D benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MANO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Egocentric perspective"
+  - "3D hand reconstruction"
+  - "In-context learning"
+  - "Vision-language models"
+  - "MANO"
 date: 2026-05-08
-content_hash: 81be801bffbb667e
+content_hash: 8fee74a7ef98681f
 ---
+
 # EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning
 
 **Conference**: ICLR 2026  
@@ -170,8 +175,8 @@ Regardless of the coarse MANO backbone used, ICL brings consistent and significa
 - [\[ICLR 2026\] UniHM: Unified Dexterous Hand Manipulation with Vision Language Model](unihm_unified_dexterous_hand_manipulation_with_vision_language_model.md)
 - [\[ICLR 2026\] ContextNav: Towards Agentic Multimodal In-Context Learning](contextnav_towards_agentic_multimodal_in-context_learning.md)
 - [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](../../CVPR2026/multimodal_vlm/vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](reconstruction_alignment_improves_unified_multimodal_models.md)
 - [\[ICLR 2026\] VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery](vasevqa-3d_benchmarking_3d_vlms_on_ancient_greek_pottery.md)
-- [\[CVPR 2026\] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks](../../CVPR2026/multimodal_vlm/hificl_highfidelity_incontext_learning_for_multimo.md)
 
 </div>
 

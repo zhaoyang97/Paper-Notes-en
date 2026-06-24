@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Evaluation][brainteasers] This work constructs the Braingle Brainteaser benchmark (242 math + 236 logic puzzles) and systematically evaluates LLM reasoning strategies on brainteasers. The findings reve…
+  [NeurIPS 2025][LLM Evaluation][brainteasers] This work constructs the Braingle Brainteaser benchmark (242 math + 236 logic puzzles) and systematically evaluates LLM reasoning strategies on brainteasers. The findings reveal that models occasionally produce creative, insight-driven solutions, but frequently fall back on brute-force enumeration even when elegant solutions exist; self-correction ability is limited; and translating narrative formats into mathematical formats yield…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "reasoning strategy analysis"
   - "benchmark"
 date: 2026-05-08
-content_hash: 3e68cc7a6ecd9f04
+content_hash: ab238f60bf969ec6
 ---
 
 # Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models
@@ -126,10 +126,10 @@ OpenAI o3, DeepSeek R1, DeepSeek V3, DeepSeek R1 Distill series (1.5B / 14B / 70
 ## Related Papers
 
 - [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
+- [\[ICML 2025\] Fleet of Agents: Coordinated Problem Solving with Large Language Models](../../ICML2025/llm_evaluation/fleet_of_agents_coordinated_problem_solving_with_large_language_models.md)
 - [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](../../ACL2026/llm_evaluation/engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
-- [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
-- [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
+- [\[ACL 2025\] Exposing Numeracy Gaps: A Benchmark to Evaluate Fundamental Numerical Abilities in Large Language Models](../../ACL2025/llm_evaluation/exposing_numeracy_gaps_a_benchmark_to_evaluate_fundamental_numerical_abilities_i.md)
 
 </div>
 

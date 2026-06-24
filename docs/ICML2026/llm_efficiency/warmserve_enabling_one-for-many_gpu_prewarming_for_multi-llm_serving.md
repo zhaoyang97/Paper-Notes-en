@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] WarmServe：一次加载多模型的 GPU 预热机制
+  [Paper Note] WarmServe: Multi-model GPU Warm-up Mechanism via Load-Once-Many
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] WarmServe reduces tail TTFT by 50.8x compared to existing systems by analyzing long-term periodic patterns in LLM serving workloads. It proactively preloads multiple model parameters into GPUs, using optimized placement algorithms and dynamic KV cache reservation strategies to quickly launch new instances during reques
+  [ICML 2026][LLM Efficiency][GPU Warm-up] WarmServe reduces tail TTFT by 50.8x compared to existing systems by analyzing long-term periodic patterns in LLM serving workloads. It proactively preloads multiple model parameters into GPUs, using optimized placement algorithms and dynamic KV cache reservation strategies to quickly launch new instances during request bursts.
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "GPU Warm-up"
+  - "Multi-LLM Serving"
+  - "Workload Prediction"
+  - "Cold Start"
+  - "Resource Efficiency"
 date: 2026-05-08
-content_hash: 083c050fe0728b08
+content_hash: 5030cdc206208aaf
 ---
+
 # WarmServe: Multi-model GPU Warm-up Mechanism via Load-Once-Many
 
 **Conference**: ICML 2026  
@@ -123,11 +129,11 @@ At 15 RPS and $\alpha$=0.5, WarmServe achieves a 1.53-50.79× reduction in P99 T
 
 ## Related Papers
 
-- [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[ICML 2026\] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm](siamesenorm_breaking_the_barrier_to_reconciling_prepost-norm.md)
-- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)
+- [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](../../ICLR2026/llm_efficiency/scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
+- [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](../../ICLR2026/llm_efficiency/scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
+- [\[ICLR 2026\] ICaRus: Identical Cache Reuse for Efficient Multi-Model Inference](../../ICLR2026/llm_efficiency/icarus_identical_cache_reuse_for_efficient_multi-model_inference.md)
+- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](../../ACL2026/llm_efficiency/mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
+- [\[ICLR 2026\] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective](../../ICLR2026/llm_efficiency/randomization_boosts_kv_caching_learning_balances_query_load_a_joint_perspective.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reinforced Latent Reasoning for LLM-based Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][GRPO] Addressing the pain points where explicit Chain-of-Thought (CoT) in LLM recommendations is both difficult to obtain as supervisory data and slow during inference, this paper proposes LatentR3. By adding a LatentRATT attention layer at the top of the LLM to compress reasoning into a **continuous latent space** (requirin
+  [ICLR 2026][Recommender Systems][Latent Reasoning] Addressing the pain points where explicit Chain-of-Thought (CoT) in LLM recommendations is both difficult to obtain as supervisory data and slow during inference, this paper proposes LatentR3. By adding a LatentRATT attention layer at the top of the LLM to compress reasoning into a **continuous latent space** (requiring only 1 latent token) and employing a modified GRPO (utilizing PPL continuous rewards + batch-level advantag…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - GRPO
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Latent Reasoning"
+  - "LLM Recommendation"
+  - "GRPO"
+  - "Reinforcement Learning"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: d12cc2b66e6d1e72
+content_hash: f2a3edd07f01b47a
 ---
+
 # Reinforced Latent Reasoning for LLM-based Recommendation
 
 **Conference**: ICLR 2026  
@@ -130,16 +134,16 @@ LatentR3 yields an average relative **Gain** of **17.0%** for BIGRec and **8.4%*
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 - [\[ICLR 2026\] In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations](in_agents_we_trust_but_who_do_agents_trust_latent_source_preferences_steer_llm_g.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/recommender/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
 - [\[NeurIPS 2025\] Think before Recommendation: Autonomous Reasoning-enhanced Recommender](../../NeurIPS2025/recommender/think_before_recommendation_autonomous_reasoning-enhanced_recommender.md)
 - [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
-- [\[ICLR 2026\] RPM: Reasoning-Level Personalization for Black-Box Large Language Models](rpm_reasoning-level_personalization_for_black-box_large_language_models.md)
 
 </div>
 

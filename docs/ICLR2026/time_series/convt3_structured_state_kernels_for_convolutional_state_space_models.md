@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConvT3: Structured State Kernels for Convolutional State Space Models
 description: >-
-  [ICLR 2026][Time Series][Paper Note] ConvT3 extends the state kernel in Convolutional State Space Models (ConvSSM), previously forced to degenerate into $1\times1$, to an equivalent $3\times3$ convolution. This is achieved by constructing the state tensor using a "diagonalizable SSM matrix + proportionally constrained tridiagonal Toeplitz tensor," enablin
+  [ICLR 2026][Time Series][Convolutional State Space Models] ConvT3 extends the state kernel in Convolutional State Space Models (ConvSSM), previously forced to degenerate into $1\times1$, to an equivalent $3\times3$ convolution. This is achieved by constructing the state tensor using a "diagonalizable SSM matrix + proportionally constrained tridiagonal Toeplitz tensor," enabling stronger spatial modeling capabilities while maintaining linear-time parallel scan trainability. It…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Convolutional State Space Models"
+  - "Tridiagonal Toeplitz Tensors"
+  - "3×3 State Kernels"
+  - "Parallel Scan"
+  - "Spatiotemporal Modeling"
 date: 2026-05-08
-content_hash: 046ed9fcaae6cee8
+content_hash: 3fbac94732c9cfa1
 ---
+
 # ConvT3: Structured State Kernels for Convolutional State Space Models
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,6 @@ ConvT3 achieves the best accuracy across datasets with fewer parameters than lar
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

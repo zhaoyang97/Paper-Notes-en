@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] ProSoftArena is the first multimodal agent benchmark targeting **professional software** (13 tools including CAD, ChemDraw, ArcGIS, Photoshop, etc.). It categorizes agent capabilities into five levels (L1–L5), utilizes automated scoring within real Windows virtual machines based on execution results, and introduces a "
+  [CVPR 2026][Multimodal VLM][Multimodal agents] ProSoftArena is the first multimodal agent benchmark targeting **professional software** (13 tools including CAD, ChemDraw, ArcGIS, Photoshop, etc.). It categorizes agent capabilities into five levels (L1–L5), utilizes automated scoring within real Windows virtual machines based on execution results, and introduces a "Human-in-the-Loop" evaluation. Results reveal that the strongest agents achieve only a 20.6% success rate in soft…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal agents"
+  - "professional software"
+  - "capability hierarchy benchmark"
+  - "real virtual machine environment"
+  - "human-agent collaboration evaluation"
 date: 2026-05-08
-content_hash: 5150f045a4af4a55
+content_hash: eb3af469f368a59e
 ---
+
 # ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments
 
 **Conference**: CVPR 2026  
@@ -134,14 +140,17 @@ Richer inputs generally improve grounding but increase cost. Notably, performanc
 
 <div class="related-papers" markdown="1">
 
-- **OSWorld**: Benchmarking Multimodal Agents for Open-Ended Desktop Applications (CHI 2024)
-- **WindowsAgentArena**: Evaluating Agents in Linux and Windows Environments (ArXiv 2024)
-- **ScienceBoard**: Evaluating Scientific Agents in Specialized Environments (ArXiv 2024)
+## Related Papers
+
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] Demo2Tutorial: From Human Experience to Multimodal Software Tutorials](demo2tutorial_from_human_experience_to_multimodal_software_tutorials.md)
+- [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](../../ICLR2026/multimodal_vlm/xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
+- [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)

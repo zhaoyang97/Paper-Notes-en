@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Grounding Agent Memory in Contextual Intent
 description: >-
-  [ACL 2026][LLM Agent][agent] STITCH introduces "contextual intent" (thematic scope + event type + key entity types) triples as structured retrieval cues for LLM agent long-term memory. These triples are induced online at each trajectory step. During inference, retrieval follows "label density ranking," performing structural matching before semanti
+  [ACL 2026][LLM Agent][Long-term Memory] STITCH introduces "contextual intent" (thematic scope + event type + key entity types) triples as structured retrieval cues for LLM agent long-term memory. These triples are induced online at each trajectory step. During inference, retrieval follows "label density ranking," performing structural matching before semantic scoring. On the newly constructed CAME-Bench, STITCH maintains performance as trajectories grow…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - agent
-  - contextual intent
-  - Event Structure Theory
-  - retrieval cue
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Long-term Memory"
+  - "Agent"
+  - "Contextual Intent"
+  - "Event Structure Theory"
+  - "Retrieval Cue"
 date: 2026-05-08
-content_hash: 521b40a69175b7b7
+content_hash: 4de8d31a46fed44a
 ---
+
 # Grounding Agent Memory in Contextual Intent
 
 **Conference**: ACL 2026  
@@ -149,12 +151,20 @@ Comparison on CAME-Bench, LongMemEval, and LoCoMo:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Zacks & Tversky, 2001: Event Structure Theory in Perception and Conception.
-- Sarthi et al., 2024: RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[NeurIPS 2025\] TAI3: Testing Agent Integrity in Interpreting User Intent](../../NeurIPS2025/llm_agent/tai3_testing_agent_integrity_in_interpreting_user_intent.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
+- [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)

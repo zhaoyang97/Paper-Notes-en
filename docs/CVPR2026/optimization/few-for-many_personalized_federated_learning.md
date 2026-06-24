@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Few-for-Many Personalized Federated Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] The study reformulates Personalized Federated Learning (PFL) as a "few-for-many" ($K \ll M$) multi-objective optimization problem, where $K$ shared models serve $M$ clients. By employing differentiable Smooth Tchebycheff Set Scalarization (STCH-Set) for joint training, the method stably outperforms existing approaches
+  [CVPR 2026][Optimization][Personalized Federated Learning] The study reformulates Personalized Federated Learning (PFL) as a "few-for-many" ($K \ll M$) multi-objective optimization problem, where $K$ shared models serve $M$ clients. By employing differentiable Smooth Tchebycheff Set Scalarization (STCH-Set) for joint training, the method stably outperforms existing approaches across vision, NLP, and medical imaging datasets using as few as 3 models.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Personalized Federated Learning"
+  - "Multi-Objective Optimization"
+  - "Pareto Optimality"
+  - "Tchebycheff Set Scalarization"
+  - "Model Diversity"
 date: 2026-05-08
-content_hash: 54defb9937fc1049
+content_hash: 15e5a680097ee89a
 ---
+
 # Few-for-Many Personalized Federated Learning
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,10 @@ On CIFAR-10 (Dirichlet $\alpha=0.5, M=20$), investigating $K$ and communication-
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
+- [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](../../ICML2026/optimization/clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
 - [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
 - [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 - [\[ICML 2025\] Understanding the Statistical Accuracy-Communication Trade-off in Personalized Federated Learning with Minimax Guarantees](../../ICML2025/optimization/understanding_the_statistical_accuracy-communication_trade-off_in_personalized_f.md)
 
 </div>

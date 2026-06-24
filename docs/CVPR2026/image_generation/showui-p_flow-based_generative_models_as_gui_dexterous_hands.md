@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands
 description: >-
-  [CVPR 2026][LLM Agent][Flow Matching] ShowUI-π transfers "Flow-matching VLA," typically used for dexterous manipulation in robotics, to the GUI domain. By employing a 450M lightweight action expert, it unifies clicking and dragging into continuous coordinate trajectories. This enables agents to perform high-degree-of-freedom dragging tasks requiring real-t
+  [CVPR 2026][Image Generation][GUI Automation] ShowUI-π transfers "Flow-matching VLA," typically used for dexterous manipulation in robotics, to the GUI domain. By employing a 450M lightweight action expert, it unifies clicking and dragging into continuous coordinate trajectories. This enables agents to perform high-degree-of-freedom dragging tasks requiring real-time adjustment, such as rotation, drawing, and solving slider captchas. The authors also release the ScreenDrag da…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "GUI Automation"
+  - "Flow Matching"
+  - "Continuous Trajectory"
+  - "Drag-and-drop"
+  - "Digital Dexterous Hand"
 date: 2026-05-08
-content_hash: 90bed26f4454cd82
+content_hash: fd7a9860f3c6d504
 ---
+
 # ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ With only 450M parameters, ShowUI-π outperforms the strongest closed-source mod
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
-- [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
-- [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
-- [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
-- [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
+- [\[ICCV 2025\] Deeply Supervised Flow-Based Generative Models](../../ICCV2025/image_generation/deeply_supervised_flow-based_generative_models.md)
+- [\[CVPR 2026\] Improved Mean Flows: On the Challenges of Fastforward Generative Models](improved_mean_flows_on_the_challenges_of_fastforward_generative_models.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](../../ICLR2026/image_generation/fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
+- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
 
 </div>
 

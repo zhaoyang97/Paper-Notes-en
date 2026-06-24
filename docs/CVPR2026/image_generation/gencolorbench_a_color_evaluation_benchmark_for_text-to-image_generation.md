@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][T2I Benchmark] GenColorBench is the first benchmark to systematically evaluate the "color accuracy" of text-to-image (T2I) models. It constructs 44,000 prompts across five color tasks using ISCC-NBS / CSS3-X11 color systems and RGB/hex values. By employing an evaluation pipeline based on "Color Science dominant colors + $\Delta E$" t
+  [CVPR 2026][Image Generation][Color Generation Evaluation] GenColorBench is the first benchmark to systematically evaluate the "color accuracy" of text-to-image (T2I) models. It constructs 44,000 prompts across five color tasks using ISCC-NBS / CSS3-X11 color systems and RGB/hex values. By employing an evaluation pipeline based on "Color Science dominant colors + $\Delta E$" that does not rely on VLMs, the study reveals that current SOTA models are generally weak in precise c…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - T2I Benchmark
-  - ISCC-NBS
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Color Generation Evaluation"
+  - "T2I Benchmark"
+  - "ISCC-NBS"
+  - "Dominant Color"
+  - "Color Science"
 date: 2026-05-08
-content_hash: 431e65dc6c855330
+content_hash: 02ed7af2d8f8e0b1
 ---
+
 # GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -107,15 +111,16 @@ Evaluated on 44,464 prompts across diffusion (DM), autoregressive (AR), and mult
 - Value: ⭐⭐⭐⭐⭐ Clearly identifies a systemic blind spot in T2I models and provides the tools to measure and improve it.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](../../NeurIPS2025/image_generation/overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
 - [\[AAAI 2026\] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model](../../AAAI2026/image_generation/t2i-riskyprompt_a_benchmark_for_safety_evaluation_attack_and_defense_on_text-to-.md)
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 
 </div>
 

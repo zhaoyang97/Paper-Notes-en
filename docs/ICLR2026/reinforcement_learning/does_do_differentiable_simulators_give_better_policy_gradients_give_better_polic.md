@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This work is a "revisitation" of the identically titled paper by Suh et al. (2022). The authors replace the original REINFORCE-based discontinuity detection with a lightweight statistical test (DDCG) that depends only on function values and gradient variances, robustly reproducing and improving the original method with
+  [ICLR 2026][Reinforcement Learning][Policy Gradient] This work is a "revisitation" of the identically titled paper by Suh et al. (2022). The authors replace the original REINFORCE-based discontinuity detection with a lightweight statistical test (DDCG) that depends only on function values and gradient variances, robustly reproducing and improving the original method with a single hyperparameter. More importantly, they propose Step-wise Inverse Variance Weighting (IVW-H)…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Policy Gradient"
+  - "Differentiable Simulation"
+  - "Gradient Estimation"
+  - "Inverse Variance Weighting"
+  - "Discontinuity Detection"
 date: 2026-05-08
-content_hash: 9108ebe9e3fdc433
+content_hash: 5a700e0b6615d990
 ---
+
 # Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?
 
 **Conference**: ICLR 2026  
@@ -121,11 +127,11 @@ The paper is divided into two parts: Part I compares DDCG and AoBG on explicitly
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
 - [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
 - [\[ICLR 2026\] Beyond Softmax and Entropy: Convergence Rates of Policy Gradients with $f$-SoftArgmax Parameterization & Coupled Regularization](beyond_softmax_and_entropy_convergence_rates_of_policy_gradients_with_boldsymbol.md)
-- [\[ICLR 2026\] Distributional value gradients for stochastic environments](distributional_value_gradients_for_stochastic_environments.md)
 - [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
-- [\[ICML 2026\] Randomized Advantage Transformation (RAT): Computing Natural Policy Gradients via Direct Backpropagation](../../ICML2026/reinforcement_learning/randomized_advantage_transformation_rat_computing_natural_policy_gradients_via_d.md)
+- [\[ICLR 2026\] Distributional value gradients for stochastic environments](distributional_value_gradients_for_stochastic_environments.md)
 
 </div>
 

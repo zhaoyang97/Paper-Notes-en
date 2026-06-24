@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Refine Drugs, Don't Complete Them: Uniform-Source Discrete Flows for Fragment-Based Drug Discovery
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] InVirtuoGen utilizes "uniform-source continuous-time discrete flow" on fragmented SMILES to transform the generation paradigm from "step-by-step completion" to "simultaneous refinement of all positions." This approach not only establishes a superior quality-diversity Pareto frontier in de novo generation but also achie
+  [ICLR 2026][Computational Biology][Discrete Flow] InVirtuoGen utilizes "uniform-source continuous-time discrete flow" on fragmented SMILES to transform the generation paradigm from "step-by-step completion" to "simultaneous refinement of all positions." This approach not only establishes a superior quality-diversity Pareto frontier in de novo generation but also achieves a new SOTA on the PMO benchmark and lead optimization through a hybrid optimization of Genetic Algorithms…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Discrete Flow"
+  - "Fragmented SMILES"
+  - "Uniform Source"
+  - "Molecular Optimization"
+  - "PPO+Genetic Algorithm"
 date: 2026-05-08
-content_hash: 8d2895787d09fcaa
+content_hash: 696a832cd2872f37
 ---
+
 # Refine Drugs, Don't Complete Them: Uniform-Source Discrete Flows for Fragment-Based Drug Discovery
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 4C4D: 4 Camera 4D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The 4C4D framework is proposed to adaptively control Gaussian opacity decay through a Neural Decaying Function. This addresses the imbalance between geometry and appearance learning in sparse (only 4 cameras) 4D Gaussian Splatting, achieving SOTA performance on multiple datasets.
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] The 4C4D framework is proposed to adaptively control Gaussian opacity decay through a Neural Decaying Function. This addresses the imbalance between geometry and appearance learning in sparse (only 4 cameras) 4D Gaussian Splatting, achieving SOTA performance on multiple datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Sparse Views"
+  - "Dynamic Scene Reconstruction"
+  - "Neural Decaying Function"
+  - "Geometry-Appearance Balance"
 date: 2026-05-08
-content_hash: 03607eab80a1047b
+content_hash: bba46e530f447ec3
 ---
+
 # 4C4D: 4 Camera 4D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -132,11 +138,11 @@ Visible Gaussians are precisely learned by the neural decaying function, while i
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
+- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
+- [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](retimegs_continuous-time_reconstruction_of_4d_gaussian_splatting.md)
 
 </div>
 

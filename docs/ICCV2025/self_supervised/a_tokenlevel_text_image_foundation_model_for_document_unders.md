@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)
 description: >-
-  [ICCV 2025][Self-Supervised Learning][token-level alignment] This paper proposes TokenFD, the first token-level text image foundation model, pre-trained on 20 million images and 1.8 billion BPE token-mask pairs via token…
+  [ICCV 2025][Self-Supervised Learning][token-level alignment] This paper proposes TokenFD, the first token-level text image foundation model, pre-trained on 20 million images and 1.8 billion BPE token-mask pairs via token-level vision-language alignment to achieve image-as-text semantic understanding. Built upon TokenFD, TokenVL is introduced as a document understanding MLLM, achieving a score of 860 on OCRBench (highest among 8B-class models) and an average improvement of 8.8…
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "OCR-free"
   - "multimodal large language model"
 date: 2026-05-08
-content_hash: 99478d7589868884
+content_hash: 9537f65b7d8b734d
 ---
 
 # A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)
@@ -144,9 +144,9 @@ The framework comprises three layers: (1) **TokenIT** dataset—20 million image
 
 - [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](../../NeurIPS2025/self_supervised/tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
 - [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](../../CVPR2026/self_supervised/d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
-- [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2026/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
-- [\[NeurIPS 2025\] Manifolds and Modules: How Function Develops in a Neural Foundation Model](../../NeurIPS2025/self_supervised/manifolds_and_modules_how_function_develops_in_a_neural_foundation_model.md)
-- [\[ICCV 2025\] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models](to_label_or_not_to_label_palm_-_a_predictive_model_for_evaluating_sample_efficie.md)
+- [\[ECCV 2024\] MarineInst: A Foundation Model for Marine Image Analysis with Instance Visual Description](../../ECCV2024/self_supervised/marineinst_a_foundation_model_for_marine_image_analysis_with_instance_visual_des.md)
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
+- [\[CVPR 2025\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2025/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
 
 </div>
 

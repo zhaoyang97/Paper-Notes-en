@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Better Together: Leveraging Unpaired Multimodal Data for Stronger Unimodal Models
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes Unpaired Multimodal Learner (UML): it requires no sample-level pairing (e.g., image-text, audio-image). As long as the auxiliary modality shares semantic structure with the target modality, training signals from unpaired text, images, or audio are channeled into a unified representation via cross-mo
+  [ICLR2026][Self-Supervised Learning][Unpaired multimodal learning] This paper proposes Unpaired Multimodal Learner (UML): it requires no sample-level pairing (e.g., image-text, audio-image). As long as the auxiliary modality shares semantic structure with the target modality, training signals from unpaired text, images, or audio are channeled into a unified representation via cross-modal weight sharing. This enhances the classification performance and robustness of models tha…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Unpaired multimodal learning"
+  - "unimodal enhancement"
+  - "weight sharing"
+  - "self-supervised representation"
+  - "cross-modal transfer"
 date: 2026-05-08
-content_hash: 530eaeec993d095b
+content_hash: 82a039e44b9c7c66
 ---
+
 # Better Together: Leveraging Unpaired Multimodal Data for Stronger Unimodal Models
 
 **Conference**: ICLR2026  

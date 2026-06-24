@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models
 description: >-
-  [ICLR 2026][Video Generation][Benchmark] PhyWorldBench constructs a large-scale benchmark covering 50 physical sub-phenomena, 1,050 prompts, and 12 mainstream text-to-video models. Using human evaluation and a context-aware MLLM evaluator system, it reveals significant shortcomings of current video generation models in realistic physics, complex interactions,
+  [ICLR2026][Video Generation][Text-to-Video Generation] PhyWorldBench constructs a large-scale benchmark covering 50 physical sub-phenomena, 1,050 prompts, and 12 mainstream text-to-video models. Using human evaluation and a context-aware MLLM evaluator system, it reveals significant shortcomings of current video generation models in realistic physics, complex interactions, and anti-physics instruction following.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Benchmark
+  - "ICLR2026"
+  - "Video Generation"
+  - "Text-to-Video Generation"
+  - "Physical Realism"
+  - "Benchmark"
+  - "Multimodal Evaluation"
+  - "Anti-Physics Scenes"
 date: 2026-05-08
-content_hash: c4374c4da83e61cb
+content_hash: e1ee7dd48c9da5c7
 ---
+
 # $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models
 
 **Conference**: ICLR2026  

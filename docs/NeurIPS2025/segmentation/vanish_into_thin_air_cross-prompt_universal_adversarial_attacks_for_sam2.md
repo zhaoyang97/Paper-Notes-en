@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2
 description: >-
-  [NeurIPS 2025][Segmentation][Adversarial Attack] This paper proposes UAP-SAM2—the first cross-prompt universal adversarial attack against SAM2—which employs a dual semantic shift framework (intra-frame semantic confusion…
+  [NeurIPS 2025][Segmentation][Adversarial Attack] This paper proposes UAP-SAM2—the first cross-prompt universal adversarial attack against SAM2—which employs a dual semantic shift framework (intra-frame semantic confusion + inter-frame semantic inconsistency) to generate a single universal perturbation that causes segmentation targets to "vanish" across different videos, frames, and prompts.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Video Segmentation"
   - "Semantic Shift"
 date: 2026-05-08
-content_hash: 7c1066435d745167
+content_hash: 2bdc3bc1b4e46384
 ---
 
 # Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2
@@ -124,10 +124,10 @@ The region count $m=256$ is optimal; using 15 frames approaches the performance 
 
 ## Related Papers
 
+- [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](../../CVPR2026/segmentation/v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
 - [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
 - [\[NeurIPS 2025\] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks](instant_video_models_universal_adapters_for_stabilizing_image-based_networks.md)
-- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](../../AAAI2026/segmentation/rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
-- [\[ICLR 2026\] Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval](../../ICLR2026/segmentation/efficient-sam2_accelerating_sam2_with_object-aware_visual_encoding_and_memory_re.md)
+- [\[CVPR 2026\] Attack for Defense: Adversarial Agents for Point Prompt Optimization Empowering Segment Anything Model](../../CVPR2026/segmentation/attack_for_defense_adversarial_agents_for_point_prompt_optimization_empowering_s.md)
 - [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Ours proposes SymphoMotion, a unified motion control framework that simultaneously and precisely controls camera motion and object 3D trajectories in videos through Camera Trajectory Control (CTC) and Object Dynamic Control (ODC) mechanisms. Furthermore, a large-scale real-world joint-annotated dataset, RealCOD-25K (25
+  [CVPR 2026][Video Generation][Video Diffusion Models] Ours proposes SymphoMotion, a unified motion control framework that simultaneously and precisely controls camera motion and object 3D trajectories in videos through Camera Trajectory Control (CTC) and Object Dynamic Control (ODC) mechanisms. Furthermore, a large-scale real-world joint-annotated dataset, RealCOD-25K (25K samples), is constructed.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Camera Control"
+  - "Object Motion Control"
+  - "3D Perception"
+  - "Motion Decoupling"
 date: 2026-05-08
-content_hash: 129357caf390e823
+content_hash: 63a83ce8e86fe76d
 ---
+
 # SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ A two-stage curriculum is adopted: first, CTC is trained independently to learn 
 
 ## Related Papers
 
-- [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[CVPR 2026\] BulletTime: Decoupled Control of Time and Camera Pose for Video Generation](bullettime_decoupled_control_of_time_and_camera_pose_for_video_generation.md)
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
+- [\[ICLR 2026\] MoCa: Modeling Object Consistency for 3D Camera Control in Video Generation](../../ICLR2026/video_generation/moca_modeling_object_consistency_for_3d_camera_control_in_video_generation.md)
+- [\[CVPR 2026\] BulletTime: Decoupled Control of Time and Camera Pose for Video Generation](bullettime_decoupled_control_of_time_and_camera_pose_for_video_generation.md)
+- [\[CVPR 2026\] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning](facecam_portrait_video_camera_control_via_scale-aware_conditioning.md)
 
 </div>
 

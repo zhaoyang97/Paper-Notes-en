@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift
 description: >-
-  [ICML 2026][learning_theory][Paper Note] ECL demonstrates that full alignment of input distributions $P_s(X) = P_t(X)$ is not a necessary condition for calibration under covariate shift. Instead, it is sufficient that the "conditional expectation of $P(Y_k=1|X)$ on each confidence level set is consistent across domains." Based on this, the authors construct E
+  [ICML2026][AI Safety][expectation consistency] ECL demonstrates that full alignment of input distributions $P_s(X) = P_t(X)$ is not a necessary condition for calibration under covariate shift. Instead, it is sufficient that the "conditional expectation of $P(Y_k=1|X)$ on each confidence level set is consistent across domains." Based on this, the authors construct ECL, a differentiable loss with unbiased mini-batch gradients that is universal for canonical, class-wise…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "AI Safety"
+  - "Confidence Calibration"
+  - "Covariate Shift"
+  - "expectation consistency"
+  - "unsupervised domain adaptation"
+  - "mini-batch trainable"
 date: 2026-05-08
-content_hash: e7fad5afc38495ef
+content_hash: f40f16450eebead6
 ---
+
 # Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift
 
 **Conference**: ICML2026  
@@ -120,15 +126,16 @@ Top-label ECE comparisons were conducted on three real-world covariate shift dat
 - Value: ⭐⭐⭐⭐⭐ Provides a theoretically rigorous and practically deployable general baseline for calibration under covariate shift, highly relevant for safety-sensitive systems in non-IID scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] The Data Manifold under the Microscope](the_data_manifold_under_the_microscope.md)
+- [\[ICLR 2026\] Dimension-Free Decision Calibration for Nonlinear Loss Functions](../../ICLR2026/learning_theory/dimension-free_decision_calibration_for_nonlinear_loss_functions.md)
+- [\[ICLR 2026\] Neyman-Pearson Classification under Both Null and Alternative Distributions Shift](../../ICLR2026/learning_theory/neyman-pearson_classification_under_both_null_and_alternative_distributions_shif.md)
 - [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
-- [\[ICLR 2026\] Designing Rules to Pick a Rule: Aggregation by Consistency](../../ICLR2026/learning_theory/designing_rules_to_pick_a_rule_aggregation_by_consistency.md)
-- [\[ICML 2026\] Provably Data-driven Multiple Hyper-parameter Tuning with Structured Loss Function](provably_data-driven_multiple_hyper-parameter_tuning_with_structured_loss_functi.md)
+- [\[ICML 2026\] The Data Manifold under the Microscope](the_data_manifold_under_the_microscope.md)
+- [\[ICLR 2026\] Covariate-Guided Clusterwise Linear Regression for Generalization to Unseen Data](../../ICLR2026/learning_theory/covariate-guided_clusterwise_linear_regression_for_generalization_to_unseen_data.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens
 description: >-
-  [NeurIPS 2025][Recommender Systems][Collaborative Filtering] FACE proposes mapping collaborative filtering (CF) embeddings into LLM pre-trained tokens (descriptors) via disentangled projection and residual quantization…
+  [NeurIPS 2025][Recommender Systems][Collaborative Filtering] FACE proposes mapping collaborative filtering (CF) embeddings into LLM pre-trained tokens (descriptors) via disentangled projection and residual quantization, followed by contrastive learning for semantic alignment — enabling semantic interpretation and recommendation enhancement of CF embeddings without fine-tuning the LLM.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Explainable Recommendation"
 date: 2026-05-08
-content_hash: 39098d270020f11a
+content_hash: 771bbf6b17099be5
 ---
 
 # FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens
@@ -129,9 +129,9 @@ Maximum gains: Amazon 7.31%, Yelp 11.55%, Steam 8.00%.
 
 - [\[ACL 2026\] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation](../../ACL2026/recommender/clusterrag_cluster-based_collaborative_filtering_for_personalized_retrieval-augm.md)
 - [\[ICML 2026\] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy](../../ICML2026/recommender/rethinking_contrastive_learning_for_graph_collaborative_filtering_limitations_an.md)
+- [\[ACL 2025\] Laser: Bi-Tuning with Collaborative Information for Controllable LLM-Based Sequential Recommendation](../../ACL2025/recommender/bi-tuning_with_collaborative_information_for_controllable_llm-based_sequential_r.md)
+- [\[AAAI 2026\] Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary](../../AAAI2026/recommender/behavior_tokens_speak_louder_disentangled_explainable_recommendation_with_behavi.md)
 - [\[NeurIPS 2025\] Validating LLM-as-a-Judge Systems under Rating Indeterminacy](validating_llm-as-a-judge_systems_under_rating_indeterminacy.md)
-- [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
-- [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
 
 </div>
 

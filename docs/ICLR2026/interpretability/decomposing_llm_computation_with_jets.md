@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decomposing LLM Computation with Jets
 description: >-
-  [ICLR 2026][Interpretability][Logit Lens] This paper proposes **JET EXPANSIONS**—using "jet operators" (functional versions of truncated Taylor expansions) to rewrite the recursive residual computation of Transformers into a set of explicit "input $\to$ output paths" plus a nonlinear remainder. This training-free and data-free approach "slices" entangled LLM c
+  [ICLR 2026][Interpretability][Jet Expansions] This paper proposes **JET EXPANSIONS**—using "jet operators" (functional versions of truncated Taylor expansions) to rewrite the recursive residual computation of Transformers into a set of explicit "input $\to$ output paths" plus a nonlinear remainder. This training-free and data-free approach "slices" entangled LLM computations for modular inspection, proves to unify and generalize the Logit Lens…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Logit Lens
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Jet Expansions"
+  - "Residual Networks"
+  - "Function Decomposition"
+  - "Logit Lens"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: efb3a7406613a5d6
+content_hash: e8564535ccb2f30a
 ---
+
 # Decomposing LLM Computation with Jets
 
 **Conference**: ICLR 2026  

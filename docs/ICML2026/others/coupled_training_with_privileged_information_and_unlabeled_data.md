@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Coupled Training with Privileged Information and Unlabeled Data
 description: >-
-  [ICML 2026][Others][privileged information] Addressing the "available during training, unavailable at deployment" privileged features $W$, the authors propose a framework for **joint training of a deployment model $f$ and a rich-view model $g$**. By explicitly constraining the fitting error of $g$ on labeled data to adaptively control the influence intensity of
+  [ICML2026][privileged information] Addressing the "available during training, unavailable at deployment" privileged features $W$, the authors propose a framework for **joint training of a deployment model $f$ and a rich-view model $g$**. By explicitly constraining the fitting error of $g$ on labeled data to adaptively control the influence intensity of privileged information, this approach avoids the negative transfer phenomenon of traditional two-stage pseudo-labeling method…
 tags:
-  - ICML 2026
-  - Others
-  - privileged information
-  - semi-supervised learning
-  - negative transfer
-  - coupled training
-  - greedy selection
+  - "ICML2026"
+  - "privileged information"
+  - "semi-supervised learning"
+  - "negative transfer"
+  - "coupled training"
+  - "greedy selection"
 date: 2026-05-08
-content_hash: 11b107bf3bc13141
+content_hash: 3dd59be283b777b1
 ---
+
 # Coupled Training with Privileged Information and Unlabeled Data
 
 **Conference**: ICML2026  
@@ -147,8 +147,8 @@ A key observation is that Coupled does not perform worse than the better of the 
 - [\[ICML 2026\] Polaris: Coupled Orbital Polar Embeddings for Hierarchical Concept Learning](polaris_coupled_orbital_polar_embeddings_for_hierarchical_concept_learning.md)
 - [\[ICML 2026\] ParalESN: Enabling Parallel Information Processing in Reservoir Computing](paralesn_enabling_parallel_information_processing_in_reservoir_computing.md)
 - [\[ICML 2026\] Less Data, Faster Training: Repeating Smaller Datasets Speeds Up Learning via Sampling Biases](less_data_faster_training_repeating_smaller_datasets_speeds_up_learning_via_samp.md)
+- [\[ICLR 2026\] Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models](../../ICLR2026/others/using_maximal_information_auxiliary_variables_to_improve_synthetic_data_generati.md)
 - [\[ICML 2026\] Networked Information Aggregation for Binary Classification](networked_information_aggregation_for_binary_classification.md)
-- [\[AAAI 2026\] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server](../../AAAI2026/others/bipartite_mode_matching_for_vision_training_set_search_from_a_hierarchical_data_.md)
 
 </div>
 

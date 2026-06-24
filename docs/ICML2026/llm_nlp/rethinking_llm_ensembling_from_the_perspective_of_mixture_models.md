@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking LLM Ensembling from the Perspective of Mixture Models
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This paper proves that token-level ensembling of $n$ LLMs does not require running all models at every step. By randomly selecting one model per step based on weights to sample the next token, the output distribution is strictly equivalent to the "average then sample" approach. This reduces the $n$-fold forward passes
+  [ICML 2026 Spotlight][LLM (Other)][LLM Ensemble] This paper proves that token-level ensembling of $n$ LLMs does not require running all models at every step. By randomly selecting one model per step based on weights to sample the next token, the output distribution is strictly equivalent to the "average then sample" approach. This reduces the $n$-fold forward passes back to a $1\times$ forward pass, achieving actual speedups of 1.78×–2.68× when combined with "Lazy Synchronous…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026 Spotlight"
+  - "LLM (Other)"
+  - "LLM Ensemble"
+  - "Mixture Model"
+  - "Sampling Equivalence"
+  - "KV Cache"
+  - "Token-level Routing"
 date: 2026-05-08
-content_hash: da3204d73165f8a2
+content_hash: 8b29fad797f8afd1
 ---
+
 # Rethinking LLM Ensembling from the Perspective of Mixture Models
 
 **Conference**: ICML 2026 Spotlight  
@@ -125,8 +131,8 @@ ME requires no additional training and serves as a plug-and-play inference algor
 - [\[ICLR 2026\] Best-of-∞: Asymptotic Performance of Test-Time LLM Ensembling](../../ICLR2026/llm_nlp/best-of-infinity_asymptotic_performance_of_test-time_llm_ensembling.md)
 - [\[ACL 2025\] Mixture of Small and Large Models for Chinese Spelling Check](../../ACL2025/llm_nlp/mixture_of_small_and_large_models_for_chinese_spelling_check.md)
 - [\[ACL 2025\] SR-LLM: Rethinking the Structured Representation in Large Language Model](../../ACL2025/llm_nlp/sr-llm_rethinking_the_structured_representation_in_large_language_model.md)
+- [\[ACL 2026\] Rethinking the Idiomaticity Decomposability Hypothesis: Evidence from Distributional Learning](../../ACL2026/llm_nlp/rethinking_the_idiomaticity_decomposability_hypothesis_evidence_from_distributio.md)
 - [\[ICLR 2026\] Rethinking Code Similarity for Automated Algorithm Design with LLMs](../../ICLR2026/llm_nlp/rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)
-- [\[NeurIPS 2025\] Are Language Models Efficient Reasoners? A Perspective from Logic Programming](../../NeurIPS2025/llm_nlp/are_language_models_efficient_reasoners_a_perspective_from_logic_programming.md)
 
 </div>
 

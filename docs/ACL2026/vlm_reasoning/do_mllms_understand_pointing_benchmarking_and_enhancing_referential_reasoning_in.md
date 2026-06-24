@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision
 description: >-
-  [ACL 2026][vlm_reasoning][Egocentric Pointing] The authors construct EgoPoint-Bench, the first hybrid real+physical simulation benchmark for egocentric "finger pointing" QA (11.7k QA / 5 dimensions / 3 semantic referential levels). They confirm that current SOTA MLLMs generally rely on "visual proximity / saliency" pseudo-correlations rather than truly parsing the
+  [ACL 2026][VLM Reasoning][Egocentric Pointing] The authors construct EgoPoint-Bench, the first hybrid real+physical simulation benchmark for egocentric "finger pointing" QA (11.7k QA / 5 dimensions / 3 semantic referential levels). They confirm that current SOTA MLLMs generally rely on "visual proximity / saliency" pseudo-correlations rather than truly parsing the fingertip ray. Through LoRA fine-tuning on simulated data, they achieve an average improvement of up to +25 point…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Egocentric Pointing
-  - Referential Hallucination
-  - Sim-to-Real
-  - MLLM Benchmark
-  - LoRA Fine-tuning
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Egocentric Pointing"
+  - "Referential Hallucination"
+  - "Sim-to-Real"
+  - "MLLM Benchmark"
+  - "LoRA Fine-tuning"
 date: 2026-05-08
-content_hash: 390209b37f0f32cb
+content_hash: ce2f4048de58d27f
 ---
+
 # Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision
 
 **Conference**: ACL 2026  
@@ -147,6 +148,7 @@ Horizontal comparisons using different architectures and data scales.
 - Value: ⭐⭐⭐⭐⭐ Directly addresses a core interaction bottleneck for AR assistants and demonstrates a deployable paradigm for specialized model capability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -154,8 +156,8 @@ Horizontal comparisons using different architectures and data scales.
 - [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](../../NeurIPS2025/vlm_reasoning/mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
 - [\[CVPR 2026\] EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy](../../CVPR2026/vlm_reasoning/egoprox_evaluating_mllms_on_egocentric_3d_proximity_reasoning_across_a_cognitive.md)
-- [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
-- [\[ACL 2026\] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](mmerror_a_benchmark_for_erroneous_reasoning_in_vision-language_models.md)
+- [\[ACL 2026\] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models](capruner_conceptual-adjacent_scene_graph_pruner_for_enhancing_3d_spatial_reasoni.md)
+- [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](../../CVPR2026/vlm_reasoning/tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
 
 </div>
 

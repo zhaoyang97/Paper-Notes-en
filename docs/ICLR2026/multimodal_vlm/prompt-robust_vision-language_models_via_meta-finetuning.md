@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prompt-Robust Vision-Language Models via Meta-Finetuning
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the fragility where CLIP-like vision-language models exhibit significant performance fluctuations with different prompt wordings, this paper proposes Promise. It treats various semantically equivalent prompt templates as "tasks" within a meta-learning framework. By employing an inner-outer bi-level loop, ada
+  [ICLR 2026][Multimodal VLM][Prompt robustness] Addressing the fragility where CLIP-like vision-language models exhibit significant performance fluctuations with different prompt wordings, this paper proposes Promise. It treats various semantically equivalent prompt templates as "tasks" within a meta-learning framework. By employing an inner-outer bi-level loop, adaptive prompt weighting, and token-level learning rates, the model learns a set of prompt tokens insensitive to wo…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Prompt robustness"
+  - "Meta-learning"
+  - "Bi-level loop"
+  - "Prompt weighting"
+  - "Token-level learning rate"
 date: 2026-05-08
-content_hash: 2e60ccdd2dedf950
+content_hash: 5e12892aa1a0653b
 ---
+
 # Prompt-Robust Vision-Language Models via Meta-Finetuning
 
 **Conference**: ICLR 2026  
@@ -142,10 +148,10 @@ Token-level LR (Table 3) outperforms fixed LRs and task-level LRs (MetaSGD) on b
 ## Related Papers
 
 - [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
+- [\[CVPR 2026\] The Geometry of Robustness: Optimizing Loss Landscape Curvature and Feature Manifold Alignment for Robust Finetuning of Vision-Language Models](../../CVPR2026/multimodal_vlm/the_geometry_of_robustness_optimizing_loss_landscape_curvature_and_feature_manif.md)
 - [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
-- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](../../CVPR2026/multimodal_vlm/towards_calibrating_prompt_tuning_of_vision-language_models.md)
 - [\[ICLR 2026\] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)
-- [\[AAAI 2026\] Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models](../../AAAI2026/multimodal_vlm/difference_vector_equalization_for_robust_fine-tuning_of_vis.md)
+- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](../../CVPR2026/multimodal_vlm/towards_calibrating_prompt_tuning_of_vision-language_models.md)
 
 </div>
 

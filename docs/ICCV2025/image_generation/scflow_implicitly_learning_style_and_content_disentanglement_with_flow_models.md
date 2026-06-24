@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models
 description: >-
-  [Image Generation] SCFlow is proposed to learn an invertible merging mapping between style and content via Flow Matching…
+  [Image Generation] SCFlow is proposed to learn an invertible merging mapping between style and content via Flow Matching, leveraging the invertibility of the mapping to allow disentanglement to emerge naturally as an implicit property of the merging process, without requiring explicit disentanglement supervision.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: fa058fd95a5aac76
+content_hash: e43968b491814d70
 ---
 
 # SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models
@@ -139,7 +139,7 @@ Content classification performance is close to CLIP (−0.85%), while style retr
 - [\[ICCV 2025\] Learning to See in the Extremely Dark](learning_to_see_in_the_extremely_dark.md)
 - [\[ICCV 2025\] REGEN: Learning Compact Video Embedding with (Re-)Generative Decoder](regen_learning_compact_video_embedding_with_re-generative_decoder.md)
 - [\[ICCV 2025\] MAVFlow: Preserving Paralinguistic Elements with Conditional Flow Matching for Zero-Shot AV2AV Multilingual Translation](mavflow_preserving_paralinguistic_elements_with_conditional_flow_matching_for_ze.md)
-- [\[ICLR 2026\] Intention-Conditioned Flow Occupancy Models](../../ICLR2026/image_generation/intention-conditioned_flow_occupancy_models.md)
+- [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
 
 </div>
 

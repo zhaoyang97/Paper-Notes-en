@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection
 description: >-
-  [CVPR 2026][Anomaly Detection][Paper Note] LayoutAD proposes a new task "Scene Layout Anomaly Detection," which uses an unsupervised approach to generate object-level anomaly scores for each object in an image. By decomposing the scene into semantic and geometric graphs and reasoning the "misalignment" between them via cross-graph attention, it identifies layou
+  [CVPR 2026][Anomaly Detection][Scene layout anomaly] LayoutAD proposes a new task "Scene Layout Anomaly Detection," which uses an unsupervised approach to generate object-level anomaly scores for each object in an image. By decomposing the scene into semantic and geometric graphs and reasoning the "misalignment" between them via cross-graph attention, it identifies layout-level hallucinations—such as "a five-legged dog" or "a car parked on a lake"—that are invisible to pixel-…
 tags:
-  - CVPR 2026
-  - Anomaly Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Scene layout anomaly"
+  - "semantic-geometric misalignment"
+  - "graph reasoning"
+  - "unsupervised anomaly detection"
+  - "object-level reasoning"
 date: 2026-05-08
-content_hash: 501efa97158de77b
+content_hash: 79ad0c9c72e38157
 ---
+
 # LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -138,7 +144,11 @@ LayoutAD leads across all three metrics: the localization metric P-AUROC is appr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
+- [\[ICLR 2026\] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection](../../ICLR2026/anomaly_detection/retabad_a_benchmark_for_restoring_semantic_context_in_tabular_anomaly_detection.md)
+- [\[ICLR 2026\] Let OOD Feature Exploring Vast Predefined Classifiers](../../ICLR2026/anomaly_detection/let_ood_feature_exploring_vast_predefined_classifiers.md)
+- [\[CVPR 2026\] RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)
+- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
+- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
 
 </div>
 

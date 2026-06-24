@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting
 description: >-
-  [ACL 2026][Time Series][Paper Note] The FinLangNet framework is proposed, utilizing a dual-module architecture (DeepFM for static features and a Transformer with a dual-granularity prompting mechanism for temporal behavior) to achieve multi-scale credit risk prediction. Its deployment on the Didi Finance platform resulted in a 6.3pp increase in KS and a
+  [ACL 2026 Oral][Time Series][Credit Risk Prediction] The FinLangNet framework is proposed, utilizing a dual-module architecture (DeepFM for static features and a Transformer with a dual-granularity prompting mechanism for temporal behavior) to achieve multi-scale credit risk prediction. Its deployment on the Didi Finance platform resulted in a 6.3pp increase in KS and a 9.9% reduction in the bad debt rate.
 tags:
-  - ACL 2026
-  - Time Series
+  - "ACL 2026 Oral"
+  - "Time Series"
+  - "Credit Risk Prediction"
+  - "Heterogeneous Financial Data"
+  - "Dual-Granularity Prompting"
+  - "Multi-scale Prediction"
+  - "Industrial Deployment"
 date: 2026-05-08
-content_hash: 4c3d925d84f711ad
+content_hash: 90a74f650d5bd319
 ---
+
 # A Unified Framework for Modeling Heterogeneous Financial Data via Dual-Granularity Prompting
 
 **Conference**: ACL 2026 Oral  
@@ -131,10 +137,10 @@ The total objective function is $\mathcal{L}_{total} = \frac{1}{n} \sum_{i=1}^{n
 ## Related Papers
 
 - [\[ICLR 2026\] A Unified Federated Framework for Trajectory Data Preparation via LLMs](../../ICLR2026/time_series/a_unified_federated_framework_for_trajectory_data_preparation_via_llms.md)
+- [\[ICLR 2026\] SuperMAN: Interpretable and Expressive Networks over Temporally Sparse Heterogeneous Data](../../ICLR2026/time_series/superman_interpretable_and_expressive_networks_over_temporally_sparse_heterogene.md)
+- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](../../ICLR2026/time_series/pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](../../ICLR2026/time_series/delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
 - [\[ICLR 2026\] EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements](../../ICLR2026/time_series/edinet-bench_evaluating_llms_on_complex_financial_tasks_using_japanese_financial.md)
-- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
 
 </div>
 

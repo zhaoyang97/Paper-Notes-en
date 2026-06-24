@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometric-Mean Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This work replaces the "arithmetic mean" used in GRPO for optimizing token-level rewards with a "geometric mean." By leveraging the inherent robustness of the geometric mean to outliers, the method suppresses extreme importance sampling ratios, thereby stabilizing policy updates without sacrificing exploration capabili
+  [ICLR 2026][Reinforcement Learning][GRPO] This work replaces the "arithmetic mean" used in GRPO for optimizing token-level rewards with a "geometric mean." By leveraging the inherent robustness of the geometric mean to outliers, the method suppresses extreme importance sampling ratios, thereby stabilizing policy updates without sacrificing exploration capability. Mathematically, it achieves a Pass@1 improvement of up to 4.1% over GRPO in reasoning tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Policy Optimization"
+  - "Geometric Mean"
+  - "Importance Sampling"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: b9693e783be5b1f5
+content_hash: 1b5eca7108ab336e
 ---
+
 # Geometric-Mean Policy Optimization
 
 **Conference**: ICLR 2026  

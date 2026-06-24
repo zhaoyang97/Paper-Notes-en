@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automated Creativity Evaluation of Language Models Across Open-Ended Tasks
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes an **automated, task-decoupled, and reference-free** framework to quantify LLM creativity. "Semantic Entropy" is employed to measure divergent creativity (novelty and diversity of ideas), while "Retrieval-based Multi-agent Judging" measures convergent creativity (whether the solution effectively add
+  [ACL 2024][LLM Evaluation][Creativity Evaluation] This paper proposes an **automated, task-decoupled, and reference-free** framework to quantify LLM creativity. "Semantic Entropy" is employed to measure divergent creativity (novelty and diversity of ideas), while "Retrieval-based Multi-agent Judging" measures convergent creativity (whether the solution effectively addresses the problem). The study systematically uncovers the impact of model scale, temperature…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2024"
+  - "LLM Evaluation"
+  - "Creativity Evaluation"
+  - "Semantic Entropy"
+  - "Multi-agent Judging"
+  - "Divergent Thinking"
+  - "Convergent Thinking"
 date: 2026-05-08
-content_hash: 38e7776a73e6cd46
+content_hash: 77c1ed9423b230d8
 ---
+
 # Automated Creativity Evaluation of Language Models Across Open-Ended Tasks
 
 **Conference**: ACL 2024  
@@ -155,10 +161,10 @@ Using GPT-4o, the framework reaches human-level accuracy and significantly excee
 ## Related Papers
 
 - [\[ICLR 2026\] AutoLibra: Agent Metric Induction from Open-Ended Human Feedback](../../ICLR2026/llm_evaluation/autolibra_agent_metric_induction_from_open-ended_human_feedback.md)
+- [\[ICLR 2026\] An Open-Ended Benchmark and Formal Framework for Adjuvant Research with MLLM](../../ICLR2026/llm_evaluation/an_open-ended_benchmark_and_formal_framework_for_adjuvant_research_with_mllm.md)
+- [\[ICLR 2026\] MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline](../../ICLR2026/llm_evaluation/mle-smith_scaling_mle_tasks_with_automated_multi-agent_pipeline.md)
 - [\[ACL 2026\] Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks](enhancing_linguistic_competence_of_language_models_through_pre-training_with_lan.md)
 - [\[ACL 2025\] ONEBench to Test Them All: Sample-Level Benchmarking Over Open-Ended Capabilities](../../ACL2025/llm_evaluation/onebench_to_test_them_all_sample-level_benchmarking_over_open-ended_capabilities.md)
-- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
-- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 
 </div>
 

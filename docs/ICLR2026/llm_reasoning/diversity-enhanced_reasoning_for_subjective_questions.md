@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diversity-Enhanced Reasoning for Subjective Questions
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper proposes MultiRole-R1, which integrates multiple stakeholder perspectives into a single long Chain-of-Thought (CoT) through "Role Perspective Diversity + Token-level Diversity." This is achieved via unsupervised SFT of synthesized reasoning chains followed by GRPO reinforcement learning with diversity reward
+  [ICLR 2026][Reasoning][Subjective Reasoning] This paper proposes MultiRole-R1, which integrates multiple stakeholder perspectives into a single long Chain-of-Thought (CoT) through "Role Perspective Diversity + Token-level Diversity." This is achieved via unsupervised SFT of synthesized reasoning chains followed by GRPO reinforcement learning with diversity reward shaping. The method improves both accuracy (by 10.6% on average) and diversity on subjective questions without uni…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Subjective Reasoning"
+  - "Diversity Enhancement"
+  - "Role Perspective"
+  - "GRPO"
+  - "Reward Shaping"
 date: 2026-05-08
-content_hash: bbacacf829c61c28
+content_hash: 9765ffc8f247541a
 ---
+
 # Diversity-Enhanced Reasoning for Subjective Questions
 
 **Conference**: ICLR 2026  

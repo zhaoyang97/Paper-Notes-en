@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback
 description: >-
-  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Synaptic plasticity] This paper proposes a meta-learning framework that automatically discovers local neo-Hebbian synaptic plasticity rules via o…
+  [NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)][Synaptic plasticity] This paper proposes a meta-learning framework that automatically discovers local neo-Hebbian synaptic plasticity rules via outer-loop gradient optimization, enabling recurrent neural networks to perform structured credit assignment using only sparse, delayed reward signals, thereby providing new insights into the learning mechanisms of biological neural networks.
 tags:
   - "NeurIPS 2025 (Workshop: Symmetry and Geometry in Neural Representations)"
   - "Synaptic plasticity"
@@ -11,7 +11,7 @@ tags:
   - "recurrent neural networks"
   - "credit assignment"
 date: 2026-05-08
-content_hash: 384faedf2880776e
+content_hash: 53bcb1ecb0dae7d1
 ---
 
 # Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback
@@ -129,10 +129,10 @@ The framework adopts a two-level nested training structure:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Plasticity as the Mirror of Empowerment](plasticity_as_the_mirror_of_empowerment.md)
+- [\[ACL 2025\] Detecting Sockpuppetry on Wikipedia Using Meta-Learning](../../ACL2025/others/detecting_sockpuppetry_on_wikipedia_using_meta-learning.md)
+- [\[ACL 2025\] Meta-Learning Neural Mechanisms rather than Bayesian Priors](../../ACL2025/others/meta-learning_neural_mechanisms_rather_than_bayesian_priors.md)
+- [\[ACL 2025\] Learning to Reason from Feedback at Test-Time](../../ACL2025/others/learning_to_reason_from_feedback_at_test-time.md)
 - [\[ICCV 2025\] Is Meta-Learning Out? Rethinking Unsupervised Few-Shot Classification with Limited Entropy](../../ICCV2025/others/is_meta-learning_out_rethinking_unsupervised_few-shot_classification_with_limite.md)
-- [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](../../AAAI2026/others/from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
-- [\[AAAI 2026\] Lost in Time? A Meta-Learning Framework for Time-Shift-Tolerant Physiological Signal Transformation](../../AAAI2026/others/lost_in_time_a_meta-learning_framework_for_time-shift-tolerant_physiological_sig.md)
-- [\[NeurIPS 2025\] Sign-In to the Lottery: Reparameterized Sparse Training from Scratch](sign-in_to_the_lottery_reparameterizing_sparse_training_from_scratch.md)
 
 </div>
 

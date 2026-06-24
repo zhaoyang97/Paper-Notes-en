@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Addressing the reward hacking issue in real-time melody-chord accompaniment—where RL post-training "collapses into repetitive chords to exploit consistency rewards"—this paper proposes **GAPT**. It utilizes a discriminator that co-evolves with the policy to provide an adversarial reward representing "authenticity relat
+  [ICLR 2026][AI Safety][Reward Hacking] Addressing the reward hacking issue in real-time melody-chord accompaniment—where RL post-training "collapses into repetitive chords to exploit consistency rewards"—this paper proposes **GAPT**. It utilizes a discriminator that co-evolves with the policy to provide an adversarial reward representing "authenticity relative to real data." Combined with a two-stage adaptive update schedule, it restores output diversity to near-dataset level…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Reward Hacking"
+  - "RL Post-Training"
+  - "Generative Adversarial"
+  - "Discriminator"
+  - "Real-time Music Accompaniment"
+  - "Diversity Collapse"
 date: 2026-05-08
-content_hash: 46af471e25887e22
+content_hash: 091d5c771f20895f
 ---
+
 # Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction
 
 **Conference**: ICLR 2026  
@@ -126,11 +133,11 @@ Baseline systems: **Online MLE** (Supervised only), **ReaLchords** (Consistency 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Optimization for Mitigating Reward Hacking with Correlated Proxies](robust_optimization_for_mitigating_reward_hacking_with_correlated_proxies.md)
 - [\[ICLR 2026\] From Curiosity to Caution: Mitigating Reward Hacking for Best-of-$N$ with Pessimism](from_curiosity_to_caution_mitigating_reward_hacking_for_best-of-n_with_pessimism.md)
 - [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[ICLR 2026\] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm](pluriharms_benchmarking_the_full_spectrum_of_human_judgments_on_ai_harm.md)
 - [\[ICLR 2026\] Fair Decision Utility in Human-AI Collaboration: Interpretable Confidence Adjustment for Humans with Cognitive Disparities](fair_decision_utility_in_human-ai_collaboration_interpretable_confidence_adjustm.md)
-- [\[ICML 2026\] Generative Models Erode Human Temporal Learning Through Market Selection](../../ICML2026/ai_safety/generative_models_erode_human_temporal_learning_through_market_selection.md)
 
 </div>
 

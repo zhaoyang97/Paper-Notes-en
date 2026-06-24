@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks
 description: >-
-  [AAAI 2026][Spiking Neural Networks] I2E proposes an ultra-efficient image-to-event stream conversion framework that simulates microsaccadic eye movements and implements the conversion via highly parallelized convolution…
+  [AAAI 2026][Spiking Neural Networks] I2E proposes an ultra-efficient image-to-event stream conversion framework that simulates microsaccadic eye movements and implements the conversion via highly parallelized convolutions, achieving over 300× speedup compared to prior methods. It enables online data augmentation during SNN training for the first time, achieves a state-of-the-art 60.50% event-based classification accuracy on I2E-ImageNet, and sets a new record of 92.5% on CIFA…
 tags:
   - "AAAI 2026"
   - "Spiking Neural Networks"
@@ -11,7 +11,7 @@ tags:
   - "Data Augmentation"
   - "Sim-to-Real"
 date: 2026-05-08
-content_hash: 13eaee403367f1ff
+content_hash: b69ae6cb33dc36fe
 ---
 
 # I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks
@@ -159,11 +159,11 @@ On the real DVS dataset CIFAR10-DVS, pretraining on I2E synthetic data followed 
 
 ## Related Papers
 
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
 - [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
+- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
 - [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 - [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
-- [\[AAAI 2026\] Semi-Supervised High Dynamic Range Image Reconstructing via Bi-Level Uncertain Area Masking](semi-supervised_high_dynamic_range_image_reconstructing_via_bi-level_uncertain_a.md)
 
 </div>
 

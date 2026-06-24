@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sequential Parallel Duality in Prefix Scannable Models
 description: >-
-  [ICLR 2026][LLM Efficiency][State Space Model] This paper utilizes parallel prefix scans to provide a unified characterization of efficient sequence models that are "parallelizable during training and streamable during inference." It extends this class of models to Prefix-Scannable Models (PSMs) by allowing non-associative aggregation operators, enabling Transforme
+  [ICLR2026][LLM Efficiency][Prefix Scan] This paper utilizes parallel prefix scans to provide a unified characterization of efficient sequence models that are "parallelizable during training and streamable during inference." It extends this class of models to Prefix-Scannable Models (PSMs) by allowing non-associative aggregation operators, enabling Transformer-style softmax aggregation to achieve approximately linear training and $O(\log n)$ memory streaming inference under fi…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - State Space Model
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Prefix Scan"
+  - "Efficient Inference"
+  - "State Space Models"
+  - "Linear Attention"
+  - "Sequence Model Theory"
 date: 2026-05-08
-content_hash: 66e884a446e78119
+content_hash: 3e2a098e1df97d08
 ---
+
 # Sequential Parallel Duality in Prefix Scannable Models
 
 **Conference**: ICLR2026  

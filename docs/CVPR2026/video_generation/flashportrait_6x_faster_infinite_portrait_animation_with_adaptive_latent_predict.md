@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] FlashPortrait utilizes a training-free inference mechanism consisting of "Weighted Sliding Window + Adaptive Latent Extrapolation." This significantly compresses denoising steps for long portrait animations, achieving up to 6× inference acceleration while generating videos exceeding 1800 frames without identity (ID) dr
+  [CVPR 2026][Video Generation][Portrait Animation] FlashPortrait utilizes a training-free inference mechanism consisting of "Weighted Sliding Window + Adaptive Latent Extrapolation." This significantly compresses denoising steps for long portrait animations, achieving up to 6× inference acceleration while generating videos exceeding 1800 frames without identity (ID) drift.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Portrait Animation"
+  - "Infinite Video"
+  - "Diffusion Acceleration"
+  - "Adaptive Latent Prediction"
+  - "Identity Preservation"
 date: 2026-05-08
-content_hash: a27224c8c8847cb8
+content_hash: 49b3080cfce917c4
 ---
+
 # FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction
 
 **Conference**: CVPR 2026  

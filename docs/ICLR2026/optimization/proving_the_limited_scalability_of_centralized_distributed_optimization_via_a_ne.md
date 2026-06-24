@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proves that in classical federated learning (centralized distributed optimization), once the "server $\to$ worker" communication cost $\tau_s$ is factored in, even unbiased sparsification compressors cannot simultaneously improve the "communication term $\tau_s d L\Delta/\varepsilon$" and the "variance term
+  [ICLR 2026][Optimization][Federated Learning] This paper proves that in classical federated learning (centralized distributed optimization), once the "server $\to$ worker" communication cost $\tau_s$ is factored in, even unbiased sparsification compressors cannot simultaneously improve the "communication term $\tau_s d L\Delta/\varepsilon$" and the "variance term $h\sigma^2 L\Delta/\varepsilon^2$" with the number of workers $n$. Even in the homogeneous (i.i.d.) setting where…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Communication Compression"
+  - "Non-convex Optimization Lower Bounds"
+  - "Worst-case Construction"
+  - "Scalability"
 date: 2026-05-08
-content_hash: 4811df8be176600f
+content_hash: 68c2426046c6916e
 ---
+
 # Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction
 
 **Conference**: ICLR 2026  

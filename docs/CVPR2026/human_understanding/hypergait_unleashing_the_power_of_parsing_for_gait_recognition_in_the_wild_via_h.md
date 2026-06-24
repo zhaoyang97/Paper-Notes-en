@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] HyperGait utilizes **hypergraph convolution** to extract "high-order nonlinear correlations" among body parts and across temporal frame segments within gait parsing sequences (GPS). Using only the single parsing modality as input, it achieves a 80.5% Rank-1 accuracy on the real-world Gait3D dataset, surpassing the prev
+  [CVPR 2026][Human Understanding][Gait Recognition] HyperGait utilizes **hypergraph convolution** to extract "high-order nonlinear correlations" among body parts and across temporal frame segments within gait parsing sequences (GPS). Using only the single parsing modality as input, it achieves a 80.5% Rank-1 accuracy on the real-world Gait3D dataset, surpassing the previous parsing-based SOTA (MultiGaitP) by 4.1 percentage points.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Gait Recognition"
+  - "Human Parsing"
+  - "Hypergraph Convolution"
+  - "High-order Correlation"
+  - "Unimodal"
 date: 2026-05-08
-content_hash: ec3481e942e886ae
+content_hash: ced5955414277857
 ---
+
 # HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph
 
 **Conference**: CVPR 2026  
@@ -130,7 +136,7 @@ A component-wise validation on Gait3D shows that SHCM and THCM improve the basel
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](eventgait_towards_robust_gait_recognition_with_event_streams.md)
 - [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
 - [\[CVPR 2026\] Unlocking Motion from Large Vision Models with a Semantic and Kinematic Duality for Gait Recognition](unlocking_motion_from_large_vision_models_with_a_semantic_and_kinematic_duality_.md)
-- [\[CVPR 2026\] BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition](barbiegait_an_identity-consistent_synthetic_human_dataset_with_versatile_cloth-c.md)
+- [\[CVPR 2026\] MS^2Gait: A Multi-Scale Spatio-Temporal Fusion Network for LiDAR-based Gait Recognition](ms2gait_a_multi-scale_spatio-temporal_fusion_network_for_lidar-based_gait_recogn.md)
 
 </div>
 

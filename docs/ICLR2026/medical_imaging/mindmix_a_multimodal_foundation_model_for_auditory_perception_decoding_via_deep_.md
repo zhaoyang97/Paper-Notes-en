@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] MindMix utilizes a two-stage strategy: first, a high-capacity EEG encoder is pre-trained on 3500+ hours of unlabeled EEG; second, a multimodal foundation model for auditory perception decoding is constructed by performing contrastive learning on 100+ hours of EEG-audio paired data via the CALRA cross-modal alignment mo
+  [ICLR 2026][Medical Imaging][EEG Decoding] MindMix utilizes a two-stage strategy: first, a high-capacity EEG encoder is pre-trained on 3500+ hours of unlabeled EEG; second, a multimodal foundation model for auditory perception decoding is constructed by performing contrastive learning on 100+ hours of EEG-audio paired data via the CALRA cross-modal alignment module. It significantly outperforms existing single-modal EEG foundation models and task-specific SOTAs across three c…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "EEG Decoding"
+  - "Auditory Perception"
+  - "Neural-Acoustic Alignment"
+  - "Foundation Model"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: f2649e46256c3fac
+content_hash: 549c675a3be506ec
 ---
+
 # MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment
 
 **Conference**: ICLR 2026  
@@ -164,7 +170,7 @@ Systematic ablation on HR-EEG4EMO (Emotion) and KUL (AAD).
 - [\[ICLR 2026\] Neuro-Symbolic Decoding of Neural Activity](neuro-symbolic_decoding_of_neural_activity.md)
 - [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](../../CVPR2026/medical_imaging/lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
 - [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](../../NeurIPS2025/medical_imaging/neuript_foundation_model_for_neural_interfaces.md)
-- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[ICLR 2026\] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation](bridging_radiology_and_pathology_foundation_models_via_concept-based_multimodal_.md)
 
 </div>

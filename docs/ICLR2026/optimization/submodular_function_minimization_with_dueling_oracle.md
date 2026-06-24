@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Submodular Function Minimization with Dueling Oracle
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper investigates submodular function minimization (SFM) in a setting where only noisy pairwise comparison feedback ("which of the two sets has a larger function value") is available (dueling oracle), without any access to direct function values. The authors construct subgradient estimators using the Lovász exten
+  [ICLR 2026][Optimization][Submodular function minimization] This paper investigates submodular function minimization (SFM) in a setting where only noisy pairwise comparison feedback ("which of the two sets has a larger function value") is available (dueling oracle), without any access to direct function values. The authors construct subgradient estimators using the Lovász extension and SGD. For linear transfer functions, they provide an $O(n^{3/2}/\sqrt{T})$ error bound with…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Submodular function minimization"
+  - "dueling oracle"
+  - "Lovász extension"
+  - "stochastic gradient descent"
+  - "upper and lower bounds"
 date: 2026-05-08
-content_hash: 7e06db791dca3cc6
+content_hash: 85eb4b2f0a3a27d5
 ---
+
 # Submodular Function Minimization with Dueling Oracle
 
 **Conference**: ICLR 2026  
@@ -107,8 +113,21 @@ There is no traditional training loss; the objective is the convex minimization 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Activation Function Design Sustains Plasticity in Continual Learning](activation_function_design_sustains_plasticity_in_continual_learning.md)
+- [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
+- [\[ICLR 2026\] Leveraging Discrete Function Decomposability for Scientific Design](leveraging_discrete_function_decomposability_for_scientific_design.md)
+- [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] Hyperbolic Aware Minimization: Implicit Bias for Sparsity](hyperbolic_aware_minimization_implicit_bias_for_sparsity.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

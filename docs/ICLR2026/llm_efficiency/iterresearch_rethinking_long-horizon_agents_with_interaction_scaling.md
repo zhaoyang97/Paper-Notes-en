@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling
 description: >-
-  [ICLR 2026][LLM Efficiency][Reinforcement Learning] IterResearch proposes an MDP-based iterative deep research paradigm. By replacing linear context accumulation with periodic workspace reconstruction, the agent scales to 2048 interactions within a 40K context limit (improving performance from 3.5% to 42.5%), outperforming open-source agents by 14.5 percentage points on
+  [ICLR 2026][LLM Efficiency][Deep Research Agents] IterResearch proposes an MDP-based iterative deep research paradigm. By replacing linear context accumulation with periodic workspace reconstruction, the agent scales to 2048 interactions within a 40K context limit (improving performance from 3.5% to 42.5%), outperforming open-source agents by 14.5 percentage points on average across six benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Deep Research Agents"
+  - "Iterative Workspace"
+  - "MDP Framework"
+  - "Interaction Scaling"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 681fdc6a5c9d5a7f
+content_hash: 4c42597988c6591e
 ---
+
 # IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling
 
 **Conference**: ICLR 2026  
@@ -126,8 +131,8 @@ The model is trained in two steps. Stage 1: Rejection Sampling Fine-Tuning (RFT)
 - [\[ICLR 2026\] Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents](demystifying_and_enhancing_the_efficiency_of_large_language_model_based_search_a.md)
 - [\[ICLR 2026\] Scaling Attention via Feature Sparsity](scaling_attention_via_feature_sparsity.md)
 - [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
-- [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](stem_scaling_transformers_with_embedding_modules.md)
 - [\[ICML 2026\] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](../../ICML2026/llm_efficiency/star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)
+- [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](stem_scaling_transformers_with_embedding_modules.md)
 
 </div>
 

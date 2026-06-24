@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration
 description: >-
-  [CVPR 2026][Image Generation][training-free] The authors propose Spectrum, a global spectral-domain feature forecasting method based on Chebyshev polynomials. By treating the intermediate features of the diffusion model denoiser as functions of time and fitting coefficients via ridge regression, it achieves long-range feature forecasting where errors do not accum
+  [CVPR 2026][Image Generation][Diffusion Sampling Acceleration] The authors propose Spectrum, a global spectral-domain feature forecasting method based on Chebyshev polynomials. By treating the intermediate features of the diffusion model denoiser as functions of time and fitting coefficients via ridge regression, it achieves long-range feature forecasting where errors do not accumulate with step size. Spectrum achieves a $4.79 \times$ speedup on FLUX.1 and $4.67 \times$ on Wa…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - training-free
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Sampling Acceleration"
+  - "Feature Caching"
+  - "Chebyshev Polynomials"
+  - "Spectral Methods"
+  - "training-free"
 date: 2026-05-08
-content_hash: 7ad76a202fdeefb7
+content_hash: 33f66c4ea8b3e7d5
 ---
+
 # Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration
 
 **Conference**: CVPR 2026  
@@ -151,9 +156,9 @@ In high acceleration scenarios ($4–5 \times$), Spectrum provides a $2–4$ dB 
 ## Related Papers
 
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
 
 </div>

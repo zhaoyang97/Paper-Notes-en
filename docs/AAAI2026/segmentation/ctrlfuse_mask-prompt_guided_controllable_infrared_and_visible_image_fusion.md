@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion
 description: >-
-  [AAAI2026][Segmentation][infrared-visible image fusion] This paper proposes CtrlFuse, which achieves interactive controllable infrared-visible image fusion by fine-tuning SAM with mask prompt guidance…
+  [AAAI2026][Segmentation][infrared-visible image fusion] This paper proposes CtrlFuse, which achieves interactive controllable infrared-visible image fusion by fine-tuning SAM with mask prompt guidance, simultaneously improving fusion quality and downstream segmentation/detection performance.
 tags:
   - "AAAI2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "SAM"
   - "semantic segmentation"
 date: 2026-05-08
-content_hash: db02d6577bd67775
+content_hash: e37b50c6f334136b
 ---
 
 # CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion
@@ -158,9 +158,9 @@ The fundamental distinction between CtrlFuse and existing task-driven methods li
 
 - [\[NeurIPS 2025\] HCLFuse: Revisiting Generative Infrared and Visible Image Fusion Based on Human Cognitive Laws](../../NeurIPS2025/segmentation/revisiting_generative_infrared_and_visible_image_fusion_based_on_human_cognitive.md)
 - [\[AAAI 2026\] Text-guided Controllable Diffusion for Realistic Camouflage Images Generation](text-guided_controllable_diffusion_for_realistic_camouflage_images_generation.md)
-- [\[AAAI 2026\] Breaking the Stealth-Potency Trade-off in Clean-Image Backdoors with Generative Trigger Optimization](breaking_the_stealth-potency_trade-off_in_clean-image_backdoors_with_generative_.md)
-- [\[AAAI 2026\] JoDiffusion: Jointly Diffusing Image with Pixel-Level Annotations for Semantic Segmentation Promotion](jodiffusion_jointly_diffusing_image_with_pixel-level_annotations_for_semantic_se.md)
-- [\[ICCV 2025\] LawDIS: Language-Window-based Controllable Dichotomous Image Segmentation](../../ICCV2025/segmentation/lawdis_language-window-based_controllable_dichotomous_image_segmentation.md)
+- [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](../../CVPR2026/segmentation/pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
+- [\[CVPR 2025\] Task-driven Image Fusion with Learnable Fusion Loss](../../CVPR2025/segmentation/task-driven_image_fusion_with_learnable_fusion_loss.md)
+- [\[CVPR 2025\] DA-VPT: Semantic-Guided Visual Prompt Tuning for Vision Transformers](../../CVPR2025/segmentation/da-vpt_semantic-guided_visual_prompt_tuning_for_vision_transformers.md)
 
 </div>
 

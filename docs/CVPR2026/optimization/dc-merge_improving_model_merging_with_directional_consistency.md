@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DC-Merge: Improving Model Merging with Directional Consistency
 description: >-
-  [CVPR 2026][Optimization & Theory][model merging] DC-Merge discovers that the key to model merging lies in maintaining **directional consistency in singular space** between the merged multi-task vector and the original single-task vectors. Through a two-step process of singular value smoothing and projection onto a shared orthogonal subspace, it achieves SOTA results
+  [CVPR 2026 (Main Track)][Optimization][model merging] DC-Merge discovers that the key to model merging lies in maintaining **directional consistency in singular space** between the merged multi-task vector and the original single-task vectors. Through a two-step process of singular value smoothing and projection onto a shared orthogonal subspace, it achieves SOTA results on both Vision and Vision-Language tasks.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - model merging
-  - task vector
-  - singular value decomposition
-  - directional consistency
-  - LoRA
+  - "CVPR 2026 (Main Track)"
+  - "Optimization"
+  - "model merging"
+  - "task vector"
+  - "singular value decomposition"
+  - "directional consistency"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 6524c0f559993558
+content_hash: b8f75673c11e33ef
 ---
+
 # DC-Merge: Improving Model Merging with Directional Consistency
 
 **Conference**: CVPR 2026 (Main Track)  
@@ -149,10 +150,10 @@ DC-Merge is a **completely training-free** post-processing method—it requires 
 ## Related Papers
 
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
-- [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
+- [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
-- [\[CVPR 2025\] Model Poisoning Attacks to Federated Learning via Multi-Round Consistency](../../CVPR2025/optimization/model_poisoning_attacks_to_federated_learning_via_multi-round_consistency.md)
+- [\[ICLR 2026\] How does the optimizer implicitly bias the model merging loss landscape?](../../ICLR2026/optimization/how_does_the_optimizer_implicitly_bias_the_model_merging_loss_landscape.md)
 
 </div>
 

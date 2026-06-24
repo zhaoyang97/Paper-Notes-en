@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning
 description: >-
-  [AAAI 2026][LLM Evaluation][Semi-supervised learning] This paper proposes DiCaP (Distribution-Calibrated Pseudo-labeling), which estimates the posterior correctness rate of pseudo-labels to calibrate their weights…
+  [AAAI 2026][LLM Evaluation][Semi-supervised learning] This paper proposes DiCaP (Distribution-Calibrated Pseudo-labeling), which estimates the posterior correctness rate of pseudo-labels to calibrate their weights, introduces a dual-threshold mechanism to separate confident and ambiguous regions with differentiated strategies, and surpasses the state of the art by up to 4.27% in semi-supervised multi-label learning.
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "calibrated weighting"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: ae76617e1eee99cb
+content_hash: 12f7bc173c6091fe
 ---
 
 # DiCaP: Distribution-Calibrated Pseudo-labeling for Semi-Supervised Multi-Label Learning
@@ -217,11 +217,11 @@ Incremental component addition on COCO and NUS (average mAP):
 
 ## Related Papers
 
+- [\[ECCV 2024\] Image-Feature Weak-to-Strong Consistency: An Enhanced Paradigm for Semi-Supervised Learning](../../ECCV2024/llm_evaluation/image-feature_weak-to-strong_consistency_an_enhanced_paradigm_for_semi-supervise.md)
 - [\[AAAI 2026\] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction](bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore.md)
+- [\[ICLR 2026\] Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models](../../ICLR2026/llm_evaluation/rewarding_doubt_a_reinforcement_learning_approach_to_calibrated_confidence_expre.md)
+- [\[ECCV 2024\] Instance-dependent Noisy-label Learning with Graphical Model Based Noise-rate Estimation](../../ECCV2024/llm_evaluation/instance-dependent_noisy-label_learning_with_graphical_model_based_noise-rate_es.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](../../ACL2026/llm_evaluation/multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
-- [\[ICCV 2025\] Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues](../../ICCV2025/llm_evaluation/neural_multi-view_self-calibrated_photometric_stereo_without_photometric_stereo_.md)
-- [\[ICML 2026\] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum](../../ICML2026/llm_evaluation/beyond_log_likelihood_probability-based_objectives_for_supervised_fine-tuning_ac.md)
-- [\[ICLR 2026\] In-Context Learning for Pure Exploration](../../ICLR2026/llm_evaluation/in-context_learning_for_pure_exploration.md)
 
 </div>
 

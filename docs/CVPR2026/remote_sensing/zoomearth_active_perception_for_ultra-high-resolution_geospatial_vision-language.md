@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks
 description: >-
-  [CVPR 2026][Remote Sensing][GRPO] To address the deadlock where ultra-high-resolution (UHR) remote sensing images face "information redundancy when fed as a whole and loss of detail when downsampled," ZoomEarth enables a 3B VLM to mimic human behavior by surveying the global view before "zooming in" on regions of interest: the model predicts ROI boxes,
+  [CVPR 2026][Remote Sensing][Ultra-High-Resolution Remote Sensing] To address the deadlock where ultra-high-resolution (UHR) remote sensing images face "information redundancy when fed as a whole and loss of detail when downsampled," ZoomEarth enables a 3B VLM to mimic human behavior by surveying the global view before "zooming in" on regions of interest: the model predicts ROI boxes, crops the local patches from the original high-definition image…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - GRPO
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Ultra-High-Resolution Remote Sensing"
+  - "Active Perception"
+  - "Crop-and-Zoom"
+  - "GRPO"
+  - "Region-Guided Reward"
 date: 2026-05-08
-content_hash: c959a4039eb581e9
+content_hash: 1feaf9101c14307b
 ---
+
 # ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks
 
 **Conference**: CVPR 2026  
@@ -136,14 +141,15 @@ Zero-shot generalization on three public >5000×5000 UHR benchmarks also achieve
 - Value: ⭐⭐⭐⭐ Provides a high-quality benchmark and a practical small-model solution for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
+- [\[ICLR 2026\] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models](../../ICLR2026/remote_sensing/towards_faithful_reasoning_in_remote_sensing_a_perceptually-grounded_geospatial_.md)
 - [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 - [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
-- [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
 - [\[CVPR 2026\] LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence
 description: >-
-  [AAAI 2026][Weighted first-order model counting] A polynomial-time (in domain size) algorithm is proposed for computing weighted first-order model counting (WFOMC) of the $\text{FO}^2$ and $\text{C}^2$ fragments with bou…
+  [AAAI 2026][Weighted first-order model counting] A polynomial-time (in domain size) algorithm is proposed for computing weighted first-order model counting (WFOMC) of the $\text{FO}^2$ and $\text{C}^2$ fragments with bounded-treewidth binary evidence, resolving an open problem on counting stable seating arrangements on bounded-treewidth bounded-degree graphs.
 tags:
   - "AAAI 2026"
   - "Weighted first-order model counting"
@@ -11,7 +11,7 @@ tags:
   - "lifted inference"
   - "combinatorial counting"
 date: 2026-05-08
-content_hash: 0276c0b75c47b57b
+content_hash: 8db70ccc15199dbb
 ---
 
 # Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence
@@ -128,8 +128,8 @@ This is a theoretical and algorithmic work with no training process. The time co
 - [\[AAAI 2026\] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach](variance_computation_for_weighted_model_counting_with_knowledge_compilation_appr.md)
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
 - [\[AAAI 2026\] Higher-Order Responsibility](higher-order_responsibility.md)
-- [\[AAAI 2026\] Human Cognitive Biases in Explanation-based Interaction: The Case of Within and Between Session Order Effect](human_cognitive_biases_in_explanation-based_interaction_the_case_of_within_and_b.md)
-- [\[AAAI 2026\] Measuring Model Performance in the Presence of an Intervention](measuring_model_performance_in_the_presence_of_an_intervention.md)
+- [\[CVPR 2025\] Uncertainty Weighted Gradients for Model Calibration](../../CVPR2025/others/uncertainty_weighted_gradients_for_model_calibration.md)
+- [\[ACL 2025\] Enhancing Transformers for Generalizable First-Order Logical Entailment](../../ACL2025/others/enhancing_fol_entailment.md)
 
 </div>
 

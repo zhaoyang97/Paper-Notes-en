@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Latent Planning Emerges with Scale
 description: >-
-  [ICLR 2026][Interpretability][Transcoder] The authors provide a **causally verifiable** definition of "LLM latent planning" (forward planning + backward planning) and conduct experiments on the Qwen-3 (0.6B–14B) family using transcoder feature circuits. They find that planning capability emerges with model scale: simple grammatical consistency tasks (a/an) onl
+  [ICLR 2026][Interpretability][Latent planning] The authors provide a **causally verifiable** definition of "LLM latent planning" (forward planning + backward planning) and conduct experiments on the Qwen-3 (0.6B–14B) family using transcoder feature circuits. They find that planning capability emerges with model scale: simple grammatical consistency tasks (a/an) only succeed stably at 14B, while in rhyme couplet tasks, models exhibit forward planning but almost no backward pla…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Transcoder
-  - Qwen-3
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Latent planning"
+  - "feature circuits"
+  - "Transcoder"
+  - "Qwen-3"
+  - "scaling effects"
+  - "AI safety"
 date: 2026-05-08
-content_hash: f984969b599562dc
+content_hash: 614d9bb92aec4957
 ---
+
 # Latent Planning Emerges with Scale
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching
 description: >-
-  [ICML 2026][LLM Reasoning][RLIF] This paper reformulates unsupervised LLM fine-tuning as a problem of "matching the $\alpha$-power distribution of a base model," employing the Trajectory-Balance objective of GFlowNet as an amortized sampler. By introducing a length-aware LA-TB reparameterization, it eliminates structural length bias inherent in autore
+  [ICML 2026][Reasoning][RLIF] This paper reformulates unsupervised LLM fine-tuning as a problem of "matching the $\alpha$-power distribution of a base model," employing the Trajectory-Balance objective of GFlowNet as an amortized sampler. By introducing a length-aware LA-TB reparameterization, it eliminates structural length bias inherent in autoregressive generation. A single knob $\alpha$ controls the direction—$\alpha>1$ sharpens the distribution to stimulate reasoning (mat…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - RLIF
-  - GFlowNet
+  - "ICML 2026"
+  - "Reasoning"
+  - "RLIF"
+  - "GFlowNet"
+  - "$\\alpha$-power distribution"
+  - "length bias"
+  - "creativity"
 date: 2026-05-08
-content_hash: e67422e0d9c523b2
+content_hash: c3ed8fca259eb54b
 ---
+
 # PowerFlow: Unlocking the Dual Nature of LLMs via Principled Distribution Matching
 
 **Conference**: ICML 2026  
@@ -137,11 +141,11 @@ Creative tasks (Figure 5): PowerFlow ($\alpha=0.5$) is the **only method that si
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Is Chain-of-Thought Reasoning of LLMs a Mirage? A Data Distribution Lens](../../NeurIPS2025/llm_reasoning/is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
 - [\[ICLR 2026\] String Seed of Thought: Prompting LLMs for Distribution-Faithful and Diverse Generation](../../ICLR2026/llm_reasoning/string_seed_of_thought_prompting_llms_for_distribution-faithful_and_diverse_gene.md)
-- [\[ICML 2026\] Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning](are_tools_always_beneficial_learning_to_invoke_tools_adaptively_for_dual-mode_mu.md)
-- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
 - [\[ICML 2026\] Select to Think: Unlocking SLM Potential with Local Sufficiency](select_to_think_unlocking_slm_potential_with_local_sufficiency.md)
+- [\[ICLR 2026\] FlowRL: Matching Reward Distributions for LLM Reasoning](../../ICLR2026/llm_reasoning/flowrl_matching_reward_distributions_for_llm_reasoning.md)
+- [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](../../NeurIPS2025/llm_reasoning/is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
+- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
 
 </div>
 

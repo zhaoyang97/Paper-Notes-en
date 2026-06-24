@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning to Search and Searching to Learn for Generalization in Planning
 description: >-
-  [ICML 2026][Reinforcement Learning][Q-learning] This paper proposes GSP: a "self-improving generalized planner" that integrates Weighted A* best-first search and Q-learning within a unified loop, using Relational Graph Neural Networks (R-GNN) to represent $Q_\theta(s,a)$. By training only on small-scale instances, it achieves zero-shot generalization to instances ov
+  [ICML 2026][Reinforcement Learning][Generalized Planning] This paper proposes GSP: a "self-improving generalized planner" that integrates Weighted A* best-first search and Q-learning within a unified loop, using Relational Graph Neural Networks (R-GNN) to represent $Q_\theta(s,a)$. By training only on small-scale instances, it achieves zero-shot generalization to instances over ten times larger (e.g., from $\le$ 30 blocks to 488 blocks in Blocksworld). It sets new coverage re…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Q-learning
-  - R-GNN
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Generalized Planning"
+  - "WA* Search"
+  - "Q-learning"
+  - "R-GNN"
+  - "Zero-shot Scale Generalization"
 date: 2026-05-08
-content_hash: f8d6a42ff71ce05b
+content_hash: fe86c2388a3b8db3
 ---
+
 # Learning to Search and Searching to Learn for Generalization in Planning
 
 **Conference**: ICML 2026  
@@ -113,15 +117,16 @@ All experiments share a single set of hyperparameters: embedding dimension $d=32
 This work revitalizes the "search-learning symbiosis" of LRTA*/RTDP but extends it to generalized Q-learning across instance families. Unlike Lifted HER, it replaces real-time search with best-first search. Unlike AlphaZero, it removes the dependence on MCTS, which is better suited for the specific structure of long-horizon puzzles. It demonstrates a unified model-based RL path: for decision problems with clear relational structures, one should focus on "best-first exploration + cross-instance $Q_\theta$ learning."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
+- [\[ICML 2026\] What Does Reinforcement Learning for Visual Tool Use Really Learn?](what_does_vision_tool-use_reinforcement_learning_really_learn_disentangling_tool.md)
 - [\[ICML 2026\] Laplacian Representations for Decision-Time Planning](laplacian_representations_for_decision-time_planning.md)
-- [\[ICML 2026\] You Can Learn Tokenization End-to-End with Reinforcement Learning](you_can_learn_tokenization_end-to-end_with_reinforcement_learning.md)
 - [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
-- [\[ICLR 2026\] On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification](../../ICLR2026/reinforcement_learning/on_the_generalization_of_sft_a_reinforcement_learning_perspective_with_reward_re.md)
+- [\[ICML 2026\] You Can Learn Tokenization End-to-End with Reinforcement Learning](you_can_learn_tokenization_end-to-end_with_reinforcement_learning.md)
 
 </div>
 

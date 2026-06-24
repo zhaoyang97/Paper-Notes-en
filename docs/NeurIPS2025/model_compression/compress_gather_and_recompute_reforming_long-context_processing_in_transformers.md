@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers
 description: >-
-  [NeurIPS 2025][Model Compression][KV cache compression] This paper proposes REFORM, an inference framework that efficiently processes ultra-long contexts (up to millions of tokens) via a compress–gather–recompute three-s…
+  [NeurIPS 2025][Model Compression][KV cache compression] This paper proposes REFORM, an inference framework that efficiently processes ultra-long contexts (up to millions of tokens) via a compress–gather–recompute three-stage pipeline. REFORM achieves improvements of 52% and 34% over the strongest baselines on RULER and BABILong respectively, while reducing inference time by 30% and peak memory usage by 5%.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "early exit"
   - "on-demand recomputation"
 date: 2026-05-08
-content_hash: a8c32a890b83e27a
+content_hash: 9376b337b692ed20
 ---
 
 # Compress, Gather, and Recompute: REFORMing Long-Context Processing in Transformers
@@ -152,10 +152,10 @@ Compared to RAG: REFORM constructs retrieval embeddings conditioned on the full 
 ## Related Papers
 
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
+- [\[ICML 2025\] Core Context Aware Transformers for Long Context Language Modeling](../../ICML2025/model_compression/core_context_aware_transformers_for_long_context_language_modeling.md)
 - [\[NeurIPS 2025\] FastLongSpeech: Enhancing Large Speech-Language Models for Efficient Long-Speech Processing](fastlongspeech_enhancing_large_speech-language_models_for_efficient_long-speech_.md)
 - [\[NeurIPS 2025\] Homogeneous Keys, Heterogeneous Values: Exploiting Local KV Cache Asymmetry for Long-Context LLMs](homogeneous_keys_heterogeneous_values_exploiting_local_kv_cache_asymmetry_for_lo.md)
 - [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
-- [\[NeurIPS 2025\] Skrull: Towards Efficient Long Context Fine-tuning through Dynamic Data Scheduling](skrull_towards_efficient_long_context_fine-tuning_through_dynamic_data_schedulin.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] FVBench establishes the largest current benchmark for deepfake video detection (120,000+ videos, 42 SOTA generation/editing models, three categories: Real/AI-edited/Full AI-generated). It provides the first systematic evaluation of Large Multimodal Models' (LMMs) detection capabilities, concluding that the primary chal
+  [CVPR 2026][AI Safety][Deepfake Video Detection] FVBench establishes the largest current benchmark for deepfake video detection (120,000+ videos, 42 SOTA generation/editing models, three categories: Real/AI-edited/Full AI-generated). It provides the first systematic evaluation of Large Multimodal Models' (LMMs) detection capabilities, concluding that the primary challenge is not supervised training on known fakes, but rather **zero-shot/cross-generator generalization** to uns…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Deepfake Video Detection"
+  - "Large Multimodal Models (LMMs)"
+  - "Cross-generator Generalization"
+  - "Benchmark"
+  - "Zero-shot Detection"
 date: 2026-05-08
-content_hash: 8114bc729d8439ae
+content_hash: c03db62f6b881d27
 ---
+
 # FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -122,14 +128,14 @@ Once finetuned (LoRA / Full), almost all models—traditional and LMMs—reach n
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 - [\[CVPR 2026\] AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs](avfakebench_a_comprehensive_audio-video_forgery_detection_benchmark_for_av-lmms.md)
 - [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
-- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
 - [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 
 </div>

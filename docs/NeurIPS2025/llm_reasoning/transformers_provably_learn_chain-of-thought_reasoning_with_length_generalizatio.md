@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization
 description: >-
-  [NeurIPS 2025][LLM Reasoning][CoT Theory] This paper provides the first optimization-theoretic proof that a one-layer Transformer trained via gradient descent can learn CoT reasoning on a synthetic state-tracking task an…
+  [NeurIPS 2025][Reasoning][CoT Theory] This paper provides the first optimization-theoretic proof that a one-layer Transformer trained via gradient descent can learn CoT reasoning on a synthetic state-tracking task and achieve length generalization. It is the first work to establish convergence guarantees for constant-depth Transformers learning $\mathsf{NC}^1$-complete problems, going beyond prior theory that was limited to $\mathsf{TC}^0$.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "CoT Theory"
   - "Length Generalization"
   - "Attention Concentration"
   - "State Tracking"
   - "Complexity Classes"
 date: 2026-05-08
-content_hash: b970fecf6eea7166
+content_hash: 23aacb83dcefe0ae
 ---
 
 # Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization
@@ -125,9 +125,9 @@ The analysis concerns a one-layer Transformer (softmax attention + smoothed ReLU
 
 - [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
 - [\[NeurIPS 2025\] Large Language Models Can Learn and Generalize Steganographic Chain-of-Thought under Process Supervision](large_language_models_can_learn_and_generalize_steganographic_chain-of-thought_u.md)
+- [\[ACL 2025\] CoT-Valve: Length-Compressible Chain-of-Thought Tuning](../../ACL2025/llm_reasoning/cot-valve_length-compressible_chain-of-thought_tuning.md)
 - [\[NeurIPS 2025\] Exact Expressive Power of Transformers with Padding](exact_expressive_power_of_transformers_with_padding.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
-- [\[NeurIPS 2025\] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models](i-raven-x_benchmarking_generalization_and_robustness_of_analogical_and_mathemati.md)
 
 </div>
 

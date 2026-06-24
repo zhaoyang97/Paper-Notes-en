@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][Reinforcement Learning] Ours proposes Supervised Reinforcement Learning (SRL), which reformulates problem solving as a step-wise action generation process. By utilizing dense reward signals based on sequence similarity, small models are enabled to learn difficult reasoning problems from expert trajectories that neither SFT nor RLVR could orig
+  [ICLR 2026][LLM Safety][Reinforcement Learning] Ours proposes Supervised Reinforcement Learning (SRL), which reformulates problem solving as a step-wise action generation process. By utilizing dense reward signals based on sequence similarity, small models are enabled to learn difficult reasoning problems from expert trajectories that neither SFT nor RLVR could originally solve.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Reinforcement Learning"
+  - "Supervised Learning"
+  - "Step-wise Reasoning"
+  - "Sequence Similarity Reward"
+  - "Hard Problem Learning"
 date: 2026-05-08
-content_hash: 962163020fcb80a7
+content_hash: a803d8948be21d35
 ---
+
 # Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning
 
 **Conference**: ICLR 2026  
@@ -150,9 +155,9 @@ SRL shows a 74% relative improvement over SWE-Gym-7B in the Oracle setting, with
 ## Related Papers
 
 - [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](../../NeurIPS2025/llm_safety/contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
-- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 - [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](../../ACL2026/llm_safety/privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
+- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 - [\[NeurIPS 2025\] Reverse Engineering Human Preferences with Reinforcement Learning](../../NeurIPS2025/llm_safety/reverse_engineering_human_preferences_with_reinforcement_learning.md)
 
 </div>

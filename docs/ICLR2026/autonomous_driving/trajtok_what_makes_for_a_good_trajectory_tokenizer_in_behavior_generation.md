@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TrajTok: What makes for a good trajectory tokenizer in behavior generation?
 description: >-
-  [ICLR 2026][Autonomous Driving][next-token prediction] TrajTok systematically analyzes coverage, utilization, symmetry, and robustness of trajectory tokenizers in autonomous driving behavior generation. By using "rule-based candidates + data-driven selection/expansion + spatial-aware label smoothing," it constructs a trajectory vocabulary better suited for next-token predi
+  [ICLR 2026][Autonomous Driving][trajectory tokenizer] TrajTok systematically analyzes coverage, utilization, symmetry, and robustness of trajectory tokenizers in autonomous driving behavior generation. By using "rule-based candidates + data-driven selection/expansion + spatial-aware label smoothing," it constructs a trajectory vocabulary better suited for next-token prediction, achieving first place in the Waymo Open Sim Agents Challenge 2025.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - next-token prediction
-  - Waymo Open Sim Agents
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "trajectory tokenizer"
+  - "behavior generation"
+  - "next-token prediction"
+  - "Waymo Open Sim Agents"
+  - "spatial-aware label smoothing"
 date: 2026-05-08
-content_hash: 35b91d84688218d2
+content_hash: 8e64341e94f1b516
 ---
+
 # TrajTok: What makes for a good trajectory tokenizer in behavior generation?
 
 **Conference**: ICLR 2026  
@@ -163,10 +167,20 @@ Spatial-aware label smoothing benefited both K-disks and TrajTok. K-disks improv
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](../../CVPR2026/autonomous_driving/rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)
+- [\[ECCV 2024\] Optimizing Diffusion Models for Joint Trajectory Prediction and Controllable Generation](../../ECCV2024/autonomous_driving/optimizing_diffusion_models_for_joint_trajectory_prediction_and_controllable_gen.md)
+- [\[ICML 2025\] DriveGPT: Scaling Autoregressive Behavior Models for Driving](../../ICML2025/autonomous_driving/drivegpt_scaling_autoregressive_behavior_models_for_driving.md)
+- [\[ICCV 2025\] Where, What, Why: Towards Explainable Driver Attention Prediction](../../ICCV2025/autonomous_driving/where_what_why_towards_explainable_driver_attention_prediction.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](../../CVPR2026/autonomous_driving/rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)

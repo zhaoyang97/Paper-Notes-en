@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Knowing Isn't Understanding: Re-Grounding Generative Proactivity with Epistemic and Behavioral Insight
 description: >-
-  [ICML 2026][Others][Paper Note] This ICML 2026 position paper argues that the "proactivity" of generative agents should not merely be judged by whether they act earlier, more autonomously, or more persistently. Instead, it must be regulated by two joint constraints: epistemic legitimacy (whether the agent truly "understands" the context) and behavior
+  [ICML2026 (Position Paper)][Generative Proactivity] This ICML 2026 position paper argues that the "proactivity" of generative agents should not merely be judged by whether they act earlier, more autonomously, or more persistently. Instead, it must be regulated by two joint constraints: epistemic legitimacy (whether the agent truly "understands" the context) and behavioral commitment (whether the intervention is reversible or forced to escalate). The authors re-interpret hallu…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026 (Position Paper)"
+  - "Generative Proactivity"
+  - "Epistemic-Behavioral Coupling"
+  - "Unknown Unknowns"
+  - "Commitment Calibration"
+  - "Epistemic Partnership"
 date: 2026-05-08
-content_hash: 711a174c1a057958
+content_hash: cd12e7be48dd147a
 ---
+
 # Knowing Isn't Understanding: Re-Grounding Generative Proactivity with Epistemic and Behavioral Insight
 
 **Conference**: ICML2026 (Position Paper)  
@@ -112,12 +117,13 @@ As a position paper, there are no quantitative experiments. The following tables
 - Value: ⭐⭐⭐⭐⭐ Corrective influence on the agentic community; provides a checklist of constraints to prevent "宁可错也要前进" (moving forward at the cost of being wrong) strategies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2025\] Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks](../../ACL2025/others/principled_generalization_arithmetic.md)
 - [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
+- [\[ACL 2025\] Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks](../../ACL2025/others/principled_generalization_arithmetic.md)
 - [\[AAAI 2026\] Why Isn't Relational Learning Taking Over the World?](../../AAAI2026/others/why_isnt_relational_learning_taking_over_the_world.md)
 - [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](../../AAAI2026/others/an_epistemic_perspective_on_agent_awareness.md)
 - [\[ICML 2025\] Rethinking Aleatoric and Epistemic Uncertainty](../../ICML2025/others/rethinking_aleatoric_and_epistemic_uncertainty.md)

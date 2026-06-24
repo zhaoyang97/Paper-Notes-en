@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training
 description: >-
-  [ICLR 2026][Interpretability][attention sink] ZeroTuning is proposed to enhance LLM performance across 15 datasets without training by applying head-specific scaling to the attention scores of the initial token (e.g., `<BOS>`), requiring only 4 lines of code modifications.
+  [Interpretability] ZeroTuning is proposed to enhance LLM performance across 15 datasets without training by applying head-specific scaling to the attention scores of the initial token (e.g., `<BOS>`), requiring only 4 lines of code modifications.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - attention sink
+  - "Interpretability"
 date: 2026-05-08
-content_hash: f8bc45c2f030bc6d
+content_hash: ef97df802afc413b
 ---
+
 # ZeroTuning: Unlocking the Initial Token's Power to Enhance Large Language Models Without Training
 
 ## Paper Information

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients
 description: >-
-  [ICLR 2026][AI Safety][personalized federated learning] Proposed the FedMosaic framework to address dual heterogeneity in personalized federated learning (PFL): RELA achieves customized aggregation via gradient similarity to measure task relevance (addressing data heterogeneity), and Co-LoRA enables knowledge sharing across heterogeneous architectures (e.g., Llama vs. Qwen)
+  [ICLR2026][AI Safety][personalized federated learning] Proposed the FedMosaic framework to address dual heterogeneity in personalized federated learning (PFL): RELA achieves customized aggregation via gradient similarity to measure task relevance (addressing data heterogeneity), and Co-LoRA enables knowledge sharing across heterogeneous architectures (e.g., Llama vs. Qwen) via dimension-invariant $P \in \mathbb{R}^{r \times r}, Q \in \mathbb{R}^r$ modules (addressing model he…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - personalized federated learning
-  - LoRA
-  - model heterogeneity
-  - multimodal
-  - knowledge sharing
+  - "ICLR2026"
+  - "AI Safety"
+  - "personalized federated learning"
+  - "LoRA"
+  - "model heterogeneity"
+  - "multimodal"
+  - "knowledge sharing"
 date: 2026-05-08
-content_hash: 538f13413d26a6e0
+content_hash: cb3c88eecf241b8c
 ---
+
 # Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients
 
 **Conference**: ICLR2026  
@@ -145,10 +146,10 @@ $A/B$ alignment is a one-time overhead performed before federated training. Comm
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](../../CVPR2026/ai_safety/multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
-- [\[ECCV 2024\] Towards Multi-modal Transformers in Federated Learning](../../ECCV2024/ai_safety/towards_multi-modal_transformers_in_federated_learning.md)
-- [\[ICML 2025\] Private Model Personalization Revisited](../../ICML2025/ai_safety/private_model_personalization_revisited.md)
 - [\[ICML 2026\] One Model to Translate Them All: Universal Any-to-Any Translation for Heterogeneous Collaborative Perception](../../ICML2026/ai_safety/one_model_to_translate_them_all_universal_any-to-any_translation_for_heterogeneo.md)
+- [\[ICML 2025\] Private Model Personalization Revisited](../../ICML2025/ai_safety/private_model_personalization_revisited.md)
 - [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](../../CVPR2026/ai_safety/fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
+- [\[ICLR 2026\] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models](rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md)
 
 </div>
 

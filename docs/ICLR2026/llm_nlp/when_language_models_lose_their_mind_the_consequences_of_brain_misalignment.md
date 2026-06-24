@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Language Models Lose Their Mind: The Consequences of Brain Misalignment
 description: >-
-  [ICLR 2026][LLM (Other)][fMRI] This paper uses "brain misalignment" interventions to deliberately remove information from LLM representations that predicts fMRI signals in the human brain's language areas while maintaining language modeling loss. It finds that such a decrease in brain alignment systematically impairs over 200 language probing tasks,
+  [ICLR 2026][LLM (Other)][Brain alignment] This paper uses "brain misalignment" interventions to deliberately remove information from LLM representations that predicts fMRI signals in the human brain's language areas while maintaining language modeling loss. It finds that such a decrease in brain alignment systematically impairs over 200 language probing tasks, including semantics and syntax, whereas enhancing brain alignment yields linguistic performance gains.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - fMRI
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Brain alignment"
+  - "fMRI"
+  - "language capability"
+  - "adversarial fine-tuning"
+  - "causal intervention"
 date: 2026-05-08
-content_hash: 2492ae95d9ba99fc
+content_hash: 4a06b52bfa7236d3
 ---
+
 # When Language Models Lose Their Mind: The Consequences of Brain Misalignment
 
 **Conference**: ICLR 2026  
@@ -135,8 +140,8 @@ The brain mapping head is a linear function with ridge regularization. Brain ali
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Do Language Models Use Their Depth Efficiently?](../../NeurIPS2025/llm_nlp/do_language_models_use_their_depth_efficiently.md)
 - [\[ACL 2025\] Improve Language Model and Brain Alignment via Associative Memory](../../ACL2025/llm_nlp/improve_language_model_and_brain_alignment_via_associative_memory.md)
+- [\[NeurIPS 2025\] Do Language Models Use Their Depth Efficiently?](../../NeurIPS2025/llm_nlp/do_language_models_use_their_depth_efficiently.md)
 - [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
 - [\[ACL 2025\] Theory of Mind in Large Language Models: Assessment and Enhancement](../../ACL2025/llm_nlp/theory_of_mind_llm.md)
 - [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](../../ACL2026/llm_nlp/costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)

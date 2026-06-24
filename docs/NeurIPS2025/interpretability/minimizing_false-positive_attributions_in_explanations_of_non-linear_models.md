@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Minimizing False-Positive Attributions in Explanations of Non-Linear Models
 description: >-
-  [NeurIPS 2025][Interpretability][XAI] This paper proposes PatternLocal to address false-positive attributions caused by suppressor variables in XAI explanations of non-linear models. The method converts local discriminat…
+  [NeurIPS 2025][Interpretability][XAI] This paper proposes PatternLocal to address false-positive attributions caused by suppressor variables in XAI explanations of non-linear models. The method converts local discriminative surrogate weights into a generative representation, and significantly reduces false-positive feature attributions on three datasets: the XAI-TRIS benchmark, MRI artificial lesions, and EEG motor imagery.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "generative explanation"
   - "LIME"
 date: 2026-05-08
-content_hash: 360347bf0da4c028
+content_hash: db8602b2e34c9460
 ---
 
 # Minimizing False-Positive Attributions in Explanations of Non-Linear Models
@@ -132,8 +132,8 @@ PatternLocal is a **two-stage**, model-agnostic XAI method:
 - [\[NeurIPS 2025\] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?](the_non-linear_representation_dilemma_is_causal_abstraction_enough_for_mechanist.md)
 - [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](emergence_of_linear_truth_encodings_in_language_models.md)
 - [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
+- [\[ICML 2025\] Towards Attributions of Input Variables in a Coalition](../../ICML2025/interpretability/towards_attributions_of_input_variables_in_a_coalition.md)
 - [\[NeurIPS 2025\] Are Greedy Task Orderings Better Than Random in Continual Linear Regression?](are_greedy_task_orderings_better_than_random_in_continual_linear_regression.md)
-- [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](base_models_know_how_to_reason_thinking_models_learn_when.md)
 
 </div>
 

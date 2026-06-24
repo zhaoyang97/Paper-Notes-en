@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Toward Practical Equilibrium Propagation: Brain-Inspired Recurrent Neural Network with Feedback Regulation and Residual Connections
 description: >-
-  [ICLR 2026][learning_theory][Equilibrium Propagation] Addressing the long-standing issues of slow training and instability in Equilibrium Propagation (EP), this paper proposes FRE-RNN, a brain-inspired recurrent network with feedback regulation and residual connections. By scaling only the feedback path intensity with a small coefficient $\beta_i$, the RNN convergence is
+  [ICLR 2026][Brain-inspired Learning][Equilibrium Propagation] Addressing the long-standing issues of slow training and instability in Equilibrium Propagation (EP), this paper proposes FRE-RNN, a brain-inspired recurrent network with feedback regulation and residual connections. By scaling only the feedback path intensity with a small coefficient $\beta_i$, the RNN convergence is accelerated, while residual connections mitigate the resulting vanishing gradients. This approach…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Equilibrium Propagation
+  - "ICLR 2026"
+  - "Brain-inspired Learning"
+  - "Biologically Plausible Learning Algorithms"
+  - "Equilibrium Propagation"
+  - "Biologically Plausible Learning"
+  - "Feedback Regulation"
+  - "Residual Connections"
+  - "Convergence"
 date: 2026-05-08
-content_hash: 22c207c78760b534
+content_hash: 3bf73d87158fb469
 ---
+
 # Toward Practical Equilibrium Propagation: Brain-Inspired Recurrent Neural Network with Feedback Regulation and Residual Connections
 
 **Conference**: ICLR 2026  
@@ -148,7 +154,7 @@ Compared to P-EP, ours is at least an order of magnitude faster in both hierarch
 - [\[ICLR 2026\] Parameterized Hardness of Zonotope Containment and Neural Network Verification](parameterized_hardness_of_zonotope_containment_and_neural_network_verification.md)
 - [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
 - [\[ICLR 2026\] Residual Feature Integration is Sufficient to Prevent Negative Transfer](residual_feature_integration_is_sufficient_to_prevent_negative_transfer.md)
-- [\[ICLR 2026\] DeepWeightFlow: Re-Basined Flow Matching for Generating Neural Network Weights](deepweightflow_re-basined_flow_matching_for_generating_neural_network_weights.md)
+- [\[ICLR 2026\] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching](enabling_fine-tuning_of_direct_feedback_alignment_via_feedback-weight_matching.md)
 
 </div>
 

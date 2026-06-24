@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coordinate-based Speed of Sound Recovery for Aberration-Corrected Photoacoustic Computed Tomography
 description: >-
-  [ICCV 2025][Medical Imaging][Photoacoustic Computed Tomography] This paper proposes an efficient self-supervised joint reconstruction method that parameterizes the speed of sound (SOS) as either a pixel grid or a neural…
+  [ICCV 2025][Medical Imaging][Photoacoustic Computed Tomography] This paper proposes an efficient self-supervised joint reconstruction method that parameterizes the speed of sound (SOS) as either a pixel grid or a neural field, recovering SOS and high-quality photoacoustic images by backpropagating gradients through a differentiable imaging forward model. The method surpasses the current state of the art in accuracy while achieving a 35× speedup (40 seconds vs. 23 minutes).
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Self-supervised Learning"
   - "Wavefront Aberration Correction"
 date: 2026-05-08
-content_hash: b636d46c44d6d9b9
+content_hash: 26ce875583e48a23
 ---
 
 # Coordinate-based Speed of Sound Recovery for Aberration-Corrected Photoacoustic Computed Tomography
@@ -151,11 +151,11 @@ Performance gains diminish beyond 16 channels; 16 is selected as the default for
 
 ## Related Papers
 
-- [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](../../ICLR2026/medical_imaging/dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
 - [\[NeurIPS 2025\] Are Pixel-Wise Metrics Reliable for Sparse-View Computed Tomography Reconstruction?](../../NeurIPS2025/medical_imaging/are_pixel-wise_metrics_reliable_for_sparse-view_computed_tomography_reconstructi.md)
+- [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](../../ICLR2026/medical_imaging/dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
 - [\[ICCV 2025\] SegAnyPET: Universal Promptable Segmentation from Positron Emission Tomography Images](seganypet_universal_promptable_segmentation_from_positron_emission_tomography_im.md)
+- [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](../../ICLR2026/medical_imaging/openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
 - [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
-- [\[ICCV 2025\] COIN: Confidence Score-Guided Distillation for Annotation-Free Cell Segmentation](coin_confidence_score-guided_distillation_for_annotation-free_cell_segmentation.md)
 
 </div>
 

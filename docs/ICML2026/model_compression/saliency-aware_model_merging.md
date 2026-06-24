@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Saliency-Aware Model Merging
 description: >-
-  [ICML 2026][Model Compression][model merging] SA-Merging adapts the SynFlow connectivity score from structured pruning to data-free model merging scenarios. For each expert's task vector, it computes "end-to-end path sensitivity × aggregation direction consistency" as the saliency, iteratively removing updates with low saliency. This pushes data-free merging perfo
+  [ICML 2026][Model Compression][model merging] SA-Merging adapts the SynFlow connectivity score from structured pruning to data-free model merging scenarios. For each expert's task vector, it computes "end-to-end path sensitivity × aggregation direction consistency" as the saliency, iteratively removing updates with low saliency. This pushes data-free merging performance close to test-time adaptation levels across vision, language, and LoRA multi-task benchmarks.
 tags:
-  - ICML 2026
-  - Model Compression
-  - model merging
-  - task vector
-  - SynFlow
+  - "ICML 2026"
+  - "Model Compression"
+  - "model merging"
+  - "task vector"
+  - "SynFlow"
+  - "connectivity saliency"
+  - "LoRA merging"
 date: 2026-05-08
-content_hash: 7b8dff3ed24ec49d
+content_hash: c69d4399f0865f81
 ---
+
 # Saliency-Aware Model Merging
 
 **Conference**: ICML 2026  
@@ -129,10 +132,10 @@ Note: On CLIP ViT-L/14, SA-Merging's 93.4 is nearly equal to Traditional MTL (93
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](../../CVPR2026/model_compression/bridging_domains_through_subspace-aware_model_merging.md)
+- [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](../../ICLR2026/model_compression/mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
-- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
-- [\[ICML 2026\] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging](when_shared_knowledge_hurts_spectral_over-accumulation_in_model_merging.md)
 
 </div>
 

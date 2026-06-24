@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents
 description: >-
-  [ACL 2026][Code Intelligence][Code-RAG] CodeDistiller automatically distills scientific GitHub repositories into runnable and debugged example code libraries, enabling Code-RAG scientific discovery agents to utilize real-world domain tools; on 250 materials science repositories, the best model achieved a human-verified functional correctness rate of 74.1%, a
+  [ACL2026][Code Intelligence][Automated Scientific Discovery] CodeDistiller automatically distills scientific GitHub repositories into runnable and debugged example code libraries, enabling Code-RAG scientific discovery agents to utilize real-world domain tools; on 250 materials science repositories, the best model achieved a human-verified functional correctness rate of 74.1%, and downstream discovery tasks were more preferred by experts.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Code-RAG
-  - LLM-as-a-judge
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Automated Scientific Discovery"
+  - "Code Agents"
+  - "Code-RAG"
+  - "Repository Distillation"
+  - "LLM-as-a-judge"
 date: 2026-05-08
-content_hash: 4ec886f484489fca
+content_hash: b13b921bc86cf873
 ---
+
 # CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents
 
 **Conference**: ACL2026  
@@ -138,14 +142,17 @@ Materials science experts first listed 30 common Python materials libraries (e.g
 
 <div class="related-papers" markdown="1">
 
-- **CodeScientist**: [2410.00123](https://arxiv.org/abs/2410.00123)
-- **The AI Scientist**: [2408.06242](https://arxiv.org/abs/2408.06242)
-- **AgentLab**: [2501.01089](https://github.com/ServiceNow/AgentLab)
+## Related Papers
+
+- [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
+- [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
+- [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](../../ICLR2026/code_intelligence/viscoder2_building_multi-language_visualization_coding_agents.md)
+- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](../../ICML2026/code_intelligence/nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)

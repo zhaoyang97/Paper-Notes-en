@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] CoopRAG is a framework that achieves bidirectional cooperation between the retriever and the LLM through query expansion, retriever layer-contrastive reranking…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] CoopRAG is a framework that achieves bidirectional cooperation between the retriever and the LLM through query expansion, retriever layer-contrastive reranking, and reasoning chain completion. It surpasses HippoRAG2 by 5.3% on multi-hop QA and by 35.2% on single-hop QA.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "multi-hop QA"
   - "cooperative mechanism"
 date: 2026-05-08
-content_hash: 21b91d932cf1537a
+content_hash: 453068add0434cab
 ---
 
 # Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers
@@ -155,11 +155,11 @@ Harder questions (with more sub-questions) receive higher loss weights.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[ACL 2025\] SetR: Shifting from Ranking to Set Selection for Retrieval Augmented Generation](../../ACL2025/information_retrieval/setr_set_selection_rag.md)
+- [\[ACL 2025\] ComRAG: Retrieval-Augmented Generation with Dynamic Vector Stores for Real-time Community Question Answering in Industry](../../ACL2025/information_retrieval/comrag_retrieval-augmented_generation_with_dynamic_vector_stores_for_real-time_c.md)
 - [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
 - [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
 - [\[NeurIPS 2025\] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation](reliable_decision_making_via_calibration_oriented_retrieval_augmented_generation.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 
 </div>
 

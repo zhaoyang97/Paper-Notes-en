@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unveiling the Spatial-Temporal Effective Receptive Fields of Spiking Neural Networks
 description: >-
-  [NeurIPS 2025][Segmentation][spiking neural networks] This paper proposes a Spatial-Temporal Effective Receptive Field (ST-ERF) analysis framework to diagnose the bottleneck of Transformer-based SNNs in visual long-seque…
+  [NeurIPS 2025][Segmentation][spiking neural networks] This paper proposes a Spatial-Temporal Effective Receptive Field (ST-ERF) analysis framework to diagnose the bottleneck of Transformer-based SNNs in visual long-sequence modeling—namely, the lack of a global receptive field—and accordingly designs two channel mixers, MLPixer and SRB, to enhance the global modeling capability of SNNs.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "channel mixer"
   - "visual long-sequence modeling"
 date: 2026-05-08
-content_hash: 3de298fd6550d705
+content_hash: bef1d994e263de3e
 ---
 
 # Unveiling the Spatial-Temporal Effective Receptive Fields of Spiking Neural Networks
@@ -171,8 +171,8 @@ Performance improves on event tracking as well, though a slight degradation is o
 - [\[NeurIPS 2025\] STEP: A Unified Spiking Transformer Evaluation Platform for Fair and Reproducible Benchmarking](step_a_unified_spiking_transformer_evaluation_platform_for_fair_and_reproducible.md)
 - [\[NeurIPS 2025\] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks](instant_video_models_universal_adapters_for_stabilizing_image-based_networks.md)
 - [\[ICCV 2025\] PartField: Learning 3D Feature Fields for Part Segmentation and Beyond](../../ICCV2025/segmentation/partfield_learning_3d_feature_fields_for_part_segmentation_and_beyond.md)
-- [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](../../ICCV2025/segmentation/temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
-- [\[ICCV 2025\] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation](../../ICCV2025/segmentation/skeleton_motion_words_for_unsupervised_skeleton-based_temporal_action_segmentati.md)
+- [\[CVPR 2025\] Effective SAM Combination for Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/effective_sam_combination_for_open-vocabulary_semantic_segmentation.md)
+- [\[ECCV 2024\] Long-Tail Temporal Action Segmentation with Group-wise Temporal Logit Adjustment](../../ECCV2024/segmentation/long-tail_temporal_action_segmentation_with_group-wise_temporal_logit_adjustment.md)
 
 </div>
 

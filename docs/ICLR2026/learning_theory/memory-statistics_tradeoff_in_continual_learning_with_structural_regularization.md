@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Under a random design for two-task linear regression, this paper provides matching upper and lower bounds for excess risk for the "generalized $\ell_2$ structural regularization based on previous task Hessian" algorithm. It reveals for the first time theoretically that a provable tradeoff exists in continual learning b
+  [ICLR 2026][Learning Theory][Catastrophic Forgetting] Under a random design for two-task linear regression, this paper provides matching upper and lower bounds for excess risk for the "generalized $\ell_2$ structural regularization based on previous task Hessian" algorithm. It reveals for the first time theoretically that a provable tradeoff exists in continual learning between **memory complexity (rank/number of vectors of the regularization matrix)** and statistical efficie…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Structural Regularization"
+  - "Linear Regression"
+  - "Random Design"
+  - "Excess Risk"
+  - "Memory-Statistics Tradeoff"
 date: 2026-05-08
-content_hash: c190d6a6d1052c78
+content_hash: b1db7a99acaf7965
 ---
+
 # Memory-Statistics Tradeoff in Continual Learning with Structural Regularization
 
 **Conference**: ICLR 2026  

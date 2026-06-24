@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds
 description: >-
-  [NeurIPS 2025][Other][Riemannian optimization] This paper proposes the Riemannian Online to NonConvex (RO2NC) algorithm and its zeroth-order variant ZO-RO2NC…
+  [NeurIPS 2025][Other][Riemannian optimization] This paper proposes the Riemannian Online to NonConvex (RO2NC) algorithm and its zeroth-order variant ZO-RO2NC, establishing for the first time a finite-time sample complexity guarantee of $O(\delta^{-1}\epsilon^{-3})$ for fully nonsmooth nonconvex stochastic optimization on Riemannian manifolds, matching the optimal result in Euclidean space.
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -12,7 +12,7 @@ tags:
   - "zeroth-order optimization"
   - "finite-time analysis"
 date: 2026-05-08
-content_hash: 48c6833b0ccb325e
+content_hash: 69d3f4bf83f1e330
 ---
 
 # Finite-Time Analysis of Stochastic Nonconvex Nonsmooth Optimization on the Riemannian Manifolds
@@ -132,11 +132,11 @@ Objective: $\min_{x \in \mathbb{S}^{n-1}} \{-x^\top A x + \mu \|x\|_1\}$
 
 ## Related Papers
 
+- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](../../ICLR2026/learning_theory/finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
 - [\[NeurIPS 2025\] Adaptive Data Analysis for Growing Data](adaptive_data_analysis_for_growing_data.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](../../ICLR2026/learning_theory/lipschitz_bandits_with_stochastic_delayed_feedback.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
-- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
 - [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](infrequent_exploration_in_linear_bandits.md)
+- [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
+- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
 
 </div>
 

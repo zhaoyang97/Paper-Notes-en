@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation
 description: >-
-  [ICML 2026][Recommender Systems][HSIC] GCIB employs a dual approach of "Graph Information Bottleneck + Cross-behavior Contrastive Learning." It first prunes edges in auxiliary behavior graphs that are irrelevant to the target task at the structural level (maximizing mutual information with the target behavior and minimizing mutual information with the origi
+  [ICML 2026][Recommender Systems][Multi-behavior recommendation] GCIB employs a dual approach of "Graph Information Bottleneck + Cross-behavior Contrastive Learning." It first prunes edges in auxiliary behavior graphs that are irrelevant to the target task at the structural level (maximizing mutual information with the target behavior and minimizing mutual information with the original auxiliary graph via HSIC surrogates). It then aligns denoised auxiliary representations with…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - HSIC
-  - Denoising
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Multi-behavior recommendation"
+  - "Graph Information Bottleneck"
+  - "Contrastive Learning"
+  - "HSIC"
+  - "Denoising"
 date: 2026-05-08
-content_hash: fed58f6ee97432f1
+content_hash: 2a06b183e0f4aec2
 ---
+
 # GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation
 
 **Conference**: ICML 2026  
@@ -133,7 +137,7 @@ Significant gains (up to 40% on Yelp) confirm the effectiveness of GCIB in extre
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -141,7 +145,7 @@ Significant gains (up to 40% on Yelp) confirm the effectiveness of GCIB in extre
 - [\[AAAI 2026\] Behavior Tokens Speak Louder: Disentangled Explainable Recommendation with Behavior Vocabulary](../../AAAI2026/recommender/behavior_tokens_speak_louder_disentangled_explainable_recommendation_with_behavi.md)
 - [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](../../NeurIPS2025/recommender/semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
 - [\[ICLR 2026\] CollectiveKV: Decoupling and Sharing Collaborative Information in Sequential Recommendation](../../ICLR2026/recommender/collectivekv_decoupling_and_sharing_collaborative_information_in_sequential_reco.md)
-- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
+- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](../../AAAI2026/recommender/tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 
 </div>
 

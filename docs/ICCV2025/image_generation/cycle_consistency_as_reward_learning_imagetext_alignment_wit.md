@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences
 description: >-
-  [ICCV 2025][Image Generation][cycle consistency] This paper proposes CycleReward, which leverages cycle consistency as a self-supervised signal to replace human preference annotations — captions are reconstructed into im…
+  [ICCV 2025][Image Generation][cycle consistency] This paper proposes CycleReward, which leverages cycle consistency as a self-supervised signal to replace human preference annotations — captions are reconstructed into images via a T2I model and ranked by visual similarity, yielding the 866K preference-pair dataset CyclePrefDB. The trained reward model outperforms HPSv2/PickScore/ImageReward by 6%+ on detailed captioning, and DPO training with it improves VLM performance acros…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "DPO"
   - "self-supervised"
 date: 2026-05-08
-content_hash: d992af2d4a499615
+content_hash: 386ddbd07813c8b9
 ---
 
 # Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences
@@ -145,10 +145,10 @@ I2T DPO (Qwen-VL-Chat):
 ## Related Papers
 
 - [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
-- [\[ICCV 2025\] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention](fair_generation_without_unfair_distortions_debiasing_text-to-image_generation_wi.md)
+- [\[CVPR 2025\] Learning Visual Generative Priors without Text](../../CVPR2025/image_generation/learning_visual_generative_priors_without_text.md)
 - [\[ICCV 2025\] Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering](ouroboros_single-step_diffusion_models_for_cycle-consistent_forward_and_inverse_.md)
-- [\[ICCV 2025\] CompleteMe: Reference-based Human Image Completion](completeme_reference-based_human_image_completion.md)
-- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
+- [\[ICML 2025\] Smoothed Preference Optimization via ReNoise Inversion for Aligning Diffusion Models with Varied Human Preferences](../../ICML2025/image_generation/smoothed_preference_optimization_via_renoise_inversion_for_aligning_diffusion_mo.md)
+- [\[CVPR 2026\] Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences](../../CVPR2026/image_generation/aligning_multi-character_narrative_image_generation_with_multi-aspect_human_pref.md)
 
 </div>
 

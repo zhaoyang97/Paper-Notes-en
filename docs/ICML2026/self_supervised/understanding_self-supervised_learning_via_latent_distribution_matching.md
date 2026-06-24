@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Understanding Self-Supervised Learning via Latent Distribution Matching
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] The authors unify contrastive, non-contrastive, and predictive SSL as "Latent Distribution Matching (LDM)": maximizing the log-probability of samples under a hypothesized latent model (alignment) plus maximizing latent entropy (uniformity). Based on this, they derive a nonlinear identifiable predictive SSL equipped wit
+  [ICML 2026 Spotlight][Self-Supervised Learning][Latent Distribution Matching] The authors unify contrastive, non-contrastive, and predictive SSL as "Latent Distribution Matching (LDM)": maximizing the log-probability of samples under a hypothesized latent model (alignment) plus maximizing latent entropy (uniformity). Based on this, they derive a nonlinear identifiable predictive SSL equipped with a Kalman predictor.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026 Spotlight"
+  - "Self-Supervised Learning"
+  - "Latent Distribution Matching"
+  - "Nonlinear ICA"
+  - "Identifiability"
+  - "Kalman prediction"
 date: 2026-05-08
-content_hash: 3e899f267cbaf15c
+content_hash: ea753bb3c8b543c8
 ---
+
 # Understanding Self-Supervised Learning via Latent Distribution Matching
 
 **Conference**: ICML 2026 Spotlight  
@@ -115,11 +120,11 @@ Specific losses depend on the choice of $P_\theta$ and the entropy estimator: VI
 
 ## Related Papers
 
+- [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](../../ICLR2026/self_supervised/understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
 - [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](../../NeurIPS2025/self_supervised/understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
+- [\[ICLR 2026\] Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data](../../ICLR2026/self_supervised/understanding_the_robustness_of_distributed_self-supervised_learning_frameworks_.md)
 - [\[ICML 2026\] Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning](beyond_distribution_estimation_simplex_anchored_structural_inference_towards_uni.md)
 - [\[ICML 2026\] Can Local Learning Match Self-Supervised Backpropagation?](can_local_learning_match_self-supervised_backpropagation.md)
-- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](../../CVPR2026/self_supervised/videossr_video_self-supervised_reinforcement_learning.md)
-- [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](../../ICLR2026/self_supervised/soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] CogniVerse introduces a "brain-like reflection-retrieval-synthesis" three-step process into Multimodal RAG: first, a cognitive reflection module determines if external knowledge is needed and filters relevant content; second, image-text data and knowledge graphs are aligned in hyperbolic space with spectral-based subgr
+  [CVPR 2026][VLM Reasoning][Multimodal RAG] CogniVerse introduces a "brain-like reflection-retrieval-synthesis" three-step process into Multimodal RAG: first, a cognitive reflection module determines if external knowledge is needed and filters relevant content; second, image-text data and knowledge graphs are aligned in hyperbolic space with spectral-based subgraph pruning; finally, an optimal transport loss is used to generate answers that balance local accuracy and global co…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal RAG"
+  - "Adaptive Retrieval"
+  - "Hyperbolic Embedding"
+  - "Spectral Graph Refinement"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: ce3e48ed8a3cfd56
+content_hash: b001b036affdb8e2
 ---
+
 # CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ CogniVerse outperforms MMCoQA by 6–7% in accuracy across datasets. It achieves
 
 ## Related Papers
 
-- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
 - [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
-- [\[CVPR 2026\] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training](wan-weaver_interleaved_multi-modal_generation_via_decoupled_training.md)
-- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
-- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
+- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
+- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
+- [\[ICLR 2026\] ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation](../../ICLR2026/vlm_reasoning/rover_benchmarking_reciprocal_cross-modal_reasoning_for_omnimodal_generation.md)
+- [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] AdvMark is proposed as a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) shifts watermarked images into non-attackable regions to resist adversarial attacks; Stage 2 utilizes direct image optimization to counter distortion and regeneration attacks while preserving adversarial robustnes
+  [CVPR2026][AI Safety][Image watermarking] AdvMark is proposed as a two-stage decoupled defense framework: Stage 1 Encoder Adversarial Training (EAT) shifts watermarked images into non-attackable regions to resist adversarial attacks; Stage 2 utilizes direct image optimization to counter distortion and regeneration attacks while preserving adversarial robustness. Across 9 watermarking methods and 10 attack types, AdvMark improves distortion/regeneration/adversarial accuracy by…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR2026"
+  - "AI Safety"
+  - "Image watermarking"
+  - "Adversarial robustness"
+  - "Diffusion regeneration attack"
+  - "Decoupled training"
+  - "Adversarial training"
+  - "Image quality"
 date: 2026-05-08
-content_hash: a1b08449fe6e9fe9
+content_hash: 6c4d5b8083c147ff
 ---
+
 # AdvMark: Decoupling Defense Strategies for Robust Image Watermarking
 
 **Conference**: CVPR2026  
@@ -146,10 +153,10 @@ The paper provides a robustness preservation conclusion: if $x_{w1}$ is safe wit
 ## Related Papers
 
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
-- [\[CVPR 2026\] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking](tiacam_text-anchored_invariant_feature_learning_with_auto-augmentation_for_camer.md)
 - [\[CVPR 2026\] UniDef: Universal Defense Against Unauthorized Image Manipulation](unidef_universal_defense_against_unauthorized_image_manipulation.md)
 - [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
+- [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 
 </div>
 

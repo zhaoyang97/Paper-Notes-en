@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] SMoES: Soft Modality-Guided Expert Specialization in MoE-VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][MoE-VLM] Addressing the overlooked issue of "whether and how experts should specialize by modality" in MoE-VLMs, this paper proposes SMoES. It uses layer-wise dynamic **soft modality scores** to characterize the actual vision/text fusion degree of tokens, **bins** experts into groups aligned with deployment devices, and drives
+  [CVPR 2026][Multimodal VLM][MoE-VLM] Addressing the overlooked issue of "whether and how experts should specialize by modality" in MoE-VLMs, this paper proposes SMoES. It uses layer-wise dynamic **soft modality scores** to characterize the actual vision/text fusion degree of tokens, **bins** experts into groups aligned with deployment devices, and drives specialization through **inter-bin mutual information regularization**. Across 4 MoE-VLMs and 16 benchmarks…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MoE-VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MoE-VLM"
+  - "Modality Specialization"
+  - "Soft Modality Scores"
+  - "Expert Binning"
+  - "Mutual Information Regularization"
+  - "Expert Parallelism"
 date: 2026-05-08
-content_hash: aad0885c63b55c32
+content_hash: ebab2e72e24408f0
 ---
+
 # SMoES: Soft Modality-Guided Expert Specialization in MoE-VLMs
 
 **Conference**: CVPR 2026  
@@ -153,15 +159,15 @@ Overall: EP communication reduced by 56.1%; throughput increased by 12.3%.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Soft Modality-Guided Expert Specialization in MoE-VLMs](soft_modality-guided_expert_specialization_in_moe-vlms.md)
 - [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
-- [\[CVPR 2026\] Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](dual-modality_anchor-guided_filtering_for_test-time_prompt_tuning.md)
-- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
+- [\[ICLR 2026\] CogMoE: Signal-Quality–Guided Multimodal MoE for Cognitive Load Prediction](../../ICLR2026/multimodal_vlm/cogmoe_signal-qualityguided_multimodal_moe_for_cognitive_load_prediction.md)
 - [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
+- [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](../../ICLR2026/multimodal_vlm/enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
+- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
 
 </div>
 

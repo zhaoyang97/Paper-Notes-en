@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper proposes a "courtroom analogy" perspective, modeling second-order uncertainty in classification as a structured mixture of $K$ class-advocate Dirichlet opinions under input-dependent weights. This is instantiated as the MoDEX network (comprising three lightweight heads: shared evidence $\bm{\alpha}$, class-s
+  [ICML 2026][Interpretability][Uncertainty Quantification] This paper proposes a "courtroom analogy" perspective, modeling second-order uncertainty in classification as a structured mixture of $K$ class-advocate Dirichlet opinions under input-dependent weights. This is instantiated as the MoDEX network (comprising three lightweight heads: shared evidence $\bm{\alpha}$, class-specific advocacy strength $\tau_k$, and credibility $\bm{\omega}$). MoDEX consistently outperforms bas…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Uncertainty Quantification"
+  - "Evidential Deep Learning"
+  - "Dirichlet Mixture"
+  - "Single-forward UQ"
 date: 2026-05-08
-content_hash: 96a153e8cc26941a
+content_hash: c598ad2a862d8fa0
 ---
+
 # Courtroom Analogy: New Perspective on Uncertainty-Aware Classification
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ Evaluation tasks: ID classification accuracy, Misclassification detection (Miscl
 
 ## Related Papers
 
+- [\[ICLR 2026\] Uncertainty as Feature Gaps: Epistemic Uncertainty Quantification of LLMs in Contextual Question-Answering](../../ICLR2026/interpretability/uncertainty_as_feature_gaps_epistemic_uncertainty_quantification_of_llms_in_cont.md)
 - [\[ICML 2026\] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification](minimax_learning_of_interpretable_factored_stochastic_policies_from_conjoint_dat.md)
-- [\[ICCV 2025\] "Principal Components" Enable A New Language of Images](../../ICCV2025/interpretability/principal_components_enable_a_new_language_of_images.md)
+- [\[ICLR 2026\] Faithfulness Under the Distribution: A New Look at Attribution Evaluation](../../ICLR2026/interpretability/faithfulness_under_the_distribution_a_new_look_at_attribution_evaluation.md)
 - [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
 - [\[CVPR 2026\] Making the Classification Explanation Faithful to the Confidence Score](../../CVPR2026/interpretability/making_the_classification_explanation_faithful_to_the_confidence_score.md)
-- [\[ICML 2025\] On the Effect of Uncertainty on Layer-wise Inference Dynamics](../../ICML2025/interpretability/on_the_effect_of_uncertainty_on_layer-wise_inference_dynamics.md)
 
 </div>
 

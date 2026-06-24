@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aitchison Embeddings for Learning Compositional Graph Representations
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper proposes AICoG, which represents nodes as mixtures of latent archetypes on a simplex and learns graph embeddings using Aitchison geometry and Isometric Log-Ratio (ILR) coordinates. While maintaining the same expressiveness as Euclidean latent distance models, it ensures that node role similarity has an endog
+  [ICML2026][Graph Learning][Aitchison geometry] This paper proposes AICoG, which represents nodes as mixtures of latent archetypes on a simplex and learns graph embeddings using Aitchison geometry and Isometric Log-Ratio (ILR) coordinates. While maintaining the same expressiveness as Euclidean latent distance models, it ensures that node role similarity has an endogenous interpretation based on relative trade-offs of proportions.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML2026"
+  - "Graph Learning"
+  - "Aitchison geometry"
+  - "Graph representation learning"
+  - "Compositional data"
+  - "ILR coordinates"
+  - "Interpretable embeddings"
 date: 2026-05-08
-content_hash: e8dfde8aeccdfdb1
+content_hash: a478b3217b7ce0ad
 ---
+
 # Aitchison Embeddings for Learning Compositional Graph Representations
 
 **Conference**: ICML2026  
@@ -125,11 +131,11 @@ In experiments, AICoG uses the Adam optimizer to minimize the Bernoulli negative
 
 ## Related Papers
 
+- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](../../ICLR2026/graph_learning/exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](../../ICLR2026/graph_learning/towards_improved_sentence_representations_using_token_graphs.md)
 - [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](../../ICLR2026/graph_learning/cords_-_continuous_representations_of_discrete_structures.md)
+- [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](../../ICLR2026/graph_learning/bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
 - [\[ACL 2025\] Predicate-Conditional Conformalized Answer Sets for Knowledge Graph Embeddings](../../ACL2025/graph_learning/predicate-conditional_conformalized_answer_sets_for_knowledge_graph_embeddings.md)
-- [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
-- [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](../../ACL2026/graph_learning/agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
 
 </div>
 

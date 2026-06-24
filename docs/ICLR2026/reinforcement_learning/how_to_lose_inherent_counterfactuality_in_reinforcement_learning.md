@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How to Lose Inherent Counterfactuality in Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper demonstrates through both theoretical analysis and Atari experiments that standard reinforcement learning naturally learns ordered counterfactual values for non-executed actions, whereas robust training that explicitly pursues $\epsilon$-local invariance distorts the Q-function, reshuffles suboptimal actions
+  [ICLR2026][Reinforcement Learning][Counterfactual value] This paper demonstrates through both theoretical analysis and Atari experiments that standard reinforcement learning naturally learns ordered counterfactual values for non-executed actions, whereas robust training that explicitly pursues $\epsilon$-local invariance distorts the Q-function, reshuffles suboptimal actions, causes value overestimation, and forces the policy to lose this counterfactual capability.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Counterfactual value"
+  - "Robust Reinforcement Learning"
+  - "Local invariance"
+  - "Q-value estimation"
+  - "Adversarial training"
 date: 2026-05-08
-content_hash: 8e9670f435b1eca1
+content_hash: be8def8357838d40
 ---
+
 # How to Lose Inherent Counterfactuality in Reinforcement Learning
 
 **Conference**: ICLR2026  

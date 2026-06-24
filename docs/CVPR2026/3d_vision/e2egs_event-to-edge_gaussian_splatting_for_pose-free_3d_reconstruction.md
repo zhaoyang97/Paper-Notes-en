@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes E2EGS, a pose-free 3D reconstruction framework entirely based on event streams: it extracts noise-resistant edge maps from event streams through patch-based temporal consistency analysis, utilizes edge information to guide Gaussian initialization and weighted loss optimization, and achieves high-quality t
+  [CVPR 2026][3D Vision][Event Camera] Ours proposes E2EGS, a pose-free 3D reconstruction framework entirely based on event streams: it extracts noise-resistant edge maps from event streams through patch-based temporal consistency analysis, utilizes edge information to guide Gaussian initialization and weighted loss optimization, and achieves high-quality trajectory estimation and 3D reconstruction without depth models or RGB input.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "3D Gaussian Splatting"
+  - "Edge Detection"
+  - "Pose-Free Reconstruction"
+  - "Visual Odometry"
 date: 2026-05-08
-content_hash: bf6dfdf2b50539f0
+content_hash: 4137bb0b726e6bc3
 ---
+
 # E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -162,16 +168,15 @@ The system alternates between tracking and mapping: in the tracking phase, Gauss
 
 ## Related Papers
 
+- [\[CVPR 2025\] IncEventGS: Pose-Free Gaussian Splatting from a Single Event Camera](../../CVPR2025/3d_vision/inceventgs_pose-free_gaussian_splatting_from_a_single_event_camera.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
 - [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
-- [\[CVPR 2026\] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario](freeartgs_articulated_gaussian_splatting_under_free-moving_scenario.md)
-- [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] IncEventGS: Pose-Free Gaussian Splatting from a Single Event Camera](../../CVPR2025/3d_vision/inceventgs_pose-free_gaussian_splatting_from_a_single_event_camera.md)

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Change Point Localization and Inference in Dynamic Multilayer Networks
 description: >-
-  [ICLR 2026][Others][change point detection] Addressing the Dynamic Multilayer Random Dot Product Graph (D-MRDPG) where shared latent positions are fixed but connection weights of layers change abruptly over time, this paper proposes a two-stage offline change point localization algorithm combining "Seeded Binary Segmentation + Low-Rank Tensor Refinement." It pro
+  [ICLR 2026][change point detection] Addressing the Dynamic Multilayer Random Dot Product Graph (D-MRDPG) where shared latent positions are fixed but connection weights of layers change abruptly over time, this paper proposes a two-stage offline change point localization algorithm combining "Seeded Binary Segmentation + Low-Rank Tensor Refinement." It provides the first consistency guarantee for the number and locations of change points, establishes the limiting distribution o…
 tags:
-  - ICLR 2026
-  - Others
-  - change point detection
-  - dynamic multilayer networks
-  - D-MRDPG
-  - seeded binary segmentation
-  - low-rank tensor estimation
-  - limiting distribution
+  - "ICLR 2026"
+  - "change point detection"
+  - "dynamic multilayer networks"
+  - "D-MRDPG"
+  - "seeded binary segmentation"
+  - "low-rank tensor estimation"
+  - "limiting distribution"
+  - "confidence interval"
 date: 2026-05-08
-content_hash: d849f2598e08f525
+content_hash: 901cf22895222377
 ---
+
 # Change Point Localization and Inference in Dynamic Multilayer Networks
 
 **Conference**: ICLR 2026  
@@ -130,7 +131,7 @@ FAO data (1986–2020, $T=35$) with $n=75$ countries and $L=4$ major agricultura
 - [\[ICML 2025\] Fixed-Confidence Multiple Change Point Identification under Bandit Feedback](../../ICML2025/others/fixed-confidence_multiple_change_point_identification_under_bandit_feedback.md)
 - [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
 - [\[AAAI 2026\] Model Change for Description Logic Concepts](../../AAAI2026/others/model_change_for_description_logic_concepts.md)
-- [\[ICLR 2026\] Improving Set Function Approximation with Quasi-Arithmetic Neural Networks](improving_set_function_approximation_with_quasi-arithmetic_neural_networks.md)
+- [\[ICLR 2026\] Any-Subgroup Equivariant Networks via Symmetry Breaking](any-subgroup_equivariant_networks_via_symmetry_breaking.md)
 
 </div>
 

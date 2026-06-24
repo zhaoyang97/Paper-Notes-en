@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper identifies the "Visual Preference Conflict" issue during visual encoder fine-tuning in MLLMs and proposes the CoVFT framework. By implementing Context Vector Extraction (CVE) and Context Mixture-of-Experts (CoMoE), it achieves context-aware visual fine-tuning, reaching SOTA performance on 12 multimodal bench
+  [CVPR 2026][Multimodal VLM][Multimodal Large Language Models] This paper identifies the "Visual Preference Conflict" issue during visual encoder fine-tuning in MLLMs and proposes the CoVFT framework. By implementing Context Vector Extraction (CVE) and Context Mixture-of-Experts (CoMoE), it achieves context-aware visual fine-tuning, reaching SOTA performance on 12 multimodal benchmarks with significantly higher stability than existing methods.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Large Language Models"
+  - "Visual Fine-tuning"
+  - "Mixture-of-Experts"
+  - "Context-aware"
+  - "Visual Preference Conflict"
 date: 2026-05-08
-content_hash: 80deeabf1536087b
+content_hash: 13f95bcb1504f19c
 ---
+
 # CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -162,10 +168,10 @@ Key figures:
 
 ## Related Papers
 
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
+- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
 - [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
 - [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
-- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
-- [\[CVPR 2026\] Phrase-Grounding-Aware Supervised Fine-Tuning for Chart Recognition via Side-Masked Attention](phrase-grounding-aware_supervised_fine-tuning_for_chart_recognition_via_side-mas.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
 
 </div>

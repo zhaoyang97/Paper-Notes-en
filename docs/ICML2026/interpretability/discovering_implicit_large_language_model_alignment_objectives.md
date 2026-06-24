@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Discovering Implicit Large Language Model Alignment Objectives
 description: >-
-  [ICML 2026][Interpretability][Matching Pursuit] Obj-Disco reverse-engineers opaque reward signals from RLHF/GRPO into a sparse linear combination of natural language objectives (DIR) along the "model checkpoint trajectory." By utilizing a Matching Pursuit-style greedy approach combined with dual LLM-as-Judge verification, it stably recovers >90% of reward behavior a
+  [ICML 2026][Interpretability][Alignment Objective Discovery] Obj-Disco reverse-engineers opaque reward signals from RLHF/GRPO into a sparse linear combination of natural language objectives (DIR) along the "model checkpoint trajectory." By utilizing a Matching Pursuit-style greedy approach combined with dual LLM-as-Judge verification, it stably recovers >90% of reward behavior across multiple tasks and models, uncovering hidden misalignment drivers such as "relaxed restrictio…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Matching Pursuit
-  - LLM-as-a-Judge
+  - "ICML 2026"
+  - "Interpretability"
+  - "Alignment Objective Discovery"
+  - "Reward Model Interpretability"
+  - "Matching Pursuit"
+  - "LLM-as-a-Judge"
+  - "Implicit Misalignment"
 date: 2026-05-08
-content_hash: cf887173791b96bb
+content_hash: a44963201f715893
 ---
+
 # Discovering Implicit Large Language Model Alignment Objectives
 
 **Conference**: ICML 2026  
@@ -143,8 +147,8 @@ Controlled experiments were conducted across 4 groups (PPO/GRPO × Llama/Qwen), 
 
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](../../NeurIPS2025/interpretability/probabilistic_token_alignment_for_large_language_model_fusion.md)
 - [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
-- [\[ICML 2026\] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents](a_behavioural_and_representational_evaluation_of_goal-directedness_in_language_m.md)
 - [\[ICML 2026\] Discovering Differences in Strategic Behavior Between Humans and LLMs](discovering_differences_in_strategic_behavior_between_humans_and_llms.md)
+- [\[ICML 2026\] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents](a_behavioural_and_representational_evaluation_of_goal-directedness_in_language_m.md)
 - [\[ACL 2026\] Dual Alignment Between Language Model Layers and Human Sentence Processing](../../ACL2026/interpretability/dual_alignment_between_language_model_layers_and_human_sentence_processing.md)
 
 </div>

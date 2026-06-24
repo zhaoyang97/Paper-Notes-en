@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WAFT: Warping-Alone Field Transforms for Optical Flow
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] WAFT completely replaces the standard cost volume in optical flow methods with high-resolution feature warping. By utilizing a DPT/ViT iterative update module to implicitly handle large displacements, it achieves top-tier accuracy on Spring, Sintel, and KITTI while consuming only 1/3 of the VRAM and being 1.3–4.1 times
+  [ICLR 2026][3D Vision][Optical Flow Estimation] WAFT completely replaces the standard cost volume in optical flow methods with high-resolution feature warping. By utilizing a DPT/ViT iterative update module to implicitly handle large displacements, it achieves top-tier accuracy on Spring, Sintel, and KITTI while consuming only 1/3 of the VRAM and being 1.3–4.1 times faster than comparable methods.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Optical Flow Estimation"
+  - "Feature Warping"
+  - "Cost Volume"
+  - "Iterative Update"
+  - "Meta-architecture"
 date: 2026-05-08
-content_hash: 0753abd35935d5f0
+content_hash: 519b998927716914
 ---
+
 # WAFT: Warping-Alone Field Transforms for Optical Flow
 
 **Conference**: ICLR 2026  
@@ -153,11 +159,11 @@ Based on WAFT-DAv2-a1, zero-shot results on Sintel(train) / Spring(sub-val):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](../../CVPR2026/3d_vision/optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
 - [\[ICLR 2026\] RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo](robustspring_benchmarking_robustness_to_image_corruptions_for_optical_flow_scene.md)
+- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](../../CVPR2026/3d_vision/flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
 - [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
-- [\[ICLR 2026\] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field](station2radar_query_conditioned_gaussian_splatting_for_precipitation_field.md)
-- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
-- [\[ICLR 2026\] A²TG: Adaptive Anisotropic Textured Gaussians for Efficient 3D Scene Representation](a2tg_adaptive_anisotropic_textured_gaussians_for_efficient_3d_scene_representati.md)
+- [\[NeurIPS 2025\] E-MoFlow: Learning Egomotion and Optical Flow from Event Data via Implicit Regularization](../../NeurIPS2025/3d_vision/e-moflow_learning_egomotion_and_optical_flow_from_event_data_via_implicit_regula.md)
 
 </div>
 

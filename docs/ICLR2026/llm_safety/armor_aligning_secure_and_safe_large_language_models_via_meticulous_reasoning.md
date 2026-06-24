@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] ARMOR reformulates "jailbreak defense" as a "core malicious intent extraction" problem. Through a three-step "Meticulous Reasoning" process (Strategy Analysis → Intent Analysis → Strategic Safety Review) combined with a pluggable and updatable jailbreak strategy library, it reduces the success rate of advanced optimiza
+  [ICLR 2026][LLM Safety][Jailbreak Defense] ARMOR reformulates "jailbreak defense" as a "core malicious intent extraction" problem. Through a three-step "Meticulous Reasoning" process (Strategy Analysis → Intent Analysis → Strategic Safety Review) combined with a pluggable and updatable jailbreak strategy library, it reduces the success rate of advanced optimization-based jailbreak attacks from over 0.4 to 0.06.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Jailbreak Defense"
+  - "Intent Extraction"
+  - "Safety Reasoning"
+  - "Strategy Library"
+  - "Step-wise DPO"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 94b515b601371b66
+content_hash: 2ccc6b6a89d9e9de
 ---
+
 # ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning
 
 **Conference**: ICLR 2026  
@@ -124,15 +131,14 @@ Regarding utility (GSM8k/MATH): ARMOR scores 0.86/0.76 (close to Qwen-2.5's 0.89
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] SafeMoE: Safe Fine-Tuning for MoE LLMs by Aligning Harmful Input Routing](safemoe_safe_fine-tuning_for_moe_llms_by_aligning_harmful_input_routing.md)
 - [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](../../AAAI2026/llm_safety/sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[ICLR 2026\] Strategic Obfuscation of Deceptive Reasoning in Language Models](strategic_obfuscation_of_deceptive_reasoning_in_language_models.md)
 - [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](../../ACL2026/llm_safety/reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
-- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 
 </div>
 

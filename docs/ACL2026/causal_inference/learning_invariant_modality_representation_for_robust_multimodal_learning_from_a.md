@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective
 description: >-
-  [ACL 2026][Causal Inference][Paper Note] This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function combining invariance constraints, mutu
+  [ACL 2026][Causal Inference][Causal Invariant Representation] This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function combining invariance constraints, mutual information constraints, and reconstruction constraints, it ensures that invariant representati…
 tags:
-  - ACL 2026
-  - Causal Inference
+  - "ACL 2026"
+  - "Causal Inference"
+  - "Causal Invariant Representation"
+  - "Multimodal Sentiment Analysis"
+  - "Out-of-Distribution Generalization"
+  - "Feature Disentanglement"
+  - "Virtual Environments"
 date: 2026-05-08
-content_hash: fa1228e59767f2f4
+content_hash: 4bb9d07994eb923e
 ---
+
 # Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective
 
 **Conference**: ACL 2026  
@@ -114,11 +120,11 @@ Evaluated on CMU-MOSI/MOSEI/CH-SIMS-v2 (Sentiment) + UR-FUNNY (Humor) + MUStARD 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](../../ICLR2026/causal_inference/carl_preserving_causal_structure_in_representation_learning.md)
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](../../ICLR2026/causal_inference/beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
+- [\[ICLR 2026\] Learning Robust Intervention Representations with Delta Embeddings](../../ICLR2026/causal_inference/learning_robust_intervention_representations_with_delta_embeddings.md)
 - [\[ACL 2026\] Function Words as Statistical Cues for Language Learning](function_words_as_statistical_cues_for_language_learning.md)
 - [\[ECCV 2024\] Integrating Markov Blanket Discovery into Causal Representation Learning for Domain Generalization](../../ECCV2024/causal_inference/integrating_markov_blanket_discovery_into_causal_representation_learning_for_dom.md)
-- [\[ICML 2025\] Learning Time-Aware Causal Representation for Model Generalization in Evolving Domains](../../ICML2025/causal_inference/learning_time-aware_causal_representation_for_model_generalization_in_evolving_d.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Information-based Value Iteration Networks for Decision Making Under Uncertainty
 description: >-
-  [ICLR 2026][Reinforcement Learning][Value Iteration Network] This paper proposes VI2N (Value Iteration with Value of Information Network), which implements the "Pairwise Heuristic" as a differentiable convolutional network module. This enables Value Iteration Networks, for the first time, to learn strategies that "resolve uncertainty before collecting rewards" in partially obser
+  [ICLR 2026][Reinforcement Learning][Value Iteration Network] This paper proposes VI2N (Value Iteration with Value of Information Network), which implements the "Pairwise Heuristic" as a differentiable convolutional network module. This enables Value Iteration Networks, for the first time, to learn strategies that "resolve uncertainty before collecting rewards" in partially observable navigation environments with high perceptual ambiguity.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Value Iteration Network
-  - POMDP
-  - Pairwise Heuristic
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Value Iteration Network"
+  - "POMDP"
+  - "partial observability"
+  - "Pairwise Heuristic"
+  - "value of information"
+  - "differentiable planning"
 date: 2026-05-08
-content_hash: 3f24ed7e77202636
+content_hash: 8b105efe4b57ba0f
 ---
+
 # Information-based Value Iteration Networks for Decision Making Under Uncertainty
 
 **Conference**: ICLR 2026  
@@ -133,11 +137,11 @@ Reducing the steps of either planning module to 1 leads to a significant perform
 
 ## Related Papers
 
+- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
 - [\[ICML 2025\] Scaling Value Iteration Networks to 5000 Layers for Extreme Long-Term Planning](../../ICML2025/reinforcement_learning/scaling_value_iteration_networks_to_5000_layers_for_extreme_long-term_planning.md)
+- [\[ICLR 2026\] Bayesian Ensemble for Sequential Decision-Making](bayesian_ensemble_for_sequential_decision-making.md)
 - [\[ICLR 2026\] Ada-Diffuser: Latent-Aware Adaptive Diffusion for Decision-Making](ada-diffuser_latent-aware_adaptive_diffusion_for_decision-making.md)
 - [\[ICLR 2026\] Frozen Policy Iteration: Computationally Efficient RL under Linear $Q^{\pi}$ Realizability for Deterministic Dynamics](frozen_policy_iteration_computationally_efficient_rl_under_linear_qpi_realizabil.md)
-- [\[ICLR 2026\] EMFuse: Energy-based Model Fusion for Decision Making](emfuse_energy-based_model_fusion_for_decision_making.md)
-- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
 
 </div>
 

@@ -82,7 +82,7 @@ item_total: 60
 
 **🤖 AAAI2026** · **60** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (241)](../../ICLR2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [🧪 ICML2026 (117)](../../ICML2026/model_compression/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (108)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (240)](../../ICLR2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [🧪 ICML2026 (117)](../../ICML2026/model_compression/index.md) · [🧠 NeurIPS2025 (143)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
 
 🔥 **Top topics:** Model Compression ×9 · Compression ×7 · LLM ×6 · Knowledge Distillation ×5 · Reasoning ×3
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)
 description: >-
-  [AAAI 2026][Multimodal VLM][CLIP] This paper proposes RMAdapter, a dual-branch adapter architecture that augments the standard adaptation branch with a reconstruction branch (analogous to an AutoEncoder). By sharing the…
+  [AAAI 2026 Oral][Multimodal VLM][CLIP] This paper proposes RMAdapter, a dual-branch adapter architecture that augments the standard adaptation branch with a reconstruction branch (analogous to an AutoEncoder). By sharing the down-projection layer and applying per-layer local reconstruction losses, RMAdapter achieves an optimal balance between task-specific adaptation and general knowledge retention in few-shot CLIP fine-tuning, outperforming state-of-the-art methods (includin…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multimodal VLM"
   - "CLIP"
   - "Adapter"
@@ -12,7 +12,7 @@ tags:
   - "few-shot learning"
   - "Vision-Language Model"
 date: 2026-05-08
-content_hash: e965339817c1f34d
+content_hash: 1e8f070befc05a1b
 ---
 
 # RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)
@@ -128,11 +128,11 @@ Cross-entropy (classification supervision) + consistency constraint (preventing 
 
 ## Related Papers
 
+- [\[ICLR 2026\] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](../../ICLR2026/multimodal_vlm/pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
-- [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
+- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](../../CVPR2026/multimodal_vlm/pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
 - [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
-- [\[AAAI 2026\] ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation](imagebinddc_compressing_multi-modal_data_with_imagebind-based_condensation.md)
-- [\[AAAI 2026\] Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning.md)
+- [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
 
 </div>
 

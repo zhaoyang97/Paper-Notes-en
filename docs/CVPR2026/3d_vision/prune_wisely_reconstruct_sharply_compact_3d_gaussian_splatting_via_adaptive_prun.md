@@ -4,13 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes an adaptive Reconstruction-aware Pruning Strategy (RPS) and 3D DoG primitives, achieving 90% Gaussian point reduction while maintaining rendering quality.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Difference-of-Gaussians
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Model Pruning"
+  - "Difference-of-Gaussians"
+  - "Compact Representation"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: e6bed44d5cd865f6
+content_hash: f80270b3cc4299a0
 ---
+
 # Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives
 
 **Conference**: CVPR 2026  
@@ -147,15 +151,15 @@ The pseudo-Gaussian $G_p$ shares the center and rotation with the main Gaussian 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] SDGS: Spatial Difference Guided Gaussian Splatting for Simultaneous Localization and 3D Reconstruction](sdgs_spatial_difference_guided_gaussian_splatting_for_simultaneous_localization_.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors](3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors.md)
 - [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
+- [\[CVPR 2026\] 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors](3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors.md)
 - [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping](speede3dgs_speedy_deformable_3d_gaussian_splatting_with_temporal_pruning_and_mot.md)
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
+- [\[CVPR 2026\] DualPrim: Compact 3D Reconstruction with Positive and Negative Primitives](dualprim_compact_3d_reconstruction_with_positive_and_negative_primitives.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][RAG] This paper proposes CK-PLUG, a plug-and-play, training-free decoding-stage method. It uses "Confidence Gain (CG)" to detect conflicts between parametric knowledge and retrieved context at the token level, then blends "parameter-side" and "context-side" probability distributions using a single hyperparameter $\alpha$. T
+  [ICLR 2026][LLM (Other)][RAG] This paper proposes CK-PLUG, a plug-and-play, training-free decoding-stage method. It uses "Confidence Gain (CG)" to detect conflicts between parametric knowledge and retrieved context at the token level, then blends "parameter-side" and "context-side" probability distributions using a single hyperparameter $\alpha$. This enables continuous, bidirectional, and controllable adjustment between "the model's own memory" and "retrieved context"—allowi…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - RAG
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "RAG"
+  - "Knowledge Conflict"
+  - "Decoding Intervention"
+  - "Parametric Knowledge"
+  - "Contextual Faithfulness"
 date: 2026-05-08
-content_hash: 2d96d509bf1a10c8
+content_hash: d4baed4d9785688c
 ---
+
 # Parameters vs. Context: Fine-Grained Control of Knowledge Reliance in Language Models
 
 **Conference**: ICLR 2026  
@@ -145,9 +150,17 @@ The core ablation removes Conflict Detection (ConD), intervening on every token 
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
+- [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](fine-grained_activation_steering_steering_less_achieving_more.md)
+- [\[ACL 2025\] SudoLM: Learning Access Control of Parametric Knowledge with Authorization Alignment](../../ACL2025/llm_nlp/sudolm_authorization_alignment.md)
+- [\[ACL 2025\] BehaviorBox: Automated Discovery of Fine-Grained Performance Differences Between Language Models](../../ACL2025/llm_nlp/behaviorbox_automated_discovery_of_fine-grained_performance_differences_between_.md)
+- [\[ICLR 2026\] Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models](cite_pretrain_retrieval-free_knowledge_attribution_for_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](fine-grained_activation_steering_steering_less_achieving_more.md)

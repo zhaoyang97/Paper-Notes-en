@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bias at the End of the Score
 description: >-
-  [CVPR 2026][Others][T2I] This paper conducts a large-scale bias audit of five widely used reward models (PickScore, ImageReward, HPS, VQAScore, CLIP) in text-to-image (T2I) systems. It demonstrates that these scoring functions, acting as proxies for "image quality," encode systematic demographic biases. When used as noise optimizers, they disp
+  [CVPR 2026][AI Safety][Reward models] This paper conducts a large-scale bias audit of five widely used reward models (PickScore, ImageReward, HPS, VQAScore, CLIP) in text-to-image (T2I) systems. It demonstrates that these scoring functions, acting as proxies for "image quality," encode systematic demographic biases. When used as noise optimizers, they disproportionately hypersexualize female subjects and "whiten" non-White subjects. Furthermore…
 tags:
-  - CVPR 2026
-  - Others
-  - T2I
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Reward models"
+  - "demographic bias"
+  - "T2I"
+  - "counterfactual evaluation"
+  - "hypersexualization"
 date: 2026-05-08
-content_hash: 6b15b0ef0d07ccad
+content_hash: 41d4379f8e338d8f
 ---
+
 # Bias at the End of the Score
 
 **Conference**: CVPR 2026  
@@ -122,15 +127,15 @@ To explain the root cause of behavior, the study returns to the scores. Using th
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] End-to-End Hyper-Relational Information Extraction for Engineering Diagrams via Dynamically Tokenized Relation Transformer](end-to-end_hyper-relational_information_extraction_for_engineering_diagrams_via_.md)
-- [\[CVPR 2026\] Bias In, Bias Out? Finding Unbiased Subnetworks in Vanilla Models](bias_in_bias_out_finding_unbiased_subnetworks_in_vanilla_models.md)
-- [\[ICML 2026\] CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities](../../ICML2026/others/cybergym-e2e_scalable_real-world_benchmark_for_ai_agents_end-to-end_cybersecurit.md)
-- [\[CVPR 2026\] Rank-Guided Pseudo-Bias Learning for Robust Black-Box Adaptation](rank-guided_pseudo-bias_learning_for_robust_black-box_adaptation.md)
-- [\[ACL 2025\] Behavioural vs. Representational Systematicity in End-to-End Models: An Opinionated Survey](../../ACL2025/others/behavioural_vs_representational_systematicity_in_end-to-end_models_an_opinionate.md)
+- [\[CVPR 2026\] RevINN: An End-to-End Invertible Neural Network for Reversible Adversarial Examples Generation](revinn_an_end-to-end_invertible_neural_network_for_reversible_adversarial_exampl.md)
+- [\[CVPR 2026\] VisiLock: Authorizing Instruction-based Image editing with Dual Score Distillation](visilock_authorizing_instruction-based_image_editing_with_dual_score_distillatio.md)
+- [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
+- [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
+- [\[CVPR 2026\] Mitigating Simplicity Bias in OOD Detection through Object Co-occurrence Analysis](mitigating_simplicity_bias_in_ood_detection_through_object_co-occurrence_analysi.md)
 
 </div>
 

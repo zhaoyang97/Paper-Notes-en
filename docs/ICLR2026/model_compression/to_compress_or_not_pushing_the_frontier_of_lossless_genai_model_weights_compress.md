@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] To Compress or Not? Pushing the Frontier of Lossless GenAI Model Weights Compression with Exponent Concentration
 description: >-
-  [ICLR 2026][Model Compression][FP8] This paper discovers the "exponent concentration" (low entropy) phenomenon in post-training GenAI weights. It theoretically proves bounded exponent entropy via $\alpha$-stable distribution theory, corresponding to a compression limit of approximately FP4.67. Based on this, the authors design ECF8, a lossless FP8 compre
+  [ICLR 2026][Model Compression][Lossless Compression] This paper discovers the "exponent concentration" (low entropy) phenomenon in post-training GenAI weights. It theoretically proves bounded exponent entropy via $\alpha$-stable distribution theory, corresponding to a compression limit of approximately FP4.67. Based on this, the authors design ECF8, a lossless FP8 compression framework (entropy-aware Huffman coding + GPU parallel decoding + just-in-the-time tensor management)…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - FP8
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Lossless Compression"
+  - "FP8"
+  - "Exponent Concentration"
+  - "Huffman Coding"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 115dad206285eca3
+content_hash: 89dc8482b8772559
 ---
+
 # To Compress or Not? Pushing the Frontier of Lossless GenAI Model Weights Compression with Exponent Concentration
 
 **Conference**: ICLR 2026  
@@ -152,8 +156,8 @@ For DiTs (DiffSynth + VRAM management on a single GH200): FLUX.1-dev end-to-end 
 - [\[ICLR 2026\] The Unseen Frontier: Pushing the Limits of LLM Sparsity with Surrogate-Free ADMM](the_unseen_frontier_pushing_the_limits_of_llm_sparsity_with_surrogate-free_admm.md)
 - [\[ICLR 2026\] QVLA: Not All Channels Are Equal in Vision-Language-Action Model's Quantization](qvla_not_all_channels_are_equal_in_vision-language-action_models_quantization.md)
 - [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
 - [\[ICLR 2026\] OrderDP: A Theoretically Guaranteed Lossless Dynamic Data Pruning Framework](orderdp_a_theoretically_guaranteed_lossless_dynamic_data_pruning_framework.md)
-- [\[ICML 2026\] ZipMoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling](../../ICML2026/model_compression/zipmoe_efficient_on-device_moe_serving_via_lossless_compression_and_cache-affini.md)
 
 </div>
 

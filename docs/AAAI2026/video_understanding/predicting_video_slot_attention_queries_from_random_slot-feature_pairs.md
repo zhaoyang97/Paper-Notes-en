@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predicting Video Slot Attention Queries from Random Slot-Feature Pairs
 description: >-
-  [AAAI 2026][Video Understanding][Object-centric learning] This paper proposes RandSF.Q, which significantly improves query prediction quality in video object-centric learning (OCL) by leveraging next-frame features for i…
+  [AAAI 2026][Video Understanding][Object-centric learning] This paper proposes RandSF.Q, which significantly improves query prediction quality in video object-centric learning (OCL) by leveraging next-frame features for informative query prediction and learning transition dynamics from randomly sampled slot-feature pairs. The method surpasses state-of-the-art approaches by up to 10 points on object discovery benchmarks.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "temporal modeling"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: 7d482f51a3bcefd3
+content_hash: 084a14fddcc00b85
 ---
 
 # Predicting Video Slot Attention Queries from Random Slot-Feature Pairs
@@ -184,9 +184,9 @@ Like existing transitioners, the proposed transitioner is trained end-to-end via
 
 - [\[CVPR 2026\] Reconstruction-Guided Slot Curriculum: Addressing Object Over-Fragmentation in Video Object-Centric Learning](../../CVPR2026/video_understanding/reconstruction-guided_slot_curriculum_addressing_object_over-fragmentation_in_vi.md)
 - [\[AAAI 2026\] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)
+- [\[ECCV 2024\] Self-Supervised Any-Point Tracking by Contrastive Random Walks](../../ECCV2024/video_understanding/self-supervised_any-point_tracking_by_contrastive_random_walks.md)
 - [\[ICLR 2026\] VideoNSA: Native Sparse Attention Scales Video Understanding](../../ICLR2026/video_understanding/videonsa_native_sparse_attention_scales_video_understanding.md)
-- [\[ICCV 2025\] Towards Efficient General Feature Prediction in Masked Skeleton Modeling](../../ICCV2025/video_understanding/towards_efficient_general_feature_prediction_in_masked_skeleton_modeling.md)
-- [\[CVPR 2026\] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](../../CVPR2026/video_understanding/stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)
+- [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](../../CVPR2026/video_understanding/efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
 
 </div>
 

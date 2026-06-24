@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Generalizing Multi-scale Time-Series Modeling with a Single Operator
 description: >-
-  [ICML 2026][Time Series][Paper Note] The Sigma framework unifies existing discrete multi-scale operators by learning **Learnable Discrete Gaussian (LDG) kernels** with **continuous, distance-aware scale parameters**. It achieves SOTA performance on both long-term and short-term forecasting tasks while significantly reducing computational costs (5.3× faste
+  [ICML 2026][Time Series][Time Series Forecasting] The Sigma framework unifies existing discrete multi-scale operators by learning **Learnable Discrete Gaussian (LDG) kernels** with **continuous, distance-aware scale parameters**. It achieves SOTA performance on both long-term and short-term forecasting tasks while significantly reducing computational costs (5.3× faster training, 3.8× less VRAM).
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Multi-scale Modeling"
+  - "Gaussian Kernel"
+  - "Scale-space Theory"
 date: 2026-05-08
-content_hash: ee495422c8707a2e
+content_hash: 947832aa584c82d0
 ---
+
 # Generalizing Multi-scale Time-Series Modeling with a Single Operator
 
 **Conference**: ICML 2026  
@@ -147,9 +152,9 @@ Ours wins in 13 out of 16 settings, with significant advantages on high-dimensio
 
 - [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](../../AAAI2026/time_series/freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
+- [\[ICLR 2026\] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting](../../ICLR2026/time_series/storm_synergistic_cross-scale_spatio-temporal_modeling_for_weather_forecasting.md)
 - [\[NeurIPS 2025\] Multi-Scale Finetuning for Encoder-based Time Series Foundation Models](../../NeurIPS2025/time_series/multi-scale_finetuning_for_encoder-based_time_series_foundation_models.md)
-- [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
-- [\[ICML 2026\] FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models](factorynet_a_large-scale_dataset_toward_industrial_time-series_foundation_models.md)
+- [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](../../ICLR2026/time_series/time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
 
 </div>
 

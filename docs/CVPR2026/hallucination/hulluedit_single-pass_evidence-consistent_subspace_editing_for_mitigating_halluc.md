@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] HulluEdit is proposed as a single-pass, reference-free subspace editing framework. By decomposing hidden states into orthogonal visual evidence, conflicting prior, and residual uncertainty subspaces, it selectively suppresses hallucination patterns without interfering with visual grounding. It achieves SOTA hallucinati
+  [CVPR 2026][Hallucination Detection] HulluEdit is proposed as a single-pass, reference-free subspace editing framework. By decomposing hidden states into orthogonal visual evidence, conflicting prior, and residual uncertainty subspaces, it selectively suppresses hallucination patterns without interfering with visual grounding. It achieves SOTA hallucination mitigation performance on POPE and CHAIR benchmarks.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
 date: 2026-05-08
-content_hash: f78b95ccb9de8bd7
+content_hash: 82c5409fdc939171
 ---
+
 # HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -165,11 +166,11 @@ The most critical component is the gating mechanism; removing it pushes CHAIRs t
 
 ## Related Papers
 
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs](hulluedit_subspace_editing_hallucination.md)
 - [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
 - [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
 - [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 
 </div>
 

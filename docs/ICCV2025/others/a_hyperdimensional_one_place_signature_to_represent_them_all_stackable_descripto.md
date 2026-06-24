@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition
 description: >-
-  [ICCV 2025][Visual Place Recognition] This paper proposes HOPS (Hyperdimensional One Place Signatures), a framework leveraging hyperdimensional computing (HDC) to fuse multiple reference descriptors of the same place cap…
+  [ICCV 2025][Visual Place Recognition] This paper proposes HOPS (Hyperdimensional One Place Signatures), a framework leveraging hyperdimensional computing (HDC) to fuse multiple reference descriptors of the same place captured under varying environmental conditions into a unified representation, substantially improving the robustness and recall of Visual Place Recognition (VPR) without increasing computational or memory overhead.
 tags:
   - "ICCV 2025"
   - "Visual Place Recognition"
@@ -11,7 +11,7 @@ tags:
   - "Multi-Reference Traversal"
   - "Appearance Invariance"
 date: 2026-05-08
-content_hash: 14f45865fba6bebe
+content_hash: 95f43de78d9cca8b
 ---
 
 # A Hyperdimensional One Place Signature to Represent Them All: Stackable Descriptors For Visual Place Recognition
@@ -127,10 +127,10 @@ On the RobotCar dataset, HOPS outperforms the best single-reference baseline in 
 ## Related Papers
 
 - [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](../../CVPR2026/others/hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
+- [\[ICML 2025\] LapSum -- One Method to Differentiate Them All: Ranking, Sorting and Top-k Selection](../../ICML2025/others/lapsum_--_one_method_to_differentiate_them_all_ranking_sorting_and_top-k_selecti.md)
 - [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
 - [\[NeurIPS 2025\] On Topological Descriptors for Graph Products](../../NeurIPS2025/others/on_topological_descriptors_for_graph_products.md)
-- [\[ICCV 2025\] Processing and Acquisition Traces in Visual Encoders: What Does CLIP Know About Your Camera?](processing_and_acquisition_traces_in_visual_encoders_what_does_clip_know_about_y.md)
-- [\[NeurIPS 2025\] Ultrametric Cluster Hierarchies: I Want 'em All!](../../NeurIPS2025/others/ultrametric_cluster_hierarchies_i_want_em_all.md)
+- [\[CVPR 2025\] Order-One Rolling Shutter Cameras](../../CVPR2025/others/order-one_rolling_shutter_cameras.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data
 description: >-
-  [CVPR 2026][Object Detection][Self-Supervised Learning] Ours proposes CANVAS—the first large-scale subcellular resolution Light-Sheet Fluorescence Microscopy (LSFM) whole-brain benchmark dataset. It covers 6 cell markers, includes ~93,000 cell annotations and a public leaderboard, reveals the severe inadequacies of existing detection models in cross-marker and cross-region
+  [CVPR 2026][Object Detection][Light-sheet fluorescence microscopy] Ours proposes CANVAS—the first large-scale subcellular resolution Light-Sheet Fluorescence Microscopy (LSFM) whole-brain benchmark dataset. It covers 6 cell markers, includes ~93,000 cell annotations and a public leaderboard, reveals the severe inadequacies of existing detection models in cross-marker and cross-region generalization, and explores the potential of 3D Masked Autoencoders (MAE) for self-supervise…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Light-sheet fluorescence microscopy"
+  - "whole-brain imaging"
+  - "cell detection benchmark"
+  - "self-supervised learning"
+  - "foundation models"
 date: 2026-05-08
-content_hash: 8d2206fe88d918be
+content_hash: 7ae05507c62a5f0f
 ---
+
 # Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,16 @@ Background patches receive weight $\alpha=1$, while high-variance cell patches r
 - Value: ⭐⭐⭐⭐ (Critical infrastructure for the LSFM community and guidances for future brain analysis models)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MRD: Multi-resolution Retrieval-Detection Fusion for High-Resolution Image Understanding](mrd_multi-resolution_retrieval-detection_fusion_for_high-resolution_image_unders.md)
-- [\[CVPR 2026\] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection](steeldefectx_a_coarse-to-fine_vision-language_dataset_and_benchmark_for_generali.md)
 - [\[CVPR 2026\] Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)
 - [\[CVPR 2026\] Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)
-- [\[CVPR 2026\] HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](herod_heuristic_inspired_reasoning_data_efficient_rod.md)
+- [\[ICLR 2026\] Self-Guided Low Light Object Detection Framework](../../ICLR2026/object_detection/self-guided_low_light_object_detection_framework.md)
+- [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](../../AAAI2026/object_detection/fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Global Convergence of Adaptive Sensing for Principal Eigenvector Estimation
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper establishes the optimal convergence rate for compressed streaming PCA. The upper bound for the Oja algorithm using two **adaptive** measurements per step under noisy observations matches the information-theoretic lower bound ($\Theta(\lambda_1 \lambda_2 d^2 / (\Delta^2 t))$). It reveals for the first time th
+  [ICML 2026][Model Compression][Principal Component Analysis] This paper establishes the optimal convergence rate for compressed streaming PCA. The upper bound for the Oja algorithm using two **adaptive** measurements per step under noisy observations matches the information-theoretic lower bound ($\Theta(\lambda_1 \lambda_2 d^2 / (\Delta^2 t))$). It reveals for the first time that the fundamental cost of compression relative to full observation is an extra factor of $d$…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Principal Component Analysis"
+  - "Adaptive Sensing"
+  - "Streaming Learning"
+  - "Compressed Measurements"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 3bd755193a02a88e
+content_hash: b96b00008abb3e26
 ---
+
 # Global Convergence of Adaptive Sensing for Principal Eigenvector Estimation
 
 **Conference**: ICML 2026  

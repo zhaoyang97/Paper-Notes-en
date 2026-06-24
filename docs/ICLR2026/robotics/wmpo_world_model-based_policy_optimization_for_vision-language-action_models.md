@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] WMPO migrates the entire reinforcement learning process of VLA policies into a **pixel-space action-conditioned video world model** for "dreaming." By using the world model to imagine complete trajectories, judging success with a lightweight reward model, and running on-policy GRPO, it significantly improves sample eff
+  [ICLR 2026][Robotics][VLA] WMPO migrates the entire reinforcement learning process of VLA policies into a **pixel-space action-conditioned video world model** for "dreaming." By using the world model to imagine complete trajectories, judging success with a lightweight reward model, and running on-policy GRPO, it significantly improves sample efficiency without physical interaction and enables the emergence of self-correction behaviors.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - World Models
-  - On-policy RL
-  - GRPO
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "World Models"
+  - "On-policy RL"
+  - "GRPO"
+  - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 94d74c8f1745b7cf
+content_hash: e5adbe0be8588e50
 ---
+
 # WMPO: World Model-based Policy Optimization for Vision-Language-Action Models
 
 **Conference**: ICLR 2026  
@@ -154,11 +156,11 @@ Success rate (%) under three perturbation scenarios:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](../../CVPR2026/robotics/srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
-- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 - [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](worldgym_world_model_as_an_environment_for_policy_evaluation.md)
+- [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](../../CVPR2026/robotics/srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
 - [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
+- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
+- [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](world-in-world_world_models_in_a_closed-loop_world.md)
 
 </div>
 

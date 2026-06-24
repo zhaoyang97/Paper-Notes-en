@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks
 description: >-
-  [ICLR 2026][Optimization & Theory][PINN] This paper establishes the first convergence theory for Natural Gradient Descent (NGD) in training two-layer PINNs. It proves that the learning rate can be $O(1)$, the convergence rate is independent of the sample size and the minimum eigenvalue of the Gram matrix, and it achieves quadratic convergence under smooth act
+  [ICLR 2026][Optimization][Natural Gradient Descent] This paper establishes the first convergence theory for Natural Gradient Descent (NGD) in training two-layer PINNs. It proves that the learning rate can be $O(1)$, the convergence rate is independent of the sample size and the minimum eigenvalue of the Gram matrix, and it achieves quadratic convergence under smooth activations—significantly faster than first-order gradient descent.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - PINN
-  - NTK
+  - "ICLR 2026"
+  - "Optimization"
+  - "Natural Gradient Descent"
+  - "Over-parameterization"
+  - "PINN"
+  - "Convergence Analysis"
+  - "NTK"
+  - "Gram Matrix"
+  - "Second-order Optimization"
 date: 2026-05-08
-content_hash: 5564b1896a114417
+content_hash: f6e95005e019942f
 ---
+
 # Fast Convergence of Natural Gradient Descent for Over-parameterized Physics-Informed Neural Networks
 
 **Conference**: ICLR 2026  
@@ -125,11 +131,11 @@ Error decreases monotonically with width, verifying that stronger approximation 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Harmonized Cone for Feasible and Non-conflict Directions in Training Physics-Informed Neural Networks](harmonized_cone_for_feasible_and_non-conflict_directions_in_training_physics-inf.md)
 - [\[ICLR 2026\] On the Convergence Direction of Gradient Descent](on_the_convergence_direction_of_gradient_descent.md)
 - [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](fast_data_mixture_optimization_via_gradient_descent.md)
 - [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
-- [\[ICML 2026\] On the Convergence Rate of LoRA Gradient Descent](../../ICML2026/optimization/on_the_convergence_rate_of_lora_gradient_descent.md)
-- [\[ICLR 2026\] On the Convergence Behavior of Preconditioned Gradient Descent Toward the Rich Learning Regime](on_the_convergence_behavior_of_preconditioned_gradient_descent_toward_the_rich_l.md)
+- [\[AAAI 2026\] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training](../../AAAI2026/optimization/beyond_the_mean_fisher-orthogonal_projection_for_natural_gradient_descent_in_lar.md)
 
 </div>
 

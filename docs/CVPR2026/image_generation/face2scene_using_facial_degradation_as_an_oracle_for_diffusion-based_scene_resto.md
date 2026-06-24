@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] The Face2Scene two-stage framework is proposed: it first utilizes a reference-based face restoration model (Ref-FR) to obtain HQ-LQ face pairs, from which a degradation code is extracted as an "oracle." This code then conditions a single-step diffusion model to complete full-scene image restoration, including the body
+  [CVPR2026][Image Generation][Image Restoration] The Face2Scene two-stage framework is proposed: it first utilizes a reference-based face restoration model (Ref-FR) to obtain HQ-LQ face pairs, from which a degradation code is extracted as an "oracle." This code then conditions a single-step diffusion model to complete full-scene image restoration, including the body and background.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR2026"
+  - "Image Generation"
+  - "Image Restoration"
+  - "Diffusion Models"
+  - "Facial Reference"
+  - "Degradation Estimation"
+  - "Full Scene Restoration"
+  - "Single-step Inference"
 date: 2026-05-08
-content_hash: 223e60e77194925e
+content_hash: 7e0e8d43f411d082
 ---
+
 # Face2Scene: Using Facial Degradation as an Oracle for Diffusion-Based Scene Restoration
 
 **Conference**: CVPR2026  
@@ -154,7 +160,7 @@ On real-world validation, Face2Scene also leads significantly: DISTS 0.1178 vs S
 - [\[CVPR 2025\] GenDeg: Diffusion-based Degradation Synthesis for Generalizable All-In-One Image Restoration](../../CVPR2025/image_generation/gendeg_diffusion-based_degradation_synthesis_for_generalizable_all-in-one_image_.md)
 - [\[CVPR 2026\] Diffusion-Based Makeup Transfer with Facial Region-Aware Makeup Features](diffusion-based_makeup_transfer_with_facial_region-aware_makeup_features.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
-- [\[AAAI 2026\] Realistic Face Reconstruction from Facial Embeddings via Diffusion Models](../../AAAI2026/image_generation/realistic_face_reconstruction_from_facial_embeddings_via_diffusion_models.md)
+- [\[CVPR 2026\] CARD: Correlation Aware Restoration with Diffusion](card_correlation_aware_restoration_with_diffusion.md)
 
 </div>
 

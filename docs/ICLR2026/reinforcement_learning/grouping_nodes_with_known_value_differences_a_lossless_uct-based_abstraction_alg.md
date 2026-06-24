@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Grouping Nodes with Known Value Differences: A Lossless UCT-based Abstraction Algorithm
 description: >-
-  [ICLR 2026][Reinforcement Learning][Monte Carlo Tree Search] This paper proposes KVDA-UCT, which relaxes MCTS abstraction from "merging nodes with equal values" to "merging nodes whenever their value difference can be inferred." Without introducing new parameters or sacrificing precision, it discovers significantly more abstractions than the current state-of-the-art OGA-UCT, the
+  [ICLR 2026][Reinforcement Learning][Monte Carlo Tree Search] This paper proposes KVDA-UCT, which relaxes MCTS abstraction from "merging nodes with equal values" to "merging nodes whenever their value difference can be inferred." Without introducing new parameters or sacrificing precision, it discovers significantly more abstractions than the current state-of-the-art OGA-UCT, thereby improving sample efficiency in deterministic environments.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Monte Carlo Tree Search
-  - UCT
-  - OGA-UCT
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Monte Carlo Tree Search"
+  - "UCT"
+  - "State Abstraction"
+  - "OGA-UCT"
+  - "Deterministic MDP"
+  - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 7ba740dcc0616cd0
+content_hash: 217f97b9e79a2554
 ---
+
 # Grouping Nodes with Known Value Differences: A Lossless UCT-based Abstraction Algorithm
 
 **Conference**: ICLR 2026  
@@ -133,10 +137,10 @@ This paper sits within the lineage of automatic MCTS abstractions: AS-UCT (Jiang
 ## Related Papers
 
 - [\[ICLR 2026\] Value Flows](value_flows.md)
-- [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
 - [\[ICLR 2026\] Policy Newton Algorithm in Reproducing Kernel Hilbert Space](policy_newton_algorithm_in_reproducing_kernel_hilbert_space.md)
+- [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] Universal Value-Function Uncertainties](universal_value-function_uncertainties.md)
-- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
 
 </div>
 

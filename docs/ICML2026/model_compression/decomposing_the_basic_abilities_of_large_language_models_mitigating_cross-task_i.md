@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning
 description: >-
-  [ICML 2026][Model Compression][SVD-LoRA] This paper addresses the cross-task gradient conflict in multi-task instruction fine-tuning by proposing Badit. It first uses SVD to decompose pre-trained weights into naturally orthogonal high-singular-value LoRA "basic ability" experts. During training, it applies spherical K-means to dynamically group rank-1 compone
+  [ICML 2026][Model Compression][Multi-task Instruction Fine-tuning] This paper addresses the cross-task gradient conflict in multi-task instruction fine-tuning by proposing Badit. It first uses SVD to decompose pre-trained weights into naturally orthogonal high-singular-value LoRA "basic ability" experts. During training, it applies spherical K-means to dynamically group rank-1 components orthogonally. This shifts the focus from "isolating parameters by task" to "decoupling by…
 tags:
-  - ICML 2026
-  - Model Compression
-  - SVD-LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "Multi-task Instruction Fine-tuning"
+  - "Cross-task Interference"
+  - "SVD-LoRA"
+  - "Spherical Clustering"
+  - "Orthogonal Basic Abilities"
 date: 2026-05-08
-content_hash: 7aca28d3d05d0a58
+content_hash: a020fb2bb6dbf120
 ---
+
 # Decomposing the Basic Abilities of Large Language Models: Mitigating Cross-Task Interference in Multi-Task Instruct-Tuning
 
 **Conference**: ICML 2026  

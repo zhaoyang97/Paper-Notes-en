@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Vision-Language-Action] This paper proposes CAPS: reinterpreting "instruction drift" as a systematic sampling error. It uses SNR ($= \log|\mathcal{A}|-\mathcal{H}$) as a metacognitive switch to trigger Metropolis-Hastings iterative refinement based on a power distribution $\pi \propto p^\alpha$ only during high-entropy "Pivotal Windows." It o
+  [ICML 2026][Robotics][Vision-Language-Action] This paper proposes CAPS: reinterpreting "instruction drift" as a systematic sampling error. It uses SNR ($= \log|\mathcal{A}|-\mathcal{H}$) as a metacognitive switch to trigger Metropolis-Hastings iterative refinement based on a power distribution $\pi \propto p^\alpha$ only during high-entropy "Pivotal Windows." It outperforms OpenVLA and TACO training-free on RoboTwin, Simpler-WindowX, and Libero-long.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Vision-Language-Action
-  - MCMC
+  - "ICML 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "Long-horizon planning"
+  - "Instruction drift"
+  - "Power distribution sampling"
+  - "MCMC"
+  - "Metacognitive control"
 date: 2026-05-08
-content_hash: 795c1d9884db4403
+content_hash: 39cb253146c94111
 ---
+
 # Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning
 
 **Conference**: ICML 2026  
@@ -168,14 +173,20 @@ The results show CAPS outperforms TACO by 6.1pp under the same candidate budget,
 - Value: ⭐⭐⭐⭐ Provides a training-free path for long-horizon performance gains in VLA, ready for immediate engineering application.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-**Related Papers**:
-- TACO (Yang et al. 2025)
-- Tree-of-Thoughts (Yao et al. 2023)
-- RoboMonkey (Kwok et al. 2025)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/robotics/compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
+- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
+- [\[ICML 2025\] Closed-loop Long-horizon Robotic Planning via Equilibrium Sequence Modeling](../../ICML2025/robotics/closed-loop_long-horizon_robotic_planning_via_equilibrium_sequence_modeling.md)
+- [\[ICML 2026\] TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation](tapsampling_inference-time_sampling_with_a_task-progress-understanding_verifier_.md)
+- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](../../ICLR2026/robotics/sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)

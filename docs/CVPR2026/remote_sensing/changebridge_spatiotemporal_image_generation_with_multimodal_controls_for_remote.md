@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing
 description: >-
-  [CVPR 2026][Image Generation][Remote Sensing] Ours proposes ChangeBridge, the first conditional spatiotemporal image generation model for remote sensing. Based on asymmetrically drifting diffusion bridges, it generates post-event images from pre-event images and multimodal conditions (coordinate-text/semantic masks/instance layouts), simultaneously modeling foregr
+  [CVPR 2026][Remote Sensing][Spatiotemporal Image Generation] Ours proposes ChangeBridge, the first conditional spatiotemporal image generation model for remote sensing. Based on asymmetrically drifting diffusion bridges, it generates post-event images from pre-event images and multimodal conditions (coordinate-text/semantic masks/instance layouts), simultaneously modeling foreground event-driven changes and background temporal evolution, while serving as a data engine for dow…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Spatiotemporal Image Generation"
+  - "Diffusion Bridge"
+  - "Asynchronous Drift"
+  - "Change Detection"
 date: 2026-05-08
-content_hash: b76353cbd2ca5028
+content_hash: ac79f2c271298e94
 ---
+
 # ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing
 
 **Conference**: CVPR 2026  
@@ -112,11 +116,11 @@ Training downstream change detection models with synthetic data from ChangeBridg
 
 ## Related Papers
 
-- [\[CVPR 2026\] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)
-- [\[CVPR 2026\] Spatiotemporal Pyramid Flow Matching for Climate Emulation](spatiotemporal_pyramid_flow_matching_for_climate_emulation.md)
-- [\[CVPR 2026\] DreamOmni2: Multimodal Instruction-based Generation and Editing](dreamomni2_multimodal_instruction-based_generation_and_editing.md)
-- [\[CVPR 2026\] OmniGen2: Towards Instruction-Aligned Multimodal Generation](omnigen2_towards_instruction-aligned_multimodal_generation.md)
-- [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
+- [\[ICLR 2026\] Object Fidelity Diffusion for Remote Sensing Image Generation](../../ICLR2026/remote_sensing/object_fidelity_diffusion_for_remote_sensing_image_generation.md)
+- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)
+- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation](olmoearth_stable_latent_image_modeling_for_multimodal_earth_observation.md)
 
 </div>
 

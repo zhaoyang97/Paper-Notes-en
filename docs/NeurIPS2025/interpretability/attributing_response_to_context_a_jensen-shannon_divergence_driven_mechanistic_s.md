@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ARC-JSD: Attributing Response to Context via Jensen-Shannon Divergence Driven Mechanistic Study
 description: >-
-  [NeurIPS 2025][Interpretability][Context Attribution] ARC-JSD proposes a RAG context attribution method based on Jensen-Shannon Divergence — by comparing the JSD between model output distributions with and without specif…
+  [NeurIPS 2025][Interpretability][Context Attribution] ARC-JSD proposes a RAG context attribution method based on Jensen-Shannon Divergence — by comparing the JSD between model output distributions with and without specific context sentences, it localizes the context that a response depends on without fine-tuning or gradient computation. The method achieves 3× faster computation than baselines, improves Top-1 attribution accuracy by 10.7% on average…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "RAG Hallucination"
   - "Logit Lens"
 date: 2026-05-08
-content_hash: 2e8236759afb32b0
+content_hash: 0882c5c70a9e6fe1
 ---
 
 # ARC-JSD: Attributing Response to Context via Jensen-Shannon Divergence Driven Mechanistic Study
@@ -131,10 +131,10 @@ Evaluated on Qwen2-1.5B/7B-IT and Gemma2-2B/9B-IT.
 
 ## Related Papers
 
+- [\[ACL 2025\] An Empirical Study of Mechanistic Interpretability Approaches for Factual Recall](../../ACL2025/interpretability/an_empirical_study_of_mechanistic_interpretability_approaches_for_factual_recall.md)
 - [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
+- [\[ICLR 2026\] Multiple Token Divergence: Measuring and Steering In-Context Computation Density](../../ICLR2026/interpretability/multiple_token_divergence_measuring_and_steering_in-context_computation_density.md)
 - [\[NeurIPS 2025\] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making](valuepilot_a_two-phase_framework_for_value-driven_decision-making.md)
-- [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)
-- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
 
 </div>

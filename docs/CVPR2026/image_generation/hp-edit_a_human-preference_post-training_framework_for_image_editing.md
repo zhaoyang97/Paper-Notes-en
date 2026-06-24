@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] HP-Edit: A Human-Preference Post-Training Framework for Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] This paper proposes **HP-Edit**, a human-preference post-training framework for image editing. It fine-tunes a VLM-based automatic scorer, **HP-Scorer**, using a small amount of human-scored data to construct preference datasets and serve as a reward model. Through online Flow-GRPO post-training, pre-trained editing mo
+  [CVPR 2026][Image Generation][Image Editing] This paper proposes **HP-Edit**, a human-preference post-training framework for image editing. It fine-tunes a VLM-based automatic scorer, **HP-Scorer**, using a small amount of human-scored data to construct preference datasets and serve as a reward model. Through online Flow-GRPO post-training, pre-trained editing models (e.g., Qwen-Image-Edit-2509) are aligned with human preferences. The authors also release the RealPref-50K dat…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - RLHF
-  - Flow-GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Human Preference Alignment"
+  - "RLHF"
+  - "Flow-GRPO"
+  - "VLM Reward Model"
 date: 2026-05-08
-content_hash: e15beb84a375b9f2
+content_hash: da32e242e3b1b0d4
 ---
+
 # HP-Edit: A Human-Preference Post-Training Framework for Image Editing
 
 **Conference**: CVPR 2026  
@@ -121,15 +124,16 @@ Generalization: HP-Edit also achieves SOTA on the GEdit-Bench-EN benchmark (Step
 - Value: ⭐⭐⭐⭐⭐ Provides a scalable paradigm and high-quality real-world datasets/benchmarks for the editing community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Inter-Edit: First Benchmark for Interactive Instruction-Based Image Editing](inter-edit_first_benchmark_for_interactive_instruction-based_image_editing.md)
+- [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](../../ICLR2026/image_generation/w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
+- [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](onehoi_unifying_human-object_interaction_generation_and_editing.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
 - [\[CVPR 2026\] Group Editing: Edit Multiple Images in One Go](group_editing_edit_multiple_images_in_one_go.md)
-- [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](onehoi_unifying_human-object_interaction_generation_and_editing.md)
-- [\[CVPR 2026\] GDRO: Group-level Reward Post-training Suitable for Diffusion Models](gdro_group-level_reward_post-training_suitable_for_diffusion_models.md)
-- [\[CVPR 2026\] UniEdit-I: Training-free Image Editing for Unified VLM via Iterative Understanding, Editing and Verifying](uniedit-i_training-free_image_editing_for_unified_vlm_via_iterative_understandin.md)
 
 </div>
 

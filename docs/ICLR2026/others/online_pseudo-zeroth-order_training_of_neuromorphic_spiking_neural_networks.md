@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper proposes OPZO (Online Pseudo-Zeroth-Order training), which completes spatial credit assignment in spiking neural networks using only a single noisy forward propagation plus top-down direct feedback. It avoids the weight symmetry and multi-phase execution problems of spatial backpropagation, while suppressing
+  [ICLR 2026][Spiking Neural Networks] This paper proposes OPZO (Online Pseudo-Zeroth-Order training), which completes spatial credit assignment in spiking neural networks using only a single noisy forward propagation plus top-down direct feedback. It avoids the weight symmetry and multi-phase execution problems of spatial backpropagation, while suppressing the massive variance of zeroth-order methods through a "pseudo-zeroth-order" formulation and momentum feedback connections…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Spiking Neural Networks"
+  - "Zeroth-Order Optimization"
+  - "Spatial Credit Assignment"
+  - "Online Training"
+  - "Three-Factor Hebbian Learning"
 date: 2026-05-08
-content_hash: 262656783418fd00
+content_hash: d8a709b915c32b6c
 ---
+
 # Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks
 
 **Conference**: ICLR 2026  
@@ -136,8 +141,8 @@ Pure ZOsp fails to train effectively (22% on CIFAR-100), whereas OPZO pulls it t
 
 - [\[ICLR 2026\] Fractional-Order Spiking Neural Network](fractional-order_spiking_neural_network.md)
 - [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
-- [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
 - [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
+- [\[ICLR 2026\] Training Deep Normalization-Free Spiking Neural Networks with Lateral Inhibition](training_deep_normalization-free_spiking_neural_networks_with_lateral_inhibition.md)
 - [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 
 </div>

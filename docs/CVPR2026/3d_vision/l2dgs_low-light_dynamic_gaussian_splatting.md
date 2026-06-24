@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] L2DGS is the first 4D Gaussian Splatting framework to self-supervise the reconstruction of "bright dynamic scenes" directly from low-light videos. It decomposes the color of each Gaussian into "view- and time-dependent illumination $\times$ intrinsic scene reflectance." By utilizing OCD-Net to model motion-induced time
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] L2DGS is the first 4D Gaussian Splatting framework to self-supervise the reconstruction of "bright dynamic scenes" directly from low-light videos. It decomposes the color of each Gaussian into "view- and time-dependent illumination $\times$ intrinsic scene reflectance." By utilizing OCD-Net to model motion-induced time-varying illumination and a forward degradation pipeline (BAFs + BAFE-Net) to transform bright scenes back into lo…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Low-light Reconstruction"
+  - "Dynamic Scenes"
+  - "Self-supervised"
+  - "Illumination-Reflectance Decomposition"
 date: 2026-05-08
-content_hash: 8acd139b18684f9b
+content_hash: fd5981588541fbb1
 ---
+
 # $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Removing components individually on a single scene (Overall metrics):
 ## Related Papers
 
 - [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
+- [\[CVPR 2026\] MSCD-GS: Motion-Separated Cooperative Deblurring Dynamic Reconstruction via Gaussian Splatting](mscd-gs_motion-separated_cooperative_deblurring_dynamic_reconstruction_via_gauss.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 
 </div>
 

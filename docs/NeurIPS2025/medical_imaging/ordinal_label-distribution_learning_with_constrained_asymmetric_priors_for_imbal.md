@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ordinal Label-Distribution Learning with Constrained Asymmetric Priors for Imbalanced Retinal Grading
 description: >-
-  [NeurIPS 2025 Workshop (GenAI for Health)][Medical Imaging][diabetic retinopathy] This paper proposes CAP-WAE (Constrained Asymmetric Prior Wasserstein Autoencoder)…
+  [NeurIPS 2025 Workshop (GenAI for Health)][Medical Imaging][diabetic retinopathy] This paper proposes CAP-WAE (Constrained Asymmetric Prior Wasserstein Autoencoder), which addresses the challenges of long-tailed distribution and ordinal structure in diabetic retinopathy (DR) grading through three innovations: asymmetric priors, a margin-aware orthogonality and compactness loss, and a direction-aware ordinal loss, achieving state-of-the-art performance on multiple DR benchmark…
 tags:
   - "NeurIPS 2025 Workshop (GenAI for Health)"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "label distribution"
   - "imbalanced learning"
 date: 2026-05-08
-content_hash: 40871ff5cb4e15e8
+content_hash: 119ba9671505628d
 ---
 
 # Ordinal Label-Distribution Learning with Constrained Asymmetric Priors for Imbalanced Retinal Grading
@@ -144,11 +144,11 @@ Encoder → Latent space (constrained by MAOC loss) → Decoder (WAE reconstruct
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging](dison_decentralized_isolation_networks_for_out-of-distribution_detection_in_medi.md)
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](../../CVPR2026/medical_imaging/a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
-- [\[AAAI 2026\] Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification](../../AAAI2026/medical_imaging/provably_minimum-length_conformal_prediction_sets_for_ordinal_classification.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing.md)
-- [\[CVPR 2026\] Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning](../../CVPR2026/medical_imaging/every_error_has_its_magnitude_asymmetric_mistake_severity_training_for_multiclas.md)
+- [\[CVPR 2026\] Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/divide_conquer_and_aggregate_asymmetric_experts_for_class-imbalanced_semi-superv.md)
+- [\[CVPR 2025\] Domain Adaptive Diabetic Retinopathy Grading with Model Absence and Flowing Data](../../CVPR2025/medical_imaging/domain_adaptive_diabetic_retinopathy_grading_with_model_absence_and_flowing_data.md)
+- [\[CVPR 2026\] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems](../../CVPR2026/medical_imaging/klip_localized_distribution_shift_detection_via_kl-divergence_with_diffusion_pri.md)
+- [\[ICLR 2026\] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization](../../ICLR2026/medical_imaging/frequency-balanced_retinal_representation_learning_with_mutual_information_regul.md)
+- [\[CVPR 2025\] CycleULM: A Unified Label-Free Deep Learning Framework for Ultrasound Localisation Microscopy](../../CVPR2025/medical_imaging/cycleulm_a_unified_label-free_deep_learning_framework_for_ultrasound_localisatio.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Internalizing Safety Understanding in Large Reasoning Models via Verification
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper demonstrates that "generating safe answers" $\neq$ "understanding safety" and proposes the SInternal framework: training large reasoning models (LRMs) solely to verify the safety of their own generated answers. The resulting emergent internal safety understanding significantly suppresses jailbreak attacks (S
+  [ICML 2026][Reasoning][Safety alignment] This paper demonstrates that "generating safe answers" $\neq$ "understanding safety" and proposes the SInternal framework: training large reasoning models (LRMs) solely to verify the safety of their own generated answers. The resulting emergent internal safety understanding significantly suppresses jailbreak attacks (StrongREJECT ASR drops from 41% to 0.6%) and provides a superior starting point for subsequent RL.
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Safety alignment"
+  - "reasoning models"
+  - "self-verification"
+  - "jailbreak defense"
+  - "SFT initialization"
 date: 2026-05-08
-content_hash: 774efdbe6186161f
+content_hash: 9295895a56980293
 ---
+
 # Internalizing Safety Understanding in Large Reasoning Models via Verification
 
 **Conference**: ICML 2026  
@@ -128,11 +134,11 @@ Evaluated on 3 LRMs (DS-Qwen-7B / DS-Llama-8B / DS-Qwen-14B) across 9 benchmarks
 
 ## Related Papers
 
-- [\[ICML 2026\] Are Large Reasoning Models Interruptible?](are_large_reasoning_models_interruptible.md)
-- [\[ICLR 2026\] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models](../../ICLR2026/llm_reasoning/when_reasoning_meets_compression_understanding_the_effects_of_pruning_and_quant.md)
-- [\[ICML 2026\] Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models](inducing_overthink_hierarchical_genetic_algorithm-based_dos_attack_on_black-box_.md)
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](../../ICLR2026/llm_reasoning/variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 - [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
-- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](../../NeurIPS2025/llm_reasoning/topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
+- [\[ICML 2026\] Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models](inducing_overthink_hierarchical_genetic_algorithm-based_dos_attack_on_black-box_.md)
+- [\[ICML 2026\] Are Large Reasoning Models Interruptible?](are_large_reasoning_models_interruptible.md)
+- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 
 </div>
 

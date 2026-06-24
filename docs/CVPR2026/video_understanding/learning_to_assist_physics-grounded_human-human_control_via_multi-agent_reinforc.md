@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Understanding][multi-agent reinforcement learning] AssistMimic is proposed to model the physical imitation of human-human assistive interactions as a Multi-Agent Reinforcement Learning (MARL) problem. Through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards, it achieves the first physics-based simulation and tracking of assistiv
+  [CVPR 2026][Video Understanding][multi-agent reinforcement learning] AssistMimic is proposed to model the physical imitation of human-human assistive interactions as a Multi-Agent Reinforcement Learning (MARL) problem. Through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards, it achieves the first physics-based simulation and tracking of assistive movements involving force exchange.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - multi-agent reinforcement learning
-  - physics-based character control
-  - human-human interaction
-  - assistive motion imitation
-  - motion tracking
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "multi-agent reinforcement learning"
+  - "physics-based character control"
+  - "human-human interaction"
+  - "assistive motion imitation"
+  - "motion tracking"
 date: 2026-05-08
-content_hash: 92bbf47271252358
+content_hash: 7f6b9e213e4e68f6
 ---
+
 # Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -159,8 +160,8 @@ The foundation is the tracking reward $r_{\text{track}}^{(m)} = \exp(-D(\hat{\ma
 - [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
 - [\[CVPR 2026\] Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry](dual-agent_reinforcement_learning_for_adaptive_and_cost-aware_visual-inertial_od.md)
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[CVPR 2026\] MaskAdapt: Learning Flexible Motion Adaptation via Mask-Invariant Prior for Physics-Based Characters](maskadapt_learning_flexible_motion_adaptation_via_mask-invariant_prior_for_physi.md)
+- [\[CVPR 2026\] Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding](learning_to_refuse_refusal-aware_reinforcement_fine-tuning_for_hard-irrelevant_q.md)
 
 </div>
 

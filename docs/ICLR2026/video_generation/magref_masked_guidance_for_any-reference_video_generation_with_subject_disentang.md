@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MAGREF: Masked Guidance for Any-Reference Video Generation with Subject Disentanglement
 description: >-
-  [ICLR 2026][Video Generation][any-reference video generation] MAGREF utilizes "region-aware masking + pixel-level channel concatenation" to inject an arbitrary number and category of reference subjects into a pre-trained I2V backbone. By employing "subject disentanglement" to inject semantic values of individual text tokens into corresponding visual regions, it achieves high-fide
+  [ICLR 2026][Video Generation][any-reference video generation] MAGREF utilizes "region-aware masking + pixel-level channel concatenation" to inject an arbitrary number and category of reference subjects into a pre-trained I2V backbone. By employing "subject disentanglement" to inject semantic values of individual text tokens into corresponding visual regions, it achieves high-fidelity and controllable any-reference video generation without modifying the underlying architecture…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - any-reference video generation
-  - masked guidance
-  - subject disentanglement
-  - multi-subject
-  - identity preservation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "any-reference video generation"
+  - "masked guidance"
+  - "subject disentanglement"
+  - "multi-subject"
+  - "identity preservation"
 date: 2026-05-08
-content_hash: f62729158d9653fc
+content_hash: 2fc22cbd2f89cd8d
 ---
+
 # MAGREF: Masked Guidance for Any-Reference Video Generation with Subject Disentanglement
 
 **Conference**: ICLR 2026  
@@ -148,9 +149,9 @@ Pipeline Component Ablation (Table 4):
 
 - [\[ICLR 2026\] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model](any-to-bokeh_arbitrary-subject_video_refocusing_with_video_diffusion_model.md)
 - [\[ICLR 2026\] DreamSwapV: Mask-guided Subject Swapping for Any Customized Video Editing](dreamswapv_mask-guided_subject_swapping_for_any_customized_video_editing.md)
+- [\[ICLR 2026\] Controllable Video Generation with Provable Disentanglement](controllable_video_generation_with_provable_disentanglement.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
 - [\[ICLR 2026\] Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset](phantom-data_towards_a_general_subject-consistent_video_generation_dataset.md)
-- [\[ICLR 2026\] BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration](bindweave_subject-consistent_video_generation_via_cross-modal_integration.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Quantifying Long-Range Interactions in Graph Machine Learning: A Large Graph Dataset and a Measurement
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper constructs City-Networks, a million-node scale, large-diameter transductive dataset based on the road networks of four real-world cities. It uses "local eccentricity" to label node classification tasks that naturally require long-range information. Building on this, it proposes a Jacobian-based "hop-wise inf
+  [ICLR 2026][Graph Learning][Long-range dependence] This paper constructs City-Networks, a million-node scale, large-diameter transductive dataset based on the road networks of four real-world cities. It uses "local eccentricity" to label node classification tasks that naturally require long-range information. Building on this, it proposes a Jacobian-based "hop-wise influence" metric to directly quantify the distance of the neighbor information utilized by any GNN/GT. This rep…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Long-range dependence"
+  - "Graph Neural Networks"
+  - "Graph Transformer"
+  - "Over-smoothing"
+  - "Jacobian Influence"
 date: 2026-05-08
-content_hash: 2563d929ce93a261
+content_hash: 35460a2651fad15e
 ---
+
 # Towards Quantifying Long-Range Interactions in Graph Machine Learning: A Large Graph Dataset and a Measurement
 
 **Conference**: ICLR 2026  
@@ -146,15 +152,14 @@ Plotting normalized $\bar T_h/\bar T_0$ curves shows that influence **decays rap
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] LRIM: a Physics-Based Benchmark for Provably Evaluating Long-Range Capabilities in Graph Learning](lrim_a_physics-based_benchmark_for_provably_evaluating_long-range_capabilities_i.md)
 - [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
-- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](relatron_automating_relational_machine_learning_over_relational_databases.md)
-- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
+- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
+- [\[ICLR 2026\] TGM: A Modular and Efficient Library for Machine Learning on Temporal Graphs](tgm_a_modular_and_efficient_library_for_machine_learning_on_temporal_graphs.md)
 
 </div>
 

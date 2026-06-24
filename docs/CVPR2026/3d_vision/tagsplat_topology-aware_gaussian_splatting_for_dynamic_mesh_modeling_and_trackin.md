@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking
 description: >-
-  [CVPR 2026][3D Vision][Gaussian Splatting] The authors propose TagSplat, a topology-aware Gaussian Splatting framework. By explicitly encoding the spatial connectivity between Gaussian primitives, it generates topologically consistent mesh sequences in dynamic scene reconstruction and supports precise 3D keypoint tracking.
+  [CVPR2026][3D Vision][Gaussian Splatting] The authors propose TagSplat, a topology-aware Gaussian Splatting framework. By explicitly encoding the spatial connectivity between Gaussian primitives, it generates topologically consistent mesh sequences in dynamic scene reconstruction and supports precise 3D keypoint tracking.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Gaussian Splatting
+  - "CVPR2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Topological Consistency"
+  - "Dynamic Mesh Reconstruction"
+  - "3D Keypoint Tracking"
+  - "Manifold Preservation"
 date: 2026-05-08
-content_hash: 0c60c1daf0906b99
+content_hash: c8d173533657f204
 ---
+
 # TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking
 
 **Conference**: CVPR2026  
@@ -187,11 +192,11 @@ In the Dancer scenario, TagSplat's tracking MSE is 0.000101, which is approximat
 
 ## Related Papers
 
+- [\[CVPR 2026\] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)
 - [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
-- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] RT-Splatting: Joint Reflection-Transmission Modeling with Gaussian Splatting](rt-splatting_joint_reflection-transmission_modeling_with_gaussian_splatting.md)
-- [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
-- [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[ICLR 2026\] Frequency-Aware Dynamic Gaussian Splatting](../../ICLR2026/3d_vision/frequency-aware_dynamic_gaussian_splatting.md)
 
 </div>
 

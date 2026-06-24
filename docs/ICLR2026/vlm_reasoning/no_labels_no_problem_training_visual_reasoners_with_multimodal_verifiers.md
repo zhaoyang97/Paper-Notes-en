@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] VALOR is proposed: a **completely annotation-free** training framework for visual reasoning. It scales programmatic reasoning via RL with LLM verifiers and enhances visual grounding via hard-negative mining with VLM verifiers. A small Qwen3-8B combined with visual expert tools outperforms both open-source and closed-so
+  [ICLR 2026][VLM Reasoning][Spatial reasoning] VALOR is proposed: a **completely annotation-free** training framework for visual reasoning. It scales programmatic reasoning via RL with LLM verifiers and enhances visual grounding via hard-negative mining with VLM verifiers. A small Qwen3-8B combined with visual expert tools outperforms both open-source and closed-source large models in spatial reasoning.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Spatial reasoning"
+  - "Multimodal verifiers"
+  - "Verifiable reward RL"
+  - "Visual grounding"
+  - "Hard negative mining"
+  - "Tool-use"
 date: 2026-05-08
-content_hash: a603ad9a53122acc
+content_hash: 701f4eefbe390d9f
 ---
+
 # No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers
 
 **Conference**: ICLR 2026  
@@ -124,6 +131,7 @@ $$R(q,p,c) = r_{fmt}(p,c)\cdot\Big(\lambda_{sn} r_{sn}(c)+\lambda_{log} r_{log}(
 - **Value**: ⭐⭐⭐⭐ — Provides a practical, scalable route to outperform supervised methods using zero labels.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

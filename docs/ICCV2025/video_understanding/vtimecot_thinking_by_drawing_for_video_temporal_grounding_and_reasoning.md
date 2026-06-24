@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning
 description: >-
-  [ICCV 2025][Video Understanding][video temporal grounding] > This paper proposes VTimeCoT, a training-free visual-temporal chain-of-thought framework that overlays a synchronized progress bar and highlights key segments…
+  [ICCV 2025][Video Understanding][video temporal grounding] > This paper proposes VTimeCoT, a training-free visual-temporal chain-of-thought framework that overlays a synchronized progress bar and highlights key segments at the bottom of video frames, enabling multimodal large language models (MLLMs) to accurately perceive timestamps. The approach substantially outperforms GPT-4o and Qwen2VL-7B baselines on temporal grounding and reasoning QA tasks.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "visual prompt"
   - "training-free"
 date: 2026-05-08
-content_hash: d93d335b97f072fd
+content_hash: 421146460ab82e34
 ---
 
 # VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning
@@ -176,11 +176,11 @@ VTimeCoT achieves a 16.83% mIoU improvement on QVHighlights over the GPT-4o base
 
 ## Related Papers
 
-- [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](moment_quantization_for_video_temporal_grounding.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](../../NeurIPS2025/video_understanding/when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
+- [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](moment_quantization_for_video_temporal_grounding.md)
+- [\[ICCV 2025\] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding](towards_video_thinking_test_a_holistic_benchmark_for_advanced_video_reasoning_an.md)
 - [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
 - [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
-- [\[ICCV 2025\] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding](towards_video_thinking_test_a_holistic_benchmark_for_advanced_video_reasoning_an.md)
 
 </div>
 

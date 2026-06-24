@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation
 description: >-
-  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper introduces UKBOB—the largest annotated medical image segmentation dataset to date (51,761 MRI 3D volumes, 72 organ classes…
+  [ICCV 2025][Medical Imaging][Medical image segmentation] This paper introduces UKBOB—the largest annotated medical image segmentation dataset to date (51,761 MRI 3D volumes, 72 organ classes, 1.37 billion 2D segmentation masks)—and proposes a Specialized Organ Label Filter (SOLF) for cleaning automated annotations and an Entropy Test-Time Adaptation (ETTA) method for handling domain shift under noisy labels. The resulting Swin-BOB foundation model achieves state-of-the-art pe…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "automated annotation quality control"
   - "test-time adaptation"
 date: 2026-05-08
-content_hash: 74d52aad105bb865
+content_hash: b0944744c201bbff
 ---
 
 # UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation
@@ -187,10 +187,10 @@ Both pre-training and fine-tuning use Binary Cross-Entropy + DSC. ETTA employs e
 ## Related Papers
 
 - [\[ICCV 2025\] Progressive Test Time Energy Adaptation for Medical Image Segmentation](progressive_test_time_energy_adaptation_for_medical_image_segmentation.md)
-- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](../../CVPR2026/medical_imaging/learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
-- [\[ICCV 2025\] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities](mrgen_segmentation_data_engine_for_underrepresented_mri_modalities.md)
-- [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
 - [\[ICCV 2025\] PVChat: Personalized Video Chat with One-Shot Learning](pvchat_personalized_video_chat_with_one-shot_learning.md)
+- [\[ICCV 2025\] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities](mrgen_segmentation_data_engine_for_underrepresented_mri_modalities.md)
+- [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](../../CVPR2026/medical_imaging/learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
+- [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
 
 </div>
 

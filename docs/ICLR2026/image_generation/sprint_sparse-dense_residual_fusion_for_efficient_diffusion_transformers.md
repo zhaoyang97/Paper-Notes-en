@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPRINT: Sparse-Dense Residual Fusion for Efficient Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] SPRINT merges the shallow dense local features and deep sparse global features of the Diffusion Transformer using a residual approach, enabling DiT to be efficiently pre-trained at a 75% token dropping ratio and further reducing sampling costs through Path-Drop Guidance.
+  [ICLR2026][Image Generation][Sparse training] SPRINT merges the shallow dense local features and deep sparse global features of the Diffusion Transformer using a residual approach, enabling DiT to be efficiently pre-trained at a 75% token dropping ratio and further reducing sampling costs through Path-Drop Guidance.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
-  - token dropping
+  - "ICLR2026"
+  - "Image Generation"
+  - "Sparse training"
+  - "Diffusion Transformer"
+  - "token dropping"
+  - "residual fusion"
+  - "efficient sampling"
 date: 2026-05-08
-content_hash: cc257d1a8592d7ed
+content_hash: 2b66657959bd2638
 ---
+
 # SPRINT: Sparse-Dense Residual Fusion for Efficient Diffusion Transformers
 
 **Conference**: ICLR2026  
@@ -131,6 +135,7 @@ The method was evaluated on ImageNet-1K class-conditional generation using SD VA
 - Value: ⭐⭐⭐⭐⭐ Highly practical for reducing DiT training/inference costs with minimal architectural changes.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

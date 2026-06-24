@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery
 description: >-
-  [ACL 2026][LLM Agent][MOOSE-Chem] MOOSE-Copilot unifies divergent exploration of scientific ideas and convergent refinement of fine-grained hypotheses into a visual human-AI collaborative system, significantly enhancing hypothesis discovery through three explicit human signals: initial blueprints, stage routing, and feedback.
+  [ACL 2026][LLM Agent][Scientific Hypothesis Discovery] MOOSE-Copilot unifies divergent exploration of scientific ideas and convergent refinement of fine-grained hypotheses into a visual human-AI collaborative system, significantly enhancing hypothesis discovery through three explicit human signals: initial blueprints, stage routing, and feedback.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - MOOSE-Chem
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Scientific Hypothesis Discovery"
+  - "Human-AI Collaboration"
+  - "Exploration-Exploitation"
+  - "Interactive Agents"
+  - "MOOSE-Chem"
 date: 2026-05-08
-content_hash: 3aa859691ece0fcd
+content_hash: fd5471d704b8112c
 ---
+
 # MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery
 
 **Conference**: ACL 2026  
@@ -142,11 +147,11 @@ Experiments were conducted on TOMATO-Chem2, containing research questions, liter
 
 ## Related Papers
 
+- [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](../../ICLR2026/llm_agent/repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
+- [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](../../ICML2026/llm_agent/towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
 - [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](../../ICLR2026/llm_agent/sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
 - [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](../../CVPR2026/llm_agent/seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
-- [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](../../ICML2026/llm_agent/towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
-- [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](../../ICLR2026/llm_agent/newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ICML 2025\] Evaluating Retrieval-Augmented Generation Agents for Autonomous Scientific Discovery in Astrophysics](../../ICML2025/llm_agent/evaluating_retrieval-augmented_generation_agents_for_autonomous_scientific_disco.md)
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](../../ICLR2026/llm_agent/towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 
 </div>
 

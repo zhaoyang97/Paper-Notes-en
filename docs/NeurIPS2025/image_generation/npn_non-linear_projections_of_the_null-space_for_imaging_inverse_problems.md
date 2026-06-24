@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems
 description: >-
-  [NeurIPS 2025][Image Generation][Null-space projection] This paper proposes Non-linear Projections of the Null-space (NPN)—a novel regularization strategy that trains a neural network to predict…
+  [NeurIPS 2025][Image Generation][Null-space projection] This paper proposes Non-linear Projections of the Null-space (NPN)—a novel regularization strategy that trains a neural network to predict, directly from measurements, the projection coefficients of the ground-truth signal onto a low-dimensional subspace of the sensing matrix's null space. These coefficients serve as prior constraints on "invisible features" and can be flexibly integrated into diverse reconstruction fram…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "plug-and-play methods"
   - "compressed sensing"
 date: 2026-05-08
-content_hash: cfa2deb18aafd345
+content_hash: 6ff222330db139e8
 ---
 
 # NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems
@@ -138,9 +138,9 @@ Given a sensing matrix $\mathbf{H} \in \mathbb{R}^{m \times n}$, a projection ma
 
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](../../ICCV2025/image_generation/unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
 - [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
+- [\[CVPR 2025\] Latent Space Imaging](../../CVPR2025/image_generation/latent_space_imaging.md)
 - [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
 - [\[NeurIPS 2025\] One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting](one_stone_with_two_birds_a_null-text-null_frequency-aware_diffusion_models_for_t.md)
-- [\[NeurIPS 2025\] On the Emergence of Linear Analogies in Word Embeddings](on_the_emergence_of_linear_analogies_in_word_embeddings.md)
 
 </div>
 

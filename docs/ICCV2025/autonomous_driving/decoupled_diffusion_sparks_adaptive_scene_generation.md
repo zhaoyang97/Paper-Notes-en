@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decoupled Diffusion Sparks Adaptive Scene Generation
 description: >-
-  [ICCV2025][Autonomous Driving][Scene Generation] This paper proposes Nexus, an adaptive driving scene generation framework based on decoupled diffusion. By assigning independent noise states to individual tokens…
+  [ICCV2025][Autonomous Driving][Scene Generation] This paper proposes Nexus, an adaptive driving scene generation framework based on decoupled diffusion. By assigning independent noise states to individual tokens, Nexus unifies goal-oriented and reactive generation, reduces displacement error by 40%, and introduces Nexus-Data, a dataset comprising 540 hours of safety-critical driving scenarios.
 tags:
   - "ICCV2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Safety-Critical Scenes"
   - "Traffic Layout"
 date: 2026-05-08
-content_hash: 5bff3410beffce5b
+content_hash: abd69f4031510fb1
 ---
 
 # Decoupled Diffusion Sparks Adaptive Scene Generation

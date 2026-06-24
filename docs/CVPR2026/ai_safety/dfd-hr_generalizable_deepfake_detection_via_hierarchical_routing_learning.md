@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning
 description: >-
-  [CVPR 2026][AI Safety][Mixture-of-Experts] When migrating Visual Foundation Models (VFMs) like CLIP to deepfake detection, DFD-HR avoids simply "tuning fewer parameters." Instead, it implements "hierarchical routing" at both the **layer level** (adaptively determining the number of layers per sample) and **token level** (filtering irrelevant tokens via Spearman
+  [CVPR 2026][AI Safety][Deepfake Detection] When migrating Visual Foundation Models (VFMs) like CLIP to deepfake detection, DFD-HR avoids simply "tuning fewer parameters." Instead, it implements "hierarchical routing" at both the **layer level** (adaptively determining the number of layers per sample) and **token level** (filtering irrelevant tokens via Spearman rank loss + MoE expert routing). This allows the model to concentrate computational power on representations contain…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Mixture-of-Experts
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Deepfake Detection"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Hierarchical Routing"
+  - "Early Layer Pruning"
+  - "Mixture-of-Experts"
 date: 2026-05-08
-content_hash: 15eec7bc02b91484
+content_hash: fdeea36282987a44
 ---
+
 # DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning
 
 **Conference**: CVPR 2026  
@@ -145,15 +150,16 @@ Breakdown of HR and MSF (Cross-Method, Video-AUC %):
 - **Value**: ⭐⭐⭐⭐⭐ Efficient, accurate, and backbone-agnostic; practical for generalizable DFD deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond \[CLS\] Token: Query-Driven Token-Level Forgery Purification for Generalizable Deepfake Detection](beyond_cls_token_query-driven_token-level_forgery_purification_for_generalizable.md)
+- [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
+- [\[ICCV 2025\] Vulnerability-Aware Spatio-Temporal Learning for Generalizable Deepfake Video Detection](../../ICCV2025/ai_safety/vulnerability-aware_spatio-temporal_learning_for_generalizable_deepfake_video_de.md)
 - [\[CVPR 2026\] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection](decoupling_bias_aligning_distributions_synergistic_fairness_optimization_for_dee.md)
 - [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
-- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
-- [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
 
 </div>
 

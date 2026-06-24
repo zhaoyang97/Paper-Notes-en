@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Koopman-Assisted Trajectory Synthesis: A Data Augmentation Framework for Offline Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] KATS models expert closed-loop behavior as linear dynamics in a Koopman latent space and synthesizes new trajectories using latent space symmetry transformations that commute with these dynamics. By augmenting these with actions via an inverse dynamics model, KATS significantly improves policy performance in offline im
+  [ICLR 2026][Reinforcement Learning][Offline Imitation Learning] KATS models expert closed-loop behavior as linear dynamics in a Koopman latent space and synthesizes new trajectories using latent space symmetry transformations that commute with these dynamics. By augmenting these with actions via an inverse dynamics model, KATS significantly improves policy performance in offline imitation learning and few-shot offline reinforcement learning tasks with low data diversity.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Imitation Learning"
+  - "Koopman Operator"
+  - "Trajectory-level Data Augmentation"
+  - "Inverse Dynamics Model"
+  - "Covariate Shift"
 date: 2026-05-08
-content_hash: ea5a4a62e8c10922
+content_hash: 319db5d9e96af433
 ---
+
 # Koopman-Assisted Trajectory Synthesis: A Data Augmentation Framework for Offline Imitation Learning
 
 **Conference**: ICLR 2026  
@@ -143,7 +149,6 @@ Ablations verified the importance of the learnable $\sigma_\theta$, the IDM, and
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

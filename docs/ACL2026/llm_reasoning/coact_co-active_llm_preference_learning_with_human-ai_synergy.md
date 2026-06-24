@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoAct: Co-Active LLM Preference Learning with Human-AI Synergy
 description: >-
-  [ACL 2026][LLM Reasoning][DPO] CoAct utilizes self-consistency during preference alignment to partition unlabeled samples into "high-consistency" and "low-consistency" sets. It then employs k-NN distance to identify "self-consistent yet potentially incorrect" risky samples from the high-consistency set for Oracle labeling, while the remaining high-c
+  [ACL 2026][Reasoning][Preference Learning] CoAct utilizes self-consistency during preference alignment to partition unlabeled samples into "high-consistency" and "low-consistency" sets. It then employs k-NN distance to identify "self-consistent yet potentially incorrect" risky samples from the high-consistency set for Oracle labeling, while the remaining high-consistency samples are treated as AI self-labeled data. Finally, Oracle-verified samples are used as in-context demos…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - DPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "Preference Learning"
+  - "Self-Rewarding"
+  - "Active Learning"
+  - "Human-AI Synergy"
+  - "DPO"
 date: 2026-05-08
-content_hash: 92d3aaef47cce66f
+content_hash: 7904d4a7b25dc2c6
 ---
+
 # CoAct: Co-Active LLM Preference Learning with Human-AI Synergy
 
 **Conference**: ACL 2026  
@@ -141,11 +146,11 @@ Average gains over four rounds: GSM8K +13.25%, MATH +8.19%, WebInstruct +13.16%.
 
 ## Related Papers
 
-- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
+- [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](../../ICLR2026/llm_reasoning/toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
 - [\[ICML 2025\] Ad-Hoc Human-AI Coordination Challenge (AH2AC2)](../../ICML2025/llm_reasoning/ad-hoc_human-ai_coordination_challenge.md)
-- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
+- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
 - [\[ACL 2026\] AIM-CoT: Active Information-driven Multimodal Chain-of-Thought for Vision-Language Reasoning](aim-cot_active_information-driven_multimodal_chain-of-thought_for_vision-languag.md)
-- [\[AAAI 2026\] Dropouts in Confidence: Moral Uncertainty in Human-LLM Alignment](../../AAAI2026/llm_reasoning/dropouts_in_confidence_moral_uncertainty_in_human-llm_alignment.md)
+- [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
 
 </div>
 

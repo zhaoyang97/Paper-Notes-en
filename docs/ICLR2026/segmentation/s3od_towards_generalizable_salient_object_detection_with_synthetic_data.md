@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data
 description: >-
-  [ICLR 2026][Segmentation][Paper Note] To address the issues of expensive labeling, data scarcity, and fragmented sub-tasks (DIS / HR-SOD) in Salient Object Detection (SOD), this paper proposes a multimodal diffusion pipeline to simultaneously generate images and pixel-level masks. By incorporating iterative generation with hard-example feedback, the author
+  [ICLR 2026][Segmentation][Salient Object Detection] To address the issues of expensive labeling, data scarcity, and fragmented sub-tasks (DIS / HR-SOD) in Salient Object Detection (SOD), this paper proposes a multimodal diffusion pipeline to simultaneously generate images and pixel-level masks. By incorporating iterative generation with hard-example feedback, the authors create S3OD, a high-resolution synthetic dataset of 139,000 images. Coupled with an ambiguity-aware multi-…
 tags:
-  - ICLR 2026
-  - Segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Salient Object Detection"
+  - "Multimodal Diffusion Labeling"
+  - "Iterative Data Generation"
+  - "Multi-mask Ambiguity Modeling"
+  - "Cross-dataset Generalization"
 date: 2026-05-08
-content_hash: c4691fccc11455f9
+content_hash: d9a49073e4cd8c85
 ---
+
 # S3OD: Towards Generalizable Salient Object Detection with Synthetic Data
 
 **Conference**: ICLR 2026  

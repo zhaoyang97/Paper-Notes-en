@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fetal-Gauge: A Benchmark for Assessing Vision-Language Models in Fetal Ultrasound
 description: >-
-  [ICLR 2026][Medical Imaging][Med-VQA] Fetal-Gauge integrates 13 public fetal ultrasound datasets to construct the first and largest vision-language question-answering benchmark for fetal ultrasound (42,000 images, 93,000 QA pairs, covering five clinical tasks). Systematic evaluation of 15 mainstream VLMs reveals that the strongest model, GPT-5, achieves on
+  [ICLR 2026][Medical Imaging][Fetal Ultrasound] Fetal-Gauge integrates 13 public fetal ultrasound datasets to construct the first and largest vision-language question-answering benchmark for fetal ultrasound (42,000 images, 93,000 QA pairs, covering five clinical tasks). Systematic evaluation of 15 mainstream VLMs reveals that the strongest model, GPT-5, achieves only 55% accuracy, which is far below the threshold for clinical utility, exposing systematic shortcomings of curre…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Med-VQA
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Fetal Ultrasound"
+  - "Vision-Language Question Answering"
+  - "VLM Evaluation"
+  - "Med-VQA"
+  - "Medical Imaging Benchmark"
 date: 2026-05-08
-content_hash: c46193754e18d4b3
+content_hash: 42f8c4c24078c852
 ---
+
 # Fetal-Gauge: A Benchmark for Assessing Vision-Language Models in Fetal Ultrasound
 
 **Conference**: ICLR 2026  
@@ -124,8 +129,8 @@ Targeted fine-tuning leads to significant improvements: after LoRA fine-tuning o
 - [\[CVPR 2026\] F$^2$-Assist: Multi-Phase Fetal Growth Forecast and Report Generation from Ultrasound Examination](../../CVPR2026/medical_imaging/f2-assist_multi-phase_fetal_growth_forecast_and_report_generation_from_ultrasoun.md)
 - [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](../../CVPR2026/medical_imaging/gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
+- [\[ICLR 2026\] UltraGauss: Ultrafast Gaussian Reconstruction of 3D Ultrasound Volumes](ultragauss_ultrafast_gaussian_reconstruction_of_3d_ultrasound_volumes.md)
 - [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
-- [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
 
 </div>
 

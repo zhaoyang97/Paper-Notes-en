@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking
 description: >-
-  [ICLR 2026][Optimization & Theory][Grokking] The paper attributes the long plateau in grokking to the severe imbalance of the gradient spectrum and proposes EGD: leveling the update speed across different singular directions without changing the primary gradient direction, thereby significantly compressing the "memorization-then-generalization" delay into a few e
+  [ICLR 2026][Optimization][Grokking] The paper attributes the long plateau in grokking to the severe imbalance of the gradient spectrum and proposes EGD: leveling the update speed across different singular directions without changing the primary gradient direction, thereby significantly compressing the "memorization-then-generalization" delay into a few epochs.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Grokking
+  - "ICLR 2026"
+  - "Optimization"
+  - "Grokking"
+  - "Gradient Spectral Normalization"
+  - "Fisher Preconditioning"
+  - "Randomized SVD"
+  - "Generalization Delay"
 date: 2026-05-08
-content_hash: beb75275f3d33263
+content_hash: c342eec49dff7268
 ---
+
 # Egalitarian Gradient Descent: A Simple Approach to Accelerated Grokking
 
 **Conference**: ICLR 2026  
@@ -152,7 +157,7 @@ The appendix provides an efficiency comparison for reaching 95% accuracy in modu
 - [\[ICLR 2026\] On the Convergence Behavior of Preconditioned Gradient Descent Toward the Rich Learning Regime](on_the_convergence_behavior_of_preconditioned_gradient_descent_toward_the_rich_l.md)
 - [\[ICLR 2026\] Corner Gradient Descent](corner_gradient_descent.md)
 - [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](fast_data_mixture_optimization_via_gradient_descent.md)
-- [\[ICLR 2026\] Provably Accelerated Imaging with Restarted Inertia and Score-based Image Priors](provably_accelerated_imaging_with_restarted_inertia_and_score-based_image_priors.md)
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 
 </div>
 

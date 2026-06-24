@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] PAR-VLA utilizes Vision-Language Models (VLM) to learn verbs and nouns as "disentangled visual prototypes" which serve as stable semantic anchors. It transforms open, unconstrained future action anticipation into conditional prediction guided by these semantic concepts. By refining verb-noun dependencies through a dual
+  [CVPR 2026][VLM Reasoning][Action Anticipation] PAR-VLA utilizes Vision-Language Models (VLM) to learn verbs and nouns as "disentangled visual prototypes" which serve as stable semantic anchors. It transforms open, unconstrained future action anticipation into conditional prediction guided by these semantic concepts. By refining verb-noun dependencies through a dual-stream symbiotic decoder, it achieves New SOTA on three datasets, including EPIC-KITCHENS-100.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Action Anticipation"
+  - "Egocentric Video"
+  - "Vision-Language Alignment"
+  - "Prototypical Learning"
+  - "Verb-Noun Disentanglement"
 date: 2026-05-08
-content_hash: ec72a3a500f8c0e2
+content_hash: 08447d53c74ba711
 ---
+
 # Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Ablation of PAR (Prototypical Action Reasoning) and VLA (Vision-Language Alignme
 ## Related Papers
 
 - [\[CVPR 2026\] Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)
+- [\[CVPR 2026\] Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding](mimic_human_cognition_master_multi-image_reasoning_a_meta-action_framework_for_e.md)
 - [\[CVPR 2026\] A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)
-- [\[CVPR 2026\] Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation](spectral_scalpel_amplifying_adjacent_action_discrepancy_via_frequency-selective_.md)
-- [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
+- [\[ACL 2026\] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](../../ACL2026/vlm_reasoning/what39s_missing_in_screen-to-action_towards_a_ui-in-the-loop_paradigm_for_multim.md)
 
 </div>
 

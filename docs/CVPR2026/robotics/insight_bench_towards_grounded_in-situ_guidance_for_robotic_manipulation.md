@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] Addressing the gap where current VLA models follow external language instructions but fail to understand in-situ symbols like "PUSH/PULL/Arrows/Squeeze" printed on objects, this paper proposes INSIGHT Bench—a robotic manipulation benchmark that programmatically binds in-situ visual guidance with physical constraints. I
+  [CVPR 2026][Robotics][Robotic manipulation] Addressing the gap where current VLA models follow external language instructions but fail to understand in-situ symbols like "PUSH/PULL/Arrows/Squeeze" printed on objects, this paper proposes INSIGHT Bench—a robotic manipulation benchmark that programmatically binds in-situ visual guidance with physical constraints. It features a five-category guidance taxonomy, a scalable automated data generation pipeline, and a dataset of 14…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - benchmark
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robotic manipulation"
+  - "VLA"
+  - "in-situ guidance"
+  - "benchmark"
+  - "physical constraints"
 date: 2026-05-08
-content_hash: d291f3b8346d4f13
+content_hash: fd971e27ea877b7d
 ---
+
 # INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -123,10 +127,10 @@ Two core findings: **G-VLA shows no significant Gain over NG-VLA**, suggesting m
 ## Related Papers
 
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
 - [\[CVPR 2025\] RoboGround: Robotic Manipulation with Grounded Vision-Language Priors](../../CVPR2025/robotics/roboground_robotic_manipulation_with_grounded_vision-language_priors.md)
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
 - [\[CVPR 2026\] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation](action-sketcher_from_reasoning_to_action_via_visual_sketches_for_robotic_manipul.md)
-- [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
 
 </div>
 

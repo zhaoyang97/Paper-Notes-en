@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] ELViS: Efficient Visual Similarity from Local Descriptors that Generalizes Across Domains
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][image retrieval] ELViS performs image pair re-ranking in "similarity space" rather than "appearance space": it first refines the similarity matrix of local descriptors using Optimal Transport (OT) with data-dependent dustbin gains, then sums the strongest correspondence of each descriptor as a "vote" weighted by a learnable function to
+  [ICLR 2026][Information Retrieval & RAG][image retrieval] ELViS performs image pair re-ranking in "similarity space" rather than "appearance space": it first refines the similarity matrix of local descriptors using Optimal Transport (OT) with data-dependent dustbin gains, then sums the strongest correspondence of each descriptor as a "vote" weighted by a learnable function to compute image-level similarity. With 1/20th of the parameters and several times the speed…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - image retrieval
-  - re-ranking
-  - local descriptors
-  - optimal transport
-  - domain generalization
-  - Chamfer similarity
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "image retrieval"
+  - "re-ranking"
+  - "local descriptors"
+  - "optimal transport"
+  - "domain generalization"
+  - "Chamfer similarity"
 date: 2026-05-08
-content_hash: 72f40d3de2aeb0fd
+content_hash: 434e464bf4b9ccf0
 ---
+
 # ELViS: Efficient Visual Similarity from Local Descriptors that Generalizes Across Domains
 
 **Conference**: ICLR 2026  
@@ -149,9 +150,9 @@ This inherits the classic retrieval prior that "more strong correspondences impl
 
 - [\[ICLR 2026\] Welfarist Formulations for Diverse Similarity Search](welfarist_formulations_for_diverse_similarity_search.md)
 - [\[ICLR 2026\] MILCO: Learned Sparse Retrieval Across Languages via a Multilingual Connector](milco_learned_sparse_retrieval_across_languages_via_a_multilingual_connector.md)
+- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometric Consistency](../../ICML2026/information_retrieval/vector_linking_via_cross-model_local_isometric_consistency.md)
+- [\[ICLR 2026\] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models](seeing_through_words_controlling_visual_retrieval_quality_with_language_models.md)
 - [\[ICLR 2026\] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving](adacache_adaptive_caching_and_context_augmentation_for_efficient_llm_serving.md)
-- [\[CVPR 2025\] GOAL: Global-Local Object Alignment Learning](../../CVPR2025/information_retrieval/goal_global-local_object_alignment_learning.md)
-- [\[ICLR 2026\] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference](raee_a_robust_retrieval-augmented_early_exit_framework_for_efficient_inference.md)
 
 </div>
 

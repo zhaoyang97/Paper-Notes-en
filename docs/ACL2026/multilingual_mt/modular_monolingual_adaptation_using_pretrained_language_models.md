@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Modular Monolingual Adaptation using Pretrained Language Models
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] For adapting multilingual pretrained language models (PMLMs) to low-resource languages, the authors advocate a modular approach: "adopting a language-specific tokenizer + freezing input/output embeddings while training only the Transformer body." This method consistently outperforms full fine-tuning on Masked Language
+  [ACL 2026][Multilingual & Machine Translation][Low-resource languages] For adapting multilingual pretrained language models (PMLMs) to low-resource languages, the authors advocate a modular approach: "adopting a language-specific tokenizer + freezing input/output embeddings while training only the Transformer body." This method consistently outperforms full fine-tuning on Masked Language Modeling (MLM), NER, and POS tasks for Scottish Gaelic, Irish, and Quechua…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Low-resource languages"
+  - "monolingual adaptation"
+  - "custom tokenizer"
+  - "frozen embeddings"
+  - "masked language modeling"
 date: 2026-05-08
-content_hash: 2deb8f263c401b26
+content_hash: 8127e207f5b54d87
 ---
+
 # Modular Monolingual Adaptation using Pretrained Language Models
 
 **Conference**: ACL 2026  
@@ -132,11 +138,11 @@ Regarding efficiency (gd, Table 7), the proposed setup (custom + model init + no
 
 ## Related Papers
 
-- [\[ACL 2026\] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models](exploring_continual_fine-tuning_for_enhancing_language_ability_in_large_language.md)
 - [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
+- [\[ACL 2026\] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models](exploring_continual_fine-tuning_for_enhancing_language_ability_in_large_language.md)
 - [\[ACL 2026\] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates](mitigating_catastrophic_forgetting_in_target_language_adaptation_of_llms_via_sou.md)
 - [\[ACL 2026\] Language Models Entangle Language and Culture](language_models_entangle_language_and_culture.md)
-- [\[ACL 2025\] Modular Sentence Encoders: Separating Language Specialization from Cross-Lingual Alignment](../../ACL2025/multilingual_mt/modular_sentence_encoders.md)
+- [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
 
 </div>
 

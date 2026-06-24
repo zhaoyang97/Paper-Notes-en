@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning
 description: >-
-  [NeurIPS 2025][Robotics][Theory of Mind] MindForge introduces explicit Theory of Mind (ToM) representations, natural language communication, and a multi-component memory system into LLM-driven embodied agents…
+  [NeurIPS 2025][Robotics][Theory of Mind] MindForge introduces explicit Theory of Mind (ToM) representations, natural language communication, and a multi-component memory system into LLM-driven embodied agents, enabling open-source LLM agents to substantially improve task completion rates through collaborative dialogue with expert agents (without gradient updates), achieving 3× more tech-tree milestones and 2.3× more unique items than Voyager in Minecraft.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Minecraft"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 753599ed3c616ab3
+content_hash: 2eba0b4f64dff9c1
 ---
 
 # MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning
@@ -129,10 +129,10 @@ MindForge augments Voyager with three components: (1) structured BDI representat
 ## Related Papers
 
 - [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](../../AAAI2026/robotics/theory_of_mind_for_explainable_human-robot_interaction.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](../../AAAI2026/robotics/a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
+- [\[ICLR 2026\] Lifelong Embodied Navigation Learning](../../ICLR2026/robotics/lifelong_embodied_navigation_learning.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
-- [\[NeurIPS 2025\] LabUtopia: High-Fidelity Simulation and Hierarchical Benchmark for Scientific Embodied Agents](labutopia_high-fidelity_simulation_and_hierarchical_benchmark_for_scientific_emb.md)
 
 </div>
 

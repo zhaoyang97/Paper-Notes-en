@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes the Radar framework, which models the adaptive reasoning problem of Reasoning Large Language Models (RLMs) as a multi-objective optimization. By utilizing Item Response Theory (IRT) to jointly estimate interpretable query difficulty and model configuration capability parameters, Radar achieves light
+  [ICLR 2026][Interpretability][Reasoning LLMs] This paper proposes the Radar framework, which models the adaptive reasoning problem of Reasoning Large Language Models (RLMs) as a multi-objective optimization. By utilizing Item Response Theory (IRT) to jointly estimate interpretable query difficulty and model configuration capability parameters, Radar achieves lightweight and scalable query-level routing. It outperforms SOTA routing methods across 8 reasoning benchmarks with an…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Reasoning LLMs"
+  - "Model Routing"
+  - "Item Response Theory"
+  - "Multi-objective Optimization"
+  - "Adaptive Reasoning"
 date: 2026-05-08
-content_hash: fe07965975e34c31
+content_hash: fb86abd25a28911b
 ---
+
 # RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs
 
 **Conference**: ICLR 2026  

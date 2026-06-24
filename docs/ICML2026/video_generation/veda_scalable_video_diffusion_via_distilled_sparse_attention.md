@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] VEDA: Scalable Video Diffusion via Distilled Sparse Attention
 description: >-
-  [ICML 2026][Video Generation][Paper Note] VEDA reformulates the sparse attention problem in video DiT as "explicit distillation of the full attention structure." By combining statistic-aware tile scoring, head-aware grouping search, and hardware-efficient kernels, it maintains generation quality at extreme 90-95% sparsity. It achieves a 5.1× end-to-end speedup
+  [ICML 2026][Video Generation][Sparse Attention] VEDA reformulates the sparse attention problem in video DiT as "explicit distillation of the full attention structure." By combining statistic-aware tile scoring, head-aware grouping search, and hardware-efficient kernels, it maintains generation quality at extreme 90-95% sparsity. It achieves a 5.1× end-to-end speedup and 10.5× attention acceleration for Waver-12B generating 720P 10-second videos.
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Sparse Attention"
+  - "Video Diffusion Transformer"
+  - "Distillation Learning"
+  - "Hardware Optimization"
 date: 2026-05-08
-content_hash: 3f4a133cafe84f59
+content_hash: abf84be8e128c372
 ---
+
 # VEDA: Scalable Video Diffusion via Distilled Sparse Attention
 
 **Conference**: ICML 2026  
@@ -129,9 +134,9 @@ Algorithmic sparsity requires kernel support for end-to-end acceleration without
 
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
+- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](lightning_unified_video_editing_via_in-context_sparse_attention.md)
 - [\[NeurIPS 2025\] VSA: Faster Video Diffusion with Trainable Sparse Attention](../../NeurIPS2025/video_generation/vsa_faster_video_diffusion_with_trainable_sparse_attention.md)
 - [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](lightning_unified_video_editing_via_in-context_sparse_attention.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ClipGStream partitions dynamic videos into several clips and employs a "Clip-Stream" hybrid paradigm, where a "Reference Clip" establishes the base and "Source Clips" perform incremental training on that base. This approach preserves the intra-clip temporal stability of Clip-based methods while inheriting the scalabili
+  [CVPR2026][3D Vision][Dynamic scene reconstruction] ClipGStream partitions dynamic videos into several clips and employs a "Clip-Stream" hybrid paradigm, where a "Reference Clip" establishes the base and "Source Clips" perform incremental training on that base. This approach preserves the intra-clip temporal stability of Clip-based methods while inheriting the scalability of Frame-Stream methods, achieving flicker-free, low-memory, SOTA dynamic Gaussian reconstruction on 1400…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Dynamic scene reconstruction"
+  - "Gaussian Splatting"
+  - "long sequences"
+  - "large motion"
+  - "temporal consistency"
 date: 2026-05-08
-content_hash: ff103284e41e358f
+content_hash: ad82d513498ffbcf
 ---
+
 # ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction
 
 **Conference**: CVPR2026  
@@ -154,11 +160,11 @@ Comparison of clip training strategies:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 - [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] MAPo: Motion-Aware Partitioning of Deformable 3D Gaussian Splatting for High-Fidelity Dynamic Scene Reconstruction](mapo_motion-aware_partitioning_of_deformable_3d_gaussian_splatting_for_high-fide.md)
+- [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
 
 </div>
 

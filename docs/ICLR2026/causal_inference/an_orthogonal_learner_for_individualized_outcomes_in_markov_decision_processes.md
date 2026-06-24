@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper systematically introduces semiparametric efficiency theory from causal inference into Q-function estimation in MDPs. It proves that classical Q-regression and FQE are essentially naive learners with plug-in bias and proposes the DRQQ-learner—a meta-learner characterized by double robustness, Neyman orthogona
+  [ICLR 2026][Causal Inference][Q-function estimation] This paper systematically introduces semiparametric efficiency theory from causal inference into Q-function estimation in MDPs. It proves that classical Q-regression and FQE are essentially naive learners with plug-in bias and proposes the DRQQ-learner—a meta-learner characterized by double robustness, Neyman orthogonality, and quasi-oracle efficiency. By deriving the Efficient Influence Function (EIF)…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Q-function estimation"
+  - "Double Robustness"
+  - "Neyman Orthogonality"
+  - "Offline Policy Evaluation"
 date: 2026-05-08
-content_hash: efcc93f959458fa9
+content_hash: 82ffa2e08c1c6ff0
 ---
+
 # An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes
 
 **Conference**: ICLR 2026  
@@ -155,11 +160,11 @@ The paper validates theoretical properties through systematic variable experimen
 
 ## Related Papers
 
-- [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
 - [\[ICLR 2026\] Overlap-Weighted Orthogonal Meta-Learner for Treatment Effect Estimation over Time](overlap-weighted_orthogonal_meta-learner_for_treatment_effect_estimation_over_ti.md)
 - [\[ICML 2026\] Rank-Learner: Orthogonal Ranking of Treatment Effects](../../ICML2026/causal_inference/rank-learner_orthogonal_ranking_of_treatment_effects.md)
-- [\[ICML 2025\] Transformer-Based Spatial-Temporal Counterfactual Outcomes Estimation](../../ICML2025/causal_inference/transformer-based_spatial-temporal_counterfactual_outcomes_estimation.md)
-- [\[ICLR 2026\] Topological Causal Effects](topological_causal_effects.md)
+- [\[ICLR 2026\] GDR-learners: Orthogonal Learning of Generative Models for Potential Outcomes](gdr-learners_orthogonal_learning_of_generative_models_for_potential_outcomes.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
+- [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
 
 </div>
 

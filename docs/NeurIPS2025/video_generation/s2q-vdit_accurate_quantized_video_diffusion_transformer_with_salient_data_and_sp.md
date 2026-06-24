@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation
 description: >-
-  [NeurIPS 2025][Video Generation][Post-training quantization] To address the high calibration variance and optimization difficulty caused by extremely long token sequences in video diffusion Transformers…
+  [NeurIPS 2025][Video Generation][Post-training quantization] To address the high calibration variance and optimization difficulty caused by extremely long token sequences in video diffusion Transformers, this paper proposes the S²Q-VDiT framework. By combining Hessian-aware salient data selection and attention-guided sparse token distillation, it achieves lossless quantization under W4A6 settings for the first time, yielding 3.9× model compression and 1.3× inference speedup.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "sparse attention"
   - "model compression"
 date: 2026-05-08
-content_hash: 3ec85a366c3971e7
+content_hash: 466322fe7a272dcf
 ---
 
 # S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation
@@ -139,8 +139,8 @@ W4A4 ultra-low-bit quantization results (CogVideoX-2B):
 - [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
 - [\[NeurIPS 2025\] VSA: Faster Video Diffusion with Trainable Sparse Attention](vsa_faster_video_diffusion_with_trainable_sparse_attention.md)
 - [\[NeurIPS 2025\] Training-Free Efficient Video Generation via Dynamic Token Carving](training-free_efficient_video_generation_via_dynamic_token_carving.md)
+- [\[CVPR 2025\] Articulated Kinematics Distillation from Video Diffusion Models](../../CVPR2025/video_generation/articulated_kinematics_distillation_from_video_diffusion_models.md)
 - [\[NeurIPS 2025\] Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation](radial_attention_onlog_n_sparse_attention_with_energy_decay_for_long_video_gener.md)
-- [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](../../ICCV2025/video_generation/vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
 
 </div>
 

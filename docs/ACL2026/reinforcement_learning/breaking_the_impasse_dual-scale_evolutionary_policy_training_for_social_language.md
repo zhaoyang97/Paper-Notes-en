@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents
 description: >-
-  [ACL 2026][Reinforcement Learning][self-play RLVR] To address the "evolution impasse" in open-ended social language games (Negotiation / Don't Say It / Two Dollar Game) within self-play RLVR—where agent behavior homogenization leads to deterministic match outcome distributions and vanishing gradient signals—this paper proposes DEPT. It utilizes a fast/slow dual-timesca
+  [ACL 2026][Reinforcement Learning][self-play RLVR] To address the "evolution impasse" in open-ended social language games (Negotiation / Don't Say It / Two Dollar Game) within self-play RLVR—where agent behavior homogenization leads to deterministic match outcome distributions and vanishing gradient signals—this paper proposes DEPT. It utilizes a fast/slow dual-timescale EMA baseline to detect stagnation and applies asymmetric advantage reshaping to suppress dominant outcomes…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - self-play RLVR
-  - evolution impasse
-  - dual-timescale baseline
-  - asymmetric advantage
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "self-play RLVR"
+  - "evolution impasse"
+  - "dual-timescale baseline"
+  - "asymmetric advantage"
+  - "social games"
 date: 2026-05-08
-content_hash: 8d3167d7e6f3f2a5
+content_hash: 1e06de1bf97ef10b
 ---
+
 # Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents
 
 **Conference**: ACL 2026  
@@ -146,15 +148,15 @@ OOD gains prove that DEPT learns generalizable reasoning capabilities rather tha
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Breaking Safety Paradox with Feasible Dual Policy Iteration](../../ICLR2026/reinforcement_learning/breaking_safety_paradox_with_feasible_dual_policy_iteration.md)
 - [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
 - [\[ICML 2026\] ALSO: Adversarial Online Strategy Optimization for Social Agents](../../ICML2026/reinforcement_learning/also_adversarial_online_strategy_optimization_for_social_agents.md)
-- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 - [\[ACL 2026\] The Stackelberg Speaker: Optimizing Persuasive Communication in Social Deduction Games](the_stackelberg_speaker_optimizing_persuasive_communication_in_social_deduction_.md)
+- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 
 </div>
 

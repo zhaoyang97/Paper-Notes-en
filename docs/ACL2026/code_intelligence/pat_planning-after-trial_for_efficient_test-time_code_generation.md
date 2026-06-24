@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PaT: Planning-after-Trial for Efficient Test-Time Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Test-Time Compute] PaT shifts the paradigm from "planning before trial" to "planning after trial (and failure)." It uses execution feedback to trigger expensive decomposition steps and significantly improves the trade-off between Pass@1 and inference cost through a heterogeneous configuration consisting of small-model generation and larg
+  [ACL2026][Code Intelligence][Test-time computation] PaT shifts the paradigm from "planning before trial" to "planning after trial (and failure)." It uses execution feedback to trigger expensive decomposition steps and significantly improves the trade-off between Pass@1 and inference cost through a heterogeneous configuration consisting of small-model generation and large-model planning.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Test-Time Compute
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Test-time computation"
+  - "code generation"
+  - "adaptive planning"
+  - "execution verification"
+  - "heterogeneous models"
 date: 2026-05-08
-content_hash: fb4a68c32caace11
+content_hash: f95c5f4f7eef1662
 ---
+
 # PaT: Planning-after-Trial for Efficient Test-Time Code Generation
 
 **Conference**: ACL2026  
@@ -161,8 +166,8 @@ This comparison is compelling: the 8B+32B configuration is the sweet spot. Its a
 ## Related Papers
 
 - [\[ACL 2026\] Ro-SLM: Onboard Small Language Models for Robot Task Planning and Operation Code Generation](ro-slm_onboard_small_language_models_for_robot_task_planning_and_operation_code_.md)
-- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 - [\[NeurIPS 2025\] Program Synthesis via Test-Time Transduction](../../NeurIPS2025/code_intelligence/program_synthesis_via_test-time_transduction.md)
+- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 - [\[ICLR 2026\] IMSE: Intrinsic Mixture of Spectral Experts Fine-tuning for Test-Time Adaptation](../../ICLR2026/code_intelligence/imse_intrinsic_mixture_of_spectral_experts_fine-tuning_for_test-time_adaptation.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
 

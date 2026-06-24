@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VITA: Vision-to-Action Flow Matching Policy
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Flow Matching] VITA replaces the source distribution of the Flow Matching policy from Gaussian noise with the visual representation itself, allowing the flow to "stream directly from vision to action." This eliminates the need for per-step visual conditioning during denoising. On 14 tasks such as ALOHA and Robomimic, it achieves $1.5
+  [ICLR 2026][Robotics][Flow Matching] VITA replaces the source distribution of the Flow Matching policy from Gaussian noise with the visual representation itself, allowing the flow to "stream directly from vision to action." This eliminates the need for per-step visual conditioning during denoising. On 14 tasks such as ALOHA and Robomimic, it achieves $1.5\times–2\times$ faster inference and $18.6\%–28.7\%$ reduction in VRAM, while reaching or exceeding SOTA success rates.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "Flow Matching"
+  - "Visuomotor Policy"
+  - "Imitation Learning"
+  - "Latent Action"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 269bf4cb49d3c6a9
+content_hash: 507b584dcc194021
 ---
+
 # VITA: Vision-to-Action Flow Matching Policy
 
 **Conference**: ICLR 2026  
@@ -156,15 +161,15 @@ VITA matches or exceeds the strongest transformer-based FM (AdaLN) in most tasks
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Translating Flow to Policy via Hindsight Online Imitation](translating_flow_to_policy_via_hindsight_online_imitation.md)
 - [\[CVPR 2026\] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching](../../CVPR2026/robotics/geninav_generative_model_driven_image-goal_navigation_via_imagination-guided_con.md)
+- [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
 - [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
 - [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
-- [\[ICLR 2026\] HAMLET: Switch Your Vision-Language-Action Model into a History-Aware Policy](hamlet_switch_your_vision-language-action_model_into_a_history-aware_policy.md)
 
 </div>
 

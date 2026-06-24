@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Towards Safe and Optimal Online Bidding: A Modular Look-Ahead Lyapunov Framework
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes L2FOB, a modular framework for online bidding under simultaneous budget and ROI constraints. By employing optimistic reward/pessimistic cost estimation, **look-ahead virtual queues**, and multipliers shaped by convex potential functions, the framework provides adaptive regret and anytime ROI violati
+  [ICLR 2026][Learning Theory][Online Bidding] This paper proposes L2FOB, a modular framework for online bidding under simultaneous budget and ROI constraints. By employing optimistic reward/pessimistic cost estimation, **look-ahead virtual queues**, and multipliers shaped by convex potential functions, the framework provides adaptive regret and anytime ROI violation bounds **without relying on the Slater condition**. It achieves or exceeds state-of-the-art results across vario…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Constrained Optimization"
+  - "Online Bidding"
+  - "Budget Constraints"
+  - "ROI Constraints"
+  - "Virtual Queues"
+  - "Lyapunov Stability"
 date: 2026-05-08
-content_hash: 515b0a161d7a7cbb
+content_hash: 2aaca9e930814be4
 ---
+
 # Towards Safe and Optimal Online Bidding: A Modular Look-Ahead Lyapunov Framework
 
 **Conference**: ICLR 2026  
@@ -139,16 +147,16 @@ where $\rho$ is the average budget per round and $\nu^*$ is the offline optimal 
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the dual budget + profitability constraints of real-world autobidding with a deployment-friendly modular design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/learning_theory/a_switching_framework_for_online_interval_scheduling_with_pr.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
+- [\[ICLR 2026\] Nonparametric Contextual Online Bilateral Trade](nonparametric_contextual_online_bilateral_trade.md)
 - [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
-- [\[ICLR 2026\] Oracle-Efficient Hybrid Online Learning with Constrained Adversaries](oracle-efficient_hybrid_learning_with_constrained_adversaries.md)
-- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
 
 </div>
 

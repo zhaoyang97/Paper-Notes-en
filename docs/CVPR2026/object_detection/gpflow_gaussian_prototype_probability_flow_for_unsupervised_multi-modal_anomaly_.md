@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] GPFlow models the continuous distribution of "normal" samples using a set of learnable Gaussian prototypes (mean + diagonal covariance + mixture weights), then iteratively contracts input features towards the posterior mean of the Gaussian mixture via an analytically solvable "Posterior Mean Path (PMP) router." This na
+  [CVPR 2026][Object Detection][Multi-modal anomaly detection] GPFlow models the continuous distribution of "normal" samples using a set of learnable Gaussian prototypes (mean + diagonal covariance + mixture weights), then iteratively contracts input features towards the posterior mean of the Gaussian mixture via an analytically solvable "Posterior Mean Path (PMP) router." This naturally realizes a "covariance-aware information bottleneck," significantly outperforming Prev. SOT…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Multi-modal anomaly detection"
+  - "Gaussian prototypes"
+  - "posterior mean flow"
+  - "anisotropic contraction"
+  - "few-shot"
 date: 2026-05-08
-content_hash: 57debcf3ea756906
+content_hash: 6614ef9bccc322c1
 ---
+
 # GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Comparison of Prototype and Routing Mechanisms:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
-- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
-- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
 - [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
 - [\[ICML 2026\] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](../../ICML2026/object_detection/mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)
+- [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
+- [\[CVPR 2026\] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)
+- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
 
 </div>
 

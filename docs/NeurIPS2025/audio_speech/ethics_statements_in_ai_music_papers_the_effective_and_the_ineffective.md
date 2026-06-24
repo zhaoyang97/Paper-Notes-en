@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ethics Statements in AI Music Papers: The Effective and the Ineffective
 description: >-
-  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][ethics statements] A systematic review of the current state of ethics statement usage in AI music research papers…
+  [NeurIPS 2025 (AI for Music Workshop)][Audio & Speech][ethics statements] A systematic review of the current state of ethics statement usage in AI music research papers, finding that the vast majority of ethics statements are not effectively utilized, with actionable recommendations proposed for both conferences and researchers.
 tags:
   - "NeurIPS 2025 (AI for Music Workshop)"
   - "Audio & Speech"
@@ -14,7 +14,7 @@ tags:
   - "NIME"
   - "music generation"
 date: 2026-05-08
-content_hash: 01b8e667a5e72d40
+content_hash: 21a5e603cc400d02
 ---
 
 # Ethics Statements in AI Music Papers: The Effective and the Ineffective
@@ -185,10 +185,10 @@ This paper offers **methodological inspiration for ethics audits in other AI sub
 ## Related Papers
 
 - [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
+- [\[ACL 2025\] Sparsify: Learning Sparsity for Effective and Efficient Music Performance Question Answering](../../ACL2025/audio_speech/sparsify_music_avqa.md)
 - [\[NeurIPS 2025\] From Generation to Attribution: Music AI Agent Architectures for the Post-Streaming Era](from_generation_to_attribution_music_ai_agent_architectures_for_the_post-streami.md)
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](../../AAAI2026/audio_speech/aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
 - [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](../../ICML2026/audio_speech/musicdet_zero-shot_ai-generated_music_detection.md)
-- [\[NeurIPS 2025\] Accelerate Creation of Product Claims Using Generative AI](accelerate_creation_of_product_claims_using_generative_ai.md)
 
 </div>
 

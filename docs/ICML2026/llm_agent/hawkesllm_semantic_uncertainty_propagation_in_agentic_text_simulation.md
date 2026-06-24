@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] HawkesLLM grafts a multivariate Hawkes point process onto the LLM agent text simulation loop: Hawkes is responsible for scheduling "when and which node generates" as well as "which historical node outputs to use as compressed memory." LLMs are only responsible for verbalizing the selected memory into the next event. Th
+  [ICML 2026][LLM Agent][Hawkes Process] HawkesLLM grafts a multivariate Hawkes point process onto the LLM agent text simulation loop: Hawkes is responsible for scheduling "when and which node generates" as well as "which historical node outputs to use as compressed memory." LLMs are only responsible for verbalizing the selected memory into the next event. This approach achieves late-stage semantic alignment that increases over time under compact prompt budgets on GDELT Artemis…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Hawkes Process"
+  - "Semantic Uncertainty"
+  - "Agentic Text Simulation"
+  - "Cascading Generation"
+  - "Memory Selection"
 date: 2026-05-08
-content_hash: 23f472fb61f9727b
+content_hash: 4459d40e30dd282d
 ---
+
 # HawkesLLM: Semantic Uncertainty Propagation in Agentic Text Simulation
 
 **Conference**: ICML 2026  
@@ -139,9 +145,9 @@ Drift diagnosis (average across runs): Global drift $0.450\pm 0.019$, Local drif
 
 - [\[CVPR 2026\] ViLoMem: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory](../../CVPR2026/llm_agent/vilomem_agentic_learner_with_grow-and-refine_multimodal_semantic_memory.md)
 - [\[AAAI 2026\] BayesAgent: Bayesian Agentic Reasoning Under Uncertainty via Verbalized Probabilistic Graphical Modeling](../../AAAI2026/llm_agent/bayesagent_bayesian_agentic_reasoning_under_uncertainty_via_.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 - [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
 - [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](../../ACL2026/llm_agent/uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
-- [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](../../ACL2026/llm_agent/hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
 
 </div>
 

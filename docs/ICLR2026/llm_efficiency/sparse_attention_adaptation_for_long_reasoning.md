@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparse Attention Adaptation for Long Reasoning
 description: >-
-  [ICLR 2026][LLM Efficiency][KV Cache] Ours proposes SeerAttention-R—a sparse attention framework specifically designed for the "long decoding" phase of reasoning models. By using a lightweight, plug-and-play self-distillation attention gate (AttnGate) to learn which KV blocks to activate at each step, it maintains near-lossless reasoning accuracy on benchm
+  [ICLR 2026][LLM Efficiency][Sparse Attention] Ours proposes SeerAttention-R—a sparse attention framework specifically designed for the "long decoding" phase of reasoning models. By using a lightweight, plug-and-play self-distillation attention gate (AttnGate) to learn which KV blocks to activate at each step, it maintains near-lossless reasoning accuracy on benchmarks like AIME with only a 4K token budget. Trained on 0.4B tokens without freezing original model weights…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV Cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "Long-chain Reasoning"
+  - "Self-distillation Gating"
+  - "KV Cache"
+  - "Decoding Acceleration"
 date: 2026-05-08
-content_hash: 4f4da385bda81b0b
+content_hash: 472d151c5b21bd4f
 ---
+
 # Sparse Attention Adaptation for Long Reasoning
 
 **Conference**: ICLR 2026  

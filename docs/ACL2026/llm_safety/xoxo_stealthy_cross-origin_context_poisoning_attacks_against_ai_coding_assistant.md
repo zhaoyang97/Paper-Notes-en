@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This work identifies a design vulnerability in the automatic context collection of AI coding assistants and proposes the Cross-Origin Context Poisoning (XOXO) attack. By applying semantics-preserving transformations (e.g., variable renaming) to poison shared codebases, assistants like GitHub Copilot are misled into gen
+  [ACL 2026][LLM Safety][Adversarial Attacks] This work identifies a design vulnerability in the automatic context collection of AI coding assistants and proposes the Cross-Origin Context Poisoning (XOXO) attack. By applying semantics-preserving transformations (e.g., variable renaming) to poison shared codebases, assistants like GitHub Copilot are misled into generating buggy or vulnerable code. The attack achieves an average success rate of 73.20% across 8 SOTA models.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Adversarial Attacks"
+  - "AI Coding Assistants"
+  - "Context Poisoning"
+  - "Semantics-Preserving Transformations"
+  - "Code Security"
 date: 2026-05-08
-content_hash: 6a16da6e19db6d8d
+content_hash: fd8bdafe6b9b257f
 ---
+
 # XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants
 
 **Conference**: ACL 2026  
@@ -137,8 +143,8 @@ Average ASR across 8 SOTA models: 83.67% (bugs), 52.26% (vulnerabilities).
 - [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](membership_inference_attacks_on_llm-based_recommender_systems.md)
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
 - [\[ACL 2026\] CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks](crossguard_safeguarding_mllms_against_joint-modal_implicit_malicious_attacks.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](../../ICLR2026/llm_safety/transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 - [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
-- [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
 
 </div>
 

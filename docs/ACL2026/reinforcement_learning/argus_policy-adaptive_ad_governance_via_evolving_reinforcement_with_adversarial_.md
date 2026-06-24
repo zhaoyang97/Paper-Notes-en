@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ARGUS: Policy-Adaptive Ad Governance via Evolving Reinforcement with Adversarial Umpiring
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] ARGUS utilizes a Prosecutor–Defender–Umpire three-agent debate combined with GRPO reinforcement learning. This enables the ad-review VLM to correct historical "outdated labels" and uncover latent violations in gray zones when policies are updated. Industrial A/B testing shows a relative 35.2% reduction in the Violation
+  [ACL 2026][Reinforcement Learning][Policy Adaptation] ARGUS utilizes a Prosecutor–Defender–Umpire three-agent debate combined with GRPO reinforcement learning. This enables the ad-review VLM to correct historical "outdated labels" and uncover latent violations in gray zones when policies are updated. Industrial A/B testing shows a relative 35.2% reduction in the Violation Leakage Rate (VLR).
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Policy Adaptation"
+  - "Multi-Agent Debate"
+  - "GRPO"
+  - "Label Updating"
+  - "Industrial Deployment"
 date: 2026-05-08
-content_hash: a89e6e7a58b470b9
+content_hash: 33871a5d6769b389
 ---
+
 # ARGUS: Policy-Adaptive Ad Governance via Evolving Reinforcement with Adversarial Umpiring
 
 **Conference**: ACL 2026  
@@ -150,11 +155,11 @@ A Skeptic (the current model $f_\theta$ itself) provides a CoT for "why I am hes
 
 ## Related Papers
 
+- [\[ICLR 2026\] BAPO: Stabilizing Off-Policy Reinforcement Learning for LLMs via Balanced Policy Optimization with Adaptive Clipping](../../ICLR2026/reinforcement_learning/bapo_stabilizing_off-policy_reinforcement_learning_for_llms_via_balanced_policy_.md)
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 - [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
 - [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](../../ICML2026/reinforcement_learning/metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
-- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
-- [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
-- [\[ICLR 2026\] SPELL: Self-Play Reinforcement Learning for Evolving Long-Context Language Models](../../ICLR2026/reinforcement_learning/spell_self-play_reinforcement_learning_for_evolving_long-context_language_models.md)
+- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](../../ICLR2026/reinforcement_learning/on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
 
 </div>
 

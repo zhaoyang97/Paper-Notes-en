@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Brain-Semantoks is proposed as an fMRI foundation model based on a semantic tokenizer and a self-distillation objective. It aggregates brain functional networks into robust semantic tokens and learns abstract brain dynamic representations through consistency across temporal views, achieving SOTA performance under linea
+  [ICLR2026][Time Series][fMRI Foundation Model] Brain-Semantoks is proposed as an fMRI foundation model based on a semantic tokenizer and a self-distillation objective. It aggregates brain functional networks into robust semantic tokens and learns abstract brain dynamic representations through consistency across temporal views, achieving SOTA performance under linear probing settings.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "fMRI Foundation Model"
+  - "Self-Distillation"
+  - "Semantic Tokenizer"
+  - "Brain Dynamic Representation Learning"
+  - "Linear Probing"
 date: 2026-05-08
-content_hash: 29ba37caa2c44c3a
+content_hash: a824d9096cbfa3c9
 ---
+
 # Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model
 
 **Conference**: ICLR2026  
@@ -150,11 +156,11 @@ Temporal crop length $T_{crop}=100$, patch length 20, resulting in 5 patches per
 
 ## Related Papers
 
+- [\[ICLR 2026\] Inferring brain plasticity rule under long-term stimulation with structured recurrent dynamics](inferring_brain_plasticity_rule_under_long-term_stimulation_with_structured_recu.md)
 - [\[ICLR 2026\] Panda: A Pretrained Forecast Model for Chaotic Dynamics](panda_a_pretrained_forecast_model_for_chaotic_dynamics.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
-- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
 - [\[ICLR 2026\] DeepFRC: An End-to-End Deep Learning Model for Functional Registration and Classification](deepfrc_an_end-to-end_deep_learning_model_for_functional_registration_and_classi.md)
-- [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 
 </div>
 

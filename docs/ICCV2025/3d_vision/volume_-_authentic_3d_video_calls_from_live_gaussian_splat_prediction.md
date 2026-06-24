@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VoluMe: Authentic 3D Video Calls from Live Gaussian Splat Prediction
 description: >-
-  [ICCV 2025][3D Vision][3D video calling] Microsoft proposes the first method for real-time prediction of 3D Gaussian Splatting reconstructions from a monocular 2D camera…
+  [ICCV 2025][3D Vision][3D video calling] Microsoft proposes the first method for real-time prediction of 3D Gaussian Splatting reconstructions from a monocular 2D camera, simultaneously satisfying four requirements: authenticity, realism, liveness, and temporal stability. This enables anyone to conduct volumetric 3D video calls using only a standard laptop camera.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "digital humans"
   - "video conferencing"
 date: 2026-05-08
-content_hash: 4e5b9fbef0e86173
+content_hash: 0d2dc15cb99e0fbf
 ---
 
 # VoluMe: Authentic 3D Video Calls from Live Gaussian Splat Prediction
@@ -158,11 +158,11 @@ A complete one-to-one 3D video calling system is demonstrated:
 
 ## Related Papers
 
+- [\[CVPR 2025\] FluidNexus: 3D Fluid Reconstruction and Prediction from a Single Video](../../CVPR2025/3d_vision/fluidnexus_3d_fluid_reconstruction_and_prediction_from_a_single_video.md)
 - [\[ICCV 2025\] Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction](boosting_multiview_indoor_3d_object_detection_via_adaptive_3.md)
 - [\[ICCV 2025\] Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs](compression_of_3d_gaussian_splatting_with_optimized_feature_planes_and_standard_.md)
-- [\[NeurIPS 2025\] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting](../../NeurIPS2025/3d_vision/segment_then_splat_unified_3d_open-vocabulary_segmentation_via_gaussian_splattin.md)
+- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 - [\[ICCV 2025\] Vivid4D: Improving 4D Reconstruction from Monocular Video by Video Inpainting](vivid4d_improving_4d_reconstruction_from_monocular_video_by_video_inpainting.md)
-- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 
 </div>
 

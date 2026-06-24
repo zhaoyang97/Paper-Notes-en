@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions
 description: >-
-  [NeurIPS 2025][Time Series][Signature Kernel] This paper proposes PowerSig, which efficiently computes signature kernels via locally adaptive truncated Neumann series expansions…
+  [NeurIPS 2025][Time Series][Signature Kernel] This paper proposes PowerSig, which efficiently computes signature kernels via locally adaptive truncated Neumann series expansions, reducing memory from $O(\ell^2)$ to $O(\ell P)$ and enabling signature kernel computation on time series of length exceeding one million on a single GPU.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Goursat PDE"
   - "Kernel Methods"
 date: 2026-05-08
-content_hash: d5ca818463272cb6
+content_hash: cbb94bc2f17db25a
 ---
 
 # Scalable Signature Kernel Computations for Long Time Series via Local Neumann Series Expansions
@@ -184,11 +184,11 @@ The mathematical derivations are elegant, and the paper addresses a critical sca
 
 ## Related Papers
 
-- [\[CVPR 2026\] L2GTX: From Local to Global Time Series Explanations](../../CVPR2026/time_series/l2gtx_from_local_to_global_time_series_explanations.md)
+- [\[ICLR 2026\] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling](../../ICLR2026/time_series/are_global_dependencies_necessary_scalable_time_series_forecasting_via_local_cro.md)
+- [\[CVPR 2025\] L2GTX: From Local to Global Time Series Explanations](../../CVPR2025/time_series/l2gtx_from_local_to_global_time_series_explanations.md)
 - [\[NeurIPS 2025\] WaLRUS: Wavelets for Long-range Representation Using SSMs](walrus_wavelets_for_long-range_representation_using_ssms.md)
 - [\[NeurIPS 2025\] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)
 - [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
-- [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
 
 </div>
 

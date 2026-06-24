@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][LLM RL] This paper first empirically demonstrates through a newly created State Value Estimation Benchmark (SVEB) that PPO critics in LLM RL almost completely degenerate into the group relative reward baseline of GRPO. It then proposes two state value estimation methods aimed at "no extra rollouts and nearly zero additional co
+  [ICML 2026][Reinforcement Learning][LLM RL] This paper first empirically demonstrates through a newly created State Value Estimation Benchmark (SVEB) that PPO critics in LLM RL almost completely degenerate into the group relative reward baseline of GRPO. It then proposes two state value estimation methods aimed at "no extra rollouts and nearly zero additional compute": Numca Uses numerical milestones to rewrite mathematical reasoning as goal-conditioned RL for credit assignme…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - LLM RL
-  - GRPO
-  - Hindsight
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "LLM RL"
+  - "GRPO"
+  - "State Value Estimation"
+  - "Hindsight"
+  - "Latent Representation"
 date: 2026-05-08
-content_hash: 70b4de86964f93cb
+content_hash: bbff838df478d6cc
 ---
+
 # Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -148,10 +151,20 @@ Downstream math evaluation results on Qwen2.5-Math-1.5B-Instruct replacing the G
 - Value: ⭐⭐⭐⭐⭐ High engineering utility for industrial LLM post-training with nearly zero extra compute.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
+- [\[ICML 2026\] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning](unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
+- [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](../../ACL2026/reinforcement_learning/efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](../../ICLR2026/reinforcement_learning/the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
+- [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](../../ICLR2026/reinforcement_learning/reinforcement_learning_via_value_gradient_flow.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAD-Recode: Reverse Engineering CAD Code from Point Clouds
 description: >-
-  [ICCV2025][Interpretability][CAD reverse engineering] This paper proposes CAD-Recode, which translates point clouds into executable Python CadQuery code to reconstruct CAD models. By leveraging a pretrained LLM (Qwen2-1.…
+  [ICCV2025][Interpretability][CAD reverse engineering] This paper proposes CAD-Recode, which translates point clouds into executable Python CadQuery code to reconstruct CAD models. By leveraging a pretrained LLM (Qwen2-1.5B) as the decoder paired with a lightweight point cloud encoder, the method achieves more than 10× reduction in Chamfer Distance on three benchmarks: DeepCAD, Fusion360, and CC3D.
 tags:
   - "ICCV2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "CadQuery"
   - "Python code generation"
 date: 2026-05-08
-content_hash: 17d11cd2dcb9cf6a
+content_hash: b5feeeb5734814cd
 ---
 
 # CAD-Recode: Reverse Engineering CAD Code from Point Clouds
@@ -171,11 +171,11 @@ Since the output is standard Python code, GPT-4o can directly understand and per
 
 ## Related Papers
 
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 - [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
 - [\[ICCV 2025\] CE-FAM: Concept-Based Explanation via Fusion of Activation Maps](ce-fam_concept-based_explanation_via_fusion_of_activation_maps.md)
 - [\[ICCV 2025\] AIM: Amending Inherent Interpretability via Self-Supervised Masking](aim_amending_inherent_interpretability_via_self-supervised_masking.md)
 - [\[ICCV 2025\] SVIP: Semantically Contextualized Visual Patches for Zero-Shot Learning](svip_semantically_contextualized_visual_patches_for_zero-shot_learning.md)
-- [\[ICCV 2025\] "Principal Components" Enable A New Language of Images](principal_components_enable_a_new_language_of_images.md)
 
 </div>
 

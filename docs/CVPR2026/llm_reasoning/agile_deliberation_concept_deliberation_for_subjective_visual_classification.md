@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Agile Deliberation: Concept Deliberation for Subjective Visual Classification
 description: >-
-  [CVPR 2026][LLM Reasoning][Paper Note] For subjective concepts with fuzzy boundaries like "healthy food" or "clickbait," this work proposes Agile Deliberation, a human-in-the-loop framework. The system decomposes concepts into hierarchies of positive/negative sub-concepts, iteratively retrieves "semantic boundary samples" for user annotation and reflection,
+  [CVPR 2026][Reasoning][Subjective Visual Classification] For subjective concepts with fuzzy boundaries like "healthy food" or "clickbait," this work proposes Agile Deliberation, a human-in-the-loop framework. The system decomposes concepts into hierarchies of positive/negative sub-concepts, iteratively retrieves "semantic boundary samples" for user annotation and reflection, and automatically compiles feedback into VLM prompts. This allows the image classifier to align with u…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Subjective Visual Classification"
+  - "Concept Deliberation"
+  - "Human-in-the-loop"
+  - "Prompt Optimization"
+  - "Boundary Case Retrieval"
 date: 2026-05-08
-content_hash: fd8f12463bdfd11f
+content_hash: 4203d17b4220f480
 ---
+
 # Agile Deliberation: Concept Deliberation for Subjective Visual Classification
 
 **Conference**: CVPR 2026  
@@ -134,10 +140,20 @@ On average, Agile Deliberation outperformed zero-shot by 10.5% and Modeling Coll
 - Value: ⭐⭐⭐⭐ Provides a practical human-in-the-loop paradigm for high-stakes subjective classification in moderation and curation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] Towards Safety Reasoning in LLMs: AI-agentic Deliberation for Policy-embedded CoT Data Creation](../../ACL2025/llm_reasoning/towards_safety_reasoning_in_llms_ai-agentic_deliberation_for_policy-embedded_cot.md)
+- [\[ICLR 2026\] Diversity-Enhanced Reasoning for Subjective Questions](../../ICLR2026/llm_reasoning/diversity-enhanced_reasoning_for_subjective_questions.md)
+- [\[CVPR 2026\] Human-like Abstract Visual Reasoning via Understanding and Solving Reasoning Loop](human-like_abstract_visual_reasoning_via_understanding_and_solving_reasoning_loo.md)
+- [\[CVPR 2026\] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models](visref_visual_refocusing_test_time_scaling.md)
+- [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](../../AAAI2026/llm_reasoning/from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] Towards Safety Reasoning in LLMs: AI-agentic Deliberation for Policy-embedded CoT Data Creation](../../ACL2025/llm_reasoning/towards_safety_reasoning_in_llms_ai-agentic_deliberation_for_policy-embedded_cot.md)

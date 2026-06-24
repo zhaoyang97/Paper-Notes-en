@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Opponent Shaping in LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][PPO] This paper presents the first investigation of "opponent shaping" between LLM Agents, introducing ShapeLLM—a model-free shaping algorithm trained via PPO. By compressing "history" and "context" into structured natural language prompts, ShapeLLM demonstrates that LLM Agents can actively manipulate an opponent's learning
+  [ICLR 2026][LLM Agent][Opponent Shaping] This paper presents the first investigation of "opponent shaping" between LLM Agents, introducing ShapeLLM—a model-free shaping algorithm trained via PPO. By compressing "history" and "context" into structured natural language prompts, ShapeLLM demonstrates that LLM Agents can actively manipulate an opponent's learning dynamics to lead them toward exploitable equilibria (maximizing individual gain in competitive games) or foster cooper…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - PPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Opponent Shaping"
+  - "Multi-Agent Reinforcement Learning (MARL)"
+  - "Iterated Matrix Games"
+  - "PPO"
 date: 2026-05-08
-content_hash: da060162c1ae6d97
+content_hash: 2658f52576cbb1fa
 ---
+
 # Opponent Shaping in LLM Agents
 
 **Conference**: ICLR 2026  
@@ -147,14 +151,17 @@ In ISH, all runs with a shaper converge to the Pareto-optimal "Stag" equilibrium
 
 <div class="related-papers" markdown="1">
 
-- **LOLA**: *Learning with Opponent-Learning Awareness*, Foerster et al., 2018.
-- **M-FOS**: *Model-Free Opponent Shaping*, Lu et al., 2022.
-- **SHAPER**: *Shaping Healthily with Adversarial Pareto-Efficiency Retaining*, 2023.
+## Related Papers
+
+- [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
+- [\[ICLR 2026\] Social Agents: Collective Intelligence Improves LLM Predictions](social_agents_collective_intelligence_improves_llm_predictions.md)
+- [\[ICLR 2026\] ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents](chatinject_abusing_chat_templates_for_prompt_injection_in_llm_agents.md)
+- [\[ICLR 2026\] FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](futurex_an_advanced_live_benchmark_for_llm_agents_in_future_prediction.md)
+- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Progressive Gaussian Transformer with Anisotropy-aware Sampling for Open Vocabulary Occupancy Prediction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] PG-Occ represents driving scenes using a set of sparse 3D Gaussians with text-aligned features. It employs "Progressive Online Densification" to supplement Gaussians in under-reconstructed areas during inference, paired with "Anisotropy-aware Sampling" to adaptively extract features according to Gaussian shapes. This a
+  [ICLR 2026][3D Vision][3D Occupancy Prediction] PG-Occ represents driving scenes using a set of sparse 3D Gaussians with text-aligned features. It employs "Progressive Online Densification" to supplement Gaussians in under-reconstructed areas during inference, paired with "Anisotropy-aware Sampling" to adaptively extract features according to Gaussian shapes. This achieves a 14.3% mIoU improvement over the previous SOTA on the Occ3D-nuScenes open vocabulary occupancy predicti…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Occupancy Prediction"
+  - "Open Vocabulary"
+  - "Gaussian Representation"
+  - "Progressive Densification"
+  - "Anisotropic Sampling"
 date: 2026-05-08
-content_hash: 28ec64e7d7cac872
+content_hash: 9541bac50d2a03b8
 ---
+
 # Progressive Gaussian Transformer with Anisotropy-aware Sampling for Open Vocabulary Occupancy Prediction
 
 **Conference**: ICLR 2026  
@@ -139,15 +145,15 @@ On Occ3D-nuScenes, PG-Occ achieves 15.15 mIoU using only camera and text supervi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](../../CVPR2026/3d_vision/onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] OVSeg3R: Learn Open-vocabulary Instance Segmentation from 2D via 3D Reconstruction](ovseg3r_learn_open-vocabulary_instance_segmentation_from_2d_via_3d_reconstructio.md)
 - [\[ICLR 2026\] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation](geopurify_a_data-efficient_geometric_distillation_framework_for_open-vocabulary_.md)
-- [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](../../CVPR2026/3d_vision/ovi-map_open-vocabulary_instance-semantic_mapping.md)
 - [\[ICLR 2026\] World2Minecraft: Occupancy-Driven Simulated Scenes Construction](world2minecraft_occupancy-driven_simulated_scenes_construction.md)
+- [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](../../CVPR2026/3d_vision/onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](../../CVPR2026/3d_vision/extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
 
 </div>
 

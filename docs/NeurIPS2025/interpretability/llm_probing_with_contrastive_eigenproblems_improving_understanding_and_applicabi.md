@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS
 description: >-
-  [NeurIPS 2025][Interpretability][CCS] This paper presents a rigorous analysis of the unsupervised probing method CCS (Contrast-Consistent Search) and proposes its reformulation as Contrastive Eigenproblems…
+  [NeurIPS 2025][Interpretability][CCS] This paper presents a rigorous analysis of the unsupervised probing method CCS (Contrast-Consistent Search) and proposes its reformulation as Contrastive Eigenproblems, yielding closed-form solutions with interpretable eigenvalues. This formulation eliminates CCS's sensitivity to random initialization and naturally extends to multivariate settings.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "mechanistic interpretability"
   - "latent knowledge elicitation"
 date: 2026-05-08
-content_hash: 8791a37f0b4baeec
+content_hash: 7ff80b90a74d87e8
 ---
 
 # LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS
@@ -169,8 +169,8 @@ The ablation demonstrates that the confidence loss plays a far greater role than
 - [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
 - [\[NeurIPS 2025\] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training](urls_help_topics_guide_understanding_metadata_utility_in_llm_training.md)
 - [\[AAAI 2026\] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation](../../AAAI2026/interpretability/explainable_melanoma_diagnosis_with_contrastive_learning_and_llm-based_report_ge.md)
+- [\[ACL 2025\] Around the World in 24 Hours: Probing LLM Knowledge of Time and Place](../../ACL2025/interpretability/around_the_world_in_24_hours_probing_llm_knowledge_of_time_and_place.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](../../ACL2026/interpretability/rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
 
 </div>
 

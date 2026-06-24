@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][KV cache] DELTA is a **training-free hierarchical sparse attention** mechanism. It categorizes Transformer layers into three groups: "initial full attention layers + a few Δ-layers for re-selecting salient pages + subsequent sparse attention layers." It achieves comparable or superior accuracy to full attention on AIME / GPQA-Di
+  [ACL 2026 Findings][Reasoning][Sparse attention] DELTA is a **training-free hierarchical sparse attention** mechanism. It categorizes Transformer layers into three groups: "initial full attention layers + a few Δ-layers for re-selecting salient pages + subsequent sparse attention layers." It achieves comparable or superior accuracy to full attention on AIME / GPQA-Diamond, while reducing the number of attended tokens by $4.25\times$ and achieving a $1.54\times$ end-to-end inf…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - KV cache
-  - reasoning
-  - Δ-layer
-  - page-based selection
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Sparse attention"
+  - "KV cache"
+  - "Δ-layer"
+  - "page-based selection"
 date: 2026-05-08
-content_hash: 6b4fdb67a25a1ce0
+content_hash: 1ebf667cbfbf313f
 ---
+
 # DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -159,11 +160,11 @@ Difference can reach 10 points, indicating $L$ should be budget-aware.
 
 ## Related Papers
 
+- [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](../../ICLR2026/llm_reasoning/perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
 - [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 - [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
 - [\[ACL 2026\] PPA-Plan: Proactive Pitfall Avoidance for Reliable Planning in Long-Context LLM Reasoning](ppa-plan_proactive_pitfall_avoidance_for_reliable_planning_in_long-context_llm_r.md)
-- [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
-- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](../../ICLR2026/llm_reasoning/attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
+- [\[ICLR 2026\] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning](../../ICLR2026/llm_reasoning/frost_filtering_reasoning_outliers_with_attention_for_efficient_reasoning.md)
 
 </div>
 

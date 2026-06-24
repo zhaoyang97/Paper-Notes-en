@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LiveGesture: Streamable Co-Speech Gesture Generation Model
 description: >-
-  [CVPR 2026][Human Understanding][Autoregressive] This paper proposes LiveGesture—the first **fully streamable, zero look-ahead** speech-driven full-body gesture generation framework. It employs a streaming vector quantized motion tokenizer (SVQ, featuring asymmetric bidirectional encoding + causal decoding) to discretize each body region into causal motion tokens. A
+  [CVPR 2026][Human Understanding][Streaming generation] This paper proposes LiveGesture—the first **fully streamable, zero look-ahead** speech-driven full-body gesture generation framework. It employs a streaming vector quantized motion tokenizer (SVQ, featuring asymmetric bidirectional encoding + causal decoding) to discretize each body region into causal motion tokens. A Hierarchical Autoregressive Transformer (region experts xAR + causal spatio-temporal fusion xAR-Fuse) the…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Autoregressive
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Streaming generation"
+  - "Zero look-ahead"
+  - "Co-speech gestures"
+  - "Autoregression"
+  - "Region experts"
 date: 2026-05-08
-content_hash: 86debba6aa9cfba5
+content_hash: 2b5b6d8589d1f3d7
 ---
+
 # LiveGesture: Streamable Co-Speech Gesture Generation Model
 
 **Conference**: CVPR 2026  
@@ -129,15 +134,16 @@ Ablation of core components on BEAT2:
 - Value: ⭐⭐⭐⭐⭐ High potential for digital humans/VTubers/telepresence where real-time interaction is critical.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] CoordSpeaker: Exploiting Gesture Captioning for Coordinated Caption-Empowered Co-Speech Gesture Generation](coordspeaker_exploiting_gesture_captioning_for_coordinated_caption-empowered_co-.md)
-- [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](../../ICCV2025/human_understanding/semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
 - [\[AAAI 2026\] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion](../../AAAI2026/human_understanding/streaming_generation_of_co-speech_gestures_via_accelerated_rolling_diffusion.md)
-- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
+- [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](../../ICCV2025/human_understanding/semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
+- [\[CVPR 2026\] DyaDiT: A Multi-Modal Diffusion Transformer for Socially Favorable Dyadic Gesture Generation](dyadit_a_multi-modal_diffusion_transformer_for_socially_favorable_dyadic_gesture.md)
+- [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](../../ICCV2025/human_understanding/semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
 
 </div>
 

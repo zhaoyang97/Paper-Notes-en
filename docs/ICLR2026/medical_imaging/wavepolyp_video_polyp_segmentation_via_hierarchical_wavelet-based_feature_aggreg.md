@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WavePolyp: Video Polyp Segmentation via Hierarchical Wavelet-based Feature Aggregation and Inter-frame Divergence Perception
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] WavePolyp employs wavelets to decompose per-frame features into high and low frequencies for separate enhancement and aggregation (HWFA). It also introduces a module that performs difference-based attention along the temporal dimension (IDP) to explicitly model polyp variations between adjacent frames. This enables the
+  [ICLR 2026][Medical Imaging][Video polyp segmentation] WavePolyp employs wavelets to decompose per-frame features into high and low frequencies for separate enhancement and aggregation (HWFA). It also introduces a module that performs difference-based attention along the temporal dimension (IDP) to explicitly model polyp variations between adjacent frames. This enables the model to both extract highly camouflaged polyps and maintain stable cross-frame tracking in colonoscopy…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Video polyp segmentation"
+  - "wavelet transform"
+  - "frequency domain features"
+  - "inter-frame difference"
+  - "temporal consistency"
 date: 2026-05-08
-content_hash: d2e220f6509451d0
+content_hash: 84ddf531a86f2ec8
 ---
+
 # WavePolyp: Video Polyp Segmentation via Hierarchical Wavelet-based Feature Aggregation and Inter-frame Divergence Perception
 
 **Conference**: ICLR 2026  
@@ -151,11 +157,11 @@ Decomposition of the two major components and their internal units (HFC, LFC, No
 
 ## Related Papers
 
+- [\[ICLR 2026\] HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation](hfsti-net_hierarchical_frequency-spatial-temporal_interactions_for_video_polyp_s.md)
+- [\[NeurIPS 2025\] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking](../../NeurIPS2025/medical_imaging/a_unified_solution_to_video_fusion_from_multi-frame_learning_to_benchmarking.md)
+- [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
+- [\[CVPR 2026\] EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame](../../CVPR2026/medical_imaging/echovdiff_cardiac-cycle_echocardiography_video_generation_from_arbitrary_single_.md)
 - [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
-- [\[ICLR 2026\] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment](mindmix_a_multimodal_foundation_model_for_auditory_perception_decoding_via_deep_.md)
-- [\[ICLR 2026\] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification](functional_mri_time_series_generation_via_wavelet-based_image_transform_and_spec.md)
-- [\[ICLR 2026\] DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring](disco_densely-overlapping_cell_instance_segmentation_via_adjacency-aware_collabo.md)
-- [\[ICLR 2026\] Rethinking Model Calibration through Spectral Entropy Regularization in Medical Image Segmentation](rethinking_model_calibration_through_spectral_entropy_regularization_in_medical_.md)
 
 </div>
 

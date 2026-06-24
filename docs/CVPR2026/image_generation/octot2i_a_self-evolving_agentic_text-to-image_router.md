@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OctoT2I: A Self-Evolving Agentic Text-to-Image Router
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] OctoT2I reframes the selection of text-to-image models for a given prompt as a constrained optimization problem: choosing the tool with the minimum cost while satisfying a quality threshold. By employing a multi-turn agentic router supported by a **zero-human-annotation, self-built** tool knowledge base (PSEL self-evol
+  [CVPR 2026][Image Generation][Agentic Routing] OctoT2I reframes the selection of text-to-image models for a given prompt as a constrained optimization problem: choosing the tool with the minimum cost while satisfying a quality threshold. By employing a multi-turn agentic router supported by a **zero-human-annotation, self-built** tool knowledge base (PSEL self-evolving loop), the method achieves an overall score of 0.96 on GenEval. Compared to the strong baseline Flow-GRPO…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Agentic Routing"
+  - "Text-to-Image"
+  - "Self-Evolution"
+  - "Inference Efficiency"
+  - "Tool Choice"
 date: 2026-05-08
-content_hash: 091d2c8d991cee49
+content_hash: 6de467f875ddf18a
 ---
+
 # OctoT2I: A Self-Evolving Agentic Text-to-Image Router
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,15 @@ Compared to Flow-GRPO, OctoT2I is 90.3% faster and 56.6% more energy efficient.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_texttoimage_generation.md)
 - [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
-- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
+- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
 
 </div>
 

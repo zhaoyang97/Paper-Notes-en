@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Similarity-Distance-Magnitude Activations
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper proposes the SDM (Similarity-Distance-Magnitude) activation function as a more robust alternative to softmax. It decouples and integrates three epistemic dimensions: the deep matching of correct predictions (Similarity), the distance to the training distribution (Distance), and the decision boundary distance
+  [ACL 2026 Findings][Interpretability][Activation functions] This paper proposes the SDM (Similarity-Distance-Magnitude) activation function as a more robust alternative to softmax. It decouples and integrates three epistemic dimensions: the deep matching of correct predictions (Similarity), the distance to the training distribution (Distance), and the decision boundary distance (Magnitude), into a new activation: $\text{sdm}(\mathbf{z}')_i = (2+q)^{d \cdot z'_i} / \sum_c (2+q…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Activation functions"
+  - "softmax alternative"
+  - "selective classification"
+  - "OOD detection"
+  - "predictive uncertainty"
 date: 2026-05-08
-content_hash: 643699766800a987
+content_hash: d76f0d12a57fe250
 ---
+
 # Similarity-Distance-Magnitude Activations
 
 **Conference**: ACL 2026 Findings  
@@ -149,9 +155,9 @@ The exemplar adaptor (1-D CNN + linear layer) is trained using the SDM loss whil
 
 - [\[ICLR 2026\] Conjuring Semantic Similarity](../../ICLR2026/interpretability/conjuring_semantic_similarity.md)
 - [\[ACL 2026\] From Weights to Activations: Is Steering the Next Frontier of Adaptation?](from_weights_to_activations_is_steering_the_next_frontier_of_adaptation.md)
-- [\[ACL 2026\] Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models](embracing_anisotropy_turning_massive_activations_into_interpretable_control_knob.md)
-- [\[ICML 2026\] Disentangling Direction and Magnitude in Transformer Representations: A Double Dissociation Through L2-Matched Perturbation Analysis](../../ICML2026/interpretability/disentangling_direction_and_magnitude_in_transformer_representations_a_double_di.md)
-- [\[CVPR 2026\] Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability](../../CVPR2026/interpretability/beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat.md)
+- [\[ICLR 2026\] Partial Soft-Matching Distance for Neural Representational Comparison with Partial Unit Correspondence](../../ICLR2026/interpretability/partial_soft-matching_distance_for_neural_representational_comparison_with_parti.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](../../ICLR2026/interpretability/circuit_insights_towards_interpretability_beyond_activations.md)
+- [\[ICLR 2026\] Negative Pre-activations Differentiate Syntax](../../ICLR2026/interpretability/negative_pre-activations_differentiate_syntax.md)
 
 </div>
 

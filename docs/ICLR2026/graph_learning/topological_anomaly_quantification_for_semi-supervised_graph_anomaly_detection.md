@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Aiming at semi-supervised graph anomaly detection with "only normal node labels," TAQ-GAD quantifies the "anomaly degree" of each labeled normal node using two pure topological indicators (Boundary Score NBS + Isolation Score PIS). It filters high-quality pseudo-anomaly nodes and utilizes a Topological Anomaly Enhancem
+  [ICLR 2026][Graph Learning][Graph Anomaly Detection] Aiming at semi-supervised graph anomaly detection with "only normal node labels," TAQ-GAD quantifies the "anomaly degree" of each labeled normal node using two pure topological indicators (Boundary Score NBS + Isolation Score PIS). It filters high-quality pseudo-anomaly nodes and utilizes a Topological Anomaly Enhancement (TAE) module to generate virtual anomaly centers and reconnect graph structures. The model is jointly t…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Anomaly Detection"
+  - "Semi-Supervised"
+  - "Pseudo-Anomaly Generation"
+  - "Topological Quantification"
+  - "Graph Augmentation"
 date: 2026-05-08
-content_hash: 103b70542f11875c
+content_hash: 9f3c962b615474a6
 ---
+
 # Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -141,8 +147,8 @@ Comparison with naive pseudo-label strategies (Randomly selected or Low-degree n
 
 - [\[ICLR 2026\] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection](dr-ggad_dual_residual_centering_for_mitigating_anomaly_nondiscriminativity_in_ge.md)
 - [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](../../ICML2026/graph_learning/generalist_graph_anomaly_detection_via_prototype-based_distillation.md)
-- [\[ICLR 2026\] Dynamic Multi-sample Mixup with Gradient Exploration for Open-set Graph Anomaly Detection](dynamic_multi-sample_mixup_with_gradient_exploration_for_open-set_graph_anomaly_.md)
 - [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
+- [\[ICLR 2026\] Dynamic Multi-sample Mixup with Gradient Exploration for Open-set Graph Anomaly Detection](dynamic_multi-sample_mixup_with_gradient_exploration_for_open-set_graph_anomaly_.md)
 - [\[ICML 2026\] Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach](../../ICML2026/graph_learning/rethinking_feature_alignment_in_generalist_graph_anomaly_detection_a_relational_.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection
 description: >-
-  [CVPR 2026][Model Compression][Inference Acceleration] To address the high inference cost caused by excessive visual tokens in Multimodal Large Language Models (MLLMs), this paper proposes a training-free pruning method, Hi-Lo Prune. Following the core philosophy of "look at what you'll lose before pruning," it employs a coarse-to-fine hierarchical selection to define a pr
+  [CVPR 2026][Multimodal Efficiency][Visual token pruning] To address the high inference cost caused by excessive visual tokens in Multimodal Large Language Models (MLLMs), this paper proposes a training-free pruning method, Hi-Lo Prune. Following the core philosophy of "look at what you'll lose before pruning," it employs a coarse-to-fine hierarchical selection to define a preserved token set and a "most valuable discarded token" candidate set. Prune-Aware Fusion then migrates…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token pruning"
+  - "training-free"
+  - "multimodal large models"
+  - "attention fusion"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: 8cdeb5ab3fef4765
+content_hash: 2976bd39bffbd24d
 ---
+
 # Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection  
 
 **Conference**: CVPR 2026  
@@ -127,11 +132,11 @@ Ours achieves the highest average score across all models. The lead is more pron
 
 ## Related Papers
 
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
 - [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](../../ICLR2026/vlm_efficiency/ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
 - [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
-- [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
 
 </div>
 

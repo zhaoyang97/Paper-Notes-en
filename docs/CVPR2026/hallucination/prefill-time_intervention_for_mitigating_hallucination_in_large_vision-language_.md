@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][KV cache] PTI shifts steering intervention to mitigate LVLM hallucinations from the "token-by-token decoding phase" forward to the "one-time prefill phase." By applying modality-aware and key/value-decoupled steering vectors to the initial KV cache, it corrects hallucination-prone representations at the source. It outperforms ex
+  [CVPR 2026][Hallucination Detection][LVLM Hallucination] PTI shifts steering intervention to mitigate LVLM hallucinations from the "token-by-token decoding phase" forward to the "one-time prefill phase." By applying modality-aware and key/value-decoupled steering vectors to the initial KV cache, it corrects hallucination-prone representations at the source. It outperforms existing decoding-time methods across three LVLMs and five benchmarks and is compatible with them as a pl…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - KV cache
-  - steering vector
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "KV cache"
+  - "steering vector"
+  - "prefill intervention"
+  - "modality decoupling"
 date: 2026-05-08
-content_hash: 9dd15819d861f38d
+content_hash: abf4f2cc9a419e9b
 ---
+
 # Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -155,15 +159,13 @@ Intervention Modality & Position (LLaVA-1.5, Table 5):
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
 - [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
+- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
-- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
 
 </div>
 

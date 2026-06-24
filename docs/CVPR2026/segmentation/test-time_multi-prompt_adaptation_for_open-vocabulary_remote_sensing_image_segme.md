@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Remote Sensing] Addressing the overlooked "textual ambiguity" problem in open-vocabulary remote sensing image segmentation (OVRSIS), this paper proposes the plug-and-play TMPA: it first utilizes an LLM to expand naive category names into multiple context-aware descriptions, and then calibrates text embeddings during inference guided b
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] Addressing the overlooked "textual ambiguity" problem in open-vocabulary remote sensing image segmentation (OVRSIS), this paper proposes the plug-and-play TMPA: it first utilizes an LLM to expand naive category names into multiple context-aware descriptions, and then calibrates text embeddings during inference guided by high-confidence visual features, achieving an average gain of 4.6% for SegEarth-OV across 17 remote se…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Remote Sensing
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "remote sensing"
+  - "test-time adaptation"
+  - "textual ambiguity"
+  - "CLIP"
 date: 2026-05-08
-content_hash: be7d89969a2465d5
+content_hash: 7bbc6981acea37e1
 ---
+
 # Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -135,8 +139,8 @@ Scanning the number of text descriptions: Performance increases from 0→1→3�
 - [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
 - [\[CVPR 2026\] The Golden Subspace: Where Efficiency Meets Generalization in Continual Test-Time Adaptation](the_golden_subspace_where_efficiency_meets_generalization_in_continual_test-time.md)
-- [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
-- [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
+- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
+- [\[CVPR 2026\] Retrieve and Segment: Are a Few Examples Enough to Bridge the Supervision Gap in Open-Vocabulary Segmentation?](retrieve_and_segment_are_a_few_examples_enough_to_bridge_the_supervision_gap_in_.md)
 
 </div>
 

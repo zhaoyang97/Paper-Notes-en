@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] The study proposes the SelfReflect metric—an information-theoretic distance measuring the discrepancy between an LLM's self-stated uncertainty summary and its true internal answer distribution. It discovers that modern LLMs generally fail to autonomously reflect their internal uncertainty, but can generate faithful unc
+  [ICLR 2026][Causal Inference][LLM uncertainty] The study proposes the SelfReflect metric—an information-theoretic distance measuring the discrepancy between an LLM's self-stated uncertainty summary and its true internal answer distribution. It discovers that modern LLMs generally fail to autonomously reflect their internal uncertainty, but can generate faithful uncertainty summaries by sampling multiple outputs and feeding them back into the context.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "LLM uncertainty"
+  - "internal distribution"
+  - "information-theoretic distance"
+  - "faithfulness metric"
+  - "uncertainty communication"
 date: 2026-05-08
-content_hash: 1aaf39a90832ee3b
+content_hash: eb663211d15f4279
 ---
+
 # SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?
 
 **Conference**: ICLR 2026  

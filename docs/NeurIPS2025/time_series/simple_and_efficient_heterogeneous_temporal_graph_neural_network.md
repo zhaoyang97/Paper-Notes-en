@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Simple and Efficient Heterogeneous Temporal Graph Neural Network
 description: >-
-  [NeurIPS 2025][Time Series][Heterogeneous temporal graph] This paper proposes SE-HTGNN, which integrates temporal modeling into spatial learning via a dynamic attention mechanism and initializes attention coefficients us…
+  [NeurIPS 2025][Time Series][Heterogeneous temporal graph] This paper proposes SE-HTGNN, which integrates temporal modeling into spatial learning via a dynamic attention mechanism and initializes attention coefficients using LLM-generated priors, achieving up to 10× speedup over prior methods while maintaining state-of-the-art predictive accuracy on heterogeneous temporal graph tasks.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "LLM augmentation"
   - "spatiotemporal modeling"
 date: 2026-05-08
-content_hash: 01f5cfe92c175fd3
+content_hash: 175c1a69b7a277ba
 ---
 
 # Simple and Efficient Heterogeneous Temporal Graph Neural Network
@@ -134,9 +134,9 @@ This paper bridges static heterogeneous GNNs (HAN, SeHGNN) and dynamic graph net
 
 - [\[NeurIPS 2025\] A Graph Neural Network Approach for Localized and High-Resolution Temperature Forecasting](a_graph_neural_network_approach_for_localized_and_high-resolution_temperature_fo.md)
 - [\[NeurIPS 2025\] Graph-based Neural Space Weather Forecasting](graph-based_neural_space_weather_forecasting.md)
-- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
+- [\[ICML 2025\] TQNet: Temporal Query Network for Efficient Multivariate Time Series Forecasting](../../ICML2025/time_series/temporal_query_network_for_efficient_multivariate_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Neural MJD: Neural Non-Stationary Merton Jump Diffusion for Time Series Prediction](neural_mjd_neural_non-stationary_merton_jump_diffusion_for_time_series_predictio.md)
-- [\[NeurIPS 2025\] Exploring Neural Granger Causality with xLSTMs: Unveiling Temporal Dependencies in Complex Data](exploring_neural_granger_causality_with_xlstms_unveiling_temporal_dependencies_i.md)
+- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
 
 </div>
 

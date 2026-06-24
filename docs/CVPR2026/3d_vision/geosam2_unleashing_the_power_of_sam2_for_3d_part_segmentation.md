@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation
 description: >-
-  [CVPR 2026][3D Vision][SAM2] GeoSAM2 reformulates part segmentation of textureless 3D models as a "multi-view 2D mask prediction" task: it renders normal and point maps from 12 viewpoints, allows users to provide 2D prompts (clicks/boxes) in any view, predicts masks frame-by-frame using a shared SAM2 backbone with LoRA and geometric residual fusio
+  [CVPR 2026][3D Vision][3D Part Segmentation] GeoSAM2 reformulates part segmentation of textureless 3D models as a "multi-view 2D mask prediction" task: it renders normal and point maps from 12 viewpoints, allows users to provide 2D prompts (clicks/boxes) in any view, predicts masks frame-by-frame using a shared SAM2 backbone with LoRA and geometric residual fusion, and finally back-projects these masks into 3D using visibility-aware voting to achieve class-agnostic SOTA on Pa…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SAM2
-  - LoRA
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Part Segmentation"
+  - "SAM2"
+  - "Multi-view Segmentation"
+  - "LoRA"
+  - "Interactive Prompt"
 date: 2026-05-08
-content_hash: 3ae052b620ac6b4c
+content_hash: fc61db31683083ae
 ---
+
 # GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation
 
 **Conference**: CVPR 2026  
@@ -141,11 +145,11 @@ Incremental addition of components (mean IoU, %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[CVPR 2026\] EI-Part: Explode for Completion and Implode for Refinement](ei-partexplode_for_completion_and_implode_for_refinement.md)
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
-- [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
+- [\[AAAI 2026\] 3DTeethSAM: Taming SAM2 for 3D Teeth Segmentation](../../AAAI2026/3d_vision/3dteethsam_taming_sam2_for_3d_teeth_segmentation.md)
+- [\[CVPR 2026\] S2AM3D: Scale-controllable Part Segmentation of 3D Point Clouds](s2am3d_scale-controllable_part_segmentation_of_3d_point_cloud.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] GEM: Generating LiDAR World Model via Deformable Mamba
 description: >-
-  [CVPR 2026][Autonomous Driving][Deformable Mamba] GEM aligns LiDAR scan sequences with Mamba's step-by-step scanning mechanism. It utilizes a Mamba scene tokenizer to compress unordered point clouds into ordered latents, followed by unsupervised decoupling of dynamic objects and static environments modeled by a triple-path deformable Mamba. Ultimately, it establishes
+  [CVPR 2026][Autonomous Driving][LiDAR World Model] GEM aligns LiDAR scan sequences with Mamba's step-by-step scanning mechanism. It utilizes a Mamba scene tokenizer to compress unordered point clouds into ordered latents, followed by unsupervised decoupling of dynamic objects and static environments modeled by a triple-path deformable Mamba. Ultimately, it establishes a new SOTA for 1s/3s future prediction on nuScenes/KITTI (reducing Chamfer Distance by 81% compared to the ru…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Deformable Mamba
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR World Model"
+  - "Deformable Mamba"
+  - "Dynamic-Static Decoupling"
+  - "Latent Diffusion"
 date: 2026-05-08
-content_hash: 702ab470e29c15a2
+content_hash: dbf5c1ad7b94f75e
 ---
+
 # GEM: Generating LiDAR World Model via Deformable Mamba
 
 **Conference**: CVPR 2026  
@@ -146,11 +150,11 @@ Component contributions (nuScenes 3s, degradation when removed):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model](sparseworld_tc_trajectory_conditioned_sparse_occupancy_world_model.md)
 - [\[CVPR 2026\] Deformable Gaussian Occupancy: Decoupling Rigid and Nonrigid Motion with Factorized Distillation](deformable_gaussian_occupancy_decoupling_rigid_and_nonrigid_motion_with_factoriz.md)
+- [\[CVPR 2026\] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model](sparseworld_tc_trajectory_conditioned_sparse_occupancy_world_model.md)
+- [\[CVPR 2026\] Think Before You Drive: World Model-Inspired Multimodal Grounding](think_before_you_drive_world_model-inspired_multimodal_grounding.md)
 - [\[CVPR 2025\] Trajectory Mamba: Efficient Attention-Mamba Forecasting Model Based on Selective SSM](../../CVPR2025/autonomous_driving/trajectory_mamba_efficient_attention-mamba_forecasting_model_based_on_selective_.md)
 - [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
-- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
 
 </div>
 

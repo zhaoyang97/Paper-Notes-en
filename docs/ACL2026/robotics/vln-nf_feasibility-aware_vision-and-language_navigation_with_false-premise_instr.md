@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions
 description: >-
-  [ACL 2026][Robotics & Embodied AI][NOT-FOUND] This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It further introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework, where ROAM achieves 6.1 REV-SPL, representing a 4
+  [ACL 2026][Robotics][Vision-and-Language Navigation] This paper proposes the VLN-NF benchmark—the first task requiring VLN agents to identify false-premise instructions and output NOT-FOUND in 3D partially observable environments. It further introduces the REV-SPL evaluation metric and the ROAM two-stage hybrid framework, where ROAM achieves 6.1 REV-SPL, representing a 45% improvement over supervised baselines.
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - NOT-FOUND
+  - "ACL 2026"
+  - "Robotics"
+  - "Vision-and-Language Navigation"
+  - "False Premise"
+  - "NOT-FOUND"
+  - "Embodied Exploration"
+  - "Feasibility Awareness"
 date: 2026-05-08
-content_hash: b71a92e14ffc1716
+content_hash: 31dd7f95db2c5c7e
 ---
+
 # VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions
 
 **Conference**: ACL 2026  
@@ -139,10 +144,10 @@ ROAM outperforms the strongest supervised baseline by 45% and the LLM baselines 
 ## Related Papers
 
 - [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](../../CVPR2026/robotics/ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
+- [\[ACL 2026\] Ability-Oriented Failure Attribution for Vision-Language Navigation Agents](where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](../../ICLR2026/robotics/uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](../../CVPR2026/robotics/towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
 - [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](../../CVPR2026/robotics/awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[ACL 2026\] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)
 
 </div>
 

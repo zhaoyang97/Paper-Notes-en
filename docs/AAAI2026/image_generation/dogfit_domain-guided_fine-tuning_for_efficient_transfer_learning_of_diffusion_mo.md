@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes DogFit, which internalizes Domain Guidance (DoG) into the fine-tuning loss of diffusion models…
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes DogFit, which internalizes Domain Guidance (DoG) into the fine-tuning loss of diffusion models, enabling the model to learn the guidance direction during training. At inference time, a controllable fidelity–diversity trade-off is achieved without double forward passes, surpassing the state-of-the-art guidance methods on 6 target domains with half the sampling TFLOPS.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Domain Adaptation"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: b0159e1a3cbf89f5
+content_hash: 4aaa2b4cd0c0a3c4
 ---
 
 # DogFit: Domain-guided Fine-tuning for Efficient Transfer Learning of Diffusion Models
@@ -121,10 +121,10 @@ DogFit surpasses DoG in FID while halving the sampling TFLOPS.
 ## Related Papers
 
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
+- [\[ICML 2025\] Zero-Shot Adaptation of Parameter-Efficient Fine-Tuning in Diffusion Models](../../ICML2025/image_generation/zero-shot_adaptation_of_parameter-efficient_fine-tuning_in_diffusion_models.md)
 - [\[NeurIPS 2025\] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models](../../NeurIPS2025/image_generation/deft_decompositional_efficient_finetuning_for_texttoimage_mo.md)
-- [\[AAAI 2026\] RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers](relactrl_relevance-guided_efficient_control_for_diffusion_transformers.md)
-- [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](../../CVPR2026/image_generation/memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
+- [\[ECCV 2024\] Memory-Efficient Fine-Tuning for Quantized Diffusion Model](../../ECCV2024/image_generation/memory-efficient_fine-tuning_for_quantized_diffusion_model.md)
+- [\[CVPR 2025\] Efficient Fine-Tuning and Concept Suppression for Pruned Diffusion Models](../../CVPR2025/image_generation/efficient_fine-tuning_and_concept_suppression_for_pruned_diffusion_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Parameterized Complexity of Computing the VC-Dimension
 description: >-
-  [NeurIPS 2025][Computational Complexity Theory, Machine Learning Theory][VC dimension] This paper systematically investigates the parameterized complexity of computing the VC dimension…
+  [NeurIPS 2025][Computational Complexity Theory, Machine Learning Theory][VC dimension] This paper systematically investigates the parameterized complexity of computing the VC dimension, establishing that the naive exhaustive algorithm is asymptotically optimal under ETH, presenting an FPT 1-additive approximation algorithm parameterized by maximum degree, an exact $2^{O(\text{tw} \cdot \log \text{tw})} \cdot |V|$ algorithm parameterized by treewidth…
 tags:
   - "NeurIPS 2025"
   - "Computational Complexity Theory, Machine Learning Theory"
@@ -13,7 +13,7 @@ tags:
   - "ETH lower bounds"
   - "hypergraphs"
 date: 2026-05-08
-content_hash: c9a801b07c2e67bf
+content_hash: 668a073003214d58
 ---
 
 # The Parameterized Complexity of Computing the VC-Dimension
@@ -161,11 +161,11 @@ tags:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](../../ICLR2026/learning_theory/tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
 - [\[NeurIPS 2025\] The Structural Complexity of Matrix-Vector Multiplication](the_structural_complexity_of_matrix-vector_multiplication.md)
 - [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](kernel_conditional_tests_from_learning-theoretic_bounds.md)
+- [\[ICLR 2026\] Computing Equilibrium beyond Unilateral Deviation](../../ICLR2026/learning_theory/computing_equilibrium_beyond_unilateral_deviation.md)
+- [\[ICLR 2026\] Parameterized Hardness of Zonotope Containment and Neural Network Verification](../../ICLR2026/learning_theory/parameterized_hardness_of_zonotope_containment_and_neural_network_verification.md)
 
 </div>
 

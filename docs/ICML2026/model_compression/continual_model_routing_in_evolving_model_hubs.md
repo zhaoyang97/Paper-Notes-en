@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Continual Model Routing in Evolving Model Hubs
 description: >-
-  [ICML 2026][Model Compression][continual learning] When the number of available experts in a model hub grows from hundreds to thousands and models are continuously added or retired, traditional "train-once routers" or "pure model card retrieval" become insufficient. The authors formalize this as a "continual classification (expanding label space)" problem, construct th
+  [ICML 2026][Model Compression][continual learning] When the number of available experts in a model hub grows from hundreds to thousands and models are continuously added or retired, traditional "train-once routers" or "pure model card retrieval" become insufficient. The authors formalize this as a "continual classification (expanding label space)" problem, construct the CMRBench benchmark covering 4 phases and over 2,000 candidate models, and propose CARvE—a continual router…
 tags:
-  - ICML 2026
-  - Model Compression
-  - continual learning
-  - pre-inference routing
-  - model hub
-  - contrastive embedding
-  - anchoring
-  - experience replay
+  - "ICML 2026"
+  - "Model Compression"
+  - "continual learning"
+  - "pre-inference routing"
+  - "model hub"
+  - "contrastive embedding"
+  - "anchoring"
+  - "experience replay"
 date: 2026-05-08
-content_hash: 1a730709b06b765e
+content_hash: cb51b3fe1b1146ed
 ---
+
 # Continual Model Routing in Evolving Model Hubs
 
 **Conference**: ICML 2026  
@@ -146,11 +147,11 @@ Key observations: (1) Pure retrieval-based routing fails at scale; BGE-M3 reache
 
 ## Related Papers
 
+- [\[ICML 2025\] BECAME: BayEsian Continual Learning with Adaptive Model MErging](../../ICML2025/model_compression/became_bayesian_continual_learning_with_adaptive_model_merging.md)
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
 - [\[ICML 2026\] Effective Model Pruning: Measure the Redundancy of Model Components](effective_model_pruning_measure_the_redundancy_of_model_components.md)
+- [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](../../ICLR2026/model_compression/null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
-- [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[ICML 2025\] BECAME: BayEsian Continual Learning with Adaptive Model MErging](../../ICML2025/model_compression/became_bayesian_continual_learning_with_adaptive_model_merging.md)
 
 </div>
 

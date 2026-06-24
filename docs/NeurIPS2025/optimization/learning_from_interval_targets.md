@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning from Interval Targets
 description: >-
-  [NeurIPS 2025][Optimization][interval regression] This paper studies regression under interval-only supervision (lower and upper bounds)…
+  [NeurIPS 2025][Optimization][interval regression] This paper studies regression under interval-only supervision (lower and upper bounds), establishes non-asymptotic generalization bounds based on hypothesis class smoothness without requiring a small ambiguity degree assumption, and proposes a minmax learning framework that leverages smoothness constraints to limit worst-case labels, achieving significant improvements over unconstrained methods across 18 real-world datasets.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Lipschitz constraint"
   - "minmax learning"
 date: 2026-05-08
-content_hash: a22ea8314de97a8c
+content_hash: 0abdd34b46b1afc1
 ---
 
 # Learning from Interval Targets

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching
 description: >-
-  [ICML 2026][Image Generation][REPA] AG-REPA discovers that the "layers storing semantic information" and the "layers actually driving the velocity field" in audio Flow Matching do not coincide. It proposes using forward-only gate ablation to select layers with the highest causal contribution for representation alignment, achieving faster convergence and
+  [ICML 2026][Image Generation][REPA] AG-REPA discovers that the "layers storing semantic information" and the "layers actually driving the velocity field" in audio Flow Matching do not coincide. It proposes using forward-only gate ablation to select layers with the highest causal contribution for representation alignment, achieving faster convergence and lower FAD than fixed-layer REPA in speech and general audio generation.
 tags:
-  - ICML 2026
-  - Image Generation
-  - REPA
-  - Flow Matching
+  - "ICML 2026"
+  - "Image Generation"
+  - "REPA"
+  - "Audio Generation"
+  - "Flow Matching"
+  - "Causal Attribution"
+  - "Layer Selection"
 date: 2026-05-08
-content_hash: dfc60fcc3ab88989
+content_hash: 9a7facbb08babfb7
 ---
+
 # AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching
 
 **Conference**: ICML 2026  
@@ -130,7 +134,7 @@ AG-REPA is computationally conservative. FoG-A is triggered only once every 200 
 - [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
 - [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](../../ICLR2026/image_generation/densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
 - [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
-- [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
+- [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](../../NeurIPS2025/image_generation/value_gradient_guidance_for_flow_matching_alignment.md)
 
 </div>
 

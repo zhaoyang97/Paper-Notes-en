@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STARK: Strategic Team of Agents for Refining Kernels
 description: >-
-  [ICLR 2026][LLM Agent][Multi-Agent] STARK reformulates GPU kernel optimization into an agent framework of "professional team collaboration + policy search on tree memory." By utilizing three specialized LLM agents (plan/code/debug), grounded instructions with anchors, role-customized dynamic context windows, and adaptive $\epsilon$-greedy search, it simu
+  [ICLR 2026][LLM Agent][Multi-Agent] STARK reformulates GPU kernel optimization into an agent framework of "professional team collaboration + policy search on tree memory." By utilizing three specialized LLM agents (plan/code/debug), grounded instructions with anchors, role-customized dynamic context windows, and adaptive $\epsilon$-greedy search, it simulates the iterative tuning process of senior engineers. It achieves up to 16× runtime speedup compared to baseline agents on…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Multi-Agent
-  - KernelBench
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-Agent"
+  - "GPU Kernel Optimization"
+  - "Policy Search"
+  - "Tree Memory"
+  - "KernelBench"
 date: 2026-05-08
-content_hash: a96a6a74c2f22677
+content_hash: 32c2e8a97b8f1775
 ---
+
 # STARK: Strategic Team of Agents for Refining Kernels
 
 **Conference**: ICLR 2026  
@@ -139,8 +143,8 @@ Decomposing agent components on Level 3 (relative to Torch Eager):
 - Value: ⭐⭐⭐⭐ Kernel optimization is a core AI infrastructure problem; the achieved speedups and modular framework have high practical significance.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

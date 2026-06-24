@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PADD: Path-Aligned Decompression Distillation for Non-Router Teacher to Guide MoE Student Learning
 description: >-
-  [ICML 2026][Model Compression][GRPO] PADD decomposes the task of "guiding a pre-trained MoE student to learn high-quality routing using a dense teacher without a router" into a unified two-stage, four-step pipeline. By first initializing and warming up student experts through teacher FFN neuron clustering, and then simultaneously performing online adaptiv
+  [ICML 2026][Model Compression][Dense-to-MoE Distillation] PADD decomposes the task of "guiding a pre-trained MoE student to learn high-quality routing using a dense teacher without a router" into a unified two-stage, four-step pipeline. By first initializing and warming up student experts through teacher FFN neuron clustering, and then simultaneously performing online adaptive distillation, path-refined policy optimization (PR-GRPO), and reward-enhanced load balancing in a si…
 tags:
-  - ICML 2026
-  - Model Compression
-  - GRPO
+  - "ICML 2026"
+  - "Model Compression"
+  - "Dense-to-MoE Distillation"
+  - "Expert Routing"
+  - "Neuron Clustering Initialization"
+  - "Online Adaptive Distillation"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 7ed92473bc70538c
+content_hash: 2145d7b29ee13aa7
 ---
+
 # PADD: Path-Aligned Decompression Distillation for Non-Router Teacher to Guide MoE Student Learning
 
 **Conference**: ICML 2026  
@@ -147,7 +152,7 @@ Ablations on the Qwen family:
 - [\[ECCV 2024\] Adversarially Robust Distillation by Reducing the Student-Teacher Variance Gap](../../ECCV2024/model_compression/adversarially_robust_distillation_by_reducing_the_student-teacher_variance_gap.md)
 - [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](../../CVPR2026/model_compression/masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
 - [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](../../CVPR2026/model_compression/memory_efficient_transfer_learning_with_fading_side_networks.md)
-- [\[ICML 2025\] When Data-Free Knowledge Distillation Meets Non-Transferable Teacher: Escaping Out-of-Distribution](../../ICML2025/model_compression/when_data-free_knowledge_distillation_meets_non-transferable_teacher_escaping_ou.md)
+- [\[ICML 2026\] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction](xkv_cross-layer_kv-cache_compression_via_aligned_singular_vector_extraction.md)
 
 </div>
 

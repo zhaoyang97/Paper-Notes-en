@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Lost in Tokenization: Context as the Key to Unlocking Biomolecular Understanding in Scientific LLMs
 description: >-
-  [ICLR 2026][Computational Biology][Scientific LLM] This paper systematically validates a counter-intuitive conclusion: instead of forcing Scientific LLMs (Sci-LLMs) to directly "read" raw biomolecular sequences, it is more effective to use mature bioinformatics tools like BLAST, Pfam, or GO to preprocess sequences into high-level, human-readable text contexts. Providin
+  [ICLR 2026][Computational Biology][Scientific LLM] This paper systematically validates a counter-intuitive conclusion: instead of forcing Scientific LLMs (Sci-LLMs) to directly "read" raw biomolecular sequences, it is more effective to use mature bioinformatics tools like BLAST, Pfam, or GO to preprocess sequences into high-level, human-readable text contexts. Providing "Context-only" significantly outperforms "Sequence-only" in protein QA tasks…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Scientific LLM
-  - Tokenization
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Scientific LLM"
+  - "Biomolecular Understanding"
+  - "Tokenization"
+  - "Context-driven"
+  - "Protein Function Prediction"
+  - "Bioinformatics Tools"
 date: 2026-05-08
-content_hash: 797405bc1b590567
+content_hash: 9e2ab4843120987e
 ---
+
 # Lost in Tokenization: Context as the Key to Unlocking Biomolecular Understanding in Scientific LLMs
 
 **Conference**: ICLR 2026  
@@ -126,8 +131,8 @@ The benchmark focuses on three aspects of protein biology: Molecular Function (F
 
 - [\[ICLR 2026\] VenusX: Unlocking Fine-Grained Functional Understanding of Proteins](venusx_unlocking_fine-grained_functional_understanding_of_proteins.md)
 - [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 - [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](../../AAAI2026/computational_biology/mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
-- [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](thompson_sampling_via_fine-tuning_of_llms.md)
 - [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
 
 </div>

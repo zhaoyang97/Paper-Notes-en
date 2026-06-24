@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Regret Reduces to Kernelized Static Regret
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][dynamic regret] This paper reformulates dynamic regret minimization as a static regret problem in a reproducing kernel Hilbert space (RKHS)…
+  [NeurIPS 2025][Reinforcement Learning][dynamic regret] This paper reformulates dynamic regret minimization as a static regret problem in a reproducing kernel Hilbert space (RKHS), achieving the optimal path-length-dependent bound $\widetilde{\mathcal{O}}(\sqrt{MP_TT})$ via carefully designed shift-invariant kernels, without requiring prior knowledge of the time horizon.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "kernel methods"
   - "path-length"
 date: 2026-05-08
-content_hash: a8a168ec07320dcb
+content_hash: 321bac05906b24b5
 ---
 
 # Dynamic Regret Reduces to Kernelized Static Regret
@@ -136,11 +136,11 @@ For curved losses:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Simultaneous Swap Regret Minimization via KL-Calibration](simultaneous_swap_regret_minimization_via_kl-calibration.md)
+- [\[ICML 2025\] On the Dynamic Regret of Following the Regularized Leader: Optimism with History Pruning](../../ICML2025/reinforcement_learning/on_the_dynamic_regret_of_following_the_regularized_leader_optimism_with_history_.md)
+- [\[ICML 2025\] Non-stationary Online Learning for Curved Losses: Improved Dynamic Regret via Mixability](../../ICML2025/reinforcement_learning/non-stationary_online_learning_for_curved_losses_improved_dynamic_regret_via_mix.md)
 - [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
 - [\[NeurIPS 2025\] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)
 - [\[NeurIPS 2025\] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality](improved_regret_and_contextual_linear_extension_for_pandoras_box_and_prophet_ine.md)
-- [\[ICML 2026\] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory](../../ICML2026/reinforcement_learning/parameter-free_dynamic_regret_time-varying_movement_costs_delayed_feedback_and_m.md)
 
 </div>
 

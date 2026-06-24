@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Matting Anything 2: Towards Video Matting for Anything
 description: >-
-  [ICLR 2026][Segmentation][Video Matting] MAM2 is a universal video matting model built on SAM2, driven by point/box/mask prompts. It addresses the cross-frame collapse of transparent objects through a "dual-modal decoder predicting mask and trimap simultaneously" and a "memory-separated siamese mechanism," extending matting capabilities from portraits to arbi
+  [ICLR 2026][Segmentation][Video Matting] MAM2 is a universal video matting model built on SAM2, driven by point/box/mask prompts. It addresses the cross-frame collapse of transparent objects through a "dual-modal decoder predicting mask and trimap simultaneously" and a "memory-separated siamese mechanism," extending matting capabilities from portraits to arbitrary natural objects like flames, bubbles, and water.
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Video Matting
-  - SAM2
-  - Trimap
-  - Promptable Decoder
-  - Temporal Consistency
-  - Transparent Objects
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Video Matting"
+  - "SAM2"
+  - "Trimap"
+  - "Promptable Decoder"
+  - "Temporal Consistency"
+  - "Transparent Objects"
 date: 2026-05-08
-content_hash: a890360932927a40
+content_hash: a96191ee05d7cbd4
 ---
+
 # Matting Anything 2: Towards Video Matting for Anything
 
 **Conference**: ICLR 2026  
@@ -122,8 +123,8 @@ In the natural object benchmark (NOVM), MAD dropped from 39.44 to 14.72 (~63% re
 - [\[ICCV 2025\] ZIM: Zero-Shot Image Matting for Anything](../../ICCV2025/segmentation/zim_zero-shot_image_matting_for_anything.md)
 - [\[CVPR 2026\] MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator](../../CVPR2026/segmentation/matanyone_2_scaling_video_matting_via_a_learned_quality_evaluator.md)
 - [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](sam_3_segment_anything_with_concepts.md)
+- [\[CVPR 2025\] MatAnyone: Stable Video Matting with Consistent Memory Propagation](../../CVPR2025/segmentation/matanyone_stable_video_matting_with_consistent_memory_propagation.md)
 - [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](../../AAAI2026/segmentation/segment_anything_across_shots_a_method_and_benchmark.md)
-- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](../../ICML2026/segmentation/segment_anything_with_robust_uncertainty-accuracy_correlation.md)
 
 </div>
 

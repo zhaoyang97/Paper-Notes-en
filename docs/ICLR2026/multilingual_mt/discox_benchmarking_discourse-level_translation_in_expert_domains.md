@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DiscoX: Benchmarking Discourse-Level Translation in Expert Domains
 description: >-
-  [ICLR 2026][Multilingual & Translation][LLM-as-a-judge] DiscoX constructs the first benchmark for **discourse-level + expert-level** ZH-EN translation (200 articles, average 1712 tokens, 7 domains, 1330 person-hours of manual refinement) and proposes a multi-agent reference-free evaluation system Metric-S, revealing a significant gap where even the strongest LLM (GPT-5-high
+  [ICLR 2026][Multilingual & Machine Translation][Discourse-level translation] DiscoX constructs the first benchmark for **discourse-level + expert-level** ZH-EN translation (200 articles, average 1712 tokens, 7 domains, 1330 person-hours of manual refinement) and proposes a multi-agent reference-free evaluation system Metric-S, revealing a significant gap where even the strongest LLM (GPT-5-high: 76.66) still lags behind human experts (80.16).
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - LLM-as-a-judge
-  - Benchmark
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "Discourse-level translation"
+  - "Expert domain translation"
+  - "ZH-EN translation"
+  - "LLM-as-a-judge"
+  - "Reference-free evaluation"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: c9586232be231c38
+content_hash: 538aec972e82f676
 ---
+
 # DiscoX: Benchmarking Discourse-Level Translation in Expert Domains
 
 **Conference**: ICLR 2026  
@@ -113,9 +118,9 @@ Covering 20 systems (7 open-source LLMs, 11 closed-source LLMs, 1 domain-specifi
 
 ## Related Papers
 
-- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation](../../ACL2026/multilingual_mt/beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
 - [\[ACL 2026\] XQ-MEval: A Dataset with Cross-lingual Parallel Quality for Benchmarking Translation Metrics](../../ACL2026/multilingual_mt/xq-meval_a_dataset_with_cross-lingual_parallel_quality_for_benchmarking_translat.md)
 - [\[ACL 2025\] Memorization Inheritance in Sequence-Level Knowledge Distillation for Neural Machine Translation](../../ACL2025/multilingual_mt/memorization_inheritance_seqkd.md)
+- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Evaluation Evaluation](../../ACL2026/multilingual_mt/beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
 - [\[ACL 2025\] MiLiC-Eval: Benchmarking Multilingual LLMs for China's Minority Languages](../../ACL2025/multilingual_mt/milic-eval_benchmarking_multilingual_llms_for_chinas_minority_languages.md)
 - [\[ACL 2025\] Probing LLMs for Multilingual Discourse Generalization Through a Unified Label Set](../../ACL2025/multilingual_mt/probing_llms_for_multilingual_discourse_generalization_through_a_unified_label_s.md)
 

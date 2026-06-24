@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks
 description: >-
-  [AAAI 2026][Graph Learning][Equivariant Graph Neural Networks] This paper proposes MMEA (Magnitude-Modulated Equivariant Adapter), a lightweight parameter-efficient fine-tuning method for spherical-harmonic-based equivar…
+  [AAAI 2026][Graph Learning][Equivariant Graph Neural Networks] This paper proposes MMEA (Magnitude-Modulated Equivariant Adapter), a lightweight parameter-efficient fine-tuning method for spherical-harmonic-based equivariant GNNs. By employing scalar gating to independently modulate feature magnitudes along "order–multiplicity" channels, MMEA achieves state-of-the-art molecular potential energy prediction accuracy—surpassing both ELoRA and full fine-tuning—while strictly pres…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Spherical Harmonics"
   - "PEFT"
 date: 2026-05-08
-content_hash: 331bf02a9932448e
+content_hash: 336b59d98b431abc
 ---
 
 # Magnitude-Modulated Equivariant Adapter for Parameter-Efficient Fine-Tuning of Equivariant Graph Neural Networks
@@ -231,10 +231,10 @@ MMEA (r=16) uses only 20.1% of the parameters of full fine-tuning—approximatel
 ## Related Papers
 
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](../../NeurIPS2025/graph_learning/smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
+- [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](../../ICLR2026/graph_learning/ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
+- [\[ICLR 2026\] FS-KAN: Permutation Equivariant Kolmogorov-Arnold Networks via Function Sharing](../../ICLR2026/graph_learning/fs-kan_permutation_equivariant_kolmogorov-arnold_networks_via_function_sharing.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
-- [\[AAAI 2026\] Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks](kernelized_edge_attention_addressing_semantic_attention_blurring_in_temporal_gra.md)
-- [\[AAAI 2026\] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning](echoless_label-based_pre-computation_for_memory-efficient_heterogeneous_graph_le.md)
 
 </div>
 

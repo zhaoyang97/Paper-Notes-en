@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Nano-EmoX proposes a cognitively inspired three-level emotional task hierarchy (Perception → Understanding → Interaction). It is the first multimodal language model to unify six core emotional tasks with compact 2.2B parameters, gradually cultivating high-level empathy from basic perception through the P2E progressive
+  [CVPR 2026][Multimodal VLM][Affective Computing] Nano-EmoX proposes a cognitively inspired three-level emotional task hierarchy (Perception → Understanding → Interaction). It is the first multimodal language model to unify six core emotional tasks with compact 2.2B parameters, gradually cultivating high-level empathy from basic perception through the P2E progressive training framework.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Affective Computing"
+  - "Multimodal Large Language Models (MLLMs)"
+  - "Cognitive Hierarchy"
+  - "Emotion Recognition"
+  - "Empathic Interaction"
 date: 2026-05-08
-content_hash: 62a4c6636a657b3e
+content_hash: 6e7b2e7b351f0d47
 ---
+
 # Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy
 
 **Conference**: CVPR 2026  
@@ -132,9 +138,9 @@ All three phases utilize the Maximum Likelihood Estimation objective: $\theta^{M
 ## Related Papers
 
 - [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
-- [\[CVPR 2026\] Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs](downscaling_intelligence_exploring_perception_and_reasoning_bottlenecks_in_small.md)
+- [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
 - [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 - [\[CVPR 2026\] From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs](from_where_things_are_to_what_they_are_for_benchmarking_spatial-functional_intel.md)
 
 </div>

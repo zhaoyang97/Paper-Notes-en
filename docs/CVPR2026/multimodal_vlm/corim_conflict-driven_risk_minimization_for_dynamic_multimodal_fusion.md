@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoRiM: Conflict-driven Risk Minimization for Dynamic Multimodal Fusion
 description: >-
-  [CVPR 2026][Multimodal VLM][Frank-Wolfe] This paper redefines dynamic multimodal fusion as a "per-sample optimization problem that directly minimizes conflict risk." It designs a differentiable modality conflict risk function $R(w)$ (comprising fusion uncertainty, modality confidence priors, and JS consistency) and employs the projection-free Frank-Wolfe algo
+  [CVPR 2026][Multimodal VLM][Dynamic multimodal fusion] This paper redefines dynamic multimodal fusion as a "per-sample optimization problem that directly minimizes conflict risk." It designs a differentiable modality conflict risk function $R(w)$ (comprising fusion uncertainty, modality confidence priors, and JS consistency) and employs the projection-free Frank-Wolfe algorithm to find optimal modality weights on the probability simplex. This approach significantly outperform…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Frank-Wolfe
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Dynamic multimodal fusion"
+  - "modality conflict"
+  - "risk minimization"
+  - "Frank-Wolfe"
+  - "probability simplex"
 date: 2026-05-08
-content_hash: cab6b1e372caf054
+content_hash: eb2d27606bd0d24f
 ---
+
 # CoRiM: Conflict-driven Risk Minimization for Dynamic Multimodal Fusion
 
 **Conference**: CVPR 2026  
@@ -158,15 +163,14 @@ Ablation of solver and weight granularity (MVSA):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](unbiased_dynamic_multimodal_fusion.md)
-- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
 - [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
 - [\[CVPR 2026\] Beyond Sequential Tools: A Unified VLM Agent System for Photographic Post-Processing via Dynamic Multi-Expert Fusion](beyond_sequential_tools_a_unified_vlm_agent_system_for_photographic_post-process.md)
 - [\[CVPR 2026\] Breaking Multimodal LLM Safety via Video-Driven Prompting](breaking_multimodal_llm_safety_via_video-driven_prompting.md)
+- [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
 
 </div>
 

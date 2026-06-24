@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Large Reasoning Models] Using controlled puzzle environments, this paper systematically reveals a three-regime behavioral pattern in Large Reasoning Models (LRMs): performance falls below st…
+  [NeurIPS 2025][Reasoning][Large Reasoning Models] Using controlled puzzle environments, this paper systematically reveals a three-regime behavioral pattern in Large Reasoning Models (LRMs): performance falls below standard LLMs at low complexity (overthinking), substantially surpasses them at moderate complexity, and collapses completely (0%) at high complexity. Counterintuitively, models reduce thinking token usage at the point of collapse, demonstrating that current LRMs ha…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Large Reasoning Models"
   - "Problem Complexity"
   - "Thinking Tokens"
   - "Chain-of-Thought"
   - "Reasoning Collapse"
 date: 2026-05-08
-content_hash: 24d413b1a07a8ed9
+content_hash: 1a3998e2e493e1c0
 ---
 
 # The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity
@@ -126,8 +126,8 @@ LRMs delay the collapse threshold by 2–3 levels, yet ultimately collapse compl
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Controlling Thinking Speed in Reasoning Models](controlling_thinking_speed_in_reasoning_models.md)
 - [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
+- [\[NeurIPS 2025\] Controlling Thinking Speed in Reasoning Models](controlling_thinking_speed_in_reasoning_models.md)
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
 - [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
 - [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](../../ICML2026/llm_reasoning/modeling_hierarchical_thinking_in_large_reasoning_models.md)

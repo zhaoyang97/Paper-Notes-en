@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expert Divergence Learning for MoE-based Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This work addresses the expert homogenization problem in MoE training by maximizing the Jensen-Shannon divergence of routing distributions across different data domains. This encourages different domains to activate distinct subsets of experts, improving expert specialization and language modeling performance on models
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] This work addresses the expert homogenization problem in MoE training by maximizing the Jensen-Shannon divergence of routing distributions across different data domains. This encourages different domains to activate distinct subsets of experts, improving expert specialization and language modeling performance on models ranging from 3B to 15B parameters.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Expert Homogenization"
+  - "Routing Diversity"
+  - "Jensen-Shannon Divergence"
+  - "Domain Specialization"
 date: 2026-05-08
-content_hash: d1df8f618adc9625
+content_hash: fbdc76d8ccf93a6e
 ---
+
 # Expert Divergence Learning for MoE-based Language Models
 
 **Conference**: ICLR 2026  
@@ -129,15 +135,16 @@ Proposition 1 in the paper proves that total routing diversity can be decomposed
 - Value: ⭐⭐⭐⭐ Provides practical guidance for MoE training with low implementation cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models](not_all_models_suit_expert_offloading_on_local_routing_consistency_of_mixture-of.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
+- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](../../NeurIPS2025/llm_efficiency/advancing_expert_specialization_for_better_moe.md)
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
-- [\[ICLR 2026\] Equilibrium Language Models](equilibrium_language_models.md)
 
 </div>
 

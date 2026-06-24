@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][DiT] DynFusion inserts a lightweight gating module, CAM, into each MMDiT block of the DiT architecture. This allows the model to autonomously decide which visual conditions (depth, edge, subject, background, etc.) to activate based on the "current denoising step, task, and injection position." By replacing static "blind sta
+  [CVPR 2026][Image Generation][Multi-conditional controllable generation] DynFusion inserts a lightweight gating module, CAM, into each MMDiT block of the DiT architecture. This allows the model to autonomously decide which visual conditions (depth, edge, subject, background, etc.) to activate based on the "current denoising step, task, and injection position." By replacing static "blind stacking of all conditions" with dynamic sparse fusion, it simultaneously achieves better…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DiT
-  - FLUX
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-conditional controllable generation"
+  - "condition fusion"
+  - "dynamic gating"
+  - "DiT"
+  - "FLUX"
 date: 2026-05-08
-content_hash: 47e3ea879e935720
+content_hash: d24eb67163cfedb0
 ---
+
 # DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -155,11 +159,11 @@ Across all tasks, DynFusion outperforms the previous SOTA (UniCombine) in qualit
 
 ## Related Papers
 
-- [\[CVPR 2026\] SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation](seethrough3d_occlusion_aware_3d_control_in_text-to-image_generation.md)
+- [\[ICLR 2026\] BideDPO: Conditional Image Generation with Simultaneous Text and Condition Alignment](../../ICLR2026/image_generation/bidedpo_conditional_image_generation_with_simultaneous_text_and_condition_alignm.md)
+- [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
 - [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
-- [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
-- [\[CVPR 2026\] Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization](fusion_in_your_way_aligning_image_fusion_with_heterogeneous_demands_via_direct_p.md)
-- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
+- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
+- [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
 
 </div>
 

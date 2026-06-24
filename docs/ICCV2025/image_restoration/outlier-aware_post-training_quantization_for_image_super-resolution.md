@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Outlier-Aware Post-Training Quantization for Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Restoration][Post-training quantization] This paper proposes an outlier-aware post-training quantization method for image super-resolution. It introduces a dual-region piecewise linear quantizer to bala…
+  [ICCV 2025][Image Restoration][Post-training quantization] This paper proposes an outlier-aware post-training quantization method for image super-resolution. It introduces a dual-region piecewise linear quantizer to balance outlier preservation with normal activation fidelity, and incorporates a sensitivity-aware finetuning strategy that directs attention to quantization-sensitive layers. Under the W4A4 setting, the method substantially outperforms existing PTQ approaches and…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "piecewise linear quantization"
   - "sensitivity-aware"
 date: 2026-05-08
-content_hash: b60e1297bcadf01b
+content_hash: 2058510e1396a6b0
 ---
 
 # Outlier-Aware Post-Training Quantization for Image Super-Resolution
@@ -161,11 +161,11 @@ PLQ alone contributes the most (Set5 +3.67 dB); SAFT outperforms vanilla finetun
 
 ## Related Papers
 
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](../../ICLR2026/image_restoration/texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
 - [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
 - [\[NeurIPS 2025\] Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement](../../NeurIPS2025/image_restoration/luminance-aware_statistical_quantization_unsupervised_hierarchical_learning_for_.md)
+- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](../../ICLR2026/image_restoration/seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
 - [\[ICCV 2025\] IM-LUT: Interpolation Mixing Look-Up Tables for Image Super-Resolution](im-lut_interpolation_mixing_look-up_tables_for_image_super-resolution.md)
-- [\[ICCV 2025\] FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration](foundir_unleashing_million-scale_training_data_to_advance_foundation_models_for_.md)
-- [\[ICCV 2025\] Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis](benchmarking_burst_super-resolution_for_polarization_images_noise_dataset_and_an.md)
 
 </div>
 

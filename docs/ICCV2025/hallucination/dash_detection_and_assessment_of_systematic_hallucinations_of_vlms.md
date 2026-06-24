@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DASH: Detection and Assessment of Systematic Hallucinations of VLMs
 description: >-
-  [ICCV 2025][Hallucination Detection][Vision-language models] This paper proposes DASH, a fully automated pipeline that systematically discovers false-positive object hallucination clusters in VLMs via two complementary s…
+  [ICCV 2025][Hallucination Detection][Vision-language models] This paper proposes DASH, a fully automated pipeline that systematically discovers false-positive object hallucination clusters in VLMs via two complementary strategies: LLM-based text query generation (DASH-LLM) and diffusion model optimization-based image query generation (DASH-OPT). Applied to ReLAION-5B, DASH uncovers 19k+ clusters and 950k+ images, and constructs the more challenging DASH-B benchmark.
 tags:
   - "ICCV 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model optimization"
   - "large-scale benchmark"
 date: 2026-05-08
-content_hash: 11d415706668c2ab
+content_hash: 0867e0fb66ac665a
 ---
 
 # DASH: Detection and Assessment of Systematic Hallucinations of VLMs
@@ -131,9 +131,9 @@ DASH consists of four stages: query generation (DASH-LLM or DASH-OPT) → Explor
 
 - [\[NeurIPS 2025\] Systematic Reward Gap Optimization for Mitigating VLM Hallucinations](../../NeurIPS2025/hallucination/systematic_reward_gap_optimization_for_mitigating_vlm_hallucinations.md)
 - [\[ICCV 2025\] Mitigating Object Hallucinations via Sentence-Level Early Intervention](mitigating_object_hallucinations_via_sentence-level_early_intervention.md)
-- [\[ICCV 2025\] ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models](only_onelayer_intervention_sufficiently_mitigates_hallucinat.md)
+- [\[ACL 2025\] Automated Explanation Generation and Hallucination Detection for Heritage Image Retrieval](../../ACL2025/hallucination/automated_explanation_generation_and_hallucination_detection_for_heritage_image_.md)
+- [\[ICCV 2025\] Why LVLMs Are More Prone to Hallucinations in Longer Responses: The Role of Context](why_lvlms_are_more_prone_to_hallucinations_in_longer_responses_the_role_of_conte.md)
 - [\[ICCV 2025\] ChartCap: Mitigating Hallucination of Dense Chart Captioning](chartcap_mitigating_hallucination_of_dense_chart_captioning.md)
-- [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](../../ICML2026/hallucination/from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
 
 </div>
 

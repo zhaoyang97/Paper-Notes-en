@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] RAMEN is a "sensor-agnostic, resolution-adjustable" unified Transformer encoder: it explicitly encodes modality, spatial resolution (GSD), and temporal resolution as input features into a shared latent space. It **treats spatial resolution as a controllable output parameter during inference**, allowing users to balance
+  [CVPR 2026][Remote Sensing][Earth Observation] RAMEN is a "sensor-agnostic, resolution-adjustable" unified Transformer encoder: it explicitly encodes modality, spatial resolution (GSD), and temporal resolution as input features into a shared latent space. It **treats spatial resolution as a controllable output parameter during inference**, allowing users to balance precision and computation. Pre-trained on heterogeneous Earth Observation (EO) corpora using masked reconstructi…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Earth Observation"
+  - "Resolution-Adjustable"
+  - "Multimodal Encoder"
+  - "Sensor-Agnostic"
+  - "Masked Self-Supervised Learning"
 date: 2026-05-08
-content_hash: 09fc97050cb0353a
+content_hash: b39c7cad7cdf1d61
 ---
+
 # RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation
 
 **Conference**: CVPR 2026  
@@ -127,8 +133,21 @@ Ours achieves the highest average mIoU (60.03) and best average rank (2.63) usin
 - Value: ⭐⭐⭐⭐⭐ Sensor-agnostic + inference-time resolution adjustment + lightweight SOTA performance; high practical value for EO deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation](olmoearth_stable_latent_image_modeling_for_multimodal_earth_observation.md)
+- [\[CVPR 2026\] NeighborMAE: Exploiting Spatial Dependencies between Neighboring Earth Observation Images in Masked Autoencoders Pretraining](neighbormae_exploiting_spatial_dependencies_between_neighboring_earth_observatio.md)
+- [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](../../ICLR2026/remote_sensing/earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
+- [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
+- [\[ICML 2025\] High-Resolution Live Fuel Moisture Content (LFMC) Maps for Wildfire Risk from Multimodal Earth Observation Data](../../ICML2025/remote_sensing/high-resolution_live_fuel_moisture_content_lfmc_maps_for_wildfire_risk_from_mult.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

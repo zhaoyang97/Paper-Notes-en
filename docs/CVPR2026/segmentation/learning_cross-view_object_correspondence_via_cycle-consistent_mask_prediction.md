@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Ours proposes CCMP, a cross-view object correspondence framework based on conditional binary segmentation. It utilizes cycle-consistency constraints to provide self-supervised signals and supports Test-Time Training (TTT), achieving SOTA performance of 44.57% mIoU on Ego-Exo4D.
+  [CVPR 2026][Segmentation][Cross-view correspondence] Ours proposes CCMP, a cross-view object correspondence framework based on conditional binary segmentation. It utilizes cycle-consistency constraints to provide self-supervised signals and supports Test-Time Training (TTT), achieving SOTA performance of 44.57% mIoU on Ego-Exo4D.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Cross-view correspondence"
+  - "Cycle consistency"
+  - "Conditional segmentation"
+  - "Test-time training"
+  - "Egocentric vision"
 date: 2026-05-08
-content_hash: 41a41607c6c53735
+content_hash: 3ca377ece880bc95
 ---
+
 # Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction
 
 **Conference**: CVPR 2026  
@@ -129,6 +135,7 @@ graph TD
 -   Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -136,8 +143,8 @@ graph TD
 - [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
 - [\[CVPR 2026\] VGGT-Segmentor: Geometry-Enhanced Cross-View Segmentation](vggt-segmentor_geometry-enhanced_cross-view_segmentation.md)
 - [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
-- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
-- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting](fov-net_rotation-invariant_cad_b-rep_learning_via_field-of-view_ray_casting.md)
+- [\[CVPR 2025\] V-CLR: View-Consistent Learning for Open-World Instance Segmentation](../../CVPR2025/segmentation/v-clr_view-consistent_learning_for_open-world_instance_segmentation.md)
 
 </div>
 

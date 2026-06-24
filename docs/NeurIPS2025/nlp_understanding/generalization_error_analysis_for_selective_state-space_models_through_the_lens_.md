@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention
 description: >-
-  [NeurIPS 2025][NLP Understanding][Mamba] This work unrolls selective SSMs (Mamba) into an attention-equivalent form and derives generalization bounds via covering number techniques…
+  [NeurIPS 2025][NLP Understanding][Mamba] This work unrolls selective SSMs (Mamba) into an attention-equivalent form and derives generalization bounds via covering number techniques, controlled by the spectral abscissa $s_{\mathbf{A}}$ of the continuous-time state matrix. When $s_{\mathbf{A}} < 0$, the bound is independent of sequence length; when $s_{\mathbf{A}} \geq 0$, it grows exponentially. The paper further proves this dependence is irreducible.
 tags:
   - "NeurIPS 2025"
   - "NLP Understanding"
@@ -12,7 +12,7 @@ tags:
   - "covering numbers"
   - "spectral abscissa"
 date: 2026-05-08
-content_hash: 15e211ec5b886aea
+content_hash: 73364f4d14007795
 ---
 
 # Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention
@@ -135,7 +135,7 @@ Key observation: Whenever training successfully reduces the loss, $s_A$ is drive
 - [\[NeurIPS 2025\] Weak-to-Strong Generalization under Distribution Shifts](weak-to-strong_generalization_under_distribution_shifts.md)
 - [\[ACL 2026\] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models](../../ACL2026/nlp_understanding/lost_in_the_prompt_order_revealing_the_limitations_of_causal_attention_in_langua.md)
 - [\[ACL 2026\] Agree, Disagree, Explain: Decomposing Human Label Variation in NLI through the Lens of Explanations](../../ACL2026/nlp_understanding/agree_disagree_explain_decomposing_human_label_variation_in_nli_through_the_lens.md)
-- [\[NeurIPS 2025\] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL](planning_without_search_refining_frontier_llms_with_offline_goal-conditioned_rl.md)
+- [\[ACL 2025\] Dynamic Order Template Prediction for Generative Aspect-Based Sentiment Analysis](../../ACL2025/nlp_understanding/dot_absa_template.md)
 
 </div>
 

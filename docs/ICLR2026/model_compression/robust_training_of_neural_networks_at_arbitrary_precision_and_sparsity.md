@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Training of Neural Networks at Arbitrary Precision and Sparsity
 description: >-
-  [ICLR 2026][Model Compression][STE] This paper argues that the instability in ultra-low-bit quantization training stems not from "non-differentiability" but from the fact that Straight-Through Estimator (STE) backpropagation is blind to quantization errors. By redefining quantization as additive noise and employing a denoising dequantization transform $g
+  [ICLR 2026][Model Compression][Quantization-Aware Training] This paper argues that the instability in ultra-low-bit quantization training stems not from "non-differentiability" but from the fact that Straight-Through Estimator (STE) backpropagation is blind to quantization errors. By redefining quantization as additive noise and employing a denoising dequantization transform $g$ derived from ridge regression, the authors explicitly reintegrate errors into the gradient path…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - STE
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Quantization-Aware Training"
+  - "STE"
+  - "Dequantization"
+  - "Ridge Regression"
+  - "Structured Sparsity"
 date: 2026-05-08
-content_hash: 0a1656922632d171
+content_hash: ed73d60ae61dde2b
 ---
+
 # Robust Training of Neural Networks at Arbitrary Precision and Sparsity
 
 **Conference**: ICLR 2026  
@@ -137,8 +142,8 @@ Regarding affine vs. linear quantization under A1W1 SCQ128 (C4 accuracy): the pr
 ## Related Papers
 
 - [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
 - [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
+- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
 - [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 - [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
 

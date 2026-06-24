@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts
 description: >-
-  [ICML 2026][Multimodal VLM][MoE] Ours proposes the S3 framework, which decomposes multimodal representations into concept-level experts (Specialization) using MoE, activates relevant experts via task-based routing (Selection), and prunes low-contribution paths by routing scores during inference (Sparsification). Across four MultiBench benchmarks, it r
+  [ICML 2026][Multimodal VLM][Multimodal representation] Ours proposes the S3 framework, which decomposes multimodal representations into concept-level experts (Specialization) using MoE, activates relevant experts via task-based routing (Selection), and prunes low-contribution paths by routing scores during inference (Sparsification). Across four MultiBench benchmarks, it reveals an inverted U-curve where "performance peaks at intermediate sparsity…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MoE
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Multimodal representation"
+  - "MoE"
+  - "Task-sufficiency"
+  - "Information-minimality"
+  - "Inference-time pruning"
 date: 2026-05-08
-content_hash: 8cf79fccd3d73008
+content_hash: a02d80246c0c8168
 ---
+
 # Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts
 
 **Conference**: ICML 2026  
@@ -133,11 +138,11 @@ Ours consistently outperforms contrastive and InfoMax baselines across four benc
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization](../../ICLR2026/multimodal_vlm/clip-fmoe_scalable_clip_via_fused_mixture-of-experts_with_enforced_specializatio.md)
+- [\[ICML 2026\] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning](visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
 - [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
+- [\[ICLR 2026\] Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts](../../ICLR2026/multimodal_vlm/massively_multimodal_foundation_models_a_framework_for_capturing_interactions_wi.md)
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
-- [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](../../AAAI2026/multimodal_vlm/mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
-- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
-- [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](../../ICCV2025/multimodal_vlm/a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
 
 </div>
 

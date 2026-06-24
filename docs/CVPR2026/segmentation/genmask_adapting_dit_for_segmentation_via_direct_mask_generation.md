@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GenMask: Adapting DiT for Segmentation via Direct Mask Generation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This paper proposes GenMask, which directly trains a Diffusion Transformer (DiT) to generate black-and-white segmentation masks (sharing the same model used for color image generation). By discovering the unique property that VAE latent representations of binary masks are linearly separable, the authors design an extre
+  [CVPR 2026][Segmentation][Diffusion Transformer] This paper proposes GenMask, which directly trains a Diffusion Transformer (DiT) to generate black-and-white segmentation masks (sharing the same model used for color image generation). By discovering the unique property that VAE latent representations of binary masks are linearly separable, the authors design an extreme long-tailed timestep sampling strategy specifically for segmentation. This enables single-step inference to…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Diffusion Transformer"
+  - "segmentation mask generation"
+  - "timestep sampling strategy"
+  - "single-step inference"
+  - "generative segmentation"
 date: 2026-05-08
-content_hash: a30458bfbad0374d
+content_hash: a8df1a2baf5b4e0a
 ---
+
 # GenMask: Adapting DiT for Segmentation via Direct Mask Generation
 
 **Conference**: CVPR 2026  
@@ -170,8 +176,8 @@ GenMask significantly outperforms LISA* on the Test set (+5.0 gIoU, +11.7 cIoU),
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
 - [\[CVPR 2026\] Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
 - [\[CVPR 2026\] SAMTok: Representing Any Mask with Two Words](samtok_representing_any_mask_with_two_words.md)
-- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
-- [\[CVPR 2026\] CA-LoRA: Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](ca-lora_concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
+- [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
+- [\[CVPR 2026\] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation](matchmask_mask-centric_generative_data_augmentation_for_label-scarce_semantic_se.md)
 
 </div>
 

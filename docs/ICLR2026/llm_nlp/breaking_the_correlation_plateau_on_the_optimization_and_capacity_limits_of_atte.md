@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors
 description: >-
-  [ICLR 2026][LLM (Other)][PCC plateau] This paper provides the first theoretical analysis of the "PCC plateau" phenomenon in attention-based regression models during joint MSE+PCC training. It identifies the root causes as the conflict between MSE optimization and PCC gradients, as well as the capacity upper bound of softmax convex aggregation. It proposes
+  [ICLR 2026][LLM (Other)][Pearson Correlation Coefficient] This paper provides the first theoretical analysis of the "PCC plateau" phenomenon in attention-based regression models during joint MSE+PCC training. It identifies the root causes as the conflict between MSE optimization and PCC gradients, as well as the capacity upper bound of softmax convex aggregation. It proposes the ECA (Extrapolative Correlation Attention) framework to break these limits using three components:…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - PCC plateau
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Pearson Correlation Coefficient"
+  - "Attention Regression"
+  - "PCC plateau"
+  - "Convex Aggregation"
+  - "Optimization Dynamics"
 date: 2026-05-08
-content_hash: 5dd7b3df99dd2f83
+content_hash: 71670238c8ca1941
 ---
+
 # Breaking the Correlation Plateau: On the Optimization and Capacity Limits of Attention-Based Regressors
 
 **Conference**: ICLR 2026  
@@ -157,7 +162,7 @@ The $\sigma_{\hat{y}}$ factor negates the $1/\sigma_{\hat{y}}$ in the gradient, 
 - [\[ICLR 2026\] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback](sipdo_closed-loop_prompt_optimization_via_synthetic_data_feedback.md)
 - [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
 - [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](spectral_attention_steering_for_prompt_highlighting.md)
-- [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
+- [\[ICLR 2026\] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following](attend_to_the_active_structure-aware_dynamic_attention_in_llms_for_compositional.md)
 
 </div>
 

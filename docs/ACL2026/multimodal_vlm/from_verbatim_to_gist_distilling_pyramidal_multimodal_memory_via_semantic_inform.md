@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck
 description: >-
-  [ACL 2026][Multimodal VLM][Reinforcement Learning] This paper proposes MM-Mem, a pyramidal multimodal memory architecture inspired by Fuzzy Trace Theory. It organizes memory into three levels: a Sensory Buffer (visual-dominant), an Episodic Stream (event-level summaries), and a Symbolic Schema (Knowledge Graph). Redundancy is compressed bottom-up via SIB-GRPO (Semantic
+  [ACL 2026][Multimodal VLM][Long Video Understanding] This paper proposes MM-Mem, a pyramidal multimodal memory architecture inspired by Fuzzy Trace Theory. It organizes memory into three levels: a Sensory Buffer (visual-dominant), an Episodic Stream (event-level summaries), and a Symbolic Schema (Knowledge Graph). Redundancy is compressed bottom-up via SIB-GRPO (Semantic Information Bottleneck + Reinforcement Learning), while retrieval is conducted top-down driven by entropy.…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Long Video Understanding"
+  - "Multimodal Memory"
+  - "Information Bottleneck"
+  - "Fuzzy Trace Theory"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: fddfbe07e7be3fa2
+content_hash: d4af04a5296738fa
 ---
+
 # From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck
 
 **Conference**: ACL 2026  
@@ -157,15 +162,16 @@ The base model is Qwen3-VL-8B, fine-tuned using the SWIFT framework with $\beta_
 - Value: ⭐⭐⭐⭐⭐ (Provides a reusable cognitive architecture paradigm for long-video agents)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] Learning Optimal Multimodal Information Bottleneck Representations](../../ICML2025/multimodal_vlm/learning_optimal_multimodal_information_bottleneck_representations.md)
+- [\[ICLR 2026\] Calibrated Information Bottleneck for Trusted Multi-modal Clustering](../../ICLR2026/multimodal_vlm/calibrated_information_bottleneck_for_trusted_multi-modal_clustering.md)
 - [\[AAAI 2026\] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](../../AAAI2026/multimodal_vlm/conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)
 - [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](../../CVPR2026/multimodal_vlm/sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
 - [\[ACL 2026\] Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines](reducing_peak_memory_usage_for_modern_multimodal_large_language_model_pipelines.md)
-- [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
 
 </div>
 

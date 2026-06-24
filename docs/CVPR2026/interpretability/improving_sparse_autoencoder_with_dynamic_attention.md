@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Sparse Autoencoder with Dynamic Attention
 description: >-
-  [CVPR 2026][Interpretability][sparsemax] This paper reformulates the Sparse Autoencoder (SAE) into a cross-attention architecture with shared concept vectors and replaces softmax with sparsemax. This allows each sample to **automatically determine the number of activated concepts based on its own complexity**, overcoming the inherent "setting K" problem in To
+  [CVPR 2026][Interpretability][Sparse Autoencoder] This paper reformulates the Sparse Autoencoder (SAE) into a cross-attention architecture with shared concept vectors and replaces softmax with sparsemax. This allows each sample to **automatically determine the number of activated concepts based on its own complexity**, overcoming the inherent "setting K" problem in TopK SAEs to achieve lower reconstruction error and clearer concepts in both image and text domains.
 tags:
-  - CVPR 2026
-  - Interpretability
-  - sparsemax
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "sparsemax"
+  - "cross-attention"
+  - "dynamic sparsity"
+  - "concept disentanglement"
 date: 2026-05-08
-content_hash: b313c68bd7e5a290
+content_hash: 6cda14620467dcf4
 ---
+
 # Improving Sparse Autoencoder with Dynamic Attention
 
 **Conference**: CVPR 2026  
@@ -123,11 +128,11 @@ Decoupling the contributions of the "Transformer architecture" and "sparsemax ac
 
 ## Related Papers
 
+- [\[ICML 2026\] Rational Sparse Autoencoder](../../ICML2026/interpretability/rational_sparse_autoencoder.md)
 - [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](../../AAAI2026/interpretability/sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
 - [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
-- [\[CVPR 2026\] CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers](cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi.md)
+- [\[ICLR 2026\] Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition](../../ICLR2026/interpretability/towards_understanding_the_nature_of_attention_with_low-rank_sparse_decomposition.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Local Guidance for Configuration-Based Multi-Agent Pathfinding
 description: >-
-  [AAAI 2026][MAPF] This paper introduces the concept of Local Guidance (LG) to improve solution quality in LaCAM-based multi-agent pathfinding. By constructing local space-time paths for each agent at every configuration…
+  [AAAI 2026][MAPF] This paper introduces the concept of Local Guidance (LG) to improve solution quality in LaCAM-based multi-agent pathfinding. By constructing local space-time paths for each agent at every configuration generation step, LG mitigates congestion and reduces solution cost by up to 50%, while maintaining completion within a few seconds for 1,000 agents.
 tags:
   - "AAAI 2026"
   - "MAPF"
@@ -11,7 +11,7 @@ tags:
   - "Congestion Mitigation"
   - "Space-Time Search"
 date: 2026-05-08
-content_hash: c5a2dfc266d48f78
+content_hash: 1623f2d903a58f71
 ---
 
 # Local Guidance for Configuration-Based Multi-Agent Pathfinding
@@ -130,9 +130,9 @@ Single guidance construction: $O(nw|V|\log(w|V|))$, where $n$ is the number of a
 
 - [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
 - [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
+- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](../../CVPR2026/others/scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
 - [\[AAAI 2026\] An Epistemic Perspective on Agent Awareness](an_epistemic_perspective_on_agent_awareness.md)
-- [\[AAAI 2026\] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance](toward_the_frontiers_of_reliable_diffusion_sampling_via_adversarial_sinkhorn_att.md)
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
+- [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
 
 </div>
 

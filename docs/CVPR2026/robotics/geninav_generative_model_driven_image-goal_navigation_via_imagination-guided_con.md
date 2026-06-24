@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Flow Matching] GeniNav employs a VLM to "imagine" intermediate subgoals in a latent space to guide a Multi-Segment Consistency Flow Matching (MS-CFM) policy for generating smooth trajectories. A Hybrid Ranking Module (HRM), which integrates geometric safety, semantic alignment, and field-of-view gain, is then used to select the optim
+  [CVPR 2026][Robotics][Image-goal navigation] GeniNav employs a VLM to "imagine" intermediate subgoals in a latent space to guide a Multi-Segment Consistency Flow Matching (MS-CFM) policy for generating smooth trajectories. A Hybrid Ranking Module (HRM), which integrates geometric safety, semantic alignment, and field-of-view gain, is then used to select the optimal path, improving the success rate from ~54% to 68.7% in mapless image-goal navigation.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Image-goal navigation"
+  - "generative policy"
+  - "flow matching"
+  - "latent subgoal"
+  - "trajectory evaluation"
 date: 2026-05-08
-content_hash: dd04f17de81e53f9
+content_hash: 2fb7f922748eb1eb
 ---
+
 # GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ Ablation was performed on Gibson / MP3D validation sets per module (Gibson value
 
 ## Related Papers
 
+- [\[ICLR 2026\] VITA: Vision-to-Action Flow Matching Policy](../../ICLR2026/robotics/vita_vision-to-action_flow_matching_policy.md)
 - [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
-- [\[CVPR 2026\] ActiveGrasp: Information-Guided Active Grasping with Calibrated Energy-based Model](activegrasp_information-guided_active_grasping_with_calibrated_energy-based_mode.md)
 - [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](floverse_floor_plan-guided_multi-modal_navigation.md)
-- [\[ICLR 2026\] Sparse Imagination for Efficient Visual World Model Planning](../../ICLR2026/robotics/sparse_imagination_for_efficient_visual_world_model_planning.md)
-- [\[CVPR 2026\] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation](memory-augmented_scene_understanding_and_exploration_for_open-world_aerial_objec.md)
+- [\[ICLR 2026\] CE-Nav: Flow-Guided Reinforcement Refinement for Cross-Embodiment Local Navigation](../../ICLR2026/robotics/ce-nav_flow-guided_reinforcement_refinement_for_cross-embodiment_local_navigatio.md)
+- [\[CVPR 2026\] ActiveGrasp: Information-Guided Active Grasping with Calibrated Energy-based Model](activegrasp_information-guided_active_grasping_with_calibrated_energy-based_mode.md)
 
 </div>
 

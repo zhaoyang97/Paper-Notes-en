@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis
 description: >-
-  [NeurIPS 2025][Model Compression][Neural Network Pruning] This paper proposes the "Graphon Limit Hypothesis": as network width tends to infinity, the binary mask sequences produced by different pruning methods converge…
+  [NeurIPS 2025 Spotlight][Model Compression][Neural Network Pruning] This paper proposes the "Graphon Limit Hypothesis": as network width tends to infinity, the binary mask sequences produced by different pruning methods converge, under the cut distance, to their respective unique graphon limits. Building on this foundation, the paper derives a Graphon NTK to analyze the training dynamics of sparse networks, providing a theoretical explanation for why different pruning methods…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "Neural Network Pruning"
   - "Graphon"
@@ -13,7 +13,7 @@ tags:
   - "Sparse Networks"
   - "Infinite Width"
 date: 2026-05-08
-content_hash: 240e7f8eb4325a26
+content_hash: 91643a6fc08dbfe7
 ---
 
 # The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis
@@ -131,11 +131,11 @@ Compared to **Graphon Neural Networks** (Ruiz et al. 2020): graphon analysis in 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Adaptive Width Neural Networks](../../ICLR2026/model_compression/adaptive_width_neural_networks.md)
 - [\[NeurIPS 2025\] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills](on_the_creation_of_narrow_ai_hierarchy_and_nonlocality_of_neural_network_skills.md)
 - [\[NeurIPS 2025\] ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization](replaceme_network_simplification_via_depth_pruning_and_transformer_block_lineari.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](../../ICLR2026/model_compression/adaptive_width_neural_networks.md)
 - [\[NeurIPS 2025\] Mixed Monotonicity Reachability Analysis of Neural ODE: A Trade-Off Between Tightness and Efficiency](mixed_monotonicity_reachability_analysis_of_neural_ode_a_trade-off_between_tight.md)
-- [\[NeurIPS 2025\] Understanding Differential Transformer Unchains Pretrained Self-Attentions](understanding_differential_transformer_unchains_pretrained_self-attentions.md)
+- [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](../../ICLR2026/model_compression/beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
 
 </div>
 

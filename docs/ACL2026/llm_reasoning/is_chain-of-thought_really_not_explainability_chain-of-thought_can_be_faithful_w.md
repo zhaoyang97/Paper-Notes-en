@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization
 description: >-
-  [ACL 2026][LLM Reasoning][Chain-of-Thought] This paper systematically refutes the popular recent conclusion that "CoT does not count as explainability." Using four complementary metrics—Filler Tokens, FUR, faithful@k, and Causal Mediation Analysis—it demonstrates that over half of CoT samples judged "unfaithful" by Biasing Features (hint verbalization) actually
+  [ACL 2026][Reasoning][Chain-of-Thought] This paper systematically refutes the popular recent conclusion that "CoT does not count as explainability." Using four complementary metrics—Filler Tokens, FUR, faithful@k, and Causal Mediation Analysis—it demonstrates that over half of CoT samples judged "unfaithful" by Biasing Features (hint verbalization) actually reflect model reasoning "in other ways." Unfaithfulness primarily stems from "incompleteness" due to lossy natural langu…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - hint verbalization
-  - causal mediation analysis
-  - faithful@k
+  - "ACL 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "faithfulness evaluation"
+  - "hint verbalization"
+  - "causal mediation analysis"
+  - "faithful@k"
 date: 2026-05-08
-content_hash: 0b33a855219105b6
+content_hash: 3ca447defd5cf144
 ---
+
 # Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization
 
 **Conference**: ACL 2026  
@@ -151,10 +153,10 @@ Core conclusions for NDE / NIE on Professor hints (based on 10,000 bootstrap ite
 ## Related Papers
 
 - [\[ICML 2026\] Chain-of-Thought Reasoning in the Wild Is Not Always Faithful](../../ICML2026/llm_reasoning/chain-of-thought_reasoning_in_the_wild_is_not_always_faithful.md)
-- [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
 - [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
+- [\[ACL 2026\] Render-of-Thought: Rendering Textual Chain-of-Thought as Images for Visual Latent Reasoning](render-of-thought_rendering_textual_chain-of-thought_as_images_for_visual_latent.md)
+- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](../../ICML2026/llm_reasoning/hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
 - [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
-- [\[ACL 2026\] Can Reasoning Path still be Effective as Input? Bridging Post-Reasoning to Chain-of-Thought Compression](can_reasoning_path_still_be_effective_as_input_bridging_post-reasoning_to_chain-.md)
 
 </div>
 

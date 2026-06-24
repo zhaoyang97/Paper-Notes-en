@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures
 description: >-
-  [ACL 2026][Interpretability][Paper Note] Ours systematically reviews the latest progress in the intrinsic interpretability of LLMs, categorizing existing methods into five major design paradigms (Functional Transparency, Concept Alignment, Representational Decomposability, Explicit Modularity, and Latent Sparse Induction), while discussing open challenges and
+  [ACL 2026][Interpretability][Intrinsic interpretability] Ours systematically reviews the latest progress in the intrinsic interpretability of LLMs, categorizing existing methods into five major design paradigms (Functional Transparency, Concept Alignment, Representational Decomposability, Explicit Modularity, and Latent Sparse Induction), while discussing open challenges and future directions.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Intrinsic interpretability"
+  - "Large Language Models"
+  - "Design paradigm taxonomy"
+  - "Modular architecture"
+  - "Sparse induction"
 date: 2026-05-08
-content_hash: 7e92899dc29f3724
+content_hash: f1b571a8dba20c1b
 ---
+
 # Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures
 
 **Conference**: ACL 2026  
@@ -128,7 +134,7 @@ Comparison of the interpretability-performance trade-off across paradigms:
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
-- [\[ICML 2026\] Dual Mechanisms of Value Expression: Intrinsic vs. Prompted Values in Large Language Models](../../ICML2026/interpretability/dual_mechanisms_of_value_expression_intrinsic_vs_prompted_values_in_large_langua.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](../../ICLR2026/interpretability/medical_interpretability_and_knowledge_maps_of_large_language_models.md)
 
 </div>
 

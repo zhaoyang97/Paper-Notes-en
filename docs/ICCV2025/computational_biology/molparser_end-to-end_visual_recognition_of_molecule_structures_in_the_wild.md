@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild
 description: >-
-  [Computational Biology] This paper proposes MolParser, an end-to-end Optical Chemical Structure Recognition (OCSR) method that handles Markush structures via an extended SMILES representation (E-SMILES)…
+  [Computational Biology] This paper proposes MolParser, an end-to-end Optical Chemical Structure Recognition (OCSR) method that handles Markush structures via an extended SMILES representation (E-SMILES), constructs a large-scale training set MolParser-7M with 7 million samples, and incorporates real-world literature data through active learning. MolParser achieves 76.9% accuracy on the WildMol benchmark, significantly outperforming existing methods.
 tags:
   - "Computational Biology"
 date: 2026-05-08
-content_hash: 7ac9bd45c9e133f6
+content_hash: d676493b82c8fa83
 ---
 
 # MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild
@@ -165,11 +165,11 @@ The Swin-T visual encoder trained by MolParser can serve as a molecular fingerpr
 
 ## Related Papers
 
-- [\[ICLR 2026\] Protein as a Second Language for LLMs](../../ICLR2026/computational_biology/protein_as_a_second_language_for_llms.md)
+- [\[ICML 2025\] Scalable Non-Equivariant 3D Molecule Generation via Rotational Alignment](../../ICML2025/computational_biology/scalable_non-equivariant_3d_molecule_generation_via_rotational_alignment.md)
+- [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
+- [\[ICML 2025\] Protein Structure Tokenization: Benchmarking and New Recipe](../../ICML2025/computational_biology/protein_structure_tokenization_benchmarking_and_new_recipe.md)
 - [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](../../ICLR2026/computational_biology/thompson_sampling_via_fine-tuning_of_llms.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
-- [\[NeurIPS 2025\] UniSite: The First Cross-Structure Dataset and Learning Framework for End-to-End Ligand Binding Site Detection](../../NeurIPS2025/computational_biology/unisite_the_first_cross-structure_dataset_and_learning_framework_for_end-to-end_.md)
-- [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](../../NeurIPS2025/computational_biology/prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
+- [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](../../ICLR2026/computational_biology/optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
 
 </div>
 

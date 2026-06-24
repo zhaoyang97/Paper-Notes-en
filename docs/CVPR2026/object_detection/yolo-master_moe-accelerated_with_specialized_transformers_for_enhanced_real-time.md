@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection
 description: >-
-  [CVPR 2026][Object Detection][YOLO] YOLO-Master integrates sparse MoE (ES-MoE blocks) into the YOLO backbone, enabling the network to dynamically activate different experts according to image complexity. It achieves 42.4% AP with a 1.62ms latency on MS COCO, surpassing YOLOv13-N by 0.8% mAP while being 18% faster.
+  [CVPR 2026][Object Detection][Real-time Detection] YOLO-Master integrates sparse MoE (ES-MoE blocks) into the YOLO backbone, enabling the network to dynamically activate different experts according to image complexity. It achieves 42.4% AP with a 1.62ms latency on MS COCO, surpassing YOLOv13-N by 0.8% mAP while being 18% faster.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - YOLO
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Real-time Detection"
+  - "Sparse Mixture-of-Experts (MoE)"
+  - "Conditional Computation"
+  - "Dynamic Routing"
+  - "YOLO"
 date: 2026-05-08
-content_hash: 5157845775f1a09f
+content_hash: b7034dc98290018f
 ---
+
 # YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection
 
 **Conference**: CVPR 2026  
@@ -165,8 +170,8 @@ Ablations suggest that **removing DFL and using only the MoE loss (weight 1.5) y
 - [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
 - [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
+- [\[ICLR 2026\] RF-DETR: Neural Architecture Search for Real-Time Detection Transformers](../../ICLR2026/object_detection/rf-detr_neural_architecture_search_for_real-time_detection_transformers.md)
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
-- [\[CVPR 2026\] Does YOLO Really Need to See Every Training Image in Every Epoch?](does_yolo_really_need_to_see_every_training_image_in_every_epoch.md)
 
 </div>
 

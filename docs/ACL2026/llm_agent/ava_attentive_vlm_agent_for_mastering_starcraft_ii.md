@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AVA: Attentive VLM Agent for Mastering StarCraft II
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes AVACraft—the first StarCraft II multimodal benchmark supporting both MARL and VLM decision-making paradigms (21 scenarios / RGB + Text + Structured State). It introduces the VLM baseline AVA (Multimodal Priority Reasoning + RAG + Dynamic Role Assignment). Experiments demonstrate that while MARL achi
+  [ACL 2026][LLM Agent][StarCraft II] This paper proposes AVACraft—the first StarCraft II multimodal benchmark supporting both MARL and VLM decision-making paradigms (21 scenarios / RGB + Text + Structured State). It introduces the VLM baseline AVA (Multimodal Priority Reasoning + RAG + Dynamic Role Assignment). Experiments demonstrate that while MARL achieves only a 19–27% win rate after 5M training steps in base 3m scenarios, zero-shot VLM reaches 75–90%.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "StarCraft II"
+  - "Multimodal RL"
+  - "Zero-shot VLM"
+  - "Cross-paradigm benchmark"
+  - "Priority Reasoning"
 date: 2026-05-08
-content_hash: 01e9f05d796228f2
+content_hash: 8b4a62b6b552b355
 ---
+
 # AVA: Attentive VLM Agent for Mastering StarCraft II
 
 **Conference**: ACL 2026  
@@ -132,15 +138,16 @@ VLM paradigms significantly outperform MARL after 5M steps. Notably, adding text
 - Value: ⭐⭐⭐⭐⭐ Provides the first standardized arena for the MARL ↔ VLM dialogue.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
 - [\[ICCV 2025\] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training](../../ICCV2025/llm_agent/gtr_guided_thought_reinforcement_prevents_thought_collapse_i.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](../../ICLR2026/llm_agent/gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[ACL 2026\] Grounding Agent Memory in Contextual Intent](grounding_agent_memory_in_contextual_intent.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

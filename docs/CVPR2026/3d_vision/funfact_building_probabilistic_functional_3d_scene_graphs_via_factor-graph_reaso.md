@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] FunFact constructs **probabilistic open-vocabulary functional 3D scene graphs** from posed RGB-D images. It first reconstructs object-part level 3D maps using foundation models, then transforms candidate functional relations into a "dual factor graph." By performing belief propagation with LLM commonsense priors and ge
+  [CVPR 2026][3D Vision][Functional Scene Graphs] FunFact constructs **probabilistic open-vocabulary functional 3D scene graphs** from posed RGB-D images. It first reconstructs object-part level 3D maps using foundation models, then transforms candidate functional relations into a "dual factor graph." By performing belief propagation with LLM commonsense priors and geometric proximity priors, the method jointly reasons over all functional edges in the scene to output **well-cal…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Functional Scene Graphs"
+  - "Factor Graphs"
+  - "Belief Propagation"
+  - "Confidence Calibration"
+  - "Open-Vocabulary"
 date: 2026-05-08
-content_hash: f05e97d924b59894
+content_hash: ce1a012f4188ee6a
 ---
+
 # FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ Recall for small interactive elements on FunGraph3D jumped from 44.4% to 68.3%, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
+- [\[CVPR 2025\] Open-Vocabulary Functional 3D Scene Graphs for Real-World Indoor Spaces](../../CVPR2025/3d_vision/open-vocabulary_functional_3d_scene_graphs_for_real-world_indoor_spaces.md)
+- [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
+- [\[AAAI 2026\] Open-World 3D Scene Graph Generation for Retrieval-Augmented Reasoning](../../AAAI2026/3d_vision/open-world_3d_scene_graph_generation_for_retrieval-augmented_reasoning.md)
 - [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
-- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
-- [\[CVPR 2026\] Fusion of Depth and Semantics for Probabilistic Floorplan Localization](fusion_of_depth_and_semantics_for_probabilistic_floorplan_localization.md)
-- [\[CVPR 2026\] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds](edges_compete_for_trust_group_relative_edge_optimization_for_building_reconstruc.md)
+- [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
 
 </div>
 

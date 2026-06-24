@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space
 description: >-
-  [NeurIPS 2025][Computational Biology][Molecular Generation] This paper proposes MolFLAE, a 3D molecular variational autoencoder that learns a fixed-dimensional…
+  [NeurIPS 2025][Computational Biology][Molecular Generation] This paper proposes MolFLAE, a 3D molecular variational autoencoder that learns a fixed-dimensional, E(3)-equivariant latent space. By introducing learnable virtual nodes and a Bayesian Flow Network (BFN) decoder, MolFLAE enables zero-shot molecular editing — including atom-count editing, structural reconstruction, and property interpolation — and demonstrates practical utility in drug optimization targeting the huma…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Latent Space Manipulation"
   - "Bayesian Flow Networks"
 date: 2026-05-08
-content_hash: 3202c2e8b314cae9
+content_hash: 0888412724bc0370
 ---
 
 # Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space
@@ -138,10 +138,10 @@ Retaining $\mathbf{z}_x$ yields substantially higher shape similarity than retai
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
+- [\[ICML 2025\] Scalable Non-Equivariant 3D Molecule Generation via Rotational Alignment](../../ICML2025/computational_biology/scalable_non-equivariant_3d_molecule_generation_via_rotational_alignment.md)
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
-- [\[NeurIPS 2025\] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research](barcodemamba_advancing_state-space_models_for_fungal_biodiversity_research.md)
-- [\[NeurIPS 2025\] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning](generative_distribution_embeddings_lifting_autoencoders_to_the_space_of_distribu.md)
 - [\[NeurIPS 2025\] Multimodal 3D Genome Pre-training](multimodal_3d_genome_pre-training.md)
+- [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
 
 </div>
 

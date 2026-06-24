@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Discrim-Eval-Open] This paper utilizes an open-ended bias benchmark, Discrim-Eval-Open, based on forced three-choice questions to model Multi-Agent Systems (MAS) as directed acyclic graphs. By using the Gini coefficient to track the "amplification rate" of bias across layers, it systematically demonstrates a counter-intuitive conclusion:
+  [ICLR2026][Multi-Agent][Multi-Agent Systems] This paper utilizes an open-ended bias benchmark, Discrim-Eval-Open, based on forced three-choice questions to model Multi-Agent Systems (MAS) as directed acyclic graphs. By using the Gini coefficient to track the "amplification rate" of bias across layers, it systematically demonstrates a counter-intuitive conclusion: while it is often assumed that multi-agent collaboration "dilutes" bias, various role specializations…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Discrim-Eval-Open
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Bias Amplification"
+  - "Echo Chamber effect"
+  - "Discrim-Eval-Open"
+  - "Gini Coefficient"
 date: 2026-05-08
-content_hash: 2c5f8df8ba9114ee
+content_hash: c7f4b3504dd69353
 ---
+
 # Aligned Agents, Biased Swarm: Measuring Bias Amplification in Multi-Agent Systems
 
 **Conference**: ICLR2026  
@@ -129,11 +134,11 @@ The amplification rate of mixed systems lies between the two homogeneous systems
 
 ## Related Papers
 
+- [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 - [\[ICML 2026\] Toward Culturally Aligned LLMs through Ontology-Guided Multi-Agent Reasoning](../../ICML2026/multi_agent/toward_culturally_aligned_llms_through_ontology-guided_multi-agent_reasoning.md)
-- [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
 - [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](../../ACL2026/multi_agent/when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
-- [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
 
 </div>
 

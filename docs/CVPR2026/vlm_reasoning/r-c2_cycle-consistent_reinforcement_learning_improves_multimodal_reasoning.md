@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] R-C2 treats the modality gap in multimodal large models—where the same content yields different answers under image versus text inputs—as an unannotated reward signal. The model derives a question from a candidate answer, switches modalities to reconstruct the answer, and receives a reward if the reconstruction is succ
+  [CVPR 2026][VLM Reasoning][Multimodal Reasoning] R-C2 treats the modality gap in multimodal large models—where the same content yields different answers under image versus text inputs—as an unannotated reward signal. The model derives a question from a candidate answer, switches modalities to reconstruct the answer, and receives a reward if the reconstruction is successful. This dense cycle-consistent signal is used for GRPO reinforcement learning…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Cycle Consistency"
+  - "Reinforcement Learning"
+  - "Self-supervised Reward"
+  - "Modality Gap"
 date: 2026-05-08
-content_hash: b1dafbfff7a4959e
+content_hash: e14ae5a8afe8760f
 ---
+
 # R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning
 
 **Conference**: CVPR 2026  
@@ -137,9 +142,9 @@ Comparison of cycle path configurations on ScienceQA / ChartQA (Qwen2.5-VL-3B):
 ## Related Papers
 
 - [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
+- [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](../../ICLR2026/vlm_reasoning/revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
 - [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
 
 </div>

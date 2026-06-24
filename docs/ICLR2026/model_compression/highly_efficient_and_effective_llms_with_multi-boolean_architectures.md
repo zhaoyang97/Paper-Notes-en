@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Highly Efficient and Effective LLMs with Multi-Boolean Architectures
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes a new framework representing LLM weights using multi-kernel Boolean parameters. It achieves direct fine-tuning of LLMs in the Boolean domain for the first time without full-precision latent weights, outperforming existing ultra-low-bit quantization and binarization methods in both representation capabilit
+  [ICLR 2026][Model Compression][Weight Binarization] Ours proposes a new framework representing LLM weights using multi-kernel Boolean parameters. It achieves direct fine-tuning of LLMs in the Boolean domain for the first time without full-precision latent weights, outperforming existing ultra-low-bit quantization and binarization methods in both representation capability and computational efficiency.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Weight Binarization"
+  - "Boolean Parameters"
+  - "Ultra-low-bit Quantization"
+  - "Large Language Models"
+  - "Direct Fine-tuning"
 date: 2026-05-08
-content_hash: a344e8a63c05c094
+content_hash: 3a37d5f3b97d2576
 ---
+
 # Highly Efficient and Effective LLMs with Multi-Boolean Architectures
 
 **Conference**: ICLR 2026  

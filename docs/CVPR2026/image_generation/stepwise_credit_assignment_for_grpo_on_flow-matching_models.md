@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Stepwise-Flow-GRPO：给流匹配模型的去噪步逐步分配信用
+  [Paper Note] Stepwise-Flow-GRPO: Assigning Stepwise Credit to Denoising Steps in Flow-Matching Models
 description: >-
-  [CVPR 2026][Image Generation][Flow-GRPO] To address the flaw in Flow-GRPO that distributes the "same final image advantage" uniformly across all denoising steps, this paper uses the Tweedie formula to estimate intermediate rewards. It employs "adjacent step reward gain" as the stepwise advantage for GRPO and incorporates a DDIM-style SDE to improve sampling q
+  [CVPR 2026][Image Generation][Flow-GRPO] To address the flaw in Flow-GRPO that distributes the "same final image advantage" uniformly across all denoising steps, this paper uses the Tweedie formula to estimate intermediate rewards. It employs "adjacent step reward gain" as the stepwise advantage for GRPO and incorporates a DDIM-style SDE to improve sampling quality, achieving higher sample efficiency and faster convergence in text-to-image RL.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow-GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Flow-GRPO"
+  - "Credit Assignment"
+  - "Tweedie Formula"
+  - "Incremental Advantage"
+  - "T2I-RL"
 date: 2026-05-08
-content_hash: 059d047e1407e6ed
+content_hash: 921d3e3772d5b1ee
 ---
+
 # Stepwise-Flow-GRPO: Assigning Stepwise Credit to Denoising Steps in Flow-Matching Models
 
 **Conference**: CVPR 2026  
@@ -141,8 +146,8 @@ At cfg=1.0, results are comparable to Flow-GRPO (faster convergence without sacr
 - [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
 - [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
-- [\[ICML 2026\] LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching](../../ICML2026/image_generation/lithogrpo_fast_inverse_lithography_via_grpo_reinforced_flow_matching.md)
-- [\[CVPR 2026\] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO](diversegrpo_mitigating_mode_collapse_in_image_generation_via_diversity-aware_grp.md)
+- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
+- [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](../../ICLR2026/image_generation/tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 
 </div>
 

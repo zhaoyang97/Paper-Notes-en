@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Agent][GRPO] Clinical differential diagnosis is modeled as a two-agent cyclic system consisting of a "Hypothesis Agent + Decision Agent." A hybrid paradigm of supervised and reinforcement learning is employed to simultaneously train accurate hypothesis generation, confidence calibration, and efficient test selection. This enables t
+  [ICLR 2026][LLM Agent][Clinical decision making] Clinical differential diagnosis is modeled as a two-agent cyclic system consisting of a "Hypothesis Agent + Decision Agent." A hybrid paradigm of supervised and reinforcement learning is employed to simultaneously train accurate hypothesis generation, confidence calibration, and efficient test selection. This enables the LLM to perform iterative reasoning and information gathering like a physician…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GRPO
-  - Multi-Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Clinical decision making"
+  - "differential diagnosis"
+  - "hypothesis-driven"
+  - "uncertainty calibration"
+  - "GRPO"
+  - "multi-agent"
 date: 2026-05-08
-content_hash: 050379ded1747b97
+content_hash: 8e0bd919380a0a05
 ---
+
 # Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -132,9 +137,9 @@ The cost reward significantly reduces test expenditures with almost no loss in p
 
 - [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
 - [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
 - [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](comind_towards_community-driven_agents_for_machine_learning_engineering.md)
-- [\[ICLR 2026\] WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning](websailor-v2_bridging_the_chasm_to_proprietary_agents_via_synthetic_data_and_sca.md)
 
 </div>
 

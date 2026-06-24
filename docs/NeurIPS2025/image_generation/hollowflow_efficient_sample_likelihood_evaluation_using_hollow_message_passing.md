@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HollowFlow: Efficient Sample Likelihood Evaluation using Hollow Message Passing
 description: >-
-  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes HollowFlow, a framework that enforces a block-diagonal structure on the Jacobian of the velocity field via Non-Backtracking Graph Neural…
+  [NeurIPS 2025][Image Generation][Continuous Normalizing Flows] This paper proposes HollowFlow, a framework that enforces a block-diagonal structure on the Jacobian of the velocity field via Non-Backtracking Graph Neural Networks (NoBGNN) and Hollow Message Passing, reducing the number of backward passes required for likelihood computation in Continuous Normalizing Flows from $\mathcal{O}(n)$ to a constant $\mathcal{O}(d)$, achieving up to $10^2\times$ sampling speedup.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Non-Backtracking Graph Neural Networks"
   - "Likelihood Computation"
 date: 2026-05-08
-content_hash: e80e9d423980ff8f
+content_hash: 9c55525bd439b626
 ---
 
 # HollowFlow: Efficient Sample Likelihood Evaluation using Hollow Message Passing
@@ -141,11 +141,11 @@ Choosing $k \leq \mathcal{O}(\sqrt{n})$ ensures that the forward pass overhead d
 
 ## Related Papers
 
-- [\[ICLR 2026\] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection](../../ICLR2026/image_generation/sample-efficient_evidence_estimation_of_score_based_priors_for_model_selection.md)
+- [\[CVPR 2025\] DiverseFlow: Sample-Efficient Diverse Mode Coverage in Flows](../../CVPR2025/image_generation/diverseflow_sample-efficient_diverse_mode_coverage_in_flows.md)
+- [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](../../ICLR2026/image_generation/joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
 - [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
-- [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](gspn-2_efficient_parallel_sequence_modeling.md)
+- [\[ICLR 2026\] Sample-Efficient Evidence Estimation of Score-Based Priors for Model Selection](../../ICLR2026/image_generation/sample-efficient_evidence_estimation_of_score_based_priors_for_model_selection.md)
 - [\[NeurIPS 2025\] RAG-IGBench: Innovative Evaluation for RAG-based Interleaved Generation in Open-domain Question Answering](rag-igbench_innovative_evaluation_for_rag-based_interleaved_generation_in_open-d.md)
-- [\[NeurIPS 2025\] Efficient Rectified Flow for Image Fusion](efficient_rectified_flow_for_image_fusion.md)
 
 </div>
 

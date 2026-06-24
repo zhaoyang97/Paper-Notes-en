@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization
 description: >-
-  [AAAI 2026][LLM/NLP][LLM personality simulation] This paper proposes IROTE, an in-context self-reflective optimization method grounded in information bottleneck theory. By iteratively generating and refining compact yet…
+  [AAAI 2026][LLM (Other)][LLM personality simulation] This paper proposes IROTE, an in-context self-reflective optimization method grounded in information bottleneck theory. By iteratively generating and refining compact yet evocative textual "self-reflections," IROTE stably elicits target human traits (values, morality, personality) from LLMs across diverse downstream tasks without any fine-tuning, consistently outperforming existing baselines in trait consistency.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM personality simulation"
   - "trait elicitation"
   - "information bottleneck"
   - "in-context learning"
   - "self-reflection"
 date: 2026-05-08
-content_hash: 415fe080e84d93fa
+content_hash: 928ec4a146da9972
 ---
 
 # IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization
@@ -138,11 +138,11 @@ The table above reports results on Qwen2.5-7B-Instruct. IROTE achieves a leading
 
 ## Related Papers
 
+- [\[ICLR 2026\] Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models](../../ICLR2026/llm_nlp/dont_settle_too_early_self-reflective_remasking_for_diffusion_language_models.md)
 - [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](icl-router_in-context_learned_model_representations_for_llm_routing.md)
-- [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
-- [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](../../ACL2026/llm_nlp/decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
-- [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
-- [\[AAAI 2026\] An Invariant Latent Space Perspective on Language Model Inversion](an_invariant_latent_space_perspective_on_language_model_inve.md)
+- [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](../../ICLR2026/llm_nlp/sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
+- [\[ACL 2025\] HumT DumT: Measuring and Controlling Human-like Language in LLMs](../../ACL2025/llm_nlp/humt_dumt_measuring_and_controlling_human-like_language_in_llms.md)
+- [\[ACL 2025\] Binary Classifier Optimization for Large Language Model Alignment](../../ACL2025/llm_nlp/bco_binary_classifier_alignment.md)
 
 </div>
 

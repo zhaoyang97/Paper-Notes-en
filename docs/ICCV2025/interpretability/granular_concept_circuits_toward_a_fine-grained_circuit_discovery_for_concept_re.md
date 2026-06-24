@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations
 description: >-
-  [ICCV 2025][Interpretability][Visual Circuit Discovery] This paper proposes Granular Concept Circuit (GCC), a method that automatically discovers fine-grained visual circuits encoding specific concepts in deep visual mod…
+  [ICCV 2025][Interpretability][Visual Circuit Discovery] This paper proposes Granular Concept Circuit (GCC), a method that automatically discovers fine-grained visual circuits encoding specific concepts in deep visual models by iteratively evaluating inter-neuron functional dependency (Neuron Sensitivity Score) and semantic consistency (Semantic Flow Score). GCC is the first method capable of discovering multiple concept-level circuits within a single query.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Neuron Connectivity"
   - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: 2e42911c7618135a
+content_hash: 5cb4f48c81ea8519
 ---
 
 # Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations
@@ -57,8 +57,8 @@ GCC aims to discover multiple fine-grained concept circuits for a given query, e
 
    where $\hat{a}_c^l$ denotes the layer-$l$ activation after zeroing out the $c$-th neuron. A high $S_{NS}$ indicates that the target neuron strongly depends on the source neuron. Positive clipping is applied to focus exclusively on positive correlations.
 
-   - **Design Motivation**: Causal intervention captures true dependency more accurately than gradients.
-   - A first-order approximation (per-neuron intervention) is used to avoid the $O(2^{|N|})$ cost of exhaustive combinatorial search.
+    - **Design Motivation**: Causal intervention captures true dependency more accurately than gradients.
+    - A first-order approximation (per-neuron intervention) is used to avoid the $O(2^{|N|})$ cost of exhaustive combinatorial search.
 
 2. **Semantic Flow Score ($S_{SF}$)**: A semantic consistency constraint.
 
@@ -66,7 +66,7 @@ GCC aims to discover multiple fine-grained concept circuits for a given query, e
 
    where $\mathcal{S}_{src}$ and $\mathcal{S}_{tgt}$ are the top-$k$ highly activated sample sets for the source and target neurons, respectively. High overlap indicates that both neurons encode similar semantic information.
 
-   - **Design Motivation**: A high $S_{NS}$ alone is insufficient—nonlinearities may produce spurious connections (functionally dependent but semantically unrelated); $S_{SF}$ filters out such false connections.
+    - **Design Motivation**: A high $S_{NS}$ alone is insufficient—nonlinearities may produce spurious connections (functionally dependent but semantically unrelated); $S_{SF}$ filters out such false connections.
 
 3. **Circuit Construction Algorithm**:
 
@@ -153,11 +153,11 @@ Edge ablation/insertion experiments: edges are removed or added in order of $S_{
 
 ## Related Papers
 
+- [\[ACL 2025\] Position-aware Automatic Circuit Discovery](../../ACL2025/interpretability/position-aware_automatic_circuit_discovery.md)
+- [\[CVPR 2025\] Towards Human-Understandable Multi-Dimensional Concept Discovery](../../CVPR2025/interpretability/towards_human-understandable_multi-dimensional_concept_discovery.md)
 - [\[ICCV 2025\] CE-FAM: Concept-Based Explanation via Fusion of Activation Maps](ce-fam_concept-based_explanation_via_fusion_of_activation_maps.md)
-- [\[ICML 2026\] CB-SLICE: Concept-Based Interpretable Error Slice Discovery](../../ICML2026/interpretability/cb-slice_concept-based_interpretable_error_slice_discovery.md)
+- [\[ACL 2025\] Separating Tongue from Thought: Activation Patching Reveals Language-Agnostic Concept Representations in Transformers](../../ACL2025/interpretability/separating_tongue_from_thought_activation_patching_reveals_language-agnostic_con.md)
 - [\[ICML 2026\] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs](../../ICML2026/interpretability/all_circuits_lead_to_rome_rethinking_functional_anisotropy_in_circuit_and_sheaf_.md)
-- [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean 4] ProofFlow decomposes a natural language proof into a Directed Acyclic Graph (DAG) characterizing step dependencies, and then formalizes each step into a high-level Lean 4 lemma with explicit dependencies. This preserves the logical structure of the original argument beyond mere "syntactic correctness." The authors also
+  [ICLR 2026][Reasoning][Proof autoformalization] ProofFlow decomposes a natural language proof into a Directed Acyclic Graph (DAG) characterizing step dependencies, and then formalizes each step into a high-level Lean 4 lemma with explicit dependencies. This preserves the logical structure of the original argument beyond mere "syntactic correctness." The authors also propose a comprehensive evaluation metric, PROOFSCORE, and a university-level benchmark…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean 4
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Proof autoformalization"
+  - "dependency graph"
+  - "Lean 4"
+  - "structural faithfulness"
+  - "evaluation metrics"
 date: 2026-05-08
-content_hash: 521a1e7ec0d70786
+content_hash: 8bbcf3d02cc61aa2
 ---
+
 # ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization
 
 **Conference**: ICLR 2026  
@@ -132,10 +137,10 @@ Removing the DAG constraint (noDAG) drops the PROOFSCORE from 0.545 to 0.417, wi
 ## Related Papers
 
 - [\[ICLR 2026\] LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction](loc-decomp_llm_autoformalization_via_logical_concept_decomposition_and_iterative.md)
-- [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
 - [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
-- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
+- [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
 - [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 
 </div>
 

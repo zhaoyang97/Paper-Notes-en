@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GenSplat: Bridging the Generalization Gap in 3DGS Language Comprehension
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GenSplat decomposes language comprehension in 3DGS scenes into a progressive curriculum of "semantics → instance → free-form text". By utilizing a `<SEG>` token inferred from an MLLM to query 3D Gaussian features in conjunction with a geometry-aware keyframe selector, the model achieves SOTA performance across scenes a
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] GenSplat decomposes language comprehension in 3DGS scenes into a progressive curriculum of "semantics → instance → free-form text". By utilizing a `<SEG>` token inferred from an MLLM to query 3D Gaussian features in conjunction with a geometry-aware keyframe selector, the model achieves SOTA performance across scenes and tasks (referring segmentation / VQA / open-vocabulary) without requiring per-scene optimization during inferenc…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Language Comprehension"
+  - "Referring Segmentation"
+  - "MLLM Reasoning"
+  - "Cross-scene Generalization"
 date: 2026-05-08
-content_hash: bda1e70cd7b57def
+content_hash: 4a89fff05b78830a
 ---
+
 # GenSplat: Bridging the Generalization Gap in 3DGS Language Comprehension
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Ablation of components (mIoU / C / EM-R, etc., selected from Table 4):
 
 ## Related Papers
 
+- [\[CVPR 2026\] EDGS: Eliminating Densification for Efficient Convergence of 3DGS](edgs_eliminating_densification_for_efficient_convergence_of_3dgs.md)
+- [\[CVPR 2026\] ObjectMorpher: 3D-Aware Image Editing via Deformable 3DGS](objectmorpher_3d-aware_image_editing_via_deformable_3dgs.md)
+- [\[CVPR 2026\] SparseOIT: Improving Order-Independent Transparency 3DGS via Active Set Method](sparseoit_improving_order-independent_transparency_3dgs_via_active_set_method.md)
+- [\[CVPR 2026\] BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction](bea-gs_beyond_radiance_supervision_in_3dgs_for_precise_object_extraction.md)
 - [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
-- [\[CVPR 2026\] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer](diffusionharmonizer_bridging_neural_reconstruction_and_photorealistic_simulation.md)
-- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
 
 </div>
 

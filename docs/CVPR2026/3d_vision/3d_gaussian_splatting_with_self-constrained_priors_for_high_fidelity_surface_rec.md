@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the Self-Constrained Prior (SCP), which constructs a TSDF distance field by fusing depth maps rendered from the current 3D Gaussians. This field serves as a prior to impose geometry-aware constraints (outlier removal, opacity constraints, and movement toward the surface) on Gaussians, achieving SOTA
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the Self-Constrained Prior (SCP), which constructs a TSDF distance field by fusing depth maps rendered from the current 3D Gaussians. This field serves as a prior to impose geometry-aware constraints (outlier removal, opacity constraints, and movement toward the surface) on Gaussians, achieving SOTA high-fidelity surface reconstruction on NeRF-Synthetic and DTU datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - TSDF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Surface Reconstruction"
+  - "TSDF"
+  - "Self-Constrained Prior"
+  - "Geometric Constraints"
 date: 2026-05-08
-content_hash: 5405ca7912aa4161
+content_hash: e86ea25abc0099e4
 ---
+
 # 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction
 
 **Conference**: CVPR 2026  
@@ -162,11 +166,11 @@ Visualizations show: Removing outliers significantly reduces stray Gaussians $\r
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
+- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
+- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[ICLR 2026\] ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors](../../ICLR2026/3d_vision/artdeco_toward_high-fidelity_on-the-fly_reconstruction_with_hierarchical_gaussia.md)
 
 </div>
 

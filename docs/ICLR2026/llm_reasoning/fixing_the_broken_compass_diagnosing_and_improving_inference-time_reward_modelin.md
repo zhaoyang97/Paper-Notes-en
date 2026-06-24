@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling
 description: >-
-  [ICLR 2026][LLM Reasoning][inference-time scaling] This paper systematically diagnoses three failure modes of Reward Models (RMs) at inference time—performance degradation on easy problems, decreased discriminative power as the number of samples increases, and excessive search diversity harming accuracy. It proposes the CRISP algorithm to mitigate these issues through
+  [ICLR 2026][Reasoning][Reward Model] This paper systematically diagnoses three failure modes of Reward Models (RMs) at inference time—performance degradation on easy problems, decreased discriminative power as the number of samples increases, and excessive search diversity harming accuracy. It proposes the CRISP algorithm to mitigate these issues through cluster-based reward integration and stepwise prefixing, achieving accuracy improvements of up to 5%.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - inference-time scaling
-  - CRISP
-  - Best-of-N
-  - MCTS]
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reward Model"
+  - "inference-time scaling"
+  - "CRISP"
+  - "Best-of-N"
+  - "MCTS"
 date: 2026-05-08
-content_hash: 315dae38319695e7
+content_hash: 6854f61f4338c297
 ---
+
 # Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling
 
 **Conference**: ICLR 2026  
@@ -137,11 +139,11 @@ The entire flow requires no training. Policy models include Qwen2.5-3B / Llama3.
 
 ## Related Papers
 
+- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](../../ICML2026/llm_reasoning/inference_time_optimization_with_confidence_dynamics.md)
 - [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
 - [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
-- [\[ICML 2026\] Inference Time Optimization with Confidence Dynamics](../../ICML2026/llm_reasoning/inference_time_optimization_with_confidence_dynamics.md)
-- [\[ICLR 2026\] The Limits of Inference Scaling Through Resampling](the_limits_of_inference_scaling_through_resampling.md)
 - [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](../../ACL2026/llm_reasoning/c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
+- [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](../../ICML2026/llm_reasoning/reward_modeling_from_natural_language_human_feedback.md)
 
 </div>
 

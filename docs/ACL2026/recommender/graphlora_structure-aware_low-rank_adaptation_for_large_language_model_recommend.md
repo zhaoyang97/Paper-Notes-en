@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GraphLoRA: Structure-Aware Low-Rank Adaptation for Large Language Model Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][LoRA] Existing LLM recommenders either feed collaborative information into prompts or inject pre-trained static embeddings into LoRA weights, treating structure as a "one-read" static input. GraphLoRA embeds a trainable graph message passing network into the LoRA bottleneck (between down-projection $\mathbf{A}$ and up-projec
+  [ACL 2026][Recommender Systems][LLM Recommendation] Existing LLM recommenders either feed collaborative information into prompts or inject pre-trained static embeddings into LoRA weights, treating structure as a "one-read" static input. GraphLoRA embeds a trainable graph message passing network into the LoRA bottleneck (between down-projection $\mathbf{A}$ and up-projection $\mathbf{B}$), allowing collaborative topology to propagate dynamically within the parameter space and…
 tags:
-  - ACL 2026
-  - Recommender Systems
-  - LoRA
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "LLM Recommendation"
+  - "LoRA"
+  - "Graph Message Passing"
+  - "Collaborative Signals"
+  - "Structure-Aware Fine-tuning"
 date: 2026-05-08
-content_hash: f2af565c7c9d0832
+content_hash: fa1ca3a7934d6401
 ---
+
 # GraphLoRA: Structure-Aware Low-Rank Adaptation for Large Language Model Recommendation
 
 **Conference**: ACL 2026  
@@ -126,10 +131,20 @@ Injection position ablation: Placing the GNN before $\mathbf{A}$ (Pre-A) causes 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](../../ICLR2026/recommender/continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
+- [\[AAAI 2026\] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models](../../AAAI2026/recommender/inference-aware_prompt_optimization_for_aligning_black-box_large_language_models.md)
+- [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](../../NeurIPS2025/recommender/measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
+- [\[ACL 2026\] Culinary Crossroads: A RAG Framework for Enhancing Diversity in Cross-Cultural Recipe Adaptation](culinary_crossroads_a_rag_framework_for_enhancing_diversity_in_cross-cultural_re.md)
+- [\[ACL 2026\] Bridging Language and Items for Retrieval and Recommendation: Benchmarking LLMs as Semantic Encoders](bridging_language_and_items_for_retrieval_and_recommendation_benchmarking_llms_a.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models](../../AAAI2026/recommender/inference-aware_prompt_optimization_for_aligning_black-box_large_language_models.md)

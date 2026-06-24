@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reliable Fine-Grained Evaluation of Natural Language Math Proofs
 description: >-
-  [ICLR 2026][LLM Evaluation][best-of-n] Addressing the gap where "LLM-generated natural language math proofs cannot be reliably scored," this paper first constructs the first fine-grained expert-annotated set, PROOFBENCH (145 problems / 435 proofs / 0–7 scale). It then systematically searches the evaluator design space (backbone model, context, instructions,
+  [ICLR 2026][LLM Evaluation][Natural Language Proofs] Addressing the gap where "LLM-generated natural language math proofs cannot be reliably scored," this paper first constructs the first fine-grained expert-annotated set, PROOFBENCH (145 problems / 435 proofs / 0–7 scale). It then systematically searches the evaluator design space (backbone model, context, instructions, workflow) to derive PROOFGRADER (O3 + reference solutions and marking schemes + simple ensemble)…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - best-of-n
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Natural Language Proofs"
+  - "Fine-grained Scoring"
+  - "Benchmark"
+  - "Reward Model"
+  - "Best-of-n"
 date: 2026-05-08
-content_hash: ceb45c452900270e
+content_hash: 498b5449f562ed0e
 ---
+
 # Reliable Fine-Grained Evaluation of Natural Language Math Proofs
 
 **Conference**: ICLR 2026  
@@ -136,11 +141,11 @@ PROOFGRADER closely follows the human oracle curve and outperforms computational
 
 ## Related Papers
 
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
 - [\[ICLR 2026\] FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization](frabench_and_ufeval_unified_fine-grained_evaluation_with_task_and_aspect_general.md)
+- [\[ICLR 2026\] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation](addressing_pitfalls_in_the_evaluation_of_uncertainty_estimation_methods_for_natu.md)
+- [\[ICLR 2026\] The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs](the_open_proof_corpus_a_large-scale_study_of_llm-generated_mathematical_proofs.md)
 - [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](../../ACL2026/llm_evaluation/if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
-- [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](../../ACL2026/llm_evaluation/locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
-- [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](../../ACL2026/llm_evaluation/rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
-- [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](../../ACL2026/llm_evaluation/k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Open-World Skill Discovery from Unsegmented Demonstration Videos
 description: >-
-  [ICCV 2025][Segmentation][Skill Discovery] Inspired by the human cognitive Event Segmentation Theory (EST), this paper proposes the Skill Boundary Detection (SBD) algorithm…
+  [ICCV 2025][Segmentation][Skill Discovery] Inspired by the human cognitive Event Segmentation Theory (EST), this paper proposes the Skill Boundary Detection (SBD) algorithm, which leverages **prediction error spikes** from a pretrained unconditional action prediction model to automatically identify skill boundaries in unsegmented demonstration videos, significantly improving the performance of conditional policies and hierarchical agents in Minecraft.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Open-World"
   - "Minecraft"
 date: 2026-05-08
-content_hash: 54c3cabe356257b7
+content_hash: 56f2470e2866e83b
 ---
 
 # Open-World Skill Discovery from Unsegmented Demonstration Videos
@@ -168,7 +168,7 @@ Representative skill improvements:
 - [\[ICCV 2025\] ReferEverything: Towards Segmenting Everything We Can Speak of in Videos](refereverything_towards_segmenting_everything_we_can_speak_of_in_videos.md)
 - [\[ICCV 2025\] Learning Precise Affordances from Egocentric Videos for Robotic Manipulation](learning_precise_affordances_from_egocentric_videos_for_robotic_manipulation.md)
 - [\[ICCV 2025\] 2HandedAfforder: Learning Precise Actionable Bimanual Affordances from Human Videos](2handedafforder_learning_precise_actionable_bimanual_affordances_from_human_vide.md)
-- [\[ICCV 2025\] Ensemble Foreground Management for Unsupervised Object Discovery](ensemble_foreground_management_for_unsupervised_object_discovery.md)
+- [\[CVPR 2025\] ROCKET-1: Mastering Open-World Interaction with Visual-Temporal Context Prompting](../../CVPR2025/segmentation/rocket-1_mastering_open-world_interaction_with_visual-temporal_context_prompting.md)
 
 </div>
 

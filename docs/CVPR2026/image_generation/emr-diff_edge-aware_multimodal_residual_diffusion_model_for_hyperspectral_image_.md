@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] EMR-Diff reformulates the fusion task of "Low-Resolution Hyperspectral Image (LR-HSI) + High-Resolution Multispectral Image (HR-MSI)" into "High-Resolution Hyperspectral Image (HR-HSI)" as a diffusion process. By transferring **multimodal residuals** instead of pure Gaussian noise between the start and end of the Marko
+  [CVPR 2026][Image Generation][Hyperspectral Image Super-Resolution] EMR-Diff reformulates the fusion task of "Low-Resolution Hyperspectral Image (LR-HSI) + High-Resolution Multispectral Image (HR-MSI)" into "High-Resolution Hyperspectral Image (HR-HSI)" as a diffusion process. By transferring **multimodal residuals** instead of pure Gaussian noise between the start and end of the Markov chain, the sampling steps are reduced from thousands to 5. Furthermore…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Hyperspectral Image Super-Resolution"
+  - "Multimodal Residual Diffusion"
+  - "Edge-aware Noise"
+  - "Image Fusion"
+  - "Dual-branch UNet"
 date: 2026-05-08
-content_hash: 50f662d2a015d681
+content_hash: 09748c804d8ef2d0
 ---
+
 # EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ Traditional methods (CNMF/Hysure) lag significantly behind, and unsupervised met
 - Value: ⭐⭐⭐⭐ High-quality 5-step HSI SR; the residual-endpoint concept is highly applicable to other paired restoration tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](../../AAAI2026/image_generation/gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
+- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
+- [\[ICLR 2026\] Step-Aware Residual-Guided Diffusion for EEG Spatial Super-Resolution](../../ICLR2026/image_generation/step-aware_residual-guided_diffusion_for_eeg_spatial_super-resolution.md)
 - [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
-- [\[CVPR 2026\] Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning](enhancing_unregistered_hyperspectral_image_super-resolution_via_unmixing-based_a.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
-- [\[CVPR 2026\] Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)
+- [\[CVPR 2026\] Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction](physics-consistent_diffusion_for_efficient_fluid_super-resolution_via_multiscale.md)
 
 </div>
 

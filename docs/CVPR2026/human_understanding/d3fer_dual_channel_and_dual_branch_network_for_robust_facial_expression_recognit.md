@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Aiming at the compound challenge of "visual disturbances (occlusion/pose) + label noise" in in-the-wild facial expression recognition (FER), D³FER feeds weak/strong dual-channel augmentations into a Query-Key momentum dual-branch network. It utilizes a cross-batch dynamic queue to cache both confidence scores for adapt
+  [CVPR 2026][Human Understanding][Facial Expression Recognition] Aiming at the compound challenge of "visual disturbances (occlusion/pose) + label noise" in in-the-wild facial expression recognition (FER), D³FER feeds weak/strong dual-channel augmentations into a Query-Key momentum dual-branch network. It utilizes a cross-batch dynamic queue to cache both confidence scores for adaptive threshold-based sample filtering and label correction, as well as features for supervised co…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Facial Expression Recognition"
+  - "Label Noise"
+  - "Momentum Contrastive Learning"
+  - "Dynamic Queue"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 7e19029cf45666e3
+content_hash: c2e43fcfa7555b85
 ---
+
 # D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges
 
 **Conference**: CVPR 2026  
@@ -156,16 +162,16 @@ Evaluation of SL (Sample Filtering/Label Correction), CL (Contrastive Learning),
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)
 - [\[CVPR 2026\] Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition](dynamic_label_noise_suppression_with_optimal_teacher_pool_for_facial_expression_.md)
 - [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
 - [\[CVPR 2026\] CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition](clex_complementary_label_exchange_learning_for_noisy_facial_expression_recogniti.md)
-- [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](eventgait_towards_robust_gait_recognition_with_event_streams.md)
+- [\[ECCV 2024\] Generalizable Facial Expression Recognition](../../ECCV2024/human_understanding/generalizable_facial_expression_recognition.md)
+- [\[ICCV 2025\] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing](../../ICCV2025/human_understanding/dadm_dual_alignment_of_domain_and_modality_for_face_anti-spoofing.md)
 
 </div>
 

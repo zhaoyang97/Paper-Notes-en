@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RouteNLP: Closed-Loop LLM Routing with Conformal Cascading and Distillation Co-Optimization
 description: >-
-  [ACL 2026][Model Compression][conformal cascading] RouteNLP is a closed-loop LLM routing and cascading framework that co-optimizes model combinations using task-aware routers, conformal calibrated cascading, and failure-cluster-directed distillation. It achieves a 0.159 cost ratio while maintaining a 0.971 quality ratio across a six-task enterprise benchmark, and reduc
+  [ACL2026][Model Compression][LLM Routing] RouteNLP is a closed-loop LLM routing and cascading framework that co-optimizes model combinations using task-aware routers, conformal calibrated cascading, and failure-cluster-directed distillation. It achieves a 0.159 cost ratio while maintaining a 0.971 quality ratio across a six-task enterprise benchmark, and reduced inference costs by 58% in an 8-week customer service pilot while maintaining a 91% response acceptance rate.
 tags:
-  - ACL 2026
-  - Model Compression
-  - conformal cascading
-  - Knowledge Distillation
+  - "ACL2026"
+  - "Model Compression"
+  - "LLM Routing"
+  - "conformal cascading"
+  - "knowledge distillation"
+  - "cost optimization"
+  - "enterprise deployment"
 date: 2026-05-08
-content_hash: d4a1accfcf7d868f
+content_hash: 9da6452ebc5d76f0
 ---
+
 # RouteNLP: Closed-Loop LLM Routing with Conformal Cascading and Distillation Co-Optimization
 
 **Conference**: ACL2026  
@@ -148,10 +152,10 @@ RouteNLP achieves significantly lower costs than Hybrid LLM with nearly identica
 ## Related Papers
 
 - [\[NeurIPS 2025\] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation](../../NeurIPS2025/model_compression/beyond_random_automatic_inner-loop_optimization_in_dataset_distillation.md)
+- [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](../../ICLR2026/model_compression/drllm_dynamic_layer_routing_in_llms.md)
 - [\[ACL 2026\] LLM Prompt Duel Optimizer: Efficient Label-Free Prompt Optimization](llm_prompt_duel_optimizer_efficient_label-free_prompt_optimization.md)
 - [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](../../NeurIPS2025/model_compression/orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
-- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
-- [\[AAAI 2026\] From Parameter to Representation: A Closed-Form Approach for Controllable Model Merging](../../AAAI2026/model_compression/from_parameter_to_representation_a_closed-form_approach_for_controllable_model_m.md)
+- [\[ICLR 2026\] DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation](../../ICLR2026/model_compression/dto-kd_dynamic_trade-off_optimization_for_effective_knowledge_distillation.md)
 
 </div>
 

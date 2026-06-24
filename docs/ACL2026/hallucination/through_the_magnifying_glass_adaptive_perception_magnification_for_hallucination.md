@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding
 description: >-
-  [ACL 2026][Hallucination Detection][Vision-Language Model] This paper proposes Perception Magnifier (PM), a visual decoding method that iteratively identifies key visual regions using multi-layer attention during each autoregressive decoding step and adaptively magnifies them. By enhancing the effective resolution of key regions, it mitigates VLM visual hallucinations while ma
+  [ACL 2026][Hallucination Detection][Visual Hallucination Mitigation] This paper proposes Perception Magnifier (PM), a visual decoding method that iteratively identifies key visual regions using multi-layer attention during each autoregressive decoding step and adaptively magnifies them. By enhancing the effective resolution of key regions, it mitigates VLM visual hallucinations while maintaining spatial structural integrity and reasoning capabilities.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Visual Hallucination Mitigation"
+  - "Perception Magnification"
+  - "Attention-Guided Decoding"
+  - "Iterative Refinement"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: 755228c7d877ee0c
+content_hash: 19f5eaba2266abc7
 ---
+
 # Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding
 
 **Conference**: ACL 2026  
@@ -172,10 +177,10 @@ PM operates entirely at inference time and requires no training. The base model 
 ## Related Papers
 
 - [\[ACL 2025\] Mixture of Decoding: An Attention-Inspired Adaptive Decoding Strategy to Mitigate Hallucination in Multimodal LLMs](../../ACL2025/hallucination/mixture_of_decoding_an_attention-inspired_adaptive_decoding_strategy_to_mitigate.md)
-- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
-- [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](../../ICLR2026/hallucination/enhancing_hallucination_detection_through_noise_injection.md)
-- [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/hallucination/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
 - [\[ACL 2025\] Activation Steering Decoding: Mitigating Hallucination in Large Vision-Language Models through Bidirectional Hidden State Intervention](../../ACL2025/hallucination/activation_steering_decoding_mitigating_hallucination_in_large_vision-language_m.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/hallucination/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
+- [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](../../ICLR2026/hallucination/enhancing_hallucination_detection_through_noise_injection.md)
 
 </div>
 

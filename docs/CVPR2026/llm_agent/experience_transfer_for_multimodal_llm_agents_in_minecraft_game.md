@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Experience Transfer for Multimodal LLM Agents in Minecraft Game
 description: >-
-  [CVPR 2026][LLM Agent][Minecraft] This paper proposes Echo—a "transfer-oriented" memory framework that explicitly decomposes reusable knowledge into five transfer dimensions: structure, attribute, process, function, and interaction. These are encapsulated into a unified Contextual State Descriptor (CSD). Using In-Context Analogical Learning (ICAL), the
+  [CVPR 2026][LLM Agent][Experience Transfer] This paper proposes Echo—a "transfer-oriented" memory framework that explicitly decomposes reusable knowledge into five transfer dimensions: structure, attribute, process, function, and interaction. These are encapsulated into a unified Contextual State Descriptor (CSD). Using In-Context Analogical Learning (ICAL), the agent actively infers and verifies new tasks from the memory bank. In Minecraft "from-scratch" scenarios…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Minecraft
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Experience Transfer"
+  - "Multimodal Embodied Agent"
+  - "In-Context Analogical Learning"
+  - "Structured Memory"
+  - "Minecraft"
 date: 2026-05-08
-content_hash: d26630e1233a30f9
+content_hash: 87933db1feee0bea
 ---
+
 # Experience Transfer for Multimodal LLM Agents in Minecraft Game
 
 **Conference**: CVPR 2026  
@@ -160,9 +165,9 @@ Echo achieves up to 62.5 / 92.5 on Recipe and Crafting Table families (Bed/Craft
 
 - [\[CVPR 2026\] Learning to Select Visual Tools from Experience](learning_to_select_visual_tools_from_experience.md)
 - [\[CVPR 2026\] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing](refact_empowering_multimodal_web_agents_with_visual_and_context_focusing.md)
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](../../ICLR2026/llm_agent/towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](../../ICML2026/llm_agent/evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agentic AI Defense Against LLM Jailbreaking](../../ICLR2026/llm_agent/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agentic_ai_defense_aga.md)
-- [\[CVPR 2026\] ViLoMem: Agentic Learner with Grow-and-Refine Multimodal Semantic Memory](vilomem_agentic_learner_with_grow-and-refine_multimodal_semantic_memory.md)
+- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](../../ICML2026/llm_agent/skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
 
 </div>
 

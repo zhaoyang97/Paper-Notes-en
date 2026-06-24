@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Geo-Sign: Hyperbolic Contrastive Regularisation for Geometrically Aware Sign Language Translation
 description: >-
-  [NeurIPS 2025][LLM Safety][Sign language translation] Geo-Sign projects skeleton features into a Poincaré ball model of hyperbolic space and regularizes an mT5 language model via a hyperbolic contrastive loss…
+  [NeurIPS 2025][LLM Safety][Sign language translation] Geo-Sign projects skeleton features into a Poincaré ball model of hyperbolic space and regularizes an mT5 language model via a hyperbolic contrastive loss, enabling the model to perceive the hierarchical structure of sign language motion. Using only skeleton data, the method surpasses RGB-based SOTA on CSL-Daily (BLEU-4 +1.81, ROUGE-L +3.03).
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "skeleton representation"
 date: 2026-05-08
-content_hash: 8e2c2ca5fa9250e4
+content_hash: 835aa7d638bd38d4
 ---
 
 # Geo-Sign: Hyperbolic Contrastive Regularisation for Geometrically Aware Sign Language Translation
@@ -138,11 +138,11 @@ Input 2D skeleton keypoints (extracted by RTM-Pose) → grouped by body part (bo
 
 ## Related Papers
 
+- [\[ICML 2025\] NegMerge: Sign-Consensual Weight Merging for Machine Unlearning](../../ICML2025/llm_safety/negmerge_sign-consensual_weight_merging_for_machine_unlearning.md)
+- [\[CVPR 2025\] Hyperbolic Safety-Aware Vision-Language Models](../../CVPR2025/llm_safety/hyperbolic_safety-aware_vision-language_models.md)
 - [\[NeurIPS 2025\] FALCON: Fine-grained Activation Manipulation by Contrastive Orthogonal Unalignment for Large Language Model](falcon_fine-grained_activation_manipulation_by_contrastive_orthogonal_unalignmen.md)
 - [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
-- [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](../../ACL2026/llm_safety/rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
-- [\[AAAI 2026\] Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms](../../AAAI2026/llm_safety/lost_in_translation_a_comparative_study_on_the_cross-lingual_transfer_of_composi.md)
-- [\[ICML 2026\] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why](../../ICML2026/llm_safety/deep_sequence_models_tend_to_memorize_geometrically_it_is_unclear_why.md)
+- [\[ICLR 2026\] Harnessing Hyperbolic Geometry for Harmful Prompt Detection and Sanitization](../../ICLR2026/llm_safety/harnessing_hyperbolic_geometry_for_harmful_prompt_detection_and_sanitization.md)
 
 </div>
 

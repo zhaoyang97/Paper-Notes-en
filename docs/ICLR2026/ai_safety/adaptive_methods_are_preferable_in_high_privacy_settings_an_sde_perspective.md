@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective
 description: >-
-  [ICLR 2026][AI Safety][DP-SGD] This work introduces the first Stochastic Differential Equation (SDE) framework to analyze differential privacy (DP) optimizers, revealing fundamental differences between DP-SGD and DP-SignSGD under privacy noise. The analysis shows that adaptive methods achieve superior privacy-utility trade-offs of $\mathcal{O}(1/\va
+  [ICLR 2026][AI Safety][Differential Privacy] This work introduces the first Stochastic Differential Equation (SDE) framework to analyze differential privacy (DP) optimizers, revealing fundamental differences between DP-SGD and DP-SignSGD under privacy noise. The analysis shows that adaptive methods achieve superior privacy-utility trade-offs of $\mathcal{O}(1/\varepsilon)$ compared to $\mathcal{O}(1/\varepsilon^2)$ in high privacy settings, and their hyperparameters remain tr…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DP-SGD
-  - DP-SignSGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "SDE Analysis"
+  - "DP-SGD"
+  - "DP-SignSGD"
+  - "Privacy-Utility Trade-off"
 date: 2026-05-08
-content_hash: ced87f09b0c2772d
+content_hash: 2380a6ca42e572b8
 ---
+
 # Adaptive Methods Are Preferable in High Privacy Settings: An SDE Perspective
 
 **Conference**: ICLR 2026  
@@ -111,7 +115,7 @@ The theory is established under $\mu$-PL or $L$-smooth loss assumptions. Trainin
 - [\[ICLR 2026\] Optimizing Canaries for Privacy Auditing with Metagradient Descent](optimizing_canaries_for_privacy_auditing_with_metagradient_descent.md)
 - [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
 - [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
-- [\[ICLR 2026\] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information](why_do_unlearnable_examples_work_a_novel_perspective_of_mutual_information.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 
 </div>
 

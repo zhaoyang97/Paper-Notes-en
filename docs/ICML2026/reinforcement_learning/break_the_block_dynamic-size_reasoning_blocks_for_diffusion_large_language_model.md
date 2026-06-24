@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][dLLM] Addressing the issue where "fixed block sizes" break the logical chain of thought during semi-autoregressive generation in Diffusion Large Language Models (dLLM), this paper proposes b1. It learns a block-end indicator token via RL to generate dynamic-length blocks and employs a "block-level Monotonic Entropy Descent (
+  [ICML 2026][Reinforcement Learning][dLLM] Addressing the issue where "fixed block sizes" break the logical chain of thought during semi-autoregressive generation in Diffusion Large Language Models (dLLM), this paper proposes b1. It learns a block-end indicator token via RL to generate dynamic-length blocks and employs a "block-level Monotonic Entropy Descent (MED) reward" to drive coherent reasoning. As a plug-and-play reward term integrated into existing dLLM RL frameworks (…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - dLLM
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "dLLM"
+  - "GRPO"
+  - "dynamic block size"
+  - "Monotonic Entropy Descent"
+  - "inference consistency"
 date: 2026-05-08
-content_hash: 8df70d120ec1af24
+content_hash: 02f9b6e1394acde7
 ---
+
 # Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -140,7 +144,7 @@ The most significant improvement: wd1 + b1 achieved a +19.53 point gain on Count
 - [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
 - [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
-- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
+- [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](../../ICLR2026/reinforcement_learning/revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
 
 </div>

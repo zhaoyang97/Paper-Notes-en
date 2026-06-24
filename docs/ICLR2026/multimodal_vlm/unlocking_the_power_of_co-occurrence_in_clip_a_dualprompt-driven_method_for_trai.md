@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] This paper discovers that rewriting CLIP's discriminative prompts (containing only the target label) into "relational prompts" with co-occurring labels introduces co-occurrence information to improve multi-label recognition, but also causes CLIP to overfit co-occurrences and produce object hallucinations. Consequently,
+  [ICLR 2026][Multimodal VLM][CLIP] This paper discovers that rewriting CLIP's discriminative prompts (containing only the target label) into "relational prompts" with co-occurring labels introduces co-occurrence information to improve multi-label recognition, but also causes CLIP to overfit co-occurrences and produce object hallucinations. Consequently, the authors model co-occurrence as a mediator using causal inference and derive a training-free calibration formula—simply ad…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Zero-shot Multi-label Classification"
+  - "Label Co-occurrence"
+  - "Causal Inference"
+  - "Prompt Engineering"
 date: 2026-05-08
-content_hash: 92ea96791db61aaa
+content_hash: a8a9c2395fa2e051
 ---
+
 # Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification
 
 **Conference**: ICLR 2026  

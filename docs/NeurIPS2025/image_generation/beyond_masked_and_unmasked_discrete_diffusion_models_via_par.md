@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] Prime (Partial masking scheme) represents each token as a base-$b$ sub-token sequence and independently masks at the sub-token level…
+  [NeurIPS 2025][Image Generation][discrete diffusion models] Prime (Partial masking scheme) represents each token as a base-$b$ sub-token sequence and independently masks at the sub-token level, introducing intermediate states into masked diffusion models to enable fine-grained denoising. On OpenWebText, it achieves a perplexity of 15.36, becoming the first MDM to surpass ARM (17.54) without relying on an autoregressive formulation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "sub-tokens"
   - "text generation"
 date: 2026-05-08
-content_hash: e5d62ef9881386b5
+content_hash: ad80ef7a4b7f2440
 ---
 
 # Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking
@@ -133,7 +133,7 @@ which is a weighted cross-entropy loss and is theoretically guaranteed to be an 
 - [\[NeurIPS 2025\] Learnable Sampler Distillation for Discrete Diffusion Models](learnable_sampler_distillation_for_discrete_diffusion_models.md)
 - [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](non-markovian_discrete_diffusion_with_causal_language_models.md)
 - [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
-- [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](../../ICCV2025/image_generation/latent_diffusion_models_with_masked_autoencoders.md)
+- [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
 
 </div>
 

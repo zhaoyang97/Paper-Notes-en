@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Know Thyself by Knowing Others: Learning Neuron Identity from Population Context
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][neuron identity] This paper proposes NuCLR, a self-supervised framework that learns neuron-level representations enriched with population context via contrastive learning—pulling…
+  [NeurIPS 2025][Self-Supervised Learning][neuron identity] This paper proposes NuCLR, a self-supervised framework that learns neuron-level representations enriched with population context via contrastive learning—pulling together different temporal windows of the same neuron and pushing apart different neurons within a population. NuCLR achieves new state-of-the-art performance on cell type and brain region decoding, and is the first to demonstrate cross-animal zero-shot gener…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -11,7 +11,7 @@ tags:
   - "spatiotemporal Transformer"
   - "cell type decoding"
 date: 2026-05-08
-content_hash: f10f757eda27b715
+content_hash: b36daa84e20350b1
 ---
 
 # Know Thyself by Knowing Others: Learning Neuron Identity from Population Context
@@ -116,11 +116,11 @@ Self-supervised pretraining (contrastive learning) → frozen encoder → linear
 
 ## Related Papers
 
-- [\[ICML 2026\] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment](../../ICML2026/self_supervised/mitigating_label_shift_in_tabular_in-context_learning_via_test-time_posterior_ad.md)
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](../../ICLR2026/self_supervised/in_context_semi-supervised_learning.md)
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](../../CVPR2026/self_supervised/reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
+- [\[ICML 2025\] Test-Time Training Provably Improves Transformers as In-Context Learners](../../ICML2025/self_supervised/test-time_training_provably_improves_transformers_as_in-context_learners.md)
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
-- [\[NeurIPS 2025\] The Complexity of Finding Local Optima in Contrastive Learning](the_complexity_of_finding_local_optima_in_contrastive_learning.md)
-- [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
 
 </div>
 

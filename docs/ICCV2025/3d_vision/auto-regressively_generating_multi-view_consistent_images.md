@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Auto-Regressively Generating Multi-View Consistent Images
 description: >-
-  [ICCV 2025][3D Vision][Multi-view generation] This paper proposes MV-AR, the first autoregressive model for multi-view image generation. It progressively generates each subsequent view conditioned on all previously gener…
+  [ICCV 2025][3D Vision][Multi-view generation] This paper proposes MV-AR, the first autoregressive model for multi-view image generation. It progressively generates each subsequent view conditioned on all previously generated views, incorporating a unified multimodal condition injection module and a Shuffle View data augmentation strategy. MV-AR achieves consistency comparable to diffusion-based methods under text, image, and shape conditioning.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "multimodal conditioning"
   - "view consistency"
 date: 2026-05-08
-content_hash: 7b7228c049072a1c
+content_hash: d444280ba42561fb
 ---
 
 # Auto-Regressively Generating Multi-View Consistent Images
@@ -148,8 +148,8 @@ Shuffle View is the most impactful component (its removal degrades FID by +29 an
 - [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
 - [\[ICCV 2025\] PanSt3R: Multi-view Consistent Panoptic Segmentation](panst3r_multi-view_consistent_panoptic_segmentation.md)
 - [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
+- [\[CVPR 2025\] 3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement](../../CVPR2025/3d_vision/3denhancer_consistent_multi-view_diffusion_for_3d_enhancement.md)
 - [\[ICCV 2025\] MVGBench: a Comprehensive Benchmark for Multi-view Generation Models](mvgbench_a_comprehensive_benchmark_for_multi-view_generation_models.md)
-- [\[ICCV 2025\] FlexGen: Flexible Multi-View Generation from Text and Image Inputs](flexgen_flexible_multi-view_generation_from_text_and_image_inputs.md)
 
 </div>
 

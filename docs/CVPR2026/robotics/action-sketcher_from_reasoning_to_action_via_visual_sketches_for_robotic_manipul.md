@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] This paper proposes Action-Sketcher, which enables VLA models to operate in a "See-Think-Sketch-Act" loop. It first draws spatial intent as a **Visual Sketch** (composed of points, boxes, and arrows) as a human-readable and editable intermediate representation before generating actions. It significantly outperforms str
+  [CVPR 2026][Robotics][VLA] This paper proposes Action-Sketcher, which enables VLA models to operate in a "See-Think-Sketch-Act" loop. It first draws spatial intent as a **Visual Sketch** (composed of points, boxes, and arrows) as a human-readable and editable intermediate representation before generating actions. It significantly outperforms strong baselines like π0.5 and OpenVLA-OFT on long-horizon, cluttered, and referentially ambiguous real-world manipulation tasks. Furthe…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Visual Sketch"
+  - "Long-horizon Manipulation"
+  - "Human-in-the-loop"
+  - "See-Think-Sketch-Act"
 date: 2026-05-08
-content_hash: d6b0abd73884da51
+content_hash: 6ee5adaf3cd98fdb
 ---
+
 # Action-Sketcher: From Reasoning to Action via Visual Sketches for Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -175,9 +180,9 @@ Failure analysis shows 66% of failures originate in Reasoning Mode, with the vas
 
 - [\[CVPR 2026\] Unifying Perception and Action: A Hybrid-Modality Pipeline with Implicit Visual Chain-of-Thought for Robotic Action Generation (VITA)](unifying_perception_and_action_a_hybrid-modality_pipeline_with_implicit_visual_c.md)
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
-- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
 - [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
 
 </div>
 

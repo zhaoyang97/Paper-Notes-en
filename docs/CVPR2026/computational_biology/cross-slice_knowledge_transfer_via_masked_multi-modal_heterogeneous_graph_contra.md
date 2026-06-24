@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] SpaHGC is proposed, a multi-modal heterogeneous graph-based framework that integrates intra-target slice, cross-slice, and intra-reference slice subgraphs. Combined with masked graph contrastive learning and a cross-node dual attention mechanism, it predicts spatial gene expression from H&E pathology images, achieving
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] SpaHGC is proposed, a multi-modal heterogeneous graph-based framework that integrates intra-target slice, cross-slice, and intra-reference slice subgraphs. Combined with masked graph contrastive learning and a cross-node dual attention mechanism, it predicts spatial gene expression from H&E pathology images, achieving a PCC improvement of 7.3%-27.1% across seven datasets.
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Heterogeneous Graph Learning"
+  - "Cross-Slice Knowledge Transfer"
+  - "Contrastive Learning"
+  - "Gene Expression Prediction"
 date: 2026-05-08
-content_hash: 1542b9ee569aefbc
+content_hash: b01bf2f0e766048c
 ---
+
 # Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,14 @@ Effectiveness was verified by progressively removing components:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning](deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle.md)
 - [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
-- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
-- [\[AAAI 2026\] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics](../../AAAI2026/computational_biology/dual-path_knowledge-augmented_contrastive_alignment_network_for_spatially_resolv.md)
+- [\[CVPR 2026\] Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning](deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
+- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
+- [\[CVPR 2026\] Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics](bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v.md)
 
 </div>
 

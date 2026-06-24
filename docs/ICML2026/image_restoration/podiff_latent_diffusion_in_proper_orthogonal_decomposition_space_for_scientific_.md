@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution
 description: >-
-  [ICML 2026][Image Restoration][Paper Note] PODiff moves the diffusion process from pixel space to a fixed, variance-sorted POD coefficient space. By utilizing a minimal MLP, it achieves accuracy comparable to pixel-level diffusion on $640\times 480$ SST downscaling tasks. Since reconstruction is linear, ensemble variance can be analytically back-propagated to p
+  [ICML 2026][Image Restoration][POD Latent Space] PODiff moves the diffusion process from pixel space to a fixed, variance-sorted POD coefficient space. By utilizing a minimal MLP, it achieves accuracy comparable to pixel-level diffusion on $640\times 480$ SST downscaling tasks. Since reconstruction is linear, ensemble variance can be analytically back-propagated to physical space via $\Sigma_u=\Phi\Sigma_a\Phi^\top$, yielding spatially interpretable and well-calibrated uncert…
 tags:
-  - ICML 2026
-  - Image Restoration
+  - "ICML 2026"
+  - "Image Restoration"
+  - "POD Latent Space"
+  - "Conditional Diffusion"
+  - "Uncertainty Quantification"
+  - "SST Downscaling"
+  - "Ensemble Generation"
 date: 2026-05-08
-content_hash: ae1e77a75ae3622b
+content_hash: 8273b203aa78429a
 ---
+
 # PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution
 
 **Conference**: ICML 2026  
@@ -145,9 +151,9 @@ Calibration (empirical coverage / nominal): For a 90% nominal confidence interva
 ## Related Papers
 
 - [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
+- [\[ICML 2026\] Measurement-Consistent Langevin Corrector for Stabilizing Latent Diffusion Inverse Problem Solvers](measurement-consistent_langevin_corrector_for_stabilizing_latent_diffusion_inver.md)
 - [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](../../CVPR2026/image_restoration/hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
 - [\[CVPR 2026\] Rectifying Latent Space for Generative Single-Image Reflection Removal](../../CVPR2026/image_restoration/rectifying_latent_space_for_generative_single-image_reflection_removal.md)
-- [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](../../NeurIPS2025/image_restoration/audio_super-resolution_with_latent_bridge_models.md)
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](../../NeurIPS2025/image_restoration/latent_harmony_synergistic_unified_uhd_image_restoration_with_pre-trained_diffus.md)
 
 </div>

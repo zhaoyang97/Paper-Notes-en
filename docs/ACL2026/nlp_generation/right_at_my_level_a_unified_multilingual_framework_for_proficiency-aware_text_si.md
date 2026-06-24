@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification
 description: >-
-  [ACL 2026][Text Generation][GRPO] The Re-RIGHT framework is proposed, utilizing a 4B policy model trained via GRPO with a three-module reward (lexical coverage + semantic preservation + coherence). It achieves precise text simplification across English, Japanese, Korean, and Chinese according to learner proficiency levels (CEFR/JLPT/TOPIK/HSK), outperf
+  [ACL 2026][Text Generation][Text Simplification] The Re-RIGHT framework is proposed, utilizing a 4B policy model trained via GRPO with a three-module reward (lexical coverage + semantic preservation + coherence). It achieves precise text simplification across English, Japanese, Korean, and Chinese according to learner proficiency levels (CEFR/JLPT/TOPIK/HSK), outperforming large models like GPT-5.2 and Gemini 2.5.
 tags:
-  - ACL 2026
-  - Text Generation
-  - GRPO
+  - "ACL 2026"
+  - "Text Generation"
+  - "Text Simplification"
+  - "Lexical Level Control"
+  - "Multilingual Reinforcement Learning"
+  - "GRPO"
+  - "Language Learning"
 date: 2026-05-08
-content_hash: 544f76b7aa345b70
+content_hash: 53528144ac7daf3b
 ---
+
 # Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification
 
 **Conference**: ACL 2026
@@ -130,6 +135,7 @@ The GRPO algorithm is used, and the final reward is a weighted sum of the three 
 - Value: ⭐⭐⭐⭐ High practical value—directly serves L2 education; 4B model allows local deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

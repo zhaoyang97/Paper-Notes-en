@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models
 description: >-
-  [ICML 2026][Knowledge Editing][AlphaEdit] This paper proves from an optimization perspective that the stability of sequential editing (SE) stems from "cumulative updates being equivalent to the solution of one-time editing (OTE)." Fancy mechanisms like AlphaEdit's null-space projection or post-processing regularizations in PRUNE/RECT are not the critical facto
+  [ICML 2026][Knowledge Editing][Sequential Knowledge Editing] This paper proves from an optimization perspective that the stability of sequential editing (SE) stems from "cumulative updates being equivalent to the solution of one-time editing (OTE)." Fancy mechanisms like AlphaEdit's null-space projection or post-processing regularizations in PRUNE/RECT are not the critical factors—as long as OTE-SE alignment is ensured, 2000 steps of sequential editing can be stably completed…
 tags:
-  - ICML 2026
-  - Knowledge Editing
-  - AlphaEdit
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Sequential Knowledge Editing"
+  - "AlphaEdit"
+  - "Null-space Projection"
+  - "OTE-SE Equivalence"
+  - "Necessity of Regularization"
 date: 2026-05-08
-content_hash: c47ffea41c91f3c5
+content_hash: cbde1c7ef9f73d66
 ---
+
 # The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models
 
 **Conference**: ICML 2026  
@@ -113,15 +118,16 @@ GLUE General Capability Test (LLaMA-3, Falsifying Null-Space):
 - Value: ⭐⭐⭐⭐⭐ Directly simplifies the design space for sequential editing and provides a mechanical construction process for stable SE.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls](kore_enhancing_knowledge_injection_for_large_multimodal_models_via_knowledge-ori.md)
 - [\[ICML 2026\] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence](revisiting_parameter-based_knowledge_editing_in_large_language_models_theoretica.md)
 - [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
-- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](reverse-engineering_model_editing_on_language_models.md)
 - [\[AAAI 2026\] Multiplicative Orthogonal Sequential Editing for Language Models (MOSE)](../../AAAI2026/knowledge_editing/multiplicative_orthogonal_sequential_editing_for_language_models.md)
+- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](reverse-engineering_model_editing_on_language_models.md)
+- [\[ICML 2026\] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls](kore_enhancing_knowledge_injection_for_large_multimodal_models_via_knowledge-ori.md)
 
 </div>
 

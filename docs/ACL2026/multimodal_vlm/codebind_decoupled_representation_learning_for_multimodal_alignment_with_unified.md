@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CodeBind: Decoupled Representation Learning for Multimodal Alignment with Unified Compositional Codebook
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] CodeBind revamps ImageBind/ViT-Lens style multimodal alignment using shared-specific representation decoupling and a compositional VQ codebook. It simultaneously improves cross-modal classification/retrieval across nine modalities while preserving stronger mode-specific fine-grained information.
+  [ACL2026 Findings][Multimodal VLM][Multimodal Representation] CodeBind revamps ImageBind/ViT-Lens style multimodal alignment using shared-specific representation decoupling and a compositional VQ codebook. It simultaneously improves cross-modal classification/retrieval across nine modalities while preserving stronger mode-specific fine-grained information.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026 Findings"
+  - "Multimodal VLM"
+  - "Multimodal Representation"
+  - "Compositional Vector Quantization"
+  - "Shared-specific Decoupling"
+  - "Codebook"
+  - "Cross-modal Retrieval"
 date: 2026-05-08
-content_hash: 512c46e9dc75d463
+content_hash: 32337c50d4602b70
 ---
+
 # CodeBind: Decoupled Representation Learning for Multimodal Alignment with Unified Compositional Codebook
 
 **Conference**: ACL2026 Findings  
@@ -144,11 +150,11 @@ CodeBind-VL also consistently outperforms ViT-Lens; for example, ModelNet40 poin
 
 ## Related Papers
 
+- [\[ICLR 2026\] DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning](../../ICLR2026/multimodal_vlm/decalign_hierarchical_cross-modal_alignment_for_decoupled_multimodal_representat.md)
 - [\[ECCV 2024\] UniCode: Learning a Unified Codebook for Multimodal Large Language Models](../../ECCV2024/multimodal_vlm/unicode_learning_a_unified_codebook_for_multimodal_large_language_models.md)
-- [\[ACL 2025\] DALR: Dual-level Alignment Learning for Multimodal Sentence Representation Learning](../../ACL2025/multimodal_vlm/dalr_dual-level_alignment_learning_for_multimodal_sentence_representation_learni.md)
-- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[ICML 2026\] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement](../../ICML2026/multimodal_vlm/diva_harnessing_the_representation_divergence_in_unified_multimodal_models_for_m.md)
-- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
+- [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](../../ICLR2026/multimodal_vlm/decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](../../ICLR2026/multimodal_vlm/reconstruction_alignment_improves_unified_multimodal_models.md)
+- [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](../../ICLR2026/multimodal_vlm/wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
 
 </div>
 

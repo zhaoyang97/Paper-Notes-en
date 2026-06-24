@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting
 description: >-
-  [ICLR 2026][Image Generation][probabilistic forecasting] The authors propose CW-Gen (Conditionally Whitened Generative Models), which replaces the standard Gaussian terminal distribution in diffusion models/flow matching by jointly estimating the conditional mean and sliding window covariance matrix. They theoretically prove that sampling quality inevitably improves when the
+  [ICLR2026][Image Generation][probabilistic forecasting] The authors propose CW-Gen (Conditionally Whitened Generative Models), which replaces the standard Gaussian terminal distribution in diffusion models/flow matching by jointly estimating the conditional mean and sliding window covariance matrix. They theoretically prove that sampling quality inevitably improves when the estimator satisfies sufficient conditions, consistently enhancing multivariate time series probabilisti…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - probabilistic forecasting
-  - diffusion model
-  - flow matching
-  - conditional whitening
-  - covariance estimation
+  - "ICLR2026"
+  - "Image Generation"
+  - "probabilistic forecasting"
+  - "diffusion model"
+  - "flow matching"
+  - "conditional whitening"
+  - "covariance estimation"
 date: 2026-05-08
-content_hash: e5851175eb913b07
+content_hash: f500e7c27b56b2aa
 ---
+
 # Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting
 
 **Conference**: ICLR2026  
@@ -149,11 +150,11 @@ JMCE is pre-trained independently using a Non-stationary Transformer backbone. O
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Probabilistic Hard Concept Bottleneck for Steerable Generative Models](a_probabilistic_hard_concept_bottleneck_for_steerable_generative_models.md)
 - [\[AAAI 2026\] SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting](../../AAAI2026/image_generation/simdiff_simpler_yet_better_diffusion_model_for_time_series_point_forecasting.md)
 - [\[ICLR 2026\] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting](doflow_flow-based_generative_models_for_interventional_and_counterfactual_foreca.md)
 - [\[ECCV 2024\] Probabilistic Weather Forecasting with Deterministic Guidance-Based Diffusion Model](../../ECCV2024/image_generation/probabilistic_weather_forecasting_with_deterministic_guidance-based_diffusion_mo.md)
-- [\[AAAI 2026\] TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective](../../AAAI2026/image_generation/tsgdiff_rethinking_synthetic_time_series_generation_from_a_pure_graph_perspectiv.md)
-- [\[CVPR 2026\] Elucidating the SNR-t Bias of Diffusion Probabilistic Models](../../CVPR2026/image_generation/dcw_snr_t_bias_diffusion.md)
+- [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
 
 </div>
 

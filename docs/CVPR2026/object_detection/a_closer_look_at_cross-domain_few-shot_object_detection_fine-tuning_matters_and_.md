@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes the Hybrid Ensemble Decoder (HED) and a progressive fine-tuning strategy for cross-domain few-shot object detection (CD-FSOD). By parallelizing part of the decoding layers and introducing prediction diversity through randomly initialized denoising queries, the method achieves SOTA performance on CD-
+  [CVPR 2026][Object Detection][Few-shot object detection] This paper proposes the Hybrid Ensemble Decoder (HED) and a progressive fine-tuning strategy for cross-domain few-shot object detection (CD-FSOD). By parallelizing part of the decoding layers and introducing prediction diversity through randomly initialized denoising queries, the method achieves SOTA performance on CD-FSOD, ODinW-13, and RF100-VL benchmarks without introducing any additional parameters.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Few-shot object detection"
+  - "cross-domain transfer"
+  - "Hybrid Ensemble Decoder"
+  - "progressive fine-tuning"
+  - "OOD robustness"
 date: 2026-05-08
-content_hash: d02f61187fc37d5b
+content_hash: 2905b0537651eb0d
 ---
+
 # A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ On the challenging RF100-VL, the method outperforms SAM3 by 6.2 points.
 ## Related Papers
 
 - [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] Evaluating Few-Shot Pill Recognition Under Visual Domain Shift](evaluating_few-shot_pill_recognition_under_visual_domain_shift.md)
-- [\[CVPR 2026\] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)
+- [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
+- [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
 - [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
+- [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
 
 </div>
 

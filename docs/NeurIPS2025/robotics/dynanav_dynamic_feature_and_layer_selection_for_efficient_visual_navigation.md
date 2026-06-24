@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation
 description: >-
-  [NeurIPS 2025][Robotics][visual navigation] DynaNav is proposed to dynamically adjust feature and layer usage according to scene complexity via a trainable hard feature selector and a Bayesian optimization-based early-ex…
+  [NeurIPS 2025][Robotics][visual navigation] DynaNav is proposed to dynamically adjust feature and layer usage according to scene complexity via a trainable hard feature selector and a Bayesian optimization-based early-exit mechanism, achieving a 2.26× FLOPs reduction and 42.3% inference time decrease in visual navigation while maintaining or improving navigation performance.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "feature selection"
   - "efficient deployment"
 date: 2026-05-08
-content_hash: d09c59a50d0651c5
+content_hash: f824724f31c465ae
 ---
 
 # DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation
@@ -164,11 +164,11 @@ Evaluated on Town02 (easy), Town03 (medium), and Town10 (hard):
 
 ## Related Papers
 
-- [\[CVPR 2026\] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](../../CVPR2026/robotics/strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)
-- [\[NeurIPS 2025\] Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras](talk2event_grounded_understanding_of_dynamic_scenes_from_event_cameras.md)
-- [\[NeurIPS 2025\] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval](efficientnav_towards_on-device_object-goal_navigation_with_navigation_map_cachin.md)
-- [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
+- [\[CVPR 2026\] FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction](../../CVPR2026/robotics/force_transferable_visual_jailbreaking_attacks_via_feature_over_reliance_correct.md)
 - [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
+- [\[NeurIPS 2025\] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval](efficientnav_towards_on-device_object-goal_navigation_with_navigation_map_cachin.md)
+- [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](../../ICLR2026/robotics/action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
+- [\[NeurIPS 2025\] Talk2Event: Grounded Understanding of Dynamic Scenes from Event Cameras](talk2event_grounded_understanding_of_dynamic_scenes_from_event_cameras.md)
 
 </div>
 

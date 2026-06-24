@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Additive Models Explained: A Computational Complexity Approach
 description: >-
-  [NeurIPS 2025][Interpretability][GAM] This paper presents a systematic computational complexity analysis of multiple explanation types for Generalized Additive Models (GAMs)…
+  [NeurIPS 2025][Interpretability][GAM] This paper presents a systematic computational complexity analysis of multiple explanation types for Generalized Additive Models (GAMs), covering 54 combinations of "component model × input domain × explanation method." It reveals that the explanation complexity of GAMs is highly sensitive to the type of input domain — a phenomenon never observed in other ML models such as decision trees or neural networks — thereby challenging the intuit…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "Sufficient Reasons"
   - "Contrastive Explanations"
 date: 2026-05-08
-content_hash: 21b3548e3414673d
+content_hash: 2ef1c7e37776cd2a
 ---
 
 # Additive Models Explained: A Computational Complexity Approach
@@ -140,9 +140,9 @@ This is a purely theoretical work with no empirical experiments. The core contri
 
 - [\[NeurIPS 2025\] SpEx: A Spectral Approach to Explainable Clustering](spex_a_spectral_approach_to_explainable_clustering.md)
 - [\[ICLR 2026\] Provably Explaining Neural Additive Models](../../ICLR2026/interpretability/provably_explaining_neural_additive_models.md)
-- [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](base_models_know_how_to_reason_thinking_models_learn_when.md)
-- [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
-- [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](../../ICML2026/interpretability/beyond_additive_decompositions_interpretability_through_separability.md)
+- [\[ICML 2025\] Validating Mechanistic Interpretations: An Axiomatic Approach](../../ICML2025/interpretability/validating_mechanistic_interpretations_an_axiomatic_approach.md)
+- [\[ICML 2025\] Inference-Time Decomposition of Activations (ITDA): A Scalable Approach to Interpreting Large Language Models](../../ICML2025/interpretability/inference-time_decomposition_of_activations_itda_a_scalable_approach_to_interpre.md)
+- [\[ICML 2025\] A Reasoning-Based Approach to Cryptic Crossword Clue Solving](../../ICML2025/interpretability/a_reasoning-based_approach_to_cryptic_crossword_clue_solving.md)
 
 </div>
 

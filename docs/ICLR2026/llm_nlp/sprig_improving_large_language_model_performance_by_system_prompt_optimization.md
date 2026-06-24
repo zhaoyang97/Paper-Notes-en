@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPRIG: Improving Large Language Model Performance by System Prompt Optimization
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] SPRIG utilizes an "edit-based genetic algorithm + proxy reward model" to automatically assemble a **task-agnostic system prompt**. A single system prompt's average improvement across 47 task categories matches "task-specific prompts optimized individually for each task," while the combination of both further achieves n
+  [ICLR 2026][LLM (Other)][System Prompt] SPRIG utilizes an "edit-based genetic algorithm + proxy reward model" to automatically assemble a **task-agnostic system prompt**. A single system prompt's average improvement across 47 task categories matches "task-specific prompts optimized individually for each task," while the combination of both further achieves new SOTA results and transfers across model families and languages.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "System Prompt"
+  - "Genetic Algorithm"
+  - "Prompt Optimization"
+  - "Reward Model"
+  - "Generalization"
 date: 2026-05-08
-content_hash: ba20d686ef9b5620
+content_hash: 662fcf02bb50f578
 ---
+
 # SPRIG: Improving Large Language Model Performance by System Prompt Optimization
 
 **Conference**: ICLR 2026  
@@ -130,9 +136,9 @@ Core conclusion: A **single SPRIG system prompt** provides an improvement of app
 
 - [\[ICLR 2026\] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback](sipdo_closed-loop_prompt_optimization_via_synthetic_data_feedback.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
+- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
 - [\[ICLR 2026\] Prompt-MII: Meta-Learning Instruction Induction for LLMs](prompt-mii_meta-learning_instruction_induction_for_llms.md)
 - [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
-- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
 
 </div>
 

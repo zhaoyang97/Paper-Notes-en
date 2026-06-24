@@ -2,17 +2,21 @@
 title: >-
   [Paper Note] Holdout-Loss-Based Data Selection for LLM Finetuning via In-Context Learning
 description: >-
-  [ICLR 2026][Alignment & RLHF][holdout loss] By using In-Context Learning (treating the holdout set as in-context examples) to approximate "the holdout loss brought by training on a specific sample," the proposed method scores and dynamically reweights each fine-tuning sample without needing a reference model or retraining. This consistently improves alignment fo
+  [ICLR 2026][LLM Alignment][data selection] By using In-Context Learning (treating the holdout set as in-context examples) to approximate "the holdout loss brought by training on a specific sample," the proposed method scores and dynamically reweights each fine-tuning sample without needing a reference model or retraining. This consistently improves alignment for SFT/DPO/SimPO with an additional overhead of only approximately 1.5%.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - holdout loss
-  - in-context learning
-  - SFT
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "data selection"
+  - "holdout loss"
+  - "in-context learning"
+  - "gradient reweighting"
+  - "SFT"
+  - "DPO"
+  - "SimPO"
 date: 2026-05-08
-content_hash: 24eeefb926441166
+content_hash: 57c0a265f5e1bf16
 ---
+
 # Holdout-Loss-Based Data Selection for LLM Finetuning via In-Context Learning
 
 **Conference**: ICLR 2026  
@@ -132,7 +136,6 @@ SimPO (Table 3) trends are consistent, generally 62–94% against w/o and mostly
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

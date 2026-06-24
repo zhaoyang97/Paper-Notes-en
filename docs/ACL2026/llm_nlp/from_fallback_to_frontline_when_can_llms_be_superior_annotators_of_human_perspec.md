@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?
 description: >-
-  [ACL 2026][LLM (Other)][Perspective-Taking] This paper reformulates "perspective-taking (PT)," a subjective annotation task long considered human-exclusive, as a "statistical estimation problem of the latent group mean $f^*(x,g)$." Using a tripartite decomposition of bias, variance, and correlation, it proves that in low-budget, broad-group, or out-group scenari
+  [ACL 2026][LLM (Other)][Perspective-Taking] This paper reformulates "perspective-taking (PT)," a subjective annotation task long considered human-exclusive, as a "statistical estimation problem of the latent group mean $f^*(x,g)$." Using a tripartite decomposition of bias, variance, and correlation, it proves that in low-budget, broad-group, or out-group scenarios, LLMs are not merely cheap substitutes but **superior estimators** compared to in-group human annotators. It furt…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - Perspective-Taking
-  - LLM as Annotator
-  - Bias-Variance Decomposition
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Perspective-Taking"
+  - "LLM as Annotator"
+  - "Bias-Variance Decomposition"
+  - "Subjective Annotation"
+  - "Counter-intuitive Findings"
 date: 2026-05-08
-content_hash: 513d86196ceef053
+content_hash: 538fe4ec7d5f3c52
 ---
+
 # From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?
 
 **Conference**: ACL 2026  
@@ -136,16 +139,16 @@ Impact of interventions on LLM PT (GPT-o1:120B on female subgroup, $k=1$):
 - **Value**: ⭐⭐⭐⭐⭐ Directly impacts cost/quality decisions for NLP annotation pipelines; immediately applicable in industry.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2025\] Can LLMs Ground when they (Don't) Know: A Study on Direct and Loaded Political Questions](../../ACL2025/llm_nlp/can_llms_ground_when_they_dont_know_a_study_on_direct_and_loaded_political_quest.md)
+- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
+- [\[ACL 2026\] When TableQA Meets Noise: A Dual Denoising Framework for Complex Questions and Large Tables](when_tableqa_meets_noise_a_dual_denoising_framework_for_complex_questions_and_la.md)
 - [\[ACL 2025\] Can Language Models Reason about Individualistic Human Values and Preferences?](../../ACL2025/llm_nlp/can_language_models_reason_about_individualistic_human_values_and_preferences.md)
 - [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
-- [\[ACL 2025\] When to Speak, When to Abstain: Contrastive Decoding with Abstention](../../ACL2025/llm_nlp/when_to_speak_when_to_abstain.md)
-- [\[ICLR 2026\] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making](../../ICLR2026/llm_nlp/when_stability_fails_hidden_failure_modes_of_llms_in_data-constrained_scientific.md)
 
 </div>
 

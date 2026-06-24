@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data
 description: >-
-  [NeurIPS 2025 (Workshop: UrbanAI 2025)][Image Generation][Satellite image synthesis] OSMGen synthesizes high-fidelity satellite images directly from OSM JSON data (vector geometry, semantic tags, location…
+  [NeurIPS 2025 (Workshop: UrbanAI 2025)][Image Generation][Satellite image synthesis] OSMGen synthesizes high-fidelity satellite images directly from OSM JSON data (vector geometry, semantic tags, location, and temporal information), and generates temporally consistent before-after image pairs via DDIM inversion, enabling urban change simulation and data augmentation.
 tags:
   - "NeurIPS 2025 (Workshop: UrbanAI 2025)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "DDIM inversion"
   - "change detection"
 date: 2026-05-08
-content_hash: c8fb40746d37da56
+content_hash: 634e05bbd032753d
 ---
 
 # OSMGen: Highly Controllable Satellite Image Synthesis using OpenStreetMap Data
@@ -169,11 +169,11 @@ Evaluated on approximately 2,000 FMoW test locations, generating 256×256 pixel 
 
 ## Related Papers
 
+- [\[ECCV 2024\] Editable Image Elements for Controllable Synthesis](../../ECCV2024/image_generation/editable_image_elements_for_controllable_synthesis.md)
 - [\[NeurIPS 2025\] SceneDesigner: Controllable Multi-Object Image Generation with 9-DoF Pose Manipulation](scenedesigner_controllable_multi-object_image_generation_with_9-dof_pose_manipul.md)
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](../../CVPR2026/image_generation/dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
+- [\[ECCV 2024\] ∞-Brush: Controllable Large Image Synthesis with Diffusion Models in Infinite Dimensions](../../ECCV2024/image_generation/inftybrush_controllable_large_image_synthesis_with_diffusion.md)
 - [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
-- [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](../../CVPR2026/image_generation/ahs_adaptive_head_synthesis.md)
-- [\[ICCV 2025\] PolarAnything: Diffusion-based Polarimetric Image Synthesis](../../ICCV2025/image_generation/polaranything_diffusion-based_polarimetric_image_synthesis.md)
 
 </div>
 

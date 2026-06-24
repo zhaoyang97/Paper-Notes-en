@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] LucidFlux: Caption-Free Photo-Realistic Image Restoration via a Large-Scale Diffusion Transformer
 description: >-
-  [ICLR 2026][Image Restoration][Flux.1] LucidFlux utilizes a frozen 12B Flux.1 large-scale Diffusion Transformer for real-world image restoration. By employing a dual-branch conditioner, timestep-layer adaptive modulation, SigLIP-based caption-free semantic alignment, and large-scale high-quality data filtering, it achieves superior perceptual quality and se
+  [ICLR2026][Image Restoration][Diffusion Transformer] LucidFlux utilizes a frozen 12B Flux.1 large-scale Diffusion Transformer for real-world image restoration. By employing a dual-branch conditioner, timestep-layer adaptive modulation, SigLIP-based caption-free semantic alignment, and large-scale high-quality data filtering, it achieves superior perceptual quality and semantic consistency across multiple real-world and synthetic degradation benchmarks.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Flux.1
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Diffusion Transformer"
+  - "Caption-Free Semantic Alignment"
+  - "Flux.1"
+  - "Data Filtering"
 date: 2026-05-08
-content_hash: 540745f9e15c56be
+content_hash: ef5cbe11d0ff92bf
 ---
+
 # LucidFlux: Caption-Free Photo-Realistic Image Restoration via a Large-Scale Diffusion Transformer
 
 **Conference**: ICLR2026  
@@ -171,11 +175,20 @@ Ablation of captioning strategies on RealSR shows the caption-free approach (CLI
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion](livemoments_reselected_key_photo_restoration_in_live_photos_via_reference-guided.md)
+- [\[CVPR 2026\] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](../../CVPR2026/image_restoration/vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)
+- [\[ICLR 2026\] Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration](vivid-vr_distilling_concepts_from_text-to-video_diffusion_transformer_for_photor.md)
+- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](../../CVPR2026/image_restoration/one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
+- [\[CVPR 2026\] CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness](../../CVPR2026/image_restoration/casr_a_robust_cyclic_framework_for_arbitrary_large-scale_super-resolution_with_d.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] LiveMoments: Reselected Key Photo Restoration in Live Photos via Reference-guided Diffusion](livemoments_reselected_key_photo_restoration_in_live_photos_via_reference-guided.md)

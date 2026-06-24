@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 description: >-
-  [ACL 2026][Dialogue Systems][Fine-tuning] The DiaFORGE framework is proposed, featuring a disambiguation-centric synthetic data generation pipeline, reasoning-chain finetuning, and a dynamic evaluation system. This allows open-source LLMs to achieve a tool-calling success rate 27 percentage points higher than GPT-4o and 49 percentage points higher than Claude-
+  [ACL 2026 Findings][Dialogue Systems][Tool-calling] The DiaFORGE framework is proposed, featuring a disambiguation-centric synthetic data generation pipeline, reasoning-chain finetuning, and a dynamic evaluation system. This allows open-source LLMs to achieve a tool-calling success rate 27 percentage points higher than GPT-4o and 49 percentage points higher than Claude-3.5-Sonnet when facing near-duplicate enterprise APIs.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Fine-tuning
+  - "ACL 2026 Findings"
+  - "Dialogue Systems"
+  - "Tool-calling"
+  - "Disambiguation"
+  - "Multi-turn Dialogue"
+  - "Enterprise API"
+  - "Finetuning"
 date: 2026-05-08
-content_hash: de9a5da08b90e1ea
+content_hash: f8f73e73bde8e73f
 ---
+
 # Disambiguation-Centric Finetuning Makes Enterprise Tool-Calling LLMs More Realistic and Less Risky
 
 **Conference**: ACL 2026 Findings  
@@ -140,9 +145,9 @@ Ablation based on Gemma-3-27B (Dynamic Eval Acc):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Less is More: Local Intrinsic Dimensions of Contextual Language Models](../../NeurIPS2025/dialogue/less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)
-- [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
 - [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 - [\[ICLR 2026\] Non-Collaborative User Simulators for Tool Agents](../../ICLR2026/dialogue/non-collaborative_user_simulators_for_tool_agents.md)
+- [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
 - [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](preference_learning_unlocks_llms_psycho-counseling_skills.md)
 
 </div>

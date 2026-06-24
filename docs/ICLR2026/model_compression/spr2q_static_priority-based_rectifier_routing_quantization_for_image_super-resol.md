@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPR$^2$Q: Static Priority-based Rectifier Routing Quantization for Image Super-Resolution
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] SPR$^2$Q targets ultra-low bit Post-Training Quantization (PTQ) for image super-resolution models. By learning a set of low-rank rectifiers to compensate for weight increments before quantization and merging the optimal increments into layer weights via offline static priority routing, it significantly mitigates detail
+  [ICLR 2026][Model Compression][Post-Training Quantization] SPR$^2$Q targets ultra-low bit Post-Training Quantization (PTQ) for image super-resolution models. By learning a set of low-rank rectifiers to compensate for weight increments before quantization and merging the optimal increments into layer weights via offline static priority routing, it significantly mitigates detail recovery loss in MambaIRv2-light under 4-bit, 2-bit, and even 1-bit settings without increasing infe…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Super-Resolution"
+  - "Mamba Quantization"
+  - "Low-Rank Rectifier"
+  - "Static Routing"
 date: 2026-05-08
-content_hash: 51a4345be8e6d382
+content_hash: afe6dcbb5c97ae9a
 ---
+
 # SPR$^2$Q: Static Priority-based Rectifier Routing Quantization for Image Super-Resolution  
 
 **Conference**: ICLR 2026  
@@ -145,15 +151,14 @@ At 4-bit, SPR$^2$Q outperforms PTQ4VM by 0.55 dB on Set5. The gains are more sig
 - Value: ⭐⭐⭐⭐⭐  
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Hierarchical Image Tokenization for Multi-Scale Image Super Resolution](../../ICML2026/model_compression/hierarchical_image_tokenization_for_multi-scale_image_super_resolution.md)
-- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
 - [\[CVPR 2026\] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution](../../CVPR2026/model_compression/gradient_knows_best_mixed-precision_quantization_via_gradient-guided_bit_allocat.md)
+- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](../../AAAI2026/model_compression/quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 

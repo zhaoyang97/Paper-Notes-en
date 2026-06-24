@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning
 description: >-
-  [CVPR 2026][Graph Learning][Paper Note] This paper proposes the G2F-RAG paradigm, which renders retrieved structured knowledge into a single "reasoning frame" appended to the end of a video. This facilitates unified reasoning within the visual space of Large Multimodal Models (LMMs), avoiding attention dilution and cognitive load caused by text appending, ac
+  [CVPR 2026][VLM Reasoning][Video Retrieval-Augmented Generation] This paper proposes the G2F-RAG paradigm, which renders retrieved structured knowledge into a single "reasoning frame" appended to the end of a video. This facilitates unified reasoning within the visual space of Large Multimodal Models (LMMs), avoiding attention dilution and cognitive load caused by text appending, achieving consistent training-free improvements across 8 video benchmarks.
 tags:
-  - CVPR 2026
-  - Graph Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Video Retrieval-Augmented Generation"
+  - "Knowledge Graph"
+  - "Visual-Space Fusion"
+  - "Multi-Agent Framework"
+  - "Training-Free Video Reasoning"
 date: 2026-05-08
-content_hash: da023c67c9603c64
+content_hash: 945ed93525b33e2f
 ---
+
 # Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ This step changes the delivery modality. The Rendering Agent uses Graphviz to dr
 
 ## Related Papers
 
-- [\[CVPR 2025\] Knowledge Bridger: Towards Training-Free Missing Modality Completion](../../CVPR2025/graph_learning/knowledge_bridger_towards_training-free_missing_modality_completion.md)
-- [\[CVPR 2025\] Unbiased Video Scene Graph Generation via Visual and Semantic Dual Debiasing](../../CVPR2025/graph_learning/unbiased_video_scene_graph_generation_via_visual_and_semantic_dual_debiasing.md)
-- [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
-- [\[AAAI 2026\] Human Cognition Inspired RAG with Knowledge Graph for Complex Problem Solving](../../AAAI2026/graph_learning/human_cognition_inspired_rag_with_knowledge_graph_for_complex_problem_solving.md)
-- [\[NeurIPS 2025\] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion](../../NeurIPS2025/graph_learning/duetgraph_coarse-to-fine_knowledge_graph_reasoning_with_dual-pathway_global-loca.md)
+- [\[CVPR 2026\] Chain-of-Frames: Advancing Video Understanding in Multimodal LLMs via Frame-Aware Reasoning](chain-of-frames_advancing_video_understanding_in_multimodal_llms_via_frame-aware.md)
+- [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
+- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
+- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
 
 </div>
 

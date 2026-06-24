@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Realistic Synthetic Household Data Generation at Scale
 description: >-
-  [AAAI 2026][Robotics][synthetic data generation] This paper proposes an LLM-driven bidirectional coupling generation framework that iteratively generates large-scale synthetic datasets — encompassing household environmen…
+  [AAAI 2026][Robotics][synthetic data generation] This paper proposes an LLM-driven bidirectional coupling generation framework that iteratively generates large-scale synthetic datasets — encompassing household environment configurations, human activities, and human-robot interactions (HRI) — through a cycle in which persona profiles drive environment generation and environment semantics in turn guide activity generation, targeting the training of home robots.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "LLM-driven"
   - "embodied AI"
 date: 2026-05-08
-content_hash: e4b84d604767a953
+content_hash: 7e42117aadab76d8
 ---
 
 # Realistic Synthetic Household Data Generation at Scale
@@ -204,11 +204,11 @@ All interventions reach statistical significance with Cohen's d = 0.51–1.12, c
 
 ## Related Papers
 
+- [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](../../CVPR2026/robotics/video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)
+- [\[CVPR 2026\] InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy](../../CVPR2026/robotics/interndata-a1_pioneering_high-fidelity_synthetic_data_for_pre-training_generalis.md)
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
-- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](../../NeurIPS2025/robotics/dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
-- [\[AAAI 2026\] UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories](urbannav_learning_language-guided_urban_navigation_from_web-scale_human_trajecto.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](../../CVPR2026/robotics/quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[ICLR 2026\] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](../../ICLR2026/robotics/d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)
+- [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](../../CVPR2026/robotics/geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
+- [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](../../ICLR2026/robotics/self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
 
 </div>
 

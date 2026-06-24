@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TIPO: Text to Image with Text Pre-sampling for Prompt Optimization
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] TIPO uses a 200M lightweight autoregressive language model to **expand (instead of rewrite)** simple user prompts into detailed prompts aligned with the text distribution of T2I model training. By leveraging a 30M image-text pair corpus and multi-task "text pre-sampling," it significantly enhances image quality, text a
+  [ICLR 2026][Image Generation][prompt optimization] TIPO uses a 200M lightweight autoregressive language model to **expand (instead of rewrite)** simple user prompts into detailed prompts aligned with the text distribution of T2I model training. By leveraging a 30M image-text pair corpus and multi-task "text pre-sampling," it significantly enhances image quality, text alignment, and human preference while remaining faster and more efficient than RL or large-model solutions.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "prompt optimization"
+  - "text pre-sampling"
+  - "distribution alignment"
+  - "lightweight language models"
+  - "multi-task training"
 date: 2026-05-08
-content_hash: 2b86ac87712900bf
+content_hash: 52df3f530e96b00e
 ---
+
 # TIPO: Text to Image with Text Pre-sampling for Prompt Optimization
 
 **Conference**: ICLR 2026  
@@ -129,10 +135,10 @@ Key takeaway: TIPO reduces AI Corrupt from 0.43 (Promptist)/0.25 (GPT) to **0.08
 
 ## Related Papers
 
+- [\[ICLR 2026\] VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis](visualprompter_semantic-aware_prompt_optimization_with_visual_feedback_for_text-.md)
 - [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](long-text-to-image_generation_via_compositional_prompt_decomposition.md)
 - [\[CVPR 2025\] Minority-Focused Text-to-Image Generation via Prompt Optimization](../../CVPR2025/image_generation/minority-focused_text-to-image_generation_via_prompt_optimization.md)
 - [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
-- [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](consistent_text-to-image_generation_via_scene_de-contextualization.md)
 - [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](../../CVPR2026/image_generation/curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
 
 </div>

@@ -77,7 +77,7 @@ item_total: 27
 
 **🤖 AAAI2026** · **27** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (24)](../../ICLR2026/recommender/index.md) · [💬 ACL2026 (22)](../../ACL2026/recommender/index.md) · [🧪 ICML2026 (11)](../../ICML2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (24)](../../ICLR2026/recommender/index.md) · [💬 ACL2026 (22)](../../ACL2026/recommender/index.md) · [🧪 ICML2026 (11)](../../ICML2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md) · [🧪 ICML2025 (17)](../../ICML2025/recommender/index.md) · [💬 ACL2025 (7)](../../ACL2025/recommender/index.md)
 
 🔥 **Top topics:** Recommendation ×13 · LLM ×6
 

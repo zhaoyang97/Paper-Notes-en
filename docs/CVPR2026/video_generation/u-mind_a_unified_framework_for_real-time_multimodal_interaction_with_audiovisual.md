@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Ours proposes U-Mind, the first unified real-time full-stack multimodal interaction system supporting high-level reasoning dialogue and instruction following. It jointly generates text, speech, and motion within a single interaction loop and renders them into realistic videos, balancing reasoning retention and cross-mo
+  [CVPR 2026][Video Generation][Multimodal Interaction] Ours proposes U-Mind, the first unified real-time full-stack multimodal interaction system supporting high-level reasoning dialogue and instruction following. It jointly generates text, speech, and motion within a single interaction loop and renders them into realistic videos, balancing reasoning retention and cross-modal alignment through rehearsal-driven learning and text-first decoding strategies.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multimodal Interaction"
+  - "Real-time Generation"
+  - "Digital Human"
+  - "Speech-Gesture Synchronization"
+  - "Chain-of-Thought Reasoning"
 date: 2026-05-08
-content_hash: ef94825f9f8c95fc
+content_hash: e68138a626210962
 ---
+
 # U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation
 
 **Conference**: CVPR 2026  
@@ -176,8 +182,8 @@ Consider a user asking, "Could you point to the signature dish on the menu?" The
 - [\[CVPR 2026\] DreamStyle: A Unified Framework for Video Stylization](dreamstyle_a_unified_framework_for_video_stylization.md)
 - [\[CVPR 2026\] TV2TV: A Unified Framework for Interleaved Language and Video Generation](tv2tv_a_unified_framework_for_interleaved_language_and_video_generation.md)
 - [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
 - [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)
+- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
 
 </div>
 

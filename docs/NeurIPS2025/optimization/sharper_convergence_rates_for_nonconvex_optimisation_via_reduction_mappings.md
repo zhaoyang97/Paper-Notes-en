@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sharper Convergence Rates for Nonconvex Optimisation via Reduction Mappings
 description: >-
-  [NeurIPS 2025 (**Spotlight**)][Optimization][nonconvex optimization] This paper proposes the Reduction Mapping framework, which exploits the manifold structure of the optimal solution set (arising from over-parameterizat…
+  [NeurIPS 2025 (**Spotlight**)][Optimization][nonconvex optimization] This paper proposes the Reduction Mapping framework, which exploits the manifold structure of the optimal solution set (arising from over-parameterization or symmetry) to reparameterize the optimization problem, and proves that this improves curvature properties and theoretically accelerates the convergence of gradient-based methods.
 tags:
   - "NeurIPS 2025 (**Spotlight**)"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "manifold structure"
   - "over-parameterization"
 date: 2026-05-08
-content_hash: 247d9ea01ca09e94
+content_hash: 95bbb28be5510ecf
 ---
 
 # Sharper Convergence Rates for Nonconvex Optimisation via Reduction Mappings
@@ -131,10 +131,10 @@ Consider the optimization problem $\min_x f(x)$, whose optimal solution set $\ma
 ## Related Papers
 
 - [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
+- [\[NeurIPS 2025\] From Average-Iterate to Last-Iterate Convergence in Games: A Reduction and Its Applications](from_average-iterate_to_last-iterate_convergence_in_games_a_reduction_and_its_ap.md)
+- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](../../ICLR2026/optimization/decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 - [\[NeurIPS 2025\] Robust Estimation Under Heterogeneous Corruption Rates](robust_estimation_under_heterogeneous_corruption_rates.md)
 - [\[NeurIPS 2025\] Optimal Rates for Generalization of Gradient Descent for Deep ReLU Classification](optimal_rates_for_generalization_of_gradient_descent_for_deep_relu_classificatio.md)
-- [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
-- [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
 
 </div>
 

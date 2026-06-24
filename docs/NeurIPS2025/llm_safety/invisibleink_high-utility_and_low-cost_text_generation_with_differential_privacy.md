@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy
 description: >-
-  [NeurIPS 2025][LLM Safety][differential privacy] This paper proposes InvisibleInk, a framework that reduces the computational cost of differentially private long-text generation by more than 8× through two innovations—di…
+  [NeurIPS 2025][LLM Safety][differential privacy] This paper proposes InvisibleInk, a framework that reduces the computational cost of differentially private long-text generation by more than 8× through two innovations—differential clipping (DClip) for isolating sensitive information and Top-$k^+$ truncated sampling—achieving, for the first time, high-quality private text generation with only 4–8× overhead over non-private generation.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM decoding"
   - "privacy-preserving inference"
 date: 2026-05-08
-content_hash: c3aeddb730bd64ef
+content_hash: a625b3d3eda6d7b6
 ---
 
 # InvisibleInk: High-Utility and Low-Cost Text Generation with Differential Privacy
@@ -136,11 +136,11 @@ When the privacy or computational budget is extremely small, $C$ approaches 0 an
 
 ## Related Papers
 
-- [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
-- [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
+- [\[ICML 2025\] Cape: Context-Aware Prompt Perturbation Mechanism with Differential Privacy](../../ICML2025/llm_safety/cape_context-aware_prompt_perturbation_mechanism_with_differential_privacy.md)
 - [\[NeurIPS 2025\] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction](masksql_safeguarding_privacy_for_llm-based_text-to-sql_via_abstraction.md)
-- [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
-- [\[NeurIPS 2025\] Demystifying Language Model Forgetting with Low-Rank Example Associations](demystifying_language_model_forgetting_with_low-rank_example_associations.md)
+- [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
+- [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](../../ACL2026/llm_safety/adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
+- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 
 </div>
 

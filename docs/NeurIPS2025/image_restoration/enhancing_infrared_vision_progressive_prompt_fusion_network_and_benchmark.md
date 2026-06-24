@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark
 description: >-
-  [NeurIPS 2025][Image Restoration][Thermal Infrared Image Enhancement] To address the challenge of coupled degradations (low contrast, blur, and noise) in thermal infrared (TIR) images, this paper proposes PPFN…
+  [NeurIPS 2025][Image Restoration][Thermal Infrared Image Enhancement] To address the challenge of coupled degradations (low contrast, blur, and noise) in thermal infrared (TIR) images, this paper proposes PPFN, a progressive prompt fusion network with a dual-prompt design, along with the Selective Progressive Training (SPT) strategy. The authors also construct HM-TIR, the first large-scale multi-scene TIR benchmark dataset. The proposed method achieves an 8.76% PSNR improveme…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Progressive Training"
   - "TIR Benchmark"
 date: 2026-05-08
-content_hash: 1b41e317cdbd27f9
+content_hash: c34be25199c8fdd7
 ---
 
 # Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark
@@ -133,11 +133,11 @@ Average PSNR gains on the Normal Set across five backbone networks: FocalNet +1.
 
 ## Related Papers
 
-- [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](../../CVPR2026/image_restoration/evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
+- [\[CVPR 2026\] HiDRA: Hierarchical Degradation Representation and Adaptation with Generative Priors for Enhancing Infrared Vision](../../CVPR2026/image_restoration/hidra_hierarchical_degradation_representation_and_adaptation_with_generative_pri.md)
+- [\[ECCV 2024\] Contourlet Residual for Prompt Learning Enhanced Infrared Image Super-Resolution](../../ECCV2024/image_restoration/contourlet_residual_for_prompt_learning_enhanced_infrared_image_super-resolution.md)
 - [\[NeurIPS 2025\] RGB-to-Polarization Estimation: A New Task and Benchmark Study](rgb-to-polarization_estimation_a_new_task_and_benchmark_study.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](../../CVPR2026/image_restoration/real_iisr_infrared_image_super_resolution_autoregressive.md)
 - [\[NeurIPS 2025\] GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights](gc4nc_a_benchmark_framework_for_graph_condensation_on_node_classification_with_n.md)
-- [\[ICCV 2025\] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance](../../ICCV2025/image_restoration/enhancing_image_restoration_transformer_via_adaptive_translation_equivariance.md)
+- [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](../../CVPR2026/image_restoration/evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
 
 </div>
 

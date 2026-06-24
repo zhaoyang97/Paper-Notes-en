@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Magical: Medical Lay Language Generation via Semantic Invariance and Layperson-tailored Adaptation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Medical lay language generation] This paper proposes Magical, an asymmetric LoRA architecture for medical lay language generation (MLLG) that enforces a semantic invariance constraint on t…
+  [NeurIPS 2025][Medical Imaging][Medical lay language generation] This paper proposes Magical, an asymmetric LoRA architecture for medical lay language generation (MLLG) that enforces a semantic invariance constraint on the shared matrix $A$ while employing multiple independent matrices $B$ to enable semantically faithful and stylistically diverse lay language generation. Magical reduces trainable parameters by 31.66% while outperforming all LoRA variants.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "heterogeneous data"
   - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: 44db79e56ffe3fb1
+content_hash: fd3342ff4ed3459f
 ---
 
 # Magical: Medical Lay Language Generation via Semantic Invariance and Layperson-tailored Adaptation
@@ -154,8 +154,8 @@ Total loss = standard language modeling loss + semantic contrastive loss $\mathc
 - [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
 - [\[ICCV 2025\] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation](../../ICCV2025/medical_imaging/alleviating_textual_reliance_in_medical_language-guided_segmentation_via_prototy.md)
 - [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](../../ICCV2025/medical_imaging/boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
-- [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
-- [\[CVPR 2026\] Decoupling Vision and Language: Codebook Anchored Visual Adaptation](../../CVPR2026/medical_imaging/decoupling_vision_and_language_codebook_anchored_visual_adaptation.md)
+- [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](../../CVPR2026/medical_imaging/personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
+- [\[CVPR 2025\] SeaLion: Semantic Part-Aware Latent Point Diffusion Models for 3D Generation](../../CVPR2025/medical_imaging/sealion_semantic_part-aware_latent_point_diffusion_models_for_3d_generation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Physics & Scientific Computing][PINNs] This paper proposes Spectral PINNsformer (S-Pformer), which replaces the encoder of PINNsformer with Fourier feature embeddings and adopts a…
+  [NeurIPS 2025 (AI for Science Workshop)][Physics & Scientific Computing][PINNs] This paper proposes Spectral PINNsformer (S-Pformer), which replaces the encoder of PINNsformer with Fourier feature embeddings and adopts a decoder-only Transformer architecture. S-Pformer achieves superior performance on multiple PDE benchmarks while reducing parameter count by 18.6%, effectively alleviating the spectral bias problem.
 tags:
   - "NeurIPS 2025 (AI for Science Workshop)"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Spectral Bias"
   - "PDE Solving"
 date: 2026-05-08
-content_hash: 7f45067991bba378
+content_hash: 1b2b0e1c02522d3f
 ---
 
 # Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding
@@ -163,11 +163,11 @@ Parameter count comparison: Pformer 453,561 → S-Pformer 369,039 (**18.6% reduc
 
 ## Related Papers
 
+- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](../../ICLR2026/physics/iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
+- [\[ICML 2025\] Differentiable Stellar Atmospheres with Physics-Informed Neural Networks](../../ICML2025/physics/differentiable_stellar_atmospheres_with_physics-informed_neural_networks.md)
 - [\[NeurIPS 2025\] Neuro-Spectral Architectures for Causal Physics-Informed Networks](neuro-spectral_architectures_for_causal_physics-informed_networks.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
 - [\[NeurIPS 2025\] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data](multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](../../ICML2026/physics/eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[NeurIPS 2025\] Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms](tropical_attention_neural_algorithmic_reasoning_for_combinatorial_algorithms.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](../../ICLR2026/physics/fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
 
 </div>
 

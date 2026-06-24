@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging
 description: >-
-  [AAAI2026][Computational Biology][DNA foundation model] MergeDNA is proposed to achieve context-aware dynamic DNA tokenization via differentiable Token Merging…
+  [AAAI2026 Oral][Computational Biology][DNA foundation model] MergeDNA is proposed to achieve context-aware dynamic DNA tokenization via differentiable Token Merging, combined with a hierarchical autoencoder and adaptive masked token modeling for pretraining. With 380M parameters, it surpasses GENERator at 1.3B.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Computational Biology"
   - "DNA foundation model"
   - "token merging"
@@ -12,7 +12,7 @@ tags:
   - "genome modeling"
   - "masked language modeling"
 date: 2026-05-08
-content_hash: aabc88f0443b191a
+content_hash: 3fcf3c13e4698c63
 ---
 
 # MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging
@@ -131,11 +131,11 @@ NT Benchmark (18 tasks): MergeDNA achieves an average MCC of 78.39%, surpassing 
 
 ## Related Papers
 
+- [\[ICLR 2026\] CDBridge: A Cross-omics Post-training Bridge Strategy for Context-aware Biological Modeling](../../ICLR2026/computational_biology/cdbridge_a_cross-omics_post-training_bridge_strategy_for_context-aware_biologica.md)
 - [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/computational_biology/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
-- [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
-- [\[AAAI 2026\] GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance](gp-molformer-sim_test_time_molecular_optimization_through_contextual_similarity_.md)
+- [\[ICLR 2026\] Lost in Tokenization: Context as the Key to Unlocking Biomolecular Understanding in Scientific LLMs](../../ICLR2026/computational_biology/lost_in_tokenization_context_as_the_key_to_unlocking_biomolecular_understanding_.md)
+- [\[ICML 2026\] Rethinking Genomic Modeling Through Optical Character Recognition](../../ICML2026/computational_biology/rethinking_genomic_modeling_through_optical_character_recognition.md)
+- [\[ICML 2026\] Generative Modeling of Discrete Latent Structures via Dynamic Policy Gradients](../../ICML2026/computational_biology/generative_modeling_of_discrete_latent_structures_via_dynamic_policy_gradients.md)
 
 </div>
 

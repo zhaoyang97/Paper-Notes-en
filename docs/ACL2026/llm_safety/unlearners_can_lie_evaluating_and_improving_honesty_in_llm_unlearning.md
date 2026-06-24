@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Unlearners Can Lie: Evaluating and Improving Honesty in LLM Unlearning
 description: >-
-  [ACL 2026][LLM Safety][LLM unlearning] This paper argues that existing LLM unlearning methods often hallucinate, feign refusal, or exhibit inconsistency even after "forgetting" target knowledge. It proposes an honest unlearning evaluation framework and the ReVa representation alignment method to ensure models stably admit their lack of knowledge after unlea
+  [ACL2026][LLM Safety][LLM unlearning] This paper argues that existing LLM unlearning methods often hallucinate, feign refusal, or exhibit inconsistency even after "forgetting" target knowledge. It proposes an honest unlearning evaluation framework and the ReVa representation alignment method to ensure models stably admit their lack of knowledge after unlearning.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM unlearning
-  - honest unlearning
-  - ReVa
+  - "ACL2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "honest unlearning"
+  - "refusal stability"
+  - "representation alignment"
+  - "ReVa"
 date: 2026-05-08
-content_hash: 88a76efd5986a738
+content_hash: cf2ab8570a6cdbf2
 ---
+
 # Unlearners Can Lie: Evaluating and Improving Honesty in LLM Unlearning
 
 **Conference**: ACL2026  
@@ -154,11 +157,11 @@ The paper analyzes ReVa regarding efficiency, fake IDK, and multi-turn stability
 
 ## Related Papers
 
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_safety/llm_unlearning_with_llm_beliefs.md)
+- [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
 - [\[ACL 2026\] Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](into_the_gray_zone_domain_contexts_can_blur_llm_safety_boundaries.md)
 - [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_safety/llm_unlearning_with_llm_beliefs.md)
 - [\[ACL 2026\] Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem](modeling_llm_unlearning_as_an_asymmetric_two-task_learning_problem.md)
-- [\[ICML 2025\] Improving LLM Safety Alignment with Dual-Objective Optimization](../../ICML2025/llm_safety/improving_llm_safety_alignment_with_dual-objective_optimization.md)
 
 </div>
 

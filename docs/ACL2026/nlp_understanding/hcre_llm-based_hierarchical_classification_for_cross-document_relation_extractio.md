@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] The HCRE model is proposed to transform cross-document relation extraction from direct classification over large relation sets into layer-by-layer hierarchical classification by constructing a hierarchical relation tree. A predict-then-verify inference strategy is designed to mitigate inter-layer error propagation, sig
+  [ACL 2026 Findings][NLP Understanding][Cross-Document Relation Extraction] The HCRE model is proposed to transform cross-document relation extraction from direct classification over large relation sets into layer-by-layer hierarchical classification by constructing a hierarchical relation tree. A predict-then-verify inference strategy is designed to mitigate inter-layer error propagation, significantly outperforming SLM and LLM baselines on the CodRED dataset.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "Cross-Document Relation Extraction"
+  - "Hierarchical Classification"
+  - "Large Language Models"
+  - "Error Propagation Mitigation"
+  - "Predict-then-Verify Strategy"
 date: 2026-05-08
-content_hash: 831ebdd1191a0b45
+content_hash: 9f0f092e51437358
 ---
+
 # HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction
 
 **Conference**: ACL 2026 Findings  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
 description: >-
-  [ICML 2026][LLM Agent][macOS] MacArena unifies ported OSWorld tasks, macOSWorld tasks, and 49 brand-new macOS native tasks (totaling 421 tasks across 50 applications) into a real macOS environment running on Apple Silicon's native virtualization framework. Equipped with per-task handwritten executable evaluation scripts, it reveals that current GUI
+  [ICML2026][LLM Agent][Computer Use Agent] MacArena unifies ported OSWorld tasks, macOSWorld tasks, and 49 brand-new macOS native tasks (totaling 421 tasks across 50 applications) into a real macOS environment running on Apple Silicon's native virtualization framework. Equipped with per-task handwritten executable evaluation scripts, it reveals that current GUI agents generally perform worse on macOS than Linux, and model rankings reverse between "ported tasks" and "macOS nati…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - macOS
-  - GUI Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "Computer Use Agent"
+  - "macOS"
+  - "GUI Agent"
+  - "Online Evaluation"
+  - "Verifiable Reward"
 date: 2026-05-08
-content_hash: cd26a5cdbb1750c7
+content_hash: 3b0b8575f3313bd9
 ---
+
 # MacArena: Benchmarking Computer Use Agents on an Online macOS Environment
 
 **Conference**: ICML2026  
@@ -119,16 +123,16 @@ All models showed a performance drop when tasks were moved to macOS. The gap ste
 - Value: ⭐⭐⭐⭐⭐ Establishes macOS as a first-class evaluation target and serves as a vital warning that "benchmark scores do not equal true capability."
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
-- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](../../ICLR2026/llm_agent/agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
-- [\[ICML 2026\] Web Agents Should Use Typed Actions Instead of Click-Based Browsing](web_agents_should_use_typed_actions_instead_of_click-based_browsing.md)
-- [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
-- [\[ICML 2026\] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History](persona2web_benchmarking_personalized_web_agents_for_contextual_reasoning_with_u.md)
+- [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](../../ICLR2026/llm_agent/osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
+- [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](../../ICLR2026/llm_agent/scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
+- [\[ICLR 2026\] VideoAgentTrek: Computer Use Pretraining from Unlabeled Videos](../../ICLR2026/llm_agent/videoagenttrek_computer-use_pretraining_from_unlabeled_videos.md)
+- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](../../ICLR2026/llm_agent/grounding_computer_use_agents_on_human_demonstrations.md)
 
 </div>
 

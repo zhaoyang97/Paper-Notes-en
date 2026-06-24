@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Taming Extreme Tokens: Covariance-Aware GRPO with Gaussian-Kernel Advantage Reweighting
 description: >-
-  [ACL 2026][Alignment & RLHF][GRPO] This paper attributes the entropy instability in GRPO training to the "log probability-advantage" covariance contribution of a few extreme tokens. It utilizes a Gaussian kernel without additional hyperparameters to softly suppress the advantage of these tokens, resulting in stable performance improvements across 1.5B a
+  [ACL2026][LLM Alignment][GRPO] This paper attributes the entropy instability in GRPO training to the "log probability-advantage" covariance contribution of a few extreme tokens. It utilizes a Gaussian kernel without additional hyperparameters to softly suppress the advantage of these tokens, resulting in stable performance improvements across 1.5B and 7B mathematical reasoning models.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - GRPO
-  - RLVR
+  - "ACL2026"
+  - "LLM Alignment"
+  - "GRPO"
+  - "Covariance Reweighting"
+  - "Entropy Stability"
+  - "Mathematical Reasoning"
+  - "RLVR"
 date: 2026-05-08
-content_hash: 77c6854bf562f0d9
+content_hash: fe0a80e68a8bb06f
 ---
+
 # Taming Extreme Tokens: Covariance-Aware GRPO with Gaussian-Kernel Advantage Reweighting
 
 **Conference**: ACL2026  
@@ -140,10 +144,10 @@ CW-GRPO achieves an average score of 55.3 on the 1.5B model, 2.7 points higher t
 ## Related Papers
 
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
-- [\[ICML 2026\] UDM-GRPO: 统一离散扩散模型的稳定高效 GRPO](../../ICML2026/llm_alignment/udm-grpo_stable_and_efficient_group_relative_policy_optimization_for_uniform_dis.md)
 - [\[NeurIPS 2025\] DeepVideo-R1: Video Reinforcement Fine-Tuning via Difficulty-aware Regressive GRPO](../../NeurIPS2025/llm_alignment/deepvideor1_video_reinforcement_finetuning_via_difficultyawa.md)
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[ICLR 2026\] No Prompt Left Behind: Exploiting Zero-Variance Prompts in LLM Reinforcement Learning via Entropy-Guided Advantage Shaping](../../ICLR2026/llm_alignment/no_prompt_left_behind_exploiting_zero-variance_prompts_in_llm_reinforcement_lear.md)
+- [\[AAAI 2026\] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward](../../AAAI2026/llm_alignment/laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via.md)
 
 </div>
 

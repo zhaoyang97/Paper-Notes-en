@@ -83,7 +83,7 @@ item_total: 156
 
 **🔬 ICLR2026** · **156** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (19)](../../CVPR2026/computational_biology/index.md) · [💬 ACL2026 (5)](../../ACL2026/computational_biology/index.md) · [🧪 ICML2026 (52)](../../ICML2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (21)](../../CVPR2026/computational_biology/index.md) · [💬 ACL2026 (5)](../../ACL2026/computational_biology/index.md) · [🧪 ICML2026 (52)](../../ICML2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
 
 🔥 **Top topics:** Biomolecules ×66 · Diffusion Models ×24 · Alignment/RLHF ×7 · Reasoning ×5 · Multimodal/VLM ×5
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] SFD decouples semantics and texture into two latent paths within latent diffusion. By using independent noise schedules, semantics are denoised "one step ahead" of texture, serving as a structural blueprint to guide texture refinement. This achieves an FID of 1.04 on ImageNet 256×256 and accelerates training convergenc
+  [CVPR 2026][Image Generation][Latent Diffusion] SFD decouples semantics and texture into two latent paths within latent diffusion. By using independent noise schedules, semantics are denoised "one step ahead" of texture, serving as a structural blueprint to guide texture refinement. This achieves an FID of 1.04 on ImageNet 256×256 and accelerates training convergence by approximately $100\times$ compared to DiT.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion"
+  - "Semantics-First"
+  - "Asynchronous Denoising"
+  - "Semantic VAE"
+  - "Convergence Acceleration"
 date: 2026-05-08
-content_hash: 5627caef06580840
+content_hash: a3e696d5c4db13bd
 ---
+
 # Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion
 
 **Conference**: CVPR 2026  
@@ -145,15 +151,14 @@ Other key ablations: ① Semantic compression—SemVAE (FID 3.03) performs signi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
-- [\[CVPR 2026\] Texvent: Asynchronous Event Data Simulation via Text Prompt](texvent_asynchronous_event_data_simulation_via_text_prompt.md)
+- [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](latent_diffusion_inversion_requires_understanding_the_latent_space.md)
+- [\[CVPR 2026\] Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization](fusion_in_your_way_aligning_image_fusion_with_heterogeneous_demands_via_direct_p.md)
 - [\[CVPR 2026\] Refaçade: Editing Object with Given Reference Texture](refacade_editing_object_with_given_reference_texture.md)
-- [\[CVPR 2026\] FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain](faithfusion_harmonizing_reconstruction_and_generation_via_pixel-wise_information.md)
-- [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](../../ICLR2026/image_generation/asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
+- [\[CVPR 2026\] Texvent: Asynchronous Event Data Simulation via Text Prompt](texvent_asynchronous_event_data_simulation_via_text_prompt.md)
 
 </div>
 

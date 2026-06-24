@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty
 description: >-
-  [AAAI 2026][Medical Imaging][LLM honesty] This paper reveals that the root cause of SFT-induced dishonesty in LLMs is **impaired self-expression** (rather than degraded self-knowledge)…
+  [AAAI 2026][Medical Imaging][LLM honesty] This paper reveals that the root cause of SFT-induced dishonesty in LLMs is **impaired self-expression** (rather than degraded self-knowledge), and proposes the HCNR framework accordingly. By identifying honesty-critical neurons via Fisher information and restoring them to their pre-trained states with Hessian-guided compensation, HCNR recovers 33.25% of honesty using only 256 data samples and 20% of parameters…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "neuron restoration"
   - "parameter-efficient"
 date: 2026-05-08
-content_hash: d36f2227d1e05c4b
+content_hash: f5d9c073797f48f2
 ---
 
 # Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty
@@ -201,7 +201,7 @@ Efficiency comparison (recovery after HotpotQA fine-tuning):
 - [\[AAAI 2026\] Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT](unsupervised_multi-parameter_inverse_solving_for_reducing_ring_artifacts_in_3d_x.md)
 - [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
-- [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
+- [\[AAAI 2026\] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes](note2chat_improving_llms_for_multi-turn_clinical_history_taking_using_medical_no.md)
 
 </div>
 

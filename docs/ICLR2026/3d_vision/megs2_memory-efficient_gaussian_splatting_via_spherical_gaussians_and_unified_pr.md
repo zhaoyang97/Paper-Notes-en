@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] MEGS2 is proposed to compress 3DGS from the perspective of rendering VRAM: using prunable arbitrary-direction Spherical Gaussians (SG) to completely replace Spherical Harmonics (SH) to reduce parameters per primitive, and a unified soft-pruning framework to model primitive and lobe count pruning as a single memory-cons
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] MEGS2 is proposed to compress 3DGS from the perspective of rendering VRAM: using prunable arbitrary-direction Spherical Gaussians (SG) to completely replace Spherical Harmonics (SH) to reduce parameters per primitive, and a unified soft-pruning framework to model primitive and lobe count pruning as a single memory-constrained optimization problem. It achieves 8x static VRAM and 6x rendering VRAM compression while maintaining rende…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Spherical Gaussians
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Memory Compression"
+  - "Spherical Harmonics Replacement"
+  - "Spherical Gaussians"
+  - "Unified Pruning"
 date: 2026-05-08
-content_hash: 8ef1b301197eaa11
+content_hash: 99110fab20e6cef0
 ---
+
 # MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning
 
 **Conference**: ICLR 2026  
@@ -130,7 +134,7 @@ The pruning stage removes lobes with very low sharpness. While these lobes do no
 - [\[CVPR 2025\] SGCR: Spherical Gaussians for Efficient 3D Curve Reconstruction](../../CVPR2025/3d_vision/sgcr_spherical_gaussians_for_efficient_3d_curve_reconstruction.md)
 - [\[ICLR 2026\] 3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras](3dgeer_3d_gaussian_rendering_made_exact_and_efficient_for_generic_cameras.md)
 - [\[ICLR 2026\] FastAvatar: Towards Unified and Fast 3D Avatar Reconstruction with Large Gaussian Reconstruction Transformers](fastavatar_towards_unified_and_fast_3d_avatar_reconstruction_with_large_gaussian.md)
-- [\[ICCV 2025\] MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes](../../ICCV2025/3d_vision/mega_memory-efficient_4d_gaussian_splatting_for_dynamic_scenes.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 
 </div>
 

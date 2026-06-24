@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Fine-grained VQA] This paper proposes FOCUS, a training-free visual cropping method that constructs object relevance maps via cosine similarity of value features in the MLLM's internal KV-c…
+  [NeurIPS 2025][Multimodal VLM][Fine-grained VQA] This paper proposes FOCUS, a training-free visual cropping method that constructs object relevance maps via cosine similarity of value features in the MLLM's internal KV-cache, enabling efficient localization of question-relevant image regions. FOCUS achieves accuracy comparable to state-of-the-art methods on fine-grained VQA benchmarks while improving computational efficiency by 3–6.5×.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Object Localization"
   - "MLLM"
 date: 2026-05-08
-content_hash: 7dd844e3ea6dc43f
+content_hash: 60121f3f421e4364
 ---
 
 # FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering
@@ -172,11 +172,11 @@ The finding that KV-cache implicitly encodes spatial information is transferable
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
 - [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
-- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
-- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](../../ICCV2025/multimodal_vlm/reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
-- [\[NeurIPS 2025\] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions](vitrix-clipin_enhancing_fine-grained_visual_understanding_in_clip_via_instructio.md)
+- [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
+- [\[NeurIPS 2025\] Benchmarking Retrieval-Augmented Multimodal Generation for Document Question Answering](benchmarking_retrievalaugmented_multimodal_generation_for_do.md)
+- [\[CVPR 2025\] FLAIR: VLM with Fine-grained Language-informed Image Representations](../../CVPR2025/multimodal_vlm/flair_vlm_with_fine-grained_language-informed_image_representations.md)
+- [\[ACL 2025\] MTVQA: Benchmarking Multilingual Text-Centric Visual Question Answering](../../ACL2025/multimodal_vlm/mtvqa_benchmarking_multilingual_text-centric_visual_question_answering.md)
 
 </div>
 

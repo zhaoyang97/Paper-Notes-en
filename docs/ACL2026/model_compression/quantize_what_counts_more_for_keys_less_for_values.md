@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quantize What Counts: More for Keys, Less for Values
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper theoretically demonstrates from a linear algebra perspective that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-priority mixed-precision KV cache quantization strategy (e.g., K4V2), which reduces memory
+  [ACL 2026][Model Compression][KV Cache Quantization] This paper theoretically demonstrates from a linear algebra perspective that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-priority mixed-precision KV cache quantization strategy (e.g., K4V2), which reduces memory by 25% while maintaining 98.3% of full-precision accuracy.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "KV Cache Quantization"
+  - "Mixed Precision"
+  - "Spectral Norm"
+  - "Key-Value Asymmetry"
+  - "LLM Inference Optimization"
 date: 2026-05-08
-content_hash: 53ace721d88dac5e
+content_hash: 966e517ffd44b84f
 ---
+
 # Quantize What Counts: More for Keys, Less for Values
 
 **Conference**: ACL 2026  

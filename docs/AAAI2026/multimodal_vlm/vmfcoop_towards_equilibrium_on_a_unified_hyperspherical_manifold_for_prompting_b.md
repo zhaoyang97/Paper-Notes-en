@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] vMFCoOp: Towards Equilibrium on a Unified Hyperspherical Manifold for Prompting Biomedical VLMs
 description: >-
-  [AAAI 2026][Multimodal VLM][Prompt learning] This paper proposes the vMFCoOp framework, which aligns the semantic discrepancy between LLMs and CLIP on a unified hyperspherical manifold via inverse estimation of von Mises…
+  [AAAI 2026 Oral][Multimodal VLM][Prompt learning] This paper proposes the vMFCoOp framework, which aligns the semantic discrepancy between LLMs and CLIP on a unified hyperspherical manifold via inverse estimation of von Mises-Fisher distributions, enabling robust few-shot prompt learning for biomedical VLMs.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multimodal VLM"
   - "Prompt learning"
   - "biomedical VLM"
@@ -12,7 +12,7 @@ tags:
   - "hyperspherical manifold"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: 155466ecb23eeab8
+content_hash: c248d143cb091b2f
 ---
 
 # vMFCoOp: Towards Equilibrium on a Unified Hyperspherical Manifold for Prompting Biomedical VLMs
@@ -150,11 +150,11 @@ Base-to-Novel Generalization (average over 14 datasets):
 
 ## Related Papers
 
-- [\[AAAI 2026\] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation](few-shot_precise_event_spotting_via_unified_multi-entity_graph_and_distillation.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
+- [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](../../CVPR2026/multimodal_vlm/biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
+- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](../../CVPR2026/multimodal_vlm/from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
+- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](../../CVPR2026/multimodal_vlm/p-flow_prompting_visual_effects_generation.md)
+- [\[ICML 2026\] Mitigating Manifold Departure: Uncertainty-Aware Subspace Rectification for Trustworthy MLLM Decoding](../../ICML2026/multimodal_vlm/mitigating_manifold_departure_uncertainty-aware_subspace_rectification_for_trust.md)
 - [\[ICML 2026\] Neutral-Reference Prompting for Vision-Language Models](../../ICML2026/multimodal_vlm/neutral-reference_prompting_for_vision-language_models.md)
-- [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
-- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](../../CVPR2026/multimodal_vlm/vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
 
 </div>
 

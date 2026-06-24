@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Training for Visual Foresight Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] Addressing the simultaneous dual-stage misalignment of Visual Foresight VLA (VF-VLA) — which predicts future images before generating actions — in Out-of-Distribution (OOD) scenarios, this paper proposes T3VF. It treats the predicted future images and the actual observations after several steps as natural self-supervis
+  [ICML 2026][Robotics][Visual Foresight VLA] Addressing the simultaneous dual-stage misalignment of Visual Foresight VLA (VF-VLA) — which predicts future images before generating actions — in Out-of-Distribution (OOD) scenarios, this paper proposes T3VF. It treats the predicted future images and the actual observations after several steps as natural self-supervised pairs. During test-time, the model updates only the minimal visual query modules while filtering noisy steps usin…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "Visual Foresight VLA"
+  - "Test-Time Training"
+  - "OOD Robustness"
+  - "Self-Supervised Learning"
+  - "Adaptive Filtering"
 date: 2026-05-08
-content_hash: e84fd84db0734123
+content_hash: 7128f9cc79923b51
 ---
+
 # Test-Time Training for Visual Foresight Vision-Language-Action Models
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ Ablation on the most difficult Robot perturbation under the `w/ Perturbed Train`
 
 ## Related Papers
 
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](../../ICLR2026/robotics/verifier-free_test-time_sampling_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](../../CVPR2026/robotics/test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
 - [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](../../CVPR2026/robotics/mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[ICLR 2026\] ST4VLA: Spatially Guided Training for Vision-Language-Action Models](../../ICLR2026/robotics/st4vla_spatially_guided_training_for_vision-language-action_models.md)
-- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](../../ICLR2026/robotics/test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
+- [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](../../ICLR2026/robotics/hybrid_training_for_vision-language-action_models.md)
+- [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](../../ICLR2026/robotics/vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
 
 </div>
 

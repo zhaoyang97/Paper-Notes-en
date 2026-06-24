@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SparK: Query-Aware Unstructured Sparsity with Recoverable KV Cache Channel Pruning
 description: >-
-  [AAAI 2026][Interpretability][KV Cache Compression] This paper proposes SparK — a training-free, token-wise unstructured channel pruning method for KV cache. It selects salient channels via query-aware saliency scoring a…
+  [AAAI 2026][Interpretability][KV Cache Compression] This paper proposes SparK — a training-free, token-wise unstructured channel pruning method for KV cache. It selects salient channels via query-aware saliency scoring and recovers the contribution of pruned channels through a recovery mechanism. At an 80% pruning ratio, performance degradation remains below 5%. The method is orthogonal to token eviction approaches and can reduce KV cache storage by an additional 30%+.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Long-Context Inference"
   - "Attention Mechanism"
 date: 2026-05-08
-content_hash: 4fed46c91e657bd6
+content_hash: 8c56dc0d93a8d84a
 ---
 
 # SparK: Query-Aware Unstructured Sparsity with Recoverable KV Cache Channel Pruning
@@ -135,9 +135,9 @@ At 80% pruning, SparK achieves Avg = 31.16 vs. ThinK's 16.97 — a substantial m
 ## Related Papers
 
 - [\[ICLR 2026\] Tokenizing Single-Channel EEG with Time-Frequency Motif Learning](../../ICLR2026/interpretability/tokenizing_single-channel_eeg_with_time-frequency_motif_learning.md)
-- [\[ICLR 2026\] Universal Properties of Activation Sparsity in Modern Large Language Models](../../ICLR2026/interpretability/universal_properties_of_activation_sparsity_in_modern_large_language_models.md)
 - [\[AAAI 2026\] GateRA: Token-Aware Modulation for Parameter-Efficient Fine-Tuning](gatera_token-aware_modulation_for_parameter-efficient_fine-tuning.md)
 - [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
+- [\[ICLR 2026\] Universal Properties of Activation Sparsity in Modern Large Language Models](../../ICLR2026/interpretability/universal_properties_of_activation_sparsity_in_modern_large_language_models.md)
 - [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](../../ICML2026/interpretability/query_circuits_explaining_how_language_models_answer_user_prompts.md)
 
 </div>

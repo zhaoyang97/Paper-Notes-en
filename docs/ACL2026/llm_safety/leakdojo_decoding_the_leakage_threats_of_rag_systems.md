@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LeakDojo: Decoding the Leakage Threats of RAG Systems
 description: >-
-  [ACL 2026][LLM Safety][prompt injection] This paper introduces LeakDojo, the first configurable evaluation framework that modularly decouples RAG systems, attacks, and defenses. By systematically quantifying RAG leakage risks across 6 attacks, 14 LLMs, 4 datasets, and multiple enhancement modules, it discovers that "stronger instruction-following capability l
+  [ACL 2026 Findings][LLM Safety][RAG Leakage Attacks] This paper introduces LeakDojo, the first configurable evaluation framework that modularly decouples RAG systems, attacks, and defenses. By systematically quantifying RAG leakage risks across 6 attacks, 14 LLMs, 4 datasets, and multiple enhancement modules, it discovers that "stronger instruction-following capability leads to higher leakage risk" and "RAG faithfulness is positively correlated with leakage risk."
 tags:
-  - ACL 2026
-  - LLM Safety
-  - prompt injection
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "RAG Leakage Attacks"
+  - "prompt injection"
+  - "Red-teaming framework"
+  - "Instruction-following safety"
+  - "Steganographic attacks"
 date: 2026-05-08
-content_hash: d3634ec9a44e12d1
+content_hash: b2365238e6882a0c
 ---
+
 # LeakDojo: Decoding the Leakage Threats of RAG Systems
 
 **Conference**: ACL 2026 Findings  
@@ -176,10 +181,10 @@ CodeClaim maintains 50–60% CCL even with intent detection active, which is hig
 ## Related Papers
 
 - [\[ACL 2026\] Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)
+- [\[ICLR 2026\] Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries](../../ICLR2026/llm_safety/silent_leaks_implicit_knowledge_extraction_attack_on_rag_systems.md)
 - [\[ACL 2026\] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u.md)
-- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
-- [\[ACL 2026\] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)
+- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 
 </div>
 

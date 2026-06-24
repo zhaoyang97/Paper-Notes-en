@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces
 description: >-
-  [ICML 2026][Image Generation][off-policy RL] This work systematically migrates mature off-policy RL training techniques from continuous-space diffusion sampling (replay buffer, importance weighting, MCMC exploration) to discrete diffusion samplers for the first time. It further generalizes these to data-to-energy discrete Schrödinger bridges, significantly mitiga
+  [ICML2026][Image Generation][Discrete diffusion samplers] This work systematically migrates mature off-policy RL training techniques from continuous-space diffusion sampling (replay buffer, importance weighting, MCMC exploration) to discrete diffusion samplers for the first time. It further generalizes these to data-to-energy discrete Schrödinger bridges, significantly mitigating mode collapse on multi-modal distributions like Ising/Potts and discretized GMMs. Finally…
 tags:
-  - ICML 2026
-  - Image Generation
-  - off-policy RL
+  - "ICML2026"
+  - "Image Generation"
+  - "Discrete diffusion samplers"
+  - "off-policy RL"
+  - "trajectory balance"
+  - "Schrödinger bridge"
+  - "VQ-VAE posterior sampling"
 date: 2026-05-08
-content_hash: de2b3c350b025035
+content_hash: 866dabcd8c4e2212
 ---
+
 # Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces
 
 **Conference**: ICML2026  
@@ -168,7 +173,7 @@ VQ-VAE posterior sampling (MNIST, 16-d latent space, 8-word codebook, likelihood
 - [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](../../NeurIPS2025/image_generation/fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
 - [\[ICML 2026\] Transferable Multi-Bit Watermarking Across Frozen Diffusion Models via Latent Consistency Bridges](transferable_multi-bit_watermarking_across_frozen_diffusion_models_via_latent_co.md)
 - [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
-- [\[ICML 2026\] Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems](zeroth-order_non-log-concave_sampling_with_variance_reduction_and_applications_t.md)
+- [\[ICML 2026\] Hölder++: Improving the Quality-Coherence Trade-off in Multimodal VAEs](hölder_improving_the_quality-coherence_trade-off_in_multimodal_vaes.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How Dark Patterns Manipulate Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] This paper introduces the DECEPTICON benchmark, demonstrating that common "dark patterns" (deceptive UI designs) can manipulate frontier Web Agents into malicious outcomes contrary to user intent in over 70% of tasks (compared to only 31% for humans). Furthermore, larger models and increased reasoning tokens actually i
+  [ICLR 2026][LLM Agent][Dark Patterns] This paper introduces the DECEPTICON benchmark, demonstrating that common "dark patterns" (deceptive UI designs) can manipulate frontier Web Agents into malicious outcomes contrary to user intent in over 70% of tasks (compared to only 31% for humans). Furthermore, larger models and increased reasoning tokens actually increase susceptibility to deception, while existing defenses fail to provide stable protection.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Dark Patterns"
+  - "Web Agent"
+  - "Red-teaming"
+  - "Adversarial Robustness"
+  - "Inverse Scaling"
 date: 2026-05-08
-content_hash: 39ff306093b37418
+content_hash: 58ab80557d047015
 ---
+
 # How Dark Patterns Manipulate Web Agents
 
 **Conference**: ICLR 2026  

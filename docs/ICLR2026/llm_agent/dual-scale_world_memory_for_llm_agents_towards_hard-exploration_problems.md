@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dual-Scale World Memory for LLM Agents towards Hard-Exploration Problems
 description: >-
-  [ICLR 2026][LLM Agent][Go-Explore] GLoW is proposed to equip LLM agents with a dual-scale textual world memory—combining a "global trajectory frontier" and "local multi-path advantage reflection." It achieves new SOTA among LLM-based methods on sparse-reward hard-exploration tasks in Jericho text games, approaching the performance of the strongest RL me
+  [ICLR 2026][LLM Agent][Hard-exploration] GLoW is proposed to equip LLM agents with a dual-scale textual world memory—combining a "global trajectory frontier" and "local multi-path advantage reflection." It achieves new SOTA among LLM-based methods on sparse-reward hard-exploration tasks in Jericho text games, approaching the performance of the strongest RL methods with $100\times–800\times$ fewer environmental interactions.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Go-Explore
-  - Jericho
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Hard-exploration"
+  - "World Memory"
+  - "Go-Explore"
+  - "Advantage Learning"
+  - "Jericho"
 date: 2026-05-08
-content_hash: 9844002f8b8561d4
+content_hash: d9c70b288d6c2f58
 ---
+
 # Dual-Scale World Memory for LLM Agents towards Hard-Exploration Problems
 
 **Conference**: ICLR 2026  
@@ -127,10 +131,10 @@ Removing components one by one (examples from *Zork1/Deephome/Ludicorp*):
 ## Related Papers
 
 - [\[ICLR 2026\] Meta-RL Induces Exploration in Language Agents](meta-rl_induces_exploration_in_language_agents.md)
-- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](go-browse_training_web_agents_with_structured_exploration.md)
+- [\[ICLR 2026\] Scaling Synthetic Task Generation for Agents via Exploration](scaling_synthetic_task_generation_for_agents_via_exploration.md)
 - [\[AAAI 2026\] DEPO: Dual-Efficiency Preference Optimization for LLM Agents](../../AAAI2026/llm_agent/depo_dual-efficiency_preference_optimization_for_llm_agents.md)
+- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](go-browse_training_web_agents_with_structured_exploration.md)
 - [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
-- [\[ICML 2026\] Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents](../../ICML2026/llm_agent/memory_is_reconstructed_not_retrieved_graph_memory_for_llm_agents.md)
 
 </div>
 

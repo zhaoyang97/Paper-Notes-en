@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation
 description: >-
-  [ICML 2026][Model Compression][Paper Note] ReSpinQuant preserves the dual advantages of low-bit LLM PTQ: "global rotations fused with weights" and "layer-wise rotations adaptable to outliers." It replaces the non-fusable rotation transition matrix $\mathbf{T}=\mathbf{R}_{out}\mathbf{R}_{in}^{\top}$ at residual connections with a subspace orthogonal approximatio
+  [ICML 2026][Model Compression][LLM Quantization] ReSpinQuant preserves the dual advantages of low-bit LLM PTQ: "global rotations fused with weights" and "layer-wise rotations adaptable to outliers." It replaces the non-fusable rotation transition matrix $\mathbf{T}=\mathbf{R}_{out}\mathbf{R}_{in}^{\top}$ at residual connections with a subspace orthogonal approximation of rank $r\!\approx\!32$. This increases online overhead by only $\sim0.2\%$…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "LLM Quantization"
+  - "Rotation-based Quantization"
+  - "Inter-layer Rotation"
+  - "Subspace Approximation"
+  - "Residual Alignment"
 date: 2026-05-08
-content_hash: 19402183c9c22c46
+content_hash: 8c58fe88fc925473
 ---
+
 # ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation
 
 **Conference**: ICML 2026  
@@ -136,8 +142,8 @@ Evaluated on LLaMA-2, LLaMA-3, and LLaMA-3.2 for W4A4 and W3A3 quantization.
 - [\[ICLR 2026\] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference](../../ICLR2026/model_compression/paroquant_pairwise_rotation_quantization_for_efficient_reasoning_llm_inference.md)
 - [\[ACL 2026\] Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](../../ACL2026/model_compression/adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)
 - [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](../../ICLR2026/model_compression/rethinking_residual_errors_in_compensation-based_llm_quantization.md)
 - [\[ICML 2026\] RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs](rabit_residual-aware_binarization_training_for_accurate_and_efficient_llms.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][cooperative driving] The first end-to-end LLM-driven cooperative driving system. Through an Actor-Critic language negotiation module and an intention-guided trajectory generator…
+  [ICCV 2025][Autonomous Driving][cooperative driving] The first end-to-end LLM-driven cooperative driving system. Through an Actor-Critic language negotiation module and an intention-guided trajectory generator, it achieves an 11% higher success rate than existing methods across diverse V2V interaction scenarios.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "waypoint planning"
   - "CARLA"
 date: 2026-05-08
-content_hash: 160b0ae6f1d64db3
+content_hash: 42babed7043b6293
 ---
 
 # CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving
@@ -207,8 +207,8 @@ CoLMDriver substantially outperforms all methods in high-interaction V2V scenari
 - [\[ICCV 2025\] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving](uniocc_a_unified_benchmark_for_occupancy_forecasting_and_prediction_in_autonomou.md)
 - [\[ICCV 2025\] CoopTrack: Exploring End-to-End Learning for Efficient Cooperative Sequential Perception](cooptrack_exploring_end-to-end_learning_for_efficient_cooperative_sequential_per.md)
 - [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
-- [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
-- [\[ICCV 2025\] AdaDrive: Self-Adaptive Slow-Fast System for Language-Grounded Autonomous Driving](adadrive_self-adaptive_slow-fast_system_for_language-grounded_autonomous_driving.md)
+- [\[ICML 2026\] Threshold-Based Exclusive Batching for LLM Inference](../../ICML2026/autonomous_driving/threshold-based_exclusive_batching_for_llm_inference.md)
+- [\[CVPR 2026\] Open-Ended Instruction Realization with LLM-Enabled Multi-Planner Scheduling in Autonomous Vehicles](../../CVPR2026/autonomous_driving/open-ended_instruction_realization_with_llm-enabled_multi-planner_scheduling_in_.md)
 
 </div>
 

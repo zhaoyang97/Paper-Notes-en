@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Box Supervision: Bias-Free Weakly Supervised Medical Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Medical Imaging] Addressing the "box-shaped bias" where box supervision causes predictions to tend toward rectangles, the authors propose the WeakMed framework. It uses a differentiable Mask-to-Box (M2B) transformation to project predicted masks onto box-aligned representations to eliminate shape bias, and a Scale Consistency (SC) loss
+  [CVPR 2026][Segmentation][Weakly supervised segmentation] Addressing the "box-shaped bias" where box supervision causes predictions to tend toward rectangles, the authors propose the WeakMed framework. It uses a differentiable Mask-to-Box (M2B) transformation to project predicted masks onto box-aligned representations to eliminate shape bias, and a Scale Consistency (SC) loss to compensate for fine-grained information lost by M2B. Both components are only enabled during train…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Weakly supervised segmentation"
+  - "box supervision"
+  - "medical imaging"
+  - "differentiable transformation"
+  - "scale consistency"
 date: 2026-05-08
-content_hash: b5ab8043f50a58ac
+content_hash: dcaee3c368728b22
 ---
+
 # Rethinking Box Supervision: Bias-Free Weakly Supervised Medical Segmentation
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Component ablation on SUN-SEG (PVTv2-B2 backbone, Test Dice):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](wsrvos_weakly_supervised_rvos.md)
-- [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
 - [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
 - [\[CVPR 2026\] Leveraging Class Distributions in CLIP for Weakly Supervised Semantic Segmentation](leveraging_class_distributions_in_clip_for_weakly_supervised_semantic_segmentati.md)
 - [\[CVPR 2026\] Beyond Text: Visual Description Assembly by Probabilistic Model for CLIP-based Weakly Supervised Semantic Segmentation](beyond_text_visual_description_assembly_by_probabilistic_model_for_clip-based_we.md)
+- [\[CVPR 2026\] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision](conversational_image_segmentation_grounding_abstract_concepts_with_scalable_supe.md)
+- [\[CVPR 2026\] GeoMotion: Rethinking Motion Segmentation via Latent 4D Geometry](geomotion_rethinking_motion_segmentation_via_latent_4d_geometry.md)
 
 </div>
 

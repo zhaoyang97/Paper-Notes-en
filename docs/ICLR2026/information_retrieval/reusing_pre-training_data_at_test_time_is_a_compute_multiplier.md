@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reusing Pre-training Data at Test Time is a Compute Multiplier
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] The authors reuse the "exact same corpus used for pre-training" for retrieval augmentation at test time. They find this acts as a compute multiplier that yields performance equivalent to ~5x pre-training compute on MMLU, indicating that current pre-training does not fully extract knowledge from the data. By layering te
+  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] The authors reuse the "exact same corpus used for pre-training" for retrieval augmentation at test time. They find this acts as a compute multiplier that yields performance equivalent to ~5x pre-training compute on MMLU, indicating that current pre-training does not fully extract knowledge from the data. By layering test-time compute techniques like self-consistency, re-ranking, and variance reduction…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Pre-training Data Reuse"
+  - "Test-time Compute"
+  - "Compute Multiplier"
+  - "Self-consistency"
 date: 2026-05-08
-content_hash: 90d6e769dd0d3770
+content_hash: 6bb0546ecce46c1b
 ---
+
 # Reusing Pre-training Data at Test Time is a Compute Multiplier
 
 **Conference**: ICLR 2026  
@@ -150,8 +156,8 @@ Equivalent compute multiplier relative to baseline (MMLU All): Consistency 2.10x
 - [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](../../ACL2026/information_retrieval/test-time_training_for_zero-resource_dense_retrieval_reranking.md)
 - [\[ICLR 2026\] MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction](metaembed_scaling_multimodal_retrieval_at_test-time_with_flexible_late_interacti.md)
 - [\[ICLR 2026\] Robust Test-Time Video-Text Retrieval: Benchmarking and Adapting for Query Shifts](robust_test-time_video-text_retrieval_benchmarking_and_adapting_for_query_shifts.md)
-- [\[CVPR 2025\] Advancing Myopia To Holism: Fully Contrastive Language-Image Pre-training](../../CVPR2025/information_retrieval/advancing_myopia_to_holism_fully_contrastive_language-image_pre-training.md)
-- [\[ICLR 2026\] Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction](leveraging_data_to_say_no_memory_augmented_plug-and-play_selective_prediction.md)
+- [\[ICLR 2026\] KaLM-Embedding-V2: Superior Training Techniques and Data Inspire A Versatile Embedding Model](kalm-embedding-v2_superior_training_techniques_and_data_inspire_a_versatile_embe.md)
+- [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
 
 </div>
 

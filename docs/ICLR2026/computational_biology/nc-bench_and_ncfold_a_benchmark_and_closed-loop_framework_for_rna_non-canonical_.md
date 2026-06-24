@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NC-Bench and NCfold: A Benchmark and Closed-Loop Framework for RNA Non-Canonical Base-Pair Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper constructs the first standardized benchmark for RNA non-canonical (NC) base-pair prediction, NC-Bench (925 sequences, 6708 NC annotations), and proposes NCfold—a dual-branch closed-loop framework. By utilizing IsoScore to select RNA foundation model (RFM) embeddings and injecting structural priors via Repres
+  [ICLR 2026][Computational Biology][Non-canonical base pairs] This paper constructs the first standardized benchmark for RNA non-canonical (NC) base-pair prediction, NC-Bench (925 sequences, 6708 NC annotations), and proposes NCfold—a dual-branch closed-loop framework. By utilizing IsoScore to select RNA foundation model (RFM) embeddings and injecting structural priors via Representative Embedding Fusion (REF) into attention, NCfold significantly outperforms traditional machin…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Non-canonical base pairs"
+  - "RNA secondary structure"
+  - "benchmark dataset"
+  - "RNA foundation models"
+  - "attention prior"
 date: 2026-05-08
-content_hash: 2a7cee4d8067ef9e
+content_hash: 3432c23d3ed2ef84
 ---
+
 # NC-Bench and NCfold: A Benchmark and Closed-Loop Framework for RNA Non-Canonical Base-Pair Prediction
 
 **Conference**: ICLR 2026  

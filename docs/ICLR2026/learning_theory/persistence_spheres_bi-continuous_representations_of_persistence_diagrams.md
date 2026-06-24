@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Persistence Spheres: Bi-Continuous Representations of Persistence Diagrams
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes **Persistence Spheres (PS)**: by constructing a "lift zonoid" from a weighted persistence diagram and taking its support function on the unit sphere $S^2$, a functional representation is obtained that is **Lipschitz continuous** with respect to the 1-Wasserstein distance and possesses a **continuous
+  [ICLR 2026][Learning Theory][Persistent Homology] This paper proposes **Persistence Spheres (PS)**: by constructing a "lift zonoid" from a weighted persistence diagram and taking its support function on the unit sphere $S^2$, a functional representation is obtained that is **Lipschitz continuous** with respect to the 1-Wasserstein distance and possesses a **continuous inverse** on its image. This "bi-continuity" is extremely rare in persistence diagram vectorization methods.…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "Persistence Diagrams"
+  - "Vectorized Representation"
+  - "Bi-continuity"
+  - "1-Wasserstein Stability"
 date: 2026-05-08
-content_hash: fe894972764c9215
+content_hash: dae88e5206c1ed96
 ---
+
 # Persistence Spheres: Bi-Continuous Representations of Persistence Diagrams
 
 **Conference**: ICLR 2026  
@@ -148,8 +155,8 @@ Performance was compared across 12 cases in clustering (FDA simulation, Rand Ind
 
 - [\[ICLR 2026\] Bi-Criteria Metric Distortion](bi-criteria_metric_distortion.md)
 - [\[ICLR 2026\] Bi-Lipschitz Autoencoder With Injectivity Guarantee](bi-lipschitz_autoencoder_with_injectivity_guarantee.md)
-- [\[ICML 2026\] Finite-Width Neural Tangent Kernels from Feynman Diagrams](../../ICML2026/learning_theory/finite-width_neural_tangent_kernels_from_feynman_diagrams.md)
 - [\[ICLR 2026\] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval](discounted_online_convex_optimization_uniform_regret_across_a_continuous_interva.md)
+- [\[ICML 2026\] Finite-Width Neural Tangent Kernels from Feynman Diagrams](../../ICML2026/learning_theory/finite-width_neural_tangent_kernels_from_feynman_diagrams.md)
 - [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
 
 </div>

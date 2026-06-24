@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs
 description: >-
-  [ICLR 2026][Multi-Agent][on-policy RL] To address the gap in applying on-policy RL to Multi-Agent Systems (MAS), this paper proposes AT-GRPO—a group-relative RL algorithm grouped by "agent + turn" (featuring tree-based sampling and hybrid global/local rewards) alongside a system supporting concurrent multi-policy on-policy training. It achieves consistent i
+  [ICLR 2026][Multi-Agent][Multi-agent systems] To address the gap in applying on-policy RL to Multi-Agent Systems (MAS), this paper proposes AT-GRPO—a group-relative RL algorithm grouped by "agent + turn" (featuring tree-based sampling and hybrid global/local rewards) alongside a system supporting concurrent multi-policy on-policy training. It achieves consistent improvements across game, planning, code, and math tasks, specifically increasing the success rate of long-horizon…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - on-policy RL
-  - GRPO
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "on-policy RL"
+  - "GRPO"
+  - "role specialization"
+  - "LLM collaboration"
 date: 2026-05-08
-content_hash: dc39fa68add7565d
+content_hash: 6229716667e53f9f
 ---
+
 # Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs
 
 **Conference**: ICLR 2026  

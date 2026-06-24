@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers
 description: >-
-  [NeurIPS 2025][LLM Agent][Liquid cooling optimization] This paper presents LC-Opt, a liquid cooling benchmark environment built upon a high-fidelity digital twin of the cooling system of the ORNL Frontier supercomputer.…
+  [NeurIPS 2025][LLM Agent][Liquid cooling optimization] This paper presents LC-Opt, a liquid cooling benchmark environment built upon a high-fidelity digital twin of the cooling system of the ORNL Frontier supercomputer. It supports end-to-end liquid cooling optimization via RL control policies, encompassing centralized/decentralized multi-agent RL, policy distillation into interpretable decision trees, and an LLM-driven agentic mesh architecture.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "multi-agent RL"
   - "sustainable data centers"
 date: 2026-05-08
-content_hash: 117e4f5744c997d9
+content_hash: 2e30071ad469d286
 ---
 
 # LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers
@@ -190,10 +190,10 @@ The RL reward function is designed for multi-objective optimization:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](../../ICLR2026/llm_agent/unlocking_long-horizon_agentic_search_with_large-scale_end-to-end_rl.md)
 - [\[ACL 2026\] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL](../../ACL2026/llm_agent/memsearcher_training_llms_to_reason_search_and_manage_memory_via_end-to-end_rein.md)
-- [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
-- [\[NeurIPS 2025\] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning](enhancing_demand-oriented_regionalization_with_agentic_ai_and_local_heterogeneou.md)
 - [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](mat-agent_adaptive_multi-agent_training_optimization.md)
+- [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
 - [\[NeurIPS 2025\] Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data](ground-compose-reinforce_grounding_language_in_agentic_behaviours_using_limited_.md)
 
 </div>

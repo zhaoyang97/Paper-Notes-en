@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evaluating Generative Models via One-Dimensional Code Distributions
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The evaluation of generative models is shifted from "continuous recognition features" to "discrete visual tokens." By using a 1D tokenizer to quantize images into token sequences, the authors design a training-free distribution distance (CHD) and a self-supervised no-reference quality score (CMMS). Both achieve state-o
+  [CVPR 2026][Image Generation][Generative model evaluation] The evaluation of generative models is shifted from "continuous recognition features" to "discrete visual tokens." By using a 1D tokenizer to quantize images into token sequences, the authors design a training-free distribution distance (CHD) and a self-supervised no-reference quality score (CMMS). Both achieve state-of-the-art correlation with human judgment across multiple preference benchmarks.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generative model evaluation"
+  - "discrete visual tokens"
+  - "no-reference quality assessment"
+  - "histogram distance"
+  - "VisForm benchmark"
 date: 2026-05-08
-content_hash: 294308657006029b
+content_hash: 5971bf439f3c98dd
 ---
+
 # Evaluating Generative Models via One-Dimensional Code Distributions
 
 **Conference**: CVPR 2026  
@@ -132,6 +138,7 @@ Pairwise Accuracy (percentage of correctly predicted preferred images):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][embodied AI] The D2E framework is proposed, demonstrating that desktop gaming interaction data can serve as an effective pretraining base for embodied AI. By collecting 335h of human demonstrations via the OWA toolkit, pseudo-labeling 1000+h of YouTube gaming videos with Generalist-IDM, and performing VAPT transfer training, a 1B p
+  [ICLR 2026][Robotics][embodied AI] The D2E framework is proposed, demonstrating that desktop gaming interaction data can serve as an effective pretraining base for embodied AI. By collecting 335h of human demonstrations via the OWA toolkit, pseudo-labeling 1000+h of YouTube gaming videos with Generalist-IDM, and performing VAPT transfer training, a 1B parameter model achieves 96.6% success rate on LIBERO manipulation and 83.3% on CANVAS navigation…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - embodied AI
-  - desktop pretraining
-  - inverse dynamics model
-  - vision-action pretraining
-  - robotics transfer
+  - "ICLR 2026"
+  - "Robotics"
+  - "embodied AI"
+  - "desktop pretraining"
+  - "inverse dynamics model"
+  - "vision-action pretraining"
+  - "robotics transfer"
 date: 2026-05-08
-content_hash: 75f54d133225e8c7
+content_hash: 45c81c967db8acf1
 ---
+
 # D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI
 
 **Conference**: ICLR 2026  
@@ -140,7 +141,7 @@ Generalist-IDM outperforms Specialist-IDM across all games (up to 57.6% improvem
 - [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
 - [\[ICML 2026\] Seeing Realism from Simulation: Efficient Video Transfer for Vision-Language-Action Data Augmentation](../../ICML2026/robotics/seeing_realism_from_simulation_efficient_video_transfer_for_vision-language-acti.md)
 - [\[ICLR 2026\] Self-Improving Vision-Language-Action Models with Data Generation via Residual RL](self-improving_vision-language-action_models_with_data_generation_via_residual_r.md)
-- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
+- [\[ICLR 2026\] UrbanVerse: Scaling Urban Simulation by Watching City-Tour Videos](urbanverse_scaling_urban_simulation_by_watching_city-tour_videos.md)
 
 </div>
 

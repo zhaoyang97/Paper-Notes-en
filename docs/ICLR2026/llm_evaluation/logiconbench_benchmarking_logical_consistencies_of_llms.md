@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LogiConBench: Benchmarking Logical Consistencies of LLMs
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] LogiConBench utilizes a pipeline of "automated logical graph generation → proposition sampling and truth value propagation along reasoning paths → translation to natural language" to construct an infinitely scalable, depth-controllable logical consistency evaluation set of 280K samples with explicit reasoning paths. By
+  [ICLR 2026][LLM Evaluation][Logical Consistency] LogiConBench utilizes a pipeline of "automated logical graph generation → proposition sampling and truth value propagation along reasoning paths → translation to natural language" to construct an infinitely scalable, depth-controllable logical consistency evaluation set of 280K samples with explicit reasoning paths. By designing three categories of tasks — discrimination, enumeration, and generation — the study reveals a critic…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Logical Consistency"
+  - "Automated Data Generation"
+  - "Logical Graph"
+  - "Reasoning Path"
+  - "Enumeration Task"
 date: 2026-05-08
-content_hash: 36e3ca602d6d2381
+content_hash: 4b9c01f43a7f7fec
 ---
+
 # LogiConBench: Benchmarking Logical Consistencies of LLMs
 
 **Conference**: ICLR 2026  
@@ -121,10 +127,17 @@ Enumeration is the primary bottleneck: even for the strongest models, the averag
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)
+- [\[ICLR 2026\] PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing](pcb-bench_benchmarking_llms_for_printed_circuit_board_placement_and_routing.md)
+- [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
+- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](../../ACL2026/llm_evaluation/personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
+- [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](../../AAAI2026/llm_evaluation/benchmarking_llms_for_political_science_a_united_nations_perspective.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Benchmarking Overton Pluralism in LLMs](benchmarking_overton_pluralism_in_llms.md)

@@ -2,13 +2,23 @@
 title: >-
   [Paper Note] Learning a Game by Paying the Agents
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] By observing only the behavior of no-regret learning agents in repeated games and actively intervening through "payments + signaling," a principal can learn all agents' utility functions (up to strategic equivalence) to any precision $\varepsilon$ within polynomial rounds. This enables the first implementation of "stee
+  [ICLR 2026][Learning Theory][Inverse Game Theory] By observing only the behavior of no-regret learning agents in repeated games and actively intervening through "payments + signaling," a principal can learn all agents' utility functions (up to strategic equivalence) to any precision $\varepsilon$ within polynomial rounds. This enables the first implementation of "steering arbitrary no-regret learners to optimal equilibria" without prior knowledge of agent utilities.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Algorithmic Game Theory"
+  - "Inverse Game Theory"
+  - "Utility Learning"
+  - "No-Regret Learning"
+  - "Payment Mechanism"
+  - "Signal Design"
+  - "Steering No-Regret Learners"
+  - "Zero-Sum Games"
+  - "Correlated Equilibrium"
 date: 2026-05-08
-content_hash: ae6a407192bdab26
+content_hash: 719e02ab9a833473
 ---
+
 # Learning a Game by Paying the Agents
 
 **Conference**: ICLR 2026  
@@ -116,8 +126,8 @@ This is a purely theoretical work; "experiments" consist of a series of upper an
 - [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
 - [\[ICLR 2026\] Learning to Adapt: In-Context Learning Beyond Stationarity](learning_to_adapt_in-context_learning_beyond_stationarity.md)
 - [\[ICLR 2026\] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization](sharp_asymptotic_theory_for_q-learning_with_textttld2z_learning_rate_and_its_gen.md)
+- [\[ICLR 2026\] How Reinforcement Learning after Next-Token Prediction Facilitates Learning](how_reinforcement_learning_after_next-token_prediction_facilitates_learning.md)
 - [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
-- [\[ICLR 2026\] Learning to Answer from Correct Demonstrations](learning_to_answer_from_correct_demonstrations.md)
 
 </div>
 

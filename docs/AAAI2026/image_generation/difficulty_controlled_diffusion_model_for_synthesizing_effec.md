@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] A difficulty encoder (MLP taking class label and difficulty score as input) is incorporated into Stable Diffusion…
+  [AAAI 2026][Image Generation][Diffusion Models] A difficulty encoder (MLP taking class label and difficulty score as input) is incorporated into Stable Diffusion, with LoRA fine-tuning used to decouple the objectives of "domain alignment" and "difficulty control," enabling controllable learning difficulty in synthesized data. Using only 10% additional synthetic data, the proposed method surpasses the best results of Real-Fake while saving 63.4 GPU hours.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Curriculum Learning"
   - "Difficulty Encoder"
 date: 2026-05-08
-content_hash: a26a0df2015247b5
+content_hash: f8c78fdcca23d0a1
 ---
 
 # Difficulty Controlled Diffusion Model for Synthesizing Effective Training Data
@@ -134,9 +134,9 @@ Validation across model architectures (Table 4):
 
 - [\[AAAI 2026\] Targeted Data Protection for Diffusion Model by Matching Training Trajectory](targeted_data_protection_for_diffusion_model_by_matching_training_trajectory.md)
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
+- [\[CVPR 2025\] Training Data Provenance Verification: Did Your Model Use Synthetic Data from My Generative Model for Training?](../../CVPR2025/image_generation/training_data_provenance_verification_did_your_model_use_synthetic_data_from_my_.md)
 - [\[AAAI 2026\] Diffusion Reconstruction-Based Data Likelihood Estimation for Core-Set Selection](diffusion_reconstruction-based_data_likelihood_estimation_for_core-set_selection.md)
 - [\[AAAI 2026\] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation](retrysql_text-to-sql_training_with_retry_data_for_self-correcting_query_generati.md)
-- [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
 
 </div>
 

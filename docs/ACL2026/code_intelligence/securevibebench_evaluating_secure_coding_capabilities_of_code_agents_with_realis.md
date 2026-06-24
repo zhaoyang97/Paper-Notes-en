@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] This paper proposes SecureVibeBench, the first repository-level multi-file editing secure coding benchmark. It constructs 105 C/C++ secure coding tasks from 41 OSS-Fuzz projects. By accurately restoring the scenarios where vulnerabilities were first introduced through cascaded static and dynamic analysis, the evaluatio
+  [ACL 2026][Code Intelligence][Secure coding] This paper proposes SecureVibeBench, the first repository-level multi-file editing secure coding benchmark. It constructs 105 C/C++ secure coding tasks from 41 OSS-Fuzz projects. By accurately restoring the scenarios where vulnerabilities were first introduced through cascaded static and dynamic analysis, the evaluation reveals that only 23.8% of the code produced by the best agent (SWE-agent + Claude Sonnet 4.5) satisfies both fun…
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Secure coding"
+  - "code agent"
+  - "vulnerability introduction"
+  - "benchmark"
+  - "repository-level code generation"
 date: 2026-05-08
-content_hash: 145c36ab67c8ddda
+content_hash: 5a6c2e31c83caf5c
 ---
+
 # SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios
 
 **Conference**: ACL 2026  
@@ -114,15 +120,15 @@ Simply detecting the recurrence of known vulnerabilities is insufficient, as age
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] CodeDistiller: Automatically Generating Code Libraries for Scientific Coding Agents](codedistiller_automatically_generating_code_libraries_for_scientific_coding_agen.md)
 - [\[ACL 2026\] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](deepguard_secure_code_generation_via_multi-layer_semantic_aggregation.md)
 - [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
-- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](../../ICML2026/code_intelligence/nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
-- [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](../../ICLR2026/code_intelligence/viscoder2_building_multi-language_visualization_coding_agents.md)
+- [\[ACL 2025\] MLDebugging: Towards Benchmarking Code Debugging Across Multi-Library Scenarios](../../ACL2025/code_intelligence/mldebugging_towards_benchmarking_code_debugging_across_multi-library_scenarios.md)
 
 </div>
 

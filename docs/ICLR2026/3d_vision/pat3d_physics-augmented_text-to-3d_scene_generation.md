@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAT3D: Physics-Augmented Text-to-3D Scene Generation
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] PAT3D integrates vision-language model (VLM) reasoning and differentiable rigid-body contact simulation into the text-to-3D scene generation pipeline. By extracting support dependencies from a reference image to build a scene tree and generating an interpenetration-free initial layout, the method utilizes "simulation-i
+  [ICLR 2026][3D Vision][Text-to-3D scene generation] PAT3D integrates vision-language model (VLM) reasoning and differentiable rigid-body contact simulation into the text-to-3D scene generation pipeline. By extracting support dependencies from a reference image to build a scene tree and generating an interpenetration-free initial layout, the method utilizes "simulation-in-the-loop" differentiable optimization. This allows the scene to converge under gravity to a static equilib…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Text-to-3D scene generation"
+  - "physical simulation"
+  - "differentiable rigid-body simulation"
+  - "scene tree"
+  - "layout optimization"
 date: 2026-05-08
-content_hash: 09b41db6830cdcf0
+content_hash: a529a08b5b06c852
 ---
+
 # PAT3D: Physics-Augmented Text-to-3D Scene Generation
 
 **Conference**: ICLR 2026  
@@ -122,10 +128,10 @@ PAT3D leads across all metrics, achieving perfect scores in stability (zero disp
 ## Related Papers
 
 - [\[AAAI 2026\] Open-World 3D Scene Graph Generation for Retrieval-Augmented Reasoning](../../AAAI2026/3d_vision/open-world_3d_scene_graph_generation_for_retrieval-augmented_reasoning.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
+- [\[ICLR 2026\] Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation](scenethesis_a_language_and_vision_agentic_framework_for_3d_scene_generation.md)
 - [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
 - [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
-- [\[NeurIPS 2025\] Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders](../../NeurIPS2025/3d_vision/gaussian-augmented_physics_simulation_and_system_identification_with_complex_col.md)
-- [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
 
 </div>
 

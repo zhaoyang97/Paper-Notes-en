@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Classification Accuracy: Neural-MedBench and the Need for Deeper Reasoning Benchmarks
 description: >-
-  [ICLR 2026][vlm_reasoning][Two-Axis Evaluation] This paper identifies that existing medical VLM benchmarks focus only on classification accuracy, creating an "evaluation illusion." It proposes a "Breadth-Depth" two-axis evaluation framework and builds Neural-MedBench, a deep reasoning benchmark for neurology (120 multimodal cases, 200 reasoning tasks). Empirical res
+  [ICLR 2026][VLM Reasoning][Medical VLM] This paper identifies that existing medical VLM benchmarks focus only on classification accuracy, creating an "evaluation illusion." It proposes a "Breadth-Depth" two-axis evaluation framework and builds Neural-MedBench, a deep reasoning benchmark for neurology (120 multimodal cases, 200 reasoning tasks). Empirical results show that top models like GPT-5, Claude-4, and MedGemma fail collectively in deep reasoning…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Two-Axis Evaluation
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Medical VLM"
+  - "Clinical Reasoning"
+  - "Neurology"
+  - "Evaluation Illusion"
+  - "Two-Axis Evaluation"
 date: 2026-05-08
-content_hash: 98c19baba01338cf
+content_hash: 69555c0fa2372da6
 ---
+
 # Beyond Classification Accuracy: Neural-MedBench and the Need for Deeper Reasoning Benchmarks
 
 **Conference**: ICLR 2026  
@@ -117,8 +122,8 @@ flowchart LR
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses clinical trustworthiness; open-source grader and benchmark provide immediate utility for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

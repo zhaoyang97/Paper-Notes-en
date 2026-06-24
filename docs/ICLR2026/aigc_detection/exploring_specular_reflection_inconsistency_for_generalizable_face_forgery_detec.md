@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Specular Reflection Inconsistency for Generalizable Face Forgery Detection
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] Starting from the physical principles of facial imaging, this paper notes that the "specular reflection" component in the Phong illumination model possesses the most parameters, the strongest nonlinearity, and is the hardest to replicate by forgery methods. Consequently, it employs Retinex texture estimation to accurat
+  [ICLR 2026][AIGC Detection][deepfake detection] Starting from the physical principles of facial imaging, this paper notes that the "specular reflection" component in the Phong illumination model possesses the most parameters, the strongest nonlinearity, and is the hardest to replicate by forgery methods. Consequently, it employs Retinex texture estimation to accurately isolate specular reflection and uses a two-stage cross-attention network, SRI-Net…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "deepfake detection"
+  - "specular reflection"
+  - "Phong illumination model"
+  - "Retinex texture"
+  - "cross-attention"
 date: 2026-05-08
-content_hash: 92b106eba4c080bf
+content_hash: a312bf427c3c6207
 ---
+
 # Exploring Specular Reflection Inconsistency for Generalizable Face Forgery Detection
 
 **Conference**: ICLR 2026  
@@ -162,7 +168,6 @@ Video-level AUC on CDF-v2 / DFD reached 95.5 / 93.1, maintaining a lead even wit
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -170,7 +175,7 @@ Video-level AUC on CDF-v2 / DFD reached 95.5 / 93.1, maintaining a lead even wit
 - [\[CVPR 2026\] Learning Forgery-Aware Lip Representations Without Forgery Priors](../../CVPR2026/aigc_detection/learning_forgery-aware_lip_representations_without_forgery_priors.md)
 - [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
 - [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](../../CVPR2026/aigc_detection/inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
-- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[ICLR 2026\] A Rich Knowledge Space for Scalable Deepfake Detection](a_rich_knowledge_space_for_scalable_deepfake_detection.md)
 
 </div>
 

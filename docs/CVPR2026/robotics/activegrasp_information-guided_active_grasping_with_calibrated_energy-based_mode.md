@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ActiveGrasp: Information-Guided Active Grasping with Calibrated Energy-based Model
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Next-Best-View] Addressing the challenge of grasping targets in cluttered scenes with limited viewpoints, ActiveGrasp employs a **calibrated energy-based model** to directly model grasp distributions on the SE(3) manifold. It defines the information gain of the "Next-Best-View" (NBV) as the **reduction in grasp success entropy**, guid
+  [CVPR 2026][Robotics][Active Grasping] Addressing the challenge of grasping targets in cluttered scenes with limited viewpoints, ActiveGrasp employs a **calibrated energy-based model** to directly model grasp distributions on the SE(3) manifold. It defines the information gain of the "Next-Best-View" (NBV) as the **reduction in grasp success entropy**, guiding the robot to regions of highest uncertainty. This approach achieves superior success rates with fewer view budgets in…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Next-Best-View
+  - "CVPR 2026"
+  - "Robotics"
+  - "Active Grasping"
+  - "Next-Best-View"
+  - "Energy-based Models"
+  - "SE(3) Manifold"
+  - "Model Calibration"
 date: 2026-05-08
-content_hash: 43f4ba4f961b9e16
+content_hash: fc638451beb76e96
 ---
+
 # ActiveGrasp: Information-Guided Active Grasping with Calibrated Energy-based Model
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Evaluation of EBM components on Acronym:
 
 ## Related Papers
 
-- [\[CVPR 2026\] EnergyAction: Unimanual to Bimanual Composition with Energy-Based Models](energyaction_unimanual_to_bimanual_composition_with_energy-based_models.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
+- [\[CVPR 2026\] EnergyAction: Unimanual to Bimanual Composition with Energy-Based Models](energyaction_unimanual_to_bimanual_composition_with_energy-based_models.md)
 - [\[CVPR 2026\] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching](geninav_generative_model_driven_image-goal_navigation_via_imagination-guided_con.md)
+- [\[ICLR 2026\] Spatially Guided Training for Vision-Language-Action Model](../../ICLR2026/robotics/spatially_guided_training_for_vision-language-action_model.md)
 - [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](obstruction_reasoning_for_robotic_grasping.md)
-- [\[CVPR 2026\] FloVerse: Floor Plan-Guided Multi-Modal Navigation](floverse_floor_plan-guided_multi-modal_navigation.md)
 
 </div>
 

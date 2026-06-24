@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Characterizing the Expressivity of Fixed-Precision Transformer Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][transformer expressivity] This work precisely characterizes the expressive power of fixed-precision, strictly causal, soft-attention…
+  [NeurIPS 2025 Spotlight][LLM (Other)][transformer expressivity] This work precisely characterizes the expressive power of fixed-precision, strictly causal, soft-attention, NoPE Transformers — showing it is exactly equivalent to linear temporal logic restricted to past operators, LTL[P] — and unifies this characterization with partially ordered deterministic finite automata (PODFA) and $\mathcal{R}$-trivial monoids.
 tags:
-  - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "NeurIPS 2025 Spotlight"
+  - "LLM (Other)"
   - "transformer expressivity"
   - "formal language theory"
   - "linear temporal logic"
   - "fixed precision"
   - "length generalization"
 date: 2026-05-08
-content_hash: 1519bcb312444675
+content_hash: fba12c73de534e1e
 ---
 
 # Characterizing the Expressivity of Fixed-Precision Transformer Language Models
@@ -133,9 +133,9 @@ Length generalization experiments (trained on short sequences, tested on longer 
 ## Related Papers
 
 - [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
+- [\[ACL 2025\] A Systematic Study of Compositional Syntactic Transformer Language Models](../../ACL2025/llm_nlp/a_systematic_study_of_compositional_syntactic_transformer_language_models.md)
 - [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
-- [\[NeurIPS 2025\] Towards Implicit Aggregation: Robust Image Representation for Place Recognition in the Transformer Era](towards_implicit_aggregation_robust_image_representation_for_place_recognition_i.md)
-- [\[NeurIPS 2025\] On the Role of Hidden States of Modern Hopfield Network in Transformer](on_the_role_of_hidden_states_of_modern_hopfield_network_in_transformer.md)
+- [\[ACL 2025\] Circuit Compositions: Exploring Modular Structures in Transformer-Based Language Models](../../ACL2025/llm_nlp/circuit_compositions_modular_structures.md)
 - [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
 
 </div>

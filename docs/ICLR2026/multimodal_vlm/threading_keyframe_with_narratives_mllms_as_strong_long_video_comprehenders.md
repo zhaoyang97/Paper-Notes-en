@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Threading Keyframe with Narratives: MLLMs as Strong Long Video Comprehenders
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] Nar-KFC compresses long video inputs into "query-relevant and diverse keyframes + non-keyframe narratives inserted in real-time order," significantly enhancing performance in various long-video question-answering and open-ended generation tasks without retraining the MLLM.
+  [ICLR 2026][Multimodal VLM][Long Video Understanding] Nar-KFC compresses long video inputs into "query-relevant and diverse keyframes + non-keyframe narratives inserted in real-time order," significantly enhancing performance in various long-video question-answering and open-ended generation tasks without retraining the MLLM.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Long Video Understanding"
+  - "Keyframe Selection"
+  - "MLLM"
+  - "VideoQA"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: c1cde00872f77fef
+content_hash: 173c27c7b3844801
 ---
+
 # Threading Keyframe with Narratives: MLLMs as Strong Long Video Comprehenders
 
 **Conference**: ICLR 2026  
@@ -146,13 +151,20 @@ On Video-MME (no-subtitle), Nar-KFC improves baseline MLLMs by an average of $4.
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for real-world long-video MLLM systems as a training-free boost.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **InternVL2**: Baseline platform for many long-video tests.
-- **LLaVA-Video**: Evaluation target for the efficiency of the method.
-- **Qwen2-VL**: Used as both a base MLLM and a narrative generator.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
+- [\[ICLR 2026\] BaseReward: A Strong Baseline for Multimodal Reward Model](basereward_a_strong_baseline_for_multimodal_reward_model.md)
+- [\[CVPR 2025\] Video-XL: Extra-Long Vision Language Model for Hour-Scale Video Understanding](../../CVPR2025/multimodal_vlm/video-xl_extra-long_vision_language_model_for_hour-scale_video_understanding.md)
+- [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
+- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)

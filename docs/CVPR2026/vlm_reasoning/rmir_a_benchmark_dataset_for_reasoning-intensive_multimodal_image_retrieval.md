@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][benchmark] RMIR introduces a multimodal image retrieval benchmark requiring 1-2 steps of logical reasoning to find the target image (1,634 test queries across functional, temporal, and causal reasoning), accompanied by a fully automated and scalable data generation pipeline. Evaluations indicate that even the strongest models ach
+  [CVPR 2026][VLM Reasoning][Multimodal Retrieval] RMIR introduces a multimodal image retrieval benchmark requiring 1-2 steps of logical reasoning to find the target image (1,634 test queries across functional, temporal, and causal reasoning), accompanied by a fully automated and scalable data generation pipeline. Evaluations indicate that even the strongest models achieve only 46.53% R@20, with generative embeddings utilizing explicit reasoning significantly outperforming disc…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - benchmark
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Retrieval"
+  - "Reasoning Retrieval"
+  - "Benchmark"
+  - "Automated Data Generation"
+  - "Generative Embedding"
 date: 2026-05-08
-content_hash: 4ec7324e562fdbdf
+content_hash: dedb08a361578b9d
 ---
+
 # RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Evaluations were conducted on 1,634 test queries using 11 models (Open-source ML
 
 ## Related Papers
 
-- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
-- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
-- [\[CVPR 2026\] ReMatch: Boosting Representation through Matching for Multimodal Retrieval](rematch_boosting_representation_through_matching_for_multimodal_retrieval.md)
-- [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
-- [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
+- [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](../../ICLR2026/vlm_reasoning/mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
+- [\[CVPR 2026\] Compositional Transformation Reasoning for Composed Video Retrieval](compositional_transformation_reasoning_for_composed_video_retrieval.md)
+- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
+- [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](../../ICLR2026/vlm_reasoning/iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
+- [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models
 description: >-
-  [ACL 2026][Interpretability][time-sensitive knowledge] The authors propose MINED—the first evaluation benchmark for **multimodal time-sensitive knowledge**, consisting of 2,104 $(subject, hypernym, property, attribute-list)$ quadruplets across 11 sub-tasks in 6 dimensions (Cognition / Awareness / Trustworthiness / Understanding / Reasoning / Robustness), totaling 4,208 que
+  [ACL 2026][Interpretability][time-sensitive knowledge] The authors propose MINED—the first evaluation benchmark for **multimodal time-sensitive knowledge**, consisting of 2,104 $(subject, hypernym, property, attribute-list)$ quadruplets across 11 sub-tasks in 6 dimensions (Cognition / Awareness / Trustworthiness / Understanding / Reasoning / Robustness), totaling 4,208 questions. Evaluation of 15 LME's shows Gemini-2.5-Pro achieving the highest average $\text{CEM}=63.07$ but…
 tags:
-  - ACL 2026
-  - Interpretability
-  - time-sensitive knowledge
-  - temporal awareness
-  - benchmark
-  - knowledge editing
-  - LMM probing
+  - "ACL 2026"
+  - "Interpretability"
+  - "time-sensitive knowledge"
+  - "temporal awareness"
+  - "benchmark"
+  - "knowledge editing"
+  - "LMM probing"
 date: 2026-05-08
-content_hash: 067fd998a5ba171c
+content_hash: 115fec7b2f311997
 ---
+
 # MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models
 
 **Conference**: ACL 2026  
@@ -144,14 +145,17 @@ $\rightarrow$ SERAC is 4 $\times$ more robust than parameter-modification method
 
 <div class="related-papers" markdown="1">
 
-- **EvolveBench**: Real-time Interactive Benchmark for Large Language Models (arXiv 2025)
-- **TimeQA**: Time-sensitive Question Answering over Knowledge Graphs (arXiv 2021)
-- **LiveVQA**: A Benchmark for Real-time Visual Knowledge Acquisition (arXiv 2024)
+## Related Papers
+
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
+- [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
+- [\[ACL 2025\] Around the World in 24 Hours: Probing LLM Knowledge of Time and Place](../../ACL2025/interpretability/around_the_world_in_24_hours_probing_llm_knowledge_of_time_and_place.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)

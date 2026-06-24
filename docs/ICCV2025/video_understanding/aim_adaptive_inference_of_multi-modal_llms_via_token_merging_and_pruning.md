@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal Large Language Models] This paper proposes a training-free adaptive inference framework that achieves flexible accuracy–efficiency trade-offs across a 40× FLOPs range for multi…
+  [ICCV 2025][Video Understanding][Multimodal Large Language Models] This paper proposes a training-free adaptive inference framework that achieves flexible accuracy–efficiency trade-offs across a 40× FLOPs range for multimodal LLMs. The method combines iterative token merging based on embedding cosine similarity before the LLM, and progressive token pruning based on PageRank-derived multimodal importance scores within LLM layers. Strong performance is demonstrated on both vide…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Token Pruning"
   - "Visual Token Redundancy"
 date: 2026-05-08
-content_hash: 5f312fc067cf2095
+content_hash: ae9203a071315e99
 ---
 
 # AIM: Adaptive Inference of Multi-Modal LLMs via Token Merging and Pruning

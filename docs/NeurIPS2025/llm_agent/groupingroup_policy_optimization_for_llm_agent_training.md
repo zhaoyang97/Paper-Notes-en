@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Group-in-Group Policy Optimization for LLM Agent Training
 description: >-
-  [NeurIPS 2025][LLM Agent][GiGPO] GiGPO introduces step-level grouping nested within the episode-level grouping of GRPO by leveraging recurring environment states across trajectories as anchor states…
+  [NeurIPS 2025][LLM Agent][GiGPO] GiGPO introduces step-level grouping nested within the episode-level grouping of GRPO by leveraging recurring environment states across trajectories as anchor states, enabling fine-grained credit assignment without additional rollouts or a critic model. It outperforms GRPO by >12% on ALFWorld and >9% on WebShop.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "multi-turn agent"
   - "GRPO"
 date: 2026-05-08
-content_hash: 1b56078abc4c4fac
+content_hash: 0b6600d08add2e24
 ---
 
 # Group-in-Group Policy Optimization for LLM Agent Training
@@ -138,8 +138,8 @@ Both levels of advantage are indispensable. Removing $A_E$ eliminates the global
 - [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](mat-agent_adaptive_multi-agent_training_optimization.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](../../ACL2026/llm_agent/bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
+- [\[ICML 2026\] Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization](../../ICML2026/llm_agent/towards_pareto-optimal_tool-integrated_agents_with_pareto_ranking_policy_optimiz.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[NeurIPS 2025\] BTL-UI: Blink-Think-Link Reasoning Model for GUI Agent](btlui_blinkthinklink_reasoning_model_for_gui_agent.md)
 
 </div>
 

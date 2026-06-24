@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] ETC models each concept as a Student-t Mixture Model (tMM) on text embeddings, uses Affine Optimal Transport (AOT) to map target concepts to an "anonymous" distribution, and automatically samples anchors from distribution boundaries (eliminating manual selection). By employing a MoE-based erasure module, MoEraser, comb
+  [CVPR 2026][Image Generation][Concept Erasure] ETC models each concept as a Student-t Mixture Model (tMM) on text embeddings, uses Affine Optimal Transport (AOT) to map target concepts to an "anonymous" distribution, and automatically samples anchors from distribution boundaries (eliminating manual selection). By employing a MoE-based erasure module, MoEraser, combined with "Noise Injection-Recovery" training, it erases 2000+ cross-domain concepts on SDv1.4 / SDv3.5-L in one…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-to-Image Diffusion"
+  - "Optimal Transport"
+  - "MoE"
+  - "White-box Robustness"
 date: 2026-05-08
-content_hash: 58b906c1b21c7dd0
+content_hash: ff6ebacee3444f53
 ---
+
 # Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -162,15 +167,16 @@ ETC reduced target detection accuracy to 0.24% while retaining 89.37% of other c
 - Value: ⭐⭐⭐⭐⭐ First effective erasure of 2000+ cross-domain concepts with a non-bypassable security paradigm.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
+- [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](maproute_semantic_routing_concept_erasure.md)
 - [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
-- [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](../../ICLR2026/image_generation/speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
-- [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 
 </div>
 

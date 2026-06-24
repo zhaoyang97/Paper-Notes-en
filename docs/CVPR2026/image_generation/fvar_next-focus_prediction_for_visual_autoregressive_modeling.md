@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FVAR: Next-Focus Prediction for Visual Autoregressive Modeling
 description: >-
-  [CVPR 2026][Image Generation][Knowledge Distillation] FVAR reformulates the "next-scale prediction" of Visual Autoregressive (VAR) modeling into "next-focus prediction." By constructing a pyramid from blur to clarity using physically consistent defocus kernels, it eliminates aliasing (jaggies/Moiré patterns) caused by uniform downsampling at the source. Additionally, a hi
+  [CVPR 2026][Image Generation][Visual Autoregressive] FVAR reformulates the "next-scale prediction" of Visual Autoregressive (VAR) modeling into "next-focus prediction." By constructing a pyramid from blur to clarity using physically consistent defocus kernels, it eliminates aliasing (jaggies/Moiré patterns) caused by uniform downsampling at the source. Additionally, a high-frequency residual teacher, present only during training, distills aliasing information into the origina…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Autoregressive"
+  - "Anti-aliasing"
+  - "Defocus Kernel"
+  - "Multi-scale Pyramid"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 1fc89dc8a07d16eb
+content_hash: 07af5e31b8d43b1e
 ---
+
 # FVAR: Next-Focus Prediction for Visual Autoregressive Modeling
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Ablating components on FVAR-d16 (Comparing ImageNet 256² and 1024²):
 ## Related Papers
 
 - [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
-- [\[CVPR 2026\] Depth Adaptive Efficient Visual Autoregressive Modeling](depthvar_depth_adaptive_var.md)
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](../../ICLR2026/image_generation/visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
+- [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](../../ICLR2026/image_generation/mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
 
 </div>
 

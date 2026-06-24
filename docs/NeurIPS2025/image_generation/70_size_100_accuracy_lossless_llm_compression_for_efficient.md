@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float (DFloat11)
 description: >-
-  [NeurIPS 2025][Image Generation][Lossless Compression] DFloat11 exploits the low-entropy property of exponent bits in BFloat16 weights to losslessly compress LLMs and diffusion models to approximately 70% of their origin…
+  [NeurIPS 2025][Image Generation][Lossless Compression] DFloat11 exploits the low-entropy property of exponent bits in BFloat16 weights to losslessly compress LLMs and diffusion models to approximately 70% of their original size (equivalent to ~11 bits) via Huffman coding. It further introduces hierarchical lookup tables and a two-phase GPU kernel for efficient online decompression, enabling lossless inference of Llama 3.1 405B on a single node with 8×80GB GPUs.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "GPU Inference"
   - "Entropy Coding"
 date: 2026-05-08
-content_hash: d346c0b3dcf1f3c9
+content_hash: fd87b3dd32951f42
 ---
 
 # 70% Size, 100% Accuracy: Lossless LLM Compression for Efficient GPU Inference via Dynamic-Length Float (DFloat11)
@@ -142,11 +142,11 @@ DFloat11 is currently the only compression scheme that simultaneously achieves *
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](counterfactual_identifiability_via_dynamic_optimal_transport.md)
-- [\[ICLR 2026\] Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty](../../ICLR2026/image_generation/unsupervised_conformal_inference_bootstrapping_and_alignment_to_control_llm_unce.md)
+- [\[CVPR 2025\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](../../CVPR2025/image_generation/dit-ic_aligned_diffusion_transformer_for_efficient_image_compression.md)
 - [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
-- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](../../CVPR2026/image_generation/evatok_adaptive_length_video_tokenization_for_eff.md)
-- [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
+- [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](counterfactual_identifiability_via_dynamic_optimal_transport.md)
+- [\[NeurIPS 2025\] Accelerating Parallel Diffusion Model Serving with Residual Compression](accelerating_parallel_diffusion_model_serving_with_residual_compression.md)
+- [\[CVPR 2025\] MMAR: Towards Lossless Multi-Modal Auto-Regressive Probabilistic Modeling](../../CVPR2025/image_generation/mmar_towards_lossless_multi-modal_auto-regressive_probabilistic_modeling.md)
 
 </div>
 

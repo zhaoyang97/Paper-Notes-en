@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multimodal policy] This paper proposes the Diversity-regularized Actor Critic (DrAC) algorithm, which unifies intractable multimodal policies (amortized actor and diffusion actor) u…
+  [NeurIPS 2025][Reinforcement Learning][multimodal policy] This paper proposes the Diversity-regularized Actor Critic (DrAC) algorithm, which unifies intractable multimodal policies (amortized actor and diffusion actor) under a stochastic-mapping formulation, enables direct policy gradient optimization via reparameterization without requiring probability density evaluation, and introduces a distance-based diversity regularization as an alternative to entropy regularization. Dr…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "diffusion policy"
   - "actor-critic"
 date: 2026-05-08
-content_hash: 94fa6138d4b51274
+content_hash: b98ef420cf639b04
 ---
 
 # Learning Intractable Multimodal Policies with Reparameterization and Diversity Regularization
@@ -158,11 +158,11 @@ $$\mathcal{L}_\alpha = \mathbb{E}_{s \sim \mathcal{D}}[\alpha(\tilde{D}_\theta(s
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Certifying Stability of Reinforcement Learning Policies using Generalized Lyapunov Functions](certifying_stability_of_reinforcement_learning_policies_using_generalized_lyapun.md)
+- [\[ICLR 2026\] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](../../ICLR2026/reinforcement_learning/multimodal_llm-assisted_evolutionary_search_for_programmatic_control_policies.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
 - [\[NeurIPS 2025\] Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering](knowledge-based_visual_question_answer_with_multimodal_processing_retrieval_and_.md)
-- [\[ICLR 2026\] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization](../../ICLR2026/reinforcement_learning/autoqd_automatic_discovery_of_diverse_behaviors_with_quality-diversity_optimizat.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
+- [\[NeurIPS 2025\] Certifying Stability of Reinforcement Learning Policies using Generalized Lyapunov Functions](certifying_stability_of_reinforcement_learning_policies_using_generalized_lyapun.md)
+- [\[ICML 2025\] Robust Offline Reinforcement Learning with Linearly Structured f-Divergence Regularization](../../ICML2025/reinforcement_learning/robust_offline_reinforcement_learning_with_linearly_structured_f-divergence_regu.md)
 
 </div>
 

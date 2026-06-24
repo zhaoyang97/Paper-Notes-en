@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] AFTER: 用自适应事实引导的激活编辑缓解 LVLM 的物体幻觉
+  [Paper Note] AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] AFTER textualizes ground-truth image annotations into three categories of facts (category, attribute, and relationship). It constructs positive vision-text editing directions based on the activation difference between these factual descriptions and the original images. A lightweight estimator is then trained to estimat
+  [ICLR 2026][Hallucination Detection][Object Hallucination] AFTER textualizes ground-truth image annotations into three categories of facts (category, attribute, and relationship). It constructs positive vision-text editing directions based on the activation difference between these factual descriptions and the original images. A lightweight estimator is then trained to estimate per-query offsets, adaptively pushing LVLM activations toward factual semantics…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination"
+  - "Activation Editing"
+  - "Language Bias"
+  - "Vision-Language Guidance"
+  - "Inference-time Intervention"
 date: 2026-05-08
-content_hash: c6b52065dbb0c5aa
+content_hash: 0d8147f6f5142178
 ---
+
 # AFTER: Mitigating Object Hallucinations in LVLMs with Adaptive Fact-guided Activation Editing
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,15 @@ Using only the general vector from FAS (w/o QAO) already significantly outperfor
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] SHIELD: Suppressing Hallucinations In LVLM Encoders via Bias and Vulnerability Defense](shield_suppressing_hallucinations_in_lvlm_encoders_via_bias_and_vulnerability_de.md)
-- [\[ECCV 2024\] BEAF: Observing BEfore-AFter Changes to Evaluate Hallucination in Vision-Language Models](../../ECCV2024/hallucination/beaf_observing_beforeafter_changes_to_evaluate_hallucination.md)
-- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
-- [\[CVPR 2026\] AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM](../../CVPR2026/hallucination/adaiat_adaptively_increasing_attention_to_generated_text_to_alleviate_hallucinat.md)
-- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](../../CVPR2026/hallucination/same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
+- [\[NeurIPS 2025\] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity](../../NeurIPS2025/hallucination/glsim_detecting_object_hallucinations_in_lvlms_via_globalloc.md)
+- [\[AAAI 2026\] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs](../../AAAI2026/hallucination/causally-grounded_dual-path_attention_intervention_for_objec.md)
+- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
+- [\[ICLR 2026\] Hallucination Reduction with CASAL: Contrastive Activation Steering for Amortized Learning](hallucination_reduction_with_casal_contrastive_activation_steering_for_amortized.md)
 
 </div>
 

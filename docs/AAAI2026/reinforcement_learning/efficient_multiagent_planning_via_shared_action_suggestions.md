@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Multiagent Planning via Shared Action Suggestions
 description: >-
-  [AAAI 2026][Reinforcement Learning][Dec-POMDP] This paper proposes the MCAS algorithm, which infers other agents' belief states by sharing only "suggested actions" within a decentralized POMDP framework…
+  [AAAI 2026][Reinforcement Learning][Dec-POMDP] This paper proposes the MCAS algorithm, which infers other agents' belief states by sharing only "suggested actions" within a decentralized POMDP framework, achieving coordination performance close to centralized methods while substantially reducing communication overhead and computational complexity.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "belief space pruning"
   - "human-agent teaming"
 date: 2026-05-08
-content_hash: c83ed223409b70ee
+content_hash: 2ac77b99480d4b50
 ---
 
 # Efficient Multiagent Planning via Shared Action Suggestions
@@ -166,11 +166,11 @@ Analysis of belief set size (maximum $|\hat{\mathcal{B}}^{1,j}|$ per simulation)
 
 ## Related Papers
 
-- [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
-- [\[AAAI 2026\] Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation](intention-guided_cognitive_reasoning_for_egocentric_long-term_action_anticipatio.md)
 - [\[AAAI 2026\] Good-for-MDP State Reduction for Stochastic LTL Planning](good-for-mdp_state_reduction_for_stochastic_ltl_planning.md)
 - [\[ICLR 2026\] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](../../ICLR2026/reinforcement_learning/one_model_for_all_tasks_leveraging_efficient_world_models_in_multi-task_planning.md)
-- [\[AAAI 2026\] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs](deepprooflog_efficient_proving_in_deep_stochastic_logic_programs.md)
+- [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
+- [\[AAAI 2026\] Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation](intention-guided_cognitive_reasoning_for_egocentric_long-term_action_anticipatio.md)
+- [\[ICLR 2026\] Recurrent Action Transformer with Memory](../../ICLR2026/reinforcement_learning/recurrent_action_transformer_with_memory.md)
 
 </div>
 

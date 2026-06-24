@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving
 description: >-
-  [Multimodal VLM] This paper proposes the Hints of Prompt (HoP) framework, which enhances CLIP visual representations through three hierarchical hints (Affinity/Semantic/Question hint) to capture instance-level structure…
+  [Multimodal VLM] This paper proposes the Hints of Prompt (HoP) framework, which enhances CLIP visual representations through three hierarchical hints (Affinity/Semantic/Question hint) to capture instance-level structure, domain-specific semantics, and question relevance. HoP surpasses the fully trained baseline on autonomous driving VQA tasks using only 25% of the training data.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: d4c918e532ed9556
+content_hash: 7352e8cdbb538484
 ---
 
 # Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving
@@ -152,11 +152,11 @@ HoP trained on only 25% of the data achieves a Lingo-Judge score of 64.0, surpas
 
 ## Related Papers
 
+- [\[CVPR 2025\] Multi-Layer Visual Feature Fusion in Multimodal LLMs: Methods, Analysis, and Best Practices](../../CVPR2025/multimodal_vlm/multi-layer_visual_feature_fusion_in_multimodal_llms_methods_analysis_and_best_p.md)
+- [\[ACL 2025\] Table Understanding and (Multimodal) LLMs: A Cross-Domain Case Study on Scientific Tables](../../ACL2025/multimodal_vlm/table_understanding_and_multimodal_llms_a_cross-domain_case_study_on_scientific_.md)
 - [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](mm-ifengine_towards_multimodal_instruction_following.md)
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
+- [\[ACL 2025\] Teaching Vision-Language Models to Ask: Resolving Ambiguity in Visual Questions](../../ACL2025/multimodal_vlm/teaching_vlm_ask_ambiguity.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
 
 </div>
 

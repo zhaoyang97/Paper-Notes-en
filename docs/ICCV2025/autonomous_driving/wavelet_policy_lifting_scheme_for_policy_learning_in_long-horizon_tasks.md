@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks
 description: >-
-  [ICCV 2025][Autonomous Driving][Policy Learning] Wavelet Policy is the first work to introduce wavelet analysis into embodied intelligence policy learning. It proposes a multi-scale policy network based on a learnable li…
+  [ICCV 2025][Autonomous Driving][Policy Learning] Wavelet Policy is the first work to introduce wavelet analysis into embodied intelligence policy learning. It proposes a multi-scale policy network based on a learnable lifting scheme, decomposing observation sequences into different frequency components and synthesizing action sequences layer by layer. The method achieves superior or comparable performance to baselines across five long-horizon tasks…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Long-Horizon Tasks"
   - "Imitation Learning"
 date: 2026-05-08
-content_hash: ae9adf78bdf4009f
+content_hash: 0c36f8dedb0632ba
 ---
 
 # Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks
@@ -162,8 +162,8 @@ Wavelet Policy more closely approximates the multimodal distribution of the demo
 - [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
 - [\[NeurIPS 2025\] Causality Meets Locality: Provably Generalizable and Scalable Policy Learning for Networked Systems](../../NeurIPS2025/autonomous_driving/causality_meets_locality_provably_generalizable_and_scalable_policy_learning_for.md)
 - [\[ICCV 2025\] Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations](beyond_one_shot_beyond_one_perspective_cross-view_and_long-horizon_distillation_.md)
+- [\[CVPR 2025\] Tra-MoE: Learning Trajectory Prediction Model from Multiple Domains for Adaptive Policy Conditioning](../../CVPR2025/autonomous_driving/tra-moe_learning_trajectory_prediction_model_from_multiple_domains_for_adaptive_.md)
 - [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
-- [\[NeurIPS 2025\] Model-Based Policy Adaptation for Closed-Loop End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/model-based_policy_adaptation_for_closed-loop_end-to-end_autonomous_driving.md)
 
 </div>
 

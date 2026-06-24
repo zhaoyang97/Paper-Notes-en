@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UnLoc: Leveraging Depth Uncertainties for Floorplan Localization
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] UnLoc explicitly models monocularly predicted "floorplan depth" as a Laplace distribution with uncertainty. By replacing scene-specific depth networks with an off-the-shelf pre-trained monocular depth model (Depth Anything v2), it achieves significant improvements over the SOTA (F3Loc) in sequential visual floorplan lo
+  [ICLR 2026][3D Vision][Floorplan Localization] UnLoc explicitly models monocularly predicted "floorplan depth" as a Laplace distribution with uncertainty. By replacing scene-specific depth networks with an off-the-shelf pre-trained monocular depth model (Depth Anything v2), it achieves significant improvements over the SOTA (F3Loc) in sequential visual floorplan localization—improving recall by 42.2x on 15-frame short sequences of the real-world dataset LaMAR HGE.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Floorplan Localization"
+  - "Monocular Depth"
+  - "Uncertainty Modeling"
+  - "Histogram Filtering"
+  - "Sequential Localization"
 date: 2026-05-08
-content_hash: f9a880ec05bfa1c5
+content_hash: 7ddd437fccacf8c1
 ---
+
 # UnLoc: Leveraging Depth Uncertainties for Floorplan Localization
 
 **Conference**: ICLR 2026  

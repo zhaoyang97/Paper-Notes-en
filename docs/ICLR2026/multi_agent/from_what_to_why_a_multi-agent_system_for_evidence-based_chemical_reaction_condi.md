@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] ChemMAS reframes the task from "what conditions to recommend" to "why these conditions are selected" through evidence-driven reasoning. It employs a four-stage pipeline: "General Chemist Mechanism Analysis → Multi-channel Candidate Recall → Tournament Elimination → Multi-agent Debate & Voting." This ensures each decisi
+  [ICLR 2026][Multi-Agent][Multi-agent debate] ChemMAS reframes the task from "what conditions to recommend" to "why these conditions are selected" through evidence-driven reasoning. It employs a four-stage pipeline: "General Chemist Mechanism Analysis → Multi-channel Candidate Recall → Tournament Elimination → Multi-agent Debate & Voting." This ensures each decision is accompanied by falsifiable and auditable chemical evidence. The system's Top-1 similarity is 20–35% higher th…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent debate"
+  - "chemical reaction condition prediction"
+  - "evidence-driven reasoning"
+  - "tool-integrated reasoning"
+  - "explainable AI"
 date: 2026-05-08
-content_hash: 79b578c5811d5d00
+content_hash: 1c8d60d6dc63b7db
 ---
+
 # From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] To address the difficulty of accurately inferring stochastic dynamics when trajectories are sparsely sampled, this paper reformulates inference as a stochastic control problem. It utilizes the geometry of the system's invariant density (Riemannian metric + geodesics) to guide the reconstruction of unobserved paths, ach
+  [ICML2026][Physics & Scientific Computing][Langevin Dynamics] To address the difficulty of accurately inferring stochastic dynamics when trajectories are sparsely sampled, this paper reformulates inference as a stochastic control problem. It utilizes the geometry of the system's invariant density (Riemannian metric + geodesics) to guide the reconstruction of unobserved paths, achieving significantly more accurate estimation of the drift function $\mathbf{f}$ in extremely unde…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML2026"
+  - "Physics & Scientific Computing"
+  - "Langevin Dynamics"
+  - "Sparse Observations"
+  - "Stochastic Control"
+  - "Riemannian Geometry"
+  - "Path Augmentation"
 date: 2026-05-08
-content_hash: 6f8936aa975b8ddb
+content_hash: 655f3ee0f6aef206
 ---
+
 # From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints
 
 **Conference**: ICML2026  
@@ -147,11 +153,11 @@ Figure 2 illustrates the drift recovery quality (force field angle estimation) a
 
 ## Related Papers
 
+- [\[ICLR 2026\] LD-EnSF: Synergizing Latent Dynamics with Ensemble Score Filters for Fast Data Assimilation with Sparse Observations](../../ICLR2026/physics/ld-ensf_synergizing_latent_dynamics_with_ensemble_score_filters_for_fast_data_as.md)
 - [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](speculative_sampling_for_faster_molecular_dynamics.md)
+- [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](../../ICLR2026/physics/visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
 - [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
-- [\[CVPR 2025\] Improve Representation for Imbalanced Regression through Geometric Constraints](../../CVPR2025/physics/improve_representation_for_imbalanced_regression_through_geometric_constraints.md)
-- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](../../AAAI2026/physics/pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
 
 </div>
 

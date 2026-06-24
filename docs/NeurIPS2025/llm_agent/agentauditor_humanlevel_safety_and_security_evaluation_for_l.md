@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent Safety Evaluation] This paper proposes AgentAuditor — a training-free, memory-augmented reasoning framework that enables LLMs to adaptively extract structured semantic features (scenario…
+  [NeurIPS 2025][LLM Agent][Agent Safety Evaluation] This paper proposes AgentAuditor — a training-free, memory-augmented reasoning framework that enables LLMs to adaptively extract structured semantic features (scenario, risk, behavior) to construct an experiential memory bank, then employs multi-stage context-aware retrieval-augmented generation to guide LLM evaluators in assessing agent behavior for safety and security threats. The work also introduces ASSEBench…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "Safety Benchmark"
   - "ASSEBench"
 date: 2026-05-08
-content_hash: 4a6460c8a5811659
+content_hash: 0774157c2ec1af99
 ---
 
 # AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents
@@ -243,9 +243,9 @@ Key finding: AgentAuditor **consistently** improves all LLM evaluators across al
 
 - [\[NeurIPS 2025\] CORE: Full-Path Evaluation of LLM Agents Beyond Final State](core_full-path_evaluation_of_llm_agents_beyond_final_state.md)
 - [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
+- [\[ACL 2025\] Enhancing LLM Agent Safety via Causal Influence Prompting](../../ACL2025/llm_agent/enhancing_llm_agent_safety_via_causal_influence_prompting.md)
+- [\[ICLR 2026\] Huxley-Gödel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine](../../ICLR2026/llm_agent/huxley-godel_machine_human-level_coding_agent_development_by_an_approximation_of.md)
 - [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](../../ACL2026/llm_agent/hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
-- [\[ACL 2026\] AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](../../ACL2026/llm_agent/adarubric_task-adaptive_rubrics_for_reliable_llm_agent_evaluation_and_reward_lea.md)
-- [\[AAAI 2026\] When Refusals Fail: Unstable Safety Mechanisms in Long-Context LLM Agents](../../AAAI2026/llm_agent/when_refusals_fail_unstable_safety_mechanisms_in_long-context_llm_agents.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Collaborative LLM Numerical Reasoning with Local Data Protection
 description: >-
-  [AAAI 2026][LLM/NLP][privacy-preserving reasoning] This paper proposes a large-small model collaboration framework that protects sensitive local data through a two-stage anonymization pipeline — topic shifting followed b…
+  [AAAI 2026][LLM (Other)][privacy-preserving reasoning] This paper proposes a large-small model collaboration framework that protects sensitive local data through a two-stage anonymization pipeline — topic shifting followed by numerical substitution — applied to local queries. The remote GPT-4 returns reasoning solutions as executable Python code (plug-and-play tools), and the local model only needs to perform numerical back-substitution to obtain the final answer. The framewo…
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "privacy-preserving reasoning"
   - "numerical reasoning"
   - "model collaboration"
   - "topic shifting"
   - "code-as-tool"
 date: 2026-05-08
-content_hash: 2659d97a8c2fbf85
+content_hash: 1f87bdad5626d550
 ---
 
 # Collaborative LLM Numerical Reasoning with Local Data Protection
@@ -137,10 +137,10 @@ The framework consists of three main steps: (1) local topic shifting — a small
 
 ## Related Papers
 
-- [\[ACL 2026\] CAST: Achieving Stable LLM-based Text Analysis for Data Analytics](../../ACL2026/llm_nlp/cast_achieving_stable_llm-based_text_analysis_for_data_analytics.md)
-- [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
+- [\[ACL 2025\] How Numerical Precision Affects Arithmetical Reasoning Capabilities of LLMs](../../ACL2025/llm_nlp/how_numerical_precision_affects_arithmetical_reasoning_capabilities_of_llms.md)
+- [\[ACL 2025\] DiSCo: Device-Server Collaborative LLM-Based Text Streaming Services](../../ACL2025/llm_nlp/disco_device-server_collaborative_llm-based_text_streaming_services.md)
 - [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
-- [\[AAAI 2026\] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs](uncertainty_under_the_curve_a_sequence-level_entropy_area_metric_for_reasoning_l.md)
+- [\[ACL 2026\] CAST: Achieving Stable LLM-based Text Analysis for Data Analytics](../../ACL2026/llm_nlp/cast_achieving_stable_llm-based_text_analysis_for_data_analytics.md)
 - [\[AAAI 2026\] ParetoHqD: Fast Offline Multiobjective Alignment of Large Language Models Using Pareto High-Quality Data](paretohqd_fast_offline_multiobjective_alignment_of_large_language_models_using_p.md)
 
 </div>

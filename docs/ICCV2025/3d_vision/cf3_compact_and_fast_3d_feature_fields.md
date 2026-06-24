@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CF³: Compact and Fast 3D Feature Fields
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes the CF³ pipeline, which constructs a compact and high-speed 3D feature field using only 5% of the original Gaussian count via top-down feature lifting…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes the CF³ pipeline, which constructs a compact and high-speed 3D feature field using only 5% of the original Gaussian count via top-down feature lifting, per-Gaussian autoencoder compression, and adaptive sparsification, achieving 121–245× storage compression with real-time rendering.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Feature Compression"
   - "Open-Vocabulary Segmentation"
 date: 2026-05-08
-content_hash: f80d3e7d7b3dcc7b
+content_hash: 03e4a0080d999b57
 ---
 
 # CF³: Compact and Fast 3D Feature Fields
@@ -149,10 +149,10 @@ The merging step contributes an additional ~70% storage reduction; variance filt
 ## Related Papers
 
 - [\[ICCV 2025\] Compression of 3D Gaussian Splatting with Optimized Feature Planes and Standard Video Codecs](compression_of_3d_gaussian_splatting_with_optimized_feature_planes_and_standard_.md)
+- [\[CVPR 2026\] Learning Convex Decomposition via Feature Fields](../../CVPR2026/3d_vision/learning_convex_decomposition_via_feature_fields.md)
 - [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
+- [\[CVPR 2025\] Gaussian Splatting Feature Fields for Privacy-Preserving Visual Localization](../../CVPR2025/3d_vision/gaussian_splatting_feature_fields_for_privacy-preserving_visual_localization.md)
 - [\[ICCV 2025\] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields](geoprog3d_compositional_visual_reasoning_for_city-scale_3d_language_fields.md)
-- [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
-- [\[ICCV 2025\] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians](rayletdf_raylet_distance_fields_for_generalizable_3d_surface_reconstruction_from.md)
 
 </div>
 

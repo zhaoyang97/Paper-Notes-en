@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Track Instance from Single Nature Language Description
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] SVLTrack proposes a **completely box-annotation-free** self-supervised vision-language tracking framework. It utilizes a Large Vision-Language Model (LVLM) to generate a pseudo-box for the first frame of a video, performs forward/backward tracking self-supervision under weak-to-strong consistency, and designs a Dynamic
+  [CVPR 2026][Object Detection][Self-supervised VL tracking] SVLTrack proposes a **completely box-annotation-free** self-supervised vision-language tracking framework. It utilizes a Large Vision-Language Model (LVLM) to generate a pseudo-box for the first frame of a video, performs forward/backward tracking self-supervision under weak-to-strong consistency, and designs a Dynamic Token Aggregation (DTA) module to tightly align language tokens with a few key visual tokens. Ultima…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Self-supervised VL tracking"
+  - "dynamic token aggregation"
+  - "pseudo-labels"
+  - "weak-to-strong consistency"
+  - "language guidance"
 date: 2026-05-08
-content_hash: 1f6456b4538fd187
+content_hash: b344ad660b515559
 ---
+
 # Learning to Track Instance from Single Nature Language Description
 
 **Conference**: CVPR 2026  
@@ -145,8 +151,8 @@ The visual variant SVLTrack-V comprehensively outperforms all unsupervised track
 
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
 - [\[CVPR 2026\] Object-Generalized Re-Identification: A Step Towards Universal Instance Perception](object-generalized_re-identification_a_step_towards_universal_instance_perceptio.md)
-- [\[CVPR 2026\] Expert-Teacher-Student Collaborative Learning for Domain Adaptive Object Detection](expert-teacher-student_collaborative_learning_for_domain_adaptive_object_detecti.md)
-- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner](audio-sync_video_instance_editing_with_granularity-aware_mask_refiner.md)
+- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
 - [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 
 </div>

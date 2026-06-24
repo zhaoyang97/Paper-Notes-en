@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][Paper Note] The KUP-BI framework is proposed, which constructs a "post-target continuation" knowledge base from the training set. It retrieves continuation patterns of similar historical trajectories through ratio-based transformations to generate a continuation-style auxiliary stream. This stream is fused with backbone network fe
+  [ICML 2026][Time Series][Time Series Forecasting] The KUP-BI framework is proposed, which constructs a "post-target continuation" knowledge base from the training set. It retrieves continuation patterns of similar historical trajectories through ratio-based transformations to generate a continuation-style auxiliary stream. This stream is fused with backbone network features via a gating mechanism, consistently improving long-term forecasting performance across 6 datasets and…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Retrieval Augmentation"
+  - "Post-target Continuation"
+  - "Bidirectional Inspiration"
+  - "Gated Fusion"
 date: 2026-05-08
-content_hash: 7ed837bd72eec84b
+content_hash: 4ac64c2eae607083
 ---
+
 # Beyond Extrapolation: Knowledge Utilization Paradigm with Bidirectional Inspiration for Time Series Forecasting
 
 **Conference**: ICML 2026  
@@ -130,9 +136,9 @@ flowchart TD
 
 - [\[ACL 2026\] STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation](../../ACL2026/time_series/stk-adapter_incorporating_evolving_graph_and_event_chain_for_temporal_knowledge_.md)
 - [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](../../ICLR2026/time_series/from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
+- [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
 - [\[ICML 2026\] It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks](its_time_towards_the_next_generation_of_time_series_forecasting_benchmarks.md)
-- [\[NeurIPS 2025\] Fern: Chaining Spectral Pearls — Ellipsoidal Forecasting Beyond Trajectories for Time Series](../../NeurIPS2025/time_series/friren_beyond_trajectories_--_a_spectral_lens_on_time.md)
-- [\[ICML 2026\] Ellipsoidal Time Series Forecasting](ellipsoidal_time_series_forecasting.md)
+- [\[ICML 2026\] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting](semantics-enhanced_retrieval-augmented_time_series_forecasting.md)
 
 </div>
 

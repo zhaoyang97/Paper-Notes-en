@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ToxicTextCLIP: Text-Based Poisoning and Backdoor Attacks on CLIP Pre-training
 description: >-
-  [NeurIPS 2025][LLM Safety][CLIP security] This paper proposes ToxicTextCLIP, a framework that generates high-quality adversarial texts during CLIP pre-training via two modules—Background-aware Target Text Selector and Ba…
+  [NeurIPS 2025][LLM Safety][CLIP security] This paper proposes ToxicTextCLIP, a framework that generates high-quality adversarial texts during CLIP pre-training via two modules—Background-aware Target Text Selector and Background-driven Poisoned Text Augmenter—achieving up to 95.83% attack success rate and 98.68% backdoor Hit@1, while successfully bypassing three defenses: RoCLIP, CleanCLIP, and SafeCLIP.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "textual adversarial attack"
   - "multimodal security"
 date: 2026-05-08
-content_hash: a4f088f10482fa48
+content_hash: c4c25b6e59580bbe
 ---
 
 # ToxicTextCLIP: Text-Based Poisoning and Backdoor Attacks on CLIP Pre-training
@@ -141,11 +141,11 @@ The poisoned dataset is constructed by replacing the original caption $\bm{t}_A$
 
 ## Related Papers
 
+- [\[ICLR 2026\] Winter Soldier: Backdooring Language Models at Pre-training with Indirect Data Poisoning](../../ICLR2026/llm_safety/winter_soldier_backdooring_language_models_at_pre-training_with_indirect_data_po.md)
 - [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
-- [\[NeurIPS 2025\] Enhancing CLIP Robustness via Cross-Modality Alignment](enhancing_clip_robustness_via_crossmodality_alignment.md)
-- [\[NeurIPS 2025\] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs](mixat_combining_continuous_and_discrete_adversarial_training_for_llms.md)
-- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](../../ICLR2026/llm_safety/beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
-- [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](../../ACL2026/llm_safety/knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
+- [\[ACL 2025\] Exploring Forgetting in Large Language Model Pre-Training](../../ACL2025/llm_safety/exploring_forgetting_in_large_language_model_pre-training.md)
+- [\[ICML 2025\] The Ripple Effect: On Unforeseen Complications of Backdoor Attacks](../../ICML2025/llm_safety/the_ripple_effect_on_unforeseen_complications_of_backdoor_attacks.md)
+- [\[ICML 2025\] X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP](../../ICML2025/llm_safety/x-transfer_attacks_towards_super_transferable_adversarial_attacks_on_clip.md)
 
 </div>
 

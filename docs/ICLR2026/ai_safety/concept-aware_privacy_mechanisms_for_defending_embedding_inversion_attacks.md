@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] To address the pain point where standard differential privacy (DP) defenses indiscriminately add noise to all embedding dimensions and destroy semantics, this paper proposes SPARSE. It utilizes a differentiable neuron mask to learn critical dimensions related to user-specified privacy concepts and subsequently injects
+  [ICLR 2026][AI Safety][Embedding Inversion Attacks] To address the pain point where standard differential privacy (DP) defenses indiscriminately add noise to all embedding dimensions and destroy semantics, this paper proposes SPARSE. It utilizes a differentiable neuron mask to learn critical dimensions related to user-specified privacy concepts and subsequently injects ellipsoidal noise calibrated by dimensional sensitivity using the Mahalanobis mechanism. This perturbation t…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Embedding Inversion Attacks"
+  - "Differential Privacy"
+  - "Concept-level Privacy"
+  - "Mahalanobis Mechanism"
+  - "Text Embedding"
 date: 2026-05-08
-content_hash: 58bf768c93584c7e
+content_hash: 78880d8c22300ef1
 ---
+
 # Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks
 
 **Conference**: ICLR 2026  
@@ -116,8 +122,8 @@ Comparison with White-Box Upper Bound (SPARSE-WB using Integrated Gradients on k
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -125,7 +131,7 @@ Comparison with White-Box Upper Bound (SPARSE-WB using Integrated Gradients on k
 - [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)
 - [\[ICLR 2026\] Membership Privacy Risks of Sharpness Aware Minimization](sam_membership_privacy_risks.md)
 - [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
-- [\[ICLR 2026\] Reliable Poisoned Sample Detection against Backdoor Attacks Enhanced by Sharpness-Aware Minimization](reliable_poisoned_sample_detection_against_backdoor_attacks_enhanced_by_sharpnes.md)
+- [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](../../AAAI2026/ai_safety/infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
 
 </div>
 

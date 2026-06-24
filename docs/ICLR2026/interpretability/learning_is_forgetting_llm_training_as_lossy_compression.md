@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Learning is Forgetting: LLM Training As Lossy Compression
 description: >-
-  [ICLR 2026][Interpretability][Information Bottleneck] LLM pre-training is interpreted as "lossy compression." By using Rate Distortion Theory and the Information Bottleneck (IB) principle, the study characterizes how models first expand and then compress representations during training. It demonstrates that "how close a model compresses to the theoretical optimum" and "wh
+  [ICLR 2026][Interpretability][Information Bottleneck] LLM pre-training is interpreted as "lossy compression." By using Rate Distortion Theory and the Information Bottleneck (IB) principle, the study characterizes how models first expand and then compress representations during training. It demonstrates that "how close a model compresses to the theoretical optimum" and "what information remains after compression" directly predict downstream benchmark performance.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Information Bottleneck
-  - Rate Distortion Theory
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Information Bottleneck"
+  - "Rate Distortion Theory"
+  - "Representation Compression"
+  - "Pre-training Dynamics"
 date: 2026-05-08
-content_hash: 331c48c7a5dace10
+content_hash: a3f036eea7ea27df
 ---
+
 # Learning is Forgetting: LLM Training As Lossy Compression
 
 **Conference**: ICLR 2026  
@@ -112,6 +115,7 @@ Key point: Expressivity alone does not predict performance, but **compression op
 - **Value**: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -119,8 +123,8 @@ Key point: Expressivity alone does not predict performance, but **compression op
 - [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
 - [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](learning_to_weight_parameters_for_training_data_attribution.md)
 - [\[ICLR 2026\] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](from_tokens_to_thoughts_how_llms_and_humans_trade_compression_for_meaning.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[AAAI 2026\] LLM Circuit Analyses Are Consistent Across Training and Scale](../../AAAI2026/interpretability/llm_circuit_analyses_consistent_across_training_and_scale.md)
-- [\[ICLR 2026\] Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin](attention_sinks_and_compression_valleys_in_llms_are_two_sides_of_the_same_coin.md)
 
 </div>
 

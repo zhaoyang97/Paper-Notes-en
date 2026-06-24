@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control
 description: >-
-  [ICML 2026][Reinforcement Learning][GPU CFD] This paper introduces FluidGym—the first RL benchmark for active flow control implemented entirely in PyTorch without external CFD solver dependencies. It is end-to-end differentiable, natively supports multi-agent and 3D flow fields, and provides standardized results from 25k+ GPU hours across 13 2D/3D environments us
+  [ICML 2026][Reinforcement Learning][Active Flow Control (AFC)] This paper introduces FluidGym—the first RL benchmark for active flow control implemented entirely in PyTorch without external CFD solver dependencies. It is end-to-end differentiable, natively supports multi-agent and 3D flow fields, and provides standardized results from 25k+ GPU hours across 13 2D/3D environments using PPO/SAC/TD-MPC/DPC.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GPU CFD
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Active Flow Control (AFC)"
+  - "RL Benchmark"
+  - "Differentiable Simulation"
+  - "Multi-Agent RL"
+  - "GPU CFD"
 date: 2026-05-08
-content_hash: ef43fe55b26f65e6
+content_hash: c37bc5cd78d7c16c
 ---
+
 # Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control
 
 **Conference**: ICML 2026  
@@ -144,10 +149,10 @@ Action dimensions range from 1 to 4096, and observation dimensions span three or
 ## Related Papers
 
 - [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
+- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
 - [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](../../ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
 - [\[ICML 2025\] Benchmarking Quantum Reinforcement Learning](../../ICML2025/reinforcement_learning/benchmarking_quantum_reinforcement_learning.md)
 - [\[ICML 2026\] Adaptive Bandit Algorithms for Contextual Matching Markets](adaptive_bandit_algorithms_for_contextual_matching_markets.md)
-- [\[ICML 2026\] Perceptual Flow Network for Visually Grounded Reasoning](perceptual_flow_network_for_visually_grounded_reasoning.md)
 
 </div>
 

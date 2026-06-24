@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] GhostEI-Bench: Do Mobile Agents Resilience to Environmental Injection in Dynamic On-Device Environments?
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes **GhostEI-Bench**, the first benchmark that evaluates mobile VLM agent security by dynamically injecting adversarial UIs (pop-up masks/fake SMS) within an executable Android emulator at runtime. Accompanied by a Judge LLM protocol that analyzes "action trajectories + screenshot sequences," it reveal
+  [ICLR 2026][LLM Safety][Environmental Injection] This paper proposes **GhostEI-Bench**, the first benchmark that evaluates mobile VLM agent security by dynamically injecting adversarial UIs (pop-up masks/fake SMS) within an executable Android emulator at runtime. Accompanied by a Judge LLM protocol that analyzes "action trajectories + screenshot sequences," it reveals that 40%–55% of tasks successfully completed by current SOTA agents can be hijacked by environmental injectio…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Environmental Injection"
+  - "Mobile Agents"
+  - "VLM Security"
+  - "Dynamic Adversarial"
+  - "Android Emulator"
+  - "Vulnerability Rate"
 date: 2026-05-08
-content_hash: 65085def291e7537
+content_hash: ddcb0f9a060107ad
 ---
+
 # GhostEI-Bench: Do Mobile Agents Resilience to Environmental Injection in Dynamic On-Device Environments?
 
 **Conference**: ICLR 2026  
@@ -142,9 +149,9 @@ TC (Higher is better); FAS / PAS / BF / VR (Lower is better).
 
 - [\[NeurIPS 2025\] DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents](../../NeurIPS2025/llm_safety/drift_dynamic_rulebased_defense_with_injection_isolation_for.md)
 - [\[AAAI 2026\] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments](../../AAAI2026/llm_safety/agentsense_virtual_sensor_data_generation_using_llm_agents_i.md)
+- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](reliable_weak-to-strong_monitoring_of_llm_agents.md)
-- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](searching_for_privacy_risks_in_llm_agents_via_simulation.md)
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Solve Complex Problems via Dataset Decomposition
 description: >-
-  [NeurIPS 2025][Code Intelligence][dataset decomposition] This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to recursively decompose complex math problems into simpler subproblems along reasoning…
+  [NeurIPS 2025][Code Intelligence][dataset decomposition] This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to recursively decompose complex math problems into simpler subproblems along reasoning steps, constructs a concept dependency graph to quantify difficulty, and trains student models following an easy-to-hard curriculum. Qwen2.5-1.5B achieves 51.6% on MATH-500 (surpassing MuggleMath's 50.4% with 147K samples), while Qwen3-4B reaches 16.7% on AIME…
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "subproblem generation"
   - "skill graph"
 date: 2026-05-08
-content_hash: f108d12bc040bd17
+content_hash: 8783951adb71095c
 ---
 
 # Learning to Solve Complex Problems via Dataset Decomposition
@@ -132,11 +132,11 @@ This paper proposes Decomp, a method that employs a teacher model (GPT-4o) to re
 
 ## Related Papers
 
-- [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](../../ACL2026/code_intelligence/pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
+- [\[ICLR 2026\] An Agentic Framework with LLMs for Solving Complex Vehicle Routing Problems](../../ICLR2026/code_intelligence/an_agentic_framework_with_llms_for_solving_complex_vehicle_routing_problems.md)
+- [\[ICLR 2026\] LearNAT: Learning NL2SQL with AST-guided Task Decomposition for Large Language Models](../../ICLR2026/code_intelligence/learnat_learning_nl2sql_with_ast-guided_task_decomposition_for_large_language_mo.md)
+- [\[ACL 2025\] Rethinking Repetition Problems of LLMs in Code Generation](../../ACL2025/code_intelligence/rethinking_repetition_problems_of_llms_in_code_generation.md)
 - [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
-- [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
-- [\[NeurIPS 2025\] Learning From Design Procedure To Generate CAD Programs for Data Augmentation](learning_from_design_procedure_to_generate_cad_programs_for_data_augmentation.md)
 
 </div>
 

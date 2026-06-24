@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] A²TG: Adaptive Anisotropic Textured Gaussians for Efficient 3D Scene Representation
+  [Paper Note] Placeholder for related papers list
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] A²TG assigns an "anisotropic texture" with adaptive resolution and aspect ratio to each 2D Gaussian. By utilizing gradient-driven selection and upsampling rules, texture parameters are allocated only to Gaussians that truly require high-frequency details, achieving higher rendering quality and lower VRAM consumption th
+  [ICLR2026][3D Vision][Gaussian Splatting] A²TG assigns an "anisotropic texture" with adaptive resolution and aspect ratio to each 2D Gaussian. By utilizing gradient-driven selection and upsampling rules, texture parameters are allocated only to Gaussians that truly require high-frequency details, achieving higher rendering quality and lower VRAM consumption than fixed-square textured Gaussian Splatting under the same memory budget.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Textured Gaussians"
+  - "Anisotropic Texture"
+  - "Adaptive Resolution"
+  - "Memory Efficiency"
 date: 2026-05-08
-content_hash: 6e214216b077fa69
+content_hash: 7b641b271c3a9370
 ---
+
 # A²TG: Adaptive Anisotropic Textured Gaussians for Efficient 3D Scene Representation
 
 **Conference**: ICLR2026  
@@ -135,10 +141,6 @@ Comparison at #GS = 1M across three datasets:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-```markdown
-# Placeholder for related papers list
-```
-</div>
 
 ## Related Papers
 
@@ -146,7 +148,7 @@ Comparison at #GS = 1M across three datasets:
 - [\[CVPR 2025\] Textured Gaussians for Enhanced 3D Scene Appearance Modeling](../../CVPR2025/3d_vision/textured_gaussians_for_enhanced_3d_scene_appearance_modeling.md)
 - [\[CVPR 2026\] SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation](../../CVPR2026/3d_vision/sgi_structured_2d_gaussians_for_efficient_and_compact_large_image_representation.md)
 - [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
-- [\[CVPR 2026\] EfficientVPR: Toward Efficient Visual Place Recognition via Scene-Aware Prompt Tuning and Adaptive Feature Enhancement](../../CVPR2026/3d_vision/efficientvpr_toward_efficient_visual_place_recognition_via_scene-aware_prompt_tu.md)
+- [\[ICLR 2026\] Unsupervised Representation Learning for 3D Mesh Parameterization with Semantic and Visibility Objectives](unsupervised_representation_learning_for_3d_mesh_parameterization_with_semantic_.md)
 
 </div>
 

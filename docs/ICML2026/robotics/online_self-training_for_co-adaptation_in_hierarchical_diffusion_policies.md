@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] ORCHID utilizes "self-training" to enable hierarchical diffusion robot policies to improve online. By repeatedly sampling trajectories and filtering for those where both the planner and controller succeed using sparse environment signals, it distills these successes back into both the **high-level planner** and **low-l
+  [ICML 2026][Robotics][Hierarchical Policy] ORCHID utilizes "self-training" to enable hierarchical diffusion robot policies to improve online. By repeatedly sampling trajectories and filtering for those where both the planner and controller succeed using sparse environment signals, it distills these successes back into both the **high-level planner** and **low-level controller**. This mechanism induces bidirectional co-adaptation between the high-level (HL) and low-level (LL)…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "Hierarchical Policy"
+  - "Diffusion Policy"
+  - "Self-training"
+  - "Online Fine-tuning"
+  - "Language-Conditioned Manipulation"
 date: 2026-05-08
-content_hash: e0d79d327eeaf2bc
+content_hash: a7d37020436d512e
 ---
+
 # Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies
 
 **Conference**: ICML 2026  
@@ -116,15 +122,16 @@ The HL uses the diffusion loss $\mathcal{L}_\text{HL}$, and the LL uses the acti
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](../../NeurIPS2025/robotics/generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
-- [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
-- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICLR 2026\] MetaVLA: Unified Meta Co-Training for Efficient Embodied Adaptation](../../ICLR2026/robotics/metavla_unified_meta_co-training_for_efficient_embodied_adaptation.md)
 - [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
+- [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
+- [\[ICLR 2026\] Contractive Diffusion Policies](../../ICLR2026/robotics/contractive_diffusion_policies.md)
+- [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
 
 </div>
 

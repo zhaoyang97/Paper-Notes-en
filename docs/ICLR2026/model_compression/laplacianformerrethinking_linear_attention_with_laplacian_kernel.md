@@ -1,14 +1,21 @@
 ---
 title: >-
-  [Paper Note] LaplacianFormer：用拉普拉斯核重新思考线性注意力
+  [Paper Note] LaplacianFormer: Rethinking Linear Attention with Laplacian Kernels
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] LaplacianFormer argues that existing linear attention mechanisms lack a theoretical basis for defaulting to Gaussian kernels, which excessively suppress moderately correlated tokens. By substituting the Gaussian kernel with a slower-decaying, non-vanishing gradient Laplacian kernel (based on the $\ell_1$ distance) and
+  [ICLR 2026][Model Compression][Linear Attention] LaplacianFormer argues that existing linear attention mechanisms lack a theoretical basis for defaulting to Gaussian kernels, which excessively suppress moderately correlated tokens. By substituting the Gaussian kernel with a slower-decaying, non-vanishing gradient Laplacian kernel (based on the $\ell_1$ distance) and combining it with injective normalization, Nyström low-rank approximation, and Newton–Schulz inversion…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Linear Attention"
+  - "Laplacian Kernel"
+  - "Nyström Approximation"
+  - "Newton–Schulz Iteration"
+  - "Injective Feature Mapping"
+  - "CUDA Acceleration"
 date: 2026-05-08
-content_hash: 6a0ec7b21dca8319
+content_hash: 77572735f1034ad8
 ---
+
 # LaplacianFormer: Rethinking Linear Attention with Laplacian Kernels
 
 **Conference**: ICLR 2026  
@@ -130,11 +137,11 @@ Across all scales, it outperforms corresponding backbones like SOFT++, PVT, and 
 
 ## Related Papers
 
-- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
-- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
-- [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
-- [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)
+- [\[ICLR 2026\] SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse–Linear Attention](sla_beyond_sparsity_in_diffusion_transformers_via_fine-tunable_sparselinear_atte.md)
+- [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](../../NeurIPS2025/model_compression/linear_attention_for_efficient_bidirectional_sequence_modeling.md)
+- [\[CVPR 2025\] LALIC: Linear Attention Modeling for Learned Image Compression](../../CVPR2025/model_compression/linear_attention_modeling_for_learned_image_compression.md)
+- [\[CVPR 2026\] Trainable Log-linear Sparse Attention for Efficient Diffusion Transformers](../../CVPR2026/model_compression/trainable_log-linear_sparse_attention_for_efficient_diffusion_transformers.md)
+- [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
 
 </div>
 

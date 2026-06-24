@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding
 description: >-
-  [ICLR 2026][Graph Learning][MAPF] The authors propose HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding. It outperforms SOTA models with 85M parameters using only 1M parameters and 1% of the training data.
+  [ICLR2026][Graph Learning][MAPF] The authors propose HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding. It outperforms SOTA models with 85M parameters using only 1M parameters and 1% of the training data.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - MAPF
-  - Attention
+  - "ICLR2026"
+  - "Graph Learning"
+  - "MAPF"
+  - "Hypergraph Neural Networks"
+  - "Attention Mechanism"
+  - "Imitation Learning"
+  - "Group Interaction"
 date: 2026-05-08
-content_hash: 37f80a78fab57084
+content_hash: 7dd8915774e917f8
 ---
+
 # Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding
 
 **Conference**: ICLR2026  
@@ -142,11 +146,11 @@ The most compelling aspect of this work is the 1M vs. 85M parameter comparison. 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs](beyond_simple_graphs_neural_multi-objective_routing_on_multigraphs.md)
-- [\[ICLR 2026\] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks](logicxgnn_grounded_logical_rules_for_explaining_graph_neural_networks.md)
+- [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](../../ACL2026/graph_learning/ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
+- [\[ICLR 2026\] Differentiable Lifting for Topological Neural Networks](differentiable_lifting_for_topological_neural_networks.md)
+- [\[ICLR 2026\] DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning](dhg-bench_a_comprehensive_benchmark_for_deep_hypergraph_learning.md)
+- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
-- [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
-- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
 
 </div>
 

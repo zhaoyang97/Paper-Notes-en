@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Using "IKEA furniture assembly videos" as a sandbox, a video QA benchmark named Flat-Pack Bench (602 multiple-choice questions, 4 task categories) was constructed to specifically test the **fine-grained spatio-temporal understanding** of Large Vision-Language Models (LVLMs). It was found that the strongest models, such
+  [CVPR 2026][Multimodal VLM][VideoQA] Using "IKEA furniture assembly videos" as a sandbox, a video QA benchmark named Flat-Pack Bench (602 multiple-choice questions, 4 task categories) was constructed to specifically test the **fine-grained spatio-temporal understanding** of Large Vision-Language Models (LVLMs). It was found that the strongest models, such as GPT-5, achieve only ~38% accuracy, significantly lower than the human performance of 94.18%. The study identifies "trac…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VideoQA"
+  - "Spatio-temporal Understanding"
+  - "Furniture Assembly"
+  - "Visual Prompting"
+  - "Fine-grained Tracking"
 date: 2026-05-08
-content_hash: f1f4d708248c3b17
+content_hash: 09faf6c62bff1434
 ---
+
 # Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly
 
 **Conference**: CVPR 2026  
@@ -125,11 +131,20 @@ The best model (InternVL3-78B, 41.03%) only outperforms the frequency baseline (
 - Value: ⭐⭐⭐⭐ Provides a challenging, discriminative benchmark and identifies tracking and contact judgment as the true roadblocks for future research.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] DiGraphHal-Bench: Evaluating Multimodal Large Language Models on Complex Directed Graphs](digraphhal-bench_evaluating_multimodal_large_language_models_on_complex_directed.md)
+- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
+- [\[CVPR 2026\] InstAP: Instance-Aware Vision-Language Pre-Train for Spatial-Temporal Understanding](instap_instance-aware_vision-language_pre-train_for_spatial-temporal_understandi.md)
+- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
+- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)

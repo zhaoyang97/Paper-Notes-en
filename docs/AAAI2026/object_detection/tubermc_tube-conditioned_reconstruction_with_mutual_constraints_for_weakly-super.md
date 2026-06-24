@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding
 description: >-
-  [AAAI 2026][Object Detection][Weakly-supervised spatio-temporal video grounding] This paper proposes TubeRMC, a framework that generates text-conditioned candidate tubes and performs tube-conditioned reconstruction along…
+  [AAAI 2026][Object Detection][Weakly-supervised spatio-temporal video grounding] This paper proposes TubeRMC, a framework that generates text-conditioned candidate tubes and performs tube-conditioned reconstruction along temporal, spatial, and spatio-temporal dimensions, augmented by spatial-temporal mutual constraints to improve weakly-supervised spatio-temporal video grounding.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "mutual constraint learning"
   - "STVG"
 date: 2026-05-08
-content_hash: ea0f6c2ea244e7a6
+content_hash: a7b0245c53ec685d
 ---
 
 # TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding
@@ -180,10 +180,10 @@ Compared to MDETR baselines (HCSTVG-v2): TubeRMC outperforms MDETR-Zero by 8.43%
 ## Related Papers
 
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
+- [\[CVPR 2026\] Partial Weakly-Supervised Oriented Object Detection](../../CVPR2026/object_detection/partial_weakly-supervised_oriented_object_detection.md)
 - [\[ICLR 2026\] SPWOOD: Sparse Partial Weakly-Supervised Oriented Object Detection](../../ICLR2026/object_detection/spwood_sparse_partial_weakly-supervised_oriented_object_detection.md)
-- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting (WS-COC)](../../ICLR2026/object_detection/bootstrapping_mllm_for_weakly-supervised_class-agnostic_object_counting.md)
+- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting](../../ICLR2026/object_detection/bootstrapping_mllm_for_weaklysupervised_classagnostic_object_counting.md)
 - [\[NeurIPS 2025\] Spatio-Temporal Graphs Beyond Grids: Benchmark for Maritime Anomaly Detection](../../NeurIPS2025/object_detection/spatio-temporal_graphs_beyond_grids_benchmark_for_maritime_anomaly_detection.md)
-- [\[ICCV 2025\] Sim-DETR: Unlock DETR for Temporal Sentence Grounding](../../ICCV2025/object_detection/sim-detr_unlock_detr_for_temporal_sentence_grounding.md)
 
 </div>
 

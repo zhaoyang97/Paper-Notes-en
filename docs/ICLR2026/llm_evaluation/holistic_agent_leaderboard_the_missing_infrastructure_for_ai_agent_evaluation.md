@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][AI Agent] HAL provides a standardized, distributed, and automated infrastructure for AI agent evaluation. Through 21,730 rollouts across the dimensions of "model × scaffold × benchmark," it maps the accuracy-cost Pareto frontier. By using LLMs to analyze 25 billion log tokens, it reveals behaviors hidden by traditional metrics,
+  [ICLR 2026][LLM Evaluation][AI Agent] HAL provides a standardized, distributed, and automated infrastructure for AI agent evaluation. Through 21,730 rollouts across the dimensions of "model × scaffold × benchmark," it maps the accuracy-cost Pareto frontier. By using LLMs to analyze 25 billion log tokens, it reveals behaviors hidden by traditional metrics, such as performance degradation with increased reasoning effort, agents searching for answers on HuggingFace…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - AI Agent
-  - Evaluation Harness
-  - Leaderboard
-  - Cost-Accuracy Pareto
-  - Log Analysis
-  - Reproducibility
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "AI Agent"
+  - "Evaluation Harness"
+  - "Leaderboard"
+  - "Cost-Accuracy Pareto"
+  - "Log Analysis"
+  - "Reproducibility"
 date: 2026-05-08
-content_hash: b0b1395defd04dcf
+content_hash: 305db1f7bf9bf356
 ---
+
 # Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation
 
 **Conference**: ICLR 2026  
@@ -119,7 +120,7 @@ flowchart LR
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

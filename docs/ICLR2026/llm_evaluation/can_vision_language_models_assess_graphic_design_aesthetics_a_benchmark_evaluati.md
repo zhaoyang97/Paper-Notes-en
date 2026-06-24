@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective
 description: >-
-  [ICLR 2026][LLM Evaluation][design aesthetics] The study introduces AesEval-Bench, the first systematic benchmark to evaluate VLM capabilities in graphic design aesthetic assessment (4 dimensions × 12 indicators × 3 tasks). It finds that existing VLMs (including reasoning-enhanced ones) show limited performance in design aesthetics. By utilizing human-guided VLM la
+  [ICLR2026][LLM Evaluation][design aesthetics] The study introduces AesEval-Bench, the first systematic benchmark to evaluate VLM capabilities in graphic design aesthetic assessment (4 dimensions × 12 indicators × 3 tasks). It finds that existing VLMs (including reasoning-enhanced ones) show limited performance in design aesthetics. By utilizing human-guided VLM labeling and indicator-grounded reasoning to construct training data, a fine-tuned 7B model outperforms GPT-5 on pre…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - design aesthetics
-  - VLM evaluation
-  - benchmark
-  - indicator-grounded reasoning
-  - graphic design
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "design aesthetics"
+  - "VLM evaluation"
+  - "benchmark"
+  - "indicator-grounded reasoning"
+  - "graphic design"
 date: 2026-05-08
-content_hash: 0d6a89520720a00a
+content_hash: f1f1cc2622cea164
 ---
+
 # Can Vision–Language Models Assess Graphic Design Aesthetics? A Benchmark, Evaluation, and Dataset Perspective
 
 **Conference**: ICLR2026  
@@ -141,7 +142,7 @@ The model is based on Qwen2.5-VL-7B-Instruct using full-parameter fine-tuning, w
 - [\[ICLR 2026\] AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation](airqa_a_comprehensive_qa_dataset_for_ai_research_with_instance-level_evaluation.md)
 - [\[ACL 2025\] AbGen: Evaluating Large Language Models in Ablation Study Design and Evaluation for Scientific Research](../../ACL2025/llm_evaluation/abgen_evaluating_large_language_models_in.md)
 - [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](../../ACL2026/llm_evaluation/when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
-- [\[ACL 2025\] MARS: Benchmarking the Metaphysical Reasoning Abilities of Language Models with a Multi-task Evaluation Dataset](../../ACL2025/llm_evaluation/mars_benchmarking_the_metaphysical_reasoning_abilities_of_language_models_with_a.md)
+- [\[ICLR 2026\] AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators](autocodebench_large_language_models_are_automatic_code_benchmark_generators.md)
 - [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
 
 </div>

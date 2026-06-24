@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions
 description: >-
-  [ICLR 2026][Multi-Agent][LLM deception] This paper proposes LH-Deception, the first simulation framework for LLM deceptive behaviors in long-horizon interactions. It utilizes a three-role multi-agent architecture (Performer-Supervisor-Auditor) combined with a probabilistic event system driven by social science theories. Systematic quantification across 11 fr
+  [ICLR 2026][Multi-Agent][LLM deception] This paper proposes LH-Deception, the first simulation framework for LLM deceptive behaviors in long-horizon interactions. It utilizes a three-role multi-agent architecture (Performer-Supervisor-Auditor) combined with a probabilistic event system driven by social science theories. Systematic quantification across 11 frontier models reveals deception frequency, severity, and type distribution, as well as the erosion effect on trust relat…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LLM deception
-  - long-horizon interaction
-  - multi-agent simulation
-  - trust erosion
-  - deception chain
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "LLM deception"
+  - "long-horizon interaction"
+  - "multi-agent simulation"
+  - "trust erosion"
+  - "deception chain"
 date: 2026-05-08
-content_hash: 48e58285210abfb2
+content_hash: e4551b9aea2125b5
 ---
+
 # LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions
 
 **Conference**: ICLR 2026  

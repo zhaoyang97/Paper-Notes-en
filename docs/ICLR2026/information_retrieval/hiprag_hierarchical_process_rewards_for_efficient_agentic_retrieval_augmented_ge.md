@@ -4,15 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Information Retrieval & RAG][Agentic RAG] HiPRAG decomposes the reasoning trajectories of agentic RAG into parsable discrete steps, determines online "whether to search" for each decision, and provides a gated hierarchical process reward for RL. This allows the model to improve accuracy while compressing the over-search rate from 27% to 2.3%.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Agentic RAG
-  - Reinforcement Learning
-  - over-search
-  - under-search
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Agentic RAG"
+  - "Process Rewards"
+  - "Reinforcement Learning"
+  - "over-search"
+  - "under-search"
+  - "search efficiency"
 date: 2026-05-08
-content_hash: 8e2b39858181ac40
+content_hash: a00d22c6d929945b
 ---
+
 # HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation
 
 **Conference**: ICLR 2026  

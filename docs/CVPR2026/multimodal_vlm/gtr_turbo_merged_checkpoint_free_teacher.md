@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
 description: >-
-  [CVPR 2026][Multimodal VLM][Knowledge Distillation] This paper proposes GTR-Turbo, which generates a "free teacher model" by merging historical checkpoints via TIES during the RL training process to guide subsequent training (via either SFT or KL distillation). It matches or even exceeds the GTR method, which relies on external teachers like GPT-4o, across multiple visi
+  [CVPR 2026][Multimodal VLM][VLM Agent] This paper proposes GTR-Turbo, which generates a "free teacher model" by merging historical checkpoints via TIES during the RL training process to guide subsequent training (via either SFT or KL distillation). It matches or even exceeds the GTR method, which relies on external teachers like GPT-4o, across multiple vision agent tasks while reducing training time by 50% and computational costs by 60%.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM Agent"
+  - "Multi-turn Reinforcement Learning"
+  - "Model Merging"
+  - "Knowledge Distillation"
+  - "Self-evolution"
 date: 2026-05-08
-content_hash: f2d7975125573722
+content_hash: 7a597f69b3344877
 ---
+
 # GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
 
 **Conference**: CVPR 2026  
@@ -149,7 +154,7 @@ KL values are clipped to $[0, +\infty)$ to prevent negative values from misleadi
 - [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 - [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
-- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
+- [\[ICCV 2025\] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-Based VLM Agent](../../ICCV2025/multimodal_vlm/gtr_guided_thought_reinforcement_prevents_thought_collapse_in_rl-based_vlm_agent.md)
 - [\[CVPR 2026\] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](llmind_bio-inspired_training-free_adaptive_visual_representations_for_vision-lan.md)
 
 </div>

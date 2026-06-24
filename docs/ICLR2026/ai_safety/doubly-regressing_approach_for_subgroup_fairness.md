@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Doubly-Regressing Approach for Subgroup Fairness
 description: >-
-  [ICLR 2026][AI Safety][IPM] When numerous sensitive attributes lead to an explosion of subgroups and extreme data sparsity, this paper introduces "subgroup subset fairness" measured by supIPM. By employing a "Doubly Regressing $R^2$ (DR²)" proxy objective that simultaneously regresses weight vectors and a discriminator, the method ensures distrib
+  [ICLR 2026][AI Safety][Subgroup Fairness] When numerous sensitive attributes lead to an explosion of subgroups and extreme data sparsity, this paper introduces "subgroup subset fairness" measured by supIPM. By employing a "Doubly Regressing $R^2$ (DR²)" proxy objective that simultaneously regresses weight vectors and a discriminator, the method ensures distributional fairness across all large subgroups and marginal attributes using **a single discriminator**…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - IPM
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Subgroup Fairness"
+  - "Distributional Fairness"
+  - "Adversarial Learning"
+  - "IPM"
+  - "Data Sparsity"
 date: 2026-05-08
-content_hash: 34fcc3ed150b1b7b
+content_hash: d36c8500cbf7f8b1
 ---
+
 # Doubly-Regressing Approach for Subgroup Fairness
 
 **Conference**: ICLR 2026  

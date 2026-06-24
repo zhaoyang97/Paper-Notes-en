@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PASG: A Closed-Loop Framework for Automated Geometric Primitive Extraction and Semantic Anchoring in Robotic Manipulation
 description: >-
-  [ICCV 2025][Robotics][Geometric Primitive Extraction] This paper proposes PASG (Primitive-Aware Semantic Grounding), a closed-loop framework that dynamically couples low-level geometric features with high-level task sema…
+  [ICCV 2025][Robotics][Geometric Primitive Extraction] This paper proposes PASG (Primitive-Aware Semantic Grounding), a closed-loop framework that dynamically couples low-level geometric features with high-level task semantics through automated geometric primitive extraction (keypoints, functional axes, principal axes) and VLM-driven semantic anchoring. PASG achieves near-human-annotation performance on robotic manipulation tasks, and introduces the Robocasa-PA benchmark along…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "VLM"
   - "Closed-Loop Framework"
 date: 2026-05-08
-content_hash: 33fc2a588fbe8333
+content_hash: f6a16760ca0af11b
 ---
 
 # PASG: A Closed-Loop Framework for Automated Geometric Primitive Extraction and Semantic Anchoring in Robotic Manipulation
@@ -163,11 +163,11 @@ PASG consists of four core stages:
 
 ## Related Papers
 
+- [\[ICML 2025\] Closed-loop Long-horizon Robotic Planning via Equilibrium Sequence Modeling](../../ICML2025/robotics/closed-loop_long-horizon_robotic_planning_via_equilibrium_sequence_modeling.md)
 - [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](imanip_skill-incremental_learning_for_robotic_manipulation.md)
+- [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](../../ICLR2026/robotics/world-in-world_world_models_in_a_closed-loop_world.md)
 - [\[AAAI 2026\] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](../../AAAI2026/robotics/semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)
-- [\[AAAI 2026\] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation](../../AAAI2026/robotics/h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re.md)
-- [\[NeurIPS 2025\] DexFlyWheel: A Scalable Self-Improving Data Generation Framework for Dexterous Manipulation](../../NeurIPS2025/robotics/dexflywheel_a_scalable_and_self-improving_data_generation_framework_for_dexterou.md)
-- [\[NeurIPS 2025\] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling](../../NeurIPS2025/robotics/autotom_scaling_model-based_mental_inference_via_automated_agent_modeling.md)
+- [\[CVPR 2026\] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control](../../CVPR2026/robotics/iterative_closed-loop_motion_synthesis_for_scaling_the_capabilities_of_humanoid_.md)
 
 </div>
 

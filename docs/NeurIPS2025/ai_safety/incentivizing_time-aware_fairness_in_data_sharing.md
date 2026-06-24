@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Incentivizing Time-Aware Fairness in Data Sharing
 description: >-
-  [NeurIPS 2025][AI Safety][Data sharing] This paper proposes a time-aware data sharing framework that introduces new incentive conditions (F6–F8) and two reward schemes—Time-Aware Reward Cumulation and Time-Aware Data Val…
+  [NeurIPS 2025][AI Safety][Data sharing] This paper proposes a time-aware data sharing framework that introduces new incentive conditions (F6–F8) and two reward schemes—Time-Aware Reward Cumulation and Time-Aware Data Valuation—to ensure that participants who join a collaboration earlier receive higher-value rewards, while simultaneously preserving fairness and individual rationality.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Shapley value"
   - "cooperative game theory"
 date: 2026-05-08
-content_hash: fea8ea01d676222c
+content_hash: 489750b068980427
 ---
 
 # Incentivizing Time-Aware Fairness in Data Sharing
@@ -145,7 +145,7 @@ Experiments are conducted on three datasets (Friedman synthetic data, California
 ## Related Papers
 
 - [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](provable_watermarking_for_data_poisoning_attacks.md)
+- [\[CVPR 2026\] PrivateEyes: Gaze-Preserving Anonymization for Data Sharing](../../CVPR2026/ai_safety/privateeyes_gaze-preserving_anonymization_for_data_sharing.md)
 - [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](efficient_fairness-performance_pareto_front_computation.md)
 - [\[NeurIPS 2025\] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)

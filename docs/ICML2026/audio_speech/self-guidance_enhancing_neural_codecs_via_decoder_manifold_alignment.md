@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Guidance: Enhancing Neural Codecs via Decoder Manifold Alignment
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] During VQ-VAE speech codec training, the decoder is fed both the "quantized tokens" and "pre-quantization continuous latents." A lightweight feature alignment loss forces the decoder's internal features from the former path to align with those of the latter. This significantly enhances reconstruction fidelity with zero
+  [ICML2024][Audio & Speech][Neural Speech Codec] During VQ-VAE speech codec training, the decoder is fed both the "quantized tokens" and "pre-quantization continuous latents." A lightweight feature alignment loss forces the decoder's internal features from the former path to align with those of the latter. This significantly enhances reconstruction fidelity with zero inference overhead and allows the codebook size to be reduced fourfold without performance loss.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML2024"
+  - "Audio & Speech"
+  - "Neural Speech Codec"
+  - "Quantization Error"
+  - "Decoder Manifold Alignment"
+  - "Self-Guidance"
+  - "Low Bitrate"
 date: 2026-05-08
-content_hash: 0573e006dc337f5a
+content_hash: 7a4f1d289f7ac189
 ---
+
 # Self-Guidance: Enhancing Neural Codecs via Decoder Manifold Alignment
 
 **Conference**: ICML2024  
@@ -139,9 +145,9 @@ Notably, XCodec2+SG with a 65536 codebook outperforms TS3Codec with a 131072 cod
 
 - [\[ICLR 2026\] MAPSS: Manifold-Based Assessment of Perceptual Source Separation](../../ICLR2026/audio_speech/mapss_manifold-based_assessment_of_perceptual_source_separation.md)
 - [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](multimodal_fusion_via_self-consistent_task-gradient_fields.md)
+- [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](../../ICLR2026/audio_speech/towards_true_speech-to-speech_models_without_text_guidance.md)
 - [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](../../ACL2026/audio_speech/an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ICLR 2026\] Toward Complex-Valued Neural Networks for Waveform Generation](../../ICLR2026/audio_speech/toward_complex-valued_neural_networks_for_waveform_generation.md)
-- [\[ACL 2025\] MultiMed: Multilingual Medical Speech Recognition via Attention Encoder Decoder](../../ACL2025/audio_speech/multimed_multilingual_medical_speech_recognition_via_attention_encoder_decoder.md)
 
 </div>
 

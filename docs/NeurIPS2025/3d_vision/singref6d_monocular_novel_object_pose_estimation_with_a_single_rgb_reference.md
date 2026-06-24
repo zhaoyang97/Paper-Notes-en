@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference
 description: >-
-  [NeurIPS 2025][3D Vision][6D pose estimation] SingRef6D is a lightweight 6D pose estimation pipeline requiring only a single RGB reference image. It fine-tunes Depth-Anything v2 via a token-scaler mechanism for robust de…
+  [NeurIPS 2025][3D Vision][6D pose estimation] SingRef6D is a lightweight 6D pose estimation pipeline requiring only a single RGB reference image. It fine-tunes Depth-Anything v2 via a token-scaler mechanism for robust depth prediction and introduces depth-aware matching to enhance LoFTR's spatial reasoning, substantially outperforming existing methods on transparent and reflective objects.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Depth-Anything"
   - "depth-aware matching"
 date: 2026-05-08
-content_hash: c2ad15c634de0f2f
+content_hash: e1548b5605616cc6
 ---
 
 # SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference
@@ -145,10 +145,10 @@ During training, the parameters of DPAv2 and LoFTR are frozen; only the token sc
 ## Related Papers
 
 - [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](../../ICCV2025/3d_vision/unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
+- [\[CVPR 2026\] OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation](../../CVPR2026/3d_vision/orienpose_orientation-guided_novel_view_synthesis_for_single-image_unseen_object.md)
 - [\[NeurIPS 2025\] Rectified Point Flow: Generic Point Cloud Pose Estimation](rectified_point_flow_generic_point_cloud_pose_estimation.md)
-- [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](../../ICCV2025/3d_vision/single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
 - [\[NeurIPS 2025\] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos](reconstruct_inpaint_test-time_finetune_dynamic_novel-view_synthesis_from_monocul.md)
-- [\[ICCV 2025\] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation](../../ICCV2025/3d_vision/boxdreamer_dreaming_box_corners_for_generalizable_object_pose_estimation.md)
+- [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](../../ICCV2025/3d_vision/single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Medical Interpretability and Knowledge Maps of Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][UMAP] The authors systematically scanned 5 open-source LLMs using four interpretability techniques (UMAP projection, weight gradient saliency, layer ablation, and activation patching) to construct "Medical Knowledge Maps." These maps localize age, symptoms, diseases, drugs, and dosages to specific model layers, revealing phe
+  [ICLR 2026][Interpretability][Mechanistic Interpretability] The authors systematically scanned 5 open-source LLMs using four interpretability techniques (UMAP projection, weight gradient saliency, layer ablation, and activation patching) to construct "Medical Knowledge Maps." These maps localize age, symptoms, diseases, drugs, and dosages to specific model layers, revealing phenomena such as non-linear age manifolds and circular, non-monotonic representations of disease progr…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - UMAP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Knowledge Localization"
+  - "UMAP"
+  - "Activation Patching"
+  - "Layer Ablation"
+  - "Medical Knowledge"
 date: 2026-05-08
-content_hash: 707b01b7a89416a4
+content_hash: 8bb8fc2740e4e80b
 ---
+
 # Medical Interpretability and Knowledge Maps of Large Language Models
 
 **Conference**: ICLR 2026  
@@ -117,10 +123,10 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
+- [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](../../ACL2026/interpretability/knowledge_vector_of_logical_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](../../ACL2026/interpretability/tracing_relational_knowledge_recall_in_large_language_models.md)
 - [\[ICLR 2026\] Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity](rethinking_layer_relevance_in_large_language_models_beyond_cosine_similarity.md)
-- [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](latent_concept_disentanglement_in_transformer-based_language_models.md)
 
 </div>
 

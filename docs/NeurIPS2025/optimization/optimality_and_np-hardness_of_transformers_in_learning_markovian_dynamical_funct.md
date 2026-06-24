@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimality and NP-Hardness of Transformers in Learning Markovian Dynamical Functions
 description: >-
-  [NeurIPS 2025][Optimization][In-context learning] This paper analyzes the ICL capability of Transformers for learning Markovian dynamical functions from an optimization-theoretic perspective. It derives the global optima…
+  [NeurIPS 2025][Optimization][In-context learning] This paper analyzes the ICL capability of Transformers for learning Markovian dynamical functions from an optimization-theoretic perspective. It derives the global optimal solution (in closed form) for single-layer linear self-attention, proves that recovering Transformer parameters from an extended parameter space is NP-hard, and reveals that multi-layer LSA is equivalent to preconditioned multi-objective optimization.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "NP-hard"
   - "multi-objective optimization"
 date: 2026-05-08
-content_hash: 93e095aad1f25951
+content_hash: 1d003dccd722c193
 ---
 
 # Optimality and NP-Hardness of Transformers in Learning Markovian Dynamical Functions
@@ -118,7 +118,7 @@ A 10-layer LSA trained on Markovian data performs multi-objective optimization d
 - [\[ICLR 2026\] Markovian Transformers for Informative Language Modeling](../../ICLR2026/optimization/markovian_transformers_for_informative_language_modeling.md)
 - [\[NeurIPS 2025\] Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent](multi-head_transformers_provably_learn_symbolic_multi-step_reasoning_via_gradien.md)
 - [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](../../ICML2026/optimization/test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
-- [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
+- [\[ICML 2025\] Can Transformers Learn Full Bayesian Inference In Context?](../../ICML2025/optimization/can_transformers_learn_full_bayesian_inference_in_context.md)
 
 </div>
 

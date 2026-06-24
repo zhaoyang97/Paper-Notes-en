@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Dynamic-dLLM is a training-free inference acceleration framework for Diffusion LLMs. Addressing the "dynamic" variations of tokens across different layers and decoding steps, it employs Dynamic Cache Update (DCU) to adaptively allocate cache update budgets per layer and Adaptive Parallel Decoding (APD) to dynamically c
+  [ICLR2026][LLM Efficiency][Diffusion LLM] Dynamic-dLLM is a training-free inference acceleration framework for Diffusion LLMs. Addressing the "dynamic" variations of tokens across different layers and decoding steps, it employs Dynamic Cache Update (DCU) to adaptively allocate cache update budgets per layer and Adaptive Parallel Decoding (APD) to dynamically calibrate decoding thresholds per token. It achieves an average speedup of over 3× (up to 4.48×) on models like LLaDA a…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Diffusion LLM"
+  - "Training-free Acceleration"
+  - "Dynamic Cache"
+  - "Parallel Decoding"
+  - "Adaptive Threshold"
 date: 2026-05-08
-content_hash: 7851c22287f2c00c
+content_hash: 57072281c38bb303
 ---
+
 # Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM
 
 **Conference**: ICLR2026  
@@ -152,15 +158,16 @@ Results are consistent across models: LLaDA-1.5 achieves 4.46× speedup on GSM8k
 - Value: ⭐⭐⭐⭐ Training-free, 3×+ speedup, and near-zero loss provide immediate value for dLLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
 - [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
-- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICLR 2026\] Dynamic Speculative Agent Planning](dynamic_speculative_agent_planning.md)
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
+- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
+- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning
 description: >-
-  [ICML 2026][Image Generation][Reward Model] The authors identify an "attention collapse" issue in MLLM-based editing reward models—where the model focuses on sink tokens rather than comparing the original and edited images—and propose SpatialReward. It directs an 8B model to first predict bounding boxes for edited regions and then use these box tokens as anchors
+  [ICML 2026][Image Generation][Reward Model] The authors identify an "attention collapse" issue in MLLM-based editing reward models—where the model focuses on sink tokens rather than comparing the original and edited images—and propose SpatialReward. It directs an 8B model to first predict bounding boxes for edited regions and then use these box tokens as anchors for interleaved cross-image reasoning. Combined with a 260K-sample spatial-aware dataset and a two-stage GRPO train…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Reward Model
-  - Image Editing
-  - Think-with-Boxes
+  - "ICML 2026"
+  - "Image Generation"
+  - "Reward Model"
+  - "Image Editing"
+  - "Online RL"
+  - "Think-with-Boxes"
+  - "Spatial Reasoning"
 date: 2026-05-08
-content_hash: e31f1e4886c094fd
+content_hash: 0d664440e2f57028
 ---
+
 # SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning
 
 **Conference**: ICML 2026  
@@ -142,6 +145,7 @@ Attention Diagnosis (on 776 samples from EditReward-Bench):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -150,7 +154,7 @@ Attention Diagnosis (on 776 samples from EditReward-Bench):
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](../../CVPR2026/image_generation/spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
 - [\[CVPR 2026\] UniGen-1.5: Enhancing Image Generation and Editing through Reward Unification in RL](../../CVPR2026/image_generation/unigen-15_enhancing_image_generation_and_editing_through_reward_unification_in_r.md)
 - [\[ICLR 2026\] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models](../../ICLR2026/image_generation/bridging_generalization_gap_of_heterogeneous_federated_clients_using_generative_.md)
-- [\[ICML 2026\] A Systematic Investigation of RL-Jailbreaking in LLMs](a_systematic_investigation_of_rl-jailbreaking_in_llms.md)
+- [\[ICLR 2026\] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation](../../ICLR2026/image_generation/chronoedit_towards_temporal_reasoning_for_in-context_image_editing_and_world_sim.md)
 
 </div>
 

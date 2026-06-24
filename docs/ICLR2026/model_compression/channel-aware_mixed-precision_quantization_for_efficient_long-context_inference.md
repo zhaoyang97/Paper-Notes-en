@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference
 description: >-
-  [ICLR 2026][Model Compression][Triton Kernel] ChanMix identifies significant differences in quantization sensitivity across different **channels** of the KV cache—retrieval and outlier channels are fragile, while subnormal channels are robust. Based on this, it non-uniformly allocates bits by channel sensitivity (4-bit retrieval / 3-bit outlier / 2-bit normal / 1-
+  [ICLR 2026][Model Compression][KV Cache Compression] ChanMix identifies significant differences in quantization sensitivity across different **channels** of the KV cache—retrieval and outlier channels are fragile, while subnormal channels are robust. Based on this, it non-uniformly allocates bits by channel sensitivity (4-bit retrieval / 3-bit outlier / 2-bit normal / 1-bit subnormal) and implements 8-bit aligned packing using custom Triton kernels…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Triton Kernel
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Mixed-Precision Quantization"
+  - "Channel Sensitivity"
+  - "Retrieval Channels"
+  - "Long Context"
+  - "Triton Kernel"
 date: 2026-05-08
-content_hash: 60af419b8bc43393
+content_hash: 17a3e16baf3690fe
 ---
+
 # Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference
 
 **Conference**: ICLR 2026  

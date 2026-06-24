@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Stochastic Sparse Attention for Memory-Bound Inference
 description: >-
-  [ICML 2026][LLM Efficiency][KV-cache] SANTA treats the value aggregation $AV$ of attention as an "expectation of value rows $V$ weighted by softmax probabilities $A$." It transforms this into an unbiased estimator that samples $S \ll n_k$ indices from $A$ without replacement and directly averages the corresponding $V$ rows. By employing stratified/systemat
+  [ICML 2026][LLM Efficiency][Sparse Attention] SANTA treats the value aggregation $AV$ of attention as an "expectation of value rows $V$ weighted by softmax probabilities $A$." It transforms this into an unbiased estimator that samples $S \ll n_k$ indices from $A$ without replacement and directly averages the corresponding $V$ rows. By employing stratified/systematic sampling to reduce variance and implementing GPU kernels aligned with FlashDecoding…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - KV-cache
-  - Stratified Sampling
-  - GPU kernel
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Sparse Attention"
+  - "Random Sampling"
+  - "KV-cache"
+  - "Stratified Sampling"
+  - "GPU kernel"
 date: 2026-05-08
-content_hash: 8e556e4b5738dda4
+content_hash: 599056acf7355789
 ---
+
 # Stochastic Sparse Attention for Memory-Bound Inference
 
 **Conference**: ICML 2026  
@@ -165,9 +168,9 @@ Variance reduction is critical: at $S=16$, sys outperforms basic SANTA by 39 poi
 
 - [\[ICML 2026\] Prism: Spectral-Aware Block-Sparse Attention](prism_spectral-aware_block-sparse_attention.md)
 - [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)
-- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
-- [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
+- [\[ICML 2026\] FOCUS: DLLMs Know How to Tame Their Compute Bound](focus_dllms_know_how_to_tame_their_compute_bound.md)
+- [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](../../NeurIPS2025/llm_efficiency/hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
+- [\[ICCV 2025\] MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation](../../ICCV2025/llm_efficiency/mixant_observation-dependent_memory_propagation_for_stochastic_dense_action_anti.md)
 
 </div>
 

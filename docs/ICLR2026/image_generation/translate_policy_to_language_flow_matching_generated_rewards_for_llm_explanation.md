@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations
 description: >-
-  [ICLR 2026][Image Generation][Rectified Flow] A general framework is proposed that utilizes Rectified Flow to generate distributional rewards for training explanation-generating LLMs. By capturing the pluralistic and probabilistic nature of human judgment through Continuous Normalizing Flows (CNF), it is theoretically proven that CNF can effectively recover the tr
+  [ICLR 2026][Image Generation][Policy Explanation] A general framework is proposed that utilizes Rectified Flow to generate distributional rewards for training explanation-generating LLMs. By capturing the pluralistic and probabilistic nature of human judgment through Continuous Normalizing Flows (CNF), it is theoretically proven that CNF can effectively recover the true human reward distribution. This method significantly outperforms RLHF/RLAIF baselines on tasks such as SMAC…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Rectified Flow
-  - RLAIF
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Policy Explanation"
+  - "Rectified Flow"
+  - "Distributional Reward"
+  - "RLAIF"
+  - "LLM Interpretability"
 date: 2026-05-08
-content_hash: 549ab879a3f02f40
+content_hash: 9ed6ae84ff5ec8bd
 ---
+
 # Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations
 
 **Conference**: ICLR 2026  
@@ -147,10 +151,10 @@ Providing a single total reward at the end of an explanation results in sparse s
 ## Related Papers
 
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
 - [\[ICLR 2026\] Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching](discrete_guidance_matching_exact_guidance_for_discrete_flow_matching.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](../../ICML2026/image_generation/principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
 
 </div>
 

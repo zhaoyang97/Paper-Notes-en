@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Thompson Sampling in Function Spaces via Neural Operators
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Thompson Sampling] This paper extends Thompson Sampling (TS) from finite-dimensional parameter spaces to infinite-dimensional function spaces…
+  [NeurIPS 2025][Reinforcement Learning][Thompson Sampling] This paper extends Thompson Sampling (TS) from finite-dimensional parameter spaces to infinite-dimensional function spaces, leveraging neural operators as approximate samplers of Gaussian process posteriors to efficiently solve functional optimization problems involving partial differential equations (PDEs).
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Bayesian Optimization"
   - "PDE"
 date: 2026-05-08
-content_hash: f9c3fa20ed4d3ad9
+content_hash: f1725ffc1efec4ea
 ---
 
 # Thompson Sampling in Function Spaces via Neural Operators

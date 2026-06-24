@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training
 description: >-
-  [ICLR 2026][Interpretability][MLLM] Through 100+ controlled experiments (consuming 500,000 GPU hours), this study systematically dismantles why "text-only LLMs develop visual capabilities." It discovers that visual priors are separable into **reasoning priors** (derived from code/math/academic data, growing monotonically with proportion and universal acr
+  [ICLR 2026][Interpretability][Visual Priors] Through 100+ controlled experiments (consuming 500,000 GPU hours), this study systematically dismantles why "text-only LLMs develop visual capabilities." It discovers that visual priors are separable into **reasoning priors** (derived from code/math/academic data, growing monotonically with proportion and universal across visual encoders) and **perception priors** (diffusely derived from broad corpora…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - MLLM
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Visual Priors"
+  - "Language Pre-training"
+  - "Multimodal Large Language Models"
+  - "Data Proportions"
+  - "Perception-Reasoning Separation"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 37fe16a6fe65826f
+content_hash: ceff36bfa59789c0
 ---
+
 # Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training
 
 **Conference**: ICLR 2026  
@@ -122,9 +128,9 @@ The balanced recipe performs **better in both language and vision**: lower perpl
 
 - [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](evolution_of_concepts_in_language_model_pre-training.md)
 - [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](learning_is_forgetting_llm_training_as_lossy_compression.md)
+- [\[ICLR 2026\] Seeing but Not Believing: Probing the Disconnect Between Visual Attention and Answer Correctness in VLMs](seeing_but_not_believing_probing_the_disconnect_between_visual_attention_and_ans.md)
 - [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
-- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](learning_to_weight_parameters_for_training_data_attribution.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RISK: A Framework for GUI Agents in E-commerce Risk Management
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Ours proposes the RISK framework, comprising a domain dataset (RISK-Data: 8,492 single-step + 2,386 multi-step trajectories), a benchmark (RISK-Bench), and a GRPO-based reinforcement fine-tuning method (RISK-R1). Specifically designed for GUI agents in e-commerce risk management, the 7B model outperforms SOTA baselines
+  [ACL 2026][LLM Safety][GUI Agent] Ours proposes the RISK framework, comprising a domain dataset (RISK-Data: 8,492 single-step + 2,386 multi-step trajectories), a benchmark (RISK-Bench), and a GRPO-based reinforcement fine-tuning method (RISK-R1). Specifically designed for GUI agents in e-commerce risk management, the 7B model outperforms SOTA baselines with only 7.2% of the parameters, achieving a 70.5% success rate in online tasks.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "GUI Agent"
+  - "E-commerce Risk Management"
+  - "Reinforcement Fine-Tuning"
+  - "Web Interaction"
+  - "Multi-step Reasoning"
 date: 2026-05-08
-content_hash: 5e4b702ccc89aa27
+content_hash: 8b5b6f518d255ca1
 ---
+
 # RISK: A Framework for GUI Agents in E-commerce Risk Management
 
 **Conference**: ACL 2026  
@@ -140,10 +146,10 @@ Methods like GUI-R1 reward "clicking the correct screen coordinates" during trai
 ## Related Papers
 
 - [\[ACL 2026\] FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation](flexguard_continuous_risk_scoring_for_strictness-adaptive_llm_content_moderation.md)
-- [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](../../AAAI2026/llm_safety/an_llm-based_simulation_framework_for_embodied_conversationa.md)
-- [\[ACL 2026\] AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)
+- [\[ICLR 2026\] SAFER: Risk-Constrained Sample-then-Filter in Large Language Models](../../ICLR2026/llm_safety/safer_risk-constrained_sample-then-filter_in_large_language_models.md)
 - [\[ACL 2026\] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
+- [\[AAAI 2026\] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling](../../AAAI2026/llm_safety/an_llm-based_simulation_framework_for_embodied_conversationa.md)
+- [\[CVPR 2025\] MP-GUI: Modality Perception with MLLMs for GUI Understanding](../../CVPR2025/llm_safety/mp-gui_modality_perception_with_mllms_for_gui_understanding.md)
 
 </div>
 

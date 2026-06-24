@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing
 description: >-
-  [NeurIPS 2025][AI Safety][EHR synthesis] This paper proposes RawMed — the first framework to synthesize multi-table time series EHR data from raw records with minimal lossy preprocessing: events are textualized → compres…
+  [NeurIPS 2025][AI Safety][EHR synthesis] This paper proposes RawMed — the first framework to synthesize multi-table time series EHR data from raw records with minimal lossy preprocessing: events are textualized → compressed into a discrete latent space via Residual Quantization → temporal dynamics are modeled with an autoregressive Transformer. RawMed comprehensively outperforms existing baselines in fidelity, clinical utility, and privacy protection.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -13,7 +13,7 @@ tags:
   - "multi-table relational database"
   - "autoregressive Transformer"
 date: 2026-05-08
-content_hash: 4e971093ef0b15cb
+content_hash: cc5de73b550260c0
 ---
 
 # Generating Multi-Table Time Series EHR from Latent Space with Minimal Preprocessing
@@ -196,11 +196,11 @@ RawMed's AUROC across 11 clinical prediction tasks falls only 0.02–0.03 below 
 
 ## Related Papers
 
+- [\[ICML 2025\] TIMING: Temporality-Aware Integrated Gradients for Time Series Explanation](../../ICML2025/ai_safety/timing_temporality-aware_integrated_gradients_for_time_series_explanation.md)
 - [\[ICML 2026\] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack](../../ICML2026/ai_safety/exposing_vulnerabilities_in_explanation_for_time_series_classifiers_via_dual-tar.md)
 - [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](../../ICML2026/ai_safety/timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
 - [\[NeurIPS 2025\] Incentivizing Time-Aware Fairness in Data Sharing](incentivizing_time-aware_fairness_in_data_sharing.md)
 - [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 
 </div>
 

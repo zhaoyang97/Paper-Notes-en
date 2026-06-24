@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] AnyUp: Universal Feature Upsampling
 description: >-
-  [ICLR 2026][Others][feature upsampling] AnyUp proposes the first **encoder-agnostic** learnable feature upsampling method. By employing feature-agnostic convolutional layers and a window attention mechanism, it can perform high-quality upsampling for arbitrary visual features across any resolution with only a single training session. It achieves SOTA perform
+  AnyUp proposes the first **encoder-agnostic** learnable feature upsampling method. By employing feature-agnostic convolutional layers and a window attention mechanism, it can perform high-quality upsampling for arbitrary visual features across any resolution with only a single training session. It achieves SOTA performance on tasks such as semantic segmentation and depth estimation.
 tags:
-  - ICLR 2026
-  - Others
-  - feature upsampling
-  - encoder-agnostic
-  - DINO
-  - CLIP
-  - attention
-  - universal
+
 date: 2026-05-08
-content_hash: 97c1fce1df51e42f
+content_hash: aefad73ab57c023c
 ---
+
 # AnyUp: Universal Feature Upsampling
 
 - **Conference**: ICLR2026

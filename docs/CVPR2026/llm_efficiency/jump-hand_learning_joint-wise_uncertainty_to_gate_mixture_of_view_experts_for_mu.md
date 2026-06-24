@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] JUMP-Hand reformulates multi-view 3D hand reconstruction as a Mixture of Experts (MoE) problem where "each view is an expert," utilizing **joint-wise, view-wise probabilistic uncertainty** as an explicit gating signal. This signal drives both uncertainty-weighted triangulation in the coarse stage and uncertainty-gated
+  [CVPR 2026][LLM Efficiency][Multi-view hand reconstruction] JUMP-Hand reformulates multi-view 3D hand reconstruction as a Mixture of Experts (MoE) problem where "each view is an expert," utilizing **joint-wise, view-wise probabilistic uncertainty** as an explicit gating signal. This signal drives both uncertainty-weighted triangulation in the coarse stage and uncertainty-gated cross-attention in the refinement stage, adaptively amplifying reliable views while suppressing nois…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Multi-view hand reconstruction"
+  - "uncertainty modeling"
+  - "Mixture of Experts (MoE)"
+  - "view gating"
+  - "triangulation"
 date: 2026-05-08
-content_hash: 55b51c22b4398301
+content_hash: b70f7457358734e7
 ---
+
 # JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction
 
 **Conference**: CVPR 2026  
@@ -163,11 +169,11 @@ Soft gating significantly outperformed the best hard gating (by 5.06 mm on HO3D)
 
 ## Related Papers
 
-- [\[CVPR 2026\] A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_hete.md)
-- [\[CVPR 2026\] Beyond Single-View Sufficiency: CVBench for Cross-View Human Understanding](beyond_single-view_sufficiency_cvbench_for_cross-view_human_understanding.md)
-- [\[CVPR 2026\] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis](openfs_multi-hand-capable_fingerspelling_recognition_with_implicit_signing-hand_.md)
-- [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
-- [\[ECCV 2024\] UPose3D: Uncertainty-Aware 3D Human Pose Estimation with Cross-View and Temporal Cues](../../ECCV2024/human_understanding/upose3d_uncertainty-aware_3d_human_pose_estimation_with_cross-view_and_temporal_.md)
+- [\[CVPR 2026\] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)
+- [\[ACL 2025\] FUEL: Unveiling Environmental Impacts of Large Language Model Serving: A Functional Unit View](../../ACL2025/llm_efficiency/fuel_unveiling_environmental_impacts_of_llm_serving.md)
+- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](../../ICLR2026/llm_efficiency/rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
+- [\[ACL 2025\] DIVE into MoE: Diversity-Enhanced Reconstruction of Large Language Models from Dense into Mixture-of-Experts](../../ACL2025/llm_efficiency/dive_moe_reconstruction.md)
+- [\[ICLR 2026\] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning](../../ICLR2026/llm_efficiency/one-prompt_strikes_back_sparse_mixture_of_experts_for_prompt-based_continual_lea.md)
 
 </div>
 

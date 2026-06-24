@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling
 description: >-
-  [Image Generation] HSO proposes a hierarchical schedule optimizer via a bilevel optimization framework — an upper-level global search for optimal initialization strategies combined with a lower-level local refinement of…
+  [Image Generation] HSO proposes a hierarchical schedule optimizer via a bilevel optimization framework — an upper-level global search for optimal initialization strategies combined with a lower-level local refinement of schedules — achieving training-free SOTA sampling quality under extremely low NFE at a one-time optimization cost of only ~8 seconds.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: a48ae7aebd69b2f6
+content_hash: 54b9e5df035a861e
 ---
 
 # Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling
@@ -210,11 +210,11 @@ Among training-free methods, HSO achieves optimal performance at an 8-second cos
 
 ## Related Papers
 
+- [\[CVPR 2025\] EasyCraft: A Robust and Efficient Framework for Automatic Avatar Crafting](../../CVPR2025/image_generation/easycraft_a_robust_and_efficient_framework_for_automatic_avatar_crafting.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](../../ICLR2026/image_generation/toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](../../ICCV2025/image_generation/timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
 - [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](../../ICCV2025/image_generation/freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
 - [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](../../NeurIPS2025/image_generation/denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
-- [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](../../ICCV2025/image_generation/motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning Retrieval Models with Sparse Autoencoders
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Learned Sparse Retrieval] By replacing the vocabulary projection head of SPLADE with a pre-trained Sparse Autoencoder (SAE), queries and documents are encoded into sparse vectors within a "latent vocabulary" space. The resulting SPLARE model systematically outperforms vocabulary-based sparse retrieval in multilingual and cross-domain tasks, mat
+  [ICLR 2026][Information Retrieval & RAG][Learned Sparse Retrieval] By replacing the vocabulary projection head of SPLADE with a pre-trained Sparse Autoencoder (SAE), queries and documents are encoded into sparse vectors within a "latent vocabulary" space. The resulting SPLARE model systematically outperforms vocabulary-based sparse retrieval in multilingual and cross-domain tasks, matching dense SOTA on MMTEB for the first time.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Learned Sparse Retrieval
-  - Sparse Autoencoder
-  - SPLADE
-  - Multilingual Retrieval
-  - MMTEB
-  - LLM Embedding
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Learned Sparse Retrieval"
+  - "Sparse Autoencoder"
+  - "SPLADE"
+  - "Multilingual Retrieval"
+  - "MMTEB"
+  - "LLM Embedding"
 date: 2026-05-08
-content_hash: 41a3c88bbd0e24f0
+content_hash: 9d96a26c4e5796fa
 ---
+
 # Learning Retrieval Models with Sparse Autoencoders
 
 **Conference**: ICLR 2026  
@@ -146,7 +147,7 @@ The advantage is most pronounced in cross-lingual tasks (XTREME-UP +2.4, MIRACL 
 - [\[ACL 2026\] Learning to Extract Rational Evidence via Reinforcement Learning for Retrieval-Augmented Generation](../../ACL2026/information_retrieval/learning_to_extract_rational_evidence_via_reinforcement_learning_for_retrieval-a.md)
 - [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](hierarchical_concept-based_interpretable_models.md)
-- [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
+- [\[ICLR 2026\] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models](seeing_through_words_controlling_visual_retrieval_quality_with_language_models.md)
 
 </div>
 

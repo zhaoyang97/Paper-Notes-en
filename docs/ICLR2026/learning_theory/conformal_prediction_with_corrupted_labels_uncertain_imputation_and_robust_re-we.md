@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Conformal Prediction with Corrupted Labels: Uncertain Imputation and Robust Re-weighting
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Aiming at scenarios where training labels are corrupted by noise or missing and key features are unavailable at test time (privileged information), this paper first proves the precise conditions under which existing Privileged Conformal Prediction (PCP) remains valid despite inaccurate weight estimation. It then propos
+  [ICLR2026][Learning Theory][Corrupted Labels] Aiming at scenarios where training labels are corrupted by noise or missing and key features are unavailable at test time (privileged information), this paper first proves the precise conditions under which existing Privileged Conformal Prediction (PCP) remains valid despite inaccurate weight estimation. It then proposes a new method, UI, that relies on "backfilling labels with uncertainty" instead of weights. Finally…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Conformal Prediction"
+  - "Uncertainty Quantization"
+  - "Corrupted Labels"
+  - "Privileged Information"
+  - "Weighted Conformal"
+  - "Uncertain Imputation"
 date: 2026-05-08
-content_hash: 0d259e1ad5707580
+content_hash: 108fcf64d7996a8f
 ---
+
 # Conformal Prediction with Corrupted Labels: Uncertain Imputation and Robust Re-weighting
 
 **Conference**: ICLR2026  
@@ -119,15 +126,14 @@ The authors validated the method using three types of experiments: TriplyRobust 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Conformal Prediction for Long-Tailed Classification](conformal_prediction_for_long-tailed_classification.md)
 - [\[ICLR 2026\] Distribution-informed Online Conformal Prediction](distribution-informed_online_conformal_prediction.md)
 - [\[ICLR 2026\] Singleton-Optimized Conformal Prediction](singleton-optimized_conformal_prediction.md)
+- [\[ICLR 2026\] Adaptive Conformal Prediction via Mixture-of-Experts Gating Similarity](adaptive_conformal_prediction_via_mixture-of-experts_gating_similarity.md)
 - [\[ICML 2026\] Enhancing Conformal Prediction via Class Similarity](../../ICML2026/learning_theory/enhancing_conformal_prediction_via_class_similarity.md)
-- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
 
 </div>
 

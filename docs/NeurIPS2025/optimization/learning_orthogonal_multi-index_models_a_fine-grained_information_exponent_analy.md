@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis
 description: >-
-  [NeurIPS 2025][Optimization][multi-index models] This paper proves that orthogonal multi-index models $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \mathbf{x})$ can be learned via a two-phase online SGD with…
+  [NeurIPS 2025][Optimization][multi-index models] This paper proves that orthogonal multi-index models $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \mathbf{x})$ can be learned via a two-phase online SGD with sample complexity $\tilde{O}(dP^{L-1})$ (where $L$ is the lowest higher-order Hermite degree of the link function), significantly improving upon $\tilde{O}(Pd^{L-1})$ obtained by using only the lowest-order information. The key insight is to first recover the…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "SGD sample complexity"
   - "subspace recovery"
 date: 2026-05-08
-content_hash: d7968548c0bdb8b5
+content_hash: c78a2d8b88465832
 ---
 
 # Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis
@@ -126,11 +126,11 @@ Learning objective: $f_*(\mathbf{x}) = \sum_{k=1}^P \phi(\mathbf{v}_k^* \cdot \m
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] From Information to Generative Exponent: Learning Rate Induces Phase Transitions in SGD](from_information_to_generative_exponent_learning_rate_induces_phase_transitions_.md)
 - [\[NeurIPS 2025\] Learning Single-Index Models via Harmonic Decomposition](learning_single-index_models_via_harmonic_decomposition.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](../../ICLR2026/optimization/neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
 - [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
 - [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
-- [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
 
 </div>
 

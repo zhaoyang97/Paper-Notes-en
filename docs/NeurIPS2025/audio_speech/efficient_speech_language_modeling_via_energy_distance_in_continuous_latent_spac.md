@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space
 description: >-
-  [NeurIPS 2025][Audio & Speech][speech language model] This paper proposes SLED, which encodes speech waveforms into sequences of continuous latent representations and performs autoregressive modeling in the continuous sp…
+  [NeurIPS 2025][Audio & Speech][speech language model] This paper proposes SLED, which encodes speech waveforms into sequences of continuous latent representations and performs autoregressive modeling in the continuous space via an energy distance objective. This avoids the information loss from discretization and the complex hierarchical architectures required by RVQ, while enabling efficient zero-shot and streaming speech synthesis.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot TTS"
   - "streaming synthesis"
 date: 2026-05-08
-content_hash: d8792e434af1bd73
+content_hash: c314681a3d6541ea
 ---
 
 # Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space
@@ -151,10 +151,10 @@ SLED is the only continuous speech language model that simultaneously achieves s
 ## Related Papers
 
 - [\[NeurIPS 2025\] Latent Space Factorization in LoRA](latent_space_factorization_in_lora.md)
+- [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](../../ICLR2026/audio_speech/mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
 - [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](multi-head_temporal_latent_attention.md)
 - [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
-- [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](adapting_speech_language_model_to_singing_voice_synthesis.md)
-- [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
+- [\[ICLR 2026\] Continuous Audio Language Models](../../ICLR2026/audio_speech/continuous_audio_language_models.md)
 
 </div>
 

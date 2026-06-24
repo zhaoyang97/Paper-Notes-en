@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gradient-Variation Online Adaptivity for Accelerated Optimization with Hölder Smoothness
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][online learning] This paper develops gradient-variation adaptive online learning algorithms for Hölder smooth function classes…
+  [NeurIPS 2025][Reinforcement Learning][online learning] This paper develops gradient-variation adaptive online learning algorithms for Hölder smooth function classes, achieving regret that smoothly interpolates between the smooth and non-smooth extremes. Via online-to-batch conversion, it provides the first universal method for strongly convex optimization that attains accelerated convergence in the smooth case and near-optimal convergence in the non-smooth case.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "universality"
   - "online-to-batch conversion"
 date: 2026-05-08
-content_hash: f4d58eeda658c290
+content_hash: de5eeb77dd35d293
 ---
 
 # Gradient-Variation Online Adaptivity for Accelerated Optimization with Hölder Smoothness
@@ -152,8 +152,8 @@ This work represents a significant advance in optimization theory, translating o
 - [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
 - [\[ICML 2026\] LABO: LLM-Accelerated Bayesian Optimization through Broad Exploration and Selective Experimentation](../../ICML2026/reinforcement_learning/labo_llm-accelerated_bayesian_optimization_through_broad_exploration_and_selecti.md)
 - [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
-- [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](bandit_and_delayed_feedback_in_online_structured_prediction.md)
 - [\[NeurIPS 2025\] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning](on_the_global_optimality_of_policy_gradient_methods_in_general_utility_reinforce.md)
+- [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](bandit_and_delayed_feedback_in_online_structured_prediction.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning from the Electronic Structure of Molecules across the Periodic Table
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Hamiltonian prediction] This paper introduces HELM—the first "universal" Hamiltonian matrix prediction model capable of scaling to 100+ atoms, 58 elements, and large basis sets including diffuse functions. It releases the largest molecular Hamiltonian dataset to date, OMol CSH 58k, and demonstrates that transferring shared representations fro
+  [ICLR 2026][Physics & Scientific Computing][Hamiltonian prediction] This paper introduces HELM—the first "universal" Hamiltonian matrix prediction model capable of scaling to 100+ atoms, 58 elements, and large basis sets including diffuse functions. It releases the largest molecular Hamiltonian dataset to date, OMol CSH 58k, and demonstrates that transferring shared representations from Hamiltonian pretraining to energy prediction achieves up to ~2× accuracy improvement in lo…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Hamiltonian prediction
-  - MLIP
-  - electronic structure
-  - equivariant GNN
-  - pretraining
-  - DFT
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Hamiltonian prediction"
+  - "MLIP"
+  - "electronic structure"
+  - "equivariant GNN"
+  - "pretraining"
+  - "DFT"
 date: 2026-05-08
-content_hash: 9355d2bbb81b6534
+content_hash: f737c72a2981c3fb
 ---
+
 # Learning from the Electronic Structure of Molecules across the Periodic Table
 
 **Conference**: ICLR 2026  
@@ -127,8 +128,8 @@ On the more challenging OMol CSH 58k, the pretrained-frozen model improves test 
 - [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
 - [\[ICLR 2026\] OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction](oxtal_an_all-atom_diffusion_model_for_organic_crystal_structure_prediction.md)
 - [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
 - [\[ICLR 2026\] Beyond Structure: Invariant Crystal Property Prediction with Pseudo-Particle Ray Diffraction](beyond_structure_invariant_crystal_property_prediction_with_pseudo-particle_ray_.md)
+- [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 
 </div>
 

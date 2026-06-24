@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] A Content-Preserving Secure Linguistic Steganography
 description: >-
-  [AAAI 2026][LLM/NLP][linguistic steganography] This paper proposes CLstega, the first content-preserving linguistic steganography paradigm…
+  [AAAI 2026][LLM (Other)][linguistic steganography] This paper proposes CLstega, the first content-preserving linguistic steganography paradigm, which embeds secret information into an unmodified cover text by fine-tuning a masked language model (MLM) to controllably transform its prediction distribution. The approach achieves a 100% extraction success rate and near-perfect security, with steganalysis detection accuracy approaching the random-guess baseline of 0.5.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "linguistic steganography"
   - "content preservation"
   - "masked language model"
   - "distribution transformation"
   - "secure communication"
 date: 2026-05-08
-content_hash: eda80847e64332ff
+content_hash: 96ce0af08f27372c
 ---
 
 # A Content-Preserving Secure Linguistic Steganography
@@ -120,11 +120,11 @@ The overall pipeline proceeds as follows. Given a cover text, part-of-speech tag
 
 ## Related Papers
 
-- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
-- [\[AAAI 2026\] TransMamba: A Sequence-Level Hybrid Transformer-Mamba Language Model](transmamba_a_sequence-level_hybrid_transformer-mamba_language_model.md)
-- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
-- [\[AAAI 2026\] Collaborative LLM Numerical Reasoning with Local Data Protection](collaborative_llm_numerical_reasoning_with_local_data_protection.md)
-- [\[AAAI 2026\] ICL-Router: In-Context Learned Model Representations for LLM Routing](icl-router_in-context_learned_model_representations_for_llm_routing.md)
+- [\[ACL 2025\] MOSAIC: Multiple Observers Spotting AI Content](../../ACL2025/llm_nlp/mosaic_multiple_observers_spotting_ai_content.md)
+- [\[ACL 2025\] Robust Utility-Preserving Text Anonymization Based on Large Language Models](../../ACL2025/llm_nlp/robust_utility-preserving_text_anonymization_based_on_large_language_models.md)
+- [\[ACL 2025\] Comparing Linguistic Acceptability Judgments of Autoregressive Language Models](../../ACL2025/llm_nlp/comparing_linguistic_acceptability_judgments_of_autoregressive_language_models.md)
+- [\[ACL 2025\] Aligning Large Language Models with Implicit Preferences from User-Generated Content](../../ACL2025/llm_nlp/pugc_align_implicit_pref_ugc.md)
+- [\[ACL 2025\] Can LLMs Interpret and Leverage Structured Linguistic Representations? A Case Study with AMRs](../../ACL2025/llm_nlp/can_llms_interpret_and_leverage_structured_linguistic_representations_a_case_stu.md)
 
 </div>
 

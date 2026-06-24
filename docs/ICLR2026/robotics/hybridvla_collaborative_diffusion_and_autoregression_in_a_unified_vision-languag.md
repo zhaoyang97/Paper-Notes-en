@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language-Action] HybridVLA enables a single LLM backbone to simultaneously perform diffusion denoising and autoregressive action prediction within a unified token sequence. By adaptively fusing both paradigms through a confidence-based collaborative ensemble, it achieves performance gains of 17% in simulation and 19% on real robots ove
+  [ICLR 2026][Robotics][Vision-Language-Action] HybridVLA enables a single LLM backbone to simultaneously perform diffusion denoising and autoregressive action prediction within a unified token sequence. By adaptively fusing both paradigms through a confidence-based collaborative ensemble, it achieves performance gains of 17% in simulation and 19% on real robots over SOTA models.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language-Action
-  - Autoregressive
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "Diffusion Policy"
+  - "Autoregressive"
+  - "Unified Model"
+  - "Collaborative Ensemble"
 date: 2026-05-08
-content_hash: 624e15c035095fe7
+content_hash: 1db3b90d85f3dd5e
 ---
+
 # HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model
 
 **Conference**: ICLR 2026  
@@ -129,9 +133,9 @@ HybridVLA (7B) outperforms the autoregressive SOTA (OpenVLA) and diffusion SOTA 
 
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
 - [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
+- [\[ICLR 2026\] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning](onetwovla_a_unified_vision-language-action_model_with_adaptive_reasoning.md)
+- [\[ICLR 2026\] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance](align-then-steer_adapting_the_vision-language_action_models_through_unified_late.md)
 - [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
-- [\[ICLR 2026\] HAMLET: Switch Your Vision-Language-Action Model into a History-Aware Policy](hamlet_switch_your_vision-language-action_model_into_a_history-aware_policy.md)
-- [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
 
 </div>
 

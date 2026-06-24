@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models
 description: >-
-  [ICML 2026][vlm_reasoning][VLM] 3ViewSense argues that the bottleneck of VLM spatial reasoning is not insufficient visual features or weak linguistic reasoning, but the lack of a stable 3D intermediate representation. Consequently, it requires the model to first induce front, left, and top views from a single image before reasoning based on these ort
+  [ICML 2026][VLM Reasoning][Orthographic views] 3ViewSense argues that the bottleneck of VLM spatial reasoning is not insufficient visual features or weak linguistic reasoning, but the lack of a stable 3D intermediate representation. Consequently, it requires the model to first induce front, left, and top views from a single image before reasoning based on these orthographic views, significantly outperforming same-scale VLMs in occlusion counting and view-consistent spatial re…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - VLM
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Orthographic views"
+  - "Spatial reasoning"
+  - "Mental simulation"
+  - "VLM"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 765f727fb2a06ead
+content_hash: 39a7ecf11818d67f
 ---
+
 # 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -144,10 +148,10 @@ Direct QA scores higher on in-distribution data, suggesting it fits the dataset 
 ## Related Papers
 
 - [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
+- [\[ICLR 2026\] MindCube: Spatial Mental Modeling from Limited Views](../../ICLR2026/vlm_reasoning/mindcube_spatial_mental_modeling_from_limited_views.md)
 - [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](../../ICCV2025/vlm_reasoning/perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](../../CVPR2026/vlm_reasoning/think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](../../ICLR2026/vlm_reasoning/spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
+- [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/vlm_reasoning/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
 
 </div>
 

@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] The ULEE method is proposed to meta-learn pre-trained policies with high exploration efficiency and fast adaptation through adversarial goal generation and curriculum learning based on post-adaptation difficulty in unsupervised environments.
+  [Reinforcement Learning] The ULEE method is proposed to meta-learn pre-trained policies with high exploration efficiency and fast adaptation through adversarial goal generation and curriculum learning based on post-adaptation difficulty in unsupervised environments.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 74cfee64b8460640
+content_hash: 67801d00e454daa7
 ---
+
 # Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals
 
 ## Information

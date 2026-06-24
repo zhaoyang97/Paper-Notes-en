@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Membership Inference Attacks with False Discovery Rate Control
 description: >-
-  [ICCV 2025][AI Safety][membership inference attack] This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member c…
+  [ICCV 2025][AI Safety][membership inference attack] This paper proposes MIAFdR, the first membership inference attack (MIA) method with theoretical false discovery rate (FDR) guarantees. By designing a novel non-member conformity score function and an adjusted membership decision strategy, MIAFdR controls FDR and can be integrated as a plug-and-play wrapper into existing MIA methods, maintaining attack performance while providing FDR guarantees.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "multiple hypothesis testing"
   - "privacy security"
 date: 2026-05-08
-content_hash: c2a227d26c466d42
+content_hash: 149a916e021c6401
 ---
 
 # Membership Inference Attacks with False Discovery Rate Control
@@ -152,8 +152,8 @@ FDR is effectively controlled across different significance levels and different
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 - [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/ai_safety/how_does_bayesian_sampling_help_membership_inference_attacks.md)
 - [\[ICCV 2025\] Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning](active_membership_inference_test_amint_enhancing_model_auditability_with_multi-t.md)
+- [\[ACL 2025\] Crafting Privacy-Preserving Adversarial Examples: A Defense Against Membership Inference](../../ACL2025/ai_safety/crafting_privacy-preserving_adversarial_examples_a_defense_against_membership_inf.md)
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](../../NeurIPS2025/ai_safety/impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
-- [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](../../AAAI2026/ai_safety/reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
 
 </div>
 

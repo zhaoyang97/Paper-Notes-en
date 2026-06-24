@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Human Geometry Distribution for 3D Animation Generation
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] This paper proposes a two-stage generation framework that first compresses per-frame 3D human geometry into a compact latent using an improved "Human Geometry Distribution (HuGeoDis)" and then generates short-term transitions in the latent space via identity-conditioned autoregressive diffusion. This approach synthesiz
+  [CVPR 2026][3D Vision][3D Human Animation Generation] This paper proposes a two-stage generation framework that first compresses per-frame 3D human geometry into a compact latent using an improved "Human Geometry Distribution (HuGeoDis)" and then generates short-term transitions in the latent space via identity-conditioned autoregressive diffusion. This approach synthesizes 3D human sequences with fine-grained clothing wrinkles, natural dynamics…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Human Animation Generation"
+  - "Geometry Distribution"
+  - "Flow Matching"
+  - "Autoregressive Diffusion"
+  - "Clothing Dynamics"
 date: 2026-05-08
-content_hash: 65ddb98843544bde
+content_hash: d4511e383a7e03e1
 ---
+
 # Human Geometry Distribution for 3D Animation Generation
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ Animation generation comparison and ablation (4d-dress, FID lower is better; ID/
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
-- [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
-- [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
-- [\[CVPR 2026\] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow](easy3e_feed-forward_3d_asset_editing_via_rectified_voxel_flow.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[ICLR 2026\] Generative Human Geometry Distribution](../../ICLR2026/3d_vision/generative_human_geometry_distribution.md)
+- [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
+- [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
+- [\[CVPR 2026\] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)
+- [\[CVPR 2026\] AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)
 
 </div>
 

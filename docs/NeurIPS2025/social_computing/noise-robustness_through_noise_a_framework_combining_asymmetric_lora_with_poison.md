@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Noise-Robustness Through Noise: A Framework Combining Asymmetric LoRA with Poisoning MoE
 description: >-
-  [NeurIPS 2025][Social Computing][LoRA] This paper proposes LoPE, which designates a dedicated "poisoning expert" within an asymmetric LoRA architecture to absorb injected noise during training; at inference time…
+  [NeurIPS 2025][Social Computing][LoRA] This paper proposes LoPE, which designates a dedicated "poisoning expert" within an asymmetric LoRA architecture to absorb injected noise during training; at inference time, this expert is masked so that only the clean experts contribute to the output — achieving noise robustness through noise itself, entirely without data cleaning.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Parameter-Efficient Fine-Tuning"
   - "Data Denoising"
 date: 2026-05-08
-content_hash: a5663ba885ba4a8d
+content_hash: 5be8ef4582a46cf0
 ---
 
 # Noise-Robustness Through Noise: A Framework Combining Asymmetric LoRA with Poisoning MoE
@@ -124,11 +124,11 @@ Cross-noise-type experiments using NCI noise in the training set and WOS noise i
 
 ## Related Papers
 
+- [\[ICML 2025\] Learning Survival Distributions with the Asymmetric Laplace Distribution](../../ICML2025/social_computing/learning_survival_distributions_with_the_asymmetric_laplace_distribution.md)
+- [\[CVPR 2025\] Project-Probe-Aggregate: Efficient Fine-Tuning for Group Robustness](../../CVPR2025/social_computing/project-probe-aggregate_efficient_fine-tuning_for_group_robustness.md)
 - [\[NeurIPS 2025\] Worse than Zero-shot? A Fact-Checking Dataset for Evaluating the Robustness of RAG Against Misleading Retrievals](worse_than_zero-shot_a_fact-checking_dataset_for_evaluating_the_robustness_of_ra.md)
 - [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
 - [\[AAAI 2026\] Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System](../../AAAI2026/social_computing/fact2fiction_targeted_poisoning_attack_to_agentic_fact-check.md)
-- [\[ACL 2026\] Investigating Counterfactual Unfairness in LLMs towards Identities through Humor](../../ACL2026/social_computing/investigating_counterfactual_unfairness_in_llms_towards_identities_through_humor.md)
-- [\[ICLR 2026\] GRADIEND: Feature Learning within Neural Networks Exemplified through Biases](../../ICLR2026/social_computing/gradiend_feature_learning_within_neural_networks_exemplified_through_biases.md)
 
 </div>
 

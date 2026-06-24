@@ -1,15 +1,19 @@
 ---
 title: >-
-  [Paper Note] Verified SHAP: 神经网络精确 Shapley 值的可证明界
+  [Paper Note] Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks
 description: >-
   [ICML 2026][Interpretability][SHAP] VERISHAP provides the first provable bounds for SHAP value computation in neural networks by combining branch-and-bound with neural network verification techniques—scaling to feature search spaces orders of magnitude larger than existing exact methods.
 tags:
-  - ICML 2026
-  - Interpretability
-  - SHAP
+  - "ICML 2026"
+  - "Interpretability"
+  - "SHAP"
+  - "Neural Network Verification"
+  - "Branch-and-Bound"
+  - "Provable Bounds"
 date: 2026-05-08
-content_hash: 790fb801fefac54b
+content_hash: cb1361ecf05837bb
 ---
+
 # Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks
 
 **Conference**: ICML 2026  
@@ -124,11 +128,11 @@ SHAP feature subsets are discrete combinatorial objects, while bound propagation
 
 ## Related Papers
 
-- [\[ICML 2026\] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation](shapleig_bayesian_experimental_design_for_shapley_value_estimation.md)
 - [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](../../NeurIPS2025/interpretability/shap_values_via_sparse_fourier_representation.md)
+- [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](../../ICLR2026/interpretability/joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
+- [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](../../ICLR2026/interpretability/fame_formal_abstract_minimal_explanation_for_neural_networks.md)
 - [\[ICML 2025\] DeltaSHAP: Explaining Prediction Evolutions in Online Patient Monitoring with Shapley Values](../../ICML2025/interpretability/deltashap_explaining_prediction_evolutions_in_online_patient_monitoring_with_sha.md)
-- [\[ICML 2026\] From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets](from_rashomon_theory_to_praxis_efficient_decision_tree_rashomon_sets.md)
-- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
+- [\[ICML 2026\] ShaplEIG: Bayesian Experimental Design for Shapley Value Estimation](shapleig_bayesian_experimental_design_for_shapley_value_estimation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Rheumatoid Arthritis] RAM-W600 is the first publicly available multi-task wrist conventional radiograph dataset, comprising 1…
+  [NeurIPS 2025][Medical Imaging][Rheumatoid Arthritis] RAM-W600 is the first publicly available multi-task wrist conventional radiograph dataset, comprising 1,048 images and supporting two clinically relevant tasks: carpal bone instance segmentation and SvdH bone erosion (BE) scoring, accompanied by comprehensive benchmarking.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Dataset"
   - "Instance Segmentation"
 date: 2026-05-08
-content_hash: 73c506986b697632
+content_hash: c3994cf71e6edbf7
 ---
 
 # RAM-W600: A Multi-Task Wrist Dataset and Benchmark for Rheumatoid Arthritis
@@ -54,9 +54,9 @@ RAM-W600 does not propose a new model; rather, it contributes a **dataset and be
    The dataset includes 1,048 wrist CR images from 388 patients across 6 medical centers. Among these, 618 images provide pixel-level instance segmentation annotations covering 14 carpal bone categories, and 800 images include SvdH BE scores across 6 joint surfaces (4,800 scores in total).
 
    The annotation framework consists of three levels:
-   - **Anatomical structure annotation**: Precise contour delineation of 14 carpal bones (MC1–5, Tr, Tz, Sca, Lu, Cap, Ham, Tri, Radius, Ulna), with each bone independently annotated using a multi-label strategy.
-   - **Bone location annotation**: ROI annotation for 6 joint regions of interest defined by the SvdH scoring system.
-   - **SvdH BE scoring annotation**: BE severity scoring for 6 key joint surfaces.
+    - **Anatomical structure annotation**: Precise contour delineation of 14 carpal bones (MC1–5, Tr, Tz, Sca, Lu, Cap, Ham, Tri, Radius, Ulna), with each bone independently annotated using a multi-label strategy.
+    - **Bone location annotation**: ROI annotation for 6 joint regions of interest defined by the SvdH scoring system.
+    - **SvdH BE scoring annotation**: BE severity scoring for 6 key joint surfaces.
 
 2. **Data Diversity and Quality Control**
 
@@ -138,7 +138,7 @@ All benchmark experiments adopt the AdamW optimizer (weight decay = 1e-2) with c
 - [\[ICCV 2025\] ProGait: A Multi-Purpose Video Dataset and Benchmark for Transfemoral Prosthesis Users](../../ICCV2025/medical_imaging/progait_a_multi-purpose_video_dataset_and_benchmark_for_transfemoral_prosthesis_.md)
 - [\[NeurIPS 2025\] DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders](dermacon-in_a_multi-concept_annotated_dermatological_image_dataset_of_indian_ski.md)
 - [\[NeurIPS 2025\] Care-PD: A Multi-Site Anonymized Clinical Dataset for Parkinson's Disease Gait Assessment](care-pd_a_multi-site_anonymized_clinical_dataset_for_parkinsons_disease_gait_ass.md)
-- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
+- [\[CVPR 2025\] CholecTrack20: A Multi-Perspective Tracking Dataset for Surgical Tools](../../CVPR2025/medical_imaging/cholectrack20_a_multi-perspective_tracking_dataset_for_surgical_tools.md)
 
 </div>
 

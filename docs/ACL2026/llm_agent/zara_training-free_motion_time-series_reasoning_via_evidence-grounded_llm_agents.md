@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] Ours proposes ZARA, a knowledge and retrieval-augmented multi-agent framework. By distilling sensor signals into a structured text knowledge base, performing class-wise retrieval, and employing hierarchical LLM reasoning, it achieves interpretable human activity recognition in a completely training-free setting, signif
+  [ACL 2026][LLM Agent][Human Activity Recognition] Ours proposes ZARA, a knowledge and retrieval-augmented multi-agent framework. By distilling sensor signals into a structured text knowledge base, performing class-wise retrieval, and employing hierarchical LLM reasoning, it achieves interpretable human activity recognition in a completely training-free setting, significantly outperforming existing methods on 8 datasets.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Human Activity Recognition"
+  - "Time-Series Reasoning"
+  - "Retrieval-Augmented Generation"
+  - "Multi-Agent Reasoning"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: 8b59ed0875a9bc78
+content_hash: 3ef7c15c6f888801
 ---
+
 # ZARA: Training-Free Motion Time-Series Reasoning via Evidence-Grounded LLM Agents
 
 **Conference**: ACL 2026  
@@ -151,8 +157,8 @@ The best ZARA variant exceeds the strongest baseline UniMTS by 42.2 percentage p
 - [\[CVPR 2026\] BAMI: Training-Free Bias Mitigation in GUI Grounding](../../CVPR2026/llm_agent/bami_training-free_bias_mitigation_in_gui_grounding.md)
 - [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
 - [\[ACL 2026\] SafeMCP: Proactive Power Regulation for LLM Agent Defense via Environment-Grounded Look-Ahead Reasoning](safemcp_proactive_power_regulation_for_llm_agent_defense_via_environment-grounde.md)
+- [\[ICLR 2026\] Real-Time Reasoning Agents in Evolving Environments](../../ICLR2026/llm_agent/real-time_reasoning_agents_in_evolving_environments.md)
 - [\[ACL 2026\] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](intragent_an_llm_agent_for_content-grounded_information_retrieval_through_litera.md)
-- [\[CVPR 2025\] TANGO: Training-free Embodied AI Agents for Open-world Tasks](../../CVPR2025/llm_agent/tango_training-free_embodied_ai_agents_for_open-world_tasks.md)
 
 </div>
 

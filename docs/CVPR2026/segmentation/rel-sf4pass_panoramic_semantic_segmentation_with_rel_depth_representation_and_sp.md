@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion
 description: >-
-  [CVPR 2026][Segmentation][RGB-D] Proposes REL depth representation (a three-channel Rectified Depth + EGVIA + LOA based on cylindrical coordinates) and Spherical Dynamic Multi-modal Fusion (SMMF) for panoramic semantic segmentation. It achieves a 63.06% mean mIoU on Stanford2D3D (a 2.35% improvement over the HHA baseline) and reduces performance varia
+  [CVPR 2026][Segmentation][Panoramic Semantic Segmentation] Proposes REL depth representation (a three-channel Rectified Depth + EGVIA + LOA based on cylindrical coordinates) and Spherical Dynamic Multi-modal Fusion (SMMF) for panoramic semantic segmentation. It achieves a 63.06% mean mIoU on Stanford2D3D (a 2.35% improvement over the HHA baseline) and reduces performance variance by approximately 70% under 3D perturbations.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - RGB-D
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Panoramic Semantic Segmentation"
+  - "Depth Representation"
+  - "Multi-modal Fusion"
+  - "Cylindrical Coordinates"
+  - "RGB-D"
 date: 2026-05-08
-content_hash: fa4a951427e33aa1
+content_hash: 6d1e9bfb0f347d41
 ---
+
 # REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion
 
 **Conference**: CVPR 2026  
@@ -135,15 +140,15 @@ Standard semantic segmentation cross-entropy loss is used, combined with the two
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera](unified_spherical_frontend_learning_rotation-equivariant_representations_of_sphe.md)
 - [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
+- [\[CVPR 2026\] Unified Spherical Frontend: Learning Rotation-Equivariant Representations of Spherical Images from Any Camera](unified_spherical_frontend_learning_rotation-equivariant_representations_of_sphe.md)
 - [\[CVPR 2026\] Denoise and Align: Towards Source-Free UDA for Robust Panoramic Semantic Segmentation](denoise_and_align_towards_source-free_uda_for_robust_panoramic_semantic_segmenta.md)
-- [\[CVPR 2026\] GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth](geomprompt_rgbd_segmentation.md)
 - [\[CVPR 2026\] GeoSURGE: Geo-localization using Semantic Fusion with Hierarchy of Geographic Embeddings](geosurge_geo-localization_using_semantic_fusion_with_hierarchy_of_geographic_emb.md)
+- [\[CVPR 2026\] Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network](hilbert_curve-based_attention_enabling_topology-preserving_image_tensor_represen.md)
 
 </div>
 

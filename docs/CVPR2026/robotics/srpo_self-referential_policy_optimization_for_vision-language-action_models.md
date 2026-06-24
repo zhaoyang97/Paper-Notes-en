@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] SRPO uses **self-generated successful trajectories** within the same training batch as references and measures "how close a failed trajectory is to success" via world model latent representations. This converts the 0/1 sparse rewards of GRPO into dense process rewards without extra demonstrations or manual reward engin
+  [CVPR 2026][Robotics][VLA] SRPO uses **self-generated successful trajectories** within the same training batch as references and measures "how close a failed trajectory is to success" via world model latent representations. This converts the 0/1 sparse rewards of GRPO into dense process rewards without extra demonstrations or manual reward engineering, improving OpenVLA* on LIBERO from 48.9% to 99.2% (within 200 steps).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Reinforcement Learning
-  - World Models
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "RL"
+  - "Sparse Reward"
+  - "World Model"
+  - "Process Reward"
 date: 2026-05-08
-content_hash: 49b18672864e4ebf
+content_hash: 3d6e0e64cc3c8f32
 ---
+
 # SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -139,11 +142,11 @@ Starting from a 48.9% baseline, SRPO reaches 99.2% (a 103% relative improvement)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Closed-Loop Neural Activation Control in Vision-Language-Action Models](closed-loop_neural_activation_control_in_vision-language-action_models.md)
+- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](../../ICLR2026/robotics/wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
+- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
 
 </div>
 

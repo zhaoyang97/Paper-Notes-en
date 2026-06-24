@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Alignment Auditor: A Bayesian Framework for Verifying and Refining LLM Objectives
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] The study reformulates "recovering implicit LLM rewards via Inverse Reinforcement Learning (IRL)" from a one-off point estimation into a Bayesian auditing workflow. It first recovers the **posterior distribution** of rewards rather than a single point using variational inference, then shrinks the posterior round-by-rou
+  [ICLR 2026][LLM Alignment][Bayesian Inverse Reinforcement Learning] The study reformulates "recovering implicit LLM rewards via Inverse Reinforcement Learning (IRL)" from a one-off point estimation into a Bayesian auditing workflow. It first recovers the **posterior distribution** of rewards rather than a single point using variational inference, then shrinks the posterior round-by-round via sequential Bayesian updates. Epistemic uncertainty is employed to diagnose shortcuts…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Bayesian Inverse Reinforcement Learning"
+  - "Reward Inference"
+  - "Non-identifiability"
+  - "Uncertainty Quantification"
+  - "Alignment Auditing"
 date: 2026-05-08
-content_hash: 3efb9ae2d43946c1
+content_hash: a84d2eeddbe8a345
 ---
+
 # The Alignment Auditor: A Bayesian Framework for Verifying and Refining LLM Objectives
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ The primary task is detoxification using AllenAI **RealToxicityPrompts** (99k co
 - [\[ICLR 2026\] RE-PO: Robust Enhanced Policy Optimization as a General Framework for LLM Alignment](re-po_robust_enhanced_policy_optimization_as_a_general_framework_for_llm_alignme.md)
 - [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
 - [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 - [\[ICLR 2026\] Inverse Reinforcement Learning with Dynamic Reward Scaling for LLM Alignment](inverse_reinforcement_learning_with_dynamic_reward_scaling_for_llm_alignment.md)
-- [\[ICLR 2026\] Beyond Pairwise: Empowering LLM Alignment With Ranked Choice Modeling](beyond_pairwise_empowering_llm_alignment_with_ranked_choice_modeling.md)
 
 </div>
 

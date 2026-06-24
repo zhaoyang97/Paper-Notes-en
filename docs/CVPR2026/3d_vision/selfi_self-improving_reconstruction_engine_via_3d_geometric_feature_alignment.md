@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Selfi: Self-improving Reconstruction Engine via 3D Geometric Feature Alignment
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Selfi freezes 3D Vision Foundation Models (VFMs) like VGGT as a backbone and trains only a lightweight feature adapter. By using the depth and pose output by VGGT itself as pseudo-labels and distilling features into a "geometrically aligned" space through re-projection consistency loss, it transforms a foundation model
+  [CVPR 2026][3D Vision][New View Synthesis] Selfi freezes 3D Vision Foundation Models (VFMs) like VGGT as a backbone and trains only a lightweight feature adapter. By using the depth and pose output by VGGT itself as pseudo-labels and distilling features into a "geometrically aligned" space through re-projection consistency loss, it transforms a foundation model not originally designed for high-fidelity rendering into a SOTA engine for pose-free New View Synthesis (NVS) and ca…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "New View Synthesis"
+  - "3D Vision Foundation Models"
+  - "Feature Alignment"
+  - "Gaussian Splatting"
+  - "Pose-free Reconstruction"
 date: 2026-05-08
-content_hash: 70594005b3b7976b
+content_hash: 47f2b7e26622d8f8
 ---
+
 # Selfi: Self-improving Reconstruction Engine via 3D Geometric Feature Alignment
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ In pose estimation (10 frames), Selfi's AUC@3 reaches 0.867, better than VGGT+BA
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)
 - [\[CVPR 2026\] PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding](patchalign3d_local_feature_alignment_for_dense_3d_shape_understanding.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
-- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 - [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
+- [\[CVPR 2026\] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator](gaussfusion_improving_3d_reconstruction_in_the_wild_with_a_geometry-informed_vid.md)
+- [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
+- [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
 
 </div>
 

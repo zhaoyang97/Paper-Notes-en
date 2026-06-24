@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Motus: A Unified Latent Action World Model
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][World Models] Motus employs a Mixture-of-Transformers (MoT) architecture to integrate three pre-trained experts—Understanding, Video Generation, and Action—via shared self-attention (Tri-model Joint Attention) and UniDiffuser-style asynchronous scheduling. It unifies five embodied paradigms—VLA, World Model, IDM, video generation, a
+  [CVPR 2026][Robotics][Embodied Foundation Model] Motus employs a Mixture-of-Transformers (MoT) architecture to integrate three pre-trained experts—Understanding, Video Generation, and Action—via shared self-attention (Tri-model Joint Attention) and UniDiffuser-style asynchronous scheduling. It unifies five embodied paradigms—VLA, World Model, IDM, video generation, and joint video-action prediction—within a single model. By extracting pixel-level "latent actions" from optical…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - World Models
-  - Mixture-of-Transformers
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied Foundation Model"
+  - "World Model"
+  - "Latent Action"
+  - "Optical Flow"
+  - "Mixture-of-Transformers"
 date: 2026-05-08
-content_hash: 672808e69bf4eed6
+content_hash: 16a64582c0621765
 ---
+
 # Motus: A Unified Latent Action World Model
 
 **Conference**: CVPR 2026  
@@ -126,15 +130,16 @@ Motus outperforms $\pi 0.5$ by **45%** absolute success rate and X-VLA by **15%*
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](chain_of_world_world_model_thinking_in_latent_motion.md)
 - [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
-- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
+- [\[CVPR 2026\] NavForesee: A Unified Vision-Language World Model for Hierarchical Planning and Dual-Horizon Navigation Prediction](navforesee_a_unified_vision-language_world_model_for_hierarchical_planning_and_d.md)
+- [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](../../ICLR2026/robotics/unified_vision-language-action_model.md)
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] PolySkill introduces the concept of "polymorphism" from software engineering into Web agent skill learning: using an abstract domain class to define "what to do" (e.g., `search_product`), while site-specific subclasses implement "how to do it." This approach enables cross-site skill reuse—improving skill reusability by
+  [ICLR 2026][LLM Agent][Web Agents] PolySkill introduces the concept of "polymorphism" from software engineering into Web agent skill learning: using an abstract domain class to define "what to do" (e.g., `search_product`), while site-specific subclasses implement "how to do it." This approach enables cross-site skill reuse—improving skill reusability by 1.7x on known sites, increasing success rates by up to 13.9% on unseen sites, and reducing steps by over 20%…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agents"
+  - "Skill Induction"
+  - "Continual Learning"
+  - "Polymorphic Abstraction"
+  - "Cross-site Generalization"
 date: 2026-05-08
-content_hash: e3bac099bc3505e1
+content_hash: 27290da7fa1149fe
 ---
+
 # PolySkill: Learning Generalizable Skills through Polymorphic Abstraction for Continual Agents
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,16 @@ Self-guided PolySkill achieves the highest generalized success rate (43.1%) on t
 - Value: ⭐⭐⭐⭐⭐ Provides a robust, composable, and anti-forgetting skill representation for continual Web agents.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](../../ICML2026/llm_agent/position_modular_memory_is_the_key_to_continual_learning_agents.md)
 - [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
 - [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](../../CVPR2026/llm_agent/cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](../../ICML2026/llm_agent/skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
 
 </div>
 

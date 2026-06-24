@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the Augmented Radiance Field (AugS) framework, which explicitly models specular components by designing augmented Gaussian kernels with view-dependent opacity. It introduces an error-driven compensation strategy (2D Gaussian initialization → inverse projection to 3D → joint optimization) as a plug-a
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes the Augmented Radiance Field (AugS) framework, which explicitly models specular components by designing augmented Gaussian kernels with view-dependent opacity. It introduces an error-driven compensation strategy (2D Gaussian initialization → inverse projection to 3D → joint optimization) as a plug-and-play post-processing step to enhance existing 3DGS scenes. It outperforms SOTA NeRF methods on several datasets…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Radiance Field Enhancement"
+  - "View-dependent Opacity"
+  - "Specular Modeling"
+  - "Inverse Gaussian Projection"
 date: 2026-05-08
-content_hash: d7f0dee4bf467552
+content_hash: 2bafb19ff92b9765
 ---
+
 # Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -154,7 +159,7 @@ Consider a scene from Mip-NeRF 360 with a glossy surface: after standard 3DGS tr
 - [\[ICLR 2026\] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field](station2radar_query_conditioned_gaussian_splatting_for_precipitation_field.md)
 - [\[CVPR 2025\] 3D Convex Splatting: Radiance Field Rendering with 3D Smooth Convexes](../../CVPR2025/3d_vision/3d_convex_splatting_radiance_field_rendering_with_3d_smooth_convexes.md)
 - [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
-- [\[ICLR 2026\] Einstein Fields: A Neural Perspective To Computational General Relativity](einstein_fields_a_neural_perspective_to_computational_general_relativity.md)
+- [\[ICLR 2026\] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction](skyevents_a_large-scale_event-enhanced_uav_dataset_for_robust_3d_scene_reconstru.md)
 
 </div>
 

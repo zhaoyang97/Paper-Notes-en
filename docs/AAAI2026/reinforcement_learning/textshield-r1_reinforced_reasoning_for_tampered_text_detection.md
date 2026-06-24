@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TextShield-R1: Reinforced Reasoning for Tampered Text Detection
 description: >-
-  [AAAI 2026][Reinforcement Learning][Tampered Text Detection] This paper proposes TextShield-R1, the first reinforcement learning-based multimodal large language model (MLLM) method for tampered text detection. The approa…
+  [AAAI 2026][Reinforcement Learning][Tampered Text Detection] This paper proposes TextShield-R1, the first reinforcement learning-based multimodal large language model (MLLM) method for tampered text detection. The approach integrates forensic continual pre-training (a curriculum from natural images to text images), GRPO reinforcement learning (five carefully designed reward functions to reduce annotation dependency), and OCR rectification (leveraging the MLLM's text recogniti…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Continual Pre-training"
   - "Text Forensics"
 date: 2026-05-08
-content_hash: 814a3dc6c5bf31d5
+content_hash: 3944bd618ac68d00
 ---
 
 # TextShield-R1: Reinforced Reasoning for Tampered Text Detection
@@ -193,7 +193,7 @@ Compared to the full fine-tuning baseline, TextShield-R1 achieves gains of +9.0%
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](../../ICLR2026/reinforcement_learning/rm-r1_reward_modeling_as_reasoning.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
 - [\[AAAI 2026\] DRMD: Deep Reinforcement Learning for Malware Detection under Concept Drift](drmd_deep_reinforcement_learning_for_malware_detection_under_concept_drift.md)
-- [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](../../ICLR2026/reinforcement_learning/ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
+- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](../../ACL2026/reinforcement_learning/spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
 
 </div>
 

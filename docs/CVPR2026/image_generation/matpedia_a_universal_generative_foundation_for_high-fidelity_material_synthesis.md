@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MatPedia: A Universal Generative Foundation for High-Fidelity Material Synthesis
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] MatPedia encodes "RGB texture + four PBR maps" into a 5-frame sequence and applies a video diffusion architecture for joint modeling. This unified model handles text-to-material, image-to-material, and intrinsic decomposition tasks. By leveraging massive pure RGB images during training, it outperforms previous speciali
+  [CVPR 2026][Image Generation][PBR Materials] MatPedia encodes "RGB texture + four PBR maps" into a 5-frame sequence and applies a video diffusion architecture for joint modeling. This unified model handles text-to-material, image-to-material, and intrinsic decomposition tasks. By leveraging massive pure RGB images during training, it outperforms previous specialized methods at a native 1024×1024 resolution.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "PBR Materials"
+  - "Joint Representation"
+  - "Video Diffusion"
+  - "Intrinsic Decomposition"
+  - "Foundation Model"
 date: 2026-05-08
-content_hash: 71afc60d708a33dc
+content_hash: 8cfc44b440fe0253
 ---
+
 # MatPedia: A Universal Generative Foundation for High-Fidelity Material Synthesis
 
 **Conference**: CVPR 2026  
@@ -137,7 +143,7 @@ In intrinsic decomposition, the proposed method achieved the lowest MSE and LPIP
 - [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
 - [\[CVPR 2026\] The Universal Normal Embedding](the_universal_normal_embedding.md)
-- [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
+- [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](cod_a_diffusion_foundation_model_for_image_compression.md)
 
 </div>
 

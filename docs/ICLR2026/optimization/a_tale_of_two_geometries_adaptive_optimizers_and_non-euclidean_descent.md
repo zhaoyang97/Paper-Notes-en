@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper characterizes the relationship between adaptive optimizers like Adam/Shampoo and Normalized Steepest Descent (NSD) methods like SignGD/Muon through the lens of "two geometries / two types of smoothness." Both classes exploit the non-Euclidean geometry of the loss function, but adaptive optimizers rely on a s
+  [ICLR 2026][Optimization][Adaptive optimizers] This paper characterizes the relationship between adaptive optimizers like Adam/Shampoo and Normalized Steepest Descent (NSD) methods like SignGD/Muon through the lens of "two geometries / two types of smoothness." Both classes exploit the non-Euclidean geometry of the loss function, but adaptive optimizers rely on a stronger "adaptive smoothness" $\Lambda_{\mathcal H}(f)$, whereas NSD depends on standard smoothness $L_{\|\cdot\|…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Adaptive optimizers"
+  - "Non-Euclidean geometry"
+  - "Adaptive smoothness"
+  - "Convergence analysis"
+  - "Nesterov acceleration"
 date: 2026-05-08
-content_hash: a8a393db75ef9809
+content_hash: 25730af04b01a48f
 ---
+
 # A Tale of Two Geometries: Adaptive Optimizers and Non-Euclidean Descent
 
 **Conference**: ICLR 2026  
@@ -124,14 +130,17 @@ The mechanism is based on the intuition that **averaging in dual space does not 
 
 <div class="related-papers" markdown="1">
 
-1. **Bernstein & Newhouse (2024)**: On the Equivalence of Adaptive and Normalized Gradient Descent.
-2. **Xie et al. (2025b)**: Adaptive Smoothness and the Efficiency of Adaptive Optimizers.
-3. **Guzmán & Nemirovski (2015)**: On Lower Complexity Bounds for Optimization over Simple Domains.
+## Related Papers
+
+- [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)
+- [\[ICLR 2026\] DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models](des-loc_desynced_low_communication_adaptive_optimizers_for_foundation_models.md)
+- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
+- [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](towards_dynamic_interleaving_optimizers.md)
+- [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] A Convergence Analysis of Adaptive Optimizers under Floating-Point Quantization](a_convergence_analysis_of_adaptive_optimizers_under_floating-point_quantization.md)

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FutureFill: Fast Generation from Convolutional Sequence Models
 description: >-
-  [ICLR 2026][LLM Efficiency][FFT] To address the slow autoregressive decoding of convolutional/spectral sequence models (e.g., STU, Hyena), this paper proposes the **FutureFill** primitive. By using FFT to precompute the "contribution of generated tokens to future tokens," it reduces the time to generate $L$ tokens from $O(L^2)$ to quasi-linear $O(L\lo
+  [ICLR 2026][LLM Efficiency][Convolutional Sequence Models] To address the slow autoregressive decoding of convolutional/spectral sequence models (e.g., STU, Hyena), this paper proposes the **FutureFill** primitive. By using FFT to precompute the "contribution of generated tokens to future tokens," it reduces the time to generate $L$ tokens from $O(L^2)$ to quasi-linear $O(L\log^2 L)$. For prompted generation, the cache is reduced from $O(L+K)$ to $O(K)$ (related only to gener…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - FFT
-  - State Space Model
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Convolutional Sequence Models"
+  - "Autoregressive Generation"
+  - "FFT"
+  - "Online Convolution"
+  - "Cache Compression"
+  - "State Space Models"
 date: 2026-05-08
-content_hash: fdc8605e8f745ffd
+content_hash: d0f85b9e68fba19e
 ---
+
 # FutureFill: Fast Generation from Convolutional Sequence Models
 
 **Conference**: ICLR 2026  
@@ -114,11 +119,11 @@ As generation length doubles, the naive baseline decoding time shows near-quadra
 
 ## Related Papers
 
-- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
 - [\[ICLR 2026\] Gumbel Distillation for Parallel Text Generation](gumbel_distillation_for_parallel_text_generation.md)
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
 - [\[ICLR 2026\] MoM: Linear Sequence Modeling with Mixture-of-Memories](mom_linear_sequence_modeling_with_mixture-of-memories.md)
-- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
 - [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](fast-dllm_v2_efficient_block-diffusion_llm.md)
 
 </div>
 

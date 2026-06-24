@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation
 description: >-
-  [CVPR 2026][Autonomous Driving][3D human pose estimation] Proposes Shapley value-based modality contribution assessment and Fisher Information Matrix (FIM) weighted Adaptive Weight Constraint (AWC) regularization to address modality imbalance in multi-modal (RGB/LiDAR/mmWave/WiFi) 3D human pose estimation, achieving balanced optimization without additional learnable parameter
+  [CVPR2026][Autonomous Driving][3D human pose estimation] Proposes Shapley value-based modality contribution assessment and Fisher Information Matrix (FIM) weighted Adaptive Weight Constraint (AWC) regularization to address modality imbalance in multi-modal (RGB/LiDAR/mmWave/WiFi) 3D human pose estimation, achieving balanced optimization without additional learnable parameters.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 3D human pose estimation
-  - multi-modal learning
-  - modality imbalance
-  - Shapley value
-  - Fisher Information Matrix
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "3D human pose estimation"
+  - "multi-modal learning"
+  - "modality imbalance"
+  - "Shapley value"
+  - "Fisher Information Matrix"
 date: 2026-05-08
-content_hash: 4880120fb5145ad7
+content_hash: c9b2642f401540f1
 ---
+
 # Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation
 
 **Conference**: CVPR2026  
@@ -176,10 +177,10 @@ The overhead for Shapley contribution assessment is extremely low: it accounts f
 ## Related Papers
 
 - [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
-- [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
 - [\[CVPR 2026\] LA-Pose: Latent Action Pretraining Meets Pose Estimation](la-pose_latent_action_pretraining_meets_pose_estimation.md)
+- [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
 - [\[CVPR 2026\] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency](ptc-depth_pose-refined_monocular_depth_estimation_with_temporal_consistency.md)
-- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
 
 </div>
 

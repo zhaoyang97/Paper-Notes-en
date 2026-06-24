@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes a two-stage knowledge distillation framework using "Dual-level Marginal Sample Selection" based on teacher cognitive uncertainty and a difficulty-adaptive loss. Utilizing only 10.30% of real samples for incremental training, the 4B student model achieves MAP@3 = 0.9585 (+17.8% Gain) on MAP-Charting.
+  [ACL 2026 Findings][Model Compression][Student Misconception Classification] This paper proposes a two-stage knowledge distillation framework using "Dual-level Marginal Sample Selection" based on teacher cognitive uncertainty and a difficulty-adaptive loss. Utilizing only 10.30% of real samples for incremental training, the 4B student model achieves MAP@3 = 0.9585 (+17.8% Gain) on MAP-Charting. On a benchmark of 220 middle school algebra misconceptions…
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Student Misconception Classification"
+  - "Two-stage Distillation"
+  - "Uncertainty-based Sample Selection"
+  - "Difficulty-Adaptive Loss"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: fd5db09514363ac7
+content_hash: 6e5a160e3968ef96
 ---
+
 # Cognitive-Uncertainty Guided Knowledge Distillation for Accurate Classification of Student Misconceptions
 
 **Conference**: ACL 2026 Findings  
@@ -144,15 +150,16 @@ Removing Stage 2 leads to a significant drop (8.6% Acc on Algebra), confirming h
 - Value: ⭐⭐⭐⭐ Provides a clear path for deploying high-accuracy, low-latency models in resource-constrained domains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](../../ICLR2026/model_compression/knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 - [\[ACL 2026\] CBRS: Cognitive Blood Request System with Bilingual Dataset and Dual-Layer Filtering](cbrs_cognitive_blood_request_system_with_bilingual_dataset_and_dual-layer_filter.md)
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](../../NeurIPS2025/model_compression/preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
 - [\[AAAI 2026\] Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy](../../AAAI2026/model_compression/pairing-free_group-level_knowledge_distillation_for_robust_gastrointestinal_lesi.md)
 - [\[ACL 2026\] Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty](reason_only_when_needed_efficient_generative_reward_modeling_via_model-internal_.md)
-- [\[CVPR 2026\] Streamlined Knowledge Distillation](../../CVPR2026/model_compression/streamlined_knowledge_distillation.md)
 
 </div>
 

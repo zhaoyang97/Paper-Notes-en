@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SmartWilds: Multimodal Wildlife Monitoring Dataset
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal dataset] This work introduces SmartWilds, the first synchronously collected multimodal wildlife monitoring dataset, integrating three complementary modalities — drone imagery…
+  [NeurIPS 2025][Multimodal VLM][Multimodal dataset] This work introduces SmartWilds, the first synchronously collected multimodal wildlife monitoring dataset, integrating three complementary modalities — drone imagery, camera traps, and bioacoustics — comprising 101 GB of data. Cross-modal alignment is achieved via GPS coordinates and timestamps. The dataset establishes a reproducible standard protocol for conservation monitoring, filling the gap in comprehensive multi-sensor…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "bioacoustics"
   - "wildlife monitoring"
 date: 2026-05-08
-content_hash: 49361beb338127f5
+content_hash: 920bc89259452d96
 ---
 
 # SmartWilds: Multimodal Wildlife Monitoring Dataset
@@ -148,9 +148,9 @@ Sensor modality performance comparison (Table 2, qualitative evaluation):
 
 - [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
 - [\[NeurIPS 2025\] CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder](covmatch_crosscovariance_guided_multimodal_dataset_distillat.md)
-- [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](../../ICCV2025/multimodal_vlm/mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
-- [\[ACL 2026\] DraDDP: A Multimodal Multi-Party Dialogue Discourse Parsing Dataset](../../ACL2026/multimodal_vlm/draddp_a_multimodal_multi-party_dialogue_discourse_parsing_dataset.md)
-- [\[ICCV 2025\] ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools](../../ICCV2025/multimodal_vlm/toolvqa_a_dataset_for_multistep_reasoning_vqa_with_external.md)
+- [\[ACL 2025\] iNews: A Multimodal Dataset for Modeling Personalized Affective Responses to News](../../ACL2025/multimodal_vlm/inews_a_multimodal_dataset_for_modeling_personalized_affective_responses_to_news.md)
+- [\[ACL 2025\] AkaCE: A Multimodal Multi-party Dataset for Emotion Recognition in Movie Dialogues](../../ACL2025/multimodal_vlm/akan_cinematic_emotions_ace_a_multimodal_multi-party_dataset_for_emotion_recogni.md)
+- [\[ECCV 2024\] A Multimodal Benchmark Dataset and Model for Crop Disease Diagnosis](../../ECCV2024/multimodal_vlm/a_multimodal_benchmark_dataset_and_model_for_crop_disease_di.md)
 
 </div>
 

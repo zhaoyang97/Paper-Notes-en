@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis
 description: >-
-  [ICLR 2026][Anomaly Detection][Paper Note] This work repositions the LLM from a "data processor" to an "algorithmic strategist"—it analyzes the algorithmic description of a detector without touching real data, reasons about its logical blind spots, and generates a reusable Python synthesis code. This code creates "hard anomalies" specifically designed to deceiv
+  [ICLR 2026][Anomaly Detection][Tabular Anomaly Detection] This work repositions the LLM from a "data processor" to an "algorithmic strategist"—it analyzes the algorithmic description of a detector without touching real data, reasons about its logical blind spots, and generates a reusable Python synthesis code. This code creates "hard anomalies" specifically designed to deceive that detector, upgrading the original one-class problem into a more separable two-class problem. It…
 tags:
-  - ICLR 2026
-  - Anomaly Detection
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Tabular Anomaly Detection"
+  - "Hard Anomaly Synthesis"
+  - "LLM Algorithmic Reasoning"
+  - "Data-agnostic"
+  - "Detector Enhancement"
 date: 2026-05-08
-content_hash: 85a380766dc7d6f6
+content_hash: d5a06e1798cb2bc9
 ---
+
 # LLM as an Algorithmist: Enhancing Anomaly Detectors via Programmatic Synthesis
 
 **Conference**: ICLR 2026  

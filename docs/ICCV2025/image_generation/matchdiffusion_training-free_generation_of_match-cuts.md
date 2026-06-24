@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MatchDiffusion: Training-free Generation of Match-Cuts
 description: >-
-  [Image Generation] MatchDiffusion is proposed as a training-free two-stage pipeline that exploits the property of diffusion models—whereby early denoising steps establish the macroscopic scene structure and late steps ad…
+  [Image Generation] MatchDiffusion is proposed as a training-free two-stage pipeline that exploits the property of diffusion models—whereby early denoising steps establish the macroscopic scene structure and late steps add semantic details—to automatically generate match-cut video pairs via Joint Diffusion and Disjoint Diffusion.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 1698169621769d5d
+content_hash: cb109b01d11e1dd5
 ---
 
 # MatchDiffusion: Training-free Generation of Match-Cuts
@@ -127,9 +127,9 @@ MatchDiffusion achieves the best overall balance: CLIPScore is on par with SMM/M
 
 - [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](../../CVPR2026/image_generation/tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
 - [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
+- [\[ICML 2025\] FlexiClip: Locality-Preserving Free-Form Character Animation](../../ICML2025/image_generation/flexiclip_locality-preserving_free-form_character_animation.md)
 - [\[ICCV 2025\] Rethinking Layered Graphic Design Generation with a Top-Down Approach](rethinking_layered_graphic_design_generation_with_a_top-down_approach.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
-- [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
 
 </div>
 

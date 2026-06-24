@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator
 description: >-
-  [CVPR 2026][Segmentation][video matting] Ours proposes a learned Matting Quality Evaluator (MQE) to evaluate alpha quality pixel-wise without ground truth. MQE serves as both online training guidance and an offline data filter. This enabled the construction of VMReal, a real-world video matting dataset with 28K clips and 2.4 million frames. Combined with a re
+  [CVPR2026][Segmentation][video matting] Ours proposes a learned Matting Quality Evaluator (MQE) to evaluate alpha quality pixel-wise without ground truth. MQE serves as both online training guidance and an offline data filter. This enabled the construction of VMReal, a real-world video matting dataset with 28K clips and 2.4 million frames. Combined with a reference-frame training strategy, the method significantly outperforms all existing state-of-the-art approaches.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - video matting
-  - quality evaluator
-  - alpha matte
-  - dataset curation
-  - reference-frame strategy
+  - "CVPR2026"
+  - "Segmentation"
+  - "video matting"
+  - "quality evaluator"
+  - "alpha matte"
+  - "dataset curation"
+  - "reference-frame strategy"
 date: 2026-05-08
-content_hash: 99b47906b83984d5
+content_hash: e873e460fe311685
 ---
+
 # MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator
 
 **Conference**: CVPR2026  
@@ -163,7 +164,7 @@ Each component provides consistent improvements. Compared to the baseline, MAD r
 ## Related Papers
 
 - [\[CVPR 2025\] MatAnyone: Stable Video Matting with Consistent Memory Propagation](../../CVPR2025/segmentation/matanyone_stable_video_matting_with_consistent_memory_propagation.md)
-- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](../../ICLR2026/segmentation/matting_anything_2_towards_video_matting_for_anything.md)
 - [\[CVPR 2026\] Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels](towards_high-quality_image_segmentation_improving_topology_accuracy_by_penalizin.md)
 - [\[CVPR 2026\] VidEoMT: Your ViT is Secretly Also a Video Segmentation Model](videomt_your_vit_is_secretly_also_a_video_segmentation_model.md)
 - [\[CVPR 2026\] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion](3m-ti_high-quality_mobile_thermal_imaging_via_calibration-free_multi-camera_cros.md)

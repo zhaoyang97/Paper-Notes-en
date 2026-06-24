@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 10 Open Challenges Steering the Future of Vision-Language-Action Models
 description: >-
-  [AAAI 2026][Robotics][VLA models] This paper systematically surveys 10 open challenges facing VLA models — multimodal perception, robust reasoning, high-quality training data, evaluation…
+  [AAAI 2026][Robotics][VLA models] This paper systematically surveys 10 open challenges facing VLA models — multimodal perception, robust reasoning, high-quality training data, evaluation, cross-robot action generalization, resource efficiency, whole-body coordination, safety assurance, agent frameworks, and human-robot collaboration — and discusses four emerging trends: spatial understanding, world dynamics modeling, post-training, and data synthesis.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -14,7 +14,7 @@ tags:
   - "world models"
   - "post-training"
 date: 2026-05-08
-content_hash: 907a826bf0e3dd52
+content_hash: 886874328f611d10
 ---
 
 # 10 Open Challenges Steering the Future of Vision-Language-Action Models
@@ -140,10 +140,10 @@ A hierarchical multi-agent VLA planning framework is proposed (Algorithm 1): a h
 ## Related Papers
 
 - [\[AAAI 2026\] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search](human-centric_open-future_task_discovery_formulation_benchmark_and_scalable_tree.md)
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](../../ICLR2026/robotics/vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
 - [\[AAAI 2026\] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)
-- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](../../CVPR2026/robotics/hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
-- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2026/robotics/sapave_active_perception_manipulation_vla_roboti.md)
+- [\[ICML 2025\] Hi Robot: Open-Ended Instruction Following with Hierarchical Vision-Language-Action Models](../../ICML2025/robotics/hi_robot_open-ended_instruction_following_with_hierarchical_vision-language-acti.md)
 
 </div>
 

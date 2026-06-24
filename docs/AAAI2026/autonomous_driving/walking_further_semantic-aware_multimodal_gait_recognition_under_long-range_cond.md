@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions
 description: >-
-  [AAAI 2026][Autonomous Driving][Multimodal Gait Recognition] This paper introduces LRGait — the first LiDAR-Camera multimodal gait dataset targeting long-range (10–50m) cross-distance scenarios — and proposes EMGaitNet…
+  [AAAI 2026][Autonomous Driving][Multimodal Gait Recognition] This paper introduces LRGait — the first LiDAR-Camera multimodal gait dataset targeting long-range (10–50m) cross-distance scenarios — and proposes EMGaitNet, an end-to-end framework that achieves 2D-3D cross-modal feature fusion via Semantic Mining (SeMi), Semantic-Guided Alignment (SGA), and Symmetric Cross-Attention Fusion (SCAF) modules, reaching state-of-the-art performance on multiple benchmarks.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "CLIP Semantic Guidance"
   - "Cross-Distance Retrieval"
 date: 2026-05-08
-content_hash: 8b2eca9783cf1596
+content_hash: 9c5bf1437552b9d2
 ---
 
 # Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions
@@ -240,9 +240,9 @@ Incremental contribution of each module:
 
 - [\[CVPR 2026\] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration](../../CVPR2026/autonomous_driving/foss_modeling_long_range_dependencies_and_multimodal_uncertainty_in_trajectory_p.md)
 - [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
+- [\[CVPR 2026\] TruckDrive: Long-Range Autonomous Highway Driving Dataset](../../CVPR2026/autonomous_driving/truckdrive_long-range_autonomous_highway_driving_dataset.md)
 - [\[ICCV 2025\] Self-Supervised Sparse Sensor Fusion for Long Range Perception](../../ICCV2025/autonomous_driving/self-supervised_sparse_sensor_fusion_for_long_range_perception.md)
 - [\[AAAI 2026\] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
-- [\[AAAI 2026\] TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training](tawpipe_topology-aware_weight_pipeline_parallelism_for_accelerating_long-context.md)
 
 </div>
 

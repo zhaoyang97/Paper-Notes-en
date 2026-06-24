@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] HCEP explicitly encodes the "concepts have a hierarchical structure (hypernym → hyponym)" prior into the geometric conditions of the CLIP embedding space. It then utilizes Hierarchical Beam Orthogonal Matching Pursuit (HB-OMP) to recover concepts along "root-to-leaf" paths, significantly improving concept recovery prec
+  [CVPR 2026][Interpretability][Interpretable Classification] HCEP explicitly encodes the "concepts have a hierarchical structure (hypernym → hyponym)" prior into the geometric conditions of the CLIP embedding space. It then utilizes Hierarchical Beam Orthogonal Matching Pursuit (HB-OMP) to recover concepts along "root-to-leaf" paths, significantly improving concept recovery precision/recall while maintaining classification accuracy, especially in few-shot scenarios.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Interpretable Classification"
+  - "Sparse Concept Recovery"
+  - "Hierarchical Geometry"
+  - "Dictionary Learning"
+  - "Matching Pursuit"
 date: 2026-05-08
-content_hash: 13b13a953082b1fe
+content_hash: 4aaf2f85a0c1dea4
 ---
+
 # Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification
 
 **Conference**: CVPR 2026  
@@ -112,10 +118,20 @@ On synthetic data ($b=3, L=7, d=50$), HB-OMP consistently outperforms OMP in sup
 - Value: ⭐⭐⭐⭐ Highly practical for faithful, hierarchically consistent explanations in label-scarce scenarios.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit](../../NeurIPS2025/interpretability/from_flat_to_hierarchical_extracting_sparse_representations_with_matching_pursui.md)
+- [\[CVPR 2025\] Interpretable Image Classification via Non-parametric Part Prototype Learning](../../CVPR2025/interpretability/interpretable_image_classification_via_non-parametric_part_prototype_learning.md)
+- [\[ICLR 2026\] Adaptive Concept Discovery for Interpretable Few-Shot Text Classification](../../ICLR2026/interpretability/adaptive_concept_discovery_for_interpretable_few-shot_text_classification.md)
+- [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
+- [\[CVPR 2026\] Making the Classification Explanation Faithful to the Confidence Score](making_the_classification_explanation_faithful_to_the_confidence_score.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)

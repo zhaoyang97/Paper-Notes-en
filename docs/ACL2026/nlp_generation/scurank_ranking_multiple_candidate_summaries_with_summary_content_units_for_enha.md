@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCURank: Ranking Multiple Candidate Summaries with Summary Content Units for Enhanced Summarization
 description: >-
-  [ACL 2026][Text Generation][Paper Note] Ours proposes SCURank, a ranking framework based on Summary Content Units (SCUs). It ranks candidate summaries by extracting SCUs, estimating information importance through cross-summary clustering, and scoring based on informativeness. This replaces unstable direct LLM ranking and coarse-grained ROUGE ranking. In mult
+  [ACL 2026 Findings][Text Generation][Summary Ranking] Ours proposes SCURank, a ranking framework based on Summary Content Units (SCUs). It ranks candidate summaries by extracting SCUs, estimating information importance through cross-summary clustering, and scoring based on informativeness. This replaces unstable direct LLM ranking and coarse-grained ROUGE ranking. In multi-LLM distillation scenarios, combined with BRIO contrastive learning, it significantly improves the summa…
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026 Findings"
+  - "Text Generation"
+  - "Summary Ranking"
+  - "Summary Content Units"
+  - "Contrastive Learning"
+  - "Multi-LLM Distillation"
+  - "Informativeness"
 date: 2026-05-08
-content_hash: 8e4cd924f56a4da5
+content_hash: 75b112c9404042ba
 ---
+
 # SCURank: Ranking Multiple Candidate Summaries with Summary Content Units for Enhanced Summarization
 
 **Conference**: ACL 2026 Findings  

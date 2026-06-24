@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] PixelVLA is the first vision-language-action model to support both pixel-level understanding and multi-modal prompting (text + points/lines/boxes/masks). By integrating three components—a "multi-scale pixel-aware encoder, a visual prompt encoder, and a continuous action decoder"—into existing VLAs and utilizing an auto
+  [ICLR 2026][Robotics][Vision-Language-Action Models] PixelVLA is the first vision-language-action model to support both pixel-level understanding and multi-modal prompting (text + points/lines/boxes/masks). By integrating three components—a "multi-scale pixel-aware encoder, a visual prompt encoder, and a continuous action decoder"—into existing VLAs and utilizing an automated annotation pipeline to create the Pixel-160K dataset, it enhances manipulation success rates by $10.1…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Pixel-level Understanding"
+  - "Visual Prompting"
+  - "Continuous Actions"
+  - "Visuomotor Instruction Tuning"
 date: 2026-05-08
-content_hash: 4c2b7628f6bcc1fe
+content_hash: 9c2f2535fd0587ae
 ---
+
 # PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model
 
 **Conference**: ICLR 2026  
@@ -152,9 +158,9 @@ Ablation on Google Robot (VA) using OpenVLA as the baseline:
 
 - [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
 - [\[ICLR 2026\] TPRU: Advancing Temporal and Procedural Understanding in Large Multimodal Models](tpru_advancing_temporal_and_procedural_understanding_in_large_multimodal_models.md)
-- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Spatially Guided Training for Vision-Language-Action Model](spatially_guided_training_for_vision-language-action_model.md)
+- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 
 </div>
 

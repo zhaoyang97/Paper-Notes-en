@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SuffixDecoding: Extreme Speculative Decoding for Emerging AI Applications
 description: >-
-  [NeurIPS 2025][LLM Agent][Speculative Decoding] Caches long token sequences via suffix trees and achieves 5.3× speedup through adaptive speculation length…
+  [NeurIPS 2025 Spotlight][LLM Agent][Speculative Decoding] Caches long token sequences via suffix trees and achieves 5.3× speedup through adaptive speculation length, targeting highly predictable repetitive inference tasks in agent scenarios.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Agent"
   - "Speculative Decoding"
   - "Suffix Tree"
@@ -12,7 +12,7 @@ tags:
   - "Inference Acceleration"
   - "Training-Free"
 date: 2026-05-08
-content_hash: dc0acde719162184
+content_hash: 2c2f7ad87ae6e4c9
 ---
 
 # SuffixDecoding: Extreme Speculative Decoding for Emerging AI Applications
@@ -119,11 +119,11 @@ SuffixDecoding consists of two core components: (1) a **suffix tree index** that
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
-- [\[NeurIPS 2025\] Generative AI Agents for Controllable and Protected Content Creation](generative_ai_agents_for_controllable_and_protected_content_creation.md)
 - [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](../../ACL2026/llm_agent/uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
-- [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
-- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real Personalized Applications via Environment Simulation](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
+- [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
+- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](../../ICLR2026/llm_agent/vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
+- [\[NeurIPS 2025\] Generative AI Agents for Controllable and Protected Content Creation](generative_ai_agents_for_controllable_and_protected_content_creation.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](../../ICML2026/llm_agent/mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
 
 </div>
 

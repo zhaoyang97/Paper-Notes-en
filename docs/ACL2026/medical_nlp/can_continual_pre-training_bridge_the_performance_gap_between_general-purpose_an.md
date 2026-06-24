@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper constructs a high-quality German medical corpus, FineMed-de (7.3 million documents / 5.1 billion tokens filtered from FineWeb2), performs continual pre-training and SLERP model merging on three LLMs (7B-24B) to create the DeFineMed model family. It demonstrates that domain-specialized 7B models can significa
+  [ACL 2026][Medical LLM][Continual Pre-training] This paper constructs a high-quality German medical corpus, FineMed-de (7.3 million documents / 5.1 billion tokens filtered from FineWeb2), performs continual pre-training and SLERP model merging on three LLMs (7B-24B) to create the DeFineMed model family. It demonstrates that domain-specialized 7B models can significantly bridge the performance gap with general 24B models on German medical tasks (win rate improved by ~3.5x).
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Continual Pre-training"
+  - "Domain Adaptation"
+  - "German Medical LLM"
+  - "Model Merging"
+  - "Data Filtering"
 date: 2026-05-08
-content_hash: 59b83d8a51cb67c3
+content_hash: 5419029aefea94e0
 ---
+
 # Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?
 
 **Conference**: ACL 2026  
@@ -139,11 +145,11 @@ Continual pre-training uses the standard language modeling objective (next token
 
 ## Related Papers
 
-- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
 - [\[ACL 2026\] Inflated Excellence or True Performance? Rethinking Medical Diagnostic Benchmarks with Dynamic Evaluation](inflated_excellence_or_true_performance_rethinking_medical_diagnostic_benchmarks.md)
-- [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
+- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](../../ICLR2026/medical_nlp/can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
+- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
 - [\[ICLR 2026\] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](../../ICLR2026/medical_nlp/simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)
-- [\[ACL 2026\] Empathy Applicability Modeling for General Health Queries](empathy_applicability_modeling_for_general_health_queries.md)
+- [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
 
 </div>
 

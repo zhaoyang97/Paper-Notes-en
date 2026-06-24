@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hallucination is a Consequence of Space-Optimality: A Rate-Distortion Theorem for Membership Testing
 description: >-
-  [ICML 2026][Hallucination Detection][Bloom filter] This paper formalizes "LLMs memorizing random facts" as a **membership testing** problem with continuous confidence scores. It proves that in the sparse limit of facts, the optimal memory cost exactly equals the minimum KL divergence between fact and non-fact output distributions—a "rate-distortion theorem." It further
+  [ICML 2026][Hallucination Detection][Hallucination] This paper formalizes "LLMs memorizing random facts" as a **membership testing** problem with continuous confidence scores. It proves that in the sparse limit of facts, the optimal memory cost exactly equals the minimum KL divergence between fact and non-fact output distributions—a "rate-distortion theorem." It further concludes that under the log-loss objective and given limited memory, the optimal strategy is **neither abs…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - Bloom filter
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Hallucination"
+  - "Rate-Distortion Theorem"
+  - "Bloom filter"
+  - "KL Divergence"
+  - "Membership Testing"
+  - "Memory Capacity"
 date: 2026-05-08
-content_hash: 691e853ac1e4f7af
+content_hash: 115633df2884e1f0
 ---
+
 # Hallucination is a Consequence of Space-Optimality: A Rate-Distortion Theorem for Membership Testing
 
 **Conference**: ICML 2026  

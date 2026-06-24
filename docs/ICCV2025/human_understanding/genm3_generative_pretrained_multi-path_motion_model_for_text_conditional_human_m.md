@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation
 description: >-
-  [ICCV 2025][Human Understanding][human motion generation] This paper proposes GenM3, a framework that learns unified discrete motion representations via a Multi-Expert VQ-VAE (MEVQ-VAE) and employs a Multi-path Motion Tr…
+  [ICCV 2025][Human Understanding][human motion generation] This paper proposes GenM3, a framework that learns unified discrete motion representations via a Multi-Expert VQ-VAE (MEVQ-VAE) and employs a Multi-path Motion Transformer (MMT) to handle intra-modal variation and cross-modal alignment. By integrating 11 motion datasets (~220 hours), GenM3 achieves state-of-the-art FID of 0.035 on HumanML3D.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "large-scale dataset"
   - "text-conditional generation"
 date: 2026-05-08
-content_hash: f6a31b67084b7d6f
+content_hash: dec269d100f2fdb2
 ---
 
 # GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation
@@ -190,11 +190,11 @@ GenM3 consists of two core components and a three-stage training pipeline:
 
 ## Related Papers
 
-- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
 - [\[ICCV 2025\] GENMO: A GENeralist Model for Human MOtion](genmo_a_generalist_model_for_human_motion.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[ICCV 2025\] MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation](mdd_a_dataset_for_text-and-music_conditioned_duet_dance_generation.md)
-- [\[ICCV 2025\] ImHead: A Large-scale Implicit Morphable Model for Localized Head Modeling](imhead_a_large-scale_implicit_morphable_model_for_localized_head_modeling.md)
+- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
+- [\[ECCV 2024\] Large Motion Model for Unified Multi-Modal Motion Generation](../../ECCV2024/human_understanding/large_motion_model_for_unified_multi-modal_motion_generation.md)
+- [\[CVPR 2025\] PersonaBooth: Personalized Text-to-Motion Generation](../../CVPR2025/human_understanding/personabooth_personalized_text-to-motion_generation.md)
+- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](../../CVPR2026/human_understanding/multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 
 </div>
 

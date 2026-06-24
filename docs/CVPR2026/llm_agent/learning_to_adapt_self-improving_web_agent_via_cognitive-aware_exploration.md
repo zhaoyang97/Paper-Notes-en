@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] To address the issues of web agents relying on manual pipelines or expensive expert trajectories and struggling to adapt to dynamic web pages, the authors propose SCALE. This method enables a single MLLM to play three adversarial roles—Selector, Predictor, and Judger—to automatically discover and expand its own cogniti
+  [CVPR 2026][LLM Agent][Web Agent] To address the issues of web agents relying on manual pipelines or expensive expert trajectories and struggling to adapt to dynamic web pages, the authors propose SCALE. This method enables a single MLLM to play three adversarial roles—Selector, Predictor, and Judger—to automatically discover and expand its own cognitive boundaries via "prediction errors." Combined with SCALE-Hop graph exploration for global planning…
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Self-driven Exploration"
+  - "Cognitive Boundary"
+  - "Self-adversarial Learning"
+  - "Self-improvement"
 date: 2026-05-08
-content_hash: 8f7d3ba478cd043e
+content_hash: 55d45f7f0f7f47af
 ---
+
 # Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,15 @@ Different exploration depths (outer loop hops × inner loop 25 steps) for Qwen2.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
-- [\[ACL 2026\] TheraAgent: Self-Improving Therapeutic Agent for Precise and Comprehensive Treatment Planning](../../ACL2026/llm_agent/theraagent_self-improving_therapeutic_agent_for_precise_and_comprehensive_treatm.md)
-- [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](../../ICLR2026/llm_agent/agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](../../ACL2026/llm_agent/don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
-- [\[ACL 2025\] GUI-explorer: Autonomous Exploration and Mining of Transition-aware Knowledge for GUI Agent](../../ACL2025/llm_agent/gui_explorer_autonomous.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](../../ICLR2026/llm_agent/evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
+- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
+- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](../../ICLR2026/llm_agent/go-browse_training_web_agents_with_structured_exploration.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](../../ICLR2026/llm_agent/darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
 
 </div>
 

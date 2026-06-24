@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][VLM] This paper enforces a split in VLM output into `<recognition>` perception blocks and `<think>` reasoning blocks. It introduces a perception reward $R_P$ determined by whether a "blindfolded" text reasoning agent (which only sees the VLM's perception text without the image) can correctly answer the question, paired with
+  [ICML 2026 Oral][VLM Reasoning][VLM] This paper enforces a split in VLM output into `<recognition>` perception blocks and `<think>` reasoning blocks. It introduces a perception reward $R_P$ determined by whether a "blindfolded" text reasoning agent (which only sees the VLM's perception text without the image) can correctly answer the question, paired with Structured Verbal Verification (SVV) as an outcome reward $R_O$. MoCA uses $R_P$ as a gate for modality-level credit assig…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - VLM
-  - RL
-  - GRPO
-  - Structured Verbal Verification
+  - "ICML 2026 Oral"
+  - "VLM Reasoning"
+  - "VLM"
+  - "RL"
+  - "Modality Credit Assignment"
+  - "GRPO"
+  - "Structured Verbal Verification"
 date: 2026-05-08
-content_hash: 8e11ccfaaf961006
+content_hash: 7f42d220dc5da805
 ---
+
 # Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning
 
 **Conference**: ICML 2026 Oral  
@@ -139,9 +141,9 @@ Highlights: Relative to the base model, gains include +15.2 on V*, +5.0 on HRBen
 
 - [\[ICML 2026\] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)
 - [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
-- [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](../../ACL2026/vlm_reasoning/chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
-- [\[ICML 2026\] Efficient Reasoning with Hidden Thinking](efficient_reasoning_with_hidden_thinking.md)
+- [\[ICLR 2026\] Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization](../../ICLR2026/vlm_reasoning/vision-sr1_self-rewarding_vision-language_model_via_reasoning_decomposition_and_.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](../../CVPR2026/vlm_reasoning/improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](../../CVPR2026/vlm_reasoning/all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
 
 </div>
 

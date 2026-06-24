@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks
 description: >-
-  [AAAI 2026][Social Computing][Reinforcement Learning] This paper proposes CAPO (Curriculum Advantage Policy Optimization), an adaptive curriculum mechanism based on advantage signals. Through a two-phase strategy — first…
+  [AAAI 2026][Social Computing][Reinforcement Learning] This paper proposes CAPO (Curriculum Advantage Policy Optimization), an adaptive curriculum mechanism based on advantage signals. Through a two-phase strategy — first imitation (using only positive-advantage samples) then discrimination (introducing negative signals) — CAPO stably and significantly improves LLM performance on mathematical reasoning and multimodal GUI reasoning tasks.
 tags:
   - "AAAI 2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "LLM Reasoning"
   - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: aa3b5d947b5fafe2
+content_hash: 32071fcaeaa34fa0
 ---
 
 # From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks
@@ -166,10 +166,10 @@ CAPO consistently delivers average improvements of **+1.7 to +4.0** across all a
 ## Related Papers
 
 - [\[AAAI 2026\] Cross-modal Prompting for Balanced Incomplete Multi-modal Emotion Recognition](cross-modal_prompting_for_balanced_incomplete_multi-modal_emotion_recognition.md)
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](../../ICLR2026/social_computing/language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
 - [\[AAAI 2026\] Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference](reasoning_about_the_unsaid_misinformation_detection_with_omission-aware_graph_in.md)
 - [\[NeurIPS 2025\] GraphKeeper: Graph Domain-Incremental Learning via Knowledge Disentanglement and Preservation](../../NeurIPS2025/social_computing/graphkeeper_graph_domain-incremental_learning_via_knowledge_disentanglement_and_.md)
-- [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](../../CVPR2026/social_computing/probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
-- [\[ICCV 2025\] PropVG: End-to-End Proposal-Driven Visual Grounding with Multi-Granularity Discrimination](../../ICCV2025/social_computing/propvg_end-to-end_proposal-driven_visual_grounding_with_multi-granularity_discri.md)
+- [\[ACL 2026\] Reheat Nachos for Dinner? Evaluating AI Support for Cross-Cultural Communication of Neologisms](../../ACL2026/social_computing/reheat_nachos_for_dinner_evaluating_ai_support_for_cross-cultural_communication_.md)
 
 </div>
 

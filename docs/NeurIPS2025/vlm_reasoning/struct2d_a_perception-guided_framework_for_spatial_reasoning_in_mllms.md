@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial reasoning] This paper proposes Struct2D, a perception-guided prompting framework that converts 3D perception outputs into structured 2D representations (BEV images + object labels +…
+  [NeurIPS 2025][VLM Reasoning][Spatial reasoning] This paper proposes Struct2D, a perception-guided prompting framework that converts 3D perception outputs into structured 2D representations (BEV images + object labels + metadata), enabling MLLMs to perform complex spatial reasoning without explicit 3D input. The authors also construct Struct2D-Set, a large-scale instruction tuning dataset containing 200K QA pairs.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Spatial reasoning"
   - "bird's-eye view"
   - "multimodal large language models"
   - "instruction tuning"
   - "3D scene understanding"
 date: 2026-05-08
-content_hash: 8abe5ff4f2d73068
+content_hash: 11e0e8dbb0e0428f
 ---
 
 # Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs
@@ -141,9 +141,9 @@ Supervised fine-tuning (SFT) is performed on Qwen2.5VL with a learning rate of 2
 
 - [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
 - [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](../../CVPR2026/vlm_reasoning/seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
+- [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](../../ACL2026/vlm_reasoning/unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
 - [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](../../ACL2026/multimodal_vlm/unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
 
 </div>
 

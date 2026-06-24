@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncertainty Estimation by Flexible Evidential Deep Learning
 description: >-
-  [NeurIPS 2025][uncertainty quantification] This paper proposes $\mathcal{F}$-EDL, which generalizes the Dirichlet distribution in EDL to a Flexible Dirichlet (FD) distribution for modeling class probability distributions…
+  [NeurIPS 2025][uncertainty quantification] This paper proposes $\mathcal{F}$-EDL, which generalizes the Dirichlet distribution in EDL to a Flexible Dirichlet (FD) distribution for modeling class probability distributions. This approach significantly enhances the generalization of uncertainty estimation under complex scenarios such as noise, long-tail distributions, and distribution shift, while preserving the efficiency of a single forward pass.
 tags:
   - "NeurIPS 2025"
   - "uncertainty quantification"
@@ -11,7 +11,7 @@ tags:
   - "OOD detection"
   - "single forward pass"
 date: 2026-05-08
-content_hash: 8873f9c497589c74
+content_hash: b613d4543e0fbf93
 ---
 
 # Uncertainty Estimation by Flexible Evidential Deep Learning
@@ -132,8 +132,8 @@ Uncertainty is measured via a label-variance-based approach, which decomposes pr
 
 ## Related Papers
 
+- [\[CVPR 2026\] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty](../../CVPR2026/others/evidential_deep_partial_label_learning_to_quantify_disambiguation_uncertainty.md)
 - [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](asymmetric_duos_sidekicks_improve_uncertainty.md)
-- [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](../../ICML2026/others/possibilistic_predictive_uncertainty_for_deep_learning.md)
 - [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
 - [\[NeurIPS 2025\] Deep Learning for Continuous-Time Stochastic Control with Jumps](deep_learning_for_continuous-time_stochastic_control_with_jumps.md)
 - [\[NeurIPS 2025\] Deep Legendre Transform](deep_legendre_transform.md)

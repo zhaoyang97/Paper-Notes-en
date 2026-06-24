@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Test-time scaling] Through systematic experiments, this paper reveals that the performance of test-time scaling in LRMs (achieved by repeatedly appending "Wait" prompts to extend reasoning)…
+  [NeurIPS 2025][Reasoning][Test-time scaling] Through systematic experiments, this paper reveals that the performance of test-time scaling in LRMs (achieved by repeatedly appending "Wait" prompts to extend reasoning) exhibits a non-monotonic pattern of initial improvement followed by degradation. A probabilistic model is then used to demonstrate that this apparent "gain" is merely a mirage caused by increased output variance rather than genuine reasoning improvement. The propo…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Test-time scaling"
   - "overthinking"
   - "parallel thinking"
   - "variance analysis"
   - "Best-of-N"
 date: 2026-05-08
-content_hash: 28ffc92ce6fe423b
+content_hash: 91c259c9c597760f
 ---
 
 # Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models
@@ -147,10 +147,10 @@ This paper involves no training—it is a purely test-time strategy. Parallel th
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
-- [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
 - [\[NeurIPS 2025\] Atom of Thoughts for Markov LLM Test-Time Scaling](atom_of_thoughts_for_markov_llm_testtime_scaling.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
 - [\[NeurIPS 2025\] LIMOPro: Reasoning Refinement for Efficient and Effective Test-time Scaling](limopro_reasoning_refinement_for_efficient_and_effective_test-time_scaling.md)
+- [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
 
 </div>
 

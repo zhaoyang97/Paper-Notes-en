@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving
 description: >-
-  [NeurIPS 2025][Autonomous Driving][model-based reinforcement learning] This paper proposes RAW2Drive, the first model-based reinforcement learning (MBRL) end-to-end autonomous driving framework operating directly from ra…
+  [NeurIPS 2025][Autonomous Driving][model-based reinforcement learning] This paper proposes RAW2Drive, the first model-based reinforcement learning (MBRL) end-to-end autonomous driving framework operating directly from raw sensor inputs to planning. Through a dual-stream world model design — first training a privileged world model, then guiding a raw-sensor world model via an alignment mechanism — RAW2Drive achieves state-of-the-art performance on CARLA v2 and Bench2Drive…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "CARLA"
   - "dual-stream"
 date: 2026-05-08
-content_hash: 4bc3258681ae017c
+content_hash: ee259577873acfc2
 ---
 
 # RAW2Drive: Reinforcement Learning with Aligned World Models for End-to-End Autonomous Driving

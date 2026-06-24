@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][Paper Note] Inspired by Baddeley's working memory theory, CSMR treats "when to introduce visual evidence into reasoning" as a dynamic decision-making process. The LLM maintains the reasoning state and invokes an independent perception module (VLM) for visual evidence on demand until sufficiency is reached. It addresses the flaws o
+  [ICML 2026][VLM Reasoning][Multimodal Reasoning] Inspired by Baddeley's working memory theory, CSMR treats "when to introduce visual evidence into reasoning" as a dynamic decision-making process. The LLM maintains the reasoning state and invokes an independent perception module (VLM) for visual evidence on demand until sufficiency is reached. It addresses the flaws of existing paradigms (pre-reasoning textualization losing details / unified VL space being contaminated by lang…
 tags:
-  - ICML 2026
-  - vlm_reasoning
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Working Memory Theory"
+  - "Dynamic Visual Evidence Acquisition"
+  - "Perception-Reasoning Decoupling"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: dc2b8f6c248a57d2
+content_hash: 56d0ffb9274d6b89
 ---
+
 # CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning
 
 **Conference**: ICML 2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction
 description: >-
-  [ICLR 2026][Image Generation][ODE solver] The paper proposes Dual-Solver, which generalizes diffusion model multi-step samplers through three sets of learnable parameters (prediction type interpolation $\gamma$, integration domain selection $\tau$, and residual adjustment $\kappa$). By using the classification loss of a frozen pretrained classifier (MobileNet/
+  [ICLR 2026][Image Generation][ODE solver] The paper proposes Dual-Solver, which generalizes diffusion model multi-step samplers through three sets of learnable parameters (prediction type interpolation $\gamma$, integration domain selection $\tau$, and residual adjustment $\kappa$). By using the classification loss of a frozen pretrained classifier (MobileNet/CLIP) to learn parameters without requiring teacher trajectories, it outperforms methods like DPM-Solver++ in the low…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - ODE solver
-  - learnable sampler
-  - prediction interpolation
-  - domain selection
-  - low-NFE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "ODE solver"
+  - "learnable sampler"
+  - "prediction interpolation"
+  - "domain selection"
+  - "low-NFE"
 date: 2026-05-08
-content_hash: 2a96ae5231b9df8c
+content_hash: 7d9aa5870a9180c9
 ---
+
 # Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction
 
 **Conference**: ICLR 2026  
@@ -147,10 +148,10 @@ Multiple backbone coverage: Effectiveness was validated across DiT (ImageNet con
 ## Related Papers
 
 - [\[ICLR 2026\] GAS: Improving Discretization of Diffusion ODEs via Generalized Adversarial Solver](gas_improving_discretization_of_diffusion_odes_via_generalized_adversarial_solve.md)
-- [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
 - [\[CVPR 2026\] Image Diffusion Preview with Consistency Solver](../../CVPR2026/image_generation/image_diffusion_preview_with_consistency_solver.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
+- [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
 - [\[ICLR 2026\] Generating Directed Graphs with Dual Attention and Asymmetric Encoding](generating_directed_graphs_with_dual_attention_and_asymmetric_encoding.md)
-- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 
 </div>
 

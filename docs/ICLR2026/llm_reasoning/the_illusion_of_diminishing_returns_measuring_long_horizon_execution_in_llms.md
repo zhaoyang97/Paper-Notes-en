@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] The paper reveals that short-task benchmarks provide an illusion of "diminishing returns"—marginal gains in single-step accuracy are amplified exponentially in long-horizon tasks. It identifies the "self-conditioning effect" (where a model's own errors increase the probability of subsequent errors), which thinking mode
+  [ICLR 2026][Reasoning][Long-horizon execution] The paper reveals that short-task benchmarks provide an illusion of "diminishing returns"—marginal gains in single-step accuracy are amplified exponentially in long-horizon tasks. It identifies the "self-conditioning effect" (where a model's own errors increase the probability of subsequent errors), which thinking models can mitigate. Notably, GPT-5 thinking can execute tasks exceeding 2100 steps.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - diminishing returns
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long-horizon execution"
+  - "self-conditioning"
+  - "Chain-of-Thought"
+  - "scaling"
+  - "diminishing returns"
 date: 2026-05-08
-content_hash: 0b98843cb6368a69
+content_hash: cf4cc760fc9f6f4c
 ---
+
 # The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs
 
 **Conference**: ICLR 2026  
@@ -111,9 +115,9 @@ To quantify the relationship between single-step capability and task length, the
 
 - [\[ACL 2026\] SPPO: Sequence-Level PPO for Long-Horizon Reasoning Tasks](../../ACL2026/llm_reasoning/sppo_sequence-level_ppo_for_long-horizon_reasoning_tasks.md)
 - [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
-- [\[ICLR 2026\] R-HORIZON: How Far Can Your Large Reasoning Model Really Go in Breadth and Depth?](r-horizon_how_far_can_your_large_reasoning_model_really_go_in_breadth_and_depth.md)
-- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
-- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
+- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](../../ICML2026/llm_reasoning/how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
+- [\[ICLR 2026\] Is It Thinking or Cheating? Detecting Implicit Reward Hacking by Measuring Reasoning Effort](is_it_thinking_or_cheating_detecting_implicit_reward_hacking_by_measuring_reason.md)
+- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights
 description: >-
-  [ACL 2026][Hallucination Detection][Trivia++] This paper redefines seven requirements for RAG hallucination detection benchmarks and constructs Trivia++, a new benchmark featuring long contexts, multi-round human annotations, and realistic noisy labels. The study finds that existing detectors perform significantly below ideal levels on organic RAG hallucinations.
+  [ACL2026][Hallucination Detection][RAG Hallucination Detection] This paper redefines seven requirements for RAG hallucination detection benchmarks and constructs Trivia++, a new benchmark featuring long contexts, multi-round human annotations, and realistic noisy labels. The study finds that existing detectors perform significantly below ideal levels on organic RAG hallucinations.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Trivia++
-  - LLM-as-a-Judge
+  - "ACL2026"
+  - "Hallucination Detection"
+  - "RAG Hallucination Detection"
+  - "Long Context Evaluation"
+  - "Label Noise"
+  - "Trivia++"
+  - "LLM-as-a-Judge"
 date: 2026-05-08
-content_hash: 92aecc01e1f7612d
+content_hash: 6b1622f46112ab80
 ---
+
 # Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights
 
 **Conference**: ACL2026  
@@ -158,7 +162,7 @@ Label noise experiments further demonstrate that noisy labels distort evaluation
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
 - [\[ACL 2026\] MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing](multihaludet_multilingual_hallucination_detection_via_llm_hidden_state_probing.md)
 - [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
-- [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
+- [\[ICLR 2026\] FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs](../../ICLR2026/hallucination/freak_a_fine-grained_hallucination_evaluation_benchmark_for_advanced_mllms.md)
 
 </div>
 

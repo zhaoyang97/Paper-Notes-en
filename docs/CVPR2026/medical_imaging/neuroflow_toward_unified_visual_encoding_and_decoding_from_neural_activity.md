@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] NeuroFlow: Toward Unified Visual Encoding and Decoding from Neural Activity
 description: >-
-  [CVPR 2026][Medical Imaging][fMRI] NeuroFlow unifies "image-to-brain" (encoding) and "brain-to-image" (decoding) into a single flow model. It utilizes a variational backbone, NeuroVAE, to compress fMRI into a semantically structured latent space, followed by Cross-modal Flow Matching (XFM) to learn a reversible continuous flow between visual and neural
+  [CVPR 2026][Medical Imaging][Visual Encoding & Decoding] NeuroFlow unifies "image-to-brain" (encoding) and "brain-to-image" (decoding) into a single flow model. It utilizes a variational backbone, NeuroVAE, to compress fMRI into a semantically structured latent space, followed by Cross-modal Flow Matching (XFM) to learn a reversible continuous flow between visual and neural latent distributions. By integrating forward (encoding) and backward (decoding) paths…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - fMRI
-  - Flow Matching
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Visual Encoding & Decoding"
+  - "fMRI"
+  - "Flow Matching"
+  - "Cross-modal Alignment"
+  - "Variational Autoencoder"
 date: 2026-05-08
-content_hash: cdac2300352198f4
+content_hash: f31f378856a7a9c1
 ---
+
 # NeuroFlow: Toward Unified Visual Encoding and Decoding from Neural Activity
 
 **Conference**: CVPR 2026  
@@ -138,12 +142,13 @@ NeuroFlow is the only unified E&D model. It achieves best-in-class performance i
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Neuro-Symbolic Decoding of Neural Activity](../../ICLR2026/medical_imaging/neuro-symbolic_decoding_of_neural_activity.md)
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
+- [\[CVPR 2026\] Decoding 3D Perception via BrainSSD: Synergistic Fusion of EEG Representations from Static and Dynamic Visual Streams](decoding_3d_perception_via_brainssd_synergistic_fusion_of_eeg_representations_fr.md)
 - [\[ECCV 2024\] UMBRAE: Unified Multimodal Brain Decoding](../../ECCV2024/medical_imaging/umbrae_unified_multimodal_brain_decoding.md)
 - [\[CVPR 2026\] Uni-Hema: Unified Model for Digital Hematopathology](uni-hema_unified_model_for_digital_hematopathology.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)

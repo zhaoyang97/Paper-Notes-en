@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] InfiniBench is a fully automated, parameterizable 3D scene benchmark "generator." It translates natural language scene descriptions into physically plausible, photorealistic videos with controllable complexity. This allows for the theoretical generation of infinite VLM spatial reasoning evaluation tasks across composit
+  [CVPR 2026][VLM Reasoning][Spatial Reasoning] InfiniBench is a fully automated, parameterizable 3D scene benchmark "generator." It translates natural language scene descriptions into physically plausible, photorealistic videos with controllable complexity. This allows for the theoretical generation of infinite VLM spatial reasoning evaluation tasks across composition, relation, and observation complexities, specifically exposing model failure modes under diverse spatial condi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "Customizable Benchmark"
+  - "Procedural Generation"
+  - "LLM Agent"
+  - "Camera Trajectory Optimization"
 date: 2026-05-08
-content_hash: 8ccd7c16c1676290
+content_hash: 197cfa67cefe2d2e
 ---
+
 # InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Constraint iteration ablation (from Table 4):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](../../ICLR2026/multimodal_vlm/spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
-- [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/multimodal_vlm/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
+- [\[ACL 2026\] TableVista: Benchmarking Multimodal Table Reasoning under Visual and Structural Complexity](../../ACL2026/vlm_reasoning/tablevista_benchmarking_multimodal_table_reasoning_under_visual_and_structural_c.md)
+- [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](../../ICLR2026/vlm_reasoning/spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
 - [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
-- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
-- [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
+- [\[ACL 2026\] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models](../../ACL2026/vlm_reasoning/capruner_conceptual-adjacent_scene_graph_pruner_for_enhancing_3d_spatial_reasoni.md)
+- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
 
 </div>
 

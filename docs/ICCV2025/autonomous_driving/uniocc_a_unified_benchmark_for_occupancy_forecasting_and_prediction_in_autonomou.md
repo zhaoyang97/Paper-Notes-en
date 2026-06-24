@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Occupancy Grid Prediction] This paper proposes UniOcc, the first unified benchmark for 2D/3D occupancy prediction and forecasting, integrating four data sources — nuScenes, Waymo, CARLA…
+  [ICCV 2025][Autonomous Driving][Occupancy Grid Prediction] This paper proposes UniOcc, the first unified benchmark for 2D/3D occupancy prediction and forecasting, integrating four data sources — nuScenes, Waymo, CARLA, and OpenCOOD — while introducing per-voxel flow annotations and ground-truth-free evaluation metrics. Large-scale experiments reveal the significant value of voxel-level flow information and cross-domain training for occupancy tasks.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Dataset Training"
   - "Cooperative Driving"
 date: 2026-05-08
-content_hash: 5d08ca376575a498
+content_hash: cee51b649b914a21
 ---
 
 # UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving
@@ -199,9 +199,9 @@ Cross-domain generalization analysis (training/testing OccWorld on different dat
 
 - [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](../../CVPR2026/autonomous_driving/an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 - [\[ICCV 2025\] Language Driven Occupancy Prediction (LOcc)](language_driven_occupancy_prediction.md)
+- [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](future-aware_interaction_network_for_motion_forecasting.md)
 - [\[ICCV 2025\] CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving](colmdriver_llm-based_negotiation_benefits_cooperative_autonomous_driving.md)
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
-- [\[ICCV 2025\] Semantic Causality-Aware Vision-Based 3D Occupancy Prediction](semantic_causality-aware_vision-based_3d_occupancy_prediction.md)
 
 </div>
 

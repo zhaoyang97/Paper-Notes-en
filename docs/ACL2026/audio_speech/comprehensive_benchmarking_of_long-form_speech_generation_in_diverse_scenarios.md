@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes SwanBench-Speech, which systematically evaluates long-form speech generation using 1,101 samples across 17 real-world downstream scenarios and 7 automatic evaluation dimensions. The study concludes that while current models approach usability in content accuracy, they still significantly lag behind
+  [ACL2026 Findings][Audio & Speech][Long-form speech generation] This paper proposes SwanBench-Speech, which systematically evaluates long-form speech generation using 1,101 samples across 17 real-world downstream scenarios and 7 automatic evaluation dimensions. The study concludes that while current models approach usability in content accuracy, they still significantly lag behind real recordings in reverb consistency, long-range prosody, and expressive hierarchy.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026 Findings"
+  - "Audio & Speech"
+  - "Long-form speech generation"
+  - "Speech evaluation benchmark"
+  - "Expressiveness evaluation"
+  - "Prosodic consistency"
+  - "Multi-scenario TTS"
 date: 2026-05-08
-content_hash: d81d40d6ee8a313d
+content_hash: 2da7fc3099ff8dad
 ---
+
 # Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios
 
 **Conference**: ACL2026 Findings  
@@ -121,9 +127,9 @@ Closed-source systems are generally stronger than open-source systems in prosody
 
 - [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
 - [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
+- [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](../../ICLR2026/audio_speech/yue_scaling_open_foundation_models_for_long-form_music_generation.md)
 - [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
 - [\[ACL 2026\] Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation](anchored_cyclic_generation_a_novel_paradigm_for_long-sequence_symbolic_music_gen.md)
-- [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
 
 </div>
 

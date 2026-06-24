@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding
 description: >-
-  [ICML 2026][Others][Paper Note] The method evolves RoPE from "axis-wise splitting" to "encoding positions and frequencies as holistic n-dimensional vectors via a single inner product rotation $e^{j\boldsymbol{\omega}^\top\mathbf{x}}$." By employing regular simplex wave vectors to ensure isotropy, it achieves consistent accuracy gains and superior res
+  [ICML 2026][Rotary Position Embedding] The method evolves RoPE from "axis-wise splitting" to "encoding positions and frequencies as holistic n-dimensional vectors via a single inner product rotation $e^{j\boldsymbol{\omega}^\top\mathbf{x}}$." By employing regular simplex wave vectors to ensure isotropy, it achieves consistent accuracy gains and superior resolution/density extrapolation across images, videos, and point clouds.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Rotary Position Embedding"
+  - "Isotropy"
+  - "Regular Simplex"
+  - "Multi-scale Frequency"
+  - "Resolution Extrapolation"
 date: 2026-05-08
-content_hash: cb23beabbc81d544
+content_hash: 8f9ee3873000b120
 ---
+
 # nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding
 
 **Conference**: ICML 2026  
@@ -123,9 +128,9 @@ In 2D, using two orthogonal wave vectors (axial) induces a **square grid** in re
 
 - [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
 - [\[ICML 2026\] Position: Age Estimation Models Do Not Process Biometric Data](position_age_estimation_models_do_not_process_biometric_data.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](../../NeurIPS2025/others/generalized_linear_mode_connectivity_for_transformers.md)
 - [\[ICML 2026\] Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment](evaluation_of_ml_resource_utilization_requires_model_life_cycle_assessment.md)
-- [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](../../AAAI2026/others/decor_deep_embedding_clustering_with_orientation_robustness.md)
+- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
+- [\[ICML 2026\] Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations](rectified_lpjepa_joint-embedding_predictive_architectures_with_sparse_and_maximu.md)
 
 </div>
 

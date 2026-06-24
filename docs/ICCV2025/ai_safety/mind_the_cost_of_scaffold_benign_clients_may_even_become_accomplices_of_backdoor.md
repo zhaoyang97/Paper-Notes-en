@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack
 description: >-
-  [ICCV 2025][AI Safety][federated learning] This paper proposes BadSFL, the first backdoor attack tailored to the Scaffold federated learning algorithm. By manipulating control variates…
+  [ICCV 2025][AI Safety][federated learning] This paper proposes BadSFL, the first backdoor attack tailored to the Scaffold federated learning algorithm. By manipulating control variates, BadSFL turns benign clients into unwitting accomplices. Combined with GAN-based data augmentation and an optimization strategy that predicts the global model's future convergence direction, BadSFL achieves backdoor persistence lasting 60+ rounds after the attack ceases in non-IID settings—thre…
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "control variate"
   - "Non-IID"
 date: 2026-05-08
-content_hash: 34326b03633f333f
+content_hash: a047743bcc52ee47
 ---
 
 # Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack
@@ -159,11 +159,11 @@ BadSFL consists of four steps:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](../../NeurIPS2025/ai_safety/taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
+- [\[CVPR 2026\] Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack](../../CVPR2026/ai_safety/batman_benign_knowledge_alignment_through_malicious_null_space_in_federated_back.md)
+- [\[CVPR 2025\] Infighting in the Dark: Multi-Label Backdoor Attack in Federated Learning](../../CVPR2025/ai_safety/infighting_in_the_dark_multi-label_backdoor_attack_in_federated_learning.md)
 - [\[ICCV 2025\] Backdoor Attacks on Neural Networks via One-Bit Flip](backdoor_attacks_on_neural_networks_via_one_bit_flip.md)
+- [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](../../NeurIPS2025/ai_safety/taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
-- [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](backdoor_mitigation_by_distance-driven_detoxification.md)
-- [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](../../NeurIPS2025/ai_safety/cost_efficient_fairness_audit_under_partial_feedback.md)
 
 </div>
 

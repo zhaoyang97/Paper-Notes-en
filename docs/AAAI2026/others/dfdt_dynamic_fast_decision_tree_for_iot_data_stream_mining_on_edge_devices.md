@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices
 description: >-
-  [AAAI 2026][Decision Tree] This paper proposes DFDT (Dynamic Fast Decision Tree), a memory-constrained data stream mining algorithm for IoT edge devices. Through three coordinated mechanisms — activity-aware pre-pruning…
+  [AAAI 2026][Decision Tree] This paper proposes DFDT (Dynamic Fast Decision Tree), a memory-constrained data stream mining algorithm for IoT edge devices. Through three coordinated mechanisms — activity-aware pre-pruning, dynamic grace period, and adaptive tie threshold — DFDT achieves an optimal trade-off among accuracy, memory usage, and runtime.
 tags:
   - "AAAI 2026"
   - "Decision Tree"
@@ -11,7 +11,7 @@ tags:
   - "Concept Drift"
   - "Memory Constraints"
 date: 2026-05-08
-content_hash: 008d392d27fc6e38
+content_hash: 79c041b7620ade55
 ---
 
 # DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices
@@ -201,9 +201,9 @@ Linear regression is used to analyze the main effects and interaction effects of
 
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
 - [\[ICML 2026\] Decision Tree Learning on Product Spaces](../../ICML2026/others/decision_tree_learning_on_product_spaces.md)
-- [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
 - [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
-- [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
+- [\[AAAI 2026\] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets](intermediate_n-gramming_deterministic_and_fast_n-grams_for_large_n_and_large_dat.md)
+- [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
 
 </div>
 

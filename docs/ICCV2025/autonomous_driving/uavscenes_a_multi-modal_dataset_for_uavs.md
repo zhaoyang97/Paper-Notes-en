@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UAVScenes: A Multi-Modal Dataset for UAVs
 description: >-
-  [ICCV 2025][Autonomous Driving][UAV perception] UAVScenes is the first large-scale multi-modal UAV dataset that simultaneously provides per-frame semantic annotations for both images and LiDAR point clouds along with acc…
+  [ICCV 2025][Autonomous Driving][UAV perception] UAVScenes is the first large-scale multi-modal UAV dataset that simultaneously provides per-frame semantic annotations for both images and LiDAR point clouds along with accurate 6-DoF poses. It contains over 120,000 annotated frames and supports six perception tasks including semantic segmentation, depth estimation, localization, scene recognition, and novel view synthesis.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "depth estimation"
   - "LiDAR point cloud"
 date: 2026-05-08
-content_hash: 2b8e76298fa32259
+content_hash: 044570460c4a2211
 ---
 
 # UAVScenes: A Multi-Modal Dataset for UAVs
@@ -170,10 +170,10 @@ LiDAR segmentation mIoU is substantially lower than image segmentation (~33% vs.
 ## Related Papers
 
 - [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
+- [\[CVPR 2025\] ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate](../../CVPR2025/autonomous_driving/climbingcap_multi-modal_dataset_and_method_for_rock_climbing_in_world_.md)
 - [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
+- [\[CVPR 2026\] CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography](../../CVPR2026/autonomous_driving/card_a_multi-modal_automotive_dataset_for_dense_3d_reconstruction_in_challenging.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[ICCV 2025\] 3DRealCar: An In-the-wild RGB-D Car Dataset with 360-degree Views](3drealcar_an_in-the-wild_rgb-d_car_dataset_with_360-degree_views.md)
-- [\[ICCV 2025\] Mixed Signals: A Diverse Point Cloud Dataset for Heterogeneous LiDAR V2X Collaboration](mixed_signals_a_diverse_point_cloud_dataset_for_heterogeneous_lidar_v2x_collabor.md)
 
 </div>
 

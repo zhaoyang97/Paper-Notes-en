@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Multimodal Spatial Reasoning via Dynamic and Asymmetric Routing
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] This paper proposes DARE, which utilizes "differentiable dynamic routing across layers and hops" for asymmetric preservation of vision and text tokens. On multimodal spatial reasoning tasks, it reduces FLOPs by an average of 40.37% and KV-cache by 46.07%, while accuracy in most tasks actually improves.
+  [ICLR 2026][VLM Reasoning][Dynamic Routing] This paper proposes DARE, which utilizes "differentiable dynamic routing across layers and hops" for asymmetric preservation of vision and text tokens. On multimodal spatial reasoning tasks, it reduces FLOPs by an average of 40.37% and KV-cache by 46.07%, while accuracy in most tasks actually improves.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Dynamic Routing"
+  - "Asymmetric Pruning"
+  - "Multi-hop Reasoning"
+  - "KV-cache Compression"
+  - "Multimodal Spatial Reasoning"
 date: 2026-05-08
-content_hash: 8b1d41962b43825c
+content_hash: 942f05f8898b6376
 ---
+
 # Efficient Multimodal Spatial Reasoning via Dynamic and Asymmetric Routing
 
 **Conference**: ICLR 2026  
@@ -176,11 +182,11 @@ The insight for my own work is: when accelerating multimodal reasoning, do not a
 
 ## Related Papers
 
+- [\[ICLR 2026\] SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models](sketchthinker-r1_towards_efficient_sketch-style_reasoning_in_large_multimodal_mo.md)
 - [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
 - [\[CVPR 2026\] Learning to Reason in 4D: Dynamic Spatial Understanding for Vision Language Models](../../CVPR2026/vlm_reasoning/learning_to_reason_in_4d_dynamic_spatial_understanding_for_vision_language_model.md)
 - [\[ICLR 2026\] AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning](adareasoner_dynamic_tool_orchestration_for_iterative_visual_reasoning.md)
 - [\[CVPR 2026\] Geoint-R1: Formalizing Multimodal Geometric Reasoning with Dynamic Auxiliary Constructions](../../CVPR2026/vlm_reasoning/geoint-r1_formalizing_multimodal_geometric_reasoning_with_dynamic_auxiliary_cons.md)
-- [\[CVPR 2026\] Stable and Efficient Single-Rollout RL for Multimodal Reasoning](../../CVPR2026/vlm_reasoning/stable_and_efficient_single-rollout_rl_for_multimodal_reasoning.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Understanding Task Transfer in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] This paper presents the first systematic study of the impact of fine-tuning Vision-Language Models (VLMs) on a specific visual perception task on the zero-shot performance of other perception tasks. It proposes the Perfection Gap Factor (PGF), a normalized metric to quantify cross-task transfer. Using three scales of Q
+  [CVPR 2026 Oral][Multimodal VLM][Vision-Language Models] This paper presents the first systematic study of the impact of fine-tuning Vision-Language Models (VLMs) on a specific visual perception task on the zero-shot performance of other perception tasks. It proposes the Perfection Gap Factor (PGF), a normalized metric to quantify cross-task transfer. Using three scales of Qwen-2.5-VL, the study reveals structural patterns in task transfer (positive/negative transfer cliques…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Fine-tuning
-  - Perfection Gap Factor
+  - "CVPR 2026 Oral"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Task Transfer"
+  - "Perception Tasks"
+  - "Fine-tuning"
+  - "Perfection Gap Factor"
 date: 2026-05-08
-content_hash: 7ed6d109ba020829
+content_hash: 1238a0af9c2c33ce
 ---
+
 # Understanding Task Transfer in Vision-Language Models
 
 **Conference**: CVPR 2026 Oral  
@@ -152,11 +155,11 @@ The models utilize QLoRA (4-bit quantization) for fine-tuning Qwen-2.5-VL. Train
 
 ## Related Papers
 
-- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
-- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
 - [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](lvlm-aided_alignment_of_task-specific_vision_models.md)
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
 - [\[ECCV 2024\] Select and Distill: Selective Dual-Teacher Knowledge Transfer for Continual Learning on Vision-Language Models](../../ECCV2024/multimodal_vlm/select_and_distill_selective_dual-teacher_knowledge_transfer_for_continual_learn.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
+- [\[CVPR 2025\] Task Preference Optimization: Improving Multimodal Large Language Models with Vision Task Alignment](../../CVPR2025/multimodal_vlm/task_preference_optimization_improving_multimodal_large_language_models_with_vis.md)
 
 </div>
 

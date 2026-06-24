@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception
 description: >-
-  [ICLR 2026][Autonomous Driving][Multi-Agent] This paper extends the classic Shannon rate-distortion theory into a "pragmatic rate-distortion theory" oriented towards multi-agent collaborative perception. It derives two necessary conditions for optimal communication strategies: transmitting only task-relevant information and avoiding information redundant with the
+  [ICLR 2026][Autonomous Driving][Collaborative Perception] This paper extends the classic Shannon rate-distortion theory into a "pragmatic rate-distortion theory" oriented towards multi-agent collaborative perception. It derives two necessary conditions for optimal communication strategies: transmitting only task-relevant information and avoiding information redundant with the receiver's observations. Based on these, the RDcomm framework (task-entropy discrete encoding + mutua…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Collaborative Perception"
+  - "Rate-Distortion Theory"
+  - "Information Theory"
+  - "Communication Compression"
+  - "Multi-Agent"
 date: 2026-05-08
-content_hash: 0df4b36f78228608
+content_hash: fb2be2da12331203
 ---
+
 # Rate-Distortion Optimized Pragmatic Communication for Collaborative Perception
 
 **Conference**: ICLR 2026  
@@ -132,13 +137,14 @@ In terms of overhead, RDcomm is lightweight: 3.75 MB VRAM and 14.88 ms inference
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](../../CVPR2026/autonomous_driving/colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
 - [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](simo_single-modality-operable_multimodal_collaborative_perceptio.md)
-- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](../../CVPR2026/autonomous_driving/catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
+- [\[ICLR 2026\] GT-Space: Enhancing Heterogeneous Collaborative Perception with Ground Truth Feature Space](gt-space_enhancing_heterogeneous_collaborative_perception_with_ground_truth_feat.md)
 - [\[CVPR 2026\] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception](../../CVPR2026/autonomous_driving/adaradar_rate_adaptive_spectral_compression_for_radar-based_perception.md)
 - [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](../../CVPR2026/autonomous_driving/hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Volumetric Functional Maps
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper is the first to extend the mature functional maps framework from surface geometry processing to 3D volumes (tetrahedral meshes). By constructing a discretization-invariant function space using the eigenfunctions of the volumetric Laplacian operator, it establishes dense correspondences within the volume inte
+  [CVPR 2026][3D Vision][Functional maps] This paper is the first to extend the mature functional maps framework from surface geometry processing to 3D volumes (tetrahedral meshes). By constructing a discretization-invariant function space using the eigenfunctions of the volumetric Laplacian operator, it establishes dense correspondences within the volume interior, supporting applications such as connectivity transfer, segmentation transfer, and solid textures…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Functional maps"
+  - "volumetric correspondence"
+  - "Laplacian spectrum"
+  - "tetrahedral meshes"
+  - "geometry processing"
 date: 2026-05-08
-content_hash: c9be932208e22f90
+content_hash: 145797659942c2f1
 ---
+
 # Volumetric Functional Maps
 
 **Conference**: CVPR 2026  
@@ -136,8 +142,8 @@ The percentage of flipped tetrahedra decreases monotonically as the basis size i
 - [\[CVPR 2026\] PackUV: Packed Gaussian UV Maps for 4D Volumetric Video](packuv_packed_gaussian_uv_maps_for_4d_volumetric_video.md)
 - [\[CVPR 2025\] Denoising Functional Maps: Diffusion Models for Shape Correspondence](../../CVPR2025/3d_vision/denoising_functional_maps_diffusion_models_for_shape_correspondence.md)
 - [\[CVPR 2026\] Radiance Meshes for Volumetric Reconstruction](radiance_meshes_for_volumetric_reconstruction.md)
-- [\[CVPR 2026\] MozzaVID: Mozzarella Volumetric Image Dataset](mozzavid_mozzarella_volumetric_image_dataset.md)
 - [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
+- [\[CVPR 2026\] FunFact: Building Probabilistic Functional 3D Scene Graphs via Factor-Graph Reasoning](funfact_building_probabilistic_functional_3d_scene_graphs_via_factor-graph_reaso.md)
 
 </div>
 

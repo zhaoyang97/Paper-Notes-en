@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GameFactory: Creating New Games with Generative Interactive Videos
 description: >-
-  [ICCV 2025][Image Generation][game generation] This paper proposes GameFactory, a multi-stage training strategy that **decouples game style from action control** on top of a pretrained video diffusion model…
+  [ICCV 2025][Image Generation][game generation] This paper proposes GameFactory, a multi-stage training strategy that **decouples game style from action control** on top of a pretrained video diffusion model, enabling action control learned from small-scale Minecraft data to **generalize to arbitrary open-domain scenes** for interactive game video generation. This is the first method with a complete technical paper that validates scene generalization over a complex action spac…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -14,7 +14,7 @@ tags:
   - "Minecraft"
   - "world model"
 date: 2026-05-08
-content_hash: bd8889cc7fe8f7e7
+content_hash: 9fbe23a94b50f0db
 ---
 
 # GameFactory: Creating New Games with Generative Interactive Videos

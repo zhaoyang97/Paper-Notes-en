@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence
 description: >-
-  [ICLR 2026][Pretraining][Grokking] This work provides a unified explanation for Grokking (delayed generalization) and Information Bottleneck (compression phase) from the perspective of Neural Collapse. It demonstrates that the contraction of population intra-class variance is the common underlying factor and reveals that a distinct time-scale, controlle
+  [ICLR2026][LLM Pretraining][Grokking] This work provides a unified explanation for Grokking (delayed generalization) and Information Bottleneck (compression phase) from the perspective of Neural Collapse. It demonstrates that the contraction of population intra-class variance is the common underlying factor and reveals that a distinct time-scale, controlled by weight decay, separates training loss convergence from the emergence of Neural Collapse.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Grokking
-  - Neural Collapse
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Grokking"
+  - "Information Bottleneck"
+  - "Neural Collapse"
+  - "Training Dynamics"
+  - "Intra-class Variance"
+  - "Generalization Theory"
+  - "Lyapunov Time-scale"
 date: 2026-05-08
-content_hash: 0f02aa26df359f58
+content_hash: 55fd48a3d49349b9
 ---
+
 # Explaining Grokking and Information Bottleneck through Neural Collapse Emergence
 
 **Conference**: ICLR2026  
@@ -124,10 +130,10 @@ Redundant information Estimated via two different methods (MI and nHSIC) shows q
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking](../../NeurIPS2025/llm_pretraining/flatness_is_necessary_neural_collapse_is_not_rethinking_generalization_via_grokk.md)
-- [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](deconstructing_positional_information_from_attention_logits_to_training_biases.md)
 - [\[ICLR 2026\] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors](understanding_the_emergence_of_seemingly_useless_features_in_next-token_predicto.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 - [\[ICML 2026\] Explaining Data Mixing Scaling Laws](../../ICML2026/llm_pretraining/explaining_data_mixing_scaling_laws.md)
+- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
 
 </div>
 

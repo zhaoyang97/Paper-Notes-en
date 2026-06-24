@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mina: A Multilingual LLM-Powered Legal Assistant Agent for Bangladesh
 description: >-
-  [ACL 2026][LLM Agent][RAG] Mina is developed as a multilingual LLM legal assistant specifically for Bangladesh's legal landscape. By utilizing a two-stage RAG pipeline to accurately retrieve acts and sections, combined with a toolchain and multilingual embeddings, it achieved a $75\text{--}80\%$ passing rate in the Bangladesh Bar Council MCQ exa
+  [ACL 2026 Findings][LLM Agent][Legal Assistant] Mina is developed as a multilingual LLM legal assistant specifically for Bangladesh's legal landscape. By utilizing a two-stage RAG pipeline to accurately retrieve acts and sections, combined with a toolchain and multilingual embeddings, it achieved a $75\text{--}80\%$ passing rate in the Bangladesh Bar Council MCQ exams. The operational cost of legal consultation is reduced to only $0.12\text{--}0.61\%$ of traditional methods.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - RAG
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Legal Assistant"
+  - "Multilingual Agent"
+  - "RAG"
+  - "Bangladesh Law"
+  - "Low-resource Languages"
 date: 2026-05-08
-content_hash: 5795c58856d8ddd3
+content_hash: 860ee8da950e3b9e
 ---
+
 # Mina: A Multilingual LLM-Powered Legal Assistant Agent for Bangladesh
 
 **Conference**: ACL 2026 Findings  
@@ -131,9 +136,9 @@ This paper does not involve model training. The system is built upon prompt engi
 
 - [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](../../AAAI2026/llm_agent/agent-sama_state-aware_mobile_assistant.md)
 - [\[ACL 2025\] LegalAgentBench: Evaluating LLM Agents in Legal Domain](../../ACL2025/llm_agent/legalagentbench_evaluating_llm_agents_in_legal_domain.md)
+- [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](../../ICLR2026/llm_agent/towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
 - [\[ACL 2026\] MOOSE-Copilot: A Web-Based Interactive Assistant for Unified Exploratory and Fine-Grained Scientific Hypothesis Discovery](moose-copilot_a_web-based_interactive_assistant_for_unified_exploratory_and_fine.md)
 - [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
-- [\[ACL 2025\] OS-Kairos: Adaptive Interaction for MLLM-Powered GUI Agents](../../ACL2025/llm_agent/os-kairos_adaptive_interaction_for_mllm-powered_gui_agents.md)
 
 </div>
 

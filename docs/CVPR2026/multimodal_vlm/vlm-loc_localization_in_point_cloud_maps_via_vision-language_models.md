@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][BEV] The VLM-Loc framework is proposed, which converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning by VLMs. Combined with a Partial Node Assignment (PNA) mechanism for fine-grained text-to-point cloud alignment, it significantly outperforms previous SOTA on the self-built CityLoc be
+  [CVPR 2026][Multimodal VLM][Text-to-point cloud localization] The VLM-Loc framework is proposed, which converts 3D point cloud maps into BEV images and scene graphs for structured spatial reasoning by VLMs. Combined with a Partial Node Assignment (PNA) mechanism for fine-grained text-to-point cloud alignment, it significantly outperforms previous SOTA on the self-built CityLoc benchmark with a 14.20% improvement in Recall@5m.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - BEV
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-to-point cloud localization"
+  - "BEV"
+  - "Scene graph"
+  - "VLM spatial reasoning"
+  - "Autonomous driving"
 date: 2026-05-08
-content_hash: e4b4f9b4c4594bc9
+content_hash: b4ba1ad8a1396e1e
 ---
+
 # VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -135,15 +139,14 @@ The model is trained using standard auto-regressive cross-entropy loss. Fine-tun
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Point Cloud as a Foreign Language for Multi-modal Large Language Model](point_cloud_as_a_foreign_language_for_multi-modal_large_language_model.md)
 - [\[CVPR 2026\] Mechanisms of Object Localization in Vision-Language Models](mechanisms_of_object_localization_in_vision-language_models.md)
 - [\[CVPR 2025\] Generalized Few-Shot 3D Point Cloud Segmentation with Vision-Language Model](../../CVPR2025/multimodal_vlm/generalized_few-shot_3d_point_cloud_segmentation_with_vision-language_model.md)
-- [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](../../ICCV2025/multimodal_vlm/exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
 - [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
-- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
+- [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](../../ICCV2025/multimodal_vlm/exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
 
 </div>
 

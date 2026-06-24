@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit
 description: >-
-  [NeurIPS 2025][Image Generation][Image protection] This paper proposes BlurGuard—a method that applies mild blurring to an image prior to adversarial perturbation generation…
+  [NeurIPS 2025][Image Generation][Image protection] This paper proposes BlurGuard—a method that applies mild blurring to an image prior to adversarial perturbation generation, causing the perturbation to couple with low-frequency structures and thereby resist post-processing operations such as JPEG compression and Gaussian noise. This approach more effectively prevents AI editing tools such as Stable Diffusion from tampering with protected images…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "blur preprocessing"
   - "diffusion models"
 date: 2026-05-08
-content_hash: f0ea57a7e3e673e0
+content_hash: 1fc1263ac2447323
 ---
 
 # BlurGuard: A Simple Approach for Robustifying Image Protection Against AI-Powered Edit
@@ -128,8 +128,8 @@ Protection success rate on Stable Diffusion Inpainting (greater degradation in e
 
 ## Related Papers
 
+- [\[CVPR 2025\] Nearly Zero-Cost Protection Against Mimicry by Personalized Diffusion Models](../../CVPR2025/image_generation/nearly_zero-cost_protection_against_mimicry_by_personalized_diffusion_models.md)
 - [\[AAAI 2026\] Creating Blank Canvas Against AI-Enabled Image Forgery](../../AAAI2026/image_generation/creating_blank_canvas_against_ai-enabled_image_forgery.md)
-- [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
 - [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
 - [\[NeurIPS 2025\] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models](perturb_a_model_not_an_image_towards_robust_privacy_protection_via_anti-personal.md)
 - [\[ICCV 2025\] Anti-Tamper Protection for Unauthorized Individual Image Generation](../../ICCV2025/image_generation/anti-tamper_protection_for_unauthorized_individual_image_generation.md)

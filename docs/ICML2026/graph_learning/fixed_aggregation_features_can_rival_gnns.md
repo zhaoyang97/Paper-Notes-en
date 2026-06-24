@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Fixed Aggregation Features Can Rival GNNs
 description: >-
-  [ICML 2026][Graph Learning][Kolmogorov-Arnold] The paper proposes Fixed Aggregation Features (FAF): multi-hop neighborhoods are compressed into tabular features using **non-trainable** aggregation operators like mean/sum/max/min/std and fed into an MLP. On 12 out of 14 node classification benchmarks, it matches or outperforms fine-tuned GCN/GAT/GraphSAGE and even G
+  [ICML2026][Graph Learning][Fixed Aggregation] The paper proposes Fixed Aggregation Features (FAF): multi-hop neighborhoods are compressed into tabular features using **non-trainable** aggregation operators like mean/sum/max/min/std and fed into an MLP. On 12 out of 14 node classification benchmarks, it matches or outperforms fine-tuned GCN/GAT/GraphSAGE and even Graph Transformers, systematically questioning the necessity of trainable neighborhood aggregation in GNNs.
 tags:
-  - ICML 2026
-  - Graph Learning
-  - Kolmogorov-Arnold
-  - MLP baseline
+  - "ICML2026"
+  - "Graph Learning"
+  - "Fixed Aggregation"
+  - "Multi-hop Feature Concatenation"
+  - "Kolmogorov-Arnold"
+  - "MLP baseline"
+  - "Node Classification"
 date: 2026-05-08
-content_hash: 3a7032d05c1e7e27
+content_hash: 6b0207e4dabe115a
 ---
+
 # Fixed Aggregation Features Can Rival GNNs
 
 **Conference**: ICML2026  
@@ -147,16 +151,16 @@ Overall: FAF outperforms GNNs on 5 datasets, matches on 5 (gap $\leq 1\%$), and 
 - Value: ⭐⭐⭐⭐⭐ Will likely act as a standard baseline and a catalyst for better benchmark design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Logical Characterizations of GNNs with Mean Aggregation](../../AAAI2026/graph_learning/logical_characterizations_of_gnns_with_mean_aggregation.md)
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](../../AAAI2026/graph_learning/enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
-- [\[ICML 2026\] Identifying and Correcting Label Noise for Robust GNNs via Influence Contradiction](identifying_and_correcting_label_noise_for_robust_gnns_via_influence_contradicti.md)
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
-- [\[ICLR 2026\] GRAPHITE: Graph Homophily Booster — Reimagining the Role of Discrete Features in Heterophilic Graph Learning](../../ICLR2026/graph_learning/graph_homophily_booster_reimagining_the_role_of_discrete_features_in_heterophili.md)
+- [\[ICML 2026\] ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs](eralign_energy-based_representation_alignment_of_gnns_and_llms_on_text-attribute.md)
+- [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](../../ICLR2026/graph_learning/towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
 
 </div>
 

@@ -51,11 +51,11 @@ To be added after in-depth reading
 
 ## Related Papers
 
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
 - [\[ICLR 2026\] ShapeGen4D: Towards High Quality 4D Shape Generation from Videos](shapegen4d_towards_high_quality_4d_shape_generation_from_videos.md)
-- [\[ICLR 2026\] All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting](all_that_glitters_is_not_gold_key-secured_3d_secrets_within_3d_gaussian_splattin.md)
+- [\[ICLR 2026\] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation](ctrlshift_high-quality_geometry-aware_object_manipulation_in_visual_generation.md)
 - [\[ICLR 2026\] PAT3D: Physics-Augmented Text-to-3D Scene Generation](pat3d_physics-augmented_text-to-3d_scene_generation.md)
-- [\[ICLR 2026\] LumiTex: Towards High-Fidelity PBR Texture Generation with Illumination Context](lumitex_towards_high-fidelity_pbr_texture_generation_with_illumination_context.md)
-- [\[ICLR 2026\] Scenethesis: A Language and Vision Agentic Framework for 3D Scene Generation](scenethesis_a_language_and_vision_agentic_framework_for_3d_scene_generation.md)
 
 </div>
 

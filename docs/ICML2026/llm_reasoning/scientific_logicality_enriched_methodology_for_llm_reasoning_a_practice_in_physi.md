@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scientific Logicality Enriched Methodology for LLM Reasoning: A Practice in Physics
 description: >-
-  [ICML 2026][LLM Reasoning][PhysLogic] This paper introduces the first systematic study of "logicality" in LLM scientific reasoning. It proposes a three-dimensional evaluation metric—"Logical Fidelity / Causal Connection / Inferential Progress"—and constructs two SFT data sampling methods based on these metrics: Style Transfer (RST) and Logic Distillation (
+  [ICML2026][Reasoning][Scientific Logicality] This paper introduces the first systematic study of "logicality" in LLM scientific reasoning. It proposes a three-dimensional evaluation metric—"Logical Fidelity / Causal Connection / Inferential Progress"—and constructs two SFT data sampling methods based on these metrics: Style Transfer (RST) and Logic Distillation (Logic-Distill). These methods significantly improve both logicality and answer accuracy for 7B models on the self-b…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - PhysLogic
+  - "ICML2026"
+  - "Reasoning"
+  - "Scientific Logicality"
+  - "Logicality Evaluation"
+  - "SFT Data Filtering"
+  - "Physics Reasoning"
+  - "PhysLogic"
 date: 2026-05-08
-content_hash: 998e675271b4ed6f
+content_hash: ff2def6c50e1c499
 ---
+
 # Scientific Logicality Enriched Methodology for LLM Reasoning: A Practice in Physics
 
 **Conference**: ICML2026  
@@ -146,11 +151,11 @@ Average accuracy on Out-of-Domain (OOD) physics benchmarks (GPQA-physics / SciBe
 
 ## Related Papers
 
-- [\[ICML 2026\] Scaling-Aware Adapter for Structure-Grounded LLM Reasoning](scaling-aware_adapter_for_structure-grounded_llm_reasoning.md)
-- [\[ICML 2026\] R2-Router: A New Paradigm for LLM Routing with Reasoning](r2-router_a_new_paradigm_for_llm_routing_with_reasoning.md)
-- [\[ICML 2026\] TRACE: 用 Toulmin 论证模型评 LLM CoT 推理过程质量](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
-- [\[ICML 2026\] Are Tools Always Beneficial? Learning to Invoke Tools Adaptively for Dual-Mode Multimodal LLM Reasoning](are_tools_always_beneficial_learning_to_invoke_tools_adaptively_for_dual-mode_mu.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
+- [\[ICLR 2026\] Lean4PHYS: Comprehensive Reasoning Framework for College-level Physics in Lean4](../../ICLR2026/llm_reasoning/lean4physics_comprehensive_reasoning_framework_for_college-level_physics_in_lean.md)
+- [\[ICLR 2026\] SCI-Verifier: Scientific Verifier with Thinking](../../ICLR2026/llm_reasoning/sci-verifier_scientific_verifier_with_thinking.md)
+- [\[ICLR 2026\] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning](../../ICLR2026/llm_reasoning/cot-evo_evolutionary_distillation_of_chain-of-thought_for_scientific_reasoning.md)
+- [\[ICLR 2026\] Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism](../../ICLR2026/llm_reasoning/unleashing_scientific_reasoning_for_bio-experimental_protocol_generation_via_str.md)
+- [\[ICML 2026\] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](critique-grpo_advancing_llm_reasoning_with_natural_language_and_numerical_feedba.md)
 
 </div>
 

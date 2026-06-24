@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes Guided Topology Diffusion (GTD), which models the communication topology generation of multi-LLM agents as a conditional graph diffusion process. It utilizes a proxy reward model to perform zero-order guidance at each denoising step, thereby generating task-adaptive collaboration networks that are s
+  [ACL 2026][LLM Agent][Multi-agent systems] This paper proposes Guided Topology Diffusion (GTD), which models the communication topology generation of multi-LLM agents as a conditional graph diffusion process. It utilizes a proxy reward model to perform zero-order guidance at each denoising step, thereby generating task-adaptive collaboration networks that are sparser, more token-efficient, and more robust.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Multi-agent systems"
+  - "Communication topology"
+  - "Graph diffusion"
+  - "Zero-order optimization"
+  - "Proxy reward model"
 date: 2026-05-08
-content_hash: 3cf2f319f48aa175
+content_hash: ec6043ee604e7b51
 ---
+
 # Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models
 
 **Conference**: ACL 2026  
@@ -142,7 +148,7 @@ The proxy model is trained using MSE to predict utility and cost from simulation
 - [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](../../CVPR2026/llm_agent/towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
 - [\[ACL 2026\] The Bitter Lesson of Diffusion Language Models for Agentic Workflows: A Comprehensive Reality Check](the_bitter_lesson_of_diffusion_language_models_for_agentic_workflows_a_comprehen.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[NeurIPS 2025\] Are Large Language Models Sensitive to the Motives Behind Communication?](../../NeurIPS2025/llm_agent/are_large_language_models_sensitive_to_the_motives_behind_communication.md)
 
 </div>
 

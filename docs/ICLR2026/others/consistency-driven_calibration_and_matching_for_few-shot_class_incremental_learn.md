@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Consistency-Driven Calibration and Matching for Few-Shot Class Incremental Learning
 description: >-
-  [ICLR 2026][Others][FSCIL] ConCM reformulates the core dilemma of Few-Shot Class Incremental Learning (FSCIL) as a "feature-structure dual consistency" problem. It first corrects few-shot prototype shifts using Memory-aware Prototype Calibration (MPC) inspired by hippocampal associative memory, and then solves for an evolvable embedding structur
+  [ICLR 2026][FSCIL] ConCM reformulates the core dilemma of Few-Shot Class Incremental Learning (FSCIL) as a "feature-structure dual consistency" problem. It first corrects few-shot prototype shifts using Memory-aware Prototype Calibration (MPC) inspired by hippocampal associative memory, and then solves for an evolvable embedding structure that simultaneously satisfies geometric optimality and maximum matching via Dynamic Structure Matching (DSM) in each incremental session. T…
 tags:
-  - ICLR 2026
-  - Others
-  - FSCIL
+  - "ICLR 2026"
+  - "FSCIL"
+  - "Prototype Calibration"
+  - "Neural Collapse"
+  - "Dynamic Structure Matching"
+  - "Meta-learning"
+  - "Associative Memory"
 date: 2026-05-08
-content_hash: 0f8dfd7cd480bdc5
+content_hash: f183af97af9ac723
 ---
+
 # Consistency-Driven Calibration and Matching for Few-Shot Class Incremental Learning
 
 **Conference**: ICLR 2026  
@@ -120,8 +125,8 @@ MPC and DSM contribute +4.52% and +8.96% AHM respectively, and their combination
 - **Value**: ⭐⭐⭐⭐ Significant improvement (+3% AHM) on strong FSCIL baselines with open-source code.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

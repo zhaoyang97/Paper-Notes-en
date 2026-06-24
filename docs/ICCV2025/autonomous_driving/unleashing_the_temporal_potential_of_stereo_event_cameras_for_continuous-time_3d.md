@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][Event Camera] This paper proposes the first 3D object detection framework relying solely on stereo event cameras. Through a semantic-geometric dual filtering module and object-centric ROI…
+  [ICCV 2025][Autonomous Driving][Event Camera] This paper proposes the first 3D object detection framework relying solely on stereo event cameras. Through a semantic-geometric dual filtering module and object-centric ROI alignment, it enables continuous-time 3D detection during blind time periods, significantly outperforming methods that depend on synchronized sensors (Ev-3DOD) in dynamic large-motion scenarios. Its pedestrian AP3D even surpasses methods that use LiDAR+RGB+Eve…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Continuous-Time Perception"
   - "Semantic-Geometric Dual Filtering"
 date: 2026-05-08
-content_hash: a4240c73dc89f3cb
+content_hash: 8731c5c651fe624b
 ---
 
 # Unleashing the Temporal Potential of Stereo Event Cameras for Continuous-Time 3D Perception
@@ -156,11 +156,11 @@ As the motion scale increases, Ev-3DOD suffers a drastic performance collapse (P
 
 ## Related Papers
 
+- [\[CVPR 2025\] EV-3DOD: Pushing the Temporal Boundaries of 3D Object Detection with Event Cameras](../../CVPR2025/autonomous_driving/ev-3dod_pushing_the_temporal_boundaries_of_3d_object_detection_with_event_camera.md)
+- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](../../CVPR2026/autonomous_driving/dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
 - [\[ICCV 2025\] TrafficLoc: Localizing Traffic Surveillance Cameras in 3D Scenes](trafficloc_localizing_traffic_surveillance_cameras_in_3d_scenes.md)
-- [\[ICCV 2025\] Towards Open-World Generation of Stereo Images and Unsupervised Matching](towards_open-world_generation_of_stereo_images_and_unsupervised_matching.md)
 - [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
-- [\[AAAI 2026\] Rethinking the Spatio-Temporal Alignment of End-to-End 3D Perception](../../AAAI2026/autonomous_driving/rethinking_the_spatio-temporal_alignment_of_end-to-end_3d_perception.md)
-- [\[ICCV 2025\] SparseLaneSTP: Leveraging Spatio-Temporal Priors with Sparse Transformers for 3D Lane Detection](sparselanestp_leveraging_spatio-temporal_priors_with_sparse_transformers_for_3d_.md)
+- [\[ICCV 2025\] Towards Open-World Generation of Stereo Images and Unsupervised Matching](towards_open-world_generation_of_stereo_images_and_unsupervised_matching.md)
 
 </div>
 

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding
 description: >-
-  [AAAI 2026][Brain-Computer Interface] This paper proposes CAT-Net (Cross-Attention Tone Network), which achieves Mandarin four-tone classification using only 20 EEG channels and 5 EMG channels via spatial-temporal featur…
+  [AAAI 2026][Medical Imaging][Brain-Computer Interface] This paper proposes CAT-Net (Cross-Attention Tone Network), which achieves Mandarin four-tone classification using only 20 EEG channels and 5 EMG channels via spatial-temporal feature extraction branches, a cross-attention fusion mechanism, and domain adversarial training. The model achieves 87.83%/88.08% accuracy under voiced/silent speech conditions and 83.27%/85.10% under cross-subject evaluation…
 tags:
   - "AAAI 2026"
+  - "Medical Imaging"
   - "Brain-Computer Interface"
   - "EEG-EMG Fusion"
   - "Cross-Attention"
   - "Mandarin Tone Classification"
   - "Cross-Subject Generalization"
 date: 2026-05-08
-content_hash: ce10004acdf7724f
+content_hash: 571be877b0a82c5f
 ---
 
 # CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding
@@ -223,10 +224,10 @@ The gap between 20 channels and full channels is only 0.37%, validating the feas
 ## Related Papers
 
 - [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](../../CVPR2026/medical_imaging/meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
 - [\[AAAI 2026\] MindCross: Fast New Subject Adaptation with Limited Data for Cross-subject Video Reconstruction from Brain Signals](mindcross_fast_new_subject_adaptation_with_limited_data_for_cross-subject_video_.md)
+- [\[CVPR 2026\] Duala: Dual-Level Alignment of Subjects and Stimuli for Cross-Subject fMRI Decoding](../../CVPR2026/medical_imaging/duala_dual-level_alignment_of_subjects_and_stimuli_for_cross-subject_fmri_decodi.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
+- [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
 
 </div>
 

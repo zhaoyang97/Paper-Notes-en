@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Probabilistic Reasoning with LLMs for K-Anonymity Estimation
 description: >-
-  [NeurIPS 2025][LLM Safety][privacy risk estimation] This paper proposes Branch, a framework that leverages large language models to model personal information disclosed in user-generated text as a joint probability distr…
+  [NeurIPS 2025][LLM Safety][privacy risk estimation] This paper proposes Branch, a framework that leverages large language models to model personal information disclosed in user-generated text as a joint probability distribution over a Bayesian network. By estimating conditional probabilities for individual attributes and composing them to compute k-anonymity values (i.e., the number of individuals globally matching a given profile), Branch achieves 73% accuracy on privacy ris…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "probabilistic reasoning"
   - "large language models"
 date: 2026-05-08
-content_hash: d589263730547ba6
+content_hash: fe58935ecefb8771
 ---
 
 # Probabilistic Reasoning with LLMs for K-Anonymity Estimation
@@ -131,8 +131,8 @@ Branch (Bayesian network Reasoning for k-ANonymity using Conditional Hierarchies
 - [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 - [\[ACL 2026\] ADVICE: Answer-Dependent Verbalized Confidence Estimation](../../ACL2026/llm_safety/advice_answer-dependent_verbalized_confidence_estimation.md)
 - [\[NeurIPS 2025\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
-- [\[NeurIPS 2025\] Evaluation of Vision-LLMs in Surveillance Video](evaluation_of_vision-llms_in_surveillance_video.md)
 - [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
+- [\[NeurIPS 2025\] LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory](llm_strategic_reasoning_agentic_study_through_behavioral_gam.md)
 
 </div>
 

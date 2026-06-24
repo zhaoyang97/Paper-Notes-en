@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Enhancing Spatial Understanding in Image Generation via Reward Modeling
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Ours constructs the 80K adversarial preference dataset SpatialReward-Dataset and trains a specialized reward model, SpatialScore (whose accuracy exceeds GPT-5), to evaluate spatial relationship precision. This model serves as the reward signal for online RL using GRPO with a top-k filtering strategy, significantly enha
+  [CVPR 2026][Image Generation][Spatial Understanding] Ours constructs the 80K adversarial preference dataset SpatialReward-Dataset and trains a specialized reward model, SpatialScore (whose accuracy exceeds GPT-5), to evaluate spatial relationship precision. This model serves as the reward signal for online RL using GRPO with a top-k filtering strategy, significantly enhancing the spatial generation capabilities of FLUX.1-dev.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
-  - Diffusion Model
-  - FLUX
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Spatial Understanding"
+  - "Reward Modeling"
+  - "GRPO"
+  - "Diffusion Models"
+  - "FLUX"
 date: 2026-05-08
-content_hash: 33a1796054dde945
+content_hash: 037a8a244048824d
 ---
+
 # Enhancing Spatial Understanding in Image Generation via Reward Modeling
 
 **Conference**: CVPR 2026  
@@ -170,9 +173,9 @@ The 7B-parameter SpatialScore outperforms GPT-5 and Gemini-2.5 Pro in spatial un
 
 - [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
-- [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
+- [\[CVPR 2026\] UniGen-1.5: Enhancing Image Generation and Editing through Reward Unification in RL](unigen-15_enhancing_image_generation_and_editing_through_reward_unification_in_r.md)
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] Unified Customized Generation by Disentangled Reward Modeling](unified_customized_generation_by_disentangled_reward_modeling.md)
+- [\[CVPR 2026\] Style-GRPO: Semantic-Aware Preference Optimization for Image Style Transfer Guided by Reward Modeling](style-grpo_semantic-aware_preference_optimization_for_image_style_transfer_guide.md)
 
 </div>
 

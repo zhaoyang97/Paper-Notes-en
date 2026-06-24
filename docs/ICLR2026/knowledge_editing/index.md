@@ -53,7 +53,7 @@ item_total: 15
 
 **🔬 ICLR2026** · **15** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [💬 ACL2026 (10)](../../ACL2026/knowledge_editing/index.md) · [🧪 ICML2026 (8)](../../ICML2026/knowledge_editing/index.md) · [🤖 AAAI2026 (4)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [💬 ACL2026 (10)](../../ACL2026/knowledge_editing/index.md) · [🧪 ICML2026 (8)](../../ICML2026/knowledge_editing/index.md) · [🤖 AAAI2026 (4)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md) · [🧪 ICML2025 (2)](../../ICML2025/knowledge_editing/index.md)
 
 **[ACE: Attribution-Controlled Knowledge Editing for Multi-hop Factual Recall](ace_attribution-controlled_knowledge_editing_for_multi-hop_factual_recall.md)**
 

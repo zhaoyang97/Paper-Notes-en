@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering
 description: >-
-  [ICLR 2026][Medical NLP][LLM-as-Judge] The authors collaborated with 100 licensed mental health professionals to construct CounselBench, a dual-component benchmark for **open-ended mental health QA**. It includes 2,000 expert evaluations with dimension-level scoring and span annotations (CounselBench-Eval), and 120 clinician-authored adversarial prompts des
+  [ICLR2026][Medical LLM][Mental Health QA] The authors collaborated with 100 licensed mental health professionals to construct CounselBench, a dual-component benchmark for **open-ended mental health QA**. It includes 2,000 expert evaluations with dimension-level scoring and span annotations (CounselBench-Eval), and 120 clinician-authored adversarial prompts designed to induce specific failure modes (CounselBench-Adv). The study reveals that LLMs currently exhibit "high scores…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - LLM-as-Judge
+  - "ICLR2026"
+  - "Medical LLM"
+  - "Mental Health QA"
+  - "Expert Evaluation"
+  - "Adversarial Benchmarking"
+  - "LLM-as-Judge"
+  - "Open-ended Generation"
 date: 2026-05-08
-content_hash: 5587663d862c430c
+content_hash: bb600dba0e69768c
 ---
+
 # CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering
 
 **Conference**: ICLR2026  
@@ -107,16 +112,16 @@ Adversarial prompts successfully induced failures: GPT-5 reached a 0.85 rate for
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
 - [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
 - [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
-- [\[ICLR 2026\] Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](../../ACL2026/medical_nlp/mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
+- [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](../../ACL2026/medical_nlp/mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 
 </div>
 

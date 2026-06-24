@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Egocentric video understanding] This paper proposes Exo2Ego, a framework that learns a mapping between the exocentric (third-person) and egocentric (first-person) domains to transfer rich exoc…
+  [AAAI 2026][Multimodal VLM][Egocentric video understanding] This paper proposes Exo2Ego, a framework that learns a mapping between the exocentric (third-person) and egocentric (first-person) domains to transfer rich exocentric knowledge encoded in MLLMs to egocentric video understanding. Combined with a newly constructed dataset of 1.1M synchronized ego-exo clip-text pairs (Ego-ExoClip) and 600K instruction-tuning samples (EgoIT), Exo2Ego achieves state-of-the-art open-source…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "cross-view mapping learning"
   - "ego-exo alignment"
 date: 2026-05-08
-content_hash: 8cb9da7f2539ad42
+content_hash: e4c2a18211297d22
 ---
 
 # Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding
@@ -213,9 +213,9 @@ Compared to methods that directly retrieve exocentric videos (e.g., ego-exo retr
 
 - [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](../../NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
 - [\[AAAI 2026\] UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment](unifit_towards_universal_virtual_try-on_with_mllm-guided_semantic_alignment.md)
-- [\[AAAI 2026\] VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction](vir-bench_evaluating_geospatial_and_temporal_understanding_of_mllms_via_travel_v.md)
+- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
 - [\[AAAI 2026\] anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding](anyecg-chat_a_generalist_ecg-mllm_for_flexible_ecg_input_and.md)
-- [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[AAAI 2026\] VIR-Bench: Evaluating Geospatial and Temporal Understanding of MLLMs via Travel Video Itinerary Reconstruction](vir-bench_evaluating_geospatial_and_temporal_understanding_of_mllms_via_travel_v.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Bias In, Bias Out? Finding Unbiased Subnetworks in Vanilla Models
 description: >-
-  [CVPR 2026][Others][Paper Note] BISE proposes that a biased model trained normally (vanilla) on biased data actually **already contains a relatively unbiased subnetwork**. By freezing the original parameters and learning a set of structured pruning masks, combined with "reweighted cross-entropy + biased mutual information regularization" to prune neu
+  [CVPR 2026][Algorithmic Bias] BISE proposes that a biased model trained normally (vanilla) on biased data actually **already contains a relatively unbiased subnetwork**. By freezing the original parameters and learning a set of structured pruning masks, combined with "reweighted cross-entropy + biased mutual information regularization" to prune neurons relying on shortcut features, this subnetwork can be extracted without retraining or additional unbiased datasets. Performanc…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Algorithmic Bias"
+  - "Subnetwork Extraction"
+  - "Structured Pruning"
+  - "Mutual Information Regularization"
+  - "Fairness"
 date: 2026-05-08
-content_hash: c3a8041e96120eb1
+content_hash: f01019c83cc413ec
 ---
+
 # Bias In, Bias Out? Finding Unbiased Subnetworks in Vanilla Models
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ On BiasedMNIST (ρ=0.99), decomposing components of $J$:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
-- [\[CVPR 2026\] Rank-Guided Pseudo-Bias Learning for Robust Black-Box Adaptation](rank-guided_pseudo-bias_learning_for_robust_black-box_adaptation.md)
 - [\[ACL 2025\] Causal Estimation of Tokenisation Bias](../../ACL2025/others/causal_tokenisation_bias.md)
 - [\[ECCV 2024\] Rethinking Data Bias: Dataset Copyright Protection via Embedding Class-Wise Hidden Bias](../../ECCV2024/others/rethinking_data_bias_dataset_copyright_protection_via_embedding_class-wise_hidde.md)
 - [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](../../ICML2026/others/disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
+- [\[ICML 2025\] NeuronTune: Towards Self-Guided Spurious Bias Mitigation](../../ICML2025/others/neurontune_towards_self-guided_spurious_bias_mitigation.md)
+- [\[NeurIPS 2025\] The Persistence of Neural Collapse Despite Low-Rank Bias](../../NeurIPS2025/others/the_persistence_of_neural_collapse_despite_low-rank_bias.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] This paper provides the first systematic study of "Incomplete Learning Phenomenon" (ILP) in SFT—where models fail to correctly reproduce part of the training data despite convergence. It identifies five recurring causes (Knowledge Absence, Knowledge Conflict, Internal Data Contradiction, Left-side Forgetting, Insuffici
+  [ACL 2026][LLM Alignment][Incomplete Learning] This paper provides the first systematic study of "Incomplete Learning Phenomenon" (ILP) in SFT—where models fail to correctly reproduce part of the training data despite convergence. It identifies five recurring causes (Knowledge Absence, Knowledge Conflict, Internal Data Contradiction, Left-side Forgetting, Insufficient Optimization) and proposes a diagnostic framework along with targeted mitigation strategies.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Incomplete Learning"
+  - "SFT Diagnosis"
+  - "Knowledge Conflict"
+  - "Forgetting"
+  - "Fine-tuning failure modes"
 date: 2026-05-08
-content_hash: 8fa3ed9137b11ca9
+content_hash: e28b9a77a8d9220e
 ---
+
 # Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models
 
 **Conference**: ACL 2026  
@@ -138,9 +144,9 @@ Standard SFT cross-entropy loss is used throughout, evaluated across Qwen, LLaMA
 ## Related Papers
 
 - [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
+- [\[ICLR 2026\] Anchored Supervised Fine-Tuning](../../ICLR2026/llm_alignment/anchored_supervised_fine-tuning.md)
 - [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](../../ICLR2026/llm_alignment/safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
-- [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
-- [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](../../ICLR2026/llm_alignment/when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 - [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
 
 </div>

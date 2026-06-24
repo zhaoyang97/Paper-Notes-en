@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes MINTO, which modifies the TD bootstrapping target from "using only the target network" to "taking the minimum of the estimates from the target and online networks." By leveraging fresh online estimates to accelerate learning while suppressing overestimation bias via the min operator, MINTO can be in
+  [ICLR 2026][Reinforcement Learning][Target Networks] This paper proposes MINTO, which modifies the TD bootstrapping target from "using only the target network" to "taking the minimum of the estimates from the target and online networks." By leveraging fresh online estimates to accelerate learning while suppressing overestimation bias via the min operator, MINTO can be integrated into algorithms like DQN, IQN, CQL, and SAC with nearly zero cost…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Target Networks"
+  - "Online Networks"
+  - "Overestimation Bias"
+  - "Bellman Update"
+  - "Bootstrapping Target"
 date: 2026-05-08
-content_hash: 2f4df691c4c19b75
+content_hash: ebd9ca29aa05c28b
 ---
+
 # Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning
 
 **Conference**: ICLR 2026  

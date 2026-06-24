@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks
 description: >-
-  [ACL 2026][Medical NLP][Med-LVLM] HeteroRAG constructs the MedAtlas knowledge base with 2.7 million image-text pairs and five types of corpora. It decomposes medical multimodal RAG into three components—ModCLIPs trained by modality to retrieve reports, MQG generating customized queries per corpus to retrieve documents, and HKPT preference fine-tuning t
+  [ACL 2026 Findings][Medical LLM][Heterogeneous RAG] HeteroRAG constructs the MedAtlas knowledge base with 2.7 million image-text pairs and five types of corpora. It decomposes medical multimodal RAG into three components—ModCLIPs trained by modality to retrieve reports, MQG generating customized queries per corpus to retrieve documents, and HKPT preference fine-tuning to align cross-modality and multi-source knowledge—enabling a 7B model to consistently outperform open-source…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Med-LVLM
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Heterogeneous RAG"
+  - "Modality-Specific CLIP"
+  - "Multi-Corpora Query Generation"
+  - "Preference Fine-tuning"
+  - "Med-LVLM"
 date: 2026-05-08
-content_hash: 886149d7213761d6
+content_hash: 6137cf5253724332
 ---
+
 # HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks
 
 **Conference**: ACL 2026 Findings  

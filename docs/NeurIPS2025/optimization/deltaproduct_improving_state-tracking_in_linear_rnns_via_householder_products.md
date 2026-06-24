@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products
 description: >-
-  [NeurIPS 2025][Optimization][Linear RNN] This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient descent to $n_h$-step gradient descent per token…
+  [NeurIPS 2025][Optimization][Linear RNN] This paper proposes DeltaProduct, which extends DeltaNet's single-step gradient descent to $n_h$-step gradient descent per token, yielding a state transition matrix expressed as a product of $n_h$ generalized Householder transformations. This achieves a tunable trade-off between expressivity and efficiency, significantly improving state-tracking capability and length extrapolation performance.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "DeltaNet"
   - "Length Extrapolation"
 date: 2026-05-08
-content_hash: afcafe0d85fc9134
+content_hash: c7864cfcb48e9194
 ---
 
 # DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products
@@ -157,11 +157,11 @@ Theoretically rigorous (characterizing state-tracking capability under finite pr
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
 - [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
+- [\[NeurIPS 2025\] Improving the Straight-Through Estimator with Zeroth-Order Information](improving_the_straight-through_estimator_with_zeroth-order_information.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
-- [\[NeurIPS 2025\] Exact and Linear Convergence for Federated Learning under Arbitrary Client Participation is Attainable](exact_and_linear_convergence_for_federated_learning_under_arbitrary_client_parti.md)
-- [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](../../CVPR2026/optimization/dc-merge_improving_model_merging_with_directional_consistency.md)
+- [\[ICML 2025\] REVOLVE: Optimizing AI Systems by Tracking Response Evolution in Textual Optimization](../../ICML2025/optimization/revolve_optimizing_ai_systems_by_tracking_response_evolution_in_textual_optimiza.md)
+- [\[NeurIPS 2025\] From Linear to Nonlinear: Provable Weak-to-Strong Generalization through Feature Learning](from_linear_to_nonlinear_provable_weak-to-strong_generalization_through_feature_.md)
 
 </div>
 

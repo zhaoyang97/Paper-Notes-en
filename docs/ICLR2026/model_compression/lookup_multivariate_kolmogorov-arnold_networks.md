@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Lookup multivariate Kolmogorov-Arnold Networks
 description: >-
-  [ICLR 2026][Model Compression][Kolmogorov-Arnold Networks] By replacing the 1D trainable functions in KAN with 2D counterparts and utilizing B-spline look-up tables for $O(1)$ evaluation, the proposed lmKAN module can directly replace linear layers—reducing inference FLOPs by 1.6–78× at equivalent precision and achieving an order-of-magnitude speedup on H100 GPUs via optimized
+  [ICLR 2026][Model Compression][Kolmogorov-Arnold Networks] By replacing the 1D trainable functions in KAN with 2D counterparts and utilizing B-spline look-up tables for $O(1)$ evaluation, the proposed lmKAN module can directly replace linear layers—reducing inference FLOPs by 1.6–78× at equivalent precision and achieving an order-of-magnitude speedup on H100 GPUs via optimized CUDA kernels.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Kolmogorov-Arnold Networks
-  - CUDA kernel
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Kolmogorov-Arnold Networks"
+  - "Spline Look-up Tables"
+  - "Efficient Inference"
+  - "Linear Layer Replacement"
+  - "CUDA kernel"
 date: 2026-05-08
-content_hash: 84d162e6202a8c67
+content_hash: a58ccf1fabd04e5a
 ---
+
 # Lookup multivariate Kolmogorov-Arnold Networks
 
 **Conference**: ICLR 2026  

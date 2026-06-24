@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Agentic RL] Addressing the failure mode where "Action Selection (AS)" and "Belief Tracking (BT)" hinder each other in multi-turn active reasoning for LLM agents—causing outcome-only RL to fall into Low Information Self-Locking (SeL)—this paper provides a coupled gradient analysis and formal definition of the "self-locking region"
+  [ICML 2026][LLM Agent][Active Reasoning] Addressing the failure mode where "Action Selection (AS)" and "Belief Tracking (BT)" hinder each other in multi-turn active reasoning for LLM agents—causing outcome-only RL to fall into Low Information Self-Locking (SeL)—this paper provides a coupled gradient analysis and formal definition of the "self-locking region" from a POMDP perspective. It proposes AReW: using directional critiques (obtainable from environments or readout layers…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Agentic RL
-  - advantage reweighting
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Active Reasoning"
+  - "Agentic RL"
+  - "Credit Assignment"
+  - "Self-Locking Failure"
+  - "Advantage Reweighting"
 date: 2026-05-08
-content_hash: dd4c31055c849812
+content_hash: df7925bed16a2425
 ---
+
 # On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents
 
 **Conference**: ICML 2026  
@@ -127,14 +131,17 @@ This matches the $2\,\mathrm{Acc} - 1$ scaling in Proposition 4.1: performance o
 
 <div class="related-papers" markdown="1">
 
-1. **Active Retrieval Augmented Generation** (2024), arXiv ID: 2401.xxxxx
-2. **Let's Verify Step by Step** (2023), arXiv ID: 2305.20050
-3. **Training Language Models to Follow Instructions with Human Feedback** (2022), NeurIPS
+## Related Papers
+
+- [\[ICLR 2026\] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICLR2026/llm_agent/reducing_belief_deviation_in_reinforcement_learning_for_active_reasoning.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](self-evolving_llm_agents_with_in-distribution_optimization.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](../../ICLR2026/llm_agent/alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
+- [\[ICML 2026\] Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning](closing_the_feedback_loop_from_experience_extraction_to_insight_governance_in_ve.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICLR2026/llm_agent/reducing_belief_deviation_in_reinforcement_learning_for_active_reasoning.md)

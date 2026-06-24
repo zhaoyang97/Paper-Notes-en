@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][high-contrast imaging] This work introduces POLARIS, the first ML benchmark dataset for exoplanetary polarimetric imaging (921 VLT/SPHERE/IRDIS polarimetric images + 75…
+  [NeurIPS 2025][Physics & Scientific Computing][high-contrast imaging] This work introduces POLARIS, the first ML benchmark dataset for exoplanetary polarimetric imaging (921 VLT/SPHERE/IRDIS polarimetric images + 75,910 preprocessed exposures), and proposes the Diff-SimCLR framework (diffusion-augmented contrastive learning), achieving 93% accuracy on the reference-star vs. target-star classification task with fewer than 10% manual annotations.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -13,7 +13,7 @@ tags:
   - "diffusion models"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: c48c37de3d26ce13
+content_hash: 16e146ddfb45184e
 ---
 
 # POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning
@@ -127,9 +127,9 @@ Raw VLT/SPHERE polarimetric observations → IRDAP unified preprocessing → 921
 
 - [\[NeurIPS 2025\] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer](latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme.md)
 - [\[NeurIPS 2025\] FAIR Universe HiggsML Uncertainty Dataset and Competition](fair_universe_higgsml_uncertainty_dataset_and_competition.md)
+- [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](../../ICLR2026/physics/disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
+- [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](../../ICLR2026/physics/self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
 - [\[ICML 2026\] From Generalist to Specialist Representation](../../ICML2026/physics/from_generalist_to_specialist_representation.md)
-- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
-- [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
 
 </div>
 

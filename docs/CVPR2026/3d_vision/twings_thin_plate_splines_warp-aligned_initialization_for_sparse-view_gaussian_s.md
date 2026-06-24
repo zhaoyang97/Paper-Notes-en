@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TWINGS: Thin Plate Splines Warp-aligned Initialization for Sparse-View Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] TWINGS utilizes Thin Plate Splines (TPS) to non-rigidly align dense point clouds back-projected from monocular depth to sparse 3D control points obtained via multi-view triangulation. Dense and geometrically accurate initial point clouds are then sampled near these control points and provided as a plug-and-play module
+  [CVPR 2026][3D Vision][Sparse-view] TWINGS utilizes Thin Plate Splines (TPS) to non-rigidly align dense point clouds back-projected from monocular depth to sparse 3D control points obtained via multi-view triangulation. Dense and geometrically accurate initial point clouds are then sampled near these control points and provided as a plug-and-play module for 3DGS. This significantly outperforms existing methods in Extremely Sparse-view scenarios on DTU / LLFF / Mip-NeRF360 (e.…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse-view"
+  - "3D Gaussian Splatting"
+  - "Thin Plate Splines (TPS)"
+  - "Point cloud initialization"
+  - "Non-rigid registration"
 date: 2026-05-08
-content_hash: 947d8d0e157c7691
+content_hash: 5c005b61c4a2628e
 ---
+
 # TWINGS: Thin Plate Splines Warp-aligned Initialization for Sparse-View Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -152,9 +158,9 @@ Plug-and-play Gain (TWINGS-Init, DTU 3-view):
 
 - [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
 - [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] SV-GS: Sparse View 4D Reconstruction with Skeleton-Driven Gaussian Splatting](sv-gs_sparse_view_4d_reconstruction_with_skeleton-driven_gaussian_splatting.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
 - [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
+- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
 
 </div>
 

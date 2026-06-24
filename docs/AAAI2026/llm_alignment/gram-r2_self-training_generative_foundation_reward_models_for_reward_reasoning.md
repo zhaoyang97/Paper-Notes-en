@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning
 description: >-
-  [AAAI 2026][LLM Alignment][Reward modeling] This paper proposes GRAM-R², a generative foundation reward model that elicits reward reasoning capabilities on unlabeled data via self-training. The model simultaneously produ…
+  [AAAI 2026][LLM Alignment][Reward modeling] This paper proposes GRAM-R², a generative foundation reward model that elicits reward reasoning capabilities on unlabeled data via self-training. The model simultaneously produces preference labels and reasoning rationales, consistently outperforming both discriminative and generative baselines across multiple downstream tasks including response ranking, task adaptation, and RLHF.
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "preference reasoning"
   - "RLHF"
 date: 2026-05-08
-content_hash: a08f030bd96d6fd3
+content_hash: 9d3885383b4c2dcb
 ---
 
 # GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning
@@ -137,10 +137,10 @@ Evaluation is conducted on three tasks: response ranking, task adaptation, and R
 ## Related Papers
 
 - [\[ACL 2026\] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training](../../ACL2026/llm_alignment/consistrm_improving_generative_reward_models_via_consistency-aware_self-training.md)
+- [\[ICLR 2026\] StoryAlign: Evaluating and Training Reward Models for Story Generation](../../ICLR2026/llm_alignment/storyalign_evaluating_and_training_reward_models_for_story_generation.md)
+- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](../../CVPR2026/llm_alignment/thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
 - [\[AAAI 2026\] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward](laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via.md)
-- [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](../../ICML2026/llm_alignment/mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
-- [\[AAAI 2026\] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF](decorl_decoupling_reasoning_chains_via_parallel_sub-step_gen.md)
-- [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](../../ICLR2026/llm_alignment/evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 
 </div>
 

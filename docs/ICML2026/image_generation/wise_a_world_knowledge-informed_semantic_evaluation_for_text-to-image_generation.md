@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation
 description: >-
-  [ICML 2026][Image Generation][WiScore] WISE constructs a text-to-image evaluation benchmark containing 1000 knowledge-dense prompts. It examines whether models can transform implicit semantics—such as cultural common sense, spatio-temporal reasoning, and natural science knowledge—into correct visual content. The study reveals significant shortcomings in wor
+  [ICML 2026][Image Generation][Text-to-image evaluation] WISE constructs a text-to-image evaluation benchmark containing 1000 knowledge-dense prompts. It examines whether models can transform implicit semantics—such as cultural common sense, spatio-temporal reasoning, and natural science knowledge—into correct visual content. The study reveals significant shortcomings in world knowledge generation for existing T2I and unified multimodal models.
 tags:
-  - ICML 2026
-  - Image Generation
-  - WiScore
+  - "ICML 2026"
+  - "Image Generation"
+  - "Text-to-image evaluation"
+  - "World Knowledge"
+  - "Semantic Consistency"
+  - "WiScore"
+  - "Multimodal Generation"
 date: 2026-05-08
-content_hash: 3d78972d662a7177
+content_hash: 396932da18063cd6
 ---
+
 # WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation
 
 **Conference**: ICML 2026  
@@ -126,11 +131,11 @@ Prompt rewriting is the most critical analytical experiment: after rewriting imp
 
 ## Related Papers
 
-- [\[CVPR 2026\] Property-Informed Diffusion-Based Text-to-Microstructure Generation](../../CVPR2026/image_generation/property-informed_diffusion-based_text-to-microstructure_generation.md)
-- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](../../CVPR2026/image_generation/gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
-- [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
-- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](../../CVPR2026/image_generation/self-evaluation_unlocks_any-step_text-to-image_generation.md)
+- [\[ICLR 2026\] WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark](../../ICLR2026/image_generation/worldedit_towards_open-world_image_editing_with_a_knowledge-informed_benchmark.md)
+- [\[ICML 2026\] GenExam: A Multidisciplinary Text-to-Image Exam](genexam_a_multidisciplinary_text-to-image_exam.md)
 - [\[ICML 2026\] Semantic Granularity Navigation in Image Editing](semantic_granularity_navigation_in_image_editing.md)
+- [\[CVPR 2026\] Property-Informed Diffusion-Based Text-to-Microstructure Generation](../../CVPR2026/image_generation/property-informed_diffusion-based_text-to-microstructure_generation.md)
+- [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
 
 </div>
 

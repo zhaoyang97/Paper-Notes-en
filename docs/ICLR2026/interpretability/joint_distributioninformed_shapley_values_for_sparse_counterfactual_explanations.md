@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations
 description: >-
-  [ICLR 2026][Interpretability][Counterfactual Explanation] The COLA framework is proposed: it uses Optimal Transport (OT) to find a coupling matrix between factual and counterfactual sets, which then drives Shapley attribution (p-SHAP) to refine any off-the-shelf counterfactual explanations. This approach maintains the target flip effect while modifying only 26–45% of the orig
+  [ICLR 2026][Interpretability][Counterfactual Explanation] The COLA framework is proposed: it uses Optimal Transport (OT) to find a coupling matrix between factual and counterfactual sets, which then drives Shapley attribution (p-SHAP) to refine any off-the-shelf counterfactual explanations. This approach maintains the target flip effect while modifying only 26–45% of the original features.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Counterfactual Explanation
-  - Shapley Value
-  - Optimal Transport
-  - Sparsity
-  - Post-hoc XAI
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Counterfactual Explanation"
+  - "Shapley Value"
+  - "Optimal Transport"
+  - "Sparsity"
+  - "Post-hoc XAI"
 date: 2026-05-08
-content_hash: 5019e8c5ecd93931
+content_hash: c4002e2bd2529021
 ---
+
 # Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations
 
 **Conference**: ICLR 2026  
@@ -124,10 +125,10 @@ Key Observation: **Only CF-pOT (p-SHAP) consistently achieves a 100% counterfact
 ## Related Papers
 
 - [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](../../CVPR2026/interpretability/back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks](../../ICML2026/interpretability/verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 - [\[ICML 2025\] DeltaSHAP: Explaining Prediction Evolutions in Online Patient Monitoring with Shapley Values](../../ICML2025/interpretability/deltashap_explaining_prediction_evolutions_in_online_patient_monitoring_with_sha.md)
 - [\[ICLR 2026\] PolySHAP: Extending KernelSHAP with Interaction-Informed Polynomial Regression](polyshap_extending_kernelshap_with_interaction-informed_polynomial_regression.md)
 - [\[NeurIPS 2025\] SHAP Values via Sparse Fourier Representation](../../NeurIPS2025/interpretability/shap_values_via_sparse_fourier_representation.md)
-- [\[CVPR 2026\] MedLIME: A Distribution-Aligned and Evidence-Supported Framework for Medical Saliency Explanations](../../CVPR2026/interpretability/medlime_a_distribution-aligned_and_evidence-supported_framework_for_medical_sali.md)
 
 </div>
 

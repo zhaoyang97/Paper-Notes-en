@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Continual Learning of Domain-Invariant Representations
 description: >-
-  [ICML 2026][Others][continual learning] The authors explicitly inject "Domain-Invariant Representation Learning (DIRL)" into continual learning for the first time. Using the replay buffer as a carrier for multi-domain invariance computation and domain-conditioned alignment, they propose five methods—⋆-CL-{VREX, Fishr, CORAL, MMD, ANDMask}—pushing target doma
+  [ICML 2026][continual learning] The authors explicitly inject "Domain-Invariant Representation Learning (DIRL)" into continual learning for the first time. Using the replay buffer as a carrier for multi-domain invariance computation and domain-conditioned alignment, they propose five methods—⋆-CL-{VREX, Fishr, CORAL, MMD, ANDMask}—pushing target domain accuracy to SOTA across six vision, medical, manufacturing, and ecology datasets.
 tags:
-  - ICML 2026
-  - Others
-  - continual learning
-  - domain-invariant representation
-  - replay buffer
-  - VREX
-  - Fishr / CORAL / MMD / ANDMask
+  - "ICML 2026"
+  - "continual learning"
+  - "domain-invariant representation"
+  - "replay buffer"
+  - "VREX"
+  - "Fishr / CORAL / MMD / ANDMask"
 date: 2026-05-08
-content_hash: 044c6c305999e365
+content_hash: fa7481fdb29a1d84
 ---
+
 # Continual Learning of Domain-Invariant Representations
 
 **Conference**: ICML 2026  
@@ -149,10 +149,10 @@ Overall average: ⋆-CL-CORAL 64.7 > ⋆-CL-VREX 63.4 > ⋆-CL-MMD 63.1 > ER-ACE
 ## Related Papers
 
 - [\[ICML 2026\] Learning Permutation-Invariant Macroscopic Dynamics](learning_permutation-invariant_macroscopic_dynamics.md)
+- [\[ICLR 2026\] Forget Forgetting: Continual Learning in a World of Abundant Memory](../../ICLR2026/others/forget_forgetting_continual_learning_in_a_world_of_abundant_memory.md)
+- [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](../../ICLR2026/others/hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
+- [\[ICLR 2026\] Learning Distributions over Permutations and Rankings with Factorized Representations](../../ICLR2026/others/learning_distributions_over_permutations_and_rankings_with_factorized_representa.md)
 - [\[CVPR 2025\] Sufficient Invariant Learning for Distribution Shift](../../CVPR2025/others/sufficient_invariant_learning_for_distribution_shift.md)
-- [\[AAAI 2026\] ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations](../../AAAI2026/others/parameta_towards_learning_disentangled_paralinguistic_speaking_styles_representa.md)
-- [\[ICML 2026\] Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations](rectified_lpjepa_joint-embedding_predictive_architectures_with_sparse_and_maximu.md)
-- [\[CVPR 2026\] Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation](../../CVPR2026/others/shoe_style-invariant_and_ground-aware_learning_for_dense_foot_contact_estimation.md)
 
 </div>
 

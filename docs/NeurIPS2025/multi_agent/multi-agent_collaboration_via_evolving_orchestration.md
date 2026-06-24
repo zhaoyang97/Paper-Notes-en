@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Agent Collaboration via Evolving Orchestration
 description: >-
-  [NeurIPS 2025][Multi-Agent][Multi-Agent Collaboration] This paper proposes a "Puppeteer" multi-agent collaboration paradigm in which a centralized orchestrator learns via RL to dynamically select which agent to activate…
+  [NeurIPS 2025][Multi-Agent][Multi-Agent Collaboration] This paper proposes a "Puppeteer" multi-agent collaboration paradigm in which a centralized orchestrator learns via RL to dynamically select which agent to activate at each reasoning step. The approach simultaneously improves performance and efficiency on both closed-domain and open-domain tasks, and reveals that evolved topologies tend toward more compact cyclic structures.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Topology Evolution"
   - "Collective Reasoning"
 date: 2026-05-08
-content_hash: d6ee76c67a4468b9
+content_hash: 0409df2ff1b1d325
 ---
 
 # Multi-Agent Collaboration via Evolving Orchestration
@@ -143,11 +143,11 @@ The system comprises a set of heterogeneous agents $\mathcal{A} = \{(m, r, t)\}$
 
 ## Related Papers
 
+- [\[ACL 2025\] Multi-Agent Collaboration via Cross-Team Orchestration](../../ACL2025/multi_agent/multi-agent_collaboration_via_cross-team_orchestration.md)
 - [\[NeurIPS 2025\] GauDP: Reinventing Multi-Agent Collaboration through Gaussian-Image Synergy in Diffusion Policies](gaudp_reinventing_multi-agent_collaboration_through_gaussian-image_synergy_in_di.md)
 - [\[NeurIPS 2025\] 3D-Agent: Tri-Modal Multi-Agent Collaboration for Scalable 3D Object Annotation](3d-agenttri-modal_multi-agent_collaboration_for_scalable_3d_object_annotation.md)
-- [\[NeurIPS 2025\] Thought Communication in Multiagent Collaboration](thought_communication_in_multiagent_collaboration.md)
-- [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
 - [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
+- [\[NeurIPS 2025\] Lessons Learned: A Multi-Agent Framework for Code LLMs to Learn and Improve](lessons_learned_a_multi-agent_framework_for_code_llms_to_learn_and_improve.md)
 
 </div>
 

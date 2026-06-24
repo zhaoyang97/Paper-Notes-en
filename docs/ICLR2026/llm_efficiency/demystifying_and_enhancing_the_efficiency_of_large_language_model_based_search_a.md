@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents
 description: >-
-  [ICLR 2026][LLM Efficiency][KV-cache] This paper systematically analyzes the inefficiency of LLM search agents (interleaved reasoning and retrieval). It reveals that retrieval accuracy does not monotonically improve end-to-end efficiency (low recall forces more retrieval rounds, while high recall has excessive overhead) and shows extreme sensitivity to ret
+  [ICLR2026][LLM Efficiency][Search Agents] This paper systematically analyzes the inefficiency of LLM search agents (interleaved reasoning and retrieval). It reveals that retrieval accuracy does not monotonically improve end-to-end efficiency (low recall forces more retrieval rounds, while high recall has excessive overhead) and shows extreme sensitivity to retrieval latency (FCFS scheduling and retrieval-induced pauses repeatedly evict KV-cache of long requests). The authors…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV-cache
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Search Agents"
+  - "Inference Systems"
+  - "KV-cache"
+  - "Approximate Nearest Neighbor (ANN) Search"
+  - "Priority Scheduling"
 date: 2026-05-08
-content_hash: 19939d119fec6672
+content_hash: 26d948f832c3e11e
 ---
+
 # Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents
 
 **Conference**: ICLR2026  
@@ -136,8 +141,8 @@ Generation quality remains consistent with exact retrieval (avg EM 0.430 across 
 - [\[ICLR 2026\] Unlocking Full Efficiency of Token Filtering in Large Language Model Training](unlocking_full_efficiency_of_token_filtering_in_large_language_model_training.md)
 - [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
 - [\[ICLR 2026\] Composer: A Search Framework for Hybrid Neural Architecture Design](composer_a_search_framework_for_hybrid_neural_architecture_design.md)
-- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](../../NeurIPS2025/llm_efficiency/jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
 - [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
+- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](../../NeurIPS2025/llm_efficiency/jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
 
 </div>
 

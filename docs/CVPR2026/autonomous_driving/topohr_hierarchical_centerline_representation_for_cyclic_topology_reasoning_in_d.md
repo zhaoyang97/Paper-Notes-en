@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations
 description: >-
-  [CVPR 2026][Autonomous Driving][OpenLane-V2] TopoHR transforms "centerline detection" and "topology reasoning" from a serial cascade into a **cyclic mutual enhancement** structure. By introducing a "point query + instance query" hierarchical centerline representation, it enables topology reasoning to utilize both fine-grained Point-to-Instance (P2I) and global In
+  [CVPR 2026][Autonomous Driving][Centerline detection] TopoHR transforms "centerline detection" and "topology reasoning" from a serial cascade into a **cyclic mutual enhancement** structure. By introducing a "point query + instance query" hierarchical centerline representation, it enables topology reasoning to utilize both fine-grained Point-to-Instance (P2I) and global Instance-to-Instance (I2I) relations. This achieves significant improvements on OpenLane-V2 metrics (subset_…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - OpenLane-V2
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Centerline detection"
+  - "Topology reasoning"
+  - "Point-to-instance relation"
+  - "Cyclic interaction"
+  - "OpenLane-V2"
 date: 2026-05-08
-content_hash: 9698bd827b180516
+content_hash: 58724664ea030ee8
 ---
+
 # TopoHR: Hierarchical Centerline Representation for Cyclic Topology Reasoning in Driving Scenes with Point-to-Instance Relations
 
 **Conference**: CVPR 2026  

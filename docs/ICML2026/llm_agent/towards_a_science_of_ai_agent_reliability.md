@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Towards a Science of AI Agent Reliability
 description: >-
-  [ICML 2026][LLM Agent][AI agent] Drawing on established practices from safety-critical engineering (aviation, nuclear power, and automotive), this paper decomposes AI agent "reliability" into 12 accuracy-independent metrics across four dimensions: consistency, robustness, predictability, and safety. Systematic evaluation of 15 frontier models on GAIA
+  [ICML2026][LLM Agent][AI agent] Drawing on established practices from safety-critical engineering (aviation, nuclear power, and automotive), this paper decomposes AI agent "reliability" into 12 accuracy-independent metrics across four dimensions: consistency, robustness, predictability, and safety. Systematic evaluation of 15 frontier models on GAIA and $\tau$-bench reveals an industry-wide trend: while accuracy has skyrocketed over the past 24 months…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - AI agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "AI agent"
+  - "reliability evaluation"
+  - "consistency"
+  - "robustness"
+  - "calibration"
+  - "safety-critical engineering"
 date: 2026-05-08
-content_hash: 9ee02927e82e9218
+content_hash: e3279a684fc139d7
 ---
+
 # Towards a Science of AI Agent Reliability
 
 **Conference**: ICML2026  
@@ -133,11 +139,11 @@ The aggregation of the 12 metrics is a deliberate design choice: the authors arg
 
 ## Related Papers
 
+- [\[ICLR 2026\] OpenApps: Simulating Environment Variations to Measure UI Agent Reliability](../../ICLR2026/llm_agent/openapps_simulating_environment_variations_to_measure_ui_agent_reliability.md)
 - [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_social_science_.md)
-- [\[ICLR 2026\] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](../../ICLR2026/llm_agent/judge_reliability_harness_stress_testing_the_reliability_of_llm_judges.md)
 - [\[ACL 2025\] REPRO-Bench: Can Agentic AI Systems Assess the Reproducibility of Social Science Research?](../../ACL2025/llm_agent/repro-bench_can_agentic_ai_systems_assess_the_reproducibility_of_research_claims.md)
-- [\[NeurIPS 2025\] It's LIT! Reliability-Optimized LLMs with Inspectable Tools](../../NeurIPS2025/llm_agent/its_lit_reliability-optimized_llms_with_inspectable_tools.md)
-- [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
+- [\[ICLR 2026\] Zephyrus: An Agentic Framework for Weather Science](../../ICLR2026/llm_agent/zephyrus_an_agentic_framework_for_weather_science.md)
+- [\[ICML 2026\] EvoClaw: Evaluating AI Agents on Continuous Software Evolution](evoclaw_evaluating_ai_agents_on_continuous_software_evolution.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks
 description: >-
-  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper theoretically proves and empirically validates that defending against suffix jailbreak attacks of length $\Theta(M)$ requires adversarial training on suffixes o…
+  [NeurIPS 2025][LLM Alignment][jailbreak defense] This paper theoretically proves and empirically validates that defending against suffix jailbreak attacks of length $\Theta(M)$ requires adversarial training on suffixes of only length $\Theta(\sqrt{M})$—i.e., "short adversarial training defends against long jailbreaks." Across five mainstream LLMs, adversarial training with 20-token suffixes reduces the attack success rate (ASR) of 120-token jailbreak attacks by at least 30%.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "ICL theory"
   - "safety alignment"
 date: 2026-05-08
-content_hash: ee2dbf5f186be6cc
+content_hash: 0e4c762f195439d3
 ---
 
 # Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks
@@ -60,9 +60,9 @@ The paper consists of two components: theoretical analysis and empirical validat
 
     - **Function**: Proves an upper bound on the generalization error of an adversarially trained LSA model when facing adversarial suffixes of length $M_{\text{test}}$.
     - **Core Result (Theorem 2)**: After adversarial training with suffix length $M_{\text{train}}$, under test-time attacks of length $M_{\text{test}}$:
-   $$\mathcal{R}^{\text{adv}}(\theta^*, M_{\text{test}}) \leq \mathcal{O}(d) + \mathcal{O}(d^2/N) + \mathcal{O}\left(\frac{N^2 \cdot M_{\text{test}}^2}{M_{\text{train}}^4}\right)$$
-   - **Key Insight**: The third term satisfies $M_{\text{test}}^2 / M_{\text{train}}^4 = (\sqrt{M_{\text{test}}} / M_{\text{train}})^4$. When $M_{\text{train}} = \Theta(\sqrt{M_{\text{test}}})$, this term becomes $\mathcal{O}(N^2)$, independent of $M_{\text{test}}$—demonstrating that square-root-length training suffices.
-   - **Design Motivation**: Overturns the intuition that equal-length training is necessary.
+    $\mathcal{R}^{\text{adv}}(\theta^*, M_{\text{test}}) \leq \mathcal{O}(d) + \mathcal{O}(d^2/N) + \mathcal{O}\left(\frac{N^2 \cdot M_{\text{test}}^2}{M_{\text{train}}^4}\right)$
+    - **Key Insight**: The third term satisfies $M_{\text{test}}^2 / M_{\text{train}}^4 = (\sqrt{M_{\text{test}}} / M_{\text{train}})^4$. When $M_{\text{train}} = \Theta(\sqrt{M_{\text{test}}})$, this term becomes $\mathcal{O}(N^2)$, independent of $M_{\text{test}}$—demonstrating that square-root-length training suffices.
+    - **Design Motivation**: Overturns the intuition that equal-length training is necessary.
 
 3. **Training Dynamics Analysis**:
 
@@ -136,10 +136,10 @@ The paper consists of two components: theoretical analysis and empirical validat
 ## Related Papers
 
 - [\[NeurIPS 2025\] GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs](gasp_efficient_black-box_generation_of_adversarial_suffixes_for_jailbreaking_llm.md)
+- [\[ACL 2025\] AGD: Adversarial Game Defense Against Jailbreak Attacks in Large Language Models](../../ACL2025/llm_alignment/agd_adversarial_game_defense_against_jailbreak_attacks_in_large_language_models.md)
 - [\[NeurIPS 2025\] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism](safeptr_token-level_jailbreak_defense_in_multimodal_llms_via_prune-then-restore_.md)
-- [\[NeurIPS 2025\] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs](attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms.md)
-- [\[ICML 2026\] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation](../../ICML2026/llm_alignment/steering_beyond_the_support_adversarial_training_on_unsupervised_jailbroken_acti.md)
-- [\[NeurIPS 2025\] MetaDefense: Defending Finetuning-based Jailbreak Attack Before and During Generation](metadefense_defending_finetuning-based_jailbreak_attack_before_and_during_genera.md)
+- [\[ICLR 2026\] Disentangling Length Bias in Preference Learning via Response-Conditioned Modeling](../../ICLR2026/llm_alignment/disentangling_length_bias_in_preference_learning_via_response-conditioned_modeli.md)
+- [\[ACL 2025\] JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs](../../ACL2025/llm_alignment/jailbreakradar_comprehensive_assessment_jailbreak_attacks.md)
 
 </div>
 

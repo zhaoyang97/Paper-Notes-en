@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Train-before-Test Harmonizes Language Model Rankings
 description: >-
-  [ICLR 2026][LLM Evaluation][Fine-tuning] The paper proposes **train-before-test**—a standardized protocol where every model undergoes uniform fine-tuning on a benchmark's training set before being evaluated on its test set. Demonstrated across 24 benchmarks and 61 models, this "potential-based" ranking is highly consistent across benchmarks (average Kendall's
+  [ICLR 2026][LLM Evaluation][Model Evaluation] The paper proposes **train-before-test**—a standardized protocol where every model undergoes uniform fine-tuning on a benchmark's training set before being evaluated on its test set. Demonstrated across 24 benchmarks and 61 models, this "potential-based" ranking is highly consistent across benchmarks (average Kendall's $\tau$ increased from 0.52 to 0.76). It restores the link between perplexity and downstream performance and revea…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Fine-tuning
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Model Evaluation"
+  - "Ranking Consistency"
+  - "Fine-tuning"
+  - "External Validity"
+  - "Perplexity"
 date: 2026-05-08
-content_hash: 053b824eb69b0d94
+content_hash: 697f4d70b1c95442
 ---
+
 # Train-before-Test Harmonizes Language Model Rankings
 
 **Conference**: ICLR 2026  

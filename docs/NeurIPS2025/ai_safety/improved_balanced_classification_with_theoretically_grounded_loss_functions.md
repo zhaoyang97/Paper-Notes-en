@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improved Balanced Classification with Theoretically Grounded Loss Functions
 description: >-
-  [NeurIPS 2025][AI Safety][Balanced classification loss] Two theory-driven surrogate loss families are proposed—Generalized Logit-Adjusted (GLA) loss and Generalized Class-Aware weighted (GCA) loss—providing stronger theo…
+  [NeurIPS 2025][AI Safety][Balanced classification loss] Two theory-driven surrogate loss families are proposed—Generalized Logit-Adjusted (GLA) loss and Generalized Class-Aware weighted (GCA) loss—providing stronger theoretical guarantees and improved empirical performance for multi-class classification under class imbalance.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "logit adjustment"
   - "class-aware weighting"
 date: 2026-05-08
-content_hash: 19c6278822ac00a3
+content_hash: b80af3692dd8d9f1
 ---
 
 # Improved Balanced Classification with Theoretically Grounded Loss Functions
@@ -197,7 +197,7 @@ Key observation: GLA tends to perform marginally better on common benchmarks, wh
 - [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
 - [\[NeurIPS 2025\] Robust Graph Condensation via Classification Complexity Mitigation](robust_graph_condensation_via_classification_complexity_mitigation.md)
-- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](../../ICML2026/ai_safety/fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
+- [\[ICML 2025\] Theoretically Unmasking Inference Attacks Against LDP-Protected Clients in Federated Vision Models](../../ICML2025/ai_safety/theoretically_unmasking_inference_attacks_against_ldp-protected_clients_in_feder.md)
 
 </div>
 

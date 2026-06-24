@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion
 description: >-
-  [AAAI 2026][Map Matching] This paper proposes DiffMM, the first approach to introduce diffusion models into map matching. By combining a road-segment-aware trajectory encoder with a one-step Shortcut diffusion process…
+  [AAAI 2026][Map Matching] This paper proposes DiffMM, the first approach to introduce diffusion models into map matching. By combining a road-segment-aware trajectory encoder with a one-step Shortcut diffusion process, DiffMM achieves simultaneous improvements in accuracy and efficiency on sparse trajectories and complex road networks, with inference speed approximately 17× faster than the second-best method.
 tags:
   - "AAAI 2026"
   - "Map Matching"
@@ -11,7 +11,7 @@ tags:
   - "Shortcut Model"
   - "Segment-Aware Encoder"
 date: 2026-05-08
-content_hash: 7eb0b17d997583c6
+content_hash: 1e7b4e4bda9406e9
 ---
 
 # DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion
@@ -240,11 +240,11 @@ Even with only 16K training samples, DiffMM surpasses all baselines.
 
 ## Related Papers
 
-- [\[AAAI 2026\] Cost-Free Neutrality for the River Method](cost-free_neutrality_for_the_river_method.md)
 - [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
+- [\[AAAI 2026\] Cost-Free Neutrality for the River Method](cost-free_neutrality_for_the_river_method.md)
 - [\[ICCV 2025\] EDFFDNet: Towards Accurate and Efficient Unsupervised Multi-Grid Image Registration](../../ICCV2025/others/edffdnet_towards_accurate_and_efficient_unsupervised_multi-grid_image_registrati.md)
-- [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](provably_data-driven_projection_method_for_quadratic_programming.md)
 - [\[AAAI 2026\] Neural Graph Navigation for Intelligent Subgraph Matching](neural_graph_navigation_for_intelligent_subgraph_matching.md)
+- [\[ACL 2025\] MapQaTor: An Extensible Framework for Efficient Annotation of Map-Based QA Datasets](../../ACL2025/others/mapqator_an_extensible_framework_for_efficient_annotation_of_map-based_qa_datase.md)
 
 </div>
 

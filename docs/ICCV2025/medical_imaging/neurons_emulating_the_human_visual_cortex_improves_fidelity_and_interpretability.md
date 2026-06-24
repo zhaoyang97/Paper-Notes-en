@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction
 description: >-
-  [ICCV 2025][Medical Imaging][fMRI-to-Video] This paper proposes NEURONS, a framework inspired by the hierarchical structure of the human visual cortex that decouples fMRI-to-video reconstruction into four sub-tasks (key…
+  [ICCV 2025][Medical Imaging][fMRI-to-Video] This paper proposes NEURONS, a framework inspired by the hierarchical structure of the human visual cortex that decouples fMRI-to-video reconstruction into four sub-tasks (key object segmentation, concept recognition, scene description, and blurry video reconstruction), emulating the functional specialization of cortical regions V1/V2/V4/ITC. NEURONS substantially outperforms state-of-the-art methods in video consistency (+26.6%) an…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "Neuroscience"
 date: 2026-05-08
-content_hash: cd196783ccd4527b
+content_hash: b2ffb43a9dfe5f24
 ---
 
 # NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction
@@ -190,10 +190,10 @@ where $w_1$–$w_4$ vary in a staggered sinusoidal schedule (range [1, 10]), ens
 ## Related Papers
 
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/medical_imaging/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
+- [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](../../CVPR2026/medical_imaging/bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
 - [\[ICCV 2025\] Beyond Brain Decoding: Visual-Semantic Reconstructions to Mental Creation Extension Based on fMRI](beyond_brain_decoding_visualsemantic_reconstructions_to_ment.md)
 - [\[ICLR 2026\] LaVCa: LLM-assisted Visual Cortex Captioning](../../ICLR2026/medical_imaging/lavca_llm-assisted_visual_cortex_captioning.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](../../NeurIPS2025/medical_imaging/synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
 
 </div>
 

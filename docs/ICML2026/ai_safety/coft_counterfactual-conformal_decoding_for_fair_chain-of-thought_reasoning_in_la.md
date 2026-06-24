@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models
 description: >-
-  [ICML 2026][AI Safety][Paper Note] COFT implements a training-free and gradient-free approach for step-by-step token-level counterfactual fairness on frozen LLMs. By constructing counterfactual masked branches during decoding, performing logit fusion, and applying dual-branch split conformal prediction to filter tokens, it reduces bias metrics by 30–55%
+  [ICML 2026][AI Safety][Counterfactual fairness] COFT implements a training-free and gradient-free approach for step-by-step token-level counterfactual fairness on frozen LLMs. By constructing counterfactual masked branches during decoding, performing logit fusion, and applying dual-branch split conformal prediction to filter tokens, it reduces bias metrics by 30–55% (median 38%) with negligible impact on task performance.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Counterfactual fairness"
+  - "conformal prediction"
+  - "chain-of-thought debiasing"
+  - "decoding-time intervention"
+  - "training-free debiasing"
 date: 2026-05-08
-content_hash: 937be549d8ef7360
+content_hash: 442c1d7585838604
 ---
+
 # COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models
 
 **Conference**: ICML 2026  
@@ -129,10 +135,10 @@ Fusion alone is insufficient as it reduces bias without guaranteeing token stabi
 ## Related Papers
 
 - [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
+- [\[ICLR 2026\] Fair Conformal Classification via Learning Representation-Based Groups](../../ICLR2026/ai_safety/fair_conformal_classification_via_learning_representation-based_groups.md)
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
 - [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
-- [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
-- [\[ICML 2026\] The Unlearnability Phenomenon in RLVR for Language Models](the_unlearnability_phenomenon_in_rlvr_for_language_models.md)
+- [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
 
 </div>
 

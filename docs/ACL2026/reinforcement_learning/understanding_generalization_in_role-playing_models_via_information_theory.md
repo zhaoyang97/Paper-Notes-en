@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Understanding Generalization in Role-Playing Models via Information Theory
 description: >-
-  [ACL 2026][Reinforcement Learning][Generalizability] This paper proposes the first information-theoretic framework, R-EMID, to quantify the performance degradation of Role-Playing Models (RPMs) under distribution shifts of users, roles, and dialogues. By introducing intermediate reasoning processes and Co-evolutionary Reinforcement Learning (CoRL) for accurate estimation
+  [ACL 2026 Findings][Reinforcement Learning][Role-playing models] This paper proposes the first information-theoretic framework, R-EMID, to quantify the performance degradation of Role-Playing Models (RPMs) under distribution shifts of users, roles, and dialogues. By introducing intermediate reasoning processes and Co-evolutionary Reinforcement Learning (CoRL) for accurate estimation, it identifies user shift as the primary generalization risk and finds that reinforcement lear…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Generalizability
+  - "ACL 2026 Findings"
+  - "Reinforcement Learning"
+  - "Role-playing models"
+  - "generalization"
+  - "information theory"
+  - "distribution shift"
 date: 2026-05-08
-content_hash: a6a73a07915fc558
+content_hash: 2e303208aae72f5b
 ---
+
 # Understanding Generalization in Role-Playing Models via Information Theory
 
 **Conference**: ACL 2026 Findings  
@@ -141,11 +145,11 @@ CoRL is optimized using GRPO. Both modules are initialized via SFT and then trai
 
 ## Related Papers
 
+- [\[ICLR 2026\] R4: Nested Reasoning-Retrieval for Reward Modeling in Role-Playing Agents](../../ICLR2026/reinforcement_learning/r4_nested_reasoning-retrieval_for_reward_modeling_in_role-playing_agents.md)
 - [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](../../ICML2026/reinforcement_learning/game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
+- [\[ICLR 2026\] Generalization of RLVR Using Causal Reasoning as a Testbed](../../ICLR2026/reinforcement_learning/generalization_of_rlvr_using_causal_reasoning_as_a_testbed.md)
 - [\[CVPR 2026\] Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models](../../CVPR2026/reinforcement_learning/cloning_deterministic_worlds_the_critical_role_of_latent_geometry_in_long-horizo.md)
 - [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
-- [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](../../ICLR2026/reinforcement_learning/understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
-- [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](../../ICML2026/reinforcement_learning/safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
 
 </div>
 

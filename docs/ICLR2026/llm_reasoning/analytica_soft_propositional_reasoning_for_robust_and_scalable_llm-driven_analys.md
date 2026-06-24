@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis
 description: >-
-  [ICLR 2026][LLM Reasoning][soft propositional reasoning] The framework reformulates complex analysis as an estimation of "soft truth values" for propositions, using bias-variance decomposition as a design principle. By combining a divide-and-conquer tree to reduce bias and linear synthesis rules to reduce variance, it achieves Analytica—a verifiable, scalable, and noise-resi
+  [ICLR 2026][Reasoning][soft propositional reasoning] The framework reformulates complex analysis as an estimation of "soft truth values" for propositions, using bias-variance decomposition as a design principle. By combining a divide-and-conquer tree to reduce bias and linear synthesis rules to reduce variance, it achieves Analytica—a verifiable, scalable, and noise-resistant LLM-driven prediction agent architecture.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - soft propositional reasoning
-  - bias-variance decomposition
-  - divide-and-conquer agent
-  - forecasting
-  - linear synthesis
+  - "ICLR 2026"
+  - "Reasoning"
+  - "soft propositional reasoning"
+  - "bias-variance decomposition"
+  - "divide-and-conquer agent"
+  - "forecasting"
+  - "linear synthesis"
 date: 2026-05-08
-content_hash: 46e5c4fcb41d7890
+content_hash: ac90f83e98248ed0
 ---
+
 # Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis
 
 **Conference**: ICLR 2026  
@@ -129,11 +130,11 @@ The linear rule achieves the highest accuracy and lowest variance under the same
 
 ## Related Papers
 
-- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
 - [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](../../AAAI2026/llm_reasoning/chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
+- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
+- [\[ICLR 2026\] Soft Tokens, Hard Truths](soft_tokens_hard_truths.md)
 - [\[ICLR 2026\] TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis](tumorchain_interleaved_multimodal_chain-of-thought_reasoning_for_traceable_clini.md)
-- [\[ICLR 2026\] Compositional Generalization from Learned Skills via CoT Training: A Theoretical and Structural Analysis for Reasoning](compositional_generalization_from_learned_skills_via_cot_training_a_theoretical_.md)
-- [\[ICLR 2026\] Nudging the Boundaries of LLM Reasoning](nudging_the_boundaries_of_llm_reasoning.md)
 
 </div>
 

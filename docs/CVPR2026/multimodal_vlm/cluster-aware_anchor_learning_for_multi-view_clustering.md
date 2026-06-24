@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Cluster-aware Anchor Learning for Multi-View Clustering
 description: >-
-  [CVPR 2026][Others][anchor learning] To address the drawbacks of "globally fixed anchor counts and treating every cluster equally" in anchor-based multi-view clustering, CAL partitions the consensus anchor matrix into $k$ groups by cluster. It applies column-sparsity penalties to each group to automatically determine the number of anchors per cluster and
+  [CVPR 2026][Multimodal VLM][anchor learning] To address the drawbacks of "globally fixed anchor counts and treating every cluster equally" in anchor-based multi-view clustering, CAL partitions the consensus anchor matrix into $k$ groups by cluster. It applies column-sparsity penalties to each group to automatically determine the number of anchors per cluster and pulls anchors of different clusters apart via inter-cluster orthogonal regularization. It outperforms 10 SOTAs in A…
 tags:
-  - CVPR 2026
-  - Others
-  - anchor learning
-  - ℓ2
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "anchor learning"
+  - "multi-view subspace clustering"
+  - "$\\ell_{2"
+  - "1}$ column sparsity"
+  - "cluster-aware anchors"
+  - "orthogonal decorrelation"
 date: 2026-05-08
-content_hash: 97f1899d7122f8ea
+content_hash: 1036d16208b2bfb3
 ---
+
 # Cluster-aware Anchor Learning for Multi-View Clustering
 
 **Conference**: CVPR 2026  
@@ -156,10 +161,10 @@ Three variants were tested on MSRC, Dermatology, and HW (ACC):
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
-- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
 - [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
 - [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
 - [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
 
 </div>
 

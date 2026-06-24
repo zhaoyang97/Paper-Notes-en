@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] To enable humanoid robots to learn whole-body physical interactions such as hugging, handshaking, and high-fives, this paper first utilizes Contact-Aware Interaction Retargeting (PAIR) to translate massive "Human-Human Interaction" (HHI) data into physically consistent "Human-Humanoid Interaction" (HHoI) data. It then
+  [CVPR 2026][Robotics][Humanoid Robot] To enable humanoid robots to learn whole-body physical interactions such as hugging, handshaking, and high-fives, this paper first utilizes Contact-Aware Interaction Retargeting (PAIR) to translate massive "Human-Human Interaction" (HHI) data into physically consistent "Human-Humanoid Interaction" (HHoI) data. It then employs a hierarchical diffusion strategy (D-STAR) that decouples "when to move" and "where to move" to learn synchronized…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Humanoid Robot"
+  - "Human-Robot Interaction"
+  - "Motion Retargeting"
+  - "Diffusion Policy"
+  - "Whole-Body Control"
 date: 2026-05-08
-content_hash: 5d4786c57fa395ec
+content_hash: 2c40bc3c7ae4cd78
 ---
+
 # Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,16 @@ Full D-STAR reaches an average success rate of 75.4%. Naive Mimicry fails comple
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots](towards_motion_turing_test_evaluating_human-likeness_in_humanoid_robots.md)
 - [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
-- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 - [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](../../AAAI2026/robotics/theory_of_mind_for_explainable_human-robot_interaction.md)
-- [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
+- [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
+- [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](../../ICLR2026/robotics/hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
 
 </div>
 

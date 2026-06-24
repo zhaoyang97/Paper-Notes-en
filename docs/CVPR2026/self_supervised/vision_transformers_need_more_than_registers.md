@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Vision Transformers Need More Than Registers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Vision Transformer] This paper argues that prevalent dense feature artifacts in ViT under label, text, and self-supervision are not merely high-norm token issues, but a consequence of the model learning to use background patches as global semantic shortcuts under the combined influence of coarse-grained supervision and global attention. T
+  [CVPR 2026][Self-Supervised Learning][Vision Transformer] This paper argues that prevalent dense feature artifacts in ViT under label, text, and self-supervision are not merely high-norm token issues, but a consequence of the model learning to use background patches as global semantic shortcuts under the combined influence of coarse-grained supervision and global attention. To address this, the authors propose LaSt-ViT, which replaces original CLS aggregation with selective a…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Vision Transformer
-  - Lazy Aggregation
-  - Register Token
-  - DINO
-  - Dense Feature Alignment
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Vision Transformer"
+  - "Lazy Aggregation"
+  - "Register Token"
+  - "DINO"
+  - "Dense Feature Alignment"
 date: 2026-05-08
-content_hash: 2f524406ec51611d
+content_hash: 67b199302d450e60
 ---
+
 # Vision Transformers Need More Than Registers
 
 **Conference**: CVPR 2026  
@@ -204,14 +205,17 @@ Text-supervised $K$ ablation:
 
 <div class="related-papers" markdown="1">
 
-- Vision Transformers Need Registers. *Darcet et al.*, ICLR 2024.
-- Deep ViT Features as Dense Visual Descriptors. *Amir et al.*, arXiv 2021.
-- LOST: Localizing Objects with Self-Supervised Transformers and No Labels. *Siméoni et al.*, BMVC 2021.
+## Related Papers
+
+- [\[CVPR 2026\] Can You Learn to See Without Images? Procedural Warm-Up for Vision Transformers](can_you_learn_to_see_without_images_procedural_warm-up_for_vision_transformers.md)
+- [\[CVPR 2025\] SATA: Spatial Autocorrelation Token Analysis for Enhancing the Robustness of Vision Transformers](../../CVPR2025/self_supervised/sata_spatial_autocorrelation_token_analysis_for_enhancing_the_robustness_of_visi.md)
+- [\[CVPR 2026\] DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers](diversedit_towards_diverse_representation_learning_in_diffusion_transformers.md)
+- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
+- [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](scaling_parallel_sequence_models_to_vision_foundation_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Can You Learn to See Without Images? Procedural Warm-Up for Vision Transformers](can_you_learn_to_see_without_images_procedural_warm-up_for_vision_transformers.md)

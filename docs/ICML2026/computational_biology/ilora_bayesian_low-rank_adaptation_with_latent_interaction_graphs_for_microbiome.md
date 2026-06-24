@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis
 description: >-
-  [ICML 2026][Computational Biology][LoRA] iLoRA employs a Bayesian approach to infer a sparse microbial interaction graph from each microbiome sample (Poisson edges $\rightarrow$ Laplace sparsification $\rightarrow$ GNN embedding). This graph is then used to generate an input-conditioned LoRA matrix $A$, enabling the LLM to learn which bacteria are "cross-talk
+  [ICML 2026][Computational Biology][LoRA] iLoRA employs a Bayesian approach to infer a sparse microbial interaction graph from each microbiome sample (Poisson edges $\rightarrow$ Laplace sparsification $\rightarrow$ GNN embedding). This graph is then used to generate an input-conditioned LoRA matrix $A$, enabling the LLM to learn which bacteria are "cross-talking" while simultaneously performing IBD diagnosis.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - LoRA
+  - "ICML 2026"
+  - "Computational Biology"
+  - "LoRA"
+  - "Bayesian Inference"
+  - "Latent Interaction Graphs"
+  - "Microbiome"
+  - "IBD Diagnosis"
 date: 2026-05-08
-content_hash: b7156eedf100ecc1
+content_hash: 471b0a4775d04b40
 ---
+
 # iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis
 
 **Conference**: ICML 2026  
@@ -125,15 +130,15 @@ Compared to standard tabular baselines (using the same 20 taxa): iLoRA AUROC of 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Low rank adaptation of chemical foundation models generate effective odorant representations](../../ICLR2026/computational_biology/low_rank_adaptation_of_chemical_foundation_models_generate_effective_odorant_rep.md)
 - [\[ICML 2026\] Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference](disentangling_latent_risk_pathways_via_bayesian_hypergraph_inference.md)
 - [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
 - [\[ICML 2026\] Transformed Latent Variable Multi-Output Gaussian Processes](transformed_latent_variable_multi-output_gaussian_processes.md)
 - [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
 
 </div>
 

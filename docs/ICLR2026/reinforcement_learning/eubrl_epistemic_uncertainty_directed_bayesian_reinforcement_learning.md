@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] EUBRL directly integrates "epistemic uncertainty" into the RL objective function via probabilistic inference, utilizing a binary "uncertainty variable" to adaptively switch between exploration and exploitation. Theoretically, it is the first to achieve near-minimax optimal regret bounds and sample complexity simultaneo
+  [ICLR 2026][Reinforcement Learning][Epistemic Uncertainty] EUBRL directly integrates "epistemic uncertainty" into the RL objective function via probabilistic inference, utilizing a binary "uncertainty variable" to adaptively switch between exploration and exploitation. Theoretically, it is the first to achieve near-minimax optimal regret bounds and sample complexity simultaneously in infinite-horizon undiscounted MDPs.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Epistemic Uncertainty"
+  - "Bayesian RL"
+  - "Probabilistic Inference"
+  - "Minimax Optimal"
+  - "Regret Bound"
+  - "Sample Complexity"
 date: 2026-05-08
-content_hash: 4e0cafb4e928dfa7
+content_hash: c69021dab75b88b9
 ---
+
 # EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -116,11 +123,11 @@ EUBRL achieves the highest rewards with extremely low variance across classic ta
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
 - [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](learning_to_play_multi-follower_bayesian_stackelberg_games.md)
-- [\[ICLR 2026\] Learning to Be Uncertain: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] Geometry of Uncertainty: Learning Metric Spaces for Multimodal State Estimation in RL](geometry_of_uncertainty_learning_metric_spaces_for_multimodal_state_estimation_i.md)
 - [\[ICML 2026\] PAC-Bayesian Reinforcement Learning Trains Generalizable Policies](../../ICML2026/reinforcement_learning/pac-bayesian_reinforcement_learning_trains_generalizable_policies.md)
-- [\[ICLR 2026\] DR-SAC: Distributionally Robust Soft Actor-Critic for Reinforcement Learning under Uncertainty](dr-sac_distributionally_robust_soft_actor-critic_for_reinforcement_learning_unde.md)
 
 </div>
 

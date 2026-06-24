@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] ReFusion elevates parallel decoding in masked diffusion language models from the token level to the slot level (multi-token segments). Slots are selected in parallel via diffusion and filled serially via autoregression. By reordering generated slots ahead of masked ones at each step, it achieves full KV cache reuse and
+  [ICLR 2026][LLM Efficiency][Masked Diffusion Models] ReFusion elevates parallel decoding in masked diffusion language models from the token level to the slot level (multi-token segments). Slots are selected in parallel via diffusion and filled serially via autoregression. By reordering generated slots ahead of masked ones at each step, it achieves full KV cache reuse and manageable learning complexity. Compared to previous diffusion models, it yields a 34% average performance…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Masked Diffusion Models"
+  - "Parallel Decoding"
+  - "KV Cache Reuse"
+  - "Sequence Reordering"
+  - "Autoregressive Infilling"
 date: 2026-05-08
-content_hash: f8ba660b490d2fcd
+content_hash: 700c05f412a34cf0
 ---
+
 # ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding
 
 **Conference**: ICLR 2026  
@@ -112,10 +118,20 @@ Under identical initialization and data, traditional MDMs (LLaDA Retrained) sign
 ReFusion occupies the intersection of efficient MDM architectures and MDM decoding strategies. It belongs to the class of models using causal attention for precise caching (like Eso-LMs) but avoids the learning difficulties of token-level permutation by using slot levels. It unifies MDM parallel efficiency and AR quality within a single architecture without requiring external models for verification. Unlike block diffusion, ReFusion maintains global flexibility, providing a new path for unifying Autoregression and Diffusion.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](../../ICML2026/llm_efficiency/diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
+- [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)

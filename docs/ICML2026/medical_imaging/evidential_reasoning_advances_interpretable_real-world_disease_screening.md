@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evidential Reasoning Advances Interpretable Real-World Disease Screening
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] EviScreen utilizes "Normal + Pathological" dual knowledge banks for region-level evidence retrieval, followed by cross-attention and self-attention to perform evidential reasoning between the current case and retrieved evidence. This approach provides both **retrospective interpretability** (identifying which historica
+  [ICML 2026][Medical Imaging][Dual Knowledge Banks] EviScreen utilizes "Normal + Pathological" dual knowledge banks for region-level evidence retrieval, followed by cross-attention and self-attention to perform evidential reasoning between the current case and retrieved evidence. This approach provides both **retrospective interpretability** (identifying which historical cases support the current judgment) and **localization interpretability** (abnormality maps from contrastiv…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Dual Knowledge Banks"
+  - "Evidential Reasoning"
+  - "Coreset Memory Bank"
+  - "Contrastive Retrieval"
+  - "Clinical-Oriented Evaluation"
 date: 2026-05-08
-content_hash: a5cd1a20088cee08
+content_hash: df3c0281dbb968d3
 ---
+
 # Evidential Reasoning Advances Interpretable Real-World Disease Screening
 
 **Conference**: ICML 2026  
@@ -131,7 +137,7 @@ Evaluation on 10 public datasets across three modalities (fundus, chest X-ray, d
 - [\[AAAI 2026\] Experience with Single Domain Generalization in Real World Medical Imaging Deployments](../../AAAI2026/medical_imaging/experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo.md)
 - [\[ICML 2026\] Marrying Generative Model of Healthcare Events with Digital Twin of Social Determinants of Health for Disease Reasoning](marrying_generative_model_of_healthcare_events_with_digital_twin_of_social_deter.md)
 - [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](../../AAAI2026/medical_imaging/deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
-- [\[ICLR 2026\] Glance and Focus Reinforcement for Pan-cancer Screening](../../ICLR2026/medical_imaging/glance_and_focus_reinforcement_for_pan-cancer_screening.md)
+- [\[ICML 2026\] PRISM: A 3D Probabilistic Neural Representation for Interpretable Shape Modeling](prism_a_3d_probabilistic_neural_representation_for_interpretable_shape_modeling.md)
 
 </div>
 

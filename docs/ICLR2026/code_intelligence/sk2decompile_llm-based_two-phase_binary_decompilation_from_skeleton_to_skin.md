@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin
 description: >-
-  [ICLR 2026][Code Intelligence][Reinforcement Learning] SK2Decompile decomposes binary decompilation into a two-phase LLM pipeline: "first recovering a compilable program skeleton, then restoring semantic identifiers." It utilizes reinforcement learning with compiler feedback and semantic similarity rewards, respectively, to simultaneously enhance the executability and read
+  [ICLR2026][Code Intelligence][Binary Decompilation] SK2Decompile decomposes binary decompilation into a two-phase LLM pipeline: "first recovering a compilable program skeleton, then restoring semantic identifiers." It utilizes reinforcement learning with compiler feedback and semantic similarity rewards, respectively, to simultaneously enhance the executability and readability of decompiled code.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "Binary Decompilation"
+  - "Code LLMs"
+  - "Structure Recovery"
+  - "Identifier Naming"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: c383753c727757ae
+content_hash: 498a2eaafaa74880
 ---
+
 # SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin
 
 **Conference**: ICLR2026  

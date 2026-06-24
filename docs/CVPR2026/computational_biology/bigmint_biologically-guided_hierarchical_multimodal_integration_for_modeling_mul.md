@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery
 description: >-
-  [CVPR 2026][Computational Biology][Paper Note] BiGMINT utilizes a three-stage hierarchical fusion—"chemoproteomics-guided high-content imaging (HCI) feature aggregation + outer product cross-modal fusion + protein-protein interaction (PPI) prior-based task-level information sharing"—to unify molecular mechanism signals and cellular phenotypic signals for compound a
+  [CVPR 2026][Computational Biology][Compound activity prediction] BiGMINT utilizes a three-stage hierarchical fusion—"chemoproteomics-guided high-content imaging (HCI) feature aggregation + outer product cross-modal fusion + protein-protein interaction (PPI) prior-based task-level information sharing"—to unify molecular mechanism signals and cellular phenotypic signals for compound activity prediction. On two large private datasets (~99K / ~40K compound-image pairs)…
 tags:
-  - CVPR 2026
-  - Computational Biology
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Compound activity prediction"
+  - "High-content imaging"
+  - "Chemoproteomics"
+  - "Multimodal fusion"
+  - "PPI prior"
 date: 2026-05-08
-content_hash: 4744302a76fdbfba
+content_hash: 4ed622cf5f7ab420
 ---
+
 # BiGMINT: Biologically-guided Hierarchical Multimodal Integration for Modeling Multiple Compound Activities in Drug Discovery
 
 **Conference**: CVPR 2026  
@@ -133,10 +139,10 @@ BiGMINT significantly outperforms all benchmarks (p < 0.001), with a +10.0% / +5
 
 ## Related Papers
 
-- [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
 - [\[ICML 2025\] GenMol: A Drug Discovery Generalist with Discrete Diffusion](../../ICML2025/computational_biology/genmol_a_drug_discovery_generalist_with_discrete_diffusion.md)
 - [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](../../ACL2026/computational_biology/aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
 - [\[CVPR 2026\] Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation](multimodal_protein_language_models_for_enzyme_kinetic_parameters_from_substrate_.md)
+- [\[ICLR 2026\] Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement](../../ICLR2026/computational_biology/efficient_prediction_of_large_protein_complexes_via_subunit-guided_hierarchical_.md)
 - [\[ICLR 2026\] Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction](../../ICLR2026/computational_biology/extending_sequence_length_is_not_all_you_need_effective_integration_of_multimoda.md)
 
 </div>

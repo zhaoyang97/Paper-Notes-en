@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity
 description: >-
-  [ICML 2026][Pretraining][k-parity] This paper decomposes the training objective of Masked Diffusion Language Models (MDLM) into a "signal term + noise term" using the analytically solvable $k$-parity task. It theoretically proves that the noise term acts as an **implicit regularizer** that suppresses grokking and avoids memory traps. Based on this, the
+  [ICML 2026][LLM Pretraining][Masked Diffusion Language Models] This paper decomposes the training objective of Masked Diffusion Language Models (MDLM) into a "signal term + noise term" using the analytically solvable $k$-parity task. It theoretically proves that the noise term acts as an **implicit regularizer** that suppresses grokking and avoids memory traps. Based on this, the authors propose **Signal-Rich Mask Sampling**, narrowing the training mask rate $t$ from a unifor…
 tags:
-  - ICML 2026
-  - Pretraining
-  - k-parity
-  - grokking
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Masked Diffusion Language Models"
+  - "Implicit Regularization"
+  - "k-parity"
+  - "grokking"
+  - "Signal-Rich Sampling"
 date: 2026-05-08
-content_hash: 1fded7d2fe41c0f3
+content_hash: c11290c87f151296
 ---
+
 # Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity
 
 **Conference**: ICML 2026  
@@ -130,11 +134,11 @@ Window shift ablation for generative tasks (Table 3, GSM8K acc): $[0.45,0.55]$ 0
 
 ## Related Papers
 
+- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](../../ICLR2026/llm_pretraining/soft-masked_diffusion_language_models.md)
 - [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
-- [\[ICLR 2026\] Any-Order Flexible Length Masked Diffusion](../../ICLR2026/llm_pretraining/any-order_flexible_length_masked_diffusion.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[ACL 2025\] DavIR: Data Selection via Implicit Reward for Large Language Models](../../ACL2025/llm_pretraining/davir_data_selection_via_implicit_reward_for_large_language_models.md)
-- [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](../../NeurIPS2025/llm_pretraining/next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](../../ICLR2026/llm_pretraining/scaling_behavior_of_discrete_diffusion_language_models.md)
+- [\[ICML 2026\] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)
+- [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](../../ICLR2026/llm_pretraining/time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
 
 </div>
 

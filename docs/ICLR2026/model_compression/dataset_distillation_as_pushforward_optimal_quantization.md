@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dataset Distillation as Pushforward Optimal Quantization
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Model] Reformulates decoupled dataset distillation as an optimal quantization problem. It proves that latent space clustering using weights, combined with a diffusion prior, convergently approximates the true data distribution. The proposed DDOQ algorithm outperforms baselines like D4M on ImageNet-1K with minimal additional c
+  [ICLR2026][Model Compression][Dataset Distillation] Reformulates decoupled dataset distillation as an optimal quantization problem. It proves that latent space clustering using weights, combined with a diffusion prior, convergently approximates the true data distribution. The proposed DDOQ algorithm outperforms baselines like D4M on ImageNet-1K with minimal additional computational overhead.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Model
+  - "ICLR2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Optimal Quantization"
+  - "Wasserstein distance"
+  - "Diffusion models"
+  - "Latent space clustering"
 date: 2026-05-08
-content_hash: f551f7b7ceab6124
+content_hash: 8140b4bc617399f9
 ---
+
 # Dataset Distillation as Pushforward Optimal Quantization
 
 **Conference**: ICLR2026  
@@ -138,8 +143,8 @@ This ensures that quantization points covering a larger measure receive higher w
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
 - [\[ICLR 2026\] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression](dataset_color_quantization_a_training-oriented_framework_for_dataset-level_compr.md)
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
-- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](../../CVPR2026/model_compression/mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
-- [\[CVPR 2026\] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](../../CVPR2026/model_compression/ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)
+- [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 
 </div>
 

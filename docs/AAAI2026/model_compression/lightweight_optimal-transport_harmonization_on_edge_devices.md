@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Lightweight Optimal-Transport Harmonization on Edge Devices
 description: >-
-  [AAAI 2026][Model Compression][Color Harmonization] This paper proposes MKL-Harmonizer, which leverages the Monge-Kantorovich Linear (MKL) mapping from classical optimal transport theory to train a compact encoder that p…
+  [AAAI 2026 Oral][Model Compression][Color Harmonization] This paper proposes MKL-Harmonizer, which leverages the Monge-Kantorovich Linear (MKL) mapping from classical optimal transport theory to train a compact encoder that predicts 12-dimensional color transformation parameters, enabling real-time image color harmonization on edge devices. The method achieves state-of-the-art performance on the combined perceptual quality–speed metric in AR scenarios.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "Color Harmonization"
   - "Optimal Transport"
@@ -12,7 +12,7 @@ tags:
   - "Augmented Reality"
   - "Lightweight Inference"
 date: 2026-05-08
-content_hash: daa1fb83c0a3277d
+content_hash: 28a25cab7781ea9f
 ---
 
 # Lightweight Optimal-Transport Harmonization on Edge Devices
@@ -169,7 +169,7 @@ The encoder is EfficientNet-B0 with 256×256, 4-channel (RGB+mask) input, traine
 - [\[ICLR 2026\] Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport](../../ICLR2026/model_compression/cross_domain_lossy_compression_optimal_transport.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
 - [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](../../CVPR2026/model_compression/memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
-- [\[AAAI 2026\] Satisficing and Optimal Generalised Planning via Goal Regression (Extended Version)](satisficing_and_optimal_generalised_planning_via_goal_regression_extended_versio.md)
+- [\[ICLR 2026\] Boosted Trees on a Diet: Compact Models for Resource-Constrained Devices](../../ICLR2026/model_compression/boosted_trees_on_a_diet_compact_models_for_resource-constrained_devices.md)
 - [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](../../CVPR2026/model_compression/critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
 
 </div>

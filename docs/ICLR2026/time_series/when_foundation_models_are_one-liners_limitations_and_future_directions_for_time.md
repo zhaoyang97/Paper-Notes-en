@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper systematically verifies the actual performance of five Time Series Foundation Models (TSFMs)—MOMENT, Chronos, TimesFM, Time-MoE, and TSPulse—on Time Series Anomaly Detection (TSAD). It finds that their zero-shot performance does not significantly differ from simple "one-liner" baselines written in a single l
+  [ICLR 2026][Time Series][Time Series Foundation Models] This paper systematically verifies the actual performance of five Time Series Foundation Models (TSFMs)—MOMENT, Chronos, TimesFM, Time-MoE, and TSPulse—on Time Series Anomaly Detection (TSAD). It finds that their zero-shot performance does not significantly differ from simple "one-liner" baselines written in a single line of code, such as "moving window variance" or "squared difference." The root cause is that the core a…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Anomaly Detection"
+  - "Reconstruction Error"
+  - "Prediction Error"
+  - "Baseline Diagnosis"
 date: 2026-05-08
-content_hash: ec4a738fc67c19e9
+content_hash: f799c195e2c4c012
 ---
+
 # When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection
 
 **Conference**: ICLR 2026  
@@ -141,7 +147,7 @@ Even with an additional frequency-domain reconstruction head, TSPulse cannot bea
 - [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
 - [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
 - [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
-- [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](../../ICML2026/time_series/impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
 
 </div>
 

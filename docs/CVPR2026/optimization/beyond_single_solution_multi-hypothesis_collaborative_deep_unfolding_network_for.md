@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Addressing the "underdetermined and non-unique" nature of the Compressive Sensing (CS) problem, this paper proposes MHC-DUN: a paradigm shift from reconstructing a single solution in traditional Deep Unfolding Networks (DUNs) to "reconstructing $T$ hypothesis solutions simultaneously with collaborative optimization." S
+  [CVPR 2026][Optimization][Compressive Sensing] Addressing the "underdetermined and non-unique" nature of the Compressive Sensing (CS) problem, this paper proposes MHC-DUN: a paradigm shift from reconstructing a single solution in traditional Deep Unfolding Networks (DUNs) to "reconstructing $T$ hypothesis solutions simultaneously with collaborative optimization." Specifically, AlphaNet predicts pixel-adaptive step sizes for each hypothesis in the gradient descent step…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Optimization"
+  - "Compressive Sensing"
+  - "Deep Unfolding"
+  - "Multi-Hypothesis"
+  - "Proximal Gradient Descent"
+  - "Collaborative Optimization"
 date: 2026-05-08
-content_hash: 513ed41a06ae036b
+content_hash: a336c858070b6347
 ---
+
 # Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing
 
 **Conference**: CVPR 2026  
@@ -165,15 +171,15 @@ Effect of the number of hypotheses $T$ (Set11 average PSNR):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing](multi-scale_gradient-guided_unrolling_architecture_with_adaptive_mamba_for_compr.md)
-- [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
-- [\[CVPR 2026\] LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)
-- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
-- [\[CVPR 2026\] Gyro-based Deep Video Deblurring](gyro-based_deep_video_deblurring.md)
+- [\[ICLR 2026\] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing](../../ICLR2026/optimization/hierarchical_multi-stage_recovery_framework_for_kronecker_compressed_sensing.md)
+- [\[AAAI 2026\] Parametrized Multi-Agent Routing via Deep Attention Models](../../AAAI2026/optimization/parametrized_multi-agent_routing_via_deep_attention_models.md)
+- [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
+- [\[ICLR 2026\] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization](../../ICLR2026/optimization/nexco_native_solution_expansion_for_diffusion-based_combinatorial_optimization.md)
+- [\[ICML 2026\] Gradient Descent with Large Step Size Restores Symmetry in Deep Linear Networks with Multi-Pathway](../../ICML2026/optimization/gradient_descent_with_large_step_size_restores_symmetry_in_deep_linear_networks_.md)
 
 </div>
 

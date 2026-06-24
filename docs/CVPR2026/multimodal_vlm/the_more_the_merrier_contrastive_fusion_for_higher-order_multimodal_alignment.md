@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The More, the Merrier: Contrastive Fusion for Higher-Order Multimodal Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors propose the Contrastive Fusion (ConFu) framework, which extends CLIP-style pairwise contrastive learning to tri-modal higher-order alignment. By learning both paired and fused representations within a unified objective, it supports both 1→1 and 2→1 retrieval.
+  [CVPR2026][Multimodal VLM][Multimodal alignment] The authors propose the Contrastive Fusion (ConFu) framework, which extends CLIP-style pairwise contrastive learning to tri-modal higher-order alignment. By learning both paired and fused representations within a unified objective, it supports both 1→1 and 2→1 retrieval.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Multimodal alignment"
+  - "higher-order dependencies"
+  - "contrastive learning"
+  - "total correlation"
+  - "tri-modal fusion"
 date: 2026-05-08
-content_hash: 802ce56c920ed9ce
+content_hash: 8838604fbee578f9
 ---
+
 # The More, the Merrier: Contrastive Fusion for Higher-Order Multimodal Alignment
 
 **Conference**: CVPR2026  
@@ -138,11 +144,11 @@ Similarity is estimated using dot products with temperature scaling as a density
 
 ## Related Papers
 
-- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
 - [\[CVPR 2026\] PowerCLIP: Powerset Alignment for Contrastive Pre-Training](powerclip_powerset_alignment_for_contrastive_pre-training.md)
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
 - [\[CVPR 2026\] Where Does Vision Meet Language? Understanding and Refining Visual Fusion in MLLMs via Contrastive Attention](where_does_vision_meet_language_understanding_and_refining_visual_fusion_in_mllm.md)
-- [\[CVPR 2026\] Unbiased Dynamic Multimodal Fusion](unbiased_dynamic_multimodal_fusion.md)
+- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
 
 </div>
 

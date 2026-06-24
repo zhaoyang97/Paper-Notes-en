@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides a training dynamics theory for contrastive learning under **imbalanced data**. Analyzing a "Transformer-MLP + sparse coding data model," the authors prove that neuron weights undergo a three-stage evolution where minority features are learned more weakly and with more interference due to low frequen
+  [ICLR 2026][Contrastive Learning Theory][Contrastive Learning] This paper provides a training dynamics theory for contrastive learning under **imbalanced data**. Analyzing a "Transformer-MLP + sparse coding data model," the authors prove that neuron weights undergo a three-stage evolution where minority features are learned more weakly and with more interference due to low frequency. The study theoretically demonstrates that **magnitude pruning** amplifies gradient updates in…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Contrastive Learning Theory"
+  - "Representation Learning"
+  - "Feature Learning"
+  - "Contrastive Learning"
+  - "Data Imbalance"
+  - "Training Dynamics"
+  - "Magnitude Pruning"
 date: 2026-05-08
-content_hash: e33776a226fb9c60
+content_hash: 9c6e8c5612975a43
 ---
+
 # Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution
 
 **Conference**: ICLR 2026  
@@ -160,9 +167,9 @@ Experiments are "theory-validating" in nature: **linear probing** on CIFAR10-LT 
 
 - [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
+- [\[ICLR 2026\] Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap](theoretical_modeling_of_large_language_model_self-improvement_training_dynamics_.md)
 - [\[ICLR 2026\] Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data](fast_escape_slow_convergence_learning_dynamics_of_phase_retrieval_under_power-la.md)
 - [\[ICLR 2026\] Convergence Analysis of Tsetlin Machines under Noise-Free and Noisy Training Conditions: From 2 Bits to k Bits](convergence_analysis_of_tsetlin_machines_under_noise-free_and_noisy_training_con.md)
-- [\[ICLR 2026\] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data](a_generalized_geometric_theoretical_framework_of_centroid_discriminant_analysis_.md)
 
 </div>
 

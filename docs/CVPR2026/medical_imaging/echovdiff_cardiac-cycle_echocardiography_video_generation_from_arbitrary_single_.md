@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] EchoVDiff explicitly equips echocardiogram video generation with a "cardiac phase axis." By fitting left ventricular area changes into a continuous cyclic phase via multi-task learning, and then using two phase-conditioned diffusion models to reconstruct physiologically consistent ED→ES→ED cardiac cycle videos from an
+  [CVPR 2026][Medical Imaging][Echocardiography] EchoVDiff explicitly equips echocardiogram video generation with a "cardiac phase axis." By fitting left ventricular area changes into a continuous cyclic phase via multi-task learning, and then using two phase-conditioned diffusion models to reconstruct physiologically consistent ED→ES→ED cardiac cycle videos from an **arbitrary single frame**, it reduces FVD from 630 to 535 on EchoNet-Dynamic.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Echocardiography"
+  - "Cardiac Cycle"
+  - "Phase-aware"
+  - "Representation Diffusion"
+  - "Single-frame Driven Video Generation"
 date: 2026-05-08
-content_hash: efbb57ac052eab0c
+content_hash: 7e84625421006ab2
 ---
+
 # EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame
 
 **Conference**: CVPR 2026  
@@ -138,8 +144,8 @@ Ablating Phase $\Phi$ and Representation $R$ on EchoNet-Dynamic:
 
 - [\[CVPR 2026\] OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement](osa_echocardiography_video_segmentation_via_orthogonalized_state_update_and_anat.md)
 - [\[CVPR 2026\] Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging](semi-supervised_echocardiography_video_segmentation_via_anchor_semantic_awarenes.md)
-- [\[CVPR 2026\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
 - [\[NeurIPS 2025\] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking](../../NeurIPS2025/medical_imaging/a_unified_solution_to_video_fusion_from_multi-frame_learning_to_benchmarking.md)
+- [\[ICLR 2026\] WavePolyp: Video Polyp Segmentation via Hierarchical Wavelet-based Feature Aggregation and Inter-frame Divergence Perception](../../ICLR2026/medical_imaging/wavepolyp_video_polyp_segmentation_via_hierarchical_wavelet-based_feature_aggreg.md)
 - [\[CVPR 2026\] URICA: A Uniformity Region Affine Identifier Capture Algorithm for Arbitrary Region Retrieval in Pathology Images](urica_a_uniformity_region_affine_identifier_capture_algorithm_for_arbitrary_regi.md)
 
 </div>

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Pano360: Perspective to Panoramic Vision with Geometric Consistency
 description: >-
-  [CVPR 2026][3D Vision][panorama stitching] Pano360 is proposed to extend panoramic stitching from traditional 2D pairwise matching to a 3D photogrammetric space. By utilizing a Transformer architecture to achieve global geometric consistency alignment across multiple views, it reaches a 97.8% success rate in challenging scenarios such as weak textures, large pa
+  [CVPR2026][3D Vision][panorama stitching] Pano360 is proposed to extend panoramic stitching from traditional 2D pairwise matching to a 3D photogrammetric space. By utilizing a Transformer architecture to achieve global geometric consistency alignment across multiple views, it reaches a 97.8% success rate in challenging scenarios such as weak textures, large parallax, and repetitive patterns.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - panorama stitching
-  - 3D geometric consistency
-  - transformer
-  - multi-view alignment
-  - seam detection
+  - "CVPR2026"
+  - "3D Vision"
+  - "panorama stitching"
+  - "3D geometric consistency"
+  - "transformer"
+  - "multi-view alignment"
+  - "seam detection"
 date: 2026-05-08
-content_hash: 3e02871156a61f4a
+content_hash: 249cf8a4cb762cf4
 ---
+
 # Pano360: Perspective to Panoramic Vision with Geometric Consistency
 
 **Conference**: CVPR2026  
@@ -218,11 +219,11 @@ Training details:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SwiftTailor: Efficient 3D Garment Generation with Geometry Image Representation](swifttailor_efficient_3d_garment_generation_with_geometry_image_representation.md)
 - [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
-- [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
-- [\[CVPR 2026\] Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)
 - [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
+- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
+- [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
+- [\[CVPR 2026\] PromptDepth: Efficient and Promptable Geometric 3D Vision Model for Embodied Intelligence](promptdepth_efficient_and_promptable_geometric_3d_vision_model_for_embodied_inte.md)
 
 </div>
 

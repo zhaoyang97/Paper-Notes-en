@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SFT Overtraining Predicts Rank Inversion via Entropy Collapse Under RLVR
 description: >-
-  [ICML 2026][Alignment & RLHF][GRPO] The authors discover that the industry default rule of "selecting the SFT checkpoint with the highest pass@1 for GRPO" systematically fails in code generation. Longer SFT leads to higher pass@1, but the pass@10 after GRPO descends monotonically (0.806 → 0.481). The root cause is that over-SFT flattens the output distri
+  [ICML2026][LLM Alignment][Entropy Collapse] The authors discover that the industry default rule of "selecting the SFT checkpoint with the highest pass@1 for GRPO" systematically fails in code generation. Longer SFT leads to higher pass@1, but the pass@10 after GRPO descends monotonically (0.806 → 0.481). The root cause is that over-SFT flattens the output distribution, causing within-group advantage variance to zero out and gradients to vanish. The authors identify high-risk…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - GRPO
-  - RLVR
+  - "ICML2026"
+  - "LLM Alignment"
+  - "Entropy Collapse"
+  - "GRPO"
+  - "RLVR"
+  - "Checkpoint Selection"
+  - "Rank Inversion"
 date: 2026-05-08
-content_hash: 4ecaa2ba42c73de4
+content_hash: 6b1f87ac4a3132ec
 ---
+
 # SFT Overtraining Predicts Rank Inversion via Entropy Collapse Under RLVR
 
 **Conference**: ICML2026  
@@ -114,15 +118,16 @@ Qwen shows rank inversion ($\rho = -0.75$), while DeepSeek (safe zone) shows ran
 - Value: ⭐⭐⭐⭐ (Directly changes engineering practices for SFT checkpoint selection)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Quagmires in SFT-RL Post-Training: When High SFT Scores Mislead and What to Use Instead](../../ICLR2026/llm_alignment/quagmires_in_sft-rl_post-training_when_high_sft_scores_mislead_and_what_to_use_i.md)
 - [\[ACL 2026\] ComplexConstraints and Beyond: Expert Rubrics for RLVR](../../ACL2026/llm_alignment/complexconstraints_and_beyond_expert_rubrics_for_rlvr.md)
+- [\[ICLR 2026\] No Prompt Left Behind: Exploiting Zero-Variance Prompts in LLM Reinforcement Learning via Entropy-Guided Advantage Shaping](../../ICLR2026/llm_alignment/no_prompt_left_behind_exploiting_zero-variance_prompts_in_llm_reinforcement_lear.md)
+- [\[ICLR 2026\] Enforcing Axioms for AI Alignment under Loss-Based Rules](../../ICLR2026/llm_alignment/enforcing_axioms_for_ai_alignment_under_loss-based_rules.md)
 - [\[CVPR 2025\] Continual SFT Matches Multimodal RLHF with Negative Supervision](../../CVPR2025/llm_alignment/continual_sft_matches_multimodal_rlhf_with_negative_supervision.md)
-- [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](../../ICLR2026/llm_alignment/beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
-- [\[ACL 2025\] LSSF: Safety Alignment via Low-Rank Safety Subspace Fusion](../../ACL2025/llm_alignment/lssf_safety_subspace.md)
-- [\[ICLR 2026\] JailNewsBench: Multi-Lingual and Regional Benchmark for Fake News Generation under Jailbreak Attacks](../../ICLR2026/llm_alignment/jailnewsbench_multi-lingual_and_regional_benchmark_for_fake_news_generation_unde.md)
 
 </div>
 

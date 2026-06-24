@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agentic Retoucher for Text-To-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][GenBlemish-27K] Agentic Retoucher reformulates defect repair after T2I generation into a human-like "Perception $\rightarrow$ Reasoning $\rightarrow$ Action" closed-loop decision process. Utilizing three collaborative agents for context-aware distortion detection, human-aligned diagnostic reasoning, and adaptive local repair, it impro
+  [CVPR 2026][Image Generation][T2I Post-processing] Agentic Retoucher reformulates defect repair after T2I generation into a human-like "Perception $\rightarrow$ Reasoning $\rightarrow$ Action" closed-loop decision process. Utilizing three collaborative agents for context-aware distortion detection, human-aligned diagnostic reasoning, and adaptive local repair, it improves plausibility by 2.89 points on GenBlemish-27K, with 83.2% of results rated by humans as superior to the o…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GenBlemish-27K
+  - "CVPR 2026"
+  - "Image Generation"
+  - "T2I Post-processing"
+  - "Perception-Reasoning-Action Loop"
+  - "Distortion Detection"
+  - "Local Inpainting"
+  - "GenBlemish-27K"
 date: 2026-05-08
-content_hash: b3fe7d786b2060fc
+content_hash: ce661678d13c44f5
 ---
+
 # Agentic Retoucher for Text-To-Image Generation
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Boosting Vision-Language-Action Finetuning with Feasible Action Neighborhood Prior
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] This paper proposes the Feasible Action Neighborhood (FAN) regularizer, which shapes the output distribution of VLA models into a Gaussian form that matches physical action tolerances. It significantly improves success rates, generalization, and sample efficiency in both SFT and RFT paradigms (RFT achieves a 90% succes
+  [CVPR 2026][Robotics][VLA Finetuning] This paper proposes the Feasible Action Neighborhood (FAN) regularizer, which shapes the output distribution of VLA models into a Gaussian form that matches physical action tolerances. It significantly improves success rates, generalization, and sample efficiency in both SFT and RFT paradigms (RFT achieves a 90% success rate with only 1/3 of the training steps).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA Finetuning"
+  - "Feasible Action Neighborhood"
+  - "Gaussian Regularization"
+  - "Reinforcement Finetuning"
+  - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 970c7ec9a568ef06
+content_hash: 40387d38a6fe30b9
 ---
+
 # Boosting Vision-Language-Action Finetuning with Feasible Action Neighborhood Prior
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,10 @@ This implies the new policy is a geometric interpolation between the old policy 
 ## Related Papers
 
 - [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
+- [\[ICLR 2026\] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](../../ICLR2026/robotics/robust_fine-tuning_of_vision-language-action_robot_policies_via_parameter_mergin.md)
+- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 
 </div>
 

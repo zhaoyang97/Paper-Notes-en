@@ -82,7 +82,7 @@ item_total: 91
 
 **📹 ICCV2025** · **91** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (140)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (50)](../../ICLR2026/autonomous_driving/index.md) · [🧪 ICML2026 (8)](../../ICML2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (157)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (50)](../../ICLR2026/autonomous_driving/index.md) · [🧪 ICML2026 (8)](../../ICML2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [🧪 ICML2025 (10)](../../ICML2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Autonomous Driving ×13 · 3D Gaussian Splatting ×12 · Diffusion Models ×8 · Point Cloud ×5 · 3D Object Detection ×5
 

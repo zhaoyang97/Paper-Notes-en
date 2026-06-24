@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Content-Aware Mamba for Learned Image Compression
 description: >-
-  [ICLR 2026][Image Restoration][State Space Model] Addressing the two major flaws of Mamba in learned image compression—"fixed raster scanning" and "strict causality"—this paper proposes Content-Aware Mamba (CAM). It uses token rearrangement based on codebook clustering to group similar tokens for scanning and injects global priors into SSM output projections via a red
+  [ICLR2026][Image Restoration][Learned Image Compression] Addressing the two major flaws of Mamba in learned image compression—"fixed raster scanning" and "strict causality"—this paper proposes Content-Aware Mamba (CAM). It uses token rearrangement based on codebook clustering to group similar tokens for scanning and injects global priors into SSM output projections via a redundancy-aware prompt dictionary to break causality. Consequently, the CMIC model outperforms VTM-21.0 a…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - State Space Model
-  - Mamba
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Learned Image Compression"
+  - "State Space Models"
+  - "Mamba"
+  - "Content-Adaptive Scanning"
+  - "Global Prior"
 date: 2026-05-08
-content_hash: a0b7786b8149ef8d
+content_hash: 9b8312d90f18df59
 ---
+
 # Content-Aware Mamba for Learned Image Compression
 
 **Conference**: ICLR2026  
@@ -147,11 +151,11 @@ Structural comparisons (Table 4) show that replacing CAM with Conv (−12.89), 2
 
 ## Related Papers
 
-- [\[ICLR 2026\] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution](trajectory-aware_shifted_state_space_models_for_online_video_super-resolution.md)
-- [\[ICLR 2026\] Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content](exploring_real-time_super-resolution_benchmarking_and_fine-tuning_for_streaming_.md)
 - [\[CVPR 2026\] Learned Image Compression via Sparse Attention and Adaptive Frequency](../../CVPR2026/image_restoration/learned_image_compression_via_sparse_attention_and_adaptive_frequency.md)
+- [\[ICLR 2026\] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution](trajectory-aware_shifted_state_space_models_for_online_video_super-resolution.md)
 - [\[CVPR 2026\] VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba](../../CVPR2026/image_restoration/vemamba_efficient_isotropic_reconstruction_of_volume_electron_microscopy_with_ax.md)
-- [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
+- [\[ICLR 2026\] Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression](turbo-ddcm_fast_and_flexible_zero-shot_diffusion-based_image_compression.md)
+- [\[ICLR 2026\] Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content](exploring_real-time_super-resolution_benchmarking_and_fine-tuning_for_streaming_.md)
 
 </div>
 

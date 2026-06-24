@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Stop Preaching and Start Practising Data Frugality for Responsible Development of AI
 description: >-
-  [ICML 2026][Recommender Systems][coreset] This position paper points out that the ML community has long been "preaching without practicing" regarding "data frugality"—while verbally acknowledging that coresets save energy, almost no one actually reports energy consumption or carbon emissions. Using ImageNet-1K as a case study, the authors calculate a conservat
+  [ICML 2026][Recommender Systems][Data frugality] This position paper points out that the ML community has long been "preaching without practicing" regarding "data frugality"—while verbally acknowledging that coresets save energy, almost no one actually reports energy consumption or carbon emissions. Using ImageNet-1K as a case study, the authors calculate a conservative lower bound of approximately 5.82 GWh / 2589 tCO2e for downstream training and storage…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - coreset
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Data frugality"
+  - "coreset"
+  - "carbon emissions"
+  - "responsible AI"
+  - "subset selection"
 date: 2026-05-08
-content_hash: 39b366933f86733a
+content_hash: b64cd96e43192b41
 ---
+
 # Position: Stop Preaching and Start Practising Data Frugality for Responsible Development of AI
 
 **Conference**: ICML 2026  

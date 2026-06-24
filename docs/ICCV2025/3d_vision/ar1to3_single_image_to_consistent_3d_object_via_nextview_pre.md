@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction
 description: >-
-  [ICCV 2025][3D Vision][Single-image 3D generation] This paper proposes AR-1-to-3, an autoregressive next-view prediction framework built upon diffusion models. By adopting a progressive "near-to-far" generation strategy…
+  [ICCV 2025][3D Vision][Single-image 3D generation] This paper proposes AR-1-to-3, an autoregressive next-view prediction framework built upon diffusion models. By adopting a progressive "near-to-far" generation strategy, combined with two conditioning mechanisms—Stacked-LE (Stacked Local-feature Encoding) and LSTM-GE (LSTM-based Global-feature Encoding)—the method significantly improves multi-view consistency in single-image-to-multi-view generation. On the GSO dataset…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "next-view prediction"
   - "multi-view consistency"
 date: 2026-05-08
-content_hash: 909ba93e5980580d
+content_hash: 9934772208eba0f4
 ---
 
 # AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction
@@ -116,10 +116,10 @@ The near-to-far strategy of AR-1-to-3 is potentially extensible to video diffusi
 ## Related Papers
 
 - [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
+- [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
 - [\[ICCV 2025\] FlexGen: Flexible Multi-View Generation from Text and Image Inputs](flexgen_flexible_multi-view_generation_from_text_and_image_inputs.md)
 - [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
-- [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
-- [\[ICCV 2025\] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions](wonderplay_dynamic_3d_scene_generation_from_a_single_image_and_actions.md)
+- [\[CVPR 2025\] CADDreamer: CAD Object Generation from Single-view Images](../../CVPR2025/3d_vision/caddreamer_cad_object_generation_from_single-view_images.md)
 
 </div>
 

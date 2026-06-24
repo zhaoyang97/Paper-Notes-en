@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ViLU: Learning Vision-Language Uncertainties for Failure Prediction
 description: >-
-  [ICCV2025][Information Retrieval & RAG][Uncertainty Quantification] This paper proposes ViLU, a post-hoc uncertainty quantification framework for VLM zero-shot prediction. By fusing visual embeddings…
+  [ICCV2025][Multimodal VLM][Uncertainty Quantification] This paper proposes ViLU, a post-hoc uncertainty quantification framework for VLM zero-shot prediction. By fusing visual embeddings, predicted text embeddings, and image-conditioned text representations via cross-attention, ViLU constructs uncertainty-aware multimodal representations that significantly outperform existing failure prediction methods across 13 classification datasets and large-scale image-text datasets.
 tags:
   - "ICCV2025"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "Uncertainty Quantification"
   - "Failure Prediction"
   - "VLM"
   - "Cross-Attention"
   - "Post-Hoc Estimation"
 date: 2026-05-08
-content_hash: 82364fe62c36842a
+content_hash: 8f1a98b30ce3490f
 ---
 
 # ViLU: Learning Vision-Language Uncertainties for Failure Prediction
@@ -170,11 +170,11 @@ In open-vocabulary settings (CC12M, LAION-400M), LVU performs even worse than MC
 
 ## Related Papers
 
-- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation](aligning_information_capacity_between_vision_and_language_via_dense-to-sparse_fe.md)
-- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching](aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md)
-- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](../../NeurIPS2025/information_retrieval/scaling_language-centric_omnimodal_representation_learning.md)
-- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/information_retrieval/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
-- [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
+- [\[ICLR 2026\] Why Keep Your Doubts to Yourself? Trading Visual Uncertainties among Vision-Language Models](../../ICLR2026/multimodal_vlm/why_keep_your_doubts_to_yourself_trading_visual_uncertainties_among_vision-langu.md)
+- [\[ICCV 2025\] Dynamic Multimodal Prototype Learning in Vision-Language Models](dynamic_multimodal_prototype_learning_in_vision-language_models.md)
+- [\[CVPR 2025\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](../../CVPR2025/multimodal_vlm/continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
+- [\[CVPR 2025\] Cropper: Vision-Language Model for Image Cropping through In-Context Learning](../../CVPR2025/multimodal_vlm/cropper_vision-language_model_for_image_cropping_through_in-context_learning.md)
+- [\[ICCV 2025\] Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model](interpretable_zero-shot_learning_with_locally-aligned_vision-language_model.md)
 
 </div>
 

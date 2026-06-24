@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the RoadMap research roadmap generation benchmark and the RoadMapper multi-agent system, which forms a closed loop consisting of knowledge retrieval, logic/granularity critiques, revision, and a DPO evaluator. On complex Chinese and English research problems, it improves performance by an average of
+  [ACL2026 Findings][Multi-Agent][Research Roadmap Generation] This paper proposes the RoadMap research roadmap generation benchmark and the RoadMapper multi-agent system, which forms a closed loop consisting of knowledge retrieval, logic/granularity critiques, revision, and a DPO evaluator. On complex Chinese and English research problems, it improves performance by an average of 7-9 points compared to direct prompting and significantly reduces the time cost for experts to des…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL2026 Findings"
+  - "Multi-Agent"
+  - "Research Roadmap Generation"
+  - "DPO Evaluator"
+  - "Structured Content Generation"
+  - "RoadMap Benchmark"
 date: 2026-05-08
-content_hash: ca6d197893292576
+content_hash: d80ee9d0a7f5089c
 ---
+
 # RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems
 
 **Conference**: ACL2026 Findings  
@@ -140,7 +145,7 @@ The paper compares Direct Prompting, Best-of-N, CoT, ReConcile, DyLAN, and RoadM
 - [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](../../ICML2026/multi_agent/engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
 - [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
-- [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
+- [\[ACL 2026\] PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers on Overleaf](papermentor_a_human-centered_multi-agent_writing_tutor_for_ai_research_papers_on.md)
 
 </div>
 

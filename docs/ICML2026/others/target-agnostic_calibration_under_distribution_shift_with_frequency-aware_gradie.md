@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification
 description: >-
-  [ICML 2026][Others][Paper Note] FGR employs DCT low-pass filtering to remove high-frequency spurious shortcuts from training images to achieve more accurate OOD calibration. It resolves the gradient conflict between "improving calibration" and "maintaining ID performance" through a geometric projection as a hard constraint, suppressing OOD ECE while
+  [ICML 2026][Calibration] FGR employs DCT low-pass filtering to remove high-frequency spurious shortcuts from training images to achieve more accurate OOD calibration. It resolves the gradient conflict between "improving calibration" and "maintaining ID performance" through a geometric projection as a hard constraint, suppressing OOD ECE while preserving ID performance without hyperparameter tuning for loss weights.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Calibration"
+  - "Distribution Shift"
+  - "DCT Low-pass Filtering"
+  - "Gradient Projection"
+  - "Domain-Invariant Features"
 date: 2026-05-08
-content_hash: 082a83120b9db963
+content_hash: 5bb93e969bcf7992
 ---
+
 # Target-Agnostic Calibration under Distribution Shift with Frequency-Aware Gradient Rectification
 
 **Conference**: ICML 2026  
@@ -142,6 +147,7 @@ Semantic shift on Office-Home (leave-one-domain-out average):
 - Value: ⭐⭐⭐⭐ Directly addresses the deployment pain point of target-dependency in OOD calibration with low engineering overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

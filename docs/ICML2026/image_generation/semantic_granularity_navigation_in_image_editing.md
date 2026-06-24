@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Semantic Granularity Navigation in Image Editing
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] NaviEdit decouples the implicit coupling where "model scale coordinate = editing progress clock" in diffusion/flow editors. Under a fixed step budget, it uses a training-free inference-time controller to concentrate computational effort on the density within an effective scale window rather than expanding the range int
+  [ICML 2026][Image Generation][Real Image Editing] NaviEdit decouples the implicit coupling where "model scale coordinate = editing progress clock" in diffusion/flow editors. Under a fixed step budget, it uses a training-free inference-time controller to concentrate computational effort on the density within an effective scale window rather than expanding the range into high-noise regions, improving both background fidelity and semantic consistency across PIE-Bench / ImgEdit-B…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
+  - "ICML 2026"
+  - "Image Generation"
+  - "Real Image Editing"
+  - "Flow Matching"
+  - "Training-free Inference Controller"
+  - "Scale-Progress Decoupling"
+  - "Semantic Granularity"
 date: 2026-05-08
-content_hash: dfdc472dca977f18
+content_hash: dbfce495e65ade49
 ---
+
 # Semantic Granularity Navigation in Image Editing
 
 **Conference**: ICML 2026  

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics
 description: >-
-  [ICLR 2026][LLM Reasoning][benchmark] The authors propose the ContextMATH benchmark, which reveals that even top-tier models like GPT-5 and DeepSeek-R1 experience a 13-34% accuracy drop in contextual mathematical reasoning. By transforming AIME/MATH-500 abstract problems into Scenario Grounding (SG) and Complexity Scaling (CS) variants, the study identifie
+  [ICLR 2026][Reasoning][Mathematical Reasoning] The authors propose the ContextMATH benchmark, which reveals that even top-tier models like GPT-5 and DeepSeek-R1 experience a 13-34% accuracy drop in contextual mathematical reasoning. By transforming AIME/MATH-500 abstract problems into Scenario Grounding (SG) and Complexity Scaling (CS) variants, the study identifies that errors primarily stem from problem formulation rather than computational reasoning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - benchmark
-  - AIME
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Mathematical Reasoning"
+  - "Contextual Reasoning"
+  - "Problem Formulation"
+  - "benchmark"
+  - "LLM Evaluation"
+  - "AIME"
 date: 2026-05-08
-content_hash: 1ebcccf01c58de72
+content_hash: d4412b190cbf1dd4
 ---
+
 # From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics
 
 **Conference**: ICLR 2026  
@@ -167,15 +172,16 @@ The attempt to train a dedicated formulation model failed; performance collapsed
 -   **Overall Recommendation**: ⭐⭐⭐⭐⭐ (4.5/5)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance](following_the_navigation_enhancing_small_language_models_contextual_reasoning_wi.md)
-- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
-- [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
 - [\[ACL 2026\] ChAIRO: Contextual Hierarchical Analogical Induction and Reasoning Optimization for LLMs](../../ACL2026/llm_reasoning/chairo_contextual_hierarchical_analogical_induction_and_reasoning_optimization_f.md)
 - [\[ICML 2026\] Biases in the Blind Spot: Detecting What LLMs Fail to Mention](../../ICML2026/llm_reasoning/biases_in_the_blind_spot_detecting_what_llms_fail_to_mention.md)
+- [\[ICLR 2026\] Learning What Reinforcement Learning Can't: Interleaved Online Fine-Tuning for Hardest Questions](learning_what_reinforcement_learning_cant_interleaved_online_fine-tuning_for_har.md)
+- [\[NeurIPS 2025\] SAND-Math: Using LLMs to Generate Novel, Difficult and Useful Mathematics Questions and Answers](../../NeurIPS2025/llm_reasoning/sand-math_using_llms_to_generate_novel_difficult_and_useful_mathematics_question.md)
 
 </div>
 

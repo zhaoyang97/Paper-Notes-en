@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PolarAnything: Diffusion-based Polarimetric Image Synthesis
 description: >-
-  [ICCV 2025][Image Generation][Polarimetric image synthesis] This paper proposes PolarAnything, the first diffusion-based framework for generating polarimetric images from a single RGB image. By performing denoising diffu…
+  [ICCV 2025][Image Generation][Polarimetric image synthesis] This paper proposes PolarAnything, the first diffusion-based framework for generating polarimetric images from a single RGB image. By performing denoising diffusion over encoded AoLP and DoLP representations, the method achieves physically accurate and photorealistic polarimetric attribute synthesis without requiring 3D assets or polarization cameras.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Shape from Polarization"
   - "Stable Diffusion"
 date: 2026-05-08
-content_hash: 21f3aeef20bfcac1
+content_hash: d25f6dca1a448b13
 ---
 
 # PolarAnything: Diffusion-based Polarimetric Image Synthesis
@@ -168,7 +168,7 @@ Augmenting the training set with 300 PolarAnything-synthesized images (PolarStan
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
 - [\[ICCV 2025\] Omegance: A Single Parameter for Various Granularities in Diffusion-Based Synthesis](omegance_a_single_parameter_for_various_granularities_in_diffusion-based_synthes.md)
 - [\[NeurIPS 2025\] Boosting Generative Image Modeling via Joint Image-Feature Synthesis](../../NeurIPS2025/image_generation/boosting_generative_image_modeling_via_joint_imagefeature_sy.md)
-- [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](../../NeurIPS2025/image_generation/scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
+- [\[CVPR 2025\] Multi-focal Conditioned Latent Diffusion for Person Image Synthesis](../../CVPR2025/image_generation/multi-focal_conditioned_latent_diffusion_for_person_image_synthesis.md)
 
 </div>
 

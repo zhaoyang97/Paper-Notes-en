@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory
 description: >-
-  [NEURIPS2025][Medical Imaging][active target discovery] This paper proposes EM-PTDM, a framework inspired by the dual-memory system in neuroscience. It leverages a pretrained diffusion model as "permanent memory" and inc…
+  [NEURIPS2025][Medical Imaging][active target discovery] This paper proposes EM-PTDM, a framework inspired by the dual-memory system in neuroscience. It leverages a pretrained diffusion model as "permanent memory" and incorporates a lightweight "transient memory" module based on Doob's h-transform to achieve efficient active target discovery **without any domain-specific prior data**, with theoretical guarantees of monotonic prior improvement.
 tags:
   - "NEURIPS2025"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "EM algorithm"
   - "uninformative prior"
 date: 2026-05-08
-content_hash: 5e0b7b2d3369c168
+content_hash: f2c68d8e2c21c8e6
 ---
 
 # Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory
@@ -170,9 +170,9 @@ $$\text{Score}_{(\phi,\eta)}(q_t) = \alpha(\mathcal{B}) \cdot \text{expl}_\phi^{
 
 - [\[NeurIPS 2025\] Online Feedback Efficient Active Target Discovery in Partially Observable Environments](online_feedback_efficient_active_target_discovery_in_partially_observable_enviro.md)
 - [\[NeurIPS 2025\] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling](dynamic_causal_discovery_in_alzheimers_disease_through_latent_pseudotime_modelli.md)
+- [\[ICLR 2026\] Prior-aware and Context-guided Group Sampling for Active Probabilistic Subsampling](../../ICLR2026/medical_imaging/prior-aware_and_context-guided_group_sampling_for_active_probabilistic_subsampli.md)
 - [\[ICCV 2025\] AcZeroTS: Active Learning for Zero-shot Tissue Segmentation in Pathology Images](../../ICCV2025/medical_imaging/aczerots_active_learning_for_zeroshot_tissue_segmentation_in.md)
-- [\[ICCV 2025\] GDKVM: Echocardiography Video Segmentation via Spatiotemporal Key-Value Memory with Gated Delta Rule](../../ICCV2025/medical_imaging/gdkvm_echocardiography_video_segmentation_via_spatiotemporal_key-value_memory_wi.md)
-- [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
+- [\[ICML 2025\] Enhancing Statistical Validity and Power in Hybrid Controlled Trials: A Randomization Inference Approach with Conformal Selective Borrowing](../../ICML2025/medical_imaging/enhancing_statistical_validity_and_power_in_hybrid_controlled_trials_a_randomiza.md)
 
 </div>
 

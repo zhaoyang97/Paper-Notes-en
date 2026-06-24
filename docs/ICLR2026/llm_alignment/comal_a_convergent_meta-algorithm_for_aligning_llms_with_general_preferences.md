@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] COMAL models "aligning to general human preferences" as an original (unregularized) two-player zero-sum game. Using the Conceptual Prox meta-algorithm derived from game theory—which solves a KL-regularized sub-game in each round and then advances the reference policy to the current solution—it proves for the first time
+  [ICLR2026][LLM Alignment][General Preferences] COMAL models "aligning to general human preferences" as an original (unregularized) two-player zero-sum game. Using the Conceptual Prox meta-algorithm derived from game theory—which solves a KL-regularized sub-game in each round and then advances the reference policy to the current solution—it proves for the first time that the algorithm achieves **last-iterate convergence to the exact Nash Equilibrium of the original game**. Thi…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "General Preferences"
+  - "Nash Equilibrium"
+  - "Zero-sum Game"
+  - "Last-iterate Convergence"
+  - "Proximal Operator"
 date: 2026-05-08
-content_hash: c23a3c890559e7d2
+content_hash: b2dc3444075a0cc8
 ---
+
 # COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences
 
 **Conference**: ICLR2026  

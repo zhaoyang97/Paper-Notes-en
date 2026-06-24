@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniLight: A Unified Representation for Lighting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] UniLight projects four historically incompatible lighting representations—environment maps, images, irradiance maps, and text—into a single joint latent space via contrastive learning. By adding a Spherical Harmonics (SH) prediction auxiliary task to lock in light direction information, it supports three downstream tas
+  [CVPR 2026][3D Vision][Unified Lighting Representation] UniLight projects four historically incompatible lighting representations—environment maps, images, irradiance maps, and text—into a single joint latent space via contrastive learning. By adding a Spherical Harmonics (SH) prediction auxiliary task to lock in light direction information, it supports three downstream tasks: cross-modal lighting retrieval, environment map generation, and diffusion-based relighting.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Unified Lighting Representation"
+  - "Cross-modal Contrastive Learning"
+  - "Environment Map"
+  - "Spherical Harmonics"
+  - "Relighting"
 date: 2026-05-08
-content_hash: ce1c7e2f1701b5a6
+content_hash: a113693137f397d2
 ---
+
 # UniLight: A Unified Representation for Lighting
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,15 @@ For environment map generation, UniLight outperforms DiffusionLight-Turbo across
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Lighting in Motion: Spatiotemporal HDR Lighting Estimation](lighting_in_motion_spatiotemporal_hdr_lighting_estimation.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
 - [\[CVPR 2026\] LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes](luxremix_lighting_decomposition_and_remixing_for_indoor_scenes.md)
 - [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](../../ICLR2026/3d_vision/learning_unified_representation_of_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)
-- [\[ACL 2026\] CodeBind: Decoupled Representation Learning for Multimodal Alignment with Unified Compositional Codebook](../../ACL2026/3d_vision/codebind_decoupled_representation_learning_for_multimodal_alignment_with_unified.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 
 </div>
 

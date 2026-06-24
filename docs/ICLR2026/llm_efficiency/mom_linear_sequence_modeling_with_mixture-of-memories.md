@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MoM: Linear Sequence Modeling with Mixture-of-Memories
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Memories] MoM replaces the single fixed-size memory in linear models with a set of independent memory states and a routing network. This allows different tokens to update only their assigned memories, significantly expanding memory capacity and eliminating write interference while maintaining linear complexity, bringing performa
+  [ICLR 2026][LLM Efficiency][Linear Attention] MoM replaces the single fixed-size memory in linear models with a set of independent memory states and a routing network. This allows different tokens to update only their assigned memories, significantly expanding memory capacity and eliminating write interference while maintaining linear complexity, bringing performance on recall-intensive tasks close to Transformers.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture-of-Memories
-  - Gated DeltaNet
-  - Test-Time Training
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Mixture-of-Memories"
+  - "Recall-intensive tasks"
+  - "Memory Interference"
+  - "Gated DeltaNet"
+  - "Test-Time Training"
 date: 2026-05-08
-content_hash: d5679800fba5bb5b
+content_hash: 0907d2b639caa26a
 ---
+
 # MoM: Linear Sequence Modeling with Mixture-of-Memories
 
 **Conference**: ICLR 2026  
@@ -119,11 +123,11 @@ The same trend applies to commonsense reasoning tasks (Gated DeltaNet MoM 444M s
 
 ## Related Papers
 
+- [\[ICLR 2026\] Householder-Diagonalized Linear Attention (HDLA): Utilizing Rank-Enhanced Decay Mechanism for Efficient Sequence Modeling](householder-diagonalized_linear_attention_hdla_utilizing_enhanced_decay_mechanis.md)
 - [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
 - [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](../../ACL2026/llm_efficiency/native_hybrid_attention_for_efficient_sequence_modeling.md)
 - [\[ICLR 2026\] Log-Linear Attention](log-linear_attention.md)
-- [\[ICLR 2026\] FlexLinearAttention: Compiling a Unified Abstraction into Scalable Kernels for Linear Attention](flexlinearattention_compiling_a_unified_abstraction_into_scalable_kernels_for_li.md)
-- [\[ICLR 2026\] FutureFill: Fast Generation from Convolutional Sequence Models](futurefill_fast_generation_from_convolutional_sequence_models.md)
+- [\[ICLR 2026\] MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head](mhla_restoring_expressivity_of_linear_attention_via_token-level_multi-head.md)
 
 </div>
 

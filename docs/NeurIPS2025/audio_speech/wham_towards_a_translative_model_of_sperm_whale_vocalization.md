@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] WhAM: Towards A Translative Model of Sperm Whale Vocalization
 description: >-
-  [NeurIPS 2025][Audio & Speech][Sperm whale acoustics] This paper proposes WhAM (Whale Acoustics Model), the first Transformer-based generative model for sperm whale codas, achieving acoustic translation…
+  [NeurIPS 2025][Audio & Speech][Sperm whale acoustics] This paper proposes WhAM (Whale Acoustics Model), the first Transformer-based generative model for sperm whale codas, achieving acoustic translation, synthetic generation, and downstream classification through fine-tuning of VampNet.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Masked Acoustic Token Model"
   - "cross-domain style transfer"
 date: 2026-05-08
-content_hash: f09ed0373ffb7fa9
+content_hash: 9af7efdd3f81c4bd
 ---
 
 # WhAM: Towards A Translative Model of Sperm Whale Vocalization
@@ -143,11 +143,11 @@ Highly innovative with outstanding interdisciplinary value, though notable gaps 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](adapting_speech_language_model_to_singing_voice_synthesis.md)
+- [\[ICLR 2026\] AVEX: What Matters for Animal Vocalization Encoding](../../ICLR2026/audio_speech/avex_what_matters_for_animal_vocalization_encoding.md)
 - [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
-- [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](../../ICML2026/audio_speech/attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
-- [\[ACL 2026\] Reference Games as a Testbed for the Alignment of Model Uncertainty and Clarification Requests](../../ACL2026/audio_speech/reference_games_as_a_testbed_for_the_alignment_of_model_uncertainty_and_clarific.md)
+- [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](adapting_speech_language_model_to_singing_voice_synthesis.md)
+- [\[ACL 2025\] Towards Reliable Large Audio Language Model](../../ACL2025/audio_speech/towards_reliable_large_audio_language_model.md)
+- [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)
 
 </div>
 

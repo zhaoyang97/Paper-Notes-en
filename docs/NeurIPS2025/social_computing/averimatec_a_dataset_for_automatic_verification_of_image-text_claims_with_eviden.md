@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AVerImaTeC: A Dataset for Automatic Verification of Image-Text Claims with Evidence from the Web
 description: >-
-  [NeurIPS 2025][Social Computing][image-text verification] AVerImaTeC introduces the first image-text fact-checking dataset with complete evidence annotation — 1,297 real-world image-text claims…
+  [NeurIPS 2025][Social Computing][image-text verification] AVerImaTeC introduces the first image-text fact-checking dataset with complete evidence annotation — 1,297 real-world image-text claims, a 5-stage annotation pipeline (extraction → QA reasoning → sufficiency check → iterative refinement → second check), and temporally constrained evidence (to prevent temporal leakage). The baseline system achieves 82% accuracy with ground-truth evidence…
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "multimodal verification"
   - "dataset"
 date: 2026-05-08
-content_hash: 96cabc5d998fdff5
+content_hash: b79b70fb14e5858f
 ---
 
 # AVerImaTeC: A Dataset for Automatic Verification of Image-Text Claims with Evidence from the Web
@@ -134,10 +134,10 @@ AVerImaTeC introduces the first image-text fact-checking dataset with complete e
 ## Related Papers
 
 - [\[NeurIPS 2025\] Precise Information Control in Long-Form Text Generation](precise_information_control_in_long-form_text_generation.md)
+- [\[CVPR 2025\] Classifier-to-Bias: Toward Unsupervised Automatic Bias Detection for Visual Classifiers](../../CVPR2025/social_computing/classifier-to-bias_toward_unsupervised_automatic_bias_detection_for_visual_class.md)
+- [\[ICML 2025\] DEFAME: Dynamic Evidence-based FAct-checking with Multimodal Experts](../../ICML2025/social_computing/defame_dynamic_evidence-based_fact-checking_with_multimodal_experts.md)
 - [\[NeurIPS 2025\] Worse than Zero-shot? A Fact-Checking Dataset for Evaluating the Robustness of RAG Against Misleading Retrievals](worse_than_zero-shot_a_fact-checking_dataset_for_evaluating_the_robustness_of_ra.md)
-- [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](../../ACL2026/social_computing/claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
-- [\[CVPR 2026\] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification](../../CVPR2026/social_computing/bridging_pixels_and_words_mask-aware_local_semantic_fusion_for_multimodal_media_.md)
-- [\[ACL 2026\] Who Gets Which Message? Auditing Demographic Bias in LLM-Generated Targeted Text](../../ACL2026/social_computing/who_gets_which_message_auditing_demographic_bias_in_llm-generated_targeted_text.md)
+- [\[ACL 2025\] HateDay: Insights from a Global Hate Speech Dataset Representative of a Day on Twitter](../../ACL2025/social_computing/hateday_global_hate_speech.md)
 
 </div>
 

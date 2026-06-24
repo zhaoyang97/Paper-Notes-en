@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The Microsoft team proposes a **real-time and streamable** audio-driven talking portrait video generation framework: using a "Reference-Guided + Causal Residual" Deep Compression VAE to compress video into a 768× compact latent space, then employing a block-wise autoregressive Rectified Flow Transformer to generate lat
+  [CVPR 2026][Video Generation][Talking Portrait Video] The Microsoft team proposes a **real-time and streamable** audio-driven talking portrait video generation framework: using a "Reference-Guided + Causal Residual" Deep Compression VAE to compress video into a 768× compact latent space, then employing a block-wise autoregressive Rectified Flow Transformer to generate latents block by block. This achieves 42 FPS (over 25× faster than existing diffusion methods) with image qua…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Talking Portrait Video"
+  - "Streamable Generation"
+  - "Deep Compression VAE"
+  - "Autoregressive Rectified Flow"
+  - "Real-Time Generation"
 date: 2026-05-08
-content_hash: 5121895733d1eb6f
+content_hash: 3cb791f0a3f7d4f1
 ---
+
 # Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Impact of Reference Guidance and CR-VA on VAE reconstruction quality (VoxCeleb2 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
+- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
+- [\[CVPR 2026\] EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing](editctrl_disentangled_local_and_global_control_for_real-time_generative_video_ed.md)
 - [\[CVPR 2026\] EgoEdit: Dataset, Real-Time Streaming Model, and Benchmark for Egocentric Video Editing](egoedit_dataset_real-time_streaming_model_and_benchmark_for_egocentric_video_edi.md)
+- [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](../../ICLR2026/video_generation/real-time_motion-controllable_autoregressive_video_diffusion.md)
 
 </div>
 

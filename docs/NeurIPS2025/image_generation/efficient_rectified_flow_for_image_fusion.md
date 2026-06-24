@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Rectified Flow for Image Fusion
 description: >-
-  [NeurIPS 2025][Image Generation][Image Fusion] This paper proposes RFfusion, which introduces Rectified Flow into image fusion for the first time…
+  [NeurIPS 2025][Image Generation][Image Fusion] This paper proposes RFfusion, which introduces Rectified Flow into image fusion for the first time, enabling training-free one-step sampling. A two-stage fusion-oriented VAE training strategy is further designed, achieving comprehensive superiority over existing diffusion-based fusion methods in both speed and quality.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "VAE"
   - "One-Step Sampling"
 date: 2026-05-08
-content_hash: 6bf1fc3f19c5e7c0
+content_hash: ecf21a73022080d3
 ---
 
 # Efficient Rectified Flow for Image Fusion
@@ -143,7 +143,7 @@ The key distinction is that RFfusion replaces the convoluted sampling trajectory
 - [\[NeurIPS 2025\] GuideFlow3D: Optimization-Guided Rectified Flow For Appearance Transfer](guideflow3d_optimization-guided_rectified_flow_for_appearance_transfer.md)
 - [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](../../CVPR2026/image_generation/careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
-- [\[ICCV 2025\] Straighten Viscous Rectified Flow via Noise Optimization](../../ICCV2025/image_generation/straighten_viscous_rectified_flow_via_noise_optimization.md)
+- [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](../../CVPR2026/image_generation/nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
 
 </div>
 

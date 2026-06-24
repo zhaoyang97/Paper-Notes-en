@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion
 description: >-
-  [ICLR 2026][Video Generation][Watermarking] SIGMark proposes the first blind-extraction in-generation watermarking framework for modern video diffusion models. It achieves constant-time blind extraction via Global Frame-level Pseudo-Random Coding (GF-PRC) and enhances temporal robustness under Causal 3D VAE via a Segmented Group Ordering (SGO) module. It reaches
+  [ICLR 2026][Video Generation][Video Diffusion Models] SIGMark proposes the first blind-extraction in-generation watermarking framework for modern video diffusion models. It achieves constant-time blind extraction via Global Frame-level Pseudo-Random Coding (GF-PRC) and enhances temporal robustness under Causal 3D VAE via a Segmented Group Ordering (SGO) module. It reaches 90%+ bit accuracy with a capacity of 512×16 bits on HunyuanVideo and Wan-2.2.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Watermarking
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Watermarking"
+  - "Blind Extraction"
+  - "Pseudo-Random Coding"
+  - "Causal 3D VAE"
+  - "Scalability"
 date: 2026-05-08
-content_hash: 90beb6a23878d0a9
+content_hash: 9fc159a1837e0d01
 ---
+
 # SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion
 
 **Conference**: ICLR 2026  
@@ -154,8 +160,8 @@ SIGMark is a training-free method that does not fine-tune any model parameters. 
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
 - [\[CVPR 2025\] DynamicScaler: Seamless and Scalable Video Generation for Panoramic Scenes](../../CVPR2025/video_generation/dynamicscaler_seamless_and_scalable_video_generation_for_panoramic_scenes.md)
 - [\[ECCV 2024\] VFusion3D: Learning Scalable 3D Generative Models from Video Diffusion Models](../../ECCV2024/video_generation/vfusion3d_learning_scalable_3d_generative_models_from_video_diffusion_models.md)
-- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](../../ICCV2025/video_generation/stiv_scalable_text_and_image_conditioned_video_generation.md)
+- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
 
 </div>
 

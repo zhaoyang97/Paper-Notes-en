@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization for Speech Multi-Metric Estimation
 description: >-
-  [NeurIPS 2025][Interpretability][Speech multi-metric evaluation] ARECHO frames speech multi-metric evaluation as a chain-based autoregressive token prediction task. It designs a unified speech information tokenization pi…
+  [NeurIPS 2025 Spotlight][Interpretability][Speech multi-metric evaluation] ARECHO frames speech multi-metric evaluation as a chain-based autoregressive token prediction task. It designs a unified speech information tokenization pipeline to handle 87 heterogeneous metrics (numerical/categorical/bounded/unbounded), explicitly captures inter-metric dependencies (e.g., intelligibility–naturalness correlation) via dynamic classification chains, and employs two-step confidence-guid…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Interpretability"
   - "Speech multi-metric evaluation"
   - "autoregressive classification chain"
@@ -12,7 +12,7 @@ tags:
   - "confidence-guided decoding"
   - "dependency modeling"
 date: 2026-05-08
-content_hash: 596ba3813ac21a6b
+content_hash: 562784e97ef617d5
 ---
 
 # ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization for Speech Multi-Metric Estimation
@@ -137,11 +137,11 @@ Speech signal $\mathbf{S}$ → WavLM audio encoder → shared representation →
 
 ## Related Papers
 
+- [\[ACL 2025\] EXPERT: An Explainable Image Captioning Evaluation Metric with Structured Explanations](../../ACL2025/interpretability/expert_an_explainable_image_captioning_evaluation_metric_with_structured_explana.md)
 - [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
 - [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
+- [\[ICLR 2026\] The Deleuzian Representation Hypothesis](../../ICLR2026/interpretability/the_deleuzian_representation_hypothesis.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
-- [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
-- [\[NeurIPS 2025\] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation](agentiql_an_agent-inspired_multi-expert_framework_for_text-to-sql_generation.md)
 
 </div>
 

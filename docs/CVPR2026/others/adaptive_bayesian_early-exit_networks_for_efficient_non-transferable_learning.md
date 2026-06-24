@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning
 description: >-
-  [CVPR 2026][Others][Non-Transferable Learning] ENL-DEE redesigns "Non-Transferable Learning (NTL)" as a **Bayesian early-exit network**. By freezing the backbone and training only several early-exit classification heads, it uses entropy-based routing to guide source domain samples to deep exits (preserving performance) and eject target domain samples at shallow exi
+  [CVPR 2026][Non-Transferable Learning] ENL-DEE redesigns "Non-Transferable Learning (NTL)" as a **Bayesian early-exit network**. By freezing the backbone and training only several early-exit classification heads, it uses entropy-based routing to guide source domain samples to deep exits (preserving performance) and eject target domain samples at shallow exits (non-semantic features, accuracy near random). This significantly strengthens model IP protection while drastically re…
 tags:
-  - CVPR 2026
-  - Others
-  - Non-Transferable Learning
-  - Early-Exit Network
+  - "CVPR 2026"
+  - "Non-Transferable Learning"
+  - "Early-Exit Network"
+  - "Bayesian routing"
+  - "Model IP protection"
+  - "dynamic inference"
 date: 2026-05-08
-content_hash: d32fc943593584eb
+content_hash: 07125cbd265deef1
 ---
+
 # Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning
 
 **Conference**: CVPR 2026  
@@ -144,15 +147,16 @@ $\beta=1$ provides the best trade-off. Larger $\beta$ values sacrifice source us
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 - [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
-- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
 - [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
-- [\[CVPR 2026\] Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning](smart_replay_adaptive_scheduling_of_memory_rehearsal_for_computational_resource-.md)
+- [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
+- [\[ICLR 2026\] Adaptive Canonicalization with Application to Invariant Anisotropic Geometric Networks](../../ICLR2026/others/adaptive_canonicalization_with_application_to_invariant_anisotropic_geometric_ne.md)
 
 </div>
 

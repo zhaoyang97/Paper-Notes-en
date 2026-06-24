@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Boosting for Predictive Sufficiency
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper introduces the information-theoretic concept of **$\alpha$-predictive sufficiency**. It theoretically demonstrates that boosting outperforms specialized methods in tabular OOD tasks under hidden confounding shifts because it **implicitly partitions data into "reference classes/environments" aligned with hidd
+  [ICLR 2026][learning theory][Out-of-Distribution Generalization] This paper introduces the information-theoretic concept of **$\alpha$-predictive sufficiency**. It theoretically demonstrates that boosting outperforms specialized methods in tabular OOD tasks under hidden confounding shifts because it **implicitly partitions data into "reference classes/environments" aligned with hidden confounders**, maximizing predictive information within each environment.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "learning theory"
+  - "OOD generalization"
+  - "Out-of-Distribution Generalization"
+  - "Hidden Confounding Shift"
+  - "Information Theory"
+  - "Gradient Boosting"
+  - "Predictive Sufficiency"
+  - "Reference Classes"
 date: 2026-05-08
-content_hash: a0e25761ff4683d8
+content_hash: d0ac6b64212734b6
 ---
+
 # Boosting for Predictive Sufficiency
 
 **Conference**: ICLR 2026  
@@ -119,10 +127,10 @@ Conclusion: **Higher predictive information → better performance; lower predic
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting Agnostic Boosting](../../NeurIPS2025/learning_theory/revisiting_agnostic_boosting.md)
-- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
-- [\[ICLR 2026\] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](escaping_model_collapse_via_synthetic_data_verification_near-term_improvements_a.md)
-- [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
-- [\[ICLR 2026\] Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model](learning_shrinks_the_hard_tail_trainingdependent_inference_scaling_in_a_solvable.md)
+- [\[ICLR 2026\] Smooth Calibration Error: Uniform Convergence and Functional Gradient Analysis](smooth_calibration_error_uniform_convergence_and_functional_gradient_analysis.md)
+- [\[ICLR 2026\] Understanding and Relaxing the Limitations of Transformers for Linear Algebra](understanding_and_relaxing_the_limitations_of_transformers_for_linear_algebra.md)
+- [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 
 </div>
 

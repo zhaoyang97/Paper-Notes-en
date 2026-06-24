@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rolling Forcing: Autoregressive Long Video Diffusion in Real Time
 description: >-
-  [ICLR 2026][Video Generation][Error Accumulation] Rolling Forcing transforms frame-by-frame autoregressive video diffusion into a rolling multi-frame joint denoising process, utilizing initial frame attention sinks to anchor global appearance. This achieves near 16 FPS real-time generation of multi-minute long videos on a single GPU while significantly suppressing lon
+  [ICLR2026][Video Generation][Long video generation] Rolling Forcing transforms frame-by-frame autoregressive video diffusion into a rolling multi-frame joint denoising process, utilizing initial frame attention sinks to anchor global appearance. This achieves near 16 FPS real-time generation of multi-minute long videos on a single GPU while significantly suppressing long-term error accumulation.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Error Accumulation
-  - attention sink
+  - "ICLR2026"
+  - "Video Generation"
+  - "Long video generation"
+  - "streaming video diffusion"
+  - "autoregressive generation"
+  - "error accumulation"
+  - "attention sink"
 date: 2026-05-08
-content_hash: ead39f7863c691de
+content_hash: f3af9ea02cfed06e
 ---
+
 # Rolling Forcing: Autoregressive Long Video Diffusion in Real Time
 
 **Conference**: ICLR2026  
@@ -151,8 +155,8 @@ Self Forcing's drift explodes to 14.4 over 2 minutes, while Rolling Forcing main
 
 ## Related Papers
 
-- [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](real-time_motion-controllable_autoregressive_video_diffusion.md)
 - [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
+- [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](real-time_motion-controllable_autoregressive_video_diffusion.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](../../CVPR2026/video_generation/endless_world_real-time_3d-aware_long_video_generation.md)
 - [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](motionstream_real-time_video_generation_with_interactive_motion_controls.md)
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)

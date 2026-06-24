@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fractal Camouflage: A Bio-Inspired Approach for Multi-Scale Adversarial Attacks in the Infrared Domain
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Aiming at infrared pedestrian detectors, this work generates "cross-scale effective" physical adversarial perturbations (cold patches attached to clothing) using the natural self-similar structure of H-shaped fractals. Parameters are searched under black-box conditions using Particle Swarm Optimization (PSO), achieving
+  [CVPR 2026][AI Safety][Infrared Pedestrian Detection] Aiming at infrared pedestrian detectors, this work generates "cross-scale effective" physical adversarial perturbations (cold patches attached to clothing) using the natural self-similar structure of H-shaped fractals. Parameters are searched under black-box conditions using Particle Swarm Optimization (PSO), achieving a physical world ASR of 97.54% and a cross-dataset ASR of 99.16%, significantly outperforming existing si…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Infrared Pedestrian Detection"
+  - "Physical Adversarial Attack"
+  - "Fractal Geometry"
+  - "Multi-scale Attack"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: 4bfbd6736b1d2184
+content_hash: cd88400e119532c1
 ---
+
 # Fractal Camouflage: A Bio-Inspired Approach for Multi-Scale Adversarial Attacks in the Infrared Domain
 
 **Conference**: CVPR 2026  
@@ -144,8 +150,8 @@ Robustness across 10 detectors (Table 2): Mean 89.35% ASR, 238.12 AQ. Reached 10
 - [\[CVPR 2026\] A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World](a_sanity_check_for_multi-in-domain_face_forgery_detection_in_the_real_world.md)
 - [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
 - [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
+- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
 
 </div>
 

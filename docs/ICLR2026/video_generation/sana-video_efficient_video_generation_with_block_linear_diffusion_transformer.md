@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer
 description: >-
-  [ICLR 2026][Video Generation][KV cache] SANA-Video replaces the full attention in video DiTs with linear attention to reduce complexity from $O(N^2)$ to $O(N)$. By leveraging the additive property of linear attention, a "constant memory" block autoregressive KV cache is designed. This allows a 2B model to be trained on 64 H100s in 12 days (only 1% of MovieGe
+  [ICLR 2026][Video Generation][Video Diffusion] SANA-Video replaces the full attention in video DiTs with linear attention to reduce complexity from $O(N^2)$ to $O(N)$. By leveraging the additive property of linear attention, a "constant memory" block autoregressive KV cache is designed. This allows a 2B model to be trained on 64 H100s in 12 days (only 1% of MovieGen's cost), producing 720×1280 minute-long videos that match Wan2.1-14B on VBench while being 16× faster during in…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - KV cache
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Linear Attention"
+  - "Autoregressive Long Video"
+  - "KV cache"
+  - "Deep Compression VAE"
 date: 2026-05-08
-content_hash: 82d8d5ada398e51d
+content_hash: d1a8cdf0c4c4430d
 ---
+
 # SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer
 
 **Conference**: ICLR 2026  
@@ -138,14 +143,17 @@ VBench Ablations (Table 5):
 
 <div class="related-papers" markdown="1">
 
-- **SANA**: [SANA: Efficient High-Resolution Image Synthesis with Linear Diffusion Transformers (CVPR 2024)]
-- **Wan2.1**: [Wan: Open and User-Friendly Video Generation with High-Resolution (2025)]
-- **MovieGen**: [MovieGen: A Holistic System for Media Generation (2024)]
+## Related Papers
+
+- [\[ICLR 2026\] BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation](blade_block-sparse_attention_meets_step_distillation_for_efficient_video_generat.md)
+- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
+- [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
+- [\[CVPR 2026\] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](../../CVPR2026/video_generation/attention_surgery_an_efficient_recipe_to_linearize_your_video_diffusion_transfor.md)
+- [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] BLADE: Block-Sparse Attention Meets Step Distillation for Efficient Video Generation](blade_block-sparse_attention_meets_step_distillation_for_efficient_video_generat.md)

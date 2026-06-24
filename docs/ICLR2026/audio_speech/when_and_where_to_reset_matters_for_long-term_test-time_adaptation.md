@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] When and Where to Reset Matters for Long-Term Test-Time Adaptation
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] ASR proposes an adaptive selective reset scheme that dynamically determines *when* to reset via prediction concentration $\mathcal{C}_t$ (avoiding the suboptimality of fixed cycles) and *where* to reset via a progressive layer selection strategy from the output layer to the input layer (preserving valuable adaptation k
+  [ICLR 2026][Audio & Speech][Test-time adaptation] ASR proposes an adaptive selective reset scheme that dynamically determines *when* to reset via prediction concentration $\mathcal{C}_t$ (avoiding the suboptimality of fixed cycles) and *where* to reset via a progressive layer selection strategy from the output layer to the input layer (preserving valuable adaptation knowledge). Combined with importance-aware regularization to recover key reset knowledge and on-the-fly adjustm…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Test-time adaptation"
+  - "Model collapse"
+  - "Adaptive reset"
+  - "Selective reset"
+  - "Fisher information"
+  - "Long-term domain shift"
 date: 2026-05-08
-content_hash: 993d64761273c90a
+content_hash: f9a5341d46557aa3
 ---
+
 # When and Where to Reset Matters for Long-Term Test-Time Adaptation
 
 **Conference**: ICLR 2026  
@@ -141,11 +148,11 @@ Ours improves over SOTA by **44.12%** on CCC-Hard.
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] E-BATS: Efficient Backpropagation-Free Test-Time Adaptation for Speech Foundation Models](../../NeurIPS2025/audio_speech/e-bats_efficient_backpropagation-free_test-time_adaptation_for_speech_foundation.md)
+- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](../../CVPR2026/audio_speech/infinityhuman_towards_long-term_audio-driven_human_animation.md)
 - [\[ICLR 2026\] AVEX: What Matters for Animal Vocalization Encoding](avex_what_matters_for_animal_vocalization_encoding.md)
+- [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](../../NeurIPS2025/audio_speech/textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
 - [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
-- [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
-- [\[ICLR 2026\] TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization](tvtsyn_content-synchronous_time-varying_timbre_for_streaming_voice_conversion_an.md)
-- [\[ICLR 2026\] Efficient Audio-Visual Speech Separation with Discrete Lip Semantics and Multi-Scale Global-Local Attention](efficient_audio-visual_speech_separation_with_discrete_lip_semantics_and_multi-s.md)
 
 </div>
 

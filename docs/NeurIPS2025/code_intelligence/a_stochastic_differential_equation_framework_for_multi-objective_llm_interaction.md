@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions
 description: >-
-  [NeurIPS 2025][Code Intelligence][stochastic differential equation] This paper models multi-objective optimization in iterative LLM interactions as an SDE (drift-diffusion process)…
+  [NeurIPS 2025][Code Intelligence][stochastic differential equation] This paper models multi-objective optimization in iterative LLM interactions as an SDE (drift-diffusion process), quantifies inter-objective coupling via an interference matrix, and analyzes strategy convergence behavior through eigenvalue spectral analysis. Validation on code generation (three objectives: security, efficiency, functionality) demonstrates convergence rates ranging from 0.33 to 1.29 and predic…
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "interference matrix"
   - "code generation"
 date: 2026-05-08
-content_hash: a5bc932892199302
+content_hash: 5bc78a6b1c761d0b
 ---
 
 # A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions
@@ -136,10 +136,10 @@ The objective vector $\mathbf{x}(t) \in \mathbb{R}^n$ of iterative LLM interacti
 ## Related Papers
 
 - [\[AAAI 2026\] EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion](../../AAAI2026/code_intelligence/equacode_a_multi-strategy_jailbreak_approach_for_large_language_models_via_equat.md)
-- [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](automated_multi-agent_workflows_for_rtl_design.md)
 - [\[ACL 2026\] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels](../../ACL2026/code_intelligence/cubridge_an_llm-based_framework_for_understanding_and_reconstructing_high-perfor.md)
 - [\[AAAI 2026\] Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction](../../AAAI2026/code_intelligence/extracting_events_like_code_a_multi-agent_programming_framework_for_zero-shot_ev.md)
+- [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
 
 </div>
 

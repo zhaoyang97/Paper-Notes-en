@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] OpenEstimate is a benchmark that tasks frontier LLMs with "estimating probability distributions from internal knowledge" using real-world data. By randomly slicing public observational datasets to generate 178 **derived conditional statistics** as ground truths, the benchmark requires models to express their beliefs as
+  [ICLR 2026][Reasoning][Bayesian Prior] OpenEstimate is a benchmark that tasks frontier LLMs with "estimating probability distributions from internal knowledge" using real-world data. By randomly slicing public observational datasets to generate 178 **derived conditional statistics** as ground truths, the benchmark requires models to express their beliefs as Bayesian priors. Results show that priors from six frontier models are worth approximately "5 samples from the true dist…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Bayesian Prior"
+  - "Probability Estimation"
+  - "Calibration"
+  - "Uncertainty Reasoning"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: d0d10aecc952dd5f
+content_hash: 233ba4b60ab046a3
 ---
+
 # OpenEstimate: Evaluating LLMs on Reasoning Under Uncertainty with Real-World Data
 
 **Conference**: ICLR 2026  
@@ -148,9 +154,9 @@ Reasoning models (o3-mini / o4-mini) generally show the best calibration. Howeve
 
 - [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
 - [\[ICLR 2026\] OptimalThinkingBench: Evaluating Over and Underthinking in LLMs](optimalthinkingbench_evaluating_over_and_underthinking_in_llms.md)
-- [\[ICLR 2026\] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)
 - [\[NeurIPS 2025\] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](../../NeurIPS2025/llm_reasoning/time_a_multilevel_benchmark_for_temporal_reasoning_of_llms_i.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
+- [\[ICLR 2026\] From Assumptions to Actions: Turning LLM Reasoning into Uncertainty-Aware Planning](from_assumptions_to_actions_turning_llm_reasoning_into_uncertainty-aware_plannin.md)
+- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](../../ICML2026/llm_reasoning/evaluating_relational_reasoning_in_llms_with_rel.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] This work proposes an EEG-conditioned fMRI reconstruction framework based on a Diffusion Transformer. By modeling brain activity as a sequence of spatiotemporal neural frames rather than independent snapshots, it achieves spatio-temporally consistent fMRI reconstruction at cortical vertex-level resolution. Furthermore,
+  [CVPR 2026][3D Vision][EEG-to-fMRI] This work proposes an EEG-conditioned fMRI reconstruction framework based on a Diffusion Transformer. By modeling brain activity as a sequence of spatiotemporal neural frames rather than independent snapshots, it achieves spatio-temporally consistent fMRI reconstruction at cortical vertex-level resolution. Furthermore, it supports intermediate frame interpolation via null space sampling, with functional information preservation validated th…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "EEG-to-fMRI"
+  - "Diffusion Model"
+  - "Spatiotemporal Modeling"
+  - "Interim Frame Reconstruction"
+  - "Visual Decoding"
 date: 2026-05-08
-content_hash: 3bd2568dffd177b7
+content_hash: bc5c6b496f5b12a3
 ---
+
 # Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ Null space constraints provided comprehensive improvements: MSE decreased by 8.1
 
 ## Related Papers
 
+- [\[CVPR 2026\] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)
+- [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
+- [\[CVPR 2026\] Lighting in Motion: Spatiotemporal HDR Lighting Estimation](lighting_in_motion_spatiotemporal_hdr_lighting_estimation.md)
+- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
 - [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
-- [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
-- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
 
 </div>
 

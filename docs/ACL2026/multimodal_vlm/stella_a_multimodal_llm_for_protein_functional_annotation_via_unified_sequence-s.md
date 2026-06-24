@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STELLA: A Multimodal LLM for Protein Functional Annotation via Unified Sequence-Structure Encoding
 description: >-
-  [ACL 2026][Multimodal VLM][ESM3] STELLA integrates the unified sequence-structure protein representations of ESM3 into Llama-3.1-8B-Instruct. Through two-stage multimodal instruction tuning, it performs protein functional description and enzyme catalytic reaction prediction, setting new benchmarks for functional annotation on the OPI-Struc series.
+  [ACL2026 Findings][Multimodal VLM][Protein Functional Annotation] STELLA integrates the unified sequence-structure protein representations of ESM3 into Llama-3.1-8B-Instruct. Through two-stage multimodal instruction tuning, it performs protein functional description and enzyme catalytic reaction prediction, setting new benchmarks for functional annotation on the OPI-Struc series.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - ESM3
-  - OPI-Struc
+  - "ACL2026 Findings"
+  - "Multimodal VLM"
+  - "Protein Functional Annotation"
+  - "Multimodal LLM"
+  - "ESM3"
+  - "Structure-Sequence Encoding"
+  - "OPI-Struc"
 date: 2026-05-08
-content_hash: ddaebb3e1c7b76fd
+content_hash: a19c02f23fd628dd
 ---
+
 # STELLA: A Multimodal LLM for Protein Functional Annotation via Unified Sequence-Structure Encoding
 
 **Conference**: ACL2026 Findings  
@@ -176,10 +180,10 @@ Out-of-time (OOD) evaluation shows a significant performance drop for all method
 ## Related Papers
 
 - [\[ICCV 2025\] Unified Multimodal Understanding via Byte-Pair Visual Encoding](../../ICCV2025/multimodal_vlm/unified_multimodal_understanding_via_byte-pair_visual_encoding.md)
+- [\[ICLR 2026\] WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM](../../ICLR2026/multimodal_vlm/wave_learning_unified_versatile_audio-visual_embeddings_with_multimodal_llm.md)
 - [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](../../NeurIPS2025/multimodal_vlm/with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
+- [\[ACL 2026\] CodeBind: Decoupled Representation Learning for Multimodal Alignment with Unified Compositional Codebook](codebind_decoupled_representation_learning_for_multimodal_alignment_with_unified.md)
 - [\[CVPR 2026\] From Where Things Are to What They Are For: Benchmarking Spatial–Functional Intelligence in Multimodal LLMs](../../CVPR2026/multimodal_vlm/from_where_things_are_to_what_they_are_for_benchmarking_spatial-functional_intel.md)
-- [\[ICCV 2025\] MUSE-VL: Modeling Unified VLM through Semantic Discrete Encoding](../../ICCV2025/multimodal_vlm/musevl_modeling_unified_vlm_through_semantic_discrete_encodi.md)
-- [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](../../CVPR2026/multimodal_vlm/so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
 
 </div>
 

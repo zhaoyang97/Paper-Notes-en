@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hogwild! Inference: Parallel LLM Generation via Concurrent Attention
 description: >-
-  [NeurIPS 2025][LLM Agent][parallel inference] This paper proposes Hogwild! Inference—a parallel LLM inference protocol that requires no predefined collaboration framework. Multiple LLM instances synchronize in real time…
+  [NeurIPS 2025][LLM Agent][parallel inference] This paper proposes Hogwild! Inference—a parallel LLM inference protocol that requires no predefined collaboration framework. Multiple LLM instances synchronize in real time through a shared concurrent KV cache, leveraging RoPE positional encoding to avoid recomputation, achieving higher accuracy with fewer serial steps on mathematical reasoning and programming tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "RoPE positional encoding"
   - "LLM acceleration"
 date: 2026-05-08
-content_hash: 46f30cbcda10dc06
+content_hash: f739dbcf496bdd88
 ---
 
 # Hogwild! Inference: Parallel LLM Generation via Concurrent Attention
@@ -188,11 +188,11 @@ Token-level real-time synchronization significantly outperforms step-level synch
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flash-Searcher: Fast and Effective Web Agents via DAG-Based Parallel Execution](../../ICLR2026/llm_agent/flash-searcher_fast_and_effective_web_agents_via_dag-based_parallel_execution.md)
 - [\[AAAI 2026\] Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution](../../AAAI2026/llm_agent/cook_and_clean_together_teaching_embodied_agents_for_paralle.md)
+- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
 - [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](../../ICML2026/llm_agent/towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](../../ACL2026/llm_agent/dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
-- [\[ICML 2026\] Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation](../../ICML2026/llm_agent/rule2drc_benchmarking_llm_agents_for_drc_script_synthesis_with_execution-guided_.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
 
 </div>
 

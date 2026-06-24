@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Incentives in Federated Learning with Heterogeneous Agents
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Analyses incentive problems in heterogeneous Federated Learning (FL) from a game-theoretic perspective, proving the existence of Pure Strategy Nash Equilibrium (PSNE) under heterogeneous data distributions and PAC accuracy targets, and proposes a linear programming-based approximation algorithm to determine optimal con
+  [ICLR 2026][Optimization][Federated Learning] Analyses incentive problems in heterogeneous Federated Learning (FL) from a game-theoretic perspective, proving the existence of Pure Strategy Nash Equilibrium (PSNE) under heterogeneous data distributions and PAC accuracy targets, and proposes a linear programming-based approximation algorithm to determine optimal contribution levels.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Incentive Mechanism"
+  - "Heterogeneity"
+  - "Game Theory"
+  - "PAC Learning"
 date: 2026-05-08
-content_hash: a98cd71b9dca88cf
+content_hash: 1056b4e3c25a934d
 ---
+
 # Incentives in Federated Learning with Heterogeneous Agents
 
 **Conference**: ICLR 2026  
@@ -109,8 +115,8 @@ This is a purely theoretical work and does not involve model training. The core 
 - [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
 - [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
-- [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
 - [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](../../CVPR2026/optimization/enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
 
 </div>
 

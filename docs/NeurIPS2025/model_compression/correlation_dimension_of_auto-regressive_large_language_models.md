@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Correlation Dimension of Auto-Regressive Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Correlation Dimension] This paper introduces the correlation dimension from fractal geometry into LLM analysis. By measuring the recursive structure among next-token log-probability vect…
+  [NeurIPS 2025][Model Compression][Correlation Dimension] This paper introduces the correlation dimension from fractal geometry into LLM analysis. By measuring the recursive structure among next-token log-probability vectors, it quantifies the hierarchical complexity of text, revealing a three-stage evolution of LLM pretraining, an indicator of hallucination tendency, and a unified detection capability for multiple text degeneration patterns — none of which can be captured by…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM Pretraining Dynamics"
   - "Hallucination Indicator"
 date: 2026-05-08
-content_hash: 20afd3db67be1620
+content_hash: d0cf83046482852d
 ---
 
 # Correlation Dimension of Auto-Regressive Large Language Models
@@ -131,10 +131,10 @@ GPU kernel fusion and vocabulary reduction together achieve over 10× speedup wi
 ## Related Papers
 
 - [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
 - [\[NeurIPS 2025\] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions](layerif_estimating_layer_quality_for_large_language_models_using_influence_funct.md)
 - [\[NeurIPS 2025\] A Simple Linear Patch Revives Layer-Pruned Large Language Models](a_simple_linear_patch_revives_layerpruned_large_language_mod.md)
+- [\[NeurIPS 2025\] FastLongSpeech: Enhancing Large Speech-Language Models for Efficient Long-Speech Processing](fastlongspeech_enhancing_large_speech-language_models_for_efficient_long-speech_.md)
+- [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 
 </div>
 

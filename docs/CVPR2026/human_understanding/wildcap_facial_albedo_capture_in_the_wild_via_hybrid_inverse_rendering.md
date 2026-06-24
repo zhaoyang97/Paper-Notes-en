@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering
 description: >-
-  [CVPR 2026][Human Understanding][facial albedo capture] WildCap is proposed as a hybrid inverse rendering framework (data-driven SwitchLight delighting + model-based texel grid lighting optimization + diffusion prior sampling). It reconstructs high-quality 4K facial diffuse albedo maps from smartphone in-the-wild videos, significantly narrowing the quality gap between uncon
+  [CVPR2026][Human Understanding][facial albedo capture] WildCap is proposed as a hybrid inverse rendering framework (data-driven SwitchLight delighting + model-based texel grid lighting optimization + diffusion prior sampling). It reconstructs high-quality 4K facial diffuse albedo maps from smartphone in-the-wild videos, significantly narrowing the quality gap between uncontrolled capture and professional light stage methods.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - facial albedo capture
-  - inverse rendering
-  - diffusion prior
-  - texel grid lighting
-  - in-the-wild
+  - "CVPR2026"
+  - "Human Understanding"
+  - "facial albedo capture"
+  - "inverse rendering"
+  - "diffusion prior"
+  - "texel grid lighting"
+  - "in-the-wild"
 date: 2026-05-08
-content_hash: f83acdcc669fa60f
+content_hash: f4605a5a96ebbce1
 ---
+
 # WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering
 
 **Conference**: CVPR2026  
@@ -137,10 +138,10 @@ Increased lighting model expressivity exacerbates scale ambiguity between lighti
 ## Related Papers
 
 - [\[ICCV 2025\] Monocular Facial Appearance Capture in the Wild](../../ICCV2025/human_understanding/monocular_facial_appearance_capture_in_the_wild.md)
-- [\[CVPR 2026\] Occluded Human Body Capture with Frequency Domain Denoising Prior](occluded_human_body_capture_with_frequency_domain_denoising_prior.md)
-- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/human_understanding/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
 - [\[CVPR 2026\] RAM: Recover Any 3D Human Motion in-the-Wild](ram_recover_any_3d_human_motion_in-the-wild.md)
-- [\[CVPR 2026\] Bézier Degradation Modeling for LiDAR-based Human Motion Capture](bézier_degradation_modeling_for_lidar-based_human_motion_capture.md)
+- [\[CVPR 2026\] Occluded Human Body Capture with Frequency Domain Denoising Prior](occluded_human_body_capture_with_frequency_domain_denoising_prior.md)
+- [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
+- [\[CVPR 2026\] Bridging Facial Understanding and Animation via Language Models](bridging_facial_understanding_and_animation_via_language_models.md)
 
 </div>
 

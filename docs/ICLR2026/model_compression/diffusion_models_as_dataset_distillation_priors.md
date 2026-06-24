@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diffusion Models as Dataset Distillation Priors
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper formalizes "representativeness" as the Mercer kernel induced distance between synthetic and real samples within the feature space of diffusion models. By injecting this as an energy-based guidance into the reverse diffusion process, the method enables pre-trained diffusion models to output distilled datasets
+  [ICLR 2026][Model Compression][Dataset Distillation] This paper formalizes "representativeness" as the Mercer kernel induced distance between synthetic and real samples within the feature space of diffusion models. By injecting this as an energy-based guidance into the reverse diffusion process, the method enables pre-trained diffusion models to output distilled datasets characterized by diversity, generalization, and representativeness in a **training-free** manner. It outpe…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Diffusion Prior"
+  - "Mercer Kernel"
+  - "Representativeness"
+  - "Guided Sampling"
 date: 2026-05-08
-content_hash: 44074b77dc1c0f36
+content_hash: f9ffb79689421252
 ---
+
 # Diffusion Models as Dataset Distillation Priors
 
 **Conference**: ICLR 2026  
@@ -157,8 +163,8 @@ Cross-architecture generalization (Table 5): Baselines drop due to architecture-
 - [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](../../CVPR2026/model_compression/mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
 - [\[ICLR 2026\] FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation](futuremind_equipping_small_language_models_with_strategic_thinking-pattern_prior.md)
 - [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](../../CVPR2026/model_compression/dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
+- [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
 - [\[CVPR 2026\] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](../../CVPR2026/model_compression/ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)
-- [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
 
 </div>
 

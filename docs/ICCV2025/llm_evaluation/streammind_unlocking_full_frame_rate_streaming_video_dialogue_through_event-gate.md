@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StreamMind: Unlocking Full Frame Rate Streaming Video Dialogue through Event-Gated Cognition
 description: >-
-  [ICCV 2025][LLM Evaluation][streaming video dialogue] StreamMind proposes an "event-gated LLM invocation" paradigm to replace the existing "per-frame LLM invocation" approach. By inserting a Cognition Gate network betwee…
+  [ICCV 2025][LLM Evaluation][streaming video dialogue] StreamMind proposes an "event-gated LLM invocation" paradigm to replace the existing "per-frame LLM invocation" approach. By inserting a Cognition Gate network between the video encoder and the LLM, the model invokes the LLM only when query-relevant events occur. Combined with an Event-Preserving Feature Extractor (EPFE) based on state space methods that ensures constant perception cost, the system achieves **100 fps** str…
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "LLM invocation"
   - "real-time video understanding"
 date: 2026-05-08
-content_hash: 203e9e228b731fd5
+content_hash: bcf4f8a2f8df34b1
 ---
 
 # StreamMind: Unlocking Full Frame Rate Streaming Video Dialogue through Event-Gated Cognition
@@ -176,11 +176,11 @@ Also achieves state-of-the-art on standard offline benchmarks:
 
 ## Related Papers
 
-- [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](../../ACL2026/llm_evaluation/vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
-- [\[ACL 2026\] Gated Tree Cross-Attention for Checkpoint-Compatible Syntax Injection in Decoder-Only LLMs](../../ACL2026/llm_evaluation/gated_tree_cross-attention_for_checkpoint-compatible_syntax_injection_in_decoder.md)
-- [\[NeurIPS 2025\] Predicting the Performance of Black-Box LLMs through Follow-Up Queries](../../NeurIPS2025/llm_evaluation/predicting_the_performance_of_black-box_llms_through_follow-up_queries.md)
-- [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](../../ICML2026/llm_evaluation/toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
-- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](../../ACL2026/llm_evaluation/teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
+- [\[ACL 2025\] EducationQ: Evaluating LLMs' Teaching Capabilities Through Multi-Agent Dialogue Framework](../../ACL2025/llm_evaluation/educationq_evaluating_llms_teaching_capabilities_through_multi-agent_dialogue_fr.md)
+- [\[CVPR 2025\] RoadSocial: A Diverse VideoQA Dataset and Benchmark for Road Event Understanding from Social Video Narratives](../../CVPR2025/llm_evaluation/roadsocial_a_diverse_videoqa_dataset_and_benchmark_for_road_event_understanding_.md)
+- [\[ICML 2025\] Unlocking Post-hoc Dataset Inference with Synthetic Data](../../ICML2025/llm_evaluation/unlocking_post-hoc_dataset_inference_with_synthetic_data.md)
+- [\[ICLR 2026\] Culture In a Frame: C$^3$B as a Comic-Based Benchmark for Multimodal Culturally Awareness](../../ICLR2026/llm_evaluation/culture_in_a_frame_c3b_as_a_comic-based_benchmark_for_multimodal_culturally_awar.md)
+- [\[ECCV 2024\] EvSign: Sign Language Recognition and Translation with Streaming Events](../../ECCV2024/llm_evaluation/evsign_sign_language_recognition_and_translation_with_streaming_events.md)
 
 </div>
 

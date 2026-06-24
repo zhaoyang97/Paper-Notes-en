@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] InstantRetouch shifts language-guided photo retouching from "direct pixel/latent editing" to "predicting a single set of affine transformation grids in a compact, content-disentangled bilateral space." By distilling a multi-step diffusion teacher into a single-step generator using Variational Score Distillation (VSD),
+  [CVPR 2026][Language-guided retouching] InstantRetouch shifts language-guided photo retouching from "direct pixel/latent editing" to "predicting a single set of affine transformation grids in a compact, content-disentangled bilateral space." By distilling a multi-step diffusion teacher into a single-step generator using Variational Score Distillation (VSD), it achieves 68ms inference at 4K resolution—70–900 times faster than diffusion baselines—while maintaining near-perfect…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Language-guided retouching"
+  - "Bilateral grid"
+  - "One-step distillation"
+  - "Variational Score Distillation"
+  - "Content fidelity"
 date: 2026-05-08
-content_hash: e6c98699b3c0ad8c
+content_hash: 7dcb1b7a33e740d7
 ---
+
 # InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space
 
 **Conference**: CVPR 2026  
@@ -124,15 +129,16 @@ Framework Ablation (Table 2):
 - **Value**: ⭐⭐⭐⭐⭐ Constant-time 4K retouching with zero drift has high practical value for product deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
-- [\[CVPR 2026\] Efficient INT8 Single-Image Super-Resolution via Deployment-Aware Quantization and Teacher-Guided Training](efficient_int8_single-image_super-resolution_via_deployment-aware_quantization_a.md)
-- [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
-- [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
-- [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
+- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
+- [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
+- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
+- [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
+- [\[CVPR 2026\] Consensus vs. Controversy: Mapping the Decision Space Where Architectures Diverge](consensus_vs_controversy_mapping_the_decision_space_where_architectures_diverge.md)
 
 </div>
 

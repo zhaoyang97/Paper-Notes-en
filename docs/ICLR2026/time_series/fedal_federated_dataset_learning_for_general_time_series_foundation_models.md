@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FeDaL: Federated Dataset Learning for General Time Series Foundation Models
 description: >-
-  [ICLR 2026][Time Series][Time Series Foundation Model] Ours proposes the FeDaL federated framework, which trains a general time series foundation model from scratch through client-side Domain Bias Elimination (DBE) and server-side Global Bias Elimination (GBE). It achieves competitive or superior performance on 8 types of downstream tasks with significantly fewer parameter
+  [ICLR 2026][Time Series][Time Series Foundation Model] Ours proposes the FeDaL federated framework, which trains a general time series foundation model from scratch through client-side Domain Bias Elimination (DBE) and server-side Global Bias Elimination (GBE). It achieves competitive or superior performance on 8 types of downstream tasks with significantly fewer parameters than centralized TSFMs.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Time Series Foundation Model
-  - Federated Learning
-  - Dataset Heterogeneity
-  - Domain Bias Elimination
-  - Cross-domain Generalization
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Foundation Model"
+  - "Federated Learning"
+  - "Dataset Heterogeneity"
+  - "Domain Bias Elimination"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: a22bf941dfc2fa1d
+content_hash: 58964f686962e853
 ---
+
 # FeDaL: Federated Dataset Learning for General Time Series Foundation Models
 
 **Conference**: ICLR 2026  

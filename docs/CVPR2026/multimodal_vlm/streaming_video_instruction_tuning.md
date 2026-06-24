@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Streaming Video Instruction Tuning (Streamo)
 description: >-
-  [CVPR 2026][Multimodal VLM][Focal Loss] Streamo integrates the decision of "when to speak" directly into the next-token prediction of video large models. By using three state tokens (Silence/Standby/Response), the model judges response timing frame-by-frame. Combined with a 465,000-sample multi-task streaming instruction dataset for end-to-end training, it t
+  [CVPR 2026][Multimodal VLM][Streaming Video Understanding] Streamo integrates the decision of "when to speak" directly into the next-token prediction of video large models. By using three state tokens (Silence/Standby/Response), the model judges response timing frame-by-frame. Combined with a 465,000-sample multi-task streaming instruction dataset for end-to-end training, it transforms offline video models into online assistants capable of real-time narration, localization…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Focal Loss
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Streaming Video Understanding"
+  - "Video Large Language Models"
+  - "Instruction Tuning"
+  - "Response Timing Decision"
+  - "Focal Loss"
 date: 2026-05-08
-content_hash: 53a1d525211e9124
+content_hash: c4eb85ea95400613
 ---
+
 # Streaming Video Instruction Tuning (Streamo)
 
 **Conference**: CVPR 2026  
@@ -133,15 +138,14 @@ Streamo does not degrade; it outperforms online SOTA StreamingVLM and even excee
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
+- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](../../ACL2026/multimodal_vlm/response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
 - [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
-- [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
 - [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
-- [\[CVPR 2026\] WeaveTime: Streaming from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_from_earlier_frames_into_emergent_memory_in_videollms.md)
+- [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
 
 </div>
 

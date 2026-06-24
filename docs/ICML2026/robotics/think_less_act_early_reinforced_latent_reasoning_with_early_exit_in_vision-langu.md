@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Think Less, Act Early: Reinforced Latent Reasoning with Early Exit in Vision-Language-Action Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Reinforcement Learning] To address the issues of low speed and error accumulation in explicit Chain-of-Thought (CoT) for VLA, the authors propose AVA-VLA—modeling reasoning as a sequence of invisible latent variables, using Reinforcement Learning (RL) to denoise the latent trajectory, and employing an early exit mechanism to adaptively determ
+  [ICML2026][Robotics][Vision-Language-Action Models] To address the issues of low speed and error accumulation in explicit Chain-of-Thought (CoT) for VLA, the authors propose AVA-VLA—modeling reasoning as a sequence of invisible latent variables, using Reinforcement Learning (RL) to denoise the latent trajectory, and employing an early exit mechanism to adaptively determine reasoning steps based on state confidence. It achieves a 98.3% average success rate on LIBERO while bein…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Reinforcement Learning
-  - POMDP
+  - "ICML2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Latent Reasoning"
+  - "Reinforcement Learning"
+  - "Early Exit"
+  - "POMDP"
 date: 2026-05-08
-content_hash: 92aa162120e1aabc
+content_hash: b6f9adf3d6aff0c9
 ---
+
 # Think Less, Act Early: Reinforced Latent Reasoning with Early Exit in Vision-Language-Action Models
 
 **Conference**: ICML2026  
@@ -137,9 +141,9 @@ The most significant improvement is in the **Long (long-horizon) suite**: increa
 
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
 - [\[NeurIPS 2025\] ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning](../../NeurIPS2025/robotics/thinkact_vision-language-action_reasoning_via_reinforced_visual_latent_planning.md)
-- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 - [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](../../CVPR2026/robotics/cross-hand_latent_representation_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](../../CVPR2026/robotics/fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
+- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
+- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
 
 </div>
 

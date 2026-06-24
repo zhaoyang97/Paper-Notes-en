@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios
 description: >-
-  [AAAI 2026][Video Understanding][Audio-visual reasoning] This paper introduces R-AVST, the first fine-grained spatio-temporal reasoning dataset for complex audio-visual scenarios (5K+ untrimmed videos, 27K objects…
+  [AAAI 2026][Video Understanding][Audio-visual reasoning] This paper introduces R-AVST, the first fine-grained spatio-temporal reasoning dataset for complex audio-visual scenarios (5K+ untrimmed videos, 27K objects, 100 audio-visual event categories), defines three core reasoning tasks, and trains the AVST-Zero model via GRPO with a multi-dimensional reward function to directly optimize audio-visual spatio-temporal reasoning.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "Video-LLM"
 date: 2026-05-08
-content_hash: 47239a7cb9e49ffa
+content_hash: b2151df2931ece6e
 ---
 
 # R-AVST: Empowering Video-LLMs with Fine-Grained Spatio-Temporal Reasoning in Complex Audio-Visual Scenarios
@@ -169,11 +169,11 @@ The standard GRPO objective is used: G=6 output samples are drawn per question, 
 
 ## Related Papers
 
+- [\[CVPR 2026\] OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios](../../CVPR2026/video_understanding/omniground_a_comprehensive_spatio-temporal_grounding_benchmark_for_real-world_co.md)
 - [\[ICML 2026\] AVTrack: Audio-Visual Tracking in Human-centric Complex Scenes](../../ICML2026/video_understanding/avtrack_audio-visual_tracking_in_human-centric_complex_scenes.md)
 - [\[AAAI 2026\] FineTec: Fine-Grained Action Recognition Under Temporal Corruption via Skeleton Decomposition and Sequence Completion](finetec_fine-grained_action_recognition_under_temporal_corruption_via_skeleton_d.md)
 - [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)
-- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/video_understanding/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
-- [\[NeurIPS 2025\] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](../../NeurIPS2025/video_understanding/tempsampr1_effective_temporal_sampling_with_reinforcement_fi.md)
+- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
 
 </div>
 

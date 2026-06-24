@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding
 description: >-
-  [CVPR 2026][Others][Token As Score] ArtiMuse utilizes an InternVL-3-8B based Multimodal Large Language Model (MLLM) to simultaneously output 8-dimensional fine-grained expert aesthetic textual analysis and a continuous aesthetic score. By introducing "Token As Score," the model integrates continuous scoring into discrete LLM token generation. It also int
+  [CVPR 2026][Multimodal VLM][Image Aesthetics Assessment] ArtiMuse utilizes an InternVL-3-8B based Multimodal Large Language Model (MLLM) to simultaneously output 8-dimensional fine-grained expert aesthetic textual analysis and a continuous aesthetic score. By introducing "Token As Score," the model integrates continuous scoring into discrete LLM token generation. It also introduces ArtiMuse-10K, the first dataset with 10,000 expert-annotated samples per dimension…
 tags:
-  - CVPR 2026
-  - Others
-  - Token As Score
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Image Aesthetics Assessment"
+  - "Multimodal Large Language Models"
+  - "Token As Score"
+  - "Expert-Annotated Dataset"
+  - "Joint Scoring"
 date: 2026-05-08
-content_hash: dda01c2dd4d52a2a
+content_hash: 1f1de3acabab8ab7
 ---
+
 # ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding
 
 **Conference**: CVPR 2026  
@@ -131,16 +136,16 @@ ArtiMuse outperforms competitors across all 8 dimensions in human and model-base
 - Value: ⭐⭐⭐⭐⭐ The dataset and scoring paradigm serve as "ready-to-use" infrastructure for AIGC evaluation and photography education.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
-- [\[ACL 2025\] FRACTAL: Fine-Grained Scoring from Aggregate Text Labels](../../ACL2025/others/fractal_fine-grained_scoring_from_aggregate_text_labels.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
-- [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
-- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
+- [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
+- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](../../ICLR2026/multimodal_vlm/visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
+- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
 
 </div>
 

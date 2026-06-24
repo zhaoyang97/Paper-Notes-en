@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention! Your Vision Language Model Could Be Maliciously Manipulated
 description: >-
-  [NeurIPS 2025][LLM Safety][Vision-Language Models] This paper proposes the Vision-language Model Manipulation Attack (VMA), an image-based adversarial attack method that combines first- and second-order momentum optimiza…
+  [NeurIPS 2025][LLM Safety][Vision-Language Models] This paper proposes the Vision-language Model Manipulation Attack (VMA), an image-based adversarial attack method that combines first- and second-order momentum optimization with a differentiable transformation mechanism, enabling precise control over every output token of a VLM. The approach supports a range of attack scenarios (jailbreaking, hijacking, privacy breach, DoS, sponge examples) and can also be repurposed for cop…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Jailbreaking"
   - "Watermarking"
 date: 2026-05-08
-content_hash: cf1c879967816d76
+content_hash: fbcbc0650457d7c2
 ---
 
 # Attention! Your Vision Language Model Could Be Maliciously Manipulated
@@ -177,10 +177,10 @@ This allows the attacker to precisely control every word in the VLM's output.
 ## Related Papers
 
 - [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
-- [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](approximate_domain_unlearning_for_visionlanguage_models.md)
-- [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](../../ICML2026/llm_safety/byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
-- [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](self-refining_language_model_anonymizers_via_adversarial_distillation.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2026/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
+- [\[CVPR 2025\] CleanSight: Test-Time Attention Purification for Backdoored Large Vision Language Models](../../CVPR2025/llm_safety/test-time_attention_purification_for_backdoored_large_vision_language_models.md)
+- [\[ICLR 2026\] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated](../../ICLR2026/llm_safety/ghost_in_the_cloud_your_geo-distributed_large_language_models_training_is_easily.md)
+- [\[AAAI 2026\] Attention Retention for Continual Learning with Vision Transformers](../../AAAI2026/llm_safety/attention_retention_for_continual_learning_with_vision_transformers.md)
+- [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
 
 </div>
 

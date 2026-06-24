@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proves that combining spherical Langevin dynamics with **iterative time averaging** can recover the hidden direction $\theta^\star$ of single-index models / Tensor PCA using only $n \gtrsim d^{\lceil k^\star/2 \rceil}$ samples. Noise injection plus averaging spontaneously simulates the effect of "landscape s
+  [ICLR 2026][Learning Theory][Langevin Dynamics] This paper proves that combining spherical Langevin dynamics with **iterative time averaging** can recover the hidden direction $\theta^\star$ of single-index models / Tensor PCA using only $n \gtrsim d^{\lceil k^\star/2 \rceil}$ samples. Noise injection plus averaging spontaneously simulates the effect of "landscape smoothing" without requiring explicit smoothing operations.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "High-Dimensional Statistical Estimation"
+  - "Langevin Dynamics"
+  - "Weight Averaging"
+  - "Information Exponent"
+  - "Sample Complexity"
+  - "Single-Index Models"
+  - "Tensor PCA"
 date: 2026-05-08
-content_hash: 322473ff7e729a14
+content_hash: 4e6335b08e426c8b
 ---
+
 # Improved High-Dimensional Estimation with Langevin Dynamics and Stochastic Weight Averaging
 
 **Conference**: ICLR 2026  
@@ -120,7 +128,7 @@ This is a theoretical work; "experiments" are numerical simulations for sanity-c
 - [\[ICML 2026\] Asymptotic Optimality of the High-Dimensional Gaussian Mechanism and Improved Low-Dimensional Mechanisms for Differential Privacy](../../ICML2026/learning_theory/asymptotic_optimality_of_the_high-dimensional_gaussian_mechanism_and_improved_lo.md)
 - [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)
 - [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](../../ICML2026/learning_theory/on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
-- [\[ICLR 2026\] Data-to-Energy Stochastic Dynamics](data-to-energy_stochastic_dynamics.md)
+- [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taming Generative Diffusion Model for Task-Oriented Infrared Imaging
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Infrared image restoration is reformulated as "one-step diffusion" by using a lightweight predictor to align degraded inputs to the optimal timestep $\hat t$ on the diffusion trajectory. Combined with wave-domain spectral regularization to preserve thermal radiation characteristics and task-aware low-rank adaptation th
+  [CVPR 2026][Image Generation][Infrared Imaging] Infrared image restoration is reformulated as "one-step diffusion" by using a lightweight predictor to align degraded inputs to the optimal timestep $\hat t$ on the diffusion trajectory. Combined with wave-domain spectral regularization to preserve thermal radiation characteristics and task-aware low-rank adaptation that switches between downstream tasks (detection/segmentation) via optimizing a few-hundred-dimensional prompt…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Infrared Imaging"
+  - "One-step Diffusion"
+  - "Timestep Estimation"
+  - "Task-aware LoRA"
+  - "Spectral Regularization"
 date: 2026-05-08
-content_hash: 551e438d021dc0de
+content_hash: c246111e6a0baa4d
 ---
+
 # Taming Generative Diffusion Model for Task-Oriented Infrared Imaging
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 description: >-
-  [ACL 2026][Time Series][Paper Note] Defining the new Time-RA task, this work upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + root cause explanation). It constructs RATs40K, the first multimodal benchmark comprising ~40,000 samples across 10 domains and 20 anomaly types, val
+  [ACL 2026 Findings][Time Series][Time Series Anomaly Detection] Defining the new Time-RA task, this work upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + root cause explanation). It constructs RATs40K, the first multimodal benchmark comprising ~40,000 samples across 10 domains and 20 anomaly types, validating the feasibility of this paradigm through an AI feedback labeling pipeline and LLM fine-t…
 tags:
-  - ACL 2026
-  - Time Series
+  - "ACL 2026 Findings"
+  - "Time Series"
+  - "Time Series Anomaly Detection"
+  - "Anomaly Reasoning Diagnosis"
+  - "Multimodal Benchmark"
+  - "LLM Fine-tuning"
+  - "AI Feedback Labeling"
 date: 2026-05-08
-content_hash: bcfcab8c30d60348
+content_hash: e3a22d342c33cb7d
 ---
+
 # Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 
 **Conference**: ACL 2026 Findings  
@@ -133,10 +139,10 @@ Standard SFT objective: $$\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log 
 ## Related Papers
 
 - [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
-- [\[ICML 2026\] AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection](../../ICML2026/time_series/anomseer_reinforcing_multimodal_llms_to_reason_for_time-series_anomaly_detection.md)
+- [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](../../ICLR2026/time_series/towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
+- [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](../../ICLR2026/time_series/icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
 - [\[ICML 2026\] Adaptive Time Series Reasoning via Segment Selection](../../ICML2026/time_series/adaptive_time_series_reasoning_via_segment_selection.md)
-- [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](../../ICML2026/time_series/impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
-- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](../../ICLR2026/time_series/complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
+- [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
 
 </div>
 

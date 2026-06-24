@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection
 description: >-
-  [ICCV 2025][Segmentation][Test-time adaptation] Hybrid-TTA proposes a continual test-time adaptation (CTTA) framework that employs a Dynamic Domain Shift Detection (DDSD) module to determine whether the current input ori…
+  [ICCV 2025][Segmentation][Test-time adaptation] Hybrid-TTA proposes a continual test-time adaptation (CTTA) framework that employs a Dynamic Domain Shift Detection (DDSD) module to determine whether the current input originates from a new domain, adaptively switching between Full Tuning (FT) and Adapter Tuning (AT). It additionally introduces Masked Image Modeling Adaptation (MIMA) as an auxiliary task to enhance model stability, achieving 62.2% mIoU on the Cityscapes-to-ACDC…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -14,7 +14,7 @@ tags:
   - "semantic segmentation"
   - "Teacher-Student"
 date: 2026-05-08
-content_hash: c959bd530bd430ad
+content_hash: a21204634c4d396a
 ---
 
 # Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection
@@ -166,7 +166,7 @@ Cityscapes-to-ACDC semantic segmentation benchmark (continual domain shifts: fog
 - [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
 - [\[CVPR 2026\] The Golden Subspace: Where Efficiency Meets Generalization in Continual Test-Time Adaptation](../../CVPR2026/segmentation/the_golden_subspace_where_efficiency_meets_generalization_in_continual_test-time.md)
 - [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
-- [\[ICCV 2025\] Exploiting Domain Properties in Language-Driven Domain Generalization for Semantic Segmentation](exploiting_domain_properties_in_language-driven_domain_generalization_for_semant.md)
+- [\[CVPR 2026\] Hyperbolic Prototype Learning with Uncertainty-Aware Consistency for Continual Test-Time Segmentation](../../CVPR2026/segmentation/hyperbolic_prototype_learning_with_uncertainty-aware_consistency_for_continual_t.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Risk-Averse Constrained Reinforcement Learning with Optimized Certainty Equivalents
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Constrained Reinforcement Learning] This paper proposes a reward-based risk-aware constrained RL framework that applies Optimized Certainty Equivalent (OCE) risk measures to both ob…
+  [NeurIPS 2025][Reinforcement Learning][Constrained Reinforcement Learning] This paper proposes a reward-based risk-aware constrained RL framework that applies Optimized Certainty Equivalent (OCE) risk measures to both objectives and constraints, establishes parametric strong duality, and delivers a modular algorithm that wraps standard RL solvers (e.g., PPO) as a black box.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "CVaR"
   - "Partial Lagrangian Relaxation"
 date: 2026-05-08
-content_hash: fc373ac625f1b455
+content_hash: b097b3cdc07ee279
 ---
 
 # Risk-Averse Constrained Reinforcement Learning with Optimized Certainty Equivalents
@@ -170,9 +170,9 @@ MARS achieves **zero constraint violations** across all environments, being the 
 
 - [\[NeurIPS 2025\] Risk-Averse Total-Reward Reinforcement Learning](risk-averse_total-reward_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
+- [\[ICML 2025\] Controlling Underestimation Bias in Constrained Reinforcement Learning for Safe Exploration](../../ICML2025/reinforcement_learning/controlling_underestimation_bias_in_constrained_reinforcement_learning_for_safe_.md)
 - [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](reinforcement_learning_teachers_of_test_time_scaling.md)
 
 </div>
 

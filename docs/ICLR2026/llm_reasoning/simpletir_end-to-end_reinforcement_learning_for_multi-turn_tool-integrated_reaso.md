@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Zero RL] SimpleTIR discovers that the root cause of RL training collapse in multi-turn Tool-Integrated Reasoning (TIR) is the accumulation of low-probability tokens introduced by tool feedback. It proposes a plug-and-play trajectory filtering strategy—discarding entire trajectories containing a "void turn"—to stabilize gradient
+  [ICLR 2026][Reasoning][Tool-Integrated Reasoning] SimpleTIR discovers that the root cause of RL training collapse in multi-turn Tool-Integrated Reasoning (TIR) is the accumulation of low-probability tokens introduced by tool feedback. It proposes a plug-and-play trajectory filtering strategy—discarding entire trajectories containing a "void turn"—to stabilize gradients, raising the AIME24 score of the Qwen2.5-7B base model from a text-only baseline of 22.1 to 50.5.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Zero RL
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Tool-Integrated Reasoning"
+  - "Multi-turn RL"
+  - "Zero RL"
+  - "Gradient Explosion"
+  - "Trajectory Filtering"
 date: 2026-05-08
-content_hash: d839403c3e9e80d9
+content_hash: b16106126efb25e3
 ---
+
 # SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning
 
 **Conference**: ICLR 2026  
@@ -135,9 +140,20 @@ Best scores within 1000 gradient steps:
 - Value: ⭐⭐⭐⭐⭐ Provides a low-cost, universal solution for multi-turn agent RL instability.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym](generalizable_end-to-end_tool-use_rl_with_synthetic_codegym.md)
+- [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
+- [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
+- [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](../../CVPR2026/llm_reasoning/scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
+- [\[CVPR 2026\] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving](../../CVPR2026/llm_reasoning/latent_chain-of-thought_world_modeling_for_end-to-end_autonomous_driving.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym](generalizable_end-to-end_tool-use_rl_with_synthetic_codegym.md)

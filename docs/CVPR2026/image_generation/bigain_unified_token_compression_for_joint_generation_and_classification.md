@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BiGain: Unified Token Compression for Joint Generation and Classification
 description: >-
-  [CVPR 2026][Image Generation][Token Compression] BiGain proposes a frequency-aware token compression framework. Using two training-free operators—Laplacian-gated token merging and interpolation-extrapolation KV downsampling—it simultaneously maintains generation quality and significantly improves discriminative classification performance for the first time in diffusi
+  [CVPR2026][Image Generation][Diffusion model acceleration] BiGain proposes a frequency-aware token compression framework. Using two training-free operators—Laplacian-gated token merging and interpolation-extrapolation KV downsampling—it simultaneously maintains generation quality and significantly improves discriminative classification performance for the first time in diffusion model acceleration.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Token Compression
+  - "CVPR2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "token compression"
+  - "frequency-aware"
+  - "joint generation-classification optimization"
+  - "training-free"
 date: 2026-05-08
-content_hash: 4b0f4f81f92b53a3
+content_hash: 490f60e62343482d
 ---
+
 # BiGain: Unified Token Compression for Joint Generation and Classification
 
 **Conference**: CVPR2026  
@@ -151,11 +156,11 @@ At a 70% token merging ratio, BiGain-TM improves classification accuracy by 7.15
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mixture of States: Routing Token-Level Dynamics for Multimodal Generation](mixture_of_states_routing_token-level_dynamics_for_multimodal_generation.md)
+- [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
+- [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
 - [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
+- [\[CVPR 2026\] Mixture of States: Routing Token-Level Dynamics for Multimodal Generation](mixture_of_states_routing_token-level_dynamics_for_multimodal_generation.md)
 - [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
-- [\[CVPR 2026\] GeoRelight: Learning Joint Geometrical Relighting and Reconstruction with Flexible Multi-Modal Diffusion Transformers](georelight_learning_joint_geometrical_relighting_and_reconstruction_with_flexibl.md)
-- [\[CVPR 2026\] TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)
 
 </div>
 

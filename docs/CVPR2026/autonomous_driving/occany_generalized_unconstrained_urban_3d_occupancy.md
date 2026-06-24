@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OccAny: Generalized Unconstrained Urban 3D Occupancy
 description: >-
-  [CVPR 2026][Autonomous Driving][Segmentation] OccAny proposes the first generalized unconstrained urban 3D occupancy prediction framework, capable of predicting metric-scale occupancy voxels from monocular, sequential, or multi-view images in uncalibrated, out-of-distribution scenes. Through two key designs—Segmentation Forcing and Novel View Rendering—it outperfo
+  [CVPR 2026][Autonomous Driving][3D Occupancy Prediction] OccAny proposes the first generalized unconstrained urban 3D occupancy prediction framework, capable of predicting metric-scale occupancy voxels from monocular, sequential, or multi-view images in uncalibrated, out-of-distribution scenes. Through two key designs—Segmentation Forcing and Novel View Rendering—it outperforms all visual-geometric baselines on KITTI and nuScenes.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Segmentation
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "Generalization"
+  - "Unconstrained Scenes"
+  - "Visual-Geometric Foundation Models"
+  - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: 1bb2f6f265228135
+content_hash: dfb06d17b04af47a
 ---
+
 # OccAny: Generalized Unconstrained Urban 3D Occupancy
 
 **Conference**: CVPR 2026  
@@ -142,9 +147,9 @@ The training consists of two stages: (1) The reconstruction stage uses a regress
 
 - [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
 - [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
-- [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
-- [\[CVPR 2026\] ShelfOcc: Native 3D Supervision beyond LiDAR for Vision-Based Occupancy Estimation](shelfocc_native_3d_supervision_beyond_lidar_for_vision-based_occupancy_estimatio.md)
-- [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
+- [\[CVPR 2026\] QueryOcc: Query-based Self-Supervision for 3D Semantic Occupancy](queryocc_query-based_self-supervision_for_3d_semantic_occupancy.md)
+- [\[CVPR 2026\] TT-Occ: Test-Time 3D Occupancy Prediction](test-time_3d_occupancy_prediction.md)
 
 </div>
 

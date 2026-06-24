@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reward-Aware Proto-Representations in Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Successor Representation] This paper systematically develops the theoretical foundations of the Default Representation (DR)—deriving DP and TD learning algorithms…
+  [NeurIPS 2025][Reinforcement Learning][Successor Representation] This paper systematically develops the theoretical foundations of the Default Representation (DR)—deriving DP and TD learning algorithms, analyzing the feature space structure, and proposing default features for function approximation—and demonstrates DR's reward-aware advantages over the Successor Representation (SR) across four settings: reward shaping, option discovery, exploration, and transfer learning.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Option Discovery"
   - "Transfer Learning"
 date: 2026-05-08
-content_hash: 4162ad3ece28c606
+content_hash: 8ebe2b4aed9fad52
 ---
 
 # Reward-Aware Proto-Representations in Reinforcement Learning
@@ -105,10 +105,10 @@ Under the linearly solvable MDP framework, DR is defined as $\mathbf{Z} = [\text
 ## Related Papers
 
 - [\[NeurIPS 2025\] Risk-Averse Total-Reward Reinforcement Learning](risk-averse_total-reward_reinforcement_learning.md)
-- [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
 - [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
-- [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
+- [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Learning from Demonstrations via Capability-Aware Goal Sampling](learning_from_demonstrations_via_capability-aware_goal_sampling.md)
+- [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
 
 </div>
 

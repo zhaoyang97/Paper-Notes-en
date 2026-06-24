@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking with Programming Vision: Towards a Unified View for Thinking with Images
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] This paper proposes CodeVision, which enables MLLMs to directly "write code" as a unified tool interface to manipulate images (rotation, flipping, cropping, enhancement, etc.). It employs a two-stage training process of "SFT cold-start + dense process reward RL" to empower the model with robust multi-turn, multi-tool r
+  [CVPR 2026][VLM Reasoning][Thinking with Images] This paper proposes CodeVision, which enables MLLMs to directly "write code" as a unified tool interface to manipulate images (rotation, flipping, cropping, enhancement, etc.). It employs a two-stage training process of "SFT cold-start + dense process reward RL" to empower the model with robust multi-turn, multi-tool reasoning capabilities on images contaminated by orientation perturbations. CodeVision achieves an average Gain…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Thinking with Images"
+  - "Code-as-tool"
+  - "Tool calling"
+  - "Reinforcement Learning"
+  - "Dense process rewards"
 date: 2026-05-08
-content_hash: 2ed049ac1cd6918b
+content_hash: 9adcf640f93e13e5
 ---
+
 # Thinking with Programming Vision: Towards a Unified View for Thinking with Images
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,20 @@ Ablations based on CodeVision-7B (Table 3):
 - Value: ⭐⭐⭐⭐⭐ Provides a practical, scalable paradigm for multi-modal tool agents with dense process rewards.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](../../ICLR2026/vlm_reasoning/deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Medical Thinking with Multiple Images](../../ICLR2026/vlm_reasoning/medical_thinking_with_multiple_images.md)
+- [\[CVPR 2026\] LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing asymmetric stereo matching where "one eye is an event camera and the other is a standard RGB camera," this paper proposes Bi-CMPStereo. It utilizes a cross-domain adapter and self-reconstruction constraints to align both modalities into a "canonical space of a single target domain." By alternating between ev
+  [CVPR 2026][3D Vision][Event Camera] Addressing asymmetric stereo matching where "one eye is an event camera and the other is a standard RGB camera," this paper proposes Bi-CMPStereo. It utilizes a cross-domain adapter and self-reconstruction constraints to align both modalities into a "canonical space of a single target domain." By alternating between event and image as the target domain in a bidirectional fashion and fusing the results, the method significantly outperforms…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "Asymmetric Stereo Matching"
+  - "Cross-Modal Alignment"
+  - "Disparity Estimation"
+  - "Cross-Modal Prompting"
 date: 2026-05-08
-content_hash: 9f8beee8d7eba426
+content_hash: 7e46062f31a58d80
 ---
+
 # Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ On Bi-CMPStereo, removing HVT during DSEC→MVSEC generalization drops MAE from 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
 - [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
+- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
+- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
+- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
 
 </div>
 

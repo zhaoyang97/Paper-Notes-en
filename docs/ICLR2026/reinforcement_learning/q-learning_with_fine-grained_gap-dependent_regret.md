@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Q-Learning with Fine-Grained Gap-Dependent Regret
 description: >-
-  [ICLR 2026][Reinforcement Learning][model-free RL] Focusing on model-free RL for episodic tabular MDPs, this paper proposes a fine-grained analysis framework that "separately counts visits for optimal and sub-optimal state-action pairs." It provides the first fine-grained gap-dependent regret upper bound involving individual gaps $\Delta_h(s,a)$ for UCB-Hoeffding and s
+  [ICLR 2026][Reinforcement Learning][model-free RL] Focusing on model-free RL for episodic tabular MDPs, this paper proposes a fine-grained analysis framework that "separately counts visits for optimal and sub-optimal state-action pairs." It provides the first fine-grained gap-dependent regret upper bound involving individual gaps $\Delta_h(s,a)$ for UCB-Hoeffding and subsequently fixes two defects in the truncation and martingale difference conditions of AMB—the only prior no…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - model-free RL
-  - gap-dependent regret
-  - UCB-Hoeffding
-  - tabular MDP
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "model-free RL"
+  - "gap-dependent regret"
+  - "UCB-Hoeffding"
+  - "multi-step bootstrap"
+  - "tabular MDP"
 date: 2026-05-08
-content_hash: 9efb128850ed1a3b
+content_hash: 097ff032847ae169
 ---
+
 # Q-Learning with Fine-Grained Gap-Dependent Regret
 
 **Conference**: ICLR 2026  

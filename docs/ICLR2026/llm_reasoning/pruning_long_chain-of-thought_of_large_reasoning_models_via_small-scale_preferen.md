@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][Bradley-Terry] This paper proposes LCPO (Length Controlled Preference Optimization), which uses only 0.8k preference samples and 50 training steps. By performing offline alignment using pure length preferences—selecting easy problems the model can already solve, treating the shortest response as "chosen" and the longest as "rejected"
+  [ICLR 2026][Reasoning][Efficient Inference] This paper proposes LCPO (Length Controlled Preference Optimization), which uses only 0.8k preference samples and 50 training steps. By performing offline alignment using pure length preferences—selecting easy problems the model can already solve, treating the shortest response as "chosen" and the longest as "rejected"—it reduces the average output length of DeepSeek-R1-Distill reasoning models by over 50% with almost no loss in acc…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Bradley-Terry
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Efficient Inference"
+  - "CoT Pruning"
+  - "Preference Optimization"
+  - "Length Control"
+  - "Bradley-Terry"
 date: 2026-05-08
-content_hash: 1bb203c9ae015adc
+content_hash: 01560553b7ffa85a
 ---
+
 # Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -129,15 +134,15 @@ Preference algorithm ablation (Table 2, 7B/MATH-500): DPO reached only 33.15%, O
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
-- [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
 - [\[ICCV 2025\] Unsupervised Visual Chain-of-Thought Reasoning via Preference Optimization](../../ICCV2025/llm_reasoning/unsupervised_visual_chain-of-thought_reasoning_via_preference_optimization.md)
+- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
+- [\[ACL 2026\] CRISP: Compressing Redundancy in Chain-of-Thought via Intrinsic Saliency Pruning](../../ACL2026/llm_reasoning/crisp_compressing_redundancy_in_chain-of-thought_via_intrinsic_saliency_pruning.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 
 </div>
 

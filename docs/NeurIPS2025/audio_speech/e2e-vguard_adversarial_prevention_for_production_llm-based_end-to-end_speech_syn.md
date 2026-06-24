@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis
 description: >-
-  [NEURIPS2025][Audio & Speech][voice cloning defense] E2E-VGuard is a proactive defense framework against voice cloning threats in LLM-based end-to-end speech synthesis. It disrupts timbre via encoder ensemble perturbatio…
+  [NEURIPS2025][Audio & Speech][voice cloning defense] E2E-VGuard is a proactive defense framework against voice cloning threats in LLM-based end-to-end speech synthesis. It disrupts timbre via encoder ensemble perturbation, interferes with pronunciation recognition via adversarial attacks on ASR systems, and ensures imperceptibility through a psychoacoustic model. Effectiveness is validated across 19 TTS models and 7 ASR systems.
 tags:
   - "NEURIPS2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "psychoacoustic model"
   - "LLM-based TTS"
 date: 2026-05-08
-content_hash: 3b375352ffed4a80
+content_hash: 02512f97923d671e
 ---
 
 # E2E-VGuard: Adversarial Prevention for Production LLM-based End-To-End Speech Synthesis
@@ -149,11 +149,11 @@ E2E-VGuard is the first method to simultaneously cover LLM-based TTS defense and
 
 ## Related Papers
 
-- [\[ACL 2026\] VoxMind: An End-to-End Agentic Spoken Dialogue System](../../ACL2026/audio_speech/voxmind_an_end-to-end_agentic_spoken_dialogue_system.md)
-- [\[AAAI 2026\] End-to-end Contrastive Language-Speech Pretraining Model For Long-form Spoken Question Answering](../../AAAI2026/audio_speech/end-to-end_contrastive_language-speech_pretraining_model_for_long-form_spoken_qu.md)
-- [\[ACL 2026\] VAPO: End-to-end Slide-Enhanced Speech Recognition with Omni-modal Large Language Models](../../ACL2026/audio_speech/vapo_end-to-end_slide-enhanced_speech_recognition_with_omni-modal_large_language.md)
-- [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](../../ACL2026/audio_speech/speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
-- [\[NeurIPS 2025\] Adapting Speech Language Model to Singing Voice Synthesis](adapting_speech_language_model_to_singing_voice_synthesis.md)
+- [\[ACL 2025\] DNCASR: End-to-End Training for Speaker-Attributed ASR](../../ACL2025/audio_speech/dncasr_end-to-end_training_for_speaker-attributed_asr.md)
+- [\[ACL 2025\] Contextual Biasing with the Knowledgeable External Language Model for End-to-End Speech Recognition](../../ACL2025/audio_speech/contextual_biasing_with_the_knowledgeable_external_language_model_for_end-to-end.md)
+- [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](../../ICLR2026/audio_speech/hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
+- [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)
+- [\[ACL 2025\] Distilling an End-to-End Voice Assistant Without Instruction Training Data](../../ACL2025/audio_speech/distilling_an_end-to-end_voice_assistant_without_instruction_training_data.md)
 
 </div>
 

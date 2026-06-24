@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][abstract reasoning] This paper introduces I-RAVEN-X, an enhanced symbolic reasoning benchmark that evaluates the generalization and robustness of analogical and mathematical reasoning in LLM…
+  [NeurIPS 2025][Reasoning][abstract reasoning] This paper introduces I-RAVEN-X, an enhanced symbolic reasoning benchmark that evaluates the generalization and robustness of analogical and mathematical reasoning in LLMs and LRMs by increasing operand complexity, attribute range, and perceptual uncertainty. Results show that LRMs significantly outperform LLMs under deterministic reasoning, but suffer sharp performance degradation under uncertain reasoning conditions.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "abstract reasoning"
   - "Raven's Progressive Matrices"
   - "LRM"
   - "analogical reasoning"
   - "robustness"
 date: 2026-05-08
-content_hash: da2d5125e35e02dc
+content_hash: a285d79527a1896b
 ---
 
 # I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models
@@ -127,7 +127,7 @@ The random baseline is 12.5%; under the hardest setting, LRM performance nearly 
 - [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
 - [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
 - [\[NeurIPS 2025\] The Ouroboros of Benchmarking: Reasoning Evaluation in an Era of Saturation](the_ouroboros_of_benchmarking_reasoning_evaluation_in_an_era_of_saturation.md)
-- [\[NeurIPS 2025\] Transformers Provably Learn Chain-of-Thought Reasoning with Length Generalization](transformers_provably_learn_chain-of-thought_reasoning_with_length_generalizatio.md)
+- [\[ICML 2025\] DyCodeEval: Dynamic Benchmarking of Reasoning Capabilities in Code Large Language Models Under Data Contamination](../../ICML2025/llm_reasoning/dynamic_benchmarking_of_reasoning_capabilities_in_code_large_language_models_und.md)
 
 </div>
 

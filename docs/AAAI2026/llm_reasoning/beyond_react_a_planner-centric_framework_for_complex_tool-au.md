@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][Tool-augmented LLM] This paper proposes a Planner-centric Plan-Execute framework that transforms complex queries into DAG-based execution plans. Through two-stage SFT+GRPO training of a dedicat…
+  [AAAI 2026][Reasoning][Tool-augmented LLM] This paper proposes a Planner-centric Plan-Execute framework that transforms complex queries into DAG-based execution plans. Through two-stage SFT+GRPO training of a dedicated Planner model, the approach surpasses reactive methods such as ReAct on ComplexTool-Plan and StableToolBench, achieving higher success rates with fewer inference steps.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Tool-augmented LLM"
   - "DAG planning"
   - "Plan-Execute paradigm"
   - "GRPO reinforcement learning"
   - "multi-tool orchestration"
 date: 2026-05-08
-content_hash: 4f0b3a844d10d869
+content_hash: 739f641214063e78
 ---
 
 # Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning
@@ -173,9 +173,9 @@ Average inference steps: the proposed method requires only **2.29 steps**, signi
 
 - [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
 - [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](../../ICLR2026/llm_reasoning/agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
+- [\[ICLR 2026\] Beyond English-Centric Training: How Reinforcement Learning Improves Cross-Lingual Reasoning in LLMs](../../ICLR2026/llm_reasoning/beyond_english-centric_training_how_reinforcement_learning_improves_cross-lingua.md)
 - [\[ACL 2026\] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents](../../ACL2026/llm_reasoning/jtpro_a_joint_tool-prompt_reflective_optimization_framework_for_language_agents.md)
 - [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](../../ICLR2026/llm_reasoning/a_state-transition_framework_for_efficient_llm_reasoning.md)
-- [\[AAAI 2026\] CMMCoT: Enhancing Complex Multi-Image Comprehension via Multi-Modal Chain-of-Thought and Memory Augmentation](cmmcot_enhancing_complex_multi-image_comprehension_via_multi.md)
 
 </div>
 

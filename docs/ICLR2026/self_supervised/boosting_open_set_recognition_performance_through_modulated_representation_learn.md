@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Boosting Open Set Recognition Performance through Modulated Representation Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper points out that nearly all Open Set Recognition (OSR) methods employ a **fixed temperature** $\tau$ for logits, restricting the model to a single point on the spectrum between "instance-level" and "class-level" features. The authors propose **temperature scheduling** (centering on a novel Negative Cosine Sch
+  [ICLR2026][Self-Supervised Learning][Open Set Recognition] This paper points out that nearly all Open Set Recognition (OSR) methods employ a **fixed temperature** $\tau$ for logits, restricting the model to a single point on the spectrum between "instance-level" and "class-level" features. The authors propose **temperature scheduling** (centering on a novel Negative Cosine Schedule, NegCosSch), allowing the model to initially define coarse decision boundaries at low temperatu…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Self-Supervised Learning"
+  - "Open Set Recognition"
+  - "Temperature Scheduling"
+  - "Representation Learning"
+  - "Contrastive Loss"
+  - "Negative Cosine Schedule"
 date: 2026-05-08
-content_hash: 7835cf39029f243d
+content_hash: 30202fbe0d447ce8
 ---
+
 # Boosting Open Set Recognition Performance through Modulated Representation Learning
 
 **Conference**: ICLR2026  

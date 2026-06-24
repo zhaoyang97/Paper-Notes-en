@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Flow Matching Policy Gradients
 description: >-
-  [ICLR 2026][Reinforcement Learning][Flow Matching] This paper introduces **Flow Policy Optimization (FPO)**, which integrates the conditional flow matching loss directly into the PPO-clip framework. By using the "exponential of the difference between the old and new policy CFM losses" as a proxy for the likelihood ratio, FPO enables training diffusion/flow policies fro
+  [ICLR 2026][Reinforcement Learning][Flow Matching] This paper introduces **Flow Policy Optimization (FPO)**, which integrates the conditional flow matching loss directly into the PPO-clip framework. By using the "exponential of the difference between the old and new policy CFM losses" as a proxy for the likelihood ratio, FPO enables training diffusion/flow policies from scratch using pure on-policy gradients. This approach avoids calculating exact likelihoods of flow models a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Flow Matching
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Flow Matching"
+  - "Policy Gradient"
+  - "PPO"
+  - "Diffusion Policy"
+  - "Multimodal Action Distribution"
 date: 2026-05-08
-content_hash: 9905411c97301e4f
+content_hash: 9f09e2a41e522947
 ---
+
 # Flow Matching Policy Gradients
 
 **Conference**: ICLR 2026  
@@ -158,9 +162,9 @@ Humanoid control (different target conditions, FPO vs. Gaussian PPO):
 
 - [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 - [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](../../ICML2026/reinforcement_learning/moment_matching_q-learning.md)
+- [\[ICLR 2026\] Q-Learning with Adjoint Matching](q-learning_with_adjoint_matching.md)
 - [\[ICLR 2026\] floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL](floq_training_critics_via_flow-matching_for_scaling_compute_in_value-based_rl.md)
-- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
-- [\[ICLR 2026\] PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning](policyflow_policy_optimization_with_continuous_normalizing_flow_in_reinforcement.md)
 
 </div>
 

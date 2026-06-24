@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper characterizes the expressive power of implicit models (fixed-point/DEQ style) from a non-parametric perspective in function space. It proves that "a simple (globally Lipschitz) update operator $G$ can express any complex locally Lipschitz mapping via fixed-point iteration." This provides a theoretical explan
+  [ICLR2026][Learning Theory][fixed-point iteration] This paper characterizes the expressive power of implicit models (fixed-point/DEQ style) from a non-parametric perspective in function space. It proves that "a simple (globally Lipschitz) update operator $G$ can express any complex locally Lipschitz mapping via fixed-point iteration." This provides a theoretical explanation for the empirical phenomenon where implicit models match or exceed larger explicit networks by increasi…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Implicit Models"
+  - "Expressivity"
+  - "fixed-point iteration"
+  - "test-time scaling"
+  - "local Lipschitz"
 date: 2026-05-08
-content_hash: fdf6d5c534142d43
+content_hash: c774ca6586a2e9c4
 ---
+
 # Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling
 
 **Conference**: ICLR2026  
@@ -130,15 +136,16 @@ Implicit models significantly outperform explicit models at equivalent embedding
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality](test-time_verification_via_optimal_transport_coverage_roc_sub-optimality.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 - [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
 - [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
-- [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
-- [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
 
 </div>
 

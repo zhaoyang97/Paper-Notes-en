@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Coherence-Based Measure of AGI
 description: >-
-  [AAAI 2026][Interpretability][AGI evaluation] This paper identifies that existing AGI scores rely on arithmetic averaging, which implicitly encodes a "compensatory" assumption (strengths offsetting weaknesses)…
+  [AAAI 2026][Interpretability][AGI evaluation] This paper identifies that existing AGI scores rely on arithmetic averaging, which implicitly encodes a "compensatory" assumption (strengths offsetting weaknesses), and proposes $\text{AGI}_{\text{AUC}}$—a coherence measure based on the continuous spectrum of generalized means. By integrating over the compensability parameter $p \in [-1, 1]$, the metric penalizes uneven capability profiles and exposes bottlenecks concealed by arit…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "cognitive capability balance"
   - "non-compensatory aggregation"
 date: 2026-05-08
-content_hash: efb8c016b1bf7ac9
+content_hash: 655633db308d0be5
 ---
 
 # A Coherence-Based Measure of AGI
@@ -126,10 +126,10 @@ This paper presents a purely evaluative framework with no model training. Numeri
 ## Related Papers
 
 - [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
-- [\[AAAI 2026\] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
 - [\[AAAI 2026\] Hypothesis Generation via LLM-Automated Language Bias for ILP](hypothesis_generation_via_llm-automated_language_bias_for_ilp.md)
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](partially_shared_concept_bottleneck_models.md)
+- [\[AAAI 2026\] Flexible Concept Bottleneck Model](flexible_concept_bottleneck_model.md)
 
 </div>
 

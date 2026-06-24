@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper designs a trivia game experimental paradigm consisting of a three-human team and one AI assistant. The AI assistant secretly transforms into an adversary that "learns to lie"—using Model-Based Reinforcement Learning (MBRL) to predict the evolution of human trust and deceive at opportune moments. The results
+  [ICLR 2026][LLM Safety][Human-AI teaming] This paper designs a trivia game experimental paradigm consisting of a three-human team and one AI assistant. The AI assistant secretly transforms into an adversary that "learns to lie"—using Model-Based Reinforcement Learning (MBRL) to predict the evolution of human trust and deceive at opportune moments. The results demonstrate that both human and LLM teams suffer significant performance degradation under such trust-based attacks.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Human-AI teaming"
+  - "adversarial AI"
+  - "trust dynamics"
+  - "model-based reinforcement learning"
+  - "influence allocation"
+  - "LLM agents"
 date: 2026-05-08
-content_hash: c56ef60d94ac5556
+content_hash: c3ac4fe54d56e624
 ---
+
 # Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs
 
 **Conference**: ICLR 2026  
@@ -116,7 +123,7 @@ Of the 25 teams, 12 were attacked using the cognitive model and 13 using the MLP
 - [\[ICLR 2026\] Adversarial Déjà Vu: Jailbreak Dictionary Learning for Stronger Generalization to Unseen Attacks](adversarial_déjà_vu_jailbreak_dictionary_learning_for_stronger_generalization_to.md)
 - [\[ICLR 2026\] Efficient Adversarial Attacks on High-dimensional Offline Bandits](efficient_adversarial_attacks_on_high-dimensional_offline_bandits.md)
 - [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
-- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ICLR 2026\] Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols](adaptive_attacks_on_trusted_monitors_subvert_ai_control_protocols.md)
 
 </div>
 

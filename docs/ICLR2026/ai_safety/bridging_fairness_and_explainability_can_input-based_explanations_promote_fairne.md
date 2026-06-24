@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?
 description: >-
-  [ICLR 2026][AI Safety][Interpretability] The first systematic quantitative analysis of the relationship between input-based explanations and fairness: explanations effectively detect biased predictions and serve as training regularizers to reduce bias, but are unreliable for automated fair model selection.
+  [ICLR 2026][AI Safety][Fairness] The first systematic quantitative analysis of the relationship between input-based explanations and fairness: explanations effectively detect biased predictions and serve as training regularizers to reduce bias, but are unreliable for automated fair model selection.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Interpretability
-  - hate speech detection
-  - input attribution
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Fairness"
+  - "Explainability"
+  - "hate speech detection"
+  - "input attribution"
+  - "bias mitigation"
 date: 2026-05-08
-content_hash: abb237510ec435d9
+content_hash: 3b98b26ff60ce815
 ---
+
 # Bridging Fairness and Explainability: Can Input-Based Explanations Promote Fairness in Hate Speech Detection?
 
 **Conference**: ICLR 2026  
@@ -147,10 +150,10 @@ Explanation-based regularization significantly reduces AvgIU, particularly for r
 ## Related Papers
 
 - [\[ACL 2025\] Towards Fairness Assessment of Dutch Hate Speech Detection](../../ACL2025/ai_safety/towards_fairness_assessment_of_dutch_hate_speech_detection.md)
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 - [\[ICLR 2026\] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)
-- [\[AAAI 2026\] CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation](../../AAAI2026/ai_safety/core-fed_bridging_collaborative_and_representation_fairness_via_federated_embedd.md)
-- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
-- [\[ICLR 2026\] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching](beyond_match_maximization_and_fairness_retention-optimized_two-sided_matching.md)
+- [\[ICLR 2026\] Doubly-Regressing Approach for Subgroup Fairness](doubly-regressing_approach_for_subgroup_fairness.md)
 
 </div>
 

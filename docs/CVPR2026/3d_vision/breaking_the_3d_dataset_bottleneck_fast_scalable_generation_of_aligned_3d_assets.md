@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Given only a category name, a fully automated "text → image → 3D" pipeline generates canonically aligned textured meshes within 3 minutes, along with 6D pose and grasping datasets. The core mechanism utilizes depth-conditioned generation to boost pose consistency from 57% to 96%, allowing the 153K generated meshes to b
+  [CVPR 2026][3D Vision][3D asset generation] Given only a category name, a fully automated "text → image → 3D" pipeline generates canonically aligned textured meshes within 3 minutes, along with 6D pose and grasping datasets. The core mechanism utilizes depth-conditioned generation to boost pose consistency from 57% to 96%, allowing the 153K generated meshes to be used directly for zero-shot sim2real pose estimation and real-world robotic grasping.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D asset generation"
+  - "6D pose estimation"
+  - "canonical alignment"
+  - "depth-conditioned generation"
+  - "robotic grasping"
 date: 2026-05-08
-content_hash: b6eb4f42e86406c2
+content_hash: 14a3dad935b5f41e
 ---
+
 # Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping
 
 **Conference**: CVPR 2026  
@@ -140,11 +146,11 @@ Ours achieves a grasp success rate of 87.8% and a shape completion IoU of 0.475,
 
 ## Related Papers
 
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
-- [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[CVPR 2026\] PoseGaussian: 6D Pose Estimation for Unseen Objects via Sparse-View Object-Level 3D Gaussian Splatting](posegaussian_6d_pose_estimation_for_unseen_objects_via_sparse-view_object-level_.md)
+- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
+- [\[ECCV 2024\] Omni6D: Large-Vocabulary 3D Object Dataset for Category-Level 6D Object Pose Estimation](../../ECCV2024/3d_vision/omni6d_large-vocabulary_3d_object_dataset_for_category-level_6d_object_pose_esti.md)
+- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
+- [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
 
 </div>
 

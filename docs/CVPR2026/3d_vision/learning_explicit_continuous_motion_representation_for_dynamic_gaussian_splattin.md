@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes to explicitly model the continuous position and orientation deformation trajectories of dynamic Gaussians through adaptive SE(3) B-spline motion bases. Combined with a soft segment reconstruction strategy and multi-view diffusion model priors, it achieves high-quality novel view synthesis of dynamic
+  [CVPR 2026][3D Vision][Dynamic Gaussian Splatting] This paper proposes to explicitly model the continuous position and orientation deformation trajectories of dynamic Gaussians through adaptive SE(3) B-spline motion bases. Combined with a soft segment reconstruction strategy and multi-view diffusion model priors, it achieves high-quality novel view synthesis of dynamic scenes from monocular videos, outperforming existing methods on iPhone and NVIDIA datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "Monocular Video"
+  - "SE(3) B-splines"
+  - "Motion Representation"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: d4b4bbedb72e3009
+content_hash: 1be00d2854447680
 ---
+
 # Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos
 
 **Conference**: CVPR 2026  
@@ -141,16 +147,15 @@ Motion representation ablation (iPhone mPSNR): Pose transformation (SoM style) y
 
 ## Related Papers
 
-- [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
-- [\[CVPR 2026\] ClipGStream: Clip-Stream Gaussian Splatting for Any Length and Any Motion Multi-View Dynamic Scene Reconstruction](clipgstream_clip-stream_gaussian_splatting_for_any_length_and_any_motion_multi-v.md)
-- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] ExMesh: EXplicit Mesh Reconstruction with Topology Adaptation](exmesh_explicit_mesh_reconstruction_with_topology_adaptation.md)
+- [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
+- [\[CVPR 2026\] SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation](sharptimegs_sharp_and_stable_dynamic_gaussian_splatting_via_lifespan_modulation.md)
+- [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](../../NeurIPS2025/3d_vision/dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
+- [\[CVPR 2026\] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video](physho_physics-based_dynamic_3d_gaussian_human_and_object_from_monocular_video.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation](sharptimegs_sharp_and_stable_dynamic_gaussian_splatting_via_lifespan_modulation.md)

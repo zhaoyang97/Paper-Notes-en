@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation
 description: >-
-  [ICML 2026][Image Generation][flow matching] The authors discover that Transformer-based text-to-image models cause the "zero-frequency spatial mean (DC component)" to rapidly align across different random seeds during the early stages of denoising, prematurely locking the global layout. Consequently, they propose DAVE—a lightweight attenuation of the DC componen
+  [ICML 2026][Image Generation][Text-to-image diversity] The authors discover that Transformer-based text-to-image models cause the "zero-frequency spatial mean (DC component)" to rapidly align across different random seeds during the early stages of denoising, prematurely locking the global layout. Consequently, they propose DAVE—a lightweight attenuation of the DC component in intermediate representations during early generation stages. This approach unlocks sample diversity…
 tags:
-  - ICML 2026
-  - Image Generation
-  - flow matching
+  - "ICML 2026"
+  - "Image Generation"
+  - "Text-to-image diversity"
+  - "representation modulation"
+  - "DC component"
+  - "flow matching"
+  - "training-free"
 date: 2026-05-08
-content_hash: 9d188e719a22d40a
+content_hash: 1b729238dd81c32c
 ---
+
 # Breaking the Lock-in: Diversifying Text-to-Image Generation via Representation Modulation
 
 **Conference**: ICML 2026  
@@ -141,9 +146,9 @@ DAVE significantly increases Vendi from 1.71 to 2.33–2.50 and Recall from 0.26
 
 - [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](../../CVPR2026/image_generation/premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)
 - [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](../../CVPR2026/image_generation/emf_meanflow_text_to_image.md)
-- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](../../AAAI2026/image_generation/unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
 - [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
-- [\[CVPR 2026\] Breaking Semantic Boundaries: Distribution-Guided Semantic Exploration for Creative Generation](../../CVPR2026/image_generation/breaking_semantic_boundaries_distribution-guided_semantic_exploration_for_creati.md)
+- [\[ICML 2026\] AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching](ag-repa_causal_layer_selection_for_representation_alignment_in_audio_flow_matchi.md)
+- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](../../AAAI2026/image_generation/unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
 
 </div>
 

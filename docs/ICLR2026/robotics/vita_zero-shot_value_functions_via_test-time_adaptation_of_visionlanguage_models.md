@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] VITA uses a frozen contrastive VLM (CLIP) as a backbone for goal-conditioned value functions and performs frame-wise gradient updates on a lightweight adaptive module at inference time. The update rule itself is a self-supervised loss derived via meta-learning, which implicitly encodes trajectory history into parameter
+  [ICLR 2026][Robotics][Zero-Shot Value Functions] VITA uses a frozen contrastive VLM (CLIP) as a backbone for goal-conditioned value functions and performs frame-wise gradient updates on a lightweight adaptive module at inference time. The update rule itself is a self-supervised loss derived via meta-learning, which implicitly encodes trajectory history into parameters. This allows a value function trained only in a single environment to generalize zero-shot to entirely new ta…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Zero-Shot Value Functions"
+  - "Test-Time Adaptation"
+  - "Meta-Learning"
+  - "Reward Shaping"
+  - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: 208cf5c7932977e7
+content_hash: 9e4a1f527d484347
 ---
+
 # VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models
 
 **Conference**: ICLR 2026  
@@ -157,7 +163,7 @@ VITA, trained on real robot data and transferred zero-shot to simulation for rew
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](../../CVPR2026/robotics/test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
 - [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](../../ICML2026/robotics/test-time_training_for_visual_foresight_vision-language-action_models.md)
 - [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
-- [\[ICLR 2026\] VITA: Vision-to-Action Flow Matching Policy](vita_vision-to-action_flow_matching_policy.md)
+- [\[ICLR 2026\] Sim2Real VLA: Zero-Shot Generalization of Synthesized Skills to Realistic Manipulation](sim2real_vla_zero-shot_generalization_of_synthesized_skills_to_realistic_manipul.md)
 
 </div>
 

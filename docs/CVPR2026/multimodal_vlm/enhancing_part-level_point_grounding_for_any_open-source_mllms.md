@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Without fine-tuning any MLLM parameters, by "synthesizing a grounding-aware query" in the intermediate layers to reshape text-to-image attention and using a lightweight decoder to upsample it into a point heatmap, the **part-level point grounding** accuracy of open-source MLLMs is significantly improved. This method ca
+  [CVPR 2026][Multimodal VLM][Part-level point grounding] Without fine-tuning any MLLM parameters, by "synthesizing a grounding-aware query" in the intermediate layers to reshape text-to-image attention and using a lightweight decoder to upsample it into a point heatmap, the **part-level point grounding** accuracy of open-source MLLMs is significantly improved. This method can be plug-and-played into any model with an attention mechanism.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Part-level point grounding"
+  - "MLLM attention"
+  - "frozen backbone"
+  - "query synthesis"
+  - "robot perception"
 date: 2026-05-08
-content_hash: ae461dd8408a2edb
+content_hash: 32982f2983aa8f24
 ---
+
 # Enhancing Part-Level Point Grounding for Any Open-Source MLLMs
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Ablation on localization head count: Acc for $k=1$ is 0.427, $k=3$ is 0.451, $k=
 ## Related Papers
 
 - [\[CVPR 2026\] From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding](from_failure_to_feedback_group_revision_unlocks_hard_cases_in_object-level_groun.md)
+- [\[CVPR 2026\] Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding](molmo2_open_weights_and_data_for_vision-language_models_with_video_understanding.md)
+- [\[ICLR 2026\] MetaCaptioner: Towards Generalist Visual Captioning with Open-source Suites](../../ICLR2026/multimodal_vlm/metacaptioner_towards_generalist_visual_captioning_with_open-source_suites.md)
 - [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
 - [\[CVPR 2026\] Describe Anything Anywhere At Any Moment](describe_anything_anywhere_at_any_moment.md)
-- [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
-- [\[CVPR 2026\] Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding](molmo2_open_weights_and_data_for_vision-language_models_with_video_understanding.md)
 
 </div>
 

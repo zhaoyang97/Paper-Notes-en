@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reward Models Inherit Value Biases from Pretraining
 description: >-
-  [ICLR 2026][Alignment & RLHF][Pretraining] This paper employs an interpretability method of "exhaustive token search + psycholinguistic corpora" to systematically examine 10 mainstream open-source Reward Models (RMs). It finds that RM preferences across multiple human value dimensions—such as "agency vs. communion"—highly depend on the base LLM (Llama series pr
+  [ICLR 2026][LLM Alignment][Reward Model] This paper employs an interpretability method of "exhaustive token search + psycholinguistic corpora" to systematically examine 10 mainstream open-source Reward Models (RMs). It finds that RM preferences across multiple human value dimensions—such as "agency vs. communion"—highly depend on the base LLM (Llama series prefers agency; Gemma series prefers communion). These biases are traced back to the log-probabilities of the base models…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Pretraining
-  - Interpretability
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Value Bias"
+  - "Pretraining"
+  - "Interpretability"
+  - "Psycholinguistics"
 date: 2026-05-08
-content_hash: 6feee2ad2befe452
+content_hash: 0cd4b8e62e8e3016
 ---
+
 # Reward Models Inherit Value Biases from Pretraining
 
 **Conference**: ICLR 2026  
@@ -115,15 +119,15 @@ Three findings: first, Llama RMs consistently favored agency while Gemma RMs fav
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](pretrain_value_not_reward_decoupled_value_policy_optimization.md)
+- [\[ICLR 2026\] Group-Normalized Implicit Value Optimization for Language Models](group-normalized_implicit_value_optimization_for_language_models.md)
 - [\[ICLR 2026\] Cognitive models can reveal interpretable value trade-offs in language models](cognitive_models_can_reveal_interpretable_value_trade-offs_in_language_models.md)
-- [\[AAAI 2026\] BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](../../AAAI2026/llm_alignment/biasjailbreakanalyzing_ethical_biases_and_jailbreak_vulnerabilities_in_large_lan.md)
-- [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
-- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
+- [\[ICLR 2026\] StoryAlign: Evaluating and Training Reward Models for Story Generation](storyalign_evaluating_and_training_reward_models_for_story_generation.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 
 </div>
 

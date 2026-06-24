@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stress Testing Factual Consistency Metrics for Long-Document Summarization
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper stress-tests six commonly used reference-free factuality metrics in long-document summarization. It discovers that these metrics are significantly influenced by meaning-preserving paraphrasing, retrieval window sizes, and high-information-density claims, indicating that metrics designed for short summaries c
+  [ACL 2026][LLM Evaluation][Factual Consistency] This paper stress-tests six commonly used reference-free factuality metrics in long-document summarization. It discovers that these metrics are significantly influenced by meaning-preserving paraphrasing, retrieval window sizes, and high-information-density claims, indicating that metrics designed for short summaries cannot be reliably transferred to long-document scenarios.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Factual Consistency"
+  - "Long-Document Summarization"
+  - "Robustness Evaluation"
+  - "Retrieval-based Scoring"
+  - "Metric Stress Testing"
 date: 2026-05-08
-content_hash: 8b08469b5d94c9ba
+content_hash: 11f3b86a5ee82381
 ---
+
 # Stress Testing Factual Consistency Metrics for Long-Document Summarization
 
 **Conference**: ACL 2026  
@@ -132,10 +138,10 @@ The core "ablation" here is the retrieval window size. Expanding the window gene
 ## Related Papers
 
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
-- [\[ACL 2026\] Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations](pressure-testing_deception_probes_in_llms_scaling_robustness_and_the_geometry_of.md)
-- [\[ACL 2026\] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts](politnuggets_benchmarking_agentic_discovery_of_long-tail_political_facts.md)
-- [\[ACL 2026\] StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall](stratmem-bench_evaluating_strategic_memory_use_in_virtual_character_conversation.md)
+- [\[ACL 2026\] Erosion of Correct Beliefs: A Study of LLM Cognitive Resilience under Clinical Stress](when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
 - [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
+- [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
+- [\[ACL 2026\] LLMs as annotators of credibility assessment in Danish asylum decisions: evaluating classification performance and errors beyond aggregated metrics](llms_as_annotators_of_credibility_assessment_in_danish_asylum_decisions_evaluati.md)
 
 </div>
 

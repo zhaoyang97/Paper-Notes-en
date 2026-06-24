@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] Addressing the scenario of "maximizing rewards (e.g., binding affinity, dipole moment) under hard domain constraints (e.g., synthetic accessibility, energy upper bounds)," this paper proposes the CFO algorithm. CFO decomposes constrained generative optimization into a sequence of standard KL-regularized fine-tuning sub
+  [ICML 2026][Computational Biology][Flow Matching Fine-tuning] Addressing the scenario of "maximizing rewards (e.g., binding affinity, dipole moment) under hard domain constraints (e.g., synthetic accessibility, energy upper bounds)," this paper proposes the CFO algorithm. CFO decomposes constrained generative optimization into a sequence of standard KL-regularized fine-tuning subproblems using the Augmented Lagrangian method. By adaptively updating penalty factors $\rho_k$ an…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Flow Matching Fine-tuning"
+  - "Augmented Lagrangian"
+  - "Constrained Generative Optimization"
+  - "Molecular Design"
+  - "KL Regularization"
 date: 2026-05-08
-content_hash: c31bac9ae3898925
+content_hash: 0836612e4474988b
 ---
+
 # Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design
 
 **Conference**: ICML 2026  
@@ -138,15 +144,16 @@ Highlights: CFO strictly satisfies constraints with negligible reward loss, appl
 - **Value**: ⭐⭐⭐⭐ High industrial potential for molecular/protein design without manual weight tuning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](../../NeurIPS2025/computational_biology/flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
 - [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](../../ICLR2026/computational_biology/thompson_sampling_via_fine-tuning_of_llms.md)
-- [\[ICLR 2026\] Verifier-Constrained Flow Expansion for Discovery Beyond the Data](../../ICLR2026/computational_biology/verifier-constrained_flow_expansion_for_discovery_beyond_the_data.md)
-- [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
 - [\[ICLR 2026\] Fine-Tuning Diffusion Models via Intermediate Distribution Shaping](../../ICLR2026/computational_biology/fine-tuning_diffusion_models_via_intermediate_distribution_shaping.md)
+- [\[ICLR 2026\] Verifier-Constrained Flow Expansion for Discovery Beyond the Data](../../ICLR2026/computational_biology/verifier-constrained_flow_expansion_for_discovery_beyond_the_data.md)
+- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](../../ICLR2026/computational_biology/iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
 
 </div>
 

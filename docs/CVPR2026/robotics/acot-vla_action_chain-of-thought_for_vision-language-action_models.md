@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] The "intermediate reasoning" of VLA is replaced from language subtasks or target images with **coarse-grained reference action sequences in the action space** (Action Chain-of-Thought). An explicit action reasoner generates reference trajectories, while an implicit action reasoner extracts action priors from the VLM's
+  [CVPR 2026][Robotics][VLA] The "intermediate reasoning" of VLA is replaced from language subtasks or target images with **coarse-grained reference action sequences in the action space** (Action Chain-of-Thought). An explicit action reasoner generates reference trajectories, while an implicit action reasoner extracts action priors from the VLM's KV cache. These two pathways jointly condition the action head, achieving SOTA on LIBERO/LIBERO-Plus/VLABench simulation benchmarks a…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Action Chain-of-Thought"
+  - "Robotic Manipulation"
+  - "Flow Matching"
+  - "Explicit/Implicit Reasoning"
 date: 2026-05-08
-content_hash: 8f75d03196c6dc20
+content_hash: e6e2c514ae6f1708
 ---
+
 # ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -145,16 +149,16 @@ Module ablation (LIBERO, baseline=$\pi_{0.5}$):
 - Value: ⭐⭐⭐⭐⭐ SOTA results and open-sourced, providing a clean, reusable paradigm for the VLA community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
-- [\[CVPR 2026\] Unifying Perception and Action: A Hybrid-Modality Pipeline with Implicit Visual Chain-of-Thought for Robotic Action Generation (VITA)](unifying_perception_and_action_a_hybrid-modality_pipeline_with_implicit_visual_c.md)
 - [\[CVPR 2025\] CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models](../../CVPR2025/robotics/cot-vla_visual_chain-of-thought_reasoning_for_vision-language-action_models.md)
-- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
-- [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
+- [\[CVPR 2026\] Unifying Perception and Action: A Hybrid-Modality Pipeline with Implicit Visual Chain-of-Thought for Robotic Action Generation (VITA)](unifying_perception_and_action_a_hybrid-modality_pipeline_with_implicit_visual_c.md)
+- [\[CVPR 2026\] From Manuals to Actions: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation](from_manuals_to_actions_a_unified_vla_model_for_chain-of-thought_manual_generati.md)
 
 </div>
 

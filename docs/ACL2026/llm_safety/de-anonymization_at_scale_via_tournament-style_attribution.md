@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] De-Anonymization at Scale via Tournament-Style Attribution
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes DAS (De-Anonymization at Scale), an LLM-based method for large-scale authorship de-anonymization. By employing a tournament-style elimination strategy combined with dense retrieval pre-filtering and multi-round voting aggregation, the method enables author matching across tens of thousands of candid
+  [ACL 2026 Oral][LLM Safety][Authorship Attribution] This paper proposes DAS (De-Anonymization at Scale), an LLM-based method for large-scale authorship de-anonymization. By employing a tournament-style elimination strategy combined with dense retrieval pre-filtering and multi-round voting aggregation, the method enables author matching across tens of thousands of candidate texts, revealing the privacy threat LLMs pose to anonymous platforms such as double-blind peer review.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Oral"
+  - "LLM Safety"
+  - "Authorship Attribution"
+  - "De-anonymization"
+  - "LLM Privacy Threats"
+  - "Tournament-Style Matching"
+  - "Peer Review"
 date: 2026-05-08
-content_hash: 3751ab2670de0c9f
+content_hash: b2d3cbffc9c616e0
 ---
+
 # De-Anonymization at Scale via Tournament-Style Attribution
 
 **Conference**: ACL 2026 Oral  
@@ -135,8 +141,8 @@ DAS is a training-free inference-time method. It does not update any weights; it
 
 ## Related Papers
 
-- [\[ACL 2026\] ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images](generating_attribution_reports_for_manipulated_facial_images_a_dataset_and_basel.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)
+- [\[ACL 2026\] ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images](generating_attribution_reports_for_manipulated_facial_images_a_dataset_and_basel.md)
 - [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
 - [\[ACL 2026\] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization](look_twice_before_you_leap_a_rational_framework_for_localized_adversarial_anonym.md)
 - [\[ICML 2025\] De-mark: Watermark Removal in Large Language Models](../../ICML2025/llm_safety/de-mark_watermark_removal_in_large_language_models.md)

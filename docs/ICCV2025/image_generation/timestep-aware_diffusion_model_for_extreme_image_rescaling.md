@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Timestep-Aware Diffusion Model for Extreme Image Rescaling
 description: >-
-  [Image Generation] This paper proposes TADM, which performs extreme image rescaling (16×/32×) in the latent space of a pretrained Stable Diffusion model. By introducing a Decoupled Feature Rescaling Module (DFRM) and a t…
+  [Image Generation] This paper proposes TADM, which performs extreme image rescaling (16×/32×) in the latent space of a pretrained Stable Diffusion model. By introducing a Decoupled Feature Rescaling Module (DFRM) and a timestep-aware alignment strategy, TADM dynamically allocates the generative capacity of the diffusion model to handle spatially non-uniform degradation.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 29ac512ac10ced06
+content_hash: a5f7ab2d8ee849a4
 ---
 
 # Timestep-Aware Diffusion Model for Extreme Image Rescaling
@@ -163,8 +163,8 @@ Fig. 14 visualizes the predicted timestep maps: regions with complex textures ar
 - [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
+- [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dual-interrelated_diffusion_model_for_few-shot_anomaly_image_generation.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
-- [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](../../NeurIPS2025/image_generation/denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
 
 </div>
 

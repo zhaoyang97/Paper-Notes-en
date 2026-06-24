@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic Causality-Aware Vision-Based 3D Occupancy Prediction
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper analyzes semantic ambiguity in 2D-to-3D transformation for vision-based 3D occupancy prediction from a causal perspective…
+  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper analyzes semantic ambiguity in 2D-to-3D transformation for vision-based 3D occupancy prediction from a causal perspective, proposes a Causal Loss for end-to-end semantic consistency supervision, and designs the SCAT module (channel-grouped lifting, learnable camera offsets, normalized convolution) to significantly improve occupancy prediction accuracy and robustness to camera perturbations.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "Semantic Consistency"
   - "Camera Robustness"
 date: 2026-05-08
-content_hash: 503d41dfc1ecb202
+content_hash: f54d910dccf1b82d
 ---
 
 # Semantic Causality-Aware Vision-Based 3D Occupancy Prediction
@@ -199,7 +199,7 @@ Each component independently contributes approximately 0.3–0.8 mIoU, totaling 
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
 - [\[ICCV 2025\] AGO: Adaptive Grounding for Open World 3D Occupancy Prediction](ago_adaptive_grounding_for_open_world_3d_occupancy_predictio.md)
 - [\[ICCV 2025\] ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions](alocc_adaptive_lifting-based_3d_semantic_occupancy_and_cost_volume-based_flow_pr.md)
-- [\[ICCV 2025\] GaussRender: Learning 3D Occupancy with Gaussian Rendering](gaussrender_learning_3d_occupancy_with_gaussian_rendering.md)
+- [\[ECCV 2024\] GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction](../../ECCV2024/autonomous_driving/gaussianformer_scene_as_gaussians_for_vision-based_3d_semantic_occupancy_predict.md)
 
 </div>
 

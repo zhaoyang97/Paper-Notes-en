@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][Diffusion Model] T2LDM utilizes a "Guidance Network" (SCRG) that provides geometric reconstruction supervision during training but is discarded at inference, along with Directional Positional Encoding (DPE) to correct street distortion from spherical projection. It generates finely structured and controllable LiDAR scenes despite the e
+  [CVPR 2026][Image Generation][Text-to-LiDAR generation] T2LDM utilizes a "Guidance Network" (SCRG) that provides geometric reconstruction supervision during training but is discarded at inference, along with Directional Positional Encoding (DPE) to correct street distortion from spherical projection. It generates finely structured and controllable LiDAR scenes despite the extreme scarcity of Text-LiDAR pairs, and introduces the controllability benchmark T2nuScenes and the TBR…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-LiDAR generation"
+  - "Diffusion models"
+  - "Representation guidance"
+  - "Directional positional encoding"
+  - "Controllability evaluation"
 date: 2026-05-08
-content_hash: 113fc3f17892f43d
+content_hash: d17b984217f4beb4
 ---
+
 # A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation
 
 **Conference**: CVPR 2026  
@@ -140,16 +145,16 @@ Effectiveness of components (nuScenes, text-guided). $\varnothing$=w/o DPE+SCRG,
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)
-- [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](../../ICCV2025/autonomous_driving/langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[CVPR 2026\] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model](sparseworld_tc_trajectory_conditioned_sparse_occupancy_world_model.md)
-- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
-- [\[CVPR 2026\] CoopDiff: A Diffusion-Guided Approach for Cooperation under Corruptions](coopdiff_a_diffusion-guided_approach_for_cooperation_under_corruptions.md)
+- [\[CVPR 2026\] StyleTextGen: Style-Conditioned Multilingual Scene Text Generation](styletextgen_style-conditioned_multilingual_scene_text_generation.md)
+- [\[ECCV 2024\] DCDM: Diffusion-Conditioned-Diffusion Model for Scene Text Image Super-Resolution](../../ECCV2024/image_generation/dcdm_diffusion-conditioned-diffusion_model_for_scene_text_image_super-resolution.md)
+- [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
+- [\[CVPR 2026\] SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training](sra_2_variational_autoencoder_self-representation_alignment_for_efficient_diffus.md)
+- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 
 </div>
 

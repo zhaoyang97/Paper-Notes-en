@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Monitoring Decomposition Attacks with Lightweight Sequential Monitors
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing decomposition attacks that split harmful goals into sequences of seemingly benign sub-tasks, this work constructs the largest dataset DecomposedHarm (4,634 task pairs) and proposes a **cumulative sequential monitoring framework**. Optimized lightweight models (e.g., GPT-4o-mini) achieve a 93% defense success
+  [ICLR 2026][LLM Safety][Decomposition Attack] Addressing decomposition attacks that split harmful goals into sequences of seemingly benign sub-tasks, this work constructs the largest dataset DecomposedHarm (4,634 task pairs) and proposes a **cumulative sequential monitoring framework**. Optimized lightweight models (e.g., GPT-4o-mini) achieve a 93% defense success rate, surpassing Llama-Guard-4 and o3-mini while reducing costs by 90% and latency by 50%.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Decomposition Attack"
+  - "Sequential Monitoring"
+  - "LLM Agent Safety"
+  - "Jailbreak Defense"
+  - "Lightweight Guardrails"
 date: 2026-05-08
-content_hash: 5a28e5e04240c7b6
+content_hash: d0c0ad29214abce5
 ---
+
 # Monitoring Decomposition Attacks with Lightweight Sequential Monitors
 
 **Conference**: ICLR 2026  
@@ -115,7 +121,7 @@ Llama-Guard-4 remains extremely fragile even when wrapped in the same sequential
 - [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](reliable_weak-to-strong_monitoring_of_llm_agents.md)
 - [\[ACL 2026\] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](../../ACL2026/llm_safety/learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)
 - [\[ICLR 2026\] Efficient Adversarial Attacks on High-dimensional Offline Bandits](efficient_adversarial_attacks_on_high-dimensional_offline_bandits.md)
-- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ICLR 2026\] SlotGCG: Exploiting the Positional Vulnerability in LLMs for Jailbreak Attacks](slotgcg_exploiting_the_positional_vulnerability_in_llms_for_jailbreak_attacks.md)
 
 </div>
 

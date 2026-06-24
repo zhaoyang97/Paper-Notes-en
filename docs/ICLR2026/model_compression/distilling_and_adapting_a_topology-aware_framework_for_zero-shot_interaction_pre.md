@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] The CAZI-MBN framework is proposed, which integrates domain-specific LLM sequence embeddings, a topology-aware graph tokenizer, context-aware cross-layer attention, and teacher-student distillation. It achieves zero-shot interaction prediction for unseen entities in multiplex biological networks, improving AUROC by 3.1
+  [ICLR 2026][Model Compression][Multiplex Biological Networks] The CAZI-MBN framework is proposed, which integrates domain-specific LLM sequence embeddings, a topology-aware graph tokenizer, context-aware cross-layer attention, and teacher-student distillation. It achieves zero-shot interaction prediction for unseen entities in multiplex biological networks, improving AUROC by 3.1-20.4% over the best baselines across five benchmark datasets.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Multiplex Biological Networks"
+  - "Zero-Shot Prediction"
+  - "Knowledge Distillation"
+  - "Graph Transformer"
+  - "Multimodal Representation Learning"
 date: 2026-05-08
-content_hash: 9c114d1a98a12310
+content_hash: a04b4b3dc1e02e69
 ---
+
 # Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks
 
 **Conference**: ICLR 2026  

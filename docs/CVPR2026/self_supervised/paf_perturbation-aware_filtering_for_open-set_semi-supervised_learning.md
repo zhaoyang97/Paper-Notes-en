@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] PAF distills the phenomenon that "OOD samples exhibit more unstable representations under semantic-preserving perturbations" into a representation-level filtering signal. It employs Otsu's adaptive thresholding to dynamically exclude open-set (OOD) samples from unlabeled data. Combined with a two-stage training framewo
+  [CVPR 2026][Self-Supervised Learning][Open-Set Semi-Supervised Learning] PAF distills the phenomenon that "OOD samples exhibit more unstable representations under semantic-preserving perturbations" into a representation-level filtering signal. It employs Otsu's adaptive thresholding to dynamically exclude open-set (OOD) samples from unlabeled data. Combined with a two-stage training framework, it achieves SOTA performance in both seen-class classification accuracy and OOD det…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Open-Set Semi-Supervised Learning"
+  - "OOD Detection"
+  - "Representation Instability"
+  - "Consistency Regularization"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 790cd19b6a7694e4
+content_hash: 51c4478bd7ed34b0
 ---
+
 # PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ CIFAR-100, mismatch 0.3:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
+- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](../../ICLR2026/self_supervised/fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
 - [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](../../AAAI2026/self_supervised/let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
+- [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
 - [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
-- [\[CVPR 2026\] Measure The Feature Universe: Topology-based Pseudo Labeling and Gravity Consistency for Source-Free Domain Adaptation](measure_the_feature_universe_topology-based_pseudo_labeling_and_gravity_consiste.md)
-- [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
+- [\[ICLR 2026\] Adversarial Encoding Perturbation and Synthesis for Set Representation Auxiliary Learning](../../ICLR2026/self_supervised/adversarial_encoding_perturbation_and_synthesis_for_set_representation_auxiliary.md)
 
 </div>
 

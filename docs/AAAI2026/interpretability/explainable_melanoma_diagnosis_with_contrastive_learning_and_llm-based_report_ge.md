@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation
 description: >-
-  [AAAI 2026][Interpretability][Melanoma Diagnosis] This paper proposes the CEFM framework, which aligns ViT visual features with ABCD-rule-based clinical features (asymmetry, border…
+  [AAAI 2026][Interpretability][Melanoma Diagnosis] This paper proposes the CEFM framework, which aligns ViT visual features with ABCD-rule-based clinical features (asymmetry, border, color) via cross-modal contrastive learning, and subsequently employs CLIP and DeepSeek to generate structured diagnostic reports. On the ISIC dataset, the framework achieves 92.79% accuracy and 0.961 AUC, with an expert-rated interpretability score of 4.6/5.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "ABCD Rule"
   - "Report Generation"
 date: 2026-05-08
-content_hash: e3e5bb65f6bba34f
+content_hash: ebc7c5c33888b1f8
 ---
 
 # Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation
@@ -138,10 +138,10 @@ Segmentation performance (UltraLight VM-UNet on ISIC 2018): DSC = 0.8909, Acc = 
 ## Related Papers
 
 - [\[AAAI 2026\] Hypothesis Generation via LLM-Automated Language Bias for ILP](hypothesis_generation_via_llm-automated_language_bias_for_ilp.md)
+- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](../../ICLR2026/interpretability/dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
 - [\[ACL 2026\] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning](../../ACL2026/interpretability/nose_neural_olfactory-semantic_embedding_with_tri-modal_orthogonal_contrastive_l.md)
+- [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](../../ICLR2026/interpretability/sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
 - [\[ACL 2026\] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective](../../ACL2026/interpretability/investigating_more_explainable_and_partition-free_compositionality_estimation_fo.md)
-- [\[NeurIPS 2025\] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS](../../NeurIPS2025/interpretability/llm_probing_with_contrastive_eigenproblems_improving_understanding_and_applicabi.md)
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 
 </div>
 

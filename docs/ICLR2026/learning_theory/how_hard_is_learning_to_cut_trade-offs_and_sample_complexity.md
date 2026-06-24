@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] How hard is learning to cut? Trade-offs and sample complexity
 description: >-
-  [ICLR 2026][learning_theory][Chvátal-Gomory cut] This paper provides the first **lower bound** on sample complexity for "learning-to-cut." It proves that for both branch-and-cut (B&C) tree size and gap closed scoring functions, the number of samples required to learn a mapping to cuts is at least equivalent (up to a constant factor) to fitting a general target functi
+  [ICLR 2026][learning_theory][Learning theory] This paper provides the first **lower bound** on sample complexity for "learning-to-cut." It proves that for both branch-and-cut (B&C) tree size and gap closed scoring functions, the number of samples required to learn a mapping to cuts is at least equivalent (up to a constant factor) to fitting a general target function using the same function class. The lower bounds closely match known upper bounds…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Chvátal-Gomory cut
+  - "ICLR 2026"
+  - "learning_theory"
+  - "Learning theory"
+  - "sample complexity"
+  - "learning-to-cut"
+  - "branch-and-bound"
+  - "integer programming"
+  - "Chvátal-Gomory cut"
+  - "VC dimension"
+  - "fat-shattering dimension"
 date: 2026-05-08
-content_hash: 82f465bbcf1809ae
+content_hash: 36452b9e0c03fd1f
 ---
+
 # How hard is learning to cut? Trade-offs and sample complexity
 
 **Conference**: ICLR 2026  
@@ -119,11 +127,11 @@ GNNs were used to encode (ILP instance, cut) pairs as weighted bipartite graphs 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
 - [\[ICLR 2026\] T-Tamer: Provably Taming Trade-offs in ML Serving](t-tamer_provably_taming_trade-offs_in_ml_serving.md)
+- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
-- [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
-- [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](sampling_complexity_of_td_and_ppo_in_rkhs.md)
+- [\[ICLR 2026\] Learning the Inverse Temperature of Ising Models under Hard Constraints using One Sample](learning_the_inverse_temperature_of_ising_models_under_hard_constraints_using_on.md)
 
 </div>
 

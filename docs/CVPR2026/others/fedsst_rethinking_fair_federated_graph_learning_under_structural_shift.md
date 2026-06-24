@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FedSST: Rethinking Fair Federated Graph Learning under Structural Shift
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] FedSST utilizes a shared "probe graph" to detect the structural preferences of GNNs across different clients, compresses this into a scalar signal mapped to fair weights that favor "intermediate clients," and uses these weights to drive both differentiated local training assignment (SLTA) and two-level adaptive aggrega
+  [CVPR 2026][Federated Graph Learning] FedSST utilizes a shared "probe graph" to detect the structural preferences of GNNs across different clients, compresses this into a scalar signal mapped to fair weights that favor "intermediate clients," and uses these weights to drive both differentiated local training assignment (SLTA) and two-level adaptive aggregation (SSCA). This approach simultaneously improves average accuracy and reduces inter-client accuracy variance in cross-do…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Graph Learning"
+  - "Generalization Fairness"
+  - "Structural Heterogeneity"
+  - "Adaptive Aggregation"
+  - "Probe Graph"
 date: 2026-05-08
-content_hash: 1c2fc672464b6da4
+content_hash: da2d4e4aa1b02652
 ---
+
 # FedSST: Rethinking Fair Federated Graph Learning under Structural Shift
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ Applying SLTA or SSCA individually improves both accuracy and fairness, with the
 ## Related Papers
 
 - [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
-- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
-- [\[CVPR 2025\] Federated Learning with Domain Shift Eraser](../../CVPR2025/optimization/federated_learning_with_domain_shift_eraser.md)
-- [\[ICLR 2026\] Rethinking Consistent Multi-Label Classification Under Inexact Supervision](../../ICLR2026/optimization/rethinking_consistent_multi-label_classification_under_inexact_supervision.md)
-- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](few-for-many_personalized_federated_learning.md)
+- [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
+- [\[CVPR 2026\] DP-FedAdamW: An Efficient Optimizer for Differentially Private Federated Large Models](dp-fedadamw_an_efficient_optimizer_for_differentially_private_federated_large_mo.md)
+- [\[CVPR 2026\] BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep](brepvgae_variational_graph_autoencoder_with_unified_latent_representation_for_b-.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
 
 </div>
 

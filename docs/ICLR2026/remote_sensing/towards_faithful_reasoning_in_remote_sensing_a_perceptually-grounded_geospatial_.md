@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models
 description: >-
-  [ICLR 2026][Remote Sensing][Vision-Language Model] This paper proposes "Perceptually-Grounded Geospatial Chain-of-Thought" (Geo-CoT), which decomposes the analysis process of remote sensing VLMs into three steps: "Planning → Grounding Evidence → Synthesis." Each step anchors assertions to specific pixel regions using bounding boxes. By constructing the Geo-CoT380k data
+  [ICLR 2026][Remote Sensing][Geospatial Chain-of-Thought] This paper proposes "Perceptually-Grounded Geospatial Chain-of-Thought" (Geo-CoT), which decomposes the analysis process of remote sensing VLMs into three steps: "Planning → Grounding Evidence → Synthesis." Each step anchors assertions to specific pixel regions using bounding boxes. By constructing the Geo-CoT380k dataset with 380,000 structured reasoning entries and employing two-stage alignment (SFT for cognitive stru…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Vision-Language Model
-  - GRPO
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Geospatial Chain-of-Thought"
+  - "Perceptual Grounding"
+  - "Vision-Language Models"
+  - "GRPO"
 date: 2026-05-08
-content_hash: c3375c0fd7d3e9b1
+content_hash: c7204beba5d343db
 ---
+
 # Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -140,15 +143,14 @@ The base model is GLM-4.1V-9B-Base. Baselines include closed-source (Claude-3.5-
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](../../CVPR2026/remote_sensing/zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
 - [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](../../CVPR2026/remote_sensing/geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
 - [\[CVPR 2025\] Think and Answer ME: Benchmarking and Exploring Multi-Entity Reasoning Grounding in Remote Sensing](../../CVPR2025/remote_sensing/think_and_answer_me_benchmarking_and_exploring_multi-entity_reasoning_grounding_.md)
-- [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](../../CVPR2026/remote_sensing/geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
 - [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](../../CVPR2026/remote_sensing/avion_aerial_visionlanguage_instruction_from_offli.md)
+- [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](../../CVPR2026/remote_sensing/geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
 
 </div>
 

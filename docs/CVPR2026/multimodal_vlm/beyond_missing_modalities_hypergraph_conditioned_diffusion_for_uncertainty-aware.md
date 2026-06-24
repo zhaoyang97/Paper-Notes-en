@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the random loss of audio/text/visual modalities in Multimodal Emotion Recognition in Conversation (MERC), HyperEF utilizes a Masked Hypergraph Attention Network (MHGAT) to capture high-order multivariate dependencies within dialogues. This network serves as a condition to guide a diffusion model in completin
+  [CVPR 2026][Multimodal VLM][Multimodal Emotion Recognition in Conversation (MERC)] To address the random loss of audio/text/visual modalities in Multimodal Emotion Recognition in Conversation (MERC), HyperEF utilizes a Masked Hypergraph Attention Network (MHGAT) to capture high-order multivariate dependencies within dialogues. This network serves as a condition to guide a diffusion model in completing missing modality features within the latent space. Finally…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Emotion Recognition in Conversation (MERC)"
+  - "Missing Modalities"
+  - "Hypergraph Attention"
+  - "Conditional Diffusion"
+  - "Evidential Fusion"
 date: 2026-05-08
-content_hash: e9a1576170b1ab57
+content_hash: 090fd36f0d73833b
 ---
+
 # Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition
 
 **Conference**: CVPR 2026  
@@ -143,9 +149,9 @@ Ablation of uncertainty axes confirmed that using entropy (discriminative layer)
 ## Related Papers
 
 - [\[CVPR 2026\] DPL: Decoupled Prototype Learning for Enhancing Robustness of Vision-Language Transformers to Missing Modalities](dpl_decoupled_prototype_learning_for_enhancing_robustness_of_vision-language_tra.md)
-- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
-- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
 - [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](../../ICCV2025/multimodal_vlm/synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
+- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
+- [\[CVPR 2026\] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition](beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima.md)
 - [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
 
 </div>

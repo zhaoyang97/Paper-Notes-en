@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Video LLM] Addressing the issues where uniform sampling dilutes key evidence and existing frame selection lacks purity rewards, this paper proposes EARL (Evidence-Aware Reinforcement Learning). It enables Video LLMs to actively select keyframes during reasoning, performs local resampling around these frames to recover fine-graine
+  [CVPR 2026][VLM Reasoning][Long Video Reasoning] Addressing the issues where uniform sampling dilutes key evidence and existing frame selection lacks purity rewards, this paper proposes EARL (Evidence-Aware Reinforcement Learning). It enables Video LLMs to actively select keyframes during reasoning, performs local resampling around these frames to recover fine-grained temporal details, and utilizes an IoU-based multi-component reward to enforce "selecting less but better." Th…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video LLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Long Video Reasoning"
+  - "Video LLM"
+  - "Pixel-space Reasoning"
+  - "Evidence Purity"
+  - "RL-based Frame Selection"
 date: 2026-05-08
-content_hash: 73df02919961ac38
+content_hash: cf78843c1f9378a5
 ---
+
 # Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,16 @@ Removing EARL components to verify their necessity (Results on LongVideoBench / 
 - Value: ⭐⭐⭐⭐ Proving that a 32-frame model can beat 100+ frame models through purity has high practical value for resource-constrained long video reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Conan: Progressive Learning to Reason Like a Detective over Multi-Scale Visual Evidence](conan_progressive_learning_to_reason_like_a_detective_over_multi-scale_visual_ev.md)
-- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](covr-rreason-aware_composed_video_retrieval.md)
-- [\[ICML 2026\] Find, Fix, Reason: Context Repair for Video Reasoning](../../ICML2026/multimodal_vlm/find_fix_reason_context_repair_for_video_reasoning.md)
+- [\[ICLR 2026\] More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/more_thought_less_accuracy_on_the_dual_nature_of_reasoning_in_vision-language_mo.md)
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
 - [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] CURVE: A Benchmark for Cultural and Multilingual Long Video Reasoning](curve_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
+- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
 
 </div>
 

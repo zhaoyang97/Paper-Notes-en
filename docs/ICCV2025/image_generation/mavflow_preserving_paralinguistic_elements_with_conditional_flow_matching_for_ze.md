@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MAVFlow: Preserving Paralinguistic Elements with Conditional Flow Matching for Zero-Shot AV2AV Multilingual Translation
 description: >-
-  [Image Generation] This paper proposes MAVFlow, a zero-shot audio-visual renderer based on conditional flow matching (CFM)…
+  [Image Generation] This paper proposes MAVFlow, a zero-shot audio-visual renderer based on conditional flow matching (CFM), which leverages dual-modal guidance from audio speaker embeddings and visual emotion embeddings to preserve speaker consistency in multilingual AV2AV translation.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 6feb0208dd884d80
+content_hash: b665e1bf3795fc01
 ---
 
 # MAVFlow: Preserving Paralinguistic Elements with Conditional Flow Matching for Zero-Shot AV2AV Multilingual Translation
@@ -146,10 +146,10 @@ Key finding: dual-modal guidance preserves speaker consistency **without degradi
 ## Related Papers
 
 - [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
+- [\[ICML 2025\] FlexiClip: Locality-Preserving Free-Form Character Animation](../../ICML2025/image_generation/flexiclip_locality-preserving_free-form_character_animation.md)
 - [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
-- [\[ICLR 2026\] Intention-Conditioned Flow Occupancy Models](../../ICLR2026/image_generation/intention-conditioned_flow_occupancy_models.md)
+- [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dual-interrelated_diffusion_model_for_few-shot_anomaly_image_generation.md)
 - [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](matchdiffusion_training-free_generation_of_match-cuts.md)
-- [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
 
 </div>
 

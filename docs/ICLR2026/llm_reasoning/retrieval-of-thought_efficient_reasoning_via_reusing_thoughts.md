@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Retrieval-of-Thought: Efficient Reasoning via Reusing Thoughts
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This work decomposes past reasoning processes into reusable "thought steps" stored in a thought graph. During inference, relevant steps are retrieved and dynamically assembled into problem-specific templates guided by rewards. These templates are injected into the `<think>` tag to guide generation, reducing output toke
+  [ICLR 2026][Reasoning][Efficient Reasoning] This work decomposes past reasoning processes into reusable "thought steps" stored in a thought graph. During inference, relevant steps are retrieved and dynamically assembled into problem-specific templates guided by rewards. These templates are injected into the `<think>` tag to guide generation, reducing output tokens by up to 40%, latency by 82%, and costs by 59% with almost no loss in accuracy.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Efficient Reasoning"
+  - "Thought Reuse"
+  - "Thought Graph"
+  - "Retrieval-Augmented"
+  - "Reasoning Template"
 date: 2026-05-08
-content_hash: 239435319c80070b
+content_hash: 031eba9b6db8daf3
 ---
+
 # Retrieval-of-Thought: Efficient Reasoning via Reusing Thoughts
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,16 @@ Evaluations were conducted on four math reasoning benchmarks (AIME 2023/2024/202
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
+- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Evoking User Memory: Personalizing LLM via Recollection-Familiarity Adaptive Retrieval](evoking_user_memory_personalizing_llm_via_recollection-familiarity_adaptive_retr.md)
+- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 - [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
-- [\[ICLR 2026\] FROST: Filtering Reasoning Outliers with Attention for Efficient Reasoning](frost_filtering_reasoning_outliers_with_attention_for_efficient_reasoning.md)
-- [\[ICLR 2026\] Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners](thinking-free_policy_initialization_makes_distilled_reasoning_models_more_effect.md)
 
 </div>
 

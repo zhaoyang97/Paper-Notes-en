@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniPortrait: Fine-Grained Personalized Portrait Synthesis via Pivotal Optimization
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] OmniPortrait decomposes "identity customization" into two coarse-to-fine steps: first, a frozen denoiser and an encoder-only Pivot ID Encoder provide a coarse-grained identity "pivot"; then, during inference, a training-free RB-Guidance performs reference image matching and gradient optimization on intermediate diffusi
+  [ICLR 2026][Image Generation][Portrait customization] OmniPortrait decomposes "identity customization" into two coarse-to-fine steps: first, a frozen denoiser and an encoder-only Pivot ID Encoder provide a coarse-grained identity "pivot"; then, during inference, a training-free RB-Guidance performs reference image matching and gradient optimization on intermediate diffusion features. This captures fine-grained details of the reference face without compromising text editabilit…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Portrait customization"
+  - "Identity fidelity"
+  - "Pivotal optimization"
+  - "Test-time guidance"
+  - "Diffusion feature matching"
 date: 2026-05-08
-content_hash: d464732ecb361371
+content_hash: 6141a5d51bffabc2
 ---
+
 # OmniPortrait: Fine-Grained Personalized Portrait Synthesis via Pivotal Optimization
 
 **Conference**: ICLR 2026  
@@ -146,7 +152,7 @@ Ablation on SD version:
 - [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](../../CVPR2026/image_generation/cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
 - [\[ICLR 2026\] LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing](lato_landmark-tokenized_diffusion_transformer_for_fine-grained_human_face_editin.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](../../CVPR2026/image_generation/towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
-- [\[ICLR 2026\] CoCoDiff: Correspondence-Consistent Diffusion Model for Fine-grained Style Transfer](cocodiff_correspondence-consistent_diffusion_model_for_fine-grained_style_transf.md)
+- [\[ICLR 2026\] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing](edival-agent_an_object-centric_framework_for_automated_fine-grained_evaluation_o.md)
 
 </div>
 

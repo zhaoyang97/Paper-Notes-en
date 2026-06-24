@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Rotary Position Embedding] This work presents the first theoretical analysis of frequency allocation strategies in multimodal RoPE for long-context VLMs. It proposes HoPE…
+  [NeurIPS 2025][Multimodal VLM][Rotary Position Embedding] This work presents the first theoretical analysis of frequency allocation strategies in multimodal RoPE for long-context VLMs. It proposes HoPE, which sets the lowest frequency to zero for temporal modeling to guarantee the semantic preference property, coupled with a dynamic temporal scaling mechanism, achieving gains of 8.35% on long video understanding and 22.23% on retrieval tasks.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Vision-Language Models"
   - "Video Understanding"
 date: 2026-05-08
-content_hash: 5473f6693aeb7a24
+content_hash: 6bad9e2c716f2168
 ---
 
 # HoPE: Hybrid of Position Embedding for Long Context Vision-Language Models
@@ -141,11 +141,11 @@ Long video retrieval (V-NIAH): HoPE achieves a 22.23% improvement over the best 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
 - [\[NeurIPS 2025\] NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables](needleinatable_exploring_long-context_capability_of_large_language_models_toward.md)
+- [\[NeurIPS 2025\] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly](mmlongbench_benchmarking_longcontext_visionlanguage_models_e.md)
 - [\[NeurIPS 2025\] Context Informs Pragmatic Interpretation in Vision-Language Models](context_informs_pragmatic_interpretation_in_vision-language_models.md)
-- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/multimodal_vlm/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
-- [\[NeurIPS 2025\] GoalLadder: Incremental Goal Discovery with Vision-Language Models](goalladder_incremental_goal_discovery_with_vision-language_models.md)
+- [\[NeurIPS 2025\] ExGra-Med: Extended Context Graph Alignment for Medical Vision-Language Models](exgra-med_extended_context_graph_alignment_for_medical_vision-language_models.md)
+- [\[CVPR 2025\] Identifying and Mitigating Position Bias of Multi-image Vision-Language Models](../../CVPR2025/multimodal_vlm/identifying_and_mitigating_position_bias_of_multi-image_vision-language_models.md)
 
 </div>
 

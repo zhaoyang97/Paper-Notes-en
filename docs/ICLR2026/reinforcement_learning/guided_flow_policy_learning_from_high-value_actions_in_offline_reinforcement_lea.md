@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Flow Matching] GFP upgrades the dual-policy BRAC framework (Flow Matching BC + 1-step distilled actor) to a **value-aware** version: it uses a critic and an actor to assign soft scores to dataset actions, ensuring behavior cloning prioritizes high-value actions rather than indiscriminately cloning all state-action pairs. This approac
+  [ICLR 2026][Reinforcement Learning][offline reinforcement learning] GFP upgrades the dual-policy BRAC framework (Flow Matching BC + 1-step distilled actor) to a **value-aware** version: it uses a critic and an actor to assign soft scores to dataset actions, ensuring behavior cloning prioritizes high-value actions rather than indiscriminately cloning all state-action pairs. This approach achieves SOTA results across 144 offline RL tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Flow Matching
-  - BRAC
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "offline reinforcement learning"
+  - "behavior regularization"
+  - "flow matching"
+  - "weighted behavior cloning"
+  - "BRAC"
+  - "value-aware regularization"
 date: 2026-05-08
-content_hash: ae5ec0f68d617df8
+content_hash: 3bdbf84a09ce1bf3
 ---
+
 # Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -141,8 +146,8 @@ The temperature $\eta$ is the core hyperparameter. The performance profile valid
 - [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
 - [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 - [\[ICML 2026\] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning](../../ICML2026/reinforcement_learning/fast_and_highly_expressive_policy_learning_for_offline_reinforcement_learning_vi.md)
+- [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
 
 </div>
 

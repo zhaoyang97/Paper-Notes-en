@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery
 description: >-
-  [ICLR 2026][Multimodal VLM][3D VQA] This paper constructs VaseVQA-3D, the first 3D visual question answering dataset for ancient Greek pottery (664 3D models + 4460 QAs). By utilizing a synthetic pipeline involving "2D image filtering → single-image 3D reconstruction → six-dimensional archaeological semantic cleaning," the authors trained a domain-specif
+  [ICLR 2026][Multimodal VLM][3D VQA] This paper constructs VaseVQA-3D, the first 3D visual question answering dataset for ancient Greek pottery (664 3D models + 4460 QAs). By utilizing a synthetic pipeline involving "2D image filtering → single-image 3D reconstruction → six-dimensional archaeological semantic cleaning," the authors trained a domain-specific model, VaseVLM. Its 7B-RL version achieves a 12.8% improvement in R@1 and a 6.6% increase in lexical similarity compared…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - 3D VQA
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "3D VQA"
+  - "Ancient Greek Pottery"
+  - "Cultural Heritage"
+  - "Verifiable Rewards"
+  - "Domain Adaptation"
 date: 2026-05-08
-content_hash: 05f1d7a2efa74775
+content_hash: 55d85b89564c372e
 ---
+
 # VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery
 
 **Conference**: ICLR 2026  

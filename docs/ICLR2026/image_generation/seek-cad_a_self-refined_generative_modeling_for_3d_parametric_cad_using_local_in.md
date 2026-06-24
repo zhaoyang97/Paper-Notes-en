@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek
 description: >-
-  [ICLR 2026][Image Generation][DeepSeek-R1] Ours proposes Seek-CAD, the first training-free CAD parametric model generation framework based on locally deployed reasoning LLMs (DeepSeek-R1). It achieves self-refinement through step-by-step visual feedback and Chain-of-Thought (CoT) synergy, and designs a new SSR triplet design paradigm to support complex CAD mode
+  [ICLR 2026][Image Generation][CAD Parametric Modeling] Ours proposes Seek-CAD, the first training-free CAD parametric model generation framework based on locally deployed reasoning LLMs (DeepSeek-R1). It achieves self-refinement through step-by-step visual feedback and Chain-of-Thought (CoT) synergy, and designs a new SSR triplet design paradigm to support complex CAD model generation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DeepSeek-R1
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Image Generation"
+  - "CAD Parametric Modeling"
+  - "DeepSeek-R1"
+  - "Training-free"
+  - "Chain-of-Thought"
+  - "Self-refinement"
+  - "SSR Design Paradigm"
 date: 2026-05-08
-content_hash: ae15aef62cc9585c
+content_hash: 03c26eae3cd6137e
 ---
+
 # Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek
 
 **Conference**: ICLR 2026  
@@ -144,9 +149,9 @@ One round of refinement is highly effective; the second round shows diminishing 
 
 - [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](../../ICCV2025/image_generation/mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
 - [\[NeurIPS 2025\] CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop](../../NeurIPS2025/image_generation/cadmorph_geometry-driven_parametric_cad_editing_via_a_plan-generate-verify_loop.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 - [\[ICLR 2026\] Partition Generative Modeling: Masked Modeling Without Masks](partition_generative_modeling_masked_modeling_without_masks.md)
-- [\[AAAI 2026\] CAD-VAE: Leveraging Correlation-Aware Latents for Comprehensive Fair Disentanglement](../../AAAI2026/image_generation/cad-vae_leveraging_correlation-aware_latents_for_comprehensive_fair_disentanglem.md)
-- [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
 
 </div>
 

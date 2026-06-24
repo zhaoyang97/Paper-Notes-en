@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models
 description: >-
-  [ICLR 2026][Time Series][LLM] TimeOmni-1 proposes the first unified time series reasoning model. Through TSR-Suite (the first reasoning-oriented time series dataset suite) and a two-stage training process (SFT for injecting time series priors + RL for refining reasoning), it significantly outperforms GPT-4.1 across multiple time series reasoning ta
+  [ICLR 2026][Time Series][Time Series Reasoning] TimeOmni-1 proposes the first unified time series reasoning model. Through TSR-Suite (the first reasoning-oriented time series dataset suite) and a two-stage training process (SFT for injecting time series priors + RL for refining reasoning), it significantly outperforms GPT-4.1 across multiple time series reasoning tasks.
 tags:
-  - ICLR 2026
-  - Time Series
-  - LLM
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Reasoning"
+  - "LLM"
+  - "Reinforcement Learning"
+  - "Multi-task Joint Training"
+  - "Causal Discovery"
 date: 2026-05-08
-content_hash: 542a38f4bec88c14
+content_hash: a99805b9a93f3d0e
 ---
+
 # TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -149,9 +153,9 @@ TimeOmni-1 outperforms GPT-4.1 by 40.6% in causal discovery (ID) and by 22.4% in
 
 - [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 - [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
-- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](reasoning_on_time-series_for_financial_technical_analysis.md)
 - [\[ICML 2026\] Building Social World Models with Large Language Models](../../ICML2026/time_series/building_social_world_models_with_large_language_models.md)
 - [\[ICLR 2026\] TimeSeriesExamAgent: Creating Time Series Reasoning Benchmarks at Scale](timeseriesexamagent_creating_time_series_reasoning_benchmarks_at_scale.md)
+- [\[NeurIPS 2025\] PlanU: Large Language Model Reasoning through Planning under Uncertainty](../../NeurIPS2025/time_series/planu_large_language_model_reasoning_through_planning_under_uncertainty.md)
 
 </div>
 

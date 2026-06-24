@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] SODA is proposed to achieve high-fidelity generation under controllable acceleration ratios for Diffusion Transformers without training, utilizing offline fine-grained sensitivity modeling, dynamic programming for interval optimization, and a unified adaptive pruning strategy.
+  [CVPR2026][Multimodal Efficiency][Diffusion Transformer] SODA is proposed to achieve high-fidelity generation under controllable acceleration ratios for Diffusion Transformers without training, utilizing offline fine-grained sensitivity modeling, dynamic programming for interval optimization, and a unified adaptive pruning strategy.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR2026"
+  - "Multimodal Efficiency"
+  - "Diffusion Transformer"
+  - "Training-free Acceleration"
+  - "Caching"
+  - "Pruning"
+  - "Sensitivity Modeling"
+  - "Dynamic Programming"
 date: 2026-05-08
-content_hash: 4b87a9b57288ba47
+content_hash: 137bbfd21acf753a
 ---
+
 # SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer
 
 **Conference**: CVPR2026  
@@ -152,11 +159,11 @@ SODA is entirely training-free and introduces no additional loss functions. Its 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[CVPR 2026\] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT](hess_head_sensitivity_score_for_sparsity_redistribution_in_vggt.md)
-- [\[CVPR 2026\] PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](ppcl_pluggable_pruning_dit_distillation.md)
-- [\[CVPR 2025\] TADFormer: Task-Adaptive Dynamic Transformer for Efficient Multi-Task Learning](../../CVPR2025/model_compression/tadformer_task-adaptive_dynamic_transformer_for_efficient_multi-task_learning.md)
-- [\[CVPR 2026\] Batch Loss Score for Dynamic Data Pruning](batch_loss_score_for_dynamic_data_pruning.md)
+- [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
+- [\[CVPR 2026\] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)
+- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
+- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
+- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
 
 </div>
 

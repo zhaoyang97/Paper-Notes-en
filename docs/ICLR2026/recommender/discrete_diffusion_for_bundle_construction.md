@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Discrete Diffusion for Bundle Construction
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] DDBC reformulates "Bundle Construction" (selecting a group of items from a large library to form a complete bundle or completing a partial one) as a **masked discrete diffusion** process. It employs Residual Vector Quantization (RVQ) to compress each item into discrete codes within a shared codebook to mitigate the dim
+  [ICLR2026][Recommender Systems][Bundle Construction] DDBC reformulates "Bundle Construction" (selecting a group of items from a large library to form a complete bundle or completing a partial one) as a **masked discrete diffusion** process. It employs Residual Vector Quantization (RVQ) to compress each item into discrete codes within a shared codebook to mitigate the dimensionality explosion of massive item libraries. A bidirectional Transformer then restores `[MASK]` tokens…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR2026"
+  - "Recommender Systems"
+  - "Bundle Construction"
+  - "Discrete Diffusion"
+  - "Residual Vector Quantization (RVQ)"
+  - "Masked Denoising"
+  - "Non-sequential Generation"
 date: 2026-05-08
-content_hash: 9fe12e3f6ff5d1b2
+content_hash: 7fc444d03ee882c2
 ---
+
 # Discrete Diffusion for Bundle Construction
 
 **Conference**: ICLR2026  
@@ -139,9 +145,9 @@ The advantage of DDBC becomes more pronounced as bundle length increases, confir
 
 - [\[ICLR 2026\] Steering Diffusion Models Towards Credible Content Recommendation](steering_diffusion_models_towards_credible_content_recommendation.md)
 - [\[ICLR 2026\] iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction](ifusion_integrating_dynamic_interest_streams_via_diffusion_model_for_click-throu.md)
-- [\[ICLR 2026\] Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation](catalog-native_llm_speaking_item-id_dialect_with_less_entanglement_for_recommend.md)
 - [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
 - [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
+- [\[ICLR 2026\] Catalog-Native LLM: Speaking Item-ID dialect with Less Entanglement for Recommendation](catalog-native_llm_speaking_item-id_dialect_with_less_entanglement_for_recommend.md)
 
 </div>
 

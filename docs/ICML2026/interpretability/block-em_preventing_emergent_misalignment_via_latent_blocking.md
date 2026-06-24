@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking
 description: >-
-  [ICML 2026][Interpretability][emergent misalignment] BLOCK-EM utilizes SAEs to identify a sparse set of internal latents that "causally control emergent misalignment." During narrow-domain SFT, a one-sided regularization is applied to prohibit the model from amplifying these latents in the "misalignment direction." This mechanism reduces emergent misalignment (EM) by an
+  [ICML 2026][Interpretability][emergent misalignment] BLOCK-EM utilizes SAEs to identify a sparse set of internal latents that "causally control emergent misalignment." During narrow-domain SFT, a one-sided regularization is applied to prohibit the model from amplifying these latents in the "misalignment direction." This mechanism reduces emergent misalignment (EM) by an average of 93% across six fine-tuning domains with almost no degradation in in-domain task performance.
 tags:
-  - ICML 2026
-  - Interpretability
-  - emergent misalignment
-  - sparse autoencoder
-  - latent blocking
+  - "ICML 2026"
+  - "Interpretability"
+  - "emergent misalignment"
+  - "sparse autoencoder"
+  - "latent blocking"
+  - "training-time intervention"
 date: 2026-05-08
-content_hash: 463a53c604add828
+content_hash: 09dcd8ac1749d4f4
 ---
+
 # BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking
 
 **Conference**: ICML 2026  
@@ -142,11 +144,11 @@ Cross-domain transfer: EM was significantly suppressed across all domains using 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Persona Features Control Emergent Misalignment](../../ICLR2026/interpretability/persona_features_control_emergent_misalignment.md)
 - [\[ICML 2026\] MUSE: Resolving Manifold Misalignment in Visual Tokenization via Topological Orthogonality](muse_resolving_manifold_misalignment_in_visual_tokenization_via_topological_orth.md)
-- [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](../../ICLR2026/interpretability/block_recurrent_dynamics_in_vision_transformers.md)
 - [\[ICML 2026\] Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection](tracing_the_dynamics_of_refusal_exploiting_latent_refusal_trajectories_for_robus.md)
-- [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights Into Reasoning-Induced Misalignment](../../ICLR2026/interpretability/when_thinking_backfires_mechanistic_insights_into_reasoning-induced_misalignment.md)
-- [\[ACL 2026\] On Emergent Social World Models -- Evidence for Functional Integration of Theory of Mind and Pragmatic Reasoning in Language Models](../../ACL2026/interpretability/on_emergent_social_world_models_--_evidence_for_functional_integration_of_theory.md)
+- [\[ICML 2026\] Where's the Plan? Locating Latent Planning in Language Models with Lightweight Mechanistic Interventions](wheres_the_plan_locating_latent_planning_in_language_models_with_lightweight_mec.md)
+- [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](../../ICLR2026/interpretability/block_recurrent_dynamics_in_vision_transformers.md)
 
 </div>
 

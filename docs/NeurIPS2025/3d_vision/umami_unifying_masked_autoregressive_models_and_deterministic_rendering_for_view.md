@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes UMAMI, a hybrid framework that unifies Masked Autoregressive Models (MAR) and deterministic rendering for sparse-view novel view synthesis. A bidirectio…
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes UMAMI, a hybrid framework that unifies Masked Autoregressive Models (MAR) and deterministic rendering for sparse-view novel view synthesis. A bidirectional Transformer encodes multi-view image tokens and Plücker ray embeddings; two lightweight MLP heads handle visible regions (deterministic regression) and occluded regions (MAR diffusion generation) respectively. The rendering speed is an order of magnitude f…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Deterministic Rendering"
   - "Hybrid Framework"
 date: 2026-05-08
-content_hash: d7317f52be9d38a5
+content_hash: 04f820deb953fcaf
 ---
 
 # UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis
@@ -142,10 +142,10 @@ This paper proposes UMAMI, a hybrid framework that unifies Masked Autoregressive
 ## Related Papers
 
 - [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
+- [\[CVPR 2025\] Novel View Synthesis with Pixel-Space Diffusion Models](../../CVPR2025/3d_vision/novel_view_synthesis_with_pixel-space_diffusion_models.md)
+- [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](../../CVPR2026/3d_vision/smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 - [\[NeurIPS 2025\] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](nerfbaselines_consistent_and_reproducible_evaluation_of_novel_view_synthesis_met.md)
 - [\[NeurIPS 2025\] Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion](novel_view_synthesis_from_a_few_glimpses_via_test-time_natural_video_completion.md)
-- [\[NeurIPS 2025\] FlareX: A Physics-Informed Dataset for Lens Flare Removal via 2D Synthesis and 3D Rendering](flarex_a_physics-informed_dataset_for_lens_flare_removal_via_2d_synthesis_and_3d.md)
-- [\[NeurIPS 2025\] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos](reconstruct_inpaint_test-time_finetune_dynamic_novel-view_synthesis_from_monocul.md)
 
 </div>
 

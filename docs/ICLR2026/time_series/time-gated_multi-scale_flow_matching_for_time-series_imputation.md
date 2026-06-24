@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation
 description: >-
-  [ICLR 2026][Time Series][Flow Matching] This paper models multivariate time-series imputation as a "noise $\to$ data" data-conditional ODE. It utilizes flow matching to learn the velocity field, prevents information leakage via visibility-masked attention, schedules "coarse-to-fine" frequency content through time-gated multi-scale velocity heads, and anchors
+  [ICLR 2026][Time Series][Time-Series Imputation] This paper models multivariate time-series imputation as a "noise $\to$ data" data-conditional ODE. It utilizes flow matching to learn the velocity field, prevents information leakage via visibility-masked attention, schedules "coarse-to-fine" frequency content through time-gated multi-scale velocity heads, and anchors observed points to a linear bridge using the Heun integrator with data consistency projection. This approach a…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Flow Matching
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time-Series Imputation"
+  - "Flow Matching"
+  - "Multi-Scale Velocity Field"
+  - "Data Consistency Projection"
+  - "Deterministic ODE"
 date: 2026-05-08
-content_hash: 98a6d8b41a88da84
+content_hash: 6c73edc2603f1e88
 ---
+
 # Time-Gated Multi-Scale Flow Matching for Time-Series Imputation
 
 **Conference**: ICLR 2026  
@@ -143,9 +148,9 @@ Tested on Electricity and ETTh1 by removing main components (MS=Multi-scale head
 
 - [\[ICML 2026\] Spatiotemporal Imputation with Graph-Informed Flow Matching](../../ICML2026/time_series/spatiotemporal_imputation_with_graph-informed_flow_matching.md)
 - [\[ICLR 2026\] TrajFlow: Nationwide Pseudo GPS Trajectory Generation with Flow Matching Models](trajflow_nation-wide_pseudo_gps_trajectory_generation_with_flow_matching_models.md)
-- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
-- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
+- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
 
 </div>
 

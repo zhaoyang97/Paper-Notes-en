@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] GameplayQA is proposed as an end-to-end benchmarking framework based on multiplayer 3D game videos. Using dense timeline annotations (1.22 labels/sec) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense
+  [ACL 2026][Multimodal VLM][Video Question Answering] GameplayQA is proposed as an end-to-end benchmarking framework based on multiplayer 3D game videos. Using dense timeline annotations (1.22 labels/sec) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense, POV-synced scenarios, revealing a significant performance gap between frontier models and human performan…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Video Question Answering"
+  - "Multi-view Understanding"
+  - "Game AI"
+  - "Hallucination Diagnosis"
+  - "Multi-agent Perception"
 date: 2026-05-08
-content_hash: 47ddc4a7f82895f7
+content_hash: bfa17a2dcf205604
 ---
+
 # GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 
 **Conference**: ACL 2026  
@@ -125,15 +131,16 @@ Traditional benchmarks only indicate a wrong choice without identifying the caus
 - Value: ⭐⭐⭐⭐ Provides a practical diagnostic tool for multi-agent perception, relevant to embodied AI and world models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
+- [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
+- [\[ACL 2026\] TRACE: Evidence Localization-based Multi-video Event Understanding and Claim Generation](trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)
 - [\[CVPR 2026\] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments](../../CVPR2026/multimodal_vlm/prosoftarena_benchmarking_hierarchical_capabilities_of_multi-modal_agents_in_pro.md)
-- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](../../CVPR2026/multimodal_vlm/visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
-- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](vill-e_video_llm_embeddings_for_retrieval.md)
+- [\[ICLR 2026\] VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery](../../ICLR2026/multimodal_vlm/vasevqa-3d_benchmarking_3d_vlms_on_ancient_greek_pottery.md)
 
 </div>
 

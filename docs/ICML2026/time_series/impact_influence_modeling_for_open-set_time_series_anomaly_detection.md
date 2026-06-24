@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection
 description: >-
-  [ICML 2026][Time Series][Paper Note] IMPACT utilizes "influence functions" simultaneously as a searchlight and a scalpel—first training an initial model with a multi-channel deviation loss to calculate the influence score of each training sample on validation risk. Under theoretical guarantees of risk reduction, it flips high-influence contaminated unlabe
+  [ICML 2026][Time Series][Influence functions] IMPACT utilizes "influence functions" simultaneously as a searchlight and a scalpel—first training an initial model with a multi-channel deviation loss to calculate the influence score of each training sample on validation risk. Under theoretical guarantees of risk reduction, it flips high-influence contaminated unlabeled samples into labeled anomalies and perturbs "boundary normal samples" (those with minimal risk contribution) a…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Influence functions"
+  - "pseudo-anomaly generation"
+  - "label flipping"
+  - "contamination correction"
+  - "open-set time series detection"
 date: 2026-05-08
-content_hash: 15d8b8e2f68e6795
+content_hash: 2ca12130371349aa
 ---
+
 # IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection
 
 **Conference**: ICML 2026  
@@ -148,10 +154,10 @@ On 8 real-world benchmarks (UCR, ASD, PSM, SMD, CT, SAD, PTBXL, TUSZ), IMPACT is
 ## Related Papers
 
 - [\[ICML 2026\] AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection](anomseer_reinforcing_multimodal_llms_to_reason_for_time-series_anomaly_detection.md)
-- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](../../ICLR2026/time_series/complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
+- [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](../../ICLR2026/time_series/towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
+- [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](../../ICLR2026/time_series/icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] Point-wise Anomaly Detection via Fold-bifurcation ODE](../../ICLR2026/time_series/point-wise_anomaly_detection_via_fold-bifurcation_ode.md)
 - [\[ICML 2026\] Generalizing Multi-scale Time-Series Modeling with a Single Operator](generalizing_multi-scale_time-series_modeling_with_a_single_operator.md)
-- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](../../ICLR2026/time_series/everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
-- [\[ACL 2026\] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback](../../ACL2026/time_series/time-ra_towards_time_series_reasoning_for_anomaly_diagnosis_with_llm_feedback.md)
 
 </div>
 

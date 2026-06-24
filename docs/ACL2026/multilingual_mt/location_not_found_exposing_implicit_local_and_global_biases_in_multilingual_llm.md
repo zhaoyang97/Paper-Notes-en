@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Location Not Found: Exposing Implicit Local and Global Biases in Multilingual LLMs
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper introduces the LocQA benchmark (12 languages, 49 regions, 2,156 region-relevant Q&As) to reveal implicit biases in LLMs through geographically ambiguous questions (e.g., "What is the emergency phone number?"). It uncovers persistent cross-lingual US-centric defaults (50% of model responses contain US answers
+  [ACL 2026][Multilingual & Machine Translation][Multilingual LLMs] This paper introduces the LocQA benchmark (12 languages, 49 regions, 2,156 region-relevant Q&As) to reveal implicit biases in LLMs through geographically ambiguous questions (e.g., "What is the emergency phone number?"). It uncovers persistent cross-lingual US-centric defaults (50% of model responses contain US answers vs. 26% in the data) and a "population probability engine" effect driven by population size w…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLMs"
+  - "Regional Bias"
+  - "US-centrism"
+  - "Cultural Localization"
+  - "Implicit Bias"
 date: 2026-05-08
-content_hash: bebd3e97c649bb12
+content_hash: 7f70e5ceeede1b7a
 ---
+
 # Location Not Found: Exposing Implicit Local and Global Biases in Multilingual LLMs
 
 **Conference**: ACL 2026  
@@ -133,9 +139,9 @@ This is a pure evaluation study and does not involve training. 32 models were ev
 
 - [\[ACL 2025\] Implicit Cross-Lingual Rewarding for Efficient Multilingual Preference Alignment](../../ACL2025/multilingual_mt/implicit_cross-lingual_rewarding_for_efficient_multilingual_preference_alignment.md)
 - [\[ACL 2026\] NiuTrans.LMT: Toward Inclusive and Scalable Multilingual Machine Translation with LLMs](niutranslmt_toward_inclusive_and_scalable_multilingual_machine_translation_with_.md)
+- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 - [\[ACL 2026\] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs](no_one_fits_all_from_fixed_prompting_to_learned_routing_in_multilingual_llms.md)
 - [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
-- [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](../../AAAI2026/multilingual_mt/bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
 
 </div>
 

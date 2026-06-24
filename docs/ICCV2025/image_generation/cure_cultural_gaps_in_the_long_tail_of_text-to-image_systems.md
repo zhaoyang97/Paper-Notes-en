@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems
 description: >-
-  [ICCV 2025][Image Generation][Text-to-image generation] This work introduces the CURE benchmark and scoring suite, which employs **Marginal Information Attribution (MIA)** of attribute specifications as a proxy for human…
+  [ICCV 2025][Image Generation][Text-to-image generation] This work introduces the CURE benchmark and scoring suite, which employs **Marginal Information Attribution (MIA)** of attribute specifications as a proxy for human judgment to systematically evaluate the representational capacity of T2I systems across the global cultural long tail.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "marginal information attribution"
   - "long-tail bias"
 date: 2026-05-08
-content_hash: b888d71a04f7e14b
+content_hash: 3a5d89f4b6375c19
 ---
 
 # CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems
@@ -146,10 +146,10 @@ This paper is an evaluation work and does not involve model training. The primar
 ## Related Papers
 
 - [\[ICCV 2025\] Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text](fix-clip_dual-branch_hierarchical_contrastive_learning_via_synthetic_captions_fo.md)
-- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
+- [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](../../ICLR2026/image_generation/long-text-to-image_generation_via_compositional_prompt_decomposition.md)
 - [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
-- [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](../../AAAI2026/image_generation/longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
-- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](generating_multi-image_synthetic_data_for_text-to-image_customization.md)
+- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
+- [\[ICCV 2025\] Adaptive Routing of Text-to-Image Generation Requests Between Large Cloud Models and Small Edge Models](adaptive_routing_of_text-to-image_generation_requests_between_large_cloud_model_.md)
 
 </div>
 

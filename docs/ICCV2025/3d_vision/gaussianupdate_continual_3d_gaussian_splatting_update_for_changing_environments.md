@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GaussianUpdate: Continual 3D Gaussian Splatting Update for Changing Environments
 description: >-
-  [ICCV 2025][3D Vision][Continual Learning] This paper presents GaussianUpdate, the first method to integrate 3D Gaussian representations with continual learning. It achieves real-time rendering and change visualization i…
+  [ICCV 2025][3D Vision][Continual Learning] This paper presents GaussianUpdate, the first method to integrate 3D Gaussian representations with continual learning. It achieves real-time rendering and change visualization in temporally varying scenes through a three-stage update strategy (appearance update → geometric layout update → joint refinement) and visibility-aware generative replay.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Change Detection"
   - "Generative Replay"
 date: 2026-05-08
-content_hash: 846bda62da52091e
+content_hash: 27eab535403bc5d1
 ---
 
 # GaussianUpdate: Continual 3D Gaussian Splatting Update for Changing Environments
@@ -145,9 +145,9 @@ GaussianUpdate surpasses both CLNeRF and 4DGS across all scenes and approaches t
 
 - [\[ICCV 2025\] CL-Splats: Continual Learning of Gaussian Splatting with Local Optimization](cl-splats_continual_learning_of_gaussian_splatting_with_local_optimization.md)
 - [\[ICCV 2025\] TRAN-D: 2D Gaussian Splatting-based Sparse-view Transparent Object Depth Reconstruction via Physics Simulation for Scene Update](2d_gaussian_splattingbased_sparseview_transparent_object_dep.md)
+- [\[CVPR 2025\] WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments](../../CVPR2025/3d_vision/wildgs-slam_monocular_gaussian_splatting_slam_in_dynamic_environments.md)
 - [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images](lightweight_gradient-aware_upscaling_of_3d_gaussian_splatting_images.md)
-- [\[ICCV 2025\] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions](stealthattack_robust_3d_gaussian_splatting_poisoning_via_density-guided_illusion.md)
 
 </div>
 

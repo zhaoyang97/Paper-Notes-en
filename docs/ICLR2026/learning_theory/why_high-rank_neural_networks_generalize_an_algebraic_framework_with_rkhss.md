@@ -1,14 +1,21 @@
 ---
 title: >-
-  [Paper Note] 为什么高秩神经网络也能泛化？：基于 RKHS 的代数框架
+  [Paper Note] Why High-Rank Neural Networks Also Generalize?: An Algebraic Framework Based on RKHS
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Ours uses Koopman operators, group representations, and Reproducing Kernel Hilbert Spaces (RKHS) to formulate deep networks as an algebraic "product of operators," deriving a new Rademacher complexity bound. The denominator features the determinant of the weight matrix $\det(W_l^*W_l)^{1/4}$, theoretically explaining t
+  [ICLR 2026][Learning Theory][Generalization bounds] Ours uses Koopman operators, group representations, and Reproducing Kernel Hilbert Spaces (RKHS) to formulate deep networks as an algebraic "product of operators," deriving a new Rademacher complexity bound. The denominator features the determinant of the weight matrix $\det(W_l^*W_l)^{1/4}$, theoretically explaining the empirical phenomenon that "high-rank weight matrices with large singular values generalize well." This wo…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Generalization Theory"
+  - "Generalization bounds"
+  - "Rademacher complexity"
+  - "Koopman operator"
+  - "Reproducing Kernel Hilbert Space"
+  - "Group representation"
 date: 2026-05-08
-content_hash: bb9b6dbf1b32bd62
+content_hash: b82d9183051d0602
 ---
+
 # Why High-Rank Neural Networks Also Generalize?: An Algebraic Framework Based on RKHS
 
 **Conference**: ICLR 2026  
@@ -123,11 +130,11 @@ The three regularization terms correspond to factors in the bound: $r_1$ control
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
-- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
-- [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
-- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
+- [\[ICLR 2026\] A Derandomization Framework for Structure Discovery: Applications in Neural Networks and Beyond](a_derandomization_framework_for_structure_discovery_applications_in_neural_netwo.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 - [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
+- [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](sampling_complexity_of_td_and_ppo_in_rkhs.md)
+- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
 
 </div>
 

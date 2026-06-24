@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Direct Preference Optimization in Diffusion Models
 description: >-
-  [SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)][Image Generation][Diffusion Models] To address two core issues in DPO for diffusion models — limited exploration and reward scale imbalance — this paper proposes a stable reference…
+  [SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)][Image Generation][Diffusion Models] To address two core issues in DPO for diffusion models — limited exploration and reward scale imbalance — this paper proposes a stable reference model update strategy and a timestep-aware training strategy, both of which can be integrated into various preference optimization algorithms.
 tags:
   - "SPIGM@NeurIPS 2025 / AAAI 2026 (Oral)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Reference Model Update"
   - "Timestep-Aware"
 date: 2026-05-08
-content_hash: c6dc63a70b2e815e
+content_hash: 2e056c77fe98278a
 ---
 
 # Rethinking Direct Preference Optimization in Diffusion Models
@@ -147,11 +147,11 @@ Individual contributions of each strategy (SDXL, HPSv2):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Curriculum Direct Preference Optimization for Diffusion and Consistency Models](../../CVPR2025/image_generation/curriculum_direct_preference_optimization_for_diffusion_and_consistency_models.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](../../ICLR2026/image_generation/reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
+- [\[CVPR 2025\] InPO: Inversion Preference Optimization with Reparametrized DDIM for Efficient Diffusion Model Alignment](../../CVPR2025/image_generation/inpo_inversion_preference_optimization_diffusion_alignment.md)
 - [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
-- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/image_generation/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
-- [\[CVPR 2026\] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](../../CVPR2026/image_generation/glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)
-- [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
-- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
+- [\[ICML 2025\] Smoothed Preference Optimization via ReNoise Inversion for Aligning Diffusion Models with Varied Human Preferences](../../ICML2025/image_generation/smoothed_preference_optimization_via_renoise_inversion_for_aligning_diffusion_mo.md)
 
 </div>
 

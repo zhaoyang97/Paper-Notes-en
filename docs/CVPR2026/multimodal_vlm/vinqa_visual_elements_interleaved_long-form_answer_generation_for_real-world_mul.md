@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA
 description: >-
-  [CVPR 2026][Multimodal VLM][Qwen2.5-VL] VinQA proposes a "visual element interleaved long-form answer generation" task and dataset for real-world documents. Answers are no longer pure text but insert cited figures, tables, and charts **directly before the corresponding supporting text**. The work introduces two encoding methods for raw page images (Page and
+  [CVPR 2026][Multimodal VLM][Multimodal Document QA] VinQA proposes a "visual element interleaved long-form answer generation" task and dataset for real-world documents. Answers are no longer pure text but insert cited figures, tables, and charts **directly before the corresponding supporting text**. The work introduces two encoding methods for raw page images (Page and Modality Encoding) and a multimodal scoring framework, M-GroSE. Fine-tuning the open-source Qwen2.5-VL-7B on…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Qwen2.5-VL
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Document QA"
+  - "Visual Element Citation"
+  - "Long-form Answer Generation"
+  - "Multimodal RAG"
+  - "Qwen2.5-VL"
 date: 2026-05-08
-content_hash: 4dbcc98438cf5d9c
+content_hash: 1011c72a91f0d54b
 ---
+
 # VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA
 
 **Conference**: CVPR 2026  
@@ -152,7 +157,7 @@ Visual G-Eval (average across all visual citations on 200 test instances, 1–5 
 - [\[CVPR 2026\] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training](towards_real-world_document_parsing_via_realistic_scene_synthesis_and_document-a.md)
 - [\[CVPR 2026\] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models](vkg-qa_visual_knowledge_graph-based_question_answer_for_large_multimodal_models.md)
 - [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](duogen_towards_autonomous_interleaved_multimodal_generation.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/multimodal_vlm/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
 - [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
 
 </div>

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction
 description: >-
-  [AAAI2026][Graph Learning][Knowledge Graph] This paper proposes UniHR, a unified framework that converts hyper-relational, temporal, and nested KGs into a triple-based representation via Hierarchical Data Representation…
+  [AAAI2026 Oral][Graph Learning][Knowledge Graph] This paper proposes UniHR, a unified framework that converts hyper-relational, temporal, and nested KGs into a triple-based representation via Hierarchical Data Representation (HiDR), and designs a Hierarchical Structure Learning (HiSL) module for two-stage intra-fact and inter-fact message passing. UniHR achieves state-of-the-art or competitive link prediction results across 9 datasets spanning 5 KG types.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Graph Learning"
   - "Knowledge Graph"
   - "Link Prediction"
@@ -14,7 +14,7 @@ tags:
   - "Unified Representation Learning"
   - "Hierarchical Message Passing"
 date: 2026-05-08
-content_hash: cd86915dad94ce77
+content_hash: 2436cb3fe4636142
 ---
 
 # UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction
@@ -157,11 +157,11 @@ The unified representation paradigm is transferable to other heterogeneous data 
 
 ## Related Papers
 
+- [\[ICLR 2026\] HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs](../../ICLR2026/graph_learning/hyper_a_foundation_model_for_inductive_link_prediction_with_knowledge_hypergraph.md)
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](../../NeurIPS2025/graph_learning/tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
 - [\[ICML 2026\] Unsat Core Prediction through Polarity-Aware Representation Learning over Clause-Literal Hypergraphs](../../ICML2026/graph_learning/unsat_core_prediction_through_polarity-aware_representation_learning_over_clause.md)
 - [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](../../ICML2026/graph_learning/generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
-- [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](../../ICML2026/graph_learning/t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
-- [\[NeurIPS 2025\] OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction](../../NeurIPS2025/graph_learning/ocn_effectively_utilizing_higher-order_common_neighbors_for_better_link_predicti.md)
+- [\[ICML 2025\] L-STEP: Learnable Spatial-Temporal Positional Encoding for Link Prediction](../../ICML2025/graph_learning/learnable_spatial-temporal_positional_encoding_for_link_prediction.md)
 
 </div>
 

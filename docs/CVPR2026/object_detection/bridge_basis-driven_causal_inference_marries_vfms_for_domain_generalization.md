@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issue where detectors easily learn spurious correlations from confounders like "lighting/co-occurrence/style" under data scarcity in single-source domains, this paper proposes the plug-and-play Causal Basis Block (CBB). By implementing causal front-door adjustment via **learnable low-rank bases** to "est
+  [CVPR 2026][Object Detection][Domain Generalized Object Detection (DGOD)] Addressing the issue where detectors easily learn spurious correlations from confounders like "lighting/co-occurrence/style" under data scarcity in single-source domains, this paper proposes the plug-and-play Causal Basis Block (CBB). By implementing causal front-door adjustment via **learnable low-rank bases** to "estimate two expectations," CBB allows for end-to-end calibration on frozen VFMs (DINOv2/…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Domain Generalized Object Detection (DGOD)"
+  - "Front-door Adjustment"
+  - "Causal Inference"
+  - "Basis Learning"
+  - "Vision Foundation Models (VFMs)"
 date: 2026-05-08
-content_hash: dd1a82d8a7a9b418
+content_hash: 58392bca0f267f2c
 ---
+
 # Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization
 
 **Conference**: CVPR 2026  
@@ -138,14 +144,17 @@ Comparison of Causal Modeling (Table 7, DINOv3): Re-implementing GOAT's front-do
 
 <div class="related-papers" markdown="1">
 
-1. **Zhang et al.**, "Causal Intervention for Adverse Weather Object Detection," CVPR 2023.
-2. **Li et al.**, "GOAT: Gender-Oriented Adaptive Training for Front-Door Adjustment," ICML 2023.
-3. **Hong et al.**, "Boost: Boosting Vision Foundation Models for Domain Generalization," NeurIPS 2024.
+## Related Papers
+
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
+- [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
+- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
+- [\[CVPR 2026\] Spike-driven Discrete Aggregation for Event-based Object Detection](spike-driven_discrete_aggregation_for_event-based_object_detection.md)
+- [\[CVPR 2025\] Large Self-Supervised Models Bridge the Gap in Domain Adaptive Object Detection](../../CVPR2025/object_detection/large_self-supervised_models_bridge_the_gap_in_domain_adaptive_object_detection.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)

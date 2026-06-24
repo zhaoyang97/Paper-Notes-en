@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Self-Speculative Masked Diffusions
 description: >-
-  [ICLR 2026][LLM Efficiency][masked diffusion] Self-Speculative Masked Diffusions integrates the non-causal parallel draft distribution of masked diffusion and an arbitrary-order causal target distribution into the same Transformer. By using in-model speculative sampling to verify multiple masked tokens in a single primary forward pass, it reduces the number of net
+  [ICLR2026][LLM Efficiency][masked diffusion] Self-Speculative Masked Diffusions integrates the non-causal parallel draft distribution of masked diffusion and an arbitrary-order causal target distribution into the same Transformer. By using in-model speculative sampling to verify multiple masked tokens in a single primary forward pass, it reduces the number of network forward passes by approximately $2\times$ for text modeling and protein sequence generation with nearly identi…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - masked diffusion
-  - speculative sampling
-  - self-speculative decoding
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "masked diffusion"
+  - "speculative sampling"
+  - "self-speculative decoding"
+  - "discrete generation"
+  - "protein sequence generation"
 date: 2026-05-08
-content_hash: 2fc8eb3f56c1996c
+content_hash: fa0c5cd7b0ff22bc
 ---
+
 # Self-Speculative Masked Diffusions
 
 **Conference**: ICLR2026  
@@ -154,9 +157,9 @@ The OpenWebText table demonstrates that the model is not simply gaining through 
 
 ## Related Papers
 
+- [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](../../ICML2026/llm_efficiency/knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
 - [\[ICLR 2026\] Parallel Sampling from Masked Diffusion Models via Conditional Independence Testing](parallel_sampling_from_masked_diffusion_models_via_conditional_independence_test.md)
 - [\[ICLR 2026\] Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models](self-speculative_decoding_accelerates_lossless_inference_in_any-order_and_any-su.md)
-- [\[ICML 2026\] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem](../../ICML2026/llm_efficiency/knapspec_self-speculative_decoding_via_adaptive_layer_selection_as_a_knapsack_pr.md)
 - [\[ACL 2025\] CLaSp: In-Context Layer Skip for Self-Speculative Decoding](../../ACL2025/llm_efficiency/clasp_self_speculative_decoding.md)
 - [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 

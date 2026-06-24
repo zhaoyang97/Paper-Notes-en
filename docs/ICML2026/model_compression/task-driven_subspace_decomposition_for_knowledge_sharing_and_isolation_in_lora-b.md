@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning
 description: >-
-  [ICML 2026][Model Compression][LoRA] LoDA decomposes the LoRA down-projection matrix into a shared universal subspace and a task-specific isolation subspace based on "projection energy." It utilizes gradient alignment optimization (GAO) to train up-projections and applies a closed-form feature recalibration during fusion, consistently outperforming existi
+  [ICML 2026][Model Compression][LoRA] LoDA decomposes the LoRA down-projection matrix into a shared universal subspace and a task-specific isolation subspace based on "projection energy." It utilizes gradient alignment optimization (GAO) to train up-projections and applies a closed-form feature recalibration during fusion, consistently outperforming existing LoRA-CL methods across multiple benchmarks.
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Continual Learning"
+  - "Subspace Decomposition"
+  - "Projection Energy"
+  - "Feature-level Recalibration"
 date: 2026-05-08
-content_hash: c0c3b79b782cbc46
+content_hash: 1c82f0d0bcffd454
 ---
+
 # Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning
 
 **Conference**: ICML 2026  
@@ -123,8 +128,8 @@ Under feature replay settings, LoDA+CA achieves 66.71 on 10S-ImageNetA, outperfo
 - **Value**: ⭐⭐⭐⭐ A significant upgrade to the LoRA-CL pipeline with techniques transferable to other PEFT domains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -132,7 +137,7 @@ Under feature replay settings, LoDA+CA achieves 66.71 on 10S-ImageNetA, outperfo
 - [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](../../AAAI2026/model_compression/beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 - [\[CVPR 2025\] LoRA Subtraction for Drift-Resistant Space in Exemplar-Free Continual Learning](../../CVPR2025/model_compression/lora_subtraction_for_drift-resistant_space_in_exemplar-free_continual_learning.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
-- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
+- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
 
 </div>
 

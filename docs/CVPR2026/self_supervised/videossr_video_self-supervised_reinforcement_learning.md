@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VideoSSR: Video Self-Supervised Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][RLVR] To address the dilemma where strong models are saturated by existing video RLVR datasets and manual annotation is too costly, VideoSSR automatically generates training data with verifiable answers from raw videos using three parameterizable self-supervised pretext tasks (anomaly grounding / object counting / temporal j
+  [CVPR 2026][Self-Supervised Learning][Video Understanding] To address the dilemma where strong models are saturated by existing video RLVR datasets and manual annotation is too costly, VideoSSR automatically generates training data with verifiable answers from raw videos using three parameterizable self-supervised pretext tasks (anomaly grounding / object counting / temporal jigsaw). Combined with task-specific smooth reward functions for GRPO training…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Video Understanding"
+  - "RLVR"
+  - "GRPO"
+  - "Self-supervised"
+  - "Smooth Reward"
 date: 2026-05-08
-content_hash: e06529f956a1406f
+content_hash: 4dff06b0ac30d66e
 ---
+
 # VideoSSR: Video Self-Supervised Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -155,11 +159,11 @@ Across all 17 benchmarks including VIUBench, VideoSSR achieves an average improv
 
 ## Related Papers
 
-- [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
-- [\[NeurIPS 2025\] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/roirl_efficient_self-supervised_reasoning_with_offline_iterative_reinforcement_l.md)
-- [\[ICCV 2025\] Progressor: A Perceptually Guided Reward Estimator with Self-Supervised Online Refinement](../../ICCV2025/reinforcement_learning/progressor_a_perceptually_guided_reward_estimator_with_self-supervised_online_re.md)
-- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
-- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](../../ICLR2026/reinforcement_learning/self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
+- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
+- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
+- [\[ICLR 2026\] Rethinking JEPA: Compute-Efficient Video Self-Supervised Learning with Frozen Teachers](../../ICLR2026/self_supervised/rethinking_jepa_computeefficient_video_self-supervised_learning_with_frozen_teac.md)
+- [\[NeurIPS 2025\] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization](../../NeurIPS2025/self_supervised/m-grpo_stabilizing_self-supervised_reinforcement_learning_for_multimodal_underst.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](../../ICLR2026/self_supervised/on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PHAC: Promptable Human Amodal Completion
 description: >-
-  [CVPR 2026][Object Detection][Diffusion Model] A new task titled Promptable Human Amodal Completion (PHAC) is proposed. By utilizing point-based user prompts (pose/bounding box) coupled with ControlNet for conditional signal injection, and a refinement module based on inpainting to preserve the appearance of visible regions, high-quality and controllable completion
+  [CVPR 2026][Object Detection][Human amodal completion] A new task titled Promptable Human Amodal Completion (PHAC) is proposed. By utilizing point-based user prompts (pose/bounding box) coupled with ControlNet for conditional signal injection, and a refinement module based on inpainting to preserve the appearance of visible regions, high-quality and controllable completion of occluded human images is achieved.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Diffusion Model
-  - ControlNet
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Human amodal completion"
+  - "Diffusion models"
+  - "ControlNet"
+  - "Pose-guided generation"
+  - "Image inpainting"
 date: 2026-05-08
-content_hash: fabfe56253293822
+content_hash: 45d37e6d1aa2c534
 ---
+
 # PHAC: Promptable Human Amodal Completion
 
 **Conference**: CVPR 2026  
@@ -172,11 +176,11 @@ Coarse completions lose visible details after latent space denoising and VAE rec
 
 ## Related Papers
 
-- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](show_dont_tell_detecting_novel_objects_by_watching.md)
+- [\[CVPR 2026\] SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection](streamlined_open-vocabulary_human-object_interaction_detection.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
 - [\[CVPR 2025\] ProbPose: A Probabilistic Approach to 2D Human Pose Estimation](../../CVPR2025/object_detection/probpose_a_probabilistic_approach_to_2d_human_pose_estimation.md)
+- [\[CVPR 2025\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2025/object_detection/show_dont_tell_detecting_novel_objects_by_watching_human_videos.md)
 - [\[NeurIPS 2025\] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning](../../NeurIPS2025/object_detection/detree_detecting_human-ai_collaborative_texts_via_tree-structured_hierarchical_r.md)
-- [\[ICCV 2025\] Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding](../../ICCV2025/object_detection/intervening_in_black_box_concept_bottleneck_model_for_enhancing_human_neural_net.md)
 
 </div>
 

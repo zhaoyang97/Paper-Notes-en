@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors
 description: >-
-  [NeurIPS 2025][LLM Alignment][synthetic image detection] This paper proposes PolyJuice, the first black-box, image-agnostic red teaming method for synthetic image detectors (SIDs). By discovering and exploiting a "realis…
+  [NeurIPS 2025][LLM Alignment][synthetic image detection] This paper proposes PolyJuice, the first black-box, image-agnostic red teaming method for synthetic image detectors (SIDs). By discovering and exploiting a "realism direction" in the latent space of text-to-image (T2I) models, PolyJuice universally steers generated images to fool detectors, achieving an attack success rate of up to 84%.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "text-to-image"
   - "black-box attack"
 date: 2026-05-08
-content_hash: f54d8e42e6ee9665
+content_hash: 994dd76cc4faa7ee
 ---
 
 # PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors
@@ -183,9 +183,9 @@ PolyJuice guidance has negligible impact on image quality, with FID even improvi
 ## Related Papers
 
 - [\[NeurIPS 2025\] GASP: Efficient Black-Box Generation of Adversarial Suffixes for Jailbreaking LLMs](gasp_efficient_black-box_generation_of_adversarial_suffixes_for_jailbreaking_llm.md)
+- [\[ACL 2025\] Constitutional Classifiers: Defending Against Universal Jailbreaks Across Thousands of Hours of Red Teaming](../../ACL2025/llm_alignment/constitutional_classifiers_defending_against_universal_jailbreaks_across_thousan.md)
 - [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
-- [\[ICLR 2026\] CAGE: A Framework for Culturally Adaptive Red-Teaming Benchmark Generation](../../ICLR2026/llm_alignment/cage_a_framework_for_culturally_adaptive_red-teaming_benchmark_generation.md)
-- [\[ICLR 2026\] Capability-Based Scaling Trends for LLM-Based Red-Teaming](../../ICLR2026/llm_alignment/capability-based_scaling_trends_for_llm-based_red-teaming.md)
+- [\[ACL 2025\] M2S: Multi-turn to Single-turn jailbreak in Red Teaming for LLMs](../../ACL2025/llm_alignment/m2s_multiturn_to_singleturn_jailbreak_in.md)
 - [\[NeurIPS 2025\] Preference Learning with Lie Detectors can Induce Honesty or Evasion](preference_learning_with_lie_detectors_can_induce_honesty_or_evasion.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents
 description: >-
-  [NeurIPS 2025 (Spotlight)][Robotics][goal inference] Meta proposes WAGIBench, a multimodal goal inference benchmark for assistive wearable agents, comprising 3…
+  [NeurIPS 2025 (Spotlight)][Robotics][goal inference] Meta proposes WAGIBench, a multimodal goal inference benchmark for assistive wearable agents, comprising 3,477 egocentric recordings (29 hours) from 348 participants across four modalities — visual, audio, digital, and longitudinal. Human accuracy reaches 93% versus the best VLM at 84% (MCQ); under generative evaluation, models produce relevant goals only 55% of the time, exposing a substantial gap between current VLMs and…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "egocentric video"
   - "VLM evaluation"
 date: 2026-05-08
-content_hash: 848fe7147af9be1a
+content_hash: a2ea7778c1c4df32
 ---
 
 # Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents
@@ -148,10 +148,10 @@ Compared with PARSE-Ego4D, WAGIBench's core advantages lie in multimodal coverag
 ## Related Papers
 
 - [\[NeurIPS 2025\] MineAnyBuild: Benchmarking Spatial Planning for Open-world AI Agents](mineanybuild_benchmarking_spatial_planning_for_openworld_ai.md)
+- [\[CVPR 2025\] Magma: A Foundation Model for Multimodal AI Agents](../../CVPR2025/robotics/magma_a_foundation_model_for_multimodal_ai_agents.md)
 - [\[NeurIPS 2025\] EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT](egothinker_unveiling_egocentric_reasoning_with_spatiotempora.md)
+- [\[CVPR 2026\] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](../../CVPR2026/robotics/agentsafe_benchmarking_the_safety_of_embodied_agents_on_hazardous_instructions.md)
 - [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](../../ACL2026/robotics/govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
-- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
-- [\[NeurIPS 2025\] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling](autotom_scaling_model-based_mental_inference_via_automated_agent_modeling.md)
 
 </div>
 

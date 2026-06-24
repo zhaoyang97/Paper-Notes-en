@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks
 description: >-
-  [ACL 2026][Graph Learning][large graph reasoning] Existing LLM graph reasoning benchmarks are limited to small graphs (20–50 nodes) and assume full visibility. This paper compresses real-world graphs (up to 2.39M nodes) into prompts using "random walk statistics." It proposes EstGraph to evaluate LLMs on four estimation tasks: node/edge count, community count, graph s
+  [ACL 2026][Graph Learning][large graph reasoning] Existing LLM graph reasoning benchmarks are limited to small graphs (20–50 nodes) and assume full visibility. This paper compresses real-world graphs (up to 2.39M nodes) into prompts using "random walk statistics." It proposes EstGraph to evaluate LLMs on four estimation tasks: node/edge count, community count, graph structure, and influential nodes. Findings show that LLMs achieve $< 20\%$ relative error on medium-scale graph…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - large graph reasoning
-  - random walk
-  - LLM benchmark
-  - graph property estimation
-  - partial access
+  - "ACL 2026"
+  - "Graph Learning"
+  - "large graph reasoning"
+  - "random walk"
+  - "LLM benchmark"
+  - "graph property estimation"
+  - "partial access"
 date: 2026-05-08
-content_hash: b91b9c0e7e63f5ce
+content_hash: 6549ab2a9d538625
 ---
+
 # Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks
 
 **Conference**: ACL 2026  
@@ -155,16 +156,16 @@ Influential Node Ranking Precision@20 (%):
 - Value: ⭐⭐⭐⭐ (Provides a practical framework for large-scale structure reasoning).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](../../ICLR2026/graph_learning/flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
 - [\[ICLR 2026\] Actions Speak Louder than Prompts: A Large-Scale Study of LLMs for Graph Inference](../../ICLR2026/graph_learning/actions_speak_louder_than_prompts_a_large-scale_study_of_llms_for_graph_inferenc.md)
+- [\[ICLR 2026\] Multi-Scale Diffusion-Guided Graph Learning with Power-Smoothing Random Walk Contrast for Multi-View Clustering](../../ICLR2026/graph_learning/multi-scale_diffusion-guided_graph_learning_with_power-smoothing_random_walk_con.md)
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](graph-based_alternatives_to_llms_for_human_simulation.md)
 - [\[ACL 2026\] AgentGL: Towards Agentic Graph Learning with LLMs via Reinforcement Learning](agentgl_towards_agentic_graph_learning_with_llms_via_reinforcement_learning.md)
-- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
-- [\[ACL 2026\] LLMs Underperform Graph-Based Parsers on Supervised Relation Extraction for Complex Graphs](llms_underperform_graph-based_parsers_on_supervised_relation_extraction_for_comp.md)
 
 </div>
 

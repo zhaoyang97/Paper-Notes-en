@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] $\pi^3$: Permutation-Equivariant Visual Geometry Learning
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] $\pi^3$ proposes a fully permutation-equivariant feed-forward network that completely discards the "fixed reference view" inductive bias inherited from traditional SfM. Instead, it predicts "affine-invariant camera poses + scale-invariant local pointmaps" in each frame's own coordinate system. This approach is naturall
+  [ICLR 2026][3D Vision][Visual geometry reconstruction] $\pi^3$ proposes a fully permutation-equivariant feed-forward network that completely discards the "fixed reference view" inductive bias inherited from traditional SfM. Instead, it predicts "affine-invariant camera poses + scale-invariant local pointmaps" in each frame's own coordinate system. This approach is naturally robust to input order and sets new SOTA records across tasks like camera pose estimation…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Visual geometry reconstruction"
+  - "Permutation-equivariant"
+  - "Feed-forward 3D reconstruction"
+  - "Camera pose estimation"
+  - "Point cloud reconstruction"
 date: 2026-05-08
-content_hash: b80abe766b15fdba
+content_hash: d8a0494ce60f7ea9
 ---
+
 # $\pi^3$: Permutation-Equivariant Visual Geometry Learning
 
 **Conference**: ICLR 2026  
@@ -151,10 +157,10 @@ Permutation Robustness (Running an N-frame sequence N times by rotating the firs
 
 ## Related Papers
 
-- [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
 - [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](fastvggt_fast_visual_geometry_transformer.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
+- [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
 - [\[CVPR 2026\] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning](../../CVPR2026/3d_vision/flow3r_factored_flow_prediction_for_scalable_visual_geometry_learning.md)
-- [\[ICLR 2026\] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation](ctrlshift_high-quality_geometry-aware_object_manipulation_in_visual_generation.md)
 - [\[ICLR 2026\] CloDS: Visual-Only Unsupervised Cloth Dynamics Learning in Unknown Conditions](clods_visual-only_unsupervised_cloth_dynamics_learning_in_unknown_conditions.md)
 
 </div>

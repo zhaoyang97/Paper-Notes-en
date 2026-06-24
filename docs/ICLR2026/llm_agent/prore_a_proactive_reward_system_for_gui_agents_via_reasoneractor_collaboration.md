@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ProRe: A Proactive Reward System for GUI Agents via Reasoner–Actor Collaboration
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] To address the difficulty of obtaining verifiable rewards for GUI agents, ProRe utilizes a general reasoner to schedule "state probing tasks," which are then executed by a domain-specific evaluator agent (actor) to proactively collect key interface states. The task success is determined via chain-of-claims reasoning, a
+  [ICLR 2026][LLM Agent][GUI Agent] To address the difficulty of obtaining verifiable rewards for GUI agents, ProRe utilizes a general reasoner to schedule "state probing tasks," which are then executed by a domain-specific evaluator agent (actor) to proactively collect key interface states. The task success is determined via chain-of-claims reasoning, achieving a reward accuracy of 93.7% (the first GUI reward system to exceed 90%) and improving policy agent success rates by up…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Reasoner-Actor
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Reward Model"
+  - "Proactive Probing"
+  - "Reasoner-Actor"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 392e837a11ecc668
+content_hash: cb1000bece2bc233
 ---
+
 # ProRe: A Proactive Reward System for GUI Agents via Reasoner–Actor Collaboration
 
 **Conference**: ICLR 2026  
@@ -144,15 +148,16 @@ ProRe achieves an average accuracy of 93.7%, which is 5.3% higher than the stron
 - Value: ⭐⭐⭐⭐⭐ First GUI reward system to reach >90% accuracy with significant practical impact on policy success rates.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
 - [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
+- [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](gta1_gui_test-time_scaling_agent.md)
 - [\[ACL 2026\] Taming Actor-Observer Asymmetry in Agents via Dialectical Alignment](../../ACL2026/llm_agent/taming_actor-observer_asymmetry_in_agents_via_dialectical_alignment.md)
 - [\[ICLR 2026\] Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration](collaborative_gym_a_framework_for_enabling_and_evaluating_human-agent_collaborat.md)
-- [\[ICLR 2026\] PRISM: Festina Lente Proactivity—Risk-Sensitive, Uncertainty-Aware Deliberation for Proactive Agents](prism_festina_lente_proactivityrisk-sensitive_uncertainty-aware_deliberation_for.md)
 
 </div>
 

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Dichotomous Diffusion Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][classifier-free guidance] DIPOLE decomposes the exponential weight of the optimal policy in KL-regularized RL into a pair of bounded "dichotomous policies" (one pursuing high returns, the other low returns), stabilizes training using sigmoid weighting, and linearly combines their scores at inference—similar to classifier-free guidance—to achiev
+  [ICLR 2026][Reinforcement Learning][Diffusion Policy] DIPOLE decomposes the exponential weight of the optimal policy in KL-regularized RL into a pair of bounded "dichotomous policies" (one pursuing high returns, the other low returns), stabilizes training using sigmoid weighting, and linearly combines their scores at inference—similar to classifier-free guidance—to achieve stable diffusion policy optimization with controllable greediness.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - classifier-free guidance
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Diffusion Policy"
+  - "KL-regularized RL"
+  - "Weighted Regression"
+  - "Dichotomous Policy Decomposition"
+  - "classifier-free guidance"
+  - "Offline/Offline-to-Online RL"
+  - "VLA Autonomous Driving"
 date: 2026-05-08
-content_hash: b187619f6b09314f
+content_hash: 57e02e30df44305b
 ---
+
 # Dichotomous Diffusion Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -154,10 +161,17 @@ The vision-only DP-VLA baseline already outperforms multi-modal Hydra-MDP. Fine-
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](heterogeneous_agent_q-weighted_policy_optimization.md)
+- [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
+- [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
+- [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](heterogeneous_agent_q-weighted_policy_optimization.md)

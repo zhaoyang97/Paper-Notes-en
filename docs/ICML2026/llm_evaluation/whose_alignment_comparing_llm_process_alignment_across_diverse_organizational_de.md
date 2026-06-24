@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts
 description: >-
-  [ICML 2026][LLM Evaluation][pluralistic alignment] This paper proposes CALM to evaluate whether LLMs align with the actual decision-making processes of organizations rather than just output labels. By comparing ECHR legal adjudication with German Credit lending decisions, it demonstrates that process alignment predicts accuracy in stable normative domains, whereas in v
+  [ICML2026][LLM Evaluation][pluralistic alignment] This paper proposes CALM to evaluate whether LLMs align with the actual decision-making processes of organizations rather than just output labels. By comparing ECHR legal adjudication with German Credit lending decisions, it demonstrates that process alignment predicts accuracy in stable normative domains, whereas in value-controversial domains, high process alignment is both difficult to achieve and not necessarily desirable.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - pluralistic alignment
-  - process alignment
-  - Brunswik lens model
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "pluralistic alignment"
+  - "process alignment"
+  - "Brunswik lens model"
+  - "organizational decision-making"
+  - "fairness auditing"
 date: 2026-05-08
-content_hash: 532d798d5ddc4e5f
+content_hash: 7124df8ee0cb2ada
 ---
+
 # Whose Alignment? Comparing LLM Process Alignment Across Diverse Organizational Decision Contexts
 
 **Conference**: ICML2026  
@@ -152,8 +155,8 @@ German Credit baselines show a completely different pattern. All five models ach
 - Value: ⭐⭐⭐⭐⭐ Direct implications for deployment in high-risk sectors, organizational alignment, and fairness auditing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

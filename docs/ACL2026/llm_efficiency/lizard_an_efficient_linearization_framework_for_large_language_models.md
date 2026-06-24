@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Lizard: An Efficient Linearization Framework for Large Language Models
 description: >-
-  [ACL 2026][LLM Efficiency][Gated Linear Attention] Lizard replaces the softmax attention of pretrained Transformers with a hybrid subquadratic attention module (Gated Linear Attention for global compression + Anchor Window Attention for local precision + learnable gates replacing RoPE). Using only 0.04B tokens for distillation, it outperforms existing linearization met
+  [ACL 2026][LLM Efficiency][Linearization] Lizard replaces the softmax attention of pretrained Transformers with a hybrid subquadratic attention module (Gated Linear Attention for global compression + Anchor Window Attention for local precision + learnable gates replacing RoPE). Using only 0.04B tokens for distillation, it outperforms existing linearization methods by 9.4–24.5 points on 5-shot MMLU and achieves a 32% throughput increase via a tensor-core-friendly training algo…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Gated Linear Attention
-  - teacher-student
-  - tensor core
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Linearization"
+  - "Gated Linear Attention"
+  - "Long-context Extrapolation"
+  - "Teacher-student"
+  - "Tensor Core"
 date: 2026-05-08
-content_hash: ec9442c738a4aee7
+content_hash: 23d44d5c77d6eee3
 ---
+
 # Lizard: An Efficient Linearization Framework for Large Language Models
 
 **Conference**: ACL 2026  
@@ -141,11 +144,11 @@ Lizard improves 5-shot MMLU from LoLCATs' 52.8 to 61.2 (+8.4), trailing the teac
 
 ## Related Papers
 
-- [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
 - [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](are_large_language_models_economically_viable_for_industry_deployment.md)
+- [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
+- [\[ICLR 2026\] Cascadia: An Efficient Cascade Serving System for Large Language Models](../../ICLR2026/llm_efficiency/cascadia_an_efficient_cascade_serving_system_for_large_language_models.md)
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
 - [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
 
 </div>
 

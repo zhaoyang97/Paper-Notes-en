@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BokehDiff: Neural Lens Blur with One-Step Diffusion
 description: >-
-  [ICCV 2025][3D Vision][Bokeh rendering] BokehDiff proposes a one-step inference bokeh rendering method built upon a pretrained diffusion model. It incorporates energy conservation, circle-of-confusion constraints…
+  [ICCV 2025][3D Vision][Bokeh rendering] BokehDiff proposes a one-step inference bokeh rendering method built upon a pretrained diffusion model. It incorporates energy conservation, circle-of-confusion constraints, and self-occlusion effects via a Physics-Inspired Self-Attention (PISA) module, combined with synthetic foreground data for training, achieving significant improvements over conventional methods at depth-discontinuous regions.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "physics-inspired attention"
   - "data synthesis"
 date: 2026-05-08
-content_hash: 527f6ba0c9ddd83c
+content_hash: beefa8c0f7456a8e
 ---
 
 # BokehDiff: Neural Lens Blur with One-Step Diffusion
@@ -139,11 +139,11 @@ Training requires approximately 12 hours on a single NVIDIA L40s GPU.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Difix3D+: Improving 3D Reconstructions with Single-Step Diffusion Models](../../CVPR2025/3d_vision/difix3d_improving_3d_reconstructions_with_single-step_diffusion_models.md)
 - [\[ICCV 2025\] From One to More: Contextual Part Latents for 3D Generation](from_one_to_more_contextual_part_latents_for_3d_generation.md)
+- [\[CVPR 2025\] One Diffusion to Generate Them All](../../CVPR2025/3d_vision/one_diffusion_to_generate_them_all.md)
 - [\[ICCV 2025\] From Image to Video: An Empirical Study of Diffusion Representations](from_image_to_video_an_empirical_study_of_diffusion_representations.md)
-- [\[ICLR 2026\] A Step to Decouple Optimization in 3DGS](../../ICLR2026/3d_vision/a_step_to_decouple_optimization_in_3dgs.md)
 - [\[ICCV 2025\] Textured 3D Regenerative Morphing with 3D Diffusion Prior](textured_3d_regenerative_morphing_with_3d_diffusion_prior.md)
-- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
 
 </div>
 

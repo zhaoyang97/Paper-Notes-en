@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Makes Synthetic Data Effective in Image Segmentation
 description: >-
-  [ICML 2026][Segmentation][Diffusion Model] This paper systematically analyzes two key factors that make synthetic images effective for semantic segmentation: dense composition and fine instance fidelity. It proposes SENSE, which leverages Optimal Transport (OT) to stabilize pseudo-label assignment for synthetic images, achieving consistent improvements for DPT
+  [ICML2026][Segmentation][Semantic Segmentation] This paper systematically analyzes two key factors that make synthetic images effective for semantic segmentation: dense composition and fine instance fidelity. It proposes SENSE, which leverages Optimal Transport (OT) to stabilize pseudo-label assignment for synthetic images, achieving consistent improvements for DPT and Mask2Former on Cityscapes, COCO, and ADE20K.
 tags:
-  - ICML 2026
-  - Segmentation
-  - Diffusion Model
+  - "ICML2026"
+  - "Segmentation"
+  - "Semantic Segmentation"
+  - "Synthetic Data"
+  - "Diffusion Models"
+  - "Optimal Transport"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 4b7b43288b2fb7cf
+content_hash: 18a4333e574d14bb
 ---
+
 # What Makes Synthetic Data Effective in Image Segmentation
 
 **Conference**: ICML2026  
@@ -136,11 +141,11 @@ For pixel-based segmenters, synthetic loss is the cross-entropy with OT-based so
 
 ## Related Papers
 
-- [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](../../ICCV2025/segmentation/legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
-- [\[CVPR 2026\] Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding](../../CVPR2026/segmentation/synthetic_object_compositions_for_scalable_and_accurate_learning_in_detection_se.md)
-- [\[CVPR 2026\] A Mixed Diet Makes DINO An Omnivorous Vision Encoder](../../CVPR2026/segmentation/a_mixed_diet_makes_dino_an_omnivorous_vision_encoder.md)
+- [\[ICLR 2026\] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data](../../ICLR2026/segmentation/s3od_towards_generalizable_salient_object_detection_with_synthetic_data.md)
 - [\[ICML 2026\] Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background](towards_effective_waste_segmentation_for_automated_waste_recycling_in_cluttered_.md)
-- [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](../../ICCV2025/segmentation/learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
+- [\[CVPR 2026\] Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding](../../CVPR2026/segmentation/synthetic_object_compositions_for_scalable_and_accurate_learning_in_detection_se.md)
+- [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](../../ICCV2025/segmentation/legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
+- [\[CVPR 2026\] A Mixed Diet Makes DINO An Omnivorous Vision Encoder](../../CVPR2026/segmentation/a_mixed_diet_makes_dino_an_omnivorous_vision_encoder.md)
 
 </div>
 

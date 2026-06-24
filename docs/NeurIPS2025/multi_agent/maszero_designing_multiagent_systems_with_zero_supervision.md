@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision
 description: >-
-  [NeurIPS 2025 (SEA Workshop, Oral)][Multi-Agent][multi-agent system] MAS-ZERO is the first inference-time automatic MAS design framework. Through a meta-agent that iteratively designs, critiques…
+  [NeurIPS 2025 (SEA Workshop, Oral)][Multi-Agent][multi-agent system] MAS-ZERO is the first inference-time automatic MAS design framework. Through a meta-agent that iteratively designs, critiques, and refines MAS configurations (including task decomposition and sub-MAS assignment), it requires no validation set or training, and outperforms both manual and automatic MAS baselines on reasoning (+16.69%), programming (+16.66%), and search agent (+5.45%) tasks while maintaining a…
 tags:
   - "NeurIPS 2025 (SEA Workshop, Oral)"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "zero supervision"
   - "inference-time optimization"
 date: 2026-05-08
-content_hash: 40ae8aa00630cf88
+content_hash: e5df9855ba94f487
 ---
 
 # MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision
@@ -133,11 +133,11 @@ MAS-Verify is the most critical component — removing it causes a 21.70% perfor
 
 ## Related Papers
 
-- [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/multi_agent/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
-- [\[NeurIPS 2025\] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems](metamind_modeling_human_social_thoughts_with_metacognitive_multi-agent_systems.md)
-- [\[ICML 2026\] MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks](../../ICML2026/multi_agent/mas-orchestra_understanding_and_improving_multi-agent_reasoning_through_holistic.md)
-- [\[NeurIPS 2025\] MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting](masfin_a_multi-agent_system_for_decomposed_financial_reasoning_and_forecasting.md)
-- [\[ICML 2026\] Securing Multi-Agent Systems Against Corruptions via Node Contribution Backpropagation](../../ICML2026/multi_agent/securing_multi-agent_systems_against_corruptions_via_node_contribution_backpropa.md)
+- [\[ICML 2025\] Cross-environment Cooperation Enables Zero-shot Multi-agent Coordination](../../ICML2025/multi_agent/cross-environment_cooperation_enables_zero-shot_multi-agent_coordination.md)
+- [\[ICLR 2026\] MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems](../../ICLR2026/multi_agent/mas2_self-generative_self-configuring_self-rectifying_multi-agent_systems.md)
+- [\[CVPR 2026\] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection](../../CVPR2026/multi_agent/agentdet_a_shared-blackboard_multi-agent_framework_for_zero-few-shot_object_dete.md)
+- [\[ICML 2026\] More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration](../../ICML2026/multi_agent/more_capable_less_cooperative_when_llms_fail_at_zero-cost_collaboration.md)
+- [\[CVPR 2025\] ComfyBench: Benchmarking LLM-based Agents in ComfyUI for Autonomously Designing Collaborative AI Systems](../../CVPR2025/multi_agent/comfybench_benchmarking_llm-based_agents_in_comfyui_for_autonomously_designing_c.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model
 description: >-
-  [AAAI 2026][Segmentation][SAM] This paper proposes SAQ-SAM, which improves post-training quantization (PTQ) of SAM from a semantic alignment perspective. It introduces Perceptual Consistency Clipping (PCC) to handle extr…
+  [AAAI 2026][Segmentation][SAM] This paper proposes SAQ-SAM, which improves post-training quantization (PTQ) of SAM from a semantic alignment perspective. It introduces Perceptual Consistency Clipping (PCC) to handle extreme outliers in the mask decoder, and Prompt-Aware Reconstruction (PAR) to preserve semantic alignment between image and prompt interactions.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "attention-aware"
   - "model compression"
 date: 2026-05-08
-content_hash: 375ef791504a6b61
+content_hash: af70b5606182af87
 ---
 
 # SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model
@@ -191,9 +191,9 @@ Transformer layers are partitioned into multiple stages delimited by global atte
 
 - [\[AAAI 2026\] Segment and Matte Anything in a Unified Model (SAMA)](segment_and_matte_anything_in_a_unified_model.md)
 - [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
+- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](../../ICLR2026/segmentation/sam_3_segment_anything_with_concepts.md)
 - [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](segment_anything_across_shots_a_method_and_benchmark.md)
-- [\[ICCV 2025\] E-SAM: Training-Free Segment Every Entity Model](../../ICCV2025/segmentation/e-sam_training-free_segment_every_entity_model.md)
-- [\[ICML 2026\] Segment Anything with Robust Uncertainty-Accuracy Correlation](../../ICML2026/segmentation/segment_anything_with_robust_uncertainty-accuracy_correlation.md)
+- [\[CVPR 2026\] Attack for Defense: Adversarial Agents for Point Prompt Optimization Empowering Segment Anything Model](../../CVPR2026/segmentation/attack_for_defense_adversarial_agents_for_point_prompt_optimization_empowering_s.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Multi-Marginal Flow Matching with Adversarially Learnt Interpolants
 description: >-
-  [ICLR 2026][Computational Biology][GAN] This paper uses a GAN-style adversarial loss to learn "neural interpolant curves," forcing the marginal distributions of the curves at intermediate time points to approximate the observed snapshot distributions (rather than passing through samples point-wise). These smooth interpolants are then marginalized into a vect
+  [ICLR 2026][Computational Biology][Multi-marginal flow matching] This paper uses a GAN-style adversarial loss to learn "neural interpolant curves," forcing the marginal distributions of the curves at intermediate time points to approximate the observed snapshot distributions (rather than passing through samples point-wise). These smooth interpolants are then marginalized into a vector field via Flow Matching to infer continuous dynamics from discrete time snapshots lacking gr…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - GAN
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Multi-marginal flow matching"
+  - "Adversarially learned interpolants"
+  - "GAN"
+  - "Single-cell trajectory inference"
+  - "Spatial transcriptomics"
+  - "Cell tracking"
 date: 2026-05-08
-content_hash: 5c955360cd2cf2ab
+content_hash: aea981b4c8f8b952
 ---
+
 # Multi-Marginal Flow Matching with Adversarially Learnt Interpolants
 
 **Conference**: ICLR 2026  

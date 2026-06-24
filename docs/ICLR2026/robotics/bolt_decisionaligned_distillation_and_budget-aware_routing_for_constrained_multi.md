@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BOLT: Decision‑Aligned Distillation and Budget-Aware Routing for Constrained Multimodal QA on Robots
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] BOLT decomposes "constrained multiple-choice QA on robots" into **option-level decision distillation** during training (aligning a 2B student directly with a 13B teacher's preferences over option sets) and **budget-aware routing** during inference (triggering expensive signals like high-resolution re-evaluation, retrie
+  [ICLR2026][Robotics][Decision-aligned Distillation] BOLT decomposes "constrained multiple-choice QA on robots" into **option-level decision distillation** during training (aligning a 2B student directly with a 13B teacher's preferences over option sets) and **budget-aware routing** during inference (triggering expensive signals like high-resolution re-evaluation, retrieval, or question decomposition only when cheap signals predict positive gains). Using a 2B student…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Decision-aligned Distillation"
+  - "Budget-aware Routing"
+  - "Constrained Decoding"
+  - "Compact VLM"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 5c62ad38b8316f32
+content_hash: 98ffde5312fb5999
 ---
+
 # BOLT: Decision‑Aligned Distillation and Budget-Aware Routing for Constrained Multimodal QA on Robots
 
 **Conference**: ICLR2026  
@@ -156,8 +162,8 @@ Gains are monotonic and approximately additive. In terms of efficiency, the 2B s
 ## Related Papers
 
 - [\[ICLR 2026\] VER: Vision Expert Transformer for Robot Learning via Foundation Distillation and Dynamic Routing](ver_vision_expert_transformer_for_robot_learning_via_foundation_distillation_and.md)
-- [\[ICLR 2026\] Accelerated co-design of robots through morphological pretraining](accelerated_co-design_of_robots_through_morphological_pretraining.md)
 - [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](../../NeurIPS2025/robotics/cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
+- [\[ICLR 2026\] Accelerated co-design of robots through morphological pretraining](accelerated_co-design_of_robots_through_morphological_pretraining.md)
 - [\[ICLR 2026\] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)
 - [\[ICLR 2026\] Difference-Aware Retrieval Policies for Imitation Learning](difference-aware_retrieval_policies_for_imitation_learning.md)
 

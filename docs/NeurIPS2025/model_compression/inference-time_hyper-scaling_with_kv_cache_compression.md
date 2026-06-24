@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inference-Time Hyper-Scaling with KV Cache Compression
 description: >-
-  [NeurIPS 2025][Model Compression][KV Cache Compression] This paper proposes the *Inference-Time Hyper-Scaling* paradigm: by efficiently compressing the KV cache…
+  [NeurIPS 2025][Model Compression][KV Cache Compression] This paper proposes the *Inference-Time Hyper-Scaling* paradigm: by efficiently compressing the KV cache, more or longer parallel reasoning sequences can be generated under the same compute/memory budget, substantially improving the accuracy of reasoning models on tasks such as mathematics, code, and scientific reasoning.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Memory Sparsification"
   - "Long-Sequence Reasoning"
 date: 2026-05-08
-content_hash: be0baa7559ea8da0
+content_hash: 9f53f5e4bd1abf40
 ---
 
 # Inference-Time Hyper-Scaling with KV Cache Compression
@@ -173,8 +173,8 @@ Mixed scaling (simultaneously increasing parallelism and sequence length) achiev
 
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
+- [\[ICML 2025\] RocketKV: Accelerating Long-Context LLM Inference via Two-Stage KV Cache Compression](../../ICML2025/model_compression/rocketkv_accelerating_long-context_llm_inference_via_two-stage_kv_cache_compress.md)
 - [\[NeurIPS 2025\] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference](ada-kv_optimizing_kv_cache_eviction_by_adaptive_budget_allocation_for_efficient_.md)
-- [\[NeurIPS 2025\] zip2zip: Inference-Time Adaptive Tokenization via Online Compression](zip2zip_inference-time_adaptive_tokenization_via_online_compression.md)
 - [\[NeurIPS 2025\] KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction](kvzip_query-agnostic_kv_cache_compression_with_context_reconstruction.md)
 
 </div>

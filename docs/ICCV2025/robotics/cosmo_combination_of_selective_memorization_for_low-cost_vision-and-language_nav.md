@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation
 description: >-
-  [ICCV 2025][Robotics][Vision-and-Language Navigation] This paper proposes COSMO, a low-cost VLN architecture combining selective memorization…
+  [ICCV 2025][Robotics][Vision-and-Language Navigation] This paper proposes COSMO, a low-cost VLN architecture combining selective memorization, which replaces the computationally expensive attention mechanisms in Transformers with two customized selective state space modules—Round Selective Scan (RSS, capturing global context in a single scan pass) and Cross-modal Selective State Space Module (CS3, dual-stream cross-modal interaction)—achieving navigation performance surpassin…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Hybrid Architecture"
   - "Low-cost Navigation"
 date: 2026-05-08
-content_hash: cc4098ea55cc861d
+content_hash: bf55b8403469d39b
 ---
 
 # COSMO: Combination of Selective Memorization for Low-cost Vision-and-Language Navigation
@@ -181,9 +181,9 @@ COSMO adopts a hybrid architecture philosophy: "SSMs handle selective memorizati
 
 - [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
 - [\[ICCV 2025\] Selective Contrastive Learning for Weakly Supervised Affordance Grounding](selective_contrastive_learning_for_weakly_supervised_affordance_grounding.md)
-- [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](../../CVPR2026/robotics/decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
 - [\[ICML 2026\] Neural Low-Discrepancy Sequences](../../ICML2026/robotics/neural_low-discrepancy_sequences.md)
-- [\[ICCV 2025\] DexVLG: Dexterous Vision-Language-Grasp Model at Scale](dexvlg_dexterous_vision-language-grasp_model_at_scale.md)
+- [\[ECCV 2024\] LLM as Copilot for Coarse-Grained Vision-and-Language Navigation](../../ECCV2024/robotics/llm_as_copilot_for_coarse-grained_vision-and-language_navigation.md)
+- [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](../../CVPR2026/robotics/trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] ProAct-VL enables VideoLLMs to autonomously decide **when to respond** and generate short-segment commentary under streaming input via a chunk-level I/O paradigm, a lightweight FLAG decision head, and transition-aware loss functions. It achieves ~1s low latency and strong proactivity—obtaining a TimeDiff of only 1.20s
+  [ICML 2026][Video Understanding][Video Large Language Model] ProAct-VL enables VideoLLMs to autonomously decide **when to respond** and generate short-segment commentary under streaming input via a chunk-level I/O paradigm, a lightweight FLAG decision head, and transition-aware loss functions. It achieves ~1s low latency and strong proactivity—obtaining a TimeDiff of only 1.20s and a trigger F1 of 63.25% in game commentary tasks, significantly outperforming offline models lik…
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Video Large Language Model"
+  - "Streaming Inference"
+  - "Proactive Response"
+  - "Real-Time Interaction"
+  - "Game Commentary"
 date: 2026-05-08
-content_hash: 4c28968b57dd430c
+content_hash: c62de09d908457c2
 ---
+
 # ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ CC = Win rate vs. Gemini 2.5 Pro; LiveU = Streaming segment quality; FinalQ = Ov
 
 ## Related Papers
 
+- [\[ICLR 2026\] RIVER: A Real-Time Interaction Benchmark for Video LLMs](../../ICLR2026/video_understanding/river_a_real-time_interaction_benchmark_for_video_llms.md)
 - [\[CVPR 2026\] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](../../CVPR2026/video_understanding/streamrag_enhancing_real-time_video_understanding_with_retrieval_augmentation.md)
 - [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](../../AAAI2026/video_understanding/uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
+- [\[ICLR 2026\] QueryStream: Advancing Streaming Video Understanding with Query-Aware Pruning and Proactive Response](../../ICLR2026/video_understanding/querystream_advancing_streaming_video_understanding_with_query-aware_pruning_and.md)
 - [\[ECCV 2024\] EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere](../../ECCV2024/video_understanding/egoposer_robust_real-time_egocentric_pose_estimation_from_sparse_and_intermitten.md)
-- [\[CVPR 2026\] Building a Precise Video Language with Human-AI Oversight](../../CVPR2026/video_understanding/building_a_precise_video_language_with_human-ai_oversight.md)
-- [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](../../CVPR2026/video_understanding/your_one-stop_solution_for_ai-generated_video_detection.md)
 
 </div>
 

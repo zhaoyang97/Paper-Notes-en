@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DINO-Foresight: Looking into the Future with DINO
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Future Prediction] This paper proposes DINO-Foresight, which forecasts future-frame feature evolution within the semantic feature space of a Vision Foundation Model (VFM). A self-superv…
+  [NeurIPS 2025][Autonomous Driving][Future Prediction] This paper proposes DINO-Foresight, which forecasts future-frame feature evolution within the semantic feature space of a Vision Foundation Model (VFM). A self-supervised Masked Feature Transformer predicts PCA-compressed representations of multi-layer DINOv2 features. Paired with plug-and-play task-specific heads, a single model simultaneously handles semantic segmentation, instance segmentation, depth estimation…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "Masked Feature Transformer"
   - "Self-Supervised Learning"
 date: 2026-05-08
-content_hash: 02fd99afbb687060
+content_hash: 2c1c6c86eca68a02
 ---
 
 # DINO-Foresight: Looking into the Future with DINO
@@ -174,7 +174,7 @@ Two-stage training achieves the best results, as the transformer can leverage la
 - [\[ICCV 2025\] Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics](../../ICCV2025/autonomous_driving/foresight_in_motion_reinforcing_trajectory_prediction_with_reward_heuristics.md)
 - [\[ICCV 2025\] Future-Aware Interaction Network For Motion Forecasting](../../ICCV2025/autonomous_driving/future-aware_interaction_network_for_motion_forecasting.md)
 - [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
+- [\[ICLR 2026\] OccDriver: Future Occupancy Guided Dual-branch Trajectory Planner in Autonomous Driving](../../ICLR2026/autonomous_driving/occdriver_future_occupancy_guided_dual-branch_trajectory_planner_in_autonomous_d.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion
 description: >-
-  [ICLR 2026][Object Detection][SAM2] This paper proposes a training-free few-shot object detection framework that combines three foundation models—UPN, SAM2, and DINOv2—to generate proposals and matching features. A graph diffusion algorithm is introduced to refine confidence scores and suppress fragmented proposals, significantly outperforming SOTA on Pa
+  [ICLR 2026][Object Detection][Few-Shot Object Detection] This paper proposes a training-free few-shot object detection framework that combines three foundation models—UPN, SAM2, and DINOv2—to generate proposals and matching features. A graph diffusion algorithm is introduced to refine confidence scores and suppress fragmented proposals, significantly outperforming SOTA on Pascal-5i and COCO-20i.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - SAM2
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Few-Shot Object Detection"
+  - "Vision Foundation Models"
+  - "Graph Diffusion"
+  - "Training-free"
+  - "SAM2"
 date: 2026-05-08
-content_hash: 8ace0f18fb9eca37
+content_hash: 3f80a54e2983382f
 ---
+
 # FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ Fully training-free. The UPN, SAM2, and DINOv2 components use pre-trained weight
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](../../CVPR2026/object_detection/anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 - [\[AAAI 2026\] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection](../../AAAI2026/object_detection/beyond_boundaries_leveraging_vision_foundation_models_for_so.md)
 - [\[ICLR 2026\] Dual Distillation for Few-Shot Anomaly Detection](dual_distillation_for_few-shot_anomaly_detection.md)
+- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
 - [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
-- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
 
 </div>
 

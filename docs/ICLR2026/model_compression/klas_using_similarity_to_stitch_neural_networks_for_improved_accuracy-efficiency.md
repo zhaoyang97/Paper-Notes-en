@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] KLAS: Using Similarity to Stitch Neural Networks for Improved Accuracy-Efficiency Tradeoffs
 description: >-
-  [ICLR 2026][Model Compression][model stitching] KLAS utilizes **KL divergence** to measure the similarity of intermediate representations in pretrained models, automatically selecting optimal "anchor + block pairs" from $O(k^2n^2)$ stitching configurations. It shifts the accuracy-efficiency curve of stitched networks upward at the same fine-tuning cost as baselines
+  [ICLR 2026][Model Compression][model stitching] KLAS utilizes **KL divergence** to measure the similarity of intermediate representations in pretrained models, automatically selecting optimal "anchor + block pairs" from $O(k^2n^2)$ stitching configurations. It shifts the accuracy-efficiency curve of stitched networks upward at the same fine-tuning cost as baselines (ImageNet-1K +1.21% top-1 at the same compute, or 1.33× FLOPs savings at the same accuracy).
 tags:
-  - ICLR 2026
-  - Model Compression
-  - model stitching
-  - KL divergence
-  - accuracy-efficiency tradeoff
-  - many-to-many NAS
-  - linear probe
+  - "ICLR 2026"
+  - "Model Compression"
+  - "model stitching"
+  - "KL divergence"
+  - "accuracy-efficiency tradeoff"
+  - "many-to-many NAS"
+  - "linear probe"
 date: 2026-05-08
-content_hash: 9f9b17158889f2e2
+content_hash: 4c863a2542165f8e
 ---
+
 # KLAS: Using Similarity to Stitch Neural Networks for Improved Accuracy-Efficiency Tradeoffs
 
 **Conference**: ICLR 2026  
@@ -140,8 +141,8 @@ Comparison of similarity metrics (Swin family, AUC, Tab.2): KLAS **0.8950** > SN
 - [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
 - [\[ICML 2026\] Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation](../../ICML2026/model_compression/partial_fusion_of_neural_networks_efficient_tradeoffs_between_ensembles_and_weig.md)
 - [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 - [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
-- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
 
 </div>
 

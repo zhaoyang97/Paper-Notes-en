@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Addressing the issue where existing evaluators fail to reliably score "realism" in generated videos, the authors manually re-annotated a dataset of 3,297 human-centric generated videos, VideoRealDataset (including three-step chain-of-thought rationales). This dataset was used to LoRA-finetune an evaluator, VideoRealEva
+  [CVPR 2026][Video Generation][Video realism evaluation] Addressing the issue where existing evaluators fail to reliably score "realism" in generated videos, the authors manually re-annotated a dataset of 3,297 human-centric generated videos, VideoRealDataset (including three-step chain-of-thought rationales). This dataset was used to LoRA-finetune an evaluator, VideoRealEval, which significantly outperforms general large models like Gemini-2.5-pro and InternVL3.5-241B…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video realism evaluation"
+  - "human-centric videos"
+  - "chain-of-thought evaluation"
+  - "MLLM evaluator"
+  - "human preference alignment"
 date: 2026-05-08
-content_hash: 6317624b83a692c5
+content_hash: 9614ffb3d76dd159
 ---
+
 # VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos
 
 **Conference**: CVPR 2026  
@@ -123,16 +129,16 @@ VideoRealEval leads significantly, outperforming Gemini-2.5-pro by approximately
 - **Value**: ⭐⭐⭐⭐ Highly practical for the iteration of human-centric generative models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
 - [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
-- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation](vga_bench_unified_benchmark_for_video_aesthetics_and_generation_quality.md)
 - [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
+- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][RLVR] To address the "zero-advantage trap" in GUI Reinforcement Learning—where all rollouts fail and advantages become zero when tasks are too difficult—GUI-SAGE prompts the model to explain "why this action is correct" given ground-truth actions. This generates in-distribution positive samples. An Entropy-Modulated Credit A
+  [CVPR 2026][Multimodal VLM][GUI Automation] To address the "zero-advantage trap" in GUI Reinforcement Learning—where all rollouts fail and advantages become zero when tasks are too difficult—GUI-SAGE prompts the model to explain "why this action is correct" given ground-truth actions. This generates in-distribution positive samples. An Entropy-Modulated Credit Assignment (EMCA) mechanism then amplifies or suppresses gradients based on prediction confidence…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RLVR
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "GUI Automation"
+  - "RLVR"
+  - "Self-Explanatory Learning"
+  - "Entropy-Modulated Credit Assignment"
+  - "Distribution Compatibility"
 date: 2026-05-08
-content_hash: a1756abc54ef1be5
+content_hash: 31eb4f536c0c8d1e
 ---
+
 # GUI-SAGE: Enhancing GUI Automation with Self-Explanatory Learning
 
 **Conference**: CVPR 2026  

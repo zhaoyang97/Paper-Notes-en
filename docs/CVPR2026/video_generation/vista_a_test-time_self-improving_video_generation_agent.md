@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VISTA: A Test-Time Self-Improving Video Generation Agent
 description: >-
-  [CVPR 2026][Video Generation][Multi-Agent] VISTA is a multi-agent system that iteratively improves text-to-video quality at test time through a "refine-critique" loop without updating model weights. It decomposes user intent into structured temporal scripts, selects the best video via a pairwise tournament, identifies deficiencies using a "jury" of visual/audio
+  [CVPR 2026][Video Generation][Text-to-Video] VISTA is a multi-agent system that iteratively improves text-to-video quality at test time through a "refine-critique" loop without updating model weights. It decomposes user intent into structured temporal scripts, selects the best video via a pairwise tournament, identifies deficiencies using a "jury" of visual/audio/context agents, and rewrites prompts using a reasoning agent. It achieves up to 60% pairwise win rate against SOTA…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Multi-Agent
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Test-time optimization"
+  - "Multi-agent"
+  - "Prompt optimization"
+  - "Self-improvement"
 date: 2026-05-08
-content_hash: 5f7ab420ee0b7174
+content_hash: 627f045b6a4bc008
 ---
+
 # VISTA: A Test-Time Self-Improving Video Generation Agent
 
 **Conference**: CVPR 2026  
@@ -146,9 +151,9 @@ Win rate relative to DP (Single-scene):
 
 ## Related Papers
 
+- [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
 - [\[CVPR 2026\] Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation](reasoning_diffusion_for_unpaired_test_time_out-of-distribution_text-image_to_vid.md)
 - [\[ICLR 2026\] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation](../../ICLR2026/video_generation/ttom_test-time_optimization_and_memorization_for_compositional_video_generation.md)
-- [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
 - [\[CVPR 2025\] One-Minute Video Generation with Test-Time Training](../../CVPR2025/video_generation/one-minute_video_generation_with_test-time_training.md)
 - [\[CVPR 2026\] Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](improving_motion_in_image-to-video_models_via_adaptive_low-pass_guidance.md)
 

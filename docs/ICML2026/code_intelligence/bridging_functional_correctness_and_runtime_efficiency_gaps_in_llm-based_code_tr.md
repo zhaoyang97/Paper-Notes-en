@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation
 description: >-
-  [ICML 2026][Code Intelligence][LLM-as-a-judge] Addressing the neglected problem where "LLM-translated code is functionally correct but slower than human-written code," this work proposes the SwiftTrans framework. It generates multi-perspective candidates using parallel ICL and selects the optimal candidate in linear time via a difference-aware pairwise judge using
+  [ICML 2026][Code Intelligence][Code Translation] Addressing the neglected problem where "LLM-translated code is functionally correct but slower than human-written code," this work proposes the SwiftTrans framework. It generates multi-perspective candidates using parallel ICL and selects the optimal candidate in linear time via a difference-aware pairwise judge using bubble-scan. Combined with Hierarchical Guidance and Ordinal Guidance training strategies…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - LLM-as-a-judge
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Code Translation"
+  - "Runtime Efficiency"
+  - "Parallel ICL"
+  - "LLM-as-a-judge"
+  - "Hierarchical Guidance"
 date: 2026-05-08
-content_hash: d25bf87be6ce65b8
+content_hash: 3a7c10f09feb5b38
 ---
+
 # Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation
 
 **Conference**: ICML 2026  
@@ -146,9 +151,9 @@ This quantifies the trade-off: any prompt-based attempt to inject efficiency sac
 ## Related Papers
 
 - [\[ICML 2026\] Towards Functional Correctness of Code Models with Selective Generation](towards_functional_correctness_of_large_code_models_with_selective_generation.md)
-- [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](../../ACL2026/code_intelligence/solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
 - [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
 - [\[ACL 2026\] Bootstrapping Code Translation with Weighted Multilanguage Exploration](../../ACL2026/code_intelligence/bootstrapping_code_translation_with_weighted_multilanguage_exploration.md)
+- [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](../../ACL2026/code_intelligence/solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
 - [\[ICML 2025\] Function-to-Style Guidance of LLMs for Code Translation](../../ICML2025/code_intelligence/function-to-style_guidance_of_llms_for_code_translation.md)
 
 </div>

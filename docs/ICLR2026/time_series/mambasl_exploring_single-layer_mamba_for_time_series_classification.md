@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Time Series][Mamba] By using only a **single-layer Mamba** and applying minimal modifications to the selective SSM and projection layers based on four TSC-specific hypotheses (H1–H4), this work re-evaluates 20 strong baselines across all 30 UEA datasets fairly, achieving a statistically significant SOTA.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Mamba
-  - UEA
+  - "ICLR 2026"
+  - "Time Series"
+  - "Mamba"
+  - "Selective SSM"
+  - "Time Series Classification"
+  - "UEA"
+  - "Single-layer Architecture"
 date: 2026-05-08
-content_hash: 4106ec9d333505ee
+content_hash: c099335dfb08fec1
 ---
+
 # MambaSL: Exploring Single-Layer Mamba for Time Series Classification
 
 **Conference**: ICLR 2026  

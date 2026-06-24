@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Beyond Euclidean Gossip: KL-Barycentric Consensus on Heterogeneous and Imbalanced Images
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] Addressing the collapse of fully decentralized training under non-i.i.d. data and imbalanced client scales, this paper replaces the "Euclidean gossip" operation (averaging model parameters between neighbors) with linear mixing in the expectation parameter space of exponential families. This approach happens to be equiv
+  [CVPR 2026][Decentralized Learning] Addressing the collapse of fully decentralized training under non-i.i.d. data and imbalanced client scales, this paper replaces the "Euclidean gossip" operation (averaging model parameters between neighbors) with linear mixing in the expectation parameter space of exponential families. This approach happens to be equivalent to a curvature-aware KL-Barycentric consensus (natural gradient step), reducing the per-round complexity from $O(d^3)$…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Decentralized Learning"
+  - "Variational Inference"
+  - "Natural Gradient"
+  - "KL-Barycenter"
+  - "Information Geometry"
 date: 2026-05-08
-content_hash: 6286f85bdf0575ca
+content_hash: e2b12cd2f400c12e
 ---
+
 # Beyond Euclidean Gossip: KL-Barycentric Consensus on Heterogeneous and Imbalanced Images
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,15 @@ When heterogeneity increases from $\alpha=1.0$ to $0.01$, Euclidean-Adam drops a
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/optimization/incentives_in_federated_learning_with_heterogeneous_agents.md)
-- [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](../../ICLR2026/optimization/learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
-- [\[ICLR 2026\] The Affine Divergence: Aligning Activation Updates Beyond Normalisation](../../ICLR2026/optimization/the_affine_divergence_aligning_activation_updates_beyond_normalisation.md)
-- [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](../../NeurIPS2025/optimization/unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
-- [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)
+- [\[NeurIPS 2025\] Johnson-Lindenstrauss Lemma Beyond Euclidean Geometry](../../NeurIPS2025/others/johnson-lindenstrauss_lemma_beyond_euclidean_geometry.md)
+- [\[CVPR 2026\] Consensus vs. Controversy: Mapping the Decision Space Where Architectures Diverge](consensus_vs_controversy_mapping_the_decision_space_where_architectures_diverge.md)
+- [\[CVPR 2026\] A Difference-in-Difference Approach to Detecting AI-Generated Images](a_difference-in-difference_approach_to_detecting_ai-generated_images.md)
+- [\[CVPR 2026\] ALLNet: Multi-task Dense Prediction for Degraded Images](allnet_multi-task_dense_prediction_for_degraded_images.md)
+- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
 
 </div>
 

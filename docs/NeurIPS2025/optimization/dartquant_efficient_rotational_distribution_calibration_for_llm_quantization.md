@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization
 description: >-
-  [NeurIPS 2025][Optimization][LLM quantization] DartQuant proposes a distribution-calibration-based rotation matrix optimization method that drives activation distributions toward uniformity via a Whip loss to reduce quan…
+  [NeurIPS 2025][Optimization][LLM quantization] DartQuant proposes a distribution-calibration-based rotation matrix optimization method that drives activation distributions toward uniformity via a Whip loss to reduce quantization error, and replaces expensive manifold optimizers with QR-Orth, achieving 47× speedup and 10× memory reduction on 70B models — enabling large-model rotation calibration on a single RTX 3090 for the first time.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "orthogonal optimization"
   - "post-training quantization"
 date: 2026-05-08
-content_hash: 91a46df1ed736904
+content_hash: 2bd035a3295e7d77
 ---
 
 # DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization
@@ -147,7 +147,7 @@ For the 70B model: only 0.91 GPU hr and 23.47 GiB are required, enabling calibra
 
 - [\[NeurIPS 2025\] OrthoGrad Improves Neural Calibration](orthograd_improves_neural_calibration.md)
 - [\[NeurIPS 2025\] FLUX: Efficient Descriptor-Driven Clustered Federated Learning under Arbitrary Distribution Shifts](flux_efficient_descriptor-driven_clustered_federated_learning_under_arbitrary_di.md)
-- [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](../../ICML2026/optimization/memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
+- [\[CVPR 2025\] Automatic Joint Structured Pruning and Quantization for Efficient Neural Network Training and Compression](../../CVPR2025/optimization/automatic_joint_structured_pruning_and_quantization_for_efficient_neural_network.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Experimentation with Noncompliance](efficient_adaptive_experimentation_with_noncompliance.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 

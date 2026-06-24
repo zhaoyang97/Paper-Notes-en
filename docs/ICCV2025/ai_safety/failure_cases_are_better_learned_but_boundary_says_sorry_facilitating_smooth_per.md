@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training
 description: >-
-  [ICCV 2025][AI Safety][adversarial training] This paper reveals a counterintuitive phenomenon in adversarial training — the model's perceptual change on failure cases is actually smaller than on success cases (i.e.…
+  [ICCV 2025][AI Safety][adversarial training] This paper reveals a counterintuitive phenomenon in adversarial training — the model's perceptual change on failure cases is actually smaller than on success cases (i.e., failure cases are "over-learned") — and proposes Robust Perception Adversarial Training (RPAT), which encourages perceptions to change smoothly with perturbations to alleviate the accuracy-robustness trade-off.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "decision boundary"
   - "robust perception"
 date: 2026-05-08
-content_hash: 99e20e40341a5b72
+content_hash: 141da52356753879
 ---
 
 # Failure Cases Are Better Learned But Boundary Says Sorry: Facilitating Smooth Perception Change for Accuracy-Robustness Trade-Off in Adversarial Training
@@ -140,11 +140,11 @@ Ablation experiments on the interpolation coefficient $\alpha$ and weight $\lamb
 
 ## Related Papers
 
-- [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
 - [\[AAAI 2026\] Breaking the Adversarial Robustness-Performance Trade-off in Text Classification via Manifold Purification](../../AAAI2026/ai_safety/breaking_the_adversarial_robustness-performance_trade-off_in_text_classification.md)
-- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](../../NeurIPS2025/ai_safety/distributional_adversarial_attacks_and_training_in_deep_hedging.md)
+- [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
 - [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](../../NeurIPS2025/ai_safety/mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
-- [\[NeurIPS 2025\] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](../../NeurIPS2025/ai_safety/bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)
+- [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](../../ICLR2026/ai_safety/nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
+- [\[NeurIPS 2025\] Distributional Adversarial Attacks and Training in Deep Hedging](../../NeurIPS2025/ai_safety/distributional_adversarial_attacks_and_training_in_deep_hedging.md)
 
 </div>
 

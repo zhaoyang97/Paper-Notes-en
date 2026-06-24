@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper proposes **Visual Information Gain (VIG)**—a visual dependency metric based on the log-ratio of perplexity between "with image vs. without image (proxied by a blurred image)." VIG quantifies "to what extent a data sample or a specific token depends on the image." Based on this, selective instruction tuning i
+  [ICML 2026][Multimodal VLM][Visual Information Gain] This paper proposes **Visual Information Gain (VIG)**—a visual dependency metric based on the log-ratio of perplexity between "with image vs. without image (proxied by a blurred image)." VIG quantifies "to what extent a data sample or a specific token depends on the image." Based on this, selective instruction tuning is performed: loss is computed only on high-VIG samples and tokens. This allows LLaVA-1.5-13B to outperform…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual Information Gain"
+  - "Selective Training"
+  - "Language Bias"
+  - "Token-level Loss Masking"
+  - "Data-efficient Instruction Tuning"
 date: 2026-05-08
-content_hash: a20ec058ae8d6878
+content_hash: 1515354b8b490cc8
 ---
+
 # Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain
 
 **Conference**: ICML 2026  
@@ -129,9 +135,9 @@ On the 13B model, using only **21%** of active tokens outperforms vanilla traini
 
 - [\[ICML 2026\] VEENA: Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow](interpreting_and_enhancing_emotional_circuits_in_large_vision-language_models_vi.md)
 - [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
 - [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](../../CVPR2026/multimodal_vlm/modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
-- [\[ICML 2026\] Vision Language Models 无法推理物理变换](vision_language_models_cannot_reason_about_physical_transformation.md)
+- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
 
 </div>
 

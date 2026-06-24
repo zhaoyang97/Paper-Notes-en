@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Learning of Deep State Space Models via Importance Smoothing
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper proposes Parallel Variational Monte Carlo (PVMC), which utilizes prefix/suffix associative scans to compute the importance-weighted marginal smoothing distributions of Deep State Space Models (DSSM) within an $\mathcal{O}(\log N \times \log T)$ span. Supporting both supervised state estimation and generative
+  [ICML 2026][Image Generation][Deep State Space Models] This paper proposes Parallel Variational Monte Carlo (PVMC), which utilizes prefix/suffix associative scans to compute the importance-weighted marginal smoothing distributions of Deep State Space Models (DSSM) within an $\mathcal{O}(\log N \times \log T)$ span. Supporting both supervised state estimation and generative modeling, it achieves approximately 10× speedup over the fastest differentiable SMC baselines while prov…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Deep State Space Models"
+  - "Sequential Monte Carlo"
+  - "Importance Smoothing"
+  - "Parallel prefix scan"
+  - "Variational Inference"
 date: 2026-05-08
-content_hash: 903ae53629d36a10
+content_hash: f3e6a390617cb6ae
 ---
+
 # Efficient Learning of Deep State Space Models via Importance Smoothing
 
 **Conference**: ICML 2026  
@@ -146,11 +152,11 @@ PVMC achieves convergence in all 20 runs with optimal metrics across the board; 
 
 ## Related Papers
 
-- [\[ICML 2025\] Importance Sampling for Nonlinear Models](../../ICML2025/image_generation/importance_sampling_for_nonlinear_models.md)
 - [\[CVPR 2026\] Smoothing the Score Function to Enhance Generalization in Diffusion Models](../../CVPR2026/image_generation/smoothing_the_score_function_to_enhance_generalization_in_diffusion_models.md)
-- [\[ICML 2026\] Spectral Guidance for Flexible and Efficient Control of Diffusion Models](spectral_guidance_for_flexible_and_efficient_control_of_diffusion_models.md)
+- [\[ICML 2025\] Importance Sampling for Nonlinear Models](../../ICML2025/image_generation/importance_sampling_for_nonlinear_models.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](../../ICLR2026/image_generation/inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[CVPR 2025\] SaMam: Style-aware State Space Model for Arbitrary Image Style Transfer](../../CVPR2025/image_generation/samam_style-aware_state_space_model_for_arbitrary_image_style_transfer.md)
-- [\[ICML 2026\] DynaDiff: Generative Adaptation of Dynamics to Environmental Shifts via Weight-space Diffusion](generative_adaptation_of_dynamics_to_environmental_shifts_via_weight-space_diffu.md)
+- [\[ICML 2026\] Spectral Guidance for Flexible and Efficient Control of Diffusion Models](spectral_guidance_for_flexible_and_efficient_control_of_diffusion_models.md)
 
 </div>
 

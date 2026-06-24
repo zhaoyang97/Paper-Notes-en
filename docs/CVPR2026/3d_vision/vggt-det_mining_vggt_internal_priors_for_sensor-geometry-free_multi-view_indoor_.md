@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][VGGT] Ours proposes VGGT-Det, the first multi-view indoor 3D object detection framework oriented towards sensor-geometry-free (SG-Free) input. By mining semantic priors (Attention-Guided query generation, AG) and geometric priors (Query-Driven feature aggregation, QD) inside the VGGT encoder, it outperforms the state-of-the-
+  [CVPR2026][3D Vision][Multi-view 3D object detection] Ours proposes VGGT-Det, the first multi-view indoor 3D object detection framework oriented towards sensor-geometry-free (SG-Free) input. By mining semantic priors (Attention-Guided query generation, AG) and geometric priors (Query-Driven feature aggregation, QD) inside the VGGT encoder, it outperforms the state-of-the-art methods by 4.4 and 8.6 mAP@0.25 on ScanNet and ARKitScenes, respectively.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VGGT
-  - Transformer
+  - "CVPR2026"
+  - "3D Vision"
+  - "Multi-view 3D object detection"
+  - "Indoor scene understanding"
+  - "Sensor-geometry-free"
+  - "VGGT"
+  - "Transformer"
 date: 2026-05-08
-content_hash: 95f6138b1726dd4d
+content_hash: 0b24ea908ed63d49
 ---
+
 # VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection
 
 **Conference**: CVPR2026  
@@ -163,9 +167,9 @@ Ours achieves more significant gains on ARKitScenes, with notable improvements i
 
 - [\[CVPR 2026\] VGGT-$\Omega$](vggt-ω.md)
 - [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
-- [\[CVPR 2025\] VGGT: Visual Geometry Grounded Transformer](../../CVPR2025/3d_vision/vggt_visual_geometry_grounded_transformer.md)
-- [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
 - [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[ICLR 2026\] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation](../../ICLR2026/3d_vision/page-4d_vggt-4d_perception_via_disentangled_pose_and_geometry_estimation.md)
+- [\[ICCV 2025\] Boosting Multi-View Indoor 3D Object Detection via Adaptive 3D Volume Construction](../../ICCV2025/3d_vision/boosting_multiview_indoor_3d_object_detection_via_adaptive_3.md)
 
 </div>
 

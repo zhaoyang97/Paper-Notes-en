@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] UnHype utilizes a hypernetwork with CLIP text embeddings as input to dynamically generate LoRA weights at inference time—generating LoRAs that suppress a concept when encountered while generating near-zero LoRAs for normal concepts. This transforms static unlearning (training one LoRA per concept) into amortized unlear
+  [ICML 2026][Image Generation][Machine Unlearning] UnHype utilizes a hypernetwork with CLIP text embeddings as input to dynamically generate LoRA weights at inference time—generating LoRAs that suppress a concept when encountered while generating near-zero LoRAs for normal concepts. This transforms static unlearning (training one LoRA per concept) into amortized unlearning (on-the-fly adapter generation), supporting both Stable Diffusion and Flux.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - LoRA
+  - "ICML 2026"
+  - "Image Generation"
+  - "Machine Unlearning"
+  - "Diffusion Models"
+  - "Hypernetworks"
+  - "LoRA"
+  - "CLIP Conditioning"
 date: 2026-05-08
-content_hash: 76363084e62d54b2
+content_hash: 2f792fdda0a565c4
 ---
+
 # UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning
 
 **Conference**: ICML 2026  
@@ -143,11 +147,11 @@ UnHype leads in erasure efficacy, synonym generalization, and the overall score 
 
 ## Related Papers
 
-- [\[CVPR 2026\] ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets](../../CVPR2026/image_generation/chimeralora_multi-head_lora-guided_synthetic_datasets.md)
-- [\[ICML 2026\] DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection](dgs-net_distillation-guided_gradient_surgery_for_clip_fine-tuning_in_ai-generate.md)
-- [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](../../CVPR2026/image_generation/bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
-- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
 - [\[ICLR 2026\] MOLM: Mixture of LoRA Markers](../../ICLR2026/image_generation/molm_mixture_of_lora_markers.md)
+- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[CVPR 2026\] ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets](../../CVPR2026/image_generation/chimeralora_multi-head_lora-guided_synthetic_datasets.md)
+- [\[ICLR 2026\] SketchEvo: Enhancing Sketch-Guided Image Generation with Dynamic Drawing Processes](../../ICLR2026/image_generation/sketchevo_leveraging_drawing_dynamics_for_enhanced_image_synthesis.md)
 
 </div>
 

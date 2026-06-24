@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning
 description: >-
-  [AAAI 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes the HUG paradigm, which leverages fine-grained Gaussian probabilistic embeddings and heterogeneous uncertainty estimation—distinguishing query-sid…
+  [AAAI 2026 Oral][Multimodal VLM][Composed Image Retrieval] This paper proposes the HUG paradigm, which leverages fine-grained Gaussian probabilistic embeddings and heterogeneous uncertainty estimation—distinguishing query-side multimodal coordination uncertainty from target-side content quality uncertainty—combined with dynamic weighted fusion and uncertainty-guided contrastive learning, achieving state-of-the-art performance on the Fashion-IQ and CIRR benchmarks.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multimodal VLM"
   - "Composed Image Retrieval"
   - "Uncertainty Modeling"
@@ -12,7 +12,7 @@ tags:
   - "Fine-Grained Matching"
   - "Gaussian Representation"
 date: 2026-05-08
-content_hash: 15f605ec93805a34
+content_hash: 55e9fb11015d689b
 ---
 
 # Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning
@@ -173,11 +173,11 @@ Key findings:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](../../CVPR2026/multimodal_vlm/adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 - [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](../../ACL2026/multimodal_vlm/tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](../../CVPR2026/multimodal_vlm/recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
-- [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](../../CVPR2026/multimodal_vlm/eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
-- [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
-- [\[AAAI 2026\] DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control](deig_detail-enhanced_instance_generation_with_fine-grained_semantic_control.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](../../CVPR2026/multimodal_vlm/language-driven_fine-grained_retrieval.md)
 
 </div>
 

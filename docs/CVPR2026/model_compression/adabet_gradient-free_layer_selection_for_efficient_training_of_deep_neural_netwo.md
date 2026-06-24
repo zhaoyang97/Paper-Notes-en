@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper proposes AdaBet, a gradient-free layer selection method based on algebraic topology (the first Betti number $b_1$). By calculating the topological complexity of the activation space of each layer through only a forward pass, it determines which layers require fine-tuning without the need for labels, gradient
+  [CVPR2026][Model Compression][Layer Selection] This paper proposes AdaBet, a gradient-free layer selection method based on algebraic topology (the first Betti number $b_1$). By calculating the topological complexity of the activation space of each layer through only a forward pass, it determines which layers require fine-tuning without the need for labels, gradients, or backpropagation. On ResNet50/VGG16/MobileNetV2/ViT-B16, AdaBet achieves higher accuracy than full training…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR2026"
+  - "Model Compression"
+  - "Layer Selection"
+  - "Betti Numbers"
+  - "Topological Data Analysis"
+  - "Gradient-free Fine-tuning"
+  - "Edge Devices"
+  - "Transfer Learning"
 date: 2026-05-08
-content_hash: 393ce59f53db8d55
+content_hash: 4565ff250ff62366
 ---
+
 # AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks
 
 **Conference**: CVPR2026  
@@ -154,11 +161,11 @@ The fine-tuning stage uses standard Cross-Entropy loss. Gradients are not backpr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](../../ICLR2026/model_compression/towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
+- [\[CVPR 2026\] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)
 - [\[ICML 2026\] SURGE: Surrogate Gradient Adaptation in Binary Neural Networks](../../ICML2026/model_compression/surge_surrogate_gradient_adaptation_in_binary_neural_networks.md)
-- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
-- [\[NeurIPS 2025\] QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks](../../NeurIPS2025/model_compression/quadenhancer_leveraging_quadratic_transformations_to_enhance_deep_neural_network.md)
-- [\[ICML 2025\] Efficient Logit-based Knowledge Distillation of Deep Spiking Neural Networks for Full-Range Timestep Deployment](../../ICML2025/model_compression/efficient_logit-based_knowledge_distillation_of_deep_spiking_neural_networks_for.md)
-- [\[ICML 2025\] FGFP: A Fractional Gaussian Filter and Pruning for Deep Neural Networks Compression](../../ICML2025/model_compression/fgfp_a_fractional_gaussian_filter_and_pruning_for_deep_neural_networks_compressi.md)
+- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](../../ICLR2026/model_compression/bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](../../ICLR2026/model_compression/robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 
 </div>
 

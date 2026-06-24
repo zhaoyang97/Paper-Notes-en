@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] The first systematic survey of Reinforcement Learning (RL) for LLMs under data scarcity, proposing a three-layer taxonomy: data-centric, training-centric, and framework-centric. It covers directions such as data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolut
+  [ACL 2026][Reinforcement Learning][Data Scarcity] The first systematic survey of Reinforcement Learning (RL) for LLMs under data scarcity, proposing a three-layer taxonomy: data-centric, training-centric, and framework-centric. It covers directions such as data pruning/synthesis/compression, trajectory generation/reward engineering/policy optimization, and self-evolution/co-evolution/multi-agent evolution.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Data Scarcity"
+  - "LLM Post-training"
+  - "Data Efficiency"
+  - "Survey"
 date: 2026-05-08
-content_hash: 76d53e9fcd779df3
+content_hash: f21b66dc58fc214c
 ---
+
 # A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions
 
 **Conference**: ACL 2026  
@@ -119,10 +124,10 @@ This is a survey paper and does not contain original experiments. However, it sy
 ## Related Papers
 
 - [\[ACL 2026\] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models](why_does_reinforcement_learning_generalize_a_feature-level_mechanistic_study_of_.md)
+- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](../../ICLR2026/reinforcement_learning/on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
+- [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](../../ICLR2026/reinforcement_learning/revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
+- [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](../../ICLR2026/reinforcement_learning/using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 - [\[ICLR 2026\] TROLL: Trust Regions improve Reinforcement Learning for Large Language Models](../../ICLR2026/reinforcement_learning/troll_trust_regions_improve_reinforcement_learning_for_large_language_models.md)
-- [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](../../ICLR2026/reinforcement_learning/robust_multi-objective_controlled_decoding_of_large_language_models.md)
-- [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](../../ICLR2026/reinforcement_learning/verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
-- [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](../../ICML2026/reinforcement_learning/can_large_language_models_generalize_procedures_across_representations.md)
 
 </div>
 

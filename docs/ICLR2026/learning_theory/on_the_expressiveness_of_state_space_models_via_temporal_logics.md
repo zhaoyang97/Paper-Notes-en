@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] On the Expressiveness of State Space Models via Temporal Logics
 description: >-
-  [ICLR 2026][learning_theory][State Space Model] This paper characterizes a hierarchy of expressivity lower bounds for State Space Models (SSMs) with different gating mechanisms (diagonal S6, time-invariant S4, mixed gating) and arithmetic precisions (fixed-width vs. logarithmic) using Pure Past Linear Temporal Logic over finite traces (PLTLf) and its counting/modula
+  [ICLR 2026][Learning Theory][Linear Temporal Logic] This paper characterizes a hierarchy of expressivity lower bounds for State Space Models (SSMs) with different gating mechanisms (diagonal S6, time-invariant S4, mixed gating) and arithmetic precisions (fixed-width vs. logarithmic) using Pure Past Linear Temporal Logic over finite traces (PLTLf) and its counting/modular extensions. It proves several hard inexpressibility results (e.g., fixed-width diagonal SSMs cannot recogn…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - State Space Model
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Expressivity"
+  - "State Space Models"
+  - "Linear Temporal Logic"
+  - "Expressivity Lower Bounds"
+  - "Arithmetic Precision"
+  - "Inexpressibility"
 date: 2026-05-08
-content_hash: 6400c577139fc9bc
+content_hash: c10afa39c1beeb5a
 ---
+
 # On the Expressiveness of State Space Models via Temporal Logics
 
 **Conference**: ICLR 2026  
@@ -121,11 +127,11 @@ This is a purely theoretical work with no training experiments. The core "data" 
 
 ## Related Papers
 
+- [\[ICLR 2026\] To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models](to_infinity_and_beyond_tool-use_unlocks_length_generalization_in_state_space_mod.md)
 - [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 - [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 - [\[ICLR 2026\] The Expressive Limits of Diagonal SSMs for State-Tracking](the_expressive_limits_of_diagonal_ssms_for_state-tracking.md)
-- [\[ICLR 2026\] Splat Regression Models](splat_regression_models.md)
-- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 
 </div>
 

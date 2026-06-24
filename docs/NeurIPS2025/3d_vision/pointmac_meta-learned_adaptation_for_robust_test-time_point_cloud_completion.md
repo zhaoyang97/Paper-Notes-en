@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion
 description: >-
-  [NeurIPS 2025][3D Vision][Point cloud completion] PointMAC is the first framework to introduce meta-auxiliary learning and test-time adaptation (TTA) into point cloud completion. It leverages Bi-Aux Units (random masked…
+  [NeurIPS 2025][3D Vision][Point cloud completion] PointMAC is the first framework to introduce meta-auxiliary learning and test-time adaptation (TTA) into point cloud completion. It leverages Bi-Aux Units (random masked reconstruction + denoising) as self-supervised signals, employs MAML to align auxiliary objectives with the primary task, and at inference updates only the shared encoder for sample-level refinement, achieving state-of-the-art performance on synthetic…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "MAML"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: ec117a27368d0081
+content_hash: eef64918be7867d6
 ---
 
 # PointMAC: Meta-Learned Adaptation for Robust Test-Time Point Cloud Completion
@@ -141,10 +141,10 @@ During training: the main branch performs point cloud completion, while Bi-Aux U
 ## Related Papers
 
 - [\[ICCV 2025\] 3D Test-time Adaptation via Graph Spectral Driven Point Shift](../../ICCV2025/3d_vision/3d_testtime_adaptation_via_graph_spectral_driven_point_shift.md)
-- [\[NeurIPS 2025\] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting](metags_a_meta-learned_gaussian-phong_model_for_out-of-distribution_3d_scene_reli.md)
 - [\[NeurIPS 2025\] Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion](novel_view_synthesis_from_a_few_glimpses_via_test-time_natural_video_completion.md)
-- [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](../../ICCV2025/3d_vision/revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
-- [\[NeurIPS 2025\] Reconstruct, Inpaint, Test-Time Finetune: Dynamic Novel-View Synthesis from Monocular Videos](reconstruct_inpaint_test-time_finetune_dynamic_novel-view_synthesis_from_monocul.md)
+- [\[CVPR 2026\] ELITE: Efficient Gaussian Head Avatar from a Monocular Video via Learned Initialization and Test-time Generative Adaptation](../../CVPR2026/3d_vision/elite_efficient_gaussian_head_avatar_from_a_monocular_video_via_learned_initiali.md)
+- [\[NeurIPS 2025\] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting](metags_a_meta-learned_gaussian-phong_model_for_out-of-distribution_3d_scene_reli.md)
+- [\[ECCV 2024\] CloudFixer: Test-Time Adaptation for 3D Point Clouds via Diffusion-Guided Geometric Transformation](../../ECCV2024/3d_vision/cloudfixer_test-time_adaptation_for_3d_point_clouds_via_diffusion-guided_geometr.md)
 
 </div>
 

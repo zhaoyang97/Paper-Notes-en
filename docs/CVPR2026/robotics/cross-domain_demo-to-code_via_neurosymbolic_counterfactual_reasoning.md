@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][video-instructed robotic programming] This paper proposes NeSyCR, a neurosymbolic counterfactual reasoning framework that abstracts video demonstrations into symbolic world models. By performing counterfactual state deduction to detect cross-domain incompatibilities and automatically correcting program steps, it achieves a 31.14% improvement in success rat
+  [CVPR2026][Robotics][video-instructed robotic programming] This paper proposes NeSyCR, a neurosymbolic counterfactual reasoning framework that abstracts video demonstrations into symbolic world models. By performing counterfactual state deduction to detect cross-domain incompatibilities and automatically correcting program steps, it achieves a 31.14% improvement in success rate over the strongest baseline, Statler, on cross-domain demo-to-code tasks.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - video-instructed robotic programming
-  - cross-domain adaptation
-  - neurosymbolic reasoning
-  - counterfactual reasoning
-  - code-as-policies
+  - "CVPR2026"
+  - "Robotics"
+  - "video-instructed robotic programming"
+  - "cross-domain adaptation"
+  - "neurosymbolic reasoning"
+  - "counterfactual reasoning"
+  - "code-as-policies"
 date: 2026-05-08
-content_hash: 5bb5249635d9d349
+content_hash: 8544e87b16278160
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # Cross-Domain Demo-to-Code via Neurosymbolic Counterfactual Reasoning
 
@@ -159,11 +160,11 @@ The symbolic world model had the most significant impact, proving that verifiabl
 
 ## Related Papers
 
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
-- [\[ICLR 2026\] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration](../../ICLR2026/robotics/one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo.md)
 - [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](../../NeurIPS2025/robotics/nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
+- [\[ICLR 2026\] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration](../../ICLR2026/robotics/one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo.md)
 - [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](../../ICML2026/robotics/turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
-- [\[CVPR 2026\] DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)
+- [\[ICML 2026\] Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents](../../ICML2026/robotics/functional_cache_grafting_robust_and_rapid_code-policy_synthesis_for_embodied_ag.md)
+- [\[ICML 2026\] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](../../ICML2026/robotics/decompose_and_recompose_reasoning_new_skills_from_existing_abilities_for_cross-t.md)
 
 </div>
 

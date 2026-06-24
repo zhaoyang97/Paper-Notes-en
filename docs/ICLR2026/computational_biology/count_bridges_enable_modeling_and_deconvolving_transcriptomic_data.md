@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Count Bridges enable Modeling and Deconvolving Transcriptomic Data
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Ours proposes Count Bridges—a stochastic bridge model defined on the integer lattice $\mathbb{Z}^d$ driven by Poisson birth-death processes, providing an exact analytically tractable counterpart of diffusion models for count data. By incorporating "aggregation-only" deconvolution into the same framework via EM, it achi
+  [ICLR2026][Computational Biology][Count data] Ours proposes Count Bridges—a stochastic bridge model defined on the integer lattice $\mathbb{Z}^d$ driven by Poisson birth-death processes, providing an exact analytically tractable counterpart of diffusion models for count data. By incorporating "aggregation-only" deconvolution into the same framework via EM, it achieves SOTA results in synthetic distribution matching, nucleotide-level deconvolution of bulk RNA-seq…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Count data"
+  - "Stochastic Bridges"
+  - "Poisson Birth-Death Process"
+  - "Deconvolution"
+  - "Single-cell Transcriptomics"
 date: 2026-05-08
-content_hash: 2a37f3bd03726713
+content_hash: 8244540139f58e2c
 ---
+
 # Count Bridges enable Modeling and Deconvolving Transcriptomic Data
 
 **Conference**: ICLR2026  

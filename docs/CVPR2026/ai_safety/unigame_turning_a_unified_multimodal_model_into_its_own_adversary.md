@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] UniGame proposes the first self-adversarial post-training framework for Unified Multimodal Models (UMM). By installing a lightweight perturber at the shared visual token interface, it enables the generation branch to actively create semantically consistent adversarial samples to challenge the understanding branch. This
+  [CVPR 2026][AI Safety][Unified Multimodal Model] UniGame proposes the first self-adversarial post-training framework for Unified Multimodal Models (UMM). By installing a lightweight perturber at the shared visual token interface, it enables the generation branch to actively create semantically consistent adversarial samples to challenge the understanding branch. This forms a min-max self-play that significantly improves consistency (+4.6%), understanding (+3.6%), generation…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Unified Multimodal Model"
+  - "Self-Adversarial Training"
+  - "Consistency"
+  - "Post-Training"
+  - "Min-max Optimization"
 date: 2026-05-08
-content_hash: 610e0ff2a863b854
+content_hash: 02794edb7dea3fe0
 ---
+
 # UniGame: Turning a Unified Multimodal Model Into Its Own Adversary
 
 **Conference**: CVPR 2026  
@@ -152,9 +158,9 @@ The overall process is a min-max optimization $\min_{\theta_U} \max_{\theta_C} (
 
 - [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
 - [\[CVPR 2026\] SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training](safelogo_turning_your_logos_into_jailbreak_shields_via_micro-regional_adversaria.md)
+- [\[ACL 2026\] UniVid: A Unified Vision-Language Model for Video Moderation](../../ACL2026/ai_safety/univid_unified_vision-language_model_for_video_moderation.md)
 - [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
 - [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
-- [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
 
 </div>
 

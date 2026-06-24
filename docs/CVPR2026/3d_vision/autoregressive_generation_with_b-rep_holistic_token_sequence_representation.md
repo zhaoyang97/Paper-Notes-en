@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AutoRegressive Generation with B-rep Holistic Token Sequence Representation
 description: >-
-  [CVPR 2026][Others][CAD] BrepARG encodes the geometry and topology of CAD Boundary Representation (B-rep) into a **unified token sequence** for the first time. This enables next-token autoregressive generation using a decoder-only Transformer. It achieves SOTA results on DeepCAD/ABC, with training completed in 1.2 days and inference for a sing
+  [CVPR 2026][3D Vision][B-rep Generation] BrepARG encodes the geometry and topology of CAD Boundary Representation (B-rep) into a **unified token sequence** for the first time. This enables next-token autoregressive generation using a decoder-only Transformer. It achieves SOTA results on DeepCAD/ABC, with training completed in 1.2 days and inference for a single model taking approximately 1.5 seconds on a single 4090.
 tags:
-  - CVPR 2026
-  - Others
-  - CAD
-  - VQ-VAE
+  - "CVPR 2026"
+  - "3D Vision"
+  - "B-rep Generation"
+  - "CAD"
+  - "Autoregressive Generation"
+  - "Token Serialization"
+  - "VQ-VAE"
 date: 2026-05-08
-content_hash: 7694c7e3386957d1
+content_hash: 68989ddfd9ff494e
 ---
+
 # AutoRegressive Generation with B-rep Holistic Token Sequence Representation
 
 **Conference**: CVPR 2026  
@@ -136,15 +140,16 @@ The "topology-aware sorting" is critical for validity (Table 4/5):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep](brepvgae_variational_graph_autoencoder_with_unified_latent_representation_for_b-.md)
-- [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
-- [\[CVPR 2026\] Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos](dynamics_language-based_representation_for_inferring_rigid-body_dynamics_from_vi.md)
-- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
-- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
+- [\[CVPR 2026\] HiFi-BRep: High-Fidelity Latent Representation for Robust B-Rep Generation](hifi-brep_high-fidelity_latent_representation_for_robust_b-rep_generation.md)
+- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
+- [\[CVPR 2026\] PP-Brep: Few-Shot B-rep Classification with Hybrid Graph Representation](pp-brep_few-shot_b-rep_classification_with_hybrid_graph_representation.md)
+- [\[CVPR 2026\] Repurposing 3D Generative Model for Autoregressive Layout Generation](repurposing_3d_generative_model_for_autoregressive_layout_generation.md)
 
 </div>
 

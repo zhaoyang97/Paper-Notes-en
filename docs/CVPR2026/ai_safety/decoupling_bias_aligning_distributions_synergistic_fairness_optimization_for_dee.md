@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address biases in Deepfake detectors across demographic groups (e.g., gender, race), this paper proposes a synergistic dual-mechanism framework: "Structural Fairness Decoupling + Global Distribution Alignment." It first prunes convolutional channels most sensitive to demographic attributes using a channel sensitivit
+  [CVPR 2026][AI Safety][Fairness optimization] To address biases in Deepfake detectors across demographic groups (e.g., gender, race), this paper proposes a synergistic dual-mechanism framework: "Structural Fairness Decoupling + Global Distribution Alignment." It first prunes convolutional channels most sensitive to demographic attributes using a channel sensitivity metric and then aligns the prediction distributions of subgroups to a global distribution via entropy-regularize…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Fairness optimization"
+  - "Deepfake detection"
+  - "Channel decoupling"
+  - "Distribution alignment"
+  - "Optimal transport"
 date: 2026-05-08
-content_hash: 165ff40c00b111d5
+content_hash: 9002bc139dc338fe
 ---
+
 # Decoupling Bias, Aligning Distributions: Synergistic Fairness Optimization for Deepfake Detection
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ Ours achieves the highest detection AUC (97.71). Fairness metrics lead in most c
 - Value: ⭐⭐⭐⭐ Directly addresses the fairness bottleneck in Deepfake detection deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
+- [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](../../ICML2026/ai_safety/prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
 - [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
 - [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
-- [\[CVPR 2026\] Omni-Fake: Benchmarking Unified Multimodal Social Media Deepfake Detection](omni-fake_benchmarking_unified_multimodal_social_media_deepfake_detection.md)
-- [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
+- [\[CVPR 2026\] Tutor-Student Reinforcement Learning: A Dynamic Curriculum for Robust Deepfake Detection](tutor-student_reinforcement_learning_a_dynamic_curriculum_for_robust_deepfake_de.md)
 
 </div>
 

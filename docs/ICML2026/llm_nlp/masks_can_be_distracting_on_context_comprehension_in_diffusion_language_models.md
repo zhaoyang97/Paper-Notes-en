@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This paper systematically reveals two overlooked defects of Masked Diffusion Language Models (MDLM): like autoregressive models, they exhibit a strong locality bias; furthermore, the mask tokens appended for parallel generation act as distractors that degrade context comprehension. The authors propose a mask-agnostic f
+  [ICML2026][LLM (Other)][Masked Diffusion Language Models] This paper systematically reveals two overlooked defects of Masked Diffusion Language Models (MDLM): like autoregressive models, they exhibit a strong locality bias; furthermore, the mask tokens appended for parallel generation act as distractors that degrade context comprehension. The authors propose a mask-agnostic fine-tuning loss that enforces prediction invariance to the number of mask tokens…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Masked Diffusion Language Models"
+  - "Context Comprehension"
+  - "Locality Bias"
+  - "Inverse Scaling"
+  - "Mask-Agnostic Fine-tuning"
 date: 2026-05-08
-content_hash: e84f7fa01ca9f567
+content_hash: fad61c5fa76222ed
 ---
+
 # Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models
 
 **Conference**: ICML2026  
@@ -135,11 +141,11 @@ Note that the "last 50 non-mask tokens" (immediately to the left of masks) have 
 
 ## Related Papers
 
-- [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
 - [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)
+- [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](../../ICLR2026/llm_nlp/constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
+- [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
 - [\[ACL 2025\] Uncertainty Unveiled: Can Exposure to More In-context Examples Mitigate Uncertainty for Large Language Models?](../../ACL2025/llm_nlp/uncertainty_unveiled_can_exposure_to_more_in-context_examples_mitigate_uncertain.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
 
 </div>
 

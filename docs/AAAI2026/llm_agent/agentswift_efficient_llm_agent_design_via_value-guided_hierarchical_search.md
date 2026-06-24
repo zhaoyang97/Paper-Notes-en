@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search
 description: >-
-  [AAAI 2026][LLM Agent][Automated Agent Design] This paper proposes AgentSwift, a framework that automatically discovers high-performance LLM agent designs through a hierarchical search space (jointly optimizing agentic w…
+  [AAAI 2026][LLM Agent][Automated Agent Design] This paper proposes AgentSwift, a framework that automatically discovers high-performance LLM agent designs through a hierarchical search space (jointly optimizing agentic workflows and functional components), a lightweight value model for predicting agent performance, and an uncertainty-guided MCTS search strategy, achieving an average improvement of 8.34% across 7 benchmarks.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Search Space"
   - "Functional Components"
 date: 2026-05-08
-content_hash: c5d8dcd4515778a7
+content_hash: 471955ec469805a5
 ---
 
 # AgentSwift: Efficient LLM Agent Design via Value-guided Hierarchical Search
@@ -155,10 +155,10 @@ Value model prediction quality comparison (Spearman correlation):
 ## Related Papers
 
 - [\[AAAI 2026\] Verification-Guided Context Optimization for Tool Calling via Hierarchical LLMs-as-editors](verification-guided_context_optimization_for_tool_calling_via_hierarchical_llms-.md)
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_agent_tool_planning_via_dual-feedback_monte_carlo_tree_se.md)
+- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
 - [\[ACL 2026\] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search](../../ACL2026/llm_agent/what_makes_an_llm_a_good_optimizer_a_trajectory_analysis_of_llm-guided_evolution.md)
 - [\[AAAI 2026\] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design](physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat.md)
-- [\[ACL 2026\] HiGMem: A Hierarchical and LLM-Guided Memory System for Long-Term Conversational Agents](../../ACL2026/llm_agent/higmem_a_hierarchical_and_llm-guided_memory_system_for_long-term_conversational_.md)
+- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
 
 </div>
 

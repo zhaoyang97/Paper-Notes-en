@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design
 description: >-
-  [ICML 2026][vlm_reasoning][Paper Note] This paper formalizes the issue of "VLMs lacking detail perception" as a Sequential Bayesian Optimal Experimental Design (S-BOED) problem and proposes FOVEA, a training-free module based on a computable proxy objective of "Coverage $\times$ Resolution," which consistently outperforms Direct and ReAct-style baselines on
+  [ICML 2026][VLM Reasoning][Perceptual Bandwidth Bottleneck] This paper formalizes the issue of "VLMs lacking detail perception" as a Sequential Bayesian Optimal Experimental Design (S-BOED) problem and proposes FOVEA, a training-free module based on a computable proxy objective of "Coverage $\times$ Resolution," which consistently outperforms Direct and ReAct-style baselines on high-resolution and remote sensing benchmarks.
 tags:
-  - ICML 2026
-  - vlm_reasoning
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Perceptual Bandwidth Bottleneck"
+  - "Bayesian Experimental Design"
+  - "Active Visual Reasoning"
+  - "High Resolution"
+  - "Training-free"
 date: 2026-05-08
-content_hash: eb9527a9d03b302d
+content_hash: 2858c9d97e00698a
 ---
+
 # The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design
 
 **Conference**: ICML 2026  
@@ -125,9 +131,9 @@ On 30B models, FOVEA improves ReAct from 75.1 to 77.7, approaching Gemini 2.5 Fl
 
 - [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
 - [\[NeurIPS 2025\] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments](../../NeurIPS2025/vlm_reasoning/physvlm-avr_active_visual_reasoning_for_multimodal_large_language_models_in_phys.md)
+- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](../../ICLR2026/vlm_reasoning/visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
 - [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](../../CVPR2026/vlm_reasoning/dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[CVPR 2026\] Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework](../../CVPR2026/vlm_reasoning/breaking_the_regional_perception_bottleneck_of_multimodal_large_language_models_.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](native_active_perception_as_reasoning_for_omni-modal_understanding.md)
 
 </div>
 

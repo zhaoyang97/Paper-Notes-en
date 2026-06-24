@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpectraLLM: Uncovering the Ability of LLMs for Molecular Structure Elucidation from Multi-Spectral Data
 description: >-
-  [ICLR 2026][Computational Biology][LoRA] SpectraLLM unifies heterogeneous spectral data (IR, Raman, UV-Vis, NMR, MS) into natural language prompts for a LoRA-finetuned Qwen3, enabling end-to-end autoregressive molecular SMILES generation. It significantly outperforms modality-specific baselines across four public benchmarks, demonstrating that predictive accu
+  [ICLR 2026][Computational Biology][Molecular Structure Elucidation] SpectraLLM unifies heterogeneous spectral data (IR, Raman, UV-Vis, NMR, MS) into natural language prompts for a LoRA-finetuned Qwen3, enabling end-to-end autoregressive molecular SMILES generation. It significantly outperforms modality-specific baselines across four public benchmarks, demonstrating that predictive accuracy increases with the number of joint spectral inputs.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - LoRA
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Structure Elucidation"
+  - "Multi-modal Spectra"
+  - "Large Language Models"
+  - "LoRA"
+  - "SMILES Generation"
 date: 2026-05-08
-content_hash: a39044231e71ce6a
+content_hash: 85754ecd231baf0d
 ---
+
 # SpectraLLM: Uncovering the Ability of LLMs for Molecular Structure Elucidation from Multi-Spectral Data
 
 **Conference**: ICLR 2026  
@@ -121,6 +126,7 @@ Evaluation of multimodal fusion strategies using the same model:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

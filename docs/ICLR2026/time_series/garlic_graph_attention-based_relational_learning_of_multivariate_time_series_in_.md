@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] GARLIC: Graph Attention-based Relational Learning of Multivariate Time Series in Intensive Care
 description: >-
-  [ICLR 2026][Time Series][Paper Note] GARLIC chains "exponential decay imputation + time-lagged signal graph message passing + cross-dimensional sequence attention" into an end-to-end pipeline. It not only achieves a new SOTA for ICU irregular multivariate time series prognosis but also provides endogenous explanations at the observation, signal, and edge
+  [ICLR 2026][Time Series][ICU Monitoring] GARLIC chains "exponential decay imputation + time-lagged signal graph message passing + cross-dimensional sequence attention" into an end-to-end pipeline. It not only achieves a new SOTA for ICU irregular multivariate time series prognosis but also provides endogenous explanations at the observation, signal, and edge levels using learned attention weights and graph edges.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "ICU Monitoring"
+  - "Irregular Sampling"
+  - "Missing Value Imputation"
+  - "Graph Attention"
+  - "Self-interpretable Models"
+  - "Time Series Classification"
 date: 2026-05-08
-content_hash: f9c965e06a99e81d
+content_hash: 0b7bdb5f265e45f3
 ---
+
 # GARLIC: Graph Attention-based Relational Learning of Multivariate Time Series in Intensive Care
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On The Expressive Power of GNN Derivatives
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper discovers that feeding high-order derivatives of a base MPNN with respect to input node features as additional structural features into a downstream GNN strictly enhances expressivity. The proposed HOD-GNN is theoretically aligned with the WL hierarchy and shown to be depth-equivalent to subgraph GNNs and Ra
+  [ICLR 2026][Graph Learning][GNN Expressivity] This paper discovers that feeding high-order derivatives of a base MPNN with respect to input node features as additional structural features into a downstream GNN strictly enhances expressivity. The proposed HOD-GNN is theoretically aligned with the WL hierarchy and shown to be depth-equivalent to subgraph GNNs and Random Walk Structural Encodings. By utilizing a differentiable message-passing-style derivative computation algorit…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN Expressivity"
+  - "Node Derivatives"
+  - "Weisfeiler-Lehman Hierarchy"
+  - "Subgraph GNNs"
+  - "Message Passing"
 date: 2026-05-08
-content_hash: c32a3b6e347df6a1
+content_hash: 19e238d55e37a4ea
 ---
+
 # On The Expressive Power of GNN Derivatives
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ On the Peptides large graph task (LRGB), while full subgraph GNNs often fail to 
 
 ## Related Papers
 
-- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
 - [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
+- [\[ICLR 2026\] GNN-as-Judge: Unleashing the Power of LLMs for Graph Learning with GNN Feedback](gnn-as-judge_unleashing_the_power_of_llms_for_graph_learning_with_gnn_feedback.md)
+- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
 - [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](exchangeability_of_gnn_representations_with_applications_to_graph_retrieval.md)
 - [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
-- [\[ICLR 2026\] On the Universality and Complexity of GNN for Solving Second-order Cone Programs](on_the_universality_and_complexity_of_gnn_for_solving_second-order_cone_programs.md)
 
 </div>
 

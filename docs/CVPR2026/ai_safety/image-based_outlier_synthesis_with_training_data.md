@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Image-based Outlier Synthesis With Training Data
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Without relying on external data, near-manifold virtual outliers are synthesized from training images by using "gradient attribution perturbation" to destroy invariant features while preserving environmental features. Through joint training with outlier exposure and z-score normalized features, the method provides a un
+  [CVPR 2026][AI Safety][Out-of-Distribution Detection] Without relying on external data, near-manifold virtual outliers are synthesized from training images by using "gradient attribution perturbation" to destroy invariant features while preserving environmental features. Through joint training with outlier exposure and z-score normalized features, the method provides a unified solution for spurious, fine-grained, and conventional OOD detection.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Out-of-Distribution Detection"
+  - "Virtual Outlier Synthesis"
+  - "Gradient Attribution"
+  - "Outlier Exposure"
+  - "z-score Normalization"
 date: 2026-05-08
-content_hash: 5e369116ed5ab79d
+content_hash: 65f0fca38fda3a0a
 ---
+
 # Image-based Outlier Synthesis With Training Data
 
 **Conference**: CVPR 2026  
@@ -142,10 +148,10 @@ On the SSB-Hard benchmark, ASCOOD achieves an AUROC of 83.91, surpassing DreamOO
 ## Related Papers
 
 - [\[ICML 2026\] Geometrically Constrained Outlier Synthesis](../../ICML2026/ai_safety/geometrically_constrained_outlier_synthesis.md)
-- [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
 - [\[CVPR 2026\] Editprint: General Digital Image Forensics via Editing Fingerprint with Self-Augmentation Training](editprint_general_digital_image_forensics_via_editing_fingerprint_with_self-augm.md)
+- [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
 - [\[CVPR 2026\] RAVEN: Erasing Invisible Watermarks via Novel View Synthesis](raven_erasing_invisible_watermarks_via_novel_view_synthesis.md)
-- [\[CVPR 2026\] PrivateEyes: Gaze-Preserving Anonymization for Data Sharing](privateeyes_gaze-preserving_anonymization_for_data_sharing.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](../../ICML2026/ai_safety/differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 
 </div>
 

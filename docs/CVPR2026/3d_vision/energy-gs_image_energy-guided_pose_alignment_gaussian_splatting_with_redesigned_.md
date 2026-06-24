@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Energy-GS utilizes only RGB images to simultaneously optimize 3D Gaussian Splatting scenes and inaccurate camera poses. By "freezing Gaussian positions," pose gradients are stabilized, and an image singular value energy decomposition is employed to simulate NeRF-like coarse-to-fine alignment. This approach achieves SOT
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Energy-GS utilizes only RGB images to simultaneously optimize 3D Gaussian Splatting scenes and inaccurate camera poses. By "freezing Gaussian positions," pose gradients are stabilized, and an image singular value energy decomposition is employed to simulate NeRF-like coarse-to-fine alignment. This approach achieves SOTA pose accuracy on synthetic and real datasets, with rendering quality on par with BARF/3R-GS.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Camera Pose Joint Optimization"
+  - "Pose Gradient Stability"
+  - "Image Energy Decomposition"
+  - "coarse-to-fine alignment"
 date: 2026-05-08
-content_hash: 6796a590e686e2dd
+content_hash: d99d6c6b181553a8
 ---
+
 # Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ The 1D toy task (Table 1) further validates the design: the "Original" config re
 
 ## Related Papers
 
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] Globally Optimal Pose from Orthographic Silhouettes](globally_optimal_pose_from_orthographic_silhouettes.md)
-- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
+- [\[CVPR 2026\] OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation](orienpose_orientation-guided_novel_view_synthesis_for_single-image_unseen_object.md)
 
 </div>
 

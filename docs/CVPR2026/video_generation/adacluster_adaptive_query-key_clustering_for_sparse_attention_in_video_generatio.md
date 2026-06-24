@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaCluster: Adaptive Query-Key Clustering for Sparse Attention in Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] AdaCluster is a training-free sparse attention framework that designs specific strategies for the distinct roles of queries and keys in video DiTs. It uses "angular clustering" to compress queries and "layer-wise adaptive multi-stage K-means" to cluster keys. Combined with TensorQuest, which identifies key clusters via
+  [CVPR 2026][Video Generation][Video DiT] AdaCluster is a training-free sparse attention framework that designs specific strategies for the distinct roles of queries and keys in video DiTs. It uses "angular clustering" to compress queries and "layer-wise adaptive multi-stage K-means" to cluster keys. Combined with TensorQuest, which identifies key clusters via Tensor Cores, it achieves 1.67×–4.31× end-to-end acceleration on CogVideoX-2B / HunyuanVideo / Wan-2.1 with nearly los…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video DiT"
+  - "Sparse Attention"
+  - "Token Clustering"
+  - "Training-free Acceleration"
+  - "Top-K Attention"
 date: 2026-05-08
-content_hash: 2cbbbc3979f4cd60
+content_hash: e51476e103704602
 ---
+
 # AdaCluster: Adaptive Query-Key Clustering for Sparse Attention in Video Generation
 
 **Conference**: CVPR 2026  
@@ -158,7 +164,7 @@ Based on HunyuanVideo 1280×720, 81 frames (75.6K tokens).
 - [\[CVPR 2026\] Free-Lunch Long Video Generation via Layer-Adaptive O.O.D Correction](free-lunch_long_video_generation_via_layer-adaptive_ood_correction.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[CVPR 2026\] Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](efficient_long-context_modeling_in_diffusion_language_models_via_block_approxima.md)
+- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
 
 </div>
 

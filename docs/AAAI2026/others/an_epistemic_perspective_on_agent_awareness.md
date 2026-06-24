@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Epistemic Perspective on Agent Awareness
 description: >-
-  [AAAI 2026][epistemic logic] This paper is the first to treat agent awareness as a form of knowledge, distinguishing two awareness modalities — de re (concerning physical objects) and de dicto (concerning concepts/descri…
+  [AAAI 2026][epistemic logic] This paper is the first to treat agent awareness as a form of knowledge, distinguishing two awareness modalities — de re (concerning physical objects) and de dicto (concerning concepts/descriptions) — and proposes a sound and complete logical system grounded in 2D semantics to characterize the interaction between these two modalities and the standard "factual knowledge" modality.
 tags:
   - "AAAI 2026"
   - "epistemic logic"
@@ -11,7 +11,7 @@ tags:
   - "2D semantics"
   - "completeness proof"
 date: 2026-05-08
-content_hash: d3aed0eb426fc82f
+content_hash: 53388cfdaf7b386a
 ---
 
 # An Epistemic Perspective on Agent Awareness

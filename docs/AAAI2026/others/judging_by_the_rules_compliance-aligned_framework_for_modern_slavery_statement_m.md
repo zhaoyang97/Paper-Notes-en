@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring
 description: >-
-  [AAAI 2026][Compliance Verification] This paper proposes a training framework centered on a Compliance-Aligned Judge (CA-Judge) that trains a 3B-parameter CALLM model using rule-level alignment feedback…
+  [AAAI 2026][Compliance Verification] This paper proposes a training framework centered on a Compliance-Aligned Judge (CA-Judge) that trains a 3B-parameter CALLM model using rule-level alignment feedback, enabling the generation of traceable compliance judgments grounded in statutory provisions. The model surpasses GPT-4o and DeepSeek-R1 on sentence-level compliance classification of modern slavery statements.
 tags:
   - "AAAI 2026"
   - "Compliance Verification"
@@ -11,7 +11,7 @@ tags:
   - "Rule Alignment"
   - "GRPO"
 date: 2026-05-08
-content_hash: 44d466c30fefdd77
+content_hash: e6d1e6029030a704
 ---
 
 # Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring
@@ -144,10 +144,10 @@ The framework consists of two stages: (1) **Key Rule Extraction**: translating e
 ## Related Papers
 
 - [\[AAAI 2026\] Expressive Temporal Specifications for Reward Monitoring](expressive_temporal_specifications_for_reward_monitoring.md)
-- [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
 - [\[AAAI 2026\] Automated Reproducibility Has a Problem Statement Problem](automated_reproducibility_has_a_problem_statement_problem.md)
+- [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
 - [\[AAAI 2026\] Bridging the Skills Gap: A Course Model for Modern Generative AI Education](bridging_the_skills_gap_a_course_model_for_modern_generative_ai_education.md)
-- [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
+- [\[ICML 2025\] Modern Methods in Associative Memory](../../ICML2025/others/modern_methods_in_associative_memory.md)
 
 </div>
 

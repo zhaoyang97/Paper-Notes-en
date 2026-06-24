@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] STVG-R1 reformulates the difficult frame-by-frame coordinate regression in spatial-temporal video grounding into an instance identification problem—"viewing numbered videos and answering target IDs + time segments." By training the VLM with GRPO and task-specific rewards, the model significantly improves spatial consis
+  [ICLR2026][VLM Reasoning][Spatial-Temporal Video Grounding] STVG-R1 reformulates the difficult frame-by-frame coordinate regression in spatial-temporal video grounding into an instance identification problem—"viewing numbered videos and answering target IDs + time segments." By training the VLM with GRPO and task-specific rewards, the model significantly improves spatial consistency and cross-task generalization on multiple benchmarks like HCSTVG, ST-Align, and MeViS.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Spatial-Temporal Video Grounding"
+  - "Instance-level Reasoning"
+  - "Visual Prompting"
+  - "GRPO"
+  - "Video Object Grounding"
 date: 2026-05-08
-content_hash: 58f6d23a13c12d9e
+content_hash: 79a7c1ba3ee05971
 ---
+
 # STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning
 
 **Conference**: ICLR2026  

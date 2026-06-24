@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] SelecTKD shifts the focus of LLM distillation from "what divergence to measure the teacher-student gap" to "on which tokens to apply supervision." Borrowing the "propose-verify" mechanism from speculative decoding, it assigns weights $\{0, \beta, 1\}$ to each token, applying full loss only on tokens where the teacher i
+  [CVPR 2026][Model Compression][Knowledge Distillation] SelecTKD shifts the focus of LLM distillation from "what divergence to measure the teacher-student gap" to "on which tokens to apply supervision." Borrowing the "propose-verify" mechanism from speculative decoding, it assigns weights $\{0, \beta, 1\}$ to each token, applying full loss only on tokens where the teacher is highly confident and consistent with the student. It achieves plug-and-play SOTA across instruction fol…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "token weighting"
+  - "speculative decoding"
+  - "implicit curriculum"
+  - "small language models"
 date: 2026-05-08
-content_hash: 4b1048e2bed0dc29
+content_hash: d873a8b401db88ef
 ---
+
 # SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs
 
 **Conference**: CVPR 2026  
@@ -132,11 +137,11 @@ Comparison with other token-selective methods on Evol-Instruct (Qwen2-7B-Inst �
 
 ## Related Papers
 
-- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution](../../ICLR2026/model_compression/amid_knowledge_distillation_for_llms_with_α-mixture_assistant_distribution.md)
 - [\[CVPR 2026\] Streamlined Knowledge Distillation](streamlined_knowledge_distillation.md)
-- [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
-- [\[ACL 2025\] Sparse Logit Sampling: Accelerating Knowledge Distillation in LLMs](../../ACL2025/model_compression/sparse_logit_sampling_accelerating_knowledge_distillation_in_llms.md)
-- [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](../../NeurIPS2025/model_compression/few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
+- [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../../ICLR2026/model_compression/exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
+- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with $\alpha$-mixture Assistant Distribution](../../ICLR2026/model_compression/amid_knowledge_distillation_for_llms_with_alpha-mixture_assistant_distribution.md)
+- [\[NeurIPS 2025\] A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone](../../NeurIPS2025/model_compression/a_token_is_worth_over_1000_tokens_efficient_knowledge_distillation_through_low-r.md)
+- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](qkd_quantum_gated_incremental_learning.md)
 
 </div>
 

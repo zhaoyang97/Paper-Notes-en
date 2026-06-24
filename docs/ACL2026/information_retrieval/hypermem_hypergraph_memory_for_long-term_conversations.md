@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HyperMem: Hypergraph Memory for Long-Term Conversations
 description: >-
-  [ACL 2026][Information Retrieval & RAG][LoCoMo] HyperMem replaces pairwise edges in traditional RAG with "hyperedges" (edges connecting $\ge 3$ nodes), organizing long-term conversation memory into a "Topic → Episode → Fact" structure. By combining coarse-to-fine retrieval with hypergraph embedding propagation, it solves retrieval fragmentation caused by multi-episo
+  [ACL 2026][Information Retrieval & RAG][Hypergraph Memory] HyperMem replaces pairwise edges in traditional RAG with "hyperedges" (edges connecting $\ge 3$ nodes), organizing long-term conversation memory into a "Topic → Episode → Fact" structure. By combining coarse-to-fine retrieval with hypergraph embedding propagation, it solves retrieval fragmentation caused by multi-episode cross-temporal dependencies, achieving a 92.73% LLM-as-judge accuracy on the LoCoMo benchmark (com…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - LoCoMo
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Hypergraph Memory"
+  - "Three-Layer Architecture"
+  - "High-Order Correlation"
+  - "Coarse-to-Fine Retrieval"
+  - "LoCoMo"
 date: 2026-05-08
-content_hash: 6c43e2415e065dff
+content_hash: 3c37334b1415863b
 ---
+
 # HyperMem: Hypergraph Memory for Long-Term Conversations
 
 **Conference**: ACL 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Burden of Interactive Alignment with Inconsistent Preferences
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][interactive alignment] This paper models user interactions with engagement-driven algorithms as a multi-leader single-follower Stackelberg game…
+  [NeurIPS 2025][Reinforcement Learning][interactive alignment] This paper models user interactions with engagement-driven algorithms as a multi-leader single-follower Stackelberg game, establishing a critical planning-horizon threshold: users whose effective horizon exceeds this threshold can align the algorithm to their interests, while those below it are instead aligned to the algorithm's objectives. The paper further demonstrates that introducing low-cost signals (e.g.…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "engagement optimization"
   - "costly signaling"
 date: 2026-05-08
-content_hash: 2a8f62bb325b027b
+content_hash: fbc2c9b4503615a2
 ---
 
 # The Burden of Interactive Alignment with Inconsistent Preferences
@@ -177,9 +177,9 @@ Core theoretical results:
 
 - [\[NeurIPS 2025\] Interactive and Hybrid Imitation Learning: Provably Beating Behavior Cloning](interactive_and_hybrid_imitation_learning_provably_beating_behavior_cloning.md)
 - [\[NeurIPS 2025\] Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment](teaching_language_models_to_evolve_with_users_dynamic_profile_modeling_for_perso.md)
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](../../ICLR2026/reinforcement_learning/group_verification-based_policy_optimization_for_interactive_coding_agents.md)
+- [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](../../ICLR2026/reinforcement_learning/toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
 - [\[ICML 2026\] From Reward-Free Representations to Preferences: Rethinking Offline Preference-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/from_reward-free_representations_to_preferences_rethinking_offline_preference-ba.md)
-- [\[ICLR 2026\] Reasoning Boosts Opinion Alignment in LLMs](../../ICLR2026/reinforcement_learning/reasoning_boosts_opinion_alignment_in_llms.md)
-- [\[ICLR 2026\] Menlo: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages](../../ICLR2026/reinforcement_learning/menlo_from_preferences_to_proficiency_--_evaluating_and_modeling_native-like_qua.md)
 
 </div>
 

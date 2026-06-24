@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] LaySelFL is a stealthy backdoor attack designed for Federated Learning (FL). It evaluates the "sensitivity" of each layer to the backdoor goal, poisons only a few most sensitive layers, uses a constraint loss to pull the poisoned layers closer to the server model, and performs element-wise clipping on the remaining nor
+  [CVPR 2026][AI Safety][Federated Learning] LaySelFL is a stealthy backdoor attack designed for Federated Learning (FL). It evaluates the "sensitivity" of each layer to the backdoor goal, poisons only a few most sensitive layers, uses a constraint loss to pull the poisoned layers closer to the server model, and performs element-wise clipping on the remaining normal layers. This approach eliminates the distance difference between the backdoor model and clean models…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Backdoor Attack"
+  - "Stealthy Attack"
+  - "Layer Sensitivity"
+  - "Distance Defense Bypass"
 date: 2026-05-08
-content_hash: 6746e70638a61873
+content_hash: 741e7c786fea664d
 ---
+
 # Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models
 
 **Conference**: CVPR 2026  
@@ -143,8 +149,8 @@ Key Insight: SLI+TC without CT achieves **higher** ASR under many similarity def
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Batman: Benign Knowledge Alignment Through Malicious Null Space in Federated Backdoor Attack](batman_benign_knowledge_alignment_through_malicious_null_space_in_federated_back.md)
 - [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 - [\[CVPR 2026\] Logit-Margin Repulsion for Backdoor Defense](logit-margin_repulsion_for_backdoor_defense.md)
+- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 
 </div>
 

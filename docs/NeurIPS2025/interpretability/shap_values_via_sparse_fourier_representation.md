@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SHAP Values via Sparse Fourier Representation
 description: >-
-  [NeurIPS 2025][Interpretability][SHAP values] This paper proposes FourierShap, an algorithm that first approximates a black-box predictor as a sparse Fourier representation and then leverages closed-form SHAP value formu…
+  [NeurIPS 2025][Interpretability][SHAP values] This paper proposes FourierShap, an algorithm that first approximates a black-box predictor as a sparse Fourier representation and then leverages closed-form SHAP value formulas for Fourier basis functions to efficiently compute feature attributions, achieving 10–10,000× speedups over KernelShap while supporting a tunable accuracy–efficiency trade-off.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "feature attribution"
   - "accelerated computation"
 date: 2026-05-08
-content_hash: 7cf2e4fe2c82cbda
+content_hash: f9fecee6b1107c3a
 ---
 
 # SHAP Values via Sparse Fourier Representation
@@ -141,11 +141,11 @@ For tree models, FourierShap also achieves order-of-magnitude speedups with resu
 
 ## Related Papers
 
-- [\[ICML 2026\] Verified SHAP: Provable Bounds for Exact Shapley Values in Neural Networks](../../ICML2026/interpretability/verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
-- [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
+- [\[ICML 2026\] Verified SHAP: Provable Bounds for Precise Shapley Values in Neural Networks](../../ICML2026/interpretability/verified_shap_provable_bounds_for_exact_shapley_values_of_neural_networks.md)
 - [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)
-- [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
-- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
+- [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
+- [\[ICLR 2026\] Joint Distribution–Informed Shapley Values for Sparse Counterfactual Explanations](../../ICLR2026/interpretability/joint_distributioninformed_shapley_values_for_sparse_counterfactual_explanations.md)
+- [\[NeurIPS 2025\] From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit](from_flat_to_hierarchical_extracting_sparse_representations_with_matching_pursui.md)
 
 </div>
 

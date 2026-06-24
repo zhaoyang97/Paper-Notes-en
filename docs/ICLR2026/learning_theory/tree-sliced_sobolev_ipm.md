@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Tree-sliced Sobolev IPM
 description: >-
-  [ICLR 2026][learning_theory][Sobolev IPM] This paper replaces the 1-Wasserstein—which only has a closed-form solution for $p=1$—within the Tree-Sliced Wasserstein (TSW) kernel with a "regularized Sobolev IPM solvable in closed-form on trees." This yields TS-Sobolev: a family of tree-sliced metrics efficiently computable for any order $p \ge 1$. When $p=1$, it
+  [ICLR 2026][Optimal Transport][Integral Probability Metrics] This paper replaces the 1-Wasserstein—which only has a closed-form solution for $p=1$—within the Tree-Sliced Wasserstein (TSW) kernel with a "regularized Sobolev IPM solvable in closed-form on trees." This yields TS-Sobolev: a family of tree-sliced metrics efficiently computable for any order $p \ge 1$. When $p=1$, it reduces exactly to TSW; for $p>1$, its computational complexity remains identical to $p=1$ TSW. It…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Sobolev IPM
-  - Tree-Sliced Wasserstein
+  - "ICLR 2026"
+  - "Optimal Transport"
+  - "Probability Metrics"
+  - "Representation Learning"
+  - "Integral Probability Metrics"
+  - "Sobolev IPM"
+  - "Tree-Sliced Wasserstein"
+  - "High-order Optimal Transport"
+  - "Spherical Distributions"
 date: 2026-05-08
-content_hash: eb6998495dc52521
+content_hash: 14a23ef5e7d4f13c
 ---
+
 # Tree-sliced Sobolev IPM
 
 **Conference**: ICLR 2026  

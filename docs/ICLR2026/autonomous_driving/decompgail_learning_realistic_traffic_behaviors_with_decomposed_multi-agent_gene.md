@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DecompGAIL: Learning Realistic Traffic Behaviors with Decomposed Multi-Agent Generative Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Autonomous Driving][WOMD Sim Agents] Addressing the training instability of multi-agent GAIL in traffic simulation, this paper identifies "irrelevant interaction misguidance" (where the discriminator is misled by neighbor-neighbor interactions weakly related to ego actions) as the root cause. It proposes DecompGAIL, which explicitly decomposes realism int
+  [ICLR 2026][Autonomous Driving][Traffic behavior simulation] Addressing the training instability of multi-agent GAIL in traffic simulation, this paper identifies "irrelevant interaction misguidance" (where the discriminator is misled by neighbor-neighbor interactions weakly related to ego actions) as the root cause. It proposes DecompGAIL, which explicitly decomposes realism into "ego-map" and "ego-neighbor" components alongside distance-weighted social rewards…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - WOMD Sim Agents
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Traffic behavior simulation"
+  - "Multi-agent GAIL"
+  - "Discriminator decomposition"
+  - "Social PPO"
+  - "WOMD Sim Agents"
 date: 2026-05-08
-content_hash: 24cdbb69dfbd5dcf
+content_hash: 40dfa8fdcf91cdcd
 ---
+
 # DecompGAIL: Learning Realistic Traffic Behaviors with Decomposed Multi-Agent Generative Adversarial Imitation Learning
 
 **Conference**: ICLR 2026  
@@ -140,10 +145,20 @@ Ablation on WOSAC 2% validation set:
 - Value: ⭐⭐⭐⭐ (Directly improves traffic simulation realism for AD testing with a transferable logic)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](../../CVPR2026/autonomous_driving/rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
+- [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
+- [\[ICLR 2026\] Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization](map_as_a_prompt_learning_multi-modal_spatial-signal_foundation_models_for_cross-.md)
+- [\[ICLR 2026\] EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](egodex_learning_dexterous_manipulation_from_large-scale_egocentric_video.md)
+- [\[CVPR 2026\] Beyond Rule-Based Agents: Active Markov Games for Realistic Multi-Agent Interaction in Autonomous Driving](../../CVPR2026/autonomous_driving/beyond_rule-based_agents_active_markov_games_for_realistic_multi-agent_interacti.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](../../CVPR2026/autonomous_driving/rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)

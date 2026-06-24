@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] HYPER is the first foundation model for link prediction on knowledge hypergraphs. By encoding "positional interactions between relations" into transferable base relations, the model achieves zero-shot generalization to hypergraphs containing entirely new entities, new relations, and arbitrary arities.
+  [ICLR 2026][Graph Learning][Knowledge Hypergraphs] HYPER is the first foundation model for link prediction on knowledge hypergraphs. By encoding "positional interactions between relations" into transferable base relations, the model achieves zero-shot generalization to hypergraphs containing entirely new entities, new relations, and arbitrary arities.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Knowledge Hypergraphs"
+  - "Inductive Link Prediction"
+  - "Foundation Models"
+  - "Arbitrary-arity Relations"
+  - "Positional Interaction Encoding"
+  - "Conditional Message Passing"
 date: 2026-05-08
-content_hash: 40d53d9dd3da977e
+content_hash: 4ef206f25fd54c71
 ---
+
 # HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs
 
 **Conference**: ICLR 2026  

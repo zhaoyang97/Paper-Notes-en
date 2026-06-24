@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][anti-personalized diffusion model] This paper proposes the Anti-Personalized Diffusion Model (APDM), which for the first time shifts privacy protection from the data level (image perturba…
+  [NeurIPS 2025][Image Generation][anti-personalized diffusion model] This paper proposes the Anti-Personalized Diffusion Model (APDM), which for the first time shifts privacy protection from the data level (image perturbation) to the model level (parameter update). Through a Direct Protective Optimization (DPO) loss and a Learning to Protect (L2P) dual-path optimization strategy, APDM robustly prevents diffusion models from personalizing to specific subjects while preserving t…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "model-level defense"
   - "dual-path optimization"
 date: 2026-05-08
-content_hash: ce09cc0b750cee06
+content_hash: 2a0d0a249482597d
 ---
 
 # Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models
@@ -58,17 +58,17 @@ APDM directly updates the parameters of a pre-trained diffusion model $\theta \t
    **Proposition 1**: A necessary condition for $\mathcal{L}_{adv}$ to converge to a local minimum is that $\nabla_\theta \mathcal{L}_{simple}^{per}$ and $\nabla_\theta \mathcal{L}_{ppl}$ are aligned in direction.
 
    However, a first-order Taylor expansion analysis yields a contradictory requirement:
-   $$|\nabla_\theta \mathcal{L}_{simple}^{per}| < |\nabla_\theta \mathcal{L}_{ppl}| \text{ and } |\nabla_\theta \mathcal{L}_{ppl}| < |\nabla_\theta \mathcal{L}_{simple}^{per}|$$
+    $|\nabla_\theta \mathcal{L}_{simple}^{per}| < |\nabla_\theta \mathcal{L}_{ppl}| \text{ and } |\nabla_\theta \mathcal{L}_{ppl}| < |\nabla_\theta \mathcal{L}_{simple}^{per}|$
 
    **Theorem 1**: The two gradient norms cannot simultaneously satisfy the condition of each being smaller than the other; therefore, $\mathcal{L}_{adv}$ cannot effectively converge. This impossibility result directly motivates the design of a new loss function.
 
 2. **Direct Protective Optimization (DPO) Loss**
 
    Inspired by preference optimization, each protected image $x_0^-$ (negative sample) is paired with a positive sample $x_0^+$ generated from a general category. A preference probability is constructed based on the Bradley-Terry model:
-   $$p(x_0^+ > x_0^-) = \sigma(r(x_0^+) - r(x_0^-))$$
+    $p(x_0^+ > x_0^-) = \sigma(r(x_0^+) - r(x_0^-))$
 
    The DPO loss is defined as:
-   $$\mathcal{L}_{DPO} = -\mathbb{E} \log \sigma(-\beta(r^+ - r^-))$$
+    $\mathcal{L}_{DPO} = -\mathbb{E} \log \sigma(-\beta(r^+ - r^-))$
 
    where $r^+ = \|\epsilon_\theta(x_t^+, t, c) - \epsilon\|_2^2 - \|\epsilon_\phi(x_t^+, t, c) - \epsilon\|_2^2$, with $r^-$ defined analogously. Here $\phi$ denotes the frozen pre-trained model and $\beta$ controls the degree of deviation.
 
@@ -80,8 +80,8 @@ APDM directly updates the parameters of a pre-trained diffusion model $\theta \t
 
    Since personalization is an iterative process, static protection is insufficiently robust. L2P alternates between two paths to simulate future personalization trajectories and adaptively strengthen protection:
 
-   - **Personalization path**: Starting from the current protected state $\theta_j$, simulate $N_{per}$ personalization steps: $\theta'_{i+1} = \theta'_i - \gamma_{per}\nabla_{\theta'_i}\mathcal{L}_{per}$
-   - **Protection path**: Compute the protection gradient $\nabla_i = \nabla_{\theta'_i}\mathcal{L}_{protect}$ at each intermediate state $\theta'_i$, then accumulate and apply the update: $\theta_{j+1} = \theta_j - \gamma_{protect}\sum_{i=1}^{N_{per}}\nabla_i$
+    - **Personalization path**: Starting from the current protected state $\theta_j$, simulate $N_{per}$ personalization steps: $\theta'_{i+1} = \theta'_i - \gamma_{per}\nabla_{\theta'_i}\mathcal{L}_{per}$
+    - **Protection path**: Compute the protection gradient $\nabla_i = \nabla_{\theta'_i}\mathcal{L}_{protect}$ at each intermediate state $\theta'_i$, then accumulate and apply the update: $\theta_{j+1} = \theta_j - \gamma_{protect}\sum_{i=1}^{N_{per}}\nabla_i$
 
    This procedure is repeated $N_{protect}$ times to obtain the final protected model $\hat{\theta}$. Motivation: L2P enables protection to "anticipate" the trajectory of personalization, achieving trajectory-aware adaptive defense.
 
@@ -164,9 +164,9 @@ APDM achieves a DINO score of only 0.1167 (vs. the best baseline of 0.4411), eve
 
 - [\[ICCV 2025\] Anti-Tamper Protection for Unauthorized Individual Image Generation](../../ICCV2025/image_generation/anti-tamper_protection_for_unauthorized_individual_image_generation.md)
 - [\[NeurIPS 2025\] Where and How to Perturb: On the Design of Perturbation Guidance in Diffusion and Flow Models](where_and_how_to_perturb_on_the_design_of_perturbation_guidance_in_diffusion_and.md)
+- [\[CVPR 2025\] Enhancing Facial Privacy Protection via Weakening Diffusion Purification](../../CVPR2025/image_generation/enhancing_facial_privacy_protection_via_weakening_diffusion_purification.md)
+- [\[CVPR 2025\] Nearly Zero-Cost Protection Against Mimicry by Personalized Diffusion Models](../../CVPR2025/image_generation/nearly_zero-cost_protection_against_mimicry_by_personalized_diffusion_models.md)
 - [\[NeurIPS 2025\] StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models](stableguard_towards_unified_copyright_protection_and_tamper_localization_in_late.md)
-- [\[NeurIPS 2025\] Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models](blameless_users_in_a_clean_room_defining_copyright_protection_for_generative_mod.md)
-- [\[NeurIPS 2025\] ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation](obclip_oblivious_cloud-device_hybrid_image_generation_with_privacy_preservation.md)
 
 </div>
 

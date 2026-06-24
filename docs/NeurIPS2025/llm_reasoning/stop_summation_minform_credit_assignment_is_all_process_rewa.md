@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] PURE identifies the root cause of reward hacking induced by PRMs as the standard sum-form credit assignment in RL ($V(s) = \sum \gamma^t r_t$)…
+  [NeurIPS 2025][Reasoning][Process Reward Model] PURE identifies the root cause of reward hacking induced by PRMs as the standard sum-form credit assignment in RL ($V(s) = \sum \gamma^t r_t$), and proposes a min-form alternative ($V(s) = \min_{t' \geq t} r_{t'}$). By constraining the value function to the minimum of future rewards rather than their cumulative sum, PURE significantly mitigates reward hacking—achieving reasoning performance comparable to rule-based reward method…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Process Reward Model"
   - "Credit Assignment"
   - "Reward Hacking"
   - "Min-Form"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: ff66c3309ba82568
+content_hash: c64655cd2d50451d
 ---
 
 # Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning
@@ -107,8 +107,8 @@ Standard RL framework with min-form advantage estimation. Validated on three bas
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
 - [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
 - [\[NeurIPS 2025\] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models](segment_policy_optimization_effective_segment-level_credit_assignment_in_rl_for_.md)
-- [\[NeurIPS 2025\] Know What You Don't Know: Uncertainty Calibration of Process Reward Models](know_what_you_dont_know_uncertainty_calibration_of_process_reward_models.md)
-- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
+- [\[ICLR 2026\] Linking Process to Outcome: Conditional Reward Modeling for LLM Reasoning](../../ICLR2026/llm_reasoning/linking_process_to_outcome_conditional_reward_modeling_for_llm_reasoning.md)
+- [\[ICLR 2026\] InT: Self-Proposed Interventions Enable Credit Assignment in LLM Reasoning](../../ICLR2026/llm_reasoning/int_self-proposed_interventions_enable_credit_assignment_in_llm_reasoning.md)
 
 </div>
 

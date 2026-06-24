@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lens Component Deletion based on Differentiable Ray Tracing
 description: >-
-  [CVPR 2026][Others][Paper Note] To meet the miniaturization and cost-reduction needs of micro-optical lenses, an "automated lens deletion" pipeline is proposed. It uses a contribution metric to automatically identify the least significant lens in a system, applies a deletion loss to gradually flatten and thin it until safe removal, and employs a diff
+  [CVPR 2026][3D Vision][Lens deletion] To meet the miniaturization and cost-reduction needs of micro-optical lenses, an "automated lens deletion" pipeline is proposed. It uses a contribution metric to automatically identify the least significant lens in a system, applies a deletion loss to gradually flatten and thin it until safe removal, and employs a differentiable PSF estimation based on Rayleigh-Sommerfeld diffraction theory. This allows for joint optimization of the simpl…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Lens deletion"
+  - "Differentiable ray tracing"
+  - "Diffractive PSF"
+  - "Joint optimization"
+  - "Aberration correction"
 date: 2026-05-08
-content_hash: b7fbb86d342d6f02
+content_hash: 8015a12993300bcd
 ---
+
 # Lens Component Deletion based on Differentiable Ray Tracing
 
 **Conference**: CVPR 2026  
@@ -132,11 +138,11 @@ After deleting one lens, joint design restoration quality exceeds separate desig
 
 ## Related Papers
 
-- [\[CVPR 2025\] Radio Frequency Ray Tracing with Neural Object Representation for Enhanced RF Modeling](../../CVPR2025/others/radio_frequency_ray_tracing_with_neural_object_representation_for_enhanced_rf_mo.md)
-- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
-- [\[CVPR 2026\] DiffBMP: Differentiable Rendering with Bitmap Primitives](diffbmp_differentiable_rendering_with_bitmap_primitives.md)
-- [\[ICML 2026\] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers](../../ICML2026/others/disjunctivenet_neural_symbolic_learning_via_differentiable_convexified_optimizat.md)
-- [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
+- [\[CVPR 2026\] Stochastic Ray Tracing for the Reconstruction of 3D Gaussian Splatting](stochastic_ray_tracing_for_the_reconstruction_of_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](../../ICCV2025/3d_vision/radiant_foam_real-time_differentiable_ray_tracing.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
+- [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mario: Multimodal Graph Reasoning with Large Language Models
 description: >-
-  [CVPR 2026][Graph Learning][Paper Note] Mario is proposed for LLM reasoning on Multi-Modal Graphs (MMGs). It achieves topology-aware cross-modal alignment via a Graph-conditioned Vision-Language Model (GVLM) and selects the optimal modality configuration for each node using a Modality-Adaptive Prompt Router (MAPR), reaching SOTA performance on node classific
+  [CVPR 2026][Graph Learning][Multimodal Graph] Mario is proposed for LLM reasoning on Multi-Modal Graphs (MMGs). It achieves topology-aware cross-modal alignment via a Graph-conditioned Vision-Language Model (GVLM) and selects the optimal modality configuration for each node using a Modality-Adaptive Prompt Router (MAPR), reaching SOTA performance on node classification and link prediction.
 tags:
-  - CVPR 2026
-  - Graph Learning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Multimodal Graph"
+  - "LLM Reasoning"
+  - "Vision-Language Alignment"
+  - "Modality-Adaptive Routing"
+  - "Instruction Tuning"
 date: 2026-05-08
-content_hash: 82ed20d164243607
+content_hash: f7767d4d4dbb4e99
 ---
+
 # Mario: Multimodal Graph Reasoning with Large Language Models
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,10 @@ Dual innovation in GVLM and MAPR, comprehensive experiments across four datasets
 ## Related Papers
 
 - [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)
+- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](../../ICLR2026/graph_learning/global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
 - [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](../../AAAI2026/graph_learning/pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
 - [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](../../NeurIPS2025/graph_learning/deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 - [\[ACL 2025\] FiDeLiS: Faithful Reasoning in Large Language Model for Knowledge Graph Question Answering](../../ACL2025/graph_learning/fidelis_faithful_reasoning_in_large_language_model_for_knowledge_graph_question_.md)
-- [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](../../ICML2026/graph_learning/kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
 
 </div>
 

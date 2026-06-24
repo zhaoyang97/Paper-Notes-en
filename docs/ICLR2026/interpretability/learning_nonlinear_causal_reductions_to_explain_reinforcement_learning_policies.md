@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Nonlinear Causal Reductions to Explain Reinforcement Learning Policies
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The paper models the question "why an RL policy succeeds or fails" as a causal model reduction problem. By injecting random perturbations into actions as interventions, it learns a simplified causal model consisting of only two variables: "high-level cause $Z$ → high-level target $Y$." Using **Nonlinear Targeted Causal
+  [ICLR 2026][Interpretability][Explainable RL] The paper models the question "why an RL policy succeeds or fails" as a causal model reduction problem. By injecting random perturbations into actions as interventions, it learns a simplified causal model consisting of only two variables: "high-level cause $Z$ → high-level target $Y$." Using **Nonlinear Targeted Causal Reduction (nTCR)**, it distills state/action patterns that truly influence cumulative rewards, providing global…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Explainable RL"
+  - "Policy-level explanation"
+  - "Causal model reduction"
+  - "Interventional consistency"
+  - "Nonlinear TCR"
 date: 2026-05-08
-content_hash: e951641a805eab69
+content_hash: b840812442acce2e
 ---
+
 # Learning Nonlinear Causal Reductions to Explain Reinforcement Learning Policies
 
 **Conference**: ICLR 2026  

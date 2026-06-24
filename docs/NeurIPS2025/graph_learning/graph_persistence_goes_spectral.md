@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph Persistence goes Spectral
 description: >-
-  [NeurIPS 2025][Graph Learning][Persistent Homology] This paper proposes SpectRe — a novel topological descriptor that incorporates graph Laplacian spectral information into persistent homology (PH) graphs. It proves that…
+  [NeurIPS 2025][Graph Learning][Persistent Homology] This paper proposes SpectRe — a novel topological descriptor that incorporates graph Laplacian spectral information into persistent homology (PH) graphs. It proves that SpectRe is strictly more expressive than either PH or spectral methods alone, establishes a local stability theory, and demonstrates improved GNN graph classification performance on both synthetic and real-world datasets.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "SpectRe"
   - "Weisfeiler-Leman"
 date: 2026-05-08
-content_hash: 1d333072d3291dba
+content_hash: e3f74eb788658a02
 ---
 
 # Graph Persistence goes Spectral
@@ -119,11 +119,11 @@ SpectRe achieves 100% discrimination on all Cayley graphs and ranks as the best-
 
 ## Related Papers
 
+- [\[ICLR 2026\] Contraction and Hourglass Persistence for Learning on Graphs, Simplices, and Cells](../../ICLR2026/graph_learning/contraction_and_hourglass_persistence_for_learning_on_graphs_simplices_and_cells.md)
+- [\[ICML 2025\] A General Graph Spectral Wavelet Convolution via Chebyshev Order Decomposition](../../ICML2025/graph_learning/a_general_graph_spectral_wavelet_convolution_via_chebyshev_order_decomposition.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
+- [\[ICML 2025\] Hyperbolic-PDE GNN: Spectral Graph Neural Networks in the Perspective of A System of Hyperbolic Partial Differential Equations](../../ICML2025/graph_learning/hyperbolic-pde_gnn_spectral_graph_neural_networks_in_the_perspective_of_a_system.md)
 - [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](../../ICML2026/graph_learning/l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](../../ICML2026/graph_learning/polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
-- [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
-- [\[NeurIPS 2025\] Relieving the Over-Aggregating Effect in Graph Transformers](relieving_the_over-aggregating_effect_in_graph_transformers.md)
 
 </div>
 

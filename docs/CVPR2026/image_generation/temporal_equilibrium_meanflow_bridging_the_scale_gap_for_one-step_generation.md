@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] Addressing the training collapse of MeanFlow in one-step generation when increasing the proportion of "trajectory samples," this paper identifies the root cause as a severe imbalance in gradient variance across different temporal scales. It proposes two modifications with zero additional inference overhead: "Temporal E
+  [CVPR 2026][Image Generation][One-step generation] Addressing the training collapse of MeanFlow in one-step generation when increasing the proportion of "trajectory samples," this paper identifies the root cause as a severe imbalance in gradient variance across different temporal scales. It proposes two modifications with zero additional inference overhead: "Temporal Equilibrium Weighting" and "Dynamic Boundary Scheduling," pushing the 1-NFE FID on ImageNet 256×256 to 2.62…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MeanFlow
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "One-step generation"
+  - "MeanFlow"
+  - "Flow Matching"
+  - "Gradient variance equilibrium"
+  - "Boundary scheduling"
 date: 2026-05-08
-content_hash: ef5faddd1ada6d9d
+content_hash: 16fa86c72931f16d
 ---
+
 # Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation
 
 **Conference**: CVPR 2026  
@@ -141,15 +145,16 @@ Ours consistently outperforms MeanFlow/SoFlow at every scale; 2.62 (1-NFE) is th
 - Value: ⭐⭐⭐⭐⭐ Achieves FID 2.62 for diffusion/flow one-step generation at zero extra cost, approaching multi-step models. High practical value.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](../../ICML2026/image_generation/omp_one-step_meanflow_policy_with_directional_alignment.md)
+- [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](../../ICML2026/image_generation/riemannian_meanflow_for_one-step_generation_on_manifolds.md)
 - [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](emf_meanflow_text_to_image.md)
-- [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
-- [\[CVPR 2026\] MeanFlow Transformers with Representation Autoencoders](meanflow_transformers_with_representation_autoencoders.md)
-- [\[CVPR 2026\] WaDi: Weight Direction-aware Distillation for One-step Image Synthesis](wadi_weight_direction-aware_distillation_for_one-step_image_synthesis.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
+- [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](../../ICML2026/image_generation/omp_one-step_meanflow_policy_with_directional_alignment.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 
 </div>
 

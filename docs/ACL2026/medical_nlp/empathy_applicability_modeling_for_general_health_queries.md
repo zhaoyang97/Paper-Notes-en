@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Empathy Applicability Modeling for General Health Queries
 description: >-
-  [ACL 2026][Medical NLP][clinical empathy] This paper proposes the Empathy Applicability Framework (EAF) to determine whether it is "appropriate" to express emotional reactions or interpretive understanding in single-turn health queries. By constructing a benchmark with human and GPT-4o annotations and training classifiers, the study provides upstream signals f
+  [ACL2026 Findings][Medical LLM][clinical empathy] This paper proposes the Empathy Applicability Framework (EAF) to determine whether it is "appropriate" to express emotional reactions or interpretive understanding in single-turn health queries. By constructing a benchmark with human and GPT-4o annotations and training classifiers, the study provides upstream signals for empathy requirement identification in medical LLMs before response generation.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - clinical empathy
-  - health queries
-  - empathy applicability
-  - annotation framework
-  - RoBERTa classifier
+  - "ACL2026 Findings"
+  - "Medical LLM"
+  - "clinical empathy"
+  - "health queries"
+  - "empathy applicability"
+  - "annotation framework"
+  - "RoBERTa classifier"
 date: 2026-05-08
-content_hash: 2a8d75238a3639c3
+content_hash: 565f30febd2aa9ed
 ---
+
 # Empathy Applicability Modeling for General Health Queries
 
 **Conference**: ACL2026 Findings  
@@ -161,8 +162,8 @@ The paper uses training data sources and baselines to provide interpretative com
 - [\[ACL 2026\] HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](hypehr_hyperbolic_modeling_of_electronic_health_records_for_efficient_question_a.md)
 - [\[NeurIPS 2025\] Faithful Summarization of Consumer Health Queries: A Cross-Lingual Framework with LLMs](../../NeurIPS2025/medical_nlp/faithful_summarization_of_consumer_health_queries_a_cross-lingual_framework_with.md)
 - [\[ACL 2026\] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)
-- [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](responsible_evaluation_of_ai_for_mental_health.md)
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
+- [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](responsible_evaluation_of_ai_for_mental_health.md)
 
 </div>
 

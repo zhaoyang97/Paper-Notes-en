@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][video reasoning] This paper proposes VideoRFT, which extends the reinforced fine-tuning (RFT) paradigm to video reasoning via a cognition-inspired multi-expert CoT data construction pipeline…
+  [NeurIPS 2025][Reasoning][video reasoning] This paper proposes VideoRFT, which extends the reinforced fine-tuning (RFT) paradigm to video reasoning via a cognition-inspired multi-expert CoT data construction pipeline and a novel semantic consistency reward. Two datasets are constructed: VideoRFT-CoT-102K (for SFT) and VideoRFT-RL-310K (for RL), achieving state-of-the-art performance on 6 video reasoning benchmarks.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "video reasoning"
   - "reinforced fine-tuning"
   - "chain-of-thought"
   - "multimodal large language models"
   - "semantic consistency reward"
 date: 2026-05-08
-content_hash: 805aa9db777ddd8e
+content_hash: d0c29269ea179174
 ---
 
 # VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning
@@ -52,18 +52,18 @@ VideoRFT follows a standard two-stage RFT scheme:
    **Step 1: Structured video representation.** GPT-4o-mini is used to generate structured textual descriptions from uniformly sampled frames of each video, including a high-level summary and per-frame JSON-format metadata (timestamp annotations and key visual elements such as objects, actions, scenes, spatial relations, and potential interactions).
 
    **Step 2: Cognition-inspired blind-reasoning CoT generation.** The structured representation $S_v$ and question $q$ are fed into a reasoning LLM (e.g., DeepSeek-R1), which generates an initial CoT via a carefully designed composite prompt $P_{\text{cog}} = [p_s, p_t, p_a, p_v, p_r]$:
-   $$\text{CoT}_v^{(0)} = \text{LLM}(q, S_v, P_{\text{cog}})$$
+    $\text{CoT}_v^{(0)} = \text{LLM}(q, S_v, P_{\text{cog}})$
    The five sub-prompts simulate human cognitive processes: (i) simulated viewing—forming a holistic understanding; (ii) task comprehension—inferring the question type; (iii) selective focus—localizing relevant temporal segments; (iv) visual reasoning—analysis based on objects, actions, and spatiotemporal relations; (v) reflective answering—deriving and self-verifying the answer.
 
    **Step 3: Cross-modal CoT refinement.** Since the initial CoT is generated solely from textual descriptions, it may contain visual hallucinations. Qwen2.5-VL is used to process both the raw video and the initial CoT together, identifying and correcting visual-textual inconsistencies via a contrastive prompt $P_{\text{cross}}$:
-   $$\text{CoT}_v = \text{MLLM}(v, \text{CoT}_v^{(0)}, P_{\text{cross}})$$
+    $\text{CoT}_v = \text{MLLM}(v, \text{CoT}_v^{(0)}, P_{\text{cross}})$
    Samples are then filtered by answer correctness (structured tasks) and semantic consistency (open-ended tasks, CLIP score), yielding 102K high-confidence samples from the original 310K.
 
 2. **Semantic consistency reward**: The key observation is that MLLM reasoning traces typically consist of three components: question parsing, video describing, and abstract reasoning. The video describing segment should be aligned with actual video content.
 
    Reward computation: A regular expression is used to locate $M$ tokens following the first period in the reasoning text as the video description segment $t_{[i,i+M]}$, whose representation is obtained via SigLIP's text encoder; $F$ frames are uniformly sampled and encoded by SigLIP's image encoder to obtain the average video representation $\boldsymbol{v}$. The semantic consistency reward is:
 
-   $$R_s = \min(1, w \times \max(\cos(\boldsymbol{t}_{[i,i+M]}, \boldsymbol{v}), 0))$$
+    $R_s = \min(1, w \times \max(\cos(\boldsymbol{t}_{[i,i+M]}, \boldsymbol{v}), 0))$
 
    where $w=2$ is a scaling constant. $\max(\cdot, 0)$ ensures non-negativity and $\min(\cdot, 1)$ bounds the reward for training stability. This reward is activated only when $R_a > 0$, preventing reinforcement of semantically plausible but factually incorrect reasoning.
 
@@ -151,10 +151,10 @@ VideoRFT follows a standard two-stage RFT scheme:
 ## Related Papers
 
 - [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](../../ICLR2026/llm_reasoning/vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
+- [\[ACL 2025\] Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning](../../ACL2025/llm_reasoning/enhancing_chain-of-thought_reasoning_with_critical_representation_fine-tuning.md)
+- [\[ACL 2025\] TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning](../../ACL2025/llm_reasoning/tract_regression_cot.md)
 - [\[NeurIPS 2025\] Let LRMs Break Free from Overthinking via Self-Braking Tuning](let_lrms_break_free_from_overthinking_via_self-braking_tuning.md)
-- [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
-- [\[ICML 2026\] Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling](../../ICML2026/llm_reasoning/blending_supervised_and_reinforcement_fine-tuning_with_prefix_sampling.md)
-- [\[ICCV 2025\] Video-T1: Test-Time Scaling for Video Generation](../../ICCV2025/llm_reasoning/video-t1_test-time_scaling_for_video_generation.md)
+- [\[ACL 2025\] Fine-Tuning on Diverse Reasoning Chains Drives Within-Inference CoT Refinement in LLMs](../../ACL2025/llm_reasoning/dcot_diverse_cot_refinement.md)
 
 </div>
 

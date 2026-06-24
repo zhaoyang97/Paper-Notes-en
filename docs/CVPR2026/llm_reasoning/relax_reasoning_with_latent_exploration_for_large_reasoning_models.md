@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReLaX: Reasoning with Latent Exploration for Large Reasoning Models
 description: >-
-  [CVPR 2026][LLM Reasoning][RLVR] ReLaX abandons the practice of forcibly increasing token-level entropy to counteract entropy collapse in RLVR. Instead, it utilizes the Koopman operator to linearize the latent state dynamics of large reasoning models and introduces "Dynamic Spectral Divergence (DSD)" to quantify internal computational flexibility. By
+  [CVPR 2026][Reasoning][RLVR] ReLaX abandons the practice of forcibly increasing token-level entropy to counteract entropy collapse in RLVR. Instead, it utilizes the Koopman operator to linearize the latent state dynamics of large reasoning models and introduces "Dynamic Spectral Divergence (DSD)" to quantify internal computational flexibility. By integrating DSD into the GRPO objective, it achieves new SOTA performance on 7 multimodal and 6 text-based reasoning benchmarks.
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - RLVR
+  - "CVPR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "exploration-exploitation"
+  - "Koopman operator"
+  - "entropy collapse"
+  - "latent space dynamics"
 date: 2026-05-08
-content_hash: 24113bad3243ba10
+content_hash: 5c9aa1a7d20764f9
 ---
+
 # ReLaX: Reasoning with Latent Exploration for Large Reasoning Models
 
 **Conference**: CVPR 2026  
@@ -124,15 +129,15 @@ Pure text mathematics (Average across 6 benchmarks):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Reasoning Palette: Modulating Reasoning via Latent Contextualization for Controllable Exploration for (V)LMs](reasoning_palette_modulating_reasoning_via_latent_contextualization_for_controll.md)
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](../../ACL2026/llm_reasoning/selar_selective_latent_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](../../ACL2026/llm_reasoning/large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
+- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
 - [\[CVPR 2026\] Think-as-You-See: Streaming Chain-of-Thought Reasoning for Large Vision-Language Models](think-as-you-see_streaming_chain-of-thought_reasoning_for_large_vision-language_.md)
-- [\[ICML 2025\] Soft Reasoning: Navigating Solution Spaces in Large Language Models through Controlled Embedding Exploration](../../ICML2025/llm_reasoning/soft_reasoning_navigating_solution_spaces_in_large_language_models_through_contr.md)
 
 </div>
 

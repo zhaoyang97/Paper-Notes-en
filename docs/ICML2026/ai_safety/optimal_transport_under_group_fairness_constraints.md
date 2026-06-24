@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Optimal Transport under Group Fairness Constraints
 description: >-
-  [ICML 2026][AI Safety][Sinkhorn] This paper explicitly encodes "group fairness" as a $K_s \times K_w$ inter-group matching probability target $\mathbf{F}$. It proposes three solutions: **FairSinkhorn** for exact solving, **Penalized OT** for convex relaxation, and **Bi-level Cost Learning**. It provides finite sample complexity $O(1/\sqrt{n})$ and fai
+  [ICML 2026 Spotlight][AI Safety][Group Fairness] This paper explicitly encodes "group fairness" as a $K_s \times K_w$ inter-group matching probability target $\mathbf{F}$. It proposes three solutions: **FairSinkhorn** for exact solving, **Penalized OT** for convex relaxation, and **Bi-level Cost Learning**. It provides finite sample complexity $O(1/\sqrt{n})$ and fairness bias bounds $O(\exp(5R_\Theta/\varepsilon)/\sqrt{n})$, outlining the "cost-fairness" trade-off frontier o…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Sinkhorn
+  - "ICML 2026 Spotlight"
+  - "AI Safety"
+  - "Group Fairness"
+  - "Optimal Transport"
+  - "Sinkhorn"
+  - "Bi-level Optimization"
+  - "Cost Learning"
 date: 2026-05-08
-content_hash: 405e90d598411853
+content_hash: 8c4a8613d2b0f80d
 ---
+
 # Optimal Transport under Group Fairness Constraints
 
 **Conference**: ICML 2026 Spotlight  
@@ -125,9 +130,9 @@ Training burden increases across the three paths: FairSinkhorn requires only $T$
 
 - [\[CVPR 2026\] Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport](../../CVPR2026/ai_safety/bypassing_the_transport_plan_dynamic_reweighting_for_out-of-distribution_detecti.md)
 - [\[ICML 2025\] Accelerating Spectral Clustering under Fairness Constraints](../../ICML2025/ai_safety/accelerating_spectral_clustering_under_fairness_constraints.md)
-- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
 - [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](../../ICLR2026/ai_safety/optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
-- [\[AAAI 2026\] Truth, Justice, and Secrecy: Cake Cutting Under Privacy Constraints](../../AAAI2026/ai_safety/truth_justice_and_secrecy_cake_cutting_under_privacy_constraints.md)
+- [\[ICML 2026\] Fair Dataset Distillation via Cross-Group Barycenter Alignment](fair_dataset_distillation_via_cross-group_barycenter_alignment.md)
+- [\[ICML 2026\] Fairness in Aggregation: Optimal Top-$k$ and Improved Full Ranking](fairness_in_aggregation_optimal_top-k_and_improved_full_ranking.md)
 
 </div>
 

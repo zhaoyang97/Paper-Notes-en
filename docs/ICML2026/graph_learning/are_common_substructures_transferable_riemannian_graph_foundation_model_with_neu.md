@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper redefines "transferable common substructures" in graph pre-training as behavioral invariance within the representation space. It constructs Gauge using neural vector bundles, gated geometric flattening, and Dirichlet loss, enabling graph models to achieve stronger structural generalization in cross-domain fe
+  [ICML 2026][Graph Learning][Graph Foundation Models] This paper redefines "transferable common substructures" in graph pre-training as behavioral invariance within the representation space. It constructs Gauge using neural vector bundles, gated geometric flattening, and Dirichlet loss, enabling graph models to achieve stronger structural generalization in cross-domain few-shot transfer, zero-shot link prediction, and graph isomorphism tasks.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Foundation Models"
+  - "Riemannian Geometry"
+  - "Neural Vector Bundles"
+  - "Structural Transfer"
+  - "Dirichlet Energy"
 date: 2026-05-08
-content_hash: 0132f88d55a4c17e
+content_hash: 712a5e098b47657f
 ---
+
 # Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles
 
 **Conference**: ICML 2026  
@@ -132,11 +138,11 @@ The paper validates whether "intrinsic geometry + Dirichlet invariance" genuinel
 
 ## Related Papers
 
-- [\[ICML 2026\] Structure-Centric Graph Foundation Model via Geometric Bases](structure-centric_graph_foundation_model_via_geometric_bases.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
+- [\[ICML 2026\] Structure-Centric Graph Foundation Model via Geometric Bases](structure-centric_graph_foundation_model_via_geometric_bases.md)
+- [\[ICLR 2026\] Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models](../../ICLR2026/graph_learning/multi-domain_riemannian_graph_gluing_for_building_graph_foundation_models.md)
+- [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](../../ICLR2026/graph_learning/towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
-- [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
-- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 
 </div>
 

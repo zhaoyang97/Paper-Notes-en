@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes ParoQuant, which eliminates weight outliers through a combination of hardware-efficient, optimizable independent Givens rotations and channel scaling, achieving high-precision, low-overhead 4-bit weight quantization on reasoning LLMs.
+  [ICLR 2026][Model Compression][Post-training quantization] Ours proposes ParoQuant, which eliminates weight outliers through a combination of hardware-efficient, optimizable independent Givens rotations and channel scaling, achieving high-precision, low-overhead 4-bit weight quantization on reasoning LLMs.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-training quantization"
+  - "Givens rotation"
+  - "Reasoning LLM"
+  - "Quantization efficiency"
+  - "Algorithm-system co-design"
 date: 2026-05-08
-content_hash: df7fe10f9b6ea388
+content_hash: e0e2bf0156586aa0
 ---
+
 # ParoQuant: Pairwise Rotation Quantization for Efficient Reasoning LLM Inference
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,10 @@ The optimization objective is the layer-wise quantization reconstruction error $
 ## Related Papers
 
 - [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](../../ICML2026/model_compression/respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](efficient_reasoning_with_balanced_thinking.md)
 - [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
-- [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 
 </div>
 

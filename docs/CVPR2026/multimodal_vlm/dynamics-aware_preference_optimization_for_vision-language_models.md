@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamics-Aware Preference Optimization for Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][DPO] This paper diagnoses the root cause of instability in VLM preference fine-tuning from the perspective of "learning dynamics"—the "squeezing effect" (where easy negatives produce near-zero loss but still exert large, misdirected gradients). It proposes the two-stage CW-DPO: first, a constrained smooth SFT "flattens" the
+  [CVPR 2026][Multimodal VLM][VLM Alignment] This paper diagnoses the root cause of instability in VLM preference fine-tuning from the perspective of "learning dynamics"—the "squeezing effect" (where easy negatives produce near-zero loss but still exert large, misdirected gradients). It proposes the two-stage CW-DPO: first, a constrained smooth SFT "flattens" the distribution, followed by a "cooling weight" that adaptively scales negative sample gradients based on model confide…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - DPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM Alignment"
+  - "Preference Optimization"
+  - "DPO"
+  - "Learning Dynamics"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 5652301af42cd110
+content_hash: 1933972ccfa244a7
 ---
+
 # Dynamics-Aware Preference Optimization for Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Notably, vanilla DPO performs **worse** than SFT on BLEU-4 (33.5 vs 35.2), suppo
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 - [\[ICML 2025\] MMedPO: Aligning Medical Vision-Language Models with Clinical-Aware Multimodal Preference Optimization](../../ICML2025/multimodal_vlm/mmedpo_aligning_medical_vision-language_models_with_clinical-aware_multimodal_pr.md)
-- [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models](flowhijack_dynamics_aware_backdoor_attack_on_flow_matching_vla_models.md)
-- [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
+- [\[CVPR 2025\] Debiasing Multimodal Large Language Models via Noise-Aware Preference Optimization](../../CVPR2025/multimodal_vlm/debiasing_multimodal_large_language_models_via_noise-aware_preference_optimizati.md)
+- [\[CVPR 2026\] Foundation Encoders Are All You Need for Preference-Aware Personalization](foundation_encoders_are_all_you_need_for_preference-aware_personalization.md)
+- [\[CVPR 2026\] HiconAgent: History Context-aware Policy Optimization for GUI Agents](hiconagent_history_context-aware_policy_optimization_for_gui_agents.md)
 
 </div>
 

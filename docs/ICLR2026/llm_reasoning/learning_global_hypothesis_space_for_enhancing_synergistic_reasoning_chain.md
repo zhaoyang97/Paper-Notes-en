@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Global Hypothesis Space for Enhancing Synergistic Reasoning Chain
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper proposes GHS-TDA: fusing multiple reasoning paths sampled from LLMs into a "Global Hypothesis Graph," then applying Topological Data Analysis (Persistent Homology) to extract stable "logical backbones" and "self-consistent loops." By selecting reasoning chains based on structural stability rather than local
+  [ICLR 2026][Reasoning][Chain-of-Thought] This paper proposes GHS-TDA: fusing multiple reasoning paths sampled from LLMs into a "Global Hypothesis Graph," then applying Topological Data Analysis (Persistent Homology) to extract stable "logical backbones" and "self-consistent loops." By selecting reasoning chains based on structural stability rather than local confidence, the method suppresses error propagation and enhances accuracy and interpretability.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Global Hypothesis Graph"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "Multi-agent Collaboration"
+  - "Self-consistent Reasoning"
 date: 2026-05-08
-content_hash: 7fd6f6d3f148e048
+content_hash: 2305e47451b2aa48
 ---
+
 # Learning Global Hypothesis Space for Enhancing Synergistic Reasoning Chain
 
 **Conference**: ICLR 2026  
@@ -129,11 +135,11 @@ H1 persistence is systematically higher for correct reasoning chains—topologic
 
 ## Related Papers
 
+- [\[ICLR 2026\] TRAPO: Enhancing LLM Reasoning with Semi-supervised Reinforcement Learning](trapo_a_semi-supervised_reinforcement_learning_framework_for_boosting_llm_reason.md)
 - [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
-- [\[ICLR 2026\] ∇-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
-- [\[ICLR 2026\] MathFimer: Enhancing Mathematical Reasoning by Expanding Reasoning Steps through Fill-in-the-Middle Task](mathfimer_enhancing_mathematical_reasoning_by_expanding_reasoning_steps_through_.md)
-- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ACL 2026\] Revisiting the Uniform Information Density Hypothesis in LLM Reasoning](../../ACL2026/llm_reasoning/revisiting_the_uniform_information_density_hypothesis_in_llm_reasoning.md)
+- [\[ICLR 2026\] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition](enhancing_llms_for_knowledge_base_question_answering_by_chain-of-decomposition.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 
 </div>
 

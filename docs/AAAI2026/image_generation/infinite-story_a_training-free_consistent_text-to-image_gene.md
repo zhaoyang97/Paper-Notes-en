@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Infinite-Story: A Training-Free Consistent Text-to-Image Generation
 description: >-
-  [AAAI 2026][Image Generation][consistent text-to-image generation] Built upon a scale-wise autoregressive model (Infinity), this work introduces three training-free techniques—Identity Prompt Replacement (eliminating con…
+  [AAAI 2026 Oral][Image Generation][consistent text-to-image generation] Built upon a scale-wise autoregressive model (Infinity), this work introduces three training-free techniques—Identity Prompt Replacement (eliminating contextual bias in the text encoder), Adaptive Style Injection (reference image feature injection), and Synchronized Guidance Adaptation (synchronizing both branches of CFG)—to achieve identity- and style-consistent multi-image generation at 6× the speed of…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "consistent text-to-image generation"
   - "visual storytelling"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "style consistency"
 date: 2026-05-08
-content_hash: 6941faa6a6b4b056
+content_hash: 33a81107d646c33c
 ---
 
 # Infinite-Story: A Training-Free Consistent Text-to-Image Generation
@@ -99,11 +99,11 @@ User study: 58.4% of participants preferred Infinite-Story (vs. 18% for 1Prompt1
 
 ## Related Papers
 
-- [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](../../ICLR2026/image_generation/consistent_text-to-image_generation_via_scene_de-contextualization.md)
+- [\[ICLR 2026\] Story-Iter: A Training-free Iterative Paradigm for Long Story Visualization](../../ICLR2026/image_generation/story-iter_a_training-free_iterative_paradigm_for_long_story_visualization.md)
 - [\[AAAI 2026\] AEDR: Training-Free AI-Generated Image Attribution via Autoencoder Double-Reconstruction](aedr_training-free_ai-generated_image_attribution_via_autoen.md)
 - [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
-- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
-- [\[AAAI 2026\] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation](retrysql_text-to-sql_training_with_retry_data_for_self-correcting_query_generati.md)
+- [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](../../ICLR2026/image_generation/consistent_text-to-image_generation_via_scene_de-contextualization.md)
+- [\[ICLR 2026\] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation](../../ICLR2026/image_generation/omnitext_a_training-free_generalist_for_controllable_text-image_manipulation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distribution Alignment for One-Shot Federated Learning via Optimal Transport
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper proposes SLOT-Align, a training-free, single-round federated feature alignment framework. Each client computes the first and second-order statistics of features using a shared frozen encoder. The server aggregates these into a global reference via a Bures–Wasserstein barycenter. Clients then align local feat
+  [ICML2026][Optimization][One-Shot Federated Learning] This paper proposes SLOT-Align, a training-free, single-round federated feature alignment framework. Each client computes the first and second-order statistics of features using a shared frozen encoder. The server aggregates these into a global reference via a Bures–Wasserstein barycenter. Clients then align local features to this reference using closed-form Optimal Transport (OT) mappings between Gaussians. This approach…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "One-Shot Federated Learning"
+  - "Distribution Alignment"
+  - "Domain Shift"
+  - "Label Shift"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 9d65ee935aa0bfd0
+content_hash: 6e0f4a83e52c9305
 ---
+
 # Distribution Alignment for One-Shot Federated Learning via Optimal Transport
 
 **Conference**: ICML2026  
@@ -138,15 +144,14 @@ Ours (SLOT-Align) consistently improves macro-average accuracy across all backbo
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation](../../CVPR2026/optimization/hfedatm_hierarchical_federated_domain_generalization_via_optimal_transport_and_r.md)
+- [\[ICLR 2026\] Learning from Algorithm Feedback: One-Shot SAT Solver Guidance with GNNs](../../ICLR2026/optimization/learning_from_algorithm_feedback_one-shot_sat_solver_guidance_with_gnns.md)
+- [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](../../ICLR2026/optimization/hota_hamiltonian_framework_for_optimal_transport_advection.md)
 - [\[ICML 2026\] Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective](rethinking_the_flow-based_gradual_domain_adaptation_a_semi-dual_optimal_transpor.md)
 - [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](../../ICLR2026/optimization/a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
-- [\[AAAI 2026\] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing](../../AAAI2026/optimization/peoat_personalization-guided_evolutionary_question_assembly_for_one-shot_adaptiv.md)
-- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](../../CVPR2026/optimization/fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
 
 </div>
 

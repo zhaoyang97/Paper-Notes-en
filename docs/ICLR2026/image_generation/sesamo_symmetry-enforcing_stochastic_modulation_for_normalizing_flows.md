@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] SESaMo proposes a "stochastic modulation" mechanism, allowing Normalizing Flows to first map the prior distribution into a single mode of the target distribution, then use a stochastic variable-controlled symmetry transformation to spread probability mass across all equivalent modes based on learned weights. This enabl
+  [ICLR 2026][Image Generation][Normalizing Flows] SESaMo proposes a "stochastic modulation" mechanism, allowing Normalizing Flows to first map the prior distribution into a single mode of the target distribution, then use a stochastic variable-controlled symmetry transformation to spread probability mass across all equivalent modes based on learned weights. This enables precise enforcement of symmetries in data-free variational inference and, for the first time…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Normalizing Flows"
+  - "Symmetry"
+  - "Boltzmann Sampling"
+  - "Mode Collapse"
+  - "Lattice Field Theory"
 date: 2026-05-08
-content_hash: 61b5bc2886e6ecec
+content_hash: 2d6b37c6598faa5e
 ---
+
 # SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows
 
 **Conference**: ICLR 2026  
@@ -151,10 +157,10 @@ In complex $\phi^4$ field theory, complex fields cannot use standard canonicaliz
 
 ## Related Papers
 
-- [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](../../ICML2026/image_generation/the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
-- [\[ICLR 2026\] Latent Stochastic Interpolants](latent_stochastic_interpolants.md)
 - [\[ICML 2025\] Normalizing Flows are Capable Generative Models](../../ICML2025/image_generation/normalizing_flows_are_capable_generative_models.md)
 - [\[AAAI 2026\] Flowing Backwards: Improving Normalizing Flows via Reverse Representation Alignment](../../AAAI2026/image_generation/flowing_backwards_improving_normalizing_flows_via_reverse_representation_alignme.md)
+- [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](../../ICML2026/image_generation/the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
+- [\[ICLR 2026\] Latent Stochastic Interpolants](latent_stochastic_interpolants.md)
 - [\[ICLR 2026\] TAVAE: A VAE with Adaptable Priors Explains Contextual Modulation in the Visual Cortex](tavae_a_vae_with_adaptable_priors_explains_contextual_modulation_in_the_visual_c.md)
 
 </div>

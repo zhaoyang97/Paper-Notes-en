@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][Novel Object Pose Estimation] This paper proposes MixRI, a lightweight network with only 12 reference images and 5.3M parameters…
+  [ICCV 2025][Human Understanding][Novel Object Pose Estimation] This paper proposes MixRI, a lightweight network with only 12 reference images and 5.3M parameters, which establishes 2D–3D correspondences between multiple reference images and a query image via a multi-view feature fusion strategy. MixRI achieves pose estimation performance comparable to methods requiring hundreds of reference images across 7 core BOP challenge datasets.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Lightweight Network"
   - "Edge AI"
 date: 2026-05-08
-content_hash: a881a98642d940c0
+content_hash: 9e0b2f91b12ea6d3
 ---
 
 # MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation
@@ -157,10 +157,10 @@ MixRI achieves near-SOTA performance using 33× fewer reference images, 57× few
 ## Related Papers
 
 - [\[CVPR 2026\] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation](../../CVPR2026/human_understanding/cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re.md)
-- [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
-- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[AAAI 2026\] CoordAR: One-Reference 6D Pose Estimation of Novel Objects via Autoregressive Coordinate Map Generation](../../AAAI2026/human_understanding/coordar_one-reference_6d_pose_estimation_of_novel_objects_via_autoregressive_coo.md)
-- [\[ICCV 2025\] High-Resolution Spatiotemporal Modeling with Global-Local State Space Models for Video-Based Human Pose Estimation](high-resolution_spatiotemporal_modeling_with_global-local_state_space_models_for.md)
+- [\[CVPR 2025\] Co-op: Correspondence-based Novel Object Pose Estimation](../../CVPR2025/human_understanding/co-op_correspondence-based_novel_object_pose_estimation.md)
+- [\[CVPR 2025\] One2Any: One-Reference 6D Pose Estimation for Any Object](../../CVPR2025/human_understanding/one2any_one-reference_6d_pose_estimation_for_any_object.md)
+- [\[CVPR 2025\] UNOPose: Unseen Object Pose Estimation with an Unposed RGB-D Reference Image](../../CVPR2025/human_understanding/unopose_unseen_object_pose_estimation_with_an_unposed_rgb-d_reference_image.md)
+- [\[ECCV 2024\] FoundPose: Unseen Object Pose Estimation with Foundation Features](../../ECCV2024/human_understanding/foundpose_unseen_object_pose_estimation_with_foundation_features.md)
 
 </div>
 

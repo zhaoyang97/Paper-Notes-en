@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal reasoning] This paper proposes AStar, a training-free multimodal reasoning paradigm that constructs a library of high-level "thought card" reasoning templates from 500 seed samples.…
+  [AAAI 2026 Oral][VLM Reasoning][Multimodal reasoning] This paper proposes AStar, a training-free multimodal reasoning paradigm that constructs a library of high-level "thought card" reasoning templates from 500 seed samples. At inference time, the most suitable templates are adaptively retrieved to guide structured reasoning in MLLMs. A 7B model achieves 53.9% accuracy on MathVerse (surpassing GPT-4o's 50.2%), requiring only 50 minutes of preprocessing and no model training.
 tags:
-  - "AAAI 2026"
-  - "Multimodal VLM"
+  - "AAAI 2026 Oral"
+  - "VLM Reasoning"
   - "Multimodal reasoning"
   - "thought cards"
   - "MCTS"
   - "training-free"
   - "structured thinking"
 date: 2026-05-08
-content_hash: 4532934816c6dab7
+content_hash: e1412a93a68a8fed
 ---
 
 # AStar: Boosting Multimodal Reasoning with Automated Structured Thinking
@@ -103,10 +103,10 @@ Data efficiency: AStar surpasses URSA by 8.2% using only 1/2200 of its data. Plu
 ## Related Papers
 
 - [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
-- [\[ICML 2026\] Efficient Reasoning with Hidden Thinking](../../ICML2026/multimodal_vlm/efficient_reasoning_with_hidden_thinking.md)
-- [\[CVPR 2026\] Thinking Diffusion: Penalize and Guide Visual-Grounded Reasoning in Diffusion Multimodal Language Models](../../CVPR2026/multimodal_vlm/thinking_diffusion_penalize_and_guide_visual-grounded_reasoning_in_diffusion_mul.md)
-- [\[AAAI 2026\] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography](pet2rep_towards_vision-language_model-drived_automated_radiology_report_generati.md)
-- [\[ACL 2026\] Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images](../../ACL2026/multimodal_vlm/structured_and_abstractive_reasoning_on_multi-modal_relational_knowledge_images.md)
+- [\[ICLR 2026\] AutoGPS: Automated Geometry Problem Solving via Multimodal Formalization and Deductive Reasoning](../../ICLR2026/vlm_reasoning/autogps_automated_geometry_problem_solving_via_multimodal_formalization_and_dedu.md)
+- [\[CVPR 2026\] Boosting Reasoning in Large Multimodal Models via Activation Replay](../../CVPR2026/vlm_reasoning/boosting_reasoning_in_large_multimodal_models_via_activation_replay.md)
+- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](../../CVPR2026/vlm_reasoning/reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
+- [\[CVPR 2026\] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model](../../CVPR2026/vlm_reasoning/pointthinker_point-incentivized_parallel_thinking_for_multimodal_large_language_.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][MotionVid-QA] MotionSight proposes a **training-free video visual prompting method** that uses "Visual Spotlights" to amplify object motion and "Synthetic Motion Blur" to amplify camera motion. By decoupling these two types of signals and feeding them into off-the-shelf MLLMs, it significantly improves fine-grained motion understand
+  [ICLR 2026][Multimodal VLM][Fine-grained motion understanding] MotionSight proposes a **training-free video visual prompting method** that uses "Visual Spotlights" to amplify object motion and "Synthetic Motion Blur" to amplify camera motion. By decoupling these two types of signals and feeding them into off-the-shelf MLLMs, it significantly improves fine-grained motion understanding. Furthermore, it distills the first large-scale fine-grained motion dataset…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MotionVid-QA
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Fine-grained motion understanding"
+  - "Visual Prompting"
+  - "Visual Spotlight"
+  - "Motion Blur"
+  - "Object/Camera Motion Decoupling"
+  - "MotionVid-QA"
 date: 2026-05-08
-content_hash: df0d0f6d4be39d69
+content_hash: 3304cd65e8984b3c
 ---
+
 # MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs
 
 **Conference**: ICLR 2026  
@@ -126,8 +132,8 @@ flowchart LR
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 - [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](../../CVPR2026/multimodal_vlm/fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
+- [\[ICLR 2026\] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark](p2p_automated_paper-to-poster_generation_and_fine-grained_benchmark.md)
 - [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
-- [\[ICLR 2026\] Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems](bongard-rwr_real-world_representations_of_fine-grained_concepts_in_bongard_probl.md)
 
 </div>
 

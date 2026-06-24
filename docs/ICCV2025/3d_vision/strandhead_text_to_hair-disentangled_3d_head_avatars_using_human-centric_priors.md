@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors
 description: >-
-  [3D Vision] This paper presents StrandHead, the first framework for generating strand-level 3D head avatars by distilling human-centric 2D diffusion priors. It introduces a differentiable prismatization algorithm to conv…
+  [3D Vision] This paper presents StrandHead, the first framework for generating strand-level 3D head avatars by distilling human-centric 2D diffusion priors. It introduces a differentiable prismatization algorithm to convert hair strands into watertight meshes with gradient backpropagation, and designs regularization losses based on statistical geometric priors of hair strands to ensure hairstyle realism.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: d9abeb0a56a359c2
+content_hash: c5c8fe1c8a3209f5
 ---
 
 # StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors
@@ -160,8 +160,8 @@ Compared to HAAR, StrandHead generates more diverse hairstyles without requiring
 - [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
 - [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/3d_vision/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
 - [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
-- [\[ICCV 2025\] RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors](ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)
 - [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
+- [\[ICCV 2025\] RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors](ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)
 
 </div>
 

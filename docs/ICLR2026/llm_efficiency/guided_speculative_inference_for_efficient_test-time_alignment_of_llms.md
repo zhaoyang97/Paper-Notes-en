@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][soft best-of-n] GSI utilizes a small draft model to sample reasoning steps and performs soft best-of-n using a "tilted reward" corrected by reward and log-likelihood ratios. It falls back to the target model for resampling when scores are too low. On mathematical reasoning benchmarks, GSI approaches or even exceeds the precision of th
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] GSI utilizes a small draft model to sample reasoning steps and performs soft best-of-n using a "tilted reward" corrected by reward and log-likelihood ratios. It falls back to the target model for resampling when scores are too low. On mathematical reasoning benchmarks, GSI approaches or even exceeds the precision of the large model's best-of-n while reducing end-to-end latency by up to 28%. It is the first speculative test-tim…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - soft best-of-n
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Reward-Guided Decoding"
+  - "Soft Best-of-n"
+  - "Test-Time Scaling"
+  - "Distribution Guarantee"
 date: 2026-05-08
-content_hash: 3d803227b94adb6a
+content_hash: 11ef0a8acc0ab301
 ---
+
 # Guided Speculative Inference for Efficient Test-Time Alignment of LLMs
 
 **Conference**: ICLR 2026  
@@ -135,9 +140,9 @@ GSI is significantly faster than Base S-BoN: for Qwen3 at $n=16$, throughput inc
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Up, Speeding Up: A Benchmark of Speculative Decoding for Efficient LLM Test-Time Scaling](scaling_up_speeding_up_a_benchmark_of_speculative_decoding_for_efficient_llm_tes.md)
+- [\[ICLR 2026\] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling](trimr_verifier-based_training-free_thinking_trimming_for_efficient_test-time_sca.md)
 - [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
 - [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
-- [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 
 </div>

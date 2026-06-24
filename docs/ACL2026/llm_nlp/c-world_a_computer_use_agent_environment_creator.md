@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] C-World: A Computer Use Agent Environment Creator
 description: >-
-  [ACL 2026][LLM (Other)][World Model] The authors formalize the "agent environment" as an Action / Task / Transition / Reward quadruple and implement it as C-World. It utilizes 5,571 real MCP tools, automated task synthesis, state controller perturbations, and dual-signal rewards for high-fidelity evaluation. Furthermore, it employs a "World Engine" to sim
+  [ACL 2026][LLM (Other)][MCP Tools] The authors formalize the "agent environment" as an Action / Task / Transition / Reward quadruple and implement it as C-World. It utilizes 5,571 real MCP tools, automated task synthesis, state controller perturbations, and dual-signal rewards for high-fidelity evaluation. Furthermore, it employs a "World Engine" to simulate tool responses without live APIs, enabling scalable training. Evaluation of 9 frontier LLMs reveals that "planning is g…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - World Model
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "MCP Tools"
+  - "Long-range Tasks"
+  - "World Model"
+  - "State Perturbation"
+  - "Evaluation+Training Data Engine"
 date: 2026-05-08
-content_hash: 65dc36c1a415f21c
+content_hash: 2ec4cd7a0c55f63d
 ---
+
 # C-World: A Computer Use Agent Environment Creator
 
 **Conference**: ACL 2026  
@@ -142,15 +147,16 @@ Total scores of 9 frontier LLMs in C-World Real Mode (10-point scale + %):
 - **Value**: ⭐⭐⭐⭐⭐ Most practical infrastructure for training/evaluating computer-use agents currently available.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] AXIS: Efficient Human-Agent-Computer Interaction with API-First LLM-Based Agents](../../ACL2025/llm_nlp/axis_efficient_human-agent-computer_interaction_with_api-first_llm-based_agents.md)
 - [\[ACL 2025\] ASPERA: A Simulated Environment to Evaluate Planning for Complex Action Execution](../../ACL2025/llm_nlp/aspera_a_simulated_environment_to_evaluate_planning_for_complex_action_execution.md)
-- [\[NeurIPS 2025\] Do Language Models Use Their Depth Efficiently?](../../NeurIPS2025/llm_nlp/do_language_models_use_their_depth_efficiently.md)
-- [\[ICML 2026\] Multi-Agent Teams Hold Experts Back: 自组织 LLM 团队为什么留不住「专家」](../../ICML2026/llm_nlp/multi-agent_teams_hold_experts_back.md)
+- [\[ICML 2026\] In-Context Routing (ICR): Train-Once, Use-Everywhere Attention-Level Implicit ICL](../../ICML2026/llm_nlp/train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
 - [\[ICML 2026\] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](../../ICML2026/llm_nlp/express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)
+- [\[ACL 2026\] LinkNav: Surfacing Interconnected Information in Scientific Articles](linknav_surfacing_interconnected_information_in_scientific_articles.md)
 
 </div>
 

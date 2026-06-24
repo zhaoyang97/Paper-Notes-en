@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ElasticMM: Efficient MLLM Serving with Elastic Multimodal Parallelism
 description: >-
-  [NeurIPS 2025][Multimodal VLM][MLLM inference serving] This paper proposes the Elastic Multimodal Parallelism (EMP) paradigm and the ElasticMM system…
+  [NeurIPS 2025 Oral][Multimodal Efficiency][MLLM inference serving] This paper proposes the Elastic Multimodal Parallelism (EMP) paradigm and the ElasticMM system, which disaggregates different stages of multimodal inference into independent instances via modality-aware load balancing and elastic partition scheduling, achieving up to 4.2× TTFT reduction and 3.2–4.5× throughput improvement over vLLM.
 tags:
-  - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "NeurIPS 2025 Oral"
+  - "Multimodal Efficiency"
   - "MLLM inference serving"
   - "elastic parallelism"
   - "modality-aware scheduling"
   - "inference disaggregation"
   - "resource allocation"
 date: 2026-05-08
-content_hash: 183315e9931bf030
+content_hash: b20bcc71603cbb92
 ---
 
 # ElasticMM: Efficient MLLM Serving with Elastic Multimodal Parallelism
@@ -170,11 +170,11 @@ Both optimizations deliver consistent performance gains across the majority of r
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval](retrv-r1_a_reasoning-driven_mllm_framework_for_universal_and_efficient_multimoda.md)
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
+- [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](../../CVPR2026/vlm_efficiency/segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
 - [\[NeurIPS 2025\] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs](scope_saliency-coverage_oriented_token_pruning_for_efficient_multimodel_llms.md)
-- [\[ICCV 2025\] PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting](../../ICCV2025/multimodal_vlm/physsplat_efficient_physics_simulation_for_3d_scenes_via_mllm-guided_gaussian_sp.md)
-- [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
+- [\[ACL 2026\] APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention](../../ACL2026/vlm_efficiency/apb-v_accelerating_long-video_understanding_via_sequence-parallelism-aware_appro.md)
+- [\[ACL 2025\] OMGM: Orchestrate Multiple Granularities and Modalities for Efficient Multimodal Retrieval](../../ACL2025/vlm_efficiency/omgm_orchestrate_multiple_granularities_and_modalities_for_efficient_multimodal_.md)
+- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/vlm_efficiency/filter_correlate_compress_training-free_token_reduction_for_.md)
 
 </div>
 

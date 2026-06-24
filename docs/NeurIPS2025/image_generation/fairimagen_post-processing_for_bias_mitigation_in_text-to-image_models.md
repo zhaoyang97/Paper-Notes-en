@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Fairness] This paper proposes FairImagen, a post-processing debiasing framework that applies FairPCA projection in the CLIP prompt embedding space to remove demographic information…
+  [NeurIPS 2025][Image Generation][Fairness] This paper proposes FairImagen, a post-processing debiasing framework that applies FairPCA projection in the CLIP prompt embedding space to remove demographic information, combined with empirical noise injection and joint cross-demographic debiasing, achieving significant fairness improvements in text-to-image generation without retraining the model.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "FairPCA"
   - "Text-to-Image"
 date: 2026-05-08
-content_hash: bb090292842ac315
+content_hash: e3a5fed4cf9930b4
 ---
 
 # FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models
@@ -154,11 +154,11 @@ The FairPCA approach is extensible to debiasing in other multimodal generative t
 
 ## Related Papers
 
+- [\[CVPR 2025\] Finite Difference Flow Optimization for RL Post-Training of Text-to-Image Models](../../CVPR2025/image_generation/finite_difference_flow_optimization_for_rl_post-training_of_text-to-image_models.md)
+- [\[CVPR 2025\] Multi-Group Proportional Representation for Text-to-Image Models](../../CVPR2025/image_generation/multi-group_proportional_representations_for_text-to-image_models.md)
 - [\[AAAI 2026\] How Bias Binds: Measuring Hidden Associations for Bias Control in Text-to-Image Compositions](../../AAAI2026/image_generation/how_bias_binds_measuring_hidden_associations_for_bias_control_in_text-to-image_c.md)
-- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](../../CVPR2026/image_generation/bias_reward_models_t2i.md)
-- [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
-- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
+- [\[CVPR 2025\] Implicit Bias Injection Attacks against Text-to-Image Diffusion Models](../../CVPR2025/image_generation/implicit_bias_injection_attacks_against_text-to-image_diffusion_models.md)
+- [\[ICLR 2026\] DeLeaker: Dynamic Inference-Time Reweighting For Semantic Leakage Mitigation in Text-to-Image Models](../../ICLR2026/image_generation/deleaker_dynamic_inference-time_reweighting_for_semantic_leakage_mitigation_in_t.md)
 
 </div>
 

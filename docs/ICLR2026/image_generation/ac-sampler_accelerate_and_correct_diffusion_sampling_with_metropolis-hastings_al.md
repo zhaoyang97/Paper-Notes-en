@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AC-Sampler: Accelerate and Correct Diffusion Sampling with Metropolis-Hastings Algorithm
 description: >-
-  [ICLR 2026][Image Generation][Metropolis-Hastings] AC-Sampler truncates the diffusion generation process at an intermediate timestep, generates candidates using a score-based Langevin proposal, and applies Metropolis-Hastings (MH) acceptance rates to correct them toward the true marginal distribution. This simultaneously reduces NFE and improves FID without fine-tuning
+  [ICLR2026][Image Generation][Diffusion Sampling] AC-Sampler truncates the diffusion generation process at an intermediate timestep, generates candidates using a score-based Langevin proposal, and applies Metropolis-Hastings (MH) acceptance rates to correct them toward the true marginal distribution. This simultaneously reduces NFE and improves FID without fine-tuning the base model.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Metropolis-Hastings
-  - MALA
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Sampling"
+  - "Metropolis-Hastings"
+  - "MALA"
+  - "Sampling Acceleration"
+  - "Distribution Correction"
 date: 2026-05-08
-content_hash: e4de49ae881b6f91
+content_hash: 1fd62722a7d7cedb
 ---
+
 # AC-Sampler: Accelerate and Correct Diffusion Sampling with Metropolis-Hastings Algorithm
 
 **Conference**: ICLR2026  
@@ -165,10 +169,10 @@ The authors validated AC-Sampler on CIFAR-10, CelebA-HQ 256×256, ImageNet 64×6
 ## Related Papers
 
 - [\[ICLR 2026\] Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model](evolutionary_caching_to_accelerate_your_off-the-shelf_diffusion_model.md)
+- [\[ICLR 2026\] Error as Signal: Stiffness-Aware Diffusion Sampling via Embedded Runge-Kutta Guidance](error_as_signal_stiffness-aware_diffusion_sampling_via_embedded_runge-kutta_guid.md)
 - [\[ICLR 2026\] One Step Further with Monte-Carlo Sampler to Guide Diffusion Better](one_step_further_with_monte-carlo_sampler_to_guide_diffusion_better.md)
 - [\[CVPR 2026\] One Algorithm to Align Them All](../../CVPR2026/image_generation/one_algorithm_to_align_them_all.md)
 - [\[NeurIPS 2025\] Learnable Sampler Distillation for Discrete Diffusion Models](../../NeurIPS2025/image_generation/learnable_sampler_distillation_for_discrete_diffusion_models.md)
-- [\[ICML 2025\] Progressive Tempering Sampler with Diffusion](../../ICML2025/image_generation/progressive_tempering_sampler_with_diffusion.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Gradient redirection] AERO proposes an optimization paradigm inspired by the judo principle of "redirecting force rather than resisting it…
+  [NeurIPS 2025][Time Series][Gradient redirection] AERO proposes an optimization paradigm inspired by the judo principle of "redirecting force rather than resisting it," attempting to redirect adversarial perturbations into beneficial optimization signals. The framework is theoretically grounded in 15 axioms and 4 theorems, constructing an energy-conservation-based gradient redirection system. However, the actual implementation is substantially simplified to momentum SGD with…
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "probabilistic forecasting"
   - "quantile regression"
 date: 2026-05-08
-content_hash: 2a9fe5eb60aa9931
+content_hash: 6810c873a70563d0
 ---
 
 # AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting
@@ -124,10 +124,10 @@ Paired t-test: T-statistic = 1.70, p-value = 0.0955 (> 0.05), concluding no sign
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](../../ICLR2026/time_series/towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
+- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](../../ICLR2026/time_series/end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
 - [\[NeurIPS 2025\] IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics](ioncast_a_deep_learning_framework_for_forecasting_ionospheric_total_electron_con.md)
 - [\[NeurIPS 2025\] TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting](timeperceiver_an_encoder-decoder_framework_for_generalized_time-series_forecasti.md)
 - [\[ICML 2026\] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting](../../ICML2026/time_series/parametric_prior_mapping_framework_for_non-stationary_probabilistic_time_series_.md)
-- [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](../../ICLR2026/time_series/from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
 
 </div>
 

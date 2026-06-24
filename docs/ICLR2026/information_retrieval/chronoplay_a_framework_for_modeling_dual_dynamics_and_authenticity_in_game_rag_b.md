@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ChronoPlay: A Framework for Modeling Dual Dynamics and Authenticity in Game RAG Benchmarks
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] ChronoPlay is the first RAG benchmark generation framework for the gaming domain. It utilizes a "dual-source synthesis engine" (official knowledge to ensure factual accuracy + player community templates to ensure question authenticity) for automated data creation. It further implements a "dual dynamic update mechanism"
+  [ICLR2026][Information Retrieval & RAG][Game RAG] ChronoPlay is the first RAG benchmark generation framework for the gaming domain. It utilizes a "dual-source synthesis engine" (official knowledge to ensure factual accuracy + player community templates to ensure question authenticity) for automated data creation. It further implements a "dual dynamic update mechanism" (refreshing knowledge based on version updates and resampling question distributions by detecting interest dr…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Game RAG"
+  - "Dynamic Benchmarks"
+  - "Knowledge Evolution"
+  - "Interest Drift"
+  - "Automatic Synthesis"
 date: 2026-05-08
-content_hash: d2de13a7ab951408
+content_hash: 42af4fc5f7b1cdc8
 ---
+
 # ChronoPlay: A Framework for Modeling Dual Dynamics and Authenticity in Game RAG Benchmarks
 
 **Conference**: ICLR2026  
@@ -119,8 +125,8 @@ Competitive evaluation (LLM-as-Judge and expert human assessment) shows that **Q
 - Value: ⭐⭐⭐⭐ Provides a standard evaluation for game RAG and a methodology transferable to other dual-evolution domains like e-commerce or social media.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

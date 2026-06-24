@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization
 description: >-
-  [AAAI 2026][Computational Biology][Protein conformational ensemble] This paper proposes EPO (Energy Preference Optimization), which combines reverse SDE sampling with listwise energy-ranked preference optimization to ali…
+  [AAAI 2026][Computational Biology][Protein conformational ensemble] This paper proposes EPO (Energy Preference Optimization), which combines reverse SDE sampling with listwise energy-ranked preference optimization to align a pretrained protein generator with the target Boltzmann distribution using only energy signals. EPO achieves state-of-the-art performance across 9 metrics on three benchmarks (Tetrapeptides, ATLAS, and Fast-Folding), entirely eliminating the need for expen…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Boltzmann distribution"
   - "MD-free generation"
 date: 2026-05-08
-content_hash: f526b4269ed3ab27
+content_hash: 60d23f5b6216539d
 ---
 
 # EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization
@@ -131,11 +131,11 @@ Listwise LiPO loss with online iterative LoRA fine-tuning. Energies are computed
 
 ## Related Papers
 
+- [\[ACL 2025\] Enhancing Safe and Controllable Protein Generation via Knowledge Preference Optimization](../../ACL2025/computational_biology/kpo_protein_safety.md)
+- [\[ICML 2025\] Aligning Protein Conformation Ensemble Generation with Physical Feedback](../../ICML2025/computational_biology/aligning_protein_conformation_ensemble_generation_with_physical_feedback.md)
 - [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](../../NeurIPS2025/computational_biology/g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](../../ICLR2026/computational_biology/protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
+- [\[ICLR 2026\] DrugTrail: Interpretable Drug Discovery via Structured Reasoning and Druggability‑Tailored Preference Optimization](../../ICLR2026/computational_biology/drugtrail_interpretable_drug_discovery_via_structured_reasoning_and_druggability.md)
 - [\[AAAI 2026\] GP-MoLFormer-Sim: Test Time Molecular Optimization through Contextual Similarity Guidance](gp-molformer-sim_test_time_molecular_optimization_through_contextual_similarity_.md)
-- [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
-- [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](../../NeurIPS2025/computational_biology/energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the issues where watermarks are erased and rendering quality collapses after quantizing 3DGS models to low bits, Robust3DGSW proposes a two-stage quantization-aware watermarking framework: the first stage embeds watermarks into the **mid-frequency bands** of 3D Gaussian positions and 2D renderings to resist
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] To address the issues where watermarks are erased and rendering quality collapses after quantizing 3DGS models to low bits, Robust3DGSW proposes a two-stage quantization-aware watermarking framework: the first stage embeds watermarks into the **mid-frequency bands** of 3D Gaussian positions and 2D renderings to resist quantization loss, while the second stage utilizes multi-scale adversarial perturbations and progressive quantizat…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Digital Watermarking"
+  - "Quantization-Aware"
+  - "Mid-frequency Embedding"
+  - "Adversarial Perturbation"
 date: 2026-05-08
-content_hash: f620374b9933c882
+content_hash: 5a3614d70631f752
 ---
+
 # Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -126,15 +132,16 @@ Ablation on MipNeRF360 (averaged over three datasets):
 - Value: ⭐⭐⭐⭐⭐ Vital for copyright protection in mobile 3D asset deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
+- [\[ICLR 2026\] NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting](../../ICLR2026/3d_vision/ngs-marker_robust_native_watermarking_for_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+- [\[ICLR 2026\] CompMarkGS: Robust Watermarking for Compressed 3D Gaussian Splatting](../../ICLR2026/3d_vision/compmarkgs_robust_watermarking_for_compressed_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
-- [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
-- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 
 </div>
 

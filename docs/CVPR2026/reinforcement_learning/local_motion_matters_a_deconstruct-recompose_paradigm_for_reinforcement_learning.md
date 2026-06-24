@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Local Motion Matters: A Deconstruct-Recompose Paradigm for Reinforcement Learning Pre-training from Videos
 description: >-
-  [CVPR 2026][Reinforcement Learning][World Models] This work deconstructs complex "global motion" in videos into morphology-agnostic "atomic actions" (local optical flow patches). A dual-attention encoder learns transferable local motion representations, which are recomposed into a world model via a learnable aggregation token. This paradigm significantly enhances RL s
+  [CVPR 2026][Reinforcement Learning][Video Pre-training] This work deconstructs complex "global motion" in videos into morphology-agnostic "atomic actions" (local optical flow patches). A dual-attention encoder learns transferable local motion representations, which are recomposed into a world model via a learnable aggregation token. This paradigm significantly enhances RL sample efficiency and final performance on downstream robotic control tasks such as DMControl Remastered…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - World Models
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Video Pre-training"
+  - "Local Motion"
+  - "World Models"
+  - "Cross-morphology Transfer"
 date: 2026-05-08
-content_hash: 9b696c25a1d87bf8
+content_hash: 39cf30600c428569
 ---
+
 # Local Motion Matters: A Deconstruct-Recompose Paradigm for Reinforcement Learning Pre-training from Videos
 
 **Conference**: CVPR 2026  
@@ -151,11 +155,11 @@ Evaluations were conducted on **DMControl Remastered (DMCR)** and **Meta-World**
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty](../../ICLR2026/reinforcement_learning/learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
 - [\[ICLR 2026\] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](../../ICLR2026/reinforcement_learning/unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
 - [\[ICML 2025\] Online Pre-Training for Offline-to-Online Reinforcement Learning](../../ICML2025/reinforcement_learning/online_pre-training_for_offline-to-online_reinforcement_learning.md)
-- [\[ICLR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](../../ICLR2026/reinforcement_learning/remot_reinforcement_learning_with_motion_contrast_triplets.md)
-- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
-- [\[CVPR 2026\] DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration](dreamsac_learning_hamiltonian_world_models_via_symmetry_exploration.md)
+- [\[ICLR 2026\] Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions](../../ICLR2026/reinforcement_learning/local_reinforcement_learning_with_action-conditioned_root_mean_squared_q-functio.md)
+- [\[ICLR 2026\] Who Matters Matters: Agent-Specific Conservative Offline MARL](../../ICLR2026/reinforcement_learning/who_matters_matters_agent-specific_conservative_offline_marl.md)
 
 </div>
 

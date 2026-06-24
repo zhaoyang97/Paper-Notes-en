@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Grid Distillation: Compositional Image Distillation via Structured Generative Grids
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Grid Distillation compresses an entire image class into a "structured generative grid": it first uses Spectral-Submodular Image Selection (SSDIM) to select $L^2$ representative images from CLIP embeddings—balancing coverage, diversity, and manifold geometry—to form a grid which is then downsampled. Subsequently, a sing
+  [CVPR 2026][Model Compression][Dataset Distillation] Grid Distillation compresses an entire image class into a "structured generative grid": it first uses Spectral-Submodular Image Selection (SSDIM) to select $L^2$ representative images from CLIP embeddings—balancing coverage, diversity, and manifold geometry—to form a grid which is then downsampled. Subsequently, a single-step diffusion inversion (based on SD Turbo) restores high-frequency details lost during downsampling…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Submodular Optimization"
+  - "Spectral Decomposition"
+  - "Diffusion Inversion"
+  - "Grid Composition"
 date: 2026-05-08
-content_hash: 9ff34b8cccdddf8d
+content_hash: 63f4da0ac66fb6bb
 ---
+
 # Grid Distillation: Compositional Image Distillation via Structured Generative Grids
 
 **Conference**: CVPR 2026  
@@ -123,15 +129,16 @@ On ImageNet-1K (IPC=10, ResNet-18), the detail-enhanced version reaches 50.01%, 
 - Value: ⭐⭐⭐⭐⭐ (Significant SOTA improvements and highly efficient)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation](hieramp_coarse-to-fine_autoregressive_amplification_for_generative_dataset_disti.md)
 - [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
-- [\[CVPR 2026\] ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)
-- [\[CVPR 2026\] Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](differentiable_vector_quantization_for_rate-distortion_optimization_of_generativ.md)
 - [\[CVPR 2026\] Dataset Distillation by Influence Matching](dataset_distillation_by_influence_matching.md)
+- [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](../../ICLR2026/model_compression/generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
+- [\[CVPR 2026\] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation](mitigating_the_distribution_shift_of_diffusion-based_dataset_distillation.md)
 
 </div>
 

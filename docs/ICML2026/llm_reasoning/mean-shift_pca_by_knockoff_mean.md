@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mean-Shift PCA by Knockoff Mean
 description: >-
-  [ICML 2026][LLM Reasoning][knockoff] This paper utilizes Random Matrix Theory to prove that "mean-shift contamination" is asymptotically independent of true covariance spikes in the spectrum of the sample covariance matrix. Based on this, the authors propose MS-PCA, a two-stage algorithm: by intentionally injecting a "knockoff mean" (decoy mean-shift) and
+  [ICML 2026][Reasoning][Principal Component Analysis] This paper utilizes Random Matrix Theory to prove that "mean-shift contamination" is asymptotically independent of true covariance spikes in the spectrum of the sample covariance matrix. Based on this, the authors propose MS-PCA, a two-stage algorithm: by intentionally injecting a "knockoff mean" (decoy mean-shift) and performing a second PCA, it identifies "decoy-driven" eigenvalues as contamination and removes them…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - knockoff
+  - "ICML 2026"
+  - "Reasoning"
+  - "Principal Component Analysis"
+  - "Mean-shift Contamination"
+  - "Knockoff"
+  - "Random Matrix Theory"
+  - "Spectral Invariance"
 date: 2026-05-08
-content_hash: 1f427ce189bd1847
+content_hash: f0ad22e88c30874a
 ---
+
 # Mean-Shift PCA by Knockoff Mean
 
 **Conference**: ICML 2026  
@@ -121,15 +126,16 @@ This method involves **no optimization and no training**. It only calls standard
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
 - [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](many-shot_cot-icl_making_in-context_learning_truly_learn.md)
+- [\[ICML 2026\] DecepChain: Inducing Deceptive Reasoning in Large Language Models](decepchain_inducing_deceptive_reasoning_in_large_language_models.md)
 
 </div>
 

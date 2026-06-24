@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GRIM: Task-Oriented Grasping with Conditioning on Generative Examples
 description: >-
-  [AAAI 2026][Robotics][Task-oriented grasping] This paper proposes GRIM (Grasp Re-alignment via Iterative Matching), a **training-free** task-oriented grasping (TOG) framework that employs a **retrieve–align–transfer** pi…
+  [AAAI 2026][Robotics][Task-oriented grasping] This paper proposes GRIM (Grasp Re-alignment via Iterative Matching), a **training-free** task-oriented grasping (TOG) framework that employs a **retrieve–align–transfer** pipeline combining video generation models with a multi-source memory bank. By leveraging DINO-feature-based semantic 3D alignment, GRIM achieves functional grasp transfer across objects, surpassing GraspMolmo—trained on 379K samples—using only 210 memory instan…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "semantic alignment"
   - "grasp transfer"
 date: 2026-05-08
-content_hash: 02014bba3bd86021
+content_hash: f41f86e357ab77d9
 ---
 
 # GRIM: Task-Oriented Grasping with Conditioning on Generative Examples
@@ -178,11 +178,11 @@ Tested on a Kinova Gen3 Lite with two RGB-D cameras across 5 novel objects × 10
 
 ## Related Papers
 
+- [\[ACL 2026\] Ability-Oriented Failure Attribution for Vision-Language Navigation Agents](../../ACL2026/robotics/where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
 - [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[ACL 2026\] Capability-Oriented Failure Attribution for Vision-Language Navigation Agents](../../ACL2026/robotics/where_did_it_go_wrong_capability-oriented_failure_attribution_for_vision-and-lan.md)
-- [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](../../CVPR2026/robotics/graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
-- [\[ICML 2026\] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](../../ICML2026/robotics/lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)
-- [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](../../ICLR2026/robotics/grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
+- [\[ICLR 2026\] Masked Generative Policy for Robotic Control](../../ICLR2026/robotics/masked_generative_policy_for_robotic_control.md)
+- [\[ICML 2025\] Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples](../../ICML2025/robotics/flow_of_reasoning_training_llms_for_divergent_reasoning_with_minimal_examples.md)
+- [\[CVPR 2026\] Obstruction Reasoning for Robotic Grasping](../../CVPR2026/robotics/obstruction_reasoning_for_robotic_grasping.md)
 
 </div>
 

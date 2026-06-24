@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AutoDrive-R²: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][VLA] AutoDrive-R² employs a four-step CoT + self-reflection data for cold-starting an autonomous driving VLA, followed by post-training using GRPO with spatial, kinetic, and temporal smoothness constraints. This enables the model to explain its driving decisions while outputting trajectories that adhere to vehicle physical
+  [ICLR2026][Autonomous Driving][VLA] AutoDrive-R² employs a four-step CoT + self-reflection data for cold-starting an autonomous driving VLA, followed by post-training using GRPO with spatial, kinetic, and temporal smoothness constraints. This enables the model to explain its driving decisions while outputting trajectories that adhere to vehicle physical constraints.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - VLA
-  - Chain-of-Thought
-  - GRPO
+  - "ICLR2026"
+  - "Autonomous Driving"
+  - "VLA"
+  - "Chain-of-Thought"
+  - "Self-Reflection"
+  - "GRPO"
+  - "Physics-Constrained Reward"
 date: 2026-05-08
-content_hash: 77aa2b6563668e0d
+content_hash: 47eca6ff9f148bc7
 ---
+
 # AutoDrive-R²: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving
 
 **Conference**: ICLR2026  
@@ -153,7 +156,7 @@ AutoDrive-R² achieves the best results on nuScenes with significantly less data
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

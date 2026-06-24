@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Neural Exposure Fields for View Synthesis
 description: >-
-  [NeurIPS 2025][3D Vision][Neural Radiance Fields] This paper proposes Neural Exposure Fields (NExF), which achieves 3D-consistent high-quality view synthesis by learning optimal exposure values per 3D point rather than p…
+  [NeurIPS 2025][3D Vision][Neural Radiance Fields] This paper proposes Neural Exposure Fields (NExF), which achieves 3D-consistent high-quality view synthesis by learning optimal exposure values per 3D point rather than per image. On HDR scenes, NExF surpasses the state-of-the-art by 3.5+ dB in PSNR while being 50× faster.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Consistency"
   - "High Dynamic Range"
 date: 2026-05-08
-content_hash: 4bd2a2b339ebfafd
+content_hash: 34d300feb7c80709
 ---
 
 # Learning Neural Exposure Fields for View Synthesis
@@ -129,10 +129,10 @@ Two components are added on top of a standard NeRF architecture: (1) latent expo
 ## Related Papers
 
 - [\[NeurIPS 2025\] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](hyrf_hybrid_radiance_fields_for_memory-efficient_and_high-quality_novel_view_syn.md)
+- [\[ICML 2025\] High Dynamic Range Novel View Synthesis with Single Exposure](../../ICML2025/3d_vision/high_dynamic_range_novel_view_synthesis_with_single_exposure.md)
 - [\[ICCV 2025\] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing](../../ICCV2025/3d_vision/sehdr_single-exposure_hdr_novel_view_synthesis_via_3d_gaussian_bracketing.md)
-- [\[CVPR 2026\] Evidential Neural Radiance Fields](../../CVPR2026/3d_vision/evidential_neural_radiance_fields.md)
+- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](../../CVPR2026/3d_vision/rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
-- [\[NeurIPS 2025\] NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](nerfbaselines_consistent_and_reproducible_evaluation_of_novel_view_synthesis_met.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Unsupervised temporal action segmentation] This paper proposes Skeleton Motion Quantization (SMQ), which achieves unsupervised temporal action segmentation on skeleton sequences via a joint-deco…
+  [ICCV 2025][Segmentation][Unsupervised temporal action segmentation] This paper proposes Skeleton Motion Quantization (SMQ), which achieves unsupervised temporal action segmentation on skeleton sequences via a joint-decoupled temporal autoencoder and a skeleton motion word quantization module, substantially outperforming existing unsupervised methods on HuGaDB, LARa, and BABEL.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "temporal autoencoder"
   - "motion words"
 date: 2026-05-08
-content_hash: 47db1027a16e5b67
+content_hash: d3fcfdd0eee42d41
 ---
 
 # Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation
@@ -151,9 +151,9 @@ $$L_{commit} = \sum_{\mathbf{p}_i} \|\text{sg}[\mathbf{c}_{k_i}] - \mathbf{p}_i\
 
 - [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
 - [\[ICCV 2025\] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation](clot_closed_loop_optimal_transport_for_unsupervised_action_segmentation.md)
+- [\[ECCV 2024\] Long-Tail Temporal Action Segmentation with Group-wise Temporal Logit Adjustment](../../ECCV2024/segmentation/long-tail_temporal_action_segmentation_with_group-wise_temporal_logit_adjustment.md)
 - [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](joint_self-supervised_video_alignment_and_action_segmentation.md)
 - [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
-- [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](what_if_understanding_motion_through_sparse_interactions.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Extremely Simple Multimodal Outlier Synthesis for Out-of-Distribution Detection and Segmentation
 description: >-
-  [NeurIPS 2025][Autonomous Driving][OOD Detection] This paper proposes Feature Mixing — an extremely simple multimodal outlier synthesis method that generates OOD samples by randomly swapping $N$ dimensions across feature…
+  [NeurIPS 2025][Autonomous Driving][OOD Detection] This paper proposes Feature Mixing — an extremely simple multimodal outlier synthesis method that generates OOD samples by randomly swapping $N$ dimensions across features from two modalities for training regularization. It provides theoretical guarantees that synthesized outliers reside in low-likelihood regions of the ID distribution with bounded deviation, achieves state-of-the-art performance across 8 datasets and 4 modali…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Outlier Synthesis"
   - "Feature Mixing"
 date: 2026-05-08
-content_hash: 980628cb097abcd4
+content_hash: 8b6f8e4cffccc5d0
 ---
 
 # Extremely Simple Multimodal Outlier Synthesis for Out-of-Distribution Detection and Segmentation
@@ -143,10 +143,10 @@ A dual-stream network extracts features from each modality separately (ResNet-34
 ## Related Papers
 
 - [\[CVPR 2026\] Neural Distribution Prior for LiDAR Out-of-Distribution Detection](../../CVPR2026/autonomous_driving/neural_distribution_prior_for_lidar_ood_detection.md)
+- [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](../../CVPR2026/autonomous_driving/learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
 - [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
-- [\[NeurIPS 2025\] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation](leveraging_depth_and_language_for_open-vocabulary_domain-generalized_semantic_se.md)
-- [\[NeurIPS 2025\] SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration](simworld-robotics_synthesizing_photorealistic_and_dynamic_urban_environments_for.md)
 - [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](../../CVPR2026/autonomous_driving/proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
+- [\[NeurIPS 2025\] SimWorld-Robotics: Synthesizing Photorealistic and Dynamic Urban Environments for Multimodal Robot Navigation and Collaboration](simworld-robotics_synthesizing_photorealistic_and_dynamic_urban_environments_for.md)
 
 </div>
 

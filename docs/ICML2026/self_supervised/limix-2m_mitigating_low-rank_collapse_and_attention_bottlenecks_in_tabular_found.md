@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] Addressing two major pathologies in tabular foundation models like TabPFN-v2—severe low-rank collapse in shallow layers and the negligible contribution of sample-attention in the final layer to prediction signals—the authors propose using Radial Basis Functions to expand each scalar into a set of local responses (RaBEL
+  [ICML 2026][Self-Supervised Learning][Tabular Foundation Models] Addressing two major pathologies in tabular foundation models like TabPFN-v2—severe low-rank collapse in shallow layers and the negligible contribution of sample-attention in the final layer to prediction signals—the authors propose using Radial Basis Functions to expand each scalar into a set of local responses (RaBEL) to unlock degrees of freedom in the "value direction." Furthermore…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Tabular Foundation Models"
+  - "RBF Embedding"
+  - "Low-Rank Collapse"
+  - "Bidirectional Attention"
+  - "Tabular ICL"
 date: 2026-05-08
-content_hash: 6abc8ed9f74b2b3f
+content_hash: 8f9cda287fc78f88
 ---
+
 # LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models
 
 **Conference**: ICML 2026  
@@ -136,14 +142,17 @@ Horizontal comparison of RaBEL on an MLP backbone (13 datasets) also shows MLP-R
 
 <div class="related-papers" markdown="1">
 
-- **TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second**, Nature 2022.
-- **On Embeddings for Numerical Features in Tabular Deep Learning**, NeurIPS 2022.
-- **TabICL: In-context Learning with Bidirectional Transformers for Tabular Data**, arXiv 2023.
+## Related Papers
+
+- [\[ICML 2026\] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment](mitigating_label_shift_in_tabular_in-context_learning_via_test-time_posterior_ad.md)
+- [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
+- [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
+- [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](../../NeurIPS2025/self_supervised/mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
+- [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment](mitigating_label_shift_in_tabular_in-context_learning_via_test-time_posterior_ad.md)

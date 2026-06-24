@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OctoMed: Data Recipes for State-of-the-Art Multimodal Medical Reasoning
 description: >-
-  [CVPR 2026][Medical Imaging][Knowledge Distillation] Instead of relying on new architectures or larger backbones, this work systematically investigates "how to mix training data." By utilizing strong teacher distillation and rejection sampling, the authors filtered 8 million medical samples with structured reasoning chains (6.8 billion tokens). This process fine-tuned a
+  [CVPR 2026][Medical Imaging][Data Recipes] Instead of relying on new architectures or larger backbones, this work systematically investigates "how to mix training data." By utilizing strong teacher distillation and rejection sampling, the authors filtered 8 million medical samples with structured reasoning chains (6.8 billion tokens). This process fine-tuned a 7B student model (Qwen2.5-VL-7B) into OctoMed, achieving open-source SOTA on multiple out-of-distribution (OOD) medic…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Data Recipes"
+  - "Supervised Fine-Tuning"
+  - "Knowledge Distillation"
+  - "Rejection Sampling"
+  - "Multimodal Medical Reasoning"
 date: 2026-05-08
-content_hash: 490ab574651e7db7
+content_hash: 53150dd4fa96f7d5
 ---
+
 # OctoMed: Data Recipes for State-of-the-Art Multimodal Medical Reasoning
 
 **Conference**: CVPR 2026  
@@ -127,11 +132,20 @@ OctoMed-7B leads among similarly sized open-source models and outperforms the 4x
 - Value: ⭐⭐⭐⭐⭐ Open-source data and models with a reproducible recipe; highly practical for medical LLM post-training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[CVPR 2026\] MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis](medtvt-r1_a_multimodal_llm_empowering_medical_reasoning_and_diagnosis.md)
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
+- [\[CVPR 2026\] MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning](multimodalpfn_extending_prior-data_fitted_networks_for_multimodal_tabular_learni.md)
+- [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
+- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis](medtvt-r1_a_multimodal_llm_empowering_medical_reasoning_and_diagnosis.md)

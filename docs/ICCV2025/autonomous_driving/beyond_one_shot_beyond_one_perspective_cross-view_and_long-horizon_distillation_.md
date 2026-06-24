@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations
 description: >-
-  [ICCV 2025][Autonomous Driving][LiDAR representation learning] LiMA proposes a long-horizon image-to-LiDAR memory aggregation framework that explicitly leverages spatiotemporal cues in LiDAR sequences via three modules—c…
+  [ICCV 2025][Autonomous Driving][LiDAR representation learning] LiMA proposes a long-horizon image-to-LiDAR memory aggregation framework that explicitly leverages spatiotemporal cues in LiDAR sequences via three modules—cross-view aggregation, long-term feature propagation, and cross-sequence memory alignment—to enhance LiDAR representation learning, achieving substantial improvements over existing pre-training methods on semantic segmentation and 3D object detection.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "long-horizon feature propagation"
   - "pre-training"
 date: 2026-05-08
-content_hash: 833750a7d639a4b9
+content_hash: 37d6b21812b6431d
 ---
 
 # Beyond One Shot, Beyond One Perspective: Cross-View and Long-Horizon Distillation for Better LiDAR Representations
@@ -148,10 +148,10 @@ Transfer experiments on Waymo Open Dataset:
 ## Related Papers
 
 - [\[ICCV 2025\] Wavelet Policy: Lifting Scheme for Policy Learning in Long-Horizon Tasks](wavelet_policy_lifting_scheme_for_policy_learning_in_long-horizon_tasks.md)
-- [\[ICCV 2025\] Where am I? Cross-View Geo-localization with Natural Language Descriptions](where_am_i_cross-view_geo-localization_with_natural_language_descriptions.md)
+- [\[CVPR 2025\] TacoDepth: Towards Efficient Radar-Camera Depth Estimation with One-Stage Fusion](../../CVPR2025/autonomous_driving/tacodepth_towards_efficient_radar-camera_depth_estimation_with_one-stage_fusion.md)
+- [\[CVPR 2026\] ShelfOcc: Native 3D Supervision beyond LiDAR for Vision-Based Occupancy Estimation](../../CVPR2026/autonomous_driving/shelfocc_native_3d_supervision_beyond_lidar_for_vision-based_occupancy_estimatio.md)
 - [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[NeurIPS 2025\] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery](../../NeurIPS2025/autonomous_driving/l2rsi_cross-view_lidar-based_place_recognition_for_large-scale_urban_scenes_via_.md)
-- [\[CVPR 2026\] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/meanfuser_fast_one-step_multi-modal_trajectory_generation_and_adaptive_reconstru.md)
+- [\[ICCV 2025\] Where am I? Cross-View Geo-localization with Natural Language Descriptions](where_am_i_cross-view_geo-localization_with_natural_language_descriptions.md)
 
 </div>
 

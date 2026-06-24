@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation
 description: >-
-  [CVPR 2026][Human Understanding][MeanFlow] This work introduces the "single-step generation" MeanFlow paradigm to the human motion domain for the first time. By utilizing an autoregressive structure consisting of a "causal context encoder + lightweight MLP velocity predictor" combined with Bootstrapped Causal Encoding (BSCE) to suppress error accumulation, onli
+  [CVPR 2026][3D Vision][3D human reaction generation] This work introduces the "single-step generation" MeanFlow paradigm to the human motion domain for the first time. By utilizing an autoregressive structure consisting of a "causal context encoder + lightweight MLP velocity predictor" combined with Bootstrapped Causal Encoding (BSCE) to suppress error accumulation, online 3D human reaction generation is achieved within a single inference step. The method reduces FID by appro…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - MeanFlow
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D human reaction generation"
+  - "MeanFlow"
+  - "autoregressive generation"
+  - "single-step inference"
+  - "real-time motion synthesis"
 date: 2026-05-08
-content_hash: 55a009c9f9048e57
+content_hash: bd751b7e4d586301
 ---
+
 # ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ The offline version, ReMFlow, also achieves SOTA on both datasets: InterHuman FI
 
 ## Related Papers
 
-- [\[CVPR 2026\] PolySLGen: Online Multimodal Speaking-Listening Reaction Generation in Polyadic Interaction](polyslgen_online_multimodal_speaking-listening_reaction_generation_in_polyadic_i.md)
-- [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
-- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
+- [\[CVPR 2026\] Repurposing 3D Generative Model for Autoregressive Layout Generation](repurposing_3d_generative_model_for_autoregressive_layout_generation.md)
+- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](meshripple_structured_autoregressive_generation_of_artist-meshes.md)
+- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
+- [\[CVPR 2026\] Human Geometry Distribution for 3D Animation Generation](human_geometry_distribution_for_3d_animation_generation.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] This paper proposes Omni-Reward, which extends reward modeling from "text/image only with fixed binary preferences" to "covering text/image/video/audio/3D with dynamic scoring based on free-form text preferences." It introduces a unified benchmark (Omni-RewardBench, 5 modalities, 9 tasks), a large-scale preference data
+  [ICLR 2026][LLM Alignment][Reward Model] This paper proposes Omni-Reward, which extends reward modeling from "text/image only with fixed binary preferences" to "covering text/image/video/audio/3D with dynamic scoring based on free-form text preferences." It introduces a unified benchmark (Omni-RewardBench, 5 modalities, 9 tasks), a large-scale preference dataset (Omni-RewardData, 248K general + 69K instruction-tuned pairs), and two reward models (Discriminative BT version + G…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
-  - Bradley-Terry
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Omni-modal"
+  - "Free-form Preference"
+  - "RLHF"
+  - "Bradley-Terry"
 date: 2026-05-08
-content_hash: 93470f9d8f8a3632
+content_hash: d3cc37e98e7b736d
 ---
+
 # Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences
 
 **Conference**: ICLR 2026  
@@ -153,8 +157,8 @@ Ablation of training data components on Omni-RewardBench (w/ Tie, Overall %):
 - [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](robust_reward_modeling_via_causal_rubrics.md)
 - [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
 - [\[ICLR 2026\] Learning Ordinal Probabilistic Reward from Preferences (OPRM)](learning_ordinal_probabilistic_reward_from_preferences.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 - [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
-- [\[ICLR 2026\] Reward Model Routing in Alignment](reward_model_routing_in_alignment.md)
 
 </div>
 

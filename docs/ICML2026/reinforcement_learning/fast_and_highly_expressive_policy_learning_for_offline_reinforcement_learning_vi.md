@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Flow Matching] Addressing the limitations of multi-step denoising and BPTT in Diffusion Q-Learning—which are slow and unstable—BFQ employs a divide-and-conquer bootstrapping approach for the "noise to action" displacement. By learning short-range displacements (precisely estimable via Flow Matching marginal velocity) and progressivel
+  [ICML2026][Reinforcement Learning][Offline Reinforcement Learning] Addressing the limitations of multi-step denoising and BPTT in Diffusion Q-Learning—which are slow and unstable—BFQ employs a divide-and-conquer bootstrapping approach for the "noise to action" displacement. By learning short-range displacements (precisely estimable via Flow Matching marginal velocity) and progressively assembling them into a single-step direct mapping, it enables single-step action generation…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Flow Matching
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Flow Matching"
+  - "Single-step Policy"
+  - "Bootstrapping"
+  - "Behavior-regularized Actor-Critic"
 date: 2026-05-08
-content_hash: 94ca3d00ba11692a
+content_hash: dfe5e28512dc5cf6
 ---
+
 # Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning
 
 **Conference**: ICML2026  
@@ -145,11 +150,11 @@ Impact of boundary condition ratio $\lambda$ on HalfCheetah:
 
 ## Related Papers
 
-- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](../../ICLR2026/reinforcement_learning/flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] PolicyFlow: Policy Optimization with Continuous Normalizing Flow in Reinforcement Learning](../../ICLR2026/reinforcement_learning/policyflow_policy_optimization_with_continuous_normalizing_flow_in_reinforcement.md)
-- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
-- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
+- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](../../ICLR2026/reinforcement_learning/one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](../../ICLR2026/reinforcement_learning/flow_actor-critic_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] EXPO: Stable Reinforcement Learning with Expressive Policies](../../ICLR2026/reinforcement_learning/expo_stable_reinforcement_learning_with_expressive_policies.md)
 
 </div>
 

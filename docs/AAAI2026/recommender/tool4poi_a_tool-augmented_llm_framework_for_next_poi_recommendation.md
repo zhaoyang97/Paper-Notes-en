@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation
 description: >-
-  [AAAI 2026][Recommender Systems][POI Recommendation] This paper is the first to introduce the tool-augmented LLM paradigm to the next POI recommendation task. Through three modules—preference extraction…
+  [AAAI 2026][Recommender Systems][POI Recommendation] This paper is the first to introduce the tool-augmented LLM paradigm to the next POI recommendation task. Through three modules—preference extraction, multi-round candidate retrieval, and reranking—the framework enables LLMs to retrieve recommendations from the full POI pool. It achieves over 40% accuracy in Out-of-History (OOH) scenarios (where existing methods yield 0%), with average Acc@5/10 improvements of 20%/30%.
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Open-Set Recommendation"
   - "Location-Based Services"
 date: 2026-05-08
-content_hash: 966b96a377447a2f
+content_hash: bd4c7899e4d01970
 ---
 
 # Tool4POI: A Tool-Augmented LLM Framework for Next POI Recommendation
@@ -122,8 +122,8 @@ Tool4POI is entirely training-free and requires no fine-tuning. During inference
 ## Related Papers
 
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/recommender/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
-- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 - [\[AAAI 2026\] From IDs to Semantics: A Generative Framework for Cross-Domain Recommendation with Adaptive Semantic Tokenization](from_ids_to_semantics_a_generative_framework_for_cross-domain_recommendation_wit.md)
+- [\[AAAI 2026\] Tokenize Once, Recommend Anywhere: Unified Item Tokenization for Multi-domain LLM-based Recommendation](tokenize_once_recommend_anywhere_unified_item_tokenization_for_multi-domain_llm-.md)
 - [\[ACL 2026\] From Past To Path: Masked History Learning for Next-Item Prediction in Generative Recommendation](../../ACL2026/recommender/from_past_to_path_masked_history_learning_for_next-item_prediction_in_generative.md)
 - [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 

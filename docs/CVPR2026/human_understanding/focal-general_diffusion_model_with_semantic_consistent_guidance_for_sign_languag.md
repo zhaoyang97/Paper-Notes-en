@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Focal–General Diffusion Model with Semantic Consistent Guidance for Sign Language Production
 description: >-
-  [CVPR 2026][Human Understanding][Gloss-to-Pose] Addressing the common flaw in the Gloss-to-Pose stage of Sign Language Production (SLP)—which typically models only global sequences while ignoring fine-grained joint-level dependencies—this paper proposes the Focal–General Diffusion Model (FGDM). By employing a two-stage denoising structure that "focuses on joints fir
+  [CVPR 2026][Human Understanding][Sign Language Production] Addressing the common flaw in the Gloss-to-Pose stage of Sign Language Production (SLP)—which typically models only global sequences while ignoring fine-grained joint-level dependencies—this paper proposes the Focal–General Diffusion Model (FGDM). By employing a two-stage denoising structure that "focuses on joints first, then coordinates the global sequence," combined with a frame-wise Adaptive Semantic Graph Convolu…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Gloss-to-Pose
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Sign Language Production"
+  - "Gloss-to-Pose"
+  - "Diffusion Models"
+  - "Adaptive Graph Convolution"
+  - "Cross-modal Semantic Consistency"
 date: 2026-05-08
-content_hash: b28a9d73ed016f3b
+content_hash: f64f91e5215ff1d7
 ---
+
 # Focal–General Diffusion Model with Semantic Consistent Guidance for Sign Language Production
 
 **Conference**: CVPR 2026  
@@ -144,10 +148,10 @@ Ablation of components within ASGCN:
 ## Related Papers
 
 - [\[CVPR 2026\] SignPR: A Progressive Vector-Quantized Diffusion Framework for Sign Language Production](signpr_a_progressive_vector-quantized_diffusion_framework_for_sign_language_prod.md)
-- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/human_understanding/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
 - [\[CVPR 2026\] BoostSLT: Boosting Sign Language Translation via a Plug-and-Play Diffusion-Based Semantic Enhancer](boostslt_boosting_sign_language_translation_via_a_plug-and-play_diffusion-based_.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
 - [\[CVPR 2026\] Learning Effective Sign Features without Text for Gloss-free Sign Language Translation](learning_effective_sign_features_without_text_for_gloss-free_sign_language_trans.md)
+- [\[CVPR 2026\] Unifying Precise Keyframes and Semantic Control via Multi-level Diffusion](unifying_precise_keyframes_and_semantic_control_via_multi-level_diffusion.md)
+- [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
 
 </div>
 

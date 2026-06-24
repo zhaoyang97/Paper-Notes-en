@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps
 description: >-
-  [CVPR 2026][Multimodal VLM][benchmark] Ours proposes the ReasonMap benchmark, which utilizes high-resolution transit maps from 30 cities to construct 1,008 QA pairs. Through a two-level evaluation framework (correctness + quality), the fine-grained visual reasoning capabilities of 16 MLLMs are systematically evaluated. The study reveals that among open-sour
+  [CVPR2026][VLM Reasoning][Multimodal Reasoning] Ours proposes the ReasonMap benchmark, which utilizes high-resolution transit maps from 30 cities to construct 1,008 QA pairs. Through a two-level evaluation framework (correctness + quality), the fine-grained visual reasoning capabilities of 16 MLLMs are systematically evaluated. The study reveals that among open-source models, base models outperform reasoning models, whereas the opposite is true for closed-source models.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - benchmark
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "Multimodal Reasoning"
+  - "Visual Reasoning"
+  - "Spatial Reasoning"
+  - "Transit Maps"
+  - "Benchmark"
+  - "RLHF"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 91c6b232de17292b
+content_hash: e7db28f37b4b54ce
 ---
+
 # ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps
 
 **Conference**: CVPR2026  
@@ -139,10 +146,10 @@ As this field lacked an RL baseline for comparison, the paper performs reinforce
 ## Related Papers
 
 - [\[CVPR 2026\] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts](chart-fr1_visual_focus-driven_fine-grained_reasoning_on_dense_charts.md)
-- [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
-- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
 - [\[CVPR 2026\] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs](thinking_beyond_labels_vocabulary-free_fine-grained_recognition_using_reasoning-.md)
+- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
+- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](../../ICLR2026/vlm_reasoning/visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
+- [\[NeurIPS 2025\] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards](../../NeurIPS2025/vlm_reasoning/unveiling_chain_of_step_reasoning_for_visionlanguage_models.md)
 
 </div>
 

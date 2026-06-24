@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes
 description: >-
-  [NeurIPS 2025][Optimization][Neural Tangent Kernel] This paper establishes explicit quantitative upper bounds on the convergence of gradient-descent-trained shallow neural networks to Gaussian processes at any positive t…
+  [NeurIPS 2025][Optimization][Neural Tangent Kernel] This paper establishes explicit quantitative upper bounds on the convergence of gradient-descent-trained shallow neural networks to Gaussian processes at any positive training time $t \geq 0$, proving that the squared 2-Wasserstein distance decays polynomially at rate $O(\log n_1 / n_1)$.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Finite Width"
   - "Infinite-Width Limit"
 date: 2026-05-08
-content_hash: e005f5a98f1158e1
+content_hash: 2c95aaeb6fc16655
 ---
 
 # Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes
@@ -138,11 +138,11 @@ Key properties:
 
 ## Related Papers
 
+- [\[ICML 2025\] Global Convergence and Rich Feature Learning in $L$-Layer Infinite-Width Neural Networks under $\mu$P Parametrization](../../ICML2025/optimization/global_convergence_and_rich_feature_learning_in_l-layer_infinite-width_neural_ne.md)
 - [\[NeurIPS 2025\] Turbocharging Gaussian Process Inference with Approximate Sketch-and-Project](turbocharging_gaussian_process_inference_with_approximate_sketch-and-project.md)
 - [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](../../ICLR2026/optimization/directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
 - [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
-- [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
 
 </div>
 

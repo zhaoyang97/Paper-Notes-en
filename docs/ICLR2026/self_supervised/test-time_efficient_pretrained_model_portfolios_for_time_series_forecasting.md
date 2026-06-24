@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Chronos-Bolt] Chroma is proposed as a framework for small pretrained time series model portfolios. By producing frequency/domain experts from a generalist model through post-training (achieving 10× training acceleration) and combining them via test-time model selection or greedy ensemble, a portfolio with 4M parameters matches the p
+  [ICLR 2026][Self-Supervised Learning][Model Portfolios] Chroma is proposed as a framework for small pretrained time series model portfolios. By producing frequency/domain experts from a generalist model through post-training (achieving 10× training acceleration) and combining them via test-time model selection or greedy ensemble, a portfolio with 4M parameters matches the performance of large monolithic models with 205M-500M parameters on Chronos Benchmark II…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Chronos-Bolt
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Model Portfolios"
+  - "Mixture of Experts"
+  - "Test-Time Selection"
+  - "Time Series Foundation Models"
+  - "Chronos-Bolt"
 date: 2026-05-08
-content_hash: bce1824d503da1bd
+content_hash: ccf8b1d887494ada
 ---
+
 # Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting
 
 **Conference**: ICLR 2026  

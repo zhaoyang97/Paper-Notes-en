@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Equilibrium Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Replaces a continuous segment of intermediate Transformer layers with a lightweight "fixed-point module" that uses equilibrium state solving to equivalently represent deep stacking. This achieves a 28% parameter reduction while retaining 99% accuracy, specifically designed for low-memory edge deployment.
+  [ICLR 2026][LLM Efficiency][Layer Pruning] Replaces a continuous segment of intermediate Transformer layers with a lightweight "fixed-point module" that uses equilibrium state solving to equivalently represent deep stacking. This achieves a 28% parameter reduction while retaining 99% accuracy, specifically designed for low-memory edge deployment.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Layer Pruning"
+  - "Deep Equilibrium Models"
+  - "Fixed-point Networks"
+  - "KV Cache Compression"
+  - "Policy Optimization"
 date: 2026-05-08
-content_hash: a9c3f5305f400bc7
+content_hash: 79837a05a3081ccc
 ---
+
 # Equilibrium Language Models
 
 **Conference**: ICLR 2026  
@@ -124,10 +130,10 @@ Key Gap: On GSM8K, ELM for Qwen2.5-7B reaches 99.5% accuracy of the dense model,
 ## Related Papers
 
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
 - [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
 - [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
-- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
-- [\[ICLR 2026\] The Pensieve Paradigm: Stateful Language Models Mastering Their Own Context](the_pensieve_paradigm_stateful_language_models_mastering_their_own_context.md)
+- [\[ICLR 2026\] The End of Manual Decoding: Towards Truly End-to-End Language Models](the_end_of_manual_decoding_towards_truly_end-to-end_language_models.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly
 description: >-
-  [NeurIPS 2025][Multimodal VLM][long-context VLM] This paper introduces MMLongBench, the first comprehensive benchmark for evaluating long-context vision-language models (LCVLMs), comprising 13…
+  [NeurIPS 2025 Spotlight][Multimodal VLM][long-context VLM] This paper introduces MMLongBench, the first comprehensive benchmark for evaluating long-context vision-language models (LCVLMs), comprising 13,331 samples spanning 5 downstream task categories, mixed image types, and 5 standardized input length levels (8K–128K tokens). Evaluation of 46 models reveals that single-task performance is a weak proxy for overall capability, and that stronger reasoning ability positively co…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multimodal VLM"
   - "long-context VLM"
   - "benchmark"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal tokenization"
   - "NIAH"
 date: 2026-05-08
-content_hash: 3cffad7ee42a0061
+content_hash: 1c80c891f79ec352
 ---
 
 # MMLongBench: Benchmarking Long-Context Vision-Language Models Effectively and Thoroughly
@@ -146,7 +146,7 @@ MMLongBench encompasses 5 task categories × 5 length levels × mixed image type
 - [\[NeurIPS 2025\] NeedleInATable: Exploring Long-Context Capability of Large Language Models towards Long-Structured Tables](needleinatable_exploring_long-context_capability_of_large_language_models_toward.md)
 - [\[NeurIPS 2025\] Context Informs Pragmatic Interpretation in Vision-Language Models](context_informs_pragmatic_interpretation_in_vision-language_models.md)
 - [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
-- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
+- [\[NeurIPS 2025\] ExGra-Med: Extended Context Graph Alignment for Medical Vision-Language Models](exgra-med_extended_context_graph_alignment_for_medical_vision-language_models.md)
 
 </div>
 

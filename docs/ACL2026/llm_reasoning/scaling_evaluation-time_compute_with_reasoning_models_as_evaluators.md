@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators
 description: >-
-  [ACL 2026][LLM Reasoning][evaluation-time compute] This paper extends test-time scaling from "answer generation" to "answer evaluation," finding that allowing reasoning models to generate more reasoning tokens, perform step-by-step process checks, and combine outcome/process scores during evaluation allows them to outperform trained PRMs/ORMs in ProcessBench and Best-o
+  [ACL2026 Findings][Reasoning][evaluation-time compute] This paper extends test-time scaling from "answer generation" to "answer evaluation," finding that allowing reasoning models to generate more reasoning tokens, perform step-by-step process checks, and combine outcome/process scores during evaluation allows them to outperform trained PRMs/ORMs in ProcessBench and Best-of-N reranking.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - evaluation-time compute
-  - reasoning evaluator
-  - process evaluation
-  - outcome evaluation
-  - Best-of-N
+  - "ACL2026 Findings"
+  - "Reasoning"
+  - "evaluation-time compute"
+  - "reasoning evaluator"
+  - "process evaluation"
+  - "outcome evaluation"
+  - "Best-of-N"
 date: 2026-05-08
-content_hash: 8986d6550f773978
+content_hash: 5e2272fa8f60f71b
 ---
+
 # Scaling Evaluation-Time Compute with Reasoning Models as Evaluators
 
 **Conference**: ACL2026 Findings  
@@ -146,10 +147,10 @@ In Best-of-N, the reasoning evaluator with only 8 candidates approaches or excee
 ## Related Papers
 
 - [\[ACL 2026\] Scaling Test-Time Compute to Achieve IOI Gold Medal with Open-Weight Models](scaling_test-time_compute_to_achieve_ioi_gold_medal_with_open-weight_models.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](../../ICLR2026/llm_reasoning/t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
+- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](../../ICLR2026/llm_reasoning/strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](../../NeurIPS2025/llm_reasoning/provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
 - [\[ICML 2025\] Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators](../../ICML2025/llm_reasoning/evaluating_judges_as_evaluators_the_jetts_benchmark_of_llm-as-judges_as_test-tim.md)
-- [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](../../NeurIPS2025/llm_reasoning/towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
 
 </div>
 

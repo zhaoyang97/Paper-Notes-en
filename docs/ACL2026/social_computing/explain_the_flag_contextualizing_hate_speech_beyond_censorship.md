@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Explain the Flag: Contextualizing Hate Speech Beyond Censorship
 description: >-
-  [ACL 2026][Social Computing][Interpretability] This paper proposes a hybrid approach combining LLMs with manually curated vocabularies in three languages (English, French, and Greek) to detect and explain hate speech. The "term pipeline" identifies inherently derogatory terms through vocabulary matching and LLM semantic disambiguation, while the "no-term pipeline"
+  [ACL 2026 Findings][Social Computing][Hate speech detection] This paper proposes a hybrid approach combining LLMs with manually curated vocabularies in three languages (English, French, and Greek) to detect and explain hate speech. The "term pipeline" identifies inherently derogatory terms through vocabulary matching and LLM semantic disambiguation, while the "no-term pipeline" employs LLMs to detect group-targeted content; both are integrated to generate evidence-based expla…
 tags:
-  - ACL 2026
-  - Social Computing
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Hate speech detection"
+  - "explainability"
+  - "multilingual vocabulary"
+  - "contextualized explanation"
+  - "hybrid systems"
 date: 2026-05-08
-content_hash: 5b809df463c5ee3a
+content_hash: 39b0db4564c33b33
 ---
+
 # Explain the Flag: Contextualizing Hate Speech Beyond Censorship
 
 **Conference**: ACL 2026 Findings  

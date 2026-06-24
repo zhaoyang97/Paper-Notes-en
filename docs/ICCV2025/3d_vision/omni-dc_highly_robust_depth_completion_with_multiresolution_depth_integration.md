@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] Omni-DC: Highly Robust Depth Completion with Multiresolution Depth Integration
 description: >-
-  [ICCV 2025][depth completion] This paper presents OMNI-DC, a highly robust depth completion model that achieves zero-shot generalization across diverse datasets and sparse depth patterns via a multiresolution Discrete De…
+  [ICCV 2025][3D Vision][depth completion] This paper presents OMNI-DC, a highly robust depth completion model that achieves zero-shot generalization across diverse datasets and sparse depth patterns via a multiresolution Discrete Depth Integration module (Multi-res DDI), a Laplacian loss, and scale normalization.
 tags:
   - "ICCV 2025"
+  - "3D Vision"
   - "depth completion"
   - "multiresolution depth integration"
   - "zero-shot generalization"
   - "Laplacian loss"
   - "scale normalization"
 date: 2026-05-08
-content_hash: 0e2f8062e331217e
+content_hash: 1f32d47c2dd059ff
 ---
 
 # Omni-DC: Highly Robust Depth Completion with Multiresolution Depth Integration
@@ -141,11 +142,11 @@ Each component yields substantial gains; Multi-res DDI contributes most on ETH3D
 
 ## Related Papers
 
+- [\[CVPR 2025\] ProtoDepth: Unsupervised Continual Depth Completion with Prototypes](../../CVPR2025/3d_vision/protodepth_unsupervised_continual_depth_completion_with_prototypes.md)
+- [\[ICLR 2026\] Large Depth Completion Model from Sparse Observations](../../ICLR2026/3d_vision/large_depth_completion_model_from_sparse_observations.md)
 - [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[ICCV 2025\] RePoseD: Efficient Relative Pose Estimation with Known Depth Information](reposed_efficient_relative_pose_estimation_with_known_depth_information.md)
-- [\[ICCV 2025\] FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution](flashdepth_real-time_streaming_video_depth_estimation_at_2k_resolution.md)
-- [\[ICCV 2025\] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation](fiffdepth_feed-forward_transformation_of_diffusion-based_generators_for_detailed.md)
+- [\[ICLR 2026\] ORCaS: Unsupervised Depth Completion via Occluded Region Completion as Supervision](../../ICLR2026/3d_vision/orcas_unsupervised_depth_completion_via_occluded_region_completion_as_supervisio.md)
+- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](../../CVPR2026/3d_vision/dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
 
 </div>
 

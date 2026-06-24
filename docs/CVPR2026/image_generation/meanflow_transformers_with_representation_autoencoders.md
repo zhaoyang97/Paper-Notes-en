@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MeanFlow Transformers with Representation Autoencoders
 description: >-
-  [CVPR 2026][Image Generation][MeanFlow] MeanFlow-RAE migrates the few-step generation model MeanFlow from the traditional SD-VAE latent space to the semantic latent space of a "Representation Autoencoder (RAE)". It utilizes Consistency Mid-training (CMT) for trajectory-aware initialization to stabilize gradient explosions, replaces training-from-scratch with
+  [CVPR 2026][Image Generation][MeanFlow] MeanFlow-RAE migrates the few-step generation model MeanFlow from the traditional SD-VAE latent space to the semantic latent space of a "Representation Autoencoder (RAE)". It utilizes Consistency Mid-training (CMT) for trajectory-aware initialization to stabilize gradient explosions, replaces training-from-scratch with Flow Matching Distillation (MFD), and substitutes JVP with finite differences. Ultimately…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MeanFlow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "MeanFlow"
+  - "Representation Autoencoder"
+  - "Flow Matching Distillation"
+  - "Consistency Mid-training"
+  - "Few-step Sampling"
 date: 2026-05-08
-content_hash: a0e65f091a646942
+content_hash: 02165671aac7506c
 ---
+
 # MeanFlow Transformers with Representation Autoencoders
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ JVP vs. Finite Difference $\Delta t$ (default $5\times10^{-3}$):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion Transformers with Representation Autoencoders](../../ICLR2026/image_generation/diffusion_transformers_with_representation_autoencoders.md)
 - [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)
 - [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
-- [\[CVPR 2026\] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)
-- [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](../../ICML2026/image_generation/omp_one-step_meanflow_policy_with_directional_alignment.md)
 - [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](emf_meanflow_text_to_image.md)
+- [\[CVPR 2026\] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)
 
 </div>
 

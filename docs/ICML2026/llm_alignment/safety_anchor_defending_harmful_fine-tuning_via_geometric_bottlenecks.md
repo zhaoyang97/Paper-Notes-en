@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks
 description: >-
-  [ICML 2026][Alignment & RLHF][Harmful Fine-tuning] This paper demonstrates that all existing HFT defenses based on "parameter space constraints" can be bypassed due to parameter redundancy. It proposes Safety Bottleneck Regularization (SBR), which relocates the defense to the unembedding layer—a geometric bottleneck. By anchoring the final-layer hidden state of just a
+  [ICML 2026][LLM Alignment][Harmful Fine-tuning] This paper demonstrates that all existing HFT defenses based on "parameter space constraints" can be bypassed due to parameter redundancy. It proposes Safety Bottleneck Regularization (SBR), which relocates the defense to the unembedding layer—a geometric bottleneck. By anchoring the final-layer hidden state of just a single high-risk prompt, SBR keeps the Harmful Score < 10 under 50-epoch continuous HFT attacks without compromi…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - Harmful Fine-tuning
-  - Unembedding Bottleneck
-  - MSE Anchor
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Harmful Fine-tuning"
+  - "Unembedding Bottleneck"
+  - "Parameter Redundancy"
+  - "MSE Anchor"
+  - "RLHF Robustness"
 date: 2026-05-08
-content_hash: 6f7d9212a70e84eb
+content_hash: 5e3ef29a6c8e291e
 ---
+
 # Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks
 
 **Conference**: ICML 2026  
@@ -151,9 +154,9 @@ Llama3.1-8B, dual metrics across 4 benign downstream tasks: HS↓ (Harmful Score
 
 - [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
 - [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](../../ICLR2026/llm_alignment/safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
-- [\[ICML 2026\] GIST: 用梯度子空间投影做 instruction tuning 的 targeted 数据选择](gist_targeted_data_selection_for_instruction_tuning_via_coupled_optimization_geo.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 - [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
+- [\[ICLR 2026\] Anchored Supervised Fine-Tuning](../../ICLR2026/llm_alignment/anchored_supervised_fine-tuning.md)
 
 </div>
 

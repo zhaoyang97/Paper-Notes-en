@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks
 description: >-
-  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper proposes Spiking Brain Compression (SBC), a second-order post-training one-shot compression framework based on the Van Rossum Distance…
+  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper proposes Spiking Brain Compression (SBC), a second-order post-training one-shot compression framework based on the Van Rossum Distance, designed specifically for spiking neural networks (SNNs). By introducing a Surrogate Membrane Potential (SMP) Hessian, SBC enables efficient module-wise pruning and quantization, and for the first time compresses SEW-ResNet152 and Spike-Driven Transformer at the ImageNet sc…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Unstructured Pruning"
   - "Quantization"
 date: 2026-05-08
-content_hash: 0c159763311a813f
+content_hash: 1189054efb131252
 ---
 
 # Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks
@@ -152,9 +152,9 @@ This is precisely the exact Hessian of the spike-free membrane potential least-s
 
 - [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
 - [\[NeurIPS 2025\] S2M-Former: Spiking Symmetric Mixing Branchformer for Brain Auditory Attention Detection](s2m-former_spiking_symmetric_mixing_branchformer_for_brain_auditory_attention_de.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
-- [\[ICML 2026\] Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers](../../ICML2026/model_compression/plug-and-play_spiking_operators_breaking_the_nonlinearity_bottleneck_in_spiking_.md)
-- [\[NeurIPS 2025\] Binary Quadratic Quantization: Beyond First-Order Quantization for Real-Valued Matrix Compression](binary_quadratic_quantization_beyond_first-order_quantization_for_real-valued_ma.md)
+- [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](../../ICLR2026/model_compression/cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](../../ICLR2026/model_compression/towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
+- [\[ICML 2025\] Efficient Logit-based Knowledge Distillation of Deep Spiking Neural Networks for Full-Range Timestep Deployment](../../ICML2025/model_compression/efficient_logit-based_knowledge_distillation_of_deep_spiking_neural_networks_for.md)
 
 </div>
 

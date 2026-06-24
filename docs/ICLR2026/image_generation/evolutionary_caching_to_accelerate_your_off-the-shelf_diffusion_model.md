@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Ours proposes ECAD (Evolutionary Caching to Accelerate Diffusion models), which utilizes genetic algorithms to automatically search for optimal cache scheduling strategies on the speed-quality Pareto frontier. Without modifying model parameters and using only 100 calibration prompts, it achieves 2-3x inference accelera
+  [ICLR 2026][Image Generation][Diffusion Model Acceleration] Ours proposes ECAD (Evolutionary Caching to Accelerate Diffusion models), which utilizes genetic algorithms to automatically search for optimal cache scheduling strategies on the speed-quality Pareto frontier. Without modifying model parameters and using only 100 calibration prompts, it achieves 2-3x inference acceleration for diffusion models while maintaining or even improving generation quality.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Model Acceleration"
+  - "Cache Scheduling"
+  - "Genetic Algorithm"
+  - "Pareto Optimization"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 294c0c1c0176c762
+content_hash: a16b961861316c06
 ---
+
 # Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model
 
 **Conference**: ICLR 2026  
@@ -182,11 +188,11 @@ With only 50 generations, it surpasses the baseline without acceleration, and co
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learn to Guide Your Diffusion Model](learn_to_guide_your_diffusion_model.md)
 - [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](../../CVPR2026/image_generation/sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
-- [\[ICLR 2026\] Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers](let_features_decide_their_own_solvers_hybrid_feature_caching_for_diffusion_trans.md)
-- [\[ICLR 2026\] Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning](image_can_bring_your_memory_back_a_novel_multi-modal_guided_attack_against_image.md)
-- [\[ICLR 2026\] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](follow-your-preference_towards_preference-aligned_image_inpainting.md)
+- [\[ICLR 2026\] AC-Sampler: Accelerate and Correct Diffusion Sampling with Metropolis-Hastings Algorithm](ac-sampler_accelerate_and_correct_diffusion_sampling_with_metropolis-hastings_al.md)
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](../../CVPR2026/image_generation/resca_residual_caching_for_diffusion_transformers_acceleration.md)
+- [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
 
 </div>
 

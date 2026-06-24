@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SCE-SLAM parallels a "scene coordinate branch" alongside the optical flow branch in frame-to-frame monocular SLAM. It encodes 3D geometric relationships into a canonical scale reference using learnable patch-level scene coordinate embeddings. By propagating scale across windows via geometry-modulated attention and pull
+  [CVPR 2026][3D Vision][Monocular SLAM] SCE-SLAM parallels a "scene coordinate branch" alongside the optical flow branch in frame-to-frame monocular SLAM. It encodes 3D geometric relationships into a canonical scale reference using learnable patch-level scene coordinate embeddings. By propagating scale across windows via geometry-modulated attention and pulling bundle adjustment toward the reference scale using 3D coordinate constraints, it significantly suppresses long-sequen…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular SLAM"
+  - "Scale drift"
+  - "Scene coordinate embeddings"
+  - "Bundle adjustment"
+  - "Visual odometry"
 date: 2026-05-08
-content_hash: 7792f8870a628046
+content_hash: 9f7d6d4fe49be8b2
 ---
+
 # SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings
 
 **Conference**: CVPR 2026  
@@ -120,8 +126,21 @@ KITTI sequence average ATE:
 - **Value**: ⭐⭐⭐⭐ Directly applicable for long-sequence SLAM on resource-constrained platforms by suppressing drift while remaining real-time.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
+- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OptScale: Probabilistic Optimality for Inference-time Scaling
 description: >-
-  [AAAI 2026][LLM Evaluation][Inference-time scaling] This paper proposes OptScale, a probabilistic optimality framework that models the probability distribution of verifier scores to derive a theoretical lower bound on th…
+  [AAAI 2026][LLM Evaluation][Inference-time scaling] This paper proposes OptScale, a probabilistic optimality framework that models the probability distribution of verifier scores to derive a theoretical lower bound on the optimal number of samples, dynamically determining the minimum number of samples required per problem and substantially reducing computational overhead while preserving inference accuracy.
 tags:
   - "AAAI 2026"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Best-of-N"
   - "computational efficiency"
 date: 2026-05-08
-content_hash: 3b1cc4feaeb94a7e
+content_hash: b77c9f572caac4a2
 ---
 
 # OptScale: Probabilistic Optimality for Inference-time Scaling
@@ -143,10 +143,10 @@ On Llama-3.1-8B ($N=64$), OptScale_0 reduces GSM8K token consumption from 14,697
 ## Related Papers
 
 - [\[ICLR 2026\] GuidedSampling: Steering LLMs Towards Diverse Candidate Solutions at Inference-Time](../../ICLR2026/llm_evaluation/guidedsampling_steering_llms_towards_diverse_candidate_solutions_at_inference-ti.md)
+- [\[ICML 2025\] Bounded Rationality for LLMs: Satisficing Alignment at Inference-Time](../../ICML2025/llm_evaluation/bounded_rationality_for_llms_satisficing_alignment_at_inference-time.md)
 - [\[AAAI 2026\] Test-time Diverse Reasoning by Riemannian Activation Steering](test-time_diverse_reasoning_by_riemannian_activation_steering.md)
-- [\[ACL 2026\] Pressure-Testing Deception Probes in LLMs: Scaling, Robustness, and the Geometry of Deceptive Representations](../../ACL2026/llm_evaluation/pressure-testing_deception_probes_in_llms_scaling_robustness_and_the_geometry_of.md)
-- [\[NeurIPS 2025\] Time Travel is Cheating: Going Live with DeepFund for Real-Time Fund Investment Benchmarking](../../NeurIPS2025/llm_evaluation/time_travel_is_cheating_going_live_with_deepfund_for_real-time_fund_investment_b.md)
-- [\[ICML 2026\] DEI: Diversity in Evolutionary Inference for Quality-Diversity Search](../../ICML2026/llm_evaluation/dei_diversity_in_evolutionary_inference_for_quality-diversity_search.md)
+- [\[ICML 2026\] Prescriptive Scaling Reveals the Evolution of Language Model Capabilities](../../ICML2026/llm_evaluation/prescriptive_scaling_reveals_the_evolution_of_language_model_capabilities.md)
+- [\[ICLR 2026\] MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline](../../ICLR2026/llm_evaluation/mle-smith_scaling_mle_tasks_with_automated_multi-agent_pipeline.md)
 
 </div>
 

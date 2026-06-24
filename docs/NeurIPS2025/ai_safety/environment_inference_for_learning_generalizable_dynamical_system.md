@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Environment Inference for Learning Generalizable Dynamical System
 description: >-
-  [NeurIPS 2025][AI Safety][dynamical systems] This paper proposes DynaInfer, a framework that infers environment labels for unlabeled trajectories by analyzing the prediction errors of a fixed neural network…
+  [NeurIPS 2025 Spotlight][AI Safety][dynamical systems] This paper proposes DynaInfer, a framework that infers environment labels for unlabeled trajectories by analyzing the prediction errors of a fixed neural network, enabling generalizable dynamical system learning without environment annotations. DynaInfer matches or surpasses Oracle (known-label) performance on ODE/PDE systems.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "AI Safety"
   - "dynamical systems"
   - "environment inference"
@@ -12,7 +12,7 @@ tags:
   - "multi-environment learning"
   - "K-means analogy"
 date: 2026-05-08
-content_hash: fa1eb2aabf69656f
+content_hash: 342a2344203241fd
 ---
 
 # Environment Inference for Learning Generalizable Dynamical System
@@ -141,11 +141,11 @@ $$\hat{e}^*, \theta^*, \phi^* = \arg\min_{\hat{e}, \theta, \phi} R_{\hat{e}}(\th
 
 ## Related Papers
 
+- [\[ICML 2025\] SecEmb: Sparsity-Aware Secure Federated Learning of On-Device Recommender System with Large Embedding](../../ICML2025/ai_safety/secemb_sparsity-aware_secure_federated_learning_of_on-device_recommender_system_.md)
 - [\[ICCV 2025\] Vulnerability-Aware Spatio-Temporal Learning for Generalizable Deepfake Video Detection](../../ICCV2025/ai_safety/vulnerability-aware_spatio-temporal_learning_for_generalizable_deepfake_video_de.md)
-- [\[NeurIPS 2025\] Brain-like Variational Inference](brain-like_variational_inference.md)
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
-- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](../../ICCV2025/ai_safety/find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
-- [\[NeurIPS 2025\] DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning](design_encrypted_gnn_inference_via_server-side_input_graph_pruning.md)
+- [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](../../CVPR2026/ai_safety/dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
+- [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](../../CVPR2026/ai_safety/meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 
 </div>
 

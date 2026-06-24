@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] DuoMo is proposed to decompose world-space human motion reconstruction into two independent diffusion models: a camera-space model extracts generalized camera-coordinate motion from video, and a world-space model refines lifted noisy proposals into globally consistent world-coordinate motion. By directly generating mes
+  [CVPR 2026][3D Vision][Human Motion Reconstruction] DuoMo is proposed to decompose world-space human motion reconstruction into two independent diffusion models: a camera-space model extracts generalized camera-coordinate motion from video, and a world-space model refines lifted noisy proposals into globally consistent world-coordinate motion. By directly generating mesh vertex motion instead of SMPL parameters, it reduces W-MPJPE by 16% on EMDB and 30% on RICH.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human Motion Reconstruction"
+  - "Diffusion Models"
+  - "World Coordinates"
+  - "Camera Space"
+  - "Mesh Vertices"
 date: 2026-05-08
-content_hash: 227ba952320ac21e
+content_hash: 8fe8976e10a2f2ba
 ---
+
 # DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction
 
 **Conference**: CVPR 2026  
@@ -162,11 +167,11 @@ Note: DuoMo (w/ height) further improves to W-MPJPE 167.1 and MPJPE 59.5 on EMDB
 
 ## Related Papers
 
+- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
+- [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
 - [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
-- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
-- [\[CVPR 2026\] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](fall_risk_gait_analysis_hmr.md)
-- [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[CVPR 2025\] HaWoR: World-Space Hand Motion Reconstruction from Egocentric Videos](../../CVPR2025/3d_vision/hawor_world-space_hand_motion_reconstruction_from_egocentric_videos.md)
 
 </div>
 

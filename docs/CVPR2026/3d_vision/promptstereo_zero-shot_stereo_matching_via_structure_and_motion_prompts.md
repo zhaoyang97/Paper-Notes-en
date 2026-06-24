@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes the Prompt Recurrent Unit (PRU), which utilizes the DPT decoder of monocular depth foundation models as an iterative refinement module (replacing GRU). By injecting monocular structural cues and stereo motion cues through Structure and Motion Prompts via residual addition, it achieves state-of-the-a
+  [CVPR 2026][3D Vision][Zero-shot Stereo Matching] This paper proposes the Prompt Recurrent Unit (PRU), which utilizes the DPT decoder of monocular depth foundation models as an iterative refinement module (replacing GRU). By injecting monocular structural cues and stereo motion cues through Structure and Motion Prompts via residual addition, it achieves state-of-the-art (SOTA) zero-shot stereo matching performance without destroying monocular priors…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-shot Stereo Matching"
+  - "Monocular Depth Priors"
+  - "Prompt Iterative Refinement"
+  - "DPT Decoder"
+  - "Affine-Invariant Fusion"
 date: 2026-05-08
-content_hash: 867dd1f2b7bb8510
+content_hash: 379e1fba25ad65c3
 ---
+
 # PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,10 @@ Since the DPT decoder lacks stereo correspondence information, MP encodes the cu
 ## Related Papers
 
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](lite_any_stereo_efficient_zero-shot_stereo_matching.md)
-- [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
 - [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
 - [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
-- [\[CVPR 2026\] PIP-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching](pip-stereo_progressive_iterations_pruner_for_iterative_optimization_based_stereo.md)
+- [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
 
 </div>
 

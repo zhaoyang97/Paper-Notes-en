@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][PINN] IFeF-PINN extends the hidden layer features of PINNs into random Fourier bases and alternates between "basis function generation" and "linear coefficient regression," significantly mitigating the spectral bias of standard PINNs on high-frequency and multi-scale PDEs.
+  [ICLR2026][Physics & Scientific Computing][PINN] IFeF-PINN extends the hidden layer features of PINNs into random Fourier bases and alternates between "basis function generation" and "linear coefficient regression," significantly mitigating the spectral bias of standard PINNs on high-frequency and multi-scale PDEs.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - PINN
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "PINN"
+  - "Spectral Bias"
+  - "Random Fourier Features"
+  - "Bi-level Optimization"
+  - "High-frequency PDEs"
 date: 2026-05-08
-content_hash: 95ab1ab78af42c52
+content_hash: e14c20702592dbf2
 ---
+
 # Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features
 
 **Conference**: ICLR2026  
@@ -166,9 +171,9 @@ The paper covers low-frequency benchmarks, high-frequency/multi-scale PDEs, spec
 
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](../../NeurIPS2025/physics/physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
 - [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
+- [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
 - [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
 - [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
-- [\[ICLR 2026\] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation](enhancing_stability_of_physics-informed_neural_network_training_through_saddle-p.md)
 
 </div>
 

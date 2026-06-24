@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BaseReward: A Strong Baseline for Multimodal Reward Model
 description: >-
-  [ICLR 2026][Multimodal VLM][RLHF] Instead of inventing new architectures, this paper deconstructs the process of building a SOTA Multimodal Reward Model (MRM) into six dimensions: paradigm, reward head, regularization, data, backbone/scale, and ensemble. Through systematic ablation, it derives a clear "recipe" and builds BaseReward—a simple yet strong
+  [ICLR2026][Multimodal VLM][Multimodal Reward Model] Instead of inventing new architectures, this paper deconstructs the process of building a SOTA Multimodal Reward Model (MRM) into six dimensions: paradigm, reward head, regularization, data, backbone/scale, and ensemble. Through systematic ablation, it derives a clear "recipe" and builds BaseReward—a simple yet strong baseline based on Qwen2.5-VL-7B with a two-layer SiLU MLP reward head and selected mixed preference data. It…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - RLHF
-  - Naive-RM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Multimodal Reward Model"
+  - "MLLM Alignment"
+  - "RLHF"
+  - "Preference Data Recipe"
+  - "Naive-RM"
 date: 2026-05-08
-content_hash: 66d02b53bc48de86
+content_hash: c33d871657cda037
 ---
+
 # BaseReward: A Strong Baseline for Multimodal Reward Model
 
 **Conference**: ICLR2026  
@@ -134,11 +138,20 @@ Compared to the previous SOTA, BaseReward improves accuracy by ~11.9% on MM-RLHF
 - **Value**: ⭐⭐⭐⭐⭐ High practical value via a reproducible SOTA recipe and open-source baseline.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model](../../ACL2025/multimodal_vlm/internlm-xcomposer25-reward_a_simple_yet_effective_multi-modal_reward_model.md)
+- [\[ICLR 2026\] Threading Keyframe with Narratives: MLLMs as Strong Long Video Comprehenders](threading_keyframe_with_narratives_mllms_as_strong_long_video_comprehenders.md)
+- [\[ICLR 2026\] DeepEyesV2: Toward Agentic Multimodal Model](deepeyesv2_toward_agentic_multimodal_model.md)
+- [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](../../ICCV2025/multimodal_vlm/controlling_multimodal_llms_via_rewardguided_decoding.md)
+- [\[NeurIPS 2025\] A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1](../../NeurIPS2025/multimodal_vlm/a_frustratingly_simple_yet_highly_effective_attack_baseline.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model](../../ACL2025/multimodal_vlm/internlm-xcomposer25-reward_a_simple_yet_effective_multi-modal_reward_model.md)

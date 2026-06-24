@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Parameter Efficient Fine-tuning via Explained Variance Adaptation
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Parameter-efficient fine-tuning] This paper proposes Explained Variance Adaptation (EVA), which initializes LoRA matrices via incremental SVD on activation vectors from downstream d…
+  [NeurIPS 2025][Reinforcement Learning][Parameter-efficient fine-tuning] This paper proposes Explained Variance Adaptation (EVA), which initializes LoRA matrices via incremental SVD on activation vectors from downstream data, provably maximizing the expected gradient signal. Combined with an adaptive rank allocation mechanism, EVA establishes a new accuracy–efficiency Pareto frontier across language generation/understanding, image classification, and reinforcement learning.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "adaptive rank allocation"
   - "variance-optimal initialization"
 date: 2026-05-08
-content_hash: c73bc0b62016a6f7
+content_hash: 222c39acfbe21209
 ---
 
 # Parameter Efficient Fine-tuning via Explained Variance Adaptation
@@ -179,11 +179,11 @@ At maximum batch size, EVA incurs only 0.7% overhead; reducing batch size to 4 b
 
 ## Related Papers
 
+- [\[ICLR 2026\] Proximal Supervised Fine-Tuning](../../ICLR2026/reinforcement_learning/proximal_supervised_fine-tuning.md)
 - [\[NeurIPS 2025\] Continual Knowledge Adaptation for Reinforcement Learning](continual_knowledge_adaptation_for_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
-- [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
-- [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
+- [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
+- [\[CVPR 2026\] PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning](../../CVPR2026/reinforcement_learning/plannerrft_reinforcing_diffusion_planners.md)
 
 </div>
 

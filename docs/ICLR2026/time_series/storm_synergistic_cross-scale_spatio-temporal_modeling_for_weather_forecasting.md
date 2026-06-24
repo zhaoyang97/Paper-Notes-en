@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting
 description: >-
-  [ICLR 2026][Time Series][ERA5] STORM explicitly decomposes global meteorological fields into fine-to-coarse multi-scale representations. Through cross-scale messaging, lightweight temporal evolution encoding, and level-aligned decoding, it simultaneously enhances short-term accuracy and 7-10 day long-term stability for ERA5 global and regional weath
+  [ICLR2026][Time Series][Weather Forecasting] STORM explicitly decomposes global meteorological fields into fine-to-coarse multi-scale representations. Through cross-scale messaging, lightweight temporal evolution encoding, and level-aligned decoding, it simultaneously enhances short-term accuracy and 7-10 day long-term stability for ERA5 global and regional weather forecasting.
 tags:
-  - ICLR 2026
-  - Time Series
-  - ERA5
+  - "ICLR2026"
+  - "Time Series"
+  - "Weather Forecasting"
+  - "Multi-scale Modeling"
+  - "Spatio-Temporal Prediction"
+  - "ERA5"
+  - "Long-term Rolling Forecast"
 date: 2026-05-08
-content_hash: e461a788c4d06a10
+content_hash: ee67ca8b402b563d
 ---
+
 # STORM: Synergistic Cross-Scale Spatio-Temporal Modeling for Weather Forecasting
 
 **Conference**: ICLR2026  
@@ -181,9 +186,9 @@ Authors ablated three components: removing the temporal evolution encoder (w/o T
 
 - [\[ICLR 2026\] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling](are_global_dependencies_necessary_scalable_time_series_forecasting_via_local_cro.md)
 - [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
-- [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
 - [\[ICLR 2026\] SONATA: Synergistic Coreset Informed Adaptive Temporal Tensor Factorization](sonata_synergistic_coreset_informed_adaptive_temporal_tensor_factorization.md)
 - [\[ICML 2026\] Generalizing Multi-scale Time-Series Modeling with a Single Operator](../../ICML2026/time_series/generalizing_multi-scale_time-series_modeling_with_a_single_operator.md)
+- [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
 
 </div>
 

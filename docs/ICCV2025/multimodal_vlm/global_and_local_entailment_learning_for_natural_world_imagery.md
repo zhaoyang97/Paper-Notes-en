@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Global and Local Entailment Learning for Natural World Imagery
 description: >-
-  [ICCV 2025][Multimodal VLM][Hierarchical Representation Learning] This paper proposes Radial Cross-Modal Embeddings (RCME), a framework that explicitly models the transitivity of entailment relations to learn hierarchica…
+  [ICCV 2025][Multimodal VLM][Hierarchical Representation Learning] This paper proposes Radial Cross-Modal Embeddings (RCME), a framework that explicitly models the transitivity of entailment relations to learn hierarchical representations in vision-language models. RCME enables inference at arbitrary taxonomic ranks on the Tree of Life and achieves state-of-the-art performance on hierarchical classification and retrieval tasks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Biological Taxonomy"
   - "Partial Order Relations"
 date: 2026-05-08
-content_hash: 690aa91f99ac0e82
+content_hash: e06e479f95b31ad4
 ---
 
 # Global and Local Entailment Learning for Natural World Imagery
@@ -50,8 +50,8 @@ RCME (Radial Cross-Modal Embeddings) is a fine-tuning framework for vision-langu
 1. **Global Entailment Learning**
 
    The core idea is to distinguish between *local entailment* and *global entailment*:
-   - **Local entailment**: A subconcept is entailed by its immediate parent (e.g., *Carnivora* entailed by *Mammalia*).
-   - **Global entailment**: The transitivity condition holds across all possible sub-hierarchies.
+    - **Local entailment**: A subconcept is entailed by its immediate parent (e.g., *Carnivora* entailed by *Mammalia*).
+    - **Global entailment**: The transitivity condition holds across all possible sub-hierarchies.
 
    Mathematically, the transitivity constraint requires:
 
@@ -159,11 +159,11 @@ This work builds upon cone-based entailment by Ganea et al. and radial embedding
 
 ## Related Papers
 
-- [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
+- [\[CVPR 2025\] Global-Local Tree Search in VLMs for 3D Indoor Scene Generation](../../CVPR2025/multimodal_vlm/global-local_tree_search_in_vlms_for_3d_indoor_scene_generation.md)
+- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](../../CVPR2026/multimodal_vlm/global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
 - [\[ICCV 2025\] From Holistic to Localized: Local Enhanced Adapters for Efficient Visual Instruction Fine-Tuning](from_holistic_to_localized_local_enhanced_adapters_for_efficient_visual_instruct.md)
-- [\[ICML 2026\] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation](../../ICML2026/multimodal_vlm/pair2scene_learning_local_object_relations_for_procedural_scene_generation.md)
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
-- [\[ICCV 2025\] ProbRes: Probabilistic Jump Diffusion for Open-World Egocentric Activity Recognition](probres_probabilistic_jump_diffusion_for_open-world_egocentric_activity_recognit.md)
+- [\[ICCV 2025\] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning](babyvlm_data-efficient_pretraining_of_vlms_inspired_by_infant_learning.md)
 
 </div>
 

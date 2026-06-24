@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Fractals] This paper introduces FractalBench, a benchmark for diagnosing visual-mathematical reasoning in MLLMs via fractal image program synthesis. Comprising 12 classical fractals…
+  [NeurIPS 2025][Reasoning][Fractals] This paper introduces FractalBench, a benchmark for diagnosing visual-mathematical reasoning in MLLMs via fractal image program synthesis. Comprising 12 classical fractals, 610 test images, and evaluations across 4 MLLMs, it reveals that while 76% of generated code is executable, only 4% is visually correct, exposing fundamental deficiencies in recursive abstraction capabilities.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Fractals"
   - "Visual-Mathematical Reasoning"
   - "Program Synthesis"
   - "MLLM Evaluation"
   - "Recursive Abstraction"
 date: 2026-05-08
-content_hash: 3ea6133d362029c2
+content_hash: c4f98dad2c01b904
 ---
 
 # FractalBench: Diagnosing Visual-Mathematical Reasoning Through Recursive Program Synthesis
@@ -150,11 +150,11 @@ IoU (Jaccard Index) is used as the evaluation metric: $\text{IoU} = |\mathcal{B}
 
 ## Related Papers
 
+- [\[ACL 2025\] CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis](../../ACL2025/llm_reasoning/cot-based_synthesizer_enhancing_llm_performance_through_answer_synthesis.md)
 - [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
-- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
-- [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](../../ACL2026/llm_reasoning/mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
-- [\[ACL 2026\] GanitLLM: Difficulty-Aware Bengali Mathematical Reasoning through Curriculum-GRPO](../../ACL2026/llm_reasoning/ganitllm_difficulty-aware_bengali_mathematical_reasoning_through_curriculum-grpo.md)
 - [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
+- [\[ACL 2026\] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis](../../ACL2026/llm_reasoning/mathagent_adversarial_evolution_of_constraint_graphs_for_mathematical_reasoning_.md)
+- [\[NeurIPS 2025\] Topology of Reasoning: Understanding Large Reasoning Models through Reasoning Graph Properties](topology_of_reasoning_understanding_large_reasoning_models_through_reasoning_gra.md)
 
 </div>
 

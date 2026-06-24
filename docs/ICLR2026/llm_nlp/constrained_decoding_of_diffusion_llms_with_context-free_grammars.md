@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Constrained Decoding of Diffusion LLMs with Context-Free Grammars
 description: >-
-  [ICLR 2026][LLM (Other)][Diffusion Language Model] This paper proposes the first constrained decoding method to enforce **Context-Free Grammar (CFG)** constraints on **Diffusion Language Models (DLMs)**. It abstracts the question of "whether a partial text with holes in any order can be completed into a legal string" as an **additive infilling decision problem**, reduc
+  [ICLR2026][LLM (Other)][Constrained Decoding] This paper proposes the first constrained decoding method to enforce **Context-Free Grammar (CFG)** constraints on **Diffusion Language Models (DLMs)**. It abstracts the question of "whether a partial text with holes in any order can be completed into a legal string" as an **additive infilling decision problem**, reduces it to checking whether the intersection of the target CFG and the regular language of all possible completions…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Diffusion Language Model
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Constrained Decoding"
+  - "Diffusion Language Models"
+  - "Context-Free Grammars"
+  - "Multi-Region Infilling"
+  - "Formal Languages"
 date: 2026-05-08
-content_hash: 8fedc764fe130da3
+content_hash: 90b5fee958e9c91b
 ---
+
 # Constrained Decoding of Diffusion LLMs with Context-Free Grammars
 
 **Conference**: ICLR2026  

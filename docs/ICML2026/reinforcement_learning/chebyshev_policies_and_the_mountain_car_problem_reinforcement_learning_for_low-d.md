@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Chebyshev Policies and the Mountain Car Problem: Reinforcement Learning for Low-Dimensional Control Tasks
 description: >-
-  [ICML 2026][Reinforcement Learning][Mountain Car] This paper provides the first analytical solution to the classic Mountain Car optimal control problem (unsolved for 36 years), revealing that the optimal policy has a minimalist form ($\alpha = C \cdot \dot{x}$). It demonstrates that existing RL agents exhibit surprisingly high regret and proposes a policy parameteriza
+  [ICML2026 Oral][Reinforcement Learning][Chebyshev polynomials] This paper provides the first analytical solution to the classic Mountain Car optimal control problem (unsolved for 36 years), revealing that the optimal policy has a minimalist form ($\alpha = C \cdot \dot{x}$). It demonstrates that existing RL agents exhibit surprisingly high regret and proposes a policy parameterization method based on multivariate Chebyshev polynomials, which reduces the number of parameters b…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Mountain Car
+  - "ICML2026 Oral"
+  - "Reinforcement Learning"
+  - "Chebyshev polynomials"
+  - "Mountain Car"
+  - "low-dimensional control"
+  - "optimal control"
+  - "policy approximation"
 date: 2026-05-08
-content_hash: d1500debc65906be
+content_hash: b0f5aa22b49553da
 ---
+
 # Chebyshev Policies and the Mountain Car Problem: Reinforcement Learning for Low-Dimensional Control Tasks
 
 **Conference**: ICML2026 Oral  
@@ -111,10 +116,10 @@ To make this parameterization practical, it must directly replace MLPs in existi
 ## Related Papers
 
 - [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
+- [\[ICLR 2026\] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](../../ICLR2026/reinforcement_learning/multimodal_llm-assisted_evolutionary_search_for_programmatic_control_policies.md)
+- [\[ICLR 2026\] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies](../../ICLR2026/reinforcement_learning/goldenstart_q-guided_priors_and_entropy_control_for_distilling_flow_policies.md)
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
 - [\[ICML 2026\] PAC-Bayesian Reinforcement Learning Trains Generalizable Policies](pac-bayesian_reinforcement_learning_trains_generalizable_policies.md)
-- [\[ICLR 2026\] Helix: Evolutionary Reinforcement Learning for Open-Ended Scientific Problem Solving](../../ICLR2026/reinforcement_learning/helix_evolutionary_reinforcement_learning_for_open-ended_scientific_problem_solv.md)
-- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
 
 </div>
 

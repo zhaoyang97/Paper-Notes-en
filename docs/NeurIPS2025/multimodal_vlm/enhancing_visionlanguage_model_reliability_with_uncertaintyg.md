@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM hallucination] This paper proposes Dropout Decoding — a training-free inference-time method that projects visual tokens into the text space to quantify their epistemic uncertainty…
+  [NeurIPS 2025][Multimodal VLM][VLM hallucination] This paper proposes Dropout Decoding — a training-free inference-time method that projects visual tokens into the text space to quantify their epistemic uncertainty, selectively masks high-uncertainty visual tokens, and aggregates multiple masked decoding results via majority voting to substantially reduce object hallucinations in LVLMs.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "epistemic uncertainty"
   - "ensemble decoding"
 date: 2026-05-08
-content_hash: c6e7f42f80215aff
+content_hash: edfe8bb612a47f99
 ---
 
 # Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding
@@ -129,11 +129,11 @@ No training is required, which is one of the greatest practical advantages of Dr
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
-- [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
 - [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](../../ICCV2025/multimodal_vlm/controlling_multimodal_llms_via_rewardguided_decoding.md)
-- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](../../ICCV2025/multimodal_vlm/enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
 - [\[NeurIPS 2025\] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining](adalrs_lossguided_adaptive_learning_rate_search_for_efficien.md)
+- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](../../ICCV2025/multimodal_vlm/enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
+- [\[ICML 2026\] Mitigating Manifold Departure: Uncertainty-Aware Subspace Rectification for Trustworthy MLLM Decoding](../../ICML2026/multimodal_vlm/mitigating_manifold_departure_uncertainty-aware_subspace_rectification_for_trust.md)
+- [\[CVPR 2026\] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models](../../CVPR2026/multimodal_vlm/uncertainty-guided_compositional_alignment_with_part-to-whole_semantic_represent.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MAD: Motion Appearance Decoupling for Efficient Driving World Models
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] MAD minimizes the cost of transforming general video diffusion models (VGMs) into driving world models to the extreme: using a single backbone with two lightweight LoRAs, it first generates "pose videos" consisting only of skeletons to predict motion, then "dresses" the skeletons with textures to render RGB. By decoupl
+  [CVPR 2026][Autonomous Driving][Driving World Models] MAD minimizes the cost of transforming general video diffusion models (VGMs) into driving world models to the extreme: using a single backbone with two lightweight LoRAs, it first generates "pose videos" consisting only of skeletons to predict motion, then "dresses" the skeletons with textures to render RGB. By decoupling motion and appearance, it matches previous SOTA performance using only 6% of the compute required by c…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Driving World Models"
+  - "Video Diffusion"
+  - "Motion-Appearance Decoupling"
+  - "Efficient LoRA Adaptation"
+  - "Pose Video"
 date: 2026-05-08
-content_hash: 27bb3a33b67911b9
+content_hash: c029c77e2683319a
 ---
+
 # MAD: Motion Appearance Decoupling for Efficient Driving World Models
 
 **Conference**: CVPR 2026  
@@ -143,9 +149,9 @@ Human preference for MAD-LTX-2B (values = preference rate of full model over var
 
 - [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
 - [\[CVPR 2026\] Deformable Gaussian Occupancy: Decoupling Rigid and Nonrigid Motion with Factorized Distillation](deformable_gaussian_occupancy_decoupling_rigid_and_nonrigid_motion_with_factoriz.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[AAAI 2026\] Unlocking Efficient Vehicle Dynamics Modeling via Analytic World Models](../../AAAI2026/autonomous_driving/unlocking_efficient_vehicle_dynamics_modeling_via_analytic_world_models.md)
 - [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
+- [\[CVPR 2025\] Spatiotemporal Decoupling for Efficient Vision-Based Occupancy Forecasting](../../CVPR2025/autonomous_driving/spatiotemporal_decoupling_for_efficient_vision-based_occupancy_forecasting.md)
 
 </div>
 

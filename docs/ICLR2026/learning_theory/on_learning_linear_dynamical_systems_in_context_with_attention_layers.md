@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] On learning linear dynamical systems in context with attention layers
 description: >-
-  [ICLR 2026][learning_theory][in-context learning] This paper provides the **explicit optimal weight solution** for single-layer linear attention in the In-Context Learning (ICL) task of "noisy Linear Dynamical Systems (LDS)". It proves that under a first-order autoregressive approximation (AR(1)), the attention layer is equivalent to performing a single step of gradie
+  [ICLR 2026][Learning Theory][linear attention] This paper provides the **explicit optimal weight solution** for single-layer linear attention in the In-Context Learning (ICL) task of "noisy Linear Dynamical Systems (LDS)". It proves that under a first-order autoregressive approximation (AR(1)), the attention layer is equivalent to performing a single step of gradient descent on the autoregressive least squares loss. Through experiments, it connects the optimal solution struct…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - in-context learning
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "Transformer Expressivity"
+  - "linear attention"
+  - "linear dynamical systems"
+  - "system identification"
+  - "gradient descent equivalence"
 date: 2026-05-08
-content_hash: 17a4e00869593bf2
+content_hash: 3d5ead0214f4cd22
 ---
+
 # On learning linear dynamical systems in context with attention layers
 
 **Conference**: ICLR 2026  
@@ -131,9 +137,9 @@ The experiments are **theoretical validation** (not benchmarking against other m
 
 - [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](a_new_approach_to_controlling_linear_dynamical_systems.md)
 - [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
-- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 - [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
-- [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
+- [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
 
 </div>
 

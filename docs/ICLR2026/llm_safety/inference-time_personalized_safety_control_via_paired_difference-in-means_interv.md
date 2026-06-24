@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Inference-Time Personalized Safety Control via Paired Difference-in-Means Intervention
 description: >-
-  [ICLR 2026][LLM Safety][difference-in-means] The authors propose PCMS (Paired Contrast Mean Shift), a training-free inference-time activation intervention method. It estimates a "harmful direction" using the mean difference vector of **topic-paired** samples and subtracts it from activations. This suppresses specific content types (violence, politics, sexuality,
+  [ICLR 2026][LLM Safety][Personalized Safety] The authors propose PCMS (Paired Contrast Mean Shift), a training-free inference-time activation intervention method. It estimates a "harmful direction" using the mean difference vector of **topic-paired** samples and subtracts it from activations. This suppresses specific content types (violence, politics, sexuality, mental health) based on personalized user preferences with minimal utility loss.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - difference-in-means
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Personalized Safety"
+  - "Activation Intervention"
+  - "Difference-in-Means"
+  - "Inference-Time Steering"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: 48824c409050a53d
+content_hash: 119321a44f3b6439
 ---
+
 # Inference-Time Personalized Safety Control via Paired Difference-in-Means Intervention
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Sequence Modeling Alignment Between Tokenizer and Autoregressive Model
 description: >-
-  [ICLR 2026][Image Generation][ImageNet] This paper points out that tokens encoded by conventional image tokenizers exhibit **bidirectional dependency**, which fundamentally conflicts with the strictly unidirectional prediction paradigm of autoregressive (AR) models. The authors propose AliTok, which uses a **causal decoder to constrain a bidirectional encode
+  [ICLR 2026][Image Generation][Visual Tokenizer] This paper points out that tokens encoded by conventional image tokenizers exhibit **bidirectional dependency**, which fundamentally conflicts with the strictly unidirectional prediction paradigm of autoregressive (AR) models. The authors propose AliTok, which uses a **causal decoder to constrain a bidirectional encoder**, forcing the production of token sequences that are both semantically rich and highly predictable. This allo…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - ImageNet
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Tokenizer"
+  - "Autoregressive Image Generation"
+  - "Causal Decoder"
+  - "Forward Dependency"
+  - "ImageNet"
 date: 2026-05-08
-content_hash: 11c35295db611661
+content_hash: 83aa70217031d3e0
 ---
+
 # Towards Sequence Modeling Alignment Between Tokenizer and Autoregressive Model
 
 **Conference**: ICLR 2026  
@@ -153,8 +158,8 @@ Incremental components added to AliTok-Base (A is the bidirectional Transformer 
 ## Related Papers
 
 - [\[CVPR 2026\] Residual Decoder Adapter: ID-Preserving Tokenizer Adaption for Autoregressive Text Rendering](../../CVPR2026/image_generation/residual_decoder_adapter_id-preserving_tokenizer_adaption_for_autoregressive_tex.md)
-- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
 - [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
+- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
 - [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](../../NeurIPS2025/image_generation/gspn-2_efficient_parallel_sequence_modeling.md)
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought
 description: >-
-  [NeurIPS 2025][LLM Pretraining][learning curves] This paper constructs LCDB 1.1, a large-scale high-resolution learning curve database, demonstrating that ill-behaved sample learning curves (non-monotonic…
+  [NeurIPS 2025][LLM Pretraining][learning curves] This paper constructs LCDB 1.1, a large-scale high-resolution learning curve database, demonstrating that ill-behaved sample learning curves (non-monotonic, non-convex) are approximately twice as prevalent as previously believed, with roughly 15% of curves exhibiting significant ill-behavior that feature scaling largely fails to remedy.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -13,7 +13,7 @@ tags:
   - "tabular data"
   - "benchmark"
 date: 2026-05-08
-content_hash: d7414f76a11f758a
+content_hash: 47b5768e61de34ad
 ---
 
 # LCDB 1.1: A Database Illustrating Learning Curves Are More Ill-Behaved Than Previously Thought
@@ -178,9 +178,9 @@ Groups of learners with frequently crossing learning curves exhibit significantl
 
 - [\[NeurIPS 2025\] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs](efficient_pre-training_of_llms_via_topology-aware_communication_alignment_on_mor.md)
 - [\[NeurIPS 2025\] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data](climb_class-imbalanced_learning_benchmark_on_tabular_data.md)
+- [\[ICML 2025\] In-Context Adaptation to Concept Drift for Learned Database Operations](../../ICML2025/llm_pretraining/in-context_adaptation_to_concept_drift_for_learned_database_operations.md)
+- [\[ACL 2025\] Byte Latent Transformer: Patches Scale Better Than Tokens](../../ACL2025/llm_pretraining/byte_latent_transformer.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
-- [\[NeurIPS 2025\] Learning in Compact Spaces with Approximately Normalized Transformer](learning_in_compact_spaces_with_approximately_normalized_transformer.md)
-- [\[NeurIPS 2025\] Learning to Flow from Generative Pretext Tasks for Neural Architecture Encoding](learning_to_flow_from_generative_pretext_tasks_for_neural_architecture_encoding.md)
 
 </div>
 

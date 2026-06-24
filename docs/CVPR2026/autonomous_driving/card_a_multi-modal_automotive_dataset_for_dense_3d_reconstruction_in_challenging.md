@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] CARD is a multi-modal autonomous driving dataset targeting "non-flat road surfaces" (speed bumps, potholes, irregularities, and off-road sections). Through a novel multi-LiDAR fusion ground truth generation pipeline, it providing approximately 500,000 measured LiDAR depth points per frame (about 6.5 times that of KITTI
+  [CVPR 2026][Autonomous Driving][Autonomous driving dataset] CARD is a multi-modal autonomous driving dataset targeting "non-flat road surfaces" (speed bumps, potholes, irregularities, and off-road sections). Through a novel multi-LiDAR fusion ground truth generation pipeline, it providing approximately 500,000 measured LiDAR depth points per frame (about 6.5 times that of KITTI Depth Completion). It is equipped with 2D bounding boxes for road topography…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Autonomous driving dataset"
+  - "quasi-dense depth ground truth"
+  - "multi-LiDAR fusion"
+  - "road surface irregular topography"
+  - "depth completion benchmark"
 date: 2026-05-08
-content_hash: 4c9572315e33351e
+content_hash: d595efe37bd7e4f0
 ---
+
 # CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Key figures: CARD has approximately 500,000 valid depth pixels per frame, about 
 
 ## Related Papers
 
+- [\[CVPR 2026\] URScenes: A Multi-scenario Dataset for Unstructured Road Environments](urscenes_a_multi-scenario_dataset_for_unstructured_road_environments.md)
 - [\[CVPR 2026\] WOD-E2E: Waymo Open Dataset for End-to-End Driving in Challenging Long-tail Scenarios](wod-e2e_waymo_open_dataset_for_end-to-end_driving_in_challenging_long-tail_scena.md)
 - [\[CVPR 2026\] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving](meanfuser_fast_one-step_multi-modal_trajectory_generation_and_adaptive_reconstru.md)
 - [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
-- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
-- [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](../../ICCV2025/autonomous_driving/uavscenes_a_multi-modal_dataset_for_uavs.md)
+- [\[CVPR 2026\] Gau-Occ: Geometry-Completed Gaussians for Multi-Modal 3D Occupancy Prediction](gau-occ_geometry-completed_gaussians_for_multi-modal_3d_occupancy_prediction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper constructs IndicMedDialog, the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese, Bengali, Gujarati, Hindi, Marathi, Punjabi, Tamil, Telugu, and Urdu), totaling 29,800 instances (2,980 dialogues × 10 languages). The dataset was created using LL
+  [ACL 2026][Medical LLM][Indic Medical Dialogue] This paper constructs IndicMedDialog, the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese, Bengali, Gujarati, Hindi, Marathi, Punjabi, Tamil, Telugu, and Urdu), totaling 29,800 instances (2,980 dialogues × 10 languages). The dataset was created using LLaMA-3.3-70B for dialogue synthesis, TranslateGemma for translation, native speaker verification…
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Indic Medical Dialogue"
+  - "Parallel Multilingual Dataset"
+  - "LoRA Fine-tuning"
+  - "Clinical Diagnosis"
+  - "Translation Quality Assurance"
 date: 2026-05-08
-content_hash: 412480ed0d23d4e9
+content_hash: 8906ee8fd02985dc
 ---
+
 # IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages
 
 **Conference**: ACL 2026  
@@ -144,6 +150,7 @@ Diagnostic Accuracy (%) across 10 languages (Raw vs. Post-processed):
 - Value: ⭐⭐⭐⭐⭐ (Strong social impact for underserved regions; open-source data and code).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Glance-or-Gaze: Incentivizing LMMs to Adaptively Focus Search via Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][Selective Gaze] This paper proposes Glance-or-Gaze (GoG), which enables Multimodal Large Language Models (LMMs) to first scan the full image and then adaptively select high-value regions for intensive gaze when answering knowledge-intensive visual questions. Through SFT and complexity-adaptive GRPO, GoG significantly outperforms basel
+  [ACL2026 Findings][Reinforcement Learning][Multimodal Large Language Models] This paper proposes Glance-or-Gaze (GoG), which enables Multimodal Large Language Models (LMMs) to first scan the full image and then adaptively select high-value regions for intensive gaze when answering knowledge-intensive visual questions. Through SFT and complexity-adaptive GRPO, GoG significantly outperforms baselines such as direct answering, full-image search, and MMSearch-R1 across six visual…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Selective Gaze
-  - GRPO
+  - "ACL2026 Findings"
+  - "Reinforcement Learning"
+  - "Multimodal Large Language Models"
+  - "Visual Search"
+  - "Selective Gaze"
+  - "GRPO"
+  - "Complexity-Adaptive RL"
 date: 2026-05-08
-content_hash: 9112ed323968f1ff
+content_hash: 57aa1c8cfca471b1
 ---
+
 # Glance-or-Gaze: Incentivizing LMMs to Adaptively Focus Search via Reinforcement Learning
 
 **Conference**: ACL2026 Findings  
@@ -152,11 +156,11 @@ GoG-3-8B-Think-RL outperforms the strongest Full-Search Workflow by 9.89 points 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] ReSearch: Learning to Reason with Search for LLMs via Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
+- [\[ICLR 2026\] J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](../../ICLR2026/reinforcement_learning/j1_incentivizing_thinking_in_llm-as-a-judge_via_reinforcement_learning.md)
+- [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](../../ICLR2026/reinforcement_learning/rl_for_reasoning_by_adaptively_revealing_rationales.md)
+- [\[ICLR 2026\] A$^2$Search: Ambiguity-Aware Question Answering with Reinforcement Learning](../../ICLR2026/reinforcement_learning/a2search_ambiguity-aware_question_answering_with_reinforcement_learning.md)
 - [\[CVPR 2026\] Incentivizing Generative Zero-Shot Learning via Outcome-Reward Reinforcement Learning with Visual Cues](../../CVPR2026/reinforcement_learning/incentivizing_generative_zero-shot_learning_via_outcome-reward_reinforcement_lea.md)
-- [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
-- [\[NeurIPS 2025\] Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/learning_to_focus_prioritizing_informative_histories_with_structured_attention_m.md)
+- [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](../../ICML2026/reinforcement_learning/the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
 
 </div>
 

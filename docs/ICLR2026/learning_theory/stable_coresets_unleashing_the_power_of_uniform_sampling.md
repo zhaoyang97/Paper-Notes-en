@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Stable Coresets: Unleashing the Power of Uniform Sampling
 description: >-
-  [ICLR 2026][learning_theory][coreset] This paper introduces the new concept of "stable coresets" positioned between weak and strong coresets. It proves that **uniform sampling alone** (a sample of size $O(\epsilon^{-2}\log d)$) can construct a stable coreset for the 1-median problem under the $\ell_1$ metric. This elevates uniform sampling from a "cheap, d
+  [ICLR 2026][Learning Theory][coreset] This paper introduces the new concept of "stable coresets" positioned between weak and strong coresets. It proves that **uniform sampling alone** (a sample of size $O(\epsilon^{-2}\log d)$) can construct a stable coreset for the 1-median problem under the $\ell_1$ metric. This elevates uniform sampling from a "cheap, data-oblivious, and streamable/distributed" heuristic to a tool with rigorous guarantees that transfer to all sub-metrics e…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - coreset
-  - 1-median
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Coreset Theory"
+  - "coreset"
+  - "uniform sampling"
+  - "1-median"
+  - "$\\ell_1$ metric"
+  - "VC dimension"
 date: 2026-05-08
-content_hash: 3b57eb4896a8e252
+content_hash: cb5652241ef172bd
 ---
+
 # Stable Coresets: Unleashing the Power of Uniform Sampling
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ Experiments validate stable coresets on real datasets. The metric is relative er
 
 ## Related Papers
 
-- [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
 - [\[ICLR 2026\] The Price of Robustness: Stable Classifiers Need Overparameterization](the_price_of_robustness_stable_classifiers_need_overparameterization.md)
+- [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
 - [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
+- [\[ICLR 2026\] Smooth Calibration Error: Uniform Convergence and Functional Gradient Analysis](smooth_calibration_error_uniform_convergence_and_functional_gradient_analysis.md)
 - [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](sampling_complexity_of_td_and_ppo_in_rkhs.md)
-- [\[ICLR 2026\] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval](discounted_online_convex_optimization_uniform_regret_across_a_continuous_interva.md)
 
 </div>
 

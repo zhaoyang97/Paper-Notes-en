@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization
 description: >-
-  [CVPR 2026][3D Vision][P3P] In response to the long-standing problem of "SfM point cloud compression" in visual localization—which traditionally relies on solving complex optimization problems (Set Cover / Integer Programming / Quadratic Programming)—this paper proposes an **almost trivial** strategy: randomly sample triplets for each database im
+  [CVPR 2026][3D Vision][Visual Localization] In response to the long-standing problem of "SfM point cloud compression" in visual localization—which traditionally relies on solving complex optimization problems (Set Cover / Integer Programming / Quadratic Programming)—this paper proposes an **almost trivial** strategy: randomly sample triplets for each database image, estimate poses using P3P, and retain the points belonging to the triplets that yield the most accurate database…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - P3P
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Localization"
+  - "Structure Compression"
+  - "SfM Point Cloud"
+  - "P3P"
+  - "Triplet Sampling"
 date: 2026-05-08
-content_hash: e52c00617674b756
+content_hash: 6b9e4110383ba53b
 ---
+
 # Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization
 
 **Conference**: CVPR 2026  
@@ -122,14 +127,17 @@ On Cambridge and 7Scenes, all four proposed strategies provide a better "memory-
 
 <div class="related-papers" markdown="1">
 
-1. **Active Search for Real-Time Vision-Based 3D Localization**, CVPR 2012. (Foundational work on 2D-3D matching and prioritization)
-2. **Efficient 3D-2D Matching for Model Based 3D Localization**, ICCV 2011. (Baseline for structure compression using set cover strategies)
-3. **To Learn or Not to Learn: Visual Localization from Essential Matrices**, CVPR 2019. (Comparison between classical and learning-based localization)
+## Related Papers
+
+- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
+- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
+- [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
+- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
+- [\[CVPR 2026\] VGA: Empowering Aerial-Ground Localization by Visual Geometry Alignment](vga_empowering_aerial-ground_localization_by_visual_geometry_alignment.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)

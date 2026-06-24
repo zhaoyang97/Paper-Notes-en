@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] In-Context Compositional Q-Learning for Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] ICQL reframes Q-learning in offline RL as an "in-context inference" problem—given a query state, it retrieves the top-k similar transitions from the offline dataset and uses a linear Transformer to **infer a local Q-function on the fly** from this local context. This bypasses the difficulty of fitting a single global Q
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] ICQL reframes Q-learning in offline RL as an "in-context inference" problem—given a query state, it retrieves the top-k similar transitions from the offline dataset and uses a linear Transformer to **infer a local Q-function on the fly** from this local context. This bypasses the difficulty of fitting a single global Q-network to all sub-tasks, achieving improvements of up to 16.4%, 8.8%…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "In-Context Learning"
+  - "Linear Transformer"
+  - "Local Q-function"
+  - "Compositional Value Estimation"
+  - "Retrieval Augmentation"
 date: 2026-05-08
-content_hash: a7779eb6e5113b24
+content_hash: 5e1ddb9f70cc1a7a
 ---
+
 # In-Context Compositional Q-Learning for Offline Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -114,11 +121,11 @@ Other ablations: ① Layers (= in-context TD steps): Score increases with layers
 
 ## Related Papers
 
+- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
 - [\[ICLR 2026\] 3D-aware Disentangled Representation for Compositional Reinforcement Learning](3d-aware_disentangled_representation_for_compositional_reinforcement_learning.md)
-- [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
-- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
+- [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
 
 </div>
 

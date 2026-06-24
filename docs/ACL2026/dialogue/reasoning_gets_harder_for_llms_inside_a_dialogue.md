@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reasoning Gets Harder for LLMs Inside A Dialogue
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] This paper introduces the Boulder dynamic benchmark, demonstrating that while LLMs perform well on isolated reasoning problems, their performance significantly degrades when the same problems are embedded in task-oriented dialogues. This is primarily attributed to multi-turn context, dialogue role constraints, and the
+  [ACL 2026][Dialogue Systems][Task-oriented dialogue] This paper introduces the Boulder dynamic benchmark, demonstrating that while LLMs perform well on isolated reasoning problems, their performance significantly degrades when the same problems are embedded in task-oriented dialogues. This is primarily attributed to multi-turn context, dialogue role constraints, and the burden of tool calling.
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Task-oriented dialogue"
+  - "dynamic benchmark"
+  - "embedded reasoning"
+  - "multi-turn interaction"
+  - "tool use"
 date: 2026-05-08
-content_hash: 8437b4777c533987
+content_hash: 390c0dfe68b53738
 ---
+
 # Reasoning Gets Harder for LLMs Inside A Dialogue
 
 **Conference**: ACL 2026  

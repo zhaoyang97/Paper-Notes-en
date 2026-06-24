@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MMG: Mutual Information Estimation via the MMSE Gap in Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][mutual information estimation] Leveraging the information-theoretic formulation of diffusion models, this paper proves that mutual information equals one-half of the integral over all sig…
+  [NeurIPS 2025][Image Generation][mutual information estimation] Leveraging the information-theoretic formulation of diffusion models, this paper proves that mutual information equals one-half of the integral over all signal-to-noise ratios of the gap between conditional and unconditional denoising MMSE. The proposed MMG estimator, combined with adaptive importance sampling and the orthogonality principle, significantly improves estimation accuracy and stability.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "denoising"
   - "importance sampling"
 date: 2026-05-08
-content_hash: 62274a830d604478
+content_hash: 1d77e5043bc24588
 ---
 
 # MMG: Mutual Information Estimation via the MMSE Gap in Diffusion

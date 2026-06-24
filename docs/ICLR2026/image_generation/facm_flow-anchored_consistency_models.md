@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] FACM: Flow-Anchored Consistency Models
 description: >-
-  [ICLR 2026][Image Generation][Consistency Models] FACM jointly trains Flow Matching (as an "anchor") and Consistency Models (as a "shortcut" goal) within a single model. By employing an "extended time interval" technique to decouple the two tasks into different time domains, it fundamentally resolves the training collapse issue in continuous-time consistency models. I
+  [ICLR 2026][Image Generation][Consistency Models] FACM jointly trains Flow Matching (as an "anchor") and Consistency Models (as a "shortcut" goal) within a single model. By employing an "extended time interval" technique to decouple the two tasks into different time domains, it fundamentally resolves the training collapse issue in continuous-time consistency models. It achieves FID scores of 1.70/1.32 with NFE=1/2 on ImageNet $256 \times 256$, respectively…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Consistency Models
-  - Flow Matching
-  - JVP
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Consistency Models"
+  - "Flow Matching"
+  - "Few-step Generation"
+  - "Distillation"
+  - "Training Stability"
+  - "JVP"
+  - "FSDP"
 date: 2026-05-08
-content_hash: 0a7ed3e1760ad623
+content_hash: 8e9e9335b1d56742
 ---
+
 # FACM: Flow-Anchored Consistency Models
 
 **Conference**: ICLR 2026  
@@ -136,10 +141,10 @@ Key components (Epoch 10, NFE=1): Pure MeanFlow (0% FM) collapses (FID 372-391).
 ## Related Papers
 
 - [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
-- [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
-- [\[ICLR 2026\] The Intricate Dance of Prompt Complexity, Quality, Diversity, and Consistency in T2I Models](the_intricate_dance_of_prompt_complexity_quality_diversity_and_consistency_in_t2.md)
-- [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 - [\[ICLR 2026\] UniEdit-Flow: Unleashing Inversion and Editing in the Era of Flow Models](uniedit-flow_unleashing_inversion_and_editing_in_the_era_of_flow_models.md)
+- [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
+- [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
 
 </div>
 

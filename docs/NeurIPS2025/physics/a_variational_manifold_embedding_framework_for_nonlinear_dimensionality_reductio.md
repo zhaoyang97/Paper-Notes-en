@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][dimensionality reduction] This paper proposes a variational manifold embedding framework that formalizes dimensionality reduction as an optimization problem over smooth embe…
+  [NeurIPS 2025][Physics & Scientific Computing][dimensionality reduction] This paper proposes a variational manifold embedding framework that formalizes dimensionality reduction as an optimization problem over smooth embedding maps (minimizing the KL divergence between a prior distribution and the pullback of the data distribution), theoretically unifying PCA and nonlinear dimensionality reduction methods, and leverages the calculus of variations (Euler-Lagrange equations) and…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -14,7 +14,7 @@ tags:
   - "Noether's theorem"
   - "score vector"
 date: 2026-05-08
-content_hash: 660f73638eaf898c
+content_hash: 7652ace014994a08
 ---
 
 # A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction
@@ -139,11 +139,11 @@ The paper is primarily theoretical; experiments serve as validating demonstratio
 
 ## Related Papers
 
+- [\[ICML 2025\] Mixture-of-Expert Variational Autoencoders for Cross-Modality Embedding of Type Ia Supernova Data](../../ICML2025/physics/mixture-of-expert_variational_autoencoders_for_cross-modality_embedding_of_type_.md)
 - [\[NeurIPS 2025\] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs](oneshot_transfer_learning_nonlinear_pdes_perturbative_pinns.md)
 - [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
-- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
 - [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
-- [\[ICML 2026\] $\mathbb{R}^{2k}$ is Theoretically Large Enough for Embedding-based Top-$k$ Retrieval](../../ICML2026/physics/mathbbr2k_is_theoretically_large_enough_for_embedding-based_top-k_retrieval.md)
+- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
 
 </div>
 

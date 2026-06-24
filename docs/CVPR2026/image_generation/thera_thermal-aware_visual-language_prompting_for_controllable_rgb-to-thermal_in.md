@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TherA: Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation
 description: >-
-  [CVPR 2026][Image Generation][RGB-to-TIR] TherA employs a "thermal-aware" Vision-Language Model (TherA-VLM) to infer structured thermal semantic embeddings—covering scene, object, material, and heat states—from RGB images. These embeddings are injected into a latent diffusion model for conditional TIR generation. This approach upgrades RGB-to-TIR translation f
+  [CVPR 2026][Image Generation][RGB-to-TIR] TherA employs a "thermal-aware" Vision-Language Model (TherA-VLM) to infer structured thermal semantic embeddings—covering scene, object, material, and heat states—from RGB images. These embeddings are injected into a latent diffusion model for conditional TIR generation. This approach upgrades RGB-to-TIR translation from simple "style transfer" to "thermally-consistent" controllable synthesis, outperforming SOTA in zero-shot translat…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - RGB-to-TIR
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "RGB-to-TIR"
+  - "Thermal Infrared"
+  - "Vision-Language Models"
+  - "Latent Diffusion"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: aec33831bdca7c7c
+content_hash: ba277ff7d5a96e9a
 ---
+
 # TherA: Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation
 
 **Conference**: CVPR 2026  
@@ -134,6 +138,7 @@ The ablation verifies the impact of thermal embeddings vs. text schemas:
 - Value: ⭐⭐⭐⭐⭐ Effectively addresses TIR data scarcity with an open-source dataset and weights.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,7 +147,7 @@ The ablation verifies the impact of thermal embeddings vs. text schemas:
 - [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
 - [\[CVPR 2026\] Improving Controllable Generation: Faster Training and Better Performance via x0-Supervision](improving_controllable_generation_faster_training_and_better_performance_via_x0-.md)
 - [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)
-- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
+- [\[CVPR 2026\] A Temporal and Content Co-Awareness Latent Diffusion for Controllable Hand Image Generation](a_temporal_and_content_co-awareness_latent_diffusion_for_controllable_hand_image.md)
 
 </div>
 

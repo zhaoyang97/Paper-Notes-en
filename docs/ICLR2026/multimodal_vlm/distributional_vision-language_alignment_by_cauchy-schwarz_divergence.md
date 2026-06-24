@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence
 description: >-
-  [ICLR 2026][Multimodal VLM][InfoNCE] To address the residual "modality gap" when CLIP uses InfoNCE for vision-language alignment, this paper proposes CS-Aligner. Beyond maximizing mutual information, it introduces Cauchy-Schwarz (CS) divergence to bridge the **feature distributions** of images and text. This approach compensates for InfoNCE’s limitation o
+  [ICLR2026][Multimodal VLM][Vision-language alignment] To address the residual "modality gap" when CLIP uses InfoNCE for vision-language alignment, this paper proposes CS-Aligner. Beyond maximizing mutual information, it introduces Cauchy-Schwarz (CS) divergence to bridge the **feature distributions** of images and text. This approach compensates for InfoNCE’s limitation of only aligning paired samples while neglecting the overall distribution…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - InfoNCE
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Vision-language alignment"
+  - "Cauchy-Schwarz divergence"
+  - "distributional alignment"
+  - "modality gap"
+  - "InfoNCE"
 date: 2026-05-08
-content_hash: 815e6f18da7d30e3
+content_hash: 354cd658a586e554
 ---
+
 # Distributional Vision-Language Alignment by Cauchy-Schwarz Divergence
 
 **Conference**: ICLR2026  
@@ -167,8 +172,8 @@ Image-Text Retrieval (CC3M, aligning CLIP ViT-L/14 with Llama 3-8B, Recall↑):
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 - [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](unified_vision-language_modeling_via_concept_space_alignment.md)
 - [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
+- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/multimodal_vlm/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
 - [\[ICML 2026\] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement](../../ICML2026/multimodal_vlm/diva_harnessing_the_representation_divergence_in_unified_multimodal_models_for_m.md)
-- [\[CVPR 2026\] GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting](../../CVPR2026/multimodal_vlm/gaussianvision_vision-language_alignment_from_compressed_image_representations_u.md)
 
 </div>
 

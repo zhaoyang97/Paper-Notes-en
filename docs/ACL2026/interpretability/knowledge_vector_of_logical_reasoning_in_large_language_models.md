@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Knowledge Vector of Logical Reasoning in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][Paper Note] The authors demonstrate that the capacities for deductive, inductive, and abductive reasoning within LLMs can be linearly represented as three nearly orthogonal "knowledge vectors." They propose a complementary refinement framework based on SAE subspace constraints, allowing these vectors to share commonalities while p
+  [ACL 2026][Interpretability][Knowledge Vector] The authors demonstrate that the capacities for deductive, inductive, and abductive reasoning within LLMs can be linearly represented as three nearly orthogonal "knowledge vectors." They propose a complementary refinement framework based on SAE subspace constraints, allowing these vectors to share commonalities while preserving unique characteristics, thereby stably enhancing performance across all three reasoning types under ste…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Knowledge Vector"
+  - "Logical Reasoning"
+  - "Sparse Autoencoder"
+  - "Complementary Subspace"
+  - "Activation Steering"
 date: 2026-05-08
-content_hash: 65d019bf94481197
+content_hash: e31ec8122db589cb
 ---
+
 # Knowledge Vector of Logical Reasoning in Large Language Models
 
 **Conference**: ACL 2026  
@@ -144,9 +150,9 @@ Ablation on Llama-3.1-8B-it (relative Δ):
 
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](tracing_relational_knowledge_recall_in_large_language_models.md)
 - [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](../../ICLR2026/interpretability/medical_interpretability_and_knowledge_maps_of_large_language_models.md)
 - [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
-- [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 
 </div>
 

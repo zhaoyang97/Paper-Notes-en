@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair
 description: >-
-  [ICML 2026][Code Intelligence][Multi-Agent] MatchFixAgent fully transforms "equivalence validation + repair" for repository-level code translation into an LLM-based task. By replacing expensive cross-language interoperability engineering with six parallel semantic sub-analyzers (Control Flow, Data Flow, IO, Library API, Exception, and Specification), and layerin
+  [ICML 2026][Code Intelligence][Code Translation] MatchFixAgent fully transforms "equivalence validation + repair" for repository-level code translation into an LLM-based task. By replacing expensive cross-language interoperability engineering with six parallel semantic sub-analyzers (Control Flow, Data Flow, IO, Library API, Exception, and Specification), and layering a Test & Repair Agent with an Arbiter Agent, it raises validation coverage from 71.6% to 99.2% and the repair…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - Multi-Agent
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Code Translation"
+  - "Equivalence Validation"
+  - "Multi-agent"
+  - "Language-agnostic"
+  - "Program Repair"
 date: 2026-05-08
-content_hash: 40790ed57682eab3
+content_hash: 5c2627d5ce5df539
 ---
+
 # MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair
 
 **Conference**: ICML 2026  
@@ -129,8 +134,21 @@ On the Oxidizer subset (192 pairs), MatchFixAgent achieved an 84.1% accuracy rat
 - Value: ⭐⭐⭐⭐⭐ Extremely high industrial potential for code modernization pipelines due to low adaptation costs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
+- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](../../ACL2026/code_intelligence/swe-qa_can_language_models_answer_repository-level_code_questions.md)
+- [\[ICML 2026\] Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation](bridging_functional_correctness_and_runtime_efficiency_gaps_in_llm-based_code_tr.md)
+- [\[ICML 2026\] NEMO: Execution-Aware Optimization Modeling via Autonomous Coding Agents](nemo_execution-aware_optimization_modeling_via_autonomous_coding_agents.md)
+- [\[ACL 2026\] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion](../../ACL2026/code_intelligence/reposhapley_shapley-enhanced_context_filtering_for_repository-level_code_complet.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

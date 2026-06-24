@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ARGenSeg: Image Segmentation with Autoregressive Image Generation Model
 description: >-
-  [NeurIPS 2025][Image Generation][Autoregressive image generation] This paper proposes ARGenSeg — the first unified MLLM framework that leverages the autoregressive image generation paradigm for image segmentation. The mo…
+  [NeurIPS 2025][Image Generation][Autoregressive image generation] This paper proposes ARGenSeg — the first unified MLLM framework that leverages the autoregressive image generation paradigm for image segmentation. The model directly outputs visual tokens decoded by a VQ-VAE into segmentation masks, requiring no additional segmentation head. A next-scale prediction parallel generation strategy enables 4× inference speedup, and the method surpasses state-of-the-art on RefCOCO/+…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Next-Scale Prediction"
   - "unified understanding and generation"
 date: 2026-05-08
-content_hash: d70bd7be8e04e481
+content_hash: 8c360b8d90568448
 ---
 
 # ARGenSeg: Image Segmentation with Autoregressive Image Generation Model
@@ -124,8 +124,8 @@ Built upon InternVL 2.5. Input: an image (continuous features via a vision encod
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Conditional Panoramic Image Generation via Masked Autoregressive Modeling](conditional_panoramic_image_generation_via_masked_autoregres.md)
 - [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
+- [\[NeurIPS 2025\] Conditional Panoramic Image Generation via Masked Autoregressive Modeling](conditional_panoramic_image_generation_via_masked_autoregres.md)
 - [\[NeurIPS 2025\] BitMark: Watermarking Bitwise Autoregressive Image Generative Models](bitmark_watermarking_bitwise_autoregressive_image_generative_models.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
 - [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Anchored Supervised Fine-Tuning
 description: >-
-  [ICLR 2026][Alignment & RLHF][Dynamic Fine-Tuning] This paper provides a rigorous interpretation of the nature of Dynamic Fine-Tuning (DFT) being "tighter but prone to drift" using the reward-weighted regression (RWR) framework. It proposes ASFT, which superimposes a lightweight KL anchoring term onto the DFT reweighting objective, achieving stable gains in both reason
+  [ICLR 2026][LLM Alignment][Supervised Fine-Tuning] This paper provides a rigorous interpretation of the nature of Dynamic Fine-Tuning (DFT) being "tighter but prone to drift" using the reward-weighted regression (RWR) framework. It proposes ASFT, which superimposes a lightweight KL anchoring term onto the DFT reweighting objective, achieving stable gains in both reasoning and knowledge tasks with SFT-level computational costs.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Dynamic Fine-Tuning
-  - reward-weighted regression
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Supervised Fine-Tuning"
+  - "Dynamic Fine-Tuning"
+  - "reward-weighted regression"
+  - "KL anchoring"
+  - "distribution drift"
 date: 2026-05-08
-content_hash: 14f338035cf36f42
+content_hash: 2d1364111b0b4461
 ---
+
 # Anchored Supervised Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -120,11 +124,11 @@ Key Point: On medical tasks, DFT drops below the base at 10k, while ASFT consist
 
 ## Related Papers
 
+- [\[ICLR 2026\] TS²: Sparsemax+ for Training and Softmax for Testing for Accurate and Diverse LLM Fine-tuning](ts2_training_with_sparsemax_testing_with_softmax_for_accurate_and_diverse_llm_fi.md)
 - [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](../../ACL2026/llm_alignment/why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
 - [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
 - [\[ICLR 2026\] Semi-Supervised Preference Optimization with Limited Feedback](semi-supervised_preference_optimization_with_limited_feedback.md)
 - [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](../../ACL2026/llm_alignment/compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
-- [\[ICML 2026\] Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks](../../ICML2026/llm_alignment/safety_anchor_defending_harmful_fine-tuning_via_geometric_bottlenecks.md)
 
 </div>
 

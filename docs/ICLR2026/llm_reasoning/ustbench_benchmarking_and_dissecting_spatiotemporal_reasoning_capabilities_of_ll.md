@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][Benchmark] USTBench decomposes the spatiotemporal reasoning capabilities of LLMs acting as urban agents into four process dimensions: **Understanding—Prediction—Planning—Reflection**. Within the interactive urban environment UAgentEnv, the authors construct 62,466 structured QAs and 9 real-world urban downstream tasks. Evaluating
+  [ICLR 2026][Reasoning][Spatiotemporal Reasoning] USTBench decomposes the spatiotemporal reasoning capabilities of LLMs acting as urban agents into four process dimensions: **Understanding—Prediction—Planning—Reflection**. Within the interactive urban environment UAgentEnv, the authors construct 62,466 structured QAs and 9 real-world urban downstream tasks. Evaluating 14 mainstream LLMs reveals that while they perform well in understanding and prediction…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Benchmark
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Spatiotemporal Reasoning"
+  - "Urban Agents"
+  - "Process-level Evaluation"
+  - "Reflective Reasoning"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: c5fec9ae414bc68d
+content_hash: 33debd80da35c689
 ---
+
 # USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents
 
 **Conference**: ICLR 2026  
@@ -132,7 +137,21 @@ Effect of bypassing reasoning processes on downstream performance:
 - Value: ⭐⭐⭐⭐⭐ Provides actionable insights on reasoning model performance and the hierarchy of urban agent capabilities.
 
 <!-- RELATED:START -->
-<!-- RELATED:END --></div>
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] GeoGramBench: Benchmarking the Geometric Program Reasoning in Modern LLMs](geogrambench_benchmarking_the_geometric_program_reasoning_in_modern_llms.md)
+- [\[NeurIPS 2025\] CoRe: Benchmarking LLMs' Code Reasoning Capabilities through Static Analysis Tasks](../../NeurIPS2025/llm_reasoning/core_benchmarking_llms_code_reasoning_capabilities_through_static_analysis_tasks.md)
+- [\[ICLR 2026\] Scaling Generalist Data-Analytic Agents](scaling_generalist_data-analytic_agents.md)
+- [\[ICLR 2026\] VisioMath: Benchmarking Figure-based Mathematical Reasoning in LMMs](visiomath_benchmarking_figure-based_mathematical_reasoning_in_lmms.md)
+- [\[ICLR 2026\] LEXam: Benchmarking Legal Reasoning on 340 Law Exams](lexam_benchmarking_legal_reasoning_on_340_law_exams.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

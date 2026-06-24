@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness
 description: >-
-  [CVPR 2026][AI Safety][CLIP] Addressing the test-time adversarial robustness of CLIP, MAC utilizes multiple augmented views to jointly execute a "counterattack," escaping the misleading influence of a single attacked image. By defining a new "corruption level" metric to adaptively adjust counterattack intensity for each view, MAC improves robust a
+  [CVPR 2026][AI Safety][Test-time defense] Addressing the test-time adversarial robustness of CLIP, MAC utilizes multiple augmented views to jointly execute a "counterattack," escaping the misleading influence of a single attacked image. By defining a new "corruption level" metric to adaptively adjust counterattack intensity for each view, MAC improves robust accuracy from the previous generation TTC's 6.8% to 45.2% across 20 datasets under strong PGD-100 attacks…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - CLIP
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Test-time defense"
+  - "Adversarial counterattack"
+  - "CLIP"
+  - "Multi-view ensemble"
+  - "Corruption-aware"
 date: 2026-05-08
-content_hash: 06d631bddb1aaa01
+content_hash: faff7940dc15f4b9
 ---
+
 # When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ Averages across 10 datasets:
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
+- [\[ICLR 2026\] Test-Time Poisoned Sample Detection by Exploiting Shallow Malicious Matching in Backdoored CLIP](../../ICLR2026/ai_safety/test-time_poisoned_sample_detection_by_exploiting_shallow_malicious_matching_in_.md)
 - [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
-- [\[AAAI 2026\] Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference](../../AAAI2026/ai_safety/diversifying_counterattacks_orthogonal_exploration_for_robust_clip_inference.md)
-- [\[ECCV 2024\] CLIP-Guided Generative Networks for Transferable Targeted Adversarial Attacks](../../ECCV2024/ai_safety/clip-guided_generative_networks_for_transferable_targeted_adversarial_attacks.md)
-- [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](your_classifier_can_do_more_towards_balancing_the.md)
-- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
+- [\[ICLR 2026\] Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models](../../ICLR2026/ai_safety/adversarial_attacks_already_tell_the_answer_directional_bias-guided_test-time_de.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/ai_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration
 description: >-
-  [ICLR 2026][Optimization & Theory][AdaGrad] This paper establishes a **unified convergence analysis framework** for AdaGrad-type adaptive preconditioned SGD. By constraining the preconditioning operator within an operator subspace satisfying specific structural assumptions, the authors use a **single proof** to simultaneously recover SOTA convergence rates for A
+  [ICLR 2026][Optimization][Adaptive Preconditioning] This paper establishes a **unified convergence analysis framework** for AdaGrad-type adaptive preconditioned SGD. By constraining the preconditioning operator within an operator subspace satisfying specific structural assumptions, the authors use a **single proof** to simultaneously recover SOTA convergence rates for AdaGrad-Norm, AdaGrad, and ASGO/One-sided Shampoo, while providing the first convergence guarantee for DASGO.…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - AdaGrad
+  - "ICLR 2026"
+  - "Optimization"
+  - "Adaptive Preconditioning"
+  - "AdaGrad"
+  - "Nesterov Momentum"
+  - "Matrix Smoothness"
+  - "Unified Convergence Analysis"
 date: 2026-05-08
-content_hash: 71d84024e700493d
+content_hash: a3af7fa29d1984e7
 ---
+
 # SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration
 
 **Conference**: ICLR 2026  

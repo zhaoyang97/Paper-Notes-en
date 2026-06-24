@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inference-time Alignment in Continuous Space
 description: >-
-  [NeurIPS 2025][LLM Alignment][inference-time alignment] This paper proposes Simple Energy Adaptation (SEA), which shifts the inference-time alignment paradigm from discrete-space search to continuous-space optimization.…
+  [NeurIPS 2025][LLM Alignment][inference-time alignment] This paper proposes Simple Energy Adaptation (SEA), which shifts the inference-time alignment paradigm from discrete-space search to continuous-space optimization. By performing gradient-based Langevin sampling over the continuous logit space, SEA approximates the optimal RLHF policy, achieving a 77.51% relative improvement over the strongest baseline on AdvBench and a 16.36% improvement on MATH.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "continuous optimization"
   - "reward model"
 date: 2026-05-08
-content_hash: 2ee97db8cb83c8e5
+content_hash: 7d17ec5d9b09f1a6
 ---
 
 # Inference-time Alignment in Continuous Space
@@ -195,11 +195,11 @@ Search-based methods on MATH perform even below SFT (BoN-64 achieves only 16%), 
 
 ## Related Papers
 
+- [\[ICML 2026\] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective](../../ICML2026/llm_alignment/reward_shaping_for_inference-time_alignment_a_stackelberg_game_perspective.md)
+- [\[ACL 2026\] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending](../../ACL2026/llm_alignment/to_intervene_or_not_guiding_inference-time_alignment_with_probabilistic_model_bl.md)
 - [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](../../ACL2026/llm_alignment/debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
-- [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
 - [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
-- [\[ACL 2026\] On the Rejection Criterion for Proxy-Based Test-Time Alignment](../../ACL2026/llm_alignment/on_the_rejection_criterion_for_proxy-based_test-time_alignment.md)
-- [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
+- [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
 
 </div>
 

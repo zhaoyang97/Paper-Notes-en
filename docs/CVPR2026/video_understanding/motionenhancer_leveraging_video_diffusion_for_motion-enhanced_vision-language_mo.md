@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models
 description: >-
-  [CVPR 2026][Video Generation][Knowledge Distillation] The authors distill the "motion priors" naturally encoded in Video Diffusion Models (VDMs) to serve as auxiliary supervision for aligning VLM text-visual attention. This significantly enhances the VLM's fine-grained motion understanding without adding trainable parameters or modifying the architecture.
+  [CVPR 2026][Video Understanding][Video Motion Understanding] The authors distill the "motion priors" naturally encoded in Video Diffusion Models (VDMs) to serve as auxiliary supervision for aligning VLM text-visual attention. This significantly enhances the VLM's fine-grained motion understanding without adding trainable parameters or modifying the architecture.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Motion Understanding"
+  - "Video Diffusion Models"
+  - "Attention Alignment"
+  - "Knowledge Distillation"
+  - "Parameter-free Modules"
 date: 2026-05-08
-content_hash: 978ff4e6edc859a5
+content_hash: 3baa000cf84823e8
 ---
+
 # MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -132,11 +137,11 @@ Contributions of MHS and MTTI on Qwen2.5-VL-7B (Overall/Average):
 
 ## Related Papers
 
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
-- [\[CVPR 2026\] Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](efficient_long-context_modeling_in_diffusion_language_models_via_block_approxima.md)
-- [\[ICML 2026\] MiVE: Multiscale Vision-language features for reference-guided video Editing](../../ICML2026/video_generation/mive_multiscale_vision-language_features_for_reference-guided_video_editing.md)
-- [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
+- [\[CVPR 2026\] Polyphony: Diffusion-based Dual-Hand Action Segmentation with Alternating Vision Transformer and Semantic Conditioning](polyphony_diffusion-based_dual-hand_action_segmentation_with_alternating_vision_.md)
+- [\[ICLR 2026\] Point Prompting: Counterfactual Tracking with Video Diffusion Models](../../ICLR2026/video_understanding/point_prompting_counterfactual_tracking_with_video_diffusion_models.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] EthoCLIP: Ontology-Enhanced Video-Language Pretraining for Animal Behavior Understanding](ethoclip_ontology-enhanced_video-language_pretraining_for_animal_behavior_unders.md)
+- [\[CVPR 2025\] VoCo-LLaMA: Towards Vision Compression with Large Language Models](../../CVPR2025/video_understanding/voco-llama_towards_vision_compression_with_large_language_models.md)
 
 </div>
 

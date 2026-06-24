@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes
 description: >-
-  [ICCV 2025][3D Vision][4D Gaussian Splatting] This paper proposes MEGA, a memory-efficient framework for 4D Gaussian Splatting that eliminates redundant spherical harmonic coefficients via DC-AC color decomposition (8× c…
+  [ICCV 2025][3D Vision][4D Gaussian Splatting] This paper proposes MEGA, a memory-efficient framework for 4D Gaussian Splatting that eliminates redundant spherical harmonic coefficients via DC-AC color decomposition (8× compression) and reduces the total number of Gaussians through entropy-constrained Gaussian deformation. MEGA achieves approximately 190× and 125× storage compression on the Technicolor and Neural 3D Video datasets, respectively…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "color compression"
   - "entropy-constrained deformation"
 date: 2026-05-08
-content_hash: cc17212e596a145b
+content_hash: 5562f74f347eff69
 ---
 
 # MEGA: Memory-Efficient 4D Gaussian Splatting for Dynamic Scenes
@@ -173,10 +173,10 @@ On Neu3DV, MEGA achieves **125× storage compression** (3128→25 MB) with visua
 ## Related Papers
 
 - [\[ICCV 2025\] 4D Gaussian Splatting SLAM](4d_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](../../CVPR2026/3d_vision/layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
 - [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](../../CVPR2026/3d_vision/motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
-- [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
-- [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](../../ICLR2026/3d_vision/megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
-- [\[NeurIPS 2025\] Temporal Smoothness-Aware Rate-Distortion Optimized 4D Gaussian Splatting](../../NeurIPS2025/3d_vision/temporal_smoothness-aware_rate-distortion_optimized_4d_gaussian_splatting.md)
+- [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](../../ICLR2026/3d_vision/mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
+- [\[CVPR 2025\] Instruct-4DGS: Efficient Dynamic Scene Editing via 4D Gaussian-based Static-Dynamic Separation](../../CVPR2025/3d_vision/efficient_dynamic_scene_editing_via_4d_gaussian-based_static-dynamic_separation.md)
 
 </div>
 

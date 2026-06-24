@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data
 description: >-
-  [ICLR 2026][Time Series][Paper Note] CauKer combines Gaussian Process (GP) kernel compositions with Structural Causal Models (SCM) to generate purely synthetic time series that possess both realistic structures and inherent cluster properties. Using only this data for pretraining classification Time Series Foundation Models (TSFMs), the method nearly matc
+  [ICLR2026][Time Series][Time Series Foundation Models] CauKer combines Gaussian Process (GP) kernel compositions with Structural Causal Models (SCM) to generate purely synthetic time series that possess both realistic structures and inherent cluster properties. Using only this data for pretraining classification Time Series Foundation Models (TSFMs), the method nearly matches the performance of original models trained on real-world datasets orders of magnitude larger across 1…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Synthetic Data"
+  - "Gaussian Process Kernels"
+  - "Structural Causal Models (SCM)"
+  - "Scaling Laws"
 date: 2026-05-08
-content_hash: e917306cd20aece4
+content_hash: 39dd9866e8625929
 ---
+
 # CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data
 
 **Conference**: ICLR2026  
@@ -149,9 +155,9 @@ The gains from the two steps are clearly additive: adding non-zero means provide
 
 - [\[ICLR 2026\] Can we generate portable representations for clinical time series data using LLMs?](can_we_generate_portable_representations_for_clinical_time_series_data_using_llm.md)
 - [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](../../NeurIPS2025/time_series/synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
+- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
 - [\[ICML 2026\] Mix, Don't Pick: Why Synthetic Corpus Composition Matters for Time Series Foundation Model Pretraining](../../ICML2026/time_series/mix_dont_pick_why_synthetic_corpus_composition_matters_for_time_series_foundatio.md)
 - [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
-- [\[ICLR 2026\] Context parroting: A simple but tough-to-beat baseline for foundation models in scientific machine learning](context_parroting_a_simple_but_tough-to-beat_baseline_for_foundation_models_in_s.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior
 description: >-
-  [ICML 2026][Interpretability][Grokking] ExPLAIND unifies three traditionally separate interpretability strands—"model component attribution, data attribution, and training trajectory attribution"—into a single theoretical framework. By strictly rewriting models trained with AdamW as kernel machines (an extension of the Exact Path Kernel, EPK), it derives add
+  [ICML2026][Interpretability][Path Kernel] ExPLAIND unifies three traditionally separate interpretability strands—"model component attribution, data attribution, and training trajectory attribution"—into a single theoretical framework. By strictly rewriting models trained with AdamW as kernel machines (an extension of the Exact Path Kernel, EPK), it derives additive influence scores indexed by parameter/sample/training step. These can be accumulated along any dimension to expl…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Grokking
+  - "ICML2026"
+  - "Interpretability"
+  - "Path Kernel"
+  - "Attribution"
+  - "Training Dynamics"
+  - "Grokking"
+  - "Influence Scores"
 date: 2026-05-08
-content_hash: 58505f5610538eb4
+content_hash: 81f49fd5770dd8e7
 ---
+
 # ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior
 
 **Conference**: ICML2026  
@@ -114,15 +119,16 @@ The foundation of ExPLAIND is that the "decomposition must be exact." The author
 - Value: ⭐⭐⭐⭐⭐ Provides a theoretically grounded, unified interpretability toolbox that scales to real-world LLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](../../ICLR2026/interpretability/hidden_breakthroughs_in_language_model_training.md)
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](../../ICLR2026/interpretability/learning_to_weight_parameters_for_training_data_attribution.md)
 - [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](../../ICLR2026/interpretability/evolution_of_concepts_in_language_model_pre-training.md)
 - [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
-- [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](../../NeurIPS2025/interpretability/model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
-- [\[ICML 2026\] Discovering Implicit Large Language Model Alignment Objectives](discovering_implicit_large_language_model_alignment_objectives.md)
+- [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](../../ICLR2026/interpretability/influence_dynamics_and_stagewise_data_attribution.md)
 
 </div>
 

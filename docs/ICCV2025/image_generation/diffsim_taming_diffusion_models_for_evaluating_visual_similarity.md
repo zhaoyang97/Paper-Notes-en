@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffSim: Taming Diffusion Models for Evaluating Visual Similarity
 description: >-
-  [ICCV 2025][Image Generation][Diffusion models] DiffSim is the first work to discover that attention-layer features of pretrained diffusion models (Stable Diffusion) can be used to measure visual similarity. It proposes…
+  [ICCV 2025][Image Generation][Diffusion models] DiffSim is the first work to discover that attention-layer features of pretrained diffusion models (Stable Diffusion) can be used to measure visual similarity. It proposes the Aligned Attention Score (AAS), which aligns features from two images in the self-attention and cross-attention layers of the U-Net and computes cosine similarity, achieving state-of-the-art performance on multiple benchmarks covering human perceptual align…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "perceptual metrics"
   - "style similarity"
 date: 2026-05-08
-content_hash: 7b083fde970ae1a1
+content_hash: 2970cc22d572183f
 ---
 
 # DiffSim: Taming Diffusion Models for Evaluating Visual Similarity
@@ -160,11 +160,11 @@ DiffSim is **fully unsupervised** and requires no fine-tuning or training. Pretr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Synthetic History: Evaluating Visual Representations of the Past in Diffusion Models](../../ICLR2026/image_generation/synthetic_history_evaluating_visual_representations_of_the_past_in_diffusion_mod.md)
 - [\[ICCV 2025\] SliderSpace: Decomposing the Visual Capabilities of Diffusion Models](sliderspace_decomposing_the_visual_capabilities_of_diffusion_models.md)
 - [\[ICCV 2025\] VSC: Visual Search Compositional Text-to-Image Diffusion Model](vsc_visual_search_compositional_text-to-image_diffusion_model.md)
-- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](../../CVPR2026/image_generation/dip_taming_diffusion_models_in_pixel_space.md)
-- [\[ICCV 2025\] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models](csd-var_content-style_decomposition_in_visual_autoregressive_models.md)
-- [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
+- [\[ICML 2025\] Taming Diffusion for Dataset Distillation with High Representativeness (D³HR)](../../ICML2025/image_generation/taming_diffusion_for_dataset_distillation_with_high_representativeness.md)
+- [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](../../ICML2026/image_generation/evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
 
 </div>
 

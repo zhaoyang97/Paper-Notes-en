@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval
 description: >-
-  [AAAI 2026][LLM Pretraining][zero-shot video moment retrieval] This paper proposes GranAlign, a training-free granularity-aware alignment framework that addresses the core challenge of semantic granularity mismatch in ze…
+  [AAAI 2026][LLM Pretraining][zero-shot video moment retrieval] This paper proposes GranAlign, a training-free granularity-aware alignment framework that addresses the core challenge of semantic granularity mismatch in zero-shot video moment retrieval (ZVMR). By rewriting queries into simplified and detailed variants and matching them against query-agnostic and query-aware video descriptions respectively, GranAlign achieves a 3.23% improvement in mAP@avg on QVHighlights.
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "LLM"
   - "vision-language models"
 date: 2026-05-08
-content_hash: 448b84fe9a516fd4
+content_hash: 01655ad3d72981c3
 ---
 
 # GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval
@@ -135,10 +135,10 @@ GranAlign is a fully zero-shot, training-free framework requiring no training da
 ## Related Papers
 
 - [\[AAAI 2026\] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding](learning_procedural-aware_video_representations_through_state-grounded_hierarchy.md)
+- [\[ECCV 2024\] Prompting Language-Informed Distribution for Compositional Zero-Shot Learning](../../ECCV2024/llm_pretraining/prompting_language-informed_distribution_for_compositional_zero-shot_learning.md)
+- [\[CVPR 2026\] Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization](../../CVPR2026/llm_pretraining/unlocking_pre-trained_weights_parameter_inheritance_for_zero-shot_initialization.md)
 - [\[NeurIPS 2025\] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data](../../NeurIPS2025/llm_pretraining/zeus_zero-shot_embeddings_for_unsupervised_separation_of_tabular_data.md)
-- [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
-- [\[NeurIPS 2025\] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs](../../NeurIPS2025/llm_pretraining/efficient_pre-training_of_llms_via_topology-aware_communication_alignment_on_mor.md)
-- [\[ICML 2026\] Scaling Depth Capacity via Zero/One-Layer Model Expansion](../../ICML2026/llm_pretraining/scaling_depth_capacity_via_zeroone-layer_model_expansion.md)
+- [\[ACL 2025\] AutoDS: Autonomous Data Selection with Zero-shot Generative Classifiers for Mathematical Texts](../../ACL2025/llm_pretraining/autonomous_data_selection_with_zero-shot_generative_classifiers_for_mathematical.md)
 
 </div>
 

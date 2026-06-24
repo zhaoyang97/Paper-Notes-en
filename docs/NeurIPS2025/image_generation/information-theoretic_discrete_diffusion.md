@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Information-Theoretic Discrete Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][discrete diffusion models] This work generalizes the classical I-MMSE identity from continuous diffusion to the discrete domain…
+  [NeurIPS 2025][Image Generation][discrete diffusion models] This work generalizes the classical I-MMSE identity from continuous diffusion to the discrete domain, establishing the I-MDSE and I-MDCE relations. It proves that DSE/DCE losses are not merely variational upper bounds but **exact decompositions** of the log-likelihood, and derives time-free formulas, conditional likelihood estimators, and coupled likelihood-ratio estimators. The proposed methods are validated on larg…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "masked diffusion"
   - "I-MMSE"
 date: 2026-05-08
-content_hash: 4ab52044e3239597
+content_hash: d39c5dd5252a4d5e
 ---
 
 # Information-Theoretic Discrete Diffusion

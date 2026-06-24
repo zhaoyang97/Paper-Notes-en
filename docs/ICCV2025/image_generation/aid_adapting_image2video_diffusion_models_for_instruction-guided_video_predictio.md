@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction
 description: >-
-  [ICCV 2025][Image Generation][Video Prediction] This paper proposes AID, a framework that transfers a pretrained Image2Video diffusion model (SVD) to text-guided video prediction (TVP) tasks. Through MLLM-assisted video…
+  [ICCV 2025][Image Generation][Video Prediction] This paper proposes AID, a framework that transfers a pretrained Image2Video diffusion model (SVD) to text-guided video prediction (TVP) tasks. Through MLLM-assisted video state prediction, a Dual-Query Transformer for condition injection, and spatiotemporal adapters, AID surpasses the previous state-of-the-art FVD scores by over 50% across multiple datasets.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Stable Video Diffusion"
   - "Adapter"
 date: 2026-05-08
-content_hash: 6db571c368b19271
+content_hash: 700d1b33308e19ae
 ---
 
 # AID: Adapting Image2Video Diffusion Models for Instruction-guided Video Prediction
@@ -155,9 +155,9 @@ FVD improvements: 55.5% on SSv2, **91.2%** on Bridge, and 80.6% on Epic100.
 
 - [\[ICCV 2025\] Early Timestep Zero-Shot Candidate Selection for Instruction-Guided Image Editing](early_timestep_zero-shot_candidate_selection_for_instruction-guided_image_editin.md)
 - [\[ICCV 2025\] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation](adiee_automatic_dataset_creation_and_scorer_for_instruction-guided_image_editing.md)
-- [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
 - [\[ICCV 2025\] Text Embedding Knows How to Quantize Text-Guided Diffusion Models](text_embedding_knows_how_to_quantize_text-guided_diffusion_models.md)
-- [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
+- [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
+- [\[CVPR 2025\] SyncVP: Joint Diffusion for Synchronous Multi-Modal Video Prediction](../../CVPR2025/image_generation/syncvp_joint_diffusion_for_synchronous_multi-modal_video_prediction.md)
 
 </div>
 

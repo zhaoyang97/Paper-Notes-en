@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Benchmarking and Enhancing VLM for Compressed Image Understanding
 description: >-
-  [ICML 2026][Multimodal VLM][Vision-Language Model] This paper constructs the first large-scale benchmark (11 codecs, 9 VLMs, 1M+ compressed images) to evaluate VLM understanding of compressed images. Performance degradation is decomposed into an irrecoverable "information gap" and a remediable "generalization gap." A lightweight conditional vision encoder adapter is pr
+  [ICML 2026][Multimodal VLM][Vision-Language Models] This paper constructs the first large-scale benchmark (11 codecs, 9 VLMs, 1M+ compressed images) to evaluate VLM understanding of compressed images. Performance degradation is decomposed into an irrecoverable "information gap" and a remediable "generalization gap." A lightweight conditional vision encoder adapter is proposed, which utilizes codec type and compression level as conditional embeddings + distillation training to…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Image Compression
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Image Compression"
+  - "Compression Artifacts"
+  - "Generalization Gap"
+  - "Vision Encoder Adapter"
 date: 2026-05-08
-content_hash: 3c24d8f0a62a92d5
+content_hash: 6c7f3e9869de67a5
 ---
+
 # Benchmarking and Enhancing VLM for Compressed Image Understanding
 
 **Conference**: ICML 2026  
@@ -145,7 +149,7 @@ The training uses 110k+ COCO images compressed with JPEG, ELIC, and ILLM at 4 bi
 - [\[CVPR 2026\] GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting](../../CVPR2026/multimodal_vlm/gaussianvision_vision-language_alignment_from_compressed_image_representations_u.md)
 - [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
 - [\[ICCV 2025\] GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks](../../ICCV2025/multimodal_vlm/geobench-vlm_benchmarking_vision-language_models_for_geospatial_tasks.md)
-- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](../../CVPR2026/multimodal_vlm/retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
+- [\[AAAI 2026\] VILTA: A VLM-in-the-Loop Adversary for Enhancing Driving Policy Robustness](../../AAAI2026/multimodal_vlm/vilta_a_vlm-in-the-loop_adversary_for_enhancing_driving_poli.md)
 
 </div>
 

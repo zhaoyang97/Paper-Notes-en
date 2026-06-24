@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety
 description: >-
-  [ICML 2026][LLM Agent][Guardrail] SafeHarbor upgrades LLM Agent safety defense from "static coarse-grained classifiers" to a "dynamic hierarchical memory tree + dual-score gating." Through adversarial rule generation and entropy-based self-evolution, it enables GPT-4o to maintain a 93%+ refusal rate while increasing the success rate of benign tool call
+  [ICML 2026][LLM Agent][Guardrail] SafeHarbor upgrades LLM Agent safety defense from "static coarse-grained classifiers" to a "dynamic hierarchical memory tree + dual-score gating." Through adversarial rule generation and entropy-based self-evolution, it enables GPT-4o to maintain a 93%+ refusal rate while increasing the success rate of benign tool calls to 63.6%, significantly alleviating the over-refusal problem.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Guardrail
-  - Agent Safety
-  - Hierarchical Memory
-  - Over-Refusal
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Guardrail"
+  - "Agent Safety"
+  - "Hierarchical Memory"
+  - "Contrastive Learning"
+  - "Over-Refusal"
 date: 2026-05-08
-content_hash: ec0979e4c6e57251
+content_hash: 0144603452307ba8
 ---
+
 # SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety
 
 **Conference**: ICML 2026  
@@ -145,15 +147,16 @@ SafeHarbor is the only solution in the table to achieve both "harmful refusal > 
 - Value: ⭐⭐⭐⭐⭐ (High engineering feasibility for closed-source LLMs)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](se-ga_memory-augmented_self-evolution_for_gui_agents.md)
+- [\[ICML 2026\] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](think_twice_before_you_act_enhancing_agent_behavioral_safety_with_thought_correc.md)
 - [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
 - [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](../../ACL2026/llm_agent/hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
 - [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](../../ACL2026/llm_agent/shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
-- [\[ICML 2026\] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](think_twice_before_you_act_enhancing_agent_behavioral_safety_with_thought_correc.md)
 
 </div>
 

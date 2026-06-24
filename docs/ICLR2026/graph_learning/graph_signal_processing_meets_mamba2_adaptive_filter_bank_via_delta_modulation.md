@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Graph Signal Processing Meets Mamba2: Adaptive Filter Bank via Delta Modulation
 description: >-
-  [ICLR 2026][Graph Learning][Mamba2] This paper reinterprets the multi-head recursion of Mamba2 as a graph filter bank on a line graph. It proposes HADES, a hierarchical structure of "shared low-pass filters + expert high-pass filters" via spectral residual-based delta modulation, achieving or exceeding Mamba2 performance with only 58.9% of the parameters
+  [ICLR 2026][Graph Learning][Mamba2] This paper reinterprets the multi-head recursion of Mamba2 as a graph filter bank on a line graph. It proposes HADES, a hierarchical structure of "shared low-pass filters + expert high-pass filters" via spectral residual-based delta modulation, achieving or exceeding Mamba2 performance with only 58.9% of the parameters.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Mamba2
-  - Graph Signal Processing
-  - Interpretability
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Mamba2"
+  - "Graph Signal Processing"
+  - "Filter Bank"
+  - "Delta Modulation"
+  - "Expert Routing"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: a42b61f84d54ff4c
+content_hash: 1b391dcc714172b8
 ---
+
 # Graph Signal Processing Meets Mamba2: Adaptive Filter Bank via Delta Modulation
 
 **Conference**: ICLR 2026  
@@ -129,15 +133,14 @@ HADES utilizes only 218M parameters (58.92% of Mamba2-370M) and outperforms all 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] TopoFormer: Topology Meets Attention for Graph Learning](topoformer_topology_meets_attention_for_graph_learning.md)
+- [\[ICLR 2026\] Si-GT: Fast Interconnect Signal Integrity Analysis for Integrated Circuit Design via Graph Transformers](si-gt_fast_interconnect_signal_integrity_analysis_for_integrated_circuit_design_.md)
 - [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
 - [\[ICLR 2026\] AdaSpec: Adaptive Spectrum for Enhanced Node Distinguishability](adaspec_adaptive_spectrum_for_enhanced_node_distinguishability.md)
-- [\[ICML 2025\] Positional Encoding meets Persistent Homology on Graphs](../../ICML2025/graph_learning/positional_encoding_meets_persistent_homology_on_graphs.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](../../AAAI2026/graph_learning/self-adaptive_graph_mixture_of_models.md)
-- [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
 
 </div>
 

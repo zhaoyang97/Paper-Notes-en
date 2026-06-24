@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph Your Own Prompt
 description: >-
-  [NeurIPS 2025][Model Compression][Graph regularization] This paper proposes a Graph Consistency Regularization (GCR) framework that inserts parameter-free Graph Consistency Layers (GCL) at arbitrary network depths. GCL a…
+  [NeurIPS 2025][Model Compression][Graph regularization] This paper proposes a Graph Consistency Regularization (GCR) framework that inserts parameter-free Graph Consistency Layers (GCL) at arbitrary network depths. GCL aligns the relational graph of intermediate features with a class-aware semantic graph derived from model predictions, promoting semantically consistent feature learning in a self-prompting manner—improving classification generalization without modifying the ar…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "classification"
   - "parameter-free module"
 date: 2026-05-08
-content_hash: 431e7a3ffcb3d9ec
+content_hash: e7f9c5d5ac3b3530
 ---
 
 # Graph Your Own Prompt

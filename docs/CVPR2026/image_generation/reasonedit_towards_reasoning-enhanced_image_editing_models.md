@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Existing instruction editing models based on "MLLM Encoder + Diffusion Decoder" often freeze the MLLM, leaving its reasoning capabilities underutilized. ReasonEdit unlocks the MLLM's "Thinking" (translating abstract instructions into concrete executable steps) and "Reflection" (multi-round self-inspection and deciding
+  [CVPR 2026][Image Generation][Instruction-based Image Editing] Existing instruction editing models based on "MLLM Encoder + Diffusion Decoder" often freeze the MLLM, leaving its reasoning capabilities underutilized. ReasonEdit unlocks the MLLM's "Thinking" (translating abstract instructions into concrete executable steps) and "Reflection" (multi-round self-inspection and deciding when to stop) through joint optimization. This forms a thinking–editing–reflection closed loop…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruction-based Image Editing"
+  - "Reasoning Enhancement"
+  - "Think-Edit-Reflect"
+  - "Test-time Scaling"
+  - "Multi-stage Training"
 date: 2026-05-08
-content_hash: 7e64bf62a38b238c
+content_hash: 41a0cf588cb24c2c
 ---
+
 # ReasonEdit: Towards Reasoning-Enhanced Image Editing Models
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,15 @@ Multi-stage training ablation (KRIS-Bench Overall, based on ReasonEdit-S):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing](re-align_structured_reasoning-guided_alignment_for_in-context_image_generation_a.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[CVPR 2026\] UniVerse: Empower Unified Generation with Reasoning and Knowledge](universe_empower_unified_generation_with_reasoning_and_knowledge.md)
-- [\[CVPR 2026\] Meta-CoT: Enhancing Granularity and Generalization in Image Editing](meta-cot_enhancing_granularity_and_generalization_in_image_editing.md)
+- [\[ICLR 2026\] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation](../../ICLR2026/image_generation/chronoedit_towards_temporal_reasoning_for_in-context_image_editing_and_world_sim.md)
 - [\[CVPR 2026\] Kontinuous Kontext: Continuous Strength Control for Instruction-based Image Editing](kontinuous_kontext_continuous_strength_control_for_instruction-based_image_editi.md)
-- [\[CVPR 2026\] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] To address the "same primitive has different semantics in different compositions" pain point in Compositional Zero-Shot Learning (CZSL), this paper proposes EVA—using Mixture-of-Experts (MoE) adapters to decouple primitives into multiple semantic variants for learning, and then employing semantic variant alignment to s
+  [ICLR2026][Multimodal VLM][Compositional Zero-Shot Learning] To address the "same primitive has different semantics in different compositions" pain point in Compositional Zero-Shot Learning (CZSL), this paper proposes EVA—using Mixture-of-Experts (MoE) adapters to decouple primitives into multiple semantic variants for learning, and then employing semantic variant alignment to select the variant that best matches the image for fine-grained cross-modal matching. SOTA results a…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Compositional Zero-Shot Learning"
+  - "Mixture-of-Experts"
+  - "CLIP"
+  - "Primitive Decoupling"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: f2269246a78d3371
+content_hash: ad68827c6a6474de
 ---
+
 # Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning
 
 **Conference**: ICLR2026  
@@ -154,7 +159,7 @@ Internal ablation of variant alignment (C-GQA, AUC): BASELINE 17.2 $\rightarrow$
 - [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](../../NeurIPS2025/multimodal_vlm/tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
 - [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
-- [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](exploring_cross-modal_flows_for_few-shot_learning.md)
 
 </div>
 

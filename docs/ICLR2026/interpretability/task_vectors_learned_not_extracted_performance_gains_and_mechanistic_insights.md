@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Task Vectors, Learned Not Extracted: Performance Gains and Mechanistic Insights
 description: >-
-  [ICLR 2026][Interpretability][In-Context Learning] Instead of "extracting" Task Vectors (TV) from model representations, this paper uses gradient descent to **directly train** an injected vector (Learned Task Vector, LTV). LTV outperforms extractive TV in classification and generation tasks and can be injected at arbitrary layers or positions. The study systematically
+  [ICLR 2026][Interpretability][Task Vectors] Instead of "extracting" Task Vectors (TV) from model representations, this paper uses gradient descent to **directly train** an injected vector (Learned Task Vector, LTV). LTV outperforms extractive TV in classification and generation tasks and can be injected at arbitrary layers or positions. The study systematically deconstructs the mechanism of TV: lower layers operate primarily through the OV circuits of attention heads (where a…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - In-Context Learning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Task Vectors"
+  - "In-Context Learning"
+  - "Mechanistic Interpretability"
+  - "OV Circuit"
+  - "Linear Propagation"
 date: 2026-05-08
-content_hash: 50baa05bcaaaef42
+content_hash: 872bc0bc34e7b07c
 ---
+
 # Task Vectors, Learned Not Extracted: Performance Gains and Mechanistic Insights
 
 **Conference**: ICLR 2026  
@@ -142,11 +147,11 @@ Robustness across configurations (average accuracy, Llama3.1-8B):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
 - [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights into Reasoning-Induced Misalignment](when_thinking_backfires_mechanistic_insights_into_reason-induced_misalignment.md)
-- [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
-- [\[ICLR 2026\] Latent Concept Disentanglement in Transformer-based Language Models](latent_concept_disentanglement_in_transformer-based_language_models.md)
-- [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](../../ACL2026/interpretability/linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
+- [\[ICLR 2026\] Circuit Insights: Towards Interpretability Beyond Activations](circuit_insights_towards_interpretability_beyond_activations.md)
+- [\[ICLR 2026\] Causality ≠ Invariance: Function and Concept Vectors in LLMs](causality_invariance_function_and_concept_vectors_in_llms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] This work refines and distills the "coarse-to-fine generative curriculum knowledge" encoded during the denoising process of a pre-trained text-to-image Diffusion Transformer (DiT) into a lightweight ViT retrieval backbone. This enables the small model to completely discard the DiT during inference while significantly i
+  [CVPR 2026][Model Compression][Knowledge Distillation] This work refines and distills the "coarse-to-fine generative curriculum knowledge" encoded during the denoising process of a pre-trained text-to-image Diffusion Transformer (DiT) into a lightweight ViT retrieval backbone. This enables the small model to completely discard the DiT during inference while significantly improving R@1 in Open-Set Fine-Grained Retrieval (OSFR) (+9.8% on CUB, +18.6% on Stanford Cars).
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Open-Set Fine-Grained Retrieval"
+  - "Diffusion Transformer"
+  - "Curriculum Distillation"
+  - "Attribute-Centric Representation"
 date: 2026-05-08
-content_hash: a284b12c6abe7d00
+content_hash: 1ebf2fb5200212f0
 ---
+
 # DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ GIM Hyperparameters and Curriculum Stages (CUB, R@1):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 - [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
-- [\[CVPR 2026\] How to Choose Your Teacher for Fine Grained Image Recognition](how_to_choose_your_teacher_for_fine_grained_image_recognition.md)
 - [\[CVPR 2026\] HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation](hieramp_coarse-to-fine_autoregressive_amplification_for_generative_dataset_disti.md)
+- [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](../../ICLR2026/model_compression/generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
 - [\[ACL 2026\] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](../../ACL2026/model_compression/when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)
-- [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](distilling_balanced_knowledge_from_a_biased_teacher.md)
 
 </div>
 

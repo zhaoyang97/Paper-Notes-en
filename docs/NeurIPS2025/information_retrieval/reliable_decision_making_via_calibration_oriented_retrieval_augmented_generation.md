@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes CalibRAG, a framework that trains a temperature-conditioned forecasting function to ensure confidence calibration in RAG-assisted decision-making…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes CalibRAG, a framework that trains a temperature-conditioned forecasting function to ensure confidence calibration in RAG-assisted decision-making, achieving improvements in both calibration quality and accuracy.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "retrieval augmented generation"
   - "confidence estimation"
 date: 2026-05-08
-content_hash: d2be05a89b354f9d
+content_hash: 7ffc9bf03fa1b270
 ---
 
 # Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation
@@ -164,9 +164,9 @@ CalibRAG is trained on general-domain data yet achieves state-of-the-art perform
 
 - [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
 - [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
+- [\[ACL 2025\] Controllable and Reliable Knowledge-Intensive Task-Oriented Conversational Agents with Declarative Genie Worksheets](../../ACL2025/information_retrieval/genie_worksheets_tod_agent.md)
 - [\[NeurIPS 2025\] Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers](cooperative_retrieval-augmented_generation_for_question_answering_mutual_informa.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/information_retrieval/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[ICML 2025\] POQD: Performance-Oriented Query Decomposer for Multi-Vector Retrieval](../../ICML2025/information_retrieval/poqd_performance-oriented_query_decomposer_for_multi-vector_retrieval.md)
 
 </div>
 

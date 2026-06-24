@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Increasing the Utility of Synthetic Images through Chamfer Guidance
 description: >-
-  [NeurIPS 2025][Image Generation][Chamfer Distance] This paper proposes Chamfer Guidance — a training-free inference-time guidance method that uses a small number of real samples as references. By leveraging Chamfer dista…
+  [NeurIPS 2025][Image Generation][Chamfer Distance] This paper proposes Chamfer Guidance — a training-free inference-time guidance method that uses a small number of real samples as references. By leveraging Chamfer distance, it simultaneously optimizes fidelity and diversity of synthetic images. On ImageNet-1k, using only 32 real images, it achieves 97.5% Precision and 92.7% Coverage, and delivers up to 16% accuracy improvement in downstream classifier training.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "distribution matching"
   - "training-free inference guidance"
 date: 2026-05-08
-content_hash: 66ce1038607dbd30
+content_hash: f3acac7284798089
 ---
 
 # Increasing the Utility of Synthetic Images through Chamfer Guidance
@@ -226,10 +226,10 @@ Detailed inference procedure:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
+- [\[ICML 2025\] Privacy Amplification Through Synthetic Data: Insights from Linear Regression](../../ICML2025/image_generation/privacy_amplification_through_synthetic_data_insights_from_linear_regression.md)
 - [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
+- [\[CVPR 2025\] Co-Spy: Combining Semantic and Pixel Features to Detect Synthetic Images by AI](../../CVPR2025/image_generation/co-spy_combining_semantic_and_pixel_features_to_detect_synthetic_images_by_ai.md)
 - [\[NeurIPS 2025\] Generative Model Inversion Through the Lens of the Manifold Hypothesis](generative_model_inversion_through_the_lens_of_the_manifold_hypothesis.md)
-- [\[NeurIPS 2025\] FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies](ferretnet_efficient_synthetic_image_detection_via_local_pixel_dependencies.md)
-- [\[NeurIPS 2025\] AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition](auggen_synthetic_augmentation_using_diffusion_models_can_imp.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] This paper proposes StructKV, a structure-aware KV Cache compression framework. It identifies global information hubs through cross-layer accumulated attention patterns (Global In-Degree Centrality), adaptively locates the optimal compression layer via Dynamic Pivot Detection, and separates computation from storage bud
+  [ACL 2026 Findings][LLM Efficiency][KV Cache Compression] This paper proposes StructKV, a structure-aware KV Cache compression framework. It identifies global information hubs through cross-layer accumulated attention patterns (Global In-Degree Centrality), adaptively locates the optimal compression layer via Dynamic Pivot Detection, and separates computation from storage budgets using Structural Propagation & Decoupling. On LongBench and RULER…
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL 2026 Findings"
+  - "LLM Efficiency"
+  - "KV Cache Compression"
+  - "Long-Context Inference"
+  - "Global In-Degree Centrality"
+  - "Dynamic Pivot Detection"
+  - "Structural Propagation"
 date: 2026-05-08
-content_hash: b6f5933605c82712
+content_hash: 5123c6529fd09fd9
 ---
+
 # StructKV: Preserving the Structural Skeleton for Scalable Long-Context Inference
 
 **Conference**: ACL 2026 Findings  
@@ -162,7 +168,7 @@ The entire process is training-free and active during inference. Default paramet
 - [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](../../ICML2026/llm_efficiency/obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 - [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](../../ICML2026/llm_efficiency/training-inference_consistent_segmented_execution_for_long-context_llms.md)
 - [\[ACL 2025\] Squeezed Attention: Accelerating Long Context Length LLM Inference](../../ACL2025/llm_efficiency/squeezed_attention_accelerating_long_context_length_llm_inference.md)
-- [\[AAAI 2026\] Connectivity-Guided Sparsification of 2-FWL GNNs Preserving Full Expressivity](../../AAAI2026/llm_efficiency/connectivity-guided_sparsification_of_2-fwl_gnns_preserving_full_expressivity_wi.md)
+- [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](../../ICLR2026/llm_efficiency/repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
 
 </div>
 

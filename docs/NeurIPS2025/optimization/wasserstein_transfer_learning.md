@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Wasserstein Transfer Learning
 description: >-
-  [NeurIPS 2025][Optimization][Transfer Learning] This paper proposes WaTL, the first transfer learning framework for distributional outputs in Wasserstein space. It adopts a three-step procedure — weighted auxiliary estim…
+  [NeurIPS 2025][Optimization][Transfer Learning] This paper proposes WaTL, the first transfer learning framework for distributional outputs in Wasserstein space. It adopts a three-step procedure — weighted auxiliary estimation, bias correction, and projection — combined with adaptive source selection, to transfer knowledge from source domains and improve distributional regression in the target domain.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Optimal Transport"
   - "Distributional Data Analysis"
 date: 2026-05-08
-content_hash: c575e4d45119d92a
+content_hash: f700bb983c9a3f05
 ---
 
 # Wasserstein Transfer Learning
@@ -131,11 +131,11 @@ The core mechanism is a three-step procedure: weighted aggregation → bias corr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice](../../ICLR2026/optimization/weight_decay_may_matter_more_than_µp_for_learning_rate_transfer_in_practice.md)
+- [\[ICML 2025\] Statistical and Computational Guarantees of Kernel Max-Sliced Wasserstein Distances](../../ICML2025/optimization/statistical_and_computational_guarantees_of_kernel_max-sliced_wasserstein_distan.md)
+- [\[ICLR 2026\] Completed Hyperparameter Transfer across Modules, Width, Depth, Batch and Duration](../../ICLR2026/optimization/completed_hyperparameter_transfer_across_modules_width_depth_batch_and_duration.md)
 - [\[ICML 2026\] Accelerated Multiple Wasserstein Gradient Flows for Multi-objective Distributional Optimization](../../ICML2026/optimization/accelerated_multiple_wasserstein_gradient_flows_for_multi-objective_distribution.md)
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
-- [\[NeurIPS 2025\] Learning from Interval Targets](learning_from_interval_targets.md)
-- [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](streaming_federated_learning_with_markovian_data.md)
-- [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
 
 </div>
 

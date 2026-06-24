@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] UniVid: 统一视频审核的视觉语言模型
+  [Paper Note] UniVid: A Unified Vision-Language Model for Video Moderation
 description: >-
-  [ACL 2026][AI Safety][Vision-Language Model] UniVid evolves video moderation systems from unmaintainable "fragmented" architectures to interpretable, reusable "end-to-end" systems by replacing 1000+ black-box classifiers with a unified policy-aware captioning VLM, achieving a 42.7% reduction in violation leakage during production deployment on the ByteDance platf
+  [ACL 2026][AI Safety][Video Moderation] UniVid evolves video moderation systems from unmaintainable "fragmented" architectures to interpretable, reusable "end-to-end" systems by replacing 1000+ black-box classifiers with a unified policy-aware captioning VLM, achieving a 42.7% reduction in violation leakage during production deployment on the ByteDance platform.
 tags:
-  - ACL 2026
-  - AI Safety
-  - Vision-Language Model
-  - Model Compression
+  - "ACL 2026"
+  - "AI Safety"
+  - "Video Moderation"
+  - "Vision-Language Models"
+  - "Policy Alignment"
+  - "Content Understanding"
+  - "Model Compression"
 date: 2026-05-08
-content_hash: 4e93def941e6d15c
+content_hash: 47e419a377c2e90e
 ---
+
 # UniVid: A Unified Vision-Language Model for Video Moderation
 
 **Conference**: ACL 2026  
@@ -157,11 +161,11 @@ The hybrid data recipe is crucial—removing synthetic data leads to a 16.8% dro
 
 ## Related Papers
 
-- [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
-- [\[ACL 2026\] Reverse Constitutional AI: A Framework for Controllable Toxic Data Generation via Probability-Clamped RLAIF](reverse_constitutional_ai_a_framework_for_controllable_toxic_data_generation_via.md)
-- [\[ACL 2026\] OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset](omnicompliance-100k_a_multi-domain_rule-grounded_real-world_safety_compliance_da.md)
-- [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](../../CVPR2026/ai_safety/v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
-- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](../../CVPR2026/ai_safety/a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
+- [\[ICML 2026\] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL](../../ICML2026/ai_safety/omnivl-guard_towards_unified_vision-language_forgery_detection_and_grounding_via.md)
+- [\[ICML 2026\] Right Predictions, Misleading Explanations: On the Vulnerability of Vision-Language Model Explanations](../../ICML2026/ai_safety/right_predictions_misleading_explanations_on_the_vulnerability_of_vision-languag.md)
+- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
+- [\[CVPR 2026\] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary](../../CVPR2026/ai_safety/unigame_turning_a_unified_multimodal_model_into_its_own_adversary.md)
+- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](../../CVPR2026/ai_safety/sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
 
 </div>
 

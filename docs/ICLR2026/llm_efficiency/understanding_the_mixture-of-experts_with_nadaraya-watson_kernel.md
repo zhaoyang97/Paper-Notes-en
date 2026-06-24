@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper reinterprets MoE routing using classical Nadaraya-Watson kernel regression (routing weights = kernel function, expert outputs = weighted "labels"). Based on this, MoE is viewed as a "large FFN," leading to the proposal of KERN—a zero-additional-overhead FFN-style routing function (ReLU activation + $\ell_2$
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] This paper reinterprets MoE routing using classical Nadaraya-Watson kernel regression (routing weights = kernel function, expert outputs = weighted "labels"). Based on this, MoE is viewed as a "large FFN," leading to the proposal of KERN—a zero-additional-overhead FFN-style routing function (ReLU activation + $\ell_2$ normalization). KERN consistently outperforms Softmax/Sigmoid routing across various model scales…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Routing Function"
+  - "Nadaraya-Watson Regression"
+  - "Kernel Methods"
+  - "Softmax Alternative"
 date: 2026-05-08
-content_hash: 02ac29163762e226
+content_hash: 8f6ed75ef93b1987
 ---
+
 # Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel
 
 **Conference**: ICLR 2026  
@@ -141,10 +147,10 @@ Language Modeling Validation Loss (Lower is better, at 50K steps):
 ## Related Papers
 
 - [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](dirmoe_dirichlet-routed_mixture_of_experts.md)
+- [\[ICLR 2026\] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource](mixture-of-experts_can_surpass_dense_llms_under_strictly_equal_resource.md)
 - [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](../../ICML2026/llm_efficiency/repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
 - [\[ICLR 2026\] Expert Merging in Sparse Mixture of Experts with Nash Bargaining](expert_merging_in_sparse_mixture_of_experts_with_nash_bargaining.md)
 - [\[ICLR 2026\] Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs](routing_manifold_alignment_improves_generalization_of_mixture-of-experts_llms.md)
-- [\[ICLR 2026\] Towards Greater Leverage: Scaling Laws for Efficient Mixture-of-Experts Language Models](towards_greater_leverage_scaling_laws_for_efficient_mixture-of-experts_language_.md)
 
 </div>
 

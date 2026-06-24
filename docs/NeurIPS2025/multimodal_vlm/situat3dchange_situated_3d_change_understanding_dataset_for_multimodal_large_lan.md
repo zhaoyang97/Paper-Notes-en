@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][3D scene change understanding] This work introduces the Situat3DChange dataset (174K data instances) that unifies dynamic scene change perception and situated awareness understanding under…
+  [NeurIPS 2025][Multimodal VLM][3D scene change understanding] This work introduces the Situat3DChange dataset (174K data instances) that unifies dynamic scene change perception and situated awareness understanding under a perception–action paradigm, and proposes SCReasoner—an efficient 3D MLLM for point cloud comparative reasoning.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "point cloud comparison"
   - "dataset"
 date: 2026-05-08
-content_hash: 45451fbe11a22174
+content_hash: 3d045d457dd06548
 ---
 
 # Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models
@@ -122,11 +122,11 @@ The training setup follows LEO, with joint training for 5 epochs across three ta
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] SmartWilds: Multimodal Wildlife Monitoring Dataset](smartwilds_multimodal_wildlife_monitoring_dataset.md)
+- [\[CVPR 2025\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2025/multimodal_vlm/sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
 - [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
-- [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2026/multimodal_vlm/sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
-- [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
+- [\[NeurIPS 2025\] SmartWilds: Multimodal Wildlife Monitoring Dataset](smartwilds_multimodal_wildlife_monitoring_dataset.md)
+- [\[ACL 2025\] ViGiL3D: A Linguistically Diverse Dataset for 3D Visual Grounding](../../ACL2025/multimodal_vlm/vigil3d_a_linguistically_diverse_dataset_for_3d_visual_grounding.md)
+- [\[NeurIPS 2025\] Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging](better_tokens_for_better_3d_advancing_vision-language_modeling_in_3d_medical_ima.md)
 
 </div>
 

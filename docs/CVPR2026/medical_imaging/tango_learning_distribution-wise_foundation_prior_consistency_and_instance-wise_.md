@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TANGO: Learning Distribution-wise Foundation Prior Consistency and Instance-wise Style Calibration for Medical Image Generalization
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] TanGo distills the low-frequency generalization priors of Visual Foundation Models (SAM/DINOv2) into a lightweight source model during the **training phase** and employs learnable per-sample "decorators" to pull drifted test images back to the augmented source distribution during the **testing phase**, achieving SOTA i
+  [CVPR 2026][Medical Imaging][Continual Test-time Adaptation] TanGo distills the low-frequency generalization priors of Visual Foundation Models (SAM/DINOv2) into a lightweight source model during the **training phase** and employs learnable per-sample "decorators" to pull drifted test images back to the augmented source distribution during the **testing phase**, achieving SOTA in Continual Test-time Adaptation (CTTA) for medical image segmentation.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Continual Test-time Adaptation"
+  - "Medical Image Segmentation"
+  - "Visual Foundation Model"
+  - "Frequency Domain Prior"
+  - "Style Calibration"
 date: 2026-05-08
-content_hash: 50f21bcf9ed88dc2
+content_hash: 6560042d08641fcc
 ---
+
 # TANGO: Learning Distribution-wise Foundation Prior Consistency and Instance-wise Style Calibration for Medical Image Generalization
 
 **Conference**: CVPR 2026  
@@ -128,11 +134,11 @@ Ablation of test-side constraints (Polyps, Avg DSC): $L_{ent}$ alone gives 78.25
 
 ## Related Papers
 
-- [\[CVPR 2026\] Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models](delving_aleatoric_uncertainty_in_medical_image_segmentation_via_vision_foundatio.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)
 - [\[ICCV 2025\] Vector Contrastive Learning for Pixel-wise Pretraining in Medical Vision](../../ICCV2025/medical_imaging/vector_contrastive_learning_for_pixel-wise_pretraining_in_medical_vision.md)
 - [\[CVPR 2026\] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric](cg-reasoner_centroid-guided_positional_reasoning_segmentation_for_medical_imagin.md)
 - [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
+- [\[CVPR 2026\] Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization](diffusion-based_native_adversarial_synthesis_for_enhanced_medical_segmentation_g.md)
 
 </div>
 

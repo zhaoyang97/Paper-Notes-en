@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption
 description: >-
-  [AAAI 2026][Graph Learning][unsupervised node representation learning] This paper proposes FUEL, a method that adaptively learns the degree of graph convolution usage through a node-feature-centric clustering scheme…
+  [AAAI 2026][Graph Learning][unsupervised node representation learning] This paper proposes FUEL, a method that adaptively learns the degree of graph convolution usage through a node-feature-centric clustering scheme, achieving high-quality unsupervised node representations on both homophilic and non-homophilic graphs without any homophily assumption.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "clustering"
   - "feature-centric"
 date: 2026-05-08
-content_hash: 72db66f858b51876
+content_hash: ae4f5fdb6a1e17cb
 ---
 
 # Feature-Centric Unsupervised Node Representation Learning Without Homophily Assumption
@@ -147,9 +147,9 @@ FUEL also ranks first on the clustering task (average rank 2.4), with particular
 ## Related Papers
 
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
+- [\[ICLR 2026\] HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding](../../ICLR2026/graph_learning/harmonygnns_harmonizing_heterophily_and_homophily_in_gnns_via_self-supervised_no.md)
 - [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](../../ICML2026/graph_learning/t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
-- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
-- [\[ICML 2026\] View Space: Representation Learning Across Arbitrary Graphs](../../ICML2026/graph_learning/view_space_learning_representation_across_arbitrary_graphs.md)
+- [\[ACL 2026\] ARK: Answer-Centric Retriever Tuning via KG-augmented Curriculum Learning](../../ACL2026/graph_learning/ark_answer-centric_retriever_tuning_via_kg-augmented_curriculum_learning.md)
 - [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](posterior_label_smoothing_for_node_classification.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] CitySeeker constructs the first embodied urban navigation benchmark for "implicit human needs" (8 cities, 6,440 real street-view trajectories, 7 categories of needs). Utilizing a unified ReAct-style navigation framework to evaluate 27 VLMs, it is found that even the strongest model achieves a task completion rate of on
+  [ICLR2026][Multimodal VLM][Embodied Urban Navigation] CitySeeker constructs the first embodied urban navigation benchmark for "implicit human needs" (8 cities, 6,440 real street-view trajectories, 7 categories of needs). Utilizing a unified ReAct-style navigation framework to evaluate 27 VLMs, it is found that even the strongest model achieves a task completion rate of only 21.1%, significantly lagging behind humans. Three types of human-cognition-inspired strategies—Backtrac…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Embodied Urban Navigation"
+  - "Implicit Needs"
+  - "Spatial Reasoning"
+  - "VLM Evaluation"
+  - "Cognitive Maps"
 date: 2026-05-08
-content_hash: 415ad489798c5ac7
+content_hash: 97f291949dc09318
 ---
+
 # CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fair Decision Utility in Human-AI Collaboration: Interpretable Confidence Adjustment for Humans with Cognitive Disparities
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Targeting scenarios where "experts and novices share the same AI-assisted decision-making system," this paper demonstrates that existing calibration and human-alignment methods fail to guarantee fair decision utility across populations with different cognitive abilities. It proposes a new objective, **inter-group-align
+  [ICLR 2026][AI Safety][Human-AI collaborative decision-making] Targeting scenarios where "experts and novices share the same AI-assisted decision-making system," this paper demonstrates that existing calibration and human-alignment methods fail to guarantee fair decision utility across populations with different cognitive abilities. It proposes a new objective, **inter-group-alignment**, and utilizes **cognition-aware multicalibration** to simultaneously achieve high utility…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Human-AI collaborative decision-making"
+  - "AI confidence calibration"
+  - "utility fairness"
+  - "multicalibration"
+  - "cognitive heterogeneity"
 date: 2026-05-08
-content_hash: 191df37087604bda
+content_hash: feb48816a8120dcf
 ---
+
 # Fair Decision Utility in Human-AI Collaboration: Interpretable Confidence Adjustment for Humans with Cognitive Disparities
 
 **Conference**: ICLR 2026  
@@ -131,9 +137,9 @@ Cognition-aware multicalibration achieves the best EIAE/MIAE across all 4 tasks,
 
 - [\[ICLR 2026\] Fair Reinforcement Learning for Just AI](fair_reinforcement_learning_for_just_ai.md)
 - [\[ICLR 2026\] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm](pluriharms_benchmarking_the_full_spectrum_of_human_judgments_on_ai_harm.md)
+- [\[ICLR 2026\] Uncertainty Estimation via Hyperspherical Confidence Mapping](uncertainty_estimation_via_hyperspherical_confidence_mapping.md)
 - [\[ICLR 2026\] Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction](generative_adversarial_post-training_mitigates_reward_hacking_in_live_human-ai_m.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](../../ICML2026/ai_safety/position_embodied_ai_requires_a_privacy-utility_trade-off.md)
-- [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
 
 </div>
 

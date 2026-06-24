@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Deep SPI: Safe Policy Improvement via World Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][safe policy improvement] This work constructs a theoretical framework for Safe Policy Improvement (SPI), unifying world models and representation learning with policy update guarantees. By constraining policy updates through a neighborhood operator based on importance ratios, it ensures monotonic improvement and convergence. Combined with loca
+  [ICLR 2026][Reinforcement Learning][safe policy improvement] This work constructs a theoretical framework for Safe Policy Improvement (SPI), unifying world models and representation learning with policy update guarantees. By constraining policy updates through a neighborhood operator based on importance ratios, it ensures monotonic improvement and convergence. Combined with local transition/reward losses to control world model quality and representation stability…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - safe policy improvement
-  - world model
-  - representation learning
-  - PPO
-  - importance ratio
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "safe policy improvement"
+  - "world model"
+  - "representation learning"
+  - "PPO"
+  - "importance ratio"
 date: 2026-05-08
-content_hash: 4f05add495afe942
+content_hash: d5ec887e95421463
 ---
+
 # Deep SPI: Safe Policy Improvement via World Models
 
 **Conference**: ICLR 2026  
@@ -172,7 +173,7 @@ Intuitively, states with similar values remain close in the latent space, while 
 - [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
 - [\[ICLR 2026\] Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning](mastering_sparse_cuda_generation_through_pretrained_models_and_deep_reinforcemen.md)
 - [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
-- [\[ICLR 2026\] Composition of Memory Experts for Diffusion World Models](composition_of_memory_experts_for_diffusion_world_models.md)
+- [\[ICLR 2026\] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](one_model_for_all_tasks_leveraging_efficient_world_models_in_multi-task_planning.md)
 
 </div>
 

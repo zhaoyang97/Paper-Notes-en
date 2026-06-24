@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Classifier-Free Guidance] Under the assumption of **multi-modal (Gaussian mixture) conditional distributions**, this paper decomposes the Classifier-Free Guidance (CFG) sampling process into three stages: "directional shift → modal separation → intra-modal contraction." By characterizing the effect of CFG on trajectories in each stage using thr
+  [ICLR 2026][Image Generation][Classifier-Free Guidance] Under the assumption of **multi-modal (Gaussian mixture) conditional distributions**, this paper decomposes the Classifier-Free Guidance (CFG) sampling process into three stages: "directional shift → modal separation → intra-modal contraction." By characterizing the effect of CFG on trajectories in each stage using three theorems, the authors provide a unified explanation for the long-standing empirical phenomenon where…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Diffusion Model Sampling"
+  - "Diversity Collapse"
+  - "Gaussian Mixture"
+  - "Time-varying Guidance"
 date: 2026-05-08
-content_hash: ace3c4590ed528ab
+content_hash: 7f8097822e8befa8
 ---
+
 # Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -120,15 +125,14 @@ A second set of comparisons (Table 2) fixes $\omega=9$ and scans NFE budgets (5/
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
-- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
-- [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
-- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
+- [\[ICLR 2026\] Dynamic Classifier-Free Diffusion Guidance via Online Feedback](dynamic_classifier-free_diffusion_guidance_via_online_feedback.md)
+- [\[CVPR 2025\] TCFG: Tangential Damping Classifier-Free Guidance](../../CVPR2025/image_generation/tcfg_tangential_damping_classifier-free_guidance.md)
 
 </div>
 

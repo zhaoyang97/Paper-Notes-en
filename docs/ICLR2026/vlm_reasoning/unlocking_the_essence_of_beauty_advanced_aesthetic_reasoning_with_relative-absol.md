@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Essence of Beauty: Advanced Aesthetic Reasoning with Relative-Absolute Policy Optimization
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] This paper proposes the Aes-R1 framework, which utilizes an automated data pipeline, AesCoT, to distill aesthetic reasoning corpora across five dimensions for cold-start SFT. It then employs RAPO, a reinforcement learning algorithm that simultaneously optimizes "absolute score regression + relative ranking," allowing t
+  [ICLR 2026][VLM Reasoning][Image Aesthetic Assessment] This paper proposes the Aes-R1 framework, which utilizes an automated data pipeline, AesCoT, to distill aesthetic reasoning corpora across five dimensions for cold-start SFT. It then employs RAPO, a reinforcement learning algorithm that simultaneously optimizes "absolute score regression + relative ranking," allowing the MLLM to improve average PLCC/SRCC in image aesthetic assessment by 47.9%/34.8% relative to the backbon…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Image Aesthetic Assessment"
+  - "Multimodal Reasoning"
+  - "Relative-Absolute Reward"
+  - "Cold-start SFT"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 2d69729cdae61f6b
+content_hash: c82c61283dd0d024
 ---
+
 # Unlocking the Essence of Beauty: Advanced Aesthetic Reasoning with Relative-Absolute Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -156,10 +161,10 @@ Reward weight ablation (Relative:Absolute) shows 0.5:0.5 achieves the best resul
 ## Related Papers
 
 - [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](perception-aware_policy_optimization_for_multimodal_reasoning.md)
+- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](../../ICCV2025/vlm_reasoning/r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
 - [\[ICLR 2026\] Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization](vision-sr1_self-rewarding_vision-language_model_via_reasoning_decomposition_and_.md)
 - [\[ICLR 2026\] MM-HELIX: Boosting Multimodal Long-Chain Reflective Reasoning with Holistic Platform and Adaptive Hybrid Policy Optimization](mm-helix_boosting_multimodal_long-chain_reflective_reasoning_with_holistic_platf.md)
 - [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](../../CVPR2026/vlm_reasoning/codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
 
 </div>
 

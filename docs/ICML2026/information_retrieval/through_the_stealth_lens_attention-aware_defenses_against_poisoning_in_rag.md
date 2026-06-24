@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Through the Stealth Lens: Attention-Aware Defenses Against Poisoning in RAG
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] This paper points out that while existing RAG poisoning attacks can manipulate LLM outputs using a small number of malicious passages, they are **not truly stealthy**. Successful low-budget attacks inevitably cause the model to focus excessive attention on malicious passages. Consequently, the authors filter out anomal
+  [ICML 2026][Information Retrieval & RAG][RAG Poisoning] This paper points out that while existing RAG poisoning attacks can manipulate LLM outputs using a small number of malicious passages, they are **not truly stealthy**. Successful low-budget attacks inevitably cause the model to focus excessive attention on malicious passages. Consequently, the authors filter out anomalous passages using a Normalized Passage Attention Score (NPAS) and a variance-based AV Filter. Across a…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "RAG Poisoning"
+  - "Attention Analysis"
+  - "Stealth Game"
+  - "Poisoning Detection"
+  - "Adaptive Attacks"
 date: 2026-05-08
-content_hash: 067ef07d840e754e
+content_hash: 0e4556dcc5ae3e97
 ---
+
 # Through the Stealth Lens: Attention-Aware Defenses Against Poisoning in RAG
 
 **Conference**: ICML 2026  
@@ -131,11 +137,11 @@ Key Conclusion: AV Filter **preserves RAG clean utility** (dropping ≤ 5% compa
 
 ## Related Papers
 
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
 - [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](lare_low-attention_region_encoding_for_text-image_retrieval.md)
+- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](../../ICLR2026/information_retrieval/query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
 - [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](../../ACL2026/information_retrieval/videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
-- [\[ICLR 2026\] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation](../../ICLR2026/information_retrieval/bayesian_attention_mechanism_a_probabilistic_framework_for_positional_encoding_a.md)
-- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](../../ICLR2026/information_retrieval/smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
 
 </div>
 

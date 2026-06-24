@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MathSmith: Towards Extremely Hard Mathematical Reasoning by Forging Synthetic Problems with a Reinforced Policy
 description: >-
-  [AAAI 2026][LLM Reasoning][Mathematical Reasoning] This paper proposes MathSmith, a framework that generates hard mathematical problems by randomly sampling concept pairs from PlanetMath…
+  [AAAI 2026][Reasoning][Mathematical Reasoning] This paper proposes MathSmith, a framework that generates hard mathematical problems by randomly sampling concept pairs from PlanetMath, applying 9 predefined difficulty strategies, and jointly optimizing structural validity, reasoning complexity, and answer consistency via GRPO-based reinforcement learning. The resulting high-difficulty synthetic problems significantly improve LLM mathematical reasoning on AIME and OlympiadBench…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Mathematical Reasoning"
   - "Synthetic Data"
   - "Reinforcement Learning"
   - "Large Language Models"
   - "Difficulty Control"
 date: 2026-05-08
-content_hash: 73a83bbf29802780
+content_hash: d5749f94f69354a6
 ---
 
 # MathSmith: Towards Extremely Hard Mathematical Reasoning by Forging Synthetic Problems with a Reinforced Policy
@@ -161,10 +161,10 @@ Benchmarks are divided into two difficulty tiers: Easy & Medium (GSM8K, MATH-500
 
 ## Related Papers
 
+- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](../../ICML2026/llm_reasoning/the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 - [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](../../ACL2026/llm_reasoning/think_outside_the_policy_in-context_steered_policy_optimization.md)
+- [\[ICML 2025\] FMC: Formalization of Natural Language Mathematical Competition Problems](../../ICML2025/llm_reasoning/fmc_formalization_of_natural_language_mathematical_competition_problems.md)
 - [\[ACL 2026\] Reinforced Efficient Reasoning via Semantically Diverse Exploration](../../ACL2026/llm_reasoning/reinforced_efficient_reasoning_via_semantically_diverse_exploration.md)
-- [\[ICLR 2026\] TopoBench: Benchmarking LLMs on Hard Topological Reasoning](../../ICLR2026/llm_reasoning/topobench_benchmarking_llms_on_hard_topological_reasoning.md)
-- [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
 - [\[AAAI 2026\] SCALE: Selective Resource Allocation for Overcoming Performance Bottlenecks in Mathematical Test-time Scaling](scale_selective_resource_allocation_for_overcoming_performance_bottlenecks_in_ma.md)
 
 </div>

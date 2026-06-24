@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow
 description: >-
-  [ICCV 2025][Autonomous Driving][Occupancy Grid Estimation] This paper proposes GaussianFlowOcc, which replaces dense voxel grids with sparse 3D Gaussian distributions for occupancy estimation. A Gaussian Transformer is i…
+  [ICCV 2025][Autonomous Driving][Occupancy Grid Estimation] This paper proposes GaussianFlowOcc, which replaces dense voxel grids with sparse 3D Gaussian distributions for occupancy estimation. A Gaussian Transformer is introduced for efficient scene modeling, and a Temporal Module estimates per-Gaussian 3D temporal flow to handle dynamic objects. The method substantially outperforms existing approaches on nuScenes under weak supervision (51%+ mIoU improvement) while achieving…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Flow"
   - "Sparse Representation"
 date: 2026-05-08
-content_hash: a1715431061a771d
+content_hash: 41924961409faf95
 ---
 
 # GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow
@@ -167,8 +167,8 @@ Relative improvements: mIoU is 29% higher than GaussTR and 51%+ higher than voxe
 - [\[ICCV 2025\] 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting](6dopegs_online_6d_object_pose_estimation_using_gaussian_spla.md)
 - [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
-- [\[ICCV 2025\] Self-Supervised Sparse Sensor Fusion for Long Range Perception](self-supervised_sparse_sensor_fusion_for_long_range_perception.md)
 - [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
+- [\[ICCV 2025\] CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting](ccl-lgs_contrastive_codebook_learning_for_3d_language_gaussian_splatting.md)
 
 </div>
 

@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models
 description: >-
-  [ICML 2026][Time Series][HiPPO] This work **explicates** the implicit memory mechanisms in modern SSMs (such as Mamba) by extending the HiPPO framework into the "HiPPO Zoo" (consisting of 5 variants). Each variant implements specific modern SSM capabilities—non-linearity, adaptive memory, associative memory, multiscale representation, and predictive
+  [ICML 2026][Time Series][HiPPO] This work **explicates** the implicit memory mechanisms in modern SSMs (such as Mamba) by extending the HiPPO framework into the "HiPPO Zoo" (consisting of 5 variants). Each variant implements specific modern SSM capabilities—non-linearity, adaptive memory, associative memory, multiscale representation, and predictive target constraints—using interpretable polynomial representations, achieving 100% accuracy on selective copying and associative…
 tags:
-  - ICML 2026
-  - Time Series
-  - HiPPO
-  - State Space Model
+  - "ICML 2026"
+  - "Time Series"
+  - "HiPPO"
+  - "State Space Models"
+  - "Interpretable Memory"
+  - "Polynomial Bases"
 date: 2026-05-08
-content_hash: 9b1098f4698deb21
+content_hash: e48e54e3a88260c0
 ---
+
 # HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models
 
 **Conference**: ICML 2026  
@@ -128,15 +131,14 @@ The paper explicitly notes that HiPPO Zoo prioritizes interpretability over raw 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
 - [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
+- [\[ICLR 2026\] ConvT3: Structured State Kernels for Convolutional State Space Models](../../ICLR2026/time_series/convt3_structured_state_kernels_for_convolutional_state_space_models.md)
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](../../NeurIPS2025/time_series/structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
-- [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](../../NeurIPS2025/time_series/parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
-- [\[ICML 2025\] A Generalizable Physics-Enhanced State Space Model for Long-Term Dynamics Forecasting in Complex Environments](../../ICML2025/time_series/a_generalizable_physics-enhanced_state_space_model_for_long-term_dynamics_foreca.md)
+- [\[ICLR 2026\] Learning Linear State-Space Models with Sparse System Matrices](../../ICLR2026/time_series/learning_linear_state-space_models_with_sparse_system_matrices.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structure Learning from Time-Series Data with Lag-Agnostic Structural Prior
 description: >-
-  [ICLR 2026][Time Series][DYNOTEARS] This paper investigates how to incorporate coarse-grained causal priors—where variable $j$ affects variable $i$ but the specific lag is unknown—into time-series structure learning. By using process-equivalent prior losses and data-driven initialization, the method more stably recovers fine-grained lagged causal structu
+  [ICLR 2026][Time Series][Lag-agnostic prior] This paper investigates how to incorporate coarse-grained causal priors—where variable $j$ affects variable $i$ but the specific lag is unknown—into time-series structure learning. By using process-equivalent prior losses and data-driven initialization, the method more stably recovers fine-grained lagged causal structures.
 tags:
-  - ICLR 2026
-  - Time Series
-  - DYNOTEARS
+  - "ICLR 2026"
+  - "Time Series"
+  - "Lag-agnostic prior"
+  - "Time-series causal discovery"
+  - "Structure learning"
+  - "Continuous optimization"
+  - "DYNOTEARS"
 date: 2026-05-08
-content_hash: 8e295620a79cfad8
+content_hash: 3f97d4de6159c16d
 ---
+
 # Structure Learning from Time-Series Data with Lag-Agnostic Structural Prior
 
 **Conference**: ICLR 2026  
@@ -169,6 +174,7 @@ The results highlight that while lag-specific priors are superior if 100% accura
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

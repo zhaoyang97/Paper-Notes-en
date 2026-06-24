@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rotary Masked Autoencoders are Versatile Learners
 description: >-
-  [NeurIPS 2025][Time Series][Masked Autoencoder] This paper proposes RoMAE, which extends Rotary Position Embedding (RoPE) to continuous positions and integrates it with Masked Autoencoders (MAE). Without any time-series-…
+  [NeurIPS 2025][Time Series][Masked Autoencoder] This paper proposes RoMAE, which extends Rotary Position Embedding (RoPE) to continuous positions and integrates it with Masked Autoencoders (MAE). Without any time-series-specific architectural modifications, RoMAE matches or surpasses specialized models across diverse modalities including irregular time series, images, and audio.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "Multimodality"
   - "Self-Supervised Pretraining"
 date: 2026-05-08
-content_hash: e6a5c358a87ee65c
+content_hash: 1b4386504cc36faf
 ---
 
 # Rotary Masked Autoencoders are Versatile Learners
@@ -124,9 +124,9 @@ This paper cleverly combines RoPE (RoFormer) and MAE (He et al.), two independen
 
 ## Related Papers
 
+- [\[ICML 2025\] VisionTS: Visual Masked Autoencoders Are Free-Lunch Zero-Shot Time Series Forecasters](../../ICML2025/time_series/visionts_visual_masked_autoencoders_are_free-lunch_zero-shot_time_series_forecas.md)
+- [\[ICML 2025\] IMTS is Worth Time × Channel Patches: Visual Masked Autoencoders for Irregular Multivariate Time Series Prediction](../../ICML2025/time_series/imts_is_worth_time_times_channel_patches_visual_masked_autoencoders_for_irregula.md)
 - [\[NeurIPS 2025\] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)
-- [\[ICLR 2026\] Dissecting Chronos: Sparse Autoencoders Reveal Causal Feature Hierarchies in Time Series Foundation Models](../../ICLR2026/time_series/dissecting_chronos_sparse_autoencoders_reveal_causal_feature_hierarchies_in_time.md)
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[NeurIPS 2025\] Universal Spectral Tokenization via Self-Supervised Panchromatic Representation Learning](universal_spectral_tokenization_via_self-supervised_panchromatic_representation_.md)
 - [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
 

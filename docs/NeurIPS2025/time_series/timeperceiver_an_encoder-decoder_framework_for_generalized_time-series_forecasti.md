@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting
 description: >-
-  [NeurIPS 2025][Time Series][Time series forecasting] TimePerceiver proposes a unified encoder-decoder framework that generalizes the forecasting task (encompassing extrapolation, interpolation…
+  [NeurIPS 2025][Time Series][Time series forecasting] TimePerceiver proposes a unified encoder-decoder framework that generalizes the forecasting task (encompassing extrapolation, interpolation, and imputation) and employs a latent bottleneck encoder with a query-based decoder, achieving comprehensive state-of-the-art performance across 8 standard benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "generalized forecasting formulation"
   - "cross-attention"
 date: 2026-05-08
-content_hash: d3ecafc55c3efcef
+content_hash: 5c36c51ea5349b35
 ---
 
 # TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting
@@ -144,10 +144,10 @@ TimePerceiver's name and architectural inspiration derive from the Perceiver ser
 ## Related Papers
 
 - [\[NeurIPS 2025\] Multi-Scale Finetuning for Encoder-based Time Series Foundation Models](multi-scale_finetuning_for_encoder-based_time_series_foundation_models.md)
+- [\[ICLR 2026\] Perturbed Dynamic Time Warping: A Probabilistic Framework and Generalized Variants](../../ICLR2026/time_series/perturbed_dynamic_time_warping_a_probabilistic_framework_and_generalized_variant.md)
+- [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
 - [\[NeurIPS 2025\] IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics](ioncast_a_deep_learning_framework_for_forecasting_ionospheric_total_electron_con.md)
 - [\[NeurIPS 2025\] AERO: A Redirection-Based Optimization Framework Inspired by Judo for Robust Probabilistic Forecasting](aero_a_redirection-based_optimization_framework_inspired_by_judo_for_robust_prob.md)
-- [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
-- [\[ICML 2026\] CombinationTS: A Modular Framework for Understanding Time-Series Forecasting Models](../../ICML2026/time_series/combinationts_a_modular_framework_for_understanding_time-series_forecasting_mode.md)
 
 </div>
 

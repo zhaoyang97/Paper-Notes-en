@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation
 description: >-
-  [CVPR 2026][Video Generation][RoPE] PoCo (Position Embedding as Context Controller) is proposed to address "reference confusion" in multi-reference multi-shot video generation—where models fail to correctly associate shots with references when reference images have highly similar appearances. By encoding additional SideInfo axes in RoPE to represent refe
+  [CVPR 2026][Video Generation][Position Embedding] PoCo (Position Embedding as Context Controller) is proposed to address "reference confusion" in multi-reference multi-shot video generation—where models fail to correctly associate shots with references when reference images have highly similar appearances. By encoding additional SideInfo axes in RoPE to represent reference entity information, the method achieves SOTA cross-shot consistency on the VACE-Wan2.1-14B framework (Cr…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - RoPE
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Position Embedding"
+  - "Context Control"
+  - "Multi-Reference Video Generation"
+  - "RoPE"
+  - "Identity Confusion"
 date: 2026-05-08
-content_hash: 026a4ee7804eae07
+content_hash: 285f7e45fc92463d
 ---
+
 # Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ High-quality multi-reference multi-shot training data is scarce, and SideInfo su
 ## Related Papers
 
 - [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
+- [\[CVPR 2026\] AlcheMinT: Fine-grained Temporal Control for Multi-Reference Consistent Video Generation](alchemint_fine-grained_temporal_control_for_multi-reference_consistent_video_gen.md)
 - [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
 - [\[CVPR 2026\] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative](stage_storyboard-anchored_generation_for_cinematic_multi-shot_narrative.md)
 - [\[CVPR 2026\] HoloCine: Holistic Generation of Cinematic Multi-Shot Long Video Narratives](holocine_holistic_generation_of_cinematic_multi-shot_long_video_narratives.md)
-- [\[CVPR 2026\] ShotDirector: Directorially Controllable Multi-Shot Video Generation with Cinematographic Transitions](shotdirector_directorially_controllable_multi-shot_video_generation_with_cinemat.md)
 
 </div>
 

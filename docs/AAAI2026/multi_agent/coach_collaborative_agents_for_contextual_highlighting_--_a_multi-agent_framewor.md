@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent Systems] This paper proposes COACH — a reconfigurable multi-agent framework built on a shared backbone model — that achieves role specialization via intent-driven strategy orchestrati…
+  [AAAI 2026][Multi-Agent][Multi-Agent Systems] This paper proposes COACH — a reconfigurable multi-agent framework built on a shared backbone model — that achieves role specialization via intent-driven strategy orchestration and structured CoT fine-tuning, significantly outperforming generalist models such as Gemini 2.5 Pro on both QA and summarization tasks in badminton video analysis.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Structured Chain-of-Thought"
   - "Role Specialization"
 date: 2026-05-08
-content_hash: ed8e1cfff018188d
+content_hash: 242e303cbf7c9246
 ---
 
 # COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis
@@ -141,9 +141,9 @@ The framework design is clear and elegant; the "shared backbone + structured CoT
 
 - [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
 - [\[AAAI 2026\] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation](ecoagent_an_efficient_device-cloud_collaborative_multi-agent.md)
+- [\[ICLR 2026\] CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis](../../ICLR2026/multi_agent/cellagent_llm-driven_multi-agent_framework_for_natural_language-based_single-cel.md)
 - [\[AAAI 2026\] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](maps_multi-agent_personality_shaping_for_collaborative_reaso.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](../../ICLR2026/multi_agent/stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 
 </div>
 

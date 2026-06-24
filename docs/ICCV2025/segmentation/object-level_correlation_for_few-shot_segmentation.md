@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Object-level Correlation for Few-Shot Segmentation
 description: >-
-  [ICCV 2025][Segmentation][few-shot segmentation] OCNet is proposed to construct **object-level** (rather than image-level) support-query correlations by emulating biological visual processes. It first mines generic objec…
+  [ICCV 2025][Segmentation][few-shot segmentation] OCNet is proposed to construct **object-level** (rather than image-level) support-query correlations by emulating biological visual processes. It first mines generic objects in the query image and then identifies the target object among them, effectively suppressing irrelevant object noise in the background.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "optimal transport"
   - "hard pixel noise"
 date: 2026-05-08
-content_hash: 18275f0ea372f9d9
+content_hash: 8a9b8f7b8f924eda
 ---
 
 # Object-level Correlation for Few-Shot Segmentation
@@ -161,10 +161,10 @@ Training configuration: SGD optimizer, lr=0.005, batch size=4; 200 epochs on PAS
 ## Related Papers
 
 - [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
+- [\[CVPR 2025\] The Devil is in Low-Level Features for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/the_devil_is_in_low-level_features_for_cross-domain_few-shot_segmentation.md)
 - [\[ICCV 2025\] DictAS: A Framework for Class-Generalizable Few-Shot Anomaly Segmentation via Dictionary Lookup](dictas_a_framework_for_class-generalizable_few-shot_anomaly_segmentation_via_dic.md)
 - [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](../../NeurIPS2025/segmentation/sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
-- [\[ICCV 2025\] LayerAnimate: Layer-level Control for Animation](layeranimate_layer-level_control_for_animation.md)
-- [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](../../NeurIPS2025/segmentation/unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
+- [\[ECCV 2024\] Eliminating Feature Ambiguity for Few-Shot Segmentation](../../ECCV2024/segmentation/eliminating_feature_ambiguity_for_few-shot_segmentation.md)
 
 </div>
 

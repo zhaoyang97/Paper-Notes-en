@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Web Agents Should Use Typed Actions Instead of Click-Based Browsing
 description: >-
-  [ICML 2026][LLM Agent][web verbs] This position paper argues that building a reliable "agentic web" requires more than just scaling models; websites must expose common web operations as **typed actions with signatures**—specifically designed as **web verbs**. These verbs consist of structured functions with defined inputs/outputs and documented behavio
+  [ICML2026][LLM Agent][Web Agent] This position paper argues that building a reliable "agentic web" requires more than just scaling models; websites must expose common web operations as **typed actions with signatures**—specifically designed as **web verbs**. These verbs consist of structured functions with defined inputs/outputs and documented behaviors, regardless of whether the implementation is a server-side API or a client-side browser workflow. By synthesizing tasks into…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - web verbs
+  - "ICML2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Typed Actions"
+  - "Semantic Layer"
+  - "Web Verbs"
+  - "Verifiable Execution"
 date: 2026-05-08
-content_hash: 0e2dda213d21bc23
+content_hash: 30adf5a6e0c42bcd
 ---
+
 # Web Agents Should Use Typed Actions Instead of Click-Based Browsing
 
 **Conference**: ICML2026  
@@ -126,11 +131,20 @@ As a position paper, this work focuses on **representative case studies and prot
 - Value: ⭐⭐⭐⭐ Provides a practical direction (semantic layers/typed actions) for the agentic web, with real significance for building reliable web automation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces](../../ACL2026/llm_agent/dont_click_that_teaching_web_agents_to_resist_deceptive_interfaces.md)
+- [\[ICML 2026\] Position: Agentic AI Orchestration Should Be Bayes-Consistent](position_agentic_ai_orchestration_should_be_bayes-consistent.md)
+- [\[ACL 2025\] Browsing Like Human: A Multimodal Web Agent with Experiential Fast-and-Slow Thinking](../../ACL2025/llm_agent/browsing_like_human_a_multimodal_web_agent_with_experiential_fast-and-slow_think.md)
+- [\[ICML 2026\] Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models](hunt_instead_of_wait_evaluating_deep_data_research_on_large_language_models.md)
+- [\[ICML 2026\] MacArena: Benchmarking Computer Use Agents on an Online macOS Environment](macarena_benchmarking_computer_use_agents_on_an_online_macos_environment.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Don't Click That: Teaching Web Agents to Resist Deceptive Interfaces](../../ACL2026/llm_agent/dont_click_that_teaching_web_agents_to_resist_deceptive_interfaces.md)

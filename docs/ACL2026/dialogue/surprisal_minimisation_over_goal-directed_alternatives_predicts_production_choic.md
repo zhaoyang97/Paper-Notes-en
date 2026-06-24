@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Surprisal Minimisation over Goal-directed Alternatives Predicts Production Choice in Dialogue
 description: >-
-  [ACL 2026][Dialogue Systems][surprisal] This paper models utterance generation in natural dialogue as a cost-sensitive choice among contextual alternatives. It finds that minimizing surprisal relative to "goal-directed alternatives" (sharing the same communicative goal) best predicts actual human continuations.
+  [ACL2026][Dialogue Systems][surprisal] This paper models utterance generation in natural dialogue as a cost-sensitive choice among contextual alternatives. It finds that minimizing surprisal relative to "goal-directed alternatives" (sharing the same communicative goal) best predicts actual human continuations.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - surprisal
-  - goal-directed alternatives
-  - UID
+  - "ACL2026"
+  - "Dialogue Systems"
+  - "surprisal"
+  - "goal-directed alternatives"
+  - "language production"
+  - "UID"
+  - "dialogue corpora"
 date: 2026-05-08
-content_hash: 3b65c7083fb44c77
+content_hash: 0e9ad3da6f856747
 ---
+
 # Surprisal Minimisation over Goal-directed Alternatives Predicts Production Choice in Dialogue
 
 **Conference**: ACL2026  
@@ -152,6 +155,7 @@ T-tests confirm that human continuations have significantly lower surprisal than
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

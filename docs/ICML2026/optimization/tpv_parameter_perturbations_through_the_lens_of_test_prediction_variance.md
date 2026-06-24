@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TPV: Parameter Perturbations Through the Lens of Test Prediction Variance
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] The authors formalize the "local prediction sensitivity of a trained model to parameter perturbations" as Test Prediction Variance (TPV). They prove that under a first-order approximation, TPV reduces to a trace form $\mathrm{Tr}(H_{\mathrm{eff}}C)$, unifying SGD noise, label noise, quantization, and pruning within a c
+  [ICML2026][Optimization][Prediction Variance] The authors formalize the "local prediction sensitivity of a trained model to parameter perturbations" as Test Prediction Variance (TPV). They prove that under a first-order approximation, TPV reduces to a trace form $\mathrm{Tr}(H_{\mathrm{eff}}C)$, unifying SGD noise, label noise, quantization, and pruning within a curvature-covariance framework. A stability theorem is provided to estimate TPV using only the training set…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Prediction Variance"
+  - "Parameter Perturbations"
+  - "Benign Overfitting"
+  - "Wide Minima"
+  - "Training Set Model Selection"
 date: 2026-05-08
-content_hash: 98ac0137a298e2fd
+content_hash: a1a6a177c6f34f7f
 ---
+
 # TPV: Parameter Perturbations Through the Lens of Test Prediction Variance
 
 **Conference**: ICML2026  
@@ -130,9 +136,9 @@ Experiments are divided into TPV stability verification and TPV–test loss corr
 
 - [\[CVPR 2025\] Test-Time Augmentation Improves Efficiency in Conformal Prediction](../../CVPR2025/optimization/test-time_augmentation_improves_efficiency_in_conformal_prediction.md)
 - [\[ICML 2026\] Balanced LoRA: Removing Parameter Invariance to Accelerate Convergence](balanced_lora_removing_parameter_invariance_to_accelerate_convergence.md)
-- [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
+- [\[ICLR 2026\] It's All Connected: A Journey Through Test-Time Memorization, Attentional Bias, Retention, and Online Optimization](../../ICLR2026/optimization/its_all_connected_a_journey_through_test-time_memorization_attentional_bias_rete.md)
 - [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
-- [\[ICML 2026\] Colorful Pinball: Density-Weighted Quantile Regression for Conditional Guarantee of Conformal Prediction](colorful_pinball_density-weighted_quantile_regression_for_conditional_guarantee_.md)
+- [\[ICLR 2026\] Personalized Collaborative Learning with Affinity-Based Variance Reduction](../../ICLR2026/optimization/personalized_collaborative_learning_with_affinity-based_variance_reduction.md)
 
 </div>
 

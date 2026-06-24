@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] C3RL: Rethinking the Combination of Channel-independence and Channel-mixing from Representation Learning
 description: >-
-  [AAAI 2026][Time Series][Multivariate time series forecasting] This paper proposes C3RL, a SimSiam-based contrastive learning framework that treats channel-independence (CI) and channel-mixing (CM) strategies as two tran…
+  [AAAI 2026][Time Series][Multivariate time series forecasting] This paper proposes C3RL, a SimSiam-based contrastive learning framework that treats channel-independence (CI) and channel-mixing (CM) strategies as two transposed views of the same data to construct positive pairs. By jointly optimizing representation learning and forecasting through a Siamese network, C3RL improves the best-performance rate of CI models from 43.6% to 81.4% and CM models from 23.8% to 76.3%.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "SimSiam"
 date: 2026-05-08
-content_hash: d53f7fdd3750f5ec
+content_hash: 0b9cd0a2ccddd6d0
 ---
 
 # C3RL: Rethinking the Combination of Channel-independence and Channel-mixing from Representation Learning
@@ -107,11 +107,11 @@ Representative improvements (ETTh1, horizon = 96):
 
 ## Related Papers
 
+- [\[ICML 2025\] Channel Normalization for Time Series Channel Identification](../../ICML2025/time_series/channel_normalization_for_time_series_channel_identification.md)
 - [\[NeurIPS 2025\] Channel Matters: Estimating Channel Influence for Multivariate Time Series](../../NeurIPS2025/time_series/channel_matters_estimating_channel_influence_for_multivariate_time_series.md)
 - [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](../../ICLR2026/time_series/cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
 - [\[AAAI 2026\] Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering](mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti.md)
 - [\[AAAI 2026\] iTimER: Reconstruction Error-Guided Irregularly Sampled Time Series Representation Learning](beyond_observations_reconstruction_error-guided_irregularly_sampled_time_series_.md)
-- [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](../../ICLR2026/time_series/t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments
 description: >-
-  [ICML 2026][Medical Imaging][Plackett-Luce] This paper reinterprets the reasoning "drift" among multiple MLLMs as negative constraints in DPO. By utilizing a Plackett-Luce preference loss to simultaneously suppress divergent trajectories from $N$ source models, a 7B student model outperforms all source teachers in chest X-ray classification and report generation
+  [ICML 2026][Medical Imaging][Multi-source Alignment] This paper reinterprets the reasoning "drift" among multiple MLLMs as negative constraints in DPO. By utilizing a Plackett-Luce preference loss to simultaneously suppress divergent trajectories from $N$ source models, a 7B student model outperforms all source teachers in chest X-ray classification and report generation tasks using only 10% of MIMIC-CXR without requiring ground-truth reports.
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - Plackett-Luce
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Multi-source Alignment"
+  - "Concept Drift"
+  - "Preference Optimization"
+  - "Chest X-ray Diagnosis"
+  - "Plackett-Luce"
 date: 2026-05-08
-content_hash: 1b44a91fe116a375
+content_hash: afe3e0cf62bab7b8
 ---
+
 # Turning Drift into Constraint: Robust Reasoning Alignment in Non-Stationary Multi-Stream Environments
 
 **Conference**: ICML 2026  
@@ -119,16 +124,16 @@ Note: Ours uses only 10% data and no radiologist reports, while comparison metho
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric](../../CVPR2026/medical_imaging/cg-reasoner_centroid-guided_positional_reasoning_segmentation_for_medical_imagin.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](../../ICLR2026/medical_imaging/sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
 - [\[AAAI 2026\] DiA-gnostic VLVAE: Disentangled Alignment-Constrained Vision Language Variational AutoEncoder for Robust Radiology Reporting with Missing Modalities](../../AAAI2026/medical_imaging/dia-gnostic_vlvae_disentangled_alignment-constrained_vision_language_variational.md)
-- [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
 - [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](../../CVPR2026/medical_imaging/dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
+- [\[ICML 2026\] SynerMedGen: Synergizing Medical Multimodal Understanding with Generation via Task Alignment](synermedgen_synergizing_medical_multimodal_understanding_with_generation_via_tas.md)
 
 </div>
 

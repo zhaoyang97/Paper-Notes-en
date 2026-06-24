@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper demonstrates that two seemingly independent puzzles in LLMs—attention sinks and compression valleys—are actually **two facets of the same mechanism: massive activations in the residual stream**. Based on this, it proposes the Mix-Compress-Refine three-phase information flow theory, unifying the explanation o
+  [ICLR 2026][Interpretability][Attention sinks] This paper demonstrates that two seemingly independent puzzles in LLMs—attention sinks and compression valleys—are actually **two facets of the same mechanism: massive activations in the residual stream**. Based on this, it proposes the Mix-Compress-Refine three-phase information flow theory, unifying the explanation of why embedding tasks are strongest in the middle layers while generation tasks require the full depth.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Attention sinks"
+  - "compression valleys"
+  - "massive activations"
+  - "residual stream"
+  - "information flow"
+  - "depthwise computation"
 date: 2026-05-08
-content_hash: 7035e650afe757a2
+content_hash: c6162ff21cf25180
 ---
+
 # Attention Sinks and Compression Valleys in LLMs are Two Sides of the Same Coin
 
 **Conference**: ICLR 2026  
@@ -117,8 +124,8 @@ flowchart LR
 - [\[ICLR 2026\] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](from_tokens_to_thoughts_how_llms_and_humans_trade_compression_for_meaning.md)
 - [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
 - [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](learning_is_forgetting_llm_training_as_lossy_compression.md)
-- [\[ICLR 2026\] Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition](towards_understanding_the_nature_of_attention_with_low-rank_sparse_decomposition.md)
-- [\[ICLR 2026\] Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency](attention_please_revisiting_attentive_probing_through_the_lens_of_efficiency.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
+- [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 
 </div>
 

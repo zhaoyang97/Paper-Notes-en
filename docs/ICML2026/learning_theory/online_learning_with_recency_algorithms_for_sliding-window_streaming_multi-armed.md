@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Online Learning with Recency: Algorithms for Sliding-window Streaming Multi-armed Bandits
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper introduces the "recency effect" into streaming multi-armed bandits (MABs) by proposing a **sliding-window streaming MAB** model—where only the most recent $W$ arms are valid. It systematically characterizes the memory complexity bounds for pure exploration and regret minimization: exact identification of the
+  [ICML 2026][Learning Theory][Multi-armed Bandits] This paper introduces the "recency effect" into streaming multi-armed bandits (MABs) by proposing a **sliding-window streaming MAB** model—where only the most recent $W$ arms are valid. It systematically characterizes the memory complexity bounds for pure exploration and regret minimization: exact identification of the optimal arm requires $\Omega(W)$ memory (essentially storing the entire window)…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Streaming Algorithms"
+  - "Multi-armed Bandits"
+  - "Sliding Window"
+  - "Memory-Regret Trade-off"
+  - "Pure Exploration"
 date: 2026-05-08
-content_hash: 6ca8b5dfab8e49ad
+content_hash: eb1d28b7cfb51c28
 ---
+
 # Online Learning with Recency: Algorithms for Sliding-window Streaming Multi-armed Bandits
 
 **Conference**: ICML 2026  
@@ -119,11 +126,11 @@ Experiments were conducted to validate theoretical trade-offs (not to beat SOTA)
 
 ## Related Papers
 
+- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](../../ICLR2026/learning_theory/contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 - [\[AAAI 2026\] Streaming Generated Gaussian Process Experts for Online Learning and Control: Extended Version](../../AAAI2026/learning_theory/streaming_generated_gaussian_process_experts_for_online_learning_and_control_ext.md)
-- [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)
-- [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](a_perturbation_approach_to_unconstrained_linear_bandits.md)
-- [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](quantum_algorithms_for_triangle_cut_sparsification.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](../../ICLR2026/learning_theory/efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
+- [\[ICLR 2026\] Online Decision-Focused Learning](../../ICLR2026/learning_theory/online_decision-focused_learning.md)
 
 </div>
 

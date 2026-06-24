@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LNEM: Lunar Neural Elevation Model
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] The first lunar DEM reconstruction framework to explicitly embed a pushbroom camera's Rigorous Sensor Model (RSM) into neural volume rendering. It is accompanied by the Lunar Studio data pipeline, which generates geometrically consistent inputs from raw orbital imagery to reconstruct high-fidelity lunar elevation model
+  [CVPR 2026][Remote Sensing][Lunar DEM] The first lunar DEM reconstruction framework to explicitly embed a pushbroom camera's Rigorous Sensor Model (RSM) into neural volume rendering. It is accompanied by the Lunar Studio data pipeline, which generates geometrically consistent inputs from raw orbital imagery to reconstruct high-fidelity lunar elevation models under multi-sensor and multi-illumination conditions.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Lunar DEM"
+  - "Pushbroom Camera"
+  - "Rigorous Sensor Model"
+  - "Neural Volume Rendering"
+  - "Shadow Modeling"
 date: 2026-05-08
-content_hash: b9e241b54b7bd1bc
+content_hash: ff7251891f22131d
 ---
+
 # LNEM: Lunar Neural Elevation Model
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ Across all 8 regions, LNEM's $\mathrm{RMSE}_{\mathrm{corr}}$ ranged from 0.67 to
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
 - [\[CVPR 2026\] PiLoT: Neural Pixel-to-3D Registration for UAV-based Ego and Target Geo-localization](pilot_neural_pixel-to-3d_registration_for_uav-based_ego_and_target_geo-localizat.md)
-- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
 - [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
 - [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
+- [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
+- [\[ICCV 2025\] Information-Bottleneck Driven Binary Neural Network for Change Detection](../../ICCV2025/remote_sensing/information-bottleneck_driven_binary_neural_network_for_change_detection.md)
 
 </div>
 

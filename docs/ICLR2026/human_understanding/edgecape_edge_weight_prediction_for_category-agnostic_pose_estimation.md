@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] EdgeCAPE：边权预测用于类别无关姿态估计
+  [Paper Note] EdgeCAPE: Edge Weight Prediction for Category-Agnostic Pose Estimation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] EdgeCAPE introduces a learnable **weighted pose graph prediction** mechanism for Category-Agnostic Pose Estimation (CAPE) for the first time. By predicting edge weights and new edges for the skeleton graph, and incorporating Markov Attention Bias to enhance spatial dependency modeling, it achieves SOTA on the MP-100 be
+  [ICLR 2026][Human Understanding][Category-Agnostic Pose Estimation] EdgeCAPE introduces a learnable **weighted pose graph prediction** mechanism for Category-Agnostic Pose Estimation (CAPE) for the first time. By predicting edge weights and new edges for the skeleton graph, and incorporating Markov Attention Bias to enhance spatial dependency modeling, it achieves SOTA on the MP-100 benchmark, with a 1.99% Gain over GraphCape in 1-shot scenarios.
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Category-Agnostic Pose Estimation"
+  - "Graph Prediction"
+  - "Edge Weight Learning"
+  - "Graph Transformer"
 date: 2026-05-08
-content_hash: bf56c1dc5cbd8fcd
+content_hash: 67fa36c2678fce71
 ---
+
 # EdgeCAPE: Edge Weight Prediction for Category-Agnostic Pose Estimation
 
 **Conference**: ICLR 2026  
@@ -226,11 +231,11 @@ AutoLink also explores weighted pose graph learning in category-specific scenari
 
 ## Related Papers
 
-- [\[ICLR 2026\] EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?](emoprefer_can_large_language_models_understand_human_emotion_preferences.md)
-- [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
-- [\[ICLR 2026\] Sapiens2：面向人体视觉的高分辨率基础模型](sapiens2.md)
-- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
-- [\[ICLR 2026\] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation](speakervid-5m_a_large-scale_high-quality_dataset_for_audio-visual_dyadic_interac.md)
+- [\[ICLR 2026\] GenCape: Structure-Inductive Generative Modeling for Category-Agnostic Pose Estimation](gencape_structure-inductive_generative_modeling_for_category-agnostic_pose_estim.md)
+- [\[CVPR 2025\] Recurrent Feature Mining and Keypoint Mixup Padding for Category-Agnostic Pose Estimation](../../CVPR2025/human_understanding/recurrent_feature_mining_and_keypoint_mixup_padding_for_category-agnostic_pose_e.md)
+- [\[ECCV 2024\] SCAPE: A Simple and Strong Category-Agnostic Pose Estimator](../../ECCV2024/human_understanding/scape_a_simple_and_strong_category-agnostic_pose_estimator.md)
+- [\[ICLR 2026\] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation](pose_prior_learner_unsupervised_categorical_prior_learning_for_pose_estimation.md)
+- [\[ICLR 2026\] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction](kinemadiff_towards_diffusion_for_coherent_and_physically_plausible_human_motion_.md)
 
 </div>
 

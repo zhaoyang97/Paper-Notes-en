@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 description: >-
-  [CVPR 2026][Human Understanding][Micro-Gesture Recognition] Ours proposes the UAAI framework, which introduces Active Inference to micro-gesture recognition for the first time. Through EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, it achieves 63.47% on the RGB modality of the SMG dataset, significantly outperforming traditional
+  [CVPR 2026][Medical Imaging][Micro-Gesture Recognition] Ours proposes the UAAI framework, which introduces Active Inference to micro-gesture recognition for the first time. Through EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, it achieves 63.47% on the RGB modality of the SMG dataset, significantly outperforming traditional RGB methods.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Micro-Gesture Recognition
-  - Active Inference
-  - Expected Free Energy
-  - POMDP
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Micro-Gesture Recognition"
+  - "Active Inference"
+  - "Expected Free Energy"
+  - "POMDP"
+  - "Uncertainty-Aware Augmentation"
 date: 2026-05-08
-content_hash: b86ccbe647688e32
+content_hash: d36b0b909d1482e6
 ---
+
 # Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 
 **Conference**: CVPR 2026  
@@ -159,15 +161,14 @@ UAAI reaches 63.47% in the RGB modality, significantly outperforming other RGB m
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)
-- [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
-- [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
-- [\[CVPR 2026\] Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)
-- [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
+- [\[CVPR 2026\] TRCoRSurg: Temporal-Relational Co-Reasoning for Surgical Video Triplet Recognition](trcorsurg_temporal-relational_co-reasoning_for_surgical_video_triplet_recognitio.md)
+- [\[ICLR 2026\] Prior-aware and Context-guided Group Sampling for Active Probabilistic Subsampling](../../ICLR2026/medical_imaging/prior-aware_and_context-guided_group_sampling_for_active_probabilistic_subsampli.md)
+- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
+- [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
+- [\[CVPR 2026\] CMR-RD: Long-Tailed Adaptive VLM for Explainable CMR Diagnosis](cmr-rd_long-tailed_adaptive_vlm_for_explainable_cmr_diagnosis.md)
 
 </div>
 

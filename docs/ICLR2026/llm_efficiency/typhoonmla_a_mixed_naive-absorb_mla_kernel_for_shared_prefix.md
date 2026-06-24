@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] TyphoonMLA: A Mixed Naive-Absorb MLA Kernel For Shared Prefix
 description: >-
-  [ICLR 2026][LLM Efficiency][shared prefix] TyphoonMLA identifies that in shared prefix scenarios, the shared segment of Multi-Head Latent Attention (MLA) decoding is better suited for naive computation, while the non-shared segment remains suitable for absorb computation. By splitting a single attention operation into two kernel paths and merging them via Log-S
+  [ICLR2026][LLM Efficiency][MLA Inference] TyphoonMLA identifies that in shared prefix scenarios, the shared segment of Multi-Head Latent Attention (MLA) decoding is better suited for naive computation, while the non-shared segment remains suitable for absorb computation. By splitting a single attention operation into two kernel paths and merging them via Log-Sum-Exp (LSE), the method achieves up to a $3.24\times$ increase in MLA attention throughput and a $1.48\times$ improve…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - shared prefix
-  - attention kernel
-  - KV-cache
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "MLA Inference"
+  - "shared prefix"
+  - "attention kernel"
+  - "KV-cache"
+  - "decoding acceleration"
 date: 2026-05-08
-content_hash: 18a8e10ebcf0b816
+content_hash: 4f8c6e59ccc20ccc
 ---
+
 # TyphoonMLA: A Mixed Naive-Absorb MLA Kernel For Shared Prefix
 
 **Conference**: ICLR2026  
@@ -135,13 +138,20 @@ The study verified design components through latency breakdown and HBM footprint
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for long-context MLA serves (e.g., DeepSeek-v3) without requiring training or precision loss.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- DeepSeek-V3 Technical Report
-- FlashMLA: Efficient MLA Decoding for DeepSeek-V3
-- Multi-Head Latent Attention: A Deep Dive
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] PrefixMemory-Tuning: Modernizing Prefix-Tuning by Decoupling the Prefix from Attention](prefixmemory-tuning_modernizing_prefix-tuning_by_decoupling_the_prefix_from_atte.md)
+- [\[ICLR 2026\] Sequential Parallel Duality in Prefix Scannable Models](sequential_parallel_duality_in_prefix_scannable_models.md)
+- [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
+- [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
+- [\[ICLR 2026\] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism](long-context_attention_benchmark_from_kernel_efficiency_to_distributed_context_p.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] PrefixMemory-Tuning: Modernizing Prefix-Tuning by Decoupling the Prefix from Attention](prefixmemory-tuning_modernizing_prefix-tuning_by_decoupling_the_prefix_from_atte.md)

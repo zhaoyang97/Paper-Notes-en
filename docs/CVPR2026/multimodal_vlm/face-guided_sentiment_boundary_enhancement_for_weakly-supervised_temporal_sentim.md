@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Face-Guided Sentiment Boundary Enhancement for Weakly-Supervised Temporal Sentiment Localization
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] FSENet utilizes facial features as sentiment cues to guide audio-visual interaction. Under a weakly-supervised setting with only "point-level" timestamp annotations, it employs contrastive learning to align sentiment semantics and expands sparse point annotations into pseudo-labels with smooth boundaries. This pushes t
+  [CVPR 2026][Multimodal VLM][Temporal Sentiment Localization] FSENet utilizes facial features as sentiment cues to guide audio-visual interaction. Under a weakly-supervised setting with only "point-level" timestamp annotations, it employs contrastive learning to align sentiment semantics and expands sparse point annotations into pseudo-labels with smooth boundaries. This pushes the average mAP of temporal sentiment localization on TSL300 to 21.45%…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Temporal Sentiment Localization"
+  - "Point-level Weak Supervision"
+  - "Face-guided"
+  - "Contrastive Learning"
+  - "Pseudo-label Smoothing"
 date: 2026-05-08
-content_hash: 0dd5c5a58ee2cad5
+content_hash: 691edb669b2f9551
 ---
+
 # Face-Guided Sentiment Boundary Enhancement for Weakly-Supervised Temporal Sentiment Localization
 
 **Conference**: CVPR 2026  
@@ -142,7 +148,7 @@ In the point-level setting, FSENet achieves the best mAP at all IoU thresholds, 
 - [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
 - [\[CVPR 2026\] Factorize, Reconstruct, Enhance: A Unified Framework for Multimodal Sentiment Analysis](factorize_reconstruct_enhance_a_unified_framework_for_multimodal_sentiment_analy.md)
 - [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
-- [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
+- [\[CVPR 2026\] Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis](multi-metric_representation_learning_strategy_based_on_clustering_for_fine-grain.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization
 description: >-
-  [ICCV 2025][Image Generation][3D shape generation] OAT proposes an adaptive octree tokenization scheme guided by quadric error metrics (QEM) that dynamically allocates token budgets according to local geometric complexit…
+  [ICCV 2025][Image Generation][3D shape generation] OAT proposes an adaptive octree tokenization scheme guided by quadric error metrics (QEM) that dynamically allocates token budgets according to local geometric complexity. It reduces token count by 50% while preserving reconstruction quality, and builds upon this foundation an autoregressive model, OctreeGPT, for high-quality text-to-3D generation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "autoregressive model"
   - "vector quantization"
 date: 2026-05-08
-content_hash: 95116ffd77dd5fbe
+content_hash: 0146156622a64424
 ---
 
 # Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization
@@ -143,11 +143,11 @@ Core idea: child nodes encode only the residual latent relative to the parent no
 
 ## Related Papers
 
-- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](../../CVPR2026/image_generation/evatok_adaptive_length_video_tokenization_for_eff.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
+- [\[CVPR 2025\] Efficient Long Video Tokenization via Coordinate-based Patch Reconstruction](../../CVPR2025/image_generation/efficient_long_video_tokenization_via_coordinate-based_patch_reconstruction.md)
 - [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](holistic_tokenizer_for_autoregressive_image_generation.md)
+- [\[CVPR 2025\] Language-Guided Image Tokenization for Generation](../../CVPR2025/image_generation/language-guided_image_tokenization_for_generation.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[ICCV 2025\] Generative Modeling of Shape-Dependent Self-Contact Human Poses](generative_modeling_of_shape-dependent_self-contact_human_poses.md)
 
 </div>
 

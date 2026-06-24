@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Soft Tokens, Hard Truths
 description: >-
-  [ICLR 2026][LLM Reasoning][soft tokens] This paper proposes a soft/fuzzy token method that uses Reinforcement Learning (RL) training on continuous CoT embeddings with added noise, without requiring discrete CoT annotations. It maintains nearly identical pass@1 performance to discrete CoT in mathematical reasoning while significantly improving pass@32 diversi
+  [ICLR2026][Reasoning][Continuous Chain-of-Thought] This paper proposes a soft/fuzzy token method that uses Reinforcement Learning (RL) training on continuous CoT embeddings with added noise, without requiring discrete CoT annotations. It maintains nearly identical pass@1 performance to discrete CoT in mathematical reasoning while significantly improving pass@32 diversity and out-of-distribution (OOD) capability preservation.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - soft tokens
-  - fuzzy tokens
+  - "ICLR2026"
+  - "Reasoning"
+  - "Continuous Chain-of-Thought"
+  - "soft tokens"
+  - "fuzzy tokens"
+  - "RL fine-tuning"
+  - "reasoning diversity"
 date: 2026-05-08
-content_hash: accfd28ec0fd3f86
+content_hash: d8f8f517ed74238e
 ---
+
 # Soft Tokens, Hard Truths
 
 **Conference**: ICLR2026  
@@ -139,8 +143,8 @@ The primary conclusion is that soft/fuzzy training performs comparably to hard t
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis](analytica_soft_propositional_reasoning_for_robust_and_scalable_llm-driven_analys.md)
 - [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
-- [\[ICLR 2026\] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs](sample_smart_not_hard_correctness-first_decoding_for_better_reasoning_in_llms.md)
 - [\[ICML 2026\] Reasoning Can Be Restored by Correcting a Few Decision Tokens](../../ICML2026/llm_reasoning/reasoning_can_be_restored_by_correcting_a_few_decision_tokens.md)
+- [\[ICLR 2026\] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs](sample_smart_not_hard_correctness-first_decoding_for_better_reasoning_in_llms.md)
 
 </div>
 

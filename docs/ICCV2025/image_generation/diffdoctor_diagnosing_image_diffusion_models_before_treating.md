@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffDoctor: Diagnosing Image Diffusion Models Before Treating
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes DiffDoctor, the first method to fine-tune diffusion models using pixel-level feedback. It first trains a robust artifact detector (1M+ samples with a ca…
+  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes DiffDoctor, the first method to fine-tune diffusion models using pixel-level feedback. It first trains a robust artifact detector (1M+ samples with a category-balancing strategy), then backpropagates gradients through the detector to the diffusion model by minimizing the artifact confidence of each pixel in synthesized images, achieving significant artifact reduction on unseen prompts.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Image Quality"
   - "Model Fine-tuning"
 date: 2026-05-08
-content_hash: a6763fb73adf701e
+content_hash: de0734d344475c87
 ---
 
 # DiffDoctor: Diagnosing Image Diffusion Models Before Treating
@@ -146,11 +146,11 @@ DiffDoctor reduces the artifact frequency of FLUX.1 from 82.66% to 22.00% (a red
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value](../../ICLR2026/image_generation/diagnosing_and_improving_diffusion_models_by_estimating_the_optimal_loss_value.md)
 - [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
 - [\[ICCV 2025\] Make Me Happier: Evoking Emotions Through Image Diffusion Models](make_me_happier_evoking_emotions_through_image_diffusion_models.md)
-- [\[ICML 2026\] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers](../../ICML2026/image_generation/diagnosing_and_correcting_concept_omission_in_multimodal_diffusion_transformers.md)
-- [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](../../NeurIPS2025/image_generation/understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
+- [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](../../NeurIPS2025/image_generation/understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
 
 </div>
 

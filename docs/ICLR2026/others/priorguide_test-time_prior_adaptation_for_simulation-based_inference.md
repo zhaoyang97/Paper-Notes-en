@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference
 description: >-
-  [ICLR 2026][Others][Test-Time Compute] PriorGuide enables a pre-trained diffusion-based amortized simulation-based inference model to adopt a new prior distribution at **test-time without retraining**. By transforming the prior adaptation into a guidance term added to the diffusion score and employing Gaussian mixture approximations for a closed-form soluti
+  [ICLR 2026][Simulation-Based Inference (SBI)] PriorGuide enables a pre-trained diffusion-based amortized simulation-based inference model to adopt a new prior distribution at **test-time without retraining**. By transforming the prior adaptation into a guidance term added to the diffusion score and employing Gaussian mixture approximations for a closed-form solution, it allows for flexible injection of expert knowledge or prior sensitivity analysis.
 tags:
-  - ICLR 2026
-  - Others
-  - Test-Time Compute
+  - "ICLR 2026"
+  - "Simulation-Based Inference (SBI)"
+  - "Amortized Bayesian Inference"
+  - "Diffusion Guidance"
+  - "Prior Adaptation"
+  - "Test-Time Compute"
 date: 2026-05-08
-content_hash: cf281ee8300dd3c8
+content_hash: 8a8e60b321e50257
 ---
+
 # PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference
 
 **Conference**: ICLR 2026  

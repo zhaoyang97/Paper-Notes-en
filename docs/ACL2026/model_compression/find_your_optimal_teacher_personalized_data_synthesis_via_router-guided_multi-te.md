@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation
 description: >-
-  [ACL 2026][Model Compression][Knowledge Distillation] Ours propose PerSyn (Personalized data Synthesis), which utilizes a "Route-then-Generate" paradigm where a router assigns the optimal teacher model for each prompt. By considering both student learnability and teacher response quality, this approach is more efficient and effective than the traditional "Generate-then-Se
+  [ACL 2026][Model Compression][Knowledge Distillation] Ours propose PerSyn (Personalized data Synthesis), which utilizes a "Route-then-Generate" paradigm where a router assigns the optimal teacher model for each prompt. By considering both student learnability and teacher response quality, this approach is more efficient and effective than the traditional "Generate-then-Select" paradigm, consistently surpassing all baselines in both instruction tuning and mathematical reasonin…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ACL 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Synthetic Data"
+  - "Multi-teacher"
+  - "Routing Mechanism"
+  - "Personalized Distillation"
 date: 2026-05-08
-content_hash: cd3676b5516d8dac
+content_hash: 63f43d41d2db3a6a
 ---
+
 # Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation
 
 **Conference**: ACL 2026  
@@ -154,11 +159,11 @@ Router efficiency comparison:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](../../ICLR2026/model_compression/pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
-- [\[CVPR 2026\] SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models](../../CVPR2026/model_compression/siglino_efficient_multi-teacher_distillation_for_agglomerative_vision_foundation.md)
-- [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
-- [\[ICLR 2026\] STAR: Similarity-guided Teacher-Assisted Refinement for Super-Tiny Function Calling Models](../../ICLR2026/model_compression/star_similarity-guided_teacher-assisted_refinement_for_super-tiny_function_calli.md)
+- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
+- [\[ICML 2026\] PADD: Path-Aligned Decompression Distillation for Non-Router Teacher to Guide MoE Student Learning](../../ICML2026/model_compression/padd_path-aligned_decompression_distillation_for_non-router_teacher_to_guide_moe.md)
+- [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../../ICLR2026/model_compression/exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
+- [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](../../ICLR2026/model_compression/in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 
 </div>
 

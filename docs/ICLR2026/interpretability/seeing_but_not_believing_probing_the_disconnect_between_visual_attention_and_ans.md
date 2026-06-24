@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing but Not Believing: Probing the Disconnect Between Visual Attention and Answer Correctness in VLMs
 description: >-
-  [ICLR 2026][Interpretability][VQA] This paper systematically analyzes the phenomenon of VLMs "seeing evidence but answering incorrectly" in VQA. It finds that deep-layer attention often successfully locates the correct visual evidence, but this information is not fully utilized during the generation stage. Accordingly, the authors propose Visual Evidenc
+  [ICLR 2026][Interpretability][VLM Interpretability] This paper systematically analyzes the phenomenon of VLMs "seeing evidence but answering incorrectly" in VQA. It finds that deep-layer attention often successfully locates the correct visual evidence, but this information is not fully utilized during the generation stage. Accordingly, the authors propose Visual Evidence Augmentation (VEA), a training-free test-time visual evidence highlighting method…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - VQA
+  - "ICLR 2026"
+  - "Interpretability"
+  - "VLM Interpretability"
+  - "Visual Attention"
+  - "Visual Evidence Augmentation"
+  - "VQA"
+  - "Test-time Intervention"
 date: 2026-05-08
-content_hash: a8a8cdfd833dca73
+content_hash: c7f0a8ad36f64f0b
 ---
+
 # Seeing but Not Believing: Probing the Disconnect Between Visual Attention and Answer Correctness in VLMs
 
 **Conference**: ICLR 2026  
@@ -201,8 +206,8 @@ Component ablation shows that VEA's success comes from the combination of its pa
 - [\[ICLR 2026\] Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training](learning_to_see_before_seeing_demystifying_llm_visual_priors_from_language_pre-t.md)
 - [\[ICLR 2026\] Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency](attention_please_revisiting_attentive_probing_through_the_lens_of_efficiency.md)
 - [\[ICLR 2026\] To Sink or Not to Sink: Visual Information Pathways in Large Vision-Language Models](to_sink_or_not_to_sink_visual_information_pathways_in_large_vision-language_mode.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICLR 2026\] An Information-Theoretic Parameter-Free Bayesian Framework for Probing Labeled Dependency Trees from Attention Score](an_information-theoretic_parameter-free_bayesian_framework_for_probing_labeled_d.md)
-- [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](probing_rotary_position_embeddings_through_frequency_entropy.md)
 
 </div>
 

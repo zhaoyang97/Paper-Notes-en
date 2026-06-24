@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reasoning in Space via Grounding in the World
 description: >-
-  [ICLR 2026][vlm_reasoning][Grounded CoT] This paper proposes GS-Reasoner, which utilizes a "dual-path pooling" mechanism to align geometric features with image patch-level semantic and positional features, constructing a unified semantic-geometric hybrid 3D representation. This allows a 3D LLM to perform autoregressive 3D visual grounding **without relying on
+  [ICLR 2026][VLM Reasoning][3D Visual Grounding] This paper proposes GS-Reasoner, which utilizes a "dual-path pooling" mechanism to align geometric features with image patch-level semantic and positional features, constructing a unified semantic-geometric hybrid 3D representation. This allows a 3D LLM to perform autoregressive 3D visual grounding **without relying on any external detectors or decoders** for the first time. By using grounding results as intermediate Chain-of-Th…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Grounded CoT
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "3D Visual Grounding"
+  - "Spatial Reasoning"
+  - "3D Large Models"
+  - "Semantic-Geometric Fusion"
+  - "Grounded CoT"
 date: 2026-05-08
-content_hash: 61acbdc78bcbbb48
+content_hash: 81f4fea99b8bde4d
 ---
+
 # Reasoning in Space via Grounding in the World
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,16 @@ Table 5: Ablation of 3D representation and data augmentation (ScanRefer).
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning](space-eval_a_benchmark_for_real-world_multi-modal_reasoning.md)
 - [\[ICLR 2026\] LLMs as Rules Oracles: Exploring Real-World Multimodal Reasoning in Tabletop Strategy Game Environments](llms_as_rules_oracles_exploring_real-world_multimodal_reasoning_in_tabletop_stra.md)
-- [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](../../CVPR2026/vlm_reasoning/from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
-- [\[ICML 2026\] Temporal-Aware Reasoning Optimization for Video Temporal Grounding](../../ICML2026/vlm_reasoning/temporal-aware_reasoning_optimization_for_video_temporal_grounding.md)
 - [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](../../CVPR2026/vlm_reasoning/monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
+- [\[ICLR 2026\] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](stvg-r1_incentivizing_instance-level_reasoning_and_grounding_in_videos_via_reinf.md)
+- [\[ICML 2026\] Temporal-Aware Reasoning Optimization for Video Temporal Grounding](../../ICML2026/vlm_reasoning/temporal-aware_reasoning_optimization_for_video_temporal_grounding.md)
 
 </div>
 

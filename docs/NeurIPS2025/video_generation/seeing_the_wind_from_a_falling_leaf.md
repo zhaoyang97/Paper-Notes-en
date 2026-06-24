@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seeing the Wind from a Falling Leaf
 description: >-
-  [NeurIPS 2025][Video Generation][Invisible Force Field Recovery] An end-to-end differentiable inverse graphics framework is proposed that jointly models object geometry/physical properties, force field representations…
+  [NeurIPS 2025][Video Generation][Invisible Force Field Recovery] An end-to-end differentiable inverse graphics framework is proposed that jointly models object geometry/physical properties, force field representations, and physical processes to recover invisible force fields (e.g., wind fields) from video via backpropagation, while supporting physics-based video generation and editing.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian"
   - "Causal Triplane"
 date: 2026-05-08
-content_hash: 01ad70864b062f35
+content_hash: 1f0ff44429ba0be0
 ---
 
 # Seeing the Wind from a Falling Leaf
@@ -144,7 +144,7 @@ $$\mathcal{L} = \mathcal{L}_{motion} + \lambda_1 \mathcal{L}_{space} + \lambda_2
 - [\[ICML 2026\] WIND: Weather Inverse Diffusion for Zero-Shot Atmospheric Modeling](../../ICML2026/video_generation/wind_weather_inverse_diffusion_for_zero-shot_atmospheric_modeling.md)
 - [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](../../CVPR2026/video_generation/seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 - [\[NeurIPS 2025\] Photography Perspective Composition: Towards Aesthetic Perspective Recommendation](photography_perspective_composition_towards_aesthetic_perspective_recommendation.md)
-- [\[NeurIPS 2025\] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation](lemica_lexicographic_minimax_path_caching_for_efficient_diffusion-based_video_ge.md)
+- [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Addressing the issue of unstable 6-DoF grasping caused by occluded geometric information in "corner views" of single-view point clouds, this paper proposes a **post-fusion** framework utilizing an **auxiliary view** captured easily by a robotic arm. By employing self-supervised contrastive learning, cross-view point fe
+  [CVPR 2026][Robotics][6-DoF Grasping] Addressing the issue of unstable 6-DoF grasping caused by occluded geometric information in "corner views" of single-view point clouds, this paper proposes a **post-fusion** framework utilizing an **auxiliary view** captured easily by a robotic arm. By employing self-supervised contrastive learning, cross-view point features are mapped to be "spatially consistent + directionally discriminable." A "Cross-view Aligned Cylindrical Integratio…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "6-DoF Grasping"
+  - "Cross-view Fusion"
+  - "Self-supervised Contrastive Learning"
+  - "Point Cloud Registration"
+  - "Cylindrical Coordinates"
 date: 2026-05-08
-content_hash: a057bc25a70c0ba0
+content_hash: 3c4e7992f9b853e1
 ---
+
 # A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ RealSense test set, cumulative components (based on baseline; last two columns a
 - [\[CVPR 2026\] GraspGen-X: Cross-Embodiment 6-DOF Diffusion-based Grasping](graspgen-x_cross-embodiment_6-dof_diffusion-based_grasping.md)
 - [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
 - [\[ECCV 2024\] An Economic Framework for 6-DoF Grasp Detection](../../ECCV2024/robotics/an_economic_framework_for_6-dof_grasp_detection.md)
-- [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](learning_to_act_robustly_with_view-invariant_latent_actions.md)
-- [\[CVPR 2026\] HQC-NBV: A Hybrid Quantum-Classical View Planning Approach](hqc-nbv_a_hybrid_quantum-classical_view_planning_approach.md)
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
+- [\[ICML 2026\] SAFAG: Generalizable Actionable Part Pose Estimation without Symmetry Annotation](../../ICML2026/robotics/generalizable_and_actionable_parts_pose_estimation_with_symmetry_annotation-free.md)
 
 </div>
 

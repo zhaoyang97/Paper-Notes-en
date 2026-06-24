@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] CAD-Tokenizer: Towards Text-Based CAD Prototyping via Modality-Specific Tokenization
 description: >-
-  [ICLR 2026][Multimodal VLM][Text-to-CAD] A "primitive-level VQ-VAE tokenizer" is designed for CAD sequences to replace default LLM subword tokenization. It compresses sketch-extrusion pairs into discrete tokens aligned with the LLM vocabulary and employs Finite State Automata (FSA) constrained decoding. This approach unifies Text-to-CAD generation and text-dr
+  [ICLR 2026][Multimodal VLM][Text-to-CAD] A "primitive-level VQ-VAE tokenizer" is designed for CAD sequences to replace default LLM subword tokenization. It compresses sketch-extrusion pairs into discrete tokens aligned with the LLM vocabulary and employs Finite State Automata (FSA) constrained decoding. This approach unifies Text-to-CAD generation and text-driven CAD editing within a single model for the first time.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Text-to-CAD
-  - LLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Text-to-CAD"
+  - "CAD Editing"
+  - "VQ-VAE Tokenizer"
+  - "Primitive-level tokens"
+  - "Finite State Automata Decoding"
+  - "LLM"
 date: 2026-05-08
-content_hash: a2cbe771a8152a6e
+content_hash: f74f769e702a1ad2
 ---
+
 # CAD-Tokenizer: Towards Text-Based CAD Prototyping via Modality-Specific Tokenization
 
 **Conference**: ICLR 2026  

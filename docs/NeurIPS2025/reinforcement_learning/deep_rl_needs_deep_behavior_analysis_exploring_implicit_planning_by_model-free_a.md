@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][behavior analysis] This paper proposes ForageWorld, a naturalistic foraging environment, and a neuroscience-inspired joint behavior-neural analysis framework…
+  [NeurIPS 2025][Reinforcement Learning][behavior analysis] This paper proposes ForageWorld, a naturalistic foraging environment, and a neuroscience-inspired joint behavior-neural analysis framework, revealing that model-free RNN-based DRL agents exhibit structured, planning-like behavior through emergent dynamics—without explicit memory modules or world models.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "foraging environment"
   - "interpretability"
 date: 2026-05-08
-content_hash: c93bd2e3d5682cfc
+content_hash: 373579aa9888ff51
 ---
 
 # Deep RL Needs Deep Behavior Analysis: Exploring Implicit Planning by Model-Free Agents
@@ -161,10 +161,10 @@ Standard PPO loss combined with an optional auxiliary path integration L2 loss (
 ## Related Papers
 
 - [\[NeurIPS 2025\] Adaptive Cooperative Transmission Design for URLLC via Deep RL](adaptive_cooperative_transmission_design_for_ultra-reliable_low-latency_communic.md)
-- [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
 - [\[NeurIPS 2025\] Enhancing Interpretability in Deep Reinforcement Learning through Semantic Clustering](enhancing_interpretability_in_deep_reinforcement_learning_through_semantic_clust.md)
-- [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
 - [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
+- [\[NeurIPS 2025\] Parameter-Free Algorithms for the Stochastically Extended Adversarial Model](parameter-free_algorithms_for_the_stochastically_extended_adversarial_model.md)
+- [\[NeurIPS 2025\] Mind the GAP! The Challenges of Scale in Pixel-based Deep Reinforcement Learning](mind_the_gap_the_challenges_of_scale_in_pixel-based_deep_reinforcement_learning.md)
 
 </div>
 

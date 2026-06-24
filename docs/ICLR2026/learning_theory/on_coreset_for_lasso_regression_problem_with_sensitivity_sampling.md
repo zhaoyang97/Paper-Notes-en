@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] On Coreset for LASSO Regression Problem with Sensitivity Sampling
 description: >-
-  [ICLR 2026][learning_theory][LASSO] This paper provides the first sensitivity sampling-based coreset construction for **standard LASSO regression** (objective $\|Ax-b\|_2^2+\lambda\|x\|_1$). By **localized decomposition** of the complex function space induced by the $\ell_1$ penalty into a residual space and an $\ell_1$ penalty space, the authors tighten
+  [ICLR 2026][Learning Theory][LASSO] This paper provides the first sensitivity sampling-based coreset construction for **standard LASSO regression** (objective $\|Ax-b\|_2^2+\lambda\|x\|_1$). By **localized decomposition** of the complex function space induced by the $\ell_1$ penalty into a residual space and an $\ell_1$ penalty space, the authors tighten the coreset size from the original $\tilde O(Gd/\epsilon^2)$ to $\tilde O\!\big(\epsilon^{-2}d(\log^3 d\cdot\min\{1…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - LASSO
-  - coreset
-  - sensitivity sampling
-  - leverage score
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "coreset"
+  - "sparse regression"
+  - "LASSO"
+  - "sensitivity sampling"
+  - "empirical processes"
+  - "leverage score"
 date: 2026-05-08
-content_hash: 5ed840dead330f1c
+content_hash: b7a0d12bf978d4eb
 ---
+
 # On Coreset for LASSO Regression Problem with Sensitivity Sampling
 
 **Conference**: ICLR 2026  
@@ -153,8 +156,8 @@ The full LASSO loss is 25.28; LASSO-Sens approaches this at 5d and is significan
 
 ## Related Papers
 
-- [\[ICLR 2026\] Stable Coresets: Unleashing the Power of Uniform Sampling](stable_coresets_unleashing_the_power_of_uniform_sampling.md)
 - [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
+- [\[ICLR 2026\] Stable Coresets: Unleashing the Power of Uniform Sampling](stable_coresets_unleashing_the_power_of_uniform_sampling.md)
 - [\[ICLR 2026\] Splat Regression Models](splat_regression_models.md)
 - [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](better_bounds_for_the_distributed_experts_problem.md)
 - [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](sampling_complexity_of_td_and_ppo_in_rkhs.md)

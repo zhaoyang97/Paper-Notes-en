@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation
 description: >-
-  [ICML 2026][Others][Paper Note] Using an anti-causal graph, the authors unify three types of biases—confounder, collider, and mediator—into a single conditional independence criterion $\hat{Y} \perp \mathbf{B} \mid Y$. They design sDISCO, a single-step differentiable estimator with $O(n^2)$ memory complexity, which serves as a regularization term to
+  [ICML2026 Oral][Anti-causal Model] Using an anti-causal graph, the authors unify three types of biases—confounder, collider, and mediator—into a single conditional independence criterion $\hat{Y} \perp \mathbf{B} \mid Y$. They design sDISCO, a single-step differentiable estimator with $O(n^2)$ memory complexity, which serves as a regularization term to penalize conditional distance correlation in any gradient-trained network, thereby mitigating multiple biases and scaling to…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026 Oral"
+  - "Anti-causal Model"
+  - "Conditional Distance Correlation"
+  - "Shortcut Learning"
+  - "Causal Stability"
+  - "Single-step Differentiable Estimation"
 date: 2026-05-08
-content_hash: ca997ccca9efcfcb
+content_hash: 9bf0d87d4eb0f279
 ---
+
 # DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation
 
 **Conference**: ICML2026 Oral  
@@ -137,9 +142,9 @@ Compared to seven representative baselines across six datasets, the DISCO series
 ## Related Papers
 
 - [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](../../ICLR2026/others/mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
+- [\[ACL 2025\] Mitigating Shortcut Learning with InterpoLated Learning](../../ACL2025/others/mitigating_shortcut_learning_with_interpolated_learning.md)
 - [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](possibilistic_predictive_uncertainty_for_deep_learning.md)
 - [\[ICML 2026\] Sequential Group Composition: A Window into the Mechanics of Deep Learning](sequential_group_composition_a_window_into_the_mechanics_of_deep_learning.md)
-- [\[ACL 2025\] Mitigating Shortcut Learning with InterpoLated Learning](../../ACL2025/others/mitigating_shortcut_learning_with_interpolated_learning.md)
 - [\[AAAI 2026\] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation](../../AAAI2026/others/how_wide_and_how_deep_mitigating_over-squashing_of_gnns_via_channel_capacity_con.md)
 
 </div>

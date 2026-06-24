@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Last Iterate Convergence in Monotone Mean Field Games
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][mean field games] This paper proposes a KL-divergence-based proximal point (PP) method that achieves asymptotic last iterate convergence (LIC) in non-strictly monotone mean field ga…
+  [NeurIPS 2025][Reinforcement Learning][mean field games] This paper proposes a KL-divergence-based proximal point (PP) method that achieves asymptotic last iterate convergence (LIC) in non-strictly monotone mean field games (MFGs), and proves that regularized mirror descent (RMD) converges to regularized equilibria at an exponential rate. The combined approximate proximal point (APP) algorithm reliably converges to non-regularized equilibria on standard benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "mirror descent"
   - "monotone games"
 date: 2026-05-08
-content_hash: b1af6ff24c0e855e
+content_hash: b657fa1196a0d62c
 ---
 
 # Last Iterate Convergence in Monotone Mean Field Games
@@ -151,9 +151,9 @@ Validation on the classical one-dimensional torus random walk MFG benchmark: $|\
 
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
 - [\[NeurIPS 2025\] Non-convex Entropic Mean-Field Optimization via Best Response Flow](non-convex_entropic_mean-field_optimization_via_best_response_flow.md)
+- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

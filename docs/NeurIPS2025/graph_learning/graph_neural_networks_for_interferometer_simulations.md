@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph Neural Networks for Interferometer Simulations
 description: >-
-  [NeurIPS 2025 (AI for Science Workshop)][Graph Learning][GNN] This work presents the first application of graph neural networks to optical interferometer simulation…
+  [NeurIPS 2025 (AI for Science Workshop)][Graph Learning][GNN] This work presents the first application of graph neural networks to optical interferometer simulation, employing a GATv2 + KAN architecture to predict electromagnetic field power and spatial intensity distributions within LIGO interferometers. The approach achieves inference speeds up to 815× faster than the standard simulation software (FINESSE) while maintaining satisfactory physical accuracy.
 tags:
   - "NeurIPS 2025 (AI for Science Workshop)"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "gravitational waves"
   - "optical simulation"
 date: 2026-05-08
-content_hash: 9bed7f4eda7c0ed1
+content_hash: 78fabd159f685b28
 ---
 
 # Graph Neural Networks for Interferometer Simulations
@@ -183,10 +183,10 @@ Single-simulation speedup: **159×** over FINESSE and **815×** over SIS.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
-- [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
+- [\[ICLR 2026\] Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations](../../ICLR2026/graph_learning/geometric_graph_neural_diffusion_for_stable_molecular_dynamics_simulations.md)
 - [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
+- [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
 - [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
-- [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
 
 </div>
 

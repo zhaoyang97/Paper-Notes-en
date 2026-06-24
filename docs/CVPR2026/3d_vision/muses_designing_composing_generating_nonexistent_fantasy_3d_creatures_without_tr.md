@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Muses is the first **training-free, feed-forward** framework for generating fantasy 3D creatures. It parses highly compositional text (e.g., "a creature with a tiger body, dragon wings, robotic legs, and nine fox tails") into 3D skeletons for individual parts, assembles a reasonable holistic skeleton via graph classifi
+  [CVPR 2026][3D Vision][Training-free 3D Generation] Muses is the first **training-free, feed-forward** framework for generating fantasy 3D creatures. It parses highly compositional text (e.g., "a creature with a tiger body, dragon wings, robotic legs, and nine fox tails") into 3D skeletons for individual parts, assembles a reasonable holistic skeleton via graph classification and LLM reasoning, and performs voxel-level geometric and texture interpolation within the Structured…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Training-free 3D Generation"
+  - "Fantasy Creatures"
+  - "3D Skeleton"
+  - "Structured Latent Space"
+  - "Concept Composition"
 date: 2026-05-08
-content_hash: 5f9d4e7e9546c293
+content_hash: 242bbccb8d31c34c
 ---
+
 # Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ Muses leads across all metrics. Specifically, in the user study, it achieved 66.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Nano3D: A Training-Free Approach for Efficient 3D Editing Without Masks](../../ICLR2026/3d_vision/nano3d_a_training-free_approach_for_efficient_3d_editing_without_masks.md)
 - [\[CVPR 2026\] ArtLLM: Generating Articulated Assets via 3D LLM](artllm_generating_articulated_assets_via_3d_llm.md)
 - [\[CVPR 2026\] Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface](real2edit2real_generating_robotic_demonstrations_via_a_3d_control_interface.md)
 - [\[CVPR 2026\] 2D-LFM: Lifting Foundation Model without 3D Supervision](2d-lfm_lifting_foundation_model_without_3d_supervision.md)
 - [\[ICCV 2025\] Easi3R: Estimating Disentangled Motion from DUSt3R Without Training](../../ICCV2025/3d_vision/easi3r_estimating_disentangled_motion_from_dust3r_without_training.md)
-- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
 
 </div>
 

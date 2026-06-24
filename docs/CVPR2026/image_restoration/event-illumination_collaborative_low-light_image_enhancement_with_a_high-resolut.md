@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset
 description: >-
-  [CVPR 2026][Image Restoration][Retinex] EIC-LIE enables event signals (providing HDR details) and image illumination priors (providing global brightness) to synergistically enhance through a bidirectional interaction module featuring "forward aggregation + backward injection with reused attention matrices." It employs image illumination statistics to drive a
+  [CVPR 2026][Image Restoration][Event Camera] EIC-LIE enables event signals (providing HDR details) and image illumination priors (providing global brightness) to synergistically enhance through a bidirectional interaction module featuring "forward aggregation + backward injection with reused attention matrices." It employs image illumination statistics to drive a dynamic event filter for noise suppression and introduces RLE, the first $1024 \times 768$ high-resolution real-wo…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Retinex
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Event Camera"
+  - "Low-light Enhancement"
+  - "Retinex"
+  - "Bidirectional Interaction"
+  - "Event Denoising"
 date: 2026-05-08
-content_hash: 81af736edf16623f
+content_hash: ef21fff7bc1b2afc
 ---
+
 # Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset
 
 **Conference**: CVPR 2026  
@@ -131,9 +136,18 @@ Ablations were conducted on RLE components (different baselines).
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
+- [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
+- [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
+- [\[ECCV 2024\] Towards Real-world Event-guided Low-light Video Enhancement and Deblurring](../../ECCV2024/image_restoration/towards_real-world_event-guided_low-light_video_enhancement_and_deblurring.md)
+- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)

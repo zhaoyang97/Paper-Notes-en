@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep
 description: >-
-  [CVPR 2026][Others][CAD] BrepVGAE unifies heterogeneous "faces" and "edges" in CAD B-rep models as nodes of a single sparse isomorphic graph. Using a Variational Graph Autoencoder (VGAE), it compresses the graph into a global latent vector and employs a set-based parallel decoder to reconstruct the entire topological adjacency and continuous g
+  [CVPR 2026][B-rep generation] BrepVGAE unifies heterogeneous "faces" and "edges" in CAD B-rep models as nodes of a single sparse isomorphic graph. Using a Variational Graph Autoencoder (VGAE), it compresses the graph into a global latent vector and employs a set-based parallel decoder to reconstruct the entire topological adjacency and continuous geometric features in a single pass. It significantly outperforms methods like BrepGen in reconstruction accuracy…
 tags:
-  - CVPR 2026
-  - Others
-  - CAD
+  - "CVPR 2026"
+  - "B-rep generation"
+  - "Variational Graph Autoencoder"
+  - "Set decoding"
+  - "Topology-geometry coupling"
+  - "CAD"
 date: 2026-05-08
-content_hash: 99cd07ed85acda75
+content_hash: dd7f794fd4322f11
 ---
+
 # BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep
 
 **Conference**: CVPR 2026  
@@ -141,15 +145,15 @@ Ablations performed on DeepCAD 60K models (600 epochs, Hungarian matching).
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)
 - [\[CVPR 2026\] Negative Binomial Variational Autoencoders for Overdispersed Latent Modeling](negative_binomial_variational_autoencoders_for_overdispersed_latent_modeling.md)
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
-- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
-- [\[CVPR 2026\] Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos](dynamics_language-based_representation_for_inferring_rigid-body_dynamics_from_vi.md)
+- [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
+- [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
+- [\[CVPR 2026\] FedSST: Rethinking Fair Federated Graph Learning under Structural Shift](fedsst_rethinking_fair_federated_graph_learning_under_structural_shift.md)
 
 </div>
 

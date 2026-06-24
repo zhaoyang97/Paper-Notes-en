@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation
 description: >-
-  [AAAI 2026][Text Generation][controlled text generation] This paper proposes the C3TG framework, which achieves fine-grained multi-attribute controllable text generation through a two-stage approach: in the generation st…
+  [AAAI 2026][Text Generation][controlled text generation] This paper proposes the C3TG framework, which achieves fine-grained multi-attribute controllable text generation through a two-stage approach: in the generation stage, weighted KL divergence is used to fuse attribute distributions and adjust token probabilities; in the optimization stage, an energy function (combining classifier scores and conflict penalty terms) drives iterative rewriting via a Feedback Agent. C3TG ach…
 tags:
   - "AAAI 2026"
   - "Text Generation"
@@ -12,7 +12,7 @@ tags:
   - "energy function"
   - "conflict resolution"
 date: 2026-05-08
-content_hash: 044e627f78f47ab3
+content_hash: 144168e5ecace988
 ---
 
 # C3TG: Conflict-aware, Composite, and Collaborative Controlled Text Generation
@@ -132,9 +132,9 @@ Two stages: (1) **Generation Phase**: token distributions are extracted from a b
 
 - [\[ACL 2026\] Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification](../../ACL2026/nlp_generation/right_at_my_level_a_unified_multilingual_framework_for_proficiency-aware_text_si.md)
 - [\[AAAI 2026\] Structured Language Generation Model: Loss Calibration and Formatted Decoding for Efficient Text](structured_language_generation_model_loss_calibration_and_formatted_decoding_for.md)
-- [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](../../ACL2026/nlp_generation/planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
+- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](../../ICLR2026/nlp_generation/planner_aware_path_learning_in_diffusion_language_models_training.md)
 - [\[ACL 2026\] XtraGPT: Context-Aware and Controllable Academic Paper Revision via Human-AI Collaboration](../../ACL2026/nlp_generation/xtragpt_context-aware_and_controllable_academic_paper_revision_via_human-ai_coll.md)
-- [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](../../ICLR2026/nlp_generation/fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
+- [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](../../ACL2026/nlp_generation/planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
 
 </div>
 

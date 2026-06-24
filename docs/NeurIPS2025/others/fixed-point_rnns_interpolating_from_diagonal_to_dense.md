@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Fixed-Point RNNs: Interpolating from Diagonal to Dense
 description: >-
-  [NeurIPS 2025][Fixed-Point Iteration] This paper proposes the Fixed-Point RNN framework, which parameterizes dense linear RNNs as fixed points of diagonal linear RNNs. By varying the number of iterations…
+  [NeurIPS 2025 Spotlight][Fixed-Point Iteration] This paper proposes the Fixed-Point RNN framework, which parameterizes dense linear RNNs as fixed points of diagonal linear RNNs. By varying the number of iterations, the model dynamically interpolates between diagonal (efficient) and dense (expressive) regimes, achieving state-of-the-art results simultaneously on state-tracking ($A_5$/$S_5$) and copying tasks for the first time.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Fixed-Point Iteration"
   - "Dense Linear RNN"
   - "State-Space Model"
   - "Mamba"
   - "State Tracking"
 date: 2026-05-08
-content_hash: 31052b89f3fbc23e
+content_hash: 73da11d525a4b62d
 ---
 
 # Fixed-Point RNNs: Interpolating from Diagonal to Dense
@@ -190,11 +190,11 @@ The theoretical framework is elegant (fixed-point iteration + Banach theorem + i
 
 ## Related Papers
 
+- [\[ICML 2025\] Fixed-Confidence Multiple Change Point Identification under Bandit Feedback](../../ICML2025/others/fixed-confidence_multiple_change_point_identification_under_bandit_feedback.md)
 - [\[NeurIPS 2025\] Dense Associative Memory with Epanechnikov Energy](dense_associative_memory_with_epanechnikov_energy.md)
 - [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
 - [\[NeurIPS 2025\] RNNs Perform Task Computations by Dynamically Warping Neural Representations](rnns_perform_task_computations_by_dynamically_warping_neural_representations.md)
 - [\[NeurIPS 2025\] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes](addressing_mark_imbalance_in_integrationfree_neural_marked_t.md)
-- [\[ICCV 2025\] A Linear N-Point Solver for Structure and Motion from Asynchronous Tracks](../../ICCV2025/others/a_linear_n-point_solver_for_structure_and_motion_from_asynchronous_tracks.md)
 
 </div>
 

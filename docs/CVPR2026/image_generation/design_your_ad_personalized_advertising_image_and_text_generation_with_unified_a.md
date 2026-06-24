@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Design Your Ad: Personalized Advertising Image and Text Generation with Unified Autoregressive Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address the issues in e-commerce advertising where "images and copy use separate models and rely on group CTR to reflect average preferences," this paper proposes Uni-AdGen, a unified autoregressive model. It integrates ad images and copy into a single next-token prediction workflow for joint generation. It further
+  [CVPR 2026][Image Generation][Personalized ad generation] To address the issues in e-commerce advertising where "images and copy use separate models and rely on group CTR to reflect average preferences," this paper proposes Uni-AdGen, a unified autoregressive model. It integrates ad images and copy into a single next-token prediction workflow for joint generation. It further employs a "coarse-to-fine preference understanding module" to extract personalized interests from nois…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Personalized ad generation"
+  - "unified autoregressive model"
+  - "joint image-text generation"
+  - "user preference modeling"
+  - "coarse-to-fine denoising"
 date: 2026-05-08
-content_hash: e88132015a15e830
+content_hash: 43d902834a01a5cd
 ---
+
 # Design Your Ad: Personalized Advertising Image and Text Generation with Unified Autoregressive Models
 
 **Conference**: CVPR 2026  
@@ -134,14 +140,17 @@ Evaluated using PBS for images and BLEU/ROUGE for text against real user clicks.
 
 <div class="related-papers" markdown="1">
 
-- **Janus-Pro**: Unified Multimodal Understanding and Generation via Autoregressive Modeling
-- **ReliableAd**: Autonomous Ad Image Generation with Visual and Semantic Consistency
-- **PosterMaker**: A Domain-Specific Architecture for Ad Poster Layout and Content
+## Related Papers
+
+- [\[CVPR 2026\] DCoAR: Deep Concept Injection into Unified Autoregressive Models for Personalized Text-to-Image Generation](dcoar_deep_concept_injection_into_unified_autoregressive_models_for_personalized.md)
+- [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)
+- [\[CVPR 2026\] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward](promptenhancer_taming_your_rewriter_for_text-to-image_generation_via_fine-graine.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Premier: Personalized Preference Modulation with Learnable User Embedding in Text-to-Image Generation](premier_personalized_preference_modulation_with_learnable_user_embedding_in_text.md)

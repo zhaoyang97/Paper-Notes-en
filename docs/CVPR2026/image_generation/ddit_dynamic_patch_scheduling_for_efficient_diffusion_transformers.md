@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Inference Acceleration] DDiT discovers that Diffusion Transformers require coarse-grained patches during early denoising but fine-grained ones only during late stages. It adds light-weight LoRA branches to a frozen pre-trained DiT to support multiple patch sizes and utilizes a training-free scheduler to automatically select the largest availa
+  [CVPR 2026][Image Generation][Diffusion Transformer] DDiT discovers that Diffusion Transformers require coarse-grained patches during early denoising but fine-grained ones only during late stages. It adds light-weight LoRA branches to a frozen pre-trained DiT to support multiple patch sizes and utilizes a training-free scheduler to automatically select the largest available patch at each step based on the "acceleration of latent evolution." It achieves up to 3.52× acceleratio…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference Acceleration
-  - LoRA
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "dynamic patch"
+  - "inference acceleration"
+  - "LoRA"
+  - "test-time scheduling"
 date: 2026-05-08
-content_hash: 1944072ed7febcc3
+content_hash: f8a3057817a7ab2c
 ---
+
 # DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -159,8 +163,8 @@ Threshold $\tau$ trade-off (DrawBench):
 - [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
 - [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
 - [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
-- [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
 - [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
+- [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
 
 </div>
 

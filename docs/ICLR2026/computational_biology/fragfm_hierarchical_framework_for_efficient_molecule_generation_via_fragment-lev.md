@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] FragFM elevates molecular generation to the level of "chemical fragments": it employs discrete flow matching for sampling on fragment-level graphs, followed by a coarse-to-fine autoencoder for lossless reduction to the atomic level. Combined with a "random fragment bag" strategy to bypass fixed vocabulary constraints,
+  [ICLR 2026][Computational Biology][Molecular Generation] FragFM elevates molecular generation to the level of "chemical fragments": it employs discrete flow matching for sampling on fragment-level graphs, followed by a coarse-to-fine autoencoder for lossless reduction to the atomic level. Combined with a "random fragment bag" strategy to bypass fixed vocabulary constraints, it generates larger, more realistic, and controllable molecules with fewer denoising steps.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Generation"
+  - "Fragment-level Generation"
+  - "Discrete Flow Matching"
+  - "Coarse-to-fine Autoencoder"
+  - "Natural Product Benchmark"
 date: 2026-05-08
-content_hash: ef76113bc6bb5d4e
+content_hash: 21b057fdadcd1ca9
 ---
+
 # FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching
 
 **Conference**: ICLR 2026  
@@ -131,9 +137,9 @@ FragFM leads among graph-based models in functional metrics (NP-likeness, NP-Cla
 ## Related Papers
 
 - [\[ICLR 2026\] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](la-proteina_atomistic_protein_generation_via_partially_latent_flow_matching.md)
+- [\[ICLR 2026\] Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement](efficient_prediction_of_large_protein_complexes_via_subunit-guided_hierarchical_.md)
 - [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
 - [\[ICML 2025\] Efficient Molecular Conformer Generation with SO(3)-Averaged Flow Matching and Reflow](../../ICML2025/computational_biology/efficient_molecular_conformer_generation_with_so3-averaged_flow_matching_and_ref.md)
-- [\[ICLR 2026\] Refine Drugs, Don't Complete Them: Uniform-Source Discrete Flows for Fragment-Based Drug Discovery](refine_drugs_dont_complete_them_uniform-source_discrete_flows_for_fragment-based.md)
 - [\[ICLR 2026\] Multi-Marginal Flow Matching with Adversarially Learnt Interpolants](multi-marginal_flow_matching_with_adversarially_learnt_interpolants.md)
 
 </div>

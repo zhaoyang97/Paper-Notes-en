@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Understanding Dataset Distillation via Spectral Filtering
 description: >-
-  [ICLR 2026][Model Compression][dataset distillation] This paper proposes the UniDD spectral filtering framework, which unifies various dataset distillation methods as applying different filtering functions to the Feature-Feature Correlation (FFC) matrix to match the frequency information of the Feature-Label Correlation (FLC) matrix. Based on this insight, the authors in
+  [ICLR 2026][Model Compression][dataset distillation] This paper proposes the UniDD spectral filtering framework, which unifies various dataset distillation methods as applying different filtering functions to the Feature-Feature Correlation (FFC) matrix to match the frequency information of the Feature-Label Correlation (FLC) matrix. Based on this insight, the authors introduce Curriculum Frequency Matching (CFM).
 tags:
-  - ICLR 2026
-  - Model Compression
-  - dataset distillation
-  - spectral filtering
-  - frequency matching
-  - curriculum learning
-  - unified framework
+  - "ICLR 2026"
+  - "Model Compression"
+  - "dataset distillation"
+  - "spectral filtering"
+  - "frequency matching"
+  - "curriculum learning"
+  - "unified framework"
 date: 2026-05-08
-content_hash: bb103789f1edc0a6
+content_hash: 5100fd660496efc9
 ---
+
 # Understanding Dataset Distillation via Spectral Filtering
 
 **Conference**: ICLR 2026  
@@ -141,14 +142,14 @@ On CIFAR-100 (IPC=50) using ResNet-18, CFM reaches 71.4%, significantly outperfo
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 - [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
 - [\[ICLR 2026\] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation](asymmetric_synthetic_data_update_for_domain_incremental_dataset_distillation.md)
-- [\[ACL 2026\] CBRS: Cognitive Blood Request System with Bilingual Dataset and Dual-Layer Filtering](../../ACL2026/model_compression/cbrs_cognitive_blood_request_system_with_bilingual_dataset_and_dual-layer_filter.md)
-- [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
+- [\[ICLR 2026\] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation](rectified_decoupled_dataset_distillation_a_closer_look_for_fair_and_comprehensiv.md)
 - [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
 
 </div>

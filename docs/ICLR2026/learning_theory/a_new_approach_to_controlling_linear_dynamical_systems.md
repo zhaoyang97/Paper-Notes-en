@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] A New Approach to Controlling Linear Dynamical Systems
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes Online Spectral Control (OSC): the control problem of linear dynamical systems under adversarial perturbations is transformed via convex relaxation using a set of system-independent "spectral filters" (eigenvectors of a specific Hankel matrix). While maintaining an optimal regret of $\tilde O(\gamma
+  [ICLR2026][Learning Theory][Online nonstochastic control] This paper proposes Online Spectral Control (OSC): the control problem of linear dynamical systems under adversarial perturbations is transformed via convex relaxation using a set of system-independent "spectral filters" (eigenvectors of a specific Hankel matrix). While maintaining an optimal regret of $\tilde O(\gamma^{-4}\sqrt T)$, it reduces the per-step runtime dependency on the stability margin $\gamma$ from polyn…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Online Control"
+  - "Online nonstochastic control"
+  - "spectral filtering"
+  - "Hankel matrix"
+  - "regret bound"
+  - "convex relaxation"
 date: 2026-05-08
-content_hash: 9ae2927b1f8fac21
+content_hash: c071fb5bab710393
 ---
+
 # A New Approach to Controlling Linear Dynamical Systems
 
 **Conference**: ICLR2026  
@@ -119,15 +126,16 @@ OSC is the only method in the table that achieves the best runtime in the most g
 - Value: ⭐⭐⭐⭐ Real improvement for marginally stable systems; universal features allow integration with stronger models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
 - [\[ICLR 2026\] An Optimal Diffusion Approach to Quadratic Rate-Distortion Problems: New Solution and Approximation Methods](an_optimal_diffusion_approach_to_quadratic_rate-distortion_problems_new_solution.md)
+- [\[ICLR 2026\] Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems](weak_correlations_as_the_underlying_principle_for_linearization_of_gradient-base.md)
 - [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](../../ICML2026/learning_theory/a_perturbation_approach_to_unconstrained_linear_bandits.md)
 - [\[ICLR 2026\] Dynamical properties of dense associative memory](dynamical_properties_of_dense_associative_memory.md)
-- [\[ICLR 2026\] Closed-form $\ell_r$ norm scaling with data for overparameterized linear regression and diagonal linear networks under $\ell_p$ bias](closed-form_ell_r_norm_scaling_with_data_for_overparameterized_linear_regression.md)
 
 </div>
 

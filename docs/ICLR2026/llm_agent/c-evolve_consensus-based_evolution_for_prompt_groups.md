@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] C-Evolve: Consensus-based Evolution for Prompt Groups
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] C-Evolve shifts from "evolving a single optimal prompt" to "evolving a group of complementary prompts." By using a **voting score**—measuring a prompt's contribution to group consensus—as evolutionary fitness, the method enables multiple prompts to reach a consensus, thereby breaking the performance ceiling of individu
+  [ICLR 2026][LLM Agent][Prompt evolution] C-Evolve shifts from "evolving a single optimal prompt" to "evolving a group of complementary prompts." By using a **voting score**—measuring a prompt's contribution to group consensus—as evolutionary fitness, the method enables multiple prompts to reach a consensus, thereby breaking the performance ceiling of individual prompts.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Prompt evolution"
+  - "consensus aggregation"
+  - "majority voting"
+  - "island model"
+  - "compound AI system"
+  - "black-box optimization"
 date: 2026-05-08
-content_hash: 8e7b1aa46b253844
+content_hash: 14279182dbddfdc7
 ---
+
 # C-Evolve: Consensus-based Evolution for Prompt Groups
 
 **Conference**: ICLR 2026  
@@ -128,9 +135,9 @@ C-Evolve achieves SOTA on all tasks: exceeding the baseline by +13.85%, GEPA by 
 ## Related Papers
 
 - [\[ICLR 2026\] ChatInject: Abusing Chat Templates for Prompt Injection in LLM Agents](chatinject_abusing_chat_templates_for_prompt_injection_in_llm_agents.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
 - [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](../../ACL2026/llm_agent/mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
-- [\[ICML 2026\] EvoClaw: Evaluating AI Agents on Continuous Software Evolution](../../ICML2026/llm_agent/evoclaw_evaluating_ai_agents_on_continuous_software_evolution.md)
 - [\[ACL 2026\] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models](../../ACL2026/llm_agent/agent-gwo_collaborative_agents_for_dynamic_prompt_optimization_in_large_language.md)
 
 </div>

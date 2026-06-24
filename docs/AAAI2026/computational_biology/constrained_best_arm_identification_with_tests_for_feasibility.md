@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Constrained Best Arm Identification with Tests for Feasibility
 description: >-
-  [AAAI 2026][Computational Biology][Best Arm Identification] This paper proposes a new framework for best arm identification (BAI) with feasibility constraints…
+  [AAAI 2026][Computational Biology][Best Arm Identification] This paper proposes a new framework for best arm identification (BAI) with feasibility constraints, allowing the decision-maker to test arm performance and feasibility constraints separately. An asymptotically optimal algorithm is designed that adaptively eliminates suboptimal arms via whichever criterion—performance or feasibility—is easier to satisfy.
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "sample complexity"
   - "asymptotic optimality"
 date: 2026-05-08
-content_hash: b90f800d044c29c3
+content_hash: 9341d9dbfc7cd826
 ---
 
 # Constrained Best Arm Identification with Tests for Feasibility
@@ -155,9 +155,9 @@ Data are drawn from a secukinumab clinical trial for rheumatoid arthritis (Genov
 
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](../../NeurIPS2025/computational_biology/constrained_discrete_diffusion.md)
 - [\[ICLR 2026\] Verifier-Constrained Flow Expansion for Discovery Beyond the Data](../../ICLR2026/computational_biology/verifier-constrained_flow_expansion_for_discovery_beyond_the_data.md)
+- [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](../../ICLR2026/computational_biology/constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](../../ICML2026/computational_biology/constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
-- [\[AAAI 2026\] On the Information Processing of One-Dimensional Wasserstein Distances with Finite Samples](on_the_information_processing_of_one-dimensional_wasserstein_distances_with_fini.md)
-- [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
+- [\[ACL 2025\] Retrieve to Explain: Evidence-driven Predictions for Explainable Drug Target Identification](../../ACL2025/computational_biology/retrieve_to_explain_drug_target_identification.md)
 
 </div>
 

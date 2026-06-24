@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] View Space：跨任意图的表示学习
+  [Paper Note] View Space: Representation Learning Across Arbitrary Graphs
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper proposes the concept of View Space, elevating graphs from 2 dimensions (node-feature) to 3 dimensions (node-feature-view) to achieve a unified representation across arbitrary feature dimensions and semantic graphs. This marks the first time a graph model can perform cross-domain reasoning without fine-tuning
+  [ICML 2026][Graph Learning][Graph Representation Learning] This paper proposes the concept of View Space, elevating graphs from 2 dimensions (node-feature) to 3 dimensions (node-feature-view) to achieve a unified representation across arbitrary feature dimensions and semantic graphs. This marks the first time a graph model can perform cross-domain reasoning without fine-tuning, similar to NLP/CV foundation models, outperforming GraphAny by an average of 8.93% across 27 downst…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Graph Representation Learning"
+  - "Feature Heterogeneity"
+  - "Fully Inductive Learning"
+  - "View Space"
 date: 2026-05-08
-content_hash: cd202283b75c2d90
+content_hash: dbcaf36aa197d95b
 ---
+
 # View Space: Representation Learning Across Arbitrary Graphs
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ RGVT outperforms the best GraphAny variant by an average gain of +8.93% (MLP) or
 
 ## Related Papers
 
-- [\[ICML 2026\] Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective](message_tuning_outshines_graph_prompt_tuning_a_prismatic_space_perspective.md)
-- [\[CVPR 2026\] R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII](../../CVPR2026/graph_learning/r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii.md)
-- [\[CVPR 2025\] Coeff-Tuning: A Graph Filter Subspace View for Tuning Attention-Based Large Models](../../CVPR2025/graph_learning/coeff-tuning_a_graph_filter_subspace_view_for_tuning_attention-based_large_model.md)
-- [\[NeurIPS 2025\] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction](../../NeurIPS2025/graph_learning/bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p.md)
+- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
 - [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
+- [\[ICML 2025\] Towards Graph Foundation Models: Learning Generalities Across Graphs via Task-Trees](../../ICML2025/graph_learning/towards_graph_foundation_models_learning_generalities_across_graphs_via_task-tre.md)
+- [\[ICML 2026\] Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective](message_tuning_outshines_graph_prompt_tuning_a_prismatic_space_perspective.md)
+- [\[ICML 2026\] Unsat Core Prediction through Polarity-Aware Representation Learning over Clause-Literal Hypergraphs](unsat_core_prediction_through_polarity-aware_representation_learning_over_clause.md)
 
 </div>
 

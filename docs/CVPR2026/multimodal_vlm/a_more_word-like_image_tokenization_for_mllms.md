@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A More Word-like Image Tokenization for MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] DiVT replaces the MLP projector in LLaVA with a clustering-based visual projector, grouping ViT patch features into "visual words" based on semantics. Each cluster generates a single token, with the token count adaptively varying based on image complexity. Trained solely on language modeling objectives, it matches or e
+  [CVPR 2026][Multimodal VLM][Visual projector] DiVT replaces the MLP projector in LLaVA with a clustering-based visual projector, grouping ViT patch features into "visual words" based on semantics. Each cluster generates a single token, with the token count adaptively varying based on image complexity. Trained solely on language modeling objectives, it matches or exceeds full-resolution baselines across 8 multimodal benchmarks using 1/4 or even 1/40 of the visual tokens.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual projector"
+  - "visual token compression"
+  - "semantic clustering"
+  - "dynamic token budget"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 2f1c1aefd6446765
+content_hash: 25083e78d81eeb39
 ---
+
 # A More Word-like Image Tokenization for MLLMs
 
 **Conference**: CVPR 2026  
@@ -115,15 +120,20 @@ Observations: (1) With 136.5 tokens, DiVT matches or exceeds the 576-token basel
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **LLaVA**: Large Language-and-Vision Assistant, Visual Projectors.
-- **TokenPacker**: Efficient visual projector via coarse-to-fine selection.
-- **Chat-UniVi**: Unified visual representation for image and video.
+## Related Papers
+
+- [\[CVPR 2026\] HouseMind: Tokenization Allows MLLMs to Understand, Generate and Edit Architectural Floor Plans](housemind_tokenization_mllm_floor_plan.md)
+- [\[CVPR 2026\] CLIP-like Model as a Foundational Density Ratio Estimator](clip-like_model_as_a_foundational_density_ratio_estimator.md)
+- [\[ICML 2026\] AVI-Bench: Toward Human-like Audio-Visual Intelligence of Omni-MLLMs](../../ICML2026/multimodal_vlm/avi-bench_toward_human-like_audio-visual_intelligence_of_omni-mllms.md)
+- [\[ICLR 2026\] Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models](../../ICLR2026/multimodal_vlm/reading_images_like_texts_sequential_image_understanding_in_vision-language_mode.md)
+- [\[CVPR 2026\] More than the Sum: Panorama-Language Models for Adverse Omni-Scenes](more_than_the_sum_panorama-language_models_for_adverse_omni-scenes.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] HouseMind: Tokenization Allows MLLMs to Understand, Generate and Edit Architectural Floor Plans](housemind_tokenization_mllm_floor_plan.md)

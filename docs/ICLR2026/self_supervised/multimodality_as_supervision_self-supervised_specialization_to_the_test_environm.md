@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Multimodality as Supervision: Self-Supervised Specialization to the Test Environment via Multimodality
 description: >-
-  [ICLR 2026][Self-Supervised Learning][cross-modal learning] By treating "pre-training data originating entirely from the deployment environment itself" as a sandbox, this paper proposes Test-Space Training (TST): performing cross-modal self-supervised pre-training using multimodal data collected within a single test space. The resulting model outperforms universal models traine
+  [ICLR 2026][Self-Supervised Learning][cross-modal learning] By treating "pre-training data originating entirely from the deployment environment itself" as a sandbox, this paper proposes Test-Space Training (TST): performing cross-modal self-supervised pre-training using multimodal data collected within a single test space. The resulting model outperforms universal models trained on internet-scale data (e.g., DINOv2, CLIP, 4M-21) on segmentation, detection…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - cross-modal learning
-  - self-supervised pre-training
-  - test-space specialization
-  - multimodal masked modeling
-  - knowledge distillation
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "cross-modal learning"
+  - "self-supervised pre-training"
+  - "test-space specialization"
+  - "multimodal masked modeling"
+  - "knowledge distillation"
 date: 2026-05-08
-content_hash: d563604da8932fad
+content_hash: 1f23da1b6de56b0f
 ---
+
 # Multimodality as Supervision: Self-Supervised Specialization to the Test Environment via Multimodality
 
 **Conference**: ICLR 2026  

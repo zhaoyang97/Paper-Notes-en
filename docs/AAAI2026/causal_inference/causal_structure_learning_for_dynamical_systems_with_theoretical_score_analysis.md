@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis
 description: >-
-  [AAAI 2026][Causal Inference][Causal Discovery] This paper proposes CaDyT, which combines Gaussian process-based continuous-time dynamics modeling (via Adams-Bashforth integrators for exact inference) with the Minimum De…
+  [AAAI 2026 Oral][Causal Inference][Causal Discovery] This paper proposes CaDyT, which combines Gaussian process-based continuous-time dynamics modeling (via Adams-Bashforth integrators for exact inference) with the Minimum Description Length (MDL) principle for structure search. The method simultaneously addresses irregular sampling and causal structure identification, substantially outperforming all baselines on double-mass spring, diamond graph…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Causal Inference"
   - "Causal Discovery"
   - "Gaussian Processes"
@@ -12,7 +12,7 @@ tags:
   - "Dynamical Systems"
   - "Irregular Sampling"
 date: 2026-05-08
-content_hash: ba12dcd513698137
+content_hash: cbfec7260f999c9a
 ---
 
 # CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis
@@ -105,11 +105,11 @@ No training is required — GP hyperparameters are optimized via marginal likeli
 
 ## Related Papers
 
+- [\[ICLR 2026\] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks](../../ICLR2026/causal_inference/frequency-domain_better_than_time-domain_for_causal_structure_recovery_in_dynami.md)
+- [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](../../ICLR2026/causal_inference/causal_score_conditioning_for_multi-resolution_latent_systems.md)
+- [\[ICLR 2026\] Score-based Greedy Search for Structure Identification of Partially Observed Causal Models](../../ICLR2026/causal_inference/score-based_greedy_search_for_structure_identification_of_partially_observed_cau.md)
 - [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](../../NeurIPS2025/causal_inference/differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
-- [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
-- [\[NeurIPS 2025\] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation](../../NeurIPS2025/causal_inference/an_analysis_of_causal_effect_estimation_using_outcome_invariant_data_augmentatio.md)
-- [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
+- [\[ICLR 2026\] Conditional Independent Component Analysis for Estimating Causal Structure with Latent Variables](../../ICLR2026/causal_inference/conditional_independent_component_analysis_for_estimating_causal_structure_with_.md)
 
 </div>
 

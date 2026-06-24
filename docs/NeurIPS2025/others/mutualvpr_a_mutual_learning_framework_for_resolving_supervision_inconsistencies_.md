@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering
 description: >-
-  [NeurIPS 2025][Visual Place Recognition] This paper proposes MutualVPR, a mutual learning framework that dynamically assigns scene category labels through feature-driven adaptive K-means clustering…
+  [NeurIPS 2025][Visual Place Recognition] This paper proposes MutualVPR, a mutual learning framework that dynamically assigns scene category labels through feature-driven adaptive K-means clustering, addressing the supervision inconsistency problem in classification-based VPR methods caused by viewpoint variation and occlusion.
 tags:
   - "NeurIPS 2025"
   - "Visual Place Recognition"
@@ -11,7 +11,7 @@ tags:
   - "Supervision Consistency"
   - "DINOv2"
 date: 2026-05-08
-content_hash: 90d6e733b5d1e702
+content_hash: 9194384249f2e1ca
 ---
 
 # MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering
@@ -160,11 +160,11 @@ MutualVPR outperforms the second-best method (CricaVPR / SALAD+CM at 40.8%) by *
 
 ## Related Papers
 
+- [\[CVPR 2025\] Improving Accuracy and Calibration via Differentiated Deep Mutual Learning](../../CVPR2025/others/improving_accuracy_and_calibration_via_differentiated_deep_mutual_learning.md)
+- [\[CVPR 2025\] Instance-wise Supervision-level Optimization in Active Learning](../../CVPR2025/others/instance-wise_supervision-level_optimization_in_active_learning.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
-- [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](overfitting_in_adaptive_robust_optimization.md)
+- [\[ACL 2025\] Adaptive Feature-based Low Rank Plus Sparse Decomposition for Subspace Clustering](../../ACL2025/others/adaptive_feature-based_low_rank_plus_sparse_decomposition_for_subspace_clusterin.md)
 - [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
-- [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](../../ICLR2026/others/learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
-- [\[ICML 2026\] Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate](../../ICML2026/others/theoretical_analysis_of_sparse_optimization_with_reparameterization_weight_decay.md)
 
 </div>
 

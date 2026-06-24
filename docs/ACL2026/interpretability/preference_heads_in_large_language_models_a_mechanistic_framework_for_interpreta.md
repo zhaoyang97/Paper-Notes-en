@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper proposes Preference Heads and Differential Preference Steering (DPS), using causal ablation to identify a small set of attention heads that carry user preferences. It then amplifies preference signals from these heads during decoding to improve personalized generation and prediction without modifying model p
+  [ACL2026][Interpretability][Mechanistic Interpretability] This paper proposes Preference Heads and Differential Preference Steering (DPS), using causal ablation to identify a small set of attention heads that carry user preferences. It then amplifies preference signals from these heads during decoding to improve personalized generation and prediction without modifying model parameters.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Attention Heads"
+  - "Personalized Generation"
+  - "Contrastive Decoding"
+  - "User Preference"
 date: 2026-05-08
-content_hash: d3fdcca28f6f2d35
+content_hash: d7e9c5d7dd4571f2
 ---
+
 # Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization
 
 **Conference**: ACL2026  
@@ -168,10 +174,10 @@ Efficiency analysis shows that since prompt prefill is shared, relative overhead
 ## Related Papers
 
 - [\[ACL 2026\] Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models](embracing_anisotropy_turning_massive_activations_into_interpretable_control_knob.md)
+- [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 - [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
 - [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
 - [\[ACL 2026\] Retrieval Heads are Dynamic](retrieval_heads_are_dynamic.md)
-- [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 
 </div>
 

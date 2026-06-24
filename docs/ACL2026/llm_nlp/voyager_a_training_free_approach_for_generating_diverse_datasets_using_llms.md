@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs
 description: >-
-  [ACL 2026][LLM (Other)][DPP] Voyager is a training-free LLM data generation algorithm that maintains diverse anchors and explorers using DPP, while iteratively rewriting prompts using textual gradients. It significantly improves Vendi diversity in creative writing and reasoning data generation with minimal sacrifice to quality.
+  [ACL 2026][LLM (Other)][Data diversity] Voyager is a training-free LLM data generation algorithm that maintains diverse anchors and explorers using DPP, while iteratively rewriting prompts using textual gradients. It significantly improves Vendi diversity in creative writing and reasoning data generation with minimal sacrifice to quality.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - DPP
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Data diversity"
+  - "synthetic data generation"
+  - "DPP"
+  - "textual gradients"
+  - "LLM sampling"
 date: 2026-05-08
-content_hash: 9e0bd86b41d8d0ce
+content_hash: 7e50548c0ccd6494
 ---
+
 # VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs
 
 **Conference**: ACL 2026  
@@ -150,14 +155,17 @@ The ablation section validates two core modules: DPP explorer selection and text
 
 <div class="related-papers" markdown="1">
 
-[1] Vendi Score: A Diversity Metric for Machine Learning. (arXiv:2210.01134)
-[2] Determinantal Point Processes for Machine Learning. (Foundations and Trends in Machine Learning)
-[3] Large Language Models Are Human-Level Prompt Engineers. (arXiv:2211.01910 - Inspiration for textual gradients)
+## Related Papers
+
+- [\[ACL 2025\] Token Prepending: A Training-Free Approach for Eliciting Better Sentence Embeddings from LLMs](../../ACL2025/llm_nlp/token_prepending_training_free.md)
+- [\[ACL 2025\] A Training-free LLM-based Approach to General Chinese Character Error Correction](../../ACL2025/llm_nlp/a_training-free_llm-based_approach_to_general_chinese_character_error_correction.md)
+- [\[ICML 2025\] Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets](../../ICML2025/llm_nlp/safe_delta_consistently_preserving_safety_when_fine-tuning_llms_on_diverse_datas.md)
+- [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](../../NeurIPS2025/llm_nlp/speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
+- [\[ACL 2025\] Training-free LLM Merging for Multi-task Learning](../../ACL2025/llm_nlp/training-free_llm_merging_for_multi-task_learning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] Token Prepending: A Training-Free Approach for Eliciting Better Sentence Embeddings from LLMs](../../ACL2025/llm_nlp/token_prepending_training_free.md)

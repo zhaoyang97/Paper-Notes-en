@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA acceleration] FALQON eliminates the small-matrix quantization overhead introduced by standalone LoRA paths by directly melding LoRA adapters into FP8-quantized backbone weights. Com…
+  [NeurIPS 2025][Model Compression][LoRA acceleration] FALQON eliminates the small-matrix quantization overhead introduced by standalone LoRA paths by directly melding LoRA adapters into FP8-quantized backbone weights. Combined with efficient gradient computation and a row-wise proxy update mechanism, it achieves approximately 3× training speedup over existing quantized LoRA methods.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LLM fine-tuning"
   - "quantization overhead"
 date: 2026-05-08
-content_hash: e8129f896b65e314
+content_hash: 09d09528affdc2ba
 ---
 
 # FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic
@@ -138,11 +138,11 @@ FP8 LoRA overhead analysis (LLaMA-7B, rank=64):
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] EMLoC: Emulator-based Memory-efficient Fine-tuning with LoRA Correction](emloc_emulator-based_memory-efficient_fine-tuning_with_lora_correction.md)
 - [\[NeurIPS 2025\] Loquetier: A Virtualized Multi-LoRA Framework for Unified LLM Fine-tuning and Serving](loquetier_a_virtualized_multi-lora_framework_for_unified_llm_fine-tuning_and_ser.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
-- [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
-- [\[NeurIPS 2025\] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization](paretoq_improving_scaling_laws_in_extremely_low-bit_llm_quantization.md)
+- [\[ICML 2026\] ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training](../../ICML2026/model_compression/reqat_achieving_full-precision_reasoning_accuracy_with_4-bit_floating-point_quan.md)
 
 </div>
 

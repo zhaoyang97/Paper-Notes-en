@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][ReflectDrive] ReflectDrive discretizes 2D driving space into an action codebook, uses a pre-trained Diffusion Language Model (DLM) for VLA trajectory planning, and layers a gradient-free "reflection mechanism"—performing local searches on unsafe tokens to find safety anchors, followed by diffusion inpainting to regenerate surroundin
+  [ICLR 2026][Autonomous Driving][ReflectDrive] ReflectDrive discretizes 2D driving space into an action codebook, uses a pre-trained Diffusion Language Model (DLM) for VLA trajectory planning, and layers a gradient-free "reflection mechanism"—performing local searches on unsafe tokens to find safety anchors, followed by diffusion inpainting to regenerate surrounding trajectories. It achieves a PDMS of 91.1 (approaching the human score of 94.8) on the NAVSIM closed-loop benchma…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - ReflectDrive
-  - NAVSIM
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "ReflectDrive"
+  - "Discrete Diffusion"
+  - "Reflection Mechanism"
+  - "Safety Trajectory Generation"
+  - "NAVSIM"
+  - "Trajectory Inpainting"
 date: 2026-05-08
-content_hash: 0c9ae3cbd64793e9
+content_hash: 46f4ffea040ed60a
 ---
+
 # Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving
 
 **Conference**: ICLR 2026  

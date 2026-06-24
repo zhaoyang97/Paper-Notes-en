@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers
 description: >-
-  [CVPR 2026][Interpretability][Hessian] H-Sets utilizes the input Hessian to detect second-order (non-additive) interactions between pixels, recursively merging them into semantically coherent feature sets. It then scores each set using IDG-Vis (Integrated Directional Gradients + Harsanyi Dividends) at the set level, ultimately producing saliency maps that a
+  [CVPR 2026][Interpretability][Feature Interactions] H-Sets utilizes the input Hessian to detect second-order (non-additive) interactions between pixels, recursively merging them into semantically coherent feature sets. It then scores each set using IDG-Vis (Integrated Directional Gradients + Harsanyi Dividends) at the set level, ultimately producing saliency maps that are sparser and more faithful than existing methods.
 tags:
-  - CVPR 2026
-  - Interpretability
-  - Hessian
-  - SAM
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Feature Interactions"
+  - "Hessian"
+  - "Saliency Map"
+  - "Harsanyi Dividends"
+  - "SAM"
 date: 2026-05-08
-content_hash: 674515956c75f082
+content_hash: 7a52faae3db8fd6c
 ---
+
 # H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers
 
 **Conference**: CVPR 2026  
@@ -156,10 +160,10 @@ Spatial Prior Ablation (Faithfulness, selected):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
 - [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](../../ICLR2026/interpretability/seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
 - [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
-- [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](../../AAAI2026/interpretability/unsupervised_feature_selection_through_group_discovery.md)
 - [\[CVPR 2026\] Make it SING: Analyzing Semantic Invariants in Classifiers](make_it_sing_analyzing_semantic_invariants_in_classifiers.md)
 
 </div>

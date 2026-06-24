@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Pareto Variational Autoencoder
 description: >-
-  [ICLR 2026][Image Generation][VAE] To address the issues of Gaussian VAEs underestimating tail probabilities and over-regularizing the latent space, this paper proposes a multivariate heavy-tailed distribution based on the $\ell_1$-norm—the symmetric Pareto (symPareto). By substituting the KL divergence with the γ-power divergence from information geome
+  [ICLR 2026][Image Generation][Heavy-tailed distributions] To address the issues of Gaussian VAEs underestimating tail probabilities and over-regularizing the latent space, this paper proposes a multivariate heavy-tailed distribution based on the $\ell_1$-norm—the symmetric Pareto (symPareto). By substituting the KL divergence with the γ-power divergence from information geometry, the authors construct ParetoVAE with a closed-form loss. It significantly outperforms VAEs based…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VAE
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Heavy-tailed distributions"
+  - "Symmetric Pareto"
+  - "γ-power divergence"
+  - "Information geometry"
+  - "VAE"
 date: 2026-05-08
-content_hash: a00470c98fcdd8b0
+content_hash: cf825e3dc0e94d29
 ---
+
 # Pareto Variational Autoencoder
 
 **Conference**: ICLR 2026  
@@ -174,14 +179,17 @@ While the paper does not have a "module removal" ablation section, it uses the c
 
 <div class="related-papers" markdown="1">
 
-- **t3VAE**: Kim et al., 2024. "Joint Minimization of γ-Power Divergence for Heavy-tailed VAEs."
-- **LaplaceVAE**: Geadah et al., 2024. "Laplace Variational Autoencoders."
-- **Information Geometry of VAE**: Nielsen et al. "On the Information Geometry of Variational Autoencoding."
+## Related Papers
+
+- [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)
+- [\[ICLR 2026\] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling](variational_autoencoding_discrete_diffusion_with_enhanced_dimensional_correlatio.md)
+- [\[CVPR 2026\] SRA 2: Variational Autoencoder Self-Representation Alignment for Efficient Diffusion Training](../../CVPR2026/image_generation/sra_2_variational_autoencoder_self-representation_alignment_for_efficient_diffus.md)
+- [\[ICLR 2026\] Discrete Variational Autoencoding via Policy Search](discrete_variational_autoencoding_via_policy_search.md)
+- [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Latent Diffusion Model without Variational Autoencoder](latent_diffusion_model_without_variational_autoencoder.md)

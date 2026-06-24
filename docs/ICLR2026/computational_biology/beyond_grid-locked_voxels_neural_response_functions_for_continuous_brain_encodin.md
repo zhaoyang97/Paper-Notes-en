@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Grid-Locked Voxels: Neural Response Functions for Continuous Brain Encoding
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes NRF (Neural Response Function), which transforms fMRI visual encoding from "regressing discrete voxel vectors for each subject" to "learning a continuous implicit function $\Phi(M,x)$ in standard MNI anatomical space." By taking an image $M$ and coordinates $x=(x,y,z)$ as input to directly predict t
+  [ICLR2026][Computational Biology][fMRI encoding model] This paper proposes NRF (Neural Response Function), which transforms fMRI visual encoding from "regressing discrete voxel vectors for each subject" to "learning a continuous implicit function $\Phi(M,x)$ in standard MNI anatomical space." By taking an image $M$ and coordinates $x=(x,y,z)$ as input to directly predict the brain response at that location, the model leverages local smoothing of voxels and cross-subject anato…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "fMRI encoding model"
+  - "implicit neural representation"
+  - "MNI anatomical coordinates"
+  - "cross-subject transfer"
+  - "data-efficient"
 date: 2026-05-08
-content_hash: 7a1e8aaee7dd138a
+content_hash: 9143db046fde93b9
 ---
+
 # Beyond Grid-Locked Voxels: Neural Response Functions for Continuous Brain Encoding
 
 **Conference**: ICLR2026  
@@ -171,7 +177,7 @@ In addition, perturbation experiments to "probe anatomical awareness" (Figure 4)
 - [\[ICLR 2026\] TRIBE: Trimodal Brain Encoder for Whole-Brain fMRI Response Prediction](tribe_trimodal_brain_encoder_for_whole-brain_fmri_response_prediction.md)
 - [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
 - [\[ICLR 2026\] OmniMouse: Scaling properties of multi-modal, multi-task Brain Models on 150B Neural Tokens](omnimouse_scaling_properties_of_multi-modal_multi-task_brain_models_on_150b_neur.md)
-- [\[ICLR 2026\] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space](beyond_ensembles_simulating_all-atom_protein_dynamics_in_a_learned_latent_space.md)
+- [\[ICLR 2026\] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction](deepsadr_deep_transfer_learning_with_subsequence_interaction_and_adaptive_readou.md)
 
 </div>
 

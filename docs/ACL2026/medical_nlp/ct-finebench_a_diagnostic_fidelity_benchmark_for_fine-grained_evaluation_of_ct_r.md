@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] CT-FineBench: A Diagnostic Fidelity Benchmark for Fine-Grained Evaluation of CT Report Generation
 description: >-
-  [ACL 2026][Medical NLP][QA-based metric] The authors decompose the ambiguous question of "quality of a CT report" into a QA checklist of "whether each fine-grained attribute of every finding matches," constructing the CT-FineBench benchmark with 44k questions. Its sensitivity to clinical errors and correlation with human expert scores significantly outperform
+  [ACL 2026][Medical LLM][CT Report Generation] The authors decompose the ambiguous question of "quality of a CT report" into a QA checklist of "whether each fine-grained attribute of every finding matches," constructing the CT-FineBench benchmark with 44k questions. Its sensitivity to clinical errors and correlation with human expert scores significantly outperform existing metrics such as BLEU, BERTScore, RadGraph, RaTEScore, and GREEN.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - QA-based metric
-  - CT-RATE
-  - Merlin
+  - "ACL 2026"
+  - "Medical LLM"
+  - "CT Report Generation"
+  - "Fine-grained Evaluation"
+  - "QA-based metric"
+  - "Clinical Attributes"
+  - "CT-RATE"
+  - "Merlin"
 date: 2026-05-08
-content_hash: 605cb8e002d74005
+content_hash: dfc60e8d98767c84
 ---
+
 # CT-FineBench: A Diagnostic Fidelity Benchmark for Fine-Grained Evaluation of CT Report Generation
 
 **Conference**: ACL 2026  

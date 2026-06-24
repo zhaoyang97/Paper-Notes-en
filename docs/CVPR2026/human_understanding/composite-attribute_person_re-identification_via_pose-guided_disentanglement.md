@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Aiming at the natural but ambiguous query of "reference image + short keyword attributes," this paper proposes the CA-ReID task. It utilizes pose-guided "Part-Aware Representation (PAR)" to bind textual attributes to corresponding body regions and employs "Dense Disentanglement Loss (DDL)" to separate identity and attr
+  [CVPR 2026][Human Understanding][Person Re-ID] Aiming at the natural but ambiguous query of "reference image + short keyword attributes," this paper proposes the CA-ReID task. It utilizes pose-guided "Part-Aware Representation (PAR)" to bind textual attributes to corresponding body regions and employs "Dense Disentanglement Loss (DDL)" to separate identity and attribute dimensions. This approach improves Recall@1 for Hard queries by up to +17% on the self-built composite attr…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Person Re-ID"
+  - "Composite Attribute Retrieval"
+  - "Pose-Guided Disentanglement"
+  - "Part-Aware Representation"
+  - "Multi-Modal Retrieval"
 date: 2026-05-08
-content_hash: b526b538692a364c
+content_hash: ddfe93209bc0d1ac
 ---
+
 # Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement
 
 **Conference**: CVPR 2026  
@@ -148,16 +154,16 @@ Ablation on Celeb-ReID-L (Composite) and LTCC (Standard Cloth-Changing):
 - Value: ⭐⭐⭐⭐ Short keyword retrieval is a real-world interaction pain point; PAR + DDL has high transfer value for controllable attribute retrieval.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 - [\[CVPR 2026\] Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification](pose-guided_enriched_feature_learning_for_federated-by-camera_person_re-identifi.md)
-- [\[CVPR 2026\] WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification](whu-mars_a_multispectral_aerial-ground_benchmark_towards_any-scenario_person_re-.md)
-- [\[CVPR 2026\] SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification](ssm-aware_token-efficient_vmamba_via_adaptive_patch_pruning_and_merging_for_pers.md)
 - [\[CVPR 2026\] Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification](dynamic_magic_unleashing_restricted_knowledge_for_lifelong_person_re-identificat.md)
+- [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
+- [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities
 description: >-
-  [AAAI 2026][LLM Reasoning][Large Reasoning Models] This paper systematically evaluates the negative impact of deliberative reasoning on foundational capabilities (helpfulness and harmlessness) in Large Reasoning Models (…
+  [AAAI 2026][Reasoning][Large Reasoning Models] This paper systematically evaluates the negative impact of deliberative reasoning on foundational capabilities (helpfulness and harmlessness) in Large Reasoning Models (LRMs) such as DeepSeek-R1, QwQ, and OpenThinker. It finds that deliberative reasoning significantly degrades instruction-following and safety, and proposes adaptive reasoning modes—Zero-Thinking, Less-Thinking, and Summary-Thinking—that effectively mitigate these…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Large Reasoning Models"
   - "Reasoning–Foundational Capability Trade-offs"
   - "Adaptive Reasoning"
   - "Zero-Thinking"
   - "Safety"
 date: 2026-05-08
-content_hash: 506e840af9ca62d3
+content_hash: 90ba8de4ac691a02
 ---
 
 # Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities

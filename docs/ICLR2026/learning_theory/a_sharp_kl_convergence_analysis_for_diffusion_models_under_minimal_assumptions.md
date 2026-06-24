@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions
 description: >-
-  [ICLR 2026][learning_theory][Diffusion Model] This paper provides a sharper KL divergence convergence analysis for diffusion models (DDPM samplers) under the minimal assumption of "only $L^2$ accuracy of score estimation, without assuming any smoothness." By modeling the generation process as "one-step probability flow ODE + one small noise-addition step" and deve
+  [ICLR2026][Learning Theory][Diffusion Models] This paper provides a sharper KL divergence convergence analysis for diffusion models (DDPM samplers) under the minimal assumption of "only $L^2$ accuracy of score estimation, without assuming any smoothness." By modeling the generation process as "one-step probability flow ODE + one small noise-addition step" and developing new proof techniques to handle the second-order spatial derivatives of the score (Laplacian)…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Diffusion Model
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Diffusion Model Convergence Analysis"
+  - "Diffusion Models"
+  - "KL Convergence"
+  - "Probability Flow ODE"
+  - "Stochastic Localization"
+  - "Discretization Error"
 date: 2026-05-08
-content_hash: 694269addf6ea45a
+content_hash: fba269c0178a4143
 ---
+
 # A Sharp KL Convergence Analysis for Diffusion Models under Minimal Assumptions
 
 **Conference**: ICLR2026  
@@ -113,15 +119,16 @@ As a purely theoretical paper, **there are no numerical experiments**. The contr
 - Value: ⭐⭐⭐⭐ Establishes a new SOTA for KL convergence theory in diffusion models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 - [\[ICLR 2026\] Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis](best-of-n_through_the_smoothing_lens_kl_divergence_and_regret_analysis.md)
 - [\[ICLR 2026\] Finite-Time Convergence Analysis of ODE-based Generative Models for Stochastic Interpolants](finite-time_convergence_analysis_of_ode-based_generative_models_for_stochastic_i.md)
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
-- [\[ICLR 2026\] Provable Separations between Memorization and Generalization in Diffusion Models](provable_separations_between_memorization_and_generalization_in_diffusion_models.md)
 
 </div>
 

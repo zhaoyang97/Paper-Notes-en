@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Entropy Regularizing Activation: Boosting Continuous Control, Large Language Models, and Image Classification with Activation as Entropy Constraints
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] ERA (Entropy Regularizing Activation) imposes an entropy lower bound constraint by appending a specialized activation function to the network output layer. This approach requires no modification to the loss function and improves performance across continuous control RL, LLM reasoning, and image classification within a
+  [ICLR 2026][Reinforcement Learning][Entropy Regularization] ERA (Entropy Regularizing Activation) imposes an entropy lower bound constraint by appending a specialized activation function to the network output layer. This approach requires no modification to the loss function and improves performance across continuous control RL, LLM reasoning, and image classification within a single framework.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Entropy Regularization"
+  - "Activation Function"
+  - "Maximum Entropy Reinforcement Learning"
+  - "Policy Entropy Constraint"
+  - "LLM Alignment"
 date: 2026-05-08
-content_hash: 839168465271ac6b
+content_hash: 81dd8c9b6d7e9003
 ---
+
 # Entropy Regularizing Activation: Boosting Continuous Control, Large Language Models, and Image Classification with Activation as Entropy Constraints
 
 **Conference**: ICLR 2026  
@@ -153,8 +159,8 @@ All three instantiations are accompanied by rigorous proofs of entropy lower bou
 
 ## Related Papers
 
-- [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
 - [\[ICLR 2026\] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies](goldenstart_q-guided_priors_and_entropy_control_for_distilling_flow_policies.md)
+- [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
 - [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
 - [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)

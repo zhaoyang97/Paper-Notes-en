@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Reasoning Abilities of Masked Diffusion Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] This paper provides the first formal characterization of the reasoning capabilities of Masked Diffusion Language Models (MDM). It proves that MDM in a finite-precision logarithmic-width setting is strictly equivalent to "Padded Looping Transformers (PLT)," capable of simulating all problems solvable by Chain-of-Thought
+  [ICLR 2026][Reasoning][Masked Diffusion Models] This paper provides the first formal characterization of the reasoning capabilities of Masked Diffusion Language Models (MDM). It proves that MDM in a finite-precision logarithmic-width setting is strictly equivalent to "Padded Looping Transformers (PLT)," capable of simulating all problems solvable by Chain-of-Thought (CoT), while being strictly more efficient than CoT on parallelizable problems (e.g.…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Masked Diffusion Models"
+  - "Parallel Reasoning"
+  - "Chain-of-Thought"
+  - "Looping Transformer"
+  - "Circuit Complexity"
 date: 2026-05-08
-content_hash: d4745a06738f026c
+content_hash: da2aab62d306d72a
 ---
+
 # On the Reasoning Abilities of Masked Diffusion Language Models
 
 **Conference**: ICLR 2026  

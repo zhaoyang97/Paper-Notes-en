@@ -4,14 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Interpretability][weight diff] By training a LoRA adapter (DIT-adapter) using "synthetic, labeled weight differences," any fine-tuned language model can **describe in natural language how it was changed by fine-tuning**, thereby converting unreadable weight differences (weight diffs) into human-readable behavioral descriptions.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - weight diff
-  - LoRA
-  - Diff Interpretation Tuning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "weight diff"
+  - "interpretability for fine-tuning"
+  - "LoRA"
+  - "model introspection"
+  - "backdoor detection"
+  - "Diff Interpretation Tuning"
 date: 2026-05-08
-content_hash: 85c35732ece37a69
+content_hash: c8c05007fdb753ee
 ---
+
 # Learning to Interpret Weight Differences in Language Models
 
 **Conference**: ICLR 2026  

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases
 description: >-
-  [ACL 2026][LLM Evaluation][PlanJudge] This paper systematically compares the performance of reasoning models versus standard LLMs as judges. It finds that while reasoning models exhibit superior accuracy, evaluation instruction following, and attack robustness, they remain susceptible to surface-level quality biases. The authors propose PlanJudge, a prompt
+  [ACL 2026][LLM Evaluation][Reasoning Model Judgment] This paper systematically compares the performance of reasoning models versus standard LLMs as judges. It finds that while reasoning models exhibit superior accuracy, evaluation instruction following, and attack robustness, they remain susceptible to surface-level quality biases. The authors propose PlanJudge, a prompt-only strategy to mitigate these biases.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - PlanJudge
-  - RewardBench
-  - BiasBench
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Reasoning Model Judgment"
+  - "Evaluation Biases"
+  - "PlanJudge"
+  - "RewardBench"
+  - "BiasBench"
 date: 2026-05-08
-content_hash: 8b96dd4f72e86881
+content_hash: 93607bed71b419d3
 ---
+
 # Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases
 
 **Conference**: ACL 2026  
@@ -159,7 +162,7 @@ The PlanJudge combined strategy significantly improves BiasBench performance whi
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 - [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
 - [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](../../ICML2026/llm_evaluation/reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](../../ICML2026/llm_evaluation/real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
+- [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
 
 </div>
 

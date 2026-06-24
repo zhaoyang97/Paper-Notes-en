@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper reformulates the multi-objective loss reweighting of residual and boundary terms in PINN training as a non-Euclidean non-convex strongly-concave saddle-point problem. By utilizing AdaBGDA to dynamically update network parameters and loss weights, the approach significantly improves training stability and $L_
+  [ICLR 2026][Physics & Scientific Computing][Physics-Informed Neural Networks] This paper reformulates the multi-objective loss reweighting of residual and boundary terms in PINN training as a non-Euclidean non-convex strongly-concave saddle-point problem. By utilizing AdaBGDA to dynamically update network parameters and loss weights, the approach significantly improves training stability and $L_2$ relative error across 22 PDE benchmarks in PINNacle and 3D Navier-Stokes challe…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Physics-Informed Neural Networks"
+  - "Saddle-Point Optimization"
+  - "Loss Reweighting"
+  - "Bregman Divergence"
+  - "Scientific Machine Learning"
 date: 2026-05-08
-content_hash: c76c36fe15a03401
+content_hash: c6af15d4666cdc93
 ---
+
 # Enhancing Stability of Physics-Informed Neural Network Training Through Saddle-Point Reformulation
 
 **Conference**: ICLR 2026  

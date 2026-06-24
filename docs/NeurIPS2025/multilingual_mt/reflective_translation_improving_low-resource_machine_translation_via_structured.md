@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][low-resource translation] This paper proposes the Reflective Translation framework, which enables LLMs to perform structured self-critique of their initial translations…
+  [NeurIPS 2025][Multilingual & Machine Translation][low-resource translation] This paper proposes the Reflective Translation framework, which enables LLMs to perform structured self-critique of their initial translations at inference time—identifying mistranslations, omissions, and semantic distortions—and subsequently generate revised translations based on this critique. The approach requires no fine-tuning or additional annotated data, yet achieves statistically significant…
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -14,7 +14,7 @@ tags:
   - "isiXhosa"
   - "RAKE masking"
 date: 2026-05-08
-content_hash: bbf82048ae6097ab
+content_hash: 3c4e6ef3abb6bb93
 ---
 
 # Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection
@@ -189,11 +189,11 @@ Stricter thresholds restrict reflection-correction to the lowest-quality transla
 
 ## Related Papers
 
-- [\[AAAI 2026\] ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation](../../AAAI2026/multilingual_mt/vidia2std_a_parallel_corpus_and_methods_for_low-resource_vietnamese_dialect-to-s.md)
+- [\[ACL 2025\] Accessible Machine Translation Evaluation For Low-Resource Languages](../../ACL2025/multilingual_mt/accessible_machine_translation_evaluation_for_low-resource_languages.md)
+- [\[ACL 2025\] Understanding In-Context Machine Translation for Low-Resource Languages: A Case Study on Manchu](../../ACL2025/multilingual_mt/understanding_in-context_machine_translation_for_low-resource_languages_a_case_s.md)
+- [\[ACL 2025\] GrammaMT: Improving Machine Translation with Grammar-Informed In-Context Learning](../../ACL2025/multilingual_mt/grammamt_improving_machine_translation_with_grammar-informed_in-context_learning.md)
 - [\[NeurIPS 2025\] Exploring the Translation Mechanism of Large Language Models](exploring_the_translation_mechanism_of_large_language_models.md)
-- [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
-- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Translation Evaluation](../../ACL2026/multilingual_mt/beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
-- [\[ACL 2026\] Evaluating the Impact of Verbal Multiword Expressions on Machine Translation](../../ACL2026/multilingual_mt/evaluating_the_impact_of_verbal_multiword_expressions_on_machine_translation.md)
+- [\[AAAI 2026\] ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation](../../AAAI2026/multilingual_mt/vidia2std_a_parallel_corpus_and_methods_for_low-resource_vietnamese_dialect-to-s.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis
 description: >-
-  [ICLR 2026][Multi-Agent][scRNA-seq] CellAgent utilizes a three-tier agent architecture (Planner-Executor-Evaluator) combined with an expert toolbox (sc-Omni) and a self-reflective optimization mechanism. It enables researchers to perform end-to-end single-cell RNA sequencing and spatial transcriptomics analysis using only natural language, achieving qual
+  [ICLR 2026][Multi-Agent][scRNA-seq] CellAgent utilizes a three-tier agent architecture (Planner-Executor-Evaluator) combined with an expert toolbox (sc-Omni) and a self-reflective optimization mechanism. It enables researchers to perform end-to-end single-cell RNA sequencing and spatial transcriptomics analysis using only natural language, achieving quality comparable to or exceeding that of human experts across multiple downstream tasks.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - scRNA-seq
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "scRNA-seq"
+  - "Spatial Transcriptomics"
+  - "Self-Reflective Optimization"
+  - "Tool Calling"
 date: 2026-05-08
-content_hash: 3c3510b5c34cc494
+content_hash: 0de110c92fdba8b8
 ---
+
 # CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis
 
 **Conference**: ICLR 2026  

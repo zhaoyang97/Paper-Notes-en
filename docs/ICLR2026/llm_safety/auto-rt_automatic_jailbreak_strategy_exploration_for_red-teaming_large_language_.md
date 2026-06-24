@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Reinforcement Learning] Auto-RT models the discovery of "jailbreak vulnerabilities in LLMs" as a sequential decision problem, utilizing Reinforcement Learning to automatically explore **attack strategies** (rather than fixed templates). By employing dynamic strategy pruning to eliminate redundant exploration and progressive reward tracking to
+  [ICLR2026][LLM Safety][Automatic Red-Teaming] Auto-RT models the discovery of "jailbreak vulnerabilities in LLMs" as a sequential decision problem, utilizing Reinforcement Learning to automatically explore **attack strategies** (rather than fixed templates). By employing dynamic strategy pruning to eliminate redundant exploration and progressive reward tracking to mitigate reward sparsity, the method improves attack success rates by up to 16.63% across 18 models.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Automatic Red-Teaming"
+  - "Jailbreak"
+  - "Reinforcement Learning"
+  - "Reward Shaping"
+  - "Safety Evaluation"
 date: 2026-05-08
-content_hash: 565834d4f6cae798
+content_hash: 2ee2c5b78a402374
 ---
+
 # Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models
 
 **Conference**: ICLR2026  
@@ -142,6 +147,7 @@ Auto-RT achieved the highest $\text{ASR}_{tst}$ across nearly all models, signif
 - **Value**: ⭐⭐⭐⭐⭐ (Provides both a practical tool and a transferable paradigm for adversarial exploration).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

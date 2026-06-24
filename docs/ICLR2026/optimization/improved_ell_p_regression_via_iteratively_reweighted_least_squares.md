@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Improved ℓp Regression via Iteratively Reweighted Least Squares
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper introduces a novel IRLS algorithm for $\ell_p$ regression with $p \in (1, \infty)$ from a primal-dual perspective. By employing a lightweight multiplicative update rule, it achieves an iteration complexity of $O\!\big(p^2 n^{\frac{p-2}{3p-2}}\log\frac{n}{\epsilon}\big)$. This marks the first time a practical
+  [ICLR 2026][Optimization][$\ell_p$ regression] This paper introduces a novel IRLS algorithm for $\ell_p$ regression with $p \in (1, \infty)$ from a primal-dual perspective. By employing a lightweight multiplicative update rule, it achieves an iteration complexity of $O\!\big(p^2 n^{\frac{p-2}{3p-2}}\log\frac{n}{\epsilon}\big)$. This marks the first time a practical IRLS method has attained the optimal iteration bounds previously only held by complex theoretical algorithms…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "$\\ell_p$ regression"
+  - "Iteratively Reweighted Least Squares (IRLS)"
+  - "Primal-Dual"
+  - "Iterative Refinement"
+  - "Linear System Solving"
 date: 2026-05-08
-content_hash: ada4fefa68dddfa6
+content_hash: 3825c967a21ac143
 ---
+
 # Improved ℓp Regression via Iteratively Reweighted Least Squares
 
 **Conference**: ICLR 2026  

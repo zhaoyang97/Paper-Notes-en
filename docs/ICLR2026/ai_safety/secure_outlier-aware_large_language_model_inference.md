@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Secure Outlier-Aware Large Language Model Inference
 description: >-
-  [ICLR 2026][AI Safety][MPC] This paper proposes the SOAL framework, identifying that "outlier activations" are prevalent in the nonlinear layers (Normalization, Activation, Softmax) of LLMs. By prefixing special tokens to the input to "confine" outliers to fixed positions and redesigning MPC nonlinear protocols for the narrowed input domains, the
+  [ICLR 2026][AI Safety][Secure Multi-Party Computation] This paper proposes the SOAL framework, identifying that "outlier activations" are prevalent in the nonlinear layers (Normalization, Activation, Softmax) of LLMs. By prefixing special tokens to the input to "confine" outliers to fixed positions and redesigning MPC nonlinear protocols for the narrowed input domains, the framework accelerates RMSNorm by ~2×, SiLU by ~2×, and Softmax by over 3×…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - MPC
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Secure Multi-Party Computation"
+  - "MPC"
+  - "LLM Inference"
+  - "Outliers"
+  - "Nonlinear Protocols"
 date: 2026-05-08
-content_hash: 16ca00d3714a1187
+content_hash: 511a7bf3c79c8792
 ---
+
 # Secure Outlier-Aware Large Language Model Inference
 
 **Conference**: ICLR 2026  
@@ -146,11 +150,11 @@ In cross-model perplexity (WikiText-2 / C4), the PPL for GPT-2, Llama2-7B, and M
 
 ## Related Papers
 
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](../../ICML2026/ai_safety/differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
 - [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
+- [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](../../ICML2026/ai_safety/forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
 - [\[ICML 2025\] SecEmb: Sparsity-Aware Secure Federated Learning of On-Device Recommender System with Large Embedding](../../ICML2025/ai_safety/secemb_sparsity-aware_secure_federated_learning_of_on-device_recommender_system_.md)
-- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](../../ICML2026/ai_safety/differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
-- [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](../../ICML2026/ai_safety/fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
 
 </div>
 

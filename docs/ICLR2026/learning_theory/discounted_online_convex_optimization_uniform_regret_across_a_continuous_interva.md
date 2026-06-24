@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval
 description: >-
-  [ICLR 2026][learning_theory][Discounted-Normal-Predictor] Addressing the open problem of the unknown discount factor $\lambda$ in Online Convex Optimization (OCO), this paper proves that Smoothed OGD (SOGD) achieves a uniform discounted regret bound of $O(\sqrt{\log T/(1-\lambda)})$ across a continuous interval for **all** $\lambda$ **simultaneously**, without prior knowledge
+  [ICLR 2026][learning_theory][Online Convex Optimization] Addressing the open problem of the unknown discount factor $\lambda$ in Online Convex Optimization (OCO), this paper proves that Smoothed OGD (SOGD) achieves a uniform discounted regret bound of $O(\sqrt{\log T/(1-\lambda)})$ across a continuous interval for **all** $\lambda$ **simultaneously**, without prior knowledge of the true discount factor.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Discounted-Normal-Predictor
+  - "ICLR 2026"
+  - "learning_theory"
+  - "Online Convex Optimization"
+  - "Discounted Regret"
+  - "Adaptive Regret"
+  - "Discounted-Normal-Predictor"
+  - "Unknown Discount Factor"
 date: 2026-05-08
-content_hash: e31719a7d51a79f5
+content_hash: e5dce98d48f9a3ac
 ---
+
 # Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval
 
 **Conference**: ICLR 2026  

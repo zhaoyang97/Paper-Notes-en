@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation
 description: >-
-  [ICML 2026][Optimization & Theory][conformal prediction] This paper proposes the AgentPulse framework, which combines split conformal prediction, adaptive conformal inference (ACI), Mondrian conformal, and BH-FDR to provide distribution-free coverage guarantees, composite pipeline uncertainty bounds, and ranking abstention mechanisms with FDR control for continuous scoring o
+  [ICML 2026][Optimization][conformal prediction] This paper proposes the AgentPulse framework, which combines split conformal prediction, adaptive conformal inference (ACI), Mondrian conformal, and BH-FDR to provide distribution-free coverage guarantees, composite pipeline uncertainty bounds, and ranking abstention mechanisms with FDR control for continuous scoring of 50 AI agents, treating "measurement uncertainty" as a first-class evaluation output.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - conformal prediction
-  - ACI
-  - agent evaluation
-  - FDR
-  - Mondrian
+  - "ICML 2026"
+  - "Optimization"
+  - "conformal prediction"
+  - "ACI"
+  - "agent evaluation"
+  - "FDR"
+  - "Mondrian"
 date: 2026-05-08
-content_hash: 49b025fedb1ada7b
+content_hash: 54d14209c0931faa
 ---
+
 # Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation
 
 **Conference**: ICML 2026  
@@ -131,11 +132,20 @@ Coverage repair and multiple testing perturbations:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-...
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics](../../NeurIPS2025/optimization/uncertainty_quantification_for_reduced-order_surrogate_models_applied_to_cloud_m.md)
+- [\[ICML 2026\] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation](ho-sfl_hybrid-order_split_federated_learning_with_backprop-free_clients_and_dime.md)
+- [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
+- [\[ICML 2026\] LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers](lore_adaptive_interaction-evaluation_routing_with_per-step_interaction_budgets_f.md)
+- [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Uncertainty Quantification for Reduced-Order Surrogate Models Applied to Cloud Microphysics](../../NeurIPS2025/optimization/uncertainty_quantification_for_reduced-order_surrogate_models_applied_to_cloud_m.md)

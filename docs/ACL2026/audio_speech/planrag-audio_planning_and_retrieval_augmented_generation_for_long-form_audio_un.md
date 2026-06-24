@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] PlanRAG-Audio reformulates long-form audio understanding as a process of "planning which modalities and time segments to query, then retrieving evidence from a structured audio database." This reduces the LLM input for a 60-minute audio from approximately 115k tokens to about 1k tokens, while significantly improving pe
+  [ACL2026 Findings][Audio & Speech][Long-form Audio Understanding] PlanRAG-Audio reformulates long-form audio understanding as a process of "planning which modalities and time segments to query, then retrieving evidence from a structured audio database." This reduces the LLM input for a 60-minute audio from approximately 115k tokens to about 1k tokens, while significantly improving performance in speaker counting, event ordering, and speaker-constrained QA.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026 Findings"
+  - "Audio & Speech"
+  - "Long-form Audio Understanding"
+  - "Retrieval Planning"
+  - "Structured Audio Database"
+  - "SQL Retrieval"
+  - "Multimodal Audio Reasoning"
 date: 2026-05-08
-content_hash: 51f84cabcc7bd098
+content_hash: e34c6440c2691f2a
 ---
+
 # PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding
 
 **Conference**: ACL2026 Findings  
@@ -139,7 +145,7 @@ PlanRAG-Audio does not train an end-to-end model but combines off-the-shelf perc
 - [\[ACL 2026\] MARQUIS: A Three-Stage Pipeline for Video Retrieval-Augmented Generation](marquis_a_three-stage_pipeline_for_video_retrieval-augmented_generation.md)
 - [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](../../CVPR2026/audio_speech/audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
 - [\[ACL 2025\] WavRAG: Audio-Integrated Retrieval Augmented Generation for Spoken Dialogue Models](../../ACL2025/audio_speech/wavrag_audio-integrated_retrieval_augmented_generation_for_spoken_dialogue_model.md)
-- [\[ICML 2025\] Long-Form Speech Generation with Spoken Language Models](../../ICML2025/audio_speech/long-form_speech_generation_with_spoken_language_models.md)
+- [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](../../ICLR2026/audio_speech/yue_scaling_open_foundation_models_for_long-form_music_generation.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NITP: Next Implicit Token Prediction for LLM Pre-training
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] NITP provides continuous representation-space supervision for the final hidden states by using **shallow representations as implicit targets**. This supplements standard NTP to prevent hidden representations from degenerating into low-dimensional anisotropic configurations, achieving a 5.7% improvement in MMLU-Pro on a
+  [ICML 2026][Self-Supervised Learning][NTP Representation Degeneration] NITP provides continuous representation-space supervision for the final hidden states by using **shallow representations as implicit targets**. This supplements standard NTP to prevent hidden representations from degenerating into low-dimensional anisotropic configurations, achieving a 5.7% improvement in MMLU-Pro on a 9B MoE and general gains of 4-6% in reasoning tasks with only ~2% additional computation…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "NTP Representation Degeneration"
+  - "Implicit Target"
+  - "Shallow Supervision"
+  - "Cosine Similarity"
 date: 2026-05-08
-content_hash: 703de7be0fee997c
+content_hash: b9c1dd50f0e06fb9
 ---
+
 # NITP: Next Implicit Token Prediction for LLM Pre-training
 
 **Conference**: ICML 2026  
@@ -136,9 +141,9 @@ On the 9B model, MMLU-Pro saw an absolute improvement of 5.7%; reading comprehen
 
 ## Related Papers
 
-- [\[ICLR 2026\] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty](../../ICLR2026/self_supervised/snap-uq_self-supervised_next-activation_prediction_for_single-pass_uncertainty_i.md)
 - [\[CVPR 2026\] In Pursuit of Pixel Supervision for Visual Pre-training](../../CVPR2026/self_supervised/in_pursuit_of_pixel_supervision_for_visual_pre-training.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](../../CVPR2026/self_supervised/com_pt_chain_of_models_pretraining.md)
+- [\[ICLR 2026\] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty](../../ICLR2026/self_supervised/snap-uq_self-supervised_next-activation_prediction_for_single-pass_uncertainty_i.md)
 - [\[CVPR 2026\] Reading Your Actions: Learning Generalizable Action Representations via Pre-training AEMG](../../CVPR2026/self_supervised/reading_your_actions_learning_generalizable_action_representations_via_pre-train.md)
 - [\[ECCV 2024\] Efficient Image Pre-Training with Siamese Cropped Masked Autoencoders](../../ECCV2024/self_supervised/efficient_image_pre-training_with_siamese_cropped_masked_autoencoders.md)
 

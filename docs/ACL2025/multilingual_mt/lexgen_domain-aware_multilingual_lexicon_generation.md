@@ -1,0 +1,148 @@
+---
+title: >-
+  [Paper Note] LexGen: Domain-aware Multilingual Lexicon Generation
+description: >-
+  [ACL 2025][Multilingual & Machine Translation][Lexicon Generation] This paper proposes the LexGen framework, which introduces a learnable "Domain Routing" layer into the decoder of a pre-trained multilingual translation model to achieve dynamic fusion of domain-specific and domain-general knowledge. LexGen outperforms baselines such as NLLB and BLICEr on lexicon generation tasks across 6 Indic languages and 8 domains.
+tags:
+  - "ACL 2025"
+  - "Multilingual & Machine Translation"
+  - "Lexicon Generation"
+  - "Domain-aware"
+  - "Multilingual Translation"
+  - "Gated Routing"
+  - "Indic Languages"
+date: 2026-05-08
+content_hash: 123cd112cf15d955
+---
+
+# LexGen: Domain-aware Multilingual Lexicon Generation
+
+**Conference**: ACL 2025  
+**arXiv**: [2405.11200](https://arxiv.org/abs/2405.11200)  
+**Code**: None  
+**Area**: NLP Understanding / Multilingual Translation  
+**Keywords**: Lexicon Generation, Domain-aware, Multilingual Translation, Gated Routing, Indic Languages
+
+## TL;DR
+
+This paper proposes the LexGen framework, which introduces a learnable "Domain Routing" layer into the decoder of a pre-trained multilingual translation model to achieve dynamic fusion of domain-specific and domain-general knowledge. LexGen outperforms baselines such as NLLB and BLICEr on lexicon generation tasks across 6 Indic languages and 8 domains.
+
+## Background & Motivation
+
+**Background**: Lexicon generation is a task of significant social value, particularly for low-resource languages. Currently, the field predominantly relies on two types of approaches: (1) Bilingual Lexicon Induction (BLI), which discovers translation correspondences through word embedding alignment; (2) Generative model-based methods, which directly generate translations using NMT models. While pre-trained multilingual NMT models (such as NLLB) excel in general translation, they struggle with translating lexicon terminology in specific professional domains (e.g., biotechnology, chemistry).
+
+**Limitations of Prior Work**: (1) BLI methods rely on local context and co-occurrence patterns, failing to enhance the features of domain-specific terms; (2) Pre-trained NMT models are trained on general corpora and have limited ability to translate specialized terminology; (3) Although Large Language Models (such as LLaMA 2) show some efficacy in high-resource languages like Hindi, their support for other Indic languages is poor; (4) Existing domain adaptation methods typically require in-domain parallel data, which is extremely scarce for professional terminology.
+
+**Key Challenge**: The translation of professional domain lexicons requires both domain-specific knowledge (to understand the specialized meanings of terms) and cross-domain general language knowledge (to master the basic translation patterns of the language). Balancing these two within a single model is the key challenge.
+
+**Goal**: To design a domain-aware end-to-end translation framework capable of generating high-quality multilingual domain-specific lexicons with limited training data, while possessing the generalization capability to unseen domains and unseen languages.
+
+**Key Insight**: The authors observe that while terminologies in different domains differ significantly on the surface, the underlying translation patterns (such as morpheme correspondences from English to Indic languages) share structural commonalities. The key is to design a mechanism that dynamically decides whether a term should follow a domain-specific translation path or a general path.
+
+**Core Idea**: Embed a Domain Routing (DR) layer in the decoder layers of a pre-trained Transformer. Through a learnable gating mechanism, this dynamically selects either domain-specific or domain-shared transformation matrices for each token.
+
+## Method
+
+### Overall Architecture
+
+LexGen is based on a pre-trained multilingual Transformer NMT model (pre-trained on the Samanantar dataset). The input consists of English phrases (appended with target language tags), and the output is the translation in the target Indic language. A Domain Routing (DR) layer is inserted after each self-attention layer in the original decoder, which dynamically routes the information flow through either domain-specific or shared channels based on the representation of the current token.
+
+### Key Designs
+
+1. **Domain Routing Layer (DR)**:
+
+    - **Function**: Dynamically selects domain-specific or domain-general transformation paths for each decoder token.
+    - **Mechanism**: The DR layer maintains two weight matrices: $W_{dom}$ (domain-specific) and $W_{shared}$ (cross-domain shared). For the representation $f(z_l)$ from the previous layer, a gating function $g(z_l)$ is used to compute a weighted mixture of the two paths: $DR(f(z_l)) = g(z_l) \cdot W_{dom} f(z_l) + (1-g(z_l)) \cdot W_{shared} f(z_l)$. The gating value is generated by a two-layer feed-forward network: $g(z_l) = \sigma(\text{ReLU}(z_l W_1 + b) W_2)$, learning a binarized hard gate.
+    - **Design Motivation**: Different words require different levels of domain specificity. Common words (such as "the", "is") should follow the shared path, while specialized terms (such as "biosynthesis") should follow the domain-specific path. The gating mechanism allows the model to learn this allocation automatically.
+
+2. **Parameter Sharing Strategy for the DR Layer**:
+
+    - **Function**: Prevents overfitting on small datasets.
+    - **Mechanism**: All DR layers within the decoder blocks share the same set of parameters ($W_{dom}$, $W_{shared}$, and gating network parameters) rather than learning them independently for each layer. This significantly reduces the parameter footprint, which is crucial in scenarios with limited training samples (e.g., some domains have only ~2000 parallel pairs).
+    - **Design Motivation**: Lexicon datasets are typically small (a few thousand entries), making individual parameters across multiple decoder layers highly prone to overfitting.
+
+3. **Sanskrit Root Auxiliary Information Fusion**:
+
+    - **Function**: Leverages the genetic relationship between Indic languages and Sanskrit to improve translation quality.
+    - **Mechanism**: Since most Indic languages share Sanskrit roots (possessing similar stems but different suffixes), the authors extract the Sanskrit stem and affix decomposition corresponding to the Hindi translation and append it to the English source input (e.g., "biosynthesis [SEP] जैवसंश्लेषण"). This provides cross-retrieval anchors for the model.
+    - **Design Motivation**: By leveraging genealogical prior linguistic knowledge, Sanskrit acts as a "bridge language" to facilitate knowledge transfer in scenarios where the training and testing languages differ (zero-shot cross-lingual setup).
+
+### Loss & Training
+
+Training is performed using a standard cross-entropy loss with a label smoothing coefficient of 0.1. The optimizer is Adam, with a learning rate of 1e-4 and 4000 warmup steps. All pre-trained parameters are fine-tuned, while the DR layer is randomly initialized. Beam search decoding is used with a beam size of 5.
+
+## Key Experimental Results
+
+### Main Results (IDST: In-Domain Same-Language Testing)
+
+| Domain | Metric (ChrF) | LexGen | Base Transformer | NLLB | BLICEr | LLaMA |
+|------|-----------|--------|-----------------|------|--------|-------|
+| Administration | 6-Lang Average | **56.84** | 55.56 | 50.30 | 42.98 | 20.53 |
+| Biotechnology | 6-Lang Average | **64.94** | 61.05 | 42.65 | 47.06 | 18.37 |
+| Chemistry | 6-Lang Average | **56.11** | 53.60 | 38.17 | 42.07 | 18.83 |
+
+### Ablation Study (Comparison of DR Layer Placement)
+
+| Configuration | Administration ChrF | Biotechnology ChrF | Chemistry ChrF |
+|------|-------------|-------------|---------|
+| DR layer placed after self-attention (Ours) | **56.84** | **64.94** | **56.11** |
+| DR layer placed after cross-attention | 49.07 | 61.97 | 54.87 |
+| Using shared gating layer only | 56.65 | 61.72 | 54.97 |
+
+### Zero-Shot Cross-Lingual Testing (IDDT)
+
+| Domain | LexGen | Base | NLLB | LLaMA |
+|------|--------|------|------|-------|
+| Administration (3 unseen languages) | **51.12** | 47.35 | 45.82 | 15.90 |
+| Biotechnology (3 unseen languages) | **59.87** | 55.93 | 29.74 | 17.12 |
+| Chemistry (3 unseen languages) | **46.63** | 43.23 | 28.28 | 16.82 |
+
+### Key Findings
+
+- **DR layer exhibits significant advantages in specialized domains**: In the administration domain (where the training data has a high overlap with the NMT pre-training corpus), the advantage of LexGen is smaller (+1.28), but it shows prominent gains in biotechnology (+3.89) and chemistry (+2.51). This indicates that the DR layer is most valuable when there is a significant domain gap.
+- **The placement of the DR layer is critical**: Placing it after self-attention yields the best performance, whereas placing it after cross-attention leads to a substantial drop in the administration domain (56.84 $\rightarrow$ 49.07), likely due to interference with source-to-target alignment learning.
+- **LLaMA performs poorly on low-resource languages**: It is virtually unusable for languages other than Hindi/Marathi, with ChrF scores far below other methods. This demonstrates the limited capability of current LLMs in truly low-resource languages.
+- **Sanskrit assistance is effective for NLLB but ineffective for LexGen**: While NLLB + Sanskrit significantly improves performance across most domains, LexGen, due to its pre-trained model supporting only English as the source language, cannot process Sanskrit inputs.
+
+## Highlights & Insights
+
+- **Simple and Effective Domain Adaptation Mechanism**: In essence, the DR layer allows "each token to decide its own path." This gating design is extremely lightweight yet effective. Compared to parameter-efficient methods such as adapters or LoRA, the unique aspect of the DR layer lies in simultaneously supporting both domain-specific and domain-shared paths, and assigning them in a data-driven manner. This design can be transferred to any NLP task that requires domain awareness.
+- **Zero-Shot Cross-Lingual Generalization**: Even under conditions where the target language has never been seen during training (IDDT), LexGen still significantly outperforms baselines. This suggests that the domain knowledge learned by the DR layer is cross-lingually transferable, which has practical significance for building technical term lexicons in low-resource languages.
+- **Systematic Multi-Dimensional Evaluation**: The paper designs three evaluation scenarios (IDST/DDST/IDDT) to test in-domain, cross-domain, and cross-lingual generalization, respectively. The experimental design is highly rigorous.
+
+## Limitations & Future Work
+
+- Experiments are restricted to Indic languages; it remains uncertain whether the DR layer is equally effective for language pairs with larger typological differences (e.g., Chinese-English, Japanese-English).
+- The pre-trained model underlying LexGen does not support non-English source-language inputs, leaving the Sanskrit auxiliary information unutilized.
+- The scale of the lexicon datasets is limited (a few thousand entries); the advantage of the DR layer might diminish under larger volumes of data.
+- The evaluation is only conducted on word- or phrase-level translation, without extending to sentence-level domain adaptation.
+- The work does not compare its performance with the latest multilingual LLMs (such as GPT-4, Gemma, Aya, etc.).
+
+## Related Work & Insights
+
+- **vs BLICEr (Li et al., 2022)**: BLICEr improves BLI through cross-encoder reranking, but remains constrained by the limitations of word embedding alignment. LexGen directly incorporates domain routing into the generative model, which is more effective and flexible.
+- **vs NLLB (Costa-jussà et al., 2022)**: NLLB is a representative of large-scale multilingual NMT but lacks domain adaptation capabilities. LexGen obtains domain awareness on top of NLLB via the DR layer, incurring minimal parameter overhead.
+- **vs Mixture-of-Experts (MoE)**: The design of the DR layer shares similarities with MoE (gating + multi-path) but is more lightweight, utilizing only two paths (domain-specific vs. shared) without requiring numerous expert modules.
+
+## Rating
+
+- **Novelty**: ⭐⭐⭐ The design of the DR layer is a direct application of existing gated routing techniques, offering limited innovation but presenting a clever combination.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive experiments across multiple languages, domains, and setups, including human evaluations and ablation analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ Well-structured with detailed descriptions of experimental setups.
+- **Value**: ⭐⭐⭐ Primarily oriented towards specific application scenarios of low-resource lexicon generation for Indic languages.
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] LangSAMP: Language-Script Aware Multilingual Pretraining](langsamp_multilingual_pretraining.md)
+- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
+- [\[ACL 2025\] Exploring In-context Example Generation for Machine Translation](exploring_in-context_example_generation_for_machine_translation.md)
+- [\[ACL 2025\] CulFiT: A Fine-grained Cultural-aware LLM Training Paradigm via Multilingual Critique Data Synthesis](culfit_a_fine-grained_cultural-aware_llm_training_paradigm_via_multilingual_crit.md)
+- [\[ACL 2025\] Semantic Aware Linear Transfer by Recycling Pre-trained Language Models for Cross-Lingual Transfer](semantic_aware_linear_transfer_by_recycling_pre-trained_language_models_for_cros.md)
+
+</div>
+
+<!-- RELATED:END -->

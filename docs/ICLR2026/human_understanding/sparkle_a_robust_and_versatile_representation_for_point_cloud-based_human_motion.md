@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sparkle: A Robust and Versatile Representation for Point Cloud-based Human Motion Capture
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] Addressing the dilemma in point cloud motion capture where "point-level methods are detail-rich but noise-sensitive, while skeletal methods are robust but lose detail," this paper proposes the Sparkle representation—explicitly decoupling and then unifying 24 skeletal joints (internal kinematics) and 32 surface anchors
+  [ICLR 2026][Human Understanding][Point cloud motion capture] Addressing the dilemma in point cloud motion capture where "point-level methods are detail-rich but noise-sensitive, while skeletal methods are robust but lose detail," this paper proposes the Sparkle representation—explicitly decoupling and then unifying 24 skeletal joints (internal kinematics) and 32 surface anchors (external geometry). Coupled with the SparkleMotion framework (Point-aligned Skeleton Tracker + Ske…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Point cloud motion capture"
+  - "human representation"
+  - "skeleton-surface decoupling"
+  - "SMPL solving"
+  - "robust generalization"
 date: 2026-05-08
-content_hash: caa955f0ef974bcc
+content_hash: bc459c25a70219fd
 ---
+
 # Sparkle: A Robust and Versatile Representation for Point Cloud-based Human Motion Capture
 
 **Conference**: ICLR 2026  
@@ -157,8 +163,8 @@ Anchor design ablations (Table 6) compare PCA / Random / Manual selection and an
 - [\[ICLR 2026\] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](quamo_quaternion_motion_kinematics.md)
 - [\[CVPR 2026\] Progressive Guessing to Fixed Point: Rethinking Human Motion Prediction with Deep Equilibrium Models](../../CVPR2026/human_understanding/progressive_guessing_to_fixed_point_rethinking_human_motion_prediction_with_deep.md)
 - [\[CVPR 2025\] MotionReFit: Dynamic Motion Blending for Versatile Motion Editing](../../CVPR2025/human_understanding/motionrefit_motion_editing.md)
+- [\[ICLR 2026\] DenseMarks: Learning Canonical Embeddings for Head Images via Point Trajectories](densemarks_learning_canonical_embeddings_for_human_heads_images_via_point_tracks.md)
 - [\[AAAI 2026\] Improving Sparse IMU-based Motion Capture with Motion Label Smoothing](../../AAAI2026/human_understanding/improving_sparse_imu-based_motion_capture_with_motion_label_smoothing.md)
-- [\[ICLR 2026\] MotionGPT3: Human Motion as a Second Modality](motiongpt3_human_motion_as_a_second_modality.md)
 
 </div>
 

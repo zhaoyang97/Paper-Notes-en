@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] GIFT is a training-free keyframe selection framework that reformulates the problem of "which frames to feed into a Video VLM" from a greedy frame-by-frame addition to a global evaluation of each frame's "irreplaceability" (high relevance $\times$ visual isolation among more relevant frames). Utilizing "Budget-Aware Ref
+  [CVPR 2026][Video Understanding][Keyframe Selection] GIFT is a training-free keyframe selection framework that reformulates the problem of "which frames to feed into a Video VLM" from a greedy frame-by-frame addition to a global evaluation of each frame's "irreplaceability" (high relevance $\times$ visual isolation among more relevant frames). Utilizing "Budget-Aware Refinement," it gradually recovers temporal context as the frame budget increases…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Keyframe Selection"
+  - "Video VLM"
+  - "Training-free"
+  - "Global Irreplaceability"
+  - "Long Video Understanding"
 date: 2026-05-08
-content_hash: 1620abe6c02260ca
+content_hash: 00f2f61864e2d729
 ---
+
 # GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,16 @@ Breakdown of two core modules (LLaVA-Video, 32 frames) and sensitivity of batch 
 - Value: ⭐⭐⭐⭐⭐ Training-free, plug-and-play, and significant gains in low-frame scenarios make it highly practical for long-video deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[ACL 2026\] CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering](../../ACL2026/video_understanding/craft_critic-refined_adaptive_key-frame_targeting_for_multimodal_video_question_.md)
-- [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models](token_reduction_via_local_and_global_contexts_optimization_for_efficient_video_l.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](../../ICLR2026/video_understanding/focus_efficient_keyframe_selection_for_long_video_understanding.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
 
 </div>
 

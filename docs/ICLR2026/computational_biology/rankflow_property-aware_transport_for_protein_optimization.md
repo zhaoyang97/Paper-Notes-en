@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RankFlow: Property-aware Transport for Protein Optimization
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Instead of directly attaching a regression head to Protein Language Model (PLM) embeddings to fit fitness values, RankFlow learns an energy-guided conditional flow to **transport** "property-agnostic" PLM representations into a distribution "aligned with target properties." Combined with a differentiable ranking loss (
+  [ICLR 2026][Computational Biology][Protein Fitness Prediction] Instead of directly attaching a regression head to Protein Language Model (PLM) embeddings to fit fitness values, RankFlow learns an energy-guided conditional flow to **transport** "property-agnostic" PLM representations into a distribution "aligned with target properties." Combined with a differentiable ranking loss (RC2) and a property-guided spatial gate (PSG), it achieves SOTA ranking accuracy and stronger cro…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Fitness Prediction"
+  - "Conditional Flow"
+  - "Energy Guidance"
+  - "Differentiable Ranking"
+  - "Representation Transformation"
 date: 2026-05-08
-content_hash: a168ebebaa4804f1
+content_hash: 4c3794762dc150c4
 ---
+
 # RankFlow: Property-aware Transport for Protein Optimization
 
 **Conference**: ICLR 2026  

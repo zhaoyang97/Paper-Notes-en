@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Ours proposes the RealVLG framework, comprising the 11B-level real-world multi-granular annotated dataset RealVLG-11B and the Reinforcement Learning (RL) fine-tuned unified model RealVLG-R1. This work unifies Visual-Language Grounding (VLG) and robotic grasping into the same paradigm for the first time, achieving end-t
+  [CVPR2026][Segmentation][Visual-Language Grounding] Ours proposes the RealVLG framework, comprising the 11B-level real-world multi-granular annotated dataset RealVLG-11B and the Reinforcement Learning (RL) fine-tuned unified model RealVLG-R1. This work unifies Visual-Language Grounding (VLG) and robotic grasping into the same paradigm for the first time, achieving end-to-end prediction from natural language instructions to bounding boxes, segmentation masks, grasp poses…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR2026"
+  - "Segmentation"
+  - "Visual-Language Grounding"
+  - "Robotic Grasping"
+  - "Reinforcement Learning Fine-tuning"
+  - "Multi-granular Annotation"
+  - "Zero-shot Generalization"
+  - "Large-scale Vision-Language Models"
 date: 2026-05-08
-content_hash: 1f354c439bd54dfe
+content_hash: eaf3031b1f27d6d3
 ---
+
 # RealVLG-R1: A Large-Scale Real-World Visual-Language Grounding Benchmark for Robotic Perception and Manipulation
 
 **Conference**: CVPR2026  
@@ -154,8 +161,8 @@ RealVLG-11B surpasses synthetic datasets across language diversity (MTLD), visua
 - [\[CVPR 2026\] XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening](xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md)
 - [\[ICCV 2025\] RAGNet: Large-scale Reasoning-based Affordance Segmentation Benchmark towards General Grasping](../../ICCV2025/segmentation/ragnet_large-scale_reasoning-based_affordance_segmentation_benchmark_towards_gen.md)
 - [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](../../ICCV2025/segmentation/advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
-- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
-- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
+- [\[CVPR 2026\] CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation](clp_a_real-world_dataset_of_contaminated_lens_protectors_for_robust_semantic_seg.md)
+- [\[ICCV 2025\] Learning Precise Affordances from Egocentric Videos for Robotic Manipulation](../../ICCV2025/segmentation/learning_precise_affordances_from_egocentric_videos_for_robotic_manipulation.md)
 
 </div>
 

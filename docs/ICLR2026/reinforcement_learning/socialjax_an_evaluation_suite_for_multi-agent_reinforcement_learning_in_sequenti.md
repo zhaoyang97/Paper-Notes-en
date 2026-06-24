@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SocialJax: An Evaluation Suite for Multi-Agent Reinforcement Learning in Sequential Social Dilemmas
 description: >-
-  [ICLR 2026][Reinforcement Learning][JAX] SocialJax rewrites the "Sequential Social Dilemma" environments from Melting Pot 2.0 using JAX to create a GPU-parallelized evaluation suite. It includes 9 mixed-motive grid worlds and 6 MARL baseline algorithms, accelerating training speed by at least 50x compared to Melting Pot and verifying the social dilemma proper
+  [ICLR 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] SocialJax rewrites the "Sequential Social Dilemma" environments from Melting Pot 2.0 using JAX to create a GPU-parallelized evaluation suite. It includes 9 mixed-motive grid worlds and 6 MARL baseline algorithms, accelerating training speed by at least 50x compared to Melting Pot and verifying the social dilemma properties of each environment via Schelling diagrams.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - JAX
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-Agent Reinforcement Learning"
+  - "Sequential Social Dilemmas"
+  - "JAX"
+  - "Benchmark"
+  - "Schelling Diagrams"
 date: 2026-05-08
-content_hash: 94ec609475b40103
+content_hash: c4300202f117d834
 ---
+
 # SocialJax: An Evaluation Suite for Multi-Agent Reinforcement Learning in Sequential Social Dilemmas
 
 **Conference**: ICLR 2026  
@@ -125,7 +130,7 @@ Clean Up is the most extreme: returns are nearly 0 under individualism (no one c
 - [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
 - [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)
 - [\[NeurIPS 2025\] Sequential Multi-Agent Dynamic Algorithm Configuration](../../NeurIPS2025/reinforcement_learning/sequential_multi-agent_dynamic_algorithm_configuration.md)
-- [\[ICLR 2026\] MARL2Grid-TR: A Multi-Agent RL Benchmark in Power Grid Operations](marl2grid-tr_a_multi-agent_rl_benchmark_in_power_grid_operations.md)
+- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
 
 </div>
 

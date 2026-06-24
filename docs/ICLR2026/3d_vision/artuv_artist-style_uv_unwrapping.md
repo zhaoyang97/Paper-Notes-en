@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ArtUV: Artist-style UV Unwrapping
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] ArtUV automates the "manual UV unwrapping by professional artists" into an end-to-end two-stage process: first using SeamGPT to predict semantic seams, then utilizing a Graph Convolutional + Pyramid Autoencoder to regress "crude UVs" from traditional software into clean, low-distortion artist-style UV maps, outperformi
+  [ICLR2026][3D Vision][UV Unwrapping] ArtUV automates the "manual UV unwrapping by professional artists" into an end-to-end two-stage process: first using SeamGPT to predict semantic seams, then utilizing a Graph Convolutional + Pyramid Autoencoder to regress "crude UVs" from traditional software into clean, low-distortion artist-style UV maps, outperforming Blender/Maya and even manual work in terms of distortion, utilization, and speed.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "UV Unwrapping"
+  - "Artist-style"
+  - "Surface Seams"
+  - "Autoencoder"
+  - "Mesh Parameterization"
 date: 2026-05-08
-content_hash: 02f2232154ec5aaf
+content_hash: 245053496ed1bdd2
 ---
+
 # ArtUV: Artist-style UV Unwrapping
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Joint Self-Supervised Video Alignment and Action Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Video Alignment] This paper proposes the VAOT/VASOT framework, which integrates Gromov-Wasserstein optimal transport with structural priors to unify self-supervised video alignment and action se…
+  [ICCV 2025][Segmentation][Video Alignment] This paper proposes the VAOT/VASOT framework, which integrates Gromov-Wasserstein optimal transport with structural priors to unify self-supervised video alignment and action segmentation within a single model for the first time. The framework surpasses existing methods on video alignment and achieves state-of-the-art performance on action segmentation.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Self-Supervised Learning"
   - "Gromov-Wasserstein"
 date: 2026-05-08
-content_hash: 223c95086c465609
+content_hash: e111ef88c063661f
 ---
 
 # Joint Self-Supervised Video Alignment and Action Segmentation
@@ -166,11 +166,11 @@ $$\mathcal{L}_{joint} = w_{align}\mathcal{L}_{xy} + w_{seg}(\mathcal{L}_{xa} + \
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](../../NeurIPS2025/segmentation/exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
 - [\[ICCV 2025\] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation](clot_closed_loop_optimal_transport_for_unsupervised_action_segmentation.md)
+- [\[NeurIPS 2025\] Exploring Structural Degradation in Dense Representations for Self-supervised Learning](../../NeurIPS2025/segmentation/exploring_structural_degradation_in_dense_representations_for_self-supervised_le.md)
+- [\[CVPR 2025\] Soft Self-Labeling and Potts Relaxations for Weakly-Supervised Segmentation](../../CVPR2025/segmentation/soft_self-labeling_and_potts_relaxations_for_weakly-supervised_segmentation.md)
 - [\[ICCV 2025\] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation](skeleton_motion_words_for_unsupervised_skeleton-based_temporal_action_segmentati.md)
 - [\[ICCV 2025\] Prompt Guidance and Human Proximal Perception for HOT Prediction with Regional Joint Loss](prompt_guidance_and_human_proximal_perception_for_hot_prediction_with_regional_j.md)
-- [\[NeurIPS 2025\] Self-supervised Synthetic Pretraining for Inference of Stellar Mass Embedded in Dense Gas](../../NeurIPS2025/segmentation/self-supervised_synthetic_pretraining_for_inference_of_stellar_mass_embedded_in_.md)
 
 </div>
 

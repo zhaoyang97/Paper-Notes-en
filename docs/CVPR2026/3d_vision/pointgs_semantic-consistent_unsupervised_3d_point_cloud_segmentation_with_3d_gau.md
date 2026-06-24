@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][SAM] PointGS reconstructs sparse point clouds into a dense 3D Gaussian field as a unified intermediate representation. It extracts 2D masks from rendered images using SAM and distills semantics into Gaussian primitives through scale-aware contrastive learning. After a two-step ICP to align Gaussians back to the original poi
+  [CVPR 2026][3D Vision][Unsupervised Point Cloud Segmentation] PointGS reconstructs sparse point clouds into a dense 3D Gaussian field as a unified intermediate representation. It extracts 2D masks from rendered images using SAM and distills semantics into Gaussian primitives through scale-aware contrastive learning. After a two-step ICP to align Gaussians back to the original point cloud for nearest-neighbor label transfer, it outperforms existing unsupervised methods on S3DI…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Unsupervised Point Cloud Segmentation"
+  - "3D Gaussian Splatting"
+  - "SAM"
+  - "Cross-modal Semantic Distillation"
+  - "ICP Registration"
 date: 2026-05-08
-content_hash: ca3934debead7f08
+content_hash: 08352adf134f0489
 ---
+
 # PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -126,10 +131,10 @@ Incremental module addition on S3DIS Area5 (Table 5):
 ## Related Papers
 
 - [\[CVPR 2026\] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation](image-to-point_cloud_feature_back-projection_for_multimodal_training_of_3d_seman.md)
+- [\[CVPR 2026\] GaussianZoom: Progressive Zoom-in Generative 3D Gaussian Splatting with Geometric and Semantic Guidance](gaussianzoom_progressive_zoom-in_generative_3d_gaussian_splatting_with_geometric.md)
+- [\[CVPR 2026\] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting](langref3dgs_natural_language-guided_3d_referential_segmentation_from_partial_obs.md)
 - [\[CVPR 2026\] GeoFree-CoSeg: Unsupervised Point Cloud-Image Cross-Modal Co-Segmentation Without Geometric Alignment](geofree-coseg_unsupervised_point_cloud-image_cross-modal_co-segmentation_without.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[CVPR 2025\] P-SLCR: Unsupervised Point Cloud Semantic Segmentation via Prototypes Structure Learning and Consistent Reasoning](../../CVPR2025/3d_vision/p-slcr_unsupervised_point_cloud_semantic_segmentation_via_prototypes_structure_l.md)
-- [\[CVPR 2026\] Topology-aware Feature Propagation for Unsupervised Non-rigid Point Cloud Correspondence](topology-aware_feature_propagation_for_unsupervised_non-rigid_point_cloud_corres.md)
+- [\[CVPR 2026\] PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting](physir-splat_physically_consistent_thermal_infrared_radiative_transfer_in_3d_gau.md)
 
 </div>
 

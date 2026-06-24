@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Riemannian Metric Matching for Scalable Geometric Modeling of Distributions
 description: >-
-  [ICML 2026][Self-Supervised Learning][carré du champ] The "Riemannian metric of the data manifold" is rewritten as a carré du champ operator, and a neural network is trained to learn this operator directly using a denoising-style conditional regression loss. This eliminates the need for kNN graph construction or computing large network Jacobians, allowing for the amortize
+  [ICML 2026][Self-Supervised Learning][Riemannian Metric] The "Riemannian metric of the data manifold" is rewritten as a carré du champ operator, and a neural network is trained to learn this operator directly using a denoising-style conditional regression loss. This eliminates the need for kNN graph construction or computing large network Jacobians, allowing for the amortized estimation of intrinsic dimensionality, tangent spaces, and geodesic paths on high-dimensional data a…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - carré du champ
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Riemannian Metric"
+  - "carré du champ"
+  - "Manifold Hypothesis"
+  - "Denoising Loss"
+  - "Amortized Inference"
 date: 2026-05-08
-content_hash: 3f085a03254f87bf
+content_hash: a413c906d296ddd1
 ---
+
 # Riemannian Metric Matching for Scalable Geometric Modeling of Distributions
 
 **Conference**: ICML 2026  
@@ -138,11 +143,11 @@ $$\mathcal{L}_{LR}=\mathbb{E}_{X,Y|X}\big[\|M_\varepsilon^\theta(Y)M_\varepsilon
 
 ## Related Papers
 
-- [\[CVPR 2025\] From Prototypes to General Distributions: An Efficient Curriculum for Masked Image Modeling](../../CVPR2025/self_supervised/from_prototypes_to_general_distributions_an_efficient_curriculum_for_masked_imag.md)
 - [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
+- [\[CVPR 2025\] From Prototypes to General Distributions: An Efficient Curriculum for Masked Image Modeling](../../CVPR2025/self_supervised/from_prototypes_to_general_distributions_an_efficient_curriculum_for_masked_imag.md)
+- [\[ICML 2026\] TRACER: Robust Multimodal Fine-tuning Proven with WMA Teacher + Geometric Decomposition](tracer_persistent_regularization_for_robust_multimodal_finetuning.md)
 - [\[ICML 2026\] Understanding Self-Supervised Learning via Latent Distribution Matching](understanding_self-supervised_learning_via_latent_distribution_matching.md)
-- [\[CVPR 2026\] D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping](../../CVPR2026/self_supervised/d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_.md)
-- [\[CVPR 2026\] Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](../../CVPR2026/self_supervised/franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)
+- [\[ICLR 2026\] Disentanglement of Variations with Multimodal Generative Modeling](../../ICLR2026/self_supervised/disentanglement_of_variations_with_multimodal_generative_modeling.md)
 
 </div>
 

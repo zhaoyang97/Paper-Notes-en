@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel
 description: >-
-  [ICML 2026][LLM (Other)][Yat-kernel] SLAY linearizes the Yat-kernel, inspired by the physical "inverse-square interaction," through a four-step sequence: (1) spherical normalization, (2) Laplace integral representation via Bernstein's Theorem, (3) Gauss-Laguerre quadrature, and (4) tensor product positive random features of polynomial and exponential kern
+  [ICML 2026][LLM (Other)][Yat-kernel] SLAY linearizes the Yat-kernel, inspired by the physical "inverse-square interaction," through a four-step sequence: (1) spherical normalization, (2) Laplace integral representation via Bernstein's Theorem, (3) Gauss-Laguerre quadrature, and (4) tensor product positive random features of polynomial and exponential kernels. This achieves $O(L)$ time complexity with performance nearly indistinguishable from softmax attention.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Yat-kernel
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Yat-kernel"
+  - "Spherical Normalization"
+  - "Bernstein's Theorem"
+  - "Positive Random Features"
+  - "Gauss–Laguerre Quadrature"
 date: 2026-05-08
-content_hash: e9c616d43f218574
+content_hash: d82e916aa645d14a
 ---
+
 # SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel
 
 **Conference**: ICML 2026  
@@ -137,11 +142,11 @@ The evaluation covers five dimensions: (1) polynomial approximation comparison, 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following](../../ICLR2026/llm_nlp/attend_to_the_active_structure-aware_dynamic_attention_in_llms_for_compositional.md)
 - [\[NeurIPS 2025\] Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning](../../NeurIPS2025/llm_nlp/unifying_attention_heads_and_task_vectors_via_hidden_state_geometry_in_in-contex.md)
 - [\[ICML 2026\] Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions](scheduling_llm_inference_with_uncertainty-aware_output_length_predictions.md)
 - [\[NeurIPS 2025\] MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention](../../NeurIPS2025/llm_nlp/monarchattention_zero-shot_conversion_to_fast_hardware-aware_structured_attentio.md)
-- [\[ICML 2026\] In-Context Routing (ICR): 一次训练、处处可用的 attention-level 隐式 ICL](train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
-- [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](../../NeurIPS2025/llm_nlp/adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
+- [\[ICML 2026\] In-Context Routing (ICR): Train-Once, Use-Everywhere Attention-Level Implicit ICL](train_once_reuse_everywhere_generalizable_implicit_in-context_learning_by_routin.md)
 
 </div>
 

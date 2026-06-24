@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels
 description: >-
-  [ICCV 2025][3D Vision][Semantic Correspondence] This paper proposes DIY-SC, a 3D-aware pseudo-label generation strategy (chained propagation + relaxed cycle consistency + spherical prototype filtering) to train a lightwe…
+  [ICCV 2025][3D Vision][Semantic Correspondence] This paper proposes DIY-SC, a 3D-aware pseudo-label generation strategy (chained propagation + relaxed cycle consistency + spherical prototype filtering) to train a lightweight adapter that improves semantic correspondence using foundation model features, achieving a 4.5% gain over the previous SOTA on SPair-71k (PCK@0.1 per-keypoint) without any manual keypoint annotations.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Foundation Models"
   - "Self-Training"
 date: 2026-05-08
-content_hash: 8122e851c81a1c86
+content_hash: d34b57afa54c6c73
 ---
 
 # Do It Yourself: Learning Semantic Correspondence from Pseudo-Labels
@@ -150,10 +150,10 @@ The largest improvements are observed on symmetric/repeated-part categories: bus
 ## Related Papers
 
 - [\[CVPR 2026\] MARCO: Navigating the Unseen Space of Semantic Correspondence](../../CVPR2026/3d_vision/marco_semantic_correspondence.md)
-- [\[ICCV 2025\] CasP: Improving Semi-Dense Feature Matching Pipeline Leveraging Cascaded Correspondence Priors for Guidance](casp_improving_semi-dense_feature_matching_pipeline_leveraging_cascaded_correspo.md)
-- [\[ICCV 2025\] Monocular Semantic Scene Completion via Masked Recurrent Networks](monocular_semantic_scene_completion_via_masked_recurrent_networks.md)
-- [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
-- [\[ICCV 2025\] Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion](disentangling_instance_and_scene_contexts_for_3d_semantic_scene_completion.md)
+- [\[CVPR 2025\] You See it, You Got it: Learning 3D Creation on Pose-Free Videos at Scale](../../CVPR2025/3d_vision/you_see_it_you_got_it_learning_3d_creation_on_pose-free_videos_at_scale.md)
+- [\[CVPR 2025\] SemAlign3D: Semantic Correspondence Between RGB-Images Through Aligning 3D Object-Class Representations](../../CVPR2025/3d_vision/semalign3d_semantic_correspondence_between_rgb-images_through_aligning_3d_object.md)
+- [\[CVPR 2025\] Multi-View Pose-Agnostic Change Localization with Zero Labels](../../CVPR2025/3d_vision/multi-view_pose-agnostic_change_localization_with_zero_labels.md)
+- [\[CVPR 2026\] SGSoft: Learning Fused Semantic-Geometric Features for 3D Shape Correspondence via Template-Guided Soft Signals](../../CVPR2026/3d_vision/sgsoft_learning_fused_semantic-geometric_features_for_3d_shape_correspondence_vi.md)
 
 </div>
 

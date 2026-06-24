@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mitigating Object Hallucinations via Sentence-Level Early Intervention
 description: >-
-  [ICCV 2025][Hallucination Detection][MLLM hallucination] This paper proposes SENTINEL, a framework grounded in the key observation that hallucinations emerge early in generation and propagate forward. By combining in-dom…
+  [ICCV 2025][Hallucination Detection][MLLM hallucination] This paper proposes SENTINEL, a framework grounded in the key observation that hallucinations emerge early in generation and propagate forward. By combining in-domain candidate bootstrapping with dual-detector cross-validation to construct sentence-level preference data, and employing Context-aware DPO (C-DPO) for early intervention, SENTINEL reduces hallucinations on Object HalBench by 92% while preserving general capa…
 tags:
   - "ICCV 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "object detection verification"
 date: 2026-05-08
-content_hash: 7095e5e66ee0a60a
+content_hash: a96b9a5d377c91ea
 ---
 
 # Mitigating Object Hallucinations via Sentence-Level Early Intervention
@@ -119,10 +119,10 @@ SENTINEL reduces hallucinations on Object HalBench by approximately 92% and on A
 ## Related Papers
 
 - [\[ICCV 2025\] ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models](only_onelayer_intervention_sufficiently_mitigates_hallucinat.md)
+- [\[CVPR 2025\] HalLoc: Token-Level Localization of Hallucinations for Vision Language Models](../../CVPR2025/hallucination/halloc_token-level_localization_of_hallucinations_for_vision_language_models.md)
+- [\[CVPR 2025\] Antidote: A Unified Framework for Mitigating LVLM Hallucinations in Counterfactual Presupposition and Object Perception](../../CVPR2025/hallucination/antidote_a_unified_framework_for_mitigating_lvlm_hallucinations_in_counterfactua.md)
 - [\[AAAI 2026\] Causally-Grounded Dual-Path Attention Intervention for Object Hallucination Mitigation in LVLMs](../../AAAI2026/hallucination/causally-grounded_dual-path_attention_intervention_for_objec.md)
 - [\[NeurIPS 2025\] Systematic Reward Gap Optimization for Mitigating VLM Hallucinations](../../NeurIPS2025/hallucination/systematic_reward_gap_optimization_for_mitigating_vlm_hallucinations.md)
-- [\[NeurIPS 2025\] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity](../../NeurIPS2025/hallucination/glsim_detecting_object_hallucinations_in_lvlms_via_globalloc.md)
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/hallucination/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
 
 </div>
 

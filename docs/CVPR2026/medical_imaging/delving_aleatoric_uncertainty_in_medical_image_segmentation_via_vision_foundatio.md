@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This work utilizes a frozen medical vision foundation model (MedSAM2) to extract features, performs Singular Value Decomposition (SVD) on class-wise feature matrices, and quantifies the Shannon entropy of their energy distribution. This yields a label-free "Aleatoric Uncertainty Value (AUV)" to characterize sample diff
+  [CVPR 2026][Medical Imaging][Aleatoric Uncertainty] This work utilizes a frozen medical vision foundation model (MedSAM2) to extract features, performs Singular Value Decomposition (SVD) on class-wise feature matrices, and quantifies the Shannon entropy of their energy distribution. This yields a label-free "Aleatoric Uncertainty Value (AUV)" to characterize sample difficulty and noise. This value drives two plug-and-play strategies—"Data Filtering" and "Dynamic Uncertainty-a…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Aleatoric Uncertainty"
+  - "Vision Foundation Models"
+  - "Singular Value Energy"
+  - "Data Filtering"
+  - "Adaptive Loss"
 date: 2026-05-08
-content_hash: 18f999234353976c
+content_hash: de9802ad8f118024
 ---
+
 # Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,20 @@ The proposed $\mathcal{S}(\cdot)$ outperforms Fisher and Mahalanobis (MD) signif
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Simple-ViLMedSAM: Simple Text Prompts Meet Vision-Language Models for Medical Image Segmentation](simple-vilmedsam_simple_text_prompts_meet_vision-language_models_for_medical_ima.md)
+- [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
+- [\[ICLR 2026\] CUPID: A Plug-in Framework for Joint Aleatoric and Epistemic Uncertainty Estimation with a Single Model](../../ICLR2026/medical_imaging/cupid_a_plug-in_framework_for_joint_aleatoric_and_epistemic_uncertainty_estimati.md)
+- [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
+- [\[CVPR 2026\] LATA: Laplacian-Assisted Transductive Adaptation for Conformal Uncertainty in Medical VLMs](lata_laplacian-assisted_transductive_adaptation_for_conformal_uncertainty_in_med.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Attention Consistent Longitudinal Medical Visual Question Answering Guided by Vision Foundation Models](attention_consistent_longitudinal_medical_visual_question_answering_guided_by_vi.md)

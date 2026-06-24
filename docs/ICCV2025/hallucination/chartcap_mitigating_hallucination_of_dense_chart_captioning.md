@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ChartCap: Mitigating Hallucination of Dense Chart Captioning
 description: >-
-  [ICCV 2025][Hallucination Detection][Chart understanding] This work constructs ChartCap, a large-scale dataset of 565K real chart–caption pairs. By adopting type-specific caption schemas that exclude irrelevant informati…
+  [ICCV 2025][Hallucination Detection][Chart understanding] This work constructs ChartCap, a large-scale dataset of 565K real chart–caption pairs. By adopting type-specific caption schemas that exclude irrelevant information while emphasizing structure and key insights, and by introducing a reference-free Visual Consistency Score (VCS) evaluation metric, the paper effectively mitigates hallucination in VLM-based chart captioning.
 tags:
   - "ICCV 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "chart captioning"
   - "dataset construction"
 date: 2026-05-08
-content_hash: 0e07a7e18c19a7ad
+content_hash: 24391cbdd8755e1a
 ---
 
 # ChartCap: Mitigating Hallucination of Dense Chart Captioning
@@ -154,10 +154,10 @@ Zero-shot transfer on the VisText test set:
 ## Related Papers
 
 - [\[ICCV 2025\] Mitigating Object Hallucinations via Sentence-Level Early Intervention](mitigating_object_hallucinations_via_sentence-level_early_intervention.md)
+- [\[ACL 2025\] Activation Steering Decoding: Mitigating Hallucination in Large Vision-Language Models through Bidirectional Hidden State Intervention](../../ACL2025/hallucination/activation_steering_decoding_mitigating_hallucination_in_large_vision-language_m.md)
+- [\[ACL 2025\] Monitoring Decoding: Mitigating Hallucination via Evaluating the Factuality of Partial Response during Generation](../../ACL2025/hallucination/monitoring_decoding_mitigating_hallucination_via_evaluating_the_factuality_of_pa.md)
 - [\[NeurIPS 2025\] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization](../../NeurIPS2025/hallucination/mitigating_hallucination_through_theory-consistent_symmetric_multimodal_preferen.md)
 - [\[ACL 2026\] Generating Effective CoT Traces for Mitigating Causal Hallucination](../../ACL2026/hallucination/generating_effective_cot_traces_for_mitigating_causal_hallucination.md)
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/hallucination/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
-- [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](../../NeurIPS2025/hallucination/causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
 
 </div>
 

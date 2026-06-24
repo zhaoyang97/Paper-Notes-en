@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception
 description: >-
-  [AAAI 2026][Robotics][Multimodal fusion] This paper proposes TouchFormer, a robust multimodal fusion framework that achieves reliable material perception under vision-impaired conditions through three complementary modul…
+  [AAAI 2026][Robotics][Multimodal fusion] This paper proposes TouchFormer, a robust multimodal fusion framework that achieves reliable material perception under vision-impaired conditions through three complementary modules: Modality-Adaptive Gating (MAG), intra- and inter-modal attention mechanisms, and Cross-Instance Embedding Regularization (CER). The approach is validated in a robotic sorting experiment under simulated fire scenarios.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "adaptive gating"
   - "Transformer"
 date: 2026-05-08
-content_hash: 7b4326abe5551c11
+content_hash: a29de52740b248c6
 ---
 
 # TouchFormer: A Robust Transformer-based Framework for Multimodal Material Perception
@@ -203,11 +203,11 @@ CER yields the largest gain on fine-grained classification (+4.89%), validating 
 
 ## Related Papers
 
-- [\[ICLR 2026\] RF-MatID: Dataset and Benchmark for Radio Frequency Material Identification](../../ICLR2026/robotics/rf-matid_dataset_and_benchmark_for_radio_frequency_material_identification.md)
-- [\[ICCV 2025\] TransiT: Transient Transformer for Non-line-of-sight Videography](../../ICCV2025/robotics/transit_transient_transformer_for_non-line-of-sight_videography.md)
-- [\[AAAI 2026\] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)
+- [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](../../CVPR2026/robotics/cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
+- [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](../../CVPR2026/robotics/a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
+- [\[CVPR 2025\] Perceive What Matters: Relevance-Driven Scheduling for Multimodal Streaming Perception](../../CVPR2025/robotics/perceive_what_matters_relevance-driven_scheduling_for_multimodal_streaming_perce.md)
 - [\[AAAI 2026\] Distributionally Robust Online Markov Game with Linear Function Approximation](distributionally_robust_online_markov_game_with_linear_function_approximation.md)
-- [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
+- [\[AAAI 2026\] Robust Out-of-Order Retrieval for Grid-Based Storage at Maximum Capacity](robust_out-of-order_retrieval_for_grid-based_storage_at_maximum_capacity.md)
 
 </div>
 

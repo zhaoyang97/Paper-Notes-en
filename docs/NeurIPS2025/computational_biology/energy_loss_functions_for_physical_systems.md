@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Energy Loss Functions for Physical Systems
 description: >-
-  [NeurIPS 2025][Computational Biology][Energy loss functions] This paper proposes a physics-based energy loss function framework. By deriving an energy-difference loss grounded in pairwise distances via reverse KL diverge…
+  [NeurIPS 2025][Computational Biology][Energy loss functions] This paper proposes a physics-based energy loss function framework. By deriving an energy-difference loss grounded in pairwise distances via reverse KL divergence and the Boltzmann distribution, the framework naturally satisfies SE(d) invariance and substantially outperforms MSE and cross-entropy losses on molecular generation and spin ground-state prediction tasks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "symmetry invariance"
   - "molecular generation"
 date: 2026-05-08
-content_hash: 0d33d991f632efb1
+content_hash: 94b8aea381b75c10
 ---
 
 # Energy Loss Functions for Physical Systems
@@ -328,8 +328,8 @@ With only 50% of the training data (50K samples), the energy loss still generate
 - [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
 - [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
-- [\[AAAI 2026\] EPO: Diverse and Realistic Protein Ensemble Generation via Energy Preference Optimization](../../AAAI2026/computational_biology/epo_diverse_and_realistic_protein_ensemble_generation_via_energy_preference_opti.md)
-- [\[ICML 2026\] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation](../../ICML2026/computational_biology/card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t.md)
+- [\[ICML 2025\] Aligning Protein Conformation Ensemble Generation with Physical Feedback](../../ICML2025/computational_biology/aligning_protein_conformation_ensemble_generation_with_physical_feedback.md)
+- [\[ICLR 2026\] Beyond Grid-Locked Voxels: Neural Response Functions for Continuous Brain Encoding](../../ICLR2026/computational_biology/beyond_grid-locked_voxels_neural_response_functions_for_continuous_brain_encodin.md)
 
 </div>
 

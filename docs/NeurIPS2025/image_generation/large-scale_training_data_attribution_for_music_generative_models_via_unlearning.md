@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Large-Scale Training Data Attribution for Music Generative Models via Unlearning
 description: >-
-  [NeurIPS 2025][Image Generation][Training Data Attribution] This paper applies machine unlearning-based training data attribution (TDA) to a large-scale text-to-music diffusion model (115K tracks)…
+  [NeurIPS 2025][Image Generation][Training Data Attribution] This paper applies machine unlearning-based training data attribution (TDA) to a large-scale text-to-music diffusion model (115K tracks), identifying optimal hyperparameter configurations via grid search and comparing against non-counterfactual methods, thereby demonstrating the feasibility of unlearning-based TDA in the music generation domain.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Copyright Attribution"
 date: 2026-05-08
-content_hash: 6541efd5d74a8986
+content_hash: 30f4e211b5b09e98
 ---
 
 # Large-Scale Training Data Attribution for Music Generative Models via Unlearning
@@ -163,8 +163,8 @@ Music generation models handle variable-length audio by zero-padding short segme
 - [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](../../ICML2026/image_generation/guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
 - [\[NeurIPS 2025\] Fast Data Attribution for Text-to-Image Models](fast_data_attribution_for_text-to-image_models.md)
 - [\[NeurIPS 2025\] Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation](hephaestus_mixture_generative_modeling_with_energy_guidance_for_large-scale_qos_.md)
-- [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
 - [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
+- [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
 
 </div>
 

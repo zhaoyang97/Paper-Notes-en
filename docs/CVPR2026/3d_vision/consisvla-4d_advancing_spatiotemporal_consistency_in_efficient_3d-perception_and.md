@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ConsisVLA-4D utilizes three modules (CV-Aligner, CO-Fuser, CS-Thinker) to compress multi-view 2D observations into approximately 1/8 of the original tokens. It ensures "cross-view semantic consistency" and "cross-object geometric consistency" during the perception phase, and extends this to "cross-scene spatiotemporal
+  [CVPR 2026][3D Vision][Vision-Language-Action Models] ConsisVLA-4D utilizes three modules (CV-Aligner, CO-Fuser, CS-Thinker) to compress multi-view 2D observations into approximately 1/8 of the original tokens. It ensures "cross-view semantic consistency" and "cross-object geometric consistency" during the perception phase, and extends this to "cross-scene spatiotemporal consistency" during the reasoning phase. It improves success rates by 21.6% / 41.5% and accelerates infere…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Vision-Language-Action Models"
+  - "Spatiotemporal Consistency"
+  - "3D Perception"
+  - "4D Reasoning"
+  - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: d383d5d5f2682659
+content_hash: 7b7b7cea6bbeb300
 ---
+
 # ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ $\alpha_l$ decay method ablation (Table 8):
 
 ## Related Papers
 
+- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
+- [\[CVPR 2026\] PE3R: Perception-Efficient 3D Reconstruction](pe3r_perception-efficient_3d_reconstruction.md)
 - [\[CVPR 2026\] ESAM++: Efficient Online 3D Perception on the Edge](esam_efficient_online_3d_perception_on_the_edge.md)
-- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
+- [\[ICLR 2026\] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation](../../ICLR2026/3d_vision/page-4d_vggt-4d_perception_via_disentangled_pose_and_geometry_estimation.md)
+- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
 
 </div>
 

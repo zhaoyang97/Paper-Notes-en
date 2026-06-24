@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] DBALD utilizes "gradient attention heatmaps to select the most sensitive locations + region-based diffusion inpainting to synthesize natural triggers," transforming lane detection backdoor triggers from conspicuous white blocks or mud-pattern noise into natural road objects like traffic cones or mud spots. Across four
+  [CVPR 2026][AI Safety][Backdoor Attack] DBALD utilizes "gradient attention heatmaps to select the most sensitive locations + region-based diffusion inpainting to synthesize natural triggers," transforming lane detection backdoor triggers from conspicuous white blocks or mud-pattern noise into natural road objects like traffic cones or mud spots. Across four lane detection models, it improves the average attack success rate (ASR) by +10.87% while suppressing forensic detection…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor Attack"
+  - "Lane Detection"
+  - "Data Poisoning"
+  - "Diffusion Inpainting"
+  - "Trigger Stealthiness"
 date: 2026-05-08
-content_hash: a93f0206e8a68284
+content_hash: 6e5f4f8f961f3a6d
 ---
+
 # Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach
 
 **Conference**: CVPR 2026  
@@ -156,9 +162,9 @@ While BadNets/Blended/LD-Attack show low forensic detection, they are obvious to
 
 - [\[AAAI 2026\] Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models](../../AAAI2026/ai_safety/towards_effective_stealthy_and_persistent_backdoor_attacks_targeting_graph_found.md)
 - [\[CVPR 2026\] Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model](unleashing_stealthy_backdoor_pandemic_by_infecting_a_single_diffusion_model.md)
+- [\[NeurIPS 2025\] Provable Watermarking for Data Poisoning Attacks](../../NeurIPS2025/ai_safety/provable_watermarking_for_data_poisoning_attacks.md)
 - [\[CVPR 2026\] DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples](dash_a_meta-attack_framework_for_synthesizing_effective_and_stealthy_adversarial.md)
 - [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
-- [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
 
 </div>
 

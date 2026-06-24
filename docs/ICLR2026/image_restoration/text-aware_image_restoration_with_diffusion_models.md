@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Text-Aware Image Restoration with Diffusion Models
 description: >-
-  [ICLR 2026][Image Restoration][Diffusion Model] This paper proposes "Text-Aware Image Restoration (TAIR)," a new task aimed at simultaneously restoring visual appearance and textual content. The authors introduce TeReDiff, a model that embeds a text-spotting module into a diffusion restoration network and jointly trains them using shared diffusion features. Accompan
+  [ICLR 2026][Image Restoration][Text-aware restoration] This paper proposes "Text-Aware Image Restoration (TAIR)," a new task aimed at simultaneously restoring visual appearance and textual content. The authors introduce TeReDiff, a model that embeds a text-spotting module into a diffusion restoration network and jointly trains them using shared diffusion features. Accompanied by the SA-Text dataset containing 100,000 high-quality images with dense text annotations…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Diffusion Model
-  - text-spotting
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Text-aware restoration"
+  - "diffusion models"
+  - "text-spotting"
+  - "text hallucination"
+  - "multi-task learning"
 date: 2026-05-08
-content_hash: 0928ccb54f9044c5
+content_hash: ca2b473afae30d05
 ---
+
 # Text-Aware Image Restoration with Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -138,8 +142,8 @@ Ablation on prompt style (Level 2): Descriptive vs. Tag-style E2E(Full) is 35.13
 - [\[ICLR 2026\] Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models](energy-oriented_diffusion_bridge_for_image_restoration_with_foundational_diffusi.md)
 - [\[ICLR 2026\] Vivid-VR: Distilling Concepts from Text-to-Video Diffusion Transformer for Photorealistic Video Restoration](vivid-vr_distilling_concepts_from_text-to-video_diffusion_transformer_for_photor.md)
 - [\[ICLR 2026\] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution](trajectory-aware_shifted_state_space_models_for_online_video_super-resolution.md)
-- [\[ICML 2026\] Consistent Diffusion Language Models](../../ICML2026/image_restoration/consistent_diffusion_language_models.md)
 - [\[ICLR 2026\] Horizon Imagination: Efficient On-Policy Rollout in Diffusion World Models](horizon_imagination_efficient_on-policy_rollout_in_diffusion_world_models.md)
+- [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](../../CVPR2026/image_restoration/restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
 
 </div>
 

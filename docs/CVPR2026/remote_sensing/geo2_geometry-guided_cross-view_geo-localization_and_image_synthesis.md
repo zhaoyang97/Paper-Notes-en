@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis
 description: >-
-  [CVPR 2026][Remote Sensing][Flow Matching] Geo2 leverages 3D priors from a Geometry Foundation Model (VGGT) to embed ground panoramas and satellite images into a **shared geometry-aware latent space**. This framework enables Cross-view Geo-localization (CVGL) and bidirectional Cross-view Image Synthesis (CVIS) to mutually enhance each other within the same arch
+  [CVPR 2026][Remote Sensing][Cross-view Geo-localization] Geo2 leverages 3D priors from a Geometry Foundation Model (VGGT) to embed ground panoramas and satellite images into a **shared geometry-aware latent space**. This framework enables Cross-view Geo-localization (CVGL) and bidirectional Cross-view Image Synthesis (CVIS) to mutually enhance each other within the same architecture. By utilizing reversible flow matching, bidirectional generation is achieved through unidirect…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Flow Matching
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-view Geo-localization"
+  - "Cross-view Image Synthesis"
+  - "Geometry Foundation Models"
+  - "Flow Matching"
+  - "Shared Geometric Latent Space"
 date: 2026-05-08
-content_hash: 62903e664731728e
+content_hash: a2d4aa68360f6336
 ---
+
 # Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis
 
 **Conference**: CVPR 2026  
@@ -140,15 +145,15 @@ Cross-dataset performance demonstrates the generalization of geometric priors. G
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
+- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
 - [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
 - [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
 - [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
+- [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)
 
 </div>
 

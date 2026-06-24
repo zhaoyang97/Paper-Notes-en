@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] Ours proposes CoT-RVS, a completely training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pre-trained MLLMs for temporal-semantic correlation analysis and key-frame selection. It significantly outperforms fine-tuning methods on reasoning video segmentation tasks (Refer-DAVIS J&F
+  [ICLR 2026][Reasoning][Reasoning Video Segmentation] Ours proposes CoT-RVS, a completely training-free multi-agent framework that leverages the zero-shot CoT reasoning capabilities of pre-trained MLLMs for temporal-semantic correlation analysis and key-frame selection. It significantly outperforms fine-tuning methods on reasoning video segmentation tasks (Refer-DAVIS J&F 79.1 vs 71.2, ReasonVOS J&F 65.5 vs 49.9).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Video Segmentation"
+  - "Chain-of-Thought"
+  - "Zero-shot"
+  - "Key-frame Selection"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: bd2f4f6098a640cc
+content_hash: 955c4cc7652bdb63
 ---
+
 # CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos
 
 **Conference**: ICLR 2026  
@@ -130,15 +135,16 @@ Entirely training-free. All three modules use pre-trained weights directly. All 
 - Value: ⭐⭐⭐⭐ Training-free paradigm is practical but relies on strong MLLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
 - [\[CVPR 2025\] Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2025/llm_reasoning/osrcir_reflective_cot.md)
+- [\[ICLR 2026\] SIM-CoT: Supervised Implicit Chain-of-Thought](sim-cot_supervised_implicit_chain-of-thought.md)
+- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 - [\[ICLR 2026\] CoT-Evo: Evolutionary Distillation of Chain-of-Thought for Scientific Reasoning](cot-evo_evolutionary_distillation_of_chain-of-thought_for_scientific_reasoning.md)
-- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
-- [\[ICLR 2026\] Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision](uni-cot_towards_unified_chain-of-thought_reasoning_across_text_and_vision.md)
 
 </div>
 

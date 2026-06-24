@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] By constructing paired citation graphs for 10,000 papers (Human vs. GPT-4o Generated vs. Random Baseline), it is found that LLM-generated references are nearly indistinguishable from human ones in terms of graph topology (RF achieves only 60% accuracy). However, they can be effectively detected using semantic embedding
+  [ICLR 2026][Graph Learning][LLM Citation Detection] By constructing paired citation graphs for 10,000 papers (Human vs. GPT-4o Generated vs. Random Baseline), it is found that LLM-generated references are nearly indistinguishable from human ones in terms of graph topology (RF achieves only 60% accuracy). However, they can be effectively detected using semantic embeddings (RF 83%, GNN 93%), indicating that LLMs precisely mimic citation topology while leaving detectable semanti…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "LLM Citation Detection"
+  - "Citation Graphs"
+  - "Graph Neural Networks"
+  - "Semantic Embeddings"
+  - "Academic Integrity"
 date: 2026-05-08
-content_hash: db1309c34070e868
+content_hash: 70b63163fcbc34e5
 ---
+
 # Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs
 
 **Conference**: ICLR 2026  
@@ -131,15 +137,14 @@ GNNs are trained using the Adam optimizer with a 70/15/15 train/val/test split, 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
-- [\[ICML 2025\] LLM Enhancers for GNNs: An Analysis from the Perspective of Causal Mechanism Identification](../../ICML2025/graph_learning/llm_enhancers_for_gnns_an_analysis_from_the_perspective_of_causal_mechanism_iden.md)
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](../../ACL2026/graph_learning/graph-based_alternatives_to_llms_for_human_simulation.md)
-- [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
+- [\[ICML 2025\] LLM Enhancers for GNNs: An Analysis from the Perspective of Causal Mechanism Identification](../../ICML2025/graph_learning/llm_enhancers_for_gnns_an_analysis_from_the_perspective_of_causal_mechanism_iden.md)
 - [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
+- [\[ICLR 2026\] HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding](harmonygnns_harmonizing_heterophily_and_homophily_in_gnns_via_self-supervised_no.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] MeanCache shifts the feature caching of diffusion/Flow Matching from an "instantaneous velocity" perspective to an "average interval velocity" perspective. It reconstructs smoother average velocities from instantaneous ones using cached Jacobian-Vector Products (JVP) and determines when to cache and how long to reuse v
+  [ICLR 2026][Image Generation][Flow Matching] MeanCache shifts the feature caching of diffusion/Flow Matching from an "instantaneous velocity" perspective to an "average interval velocity" perspective. It reconstructs smoother average velocities from instantaneous ones using cached Jacobian-Vector Products (JVP) and determines when to cache and how long to reuse via a budget-constrained "peak-suppression shortest path" scheduler. It achieves speedups of 4.12× on FLUX.1…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - JVP
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Training-free Caching"
+  - "Average Velocity"
+  - "JVP"
+  - "Trajectory Stable Scheduling"
 date: 2026-05-08
-content_hash: b591318377781123
+content_hash: ba1f384d84f31474
 ---
+
 # MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference
 
 **Conference**: ICLR 2026  
@@ -135,9 +139,9 @@ flowchart TD
 
 - [\[ICLR 2026\] Terminal Velocity Matching](terminal_velocity_matching.md)
 - [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
+- [\[ICLR 2026\] STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency](stork_faster_diffusion_and_flow_matching_sampling_by_resolving_both_stiffness_an.md)
 - [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](../../ICML2026/image_generation/stable_velocity_a_variance_perspective_on_flow_matching.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
 
 </div>
 

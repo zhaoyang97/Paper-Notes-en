@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis
 description: >-
-  [CVPR 2026][Others][Paper Note] GRaF transfers the NeRF concept to the RF domain. By introducing a theorem stating that "the spatial spectrum of a target transmitter can be approximated by interpolating the spectra of neighboring transmitters," it transforms the "per-scene retraining" NeRF into a generalizable latent RF radiance field. Leveraging a g
+  [CVPR 2026][3D Vision][Radio-Frequency Radiance Fields] GRaF transfers the NeRF concept to the RF domain. By introducing a theorem stating that "the spatial spectrum of a target transmitter can be approximated by interpolating the spectra of neighboring transmitters," it transforms the "per-scene retraining" NeRF into a generalizable latent RF radiance field. Leveraging a geometry-aware Transformer to encode neighbor spectra and complex-valued neural ray tracing to reconstruc…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Radio-Frequency Radiance Fields"
+  - "Spatial Spectrum Synthesis"
+  - "Spectrum Interpolation Theorem"
+  - "Geometry-aware Transformer"
+  - "Neural Ray Tracing"
 date: 2026-05-08
-content_hash: 10cbb0534ca56198
+content_hash: 27f2ea5fb6ce9c8c
 ---
+
 # Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ In the single-scene setting, GRaF improves over NeRF2 by 26.9% in MSE, 50.4% in 
 
 ## Related Papers
 
-- [\[ECCV 2024\] SpatialFormer: Towards Generalizable Vision Transformers with Explicit Spatial Understanding](../../ECCV2024/others/spatialformer_towards_generalizable_vision_transformers_with_explicit_spatial_un.md)
-- [\[CVPR 2026\] When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence](when_lines_meet_textures_spatial-frequency_aligned_diffusion_features_for_cross-.md)
-- [\[ECCV 2024\] FisherRF: Active View Selection and Mapping with Radiance Fields Using Fisher Information](../../ECCV2024/others/fisherrf_active_view_selection_and_mapping_with_radiance_fields_using_fisher_inf.md)
-- [\[CVPR 2025\] Radio Frequency Ray Tracing with Neural Object Representation for Enhanced RF Modeling](../../CVPR2025/others/radio_frequency_ray_tracing_with_neural_object_representation_for_enhanced_rf_mo.md)
-- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
+- [\[CVPR 2026\] Evidential Neural Radiance Fields](evidential_neural_radiance_fields.md)
+- [\[CVPR 2026\] MU-GeNeRF: Multi-view Uncertainty-guided Generalizable Neural Radiance Fields for Distractor-aware Scene](mu-generf_multi-view_uncertainty-guided_generalizable_neural_radiance_fields_for.md)
+- [\[CVPR 2026\] Fresco: Frequency-Spatial Consistent Optimization for Fine-Grained Head Avatar Modeling](fresco_frequency-spatial_consistent_optimization_for_fine-grained_head_avatar_mo.md)
+- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
+- [\[ECCV 2024\] G2fR: Frequency Regularization in Grid-Based Feature Encoding Neural Radiance Fields](../../ECCV2024/3d_vision/g2fr_frequency_regularization_in_grid-based_feature_encoding_neural_radiance_fie.md)
 
 </div>
 

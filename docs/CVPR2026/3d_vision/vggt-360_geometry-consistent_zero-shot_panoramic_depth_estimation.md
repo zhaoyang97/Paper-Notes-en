@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][VGGT] VGGT-360 reformulates panoramic monocular depth estimation as a problem of "reconstructing a globally consistent 3D model using VGGT-like 3D foundation models from multiple views and then reprojecting it back to the panorama." Through three training-free plug-and-play modules (Uncertainty-Guided Adaptive Projection, St
+  [CVPR 2026][3D Vision][Panoramic Depth Estimation] VGGT-360 reformulates panoramic monocular depth estimation as a problem of "reconstructing a globally consistent 3D model using VGGT-like 3D foundation models from multiple views and then reprojecting it back to the panorama." Through three training-free plug-and-play modules (Uncertainty-Guided Adaptive Projection, Structural Saliency-Enhanced Attention, and Correlation-Weighted 3D Refinement)…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VGGT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoramic Depth Estimation"
+  - "Zero-Shot"
+  - "VGGT"
+  - "Training-free"
+  - "Geometric Consistency"
 date: 2026-05-08
-content_hash: 7d53283a2097f768
+content_hash: 69ba52724966c3ab
 ---
+
 # VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -151,7 +156,7 @@ Ablation of components on Stanford2D3D using the VGGT backbone (Baseline Abs Rel
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
 - [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
 - [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
-- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
+- [\[CVPR 2026\] Pose-Free Omnidirectional Gaussian Splatting for 360-Degree Videos with Consistent Depth Priors](pose-free_omnidirectional_gaussian_splatting_for_360-degree_videos_with_consiste.md)
 
 </div>
 

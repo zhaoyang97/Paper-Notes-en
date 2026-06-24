@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Tight Bounds for Schrödinger Potential Estimation in Unpaired Data Translation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first non-asymptotic high-probability generalization error bound for the Empirical Risk Minimization (ERM) estimator of the Schrödinger potential. Using only i.i.d. samples from the source and target distributions and employing the Ornstein-Uhlenbeck (OU) process as the reference dynamics, the K
+  [ICLR 2026][Learning Theory][Empirical Risk Minimization] This paper provides the first non-asymptotic high-probability generalization error bound for the Empirical Risk Minimization (ERM) estimator of the Schrödinger potential. Using only i.i.d. samples from the source and target distributions and employing the Ornstein-Uhlenbeck (OU) process as the reference dynamics, the KL divergence between the estimated coupling and the optimal coupling is bounded at a fast rate of $O(\…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Schrödinger Bridge"
+  - "Optimal Transport"
+  - "Empirical Risk Minimization"
+  - "Generalization Error Bounds"
+  - "Ornstein-Uhlenbeck Process"
+  - "Unpaired Data Translation"
 date: 2026-05-08
-content_hash: e3cdb31ece237579
+content_hash: 09fcaec907639e83
 ---
+
 # Tight Bounds for Schrödinger Potential Estimation in Unpaired Data Translation
 
 **Conference**: ICLR 2026  
@@ -165,11 +172,11 @@ In the ALAE latent space for 1024×1024 FFHQ, LightSB-OU achieves an FID of **24
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Generalized Schrödinger Bridge via Sparse Variational Gaussian Processes](robust_generalized_schrodinger_bridge_via_sparse_variational_gaussian_processes.md)
 - [\[ICLR 2026\] Mean Estimation from Coarse Data: Characterizations and Efficient Algorithms](mean_estimation_from_coarse_data_characterizations_and_efficient_algorithms.md)
 - [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
 - [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
-- [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
-- [\[ICLR 2026\] PAC-Bayes Bounds for Cumulative Loss in Continual Learning](pac-bayes_bounds_for_cumulative_loss_in_continual_learning.md)
+- [\[ICLR 2026\] Complexity Analysis of Normalizing Constant Estimation: from Jarzynski Equality to Annealed Importance Sampling and Beyond](complexity_analysis_of_normalizing_constant_estimation_from_jarzynski_equality_t.md)
 
 </div>
 

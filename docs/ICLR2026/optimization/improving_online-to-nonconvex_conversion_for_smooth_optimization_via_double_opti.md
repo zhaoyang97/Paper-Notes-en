@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism
 description: >-
-  [ICLR 2026][Optimization & Theory][online-to-nonconvex] Based on the online-to-nonconvex (O2NC) framework by Cutkosky et al., this paper replaces the complex fixed-point inner loop with a "double optimism" hint function. This results in a unified first-order algorithm reaching $O(\varepsilon^{-1.75}+\sigma^2\varepsilon^{-3.5})$ complexity, achieving both the optimal determi
+  [ICLR 2026][Optimization][Non-convex optimization] Based on the online-to-nonconvex (O2NC) framework by Cutkosky et al., this paper replaces the complex fixed-point inner loop with a "double optimism" hint function. This results in a unified first-order algorithm reaching $O(\varepsilon^{-1.75}+\sigma^2\varepsilon^{-3.5})$ complexity, achieving both the optimal deterministic rate (removing the logarithmic factor) and the optimal stochastic rate.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - online-to-nonconvex
+  - "ICLR 2026"
+  - "Optimization"
+  - "Non-convex optimization"
+  - "online-to-nonconvex"
+  - "optimistic online learning"
+  - "first-order methods"
+  - "stochastic optimization"
+  - "complexity lower bounds"
 date: 2026-05-08
-content_hash: 428d08d70bee1d18
+content_hash: 7311d6607e8cf87e
 ---
+
 # Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,10 @@ As this is a purely theoretical optimization paper, no numerical experiments are
 
 ## Related Papers
 
-- [\[ICLR 2026\] Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM](communication-efficient_decentralized_optimization_via_double-communication_symm.md)
-- [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](improving_llm-based_global_optimization_with_search_space_partitioning.md)
-- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
+- [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](improving_llm-based_global_optimization_with_search_space_partitioning.md)
+- [\[ICLR 2026\] Communication-Efficient Decentralized Optimization via Double-Communication Symmetric ADMM](communication-efficient_decentralized_optimization_via_double-communication_symm.md)
 - [\[ICLR 2026\] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback](online_black-box_prompt_optimization_with_regret_guarantees_under_noisy_feedback.md)
 
 </div>

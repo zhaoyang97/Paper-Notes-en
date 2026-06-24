@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation
 description: >-
-  [AAAI 2026][Image Generation][Robotic Manipulation] This work introduces the MeanFlow paradigm to the robot learning domain for the first time. By incorporating 3D point cloud inputs and a Dispersive Loss…
+  [AAAI 2026][Image Generation][Robotic Manipulation] This work introduces the MeanFlow paradigm to the robot learning domain for the first time. By incorporating 3D point cloud inputs and a Dispersive Loss, MP1 generates action trajectories in a single network forward pass (1-NFE), achieving state-of-the-art success rates with an inference latency of only 6.8 ms on robotic manipulation tasks.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Flow Matching"
   - "Dispersive Loss"
 date: 2026-05-08
-content_hash: dddd837b74812a02
+content_hash: aa6c7d1d5586553e
 ---
 
 # MP1: MeanFlow Tames Policy Learning in 1-step for Robotic Manipulation
@@ -212,9 +212,9 @@ When $r=t$ (ratio=0), the model degenerates to standard flow matching and perfor
 
 - [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](../../ICML2026/image_generation/omp_one-step_meanflow_policy_with_directional_alignment.md)
 - [\[AAAI 2026\] EfficientFlow: Efficient Equivariant Flow Policy Learning for Embodied AI](efficientflow_efficient_equivariant_flow_policy_learning_for_embodied_ai.md)
-- [\[CVPR 2026\] Image Generation as a Visual Planner for Robotic Manipulation](../../CVPR2026/image_generation/image_generation_as_a_visual_planner_for_robotic_manipulation.md)
+- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](../../CVPR2026/image_generation/temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 - [\[NeurIPS 2025\] Two-Steps Diffusion Policy for Robotic Manipulation via Genetic Denoising](../../NeurIPS2025/image_generation/two-steps_diffusion_policy_for_robotic_manipulation_via_genetic_denoising.md)
-- [\[ICLR 2026\] SSCP: Flow-Based Single-Step Completion for Efficient and Expressive Policy Learning](../../ICLR2026/image_generation/flow-based_single-step_completion_for_efficient_and_expressive_policy_learning.md)
+- [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](../../ICML2026/image_generation/riemannian_meanflow_for_one-step_generation_on_manifolds.md)
 
 </div>
 

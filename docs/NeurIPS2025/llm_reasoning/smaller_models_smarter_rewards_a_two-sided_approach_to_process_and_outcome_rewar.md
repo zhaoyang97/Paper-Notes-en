@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Smaller Models, Smarter Rewards: A Two-Sided Approach to Process and Outcome Rewards
 description: >-
-  [NeurIPS 2025 (Workshop: Foundations of Reasoning in Language Models)][LLM Reasoning][Reward Model] The final layer of Phi-4 family small models (3.8B/14B) is replaced with a regression head and fine-tuned…
+  [NeurIPS 2025 (Workshop: Foundations of Reasoning in Language Models)][Reasoning][Reward Model] The final layer of Phi-4 family small models (3.8B/14B) is replaced with a regression head and fine-tuned, enabling them to serve simultaneously as ORM (outcome reward model) and PRM (process reward model). On code generation tasks, selecting the optimal rollout yields 20%+ improvements in pass@k.
 tags:
   - "NeurIPS 2025 (Workshop: Foundations of Reasoning in Language Models)"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Reward Model"
   - "Process Reward"
   - "Outcome Reward"
   - "Code Generation"
   - "Small Models"
 date: 2026-05-08
-content_hash: 3ab9a6b72a8f7484
+content_hash: c62e26cbb23563a4
 ---
 
 # Smaller Models, Smarter Rewards: A Two-Sided Approach to Process and Outcome Rewards
@@ -126,8 +126,8 @@ The input consists of a programming problem and (partially) generated code; the 
 - [\[ACL 2026\] Process Reward Models Meet Planning: Generating Precise and Scalable Datasets for Step-Level Rewards](../../ACL2026/llm_reasoning/process_reward_models_meet_planning_generating_precise_and_scalable_datasets_for.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](../../ICML2026/llm_reasoning/verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 - [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](../../ACL2026/llm_reasoning/hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](../../ICML2026/llm_reasoning/prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
-- [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](../../ICLR2026/llm_reasoning/overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
 
 </div>
 

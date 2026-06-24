@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process
 description: >-
-  [CVPR 2026][Others][Paper Note] To address prototype drift caused by noise/hard positive contamination in few-shot support sets, DDSF utilizes the Determinantal Point Process (DPP) to unify a "Filter-Repair-Expand" pipeline: first, suspicious samples are identified via DPP probabilistic inference rather than being discarded; second, they are "repaire
+  [CVPR 2026][Self-Supervised Learning][Robust Few-Shot Learning] To address prototype drift caused by noise/hard positive contamination in few-shot support sets, DDSF utilizes the Determinantal Point Process (DPP) to unify a "Filter-Repair-Expand" pipeline: first, suspicious samples are identified via DPP probabilistic inference rather than being discarded; second, they are "repaired" into effective features using a DPP volume-gradient-guided diffusion process; finally…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Robust Few-Shot Learning"
+  - "Determinantal Point Process (DPP)"
+  - "Subspace Disentanglement"
+  - "Diffusion Repair"
+  - "Prototypical Networks"
 date: 2026-05-08
-content_hash: c06fa36d0a3a03ae
+content_hash: 224f4712e19d43a4
 ---
+
 # DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ Incremental ablation (30% noise, SwinT):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](data-centric_meta-learning_for_robust_few-shot_generalization.md)
-- [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
-- [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
-- [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
-- [\[CVPR 2026\] Affine Perspective-Three-Point Problem](affine_perspective-three-point_problem.md)
+- [\[CVPR 2026\] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)
+- [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
+- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
+- [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
+- [\[CVPR 2026\] PointCSP: Cross-Sample Semantic Propagation and Stability Preservation in Self-Supervised Point Cloud Learning](pointcsp_cross-sample_semantic_propagation_and_stability_preservation_in_self-su.md)
 
 </div>
 

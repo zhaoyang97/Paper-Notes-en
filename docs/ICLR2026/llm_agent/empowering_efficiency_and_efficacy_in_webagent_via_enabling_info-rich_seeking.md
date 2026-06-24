@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Empowering Efficiency and Efficacy in WebAgent via Enabling Info-Rich Seeking
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] WebLeaper reformulates Information Seeking (IS) tasks as "tree-based reasoning," utilizes Wikipedia tables to synthesize "target-entity-dense" training tasks in bulk (with Basic, Union, and Reverse-Union variants), and employs ISR/ISE metrics to filter out low-coverage and inefficient trajectories. This enables 30B-sca
+  [ICLR2026][LLM Agent][Information Seeking] WebLeaper reformulates Information Seeking (IS) tasks as "tree-based reasoning," utilizes Wikipedia tables to synthesize "target-entity-dense" training tasks in bulk (with Basic, Union, and Reverse-Union variants), and employs ISR/ISE metrics to filter out low-coverage and inefficient trajectories. This enables 30B-scale open-source Web Agents to achieve open-source SOTA performance in both completeness and efficiency across five dee…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Information Seeking"
+  - "Web Agent"
+  - "Data Synthesis"
+  - "Search Efficiency"
+  - "Trajectory Filtering"
 date: 2026-05-08
-content_hash: f14248095da346ac
+content_hash: be59bef7662b5078
 ---
+
 # Empowering Efficiency and Efficacy in WebAgent via Enabling Info-Rich Seeking
 
 **Conference**: ICLR2026  

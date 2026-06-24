@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][prompt difficulty] The authors formalize LLM benchmarking as a **hierarchical Bayesian estimation problem**—prompt difficulty $p_i \sim \mathbb{P}(\mu,\sigma)$, and the accuracy of $k$ generations per prompt follows Bernoulli$(p_i)$. It is theoretically proven that using $k>1$ samples reduces within-prompt variance to $\frac{1}{nk}$, and
+  [ACL 2026 Findings][LLM Evaluation][Multi-sampling] The authors formalize LLM benchmarking as a **hierarchical Bayesian estimation problem**—prompt difficulty $p_i \sim \mathbb{P}(\mu,\sigma)$, and the accuracy of $k$ generations per prompt follows Bernoulli$(p_i)$. It is theoretically proven that using $k>1$ samples reduces within-prompt variance to $\frac{1}{nk}$, and this leads to the derivation of prompt-level difficulty scores $\mathbb{P}(\text{correct})$ and a "data map…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - prompt difficulty
-  - data map
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Multi-sampling"
+  - "Hierarchical models"
+  - "prompt difficulty"
+  - "Mislabel detection"
+  - "data map"
 date: 2026-05-08
-content_hash: f447da555fbd925c
+content_hash: 6ecc8213134bd026
 ---
+
 # Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation
 
 **Conference**: ACL 2026 Findings  
@@ -129,15 +133,14 @@ No training involved. All experiments used $k=50$ samples during inference (temp
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
+- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 - [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
 - [\[ACL 2026\] K-MetBench: A Multi-Dimensional Benchmark for Fine-Grained Evaluation of Expert Reasoning, Locality, and Multimodality in Meteorology](k-metbench_a_multi-dimensional_benchmark_for_fine-grained_evaluation_of_expert_r.md)
-- [\[ACL 2026\] Beyond Reproduction: A Paired-Task Framework for Assessing LLM Comprehension and Creativity in Literary Translation](beyond_reproduction_a_paired-task_framework_for_assessing_llm_comprehension_and_.md)
 - [\[ACL 2026\] Beyond Fixed Psychological Personas: State Beats Trait, but Language Models are State-Blind](beyond_fixed_psychological_personas_state_beats_trait_but_language_models_are_st.md)
-- [\[ACL 2026\] Teaching Language Models to Forecast Research Success Through Comparative Idea Evaluation](teaching_language_models_to_forecast_research_success_through_comparative_idea_e.md)
 
 </div>
 

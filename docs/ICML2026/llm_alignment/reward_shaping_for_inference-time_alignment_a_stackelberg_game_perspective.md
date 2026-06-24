@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] The problem of "which reward model should be used to align LLMs" is modeled as a Stackelberg game. It is proved that the optimal reward is a **per-prompt threshold reward** (giving full score $B$ above the threshold and 0 below). This threshold is efficiently estimated using Monte Carlo sampling from the base model. Fi
+  [ICML2026][LLM Alignment][Inference-time Alignment] The problem of "which reward model should be used to align LLMs" is modeled as a Stackelberg game. It is proved that the optimal reward is a **per-prompt threshold reward** (giving full score $B$ above the threshold and 0 below). This threshold is efficiently estimated using Monte Carlo sampling from the base model. Finally, the reward is softened via a sigmoid function and seamlessly integrated into inference-time alignment…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML2026"
+  - "LLM Alignment"
+  - "Inference-time Alignment"
+  - "Reward Shaping"
+  - "Stackelberg Game"
+  - "Threshold Reward"
+  - "KL Regularization"
 date: 2026-05-08
-content_hash: 0b2b5d37558b2805
+content_hash: 627f3cf0a7fc79ce
 ---
+
 # Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective
 
 **Conference**: ICML2026  
@@ -150,11 +156,11 @@ Evaluations were conducted on HH-RLHF and SHP benchmarks using Qwen3-8B and Llam
 
 ## Related Papers
 
-- [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](../../ACL2026/llm_alignment/debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
+- [\[ICLR 2026\] Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game](../../ICLR2026/llm_alignment/stackelberg_learning_from_human_feedback_preference_optimization_as_a_sequential.md)
 - [\[NeurIPS 2025\] Inference-time Alignment in Continuous Space](../../NeurIPS2025/llm_alignment/inference-time_alignment_in_continuous_space.md)
 - [\[ACL 2026\] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending](../../ACL2026/llm_alignment/to_intervene_or_not_guiding_inference-time_alignment_with_probabilistic_model_bl.md)
+- [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](../../ACL2026/llm_alignment/debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
 - [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
-- [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](../../ACL2026/llm_alignment/adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
 
 </div>
 

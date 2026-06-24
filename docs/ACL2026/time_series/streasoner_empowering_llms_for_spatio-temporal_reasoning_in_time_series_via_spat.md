@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning
 description: >-
-  [ACL 2026][Time Series][S-GRPO] STReasoner utilizes Network SDEs to synthesize spatio-temporal time series data with graph structures and textual semantics. By integrating a time-series encoder, a three-stage training pipeline, and a spatial-aware S-GRPO, the model learns to perform explicit reasoning based on temporal dynamics and spatial dependenci
+  [ACL2026][Time Series][Spatio-temporal time series] STReasoner utilizes Network SDEs to synthesize spatio-temporal time series data with graph structures and textual semantics. By integrating a time-series encoder, a three-stage training pipeline, and a spatial-aware S-GRPO, the model learns to perform explicit reasoning based on temporal dynamics and spatial dependencies.
 tags:
-  - ACL 2026
-  - Time Series
-  - S-GRPO
+  - "ACL2026"
+  - "Time Series"
+  - "Spatio-temporal time series"
+  - "Spatial-aware reinforcement learning"
+  - "S-GRPO"
+  - "Synthetic data"
+  - "Multi-modal LLM"
 date: 2026-05-08
-content_hash: 84d51816c7d8916d
+content_hash: 3f25ff711cc00805
 ---
+
 # STReasoner: Empowering LLMs for Spatio-Temporal Reasoning in Time Series via Spatial-Aware Reinforcement Learning
 
 **Conference**: ACL2026  
@@ -131,16 +136,16 @@ All three stages are essential. Alignment alone lacks reasoning; SFT is crucial 
 - **Value**: ⭐⭐⭐⭐⭐ (Opens new avenues for LLM reasoning on spatio-temporal dynamics)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
+- [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](../../ICML2026/time_series/patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
+- [\[ICLR 2026\] ST-HHOL: Spatio-Temporal Hierarchical Hypergraph Online Learning for Crime Prediction](../../ICLR2026/time_series/st-hhol_spatio-temporal_hierarchical_hypergraph_online_learning_for_crime_predic.md)
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](../../NeurIPS2025/time_series/learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
 - [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](../../ICML2026/time_series/learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
-- [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](../../ICML2026/time_series/patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
-- [\[ACL 2026\] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback](time-ra_towards_time_series_reasoning_for_anomaly_diagnosis_with_llm_feedback.md)
 
 </div>
 

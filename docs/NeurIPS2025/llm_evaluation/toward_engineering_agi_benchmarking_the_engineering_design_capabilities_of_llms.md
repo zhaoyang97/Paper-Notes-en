@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Engineering Design] This paper introduces EngDesign—the first LLM engineering design benchmark spanning 9 engineering domains (operating systems, computer architecture, control systems…
+  [NeurIPS 2025][LLM Evaluation][Engineering Design] This paper introduces EngDesign—the first LLM engineering design benchmark spanning 9 engineering domains (operating systems, computer architecture, control systems, mechanical engineering, structural engineering, digital hardware, analog circuits, robotics, and signal processing)—replacing conventional QA matching with a simulation-driven evaluation pipeline. The benchmark reveals that even the most capable reasoning model…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Domain Engineering"
   - "AGI"
 date: 2026-05-08
-content_hash: 88b8d498e19999a0
+content_hash: 93b5ca478e7c261f
 ---
 
 # Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs
@@ -135,11 +135,11 @@ No training is involved. The evaluation protocol runs each LLM three times per t
 
 ## Related Papers
 
+- [\[ICML 2026\] BuildArena: A Physics-Aligned Interactive Benchmark of LLMs for Engineering Construction](../../ICML2026/llm_evaluation/buildarena_a_physics-aligned_interactive_benchmark_of_llms_for_engineering_const.md)
 - [\[ICLR 2026\] Human-LLM Collaborative Feature Engineering for Tabular Learning](../../ICLR2026/llm_evaluation/human-llm_collaborative_feature_engineering_for_tabular_data.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](../../ACL2026/llm_evaluation/engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
 - [\[ACL 2026\] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications](../../ACL2026/llm_evaluation/bizcompass_benchmarking_the_reasoning_capabilities_of_llms_in_business_knowledge.md)
 - [\[NeurIPS 2025\] Benchmarking is Broken — Don't Let AI be its Own Judge](benchmarking_is_broken_--_dont_let_ai_be_its_own_judge.md)
-- [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
 
 </div>
 

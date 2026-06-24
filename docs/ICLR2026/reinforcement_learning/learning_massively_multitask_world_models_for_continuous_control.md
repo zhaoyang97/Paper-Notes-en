@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning Massively Multitask World Models for Continuous Control
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] The authors propose MMBench (200 tasks across 10 domains), the first benchmark for "massively multi-task online RL," and Newt, a language-conditioned world model based on TD-MPC2. By following a foundation model paradigm of "pre-training with demonstrations followed by joint online interactive optimization across all t
+  [ICLR 2026][Reinforcement Learning][multi-task reinforcement learning] The authors propose MMBench (200 tasks across 10 domains), the first benchmark for "massively multi-task online RL," and Newt, a language-conditioned world model based on TD-MPC2. By following a foundation model paradigm of "pre-training with demonstrations followed by joint online interactive optimization across all tasks," they demonstrate that a single agent can indeed learn hundreds of continuous contr…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
-  - TD-MPC2
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "multi-task reinforcement learning"
+  - "world models"
+  - "online RL"
+  - "TD-MPC2"
+  - "continuous control"
+  - "language-conditioned policy"
 date: 2026-05-08
-content_hash: d1eb79b477f4de62
+content_hash: 3b6dc970318362db
 ---
+
 # Learning Massively Multitask World Models for Continuous Control
 
 **Conference**: ICLR 2026  
@@ -129,7 +134,7 @@ Newt's advantages primarily stem from the DMControl, DMControl Ext., ManiSkill, 
 - [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
 - [\[ICLR 2026\] Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning](beyond_distributions_geometric_action_control_for_continuous_reinforcement_learn.md)
 - [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
-- [\[ICLR 2026\] Learning to Be Uncertain: Pre-training World Models with Horizon-Calibrated Uncertainty](learning_to_be_uncertain_pre-training_world_models_with_horizon-calibrated_uncer.md)
+- [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
 
 </div>
 

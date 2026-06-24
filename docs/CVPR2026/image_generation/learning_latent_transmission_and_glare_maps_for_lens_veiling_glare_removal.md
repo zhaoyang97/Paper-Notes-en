@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning Latent Transmission and Glare Maps for Lens Veiling Glare Removal
 description: >-
-  [CVPR 2026][Image Generation][veiling glare removal] This paper proposes the VeilGen + DeVeiler framework, which employs a physical-guided Stable Diffusion generative model to learn latent transmission and glare maps for synthesizing realistic compound degradation training data. By training a restoration network with reversible constraints, it achieves joint removal of a
+  [CVPR 2026][Image Generation][veiling glare removal] This paper proposes the VeilGen + DeVeiler framework, which employs a physical-guided Stable Diffusion generative model to learn latent transmission and glare maps for synthesizing realistic compound degradation training data. By training a restoration network with reversible constraints, it achieves joint removal of aberrations and veiling glare in simplified optical systems.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - veiling glare removal
-  - Stable Diffusion
+  - "CVPR 2026"
+  - "Image Generation"
+  - "veiling glare removal"
+  - "simplified optical systems"
+  - "Stable Diffusion"
+  - "physical-guided generation"
+  - "reversible restoration"
 date: 2026-05-08
-content_hash: 183c3da67d45a7e3
+content_hash: ca8d06cd416c7af4
 ---
+
 # Learning Latent Transmission and Glare Maps for Lens Veiling Glare Removal
 
 **Conference**: CVPR 2026  
@@ -148,9 +152,9 @@ In real-world scenarios without ground truth, DeVeiler maintains leadership acro
 
 - [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
 - [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
+- [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](latent_diffusion_inversion_requires_understanding_the_latent_space.md)
 - [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
-- [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
-- [\[CVPR 2026\] Towards Robust Content Watermarking Against Removal and Forgery Attacks](towards_robust_content_watermarking_against_removal_and_forgery_attacks.md)
+- [\[CVPR 2026\] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models](when_local_rules_create_global_order_self-organized_representation_learning_for_.md)
 
 </div>
 

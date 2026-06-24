@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizing Linear Autoencoder Recommenders with Decoupled Expected Quadratic Loss
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] The objective function of the EDLAE recommendation model is generalized into the Decoupled Expected Quadratic Loss (DEQL). A closed-form solution is derived for a broader range of the hyperparameter $b>0$, and computational complexity is reduced from $O(n^4)$ to $O(n^3)$ using Miller's matrix inversion theorem, outperf
+  [ICLR 2026][Image Restoration][Linear Autoencoder] The objective function of the EDLAE recommendation model is generalized into the Decoupled Expected Quadratic Loss (DEQL). A closed-form solution is derived for a broader range of the hyperparameter $b>0$, and computational complexity is reduced from $O(n^4)$ to $O(n^3)$ using Miller's matrix inversion theorem, outperforming both EDLAE and deep learning models on multiple benchmark datasets.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Linear Autoencoder"
+  - "Recommender Systems"
+  - "Collaborative Filtering"
+  - "Expected Quadratic Loss"
+  - "Closed-form Solution"
 date: 2026-05-08
-content_hash: 3d0e877b5483e99a
+content_hash: 6d874d5199119eb2
 ---
+
 # Generalizing Linear Autoencoder Recommenders with Decoupled Expected Quadratic Loss
 
 **Conference**: ICLR 2026  

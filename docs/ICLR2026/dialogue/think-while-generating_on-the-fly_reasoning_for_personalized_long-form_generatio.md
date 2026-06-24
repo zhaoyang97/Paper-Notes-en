@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Think-While-Generating: On-the-Fly Reasoning for Personalized Long-Form Generation
 description: >-
-  [ICLR 2026][Dialogue Systems][think-while-generating] FlyThinker proposes an efficient "think-while-generating" framework that utilizes an independent Reasoner to generate latent reasoning signals at the token level in parallel. These signals are dynamically integrated into the Generator to guide personalized long-form generation while maintaining training and inference e
+  [ICLR 2026][Dialogue Systems][Personalized generation] FlyThinker proposes an efficient "think-while-generating" framework that utilizes an independent Reasoner to generate latent reasoning signals at the token level in parallel. These signals are dynamically integrated into the Generator to guide personalized long-form generation while maintaining training and inference efficiency.
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - think-while-generating
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "Personalized generation"
+  - "long-form generation"
+  - "latent reasoning"
+  - "think-while-generating"
+  - "parallel reasoning"
 date: 2026-05-08
-content_hash: 0d8ece2b5c6ee52f
+content_hash: b764d0a731f3fed9
 ---
+
 # Think-While-Generating: On-the-Fly Reasoning for Personalized Long-Form Generation
 
 **Conference**: ICLR 2026  

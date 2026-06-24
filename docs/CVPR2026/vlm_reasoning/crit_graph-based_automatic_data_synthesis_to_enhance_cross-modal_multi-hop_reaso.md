@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Cross-Modal Reasoning] A graph-based automatic data generation pipeline is proposed to construct the CRIT dataset and benchmark. It is designed to train and evaluate the cross-modal multi-hop reasoning capabilities of VLMs on interleaved image-text content. Models trained with this data achieve significant improvements on multiple benchmarks
+  [CVPR 2026][VLM Reasoning][Cross-Modal Reasoning] A graph-based automatic data generation pipeline is proposed to construct the CRIT dataset and benchmark. It is designed to train and evaluate the cross-modal multi-hop reasoning capabilities of VLMs on interleaved image-text content. Models trained with this data achieve significant improvements on multiple benchmarks, including SPIQA.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Cross-Modal Reasoning
-  - Multi-Hop Reasoning
-  - Data Synthesis
-  - Graph-Based Pipeline
-  - VLM Benchmark
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Cross-Modal Reasoning"
+  - "Multi-Hop Reasoning"
+  - "Data Synthesis"
+  - "Graph-Based Pipeline"
+  - "VLM Benchmark"
 date: 2026-05-08
-content_hash: 404ca4b7ef68ad15
+content_hash: cf2c06a709ed736f
 ---
+
 # CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning
 
 **Conference**: CVPR 2026  
@@ -155,11 +156,11 @@ Using model-generated augmented data further improves performance, and the scien
 
 ## Related Papers
 
-- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
-- [\[ACL 2025\] FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning](../../ACL2025/multimodal_vlm/fcmr_robust_evaluation_of_financial_cross-modal_multi-hop_reasoning.md)
-- [\[CVPR 2026\] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](multi-crit_benchmarking_multimodal_judges_on_pluralistic_criteria-following.md)
-- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
-- [\[CVPR 2026\] OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data](omnizip_learning_a_unified_and_lightweight_lossless_compressor_for_multi-modal_d.md)
+- [\[ACL 2025\] FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning](../../ACL2025/vlm_reasoning/fcmr_robust_evaluation_of_financial_cross-modal_multi-hop_reasoning.md)
+- [\[ICLR 2026\] Composition-Grounded Data Synthesis for Visual Reasoning](../../ICLR2026/vlm_reasoning/composition-grounded_data_synthesis_for_visual_reasoning.md)
+- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/vlm_reasoning/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
+- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
+- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
 
 </div>
 

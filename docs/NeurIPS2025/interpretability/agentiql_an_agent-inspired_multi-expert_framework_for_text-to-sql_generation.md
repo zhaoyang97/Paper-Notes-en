@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation
 description: >-
-  [NeurIPS 2025][Interpretability][Text-to-SQL] This paper proposes AgentiQL, a multi-expert agent framework for Text-to-SQL: a reasoning agent decomposes questions into sub-problems, a coding agent generates sub-queries…
+  [NeurIPS 2025][Interpretability][Text-to-SQL] This paper proposes AgentiQL, a multi-expert agent framework for Text-to-SQL: a reasoning agent decomposes questions into sub-problems, a coding agent generates sub-queries, a refinement step corrects column selection, and an adaptive router intelligently routes between a baseline parser and the modular pipeline. Using a 14B open-source model, AgentiQL achieves 86.07% EX on Spider, approaching GPT-4 SOTA (89.65%).
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "adaptive routing"
   - "Spider benchmark"
 date: 2026-05-08
-content_hash: badb8bec49810700
+content_hash: 7a9f2ded2371f1f8
 ---
 
 # AgentiQL: An Agent-Inspired Multi-Expert Framework for Text-to-SQL Generation
@@ -130,9 +130,9 @@ No training is required (inference-time method). The Qwen2.5-Coder series (7B/14
 
 - [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](../../AAAI2026/interpretability/toc_tree-of-claims_search_with_multi-agent_language_models.md)
 - [\[ICLR 2026\] MATA: A Trainable Hierarchical Automaton System for Multi-Agent Visual Reasoning](../../ICLR2026/interpretability/mata_a_trainable_hierarchical_automaton_system_for_multi-agent_visual_reasoning.md)
+- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 - [\[NeurIPS 2025\] Toward Real-world Text Image Forgery Localization: Structured and Interpretable Data Synthesis](toward_real-world_text_image_forgery_localization_structured_and_interpretable_d.md)
 - [\[NeurIPS 2025\] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making](valuepilot_a_two-phase_framework_for_value-driven_decision-making.md)
-- [\[NeurIPS 2025\] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework](discovering_transformer_circuits_via_a_hybrid_attribution_and_pruning_framework.md)
 
 </div>
 

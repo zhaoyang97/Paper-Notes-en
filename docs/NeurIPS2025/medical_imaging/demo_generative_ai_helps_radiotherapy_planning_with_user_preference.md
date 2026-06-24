@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Demo: Generative AI helps Radiotherapy Planning with User Preference
 description: >-
-  [NeurIPS 2025 (GenAI for Health Workshop)][Medical Imaging][radiotherapy planning] This paper proposes the Flexible Dose Proposer (FDP), a two-stage training framework (VQ-VAE pretraining + multi-condition encoding) that…
+  [NeurIPS 2025 (GenAI for Health Workshop) Best Paper][Medical Imaging][radiotherapy planning] This paper proposes the Flexible Dose Proposer (FDP), a two-stage training framework (VQ-VAE pretraining + multi-condition encoding) that enables slider-based interactive 3D dose distribution prediction incorporating user preferences. The system is integrated into the Eclipse clinical treatment planning system and outperforms Varian RapidPlan in head-and-neck cancer radiotherapy scen…
 tags:
-  - "NeurIPS 2025 (GenAI for Health Workshop)"
+  - "NeurIPS 2025 (GenAI for Health Workshop) Best Paper"
   - "Medical Imaging"
   - "radiotherapy planning"
   - "dose prediction"
@@ -12,7 +12,7 @@ tags:
   - "VQ-VAE"
   - "generative AI"
 date: 2026-05-08
-content_hash: 6ae967bd2792d759
+content_hash: 030df21a0787052a
 ---
 
 # Demo: Generative AI helps Radiotherapy Planning with User Preference
@@ -133,11 +133,11 @@ FDP outperforms RapidPlan on the std metric for 15/15 OARs and on the mean metri
 
 ## Related Papers
 
+- [\[CVPR 2026\] Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study](../../CVPR2026/medical_imaging/any2any_3d_diffusion_models_with_knowledge_transfer_a_radiotherapy_planning_stud.md)
 - [\[AAAI 2026\] Rethinking Bias in Generative Data Augmentation for Medical AI: a Frequency Recalibration Approach](../../AAAI2026/medical_imaging/rethinking_bias_in_generative_data_augmentation_for_medical_ai_a_frequency_recal.md)
 - [\[NeurIPS 2025\] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)
 - [\[NeurIPS 2025\] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)
 - [\[NeurIPS 2025\] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding](eegrexfernet_a_lightweight_gen-ai_framework_for_eeg_subspace_reconstruction_via_.md)
-- [\[AAAI 2026\] VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management](../../AAAI2026/medical_imaging/vitaldiagnosis_ai-driven_ecosystem_for_247_vital_monitoring_and_chronic_disease_.md)
 
 </div>
 

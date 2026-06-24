@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks
 description: >-
-  [NeurIPS 2025][LLM Agent][Test-time Scaling] This paper investigates the problem of compute-optimal test-time scaling in multi-stage complex tasks. Through large-scale pilot experiments…
+  [NeurIPS 2025][LLM Agent][Test-time Scaling] This paper investigates the problem of compute-optimal test-time scaling in multi-stage complex tasks. Through large-scale pilot experiments, three generalizable scaling insights for LLMs on multi-stage tasks are identified. The authors propose AgentTTS—an LLM agent-based framework that autonomously searches for compute-optimal model selection and budget allocation strategies via iterative feedback-driven search.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "Compute Budget Allocation"
   - "Hyperparameter Optimization"
 date: 2026-05-08
-content_hash: 20823dc2bbe06d28
+content_hash: 82a1bc5ddf56efbb
 ---
 
 # AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks
@@ -147,11 +147,11 @@ The problem formulation is novel and practically motivated (multi-stage TTS addr
 
 ## Related Papers
 
+- [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](../../ICLR2026/llm_agent/gta1_gui_test-time_scaling_agent.md)
+- [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
 - [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
-- [\[NeurIPS 2025\] Agentic Plan Caching: Test-Time Memory for Fast and Cost-Efficient LLM Agents](agentic_plan_caching_test-time_memory_for_fast_and_cost-efficient_llm_agents.md)
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
-- [\[AAAI 2026\] Time, Identity and Consciousness in Language Model Agents](../../AAAI2026/llm_agent/time_identity_and_consciousness_in_language_model_agents.md)
-- [\[NeurIPS 2025\] Are Large Language Models Sensitive to the Motives Behind Communication?](are_large_language_models_sensitive_to_the_motives_behind_communication.md)
+- [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](../../ICLR2026/llm_agent/pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)
 
 </div>
 

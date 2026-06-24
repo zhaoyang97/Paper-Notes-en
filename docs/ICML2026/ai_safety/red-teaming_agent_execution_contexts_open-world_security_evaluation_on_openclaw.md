@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Addressing agents like OpenClaw that possess "variable execution contexts including files, memory, tools, and skills," this work proposes **DeepTrap**, an automated red-teaming framework. It formulates the injection of adversarial payloads into clean contexts as a **black-box, discrete, and stochastic trajectory-level
+  [ICML2026][AI Safety][Agent Security] Addressing agents like OpenClaw that possess "variable execution contexts including files, memory, tools, and skills," this work proposes **DeepTrap**, an automated red-teaming framework. It formulates the injection of adversarial payloads into clean contexts as a **black-box, discrete, and stochastic trajectory-level multi-objective optimization** problem (aiming to trigger risks, preserve normal tasks…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Agent Security"
+  - "Red-Teaming Evaluation"
+  - "Context Poisoning"
+  - "Trajectory-Level Evaluation"
+  - "Black-Box Optimization"
 date: 2026-05-08
-content_hash: 6ab13bf120b21cb2
+content_hash: c9d33cbfd2836611
 ---
+
 # Red-Teaming Agent Execution Contexts: Open-World Security Evaluation on OpenClaw
 
 **Conference**: ICML2026  
@@ -120,6 +126,7 @@ Most non-Claude models maintain very high UGS (often 0.85–1.00), meaning the *
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

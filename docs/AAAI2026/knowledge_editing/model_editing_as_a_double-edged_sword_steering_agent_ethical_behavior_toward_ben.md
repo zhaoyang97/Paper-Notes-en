@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Model Editing as a Double-Edged Sword: Steering Agent Ethical Behavior
 description: >-
-  [AAAI 2026][Knowledge Editing][Model Editing] This paper frames the steering of agent ethical behavior as a model editing task (Behavior Editing)…
+  [AAAI 2026 Oral][Knowledge Editing][Model Editing] This paper frames the steering of agent ethical behavior as a model editing task (Behavior Editing), proposes a three-tier BehaviorBench grounded in psychological moral theory, and validates on 9 open-source and 20 closed-source models that model editing can precisely steer agents toward either benevolent or malicious behavior, with a single edit potentially causing global moral alignment drift.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Knowledge Editing"
   - "Model Editing"
   - "Ethical Behavior"
@@ -12,7 +12,7 @@ tags:
   - "Moral Alignment"
   - "BehaviorBench"
 date: 2026-05-08
-content_hash: a12b0f4bcba9aa4d
+content_hash: 985e28d43c89ee7e
 ---
 
 # Model Editing as a Double-Edged Sword: Steering Agent Ethical Behavior
@@ -132,10 +132,10 @@ In total: 10 datasets covering 1,001 moral scenarios.
 
 ## Related Papers
 
+- [\[ACL 2025\] SAKE: Steering Activations for Knowledge Editing](../../ACL2025/knowledge_editing/sake_steering_activations_for_knowledge_editing.md)
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
 - [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
 - [\[ACL 2026\] FABLE: Fine-grained Fact Anchoring for Unstructured Model Editing](../../ACL2026/knowledge_editing/fable_fine-grained_fact_anchoring_for_unstructured_model_editing.md)
-- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
 - [\[ICLR 2026\] Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing](../../ICLR2026/knowledge_editing/bilinear_representation_mitigates_reversal_curse_and_enables_consistent_model_ed.md)
 
 </div>

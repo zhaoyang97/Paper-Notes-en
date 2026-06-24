@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Otters: An Energy-Efficient Spiking Transformer via Optical Time-to-First-Spike Encoding
 description: >-
-  [ICLR 2026][Model Compression][QNN-to-SNN] This paper reinterprets the "natural signal decay" of optoelectronic devices—originally considered a physical defect—as the temporal decay function required for Time-to-First-Spike (TTFS) encoding. By combining a stepped dynamic threshold and a lossless QNN-to-SNN conversion algorithm, the authors develop a 1-bit KV Sp
+  [ICLR 2026][Model Compression][Spiking Transformer] This paper reinterprets the "natural signal decay" of optoelectronic devices—originally considered a physical defect—as the temporal decay function required for Time-to-First-Spike (TTFS) encoding. By combining a stepped dynamic threshold and a lossless QNN-to-SNN conversion algorithm, the authors develop a 1-bit KV Spiking Transformer. It achieves SOTA performance among SNNs across seven GLUE tasks while improving energy ef…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - QNN-to-SNN
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Spiking Transformer"
+  - "TTFS Encoding"
+  - "Photoelectronic Synapse"
+  - "QNN-to-SNN"
+  - "Hardware-Software Co-design"
 date: 2026-05-08
-content_hash: 969cb897e4e0972a
+content_hash: ada170dbf7004ba0
 ---
+
 # Otters: An Energy-Efficient Spiking Transformer via Optical Time-to-First-Spike Encoding
 
 **Conference**: ICLR 2026  
@@ -154,9 +159,9 @@ Regarding noise robustness (SST-2), the base Otters model is stable within a 5% 
 
 - [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](tp-spikformer_token_pruned_spiking_transformer.md)
 - [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
-- [\[ICLR 2026\] Vulcan: 为边缘智能裁剪紧凑的类特定视觉 Transformer](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
-- [\[ICLR 2026\] RAPID$^3$: Tri-Level Reinforced Acceleration Policies for Diffusion Transformer](rapid3_tri-level_reinforced_acceleration_policies_for_diffusion_transformer.md)
-- [\[ICLR 2026\] Plug-and-Play Fidelity Optimization for Diffusion Transformer Acceleration via Cumulative Error Minimization](plug-and-play_fidelity_optimization_for_diffusion_transformer_acceleration_via_c.md)
+- [\[ICLR 2026\] Biologically Plausible Learning via Bidirectional Spike-Based Distillation](biologically_plausible_learning_via_bidirectional_spike-based_distillation.md)
+- [\[ICLR 2026\] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval](enhancing_multivariate_time_series_forecasting_with_global_temporal_retrieval.md)
+- [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](../../ICML2026/model_compression/towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
 
 </div>
 

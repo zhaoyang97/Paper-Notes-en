@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neuron-Aware Data Selection in Instruction Tuning for Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] NAIT proposes using "neuron activation patterns" to select instruction tuning data. Specifically, it extracts directional vectors corresponding to specific abilities from a small number of in-domain samples and then ranks candidate samples based on their alignment scores with these vectors. On LLaMA-2-7b, using only 10
+  [ICLR 2026][LLM Efficiency][Instruction Tuning] NAIT proposes using "neuron activation patterns" to select instruction tuning data. Specifically, it extracts directional vectors corresponding to specific abilities from a small number of in-domain samples and then ranks candidate samples based on their alignment scores with these vectors. On LLaMA-2-7b, using only 10% of Alpaca-GPT4 data selected via NAIT achieves a 3.24% average improvement over full fine-tuning. The method d…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Instruction Tuning"
+  - "Data Selection"
+  - "Neuron Activation"
+  - "PCA Directional Vectors"
+  - "Ability Transferability"
 date: 2026-05-08
-content_hash: 3fa48c1f31a22d11
+content_hash: 2d704b9d9b49b35f
 ---
+
 # Neuron-Aware Data Selection in Instruction Tuning for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ NAIT reduces costs by 19x compared to AlpaGasus and is 17.58x faster than Select
 
 ## Related Papers
 
-- [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
 - [\[ICLR 2026\] Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning](influence-preserving_proxies_for_gradient-based_data_selection_in_llm_finetuning.md)
-- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
+- [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
 - [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
+- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
 - [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
 
 </div>

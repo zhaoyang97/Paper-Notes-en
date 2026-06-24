@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Private Evolution Converges
 description: >-
-  [NeurIPS 2025][Differential Privacy] This paper provides the first convergence guarantee for the Private Evolution (PE) synthetic data generation algorithm that does not rely on unrealistic assumptions…
+  [NeurIPS 2025][Differential Privacy] This paper provides the first convergence guarantee for the Private Evolution (PE) synthetic data generation algorithm that does not rely on unrealistic assumptions, proving that under appropriate hyperparameter settings, the $(ε,δ)$-DP synthetic dataset output by PE achieves a 1-Wasserstein distance of $\tilde{O}(d(nε)^{-1/d})$.
 tags:
   - "NeurIPS 2025"
   - "Differential Privacy"
@@ -11,7 +11,7 @@ tags:
   - "Wasserstein Distance"
   - "Convergence Analysis"
 date: 2026-05-08
-content_hash: 08a6c67b136f980d
+content_hash: 54d56da6fe78acac
 ---
 
 # Private Evolution Converges
@@ -153,9 +153,9 @@ For practical variants using Laplace noise with threshold truncation (which more
 ## Related Papers
 
 - [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
-- [\[ICLR 2026\] Missing Mass for Differentially Private Domain Discovery](../../ICLR2026/others/missing_mass_for_differentially_private_domain_discovery.md)
 - [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](../../AAAI2026/others/private_frequency_estimation_via_residue_number_systems.md)
+- [\[ICML 2026\] MalTree: Tracing Malware Evolution from Embeddings at Scale](../../ICML2026/others/maltree_tracing_malware_evolution_from_embeddings_at_scale.md)
 - [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](../../AAAI2026/others/microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
 
 </div>

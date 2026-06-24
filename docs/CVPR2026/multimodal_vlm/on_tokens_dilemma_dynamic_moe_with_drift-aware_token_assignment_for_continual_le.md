@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper reveals the "token's dilemma" in dynamic MoE continual learning—where ambiguity in new task data and weak contributions from old tokens toward new knowledge lead to routing drift and catastrophic forgetting. It proposes LLaVA-DyMoE, which mitigates routing drift through Token Assignment Guidance and Routing
+  [CVPR 2026][Multimodal VLM][Continual Learning] This paper reveals the "token's dilemma" in dynamic MoE continual learning—where ambiguity in new task data and weak contributions from old tokens toward new knowledge lead to routing drift and catastrophic forgetting. It proposes LLaVA-DyMoE, which mitigates routing drift through Token Assignment Guidance and Routing Score Regularization, achieving an MFN improvement of over 7% and a 12% reduction in forgetting on the CoIN benc…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Mixture-of-Experts"
+  - "Routing Drift"
+  - "Large Vision Language Models"
+  - "Token Assignment"
 date: 2026-05-08
-content_hash: e5a29902c736fa8b
+content_hash: e75c1e787f72b431
 ---
+
 # On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models
 
 **Conference**: CVPR 2026  
@@ -161,10 +167,10 @@ Impact of ambiguity threshold $\tau$:
 ## Related Papers
 
 - [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
-- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
-- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
-- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
+- [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
+- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
+- [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](token_warping_helps_mllms_look_from_nearby_viewpoints.md)
 
 </div>
 

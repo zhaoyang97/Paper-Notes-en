@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Interleave-VLA: Enhancing Robot Manipulation with Image-Text Interleaved Instructions
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Interleaved Instruction] This paper proposes Interleave-VLA: a model-agnostic paradigm requiring minimal architectural changes that enables existing VLAs to process "image-text interleaved" instructions (replacing text descriptions of target objects with their images). Along with an automated pipeline that transforms Open X-Embodiment into a 2
+  [ICLR 2026][Robotics][Interleaved Instruction] This paper proposes Interleave-VLA: a model-agnostic paradigm requiring minimal architectural changes that enables existing VLAs to process "image-text interleaved" instructions (replacing text descriptions of target objects with their images). Along with an automated pipeline that transforms Open X-Embodiment into a 210k interleaved instruction dataset, the approach improves out-of-domain generalization for unseen objects by app…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Interleaved Instruction
-  - VLA
-  - Out-of-Domain Generalization
-  - In-Context Visual Grounding
-  - Open X-Embodiment
+  - "ICLR 2026"
+  - "Robotics"
+  - "Interleaved Instruction"
+  - "VLA"
+  - "Out-of-Domain Generalization"
+  - "In-Context Visual Grounding"
+  - "Open X-Embodiment"
 date: 2026-05-08
-content_hash: a5dff61c9bc45c01
+content_hash: 2a365b32ec287927
 ---
+
 # Interleave-VLA: Enhancing Robot Manipulation with Image-Text Interleaved Instructions
 
 **Conference**: ICLR 2026  
@@ -130,7 +131,7 @@ PT indicates pre-training on the interleaved dataset (Note: pre-training data **
 - [\[ICLR 2026\] WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control](wholebodyvla_towards_unified_latent_vla_for_whole-body_loco-manipulation_control.md)
 - [\[CVPR 2026\] SIR: Structured Image Representations for Explainable Robot Learning](../../CVPR2026/robotics/sir_structured_image_representations_for_explainable_robot_learning.md)
 - [\[ICLR 2026\] villa-X: Enhancing Latent Action Modeling in Vision-Language-Action Models](villa-x_enhancing_latent_action_modeling_in_vision-language-action_models.md)
-- [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
+- [\[ICLR 2026\] Sim2Real VLA: Zero-Shot Generalization of Synthesized Skills to Realistic Manipulation](sim2real_vla_zero-shot_generalization_of_synthesized_skills_to_realistic_manipul.md)
 
 </div>
 

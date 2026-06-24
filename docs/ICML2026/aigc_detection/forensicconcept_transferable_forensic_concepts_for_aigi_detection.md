@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ForensicConcept: Transferable Forensic Concepts for AIGI Detection
 description: >-
-  [ICML 2026][AIGC Detection][CKNNA] Addressing the issues where AI-Generated Image (AIGI) detectors are "highly accurate within the training distribution but fail on unseen generators" and remain entirely black-box, this paper explicitly extracts dispersed evidence relied upon by detectors into a "forensic concept codebook." It uses diffusion features (C
+  [ICML 2026][AIGC Detection][AI-Generated Image Detection] Addressing the issues where AI-Generated Image (AIGI) detectors are "highly accurate within the training distribution but fail on unseen generators" and remain entirely black-box, this paper explicitly extracts dispersed evidence relied upon by detectors into a "forensic concept codebook." It uses diffusion features (CleanDIFT) as external generative trace references and employs the neighborhood-structure consistency m…
 tags:
-  - ICML 2026
-  - AIGC Detection
-  - CKNNA
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "AI-Generated Image Detection"
+  - "Forensic Concepts"
+  - "Cross-generator Generalization"
+  - "Diffusion Feature Alignment"
+  - "CKNNA"
 date: 2026-05-08
-content_hash: 24831be8e9825825
+content_hash: d8a603ad7cb1a3a8
 ---
+
 # ForensicConcept: Transferable Forensic Concepts for AIGI Detection
 
 **Conference**: ICML 2026  
@@ -136,9 +141,9 @@ CLIP with/without diffusion codebook injection on GenImage (Accuracy % and ΔAcc
 
 - [\[ICML 2026\] Deep Residual Injection for Full-Spectrum Forensic Signal Perception in Multimodal Large Language Models](deep_residual_injection_for_full-spectrum_forensic_signal_perception_in_multimod.md)
 - [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](../../ACL2026/aigc_detection/aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
-- [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
+- [\[ICLR 2026\] Enabling Your Forensic Detector Know How Well It Performs on Distorted Samples](../../ICLR2026/aigc_detection/enabling_your_forensic_detector_know_how_well_it_performs_on_distorted_samples.md)
 - [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
-- [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
+- [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
 
 </div>
 

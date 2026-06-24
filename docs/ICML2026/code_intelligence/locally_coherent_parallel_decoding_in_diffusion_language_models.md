@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Locally Coherent Parallel Decoding in Diffusion Language Models
 description: >-
-  [ICML 2026][Code Intelligence][Diffusion Language Model] This paper proposes CoDiLA, which attaches a lightweight autoregressive (AR) model to a masked diffusion language model (DLM). By receiving the marginal distributions of the DLM through "soft embeddings" and performing local autoregressive decoding within small blocks, it eliminates the local incoherence caused by para
+  [ICML 2026][Code Intelligence][Diffusion Language Models] This paper proposes CoDiLA, which attaches a lightweight autoregressive (AR) model to a masked diffusion language model (DLM). By receiving the marginal distributions of the DLM through "soft embeddings" and performing local autoregressive decoding within small blocks, it eliminates the local incoherence caused by parallel sampling while preserving the global bidirectional capabilities of the DLM. It establishes a new…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - Diffusion Language Model
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Diffusion Language Models"
+  - "Parallel Decoding"
+  - "Local Autoregression"
+  - "Soft Conditioning"
+  - "Code Generation"
 date: 2026-05-08
-content_hash: 1e58b76f2fbaf6da
+content_hash: f8bad34324e0f8a9
 ---
+
 # Locally Coherent Parallel Decoding in Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -149,9 +154,9 @@ In parallel decoding scenarios, accuracy is maintained while parallelism increas
 
 - [\[ICLR 2026\] Training Large Language Models To Reason In Parallel With Global Forking Tokens](../../ICLR2026/code_intelligence/training_large_language_models_to_reason_in_parallel_with_global_forking_tokens.md)
 - [\[ACL 2026\] Static Program Slicing Using Language Models With Dataflow-Aware Pretraining and Constrained Decoding](../../ACL2026/code_intelligence/static_program_slicing_using_language_models_with_dataflow-aware_pretraining_and.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](../../ICLR2026/code_intelligence/diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
 - [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](entropy-informed_decoding_adaptive_information-driven_branching.md)
 - [\[ICML 2026\] Poison with Style: A Practical Poisoning Attack on Code Large Language Models](poison_with_style_a_practical_poisoning_attack_on_code_large_language_models.md)
-- [\[AAAI 2026\] DiffBench Meets DiffAgent: End-to-End LLM-Driven Diffusion Acceleration Code Generation](../../AAAI2026/code_intelligence/diffbench_meets_diffagent_end-to-end_llm-driven_diffusion_ac.md)
 
 </div>
 

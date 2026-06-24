@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tiny but Mighty: A Software-Hardware Co-Design Approach for Efficient Multimodal Inference on Battery-Powered Small Devices
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] This paper proposes NANOMIND, which decomposes Large Multimodal Models (LMM) into four independent "building blocks": vision, projection, language, and audio. These blocks are scheduled across heterogeneous accelerators (NPU/GPU/CPU) based on their strengths. A Token-Aware Buffer Manager (TABM) facilitates zero-copy em
+  [ICLR 2026][Multimodal Efficiency][Software-Hardware Co-design] This paper proposes NANOMIND, which decomposes Large Multimodal Models (LMM) into four independent "building blocks": vision, projection, language, and audio. These blocks are scheduled across heterogeneous accelerators (NPU/GPU/CPU) based on their strengths. A Token-Aware Buffer Manager (TABM) facilitates zero-copy embedding transfer on unified memory. Combined with custom hardware, low-bit fused GEMM kernels…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "Software-Hardware Co-design"
+  - "Heterogeneous Accelerators"
+  - "Zero-copy"
+  - "Edge Multimodal"
+  - "Low-bit Quantization"
 date: 2026-05-08
-content_hash: 2dec64d46428c51c
+content_hash: 69853819816acf34
 ---
+
 # Tiny but Mighty: A Software-Hardware Co-Design Approach for Efficient Multimodal Inference on Battery-Powered Small Devices
 
 **Conference**: ICLR 2026  
@@ -125,10 +131,10 @@ Evaluation is "bottom-up" across three dimensions: resource usage, accuracy unde
 ## Related Papers
 
 - [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](../../CVPR2026/vlm_efficiency/segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
+- [\[ICLR 2026\] SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration](sp-vla_a_joint_model_scheduling_and_token_pruning_approach_for_vla_model_acceler.md)
 - [\[ACL 2026\] MACS: Modality-Aware Capacity Scaling for Efficient Multimodal MoE Inference](../../ACL2026/vlm_efficiency/macs_modality-aware_capacity_scaling_for_efficient_multimodal_moe_inference.md)
-- [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
-- [\[CVPR 2026\] NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices](../../CVPR2026/vlm_efficiency/nuwa_deriving_lightweight_class-specific_vision_transformers_for_edge_devices.md)
 - [\[ACL 2025\] HotelMatch-LLM: Joint Multi-Task Training of Small and Large Language Models for Efficient Multimodal Hotel Retrieval](../../ACL2025/vlm_efficiency/hotelmatch_llm_retrieval.md)
+- [\[ICLR 2026\] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models](photon_speedup_volume_understanding_with_efficient_multimodal_large_language_mod.md)
 
 </div>
 

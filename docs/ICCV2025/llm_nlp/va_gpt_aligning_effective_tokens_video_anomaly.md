@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models
 description: >-
-  [ICCV 2025][LLM/NLP][Video anomaly detection] This paper proposes VA-GPT, a multimodal large language model for video anomaly event understanding. Through two modules—Spatial Effective Token Selection (SETS) and Temporal…
+  [ICCV 2025][LLM (Other)][Video anomaly detection] This paper proposes VA-GPT, a multimodal large language model for video anomaly event understanding. Through two modules—Spatial Effective Token Selection (SETS) and Temporal Effective Token Generation (TETG)—VA-GPT enables MLLMs to precisely align anomaly-relevant information in both spatial and temporal dimensions, achieving state-of-the-art performance on both in-domain and cross-domain anomaly detection benchmarks.
 tags:
   - "ICCV 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Video anomaly detection"
   - "multimodal large language models"
   - "spatial effective tokens"
   - "temporal effective tokens"
   - "cross-domain generalization"
 date: 2026-05-08
-content_hash: 077b9adddd63361e
+content_hash: 56c159b466a39e2e
 ---
 
 # VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models
@@ -101,11 +101,11 @@ Standard instruction-following training, with fine-tuning performed on a self-co
 
 ## Related Papers
 
+- [\[ACL 2025\] MEraser: An Effective Fingerprint Erasure Approach for Large Language Models](../../ACL2025/llm_nlp/meraser_fingerprint_erasure.md)
+- [\[ACL 2025\] Aligning Large Language Models with Implicit Preferences from User-Generated Content](../../ACL2025/llm_nlp/pugc_align_implicit_pref_ugc.md)
+- [\[ACL 2025\] Direct Confidence Alignment: Aligning Verbalized Confidence with Internal Confidence In Large Language Models](../../ACL2025/llm_nlp/direct_confidence_alignment_aligning_verbalized_confidence_with_internal_confide.md)
 - [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](../../AAAI2026/llm_nlp/identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
 - [\[NeurIPS 2025\] StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model](../../NeurIPS2025/llm_nlp/streambridge_turning_your_offline_video_large_language_model_into_a_proactive_st.md)
-- [\[ACL 2026\] Clustered Self-Assessment: A Simple yet Effective Method for Uncertainty Quantification in Large Language Models](../../ACL2026/llm_nlp/clustered_self-assessment_a_simple_yet_effective_method_for_uncertainty_quantifi.md)
-- [\[ICCV 2025\] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models](any_ssr_how_recursive_least_squares_works_in_continual_learning_of_large_language_models.md)
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](../../NeurIPS2025/llm_nlp/solving_inequality_proofs_with_large_language_models.md)
 
 </div>
 

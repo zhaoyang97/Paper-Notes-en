@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
 description: >-
-  [ICCV 2025][Video Understanding][4D understanding] This paper introduces 4D-Bench, the first benchmark for evaluating multi-modal large language models (MLLMs) on 4D object (dynamic 3D object) understanding…
+  [ICCV 2025][Video Understanding][4D understanding] This paper introduces 4D-Bench, the first benchmark for evaluating multi-modal large language models (MLLMs) on 4D object (dynamic 3D object) understanding, comprising two tasks: 4D object question answering and 4D object captioning. The benchmark reveals that even GPT-4o achieves only 63% accuracy on simple 4D objects (vs. 91% human baseline), with particularly weak performance on object counting and temporal understanding.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "video question answering"
 date: 2026-05-08
-content_hash: 993b0b54c00e2150
+content_hash: 998dc6653a381464
 ---
 
 # 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding
@@ -130,10 +130,10 @@ This paper is a benchmarking study and does not involve model training. Evaluati
 
 ## Related Papers
 
+- [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
+- [\[ICCV 2025\] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics](hermes_temporal-coherent_long-form_understanding_with_episodes_and_semantics.md)
 - [\[ICCV 2025\] DisTime: Distribution-based Time Representation for Video Large Language Models](distime_distribution-based_time_representation_for_video_large_language_models.md)
 - [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
-- [\[ICCV 2025\] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics](hermes_temporal-coherent_long-form_understanding_with_episodes_and_semantics.md)
-- [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
 - [\[ICCV 2025\] Multi-modal Multi-platform Person Re-Identification: Benchmark and Method](multi-modal_multi-platform_person_re-identification_benchmark_and_method.md)
 
 </div>

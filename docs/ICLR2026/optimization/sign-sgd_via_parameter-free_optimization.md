@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sign-SGD via Parameter-Free Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Sign-SGD] This paper proposes ALIAS, a series of parameter-free Sign-SGD algorithms that eliminate the need for manual learning rate tuning. By estimating the objective gap and local smoothness constants per iteration, ALIAS automatically determines sign update stepsizes. It matches or exceeds tuned Sign-SGD and AdamW across LLa
+  [ICLR2026][Optimization][Parameter-free optimization] This paper proposes ALIAS, a series of parameter-free Sign-SGD algorithms that eliminate the need for manual learning rate tuning. By estimating the objective gap and local smoothness constants per iteration, ALIAS automatically determines sign update stepsizes. It matches or exceeds tuned Sign-SGD and AdamW across LLaMA pre-training, Swin fine-tuning, and various benchmarks, significantly reducing the total computational…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Sign-SGD
+  - "ICLR2026"
+  - "Optimization"
+  - "Parameter-free optimization"
+  - "Sign-SGD"
+  - "Adaptive stepsize"
+  - "LLM training"
+  - "Gradient compression"
 date: 2026-05-08
-content_hash: a3bf7605464fc54b
+content_hash: 9ad7e7cf8167554e
 ---
+
 # Sign-SGD via Parameter-Free Optimization
 
 **Conference**: ICLR2026  

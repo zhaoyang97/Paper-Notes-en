@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Physics from Video: Identifiability of Time-Invariant Second-Order ODEs under Minimal Trajectory Conditions
 description: >-
-  [ICML 2026][Interpretability][Decoder-Free] This paper provides the first structural identifiability theorem for identifying second-order linear ODE parameters $(\gamma_1,\gamma_0)$ from raw video using only an encoder (without a decoder/pixel reconstruction). It characterizes the boundary between "single trajectory sufficiency vs. three trajectories necessity"
+  [ICML 2026][Interpretability][Structural Identifiability] This paper provides the first structural identifiability theorem for identifying second-order linear ODE parameters $(\gamma_1,\gamma_0)$ from raw video using only an encoder (without a decoder/pixel reconstruction). It characterizes the boundary between "single trajectory sufficiency vs. three trajectories necessity" via a geometric condition called **level-set slope coverage**. It proves that underdamped systems are…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Decoder-Free
-  - Level-Set Slope Coverage
+  - "ICML 2026"
+  - "Interpretability"
+  - "Structural Identifiability"
+  - "Second-Order ODE"
+  - "Decoder-Free"
+  - "Level-Set Slope Coverage"
+  - "Variance Lower Bound Regularization"
 date: 2026-05-08
-content_hash: 641fc0ff892bc2cb
+content_hash: 76fff65b519dbe88
 ---
+
 # Physics from Video: Identifiability of Time-Invariant Second-Order ODEs under Minimal Trajectory Conditions
 
 **Conference**: ICML 2026  
@@ -141,9 +145,9 @@ Identification theory was validated on synthetic pendulum videos across 4 dampin
 
 - [\[AAAI 2026\] PragWorld: A Benchmark Evaluating LLMs' Local World Model under Minimal Linguistic Alterations and Conversational Dynamics](../../AAAI2026/interpretability/pragworld_a_benchmark_evaluating_llms_local_world_model_under_minimal_linguistic.md)
 - [\[ICML 2026\] Why Linear Interpretability Works: Invariant Subspaces as a Result of Architectural Constraints](why_linear_interpretability_works_invariant_subspaces_as_a_result_of_architectur.md)
+- [\[ICLR 2026\] Gauge-invariant Representation Holonomy](../../ICLR2026/interpretability/gauge-invariant_representation_holonomy.md)
 - [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](../../CVPR2026/interpretability/back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
-- [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
 
 </div>
 

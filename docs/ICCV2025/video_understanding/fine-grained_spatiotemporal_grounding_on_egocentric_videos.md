@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fine-grained Spatiotemporal Grounding on Egocentric Videos
 description: >-
-  [ICCV 2025][Video Understanding][egocentric video] This paper presents EgoMask, the first pixel-level spatiotemporal grounding benchmark for egocentric videos…
+  [ICCV 2025][Video Understanding][egocentric video] This paper presents EgoMask, the first pixel-level spatiotemporal grounding benchmark for egocentric videos, comprising short/medium/long evaluation splits and a large-scale training set EgoMask-Train. Through systematic analysis, it reveals key differences between egocentric and exocentric videos, and demonstrates that fine-tuned models can achieve substantial performance gains.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -11,7 +11,7 @@ tags:
   - "pixel-level segmentation"
   - "benchmark"
 date: 2026-05-08
-content_hash: 98ff53ae70116f8a
+content_hash: adc9aceff0114b3a
 ---
 
 # Fine-grained Spatiotemporal Grounding on Egocentric Videos
@@ -152,10 +152,10 @@ Effect of key frame validity in Sa2VA: when the target object does not appear in
 ## Related Papers
 
 - [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](../../CVPR2026/video_understanding/mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
-- [\[ICCV 2025\] VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization](videominer_iteratively_grounding_key_frames_of_hour-long_videos_via_tree-based_g.md)
+- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](../../CVPR2026/video_understanding/minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](../../CVPR2026/video_understanding/ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
+- [\[ICML 2025\] Fine-Grained Captioning of Long Videos through Scene Graph Consolidation](../../ICML2025/video_understanding/fine-grained_captioning_of_long_videos_through_scene_graph_consolidation.md)
 - [\[ICCV 2025\] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos](beyond_the_frame_generating_360deg_panoramic_videos_from_perspective_videos.md)
-- [\[ICCV 2025\] EgoAdapt: Adaptive Multisensory Distillation and Policy Learning for Efficient Egocentric Perception](egoadapt_adaptive_multisensory_distillation_and_policy_learning_for_efficient_eg.md)
-- [\[ICCV 2025\] An Empirical Study of Autoregressive Pre-training from Videos](an_empirical_study_of_autoregressive_pre-training_from_videos.md)
 
 </div>
 

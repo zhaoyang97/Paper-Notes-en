@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] EchoForge utilizes a set of learnable anchors to recalibrate noisy ultrasound regions and propagates anatomical semantic prototypes across frames. By employing a "progressive reforging" pseudo-label strategy, it fully exploits unlabeled frames, achieving real-time and precise echocardiography video segmentation under e
+  [CVPR 2026][Medical Imaging][Echocardiography segmentation] EchoForge utilizes a set of learnable anchors to recalibrate noisy ultrasound regions and propagates anatomical semantic prototypes across frames. By employing a "progressive reforging" pseudo-label strategy, it fully exploits unlabeled frames, achieving real-time and precise echocardiography video segmentation under extremely sparse supervision where only ED/ES frames are annotated.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Echocardiography segmentation"
+  - "semi-supervised video segmentation"
+  - "learnable anchors"
+  - "pseudo-labels"
+  - "temporal consistency"
 date: 2026-05-08
-content_hash: 803919613d9bdfc7
+content_hash: a465173454d70dba
 ---
+
 # Semi-supervised Echocardiography Video Segmentation via Anchor Semantic Awareness and Continuous Pseudo-label Reforging
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ Ablation on the number of anchors: mDice for 1/2/3/4 anchors was 94.52/94.89/94.
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)
 - [\[CVPR 2026\] Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation](divide_conquer_and_aggregate_asymmetric_experts_for_class-imbalanced_semi-superv.md)
-- [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](../../AAAI2026/medical_imaging/propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
+- [\[CVPR 2025\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](../../CVPR2025/medical_imaging/a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
 - [\[CVPR 2026\] OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement](osa_echocardiography_video_segmentation_via_orthogonalized_state_update_and_anat.md)
+- [\[CVPR 2026\] EchoVDiff: Cardiac-Cycle Echocardiography Video Generation from Arbitrary Single Frame](echovdiff_cardiac-cycle_echocardiography_video_generation_from_arbitrary_single_.md)
+- [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics
 description: >-
-  [ACL 2026][LLM Evaluation][legal judgment prediction] LEGIT automatically extracts "hierarchical issue trees" from Korean civil/administrative judgments to serve as rubrics. This allows LLM-as-a-judge to evaluate both "issue coverage" and "issue correctness." The study reveals complementary effects between RAG and RL in legal reasoning: RAG improves comprehensiveness, whi
+  [ACL 2026][LLM Evaluation][legal judgment prediction] LEGIT automatically extracts "hierarchical issue trees" from Korean civil/administrative judgments to serve as rubrics. This allows LLM-as-a-judge to evaluate both "issue coverage" and "issue correctness." The study reveals complementary effects between RAG and RL in legal reasoning: RAG improves comprehensiveness, while RL sacrifices coverage for higher correctness.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - legal judgment prediction
-  - issue tree
-  - rubric-based judge
-  - RAG
-  - GRPO
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "legal judgment prediction"
+  - "issue tree"
+  - "rubric-based judge"
+  - "RAG"
+  - "GRPO"
 date: 2026-05-08
-content_hash: b3c3c9b6a84d8127
+content_hash: 981b8aac4d790846
 ---
+
 # Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics
 
 **Conference**: ACL 2026  
@@ -167,11 +168,11 @@ Error Attribution (Fig. 7): Parent issue accuracy vs. Sub-issue status:
 
 ## Related Papers
 
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
 - [\[ACL 2025\] SwiLTra-Bench: The Swiss Legal Translation Benchmark](../../ACL2025/llm_evaluation/swiltra-bench_the_swiss_legal_translation_benchmark.md)
 - [\[ACL 2026\] Are They Lovers or Friends? Evaluating LLMs' Social Reasoning in English and Korean Dialogues](are_they_lovers_or_friends_evaluating_llms39_social_reasoning_in_english_and_kor.md)
 - [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
-- [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](evaluating_reasoning_models_for_queries_with_presuppositions.md)
 
 </div>
 

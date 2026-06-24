@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Catastrophic Forgetting in Kolmogorov-Arnold Networks
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][KAN] The first systematic study of catastrophic forgetting in Kolmogorov-Arnold Networks (KANs): establishes a theoretical framework linking forgetting to activation support ov…
+  [AAAI 2026][Physics & Scientific Computing][KAN] The first systematic study of catastrophic forgetting in Kolmogorov-Arnold Networks (KANs): establishes a theoretical framework linking forgetting to activation support overlap and intrinsic data dimensionality, and proposes KAN-LoRA for continual fine-tuning knowledge editing in language models.
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "KAN-LoRA"
   - "Activation Support Overlap"
 date: 2026-05-08
-content_hash: 31dd1eed872cd1dc
+content_hash: 49b18039dccab78f
 ---
 
 # Catastrophic Forgetting in Kolmogorov-Arnold Networks
@@ -218,7 +218,7 @@ In high-dimensional LLM settings, KAN-LoRA underperforms MLP-LoRA, confirming th
 - [\[AAAI 2026\] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer](flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-.md)
 - [\[ICLR 2026\] Initialization Schemes for Kolmogorov-Arnold Networks: An Empirical Study](../../ICLR2026/physics/initialization_schemes_for_kolmogorov-arnold_networks_an_empirical_study.md)
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](../../ICML2026/physics/understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
-- [\[ICLR 2026\] Empirical Stability Analysis of Kolmogorov-Arnold Networks in Hard-Constrained Recurrent Physics-Informed Discovery](../../ICLR2026/physics/empirical_stability_analysis_of_kolmogorov-arnold_networks_in_hard-constrained_r.md)
+- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](../../ICLR2026/physics/kano_kolmogorov-arnold_neural_operator.md)
 
 </div>
 

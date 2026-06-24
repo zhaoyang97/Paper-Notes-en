@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] ReMoE freezes all non-router parameters and fine-tunes only the gates using a composite loss of "Temporal Locality Regularization + Trust-KL Semantic Anchor." This shapes the routing trajectories to be more "cache-friendly," increasing the expert reuse rate of adjacent tokens by approximately 26% without changing the a
+  [ICML 2026][LLM Efficiency][Fine-grained MoE] ReMoE freezes all non-router parameters and fine-tunes only the gates using a composite loss of "Temporal Locality Regularization + Trust-KL Semantic Anchor." This shapes the routing trajectories to be more "cache-friendly," increasing the expert reuse rate of adjacent tokens by approximately 26% without changing the architecture or adding runtime overhead. It reduces TPOT by 43.6–49.8% (achieving 1.77–1.99× decoding acceleration)…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Fine-grained MoE"
+  - "Expert Offloading"
+  - "Temporal Locality"
+  - "Router Fine-tuning"
+  - "Cache Hit Rate"
 date: 2026-05-08
-content_hash: c0313200554346d9
+content_hash: 112fc1e7db545a4f
 ---
+
 # ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference
 
 **Conference**: ICML 2026  
@@ -146,11 +152,11 @@ CE-only training (fine-tuning the router only with $L_{\text{CE}}$) served as a 
 
 ## Related Papers
 
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
-- [\[ICML 2026\] DOT-MoE: 用可微 optimal transport 把 dense LLM 转成 MoE](dot-moe_differentiable_optimal_transport_for_moefication.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](../../ICLR2026/llm_efficiency/freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 - [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
-- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[ICML 2026\] Ekka: Automated Diagnosis of Silent Errors in LLM Inference](ekka_automated_diagnosis_of_silent_errors_in_llm_inference.md)
+- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](../../ICLR2026/llm_efficiency/explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
+- [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](../../ICLR2026/llm_efficiency/difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
+- [\[ICLR 2026\] Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning](../../ICLR2026/llm_efficiency/influence-preserving_proxies_for_gradient-based_data_selection_in_llm_finetuning.md)
 
 </div>
 

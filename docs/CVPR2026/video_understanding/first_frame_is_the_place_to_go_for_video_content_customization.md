@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] First Frame Is the Place to Go for Video Content Customization
 description: >-
-  [CVPR 2026][Video Generation][Vision-Language Model] Discovered the inherent ability of video generation models to implicitly treat the first frame as a "concept memory buffer" for storing and reusing multiple visual entities. Proposed FFGo—a lightweight LoRA adaptation method using only 20-50 training samples to activate this capability without modifying the architectur
+  [CVPR 2026][Video Understanding][Video Content Customization] Discovered the inherent ability of video generation models to implicitly treat the first frame as a "concept memory buffer" for storing and reusing multiple visual entities. Proposed FFGo—a lightweight LoRA adaptation method using only 20-50 training samples to activate this capability without modifying the architecture, achieving multi-reference video content customization. Rated best in 81.2% of cases in user stu…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Content Customization"
+  - "First Frame Concept Buffer"
+  - "Multi-reference Video Generation"
+  - "LoRA Fine-tuning"
+  - "Vision-Language Model"
 date: 2026-05-08
-content_hash: 143a1f8a4a7b8992
+content_hash: 7025e349ed63958f
 ---
+
 # First Frame Is the Place to Go for Video Content Customization
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Key Comparison: FFGo transforms the base model Wan2.2 (lowest performance) into 
 
 ## Related Papers
 
-- [\[CVPR 2026\] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing](ffp-300k_scaling_first-frame_propagation_for_generalizable_video_editing.md)
-- [\[ICLR 2026\] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](../../ICLR2026/video_generation/lora-edit_controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine.md)
-- [\[CVPR 2026\] Content-Aware Dynamic Patchification for Efficient Video Diffusion](content-aware_dynamic_patchification_for_efficient_video_diffusion.md)
 - [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
-- [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
+- [\[CVPR 2026\] Affordance-First Decomposition for Continual Learning in Video–Language Understanding](affordance-first_decomposition_for_continual_learning_in_video-language_understa.md)
+- [\[CVPR 2026\] SkillSight: Efficient First-Person Skill Assessment with Gaze](skillsight_efficient_first-person_skill_assessment_with_gaze.md)
+- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
+- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 
 </div>
 

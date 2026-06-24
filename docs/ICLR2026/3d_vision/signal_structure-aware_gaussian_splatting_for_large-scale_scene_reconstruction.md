@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper reformulates large-scale 3DGS scene reconstruction as a "signal structure recovery" problem. It derives the average sampling frequency and scene bandwidth for the 3D Gaussian representation and proposes SIG, an adaptive scheduler that switches image resolution and densification timing based on scene frequenc
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper reformulates large-scale 3DGS scene reconstruction as a "signal structure recovery" problem. It derives the average sampling frequency and scene bandwidth for the 3D Gaussian representation and proposes SIG, an adaptive scheduler that switches image resolution and densification timing based on scene frequency convergence. Combined with spherically-constrained Gaussians to suppress floaters…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Large-Scale Scene Reconstruction"
+  - "Frequency Alignment"
+  - "Adaptive Scheduling"
+  - "Geometric Priors"
 date: 2026-05-08
-content_hash: a0d2f110c0f6a48d
+content_hash: f79fee2dfafa0344
 ---
+
 # Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,10 @@ Ablation on `rubble` (Full model: 1.5M points, 27.35 PSNR):
 ## Related Papers
 
 - [\[ICLR 2026\] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction](skyevents_a_large-scale_event-enhanced_uav_dataset_for_robust_3d_scene_reconstru.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](../../CVPR2026/3d_vision/aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[ICLR 2026\] UrbanGS: Efficient and Scalable Architecture for Geometrically Accurate Large-Scale Urban Gaussian Splatting](urbangs_efficient_and_scalable_architecture_for_geometrically_accurate_large-sce.md)
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](../../ICCV2025/3d_vision/occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
-- [\[ICLR 2026\] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting](ode-gs_latent_odes_for_dynamic_scene_extrapolation_with_3d_gaussian_splatting.md)
-- [\[AAAI 2026\] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction](../../AAAI2026/3d_vision/oceansplat_object-aware_gaussian_splatting_with_trinocular_view_consistency_for_.md)
+- [\[ICLR 2026\] FastAvatar: Towards Unified and Fast 3D Avatar Reconstruction with Large Gaussian Reconstruction Transformers](fastavatar_towards_unified_and_fast_3d_avatar_reconstruction_with_large_gaussian.md)
+- [\[ICLR 2026\] ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors](artdeco_toward_high-fidelity_on-the-fly_reconstruction_with_hierarchical_gaussia.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do LLM Agents Mirror Socio-Cognitive Effects in Power-Asymmetric Conversations?
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper simulates power-asymmetric conversations using professional roles and personas, finding that LLM agents replicate socio-cognitive effects such as pronoun usage patterns, language coordination, authoritative persuasion, and harmful compliance. While some effects enhance conversational realism, others introduc
+  [ACL2026][LLM Agent][Power asymmetry] This paper simulates power-asymmetric conversations using professional roles and personas, finding that LLM agents replicate socio-cognitive effects such as pronoun usage patterns, language coordination, authoritative persuasion, and harmful compliance. While some effects enhance conversational realism, others introduce significant safety risks.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL2026"
+  - "LLM Agent"
+  - "Power asymmetry"
+  - "language coordination"
+  - "pronoun effect"
+  - "authority bias"
+  - "harmful compliance"
 date: 2026-05-08
-content_hash: 6b4377f713fcfbf4
+content_hash: d04aea1b7a2f1575
 ---
+
 # Do LLM Agents Mirror Socio-Cognitive Effects in Power-Asymmetric Conversations?
 
 **Conference**: ACL2026  
@@ -141,10 +147,10 @@ This paper does not train new models; the core involves simulation and evaluatio
 ## Related Papers
 
 - [\[ACL 2026\] SafeMCP: Proactive Power Regulation for LLM Agent Defense via Environment-Grounded Look-Ahead Reasoning](safemcp_proactive_power_regulation_for_llm_agent_defense_via_environment-grounde.md)
-- [\[AAAI 2026\] From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness](../../AAAI2026/llm_agent/from_biased_chatbots_to_biased_agents_examining_role_assignment_effects_on_llm_a.md)
 - [\[AAAI 2026\] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design](../../AAAI2026/llm_agent/physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
-- [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](../../CVPR2026/llm_agent/learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
+- [\[AAAI 2026\] From Biased Chatbots to Biased Agents: Examining Role Assignment Effects on LLM Agent Robustness](../../AAAI2026/llm_agent/from_biased_chatbots_to_biased_agents_examining_role_assignment_effects_on_llm_a.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ICLR 2026\] LLMs are Greedy Agents: Effects of RL Fine-tuning on Decision-Making Abilities](../../ICLR2026/llm_agent/llms_are_greedy_agents_effects_of_rl_fine-tuning_on_decision-making_abilities.md)
 
 </div>
 

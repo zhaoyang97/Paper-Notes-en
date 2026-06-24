@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture. By utilizing orthogonal manifold optimization to learn orthogonal matrices and a Spatial Shift Module driven by Theorem 1 for spatial mixing, the model successfully scales to the billion-parameter level. It establishes new SOTA Ce
+  [ICLR 2026][Model Compression][Lipschitz constraints] Ours proposes LipNeXt—the first unconstrained, convolution-free 1-Lipschitz architecture. By utilizing orthogonal manifold optimization to learn orthogonal matrices and a Spatial Shift Module driven by Theorem 1 for spatial mixing, the model successfully scales to the billion-parameter level. It establishes new SOTA Certified Robust Accuracy (CRA) on CIFAR-10/100, Tiny-ImageNet, and ImageNet…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Lipschitz constraints"
+  - "Certified robustness"
+  - "Orthogonal matrices"
+  - "Manifold optimization"
+  - "Spatial shift module"
 date: 2026-05-08
-content_hash: 82a2566bf3a9e965
+content_hash: ac41d94ce7082ab1
 ---
+
 # LipNeXt: Scaling up Lipschitz-based Certified Robustness to Billion-parameter Models
 
 **Conference**: ICLR 2026  
@@ -149,6 +155,7 @@ At $\varepsilon=1$ on ImageNet, CRA Gain is +8% over BRONet.
 - **Value**: ⭐⭐⭐⭐⭐ A milestone showing deterministic guarantees can benefit from modern scaling trends.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

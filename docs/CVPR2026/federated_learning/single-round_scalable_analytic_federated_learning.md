@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Single-Round Scalable Analytic Federated Learning
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] SAFLe constructs a deterministic non-linear classification head using "feature bucketing + shuffling & grouping + sparse embedding summation" and proves its mathematical equivalence to a high-dimensional sparse linear regression. This allows the direct application of the single-round closed-form aggregation law of Anal
+  [CVPR 2026][Federated Learning][Analytic Federated Learning] SAFLe constructs a deterministic non-linear classification head using "feature bucketing + shuffling & grouping + sparse embedding summation" and proves its mathematical equivalence to a high-dimensional sparse linear regression. This allows the direct application of the single-round closed-form aggregation law of Analytic Federated Learning (AFL)—retaining the expressivity of non-linearity while preserving AFL's ad…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Analytic Federated Learning"
+  - "Single-Round Communication"
+  - "Non-IID Invariance"
+  - "Sparse Embedding"
+  - "Closed-form Solution"
 date: 2026-05-08
-content_hash: 05f0164b4747fe7d
+content_hash: 924c5c6d13933545
 ---
+
 # Single-Round Scalable Analytic Federated Learning
 
 **Conference**: CVPR 2026  
@@ -166,11 +172,11 @@ While iterative methods suffer significant performance drops as heterogeneity in
 
 ## Related Papers
 
-- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](../../ICLR2026/optimization/deepafl_deep_analytic_federated_learning.md)
-- [\[CVPR 2025\] Model Poisoning Attacks to Federated Learning via Multi-Round Consistency](../../CVPR2025/optimization/model_poisoning_attacks_to_federated_learning_via_multi-round_consistency.md)
-- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](few-for-many_personalized_federated_learning.md)
 - [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
 - [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
+- [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] SubFLOT: Efficient Personalized Federated Learning via Optimal Transport-based Submodel Extraction](submodel_extraction_for_efficient_and_personalized_federated_learning_via_optima.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Impact of Layer Norm on Memorization and Generalization in Transformers
 description: >-
-  [NeurIPS 2025][Layer Normalization] This work systematically reveals the **fundamentally distinct** roles of LayerNorm in Pre-LN and Post-LN Transformers: in Pre-LN…
+  [NeurIPS 2025][Layer Normalization] This work systematically reveals the **fundamentally distinct** roles of LayerNorm in Pre-LN and Post-LN Transformers: in Pre-LN, LN is essential for learning and its removal disrupts generalization; in Post-LN, LN drives memorization and its removal suppresses memorization while recovering true labels.
 tags:
   - "NeurIPS 2025"
   - "Layer Normalization"
@@ -11,7 +11,7 @@ tags:
   - "Pre-LN"
   - "Post-LN"
 date: 2026-05-08
-content_hash: e523455fb9da3d40
+content_hash: 3b4156e96a9455e3
 ---
 
 # Impact of Layer Norm on Memorization and Generalization in Transformers
@@ -121,11 +121,11 @@ Cross-entropy loss $\mathcal{L} = -\sum_k y_k \log(\hat{y}_k)$ is used, with lea
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
-- [\[NeurIPS 2025\] Aggregation Hides OOD Generalization Failures from Spurious Correlations](aggregation_hides_out-of-distribution_generalization_failures_from_spurious_corr.md)
+- [\[CVPR 2025\] Do ImageNet-trained Models Learn Shortcuts? The Impact of Frequency Shortcuts on Generalization](../../CVPR2025/others/do_imagenet-trained_models_learn_shortcuts_the_impact_of_frequency_shortcuts_on_.md)
 - [\[NeurIPS 2025\] The Cost of Robustness: Tighter Bounds on Parameter Complexity for Robust Memorization in ReLU Nets](the_cost_of_robustness_tighter_bounds_on_parameter_complexity_for_robust_memoriz.md)
-- [\[NeurIPS 2025\] A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation](a_theoretical_framework_for_grokking_interpolation_followed_by_riemannian_norm_m.md)
 - [\[NeurIPS 2025\] Fostering the Ecosystem of AI for Social Impact Requires Expanding and Strengthening Evaluation Standards](fostering_the_ecosystem_of_ai_for_social_impact_requires_expanding_and_strengthe.md)
+- [\[NeurIPS 2025\] A Theoretical Framework for Grokking: Interpolation followed by Riemannian Norm Minimisation](a_theoretical_framework_for_grokking_interpolation_followed_by_riemannian_norm_m.md)
+- [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
 
 </div>
 

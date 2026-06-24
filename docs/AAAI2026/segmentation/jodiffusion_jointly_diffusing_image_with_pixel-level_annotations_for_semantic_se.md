@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] JoDiffusion: Jointly Diffusing Image with Pixel-Level Annotations for Semantic Segmentation Promotion
 description: >-
-  [AAAI 2026][Segmentation][Semantic Segmentation] This paper proposes JoDiffusion, a framework that jointly diffuses images and pixel-level annotation masks in latent space…
+  [AAAI 2026][Segmentation][Semantic Segmentation] This paper proposes JoDiffusion, a framework that jointly diffuses images and pixel-level annotation masks in latent space, enabling—for the first time—simultaneous generation of semantically consistent image–annotation pairs conditioned solely on text prompts. JoDiffusion substantially outperforms existing Image2Mask and Mask2Image methods on Pascal VOC, COCO, and ADE20K.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "Annotation Masks"
   - "Latent Space"
 date: 2026-05-08
-content_hash: 4bfa2f1d9e6a6009
+content_hash: d7d7e03b616b1a51
 ---
 
 # JoDiffusion: Jointly Diffusing Image with Pixel-Level Annotations for Semantic Segmentation Promotion
@@ -164,11 +164,11 @@ Without requiring manually annotated masks as input, JoDiffusion consistently ou
 
 ## Related Papers
 
+- [\[ACL 2025\] Pixel-Level Reasoning Segmentation via Multi-turn Conversations](../../ACL2025/segmentation/pixel-level_reasoning_segmentation_via_multi-turn_conversations.md)
 - [\[AAAI 2026\] From Attribution to Action: Jointly ALIGNing Predictions and Explanations](from_attribution_to_action_jointly_aligning_predictions_and_explanations.md)
+- [\[CVPR 2025\] DINOv2 Meets Text: A Unified Framework for Image- and Pixel-Level Vision-Language Alignment](../../CVPR2025/segmentation/dinov2_meets_text_a_unified_framework_for_image-_and_pixel-level_vision-language.md)
 - [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](../../NeurIPS2025/segmentation/unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
-- [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
-- [\[ICML 2026\] What Makes Synthetic Data Effective in Image Segmentation](../../ICML2026/segmentation/what_makes_synthetic_data_effective_in_image_segmentation.md)
-- [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
+- [\[CVPR 2026\] Joint Spectral Image Reconstruction and Semantic Segmentation with Cooperative Unfolding](../../CVPR2026/segmentation/joint_spectral_image_reconstruction_and_semantic_segmentation_with_cooperative_u.md)
 
 </div>
 

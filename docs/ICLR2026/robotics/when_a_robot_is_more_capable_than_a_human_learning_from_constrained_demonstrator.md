@@ -2,13 +2,17 @@
 title: >-
   [Paper Note] When a Robot is More Capable than a Human: Learning from Constrained Demonstrators
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper defines the Learning from Constrained Demonstrations (LfCD) problem and proposes LfCD-GRIP to learn state-only goal-proximity rewards from constrained human demonstrations. By using confidence anchors and trajectory interpolation to propagate rewards to states outside the demonstrations, it enables the robot
+  [ICLR 2026.][Robotics][Constrained Demonstrations] This paper defines the Learning from Constrained Demonstrations (LfCD) problem and proposes LfCD-GRIP to learn state-only goal-proximity rewards from constrained human demonstrations. By using confidence anchors and trajectory interpolation to propagate rewards to states outside the demonstrations, it enables the robot to leverage its larger action space to generate shorter and faster trajectories than the demonstrator.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026."
+  - "Robotics"
+  - "Constrained Demonstrations"
+  - "Inverse RL"
+  - "Goal Proximity."
 date: 2026-05-08
-content_hash: 1120533b096fef90
+content_hash: de85d71fba0c350c
 ---
+
 # When a Robot is More Capable than a Human: Learning from Constrained Demonstrators
 
 **Conference**: ICLR 2026  
@@ -133,8 +137,20 @@ $$
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
-<!-- RELATED:END --> 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling](../../CVPR2026/robotics/vla_models_are_more_generalizable_than_you_think_revisiting_physical_and_spatial.md)
+- [\[NeurIPS 2025\] Automaton Constrained Q-Learning](../../NeurIPS2025/robotics/automaton_constrained_q-learning.md)
+- [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](../../AAAI2026/robotics/theory_of_mind_for_explainable_human-robot_interaction.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
+- [\[ICLR 2026\] When would Vision-Proprioception Policies Fail in Robotic Manipulation?](when_would_vision-proprioception_policies_fail_in_robotic_manipulation.md)
+
+</div>
+
+<!-- RELATED:END -->
+ 
 
 ---
 

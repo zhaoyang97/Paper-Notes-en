@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning
 description: >-
-  [ICCV 2025][Object Detection][Moment Retrieval] This paper proposes the AMR framework, which leverages a Splice-and-Boost data augmentation strategy and a cold-start–distillation two-stage training pipeline to substantia…
+  [ICCV 2025][Object Detection][Moment Retrieval] This paper proposes the AMR framework, which leverages a Splice-and-Boost data augmentation strategy and a cold-start–distillation two-stage training pipeline to substantially improve boundary awareness and semantic discriminability in video moment retrieval—without relying on any external data or pretrained models—surpassing the previous SOTA by +5% on QVHighlights.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "DETR"
   - "Video Temporal Grounding"
 date: 2026-05-08
-content_hash: 26f7732787fd7f69
+content_hash: 4eed68c81d03a4b5
 ---
 
 # Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning
@@ -149,8 +149,8 @@ On the validation set, AMR surpasses BAM-DETR by +5.03% on R1@0.5, +5.04% on R1@
 - [\[ICCV 2025\] The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning](the_devil_is_in_the_spurious_correlations_boosting_moment_retrieval_with_dynamic.md)
 - [\[CVPR 2026\] Beyond Caption-Based Queries for Video Moment Retrieval](../../CVPR2026/object_detection/beyond_caption-based_queries_for_video_moment_retrieval.md)
 - [\[ICCV 2025\] UPRE: Zero-Shot Domain Adaptation for Object Detection via Unified Prompt and Representation Enhancement](upre_zero-shot_domain_adaptation_for_object_detection_via_unified_prompt_and_rep.md)
+- [\[ICCV 2025\] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision](from_easy_to_hard_progressive_active_learning_framework_for_infrared_small_targe.md)
 - [\[ICCV 2025\] Intervening in Black Box: Concept Bottleneck Model for Enhancing Human-Neural Network Mutual Understanding](intervening_in_black_box_concept_bottleneck_model_for_enhancing_human_neural_net.md)
-- [\[ICCV 2025\] Sim-DETR: Unlock DETR for Temporal Sentence Grounding](sim-detr_unlock_detr_for_temporal_sentence_grounding.md)
 
 </div>
 

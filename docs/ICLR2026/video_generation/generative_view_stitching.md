@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Generative View Stitching
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Forcing] GVS applies "diffusion stitching from robot planning" to video generation: using a training-free parallel sampling algorithm, it enables any Diffusion Forcing video model to generate long videos along pre-defined camera trajectories. By allowing the current frame to "see the future," it avoids collisions, maintains con
+  [ICLR 2026][Video Generation][Video Diffusion] GVS applies "diffusion stitching from robot planning" to video generation: using a training-free parallel sampling algorithm, it enables any Diffusion Forcing video model to generate long videos along pre-defined camera trajectories. By allowing the current frame to "see the future," it avoids collisions, maintains consistency, and enables loop closure.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Forcing
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Camera-guided"
+  - "Diffusion Stitching"
+  - "Diffusion Forcing"
+  - "Closed-loop Consistency"
+  - "Training-free Sampling"
 date: 2026-05-08
-content_hash: ac5fcd5067ecda12
+content_hash: 6b110e7eb8bf3e22
 ---
+
 # Generative View Stitching
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum
 description: >-
-  [NeurIPS 2025][Medical Imaging][Self-Supervised Learning] A fully self-supervised noise-robust representation learning framework is proposed…
+  [NeurIPS 2025][Medical Imaging][Self-Supervised Learning] A fully self-supervised noise-robust representation learning framework is proposed, leveraging a "denoised→noisy" data curriculum strategy combined with denoised-teacher regularization. This enables SSL models such as DINOv2 to directly process noisy inputs at inference time without any denoiser, achieving a 4.8% improvement in linear probing accuracy under extreme Gaussian noise on ImageNet-1k.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "DINOv2"
   - "Denoiser-Free"
 date: 2026-05-08
-content_hash: 324d7c24945dbd8a
+content_hash: 30e530eb719b2897
 ---
 
 # Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum
@@ -134,9 +134,9 @@ The pipeline consists of three steps: (1) train a self-supervised denoiser (e.g.
 
 - [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
 - [\[NeurIPS 2025\] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)
+- [\[CVPR 2025\] Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding](../../CVPR2025/medical_imaging/addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi.md)
 - [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](../../ICCV2025/medical_imaging/an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
 - [\[NeurIPS 2025\] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)
-- [\[NeurIPS 2025\] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons
 description: >-
-  [NeurIPS 2025][LLM Alignment][safety alignment] Through a mechanistic interpretability lens, this work identifies a sparse set of "safety neurons" comprising approximately 5% of all neurons in LLMs. Patching only these n…
+  [NeurIPS 2025][LLM Alignment][safety alignment] Through a mechanistic interpretability lens, this work identifies a sparse set of "safety neurons" comprising approximately 5% of all neurons in LLMs. Patching only these neurons' activations recovers over 90% of safety performance, and the neuron-overlap perspective offers a mechanistic explanation for the alignment tax phenomenon.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "activation patching"
   - "alignment tax"
 date: 2026-05-08
-content_hash: 9486ac8964f2230e
+content_hash: c8401a992ef57e8c
 ---
 
 # Towards Understanding Safety Alignment: A Mechanistic Perspective from Safety Neurons
@@ -150,9 +150,9 @@ The Spearman correlation between safety and helpfulness preference neurons is **
 
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](llm_safety_alignment_is_divergence_estimation_in_disguise.md)
 - [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](../../ICLR2026/llm_alignment/superficial_safety_alignment_hypothesis.md)
+- [\[ACL 2025\] LSSF: Safety Alignment via Low-Rank Safety Subspace Fusion](../../ACL2025/llm_alignment/lssf_safety_subspace.md)
+- [\[ACL 2025\] Safety Alignment via Constrained Knowledge Unlearning](../../ACL2025/llm_alignment/safety_alignment_via_constrained_knowledge_unlearning.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](../../ICML2026/llm_alignment/curriculum_learning_for_safety_alignment.md)
-- [\[ICLR 2026\] Mitigating the Safety Alignment Tax with Null-Space Constrained Policy Optimization](../../ICLR2026/llm_alignment/mitigating_the_safety_alignment_tax_with_null-space_constrained_policy_optimizat.md)
-- [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
 
 </div>
 

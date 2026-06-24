@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding
 description: >-
-  [ICLR 2026][Graph Learning][Q-Former] The authors propose EDT-Former (Entropy-guided Dynamic Token Transformer), which establishes efficient alignment between a frozen graph encoder and an LLM through an entropy-guided dynamic token generation mechanism. It achieves SOTA performance on benchmarks including molecular QA, molecular instructions, and property
+  [ICLR 2026][Graph Learning][Graph-LLM Alignment] The authors propose EDT-Former (Entropy-guided Dynamic Token Transformer), which establishes efficient alignment between a frozen graph encoder and an LLM through an entropy-guided dynamic token generation mechanism. It achieves SOTA performance on benchmarks including molecular QA, molecular instructions, and property prediction without fine-tuning the LLM backbone.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Q-Former
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph-LLM Alignment"
+  - "Dynamic Tokens"
+  - "Molecular Graphs"
+  - "Q-Former"
+  - "Entropy-guided"
 date: 2026-05-08
-content_hash: b9ff37952c6dee04
+content_hash: 2d54fb429f6568d6
 ---
+
 # Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ EDT-Former was evaluated on four types of molecular understanding benchmarks, re
 
 ## Related Papers
 
+- [\[ICLR 2026\] SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation](saga_structural_aggregation_guided_alignment_with_dynamic_view_and_neighborhood_.md)
+- [\[ICLR 2026\] <SOG$_k$>: One LLM Token for Explicit Graph Structural Understanding](sog_k_one_llm_token_for_explicit_graph_structural_understanding.md)
 - [\[ICLR 2026\] Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations](geometric_graph_neural_diffusion_for_stable_molecular_dynamics_simulations.md)
 - [\[ICLR 2026\] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS](damr_efficient_and_adaptive_context-aware_knowledge_graph_question_answering_wit.md)
 - [\[ICLR 2026\] Dual-Branch Representations with Dynamic Gated Fusion and Triple-Granularity Alignment for Deep Multi-View Clustering](dual-branch_representations_with_dynamic_gated_fusion_and_triple-granularity_ali.md)
-- [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](../../NeurIPS2025/graph_learning/remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
-- [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 
 </div>
 

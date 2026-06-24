@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] CMT-Benchmark: A Benchmark for Condensed Matter Theory Built by Expert Researchers
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM Reasoning] Global condensed matter theory experts manually curated CMT-Benchmark, a set of 50 research-level physics problems. Using an automated scoring pipeline capable of handling non-commutative operator algebra, 17 frontier LLMs were tested—resulting in the strongest model, GPT-5, scoring only 30% with an overall average of
+  [ICLR 2026][LLM Evaluation][Scientific Benchmarks] Global condensed matter theory experts manually curated CMT-Benchmark, a set of 50 research-level physics problems. Using an automated scoring pipeline capable of handling non-commutative operator algebra, 17 frontier LLMs were tested—resulting in the strongest model, GPT-5, scoring only 30% with an overall average of 11.4%, debunking the illusion of LLMs as research assistants.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Scientific Benchmarks"
+  - "Condensed Matter Physics"
+  - "LLM Reasoning"
+  - "Automatic Scoring"
+  - "Non-commutative Operators"
+  - "AI Research Assistant"
 date: 2026-05-08
-content_hash: b936ff5653c650a4
+content_hash: 603a77a1261ae413
 ---
+
 # CMT-Benchmark: A Benchmark for Condensed Matter Theory Built by Expert Researchers
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,7 @@ The evaluation was conducted in a **zero-shot, closed-book, out-of-the-box** set
 - [\[ICLR 2026\] FormalML: A Benchmark for Evaluating Formal Subgoal Completion in Machine Learning Theory](formalml_a_benchmark_for_evaluating_formal_subgoal_completion_in_machine_learnin.md)
 - [\[ICLR 2026\] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning](finsearchcomp_towards_a_realistic_expert-level_evaluation_of_financial_search_an.md)
 - [\[ICML 2026\] CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting](../../ICML2026/llm_evaluation/capbencher_give_your_llm_benchmark_a_built-in_alarm_for_test-set_overfitting.md)
-- [\[ICLR 2026\] ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists](expertlongbench_benchmarking_language_models_on_expert-level_long-form_generatio.md)
+- [\[ICLR 2026\] EARTHSE: A Benchmark for Earth Science Knowledge Exploration](earthse_a_benchmark_evaluating_earth_scientific_exploration_capability_for_large.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] GraphFlow unifies multiple agent workflows into a global operational DAG (wGraph). It uses GNN+MLP to generate task-adaptive subgraph workflows online and replaces traditional independent caching with a differential KV cache strategy ("Base KV + Sparse Prefix Residual + Path Pruning"). This achieves an average improvem
+  [ICML 2026][LLM Efficiency][LLM Agent Serving] GraphFlow unifies multiple agent workflows into a global operational DAG (wGraph). It uses GNN+MLP to generate task-adaptive subgraph workflows online and replaces traditional independent caching with a differential KV cache strategy ("Base KV + Sparse Prefix Residual + Path Pruning"). This achieves an average improvement of 4.95pp across five benchmarks while reducing KV memory to approximately 1/4.
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "LLM Agent Serving"
+  - "Workflow Graph"
+  - "KV cache reuse"
+  - "GNN Subgraph Generation"
+  - "Topology-aware State Management"
 date: 2026-05-08
-content_hash: e46acdd7d910f580
+content_hash: ac50e15bf3004d74
 ---
+
 # GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving
 
 **Conference**: ICML 2026  
@@ -153,9 +159,9 @@ Regarding P90 latency, aggregate P90 on Qwen-2.5-7B dropped from 14.06s (AFlow) 
 
 - [\[ICML 2026\] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving](theoretically_optimal_attentionffn_ratios_in_disaggregated_llm_serving.md)
 - [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
-- [\[ICLR 2026\] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving](../../ICLR2026/llm_efficiency/adacache_adaptive_caching_and_context_augmentation_for_efficient_llm_serving.md)
-- [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
-- [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](../../NeurIPS2025/llm_efficiency/efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
+- [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](../../ICLR2026/llm_efficiency/icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
+- [\[ICLR 2026\] MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent](../../ICLR2026/llm_efficiency/memagent_reshaping_long-context_llm_with_multi-conv_rl-based_memory_agent.md)
+- [\[ICLR 2026\] Dynamic Speculative Agent Planning](../../ICLR2026/llm_efficiency/dynamic_speculative_agent_planning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] mR3: Multilingual Rubric-Agnostic Reward Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Knowledge Distillation] The authors propose mR3, a series of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B distillation + difficulty filtering) and curriculum learning, the 14B model outperforms the 120B teacher and all comparable baselines on multilingual benchm
+  [ICLR 2026][Reasoning][Multilingual Reward Models] The authors propose mR3, a series of multilingual rubric-agnostic reward reasoning models covering 72 languages. Through systematic data construction (GPT-OSS-120B distillation + difficulty filtering) and curriculum learning, the 14B model outperforms the 120B teacher and all comparable baselines on multilingual benchmarks, supporting point-wise, pair-wise, and binary evaluation paradigms.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Multilingual Reward Models"
+  - "Reasoning Evaluation"
+  - "Curriculum Learning"
+  - "Rubric Evaluation"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 9cacfaa4109fb53f
+content_hash: 1de6a2672e7101e6
 ---
+
 # mR3: Multilingual Rubric-Agnostic Reward Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -144,15 +149,15 @@ mR3-Qwen3-14B outperforms the 120B teacher (+0.13 on m-RB, +1.04 on MM-Eval, +1.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Pushing on Multilingual Reasoning Models with Language-Mixed Chain-of-Thought](pushing_on_multilingual_reasoning_models_with_language-mixed_chain-of-thought.md)
 - [\[ACL 2026\] C2: Scalable Rubric-Augmented Reward Modeling from Binary Preferences](../../ACL2026/llm_reasoning/c2_scalable_rubric-augmented_reward_modeling_from_binary_preferences.md)
+- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](../../ACL2026/llm_reasoning/large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 - [\[ICLR 2026\] FlowRL: Matching Reward Distributions for LLM Reasoning](flowrl_matching_reward_distributions_for_llm_reasoning.md)
 - [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
-- [\[ICLR 2026\] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization](drpo_efficient_reasoning_via_decoupled_reward_policy_optimization.md)
 
 </div>
 

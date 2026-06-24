@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] ShapeAR reformulates "raster-to-vector" as a generative layered stacking task. Using latent space flow-matching diffusion conditioned on both the original image (global context) and a partial composite of previously generated layers (local context), it autoregressively generates sets of non-overlapping RGBA shape layer
+  [CVPR 2026][Image Generation][Vectorization] ShapeAR reformulates "raster-to-vector" as a generative layered stacking task. Using latent space flow-matching diffusion conditioned on both the original image (global context) and a partial composite of previously generated layers (local context), it autoregressively generates sets of non-overlapping RGBA shape layers. This approach recovers "artist-style" complete and reorderable closed shapes, outperforming previous SOTA on mul…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Vectorization"
+  - "Layer Decomposition"
+  - "Autoregressive Diffusion"
+  - "Flow Matching"
+  - "RGBA Layers"
 date: 2026-05-08
-content_hash: b8d6a52119d493ae
+content_hash: 7859a6a4ea21d426
 ---
+
 # ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion
 
 **Conference**: CVPR 2026  
@@ -135,15 +140,16 @@ Layer count ablation (lower is better):
 - Value: ⭐⭐⭐⭐ Highly practical for design workflows, providing editable layers rather than fragmented paths.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
 - [\[CVPR 2026\] 3D Space as a Scratchpad for Editable Text-to-Image Generation](3d_space_as_a_scratchpad_for_editable_text-to-image_generation.md)
-- [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
 - [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](../../ICCV2025/image_generation/efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
+- [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
+- [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](../../ICLR2026/image_generation/follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
 
 </div>
 

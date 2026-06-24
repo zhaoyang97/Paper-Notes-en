@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Recovering Physically Plausible Human-Object Interactions from Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Reinforcement Learning] RePHO takes "visually plausible but physically flawed" Human-Object Interaction (HOI) sequences estimated from monocular videos and reenacts them in a physical simulator using reinforcement learning policies. By leveraging "adaptive sampling + bidirectional propagation + online kinematic target updates," it identifies
+  [CVPR 2026][3D Vision][HOI Reconstruction] RePHO takes "visually plausible but physically flawed" Human-Object Interaction (HOI) sequences estimated from monocular videos and reenacts them in a physical simulator using reinforcement learning policies. By leveraging "adaptive sampling + bidirectional propagation + online kinematic target updates," it identifies reliable frames from extremely noisy initial values and progressively diffuses physical validity. This results in phy…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "HOI Reconstruction"
+  - "Monocular Video"
+  - "Physical Simulation"
+  - "Reinforcement Learning"
+  - "Contact Consistency"
 date: 2026-05-08
-content_hash: f724524dba883759
+content_hash: 8eb25bfa61943a63
 ---
+
 # Recovering Physically Plausible Human-Object Interactions from Monocular Videos
 
 **Conference**: CVPR 2026  
@@ -157,9 +162,9 @@ Ablation of the three designs on BEHAVE (SR-B / SR-F):
 
 - [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
 - [\[CVPR 2026\] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video](physho_physics-based_dynamic_3d_gaussian_human_and_object_from_monocular_video.md)
-- [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
+- [\[CVPR 2026\] PPISP: Physically-Plausible Compensation and Control of Photometric Variations in Radiance Field Reconstruction](ppisp_physically-plausible_compensation_and_control_of_photometric_variations_in.md)
 - [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
+- [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
 
 </div>
 

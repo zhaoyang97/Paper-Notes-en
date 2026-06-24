@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Test-Time Adaptive Object Detection with Foundation Model
 description: >-
-  [NeurIPS 2025][Object Detection][test-time adaptation] This paper proposes TTAOD, a source-free open-vocabulary test-time adaptive object detection framework that combines multimodal Prompt Tuning, Mean-Teacher…
+  [NeurIPS 2025][Object Detection][test-time adaptation] This paper proposes TTAOD, a source-free open-vocabulary test-time adaptive object detection framework that combines multimodal Prompt Tuning, Mean-Teacher, an Instance Dynamic Memory (IDM) module, and memory augmentation/hallucination strategies. It achieves 56.2% AP50 on Pascal-C (+11.0 vs. SOTA) and demonstrates consistent gains across 13 cross-domain datasets.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "prompt tuning"
   - "dynamic memory"
 date: 2026-05-08
-content_hash: ed351c49afb823c8
+content_hash: f7a23862a8376200
 ---
 
 # Test-Time Adaptive Object Detection with Foundation Model
@@ -127,11 +127,11 @@ Test image → GroundingDINO (frozen) + learnable prompts → Teacher (EMA) gene
 
 ## Related Papers
 
+- [\[CVPR 2025\] Efficient Test-Time Adaptive Object Detection via Sensitivity-Guided Pruning](../../CVPR2025/object_detection/efficient_test-time_adaptive_object_detection_via_sensitivity-guided_pruning.md)
+- [\[CVPR 2025\] Test-Time Backdoor Detection for Object Detection Models](../../CVPR2025/object_detection/test-time_backdoor_detection_for_object_detection_models.md)
 - [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](../../CVPR2026/object_detection/foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
+- [\[CVPR 2025\] MI-DETR: An Object Detection Model with Multi-time Inquiries Mechanism](../../CVPR2025/object_detection/mi-detr_an_object_detection_model_with_multi-time_inquiries_mechanism.md)
 - [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](../../CVPR2026/object_detection/cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
-- [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](../../AAAI2026/object_detection/correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
-- [\[CVPR 2026\] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection](../../CVPR2026/object_detection/da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d.md)
-- [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](../../ICCV2025/object_detection/automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
 
 </div>
 

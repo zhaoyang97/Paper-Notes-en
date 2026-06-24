@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice
 description: >-
-  [ICLR 2026][Image Generation][Classifier-Free Guidance] This paper reanalyzes Classifier-Free Guidance (CFG) using the "dynamical phase transition" framework from statistical physics. It proves that in sufficiently high dimensions, CFG can precisely recover the target distribution (the "blessing of dimensionality"), while accurately characterizing mean overshoot and varianc
+  [ICLR 2026][Image Generation][Classifier-Free Guidance] This paper reanalyzes Classifier-Free Guidance (CFG) using the "dynamical phase transition" framework from statistical physics. It proves that in sufficiently high dimensions, CFG can precisely recover the target distribution (the "blessing of dimensionality"), while accurately characterizing mean overshoot and variance shrinkage observed in lower dimensions. Consequently, the authors propose Power-Law CFG…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Classifier-Free Guidance
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Classifier-Free Guidance"
+  - "Diffusion Models"
+  - "High-Dimensional Statistical Physics"
+  - "Mean Overshoot"
+  - "Variance Shrinkage"
 date: 2026-05-08
-content_hash: a331fa9825c590a6
+content_hash: 2b8d436114e62ded
 ---
+
 # Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice
 
 **Conference**: ICLR 2026  
@@ -133,11 +137,11 @@ Power-Law improves both quality and diversity in most cases and achieves SOTA re
 
 ## Related Papers
 
-- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
-- [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](../../CVPR2026/image_generation/c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
 - [\[AAAI 2026\] Studying Classifier(-Free) Guidance From A Classifier-Centric Perspective](../../AAAI2026/image_generation/studying_classifier-free_guidance_from_a_classifier-centric_perspective.md)
-- [\[AAAI 2026\] DICE: Distilling Classifier-Free Guidance into Text Embeddings](../../AAAI2026/image_generation/dice_distilling_classifier-free_guidance_into_text_embedding.md)
+- [\[CVPR 2026\] C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](../../CVPR2026/image_generation/c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)
+- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
+- [\[ICLR 2026\] Dynamic Classifier-Free Diffusion Guidance via Online Feedback](dynamic_classifier-free_diffusion_guidance_via_online_feedback.md)
 
 </div>
 

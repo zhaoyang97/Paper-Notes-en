@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Polyphony: Diffusion-based Dual-Hand Action Segmentation with Alternating Vision Transformer and Semantic Conditioning
 description: >-
-  [CVPR 2026][Video Understanding][Diffusion Model] Addressing the bimanual action segmentation task of simultaneously labeling per-frame actions for left and right hands in unedited videos, this paper proposes Polyphony—a three-stage method. It utilizes a shared ViT with alternating training to resolve dominant hand gradient monopoly, structured semantic conditioning t
+  [CVPR 2026][Video Understanding][Bimanual Action Segmentation] Addressing the bimanual action segmentation task of simultaneously labeling per-frame actions for left and right hands in unedited videos, this paper proposes Polyphony—a three-stage method. It utilizes a shared ViT with alternating training to resolve dominant hand gradient monopoly, structured semantic conditioning to eliminate fine-grained action ambiguity, and a diffusion segmenter with cross-hand feature fusi…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Bimanual Action Segmentation"
+  - "Temporal Action Segmentation"
+  - "Diffusion Models"
+  - "Alternating Training"
+  - "Semantic Conditioning"
 date: 2026-05-08
-content_hash: 4b42a254f53afad1
+content_hash: c34cbb897c20fac2
 ---
+
 # Polyphony: Diffusion-based Dual-Hand Action Segmentation with Alternating Vision Transformer and Semantic Conditioning
 
 **Conference**: CVPR 2026  
@@ -127,15 +132,15 @@ Ablation on HA-ViD (average over three views) for incremental components (MF=Mot
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
+- [\[CVPR 2026\] Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)
+- [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
 - [\[CVPR 2026\] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation](bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t.md)
 - [\[CVPR 2026\] Spectral Scalpel: Amplifying Adjacent Action Discrepancy via Frequency-Selective Filtering for Skeleton-Based Action Segmentation](spectral_scalpel_amplifying_adjacent_action_discrepancy_via_frequency-selective_.md)
-- [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
-- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
-- [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
 
 </div>
 

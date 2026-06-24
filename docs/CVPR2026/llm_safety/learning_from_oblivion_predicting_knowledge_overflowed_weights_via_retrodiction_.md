@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting
 description: >-
-  [CVPR 2026][LLM Safety][weight prediction] The authors propose KNOW prediction: inducing a structured forgetting process through sequential fine-tuning on progressively smaller nested data subsets to collect weight transition trajectories, and then using a meta-learned hyper-model (KNOWN) to reverse the direction of forgetting. This predicts virtual knowledge-e
+  [CVPR 2026][LLM Safety][weight prediction] The authors propose KNOW prediction: inducing a structured forgetting process through sequential fine-tuning on progressively smaller nested data subsets to collect weight transition trajectories, and then using a meta-learned hyper-model (KNOWN) to reverse the direction of forgetting. This predicts virtual knowledge-enhanced weights as if they were trained on larger datasets. Across multiple datasets (CIFAR/ImageNet/PACS…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - weight prediction
-  - structured forgetting
-  - meta-learning
-  - hyper-model
-  - knowledge transfer
-  - scaling law
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "weight prediction"
+  - "structured forgetting"
+  - "meta-learning"
+  - "hyper-model"
+  - "knowledge transfer"
+  - "scaling law"
+  - "pre-trained weights"
 date: 2026-05-08
-content_hash: 001e1a34d41cf6c0
+content_hash: 9bf92c7cb9f3f6b5
 ---
+
 # Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting
 
 **Conference**: CVPR 2026  
@@ -178,11 +180,11 @@ Longer forgetting sequences ($S=5$) provide richer trajectory information, which
 
 ## Related Papers
 
+- [\[CVPR 2026\] Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression](revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression.md)
 - [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 - [\[AAAI 2026\] Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion](../../AAAI2026/llm_safety/beyond_superficial_forgetting_thorough_unlearning_through_knowledge_density_esti.md)
 - [\[ACL 2026\] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](../../ACL2026/llm_safety/before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)
-- [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](../../ACL2026/llm_safety/compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
-- [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
+- [\[ICLR 2026\] Fewer Weights, More Problems: A Practical Attack on LLM Pruning](../../ICLR2026/llm_safety/fewer_weights_more_problems_a_practical_attack_on_llm_pruning.md)
 
 </div>
 

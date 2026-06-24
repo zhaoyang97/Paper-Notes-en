@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation
 description: >-
-  [AAAI 2026][Multilingual & Machine Translation][Vietnamese dialect] ViDia2Std constructs the first manually annotated Vietnamese dialect-to-standard parallel corpus covering all 63 provinces of Vietnam (13…
+  [AAAI 2026][Multilingual & Machine Translation][Vietnamese dialect] ViDia2Std constructs the first manually annotated Vietnamese dialect-to-standard parallel corpus covering all 63 provinces of Vietnam (13,000+ sentence pairs), evaluates multiple seq2seq models on the dialect normalization task, and demonstrates that dialect normalization as a preprocessing step significantly improves downstream task performance in machine translation and sentiment analysis.
 tags:
   - "AAAI 2026"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "parallel corpus"
   - "sequence-to-sequence model"
 date: 2026-05-08
-content_hash: 1667bb0ef6c5299d
+content_hash: bf35c462e95b1807
 ---
 
 # ViDia2Std: A Parallel Corpus and Methods for Low-Resource Vietnamese Dialect-to-Standard Translation
@@ -152,11 +152,11 @@ The standard autoregressive cross-entropy loss is used: $L = -\sum_{t=1}^{m} \lo
 
 ## Related Papers
 
+- [\[ACL 2025\] Accessible Machine Translation Evaluation For Low-Resource Languages](../../ACL2025/multilingual_mt/accessible_machine_translation_evaluation_for_low-resource_languages.md)
 - [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
 - [\[NeurIPS 2025\] Reflective Translation: Improving Low-Resource Machine Translation via Structured Self-Reflection](../../NeurIPS2025/multilingual_mt/reflective_translation_improving_low-resource_machine_translation_via_structured.md)
-- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](../../ACL2026/multilingual_mt/efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
 - [\[ACL 2026\] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax](../../ACL2026/multilingual_mt/reinforcement_learning_with_semantic_rewards_enables_low-resource_language_expan.md)
-- [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](../../ACL2026/multilingual_mt/why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
+- [\[ACL 2025\] Understanding In-Context Machine Translation for Low-Resource Languages: A Case Study on Manchu](../../ACL2025/multilingual_mt/understanding_in-context_machine_translation_for_low-resource_languages_a_case_s.md)
 
 </div>
 

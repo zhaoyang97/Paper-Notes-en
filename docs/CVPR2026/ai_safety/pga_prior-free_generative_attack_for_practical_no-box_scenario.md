@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PGA: Prior-free Generative Attack for Practical No-box Scenario
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] PGA is the first **generative** adversarial attack designed for the "Practical No-box Scenario" (PNS, where the attacker has only a small amount of unlabeled images, no pre-trained proxies, and no labels). It trains a stable self-supervised proxy from scratch using curriculum micro-robust optimization and then trains a
+  [CVPR 2026][AI Safety][No-box Attack] PGA is the first **generative** adversarial attack designed for the "Practical No-box Scenario" (PNS, where the attacker has only a small amount of unlabeled images, no pre-trained proxies, and no labels). It trains a stable self-supervised proxy from scratch using curriculum micro-robust optimization and then trains a generator via region-aware consistent perturbation learning. It produces highly transferable adversarial examples in a si…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "No-box Attack"
+  - "Generative Adversarial Attack"
+  - "Transferability"
+  - "Self-supervised Proxy Model"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 7f643f0633025639
+content_hash: 726be71722587cf0
 ---
+
 # PGA: Prior-free Generative Attack for Practical No-box Scenario
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Ablation of region count $K$:
 
 ## Related Papers
 
-- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
-- [\[CVPR 2026\] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting](generative_adversarial_perturbations_with_cross-paradigm_transferability_on_loca.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
+- [\[ICLR 2026\] No Prior, No Leakage: Revisiting Reconstruction Attacks in Trained Neural Networks](../../ICLR2026/ai_safety/no_prior_no_leakage_revisiting_reconstruction_attacks_in_trained_neural_networks.md)
 - [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
+- [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] PA-Attack: Guiding Gray-Box Attacks on LVLM Vision Encoders with Prototypes and Attention](pa-attack_guiding_gray-box_attacks_on_lvlm_vision_encoders_with_prototypes_and_a.md)
+- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
 
 </div>
 

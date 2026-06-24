@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PanSt3R: Multi-view Consistent Panoptic Segmentation
 description: >-
-  [ICCV 2025][3D Vision][Panoptic Segmentation] PanSt3R builds upon MUSt3R to simultaneously perform 3D reconstruction and multi-view panoptic segmentation in a **single forward pass**…
+  [ICCV 2025][3D Vision][Panoptic Segmentation] PanSt3R builds upon MUSt3R to simultaneously perform 3D reconstruction and multi-view panoptic segmentation in a **single forward pass**, requiring neither camera parameters nor test-time optimization, and achieves inference speeds orders of magnitude faster than existing methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Multi-view"
   - "Mask Prediction"
 date: 2026-05-08
-content_hash: 839d9112e17e5f3b
+content_hash: a19c00cd1c735855
 ---
 
 # PanSt3R: Multi-view Consistent Panoptic Segmentation
@@ -154,7 +154,7 @@ PanSt3R achieves state-of-the-art performance across multiple benchmarks while b
 - [\[ICCV 2025\] MV-Adapter: Multi-view Consistent Image Generation Made Easy](mv-adapter_multi-view_consistent_image_generation_made_easy.md)
 - [\[ICCV 2025\] Trace3D: Consistent Segmentation Lifting via Gaussian Instance Tracing](trace3d_consistent_segmentation_lifting_via_gaussian_instance_tracing.md)
 - [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
-- [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
+- [\[CVPR 2025\] 3DEnhancer: Consistent Multi-View Diffusion for 3D Enhancement](../../CVPR2025/3d_vision/3denhancer_consistent_multi-view_diffusion_for_3d_enhancement.md)
 
 </div>
 

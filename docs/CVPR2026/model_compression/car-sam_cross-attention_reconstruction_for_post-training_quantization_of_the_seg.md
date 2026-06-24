@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model
 description: >-
-  [CVPR 2026][Model Compression][Segment Anything] Addressing the unique challenges of "attention dissipation caused by low-bit quantization" and "reconstruction oscillation due to bidirectional coupling" in the SAM decoder, CAR-SAM employs MatMul-Aware Compensation (MAC)—which channels activation quantization errors from MatMul inputs back into preceding linear layer
+  [CVPR 2026][Model Compression][Post-Training Quantization] Addressing the unique challenges of "attention dissipation caused by low-bit quantization" and "reconstruction oscillation due to bidirectional coupling" in the SAM decoder, CAR-SAM employs MatMul-Aware Compensation (MAC)—which channels activation quantization errors from MatMul inputs back into preceding linear layer weights—and Joint Cross-Attention Reconstruction (JCAR)—which optimizes coupled cross-attention block…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Segment Anything
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Segment Anything"
+  - "Cross-Attention"
+  - "Cross-layer Error Compensation"
+  - "4-bit Quantization"
 date: 2026-05-08
-content_hash: a63560baed066be8
+content_hash: 2ff43b8a109f8903
 ---
+
 # CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model
 
 **Conference**: CVPR 2026  
@@ -138,10 +143,10 @@ Under W4A4, CAR-SAM outperforms PTQ4SAM by 14.6 mAP on SAM-B and 6.6 mAP on SAM-
 ## Related Papers
 
 - [\[ECCV 2024\] PQ-SAM: Post-training Quantization for Segment Anything Model](../../ECCV2024/model_compression/pq-sam_post-training_quantization_for_segment_anything_model.md)
-- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
-- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Rethinking Asymmetric Quantization: Hidden Symmetry in Vision Model Weights](rethinking_asymmetric_quantization_hidden_symmetry_in_vision_model_weights.md)
 - [\[CVPR 2026\] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution](gradient_knows_best_mixed-precision_quantization_via_gradient-guided_bit_allocat.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](../../ICLR2026/model_compression/post-training_quantization_for_video_matting.md)
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](../../ICLR2026/model_compression/training_dynamics_impact_post-training_quantization_robustness.md)
+- [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](../../AAAI2026/model_compression/post_training_quantization_for_efficient_dataset_condensation.md)
 
 </div>
 

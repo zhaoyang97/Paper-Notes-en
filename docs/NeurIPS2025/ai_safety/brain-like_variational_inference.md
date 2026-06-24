@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Brain-like Variational Inference
 description: >-
-  [NeurIPS 2025][AI Safety][variational inference] This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics)…
+  [NeurIPS 2025][AI Safety][variational inference] This paper proposes the FOND framework (Free energy Online Natural-gradient Dynamics), which derives spiking neural network inference dynamics from first principles via free energy minimization, and implements iPVAE (iterative Poisson VAE). iPVAE outperforms standard VAEs and predictive coding models in reconstruction–sparsity trade-off, biological plausibility, and OOD generalization.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "free energy"
   - "Poisson VAE"
 date: 2026-05-08
-content_hash: 5865e6ccb072ec6a
+content_hash: 033f39a452fad992
 ---
 
 # Brain-like Variational Inference
@@ -145,11 +145,11 @@ Three concrete models are derived: iPVAE (Poisson), iGVAE (Gaussian), and $\text
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Environment Inference for Learning Generalizable Dynamical System](environment_inference_for_learning_generalizable_dynamical_system.md)
+- [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](../../ICML2026/ai_safety/federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
 - [\[NeurIPS 2025\] DESIGN: Encrypted GNN Inference via Server-Side Input Graph Pruning](design_encrypted_gnn_inference_via_server-side_input_graph_pruning.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
+- [\[NeurIPS 2025\] Environment Inference for Learning Generalizable Dynamical System](environment_inference_for_learning_generalizable_dynamical_system.md)
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
-- [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](../../ICCV2025/ai_safety/membership_inference_attacks_with_false_discovery_rate_control.md)
 
 </div>
 

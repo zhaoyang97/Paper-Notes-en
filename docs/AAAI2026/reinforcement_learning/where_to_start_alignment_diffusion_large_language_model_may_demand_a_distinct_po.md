@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Where to Start Alignment? Diffusion Large Language Model May Demand a Distinct Position
 description: >-
-  [AAAI 2026 (Oral)][Reinforcement Learning][Diffusion language model] This paper presents the first systematic safety analysis of diffusion large language models (dLLMs)…
+  [AAAI 2026 (Oral)][Reinforcement Learning][Diffusion language model] This paper presents the first systematic safety analysis of diffusion large language models (dLLMs), revealing that—unlike autoregressive LLMs—**middle tokens** are more critical to safety in dLLMs, and that attackers are fundamentally constrained by the model's inherent sequential generation tendency from manipulating these positions. Based on this asymmetry, the paper proposes MOSA (Middle-tOken Safety Ali…
 tags:
   - "AAAI 2026 (Oral)"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "middle tokens"
   - "jailbreak defense"
 date: 2026-05-08
-content_hash: 6a697fc50f681297
+content_hash: 82478741815abaf1
 ---
 
 # Where to Start Alignment? Diffusion Large Language Model May Demand a Distinct Position
@@ -187,11 +187,11 @@ Adaptive attack ASR is equally low as that of standard attacks, demonstrating th
 
 ## Related Papers
 
+- [\[ICLR 2026\] Toward Efficient Exploration by Large Language Model Agents](../../ICLR2026/reinforcement_learning/toward_efficient_exploration_by_large_language_model_agents.md)
+- [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](../../ICLR2026/reinforcement_learning/revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/mmada_multimodal_large_diffusion_language_models.md)
-- [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
-- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
-- [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](../../ICML2026/reinforcement_learning/break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
-- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
+- [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](../../ICLR2026/reinforcement_learning/structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
+- [\[ICLR 2026\] Squeeze the Soaked Sponge: Efficient Off-Policy RFT for Large Language Model](../../ICLR2026/reinforcement_learning/squeeze_the_soaked_sponge_efficient_off-policy_rft_for_large_language_model.md)
 
 </div>
 

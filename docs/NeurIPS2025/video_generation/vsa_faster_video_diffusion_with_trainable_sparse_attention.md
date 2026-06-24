@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VSA: Faster Video Diffusion with Trainable Sparse Attention
 description: >-
-  [NeurIPS 2025][Video Generation][Sparse Attention] This paper proposes VSA (Video Sparse Attention), an end-to-end trainable, hardware-aligned sparse attention mechanism with a hierarchical coarse-fine design: a coarse-g…
+  [NeurIPS 2025][Video Generation][Sparse Attention] This paper proposes VSA (Video Sparse Attention), an end-to-end trainable, hardware-aligned sparse attention mechanism with a hierarchical coarse-fine design: a coarse-grained stage predicts key token positions via cube pooling, and a fine-grained stage performs token-level attention within the predicted block-sparse regions. VSA accelerates both training and inference of video DiTs simultaneously: pretraining from scratch ac…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Key Token Prediction"
   - "Hardware Alignment"
 date: 2026-05-08
-content_hash: 98c307bf8b00e063
+content_hash: fffcb8b3ccb9dc17
 ---
 
 # VSA: Faster Video Diffusion with Trainable Sparse Attention
@@ -150,8 +150,8 @@ Wan2.1 adaptation experiments:
 - [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
 - [\[NeurIPS 2025\] Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation](radial_attention_onlog_n_sparse_attention_with_energy_decay_for_long_video_gener.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 - [\[NeurIPS 2025\] S²Q-VDiT: Accurate Quantized Video Diffusion Transformer with Salient Data and Sparse Token Distillation](s2q-vdit_accurate_quantized_video_diffusion_transformer_with_salient_data_and_sp.md)
+- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 
 </div>
 

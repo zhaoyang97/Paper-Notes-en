@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] L$^3$: Large Lookup Layers
 description: >-
-  [ICML 2026][LLM Efficiency][CPU offload] The paper proposes L$^3$ (Large Lookup Layer), generalizing the tokenizer embedding table into "large lookup layers" that can be inserted into the decoder. By using **static routing** based on token IDs to retrieve a set of learned key/value embeddings and performing attention-based aggregation using the current hidden
+  [ICML 2026][LLM Efficiency][Sparse models] The paper proposes L$^3$ (Large Lookup Layer), generalizing the tokenizer embedding table into "large lookup layers" that can be inserted into the decoder. By using **static routing** based on token IDs to retrieve a set of learned key/value embeddings and performing attention-based aggregation using the current hidden state, it achieves a higher level of model sparsity without the pain points of MoE (dynamic routing…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - CPU offload
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Sparse models"
+  - "static routing"
+  - "embedding lookup"
+  - "LZW allocation"
+  - "CPU offload"
 date: 2026-05-08
-content_hash: e24246314e497c47
+content_hash: cb8f67f771044936
 ---
+
 # L$^3$: Large Lookup Layers
 
 **Conference**: ICML 2026  
@@ -144,8 +149,8 @@ Adding L3 layers consistently lowers perplexity and improves downstream scores (
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
 - [\[ICML 2025\] Mixture of Lookup Experts](../../ICML2025/llm_efficiency/mixture_of_lookup_experts.md)
 - [\[ICML 2026\] Skip a Layer or Loop It? Learning Program-of-Layers in LLMs](skip_a_layer_or_loop_it_learning_program-of-layers_in_llms.md)
+- [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](ir3de_a_linear_router_for_large_language_models.md)
 - [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
 
 </div>
 

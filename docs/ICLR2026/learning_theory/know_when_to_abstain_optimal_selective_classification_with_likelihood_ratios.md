@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Know When to Abstain: Optimal Selective Classification with Likelihood Ratios
 description: >-
-  [ICLR 2026][learning_theory][Selective Classification] This paper reframes the decision of "whether a model should abstain" as a likelihood ratio test using the classical Neyman–Pearson lemma. It proves that existing scorers such as MSP and RLog are essentially approximations of this likelihood ratio. Based on this, the authors design two distance-based scorers, $\Delta$-M
+  [ICLR 2026][Selective Classification][Neyman–Pearson Lemma] This paper reframes the decision of "whether a model should abstain" as a likelihood ratio test using the classical Neyman–Pearson lemma. It proves that existing scorers such as MSP and RLog are essentially approximations of this likelihood ratio. Based on this, the authors design two distance-based scorers, $\Delta$-MDS and $\Delta$-KNN, which model "correct" and "incorrect" predictions separately…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Selective Classification
-  - Neyman–Pearson Lemma
-  - Likelihood Ratio
-  - Covariate Shift
-  - OOD Detection
-  - VLM
+  - "ICLR 2026"
+  - "Selective Classification"
+  - "Uncertainty Estimation"
+  - "Learning Theory"
+  - "Neyman–Pearson Lemma"
+  - "Likelihood Ratio"
+  - "Covariate Shift"
+  - "OOD Detection"
+  - "VLM"
 date: 2026-05-08
-content_hash: 82d26014f113181a
+content_hash: 536b1362d3ad978d
 ---
+
 # Know When to Abstain: Optimal Selective Classification with Likelihood Ratios
 
 **Conference**: ICLR 2026  
@@ -127,11 +129,11 @@ flowchart TD
 
 ## Related Papers
 
-- [\[ICLR 2026\] Practical Estimation of the Optimal Classification Error with Soft Labels and Calibration](practical_estimation_of_the_optimal_classification_error_with_soft_labels_and_ca.md)
 - [\[ICLR 2026\] Preventing Model Collapse Under Overparametrization: Optimal Mixing Ratios for Interpolation Learning and Ridge Regression](preventing_model_collapse_under_overparametrization_optimal_mixing_ratios_for_in.md)
+- [\[ICLR 2026\] Practical Estimation of the Optimal Classification Error with Soft Labels and Calibration](practical_estimation_of_the_optimal_classification_error_with_soft_labels_and_ca.md)
 - [\[ICLR 2026\] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem](an_efficient_provably_optimal_algorithm_for_the_0-1_loss_linear_classification_p.md)
 - [\[ICLR 2026\] "Noisier" Noise Contrastive Estimation is (Almost) Maximum Likelihood](noisier_noise_contrastive_estimation_is_almost_maximum_likelihood.md)
-- [\[ICLR 2026\] When Shift Happens - Confounding is to Blame](when_shift_happens_-_confounding_is_to_blame.md)
+- [\[ICLR 2026\] When Bias Meets Trainability: Connecting Theories of Initialization](when_bias_meets_trainability_connecting_theories_of_initialization.md)
 
 </div>
 

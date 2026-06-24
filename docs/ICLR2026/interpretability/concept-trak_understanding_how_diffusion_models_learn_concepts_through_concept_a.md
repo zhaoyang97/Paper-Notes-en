@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution
 description: >-
-  [ICLR 2026][Interpretability][Diffusion Model] Concept-TRAK refines traditional "whole-image" level training data attribution to the "individual concept" level. By designing **concept-oriented reward training and utility losses** for influence functions, it enables precise identification of which training samples influenced a specific concept (e.g., the character "
+  [ICLR2026][Interpretability][Data attribution] Concept-TRAK refines traditional "whole-image" level training data attribution to the "individual concept" level. By designing **concept-oriented reward training and utility losses** for influence functions, it enables precise identification of which training samples influenced a specific concept (e.g., the character "Pikachu" rather than a pencil drawing style) in an AI-generated image. It significantly outperforms TRAK, D-TRAK…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Diffusion Model
+  - "ICLR2026"
+  - "Interpretability"
+  - "Data attribution"
+  - "Concept attribution"
+  - "Diffusion models"
+  - "Influence functions"
+  - "Tangent space"
 date: 2026-05-08
-content_hash: b505d9201a1c5ab6
+content_hash: a6402c06f3d668ba
 ---
+
 # Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution
 
 **Conference**: ICLR2026  
@@ -150,8 +155,8 @@ Ablations on the AbC benchmark (48 samples) show the gain from each component:
 - [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 - [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 - [\[ICLR 2026\] Patronus: Interpretable Diffusion Models with Prototypes](patronus_interpretable_diffusion_models_with_prototypes.md)
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](learning_to_weight_parameters_for_training_data_attribution.md)
 - [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
-- [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
 
 </div>
 

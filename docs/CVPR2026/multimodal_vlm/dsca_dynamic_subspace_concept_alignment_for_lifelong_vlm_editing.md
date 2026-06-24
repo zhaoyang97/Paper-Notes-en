@@ -4,13 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][Multimodal VLM][Knowledge Editing] DSCA enables knowledge editing by decomposing the representation space of VLMs into a set of orthogonal semantic subspaces and performing gated residual interventions within each subspace. This approach maintains an editing success rate of $>95\%$ with near-zero forgetting even after 1000 sequential edits.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Knowledge Editing
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Knowledge Editing"
+  - "Vision-Language Models"
+  - "Subspace Decomposition"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: cb0e852505e8afb5
+content_hash: d692f32a5f57f168
 ---
+
 # DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing
 
 **Conference**: CVPR 2026  
@@ -153,8 +157,8 @@ The total loss is a weighted sum of four terms: $\mathcal{L} = \mathcal{L}_{\tex
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
+- [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
 - [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
-- [\[CVPR 2026\] Concept-wise Attention for Fine-grained Concept Bottleneck Models](coat_cbm_concept_wise_attention.md)
 - [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
 

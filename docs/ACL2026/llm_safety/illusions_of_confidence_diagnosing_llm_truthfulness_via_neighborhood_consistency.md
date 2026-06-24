@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Illusions of Confidence? Diagnosing LLM Truthfulness via Neighborhood Consistency
 description: >-
-  [ACL 2026][LLM Safety][Self-Consistency] This paper points out that for LLMs, "high self-consistency does not equal true belief"—on 995 questions where the model answered correctly with 100% consistency, inserting minor contextual interference caused accuracy to plummet to 33.8%. The authors propose **Neighbor-Consistency Belief (NCB)**: a structured proxy fo
+  [ACL 2026][LLM Safety][Belief Robustness] This paper points out that for LLMs, "high self-consistency does not equal true belief"—on 995 questions where the model answered correctly with 100% consistency, inserting minor contextual interference caused accuracy to plummet to 33.8%. The authors propose **Neighbor-Consistency Belief (NCB)**: a structured proxy for belief robustness by performing joint consistency estimation of a target fact and its "conceptual neighbors" (premis…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Self-Consistency
-  - Structure-Aware Training
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Belief Robustness"
+  - "Neighborhood Consistency"
+  - "Self-Consistency"
+  - "Bayesian Belief"
+  - "Structure-Aware Training"
 date: 2026-05-08
-content_hash: eed5a41c38e142b5
+content_hash: 044c66b23eb84ad6
 ---
+
 # Illusions of Confidence? Diagnosing LLM Truthfulness via Neighborhood Consistency
 
 **Conference**: ACL 2026  
@@ -138,7 +142,6 @@ SAT doubled the Average Stress performance from 33.4 to 60.6 (**~80% relative ga
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

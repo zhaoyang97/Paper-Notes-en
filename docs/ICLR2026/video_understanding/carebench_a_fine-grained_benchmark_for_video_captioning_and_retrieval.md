@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CaReBench: A Fine-grained Benchmark for Video Captioning and Retrieval
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] CaReBench utilizes 1,000 manually annotated videos—each with captions exceeding 200 words and **explicitly split into spatial and temporal versions**—to establish a benchmark capable of simultaneously evaluating fine-grained video captioning and retrieval. It introduces two new metrics, ReBias and CapST, to quantify th
+  [ICLR2026][Video Understanding][Video Captioning] CaReBench utilizes 1,000 manually annotated videos—each with captions exceeding 200 words and **explicitly split into spatial and temporal versions**—to establish a benchmark capable of simultaneously evaluating fine-grained video captioning and retrieval. It introduces two new metrics, ReBias and CapST, to quantify the spatiotemporal bias of VLMs, and provides a two-stage SFT baseline, CARE, which unifies captioning and retri…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Video Captioning"
+  - "Video Retrieval"
+  - "Fine-grained Evaluation"
+  - "Spatiotemporal Bias"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: 11dc2755e552bc88
+content_hash: 6a10940b580c7b3a
 ---
+
 # CaReBench: A Fine-grained Benchmark for Video Captioning and Retrieval
 
 **Conference**: ICLR2026  
@@ -136,10 +142,20 @@ In captioning (CapST), CARE 7B exceeds all open-source models, including Qwen2-V
 - Value: ⭐⭐⭐⭐ The benchmark, metrics, and unified baseline provide a practical toolkit for VLM evaluation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](../../AAAI2026/video_understanding/finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)
+- [\[ICML 2025\] Fine-Grained Captioning of Long Videos through Scene Graph Consolidation](../../ICML2025/video_understanding/fine-grained_captioning_of_long_videos_through_scene_graph_consolidation.md)
+- [\[ICLR 2026\] OmniCVR: A Benchmark for Omni-Composed Video Retrieval with Vision, Audio, and Text](omnicvr_a_benchmark_for_omni-composed_video_retrieval_with_vision_audio_and_text.md)
+- [\[ICLR 2026\] Let's Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding](lets_split_up_zero-shot_classifier_edits_for_fine-grained_video_understanding.md)
+- [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](../../CVPR2026/video_understanding/fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](../../AAAI2026/video_understanding/finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)

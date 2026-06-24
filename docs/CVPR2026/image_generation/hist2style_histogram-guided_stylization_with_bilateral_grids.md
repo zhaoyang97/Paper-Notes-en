@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hist2Style: Histogram-Guided Stylization with Bilateral Grids
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Hist2Style distills a large image editing model into a lightweight network with only 1.5M parameters. By utilizing "bilateral grids + color histogram conditioning," it constrains style transfer to locally affine tone/color transformations. This approach preserves content structure and eliminates hallucinations while ac
+  [CVPR 2026][Image Generation][Photorealistic Style Transfer] Hist2Style distills a large image editing model into a lightweight network with only 1.5M parameters. By utilizing "bilateral grids + color histogram conditioning," it constrains style transfer to locally affine tone/color transformations. This approach preserves content structure and eliminates hallucinations while achieving real-time performance at high resolutions and enabling interactive color grading via direct…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Photorealistic Style Transfer"
+  - "Bilateral Grids"
+  - "Histogram Conditioning"
+  - "Model Distillation"
+  - "Real-time Color Grading"
 date: 2026-05-08
-content_hash: 82b83433c21ee961
+content_hash: f16b65595481b439
 ---
+
 # Hist2Style: Histogram-Guided Stylization with Bilateral Grids
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ The ablation study primarily uses qualitative figures to demonstrate the impact 
 ## Related Papers
 
 - [\[CVPR 2026\] EmoStyle: Emotion-Driven Image Stylization](emostyle_emotion-driven_image_stylization.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
 - [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](learnability-guided_diffusion_for_dataset_distillation.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](../../ICCV2025/image_generation/balanced_image_stylization_with_style_matching_score.md)
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
-- [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
 
 </div>
 

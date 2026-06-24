@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Is In-Context Learning Learning?
 description: >-
-  [ICLR 2026][LLM Reasoning][in-context learning] Through large-scale controlled experiments, this paper systematically analyzes whether ICL constitutes "learning". It finds that while ICL satisfies the mathematical definition of learning, empirical evidence shows limited generalization—models primarily rely on structural patterns in prompts for deduction rather than
+  [ICLR2026][Reasoning][in-context learning] Through large-scale controlled experiments, this paper systematically analyzes whether ICL constitutes "learning". It finds that while ICL satisfies the mathematical definition of learning, empirical evidence shows limited generalization—models primarily rely on structural patterns in prompts for deduction rather than truly acquiring new capabilities from examples.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - in-context learning
-  - ICL
-  - memorisation
-  - distributional shift
-  - generalization
-  - autoregressive models
+  - "ICLR2026"
+  - "Reasoning"
+  - "in-context learning"
+  - "ICL"
+  - "memorisation"
+  - "distributional shift"
+  - "generalization"
+  - "autoregressive models"
 date: 2026-05-08
-content_hash: bd3a319748375695
+content_hash: 4665d5777f5511b1
 ---
+
 # Is In-Context Learning Learning?
 
 **Conference**: ICLR2026  
@@ -119,15 +120,15 @@ While Chain-of-Thought (CoT) significantly boosts accuracy on certain tasks—of
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
+- [\[NeurIPS 2025\] Unlabeled Data Can Provably Enhance In-Context Learning of Transformers](../../NeurIPS2025/llm_reasoning/unlabeled_data_can_provably_enhance_in-context_learning_of_transformers.md)
+- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
-- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
-- [\[ICLR 2026\] Divide and Abstract: Autoformalization via Decomposition and Abstraction Learning](divide_and_abstract_autoformalization_via_decomposition_and_abstraction_learning.md)
-- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](agentic_reinforcement_learning_with_implicit_step_rewards.md)
+- [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
 
 </div>
 

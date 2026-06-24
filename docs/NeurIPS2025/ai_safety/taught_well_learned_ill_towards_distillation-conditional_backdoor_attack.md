@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack
 description: >-
-  [NeurIPS 2025][AI Safety][knowledge distillation] This paper proposes the Distillation-Conditional Backdoor Attack (DCBA) paradigm and its instantiation SCAR…
+  [NeurIPS 2025][AI Safety][knowledge distillation] This paper proposes the Distillation-Conditional Backdoor Attack (DCBA) paradigm and its instantiation SCAR, which embeds a "dormant" backdoor into a teacher model via bi-level optimization. The backdoor remains undetectable on the teacher model but is activated and transferred to the student model during knowledge distillation, even when the distillation dataset is entirely clean.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "implicit differentiation"
   - "model security"
 date: 2026-05-08
-content_hash: 0a18375d40272c08
+content_hash: 2a6a0fa94b2cc1dd
 ---
 
 # Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack
@@ -124,11 +124,11 @@ The core mechanism of SCAR is to jointly train the teacher model and a surrogate
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] On the Hardness of Conditional Independence Testing In Practice](on_the_hardness_of_conditional_independence_testing_in_practice.md)
 - [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
-- [\[ICCV 2025\] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack](../../ICCV2025/ai_safety/mind_the_cost_of_scaffold_benign_clients_may_even_become_accomplices_of_backdoor.md)
+- [\[NeurIPS 2025\] On the Hardness of Conditional Independence Testing In Practice](on_the_hardness_of_conditional_independence_testing_in_practice.md)
+- [\[CVPR 2025\] Infighting in the Dark: Multi-Label Backdoor Attack in Federated Learning](../../CVPR2025/ai_safety/infighting_in_the_dark_multi-label_backdoor_attack_in_federated_learning.md)
 - [\[NeurIPS 2025\] Deceptron: Learned Local Inverses for Fast and Stable Physics Inversion](deceptron_learned_local_inverses_for_fast_and_stable_physics_inversion.md)
-- [\[NeurIPS 2025\] MARS: A Malignity-Aware Backdoor Defense in Federated Learning](mars_a_malignity-aware_backdoor_defense_in_federated_learning.md)
+- [\[ICCV 2025\] Mind the Cost of Scaffold! Benign Clients May Even Become Accomplices of Backdoor Attack](../../ICCV2025/ai_safety/mind_the_cost_of_scaffold_benign_clients_may_even_become_accomplices_of_backdoor.md)
 
 </div>
 

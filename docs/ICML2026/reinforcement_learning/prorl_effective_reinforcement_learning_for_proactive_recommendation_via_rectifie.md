@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] Addressing the issue where naive policy gradients collapse into "equal-length repetitive paths" in proactive recommendation tasks, the authors theoretically attribute the failure to the "length shortcut" and high variance induced by positive mean stepwise rewards after path-level reward decomposition. They propose ProR
+  [ICML2026][Reinforcement Learning][Proactive Recommendation] Addressing the issue where naive policy gradients collapse into "equal-length repetitive paths" in proactive recommendation tasks, the authors theoretically attribute the failure to the "length shortcut" and high variance induced by positive mean stepwise rewards after path-level reward decomposition. They propose ProRL: using Stepwise Reward Centering to subtract a constant baseline from the expected reward at each…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Proactive Recommendation"
+  - "Policy Gradient"
+  - "Length Shortcut"
+  - "Position-Specific Advantage"
+  - "Multi-Objective Reward"
 date: 2026-05-08
-content_hash: cde527c94b6d563e
+content_hash: 8b01f9194a2ebfe4
 ---
+
 # ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation
 
 **Conference**: ICML2026  
@@ -125,15 +131,14 @@ Multi-objective reward ablation indicates that removing CTR, IoI, or IoR results
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
+- [\[ICLR 2026\] Asynchronous Policy Gradient Aggregation for Efficient Distributed Reinforcement Learning](../../ICLR2026/reinforcement_learning/asynchronous_policy_gradient_aggregation_for_efficient_distributed_reinforcement.md)
+- [\[ICLR 2026\] Reevaluating Policy Gradient Methods for Imperfect-Information Games](../../ICLR2026/reinforcement_learning/reevaluating_policy_gradient_methods_for_imperfect-information_games.md)
 - [\[NeurIPS 2025\] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/on_the_global_optimality_of_policy_gradient_methods_in_general_utility_reinforce.md)
-- [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](../../NeurIPS2025/reinforcement_learning/robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
-- [\[ACL 2026\] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning](../../ACL2026/reinforcement_learning/ce-gppo_coordinating_entropy_via_gradient-preserving_clipping_policy_optimizatio.md)
-- [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
+- [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
+- [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](../../ICLR2026/reinforcement_learning/spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning
 description: >-
-  [ICLR 2026][Image Restoration][Hamiltonian Monte Carlo] This paper transforms the solution of diffusion model inverse problems from "adding data consistency gradients to intermediate image states" to "performing HMC posterior sampling in the initial DDIM noise space." By marginalizing unknown measurement noise to derive NA-NHMC, the method achieves robust reconstruction qua
+  [ICLR2026][Image Restoration][Diffusion Inverse Problems] This paper transforms the solution of diffusion model inverse problems from "adding data consistency gradients to intermediate image states" to "performing HMC posterior sampling in the initial DDIM noise space." By marginalizing unknown measurement noise to derive NA-NHMC, the method achieves robust reconstruction quality across super-resolution, inpainting, deblurring, phase retrieval…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Hamiltonian Monte Carlo
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Diffusion Inverse Problems"
+  - "Posterior Sampling"
+  - "Hamiltonian Monte Carlo"
+  - "Unknown Noise"
 date: 2026-05-08
-content_hash: 908f3852090ab5b1
+content_hash: 5d2dc80db3e4fea2
 ---
+
 # Noise-Adaptive Diffusion Sampling for Inverse Problems Without Task-Specific Tuning
 
 **Conference**: ICLR2026  
@@ -150,12 +154,13 @@ Evaluation was conducted on FFHQ and ImageNet (256x256) using 100 images. Metric
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
 - [\[ICLR 2026\] Flower: A Flow-Matching Solver for Inverse Problems](flower_a_flow-matching_solver_for_inverse_problems.md)
+- [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
 - [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](../../CVPR2026/image_restoration/outlier-robust_diffusion_solvers_for_inverse_problems.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](../../ICML2026/image_restoration/triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[ICLR 2026\] CL-DPS: A Contrastive Learning Approach to Blind Nonlinear Inverse Problem Solving via Diffusion Posterior Sampling](cl-dps_a_contrastive_learning_approach_to_blind_nonlinear_inverse_problem_solvin.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Incremental BPE Tokenization
 description: >-
-  [ICML 2026][Pretraining][Aho–Corasick] This paper proposes the first incremental BPE tokenization algorithm with a strict $\mathcal{O}(\log^2 t)$ worst-case per-byte complexity. By utilizing an Aho–Corasick automaton to locate the search space and binary search on a Centroid Decomposition of the "Suffix-Successor Tree" to identify the "last token," it serve
+  [ICML 2026 Spotlight][LLM Pretraining][BPE Tokenization] This paper proposes the first incremental BPE tokenization algorithm with a strict $\mathcal{O}(\log^2 t)$ worst-case per-byte complexity. By utilizing an Aho–Corasick automaton to locate the search space and binary search on a Centroid Decomposition of the "Suffix-Successor Tree" to identify the "last token," it serves as a drop-in replacement achieving up to $\sim 3\times$ speedup over Hugging Face tokenizers. Further…
 tags:
-  - ICML 2026
-  - Pretraining
-  - Aho–Corasick
-  - Centroid Decomposition
+  - "ICML 2026 Spotlight"
+  - "LLM Pretraining"
+  - "BPE Tokenization"
+  - "Incremental Algorithm"
+  - "Aho–Corasick"
+  - "Centroid Decomposition"
+  - "Streaming Output"
 date: 2026-05-08
-content_hash: 6f9107c82c3ecd7a
+content_hash: 252915b1e1b96350
 ---
+
 # Incremental BPE Tokenization
 
 **Conference**: ICML 2026 Spotlight  

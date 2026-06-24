@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][DINOv2] Ours proposes AlignTok—instead of training a VAE from scratch or forcing it to learn semantics via "semantic regularization," it transforms a semantically-rich pre-trained visual foundation encoder (DINOv2) into a continuous tokenizer through a three-stage progressive alignment. This yields a latent space that is both
+  [ICLR2026][Image Generation][Visual tokenizer] Ours proposes AlignTok—instead of training a VAE from scratch or forcing it to learn semantics via "semantic regularization," it transforms a semantically-rich pre-trained visual foundation encoder (DINOv2) into a continuous tokenizer through a three-stage progressive alignment. This yields a latent space that is both semantically well-structured and capable of precise reconstruction; on ImageNet 256×256…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DINOv2
+  - "ICLR2026"
+  - "Image Generation"
+  - "Visual tokenizer"
+  - "pre-trained encoder alignment"
+  - "latent diffusion"
+  - "DINOv2"
+  - "semantic preservation"
 date: 2026-05-08
-content_hash: 3c43fef9d9215a46
+content_hash: 1a8bb6384951dac7
 ---
+
 # Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models
 
 **Conference**: ICLR2026  
@@ -143,16 +148,16 @@ ImageNet 256×256, 80K steps, 30 sampling steps, without Stage 3, mainly compari
 - Value: ⭐⭐⭐⭐⭐ Offers a plug-and-play replacement for VA-VAE/FLUX VAE with ~5× faster convergence, making a substantial impact on tokenizer design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](../../CVPR2026/image_generation/vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)
+- [\[ICLR 2026\] Latent Denoising Makes Good Tokenizers](latent_denoising_makes_good_tokenizers.md)
 - [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](../../ICML2026/image_generation/compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
-- [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
 - [\[ICLR 2026\] Diffusion Transformers with Representation Autoencoders](diffusion_transformers_with_representation_autoencoders.md)
-- [\[ICCV 2025\] Mind the Gap: Aligning Vision Foundation Models to Image Feature Matching](../../ICCV2025/image_generation/mind_the_gap_aligning_vision_foundation_models_to_image_feature_matching.md)
+- [\[ICLR 2026\] Asynchronous Denoising Diffusion Models for Aligning Text-to-Image Generation](asynchronous_denoising_diffusion_models_for_aligning_text-to-image_generation.md)
 
 </div>
 

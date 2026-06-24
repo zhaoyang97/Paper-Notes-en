@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Moment Quantization for Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Video temporal grounding] This paper proposes MQVTG, which for the first time introduces vector quantization into video temporal grounding (VTG) by mapping video clips to discrete vectors…
+  [ICCV 2025][Video Understanding][Video temporal grounding] This paper proposes MQVTG, which for the first time introduces vector quantization into video temporal grounding (VTG) by mapping video clips to discrete vectors via a moment codebook and soft quantization, thereby enhancing foreground/background discriminability and achieving state-of-the-art performance on 6 benchmarks.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "highlight detection"
   - "discrete representation learning"
 date: 2026-05-08
-content_hash: 44a2c1a837c5846f
+content_hash: d300ae8ccb5dcc14
 ---
 
 # Moment Quantization for Video Temporal Grounding
@@ -153,9 +153,9 @@ Comparison of quantization strategies:
 ## Related Papers
 
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
-- [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
-- [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
 - [\[NeurIPS 2025\] When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions](../../NeurIPS2025/video_understanding/when_one_moment_isnt_enough_multi-moment_retrieval_with_cross-moment_interaction.md)
+- [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
+- [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
 - [\[NeurIPS 2025\] DualGround: Structured Phrase and Sentence-Level Temporal Grounding](../../NeurIPS2025/video_understanding/dualground_phrase_temporal.md)
 
 </div>

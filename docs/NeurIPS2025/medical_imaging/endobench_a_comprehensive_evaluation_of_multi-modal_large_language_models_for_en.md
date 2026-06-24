@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Endoscopy] This paper introduces EndoBench, the first comprehensive MLLM evaluation benchmark covering 4 endoscopic scenarios, 12 clinical tasks, and 5 levels of visual prompt granularity…
+  [NeurIPS 2025][Medical Imaging][Endoscopy] This paper introduces EndoBench, the first comprehensive MLLM evaluation benchmark covering 4 endoscopic scenarios, 12 clinical tasks, and 5 levels of visual prompt granularity, comprising 6,832 clinically validated VQA pairs. Evaluation of 23 MLLMs reveals that commercial models generally outperform open-source and medical-specific counterparts, yet all remain below human expert performance.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "VQA"
   - "Clinical Workflow"
 date: 2026-05-08
-content_hash: 0582ac2aaa67ef19
+content_hash: 469a22ba4f8c7e1d
 ---
 
 # EndoBench: A Comprehensive Evaluation of Multi-Modal Large Language Models for Endoscopy Analysis
@@ -154,10 +154,10 @@ EndoBench represents a significant contribution to endoscopic MLLM evaluation, w
 ## Related Papers
 
 - [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
+- [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](../../CVPR2026/medical_imaging/omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
+- [\[CVPR 2025\] Multi-modal Vision Pre-training for Medical Image Analysis (BrainMVP)](../../CVPR2025/medical_imaging/multi-modal_vision_pre-training_for_medical_image_analysis.md)
 - [\[ICCV 2025\] SciVid: Cross-Domain Evaluation of Video Models in Scientific Applications](../../ICCV2025/medical_imaging/scivid_cross-domain_evaluation_of_video_models_in_scientific_applications.md)
 - [\[NeurIPS 2025\] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology](starc-9_a_large-scale_dataset_for_multi-class_tissue_classification_for_crc_hist.md)
-- [\[AAAI 2026\] Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models](../../AAAI2026/medical_imaging/coarse-to-fine_open-set_graph_node_classification_with_large_language_models.md)
-- [\[NeurIPS 2025\] Sequential Attention-based Sampling for Histopathological Analysis](sequential_attention-based_sampling_for_histopathological_analysis.md)
 
 </div>
 

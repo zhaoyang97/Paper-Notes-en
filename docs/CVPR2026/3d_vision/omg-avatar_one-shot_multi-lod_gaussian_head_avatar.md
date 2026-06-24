@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar
 description: >-
-  [CVPR 2026][Human Understanding][coarse-to-fine] OMG-Avatar reconstructs an animatable 3D Gaussian head avatar from a single image in 0.2 seconds. Through "hierarchical coarse-to-fine feature extraction + depth-buffer-guided occlusion-aware fusion + head-shoulder divide-and-conquer modeling," the unified model dynamically switches levels of detail (LOD) at runtime, a
+  [CVPR 2026][3D Vision][Gaussian Head Avatar] OMG-Avatar reconstructs an animatable 3D Gaussian head avatar from a single image in 0.2 seconds. Through "hierarchical coarse-to-fine feature extraction + depth-buffer-guided occlusion-aware fusion + head-shoulder divide-and-conquer modeling," the unified model dynamically switches levels of detail (LOD) at runtime, achieving SOTA reconstruction quality and 85 FPS real-time speed with fewer Gaussian points.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - coarse-to-fine
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Head Avatar"
+  - "Single-image Reconstruction"
+  - "Multi-LOD"
+  - "Occlusion-aware Fusion"
+  - "Coarse-to-fine"
 date: 2026-05-08
-content_hash: 9b09281239cc044f
+content_hash: 9fa9ad04c2d10273
 ---
+
 # OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar
 
 **Conference**: CVPR 2026  
@@ -141,15 +146,14 @@ OMG-Avatar achieves the highest speed among methods using neural rendering (85 F
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
-- [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
-- [\[CVPR 2025\] FATE: Full-head Gaussian Avatar with Textural Editing from Monocular Video](../../CVPR2025/human_understanding/fate_full-head_gaussian_avatar_with_textural_editing_from_monocular_video.md)
-- [\[CVPR 2026\] AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video](avatar_reinforcement_learning_to_see_hear_and_reason_over_video.md)
-- [\[CVPR 2026\] LCA: Large-scale Codec Avatars - The Unreasonable Effectiveness of Large-scale Avatar Pretraining](lca_large-scale_codec_avatars_the_unreasonable_effectiveness_of_large-scale_avata.md)
+- [\[CVPR 2026\] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)
+- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
+- [\[CVPR 2026\] ELITE: Efficient Gaussian Head Avatar from a Monocular Video via Learned Initialization and Test-time Generative Adaptation](elite_efficient_gaussian_head_avatar_from_a_monocular_video_via_learned_initiali.md)
+- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
+- [\[CVPR 2026\] UIKA: Fast Universal Head Avatar from Pose-Free Images](uika_fast_universal_head_avatar_from_pose-free_images.md)
 
 </div>
 

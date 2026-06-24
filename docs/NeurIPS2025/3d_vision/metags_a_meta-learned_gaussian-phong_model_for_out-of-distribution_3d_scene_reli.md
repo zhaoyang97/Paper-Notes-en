@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting
 description: >-
-  [NeurIPS 2025][3D Vision][3D relighting] MetaGS is proposed to achieve high-quality 3D scene relighting under out-of-distribution (OOD) lighting conditions by embedding a differentiable Blinn-Phong reflectance model into…
+  [NeurIPS 2025 Spotlight][3D Vision][3D relighting] MetaGS is proposed to achieve high-quality 3D scene relighting under out-of-distribution (OOD) lighting conditions by embedding a differentiable Blinn-Phong reflectance model into 3D Gaussian splatting and adopting a bilevel meta-learning training strategy.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "3D relighting"
   - "out-of-distribution generalization"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian splatting"
   - "Blinn-Phong model"
 date: 2026-05-08
-content_hash: 0396ebe952379fbb
+content_hash: 5de8dba6ebff4e5c
 ---
 
 # MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting

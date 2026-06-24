@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains
 description: >-
-  [AAAI 2026][Medical NLP][Medical QA] This paper proposes MIRAGE, a framework that extends conventional linear reasoning chains into a parallel multi-chain reasoning paradigm. It combines adaptive retrieval from structure…
+  [AAAI 2026][Medical LLM][Medical QA] This paper proposes MIRAGE, a framework that extends conventional linear reasoning chains into a parallel multi-chain reasoning paradigm. It combines adaptive retrieval from structured medical knowledge graphs (via neighborhood expansion and multi-hop traversal) with cross-chain verification to resolve contradictions, consistently outperforming GPT-4o, ToT, and Search-o1 on three medical QA benchmarks.
 tags:
   - "AAAI 2026"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Medical QA"
   - "Knowledge Graph"
   - "Multi-Chain Reasoning"
   - "Test-Time Inference Scaling"
   - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: 7a0586e106a77aae
+content_hash: bade342edb21c06c
 ---
 
 # MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains
@@ -143,10 +143,10 @@ MIRAGE is a purely test-time framework and involves no model training or fine-tu
 ## Related Papers
 
 - [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](../../ACL2026/medical_nlp/sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
+- [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](../../ICLR2026/medical_nlp/galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
 - [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](../../NeurIPS2025/medical_nlp/raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
-- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
-- [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](../../ACL2026/medical_nlp/ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
 - [\[AAAI 2026\] Real-Time Trust Verification for Safe Agentic Actions Using TrustBench](real-time_trust_verification_for_safe_agentic_actions_using_trustbench.md)
+- [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
 
 </div>
 

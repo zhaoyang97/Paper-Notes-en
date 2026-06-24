@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding
 description: >-
-  [ICML 2026][AI Safety][Speculative Decoding] This paper proposes PipeSD: a framework that transforms speculative decoding from sequential cloud-edge execution into a token-batch pipeline. It replaces fixed draft lengths with a dual-threshold NAV trigger and Bayesian autotuning, achieving 1.16×–2.16× speedup and 14–25% cloud energy reduction on real 5G cloud-edge
+  [ICML 2026][AI Safety][Speculative Decoding] This paper proposes PipeSD: a framework that transforms speculative decoding from sequential cloud-edge execution into a token-batch pipeline. It replaces fixed draft lengths with a dual-threshold NAV trigger and Bayesian autotuning, achieving 1.16×–2.16× speedup and 14–25% cloud energy reduction on real 5G cloud-edge testbeds.
 tags:
-  - ICML 2026
-  - AI Safety
-  - Speculative Decoding
-  - Cloud-Edge
-  - Pipeline Scheduling
-  - Bayesian Optimization
+  - "ICML 2026"
+  - "AI Safety"
+  - "Speculative Decoding"
+  - "Cloud-Edge"
+  - "Pipeline Scheduling"
+  - "Bayesian Optimization"
+  - "Dynamic Programming"
 date: 2026-05-08
-content_hash: c74883a5a2c2ac38
+content_hash: 2027e6ed82ee381f
 ---
+
 # PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -134,14 +136,15 @@ Cloud Energy Consumption (Scenario 1, per 100 accepted tokens):
 - Value: ⭐⭐⭐⭐ Directly applicable framework for 5G-era cloud-edge collaborative inference.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Partitioning for Intrinsic Model Inversion Resistance in Collaborative Inference](partitioning_for_intrinsic_model_inversion_resistance_in_collaborative_inference.md)
+- [\[AAAI 2026\] Learning to Collaborate: An Orchestrated-Decentralized Framework for Peer-to-Peer Collaborative Learning](../../AAAI2026/ai_safety/learning_to_collaborate_an_orchestrated-decentralized_framework_for_peer-to-peer.md)
 - [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
 - [\[ICML 2026\] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing](fusefss_efficient_secure_llm_inference_with_function_secret_sharing.md)
-- [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 - [\[CVPR 2026\] All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference](../../CVPR2026/ai_safety/all_vehicles_can_lie_efficient_adversarial_defense_in_fully_untrusted-vehicle_co.md)
 
 </div>

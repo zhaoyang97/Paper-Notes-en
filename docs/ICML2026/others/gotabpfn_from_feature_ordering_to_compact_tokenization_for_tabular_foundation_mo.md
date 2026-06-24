@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data
 description: >-
-  [ICML 2026][Others][TabPFN] Addressing High-Dimension Low-Sample-Size (HDLSS) tabular tasks where features far outnumber samples, this paper keeps the TabPFN backbone frozen and introduces Graph-Guided Feature Ordering (GO-LR) to arrange related features adjacently, followed by Neuro-inspired Subunit Compression (NSC) to pool adjacent segments in
+  [ICML 2026][TabPFN] Addressing High-Dimension Low-Sample-Size (HDLSS) tabular tasks where features far outnumber samples, this paper keeps the TabPFN backbone frozen and introduces Graph-Guided Feature Ordering (GO-LR) to arrange related features adjacently, followed by Neuro-inspired Subunit Compression (NSC) to pool adjacent segments into a few meta-features. This allows thousands of features to fit into TabPFN's feature budget, achieving the top average rank across 8 genom…
 tags:
-  - ICML 2026
-  - Others
-  - TabPFN
-  - HDLSS
-  - MinLA
+  - "ICML 2026"
+  - "TabPFN"
+  - "HDLSS"
+  - "Feature Ordering"
+  - "MinLA"
+  - "Subunit Compression"
 date: 2026-05-08
-content_hash: 9546a25dee2ca0ba
+content_hash: 6b3ff6659cfb4245
 ---
+
 # GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data
 
 **Conference**: ICML 2026  
@@ -140,10 +142,10 @@ NSC offers four variants, with **NSC-pSP** (Adaptive $M$ + SegPCA) as the primar
 ## Related Papers
 
 - [\[ICML 2026\] TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention](tabswift_an_efficient_tabular_foundation_model_with_row-wise_attention.md)
+- [\[ICLR 2026\] Using maximal information auxiliary variables to improve synthetic data generation based on TabPFN foundation models](../../ICLR2026/others/using_maximal_information_auxiliary_variables_to_improve_synthetic_data_generati.md)
+- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
 - [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](../../NeurIPS2025/others/radar_benchmarking_language_models_on_imperfect_tabular_data.md)
 - [\[ACL 2025\] Generating Synthetic Relational Tabular Data via Structural Causal Models](../../ACL2025/others/generating_synthetic_relational_tabular_data_via_structural_causal_models.md)
-- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
-- [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](../../ICLR2026/others/tabstruct_measuring_structural_fidelity_of_tabular_data.md)
 
 </div>
 

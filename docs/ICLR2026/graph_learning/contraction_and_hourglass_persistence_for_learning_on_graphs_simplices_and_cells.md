@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Contraction and Hourglass Persistence for Learning on Graphs, Simplices, and Cells
 description: >-
-  [ICLR 2026][Graph Learning][Persistent Homology] This paper identifies that inclusion-based forward persistent homology (PH) in mainstream Graph Neural Networks (GNNs) suffers from expressivity and metric limitations. It proposes using "contraction" to retroactively extinguish immortal topological features and interleaves inclusion and contraction into **Hourglass Pe
+  [ICLR 2026][Graph Learning][Persistent Homology] This paper identifies that inclusion-based forward persistent homology (PH) in mainstream Graph Neural Networks (GNNs) suffers from expressivity and metric limitations. It proposes using "contraction" to retroactively extinguish immortal topological features and interleaves inclusion and contraction into **Hourglass Persistence**. This method is proven to be more expressive, measurable, and stable. The authors provide a differe…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Persistent Homology
-  - Graph Neural Networks
-  - Contraction
-  - Hourglass Persistence
-  - Expressivity
-  - Stability
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Persistent Homology"
+  - "Graph Neural Networks"
+  - "Contraction"
+  - "Hourglass Persistence"
+  - "Expressivity"
+  - "Stability"
 date: 2026-05-08
-content_hash: 721125c7ff755e2d
+content_hash: cf53cf098c4044e6
 ---
+
 # Contraction and Hourglass Persistence for Learning on Graphs, Simplices, and Cells
 
 **Conference**: ICLR 2026  
@@ -112,8 +113,8 @@ The trend holds with GCN backbones; overall, **Ours achieves the best or second-
 - **Value**: ⭐⭐⭐⭐ Offers both a theoretically superior descriptor and a practical implementation for the GNN community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -121,7 +122,7 @@ The trend holds with GCN backbones; overall, **Ours achieves the best or second-
 - [\[ICLR 2026\] Efficient Learning on Large Graphs using a Densifying Regularity Lemma](efficient_learning_on_large_graphs_using_a_densifying_regularity_lemma.md)
 - [\[ICLR 2026\] TGM: A Modular and Efficient Library for Machine Learning on Temporal Graphs](tgm_a_modular_and_efficient_library_for_machine_learning_on_temporal_graphs.md)
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
-- [\[ICLR 2026\] EvA: Evolutionary Attacks on Graphs](eva_evolutionary_attacks_on_graphs.md)
+- [\[ICLR 2026\] LEAP: Local ECT-Based Learnable Positional Encodings for Graphs](leap_local_ect-based_learnable_positional_encodings_for_graphs.md)
 
 </div>
 

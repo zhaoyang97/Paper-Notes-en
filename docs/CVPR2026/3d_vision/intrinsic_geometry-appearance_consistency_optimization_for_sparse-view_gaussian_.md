@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ICO-GS attributes the degradation of sparse-view 3DGS to "loss of intrinsic consistency between geometry and appearance." It first constrains geometry using feature-domain multi-view photometric consistency (enhanced by pixel-wise top-k selection and edge-aware smoothing), then filters reliable depths via cycle-consist
+  [CVPR 2026][3D Vision][Sparse-view] ICO-GS attributes the degradation of sparse-view 3DGS to "loss of intrinsic consistency between geometry and appearance." It first constrains geometry using feature-domain multi-view photometric consistency (enhanced by pixel-wise top-k selection and edge-aware smoothing), then filters reliable depths via cycle-consistency to synthesize virtual views for supervising appearance. It consistently outperforms existing sparse-view baselines on L…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse-view"
+  - "3D Gaussian Splatting"
+  - "Geometry-Appearance Consistency"
+  - "Multi-view Photometric Consistency"
+  - "Virtual Views"
 date: 2026-05-08
-content_hash: ece8b4111eb143c9
+content_hash: b8388065f63368e2
 ---
+
 # Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -131,11 +137,11 @@ Ablations on LLFF and DTU (3-view) removing components starting from the Binocul
 
 ## Related Papers
 
+- [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
+- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[CVPR 2026\] TWINGS: Thin Plate Splines Warp-aligned Initialization for Sparse-View Gaussian Splatting](twings_thin_plate_splines_warp-aligned_initialization_for_sparse-view_gaussian_s.md)
 - [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
 - [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement](dehallu3d_hallucination-mitigated_3d_generation_from_a_single_image_via_cyclic_v.md)
 
 </div>
 

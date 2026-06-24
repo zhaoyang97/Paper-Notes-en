@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes the "Task Vectors as Representative Demonstrations" hypothesis—that an injected task vector is essentially a **single representative demonstration** distilled from multiple context examples. Through critical point analysis of linear attention models, the authors prove that task vectors naturally eme
+  [ICLR 2026][Interpretability][Task Vectors] This paper proposes the "Task Vectors as Representative Demonstrations" hypothesis—that an injected task vector is essentially a **single representative demonstration** distilled from multiple context examples. Through critical point analysis of linear attention models, the authors prove that task vectors naturally emerge in triplet prompt training and predict a fundamental limitation: they can only represent **rank-one mappings** a…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Task Vectors"
+  - "In-Context Learning"
+  - "Linear Attention"
+  - "Loss Landscape"
+  - "Rank-one Limitation"
 date: 2026-05-08
-content_hash: d41a5ddbafa7676b
+content_hash: 146db6d5ecc87894
 ---
+
 # Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations
 
 **Conference**: ICLR 2026  
@@ -123,11 +129,11 @@ Task vectors perform normally on original and inverse mappings but collapse on *
 
 ## Related Papers
 
-- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
 - [\[ICLR 2026\] Task Vectors, Learned Not Extracted: Performance Gains and Mechanistic Insights](task_vectors_learned_not_extracted_performance_gains_and_mechanistic_insights.md)
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
+- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](../../ICML2026/interpretability/how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
 - [\[ICLR 2026\] Comparing the learning dynamics of in-context learning and fine-tuning in language models](comparing_the_learning_dynamics_of_in-context_learning_and_fine-tuning_in_langua.md)
-- [\[ICLR 2026\] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)
 
 </div>
 

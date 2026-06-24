@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Scalable Vision-Guided Crop Yield Estimation
 description: >-
-  [AAAI 2026][crop yield estimation] This paper proposes a crop yield estimation method based on **Prediction-Powered Inference (PPI++)**…
+  [AAAI 2026 Oral][crop yield estimation] This paper proposes a crop yield estimation method based on **Prediction-Powered Inference (PPI++)**, which leverages vision models trained on field photographs to supplement costly ground-truth crop cut measurements. The approach guarantees asymptotic unbiasedness while increasing effective sample size by up to 73%, enabling more accurate and cost-efficient regional yield estimation for agricultural insurance.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "crop yield estimation"
   - "prediction-powered inference"
   - "computer vision"
   - "uncertainty quantification"
   - "agricultural insurance"
 date: 2026-05-08
-content_hash: fac4e5aa8b9d2b60
+content_hash: f2d2b3d156a625de
 ---
 
 # Scalable Vision-Guided Crop Yield Estimation
@@ -138,11 +138,11 @@ Effective sample size gains ($N/n=4$):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Computer Vision with a Superpixelation Camera](../../CVPR2026/others/computer_vision_with_a_superpixelation_camera.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)
-- [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
-- [\[AAAI 2026\] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server](bipartite_mode_matching_for_vision_training_set_search_from_a_hierarchical_data_.md)
-- [\[AAAI 2026\] DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design](deeprwcap_neural-guided_random-walk_capacitance_solver_for_ic_design.md)
+- [\[ICML 2025\] Prediction-Powered Adaptive Shrinkage Estimation](../../ICML2025/others/prediction-powered_adaptive_shrinkage_estimation.md)
+- [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](../../ICLR2026/others/hilbert-guided_sparse_local_attention.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Occluded Human Body Capture with Frequency Domain Denoising Prior
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] 3D human motion capture from monocular occluded video is reformulated as a "wavelet coefficient selection" problem. Uncertainty of occluded keypoints is characterized using Gaussian distributions, and a frequency-domain diffusion prior is utilized to select credible coefficients in the Discrete Wavelet Transform (DWT)
+  [CVPR 2026][Human Understanding][Occluded Human Reconstruction] 3D human motion capture from monocular occluded video is reformulated as a "wavelet coefficient selection" problem. Uncertainty of occluded keypoints is characterized using Gaussian distributions, and a frequency-domain diffusion prior is utilized to select credible coefficients in the Discrete Wavelet Transform (DWT) domain, enabling consistent and periodicity-preserving motion recovery under long-term occlusion…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Occluded Human Reconstruction"
+  - "Frequency Domain Denoising"
+  - "Discrete Wavelet Transform (DWT)"
+  - "Diffusion Models"
+  - "Motion Capture"
 date: 2026-05-08
-content_hash: 6cd75e5d8be19e9b
+content_hash: bce82d5a210ff741
 ---
+
 # Occluded Human Body Capture with Frequency Domain Denoising Prior
 
 **Conference**: CVPR 2026  
@@ -140,10 +145,10 @@ All configurations trained and evaluated on OcMotion; "+" indicates module added
 ## Related Papers
 
 - [\[CVPR 2026\] Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification](spatial-frequency_collaborative_learning_for_occluded_visible-infrared_person_re.md)
+- [\[CVPR 2026\] Through the Frequency Lens: Cross-Domain Generalisable Gaze Estimation with Adaptive Modulation](through_the_frequency_lens_cross-domain_generalisable_gaze_estimation_with_adapt.md)
 - [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
-- [\[CVPR 2026\] Bézier Degradation Modeling for LiDAR-based Human Motion Capture](bézier_degradation_modeling_for_lidar-based_human_motion_capture.md)
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](hum4d_markerless_motion_capture.md)
-- [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
+- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 
 </div>
 

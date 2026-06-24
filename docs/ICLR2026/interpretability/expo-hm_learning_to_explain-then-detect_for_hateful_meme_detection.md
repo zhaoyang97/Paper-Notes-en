@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ExPO-HM: Learning to Explain-then-Detect for Hateful Meme Detection
 description: >-
-  [ICLR 2026][Interpretability][GRPO] ExPO-HM is proposed, which is inspired by the human auditor training process. By combining Policy Manual SFT (SFT-PM) warm-up, GRPO Curriculum Learning (GRPO-CL), and Conditional Decision Entropy (CDE) rewards, this work represents the first Explain-then-Detect hateful meme detection system to comprehensively outperfor
+  [ICLR 2026][Interpretability][Hateful meme detection] ExPO-HM is proposed, which is inspired by the human auditor training process. By combining Policy Manual SFT (SFT-PM) warm-up, GRPO Curriculum Learning (GRPO-CL), and Conditional Decision Entropy (CDE) rewards, this work represents the first Explain-then-Detect hateful meme detection system to comprehensively outperform direct detection baselines across binary classification, fine-grained classification…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - GRPO
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Hateful meme detection"
+  - "multimodal"
+  - "GRPO"
+  - "curriculum learning"
+  - "conditional decision entropy"
 date: 2026-05-08
-content_hash: 7b079de002948b04
+content_hash: 8c7df04c533ab7ac
 ---
+
 # ExPO-HM: Learning to Explain-then-Detect for Hateful Meme Detection
 
 **Conference**: ICLR 2026  

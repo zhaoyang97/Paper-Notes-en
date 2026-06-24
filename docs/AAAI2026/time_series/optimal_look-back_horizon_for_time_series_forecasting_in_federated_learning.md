@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning
 description: >-
-  [AAAI 2026][Time Series][time series forecasting] This paper proposes a theoretical framework for selecting the optimal look-back horizon in federated time series forecasting. By introducing a Synthetic Data Generator (S…
+  [AAAI 2026][Time Series][time series forecasting] This paper proposes a theoretical framework for selecting the optimal look-back horizon in federated time series forecasting. By introducing a Synthetic Data Generator (SDG) and an intrinsic space representation, the forecasting loss is decomposed into an irreducible Bayesian error and an approximation error. The paper proves that the total loss is unimodal with respect to the horizon length, and establishes that the minimum s…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "intrinsic space"
   - "Bayesian loss decomposition"
 date: 2026-05-08
-content_hash: cecceebb6ec3afdf
+content_hash: 9ea13e1c81a21d75
 ---
 
 # Optimal Look-back Horizon for Time Series Forecasting in Federated Learning
@@ -172,8 +172,8 @@ Experiments use 2020 Jena weather station temperature data (10-minute resolution
 - [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](../../ICLR2026/time_series/fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
 - [\[AAAI 2026\] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching](detecting_the_future_all-at-once_event_sequence_forecasting_with_horizon_matchin.md)
 - [\[AAAI 2026\] Harmonic Dataset Distillation for Time Series Forecasting](harmonic_dataset_distillation_for_time_series_forecasting.md)
+- [\[ICLR 2026\] A Unified Federated Framework for Trajectory Data Preparation via LLMs](../../ICLR2026/time_series/a_unified_federated_framework_for_trajectory_data_preparation_via_llms.md)
 - [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
-- [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
 
 </div>
 

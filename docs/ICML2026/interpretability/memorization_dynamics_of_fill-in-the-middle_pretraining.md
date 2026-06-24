@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Memorization Dynamics of Fill-in-the-Middle Pretraining
 description: >-
-  [ICML 2026][Interpretability][Fill-in-the-Middle] The authors trained a pair of Llama 3.2 3B models (one using standard LTR and one using FIM) with identical architectures, data, and compute. By systematically comparing verbatim memorization behavior on repeated Gutenberg corpora, they find that FIM spreads probability mass across more "partial reconstructions" (showi
+  [ICML 2026][Interpretability][Fill-in-the-Middle] The authors trained a pair of Llama 3.2 3B models (one using standard LTR and one using FIM) with identical architectures, data, and compute. By systematically comparing verbatim memorization behavior on repeated Gutenberg corpora, they find that FIM spreads probability mass across more "partial reconstructions" (showing stronger short-span/overlap recall that grows approximately linearly with repetitions)…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Fill-in-the-Middle
-  - verbatim memorization
-  - prefix-suffix probe
-  - Llama 3.2
+  - "ICML 2026"
+  - "Interpretability"
+  - "Fill-in-the-Middle"
+  - "verbatim memorization"
+  - "pretraining objectives"
+  - "prefix-suffix probe"
+  - "Llama 3.2"
 date: 2026-05-08
-content_hash: b546f64a182034f3
+content_hash: 39c13add631507e5
 ---
+
 # Memorization Dynamics of Fill-in-the-Middle Pretraining
 
 **Conference**: ICML 2026  
@@ -141,8 +143,8 @@ Both models were implemented using Megatron-LM for Llama 3.2 3B: 28 layers, hidd
 - [\[ICLR 2026\] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test](../../ICLR2026/interpretability/grokking_in_llm_pretraining_monitor_memorization-to-generalization_without_test.md)
 - [\[ICML 2026\] Is One Layer Enough? Understanding Inference Dynamics in Tabular Foundation Models](is_one_layer_enough_understanding_inference_dynamics_in_tabular_foundation_model.md)
 - [\[ICML 2026\] Tracing the Dynamics of Refusal: Exploiting Latent Refusal Trajectories for Robust Jailbreak Detection](tracing_the_dynamics_of_refusal_exploiting_latent_refusal_trajectories_for_robus.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 - [\[ICML 2026\] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers](dissecting_multimodal_in-context_learning_modality_asymmetries_and_circuit_dynam.md)
-- [\[ACL 2026\] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining](../../ACL2026/interpretability/crosscoding_through_time_tracking_emergence_consolidation_of_linguistic_represen.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Much Ado About Noising: Dispelling the Myths of Generative Robotic Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper systematically "demystifies" Generative Control Policies (GCP) for robotics. Through rigorous ablations across 28 behavior cloning benchmarks, the authors prove that the advantage of GCPs over regression policies stems not from multimodal modeling or expressivity, but from the combination of "noise injection
+  [ICLR 2026][Robotics][Generative Control Policies] This paper systematically "demystifies" Generative Control Policies (GCP) for robotics. Through rigorous ablations across 28 behavior cloning benchmarks, the authors prove that the advantage of GCPs over regression policies stems not from multimodal modeling or expressivity, but from the combination of "noise injection during training + supervised iterative computation." Based on this, they design MIP—a minimal two-step polic…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Generative Control Policies"
+  - "Behavior Cloning"
+  - "Flow Models"
+  - "Multimodality"
+  - "Iterative Computation"
+  - "Manifold Attraction"
 date: 2026-05-08
-content_hash: ca1d54bf83061307
+content_hash: 161f667a4e05905c
 ---
+
 # Much Ado About Noising: Dispelling the Myths of Generative Robotic Control
 
 **Conference**: ICLR 2026  
@@ -113,10 +120,10 @@ Standalone C2 (SF) or C3 (RR) fails to outperform regression; only the C2+C3 com
 ## Related Papers
 
 - [\[ICLR 2026\] Masked Generative Policy for Robotic Control](masked_generative_policy_for_robotic_control.md)
+- [\[ICLR 2026\] Scaling up Memory for Robotic Control via Experience Retrieval](scaling_up_memory_for_robotic_control_via_experience_retrieval.md)
 - [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[ICLR 2026\] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control](action_chunking_and_data_augmentation_yield_exponential_improvements_in_behavior.md)
 - [\[ICLR 2026\] Grounding Generative Planners in Verifiable Logic: A Hybrid Architecture for Trustworthy Embodied AI](grounding_generative_planners_in_verifiable_logic_a_hybrid_architecture_for_trus.md)
-- [\[ICLR 2026\] On Entropy Control in LLM-RL Algorithms](on_entropy_control_in_llm-rl_algorithms.md)
 
 </div>
 

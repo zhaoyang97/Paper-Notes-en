@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] P-DRUM: Post-hoc Descriptor-based Residual Uncertainty Modeling for Machine Learning Potentials
 description: >-
-  [NeurIPS 2025 (Workshop: ML4PS)][Graph Learning][Uncertainty Quantification] This paper proposes P-DRUM, a simple and efficient post-hoc uncertainty quantification framework that leverages descriptors from a trained grap…
+  [NeurIPS 2025 (Workshop: ML4PS)][Graph Learning][Uncertainty Quantification] This paper proposes P-DRUM, a simple and efficient post-hoc uncertainty quantification framework that leverages descriptors from a trained graph neural network potential to estimate prediction residuals as uncertainty proxies, requiring no modification to the original model architecture or training pipeline.
 tags:
   - "NeurIPS 2025 (Workshop: ML4PS)"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "MACE"
   - "Out-of-Distribution Detection"
 date: 2026-05-08
-content_hash: 91231c55d0f3dab5
+content_hash: ba3810d4f387de82
 ---
 
 # P-DRUM: Post-hoc Descriptor-based Residual Uncertainty Modeling for Machine Learning Potentials
@@ -167,9 +167,9 @@ OOD detection covers four out-of-distribution scenarios: high-temperature molecu
 
 - [\[NeurIPS 2025\] Generative Graph Pattern Machine](generative_graph_pattern_machine.md)
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
-- [\[NeurIPS 2025\] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction](bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p.md)
+- [\[ICLR 2026\] TGM: A Modular and Efficient Library for Machine Learning on Temporal Graphs](../../ICLR2026/graph_learning/tgm_a_modular_and_efficient_library_for_machine_learning_on_temporal_graphs.md)
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
-- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](../../ICML2026/graph_learning/quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
+- [\[NeurIPS 2025\] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction](bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p.md)
 
 </div>
 

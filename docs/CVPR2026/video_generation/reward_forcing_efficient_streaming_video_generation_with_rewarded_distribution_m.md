@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Reward Forcing distills bidirectional video diffusion models into few-step autoregressive student models. It employs EMA-Sink to compress historical context, preventing "frame copying," and utilizes Re-DMD to bias distribution matching gradients toward high-dynamic samples based on motion quality rewards. It achieves h
+  [CVPR 2026][Video Generation][Streaming Video Generation] Reward Forcing distills bidirectional video diffusion models into few-step autoregressive student models. It employs EMA-Sink to compress historical context, preventing "frame copying," and utilizes Re-DMD to bias distribution matching gradients toward high-dynamic samples based on motion quality rewards. It achieves high-quality real-time streaming video generation at 23.1 FPS on a single H100…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Streaming Video Generation"
+  - "Distillation"
+  - "Attention Sink"
+  - "Distribution Matching"
+  - "Reinforcement Learning Reward"
 date: 2026-05-08
-content_hash: 96fa42afa95da2e4
+content_hash: 76fd431736157f6f
 ---
+
 # Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Ours significantly outperforms LongLive (81.41 vs 79.53). The dynamic score of 6
 
 ## Related Papers
 
-- [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](../../ICCV2025/video_generation/adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_i.md)
+- [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](../../ICCV2025/video_generation/adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](transition_matching_distillation_for_fast_video_generation.md)
 - [\[ICLR 2026\] Streaming Autoregressive Video Generation via Diagonal Distillation](../../ICLR2026/video_generation/streaming_autoregressive_video_generation_via_diagonal_distillation.md)
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
-- [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
 - [\[CVPR 2026\] SoliReward: Mitigating Susceptibility to Reward Hacking and Annotation Noise in Video Generation Reward Models](solireward_mitigating_susceptibility_to_reward_hacking_and_annotation_noise_in_v.md)
+- [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
 
 </div>
 

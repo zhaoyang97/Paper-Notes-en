@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization
 description: >-
-  [CVPR 2026][Hallucination Detection][omni LLM] MoD-DPO (Modality-Decoupled DPO) is proposed to decouple the contributions of various modalities in Omni LLMs through three mechanisms: invariance regularization, sensitivity regularization, and language prior debiasing. It effectively mitigates cross-modal hallucinations (such as using auditory information to answer v
+  [CVPR2026][Hallucination Detection][omni LLM] MoD-DPO (Modality-Decoupled DPO) is proposed to decouple the contributions of various modalities in Omni LLMs through three mechanisms: invariance regularization, sensitivity regularization, and language prior debiasing. It effectively mitigates cross-modal hallucinations (such as using auditory information to answer visual questions) and derives a closed-form optimal policy.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - omni LLM
-  - cross-modal hallucination
-  - DPO
-  - modality decoupling
-  - audio-visual
-  - preference optimization
+  - "CVPR2026"
+  - "Hallucination Detection"
+  - "omni LLM"
+  - "cross-modal hallucination"
+  - "DPO"
+  - "modality decoupling"
+  - "audio-visual"
+  - "preference optimization"
 date: 2026-05-08
-content_hash: d5a905e2a51d19b3
+content_hash: b1523fd20180c2cc
 ---
+
 # MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization
 
 **Conference**: CVPR2026  
@@ -161,10 +162,10 @@ The authors follow the Bradley-Terry derivation of the original DPO to provide t
 ## Related Papers
 
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[ICLR 2026\] Cat-PO: Cross-modal Adaptive Token-rewards for Preference Optimization in Truthful Multimodal LLMs](../../ICLR2026/hallucination/cat-po_cross-modal_adaptive_token-rewards_for_preference_optimization_in_truthfu.md)
+- [\[ICLR 2026\] P2-DPO: Grounding Hallucination in Perceptual Processing via Calibration Direct Preference Optimization](../../ICLR2026/hallucination/p2-dpo_grounding_hallucination_in_perceptual_processing_via_calibration_direct_p.md)
 - [\[NeurIPS 2025\] Mitigating Hallucination Through Theory-Consistent Symmetric Multimodal Preference Optimization](../../NeurIPS2025/hallucination/mitigating_hallucination_through_theory-consistent_symmetric_multimodal_preferen.md)
-- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
-- [\[ACL 2025\] CCHall: A Novel Benchmark for Joint Cross-Lingual and Cross-Modal Hallucinations Detection in Large Language Models](../../ACL2025/hallucination/cchall_a_novel_benchmark_for_joint_cross-lingual_and_cross-modal_hallucinations_.md)
-- [\[CVPR 2026\] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing](kvsmooth_mitigating_hallucination_in_multi-modal_large_language_models_through_k.md)
+- [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](../../ICML2026/hallucination/learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
 
 </div>
 

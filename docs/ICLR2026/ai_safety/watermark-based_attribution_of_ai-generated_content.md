@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Watermark-based Detection and Attribution of AI-Generated Content
 description: >-
-  [ICLR 2026][AI Safety][watermark] This paper presents the first systematic study of watermark-based user-level detection and attribution for AI-generated content. It providing theoretical analysis (TDR/FDR/TAR bounds), an efficient watermark selection algorithm (A-BSTA), and cross-modal (image and text) experimental validation. The results demonstrate
+  [ICLR 2026][AI Safety][watermark] This paper presents the first systematic study of watermark-based user-level detection and attribution for AI-generated content. It providing theoretical analysis (TDR/FDR/TAR bounds), an efficient watermark selection algorithm (A-BSTA), and cross-modal (image and text) experimental validation. The results demonstrate that detection and attribution inherit the accuracy and (lack of) robustness of the underlying watermarking methods.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - watermark
-  - attribution
-  - AI-generated content
-  - detection
-  - digital forensics
+  - "ICLR 2026"
+  - "AI Safety"
+  - "watermark"
+  - "attribution"
+  - "AI-generated content"
+  - "detection"
+  - "digital forensics"
 date: 2026-05-08
-content_hash: bc8d22623489fb35
+content_hash: ac5acd7ef3c8211f
 ---
+
 # Watermark-based Detection and Attribution of AI-Generated Content
 
 **Conference**: ICLR 2026  
@@ -129,8 +130,8 @@ The work bridges digital watermarking (non-learned like Tree-Ring, learned like 
 - Value: ⭐⭐⭐⭐ (Highly practical for GenAI service providers)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -138,7 +139,7 @@ The work bridges digital watermarking (non-learned like Tree-Ring, learned like 
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](../../CVPR2026/ai_safety/scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
 - [\[CVPR 2026\] SAGA: Source Attribution of Generative AI Videos](../../CVPR2026/ai_safety/saga_source_attribution_of_generative_ai_videos.md)
 - [\[ICLR 2026\] Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI](towards_a_certificate_of_trust_task-aware_ood_detection_for_scientific_ai.md)
-- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](../../CVPR2026/ai_safety/detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](../../CVPR2026/ai_safety/saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 
 </div>
 

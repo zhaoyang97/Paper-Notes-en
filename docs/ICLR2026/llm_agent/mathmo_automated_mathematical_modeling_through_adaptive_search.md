@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] MATHMO: Automated Mathematical Modeling Through Adaptive Search
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] Mathematical modeling is formalized as a sequential decision-making problem under uncertainty. Using an LLM as a generation operator and surrogate evaluator, combined with a bi-level adaptive search that selects frameworks at the upper level and tunes models at the lower level, the system automatically produces a set o
+  [ICLR 2026][LLM Agent][Mathematical Modeling Automation] Mathematical modeling is formalized as a sequential decision-making problem under uncertainty. Using an LLM as a generation operator and surrogate evaluator, combined with a bi-level adaptive search that selects frameworks at the upper level and tunes models at the lower level, the system automatically produces a set of mathematical models forming a Pareto frontier across multiple (including subjective) objectives.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Mathematical Modeling Automation"
+  - "Bi-level Adaptive Search"
+  - "LLM Search Operator"
+  - "Pareto Frontier"
+  - "Surrogate Model Evaluation"
+  - "Subjective Preference Modeling"
 date: 2026-05-08
-content_hash: 8162e33634086d47
+content_hash: c4212b2894fce6bf
 ---
+
 # MATHMO: Automated Mathematical Modeling Through Adaptive Search
 
 **Conference**: ICLR 2026  

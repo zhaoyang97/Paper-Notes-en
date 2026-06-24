@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parallel Jacobi Decoding for Fast Autoregressive Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the "token-by-token serial, extremely slow inference" bottleneck in autoregressive (AR) image generation, this paper proposes a training-free **Parallel Jacobi Decoding (PJD)**. It transforms the 1D Jacobi draft into a 2D "row-parallel" expansion along the image grid, utilizing a row-causal attention mask to
+  [CVPR 2026][Image Generation][Jacobi Decoding] Addressing the "token-by-token serial, extremely slow inference" bottleneck in autoregressive (AR) image generation, this paper proposes a training-free **Parallel Jacobi Decoding (PJD)**. It transforms the 1D Jacobi draft into a 2D "row-parallel" expansion along the image grid, utilizing a row-causal attention mask to suppress error accumulation. It achieves 4.8×–6.4× speedup on Lumina-mGPT / LlamaGen with negligible impact on i…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Jacobi Decoding"
+  - "Parallel Decoding"
+  - "Training-free Acceleration"
+  - "Spatial Locality"
+  - "Autoregressive Image Generation"
 date: 2026-05-08
-content_hash: a189c2ca24cdec6f
+content_hash: 92ff4238e4fc1ab9
 ---
+
 # Parallel Jacobi Decoding for Fast Autoregressive Image Generation
 
 **Conference**: CVPR 2026  
@@ -147,9 +153,9 @@ Key takeaway: PJD achieves significantly better step compression than SJD and GS
 ## Related Papers
 
 - [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](../../ICLR2026/image_generation/autoregressive_image_generation_with_randomized_parallel_decoding.md)
+- [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
 - [\[ICLR 2026\] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation](../../ICLR2026/image_generation/locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md)
 - [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](multi-scale_local_speculative_decoding_for_image_generation.md)
-- [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
 - [\[CVPR 2026\] FastHybrid: Accelerating Hybrid Autoregressive Image Generation with Lookahead and Guided Decoding](fasthybrid_accelerating_hybrid_autoregressive_image_generation_with_lookahead_an.md)
 
 </div>

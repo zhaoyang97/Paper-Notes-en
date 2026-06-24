@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Transformer Acceleration] This paper proposes ProCache, a training-free dynamic feature caching framework that achieves 2.90× speedup on DiT-XL/2 and 1.96× speedup on PixArt-α with…
+  [AAAI 2026][Image Generation][Diffusion Transformer Acceleration] This paper proposes ProCache, a training-free dynamic feature caching framework that achieves 2.90× speedup on DiT-XL/2 and 1.96× speedup on PixArt-α with negligible image quality degradation, through constraint-aware non-uniform caching pattern search and selective computation, significantly outperforming existing caching methods.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Scheduling"
   - "Token Selection"
 date: 2026-05-08
-content_hash: 907037aa3ef11692
+content_hash: 368d64e7a5cd64d7
 ---
 
 # ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration
@@ -196,11 +196,11 @@ Ablation over deep block ratio (DiT-XL/2):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers](../../CVPR2026/image_generation/forecast_the_principal_stabilize_the_residual_subspace-aware_feature_caching_for.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](../../CVPR2026/image_generation/resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](../../NeurIPS2025/image_generation/predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](../../CVPR2026/image_generation/adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
-- [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](../../ICCV2025/image_generation/lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
-- [\[AAAI 2026\] Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback](playmate2_training-free_multi-character_audio-driven_animation_via_diffusion_tra.md)
-- [\[CVPR 2026\] LESA: Learnable Stage-Aware Predictors for Diffusion Model Acceleration](../../CVPR2026/image_generation/lesa_learnable_stage-aware_predictors_for_diffusion_model_acceleration.md)
+- [\[ICLR 2026\] Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers](../../ICLR2026/image_generation/let_features_decide_their_own_solvers_hybrid_feature_caching_for_diffusion_trans.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LIBERO-Plus: A Progressive Robustness Benchmark for Visual-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Addressing the illusion of "VLA models reporting 95%+ success rates on LIBERO but frequently failing in real deployment," this work constructs LIBERO-Plus, an automated, fine-grained robustness benchmark with seven dimensions of controllable perturbations. Systematic evaluation of 10 mainstream VLA models reveals that
+  [CVPR 2026][Robotics][VLA Models] Addressing the illusion of "VLA models reporting 95%+ success rates on LIBERO but frequently failing in real deployment," this work constructs LIBERO-Plus, an automated, fine-grained robustness benchmark with seven dimensions of controllable perturbations. Systematic evaluation of 10 mainstream VLA models reveals that success rates plummet from 95% to below 30% under moderate perturbations, uncovering deep vulnerabilities such as "ignoring la…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA Models"
+  - "Robustness Benchmark"
+  - "Distribution Shift"
+  - "Perturbation Evaluation"
+  - "Generalization Analysis"
 date: 2026-05-08
-content_hash: d47adafa6884f1ad
+content_hash: 0492b1814c2b10e2
 ---
+
 # LIBERO-Plus: A Progressive Robustness Benchmark for Visual-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -112,11 +118,11 @@ Even when performance is near saturation on the original LIBERO (76–97%), tota
 
 ## Related Papers
 
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 - [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
-- [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
+- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
+- [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
+- [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
 
 </div>
 

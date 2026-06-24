@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RADE: Random Add-Drop Edge as a Regularizer
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] RADE simultaneously performs random edge deletion and addition during GNN training, aligns training and inference through "expectation-preserving" aggregation correction, and adaptively tunes add/drop rates using GradNorm, allowing a single augmentation to mitigate both overfitting and over-squashing.
+  [ICML 2026][Graph Learning][GNN Regularization] RADE simultaneously performs random edge deletion and addition during GNN training, aligns training and inference through "expectation-preserving" aggregation correction, and adaptively tunes add/drop rates using GradNorm, allowing a single augmentation to mitigate both overfitting and over-squashing.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "GNN Regularization"
+  - "Overfitting"
+  - "Over-squashing"
+  - "Random Graph Augmentation"
+  - "Training-Inference Alignment"
 date: 2026-05-08
-content_hash: ebb583b9e2feb7a4
+content_hash: ca80833f915604a4
 ---
+
 # RADE: Random Add-Drop Edge as a Regularizer
 
 **Conference**: ICML 2026  
@@ -146,11 +152,11 @@ Graph Classification (GCN backbone, Accuracy % for TU, ROC-AUC % for ogbg-molhiv
 
 ## Related Papers
 
+- [\[ICLR 2026\] Neural Graduated Assignment for Maximum Common Edge Subgraphs](../../ICLR2026/graph_learning/neural_graduated_assignment_for_maximum_common_edge_subgraphs.md)
+- [\[ICLR 2026\] Graph Random Features for Scalable Gaussian Processes](../../ICLR2026/graph_learning/graph_random_features_for_scalable_gaussian_processes.md)
+- [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](../../ICLR2026/graph_learning/flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
 - [\[ACL 2026\] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks](../../ACL2026/graph_learning/evaluating_llms_on_large-scale_graph_property_estimation_via_random_walks.md)
-- [\[ICML 2025\] Mixed-Curvature Decision Trees and Random Forests](../../ICML2025/graph_learning/mixed-curvature_decision_trees_and_random_forests.md)
 - [\[AAAI 2026\] Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks](../../AAAI2026/graph_learning/kernelized_edge_attention_addressing_semantic_attention_blurring_in_temporal_gra.md)
-- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[ICML 2026\] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates](physics-informed_coarsening_for_multigrid_graph_neural_surrogates.md)
 
 </div>
 

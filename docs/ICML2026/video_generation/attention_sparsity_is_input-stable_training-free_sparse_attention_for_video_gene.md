@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering
 description: >-
-  [ICML 2026][Video Generation][DiT] SVOO discovers that the attention sparsity of each layer in video DiT is an intrinsic property that is "input-independent within layers and significantly heterogeneous between layers." Based on this, it performs offline per-layer sparsity calibration followed by online QK bidirectional co-clustering for block partition
+  [ICML 2026][Video Generation][Sparse Attention] SVOO discovers that the attention sparsity of each layer in video DiT is an intrinsic property that is "input-independent within layers and significantly heterogeneous between layers." Based on this, it performs offline per-layer sparsity calibration followed by online QK bidirectional co-clustering for block partitioning. It achieves up to 1.93× speedup while maintaining a PSNR of 29 dB across 7 models (e.g., Wan…
 tags:
-  - ICML 2026
-  - Video Generation
-  - DiT
-  - Co-Clustering
+  - "ICML 2026"
+  - "Video Generation"
+  - "Sparse Attention"
+  - "DiT"
+  - "Video Generation Acceleration"
+  - "Co-Clustering"
+  - "Layer-wise Sparsity"
 date: 2026-05-08
-content_hash: f7022a4406ede8ff
+content_hash: 90d7cc0a64a40884
 ---
+
 # Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering
 
 **Conference**: ICML 2026  

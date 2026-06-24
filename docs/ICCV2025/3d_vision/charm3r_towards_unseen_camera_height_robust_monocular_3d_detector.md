@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CHARM3R: Towards Unseen Camera Height Robust Monocular 3D Detector
 description: >-
-  [ICCV 2025][3D Vision][Monocular 3D detection] Through mathematical proof that regression-based depth and ground-plane depth exhibit opposite extrapolation trends under camera height variation…
+  [ICCV 2025][3D Vision][Monocular 3D detection] Through mathematical proof that regression-based depth and ground-plane depth exhibit opposite extrapolation trends under camera height variation, CHARM3R proposes a simple in-model average of the two depth estimates to cancel out these trends, achieving robust generalization of Mono3D detectors to unseen camera heights with AP3D improvements exceeding 45%.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "ground-plane depth"
   - "autonomous driving"
 date: 2026-05-08
-content_hash: 967fa01ed3741880
+content_hash: 2e6566534016fd20
 ---
 
 # CHARM3R: Towards Unseen Camera Height Robust Monocular 3D Detector
@@ -143,10 +143,10 @@ The method is also effective with the DEVIANT backbone: AP3D_70 increases from 6
 ## Related Papers
 
 - [\[ICCV 2025\] Boost 3D Reconstruction using Diffusion-based Monocular Camera Calibration](boost_3d_reconstruction_using_diffusion-based_monocular_camera_calibration.md)
-- [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
+- [\[CVPR 2025\] RDD: Robust Feature Detector and Descriptor Using Deformable Transformer](../../CVPR2025/3d_vision/rdd_robust_feature_detector_and_descriptor_using_deformable_transformer.md)
+- [\[ECCV 2024\] Camera Height Doesn't Change: Unsupervised Training for Metric Monocular Road-Scene Depth Estimation](../../ECCV2024/3d_vision/camera_height_doesnapost_change_unsupervised_training_for_metric_monocular_road-.md)
+- [\[CVPR 2025\] UniK3D: Universal Camera Monocular 3D Estimation](../../CVPR2025/3d_vision/unik3d_universal_camera_monocular_3d_estimation.md)
 - [\[ICCV 2025\] Estimating 2D Camera Motion with Hybrid Motion Basis](estimating_2d_camera_motion_with_hybrid_motion_basis.md)
-- [\[ICCV 2025\] TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction](timeformer_capturing_temporal_relationships_of_deformable_3d_gaussians_for_robus.md)
-- [\[ICCV 2025\] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions](stealthattack_robust_3d_gaussian_splatting_poisoning_via_density-guided_illusion.md)
 
 </div>
 

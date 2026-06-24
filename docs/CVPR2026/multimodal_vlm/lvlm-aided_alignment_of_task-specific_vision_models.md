@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LVLM-Aided Alignment of Task-Specific Vision Models
 description: >-
-  [CVPR 2026][Multimodal VLM][XAI] Using a Large Vision-Language Model (LVLM) as a "translator," this work translates explanation maps of small specific vision models into natural language and turns human category-level descriptions into per-sample error-correction masks. This allows small models to break free from reliance on spurious features (shortcu
+  [CVPR 2026][Multimodal VLM][Spurious correlation] Using a Large Vision-Language Model (LVLM) as a "translator," this work translates explanation maps of small specific vision models into natural language and turns human category-level descriptions into per-sample error-correction masks. This allows small models to break free from reliance on spurious features (shortcuts) without requiring **fine-grained per-image annotation**, significantly improving worst-group accuracy on s…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - XAI
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spurious correlation"
+  - "shortcut mitigation"
+  - "LVLM critic"
+  - "XAI"
+  - "worst-group accuracy"
 date: 2026-05-08
-content_hash: add393218e4dad02
+content_hash: 7b94126584c80554
 ---
+
 # LVLM-Aided Alignment of Task-Specific Vision Models
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ Alignment $\mu_{Align}=1-\frac{1}{N_t}\sum_n\frac{\sum_i A_{n,i}^{(GT)}|\Phi_i|}
 ## Related Papers
 
 - [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
-- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
 - [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](understanding_task_transfer_in_vision-language_models.md)
+- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
 - [\[CVPR 2026\] CADFS: A Big CAD Program Dataset and Framework for Computer-Aided Design with Large Language Models](cadfs_a_big_cad_program_dataset_and_framework_for_computer-aided_design_with_lar.md)
-- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
+- [\[CVPR 2025\] Task Preference Optimization: Improving Multimodal Large Language Models with Vision Task Alignment](../../CVPR2025/multimodal_vlm/task_preference_optimization_improving_multimodal_large_language_models_with_vis.md)
 
 </div>
 

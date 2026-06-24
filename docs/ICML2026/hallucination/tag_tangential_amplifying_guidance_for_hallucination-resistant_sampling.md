@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] TAG decomposes each diffusion update step into "radial + tangential" components along the direction of the current latent variable. By applying an amplification factor $\eta \ge 1$ solely to the tangential component, it is proved via first-order Taylor expansion that this is equivalent to monotonically increasing the l
+  [ICML 2026][Hallucination Detection][Tangential Amplification] TAG decomposes each diffusion update step into "radial + tangential" components along the direction of the current latent variable. By applying an amplification factor $\eta \ge 1$ solely to the tangential component, it is proved via first-order Taylor expansion that this is equivalent to monotonically increasing the log-likelihood gain. This pulls samples toward high-density regions of the data manifold…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Tangential Amplification"
+  - "Inference-time Guidance"
+  - "Geometry-aware Sampling"
+  - "Hallucination Suppression"
+  - "CFG Enhancement"
 date: 2026-05-08
-content_hash: 8b3bf82de6a81f20
+content_hash: dc8bbf25cbc91534
 ---
+
 # TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling
 
 **Conference**: ICML 2026  

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Deep Compositional Phase Diffusion for Long Motion Sequence Generation
 description: >-
-  [NeurIPS 2025][LLM Pretraining][motion generation] This paper proposes the Compositional Phase Diffusion framework, which employs SPDM and TPDM to handle semantic alignment and transition continuity, respectively…
+  [NeurIPS 2025 Oral][LLM Pretraining][motion generation] This paper proposes the Compositional Phase Diffusion framework, which employs SPDM and TPDM to handle semantic alignment and transition continuity, respectively, within the frequency-domain phase space established by ACT-PAE. The framework enables long-range compositional motion sequence generation and achieves state-of-the-art performance on BABEL-TEACH.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "LLM Pretraining"
   - "motion generation"
   - "diffusion model"
@@ -12,7 +12,7 @@ tags:
   - "compositional generation"
   - "motion inbetweening"
 date: 2026-05-08
-content_hash: d86830d8b3f947a9
+content_hash: 965168dfebf01686
 ---
 
 # Deep Compositional Phase Diffusion for Long Motion Sequence Generation
@@ -129,11 +129,11 @@ The framework consists of three components: (1) ACT-PAE encodes variable-length 
 
 ## Related Papers
 
+- [\[CVPR 2025\] ScaMo: Exploring the Scaling Law in Autoregressive Motion Generation Model](../../CVPR2025/llm_pretraining/scamo_exploring_the_scaling_law_in_autoregressive_motion_generation_model.md)
+- [\[ECCV 2024\] Plan, Posture and Go: Towards Open-Vocabulary Text-to-Motion Generation](../../ECCV2024/llm_pretraining/plan_posture_and_go_towards_open-vocabulary_text-to-motion_generation.md)
+- [\[ICLR 2026\] Autoregressive Models Rival Diffusion Models at Any-Order Generation](../../ICLR2026/llm_pretraining/autoregressive_models_rival_diffusion_models_at_any-order_generation.md)
+- [\[ICML 2025\] Algebra Unveils Deep Learning -- An Invitation to Neuroalgebraic Geometry](../../ICML2025/llm_pretraining/algebra_unveils_deep_learning_--_an_invitation_to_neuroalgebraic_geometry.md)
 - [\[NeurIPS 2025\] Composition and Alignment of Diffusion Models using Constrained Learning](composition_and_alignment_of_diffusion_models_using_constrai.md)
-- [\[NeurIPS 2025\] A Practical Guide for Incorporating Symmetry in Diffusion Policy](a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)
-- [\[ICCV 2025\] SynCity: Training-Free Generation of 3D Worlds](../../ICCV2025/llm_pretraining/syncity_training-free_generation_of_3d_worlds.md)
-- [\[NeurIPS 2025\] How Does Sequence Modeling Architecture Influence Base Capabilities of Pre-trained Language Models?](how_does_sequence_modeling_architecture_influence_base_capabilities_of_pre-train.md)
-- [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
 
 </div>
 

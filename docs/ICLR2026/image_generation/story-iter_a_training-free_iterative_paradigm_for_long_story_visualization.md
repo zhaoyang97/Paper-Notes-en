@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Story-Iter: A Training-free Iterative Paradigm for Long Story Visualization
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Story-Iter transforms long story visualization from a "one-time dependency on fixed reference images" into a training-free external iterative process: it first generates the entire story via text, then repeatedly uses the full-length frames from the previous round as a global reference through the GRCA attention module
+  [ICLR2026][Image Generation][Long story visualization] Story-Iter transforms long story visualization from a "one-time dependency on fixed reference images" into a training-free external iterative process: it first generates the entire story via text, then repeatedly uses the full-length frames from the previous round as a global reference through the GRCA attention module to maintain character consistency and fine-grained text interaction, significantly outperforming existin…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Long story visualization"
+  - "training-free iterative generation"
+  - "global reference cross-attention"
+  - "character consistency"
+  - "text-to-image diffusion models"
 date: 2026-05-08
-content_hash: 547f6aaf6c5ba1af
+content_hash: fef951a705cf450b
 ---
+
 # Story-Iter: A Training-free Iterative Paradigm for Long Story Visualization
 
 **Conference**: ICLR2026  
@@ -146,6 +152,7 @@ In terms of efficiency, Story-IterXL requires higher computation due to 10 exter
 - Value: ⭐⭐⭐⭐⭐ Training-free and plug-and-play, offering high utility for long-sequence image generation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dyslexify: A Mechanistic Defense Against Typographic Attacks in CLIP
 description: >-
-  [ICLR 2026][Interpretability][CLIP] The authors discover a small group of attention heads in the latter half of the CLIP vision encoder specialized in "reading text" in images, which inject typographic information into the `cls` token to cause typographic attacks. Dyslexify requires no gradient training; by simply zeroing out the contributions of these h
+  [ICLR2026][Interpretability][CLIP] The authors discover a small group of attention heads in the latter half of the CLIP vision encoder specialized in "reading text" in images, which inject typographic information into the `cls` token to cause typographic attacks. Dyslexify requires no gradient training; by simply zeroing out the contributions of these heads to the `cls` token (circuit ablation), it improves robustness on ImageNet-100-typo by up to 22.06% with <1% drop in stan…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - CLIP
+  - "ICLR2026"
+  - "Interpretability"
+  - "CLIP"
+  - "Typographic Attack"
+  - "Attention Head Circuits"
+  - "Circuit Ablation"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: d7adb4dbda2ffd48
+content_hash: 423116d84773e51e
 ---
+
 # Dyslexify: A Mechanistic Defense Against Typographic Attacks in CLIP
 
 **Conference**: ICLR2026  
@@ -130,9 +135,9 @@ Gains peak at +31% and hold across real typographic attack sets (RTA-100, Disent
 
 - [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
 - [\[ICML 2026\] In Defense of Information Leakage in Concept-based Models](../../ICML2026/interpretability/in_defense_of_information_leakage_in_concept-based_models.md)
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 - [\[ICLR 2026\] When Thinking Backfires: Mechanistic Insights into Reasoning-Induced Misalignment](when_thinking_backfires_mechanistic_insights_into_reason-induced_misalignment.md)
-- [\[ICLR 2026\] Task Vectors, Learned Not Extracted: Performance Gains and Mechanistic Insights](task_vectors_learned_not_extracted_performance_gains_and_mechanistic_insights.md)
 
 </div>
 

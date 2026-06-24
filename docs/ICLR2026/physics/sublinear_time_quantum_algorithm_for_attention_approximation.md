@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sublinear Time Quantum Algorithm for Attention Approximation
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] Propose the first quantum data structure with **sublinear** time complexity relative to sequence length $n$ for approximating row queries of the Transformer attention matrix. The preprocessing time is $\widetilde{O}(\epsilon^{-1} n^{0.5} \cdot \text{poly}(d, s_\lambda, \alpha))$, and each row query takes $\widetilde{O}
+  [ICLR2026][Physics & Scientific Computing][Quantum Computing] Propose the first quantum data structure with **sublinear** time complexity relative to sequence length $n$ for approximating row queries of the Transformer attention matrix. The preprocessing time is $\widetilde{O}(\epsilon^{-1} n^{0.5} \cdot \text{poly}(d, s_\lambda, \alpha))$, and each row query takes $\widetilde{O}(s_\lambda^2 + s_\lambda d)$, achieving a quadratic speedup over classical algorithms regarding $n…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Quantum Computing"
+  - "Attention Approximation"
+  - "Sublinear Algorithm"
+  - "Nyström Approximation"
+  - "Quantum Sampling"
 date: 2026-05-08
-content_hash: f93e553534d77a0d
+content_hash: 113892b747b0d5d4
 ---
+
 # Sublinear Time Quantum Algorithm for Attention Approximation
 
 **Conference**: ICLR2026  
@@ -159,7 +165,7 @@ Experiments verify the theoretical assumptions regarding key parameters on real 
 - [\[ICML 2026\] TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs](../../ICML2026/physics/tinns_time-induced_neural_networks_for_solving_time-dependent_pdes.md)
 - [\[ICLR 2026\] CFO: Learning Continuous-Time PDE Dynamics via Flow-Matched Neural Operators](cfo_learning_continuous-time_pde_dynamics_via_flow-matched_neural_operators.md)
 - [\[ICLR 2026\] Tucker-FNO: Tensor Tucker-Fourier Neural Operator and its Universal Approximation Theory](tucker-fno_tensor_tucker-fourier_neural_operator_and_its_universal_approximation.md)
-- [\[NeurIPS 2025\] Why Is Attention Sparse in Particle Transformer?](../../NeurIPS2025/physics/why_is_attention_sparse_in_particle_transformer.md)
+- [\[ICLR 2026\] SAQ: Stabilizer-Aware Quantum Error Correction Decoder](saq_stabilizer-aware_quantum_error_correction_decoder.md)
 
 </div>
 

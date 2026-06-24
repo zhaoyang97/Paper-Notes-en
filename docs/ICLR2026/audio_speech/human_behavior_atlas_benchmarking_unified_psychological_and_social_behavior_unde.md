@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] Constructed Human Behavior Atlas—the first large-scale multimodal unified benchmark (101K+ samples) covering four dimensions of emotional, cognitive, pathological, and social processes—and validated its effectiveness in multi-task training and transfer learning by training three OmniSapiens-7B model variants.
+  [ICLR 2026][Audio & Speech][Behavior understanding benchmark] Constructed Human Behavior Atlas—the first large-scale multimodal unified benchmark (101K+ samples) covering four dimensions of emotional, cognitive, pathological, and social processes—and validated its effectiveness in multi-task training and transfer learning by training three OmniSapiens-7B model variants.
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Behavior understanding benchmark"
+  - "psychological and social behavior"
+  - "multimodal learning"
+  - "unified model"
+  - "affective computing"
 date: 2026-05-08
-content_hash: 3a7ecc1f4d866575
+content_hash: 628e8b4e2b84a26d
 ---
+
 # Human Behavior Atlas: Benchmarking Unified Psychological and Social Behavior Understanding
 
 **Conference**: ICLR 2026  
@@ -155,8 +161,8 @@ SFT and BAM outperform general multimodal LLMs in 8 out of 10 tasks.
 - [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
 - [\[CVPR 2026\] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding](../../CVPR2026/audio_speech/omni-mmsi_toward_identity-attributed_social_interaction_understanding.md)
 - [\[ICML 2026\] Attend to Anything: Foundation Model for Unified Human Attention Modeling](../../ICML2026/audio_speech/attend_to_anything_foundation_model_for_unified_human_attention_modeling.md)
+- [\[ICLR 2026\] SpeechJudge: Towards Human-Level Judgment for Speech Naturalness](speechjudge_towards_human-level_judgment_for_speech_naturalness.md)
 - [\[ICLR 2026\] JALMBench: Benchmarking Jailbreak Vulnerabilities in Audio Language Models](jalmbench_benchmarking_jailbreak_vulnerabilities_in_audio_language_models.md)
-- [\[AAAI 2026\] HPSU: A Benchmark for Human-Level Perception in Real-World Spoken Speech Understanding](../../AAAI2026/audio_speech/hpsu_a_benchmark_for_human-level_perception_in_real-world_spoken_speech_understa.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
 description: >-
-  [NeurIPS 2025][Segmentation][RNN Interpretability] A vanilla RNN is trained to reproduce the emission statistics of a Hidden Markov Model (HMM)…
+  [NeurIPS 2025][Segmentation][RNN Interpretability] A vanilla RNN is trained to reproduce the emission statistics of a Hidden Markov Model (HMM), and its internal mechanisms are reverse-engineered to reveal that the network implements discrete stochastic state transitions via noise-sustained orbital dynamics, "kick neuron" circuits, and self-induced stochastic resonance.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Stochastic Resonance"
   - "Compositional Dynamical Primitives"
 date: 2026-05-08
-content_hash: e8fdc7f22869cafa
+content_hash: 7fc08bfe26f594b2
 ---
 
 # Mechanistic Interpretability of RNNs Emulating Hidden Markov Models
@@ -162,10 +162,10 @@ All four metrics are successfully validated across all HMM architectures (linear
 ## Related Papers
 
 - [\[NeurIPS 2025\] Attention (as Discrete-Time Markov) Chains](attention_as_discrete-time_markov_chains.md)
-- [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
 - [\[NeurIPS 2025\] Instant Video Models: Universal Adapters for Stabilizing Image-Based Networks](instant_video_models_universal_adapters_for_stabilizing_image-based_networks.md)
 - [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
 - [\[NeurIPS 2025\] Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks](mars-bench_a_benchmark_for_evaluating_foundation_models_for_mars_science_tasks.md)
+- [\[NeurIPS 2025\] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset](gtpbd_a_fine-grained_global_terraced_parcel_and_boundary_dataset.md)
 
 </div>
 

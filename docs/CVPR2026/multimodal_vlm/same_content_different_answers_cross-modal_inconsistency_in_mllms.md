@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Same Content, Different Answers: Cross-Modal Inconsistency in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][benchmark] The authors propose two benchmarks, REST and REST+, which present the same problem to MLLMs in three forms: "pure text," "pure image (rendered text-as-image)," and "mixed text-image." Under strict control of OCR accuracy, they measure the phenomenon of "same content, different answers" (cross-modal inconsistency). Eval
+  [CVPR2026][Multimodal VLM][Cross-modal consistency] The authors propose two benchmarks, REST and REST+, which present the same problem to MLLMs in three forms: "pure text," "pure image (rendered text-as-image)," and "mixed text-image." Under strict control of OCR accuracy, they measure the phenomenon of "same content, different answers" (cross-modal inconsistency). Evaluation of 15 frontier MLLMs reveals that none achieve stable consistency across all three modalities (incons…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - benchmark
-  - OCR
-  - render text-as-image
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Cross-modal consistency"
+  - "modality gap"
+  - "benchmark"
+  - "OCR"
+  - "render text-as-image"
 date: 2026-05-08
-content_hash: 01ebf48492f63a1c
+content_hash: e02ba235ea8148f6
 ---
+
 # Same Content, Different Answers: Cross-Modal Inconsistency in MLLMs
 
 **Conference**: CVPR2026  
@@ -129,14 +132,15 @@ No model achieves perfect consistency. Furthermore, **almost all models are stro
 - Value: ⭐⭐⭐⭐⭐ (Crucial warning for the field of multi-modal compression and alignment)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
 - [\[CVPR 2026\] Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation](rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
-- [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](../../ACL2026/multimodal_vlm/cross-modal_taxonomic_generalization_in_vision-_language_models.md)
+- [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](../../ICLR2026/multimodal_vlm/xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
+- [\[ICML 2026\] Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?](../../ICML2026/multimodal_vlm/robust-u1_can_mllms_self-recover_corrupted_visual_content_for_robust_understandi.md)
 - [\[ICML 2026\] CG-MLLM: Captioning and Generating 3D Content via Multi-modal Large Language Models](../../ICML2026/multimodal_vlm/cg-mllm_captioning_and_generating_3d_content_via_multi-modal_large_language_mode.md)
 
 </div>

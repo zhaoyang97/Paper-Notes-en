@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the lack of dense ground truth (GT) for continuous-time event flow and the limitation of Contrast Maximization (CM) focusing only on "alignment to a point" while ignoring trajectory continuity, this paper proposes the **Spatio-Temporal Structural Consistency (STSC)** self-supervised paradigm. It treats event
+  [CVPR 2026][Video Understanding][Event camera] Addressing the lack of dense ground truth (GT) for continuous-time event flow and the limitation of Contrast Maximization (CM) focusing only on "alignment to a point" while ignoring trajectory continuity, this paper proposes the **Spatio-Temporal Structural Consistency (STSC)** self-supervised paradigm. It treats events as samples on a spatio-temporal manifold rather than discrete points to be aligned. Combined with a bidirection…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event camera"
+  - "continuous-time optical flow"
+  - "spatio-temporal structural consistency"
+  - "self-supervised"
+  - "curriculum learning"
 date: 2026-05-08
-content_hash: 05f5d75f2e1398cd
+content_hash: 2354654bdf69acf1
 ---
+
 # From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation
 
 **Conference**: CVPR 2026  
@@ -132,16 +138,16 @@ Ablation on components (DSEC-Flow, starting from IDNet backbone):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ECCV 2024\] Motion-prior Contrast Maximization for Dense Continuous-Time Motion Estimation](../../ECCV2024/video_understanding/motion-prior_contrast_maximization_for_dense_continuous-time_motion_estimation.md)
+- [\[CVPR 2026\] FlowFM: Advancing Dark Optical Flow Estimation with Flow Matching](flowfm_advancing_dark_optical_flow_estimation_with_flow_matching.md)
+- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
 - [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
 - [\[CVPR 2026\] U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation](u2flow_uncertainty_aware_unsupervised_optical_flow_estimation.md)
-- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
-- [\[CVPR 2025\] EDCFlow: Exploring Temporally Dense Difference Maps for Event-based Optical Flow Estimation](../../CVPR2025/video_understanding/edcflow_exploring_temporally_dense_difference_maps_for_event-based_optical_flow_.md)
 
 </div>
 

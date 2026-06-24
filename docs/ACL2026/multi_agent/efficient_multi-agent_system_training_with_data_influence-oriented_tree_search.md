@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search
 description: >-
-  [ACL 2026][Multi-Agent][DPO] This paper proposes DITS, using "training data influence scores" instead of traditional Q-values as the guiding signal for MCTS tree search and preference data selection. It derives an influence score estimation formula for non-differentiable metrics that can be calculated via forward inference, enabling MAS to achieve
+  [ACL 2026][Multi-Agent][Multi-Agent Systems] This paper proposes DITS, using "training data influence scores" instead of traditional Q-values as the guiding signal for MCTS tree search and preference data selection. It derives an influence score estimation formula for non-differentiable metrics that can be calculated via forward inference, enabling MAS to achieve a 2.5–2.7% average improvement over Optima-iSFT-DPO across 7 datasets and 3 multi-agent tasks.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - DPO
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Multi-Agent Systems"
+  - "Influence Functions"
+  - "Monte Carlo Tree Search"
+  - "DPO"
+  - "Self-Training"
 date: 2026-05-08
-content_hash: 9920700f517800c7
+content_hash: 2e9c64e6a9cd8689
 ---
+
 # Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search
 
 **Conference**: ACL 2026  
@@ -150,11 +155,11 @@ Cost analysis (2WMH QA): DITS-DPO achieved F1=0.612 using $2.0\times 10^{7}$ tok
 
 ## Related Papers
 
-- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[CVPR 2025\] Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration](../../CVPR2025/multi_agent/collaborative_tree_search_for_enhancing_embodied_multi-agent_collaboration.md)
+- [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[ACL 2026\] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](latent_agents_a_post-training_procedure_for_internalized_multi-agent_debate.md)
 - [\[ICLR 2026\] Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems](../../ICLR2026/multi_agent/stop_wasting_your_tokens_towards_efficient_runtime_multi-agent_systems.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

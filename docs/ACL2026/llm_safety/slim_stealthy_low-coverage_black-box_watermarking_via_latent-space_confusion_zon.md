@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] SLIM proposes a low-coverage data watermarking approach for individual data owners: by making the model learn divergent continuations for similar prefixes within a local latent space, the model exhibits statistically detectable local instability during black-box generation.
+  [ACL 2026 Findings][LLM Safety][Data Watermarking] SLIM proposes a low-coverage data watermarking approach for individual data owners: by making the model learn divergent continuations for similar prefixes within a local latent space, the model exhibits statistically detectable local instability during black-box generation.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Data Watermarking"
+  - "Black-box Verification"
+  - "Low Coverage"
+  - "Latent-Space Confusion"
+  - "Training Data Provenance"
 date: 2026-05-08
-content_hash: b3a21baf8a998dd0
+content_hash: 09e7a70b3a2921b8
 ---
+
 # SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones
 
 **Conference**: ACL 2026 Findings  
@@ -145,9 +151,9 @@ In the post-training table, the $\Delta t$ for three watermarked samples without
 
 - [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
 - [\[ACL 2026\] Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework](rethinking_llm_watermark_detection_in_black-box_settings_a_non-intrusive_third-p.md)
-- [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](../../AAAI2026/llm_safety/psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
-- [\[AAAI 2026\] GraphTextack: A Realistic Black-Box Node Injection Attack on LLM-Enhanced GNNs](../../AAAI2026/llm_safety/graphtextack_a_realistic_black-box_node_injection_attack_on_llm-enhanced_gnns.md)
+- [\[ICLR 2026\] Obfuscated Activations Bypass LLM Latent-Space Defenses](../../ICLR2026/llm_safety/obfuscated_activations_bypass_llm_latent-space_defenses.md)
 - [\[ICLR 2026\] Auditing Black-Box LLM APIs with a Rank-Based Uniformity Test](../../ICLR2026/llm_safety/auditing_black-box_llm_apis_with_a_rank-based_uniformity_test.md)
+- [\[ICLR 2026\] Bias Similarity Measurement: A Black-Box Audit of Fairness Across LLMs](../../ICLR2026/llm_safety/bias_similarity_measurement_a_black-box_audit_of_fairness_across_llms.md)
 
 </div>
 

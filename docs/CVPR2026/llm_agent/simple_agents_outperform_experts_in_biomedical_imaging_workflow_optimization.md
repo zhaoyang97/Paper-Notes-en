@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Simple Agents Outperform Experts in Biomedical Imaging Workflow Optimization
 description: >-
-  [CVPR 2026][LLM Agent][AutoML] Addressing the "last mile" adaptation challenge of scientific tools, this paper utilizes a minimal "coding-execution" closed-loop agent. Using only a few dozen validation images, it automatically generates pre/post-processing code. Across three production-grade biomedical imaging pipelines (Polaris/Cellpose/MedSAM), it
+  [CVPR 2026][LLM Agent][Code Optimization Agents] Addressing the "last mile" adaptation challenge of scientific tools, this paper utilizes a minimal "coding-execution" closed-loop agent. Using only a few dozen validation images, it automatically generates pre/post-processing code. Across three production-grade biomedical imaging pipelines (Polaris/Cellpose/MedSAM), it consistently outperforms expert-tuned code that originally took weeks or months to develop. The study systemat…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - AutoML
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Code Optimization Agents"
+  - "Tool Adaptation"
+  - "Biomedical Imaging"
+  - "Agent Design Space"
+  - "AutoML"
 date: 2026-05-08
-content_hash: b6792f9b2f3558f6
+content_hash: 8e3308f91c71b5ec
 ---
+
 # Simple Agents Outperform Experts in Biomedical Imaging Workflow Optimization
 
 **Conference**: CVPR 2026  
@@ -133,9 +138,9 @@ Key observation: Except for "Small Model" on certain tasks, all agent configurat
 
 - [\[CVPR 2026\] Seeing as Experts Do: A Knowledge-Augmented Agent for Open-Set Fine-Grained Visual Understanding](seeing_as_experts_do_a_knowledge-augmented_agent_for_open-set_fine-grained_visua.md)
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](../../ICML2026/llm_agent/agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
-- [\[ACL 2026\] Verified Critical Step Optimization for LLM Agents](../../ACL2026/llm_agent/verified_critical_step_optimization_for_llm_agents.md)
 - [\[AAAI 2026\] A2Flow: Automating Agentic Workflow Generation via Self-Adaptive Abstraction Operators](../../AAAI2026/llm_agent/a2flow_automating_agentic_workflow_generation_via_self-adaptive_abstraction_oper.md)
-- [\[AAAI 2026\] DEPO: Dual-Efficiency Preference Optimization for LLM Agents](../../AAAI2026/llm_agent/depo_dual-efficiency_preference_optimization_for_llm_agents.md)
+- [\[ACL 2026\] Verified Critical Step Optimization for LLM Agents](../../ACL2026/llm_agent/verified_critical_step_optimization_for_llm_agents.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
 
 </div>
 

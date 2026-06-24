@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Predicting Any Human Trajectory in Context
 description: >-
-  [NeurIPS 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes TrajICL, an in-context learning (ICL) framework for pedestrian trajectory prediction that achieves cross-scene adaptive prediction…
+  [NeurIPS 2025][Autonomous Driving][pedestrian trajectory prediction] This paper proposes TrajICL, an in-context learning (ICL) framework for pedestrian trajectory prediction that achieves cross-scene adaptive prediction without fine-tuning through spatiotemporal similarity-based example selection and prediction-guided example selection, surpassing even fine-tuned baselines.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "synthetic data"
   - "example selection"
 date: 2026-05-08
-content_hash: 5866521dc8674292
+content_hash: c916ba7fed5de58f
 ---
 
 # Towards Predicting Any Human Trajectory in Context
@@ -127,11 +127,11 @@ TrajICL introduces a new paradigm for on-device trajectory prediction: training 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Certified Human Trajectory Prediction](../../CVPR2025/autonomous_driving/certified_human_trajectory_prediction.md)
 - [\[NeurIPS 2025\] OpenBox: Annotate Any Bounding Boxes in 3D](openbox_annotate_any_bounding_boxes_in_3d.md)
 - [\[NeurIPS 2025\] LabelAny3D: Label Any Object 3D in the Wild](labelany3d_label_any_object_3d_in_the_wild.md)
+- [\[ECCV 2024\] Adaptive Human Trajectory Prediction via Latent Corridors](../../ECCV2024/autonomous_driving/adaptive_human_trajectory_prediction_via_latent_corridors.md)
 - [\[NeurIPS 2025\] Aha: Predicting What Matters Next — Online Highlight Detection Without Looking Ahead](aha_predicting_what_matters_next_online_highlight_detection.md)
-- [\[NeurIPS 2025\] Predictive Preference Learning from Human Interventions](predictive_preference_learning_from_human_interventions.md)
-- [\[NeurIPS 2025\] Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective](towards_physics-informed_spatial_intelligence_with_human_priors_an_autonomous_dr.md)
 
 </div>
 

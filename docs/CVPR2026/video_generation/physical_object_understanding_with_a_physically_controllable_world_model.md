@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Physical Object Understanding with a Physically Controllable World Model
 description: >-
-  [CVPR 2026][Video Generation][Visual Jenga] This paper reformulates the "world model" as a Probabilistic Graphical Model (PGM) capable of querying conditional distributions of arbitrary visual variables. Utilizing GPT-style next-token prediction, the authors efficiently train a 7-billion-parameter physically controllable world model, PSI, which describes scenes
+  [CVPR 2026][Video Generation][Probabilistic World Models] This paper reformulates the "world model" as a Probabilistic Graphical Model (PGM) capable of querying conditional distributions of arbitrary visual variables. Utilizing GPT-style next-token prediction, the authors efficiently train a 7-billion-parameter physically controllable world model, PSI, which describes scenes using RGB, optical flow, and camera tokens. Once trained, without any task-specific heads…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Visual Jenga
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Probabilistic World Models"
+  - "Autoregressive Sequence Modeling"
+  - "Optical Flow Tokens"
+  - "Movable Object Discovery"
+  - "Visual Jenga"
 date: 2026-05-08
-content_hash: 74ef29f26a348366
+content_hash: 029abbec785e0469
 ---
+
 # Physical Object Understanding with a Physically Controllable World Model
 
 **Conference**: CVPR 2026  
@@ -150,9 +155,9 @@ Conducted on SpelkeBench point-prompted segmentation:
 
 - [\[CVPR 2026\] ProPhy: Progressive Physical Alignment for Dynamic World Simulation](prophy_progressive_physical_alignment_for_dynamic_world_simulation.md)
 - [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](yume15_a_text-controlled_interactive_world_generation_model.md)
+- [\[CVPR 2026\] Stereo World Model: Camera-Guided Stereo Video Generation](stereo_world_model_camera-guided_stereo_video_generation.md)
 - [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
 - [\[ICML 2025\] How Far is Video Generation from World Model: A Physical Law Perspective](../../ICML2025/video_generation/how_far_is_video_generation_from_world_model_a_physical_law_perspective.md)
-- [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
 
 </div>
 

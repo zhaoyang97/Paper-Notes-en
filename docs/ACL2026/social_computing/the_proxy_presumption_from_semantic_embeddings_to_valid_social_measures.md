@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper identifies "Proxy Presumption" in NLP—the practice of naming geometric distances in embeddings as social constructs like "creativity" or "bias"—and proposes a Construct Validity Protocol and Counterfactual Neutralization to transform heuristic proxies into verifiable measurement instruments.
+  [ACL 2026][Social Computing][Construct Validity] This paper identifies "Proxy Presumption" in NLP—the practice of naming geometric distances in embeddings as social constructs like "creativity" or "bias"—and proposes a Construct Validity Protocol and Counterfactual Neutralization to transform heuristic proxies into verifiable measurement instruments.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Construct Validity"
+  - "Semantic Embeddings"
+  - "Causal Representation"
+  - "Counterfactual Neutralization"
+  - "Social Measurement"
 date: 2026-05-08
-content_hash: e75fd56e583d0d14
+content_hash: 8f24562bcde9dd7a
 ---
+
 # The Proxy Presumption: From Semantic Embeddings to Valid Social Measures
 
 **Conference**: ACL 2026  
@@ -131,14 +137,14 @@ This "ablation" serves as a methodological diagnosis of existing literature.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] Measuring Social Biases in Masked Language Models by Proxy of Prediction Quality](../../ACL2025/social_computing/measuring_social_biases_in_masked_language_models_by_proxy_of_prediction_quality.md)
+- [\[ICML 2026\] ObjEmbed: Towards Universal Multimodal Object Embeddings](../../ICML2026/social_computing/objembed_towards_universal_multimodal_object_embeddings.md)
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](bayesian_social_deduction_with_graph-informed_language_models.md)
 - [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](synthia_scalable_grounded_persona_generation_from_social_media_data.md)
-- [\[ICML 2026\] ObjEmbed: Towards Universal Multimodal Object Embeddings](../../ICML2026/social_computing/objembed_towards_universal_multimodal_object_embeddings.md)
 - [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
 
 </div>

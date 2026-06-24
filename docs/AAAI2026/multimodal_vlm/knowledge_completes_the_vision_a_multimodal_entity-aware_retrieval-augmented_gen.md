@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][News Image Captioning] This paper proposes MERGE, the first multimodal entity-aware RAG framework for news image captioning. Through three core components — an Entity-centric Mult…
+  [AAAI 2026][Multimodal VLM][News Image Captioning] This paper proposes MERGE, the first multimodal entity-aware RAG framework for news image captioning. Through three core components — an Entity-centric Multimodal Knowledge Base (EMKB), Hypothetical Caption-guided Multimodal Alignment (HCMA), and Retrieval-driven Multimodal Knowledge Integration (RMKI) — MERGE achieves CIDEr +6.84 and F1 +4.14 on GoodNews, and demonstrates strong generalization with CIDEr +20.17 on the unseen…
 tags:
   - "AAAI 2026"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "News Image Captioning"
   - "RAG"
   - "Entity Knowledge Base"
   - "Cross-modal Alignment"
   - "Multimodal Large Language Model"
 date: 2026-05-08
-content_hash: 209b14e493959b71
+content_hash: b610c6ee4282d50d
 ---
 
 # Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning
@@ -187,11 +187,11 @@ Key findings:
 
 ## Related Papers
 
-- [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/information_retrieval/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[AAAI 2026\] RAGFort: Dual-Path Defense Against Proprietary Knowledge Base Extraction in Retrieval-Augmented Generation](ragfort_dual-path_defense_against_proprietary_knowledge_base_extraction_in_retri.md)
-- [\[ACL 2026\] VisRet: Visualization Improves Knowledge-Intensive Text-to-Image Retrieval](../../ACL2026/information_retrieval/visret_visualization_improves_knowledge-intensive_text-to-image_retrieval.md)
-- [\[AAAI 2026\] Cog-RAG: Cognitive-Inspired Dual-Hypergraph with Theme Alignment Retrieval-Augmented Generation](cog-rag_cognitive-inspired_dual-hypergraph_with_theme_alignment_retrieval-augmen.md)
+- [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/multimodal_vlm/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](../../ACL2026/multimodal_vlm/universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
+- [\[AAAI 2026\] DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning](discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag.md)
+- [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](../../ICLR2026/multimodal_vlm/rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/multimodal_vlm/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
 
 </div>
 

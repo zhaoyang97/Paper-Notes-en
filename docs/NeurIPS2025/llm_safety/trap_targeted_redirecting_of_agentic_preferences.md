@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRAP: Targeted Redirecting of Agentic Preferences
 description: >-
-  [NeurIPS 2025][LLM Safety][adversarial attack] TRAP introduces a diffusion-based semantic injection adversarial framework that optimizes image semantics in the CLIP embedding space. Under black-box conditions…
+  [NeurIPS 2025][LLM Safety][adversarial attack] TRAP introduces a diffusion-based semantic injection adversarial framework that optimizes image semantics in the CLIP embedding space. Under black-box conditions, it systematically misdirects the decision preferences of multiple mainstream VLM agents in a visually natural manner, achieving attack success rates of up to 100% across six models including LLaVA-34B and GPT-4o.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "agentic safety"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 1ce586d41b6d4df8
+content_hash: ab92d572ef3155ec
 ---
 
 # TRAP: Targeted Redirecting of Agentic Preferences
@@ -137,9 +137,9 @@ Evaluated on 100 image-caption pairs from the COCO dataset, simulating a black-b
 
 - [\[NeurIPS 2025\] Reverse Engineering Human Preferences with Reinforcement Learning](reverse_engineering_human_preferences_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] LLM Strategic Reasoning: Agentic Study through Behavioral Game Theory](llm_strategic_reasoning_agentic_study_through_behavioral_gam.md)
-- [\[AAAI 2026\] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users](../../AAAI2026/llm_safety/llm_targeted_underperformance_disproportionately_impacts_vulnerable_users.md)
+- [\[ICML 2025\] Targeted Unlearning with Single Layer Unlearning Gradient](../../ICML2025/llm_safety/targeted_unlearning_with_single_layer_unlearning_gradient.md)
+- [\[ICLR 2026\] Building a Foundational Guardrail for General Agentic Systems via Synthetic Data](../../ICLR2026/llm_safety/building_a_foundational_guardrail_for_general_agentic_systems_via_synthetic_data.md)
 - [\[AAAI 2026\] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs](../../AAAI2026/llm_safety/the_confidence_trap_gender_bias_and_predictive_certainty_in_llms.md)
-- [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](../../ICML2026/llm_safety/federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
 
 </div>
 

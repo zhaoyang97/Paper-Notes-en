@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-judge] This paper constructs the Open Proof Corpus (OPC), containing 5,062 human-judged LLM mathematical proofs, and uses it to systematically answer key differences between natural language and formal proofs, final answers and complete proofs, best-of-n selection, and proof judge training.
+  [ICLR 2026][LLM Evaluation][Mathematical Proof Evaluation] This paper constructs the Open Proof Corpus (OPC), containing 5,062 human-judged LLM mathematical proofs, and uses it to systematically answer key differences between natural language and formal proofs, final answers and complete proofs, best-of-n selection, and proof judge training.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-judge
-  - best-of-n
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Mathematical Proof Evaluation"
+  - "Human-Annotated Corpus"
+  - "LLM-as-a-judge"
+  - "best-of-n"
+  - "Formal Proofs"
 date: 2026-05-08
-content_hash: f6bb9e07e4c3007d
+content_hash: b912d15887563906
 ---
+
 # The Open Proof Corpus: A Large-Scale Study of LLM-Generated Mathematical Proofs
 
 **Conference**: ICLR 2026  

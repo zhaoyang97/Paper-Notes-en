@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] This paper proposes TriDF, the first benchmark to comprehensively evaluate interpretable DeepFake detection across three dimensions: Perception, Detection, and Hallucination. Comprising 55K high-quality samples covering 16 DeepFake types and 3 modalities, it reveals the tripartite coupling relationship where accurate p
+  [CVPR 2026][Hallucination Detection][DeepFake Detection] This paper proposes TriDF, the first benchmark to comprehensively evaluate interpretable DeepFake detection across three dimensions: Perception, Detection, and Hallucination. Comprising 55K high-quality samples covering 16 DeepFake types and 3 modalities, it reveals the tripartite coupling relationship where accurate perception is the foundation of reliable detection, but hallucination severely undermines decision-makin…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "DeepFake Detection"
+  - "Interpretable Detection"
+  - "Multi-modal Large Language Models"
+  - "Hallucination Evaluation"
+  - "Artifact Taxonomy"
 date: 2026-05-08
-content_hash: 686c34abc20de45a
+content_hash: 9d8b8eef137ba528
 ---
+
 # TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection
 
 **Conference**: CVPR 2026  
@@ -136,7 +142,7 @@ To ensure objective scoring, perception and detection use Accuracy (TFQ), Cover,
 - [\[CVPR 2026\] Lyapunov Probes for Hallucination Detection in Large Foundation Models](lyapunov_probes_for_hallucination_detection_in_large_foundation_models.md)
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
 - [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](../../ICML2026/hallucination/from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
-- [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](../../ICML2026/hallucination/automatic_layer_selection_for_hallucination_detection.md)
+- [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](../../ICLR2026/hallucination/beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
 
 </div>
 

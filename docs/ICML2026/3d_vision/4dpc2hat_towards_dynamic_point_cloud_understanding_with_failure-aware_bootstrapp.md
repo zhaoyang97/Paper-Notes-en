@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 4DPC$^2$hat: Towards Dynamic Point Cloud Understanding with Failure-Aware Bootstrapping
 description: >-
-  [ICML 2026][3D Vision][Paper Note] 4DPC$^2$hat is the first Multimodal Large Language Model (MLLM) designed for "dynamic point cloud sequence" (4D point cloud) understanding. The authors first use a topologically consistent construction pipeline to transform 44,000 animation assets into a dataset of 200,000 cross-modal QA pairs. Then, they employ a spat
+  [ICML 2026][3D Vision][Dynamic point cloud] 4DPC$^2$hat is the first Multimodal Large Language Model (MLLM) designed for "dynamic point cloud sequence" (4D point cloud) understanding. The authors first use a topologically consistent construction pipeline to transform 44,000 animation assets into a dataset of 200,000 cross-modal QA pairs. Then, they employ a spatio-temporal architecture using "preserved group tokens + global tokens + bidirectional Mamba" to avoid compressing a…
 tags:
-  - ICML 2026
-  - 3D Vision
+  - "ICML 2026"
+  - "3D Vision"
+  - "Dynamic point cloud"
+  - "4D understanding"
+  - "Multimodal Large Language Model"
+  - "Bidirectional Mamba"
+  - "Failure-aware bootstrapping"
 date: 2026-05-08
-content_hash: d06c1d76f90ec0f5
+content_hash: e38f76b289c9bdc9
 ---
+
 # 4DPC$^2$hat: Towards Dynamic Point Cloud Understanding with Failure-Aware Bootstrapping
 
 **Conference**: ICML 2026  
@@ -142,8 +148,8 @@ On 4D-Bench, where 2D video MLLMs are compared directly using point cloud sequen
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](../../CVPR2026/3d_vision/deformation-based_in-context_learning_for_point_cloud_understanding.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](../../CVPR2026/3d_vision/mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
 - [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](../../AAAI2026/3d_vision/point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
+- [\[ICML 2026\] SIMPC: Learning Self-Induced Mirror-Point Consistency for Unsupervised Point Cloud Denoising](simpc_learning_self-induced_mirror-point_consistency_for_unsupervised_point_clou.md)
 - [\[CVPR 2025\] PMA: Towards Parameter-Efficient Point Cloud Understanding via Point Mamba Adapter](../../CVPR2025/3d_vision/pma_towards_parameter-efficient_point_cloud_understanding_via_point_mamba_adapte.md)
-- [\[ECCV 2024\] DG-PIC: Domain Generalized Point-In-Context Learning for Point Cloud Understanding](../../ECCV2024/3d_vision/dg-pic_domain_generalized_point-in-context_learning_for_point_cloud_understandin.md)
 
 </div>
 

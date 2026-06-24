@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoLibra: Agent Metric Induction from Open-Ended Human Feedback
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] AutoLibra automatically induces a set of fine-grained evaluation metrics—complete with definitions and positive/negative examples—from open-ended natural language feedback on agent trajectories (e.g., "Don’t keep clicking the button if it's disabled"). It employs two meta-metrics, "coverage" and "redundancy," to optimi
+  [ICLR2026][LLM Evaluation][Agent evaluation] AutoLibra automatically induces a set of fine-grained evaluation metrics—complete with definitions and positive/negative examples—from open-ended natural language feedback on agent trajectories (e.g., "Don’t keep clicking the button if it's disabled"). It employs two meta-metrics, "coverage" and "redundancy," to optimize the metric set. This approach characterizes agent behavior more precisely than expert-defined metrics and enable…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Agent evaluation"
+  - "metric induction"
+  - "open-ended human feedback"
+  - "thematic analysis"
+  - "self-regulated optimization"
 date: 2026-05-08
-content_hash: 5b3ae841d892e93a
+content_hash: 8982ff6161492da6
 ---
+
 # AutoLibra: Agent Metric Induction from Open-Ended Human Feedback
 
 **Conference**: ICLR2026  
@@ -129,7 +135,7 @@ Coverage typically converged at $N=6\sim10$. In comparative analysis, AutoLibra 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

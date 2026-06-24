@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the "cross-modal bias" in large text-to-3D models (e.g., TRELLIS)—where models are overly sensitive to prompt formatting, focus only on a few keywords, and struggle with complex descriptions—this paper proposes a "localization-quantization-mitigation" framework. It utilizes gradients backpropagated from a 3D
+  [CVPR 2026][3D Vision][Text-to-3D Generation] To address the "cross-modal bias" in large text-to-3D models (e.g., TRELLIS)—where models are overly sensitive to prompt formatting, focus only on a few keywords, and struggle with complex descriptions—this paper proposes a "localization-quantization-mitigation" framework. It utilizes gradients backpropagated from a 3D quality evaluation model to locate biases at the word level. Based on this, GPT-4 and external 3D generators are…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-to-3D Generation"
+  - "Bias Localization"
+  - "Bias Mitigation"
+  - "Word-level Gradients"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: 074f79812fec0213
+content_hash: 234c16b22e443444
 ---
+
 # Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation
 
 **Conference**: CVPR 2026  
@@ -140,8 +146,8 @@ Ablations on prompt generation strategies (MATE-3D) verify the necessity of "gra
 - [\[CVPR 2026\] Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation](are_we_ready_for_rl_in_text-to-3d_generation_a_progressive_investigation.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)
 - [\[CVPR 2026\] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation](image-to-point_cloud_feature_back-projection_for_multimodal_training_of_3d_seman.md)
-- [\[CVPR 2026\] PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes](pritti_primitive-based_generation_of_controllable_and_editable_3d_semantic_urban.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
+- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills
 description: >-
-  [NeurIPS 2025][Model Compression][Narrow AI] This paper investigates two fundamental challenges in creating narrow AI systems: the hierarchical dependencies among tasks require that certain narrow skills can only be lear…
+  [NeurIPS 2025][Model Compression][Narrow AI] This paper investigates two fundamental challenges in creating narrow AI systems: the hierarchical dependencies among tasks require that certain narrow skills can only be learned effectively when trained on broad distributions; and the nonlocality of skills makes it impossible to precisely separate desired from undesired capabilities via pruning—yet pruning followed by recovery fine-tuning still outperforms both distillation and tr…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Curriculum Learning"
   - "Skill Nonlocality"
 date: 2026-05-08
-content_hash: 99c62b1f4a100c70
+content_hash: b7ae360e31ca67e5
 ---
 
 # On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills
@@ -135,11 +135,11 @@ The authors design a synthetic task (CMSP) to systematically study curriculum le
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis](the_graphon_limit_hypothesis_understanding_neural_network_pruning_via_infinite_w.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
+- [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](../../ICLR2026/model_compression/beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
 - [\[NeurIPS 2025\] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference](kindle_knowledge-guided_distillation_for_prior-free_gene_regulatory_network_infe.md)
 - [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
-- [\[NeurIPS 2025\] ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization](replaceme_network_simplification_via_depth_pruning_and_transformer_block_lineari.md)
+- [\[NeurIPS 2025\] The Graphon Limit Hypothesis: Understanding Neural Network Pruning via Infinite Width Analysis](the_graphon_limit_hypothesis_understanding_neural_network_pruning_via_infinite_w.md)
+- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 
 </div>
 

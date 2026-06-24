@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes BizCompass, a business reasoning benchmark that bridges theoretical foundations and practical applications. It covers four knowledge domains (Finance, Economics, Statistics, Operations) and three application roles (Analyst, Trader, Consultant). The study systematically evaluates the business reasoni
+  [ACL 2026 Findings][LLM Evaluation][Business reasoning benchmark] This paper proposes BizCompass, a business reasoning benchmark that bridges theoretical foundations and practical applications. It covers four knowledge domains (Finance, Economics, Statistics, Operations) and three application roles (Analyst, Trader, Consultant). The study systematically evaluates the business reasoning capabilities of open-source and closed-source LLMs, revealing the patterns of transforming…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Business reasoning benchmark"
+  - "knowledge and application assessment"
+  - "LLM capability diagnostics"
+  - "finance and economics"
+  - "dual-axis design"
 date: 2026-05-08
-content_hash: efe525bc84e954c2
+content_hash: 66665db7b90d083e
 ---
+
 # BizCompass: Benchmarking the Reasoning Capabilities of LLMs in Business Knowledge and Applications
 
 **Conference**: ACL 2026 Findings  
@@ -122,7 +128,7 @@ Providing scores alone cannot explain "why." Therefore, this paper calculates a 
 - [\[ACL 2025\] VoxEval: Benchmarking the Knowledge Understanding Capabilities of End-to-End Spoken Language Models](../../ACL2025/llm_evaluation/voxeval_benchmarking_the_knowledge_understanding_capabilities_of_end-to-end_spok.md)
 - [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
 - [\[NeurIPS 2025\] Toward Engineering AGI: Benchmarking the Engineering Design Capabilities of LLMs](../../NeurIPS2025/llm_evaluation/toward_engineering_agi_benchmarking_the_engineering_design_capabilities_of_llms.md)
-- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
+- [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
 
 </div>
 

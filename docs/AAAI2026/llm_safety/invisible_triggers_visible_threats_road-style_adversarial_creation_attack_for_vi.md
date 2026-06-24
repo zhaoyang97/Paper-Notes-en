@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Invisible Triggers, Visible Threats! Road-Style Adversarial Creation Attack for Visual 3D Detection in Autonomous Driving
 description: >-
-  [AAAI 2026][LLM Safety][adversarial attack] This paper proposes AdvRoad, a two-stage framework (Road-Style Adversary Generation + Scenario-Associated Adaptation) that generates diverse adversarial posters with road-surfa…
+  [AAAI 2026][LLM Safety][adversarial attack] This paper proposes AdvRoad, a two-stage framework (Road-Style Adversary Generation + Scenario-Associated Adaptation) that generates diverse adversarial posters with road-surface texture styles. These posters induce "ghost objects" (false positives) in visual 3D detectors for autonomous driving while remaining inconspicuous to human drivers due to their natural appearance, significantly improving the stealthiness and defensive resis…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "naturalistic adversarial examples"
   - "autonomous driving security"
 date: 2026-05-08
-content_hash: 50d69ad57e8ac29e
+content_hash: 0ef4e302149efb5b
 ---
 
 # Invisible Triggers, Visible Threats! Road-Style Adversarial Creation Attack for Visual 3D Detection in Autonomous Driving
@@ -220,10 +220,10 @@ Physical attacks are effective across diverse conditions, even when printed on i
 ## Related Papers
 
 - [\[AAAI 2026\] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models](auvic_adversarial_unlearning_of_visual_concepts_for_multi-mo.md)
-- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](../../CVPR2026/llm_safety/iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
-- [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](../../CVPR2026/llm_safety/v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
-- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](../../CVPR2026/llm_safety/multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](../../ICLR2026/llm_safety/invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
+- [\[AAAI 2026\] StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak](stylebreak_revealing_alignment_vulnerabilities_in_large_audio-language_models_vi.md)
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](../../NeurIPS2025/llm_safety/adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
+- [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](../../ACL2026/llm_safety/de-anonymization_at_scale_via_tournament-style_attribution.md)
 
 </div>
 

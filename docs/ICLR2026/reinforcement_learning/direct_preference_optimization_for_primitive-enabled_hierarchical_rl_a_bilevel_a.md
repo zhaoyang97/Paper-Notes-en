@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Direct Preference Optimization for Primitive-Enabled Hierarchical RL: A Bilevel Approach
 description: >-
-  [ICLR 2026][Reinforcement Learning][DPO] DIPPER formulates goal-conditioned hierarchical reinforcement learning (HRL) as a bilevel optimization problem. It trains the high-level subgoal policy using DPO with primitive regularization based on the low-level value function. This simultaneously mitigates non-stationarity caused by low-level policy evolution and t
+  [ICLR2026][Reinforcement Learning][Hierarchical Reinforcement Learning] DIPPER formulates goal-conditioned hierarchical reinforcement learning (HRL) as a bilevel optimization problem. It trains the high-level subgoal policy using DPO with primitive regularization based on the low-level value function. This simultaneously mitigates non-stationarity caused by low-level policy evolution and the generation of unreachable subgoals by the high-level policy. It significantly outperf…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - DPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Hierarchical Reinforcement Learning"
+  - "DPO"
+  - "Bilevel Optimization"
+  - "Feasible Subgoals"
+  - "Sparse Rewards"
 date: 2026-05-08
-content_hash: cd98a6af4331a990
+content_hash: e179513ac11f052b
 ---
+
 # Direct Preference Optimization for Primitive-Enabled Hierarchical RL: A Bilevel Approach
 
 **Conference**: ICLR2026  

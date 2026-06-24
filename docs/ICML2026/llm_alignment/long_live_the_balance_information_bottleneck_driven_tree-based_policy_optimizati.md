@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Long Live The Balance: Information Bottleneck Driven Tree-based Policy Optimization
 description: >-
-  [ICML 2026][Alignment & RLHF][GRPO] This paper utilizes Information Bottleneck (IB) theory to propose IB-Score, a step-level metric for quantifying the "exploration-exploitation balance." Based on this, it designs IB-guided tree sampling (IBTree) combined with step-level local/global advantages. On Qwen3-1.7B/8B, it achieves an average improvement of 2.9
+  [ICML 2026][LLM Alignment][Information Bottleneck] This paper utilizes Information Bottleneck (IB) theory to propose IB-Score, a step-level metric for quantifying the "exploration-exploitation balance." Based on this, it designs IB-guided tree sampling (IBTree) combined with step-level local/global advantages. On Qwen3-1.7B/8B, it achieves an average improvement of 2.9–3.6% over GRPO while sampling 50% more trajectories under the same token budget.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Information Bottleneck"
+  - "GRPO"
+  - "Tree Search"
+  - "Exploration-Exploitation Balance"
+  - "Step-level Advantage"
 date: 2026-05-08
-content_hash: 583cc7a847885255
+content_hash: be8de0b198b98ad5
 ---
+
 # Long Live The Balance: Information Bottleneck Driven Tree-based Policy Optimization
 
 **Conference**: ICML 2026  
@@ -148,9 +153,9 @@ Under the same token budget, IB-guided sampling provides 50% more trajectories w
 
 - [\[ICLR 2026\] Hierarchy-of-Groups Policy Optimization for Long-Horizon Agentic Tasks](../../ICLR2026/llm_alignment/hierarchy-of-groups_policy_optimization_for_long-horizon_agentic_tasks.md)
 - [\[CVPR 2026\] SafeGRPO: Self-Rewarded Multimodal Safety Alignment via Rule-Governed Policy Optimization](../../CVPR2026/llm_alignment/safegrpo_self-rewarded_multimodal_safety_alignment_via_rule-governed_policy_opti.md)
+- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](../../ICLR2026/llm_alignment/eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[CVPR 2026\] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration](../../CVPR2026/llm_alignment/morphseek_fine-grained_latent_representation-level_policy_optimization_for_defor.md)
-- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](../../ICLR2026/llm_alignment/learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
 
 </div>
 

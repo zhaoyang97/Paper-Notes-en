@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IF-GEO: Conflict-Aware Instruction Fusion for Multi-Query Generative Engine Optimization
 description: >-
-  [ACL 2026][Information Retrieval & RAG][GEO] This paper treats "optimizing a single document for multiple potential queries simultaneously" as a constrained multi-objective optimization problem and proposes IF-GEO. It follows a "diverge-then-converge" strategy: first, LLMs perform reverse-retrieval of representative queries and generate structured edit requests;
+  [ACL 2026][Information Retrieval & RAG][GEO] This paper treats "optimizing a single document for multiple potential queries simultaneously" as a constrained multi-objective optimization problem and proposes IF-GEO. It follows a "diverge-then-converge" strategy: first, LLMs perform reverse-retrieval of representative queries and generate structured edit requests; then, through **Priority × Necessity scoring + Deduplication + Conflict Resolution + Global Revision Blueprint**…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - GEO
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "GEO"
+  - "Generative Search"
+  - "Multi-query Optimization"
+  - "Conflict-aware Instruction Fusion"
+  - "Risk-aware Stability"
 date: 2026-05-08
-content_hash: d907444f94e8193d
+content_hash: adf6bb83ae20250e
 ---
+
 # IF-GEO: Conflict-Aware Instruction Fusion for Multi-Query Generative Engine Optimization
 
 **Conference**: ACL 2026  
@@ -157,14 +162,12 @@ On a 250-query subset (values slightly lower than main results due to sample siz
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ACL 2026\] From Relevance to Authority: Authority-aware Generative Retrieval in Web Search Engines](from_relevance_to_authority_authority-aware_generative_retrieval_in_web_search_e.md)
 - [\[ACL 2026\] Enhancing Multilingual RAG Systems with Debiased Language Preference-Guided Query Fusion](enhancing_multilingual_rag_systems_with_debiased_language_preference-guided_quer.md)
 - [\[ACL 2026\] Context Attribution with Multi-Armed Bandit Optimization](context_attribution_with_multi-armed_bandit_optimization.md)
-- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/information_retrieval/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
+- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
 - [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
 
 </div>

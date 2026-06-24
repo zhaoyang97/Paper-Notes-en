@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] Addressing the pain point in GRPO fine-tuning where "hard samples result in zero rewards with no learning signal," this paper proposes the **group-revision** paradigm. It first generates an initial response, then directs the model to produce a group of "revised" responses. By calculating the relative improvement (shapi
+  [CVPR 2026][Multimodal VLM][Object-level grounding] Addressing the pain point in GRPO fine-tuning where "hard samples result in zero rewards with no learning signal," this paper proposes the **group-revision** paradigm. It first generates an initial response, then directs the model to produce a group of "revised" responses. By calculating the relative improvement (shaping signal) via Hungarian matching, it weights rewards and scales advantages…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
-  - reward shaping
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Object-level grounding"
+  - "GRPO"
+  - "Reinforcement Fine-Tuning"
+  - "reward shaping"
+  - "revision sampling"
 date: 2026-05-08
-content_hash: 7b46b2a98a8a7af0
+content_hash: 7b1841e617a53a46
 ---
+
 # From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding
 
 **Conference**: CVPR 2026  
@@ -148,9 +152,9 @@ Ours significantly outperforms VisionReasoner on ReasonG (converted from ReasonS
 
 - [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
 - [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/multimodal_vlm/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[CVPR 2026\] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs](enhancing_part-level_point_grounding_for_any_open-source_mllms.md)
 - [\[CVPR 2026\] Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation](training_high-level_schedulers_with_execution-feedback_reinforcement_learning_fo.md)
+- [\[CVPR 2026\] Interactive Episodic Memory with User Feedback](interactive_episodic_memory_with_user_feedback.md)
 
 </div>
 

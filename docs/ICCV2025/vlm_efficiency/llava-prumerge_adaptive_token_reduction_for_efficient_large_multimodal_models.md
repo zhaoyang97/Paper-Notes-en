@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models
 description: >-
-  [ICCV 2025][Multimodal VLM][visual token compression] By exploiting the sparsity of attention scores between the CLS token and spatial tokens in the visual encoder, this work adaptively prunes and merges visual tokens…
+  [ICCV 2025][Multimodal Efficiency][visual token compression] By exploiting the sparsity of attention scores between the CLS token and spatial tokens in the visual encoder, this work adaptively prunes and merges visual tokens, maintaining comparable LMM performance while retaining only 5.5% of visual tokens.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "visual token compression"
   - "large multimodal models"
   - "token pruning and merging"
   - "attention sparsity"
   - "efficient inference"
 date: 2026-05-08
-content_hash: 6d887f649a6fb9cc
+content_hash: b9c7dd98102b0d40
 ---
 
 # LLaVA-PruMerge: Adaptive Token Reduction for Efficient Large Multimodal Models
@@ -130,11 +130,11 @@ Efficiency analysis: PruMerge reduces LLM Prefill FLOPs from 9.3 TB to 0.91 TB (
 
 ## Related Papers
 
-- [\[ICCV 2025\] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models](llava-kd_a_framework_of_distilling_multimodal_large_language_models.md)
-- [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](../../AAAI2026/multimodal_vlm/tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
-- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
-- [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](on_large_multimodal_models_as_open-world_image_classifiers.md)
-- [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
+- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](../../CVPR2026/vlm_efficiency/coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
+- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](../../CVPR2026/vlm_efficiency/rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
+- [\[ACL 2025\] Token Pruning in Multimodal Large Language Models: Are We Solving the Right Problem?](../../ACL2025/vlm_efficiency/token_pruning_in_multimodal_large_language_models_are_we_solving_the_right_probl.md)
 
 </div>
 

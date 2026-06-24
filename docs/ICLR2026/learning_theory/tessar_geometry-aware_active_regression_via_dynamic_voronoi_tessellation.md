@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TESSAR: Geometry-Aware Active Regression via Dynamic Voronoi Tessellation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] For active learning in regression tasks, this paper proposes using the geometric structure of Voronoi tessellation to select samples. The core is VLDM (Voronoi-based Least Disagree Metric), which measures how easily a sample's "Voronoi cell membership" flips after perturbing labeled sites, thereby locating high-varianc
+  [ICLR 2026][Active Learning][Regression] For active learning in regression tasks, this paper proposes using the geometric structure of Voronoi tessellation to select samples. The core is VLDM (Voronoi-based Least Disagree Metric), which measures how easily a sample's "Voronoi cell membership" flips after perturbing labeled sites, thereby locating high-variance interior regions. By compounding this with a distance term (covering the periphery) and a density term (reflecting re…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Active Learning"
+  - "Regression Theory"
+  - "Regression"
+  - "Voronoi Tessellation"
+  - "Geometric Sampling"
+  - "Prediction Variance"
 date: 2026-05-08
-content_hash: d47664c860917f62
+content_hash: 936d4e260ae68d29
 ---
+
 # TESSAR: Geometry-Aware Active Regression via Dynamic Voronoi Tessellation
 
 **Conference**: ICLR 2026  
@@ -160,10 +166,10 @@ The table below shows the effects of different combinations of VLDM ($\gamma_x$)
 ## Related Papers
 
 - [\[ICLR 2026\] Characterizing the Discrete Geometry of ReLU Networks](characterizing_the_discrete_geometry_of_relu_networks.md)
-- [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
 - [\[ICLR 2026\] Beyond Spectra: Eigenvector Overlaps in Loss Geometry](beyond_spectra_eigenvector_overlaps_in_loss_geometry.md)
 - [\[ICLR 2026\] Splat Regression Models](splat_regression_models.md)
 - [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](revisiting_active_sequential_prediction-powered_mean_estimation.md)
+- [\[ICLR 2026\] Data-Aware and Scalable Sensitivity Analysis for Decision Tree Ensembles](data-aware_and_scalable_sensitivity_analysis_for_decision_tree_ensembles.md)
 
 </div>
 

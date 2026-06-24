@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] LinearSR: Unlocking Linear Attention for Stable and Efficient Image Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Linear Attention] LinearSR successfully applies $O(N)$ linear attention to photo-realistic diffusion super-resolution for the first time. By integrating "Early Stopping at the Knee-point Fine-tuning (ESGF), SNR-based Mixture-of-Experts (MoE), and Tag-based Guidance (TAG)", it simultaneously addresses training collapse, perception-distor
+  [ICLR 2026][Image Restoration][Linear Attention] LinearSR successfully applies $O(N)$ linear attention to photo-realistic diffusion super-resolution for the first time. By integrating "Early Stopping at the Knee-point Fine-tuning (ESGF), SNR-based Mixture-of-Experts (MoE), and Tag-based Guidance (TAG)", it simultaneously addresses training collapse, perception-distortion trade-offs, and guidance signal selection. The framework achieves SOTA 1-NFE efficiency (0.036s core diffu…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Linear Attention
-  - Image Super-Resolution
-  - Diffusion Transformer
-  - Flow Matching
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Linear Attention"
+  - "Image Super-Resolution"
+  - "Diffusion Transformer"
+  - "Flow Matching"
+  - "Mixture-of-Experts"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: f04978b612faa504
+content_hash: cf174fc2ed6dd34d
 ---
+
 # LinearSR: Unlocking Linear Attention for Stable and Efficient Image Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -132,10 +134,10 @@ The 1-NFE forward time of 0.036s sets a new SOTA, quantifying the architectural 
 ## Related Papers
 
 - [\[ICCV 2025\] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution](../../ICCV2025/image_restoration/emulating_self-attention_with_convolution_for_efficient_image_super-resolution.md)
+- [\[ICLR 2026\] Test-Time Domain Generalization for Image Super-Resolution](test-time_domain_generalization_for_image_super-resolution.md)
 - [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](../../NeurIPS2025/image_restoration/spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
+- [\[ECCV 2024\] Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](../../ECCV2024/image_restoration/efficient_diffusion_transformer_with_step-wise_dynamic_attention_mediators.md)
 - [\[ECCV 2024\] Learning Exhaustive Correlation for Spectral Super-Resolution: Where Spatial-Spectral Attention Meets Linear Dependence](../../ECCV2024/image_restoration/learning_exhaustive_correlation_for_spectral_super-resolution_where_spatial-spec.md)
-- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
-- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
 
 </div>
 

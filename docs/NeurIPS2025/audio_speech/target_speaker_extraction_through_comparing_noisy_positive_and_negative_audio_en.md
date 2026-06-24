@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments
 description: >-
-  [NeurIPS 2025][Audio & Speech][Target speaker extraction] This paper proposes a novel enrollment strategy that encodes target speaker characteristics by contrasting noisy positive enrollments (segments where the target s…
+  [NeurIPS 2025][Audio & Speech][Target speaker extraction] This paper proposes a novel enrollment strategy that encodes target speaker characteristics by contrasting noisy positive enrollments (segments where the target speaker is active) against negative enrollments (segments where the target speaker is silent), achieving state-of-the-art performance on monaural noisy-enrollment target speaker extraction with SI-SNRi exceeding the previous best method by over 2.1 dB.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "TF-GridNet"
   - "two-stage training"
 date: 2026-05-08
-content_hash: 81f5bfd0fd12987d
+content_hash: e5b03cf727f5be52
 ---
 
 # Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments
@@ -142,9 +142,9 @@ The system comprises two branches: (1) **Encoding branch**: a siamese encoder ex
 
 - [\[NeurIPS 2025\] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound](audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o.md)
 - [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
-- [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](../../ACL2026/audio_speech/speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
-- [\[ICCV 2025\] Everything is a Video: Unifying Modalities through Next-Frame Prediction](../../ICCV2025/audio_speech/everything_is_a_video_unifying_modalities_through_next-frame_prediction.md)
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
+- [\[CVPR 2025\] Enhancing Dance-to-Music Generation via Negative Conditioning Latent Diffusion Model](../../CVPR2025/audio_speech/enhancing_dance-to-music_generation_via_negative_conditioning_latent_diffusion_m.md)
+- [\[ICML 2025\] Teaching Physical Awareness to LLMs through Sounds](../../ICML2025/audio_speech/teaching_physical_awareness_to_llms_through_sounds.md)
+- [\[CVPR 2025\] DualTalk: Dual-Speaker Interaction for 3D Talking Head Conversations](../../CVPR2025/audio_speech/dualtalk_dual-speaker_interaction_for_3d_talking_head_conversations.md)
 
 </div>
 

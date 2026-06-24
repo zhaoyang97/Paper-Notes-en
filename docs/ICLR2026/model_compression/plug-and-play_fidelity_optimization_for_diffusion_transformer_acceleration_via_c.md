@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Plug-and-Play Fidelity Optimization for Diffusion Transformer Acceleration via Cumulative Error Minimization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] CEM achieves high-fidelity DiT generation by modeling intrinsic "timestep × cache interval" errors offline and applying dynamic programming to find an optimal caching strategy under a given acceleration budget. It serves as a zero-overhead, plug-and-play plugin for various caching acceleration and quantization methods.
+  [ICLR 2026][Model Compression][Diffusion Transformer] CEM achieves high-fidelity DiT generation by modeling intrinsic "timestep × cache interval" errors offline and applying dynamic programming to find an optimal caching strategy under a given acceleration budget. It serves as a zero-overhead, plug-and-play plugin for various caching acceleration and quantization methods.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Diffusion Transformer"
+  - "Caching Acceleration"
+  - "Cumulative Error"
+  - "Dynamic Programming"
+  - "Plug-and-Play"
 date: 2026-05-08
-content_hash: e3eb31720a016542
+content_hash: 2f5ef31b2b13c086
 ---
+
 # Plug-and-Play Fidelity Optimization for Diffusion Transformer Acceleration via Cumulative Error Minimization
 
 **Conference**: ICLR 2026  
@@ -142,9 +148,9 @@ CEM frequently allows accelerated methods to **surpass the fidelity of the origi
 
 - [\[ICLR 2026\] RAPID$^3$: Tri-Level Reinforced Acceleration Policies for Diffusion Transformer](rapid3_tri-level_reinforced_acceleration_policies_for_diffusion_transformer.md)
 - [\[CVPR 2025\] Plug-and-Play Versatile Compressed Video Enhancement](../../CVPR2025/model_compression/plug-and-play_versatile_compressed_video_enhancement.md)
-- [\[ICML 2026\] Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers](../../ICML2026/model_compression/plug-and-play_spiking_operators_breaking_the_nonlinearity_bottleneck_in_spiking_.md)
 - [\[ICLR 2026\] ERTACache: Error Rectification and Timesteps Adjustment for Efficient Diffusion](ertacache_error_rectification_and_timesteps_adjustment_for_efficient_diffusion.md)
-- [\[ICLR 2026\] Vulcan: 为边缘智能裁剪紧凑的类特定视觉 Transformer](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
+- [\[ICML 2026\] Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers](../../ICML2026/model_compression/plug-and-play_spiking_operators_breaking_the_nonlinearity_bottleneck_in_spiking_.md)
+- [\[ICLR 2026\] DiffVax: Optimization-Free Image Immunization Against Diffusion-Based Editing](diffvax_optimization-free_image_immunization_against_diffusion-based_editing.md)
 
 </div>
 

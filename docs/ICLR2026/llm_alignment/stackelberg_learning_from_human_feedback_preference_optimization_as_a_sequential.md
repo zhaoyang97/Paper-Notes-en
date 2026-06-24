@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] Ours remodels LLM preference alignment as a "Leader-Follower" **sequential game** (SLHF): the Leader first commits to a response, and the Follower provides an improved version after observing this response. This naturally yields a deterministic equilibrium robust to non-transitive preferences and supports **training-fr
+  [ICLR 2026][LLM Alignment][Preference Optimization] Ours remodels LLM preference alignment as a "Leader-Follower" **sequential game** (SLHF): the Leader first commits to a response, and the Follower provides an improved version after observing this response. This naturally yields a deterministic equilibrium robust to non-transitive preferences and supports **training-free iterative self-refinement at inference time**, consistently outperforming RLHF (RLOO) and NLHF (Nash-MD-P…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Optimization"
+  - "Stackelberg Game"
+  - "Non-transitive Preferences"
+  - "Inference-time Refinement"
+  - "Sequential Game"
 date: 2026-05-08
-content_hash: dcf5054c4ef6a152
+content_hash: 08dddb93cbe69c69
 ---
+
 # Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game
 
 **Conference**: ICLR 2026  

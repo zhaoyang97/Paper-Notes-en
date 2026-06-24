@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Validating LLM-as-a-Judge Systems under Rating Indeterminacy
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM-as-a-Judge] This paper proposes a framework for validating LLM-as-a-Judge systems under rating indeterminacy…
+  [NeurIPS 2025][Recommender Systems][LLM-as-a-Judge] This paper proposes a framework for validating LLM-as-a-Judge systems under rating indeterminacy, replacing forced-choice rating with a "response set" multi-label rating scheme, achieving up to 31% performance improvement in the selected judge system.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "multi-label evaluation"
   - "forced-choice bias"
 date: 2026-05-08
-content_hash: 1287177c8ea2d2b4
+content_hash: 5863b8228c9279bd
 ---
 
 # Validating LLM-as-a-Judge Systems under Rating Indeterminacy
@@ -154,11 +154,11 @@ No model training is involved. The core contribution is methodological improveme
 
 ## Related Papers
 
+- [\[ACL 2025\] CoVE: Compressed Vocabulary Expansion Makes Better LLM-based Recommender Systems](../../ACL2025/recommender/cove_compressed_vocabulary_expansion_makes_better_llm-based_recommender_systems.md)
+- [\[ICLR 2026\] Continual Low-Rank Adapters for LLM-based Generative Recommender Systems](../../ICLR2026/recommender/continual_low-rank_adapters_for_llm-based_generative_recommender_systems.md)
 - [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](../../ICLR2026/recommender/token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
-- [\[NeurIPS 2025\] The More You Automate, the Less You See: Hidden Pitfalls of AI Scientist Systems](the_more_you_automate_the_less_you_see_hidden_pitfalls_of_ai_scientist_systems.md)
+- [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](../../ICLR2026/recommender/rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
-- [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
-- [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
 
 </div>
 

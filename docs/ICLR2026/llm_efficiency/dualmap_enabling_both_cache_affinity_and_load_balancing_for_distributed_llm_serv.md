@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DualMap: Enabling Both Cache Affinity and Load Balancing for Distributed LLM Serving
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] DualMap utilizes two independent hash functions to map each request to two candidate instances and selects the optimal one based on system status. By leveraging the "power of two choices" principle, it **simultaneously achieves cache affinity and load balancing** within a single scheduling framework, increasing effecti
+  [ICLR2026][LLM Efficiency][Prefix Caching] DualMap utilizes two independent hash functions to map each request to two candidate instances and selects the optimal one based on system status. By leveraging the "power of two choices" principle, it **simultaneously achieves cache affinity and load balancing** within a single scheduling framework, increasing effective request capacity by up to 2.25× under the same TTFT SLO.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Prefix Caching"
+  - "Cache Affinity"
+  - "Load Balancing"
+  - "Dual-Hash Mapping"
+  - "Power of Two Choices"
 date: 2026-05-08
-content_hash: cba6196d46b3e8e2
+content_hash: 24dbb8e4f52d32ac
 ---
+
 # DualMap: Enabling Both Cache Affinity and Load Balancing for Distributed LLM Serving
 
 **Conference**: ICLR2026  
@@ -121,15 +127,15 @@ Tested on Conversation + Qwen2.5-14B by incrementally adding features:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
 - [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
 - [\[ACL 2025\] SpindleKV: A Novel KV Cache Reduction Method Balancing Both Shallow and Deep Layers](../../ACL2025/llm_efficiency/spindlekv_layered_kv_cache.md)
 - [\[ICLR 2026\] DiSRouter: Distributed Self-Routing for LLM Selections](disrouter_distributed_self-routing_for_llm_selections.md)
-- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
 
 </div>
 

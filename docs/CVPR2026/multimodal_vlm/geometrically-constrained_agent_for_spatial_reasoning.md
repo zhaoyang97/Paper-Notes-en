@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Geometrically-Constrained Agent for Spatial Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM Agent] Addressing the "strong semantics, weak geometry" gap in VLMs for spatial reasoning, this paper proposes GCA, a training-free agent. It first utilizes the VLM as a "semantic analyst" to translate ambiguous queries into formal task constraints (reference frames + objectives), then as a "task solver" to invoke geometric t
+  [CVPR 2026][Multimodal VLM][Spatial Reasoning] Addressing the "strong semantics, weak geometry" gap in VLMs for spatial reasoning, this paper proposes GCA, a training-free agent. It first utilizes the VLM as a "semantic analyst" to translate ambiguous queries into formal task constraints (reference frames + objectives), then as a "task solver" to invoke geometric tools within the deterministic boundaries of these constraints. GCA outperforms previous SOTA by approximately 27%…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM Agent
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Spatial Reasoning"
+  - "VLM Agent"
+  - "Formal Constraints"
+  - "Neuro-symbolic"
+  - "Tool-use"
 date: 2026-05-08
-content_hash: 971d6ac9ae91b8d5
+content_hash: 583edc6124407794
 ---
+
 # Geometrically-Constrained Agent for Spatial Reasoning
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ GCA averages 65.1%, outperforming Gemini-2.5-Pro (+12%), SpatialLadder (+27%), a
 
 ## Related Papers
 
-- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
 - [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
-- [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
-- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity](infinibench_infinite_benchmarking_for_visual_spatial_reasoning_with_customizable.md)
+- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
+- [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 
 </div>
 

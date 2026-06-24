@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] This paper proposes UDF (Uncertainty-aware Dynamic Field) to simultaneously model underwater dynamic geometry and time-varying participating media in a unified 4D field. It utilizes per-pixel uncertainty derived from "surface observation blurring + inter-frame optical flow inconsistency" to weight the rendering loss, a
+  [ICLR 2026][3D Vision][Underwater 3D reconstruction] This paper proposes UDF (Uncertainty-aware Dynamic Field) to simultaneously model underwater dynamic geometry and time-varying participating media in a unified 4D field. It utilizes per-pixel uncertainty derived from "surface observation blurring + inter-frame optical flow inconsistency" to weight the rendering loss, achieving high-quality reconstruction and new-view synthesis on both controlled and in-the-wild underwater v…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Underwater 3D reconstruction"
+  - "dynamic scenes"
+  - "3D Gaussian Splatting"
+  - "medium modeling"
+  - "heteroscedastic uncertainty"
 date: 2026-05-08
-content_hash: 7324f086d9c31b97
+content_hash: 5a461e8e98cf3d2f
 ---
+
 # Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes
 
 **Conference**: ICLR 2026  
@@ -151,11 +156,11 @@ Uncertainty Ablation (NUSR Turtle):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
-- [\[ICLR 2026\] Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering](horseshoe_splatting_handling_structural_sparsity_for_uncertainty-aware_gaussian-.md)
 - [\[CVPR 2025\] SpectroMotion: Dynamic 3D Reconstruction of Specular Scenes](../../CVPR2025/3d_vision/spectromotion_dynamic_3d_reconstruction_of_specular_scenes.md)
-- [\[ICLR 2026\] COOPERTRIM: Adaptive Data Selection for Uncertainty-Aware Cooperative Perception](coopertrim_adaptive_data_selection_for_uncertainty-aware_cooperative_perception.md)
-- [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
+- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
+- [\[AAAI 2026\] OceanSplat: Object-aware Gaussian Splatting with Trinocular View Consistency for Underwater Scene Reconstruction](../../AAAI2026/3d_vision/oceansplat_object-aware_gaussian_splatting_with_trinocular_view_consistency_for_.md)
+- [\[ICLR 2026\] Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering](horseshoe_splatting_handling_structural_sparsity_for_uncertainty-aware_gaussian-.md)
+- [\[ICLR 2026\] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams](streamsplat_towards_online_dynamic_3d_reconstruction_from_uncalibrated_video_str.md)
 
 </div>
 

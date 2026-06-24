@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization
 description: >-
-  [NeurIPS 2025][Causal Inference][decision-focused learning] This paper proposes Bi-DFCL, a bilevel optimization framework that jointly leverages observational (OBS) data and randomized controlled trial (RCT) data to trai…
+  [NeurIPS 2025][Causal Inference][decision-focused learning] This paper proposes Bi-DFCL, a bilevel optimization framework that jointly leverages observational (OBS) data and randomized controlled trial (RCT) data to train marketing resource allocation models. The upper level trains a Bridge Network with unbiased decision loss on RCT data to dynamically correct the bias of the lower level trained on OBS data. The framework further introduces differentiable surrogate decision l…
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -11,7 +11,7 @@ tags:
   - "marketing"
   - "uplift modeling"
 date: 2026-05-08
-content_hash: 7c38a58b8adefc63
+content_hash: 44444bee629e4721
 ---
 
 # Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization
@@ -131,10 +131,10 @@ Lower level: MSE prediction loss on OBS data. Upper level: PPL or PIFD decision 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Cyclic Counterfactuals under Shift–Scale Interventions](cyclic_counterfactuals_under_shift-scale_interventions.md)
+- [\[ECCV 2024\] Distill Gold from Massive Ores: Bi-level Data Pruning towards Efficient Dataset Distillation](../../ECCV2024/causal_inference/distill_gold_from_massive_ores_bi-level_data_pruning_towards_efficient_dataset_d.md)
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](revealing_multimodal_causality_with_large_language_models.md)
 - [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](../../ICML2026/causal_inference/causal-jepa_learning_world_models_through_object-level_latent_masking.md)
-- [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
-- [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
+- [\[NeurIPS 2025\] Characterization and Learning of Causal Graphs from Hard Interventions](characterization_and_learning_of_causal_graphs_from_hard_interventions.md)
 
 </div>
 

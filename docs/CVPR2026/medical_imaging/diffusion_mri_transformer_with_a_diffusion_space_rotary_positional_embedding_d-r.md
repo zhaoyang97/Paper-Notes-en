@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)
 description: >-
-  [CVPR 2026][Medical Imaging][Transformer] To address the unique geometric structure of diffusion MRI (dMRI) data—where each volume corresponds to a sampling direction on a sphere and protocols vary across subjects—this paper proposes D-RoPE, a generalization of Rotary Positional Embedding (RoPE) to the diffusion spherical space. Combined with a Transformer usi
+  [CVPR 2026][Medical Imaging][Diffusion MRI] To address the unique geometric structure of diffusion MRI (dMRI) data—where each volume corresponds to a sampling direction on a sphere and protocols vary across subjects—this paper proposes D-RoPE, a generalization of Rotary Positional Embedding (RoPE) to the diffusion spherical space. Combined with a Transformer using alternating spatial/diffusion attention and Masked Autoencoder (MAE) pre-training…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Transformer
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Diffusion MRI"
+  - "Representation Learning"
+  - "Rotary Positional Embedding"
+  - "Masked Autoencoder"
+  - "Transformer"
 date: 2026-05-08
-content_hash: b2b1b8c9e6d73f26
+content_hash: d7d3aa1a853adbb0
 ---
+
 # Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ D-RoPE + Alternating/Diffusion masking yields the lowest Fractional Anisotropy (
 
 ## Related Papers
 
-- [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
-- [\[CVPR 2026\] SPECTRE：面向体积 CT Transformer 的自监督与跨模态预训练](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
+- [\[CVPR 2026\] Masked-Diffusion Autoencoders for 3D Medical Vision Representation Learning](masked-diffusion_autoencoders_for_3d_medical_vision_representation_learning.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 - [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
+- [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](../../ICLR2026/medical_imaging/pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
 
 </div>
 

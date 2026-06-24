@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] SC-Arena：面向单细胞推理的自然语言基准与知识增强评测
+  [Paper Note] SC-Arena: A Natural Language Benchmark and Knowledge-Enhanced Evaluation for Single-Cell Reasoning
 description: >-
-  [ICLR 2026][Computational Biology][LLM-as-judge] SC-Arena reformulates the evaluation of "whether an LLM can serve as a virtual cell" into a natural language arena: it uses an object-oriented "Knowledge Cell Class" abstraction to unify evaluation targets (attributes + methods), designs 5 open-ended natural language tasks, and replaces brittle string-matching metrics
+  [ICLR 2026][Computational Biology][Single-cell benchmark] SC-Arena reformulates the evaluation of "whether an LLM can serve as a virtual cell" into a natural language arena: it uses an object-oriented "Knowledge Cell Class" abstraction to unify evaluation targets (attributes + methods), designs 5 open-ended natural language tasks, and replaces brittle string-matching metrics with a knowledge-enhanced LLM judge linked to ontologies, marker gene databases…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - LLM-as-judge
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Single-cell benchmark"
+  - "virtual cell"
+  - "knowledge-enhanced evaluation"
+  - "LLM-as-judge"
+  - "natural language tasks"
 date: 2026-05-08
-content_hash: 3da4976dcbb275e8
+content_hash: c17a39e27d9d057e
 ---
+
 # SC-Arena: A Natural Language Benchmark and Knowledge-Enhanced Evaluation for Single-Cell Reasoning
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ Key Observations: (1) **No system reaches the level of a reliable "virtual cell"
 
 ## Related Papers
 
-- [\[ICLR 2026\] GAGA: Gaussianity-Aware Gaussian Approximation for Efficient 3D Molecular Generation](gaga_gaussianity-aware_gaussian_approximation_for_efficient_3d_molecular_generat.md)
-- [\[ICLR 2026\] Representing Local Protein Environments with Machine Learning Force Fields](representing_local_protein_environments_with_machine_learning_force_fields.md)
-- [\[ICLR 2026\] Take Note: Your Molecular Dataset Is Probably Aligned](take_note_your_molecular_dataset_is_probably_aligned.md)
-- [\[ICLR 2026\] VenusX: Unlocking Fine-Grained Functional Understanding of Proteins](venusx_unlocking_fine-grained_functional_understanding_of_proteins.md)
-- [\[ICLR 2026\] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models](driftlite_lightweight_drift_control_for_inference-time_scaling_of_diffusion_mode.md)
+- [\[ICLR 2026\] Towards Knowledge-and-Data-Driven Organic Reaction Prediction: RAG-Enhanced and Reasoning-Powered Hybrid System with LLMs](towards_knowledgeanddatadriven_organic_reaction_prediction_ragenhanced_and_reaso.md)
+- [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](../../NeurIPS2025/computational_biology/scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
+- [\[ICLR 2026\] Learning Explicit Single-Cell Dynamics Using ODE Representations](learning_explicit_single-cell_dynamics_using_ode_representations.md)
+- [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
+- [\[ICLR 2026\] Clustering by Denoising: Latent Plug-and-Play Diffusion for Single-Cell Embeddings](clustering_by_denoising_latent_plug-and-play_diffusion_for_single-cell_embedding.md)
 
 </div>
 

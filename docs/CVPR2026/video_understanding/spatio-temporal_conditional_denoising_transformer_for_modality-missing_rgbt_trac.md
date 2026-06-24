@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The paper unifies "modality-missing completion" and "complete modality enhancement" in RGBT tracking into a single **spatio-temporal conditional denoising** process. By using short-term and long-term temporal cues from historical frames as conditions, a denoiser reconstructs missing modalities under strong noise and en
+  [CVPR 2026][Video Understanding][RGBT Tracking] The paper unifies "modality-missing completion" and "complete modality enhancement" in RGBT tracking into a single **spatio-temporal conditional denoising** process. By using short-term and long-term temporal cues from historical frames as conditions, a denoiser reconstructs missing modalities under strong noise and enhances complete modalities under weak noise. This single architecture and parameter set handle both scenarios…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "RGBT Tracking"
+  - "Modality-Missing"
+  - "Conditional Denoising"
+  - "Spatio-Temporal Modeling"
+  - "Diffusion"
 date: 2026-05-08
-content_hash: 65cb0c00fdba90f1
+content_hash: d7c4acd26b03ef54
 ---
+
 # Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,20 @@ Benchmarks × Complete/Missing settings (PR=Precision Rate, SR=Success Rate; MPR
 - Value: ⭐⭐⭐⭐ Establishes a strong baseline and a "noise-as-switch" paradigm for missing modality tasks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Papers will be listed here if available -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Progressive Multi-cue Alignment for Unaligned RGBT Tracking](progressive_multi-cue_alignment_for_unaligned_rgbt_tracking.md)
+- [\[CVPR 2026\] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)
+- [\[CVPR 2026\] RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation](ragtrack_language-aware_rgbt_tracking_with_retrieval-augmented_generation.md)
+- [\[CVPR 2026\] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](cluster-wise_spatio-temporal_masking_for_efficient_video-language_pretraining.md)
+- [\[CVPR 2026\] OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios](omniground_a_comprehensive_spatio-temporal_grounding_benchmark_for_real-world_co.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Progressive Multi-cue Alignment for Unaligned RGBT Tracking](progressive_multi-cue_alignment_for_unaligned_rgbt_tracking.md)

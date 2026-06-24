@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TVHighlights: LLM-Guided Human-Free Collaborative Training for Video Highlight Detection in Movies and TV Dramas
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] To address the challenge where highlight segments in movies and TV dramas lack a unified definition and manual annotation is both expensive and subjective, the authors first automatically construct the human-free TVHighlights dataset by repurposing community derivative works. Subsequently, LTV-HD is proposed: a lightwe
+  [CVPR 2026][Video Understanding][Video Highlight Detection] To address the challenge where highlight segments in movies and TV dramas lack a unified definition and manual annotation is both expensive and subjective, the authors first automatically construct the human-free TVHighlights dataset by repurposing community derivative works. Subsequently, LTV-HD is proposed: a lightweight multimodal network is pre-trained with video-level weak labels…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Highlight Detection"
+  - "Movies and TV Dramas"
+  - "Weakly Supervised"
+  - "LLM Pseudo-labels"
+  - "Noisy Label Learning"
 date: 2026-05-08
-content_hash: 388fe54dd5f71926
+content_hash: e91fef4f69f13b98
 ---
+
 # TVHighlights: LLM-Guided Human-Free Collaborative Training for Video Highlight Detection in Movies and TV Dramas
 
 **Conference**: CVPR 2026  
@@ -139,7 +145,7 @@ Breakdown of training stages and modules (s: stage, r: refinement round):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

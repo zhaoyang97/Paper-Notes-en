@@ -2,18 +2,21 @@
 title: >-
   [Paper Note] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control
 description: >-
-  [ICLR 2026][Audio & Speech][Mamba] MVC transforms the entire **conditioning path (text/tempo/prosody) of diffusion TTS into pure SSM (Mamba) at inference**, eliminating all attention and explicit recurrences. By utilizing a lightweight training-only aligner and maintaining a fixed StyleTTS2 decoder/vocoder, it achieves modest but statistically significa
+  [ICLR 2026][Audio & Speech][Mamba] MVC transforms the entire **conditioning path (text/tempo/prosody) of diffusion TTS into pure SSM (Mamba) at inference**, eliminating all attention and explicit recurrences. By utilizing a lightweight training-only aligner and maintaining a fixed StyleTTS2 decoder/vocoder, it achieves modest but statistically significant quality gains over StyleTTS2, VITS, and hybrid Mamba-Attention models, while compressing the encoder to 21M parameters and…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Mamba
-  - State-Space Model
-  - Text-to-Speech
-  - Diffusion
-  - StyleTTS2
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Mamba"
+  - "State-Space Model"
+  - "Text-to-Speech"
+  - "Diffusion"
+  - "StyleTTS2"
+  - "Streaming Synthesis"
+  - "Long-form Robustness"
 date: 2026-05-08
-content_hash: 631b676201e145d0
+content_hash: 47cc13c54337441a
 ---
+
 # MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control
 
 **Conference**: ICLR 2026  
@@ -143,11 +146,11 @@ Fusion/Conditioning ablation (LJSpeech long-form):
 
 ## Related Papers
 
-- [\[ICLR 2026\] VibeVoice: Expressive Podcast Generation with Next-Token Diffusion](vibevoice_expressive_podcast_generation_with_next-token_diffusion.md)
-- [\[ICLR 2026\] Scaling Speech Tokenizers with Diffusion Autoencoders](scaling_speech_tokenizers_with_diffusion_autoencoders.md)
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](../../NeurIPS2025/audio_speech/efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
+- [\[ICLR 2026\] VibeVoice: Expressive Podcast Generation with Next-Token Diffusion](vibevoice_expressive_podcast_generation_with_next-token_diffusion.md)
 - [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
 - [\[ICLR 2026\] TASTE: Text-Aligned Speech Tokenization and Embedding for Spoken Language Modeling](taste_text-aligned_speech_tokenization_and_embedding_for_spoken_language_modelin.md)
+- [\[ICLR 2026\] Speech World Model: Causal State–Action Planning with Explicit Reasoning for Speech](speech_world_model_causal_stateaction_planning_with_explicit_reasoning_for_speec.md)
 
 </div>
 

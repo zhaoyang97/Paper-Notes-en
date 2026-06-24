@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Depth-Bounds for Neural Networks via the Braid Arrangement
 description: >-
-  [NeurIPS 2025][ReLU network depth lower bounds] This paper proves that, under $\mathcal{B}_d^0$-conforming constraints, exactly representing $\max\{0, x_1, \ldots…
+  [NeurIPS 2025][ReLU network depth lower bounds] This paper proves that, under $\mathcal{B}_d^0$-conforming constraints, exactly representing $\max\{0, x_1, \ldots, x_d\}$ with a ReLU network requires $\Omega(\log \log d)$ layers—the first non-constant depth lower bound without weight restrictions. It also shows that rank-(3,2) maxout networks can compute the maximum of 7 values, demonstrating that the standard upper bound is not tight.
 tags:
   - "NeurIPS 2025"
   - "ReLU network depth lower bounds"
@@ -11,7 +11,7 @@ tags:
   - "maxout networks"
   - "combinatorial proof"
 date: 2026-05-08
-content_hash: 0c6f87a5351357c8
+content_hash: a64d44f6281e2c97
 ---
 
 # Depth-Bounds for Neural Networks via the Braid Arrangement
@@ -139,11 +139,11 @@ This work is the **only** non-constant depth lower bound that imposes no restric
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
 - [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
+- [\[NeurIPS 2025\] Depth-Supervised Fusion Network for Seamless-Free Image Stitching](depth-supervised_fusion_network_for_seamless-free_image_stitching.md)
 - [\[NeurIPS 2025\] SAD Neural Networks: Divergent Gradient Flows and Asymptotic Optimality via o-minimal Structures](sad_neural_networks_divergent_gradient_flows_and_asymptotic_optimality_via_o-min.md)
-- [\[NeurIPS 2025\] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks](space_spike-aware_consistency_enhancement_for_test-time_adaptation_in_spiking_ne.md)
+- [\[NeurIPS 2025\] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting](tight_bounds_on_the_distortion_of_randomized_and_deterministic_distributed_votin.md)
 
 </div>
 

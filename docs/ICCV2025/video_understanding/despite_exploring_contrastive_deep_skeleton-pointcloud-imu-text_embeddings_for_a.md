@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeSPITE: Exploring Contrastive Deep Skeleton-PointCloud-IMU-Text Embeddings for Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Multimodal contrastive learning] DeSPITE proposes a privacy-preserving multimodal contrastive pre-training framework that aligns four modalities — LiDAR point clouds, skeleton poses…
+  [ICCV 2025][Video Understanding][Multimodal contrastive learning] DeSPITE proposes a privacy-preserving multimodal contrastive pre-training framework that aligns four modalities — LiDAR point clouds, skeleton poses, IMU signals, and text — into a unified embedding space, enabling cross-modal matching, retrieval, and a pre-training paradigm for human activity recognition.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "skeleton pose"
   - "joint embedding space"
 date: 2026-05-08
-content_hash: 97a0e9282f53347d
+content_hash: aaf9214c4e262459
 ---
 
 # DeSPITE: Exploring Contrastive Deep Skeleton-PointCloud-IMU-Text Embeddings for Action Recognition
@@ -144,9 +144,9 @@ The DeSPITE family achieves a new state of the art on HMPEAR, outperforming all 
 
 - [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-Based Human Action Recognition](adaptive_hyper-graph_convolution_network_for_skeleton-based_human_action_recogni.md)
 - [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
+- [\[CVPR 2026\] Exploring Adaptive Masked Reconstruction for Self-Supervised Skeleton-Based Action Recognition](../../CVPR2026/video_understanding/exploring_adaptive_masked_reconstruction_for_self-supervised_skeleton-based_acti.md)
 - [\[ICCV 2025\] Adaptive Hyper-Graph Convolution Network for Skeleton-based Human Action Recognition with Virtual Connections](adaptive_hyper_graph_convolution_network_skeleton_action_recognition.md)
 - [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
-- [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
 
 </div>
 

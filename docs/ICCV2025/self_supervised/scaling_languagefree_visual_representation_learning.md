@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling Language-Free Visual Representation Learning
 description: >-
-  [ICCV 2025][Self-Supervised Learning][visual self-supervised learning] By training DINOv2/MAE-series models (1B–7B parameters) on MetaCLIP's 2 billion web images…
+  [ICCV 2025][Self-Supervised Learning][visual self-supervised learning] By training DINOv2/MAE-series models (1B–7B parameters) on MetaCLIP's 2 billion web images, this work systematically demonstrates that purely visual self-supervised learning (SSL) exhibits superior scaling behavior compared to CLIP in both model and data dimensions, surpassing CLIP on average VQA performance at 5B+ parameters—including OCR/Chart tasks conventionally assumed to require language supervision.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "VQA evaluation"
   - "language-free supervision"
 date: 2026-05-08
-content_hash: 0a03d78f43409218
+content_hash: 796329332b586914
 ---
 
 # Scaling Language-Free Visual Representation Learning
@@ -112,10 +112,10 @@ Web-SSL is a family of purely visual self-supervised models (Web-DINO = DINOv2 t
 ## Related Papers
 
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](../../CVPR2026/self_supervised/free-grained_hierarchical_visual_recognition.md)
+- [\[CVPR 2026\] Scaling Dense Event-Stream Pretraining from Visual Foundation Models](../../CVPR2026/self_supervised/scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)
+- [\[CVPR 2025\] Spectral State Space Model for Rotation-Invariant Visual Representation Learning](../../CVPR2025/self_supervised/spectral_state_space_model_for_rotation-invariant_visual_representation_learning.md)
+- [\[ACL 2025\] SHuBERT: Self-Supervised Sign Language Representation Learning via Multi-Stream Cluster Prediction](../../ACL2025/self_supervised/shubert_self-supervised_sign_language_representation_learning_via_multi-stream_c.md)
 - [\[ICCV 2025\] Improving Large Vision and Language Models by Learning from a Panel of Peers](improving_large_vision_and_language_models_by_learning_from_a_panel_of_peers.md)
-- [\[ICCV 2025\] Manual-PA: Learning 3D Part Assembly from Instruction Diagrams](manual-pa_learning_3d_part_assembly_from_instruction_diagrams.md)
-- [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
-- [\[ICCV 2025\] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models](to_label_or_not_to_label_palm_-_a_predictive_model_for_evaluating_sample_efficie.md)
 
 </div>
 

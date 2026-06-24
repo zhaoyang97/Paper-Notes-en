@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VGent decomposes visual grounding into "high-level reasoning" and "low-level box prediction". It utilizes a frozen Multimodal Large Language Model (MLLM) as an encoder responsible solely for reasoning, employs off-the-shelf detectors to generate candidate boxes, and uses a decoder to cross-attend to the encoder's hidde
+  [CVPR 2026][VLM Reasoning][Visual Grounding] VGent decomposes visual grounding into "high-level reasoning" and "low-level box prediction". It utilizes a frozen Multimodal Large Language Model (MLLM) as an encoder responsible solely for reasoning, employs off-the-shelf detectors to generate candidate boxes, and uses a decoder to cross-attend to the encoder's hidden states to "select" target boxes. This avoids the slowness and hallucinations associated with autoregressive word-…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Grounding"
+  - "Multi-target Grounding"
+  - "Modular Design"
+  - "Frozen MLLM"
+  - "RL Reasoning"
 date: 2026-05-08
-content_hash: d5f8d052d357463e
+content_hash: 40a6db08fa18546a
 ---
+
 # VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ Decoder Enhancements (Building on (5)):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MVP: Multiple View Prediction Improves GUI Grounding](mvp_multiple_view_prediction_improves_gui_grounding.md)
-- [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
-- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
-- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
-- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
+- [\[CVPR 2026\] DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding](docseeker_long_document_understanding.md)
+- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](../../ICML2026/vlm_reasoning/decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
+- [\[ICLR 2026\] Fostering Video Reasoning via Next-Event Prediction](../../ICLR2026/vlm_reasoning/fostering_video_reasoning_via_next-event_prediction.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 
 </div>
 

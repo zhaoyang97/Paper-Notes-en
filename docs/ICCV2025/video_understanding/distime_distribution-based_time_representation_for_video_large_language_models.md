@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DisTime: Distribution-based Time Representation for Video Large Language Models
 description: >-
-  [ICCV 2025][Video Understanding][Video-LLM] This paper proposes DisTime, a framework that enables continuous time representation in Video-LLMs via a single learnable time token and a distribution-based time decoder. Comp…
+  [ICCV 2025][Video Understanding][Video-LLM] This paper proposes DisTime, a framework that enables continuous time representation in Video-LLMs via a single learnable time token and a distribution-based time decoder. Complemented by the large-scale automatically annotated dataset InternVid-TG (1.25M events), DisTime achieves state-of-the-art performance on three categories of time-sensitive tasks: moment retrieval, dense video captioning, and grounded VQA.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "temporal grounding"
   - "time-sensitive datasets"
 date: 2026-05-08
-content_hash: 582d2f7db396732c
+content_hash: 7e680231752f04fa
 ---
 
 # DisTime: Distribution-based Time Representation for Video Large Language Models
@@ -49,15 +49,15 @@ DisTime consists of five core components: a visual encoder with projector, a tex
 
 1. **Distribution-based Time Token**:
    A single learnable token `<TIME_STAMP>` represents continuous time, explicitly separated from text numeral tokens. The core innovation is that **absolute time values are not directly regressed**; instead, the token is first transformed into a time distribution, and the timestamp is obtained via weighted summation.
-   - The normalized time axis $[0,1]$ is divided into $reg_{max}+1$ discrete anchors.
-   - An MLP followed by softmax maps the hidden state of `<TIME_STAMP>` to a distribution vector $\mathbf{e} \in \mathbb{R}^{2 \times (reg_{max}+1)}$.
-   - The continuous timestamp is obtained by anchor-weighted summation: $st = \sum_{i=0}^{reg_{max}} \mathbf{e}_{st}^{(i)} \cdot a_i$, where $a_i = i/reg_{max}$.
+    - The normalized time axis $[0,1]$ is divided into $reg_{max}+1$ discrete anchors.
+    - An MLP followed by softmax maps the hidden state of `<TIME_STAMP>` to a distribution vector $\mathbf{e} \in \mathbb{R}^{2 \times (reg_{max}+1)}$.
+    - The continuous timestamp is obtained by anchor-weighted summation: $st = \sum_{i=0}^{reg_{max}} \mathbf{e}_{st}^{(i)} \cdot a_i$, where $a_i = i/reg_{max}$.
 
    The advantage of distribution-based decoding lies in **modeling the inherent ambiguity of event boundaries**—for instance, does the onset of "a person drinking water" include the act of picking up the cup? Such annotation ambiguity makes direct regression prone to precision errors.
 
 2. **Time Encoder**:
    The inverse of the decoder, encoding continuous timestamps back into time tokens processable by the LLM. A timestamp is first projected into a Gaussian-regularized distribution $p_{st} \sim \mathcal{N}(st, \delta^2)$, discretized, and then mapped to the LLM token space via an MLP:
-   $$\tau = \text{MLP}([\hat{\mathbf{e}}_{st}, \hat{\mathbf{e}}_{et}])$$
+    $\tau = \text{MLP}([\hat{\mathbf{e}}_{st}, \hat{\mathbf{e}}_{et}])$
    The encoder is extremely lightweight, accounting for only 0.36% of the parameters of InternVL2.5-1B.
 
 3. **Iterative Time Refinement**:
@@ -65,10 +65,10 @@ DisTime consists of five core components: a visual encoder with projector, a tex
 
 4. **InternVid-TG Dataset Construction**:
    A four-step annotation paradigm is proposed:
-   - **Event Extraction**: GPT-4o identifies video events from 1fps image sequences (~7 events per video).
-   - **Event Localization**: Three specialized models (UniMD, Mr.Blip, TFVTG) independently localize event boundaries.
-   - **Score-based Integration**: InternVideo2 computes video-text cosine similarity, selecting the highest-scoring model's localization result for each event.
-   - **Instruction Generation**: Five dialogue templates convert annotations into single-turn training dialogues.
+    - **Event Extraction**: GPT-4o identifies video events from 1fps image sequences (~7 events per video).
+    - **Event Localization**: Three specialized models (UniMD, Mr.Blip, TFVTG) independently localize event boundaries.
+    - **Score-based Integration**: InternVideo2 computes video-text cosine similarity, selecting the highest-scoring model's localization result for each event.
+    - **Instruction Generation**: Five dialogue templates convert annotations into single-turn training dialogues.
 
    The resulting dataset covers 179K videos with 1.25M event annotations, exceeding ActivityNet-Captions by 55×.
 
@@ -151,9 +151,9 @@ Training strategy: the visual backbone and intermediate layers are frozen; LoRA 
 
 - [\[ICCV 2025\] Aligning Effective Tokens with Video Anomaly in Large Language Models](aligning_effective_tokens_with_video_anomaly_in_large_language_models.md)
 - [\[ICCV 2025\] Factorized Learning for Temporally Grounded Video-Language Models](factorized_learning_for_temporally_grounded_video-language_models.md)
+- [\[CVPR 2025\] Video Summarization with Large Language Models](../../CVPR2025/video_understanding/video_summarization_with_large_language_models.md)
 - [\[NeurIPS 2025\] Seeing the Arrow of Time in Large Multimodal Models](../../NeurIPS2025/video_understanding/seeing_the_arrow_of_time_in_large_multimodal_models.md)
 - [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](4d_bench_benchmarking_multimodal_llms_for_4d_object_understanding.md)
-- [\[NeurIPS 2025\] FastVID: Dynamic Density Pruning for Fast Video Large Language Models](../../NeurIPS2025/video_understanding/fastvid_dynamic_density_pruning_for_fast_video_large_languag.md)
 
 </div>
 

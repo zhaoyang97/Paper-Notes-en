@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the "modal imbalance" issue where MLLMs become more text-biased and visual representations homogenize in deeper layers, this paper proposes LaVer. It performs masked reconstruction of visual tokens within the LLM's latent semantic space (latent MIM) and utilizes Clipped Gram-Anchoring to prevent feature coll
+  [CVPR 2026][Multimodal VLM][Modal Imbalance] Addressing the "modal imbalance" issue where MLLMs become more text-biased and visual representations homogenize in deeper layers, this paper proposes LaVer. It performs masked reconstruction of visual tokens within the LLM's latent semantic space (latent MIM) and utilizes Clipped Gram-Anchoring to prevent feature collapse. This provides direct supervision for visual representations, yielding significant improvements in dense visua…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Modal Imbalance"
+  - "Masked Image Modeling"
+  - "Visual Representation"
+  - "Self-Supervised"
+  - "Visual Hallucination"
 date: 2026-05-08
-content_hash: a3c14f2dfdf62b52
+content_hash: f69b347d4d943bc8
 ---
+
 # Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -145,8 +151,8 @@ Gains are particularly significant in dense visual tasks: on CLIP, ChartQA impro
 - [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
 - [\[CVPR 2026\] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis](prototype-as-prompt_multimodal_sentiment_prototypes_endowing_large_language_mode.md)
-- [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](../../ACL2026/multimodal_vlm/unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
-- [\[ECCV 2024\] NavGPT-2: Unleashing Navigational Reasoning Capability for Large Vision-Language Models](../../ECCV2024/multimodal_vlm/navgpt-2_unleashing_navigational_reasoning_capability_for_large_vision-language_.md)
+- [\[CVPR 2026\] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation](capnav_benchmarking_vision_language_models_on_capability-conditioned_indoor_navi.md)
+- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
 
 </div>
 

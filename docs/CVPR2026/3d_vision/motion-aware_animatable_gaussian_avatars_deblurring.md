@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Motion-Aware Animatable Gaussian Avatars Deblurring
 description: >-
-  [CVPR 2026][3D Vision][SMPL] The authors propose the first method to reconstruct clear, animatable 3D human Gaussian Avatars directly from blurry videos. This is achieved through a 3D-aware physical blur formation model and an SMPL-based human motion model, which jointly optimize the Avatar representation and motion parameters.
+  [CVPR 2026][3D Vision][3D Human Reconstruction] The authors propose the first method to reconstruct clear, animatable 3D human Gaussian Avatars directly from blurry videos. This is achieved through a 3D-aware physical blur formation model and an SMPL-based human motion model, which jointly optimize the Avatar representation and motion parameters.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SMPL
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Human Reconstruction"
+  - "Motion Blur"
+  - "3D Gaussian Splatting"
+  - "SMPL"
+  - "Deblurring"
 date: 2026-05-08
-content_hash: 4a194f03ac335b05
+content_hash: 260d70c8d8feb8db
 ---
+
 # Motion-Aware Animatable Gaussian Avatars Deblurring
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ The Adam optimizer is used ($\beta_1=0.9, \beta_2=0.999$), with learning rates a
 ## Related Papers
 
 - [\[CVPR 2026\] ProgressiveAvatars: Progressive Animatable 3D Gaussian Avatars](progressiveavatars_progressive_animatable_3d_gaussian_avatars.md)
+- [\[CVPR 2026\] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)
+- [\[CVPR 2026\] Zero-Shot Reconstruction of Animatable 3D Avatars with Cloth Dynamics from a Single Image](zero-shot_reconstruction_of_animatable_3d_avatars_with_cloth_dynamics_from_a_sin.md)
 - [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
 - [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
-- [\[CVPR 2026\] MSCD-GS: Motion-Separated Cooperative Deblurring Dynamic Reconstruction via Gaussian Splatting](mscd-gs_motion-separated_cooperative_deblurring_dynamic_reconstruction_via_gauss.md)
-- [\[ICCV 2025\] Sequential Gaussian Avatars with Hierarchical Motion Context](../../ICCV2025/3d_vision/sequential_gaussian_avatars_with_hierarchical_motion_context.md)
 
 </div>
 

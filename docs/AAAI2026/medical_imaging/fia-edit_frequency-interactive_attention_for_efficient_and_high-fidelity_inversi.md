@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing
 description: >-
-  [AAAI 2026][Medical Imaging][Text-guided image editing] This paper proposes FIA-Edit, an inversion-free text-guided image editing framework based on frequency-interactive attention. It introduces a Frequency Representati…
+  [AAAI 2026][Medical Imaging][Text-guided image editing] This paper proposes FIA-Edit, an inversion-free text-guided image editing framework based on frequency-interactive attention. It introduces a Frequency Representation Interaction (FRI) module that performs frequency-domain fusion of source/target features within self-attention, and a Feature Injection (FIJ) module that explicitly incorporates source image features into cross-attention. The framework achieves precise sema…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "medical data augmentation"
   - "surgical bleeding classification"
 date: 2026-05-08
-content_hash: a3f98cf5ecb6e6ad
+content_hash: 93252f8e2028bbd9
 ---
 
 # FIA-Edit: Frequency-Interactive Attention for Efficient and High-Fidelity Inversion-Free Text-Guided Image Editing
@@ -189,9 +189,9 @@ FIA-Edit significantly improves downstream classification performance through hi
 
 - [\[AAAI 2026\] EgoEMS: A High-Fidelity Multimodal Egocentric Dataset for Cognitive Assistance in Emergency Medical Services](egoems_a_high-fidelity_multimodal_egocentric_dataset_for_cognitive_assistance_in.md)
 - [\[AAAI 2026\] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation](decoding_with_structured_awareness_integrating_directional_frequency-spatial_and.md)
-- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
+- [\[CVPR 2026\] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation](../../CVPR2026/medical_imaging/voxtell_free-text_promptable_universal_3d_medical_image_segmentation.md)
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
-- [\[AAAI 2026\] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)
+- [\[AAAI 2026\] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation](guidegen_a_text-guided_framework_for_paired_full-torso_anatomy_and_ct_volume_gen.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Adversarial Flow Models
 description: >-
-  [ICML 2026][Image Generation][Adversarial Training] The authors add an optimal transport regularization term $\|G(z)-z\|^2$ to the GAN training objective, constraining the GAN's "arbitrary transport map" to a unique Wasserstein-2 optimal transport map. This allows adversarial training on pure Transformers to stabilize for the first time and perform end-to-end single-ste
+  [ICML 2026][Image Generation][Adversarial Training] The authors add an optimal transport regularization term $\|G(z)-z\|^2$ to the GAN training objective, constraining the GAN's "arbitrary transport map" to a unique Wasserstein-2 optimal transport map. This allows adversarial training on pure Transformers to stabilize for the first time and perform end-to-end single-step generation. On ImageNet-256, the 1NFE FID reaches **2.38** (XL/2) and **1.94** (112-layer recursive model)…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Adversarial Training
-  - Flow Matching
-  - Optimal Transport
-  - DiT
+  - "ICML 2026"
+  - "Image Generation"
+  - "Adversarial Training"
+  - "Flow Matching"
+  - "One-step Generation"
+  - "Optimal Transport"
+  - "DiT"
 date: 2026-05-08
-content_hash: 2c52505dcbf244d1
+content_hash: 0130d8fa1d700c23
 ---
+
 # Adversarial Flow Models
 
 **Conference**: ICML 2026  
@@ -121,11 +123,11 @@ Class-conditional generation on ImageNet-256 ($32\times32\times4$ VAE latent), e
 
 ## Related Papers
 
-- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
 - [\[ICLR 2026\] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows](../../ICLR2026/image_generation/twinflow_realizing_one-step_generation_on_large_models_with_self-adversarial_flo.md)
+- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
+- [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](../../ICLR2026/image_generation/scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
+- [\[ICML 2026\] SURF: Separation via Unsupervised Remixing Flow](surf_separation_via_unsupervised_remixing_flow.md)
 - [\[CVPR 2025\] Instant Adversarial Purification with Adversarial Consistency Distillation](../../CVPR2025/image_generation/instant_adversarial_purification_with_adversarial_consistency_distillation.md)
-- [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](stable_velocity_a_variance_perspective_on_flow_matching.md)
-- [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
 
 </div>
 

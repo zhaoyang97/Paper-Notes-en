@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One-Step Flow for Image Super-Resolution with Tunable Fidelity-Realism Trade-offs
 description: >-
-  [ICLR 2026][Image Restoration][rectified flow] OFTSR distills a noise-augmented conditional rectified flow teacher into a one-step student model, requiring the student's predictions at various time points $t$ to fall on the same PF-ODE trajectory of the teacher. This allows the model to continuously slide between fidelity and realism by adjusting a single parameter
+  [ICLR2026][Image Restoration][One-step SR] OFTSR distills a noise-augmented conditional rectified flow teacher into a one-step student model, requiring the student's predictions at various time points $t$ to fall on the same PF-ODE trajectory of the teacher. This allows the model to continuously slide between fidelity and realism by adjusting a single parameter $t$ in a **single forward pass**, achieving SOTA one-step SR performance on FFHQ, DIV2K, ImageNet…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - rectified flow
+  - "ICLR2026"
+  - "Image Restoration"
+  - "One-step SR"
+  - "rectified flow"
+  - "diffusion distillation"
+  - "perception-distortion trade-off"
+  - "noise augmentation"
 date: 2026-05-08
-content_hash: fcb0df579acb3646
+content_hash: 82f240673fb1fbeb
 ---
+
 # One-Step Flow for Image Super-Resolution with Tunable Fidelity-Realism Trade-offs
 
 **Conference**: ICLR2026  
@@ -135,9 +140,9 @@ Key takeaway: One-step LPIPS/FID at $t=1$ generally outperforms training-free me
 
 - [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](../../CVPR2026/image_restoration/ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
 - [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](soflow_solution_flow_models_for_one-step_generative_modeling.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](../../CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
 - [\[ICML 2026\] One-Step Residual Shifting Diffusion for Image Super-Resolution via Distillation](../../ICML2026/image_restoration/one-step_residual_shifting_diffusion_for_image_super-resolution_via_distillation.md)
 - [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
+- [\[ICLR 2026\] SeedVR2: One-Step Video Restoration via Diffusion Adversarial Post-Training](seedvr2_one-step_video_restoration_via_diffusion_adversarial_post-training.md)
 
 </div>
 

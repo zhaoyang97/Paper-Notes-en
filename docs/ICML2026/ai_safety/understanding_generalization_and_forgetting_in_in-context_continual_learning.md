@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 理解上下文连续学习中的泛化与遗忘
+  [Paper Note] Understanding Generalization and Forgetting in In-Context Continual Learning
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Establishes the first theoretical framework for In-Context Continual Learning (ICCL)—revealing that attention mechanisms inevitably produce systematic bias and task interference when processing multi-task sequences, leading to task-order-dependent degradation in generalization and memory.
+  [ICML 2026][AI Safety][In-context learning] Establishes the first theoretical framework for In-Context Continual Learning (ICCL)—revealing that attention mechanisms inevitably produce systematic bias and task interference when processing multi-task sequences, leading to task-order-dependent degradation in generalization and memory.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "In-context learning"
+  - "continual learning"
+  - "forgetting"
+  - "task interference"
+  - "Transformer theory"
 date: 2026-05-08
-content_hash: 6716e1fdfa8369e7
+content_hash: e16fe79fa1b30d6d
 ---
+
 # Understanding Generalization and Forgetting in In-Context Continual Learning
 
 **Conference**: ICML 2026  
@@ -99,11 +105,11 @@ Forgetting in this framework is not parameter overwriting but the recalibration 
 
 ## Related Papers
 
-- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
-- [\[ICML 2026\] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why](deep_sequence_models_tend_to_memorize_geometrically_it_is_unclear_why.md)
-- [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
-- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
+- [\[ICML 2026\] FoeGlass: Simple In-Context Learning Is Enough for Red Teaming Audio Deepfake Detectors](foeglass_simple_in-context_learning_is_enough_for_red_teaming_audio_deepfake_det.md)
+- [\[ICML 2026\] Active Continual Learning with Metaplastic Binary Bayesian Neural Networks](active_continual_learning_with_metaplastic_binary_bayesian_neural_networks.md)
+- [\[ICML 2026\] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks](robust_in-context_reinforcement_learning_under_reward_poisoning_attacks.md)
+- [\[ICML 2026\] Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
+- [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Reasoning] This paper systematically identifies the "visual thinking drift" phenomenon in which CoT reasoning frequently degrades performance in video understanding…
+  [NeurIPS 2025][Video Understanding][Video Reasoning] This paper systematically identifies the "visual thinking drift" phenomenon in which CoT reasoning frequently degrades performance in video understanding, and proposes the Visual Evidence Reward (VER) reinforcement learning framework that corrects this problem by explicitly rewarding reasoning chains grounded in visual evidence.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "Visual Evidence Reward"
 date: 2026-05-08
-content_hash: b5ef29011df4a6a6
+content_hash: 166b8ae73a9e5737
 ---
 
 # When Thinking Drifts: Evidential Grounding for Robust Video Reasoning
@@ -162,10 +162,10 @@ Video-VER ranks first on 9 of 10 benchmarks, achieving an average improvement of
 ## Related Papers
 
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](../../ICCV2025/video_understanding/vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
-- [\[CVPR 2026\] VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](../../CVPR2026/video_understanding/videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)
-- [\[NeurIPS 2025\] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition](grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog.md)
+- [\[ACL 2025\] RAVEN: Robust Advertisement Video Violation Temporal Grounding via Reinforcement Reasoning](../../ACL2025/video_understanding/raven_robust_advertisement_video_violation_temporal_grounding_via_reinforcement_.md)
 - [\[ICCV 2025\] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding](../../ICCV2025/video_understanding/towards_video_thinking_test_a_holistic_benchmark_for_advanced_video_reasoning_an.md)
 - [\[NeurIPS 2025\] Video Finetuning Improves Reasoning Between Frames](video_finetuning_improves_reasoning_between_frames.md)
+- [\[NeurIPS 2025\] When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions](when_one_moment_isnt_enough_multi-moment_retrieval_with_cross-moment_interaction.md)
 
 </div>
 

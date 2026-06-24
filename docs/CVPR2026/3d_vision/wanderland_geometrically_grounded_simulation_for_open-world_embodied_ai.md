@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI
 description: >-
-  [CVPR 2026][3D Vision][real-to-sim] This paper introduces the Wanderland real-to-sim framework, which utilizes handheld multi-sensor scanners (LiDAR+IMU+RGB) to capture open-world indoor and outdoor scenes. By employing LIV-SLAM to obtain metric-grade precise geometry and camera poses, combined with 3DGS for photorealistic rendering and geometrically gro
+  [CVPR 2026][3D Vision][real-to-sim] This paper introduces the Wanderland real-to-sim framework, which utilizes handheld multi-sensor scanners (LiDAR+IMU+RGB) to capture open-world indoor and outdoor scenes. By employing LIV-SLAM to obtain metric-grade precise geometry and camera poses, combined with 3DGS for photorealistic rendering and geometrically grounded collision simulation, the authors construct a large-scale dataset of 530 scenes, 420,000 frames…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - real-to-sim
-  - 3D Gaussian Splatting
-  - LiDAR-Inertial-Visual SLAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "real-to-sim"
+  - "3D Gaussian Splatting"
+  - "LiDAR-Inertial-Visual SLAM"
+  - "navigation simulation"
+  - "geometric grounding"
+  - "novel view synthesis"
 date: 2026-05-08
-content_hash: c17adf33ef34c66e
+content_hash: 12ceba1048c16564
 ---
+
 # Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI
 
 **Conference**: CVPR 2026  
@@ -143,10 +147,20 @@ Novel View Synthesis quality was evaluated on the Wanderland dataset:
 3. **Metric Benchmark for Scene Understanding**: Wanderland's multi-sensor data is ideal for evaluating the latest feed-forward 3D reconstruction models (e.g., DUSt3R), potentially serving as a GT benchmark beyond just navigation simulation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI](sage_scalable_agentic_3d_scene_generation_for_embodied_ai.md)
+- [\[CVPR 2026\] P3Sim: Perceptual 3D Simulation with Physical World Modeling](perceptual_3d_simulation_with_physical_world_modeling.md)
+- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
+- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SAGE: Scalable Agentic 3D Scene Generation for Embodied AI](sage_scalable_agentic_3d_scene_generation_for_embodied_ai.md)

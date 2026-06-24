@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes that "weak derivative correlations" are the fundamental criterion for parameter-space linearization in gradient-based learning systems. As long as the correlation between first-order and higher-order derivatives at initialization decays with width, the training dynamics will approach the Neural Tang
+  [ICLR2026][Learning Theory][Weak Derivative Correlation] This paper proposes that "weak derivative correlations" are the fundamental criterion for parameter-space linearization in gradient-based learning systems. As long as the correlation between first-order and higher-order derivatives at initialization decays with width, the training dynamics will approach the Neural Tangent Kernel (NTK) linear model. Furthermore, this deviation can be bounded by a width-dependent upper li…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Training Dynamics"
+  - "Weak Derivative Correlation"
+  - "NTK Linearization"
+  - "Random Tensor Asymptotics"
+  - "Wide Neural Networks"
+  - "SGD Dynamics"
 date: 2026-05-08
-content_hash: 47f18b7eeb61d142
+content_hash: 0c725f20809807b5
 ---
+
 # Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems
 
 **Conference**: ICLR2026  
@@ -169,8 +176,8 @@ The paper does not have a traditional ablation of "removing module A/B." Instead
 ## Related Papers
 
 - [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
-- [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](a_new_approach_to_controlling_linear_dynamical_systems.md)
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
+- [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](a_new_approach_to_controlling_linear_dynamical_systems.md)
 - [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 - [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
 

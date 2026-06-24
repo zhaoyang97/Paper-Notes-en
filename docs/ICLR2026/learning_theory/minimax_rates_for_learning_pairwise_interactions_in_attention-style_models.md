@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Minimax Rates for Learning Pairwise Interactions in Attention-Style Models
 description: >-
-  [ICLR 2026][learning_theory][Attention] This paper models single-layer attention as an inverse problem for Interacting Particle Systems (IPS). It proves that the minimax rate for learning the pairwise interaction function $g^\star(x,y)=\phi^\star(x^\top A^\star y)$ from aggregated outputs is $M^{-\frac{2\beta}{2\beta+1}}$. Under low-rank conditions, this rat
+  [ICLR 2026][learning_theory][Attention Mechanism] This paper models single-layer attention as an inverse problem for Interacting Particle Systems (IPS). It proves that the minimax rate for learning the pairwise interaction function $g^\star(x,y)=\phi^\star(x^\top A^\star y)$ from aggregated outputs is $M^{-\frac{2\beta}{2\beta+1}}$. Under low-rank conditions, this rate is independent of the embedding dimension $d$, the number of tokens $N$, and the matrix rank $r$…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Attention
+  - "ICLR 2026"
+  - "learning_theory"
+  - "Attention Mechanism"
+  - "Minimax Rates"
+  - "Non-parametric Estimation"
+  - "Interacting Particle Systems"
+  - "Sample Complexity"
+  - "Curse of Dimensionality"
 date: 2026-05-08
-content_hash: 8f14e06562f81655
+content_hash: 28712c81ef7634ab
 ---
+
 # Minimax Rates for Learning Pairwise Interactions in Attention-Style Models
 
 **Conference**: ICLR 2026  
@@ -110,11 +116,11 @@ The authors used B-splines to represent the ground truth activation $\phi^\star$
 
 ## Related Papers
 
-- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
 - [\[ICLR 2026\] Score-Based Density Estimation from Pairwise Comparisons](score-based_density_estimation_from_pairwise_comparisons.md)
 - [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
-- [\[ICLR 2026\] Learning Correlated Reward Models: Statistical Barriers and Opportunities](learning_correlated_reward_models_statistical_barriers_and_opportunities.md)
+- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
+- [\[ICLR 2026\] Subquadratic Algorithms and Hardness for Attention with Any Temperature](subquadratic_algorithms_and_hardness_for_attention_with_any_temperature.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Domain-Skewed Federated Learning with Feature Decoupling and Calibration
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Ours proposes the F²DC framework, which separates local features of clients in federated learning into domain-robust and domain-related features using a Domain Feature Decoupler (DFD) and a Domain Feature Corrector (DFC). By calibrating domain-related features to rescue discarded category information and employing a Do
+  [CVPR 2026][AI Safety][Federated Learning] Ours proposes the F²DC framework, which separates local features of clients in federated learning into domain-robust and domain-related features using a Domain Feature Decoupler (DFD) and a Domain Feature Corrector (DFC). By calibrating domain-related features to rescue discarded category information and employing a Domain-Aware Aggregation strategy, the method consistently outperforms SOTA on three multi-domain datasets.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Domain Skew"
+  - "Feature Decoupling"
+  - "Domain-Aware Aggregation"
+  - "Representation Calibration"
 date: 2026-05-08
-content_hash: 5ddf31eaebd2cda6
+content_hash: ab3abbced617532a
 ---
+
 # Domain-Skewed Federated Learning with Feature Decoupling and Calibration
 
 **Conference**: CVPR 2026  
@@ -151,9 +157,9 @@ Ours consistently outperforms all 9 baseline methods (FedAvg/FedProx/MOON/FPL/Fe
 
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
 - [\[CVPR 2025\] A Simple Data Augmentation for Feature Distribution Skewed Federated Learning](../../CVPR2025/ai_safety/a_simple_data_augmentation_for_feature_distribution_skewed_federated_learning.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
 - [\[CVPR 2026\] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning](proxyfl_a_proxy-guided_framework_for_federated_semi-supervised_learning.md)
 - [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
+- [\[CVPR 2026\] FedMOP: Achieving Enhanced Privacy and Performance in Federated Learning via Momentum Orthogonal Projection](fedmop_achieving_enhanced_privacy_and_performance_in_federated_learning_via_mome.md)
 
 </div>
 

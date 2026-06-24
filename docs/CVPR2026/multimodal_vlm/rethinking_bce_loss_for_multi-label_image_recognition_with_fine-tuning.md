@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning
 description: >-
-  [CVPR 2026][Others][Paper Note] The authors find that fine-tuning CLIP with BCE for multi-label recognition systematically disrupts the semantic geometry of text embeddings, leading to a breakdown in calibration (under-confidence in base classes and over-confidence in new classes). They propose **Class-wise Covariance Regularization (CCR)**—which use
+  [CVPR 2026][Multimodal VLM][CLIP Fine-tuning] The authors find that fine-tuning CLIP with BCE for multi-label recognition systematically disrupts the semantic geometry of text embeddings, leading to a breakdown in calibration (under-confidence in base classes and over-confidence in new classes). They propose **Class-wise Covariance Regularization (CCR)**—which uses predicted covariance estimated from "jointly inactive class pairs" within a batch to align with the text semanti…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP Fine-tuning"
+  - "Multi-Label Recognition"
+  - "BCE Loss"
+  - "Confidence Calibration"
+  - "Covariance Regularization"
 date: 2026-05-08
-content_hash: 0cfc2a1a7608f4b3
+content_hash: 0c682e5e9e93797c
 ---
+
 # Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ CCR consistently reduces ECE and slightly increases accuracy on both the source 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
-- [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
-- [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
+- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
+- [\[CVPR 2026\] Phrase-Grounding-Aware Supervised Fine-Tuning for Chart Recognition via Side-Masked Attention](phrase-grounding-aware_supervised_fine-tuning_for_chart_recognition_via_side-mas.md)
+- [\[CVPR 2026\] TANGO: Text-Anchored Guided Optimization for Robust Fine-tuning Vision-Language Models under Label Noise](tango_text-anchored_guided_optimization_for_robust_fine-tuning_vision-language_m.md)
+- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
 
 </div>
 

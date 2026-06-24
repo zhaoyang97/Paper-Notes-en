@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery
 description: >-
-  [NeurIPS 2025][Computational Biology][single-cell RNA-seq] This work proposes the scPilot framework and scBench benchmark, enabling LLMs to perform "omics-native reasoning" (ONR) directly on single-cell RNA-seq data—read…
+  [NeurIPS 2025][Computational Biology][single-cell RNA-seq] This work proposes the scPilot framework and scBench benchmark, enabling LLMs to perform "omics-native reasoning" (ONR) directly on single-cell RNA-seq data—reading marker genes, forming hypotheses, invoking tools for verification, and iteratively refining conclusions—achieving an 11% improvement in cell-type annotation accuracy and a 30% reduction in trajectory inference graph-edit distance.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "cell-type annotation"
   - "trajectory inference"
 date: 2026-05-08
-content_hash: fb7930d6219dd422
+content_hash: ef7bfaa2835d9cf3
 ---
 
 # scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery
@@ -124,10 +124,10 @@ scPilot is a training-free framework that does not fine-tune LLMs. All reasoning
 ## Related Papers
 
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
-- [\[NeurIPS 2025\] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)
 - [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
-- [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)
-- [\[NeurIPS 2025\] Benchmarking Agentic Systems in Automated Scientific Information Extraction with ChemX](benchmarking_agentic_systems_in_automated_scientific_information_extraction_with.md)
+- [\[NeurIPS 2025\] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)
+- [\[ICLR 2026\] SC-Arena: A Natural Language Benchmark and Knowledge-Enhanced Evaluation for Single-Cell Reasoning](../../ICLR2026/computational_biology/sc-arena_a_natural_language_benchmark_for_single-cell_reasoning_with_knowledge-a.md)
+- [\[ACL 2025\] A Survey on Foundation Language Models for Single-cell Biology](../../ACL2025/computational_biology/foundation_lm_single_cell_survey.md)
 
 </div>
 

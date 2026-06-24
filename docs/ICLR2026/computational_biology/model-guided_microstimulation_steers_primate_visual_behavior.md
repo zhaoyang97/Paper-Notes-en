@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Model-Guided Microstimulation Steers Primate Visual Behavior
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] A topographic deep visual model is used to rehearse microstimulation experiments "in silico," identifying stimulation sites and images most likely to alter behavior. These predictions were then validated in the inferior temporal (IT) cortex of live macaques. The results show a significant correlation between model-pred
+  [ICLR 2026][Computational Biology][Topographic Deep Neural Networks] A topographic deep visual model is used to rehearse microstimulation experiments "in silico," identifying stimulation sites and images most likely to alter behavior. These predictions were then validated in the inferior temporal (IT) cortex of live macaques. The results show a significant correlation between model-predicted behavioral shifts and the monkeys' actual choices, achieving the first model-in-the-l…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Topographic Deep Neural Networks"
+  - "Microstimulation"
+  - "Visual Prosthesis"
+  - "High-level Visual Cortex"
+  - "Causal Intervention"
+  - "Primate Behavior"
 date: 2026-05-08
-content_hash: 1b726d8223e9c45e
+content_hash: 6b834487d6165efd
 ---
+
 # Model-Guided Microstimulation Steers Primate Visual Behavior
 
 **Conference**: ICLR 2026  
@@ -125,11 +132,11 @@ Exp 2 proved that parameters selected by the model could indeed induce **reliabl
 
 ## Related Papers
 
-- [\[ICLR 2026\] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion](uncovering_semantic_selectivity_of_latent_groups_in_higher_visual_cortex_with_mu.md)
 - [\[ICLR 2026\] MindPilot: Closed-loop Visual Stimulation Optimization for Brain Modulation with EEG-guided Diffusion](mindpilot_closed-loop_visual_stimulation_optimization_for_brain_modulation_with_.md)
+- [\[ICLR 2026\] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion](uncovering_semantic_selectivity_of_latent_groups_in_higher_visual_cortex_with_mu.md)
 - [\[ICLR 2026\] Learning Brain Representation with Hierarchical Visual Embeddings](learning_brain_representation_with_hierarchical_visual_embeddings.md)
+- [\[ICLR 2026\] A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex](a_tale_of_two_tails_preferred_and_anti-preferred_natural_stimuli_in_visual_corte.md)
 - [\[CVPR 2025\] Synthetic Visual Genome](../../CVPR2025/computational_biology/synthetic_visual_genome.md)
-- [\[CVPR 2026\] CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis](../../CVPR2026/computational_biology/care_a_molecular-guided_foundation_model_with_adaptive_region_modeling_for_whole.md)
 
 </div>
 

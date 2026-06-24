@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gistify: Codebase-Level Understanding via Runtime Execution
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] The GISTIFY task is proposed—requiring programming agents to compress the functionality of a specific command across an entire codebase into a **single-file, self-contained, minimal, and faithful reproduction of runtime behavior**. This task rigorously evaluates a model's understanding of codebase structure and executi
+  [ICLR 2026][Code Intelligence][Codebase-level understanding] The GISTIFY task is proposed—requiring programming agents to compress the functionality of a specific command across an entire codebase into a **single-file, self-contained, minimal, and faithful reproduction of runtime behavior**. This task rigorously evaluates a model's understanding of codebase structure and execution flow, revealing that current SOTA models frequently fail on long execution trajectories.
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Codebase-level understanding"
+  - "Runtime execution"
+  - "Programming agents"
+  - "Automated evaluation"
+  - "Minimal reproducible file"
 date: 2026-05-08
-content_hash: 53f6f077c75f066f
+content_hash: 50a38aff4dc169cc
 ---
+
 # Gistify: Codebase-Level Understanding via Runtime Execution
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ SWE-Agent + Claude-4, 50 tests from pylint, analyzing different strategies/tools
 
 ## Related Papers
 
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
 - [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](../../ACL2026/code_intelligence/can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
 - [\[ICLR 2026\] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
 - [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](swe-rm_execution-free_feedback_for_software_engineering_agents.md)
-- [\[ICLR 2026\] Process-Level Trajectory Evaluation for Environment Configuration in Software Engineering Agents](process-level_trajectory_evaluation_for_environment_configuration_in_software_en.md)
-- [\[ICML 2026\] Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation](../../ICML2026/code_intelligence/bridging_functional_correctness_and_runtime_efficiency_gaps_in_llm-based_code_tr.md)
 
 </div>
 

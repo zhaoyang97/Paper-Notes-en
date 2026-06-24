@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Thermal-Det utilizes "RGB-to-Thermal" translation to synthesize million-scale thermal data with text annotations for pre-training. It then employs a frozen RGB open-vocabulary detector as a teacher, transferring open-vocabulary capabilities to a thermal student through triple-path distillation (box/semantics/confidence
+  [CVPR 2026][Object Detection][Thermal Infrared Detection] Thermal-Det utilizes "RGB-to-Thermal" translation to synthesize million-scale thermal data with text annotations for pre-training. It then employs a frozen RGB open-vocabulary detector as a teacher, transferring open-vocabulary capabilities to a thermal student through triple-path distillation (box/semantics/confidence). By combining a Thermal Text Alignment Head (TTAH) and thermal LLM caption supervision to calibrate…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Thermal Infrared Detection"
+  - "Open-Vocabulary"
+  - "Cross-Modal Distillation"
+  - "Zero-Shot"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: de4eef975349ca94
+content_hash: a1de65c757149370
 ---
+
 # Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection
 
 **Conference**: CVPR 2026  
@@ -146,15 +152,13 @@ The framework consistently improves performance across 7 benchmarks by 2–4% AP
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
 - [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
+- [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
 - [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](../../AAAI2026/object_detection/vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
 - [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
-- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
+- [\[CVPR 2026\] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)
 
 </div>
 

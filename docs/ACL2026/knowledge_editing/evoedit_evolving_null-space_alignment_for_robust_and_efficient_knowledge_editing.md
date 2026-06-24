@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing
 description: >-
-  [ACL 2026][Knowledge Editing][Paper Note] Ours proposes EvoEdit, which achieves large-scale sequential knowledge editing by dynamically evolving a null-space projector. It efficiently injects new knowledge while maintaining existing knowledge, preserving SOTA performance at the 10K editing scale and running 3.5x faster than AlphaEdit.
+  [ACL 2026 Findings][Knowledge Editing][Null-space Projection] Ours proposes EvoEdit, which achieves large-scale sequential knowledge editing by dynamically evolving a null-space projector. It efficiently injects new knowledge while maintaining existing knowledge, preserving SOTA performance at the 10K editing scale and running 3.5x faster than AlphaEdit.
 tags:
-  - ACL 2026
-  - Knowledge Editing
+  - "ACL 2026 Findings"
+  - "Knowledge Editing"
+  - "Null-space Projection"
+  - "Sequential Editing"
+  - "Large Language Models"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: d7c150815aae415e
+content_hash: 34afdf3c412fd8fa
 ---
+
 # EvoEdit: Evolving Null-space Alignment for Robust and Efficient Knowledge Editing
 
 **Conference**: ACL 2026 Findings  
@@ -146,8 +151,8 @@ GPU Memory (1000 edits, Llama-3-8B):
 - [\[ACL 2025\] Mitigating Negative Interference in Multilingual Sequential Knowledge Editing through Null-Space Constraints](../../ACL2025/knowledge_editing/mitigating_negative_interference_in_multilingual_sequential_knowledge_editing_th.md)
 - [\[ICLR 2026\] EAMET: Robust Massive Model Editing via Embedding Alignment Optimization](../../ICLR2026/knowledge_editing/eamet_robust_massive_model_editing_via_embedding_alignment_optimization.md)
 - [\[ICLR 2026\] When Large Multimodal Models Confront Evolving Knowledge: Challenges and Explorations](../../ICLR2026/knowledge_editing/when_large_multimodal_models_confront_evolving_knowledge_challenges_and_explorat.md)
-- [\[ACL 2025\] Efficient Knowledge Editing via Minimal Precomputation](../../ACL2025/knowledge_editing/efficient_knowledge_editing.md)
-- [\[ICML 2026\] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls](../../ICML2026/knowledge_editing/kore_enhancing_knowledge_injection_for_large_multimodal_models_via_knowledge-ori.md)
+- [\[ICLR 2026\] MobiEdit: Resource-efficient Knowledge Editing for Personalized On-device LLMs](../../ICLR2026/knowledge_editing/mobiedit_resource-efficient_knowledge_editing_for_personalized_on-device_llms.md)
+- [\[ICLR 2026\] MoEEdit: Efficient and Routing-Stable Knowledge Editing for Mixture-of-Experts LLMs](../../ICLR2026/knowledge_editing/moeedit_efficient_and_routing-stable_knowledge_editing_for_mixture-of-experts_ll.md)
 
 </div>
 

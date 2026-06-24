@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Skipping the Zeros in Diffusion Models for Sparse Data Generation
 description: >-
-  [ICML 2026][Image Generation][Paper Note] SED transforms diffusion models from "full dense denoising across all dimensions" to "diffusion only on non-zero dimensions + autoregressive decoding of dimension-value pairs," making the computational cost nearly constant relative to the number of non-zeros instead of linear with dimension, while strictly preserving t
+  [ICML 2026][Image Generation][Sparse Diffusion] SED transforms diffusion models from "full dense denoising across all dimensions" to "diffusion only on non-zero dimensions + autoregressive decoding of dimension-value pairs," making the computational cost nearly constant relative to the number of non-zeros instead of linear with dimension, while strictly preserving the semantic information of "explicit zeros" in scientific data.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Sparse Diffusion"
+  - "Latent Diffusion"
+  - "Autoregressive Decoding"
+  - "Single-cell Sequencing"
+  - "Calorimeter Images"
 date: 2026-05-08
-content_hash: f624c803f138caa3
+content_hash: d37f31ce1b82d34d
 ---
+
 # Skipping the Zeros in Diffusion Models for Sparse Data Generation
 
 **Conference**: ICML 2026  
@@ -142,7 +148,7 @@ Covering three domains and six datasets: **Physics**—muon signal/background ca
 - [\[CVPR 2026\] Guiding Token-Sparse Diffusion Models](../../CVPR2026/image_generation/guiding_token-sparse_diffusion_models.md)
 - [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
 - [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](../../ICCV2025/image_generation/less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
-- [\[ICML 2026\] When Preference Labels Fall Short: Aligning Diffusion Models from Real Data](when_preference_labels_fall_short_aligning_diffusion_models_from_real_data.md)
+- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
 
 </div>
 

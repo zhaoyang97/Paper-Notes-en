@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The False Promise of Zero-Shot Super-Resolution in Machine-Learned Operators
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper systematically refutes the promise of "zero-shot super-resolution" for Machine-Learned Operators (MLOs) such as the Fourier Neural Operator (FNO). By decomposing multi-resolution inference into two sub-capabilities—"resolution interpolation" and "frequency information extrapolation"—the authors find that FNO
+  [ICLR 2026][Physics & Scientific Computing][Fourier Neural Operator] This paper systematically refutes the promise of "zero-shot super-resolution" for Machine-Learned Operators (MLOs) such as the Fourier Neural Operator (FNO). By decomposing multi-resolution inference into two sub-capabilities—"resolution interpolation" and "frequency information extrapolation"—the authors find that FNO fails at both and exhibits severe aliasing. Neither physical constraints nor band-limited…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Fourier Neural Operator"
+  - "Zero-Shot Super-Resolution"
+  - "Aliasing"
+  - "Multi-resolution Inference"
+  - "PDE Solver Operators"
 date: 2026-05-08
-content_hash: f918aff9d12cc47d
+content_hash: 065f3af4cbb48e64
 ---
+
 # The False Promise of Zero-Shot Super-Resolution in Machine-Learned Operators
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ Datasets: Darcy (steady-state diffusion), Burgers (1D wave), Navier-Stokes (time
 ## Related Papers
 
 - [\[ICML 2025\] Maximal Update Parametrization and Zero-Shot Hyperparameter Transfer for Fourier Neural Operators](../../ICML2025/physics/maximal_update_parametrization_and_zero-shot_hyperparameter_transfer_for_fourier.md)
-- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
-- [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
-- [\[ICLR 2026\] Tucker-FNO: Tensor Tucker-Fourier Neural Operator and its Universal Approximation Theory](tucker-fno_tensor_tucker-fourier_neural_operator_and_its_universal_approximation.md)
-- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
+- [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
+- [\[ICML 2026\] Iterative Refinement Neural Operators are Learned Fixed-Point Solvers: A Principled Approach to Spectral Bias Mitigation](../../ICML2026/physics/iterative_refinement_neural_operators_are_learned_fixed-point_solvers_a_principl.md)
+- [\[ICLR 2026\] Generalized Spherical Neural Operators: Green's Function Formulation](generalized_spherical_neural_operators_greens_function_formulation.md)
+- [\[ICLR 2026\] Extending Fourier Neural Operators for Modeling Parameterized and Coupled PDEs](extending_fourier_neural_operators_for_modeling_parameterized_and_coupled_pdes.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models
 description: >-
-  [NeurIPS 2025][Hallucination Detection][hallucination] This paper systematically audits the generation and propagation mechanisms of hallucinations in reasoning large language models (RLLMs)…
+  [NeurIPS 2025][Hallucination Detection][hallucination] This paper systematically audits the generation and propagation mechanisms of hallucinations in reasoning large language models (RLLMs), finding that reflection in long CoT amplifies hallucinations through metacognitive bias rather than correcting them. Even targeted interventions at the hallucination source fail to alter final outputs (chain disloyalty), exposing critical shortcomings of existing hallucination detection…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "metacognition"
   - "reflection"
 date: 2026-05-08
-content_hash: e81bda84e0af4127
+content_hash: d66cc368d91f7486
 ---
 
 # Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models
@@ -135,8 +135,8 @@ This paper is an analytical study and does not involve model training. DeepSeek-
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[NeurIPS 2025\] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models](seeing_is_believing_mitigating_ocr_hallucinations_in_multimodal_large_language_m.md)
 - [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
-- [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
 - [\[NeurIPS 2025\] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers](generalization_or_hallucination_understanding_out-of-context_reasoning_in_transf.md)
+- [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
 
 </div>
 

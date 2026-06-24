@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][MM-DeceptionBench] The authors constructed the first multimodal benchmark for MLLM deceptive behavior, MM-DeceptionBench (6 categories, 1013 real cases), and proposed the "Debate with Images" framework. In this framework, two MLLM agents are forced to use visual operations for evidence retrieval from the original image during multi-round
+  [ICML 2026][Multimodal VLM][Multimodal Deception] The authors constructed the first multimodal benchmark for MLLM deceptive behavior, MM-DeceptionBench (6 categories, 1013 real cases), and proposed the "Debate with Images" framework. In this framework, two MLLM agents are forced to use visual operations for evidence retrieval from the original image during multi-round debates, followed by a judge's determination. This improves Cohen's kappa consistency with humans by up to 1.…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MM-DeceptionBench
-  - MLLM-as-a-judge
-  - Cohen's kappa
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Multimodal Deception"
+  - "MM-DeceptionBench"
+  - "Visual Debate"
+  - "MLLM-as-a-judge"
+  - "Cohen's kappa"
 date: 2026-05-08
-content_hash: d3093ec40c735395
+content_hash: 82c750b3b9d4bda7
 ---
+
 # Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models
 
 **Conference**: ICML 2026  

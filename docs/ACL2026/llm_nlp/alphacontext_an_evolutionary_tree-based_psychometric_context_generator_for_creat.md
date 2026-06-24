@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment
 description: >-
-  [ACL 2026][LLM (Other)][MAP-Elites] AlphaContext is proposed as an evolutionary tree-based psychometric context generator. Through four modules—HyperTree outline planning, MCTS sentence-by-sentence generation, MAP-Elites diversity optimization, and assessment-guided iterative refinement—it automatically generates high-quality long-text contexts for creat
+  [ACL 2026][LLM (Other)][Creativity assessment] AlphaContext is proposed as an evolutionary tree-based psychometric context generator. Through four modules—HyperTree outline planning, MCTS sentence-by-sentence generation, MAP-Elites diversity optimization, and assessment-guided iterative refinement—it automatically generates high-quality long-text contexts for creativity assessment, outperforming baseline methods by an average of 8% across seven evaluation dimensions.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - MAP-Elites
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Creativity assessment"
+  - "psychometrics"
+  - "evolutionary algorithms"
+  - "MCTS text generation"
+  - "MAP-Elites"
 date: 2026-05-08
-content_hash: 5389e7000a9993d3
+content_hash: f31864d9504b3c7e
 ---
+
 # AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment
 
 **Conference**: ACL 2026  
@@ -130,15 +135,15 @@ AlphaContext is an unsupervised search framework and does not utilize a traditio
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
 - [\[ICLR 2026\] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](../../ICLR2026/llm_nlp/llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)
+- [\[ACL 2025\] Evaluating Implicit Bias in Large Language Models by Attacking from a Psychometric Perspective](../../ACL2025/llm_nlp/evaluating_implicit_bias_in_large_language_models_by_attacking_from_a_psychometr.md)
 - [\[ACL 2026\] Text-to-Distribution Prediction with Quantile Tokens and Neighbor Context](text-to-distribution_prediction_with_quantile_tokens_and_neighbor_context.md)
 - [\[ICLR 2026\] Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator](../../ICLR2026/llm_nlp/evaluating_text_creativity_across_diverse_domains_a_dataset_and_large_language_m.md)
-- [\[ICLR 2026\] In-Context Algebra](../../ICLR2026/llm_nlp/in-context_algebra.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Evolutionary Negative Module Pruning for Better LoRA Merging
 description: >-
-  [ACL 2026][Model Compression][CMA-ES] The ENMP method is proposed to discover and prune "negative modules" that degrade performance during LoRA merging through an evolutionary search strategy. As a plug-and-play enhancement, it comprehensively improves the performance of existing merging algorithms in both NLP and vision domains.
+  [ACL 2026][Model Compression][LoRA Merging] The ENMP method is proposed to discover and prune "negative modules" that degrade performance during LoRA merging through an evolutionary search strategy. As a plug-and-play enhancement, it comprehensively improves the performance of existing merging algorithms in both NLP and vision domains.
 tags:
-  - ACL 2026
-  - Model Compression
-  - CMA-ES
+  - "ACL 2026"
+  - "Model Compression"
+  - "LoRA Merging"
+  - "Negative Module Pruning"
+  - "Evolutionary Search"
+  - "Multi-task Deployment"
+  - "CMA-ES"
 date: 2026-05-08
-content_hash: f55f3de5b8ef8218
+content_hash: 2d20e7d2fb57c528
 ---
+
 # Evolutionary Negative Module Pruning for Better LoRA Merging
 
 **Conference**: ACL 2026  
@@ -140,8 +145,8 @@ The evolutionary search is a one-time offline calculation. Population size $N_{\
 - [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
 - [\[CVPR 2026\] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy](../../CVPR2026/model_compression/preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire.md)
 - [\[CVPR 2025\] IterIS: Iterative Inference-Solving Alignment for LoRA Merging](../../CVPR2025/model_compression/iteris_iterative_inference-solving_alignment_for_lora_merging.md)
-- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](../../ICLR2026/model_compression/adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
-- [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](../../CVPR2026/model_compression/loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
+- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](../../ICML2026/model_compression/ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
+- [\[ACL 2025\] Unraveling LoRA Interference: Orthogonal Subspaces for Robust Model Merging](../../ACL2025/model_compression/osrm_lora_merging_orthogonal.md)
 
 </div>
 

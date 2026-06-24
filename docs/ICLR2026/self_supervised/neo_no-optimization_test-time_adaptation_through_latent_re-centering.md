@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Test-Time Adaptation] NEO discovers that input distribution shifts cause a global translation in penultimate embeddings shared across samples and classes. By re-centering test features to the origin using a single global centroid vector, it outperforms seven mainstream TTA methods with **zero optimization, zero hyperparameters, and near-zer
+  [ICLR 2026][Self-Supervised Learning][Test-Time Adaptation] NEO discovers that input distribution shifts cause a global translation in penultimate embeddings shared across samples and classes. By re-centering test features to the origin using a single global centroid vector, it outperforms seven mainstream TTA methods with **zero optimization, zero hyperparameters, and near-zero additional overhead**.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Test-Time Adaptation
-  - Neural Collapse
-  - Latent Re-Centering
-  - Distribution Shift
-  - Vision Transformer
-  - Edge Inference
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Test-Time Adaptation"
+  - "Neural Collapse"
+  - "Latent Re-Centering"
+  - "Distribution Shift"
+  - "Vision Transformer"
+  - "Edge Inference"
 date: 2026-05-08
-content_hash: 9543e901dc5facb0
+content_hash: 5b7ec1584b820c4d
 ---
+
 # NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering
 
 **Conference**: ICLR 2026  
@@ -131,9 +132,9 @@ Key Signal: Origin centering (the NEO scheme calculatable under fully TTA) nearl
 
 - [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
 - [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
-- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 - [\[CVPR 2026\] Energy Waveify and Redistribution for Test-Time Adaptation: A Control System Perspective](../../CVPR2026/self_supervised/energy_waveify_and_redistribution_for_test-time_adaptation_a_control_system_pers.md)
 - [\[ICLR 2026\] Bayesian Test-Time Adaptation via Dirichlet feature projection and GMM-Driven Inference for Motor Imagery EEG Decoding](bayesian_test-time_adaptation_via_dirichlet_feature_projection_and_gmm-driven_in.md)
+- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 
 </div>
 

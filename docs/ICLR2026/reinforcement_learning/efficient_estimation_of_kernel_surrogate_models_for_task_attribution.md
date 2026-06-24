@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient Estimation of Kernel Surrogate Models for Task Attribution
 description: >-
-  [ICLR 2026][Reinforcement Learning][task attribution] This work proposes Kernel Surrogate Models (KernelSM) for task attribution, utilizing RBF kernel ridge regression to capture non-linear interaction effects between tasks. Combined with an efficient estimation algorithm via gradient projection to avoid redundant training, it achieves a 25% correlation improvement over l
+  [ICLR 2026][Reinforcement Learning][task attribution] This work proposes Kernel Surrogate Models (KernelSM) for task attribution, utilizing RBF kernel ridge regression to capture non-linear interaction effects between tasks. Combined with an efficient estimation algorithm via gradient projection to avoid redundant training, it achieves a 25% correlation improvement over linear surrogate and influence function baselines in scenarios such as mathematical reasoning…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - task attribution
-  - kernel surrogate model
-  - influence function
-  - data attribution
-  - kernel ridge regression
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "task attribution"
+  - "kernel surrogate model"
+  - "influence function"
+  - "data attribution"
+  - "kernel ridge regression"
 date: 2026-05-08
-content_hash: d73cd75cb6c313a3
+content_hash: d71e3e35fc1467e2
 ---
+
 # Efficient Estimation of Kernel Surrogate Models for Task Attribution
 
 **Conference**: ICLR 2026  
@@ -140,7 +141,7 @@ KernelSM improves correlation by approximately 25% over linear baselines (compar
 - [\[ICLR 2026\] One Model for All Tasks: Leveraging Efficient World Models in Multi-Task Planning](one_model_for_all_tasks_leveraging_efficient_world_models_in_multi-task_planning.md)
 - [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
 - [\[ICLR 2026\] Policy Newton Algorithm in Reproducing Kernel Hilbert Space](policy_newton_algorithm_in_reproducing_kernel_hilbert_space.md)
-- [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](optimistic_task_inference_behavior_models.md)
+- [\[ICLR 2026\] Mixture-of-World Models: Scaling Multi-Task Reinforcement Learning with Modular Latent Dynamics](mixture-of-world_models_scaling_multi-task_reinforcement_learning_with_modular_l.md)
 
 </div>
 

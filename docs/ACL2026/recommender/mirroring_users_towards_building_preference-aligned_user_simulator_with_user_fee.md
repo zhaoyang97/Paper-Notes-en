@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] The authors rewrite "user feedback logs" in recommendation systems into a unified simulation scenario of "User Memory + Exposure List" understandable by LLMs. They then generate explicit chain-of-thought decision processes as "clarifications" using the EKB consumer decision model. Through uncertainty decomposition and
+  [ACL 2026][Recommender Systems][User Simulator] The authors rewrite "user feedback logs" in recommendation systems into a unified simulation scenario of "User Memory + Exposure List" understandable by LLMs. They then generate explicit chain-of-thought decision processes as "clarifications" using the EKB consumer decision model. Through uncertainty decomposition and rejection sampling, 10K high-quality SFT/DPO data points are distilled, allowing a 3B Llama user simulator to ou…
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026"
+  - "Recommender Systems"
+  - "User Simulator"
+  - "Recommendation Systems"
+  - "Uncertainty Decomposition"
+  - "DPO Preference Alignment"
+  - "Decision Process Distillation"
 date: 2026-05-08
-content_hash: 79dd389c3d6ab801
+content_hash: 61195d08c8e0a5af
 ---
+
 # Mirroring Users: Towards Building Preference-aligned User Simulator with User Feedback in Recommendation
 
 **Conference**: ACL 2026  

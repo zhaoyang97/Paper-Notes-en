@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MDiff4STR: Mask Diffusion Model for Scene Text Recognition
 description: >-
-  [AAAI 2026][Image Generation][Scene Text Recognition] This work is the first to introduce Mask Diffusion Models (MDM) into Scene Text Recognition (STR)…
+  [AAAI 2026 Oral][Image Generation][Scene Text Recognition] This work is the first to introduce Mask Diffusion Models (MDM) into Scene Text Recognition (STR), proposing MDiff4STR. It addresses the training-inference noising gap via six training mask strategies and resolves overconfident predictions through a Token Replacement Noise mechanism. With only 3 denoising steps, MDiff4STR surpasses state-of-the-art autoregressive models in accuracy while achieving 3× inference speedup…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Image Generation"
   - "Scene Text Recognition"
   - "Mask Diffusion Model"
@@ -12,7 +12,7 @@ tags:
   - "Token Replacement Noise"
   - "Omnidirectional Language Modeling"
 date: 2026-05-08
-content_hash: ce95e6071f26433c
+content_hash: 5c600017bd8603ad
 ---
 
 # MDiff4STR: Mask Diffusion Model for Scene Text Recognition
@@ -222,11 +222,11 @@ This work establishes a four-paradigm taxonomy of STR methods (CTC / ARM / PDM /
 
 ## Related Papers
 
+- [\[CVPR 2025\] MTADiffusion: Mask Text Alignment Diffusion Model for Object Inpainting](../../CVPR2025/image_generation/mtadiffusion_mask_text_alignment_diffusion_model_for_object_inpainting.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](../../CVPR2026/image_generation/a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[ECCV 2024\] DCDM: Diffusion-Conditioned-Diffusion Model for Scene Text Image Super-Resolution](../../ECCV2024/image_generation/dcdm_diffusion-conditioned-diffusion_model_for_scene_text_image_super-resolution.md)
 - [\[AAAI 2026\] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data](stellar_scene_text_editor_for_low-resource_languages_and_real-world_data.md)
-- [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](../../ICLR2026/image_generation/consistent_text-to-image_generation_via_scene_de-contextualization.md)
-- [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](../../ICCV2025/image_generation/lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
-- [\[ICML 2026\] Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Editing via In-Context Learning](../../ICML2026/image_generation/self-prompting_diffusion_transformer_for_open-vocabulary_scene_text_editing_via_.md)
-- [\[NeurIPS 2025\] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency](../../NeurIPS2025/image_generation/scenedecorator_towards_scene-oriented_story_generation_with_scene_planning_and_s.md)
+- [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
 
 </div>
 

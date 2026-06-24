@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causal Discovery via Quantile Partial Effect
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper utilizes the Quantile Partial Effect (QPE) from conditional quantile regression as a shape statistic of the observed distribution. It establishes identifiability for bivariate causal directions under a finite basis function span assumption and further connects QPE with the score function and Fisher informati
+  [ICLR2026][Causal Inference][Quantile Partial Effect] This paper utilizes the Quantile Partial Effect (QPE) from conditional quantile regression as a shape statistic of the observed distribution. It establishes identifiability for bivariate causal directions under a finite basis function span assumption and further connects QPE with the score function and Fisher information to derive FICO, an efficient non-parametric algorithm for multivariate causal ordering.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Quantile Partial Effect"
+  - "Bivariate Causal Discovery"
+  - "Fisher Information"
+  - "Causal Ordering"
+  - "Observed Distribution"
 date: 2026-05-08
-content_hash: 7d998fd57432e309
+content_hash: 1dbcdae1ad913ff7
 ---
+
 # Causal Discovery via Quantile Partial Effect
 
 **Conference**: ICLR2026  
@@ -162,6 +168,7 @@ Rather than module removal, the ablation focuses on comparing QPE-k/f, hyperpara
 - Value: ⭐⭐⭐⭐⭐ Provides a path from mechanism-based assumptions to testable observational shape assumptions.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

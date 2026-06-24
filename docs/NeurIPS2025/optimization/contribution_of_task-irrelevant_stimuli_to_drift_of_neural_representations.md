@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations
 description: >-
-  [NeurIPS 2025][Optimization][representational drift] This work theoretically demonstrates that the statistical properties (variance and dimensionality) of task-irrelevant stimuli are key drivers of representational drift…
+  [NeurIPS 2025][Optimization][representational drift] This work theoretically demonstrates that the statistical properties (variance and dimensionality) of task-irrelevant stimuli are key drivers of representational drift in online learning. Across Oja's rule, Similarity Matching, autoencoders, and supervised two-layer networks, a drift rate of $D \propto \lambda_\perp^2 (n-m)$ is consistently observed. Furthermore, learning-noise-induced drift exhibits anisotropic geometric s…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Hebbian learning"
   - "SGD noise"
 date: 2026-05-08
-content_hash: f0a172d7270787d9
+content_hash: 5d6cde89a0b2b976
 ---
 
 # Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations
@@ -126,8 +126,8 @@ All theoretical predictions closely match simulation results (Figure 3).
 - [\[NeurIPS 2025\] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data](learning_reconfigurable_representations_for_multimodal_federated_learning_with_m.md)
 - [\[ICML 2026\] Probing Neural TSP Representations for Prescriptive Decision Support](../../ICML2026/optimization/probing_neural_tsp_representations_for_prescriptive_decision_support.md)
 - [\[NeurIPS 2025\] FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts](flylora_boosting_task_decoupling_and_parameter_efficiency_via_implicit_rank-wise.md)
+- [\[ICML 2025\] Adjustment for Confounding using Pre-Trained Representations](../../ICML2025/optimization/adjustment_for_confounding_using_pre-trained_representations.md)
 - [\[NeurIPS 2025\] OrthoGrad Improves Neural Calibration](orthograd_improves_neural_calibration.md)
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
 
 </div>
 

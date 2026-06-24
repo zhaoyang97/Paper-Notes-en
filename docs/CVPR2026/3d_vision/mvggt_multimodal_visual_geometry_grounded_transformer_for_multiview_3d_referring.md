@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes a new task, MV-3DRES (language-guided 3D segmentation directly from sparse multi-view RGB), and the MVGGT framework. By utilizing a dual-branch design that fuses a frozen geometry branch with a trainable multimodal branch and applying the PVSO optimization strategy to resolve foreground gradient dil
+  [CVPR 2026][3D Vision][3D Referring Expression Segmentation] This paper proposes a new task, MV-3DRES (language-guided 3D segmentation directly from sparse multi-view RGB), and the MVGGT framework. By utilizing a dual-branch design that fuses a frozen geometry branch with a trainable multimodal branch and applying the PVSO optimization strategy to resolve foreground gradient dilution, the method achieves 39.9 mIoU on the self-constructed MVRefer benchmark…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Referring Expression Segmentation"
+  - "Multi-view"
+  - "Sparse-view Reconstruction"
+  - "Foreground Gradient Dilution"
+  - "Language Guidance"
 date: 2026-05-08
-content_hash: 7123ad8885cfa96b
+content_hash: 5668c6c391d3e2ae
 ---
+
 # MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Existing 3DRES evaluations assume perfect point clouds. MVRefer samples 8 frames
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
+- [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
+- [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
+- [\[CVPR 2026\] OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer](omnivggt_omni-modality_driven_visual_geometry_grounded_transformer.md)
+- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
+- [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](../../ICLR2026/3d_vision/quantized_visual_geometry_grounded_transformer.md)
 
 </div>
 

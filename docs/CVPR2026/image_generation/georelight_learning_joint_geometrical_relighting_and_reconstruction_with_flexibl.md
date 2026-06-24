@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoRelight: Learning Joint Geometrical Relighting and Reconstruction with Flexible Multi-Modal Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] GeoRelight integrates "portrait relighting" and "3D geometric reconstruction" into a single multi-modal Diffusion Transformer for **joint denoising**. By utilizing iNOD—a VAE-friendly, distortion-free depth representation that enables 3D geometry to enter the latent space—and a mixed training strategy combining synthet
+  [CVPR2026][Image Generation][Portrait Relighting] GeoRelight integrates "portrait relighting" and "3D geometric reconstruction" into a single multi-modal Diffusion Transformer for **joint denoising**. By utilizing iNOD—a VAE-friendly, distortion-free depth representation that enables 3D geometry to enter the latent space—and a mixed training strategy combining synthetic and auto-labeled real data to bridge the sim-to-real gap, the model produces photorealistic relighting…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "Image Generation"
+  - "Portrait Relighting"
+  - "Multi-modal DiT"
+  - "Joint Geometric Reconstruction"
+  - "iNOD depth representation"
+  - "Mixed data training"
 date: 2026-05-08
-content_hash: a60b590e48642c01
+content_hash: 998c27468db6c932
 ---
+
 # GeoRelight: Learning Joint Geometrical Relighting and Reconstruction with Flexible Multi-Modal Diffusion Transformers
 
 **Conference**: CVPR2026  
@@ -136,9 +142,9 @@ Verification of the "joint modeling synergy" (Synthetic data):
 
 - [\[CVPR 2025\] SyncVP: Joint Diffusion for Synchronous Multi-Modal Video Prediction](../../CVPR2025/image_generation/syncvp_joint_diffusion_for_synchronous_multi-modal_video_prediction.md)
 - [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
-- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 - [\[CVPR 2026\] PhotoFramer: Multi-modal Image Composition Instruction](photoframer_multi-modal_image_composition_instruction.md)
-- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
+- [\[ICLR 2026\] LazyDrag: Enabling Stable Drag-Based Editing on Multi-Modal Diffusion Transformers via Explicit Correspondence](../../ICLR2026/image_generation/lazydrag_enabling_stable_drag-based_editing_on_multi-modal_diffusion_transformer.md)
+- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 
 </div>
 

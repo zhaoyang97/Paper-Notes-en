@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning
 description: >-
-  [ACL 2026][LLM Reasoning][RLVR] ProxyCoT leverages short yet sufficient proxy contexts to obtain high-quality reasoning trajectories, which are then distilled into full long-context inputs. This approach enables 4B models to significantly improve long-context reasoning on SciTrek, HotpotQA, and Loong while reducing the number of CoT tokens during inf
+  [ACL2026][Reasoning][Long-context reasoning] ProxyCoT leverages short yet sufficient proxy contexts to obtain high-quality reasoning trajectories, which are then distilled into full long-context inputs. This approach enables 4B models to significantly improve long-context reasoning on SciTrek, HotpotQA, and Loong while reducing the number of CoT tokens during inference.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - RLVR
-  - ProxyCoT
+  - "ACL2026"
+  - "Reasoning"
+  - "Long-context reasoning"
+  - "proxy context"
+  - "CoT distillation"
+  - "RLVR"
+  - "ProxyCoT"
 date: 2026-05-08
-content_hash: 4bd4679b6390c1b4
+content_hash: 0929ad17239a601d
 ---
+
 # Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning
 
 **Conference**: ACL2026  
@@ -134,15 +138,15 @@ For ProxyCoT-ZS, the SFT loss is $\mathcal{L}_{SFT}=-\mathbb{E}[\log p_\theta(t\
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] PPA-Plan: Proactive Pitfall Avoidance for Reliable Planning in Long-Context LLM Reasoning](ppa-plan_proactive_pitfall_avoidance_for_reliable_planning_in_long-context_llm_r.md)
+- [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](../../ICLR2026/llm_reasoning/perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
+- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](../../ICLR2026/llm_reasoning/long_chain-of-thought_reasoning_across_languages.md)
 - [\[ACL 2026\] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning](delta_dynamic_layer-aware_token_attention_for_efficient_long-context_reasoning.md)
-- [\[ACL 2026\] Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (CoRD)](distilling_long-cot_reasoning_through_collaborative_step-wise_multi-teacher_deco.md)
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](../../ICLR2026/llm_reasoning/inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
-- [\[ACL 2025\] Enhancing Chain-of-Thought Reasoning with Critical Representation Fine-tuning](../../ACL2025/llm_reasoning/enhancing_chain-of-thought_reasoning_with_critical_representation_fine-tuning.md)
 
 </div>
 

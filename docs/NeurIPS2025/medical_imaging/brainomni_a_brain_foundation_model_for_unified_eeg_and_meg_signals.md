@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG] This paper proposes BrainOmni—the first brain signal foundation model that unifies EEG and MEG—by discretizing heterogeneous brain signals into a unified token space via BrainTokenize…
+  [NeurIPS 2025][Medical Imaging][EEG] This paper proposes BrainOmni—the first brain signal foundation model that unifies EEG and MEG—by discretizing heterogeneous brain signals into a unified token space via BrainTokenizer (incorporating a physical Sensor Encoder), followed by self-supervised masked prediction pretraining with a Criss-Cross Transformer. The model achieves an 11.7 percentage-point improvement on Alzheimer's disease detection and demonstrates zero-shot reconstru…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -14,7 +14,7 @@ tags:
   - "cross-device generalization"
   - "RVQ"
 date: 2026-05-08
-content_hash: a220766087517987
+content_hash: deb23d80ef444203
 ---
 
 # BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals
@@ -163,11 +163,11 @@ Removing the Sensor Encoder leads to an 11.9 percentage-point drop on SomatoMoto
 
 ## Related Papers
 
+- [\[CVPR 2025\] VISTA3D: A Unified Segmentation Foundation Model For 3D Medical Imaging](../../CVPR2025/medical_imaging/vista3d_a_unified_segmentation_foundation_model_for_3d_medical_imaging.md)
 - [\[NeurIPS 2025\] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)
-- [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)
 - [\[NeurIPS 2025\] MEGState: Phoneme Decoding from Magnetoencephalography Signals](megstate_phoneme_decoding_from_magnetoencephalography_signals.md)
-- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](../../CVPR2026/medical_imaging/tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
-- [\[ICLR 2026\] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model](../../ICLR2026/medical_imaging/brain-semantoks_learning_semantic_tokens_of_brain_dynamics_with_a_self-distilled.md)
+- [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)
+- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](../../ICLR2026/medical_imaging/autoregressive_visual_decoding_from_eeg_signals.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CARLoS: Retrieval via Concise Assessment Representation of LoRAs at Scale
 description: >-
-  [CVPR 2026][Model Compression][CLIP-diff] CARLoS bypasses metadata provided by LoRA authors. Instead, it "activates" each LoRA by generating images across a large set of prompt × seed pairs, computing the CLIP-space difference from the base model images. These are distilled into a tri-representation of "Direction / Strength / Consistency," enabling LoRA retrie
+  [CVPR 2026][Model Compression][LoRA Retrieval] CARLoS bypasses metadata provided by LoRA authors. Instead, it "activates" each LoRA by generating images across a large set of prompt × seed pairs, computing the CLIP-space difference from the base model images. These are distilled into a tri-representation of "Direction / Strength / Consistency," enabling LoRA retrieval based on actual generative behavior rather than textual metadata. It outperforms four strong text-based retri…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - CLIP-diff
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA Retrieval"
+  - "Behavioral Representation"
+  - "CLIP-diff"
+  - "Diffusion Models"
+  - "Copyright Attribution"
 date: 2026-05-08
-content_hash: 473a416a1d1d2794
+content_hash: 7efd600b283d0056
 ---
+
 # CARLoS: Retrieval via Concise Assessment Representation of LoRAs at Scale
 
 **Conference**: CVPR 2026  
@@ -145,6 +149,7 @@ CARLoS leads across all evaluators. A user study with 36 participants showed a c
 - Value: ⭐⭐⭐⭐⭐ Provides a standardized, metadata-free descriptor for the unorganized LoRA ecosystem, benefiting retrieval and quality assessment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

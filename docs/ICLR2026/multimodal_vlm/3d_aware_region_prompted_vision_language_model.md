@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SR-3D: 3D-Aware Region Prompted Vision Language Model
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] SR-3D directly injects 3D positional encodings derived from depth estimation into the visual tokens of a 2D foundation VLM and employs a dynamic slice region extractor. This allows a single model to handle both single-view images and multi-view videos, supporting precise cross-frame 3D spatial reasoning by simply drawi
+  [ICLR2026][Multimodal VLM][3D Positional Encoding] SR-3D directly injects 3D positional encodings derived from depth estimation into the visual tokens of a 2D foundation VLM and employs a dynamic slice region extractor. This allows a single model to handle both single-view images and multi-view videos, supporting precise cross-frame 3D spatial reasoning by simply drawing a box or mask on any single frame, achieving SOTA performance across multiple 2D and 3D benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "3D Positional Encoding"
+  - "Region Prompting"
+  - "Multi-view"
+  - "Spatial Reasoning"
+  - "Vision Language Model"
 date: 2026-05-08
-content_hash: 10baec163f1b91a6
+content_hash: f6acb9adb0acbda8
 ---
+
 # SR-3D: 3D-Aware Region Prompted Vision Language Model
 
 **Conference**: ICLR2026  
@@ -144,10 +149,10 @@ Impact of 3D Positional Encoding (3D PE) and Single-view Pre-training (PT) (Tabl
 ## Related Papers
 
 - [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](../../CVPR2026/multimodal_vlm/grounded_3d-aware_spatial_vision-language_modeling.md)
-- [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](../../CVPR2026/multimodal_vlm/hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
-- [\[ICLR 2026\] CARPRT: Class-Aware Zero-Shot Prompt Reweighting for Vision-Language Model](carprt_class-aware_zero-shot_prompt_reweighting_for_vision-language_model.md)
 - [\[ICLR 2026\] VaseVQA-3D: Benchmarking 3D VLMs on Ancient Greek Pottery](vasevqa-3d_benchmarking_3d_vlms_on_ancient_greek_pottery.md)
-- [\[ACL 2025\] R-VLM: Region-Aware Vision Language Model for Precise GUI Grounding](../../ACL2025/multimodal_vlm/r-vlm_region-aware_vision_language_model_for_precise_gui_grounding.md)
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](../../CVPR2026/multimodal_vlm/abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
+- [\[ICLR 2026\] GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models](gpt4scene_understand_3d_scenes_from_videos_with_vision-language_models.md)
+- [\[CVPR 2026\] Direction-aware 3D Large Multimodal Models](../../CVPR2026/multimodal_vlm/direction-aware_3d_large_multimodal_models.md)
 
 </div>
 

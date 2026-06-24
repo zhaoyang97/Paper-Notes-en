@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Zoo3D: Zero-Shot 3D Object Detection at Scene Level
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Zoo3D proposes the first **fully training-free (zero-shot)** scene-level 3D object detection framework. It directly constructs 3D boxes via graph clustering of 2D instance masks and assigns semantic labels using an open-vocabulary module featuring "best-view selection + SAM refinement + multi-scale CLIP." By leveraging
+  [CVPR 2026][3D Vision][Zero-shot detection] Zoo3D proposes the first **fully training-free (zero-shot)** scene-level 3D object detection framework. It directly constructs 3D boxes via graph clustering of 2D instance masks and assigns semantic labels using an open-vocabulary module featuring "best-view selection + SAM refinement + multi-scale CLIP." By leveraging DUSt3R, it relaxes input requirements from point clouds to unposed RGB images, outperforming all self-supervised me…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Zero-shot detection"
+  - "Open-vocabulary"
+  - "3D object detection"
+  - "Training-free"
+  - "Multi-view"
 date: 2026-05-08
-content_hash: f38b9d0a25c33d42
+content_hash: e4e337ccd79f8c97
 ---
+
 # Zoo3D: Zero-Shot 3D Object Detection at Scene Level
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Notably, the unposed Zoo3D1 (lacking point clouds and poses) achieves accuracy c
 ## Related Papers
 
 - [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
+- [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
 - [\[ICCV 2025\] Accelerate 3D Object Detection Models via Zero-Shot Attention Key Pruning](../../ICCV2025/3d_vision/accelerate_3d_object_detection_models_via_zero-shot_attention_key_pruning.md)
 - [\[ECCV 2024\] Zero-Shot Multi-Object Scene Completion](../../ECCV2024/3d_vision/zero-shot_multi-object_scene_completion.md)
-- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
-- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
 
 </div>
 

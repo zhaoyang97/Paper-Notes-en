@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features
 description: >-
-  [ICLR 2026][3D Vision][DUSt3R] FastForward compresses "mapping" into a single feature extraction step: it uses a set of features randomly sampled from posed mapping images and anchored in 3D space as the scene map. A DUSt3R-style feed-forward network then predicts the 3D coordinates of the query image in one pass to solve the pose. This achieves map
+  [ICLR 2026][3D Vision][Camera Relocalization] FastForward compresses "mapping" into a single feature extraction step: it uses a set of features randomly sampled from posed mapping images and anchored in 3D space as the scene map. A DUSt3R-style feed-forward network then predicts the 3D coordinates of the query image in one pass to solve the pose. This achieves mapping in seconds and localization in 0.5s, while its accuracy matches or even surpasses SCR/structured methods that…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - DUSt3R
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Camera Relocalization"
+  - "Feed-forward Localization"
+  - "DUSt3R"
+  - "Scene Coordinate Regression"
+  - "Relative Pose Regression"
+  - "Multi-view"
 date: 2026-05-08
-content_hash: e979a88b99af84dd
+content_hash: 9f21af2b35bc8c34
 ---
+
 # A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features
 
 **Conference**: ICLR 2026  

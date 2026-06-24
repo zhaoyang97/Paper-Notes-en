@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][GRPO] The authors propose Cross-modal Identity Mapping (CIM), which quantifies information loss in image descriptions by analyzing the representation consistency (GRC) of images retrieved via the caption and their relevance to the source image (QIR). This serves as an RL reward signal to train LVLMs to generate fine-grained
+  [CVPR 2026][Reinforcement Learning][Image Captioning] The authors propose Cross-modal Identity Mapping (CIM), which quantifies information loss in image descriptions by analyzing the representation consistency (GRC) of images retrieved via the caption and their relevance to the source image (QIR). This serves as an RL reward signal to train LVLMs to generate fine-grained and accurate descriptions without requiring additional human annotations.
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Image Captioning"
+  - "Cross-modal Information Loss"
+  - "Retrieval Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: aa2f978d2f1c6a48
+content_hash: 58bfceb35b735825
 ---
+
 # Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -125,14 +129,15 @@ The framework uses VERL for GRPO training. The training data consists of Refined
 - Value: ⭐⭐⭐⭐ The label-free RL optimization scheme is highly practical, yielding significant improvements in relational reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] R1-Onevision: Advancing Generalized Multimodal Reasoning through Cross-Modal Formalization](../../ICCV2025/reinforcement_learning/r1-onevision_advancing_generalized_multimodal_reasoning_through_cross-modal_form.md)
-- [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/reinforcement_learning/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
 - [\[CVPR 2026\] EVA: Efficient Reinforcement Learning for End-to-End Video Agent](eva_efficient_reinforcement_learning_for_end-to-end_video_agent.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[ICML 2026\] Unified Value Alignment and Assignment in Cross-Domain Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/unifying_value_alignment_and_assignment_in_cross-domain_offline_reinforcement_le.md)
+- [\[CVPR 2026\] CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning](cccaption_dual-reward_reinforcement_learning_for_complete_and_correct_image_capt.md)
 - [\[ICML 2026\] SPHERE: Mitigating the Loss of Spectral Plasticity in Mixture-of-Experts for Deep Reinforcement Learning](../../ICML2026/reinforcement_learning/sphere_mitigating_the_loss_of_spectral_plasticity_in_mixture-of-experts_for_deep.md)
 
 </div>

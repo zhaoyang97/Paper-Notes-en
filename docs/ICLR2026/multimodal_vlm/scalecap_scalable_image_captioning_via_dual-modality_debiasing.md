@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] ScaleCap employs two complementary modules—"Heuristic Question Answering" and "Contrastive Sentence Scoring"—to rectify descriptive biases in open-source LVLMs. The former recovers omitted object details through iterative questioning, while the latter removes hallucinated sentences caused by language priors via offline
+  [ICLR 2026][Multimodal VLM][Image Captioning] ScaleCap employs two complementary modules—"Heuristic Question Answering" and "Contrastive Sentence Scoring"—to rectify descriptive biases in open-source LVLMs. The former recovers omitted object details through iterative questioning, while the latter removes hallucinated sentences caused by language priors via offline contrastive decoding. The system scales in precision and detail with increased inference budget. Pre-training on…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Image Captioning"
+  - "Debiasing"
+  - "Contrastive Decoding"
+  - "Hallucination Suppression"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 859e9c4425d1ffb4
+content_hash: d50496c26d9c37f0
 ---
+
 # ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing
 
 **Conference**: ICLR 2026  
@@ -147,9 +153,9 @@ InfoVQA increased by 4.3% compared to ShareGPT4V and 2.4% compared to DenseFusio
 
 - [\[ICML 2025\] Toward Robust Hyper-Detailed Image Captioning: A Multiagent Approach and Dual Evaluation Metrics for Factuality and Coverage](../../ICML2025/multimodal_vlm/toward_robust_hyper-detailed_image_captioning_a_multiagent_approach_and_dual_eva.md)
 - [\[ICCV 2025\] CaptionSmiths: Flexibly Controlling Language Pattern in Image Captioning](../../ICCV2025/multimodal_vlm/captionsmiths_flexibly_controlling_language_pattern_in_image_captioning.md)
+- [\[ICLR 2026\] Simulation to Rules: A Dual-VLM Framework for Formal Visual Planning](simulation_to_rules_a_dual-vlm_framework_for_formal_visual_planning.md)
 - [\[ICLR 2026\] DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies](dualtoken_towards_unifying_visual_understanding_and_generation_with_dual_visual_.md)
-- [\[ICLR 2026\] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](manzano_a_simple_and_scalable_unified_multimodal_model_with_a_hybrid_vision_toke.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play](vision-zero_scalable_vlm_self-evolution_via_multi-agent_self-play.md)
+- [\[ICLR 2026\] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization](clip-fmoe_scalable_clip_via_fused_mixture-of-experts_with_enforced_specializatio.md)
 
 </div>
 

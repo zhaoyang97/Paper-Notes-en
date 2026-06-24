@@ -9,7 +9,7 @@ tags:
   - NIAH
   - Vision-Language Model
 date: 2026-05-08
-content_hash: 4e2e3469bbd506b9
+content_hash: 4583f1466cbc269f
 ---
 To calculate the amount of methane gas produced, we follow these steps:
 

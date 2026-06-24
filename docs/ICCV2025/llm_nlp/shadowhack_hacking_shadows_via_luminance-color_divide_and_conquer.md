@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ShadowHack: Hacking Shadows via Luminance-Color Divide and Conquer
 description: >-
-  [ICCV 2025][LLM/NLP][shadow removal] This paper proposes the ShadowHack framework, which decomposes shadow removal into two subtasks—luminance restoration and color reconstruction. LRNet with Rectified Outreach Attention…
+  [ICCV 2025][LLM (Other)][shadow removal] This paper proposes the ShadowHack framework, which decomposes shadow removal into two subtasks—luminance restoration and color reconstruction. LRNet with Rectified Outreach Attention (ROA) recovers luminance and texture, followed by CRNet with cross-attention to reconstruct accurate color. The method achieves state-of-the-art performance on the ISTD+ and SRD datasets.
 tags:
   - "ICCV 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "shadow removal"
   - "luminance-color decomposition"
   - "Transformer"
   - "attention mechanism"
   - "divide-and-conquer strategy"
 date: 2026-05-08
-content_hash: eeab4e9ffed2738b
+content_hash: be2876b3ed8c251c
 ---
 
 # ShadowHack: Hacking Shadows via Luminance-Color Divide and Conquer
@@ -170,11 +170,11 @@ CRNet ablation (SRD):
 
 ## Related Papers
 
+- [\[ACL 2025\] Divide-Then-Aggregate: An Efficient Tool Learning Method via Parallel Tool Invocation](../../ACL2025/llm_nlp/dta_llama_parallel_tool_invocation.md)
+- [\[ICML 2025\] LASER: Attention with Exponential Transformation](../../ICML2025/llm_nlp/laser_attention_with_exponential_transformation.md)
 - [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](../../NeurIPS2025/llm_nlp/spectral_conditioning_of_attention_improves_transformer_performance.md)
 - [\[ICCV 2025\] Any-SSR: How Recursive Least Squares Works in Continual Learning of Large Language Models](any-ssr_how_recursive_least_squares_works_in_continual_learning_of_large_languag.md)
 - [\[ICCV 2025\] FW-Merging: Scaling Model Merging with Frank-Wolfe Optimization](fw-merging_scaling_model_merging_with_frank-wolfe_optimization.md)
-- [\[ICCV 2025\] VIM: Versatile Interactive Motion-Language Model](vim_versatile_interactive_motion_language_model.md)
-- [\[ICCV 2025\] VA-GPT: Aligning Effective Tokens with Video Anomaly in Large Language Models](va_gpt_aligning_effective_tokens_video_anomaly.md)
 
 </div>
 

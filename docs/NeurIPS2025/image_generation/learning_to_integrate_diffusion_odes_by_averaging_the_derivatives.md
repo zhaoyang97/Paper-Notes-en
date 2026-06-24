@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Integrate Diffusion ODEs by Averaging the Derivatives
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes the **Secant Losses** family, which learns to integrate diffusion ODEs via Monte Carlo integration and Picard iteration…
+  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes the **Secant Losses** family, which learns to integrate diffusion ODEs via Monte Carlo integration and Picard iteration, progressively extending the tangent of a diffusion model into a secant. The approach achieves an excellent balance between training stability and few-step inference.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Monte Carlo integration"
   - "Picard iteration"
 date: 2026-05-08
-content_hash: 9b8512737024d6e3
+content_hash: 9b96cebf82aa1450
 ---
 
 # Learning to Integrate Diffusion ODEs by Averaging the Derivatives
@@ -56,8 +56,8 @@ The secant function is defined as the expectation of all tangents over the inter
 
 2. **Picard Iteration Estimation**:
    Inspired by Picard iteration, the model itself is used to estimate the missing point. Two strategies are proposed:
-   - **Estimate Interior (EI)**: Sample $\boldsymbol{x}_t$; estimate the interior point as $\hat{\boldsymbol{x}}_r = \boldsymbol{x}_t + (r-t)\boldsymbol{f}_{\theta^-}(\boldsymbol{x}_t, t, r)$; evaluate $\boldsymbol{v}(\hat{\boldsymbol{x}}_r, r)$ via a teacher model as the target.
-   - **Estimate Endpoint (EE)**: Sample $\boldsymbol{x}_r$; back-propagate via the model to estimate $\hat{\boldsymbol{x}}_t$; use the ground-truth $\alpha_r'\boldsymbol{x}_0 + \sigma_r'\boldsymbol{z}$ directly as the target.
+    - **Estimate Interior (EI)**: Sample $\boldsymbol{x}_t$; estimate the interior point as $\hat{\boldsymbol{x}}_r = \boldsymbol{x}_t + (r-t)\boldsymbol{f}_{\theta^-}(\boldsymbol{x}_t, t, r)$; evaluate $\boldsymbol{v}(\hat{\boldsymbol{x}}_r, r)$ via a teacher model as the target.
+    - **Estimate Endpoint (EE)**: Sample $\boldsymbol{x}_r$; back-propagate via the model to estimate $\hat{\boldsymbol{x}}_t$; use the ground-truth $\alpha_r'\boldsymbol{x}_0 + \sigma_r'\boldsymbol{z}$ directly as the target.
 
 3. **Four Variants**:
     - **SDEI** (Distillation + Estimate Interior): Requires a teacher model; 3 forward + 1 backward passes.
@@ -155,11 +155,11 @@ The secant function is defined as the expectation of all tangents over the inter
 
 ## Related Papers
 
+- [\[ICML 2026\] Mitigating the Contractivity Trap in Diffusion ODEs via Stein Stabilization](../../ICML2026/image_generation/mitigating_the_contractivity_trap_in_diffusion_odes_via_stein_stabilization.md)
+- [\[ICLR 2026\] GAS: Improving Discretization of Diffusion ODEs via Generalized Adversarial Solver](../../ICLR2026/image_generation/gas_improving_discretization_of_diffusion_odes_via_generalized_adversarial_solve.md)
 - [\[NeurIPS 2025\] Information Theoretic Learning for Diffusion Models with Warm Start](information_theoretic_learning_for_diffusion_models_with_warm_start.md)
-- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 - [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
-- [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](../../ICCV2025/image_generation/golden_noise_for_diffusion_models_a_learning_framework.md)
-- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
+- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 
 </div>
 

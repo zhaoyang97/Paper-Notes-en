@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][MoE] UniLDiff constructs a unified image restoration framework using Stable Diffusion XL as a backbone. It employs "Degradation-Aware Feature Fusion (DAFF)" to dynamically inject low-quality features into the diffusion trajectory at each denoising step and a "Detail Expert Module (DAEM)" in the decoder via MoE to recover hi
+  [CVPR 2026][Image Restoration][All-in-One Image Restoration] UniLDiff constructs a unified image restoration framework using Stable Diffusion XL as a backbone. It employs "Degradation-Aware Feature Fusion (DAFF)" to dynamically inject low-quality features into the diffusion trajectory at each denoising step and a "Detail Expert Module (DAEM)" in the decoder via MoE to recover high-frequency details lost during VAE compression. It achieves SOTA perceptual quality in multi-task…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - MoE
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "All-in-One Image Restoration"
+  - "Latent Diffusion Models"
+  - "Degradation-Aware Feature Fusion"
+  - "Detail Expert Module"
+  - "MoE"
 date: 2026-05-08
-content_hash: 41eb21c61b177fc6
+content_hash: ed1b145e9fa60ebd
 ---
+
 # UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ Ablation of DAFF architecture (Table 6) and components (Table 7):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
 - [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 - [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
-- [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
+- [\[CVPR 2026\] FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)
 - [\[CVPR 2025\] Visual-Instructed Degradation Diffusion for All-in-One Image Restoration](../../CVPR2025/image_restoration/visual-instructed_degradation_diffusion_for_all-in-one_image_restoration.md)
+- [\[ICLR 2026\] RestoreVAR: Visual Autoregressive Generation for All-in-One Image Restoration](../../ICLR2026/image_restoration/restorevar_visual_autoregressive_generation_for_all-in-one_image_restoration.md)
 
 </div>
 

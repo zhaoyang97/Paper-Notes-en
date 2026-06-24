@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LinguIUTics at PsyDefDetect: Iterative Imbalance-Aware Fine-tuning of Qwen3-8B for Psychological Defense Mechanism Classification
 description: >-
-  [ACL 2026][Medical NLP][QLoRA] This PsyDefDetect competition system utilizes Qwen3-8B QLoRA, minority lexical augmentation, grouped 5-fold cross-validation, Out-of-Fold (OOF) logit bias, and multi-seed ensembles to improve the official macro F1 for psychological defense mechanism classification to 0.3917, ranking 4th among 21 teams.
+  [ACL 2026 / BioNLP 2026][Medical LLM][Psychological Defense Mechanisms] This PsyDefDetect competition system utilizes Qwen3-8B QLoRA, minority lexical augmentation, grouped 5-fold cross-validation, Out-of-Fold (OOF) logit bias, and multi-seed ensembles to improve the official macro F1 for psychological defense mechanism classification to 0.3917, ranking 4th among 21 teams.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - QLoRA
+  - "ACL 2026 / BioNLP 2026"
+  - "Medical LLM"
+  - "Psychological Defense Mechanisms"
+  - "Class Imbalance"
+  - "QLoRA"
+  - "Grouped Cross-Validation"
+  - "Post-processing Calibration"
 date: 2026-05-08
-content_hash: a8c7dfc68cd6bc68
+content_hash: 780c023d3aad612d
 ---
+
 # LinguIUTics at PsyDefDetect: Iterative Imbalance-Aware Fine-tuning of Qwen3-8B for Psychological Defense Mechanism Classification
 
 **Conference**: ACL 2026 / BioNLP 2026  

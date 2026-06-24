@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] Ours proposes HATS, a hardness-aware trajectory synthesis framework. Through a closed-loop mechanism of hardness-driven exploration and alignment-guided refinement, it focuses on collecting and correcting training trajectories with semantically ambiguous actions, significantly enhancing the generalization capabilities
+  [CVPR 2026][LLM Agent][GUI Agent] Ours proposes HATS, a hardness-aware trajectory synthesis framework. Through a closed-loop mechanism of hardness-driven exploration and alignment-guided refinement, it focuses on collecting and correcting training trajectories with semantically ambiguous actions, significantly enhancing the generalization capabilities of GUI Agents in complex real-world scenarios.
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
-  - Monte Carlo Tree Search
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Trajectory Synthesis"
+  - "Semantic Ambiguity"
+  - "Monte Carlo Tree Search"
+  - "Data Alignment"
 date: 2026-05-08
-content_hash: 7d145e8270001608
+content_hash: 336bfc4af3536ac8
 ---
+
 # HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
 
 **Conference**: CVPR 2026  
@@ -162,8 +166,8 @@ Ablation study of module contributions:
 
 ## Related Papers
 
-- [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
 - [\[ACL 2025\] OS-Genesis: Automating GUI Agent Trajectory Construction via Reverse Task Synthesis](../../ACL2025/llm_agent/os_genesis_gui_agent_trajectory.md)
+- [\[ICML 2026\] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents](../../ICML2026/llm_agent/recovering_policy-induced_errors_benchmarking_and_trajectory_synthesis_for_robus.md)
 - [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](../../AAAI2026/llm_agent/history-aware_reasoning_for_gui_agents.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
 - [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)

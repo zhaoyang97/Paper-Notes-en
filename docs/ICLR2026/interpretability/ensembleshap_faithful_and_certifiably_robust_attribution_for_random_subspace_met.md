@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EnsembleSHAP: Faithful and Certifiably Robust Attribution for Random Subspace Method
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper proposes EnsembleSHAP, a feature attribution method specifically designed for the random subspace method. It directly reuses the sub-sampled prediction results already calculated by the ensemble model to provide Shapley-style feature importance with near-zero additional overhead. Furthermore, it provides the
+  [ICLR 2026][Interpretability][Random Subspace Method] This paper proposes EnsembleSHAP, a feature attribution method specifically designed for the random subspace method. It directly reuses the sub-sampled prediction results already calculated by the ensemble model to provide Shapley-style feature importance with near-zero additional overhead. Furthermore, it provides the first provable robustness guarantee against "explanation-preservation attacks."
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Random Subspace Method"
+  - "Shapley Value"
+  - "Feature Attribution"
+  - "Certified Robustness"
+  - "Explanation-Preservation Attack"
 date: 2026-05-08
-content_hash: 32482aab6de3b881
+content_hash: b18e83d77c1d88a5
 ---
+
 # EnsembleSHAP: Faithful and Certifiably Robust Attribution for Random Subspace Method
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ Keyword prediction recall (top-5) for IMDb under backdoor attacks: Ours **0.892*
 ## Related Papers
 
 - [\[ICLR 2026\] Learning for Highly Faithful Explainability](learning_for_highly_faithful_explainability.md)
-- [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2026/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
+- [\[ICLR 2026\] Missingness Bias Calibration in Feature Attribution Explanations](missingness_bias_calibration_in_feature_attribution_explanations.md)
 - [\[ICLR 2026\] Automated Interpretability Metrics Do Not Distinguish Trained and Random Transformers](automated_interpretability_metrics_do_not_distinguish_trained_and_random_transfo.md)
+- [\[ICML 2026\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2026/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[ICLR 2026\] Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning](interpretable_3d_neural_object_volumes_for_robust_conceptual_reasoning.md)
 
 </div>
 

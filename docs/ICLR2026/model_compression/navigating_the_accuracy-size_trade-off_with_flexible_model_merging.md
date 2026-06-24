@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes FLEXMERGE, a data-free model merging framework that decomposes each fine-tuned model into sequential blocks and greedily merges them in pairs based on block-level cosine similarity. This approach generates models of any size (including decimals) between "1× single merged model" and "M× retaining all
+  [ICLR 2026][Model Compression][Model Merging] This paper proposes FLEXMERGE, a data-free model merging framework that decomposes each fine-tuned model into sequential blocks and greedily merges them in pairs based on block-level cosine similarity. This approach generates models of any size (including decimals) between "1× single merged model" and "M× retaining all models," providing the first systematic characterization of the "accuracy-size" trade-off curve for different mer…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Data-free Merging"
+  - "Accuracy-Size Trade-off"
+  - "Task Vectors"
+  - "Block-level Greedy Merging"
 date: 2026-05-08
-content_hash: 6d530822f6abf26f
+content_hash: cca116aa649dcac9
 ---
+
 # Navigating the Accuracy-Size Trade-Off with Flexible Model Merging
 
 **Conference**: ICLR 2026  
@@ -119,8 +125,8 @@ Each step merges the pair with the "maximum of these minimum similarities" (cons
 - [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
 - [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 - [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](../../NeurIPS2025/model_compression/when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
+- [\[ICLR 2026\] Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking](expert_merging_model_merging_with_unsupervised_expert_alignment_and_importance-g.md)
 - [\[ICLR 2026\] DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation](dto-kd_dynamic_trade-off_optimization_for_effective_knowledge_distillation.md)
-- [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
 
 </div>
 

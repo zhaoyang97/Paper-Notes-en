@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning
 description: >-
-  [ICLR 2026][LLM Agent][GRPO] By using a binary reward that only checks "format compliance + precise tool-calling match" for R1-style GRPO training, the authors trained Qwen2.5-7B/14B into tool-calling reasoning models that outperform GPT-4o without any distilled reasoning trajectories.
+  [ICLR 2026][LLM Agent][Tool calling] By using a binary reward that only checks "format compliance + precise tool-calling match" for R1-style GRPO training, the authors trained Qwen2.5-7B/14B into tool-calling reasoning models that outperform GPT-4o without any distilled reasoning trajectories.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GRPO
-  - BFCL
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool calling"
+  - "Rule-based RL"
+  - "GRPO"
+  - "Reasoning"
+  - "Binary reward"
+  - "BFCL"
 date: 2026-05-08
-content_hash: 3bdef920b46fb6a2
+content_hash: a87b16ed3d6383a0
 ---
+
 # Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning
 
 **Conference**: ICLR 2026  
@@ -135,10 +140,10 @@ The 7B model surpasses GPT-4o (+0.85%) and the specialized Hammer2.1-7B (+2.97%)
 ## Related Papers
 
 - [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
-- [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](../../ACL2026/llm_agent/don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](../../ACL2026/llm_agent/meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
 - [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
+- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 
 </div>
 

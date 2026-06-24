@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DrivePTS: A Progressive Learning Framework with Textual and Structural Enhancement for Driving Scene Generation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] DrivePTS addresses three major pain points in controllable autonomous driving scene generation: the coupling of maps and 3D boxes, coarse textual descriptions, and blurred foreground structures. It proposes a progressive training strategy that learns roads before objects (with mutual information constraints for decoupl
+  [CVPR 2026][Autonomous Driving][Driving scene generation] DrivePTS addresses three major pain points in controllable autonomous driving scene generation: the coupling of maps and 3D boxes, coarse textual descriptions, and blurred foreground structures. It proposes a progressive training strategy that learns roads before objects (with mutual information constraints for decoupling), VLM-generated 6D multi-view descriptions, and frequency-guided structural loss. On nuScenes…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Driving scene generation"
+  - "progressive learning"
+  - "geometric condition decoupling"
+  - "multi-view fine-grained description"
+  - "frequency-domain structural loss"
 date: 2026-05-08
-content_hash: 96797c0e4fef99a0
+content_hash: ef04515c2013e1d4
 ---
+
 # DrivePTS: A Progressive Learning Framework with Textual and Structural Enhancement for Driving Scene Generation
 
 **Conference**: CVPR 2026  
@@ -158,9 +164,9 @@ The three major components are added sequentially: Multi-view Hierarchical Descr
 
 - [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
 - [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)
-- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
 - [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](../../NeurIPS2025/autonomous_driving/spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
-- [\[CVPR 2026\] DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving](dynamicvggt_learning_dynamic_point_maps_for_4d_scene_reconstruction_in_autonomou.md)
+- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
+- [\[CVPR 2026\] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction](recover_to_predict_progressive_retrospective_learning_for_variable-length_trajec.md)
 
 </div>
 

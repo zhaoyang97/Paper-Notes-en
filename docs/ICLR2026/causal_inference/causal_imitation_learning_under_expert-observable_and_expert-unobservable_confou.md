@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes a unified causal imitation learning framework that simultaneously models two types of hidden confounding: "observable by the expert but not the imitator" and "unobservable by both." By utilizing $k$-step trajectory history as an instrumental variable (IV), the problem is reformulated as a Conditiona
+  [ICLR 2026][Causal Inference][Imitation Learning] This paper proposes a unified causal imitation learning framework that simultaneously models two types of hidden confounding: "observable by the expert but not the imitator" and "unobservable by both." By utilizing $k$-step trajectory history as an instrumental variable (IV), the problem is reformulated as a Conditional Moment Restriction (CMR) problem. The authors introduce the DML-IL algorithm with imitation gap upper bound…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Imitation Learning"
+  - "Hidden Confounding"
+  - "Instrumental Variables"
+  - "Conditional Moment Restriction"
+  - "Double Machine Learning"
 date: 2026-05-08
-content_hash: 66e38d1f98011630
+content_hash: b5e9b188fc4a7a21
 ---
+
 # Causal Imitation Learning under Expert-Observable and Expert-Unobservable Confounding
 
 **Conference**: ICLR 2026  
@@ -133,8 +139,8 @@ The core ablation varies the noise horizon $k$ (from 1 to 20) to verify the theo
 - [\[ICLR 2026\] Efficient and Sharp Off-Policy Learning under Unobserved Confounding](efficient_and_sharp_off-policy_learning_under_unobserved_confounding.md)
 - [\[ICML 2026\] From Observation to Intervention: A Causal Audit of Expert Importance in Mixture-of-Experts Models](../../ICML2026/causal_inference/from_observation_to_intervention_a_causal_audit_of_expert_importance_in_mixture-.md)
 - [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
-- [\[ICLR 2026\] Coarse-to-Fine Learning of Dynamic Causal Structures](coarse-to-fine_learning_of_dynamic_causal_structures.md)
 - [\[ICLR 2026\] Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects](influence_without_confounding_causal_discovery_from_temporal_data_with_long-term.md)
+- [\[ICLR 2026\] Query-Specific Causal Graph Pruning under Tiered Knowledge](query-specific_causal_graph_pruning_under_tiered_knowledge.md)
 
 </div>
 

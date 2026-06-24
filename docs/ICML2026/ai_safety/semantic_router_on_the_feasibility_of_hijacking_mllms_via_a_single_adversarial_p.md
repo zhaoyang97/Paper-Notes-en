@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Router: On the Feasibility of Hijacking MLLMs via a Single Adversarial Perturbation
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper introduces a new threat—semantic-aware hijacking: using a **single** universal adversarial perturbation as a "semantic router" to steer the same MLLM toward different attacker-predefined outputs based on the visual semantics of the current frame. The feasibility boundary is derived through theoretical analys
+  [ICML2026][AI Safety][Image Hijacking] This paper introduces a new threat—semantic-aware hijacking: using a **single** universal adversarial perturbation as a "semantic router" to steer the same MLLM toward different attacker-predefined outputs based on the visual semantics of the current frame. The feasibility boundary is derived through theoretical analysis of latent space geometric properties, and the SORT optimization algorithm is developed to generate such perturbations…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Image Hijacking"
+  - "Universal Adversarial Perturbation"
+  - "MLLM Security"
+  - "Semantic Routing"
+  - "Stateless Decision-Making"
 date: 2026-05-08
-content_hash: 3b136317edab6afa
+content_hash: e7ef0011ab971589
 ---
+
 # Semantic Router: On the Feasibility of Hijacking MLLMs via a Single Adversarial Perturbation
 
 **Conference**: ICML2026  

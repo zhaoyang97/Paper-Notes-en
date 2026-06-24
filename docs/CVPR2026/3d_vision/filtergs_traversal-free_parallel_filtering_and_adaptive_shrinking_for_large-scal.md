@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FilterGS: Traversal-Free Parallel Filtering and Adaptive Shrinking for Large-Scale LoD 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Level-of-Detail] FilterGS eliminates the two main bottlenecks in large-scale LoD 3DGS rendering—serial layer-by-layer traversal for Gaussian selection and massive invalid Gaussian-tile key-value pairs—by utilizing "Traversal-Free Parallel Dual Filters" and "Adaptive Gaussian Shrinking based on scene crowding." It achieves nearly 300 FP
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] FilterGS eliminates the two main bottlenecks in large-scale LoD 3DGS rendering—serial layer-by-layer traversal for Gaussian selection and massive invalid Gaussian-tile key-value pairs—by utilizing "Traversal-Free Parallel Dual Filters" and "Adaptive Gaussian Shrinking based on scene crowding." It achieves nearly 300 FPS (significantly surpassing the second-best method) across six large-scale scenes while maintaining reconstruction…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Level-of-Detail
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Level-of-Detail"
+  - "Large-scale rendering acceleration"
+  - "Parallel filtering"
+  - "Redundant key-value pair pruning"
 date: 2026-05-08
-content_hash: df5cdfe81a878dcc
+content_hash: fb2a2219191a4119
 ---
+
 # FilterGS: Traversal-Free Parallel Filtering and Adaptive Shrinking for Large-Scale LoD 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Parallel filtering cuts filtering time ($T_{calcu.}+T_{synch.}$) by 90%+ and int
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Differentiable Hierarchies in 3D Gaussian Splatting](learning_differentiable_hierarchies_in_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] BA-GS: Bayesian Adaptive Gaussian Splatting for SFM-Free 3D Reconstruction](ba-gs_bayesian_adaptive_gaussian_splatting_for_sfm-free_3d_reconstruction.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
+- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
+- [\[CVPR 2026\] Learning Differentiable Hierarchies in 3D Gaussian Splatting](learning_differentiable_hierarchies_in_3d_gaussian_splatting.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model
 description: >-
-  [ICLR 2026][learning_theory][inference-time compute] This paper uses an analytically solvable "Latent Instance Difficulty (LID)" linear fine-tuning model to prove that the power-law exponent $\beta_{\text{eff}}(N)$ of the pass@k failure rate is **training-dependent**. It increases with the training sample size $N$ and eventually saturates at an intrinsic upper bound $\be
+  [ICLR 2026][learning theory][neural scaling laws] This paper uses an analytically solvable "Latent Instance Difficulty (LID)" linear fine-tuning model to prove that the power-law exponent $\beta_{\text{eff}}(N)$ of the pass@k failure rate is **training-dependent**. It increases with the training sample size $N$ and eventually saturates at an intrinsic upper bound $\beta$ determined by the tail of the difficulty distribution, thereby unifying training-side and inference-side s…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - inference-time compute
-  - pass@k
+  - "ICLR 2026"
+  - "learning theory"
+  - "neural scaling laws"
+  - "inference-time compute"
+  - "pass@k"
+  - "instance difficulty heterogeneity"
+  - "solvable linear model"
+  - "compute allocation"
 date: 2026-05-08
-content_hash: e64b26e535570e13
+content_hash: bd4683262c375aa0
 ---
+
 # Learning Shrinks the Hard Tail: Training-Dependent Inference Scaling in a Solvable Linear Model
 
 **Conference**: ICLR 2026  
@@ -115,8 +120,8 @@ The first term is the intrinsic tail determined by $\beta$, which cannot be redu
 - [\[ICLR 2026\] Resurfacing the Instance-only Dependent Label Noise Model through Loss Correction](resurfacing_the_instance-only_dependent_label_noise_model_through_loss_correctio.md)
 - [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
 - [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
+- [\[ICLR 2026\] Tokenisation over Bounded Alphabets is Hard](tokenisation_over_bounded_alphabets_is_hard.md)
 - [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
-- [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
 
 </div>
 

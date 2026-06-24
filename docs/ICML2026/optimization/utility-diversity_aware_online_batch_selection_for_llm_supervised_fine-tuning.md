@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] UDS proposes an efficient online batch selection framework for LLM Supervised Fine-tuning (SFT): it leverages the **nuclear norm of the logits matrix** obtained solely from forward passes to simultaneously characterize "optimization utility + intra-sentence diversity." It then uses **low-dimensional bilinear random pro
+  [ICML 2026][Optimization][Online Batch Selection] UDS proposes an efficient online batch selection framework for LLM Supervised Fine-tuning (SFT): it leverages the **nuclear norm of the logits matrix** obtained solely from forward passes to simultaneously characterize "optimization utility + intra-sentence diversity." It then uses **low-dimensional bilinear random projection** of logits to measure similarity matching against a historical sample memory buffer for "inter-senten…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Online Batch Selection"
+  - "Supervised Fine-tuning"
+  - "Logits Nuclear Norm"
+  - "Diversity"
+  - "Memory Buffer"
 date: 2026-05-08
-content_hash: b1e0ff377fd37590
+content_hash: 0503e02c7c51e321
 ---
+
 # Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning
 
 **Conference**: ICML 2026  
@@ -131,11 +137,11 @@ UDS achieves the best performance across all four benchmarks: on MMLU, it outper
 
 ## Related Papers
 
-- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
+- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
 - [\[ICML 2026\] Distilling Linearized Behavior into Non-Linear Fine-Tuning for Effective Task Arithmetic](distilling_linearized_behavior_into_non-linear_fine-tuning_for_effective_task_ar.md)
-- [\[ICCV 2025\] Zeroth-Order Fine-Tuning of LLMs in Random Subspaces](../../ICCV2025/optimization/zeroth-order_fine-tuning_of_llms_in_random_subspaces.md)
-- [\[NeurIPS 2025\] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality](../../NeurIPS2025/optimization/optimistic_online-to-batch_conversions_for_accelerated_convergence_and_universal.md)
+- [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](../../ICLR2026/optimization/bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
+- [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][efficient reasoning] The study diagnoses a fundamental flaw in GRPO when integrated with length penalties—correct but lengthy responses may obtain negative advantage values and thus be erroneously penalized. DRPO is proposed to decouple reward signals for positive and negative samples, ensuring that length penalties are normalized only wit
+  [ICLR 2026][Reasoning][efficient reasoning] The study diagnoses a fundamental flaw in GRPO when integrated with length penalties—correct but lengthy responses may obtain negative advantage values and thus be erroneously penalized. DRPO is proposed to decouple reward signals for positive and negative samples, ensuring that length penalties are normalized only within the group of correct responses. On a 1.5B model, DRPO achieves a 77% reduction in length with only 1.1% performa…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - efficient reasoning
-  - overthinking
-  - GRPO
-  - length penalty
-  - reinforcement-learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "efficient reasoning"
+  - "overthinking"
+  - "GRPO"
+  - "length penalty"
+  - "reinforcement-learning"
 date: 2026-05-08
-content_hash: f869a9776c3fed71
+content_hash: 70b50be31f33a56a
 ---
+
 # DRPO: Efficient Reasoning via Decoupled Reward Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -114,12 +115,11 @@ The framework is based on DisCO, with constraints handled via penalty functions.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICLR 2026\] PEAR: Phase Entropy Aware Reward for Efficient Reasoning](pear_phase_entropy_aware_reward_for_efficient_reasoning.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICLR 2026\] HiPO: Self-Hint Policy Optimization for RLVR](hipo_self-hint_policy_optimization_for_rlvr.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)

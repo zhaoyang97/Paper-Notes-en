@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation
 description: >-
-  [NeurIPS 2025][Image Generation][molecular geometry generation] This paper transfers predictive feature caching strategies from the image generation domain to molecular geometry generation…
+  [NeurIPS 2025][Image Generation][molecular geometry generation] This paper transfers predictive feature caching strategies from the image generation domain to molecular geometry generation, exploiting the temporal smoothness of hidden states along sampling trajectories to achieve training-free 2–3× inference acceleration, with up to 7× speedup when combined with other optimization techniques.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "training-free acceleration"
   - "SE(3) equivariance"
 date: 2026-05-08
-content_hash: 23a6603f4b6f9641
+content_hash: 071204c8c8a6bd1b
 ---
 
 # Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation
@@ -137,11 +137,11 @@ The proposed method is **entirely training-free**, applied directly to the pretr
 
 ## Related Papers
 
+- [\[CVPR 2025\] DreamCache: Finetuning-Free Lightweight Personalized Image Generation via Feature Caching](../../CVPR2025/image_generation/dreamcache_finetuning-free_lightweight_personalized_image_generation_via_feature.md)
 - [\[AAAI 2026\] ProCache: Constraint-Aware Feature Caching with Selective Computation for Diffusion Transformer Acceleration](../../AAAI2026/image_generation/procache_constraint-aware_feature_caching_with_selective_computation_for_diffusi.md)
 - [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](../../ICCV2025/image_generation/lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
-- [\[NeurIPS 2025\] Training-Free Constrained Generation with Stable Diffusion Models](training-free_constrained_generation_with_stable_diffusion_models.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](../../CVPR2026/image_generation/resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[ICCV 2025\] MosaicDiff: Training-free Structural Pruning for Diffusion Model Acceleration Reflecting Pretraining Dynamics](../../ICCV2025/image_generation/mosaicdiff_training-free_structural_pruning_for_diffusion_model_acceleration_ref.md)
-- [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](../../CVPR2026/image_generation/just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
 
 </div>
 

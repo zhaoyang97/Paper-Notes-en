@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Horizon Reduction Makes RL Scalable
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][offline RL] Through large-scale experiments involving up to one billion transitions, this paper identifies the curse of horizon—excessively long decision horizons—as the primary sca…
+  [NeurIPS 2025][Reinforcement Learning][offline RL] Through large-scale experiments involving up to one billion transitions, this paper identifies the curse of horizon—excessively long decision horizons—as the primary scalability bottleneck in offline RL, and demonstrates that horizon reduction techniques such as n-step returns and hierarchical policies substantially improve scalability. Building on this analysis, the paper proposes SHARSA, a simple yet effective method.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical RL"
   - "goal-conditioned RL"
 date: 2026-05-08
-content_hash: d27d0df3831e471a
+content_hash: 07fcd72cdeafe3cb
 ---
 
 # Horizon Reduction Makes RL Scalable
@@ -150,10 +150,10 @@ Park et al. investigate bottlenecks in policy extraction and generalization for 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](../../ICLR2026/reinforcement_learning/scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[NeurIPS 2025\] Counteractive RL: Rethinking Core Principles for Efficient and Scalable Deep Reinforcement Learning](counteractive_rl_rethinking_core_principles_for_efficient_and_scalable_deep_rein.md)
-- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
-- [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
 - [\[NeurIPS 2025\] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners](when_less_language_is_more_language-reasoning_disentanglement_makes_llms_better_.md)
+- [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](../../ICLR2026/reinforcement_learning/sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 
 </div>
 

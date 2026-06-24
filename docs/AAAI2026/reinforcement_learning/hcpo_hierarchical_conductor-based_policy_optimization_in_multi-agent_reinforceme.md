@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning
 description: >-
-  [AAAI2026][Reinforcement Learning][multi-agent RL] This paper proposes HCPO, an algorithm that enhances the expressiveness and exploration efficiency of multi-agent joint policies by introducing a conductor mechanism…
+  [AAAI2026][Reinforcement Learning][multi-agent RL] This paper proposes HCPO, an algorithm that enhances the expressiveness and exploration efficiency of multi-agent joint policies by introducing a conductor mechanism, constructing a Gaussian mixture model-like joint policy framework, and providing monotonic improvement guarantees for two-level policy updates.
 tags:
   - "AAAI2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical framework"
   - "trust region"
 date: 2026-05-08
-content_hash: ffa9031face53f9d
+content_hash: a486f9498e9017d3
 ---
 
 # HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning
@@ -109,11 +109,11 @@ Evaluated on 5 maps (5 seeds), HCPO achieves a 90% win rate first on all maps wi
 
 ## Related Papers
 
-- [\[AAAI 2026\] Behaviour Policy Optimization: Provably Lower Variance Return Estimates for Off-Policy Reinforcement Learning](behaviour_policy_optimization_provably_lower_variance_return_estimates_for_off-p.md)
-- [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
+- [\[ICLR 2026\] Correlated Policy Optimization in Multi-Agent Subteams](../../ICLR2026/reinforcement_learning/correlated_policy_optimization_in_multi-agent_subteams.md)
+- [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](../../ICLR2026/reinforcement_learning/multi-agent_guided_policy_optimization.md)
+- [\[ICLR 2026\] Heterogeneous Agent Q-weighted Policy Optimization](../../ICLR2026/reinforcement_learning/heterogeneous_agent_q-weighted_policy_optimization.md)
+- [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
 - [\[AAAI 2026\] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction](thinker_training_llms_in_hierarchical_thinking_for_deep_search_via_multi-turn_in.md)
-- [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
-- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

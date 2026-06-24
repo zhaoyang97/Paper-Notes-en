@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking Token Rewards via Training-Free Reward Attribution
 description: >-
-  [CVPR 2026][Alignment & RLHF][GRPO] P2T employs a first-order Taylor approximation to **training-freely** decompose "segment-level" rewards from existing Process Reward Models (PRMs) into individual tokens. With just a single forward and backward pass, it calculates token-level rewards for the entire sequence. Integrating this into GRPO accelerates math/
+  [CVPR 2026][LLM Alignment][token-level reward] P2T employs a first-order Taylor approximation to **training-freely** decompose "segment-level" rewards from existing Process Reward Models (PRMs) into individual tokens. With just a single forward and backward pass, it calculates token-level rewards for the entire sequence. Integrating this into GRPO accelerates math/multimodal reasoning RL convergence by approximately 4× and achieves a +11.5% improvement on AIME24 compared to o…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "token-level reward"
+  - "reward attribution"
+  - "training-free"
+  - "credit assignment"
+  - "GRPO"
 date: 2026-05-08
-content_hash: cb4d4fc92bd6f7b7
+content_hash: c8f1987144f16899
 ---
+
 # Unlocking Token Rewards via Training-Free Reward Attribution
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Comparison with other token-level dense reward methods (Eurus-2-7B-SFT, average 
 ## Related Papers
 
 - [\[ACL 2025\] T-REG: Preference Optimization with Token-Level Reward Regularization](../../ACL2025/llm_alignment/t-reg_preference_optimization_with_token-level_reward_regularization.md)
-- [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
+- [\[ICLR 2026\] Truthful or Fabricated? Using Causal Attribution to Mitigate Reward Hacking in Explanations](../../ICLR2026/llm_alignment/truthful_or_fabricated_using_causal_attribution_to_mitigate_reward_hacking_in_ex.md)
+- [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](../../ICLR2026/llm_alignment/omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
 - [\[ACL 2026\] Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards](../../ACL2026/llm_alignment/teaching_llm_to_be_persuasive_reward-enhanced_policy_optimization_for_alignment_.md)
-- [\[ACL 2026\] ModeX: Evaluator-Free Best-of-N Selection for Open-Ended Generation](../../ACL2026/llm_alignment/modex_evaluator-free_best-of-n_selection_for_open-ended_generation.md)
-- [\[ICML 2026\] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards](../../ICML2026/llm_alignment/decoupling_reasoning_and_confidence_resurrecting_calibration_in_reinforcement_le.md)
+- [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
 
 </div>
 

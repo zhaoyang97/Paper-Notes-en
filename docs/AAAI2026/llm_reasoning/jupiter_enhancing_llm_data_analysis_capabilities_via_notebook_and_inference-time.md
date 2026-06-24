@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search
 description: >-
-  [AAAI 2026][LLM Reasoning][Data Analysis] This work constructs the NbQA dataset (38K task-solution pairs extracted from real Jupyter Notebooks) and proposes the Jupiter framework (modeling data analysis as a state-level…
+  [AAAI 2026][Reasoning][Data Analysis] This work constructs the NbQA dataset (38K task-solution pairs extracted from real Jupyter Notebooks) and proposes the Jupiter framework (modeling data analysis as a state-level search problem with PUCT search guided by a value model), enabling Qwen2.5-14B to achieve 86.38% on InfiAgent-DABench, surpassing GPT-4o (85.99%), and improving Qwen2.5-7B on DSBench from 63.51% to 89.19%.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Data Analysis"
   - "Jupyter Notebook"
   - "Value-Guided Search"
   - "MCTS"
   - "Test-Time Compute"
 date: 2026-05-08
-content_hash: 9cf97680be5c9db8
+content_hash: 79c9930e8a0c5e4a
 ---
 
 # Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search
@@ -141,9 +141,9 @@ DSBench Data Modeling:
 
 - [\[AAAI 2026\] Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities](trade-offs_in_large_reasoning_models_an_empirical_analysis_of_deliberative_and_a.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](../../NeurIPS2025/llm_reasoning/polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
-- [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
-- [\[NeurIPS 2025\] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](../../NeurIPS2025/llm_reasoning/solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
 - [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
+- [\[NeurIPS 2025\] SolverLLM: Solving Optimization Problems via Test-Time Scaling with LLM-Guided Search](../../NeurIPS2025/llm_reasoning/solverllm_leveraging_test-time_scaling_for_optimization_problem_via_llm-guided_s.md)
+- [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
 
 </div>
 

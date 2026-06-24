@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future
 description: >-
-  [ACL 2026][LLM (Other)][peer review] The authors provide a systematic survey of AI-assisted peer review methods in the LLM era. They categorize "review generation" into four paradigms: fine-tuning / agent / RL / generation enhancement, classify "after-review" into rebuttal / meta-review / paper revision, and present a four-quadrant evaluation taxonomy (hu
+  [ACL 2026][LLM (Other)][peer review] The authors provide a systematic survey of AI-assisted peer review methods in the LLM era. They categorize "review generation" into four paradigms: fine-tuning / agent / RL / generation enhancement, classify "after-review" into rebuttal / meta-review / paper revision, and present a four-quadrant evaluation taxonomy (human / reference-based / LLM-based / aspect-oriented). Finally, they discuss the future across six directions: novelty…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - peer review
-  - LLM agent
-  - RL
-  - AI4Research
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "peer review"
+  - "LLM agent"
+  - "RL"
+  - "evaluation"
+  - "AI4Research"
 date: 2026-05-08
-content_hash: c8d4765db2858b90
+content_hash: c9053513b208dc30
 ---
+
 # Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future
 
 **Conference**: ACL 2026  
@@ -126,11 +128,11 @@ Method comparison table (selected systems, Table 1):
 
 ## Related Papers
 
-- [\[ICML 2026\] Stop Automating Peer Review Without Rigorous Evaluation](../../ICML2026/llm_nlp/stop_automating_peer_review_without_rigorous_evaluation.md)
 - [\[AAAI 2026\] Position on LLM-Assisted Peer Review: Addressing Reviewer Gap through Mentoring and Feedback](../../AAAI2026/llm_nlp/position_on_llm-assisted_peer_review_addressing_reviewer_gap_through_mentoring_a.md)
 - [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](../../ICML2026/llm_nlp/position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
+- [\[ICML 2026\] Stop Automating Peer Review Without Rigorous Evaluation](../../ICML2026/llm_nlp/stop_automating_peer_review_without_rigorous_evaluation.md)
 - [\[ACL 2026\] Big AI is Accelerating the Metacrisis: What Can We Do?](big_ai_is_accelerating_the_metacrisis_what_can_we_do.md)
-- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
+- [\[ACL 2026\] LinkNav: Surfacing Interconnected Information in Scientific Articles](linknav_surfacing_interconnected_information_in_scientific_articles.md)
 
 </div>
 

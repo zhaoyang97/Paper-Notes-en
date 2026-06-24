@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAC Flow: Sample-Efficient Reinforcement Learning of Flow-Based Policies via Velocity-Reparameterized Sequential Modeling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Soft Actor-Critic] SAC Flow treats the multi-step sampling process of flow-based policies as a residual RNN. By utilizing GRU/Transformer-style velocity networks and noise-augmented rollouts, it enables stable end-to-end training of high-expressivity flow policies via SAC, achieving superior sample efficiency in continuous control and of
+  [ICLR2026][Reinforcement Learning][Flow-based policies] SAC Flow treats the multi-step sampling process of flow-based policies as a residual RNN. By utilizing GRU/Transformer-style velocity networks and noise-augmented rollouts, it enables stable end-to-end training of high-expressivity flow policies via SAC, achieving superior sample efficiency in continuous control and offline-to-online manipulation tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Soft Actor-Critic
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Flow-based policies"
+  - "Soft Actor-Critic"
+  - "Off-policy Reinforcement Learning"
+  - "Sequential modeling"
+  - "Robot manipulation"
 date: 2026-05-08
-content_hash: f66bac4aefae2012
+content_hash: dbfb24fa686913a6
 ---
+
 # SAC Flow: Sample-Efficient Reinforcement Learning of Flow-Based Policies via Velocity-Reparameterized Sequential Modeling
 
 **Conference**: ICLR2026  
@@ -167,11 +172,11 @@ Evaluation was conducted across MuJoCo (from-scratch), OGBench (sparse-reward of
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation](mean_flow_policy_with_instantaneous_velocity_constraint_for_one-step_action_gene.md)
+- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](../../ICML2026/reinforcement_learning/reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
+- [\[ICLR 2026\] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies](goldenstart_q-guided_priors_and_entropy_control_for_distilling_flow_policies.md)
 - [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
-- [\[ICLR 2026\] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching](sample_efficient_offline_rl_via_t-symmetry_enforced_latent_state-stitching.md)
-- [\[ICLR 2026\] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
-- [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
-- [\[ICLR 2026\] Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models](divide_harmonize_then_conquer_it_shooting_multi-commodity_flow_problems_with_mul.md)
+- [\[ICLR 2026\] DR-SAC: Distributionally Robust Soft Actor-Critic for Reinforcement Learning under Uncertainty](dr-sac_distributionally_robust_soft_actor-critic_for_reinforcement_learning_unde.md)
 
 </div>
 

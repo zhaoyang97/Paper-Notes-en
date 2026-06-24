@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions
 description: >-
-  [ICML 2026][Multimodal VLM][computer-use agent] This paper proposes AgentHijack, a benchmark that evaluates the robustness of computer-use agents using 9 categories of configurable everyday environment corruptions. Furthermore, it introduces DA-GRPO to strengthen grounding and an onlooker for behavioral summarization and environment checking, improving the average s
+  [ICML2026][Multimodal VLM][computer-use agent] This paper proposes AgentHijack, a benchmark that evaluates the robustness of computer-use agents using 9 categories of configurable everyday environment corruptions. Furthermore, it introduces DA-GRPO to strengthen grounding and an onlooker for behavioral summarization and environment checking, improving the average success rate of UI-TARS-1.5-7B from 18.74% to 22.89%.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - computer-use agent
-  - GUI Agent
-  - DA-GRPO
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "computer-use agent"
+  - "GUI Agent"
+  - "environment corruption"
+  - "robustness evaluation"
+  - "DA-GRPO"
 date: 2026-05-08
-content_hash: dd0deec7560a49c0
+content_hash: 14c2352d1dc4626a
 ---
+
 # AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions
 
 **Conference**: ICML2026  
@@ -149,8 +152,8 @@ Evaluation covers 9 representative agents, including GLM-4.5V, Llama-3.2-90B-Vis
 - [\[AAAI 2026\] "Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents](../../AAAI2026/multimodal_vlm/are_we_done_yet_a_vision-based_judge_for_autonomous_task_completion_of_computer_.md)
 - [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](../../AAAI2026/multimodal_vlm/vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
 - [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](../../NeurIPS2025/multimodal_vlm/mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
+- [\[ICML 2026\] Contrastive Spectral Rectification: Test-Time Defense towards Zero-shot Adversarial Robustness of CLIP](contrastive_spectral_rectification_test-time_defense_towards_zero-shot_adversari.md)
 - [\[ACL 2026\] AdaTooler-V: Adaptive Tool-Use for Images and Videos](../../ACL2026/multimodal_vlm/adatooler-v_adaptive_tool-use_for_images_and_videos.md)
-- [\[ICML 2026\] Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds](any3d-vla_enhancing_vla_robustness_via_diverse_point_clouds.md)
 
 </div>
 

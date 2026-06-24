@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations
 description: >-
-  [ICML 2026][Others][JEPA] The authors generalize the "post-projection alignment to isotropic Gaussian" in LeJEPA to "post-projection alignment to a Rectified Generalized Gaussian (RGG) distribution." By utilizing rectified and truncated generalized Gaussians, they achieve explicitly controllable expected $\ell_0$ sparsity. On ImageNet-100, a Re
+  [ICML 2026][JEPA] The authors generalize the "post-projection alignment to isotropic Gaussian" in LeJEPA to "post-projection alignment to a Rectified Generalized Gaussian (RGG) distribution." By utilizing rectified and truncated generalized Gaussians, they achieve explicitly controllable expected $\ell_0$ sparsity. On ImageNet-100, a ResNet encoder achieves a $85.08\%$ linear probe accuracy while maintaining $\ell_0$ sparsity at $\sim 73\%$…
 tags:
-  - ICML 2026
-  - Others
-  - JEPA
-  - Rectified Generalized Gaussian
+  - "ICML 2026"
+  - "JEPA"
+  - "Sparse Representations"
+  - "Maximum Entropy Distributions"
+  - "Rectified Generalized Gaussian"
+  - "Sliced Wasserstein"
 date: 2026-05-08
-content_hash: 425ad8ae581c2b14
+content_hash: 157f4f35b28cc9ed
 ---
+
 # Rectified LpJEPA: Joint-Embedding Predictive Architectures with Sparse and Maximum-Entropy Representations
 
 **Conference**: ICML 2026  

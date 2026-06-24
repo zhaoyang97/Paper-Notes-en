@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cautious Optimizers: Improving Training with One Line of Code
 description: >-
-  [ICLR 2026][Optimization & Theory][AdamW] Add a single line of code to any momentum optimizer: only update coordinates where the "update direction" and "current gradient" share the same sign; otherwise, zero out the update for those coordinates and scale up others proportionally. This yields "cautious" versions like C-AdamW / C-Lion, which consistently acceler
+  [ICLR 2026][Optimization][Momentum optimizers] Add a single line of code to any momentum optimizer: only update coordinates where the "update direction" and "current gradient" share the same sign; otherwise, zero out the update for those coordinates and scale up others proportionally. This yields "cautious" versions like C-AdamW / C-Lion, which consistently accelerate LLM pre-training and image classification without modifying original hyperparameters.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - AdamW
+  - "ICLR 2026"
+  - "Optimization"
+  - "Momentum optimizers"
+  - "sign consistency mask"
+  - "Hamiltonian dynamics"
+  - "monotonic descent"
+  - "AdamW"
 date: 2026-05-08
-content_hash: e29da5a269168f14
+content_hash: 72493cde5df1951d
 ---
+
 # Cautious Optimizers: Improving Training with One Line of Code
 
 **Conference**: ICLR 2026  
@@ -158,8 +163,8 @@ The cautious mask provided consistent gains when applied to AdamW, LaProp, and M
 - [\[ICLR 2026\] Cautious Weight Decay](cautious_weight_decay.md)
 - [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](towards_dynamic_interleaving_optimizers.md)
 - [\[ICLR 2026\] Fantastic Pretraining Optimizers and Where to Find Them](fantastic_pretraining_optimizers_and_where_to_find_them.md)
-- [\[ICLR 2026\] DES-LOC: Desynced Low Communication Adaptive Optimizers for Foundation Models](des-loc_desynced_low_communication_adaptive_optimizers_for_foundation_models.md)
 - [\[ICLR 2026\] Improving Feasibility via Fast Autoencoder-Based Projections](improving_feasibility_via_fast_autoencoder-based_projections.md)
+- [\[ICLR 2026\] Predictive Differential Training Guided by Training Dynamics](predictive_differential_training_guided_by_training_dynamics.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Timestep Rescheduling in Diffusion Inversion
 description: >-
-  [ICML 2026][Image Generation][DDIM] The authors discover that diffusion inversion error strongly depends on timestep size and follows a "high at both ends, low in the middle" parabolic distribution across timestep indices. They propose TRDI, a training-free, zero-overhead non-uniform timestep scheduler. TRDI first performs global timestep stretching and
+  [ICML2026][Image Generation][Diffusion Inversion] The authors discover that diffusion inversion error strongly depends on timestep size and follows a "high at both ends, low in the middle" parabolic distribution across timestep indices. They propose TRDI, a training-free, zero-overhead non-uniform timestep scheduler. TRDI first performs global timestep stretching and subsequently employs dynamic programming for local rearrangement, concentrating computational resources on seg…
 tags:
-  - ICML 2026
-  - Image Generation
-  - DDIM
-  - Image Editing
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusion Inversion"
+  - "DDIM"
+  - "Timestep Scheduling"
+  - "Dynamic Programming"
+  - "Image Editing"
 date: 2026-05-08
-content_hash: cd2940b14e44fb62
+content_hash: 642103fca1c4e401
 ---
+
 # Timestep Rescheduling in Diffusion Inversion
 
 **Conference**: ICML2026  
@@ -154,15 +158,14 @@ TRDI is **completely training-free and parameter-free**. It does not fine-tune t
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Watch Your Step: Information Injection in Diffusion Models via Shadow Timestep Embedding](watch_your_step_information_injection_in_diffusion_models_via_shadow_timestep_em.md)
 - [\[ECCV 2024\] Beta-Tuned Timestep Diffusion Model](../../ECCV2024/image_generation/beta-tuned_timestep_diffusion_model.md)
-- [\[CVPR 2026\] RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits](../../CVPR2026/image_generation/rebrl_reinforcing_discrete_visual_diffusion_models_with_rebalanced_timestep_cred.md)
-- [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](../../CVPR2026/image_generation/ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
 - [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](../../ICCV2025/image_generation/timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
+- [\[CVPR 2026\] RebRL: Reinforcing Discrete Visual Diffusion Models with Rebalanced Timestep Credits](../../CVPR2026/image_generation/rebrl_reinforcing_discrete_visual_diffusion_models_with_rebalanced_timestep_cred.md)
+- [\[ECCV 2024\] Eta Inversion: Designing an Optimal Eta Function for Diffusion-based Real Image Editing](../../ECCV2024/image_generation/eta_inversion_designing_an_optimal_eta_function_for_diffusion-based_real_image_e.md)
 
 </div>
 

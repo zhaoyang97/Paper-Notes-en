@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] MTR-Bench constructs an automated multi-turn reasoning evaluation framework comprising 4 categories, 40 tasks, and 3,600 instances, demonstrating that current frontier reasoning models remain unreliable in interactive and dynamic feedback environments.
+  [ACL 2026][Reasoning][Multi-turn reasoning] MTR-Bench constructs an automated multi-turn reasoning evaluation framework comprising 4 categories, 40 tasks, and 3,600 instances, demonstrating that current frontier reasoning models remain unreliable in interactive and dynamic feedback environments.
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Multi-turn reasoning"
+  - "automatic evaluation"
+  - "interactive environment"
+  - "difficulty stratification"
+  - "reasoning pattern analysis"
 date: 2026-05-08
-content_hash: 7a6617a45ad6dd42
+content_hash: b551da4c98c91821
 ---
+
 # MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation
 
 **Conference**: ACL 2026  
@@ -132,15 +138,15 @@ The experiment evaluates reasoning-enhanced models vs. non-reasoning instruction
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
-- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
+- [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](../../ICLR2026/llm_reasoning/simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
 - [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](../../ICML2026/llm_reasoning/when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
-- [\[ACL 2026\] Scaling Evaluation-Time Compute with Reasoning Models as Evaluators](scaling_evaluation-time_compute_with_reasoning_models_as_evaluators.md)
-- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
+- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](../../ICML2026/llm_reasoning/toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
+- [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
 
 </div>
 

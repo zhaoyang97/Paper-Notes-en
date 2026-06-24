@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Fluent Alignment with Disfluent Judges: Post-training for Lower-Resource Languages
 description: >-
-  [ICLR 2026][Alignment & RLHF][On-policy RL] This paper proposes a post-training methodology for low-resource languages: it avoids target-language instruction data entirely, relying solely on on-policy reinforcement learning to learn from the model's own sampled responses. This enables the training of a linguistically authentic aligned model even with a "disfluen
+  [ICLR 2026][LLM Alignment][Preference Alignment] This paper proposes a post-training methodology for low-resource languages: it avoids target-language instruction data entirely, relying solely on on-policy reinforcement learning to learn from the model's own sampled responses. This enables the training of a linguistically authentic aligned model even with a "disfluent" judge—the core principle being "never exposing the model to translationese during training."
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - On-policy RL
-  - RLAIF
-  - LLM-as-a-judge
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "On-policy RL"
+  - "RLAIF"
+  - "Low-resource Languages"
+  - "Fluency"
+  - "LLM-as-a-judge"
+  - "Norwegian"
 date: 2026-05-08
-content_hash: 06a34f81c9d28e17
+content_hash: 0b7e051fa70867f9
 ---
+
 # Fluent Alignment with Disfluent Judges: Post-training for Lower-Resource Languages
 
 **Conference**: ICLR 2026  
@@ -125,6 +130,7 @@ The Pearson correlation between judge fluency and policy fluency is only **0.067
 - **Value**: ⭐⭐⭐⭐ Provides an actionable, low-cost paradigm for "zero-instruction-data alignment" for thousands of low-resource languages.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

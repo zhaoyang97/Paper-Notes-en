@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RepIt: Steering Language Models with Concept-Specific Refusal Vectors
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] RepIt utilizes a three-step "reweighting → whitening → orthogonalization" process to disentangle the overlapping components of "target concepts" and "non-target concepts" from the Difference-in-Means (DIM) refusal vector. With only a dozen samples, it can precisely disable refusal for a specific dangerous concept (e.g.
+  [ICLR 2026][LLM Safety][Activation Steering] RepIt utilizes a three-step "reweighting → whitening → orthogonalization" process to disentangle the overlapping components of "target concepts" and "non-target concepts" from the Difference-in-Means (DIM) refusal vector. With only a dozen samples, it can precisely disable refusal for a specific dangerous concept (e.g., Weapons of Mass Destruction) while keeping the model's refusal behavior intact on other safety benchmarks. This c…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Activation Steering"
+  - "Refusal Vector"
+  - "Concept Disentanglement"
+  - "Benchmark Evasion"
+  - "Model Organism"
 date: 2026-05-08
-content_hash: b4c5ffb1efa7b5b5
+content_hash: 98324b0ffe1ac004
 ---
+
 # RepIt: Steering Language Models with Concept-Specific Refusal Vectors
 
 **Conference**: ICLR 2026  
@@ -128,15 +134,20 @@ On four unseen external safety benchmarks (TDC2023, JailbreakBench, AdvBench, Ma
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **Refusal in LLMs is mediated by a single direction**, Arditi et al., 2024
-- **Implicitly Steering Language Models with Affine concept editing**, Marshall et al., 2024
-- **The Geometry of Refusal: Understanding Jailbreaks through Representation Engineering**, Wollschläger et al., 2024
+## Related Papers
+
+- [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)
+- [\[ICLR 2026\] On Fairness of Task Arithmetic: The Role of Task Vectors](on_fairness_of_task_arithmetic_the_role_of_task_vectors.md)
+- [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](../../NeurIPS2025/llm_safety/steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
+- [\[ICLR 2026\] Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion](jailbreaking_the_matrix_nullspace_steering_for_controlled_model_subversion.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)

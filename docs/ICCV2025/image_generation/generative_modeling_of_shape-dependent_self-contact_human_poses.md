@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Modeling of Shape-Dependent Self-Contact Human Poses
 description: >-
-  [ICCV 2025][Image Generation][Self-Contact] This work constructs Goliath-SC, the first large-scale self-contact pose dataset with accurate shape annotations (383K poses / 130 subjects)…
+  [ICCV 2025][Image Generation][Self-Contact] This work constructs Goliath-SC, the first large-scale self-contact pose dataset with accurate shape annotations (383K poses / 130 subjects), proposes PAPoseDiff—a shape-conditioned part-aware latent diffusion model for modeling body-shape-dependent self-contact pose distributions—and leverages the learned diffusion prior for monocular pose refinement, outperforming SOTA methods such as BUDDI and SMPLer-X on unseen subjects.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Pose Generation"
   - "Pose Refinement"
 date: 2026-05-08
-content_hash: d2639d0c12c86643
+content_hash: 07c510390529849e
 ---
 
 # Generative Modeling of Shape-Dependent Self-Contact Human Poses
@@ -181,8 +181,8 @@ Key findings:
 - [\[ICCV 2025\] DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses](dreamdance_animating_human_images_by_enriching_3d_geometry_cues_from_2d_poses.md)
 - [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
 - [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
-- [\[ICCV 2025\] Aether: Geometric-Aware Unified World Modeling](aether_geometric-aware_unified_world_modeling.md)
-- [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](../../ICLR2026/image_generation/direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](../../ICLR2026/image_generation/generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
+- [\[ECCV 2024\] NL2Contact: Natural Language Guided 3D Hand-Object Contact Modeling with Diffusion Model](../../ECCV2024/image_generation/nl2contact_natural_language_guided_3d_hand-object_contact_modeling_with_diffusio.md)
 
 </div>
 

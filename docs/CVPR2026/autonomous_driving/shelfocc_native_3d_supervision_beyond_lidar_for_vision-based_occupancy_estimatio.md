@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShelfOcc: Native 3D Supervision beyond LiDAR for Vision-Based Occupancy Estimation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] ShelfOcc departs from using 2D rendering losses to supervise occupancy networks. Instead, it utilizes geometric foundation models (MapAnything) and semantic segmentation foundation models (GroundedSAM) to generate metric-consistent 3D semantic voxel pseudo-labels from pure multi-view video as "native 3D supervision." T
+  [CVPR 2026][Autonomous Driving][Occupancy Estimation] ShelfOcc departs from using 2D rendering losses to supervise occupancy networks. Instead, it utilizes geometric foundation models (MapAnything) and semantic segmentation foundation models (GroundedSAM) to generate metric-consistent 3D semantic voxel pseudo-labels from pure multi-view video as "native 3D supervision." This achieves up to a 34% relative improvement in weakly/shelf-supervised occupancy estimation on Occ3D-nuS…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Occupancy Estimation"
+  - "Weakly Supervised"
+  - "Geometric Foundation Models"
+  - "Pseudo-labels"
+  - "LiDAR-free"
 date: 2026-05-08
-content_hash: 4878d0cc405ba045
+content_hash: 1fb77ad22430706c
 ---
+
 # ShelfOcc: Native 3D Supervision beyond LiDAR for Vision-Based Occupancy Estimation
 
 **Conference**: CVPR 2026  
@@ -124,10 +130,20 @@ Note: Geometric IoU measures voxel occupancy accuracy regardless of semantic cla
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] QueryOcc: Query-based Self-Supervision for 3D Semantic Occupancy](queryocc_query-based_self-supervision_for_3d_semantic_occupancy.md)
+- [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
+- [\[CVPR 2026\] OccAny: Generalized Unconstrained Urban 3D Occupancy](occany_generalized_unconstrained_urban_3d_occupancy.md)
+- [\[CVPR 2026\] L3DR: 3D-aware LiDAR Diffusion and Rectification](l3dr_3d-aware_lidar_diffusion_and_rectification.md)
+- [\[CVPR 2026\] ProOOD: Prototype-Guided Out-of-Distribution 3D Occupancy Prediction](proood_prototype-guided_out-of-distribution_3d_occupancy_prediction.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)

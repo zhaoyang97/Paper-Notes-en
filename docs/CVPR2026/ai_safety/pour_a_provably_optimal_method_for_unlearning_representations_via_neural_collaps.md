@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] POUR: A Provably Optimal Method for Unlearning Representations via Neural Collapse
 description: >-
-  [CVPR 2026][AI Safety][Neural Collapse] Aiming at the problem where existing machine unlearning methods only modify the classification head while forgotten class information remains in the features, this paper elevates "unlearning" to the representation level. Using the geometry of the simplex-ETF in Neural Collapse, it proves that "removing a class = orthog
+  [CVPR 2026][AI Safety][Machine Unlearning] Aiming at the problem where existing machine unlearning methods only modify the classification head while forgotten class information remains in the features, this paper elevates "unlearning" to the representation level. Using the geometry of the simplex-ETF in Neural Collapse, it proves that "removing a class = orthogonal projection along its direction results in an ETF remaining an ETF." This result yields the closed-form projectio…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Neural Collapse
-  - ETF
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Representation Unlearning"
+  - "Neural Collapse"
+  - "ETF"
+  - "Orthogonal Projection"
 date: 2026-05-08
-content_hash: bc800a55c6b391ed
+content_hash: dbcc10e37310b6d4
 ---
+
 # POUR: A Provably Optimal Method for Unlearning Representations via Neural Collapse
 
 **Conference**: CVPR 2026  
@@ -163,11 +167,11 @@ Contribution analysis is primarily handled through the **POUR-P vs POUR-D compar
 
 ## Related Papers
 
-- [\[CVPR 2026\] POUR: A Provably Optimal Method for Unlearning Representation via Neural Collapse](pour_a_provably_optimal_method_for_unlearning_representation_via_neural_collapse.md)
+- [\[CVPR 2025\] Detecting Out-of-Distribution through the Lens of Neural Collapse](../../CVPR2025/ai_safety/detecting_out-of-distribution_through_the_lens_of_neural_collapse.md)
+- [\[CVPR 2026\] VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation](vmd-fact_a_new_video_dataset_and_mllm-based_method_for_detecting_realistic_ai-ge.md)
+- [\[ICLR 2026\] How to Cure Newton for Unlearning Neural Networks? An Empirical Study from the Hessian Perspective](../../ICLR2026/ai_safety/how_to_cure_newton_for_unlearning_neural_networks_an_empirical_study_from_the_he.md)
 - [\[CVPR 2026\] Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models](roots_beneath_the_cut_uncovering_the_risk_of_concept_revival_in_pruning-based_un.md)
 - [\[CVPR 2026\] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors](unlearning_without_forgetting_securely_removing_targeted_concepts_from_large-sca.md)
-- [\[CVPR 2026\] SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification](saner_switchable_adapter_with_non-parametric_enhanced_routing_for_person_de-reid.md)
-- [\[CVPR 2026\] FedMOP: Achieving Enhanced Privacy and Performance in Federated Learning via Momentum Orthogonal Projection](fedmop_achieving_enhanced_privacy_and_performance_in_federated_learning_via_mome.md)
 
 </div>
 

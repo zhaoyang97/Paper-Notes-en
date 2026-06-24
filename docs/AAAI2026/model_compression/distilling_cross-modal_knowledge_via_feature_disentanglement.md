@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distilling Cross-Modal Knowledge via Feature Disentanglement
 description: >-
-  [AAAI 2026][Model Compression][Cross-modal distillation] This paper proposes Frequency-Decoupled Cross-Modal Knowledge Distillation (FD-CMKD)…
+  [AAAI 2026][Model Compression][Cross-modal distillation] This paper proposes Frequency-Decoupled Cross-Modal Knowledge Distillation (FD-CMKD), which decomposes teacher and student features into low-frequency (modality-shared semantics) and high-frequency (modality-specific details) components via Fourier transform, applies strong-consistency MSE and weak-consistency logMSE losses respectively, and introduces scale normalization along with shared classifier alignment to bridge…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "scale consistency"
   - "shared classifier alignment"
 date: 2026-05-08
-content_hash: 54c8057a9b33ed26
+content_hash: 43990dbbbe9e3b27
 ---
 
 # Distilling Cross-Modal Knowledge via Feature Disentanglement
@@ -165,10 +165,10 @@ where $\mathcal{L}_{\text{task}}$ is the student's classification cross-entropy 
 ## Related Papers
 
 - [\[AAAI 2026\] Asymmetric Cross-Modal Knowledge Distillation: Bridging Modalities with Weak Semantic Consistency](asymmetric_cross-modal_knowledge_distillation_bridging_modalities_with_weak_sema.md)
+- [\[ACL 2025\] Graph-guided Cross-composition Feature Disentanglement for Compositional Zero-shot Learning](../../ACL2025/model_compression/graph-guided_cross-composition_feature_disentanglement_for_compositional_zero-sh.md)
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
 - [\[AAAI 2026\] CTPD: Cross Tokenizer Preference Distillation](ctpd_cross_tokenizer_preference_distillation.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[AAAI 2026\] DOS: Distilling Observable Softmaps of Zipfian Prototypes for Self-Supervised Point Representation](dos_distilling_observable_softmaps_of_zipfian_prototypes_for_self-supervised_poi.md)
 
 </div>
 

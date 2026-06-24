@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Frame Guidance is a training-free frame-level guidance method that achieves various controllable video generation tasks, such as keyframe guidance, stylization, and looping videos, without model modification. It utilizes two core components: latent slicing (reducing VRAM by 60×) and Video Latent Optimization (VLO).
+  [ICLR 2026][Video Generation][Training-free guidance] Frame Guidance is a training-free frame-level guidance method that achieves various controllable video generation tasks, such as keyframe guidance, stylization, and looping videos, without model modification. It utilizes two core components: latent slicing (reducing VRAM by 60×) and Video Latent Optimization (VLO).
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Training-free guidance"
+  - "Video diffusion models"
+  - "Frame-level control"
+  - "Keyframe generation"
+  - "Stylized video"
 date: 2026-05-08
-content_hash: 0e3f1346826dd10e
+content_hash: fcf33a4ac458e77f
 ---
+
 # Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models
 
 **Conference**: ICLR 2026  

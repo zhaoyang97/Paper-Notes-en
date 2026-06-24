@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Curious Case of In-Training Compression of State Space Models
 description: >-
-  [ICLR 2026][Model Compression][State Space Model] This paper proposes COMPRESSM, which introduces "Balanced Truncation + Hankel Singular Value (HSV) analysis" from control theory into the training process of SSMs. By identifying and discarding state dimensions with low contribution to input-output mapping early in training, the model "starts big and shrinks during tra
+  [ICLR 2026][Model Compression][State Space Models] This paper proposes COMPRESSM, which introduces "Balanced Truncation + Hankel Singular Value (HSV) analysis" from control theory into the training process of SSMs. By identifying and discarding state dimensions with low contribution to input-output mapping early in training, the model "starts big and shrinks during training," accelerating training while preserving critical structures that are lost when training small models f…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - State Space Model
+  - "ICLR 2026"
+  - "Model Compression"
+  - "State Space Models"
+  - "Balanced Truncation"
+  - "Hankel Singular Values"
+  - "In-Training Compression"
+  - "Model Order Reduction"
 date: 2026-05-08
-content_hash: 8898f67cca788bbf
+content_hash: 59df82dda27dc0ba
 ---
+
 # The Curious Case of In-Training Compression of State Space Models
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ Directly training a dim 92 model is only slightly faster than COMPRESSM (1.6x vs
 ## Related Papers
 
 - [\[ICLR 2026\] AIRE-Prune: Asymptotic Impulse-Response Energy for State Pruning in State Space Models](aire-prune_asymptotic_impulse-response_energy_for_state_pruning_in_state_space_m.md)
-- [\[NeurIPS 2025\] Hankel Singular Value Regularization for Highly Compressible State Space Models](../../NeurIPS2025/model_compression/hankel_singular_value_regularization_for_highly_compressible_state_space_models.md)
 - [\[ICLR 2026\] SSDi8: Accurate and Efficient 8-bit Quantization for State Space Duality](ssdi8_accurate_and_efficient_8-bit_quantization_for_state_space_duality.md)
+- [\[NeurIPS 2025\] Hankel Singular Value Regularization for Highly Compressible State Space Models](../../NeurIPS2025/model_compression/hankel_singular_value_regularization_for_highly_compressible_state_space_models.md)
 - [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
 - [\[CVPR 2025\] MambaIC: State Space Models for High-Performance Learned Image Compression](../../CVPR2025/model_compression/mambaic_state_space_models_for_high-performance_learned_image_compression.md)
 

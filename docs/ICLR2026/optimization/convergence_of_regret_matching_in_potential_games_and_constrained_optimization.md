@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Convergence of Regret Matching in Potential Games and Constrained Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper provides the first proof that Regret Matching+ (RM+) serves as a **reliable and fast first-order optimizer** for "constrained optimization over products of simplices" (including potential games as a special case), converging to an $\epsilon$-KKT point in $O_\epsilon(1/\epsilon^4)$ steps. Simultaneously, it p
+  [ICLR2026][Optimization][Regret Matching] This paper provides the first proof that Regret Matching+ (RM+) serves as a **reliable and fast first-order optimizer** for "constrained optimization over products of simplices" (including potential games as a special case), converging to an $\epsilon$-KKT point in $O_\epsilon(1/\epsilon^4)$ steps. Simultaneously, it proves that the original Regret Matching (RM) can take exponential steps to converge even in two-player common-interest…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Regret Matching"
+  - "Potential Games"
+  - "Constrained Optimization"
+  - "Convergence Analysis"
+  - "No-Regret Learning"
 date: 2026-05-08
-content_hash: cf3b81c3929e4cfe
+content_hash: be66738b905fe970
 ---
+
 # Convergence of Regret Matching in Potential Games and Constrained Optimization
 
 **Conference**: ICLR2026  
@@ -136,9 +142,9 @@ As a pure theory paper, there are no large-scale empirical experiments, only a s
 
 - [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
 - [\[ICML 2026\] Minibatch Selection via Partition Matroid Constrained Gradient Matching](../../ICML2026/optimization/minibatch_selection_via_partition_matroid_constrained_gradient_matching.md)
+- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](convergence_of_muon_with_newton-schulz.md)
 - [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
 - [\[ICLR 2026\] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback](online_black-box_prompt_optimization_with_regret_guarantees_under_noisy_feedback.md)
-- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 
 </div>
 

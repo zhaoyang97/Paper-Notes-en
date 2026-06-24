@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Computational Narrative Understanding for Expressive Text-to-Speech
 description: >-
-  [ACL 2026][Audio & Speech][Audiobook] This paper extracts character direct quotes from audiobook fiction to construct LibriQuote, a large-scale expressive speech dataset (5.3K hours of quotes + 12.7K hours of narration). It annotates speaking styles using speech verbs and adverbs as pseudo-labels. Experiments demonstrate that fine-tuning flow-matching mode
+  [ACL 2026 Findings][Audio & Speech][Audiobooks] This paper extracts character direct quotes from audiobook fiction to construct LibriQuote, a large-scale expressive speech dataset (5.3K hours of quotes + 12.7K hours of narration). It annotates speaking styles using speech verbs and adverbs as pseudo-labels. Experiments demonstrate that fine-tuning flow-matching models improves both expressiveness and intelligibility, and LibriQuote-test serves as a challenging benchmark for e…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Audiobook
-  - Expressive Speech
-  - Narrative Understanding
-  - Dataset
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Audiobooks"
+  - "Expressive Speech"
+  - "Narrative Understanding"
+  - "Character Dialogue"
+  - "Dataset"
 date: 2026-05-08
-content_hash: 077f895aff024f1f
+content_hash: 337fe8ceac984d5a
 ---
+
 # Computational Narrative Understanding for Expressive Text-to-Speech
 
 **Conference**: ACL 2026 Findings  
@@ -142,11 +144,11 @@ SparkTTS (Autoregressive) fine-tunes the LLM backbone (Qwen2-0.5B) using standar
 
 ## Related Papers
 
+- [\[ICLR 2026\] MambaVoiceCloning: Efficient and Expressive Text-to-Speech via State-Space Modeling and Diffusion Control](../../ICLR2026/audio_speech/mambavoicecloning_efficient_and_expressive_text-to-speech_via_state-space_modeli.md)
+- [\[ICLR 2026\] Closing the Gap Between Text and Speech Understanding in LLMs](../../ICLR2026/audio_speech/closing_the_gap_between_text_and_speech_understanding_in_llms.md)
+- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](../../ICLR2026/audio_speech/uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
 - [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](../../CVPR2026/audio_speech/audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
-- [\[AAAI 2026\] DualSpeechLM: Towards Unified Speech Understanding and Generation via Dual Speech Token Modeling](../../AAAI2026/audio_speech/dualspeechlm_towards_unified_speech_understanding_and_generation_via_dual_speech.md)
-- [\[ICLR 2026\] Latent Speech-Text Transformer](../../ICLR2026/audio_speech/latent_speech_text_transformer.md)
-- [\[ICCV 2025\] Understanding Co-speech Gestures in-the-wild](../../ICCV2025/audio_speech/understanding_co-speech_gestures_in-the-wild.md)
-- [\[ICML 2026\] Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability](../../ICML2026/audio_speech/evaluating_and_rewarding_lalms_for_expressive_role-play_tts_via_mean_continuatio.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 
 </div>
 

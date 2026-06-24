@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper discovers that domain-specific contexts (e.g., chemistry papers) selectively relax LLM protection against related harmful knowledge (Vertical Unlocking), while safety research contexts trigger a broad relaxation of protection across all harmful categories (General Unlocking). Based on this, the Jargon attack
+  [ACL 2026][LLM Safety][Jailbreak attacks] This paper discovers that domain-specific contexts (e.g., chemistry papers) selectively relax LLM protection against related harmful knowledge (Vertical Unlocking), while safety research contexts trigger a broad relaxation of protection across all harmful categories (General Unlocking). Based on this, the Jargon attack framework is proposed, achieving over 93% attack success rate (ASR) across seven frontier models including GPT-5.2 an…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Jailbreak attacks"
+  - "safety boundaries"
+  - "domain contexts"
+  - "gray zone"
+  - "multi-round adversarial"
 date: 2026-05-08
-content_hash: 3a9efeadffab76a3
+content_hash: 33eeba6e5701c18e
 ---
+
 # Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries
 
 **Conference**: ACL 2026  
@@ -151,9 +157,9 @@ Defense strategies include: (1) Policy-guided protection—designing customized 
 
 - [\[ACL 2026\] Purging the Gray Zone: Latent-Geometric Denoising for Precise Knowledge Boundary Awareness](purging_the_gray_zone_latent-geometric_denoising_for_precise_knowledge_boundary_.md)
 - [\[ACL 2026\] Unlearners Can Lie: Evaluating and Improving Honesty in LLM Unlearning](unlearners_can_lie_evaluating_and_improving_honesty_in_llm_unlearning.md)
-- [\[ICML 2025\] Safety Alignment Can Be Not Superficial With Explicit Safety Signals](../../ICML2025/llm_safety/safety_alignment_can_be_not_superficial_with_explicit_safety_signals.md)
 - [\[ACL 2026\] Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)
 - [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](../../ICLR2026/llm_safety/invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
 
 </div>
 

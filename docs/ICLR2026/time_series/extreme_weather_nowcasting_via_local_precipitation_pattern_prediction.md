@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Extreme Weather Nowcasting via Local Precipitation Pattern Prediction
 description: >-
-  [ICLR 2026][Time Series][Video Swin Transformer] A deterministic nowcasting framework, exPreCast, is proposed. By utilizing local spatiotemporal attention, Cubic Dual-path Upsampling (CDU), and a Temporal Extractor (TE), it approaches the extreme precipitation prediction accuracy of diffusion ensemble models on SEVIR/MeteoNet and a newly constructed balanced KMA rada
+  [ICLR 2026][Time Series][Precipitation Nowcasting] A deterministic nowcasting framework, exPreCast, is proposed. By utilizing local spatiotemporal attention, Cubic Dual-path Upsampling (CDU), and a Temporal Extractor (TE), it approaches the extreme precipitation prediction accuracy of diffusion ensemble models on SEVIR/MeteoNet and a newly constructed balanced KMA radar dataset with only 1/30 of the computational cost.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Video Swin Transformer
+  - "ICLR 2026"
+  - "Time Series"
+  - "Precipitation Nowcasting"
+  - "Extreme Weather"
+  - "Video Swin Transformer"
+  - "Upsampling"
+  - "Radar Dataset"
 date: 2026-05-08
-content_hash: 436e65ab566355c4
+content_hash: f1e804852cc748f1
 ---
+
 # Extreme Weather Nowcasting via Local Precipitation Pattern Prediction
 
 **Conference**: ICLR 2026  

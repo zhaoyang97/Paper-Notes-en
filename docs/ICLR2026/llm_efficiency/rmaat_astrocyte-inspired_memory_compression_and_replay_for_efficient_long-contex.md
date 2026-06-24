@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] RMAAT incorporates two types of biological astrocyte mechanisms for memory regulation into Transformers: it replaces $O(N^2)$ self-attention with a linear complexity attention inspired by short-term plasticity (STP), and uses a "memory retention factor" derived from long-term plasticity (LTP) saturation curves to adapt
+  [ICLR 2026][LLM Efficiency][Long Context] RMAAT incorporates two types of biological astrocyte mechanisms for memory regulation into Transformers: it replaces $O(N^2)$ self-attention with a linear complexity attention inspired by short-term plasticity (STP), and uses a "memory retention factor" derived from long-term plasticity (LTP) saturation curves to adaptively compress cross-segment memory tokens. Complemented by the AMRB training algorithm…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Linear Attention"
+  - "Recurrent Memory"
+  - "Astrocytes"
+  - "Memory Compression"
 date: 2026-05-08
-content_hash: 94635d6369ce60c7
+content_hash: 2a03fbdeb4705730
 ---
+
 # RMAAT: Astrocyte-Inspired Memory Compression and Replay for Efficient Long-Context Transformers
 
 **Conference**: ICLR 2026  

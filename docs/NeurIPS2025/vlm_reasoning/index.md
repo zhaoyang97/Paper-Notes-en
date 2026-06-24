@@ -80,7 +80,7 @@ item_total: 30
 
 **🧠 NeurIPS2025** · **30** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (144)](../../CVPR2026/vlm_reasoning/index.md) · [🔬 ICLR2026 (111)](../../ICLR2026/vlm_reasoning/index.md) · [💬 ACL2026 (32)](../../ACL2026/vlm_reasoning/index.md) · [🧪 ICML2026 (31)](../../ICML2026/vlm_reasoning/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/vlm_reasoning/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/vlm_reasoning/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (150)](../../CVPR2026/vlm_reasoning/index.md) · [🔬 ICLR2026 (111)](../../ICLR2026/vlm_reasoning/index.md) · [💬 ACL2026 (32)](../../ACL2026/vlm_reasoning/index.md) · [🧪 ICML2026 (31)](../../ICML2026/vlm_reasoning/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/vlm_reasoning/index.md) · [📹 ICCV2025 (15)](../../ICCV2025/vlm_reasoning/index.md)
 
 🔥 **Top topics:** Reasoning ×25 · Multimodal/VLM ×17 · LLM ×4
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reconstruction Alignment Improves Unified Multimodal Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Image Generation] RECA treats the visual understanding embeddings of a Unified Multimodal Model (UMM) as dense "visual prompts." By re-aligning the understanding and generation branches through post-training with unlabeled image reconstruction, it significantly improves 1.5B UMMs on GenEval, DPGBench, and image editing benchmarks withou
+  [ICLR 2026][Multimodal VLM][Unified Multimodal Models] RECA treats the visual understanding embeddings of a Unified Multimodal Model (UMM) as dense "visual prompts." By re-aligning the understanding and generation branches through post-training with unlabeled image reconstruction, it significantly improves 1.5B UMMs on GenEval, DPGBench, and image editing benchmarks without requiring extra captions, GPT-4o distillation, or reinforcement learning.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Image Generation
-  - Image Editing
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "Reconstruction Alignment"
+  - "Visual Understanding Encoder"
+  - "Image Generation"
+  - "Image Editing"
 date: 2026-05-08
-content_hash: 508025a94497f66f
+content_hash: 2c595de82e0358ea
 ---
+
 # Reconstruction Alignment Improves Unified Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -171,7 +175,7 @@ Ablations show that RECA improves alignment more effectively than standard SFT o
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

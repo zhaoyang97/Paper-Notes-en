@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Scalable Multi-Task Low-Rank Model Adaptation
 description: >-
-  [ICLR 2026][Social Computing][LoRA] Ours systematically analyzes the root causes of multi-task LoRA collapse as the number of tasks increases (uniform regularization destroying shared knowledge + component-level LoRA amplifying gradient conflicts) and proposes mtLoRA. By combining spectral-aware regularization, block-level adaptation, and fine-grained ro
+  [ICLR 2026][Social Computing][LoRA] Ours systematically analyzes the root causes of multi-task LoRA collapse as the number of tasks increases (uniform regularization destroying shared knowledge + component-level LoRA amplifying gradient conflicts) and proposes mtLoRA. By combining spectral-aware regularization, block-level adaptation, and fine-grained routing, mtLoRA outperforms SOTA by an average of 2.3% across 15-25 tasks while reducing parameters by 47% and training time b…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - LoRA
-  - multi-task learning
-  - spectral-aware regularization
-  - block-level adaptation
-  - fine-grained routing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "LoRA"
+  - "multi-task learning"
+  - "spectral-aware regularization"
+  - "block-level adaptation"
+  - "fine-grained routing"
 date: 2026-05-08
-content_hash: 53b6ff518965fe5a
+content_hash: d339745395105138
 ---
+
 # Scalable Multi-Task Low-Rank Model Adaptation
 
 **Conference**: ICLR 2026  
@@ -156,9 +157,9 @@ Routing granularity ablation:
 
 - [\[ICLR 2026\] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation](adaptive_debiasing_tsallis_entropy_for_test-time_adaptation.md)
 - [\[ICLR 2026\] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses](biasfreebench_a_benchmark_for_mitigating_bias_in_large_language_model_responses.md)
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
 - [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](../../ACL2026/social_computing/synthia_scalable_grounded_persona_generation_from_social_media_data.md)
 - [\[CVPR 2025\] As Language Models Scale, Low-order Linear Depth Dynamics Emerge](../../CVPR2025/social_computing/as_language_models_scale_low-order_linear_depth_dynamics_emerge.md)
-- [\[ACL 2026\] mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection](../../ACL2026/social_computing/mdok-style_at_semeval-2026_task_9_finetuning_llms_for_multilingual_polarization_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes
 description: >-
-  [ICCV 2025][3D Vision][Category-level pose estimation] This work presents the first RGB-only, single-model framework that unifies object detection and category-level pose estimation. By leveraging Neural Mesh Models as 3…
+  [ICCV 2025][3D Vision][Category-level pose estimation] This work presents the first RGB-only, single-model framework that unifies object detection and category-level pose estimation. By leveraging Neural Mesh Models as 3D prototypes, the method performs feature matching and multi-model RANSAC PnP to simultaneously detect objects and estimate their 9D poses. It surpasses the state of the art on all scale-agnostic metrics on REAL275.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "single-stage method"
   - "RGB-only"
 date: 2026-05-08
-content_hash: bdcbe11117531283
+content_hash: 5ee9b705aaa77fc7
 ---
 
 # Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes
@@ -141,10 +141,10 @@ Robustness ablation: Under 8 types of image degradation, two-stage methods suffe
 ## Related Papers
 
 - [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](../../CVPR2026/3d_vision/compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
+- [\[CVPR 2026\] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation](../../CVPR2026/3d_vision/se3-equivariance_with_geometric_and_topological_guidance_for_category-level_obje.md)
+- [\[CVPR 2025\] Learning Class Prototypes for Unified Sparse-Supervised 3D Object Detection](../../CVPR2025/3d_vision/learning_class_prototypes_for_unified_sparse-supervised_3d_object_detection.md)
 - [\[ICCV 2025\] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation](boxdreamer_dreaming_box_corners_for_generalizable_object_pose_estimation.md)
-- [\[CVPR 2026\] DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces](../../CVPR2026/3d_vision/dicart_advancing_category-level_articulated_object_pose_estimation_in_discrete_s.md)
-- [\[ICCV 2025\] A Unified Interpretation of Training-Time Out-of-Distribution Detection](a_unified_interpretation_of_training-time_out-of-distribution_detection.md)
-- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
+- [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](../../CVPR2026/3d_vision/scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
 
 </div>
 

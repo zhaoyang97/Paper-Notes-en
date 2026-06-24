@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging
 description: >-
-  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes a new paradigm called Test-Time Continual Model Merging (TTCMM) and the Mingle framework…
+  [NeurIPS 2025][Model Compression][Continual Learning] This paper proposes a new paradigm called Test-Time Continual Model Merging (TTCMM) and the Mingle framework, which employs a low-rank mixture-of-experts architecture with an adaptive null-space constrained gating mechanism to dynamically merge models at test time using a small number of unlabeled samples. Mingle outperforms state-of-the-art methods by 7–9% across multiple benchmarks while reducing forgetting to near zero.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "Null-Space Constraint"
   - "Low-Rank Decomposition"
 date: 2026-05-08
-content_hash: d3fd627e20fb0a6c
+content_hash: f3bbc0915ffd76cf
 ---
 
 # Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging
@@ -153,8 +153,8 @@ Adaptive relaxation substantially improves accuracy while maintaining near-zero 
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 - [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](../../ICLR2026/model_compression/null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
-- [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
-- [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
+- [\[ICML 2025\] BECAME: BayEsian Continual Learning with Adaptive Model MErging](../../ICML2025/model_compression/became_bayesian_continual_learning_with_adaptive_model_merging.md)
+- [\[ACL 2025\] MoRE: A Mixture of Low-Rank Experts for Adaptive Multi-Task Learning](../../ACL2025/model_compression/more_a_mixture_of_low-rank_experts_for_adaptive_multi-task_learning.md)
 
 </div>
 

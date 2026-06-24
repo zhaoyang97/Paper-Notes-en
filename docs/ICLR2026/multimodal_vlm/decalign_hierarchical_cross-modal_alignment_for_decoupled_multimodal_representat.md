@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] DecAlign decouples multimodal features into two streams: "modality-specific heterogeneous features" and "cross-modal shared homogeneous features." It aligns the heterogeneous part using prototype-guided multi-marginal optimal transport and the homogeneous part through latent space distribution matching with MMD. It con
+  [ICLR2026][Multimodal VLM][Multimodal representation learning] DecAlign decouples multimodal features into two streams: "modality-specific heterogeneous features" and "cross-modal shared homogeneous features." It aligns the heterogeneous part using prototype-guided multi-marginal optimal transport and the homogeneous part through latent space distribution matching with MMD. It consistently outperforms 13 SOTA methods across four sentiment analysis benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Multimodal representation learning"
+  - "cross-modal alignment"
+  - "feature decoupling"
+  - "optimal transport"
+  - "Maximum Mean Discrepancy"
 date: 2026-05-08
-content_hash: b0732411dc6066b7
+content_hash: fd54ba64dd49a8d8
 ---
+
 # DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning
 
 **Conference**: ICLR2026  
@@ -138,10 +144,10 @@ Detailed alignment ablations (Proto-OT / Cross-modal Transformer CT / Semantics 
 ## Related Papers
 
 - [\[ACL 2026\] CodeBind: Decoupled Representation Learning for Multimodal Alignment with Unified Compositional Codebook](../../ACL2026/multimodal_vlm/codebind_decoupled_representation_learning_for_multimodal_alignment_with_unified.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](exploring_cross-modal_flows_for_few-shot_learning.md)
 - [\[ICLR 2026\] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](../../CVPR2026/multimodal_vlm/decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
 - [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](../../NeurIPS2025/multimodal_vlm/on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
-- [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
 
 </div>
 

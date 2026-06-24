@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition
 description: >-
-  [NeurIPS 2025][Image Generation][synthetic data augmentation] This paper proposes AugGen, a self-contained synthetic data augmentation method that trains a class-conditional diffusion model on the target dataset…
+  [NeurIPS 2025][Image Generation][synthetic data augmentation] This paper proposes AugGen, a self-contained synthetic data augmentation method that trains a class-conditional diffusion model on the target dataset, generates new "mixed-class" samples by interpolating class conditioning vectors across different identities, and uses the resulting augmented data to improve discriminative model training. AugGen achieves 1–12% performance gains on face recognition benchmarks without…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "class mixing"
   - "self-contained framework"
 date: 2026-05-08
-content_hash: 8b17c41c5f1050f8
+content_hash: 8a395a253c690735
 ---
 
 # AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition
@@ -121,11 +121,11 @@ Equivalent real-data experiments show that adding 600K AugGen samples yields per
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scaling Can Lead to Compositional Generalization](scaling_can_lead_to_compositional_generalization.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](../../ICLR2026/image_generation/do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 - [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
+- [\[ICML 2025\] Synthetic Perception: Can Generated Images Unlock Latent Visual Prior for Text-Centric Reasoning?](../../ICML2025/image_generation/synthetic_perception_can_generated_images_unlock_latent_visual_prior_for_text-ce.md)
+- [\[NeurIPS 2025\] Scaling Can Lead to Compositional Generalization](scaling_can_lead_to_compositional_generalization.md)
 - [\[NeurIPS 2025\] Increasing the Utility of Synthetic Images through Chamfer Guidance](increasing_the_utility_of_synthetic_images_through_chamfer_guidance.md)
-- [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](../../ICCV2025/image_generation/attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
-- [\[NeurIPS 2025\] FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies](ferretnet_efficient_synthetic_image_detection_via_local_pixel_dependencies.md)
 
 </div>
 

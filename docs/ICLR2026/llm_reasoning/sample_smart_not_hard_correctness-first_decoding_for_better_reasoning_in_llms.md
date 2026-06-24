@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper argues that the intuition "low confidence steps = worth more exploration" is incorrect for reasoning tasks. It proposes that decoding truncation should be calibrated based on token "correctness" rather than "probability": specifically, by reverting to greedy (Greedy-Threshold) when confidence is extremely lo
+  [ICLR 2026][Reasoning][Decoding strategy] This paper argues that the intuition "low confidence steps = worth more exploration" is incorrect for reasoning tasks. It proposes that decoding truncation should be calibrated based on token "correctness" rather than "probability": specifically, by reverting to greedy (Greedy-Threshold) when confidence is extremely low and using a training-free calibration grid to map probabilities to correctness for dynamic truncation (Calibrated-To…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Decoding strategy"
+  - "truncation sampling"
+  - "uncertainty"
+  - "calibration"
+  - "reasoning tasks"
 date: 2026-05-08
-content_hash: 4a7413fd6a43e393
+content_hash: c177363d1c9898b1
 ---
+
 # Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs
 
 **Conference**: ICLR 2026  
@@ -149,9 +155,9 @@ Gains from stacking Greedy-Threshold on various samplers for GSM8K majority voti
 
 - [\[ICLR 2026\] WavefrontDiffusion: Dynamic Decoding Schedule for Improved Reasoning](wavefrontdiffusion_dynamic_decoding_schedule_for_improved_reasoning.md)
 - [\[ICLR 2026\] Making, Not Taking, the Best of N](making_not_taking_the_best_of_n.md)
-- [\[ICLR 2026\] ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution](shinkaevolve_towards_open-ended_and_sample-efficient_program_evolution.md)
-- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
-- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
+- [\[ICLR 2026\] Sample Lottery: Unsupervised Discovery of Critical Instances for LLM Reasoning](sample_lottery_unsupervised_discovery_of_critical_instances_for_llm_reasoning.md)
+- [\[ICLR 2026\] Soft Tokens, Hard Truths](soft_tokens_hard_truths.md)
+- [\[ICML 2026\] Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs](../../ICML2026/llm_reasoning/deliberate_evolution_agentic_reasoning_for_sample-efficient_symbolic_regression_.md)
 
 </div>
 

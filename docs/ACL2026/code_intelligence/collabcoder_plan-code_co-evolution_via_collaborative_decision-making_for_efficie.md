@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation
 description: >-
-  [ACL 2026][Code Intelligence][Multi-Agent] This paper proposes CollabCoder, a plan-code co-evolution framework. Through a Collaborative Decision-Making (CDM) module, it determines whether errors should be fixed at the plan level or the code level. Combined with a Reasoning Trajectory (RT) module for self-improving debugging learned from errors, it achieves an 1
+  [ACL 2026 Findings][Code Intelligence][Code Generation] This paper proposes CollabCoder, a plan-code co-evolution framework. Through a Collaborative Decision-Making (CDM) module, it determines whether errors should be fixed at the plan level or the code level. Combined with a Reasoning Trajectory (RT) module for self-improving debugging learned from errors, it achieves an 11-20% improvement over strong baselines on complex programming benchmarks while reducing API calls by 4-…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Code Generation"
+  - "Plan-Code Co-evolution"
+  - "Multi-agent"
+  - "Collaborative Debugging"
+  - "Reasoning Trajectory"
 date: 2026-05-08
-content_hash: ac0285e8f2c64e1a
+content_hash: 28c4ada95af97bd2
 ---
+
 # CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation
 
 **Conference**: ACL 2026 Findings  

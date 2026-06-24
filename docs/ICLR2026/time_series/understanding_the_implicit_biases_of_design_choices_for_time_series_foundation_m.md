@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models
 description: >-
-  [ICLR 2026][Time Series][patch size] This paper does not propose a new model or chase SOTA. Instead, it systematically maps three common design knobs of Time Series Foundation Models (TSFM)—patch size, embedding method (discrete quantization vs. continuous), and training loss (CE vs. L1/L2)—to three types of "implicit biases" (temporal, geometric, and reg
+  [ICLR 2026][Time Series][Time Series Foundation Models] This paper does not propose a new model or chase SOTA. Instead, it systematically maps three common design knobs of Time Series Foundation Models (TSFM)—patch size, embedding method (discrete quantization vs. continuous), and training loss (CE vs. L1/L2)—to three types of "implicit biases" (temporal, geometric, and regression-to-the-mean). Through theory and controlled experiments, it illustrates how each knob shapes the…
 tags:
-  - ICLR 2026
-  - Time Series
-  - patch size
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Inductive Bias"
+  - "patch size"
+  - "Quantized Embedding"
+  - "Loss Function"
 date: 2026-05-08
-content_hash: b2ab286af353facc
+content_hash: fc536c47e3d5d3c3
 ---
+
 # Understanding the Implicit Biases of Design Choices for Time Series Foundation Models
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,8 @@ Using sine waves with injected outliers, the authors observe three biases active
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -143,7 +148,7 @@ Using sine waves with injected outliers, the authors observe three biases active
 - [\[ICLR 2026\] Understanding Transformers for Time Series: Rank Structure, Flow-of-ranks, and Compressibility](understanding_transformers_for_time_series_rank_structure_flow-of-ranks_and_comp.md)
 - [\[ICLR 2026\] ICDiffAD: Implicit Conditioning Diffusion Model for Time Series Anomaly Detection](icdiffad_implicit_conditioning_diffusion_model_for_time_series_anomaly_detection.md)
 - [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
-- [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
+- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
 
 </div>
 

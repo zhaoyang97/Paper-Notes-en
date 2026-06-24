@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] An evolutionary perspective on modes of learning in Transformers
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Borrowing the perspective of "phenotypic plasticity vs. genetic assimilation" from evolutionary biology, this paper explains the Transformer's selection between In-Context Learning (ICL) and In-Weight Learning (IWL) as a manifestation of learning dynamics determined by environmental stability, cue reliability, and the
+  [ICLR 2026][Learning Theory][In-Context Learning (ICL)] Borrowing the perspective of "phenotypic plasticity vs. genetic assimilation" from evolutionary biology, this paper explains the Transformer's selection between In-Context Learning (ICL) and In-Weight Learning (IWL) as a manifestation of learning dynamics determined by environmental stability, cue reliability, and the inherent learning costs of different strategies.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Learning Dynamics"
+  - "In-Context Learning (ICL)"
+  - "In-Weight Learning (IWL)"
+  - "Environmental Stability"
+  - "Cue Reliability"
+  - "Learning Cost"
 date: 2026-05-08
-content_hash: 8ceef256f665c640
+content_hash: 5abe0a5fed094d60
 ---
+
 # An evolutionary perspective on modes of learning in Transformers
 
 **Conference**: ICLR 2026  
@@ -140,7 +147,7 @@ Training objectives: MSE for Sinusoid queries and BCE for Omniglot query labels.
 - [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
 - [\[ICLR 2026\] Two Failure Modes of Deep Transformers and How to Avoid Them: A Unified Theory of Signal Propagation at Initialisation](two_failure_modes_of_deep_transformers_and_how_to_avoid_them_a_unified_theory_of.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
-- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
+- [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
 - [\[ICLR 2026\] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers](a_statistical_learning_perspective_on_semi-dual_adversarial_neural_optimal_trans.md)
 
 </div>

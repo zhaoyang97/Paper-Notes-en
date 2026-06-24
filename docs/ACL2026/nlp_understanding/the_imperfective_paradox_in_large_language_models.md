@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Imperfective Paradox in Large Language Models
 description: >-
-  [ACL 2026][NLP Understanding][ImperfectiveNLI] This paper evaluates whether LLMs understand that "doing something" does not necessarily imply "having finished something" using the newly constructed ImperfectiveNLI diagnostic set. It finds that open-source LLMs generally misjudge telic events as completed; prompt engineering merely oscillates between reducing comple
+  [ACL2026][NLP Understanding][Imperfective paradox] This paper evaluates whether LLMs understand that "doing something" does not necessarily imply "having finished something" using the newly constructed ImperfectiveNLI diagnostic set. It finds that open-source LLMs generally misjudge telic events as completed; prompt engineering merely oscillates between reducing completion hallucinations and preserving legitimate entailments, suggesting the core issue is the dominance of tele…
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - ImperfectiveNLI
+  - "ACL2026"
+  - "NLP Understanding"
+  - "Imperfective paradox"
+  - "event semantics"
+  - "teleological bias"
+  - "Natural Language Inference"
+  - "ImperfectiveNLI"
 date: 2026-05-08
-content_hash: a1a9ba47c630f965
+content_hash: 218d50d5e68e2b32
 ---
+
 # The Imperfective Paradox in Large Language Models
 
 **Conference**: ACL2026  
@@ -132,6 +137,7 @@ Representation analysis shows that similarity and $TBR_C$ are negatively correla
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

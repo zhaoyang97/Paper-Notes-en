@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Masked Autoencoder] This paper proposes KARMA, a framework that embeds the Linear Spectral Mixing Model (LSMM) as a physics constraint within the ViT-MAE decoder…
+  [AAAI 2026][Physics & Scientific Computing][Masked Autoencoder] This paper proposes KARMA, a framework that embeds the Linear Spectral Mixing Model (LSMM) as a physics constraint within the ViT-MAE decoder, combined with a Spectral Angle Mapper (SAM) loss, to improve reconstruction fidelity and downstream transfer performance for hyperspectral remote sensing imagery.
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -13,7 +13,7 @@ tags:
   - "physics-informed"
   - "knowledge-guided ML"
 date: 2026-05-08
-content_hash: 1b130cdd22433fe8
+content_hash: b1764051c825ba20
 ---
 
 # Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction
@@ -116,10 +116,10 @@ The paradigm of using a "physics model as a decoder branch" is generalizable to 
 ## Related Papers
 
 - [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
+- [\[ICLR 2026\] Spectral-Guided Physical Dynamics Distillation](../../ICLR2026/physics/spectral-guided_physical_dynamics_distillation.md)
 - [\[AAAI 2026\] Scientific Knowledge-Guided Machine Learning for Vessel Power Prediction: A Comparative Study](scientific_knowledge-guided_machine_learning_for_vessel_power_prediction_a_compa.md)
-- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
-- [\[ICML 2026\] Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting](../../ICML2026/physics/learning_to_refine_spectral-decoupled_iterative_refinement_framework_for_precipi.md)
 - [\[AAAI 2026\] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)
+- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
 
 </div>
 

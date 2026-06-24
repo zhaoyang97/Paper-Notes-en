@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery
 description: >-
-  [CVPR 2026][Self-Supervised Learning][CLIP] The AL-GCD framework is proposed, which designs an "Analogical Textual Concept Generator" (ATCG) by simulating the human analogical reasoning mechanism. It analogically generates textual concepts for unknown samples from a vision-language knowledge base of known categories, transforming category discovery into a joint
+  [CVPR 2026][Self-Supervised Learning][Generalized Category Discovery] The AL-GCD framework is proposed, which designs an "Analogical Textual Concept Generator" (ATCG) by simulating the human analogical reasoning mechanism. It analogically generates textual concepts for unknown samples from a vision-language knowledge base of known categories, transforming category discovery into a joint vision-language reasoning task. It achieves an average improvement of 5.0% across six benc…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - CLIP
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Generalized Category Discovery"
+  - "Analogical Learning"
+  - "Vision-Language Models"
+  - "Cross-modal Reasoning"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 436bc7dc80085f70
+content_hash: 813d7b6a3c0b1019
 ---
+
 # Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery
 
 **Conference**: CVPR 2026  
@@ -191,10 +196,10 @@ The authors integrated AL-GCD into three different GCD pipelines (CMS-CLIP, SimG
 ## Related Papers
 
 - [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
-- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
 - [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](../../ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
+- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
 - [\[CVPR 2026\] The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery](the_devil_is_in_gradient_entanglement_energy-aware_gradient_coordinator_for_robu.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
 
 </div>
 

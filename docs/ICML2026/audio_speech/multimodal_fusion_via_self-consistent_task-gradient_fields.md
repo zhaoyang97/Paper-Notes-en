@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Fusion via Self-Consistent Task-Gradient Fields
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] SCFAE reformulates the multimodal fusion block as a "Self-Consistent Field" (SCF) composed of "task loss + reconstruction loss." By partitioning each modality's features into "shared/specific" subspaces and cyclically replacing shared components across modalities, it ensures that task gradients backpropagate cleanly to
+  [ICML 2026][Audio & Speech][Self-Consistent Field] SCFAE reformulates the multimodal fusion block as a "Self-Consistent Field" (SCF) composed of "task loss + reconstruction loss." By partitioning each modality's features into "shared/specific" subspaces and cyclically replacing shared components across modalities, it ensures that task gradients backpropagate cleanly to each encoder. Consequently, it achieves higher robustness than strongly coupled or heavily regularized fusio…
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Self-Consistent Field"
+  - "Task Gradients"
+  - "Multimodal Fusion"
+  - "Autoencoder"
+  - "Missing Modality"
 date: 2026-05-08
-content_hash: 376880d28889601b
+content_hash: 66c097286dc3cbfb
 ---
+
 # Multimodal Fusion via Self-Consistent Task-Gradient Fields
 
 **Conference**: ICML 2026  

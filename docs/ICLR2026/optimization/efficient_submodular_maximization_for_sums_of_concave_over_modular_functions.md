@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Efficient Submodular Maximization for Sums of Concave over Modular Functions
 description: >-
-  [ICLR 2026][Optimization & Theory][SCM] Focusing on the "Sum of Concave over Modular" (SCM) subclass of submodular functions, this paper proposes a toolkit of "concave extension + Accelerated Approximate Projected Gradient Ascent (AAPGA) + randomized rounding." It reduces the query complexity for cardinality, knapsack, and partition matroid constraints from
+  [ICLR 2026][Optimization][Submodular maximization] Focusing on the "Sum of Concave over Modular" (SCM) subclass of submodular functions, this paper proposes a toolkit of "concave extension + Accelerated Approximate Projected Gradient Ascent (AAPGA) + randomized rounding." It reduces the query complexity for cardinality, knapsack, and partition matroid constraints from $O(n^2\varepsilon^{-2})$ of PGA to $O(n^{1/2}\varepsilon^{-1/2}(T_1+T_2))$…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SCM
+  - "ICLR 2026"
+  - "Optimization"
+  - "Submodular maximization"
+  - "SCM"
+  - "Concave extension"
+  - "Accelerated projected gradient"
+  - "Randomized rounding"
+  - "GPU parallelism"
 date: 2026-05-08
-content_hash: c4f76f49c98f96ef
+content_hash: 3e7f39d93fd6c986
 ---
+
 # Efficient Submodular Maximization for Sums of Concave over Modular Functions
 
 **Conference**: ICLR 2026  
@@ -126,9 +132,9 @@ Theoretically, AAPGA iteration count is $O(n^{1/2}\varepsilon^{-1/2})$, while PG
 
 - [\[ICML 2026\] Differentially Private Submodular Maximization with a Knapsack Constraint](../../ICML2026/optimization/differentially_private_submodular_maximization_with_a_knapsack_constraint.md)
 - [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](../../ICML2026/optimization/a_general_framework_for_dynamic_consistent_submodular_maximization.md)
+- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
 - [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
 - [\[ICLR 2026\] DR-Submodular Maximization with Stochastic Biased Gradients: Classical and Quantum Gradient Algorithms](dr-submodular_maximization_with_stochastic_biased_gradients_classical_and_quantu.md)
-- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
 
 </div>
 

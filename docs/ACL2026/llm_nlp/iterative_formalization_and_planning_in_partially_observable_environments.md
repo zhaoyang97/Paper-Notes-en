@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Iterative Formalization and Planning in Partially Observable Environments
 description: >-
-  [ACL 2026][LLM (Other)][LLM-as-Formalizer] The PDDLego+ framework is proposed to enable LLMs to iteratively generate and refine PDDL (Planning Domain Definition Language) representations in partially observable environments. Through a dual-layer error correction loop (solver error + simulation error), it achieves effective planning without the need for fine-tun
+  [ACL 2026 Findings][LLM (Other)][Partially observable environments] The PDDLego+ framework is proposed to enable LLMs to iteratively generate and refine PDDL (Planning Domain Definition Language) representations in partially observable environments. Through a dual-layer error correction loop (solver error + simulation error), it achieves effective planning without the need for fine-tuning or examples.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - LLM-as-Formalizer
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Partially observable environments"
+  - "PDDL formalization"
+  - "Iterative planning"
+  - "LLM-as-Formalizer"
+  - "Error correction"
 date: 2026-05-08
-content_hash: a3f34d00606d9680
+content_hash: bd9b244868c3be58
 ---
+
 # Iterative Formalization and Planning in Partially Observable Environments
 
 **Conference**: ACL 2026 Findings  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers
 description: >-
-  [ICLR 2026][Optimization & Theory][Heatmap+MCTS] This is an evaluation paper that deconstructs the mainstream "Heatmap + MCTS" paradigm for solving TSP. Using extensive experiments, the authors demonstrate that the "heatmap complexity," which the community has focused on, is not the most critical factor. Instead, neglected MCTS search hyperparameters dominate perform
+  [ICLR2026][Optimization][Traveling Salesman Problem] This is an evaluation paper that deconstructs the mainstream "Heatmap + MCTS" paradigm for solving TSP. Using extensive experiments, the authors demonstrate that the "heatmap complexity," which the community has focused on, is not the most critical factor. Instead, neglected MCTS search hyperparameters dominate performance. A zero-learning, zero-parameter k-nearest neighbor prior heatmap (GT-Prior)…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Heatmap+MCTS
+  - "ICLR2026"
+  - "Optimization"
+  - "Traveling Salesman Problem"
+  - "Heatmap+MCTS"
+  - "Monte Carlo Tree Search"
+  - "Hyperparameter Tuning"
+  - "Fair Evaluation"
 date: 2026-05-08
-content_hash: 8d806a07f6b65dc3
+content_hash: 4687a4738ee4c1df
 ---
+
 # Beyond the Heatmap: A Rigorous Evaluation of Component Impact in MCTS-Based TSP Solvers
 
 **Conference**: ICLR2026  
@@ -137,10 +142,20 @@ GT-Prior's degradation is nearly zero (even slightly improving), showing signifi
 - Value: ⭐⭐⭐⭐⭐ Provides a fair evaluation yardstick for the Heatmap+MCTS line; methodology is transferable to other "learning+search" paradigms.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)
+- [\[ICML 2026\] LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers](../../ICML2026/optimization/lore_adaptive_interaction-evaluation_routing_with_per-step_interaction_budgets_f.md)
+- [\[ICLR 2026\] Beyond Short Steps in Frank-Wolfe Algorithms](beyond_short_steps_in_frank-wolfe_algorithms.md)
+- [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
+- [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] FrontierCO: Real-World and Large-Scale Evaluation of Machine Learning Solvers for Combinatorial Optimization](frontierco_real-world_and_large-scale_evaluation_of_machine_learning_solvers_for.md)

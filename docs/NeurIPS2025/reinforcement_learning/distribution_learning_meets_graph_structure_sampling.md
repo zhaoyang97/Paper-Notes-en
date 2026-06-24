@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distribution Learning Meets Graph Structure Sampling
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Bayesian networks] This paper establishes a novel connection between PAC learning of high-dimensional probabilistic graphical models and efficient counting/sampling of graph structu…
+  [NeurIPS 2025][Reinforcement Learning][Bayesian networks] This paper establishes a novel connection between PAC learning of high-dimensional probabilistic graphical models and efficient counting/sampling of graph structures. By reducing the maintenance of an exponentially large expert pool to a weighted DAG sampling problem via online learning frameworks (EWA/RWM), the paper presents the first efficient agnostic learning algorithm for Bayesian networks with chordal graph skel…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "online learning"
   - "chordal graphs"
 date: 2026-05-08
-content_hash: 93ff7201a4185b47
+content_hash: 57db6fa9d78181cb
 ---
 
 # Distribution Learning Meets Graph Structure Sampling
@@ -117,9 +117,9 @@ This is a theoretical paper; the primary contributions are sample complexity bou
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning from Demonstrations via Capability-Aware Goal Sampling](learning_from_demonstrations_via_capability-aware_goal_sampling.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Thompson Sampling in Function Spaces via Neural Operators](thompson_sampling_in_function_spaces_via_neural_operators.md)
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
+- [\[NeurIPS 2025\] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining](graphchain_large_language_models_for_large-scale_graph_analysis_via_tool_chainin.md)
 - [\[NeurIPS 2025\] Variance-Aware Feel-Good Thompson Sampling for Contextual Bandits](variance-aware_feel-good_thompson_sampling_for_contextual_bandits.md)
 
 </div>

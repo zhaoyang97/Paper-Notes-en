@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction
 description: >-
-  [NeurIPS 2025][Object Detection][3D Gaussian Splatting] This paper proposes ReCon-GS, which achieves incremental 3D reconstruction via continuum-preserved Gaussian streaming…
+  [NeurIPS 2025][Object Detection][3D Gaussian Splatting] This paper proposes ReCon-GS, which achieves incremental 3D reconstruction via continuum-preserved Gaussian streaming, substantially reducing storage requirements and training time while maintaining rendering quality, and supporting real-time reconstruction of large-scale scenes.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "incremental learning"
   - "real-time rendering"
 date: 2026-05-08
-content_hash: 67a8e2fcb1bca148
+content_hash: 6193c3fd772c9f53
 ---
 
 # ReCon-GS: Continuum-Preserved Gaussian Streaming for Fast and Compact Reconstruction
@@ -123,10 +123,10 @@ $\mathcal{L} = \mathcal{L}_{photo} + \lambda_{reg}\mathcal{L}_{continuity} + \la
 ## Related Papers
 
 - [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
-- [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](../../AAAI2026/object_detection/rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
-- [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](../../CVPR2026/object_detection/invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
-- [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](../../CVPR2026/object_detection/gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
-- [\[AAAI 2026\] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding](../../AAAI2026/object_detection/tubermc_tube-conditioned_reconstruction_with_mutual_constraints_for_weakly-super.md)
+- [\[CVPR 2025\] DEIM: DETR with Improved Matching for Fast Convergence](../../CVPR2025/object_detection/deim_detr_with_improved_matching_for_fast_convergence.md)
+- [\[CVPR 2025\] VCBench: A Streaming Counting Benchmark for Spatial-Temporal State Maintenance in Long Videos](../../CVPR2025/object_detection/vcbench_a_streaming_counting_benchmark_for_spatial-temporal_state_maintenance_in.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](../../CVPR2026/object_detection/gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
+- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](../../CVPR2026/object_detection/wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
 
 </div>
 

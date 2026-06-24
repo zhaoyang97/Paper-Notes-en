@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PromptLoop: Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment
 description: >-
-  [CVPR 2026][Image Generation][prompt refinement] PromptLoop utilizes a multimodal large language model (MLLM) trained via Reinforcement Learning (RL) as a policy to **step-by-step** read intermediate latent variables and iteratively rewrite prompts during the diffusion sampling process. This allows a "prompt refinement only, no weight modification" alignment approach
+  [CVPR 2026][Image Generation][Diffusion Model Alignment] PromptLoop utilizes a multimodal large language model (MLLM) trained via Reinforcement Learning (RL) as a policy to **step-by-step** read intermediate latent variables and iteratively rewrite prompts during the diffusion sampling process. This allows a "prompt refinement only, no weight modification" alignment approach to achieve a closed-loop structure isomorphic to direct fine-tuning of diffusion model weights…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - prompt refinement
-  - latent feedback
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Alignment"
+  - "prompt refinement"
+  - "closed-loop RL"
+  - "latent feedback"
+  - "MLLM policy"
 date: 2026-05-08
-content_hash: 824d2f4ae21dbfd3
+content_hash: 48d20e8071eb8ac5
 ---
+
 # PromptLoop: Plug-and-Play Prompt Refinement via Latent Feedback for Diffusion Model Alignment
 
 **Conference**: CVPR 2026  
@@ -148,10 +152,10 @@ Inference Overhead (A100×1, batch=8):
 ## Related Papers
 
 - [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
+- [\[CVPR 2026\] Diffusion Sampling Path Tells More: An Efficient Plug-and-Play Strategy for Sample Filtering](diffusion_sampling_path_tells_more_an_efficient_plug-and-play_strategy_for_sampl.md)
+- [\[ICLR 2026\] SAIL: Self-Amplified Iterative Learning for Diffusion Model Alignment with Minimal Human Feedback](../../ICLR2026/image_generation/sail_self-amplified_iterative_learning_for_diffusion_model_alignment_with_minima.md)
 - [\[CVPR 2026\] RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment](raise_requirement-adaptive_evolutionary_refinement_for_training-free_text-to-ima.md)
-- [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](../../ICLR2026/image_generation/rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
-- [\[ICCV 2025\] Trans-Adapter: A Plug-and-Play Framework for Transparent Image Inpainting](../../ICCV2025/image_generation/trans-adapter_a_plug-and-play_framework_for_transparent_image_inpainting.md)
-- [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
+- [\[ICLR 2026\] HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models](../../ICLR2026/image_generation/higs_history-guided_sampling_for_plug-and-play_enhancement_of_diffusion_models.md)
 
 </div>
 

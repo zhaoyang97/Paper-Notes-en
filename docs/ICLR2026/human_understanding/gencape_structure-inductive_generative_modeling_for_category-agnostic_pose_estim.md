@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GenCape: Structure-Inductive Generative Modeling for Category-Agnostic Pose Estimation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] GenCape treats the keypoint skeleton structure in Category-Agnostic Pose Estimation (CAPE) as a **latent variable** to be generated. It employs an iterative structure-aware variational auto-encoder (i-SVAE) to infer instance-specific soft adjacency matrices from support images. A Combined Graph Transfer (CGT) module th
+  [ICLR 2026][Human Understanding][Category-Agnostic Pose Estimation] GenCape treats the keypoint skeleton structure in Category-Agnostic Pose Estimation (CAPE) as a **latent variable** to be generated. It employs an iterative structure-aware variational auto-encoder (i-SVAE) to infer instance-specific soft adjacency matrices from support images. A Combined Graph Transfer (CGT) module then performs Bayesian fusion of multiple sampled graphs based on uncertainty and query releva…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Category-Agnostic Pose Estimation"
+  - "Variational Graph Auto-Encoder"
+  - "Latent Skeleton Structure"
+  - "Bayesian Fusion"
+  - "Few-shot"
 date: 2026-05-08
-content_hash: dbc2c4c53a282ee1
+content_hash: e1f6be1075d4b2c4
 ---
+
 # GenCape: Structure-Inductive Generative Modeling for Category-Agnostic Pose Estimation
 
 **Conference**: ICLR 2026  
@@ -124,15 +130,16 @@ In strict threshold settings (Split-1, ResNet-50), GenCape-R50 outperforms FMMP 
 - Value: ⭐⭐⭐⭐ (Provides a template for few-shot structural inference without manual priors).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] EdgeCAPE: Edge Weight Prediction for Category-Agnostic Pose Estimation](edgecape_edge_weight_prediction_for_category-agnostic_pose_estimation.md)
 - [\[CVPR 2025\] Recurrent Feature Mining and Keypoint Mixup Padding for Category-Agnostic Pose Estimation](../../CVPR2025/human_understanding/recurrent_feature_mining_and_keypoint_mixup_padding_for_category-agnostic_pose_e.md)
 - [\[ECCV 2024\] SCAPE: A Simple and Strong Category-Agnostic Pose Estimator](../../ECCV2024/human_understanding/scape_a_simple_and_strong_category-agnostic_pose_estimator.md)
 - [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](../../CVPR2026/human_understanding/decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
 - [\[ECCV 2024\] LaPose: Laplacian Mixture Shape Modeling for RGB-Based Category-Level Object Pose Estimation](../../ECCV2024/human_understanding/lapose_laplacian_mixture_shape_modeling_for_rgb-based_category-level_object_pose.md)
-- [\[ICLR 2026\] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation](pose_prior_learner_unsupervised_categorical_prior_learning_for_pose_estimation.md)
 
 </div>
 

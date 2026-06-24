@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] T2SMark: Balancing Robustness and Diversity in Noise-as-Watermark for Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Image Watermarking] This paper proposes T2SMark, a two-stage watermarking scheme for diffusion models based on Tail-Truncated Sampling (TTS). By embedding watermark bits in the tail regio…
+  [NeurIPS 2025][Image Generation][Image Watermarking] This paper proposes T2SMark, a two-stage watermarking scheme for diffusion models based on Tail-Truncated Sampling (TTS). By embedding watermark bits in the tail regions of the Gaussian distribution while sampling randomly from the central region, T2SMark is the first method to achieve an optimal balance between watermark robustness and generation diversity.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Tail-Truncated Sampling"
   - "Robustness-Diversity Trade-off"
 date: 2026-05-08
-content_hash: d229118e7f65a706
+content_hash: f18aa8e1163fe4b2
 ---
 
 # T2SMark: Balancing Robustness and Diversity in Noise-as-Watermark for Diffusion Models
@@ -148,10 +148,10 @@ T2SMark is a training-free watermarking scheme requiring no additional training.
 ## Related Papers
 
 - [\[ICML 2026\] Balancing Fidelity and Diversity in Diffusion Models via Symmetric Attention Decomposition: Hopfield Perspective](../../ICML2026/image_generation/balancing_fidelity_and_diversity_in_diffusion_models_via_symmetric_attention_dec.md)
-- [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](../../ICCV2025/image_generation/golden_noise_for_diffusion_models_a_learning_framework.md)
 - [\[NeurIPS 2025\] Robustness in Both Domains: CLIP Needs a Robust Text Encoder](robustness_in_both_domains_clip_needs_a_robust_text_encoder.md)
+- [\[ICML 2025\] GaussMarker: Robust Dual-Domain Watermark for Diffusion Models](../../ICML2025/image_generation/gaussmarker_robust_dual-domain_watermark_for_diffusion_models.md)
+- [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](../../ICCV2025/image_generation/golden_noise_for_diffusion_models_a_learning_framework.md)
 - [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](when_are_concepts_erased_from_diffusion_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Differentiable Laplacian Matrix Guided Superpixel Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the issue where deep superpixel models rely on non-differentiable "Enforced Connectivity (EC)" post-processing to eliminate fragments, this paper proposes a fully differentiable, model-agnostic Graph Laplacian loss (along with a minimal semantic distance loss and weighted reconstruction loss). It pushes supe
+  [CVPR 2026][Segmentation][Superpixel Segmentation] Addressing the issue where deep superpixel models rely on non-differentiable "Enforced Connectivity (EC)" post-processing to eliminate fragments, this paper proposes a fully differentiable, model-agnostic Graph Laplacian loss (along with a minimal semantic distance loss and weighted reconstruction loss). It pushes superpixels toward connectivity during training, significantly reducing fragments with almost no loss in ASA…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Superpixel Segmentation"
+  - "Graph Laplacian"
+  - "Connectivity"
+  - "Differentiable Post-processing"
+  - "End-to-end Learning"
 date: 2026-05-08
-content_hash: 7075b07fb03af066
+content_hash: 212d57a3fe34c79c
 ---
+
 # Differentiable Laplacian Matrix Guided Superpixel Segmentation
 
 **Conference**: CVPR 2026  
@@ -140,15 +146,15 @@ Training CDS with combinations of terms (from Table 3, No EC row):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation](lemma_laplacian_pyramids_for_efficient_marine_semantic_segmentation.md)
+- [\[CVPR 2026\] Boundary-Responsive Differentiable Gating for Superpixel-Based Segmentation](boundary-responsive_differentiable_gating_for_superpixel-based_segmentation.md)
 - [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
-- [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
-- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
+- [\[CVPR 2026\] HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement](hops_hierarchical_open-vocabulary_part_segmentation_with_attention-aware_filteri.md)
+- [\[ICLR 2026\] Enhancing Image-Conditional Coverage in Segmentation: Adaptive Thresholding via Differentiable Miscoverage Loss](../../ICLR2026/segmentation/enhancing_image-conditional_coverage_in_segmentation_adaptive_thresholding_via_d.md)
+- [\[CVPR 2026\] Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness](concept-guided_fine-tuning_steering_vits_away_from_spurious_correlations_to_impr.md)
 
 </div>
 

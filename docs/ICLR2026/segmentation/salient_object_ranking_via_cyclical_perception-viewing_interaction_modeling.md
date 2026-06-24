@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Salient Object Ranking via Cyclical Perception-Viewing Interaction Modeling
 description: >-
-  [ICLR 2026][Segmentation][Paper Note] Addressing the long-standing reliance of Salient Object Ranking (SOR) on bottom-up image features, this paper proposes to explicitly model the top-down cognitive process through "Cyclical Perception-Viewing Interaction." By allowing an image captioning module (SP) and a salient ranking module (GR) to iteratively exchan
+  [ICLR 2026][Segmentation][Salient Object Ranking] Addressing the long-standing reliance of Salient Object Ranking (SOR) on bottom-up image features, this paper proposes to explicitly model the top-down cognitive process through "Cyclical Perception-Viewing Interaction." By allowing an image captioning module (SP) and a salient ranking module (GR) to iteratively exchange results for $K$ rounds, the model achieves SA-SOR scores of 0.787 / 0.624 on the ASSR and IRSR benchmarks…
 tags:
-  - ICLR 2026
-  - Segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Salient Object Ranking"
+  - "Top-down Cognition"
+  - "Image Captioning"
+  - "Cyclical Interaction"
+  - "Object Query"
 date: 2026-05-08
-content_hash: bbac41244e306711
+content_hash: 8b55ef100466558f
 ---
+
 # Salient Object Ranking via Cyclical Perception-Viewing Interaction Modeling
 
 **Conference**: ICLR 2026  

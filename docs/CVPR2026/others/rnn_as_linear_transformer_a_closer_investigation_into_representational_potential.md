@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] RNN as Linear Transformer: A Closer Investigation into Representational Potentials of Visual Mamba Models
 description: >-
-  [CVPR 2026][Others][Vision Mamba] This paper unifies Softmax Attention, Linear Attention, and Mamba into a single token-mixing matrix $Y=MX$. Through rank analysis, it proves that Mamba is a "low-rank approximation" of Softmax Attention, with its representational power strictly bounded between the two. The authors propose the Binary-AUC metric to quant
+  [CVPR 2026][Vision Mamba] This paper unifies Softmax Attention, Linear Attention, and Mamba into a single token-mixing matrix $Y=MX$. Through rank analysis, it proves that Mamba is a "low-rank approximation" of Softmax Attention, with its representational power strictly bounded between the two. The authors propose the Binary-AUC metric to quantify feature map quality and demonstrate that Vision Mamba trained via DINO self-supervision achieves 78.5% ImageNet linear probing acc…
 tags:
-  - CVPR 2026
-  - Others
-  - Vision Mamba
+  - "CVPR 2026"
+  - "Vision Mamba"
+  - "Rank Analysis"
+  - "Linear Attention"
+  - "Self-supervised DINO"
+  - "Feature Map Evaluation"
 date: 2026-05-08
-content_hash: fc58c4b4af6bb3e6
+content_hash: bde11c4a4096eeef
 ---
+
 # RNN as Linear Transformer: A Closer Investigation into Representational Potentials of Visual Mamba Models
 
 **Conference**: CVPR 2026  
@@ -131,15 +135,16 @@ On ImageNet distribution shift variants, high-rank architectures generalize bett
 - Value: ⭐⭐⭐⭐ (Provides a quantifiable algebraic explanation for "Why Vision Mamba works").
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2025\] CARE Transformer: Mobile-Friendly Linear Visual Transformer via Decoupled Dual Interaction](../../CVPR2025/others/care_transformer_linear_attention.md)
 - [\[ACL 2025\] The Hidden Attention of Mamba Models](../../ACL2025/others/the_hidden_attention_of_mamba_models.md)
-- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
-- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
-- [\[CVPR 2026\] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)
+- [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
+- [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
+- [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the issues of event streams being contaminated by BA noise and the separation of denoising from enhancement in event-aided low-light enhancement, BiEvLight reformulates event denoising from a static preprocessing step into a task-aware bi-level optimization problem. This allows the enhancement gain from the
+  [CVPR 2026][Image Restoration][Low-light image enhancement] To address the issues of event streams being contaminated by BA noise and the separation of denoising from enhancement in event-aided low-light enhancement, BiEvLight reformulates event denoising from a static preprocessing step into a task-aware bi-level optimization problem. This allows the enhancement gain from the lower level to calibrate the upper-level denoising, supplemented by a spatially adaptive denoising p…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light image enhancement"
+  - "Event camera"
+  - "Event denoising"
+  - "Bi-level optimization"
+  - "Gradient guidance"
 date: 2026-05-08
-content_hash: 4948510e2bac5352
+content_hash: a61d2780109915c8
 ---
+
 # BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement
 
 **Conference**: CVPR 2026  
@@ -131,13 +137,14 @@ The significantly higher gain in PSNR* (focusing on structural recovery) compare
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
 - [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
-- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_with_unpaired_data.md)
 - [\[CVPR 2026\] Human-Centric Multi-Exposure Fusion: Benchmark and Bi-level Cognition Distillation Framework](human-centric_multi-exposure_fusion_benchmark_and_bi-level_cognition_distillatio.md)
 - [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
 

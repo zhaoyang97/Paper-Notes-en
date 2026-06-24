@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer
 description: >-
-  [ICLR 2026][Interpretability][subliminal learning] Through controlled experiments and mechanistic analysis, this study reveals the nature of subliminal learning: hidden preferences of teacher models are transmitted to student models through a small number of "divergence tokens," with early layers being critical. Furthermore, the phenomenon is found to be fragile and ca
+  [ICLR 2026][Interpretability][subliminal learning] Through controlled experiments and mechanistic analysis, this study reveals the nature of subliminal learning: hidden preferences of teacher models are transmitted to student models through a small number of "divergence tokens," with early layers being critical. Furthermore, the phenomenon is found to be fragile and can be suppressed by simple paraphrasing.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - subliminal learning
-  - knowledge distillation
-  - divergence tokens
-  - hidden bias transfer
-  - AI safety
+  - "ICLR 2026"
+  - "Interpretability"
+  - "subliminal learning"
+  - "knowledge distillation"
+  - "divergence tokens"
+  - "hidden bias transfer"
+  - "AI safety"
 date: 2026-05-08
-content_hash: 9628433be79d2b94
+content_hash: 7d64272d30c93cec
 ---
+
 # Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer
 
 **Conference**: ICLR 2026  
@@ -152,7 +153,7 @@ Using a Qwen model trained on harmful financial advice, the study validates that
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](hidden_breakthroughs_in_language_model_training.md)
 - [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 - [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
-- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
+- [\[ICLR 2026\] Understanding Task Vectors in In-Context Learning: Emergence, Functionality, and Limitations](understanding_task_vectors_in_in-context_learning_emergence_functionality_and_li.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Debias: Self-correcting for Debiasing Large Language Models
 description: >-
-  [ICML 2026][Social Computing][Paper Note] Self-Debias reframes the LLM debiasing problem as "fair resource allocation of probability mass over autoregressive reasoning chains." Using trajectory-level suffix margins as resource units and the Jain Fairness Index to prevent budget collapse on easy samples, combined with cold-start SFT and consistency-filtered onl
+  [ICML 2026][Social Computing][Social Bias Mitigation] Self-Debias reframes the LLM debiasing problem as "fair resource allocation of probability mass over autoregressive reasoning chains." Using trajectory-level suffix margins as resource units and the Jain Fairness Index to prevent budget collapse on easy samples, combined with cold-start SFT and consistency-filtered online self-training, the method improves Qwen3-8B's average score across 8 fairness/utility benchmarks from…
 tags:
-  - ICML 2026
-  - Social Computing
+  - "ICML 2026"
+  - "Social Computing"
+  - "Social Bias Mitigation"
+  - "Chain of Thought"
+  - "Trajectory-level DPO"
+  - "Jain Fairness Index"
+  - "Online Self-improvement"
 date: 2026-05-08
-content_hash: 07b4b4da45650b06
+content_hash: a26c63e6af93fba0
 ---
+
 # Self-Debias: Self-correcting for Debiasing Large Language Models
 
 **Conference**: ICML 2026  

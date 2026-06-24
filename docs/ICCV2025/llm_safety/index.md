@@ -40,7 +40,7 @@ item_total: 10
 
 **📹 ICCV2025** · **10** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (11)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (185)](../../ICLR2026/llm_safety/index.md) · [💬 ACL2026 (115)](../../ACL2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (80)](../../NeurIPS2025/llm_safety/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (12)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (185)](../../ICLR2026/llm_safety/index.md) · [💬 ACL2026 (115)](../../ACL2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (81)](../../NeurIPS2025/llm_safety/index.md) · [🧪 ICML2025 (41)](../../ICML2025/llm_safety/index.md)
 
 🔥 **Top topics:** Federated Learning ×4 · Adversarial Robustness ×3 · Multimodal/VLM ×2
 

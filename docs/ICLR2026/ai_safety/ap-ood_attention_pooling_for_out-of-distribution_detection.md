@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AP-OOD: Attention Pooling for Out-of-Distribution Detection
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] The authors propose AP-OOD, which replaces mean pooling in Mahalanobis distance with learnable attention pooling. This addresses the issue where mean pooling loses token-level anomaly information, reducing the FPR95 of XSUM summarization from 27.84% to 4.67% and supporting a smooth transition from unsupervised to semi-
+  [ICLR 2026][AI Safety][Out-of-Distribution Detection] The authors propose AP-OOD, which replaces mean pooling in Mahalanobis distance with learnable attention pooling. This addresses the issue where mean pooling loses token-level anomaly information, reducing the FPR95 of XSUM summarization from 27.84% to 4.67% and supporting a smooth transition from unsupervised to semi-supervised settings.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Out-of-Distribution Detection"
+  - "Attention Pooling"
+  - "Mahalanobis Distance"
+  - "token-level information"
+  - "language models"
 date: 2026-05-08
-content_hash: 6bba3669ab78b6f1
+content_hash: ab959ff69c8597e4
 ---
+
 # AP-OOD: Attention Pooling for Out-of-Distribution Detection
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,10 @@ The improvement in FPR95 is substantial (reducing by over 23 percentage points f
 ## Related Papers
 
 - [\[ICLR 2026\] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection](gradpca_leveraging_ntk_alignment_for_reliable_out-of-distribution_detection.md)
+- [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
+- [\[ICLR 2026\] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models](eigenscore_ood_detection_using_posterior_covariance_in_diffusion_models.md)
 - [\[ICLR 2026\] Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI](towards_a_certificate_of_trust_task-aware_ood_detection_for_scientific_ai.md)
 - [\[CVPR 2026\] RankOOD: Class Ranking-based Out-of-Distribution Detection](../../CVPR2026/ai_safety/rankood_-_class_ranking-based_out-of-distribution_detection.md)
-- [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](../../CVPR2026/ai_safety/enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
-- [\[CVPR 2025\] Leveraging Perturbation Robustness to Enhance Out-of-Distribution Detection](../../CVPR2025/ai_safety/leveraging_perturbation_robustness_to_enhance_out-of-distribution_detection.md)
 
 </div>
 

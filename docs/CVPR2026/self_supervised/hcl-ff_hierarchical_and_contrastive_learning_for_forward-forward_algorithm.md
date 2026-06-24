@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Forward-Forward] Addressing the "lack of cross-layer coordination in layer-wise independent training" and the "semantic collapse of features after goodness decoupling" in the Forward-Forward (FF) algorithm, HCL-FF introduces "coarse-to-fine hierarchical supervision" and "supervised contrastive learning on decoupled features" as two loc
+  [CVPR 2026][Self-Supervised Learning][Forward-Forward] Addressing the "lack of cross-layer coordination in layer-wise independent training" and the "semantic collapse of features after goodness decoupling" in the Forward-Forward (FF) algorithm, HCL-FF introduces "coarse-to-fine hierarchical supervision" and "supervised contrastive learning on decoupled features" as two local objectives for each layer. Without breaking the layer-wise independence of FF…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Forward-Forward
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Forward-Forward"
+  - "Hierarchical Learning"
+  - "Supervised Contrastive"
+  - "Goodness Decoupling"
+  - "Biologically Plausible Training"
 date: 2026-05-08
-content_hash: 0fafc6250a59ed61
+content_hash: 7011d54906f69e71
 ---
+
 # HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm
 
 **Conference**: CVPR 2026  
@@ -154,7 +159,7 @@ Linear Probing (Final feature Acc Before/After Norm) to quantify semantic retent
 - [\[CVPR 2026\] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation](teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f.md)
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)
 - [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](unigeoclip_geospatial_contrastive.md)
+- [\[CVPR 2026\] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation](learning_from_semantic_dictionaries_discriminative_codebook_contrastive_learning.md)
 
 </div>
 

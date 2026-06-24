@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Flow Matching] TUNA **cascades** a VAE encoder and a semantic representation encoder to obtain a set of continuous unified visual representations compatible with both "understanding" and "generation." Combined with an autoregressive text head and a flow-matching generation head, a single native model at 1.5B/7B scale achieves SOTA re
+  [CVPR 2026][Multimodal VLM][Unified Multimodal Models] TUNA **cascades** a VAE encoder and a semantic representation encoder to obtain a set of continuous unified visual representations compatible with both "understanding" and "generation." Combined with an autoregressive text head and a flow-matching generation head, a single native model at 1.5B/7B scale achieves SOTA results in image/video understanding, image/video generation, and image editing (MMStar 61.2…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Flow Matching
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Unified Multimodal Models"
+  - "Unified Visual Representations"
+  - "Flow Matching"
+  - "VAE Latent Space"
+  - "Image-Text Generation"
 date: 2026-05-08
-content_hash: 61ba81e3777842d4
+content_hash: 73d5bacfcebd39c5
 ---
+
 # TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -164,11 +169,11 @@ Core ablation (Table 6, 1.5B lightweight version, 2-stage training) comparing vi
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unified Multimodal Models as Auto-Encoders](unified_multimodal_models_as_auto-encoders.md)
 - [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
-- [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
-- [\[CVPR 2026\] Customized Visual Storytelling with Unified Multimodal LLMs](customized_visual_storytelling_with_unified_multimodal_llms.md)
+- [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
 - [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](../../ICCV2025/multimodal_vlm/harmonizing_visual_representations_for_unified_multimodal_un.md)
-- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
+- [\[CVPR 2026\] AToken: A Unified Tokenizer for Vision](atoken_a_unified_tokenizer_for_vision.md)
 
 </div>
 

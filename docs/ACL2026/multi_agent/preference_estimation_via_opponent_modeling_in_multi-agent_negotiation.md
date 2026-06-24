@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preference Estimation via Opponent Modeling in Multi-Agent Negotiation
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] Proposes a preference estimation method that integrates LLM-extracted natural language preference signals into a Bayesian opponent modeling framework. By combining qualitative cues with quantitative bidding information through a linguistic likelihood function in multi-party multi-issue negotiations, the Full Agreement
+  [ACL 2026 Findings][Multi-Agent][Opponent modeling] Proposes a preference estimation method that integrates LLM-extracted natural language preference signals into a Bayesian opponent modeling framework. By combining qualitative cues with quantitative bidding information through a linguistic likelihood function in multi-party multi-issue negotiations, the Full Agreement Rate (FAR) is improved from 37% to 62%.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "Opponent modeling"
+  - "Bayesian inference"
+  - "preference estimation"
+  - "multi-party negotiation"
+  - "LLM linguistic signals"
 date: 2026-05-08
-content_hash: aa049544d8dc2b18
+content_hash: 54c617d2d919cc8c
 ---
+
 # Preference Estimation via Opponent Modeling in Multi-Agent Negotiation
 
 **Conference**: ACL 2026 Findings  
@@ -132,12 +138,11 @@ A model-free approach is used, with GPT-4.1 serving as the utterance parser. Bay
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems](../../NeurIPS2025/multi_agent/metamind_modeling_human_social_thoughts_with_metacognitive_multi-agent_systems.md)
 - [\[ICML 2026\] EduMirror: Modeling Educational Social Dynamics with Value-driven Multi-agent Simulation](../../ICML2026/multi_agent/edumirror_modeling_educational_social_dynamics_with_value-driven_multi-agent_sim.md)
+- [\[NeurIPS 2025\] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems](../../NeurIPS2025/multi_agent/metamind_modeling_human_social_thoughts_with_metacognitive_multi-agent_systems.md)
 - [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
 - [\[ACL 2026\] MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering](mata_multi-agent_framework_for_reliable_and_flexible_table_question_answering.md)
 - [\[ACL 2026\] MAGEO: From Experience to Skill — Multi-Agent Generative Engine Optimization via Reusable Strategy Learning](from_experience_to_skill_multi-agent_generative_engine_optimization_via_reusable.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder
 description: >-
-  [NeurIPS 2025][Multimodal VLM][dataset distillation] This paper proposes CovMatch, which reduces the bi-level optimization of multimodal contrastive learning to a closed-form cross-covariance matrix alignment problem…
+  [NeurIPS 2025][Multimodal VLM][dataset distillation] This paper proposes CovMatch, which reduces the bi-level optimization of multimodal contrastive learning to a closed-form cross-covariance matrix alignment problem, enabling for the first time joint optimization of both image and text encoders for multimodal dataset distillation. Using only 500 synthetic image-text pairs, CovMatch achieves a mean retrieval recall of 38.4 on Flickr30K (+6.8% over SOTA LoRS)…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "trainable text encoder"
   - "data efficiency"
 date: 2026-05-08
-content_hash: bf1f938d597dd158
+content_hash: e820a0e8c6a65b69
 ---
 
 # CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder
@@ -133,11 +133,11 @@ COCO retrieval shows a similar trend: CovMatch achieves 19.6 vs. a lower score f
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SmartWilds: Multimodal Wildlife Monitoring Dataset](smartwilds_multimodal_wildlife_monitoring_dataset.md)
+- [\[ICLR 2026\] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis](../../ICLR2026/multimodal_vlm/multimodal_dataset_distillation_made_simple_by_prototype-guided_data_synthesis.md)
+- [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](../../CVPR2026/multimodal_vlm/multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
 - [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](../../ICCV2025/multimodal_vlm/g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
-- [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
-- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
-- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+- [\[NeurIPS 2025\] SmartWilds: Multimodal Wildlife Monitoring Dataset](smartwilds_multimodal_wildlife_monitoring_dataset.md)
+- [\[ICLR 2026\] Multimodal Dataset Distillation via Phased Teacher Models](../../ICLR2026/multimodal_vlm/multimodal_dataset_distillation_via_phased_teacher_models.md)
 
 </div>
 

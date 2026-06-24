@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes CubiD, the first model to perform discrete diffusion generation on high-dimensional representation tokens (768 dimensions). It achieves high-quality image generation through fine-grained mask prediction on an $h \times w \times d$ three-dimensional tensor while preserving understanding capabilities.
+  [CVPR 2026][Multimodal VLM][Discrete diffusion models] Ours proposes CubiD, the first model to perform discrete diffusion generation on high-dimensional representation tokens (768 dimensions). It achieves high-quality image generation through fine-grained mask prediction on an $h \times w \times d$ three-dimensional tensor while preserving understanding capabilities.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Discrete diffusion models"
+  - "high-dimensional representation tokens"
+  - "visual generation"
+  - "dimension-level quantization"
+  - "unified multimodality"
 date: 2026-05-08
-content_hash: 1ab9cb9d5e331a2e
+content_hash: 11670b39caaf2907
 ---
+
 # Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens
 
 **Conference**: CVPR 2026  
@@ -146,8 +152,8 @@ The training objective is the cross-entropy over masked elements. During inferen
 - [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
 - [\[CVPR 2026\] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation](guiding_diffusion-based_reconstruction_with_contrastive_signals_for_balanced_vis.md)
 - [\[CVPR 2026\] WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens](wemmu_enhanced_bridging_of_vision-language_models_and_diffusion_models_via_noisy.md)
-- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
 - [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](vq-va_world_towards_high-quality_visual_question-visual_answering.md)
 
 </div>
 

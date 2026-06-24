@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Segment Anything with Robust Uncertainty-Accuracy Correlation
 description: >-
-  [ICML 2026][Segmentation][SAM2] Addressing the issue that the SAM series only outputs a single mask-level confidence score and suffers from "Mask-level Confidence Confusion" under domain shift, this paper equips SAM2 with a Weibull dual-granularity Bayesian mask decoder for pixel-level epistemic estimation. It incorporates a synergistic style + defor
+  [ICML 2026][Segmentation][SAM2] Addressing the issue that the SAM series only outputs a single mask-level confidence score and suffers from "Mask-level Confidence Confusion" under domain shift, this paper equips SAM2 with a Weibull dual-granularity Bayesian mask decoder for pixel-level epistemic estimation. It incorporates a synergistic style + deformation adversarial perturbation and calibration loss inspired by human vision, ensuring uncertainty remains aligned with errors…
 tags:
-  - ICML 2026
-  - Segmentation
-  - SAM2
-  - Mask Confidence Confusion
-  - Bayesian decoder
+  - "ICML 2026"
+  - "Segmentation"
+  - "SAM2"
+  - "Mask Confidence Confusion"
+  - "Bayesian decoder"
+  - "Adversarial Calibration"
+  - "Domain Generalization"
 date: 2026-05-08
-content_hash: cd118c85b93dfaa9
+content_hash: 197427c50537be2a
 ---
+
 # Segment Anything with Robust Uncertainty-Accuracy Correlation
 
 **Conference**: ICML 2026  
@@ -152,11 +155,11 @@ Pure uncertainty baselines like UR-ERN average 73.40, significantly lower than B
 
 ## Related Papers
 
-- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](../../ICLR2026/segmentation/sam_3_segment_anything_with_concepts.md)
 - [\[AAAI 2026\] Segment Anything Across Shots: A Method and Benchmark](../../AAAI2026/segmentation/segment_anything_across_shots_a_method_and_benchmark.md)
+- [\[ICLR 2026\] SAM 3: Segment Anything with Concepts](../../ICLR2026/segmentation/sam_3_segment_anything_with_concepts.md)
 - [\[AAAI 2026\] Segment and Matte Anything in a Unified Model (SAMA)](../../AAAI2026/segmentation/segment_and_matte_anything_in_a_unified_model.md)
 - [\[AAAI 2026\] SAQ-SAM: Semantically-Aligned Quantization for Segment Anything Model](../../AAAI2026/segmentation/saq-sam_semantically-aligned_quantization_for_segment_anything_model.md)
-- [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](../../ICCV2025/segmentation/omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
+- [\[ICLR 2026\] Matting Anything 2: Towards Video Matting for Anything](../../ICLR2026/segmentation/matting_anything_2_towards_video_matting_for_anything.md)
 
 </div>
 

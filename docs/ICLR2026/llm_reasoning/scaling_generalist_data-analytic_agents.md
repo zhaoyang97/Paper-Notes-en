@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Generalist Data-Analytic Agents
 description: >-
-  [ICLR 2026][LLM Reasoning][SFT+RL] Ours proposes DataMind—a comprehensive training scheme for data analysis Agents. Through fine-grained task classification combined with recursive difficulty synthesis for diverse query generation, knowledge-enhanced trajectory sampling with self-consistency filtering for quality assurance, an SFT+RL dynamic hybrid trai
+  [ICLR 2026][Reasoning][Data Analysis Agent] Ours proposes DataMind—a comprehensive training scheme for data analysis Agents. Through fine-grained task classification combined with recursive difficulty synthesis for diverse query generation, knowledge-enhanced trajectory sampling with self-consistency filtering for quality assurance, an SFT+RL dynamic hybrid training strategy, and a memory-friendly asynchronous rollout framework, the resulting DataMind-14B achieves SOTA with a…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - SFT+RL
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Data Analysis Agent"
+  - "Agent Training"
+  - "Multi-turn Code Execution"
+  - "Data Synthesis"
+  - "SFT+RL"
 date: 2026-05-08
-content_hash: 70cc30031387e541
+content_hash: d91b426ef7b2794f
 ---
+
 # Scaling Generalist Data-Analytic Agents
 
 **Conference**: ICLR 2026  
@@ -156,8 +161,8 @@ Data files and code interpreters require complex memory management. Parallel Age
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
 - [\[ICLR 2026\] USTBench: Benchmarking and Dissecting Spatiotemporal Reasoning Capabilities of LLMs as Urban Agents](ustbench_benchmarking_and_dissecting_spatiotemporal_reasoning_capabilities_of_ll.md)
-- [\[ICLR 2026\] OpenThoughts: Data Recipes for Reasoning Models](openthoughts_data_recipes_for_reasoning_models.md)
 - [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
+- [\[ICLR 2026\] OpenThoughts: Data Recipes for Reasoning Models](openthoughts_data_recipes_for_reasoning_models.md)
 
 </div>
 

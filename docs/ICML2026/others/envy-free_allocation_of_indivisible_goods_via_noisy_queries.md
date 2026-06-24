@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Envy-Free Allocation of Indivisible Goods via Noisy Queries
 description: >-
-  [ICML 2026][Others][Paper Note] This paper establishes the first sample complexity benchmarks for the problem of "finding an envy-free allocation using noisy valuation queries." In a setting with two agents, additive Gaussian noise, $m$ items, and an optimal negative envy gap $\Delta$, the authors prove a tight bound of $\widetilde{\Theta}(m^{2.5}/\D
+  [ICML 2026][Envy-free allocation] This paper establishes the first sample complexity benchmarks for the problem of "finding an envy-free allocation using noisy valuation queries." In a setting with two agents, additive Gaussian noise, $m$ items, and an optimal negative envy gap $\Delta$, the authors prove a tight bound of $\widetilde{\Theta}(m^{2.5}/\Delta^2)$ (when $\Delta\gg m^{1/4}$). The upper bound is achieved by a polynomial-time algorithm using non-adaptive queries and…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Envy-free allocation"
+  - "noisy queries"
+  - "Gaussian noise"
+  - "Multi-armed bandits"
+  - "sample complexity"
 date: 2026-05-08
-content_hash: f85ac4dd7316d906
+content_hash: c9836cb71704106a
 ---
+
 # Envy-Free Allocation of Indivisible Goods via Noisy Queries
 
 **Conference**: ICML 2026  
@@ -109,11 +114,20 @@ The primary conclusion: In the "broad regime" of $\Delta\gg m^{1/4}\log^2 m$, th
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper note links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](adaptive_multi-round_allocation_with_stochastic_arrivals.md)
+- [\[ACL 2025\] LAQuer: Localized Attribution Queries in Content-grounded Generation](../../ACL2025/others/laquer_localized_attribution.md)
+- [\[ICLR 2026\] Learning in Prophet Inequalities with Noisy Observations](../../ICLR2026/others/learning_in_prophet_inequalities_with_noisy_observations.md)
+- [\[ICML 2025\] Generation from Noisy Examples](../../ICML2025/others/generation_from_noisy_examples.md)
+- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](../../CVPR2026/others/debiased_sample_selection_for_learning_with_noisy_labels.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Adaptive Multi-Round Allocation with Stochastic Arrivals](adaptive_multi-round_allocation_with_stochastic_arrivals.md)

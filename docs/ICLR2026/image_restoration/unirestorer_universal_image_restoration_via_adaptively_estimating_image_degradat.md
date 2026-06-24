@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] UniRestorer hierarchically organizes the image degradation space into multi-granularity degradation groups and trains corresponding MoE restoration experts. By jointly routing via degradation estimation and granularity estimation, the universal restoration model leverages fine-grained degradation priors while remaining
+  [ICLR2026][Image Restoration][Universal Image Restoration] UniRestorer hierarchically organizes the image degradation space into multi-granularity degradation groups and trains corresponding MoE restoration experts. By jointly routing via degradation estimation and granularity estimation, the universal restoration model leverages fine-grained degradation priors while remaining robust against incorrect degradation estimation.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR2026"
+  - "Image Restoration"
+  - "Universal Image Restoration"
+  - "Multi-degradation Modeling"
+  - "Multi-granularity Degradation Representation"
+  - "Mixture-of-Experts"
+  - "Robust Routing"
 date: 2026-05-08
-content_hash: 9295c9850c63303a
+content_hash: 175898d810d6d51b
 ---
+
 # UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity
 
 **Conference**: ICLR2026  
@@ -156,10 +162,10 @@ The loss function ablation shows that $\mathcal{L}_{dg}$ and load balancing are 
 ## Related Papers
 
 - [\[ICCV 2025\] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement](../../ICCV2025/image_restoration/towards_a_universal_image_degradation_model_via_content-degradation_disentanglem.md)
+- [\[ICML 2026\] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration](../../ICML2026/image_restoration/degradation-aware_metric_prompting_for_hyperspectral_image_restoration.md)
 - [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)
 - [\[ICLR 2026\] Efficient Degradation-agnostic Image Restoration via Channel-Wise Functional Decomposition and Manifold Regularization](efficient_degradation-agnostic_image_restoration_via_channel-wise_functional_dec.md)
 - [\[ICCV 2025\] UniRes: Universal Image Restoration for Complex Degradations](../../ICCV2025/image_restoration/unires_universal_image_restoration_for_complex_degradations.md)
-- [\[ECCV 2024\] MoE-DiffIR: Task-customized Diffusion Priors for Universal Compressed Image Restoration](../../ECCV2024/image_restoration/moe-diffir_task-customized_diffusion_priors_for_universal_compressed_image_resto.md)
 
 </div>
 

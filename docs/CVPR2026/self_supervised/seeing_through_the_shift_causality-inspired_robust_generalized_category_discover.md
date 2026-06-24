@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] CausalGCD remodels "Cross-Domain Generalized Category Discovery" as a structural causal problem: it suppresses domain-related spurious shortcuts using Causal Dependence Risk (CDR) and locks the cross-domain invariant geometric relationships between known and novel classes using Causal Geometric Manifold Constraint (CGM
+  [CVPR 2026][Self-Supervised Learning][Generalized Category Discovery] CausalGCD remodels "Cross-Domain Generalized Category Discovery" as a structural causal problem: it suppresses domain-related spurious shortcuts using Causal Dependence Risk (CDR) and locks the cross-domain invariant geometric relationships between known and novel classes using Causal Geometric Manifold Constraint (CGMC). It consistently outperforms SOTA methods like FREE and HiLo by approximately 2 percent…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Generalized Category Discovery"
+  - "Cross-domain Generalization"
+  - "Causal Inference"
+  - "Counterfactual Risk"
+  - "Manifold Constraint"
 date: 2026-05-08
-content_hash: 2e0030e6b9ef47d2
+content_hash: d4fc0b8335dd04cf
 ---
+
 # Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ Ablation on DomainNet (Real→Painting) by removing loss terms (%):
 
 - [\[CVPR 2026\] The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery](the_devil_is_in_gradient_entanglement_energy-aware_gradient_coordinator_for_robu.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
-- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
 - [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
+- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](../../ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][TTFT] AdaCache addresses two types of waste in RAG inference—redundant recomputation of the same text chunks and the uniform provision of top-k contexts regardless of query difficulty. It proposes "Hierarchical Caching + Attention-aware Selective Recomputation" and "Confidence-driven Adaptive Context Augmentation," reducing
+  [ICLR 2026][Information Retrieval & RAG][RAG Serving] AdaCache addresses two types of waste in RAG inference—redundant recomputation of the same text chunks and the uniform provision of top-k contexts regardless of query difficulty. It proposes "Hierarchical Caching + Attention-aware Selective Recomputation" and "Confidence-driven Adaptive Context Augmentation," reducing Time to First Token (TTFT) by 1.4$\times$ to 5.0$\times$ compared to state-of-the-art RAG caching systems…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - TTFT
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "RAG Serving"
+  - "KV Cache Reuse"
+  - "Selective Recomputation"
+  - "Adaptive Context"
+  - "TTFT"
 date: 2026-05-08
-content_hash: 28b7b4ee33b85504
+content_hash: 39d26571f687b2ab
 ---
+
 # AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving
 
 **Conference**: ICLR 2026  

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning
 description: >-
-  [ACL 2026][LLM Agent][Temporal KGQA] Temp-R1 transforms Temporal Knowledge Graph Question Answering (TKGQA) from manually designed fixed prompt workflows into an autonomous agent trainable via reinforcement learning. By employing explicit internal actions, SFT cold start, GRPO, and a "hard-first" reverse curriculum, it outperforms strong baselines driven
+  [ACL 2026][LLM Agent][Temporal KGQA] Temp-R1 transforms Temporal Knowledge Graph Question Answering (TKGQA) from manually designed fixed prompt workflows into an autonomous agent trainable via reinforcement learning. By employing explicit internal actions, SFT cold start, GRPO, and a "hard-first" reverse curriculum, it outperforms strong baselines driven by GPT-4o/DeepSeek-V3 using an 8B open-source model.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Temporal KGQA
-  - Autonomous Agent
-  - GRPO
-  - Reverse Curriculum
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Temporal KGQA"
+  - "Autonomous Agent"
+  - "GRPO"
+  - "Reverse Curriculum"
+  - "Tool Calling"
 date: 2026-05-08
-content_hash: b016aaa346a5512c
+content_hash: e134a59f7ebc7a32
 ---
+
 # Temp-R1: A Unified Autonomous Agent for Complex Temporal KGQA via Reverse Curriculum Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -153,11 +155,11 @@ Ablations on MultiTQ removing internal actions, reverse curriculum, and SFT cold
 
 ## Related Papers
 
+- [\[ICLR 2026\] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](../../ICLR2026/llm_agent/memory-t1_reinforcement_learning_for_temporal_reasoning_in_multi-session_agents.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](../../ICLR2026/llm_agent/tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[ACL 2026\] Hierarchical Reinforcement Learning with Augmented Step-Level Transitions for LLM Agents](hierarchical_reinforcement_learning_with_augmented_step-level_transitions_for_ll.md)
-- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 - [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](../../CVPR2026/llm_agent/cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
-- [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
-- [\[ICML 2025\] Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction](../../ICML2025/llm_agent/aguvis_unified_pure_vision_agents_for_autonomous_gui_interaction.md)
+- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
 
 </div>
 

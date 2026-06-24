@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Correcting Prompt Dependence in LLM Benchmarks: A Bayesian Hierarchical Model with Embedding-Space Clustering
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] The authors argue that mainstream LLM benchmark metrics rely on two frequently violated assumptions: a sufficient number of evaluations (permitting the Central Limit Theorem) and independence between prompts. They propose BHM-ESC, a Bayesian Hierarchical Model with "Embedding-Space Clustering": it groups semantically s
+  [ICML2026][LLM Evaluation][LLM Benchmarks] The authors argue that mainstream LLM benchmark metrics rely on two frequently violated assumptions: a sufficient number of evaluations (permitting the Central Limit Theorem) and independence between prompts. They propose BHM-ESC, a Bayesian Hierarchical Model with "Embedding-Space Clustering": it groups semantically similar prompts into clusters sharing a success probability, and infers the number of clusters as an unknown variable.…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML2026"
+  - "LLM Evaluation"
+  - "LLM Benchmarks"
+  - "Prompt Dependence"
+  - "Bayesian Hierarchical Model"
+  - "Embedding Clustering"
+  - "Effective Sample Size"
 date: 2026-05-08
-content_hash: 70fc17eb8076d5d6
+content_hash: 3578af12fc30b82c
 ---
+
 # Correcting Prompt Dependence in LLM Benchmarks: A Bayesian Hierarchical Model with Embedding-Space Clustering
 
 **Conference**: ICML2026  
@@ -142,9 +148,9 @@ Overall, BHM-ESC reduces MAE by 4–73% and improves ELPD by 20–450 log-probab
 
 - [\[ICML 2025\] Hyperband-based Bayesian Optimization for Black-box Prompt Selection](../../ICML2025/llm_evaluation/hyperband-based_bayesian_optimization_for_black-box_prompt_selection.md)
 - [\[ICML 2026\] HiPER: Hierarchical Reinforcement Learning with Explicit Credit Assignment for Large Language Model Agents](hiper_hierarchical_reinforcement_learning_with_explicit_credit_assignment_for_la.md)
+- [\[ICLR 2026\] Don't Pass@k: A Bayesian Framework for Large Language Model Evaluation](../../ICLR2026/llm_evaluation/dont_passk_a_bayesian_framework_for_large_language_model_evaluation.md)
 - [\[NeurIPS 2025\] Bayesian Evaluation of Large Language Model Behavior](../../NeurIPS2025/llm_evaluation/bayesian_evaluation_of_large_language_model_behavior.md)
 - [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
-- [\[AAAI 2026\] Lost in Benchmarks? Rethinking Large Language Model Benchmarking with Item Response Theory](../../AAAI2026/llm_evaluation/lost_in_benchmarks_rethinking_large_language_model_benchmarking_with_item_respon.md)
 
 </div>
 

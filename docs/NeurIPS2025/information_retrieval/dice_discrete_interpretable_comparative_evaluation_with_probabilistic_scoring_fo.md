@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DICE: Discrete Interpretable Comparative Evaluation with Probabilistic Scoring for RAG
 description: >-
-  [NeurIPS 2025 (ResponsibleFM Workshop)][Information Retrieval & RAG][RAG evaluation] This paper proposes the DICE framework, which achieves interpretable, robust…
+  [NeurIPS 2025 (ResponsibleFM Workshop)][Information Retrieval & RAG][RAG evaluation] This paper proposes the DICE framework, which achieves interpretable, robust, and efficient evaluation of RAG systems through a two-stage assessment pipeline (evidence-coupled deep analysis + probabilistic {A, B, Tie} scoring) combined with a Swiss-system tournament. On a Chinese financial QA dataset, DICE attains 85.7% agreement with human experts, substantially outperforming RAGAS (45.7%).
 tags:
   - "NeurIPS 2025 (ResponsibleFM Workshop)"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Swiss tournament"
   - "probabilistic scoring"
 date: 2026-05-08
-content_hash: c537654ad75d4fba
+content_hash: ec9ef3e580b55241
 ---
 
 # DICE: Discrete Interpretable Comparative Evaluation with Probabilistic Scoring for RAG
@@ -116,11 +116,11 @@ System responses are classified into four tiers: fully correct > partially corre
 
 ## Related Papers
 
+- [\[ACL 2025\] GaRAGe: A Benchmark with Grounding Annotations for RAG Evaluation](../../ACL2025/information_retrieval/garage_a_benchmark_with_grounding_annotations_for_rag_evaluation.md)
+- [\[ACL 2025\] RAGEval: Scenario Specific RAG Evaluation Dataset Generation Framework](../../ACL2025/information_retrieval/rageval_scenario_specific_rag_evaluation_dataset_generation_framework.md)
+- [\[ACL 2025\] Unanswerability Evaluation for Retrieval Augmented Generation](../../ACL2025/information_retrieval/unanswerability_evaluation_for_retrieval_augmented_generation.md)
 - [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](../../ICLR2026/information_retrieval/hierarchical_concept-based_interpretable_models.md)
-- [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](../../AAAI2026/information_retrieval/reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
-- [\[ICLR 2026\] Summaries as Centroids for Interpretable and Scalable Text Clustering](../../ICLR2026/information_retrieval/summaries_as_centroids_for_interpretable_and_scalable_text_clustering.md)
-- [\[ACL 2026\] Bayesian Active Learning with Gaussian Processes Guided by LLM Relevance Scoring](../../ACL2026/information_retrieval/bayesian_active_learning_with_gaussian_processes_guided_by_llm_relevance_scoring.md)
-- [\[ICLR 2026\] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation](../../ICLR2026/information_retrieval/bayesian_attention_mechanism_a_probabilistic_framework_for_positional_encoding_a.md)
+- [\[ACL 2025\] LDIR: Low-Dimensional Dense and Interpretable Text Embeddings with Relative Representations](../../ACL2025/information_retrieval/ldir_low-dimensional_dense_and_interpretable_text_embeddings_with_relative_repre.md)
 
 </div>
 

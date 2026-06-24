@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Distribution Matching for Vision-Language Dataset Distillation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes MDM (Multimodal Distribution Matching), a geometry-aware distribution matching framework for image-text dataset distillation. By intervening simultaneously at the data, model, and loss levels (joint space clustering initialization + angle-guided weight interpolation + geodesic kernel energy matching
+  [CVPR 2026][Multimodal VLM][Dataset Distillation] This paper proposes MDM (Multimodal Distribution Matching), a geometry-aware distribution matching framework for image-text dataset distillation. By intervening simultaneously at the data, model, and loss levels (joint space clustering initialization + angle-guided weight interpolation + geodesic kernel energy matching on the unit hypersphere), it directly aligns the joint distribution of real and synthetic data via single-lev…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Dataset Distillation"
+  - "Distribution Matching"
+  - "Image-Text Retrieval"
+  - "Geometry-Aware"
+  - "Cross-Architecture Generalization"
 date: 2026-05-08
-content_hash: f562709cd14c5967
+content_hash: 12c4089f4fca0ee7
 ---
+
 # Multimodal Distribution Matching for Vision-Language Dataset Distillation
 
 **Conference**: CVPR 2026  
@@ -167,15 +173,13 @@ Total distillation time is reduced by up to 98% due to faster single-level itera
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation](../../ICLR2026/multimodal_vlm/asynchronous_matching_with_dynamic_sampling_for_multimodal_dataset_distillation.md)
+- [\[ICLR 2026\] Multimodal Dataset Distillation via Phased Teacher Models](../../ICLR2026/multimodal_vlm/multimodal_dataset_distillation_via_phased_teacher_models.md)
 - [\[CVPR 2026\] ReMatch: Boosting Representation through Matching for Multimodal Retrieval](rematch_boosting_representation_through_matching_for_multimodal_retrieval.md)
-- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
-- [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
-- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
+- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
+- [\[CVPR 2026\] LOREAL: Mitigating Low-Resolution Challenges in Vision-Language Models with Attribute-driven Prompt Self-Distillation](loreal_mitigating_low-resolution_challenges_in_vision-language_models_with_attri.md)
 
 </div>
 

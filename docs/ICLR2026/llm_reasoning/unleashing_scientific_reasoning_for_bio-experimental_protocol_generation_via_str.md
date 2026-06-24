@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper reformulates "bio-experimental protocol generation" as a structured and verifiable reasoning task. It introduces the Sketch-and-Fill reasoning paradigm to decompose free-text into a three-stage output: "Thought → Atomic Steps → Natural Language." The authors propose SCORE, a rule-based component reward mecha
+  [ICLR 2026][Reasoning][Experimental Protocol Generation] This paper reformulates "bio-experimental protocol generation" as a structured and verifiable reasoning task. It introduces the Sketch-and-Fill reasoning paradigm to decompose free-text into a three-stage output: "Thought → Atomic Steps → Natural Language." The authors propose SCORE, a rule-based component reward mechanism (Step granularity + Action sequence + Semantic fidelity) to replace expensive LLM-as-a-judge signa…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Experimental Protocol Generation"
+  - "Structured Reasoning"
+  - "Component-based Reward"
+  - "GRPO"
+  - "Biomedicine"
 date: 2026-05-08
-content_hash: 4482e844b7a3d9b1
+content_hash: cc1a403915d3ec2f
 ---
+
 # Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism
 
 **Conference**: ICLR 2026  
@@ -131,6 +136,7 @@ Thoth (8B) outperforms ChatGPT-4o by 3.69% on average. Notably, reasoning models
 - Value: ⭐⭐⭐⭐⭐ Significant performance gains for an 8B model and high transfer potential for other structured generation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

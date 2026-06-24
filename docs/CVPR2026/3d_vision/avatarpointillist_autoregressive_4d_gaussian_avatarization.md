@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AvatarPointillist: AutoRegressive 4D Gaussian Avatarization
 description: >-
-  [CVPR 2026][3D Vision][4D Avatar] AvatarPointillist proposes an autoregressive (AR) generation framework to construct 4D Gaussian avatars. It utilizes a decoder-only Transformer to generate 3DGS point clouds point-by-point (including binding information) and employs a Gaussian Decoder to predict rendering attributes. This approach breaks the limitation
+  [CVPR 2026][3D Vision][4D Avatar] AvatarPointillist proposes an autoregressive (AR) generation framework to construct 4D Gaussian avatars. It utilizes a decoder-only Transformer to generate 3DGS point clouds point-by-point (including binding information) and employs a Gaussian Decoder to predict rendering attributes. This approach breaks the limitations of fixed template topologies and enables adaptive point density adjustments, outperforming baselines like LAM and GAGAvatar…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 4D Avatar
-  - Autoregressive
-  - 3D Gaussian Splatting
-  - Point Cloud Generation
-  - One-shot
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Avatar"
+  - "Autoregressive"
+  - "3D Gaussian Splatting"
+  - "Point Cloud Generation"
+  - "One-shot"
 date: 2026-05-08
-content_hash: 9fcc22e60a12b9a8
+content_hash: 5734e50194c42caa
 ---
+
 # AvatarPointillist: AutoRegressive 4D Gaussian Avatarization
 
 **Conference**: CVPR 2026  
@@ -148,11 +149,11 @@ Avatars must be drivable, requiring knowledge of how Gaussians move with express
 
 ## Related Papers
 
+- [\[CVPR 2026\] MeshRipple: Structured Autoregressive Generation of Artist-Meshes](meshripple_structured_autoregressive_generation_of_artist-meshes.md)
+- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
 - [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 
 </div>
 

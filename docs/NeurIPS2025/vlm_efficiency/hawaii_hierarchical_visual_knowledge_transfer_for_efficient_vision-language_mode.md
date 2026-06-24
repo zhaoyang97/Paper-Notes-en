@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Knowledge Distillation] This paper proposes the Hawaii framework, which distills knowledge from multiple visual experts into a single visual encoder via Mixture of LoRA Adapters (MoLA) and…
+  [NeurIPS 2025][Multimodal Efficiency][Knowledge Distillation] This paper proposes the Hawaii framework, which distills knowledge from multiple visual experts into a single visual encoder via Mixture of LoRA Adapters (MoLA) and Hierarchical Knowledge Distillation (HKD), significantly improving the visual understanding capability of VLMs without incurring any additional inference cost.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Knowledge Distillation"
   - "Visual Encoder"
   - "LoRA"
   - "MoE"
   - "Multi-Teacher Distillation"
 date: 2026-05-08
-content_hash: 84e34ad5bc7520a3
+content_hash: 1a6d24d6ecdf2bba
 ---
 
 # HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM
@@ -179,11 +179,11 @@ Hawaii outperforms both LLaVA-1.5 and MoVE-KD across all benchmarks. The most no
 
 ## Related Papers
 
-- [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](../../AAAI2026/multimodal_vlm/harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
-- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/multimodal_vlm/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
-- [\[NeurIPS 2025\] SpatialTraceGen: High-Fidelity Traces for Efficient VLM Spatial Reasoning Distillation](spatialtracegen_high-fidelity_traces_for_efficient_vlm_spatial_reasoning_distill.md)
-- [\[CVPR 2026\] KEC: Hierarchical Textual Knowledge for Enhanced Image Clustering](../../CVPR2026/multimodal_vlm/kec_hierarchical_textual_knowledge_clustering.md)
-- [\[NeurIPS 2025\] BioCLIP 2: Emergent Properties from Scaling Hierarchical Contrastive Learning](bioclip_2_emergent_properties_from_scaling_hierarchical_contrastive_learning.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/vlm_efficiency/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
+- [\[ICCV 2025\] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](../../ICCV2025/vlm_efficiency/dynamic-vlm_simple_dynamic_visual_token_compression_for_videollm.md)
+- [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](../../CVPR2026/vlm_efficiency/duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
+- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](../../CVPR2026/vlm_efficiency/vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
+- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/vlm_efficiency/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
 
 </div>
 

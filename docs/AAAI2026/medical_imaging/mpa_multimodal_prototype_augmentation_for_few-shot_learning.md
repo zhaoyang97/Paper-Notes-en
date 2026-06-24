@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MPA: Multimodal Prototype Augmentation for Few-Shot Learning
 description: >-
-  [AAAI 2026][Medical Imaging][Few-Shot Learning] This paper proposes MPA, a framework that enhances prototype quality through three components: LLM-based Multi-Variant Semantic Enhancement (LMSE) for enriching semantic in…
+  [AAAI 2026][Medical Imaging][Few-Shot Learning] This paper proposes MPA, a framework that enhances prototype quality through three components: LLM-based Multi-Variant Semantic Enhancement (LMSE) for enriching semantic information, Hierarchical Multi-View Augmentation (HMA) for diversifying visual features, and an Adaptive Uncertain Class Absorber (AUCA) for modeling inter-class uncertainty. MPA achieves significant improvements over existing methods on 4 single-domain and 6 c…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Data Augmentation"
   - "CLIP"
 date: 2026-05-08
-content_hash: 870f7db4c8ddd291
+content_hash: 01c44376c0d972f7
 ---
 
 # MPA: Multimodal Prototype Augmentation for Few-Shot Learning
@@ -141,9 +141,9 @@ This work lies at the intersection of FSL and multimodal learning. The idea behi
 
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](../../CVPR2026/medical_imaging/interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
 - [\[CVPR 2026\] Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning](../../CVPR2026/medical_imaging/reclaiming_lost_text_layers_for_source-free_cross-domain_few-shot_learning.md)
+- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](../../CVPR2026/medical_imaging/mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 - [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
-- [\[NeurIPS 2025\] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling](../../NeurIPS2025/medical_imaging/few-shot_learning_from_gigapixel_images_via_hierarchical_vision-language_alignme.md)
-- [\[CVPR 2026\] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation](../../CVPR2026/medical_imaging/sd_fsmis_adapting_stable_diffusion_for_few_shot_medical_image_segmentation.md)
 
 </div>
 

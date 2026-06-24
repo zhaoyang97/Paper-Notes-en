@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Black-Box Privacy Attacks on Shared Representations in Multitask Learning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper proposes the "task-inference" threat model, demonstrating that by querying the shared representation of multitask learning (MTL) in a black-box manner and obtaining embeddings for samples of the same task, an attacker can determine whether a specific task was included in the training set. This is achieved wi
+  [ICLR2026][AI Safety][Multitask Learning] This paper proposes the "task-inference" threat model, demonstrating that by querying the shared representation of multitask learning (MTL) in a black-box manner and obtaining embeddings for samples of the same task, an attacker can determine whether a specific task was included in the training set. This is achieved without training shadow models or using any reference data, leveraging the strong collaborative dependency between embed…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Multitask Learning"
+  - "Shared Representations"
+  - "Task Inference"
+  - "Privacy Leakage"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: f23374bebe9a7652
+content_hash: 07c26ade5b5ad5c6
 ---
+
 # Black-Box Privacy Attacks on Shared Representations in Multitask Learning
 
 **Conference**: ICLR2026  
@@ -150,9 +156,9 @@ Comparing the "Strong vs. Weak" gap across MTL use cases (Variance AUC on Stack 
 
 - [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](traceable_black-box_watermarks_for_federated_learning.md)
 - [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
+- [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
 - [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
-- [\[ICLR 2026\] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks](concept-aware_privacy_mechanisms_for_defending_embedding_inversion_attacks.md)
-- [\[ICLR 2026\] Unified Privacy Guarantees for Decentralized Learning via Matrix Factorization](unified_privacy_guarantees_for_decentralized_learning_via_matrix_factorization.md)
+- [\[CVPR 2026\] What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs](../../CVPR2026/ai_safety/what_your_features_reveal_data-efficient_black-box_feature_inversion_attack_for_.md)
 
 </div>
 

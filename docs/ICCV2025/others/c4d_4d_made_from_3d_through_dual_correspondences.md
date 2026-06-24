@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] C4D: 4D Made from 3D through Dual Correspondences
 description: >-
-  [ICCV 2025][4D reconstruction] This paper proposes C4D, a framework that upgrades existing 3D reconstruction paradigms to full 4D reconstruction by jointly capturing dual temporal correspondences — short-term optical flo…
+  [ICCV 2025][4D reconstruction] This paper proposes C4D, a framework that upgrades existing 3D reconstruction paradigms to full 4D reconstruction by jointly capturing dual temporal correspondences — short-term optical flow and dynamic-aware long-term point tracking (DynPT) — on top of DUSt3R's 3D pointmap predictions. Motion masks are generated to separate static and dynamic regions. Three optimization objectives are introduced: camera motion alignment…
 tags:
   - "ICCV 2025"
   - "4D reconstruction"
@@ -11,7 +11,7 @@ tags:
   - "motion segmentation"
   - "DUSt3R"
 date: 2026-05-08
-content_hash: b716084ab1990fa7
+content_hash: 5c2e9f158aeba281
 ---
 
 # C4D: 4D Made from 3D through Dual Correspondences
@@ -122,11 +122,11 @@ CTS has the largest impact on RPE_rot (0.705 → 1.348 when removed).
 
 ## Related Papers
 
+- [\[ICML 2025\] Addressing Imbalanced Domain-Incremental Learning through Dual-Balance Collaborative Experts (DCE)](../../ICML2025/others/addressing_imbalanced_domain-incremental_learning_through_dual-balance_collabora.md)
+- [\[CVPR 2025\] FIction: 4D Future Interaction Prediction from Video](../../CVPR2025/others/fiction_4d_future_interaction_prediction_from_video.md)
+- [\[CVPR 2025\] Towards In-the-Wild 3D Plane Reconstruction from a Single Image](../../CVPR2025/others/towards_in-the-wild_3d_plane_reconstruction_from_a_single_image.md)
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](lacoot_layer_collapse_through_optimal_transport.md)
-- [\[NeurIPS 2025\] Rethinking PCA Through Duality](../../NeurIPS2025/others/rethinking_pca_through_duality.md)
-- [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](../../NeurIPS2025/others/trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
-- [\[NeurIPS 2025\] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation](../../NeurIPS2025/others/metafind_scene-aware_3d_asset_retrieval_for_coherent_metaverse_scene_generation.md)
-- [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
+- [\[CVPR 2025\] MagicArticulate: Make Your 3D Models Articulation-Ready](../../CVPR2025/others/magicarticulate_make_your_3d_models_articulation-ready.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] CREval replaces the "black-box scoring" of MLLMs with a VQA paradigm—generating truth-grounded binary questions and awarding points only for correct answers. Accompanied by CREval-Bench (874 samples across 3 categories and 9 dimensions), it decomposes evaluation into three interpretable metrics: Instruction Following (
+  [CVPR 2026][Image Generation][Instruct-based Image Editing] CREval replaces the "black-box scoring" of MLLMs with a VQA paradigm—generating truth-grounded binary questions and awarding points only for correct answers. Accompanied by CREval-Bench (874 samples across 3 categories and 9 dimensions), it decomposes evaluation into three interpretable metrics: Instruction Following (IF), Visual Consistency (VC), and Visual Quality (VQ). It reveals that current models still struggle…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruct-based Image Editing"
+  - "Creative Editing Evaluation"
+  - "VQA Scoring"
+  - "MLLM Evaluation"
+  - "Benchmark Construction"
 date: 2026-05-08
-content_hash: d0d881e152936bcd
+content_hash: 9e2fae932871163b
 ---
+
 # CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions
 
 **Conference**: CVPR 2026  
@@ -137,8 +143,8 @@ CREval rankings align closely with human judgments. The relative rankings remain
 
 - [\[CVPR 2026\] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow](psdesigner_automated_graphic_design_with_a_human-like_creative_workflow.md)
 - [\[CVPR 2026\] Score2Instruct: Scaling Up Video Quality-Centric Instructions via Automated Dimension Scoring](score2instruct_scaling_up_video_quality-centric_instructions_via_automated_dimen.md)
-- [\[ICCV 2025\] CAP: Evaluation of Persuasive and Creative Image Generation](../../ICCV2025/image_generation/cap_evaluation_of_persuasive_and_creative_image_generation.md)
 - [\[CVPR 2026\] Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)
+- [\[ICCV 2025\] CAP: Evaluation of Persuasive and Creative Image Generation](../../ICCV2025/image_generation/cap_evaluation_of_persuasive_and_creative_image_generation.md)
 - [\[CVPR 2026\] FlowDC: Flow-Based Decoupling-Decay for Complex Image Editing](flowdc_flow-based_decoupling-decay_for_complex_image_editing.md)
 
 </div>

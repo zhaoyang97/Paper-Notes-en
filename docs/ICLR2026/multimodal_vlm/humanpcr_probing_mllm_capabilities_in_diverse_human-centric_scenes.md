@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] HumanPCR constructs a hierarchical evaluation suite for human-centric visual scenes. It diagnoses model weaknesses across three levels—Perception, Comprehension, and Reasoning—covering human details, social behaviors, temporal processes, and multi-evidence video reasoning. The study finds that the most significant bott
+  [ICLR2026][Multimodal VLM][MLLM Evaluation] HumanPCR constructs a hierarchical evaluation suite for human-centric visual scenes. It diagnoses model weaknesses across three levels—Perception, Comprehension, and Reasoning—covering human details, social behaviors, temporal processes, and multi-evidence video reasoning. The study finds that the most significant bottleneck for current models is not "seeing more frames," but rather the inability to proactively seek critical visual…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "MLLM Evaluation"
+  - "Human-Centric Scenes"
+  - "Video Reasoning"
+  - "Proactive Visual Evidence"
+  - "Multimodal Benchmark"
 date: 2026-05-08
-content_hash: 04dda881e2f412e3
+content_hash: 2794c54cd469668c
 ---
+
 # HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes
 
 **Conference**: ICLR2026  
@@ -155,15 +161,16 @@ Frame count analysis shows that simply increasing input frames yields minimal im
 - Value: ⭐⭐⭐⭐⭐ (Critical for diagnosing MLLM bottlenecks in human-centric and long-video tasks).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] UrbanFeel：A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
-- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](../../CVPR2026/multimodal_vlm/humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
+- [\[ICLR 2026\] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
 - [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
+- [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](../../CVPR2026/multimodal_vlm/humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
 - [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](../../CVPR2026/multimodal_vlm/visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
-- [\[ICLR 2026\] CapRL: Stimulating Dense Image Caption Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
+- [\[ICLR 2026\] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning](caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Temporal Superposition and Feature Geometry of RNNs under Memory Demands
 description: >-
-  [ICLR 2026][Interpretability][RNN] This paper extends the concept of "feature superposition" from feedforward networks to the temporal dimension, proposing **temporal superposition**: by training linear/nonlinear RNNs on $k$-delay recall tasks, analytically decomposing the loss into four terms, identifying the ReLU-induced "interference-free space," and
+  [ICLR 2026][Interpretability][Temporal Superposition] This paper extends the concept of "feature superposition" from feedforward networks to the temporal dimension, proposing **temporal superposition**: by training linear/nonlinear RNNs on $k$-delay recall tasks, analytically decomposing the loss into four terms, identifying the ReLU-induced "interference-free space," and a phase transition between dense and sparse mechanisms, it mechanistically explains why and how RNNs choo…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - RNN
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Temporal Superposition"
+  - "Feature Geometry"
+  - "RNN"
+  - "Superposition Hypothesis"
+  - "Working Memory"
 date: 2026-05-08
-content_hash: ec4fe0ad71890b7a
+content_hash: 6923f03a9e33bd5f
 ---
+
 # Temporal Superposition and Feature Geometry of RNNs under Memory Demands
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,20 @@ Measured loss curves match the four-term decomposition $\mathbb{E}[L] = (i) + (i
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
+- [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
+- [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
+- [\[ICLR 2026\] On The Geometry and Topology of Representations: the Manifolds of Modular Addition](on_the_geometry_and_topology_of_representations_the_manifolds_of_modular_additio.md)
+- [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)

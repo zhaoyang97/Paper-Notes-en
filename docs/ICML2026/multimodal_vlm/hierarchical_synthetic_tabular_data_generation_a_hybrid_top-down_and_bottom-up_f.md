@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Synthetic Tabular Data Generation: A Hybrid Top-Down and Bottom-Up Framework
 description: >-
-  [ICML 2026][Multimodal VLM][Top-Down/Bottom-Up] This paper proposes the H-TDBU framework: utilizing LLMs or human-written rules in a top-down path to generate a "logical skeleton" $\mathcal{S}$, while using lightweight bottom-up generators such as RandomForest, XGBoost, or CTGAN to learn "statistical texture" $z$. These components are integrated via a conditional ge
+  [ICML 2026][Multimodal VLM][Tabular Synthesis] This paper proposes the H-TDBU framework: utilizing LLMs or human-written rules in a top-down path to generate a "logical skeleton" $\mathcal{S}$, while using lightweight bottom-up generators such as RandomForest, XGBoost, or CTGAN to learn "statistical texture" $z$. These components are integrated via a conditional generator $G(z\in\mathcal{Z}\mid\mathcal{S})$ and iteratively refined through a TSTR + XModal feedback loop. On wea…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Top-Down/Bottom-Up
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Tabular Synthesis"
+  - "Top-Down/Bottom-Up"
+  - "Rule Constraints"
+  - "LLM as Rule Generator"
+  - "XGBoost Conditional Generation"
 date: 2026-05-08
-content_hash: c0135b8f6cececc8
+content_hash: 78f753e654946820
 ---
+
 # Hierarchical Synthetic Tabular Data Generation: A Hybrid Top-Down and Bottom-Up Framework
 
 **Conference**: ICML 2026  
@@ -149,6 +154,7 @@ XGBoost ablation (training rows and conditioning columns):
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Deep Learning for Subspace Regression
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][subspace regression] This work formalizes the subspace prediction problem in reduced order modeling (ROM) as a regression task on the Grassmann manifold. It proposes specialized loss functions and a subspace embedding technique—predicting a subspace of higher dimension than the target to reduce mapping complexity—achieving significant resu
+  [ICLR2026][Physics & Scientific Computing][subspace regression] This work formalizes the subspace prediction problem in reduced order modeling (ROM) as a regression task on the Grassmann manifold. It proposes specialized loss functions and a subspace embedding technique—predicting a subspace of higher dimension than the target to reduce mapping complexity—achieving significant results in eigenvalue problems, parametric PDEs, and iterative method acceleration.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - subspace regression
-  - Grassmann manifold
-  - reduced order modeling
-  - neural operator
-  - eigenspace
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "subspace regression"
+  - "Grassmann manifold"
+  - "reduced order modeling"
+  - "neural operator"
+  - "eigenspace"
 date: 2026-05-08
-content_hash: 2441ff7b9bebf9e4
+content_hash: 3e9930457f1ec470
 ---
+
 # Deep Learning for Subspace Regression
 
 **Conference**: ICLR2026  
@@ -133,10 +134,10 @@ $L_2$ becomes unstable at higher dimensions due to ill-conditioned normal equati
 ## Related Papers
 
 - [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
-- [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
 - [\[ICLR 2026\] Accelerating Eigenvalue Dataset Generation via Chebyshev Subspace Filter](accelerating_eigenvalue_dataset_generation_via_chebyshev_subspace_filter.md)
 - [\[ICLR 2026\] GenSR: Symbolic Regression based on Equation Generative Space](gensr_symbolic_regression_based_on_equation_generative_space.md)
 - [\[NeurIPS 2025\] Toward Complete Merger Identification at Cosmic Noon with Deep Learning](../../NeurIPS2025/physics/toward_complete_merger_identification_at_cosmic_noon_with_deep_learning.md)
+- [\[ICLR 2026\] Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators](efficient_regression-based_training_of_normalizing_flows_for_boltzmann_generator.md)
 
 </div>
 

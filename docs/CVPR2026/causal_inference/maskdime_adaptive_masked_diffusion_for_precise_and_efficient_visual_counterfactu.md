@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 description: >-
-  [CVPR 2026][Causal Inference][Diffusion Model] MaskDiME is proposed, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an adaptive dual-masking mechanism. This achieves precise and efficient visual counterfactual explanations, with inference speeds over 30 times faster than DiME and GPU memory cons
+  [CVPR 2026][Causal Inference][Visual Counterfactual Explanations] MaskDiME is proposed, a training-free diffusion framework that transforms global classifier guidance into decision-driven local editing via an adaptive dual-masking mechanism. This achieves precise and efficient visual counterfactual explanations, with inference speeds over 30 times faster than DiME and GPU memory consumption only one-tenth that of ACE/RCSB.
 tags:
-  - CVPR 2026
-  - Causal Inference
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Causal Inference"
+  - "Visual Counterfactual Explanations"
+  - "Diffusion Models"
+  - "Adaptive Masking"
+  - "Explainable AI"
+  - "Classifier Guidance"
 date: 2026-05-08
-content_hash: 75d63402993d46eb
+content_hash: 86956485acad6798
 ---
+
 # MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,10 @@ The ablation clearly reveals the contribution of each component: single-step est
 ## Related Papers
 
 - [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](retrieving_counterfactuals_improves_visual_in-context_learning.md)
-- [\[CVPR 2026\] Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)
 - [\[ACL 2025\] Counterfactual Explanations for Aspect-Based Sentiment Analysis](../../ACL2025/causal_inference/counterfactual_explanations_for_aspect-based_sentiment_analysis.md)
-- [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
 - [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](../../ICLR2026/causal_inference/counterfactual_explanations_on_robust_perceptual_geodesics.md)
+- [\[AAAI 2026\] KTCF: Actionable Recourse in Knowledge Tracing via Counterfactual Explanations for Education](../../AAAI2026/causal_inference/ktcf_actionable_recourse_in_knowledge_tracing_via_counterfactual_explanations_fo.md)
+- [\[ICCV 2025\] A Visual Leap in CLIP Compositionality Reasoning through Generation of Counterfactual Sets](../../ICCV2025/causal_inference/a_visual_leap_in_clip_compositionality_reasoning_through_gen.md)
 
 </div>
 

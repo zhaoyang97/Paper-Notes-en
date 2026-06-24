@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Static Benchmarks: Synthesizing Harmful Content via Persona-based Simulation for Robust Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] The authors drive LLM agents to act as users writing harmful comments on real Reddit posts using a "2D persona" (intrinsic identity + extrinsic strategy). This synthesizes a harmful content evaluation set that is more challenging, diverse, and comprehensive than traditional static benchmarks. It reduces the accuracy of
+  [ACL 2026][LLM Evaluation][persona simulation] The authors drive LLM agents to act as users writing harmful comments on real Reddit posts using a "2D persona" (intrinsic identity + extrinsic strategy). This synthesizes a harmful content evaluation set that is more challenging, diverse, and comprehensive than traditional static benchmarks. It reduces the accuracy of four mainstream safety classifiers to 13–31% (vs. 60–94% on static sets), exposing the fact that existing benchm…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "persona simulation"
+  - "harmful content synthesis"
+  - "safety classifier evaluation"
+  - "Reddit data"
+  - "diversity metrics"
 date: 2026-05-08
-content_hash: cff4c7e39a2ae9a3
+content_hash: e014fb3615ca7e3a
 ---
+
 # Beyond Static Benchmarks: Synthesizing Harmful Content via Persona-based Simulation for Robust Evaluation
 
 **Conference**: ACL 2026  
@@ -143,10 +149,10 @@ This paper **does not train** any models; it relies entirely on prompting and sa
 ## Related Papers
 
 - [\[ACL 2025\] ChatBench: From Static Benchmarks to Human-AI Evaluation](../../ACL2025/llm_evaluation/chatbench_from_static_benchmarks_to_human-ai_evaluation.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
 - [\[ACL 2025\] How Far are LLMs from Being Our Digital Twins? A Benchmark for Persona-Based Behavior Chain Simulation](../../ACL2025/llm_evaluation/how_far_are_llms_from_being_our_digital_twins_a_benchmark_for_persona-based_beha.md)
 - [\[ACL 2026\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
 - [\[ACL 2026\] SPENCE: A Syntactic Probe for Detecting Contamination in NL2SQL Benchmarks](spence_a_syntactic_probe_for_detecting_contamination_in_nl2sql_benchmarks.md)
-- [\[ACL 2025\] Beyond One-Size-Fits-All: Tailored Benchmarks for Efficient Evaluation](../../ACL2025/llm_evaluation/beyond_one-size-fits-all_tailored_benchmarks_for_efficient_evaluation.md)
 
 </div>
 

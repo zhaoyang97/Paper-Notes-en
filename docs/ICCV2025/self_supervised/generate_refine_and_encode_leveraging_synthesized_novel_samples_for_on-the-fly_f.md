@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery
 description: >-
-  [ICCV 2025][Self-Supervised Learning][on-the-fly category discovery] This paper proposes DiffGRE, a diffusion-model-based framework for on-the-fly category discovery. It synthesizes novel samples containing virtual categ…
+  [ICCV 2025][Self-Supervised Learning][on-the-fly category discovery] This paper proposes DiffGRE, a diffusion-model-based framework for on-the-fly category discovery. It synthesizes novel samples containing virtual category information via Attribute Composition Generation (ACG), filters low-quality samples through Diversity-Driven Refinement (DDR), and injects additional category knowledge via Semi-supervised Leader Encoding (SLE). DiffGRE achieves substantial performance gai…
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "fine-grained recognition"
   - "online clustering inference"
 date: 2026-05-08
-content_hash: d91ac06d852a4bbb
+content_hash: 50693bd8135957da
 ---
 
 # Generate, Refine, and Encode: Leveraging Synthesized Novel Samples for On-the-Fly Fine-Grained Category Discovery
@@ -202,11 +202,11 @@ $$\mathcal{L} = \mathcal{L}_{sup} + \mathcal{L}_{reg} + \alpha \cdot \mathcal{L}
 
 ## Related Papers
 
+- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](../../CVPR2026/self_supervised/tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[ICLR 2026\] Adaptive Gaussian Expansion for On-the-fly Category Discovery](../../ICLR2026/self_supervised/adaptive_gaussian_expansion_for_on-the-fly_category_discovery.md)
 - [\[ICCV 2025\] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](a_hidden_stumbling_block_in_generalized_category_discovery_d.md)
-- [\[AAAI 2026\] FineXtrol: Controllable Motion Generation via Fine-Grained Text](../../AAAI2026/self_supervised/finextrol_controllable_motion_generation_via_fine-grained_text.md)
-- [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](../../NeurIPS2025/self_supervised/seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](../../CVPR2026/self_supervised/omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
-- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](../../ICML2026/self_supervised/partco_part-level_correspondence_priors_enhance_category_discovery.md)
+- [\[CVPR 2026\] Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery](../../CVPR2026/self_supervised/assignment-driven_hash_learning_in_a_hyper-semantic_space_for_on-the-fly_categor.md)
+- [\[NeurIPS 2025\] CleverBirds: A Multiple-Choice Benchmark for Fine-grained Human Knowledge Tracing](../../NeurIPS2025/self_supervised/cleverbirds_a_multiple-choice_benchmark_for_fine-grained_human_knowledge_tracing.md)
 
 </div>
 

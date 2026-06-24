@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] Addressing "reasoning-capable" Multimodal Large Language Models (MLLMs), this paper proposes RMLLMU-Bench to specifically measure **information leakage within reasoning chains** and the **preservation of reasoning capabilities**. It introduces R-MUSE, a training-free, inference-time intervention framework that employs
+  [CVPR 2026][Multimodal VLM][Machine Unlearning] Addressing "reasoning-capable" Multimodal Large Language Models (MLLMs), this paper proposes RMLLMU-Bench to specifically measure **information leakage within reasoning chains** and the **preservation of reasoning capabilities**. It introduces R-MUSE, a training-free, inference-time intervention framework that employs subspace guidance and adaptive steering to erase target answers and intermediate reasoning traces while minimizi…
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Machine Unlearning"
+  - "Reasoning Multimodal Large Language Models"
+  - "Activation Steering"
+  - "Reasoning Leakage"
+  - "Subspace Projection"
 date: 2026-05-08
-content_hash: fdf5f9cb05fc06ea
+content_hash: 9b797b1bf56a9922
 ---
+
 # Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,15 @@ R-MUSE reduces classification accuracy on the forget set from 51.70 to 20.50 and
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
-- [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
-- [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](../../AAAI2026/llm_safety/cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
-- [\[ACL 2025\] Modality-Aware Neuron Pruning for Unlearning in Multimodal Large Language Models](../../ACL2025/llm_safety/manu_modality_aware_unlearning.md)
 - [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
+- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
+- [\[CVPR 2026\] SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning](salmubench_a_benchmark_for_sensitive_association-level_multimodal_unlearning.md)
+- [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
 
 </div>
 

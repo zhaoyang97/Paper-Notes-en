@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification
 description: >-
-  [AAAI 2026][LLM Safety][LLM fingerprinting] This paper proposes iSeal — the first active fingerprinting method capable of reliably verifying LLM ownership in a black-box setting where the model thief has full control ove…
+  [AAAI 2026][LLM Safety][LLM fingerprinting] This paper proposes iSeal — the first active fingerprinting method capable of reliably verifying LLM ownership in a black-box setting where the model thief has full control over the inference process. Through a triple mechanism of an external encrypted encoder, RSC error correction, and similarity-based matching, iSeal maintains a 100% Fingerprint Success Rate (FSR) across 12 LLMs and 10+ attack types…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Reed-Solomon error correction"
   - "verification robustness"
 date: 2026-05-08
-content_hash: 37d2d155bcef58cb
+content_hash: 78f3decd3831692b
 ---
 
 # iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification
@@ -153,11 +153,11 @@ On LLaMA2-13B (A100 GPU): WLM requires 233.4 minutes to converge, IF requires 5 
 
 ## Related Papers
 
-- [\[ICML 2026\] Antidistillation Fingerprinting](../../ICML2026/llm_safety/antidistillation_fingerprinting.md)
+- [\[ICLR 2026\] LLM Fingerprinting via Semantically Conditioned Watermarks](../../ICLR2026/llm_safety/llm_fingerprinting_via_semantically_conditioned_watermarks.md)
+- [\[ICLR 2026\] Hey, That's My Model! Introducing Chain & Hash, An LLM Fingerprinting Technique](../../ICLR2026/llm_safety/hey_thats_my_model_introducing_chain_hash_an_llm_fingerprinting_technique.md)
+- [\[ICLR 2026\] Reliable Weak-to-Strong Monitoring of LLM Agents](../../ICLR2026/llm_safety/reliable_weak-to-strong_monitoring_of_llm_agents.md)
 - [\[ACL 2026\] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](../../ACL2026/llm_safety/xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)
-- [\[CVPR 2026\] Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification](../../CVPR2026/llm_safety/demographic_fairness_in_multimodal_llms_a_benchmark_of_gender_and_ethnicity_bias.md)
 - [\[AAAI 2026\] Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability](democratizing_llm_efficiency_from_hyperscale_optimizations_to_universal_deployab.md)
-- [\[AAAI 2026\] LLM Targeted Underperformance Disproportionately Impacts Vulnerable Users](llm_targeted_underperformance_disproportionately_impacts_vulnerable_users.md)
 
 </div>
 

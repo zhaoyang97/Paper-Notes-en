@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation
 description: >-
-  [AAAI 2026][Segmentation][SAM2] This paper proposes RS2-SAM2, a framework that injects textual information into the SAM2 image encoding process via a Bidirectional Hierarchical Fusion Module (BHFM) and designs a Mask Pro…
+  [AAAI 2026][Segmentation][SAM2] This paper proposes RS2-SAM2, a framework that injects textual information into the SAM2 image encoding process via a Bidirectional Hierarchical Fusion Module (BHFM) and designs a Mask Prompt Generator (MPG) to supply SAM2 with dense prompts, achieving state-of-the-art performance on referring remote sensing image segmentation.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "multimodal fusion"
   - "dense prompts"
 date: 2026-05-08
-content_hash: 3a33460ff26def47
+content_hash: b139a610f1fa7e1a
 ---
 
 # RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation
@@ -171,10 +171,10 @@ Training setup: 8 × RTX 4090; 60 epochs on RefSegRS and 40 epochs on RRSIS-D; A
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval](../../ICLR2026/segmentation/efficient-sam2_accelerating_sam2_with_object-aware_visual_encoding_and_memory_re.md)
+- [\[CVPR 2025\] SAM2-LOVE: Segment Anything Model 2 in Language-Aided Audio-Visual Scenes](../../CVPR2025/segmentation/sam2-love_segment_anything_model_2_in_language-aided_audio-visual_scenes.md)
+- [\[CVPR 2026\] SAMIX: Reinforcing SAM2 with Semantic Adapter and Reference Selecting Policy for Mix-Supervised Segmentation](../../CVPR2026/segmentation/samix_reinforcing_sam2_with_semantic_adapter_and_reference_selecting_policy_for_.md)
 - [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
-- [\[NeurIPS 2025\] SANSA: Unleashing the Hidden Semantics in SAM2 for Few-Shot Segmentation](../../NeurIPS2025/segmentation/sansa_unleashing_the_hidden_semantics_in_sam2_for_few-shot_segmentation.md)
-- [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](../../ICCV2025/segmentation/dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
-- [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
+- [\[CVPR 2026\] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence](../../CVPR2026/segmentation/v2-sam_marrying_sam2_with_multi-prompt_experts_for_cross-view_object_corresponde.md)
 
 </div>
 

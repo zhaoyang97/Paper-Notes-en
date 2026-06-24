@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LiTS: A Modular Framework for LLM Tree Search
 description: >-
-  [ACL 2026][LLM Agent][LLM Tree Search] LiTS decomposes LLM tree search into Policy, Transition, RewardModel, and unified data structures. Utilizing a decorator registry, it enables the modular reuse of search algorithms, components, and task logic across mathematical reasoning, environmental planning, and tool-use tasks. Furthermore, the study identifies th
+  [ACL 2026][LLM Agent][LLM Tree Search] LiTS decomposes LLM tree search into Policy, Transition, RewardModel, and unified data structures. Utilizing a decorator registry, it enables the modular reuse of search algorithms, components, and task logic across mathematical reasoning, environmental planning, and tool-use tasks. Furthermore, the study identifies that policy diversity in open-text action spaces serves as a primary bottleneck for tree search.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - LLM Tree Search
-  - MCTS
-  - BFS
-  - Agent Framework
-  - Tool Use
+  - "ACL 2026"
+  - "LLM Agent"
+  - "LLM Tree Search"
+  - "MCTS"
+  - "BFS"
+  - "Agent Framework"
+  - "Tool Use"
 date: 2026-05-08
-content_hash: 3d0921f0f97b8391
+content_hash: 93947aa3449af661
 ---
+
 # LiTS: A Modular Framework for LLM Tree Search
 
 **Conference**: ACL 2026  
@@ -153,11 +154,11 @@ Rather than traditional ablation, the paper provides a crucial failure analysis:
 
 ## Related Papers
 
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_agent_tool_planning_via_dual-feedback_monte_carlo_tree_se.md)
-- [\[ICLR 2026\] WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](../../ICLR2026/llm_agent/weboperator_action-aware_tree_search_for_autonomous_agents_in_web_environment.md)
-- [\[ICML 2025\] KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search](../../ICML2025/llm_agent/kbqa-o1_agentic_knowledge_base_question_answering_with_monte_carlo_tree_search.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](../../ICLR2026/llm_agent/tree_search_for_llm_agent_reinforcement_learning.md)
+- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
 - [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
-- [\[ACL 2025\] MEDDxAgent: A Unified Modular Agent Framework for Explainable Automatic Differential Diagnosis](../../ACL2025/llm_agent/meddxagent_a_unified_modular_agent_framework_for_explainable_automatic_different.md)
+- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
+- [\[ICML 2025\] KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search](../../ICML2025/llm_agent/kbqa-o1_agentic_knowledge_base_question_answering_with_monte_carlo_tree_search.md)
 
 </div>
 

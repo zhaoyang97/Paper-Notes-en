@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expand Neurons, Not Parameters
 description: >-
-  [ICML 2026][Interpretability][Paper Note] By "splitting" each neuron into $\alpha$ sparse sub-neurons that partition the original input edges while keeping the total number of non-zero parameters constant, feature interference (polysemanticity) between neurons can be significantly reduced. This leads to consistent accuracy improvements across Boolean tasks and
+  [ICML 2026][Interpretability][Neuron expansion] By "splitting" each neuron into $\alpha$ sparse sub-neurons that partition the original input edges while keeping the total number of non-zero parameters constant, feature interference (polysemanticity) between neurons can be significantly reduced. This leads to consistent accuracy improvements across Boolean tasks and real-world vision tasks such as CLIP, CNN, and ImageNet.
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Neuron expansion"
+  - "Superposition hypothesis"
+  - "Polysemanticity"
+  - "Fixed parameters"
+  - "Feature interference"
 date: 2026-05-08
-content_hash: b3f8a23f0df8701d
+content_hash: 4ac7751d10d52736
 ---
+
 # Expand Neurons, Not Parameters
 
 **Conference**: ICML 2026  
@@ -125,10 +131,20 @@ On CLIP-CIFAR-100 with small neuron counts, FPE nearly doubles accuracy. Random-
 - Value: ⭐⭐⭐⭐ Provides actionable evidence for the "superposition $\to$ polysemanticity $\to$ performance loss" chain.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](../../ICLR2026/interpretability/learning_to_weight_parameters_for_training_data_attribution.md)
+- [\[ICML 2026\] LLMs Lean on Priors, Not Programming Language Semantics](llms_lean_on_priors_not_programming_language_semantics.md)
+- [\[ICML 2026\] Position: Zeroth-Order Optimization in Deep Learning Is Underexplored, Not Underpowered](position_zeroth-order_optimization_in_deep_learning_is_underexplored_not_underpo.md)
+- [\[ICLR 2026\] Hedonic Neurons: A Mechanistic Mapping of Latent Coalitions in Transformer MLPs](../../ICLR2026/interpretability/hedonic_neurons_a_mechanistic_mapping_of_latent_coalitions_in_transformer_mlps.md)
+- [\[ICLR 2026\] The Achilles' Heel of LLMs: How Altering a Handful of Neurons Can Cripple Language Abilities](../../ICLR2026/interpretability/the_achilles_heel_of_llms_how_altering_a_handful_of_neurons_can_cripple_language.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] LLMs Lean on Priors, Not Programming Language Semantics](llms_lean_on_priors_not_programming_language_semantics.md)

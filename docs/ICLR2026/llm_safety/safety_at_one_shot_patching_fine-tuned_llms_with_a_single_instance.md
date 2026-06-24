@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing the security risk in LMaaS where user-uploaded fine-tuning data breaks LLM safety alignment, this paper demonstrates that a **single** carefully selected safety instance, fine-tuned for a few epochs, can fully restore the model's alignment level (zeroing the ASR) with negligible utility loss. The authors pro
+  [ICLR 2026][LLM Safety][Fine-tuning attacks] Addressing the security risk in LMaaS where user-uploaded fine-tuning data breaks LLM safety alignment, this paper demonstrates that a **single** carefully selected safety instance, fine-tuned for a few epochs, can fully restore the model's alignment level (zeroing the ASR) with negligible utility loss. The authors provide a theoretical explanation for why "one instance" is sufficient based on the low-rank structure of safety gradi…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Fine-tuning attacks"
+  - "safety alignment recovery"
+  - "bi-level optimization"
+  - "low-rank gradients"
+  - "one-shot patching"
 date: 2026-05-08
-content_hash: 96c22cbc9897ecdf
+content_hash: 843d65167ed0a898
 ---
+
 # Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance
 
 **Conference**: ICLR 2026  
@@ -158,9 +164,9 @@ Subspace similarity $\phi(g_{safe},\bar g_{safe})$: General samples reached 0.75
 
 - [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
+- [\[ICLR 2026\] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks](safedialbench_a_fine-grained_safety_evaluation_benchmark_for_large_language_mode.md)
 - [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 - [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
-- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](../../ACL2026/llm_safety/safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
 
 </div>
 

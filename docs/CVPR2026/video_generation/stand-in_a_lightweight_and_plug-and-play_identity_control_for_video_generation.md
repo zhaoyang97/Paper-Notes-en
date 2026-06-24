@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Stand-In introduces a "conditional image branch" to pretrained video Diffusion Transformers (DiT). By utilizing **Restricted Self-Attention and Conditional Position Mapping**, it injects the identity of a reference face into generated videos. While training only ~1% extra parameters on 2,000 video pairs, it outperforms
+  [CVPR 2026][Video Generation][Identity Preservation] Stand-In introduces a "conditional image branch" to pretrained video Diffusion Transformers (DiT). By utilizing **Restricted Self-Attention and Conditional Position Mapping**, it injects the identity of a reference face into generated videos. While training only ~1% extra parameters on 2,000 video pairs, it outperforms full-parameter fine-tuning methods in face similarity. Since it preserves the backbone…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Identity Preservation"
+  - "Plug-and-Play"
+  - "Restricted Self-Attention"
+  - "Conditional Position Mapping"
 date: 2026-05-08
-content_hash: ff09b1203322fb94
+content_hash: 5d411f6d53a6b8b4
 ---
+
 # Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Ablations highlight the necessity of the core components:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
 - [\[CVPR 2026\] PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories](placid_identity-preserving_multi-object_compositing_via_video_diffusion_with_syn.md)
-- [\[CVPR 2026\] EvoID: Reinforced Evolution for Identity-Preserving Video Generation](evoid_reinforced_evolution_for_identity-preserving_video_generation.md)
 - [\[CVPR 2025\] Wav2Sem: Plug-and-Play Audio Semantic Decoupling for 3D Speech-Driven Facial Animation](../../CVPR2025/video_generation/wav2sem_plug-and-play_audio_semantic_decoupling_for_3d_speech-driven_facial_anim.md)
+- [\[CVPR 2026\] EvoID: Reinforced Evolution for Identity-Preserving Video Generation](evoid_reinforced_evolution_for_identity-preserving_video_generation.md)
+- [\[CVPR 2026\] AnyID: Ultra-Fidelity Universal Identity-Preserving Video Generation from Any Visual References](anyid_ultra-fidelity_universal_identity-preserving_video_generation_from_any_vis.md)
 
 </div>
 

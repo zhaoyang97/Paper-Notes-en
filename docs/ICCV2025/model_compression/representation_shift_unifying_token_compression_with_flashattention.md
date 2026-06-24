@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Representation Shift: Unifying Token Compression with FlashAttention
 description: >-
-  [ICCV 2025][Model Compression][Token Pruning] This paper proposes Representation Shift, a training-free and model-agnostic token importance metric that measures the magnitude of representational change before and after a…
+  [ICCV 2025][Model Compression][Token Pruning] This paper proposes Representation Shift, a training-free and model-agnostic token importance metric that measures the magnitude of representational change before and after a network layer, enabling — for the first time — compatibility between token compression and FlashAttention, achieving up to 5.5× speedup on video understanding and image classification tasks.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Vision Transformer"
   - "Model Acceleration"
 date: 2026-05-08
-content_hash: ebdaf9c0417ed599
+content_hash: 6e48c74bc3446b84
 ---
 
 # Representation Shift: Unifying Token Compression with FlashAttention
@@ -143,11 +143,11 @@ The method is entirely **training-free** and introduces no learnable parameters.
 
 ## Related Papers
 
+- [\[ACL 2025\] UniICL: An Efficient ICL Framework Unifying Compression, Selection, and Generation](../../ACL2025/model_compression/uniicl_icl_framework.md)
 - [\[NeurIPS 2025\] VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models](../../NeurIPS2025/model_compression/vqtoken_neural_discrete_token_representation_learning_for_extreme_token_reductio.md)
 - [\[ICCV 2025\] TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning](tr-pts_task-relevant_parameter_and_token_selection_for_efficient_tuning.md)
 - [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
-- [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](../../NeurIPS2025/model_compression/vision-centric_token_compression_in_large_language_model.md)
-- [\[ICCV 2025\] VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation](vq-sgen_a_vector_quantized_stroke_representation_for_creative_sketch_generation.md)
+- [\[ACL 2025\] UniQuanF: Unifying Uniform and Binary-coding Quantization for Accurate Compression of Large Language Models](../../ACL2025/model_compression/uniquanf_unified_quantization.md)
 
 </div>
 

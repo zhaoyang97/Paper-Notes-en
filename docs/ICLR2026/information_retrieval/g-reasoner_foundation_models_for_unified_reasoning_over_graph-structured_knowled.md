@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][graph foundation model] G-reasoner is proposed to standardize heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph. A 34M-parameter GNN Graph Foundation Model (GFM) is trained to jointly reason over graph topology and text semantics. Combined with LLMs, it outperforms state-of-the-art (SOTA) GraphRAG metho
+  [ICLR 2026][Information Retrieval & RAG][graph foundation model] G-reasoner is proposed to standardize heterogeneous knowledge sources via a four-layer unified graph interface called QuadGraph. A 34M-parameter GNN Graph Foundation Model (GFM) is trained to jointly reason over graph topology and text semantics. Combined with LLMs, it outperforms state-of-the-art (SOTA) GraphRAG methods across six benchmarks.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - graph foundation model
-  - RAG
-  - knowledge graph
-  - GNN
-  - LLM reasoning
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "graph foundation model"
+  - "RAG"
+  - "knowledge graph"
+  - "GNN"
+  - "LLM reasoning"
 date: 2026-05-08
-content_hash: fee98627c027bcc4
+content_hash: 639daa4ce8b8e20d
 ---
+
 # G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge
 
 **Conference**: ICLR 2026  
@@ -133,8 +134,8 @@ The training objective is the log-likelihood of labeled nodes plus $\lambda$ tim
 
 - [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
 - [\[ICLR 2026\] SynthWorlds: Controlled Parallel Worlds for Disentangling Reasoning and Knowledge in Language Models](synthworlds_controlled_parallel_worlds_for_disentangling_reasoning_and_knowledge.md)
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 - [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
-- [\[ICLR 2026\] Graph-based Nearest Neighbors with Dynamic Updates via Random Walks](graph-based_nearest_neighbors_with_dynamic_updates_via_random_walks.md)
 - [\[ACL 2025\] Toward Structured Knowledge Reasoning: Contrastive Retrieval-Augmented Generation on Experience](../../ACL2025/information_retrieval/toward_structured_knowledge_reasoning_contrastive_retrieval-augmented_generation.md)
 
 </div>

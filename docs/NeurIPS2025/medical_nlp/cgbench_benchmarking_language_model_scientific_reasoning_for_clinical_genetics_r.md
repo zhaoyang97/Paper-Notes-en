@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research
 description: >-
-  [NeurIPS 2025][Medical NLP][clinical genetics] This paper introduces CGBench, a clinical genetics benchmark grounded in ClinGen expert annotations…
+  [NeurIPS 2025][Medical LLM][clinical genetics] This paper introduces CGBench, a clinical genetics benchmark grounded in ClinGen expert annotations, designed to evaluate the scientific literature reasoning capabilities of LLMs from both variant and gene curation perspectives. The benchmark encompasses three tasks—evidence scoring, evidence verification, and experimental evidence extraction—and finds that reasoning models perform best on fine-grained tasks but underperform non-…
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "clinical genetics"
   - "language models"
   - "scientific reasoning"
   - "benchmark"
   - "evidence evaluation"
 date: 2026-05-08
-content_hash: 32879ecc81d59424
+content_hash: 8a07a36eac19537d
 ---
 
 # CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research
@@ -136,11 +136,11 @@ Reasoning models (o4-mini, DeepSeek R1) lead at the tertiary level, but exhibit 
 
 ## Related Papers
 
-- [\[ICLR 2026\] BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases](../../ICLR2026/medical_nlp/biomedsql_text-to-sql_for_scientific_reasoning_on_biomedical_knowledge_bases.md)
 - [\[NeurIPS 2025\] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)
-- [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](../../ACL2026/medical_nlp/cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
-- [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 - [\[NeurIPS 2025\] HealthSLM-Bench: Benchmarking Small Language Models for Mobile and Wearable Healthcare Monitoring](healthslm-bench_benchmarking_small_language_models_for_mobile_and_wearable_healt.md)
+- [\[ACL 2026\] CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](../../ACL2026/medical_nlp/cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)
+- [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](../../ICLR2026/medical_nlp/galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
+- [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 
 </div>
 

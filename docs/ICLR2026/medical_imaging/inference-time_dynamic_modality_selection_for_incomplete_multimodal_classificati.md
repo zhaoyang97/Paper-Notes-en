@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification
 description: >-
-  [ICLR 2026][Medical Imaging][incomplete multimodal] Ours proposes DyMo—an inference-time dynamic modality selection framework. By theoretically deriving a reward function MTIR (Multimodal Task-Relevant Information Reward) based on a classification loss reduction proxy, class prototype distance, and intra-class similarity calibration, the framework iteratively selects an
+  [ICLR 2026][Medical Imaging][incomplete multimodal] Ours proposes DyMo—an inference-time dynamic modality selection framework. By theoretically deriving a reward function MTIR (Multimodal Task-Relevant Information Reward) based on a classification loss reduction proxy, class prototype distance, and intra-class similarity calibration, the framework iteratively selects and fuses reliable recovered modalities during inference. It systematically addresses the "discarding-imputati…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - incomplete multimodal
-  - dynamic modality selection
-  - inference-time
-  - information gain
-  - discarding-imputation dilemma
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "incomplete multimodal"
+  - "dynamic modality selection"
+  - "inference-time"
+  - "information gain"
+  - "discarding-imputation dilemma"
 date: 2026-05-08
-content_hash: 802b5df4448ca9ee
+content_hash: 30740852aa8b33aa
 ---
+
 # Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification
 
 **Conference**: ICLR 2026  

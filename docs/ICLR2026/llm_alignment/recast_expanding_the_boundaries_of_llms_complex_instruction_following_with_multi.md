@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RECAST: Expanding the Boundaries of LLMs' Complex Instruction Following with Multi-Constraint Data
 description: >-
-  [ICLR 2026][Alignment & RLHF][Reinforcement Learning] RECAST performs reverse mining of verifiable constraints from real "instruction-response" pairs and reassembles them into high-complexity training data (RECAST-30K, 30K samples / 19 constraint types), with more than ten constraints per instruction, supported by a dual-track rule and model-based verifier. SFT using this
+  [ICLR 2026][LLM Alignment][Complex Instruction Following] RECAST performs reverse mining of verifiable constraints from real "instruction-response" pairs and reassembles them into high-complexity training data (RECAST-30K, 30K samples / 19 constraint types), with more than ten constraints per instruction, supported by a dual-track rule and model-based verifier. SFT using this data enables small models to surpass much larger ones in complex instruction following…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Complex Instruction Following"
+  - "Multi-Constraint"
+  - "Data Synthesis"
+  - "Verifiable Reward"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: beaa7246eeb35005
+content_hash: 564ae896bf246b8b
 ---
+
 # RECAST: Expanding the Boundaries of LLMs' Complex Instruction Following with Multi-Constraint Data
 
 **Conference**: ICLR 2026  
@@ -133,9 +138,9 @@ Closed-source/Large scale reference: Gemini-2.5-Pro 39.75, DeepSeek-V3 35.50, GP
 
 ## Related Papers
 
+- [\[ACL 2025\] IOPO: Empowering LLMs with Complex Instruction Following via Input-Output Preference Optimization](../../ACL2025/llm_alignment/iopo_input_output_preference.md)
 - [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](../../ACL2026/llm_alignment/mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[ACL 2025\] Reverse Preference Optimization for Complex Instruction Following](../../ACL2025/llm_alignment/reverse_preference_optimization_for_complex_instruction_following.md)
-- [\[ACL 2025\] IOPO: Empowering LLMs with Complex Instruction Following via Input-Output Preference Optimization](../../ACL2025/llm_alignment/iopo_input_output_preference.md)
 - [\[ICLR 2026\] ContextIF: Enhancing Instruction-Following through Context Reward](contextif_enhancing_instruction-following_through_context_reward.md)
 - [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
 

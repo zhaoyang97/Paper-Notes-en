@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration
 description: >-
-  [ICML 2026][Image Restoration][Mixture-of-Experts] DAMP utilizes 6 interpretable spatial-spectral physical metrics (high-frequency energy ratio, texture uniformity, spectral curvature, etc.) as "Degradation Prompts" (DP) to replace black-box embeddings and explicit degradation labels. These DPs act as gating signals driving a Spatial-Spectral Adaptive MoE to select dif
+  [ICML 2026][Image Restoration][Hyperspectral image restoration] DAMP utilizes 6 interpretable spatial-spectral physical metrics (high-frequency energy ratio, texture uniformity, spectral curvature, etc.) as "Degradation Prompts" (DP) to replace black-box embeddings and explicit degradation labels. These DPs act as gating signals driving a Spatial-Spectral Adaptive MoE to select different "spatial/spectral experts," achieving SOTA performance across 5 HSI restoration tasks and…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - Mixture-of-Experts
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Hyperspectral image restoration"
+  - "degradation-aware prompting"
+  - "interpretable metrics"
+  - "Mixture-of-Experts"
+  - "zero-shot generalization"
 date: 2026-05-08
-content_hash: f54e9c5aaf949b28
+content_hash: dcfe6cc1b992545b
 ---
+
 # Degradation-Aware Metric Prompting for Hyperspectral Image Restoration
 
 **Conference**: ICML 2026  
@@ -146,11 +151,11 @@ Routing signal ablation (Table 5):
 
 ## Related Papers
 
-- [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
 - [\[CVPR 2025\] DPIR: Dual Prompting Image Restoration with Diffusion Transformers](../../CVPR2025/image_restoration/dpir_dual_prompting_restoration_dit.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
 - [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](../../ICCV2025/image_restoration/mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
-- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](../../CVPR2026/image_restoration/degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[ICLR 2026\] UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity](../../ICLR2026/image_restoration/unirestorer_universal_image_restoration_via_adaptively_estimating_image_degradat.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Scone builds upon the unified understanding-generation model BAGEL by transforming the "understanding expert" into a **semantic bridge**. Through early multimodal alignment and attention masking to filter out irrelevant subjects in reference images, it guides the "generation expert" in an end-to-end manner. This enable
+  [CVPR 2026][Image Generation][Subject-driven generation] Scone builds upon the unified understanding-generation model BAGEL by transforming the "understanding expert" into a **semantic bridge**. Through early multimodal alignment and attention masking to filter out irrelevant subjects in reference images, it guides the "generation expert" in an end-to-end manner. This enables the model to accurately "identify then generate" even when a reference image contains multiple candid…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject-driven generation"
+  - "Unified understanding-generation modeling"
+  - "Semantic bridge"
+  - "Attention mask"
+  - "Subject distinction"
 date: 2026-05-08
-content_hash: 4565e2c3a0e35d03
+content_hash: 885c8765ee8618f3
 ---
+
 # Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,16 @@ Scone is the best among open-source/unified models; closed-source models like GP
 - Value: ⭐⭐⭐⭐ Open-sourced model and benchmark; addresses a practical and overlooked pain point in subject-driven generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
 - [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
+- [\[CVPR 2026\] Hint2Gen: Bridging Understanding and Generation via Code-structured Hints](hint2gen_bridging_understanding_and_generation_via_code-structured_hints.md)
 - [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
-- [\[CVPR 2026\] Unified Customized Generation by Disentangled Reward Modeling](unified_customized_generation_by_disentangled_reward_modeling.md)
 
 </div>
 

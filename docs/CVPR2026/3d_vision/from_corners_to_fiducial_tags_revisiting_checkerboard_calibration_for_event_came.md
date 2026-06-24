@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Corners to Fiducial Tags: Revisiting Checkerboard Calibration for Event Cameras
 description: >-
-  [CVPR 2026][3D Vision][IWE] This paper proposes the first event camera calibration framework that detects checkerboard corners directly in the event domain without relying on intensity reconstruction. By mathematically proving that "almost no events are generated at corners," the method uses edge cues to initialize corners and refines them to sub
+  [CVPR 2026][3D Vision][Event camera] This paper proposes the first event camera calibration framework that detects checkerboard corners directly in the event domain without relying on intensity reconstruction. By mathematically proving that "almost no events are generated at corners," the method uses edge cues to initialize corners and refines them to sub-pixel accuracy at local minima of event density. The same detection scheme is extended to AprilTags…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - IWE
-  - AprilTag
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event camera"
+  - "camera calibration"
+  - "checkerboard corners"
+  - "IWE"
+  - "AprilTag"
 date: 2026-05-08
-content_hash: 1c1bd32ee2928f10
+content_hash: caf3b14e04bdc70c
 ---
+
 # From Corners to Fiducial Tags: Revisiting Checkerboard Calibration for Event Cameras
 
 **Conference**: CVPR 2026  
@@ -145,11 +149,11 @@ Ours significantly outperformed E2Calib in reprojection RMSE and exhibited much 
 
 ## Related Papers
 
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
-- [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
-- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
+- [\[CVPR 2026\] Breaking the Scalability Limit of Multi-Projector Calibration with Embedded Cameras](breaking_the_scalability_limit_of_multi-projector_calibration_with_embedded_came.md)
+- [\[CVPR 2026\] Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios](adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
+- [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
 
 </div>
 

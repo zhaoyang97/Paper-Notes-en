@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] MedVLSynther：用「生成器–验证器」LMM 从医学文献合成高质量视觉问答
+  [Paper Note] MedVLSynther: Synthesizing High-Quality Medical Visual Question Answering from Biomedical Literature with Generator-Verifier LMMs
 description: >-
-  [ICLR 2026][Medical Imaging][RLVR] This paper proposes MedVLSynther, a rubric-driven and context-aware generator-verifier framework that synthesizes multiple-choice medical VQA data directly from open PubMed biomedical literature (figures, captions, and in-text references). After a multi-stage automated verification process, it produces 13,087 high-qual
+  [ICLR 2026][Medical Imaging][Medical VQA] This paper proposes MedVLSynther, a rubric-driven and context-aware generator-verifier framework that synthesizes multiple-choice medical VQA data directly from open PubMed biomedical literature (figures, captions, and in-text references). After a multi-stage automated verification process, it produces 13,087 high-quality samples (MedSynVQA). Training open-source LMMs using this data via Reinforcement Learning from Verifiable Rewards…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - RLVR
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Medical VQA"
+  - "Data Synthesis"
+  - "Generator-Verifier"
+  - "Rubric"
+  - "RLVR"
 date: 2026-05-08
-content_hash: fb88c80c67780dd6
+content_hash: 05c0bfa56c1e5b76
 ---
+
 # MedVLSynther: Synthesizing High-Quality Medical Visual Question Answering from Biomedical Literature with Generator-Verifier LMMs
 
 **Conference**: ICLR 2026  
@@ -133,11 +138,11 @@ The 3B student outperforms MedVLThinker-7B (+0.97 Gain), and the 7B student impr
 
 ## Related Papers
 
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
-- [\[ICLR 2026\] You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging](you_point_i_learn_online_adaptation_of_interactive_segmentation_models_for_handl.md)
-- [\[ICLR 2026\] CONSIGN: Conformal Segmentation Informed by Spatial Groupings via Decomposition](consign_conformal_segmentation_informed_by_spatial_groupings_via_decomposition.md)
-- [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
-- [\[ICLR 2026\] PathChat-SegR1: Reasoning Segmentation in Pathology via SO-GRPO](pathchat-segr1_reasoning_segmentation_in_pathology_via_so-grpo.md)
+- [\[AAAI 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](../../AAAI2026/medical_imaging/q-fsru_quantum-augmented_frequency-spectral_fusion_for_medical_visual_question_a.md)
+- [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](../../CVPR2026/medical_imaging/dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
+- [\[CVPR 2026\] MR-RAG: Multimodal Relevance-Aware Retrieval-Augmented Generation for Medical Visual Question Answering](../../CVPR2026/medical_imaging/mr-rag_multimodal_relevance-aware_retrieval-augmented_generation_for_medical_vis.md)
+- [\[ICLR 2026\] A Structured, Tagged, and Localized Visual Question Answering Dataset with Full Sentence Answers and Scene Graphs for Chest X-ray Images](a_structured_tagged_and_localized_visual_question_answering_dataset_with_full_se.md)
+- [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](../../CVPR2026/medical_imaging/from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 
 </div>
 

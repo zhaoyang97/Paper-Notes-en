@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometric Neural Distance Fields for Learning Human Motion Priors
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper proposes NRMF (Neural Riemannian Motion Fields), which models the third-order dynamics of human motion—"pose, velocity, and acceleration"—as the zero-level sets of three conditional neural distance fields. Equipped with a geometric projection algorithm and a geometric integrator, this single unconditional pr
+  [CVPR 2026][Human Understanding][Human motion priors] This paper proposes NRMF (Neural Riemannian Motion Fields), which models the third-order dynamics of human motion—"pose, velocity, and acceleration"—as the zero-level sets of three conditional neural distance fields. Equipped with a geometric projection algorithm and a geometric integrator, this single unconditional prior robustly handles tasks such as denoising, in-betweening, monocular fitting…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human motion priors"
+  - "neural distance fields"
+  - "Riemannian manifolds"
+  - "second-order dynamics"
+  - "test-time optimization"
 date: 2026-05-08
-content_hash: 902f09ebaad2bdab
+content_hash: a8bc85e2af7e498f
 ---
+
 # Geometric Neural Distance Fields for Learning Human Motion Priors
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ To serve downstream tasks given observations $O_{0:T}$, a two-stage optimization
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation](hierarchical_enhancement_of_semantic_priors_for_disentangled_text-driven_motion_.md)
-- [\[ICLR 2026\] NeuroGaze-Distill: Brain-informed Distillation and Depression-Inspired Geometric Priors for Robust Facial Emotion Recognition](../../ICLR2026/human_understanding/neurogaze-distill_brain-informed_distillation_and_depression-inspired_geometric_.md)
 - [\[CVPR 2025\] Learning Affine Correspondences by Integrating Geometric Constraints](../../CVPR2025/human_understanding/learning_affine_correspondences_by_integrating_geometric_constraints.md)
-- [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
+- [\[CVPR 2025\] SemGeoMo: Dynamic Contextual Human Motion Generation with Semantic and Geometric Guidance](../../CVPR2025/human_understanding/semgeomo_dynamic_contextual_human_motion_generation_with_semantic_and_geometric_.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
+- [\[ECCV 2024\] MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion Estimation](../../ECCV2024/human_understanding/manikin_biomechanically_accurate_neural_inverse_kinematics_for_human_motion_esti.md)
 
 </div>
 

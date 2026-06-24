@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Remotely Detectable Robot Policy Watermarking
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] Addressing the realistic scenario where robot policy ownership can only be verified through remote observations (e.g., video, motion capture), this paper proposes CoNoCo. It replaces the white noise originally used for exploration in Reinforcement Learning (RL) with "colored noise" hidden in a secret frequency band. Th
+  [ICLR2026][Robotics][Policy Watermarking] Addressing the realistic scenario where robot policy ownership can only be verified through remote observations (e.g., video, motion capture), this paper proposes CoNoCo. It replaces the white noise originally used for exploration in Reinforcement Learning (RL) with "colored noise" hidden in a secret frequency band. This watermark is then detected using spectral coherence, which is insensitive to system dynamics. The method achieves p…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Policy Watermarking"
+  - "Remote Detection"
+  - "Frequency Domain Watermarking"
+  - "Spectral Coherence"
+  - "Intellectual Property Protection"
 date: 2026-05-08
-content_hash: 2093389568e65ab9
+content_hash: 1ea9046bb5ce07e3
 ---
+
 # Remotely Detectable Robot Policy Watermarking
 
 **Conference**: ICLR2026  

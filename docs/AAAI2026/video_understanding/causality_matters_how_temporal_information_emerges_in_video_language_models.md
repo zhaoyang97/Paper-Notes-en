@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causality Matters: How Temporal Information Emerges in Video Language Models
 description: >-
-  [AAAI 2026][Video Understanding][Video Language Models] Through systematic ablation experiments, this work demonstrates that the temporal understanding capability of VideoLMs does not originate from positional encoding (…
+  [AAAI 2026][Video Understanding][Video Language Models] Through systematic ablation experiments, this work demonstrates that the temporal understanding capability of VideoLMs does not originate from positional encoding (PE), but rather emerges from the sequence sensitivity of causal attention masks. Temporal information is constructed layer by layer along a causal pathway of "inter-frame interaction → last-frame aggregation → query integration…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -13,7 +13,7 @@ tags:
   - "Model Interpretability"
   - "Inference Acceleration"
 date: 2026-05-08
-content_hash: ea8f3a04525c7af5
+content_hash: 2405cd92239c6b1b
 ---
 
 # Causality Matters: How Temporal Information Emerges in Video Language Models
@@ -143,11 +143,11 @@ Strategies (2) and (3) are nearly indistinguishable from the baseline across all
 
 ## Related Papers
 
-- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
 - [\[AAAI 2026\] ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding](reason_reinforced_causal_search_with_information_bottleneck_for_video_understand.md)
-- [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](../../CVPR2026/video_understanding/understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 - [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
-- [\[CVPR 2026\] LensWalk: Agentic Video Understanding by Planning How You See in Videos](../../CVPR2026/video_understanding/lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)
+- [\[CVPR 2025\] On the Consistency of Video Large Language Models in Temporal Comprehension](../../CVPR2025/video_understanding/on_the_consistency_of_video_large_language_models_in_temporal_comprehension.md)
+- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
+- [\[CVPR 2026\] Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark](../../CVPR2026/video_understanding/seeing_the_scene_matters_revealing_forgetting_in_video_understanding_models_with.md)
 
 </div>
 

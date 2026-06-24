@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vision Language Models are Biased
 description: >-
-  [ICLR 2026][Multimodal VLM][VLMBias] This paper proposes the VLMBias counterfactual visual evaluation framework, which systematically modifies iconic visual elements in animals, logos, flags, chessboards, game boards, optical illusions, and patterned grids. It finds that mainstream VLMs achieve an average accuracy of only 17.05% on objective counting task
+  [ICLR 2026][Multimodal VLM][VLM Bias] This paper proposes the VLMBias counterfactual visual evaluation framework, which systematically modifies iconic visual elements in animals, logos, flags, chessboards, game boards, optical illusions, and patterned grids. It finds that mainstream VLMs achieve an average accuracy of only 17.05% on objective counting tasks, with 75.70% of responses reverting to commonsense priors rather than visual evidence.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - VLMBias
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM Bias"
+  - "Counterfactual Images"
+  - "Visual Counting"
+  - "VLM Evaluation"
+  - "VLMBias"
 date: 2026-05-08
-content_hash: f537afe85aab0b51
+content_hash: ca3bb843b0910c46
 ---
+
 # Vision Language Models are Biased
 
 **Conference**: ICLR 2026  
@@ -138,6 +143,7 @@ Linear probing shows that in the LLaVA-OneVision-S 4/5-leg animal task, the SigL
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

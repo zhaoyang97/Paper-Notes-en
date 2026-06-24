@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] RAG4DMC introduces Retrieval-Augmented Generation (RAG) to "data-level missing modality completion" for the first time. By constructing a dual knowledge base from "internal complete samples + external public datasets," the method applies cross-modal mapping, cluster filtering, and orthogonal alignment for purification.
+  [ICLR 2026][Multimodal VLM][Missing Modality Completion] RAG4DMC introduces Retrieval-Augmented Generation (RAG) to "data-level missing modality completion" for the first time. By constructing a dual knowledge base from "internal complete samples + external public datasets," the method applies cross-modal mapping, cluster filtering, and orthogonal alignment for purification. It utilizes two-stage multimodal fusion retrieval to retrieve the most relevant examples…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Missing Modality Completion"
+  - "Retrieval-Augmented Generation"
+  - "Dual Knowledge Base"
+  - "Cross-modal Alignment"
+  - "Image-Text Retrieval"
 date: 2026-05-08
-content_hash: 512d0274c6201b77
+content_hash: cf6e803d6bea0ee0
 ---
+
 # RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion
 
 **Conference**: ICLR 2026  
@@ -137,12 +143,17 @@ The authors used a series of progressive RAG variants to decompose the contribut
 
 <div class="related-papers" markdown="1">
 
-No related papers identified.
+## Related Papers
+
+- [\[ACL 2026\] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora](../../ACL2026/multimodal_vlm/universalrag_retrieval-augmented_generation_over_corpora_of_diverse_modalities_a.md)
+- [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
+- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/multimodal_vlm/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/multimodal_vlm/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](../../AAAI2026/multimodal_vlm/knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)

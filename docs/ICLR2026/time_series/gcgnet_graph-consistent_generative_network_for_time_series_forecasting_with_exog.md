@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables
 description: >-
-  [ICLR 2026][Time Series][Graph VAE] GCGNet addresses time series forecasting with exogenous variables by converting both generated and ground-truth complete sequences into patch-level graph structures. It constrains the generator with graph consistency and refines predictions using sparse graph convolutions. It achieves top performance across most metric
+  [ICLR 2026][Time Series][Exogenous variable forecasting] GCGNet addresses time series forecasting with exogenous variables by converting both generated and ground-truth complete sequences into patch-level graph structures. It constrains the generator with graph consistency and refines predictions using sparse graph convolutions. It achieves top performance across most metrics on 12 real-world datasets and maintains strong robustness when future exogenous variables are missing…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Graph VAE
+  - "ICLR 2026"
+  - "Time Series"
+  - "Exogenous variable forecasting"
+  - "graph consistency"
+  - "generative time series"
+  - "Graph VAE"
+  - "robust forecasting"
 date: 2026-05-08
-content_hash: 3cdfbcdd4d8c9bfb
+content_hash: 634f44e96ffb128a
 ---
+
 # GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables
 
 **Conference**: ICLR 2026  
@@ -138,16 +143,16 @@ Ablations on NP, PJM, DE, and Energy datasets show that removing the Graph Refin
 - **Value**: ⭐⭐⭐⭐⭐ Strong practical relevance for industrial forecasting (load, price, hydrologic) where external signals are noisy or partially available.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] DAG: A Dual Correlation Network for Time Series Forecasting with Exogenous Variables](../../ICML2026/time_series/dag_a_dual_correlation_network_for_time_series_forecasting_with_exogenous_variab.md)
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
 - [\[ICLR 2026\] Aurora: Towards Universal Generative Multimodal Time Series Forecasting](aurora_towards_universal_generative_multimodal_time_series_forecasting.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
 - [\[ICLR 2026\] GARLIC: Graph Attention-based Relational Learning of Multivariate Time Series in Intensive Care](garlic_graph_attention-based_relational_learning_of_multivariate_time_series_in_.md)
-- [\[ICLR 2026\] ASTGI: Adaptive Spatio-Temporal Graph Interactions for Irregular Multivariate Time Series Forecasting](astgi_adaptive_spatio-temporal_graph_interactions_for_irregular_multivariate_tim.md)
 
 </div>
 

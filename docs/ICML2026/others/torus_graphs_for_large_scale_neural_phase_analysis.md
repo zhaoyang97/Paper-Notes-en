@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Torus Graphs for Large-Scale Neural Phase Analysis
 description: >-
-  [ICML 2026][Others][torus graph] The authors introduce the Torus Graph (TG)—an exponential family phase graph model defined on the $d$-torus $\mathbb{T}^d$. By leveraging stochastic score matching, they reduce the per-step inference complexity from $\mathcal{O}(d^6)$ to $\mathcal{O}(d^2)$, enabling support for thousands of phase variables for the firs
+  [ICML 2026][torus graph] The authors introduce the Torus Graph (TG)—an exponential family phase graph model defined on the $d$-torus $\mathbb{T}^d$. By leveraging stochastic score matching, they reduce the per-step inference complexity from $\mathcal{O}(d^6)$ to $\mathcal{O}(d^2)$, enabling support for thousands of phase variables for the first time. They further develop TG-HMM and autoregressive TG (AR-TG) extensions, which revealed frequency-specific phase reorganization be…
 tags:
-  - ICML 2026
-  - Others
-  - torus graph
-  - score matching
-  - phase coupling
-  - hidden Markov model
-  - transfer entropy
+  - "ICML 2026"
+  - "torus graph"
+  - "score matching"
+  - "phase coupling"
+  - "hidden Markov model"
+  - "transfer entropy"
 date: 2026-05-08
-content_hash: bea2d6553e2ae26e
+content_hash: ea136a6c31036de0
 ---
+
 # Torus Graphs for Large-Scale Neural Phase Analysis
 
 **Conference**: ICML 2026  
@@ -142,8 +142,8 @@ Parameter recovery via stochastic score matching was validated on 4D and 64D syn
 - [\[ICML 2026\] AMDP: Asynchronous Multi-Directional Pipeline Parallelism for Large-Scale Models Training](amdp_asynchronous_multi-directional_pipeline_parallelism_for_large-scale_models_.md)
 - [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](../../CVPR2026/others/mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
 - [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](../../CVPR2026/others/large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
+- [\[ICLR 2026\] SmellNet: A Large-scale Dataset for Real-world Smell Recognition](../../ICLR2026/others/smellnet_a_large-scale_dataset_for_real-world_smell_recognition.md)
 - [\[ACL 2025\] Code-Switching and Syntax: A Large-Scale Experiment](../../ACL2025/others/code-switching_and_syntax_a_large-scale_experiment.md)
-- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](../../CVPR2026/others/immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
 
 </div>
 

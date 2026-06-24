@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction
 description: >-
-  [AAAI 2026][Video Understanding][Dense Video Captioning] This paper proposes the CACMI framework, which addresses two fundamental limitations in dense video captioning (insufficient temporal modeling and modality gap) th…
+  [AAAI 2026][Video Understanding][Dense Video Captioning] This paper proposes the CACMI framework, which addresses two fundamental limitations in dense video captioning (insufficient temporal modeling and modality gap) through explicit temporal-semantic modeling. It employs Cross-modal Frame Aggregation (CFA) to extract temporally coherent event semantics, and Context-aware Feature Enhancement (CFE) to bridge the visual-textual modality gap, achieving state-of-the-art performa…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Feature Enhancement"
   - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: 61f3d093c75f2c03
+content_hash: c51c9c3fe7339326
 ---
 
 # Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction
@@ -167,11 +167,11 @@ CACMI follows a RAG paradigm: a CLIP image encoder extracts frame-level features
 
 ## Related Papers
 
+- [\[CVPR 2026\] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](../../CVPR2026/video_understanding/asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](../../CVPR2026/video_understanding/cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
 - [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](../../CVPR2026/video_understanding/sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
-- [\[ACL 2026\] Response-G1: Explicit Scene Graph Modeling for Proactive Streaming Video Understanding](../../ACL2026/video_understanding/response-g1_explicit_scene_graph_modeling_for_proactive_streaming_video_understa.md)
+- [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](../../CVPR2026/video_understanding/interrvos_interaction-aware_referring_video_object_segmentation.md)
 - [\[CVPR 2026\] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](../../CVPR2026/video_understanding/stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)
-- [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](../../CVPR2026/video_understanding/understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 
 </div>
 

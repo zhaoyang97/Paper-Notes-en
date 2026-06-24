@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes Semantic Surgery, a training-free zero-shot inference-time concept erasure framework that calibrates text embeddings via vector subtraction prior to t…
+  [NeurIPS 2025][Image Generation][Concept Erasure] This paper proposes Semantic Surgery, a training-free zero-shot inference-time concept erasure framework that calibrates text embeddings via vector subtraction prior to the diffusion process, incorporates Co-Occurrence Encoding for multi-concept erasure, and employs a visual feedback loop to address latent concept persistence (LCP). The method comprehensively outperforms state-of-the-art approaches across object, NSFW, style…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Inference-Time Method"
   - "Safe Generation"
 date: 2026-05-08
-content_hash: f7e341eb8310f6d4
+content_hash: fe7f0c8ea399c4ff
 ---
 
 # Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models
@@ -190,8 +190,8 @@ Black-box ASR is only 1.05% ($p=0.0089$ vs. MACE); white-box ASR is 0%. Semantic
 - [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
 - [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
 - [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](../../ICML2026/image_generation/orthogonal_concept_erasure_for_diffusion_models.md)
+- [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](../../CVPR2026/image_generation/maproute_semantic_routing_concept_erasure.md)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](../../ICCV2025/image_generation/anyportal_zero-shot_consistent_video_background_replacement.md)
-- [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](../../CVPR2026/image_generation/neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 
 </div>
 

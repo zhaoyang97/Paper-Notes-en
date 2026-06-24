@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation
 description: >-
-  [NeurIPS 2025][3D asset retrieval] MetaFind is a scene-aware tri-modal (text + image + point cloud) 3D asset retrieval framework that encodes scene layout information via an SE(3)-equivariant spatial-semantic graph neura…
+  [NeurIPS 2025][3D asset retrieval] MetaFind is a scene-aware tri-modal (text + image + point cloud) 3D asset retrieval framework that encodes scene layout information via an SE(3)-equivariant spatial-semantic graph neural network (ESSGNN), enabling iterative asset retrieval with style consistency and spatial coherence for metaverse scene generation.
 tags:
   - "NeurIPS 2025"
   - "3D asset retrieval"
@@ -11,7 +11,7 @@ tags:
   - "SE(3) equivariance"
   - "multimodal fusion"
 date: 2026-05-08
-content_hash: d3786f070caddf1d
+content_hash: 78b85ca82a5791a1
 ---
 
 # MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation
@@ -140,11 +140,11 @@ The gallery encoder is frozen; only the query-side fusion layers and the ESSGNN 
 
 ## Related Papers
 
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](../../AAAI2026/others/leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
+- [\[CVPR 2025\] Scene-Agnostic Pose Regression for Visual Localization](../../CVPR2025/others/scene-agnostic_pose_regression_for_visual_localization.md)
+- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](../../CVPR2026/others/simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
 - [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
-- [\[CVPR 2026\] What Is Wrong with Synthetic Data for Scene Text Recognition? A Strong Synthetic Engine with Diverse Simulations and Self-Evolution](../../CVPR2026/others/what_is_wrong_with_synthetic_data_for_scene_text_recognition_a_strong_synthetic_.md)
+- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](../../CVPR2026/others/adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
 - [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[NeurIPS 2025\] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport](bispectral_ot_dataset_comparison_using_symmetry-aware_optimal_transport.md)
 
 </div>
 

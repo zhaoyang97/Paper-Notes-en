@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning
 description: >-
-  [NeurIPS 2025][3D Vision][Federated Learning] This paper proposes FedFACT, a framework that characterizes the structure of the **Bayes-optimal fair classifier** under federated learning…
+  [NeurIPS 2025][3D Vision][Federated Learning] This paper proposes FedFACT, a framework that characterizes the structure of the **Bayes-optimal fair classifier** under federated learning, and reduces fair federated learning to **personalized cost-sensitive learning** (in-processing) and **bi-level optimization** (post-processing), respectively. It is the first to achieve controllable coordination between global and local fairness in multi-class settings…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Cost-Sensitive Learning"
   - "Post-Processing Calibration"
 date: 2026-05-08
-content_hash: 9baa4ac926b8ce3d
+content_hash: 2ea48885c8f59aa8
 ---
 
 # FedFACT: A Provable Framework for Controllable Group-Fairness Calibration in Federated Learning
@@ -161,11 +161,11 @@ $$\min_{\lambda \in \Lambda} \left\{\hat{F}(\lambda) = \sum_k \hat{p}_k \hat{F}_
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
 - [\[NeurIPS 2025\] Fair Representation Learning with Controllable High Confidence Guarantees via Adversarial Inference](fair_representation_learning_with_controllable_high_confidence_guarantees_via_ad.md)
+- [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
 - [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](../../ICCV2025/3d_vision/faster_and_better_3d_splatting_via_group_training.md)
+- [\[CVPR 2025\] A Lightweight UDF Learning Framework for 3D Reconstruction Based on Local Shape Functions](../../CVPR2025/3d_vision/a_lightweight_udf_learning_framework_for_3d_reconstruction_based_on_local_shape_.md)
 - [\[ICCV 2025\] Boost 3D Reconstruction using Diffusion-based Monocular Camera Calibration](../../ICCV2025/3d_vision/boost_3d_reconstruction_using_diffusion-based_monocular_camera_calibration.md)
-- [\[NeurIPS 2025\] Towards 3D Objectness Learning in an Open World](towards_3d_objectness_learning_in_an_open_world.md)
 
 </div>
 

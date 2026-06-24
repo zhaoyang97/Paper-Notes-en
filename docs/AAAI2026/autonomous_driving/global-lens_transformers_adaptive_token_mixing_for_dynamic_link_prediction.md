@@ -2,98 +2,98 @@
 title: >-
   [Paper Note] Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][dynamic graph learning] This paper proposes GLFormer, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive toke…
+  [AAAI 2026][Autonomous Driving][Dynamic Graph Learning] GLFormer is proposed, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive token mixer based on interaction order and time intervals, combined with a hierarchical aggregation mechanism to expand the temporal receptive field. It achieves comparable or superior performance to Transformer baselines across six benchmarks while significantly reducing…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
-  - "dynamic graph learning"
-  - "link prediction"
-  - "attention mechanism replacement"
-  - "adaptive token mixing"
-  - "hierarchical aggregation"
+  - "Dynamic Graph Learning"
+  - "Link Prediction"
+  - "Attention Mechanism Alternatives"
+  - "Adaptive Token Mixing"
+  - "Hierarchical Aggregation"
 date: 2026-05-08
-content_hash: 064da8f2ab58a5c1
+content_hash: 7763f79f502519b0
 ---
 
 # Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.12442](https://arxiv.org/abs/2511.12442)  
-**Code**: N/A  
-**Area**: Autonomous Driving / Graph Learning
-**Keywords**: dynamic graph learning, link prediction, attention mechanism replacement, adaptive token mixing, hierarchical aggregation
+**Code**: None  
+**Area**: Autonomous Driving / Graph Learning  
+**Keywords**: Dynamic Graph Learning, Link Prediction, Attention Mechanism Alternatives, Adaptive Token Mixing, Hierarchical Aggregation
 
 ## TL;DR
-This paper proposes GLFormer, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive token mixer conditioned on interaction order and temporal intervals, and employs a hierarchical aggregation mechanism to enlarge the temporal receptive field. GLFormer achieves performance on par with or superior to Transformer baselines across 6 benchmarks while substantially reducing computational complexity.
+GLFormer is proposed, a lightweight attention-free Transformer framework for dynamic graph link prediction. It replaces self-attention with an adaptive token mixer based on interaction order and time intervals, combined with a hierarchical aggregation mechanism to expand the temporal receptive field. It achieves comparable or superior performance to Transformer baselines across six benchmarks while significantly reducing computational complexity.
 
 ## Background & Motivation
 
-Dynamic graph learning is critical in domains such as traffic systems, social networks, and recommender systems. A core task is dynamic link prediction—forecasting whether two nodes will interact at a future time step.
+Dynamic graph learning is crucial in fields such as transportation systems, social networks, and recommendation systems. One of the core tasks is dynamic link prediction—predicting whether an interaction will occur between two nodes at a future point in time.
 
-Existing methods commonly adopt Transformer architectures to capture long-range temporal dependencies in interaction sequences. The typical pipeline extracts structural information via time-aware random walks or memory networks, then applies Transformers to model temporal dependencies in historical interaction sequences. However, the **quadratic complexity of self-attention with respect to sequence length** makes such approaches difficult to scale on high-frequency or large-scale graphs. Furthermore, attention mechanisms aggregate all pairwise interactions indiscriminately, potentially amplifying noise and reducing generalization.
+Current methods generally employ the Transformer architecture to capture long-range temporal dependencies in interaction sequences. A typical pipeline involves first extracting structural information via time-aware random walks or memory networks, and then using a Transformer to learn temporal dependencies in the historical interaction sequences. However, the **computational complexity of the self-attention mechanism is quadratic with respect to the sequence length**, making it difficult to scale on high-frequency or large-scale graphs. In addition, the attention mechanism indiscriminately aggregates all pairwise interactions, which may amplify noise and compromise generalization performance.
 
-A key observation, inspired by MetaFormer and related work in computer vision, is that the success of Transformers may be attributed more to their overall architectural design (residual connections, FFN, etc.) than to self-attention per se. The authors verify this hypothesis through controlled experiments—**replacing self-attention with pooling or MLP across five Transformer baselines on four datasets often yields comparable performance**.
+Key observation: Inspired by works such as MetaFormer in the field of computer vision, the success of Transformers might be attributed more to their architectural design (residual connections, FFNs, etc.) rather than self-attention itself. The authors validated this hypothesis through controlled experiments—**replacing self-attention with pooling or MLP in five Transformer baselines often yields comparable performance across four datasets**.
 
-This motivates the central question: **Can a simpler, attention-free architecture for dynamic graphs maintain representational capacity while significantly reducing computational overhead?**
+This leads to the core question: **Can a simpler, attention-free architecture be designed for dynamic graphs that maintains representation capacity while significantly reducing computational overhead?**
 
 ## Method
 
 ### Overall Architecture
-The GLFormer pipeline consists of:
-1. **Embedding layer**: Obtains initial neighbor embeddings using existing dynamic graph methods (TGN/TGAT/DyGFormer, etc.)
-2. **Adaptive token mixer**: Replaces self-attention; performs local aggregation conditioned on interaction order and temporal intervals
-3. **Channel mixer**: Standard FFN for learning inter-channel dependencies
-4. **Hierarchical aggregation**: Multi-layer stacking to expand the temporal receptive field
-5. **Link prediction**: An MLP decoder predicts link probability from the temporal representations of node pairs
+The pipeline of GLFormer:
+1. Embedding Layer: Utilizes existing dynamic graph methods (TGN/TGAT/DyGFormer, etc.) to obtain initial neighbor embeddings.
+2. Adaptive Token Mixer: Replaces self-attention, performing local aggregation based on interaction order and time intervals.
+3. Channel Mixer: A standard FFN to learn dependencies between channels.
+4. Hierarchical Aggregation: Multi-layer stacking to expand the temporal receptive field.
+5. Link Prediction: An MLP decoder to predict link probability based on the temporal representation of node pairs.
 
 ### Key Designs
 
-1. **Adaptive Token Aggregation Module**:
+1. **Adaptive Token Aggregation**:
 
-    - *Function*: For each neighbor $u_i$, aggregates information from its most recent $M$ neighbors via weighted summation.
-    - *Mechanism*: The aggregation weight $\alpha_p^i = \beta \mathbf{w}_p + (1 - \beta) \theta_p^i$ fuses two components:
-        - **Order weight $\mathbf{w}_p$**: A learnable parameter capturing the importance of interaction order.
-        - **Temporal weight $\theta_p^i$**: Computed by applying softmax over temporal gaps, $\theta_p^i = \frac{\exp(-(t_i - t_{i-p}))}{\sum_q \exp(-(t_i - t_{i-q}))}$, assigning higher weight to more recent interactions.
-        - A learnable scalar $\beta$ controls the balance between the two components.
-    - *Design Motivation*: In dynamic graphs, recent neighbors provide the most relevant interaction patterns; local aggregation is both more effective and more efficient than global attention.
+    - **Function**: For each neighbor $u_i$, weightedly aggregates information from its $M$ nearest neighbors.
+    - **Core Idea**: The aggregation weight $\alpha_p^i = \beta \mathbf{w}_p + (1 - \beta) \theta_p^i$ fuses two factors:
+        - **Order Weight $\mathbf{w}_p$**: A learnable parameter capturing the importance of interaction sequence.
+        - **Temporal Weight $\theta_p^i$**: Calculated by applying softmax over time intervals, $\theta_p^i = \frac{\exp(-(t_i - t_{i-p}))}{\sum_q \exp(-(t_i - t_{i-q}))}$, assigning larger weights to closer temporal distances.
+        - The learnable parameter $\beta$ controls the fusion ratio of the two.
+    - **Design Motivation**: In dynamic graphs, the nearest neighbors provide the most relevant interaction patterns; local aggregation is more effective and efficient than global attention.
 
-2. **Hierarchical Aggregation Mechanism**:
+2. **Hierarchical Aggregation**:
 
-    - *Function*: Inspired by dilated causal convolutions, progressively expands the temporal aggregation span as layers increase.
-    - *Mechanism*: Defines a layer-wise offset set $\mathcal{R}_l = \{p \in \mathbb{Z} \mid s^{l-1} \leq p \leq s^l\}$; as $l$ grows, the aggregation range covers more distant historical interactions.
-    - Layer $l$ aggregation: $\mathbf{H}_{i,:}^{(l)} = \sum_{p \in \mathcal{R}_l} (\alpha_p^i)^{(l)} \mathbf{H}_{\text{TA}, i-p}^{(l-1)}$
-    - Positions beyond the sequence boundary are handled via causal masking.
-    - *Design Motivation*: Captures long-range temporal dependencies through stacking while preserving the low complexity of local aggregation, analogous to convolution kernels at multiple scales.
+    - **Function**: Inspired by dilated causal convolutions, gradually expands the temporal span of aggregation as the number of layers increases.
+    - **Core Idea**: Defines the hierarchical offset set $\mathcal{R}_l = \{p \in \mathbb{Z} \mid s^{l-1} \leq p \leq s^l\}$. As $l$ increases, the aggregation range covers more distant historical interactions.
+    - Aggregation at the $l$-th layer: $\mathbf{H}_{i,:}^{(l)} = \sum_{p \in \mathcal{R}_l} (\alpha_p^i)^{(l)} \mathbf{H}_{\text{TA}, i-p}^{(l-1)}$
+    - Positions exceeding sequence boundaries are handled using causal masking.
+    - **Design Motivation**: Captures long-range temporal dependencies through stacking while maintaining the low complexity of local aggregation, analogous to convolutional kernels at different scales.
 
 3. **Complexity Advantage**:
 
-    - *Function*: Reduces per-layer complexity from $O(N^2)$ for self-attention to $O(NK_l)$.
-    - Total complexity $O(\sum_{l=1}^L NK_l)$, far below quadratic when $K_l \ll N$.
-    - Each layer requires only $O(K_l)$ kernel parameters, yielding high parameter efficiency.
+    - **Function**: Reduces the complexity of each layer from $O(N^2)$ in self-attention to $O(NK_l)$.
+    - Total complexity is $O(\sum_{l=1}^L NK_l)$, which is far below quadratic when $K_l \ll N$.
+    - Requires only $O(K_l)$ kernel parameters per layer, rendering it highly parameter-efficient.
 
 ### Loss & Training
-- Binary cross-entropy loss with a 1:1 negative sampling strategy.
-- Positive samples are observed interactions $(u_i, v_j, t)$; negative samples are randomly drawn from non-interacting node pairs.
-- Predicted probability: $\hat{y} = \sigma(\mathbf{K}_2(\text{ReLU}(\mathbf{K}_1([\mathbf{Z}_{u_i}; \mathbf{Z}_{v_j}]))))$
+- Binary cross-entropy loss, with a 1:1 negative sampling strategy.
+- Positive samples are actual interactions $(u_i, v_j, t)$, and negative samples are randomly sampled from non-interacting nodes.
+- Predicted probability $\hat{y} = \sigma(\mathbf{K}_2(\text{ReLU}(\mathbf{K}_1([\mathbf{Z}_{u_i}; \mathbf{Z}_{v_j}]))))$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**AP (Average Precision), average rank of GLFormer**:
+**AP (Average Precision) Metric, GLFormer Average Rank**:
 
 | Backbone | Vanilla (Rank) | Pooling (Rank) | MLP (Rank) | GLFormer (Rank) |
-|----------|----------------|----------------|------------|-----------------|
+|----------|--------------|--------------|-----------|----------------|
 | TGN | 3.17 | 2.83 | 2.17 | **1.67** |
 | TCL | 3.33 | 3.50 | 2.00 | **1.17** |
 | TGAT | 3.00 | 3.50 | 2.17 | **1.17** |
 | CAWN | 2.83 | 3.00 | **1.33** | 2.50 |
 | DyGFormer | 2.17 | 3.17 | 3.33 | **1.00** |
 
-**Detailed results (DyGFormer backbone)**:
+**Specific Values (DyGFormer Backbone)**:
 
-| Dataset | Vanilla AP | GLFormer AP | Diff. |
-|---------|------------|-------------|-------|
+| Dataset | Vanilla AP | GLFormer AP | Gain |
+|--------|-----------|-------------|------|
 | Wikipedia | 99.03 | **99.03** | +0.00 |
 | Reddit | 99.22 | **99.24** | +0.02 |
 | MOOC | 87.52 | **87.87** | +0.35 |
@@ -103,52 +103,52 @@ The GLFormer pipeline consists of:
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
-|---------------|------------|------|
-| **Token mixer type** | | |
-| Self-Attention (Vanilla) | Rank 2–3 | Original Transformer |
-| Average Pooling | Rank 3–3.5 | Simple average; typically worst |
-| MLP | Rank 1.3–2.3 | Nonlinear transform; relatively strong |
-| **GLFormer** | Rank **1–1.67** | Best or second best |
-| **Hierarchical aggregation** | | |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Token Mixer Type | | |
+| Self-Attention (Vanilla) | Rank 2-3 | Vanilla Transformer |
+| Average Pooling | Rank 3-3.5 | Simple average, globally worst |
+| MLP | Rank 1.3-2.3 | Non-linear transformation, relatively strong |
+| **GLFormer** | Rank **1-1.67** | Optimal or suboptimal |
+| Hierarchical Aggregation | | |
 | Single-layer fixed window | Lower performance | Limited receptive field |
-| Multi-layer hierarchical | Improved performance | Captures long-range dependencies |
-| **AUC-ROC metric** | | |
+| Multi-layer hierarchical | Gain | Capture long-range dependencies |
+| AUC-ROC Metric | | |
 | GLFormer on TGN | Rank **1.67** | Consistently outperforms vanilla attention |
-| GLFormer on DyGFormer | Rank **1.00** | Best across all 6 datasets |
+| GLFormer on DyGFormer | Rank **1.00** | Universally optimal across 6 datasets |
 
 ### Key Findings
-- GLFormer ranks first or second on most backbone–dataset combinations, confirming that **attention-free architectures can match or surpass Transformer baselines**.
-- The advantage is most pronounced with the DyGFormer backbone (AP and AUC-ROC both rank 1.00), suggesting greater benefit in long-sequence modeling scenarios.
-- On the CAWN backbone, the MLP variant outperforms GLFormer (rank 1.33 vs. 2.50), indicating that different backbones may favor different token mixers.
-- The learnable $\beta$ adaptively balances temporal and order weights; ablations show that both components are necessary.
-- Computational efficiency is significant: inference speed surpasses all self-attention-based baselines.
+- GLFormer ranks first or second on most backbones and datasets, demonstrating that **attention-free architectures can indeed match or even surpass Transformer baselines**.
+- It performs best on the DyGFormer backbone (ranking 1.00 in both AP and AUC-ROC), indicating a more pronounced advantage in long-sequence modeling scenarios.
+- The MLP variant is stronger on the CAWN backbone (rank 1.33 vs. GLFormer 2.50), showing that different backbones exhibit different preferences for token mixers.
+- The fusion of temporal and historical order weights is adaptively balanced via a learnable $\beta$; ablation studies show both are indispensable.
+- Significant computational efficiency: Inference speed is faster than all baselines utilizing self-attention.
 
 ## Highlights & Insights
-- **Counter-intuitive finding**: Self-attention is not indispensable for dynamic graph learning; simple local aggregation combined with hierarchical stacking suffices.
-- **Temporally-aware design**: The method jointly models interaction order (learned positional weights) and temporal intervals (physical time decay), making it better suited to temporal settings than generic attention.
-- **Inspiration from dilated causal convolutions**: The hierarchical receptive field expansion idea from WaveNet is successfully transferred to dynamic graphs.
-- **Plug-and-play**: GLFormer can directly replace the attention module in existing methods (TGN/TGAT/DyGFormer, etc.).
-- Complexity analysis is rigorous and consistent with empirical results.
+- **Counter-intuitive Finding**: Self-attention is not irreplaceable in dynamic graph learning; a simple local aggregation combined with hierarchical stacking can match its performance.
+- **Time-aware Design**: Simultaneously modeling interaction order (learned sequence weights) and time intervals (physical time decay), which is more suitable for temporal scenarios than general attention.
+- **Inspiration from Dilated Causal Convolution**: Introduces the concept of hierarchical receptive field expansion from WaveNet into dynamic graphs.
+- **Plug-and-Play**: Can directly replace the attention modules of existing methods (TGN, TGAT, DyGFormer, etc.).
+- Clear complexity analysis, with highly consistent theoretical and experimental results.
 
 ## Limitations & Future Work
-- Performance is inferior to the MLP variant on the CAWN backbone; adaptability varies across backbones.
-- Improvements on some datasets are marginal (e.g., +0.00 on Wikipedia), indicating limited headroom in high-performance regimes.
-- Hyperparameters of hierarchical aggregation (base $s$, number of layers $L$) require dataset-specific tuning.
-- Scalability on very large graphs (millions of nodes) has not been validated.
-- Edge features are not utilized; the current formulation relies solely on node features and timestamps.
+- Performance on the CAWN backbone is inferior to the MLP variant, showing that adaptability varies by backbone.
+- The improvement is marginal on some datasets (e.g., only +0.00 on Wikipedia), leaving limited room for improvement in high-performance regimes.
+- Hyperparameters of hierarchical aggregation (base $s$, number of layers $L$ ) require tuning for different datasets.
+- Scalability has not been validated on ultra-large-scale graphs (at the million-node level).
+- Edge features are not considered; currently, only node features and timestamps are utilized.
 
 ## Related Work & Insights
-- The "attention is not all you need" insight from MetaFormer/PoolFormer transfers to graph learning as well.
-- The local aggregation + hierarchical expansion paradigm is potentially generalizable to time-series forecasting and other domains.
-- The temporal decay weight $\theta_p^i$ is simple yet effective and can be adapted to other temporal modeling tasks.
-- The two-stage "embedding + aggregation" paradigm in dynamic graph learning provides a flexible experimental framework for architectural exploration.
+- The "attention is not all you need" concept from MetaFormer/PoolFormer holds true in graph learning as well.
+- The paradigm of local aggregation combined with hierarchical expansion can be generalized to fields like time-series forecasting.
+- The design of the temporal decay weight $\theta_p^i$ is simple and effective, and can be borrowed for other temporal modeling tasks.
+- The two-stage "embedding + aggregation" paradigm of dynamic graph learning methods provides a flexible experimental framework for structural exploration.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Addresses an important problem and validates a counter-intuitive hypothesis empirically, though the technical contribution is relatively straightforward.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 6 datasets, 5 backbones, dual metrics (AP + AUC-ROC), and comprehensive ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is rigorously argued; the preliminary experiment design is elegant.
-- **Value**: ⭐⭐⭐⭐ — Provides an efficient alternative for dynamic graph learning with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ — Important problem, counter-intuitive hypothesis validated by experiments, but the technical approach is relatively simple.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Evaluated on 6 datasets and 5 backbones using both AP and AUC-ROC metrics, with comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ — Rigorously argued motivation, beautifully designed preliminary experiments.
+- Value: ⭐⭐⭐⭐ — Provides an efficient alternative for dynamic graph learning with strong practicality.
 
 <!-- RELATED:START -->
 
@@ -156,11 +156,11 @@ The GLFormer pipeline consists of:
 
 ## Related Papers
 
-- [\[AAAI 2026\] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
-- [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
+- [\[AAAI 2026\] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](../../ICLR2026/autonomous_driving/scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
 - [\[AAAI 2026\] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning](fastdrivevla_efficient_end-to-end_driving_via_plug-and-play_.md)
-- [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
+- [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
 
 </div>
 

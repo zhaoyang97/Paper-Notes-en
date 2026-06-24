@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching
 description: >-
-  [CVPR 2026][Image Generation][Video Generation] SenCache replaces empirical heuristics for cache reuse in diffusion models with a first-order estimate of the denoising network's **local sensitivity** (the Jacobian norm of the output with respect to latent and timestep perturbations). By reusing the cache only when the predicted output variation is below a tolerance
+  [CVPR 2026][Image Generation][Diffusion model acceleration] SenCache replaces empirical heuristics for cache reuse in diffusion models with a first-order estimate of the denoising network's **local sensitivity** (the Jacobian norm of the output with respect to latent and timestep perturbations). By reusing the cache only when the predicted output variation is below a tolerance $\varepsilon$, it skips redundant forward passes in a per-sample adaptive manner without retraining…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion model acceleration"
+  - "training-free caching"
+  - "network sensitivity"
+  - "video generation"
+  - "adaptive caching"
 date: 2026-05-08
-content_hash: eb5521aaa337e3f2
+content_hash: a3cd04e2c16ebcdb
 ---
+
 # SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching
 
 **Conference**: CVPR 2026  
@@ -145,15 +150,17 @@ In the "fast" (aggressive reuse) range for Wan 2.1, SenCache significantly outpe
 
 <div class="related-papers" markdown="1">
 
-### Related Papers
-- **TeaCache**: Timestep Embedding-aware Caching for Video Diffusion Models (2024)
-- **MagCache**: Magnitude-aware Caching for Training-free Diffusion Acceleration (2024)
-- **DeepCache**: Training-Free Sequence-to-Sequence Acceleration for Diffusion Models (2023)
+## Related Papers
+
+- [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
+- [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
+- [\[CVPR 2026\] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers](forecast_the_principal_stabilize_the_residual_subspace-aware_feature_caching_for.md)
+- [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](../../NeurIPS2025/image_generation/tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
+- [\[CVPR 2026\] LESA: Learnable Stage-Aware Predictors for Diffusion Model Acceleration](lesa_learnable_stage-aware_predictors_for_diffusion_model_acceleration.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)

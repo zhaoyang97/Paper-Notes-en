@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Hyperspherical Latents Improve Continuous-Token Autoregressive Generation
 description: >-
-  [ICLR 2026][Image Generation][vMF / Power Spherical] All inputs and outputs (including predictions after CFG) of continuous-token autoregressive (AR) image generation are constrained to a hypersphere of fixed radius. By replacing the diagonal Gaussian VAE with a Hyperspherical VAE, the scale degree of freedom that causes variance collapse is eliminated. This allows pure
+  [ICLR 2026][Image Generation][Autoregressive Image Generation] All inputs and outputs (including predictions after CFG) of continuous-token autoregressive (AR) image generation are constrained to a hypersphere of fixed radius. By replacing the diagonal Gaussian VAE with a Hyperspherical VAE, the scale degree of freedom that causes variance collapse is eliminated. This allows pure next-token raster-order AR to outperform diffusion and masked generative models for the first tim…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - vMF / Power Spherical
-  - classifier-free guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive Image Generation"
+  - "Hyperspherical VAE"
+  - "Continuous Tokens"
+  - "vMF / Power Spherical"
+  - "Variance Collapse"
+  - "Classifier-free Guidance"
 date: 2026-05-08
-content_hash: 1e6f7ee98d4ebebf
+content_hash: b07e4ae8acc9f9dc
 ---
+
 # Hyperspherical Latents Improve Continuous-Token Autoregressive Generation
 
 **Conference**: ICLR 2026  

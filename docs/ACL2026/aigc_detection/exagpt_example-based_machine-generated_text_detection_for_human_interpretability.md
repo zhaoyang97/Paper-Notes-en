@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability
 description: >-
-  [ACL 2026][AIGC Detection][Interpretability] ExaGPT reframes the task of "determining whether a text is human-written or LLM-generated" as "identifying which side has more similar spans in a data store." By utilizing BERT embeddings, k-NN retrieval, and dynamic programming for optimal span segmentation, it provides interpretable evidence (most similar retrieved s
+  [ACL 2026 Findings][AIGC Detection][LLM Text Detection] ExaGPT reframes the task of "determining whether a text is human-written or LLM-generated" as "identifying which side has more similar spans in a data store." By utilizing BERT embeddings, k-NN retrieval, and dynamic programming for optimal span segmentation, it provides interpretable evidence (most similar retrieved span examples) while improving accuracy by up to $+37.0$ points over previous explainable detectors at 1%…
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "AIGC Detection"
+  - "LLM Text Detection"
+  - "Interpretability"
+  - "k-NN Retrieval"
+  - "Dynamic Programming"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: b090854b544330f7
+content_hash: 2c7dfcb46d0bda61
 ---
+
 # ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability
 
 **Conference**: ACL 2026 Findings  
@@ -153,8 +158,8 @@ Cross-domain (GPT-4) / Cross-generator (arXiv) / Paraphrase robustness / Inferen
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
 - [\[ACL 2025\] HACo-Det: A Study Towards Fine-Grained Machine-Generated Text Detection under Human-AI Coauthoring](../../ACL2025/aigc_detection/haco-det_a_study_towards_fine-grained_machine-generated_text_detection_under_hum.md)
 - [\[ACL 2026\] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection](when_personalization_tricks_detectors_the_feature-inversion_trap_in_machine-gene.md)
-- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 - [\[ICLR 2026\] Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection](../../ICLR2026/aigc_detection/beyond_raw_detection_scores_markov-informed_calibration_for_boosting_machine-gen.md)
+- [\[ACL 2026\] Authorship Attribution in Multilingual Machine-Generated Texts](authorship_attribution_in_multilingual_machine-generated_texts.md)
 
 </div>
 

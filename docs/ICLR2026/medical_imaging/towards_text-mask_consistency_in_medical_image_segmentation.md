@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Text–Mask Consistency in Medical Image Segmentation
 description: >-
-  [ICLR 2026][Medical Imaging][KAN] To address the "mask-text mismatch" in text-guided medical segmentation, C2Seg proposes a two-stage scheme: the pre-training stage utilizes Cluster-aware Contrastive Learning (CaCL) with text-similarity-based soft labels to resolve false negative conflicts caused by templated clinical descriptions; the fusion stage emp
+  [ICLR 2026][Medical Imaging][Text-mask consistency] To address the "mask-text mismatch" in text-guided medical segmentation, C2Seg proposes a two-stage scheme: the pre-training stage utilizes Cluster-aware Contrastive Learning (CaCL) with text-similarity-based soft labels to resolve false negative conflicts caused by templated clinical descriptions; the fusion stage employs Bi-directional Complementary Attention Module (BCAM) to explicitly construct a "language-dominant" spat…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - KAN
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Text-mask consistency"
+  - "Contrastive learning"
+  - "Bi-directional attention"
+  - "KAN"
+  - "Medical segmentation"
 date: 2026-05-08
-content_hash: 566cb8e02d0a9fa0
+content_hash: 5b14a42c206f87ad
 ---
+
 # Towards Text–Mask Consistency in Medical Image Segmentation
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ Incremental component testing on MosMedData+ and CVC-ClinicDB (using CLIP):
 - Value: ⭐⭐⭐⭐ Improves both consistency and accuracy with a smaller parameter footprint.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

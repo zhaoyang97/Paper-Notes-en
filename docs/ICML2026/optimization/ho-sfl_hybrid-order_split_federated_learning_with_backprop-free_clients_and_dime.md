@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] HO-SFL decouples the client and server in Split Federated Learning (SFL) through Lagrangian variable lifting. The server continues to execute first-order backpropagation (BP), while clients perform only zeroth-order (ZO) perturbed forward passes. By leveraging shared random seeds, the uplink communication per round is
+  [ICML 2026][Optimization][Split Federated Learning] HO-SFL decouples the client and server in Split Federated Learning (SFL) through Lagrangian variable lifting. The server continues to execute first-order backpropagation (BP), while clients perform only zeroth-order (ZO) perturbed forward passes. By leveraging shared random seeds, the uplink communication per round is compressed to $\mathcal{O}(P)$ scalars. This reduces the VRAM requirement for fine-tuning large models on ed…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Split Federated Learning"
+  - "Zeroth-Order Optimization"
+  - "Backprop-Free"
+  - "Dimension-Free Aggregation"
+  - "Edge Fine-tuning"
 date: 2026-05-08
-content_hash: 3d11b8c34bb5458f
+content_hash: 90e2c1dd1ed2ade9
 ---
+
 # HO-SFL: Hybrid-Order Split Federated Learning with Backprop-Free Clients and Dimension-Free Aggregation
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ On CIFAR-10 under IID settings, HO-SFL's convergence curve is nearly identical t
 
 ## Related Papers
 
-- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
-- [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
-- [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
-- [\[ICML 2026\] A Fully First-Order Layer for Differentiable Optimization](a_fully_first-order_layer_for_differentiable_optimization.md)
-- [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
+- [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](../../ICLR2026/optimization/beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
+- [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](../../NeurIPS2025/optimization/covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
+- [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
+- [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
+- [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
 
 </div>
 

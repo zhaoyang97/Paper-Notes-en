@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OCTAX: Accelerated CHIP-8 Arcade Environments for Reinforcement Learning in JAX
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] OCTAX uses JAX to port the 1970s CHIP-8 virtual machine to GPUs for end-to-end vectorized simulation, providing 21 classic arcade games with image observations as RL environments. It achieves 350,000 env-steps/s (1.4 million frames/s) on consumer-grade GPUs, outperforming the CPU-based EnvPool by 14×, and features a pi
+  [ICLR 2026][Reinforcement Learning][CHIP-8 emulation] OCTAX uses JAX to port the 1970s CHIP-8 virtual machine to GPUs for end-to-end vectorized simulation, providing 21 classic arcade games with image observations as RL environments. It achieves 350,000 env-steps/s (1.4 million frames/s) on consumer-grade GPUs, outperforming the CPU-based EnvPool by 14×, and features a pipeline for automated generation of new CHIP-8 environments via LLMs.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "CHIP-8 emulation"
+  - "GPU vectorized environment"
+  - "Arcade games"
+  - "End-to-end JAX"
+  - "LLM environment generation"
 date: 2026-05-08
-content_hash: 516d8f2a5ba71c89
+content_hash: 103158bcb7f1f376
 ---
+
 # OCTAX: Accelerated CHIP-8 Arcade Environments for Reinforcement Learning in JAX
 
 **Conference**: ICLR 2026  
@@ -113,7 +119,7 @@ Training: On a single A100, 24 training sessions were run simultaneously, averag
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

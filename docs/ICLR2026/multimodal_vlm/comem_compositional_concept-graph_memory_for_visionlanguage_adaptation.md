@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoMem: Compositional Concept-Graph Memory for Vision-Language Adaptation
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] CoMem treats "compositional structures" (graphs of concepts + relations) as the unit for memory and rehearsal in continual learning. Rather than storing raw images, it synthesizes replay samples in the feature space conditioned on subgraphs. Combined with compositional consistency constraints and teacher entropy-gated
+  [ICLR 2026][Multimodal VLM][Continual Learning] CoMem treats "compositional structures" (graphs of concepts + relations) as the unit for memory and rehearsal in continual learning. Rather than storing raw images, it synthesizes replay samples in the feature space conditioned on subgraphs. Combined with compositional consistency constraints and teacher entropy-gated distillation to suppress drift, it achieves higher retention and lower forgetting across cross-domain retrieval…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Concept-Graph Memory"
+  - "Feature-space Replay"
+  - "Compositional Consistency"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: e84b96028b6bbd31
+content_hash: bf8638bb5955076a
 ---
+
 # CoMem: Compositional Concept-Graph Memory for Vision-Language Adaptation
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Heterogeneous Degradation Representation for Real-World Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] This paper proposes SAVL (Spatially Amortized Variational Learning), which models the degradation of each pixel as a "spatially-varying Gaussian distribution" inferred from local neighborhoods. A mutual information suppression term is employed to decouple degradation from image content, resulting in an implicit represe
+  [ICLR 2026][Image Restoration][Real-World SR] This paper proposes SAVL (Spatially Amortized Variational Learning), which models the degradation of each pixel as a "spatially-varying Gaussian distribution" inferred from local neighborhoods. A mutual information suppression term is employed to decouple degradation from image content, resulting in an implicit representation that is both spatially heterogeneous and highly discriminative of degradation factors. The SR network is s…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Real-World SR"
+  - "Degradation Representation"
+  - "Variational Inference"
+  - "Mutual Information Suppression"
+  - "Spatially Heterogeneous Degradation"
 date: 2026-05-08
-content_hash: fe6ac3163ce1c0cd
+content_hash: 3702ac43d262bf2e
 ---
+
 # Learning Heterogeneous Degradation Representation for Real-World Super-Resolution
 
 **Conference**: ICLR 2026  

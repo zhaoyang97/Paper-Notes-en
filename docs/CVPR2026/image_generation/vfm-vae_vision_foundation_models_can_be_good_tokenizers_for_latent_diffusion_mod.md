@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][VAE tokenizer] A frozen Vision Foundation Model (VFM, such as SigLIP2-Large) is directly utilized as the VAE encoder for Latent Diffusion Models (LDMs), paired with a dedicated multi-scale decoder to reconstruct semantic features into realistic images. This approach bypasses the representation degradation caused by "distillation alig
+  [CVPR 2026][Image Generation][Vision Foundation Models] A frozen Vision Foundation Model (VFM, such as SigLIP2-Large) is directly utilized as the VAE encoder for Latent Diffusion Models (LDMs), paired with a dedicated multi-scale decoder to reconstruct semantic features into realistic images. This approach bypasses the representation degradation caused by "distillation alignment." Consequently, on ImageNet $256 \times 256$, it achieves a gFID (without CFG) of 2.22 in only 80…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VAE tokenizer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Vision Foundation Models"
+  - "Latent Diffusion"
+  - "VAE Tokenizer"
+  - "Representation Alignment"
+  - "Frozen Encoder"
 date: 2026-05-08
-content_hash: ba618f4130883e88
+content_hash: 5bbc9fc4cbfcd911
 ---
+
 # VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -168,14 +173,17 @@ Stepwise addition of components (Table 5):
 
 <div class="related-papers" markdown="1">
 
-1. **VA-VAE**: "Vision-Aligned Visual Autoencoder via Semantic-Augmented Representation" (CVPR 2024)
-2. **REPA**: "Representation Alignment for Information-Dense Visual Generation" (2024)
-3. **SigLIP 2**: "Multilingual Vision-Language Encoders with Sigmoid Loss" (2025)
+## Related Papers
+
+- [\[CVPR 2026\] Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models](probing_and_bridging_geometry-interaction_cues_for_affordance_reasoning_in_visio.md)
+- [\[ICLR 2026\] Latent Denoising Makes Good Tokenizers](../../ICLR2026/image_generation/latent_denoising_makes_good_tokenizers.md)
+- [\[ICLR 2026\] Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
+- [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
+- [\[CVPR 2026\] Taming Sampling Perturbations with Variance Expansion Loss for Latent Diffusion Models](taming_sampling_perturbations_with_variance_expansion_loss_for_latent_diffusion_.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_models.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Model Compression] This paper proposes HierarchicalPrune, which exploits the hierarchical functional differences among blocks in MMDiT-based diffusion models—early blocks establish…
+  [AAAI 2026][Image Generation][Diffusion Model Compression] This paper proposes HierarchicalPrune, which exploits the hierarchical functional differences among blocks in MMDiT-based diffusion models—early blocks establish semantic structure while late blocks refine texture details—and combines three techniques: Hierarchical Position Pruning (HPP), Positional Weight Preservation (PWP), and Sensitivity-Guided Distillation (SGDistill), together with INT4 quantisation. Applied to…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "MMDiT"
   - "Quantisation"
 date: 2026-05-08
-content_hash: b0043ecf6def3c3e
+content_hash: 4a0c8973105d5b2b
 ---
 
 # HierarchicalPrune: Position-Aware Compression for Large-Scale Diffusion Models
@@ -169,9 +169,9 @@ Key observations: HPP alone collapses under moderate compression (GenEval 0.03);
 
 - [\[ICLR 2026\] Compositional amortized inference for large-scale hierarchical Bayesian models](../../ICLR2026/image_generation/compositional_amortized_inference_for_large-scale_hierarchical_bayesian_models.md)
 - [\[AAAI 2026\] HACK: Head-Aware KV Cache Compression for Efficient Visual Autoregressive Modeling](head-aware_kv_cache_compression_for_efficient_visual_autoreg.md)
+- [\[CVPR 2026\] CG-Floor: Centroid-Guided Diffusion for Large-Scale Floorplan Generation](../../CVPR2026/image_generation/cg-floor_centroid-guided_diffusion_for_large-scale_floorplan_generation.md)
 - [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](../../ICLR2026/image_generation/large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
-- [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
-- [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](../../NeurIPS2025/image_generation/large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
+- [\[ICLR 2026\] MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation](../../ICLR2026/image_generation/mmada-parallel_multimodal_large_diffusion_language_models_for_thinking-aware_edi.md)
 
 </div>
 

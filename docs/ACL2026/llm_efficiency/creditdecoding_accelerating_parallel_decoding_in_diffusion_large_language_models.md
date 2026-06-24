@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit
 description: >-
-  [ACL 2026][LLM Efficiency][Diffusion Language Model] This paper proposes CreditDecoding, a training-free parallel decoding acceleration method that enhances correct but low-confidence tokens by accumulating token-level historical evidence (trace credit), achieving up to a 5.48x speedup and a 0.48 accuracy improvement on LLaDA-8B-Instruct.
+  [ACL 2026][LLM Efficiency][Diffusion Language Models] This paper proposes CreditDecoding, a training-free parallel decoding acceleration method that enhances correct but low-confidence tokens by accumulating token-level historical evidence (trace credit), achieving up to a 5.48x speedup and a 0.48 accuracy improvement on LLaDA-8B-Instruct.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Inference Acceleration
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Parallel Decoding"
+  - "Trace Credit"
+  - "Inference Acceleration"
+  - "Confidence Enhancement"
 date: 2026-05-08
-content_hash: 8203a373ee34a70e
+content_hash: 436f78fcff468750
 ---
+
 # CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit
 
 **Conference**: ACL 2026  
@@ -137,11 +141,11 @@ CreditDecoding is an entirely training-free inference-time method that only modi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](../../ICLR2026/llm_efficiency/learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](../../ICML2026/llm_efficiency/dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](../../ICLR2026/llm_efficiency/hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](../../ICLR2026/llm_efficiency/accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
 - [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](../../ICML2026/llm_efficiency/diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
-- [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](are_large_language_models_economically_viable_for_industry_deployment.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper systematically broadens the design space of "metadata conditioning for accelerating LLM pretraining." Beyond the known effectiveness of prepending URLs, the authors discover that **fine-grained** quality scores and domain information can similarly accelerate training. They propose two new mechanisms—"appendi
+  [ICLR2026][LLM Pretraining][Metadata Conditioning] This paper systematically broadens the design space of "metadata conditioning for accelerating LLM pretraining." Beyond the known effectiveness of prepending URLs, the authors discover that **fine-grained** quality scores and domain information can similarly accelerate training. They propose two new mechanisms—"appending metadata as an auxiliary prediction task" and "learnable meta tokens"—and use layer-wise probing to reveal…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Metadata Conditioning"
+  - "Pretraining Acceleration"
+  - "Fine-grained Metadata"
+  - "Auxiliary Prediction Tasks"
+  - "Representation Probing"
 date: 2026-05-08
-content_hash: 4d18bef9b3851438
+content_hash: 46b08797db66c21a
 ---
+
 # Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining
 
 **Conference**: ICLR2026  
@@ -138,9 +144,9 @@ Deconstruction of URL components when prepended (Table 2, Avg Score):
 
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 - [\[ICLR 2026\] Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries](beyond_multi-token_prediction_pretraining_llms_with_future_summaries.md)
+- [\[ICLR 2026\] LLM Pretraining with Continuous Concepts](llm_pretraining_with_continuous_concepts.md)
 - [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](../../ICML2026/llm_pretraining/ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
 - [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
-- [\[ICLR 2026\] Selective Rotary Position Embedding](selective_rotary_position_embedding.md)
 
 </div>
 

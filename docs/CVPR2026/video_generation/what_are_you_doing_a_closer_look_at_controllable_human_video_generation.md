@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Are You Doing? A Closer Look at Controllable Human Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The authors observe that existing benchmarks for controllable human video generation (TikTok, TED-Talks, HumanVid) are overly small and narrow. They construct the WYD benchmark consisting of 1,544 meticulously annotated clips (across 9 major and 56 sub-categories) and introduce two human-centric metrics, pICD and pAPE.
+  [CVPR 2026][Video Generation][Controllable Human Video Generation] The authors observe that existing benchmarks for controllable human video generation (TikTok, TED-Talks, HumanVid) are overly small and narrow. They construct the WYD benchmark consisting of 1,544 meticulously annotated clips (across 9 major and 56 sub-categories) and introduce two human-centric metrics, pICD and pAPE. Systematic evaluation of 8 SOTA open-source models quantitatively exposes systematic perform…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Controllable Human Video Generation"
+  - "Evaluation Benchmark"
+  - "Fine-grained Annotation"
+  - "Human Consistency"
+  - "Pose Following"
 date: 2026-05-08
-content_hash: a39f42eeab1148a7
+content_hash: dc4f16a95569ec96
 ---
+
 # What Are You Doing? A Closer Look at Controllable Human Video Generation
 
 **Conference**: CVPR 2026  
@@ -125,9 +131,9 @@ To ensure reliability, metrics were validated against human judgment using two m
 
 - [\[CVPR 2026\] SemVideo: Reconstructs What You Watch from Brain Activity via Hierarchical Semantic Guidance](semvideo_reconstructs_what_you_watch_from_brain_activity_via_hierarchical_semant.md)
 - [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
+- [\[CVPR 2026\] IP-Adapter Is All You Need: Towards Fine-Tuning-Free Diffusion-Based Talking Face Generation](ip-adapter_is_all_you_need_towards_fine-tuning-free_diffusion-based_talking_face.md)
 - [\[CVPR 2026\] YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal](yose_you_only_select_essential_tokens_for_efficient_dit-based_video_object_remov.md)
-- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
+- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
 
 </div>
 

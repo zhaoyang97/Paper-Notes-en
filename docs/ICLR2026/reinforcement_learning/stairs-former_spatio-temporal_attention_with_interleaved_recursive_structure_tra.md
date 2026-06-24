@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STAIRS-Former: Spatio-Temporal Attention with Interleaved Recursive Structure Transformer for Offline Multi-Task Multi-Agent Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Transformer] Addressing the issue in offline multi-task multi-agent reinforcement learning (MT-MARL) where existing Transformers underutilize attention and fail to exploit historical information, STAIRS-Former reconstructs the architecture with a "recursive spatial Transformer + dual-time scale history module + token dropout." This
+  [ICLR 2026][Reinforcement Learning][Offline Multi-Agent RL] Addressing the issue in offline multi-task multi-agent reinforcement learning (MT-MARL) where existing Transformers underutilize attention and fail to exploit historical information, STAIRS-Former reconstructs the architecture with a "recursive spatial Transformer + dual-time scale history module + token dropout." This refocuses attention on key entities and historical tokens, increasing the average win rate on bench…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Transformer
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Multi-Agent RL"
+  - "Multi-Task Generalization"
+  - "Transformer"
+  - "Spatiotemporal Attention"
+  - "Partial Observability"
 date: 2026-05-08
-content_hash: 79778385a2ccda42
+content_hash: 29f6aa46fb479813
 ---
+
 # STAIRS-Former: Spatio-Temporal Attention with Interleaved Recursive Structure Transformer for Offline Multi-Task Multi-Agent Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -147,9 +152,9 @@ Removing components individually ("ST" = Spatial + Temporal, "STD" = ST + Dropou
 
 - [\[CVPR 2026\] TaskForce: Cooperative Multi-agent Reinforcement Learning for Multi-task Optimization](../../CVPR2026/reinforcement_learning/taskforce_cooperative_multi-agent_reinforcement_learning_for_multi-task_optimiza.md)
 - [\[ICLR 2026\] LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection](laddersym_a_multimodal_interleaved_transformer_for_music_practice_error_detectio.md)
+- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
 - [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
 - [\[ICLR 2026\] MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning](mage_multi-scale_autoregressive_generation_for_offline_reinforcement_learning.md)
-- [\[ICML 2025\] Mastering Massive Multi-Task Reinforcement Learning via Mixture-of-Expert Decision Transformer](../../ICML2025/reinforcement_learning/mastering_massive_multi-task_reinforcement_learning_via_mixture-of-expert_decisi.md)
 
 </div>
 

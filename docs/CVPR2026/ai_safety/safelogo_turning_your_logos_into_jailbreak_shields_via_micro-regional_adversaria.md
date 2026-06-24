@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] SafeLogo optimizes a "logo-level" small patch, occupying ≤2% of image pixels, into a universal jailbreak shield via min–max adversarial training. The inner loop dynamically selects the strongest current jailbreak attack, while the outer loop updates this local patch to resist it. Without modifying the VLM backbone, it
+  [CVPR 2026][AI Safety][VLM Jailbreak Defense] SafeLogo optimizes a "logo-level" small patch, occupying ≤2% of image pixels, into a universal jailbreak shield via min–max adversarial training. The inner loop dynamically selects the strongest current jailbreak attack, while the outer loop updates this local patch to resist it. Without modifying the VLM backbone, it significantly reduces jailbreak success rates on MM-SafetyBench, VLGuard, and FigStep…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "VLM Jailbreak Defense"
+  - "Adversarial Training"
+  - "Visual Defense Prompt"
+  - "min-max optimization"
+  - "Local Perturbation"
 date: 2026-05-08
-content_hash: fa2e6195b2af6435
+content_hash: 9c46de810a0df821
 ---
+
 # SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ Performance on MM-Vet (ID benign) before and after defense (higher is better):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
+- [\[CVPR 2026\] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary](unigame_turning_a_unified_multimodal_model_into_its_own_adversary.md)
 - [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
 - [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](mitigating_error_amplification_in_fast_adversarial_training.md)
-- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
-- [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
-- [\[CVPR 2026\] UniGame: Turning a Unified Multimodal Model Into Its Own Adversary](unigame_turning_a_unified_multimodal_model_into_its_own_adversary.md)
+- [\[CVPR 2026\] Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation](your_classifier_can_do_more_towards_balancing_the.md)
 
 </div>
 

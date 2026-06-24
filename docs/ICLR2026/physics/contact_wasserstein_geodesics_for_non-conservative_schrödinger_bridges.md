@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Contact Wasserstein Geodesics for Non-Conservative Schrödinger Bridges
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Schrödinger bridge] Proposes Non-Conservative Generalized Schrödinger Bridges (NCGSB)—based on contact Hamiltonian mechanics, which allows energy to change over time. It transforms the bridge problem into geodesic computation on a finite-dimensional Jacobi metric via Contact Wasserstein Geodesic (CWG). Parametrized with ResNet, it achieve
+  [ICLR2026][Physics & Scientific Computing][Schrödinger bridge] Proposes Non-Conservative Generalized Schrödinger Bridges (NCGSB)—based on contact Hamiltonian mechanics, which allows energy to change over time. It transforms the bridge problem into geodesic computation on a finite-dimensional Jacobi metric via Contact Wasserstein Geodesic (CWG). Parametrized with ResNet, it achieves near-linear complexity and supports guided generation, significantly outperforming iterative SB…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Schrödinger bridge
-  - contact Hamiltonian
-  - Wasserstein geodesic
-  - non-conservative dynamics
-  - guided generation
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Schrödinger bridge"
+  - "contact Hamiltonian"
+  - "Wasserstein geodesic"
+  - "non-conservative dynamics"
+  - "guided generation"
 date: 2026-05-08
-content_hash: 8d5381135ab61543
+content_hash: e3af43ccb0868fe6
 ---
+
 # Contact Wasserstein Geodesics for Non-Conservative Schrödinger Bridges
 
 **Conference**: ICLR2026  
@@ -127,7 +128,7 @@ The training objective consists of three Wasserstein-2 distance terms: $\ell = d
 - [\[ICLR 2026\] HSG-12M: A Large-Scale Benchmark of Spatial Multigraphs from the Energy Spectra of Non-Hermitian Crystals](hsg-12m_a_large-scale_benchmark_of_spatial_multigraphs_from_the_energy_spectra_o.md)
 - [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](../../ICML2026/physics/teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
 - [\[ICLR 2026\] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers](aqer_a_scalable_and_efficient_data_loader_for_digital_quantum_computers.md)
-- [\[ICLR 2026\] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics](atom_a_pretrained_neural_operator_for_multitask_molecular_dynamics.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
 
 </div>
 

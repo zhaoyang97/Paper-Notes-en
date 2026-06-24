@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ComPhy: Composing Physical Models with end-to-end Alignment
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Physics-Informed Neural Networks] ComPhy decomposes "system-level PDE solving" into "one dedicated module per equation," and links modules sharing physical variables via an end-to-end alignment loss based on derivatives (Jacobian). This transforms the ill-conditioned optimization of single models with multiple losses into a collaborative optimization o
+  [ICLR 2026][Physics & Scientific Computing][PDE systems] ComPhy decomposes "system-level PDE solving" into "one dedicated module per equation," and links modules sharing physical variables via an end-to-end alignment loss based on derivatives (Jacobian). This transforms the ill-conditioned optimization of single models with multiple losses into a collaborative optimization of simple sub-problems, consistently outperforming PINNs and NCLs on various real physical systems with…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Physics-Informed Neural Networks
-  - Neural Conservation Laws
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "PDE systems"
+  - "Physics-Informed Neural Networks"
+  - "Neural Conservation Laws"
+  - "Modularity"
+  - "Alignment Loss"
+  - "Knowledge Transfer"
 date: 2026-05-08
-content_hash: defe4badc13fcf9b
+content_hash: c42480e5f5971a55
 ---
+
 # ComPhy: Composing Physical Models with end-to-end Alignment
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,8 @@ Ablation on alignment types (OUTL vs. DERL/SOB) consistently shows that OUTL per
 ## Related Papers
 
 - [\[ICML 2025\] Sum-of-Parts: Self-Attributing Neural Networks with End-to-End Learning of Feature Groups](../../ICML2025/physics/sum-of-parts_self-attributing_neural_networks_with_end-to-end_learning_of_featur.md)
-- [\[ICLR 2026\] RealPDEBench: A Benchmark for Complex Physical Systems with Real-World Data](realpdebench_a_benchmark_for_complex_physical_systems_with_real-world_data.md)
 - [\[ICLR 2026\] Spectral-Guided Physical Dynamics Distillation](spectral-guided_physical_dynamics_distillation.md)
+- [\[ICLR 2026\] RealPDEBench: A Benchmark for Complex Physical Systems with Real-World Data](realpdebench_a_benchmark_for_complex_physical_systems_with_real-world_data.md)
 - [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
 - [\[ICLR 2026\] PRO-MOF: Policy Optimization with Universal Atomistic Models for Controllable MOF Generation](pro-mof_policy_optimization_with_universal_atomistic_models_for_controllable_mof.md)
 

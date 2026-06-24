@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimal Welfare in Noncooperative Network Formation under Attack
 description: >-
-  [AAAI 2026][Network formation games] In the noncooperative network formation game model proposed by Goyal et al. (WINE 2016), this paper proves that equilibrium networks created by selfish agents maintain asymptotically…
+  [AAAI 2026][Network formation games] In the noncooperative network formation game model proposed by Goyal et al. (WINE 2016), this paper proves that equilibrium networks created by selfish agents maintain asymptotically optimal social welfare $n^2 - O(n)$ under a broad class of attackers — including maximum disruption — called super-quadratic disruption (SQD) attackers, thereby resolving a long-standing open problem.
 tags:
   - "AAAI 2026"
   - "Network formation games"
@@ -12,7 +12,7 @@ tags:
   - "game theory"
   - "Price of Anarchy"
 date: 2026-05-08
-content_hash: 3b13305b11e8862e
+content_hash: bd04e2e41054af1b
 ---
 
 # Optimal Welfare in Noncooperative Network Formation under Attack
@@ -139,11 +139,11 @@ Note: The optimal social welfare without any attacker is $n^2 - O(n)$ (Bala & Go
 
 ## Related Papers
 
+- [\[ICLR 2026\] Homeostatic Adaptation of Optimal Population Codes under Metabolic Stress](../../ICLR2026/others/homeostatic_adaptation_of_optimal_population_codes_under_metabolic_stress.md)
 - [\[AAAI 2026\] Learning Network Dismantling Without Handcrafted Inputs](learning_network_dismantling_without_handcrafted_inputs.md)
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
 - [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
-- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
 
 </div>
 

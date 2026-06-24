@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ego-Grounding for Personalized Question-Answering in Egocentric Videos
 description: >-
-  [CVPR 2026][Video Understanding][ego-grounding] This paper proposes **MyEgo**—the first diagnostic benchmark for "personalized egocentric video question answering" (541 long videos, 5K questions regarding "my things/my activities/my past"). It systematically examines whether mainstream MLLMs can perform **ego-grounding** (understanding, remembering, and tracking the
+  [CVPR 2026][Video Understanding][Egocentric Video] This paper proposes **MyEgo**—the first diagnostic benchmark for "personalized egocentric video question answering" (541 long videos, 5K questions regarding "my things/my activities/my past"). It systematically examines whether mainstream MLLMs can perform **ego-grounding** (understanding, remembering, and tracking the "camera wearer/me"). The results reveal that GPT-5 achieves only 46% accuracy…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - ego-grounding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Egocentric Video"
+  - "Personalized QA"
+  - "Ego-grounding"
+  - "VideoQA Benchmark"
+  - "Long-term Memory"
 date: 2026-05-08
-content_hash: a7bc2131f25d0c1f
+content_hash: c4456bd37de7a2d5
 ---
+
 # Ego-Grounding for Personalized Question-Answering in Egocentric Videos
 
 **Conference**: CVPR 2026  
@@ -138,10 +143,10 @@ Key observations: ① All models trail humans by 33%–55%. GPT-5 is the stronge
 ## Related Papers
 
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
-- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
 - [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
-- [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
+- [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
 - [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
+- [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](../../NeurIPS2025/video_understanding/egogazevqa_egocentric_gaze_guided_video_question_answering.md)
 
 </div>
 

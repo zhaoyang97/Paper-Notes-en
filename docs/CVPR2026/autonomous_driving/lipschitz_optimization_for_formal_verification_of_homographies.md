@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lipschitz Optimization for Formal Verification of Homographies
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] By formulating "camera 6-DOF pose perturbation → pixel values" as a closed-form homography and extending the piecewise linear + Lipschitz optimization bounds of Batten et al. from affine to non-affine projective transformations, this work performs the **first** formal verification of "camera motion robustness" for neur
+  [CVPR 2026][Autonomous Driving][Formal Verification] By formulating "camera 6-DOF pose perturbation → pixel values" as a closed-form homography and extending the piecewise linear + Lipschitz optimization bounds of Batten et al. from affine to non-affine projective transformations, this work performs the **first** formal verification of "camera motion robustness" for neural networks. Compared to prior work, it achieves up to 89% speedup and 7% tighter bounds…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Formal Verification"
+  - "Homography"
+  - "Lipschitz Optimization"
+  - "Camera Pose Robustness"
+  - "Piecewise Linear Bounds"
 date: 2026-05-08
-content_hash: 7932732462620cf5
+content_hash: 10baaf70fe821af6
 ---
+
 # Lipschitz Optimization for Formal Verification of Homographies
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Even PGD-adversarially trained networks are very fragile to pure perspective per
 
 ## Related Papers
 
+- [\[CVPR 2026\] UFO: Unifying Feed-Forward and Optimization-based Methods for Large Driving Scene Modeling](ufo_unifying_feed-forward_and_optimization-based_methods_for_large_driving_scene.md)
 - [\[CVPR 2026\] Learnability-Driven Submodular Optimization for Active Roadside 3D Detection](learnability-driven_submodular_optimization_for_active_roadside_3d_detection.md)
 - [\[CVPR 2025\] PIDLoc: Cross-View Pose Optimization Network Inspired by PID Controllers](../../CVPR2025/autonomous_driving/pidloc_cross-view_pose_optimization_network_inspired_by_pid_controllers.md)
 - [\[ICCV 2025\] A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds](../../ICCV2025/autonomous_driving/a_constrained_optimization_approach_for_gaussian_splatting_from_coarsely-posed_i.md)
 - [\[ICCV 2025\] MAESTRO: Task-Relevant Optimization via Adaptive Feature Enhancement and Suppression for Multi-task 3D Perception](../../ICCV2025/autonomous_driving/maestro_task-relevant_optimization_via_adaptive_feature_enhancement_and_suppress.md)
-- [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](../../ICCV2025/autonomous_driving/adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
 
 </div>
 

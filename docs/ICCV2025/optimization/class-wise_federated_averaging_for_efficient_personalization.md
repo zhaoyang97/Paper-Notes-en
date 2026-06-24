@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Class-Wise Federated Averaging for Efficient Personalization
 description: >-
-  [ICCV 2025][Optimization][Personalized Federated Learning] cwFedAvg extends FedAvg from client-level aggregation to class-level aggregation…
+  [ICCV 2025][Optimization][Personalized Federated Learning] cwFedAvg extends FedAvg from client-level aggregation to class-level aggregation, constructing a dedicated global model per class and combining them into a personalized local model weighted by each client's class distribution. Coupled with Weight Distribution Regularization (WDR) to strengthen the alignment between class distribution and weight norms, the method achieves substantial personalization gains under non-IID…
 tags:
   - "ICCV 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Data Heterogeneity"
   - "Privacy Preservation"
 date: 2026-05-08
-content_hash: 62fe67dfec4ef494
+content_hash: 38391082c5430e90
 ---
 
 # Class-Wise Federated Averaging for Efficient Personalization
@@ -156,11 +156,11 @@ Gains are particularly pronounced on CIFAR-100 and Tiny ImageNet (+8.64 and +10.
 
 ## Related Papers
 
+- [\[ICML 2025\] Layer-wise Quantization for Quantized Optimistic Dual Averaging](../../ICML2025/optimization/layer-wise_quantization_for_quantized_optimistic_dual_averaging.md)
 - [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](../../NeurIPS2025/optimization/layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](../../NeurIPS2025/optimization/efficient_adaptive_federated_optimization.md)
-- [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
-- [\[ICCV 2025\] Memory-Efficient 4-bit Preconditioned Stochastic Optimization](memory-efficient_4-bit_preconditioned_stochastic_optimization.md)
-- [\[ICCV 2025\] Federated Continual Instruction Tuning](federated_continual_instruction_tuning.md)
+- [\[ICML 2025\] FedSWA: Improving Generalization in Federated Learning with Highly Heterogeneous Data via Momentum-Based Stochastic Controlled Weight Averaging](../../ICML2025/optimization/fedswa_improving_generalization_in_federated_learning_with_highly_heterogeneous_.md)
+- [\[ICLR 2026\] Riemannian Federated Learning via Averaging Gradient Streams](../../ICLR2026/optimization/riemannian_federated_learning_via_averaging_gradient_streams.md)
 
 </div>
 

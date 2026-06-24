@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design
 description: >-
-  [ICML 2026][Optimization & Theory][SCALE] By "deconstructing Adam bottom-up," this paper identifies two truly essential components—per-column gradient normalization and first-order momentum restricted to the last layer—to compose the SCALE optimizer. SCALE achieves near-SGD memory (13.74 GB on LLaMA 7B) while matching Adam-level or even surpassing Muon/APOLLO
+  [ICML 2026][Optimization][Column-normalization] By "deconstructing Adam bottom-up," this paper identifies two truly essential components—per-column gradient normalization and first-order momentum restricted to the last layer—to compose the SCALE optimizer. SCALE achieves near-SGD memory (13.74 GB on LLaMA 7B) while matching Adam-level or even surpassing Muon/APOLLO in pretraining perplexity.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - SCALE
-  - SGD vs Adam
+  - "ICML 2026"
+  - "Optimization"
+  - "Column-normalization"
+  - "last-layer momentum"
+  - "SCALE"
+  - "memory-efficient"
+  - "SGD vs Adam"
 date: 2026-05-08
-content_hash: 2e596fc35a835d1c
+content_hash: d3587930b9266991
 ---
+
 # Memory-Efficient LLM Pretraining via Minimalist Optimizer Design
 
 **Conference**: ICML 2026  
@@ -139,11 +143,11 @@ SCALE either achieves SOTA or matches the strongest baselines with 35-65% less m
 
 ## Related Papers
 
-- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
+- [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](../../ICLR2026/optimization/towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)
 - [\[ICML 2026\] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping](adagc_enhancing_llm_pretraining_stability_via_adaptive_gradient_clipping.md)
+- [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](../../ICLR2026/optimization/arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
+- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](../../ICLR2026/optimization/a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[ICML 2026\] Enhancing LLM Training via Spectral Clipping](enhancing_llm_training_via_spectral_clipping.md)
 
 </div>
 

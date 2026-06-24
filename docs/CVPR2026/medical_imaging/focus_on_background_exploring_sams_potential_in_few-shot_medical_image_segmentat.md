@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Focus on Background: Exploring SAM's Potential in Few-shot Medical Image Segmentation with Background-centric Prompting
 description: >-
-  [CVPR 2026][Medical Imaging][SAM] This work redefines "Few-Shot Medical Image Segmentation (FSMIS) using SAM" as a **background point prompt localization problem**. It proposes FoB, a plug-and-play prompt generator that generates accurate background prompt points outside foreground boundaries through background prototype construction, background-centri
+  [CVPR 2026][Medical Imaging][SAM] This work redefines "Few-Shot Medical Image Segmentation (FSMIS) using SAM" as a **background point prompt localization problem**. It proposes FoB, a plug-and-play prompt generator that generates accurate background prompt points outside foreground boundaries through background prototype construction, background-centric contextual modeling, and structure-guided iterative refinement. This constrains SAM's over-segmentation and significantly ad…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - SAM
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "SAM"
+  - "Few-shot Medical Image Segmentation"
+  - "Background Prompting"
+  - "Prompt Localization"
+  - "Structural Prior"
 date: 2026-05-08
-content_hash: 0559dd1be9e0baff
+content_hash: 26b763b26652a2cc
 ---
+
 # Focus on Background: Exploring SAM's Potential in Few-shot Medical Image Segmentation with Background-centric Prompting
 
 **Conference**: CVPR 2026  
@@ -137,13 +142,13 @@ Loss ablation: Removing $L_{heat}$ causes performance to drop to 35.26 (increase
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation](backsplit_the_importance_of_sub-dividing_the_background_in_biomedical_lesion_seg.md)
 - [\[CVPR 2026\] SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation](sd_fsmis_adapting_stable_diffusion_for_few_shot_medical_image_segmentation.md)
-- [\[CVPR 2025\] Enhancing SAM with Efficient Prompting and Preference Optimization for Semi-Supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/enhancing_sam_with_efficient_prompting_and_preference_optimization_for_semi-supe.md)
+- [\[CVPR 2025\] Enhancing SAM with Efficient Prompting and Preference Optimization for Semi-supervised Medical Image Segmentation](../../CVPR2025/medical_imaging/sam_dpo_semi_supervised.md)
 - [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 

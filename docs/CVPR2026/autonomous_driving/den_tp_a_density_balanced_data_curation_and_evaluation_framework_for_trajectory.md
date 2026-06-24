@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] From a data-centric perspective, the Den-TP framework is proposed to address the long-tail density imbalance in trajectory prediction datasets through density-aware data curation and evaluation protocols. It maintains overall performance and significantly improves robustness in high-density scenarios using only 50% of
+  [CVPR 2026][Autonomous Driving][Trajectory prediction] From a data-centric perspective, the Den-TP framework is proposed to address the long-tail density imbalance in trajectory prediction datasets through density-aware data curation and evaluation protocols. It maintains overall performance and significantly improves robustness in high-density scenarios using only 50% of the data.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Trajectory prediction"
+  - "data-centric"
+  - "density balance"
+  - "submodular optimization"
+  - "long-tail distribution"
 date: 2026-05-08
-content_hash: 700d430e3fa8da3e
+content_hash: 7de1fb68702fda50
 ---
+
 # Den-TP: A Density-Balanced Data Curation and Evaluation Framework for Trajectory Prediction
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ The training loss used for gradient extraction is $\mathcal{L} = \mathcal{L}_{\t
 
 - [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)
 - [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
-- [\[CVPR 2026\] A Prediction-as-Perception Framework for 3D Object Detection](a_prediction-as-perception_framework_for_3d_object_detection.md)
 - [\[CVPR 2026\] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration](foss_modeling_long_range_dependencies_and_multimodal_uncertainty_in_trajectory_p.md)
 - [\[ECCV 2024\] UniTraj: A Unified Framework for Scalable Vehicle Trajectory Prediction](../../ECCV2024/autonomous_driving/unitraj_a_unified_framework_for_scalable_vehicle_trajectory_prediction.md)
+- [\[CVPR 2026\] Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction](recover_to_predict_progressive_retrospective_learning_for_variable-length_trajec.md)
 
 </div>
 

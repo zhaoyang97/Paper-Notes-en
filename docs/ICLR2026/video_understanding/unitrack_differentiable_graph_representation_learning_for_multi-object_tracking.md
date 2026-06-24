@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniTrack: Differentiable Graph Representation Learning for Multi-Object Tracking
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] UniTrack models multi-object tracking as a differentiable "graph flow network" and proposes a plug-and-play graph-theoretic loss function. It unifies detection accuracy, identity preservation, and spatiotemporal consistency into an end-to-end trainable objective. Without modifying any model architecture, it can be inte
+  [ICLR 2026][Video Understanding][Multi-Object Tracking] UniTrack models multi-object tracking as a differentiable "graph flow network" and proposes a plug-and-play graph-theoretic loss function. It unifies detection accuracy, identity preservation, and spatiotemporal consistency into an end-to-end trainable objective. Without modifying any model architecture, it can be integrated into 7 existing trackers, reducing ID switches by up to 53% and increasing IDF1 by up to 12% acro…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Multi-Object Tracking"
+  - "Graph Representation Learning"
+  - "Differentiable Loss"
+  - "Flow Conservation"
+  - "Laplacian Adaptive Weighting"
 date: 2026-05-08
-content_hash: 9b8df917d33a480f
+content_hash: 0ccd63b35dac5d0a
 ---
+
 # UniTrack: Differentiable Graph Representation Learning for Multi-Object Tracking
 
 **Conference**: ICLR 2026  
@@ -152,10 +158,20 @@ Component ablation on MOT17 (Trackformer) and weighting strategy comparison (GTR
 - Value: ⭐⭐⭐⭐⭐ High practical value due to extremely low integration cost for significant performance gains.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
+- [\[CVPR 2026\] Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](../../CVPR2026/video_understanding/hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)
+- [\[AAAI 2026\] PlugTrack: Multi-Perceptive Motion Analysis for Adaptive Fusion in Multi-Object Tracking](../../AAAI2026/video_understanding/plugtrack_multi-perceptive_motion_analysis_for_adaptive_fusion_in_multi-object_t.md)
+- [\[CVPR 2025\] OmniTrack: Omnidirectional Multi-Object Tracking](../../CVPR2025/video_understanding/omnidirectional_multi-object_tracking.md)
+- [\[CVPR 2026\] ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](../../CVPR2026/video_understanding/progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)

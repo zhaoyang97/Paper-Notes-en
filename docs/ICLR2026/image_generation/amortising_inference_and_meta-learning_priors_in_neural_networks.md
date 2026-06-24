@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Amortising Inference and Meta-Learning Priors in Neural Networks (BNNP)
 description: >-
-  [ICLR 2026][Image Generation][Bayesian neural network] Proposes BNNP (Bayesian Neural Network Process), a neural process that treats BNN weights as latent variables and the BNN itself as the decoder. By performing layer-wise amortised variational inference to jointly learn BNN priors and inference networks across multiple datasets, it addresses for the first time whether a
+  [ICLR 2026][Image Generation][Bayesian neural network] Proposes BNNP (Bayesian Neural Network Process), a neural process that treats BNN weights as latent variables and the BNN itself as the decoder. By performing layer-wise amortised variational inference to jointly learn BNN priors and inference networks across multiple datasets, it addresses for the first time whether approximate inference still matters under a good prior—the answer is "yes," there is no free lunch.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Bayesian neural network
-  - neural process
-  - meta-learning
-  - amortised inference
-  - prior learning
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Bayesian neural network"
+  - "neural process"
+  - "meta-learning"
+  - "amortised inference"
+  - "prior learning"
 date: 2026-05-08
-content_hash: 3cbb4699938d9373
+content_hash: 78fff7923190ba1e
 ---
+
 # Amortising Inference and Meta-Learning Priors in Neural Networks (BNNP)
 
 **Conference**: ICLR 2026  

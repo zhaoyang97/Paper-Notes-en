@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies
 description: >-
-  [NeurIPS 2025][LLM/NLP][multi-agent planning] This paper proposes SYMPHONY, an MCTS-based multi-agent planning framework that leverages diversity-driven search over a heterogeneous LLM pool, UCB-based adaptive scheduling…
+  [NeurIPS 2025][LLM (Other)][multi-agent planning] This paper proposes SYMPHONY, an MCTS-based multi-agent planning framework that leverages diversity-driven search over a heterogeneous LLM pool, UCB-based adaptive scheduling, entropy-modulated confidence scoring, and pool-level memory sharing to substantially improve planning diversity and efficiency.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "multi-agent planning"
   - "MCTS"
   - "heterogeneous models"
   - "LLM collaboration"
   - "tree search"
 date: 2026-05-08
-content_hash: f52cac99a6c3e72b
+content_hash: f3463a989f863d18
 ---
 
 # SYMPHONY: Synergistic Multi-agent Planning with Heterogeneous Language Model Assemblies
@@ -132,10 +132,10 @@ SYMPHONY introduces four key components into the standard MCTS framework: (1) a 
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Last Vote: A Multi-Stakeholder Framework for Language Model Governance](the_last_vote_a_multi-stakeholder_framework_for_language_model_governance.md)
-- [\[NeurIPS 2025\] StreamBridge: Turning Your Offline Video Large Language Model into a Proactive Streaming Model](streambridge_turning_your_offline_video_large_language_model_into_a_proactive_st.md)
-- [\[NeurIPS 2025\] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths](encompass_enhancing_agent_programming_with_search_over_program_execution_paths.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
-- [\[NeurIPS 2025\] PluralisticBehaviorSuite: Stress-Testing Multi-Turn Adherence to Custom Behavioral Policies](pluralistic_behavior_suite_stress-testing_multi-turn_adherence_to_custom_behavio.md)
+- [\[ACL 2025\] Planning-Driven Programming: A Large Language Model Programming Workflow](../../ACL2025/llm_nlp/planning-driven_programming_a_large_language_model_programming_workflow.md)
+- [\[ACL 2025\] MasRouter: Learning to Route LLMs for Multi-Agent Systems](../../ACL2025/llm_nlp/masrouter_learning_to_route_llms_for_multi-agent_systems.md)
+- [\[ACL 2025\] AgentDropout: Dynamic Agent Elimination for Token-Efficient and High-Performance LLM-Based Multi-Agent Collaboration](../../ACL2025/llm_nlp/agentdropout_dynamic_agent_elimination_for_token-efficient_and_high-performance_.md)
+- [\[ACL 2025\] Red-Teaming LLM Multi-Agent Systems via Communication Attacks](../../ACL2025/llm_nlp/red-teaming_llm_multi-agent_systems_via_communication_attacks.md)
 
 </div>
 

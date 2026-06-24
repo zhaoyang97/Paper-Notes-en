@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Long-tailed Test-Time Adaptation for Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] This paper presents the first systematic study of Test-Time Adaptation (TTA) for Vision-Language Models (VLMs) in long-tailed test streams. It proposes L-TTA, which utilizes Synergistic Prototypes, learnable Rebalancing Shortcuts, and Balanced Entropy Minimization (BEM) to simultaneously address insufficient tail-class
+  [ICLR2026][Multimodal VLM][Long-tailed Test-Time Adaptation] This paper presents the first systematic study of Test-Time Adaptation (TTA) for Vision-Language Models (VLMs) in long-tailed test streams. It proposes L-TTA, which utilizes Synergistic Prototypes, learnable Rebalancing Shortcuts, and Balanced Entropy Minimization (BEM) to simultaneously address insufficient tail-class semantics, amplified cross-modal bias, and the head-class bias of entropy minimization. It improve…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Long-tailed Test-Time Adaptation"
+  - "Vision-Language Models"
+  - "Prototype Cache"
+  - "Class Rebalancing"
+  - "Entropy Minimization"
 date: 2026-05-08
-content_hash: a8d35ca70eedb82f
+content_hash: ecde30844f772889
 ---
+
 # Long-tailed Test-Time Adaptation for Vision-Language Models
 
 **Conference**: ICLR2026  
@@ -152,8 +157,8 @@ Cross-domain results further demonstrate generalization. L-TTA achieves state-of
 - **Value**: ⭐⭐⭐⭐⭐ Highly meaningful for deploying VLMs, highlighting that TTA conclusions from balanced sets do not directly generalize to long-tailed data streams.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

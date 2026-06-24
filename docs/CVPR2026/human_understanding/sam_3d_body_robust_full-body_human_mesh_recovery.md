@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAM 3D Body: Robust Full-Body Human Mesh Recovery
 description: >-
-  [CVPR 2026][Human Understanding][MHR] SAM 3D Body (3DB) is a SAM-style promptable single-view full-body human mesh recovery model. It utilizes a shared encoder + body/hand dual-decoder architecture based on the MHR representation, which decouples skeleton and shape. Coupled with a data engine capable of mining hard samples and producing 7 million high-qual
+  [CVPR 2026][Human Understanding][Human Mesh Recovery] SAM 3D Body (3DB) is a SAM-style promptable single-view full-body human mesh recovery model. It utilizes a shared encoder + body/hand dual-decoder architecture based on the MHR representation, which decouples skeleton and shape. Coupled with a data engine capable of mining hard samples and producing 7 million high-quality annotations, it achieves SOTA performance on both body and hand poses in in-the-wild images.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - MHR
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human Mesh Recovery"
+  - "Promptable Inference"
+  - "Full-body Pose"
+  - "Data Engine"
+  - "MHR"
 date: 2026-05-08
-content_hash: 0b4828014a015f7d
+content_hash: 5bdffa91d4be02ed
 ---
+
 # SAM 3D Body: Robust Full-Body Human Mesh Recovery
 
 **Conference**: CVPR 2026  
@@ -132,11 +137,11 @@ A core human preference study was conducted: in a user study with 7,800 particip
 
 ## Related Papers
 
-- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 - [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
 - [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
 - [\[CVPR 2026\] Occluded Human Body Capture with Frequency Domain Denoising Prior](occluded_human_body_capture_with_frequency_domain_denoising_prior.md)
-- [\[CVPR 2026\] AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars](audioavatar_personalized_audio-driven_whole-body_talking_avatars.md)
+- [\[CVPR 2026\] Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements](action_motifs_self-supervised_hierarchical_representation_of_human_body_movement.md)
 
 </div>
 

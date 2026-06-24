@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Enhancing Diffusion-Based Sampling with Molecular Collective Variables
 description: >-
-  [ICLR 2026][Computational Biology][well-tempered metadynamics] This paper integrates the concept of "well-tempered metadynamics" from molecular dynamics—applying online repulsive biases along collective variables (CVs)—into the state-of-the-art diffusion sampler ASBS to create WT-ASBS. During training, it continuously accumulates biases along low-dimensional CVs to force the disco
+  [ICLR 2026][Computational Biology][Boltzmann Generator] This paper integrates the concept of "well-tempered metadynamics" from molecular dynamics—applying online repulsive biases along collective variables (CVs)—into the state-of-the-art diffusion sampler ASBS to create WT-ASBS. During training, it continuously accumulates biases along low-dimensional CVs to force the discovery of rare conformations; during inference, the bias is reweighted to restore the Boltzmann distributi…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - well-tempered metadynamics
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Boltzmann Generator"
+  - "Diffusion Sampler"
+  - "Enhanced Sampling"
+  - "Collective Variables"
+  - "well-tempered metadynamics"
+  - "Free Energy"
+  - "Schrödinger Bridge"
 date: 2026-05-08
-content_hash: 5b6ae1961271ea07
+content_hash: bcdc31a488b10e3b
 ---
+
 # Enhancing Diffusion-Based Sampling with Molecular Collective Variables
 
 **Conference**: ICLR 2026  

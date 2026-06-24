@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IR3DE: A Linear Router for Large Language Models
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This paper proposes IR3DE—a linear LLM router constructed using the **closed-form solution of ridge regression**. It routes each prompt to the most suitable domain expert based solely on token embeddings, eliminating the need to train additional language models or centralize datasets. It allows experts to be added or r
+  [ICML 2026][LLM Efficiency][LLM Routing] This paper proposes IR3DE—a linear LLM router constructed using the **closed-form solution of ridge regression**. It routes each prompt to the most suitable domain expert based solely on token embeddings, eliminating the need to train additional language models or centralize datasets. It allows experts to be added or removed dynamically without retraining the router. Despite its linear nature, it achieves 98.4% normalized performance o…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "LLM Routing"
+  - "Ridge Regression"
+  - "Domain Experts"
+  - "Token-level Routing"
+  - "Decentralized Training"
 date: 2026-05-08
-content_hash: f2552bad2e27a3b3
+content_hash: 47db143049c9940a
 ---
+
 # IR3DE: A Linear Router for Large Language Models
 
 **Conference**: ICML 2026  
@@ -135,7 +141,7 @@ Reasoning is IR3DE's highlight: using LLaMA3-3B domain experts (Code/Math/Multil
 - [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
 - [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](../../ACL2026/llm_efficiency/lizard_an_efficient_linearization_framework_for_large_language_models.md)
 - [\[ACL 2026\] Are Large Language Models Economically Viable for Industry Deployment?](../../ACL2026/llm_efficiency/are_large_language_models_economically_viable_for_industry_deployment.md)
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
+- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
 
 </div>
 

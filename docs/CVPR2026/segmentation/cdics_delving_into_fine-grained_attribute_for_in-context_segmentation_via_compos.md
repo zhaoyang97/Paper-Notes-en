@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] CDICS upgrades traditional in-context segmentation from "one reference image defines one target" to "a combination of semantic, part, and color reference images defines the target." By utilizing a decoupled two-stage decoder (first for coarse semantic localization, then for refinement with appearance constraints), it s
+  [CVPR 2026][Segmentation][In-context segmentation] CDICS upgrades traditional in-context segmentation from "one reference image defines one target" to "a combination of semantic, part, and color reference images defines the target." By utilizing a decoupled two-stage decoder (first for coarse semantic localization, then for refinement with appearance constraints), it separates the sub-problems of "what it is" and "what it looks like." In compositional prompt segmentation task…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "In-context segmentation"
+  - "compositional prompts"
+  - "fine-grained attribute"
+  - "phased decoupling"
+  - "color prompt"
 date: 2026-05-08
-content_hash: 1c2caf2d2829b9ba
+content_hash: 8e91131ebc495f99
 ---
+
 # CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling
 
 **Conference**: CVPR 2026  
@@ -169,9 +175,9 @@ Stepwise addition of two core modules on ColorPACO (Baseline uses basic encoder 
 
 - [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
 - [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
-- [\[CVPR 2026\] Training-Free Fine-Grained Semantic Segmentations in Low Data Regimes: A FungiTastic Baseline](training-free_fine-grained_semantic_segmentations_in_low_data_regimes_a_fungitas.md)
 - [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
-- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
+- [\[CVPR 2026\] Annotation-Efficient Coreset Selection for Context-dependent Segmentation](annotation-efficient_coreset_selection_for_context-dependent_segmentation.md)
 
 </div>
 

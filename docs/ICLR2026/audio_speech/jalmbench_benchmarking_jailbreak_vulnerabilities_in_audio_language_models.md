@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] JALMBench: Benchmarking Jailbreak Vulnerabilities in Audio Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][LALM] JALMBench constructs the first large-scale, unified jailbreak evaluation benchmark for Large Audio Language Models (LALM)—comprising 245,000 audio samples, 1,000+ hours, 12 models, 8 attacks, and 5 defenses—systematically revealing security vulnerabilities of LALMs in the audio modality and their correlation with encod
+  [ICLR 2026][Audio & Speech][LALM] JALMBench constructs the first large-scale, unified jailbreak evaluation benchmark for Large Audio Language Models (LALM)—comprising 245,000 audio samples, 1,000+ hours, 12 models, 8 attacks, and 5 defenses—systematically revealing security vulnerabilities of LALMs in the audio modality and their correlation with encoding architectures.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - LALM
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "LALM"
+  - "Jailbreak Attack"
+  - "Audio Adversarial Examples"
+  - "Safety Alignment"
+  - "Modality Transfer"
 date: 2026-05-08
-content_hash: 002b12ecc23fff4d
+content_hash: 562b3ed8a05357ff
 ---
+
 # JALMBench: Benchmarking Jailbreak Vulnerabilities in Audio Language Models
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution
 description: >-
-  [AAAI 2026][Model Compression][Video Super-Resolution] This paper proposes QuantVSR, the first low-bit (4/6-bit) post-training quantization framework for diffusion-based video super-resolution (VSR). It introduces a Spat…
+  [AAAI 2026][Model Compression][Video Super-Resolution] This paper proposes QuantVSR, the first low-bit (4/6-bit) post-training quantization framework for diffusion-based video super-resolution (VSR). It introduces a Spatiotemporal Complexity-Aware (STCA) mechanism for layer-adaptive rank allocation and a Learnable Bias Alignment (LBA) module to mitigate quantization bias. Under the 4-bit setting, QuantVSR achieves 84.39% parameter compression and 82.56% computation reduction…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Model Compression"
   - "Spatiotemporal Complexity"
 date: 2026-05-08
-content_hash: 8870a9c44791dfdd
+content_hash: b3e0a6406140218a
 ---
 
 # QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution
@@ -209,11 +209,11 @@ Results on synthetic datasets (REDS4, SPMCS) and real-world dataset (MVSR4x):
 
 ## Related Papers
 
-- [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](post_training_quantization_for_efficient_dataset_condensation.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
-- [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](../../ICML2026/model_compression/lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](../../ICLR2026/model_compression/post-training_quantization_for_video_matting.md)
+- [\[CVPR 2026\] Gradient Knows Best: Mixed-Precision Quantization via Gradient-Guided Bit Allocation for Super-Resolution](../../CVPR2026/model_compression/gradient_knows_best_mixed-precision_quantization_via_gradient-guided_bit_allocat.md)
+- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](../../ICML2026/model_compression/twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
+- [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](../../ICLR2026/model_compression/quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
+- [\[ACL 2025\] PTQ1.61: Push the Real Limit of Extremely Low-Bit Post-Training Quantization Methods for Large Language Models](../../ACL2025/model_compression/ptq161_low_bit_quantization.md)
 
 </div>
 

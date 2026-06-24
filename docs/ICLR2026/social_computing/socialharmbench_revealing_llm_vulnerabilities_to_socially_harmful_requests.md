@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] This work proposes SocialHarmBench, the first safety evaluation benchmark specifically targeting socio-political harms. It consists of 585 prompts covering 7 domains and 34 countries, revealing systematic safety vulnerabilities of current LLMs in politically sensitive scenarios such as historical revisionism and propag
+  [ICLR 2026][Social Computing][LLM Safety] This work proposes SocialHarmBench, the first safety evaluation benchmark specifically targeting socio-political harms. It consists of 585 prompts covering 7 domains and 34 countries, revealing systematic safety vulnerabilities of current LLMs in politically sensitive scenarios such as historical revisionism and propaganda manipulation.
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "LLM Safety"
+  - "Socio-political Harm"
+  - "Adversarial Attacks"
+  - "Jailbreak Attacks"
+  - "Safety Benchmark"
 date: 2026-05-08
-content_hash: faed19aae15c05df
+content_hash: 9d476a321aea9897
 ---
+
 # SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests
 
 **Conference**: ICLR 2026  
@@ -172,7 +178,7 @@ Evaluating default behavior only reflects "normal performance" and fails to capt
 - [\[ICLR 2026\] Steering the Herd: A Framework for LLM-Based Control of Social Learning](steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md)
 - [\[ACL 2026\] DIA-HARM: Dialectal Disparities in Harmful Content Detection Across 50 English Dialects](../../ACL2026/social_computing/dia-harm_dialectal_disparities_in_harmful_content_detection_across_50_english_di.md)
 - [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
-- [\[ICML 2026\] SCOPE: Selective Conformal Optimized Pairwise LLM Judging](../../ICML2026/social_computing/scope_selective_conformal_optimized_pairwise_llm_judging.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](../../ACL2026/social_computing/diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 
 </div>
 

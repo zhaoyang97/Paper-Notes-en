@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] FontCrafter reformulates artistic font generation as a visual in-context generation task. By concatenating reference element images with a blank canvas and feeding them into a pre-trained inpainting model (FLUX.1-Fill), it achieves high-fidelity element-driven font creation, significantly outperforming existing methods
+  [CVPR 2026][Image Generation][Artistic Font Generation] FontCrafter reformulates artistic font generation as a visual in-context generation task. By concatenating reference element images with a blank canvas and feeding them into a pre-trained inpainting model (FLUX.1-Fill), it achieves high-fidelity element-driven font creation, significantly outperforming existing methods in texture and structural fidelity.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Artistic Font Generation"
+  - "Element-driven"
+  - "Visual In-context Generation"
+  - "Image Inpainting"
+  - "Style Control"
 date: 2026-05-08
-content_hash: e275d2cb0f4aa4d6
+content_hash: e04526c917ca98a9
 ---
+
 # FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,10 @@ The model is trained using flow matching loss with a learning rate of $1 \times 
 ## Related Papers
 
 - [\[CVPR 2026\] PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback](posteromni_generalized_artistic_poster_creation_via_task_distillation_and_unifie.md)
-- [\[CVPR 2026\] Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)
 - [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
 - [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
 - [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
+- [\[CVPR 2026\] MatPedia: A Universal Generative Foundation for High-Fidelity Material Synthesis](matpedia_a_universal_generative_foundation_for_high-fidelity_material_synthesis.md)
 
 </div>
 

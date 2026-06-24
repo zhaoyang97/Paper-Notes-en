@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization
 description: >-
-  [CVPR 2026][Image Generation][Score Distillation Sampling] This work distills the editing capabilities of a single-image instruction editor (InstructPix2Pix) into a pre-trained multi-view diffusion model (SEVA) via Score Distillation Sampling (SDS). The latter's data-driven 3D prior serves as an "integrator," enabling consistent cross-view image editing even with only a few sp
+  [CVPR 2026][Image Generation][Multi-view editing] This work distills the editing capabilities of a single-image instruction editor (InstructPix2Pix) into a pre-trained multi-view diffusion model (SEVA) via Score Distillation Sampling (SDS). The latter's data-driven 3D prior serves as an "integrator," enabling consistent cross-view image editing even with only a few sparse views.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Score Distillation Sampling
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-view editing"
+  - "Sparse-view"
+  - "Score Distillation Sampling"
+  - "Model personalization"
+  - "Cross-view attention"
 date: 2026-05-08
-content_hash: bea0e8f174d1514c
+content_hash: f85c1d9304240395
 ---
+
 # InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Ablations on 6 representative edits (red text indicates weak results):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 - [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)
 - [\[CVPR 2026\] LaRP: Efficient Multi-View Inpainting with Latent Reprojection Priors](larp_efficient_multi-view_inpainting_with_latent_reprojection_priors.md)
 - [\[CVPR 2025\] SIR-DIFF: Sparse Image Sets Restoration with Multi-View Diffusion Model](../../CVPR2025/image_generation/sir-diff_sparse_image_sets_restoration_with_multi-view_diffusion_model.md)
 - [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](../../ICML2026/image_generation/viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
-- [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
 
 </div>
 

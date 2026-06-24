@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HandX: Scaling Bimanual Motion and Interaction Generation
 description: >-
-  [CVPR 2026][Human Understanding][Scaling Law] HandX is constructed as a unified bimanual motion generation infrastructure (comprising 54.2 hours of motion data + 485,000 fine-grained text annotations). A decoupled automatic annotation strategy (kinematic feature extraction + LLM reasoning for description generation) is proposed. Diffusion and autoregressive genera
+  [CVPR 2026][Human Understanding][Bimanual motion generation] HandX is constructed as a unified bimanual motion generation infrastructure (comprising 54.2 hours of motion data + 485,000 fine-grained text annotations). A decoupled automatic annotation strategy (kinematic feature extraction + LLM reasoning for description generation) is proposed. Diffusion and autoregressive generation paradigms are benchmarked, demonstrating clear data and model scaling trends.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Scaling Law
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Bimanual motion generation"
+  - "dexterous hand interaction"
+  - "motion capture dataset"
+  - "text-to-motion"
+  - "Scaling Law"
 date: 2026-05-08
-content_hash: 4813dbbef9a624f2
+content_hash: 6fad50d7ad507c50
 ---
+
 # HandX: Scaling Bimanual Motion and Interaction Generation
 
 **Conference**: CVPR 2026  
@@ -146,9 +151,9 @@ The diffusion model training objective is direct signal prediction (x-prediction
 
 - [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
 - [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
-- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
-- [\[CVPR 2026\] PolySLGen: Online Multimodal Speaking-Listening Reaction Generation in Polyadic Interaction](polyslgen_online_multimodal_speaking-listening_reaction_generation_in_polyadic_i.md)
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2026\] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation](open_the_motion_door_atomic_motion_decomposition_and_recomposition_for_open-voca.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
 
 </div>
 

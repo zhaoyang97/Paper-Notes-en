@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Interpretability with Identifiable Temporal-Instantaneous Representation
 description: >-
-  [NeurIPS 2025][Causal Inference][LLM interpretability] This paper proposes an identifiable temporal causal representation learning framework for the high-dimensional activation spaces of LLMs. By adopting a linearized fo…
+  [NeurIPS 2025][Causal Inference][LLM interpretability] This paper proposes an identifiable temporal causal representation learning framework for the high-dimensional activation spaces of LLMs. By adopting a linearized formulation that jointly models time-lagged and instantaneous causal relationships, it resolves the computational bottleneck that prevents existing CRL methods from scaling to LLM-scale dimensions, while preserving theoretical identifiability guarantees.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "temporal causality"
   - "identifiability"
 date: 2026-05-08
-content_hash: a592a700cbba03f4
+content_hash: d77f9e1b18cb117d
 ---
 
 # LLM Interpretability with Identifiable Temporal-Instantaneous Representation
@@ -190,11 +190,11 @@ From 128 to 1024 dimensions, MCC consistently remains at approximately 0.9, with
 
 ## Related Papers
 
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](../../ICLR2026/causal_inference/carl_preserving_causal_structure_in_representation_learning.md)
+- [\[ICML 2025\] Transformer-Based Spatial-Temporal Counterfactual Outcomes Estimation](../../ICML2025/causal_inference/transformer-based_spatial-temporal_counterfactual_outcomes_estimation.md)
 - [\[NeurIPS 2025\] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features](causality-induced_positional_encoding_for_transformer-based_representation_learn.md)
-- [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](../../ACL2026/causal_inference/parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
-- [\[ICLR 2026\] Validating Interpretability in siRNA Efficacy Prediction: A Perturbation-Based, Dataset-Aware Protocol](../../ICLR2026/causal_inference/validating_interpretability_in_sirna_efficacy_prediction_a_perturbation-based_da.md)
-- [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](../../ICLR2026/causal_inference/function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
-- [\[ACL 2026\] Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](../../ACL2026/causal_inference/learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)
+- [\[ICML 2025\] Learning Time-Aware Causal Representation for Model Generalization in Evolving Domains](../../ICML2025/causal_inference/learning_time-aware_causal_representation_for_model_generalization_in_evolving_d.md)
+- [\[CVPR 2025\] FG-VCE: Towards Fine-Grained Interpretability — Counterfactual Explanations for Misclassification with Saliency Partition](../../CVPR2025/causal_inference/towards_fine-grained_interpretability_counterfactual_explanations_for_misclassif.md)
 
 </div>
 

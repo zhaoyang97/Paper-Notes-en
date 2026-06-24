@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper proposes 4D-RGPT and the Perceptual 4D Distillation (P4D) framework, which enhances 4D perception by distilling knowledge such as depth and optical flow from a frozen 4D perceptual expert model into an MLLM. It also introduces R4D-Bench, the first region-level 4D video question-answering benchmark.
+  [CVPR 2026 Highlight][Model Compression][4D Understanding] This paper proposes 4D-RGPT and the Perceptual 4D Distillation (P4D) framework, which enhances 4D perception by distilling knowledge such as depth and optical flow from a frozen 4D perceptual expert model into an MLLM. It also introduces R4D-Bench, the first region-level 4D video question-answering benchmark.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026 Highlight"
+  - "Model Compression"
+  - "4D Understanding"
+  - "Region-level VQA"
+  - "Perceptual Distillation"
+  - "Timestamp Positional Encoding"
+  - "Depth Perception"
 date: 2026-05-08
-content_hash: dbfb976d1fb8c1cd
+content_hash: bbe5b054b3b6b695
 ---
+
 # 4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation
 
 **Conference**: CVPR 2026 Highlight  
@@ -158,8 +164,8 @@ Current 3D/4D VQA benchmarks either lack region prompts (general questions only)
 - [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](../../NeurIPS2025/model_compression/4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
 - [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](../../ICLR2026/model_compression/understanding_dataset_distillation_via_spectral_filtering.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
 - [\[CVPR 2026\] Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder](ultra-low_bitrate_perceptual_image_compression_with_shallow_encoder.md)
-- [\[CVPR 2026\] PlanaReLoc: Camera Relocalization in 3D Planar Primitives via Region-Based Structure Matching](planareloc_camera_relocalization_in_3d_planar_primitives_via_region-based_struct.md)
 
 </div>
 

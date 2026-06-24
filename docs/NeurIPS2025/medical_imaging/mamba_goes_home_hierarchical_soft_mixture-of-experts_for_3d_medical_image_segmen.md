@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][3D Medical Image Segmentation] This paper proposes Mamba-HoME, an architecture that integrates a Hierarchical Soft Mixture-of-Experts (HoME) with the Mamba SSM. Through a two-level token r…
+  [NeurIPS 2025][Medical Imaging][3D Medical Image Segmentation] This paper proposes Mamba-HoME, an architecture that integrates a Hierarchical Soft Mixture-of-Experts (HoME) with the Mamba SSM. Through a two-level token routing mechanism, it achieves local-to-global feature modeling and surpasses existing state-of-the-art methods on 3D medical image segmentation across CT, MRI, and ultrasound modalities, while maintaining linear computational complexity.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "State Space Models"
   - "Hierarchical Routing"
 date: 2026-05-08
-content_hash: ab60f98b73f6b96f
+content_hash: 635ce43f76362d95
 ---
 
 # Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation
@@ -137,11 +137,11 @@ The $\mathcal{L}_{\text{DiceCE}}$ loss function (Dice + Cross Entropy) is employ
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis](dual_mixture-of-experts_framework_for_discrete-time_survival_analysis.md)
 - [\[NeurIPS 2025\] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs](dyg-mamba_continuous_state_space_modeling_on_dynamic_graphs.md)
+- [\[NeurIPS 2025\] Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis](dual_mixture-of-experts_framework_for_discrete-time_survival_analysis.md)
+- [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](../../CVPR2026/medical_imaging/segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
-- [\[NeurIPS 2025\] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)
+- [\[ICML 2025\] I2MoE: Interpretable Multimodal Interaction-aware Mixture-of-Experts](../../ICML2025/medical_imaging/i2moe_interpretable_multimodal_interaction-aware_mixture-of-experts.md)
 
 </div>
 

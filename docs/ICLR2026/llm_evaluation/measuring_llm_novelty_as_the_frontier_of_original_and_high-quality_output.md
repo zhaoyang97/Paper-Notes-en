@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Measuring LLM Novelty as the Frontier of Original and High-Quality Output
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-judge] This paper proposes defining LLM "novelty" as the **harmonic mean of originality (the proportion of n-grams not seen in training data) and quality (task-specific scoring)**. Using this unified metric, the authors systematically characterize the factors that drive the novelty frontier across three open-data model famili
+  [ICLR 2026][LLM Evaluation][Novelty Measurement] This paper proposes defining LLM "novelty" as the **harmonic mean of originality (the proportion of n-grams not seen in training data) and quality (task-specific scoring)**. Using this unified metric, the authors systematically characterize the factors that drive the novelty frontier across three open-data model families and three creative tasks.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Novelty Measurement"
+  - "n-gram Originality"
+  - "LLM-as-judge"
+  - "Creativity Evaluation"
+  - "Post-training"
+  - "Inference-time methods"
 date: 2026-05-08
-content_hash: 612b910d21aa07bf
+content_hash: aa44a7e1ddbe5bb4
 ---
+
 # Measuring LLM Novelty as the Frontier of Original and High-Quality Output
 
 **Conference**: ICLR 2026  

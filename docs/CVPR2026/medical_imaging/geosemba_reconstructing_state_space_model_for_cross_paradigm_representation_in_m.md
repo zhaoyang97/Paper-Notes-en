@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Mamba] Addressing Mamba's issues where 2D images are flattened into 1D sequences—causing information to "propagate by scanning order rather than semantic relevance" and "spatial-channel decoupling"—GeoSemba introduces the Semantic-guided State Refiner (SSR) for geometrically conditioned cross-region semantic propagation and t
+  [CVPR 2026][Medical Imaging][Mamba] Addressing Mamba's issues where 2D images are flattened into 1D sequences—causing information to "propagate by scanning order rather than semantic relevance" and "spatial-channel decoupling"—GeoSemba introduces the Semantic-guided State Refiner (SSR) for geometrically conditioned cross-region semantic propagation and the Cross-dimensional Affinity Refiner (CAR) for coarse-to-fine spatial-channel selective enhancement. It refreshes segmentat…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Mamba
-  - State Space Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Mamba"
+  - "Medical Image Segmentation"
+  - "State Space Models"
+  - "Geometric Semantic Propagation"
+  - "Spatial-Channel Interaction"
 date: 2026-05-08
-content_hash: 7d08b2434400c132
+content_hash: 36e68d994e4c3aa8
 ---
+
 # GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -132,9 +136,9 @@ Ours achieves a **Gain** of +1.25% DSC and +1.75% IoU on average compared to Spa
 
 - [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
 - [\[NeurIPS 2025\] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs](../../NeurIPS2025/medical_imaging/dyg-mamba_continuous_state_space_modeling_on_dynamic_graphs.md)
+- [\[ICLR 2026\] BioTamperNet: Affinity-Guided State-Space Model Detecting Tampered Biomedical Images](../../ICLR2026/medical_imaging/biotampernet_affinity-guided_state-space_model_detecting_tampered_biomedical_ima.md)
 - [\[CVPR 2026\] From Infusion to Assimilation Distillation for Medical Image Segmentation](from_infusion_to_assimilation_distillation_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
-- [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
 
 </div>
 

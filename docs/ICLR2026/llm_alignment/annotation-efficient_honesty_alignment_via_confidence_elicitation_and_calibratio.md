@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Annotation-Efficient Honesty Alignment via Confidence Elicitation and Calibration
 description: >-
-  [ICLR 2026][Alignment & RLHF][AUROC] This paper decomposes "honesty alignment" (enabling LLMs to accurately state their confidence before answering) into an "Elicitation-then-Calibration" two-stage paradigm: first, the model is taught to externalize its internal confidence using annotation-free self-consistency signals; second, this elicited confidence is
+  [ICLR2026][LLM Alignment][Honesty Alignment] This paper decomposes "honesty alignment" (enabling LLMs to accurately state their confidence before answering) into an "Elicitation-then-Calibration" two-stage paradigm: first, the model is taught to externalize its internal confidence using annotation-free self-consistency signals; second, this elicited confidence is calibrated to actual accuracy using a minimal amount of correctness labels (~1k samples…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - AUROC
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Honesty Alignment"
+  - "Confidence Calibration"
+  - "Self-consistency"
+  - "Annotation Efficiency"
+  - "AUROC"
 date: 2026-05-08
-content_hash: cae79f1fcf3ff66a
+content_hash: da603d6c6fdc85f9
 ---
+
 # Annotation-Efficient Honesty Alignment via Confidence Elicitation and Calibration
 
 **Conference**: ICLR2026  

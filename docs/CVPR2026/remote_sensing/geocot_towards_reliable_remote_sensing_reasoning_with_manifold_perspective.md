@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective
 description: >-
-  [CVPR 2026][Remote Sensing][Chain-of-Thought] GeoCoT explicitly integrates the "low-dimensional manifold" prior of remote sensing (RS) images into the Mixture-of-Experts (MoE) architecture. By using spectral clustering and low-rank compression to project redundant visual tokens into low-rank subspaces, it guides sparse expert allocation via manifold structure. Com
+  [CVPR 2026][Remote Sensing][RS-MLLM] GeoCoT explicitly integrates the "low-dimensional manifold" prior of remote sensing (RS) images into the Mixture-of-Experts (MoE) architecture. By using spectral clustering and low-rank compression to project redundant visual tokens into low-rank subspaces, it guides sparse expert allocation via manifold structure. Combined with a multi-stage training pipeline (CPT → Cold-start → RSV-GRPO reinforcement learning) and the self-constructed RS…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Chain-of-Thought
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "RS-MLLM"
+  - "Manifold MoE"
+  - "Chain-of-Thought"
+  - "Reinforcement Learning"
+  - "Low-rank Subspace"
 date: 2026-05-08
-content_hash: 2007678d855f2814
+content_hash: 431c97831ad53333
 ---
+
 # GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective
 
 **Conference**: CVPR 2026  
@@ -159,9 +163,9 @@ Expert count ablation (Table 4, post Cold-start):
 ## Related Papers
 
 - [\[CVPR 2025\] Think and Answer ME: Benchmarking and Exploring Multi-Entity Reasoning Grounding in Remote Sensing](../../CVPR2025/remote_sensing/think_and_answer_me_benchmarking_and_exploring_multi-entity_reasoning_grounding_.md)
-- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
+- [\[ICLR 2026\] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models](../../ICLR2026/remote_sensing/towards_faithful_reasoning_in_remote_sensing_a_perceptually-grounded_geospatial_.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation](recs4r_bridging_semantics_and_geometry_for_referring_remote_sensing_interpretati.md)
-- [\[CVPR 2026\] Beyond Endpoints: Path-Centric Reasoning for Vectorized Off-Road Network Extraction](beyond_endpoints_path-centric_reasoning_for_vectorized_off-road_network_extracti.md)
 - [\[CVPR 2026\] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)
 
 </div>

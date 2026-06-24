@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval
 description: >-
-  [NeurIPS 2025][Robotics][object-goal navigation] Through discrete memory caching (group-independent KV cache computation with selective loading), attention-driven clustering (LLM shallow-layer attention guiding grouping)…
+  [NeurIPS 2025][Robotics][object-goal navigation] Through discrete memory caching (group-independent KV cache computation with selective loading), attention-driven clustering (LLM shallow-layer attention guiding grouping), and semantics-aware retrieval (CLIP + knapsack problem adapted to varying memory budgets), EfficientNav is the first system to achieve zero-shot ObjNav on Jetson Orin using LLaMA-3.2-11b, surpassing the GPT-4 baseline by 11.1% SR while reducing real-time lat…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot navigation"
   - "edge deployment"
 date: 2026-05-08
-content_hash: fc9b9050f568d7aa
+content_hash: 5e109655f214806c
 ---
 
 # EfficientNav: Towards On-Device Object-Goal Navigation with Navigation Map Caching and Retrieval
@@ -183,11 +183,11 @@ A small–large model collaboration paradigm: CLIP handles simple group selectio
 
 ## Related Papers
 
-- [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](../../ACL2026/robotics/govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
+- [\[NeurIPS 2025\] C-NAV: Towards Self-Evolving Continual Object Navigation in Open World](c-nav_towards_self-evolving_continual_object_navigation_in_open_world.md)
+- [\[CVPR 2026\] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation](../../CVPR2026/robotics/memory-augmented_scene_understanding_and_exploration_for_open-world_aerial_objec.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](../../ICLR2026/robotics/uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 - [\[NeurIPS 2025\] DynaNav: Dynamic Feature and Layer Selection for Efficient Visual Navigation](dynanav_dynamic_feature_and_layer_selection_for_efficient_visual_navigation.md)
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
-- [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
 
 </div>
 

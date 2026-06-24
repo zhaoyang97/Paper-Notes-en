@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Direct 3D-Aware Object Insertion via Decomposed Visual Proxies
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] DIRECT upgrades "object insertion" from 2D inpainting to a **pose-controllable** task: it first lifts a reference image into an interactive 3D proxy using an off-the-shelf image-to-3D model, renders dense geometric condition maps based on user-specified 6-DoF poses, and then injects "geometry, appearance, and context"
+  [ICML 2026][Image Generation][Object Insertion] DIRECT upgrades "object insertion" from 2D inpainting to a **pose-controllable** task: it first lifts a reference image into an interactive 3D proxy using an off-the-shelf image-to-3D model, renders dense geometric condition maps based on user-specified 6-DoF poses, and then injects "geometry, appearance, and context" conditions into the diffusion model via **decomposed independent pathways**. This ensures strict adherence to sp…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - LoRA
+  - "ICML 2026"
+  - "Image Generation"
+  - "Object Insertion"
+  - "Pose Controllable"
+  - "3D Visual Proxy"
+  - "Decoupled Injection"
+  - "Diffusion Models"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 9a08d272c0393f8b
+content_hash: f397f90ee737f3f5
 ---
+
 # Direct 3D-Aware Object Insertion via Decomposed Visual Proxies
 
 **Conference**: ICML 2026  
@@ -119,15 +124,16 @@ DIRECT leads across all metrics. The FLUX version achieves SOTA with a Matching 
 - Value: ⭐⭐⭐⭐ (Highly practical for AR/VR and controllable content creation.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SpatialDiff: 3D-Aware Object Movement via Implicit Spatial Modeling](../../CVPR2026/image_generation/spatialdiff_3d-aware_object_movement_via_implicit_spatial_modeling.md)
 - [\[CVPR 2026\] EffectErase: Joint Video Object Removal and Insertion for High-Quality Effect Erasing](../../CVPR2026/image_generation/effecterase_joint_video_object_removal_and_insertion_for_high-quality_effect_era.md)
+- [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
 - [\[ICCV 2025\] OmniPaint: Mastering Object-Oriented Editing via Disentangled Insertion-Removal Inpainting](../../ICCV2025/image_generation/omnipaint_mastering_object-oriented_editing_via_disentangled_insertion-removal_i.md)
-- [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](../../ICLR2026/image_generation/direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
-- [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](../../CVPR2026/image_generation/compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](../../CVPR2026/image_generation/vihoi_human-object_interaction_synthesis_with_visual_priors.md)
 
 </div>
 

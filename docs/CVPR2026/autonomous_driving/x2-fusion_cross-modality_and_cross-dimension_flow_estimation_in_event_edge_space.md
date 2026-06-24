@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes x2-Fusion, which constructs a unified Event Edge Space anchored by the spatio-temporal edge signals of event cameras. By aligning Image/LiDAR/Event features into a homogeneous edge space, the method performs reliability-aware adaptive fusion and cross-dimensional contrastive learning to simultaneously est
+  [CVPR 2026][Autonomous Driving][Optical Flow] Ours proposes x2-Fusion, which constructs a unified Event Edge Space anchored by the spatio-temporal edge signals of event cameras. By aligning Image/LiDAR/Event features into a homogeneous edge space, the method performs reliability-aware adaptive fusion and cross-dimensional contrastive learning to simultaneously estimate 2D optical flow and 3D scene flow, achieving SOTA results on both synthetic and real-world datasets.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Optical Flow"
+  - "Scene Flow"
+  - "Event Camera"
+  - "Multi-modal Fusion"
+  - "Edge Space"
 date: 2026-05-08
-content_hash: 71b96cf0a68584ad
+content_hash: 552afe224773c224
 ---
+
 # x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space
 
 **Conference**: CVPR 2026  
@@ -160,11 +166,11 @@ Optical flow (2D) and scene flow (3D) describe the same motion projected across 
 
 ## Related Papers
 
-- [\[ICLR 2026\] x²-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](../../ICLR2026/autonomous_driving/x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
-- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
-- [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
 - [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
-- [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
+- [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](../../ICLR2026/autonomous_driving/asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
+- [\[CVPR 2026\] Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving](sensor2sensor_cross-embodiment_sensor_conversion_for_autonomous_driving.md)
+- [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
+- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
 
 </div>
 

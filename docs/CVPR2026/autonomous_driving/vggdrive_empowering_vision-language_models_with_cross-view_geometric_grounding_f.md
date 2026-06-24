@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][VLM] The authors propose the VGGDrive framework, which empowers VLMs with cross-view geometric awareness via a frozen 3D vision foundation model (VGGT). By designing a plug-and-play CVGE module, 3D features are hierarchically and adaptively injected into the 2D visual embeddings of each VLM layer, achieving significant perf
+  [CVPR 2026][Autonomous Driving][3D Geometric Perception] The authors propose the VGGDrive framework, which empowers VLMs with cross-view geometric awareness via a frozen 3D vision foundation model (VGGT). By designing a plug-and-play CVGE module, 3D features are hierarchically and adaptively injected into the 2D visual embeddings of each VLM layer, achieving significant performance gains across five autonomous driving benchmarks.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - VLM
-  - VGGT
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "3D Geometric Perception"
+  - "VLM"
+  - "VGGT"
+  - "Cross-View"
 date: 2026-05-08
-content_hash: 2d36271648770d56
+content_hash: 5657a827b690ac75
 ---
+
 # VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -146,10 +149,10 @@ Only the parameters of the CVGE are optimized using standard cross-entropy loss.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
 - [\[CVPR 2026\] DriveVLN: Towards Mapless Vision-and-Language Navigation in Autonomous Driving](drivevln_towards_mapless_vision-and-language_navigation_in_autonomous_driving.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
 - [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
+- [\[ICLR 2026\] Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving](../../ICLR2026/autonomous_driving/discrete_diffusion_for_reflective_vision-language-action_models_in_autonomous_dr.md)
 - [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
 
 </div>

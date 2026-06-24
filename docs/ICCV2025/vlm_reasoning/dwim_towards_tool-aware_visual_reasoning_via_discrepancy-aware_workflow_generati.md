@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][Compositional Visual Reasoning] This paper proposes the DWIM framework, which employs a discrepancy-aware workflow generation strategy to curate high-quality training data and an instruct-mask…
+  [ICCV 2025][VLM Reasoning][Compositional Visual Reasoning] This paper proposes the DWIM framework, which employs a discrepancy-aware workflow generation strategy to curate high-quality training data and an instruct-masking fine-tuning strategy to clone only effective actions, endowing LLMs with tool-aware capability for compositional visual reasoning and achieving state-of-the-art results on multiple VR benchmarks.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Compositional Visual Reasoning"
   - "Tool-awareness"
   - "Workflow Generation"
   - "Instruct-Masking Fine-tuning"
   - "LLM"
 date: 2026-05-08
-content_hash: bc1a9cd02c6bf951
+content_hash: a7bb9352821a7ba1
 ---
 
 # DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning
@@ -133,11 +133,11 @@ Experiments demonstrate that DWIM achieves optimal performance across various VR
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Learning to Instruct for Visual Instruction Tuning](../../NeurIPS2025/multimodal_vlm/learning_to_instruct_for_visual_instruction_tuning.md)
-- [\[ICCV 2025\] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
-- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
 - [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
-- [\[ICCV 2025\] Attention to the Burstiness in Visual Prompt Tuning!](attention_to_the_burstiness_in_visual_prompt_tuning.md)
+- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](../../CVPR2026/vlm_reasoning/codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
+- [\[ICCV 2025\] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning](mmat1m_a_large_reasoning_dataset_for_multimodal_agent_tuning.md)
+- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](../../CVPR2026/vlm_reasoning/visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](../../ICLR2026/vlm_reasoning/perception-aware_policy_optimization_for_multimodal_reasoning.md)
 
 </div>
 

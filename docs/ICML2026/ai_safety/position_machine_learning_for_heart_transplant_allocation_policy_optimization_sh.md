@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives
 description: >-
-  [ICML 2026][AI Safety][RLHF] This ICML 2026 position paper argues, using historical UNOS data, that the next-generation ML strategies for the U.S. heart transplant allocation system must model the incentive misalignment among "organ procurement organizations (OPOs), transplant centers, physicians, patients, and regulators" as a first-class citizen
+  [ICML 2026][AI Safety][Organ Allocation] This ICML 2026 position paper argues, using historical UNOS data, that the next-generation ML strategies for the U.S. heart transplant allocation system must model the incentive misalignment among "organ procurement organizations (OPOs), transplant centers, physicians, patients, and regulators" as a first-class citizen. It calls for integrating mechanism design, strategic classification, causal inference…
 tags:
-  - ICML 2026
-  - AI Safety
-  - RLHF
+  - "ICML 2026"
+  - "AI Safety"
+  - "Organ Allocation"
+  - "Incentive Alignment"
+  - "Strategic Classification"
+  - "Mechanism Design"
+  - "RLHF"
 date: 2026-05-08
-content_hash: cf5f737d0ef33d7f
+content_hash: 125300f61bcce1ef
 ---
+
 # Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives
 
 **Conference**: ICML 2026  
@@ -107,10 +112,10 @@ Note: As a position paper, it uses statistical observations from UNOS 2010–202
 ## Related Papers
 
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
-- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
 - [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](../../NeurIPS2025/ai_safety/position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
-- [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
+- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[ICML 2026\] When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery](when_should_an_ai_scientist_stop_verifiable_experiment_steering_and_refusal_for_.md)
 
 </div>
 

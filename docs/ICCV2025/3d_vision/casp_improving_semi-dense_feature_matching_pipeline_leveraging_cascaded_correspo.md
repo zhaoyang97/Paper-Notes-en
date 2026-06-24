@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CasP: Improving Semi-Dense Feature Matching Pipeline Leveraging Cascaded Correspondence Priors for Guidance
 description: >-
-  [ICCV 2025][3D Vision][Feature Matching] This paper proposes CasP, a cascaded matching pipeline that decomposes the matching stage into a one-to-many prior matching at 1/16 scale and a one-to-one fine matching at 1/8 sca…
+  [ICCV 2025][3D Vision][Feature Matching] This paper proposes CasP, a cascaded matching pipeline that decomposes the matching stage into a one-to-many prior matching at 1/16 scale and a one-to-one fine matching at 1/8 scale, achieving up to 2.2× speedup while maintaining accuracy and significantly improving cross-domain generalization.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Efficiency"
   - "Cross-Domain Generalization"
 date: 2026-05-08
-content_hash: 349d483bae360bfd
+content_hash: 3cfbe29169159180
 ---
 
 # CasP: Improving Semi-Dense Feature Matching Pipeline Leveraging Cascaded Correspondence Priors for Guidance
@@ -154,11 +154,11 @@ $$L = \lambda_1 L_{1/16}^c + \lambda_2 L_{1/8}^c + \lambda_3 L_{1/1}^f + \lambda
 
 ## Related Papers
 
+- [\[CVPR 2026\] TextFM: Robust Semi-dense Feature Matching with Language Guidance](../../CVPR2026/3d_vision/textfm_robust_semi-dense_feature_matching_with_language_guidance.md)
+- [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
 - [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 - [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 - [\[ICCV 2025\] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction](s3r-gs_streamlining_the_pipeline_for_large-scale_street_scene_reconstruction.md)
-- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](../../CVPR2026/3d_vision/asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
-- [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
 
 </div>
 

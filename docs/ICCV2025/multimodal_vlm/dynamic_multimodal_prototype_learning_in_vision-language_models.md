@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Multimodal Prototype Learning in Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][test-time adaptation] This paper proposes ProtoMM, a training-free multimodal prototype learning framework that models prototypes as discrete distributions over textual descriptions and visual…
+  [ICCV 2025][Multimodal VLM][test-time adaptation] This paper proposes ProtoMM, a training-free multimodal prototype learning framework that models prototypes as discrete distributions over textual descriptions and visual particles. By leveraging optimal transport to dynamically update multimodal prototypes, ProtoMM achieves state-of-the-art performance across 15 zero-shot benchmarks.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "optimal transport"
   - "Zero-Shot Classification"
 date: 2026-05-08
-content_hash: 2334ce366a546f04
+content_hash: 0fdad79c9322d8da
 ---
 
 # Dynamic Multimodal Prototype Learning in Vision-Language Models
@@ -147,9 +147,9 @@ This method is **training-free** and requires no gradient updates or optimizatio
 
 - [\[ICCV 2025\] Multi-Cache Enhanced Prototype Learning for Test-Time Generalization of Vision-Language Models](multi-cache_enhanced_prototype_learning_for_test-time_generalization_of_vision-l.md)
 - [\[ICCV 2025\] Interpretable Zero-Shot Learning with Locally-Aligned Vision-Language Model](interpretable_zero-shot_learning_with_locally-aligned_vision-language_model.md)
-- [\[ICCV 2025\] OpenVision: A Fully-Open, Cost-Effective Family of Advanced Vision Encoders for Multimodal Learning](openvision_a_fully-open_cost-effective_family_of_advanced_vision_encoders_for_mu.md)
+- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](../../CVPR2026/multimodal_vlm/enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
+- [\[CVPR 2025\] NLPrompt: Noise-Label Prompt Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/nlprompt_noise-label_prompt_learning_for_vision-language_models.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
-- [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching DiT] PROMO is based on the FLUX Flow Matching DiT backbone. Through latent space multimodal condition concatenation, temporal self-reference KV caching, 3D-RoPE grouped conditions, and a fine-tuned VLM style prompt system, it achieves high-fidelity and efficient multi-garment virtual try-on without the need for a traditiona
+  [CVPR 2026][Image Generation][Virtual Try-On] PROMO is based on the FLUX Flow Matching DiT backbone. Through latent space multimodal condition concatenation, temporal self-reference KV caching, 3D-RoPE grouped conditions, and a fine-tuned VLM style prompt system, it achieves high-fidelity and efficient multi-garment virtual try-on without the need for a traditional reference network. The inference speed is 2.4x faster than the non-accelerated version…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Virtual Try-On"
+  - "Flow Matching DiT"
+  - "Multi-condition Generation"
+  - "Temporal Self-Reference"
+  - "Outfit Style Control"
 date: 2026-05-08
-content_hash: 0c03342bb472ba5e
+content_hash: eeaeb3e32022d027
 ---
+
 # PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On
 
 **Conference**: CVPR 2026  
@@ -138,8 +143,8 @@ While previous designs address fidelity and efficiency, this component enhances 
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
 - [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
 - [\[CVPR 2025\] Shining Yourself: High-Fidelity Ornaments Virtual Try-on with Diffusion Model](../../CVPR2025/image_generation/shining_yourself_high-fidelity_ornaments_virtual_try-on_with_diffusion_model.md)
+- [\[CVPR 2026\] PG-VTON: Single-Pass Training-Free Virtual Try-On via Patch-Guided Reference Alignment](pg-vton_single-pass_training-free_virtual_try-on_via_patch-guided_reference_alig.md)
 - [\[CVPR 2026\] FEAT: Fashion Editing and Try-On from Any Design](feat_fashion_editing_and_try-on_from_any_design.md)
-- [\[CVPR 2026\] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training](dit360_high-fidelity_panoramic_image_generation_via_hybrid_training.md)
 
 </div>
 

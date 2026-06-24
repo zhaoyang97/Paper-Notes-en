@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SPREAD：基于采样的高效自适应扩散 Pareto 前沿精化
+  [Paper Note] SPREAD: Efficient Sampling-based Adaptive Diffusion Pareto Frontier Refinement
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] SPREAD treats the conditional DDPM as a multi-objective optimization (MOO) solver: it first trains a Diffusion Transformer conditioned on "objective values," then injects a guidance term consisting of a "multi-gradient descent direction + Gaussian RBF repulsion" into each reverse diffusion step. This enables a batch of
+  [ICLR 2026][Optimization][Multi-objective optimization] SPREAD treats the conditional DDPM as a multi-objective optimization (MOO) solver: it first trains a Diffusion Transformer conditioned on "objective values," then injects a guidance term consisting of a "multi-gradient descent direction + Gaussian RBF repulsion" into each reverse diffusion step. This enables a batch of candidate points to converge rapidly to the Pareto optimality while spreading uniformly to cover the en…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Multi-objective optimization"
+  - "conditional diffusion models"
+  - "multi-gradient descent"
+  - "Pareto frontier"
+  - "diversity"
 date: 2026-05-08
-content_hash: 97049a0102533e5e
+content_hash: d04ef47247d83717
 ---
+
 # SPREAD: Efficient Sampling-based Adaptive Diffusion Pareto Frontier Refinement
 
 **Conference**: ICLR 2026  
@@ -142,11 +148,11 @@ SPREAD matches or outperforms baselines on bi-objective problems and shows incre
 
 ## Related Papers
 
+- [\[ICLR 2026\] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization](diffusion-dfl_decision-focused_diffusion_models_for_stochastic_optimization.md)
 - [\[ICML 2026\] Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning](../../ICML2026/optimization/diversity-driven_offline_multi-objective_optimization_via_nested_pareto_set_lear.md)
-- [\[AAAI 2026\] Pareto-Grid-Guided Large Language Models for Fast and High-Quality Heuristics Design in Multi-Objective Combinatorial Optimization](../../AAAI2026/optimization/pareto-grid-guided_large_language_models_for_fast_and_high-quality_heuristics_de.md)
-- [\[ICLR 2026\] Gradient-Based Diversity Optimization with Differentiable Top-$k$ Objective](gradient-based_diversity_optimization_with_differentiable_top-k_objective.md)
-- [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
-- [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
+- [\[ICLR 2026\] NExCO: Native Solution Expansion for Diffusion-based Combinatorial Optimization](nexco_native_solution_expansion_for_diffusion-based_combinatorial_optimization.md)
+- [\[NeurIPS 2025\] Efficient Adaptive Experimentation with Noncompliance](../../NeurIPS2025/optimization/efficient_adaptive_experimentation_with_noncompliance.md)
+- [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](../../NeurIPS2025/optimization/efficient_adaptive_federated_optimization.md)
 
 </div>
 

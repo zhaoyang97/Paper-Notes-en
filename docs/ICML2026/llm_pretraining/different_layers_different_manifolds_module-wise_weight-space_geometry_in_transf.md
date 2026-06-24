@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Different Layers, Different Manifolds: Module-Wise Weight-Space Geometry in Transformer Optimization
 description: >-
-  [ICML 2026][Pretraining][Manifold Muon] This workshop paper systematically compares "module-wise manifold constraint" schemes during GPT-2 small pre-training. It discovers that applying strong spectral constraints (Stiefel) to Attention layers while applying weak constraints (DGram) to MLP layers achieves the best performance. Conversely, training Attention
+  [ICML2026 (Workshop on Weight-Space Symmetries)][LLM Pretraining][Manifold Muon] This workshop paper systematically compares "module-wise manifold constraint" schemes during GPT-2 small pre-training. It discovers that applying strong spectral constraints (Stiefel) to Attention layers while applying weak constraints (DGram) to MLP layers achieves the best performance. Conversely, training Attention layers with DGram leads to divergence, for which the authors provide a mechanis…
 tags:
-  - ICML 2026
-  - Pretraining
-  - Manifold Muon
+  - "ICML2026 (Workshop on Weight-Space Symmetries)"
+  - "LLM Pretraining"
+  - "Manifold Muon"
+  - "Stiefel Manifold"
+  - "DGram Constraint"
+  - "Singular Value Swelling"
+  - "Softmax Saturation"
 date: 2026-05-08
-content_hash: b162d748a0455d1f
+content_hash: cecd4299a9abb9cc
 ---
+
 # Different Layers, Different Manifolds: Module-Wise Weight-Space Geometry in Transformer Optimization
 
 **Conference**: ICML2026 (Workshop on Weight-Space Symmetries)  

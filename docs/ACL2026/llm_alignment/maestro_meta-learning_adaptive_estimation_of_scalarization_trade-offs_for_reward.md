@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization
 description: >-
-  [ACL 2026][Alignment & RLHF][GRPO] Ours proposes MAESTRO, which reformulates reward scalarization in GRPO as a contextual bandit problem. By utilizing a lightweight Conductor network to leverage last-layer hidden states of the model, it adaptively selects reward weights for each prompt-response pair, consistently outperforming static and single reward b
+  [ACL 2026][LLM Alignment][Open-domain alignment] Ours proposes MAESTRO, which reformulates reward scalarization in GRPO as a contextual bandit problem. By utilizing a lightweight Conductor network to leverage last-layer hidden states of the model, it adaptively selects reward weights for each prompt-response pair, consistently outperforming static and single reward baselines across seven open-domain benchmarks.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Open-domain alignment"
+  - "Multi-objective optimization"
+  - "Reward orchestration"
+  - "Meta-learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 3b35e49a3271109d
+content_hash: 576e26e0ca80fb56
 ---
+
 # MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization
 
 **Conference**: ACL 2026  
@@ -143,11 +148,11 @@ The reward space consists of $K=5$ components: perplexity reward $r_{\text{ppl}}
 
 ## Related Papers
 
-- [\[ACL 2025\] Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning](../../ACL2025/llm_alignment/balancing_the_budget_understanding_trade-offs_between_supervised_and_preference-.md)
-- [\[ACL 2026\] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System](ares_adaptive_red-teaming_and_end-to-end_repair_of_policy-reward_system.md)
-- [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
-- [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
+- [\[ICLR 2026\] Cognitive models can reveal interpretable value trade-offs in language models](../../ICLR2026/llm_alignment/cognitive_models_can_reveal_interpretable_value_trade-offs_in_language_models.md)
 - [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
+- [\[ACL 2025\] Balancing the Budget: Understanding Trade-offs Between Supervised and Preference-Based Finetuning](../../ACL2025/llm_alignment/balancing_the_budget_understanding_trade-offs_between_supervised_and_preference-.md)
+- [\[ICLR 2026\] Aligner, Diagnose Thyself: A Meta-Learning Paradigm for Fusing Intrinsic Feedback in Preference Alignment](../../ICLR2026/llm_alignment/aligner_diagnose_thyself_a_meta-learning_paradigm_for_fusing_intrinsic_feedback_.md)
+- [\[ACL 2026\] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System](ares_adaptive_red-teaming_and_end-to-end_repair_of_policy-reward_system.md)
 
 </div>
 

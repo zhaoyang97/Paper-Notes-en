@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis
 description: >-
-  [ICCV 2025][Image Generation][Deepfake Detection] This paper proposes DeepShield, a deepfake video detection framework that combines Local Patch Guidance (LPG) and Global Forgery Diversification (GFD). It provides patch-…
+  [ICCV 2025][Image Generation][Deepfake Detection] This paper proposes DeepShield, a deepfake video detection framework that combines Local Patch Guidance (LPG) and Global Forgery Diversification (GFD). It provides patch-level supervision via spatiotemporal artifact modeling and synthesizes diverse forgery representations through distribution-level feature augmentation, significantly outperforming state-of-the-art methods in cross-dataset and cross-manipulation evaluations.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Feature Augmentation"
   - "Cross-Domain Generalization"
 date: 2026-05-08
-content_hash: 799640e105e48e42
+content_hash: 16a5371c0c0bc5f9
 ---
 
 # DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis
@@ -156,10 +156,10 @@ DeepShield surpasses the previous best by **6.9%** and **5.8%** on the most chal
 ## Related Papers
 
 - [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
-- [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](../../ICML2026/image_generation/from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
 - [\[ICML 2026\] Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection](../../ICML2026/image_generation/divide_and_conquer_reliable_multi-view_evidential_learning_for_deepfake_detectio.md)
+- [\[ICCV 2025\] Semantic Discrepancy-aware Detector for Image Forgery Identification](semantic_discrepancy-aware_detector_for_image_forgery_identification.md)
 - [\[NeurIPS 2025\] FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies](../../NeurIPS2025/image_generation/ferretnet_efficient_synthetic_image_detection_via_local_pixel_dependencies.md)
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](../../CVPR2026/image_generation/mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
+- [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](../../ICML2026/image_generation/from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
 
 </div>
 

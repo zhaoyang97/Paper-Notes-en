@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Cylindrical Representation Hypothesis for Language Model Steering
 description: >-
-  [ICML 2026][LLM (Other)][Activation Steering] This paper proposes the Cylindrical Representation Hypothesis (CRH). By maintaining "concept linearity" while abandoning the orthogonality assumption of LRH, it demonstrates that the superposition of concept vectors naturally induces a cylindrical geometry consisting of an "axis + normal plane + sensitive sector." This
+  [ICML 2026][LLM (Other)][Activation Steering] This paper proposes the Cylindrical Representation Hypothesis (CRH). By maintaining "concept linearity" while abandoning the orthogonality assumption of LRH, it demonstrates that the superposition of concept vectors naturally induces a cylindrical geometry consisting of an "axis + normal plane + sensitive sector." This provides the first geometric explanation for why activation steering is unpredictable at the sample level but obs…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Activation Steering
-  - Linear Representation Hypothesis
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Activation Steering"
+  - "Linear Representation Hypothesis"
+  - "Representation Geometry"
+  - "Controllability"
+  - "Concept Vectors"
 date: 2026-05-08
-content_hash: 09572416839ac648
+content_hash: c0ae08e566b9815f
 ---
+
 # The Cylindrical Representation Hypothesis for Language Model Steering
 
 **Conference**: ICML 2026  
@@ -114,9 +118,9 @@ Experiments were synchronized and validated on LLaMA2-7B-Chat layers 16/24 with 
 
 - [\[ICLR 2026\] The Lattice Representation Hypothesis of Large Language Models](../../ICLR2026/llm_nlp/the_lattice_representation_hypothesis_of_large_language_models.md)
 - [\[ACL 2025\] Representation Bending for Large Language Model Safety](../../ACL2025/llm_nlp/repbend_representation_bending_safety.md)
-- [\[ACL 2025\] SR-LLM: Rethinking the Structured Representation in Large Language Model](../../ACL2025/llm_nlp/sr-llm_rethinking_the_structured_representation_in_large_language_model.md)
-- [\[ICML 2026\] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State](a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu.md)
+- [\[ICML 2026\] Creative Collision: Directorial Persona Steering and Competition in Large Language Models](creative_collision_directorial_persona_steering_and_competition_in_large_languag.md)
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
+- [\[ICLR 2026\] PerFit: Exploring Personalization Shifts in Representation Space of LLMs](../../ICLR2026/llm_nlp/perfit_exploring_personalization_shifts_in_representation_space_of_llms.md)
 
 </div>
 

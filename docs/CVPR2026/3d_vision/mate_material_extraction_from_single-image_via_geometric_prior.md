@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MatE: Material Extraction from Single-Image via Geometric Prior
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MatE employs a coarse-to-fine framework with "coarse rectification via depth geometric prior + refinement via dual-branch diffusion" to extract four tileable PBR material maps (albedo / normal / roughness / height) in parallel from a specified region in a single real-world image. This approach overcomes the limitations
+  [CVPR 2026][3D Vision][PBR Material Extraction] MatE employs a coarse-to-fine framework with "coarse rectification via depth geometric prior + refinement via dual-branch diffusion" to extract four tileable PBR material maps (albedo / normal / roughness / height) in parallel from a specified region in a single real-world image. This approach overcomes the limitations of existing methods, such as viewpoint overfitting in LoRA-based methods and sequential error accumulation in v…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "PBR Material Extraction"
+  - "Geometric Prior Rectification"
+  - "Dual-branch Diffusion"
+  - "Data Synthesis"
+  - "Single-image Inverse Rendering"
 date: 2026-05-08
-content_hash: e64af454fb373099
+content_hash: 7ed822bff6e0f11b
 ---
+
 # MatE: Material Extraction from Single-Image via Geometric Prior
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ Conditioning mechanism ablation: CLIP injection yielded LPIPS 0.674 (lacks spati
 
 ## Related Papers
 
-- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
 - [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] Image-Guided Geometric Stylization of 3D Meshes](image-guided_geometric_stylization_of_3d_meshes.md)
+- [\[ECCV 2024\] ZeST: Zero-Shot Material Transfer from a Single Image](../../ECCV2024/3d_vision/zest_zero-shot_material_transfer_from_a_single_image.md)
 - [\[CVPR 2026\] Material Magic Wand: Material-Aware Grouping of 3D Parts in Untextured Meshes](material_magic_wand_material-aware_grouping_of_3d_parts_in_untextured_meshes.md)
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
+- [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
 
 </div>
 

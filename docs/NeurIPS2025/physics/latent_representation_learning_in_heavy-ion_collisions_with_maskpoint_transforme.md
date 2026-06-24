@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer
 description: >-
-  [NEURIPS2025 (Workshop: ML and Physical Sciences)][Physics & Scientific Computing][heavy-ion collisions] This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-st…
+  [NEURIPS2025 (Workshop: ML and Physical Sciences)][Physics & Scientific Computing][heavy-ion collisions] This work introduces a masked point cloud Transformer autoencoder to heavy-ion collision analysis. Through a two-stage paradigm of self-supervised pre-training followed by supervised fine-tuning, the model learns nonlinear latent representations substantially stronger than those of PointNet—reducing PC1 distribution overlap from 2.42% to 0.27%—providing a general feature l…
 tags:
   - "NEURIPS2025 (Workshop: ML and Physical Sciences)"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "self-supervised pre-training"
   - "quark-gluon plasma"
 date: 2026-05-08
-content_hash: 7844e02d0cf4326c
+content_hash: d33610a901702da1
 ---
 
 # Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer
@@ -143,9 +143,9 @@ Two-stage paradigm:
 
 - [\[NeurIPS 2025\] POLARIS: A High-contrast Polarimetric Imaging Benchmark Dataset for Exoplanetary Disk Representation Learning](polaris_a_high-contrast_polarimetric_imaging_benchmark_dataset_for_exoplanetary_.md)
 - [\[NeurIPS 2025\] Why Is Attention Sparse in Particle Transformer?](why_is_attention_sparse_in_particle_transformer.md)
+- [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](../../ICLR2026/physics/disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
 - [\[ICML 2026\] From Generalist to Specialist Representation](../../ICML2026/physics/from_generalist_to_specialist_representation.md)
-- [\[AAAI 2026\] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer](../../AAAI2026/physics/flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-.md)
-- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
+- [\[ICML 2025\] Causal Discovery of Latent Variables in Galactic Archaeology](../../ICML2025/physics/causal_discovery_of_latent_variables_in_galactic_archaeology.md)
 
 </div>
 

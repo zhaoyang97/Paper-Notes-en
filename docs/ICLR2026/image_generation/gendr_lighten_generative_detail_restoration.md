@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GenDR: Lighten Generative Detail Restoration
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] GenDR is proposed as a lightweight one-step diffusion super-resolution (SR) model for generative detail restoration. It identifies a fundamental divergence between T2I and SR objectives (T2I requires multi-step + 4-channel latents, whereas SR needs fewer steps + 16-channel latents). The authors build a custom SD2.1-VAE
+  [ICLR 2026][Image Generation][One-step super-resolution] GenDR is proposed as a lightweight one-step diffusion super-resolution (SR) model for generative detail restoration. It identifies a fundamental divergence between T2I and SR objectives (T2I requires multi-step + 4-channel latents, whereas SR needs fewer steps + 16-channel latents). The authors build a custom SD2.1-VAE16 base model (0.9B, using REPA for representation alignment to expand latent space without increasing…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "One-step super-resolution"
+  - "latent space expansion"
+  - "score distillation"
+  - "VAE 16-channel"
+  - "consistency distillation"
 date: 2026-05-08
-content_hash: caa4dc6178fd56a4
+content_hash: 13ff672c8932479f
 ---
+
 # GenDR: Lighten Generative Detail Restoration
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FreeForm: Reduced-Order Deformable Simulation from Particle-Based Skinning Eigenmodes
 description: >-
-  [CVPR 2026][3D Vision][RKPM] The Reproducing Kernel Particle Method (RKPM) is utilized to parameterize the skinning weights of elastic bodies. Optimal skinning eigenmodes are then directly solved via a generalized eigenvalue problem on the elastic energy Hessian, enabling meshless, reduced-order elasticity simulation. This approach is approximatel
+  [CVPR 2026][3D Vision][Reduced-order simulation] The Reproducing Kernel Particle Method (RKPM) is utilized to parameterize the skinning weights of elastic bodies. Optimal skinning eigenmodes are then directly solved via a generalized eigenvalue problem on the elastic energy Hessian, enabling meshless, reduced-order elasticity simulation. This approach is approximately 40× faster to train than Simplicits (which uses per-object neural field optimization) while achieving accurac…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - RKPM
-  - Skinning Eigenmode
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Reduced-order simulation"
+  - "meshless methods"
+  - "RKPM"
+  - "Skinning Eigenmode"
+  - "Gaussian Splatting simulation"
 date: 2026-05-08
-content_hash: b54b656eeeb76bf9
+content_hash: 3c1fa290f0d7e313
 ---
+
 # FreeForm: Reduced-Order Deformable Simulation from Particle-Based Skinning Eigenmodes
 
 **Conference**: CVPR 2026  
@@ -148,16 +152,15 @@ Ablation of training strategies (standard beam, $m=16/32$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] Generalized-CVO: Fast and Correspondence-Free Local Point Cloud Registration with Second Order Riemannian Optimization](generalized-cvo_fast_and_correspondence-free_local_point_cloud_registration_with.md)
-- [\[CVPR 2026\] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer](diffusionharmonizer_bridging_neural_reconstruction_and_photorealistic_simulation.md)
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
+- [\[CVPR 2026\] ObjectMorpher: 3D-Aware Image Editing via Deformable 3DGS](objectmorpher_3d-aware_image_editing_via_deformable_3dgs.md)
+- [\[CVPR 2026\] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation](particlegs_learning_neural_gaussian_particle_dynamics_from_videos_for_prior-free.md)
+- [\[CVPR 2026\] SparseOIT: Improving Order-Independent Transparency 3DGS via Active Set Method](sparseoit_improving_order-independent_transparency_3dgs_via_active_set_method.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)

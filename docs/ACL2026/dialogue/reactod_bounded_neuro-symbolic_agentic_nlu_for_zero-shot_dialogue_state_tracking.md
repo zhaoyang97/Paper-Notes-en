@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking
 description: >-
-  [ACL 2026][Dialogue Systems][ReAct] ReacTOD decomposes task-oriented Dialogue State Tracking (DST) into bounded tool calls and uses a deterministic symbolic validator to intercept and provide feedback on LLM errors. This allows 8B to 32B-scale models to achieve Joint Goal Accuracy (JGA) on zero-shot MultiWOZ and SGD that surpasses previous large-scale LL
+  [ACL2026][Dialogue Systems][Zero-shot DST] ReacTOD decomposes task-oriented Dialogue State Tracking (DST) into bounded tool calls and uses a deterministic symbolic validator to intercept and provide feedback on LLM errors. This allows 8B to 32B-scale models to achieve Joint Goal Accuracy (JGA) on zero-shot MultiWOZ and SGD that surpasses previous large-scale LLM prompting methods.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - ReAct
+  - "ACL2026"
+  - "Dialogue Systems"
+  - "Zero-shot DST"
+  - "Neuro-symbolic System"
+  - "ReAct"
+  - "Tool Calling"
+  - "Symbolic Validation"
 date: 2026-05-08
-content_hash: b5d85531fcf5b1ea
+content_hash: 07bcbb1ab493190d
 ---
+
 # ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking
 
 **Conference**: ACL2026  
@@ -149,8 +154,8 @@ ReacTOD does not rely on task-specific training data, fine-tuning, or few-shot e
 
 - [\[NeurIPS 2025\] Agentic Persona Control and Task State Tracking for Realistic User Simulation](../../NeurIPS2025/dialogue/agentic_persona_control_and_task_state_tracking_for_realistic_user_simulation_in.md)
 - [\[ACL 2026\] APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI](apex-mem_agentic_semi-structured_memory_with_temporal_reasoning_for_long-term_co.md)
-- [\[ACL 2026\] Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)
 - [\[ACL 2026\] Surprisal Minimisation over Goal-directed Alternatives Predicts Production Choice in Dialogue](surprisal_minimisation_over_goal-directed_alternatives_predicts_production_choic.md)
+- [\[ICLR 2026\] Codified Finite-state Machines for Role-playing](../../ICLR2026/dialogue/codified_finite-state_machines_for_role-playing.md)
 - [\[ACL 2025\] Dynamic Label Name Refinement for Few-Shot Dialogue Intent Classification](../../ACL2025/dialogue/dynamic_label_name_refinement_for_few-shot_dialogue_intent_classification.md)
 
 </div>

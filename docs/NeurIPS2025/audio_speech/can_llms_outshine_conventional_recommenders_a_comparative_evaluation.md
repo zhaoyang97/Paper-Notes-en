@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation
 description: >-
-  [NeurIPS 2025][Audio & Speech][LLM-as-RS] This paper proposes RecBench, a comprehensive evaluation framework that systematically compares 17 LLMs against 10 conventional DLRMs across 5 domain-specific datasets. Results s…
+  [NeurIPS 2025][Audio & Speech][LLM-as-RS] This paper proposes RecBench, a comprehensive evaluation framework that systematically compares 17 LLMs against 10 conventional DLRMs across 5 domain-specific datasets. Results show that LLM-based recommenders achieve up to 5% AUC improvement on CTR tasks and up to 170% NDCG@10 improvement on sequential recommendation, yet incur 10–1000× slower inference. Conventional DLRMs augmented with LLM semantic embeddings (LLM-for-RS) attain ap…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -13,7 +13,7 @@ tags:
   - "item representation"
   - "inference efficiency"
 date: 2026-05-08
-content_hash: e73133a820fbf053
+content_hash: 91ff809bf1bf20f3
 ---
 
 # Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation
@@ -136,10 +136,10 @@ Instruction fine-tuning improves LLM CTR AUC by 22%–43% in relative terms. For
 ## Related Papers
 
 - [\[NeurIPS 2025\] Inductive Transfer Learning for Graph-Based Recommenders](inductive_transfer_learning_for_graph-based_recommenders.md)
-- [\[ACL 2026\] StressTest: Can YOUR Speech LM Handle the Stress?](../../ACL2026/audio_speech/stresstest_can_your_speech_lm_handle_the_stress.md)
+- [\[ICLR 2026\] Can Speech LLMs Think while Listening?](../../ICLR2026/audio_speech/can_speech_llms_think_while_listening.md)
+- [\[ACL 2025\] Who Can Withstand Chat-Audio Attacks? An Evaluation Benchmark for Large Audio-Language Models](../../ACL2025/audio_speech/who_can_withstand_chat-audio_attacks_an_evaluation_benchmark_for_large_audio-lan.md)
+- [\[ICML 2025\] Teaching Physical Awareness to LLMs through Sounds](../../ICML2025/audio_speech/teaching_physical_awareness_to_llms_through_sounds.md)
 - [\[ACL 2026\] Jamendo-MT-QA: A Benchmark for Multi-Track Comparative Music Question Answering](../../ACL2026/audio_speech/jamendo-mt-qa_a_benchmark_for_multi-track_comparative_music_question_answering.md)
-- [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
-- [\[ICML 2026\] Position: Towards Responsible Evaluation for Text-to-Speech](../../ICML2026/audio_speech/position_towards_responsible_evaluation_for_text-to-speech.md)
 
 </div>
 

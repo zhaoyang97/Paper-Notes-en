@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Beyond Magnitude: Leveraging Direction of RLVR Updates for LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper points out that previous analyses of RLVR focused only on update "magnitude" (entropy, KL), whereas the true key is the update "direction". Using the signed token-wise log-probability difference $\Delta\log p$, the authors precisely locate sparse but critical tokens for reasoning. Based on this, they propose
+  [ICLR 2026][Reasoning][RLVR] This paper points out that previous analyses of RLVR focused only on update "magnitude" (entropy, KL), whereas the true key is the update "direction". Using the signed token-wise log-probability difference $\Delta\log p$, the authors precisely locate sparse but critical tokens for reasoning. Based on this, they propose two plug-and-play enhancement methods: test-time selective extrapolation and training-time low-probability token re-weighting.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO/DAPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "GRPO/DAPO"
+  - "Update Direction"
+  - "log-prob difference"
+  - "low-probability tokens"
+  - "test-time extrapolation"
+  - "advantage re-weighting"
 date: 2026-05-08
-content_hash: c1cc679df3e6322f
+content_hash: 4c2c0e20106c9932
 ---
+
 # Beyond Magnitude: Leveraging Direction of RLVR Updates for LLM Reasoning
 
 **Conference**: ICLR 2026  

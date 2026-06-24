@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM Benchmark] Inspired by the Wechsler Intelligence Scale for Children, "General Intelligence" is decomposed into five measurable abilities: Execution, Perceptual Reasoning, Learning, Memory, and Planning. KidGym is constructed with 12 2D grid interaction tasks, three difficulty levels, and a customizable dynamic benchmark. It syste
+  [ICLR 2026][VLM Reasoning][MLLM Benchmark] Inspired by the Wechsler Intelligence Scale for Children, "General Intelligence" is decomposed into five measurable abilities: Execution, Perceptual Reasoning, Learning, Memory, and Planning. KidGym is constructed with 12 2D grid interaction tasks, three difficulty levels, and a customizable dynamic benchmark. It systematically reveals significant shortcomings of current top MMLMs in non-semantic abstract vision, quantity perception…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM Benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "MLLM Benchmark"
+  - "Wechsler Intelligence Scale"
+  - "2D Grid Interaction"
+  - "Cognitive Ability Assessment"
+  - "Dynamic Tasks"
 date: 2026-05-08
-content_hash: a18a2b39c62af567
+content_hash: c9b0384d99ee0905
 ---
+
 # Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs
 
 **Conference**: ICLR 2026  
@@ -127,8 +132,8 @@ Comparison of zero-shot, CoT, and ICL reasoning methods on selected tasks and mo
 - [\[ICLR 2026\] OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning](ocr-reasoning_benchmark_unveiling_the_true_capabilities_of_mllms_in_complex_text.md)
 - [\[ICLR 2026\] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)
 - [\[ICLR 2026\] Math Blind: Failures in Diagram Understanding Undermine Reasoning in MLLMs](math_blind_failures_in_diagram_understanding_undermine_reasoning_in_mllms.md)
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
 - [\[ICLR 2026\] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](vidguard-r1_ai-generated_video_detection_and_explanation_via_reasoning_mllms_and.md)
-- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 
 </div>
 

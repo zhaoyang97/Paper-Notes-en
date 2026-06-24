@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Retriever Portfolios: A Principled Approach to Adaptive RAG
 description: >-
-  [ICML 2026][Information Retrieval & RAG][best-of-k] This paper reformulates the "which retriever to choose" problem in RAG as a best-of-$k$ combinatorial optimization problem. By greedily selecting a complementary size-$k$ portfolio from 360 candidates offline and training a lightweight contrastive router to dispatch queries to the top-$\ell$ members online, this approa
+  [ICML 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper reformulates the "which retriever to choose" problem in RAG as a best-of-$k$ combinatorial optimization problem. By greedily selecting a complementary size-$k$ portfolio from 360 candidates offline and training a lightweight contrastive router to dispatch queries to the top-$\ell$ members online, this approach outperforms both single-retriever baselines and inference-time tuning methods (like…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - best-of-k
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Retriever Ensemble"
+  - "Submodular Optimization"
+  - "Query Routing"
+  - "best-of-k"
 date: 2026-05-08
-content_hash: 4fb2a741e8f8f407
+content_hash: 8b4e58351f554f30
 ---
+
 # Retriever Portfolios: A Principled Approach to Adaptive RAG
 
 **Conference**: ICML 2026  
@@ -147,13 +152,20 @@ For retrieval-only metrics (Figure 3), a size-5 learned portfolio achieves 0.594
 - Value: ⭐⭐⭐⭐ Highly practical for industrial deployment due to parallelizability and token efficiency.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **DPR**: Dense Passage Retrieval for Open-Domain Question Answering (Karpukhin et al., 2020)
-- **Vendi-RAG**: On-the-fly Adaptation of Retrieved Content Diversity (Rezaei & Dieng, 2025)
-- **Adaptive-RAG**: Learning to Adapt Retrieval-Augmented Generation (Jeong et al., 2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] BlitzRank: Principled Zero-shot Ranking Agents with Tournament Graphs](blitzrank_principled_zero-shot_ranking_agents_with_tournament_graphs.md)
+- [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](../../AAAI2026/information_retrieval/reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
+- [\[ACL 2026\] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](../../ACL2026/information_retrieval/coral_adaptive_retrieval_loop_for_culturally-aligned_multilingual_rag.md)
+- [\[ICLR 2026\] Revela: Dense Retriever Learning via Language Modeling](../../ICLR2026/information_retrieval/revela_dense_retriever_learning_via_language_modeling.md)
+- [\[AAAI 2026\] RRRA: Resampling and Reranking through a Retriever Adapter](../../AAAI2026/information_retrieval/rrra_resampling_and_reranking_through_a_retriever_adapter.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] BlitzRank: Principled Zero-shot Ranking Agents with Tournament Graphs](blitzrank_principled_zero-shot_ranking_agents_with_tournament_graphs.md)

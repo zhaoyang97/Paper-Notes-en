@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain
 description: >-
-  [ACL 2026][LLM Evaluation][VQA] The authors constructed DiningBench, the first hierarchical multi-view food benchmark (3,021 dishes / 15,928 images / avg. 5.27 views per dish). It covers three levels of cognitive tasks: "Fine-grained classification (same-store hard negatives) → Nutrition estimation (4-dimensional regression) → VQA (reasoning)." Evalu
+  [ACL 2026][LLM Evaluation][Food benchmark] The authors constructed DiningBench, the first hierarchical multi-view food benchmark (3,021 dishes / 15,928 images / avg. 5.27 views per dish). It covers three levels of cognitive tasks: "Fine-grained classification (same-store hard negatives) → Nutrition estimation (4-dimensional regression) → VQA (reasoning)." Evaluation of 29 SOTA VLM systems reveals that existing models are significantly deficient in fine-grained visual discrimi…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - VQA
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Food benchmark"
+  - "Multi-view"
+  - "Fine-grained classification"
+  - "Nutrition estimation"
+  - "VQA"
 date: 2026-05-08
-content_hash: 2fe458274b07b905
+content_hash: f3878ec7470816c4
 ---
+
 # DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain
 
 **Conference**: ACL 2026  

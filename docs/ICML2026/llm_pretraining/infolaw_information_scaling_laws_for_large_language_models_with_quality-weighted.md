@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition
 description: >-
-  [ICML 2026][Pretraining][scaling law] The authors propose InfoLaw: redefining "pre-training" as a process of "accumulating information in buckets." The information volume per bucket equals "quality density $f_d \times$ unique tokens $M_d \times \log K$" multiplied by an exponential decay factor associated with repetition counts $R_d$. By fitting validation
+  [ICML 2026][LLM Pretraining][scaling law] The authors propose InfoLaw: redefining "pre-training" as a process of "accumulating information in buckets." The information volume per bucket equals "quality density $f_d \times$ unique tokens $M_d \times \log K$" multiplied by an exponential decay factor associated with repetition counts $R_d$. By fitting validation loss as $L = \alpha\cdot\text{info}^{-\beta}$ on 252M-1.2B models, the law extrapolates to 7B models and 425B tokens…
 tags:
-  - ICML 2026
-  - Pretraining
-  - scaling law
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "scaling law"
+  - "data quality"
+  - "data repetition"
+  - "data recipe"
+  - "information volume"
 date: 2026-05-08
-content_hash: d3d08c624d92a240
+content_hash: 54b22d2e6c267451
 ---
+
 # InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition
 
 **Conference**: ICML 2026  
@@ -130,11 +135,11 @@ All 27 fitting experiments utilized a fixed over-train ratio $m=3.6$, Transforme
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](../../ICLR2026/llm_pretraining/scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICML 2026\] Explaining Data Mixing Scaling Laws](explaining_data_mixing_scaling_laws.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](../../ICLR2026/llm_pretraining/pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 - [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
 - [\[ICML 2026\] On Training Large Language Models for Long-Horizon Tasks: An Empirical Study of Horizon Length](on_training_large_language_models_for_long-horizon_tasks_an_empirical_study_of_h.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
-- [\[ACL 2025\] DavIR: Data Selection via Implicit Reward for Large Language Models](../../ACL2025/llm_pretraining/davir_data_selection_via_implicit_reward_for_large_language_models.md)
 
 </div>
 

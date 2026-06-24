@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] SoLoPO decomposes long-context preference optimization into "preference learning on short contexts" and "short-to-long reward consistency." By using shorter and cleaner data to activate the LLM's long-context localization and reasoning capabilities, it significantly reduces the time and memory pressure of long-sequence
+  [ICLR2026][LLM Efficiency][Long-context alignment] SoLoPO decomposes long-context preference optimization into "preference learning on short contexts" and "short-to-long reward consistency." By using shorter and cleaner data to activate the LLM's long-context localization and reasoning capabilities, it significantly reduces the time and memory pressure of long-sequence training.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Long-context alignment"
+  - "preference optimization"
+  - "short-to-long transfer"
+  - "training efficiency"
+  - "reward alignment"
 date: 2026-05-08
-content_hash: 3ca62e417f5725b4
+content_hash: 600fcf7440daf808
 ---
+
 # SoLoPO: Unlocking Long-Context Capabilities in LLMs via Short-to-Long Preference Optimization
 
 **Conference**: ICLR2026  
@@ -187,12 +193,17 @@ Efficiency experiments show that SoLoPO's benefits become more pronounced as the
 
 <div class="related-papers" markdown="1">
 
-*(No content provided in original source for related papers.)*
+## Related Papers
+
+- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
+- [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
+- [\[ACL 2026\] BOSCH: Black-Box Binary Optimization for Short-Context Attention-Head Selection in LLMs](../../ACL2026/llm_efficiency/bosch_black-box_binary_optimization_for_short-context_attention-head_selection_i.md)
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
+- [\[ICLR 2026\] Short Window Attention Enables Long-Term Memorization](short_window_attention_enables_long-term_memorization.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)

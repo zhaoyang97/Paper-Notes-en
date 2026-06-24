@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation
 description: >-
-  [ICLR 2026][Medical Imaging][disease progression] The study proposes the Δ-LFM framework: utilizing ArcRank loss to construct patient-specific temporally aligned trajectories in latent space (consistent angle + monotonically increasing magnitude), extending the flow matching time range from $[0, 1]$ to $[0, T]$ actual time intervals for arbitrary time-point prediction
+  [ICLR 2026][Medical Imaging][disease progression] The study proposes the Δ-LFM framework: utilizing ArcRank loss to construct patient-specific temporally aligned trajectories in latent space (consistent angle + monotonically increasing magnitude), extending the flow matching time range from $[0, 1]$ to $[0, T]$ actual time intervals for arbitrary time-point prediction. It outperforms 8 baseline methods across three Alzheimer's longitudinal MRI benchmarks and introduces a prog…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - disease progression
-  - flow matching
-  - patient-specific
-  - longitudinal MRI
-  - ArcRank loss
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "disease progression"
+  - "flow matching"
+  - "patient-specific"
+  - "longitudinal MRI"
+  - "ArcRank loss"
 date: 2026-05-08
-content_hash: e86c53d7f76606b2
+content_hash: 64a9a8de66d7317c
 ---
+
 # Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation
 
 **Conference**: ICLR 2026  
@@ -154,8 +155,8 @@ Stage 1 (AE) uses reconstruction loss combined with ArcRank loss, with weights $
 - Value: ⭐⭐⭐⭐⭐ Significant contribution to medical image generation; Δ-RMAE could become a standard metric in the field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

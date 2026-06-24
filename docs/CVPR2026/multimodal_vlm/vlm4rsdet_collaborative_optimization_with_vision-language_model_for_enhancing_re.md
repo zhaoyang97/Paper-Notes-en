@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection
 description: >-
-  [CVPR 2026][Remote Sensing][Vision-Language Model] VLM4RSDet enables a conventional closed-set detector and a vision-language model (Florence-2) to share a vision backbone and perform joint backpropagation during the training phase, "distilling" VLM prior knowledge into the detector’s features. During inference, the VLM is discarded, leaving only the standard detection
+  [CVPR 2026][Multimodal VLM][Remote Sensing Object Detection] VLM4RSDet enables a conventional closed-set detector and a vision-language model (Florence-2) to share a vision backbone and perform joint backpropagation during the training phase, "distilling" VLM prior knowledge into the detector’s features. During inference, the VLM is discarded, leaving only the standard detection branch. This achieves SOTA detection accuracy with **zero additional overhead** (e.g.…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Vision-Language Model
-  - Florence-2
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Remote Sensing Object Detection"
+  - "Vision-Language Model"
+  - "Collaborative Training"
+  - "Dense Small Objects"
+  - "Florence-2"
 date: 2026-05-08
-content_hash: 7bb2713b556e7d2c
+content_hash: 888b28d6d0a435b5
 ---
+
 # VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection
 
 **Conference**: CVPR 2026  
@@ -148,10 +152,20 @@ Overhead Analysis (Table 8): During inference, parameters, FLOPs, and FPS for th
 - Value: ⭐⭐⭐⭐ Plug-and-play, zero inference cost with stable gains makes it very deployment-friendly.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification](cf-ipt_cross-modal_fusion_interactive_prompt_tuning_of_vision-language_pre-train.md)
+- [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
+- [\[ICLR 2026\] PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](../../ICLR2026/multimodal_vlm/physllm_harnessing_large_language_models_for_cross-modal_remote_physiological_se.md)
+- [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
+- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)

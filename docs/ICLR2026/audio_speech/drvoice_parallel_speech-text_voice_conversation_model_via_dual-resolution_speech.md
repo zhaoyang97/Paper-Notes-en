@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] DrVoice reduces the speech frame rate entering the LLM from the mainstream 12.5Hz to 5Hz. By employing a dual-resolution scheme—"compression via grouping for understanding and a specialized refinement head at the original frame rate for generation"—this approach saves nearly 50% of training GPU hours and mitigates the
+  [ICLR2026][Audio & Speech][Joint Speech-Text Modeling] DrVoice reduces the speech frame rate entering the LLM from the mainstream 12.5Hz to 5Hz. By employing a dual-resolution scheme—"compression via grouping for understanding and a specialized refinement head at the original frame rate for generation"—this approach saves nearly 50% of training GPU hours and mitigates the frame rate mismatch between speech and text tokens. The 7B open-source model achieves SOTA performance ac…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Joint Speech-Text Modeling"
+  - "Dual-Resolution Representations"
+  - "End-to-End Voice Conversation"
+  - "Speech Token Grouping"
+  - "Parallel Decoding"
 date: 2026-05-08
-content_hash: a573a4f85c1f3e1f
+content_hash: 8be218104929fec1
 ---
+
 # DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations
 
 **Conference**: ICLR2026  
@@ -162,9 +168,20 @@ Conducted on DrVoice-Small (1.5B) using Llama Questions (T/S for text/speech sco
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)
+- [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
+- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
+- [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](../../ACL2026/audio_speech/fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
+- [\[ICLR 2026\] Closing the Gap Between Text and Speech Understanding in LLMs](closing_the_gap_between_text_and_speech_understanding_in_llms.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] OmniFlatten: An End-to-end GPT Model for Seamless Voice Conversation](../../ACL2025/audio_speech/omniflatten_an_end-to-end_gpt_model_for_seamless_voice_conversation.md)

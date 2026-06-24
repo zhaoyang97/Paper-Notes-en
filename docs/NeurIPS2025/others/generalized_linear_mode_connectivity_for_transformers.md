@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Generalized Linear Mode Connectivity for Transformers
 description: >-
-  [NeurIPS 2025][linear mode connectivity] This paper proposes a unified symmetry framework (a four-level hierarchy of permutation, semi-permutation, orthogonal…
+  [NeurIPS 2025 Oral][linear mode connectivity] This paper proposes a unified symmetry framework (a four-level hierarchy of permutation, semi-permutation, orthogonal, and invertible transformations) to achieve zero or near-zero barrier linear mode connectivity (LMC) on Vision Transformers and GPT-2 for the first time, and further extends the framework to multi-model merging and heterogeneous-width alignment.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "linear mode connectivity"
   - "model merging"
   - "permutation symmetry"
@@ -12,7 +12,7 @@ tags:
   - "ViT"
   - "GPT-2"
 date: 2026-05-08
-content_hash: 8f4328b5c1d6ee13
+content_hash: 2912ecb1851ffc07
 ---
 
 # Generalized Linear Mode Connectivity for Transformers
@@ -175,10 +175,10 @@ The paper organizes network symmetries into a strictly nested four-level structu
 ## Related Papers
 
 - [\[ICLR 2026\] Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity](../../ICLR2026/others/do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity.md)
-- [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
+- [\[ICML 2026\] Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity](../../ICML2026/others/functional_equivalence_in_attention_a_comprehensive_study_with_applications_to_l.md)
 - [\[NeurIPS 2025\] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales](scalable_inference_of_functional_neural_connectivity_at_submillisecond_timescale.md)
-- [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
-- [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
+- [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
+- [\[NeurIPS 2025\] Sheaf Cohomology of Linear Predictive Coding Networks](sheaf_cohomology_of_linear_predictive_coding_networks.md)
 
 </div>
 

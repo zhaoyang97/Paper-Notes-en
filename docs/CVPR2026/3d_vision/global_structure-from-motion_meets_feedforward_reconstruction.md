@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Global Structure-from-Motion Meets Feedforward Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Structure-from-Motion] GLUEMAP combines the scalability and global consistency of classical global SfM with the local robustness of feedforward multi-view reconstruction networks (π³). It restricts the feedforward network to local inference using a sparse view graph, integrates tens of thousands of local reconstructions into a global solutio
+  [CVPR2026][3D Vision][Structure-from-Motion] GLUEMAP combines the scalability and global consistency of classical global SfM with the local robustness of feedforward multi-view reconstruction networks (π³). It restricts the feedforward network to local inference using a sparse view graph, integrates tens of thousands of local reconstructions into a global solution via global motion averaging, and enhances bundle adjustment with "virtual tracks." It outperforms both pure class…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Structure-from-Motion
+  - "CVPR2026"
+  - "3D Vision"
+  - "Structure-from-Motion"
+  - "Feedforward Reconstruction"
+  - "Global Motion Averaging"
+  - "Bundle Adjustment"
+  - "Camera Pose Estimation"
 date: 2026-05-08
-content_hash: 2af8a816d6766819
+content_hash: 70a5a8c19ba1fdcf
 ---
+
 # Global Structure-from-Motion Meets Feedforward Reconstruction
 
 **Conference**: CVPR2026  
@@ -150,11 +155,11 @@ On LaMAR (thousands of images, large radii, symmetrical structures), **all pure 
 
 ## Related Papers
 
-- [\[CVPR 2026\] FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views](ff3r_feedforward_feature_3d_reconstruction_from_unconstrained_views.md)
-- [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
 - [\[CVPR 2026\] Dark3R: Learning Structure from Motion in the Dark](dark3r_learning_structure_from_motion_in_the_dark.md)
-- [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
+- [\[CVPR 2026\] PromptStereo: Zero-Shot Stereo Matching via Structure and Motion Prompts](promptstereo_zero-shot_stereo_matching_via_structure_and_motion_prompts.md)
+- [\[CVPR 2026\] Voxify3D: Pixel Art Meets Volumetric Rendering](voxify3d_pixel_art_meets_volumetric_rendering.md)
+- [\[CVPR 2026\] MoRE: 3D Visual Geometry Reconstruction Meets Mixture-of-Experts](more_3d_visual_geometry_reconstruction_meets_mixture-of-experts.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
 
 </div>
 

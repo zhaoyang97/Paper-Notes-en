@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ResQ: A Novel Framework to Implement Residual Neural Networks on Analog Rydberg Atom Quantum Computers
 description: >-
-  [ICCV 2025][Physics & Scientific Computing][Quantum Machine Learning] This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by ex…
+  [ICCV 2025][Physics & Scientific Computing][Quantum Machine Learning] This paper proposes ResQ — the first framework to natively implement residual neural networks (ResNets) on analog Rydberg atom quantum computers by exploiting continuous-time Hamiltonian evolution, encoding input features and trainable parameters via piecewise parameterized laser pulses, achieving an average 50% improvement over classical models of equivalent scale on MNIST, FashionMNIST…
 tags:
   - "ICCV 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Analog Quantum Computing"
   - "Neural ODE"
 date: 2026-05-08
-content_hash: 7c7259584fe73f03
+content_hash: 0a6b5b737093790d
 ---
 
 # ResQ: A Novel Framework to Implement Residual Neural Networks on Analog Rydberg Atom Quantum Computers
@@ -177,11 +177,11 @@ Overall: ResQ achieves an **average 50% improvement** over classical models of e
 
 ## Related Papers
 
+- [\[ICLR 2026\] Accelerating Inference for Multilayer Neural Networks with Quantum Computers](../../ICLR2026/physics/accelerating_inference_for_multilayer_neural_networks_with_quantum_computers.md)
+- [\[CVPR 2025\] ATP: Adaptive Threshold Pruning for Efficient Data Encoding in Quantum Neural Networks](../../CVPR2025/physics/atp_adaptive_threshold_pruning_for_efficient_data_encoding_in_quantum_neural_net.md)
+- [\[ICML 2025\] Compact Matrix Quantum Group Equivariant Neural Networks](../../ICML2025/physics/compact_matrix_quantum_group_equivariant_neural_networks.md)
+- [\[ICLR 2026\] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers](../../ICLR2026/physics/aqer_a_scalable_and_efficient_data_loader_for_digital_quantum_computers.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](../../NeurIPS2025/physics/deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
-- [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](../../NeurIPS2025/physics/from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
-- [\[NeurIPS 2025\] Exoplanet Formation Inference Using Conditional Invertible Neural Networks](../../NeurIPS2025/physics/exoplanet_formation_inference_using_conditional_invertible_neural_networks.md)
-- [\[NeurIPS 2025\] Stable Minima of ReLU Neural Networks Suffer from the Curse of Dimensionality: The Neural Shattering Phenomenon](../../NeurIPS2025/physics/stable_minima_of_relu_neural_networks_suffer_from_the_curse_of_dimensionality_th.md)
-- [\[ICML 2026\] Rethink the Role of Neural Decoders in Quantum Error Correction](../../ICML2026/physics/rethink_the_role_of_neural_decoders_in_quantum_error_correction.md)
 
 </div>
 

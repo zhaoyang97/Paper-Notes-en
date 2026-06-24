@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Let's Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] The paper proposes a new task called "Category Splitting," which discovers latent compositional structures within video classifier weights to split coarse-grained action categories into fine-grained sub-categories under zero-shot conditions, requiring no retraining or additional data.
+  [ICLR 2026][Video Understanding][Category Splitting] The paper proposes a new task called "Category Splitting," which discovers latent compositional structures within video classifier weights to split coarse-grained action categories into fine-grained sub-categories under zero-shot conditions, requiring no retraining or additional data.
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Category Splitting"
+  - "Zero-Shot Editing"
+  - "Fine-grained Video Recognition"
+  - "Classifier Modification"
+  - "Compositional Structure"
 date: 2026-05-08
-content_hash: 420d9bd3bb1402fc
+content_hash: aa47a2c5043dc67c
 ---
+
 # Let's Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding
 
 **Conference**: ICLR 2026  
@@ -158,7 +164,6 @@ VLMs show low generality; the proposed method improves generality by nearly 20 p
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

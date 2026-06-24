@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SLAyiNG: Towards Queer Language Processing
 description: >-
-  [NeurIPS 2025 (Queer in AI Workshop)][Social Computing][queer slang] This work introduces SLAyiNG, the first explicitly annotated queer slang dataset, comprising 695 terms and nearly 200…
+  [NeurIPS 2025 (Queer in AI Workshop)][Social Computing][queer slang] This work introduces SLAyiNG, the first explicitly annotated queer slang dataset, comprising 695 terms and nearly 200,000 usage instances. Inter-annotator agreement experiments (Krippendorff's $\alpha = 0.746$) demonstrate that reasoning models can serve as pre-screening tools but community-driven expert annotation remains indispensable.
 tags:
   - "NeurIPS 2025 (Queer in AI Workshop)"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "LLM evaluation"
   - "sociolinguistics"
 date: 2026-05-08
-content_hash: c4478ada88d5a1d1
+content_hash: 3aa988a0d0a2e711
 ---
 
 # SLAyiNG: Towards Queer Language Processing
@@ -116,11 +116,11 @@ The work centers on constructing the SLAyiNG dataset through three stages: term 
 
 ## Related Papers
 
+- [\[ACL 2025\] Exploring Gender Bias in Large Language Models: An In-depth Dive into the German Language](../../ACL2025/social_computing/exploring_gender_bias_in_large_language_models_an_in-depth_dive_into_the_german_.md)
 - [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
+- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](uncovering_strategic_egoism_behaviors_in_large_language_models.md)
 - [\[NeurIPS 2025\] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation](redefining_experts_interpretable_decomposition_of_language_models_for_toxicity_m.md)
-- [\[NeurIPS 2025\] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](date-lm_benchmarking_data_attribution_evaluation_for_large_language_models.md)
-- [\[NeurIPS 2025\] Don't Let It Fade: Preserving Edits in Diffusion Language Models via Token Timestep Allocation](dont_let_it_fade_preserving_edits_in_diffusion_language_mode.md)
 
 </div>
 

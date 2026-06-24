@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Ours proposes FedDAP, a domain-aware prototype federated learning framework. By constructing domain-specific global prototypes and a dual prototype alignment strategy (intra-domain alignment + cross-domain contrastive), it addresses the performance degradation of global models caused by data domain shifts across client
+  [CVPR 2026][AI Safety][Federated Learning] Ours proposes FedDAP, a domain-aware prototype federated learning framework. By constructing domain-specific global prototypes and a dual prototype alignment strategy (intra-domain alignment + cross-domain contrastive), it addresses the performance degradation of global models caused by data domain shifts across clients in federated learning.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Domain Shift"
+  - "Prototype Learning"
+  - "Contrastive Learning"
+  - "Domain Awareness"
 date: 2026-05-08
-content_hash: 7e533fe2ab07879e
+content_hash: d8371e85dce186d8
 ---
+
 # FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift
 
 **Conference**: CVPR 2026  
@@ -145,7 +151,7 @@ $$\mathcal{L} = \mathcal{L}_{CE} + \lambda_1 \mathcal{L}_{DPA} + \lambda_2 \math
 - [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](../../ICML2026/ai_safety/fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
 - [\[CVPR 2026\] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance](federated_active_learning_extreme_noniid.md)
 - [\[CVPR 2026\] Frequency-domain Manipulation for Face Obfuscation](frequency-domain_manipulation_for_face_obfuscation.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
+- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
 
 </div>
 

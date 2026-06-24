@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] Lyra employs a camera-controllable video diffusion model as a "teacher" and uses its RGB decoding branch to supervise a newly added 3DGS decoding "student." It achieves feed-forward generation of explicit 3D (and even 4D) Gaussian scenes from a single image or video using only synthetic video self-distillation, without
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] Lyra employs a camera-controllable video diffusion model as a "teacher" and uses its RGB decoding branch to supervise a newly added 3DGS decoding "student." It achieves feed-forward generation of explicit 3D (and even 4D) Gaussian scenes from a single image or video using only synthetic video self-distillation, without requiring any real-world multi-view data.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Video Diffusion Models"
+  - "Self-distillation"
+  - "Feed-forward 3D Reconstruction"
+  - "4D Scene Generation"
 date: 2026-05-08
-content_hash: 754ac5d6587bf5ca
+content_hash: b21e1b17216ab61e
 ---
+
 # Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation
 
 **Conference**: ICLR 2026  
@@ -130,10 +135,10 @@ Ablations on the Lyra dataset (out-of-distribution diverse prompts):
 ## Related Papers
 
 - [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
+- [\[ICLR 2026\] StreamSplat: Towards Online Dynamic 3D Reconstruction from Uncalibrated Video Streams](streamsplat_towards_online_dynamic_3d_reconstruction_from_uncalibrated_video_str.md)
 - [\[ECCV 2024\] Open Vocabulary 3D Scene Understanding via Geometry Guided Self-Distillation](../../ECCV2024/3d_vision/open_vocabulary_3d_scene_understanding_via_geometry_guided_self-distillation.md)
-- [\[CVPR 2025\] Decompositional Neural Scene Reconstruction with Generative Diffusion Prior](../../CVPR2025/3d_vision/decompositional_neural_scene_reconstruction_with_generative_diffusion_prior.md)
-- [\[ICLR 2026\] SkyEvents: A Large-Scale Event-Enhanced UAV Dataset for Robust 3D Scene Reconstruction](skyevents_a_large-scale_event-enhanced_uav_dataset_for_robust_3d_scene_reconstru.md)
-- [\[ICLR 2026\] Stroke3D: Lifting 2D Strokes into Rigged 3D Model via Latent Diffusion Models](stroke3d_lifting_2d_strokes_into_rigged_3d_model_via_latent_diffusion_models.md)
+- [\[ICCV 2025\] Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction](../../ICCV2025/3d_vision/momentum-gs_momentum_gaussian_self-distillation_for_high-quality_large_scene_rec.md)
+- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](../../CVPR2026/3d_vision/ilrm_an_iterative_large_3d_reconstruction_model.md)
 
 </div>
 

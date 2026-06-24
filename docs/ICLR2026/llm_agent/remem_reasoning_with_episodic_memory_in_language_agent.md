@@ -4,17 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][LLM Agent][episodic memory] This paper proposes REMem, an episodic memory framework for language agents. By utilizing a hybrid memory graph (time-aware gist nodes + factual triplet nodes) and tool-augmented agentic reasoning, it outperforms SOTA methods by 3.4% and 13.4% on episodic recall and episodic reasoning tasks, respectively.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - episodic memory
-  - language agent
-  - hybrid memory graph
-  - temporal reasoning
-  - agentic retrieval
-  - gist extraction
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "episodic memory"
+  - "language agent"
+  - "hybrid memory graph"
+  - "temporal reasoning"
+  - "agentic retrieval"
+  - "gist extraction"
 date: 2026-05-08
-content_hash: 6b4f932737cd6a11
+content_hash: a84e0f926459b4b2
 ---
+
 # REMem: Reasoning with Episodic Memory in Language Agents
 
 **Conference**: ICLR 2026  
@@ -181,10 +182,10 @@ REMem-I reaches an EM of **93.1%** on Test of Time, the only method to exceed 90
 ## Related Papers
 
 - [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
+- [\[ICLR 2026\] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](memory-t1_reinforcement_learning_for_temporal_reasoning_in_multi-session_agents.md)
 - [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](../../ICML2026/llm_agent/adamem_test-time_adaptive_memory_for_language_agents.md)
 - [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
-- [\[ICLR 2026\] Real-Time Reasoning Agents in Evolving Environments](real-time_reasoning_agents_in_evolving_environments.md)
-- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
+- [\[ICLR 2026\] Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory](seeing_listening_remembering_and_reasoning_a_multimodal_agent_with_long-term_mem.md)
 
 </div>
 

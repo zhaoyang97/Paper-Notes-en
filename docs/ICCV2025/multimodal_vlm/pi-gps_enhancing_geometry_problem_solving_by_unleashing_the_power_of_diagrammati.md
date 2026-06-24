@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pi-GPS: Enhancing Geometry Problem Solving by Unleashing the Power of Diagrammatic Information
 description: >-
-  [ICCV 2025][Multimodal VLM][geometry problem solving] Pi-GPS leverages diagrammatic information to resolve ambiguities in textual descriptions. By introducing a lightweight Rectifier–Verifier module…
+  [ICCV 2025][Multimodal VLM][geometry problem solving] Pi-GPS leverages diagrammatic information to resolve ambiguities in textual descriptions. By introducing a lightweight Rectifier–Verifier module, it addresses a previously overlooked problem of textual ambiguity, achieving nearly 10% improvement over prior state-of-the-art neuro-symbolic methods on Geometry3K.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "neuro-symbolic methods"
   - "MLLM"
 date: 2026-05-08
-content_hash: 266d8b4177ab942c
+content_hash: 5d0f93d4b7a841b3
 ---
 
 # Pi-GPS: Enhancing Geometry Problem Solving by Unleashing the Power of Diagrammatic Information
@@ -158,11 +158,11 @@ Pi-GPS outperforms GeoDRL by 9.4% (Choice) and E-GPS by 9.9% (Choice) on Geometr
 
 ## Related Papers
 
+- [\[ACL 2026\] A Survey of Deep Learning for Geometry Problem Solving](../../ACL2026/multimodal_vlm/a_survey_of_deep_learning_for_geometry_problem_solving.md)
+- [\[ICLR 2026\] GeoBench: Rethinking Multimodal Geometric Problem-Solving via Hierarchical Evaluation](../../ICLR2026/multimodal_vlm/geobench_rethinking_multimodal_geometric_problem-solving_via_hierarchical_evalua.md)
 - [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](../../NeurIPS2025/multimodal_vlm/learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
 - [\[ICCV 2025\] Information Density Principle for MLLM Benchmarks](information_density_principle_for_mllm_benchmarks.md)
-- [\[NeurIPS 2025\] Visual Structures Help Visual Reasoning: Addressing the Binding Problem in LVLMs](../../NeurIPS2025/multimodal_vlm/visual_structures_helps_visual_reasoning_addressing_the_binding_problem_in_vlms.md)
-- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
-- [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
+- [\[ICCV 2025\] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](capellm_support-free_category-agnostic_pose_estimation_with_multimodal_large_lan.md)
 
 </div>
 

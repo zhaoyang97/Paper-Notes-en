@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis
 description: >-
-  [ICLR 2026][LLM Reasoning][3D CT] The authors propose TumorChain, an interleaved multimodal Chain-of-Thought (CoT) reasoning framework for tumor analysis across five major digestive organs. By integrating a knowledge-graph-driven 1.5M CoT-VQA data engine, organ-guided Iterative Interleaved Reasoning (IIR), and collaborative optimization of segmentation
+  [ICLR 2026][Reasoning][Tumor Analysis] The authors propose TumorChain, an interleaved multimodal Chain-of-Thought (CoT) reasoning framework for tumor analysis across five major digestive organs. By integrating a knowledge-graph-driven 1.5M CoT-VQA data engine, organ-guided Iterative Interleaved Reasoning (IIR), and collaborative optimization of segmentation, classification, and LLM modules, it achieves a complete reasoning chain from findings to impressions to pathological pr…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - 3D CT
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Tumor Analysis"
+  - "Multimodal CoT Reasoning"
+  - "Interleaved Reasoning"
+  - "3D CT"
+  - "TNM Staging"
 date: 2026-05-08
-content_hash: 7607536d93ab5448
+content_hash: 7e9835e4bdcc8a65
 ---
+
 # TumorChain: Interleaved Multimodal Chain-of-Thought Reasoning for Traceable Clinical Tumor Analysis
 
 **Conference**: ICLR 2026  
@@ -132,10 +137,20 @@ To evaluate intermediate steps, triplets (Subject-Relation-Object) are extracted
 - **Value**: ⭐⭐⭐⭐⭐ (A significant tool for precision oncology with high clinical potential)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2025\] Interleaved-Modal Chain-of-Thought](../../CVPR2025/llm_reasoning/interleaved-modal_chain-of-thought.md)
+- [\[AAAI 2026\] BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards](../../AAAI2026/llm_reasoning/blm-guard_explainable_multimodal_ad_moderation_with_chain-of.md)
+- [\[ICLR 2026\] Analytica: Soft Propositional Reasoning for Robust and Scalable LLM-Driven Analysis](analytica_soft_propositional_reasoning_for_robust_and_scalable_llm-driven_analys.md)
+- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2025\] Interleaved-Modal Chain-of-Thought](../../CVPR2025/llm_reasoning/interleaved-modal_chain-of-thought.md)

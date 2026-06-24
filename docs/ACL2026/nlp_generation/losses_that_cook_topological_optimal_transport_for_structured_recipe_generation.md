@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Losses that Cook: Topological Optimal Transport for Structured Recipe Generation
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper proposes a topological loss function based on Sinkhorn divergence that represents ingredient lists as point clouds in embedding space. By minimizing the geometric discrepancy between predicted and ground-truth ingredients, it significantly improves ingredient recall and quantity accuracy in structured recipe
+  [ACL 2026 Findings][Text Generation][Recipe Generation] This paper proposes a topological loss function based on Sinkhorn divergence that represents ingredient lists as point clouds in embedding space. By minimizing the geometric discrepancy between predicted and ground-truth ingredients, it significantly improves ingredient recall and quantity accuracy in structured recipe generation, being preferred in 62% of human evaluations.
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026 Findings"
+  - "Text Generation"
+  - "Recipe Generation"
+  - "Topological Loss"
+  - "Optimal Transport"
+  - "Structured Text Generation"
+  - "Composite Loss Functions"
 date: 2026-05-08
-content_hash: a8ab480e93fc7350
+content_hash: e5ec8f2d6d7e718c
 ---
+
 # Losses that Cook: Topological Optimal Transport for Structured Recipe Generation
 
 **Conference**: ACL 2026 Findings  

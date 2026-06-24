@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] The Persona Dynamic Decoding (PDD) framework is proposed, which dynamically estimates the context-dependent importance of persona attributes through conditional mutual information and integrates these importance scores into multi-objective reward-guided decoding to achieve training-free inference-time persona following
+  [ICLR 2026][LLM (Other)][Role-playing agents] The Persona Dynamic Decoding (PDD) framework is proposed, which dynamically estimates the context-dependent importance of persona attributes through conditional mutual information and integrates these importance scores into multi-objective reward-guided decoding to achieve training-free inference-time persona following.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Role-playing agents"
+  - "Persona following"
+  - "Inference-time alignment"
+  - "Conditional mutual information"
+  - "Multi-objective reward decoding"
 date: 2026-05-08
-content_hash: 0fa86efb944cdbf0
+content_hash: 5b8193e24c5ae437
 ---
+
 # Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents
 
 **Conference**: ICLR 2026  
@@ -167,10 +173,10 @@ Evaluated across 5 dimensions (Context Relevance, Attribute Utility, Context Cov
 ## Related Papers
 
 - [\[ACL 2026\] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models](../../ACL2026/llm_nlp/personaarena_dynamic_simulation_for_evaluating_and_enhancing_persona-level_role-.md)
-- [\[ACL 2025\] Nudging: Inference-time Alignment of LLMs via Guided Decoding](../../ACL2025/llm_nlp/nudging_inference_time_alignment.md)
 - [\[ICLR 2026\] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following](attend_to_the_active_structure-aware_dynamic_attention_in_llms_for_compositional.md)
+- [\[ACL 2025\] Nudging: Inference-time Alignment of LLMs via Guided Decoding](../../ACL2025/llm_nlp/nudging_inference_time_alignment.md)
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
 - [\[ICLR 2026\] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding](stopping_computation_for_converged_tokens_in_masked_diffusion-lm_decoding.md)
-- [\[ICLR 2026\] Massive Editing for Large Language Models Based on Dynamic Weight Generation](massive_editing_for_large_language_models_based_on_dynamic_weight_generation.md)
 
 </div>
 

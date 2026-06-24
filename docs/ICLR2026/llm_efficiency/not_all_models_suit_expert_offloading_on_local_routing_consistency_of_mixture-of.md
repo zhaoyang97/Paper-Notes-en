@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes two metrics, SRP and SCH, to quantify the "Local Routing Consistency" (whether consecutive tokens tend to activate the same set of experts) of MoE models. Through systematic analysis of 20 real-world MoE LLMs and a series of controlled TOY models, it reveals trade-offs between local load balancing a
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes two metrics, SRP and SCH, to quantify the "Local Routing Consistency" (whether consecutive tokens tend to activate the same set of experts) of MoE models. Through systematic analysis of 20 real-world MoE LLMs and a series of controlled TOY models, it reveals trade-offs between local load balancing and routing consistency. Key findings include that shared experts hurt consistency while domain-specialized exper…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Expert Offloading"
+  - "Routing Consistency"
+  - "Cache Hit Rate"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 0512a9b70d0a5d39
+content_hash: 019729c31a21c6d6
 ---
+
 # Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ Controlled single-variable TOY model results ($m=16$, SRP vs. Load Balancing LB 
 ## Related Papers
 
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ICLR 2026\] Not All Bits Are Equal: Scale-Dependent Memory Optimization Strategies for Reasoning Models](not_all_bits_are_equal_scale-dependent_memory_optimization_strategies_for_reason.md)
 - [\[ICLR 2026\] Expert Merging in Sparse Mixture of Experts with Nash Bargaining](expert_merging_in_sparse_mixture_of_experts_with_nash_bargaining.md)
+- [\[ICLR 2026\] Not All Bits Are Equal: Scale-Dependent Memory Optimization Strategies for Reasoning Models](not_all_bits_are_equal_scale-dependent_memory_optimization_strategies_for_reason.md)
+- [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
 - [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[CVPR 2025\] Efficient Data Driven Mixture-of-Expert Extraction from Trained Networks](../../CVPR2025/llm_efficiency/moee_mixture_expert_extraction.md)
 
 </div>
 

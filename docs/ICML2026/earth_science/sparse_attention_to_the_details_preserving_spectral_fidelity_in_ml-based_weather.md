@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models
 description: >-
-  [ICML 2026][Earth Science][HEALPix mesh] MOSAIC addresses two types of spectral degradation in ML weather forecasting models (spectral damping from deterministic averaging and high-frequency aliasing from coarsened latent spaces) by combining "probabilistic perturbation + mesh-aligned block-sparse attention on HEALPix spherical grids." With only 214M paramete
+  [ICML 2026][Earth Science][Weather Forecasting] MOSAIC addresses two types of spectral degradation in ML weather forecasting models (spectral damping from deterministic averaging and high-frequency aliasing from coarsened latent spaces) by combining "probabilistic perturbation + mesh-aligned block-sparse attention on HEALPix spherical grids." With only 214M parameters at 1.5° resolution, it matches or exceeds models with 6× higher resolution…
 tags:
-  - ICML 2026
-  - Earth Science
-  - HEALPix mesh
+  - "ICML 2026"
+  - "Earth Science"
+  - "Weather Forecasting"
+  - "Sparse Attention"
+  - "HEALPix mesh"
+  - "Spectral Fidelity"
+  - "Probabilistic Ensemble Forecasting"
 date: 2026-05-08
-content_hash: aa644d8d7ab7d393
+content_hash: 16685152e360986d
 ---
+
 # (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models
 
 **Conference**: ICML 2026  
@@ -140,10 +145,10 @@ MOSAIC (1.5°, 214M parameters) vs other MLWP:
 ## Related Papers
 
 - [\[ICML 2026\] Scaling Laws of Global Weather Models](scaling_laws_of_global_weather_models.md)
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](../../ICLR2026/earth_science/tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](../../ICLR2026/earth_science/task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
 - [\[CVPR 2026\] PhyOceanCast: Global Ocean Forecasting with Physics-Informed Diffusion](../../CVPR2026/earth_science/phyoceancast_global_ocean_forecasting_with_physics-informed_diffusion.md)
-- [\[CVPR 2026\] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](../../CVPR2026/earth_science/sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)
-- [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
-- [\[AAAI 2026\] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](../../AAAI2026/earth_science/renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)
+- [\[ICLR 2026\] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours](../../ICLR2026/earth_science/rainpro-8_an_efficient_deep_learning_model_to_estimate_rainfall_probabilities_ov.md)
 
 </div>
 

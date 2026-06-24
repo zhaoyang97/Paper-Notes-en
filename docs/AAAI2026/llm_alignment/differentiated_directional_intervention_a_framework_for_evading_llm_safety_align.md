@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment
 description: >-
-  [AAAI 2026][LLM Alignment][LLM safety] This work deconstructs the internal representations of LLM safety alignment from the conventional "single refusal direction" into two functionally independent directions — a **harm…
+  [AAAI 2026][LLM Alignment][LLM safety] This work deconstructs the internal representations of LLM safety alignment from the conventional "single refusal direction" into two functionally independent directions — a **harm detection direction** and a **refusal execution direction** — and proposes the DBDI framework, which applies adaptive projection elimination and direct steering to intervene on each direction separately, achieving a 97.88% attack success rate (ASR) on Llama-2.
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "safety alignment"
   - "interpretability"
 date: 2026-05-08
-content_hash: 0f1465008e92f03c
+content_hash: bf1b6e6c39307540
 ---
 
 # Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment
@@ -131,11 +131,11 @@ Values in parentheses correspond to results with a simplified chat template.
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Preference Alignment via Directional Neighborhood Consensus](../../ICLR2026/llm_alignment/robust_preference_alignment_via_directional_neighborhood_consensus.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](../../ICML2026/llm_alignment/curriculum_learning_for_safety_alignment.md)
 - [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
-- [\[ICLR 2026\] Robust Preference Alignment via Directional Neighborhood Consensus](../../ICLR2026/llm_alignment/robust_preference_alignment_via_directional_neighborhood_consensus.md)
+- [\[ICLR 2026\] The Alignment Auditor: A Bayesian Framework for Verifying and Refining LLM Objectives](../../ICLR2026/llm_alignment/the_alignment_auditor_a_bayesian_framework_for_verifying_and_refining_llm_object.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](../../NeurIPS2025/llm_alignment/llm_safety_alignment_is_divergence_estimation_in_disguise.md)
-- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](../../ICLR2026/llm_alignment/superficial_safety_alignment_hypothesis.md)
 
 </div>
 

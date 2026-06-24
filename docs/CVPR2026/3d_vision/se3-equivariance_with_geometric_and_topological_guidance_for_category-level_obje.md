@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SEGPose is a depth-only (point cloud) category-level 6D object pose estimation method. It is the first to simultaneously introduce geometric features, topological features, and SE(3)-equivariance into pose estimation: persistent homology generates topological labels to guide point cloud reconstruction, while Vector Neu
+  [CVPR 2026][3D Vision][Category-level pose estimation] SEGPose is a depth-only (point cloud) category-level 6D object pose estimation method. It is the first to simultaneously introduce geometric features, topological features, and SE(3)-equivariance into pose estimation: persistent homology generates topological labels to guide point cloud reconstruction, while Vector Neuron Networks extract SE(3)-equivariant features to guide the pose prediction head. It outperforms all sim…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Category-level pose estimation"
+  - "SE(3)-equivariant"
+  - "Persistent homology"
+  - "Point cloud reconstruction"
+  - "Robotic grasping"
 date: 2026-05-08
-content_hash: 7b028235d3b4d52b
+content_hash: eaddc90e5d9ec10b
 ---
+
 # SE(3)-Equivariance with Geometric and Topological Guidance for Category-Level Object Pose Estimation
 
 **Conference**: CVPR 2026  

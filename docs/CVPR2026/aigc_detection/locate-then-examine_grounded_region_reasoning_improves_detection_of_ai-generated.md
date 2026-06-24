@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images
 description: >-
-  [CVPR 2026][AIGC Detection][Paper Note] LTE enables Vision-Language Models to first perform a "global scan to locate suspicious regions" and then "zoom in and crop to re-examine for the final verdict." It upgrades one-time classification into a two-stage region-grounded reasoning process. Accompanied by the TRACE dataset containing box-level annotations and
+  [CVPR 2026][AIGC Detection][AI-Generated Image Detection] LTE enables Vision-Language Models to first perform a "global scan to locate suspicious regions" and then "zoom in and crop to re-examine for the final verdict." It upgrades one-time classification into a two-stage region-grounded reasoning process. Accompanied by the TRACE dataset containing box-level annotations and forensic explanations, it achieves simultaneous improvements in accuracy, robustness…
 tags:
-  - CVPR 2026
-  - AIGC Detection
+  - "CVPR 2026"
+  - "AIGC Detection"
+  - "AI-Generated Image Detection"
+  - "Region Localization"
+  - "VLM Forensic Reasoning"
+  - "GRPO Reinforcement Learning"
+  - "Explainable Forensics"
 date: 2026-05-08
-content_hash: 03e3a5bfc2d1f28a
+content_hash: a393ee590e6f108d
 ---
+
 # Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ In cross-domain (OoD) generalization, LTE leads consistently across three extern
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
-- [\[CVPR 2026\] Quality-Aware Calibration for AI-Generated Image Detection in the Wild](quality-aware_calibration_for_ai-generated_image_detection_in_the_wild.md)
-- [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](../../ACL2026/aigc_detection/aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](../../ICLR2026/aigc_detection/fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](../../ICLR2026/aigc_detection/semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
-- [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](../../ICML2026/aigc_detection/core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
+- [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](../../ACL2026/aigc_detection/aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
 
 </div>
 

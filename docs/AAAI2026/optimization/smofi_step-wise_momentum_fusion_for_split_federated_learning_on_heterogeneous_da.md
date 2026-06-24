@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data
 description: >-
-  [AAAI 2026][Optimization][Split Federated Learning] This paper proposes SMoFi, a framework that synchronizes the momentum buffers of surrogate models on the server side at every SGD step within Split FL…
+  [AAAI 2026][Optimization][Split Federated Learning] This paper proposes SMoFi, a framework that synchronizes the momentum buffers of surrogate models on the server side at every SGD step within Split FL, effectively mitigating gradient divergence caused by non-IID data. SMoFi achieves up to 7.1% accuracy improvement and up to 10.25× convergence speedup.
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Non-IID"
   - "Convergence Acceleration"
 date: 2026-05-08
-content_hash: d64408535d51a059
+content_hash: 7af97316c77122ce
 ---
 
 # SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data
@@ -134,9 +134,9 @@ Convergence speedup (rounds to reach target accuracy vs. FedAvg): 4.61×–5.54�
 
 - [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
 - [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](../../ICLR2026/optimization/feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](../../ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[AAAI 2026\] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack](tackling_resource-constrained_and_data-heterogeneity_in_federated_learning_with_.md)
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/optimization/incentives_in_federated_learning_with_heterogeneous_agents.md)
-- [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
+- [\[ICML 2025\] FedSWA: Improving Generalization in Federated Learning with Highly Heterogeneous Data via Momentum-Based Stochastic Controlled Weight Averaging](../../ICML2025/optimization/fedswa_improving_generalization_in_federated_learning_with_highly_heterogeneous_.md)
 
 </div>
 

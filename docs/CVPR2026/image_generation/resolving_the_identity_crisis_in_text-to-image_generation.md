@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Resolving the Identity Crisis in Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] This paper reveals the "identity crisis" (duplicated faces, identity merging) in text-to-image models during multi-person generation. It proposes the DisCo framework, which utilizes compositional reward functions and Group Relative Policy Optimization (GRPO) to fine-tune flow-matching models. DisCo achieves a 98.6% uni
+  [CVPR 2026][Image Generation][Identity Diversity] This paper reveals the "identity crisis" (duplicated faces, identity merging) in text-to-image models during multi-person generation. It proposes the DisCo framework, which utilizes compositional reward functions and Group Relative Policy Optimization (GRPO) to fine-tune flow-matching models. DisCo achieves a 98.6% unique face accuracy, surpassing closed-source models including GPT-Image-1.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
-  - GRPO
-  - Text-to-Image
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Identity Diversity"
+  - "Multi-person Image Generation"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Text-to-Image"
 date: 2026-05-08
-content_hash: 577a2ffb8d0770ac
+content_hash: 4ebdfb56a15116b4
 ---
+
 # Resolving the Identity Crisis in Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -137,10 +140,10 @@ The total reward is defined as $r(\tau_i, c, G) = \alpha r_{\text{img}}^d + \bet
 ## Related Papers
 
 - [\[CVPR 2026\] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation](disentangling_to_re-couple_resolving_the_similarity-controllability_paradox_in_s.md)
-- [\[CVPR 2026\] PositionIC: Unified Position and Identity Consistency for Image Customization](positionic_unified_position_and_identity_consistency_for_image_customization.md)
+- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
+- [\[CVPR 2026\] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward](promptenhancer_taming_your_rewriter_for_text-to-image_generation_via_fine-graine.md)
+- [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
 - [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
-- [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
-- [\[CVPR 2026\] Extending One-Step Image Generation from Class Labels to Text via Discriminative Text Representation](emf_meanflow_text_to_image.md)
 
 </div>
 

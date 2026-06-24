@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers
 description: >-
-  [NeurIPS 2025 (ScaleOPT Workshop)][Model Compression][Module replacement] DCR mixes teacher and student module outputs via a deterministic annealing weight $\alpha(t)$…
+  [NeurIPS 2025 (ScaleOPT Workshop)][Model Compression][Module replacement] DCR mixes teacher and student module outputs via a deterministic annealing weight $\alpha(t)$, eliminating the gradient variance introduced by stochastic gating (e.g., BERT-of-Theseus), and achieves faster convergence and stronger feature alignment in cold-start module replacement scenarios.
 tags:
   - "NeurIPS 2025 (ScaleOPT Workshop)"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "knowledge distillation"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: 731d8c38f762586c
+content_hash: b9a3d74b8ea43374
 ---
 
 # Deterministic Continuous Replacement: Fast and Stable Module Replacement in Pretrained Transformers
@@ -132,10 +132,10 @@ DCR+DFG reaches the target accuracy fastest in both epoch count and wall-clock t
 ## Related Papers
 
 - [\[NeurIPS 2025\] Elastic ViTs from Pretrained Models without Retraining](elastic_vits_from_pretrained_models_without_retraining.md)
-- [\[NeurIPS 2025\] Bézier Splatting for Fast and Differentiable Vector Graphics Rendering](bezier_splatting_for_fast_and_differentiable_vector_graphics_rendering.md)
+- [\[ICLR 2026\] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers](../../ICLR2026/model_compression/thicker_and_quicker_the_jumbo_token_for_fast_plain_vision_transformers.md)
 - [\[NeurIPS 2025\] Understanding Differential Transformer Unchains Pretrained Self-Attentions](understanding_differential_transformer_unchains_pretrained_self-attentions.md)
+- [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 - [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](../../ICCV2025/model_compression/bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
-- [\[ACL 2026\] Stable On-Policy Distillation through Adaptive Target Reformulation](../../ACL2026/model_compression/stable_on-policy_distillation_through_adaptive_target_reformulation.md)
 
 </div>
 

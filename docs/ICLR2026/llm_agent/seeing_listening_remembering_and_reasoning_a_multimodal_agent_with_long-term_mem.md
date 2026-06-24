@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] M3-Agent converts real-time visual and audio streams into entity-centric multimodal long-term memory, utilizing a reinforcement learning-trained control model for multi-turn retrieval and reasoning. It outperforms prompt-based closed-source agents and online long video understanding baselines on M3-Bench and VideoMME-l
+  [ICLR2026][LLM Agent][Multimodal Agent] M3-Agent converts real-time visual and audio streams into entity-centric multimodal long-term memory, utilizing a reinforcement learning-trained control model for multi-turn retrieval and reasoning. It outperforms prompt-based closed-source agents and online long video understanding baselines on M3-Bench and VideoMME-long.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Multimodal Agent"
+  - "Long-term Memory"
+  - "Memory-Augmented Reasoning"
+  - "Long Video QA"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 8fa55738d8083a2a
+content_hash: 0c0bfbfa5d2a47e5
 ---
+
 # Seeing, Listening, Remembering, and Reasoning: A Multimodal Agent with Long-Term Memory
 
 **Conference**: ICLR2026  

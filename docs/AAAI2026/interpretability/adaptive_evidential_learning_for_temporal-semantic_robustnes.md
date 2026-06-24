@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval
 description: >-
-  [AAAI 2026][Interpretability][Moment Retrieval] This paper proposes DEMR, a framework that introduces Deep Evidential Regression (DER) into video moment retrieval. It mitigates modal imbalance via a Reflective Flipped Fu…
+  [AAAI 2026][Interpretability][Moment Retrieval] This paper proposes DEMR, a framework that introduces Deep Evidential Regression (DER) into video moment retrieval. It mitigates modal imbalance via a Reflective Flipped Fusion (RFF) module and corrects the counter-intuitive uncertainty estimation bias in vanilla DER via a Geom-regularizer, achieving significant improvements on both standard and debiased benchmarks.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Modal Alignment"
   - "Debiasing"
 date: 2026-05-08
-content_hash: a9a817253b8a0584
+content_hash: d19e3a2bd5a5235a
 ---
 
 # Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval
@@ -107,10 +107,10 @@ The Geom-regularizer's design principle — constraining error and evidence to a
 ## Related Papers
 
 - [\[ACL 2026\] Retrieval Heads are Dynamic](../../ACL2026/interpretability/retrieval_heads_are_dynamic.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](../../ICML2026/interpretability/formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 - [\[NeurIPS 2025\] FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed](../../NeurIPS2025/interpretability/fastdinov2_frequency_based_curriculum_learning_improves_robustness_and_training_.md)
-- [\[AAAI 2026\] SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs](scope_intrinsic_semantic_space_control_for_mitigating_copyright_infringement_in_.md)
 - [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](../../ICML2026/interpretability/optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
-- [\[ACL 2026\] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning](../../ACL2026/interpretability/nose_neural_olfactory-semantic_embedding_with_tri-modal_orthogonal_contrastive_l.md)
+- [\[AAAI 2026\] SCoPe: Intrinsic Semantic Space Control for Mitigating Copyright Infringement in LLMs](scope_intrinsic_semantic_space_control_for_mitigating_copyright_infringement_in_.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PQGAN: Product-Quantised Image Representation for High-Quality Image Synthesis
 description: >-
-  [ICLR 2026][Image Generation][VQGAN] PQGAN integrates classic Product Quantisation (PQ) into the quantization module of VQGAN, partitioning each latent vector into $S$ subspaces for individual quantization. This constructs an exponentially large "virtual codebook" via combinations of small sub-codebooks. It improves ImageNet reconstruction PSNR from 27 dB
+  [ICLR 2026][Image Generation][Product Quantisation] PQGAN integrates classic Product Quantisation (PQ) into the quantization module of VQGAN, partitioning each latent vector into $S$ subspaces for individual quantization. This constructs an exponentially large "virtual codebook" via combinations of small sub-codebooks. It improves ImageNet reconstruction PSNR from 27 dB to 37.4 dB and reduces FID to 0.036, outperforming even continuous VAEs. Furthermore…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VQGAN
-  - Stable Diffusion
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Product Quantisation"
+  - "image tokenizer"
+  - "VQGAN"
+  - "latent space representation"
+  - "Stable Diffusion"
 date: 2026-05-08
-content_hash: 12b4fc8688032e0b
+content_hash: b620a28740b3a9c4
 ---
+
 # PQGAN: Product-Quantised Image Representation for High-Quality Image Synthesis
 
 **Conference**: ICLR 2026  
@@ -165,11 +169,11 @@ The core ablation focuses on "product space configuration," scanning $d\in\{4,\d
 
 ## Related Papers
 
-- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
 - [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
-- [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
-- [\[ICLR 2026\] Product of Experts for Visual Generation](product_of_experts_for_visual_generation.md)
 - [\[ICLR 2026\] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection](localized_concept_erasure_in_text-to-image_diffusion_models_via_high-level_repre.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
+- [\[ICLR 2026\] Product of Experts for Visual Generation](product_of_experts_for_visual_generation.md)
+- [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Conformalized Survival Counterfactuals Prediction for General Right-Censored Data
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] In clinical scenarios involving "general right-censoring + multiple treatment options," this paper utilizes the potential outcomes framework combined with weighted conformal prediction to construct a Lower Predictive Bound (LPB) for counterfactual survival times. It upgrades PAC-type approximate coverage from previous
+  [ICLR 2026][Causal Inference][Counterfactual Prediction] In clinical scenarios involving "general right-censoring + multiple treatment options," this paper utilizes the potential outcomes framework combined with weighted conformal prediction to construct a Lower Predictive Bound (LPB) for counterfactual survival times. It upgrades PAC-type approximate coverage from previous methods to **exact marginal coverage** and achieves double robustness against model misspecification.
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Counterfactual Prediction"
+  - "Survival Analysis"
+  - "Right-censored Data"
+  - "Weighted Conformal"
+  - "Lower Predictive Bound (LPB)"
+  - "Double Robustness"
 date: 2026-05-08
-content_hash: 581cd16f484105ad
+content_hash: d10b19f510ee5acb
 ---
+
 # Conformalized Survival Counterfactuals Prediction for General Right-Censored Data
 
 **Conference**: ICLR 2026  
@@ -129,15 +136,15 @@ Normal noise is subtracted from 10% of data to create smaller outliers ($\mathca
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
-- [\[ICLR 2026\] Privacy-Protected Causal Survival Analysis Under Distribution Shift](privacy-protected_causal_survival_analysis_under_distribution_shift.md)
 - [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](../../NeurIPS2025/causal_inference/differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
+- [\[ICLR 2026\] Privacy-Protected Causal Survival Analysis Under Distribution Shift](privacy-protected_causal_survival_analysis_under_distribution_shift.md)
 - [\[ICLR 2026\] Foundation Models for Causal Inference via Prior-Data Fitted Networks](foundation_models_for_causal_inference_via_prior-data_fitted_networks.md)
-- [\[ICLR 2026\] Influence without Confounding: Causal Discovery from Temporal Data with Long-term Carry-over Effects](influence_without_confounding_causal_discovery_from_temporal_data_with_long-term.md)
+- [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](../../CVPR2026/causal_inference/retrieving_counterfactuals_improves_visual_in-context_learning.md)
 
 </div>
 

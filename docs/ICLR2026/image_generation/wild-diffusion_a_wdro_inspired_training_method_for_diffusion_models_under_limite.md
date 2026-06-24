@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] WILD-Diffusion：一种受 WDRO 启发的有限数据扩散模型训练方法
+  [Paper Note] WILD-Diffusion: A WDRO-inspired Training Method for Limited Data Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper introduces Wasserstein Distributionally Robust Optimization (WDRO) into diffusion model training. By iteratively generating "worst-case" samples within a Wasserstein uncertainty set centered on the limited data distribution, the training support set is dynamically expanded. This approach reduces FID by more
+  [ICLR 2026][Image Generation][Limited data generation] This paper introduces Wasserstein Distributionally Robust Optimization (WDRO) into diffusion model training. By iteratively generating "worst-case" samples within a Wasserstein uncertainty set centered on the limited data distribution, the training support set is dynamically expanded. This approach reduces FID by more than 10% when using only 20% of the data and provides a plug-and-play training framework with convergence…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - WDRO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Limited data generation"
+  - "Diffusion models"
+  - "Distributionally Robust Optimization"
+  - "WDRO"
+  - "Overfitting mitigation"
 date: 2026-05-08
-content_hash: e3c455ad40a10e2c
+content_hash: 6f8a2e355d5dd16a
 ---
+
 # WILD-Diffusion: A WDRO-inspired Training Method for Limited Data Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -146,11 +150,11 @@ When training from scratch, FID on Obama dropped to 34.52 (at least 7% improveme
 
 ## Related Papers
 
-- [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
-- [\[ECCV 2024\] WildVidFit: Video Virtual Try-On in the Wild via Image-Based Controlled Diffusion Models](../../ECCV2024/image_generation/wildvidfit_video_virtual_try-on_in_the_wild_via_image-based_controlled_diffusion.md)
-- [\[ECCV 2024\] RPBG: Towards Robust Neural Point-based Graphics in the Wild](../../ECCV2024/image_generation/rpbg_towards_robust_neural_point-based_graphics_in_the_wild.md)
-- [\[ICCV 2025\] ImageGem: In-the-wild Generative Image Interaction Dataset for Generative Model Personalization](../../ICCV2025/image_generation/imagegem_in-the-wild_generative_image_interaction_dataset_for_generative_model_p.md)
-- [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](../../ICML2026/image_generation/omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
+- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
+- [\[ICLR 2026\] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](pi-light_physics-inspired_diffusion_for_full-image_relighting.md)
+- [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
+- [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](../../ICML2026/image_generation/guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
+- [\[ICLR 2026\] AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models](aegis_adversarial_target-guided_retention-data-free_robust_concept_erasure_from_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Disentanglement of Variations with Multimodal Generative Modeling
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] IDMVAE builds upon the multimodal VAE framework by adding two types of mutual information (MI) regularization—maximizing cross-view MI to extract shared variables and using cycle-consistent generative augmentation to remove redundancy. By replacing Gaussian priors with diffusion models, it achieves clean separation of
+  [ICLR 2026][Self-Supervised Learning][Multimodal VAE] IDMVAE builds upon the multimodal VAE framework by adding two types of mutual information (MI) regularization—maximizing cross-view MI to extract shared variables and using cycle-consistent generative augmentation to remove redundancy. By replacing Gaussian priors with diffusion models, it achieves clean separation of shared and private information on challenging datasets where likelihood models are insufficient.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Multimodal VAE"
+  - "Shared-private disentanglement"
+  - "Mutual information regularization"
+  - "Generative data augmentation"
+  - "Diffusion prior"
 date: 2026-05-08
-content_hash: 16e20e6a5eb65dbe
+content_hash: 92c2dc449cb3e81e
 ---
+
 # Disentanglement of Variations with Multimodal Generative Modeling
 
 **Conference**: ICLR 2026  
@@ -143,10 +149,10 @@ The digit prediction from shared codes jumped from 0.382 (MMVAE+) to 0.983, and 
 ## Related Papers
 
 - [\[CVPR 2026\] OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](../../CVPR2026/self_supervised/openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)
+- [\[ICLR 2026\] Better Together: Leveraging Unpaired Multimodal Data for Stronger Unimodal Models](better_together_leveraging_unpaired_multimodal_data_for_stronger_unimodal_models.md)
 - [\[CVPR 2026\] Residual Connections Harm Generative Representation Learning](../../CVPR2026/self_supervised/residual_connections_harm_generative_representation_learning.md)
 - [\[ICML 2026\] Riemannian Metric Matching for Scalable Geometric Modeling of Distributions](../../ICML2026/self_supervised/riemannian_metric_matching_for_scalable_geometric_modeling_of_distributions.md)
-- [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](../../CVPR2026/self_supervised/suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
-- [\[CVPR 2026\] Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors](../../CVPR2026/self_supervised/beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio.md)
+- [\[ICML 2026\] TRACER: Robust Multimodal Fine-tuning Proven with WMA Teacher + Geometric Decomposition](../../ICML2026/self_supervised/tracer_persistent_regularization_for_robust_multimodal_finetuning.md)
 
 </div>
 

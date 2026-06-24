@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning
 description: >-
-  [Multimodal VLM] SC-Captioner proposes a multi-turn reinforcement learning framework based on policy gradient. By designing a correction reward function that incorporates correctness bonuses and mistake punishments…
+  [Multimodal VLM] SC-Captioner proposes a multi-turn reinforcement learning framework based on policy gradient. By designing a correction reward function that incorporates correctness bonuses and mistake punishments, it enables large vision-language models to acquire self-correction capabilities for image captioning, while also introducing an improved CAPTURE evaluation metric.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: f7902d8a16d29962
+content_hash: cdea1b7ff5a6239b
 ---
 
 # SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning
@@ -146,11 +146,11 @@ Three improvements are made to the CAPTURE metric:
 
 ## Related Papers
 
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
-- [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
+- [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
+- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](mm-ifengine_towards_multimodal_instruction_following.md)
+- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
+- [\[ICCV 2025\] Hints of Prompt: Enhancing Visual Representation for Multimodal LLMs in Autonomous Driving](hints_of_prompt_enhancing_visual_representation_for_multimodal_llms_in_autonomou.md)
 
 </div>
 

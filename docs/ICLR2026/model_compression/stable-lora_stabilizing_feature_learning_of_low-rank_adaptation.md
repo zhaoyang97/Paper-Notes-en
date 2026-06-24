@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation
 description: >-
-  [ICLR 2026][Model Compression][LoRA] This paper analyzes LoRA training dynamics from the perspective of feature learning stability, proving that LoRA can be "self-stabilizing" under appropriate hyperparameters and initialization, while the commonly used non-zero initialization $A_0$ disrupts this stability in the long term. Consequently, Stable-LoRA is pr
+  [ICLR 2026][Model Compression][LoRA] This paper analyzes LoRA training dynamics from the perspective of feature learning stability, proving that LoRA can be "self-stabilizing" under appropriate hyperparameters and initialization, while the commonly used non-zero initialization $A_0$ disrupts this stability in the long term. Consequently, Stable-LoRA is proposed—applying exponential shrinkage to $A$ during the initial training steps to retain the benefits of non-zero initializ…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Feature Learning Stability"
+  - "Weight Shrinkage"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: ed74f8e2a1dd63d2
+content_hash: f7574c8dc2a28444
 ---
+
 # Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation
 
 **Conference**: ICLR 2026  
@@ -135,12 +140,13 @@ Overhead: For 0.5B training time, AdamW (217.4s), LoRA+ (+0.0%), Riemann (+8.3%)
 - Value: ⭐⭐⭐⭐⭐ (Plug-and-play, zero VRAM overhead, consistent gains).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ICLR 2026\] E²LoRA: Efficient and Effective Low-Rank Adaptation with Entropy-Guided Adaptive Sharing](e²lora_efficient_and_effective_low-rank_adaptation_with_entropy-guided_adaptive_.md)
+- [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
 - [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)

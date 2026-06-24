@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models
 description: >-
-  [AAAI 2026][Multi-Agent][Syllogistic Reasoning] This paper proposes MedLA, the first multi-agent medical reasoning framework based on syllogistic logic trees. Each agent organizes its reasoning as an explicit logic tree…
+  [AAAI 2026][Multi-Agent][Syllogistic Reasoning] This paper proposes MedLA, the first multi-agent medical reasoning framework based on syllogistic logic trees. Each agent organizes its reasoning as an explicit logic tree composed of syllogistic nodes (major premise–minor premise–conclusion). Multiple agents align and revise their logic trees at the premise level through graph-guided multi-round discussions. MedLA outperforms all baselines by 7.4% on MedDDx (8B model) and achie…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Medical QA"
   - "Premise-Level Alignment"
 date: 2026-05-08
-content_hash: c777b812c4cf6df0
+content_hash: 00b7bb5b17814665
 ---
 
 # MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models
@@ -145,8 +145,8 @@ A three-phase pipeline:
 - [\[AAAI 2026\] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models](liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua.md)
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
+- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](../../ICLR2026/multi_agent/cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 - [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](../../NeurIPS2025/multi_agent/large_language_models_miss_the_multi-agent_mark.md)
-- [\[NeurIPS 2025\] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?](../../NeurIPS2025/multi_agent/debate_or_vote_which_yields_better_decisions_in_multi-agent_large_language_model.md)
 
 </div>
 

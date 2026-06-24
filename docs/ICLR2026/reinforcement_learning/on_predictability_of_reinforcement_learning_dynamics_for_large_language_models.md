@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On Predictability of Reinforcement Learning Dynamics for Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][SVD] This paper discovers that the parameter update matrix $\Delta W$ of LLMs during RL training is almost entirely dominated by its Rank-1 subspace (a single direction can recover over 99% of reasoning gains). Furthermore, this subspace evolves approximately linearly during training and can be extrapolated from early check
+  [ICLR 2026][Reinforcement Learning][RL Training Dynamics] This paper discovers that the parameter update matrix $\Delta W$ of LLMs during RL training is almost entirely dominated by its Rank-1 subspace (a single direction can recover over 99% of reasoning gains). Furthermore, this subspace evolves approximately linearly during training and can be extrapolated from early checkpoints. Based on these findings, the authors propose AlphaRL, a parameter-free acceleration framework…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SVD
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL Training Dynamics"
+  - "Parameter Updates"
+  - "Low-rank Structure"
+  - "SVD"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: c8503fc8a74b3ed7
+content_hash: 8f7cde449d204d42
 ---
+
 # On Predictability of Reinforcement Learning Dynamics for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -138,8 +143,8 @@ Property quantification: Rank-1 recovers **99.17%** of reasoning capability on a
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 - [\[ICLR 2026\] TROLL: Trust Regions improve Reinforcement Learning for Large Language Models](troll_trust_regions_improve_reinforcement_learning_for_large_language_models.md)
-- [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
-- [\[ICLR 2026\] AWM: Accurate Weight-Matrix Fingerprint for Large Language Models](awm_accurate_weight-matrix_fingerprint_for_large_language_models.md)
+- [\[ICLR 2026\] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models](risk-sensitive_reinforcement_learning_for_alleviating_exploration_dilemmas_in_la.md)
+- [\[ICLR 2026\] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models](cde_curiosity-driven_exploration_for_efficient_reinforcement_learning_in_large_l.md)
 
 </div>
 

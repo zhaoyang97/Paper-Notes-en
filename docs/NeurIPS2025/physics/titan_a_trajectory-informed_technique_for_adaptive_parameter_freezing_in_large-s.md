@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][VQE] This paper proposes TITAN, a framework that employs deep learning models to predict "frozen parameters" in VQE—parameters that remain inactive throughout training—enabl…
+  [NeurIPS 2025][Physics & Scientific Computing][VQE] This paper proposes TITAN, a framework that employs deep learning models to predict "frozen parameters" in VQE—parameters that remain inactive throughout training—enabling 40–60% of parameters to be frozen at initialization, achieving up to 3× convergence speedup and 40–60% reduction in circuit evaluations, while matching or surpassing baseline accuracy on molecular systems of up to 30 qubits.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "quantum chemistry"
   - "deep learning-assisted quantum computing"
 date: 2026-05-08
-content_hash: a0acf2751853b794
+content_hash: bd3941a7886d4e5b
 ---
 
 # TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE
@@ -124,10 +124,10 @@ Three stages: (1) the APFA algorithm collects parameter freezing patterns from V
 ## Related Papers
 
 - [\[NeurIPS 2025\] F-Adapter: Frequency-Adaptive Parameter-Efficient Fine-Tuning in Scientific Machine Learning](f-adapter_frequency-adaptive_parameter-efficient_fine-tuning_in_scientific_machi.md)
+- [\[ICML 2025\] Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems](../../ICML2025/physics/erwin_a_tree-based_hierarchical_transformer_for_large-scale_physical_systems.md)
+- [\[ICML 2025\] Rethink the Role of Deep Learning towards Large-scale Quantum Systems](../../ICML2025/physics/rethink_the_role_of_deep_learning_towards_large-scale_quantum_systems.md)
 - [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
 - [\[NeurIPS 2025\] Multi-Trajectory Physics-Informed Neural Networks for HJB Equations with Hard-Zero Terminal Inventory: Optimal Execution on Synthetic & SPY Data](multi-trajectory_physics-informed_neural_networks_for_hjb_equations_with_hard-ze.md)
-- [\[NeurIPS 2025\] FEAT: Free Energy Estimators with Adaptive Transport](feat_free_energy_estimators_with_adaptive_transport.md)
-- [\[NeurIPS 2025\] Adaptive Stochastic Coefficients for Accelerating Diffusion Sampling](adaptive_stochastic_coefficients_for_accelerating_diffusion_sampling.md)
 
 </div>
 

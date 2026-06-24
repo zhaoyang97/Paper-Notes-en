@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Emergence of Linear Truth Encodings in Language Models
 description: >-
-  [NeurIPS 2025][Interpretability][truth encoding] This paper proposes the **Truth Co-occurrence Hypothesis (TCH)**—that true statements tend to co-occur with other true statements—and uses a minimal single-layer Transform…
+  [NeurIPS 2025][Interpretability][truth encoding] This paper proposes the **Truth Co-occurrence Hypothesis (TCH)**—that true statements tend to co-occur with other true statements—and uses a minimal single-layer Transformer toy model to provide an end-to-end demonstration of how linear truth subspaces emerge naturally through a two-phase training dynamic (memorization first → truth encoding later). This constitutes the first mechanistic explanation for the widely reported line…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "training dynamics"
   - "LayerNorm"
 date: 2026-05-08
-content_hash: 67027bd33e29b6b0
+content_hash: da9afef4cd90e62a
 ---
 
 # Emergence of Linear Truth Encodings in Language Models
@@ -182,10 +182,10 @@ Two-phase training dynamics:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Minimizing False-Positive Attributions in Explanations of Non-Linear Models](minimizing_false-positive_attributions_in_explanations_of_non-linear_models.md)
+- [\[ACL 2025\] Probing the Geometry of Truth: Consistency and Generalization of Truth Directions](../../ACL2025/interpretability/probing_the_geometry_of_truth_consistency_and_generalization_of_truth_directions.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
 - [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](../../ICLR2026/interpretability/beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
-- [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)
-- [\[NeurIPS 2025\] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](bigram_subnetworks_mapping_to_next_tokens_in_transformer_language_models.md)
 
 </div>
 

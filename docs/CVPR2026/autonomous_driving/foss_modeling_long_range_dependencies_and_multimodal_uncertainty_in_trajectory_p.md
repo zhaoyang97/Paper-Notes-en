@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration
 description: >-
-  [CVPR 2026][Autonomous Driving][State Space Model] FoSS introduces a frequency-time dual-branch framework that organizes Fourier spectra via Progressive Helix Reordering (HelixSort) for processing by a Selective State Space Model (SSM). Combined with a time-domain dynamic SSM and cross-attention fusion, it achieves SOTA trajectory prediction accuracy on Argoverse 1/2 w
+  [CVPR 2026][Autonomous Driving][Trajectory Prediction] FoSS introduces a frequency-time dual-branch framework that organizes Fourier spectra via Progressive Helix Reordering (HelixSort) for processing by a Selective State Space Model (SSM). Combined with a time-domain dynamic SSM and cross-attention fusion, it achieves SOTA trajectory prediction accuracy on Argoverse 1/2 while reducing parameters by over 40% and inference latency by 22%.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - State Space Model
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Prediction"
+  - "Fourier Transform"
+  - "State Space Model"
+  - "Dual-branch Architecture"
+  - "Multimodal Prediction"
 date: 2026-05-08
-content_hash: ea5ff0606ec50dea
+content_hash: 9a6447e8902dcb22
 ---
+
 # FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration
 
 **Conference**: CVPR 2026  
@@ -146,11 +151,11 @@ Input-dependency allows the state machine to emphasize useful patterns at critic
 
 ## Related Papers
 
-- [\[CVPR 2026\] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving](perceiving_the_near_reasoning_the_distant_coherent_long-horizon_trajectory_predi.md)
+- [\[CVPR 2026\] TruckDrive: Long-Range Autonomous Highway Driving Dataset](truckdrive_long-range_autonomous_highway_driving_dataset.md)
 - [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
+- [\[CVPR 2026\] Perceiving the Near, Reasoning the Distant: Coherent Long-Horizon Trajectory Prediction for Autonomous Driving](perceiving_the_near_reasoning_the_distant_coherent_long-horizon_trajectory_predi.md)
 - [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
 - [\[CVPR 2025\] OccMamba: Semantic Occupancy Prediction with State Space Models](../../CVPR2025/autonomous_driving/occmamba_semantic_occupancy_prediction_with_state_space_models.md)
-- [\[AAAI 2026\] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions](../../AAAI2026/autonomous_driving/walking_further_semantic-aware_multimodal_gait_recognition_under_long-range_cond.md)
 
 </div>
 

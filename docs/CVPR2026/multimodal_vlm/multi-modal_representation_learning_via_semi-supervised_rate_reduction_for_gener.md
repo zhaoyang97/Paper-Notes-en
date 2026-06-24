@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] Ours proposes the SSR²-GCD framework, which learns structured representations with balanced intra-modal compression via a Semi-Supervised Rate Reduction loss. Combined with a Retrieval-based Text Aggregation strategy to enhance cross-modal knowledge transfer, it outperforms existing multi-modal GCD methods across 8 dat
+  [CVPR2026][Multimodal VLM][Generalized Category Discovery] Ours proposes the SSR²-GCD framework, which learns structured representations with balanced intra-modal compression via a Semi-Supervised Rate Reduction loss. Combined with a Retrieval-based Text Aggregation strategy to enhance cross-modal knowledge transfer, it outperforms existing multi-modal GCD methods across 8 datasets.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Generalized Category Discovery"
+  - "Multi-modal Representation Learning"
+  - "Semi-Supervised Rate Reduction"
+  - "Intra-modal Alignment"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 71b453bd39d6f6b9
+content_hash: 135ac70f5bdb79d1
 ---
+
 # Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 
 **Conference**: CVPR2026  
@@ -153,10 +158,10 @@ Each of the three components contributes independently, with their combination y
 ## Related Papers
 
 - [\[ICLR 2026\] SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](../../ICLR2026/multimodal_vlm/spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)
+- [\[CVPR 2026\] Semantic Noise Reduction via Teacher-Guided Dual-Path Audio-Visual Representation Learning](semantic_noise_reduction_via_teacher-guided_dual-path_audio-visual_representatio.md)
+- [\[CVPR 2026\] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP](reevaluating_the_intra-modal_misalignment_hypothesis_in_clip.md)
 - [\[CVPR 2026\] IsoCLIP: Decomposing CLIP Projectors for Efficient Intra-modal Alignment](isoclip_decomposing_clip_projectors_for_efficient_intramodal_alignment.md)
 - [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
-- [\[CVPR 2026\] BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment](brima_bridged_modality_adaptation_for_multi-modal_continual_action_quality_asses.md)
-- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Time-series Forecasting Through the Lens of Dynamics
 description: >-
-  [ICML 2026][Time Series][LTSF-Linear] The authors utilize Allen's Interval Algebra to propose the PRO-DYN nomenclature, decomposing any time-series forecasting (TSF) model into three stages: "Pre-processing (PRO) → Dynamics (DYN) → Post-processing (PRO)." Two empirical laws are identified: (i) the DYN component must be **learnable and complete** to outperf
+  [ICML 2026][Time Series][Dynamical Systems Perspective] The authors utilize Allen's Interval Algebra to propose the PRO-DYN nomenclature, decomposing any time-series forecasting (TSF) model into three stages: "Pre-processing (PRO) → Dynamics (DYN) → Post-processing (PRO)." Two empirical laws are identified: (i) the DYN component must be **learnable and complete** to outperform LTSF-Linear, and (ii) the DYN component must be positioned at the **end of the pipeline** (PRE-DYN c…
 tags:
-  - ICML 2026
-  - Time Series
-  - LTSF-Linear
+  - "ICML 2026"
+  - "Time Series"
+  - "Dynamical Systems Perspective"
+  - "PRO-DYN Nomenclature"
+  - "LTSF-Linear"
+  - "Predictor Position"
+  - "Principles of Time-series Model Design"
 date: 2026-05-08
-content_hash: 631114e65128a04d
+content_hash: ca842ea2c7ea4f29
 ---
+
 # Time-series Forecasting Through the Lens of Dynamics
 
 **Conference**: ICML 2026  
@@ -148,9 +153,9 @@ FiLM with DYN slightly outperforms NLinear; Informer shows the most significant 
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](../../ICLR2026/time_series/cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 - [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](../../ICLR2026/time_series/towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
 - [\[ICML 2026\] Ellipsoidal Time Series Forecasting](ellipsoidal_time_series_forecasting.md)
-- [\[NeurIPS 2025\] IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics](../../NeurIPS2025/time_series/ioncast_a_deep_learning_framework_for_forecasting_ionospheric_total_electron_con.md)
 - [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
 - [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](nested_spatio-temporal_time_series_forecasting.md)
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OralGPT-Omni: A Versatile Dental Multimodal Large Language Model
 description: >-
-  [CVPR 2026][Medical Imaging][GRPO] OralGPT-Omni is the first dental-specific multimodal large language model. By constructing TRACE-CoT data that mimics the diagnostic workflow of radiologists and employing a four-stage progressive training regimen, it achieved a score of 51.84 on the MMOral-Uni unified benchmark (covering five modalities and five tasks
+  [CVPR 2026][Medical Imaging][Dental MLLM] OralGPT-Omni is the first dental-specific multimodal large language model. By constructing TRACE-CoT data that mimics the diagnostic workflow of radiologists and employing a four-stage progressive training regimen, it achieved a score of 51.84 on the MMOral-Uni unified benchmark (covering five modalities and five tasks), significantly outperforming GPT-5's 15.42.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - GRPO
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Dental MLLM"
+  - "Clinical Chain-of-Thought"
+  - "Four-stage Training"
+  - "Unified Benchmark"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 58736a465e7efe52
+content_hash: 1df098ce5c4d6e3b
 ---
+
 # OralGPT-Omni: A Versatile Dental Multimodal Large Language Model
 
 **Conference**: CVPR 2026  

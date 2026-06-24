@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Speculative Speculative Decoding
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes Speculative Speculative Decoding, which transforms the serial dependency of "draft, then verify, then draft again" in standard speculative decoding into asynchronous pre-speculation: while verification is ongoing, the draft model guesses potential verification outcomes in advance and prepares the ne
+  [ICLR 2026][LLM Efficiency][Speculative Decoding] This paper proposes Speculative Speculative Decoding, which transforms the serial dependency of "draft, then verify, then draft again" in standard speculative decoding into asynchronous pre-speculation: while verification is ongoing, the draft model guesses potential verification outcomes in advance and prepares the next round of candidates. The resulting SAGUARO algorithm is approximately 30% faster than strong speculative de…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "LLM Inference Acceleration"
+  - "Asynchronous Inference"
+  - "Cache Hit"
+  - "Throughput-Latency Trade-off"
 date: 2026-05-08
-content_hash: 2ca36824448a7411
+content_hash: 5b3d2e4a97585fc4
 ---
+
 # Speculative Speculative Decoding
 
 **Conference**: ICLR 2026  
@@ -154,11 +160,11 @@ The "ablation" focuses on component analysis: studying the impact of cache topol
 
 ## Related Papers
 
-- [\[ICLR 2026\] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling](cactus_accelerating_auto-regressive_decoding_with_constrained_acceptance_specula.md)
+- [\[ICLR 2026\] Learning To Draft: Adaptive Speculative Decoding with Reinforcement Learning](learning_to_draft_adaptive_speculative_decoding_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
+- [\[ICLR 2026\] RepSpec: Structural Re-parameterized Draft Model Training for Speculative Decoding](repspec_structural_re-parameterized_draft_model_training_for_speculative_decodin.md)
+- [\[ICLR 2026\] SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism](specbranch_speculative_decoding_via_hybrid_drafting_and_rollback-aware_branch_pa.md)
 - [\[ICLR 2026\] Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs](not-a-bandit_provably_no-regret_drafter_selection_in_speculative_decoding_for_ll.md)
-- [\[ICLR 2026\] Dynamic Speculative Agent Planning](dynamic_speculative_agent_planning.md)
-- [\[ICLR 2026\] Training-Free Loosely Speculative Decoding: Accepting Semantically Correct Drafts Beyond Exact Match](training-free_loosely_speculative_decoding_accepting_semantically_correct_drafts.md)
-- [\[ICLR 2026\] Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models](self-speculative_decoding_accelerates_lossless_inference_in_any-order_and_any-su.md)
 
 </div>
 

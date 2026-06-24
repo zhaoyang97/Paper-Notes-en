@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models
 description: >-
-  [NeurIPS 2025][LLM Pretraining][temporal credit assignment] This paper proposes RICL (Retrospective In-Context Learning), which estimates the advantage function by comparing the log-probability difference of an LLM polic…
+  [NeurIPS 2025][LLM Pretraining][temporal credit assignment] This paper proposes RICL (Retrospective In-Context Learning), which estimates the advantage function by comparing the log-probability difference of an LLM policy before and after an in-context update. This approach converts sparse environment feedback into dense training signals, enabling efficient temporal credit assignment, and achieves comparable convergence performance to traditional RL methods on BabyAI tasks wi…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "sparse rewards"
   - "online learning"
 date: 2026-05-08
-content_hash: e7d35fc96e6467b9
+content_hash: 6164933f7de52e55
 ---
 
 # Retrospective In-Context Learning for Temporal Credit Assignment with Large Language Models
@@ -131,8 +131,8 @@ RICL first collects trajectories → a reflection LLM generates feedback → the
 
 - [\[NeurIPS 2025\] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation](the_atlas_of_in-context_learning_how_attention_heads_shape_in-context_retrieval_.md)
 - [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](../../ACL2026/llm_pretraining/fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
 - [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](the_curse_of_depth_in_large_language_models.md)
+- [\[NeurIPS 2025\] Scalable Fingerprinting of Large Language Models](scalable_fingerprinting_of_large_language_models.md)
 - [\[NeurIPS 2025\] Breaking the Gradient Barrier: Unveiling Large Language Models for Strategic Classification](breaking_the_gradient_barrier_unveiling_large_language_models_for_strategic_clas.md)
 
 </div>

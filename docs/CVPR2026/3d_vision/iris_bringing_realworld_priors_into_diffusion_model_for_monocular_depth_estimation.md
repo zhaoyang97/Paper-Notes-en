@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] Iris proposes a deterministic diffusion framework that injects real-world priors into diffusion models through a two-stage "Prior-to-Geometric" (PGD) schedule. The first stage utilizes Spectral Gated Distillation (SGD) at high timesteps to extract low-frequency layout priors from a teacher model. The second stage refin
+  [CVPR 2026][3D Vision][Monocular Depth Estimation] Iris proposes a deterministic diffusion framework that injects real-world priors into diffusion models through a two-stage "Prior-to-Geometric" (PGD) schedule. The first stage utilizes Spectral Gated Distillation (SGD) at high timesteps to extract low-frequency layout priors from a teacher model. The second stage refines high-frequency geometric details using synthetic data at low timesteps, while introducing Spectral Gated C…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Diffusion Models"
+  - "Spectral Gated Distillation"
+  - "Prior-Geometric Framework"
+  - "Deterministic Diffusion"
 date: 2026-05-08
-content_hash: e732531b394d4e45
+content_hash: 62ea8b067442113d
 ---
+
 # Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ Iris achieves the best overall performance on most real-image benchmarks, partic
 ## Related Papers
 
 - [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
+- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
+- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
+- [\[ECCV 2024\] DiffusionDepth: Diffusion Denoising Approach for Monocular Depth Estimation](../../ECCV2024/3d_vision/diffusiondepth_diffusion_denoising_approach_for_monocular_depth_estimation.md)
 
 </div>
 

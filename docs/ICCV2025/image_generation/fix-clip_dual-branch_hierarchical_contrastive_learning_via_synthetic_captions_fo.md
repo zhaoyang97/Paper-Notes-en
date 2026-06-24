@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text
 description: >-
-  [ICCV 2025][Image Generation][CLIP] Fix-CLIP enhances CLIP's long-text understanding capability through three key innovations: (1) a dual-branch training pipeline that aligns short texts with masked images and long texts…
+  [ICCV 2025][Image Generation][CLIP] Fix-CLIP enhances CLIP's long-text understanding capability through three key innovations: (1) a dual-branch training pipeline that aligns short texts with masked images and long texts with original images; (2) learnable Regional Prompts with unidirectional attention masks for local visual feature extraction; and (3) a hierarchical feature alignment module that aligns multi-scale features across intermediate encoder layers. After incrementa…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "hierarchical feature alignment"
   - "synthetic data"
 date: 2026-05-08
-content_hash: 88d26233ce44f585
+content_hash: 7cf84a4a3fc44cc1
 ---
 
 # Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text
@@ -175,11 +175,11 @@ Fix-CLIP's text encoder can directly replace the CLIP text encoder in diffusion 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Dual Diffusion for Unified Image Generation and Understanding](../../CVPR2025/image_generation/dual_diffusion_for_unified_image_generation_and_understanding.md)
 - [\[ICCV 2025\] CURE: Cultural Gaps in the Long Tail of Text-to-Image Systems](cure_cultural_gaps_in_the_long_tail_of_text-to-image_systems.md)
-- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](generating_multi-image_synthetic_data_for_text-to-image_customization.md)
-- [\[NeurIPS 2025\] Robustness in Both Domains: CLIP Needs a Robust Text Encoder](../../NeurIPS2025/image_generation/robustness_in_both_domains_clip_needs_a_robust_text_encoder.md)
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
-- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
+- [\[CVPR 2025\] Enhancing Vision-Language Compositional Understanding with Multimodal Synthetic Data (SPARCL)](../../CVPR2025/image_generation/enhancing_vision-language_compositional_understanding_with_multimodal_synthetic_.md)
+- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](generating_multi-image_synthetic_data_for_text-to-image_customization.md)
 
 </div>
 

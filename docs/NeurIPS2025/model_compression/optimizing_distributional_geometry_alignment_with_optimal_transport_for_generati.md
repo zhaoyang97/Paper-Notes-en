@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper reformulates dataset distillation as an optimal transport (OT) distance minimization problem and achieves fine-grained distributional geometry alignment…
+  [NeurIPS 2025][Model Compression][Dataset Distillation] This paper reformulates dataset distillation as an optimal transport (OT) distance minimization problem and achieves fine-grained distributional geometry alignment through a three-stage pipeline (OT-guided diffusion sampling, label-image alignment soft re-labeling, and OT logit matching), yielding at least 4% improvement over the previous state of the art on ImageNet-1K at IPC=10.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: fb08b203b7cb2d16
+content_hash: c57ddb5038e25752
 ---
 
 # Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation
@@ -126,10 +126,10 @@ The three stages are optimized sequentially: OTG first generates the distilled i
 
 ## Related Papers
 
+- [\[CVPR 2026\] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](../../CVPR2026/model_compression/ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)
 - [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](../../ICLR2026/model_compression/dataset_distillation_as_pushforward_optimal_quantization.md)
 - [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](hyperbolic_dataset_distillation.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
-- [\[NeurIPS 2025\] Beyond Random: Automatic Inner-Loop Optimization in Dataset Distillation](beyond_random_automatic_inner-loop_optimization_in_dataset_distillation.md)
 - [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](../../AAAI2026/model_compression/lightweight_optimal-transport_harmonization_on_edge_devices.md)
 
 </div>

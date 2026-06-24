@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Adaptive Rollout Allocation for Online RL with Verifiable Rewards (VIP)
 description: >-
-  [ICLR 2026][Optimization & Theory][GRPO] VIP (Variance-Informed Predictive allocation) is proposed to predict success probabilities of prompts via Gaussian processes, and subsequently use convex optimization to allocate rollout counts under computational budget constraints to minimize gradient variance. This consistently improves sampling efficiency for GRPO/
+  [ICLR 2026][Optimization][GRPO] VIP (Variance-Informed Predictive allocation) is proposed to predict success probabilities of prompts via Gaussian processes, and subsequently use convex optimization to allocate rollout counts under computational budget constraints to minimize gradient variance. This consistently improves sampling efficiency for GRPO/RLOO in mathematical reasoning tasks, showing up to a 12.3-point Pass@32 improvement on AIME24/25.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - GRPO
-  - rollout allocation
-  - gradient variance
-  - Gaussian process
-  - sampling efficiency
+  - "ICLR 2026"
+  - "Optimization"
+  - "GRPO"
+  - "rollout allocation"
+  - "gradient variance"
+  - "Gaussian process"
+  - "sampling efficiency"
 date: 2026-05-08
-content_hash: 6fe56e978ceb66b2
+content_hash: e8d27e2e5e50af66
 ---
+
 # Adaptive Rollout Allocation for Online RL with Verifiable Rewards (VIP)
 
 **Conference**: ICLR 2026  
@@ -126,8 +127,8 @@ The method integrates seamlessly with Dr.GRPO/RLOO without altering the loss. Tr
 - [\[ICLR 2026\] Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism](improving_online-to-nonconvex_conversion_for_smooth_optimization_via_double_opti.md)
 - [\[ICLR 2026\] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback](online_black-box_prompt_optimization_with_regret_guarantees_under_noisy_feedback.md)
 - [\[CVPR 2026\] Dynamic Momentum Recalibration in Online Gradient Learning](../../CVPR2026/optimization/dynamic_momentum_recalibration_in_online_gradient_learning.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
-- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
 
 </div>
 

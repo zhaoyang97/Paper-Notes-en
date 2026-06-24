@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MindPilot: Closed-loop Visual Stimulation Optimization for Brain Modulation with EEG-guided Diffusion
 description: >-
-  [ICLR 2026][Computational Biology][EEG] MindPilot treats the human brain as a non-differentiable black-box function. By using non-invasive EEG signals as optimization feedback paired with a "pseudo-model" to provide surrogate gradients, it iteratively generates or retrieves natural images to drive neural states toward specified targets. This work validates t
+  [ICLR 2026][Computational Biology][EEG] MindPilot treats the human brain as a non-differentiable black-box function. By using non-invasive EEG signals as optimization feedback paired with a "pseudo-model" to provide surrogate gradients, it iteratively generates or retrieves natural images to drive neural states toward specified targets. This work validates the feasibility of "reverse-modulating the brain with images" across both semantic and spectral neural objectives for the…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - EEG
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "EEG"
+  - "Closed-loop Brain Modulation"
+  - "Black-box Optimization"
+  - "Diffusion Models"
+  - "Visual Stimulation Design"
 date: 2026-05-08
-content_hash: 3bfb53e54cb92de5
+content_hash: 11ce2715da6e2867
 ---
+
 # MindPilot: Closed-loop Visual Stimulation Optimization for Brain Modulation with EEG-guided Diffusion
 
 **Conference**: ICLR 2026  
@@ -120,7 +124,7 @@ Note: While ATM-S/CongCapturer represents the theoretical upper bound by "recons
 - [\[ICLR 2026\] NC-Bench and NCfold: A Benchmark and Closed-Loop Framework for RNA Non-Canonical Base-Pair Prediction](nc-bench_and_ncfold_a_benchmark_and_closed-loop_framework_for_rna_non-canonical_.md)
 - [\[ICLR 2026\] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion](uncovering_semantic_selectivity_of_latent_groups_in_higher_visual_cortex_with_mu.md)
 - [\[ICLR 2026\] Model-Guided Microstimulation Steers Primate Visual Behavior](model-guided_microstimulation_steers_primate_visual_behavior.md)
-- [\[ICLR 2026\] The Human Brain as a Dynamic Mixture of Expert Models in Video Understanding](the_human_brain_as_a_dynamic_mixture_of_expert_models_in_video_understanding.md)
+- [\[ICLR 2026\] TRIBE: Trimodal Brain Encoder for Whole-Brain fMRI Response Prediction](tribe_trimodal_brain_encoder_for_whole-brain_fmri_response_prediction.md)
 
 </div>
 

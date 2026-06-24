@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Curation Leaks: Membership Inference Attacks against Data Curation for Machine Learning
 description: >-
-  [ICLR 2026][AI Safety][TRAK] This paper reveals for the first time that even if a model is trained exclusively on "public data" and never directly sees private data, as long as private data is used to **guide data curation**, an attacker can successfully infer the membership of private samples across three stages: curation scores, curated subsets,
+  [ICLR 2026][AI Safety][Data curation] This paper reveals for the first time that even if a model is trained exclusively on "public data" and never directly sees private data, as long as private data is used to **guide data curation**, an attacker can successfully infer the membership of private samples across three stages: curation scores, curated subsets, and the final model. It also proposes a differentially private version of curation as an effective defense.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - TRAK
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Data curation"
+  - "membership inference attacks"
+  - "TRAK"
+  - "differential privacy"
+  - "private machine learning"
 date: 2026-05-08
 content_hash: 29eacb5cdad8e35f
 ---
+
 # Curation Leaks: Membership Inference Attacks against Data Curation for Machine Learning
 
 **Conference**: ICLR 2026  
@@ -118,10 +123,10 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] Protection against Source Inference Attacks in Federated Learning](protection_against_source_inference_attacks_in_federated_learning.md)
-- [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](defending_against_backdoor_attacks_via_module_switching.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[ICLR 2026\] Fair Graph Machine Learning under Adversarial Missingness Processes](fair_graph_machine_learning_under_adversarial_missingness_processes.md)
-- [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
+- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
+- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
+- [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
+- [\[AAAI 2026\] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems](../../AAAI2026/ai_safety/reference_recommendation_based_membership_inference_attack_against_hybrid-based_.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Computer Vision with a Superpixelation Camera
 description: >-
-  [CVPR 2026][Others][Paper Note] The authors propose "SuperCam," a superpixelation camera where the sensor generates superpixel maps directly on-chip through sparse sampling. It avoids storing full high-resolution images entirely, driving segmentation, detection, and depth estimation with memory requirements one to two orders of magnitude lower than c
+  [CVPR 2026][Superpixel Camera] The authors propose "SuperCam," a superpixelation camera where the sensor generates superpixel maps directly on-chip through sparse sampling. It avoids storing full high-resolution images entirely, driving segmentation, detection, and depth estimation with memory requirements one to two orders of magnitude lower than conventional images. Under the same memory budget, its segmentation error is at least twice as good as a constrained version of SN…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Superpixel Camera"
+  - "SPAD Single-Photon Sensors"
+  - "On-chip Compression"
+  - "Edge Vision"
+  - "Resource-Constrained Inference"
 date: 2026-05-08
-content_hash: 65c91d57978d5f82
+content_hash: f4b4650cbc819a4f
 ---
+
 # Computer Vision with a Superpixelation Camera
 
 **Conference**: CVPR 2026  
@@ -128,10 +133,10 @@ As no direct baseline exists for a camera that generates superpixels instantaneo
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
-- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)
 - [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
+- [\[CVPR 2026\] MMVIP: A Visible-infrared Paired Dataset for Multi-weather Marine Vision](mmvip_a_visible-infrared_paired_dataset_for_multi-weather_marine_vision.md)
 - [\[CVPR 2026\] Learning What Helps: Task-Aligned Context Selection for Vision Tasks](learning_what_helps_task-aligned_context_selection_for_vision_tasks.md)
-- [\[CVPR 2026\] Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers](align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio.md)
 
 </div>
 

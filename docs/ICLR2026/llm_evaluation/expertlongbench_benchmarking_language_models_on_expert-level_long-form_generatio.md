@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists
 description: >-
-  [ICLR 2026][LLM Evaluation][expert-level evaluation] The authors propose EXPERTLONGBENCH (11 expert-level long-form generation tasks across 9 domains) and the CLEAR evaluation framework. By using expert-designed rubrics to decompose both model outputs and reference answers into checkable checklists, the study finds that even the strongest model, Gemini-2.5-Pro, achieves
+  [ICLR 2026][LLM Evaluation][expert-level evaluation] The authors propose EXPERTLONGBENCH (11 expert-level long-form generation tasks across 9 domains) and the CLEAR evaluation framework. By using expert-designed rubrics to decompose both model outputs and reference answers into checkable checklists, the study finds that even the strongest model, Gemini-2.5-Pro, achieves an average F1 of only 33.4, indicating a massive performance gap in expert-level long-form generation for c…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - expert-level evaluation
-  - long-form generation
-  - checklist-based evaluation
-  - rubric
-  - LLM-as-a-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "expert-level evaluation"
+  - "long-form generation"
+  - "checklist-based evaluation"
+  - "rubric"
+  - "LLM-as-a-judge"
 date: 2026-05-08
-content_hash: b649c716bfb76934
+content_hash: 63e3e24fceb9ed8c
 ---
+
 # ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists
 
 **Conference**: ICLR 2026  
@@ -126,8 +127,8 @@ Sample-level metrics are averaged across checklist items, and task-level metrics
 - [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
 - [\[ICLR 2026\] FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning](finsearchcomp_towards_a_realistic_expert-level_evaluation_of_financial_search_an.md)
 - [\[ICLR 2026\] RefineBench: Evaluating Refinement Capability of Language Models via Checklists](refinebench_evaluating_refinement_capability_of_language_models_via_checklists.md)
+- [\[ICLR 2026\] Addressing Pitfalls in the Evaluation of Uncertainty Estimation Methods for Natural Language Generation](addressing_pitfalls_in_the_evaluation_of_uncertainty_estimation_methods_for_natu.md)
 - [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](../../ACL2026/llm_evaluation/illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
-- [\[ACL 2025\] Atomic Calibration of LLMs in Long-Form Generations](../../ACL2025/llm_evaluation/atomic_calibration_of_llms_in_long-form_generations.md)
 
 </div>
 

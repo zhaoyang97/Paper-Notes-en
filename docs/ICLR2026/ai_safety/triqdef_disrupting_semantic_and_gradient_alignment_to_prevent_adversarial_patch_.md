@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] TriQDef：扰乱语义与梯度对齐，阻断量化网络中的对抗补丁迁移
+  [Paper Note] TriQDef: Disrupting Semantic and Gradient Alignment to Block Adversarial Patch Transfer in Quantized Networks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper discovers that adversarial patches are highly transferable across quantized networks of different bit-widths. The root cause is that models across bits maintain strong "perceptual alignment" in **intermediate features** and **input gradients**. TriQDef utilizes two perceptual mismatch regularizations (FDP +
+  [ICLR 2026][AI Safety][Adversarial Patch] This paper discovers that adversarial patches are highly transferable across quantized networks of different bit-widths. The root cause is that models across bits maintain strong "perceptual alignment" in **intermediate features** and **input gradients**. TriQDef utilizes two perceptual mismatch regularizations (FDP + GPDP) along with a bit-wise curriculum training strategy to actively disrupt this cross-bit alignment during training.…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Adversarial Patch"
+  - "Quantized Neural Networks"
+  - "Transfer Attack"
+  - "Perceptual Alignment"
+  - "Quantization-Aware Training"
 date: 2026-05-08
-content_hash: e1a3148bbfbe329d
+content_hash: ea4f8b22acd7b92b
 ---
+
 # TriQDef: Disrupting Semantic and Gradient Alignment to Block Adversarial Patch Transfer in Quantized Networks
 
 **Conference**: ICLR 2026  
@@ -162,11 +168,11 @@ ASR (%, LAVAN, lower is better):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature](dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx.md)
-- [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
-- [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
-- [\[ICLR 2026\] Risk-Sensitive Agent Compositions](risk-sensitive_agent_compositions.md)
-- [\[ICLR 2026\] WARP: Weight Teleportation for Attack-Resilient Unlearning Protocols](warp_weight_teleportation_for_attack-resilient_unlearning_protocols.md)
+- [\[ICLR 2026\] Robust Adversarial Attacks Against Unknown Disturbances via Inverse Gradient Sample](robust_adversarial_attacks_against_unknown_disturbance_via_inverse_gradient_samp.md)
+- [\[AAAI 2026\] Angular Gradient Sign Method: Uncovering Vulnerabilities in Hyperbolic Networks](../../AAAI2026/ai_safety/angular_gradient_sign_method_uncovering_vulnerabilities_in_h.md)
+- [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
+- [\[ICCV 2025\] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers](../../ICCV2025/ai_safety/semantic_alignment_and_reinforcement_for_data-free_quantization_of_vision_transf.md)
+- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
 
 </div>
 

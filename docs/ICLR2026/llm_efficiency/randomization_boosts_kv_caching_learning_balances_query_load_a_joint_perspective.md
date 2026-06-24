@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] The authors propose the first unified mathematical model for KV cache-aware load balancing, designing the Randomized Leaf-node Token eviction algorithm (RLT) with an $O(\log n)$ competitive ratio and the Learning-Based Greedy Routing (LBGR). This approach reduces latency by up to 11.96× and TTFT by 14.06× in multi-LLM
+  [ICLR 2026][LLM Efficiency][KV Cache Eviction Policy] The authors propose the first unified mathematical model for KV cache-aware load balancing, designing the Randomized Leaf-node Token eviction algorithm (RLT) with an $O(\log n)$ competitive ratio and the Learning-Based Greedy Routing (LBGR). This approach reduces latency by up to 11.96× and TTFT by 14.06× in multi-LLM serving scenarios.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV Cache Eviction Policy"
+  - "Randomized Algorithms"
+  - "Load Balancing Routing"
+  - "Multi-LLM Serving"
+  - "Competitive Analysis"
 date: 2026-05-08
-content_hash: 5f53ae21b308225d
+content_hash: 1e5ee3b629e29a54
 ---
+
 # Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective
 
 **Conference**: ICLR 2026  
@@ -110,6 +116,7 @@ flowchart TD
 - **Value**: 5/5
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -117,8 +124,8 @@ flowchart TD
 - [\[ICLR 2026\] QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill](quoka_query-oriented_kv_selection_for_efficient_llm_prefill.md)
 - [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
-- [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
-- [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
+- [\[ICLR 2026\] Frayed RoPE and Long Inputs: A Geometric Perspective](frayed_rope_and_long_inputs_a_geometric_perspective.md)
+- [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](revisiting_long-context_modeling_from_context_denoising_perspective.md)
 
 </div>
 

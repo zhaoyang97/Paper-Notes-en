@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models
 description: >-
-  [CVPR 2026][Self-Supervised Learning][FSCIL] QR-Prompt discretely quantizes the "residuals" between CLIP visual and text features—which are typically smoothed out by contrastive learning—into a set of frozen Discriminative Subspace Codebooks (DSQ). These discrete codes are then translated into class-adaptive continuous prompts via a Hierarchical Prompt Encoder (H
+  [CVPR 2026][Self-Supervised Learning][FSCIL] QR-Prompt discretely quantizes the "residuals" between CLIP visual and text features—which are typically smoothed out by contrastive learning—into a set of frozen Discriminative Subspace Codebooks (DSQ). These discrete codes are then translated into class-adaptive continuous prompts via a Hierarchical Prompt Encoder (HPE) and a Prompt Combiner (PC). This mechanism balances stability and plasticity in FSCIL…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - FSCIL
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "FSCIL"
+  - "CLIP Residuals"
+  - "Product Quantization"
+  - "Continuous Prompts"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 2362c43e41349aea
+content_hash: b192961f78ad5309
 ---
+
 # Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,6 +146,7 @@ Removing DSQ rotation causes the largest drop in later sessions, highlighting th
 - **Value**: ⭐⭐⭐⭐ (Generalizable paradigm for VLM-based continual learning)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -148,7 +154,7 @@ Removing DSQ rotation causes the largest drop in later sessions, highlighting th
 - [\[CVPR 2026\] Semantic-Guided Global-Local Collaborative Prompt Learning for Few-Shot Class Incremental Learning](semantic-guided_global-local_collaborative_prompt_learning_for_few-shot_class_in.md)
 - [\[CVPR 2026\] HyCal: A Training-Free Prototype Calibration Method for Cross-Discipline Few-Shot Class-Incremental Learning](hycal_training_free_prototype_calibration_for_cross_discipline_fscil.md)
 - [\[CVPR 2026\] Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure](exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str.md)
-- [\[CVPR 2026\] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)
+- [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 - [\[ICLR 2026\] PonderLM: Pretraining Language Models to Ponder in Continuous Space](../../ICLR2026/self_supervised/ponderlm_pretraining_language_models_to_ponder_in_continuous_space.md)
 
 </div>

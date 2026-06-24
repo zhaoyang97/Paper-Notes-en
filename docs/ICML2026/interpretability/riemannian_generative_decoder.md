@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Riemannian Generative Decoder
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper addresses the pain point where Riemannian VAEs require manual design of complex probability densities for each manifold. It proposes the Riemannian Generative Decoder (RGD)——completely discarding the encoder and treating the latent of each sample as a free parameter optimized directly with a Riemannian optim
+  [ICML 2026][Interpretability][Riemannian Manifolds] This paper addresses the pain point where Riemannian VAEs require manual design of complex probability densities for each manifold. It proposes the Riemannian Generative Decoder (RGD)——completely discarding the encoder and treating the latent of each sample as a free parameter optimized directly with a Riemannian optimizer (RiemannianAdam). By introducing "input noise scaled by the inverse local metric" as geometric regulari…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Riemannian Manifolds"
+  - "Generative Decoder"
+  - "Geometric Regularization"
+  - "MAP Estimation"
+  - "Computational Biology"
 date: 2026-05-08
-content_hash: 63a953d9a7f4480e
+content_hash: 4164ae20365fa2dd
 ---
+
 # Riemannian Generative Decoder
 
 **Conference**: ICML 2026  
@@ -114,11 +120,11 @@ Three real/synthetic biological datasets: (a) Synthetic branching diffusion tree
 
 ## Related Papers
 
-- [\[ICML 2025\] Position: We Need An Algorithmic Understanding of Generative AI](../../ICML2025/interpretability/position_we_need_an_algorithmic_understanding_of_generative_ai.md)
+- [\[ICLR 2026\] GenCtrl — A Formal Controllability Toolkit for Generative Models](../../ICLR2026/interpretability/genctrl_--_a_formal_controllability_toolkit_for_generative_models.md)
 - [\[NeurIPS 2025\] Uncovering Graph Reasoning in Decoder-only Transformers with Circuit Tracing](../../NeurIPS2025/interpretability/uncovering_graph_reasoning_in_decoder-only_transformers_with_circuit_tracing.md)
-- [\[ACL 2025\] Towards Explainable Temporal Reasoning in Large Language Models: A Structure-Aware Generative Framework](../../ACL2025/interpretability/towards_explainable_temporal_reasoning_in_large_language_models_a_structure-awar.md)
-- [\[ICML 2026\] BLOCK-EM: Preventing Emergent Misalignment via Latent Blocking](block-em_preventing_emergent_misalignment_via_latent_blocking.md)
-- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
+- [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](../../ICLR2026/interpretability/uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
+- [\[ICLR 2026\] Your VAR Model is Secretly an Efficient and Explainable Generative Classifier](../../ICLR2026/interpretability/your_var_model_is_secretly_an_efficient_and_explainable_generative_classifier.md)
+- [\[ICML 2025\] Position: We Need An Algorithmic Understanding of Generative AI](../../ICML2025/interpretability/position_we_need_an_algorithmic_understanding_of_generative_ai.md)
 
 </div>
 

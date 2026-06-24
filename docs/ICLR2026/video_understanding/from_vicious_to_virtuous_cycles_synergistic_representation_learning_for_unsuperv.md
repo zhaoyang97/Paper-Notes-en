@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning
 description: >-
-  [ICLR 2026][Video Understanding][slot attention] This work identifies a vicious cycle in slot-based object-centric learning between the encoder (producing sharp but noisy attention maps) and the decoder (producing spatially consistent but blurry reconstruction masks). It proposes synergistic contrastive learning objectives and a slot regularization warmup strategy to
+  [ICLR 2026][Video Understanding][Object-centric learning] This work identifies a vicious cycle in slot-based object-centric learning between the encoder (producing sharp but noisy attention maps) and the decoder (producing spatially consistent but blurry reconstruction masks). It proposes synergistic contrastive learning objectives and a slot regularization warmup strategy to transform this into a virtuous cycle, significantly improving object discovery performance on MOVi an…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - slot attention
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Object-centric learning"
+  - "slot attention"
+  - "contrastive learning"
+  - "encoder-decoder alignment"
+  - "unsupervised segmentation"
 date: 2026-05-08
-content_hash: 15846b6d9671768c
+content_hash: 32b6e0b032f9c694
 ---
+
 # From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ The three-stage schedule corresponds to the activation of the components describ
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

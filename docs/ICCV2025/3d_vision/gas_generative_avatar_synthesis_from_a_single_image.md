@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GAS: Generative Avatar Synthesis from a Single Image
 description: >-
-  [ICCV 2025][3D Vision][Human Avatar Generation] GAS is a framework that unifies novel view synthesis and novel pose synthesis into a video generation task by combining dense appearance cues from a generalizable NeRF with…
+  [ICCV 2025][3D Vision][Human Avatar Generation] GAS is a framework that unifies novel view synthesis and novel pose synthesis into a video generation task by combining dense appearance cues from a generalizable NeRF with a video diffusion model. A modality switcher decouples the two tasks, enabling view-consistent and temporally coherent human avatar generation from a single image.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "NeRF"
   - "Multi-view Consistency"
 date: 2026-05-08
-content_hash: 787e926ce9ed24e8
+content_hash: 9f3ba87502cd825f
 ---
 
 # GAS: Generative Avatar Synthesis from a Single Image
@@ -163,10 +163,10 @@ The switcher enables the network to distinguish: view synthesis → prioritize v
 ## Related Papers
 
 - [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
+- [\[CVPR 2025\] AniGS: Animatable Gaussian Avatar from a Single Image with Inconsistent Gaussian Reconstruction](../../CVPR2025/3d_vision/anigs_animatable_gaussian_avatar_from_a_single_image_with_inconsistent_gaussian_.md)
 - [\[ICCV 2025\] DriveX: Driving View Synthesis on Free-form Trajectories with Generative Prior](driving_view_synthesis_on_free-form_trajectories_with_generative_prior.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 - [\[ICCV 2025\] Image as an IMU: Estimating Camera Motion from a Single Motion-Blurred Image](image_as_an_imu_estimating_camera_motion_from_a_single_motion-blurred_image.md)
-- [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](a_recipe_for_generating_3d_worlds_from_a_single_image.md)
 
 </div>
 

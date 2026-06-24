@@ -1,17 +1,20 @@
 ---
 title: >-
-  [Paper Note] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM
+  [Paper Note] Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA
 description: >-
-  [ICML 2026][Model Compression][LoRA] Geo-Expert utilizes 11,518 CoT-enhanced instruction data points distilled from five classic geology textbooks to fine-tune Qwen3-8B/32B and Gemma-3-27B models via LoRA. On Geo-Eval (comprising 387 hard boundary problems), Qwen3-8B-geo achieves an average score of 6.27, surpassing Llama-3.1-70B-Instruct (4.12) and GPT-4
+  [ICML 2026][Model Compression][Geological LLM] Geo-Expert utilizes 11,518 CoT-enhanced instruction data points distilled from five classic geology textbooks to fine-tune Qwen3-8B/32B and Gemma-3-27B models via LoRA. On Geo-Eval (comprising 387 hard boundary problems), Qwen3-8B-geo achieves an average score of 6.27, surpassing Llama-3.1-70B-Instruct (4.12) and GPT-4o (5.93), while Qwen3-32B-geo reaches 6.82, approaching GPT-5.4 (7.15). This demonstrates that high-quality domai…
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
-  - CoT
-  - AI for Science
+  - "ICML 2026"
+  - "Model Compression"
+  - "Geological LLM"
+  - "LoRA"
+  - "Instruction Synthesis"
+  - "CoT"
+  - "AI for Science"
 date: 2026-05-08
-content_hash: 0fb365fafad9a3d1
+content_hash: 3738af07e5279596
 ---
+
 # Geo-Expert: Fine-Tuning an 8B Model into an Expert-Level Geological Reasoning LLM via LoRA
 
 **Conference**: ICML 2026  
@@ -146,11 +149,11 @@ Qwen3-32B-geo ranks second overall with 6.82, following only GPT-5.4 (7.15). Qwe
 
 ## Related Papers
 
-- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
-- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
-- [\[ICML 2026\] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization](prism_synergizing_vision_foundation_models_via_self-organized_expert_specializat.md)
-- [\[ICML 2026\] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression](projq_project-and-quantize_for_adapter-aware_llm_compression.md)
+- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
+- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
+- [\[CVPR 2025\] Expert Pyramid Tuning: Efficient Parameter Fine-Tuning for Expertise-Driven Task Allocation](../../CVPR2025/model_compression/expert_pyramid_tuning_efficient_parameter_fine-tuning_for_expertise-driven_task_.md)
+- [\[ICLR 2026\] Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking](../../ICLR2026/model_compression/expert_merging_model_merging_with_unsupervised_expert_alignment_and_importance-g.md)
 
 </div>
 

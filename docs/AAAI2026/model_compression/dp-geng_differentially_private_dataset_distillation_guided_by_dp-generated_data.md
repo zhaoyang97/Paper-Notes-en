@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DP-GenG: Differentially Private Dataset Distillation Guided by DP-Generated Data
 description: >-
-  [AAAI2026][Model Compression][differential privacy] This paper proposes DP-GenG, a framework that leverages differentially private generated data (DP-generated data) to guide three stages of dataset distillation — initia…
+  [AAAI2026][Model Compression][differential privacy] This paper proposes DP-GenG, a framework that leverages differentially private generated data (DP-generated data) to guide three stages of dataset distillation — initialization, feature matching, and expert calibration — significantly improving the utility and privacy protection of the distilled dataset under a limited privacy budget.
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Feature Matching"
   - "Privacy Budget Allocation"
 date: 2026-05-08
-content_hash: 6c7f3ce83ce2379a
+content_hash: e820566d7576eb96
 ---
 
 # DP-GenG: Differentially Private Dataset Distillation Guided by DP-Generated Data
@@ -136,10 +136,10 @@ Compared to DP synthetic data generation methods (PE, PrivImage): the latter dir
 ## Related Papers
 
 - [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
+- [\[ICLR 2026\] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation](../../ICLR2026/model_compression/asymmetric_synthetic_data_update_for_domain_incremental_dataset_distillation.md)
 - [\[NeurIPS 2025\] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment](../../NeurIPS2025/model_compression/dp-llm_runtime_model_adaptation_with_dynamic_layer-wise_precision_assignment.md)
+- [\[CVPR 2026\] Dataset Distillation by Influence Matching](../../CVPR2026/model_compression/dataset_distillation_by_influence_matching.md)
 - [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
-- [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](../../ICLR2026/model_compression/understanding_dataset_distillation_via_spectral_filtering.md)
-- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](../../ICLR2026/model_compression/dataset_distillation_as_pushforward_optimal_quantization.md)
 
 </div>
 

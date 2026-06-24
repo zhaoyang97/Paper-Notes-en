@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CG-MLLM: Captioning and Generating 3D Content via Multi-modal Large Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][3D Generation] CG-MLLM proposes a Mixture-of-Transformer-based multi-modal large language model that combines a pre-trained VLM backbone with a 3D VAE latent space via a dual Transformer architecture consisting of TokenAR (token-level autoregressive) and BlockAR (block-level parallel). It achieves end-to-end high-resolution 3D conten
+  [ICML 2026][Multimodal VLM][3D Generation] CG-MLLM proposes a Mixture-of-Transformer-based multi-modal large language model that combines a pre-trained VLM backbone with a 3D VAE latent space via a dual Transformer architecture consisting of TokenAR (token-level autoregressive) and BlockAR (block-level parallel). It achieves end-to-end high-resolution 3D content generation and 3D captioning within a single MLLM framework for the first time, reaching SOTA among MLLM-based 3D g…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - 3D Generation
-  - Mixture-of-Transformer
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "3D Generation"
+  - "Multi-modal Large Language Model"
+  - "Mixture-of-Transformer"
+  - "Spatial Intelligence"
+  - "3D Understanding"
 date: 2026-05-08
-content_hash: 85d5d6c7a3612f4c
+content_hash: ff08828ba252e6ba
 ---
+
 # CG-MLLM: Captioning and Generating 3D Content via Multi-modal Large Language Models
 
 **Conference**: ICML 2026  
@@ -154,8 +158,8 @@ Under the condition of using only image input, CG-MLLM's captioning ability sign
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 - [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](../../CVPR2026/multimodal_vlm/multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
 - [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](../../CVPR2026/multimodal_vlm/m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
-- [\[ACL 2026\] Leave My Images Alone: Preventing Multi-Modal Large Language Models from Analyzing Unauthorized Images](../../ACL2026/multimodal_vlm/leave_my_images_alone_preventing_multi-modal_large_language_models_from_analyzin.md)
 - [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
+- [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](../../AAAI2026/multimodal_vlm/large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
 
 </div>
 

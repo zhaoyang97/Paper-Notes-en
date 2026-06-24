@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents
 description: >-
-  [ICLR 2026][LLM Agent][Set-of-Mark] MMSearch-Plus introduces a multimodal browsing benchmark comprising 311 questions. By employing "spatial-temporal extrapolation," it mandates that agents extrapolate from fine-grained visual cues to facts outside the image. Accompanying this is a model-agnostic agent framework with Set-of-Mark (SoM) zoom-in retrieval,
+  [ICLR 2026][LLM Agent][Multimodal Browsing Agents] MMSearch-Plus introduces a multimodal browsing benchmark comprising 311 questions. By employing "spatial-temporal extrapolation," it mandates that agents extrapolate from fine-grained visual cues to facts outside the image. Accompanying this is a model-agnostic agent framework with Set-of-Mark (SoM) zoom-in retrieval, revealing that the end-to-end accuracy of current state-of-the-art MLLMs is only 36%.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Set-of-Mark
-  - provenance-aware search
-  - MLLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multimodal Browsing Agents"
+  - "Set-of-Mark"
+  - "Spatial-Temporal Extrapolation"
+  - "provenance-aware search"
+  - "MLLM Agent"
 date: 2026-05-08
-content_hash: df980eab506767ab
+content_hash: 934305d81689bc1f
 ---
+
 # MMSearch-Plus: Benchmarking Provenance-Aware Search for Multimodal Browsing Agents
 
 **Conference**: ICLR 2026  
@@ -129,7 +132,7 @@ The strongest system (o3 Full Rollout+SoM) achieves an end-to-end accuracy of on
 - [\[ACL 2025\] Browsing Like Human: A Multimodal Web Agent with Experiential Fast-and-Slow Thinking](../../ACL2025/llm_agent/browsing_like_human_a_multimodal_web_agent_with_experiential_fast-and-slow_think.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](../../ACL2026/llm_agent/bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 - [\[ICLR 2026\] Towards Multimodal Data-Driven Scientific Discovery Powered by LLM Agents](towards_multimodal_data-driven_scientific_discovery_powered_by_llm_agents.md)
-- [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents](simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_llm_agents.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 
 </div>
 

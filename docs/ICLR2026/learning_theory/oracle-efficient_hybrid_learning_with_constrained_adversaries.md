@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Oracle-Efficient Hybrid Online Learning with Constrained Adversaries
 description: >-
-  [ICLR 2026][learning_theory][Frank-Wolfe] This paper investigates the "i.i.d. features, adversarial labels" hybrid online learning problem. By imposing a structural constraint on the adversary—requiring label functions to be chosen from a fixed function class $R$—the authors design an algorithm that runs using only a linear optimization oracle. The regret scal
+  [ICLR 2026][Learning Theory][Hybrid online learning] This paper investigates the "i.i.d. features, adversarial labels" hybrid online learning problem. By imposing a structural constraint on the adversary—requiring label functions to be chosen from a fixed function class $R$—the authors design an algorithm that runs using only a linear optimization oracle. The regret scales with the Rademacher complexity of the composite class $\ell\circ(H\times R)$…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Frank-Wolfe
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Hybrid online learning"
+  - "oracle efficient"
+  - "Rademacher complexity"
+  - "Frank-Wolfe"
+  - "stochastic zero-sum games"
 date: 2026-05-08
-content_hash: 61dfaf20f7b9bb34
+content_hash: 63b128d780d8465d
 ---
+
 # Oracle-Efficient Hybrid Online Learning with Constrained Adversaries
 
 **Conference**: ICLR 2026  
@@ -107,8 +113,8 @@ A key corollary (Corollary 1.2 / 4.1) applies the hybrid learner to minimax prob
 - **Value**: ⭐⭐⭐⭐ (Advances understanding of the computation-statistical gap in online learning).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -116,7 +122,7 @@ A key corollary (Corollary 1.2 / 4.1) applies the hybrid learner to minimax prob
 - [\[ICML 2025\] Improved and Oracle-Efficient Online $\ell_1$-Multicalibration](../../ICML2025/learning_theory/improved_and_oracle-efficient_online_ell_1-multicalibration.md)
 - [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
 - [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
-- [\[ICLR 2026\] Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint](pseudo-non-linear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
+- [\[ICLR 2026\] Nonparametric Contextual Online Bilateral Trade](nonparametric_contextual_online_bilateral_trade.md)
 
 </div>
 

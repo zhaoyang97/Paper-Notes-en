@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RESCHED: Rethinking Flexible Job Shop Scheduling from a Transformer-based Architecture with Simplified States
 description: >-
-  [ICLR 2026][Reinforcement Learning][Transformer] RESCHED reduces the state of Flexible Job Shop Scheduling (FJSP) from "20+ manual features + historical dependency" to just 4 core features. It pairs this with a dual-branch Transformer tailored for scheduling (using RoPE for operation ordering, embedding processing time as edge features into attention values, and empl
+  [ICLR 2026][Reinforcement Learning][Flexible Job Shop Scheduling] RESCHED reduces the state of Flexible Job Shop Scheduling (FJSP) from "20+ manual features + historical dependency" to just 4 core features. It pairs this with a dual-branch Transformer tailored for scheduling (using RoPE for operation ordering, embedding processing time as edge features into attention values, and employing self-connections to mitigate imbalances in operation/machine counts). Using only basic R…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Transformer
-  - RoPE
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Flexible Job Shop Scheduling"
+  - "Deep Reinforcement Learning"
+  - "Transformer"
+  - "Minimalist State"
+  - "RoPE"
 date: 2026-05-08
-content_hash: c44d4b19072030df
+content_hash: e8f9a8efdca254cd
 ---
+
 # RESCHED: Rethinking Flexible Job Shop Scheduling from a Transformer-based Architecture with Simplified States
 
 **Conference**: ICLR 2026  
@@ -142,10 +146,10 @@ Training was performed on small instances (e.g., JSSP 10×10, FFSP 20×12), and 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning Memory-Enhanced Improvement Heuristics for Flexible Job Shop Scheduling](../../NeurIPS2025/reinforcement_learning/learning_memory-enhanced_improvement_heuristics_for_flexible_job_shop_scheduling.md)
-- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
-- [\[ICLR 2026\] Peak-Return Greedy Slicing: Subtrajectory Selection for Transformer-based Offline RL](peak-return_greedy_slicing_subtrajectory_selection_for_transformer-based_offline.md)
-- [\[ICLR 2026\] Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner](vintix_ii_decision_pre-trained_transformer_is_a_scalable_in-context_reinforcemen.md)
-- [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
+- [\[ICLR 2026\] STAIRS-Former: Spatio-Temporal Attention with Interleaved Recursive Structure Transformer for Offline Multi-Task Multi-Agent Reinforcement Learning](stairs-former_spatio-temporal_attention_with_interleaved_recursive_structure_tra.md)
+- [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
+- [\[ICLR 2026\] Flowing Through States: Neural ODE Regularization for Reinforcement Learning](flowing_through_states_neural_ode_regularization_for_reinforcement_learning.md)
+- [\[ICLR 2026\] Scheduling Your LLM Reinforcement Learning with Reasoning Trees](scheduling_your_llm_reinforcement_learning_with_reasoning_trees.md)
 
 </div>
 

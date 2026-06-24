@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm
 description: >-
-  [NeurIPS 2025][Robotics][Inverse Reinforcement Learning] This paper proposes the TRRO theoretical framework and the PIRO practical algorithm…
+  [NeurIPS 2025][Robotics][Inverse Reinforcement Learning] This paper proposes the TRRO theoretical framework and the PIRO practical algorithm, which guarantee monotonic improvement of reward function updates in IRL via a Minorization-Maximization procedure, achieving stability guarantees analogous to those of TRPO/PPO in forward RL.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Non-Adversarial IRL"
   - "Monotonic Improvement"
 date: 2026-05-08
-content_hash: abef7487900184d6
+content_hash: a09a621d697e5628
 ---
 
 # Trust Region Reward Optimization and Proximal Inverse Reward Optimization Algorithm
@@ -151,8 +151,8 @@ PIRO alternates between:
 - [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
 - [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
+- [\[CVPR 2026\] General Process Reward Modeling for Robotic Reinforcement Learning](../../CVPR2026/robotics/general_process_reward_modeling_for_robotic_reinforcement_learning.md)
 - [\[ICLR 2026\] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](../../ICLR2026/robotics/rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)
-- [\[ICLR 2026\] MVR: Multi-view Video Reward Shaping for Reinforcement Learning](../../ICLR2026/robotics/mvr_multi-view_video_reward_shaping_for_reinforcement_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DECOR: Deep Embedding Clustering with Orientation Robustness
 description: >-
-  [AAAI 2026 (KGML Bridge, non-archival)][deep clustering] This paper proposes DECOR, a framework that achieves orientation-robust clustering of wafer map defect patterns via a rotation-invariant equivariant convolutional…
+  [AAAI 2026 (KGML Bridge, non-archival)][deep clustering] This paper proposes DECOR, a framework that achieves orientation-robust clustering of wafer map defect patterns via a rotation-invariant equivariant convolutional autoencoder (RCAE), non-parametric clustering (DeepDPM), and an ensemble anomaly detection mechanism.
 tags:
   - "AAAI 2026 (KGML Bridge, non-archival)"
   - "deep clustering"
@@ -11,7 +11,7 @@ tags:
   - "non-parametric clustering"
   - "anomaly detection"
 date: 2026-05-08
-content_hash: 4ddcf5e4f4321af0
+content_hash: 93087a8ceb89ec8d
 ---
 
 # DECOR: Deep Embedding Clustering with Orientation Robustness
@@ -149,11 +149,11 @@ DECOR integrates advances from three areas: equivariant networks (e2cnn/$D_4$ gr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](../../ICLR2026/others/spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
 - [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
-- [\[AAAI 2026\] Guided Perturbation Sensitivity (GPS): Detecting Adversarial Text via Embedding Stability and Word Importance](guided_perturbation_sensitivity_gps_detecting_adversarial_text_via_embedding_sta.md)
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](hierarchical_semantic_alignment_for_image_clustering.md)
-- [\[ICLR 2026\] Distributed Algorithms for Euclidean Clustering](../../ICLR2026/others/distributed_algorithms_for_euclidean_clustering.md)
 - [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](approximation_algorithm_for_constrained_k-center_clustering_.md)
+- [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
 
 </div>
 

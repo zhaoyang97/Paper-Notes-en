@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PanoEnv: Exploring 3D Spatial Intelligence in Panoramic Environments with Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][ERP] To address the near-collapse of VLM 3D spatial reasoning on 360° Equirectangular Projection (ERP) panoramas, this work constructs the PanoEnv-QA benchmark with 14.8K questions across five geometrically aligned categories. By employing GRPO post-training with "task-routed ground-truth rewards" and a "two-stage curriculu
+  [CVPR 2026][Reinforcement Learning][360° Panorama] To address the near-collapse of VLM 3D spatial reasoning on 360° Equirectangular Projection (ERP) panoramas, this work constructs the PanoEnv-QA benchmark with 14.8K questions across five geometrically aligned categories. By employing GRPO post-training with "task-routed ground-truth rewards" and a "two-stage curriculum," the total accuracy of a 7B model is improved from 49.34% to 52.93%, and open-ended question accuracy rise…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - ERP
-  - GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "360° Panorama"
+  - "ERP"
+  - "Spatial Intelligence"
+  - "GRPO"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 8d32dbf9e6441c67
+content_hash: 19a55eb026b5c2f4
 ---
+
 # PanoEnv: Exploring 3D Spatial Intelligence in Panoramic Environments with Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -149,10 +153,10 @@ Comparison of five variants (Table 4) validating the curriculum:
 ## Related Papers
 
 - [\[ACL 2026\] KnowRL: Exploring Knowledgeable Reinforcement Learning for Factuality](../../ACL2026/reinforcement_learning/knowrl_exploring_knowledgeable_reinforcement_learning_for_factuality.md)
+- [\[ICLR 2026\] 3D-aware Disentangled Representation for Compositional Reinforcement Learning](../../ICLR2026/reinforcement_learning/3d-aware_disentangled_representation_for_compositional_reinforcement_learning.md)
 - [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](../../ICLR2026/reinforcement_learning/from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
-- [\[NeurIPS 2025\] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](../../NeurIPS2025/reinforcement_learning/reasoning_gym_reasoning_environments_for_reinforcement_learning_with_verifiable_.md)
 - [\[ICML 2026\] RulePlanner: All-in-One Reinforcement Learner for Unifying Design Rules in 3D Floorplanning](../../ICML2026/reinforcement_learning/ruleplanner_all-in-one_reinforcement_learner_for_unifying_design_rules_in_3d_flo.md)
-- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](../../NeurIPS2025/reinforcement_learning/forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
+- [\[ICLR 2026\] OCTAX: Accelerated CHIP-8 Arcade Environments for Reinforcement Learning in JAX](../../ICLR2026/reinforcement_learning/octax_accelerated_chip-8_arcade_environments_for_reinforcement_learning_in_jax.md)
 
 </div>
 

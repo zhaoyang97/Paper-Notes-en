@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians
 description: >-
-  [NeurIPS 2025][Self-Attention] This paper adopts a dynamical systems perspective grounded in Jacobian analysis to move beyond the symmetry constraints imposed by traditional energy-function frameworks. It reveals the cri…
+  [NeurIPS 2025][Self-Attention] This paper adopts a dynamical systems perspective grounded in Jacobian analysis to move beyond the symmetry constraints imposed by traditional energy-function frameworks. It reveals the critical role of normalization layers in suppressing the spectral norm and oscillatory components of self-attention, identifies that high-performing recurrent self-attention models exhibit Lyapunov exponents approaching zero (a criticality regime)…
 tags:
   - "NeurIPS 2025"
   - "Self-Attention"
@@ -11,7 +11,7 @@ tags:
   - "Normalization Layers"
   - "Recurrent Architectures"
 date: 2026-05-08
-content_hash: 2d9d779a537e1890
+content_hash: 2506c8a2d314f4db
 ---
 
 # Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians
@@ -132,10 +132,10 @@ $$\left\| \frac{\partial \text{RMSNorm}(X + \eta \Delta X)}{\partial X} \right\|
 ## Related Papers
 
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
+- [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](../../ICLR2026/others/neural_dynamics_self-attention_for_spiking_transformers.md)
 - [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
-- [\[NeurIPS 2025\] Dense Associative Memory with Epanechnikov Energy](dense_associative_memory_with_epanechnikov_energy.md)
-- [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
 - [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
+- [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
 
 </div>
 

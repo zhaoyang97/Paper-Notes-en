@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs
 description: >-
-  [ICML 2026][Physics & Scientific Computing][PINN] To address the "time-entanglement" issue where standard spatio-temporal PINNs treat time as an extra input and share a single set of weights, TINNs formulate the network weights themselves as a function of time $u_{\theta(t)}(\mathbf{x})$. This allows spatial representations to evolve over time. By utilizing a compact
+  [ICML 2026][Physics & Scientific Computing][Time-varying PDEs] To address the "time-entanglement" issue where standard spatio-temporal PINNs treat time as an extra input and share a single set of weights, TINNs formulate the network weights themselves as a function of time $u_{\theta(t)}(\mathbf{x})$. This allows spatial representations to evolve over time. By utilizing a compact layer-wise time embedding to avoid parameter explosion and a Levenberg–Marquardt second-order opt…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - PINN
-  - Levenberg–Marquardt
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Time-varying PDEs"
+  - "PINN"
+  - "time-entanglement"
+  - "hypernetwork"
+  - "Levenberg–Marquardt"
 date: 2026-05-08
-content_hash: 841b2ea988dca360
+content_hash: cf7d08149a049fd5
 ---
+
 # TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs
 
 **Conference**: ICML 2026  
@@ -133,16 +137,16 @@ Table 1 compares different parametrizations of $\theta(t)$:
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory](../../ICLR2026/physics/orbital_transformers_for_predicting_wavefunctions_in_time-dependent_density_func.md)
+- [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](../../ICLR2026/physics/physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
 - [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
-- [\[ICLR 2026\] A Two-Phase Deep Learning Framework for Adaptive Time-Stepping in High-Speed Flow Modeling](../../ICLR2026/physics/a_two-phase_deep_learning_framework_for_adaptive_time-stepping_in_high-speed_flo.md)
-- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](../../ICLR2026/physics/dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
+- [\[ICLR 2026\] Test-Time Accuracy-Cost Control in Neural Simulators via Recurrent-Depth](../../ICLR2026/physics/test-time_accuracy-cost_control_in_neural_simulators_via_recurrent-depth.md)
+- [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
 
 </div>
 

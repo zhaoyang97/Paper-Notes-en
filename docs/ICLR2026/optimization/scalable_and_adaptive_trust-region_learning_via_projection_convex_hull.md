@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scalable and Adaptive Trust-Region Learning via Projection Convex Hull
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes Projection Convex Hull (PCH), which transforms the intractable MINLP of convex hull trust-region learning into a differentiable surrogate optimization with weighted projections. By iteratively learning a small number of supporting hyperplanes, it obtains polyhedral trust regions in high-dimensional
+  [ICLR2026][Optimization][Convex hull learning] This paper proposes Projection Convex Hull (PCH), which transforms the intractable MINLP of convex hull trust-region learning into a differentiable surrogate optimization with weighted projections. By iteratively learning a small number of supporting hyperplanes, it obtains polyhedral trust regions in high-dimensional data that are tight, interpretable, and directly embeddable into downstream optimization models.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Convex hull learning"
+  - "trust region"
+  - "mixed-integer optimization"
+  - "hyperplane budget"
+  - "constrained learning"
 date: 2026-05-08
-content_hash: 16c4e4f2192f55d5
+content_hash: ce682134cc6db62a
 ---
+
 # Scalable and Adaptive Trust-Region Learning via Projection Convex Hull
 
 **Conference**: ICLR2026  
@@ -158,15 +164,16 @@ Key conclusions:
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Nesterov Finds GRAAL: Optimal and Adaptive Gradient Method for Convex Optimization](nesterov_finds_graal_optimal_and_adaptive_gradient_method_for_convex_optimizatio.md)
-- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] A Scalable Constant-Factor Approximation Algorithm for $W_p$ Optimal Transport](a_scalable_constant-factor_approximation_algorithm_for_w_p_optimal_transport.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
-- [\[ICLR 2026\] Fast Frank–Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions](fast_frankwolfe_algorithms_with_adaptive_bregman_step-size_for_weakly_convex_fun.md)
+- [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
 
 </div>
 

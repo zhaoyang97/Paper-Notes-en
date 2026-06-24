@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification
 description: >-
-  [NeurIPS 2025][Model Compression][Few-shot node classification] PKD is a framework that jointly leverages LLMs and multiple GNN teachers for few-shot node classification on text-attributed graphs. A GNN-preference node s…
+  [NeurIPS 2025][Model Compression][Few-shot node classification] PKD is a framework that jointly leverages LLMs and multiple GNN teachers for few-shot node classification on text-attributed graphs. A GNN-preference node selector (GNS) uses KL divergence-based uncertainty to identify nodes requiring LLM annotation, while a node-preference GNN selector (NGS) employs RL to match each node with its optimal GNN teacher. PKD achieves consistent state-of-the-art performance across 9…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "RL-based teacher selection"
   - "text-attributed graphs"
 date: 2026-05-08
-content_hash: e52a43dbe833d91c
+content_hash: 375a4583dfc6e5b3
 ---
 
 # PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification
@@ -130,7 +130,7 @@ PKD achieves consistently best or second-best performance across all 9 datasets.
 - [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
-- [\[NeurIPS 2025\] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference](kindle_knowledge-guided_distillation_for_prior-free_gene_regulatory_network_infe.md)
+- [\[NeurIPS 2025\] Enhancing Semi-supervised Learning with Zero-shot Pseudolabels](enhancing_semi-supervised_learning_with_zero-shot_pseudolabels.md)
 
 </div>
 

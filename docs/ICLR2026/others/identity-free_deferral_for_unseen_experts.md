@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Identity-Free Deferral For Unseen Experts
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper points out that existing "Learning to Defer" (L2D) methods fail when facing unseen experts with out-of-distribution (OOD) capability profiles because they learn "identity shortcuts" by processing class-indexed signals in fixed coordinates. The authors propose Identity-Free Deferral (IFD), which structurally
+  [ICLR 2026][Learning to Defer] This paper points out that existing "Learning to Defer" (L2D) methods fail when facing unseen experts with out-of-distribution (OOD) capability profiles because they learn "identity shortcuts" by processing class-indexed signals in fixed coordinates. The authors propose Identity-Free Deferral (IFD), which structurally enforces permutation invariance using a "role-indexed" low-dimensional state and pairs it with an uncertainty-aware training obje…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Learning to Defer"
+  - "Human-AI Collaboration"
+  - "Permutation Invariance"
+  - "Bayesian Expert Profiling"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: a5e678b8b638f95e
+content_hash: b74d8d6501173e66
 ---
+
 # Identity-Free Deferral For Unseen Experts
 
 **Conference**: ICLR 2026  

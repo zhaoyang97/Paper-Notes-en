@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Beyond Hearing: Learning Task-Agnostic ExG Representations from Earphones via Physiology-Informed Tokenization
 description: >-
-  [ICLR 2026][Self-Supervised Learning][ExG] Fifty hours of free-living ExG data were collected using lightweight earphone-style hardware. A "Physiology-Informed Multi-band Tokenization (PiMT)" is proposed to decompose signals into 12 sub-band tokens with explicit physical meanings. Combined with reconstructive self-supervised pre-training, a set of task-agnostic
+  [ICLR 2026][Self-Supervised Learning][ExG] Fifty hours of free-living ExG data were collected using lightweight earphone-style hardware. A "Physiology-Informed Multi-band Tokenization (PiMT)" is proposed to decompose signals into 12 sub-band tokens with explicit physical meanings. Combined with reconstructive self-supervised pre-training, a set of task-agnostic ExG representations applicable across five sensory tasks (visual, auditory, gustatory, tactile…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - ExG
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "ExG"
+  - "wearable sensing"
+  - "ear-EEG"
+  - "multi-band tokenization"
+  - "self-supervised pre-training"
+  - "task-agnostic representation"
 date: 2026-05-08
-content_hash: 89320efb35ccfccf
+content_hash: 22e407ec8c26dbde
 ---
+
 # Beyond Hearing: Learning Task-Agnostic ExG Representations from Earphones via Physiology-Informed Tokenization
 
 **Conference**: ICLR 2026  

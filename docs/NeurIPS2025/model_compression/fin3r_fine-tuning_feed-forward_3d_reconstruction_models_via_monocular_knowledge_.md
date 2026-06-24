@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fin3R: Fine-tuning Feed-forward 3D Reconstruction Models via Monocular Knowledge Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][3D Reconstruction] Fin3R is proposed to improve the geometric accuracy and robustness of feed-forward 3D reconstruction models (DUSt3R/MASt3R/CUT3R/VGGT) in a unified and lightweight man…
+  [NeurIPS 2025][Model Compression][3D Reconstruction] Fin3R is proposed to improve the geometric accuracy and robustness of feed-forward 3D reconstruction models (DUSt3R/MASt3R/CUT3R/VGGT) in a unified and lightweight manner, by freezing the decoder and fine-tuning the encoder via monocular knowledge distillation with re-normalization LoRA adapters.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -16,7 +16,7 @@ tags:
   - "CUT3R"
   - "VGGT"
 date: 2026-05-08
-content_hash: c360e6541abb3c96
+content_hash: 6920a71960f2163d
 ---
 
 # Fin3R: Fine-tuning Feed-forward 3D Reconstruction Models via Monocular Knowledge Distillation
@@ -137,11 +137,11 @@ The improvement on VGGT is particularly pronounced (AUC@5: 28.40→35.21); after
 
 ## Related Papers
 
+- [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](../../CVPR2026/model_compression/mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
 - [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
 - [\[NeurIPS 2025\] Knowledge Distillation Detection for Open-weights Models](knowledge_distillation_detection_for_open-weights_models.md)
+- [\[ICLR 2026\] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks](../../ICLR2026/model_compression/nerve_nonlinear_eigenspectrum_dynamics_in_llm_feed-forward_networks.md)
 - [\[NeurIPS 2025\] Graver: Generative Graph Vocabularies for Robust Graph Foundation Models Fine-tuning](graver_generative_graph_vocabularies_for_robust_graph_foundation_models_fine-tun.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
-- [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 
 </div>
 

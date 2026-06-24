@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 description: >-
-  [CVPR 2026][Autonomous Driving][Segmentation] This work proposes the first 360° omnidirectional driver attention dataset (approx. 1M frames with 19 drivers) and introduces DriverGaze360-Net. By leveraging an auxiliary semantic segmentation head to jointly learn attention maps and attended objects, the method achieves SOTA attention prediction performance on panora
+  [CVPR2026][Autonomous Driving][Driver Attention] This work proposes the first 360° omnidirectional driver attention dataset (approx. 1M frames with 19 drivers) and introduces DriverGaze360-Net. By leveraging an auxiliary semantic segmentation head to jointly learn attention maps and attended objects, the method achieves SOTA attention prediction performance on panoramic driving images.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Segmentation
-  - Video Swin Transformer
+  - "CVPR2026"
+  - "Autonomous Driving"
+  - "Driver Attention"
+  - "Panoramic View"
+  - "Gaze Prediction"
+  - "Semantic Segmentation"
+  - "360° Field of View"
+  - "Video Swin Transformer"
 date: 2026-05-08
-content_hash: ffc79f31482f7fe5
+content_hash: f1c14edd9dcd9d34
 ---
+
 # DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 
 **Conference**: CVPR2026  
@@ -145,8 +150,8 @@ The addition of the auxiliary semantic segmentation head improves all attention 
 
 - [\[ICCV 2025\] Where, What, Why: Towards Explainable Driver Attention Prediction](../../ICCV2025/autonomous_driving/where_what_why_towards_explainable_driver_attention_prediction.md)
 - [\[ECCV 2024\] Weakly Supervised 3D Object Detection via Multi-Level Visual Guidance](../../ECCV2024/autonomous_driving/weakly_supervised_3d_object_detection_via_multi-level_visual_guidance.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
-- [\[CVPR 2026\] Diffusion Forcing Planner: History-Annealed Planning with Time-Dependent Guidance for Autonomous Driving](diffusion_forcing_planner_history-annealed_planning_with_time-dependent_guidance.md)
+- [\[ICLR 2026\] Online Navigation Refinement: Achieving Lane-Level Guidance by Associating Standard-Definition and Online Perception Maps](../../ICLR2026/autonomous_driving/online_navigation_refinement_achieving_lane-level_guidance_by_associating_standa.md)
+- [\[CVPR 2026\] RoadSceneBench: A Lightweight Benchmark for Mid-Level Road Scene Understanding](roadscenebench_a_lightweight_benchmark_for_mid-level_road_scene_understanding.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
 
 </div>

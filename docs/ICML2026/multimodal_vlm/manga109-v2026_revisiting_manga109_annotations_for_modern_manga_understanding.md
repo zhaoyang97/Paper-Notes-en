@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors revisit Manga109, the foundational dataset for manga AI research, identifying five categories of dialogue text annotation issues. By combining commercial OCR + dual LLM voting (GPT-5/Gemini 3 Flash) + human verification, they revised approximately 29,000 annotations (19.6% of the total 147,887 text annotati
+  [ICML 2026][Multimodal VLM][Manga Understanding] The authors revisit Manga109, the foundational dataset for manga AI research, identifying five categories of dialogue text annotation issues. By combining commercial OCR + dual LLM voting (GPT-5/Gemini 3 Flash) + human verification, they revised approximately 29,000 annotations (19.6% of the total 147,887 text annotations) to release Manga109-v2026, improving end-to-end OCR evaluation H-mean from 48.5 to 62.9 (+14.4 pp).
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Manga Understanding"
+  - "OCR Evaluation"
+  - "Dataset Revision"
+  - "Onomatopoeia"
+  - "Speech Bubble Segmentation"
 date: 2026-05-08
-content_hash: 6a4fcb30b979d29d
+content_hash: 48f196b2f6edb2e8
 ---
+
 # Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding
 
 **Conference**: ICML 2026  
@@ -129,11 +135,11 @@ Instead of introducing new models, the same commercial OCR outputs are compared 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2026/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model.md)
 - [\[ACL 2026\] Reducing Peak Memory Usage for Modern Multimodal Large Language Model Pipelines](../../ACL2026/multimodal_vlm/reducing_peak_memory_usage_for_modern_multimodal_large_language_model_pipelines.md)
+- [\[ICLR 2026\] Revisiting Confidence Calibration for Misclassification Detection in VLMs](../../ICLR2026/multimodal_vlm/revisiting_confidence_calibration_for_misclassification_detection_in_vlms.md)
+- [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](../../CVPR2026/multimodal_vlm/revisiting_model_stitching_in_the_foundation_model.md)
+- [\[ICLR 2026\] Revisiting Multimodal Positional Encoding in Vision-Language Models](../../ICLR2026/multimodal_vlm/revisiting_multimodal_positional_encoding_in_visionlanguage_models.md)
 - [\[AAAI 2026\] Towards Human-AI Accessibility Mapping in India: VLM-Guided Annotations and POI-Centric Analysis in Chandigarh](../../AAAI2026/multimodal_vlm/towards_human-ai_accessibility_mapping_in_india_vlm-guided_annotations_and_poi-c.md)
-- [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
-- [\[CVPR 2026\] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures](../../CVPR2026/multimodal_vlm/revisiting_visual_corruptions_in_lvlms_a_shape-texture_perspective_on_model_fail.md)
 
 </div>
 

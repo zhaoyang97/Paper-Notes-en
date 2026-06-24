@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantifying Climate Policy Action and Its Links to Development Outcomes: A Cross-National Data-Driven Analysis
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][climate policy] This paper constructs an integrated NLP–econometrics framework that first uses a fine-tuned multilingual DistilBERT to automatically classify global clim…
+  [NeurIPS 2025][Multilingual & Machine Translation][climate policy] This paper constructs an integrated NLP–econometrics framework that first uses a fine-tuned multilingual DistilBERT to automatically classify global climate policy documents by topic (Mitigation / Adaptation / Disaster Risk Management / Loss & Damage) with F1 = 0.90, then conducts fixed-effects panel regression against World Bank development indicators, finding that mitigation policies are significantly positi…
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "panel regression"
   - "cross-national analysis"
 date: 2026-05-08
-content_hash: 1a0f5f2be83722d1
+content_hash: 0a298ca60f424bb5
 ---
 
 # Quantifying Climate Policy Action and Its Links to Development Outcomes: A Cross-National Data-Driven Analysis
@@ -129,11 +129,11 @@ The method proceeds in two steps. Step 1 is NLP classification: a fine-tuned Dis
 
 ## Related Papers
 
+- [\[ACL 2025\] LACA: Improving Cross-lingual Aspect-Based Sentiment Analysis with LLM Data Augmentation](../../ACL2025/multilingual_mt/laca_crosslingual_absa.md)
+- [\[ACL 2025\] Comparative Analysis of Multilingual Hate Speech Detection](../../ACL2025/multilingual_mt/comparative_analysis_of_multilingual_hate_speech_detection.md)
 - [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
 - [\[NeurIPS 2025\] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages](helpsteer3-preference_open_human-annotated_preference_data_across_diverse_tasks_.md)
-- [\[ACL 2026\] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech](../../ACL2026/multilingual_mt/hierarchical_policy_optimization_for_simultaneous_translation_of_unbounded_speec.md)
-- [\[ACL 2026\] SERM: Self-Evolving Relevance Model with Agent-Driven Learning from Massive Query Streams](../../ACL2026/multilingual_mt/serm_self-evolving_relevance_model_with_agent-driven_learning_from_massive_query.md)
-- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](../../ACL2026/multilingual_mt/tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
+- [\[ACL 2025\] Blessing of Multilinguality: A Systematic Analysis of Multilingual In-Context Learning](../../ACL2025/multilingual_mt/blessing_of_multilinguality_a_systematic_analysis_of_multilingual_in-context_lea.md)
 
 </div>
 

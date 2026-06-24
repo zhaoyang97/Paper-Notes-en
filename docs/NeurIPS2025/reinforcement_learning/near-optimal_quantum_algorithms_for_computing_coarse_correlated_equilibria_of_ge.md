@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][quantum algorithms] This work presents the first quantum algorithms for computing correlated equilibria (CE) and coarse correlated equilibria (CCE) in multi-player general-sum games…
+  [NeurIPS 2025][Reinforcement Learning][quantum algorithms] This work presents the first quantum algorithms for computing correlated equilibria (CE) and coarse correlated equilibria (CCE) in multi-player general-sum games. By quantizing the multi-scale MWU framework and introducing a unified QRAM scheme, the paper achieves a near-optimal query complexity of $\tilde{O}(m\sqrt{n})$ in both the number of players $m$ and actions $n$, along with matching quantum lower bounds.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "multiplicative weights update"
   - "query complexity"
 date: 2026-05-08
-content_hash: d067c9d71ce06284
+content_hash: 50b4fa443f71b391
 ---
 
 # Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games
@@ -129,9 +129,9 @@ This is a purely theoretical work analyzed within the query complexity framework
 
 - [\[NeurIPS 2025\] Certifying Concavity and Monotonicity in Games via Sum-of-Squares Hierarchies](certifying_concavity_and_monotonicity_in_games_via_sum-of-squares_hierarchies.md)
 - [\[NeurIPS 2025\] A Near-optimal, Scalable and Parallelizable Framework for Stochastic Bandits Robust to Adversarial Corruptions and Beyond](a_nearoptimal_scalable_and_parallelizable_framework_for_stoc.md)
+- [\[ICML 2025\] Solving Zero-Sum Convex Markov Games](../../ICML2025/reinforcement_learning/solving_zero-sum_convex_markov_games.md)
 - [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](../../ICLR2026/reinforcement_learning/near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
-- [\[NeurIPS 2025\] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search](tensorrl-qas_reinforcement_learning_with_tensor_networks_for_improved_quantum_ar.md)
-- [\[AAAI 2026\] Perturbing Best Responses in Zero-Sum Games](../../AAAI2026/reinforcement_learning/perturbing_best_responses_in_zero-sum_games.md)
+- [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](scalable_policy-based_rl_algorithms_for_pomdps.md)
 
 </div>
 

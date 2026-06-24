@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory
 description: >-
-  [ACL 2026][LLM Agent][Set-of-Mark] OCR-Memory renders long-horizon agent interaction trajectories into images with numbered anchors, allowing a fine-tuned OCR retriever to first localize relevant segments in visual space and then retrieve original text by index. This approach maintains complete history under strict context budgets and improves long-hori
+  [ACL 2026][LLM Agent][Optical Context Compression] OCR-Memory renders long-horizon agent interaction trajectories into images with numbered anchors, allowing a fine-tuned OCR retriever to first localize relevant segments in visual space and then retrieve original text by index. This approach maintains complete history under strict context budgets and improves long-horizon task performance on Mind2Web and AppWorld.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Set-of-Mark
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Optical Context Compression"
+  - "Agent Memory"
+  - "Visual Retrieval"
+  - "Long Context"
+  - "Set-of-Mark"
 date: 2026-05-08
-content_hash: e0f1cfe37a945fad
+content_hash: 1dcd5da7f63e52dd
 ---
+
 # OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory
 
 **Conference**: ACL 2026  
@@ -173,8 +178,8 @@ Further analysis on retrieval accuracy and system cost:
 - [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
 - [\[ACL 2026\] TiMem: Temporal-Hierarchical Memory Consolidation for Long-Horizon Conversational Agents](timem_temporal-hierarchical_memory_consolidation_for_long-horizon_conversational.md)
 - [\[ACL 2026\] Grounding Agent Memory in Contextual Intent](grounding_agent_memory_in_contextual_intent.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](../../ICML2026/llm_agent/acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](prints_reward_modeling_for_long-horizon_information_seeking.md)
 
 </div>
 

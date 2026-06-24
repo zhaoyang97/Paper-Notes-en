@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification
 description: >-
-  [AAAI 2026][Graph Learning][Cold-start node classification] This paper proposes NTSFormer (Neighbor-to-Self Graph Transformer), a unified Graph Transformer framework that implements a **self-teaching paradigm** via a col…
+  [AAAI 2026][Graph Learning][Cold-start node classification] This paper proposes NTSFormer (Neighbor-to-Self Graph Transformer), a unified Graph Transformer framework that implements a **self-teaching paradigm** via a cold-start attention mask. Within the same model, a "student" prediction is derived solely from the node's own features while a "teacher" prediction leverages neighbor information, enabling end-to-end self-teaching without degrading to an MLP. The framework handl…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "missing modalities"
   - "mixture of experts"
 date: 2026-05-08
-content_hash: 343f71b549463949
+content_hash: 58ce24c06a3340fa
 ---
 
 # NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification
@@ -213,10 +213,10 @@ Effect of number of Transformer layers (accuracy % under All setting):
 ## Related Papers
 
 - [\[AAAI 2026\] MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation](motorec_sparse-regularized_multimodal_tokenization_for_cold-start_recommendation.md)
-- [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](posterior_label_smoothing_for_node_classification.md)
 - [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
+- [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](posterior_label_smoothing_for_node_classification.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
-- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
+- [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](../../ICLR2026/graph_learning/forest-based_graph_learning_for_semi-supervised_node_classification.md)
 
 </div>
 

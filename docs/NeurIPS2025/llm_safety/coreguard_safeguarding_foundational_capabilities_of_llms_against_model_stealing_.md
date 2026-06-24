@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment
 description: >-
-  [NeurIPS 2025][LLM Safety][model protection] This paper proposes CoreGuard, which locks Transformer linear layer weights via row permutation and reduces TEE authorization to a single invocation through a column-permutati…
+  [NeurIPS 2025][LLM Safety][model protection] This paper proposes CoreGuard, which locks Transformer linear layer weights via row permutation and reduces TEE authorization to a single invocation through a column-permutation propagation protocol, protecting foundational capabilities of edge-deployed LLMs against model stealing attacks with negligible computational and communication overhead.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "permutation"
   - "model stealing"
 date: 2026-05-08
-content_hash: 3692267d2c78d0f8
+content_hash: fcfc46882d374784
 ---
 
 # CoreGuard: Safeguarding Foundational Capabilities of LLMs Against Model Stealing in Edge Deployment
@@ -146,11 +146,11 @@ CoreGuard's security is nearly on par with the black-box upper bound (1.17× vs.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties](trans-env_a_framework_for_evaluating_the_linguistic_robustness_of_llms_against_e.md)
 - [\[NeurIPS 2025\] MaskSQL: Safeguarding Privacy for LLM-Based Text-to-SQL via Abstraction](masksql_safeguarding_privacy_for_llm-based_text-to-sql_via_abstraction.md)
-- [\[NeurIPS 2025\] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs](bits_leaked_per_query_information-theoretic_bounds_on_adversarial_attacks_agains.md)
+- [\[NeurIPS 2025\] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties](trans-env_a_framework_for_evaluating_the_linguistic_robustness_of_llms_against_e.md)
+- [\[ICLR 2026\] Early Signs of Steganographic Capabilities in Frontier LLMs](../../ICLR2026/llm_safety/early_signs_of_steganographic_capabilities_in_frontier_llms.md)
 - [\[ACL 2026\] CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks](../../ACL2026/llm_safety/crossguard_safeguarding_mllms_against_joint-modal_implicit_malicious_attacks.md)
-- [\[NeurIPS 2025\] Enhancing Sample Selection Against Label Noise by Cutting Mislabeled Easy Examples](enhancing_sample_selection_against_label_noise_by_cutting_mislabeled_easy_exampl.md)
+- [\[ACL 2025\] Are the Hidden States Hiding Something? Testing the Limits of Factuality-Encoding Capabilities in LLMs](../../ACL2025/llm_safety/are_the_hidden_states_hiding_something_testing_the_limits_of_factuality-encoding.md)
 
 </div>
 

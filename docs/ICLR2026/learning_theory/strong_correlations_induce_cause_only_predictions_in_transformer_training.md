@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Strong Correlations Induce Cause Only Predictions in Transformer Training
 description: >-
-  [ICLR 2026][learning_theory][Attention] This paper identifies and characterizes a new phenomenon in Transformer training termed **Correlation Crowding-Out (CCO)**: when a causal feature in the data has a correlation with the target strong enough to dominate all spurious features, gradient descent (GD) spontaneously filters out spurious cues without any invar
+  [ICLR 2026][Learning Theory][Causal Learning] This paper identifies and characterizes a new phenomenon in Transformer training termed **Correlation Crowding-Out (CCO)**: when a causal feature in the data has a correlation with the target strong enough to dominate all spurious features, gradient descent (GD) spontaneously filters out spurious cues without any invariance regularization or multi-environment labels. The model converges to a predictor relying almost exclusively on…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Attention
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Training Dynamics Analysis"
+  - "Causal Learning"
+  - "Spurious Correlation"
+  - "Implicit Regularization"
+  - "Attention Mechanism"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: 54a096ff01958452
+content_hash: 6f548a1ba1bcfb01
 ---
+
 # Strong Correlations Induce Cause Only Predictions in Transformer Training
 
 **Conference**: ICLR 2026  
@@ -118,15 +124,16 @@ Simulations use Algorithm 1: $x \to y \to z$ (where $z = Cy + \xi$), batch size 
 - **Value**: ⭐⭐⭐⭐ Provides practical intuition on when standard training can spontaneously debias models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
-- [\[ICLR 2026\] From Predictors to Samplers via the Training Trajectory](from_predictors_to_samplers_via_the_training_trajectory.md)
 - [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
-- [\[ICLR 2026\] On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions](on_smoothness_bounds_for_non-clairvoyant_scheduling_with_predictions.md)
-- [\[ICLR 2026\] Resurfacing the Instance-only Dependent Label Noise Model through Loss Correction](resurfacing_the_instance-only_dependent_label_noise_model_through_loss_correctio.md)
+- [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](metric_k-clustering_using_only_weak_comparison_oracles.md)
+- [\[ICLR 2026\] From Predictors to Samplers via the Training Trajectory](from_predictors_to_samplers_via_the_training_trajectory.md)
+- [\[ICLR 2026\] Weak Correlations as the Underlying Principle for Linearization of Gradient-Based Learning Systems](weak_correlations_as_the_underlying_principle_for_linearization_of_gradient-base.md)
 
 </div>
 

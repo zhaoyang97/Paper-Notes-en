@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making
 description: >-
-  [AAAI 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the LAMP framework, which integrates LLM-driven language reasoning with MARL policy optimization through a Think–Speak–Decide th…
+  [AAAI 2026][Reinforcement Learning][Multi-Agent Reinforcement Learning] This paper proposes the LAMP framework, which integrates LLM-driven language reasoning with MARL policy optimization through a Think–Speak–Decide three-stage pipeline. The framework enables economic decision-making agents to understand and leverage natural language information (e.g., news, dialogues), achieving cumulative returns exceeding pure MARL baselines by 63.5% and LLM-only baselines by 34.0% in ec…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Language-Augmented Policy"
   - "Communication"
 date: 2026-05-08
-content_hash: 57d7c701b7d632bf
+content_hash: 82cd3cc72df3e46c
 ---
 
 # Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making
@@ -176,9 +176,9 @@ Experiments are conducted on the TaxAI economic simulator across three scenarios
 
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
 - [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
+- [\[ICML 2025\] Counterfactual Effect Decomposition in Multi-Agent Sequential Decision Making](../../ICML2025/reinforcement_learning/counterfactual_effect_decomposition_in_multi-agent_sequential_decision_making.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
-- [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](../../NeurIPS2025/reinforcement_learning/structured_reinforcement_learning_for_combinatorial_decision-making.md)
-- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](../../ICML2026/reinforcement_learning/multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
+- [\[AAAI 2026\] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning](beyond_monotonicity_revisiting_factorization_principles_in_multi-agent_q-learnin.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluating Multimodal Large Language Models on Core Music Perception Tasks
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal LLM] This paper systematically evaluates multimodal LLMs on three core music perception tasks—syncopation scoring, transposition detection…
+  [NeurIPS 2025][Multimodal VLM][Multimodal LLM] This paper systematically evaluates multimodal LLMs on three core music perception tasks—syncopation scoring, transposition detection, and chord quality identification—under both audio and MIDI input modalities, revealing that models approach ceiling performance on symbolic reasoning while exhibiting significant deficits in audio perception.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Symbolic Reasoning"
   - "LogicLM"
 date: 2026-05-08
-content_hash: 9efa1b7ba5ed165e
+content_hash: e0f3e8f676393295
 ---
 
 # Evaluating Multimodal Large Language Models on Core Music Perception Tasks
@@ -124,10 +124,10 @@ This is an evaluation study; no model training is involved. The three evaluated 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models](towards_evaluating_proactive_risk_awareness_of_multimodal_language_models.md)
+- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](../../CVPR2026/multimodal_vlm/deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
 - [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](adapting_visionlanguage_models_for_evaluating_world_models.md)
 - [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
-- [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
-- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
+- [\[ICCV 2025\] VisNumBench: Evaluating Number Sense of Multimodal Large Language Models](../../ICCV2025/multimodal_vlm/visnumbench_evaluating_number_sense_of_multimodal_large_language_models.md)
 
 </div>
 

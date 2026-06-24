@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence
 description: >-
-  [CVPR 2026][Segmentation][SAM2] V²-SAM transforms the single-view segmentation foundation model SAM2 into a cross-view object correspondence framework. It employs a geometry-aware coordinate prompt generator (V2-Anchor) and an appearance-aware visual prompt generator (V2-Visual) to address "where the target is" and "what the target looks like," respe
+  [CVPR 2026][Segmentation][SAM2] V²-SAM transforms the single-view segmentation foundation model SAM2 into a cross-view object correspondence framework. It employs a geometry-aware coordinate prompt generator (V2-Anchor) and an appearance-aware visual prompt generator (V2-Visual) to address "where the target is" and "what the target looks like," respectively. A three-expert MoE architecture coupled with a Posterior Cycle-Consistency Selector (PCCS) adaptively identifies the mo…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - SAM2
-  - Ego-Exo
+  - "CVPR 2026"
+  - "Segmentation"
+  - "SAM2"
+  - "Cross-View Correspondence"
+  - "Ego-Exo"
+  - "Coordinate Prompts"
+  - "Multi-Expert MoE"
 date: 2026-05-08
-content_hash: f53989f432e59df2
+content_hash: 6ad727b932010a9d
 ---
+
 # V²-SAM: Marrying SAM2 with Multi-Prompt Experts for Cross-View Object Correspondence
 
 **Conference**: CVPR 2026  
@@ -167,11 +171,11 @@ Component ablation (Total IoU):
 
 ## Related Papers
 
-- [\[CVPR 2026\] M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)
 - [\[CVPR 2026\] Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction](learning_cross-view_object_correspondence_via_cycle-consistent_mask_prediction.md)
 - [\[CVPR 2026\] VGGT-Segmentor: Geometry-Enhanced Cross-View Segmentation](vggt-segmentor_geometry-enhanced_cross-view_segmentation.md)
 - [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
-- [\[CVPR 2026\] SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation](sam2text_towards_prompt-free_and_multi-resolution_video_scene_text_segmentation.md)
+- [\[NeurIPS 2025\] Vanish into Thin Air: Cross-prompt Universal Adversarial Attacks for SAM2](../../NeurIPS2025/segmentation/vanish_into_thin_air_cross-prompt_universal_adversarial_attacks_for_sam2.md)
+- [\[CVPR 2026\] SAMIX: Reinforcing SAM2 with Semantic Adapter and Reference Selecting Policy for Mix-Supervised Segmentation](samix_reinforcing_sam2_with_semantic_adapter_and_reference_selecting_policy_for_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Achieving low-bit Muon through subspace preservation and grid quantization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper presents the first study on 4-bit compression of Muon optimizer states. It reveals that Newton-Schulz orthogonalization primarily amplifies quantization errors in the top singular subspace of the momentum matrix. Consequently, the authors propose 4-bit-Muon-GRASP: utilizing 8-bit to preserve the top subspace
+  [ICLR2026][Model Compression][Muon Optimizer] This paper presents the first study on 4-bit compression of Muon optimizer states. It reveals that Newton-Schulz orthogonalization primarily amplifies quantization errors in the top singular subspace of the momentum matrix. Consequently, the authors propose 4-bit-Muon-GRASP: utilizing 8-bit to preserve the top subspace, 4-bit for the residual subspace, and grid quantization normalized along both rows and columns to suppress bi-dim…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR2026"
+  - "Model Compression"
+  - "Muon Optimizer"
+  - "Low-bit quantization"
+  - "Singular subspace preservation"
+  - "Grid quantization"
+  - "Memory-efficient training"
 date: 2026-05-08
-content_hash: b23e55974fb00928
+content_hash: 9bb8d2d7c6863645
 ---
+
 # Achieving low-bit Muon through subspace preservation and grid quantization
 
 **Conference**: ICLR2026  

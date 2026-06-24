@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The OpenFS framework is proposed, achieving multi-hand fingerspelling recognition via dual-level positional encoding + signing-hand focus loss + monotonic alignment loss for implicit signing-hand detection. It also designs a frame-wise letter-conditioned diffusion generator to synthesize OOV data, achieving SOTA on Chi
+  [CVPR2026][Human Understanding][Fingerspelling recognition] The OpenFS framework is proposed, achieving multi-hand fingerspelling recognition via dual-level positional encoding + signing-hand focus loss + monotonic alignment loss for implicit signing-hand detection. It also designs a frame-wise letter-conditioned diffusion generator to synthesize OOV data, achieving SOTA on ChicagoFSWild/ChicagoFSWildPlus/FSNeo benchmarks with inference speeds over 100x faster than PoseNet.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR2026"
+  - "Human Understanding"
+  - "Fingerspelling recognition"
+  - "sign language understanding"
+  - "implicit signing-hand detection"
+  - "monotonic alignment loss"
+  - "diffusion generation"
+  - "OOV generalization"
 date: 2026-05-08
-content_hash: b6db4e59f76450d2
+content_hash: 97021f2ded5ac6f1
 ---
+
 # OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis
 
 **Conference**: CVPR2026  
@@ -183,11 +190,11 @@ Comparison of generator conditioning strategies (letter accuracy of generated se
 
 ## Related Papers
 
-- [\[CVPR 2026\] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)
+- [\[ICLR 2026\] CLUTCH: Contextualized Language model for Unlocking Text-Conditioned Hand motion modelling in the wild](../../ICLR2026/human_understanding/clutch_contextualized_language_model_for_unlocking_text-conditioned_hand_motion_.md)
 - [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
-- [\[CVPR 2026\] Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation](sketch2colab_sketch-conditioned_multi-human_animation_via_controllable_flow_dist.md)
 - [\[CVPR 2026\] MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs](mgdhand_multi-granularity_prior-to-inertial_distillation_framework_for_sequentia.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
+- [\[CVPR 2026\] Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation](sketch2colab_sketch-conditioned_multi-human_animation_via_controllable_flow_dist.md)
+- [\[CVPR 2026\] MMGait: Towards Multi-Modal Gait Recognition](mmgait_multi_modal_gait_recognition.md)
 
 </div>
 

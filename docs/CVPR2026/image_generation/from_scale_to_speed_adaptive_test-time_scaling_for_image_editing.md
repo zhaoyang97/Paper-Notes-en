@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Image Editing] Addressing the issue that T2I-oriented Image-CoT wastes computational power when directly applied to image editing, this paper proposes ADE-CoT. It dynamically allocates sampling budgets based on editing difficulty, replaces generic MLLM scoring with specialized "edit region + instruction consistency" verifiers for ear
+  [CVPR 2026][Image Generation][Image Editing] Addressing the issue that T2I-oriented Image-CoT wastes computational power when directly applied to image editing, this paper proposes ADE-CoT. It dynamically allocates sampling budgets based on editing difficulty, replaces generic MLLM scoring with specialized "edit region + instruction consistency" verifiers for early pruning, and employs a depth-first "stop when sufficient" mechanism to eliminate redundant sampling. ADE-CoT ach…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Image Editing
-  - Image-CoT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Test-Time Scaling"
+  - "Image-CoT"
+  - "Adaptive Sampling"
+  - "Early-Stopping Pruning"
 date: 2026-05-08
-content_hash: d759308486a3fcb3
+content_hash: 16a59e9b37309ea5
 ---
+
 # From Scale to Speed: Adaptive Test-Time Scaling for Image Editing
 
 **Conference**: CVPR 2026  
@@ -138,10 +142,10 @@ ADE-CoT improves inference efficiency $\eta$ by over 2× compared to BoN. Result
 ## Related Papers
 
 - [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
+- [\[CVPR 2026\] NEAF: Natural Image Editing with Attention Fusion for Generalizable Test-time Optimization in Text-Guided Image Editing](neaf_natural_image_editing_with_attention_fusion_for_generalizable_test-time_opt.md)
 - [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
 - [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
-- [\[CVPR 2026\] MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale](mrt_masked_region_transformer_for_layered_image_generation_and_editing_at_scale.md)
 
 </div>
 

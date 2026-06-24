@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Training-Free Constrained Generation with Stable Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Constrained Generation] This paper proposes a training-free constrained generation method that embeds Proximal Langevin Dynamics into the reverse denoising process of Stable Diffusion. Im…
+  [NeurIPS 2025 Spotlight][Image Generation][Constrained Generation] This paper proposes a training-free constrained generation method that embeds Proximal Langevin Dynamics into the reverse denoising process of Stable Diffusion. Image-space constraints are backpropagated to the latent space via the decoder, enabling strict constraint satisfaction on generated outputs without retraining.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Constrained Generation"
   - "Stable Diffusion"
@@ -12,7 +12,7 @@ tags:
   - "Latent Space Correction"
   - "Training-Free"
 date: 2026-05-08
-content_hash: 055c19aaca373d8a
+content_hash: 52a3a0f908d81ce2
 ---
 
 # Training-Free Constrained Generation with Stable Diffusion Models
@@ -138,11 +138,11 @@ Three application scenarios validate the generality of the method:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Enhancing Creative Generation on Stable Diffusion-based Models](../../CVPR2025/image_generation/enhancing_creative_generation_on_stable_diffusion-based_models.md)
+- [\[CVPR 2025\] Stable Flow: Vital Layers for Training-Free Image Editing](../../CVPR2025/image_generation/stable_flow_vital_layers_for_training-free_image_editing.md)
 - [\[NeurIPS 2025\] Safe and Stable Control via Lyapunov-Guided Diffusion Models](safe_and_stable_control_via_lyapunov-guided_diffusion_models.md)
-- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] Predictive Feature Caching for Training-free Acceleration of Molecular Geometry Generation](predictive_feature_caching_for_training-free_acceleration_of_molecular_geometry_.md)
 - [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](../../ICCV2025/image_generation/matchdiffusion_training-free_generation_of_match-cuts.md)
-- [\[ICCV 2025\] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?](../../ICCV2025/image_generation/what_makes_for_text_to_360-degree_panorama_generation_with_stable_diffusion.md)
+- [\[CVPR 2025\] Derivative-Free Diffusion Manifold-Constrained Gradient for Unified XAI](../../CVPR2025/image_generation/derivative-free_diffusion_manifold-constrained_gradient_for_unified_xai.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning
 description: >-
-  [ICLR 2026][Interpretability][LRP] CAVE compresses thousands of dense 3D Gaussian features from NOVUM into approximately 20 sparse concepts per class via dictionary learning. This yields an image classifier that is both OOD robust and "faithful-by-design" in its interpretability, while proposing a 3D-C metric that measures spatial consistency of concept
+  [ICLR 2026][Interpretability][Neural Object Volumes (NOV)] CAVE compresses thousands of dense 3D Gaussian features from NOVUM into approximately 20 sparse concepts per class via dictionary learning. This yields an image classifier that is both OOD robust and "faithful-by-design" in its interpretability, while proposing a 3D-C metric that measures spatial consistency of concepts across views and degradations without the need for part annotations.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - LRP
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Neural Object Volumes (NOV)"
+  - "Concept Explanation"
+  - "OOD Robustness"
+  - "LRP"
+  - "Interpretable Classification"
 date: 2026-05-08
-content_hash: 87b4d17d50144f7a
+content_hash: 3684258e9fb1d840
 ---
+
 # Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning
 
 **Conference**: ICLR 2026  
@@ -131,8 +136,8 @@ Weakly supervised CAVE outperforms competitors by ~10% on OccludedP3D+ and achie
 - [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
 - [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](../../NeurIPS2025/interpretability/superposition_yields_robust_neural_scaling.md)
 - [\[ICLR 2026\] Features Emerge as Discrete States: The First Application of SAEs to 3D Representations](features_emerge_as_discrete_states_the_first_application_of_saes_to_3d_represent.md)
+- [\[ICLR 2026\] EnsembleSHAP: Faithful and Certifiably Robust Attribution for Random Subspace Method](ensembleshap_faithful_and_certifiably_robust_attribution_for_random_subspace_met.md)
 - [\[CVPR 2026\] VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension](../../CVPR2026/interpretability/viro_robust_and_efficient_neuro-symbolic_reasoning_with_verification_for_referri.md)
-- [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Insert for Constructive Neural Vehicle Routing Solver
 description: >-
-  [NeurIPS 2025][Optimization][Vehicle Routing Problem] This paper proposes L2C-Insert, the first learning-based insertion construction paradigm for neural combinatorial optimization. By allowing nodes to be inserted at an…
+  [NeurIPS 2025][Optimization][Vehicle Routing Problem] This paper proposes L2C-Insert, the first learning-based insertion construction paradigm for neural combinatorial optimization. By allowing nodes to be inserted at any feasible position within a partial solution—rather than appended only to its end—the method significantly improves construction quality and flexibility for TSP/CVRP.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "TSP"
   - "CVRP"
 date: 2026-05-08
-content_hash: ddf04247b29420e0
+content_hash: 64687d2e903bde63
 ---
 
 # Learning to Insert for Constructive Neural Vehicle Routing Solver
@@ -145,8 +145,8 @@ L2C-Insert adopts an Encoder-Decoder architecture: the Encoder maps node feature
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
-- [\[ICML 2026\] URS: A Unified Neural Routing Solver](../../ICML2026/optimization/urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
+- [\[ICLR 2026\] Learning to Segment for Vehicle Routing Problems](../../ICLR2026/optimization/learning_to_segment_for_vehicle_routing_problems.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](../../ICML2026/optimization/urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
 - [\[NeurIPS 2025\] Neural Thermodynamics: Entropic Forces in Deep and Universal Representation Learning](neural_thermodynamics_entropic_forces_in_deep_and_universal_representation_learn.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
 

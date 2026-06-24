@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification
 description: >-
-  [CVPR 2026][Remote Sensing][CLIP] CF-IPT proposes a prompt tuning framework that fuses Hyperspectral (HSI) and LiDAR/SAR data into a single image to generate spectral-spatial prompt matrices. These matrices guide the bidirectional interactive alignment between CLIP's vision and text prompts. By tuning only 0.76% of CLIP's parameters, it transfers the n
+  [CVPR 2026][Multimodal VLM][Prompt Tuning] CF-IPT proposes a prompt tuning framework that fuses Hyperspectral (HSI) and LiDAR/SAR data into a single image to generate spectral-spatial prompt matrices. These matrices guide the bidirectional interactive alignment between CLIP's vision and text prompts. By tuning only 0.76% of CLIP's parameters, it transfers the natural-image pre-trained model to multisource remote sensing classification, achieving OA gains of 1.38%/2.27%/1.38%…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - CLIP
-  - Mamba
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Prompt Tuning"
+  - "CLIP"
+  - "Multisource Remote Sensing Classification"
+  - "Cross-modal Fusion"
+  - "Mamba"
 date: 2026-05-08
-content_hash: 57088c7a7a4b2f53
+content_hash: c46b8f14eacf4ba6
 ---
+
 # CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification
 
 **Conference**: CVPR 2026  
@@ -144,15 +148,16 @@ OA is 1.38%–2.27% higher than Prev. SOTA while using roughly 10x–70x fewer p
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)
-- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
-- [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
-- [\[CVPR 2026\] CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation](crossearth-gate_fisher-guided_adaptive_tuning_engine_for_efficient_adaptation_of.md)
-- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[ICLR 2026\] PhysLLM: Harnessing Large Language Models for Cross-Modal Remote Physiological Sensing](../../ICLR2026/multimodal_vlm/physllm_harnessing_large_language_models_for_cross-modal_remote_physiological_se.md)
+- [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
 
 </div>
 

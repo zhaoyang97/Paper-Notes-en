@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion
 description: >-
-  [ACL 2026][Graph Learning][KGC] GS-Quant quantizes Knowledge Graph (KG) entities into "coarse-to-fine" discrete code sequences. By constraining RQ-VAE with a hierarchical clustering tree, shallow codes encode global categories (e.g., "Person") while deep codes encode fine-grained attributes (e.g., "Artist"). A GPT-style decoder reconstructs both the
+  [ACL 2026][Graph Learning][KGC] GS-Quant quantizes Knowledge Graph (KG) entities into "coarse-to-fine" discrete code sequences. By constraining RQ-VAE with a hierarchical clustering tree, shallow codes encode global categories (e.g., "Person") while deep codes encode fine-grained attributes (e.g., "Artist"). A GPT-style decoder reconstructs both the entity and its ancestors to enforce causal dependencies among codes. These codes are subsequently added to the LLM vocabulary fo…
 tags:
-  - ACL 2026
-  - Graph Learning
-  - KGC
-  - RQ-VAE
-  - hierarchical clustering
-  - codebook
+  - "ACL 2026"
+  - "Graph Learning"
+  - "KGC"
+  - "RQ-VAE"
+  - "hierarchical clustering"
+  - "codebook"
+  - "LLM vocabulary expansion"
 date: 2026-05-08
-content_hash: fe708ac50ddaf756
+content_hash: 781e0af74f496c5e
 ---
+
 # GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion
 
 **Conference**: ACL 2026  
@@ -151,8 +153,8 @@ vs DIFT: WN18RR Hits@1 +2.5, FB15k-237 Hits@1 +2.2. vs SSQR: WN18RR Hits@1 +4.1,
 - [\[AAAI 2026\] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](../../AAAI2026/graph_learning/beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)
 - [\[ACL 2026\] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion](collaboration_of_fusion_and_independence_hypercomplex-driven_robust_multi-modal_.md)
 - [\[ACL 2025\] Beyond Completion: A Foundation Model for General Knowledge Graph Reasoning](../../ACL2025/graph_learning/beyond_completion_a_foundation_model_for_general_knowledge_graph_reasoning.md)
+- [\[AAAI 2026\] Hyperbolic Continuous Structural Entropy for Hierarchical Clustering](../../AAAI2026/graph_learning/hyperbolic_continuous_structural_entropy_for_hierarchical_clustering.md)
 - [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](../../ICML2026/graph_learning/generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
-- [\[CVPR 2025\] Knowledge Bridger: Towards Training-Free Missing Modality Completion](../../CVPR2025/graph_learning/knowledge_bridger_towards_training-free_missing_modality_completion.md)
 
 </div>
 

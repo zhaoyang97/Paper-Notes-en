@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper demonstrates through MAP estimation that the optimal combination of LLM majority consensus and PRM scoring is equivalent to a **weighted majority vote**. It reveals that optimal weights are highly dependent on the specific LLM-PRM combination and should assign **negative weights** to low-scoring responses. B
+  [ICLR 2026][Reasoning][Test-time scaling] This paper demonstrates through MAP estimation that the optimal combination of LLM majority consensus and PRM scoring is equivalent to a **weighted majority vote**. It reveals that optimal weights are highly dependent on the specific LLM-PRM combination and should assign **negative weights** to low-scoring responses. Based on this, several low-cost offline calibration methods are proposed to approximate this weight function…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "Process Reward Model"
+  - "Weighted Majority Vote"
+  - "Signal Aggregation"
+  - "Calibration"
 date: 2026-05-08
-content_hash: c1123dc25b4c7d03
+content_hash: 697bd7b87535626a
 ---
+
 # Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling
 
 **Conference**: ICLR 2026  
@@ -150,9 +156,9 @@ The following table shows average accuracy for various methods on 5 LLMs using Q
 ## Related Papers
 
 - [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
-- [\[ICLR 2026\] Tracing the Traces: Latent Temporal Signals for Efficient and Accurate Reasoning](tracing_the_traces_latent_temporal_signals_for_efficient_and_accurate_reasoning.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On Stealing Graph Neural Network Models
 description: >-
-  [AAAI2026][Graph Learning][GNN model stealing] This paper demonstrates that under strict query budgets (e.g., only 100 queries), an attacker can efficiently steal a GNN model via a two-stage approach: (1) locally obtaini…
+  [AAAI2026][Graph Learning][GNN model stealing] This paper demonstrates that under strict query budgets (e.g., only 100 queries), an attacker can efficiently steal a GNN model via a two-stage approach: (1) locally obtaining an encoder (randomly initialized or SSL-trained) without interacting with the victim, and (2) strategically selecting queries via K-means clustering. On the Physics dataset, the proposed method achieves 91% accuracy with only 100 queries…
 tags:
   - "AAAI2026"
   - "Graph Learning"
@@ -13,7 +13,7 @@ tags:
   - "black-box attack"
   - "inductive/transductive"
 date: 2026-05-08
-content_hash: 0362e76db9067a23
+content_hash: 6f7eba76df9f8e48
 ---
 
 # On Stealing Graph Neural Network Models
@@ -151,11 +151,11 @@ The effectiveness of randomly initialized GNN encoders is related to the Weisfei
 
 ## Related Papers
 
+- [\[ICLR 2026\] AdS-GNN - a Conformally Equivariant Graph Neural Network](../../ICLR2026/graph_learning/ads-gnn_-_a_conformally_equivariant_graph_neural_network.md)
+- [\[ICLR 2026\] Graphon Cross-Validation: Assessing Models on Network Data](../../ICLR2026/graph_learning/graphon_cross-validation_assessing_models_on_network_data.md)
 - [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
-- [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](self-adaptive_graph_mixture_of_models.md)
-- [\[ICML 2026\] Beyond Model Base Retrieval: Weaving Knowledge to Master Fine-grained Neural Network Design](../../ICML2026/graph_learning/beyond_model_base_retrieval_weaving_knowledge_to_master_fine-grained_neural_netw.md)
-- [\[AAAI 2026\] BugSweeper: Function-Level Detection of Smart Contract Vulnerabilities Using Graph Neural Networks](bugsweeper_function-level_detection_of_smart_contract_vulnerabilities_using_grap.md)
-- [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
+- [\[ICML 2025\] HGOT: Self-supervised Heterogeneous Graph Neural Network with Optimal Transport](../../ICML2025/graph_learning/hgot_self-supervised_heterogeneous_graph_neural_network_with_optimal_transport.md)
+- [\[ICLR 2026\] Latent Geometry-Driven Network Automata for Complex Network Dismantling](../../ICLR2026/graph_learning/latent_geometry-driven_network_automata_for_complex_network_dismantling.md)
 
 </div>
 

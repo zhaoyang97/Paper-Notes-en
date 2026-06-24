@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ExpSeek: Self-Triggered Experience Seeking for Web Agents
 description: >-
-  [ACL 2026][LLM Agent][Web Agent] ExpSeek proposes a proactive experience-seeking framework based on step-level entropy self-triggering, allowing Web Agents to determine when and what guidance is needed based on internal signals during interaction. It achieves absolute improvements of 9.3% and 7.5% on Qwen3-8B/32B respectively.
+  [ACL 2026 Findings][LLM Agent][Web Agent] ExpSeek proposes a proactive experience-seeking framework based on step-level entropy self-triggering, allowing Web Agents to determine when and what guidance is needed based on internal signals during interaction. It achieves absolute improvements of 9.3% and 7.5% on Qwen3-8B/32B respectively.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Web Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Experience Intervention"
+  - "Entropy Trigger"
+  - "Proactive Guidance Seeking"
+  - "Multi-turn Interaction"
 date: 2026-05-08
-content_hash: f5c7e9ef34bf20e9
+content_hash: ae716ee50620b5ff
 ---
+
 # ExpSeek: Self-Triggered Experience Seeking for Web Agents
 
 **Conference**: ACL 2026 Findings  
@@ -152,8 +157,8 @@ ExpSeek is an inference-time framework and does not involve training. The experi
 - [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](../../ICML2026/llm_agent/evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[ICLR 2026\] FlowSearcher: Synthesizing Memory-Guided Agentic Workflows for Web Information Seeking](../../ICLR2026/llm_agent/flowsearcher_synthesizing_memory-guided_agentic_workflows_for_web_information_se.md)
+- [\[CVPR 2026\] Learning to Adapt: Self-Improving Web Agent via Cognitive-Aware Exploration](../../CVPR2026/llm_agent/learning_to_adapt_self-improving_web_agent_via_cognitive-aware_exploration.md)
 - [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](synthagent_adapting_web_agents_with_synthetic_supervision.md)
-- [\[ICLR 2026\] Empowering Efficiency and Efficacy in WebAgent via Enabling Info-Rich Seeking](../../ICLR2026/llm_agent/empowering_efficiency_and_efficacy_in_webagent_via_enabling_info-rich_seeking.md)
 
 </div>
 

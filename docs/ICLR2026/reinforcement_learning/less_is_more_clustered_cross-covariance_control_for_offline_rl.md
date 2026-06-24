@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Less is More: Clustered Cross-Covariance Control for Offline RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper reveals that the standard mean squared error (MSE) objective in offline RL introduces harmful TD cross-covariance. It proposes the C⁴ (Clustered Cross-Covariance Control for TD) method, which suppresses this effect through partitioned buffer sampling and explicit gradient correction penalties, achieving up t
+  [ICLR 2026][Reinforcement Learning][Offline RL] This paper reveals that the standard mean squared error (MSE) objective in offline RL introduces harmful TD cross-covariance. It proposes the C⁴ (Clustered Cross-Covariance Control for TD) method, which suppresses this effect through partitioned buffer sampling and explicit gradient correction penalties, achieving up to 30% return improvement in small dataset and OOD-dominated scenarios.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Distributional Shift"
+  - "TD Cross-Covariance"
+  - "Buffer Partitioning"
+  - "Conservatism Control"
 date: 2026-05-08
-content_hash: 856698a7c29a39cb
+content_hash: ec31193ff706f698
 ---
+
 # Less is More: Clustered Cross-Covariance Control for Offline RL
 
 **Conference**: ICLR 2026  
@@ -141,11 +147,11 @@ Evaluations were conducted on standard benchmarks like D4RL:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sample More to Think Less: Group Filtered Policy Optimization for Concise Reasoning](sample_more_to_think_less_group_filtered_policy_optimization_for_concise_reasoni.md)
+- [\[ICLR 2026\] Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR](learn_more_with_less_uncertainty_consistency_guided_query_selection_for_rlvr.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
-- [\[ACL 2026\] LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification](../../ACL2026/reinforcement_learning/less_noise_more_voice_reinforcement_learning_for_reasoning_via_instruction_purif.md)
 - [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching](sample_efficient_offline_rl_via_t-symmetry_enforced_latent_state-stitching.md)
-- [\[ICLR 2026\] Peak-Return Greedy Slicing: Subtrajectory Selection for Transformer-based Offline RL](peak-return_greedy_slicing_subtrajectory_selection_for_transformer-based_offline.md)
 
 </div>
 

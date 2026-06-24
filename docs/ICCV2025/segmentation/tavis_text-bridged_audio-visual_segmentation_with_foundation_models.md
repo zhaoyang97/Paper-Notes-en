@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models
 description: >-
-  [ICCV 2025][Segmentation][Audio-visual segmentation] TAViS is a text-bridged audio-visual segmentation framework that couples the cross-modal alignment capability of ImageBind with the precise segmentation capability of…
+  [ICCV 2025][Segmentation][Audio-visual segmentation] TAViS is a text-bridged audio-visual segmentation framework that couples the cross-modal alignment capability of ImageBind with the precise segmentation capability of SAM2. By introducing a text-bridged hybrid prompting mechanism and alignment supervision strategy, TAViS achieves state-of-the-art performance across single-source, multi-source, semantic, and zero-shot segmentation scenarios.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -14,7 +14,7 @@ tags:
   - "cross-modal alignment"
   - "zero-shot segmentation"
 date: 2026-05-08
-content_hash: 425f98b8249d1cbd
+content_hash: 8656188e44b50074
 ---
 
 # TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models
@@ -188,9 +188,9 @@ TAViS outperforms OV-AVSS in the zero-shot setting with significantly fewer para
 
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](implicit_counterfactual_learning_for_audio-visual_segmentation.md)
 - [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
+- [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 - [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
 - [\[ICCV 2025\] How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?](how_do_optical_flow_and_textual_prompts_collaborate_to_assist_in_audio-visual_se.md)
-- [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
 
 </div>
 

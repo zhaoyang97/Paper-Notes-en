@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SRGCD: Stability-Driven Region Growth Framework for 3D Change Detection
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper redefines 3D point cloud change detection from "point-wise binary segmentation" to a stability propagation process that "starts from high-confidence invariant seeds and grows layer-by-layer toward boundaries." It selects seeds using geometric consistency priors and diffuses stability from the core to the bou
+  [CVPR 2026][3D Vision][3D Change Detection] This paper redefines 3D point cloud change detection from "point-wise binary segmentation" to a stability propagation process that "starts from high-confidence invariant seeds and grows layer-by-layer toward boundaries." It selects seeds using geometric consistency priors and diffuses stability from the core to the boundaries via unidirectional controlled attention, achieving SOTA results with 94.11% / 78.79% mIoU on Urb3DCD / HKCD…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Change Detection"
+  - "Point Cloud"
+  - "Region Growth"
+  - "Class Imbalance"
+  - "Controlled Attention"
 date: 2026-05-08
-content_hash: cf36e074490b397c
+content_hash: 4bc219869ba46714
 ---
+
 # SRGCD: Stability-Driven Region Growth Framework for 3D Change Detection
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Region growth depth ablation: Layer 0 only 90.92% → Layers 0-1 92.31% → 0-2 
 ## Related Papers
 
 - [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
-- [\[CVPR 2026\] HAMMER: Harnessing MLLMs via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllms_via_cross-modal_integration_for_intention-driven_3d_affo.md)
-- [\[CVPR 2026\] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
 - [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
+- [\[CVPR 2026\] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)
 
 </div>
 

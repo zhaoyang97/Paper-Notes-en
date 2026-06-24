@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents
 description: >-
-  [AAAI 2026][LLM/NLP][Covert Communication] This paper presents the first formal definition of a "Covert Event Channel" in the Internet of Agents (IoA) and proposes the ΠCCAP protocol…
+  [AAAI 2026][LLM (Other)][Covert Communication] This paper presents the first formal definition of a "Covert Event Channel" in the Internet of Agents (IoA) and proposes the ΠCCAP protocol, which embeds secret data across the storage, timing, and behavioral dimensions of agent conversations, achieving high-capacity, high-robustness covert communication that is imperceptible to LLM-based censors.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Covert Communication"
   - "Steganography"
   - "Internet of Agents"
   - "Multi-Agent Systems"
   - "Event-Driven Protocol"
 date: 2026-05-08
-content_hash: 6ba328abf086e0df
+content_hash: 1f1e867833c639a8
 ---
 
 # Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents
@@ -149,9 +149,9 @@ The protocol does not involve model training. Key algorithmic configurations inc
 
 - [\[AAAI 2026\] Blue Teaming Function-Calling Agents](blue_teaming_function-calling_agents.md)
 - [\[AAAI 2026\] Scaling Equitable Reflection Assessment in Education via Large Language Models and Role-Based Feedback Agents](scaling_equitable_reflection_assessment_in_education_via_large_language_models_a.md)
-- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/llm_nlp/speculative_actions_faster_ai_agents.md)
+- [\[ICML 2026\] Preregistration for Experiments with AI Agents](../../ICML2026/llm_nlp/preregistration_for_experiments_with_ai_agents.md)
 - [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](../../ICLR2026/llm_nlp/ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
-- [\[ICLR 2026\] Enhancing Persona Following at Decoding Time via Dynamic Importance-Guided Token Estimation for Role-Playing Agents](../../ICLR2026/llm_nlp/enhancing_persona_following_at_decoding_time_via_dynamic_importance-guided_token.md)
+- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](../../ICLR2026/llm_nlp/speculative_actions_faster_ai_agents.md)
 
 </div>
 

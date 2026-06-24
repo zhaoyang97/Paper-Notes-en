@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FMPose3D: monocular 3D pose estimation via flow matching
 description: >-
-  [CVPR 2026][Human Understanding][Flow Matching] The authors reformulate monocular 2D-to-3D pose lifting as a "conditional distribution transport" problem. By utilizing Flow Matching to learn an ODE velocity field, the method transports Gaussian noise to valid 3D pose distributions in only 3 integration steps. A Reprojection Error-based Expectation Aggregation (RPEA)
+  [CVPR 2026][Human Understanding][Monocular 3D Pose Estimation] The authors reformulate monocular 2D-to-3D pose lifting as a "conditional distribution transport" problem. By utilizing Flow Matching to learn an ODE velocity field, the method transports Gaussian noise to valid 3D pose distributions in only 3 integration steps. A Reprojection Error-based Expectation Aggregation (RPEA) module merges multiple hypotheses into a single estimate. This approach outperforms diffusion-ba…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Flow Matching
-  - 2D-to-3D lifting
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Monocular 3D Pose Estimation"
+  - "Flow Matching"
+  - "Multi-hypothesis Generation"
+  - "Bayesian Posterior Aggregation"
+  - "2D-to-3D lifting"
 date: 2026-05-08
-content_hash: c200ccd96c4aa945
+content_hash: cf7549e88324238e
 ---
+
 # FMPose3D: monocular 3D pose estimation via flow matching
 
 **Conference**: CVPR 2026  
@@ -158,15 +162,15 @@ Inference Speed (Single RTX 4090, $S$ = steps, $N$ = hypotheses):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
 - [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
 - [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
 - [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
+- [\[CVPR 2026\] MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs](mgdhand_multi-granularity_prior-to-inertial_distillation_framework_for_sequentia.md)
 
 </div>
 

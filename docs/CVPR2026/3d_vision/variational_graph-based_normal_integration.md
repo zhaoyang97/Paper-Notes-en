@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Variational Graph-based Normal Integration
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper reformulates the "normal map → depth" integration problem as a unified optimization objective on a directed weighted graph. It explicitly models depth discontinuities using triplets combined with a two-component Gaussian Mixture Model (GMM), and employs variational inference to alternatingly solve for depth
+  [CVPR 2026][3D Vision][Normal Integration] This paper reformulates the "normal map → depth" integration problem as a unified optimization objective on a directed weighted graph. It explicitly models depth discontinuities using triplets combined with a two-component Gaussian Mixture Model (GMM), and employs variational inference to alternatingly solve for depth and graph weights. This approach not only outperforms the current SOTA (BiNI) on regular grids but also directly hand…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Normal Integration"
+  - "Depth Discontinuity"
+  - "Directed Weighted Graph"
+  - "Variational Inference"
+  - "Scattered Point Clouds"
 date: 2026-05-08
-content_hash: 47a85bd8b48558ec
+content_hash: 75bc01b79b4a6e6d
 ---
+
 # Variational Graph-based Normal Integration
 
 **Conference**: CVPR 2026  
@@ -140,13 +146,14 @@ Removing triplet sampling doubles the error on models like "reading," proving it
 - Value: ⭐⭐⭐⭐ Highly practical for photometric stereo and single-view reconstruction back-ends.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2025\] Feature-Preserving Mesh Decimation for Normal Integration](../../CVPR2025/3d_vision/feature-preserving_mesh_decimation_for_normal_integration.md)
 - [\[CVPR 2026\] VENI: Variational Encoder for Natural Illumination](veni_variational_encoder_for_natural_illumination.md)
-- [\[CVPR 2026\] HAMMER: Harnessing MLLMs via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllms_via_cross-modal_integration_for_intention-driven_3d_affo.md)
+- [\[CVPR 2026\] ArtPro: Self-Supervised Articulated Object Reconstruction with Adaptive Integration of Mobility Proposals](artpro_self-supervised_articulated_object_reconstruction_with_adaptive_integrati.md)
 - [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
 - [\[CVPR 2026\] BrickNet: Graph-Backed Generative Brick Assembly](bricknet_graph-backed_generative_brick_assembly.md)
 

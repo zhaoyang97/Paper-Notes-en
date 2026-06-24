@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quantifying Cross-Attention Interaction in Transformers for Interpreting TCR-pMHC Binding
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Aiming at the blind spot where existing interpretability methods only handle self-attention in the "encoder-decoder" architectures commonly used in TCR-pMHC binding prediction models, this paper proposes QCAI. It decomposes asymmetric cross-attention matrices in the decoder into importance scores for both query and key
+  [ICLR 2026][Computational Biology][TCR-pMHC binding] Aiming at the blind spot where existing interpretability methods only handle self-attention in the "encoder-decoder" architectures commonly used in TCR-pMHC binding prediction models, this paper proposes QCAI. It decomposes asymmetric cross-attention matrices in the decoder into importance scores for both query and key residues and constructs a TCR-XAI benchmark with structural ground truth…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "TCR-pMHC binding"
+  - "Cross-attention"
+  - "Post-hoc interpretability"
+  - "Encoder-decoder"
+  - "Immunology"
 date: 2026-05-08
-content_hash: 11f55051ada699e2
+content_hash: fa1400942baaf948
 ---
+
 # Quantifying Cross-Attention Interaction in Transformers for Interpreting TCR-pMHC Binding
 
 **Conference**: ICLR 2026  
@@ -140,9 +146,9 @@ Within binding distance thresholds of 3–6 Å, QCAI's ROC-AUC outperformed base
 ## Related Papers
 
 - [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 - [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
 - [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
-- [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](../../ICML2026/computational_biology/cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
 - [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
 
 </div>

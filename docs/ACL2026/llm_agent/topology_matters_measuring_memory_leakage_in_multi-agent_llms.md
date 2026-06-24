@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 拓扑重要：多智能体 LLM 中的内存泄露测量
+  [Paper Note] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper systematically measures how communication topology affects the leakage of personally identifiable information (PII) in multi-agent LLM systems through the MAMA framework. It identifies dense connectivity and the distance between attackers and targets as critical factors determining leakage risk.
+  [ACL 2026][LLM Agent][Multi-agent LLMs] This paper systematically measures how communication topology affects the leakage of personally identifiable information (PII) in multi-agent LLM systems through the MAMA framework. It identifies dense connectivity and the distance between attackers and targets as critical factors determining leakage risk.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Multi-agent LLMs"
+  - "Memory Leakage"
+  - "Topology"
+  - "Privacy Attacks"
+  - "PII Extraction"
 date: 2026-05-08
-content_hash: 40ddf792be4070e2
+content_hash: 6a177e8752c54511
 ---
+
 # Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs
 
 **Conference**: ACL 2026  
@@ -148,11 +154,11 @@ A consistent "rapid rise then plateau" pattern was observed across all configura
 
 ## Related Papers
 
-- [\[ACL 2026\] 为什么 LLM 网络代理失败：一个分层规划视角](why_do_llm-based_web_agents_fail_a_hierarchical_planning_perspective.md)
-- [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] What Makes an LLM a Good Optimizer? A Trajectory Analysis of LLM-Guided Evolutionary Search](what_makes_an_llm_a_good_optimizer_a_trajectory_analysis_of_llm-guided_evolution.md)
-- [\[ACL 2026\] Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities](uncertainty_quantification_in_llm_agents_foundations_emerging_challenges_and_opp.md)
+- [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
+- [\[ACL 2026\] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL](memsearcher_training_llms_to_reason_search_and_manage_memory_via_end-to-end_rein.md)
+- [\[ACL 2026\] MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents](magma_a_multi-graph_based_agentic_memory_architecture_for_ai_agents.md)
+- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[ACL 2026\] Grounding Agent Memory in Contextual Intent](grounding_agent_memory_in_contextual_intent.md)
 
 </div>
 

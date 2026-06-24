@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning from Historical Activations in Graph Neural Networks
 description: >-
-  [ICLR 2026][Graph Learning][GNN] The authors propose HISTOGRAPH, a two-stage attention readout layer that pools the "historical activations" of GNN layers (rather than just the final layer) as a trajectory sequence. By applying inter-layer attention followed by inter-node attention, it significantly mitigates over-smoothing and improves graph classifi
+  [ICLR 2026][Graph Learning][GNN] The authors propose HISTOGRAPH, a two-stage attention readout layer that pools the "historical activations" of GNN layers (rather than just the final layer) as a trajectory sequence. By applying inter-layer attention followed by inter-node attention, it significantly mitigates over-smoothing and improves graph classification performance in deep GNNs.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "GNN"
+  - "Graph Pooling"
+  - "Historical Activations"
+  - "Inter-layer Attention"
+  - "Over-smoothing"
+  - "Self-reflection"
 date: 2026-05-08
-content_hash: a245cfb43d80167a
+content_hash: db74462a7a0e47e7
 ---
+
 # Learning from Historical Activations in Graph Neural Networks
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,10 @@ At 64 layers, GCN collapses to 28.7% on Cora, while HISTOGRAPH maintains 77.5%.
 ## Related Papers
 
 - [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
+- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
 - [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
 - [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
-- [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
-- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
+- [\[ICLR 2026\] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks](logicxgnn_grounded_logical_rules_for_explaining_graph_neural_networks.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A3GS: Arbitrary Artistic Style into Arbitrary 3D Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][3DGS style transfer] A3GS is proposed as the first feed-forward zero-shot 3DGS style transfer framework. It encodes 3DGS scenes into a latent space via a GCN-based autoencoder and injects arbitrary…
+  [ICCV 2025][3D Vision][3DGS style transfer] A3GS is proposed as the first feed-forward zero-shot 3DGS style transfer framework. It encodes 3DGS scenes into a latent space via a GCN-based autoencoder and injects arbitrary style features using AdaIN, completing style transfer from any style to any 3D scene in approximately 10 seconds — two orders of magnitude faster than optimization-based methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "graph convolutional network"
   - "AdaIN"
 date: 2026-05-08
-content_hash: d99220521c731211
+content_hash: 43efe91dec935276
 ---
 
 # A3GS: Arbitrary Artistic Style into Arbitrary 3D Gaussian Splatting

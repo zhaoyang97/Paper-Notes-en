@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] BEP proposes a **purely binary discrete version** of the chain rule in backpropagation: error signals are propagated layer-wise as binary $\pm 1$ vectors. The entire forward and backward process is executed using only bitwise operations such as XNOR, Popcount, and integer increments/decrements. This achieves the first
+  [ICLR 2026][Model Compression][Binary Neural Networks] BEP proposes a **purely binary discrete version** of the chain rule in backpropagation: error signals are propagated layer-wise as binary $\pm 1$ vectors. The entire forward and backward process is executed using only bitwise operations such as XNOR, Popcount, and integer increments/decrements. This achieves the first end-to-end full binary training of binary MLPs and RNNs, providing gains of up to +6.89% on MLPs and an a…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Binary Neural Networks"
+  - "Backpropagation"
+  - "Gradient-free Learning"
+  - "Bitwise Operations"
+  - "Edge Devices"
 date: 2026-05-08
-content_hash: 818918e1320ec821
+content_hash: edcff37b9019ae09
 ---
+
 # BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training
 
 **Conference**: ICLR 2026  
@@ -140,15 +146,16 @@ BEP achieves a 2x reduction in weight memory, 32x in error/gradient memory, and 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores](zeros_can_be_informative_masked_binary_u-net_for_image_segmentation_on_tensor_co.md)
 - [\[ICML 2026\] SURGE: Surrogate Gradient Adaptation in Binary Neural Networks](../../ICML2026/model_compression/surge_surrogate_gradient_adaptation_in_binary_neural_networks.md)
 - [\[ICML 2025\] An Efficient Matrix Multiplication Algorithm for Accelerating Inference in Binary and Ternary Neural Networks](../../ICML2025/model_compression/an_efficient_matrix_multiplication_algorithm_for_accelerating_inference_in_binar.md)
 - [\[AAAI 2026\] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?](../../AAAI2026/model_compression/bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks.md)
-- [\[ICLR 2026\] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs](anybcq_hardware_efficient_flexible_binary-coded_quantization_for_multi-precision.md)
-- [\[ICLR 2026\] Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores](zeros_can_be_informative_masked_binary_u-net_for_image_segmentation_on_tensor_co.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 
 </div>
 

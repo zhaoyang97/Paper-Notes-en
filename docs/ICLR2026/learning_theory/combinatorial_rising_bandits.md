@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Combinatorial Rising Bandits
 description: >-
-  [ICLR 2026][learning_theory][rising bandit] This paper proposes the Combinatorial Rising Bandit framework to characterize online learning problems where combinatorial actions consist of base arms that strengthen with use. It introduces the CRUCB algorithm, which utilizes Future-UCB at the base arm level to estimate long-term potential. Theoretical analysis provi
+  [ICLR2026][Learning Theory][Combinatorial bandit] This paper proposes the Combinatorial Rising Bandit framework to characterize online learning problems where combinatorial actions consist of base arms that strengthen with use. It introduces the CRUCB algorithm, which utilizes Future-UCB at the base arm level to estimate long-term potential. Theoretical analysis provides regret guarantees close to the lower bound, and experiments show superior performance over existing bandit…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - rising bandit
-  - regret bound
-  - semi-bandit
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Bandits"
+  - "Online Learning"
+  - "Combinatorial bandit"
+  - "rising bandit"
+  - "regret bound"
+  - "semi-bandit"
 date: 2026-05-08
-content_hash: b5940fdc7d058c5b
+content_hash: 1c81129a8b72c396
 ---
+
 # Combinatorial Rising Bandits
 
 **Conference**: ICLR2026  
@@ -126,6 +130,7 @@ CRUCB does not use a neural loss function but a decision strategy. The primary p
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -134,7 +139,7 @@ CRUCB does not use a neural loss function but a decision strategy. The primary p
 - [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](lipschitz_bandits_with_stochastic_delayed_feedback.md)
+- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 
 </div>
 

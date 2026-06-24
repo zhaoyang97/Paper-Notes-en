@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba
 description: >-
-  [ICCV 2025][Segmentation][Lightweight visual backbone] This paper proposes TinyViM, a lightweight convolution-Mamba hybrid visual backbone based on frequency decoupling. A Laplace Mixer routes low-frequency components to…
+  [ICCV 2025][Segmentation][Lightweight visual backbone] This paper proposes TinyViM, a lightweight convolution-Mamba hybrid visual backbone based on frequency decoupling. A Laplace Mixer routes low-frequency components to Mamba for global context modeling and enhances high-frequency components via depthwise convolution. A frequency ramp Inception structure progressively adjusts frequency allocation across stages. TinyViM achieves 2–3× higher throughput than existing Mamba mode…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Laplacian pyramid"
   - "high-low frequency separation"
 date: 2026-05-08
-content_hash: ceb9840896f92795
+content_hash: dec64393e4162f51
 ---
 
 # TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba
@@ -181,11 +181,11 @@ The 7×7 axial convolution achieves the best accuracy-efficiency trade-off.
 
 ## Related Papers
 
+- [\[CVPR 2025\] MambaVision: A Hybrid Mamba-Transformer Vision Backbone](../../CVPR2025/segmentation/mambavision_a_hybrid_mamba-transformer_vision_backbone.md)
 - [\[ICCV 2025\] VSSD: Vision Mamba with Non-Causal State Space Duality](vssd_vision_mamba_with_non-causal_state_space_duality.md)
-- [\[ICCV 2025\] Inter2Former: Dynamic Hybrid Attention for Efficient High-Precision Interactive Segmentation](inter2former_dynamic_hybrid_attention_for_efficient_high-precision_interactive_s.md)
+- [\[CVPR 2025\] MambaOut: Do We Really Need Mamba for Vision?](../../CVPR2025/segmentation/mambaout_do_we_really_need_mamba_for_vision.md)
+- [\[ICML 2025\] QMamba: On First Exploration of Vision Mamba for Image Quality Assessment](../../ICML2025/segmentation/qmamba_on_first_exploration_of_vision_mamba_for_image_quality_assessment.md)
 - [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
-- [\[ICCV 2025\] Hybrid-TTA: Continual Test-time Adaptation via Dynamic Domain Shift Detection](hybrid-tta_continual_test-time_adaptation_via_dynamic_domain_shift_detection.md)
-- [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](../../NeurIPS2025/segmentation/roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
 
 </div>
 

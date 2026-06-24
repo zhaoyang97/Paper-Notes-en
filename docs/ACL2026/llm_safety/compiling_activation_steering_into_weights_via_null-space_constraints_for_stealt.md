@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and utilizing null-space constraints to ensure activation only in the presence of trigger words, it achieves high attack success rates across mul
+  [ACL 2026][LLM Safety][Backdoor attacks] This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and utilizing null-space constraints to ensure activation only in the presence of trigger words, it achieves high attack success rates across multiple safety-aligned LLMs while maintaining safety and general utility in non-trigger scenarios.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Backdoor attacks"
+  - "activation steering"
+  - "weight editing"
+  - "null-space constraints"
 date: 2026-05-08
-content_hash: 604391ffa245676d
+content_hash: 2f003adba177b052
 ---
+
 # Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors
 
 **Conference**: ACL 2026  
@@ -140,9 +145,9 @@ STEEREDIT does not involve an iterative training process. It relies on a closed-
 
 - [\[ACL 2026\] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints](preventing_safety_drift_in_large_language_models_via_coupled_weight_and_activati.md)
 - [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
+- [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](../../ICLR2026/llm_safety/a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
 - [\[ICML 2025\] Activation Space Interventions Can Be Transferred Between Large Language Models](../../ICML2025/llm_safety/activation_space_interventions_can_be_transferred_between_large_language_models.md)
 - [\[ACL 2026\] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants](xoxo_stealthy_cross-origin_context_poisoning_attacks_against_ai_coding_assistant.md)
-- [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimized Learned Count-Min Sketch
 description: >-
-  [NeurIPS 2025 (Workshop: ML for Systems)][Count-Min Sketch] This paper proposes OptLCMS, which partitions the score space and analytically solves CMS parameters via KKT conditions while optimizing thresholds through dyna…
+  [NeurIPS 2025 (Workshop: ML for Systems)][Count-Min Sketch] This paper proposes OptLCMS, which partitions the score space and analytically solves CMS parameters via KKT conditions while optimizing thresholds through dynamic programming, substantially accelerating the construction process and providing theoretical guarantees on the probability of intolerable error.
 tags:
   - "NeurIPS 2025 (Workshop: ML for Systems)"
   - "Count-Min Sketch"
@@ -11,7 +11,7 @@ tags:
   - "dynamic programming"
   - "KKT conditions"
 date: 2026-05-08
-content_hash: 1470a9ec85cf0f52
+content_hash: 3131c1e5c40ed5e3
 ---
 
 # Optimized Learned Count-Min Sketch
@@ -141,8 +141,8 @@ Construction speed improves by approximately **3500×** under frequency-weighted
 
 - [\[NeurIPS 2025\] Adjusted Count Quantification Learning on Graphs](adjusted_count_quantification_learning_on_graphs.md)
 - [\[NeurIPS 2025\] Semi-infinite Nonconvex Constrained Min-Max Optimization](semi-infinite_nonconvex_constrained_min-max_optimization.md)
-- [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](../../AAAI2026/others/generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
 - [\[ICCV 2025\] Switch-a-View: View Selection Learned from Unlabeled In-the-wild Videos](../../ICCV2025/others/switch-a-view_view_selection_learned_from_unlabeled_in-the-wild_videos.md)
+- [\[AAAI 2026\] Sketch-HARP: Hierarchical Autoregressive Sketch Generation for Flexible Stroke-Level Drawing Manipulation](../../AAAI2026/others/generating_sketches_in_a_hierarchical_auto-regressive_proces.md)
 - [\[ICCV 2025\] Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](../../ICCV2025/others/doodle_your_keypoints_sketch-based_few-shot_keypoint_detection.md)
 
 </div>

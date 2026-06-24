@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This work presents the first density-guided poisoning attack against 3D Gaussian Splatting (3DGS). By injecting illusion Gaussians into low-density regions and introducing ad…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This work presents the first density-guided poisoning attack against 3D Gaussian Splatting (3DGS). By injecting illusion Gaussians into low-density regions and introducing adaptive noise to disrupt multi-view consistency, the method achieves attacks that are clearly visible from target viewpoints while remaining imperceptible from all others.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "kernel density estimation"
   - "multi-view consistency"
 date: 2026-05-08
-content_hash: 02e52ce6339fc9c1
+content_hash: a3d521d55c50e397
 ---
 
 # StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions
@@ -145,10 +145,10 @@ Both the density-guided point cloud attack and the view-consistency disruption a
 ## Related Papers
 
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
+- [\[CVPR 2025\] Steepest Descent Density Control for Compact 3D Gaussian Splatting](../../CVPR2025/3d_vision/steepest_descent_density_control_for_compact_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
-- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
+- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](../../ICLR2026/3d_vision/d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
 - [\[NeurIPS 2025\] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/dc4gs_directional_consistency-driven_adaptive_density_control_for_3d_gaussian_sp.md)
-- [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
 
 </div>
 

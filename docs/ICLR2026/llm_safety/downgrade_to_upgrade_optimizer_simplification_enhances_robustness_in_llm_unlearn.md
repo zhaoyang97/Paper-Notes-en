@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Downgrade to Upgrade: Optimizer Simplification Enhances Robustness in LLM Unlearning
 description: >-
-  [ICLR 2026][LLM Safety][LLM unlearning] This paper investigates the robustness of LLM unlearning from the novel perspective of "optimizer choice," discovering that "downgrading" the optimizer (using zeroth-order or gradient compression methods) paradoxically makes the unlearning more resistant to weight perturbations. Based on this, a hybrid First-Order-Zero
+  [ICLR 2026][LLM Safety][LLM unlearning] This paper investigates the robustness of LLM unlearning from the novel perspective of "optimizer choice," discovering that "downgrading" the optimizer (using zeroth-order or gradient compression methods) paradoxically makes the unlearning more resistant to weight perturbations. Based on this, a hybrid First-Order-Zeroth-Order (FO-ZO) optimizer is proposed to significantly enhance robustness without sacrificing unlearning effectiveness.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LLM unlearning
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM unlearning"
+  - "robust unlearning"
+  - "optimizer"
+  - "zeroth-order optimization"
+  - "random smoothing"
+  - "weight quantization"
+  - "relearning attack"
 date: 2026-05-08
-content_hash: b3e84e462b8add12
+content_hash: 8d6dc7cf1cd60c59
 ---
+
 # Downgrade to Upgrade: Optimizer Simplification Enhances Robustness in LLM Unlearning
 
 **Conference**: ICLR 2026  
@@ -104,16 +111,20 @@ Ours achieves unlearning comparable to Adam (Prob.=0) while pulling utility MU f
 - Value: ⭐⭐⭐⭐ Provides a plug-and-play robust unlearning lever orthogonal to existing objectives, with practical significance for reliable unlearning in privacy, copyright, and safety scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-1. **Fan et al.** (2025) *Reliable and Robust LLM Unlearning*.
-2. **Jia et al.** (2024) *SOUL: Second-order Unlearning for Large Language Models*.
-3. **Tamirisa et al.** (2024) *Tamper-Resistant Unlearning*.
-4. **Wang et al.** (2025) *Invariant Risk Minimization for Robust LLM Unlearning*.
+## Related Papers
+
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
+- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
+- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
+- [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
+- [\[ICLR 2026\] CLUE: Conflict-guided Localization for LLM Unlearning Framework](clue_conflict-guided_localization_for_llm_unlearning_framework.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Expressive Temporal Specifications for Reward Monitoring
 description: >-
-  [AAAI 2026][Temporal Logic] This paper leverages quantitative linear temporal logic (LTLf[F]) to automatically synthesize **quantitative reward monitors (QRMs)** that generate dense…
+  [AAAI 2026][Temporal Logic] This paper leverages quantitative linear temporal logic (LTLf[F]) to automatically synthesize **quantitative reward monitors (QRMs)** that generate dense, continuous-valued reward streams for reinforcement learning agents at runtime, fundamentally alleviating the sparse reward problem in long-horizon tasks under Boolean semantics.
 tags:
   - "AAAI 2026"
   - "Temporal Logic"
@@ -11,7 +11,7 @@ tags:
   - "Sparse Reward"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 5f0c268547541ad5
+content_hash: 3898ce762d39a7bd
 ---
 
 # Expressive Temporal Specifications for Reward Monitoring
@@ -173,8 +173,8 @@ Comparison across 12 Gymnasium/DeepMind environments using three reward sources:
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)
 - [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
 - [\[AAAI 2026\] Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring](judging_by_the_rules_compliance-aligned_framework_for_modern_slavery_statement_m.md)
-- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](../../ICLR2026/others/enhancing_generative_auto_bidding.md)
-- [\[ICCV 2025\] HyTIP: Hybrid Temporal Information Propagation for Masked Conditional Residual Video Coding](../../ICCV2025/others/hytip_hybrid_temporal_information_propagation_for_masked_conditional_residual_vi.md)
+- [\[CVPR 2026\] CHIRP dataset: towards long-term, individual-level, behavioral monitoring of bird populations in the wild](../../CVPR2026/others/chirp_dataset_towards_long-term_individual-level_behavioral_monitoring_of_bird_p.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual Quaternion SE(3) Synchronization with Recovery Guarantees
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. It calculates spectral initialization via power iteration on Hermitian dual quaternion matrices, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with e
+  [ICML 2026][Robotics][SE(3) synchronization] This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. It calculates spectral initialization via power iteration on Hermitian dual quaternion matrices, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with element-wise projection to $\mathrm{UDQ}^n$. It provides the first finite-step linear convergence and explicit error…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML 2026"
+  - "Robotics"
+  - "SE(3) synchronization"
+  - "dual quaternions"
+  - "spectral methods"
+  - "generalized power method"
+  - "multi-scan point cloud registration"
 date: 2026-05-08
-content_hash: a350c58f08ae043f
+content_hash: fa9a2d71fb929706
 ---
+
 # Dual Quaternion SE(3) Synchronization with Recovery Guarantees
 
 **Conference**: ICML 2026  
@@ -137,7 +143,7 @@ On four Stanford datasets, DQGPM achieved the lowest errors in both sparse and d
 - [\[ICML 2026\] Dual Advantage Fields](dual_advantage_fields.md)
 - [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](../../CVPR2026/robotics/flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
+- [\[ICLR 2026\] EquAct: An SE(3)-Equivariant Multi-Task Transformer for 3D Robotic Manipulation](../../ICLR2026/robotics/equact_an_se3-equivariant_multi-task_transformer_for_3d_robotic_manipulation.md)
 
 </div>
 

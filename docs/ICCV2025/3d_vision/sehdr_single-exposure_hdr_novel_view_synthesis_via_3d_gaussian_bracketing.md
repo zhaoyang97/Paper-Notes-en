@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing
 description: >-
-  [ICCV 2025][3D Vision][HDR novel view synthesis] SeHDR is proposed as the first framework for synthesizing HDR novel views from single-exposure multi-view LDR images. It generates bracketed exposures in 3D Gaussian space…
+  [ICCV 2025][3D Vision][HDR novel view synthesis] SeHDR is proposed as the first framework for synthesizing HDR novel views from single-exposure multi-view LDR images. It generates bracketed exposures in 3D Gaussian space (Bracketed 3D Gaussians) and merges them into an HDR scene representation via differentiable Neural Exposure Fusion (NeEF).
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "single exposure"
   - "differentiable rendering"
 date: 2026-05-08
-content_hash: 14b368e08e5dc54b
+content_hash: 66a18e1b11a6ef10
 ---
 
 # SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing
@@ -120,11 +120,11 @@ No HDR ground-truth supervision is required. End-to-end training is performed us
 
 ## Related Papers
 
+- [\[ICML 2025\] High Dynamic Range Novel View Synthesis with Single Exposure](../../ICML2025/3d_vision/high_dynamic_range_novel_view_synthesis_with_single_exposure.md)
 - [\[CVPR 2026\] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis](../../CVPR2026/3d_vision/physically_inspired_gaussian_splatting_for_hdr_novel_view_synthesis.md)
 - [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
 - [\[ICCV 2025\] BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis](billboard_splatting_bbsplat_learnable_textured_primitives_fo.md)
 - [\[ICCV 2025\] CATSplat: Context-Aware Transformer with Spatial Guidance for Generalizable 3D Gaussian Splatting from A Single-View Image](catsplat_contextaware_transformer_with_spatial_guidance_for.md)
-- [\[ICCV 2025\] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis](humanolat_a_large-scale_dataset_for_full-body_human_relighting_and_novel-view_sy.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Superposition Yields Robust Neural Scaling
 description: >-
-  [NeurIPS 2025][Interpretability][Neural scaling laws] This paper identifies representational superposition as the core driver of neural scaling laws: in the strong-superposition regime…
+  [NeurIPS 2025 Best Paper][Interpretability][Neural scaling laws] This paper identifies representational superposition as the core driver of neural scaling laws: in the strong-superposition regime, loss **universally** scales inversely with model dimension ($L \propto 1/m$), independent of the specific form of the data frequency distribution—consistent with empirical scaling behavior in real LLMs.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Best Paper"
   - "Interpretability"
   - "Neural scaling laws"
   - "superposition"
@@ -12,7 +12,7 @@ tags:
   - "LLM theory"
   - "weight decay"
 date: 2026-05-08
-content_hash: b58f8c8971027b95
+content_hash: 1d9fff903abf5b8e
 ---
 
 # Superposition Yields Robust Neural Scaling
@@ -174,10 +174,10 @@ Analysis of four open-source model families (OPT, GPT-2, Qwen, Pythia):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Towards Scaling Laws for Symbolic Regression](towards_scaling_laws_for_symbolic_regression.md)
+- [\[ICLR 2026\] Interpretable 3D Neural Object Volumes for Robust Conceptual Reasoning](../../ICLR2026/interpretability/interpretable_3d_neural_object_volumes_for_robust_conceptual_reasoning.md)
 - [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
 - [\[NeurIPS 2025\] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces](tangledfeatures_robust_feature_selection_in_highly_correlated_spaces.md)
-- [\[NeurIPS 2025\] Sloth: Scaling Laws for LLM Skills to Predict Multi-Benchmark Performance Across Families](sloth_scaling_laws_for_llm_skills_to_predict_multi-benchmark_performance_across_.md)
-- [\[ICML 2026\] Universal 1/3 Time Scaling in Learning Peaked Distributions](../../ICML2026/interpretability/universal_one-third_time_scaling_in_learning_peaked_distributions.md)
+- [\[CVPR 2025\] Scaling Vision Pre-Training to 4K Resolution](../../CVPR2025/interpretability/scaling_vision_pre-training_to_4k_resolution.md)
 
 </div>
 

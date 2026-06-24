@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] The Scaf-GRPO framework is proposed to overcome the "learning cliff" (zero-reward) problem in GRPO training through hierarchical in-prompt hint injection (Knowledge $\to$ Planning $\to$ Solution). It achieves a 44.3% relative improvement in pass@1 on AIME24 using Qwen2.5-Math-7B while maintaining on-policy consistency.
+  [ICLR 2026][Reasoning][GRPO] The Scaf-GRPO framework is proposed to overcome the "learning cliff" (zero-reward) problem in GRPO training through hierarchical in-prompt hint injection (Knowledge $\to$ Planning $\to$ Solution). It achieves a 44.3% relative improvement in pass@1 on AIME24 using Qwen2.5-Math-7B while maintaining on-policy consistency.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "GRPO"
+  - "Reinforcement Learning"
+  - "Learning Cliff"
+  - "Progressive Guidance"
+  - "Scaffolded Teaching"
 date: 2026-05-08
-content_hash: c31ada1ace53d32e
+content_hash: f1512c81eb5e7385
 ---
+
 # Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] The authors propose OPL (Orthogonal Projection Layer) and an enhanced version G-OPL, which utilize a learnable orthogonal subspace derived from QR decomposition to explicitly project out "task-irrelevant variables" and "facial privacy components" within the video anomaly detection feature space. They introduce four pri
+  [ICML 2026 Spotlight][Video Understanding][Video Anomaly Detection] The authors propose OPL (Orthogonal Projection Layer) and an enhanced version G-OPL, which utilize a learnable orthogonal subspace derived from QR decomposition to explicitly project out "task-irrelevant variables" and "facial privacy components" within the video anomaly detection feature space. They introduce four privacy-aware metrics (SSC/ARD/PD/FPD), demonstrating that face prediction accuracy by linear S…
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026 Spotlight"
+  - "Video Understanding"
+  - "Video Anomaly Detection"
+  - "Orthogonal Projection"
+  - "Facial Suppression"
+  - "Privacy-Aware"
+  - "Subspace Decoupling"
 date: 2026-05-08
-content_hash: b496ba130942e849
+content_hash: 7a5689802bb81455
 ---
+
 # Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection
 
 **Conference**: ICML 2026 Spotlight  

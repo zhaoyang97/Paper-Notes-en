@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] VERICOT translates each step of an LLM's Chain-of-Thought (CoT) into First-Order Logic (FOL) formulas and uses an SMT solver to check if each step is entailed by "established premises." This process localizes "ungrounded / contradictory / untranslatable" reasoning steps; these validation signals predict final answer co
+  [ICLR 2026][Reasoning][CoT Validation] VERICOT translates each step of an LLM's Chain-of-Thought (CoT) into First-Order Logic (FOL) formulas and uses an SMT solver to check if each step is entailed by "established premises." This process localizes "ungrounded / contradictory / untranslatable" reasoning steps; these validation signals predict final answer correctness and drive self-reflection, SFT, and DPO to generate more verifiable reasoning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "CoT Validation"
+  - "Neuro-Symbolic"
+  - "First-Order Logic"
+  - "Auto-formalization"
+  - "SMT Solver"
 date: 2026-05-08
-content_hash: 692bd22772015c4f
+content_hash: 7525ddff31e95765
 ---
+
 # VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks
 
 **Conference**: ICLR 2026  
@@ -131,6 +137,7 @@ Fine-tuning results (Table 5): On ProofWriter, `SFT w Verified CoTs + DPO` impro
 - Value: ⭐⭐⭐⭐⭐ Strongly demonstrates the potential of "validator-as-reward" to build trustworthy reasoning models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,8 +145,8 @@ Fine-tuning results (Table 5): On ProofWriter, `SFT w Verified CoTs + DPO` impro
 - [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
 - [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
 - [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](../../ACL2026/llm_reasoning/accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
-- [\[ICLR 2026\] ActivationReasoning: Logical Reasoning in Latent Activation Spaces](activationreasoning_logical_reasoning_in_latent_activation_spaces.md)
 - [\[ICML 2026\] On Robustness and Chain-of-Thought Consistency of RL-Finetuned VLMs](../../ICML2026/llm_reasoning/on_robustness_and_chain-of-thought_consistency_of_rl-finetuned_vlms.md)
+- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 
 </div>
 

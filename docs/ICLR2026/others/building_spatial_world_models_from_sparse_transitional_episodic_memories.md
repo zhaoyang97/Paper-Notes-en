@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Building Spatial World Models from Sparse Transitional Episodic Memories
 description: >-
-  [ICLR 2026][Others][world model] The paper proposes the Episodic Spatial World Model (ESWM), which builds spatial world models from sparse, disconnected episodic memories (one-step transitions). Its latent space spontaneously develops cognitive maps aligned with environmental topology and supports zero-shot exploration and navigation.
+  [ICLR2026][world model] The paper proposes the Episodic Spatial World Model (ESWM), which builds spatial world models from sparse, disconnected episodic memories (one-step transitions). Its latent space spontaneously develops cognitive maps aligned with environmental topology and supports zero-shot exploration and navigation.
 tags:
-  - ICLR 2026
-  - Others
-  - world model
-  - episodic memory
-  - spatial reasoning
-  - cognitive map
-  - navigation
+  - "ICLR2026"
+  - "world model"
+  - "episodic memory"
+  - "spatial reasoning"
+  - "cognitive map"
+  - "navigation"
 date: 2026-05-08
-content_hash: 5e584f495ba48ea8
+content_hash: 92d921dbee769551
 ---
+
 # Building Spatial World Models from Sparse Transitional Episodic Memories
 
 **Conference**: ICLR2026  
@@ -143,11 +143,11 @@ The model uses cross-entropy loss with equal weights for the $s_s, a, s_e$ predi
 
 ## Related Papers
 
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
 - [\[ICLR 2026\] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics](latent_particle_world_models_self-supervised_object-centric_stochastic_dynamics_.md)
+- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
+- [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
 - [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
 - [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
-- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
 
 </div>
 

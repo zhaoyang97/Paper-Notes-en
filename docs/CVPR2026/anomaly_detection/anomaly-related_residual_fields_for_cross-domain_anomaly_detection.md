@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the challenge that diffusion model residuals are noisy and magnitudes alone cannot distinguish anomalies, this paper proposes Residual Evolution Fields (REF). It separates "persistent non-stationary anomaly signals" from the spatio-temporal trajectories of residuals in the diffusion reverse process. Cross-do
+  [CVPR 2026][Anomaly Detection][Cross-domain Anomaly Detection] Addressing the challenge that diffusion model residuals are noisy and magnitudes alone cannot distinguish anomalies, this paper proposes Residual Evolution Fields (REF). It separates "persistent non-stationary anomaly signals" from the spatio-temporal trajectories of residuals in the diffusion reverse process. Cross-domain Field Alignment (CFA) is then employed to transfer detectors trained on labeled source domai…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Cross-domain Anomaly Detection"
+  - "Diffusion Model Residuals"
+  - "Residual Evolution Fields"
+  - "Domain Alignment"
+  - "Unlabeled Transfer"
 date: 2026-05-08
-content_hash: fec86c6c3cadeb1f
+content_hash: 43b698afe940a14c
 ---
+
 # Anomaly-Related Residual Fields for Cross-domain Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Average AUROC (%) on three VisA tasks:
 ## Related Papers
 
 - [\[CVPR 2026\] Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection](hunting_normality_from_query_sample_via_residual_learning_for_generalist_anomaly.md)
-- [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
-- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/object_detection/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
-- [\[CVPR 2026\] A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps](a_closer_look_at_cross-domain_few-shot_object_detection_fine-tuning_matters_and_.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
+- [\[CVPR 2026\] RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)
+- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
+- [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)
+- [\[CVPR 2026\] Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection](defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio.md)
 
 </div>
 

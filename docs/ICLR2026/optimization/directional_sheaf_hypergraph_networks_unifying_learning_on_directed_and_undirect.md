@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs
 description: >-
-  [ICLR 2026][Optimization & Theory][sheaf neural networks] This paper proposes Directional Sheaf Hypergraph Networks (DSHN), which combine Cellular Sheaf theory with the directional information of directed hypergraphs to construct a complex-valued Hermitian Laplacian operator. This operator unifies and generalizes existing graph and hypergraph Laplacians, achieving a relative
+  [ICLR 2026][Optimization][sheaf neural networks] This paper proposes Directional Sheaf Hypergraph Networks (DSHN), which combine Cellular Sheaf theory with the directional information of directed hypergraphs to construct a complex-valued Hermitian Laplacian operator. This operator unifies and generalizes existing graph and hypergraph Laplacians, achieving a relative accuracy improvement of 2%–20% across 7 real-world datasets.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - sheaf neural networks
-  - directed hypergraphs
-  - Laplacian
-  - spectral methods
-  - heterophily
+  - "ICLR 2026"
+  - "Optimization"
+  - "sheaf neural networks"
+  - "directed hypergraphs"
+  - "Laplacian"
+  - "spectral methods"
+  - "heterophily"
 date: 2026-05-08
-content_hash: 57cbda28aa1be569
+content_hash: 5816e4c57b6465be
 ---
+
 # Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs
 
 **Conference**: ICLR 2026  

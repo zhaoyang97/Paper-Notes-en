@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations
 description: >-
-  [CVPR 2026][Interpretability][Attention] This paper proposes the SaN (Selection-as-Nonlinearity) perspective, reinterpreting attention as a "cooperative selection game driven by context-based scoring under unit budget constraints." It diagnoses the "weak-independence" phenomenon—where pure attention stacks significantly underperform when FFNs are removed—as a
+  [CVPR 2026][Interpretability][Attention Mechanism] This paper proposes the SaN (Selection-as-Nonlinearity) perspective, reinterpreting attention as a "cooperative selection game driven by context-based scoring under unit budget constraints." It diagnoses the "weak-independence" phenomenon—where pure attention stacks significantly underperform when FFNs are removed—as a result of two structural tensions. Based on this, it designs a near-zero-overhead compensation module…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - Attention
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Attention Mechanism"
+  - "Activation Function"
+  - "Weak Independence"
+  - "Budget Allocation Game"
+  - "Expressivity Compensation"
 date: 2026-05-08
-content_hash: d9c7c559204ef33a
+content_hash: 4a3ea8c952f55dd1
 ---
+
 # Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ CSaN consistently improves performance with only ~5% extra cost, allowing smalle
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)
+- [\[ICLR 2026\] Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency](../../ICLR2026/interpretability/attention_please_revisiting_attentive_probing_through_the_lens_of_efficiency.md)
 - [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[CVPR 2026\] NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)
-- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)
 - [\[CVPR 2026\] Draft and Refine with Visual Experts](draft_and_refine_with_visual_experts.md)
+- [\[CVPR 2026\] Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts](rounded_or_streamlined_head_bridging_concept_bottleneck_models_and_attribute-des.md)
+- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)
 
 </div>
 

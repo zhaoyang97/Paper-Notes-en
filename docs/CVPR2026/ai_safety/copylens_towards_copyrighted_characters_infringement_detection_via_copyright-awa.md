@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] COPYLENS: Towards Copyrighted Characters Infringement Detection via Copyright-Aware Prompt Learning
 description: >-
-  [CVPR 2026][AI Safety][Vision-Language Model] Addressing the governance challenge where text-to-image models unintentionally replicate copyrighted characters (e.g., Disney characters), COPYLENS employs an LVLM as a detector and an LLM as a prompt optimizer. Using Cohen's Kappa (alignment with human annotations) as a feedback signal, it automatically rewrites detec
+  [CVPR 2026][AI Safety][Copyrighted Character Detection] Addressing the governance challenge where text-to-image models unintentionally replicate copyrighted characters (e.g., Disney characters), COPYLENS employs an LVLM as a detector and an LLM as a prompt optimizer. Using Cohen's Kappa (alignment with human annotations) as a feedback signal, it automatically rewrites detection prompts in a closed loop to maximize human-like judgment, achieving a $5\%–10\%$ improvement in ali…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Copyrighted Character Detection"
+  - "Prompt Optimization"
+  - "Vision-Language Models"
+  - "Closed-loop Feedback"
+  - "AIGC Governance"
 date: 2026-05-08
-content_hash: e733bd7ee6590f8f
+content_hash: 49d23d04802f617c
 ---
+
 # COPYLENS: Towards Copyrighted Characters Infringement Detection via Copyright-Aware Prompt Learning
 
 **Conference**: CVPR 2026  
@@ -131,6 +136,7 @@ Cumulative component addition (I: Instructions/History; R: TLR; G: Guidance; M: 
 - Value: ⭐⭐⭐⭐ (Directly addresses AIGC governance, though absolute reliability remains a bottleneck).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,7 +144,7 @@ Cumulative component addition (I: Instructions/History; R: TLR; G: Guidance; M: 
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
 - [\[ECCV 2024\] Noise-Assisted Prompt Learning for Image Forgery Detection and Localization](../../ECCV2024/ai_safety/noise-assisted_prompt_learning_for_image_forgery_detection_and_localization.md)
-- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 - [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)
 
 </div>

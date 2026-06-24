@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction
 description: >-
-  [AAAI 2026][LLM/NLP][LLM Evaluation] This paper systematically quantifies the reliability degradation of LLMs in multi-turn conversations through three deterministically evaluable representative tasks—instruction followi…
+  [AAAI 2026][LLM (Other)][LLM Evaluation] This paper systematically quantifies the reliability degradation of LLMs in multi-turn conversations through three deterministically evaluable representative tasks—instruction following, tool selection, and entity extraction—revealing failure modes such as instruction drift, intent confusion, and context overwriting in extended dialogues.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "LLM Evaluation"
   - "Multi-Turn Dialogue"
   - "Reliability"
   - "Instruction Following"
   - "Tool Selection"
 date: 2026-05-08
-content_hash: f3fad6652dad7ddb
+content_hash: 301b211cf79874e4
 ---
 
 # Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction
@@ -180,11 +180,11 @@ All models are decoded at temperature 0 to ensure deterministic outputs.
 
 ## Related Papers
 
+- [\[ACL 2026\] Confidence Estimation for LLMs in Multi-turn Interactions](../../ACL2026/llm_nlp/confidence_estimation_for_llms_in_multi-turn_interactions.md)
+- [\[ACL 2025\] Quantifying Semantic Emergence in Language Models](../../ACL2025/llm_nlp/quantifying_semantic_emergence_in_language_models.md)
 - [\[ACL 2026\] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models](../../ACL2026/llm_nlp/from_static_inference_to_dynamic_interaction_a_survey_of_streaming_large_languag.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[AAAI 2026\] ProFuser: Progressive Fusion of Large Language Models](profuser_progressive_fusion_of_large_language_models.md)
-- [\[ACL 2026\] MulDimIF: A Multi-Dimensional Constraint Framework for Evaluating and Improving Instruction Following in Large Language Models](../../ACL2026/llm_nlp/muldimif_a_multi-dimensional_constraint_framework_for_evaluating_and_improving_i.md)
-- [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
+- [\[AAAI 2026\] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs](uncertainty_under_the_curve_a_sequence-level_entropy_area_metric_for_reasoning_l.md)
+- [\[ACL 2025\] Controlling Politeness in Multi-Turn Dialogues Through Pre-Phrase Augmentation](../../ACL2025/llm_nlp/controlling_politeness_in_multi-turn_dialogues_through_pre-phrase_augmentation.md)
 
 </div>
 

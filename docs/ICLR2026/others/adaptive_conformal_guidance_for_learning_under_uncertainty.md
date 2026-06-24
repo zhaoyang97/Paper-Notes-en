@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Adaptive Conformal Guidance for Learning under Uncertainty
 description: >-
-  [ICLR 2026][Others][Knowledge Distillation] The paper embeds split conformal prediction (split CP) directly into the training loop, using the "prediction set size" to quantify the uncertainty of guidance signals (teacher soft labels / pseudo-labels / expert policies), and then adaptively downweights unreliable guidance—a unified framework covering supervised, se
+  [ICLR 2026][Conformal Prediction] The paper embeds split conformal prediction (split CP) directly into the training loop, using the "prediction set size" to quantify the uncertainty of guidance signals (teacher soft labels / pseudo-labels / expert policies), and then adaptively downweights unreliable guidance—a unified framework covering supervised, semi-supervised, and imitation-guided RL.
 tags:
-  - ICLR 2026
-  - Others
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Conformal Prediction"
+  - "Uncertainty Weighting"
+  - "Knowledge Distillation"
+  - "Semi-Supervised Learning"
+  - "Imitation-Guided Reinforcement Learning"
 date: 2026-05-08
-content_hash: c9ee61abfcc394d4
+content_hash: 66f92c5443c12e9a
 ---
+
 # Adaptive Conformal Guidance for Learning under Uncertainty
 
 **Conference**: ICLR 2026  
@@ -125,15 +129,14 @@ A key contrast: Original KD performs worse than "from scratch" when the teacher 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Equation Structure Learning with Adaptive Refinement (RESTART)](robust_equation_structure_learning_with_adaptive_refinement.md)
 - [\[ICLR 2026\] Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations](regulating_internal_alignment_flows_for_robust_learning_under_spurious_correlati.md)
 - [\[ICLR 2026\] Measuring Uncertainty Calibration](measuring_uncertainty_calibration.md)
 - [\[ICLR 2026\] Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion](harpoon_generalised_manifold_guidance_for_conditional_tabular_diffusion.md)
 - [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
-- [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](../../ICML2026/others/possibilistic_predictive_uncertainty_for_deep_learning.md)
 
 </div>
 

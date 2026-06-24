@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex
 description: >-
-  [CVPR 2026][Image Restoration][Retinex] Multinex reformulates Retinex decomposition from a "reconstruction target" into an "additive residual prior." By feeding a set of analytically computed multi-view luminance/chrominance priors into two ultra-lightweight fusion networks, it outperforms SOTA lightweight models and approaches million-parameter models using
+  [CVPR 2026][Image Restoration][Low-light Enhancement] Multinex reformulates Retinex decomposition from a "reconstruction target" into an "additive residual prior." By feeding a set of analytically computed multi-view luminance/chrominance priors into two ultra-lightweight fusion networks, it outperforms SOTA lightweight models and approaches million-parameter models using only 45K (or even 0.7K) parameters across seven low-light benchmarks.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Retinex
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light Enhancement"
+  - "Retinex"
+  - "Lightweight Network"
+  - "Multi-prior Fusion"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 7823689f9a841031
+content_hash: a9d15ba7ca6950a5
 ---
+
 # Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex
 
 **Conference**: CVPR 2026  
@@ -137,15 +142,17 @@ Performed on LOL-v1 with 45K configuration (Tab.4):
 
 <div class="related-papers" markdown="1">
 
-1. **Retinex-Net**: Deep Retinex Decomposition for Low-Light Enhancement, BMVC 2018.
-2. **LYT-Net**: Lightweight YUV Transformer Network for Low-Light Image Enhancement, 2024.
-3. **CIDNet**: Constrained Interior-point Dissociated Network for Image Enhancement, AAAI 2024.
-4. **Zero-DCE**: Zero-Reference Deep Curve Estimation for Low-Light Image Enhancement, CVPR 2020.
+## Related Papers
+
+- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
+- [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
+- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
+- [\[CVPR 2026\] Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery](gaussian_splatting-based_low-rank_tensor_representation_for_multi-dimensional_im.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)

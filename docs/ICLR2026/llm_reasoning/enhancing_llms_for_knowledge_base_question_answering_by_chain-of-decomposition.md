@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes Chain-of-Decomposition (CoD), which factorizes the answer generation distribution of Knowledge Base Question Answering (KBQA) into three subtasks—"Retrieval → Reformulation → Reasoning"—using a causal graph. Retrieval is handled by a small model and reformulation by rules (both independent of the LL
+  [ICLR 2026][Reasoning][Knowledge Base Question Answering] This paper proposes Chain-of-Decomposition (CoD), which factorizes the answer generation distribution of Knowledge Base Question Answering (KBQA) into three subtasks—"Retrieval → Reformulation → Reasoning"—using a causal graph. Retrieval is handled by a small model and reformulation by rules (both independent of the LLM), leaving only a lightweight binary classification task of "whether the reasoning path is valid" for…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Knowledge Base Question Answering"
+  - "Task Decomposition"
+  - "Causal Graph Factorization"
+  - "Retrieval-Augmentation"
+  - "Reasoning Path"
 date: 2026-05-08
-content_hash: 1493e096354e5383
+content_hash: 5b825fc60e6d8a6e
 ---
+
 # Enhancing LLMs for Knowledge Base Question Answering by Chain-of-Decomposition
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,10 @@ Table 3 compares the F1 scores of three variants (Only LF: logical form executio
 ## Related Papers
 
 - [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
+- [\[ACL 2025\] Is That Your Final Answer? Test-Time Scaling Improves Selective Question Answering](../../ACL2025/llm_reasoning/test_time_scaling_selective_qa.md)
 - [\[ICLR 2026\] Reasoning with Sampling: Your Base Model is Smarter Than You Think](reasoning_with_sampling_your_base_model_is_smarter_than_you_think.md)
 - [\[ICLR 2026\] Learning Global Hypothesis Space for Enhancing Synergistic Reasoning Chain](learning_global_hypothesis_space_for_enhancing_synergistic_reasoning_chain.md)
 - [\[ICLR 2026\] LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction](loc-decomp_llm_autoformalization_via_logical_concept_decomposition_and_iterative.md)
-- [\[ICLR 2026\] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?](are_reasoning_llms_robust_to_interventions_on_their_chain-of-thought.md)
 
 </div>
 

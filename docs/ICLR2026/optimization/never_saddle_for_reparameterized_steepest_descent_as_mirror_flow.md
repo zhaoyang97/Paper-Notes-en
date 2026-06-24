@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Never Saddle for Reparameterized Steepest Descent as Mirror Flow
 description: >-
-  [ICLR 2026][Optimization & Theory][AdamW] This paper proposes a "steepest mirror flow" framework that unifies the entire family of steepest descent algorithms under reparameterization—from SignGF (≈Adam) to GF (≈SGD)—into a mirror flow perspective. It geometrically explains why steeper descent escapes saddle points faster and learns sparse features better, the
+  [ICLR 2026][Optimization][steepest descent] This paper proposes a "steepest mirror flow" framework that unifies the entire family of steepest descent algorithms under reparameterization—from SignGF (≈Adam) to GF (≈SGD)—into a mirror flow perspective. It geometrically explains why steeper descent escapes saddle points faster and learns sparse features better, thereby elucidating two mechanisms why Adam/AdamW often outperforms SGD in fine-tuning tasks.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - AdamW
+  - "ICLR 2026"
+  - "Optimization"
+  - "steepest descent"
+  - "mirror flow"
+  - "implicit bias"
+  - "saddle point escape"
+  - "feature learning"
+  - "AdamW"
+  - "weight decay"
+  - "diagonal linear networks"
 date: 2026-05-08
-content_hash: 1e9ca83f9e102629
+content_hash: 160ca39fe28706e3
 ---
+
 # Never Saddle for Reparameterized Steepest Descent as Mirror Flow
 
 **Conference**: ICLR 2026  
@@ -117,8 +125,8 @@ Small LR SGD barely learns (stuck at saddles), while small LR Adam outperforms e
 - [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](../../ICML2026/optimization/mirror_descent_under_generalized_smoothness.md)
 - [\[ICLR 2026\] Saddle-to-Saddle Dynamics Explains A Simplicity Bias Across Neural Network Architectures](saddle-to-saddle_dynamics_explains_a_simplicity_bias_across_neural_network_archi.md)
 - [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
+- [\[ICLR 2026\] FMIP: Joint Continuous-Integer Flow for Mixed-Integer Linear Programming](fmip_joint_continuous-integer_flow_for_mixed-integer_linear_programming.md)
 - [\[ICML 2025\] Learning Mixtures of Experts with EM: A Mirror Descent Perspective](../../ICML2025/optimization/learning_mixtures_of_experts_with_em_a_mirror_descent_perspective.md)
-- [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](../../ICML2026/optimization/bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
 
 </div>
 

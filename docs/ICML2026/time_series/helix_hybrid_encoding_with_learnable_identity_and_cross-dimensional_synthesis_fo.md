@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation
 description: >-
-  [ICML 2026][Time Series][Paper Note] Ours learns a "feature identity embedding" for each feature as a persistent semantic anchor. Combined with time-feature double helix attention, it achieved first place across all 21 missing scenarios in 5 public multivariate time series datasets, with an MAE reduction of over 25% compared to the runner-up ImputeFormer
+  [ICML 2026 Spotlight][Time Series][Feature Identity Embedding] Ours learns a "feature identity embedding" for each feature as a persistent semantic anchor. Combined with time-feature double helix attention, it achieved first place across all 21 missing scenarios in 5 public multivariate time series datasets, with an MAE reduction of over 25% compared to the runner-up ImputeFormer on datasets such as ETT-h1.
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026 Spotlight"
+  - "Time Series"
+  - "Feature Identity Embedding"
+  - "Time Series Imputation"
+  - "Spatio-Temporal Transformer"
+  - "Double Helix Encoding"
 date: 2026-05-08
-content_hash: 1753e86f3dc0d2d0
+content_hash: b60f660a0eadb82d
 ---
+
 # HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation
 
 **Conference**: ICML 2026 Spotlight  
@@ -142,15 +147,14 @@ Parameter count is 803K, 100x smaller than SAITS (88M). Wilcoxon significance $p
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](../../ICLR2026/time_series/t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
-- [\[ICML 2026\] Embedding Hybrid Systems into Continuous Latent Vector Fields](embedding_hybrid_systems_into_continuous_latent_vector_fields.md)
+- [\[ICLR 2026\] Flow-based Conformal Prediction for Multi-dimensional Time Series](../../ICLR2026/time_series/flow-based_conformal_prediction_for_multi-dimensional_time_series.md)
 - [\[ICML 2026\] Spatiotemporal Imputation with Graph-Informed Flow Matching](spatiotemporal_imputation_with_graph-informed_flow_matching.md)
-- [\[ICLR 2026\] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling](../../ICLR2026/time_series/are_global_dependencies_necessary_scalable_time_series_forecasting_via_local_cro.md)
-- [\[NeurIPS 2025\] Statistical Guarantees for High-Dimensional Stochastic Gradient Descent](../../NeurIPS2025/time_series/statistical_guarantees_for_high-dimensional_stochastic_gradient_descent.md)
+- [\[ICML 2026\] Embedding Hybrid Systems into Continuous Latent Vector Fields](embedding_hybrid_systems_into_continuous_latent_vector_fields.md)
+- [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](../../ICLR2026/time_series/time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
+- [\[ICLR 2026\] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation](../../ICLR2026/time_series/t1_one-to-one_channel-head_binding_for_multivariate_time-series_imputation.md)
 
 </div>
 

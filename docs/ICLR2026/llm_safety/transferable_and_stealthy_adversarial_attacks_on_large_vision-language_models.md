@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Diffusion Model] This paper proposes Progressive Semantic Infusion (PSI), which utilizes a diffusion model to gradually inject the natural semantics of a target image into a source image. This significantly improves the transfer attack success rate against black-box Large Vision-Language Models (LVLMs) such as GPT-5, Grok-4, and Gemini
+  [ICLR2026][LLM Safety][Large Vision-Language Model Security] This paper proposes Progressive Semantic Infusion (PSI), which utilizes a diffusion model to gradually inject the natural semantics of a target image into a source image. This significantly improves the transfer attack success rate against black-box Large Vision-Language Models (LVLMs) such as GPT-5, Grok-4, and Gemini while maintaining visual stealthiness.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Diffusion Model
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Large Vision-Language Model Security"
+  - "Black-box Transfer Attack"
+  - "Stealthy Adversarial Examples"
+  - "Diffusion Models"
+  - "Progressive Semantic Infusion"
 date: 2026-05-08
-content_hash: 00da0a49835a6a80
+content_hash: 0027f7ff10ca8d58
 ---
+
 # Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models
 
 **Conference**: ICLR2026  

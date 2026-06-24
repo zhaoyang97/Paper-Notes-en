@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reliable Evaluation of MRI Motion Correction: Dataset and Insights
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] Addressing the fundamental dilemma that "3D MRI motion correction methods cannot be reliably evaluated," this paper releases PMoC3D, a paired real-motion dataset, and proposes MoMRISim, a feature-space metric trained via self-supervision. By systematically auditing three evaluation paradigms—real-paired, simulated-moti
+  [ICLR 2026][Medical Imaging][MRI Motion Correction] Addressing the fundamental dilemma that "3D MRI motion correction methods cannot be reliably evaluated," this paper releases PMoC3D, a paired real-motion dataset, and proposes MoMRISim, a feature-space metric trained via self-supervision. By systematically auditing three evaluation paradigms—real-paired, simulated-motion, and no-reference—the study concludes that "Real-Paired + MoMRISim" is the most reliable despite being im…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "MRI Motion Correction"
+  - "Evaluation Benchmark"
+  - "Paired Dataset"
+  - "Perceptual Metrics"
+  - "Self-supervised"
 date: 2026-05-08
-content_hash: 67e1bb4cff076ff9
+content_hash: 4c0b4cfe3413b445
 ---
+
 # Reliable Evaluation of MRI Motion Correction: Dataset and Insights
 
 **Conference**: ICLR 2026  
@@ -129,10 +135,10 @@ MoMRISim maintains high correlation across different algorithm types (AltOpt / M
 ## Related Papers
 
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
 - [\[CVPR 2026\] Building Robust Vision Encoders for Cross-Dataset Evaluation in Immunofluorescent Microscopy](../../CVPR2026/medical_imaging/building_robust_vision_encoders_for_cross-dataset_evaluation_in_immunofluorescen.md)
 - [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](../../CVPR2026/medical_imaging/prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
-- [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
-- [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
+- [\[ICLR 2026\] SpineBench: A Clinically Significant, Segment-Aware Spinal Diagnosis and Treatment Evaluation Benchmark and SpineMed-450k Corpus](spinebench_a_clinically_salient_level-aware_benchmark_powered_by_the_spinemed-45.md)
 
 </div>
 

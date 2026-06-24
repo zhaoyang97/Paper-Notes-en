@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning
 description: >-
-  [CVPR 2026][Multimodal VLM][RAG] Addressing the "large background + sparse evidence" nature of document images, DocPrune proposes a training-free, progressive three-stage visual token pruning framework (background removal → question-irrelevant region removal → adaptive pruning based on model comprehension). It improves encoder/decoder throughput by $3
+  [CVPR 2026][Multimodal Efficiency][Document VQA] Addressing the "large background + sparse evidence" nature of document images, DocPrune proposes a training-free, progressive three-stage visual token pruning framework (background removal → question-irrelevant region removal → adaptive pruning based on model comprehension). It improves encoder/decoder throughput by $3.0\times / 3.3\times$ on M3DocRAG while increasing F1 by $1.0$.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RAG
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Document VQA"
+  - "Training-free token pruning"
+  - "Long document understanding"
+  - "RAG"
+  - "Inference acceleration"
 date: 2026-05-08
-content_hash: 659c47a733efc2b1
+content_hash: 491086a6bcb3b30e
 ---
+
 # DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning
 
 **Conference**: CVPR 2026  
@@ -131,15 +135,16 @@ Incremental performance on M3DocRAG (top-4 pages):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
-- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](vq-va_world_towards_high-quality_visual_question-visual_answering.md)
+- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
 - [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
-- [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
 - [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
+- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
 
 </div>
 

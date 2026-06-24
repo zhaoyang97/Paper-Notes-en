@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multi-agent RL] Through 82,620 large-scale experiments, this work systematically investigates robustness and resilience in cooperative multi-agent RL…
+  [NeurIPS 2025][Reinforcement Learning][multi-agent RL] Through 82,620 large-scale experiments, this work systematically investigates robustness and resilience in cooperative multi-agent RL, demonstrating that hyperparameter tuning matters more than algorithm selection, and revealing that commonly adopted practices such as parameter sharing, GAE, and PopArt are harmful under uncertainty. A set of practical hyperparameter recommendations is proposed.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "hyperparameter tuning"
   - "cooperative MARL"
 date: 2026-05-08
-content_hash: cf6c31df24ae51d0
+content_hash: 950e5274d14fab10
 ---
 
 # Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning
@@ -147,11 +147,11 @@ Linear regression: cooperation–robustness $r=0.85, p<.001$; cooperation–resi
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Extending NGU to Multi-Agent RL: A Preliminary Study](extending_ngu_to_multi-agent_rl_a_preliminary_study.md)
+- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
-- [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
+- [\[ICML 2025\] Enhancing Cooperative Multi-Agent Reinforcement Learning with State Modelling and Adversarial Exploration](../../ICML2025/reinforcement_learning/enhancing_cooperative_multi-agent_reinforcement_learning_with_state_modelling_an.md)
+- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](../../ICLR2026/reinforcement_learning/potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
 
 </div>
 

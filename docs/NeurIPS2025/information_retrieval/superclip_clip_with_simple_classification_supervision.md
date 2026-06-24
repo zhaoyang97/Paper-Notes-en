@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SuperCLIP: CLIP with Simple Classification Supervision
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][CLIP] SuperCLIP augments the CLIP contrastive learning framework with an extremely simple classification loss — requiring only a lightweight linear layer that increases total F…
+  [NeurIPS 2025][Information Retrieval & RAG][CLIP] SuperCLIP augments the CLIP contrastive learning framework with an extremely simple classification loss — requiring only a lightweight linear layer that increases total FLOPs by merely 0.077% — to recover fine-grained textual supervision that CLIP underutilizes, achieving consistent improvements on zero-shot classification, image-text retrieval, and vision-only tasks.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "fine-grained alignment"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 8b095e308fceaeca
+content_hash: 5819726dd0fbcc82
 ---
 
 # SuperCLIP: CLIP with Simple Classification Supervision
@@ -164,10 +164,10 @@ Training CLIP with 100% long captions causes a substantial performance drop (45.
 ## Related Papers
 
 - [\[ICCV 2025\] External Knowledge Injection for CLIP-Based Class-Incremental Learning](../../ICCV2025/information_retrieval/external_knowledge_injection_for_clip-based_class-incremental_learning.md)
-- [\[ICLR 2026\] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis](../../ICLR2026/information_retrieval/multimodal_dataset_distillation_made_simple_by_prototype-guided_data_synthesis.md)
-- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/information_retrieval/explaining_clip_zero-shot_predictions_through_concepts.md)
-- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](../../AAAI2026/information_retrieval/himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
+- [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](../../ICLR2026/information_retrieval/frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
+- [\[ICLR 2026\] Tools Are Under-Documented: Simple Document Expansion Boosts Tool Retrieval](../../ICLR2026/information_retrieval/tools_are_under-documented_simple_document_expansion_boosts_tool_retrieval.md)
 - [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](../../ICLR2026/information_retrieval/btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
+- [\[NeurIPS 2025\] Scaling Language-Centric Omnimodal Representation Learning](scaling_language-centric_omnimodal_representation_learning.md)
 
 </div>
 

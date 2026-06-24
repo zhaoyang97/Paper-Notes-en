@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] KnowRL: Exploring Knowledgeable Reinforcement Learning for Factuality
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] KnowRL integrates "atomic fact verification" as a process-level reward directly into the GRPO training loop, performing factual assessment on each step of the slow-thinking model's Chain-of-Thought (CoT). Simultaneously, it employs a "positive reward for refusal" strategy to teach the model to identify its own knowledg
+  [ACL 2026][Reinforcement Learning][Process-level reward] KnowRL integrates "atomic fact verification" as a process-level reward directly into the GRPO training loop, performing factual assessment on each step of the slow-thinking model's Chain-of-Thought (CoT). Simultaneously, it employs a "positive reward for refusal" strategy to teach the model to identify its own knowledge boundaries. This approach reduces the SimpleQA Incorrect Rate by 20.3% without compromising (and even…
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Process-level reward"
+  - "Atomic fact verification"
+  - "GRPO"
+  - "Knowledge boundary"
+  - "Refusal incentive"
 date: 2026-05-08
-content_hash: a986d7432ed4034a
+content_hash: 98819c74e3ed221f
 ---
+
 # KnowRL: Exploring Knowledgeable Reinforcement Learning for Factuality
 
 **Conference**: ACL 2026  
@@ -143,9 +148,9 @@ Algorithm Robustness: Replacing GRPO with DAPO / BNPO / Dr.GRPO still shows a 16
 ## Related Papers
 
 - [\[CVPR 2026\] PanoEnv: Exploring 3D Spatial Intelligence in Panoramic Environments with Reinforcement Learning](../../CVPR2026/reinforcement_learning/panoenv_exploring_3d_spatial_intelligence_in_panoramic_environments_with_reinfor.md)
+- [\[ICLR 2026\] Master Skill Learning with Policy-Grounded Synergy of LLM-based Reward Shaping and Exploring](../../ICLR2026/reinforcement_learning/master_skill_learning_with_policy-grounded_synergy_of_llm-based_reward_shaping_a.md)
 - [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](../../ICLR2026/reinforcement_learning/ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
 - [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
-- [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
 - [\[ICLR 2026\] Exo-Plore: Exploring Exoskeleton Control Space through Human-Aligned Simulation](../../ICLR2026/reinforcement_learning/exo-plore_exploring_exoskeleton_control_space_through_human-aligned_simulation.md)
 
 </div>

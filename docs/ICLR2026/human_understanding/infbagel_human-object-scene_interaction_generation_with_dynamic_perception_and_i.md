@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement
 description: >-
-  [ICLR 2026][Human Understanding][SMPL-X] InfBaGel aligns Human-Object-Scene Interaction (HOSI) motion generation with the few-step denoising process of a consistency model. By using **dynamic perception** to iteratively update scene occupancy, **bump-aware guidance** to suppress interpenetration, and **mixed-data training** to bypass the scarcity of HOSI labe
+  [ICLR 2026][Human Understanding][HOSI Generation] InfBaGel aligns Human-Object-Scene Interaction (HOSI) motion generation with the few-step denoising process of a consistency model. By using **dynamic perception** to iteratively update scene occupancy, **bump-aware guidance** to suppress interpenetration, and **mixed-data training** to bypass the scarcity of HOSI labels, the framework achieves real-time generation of long-range interactions—such as carrying large objects whil…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - SMPL-X
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "HOSI Generation"
+  - "Consistency Models"
+  - "Dynamic Perception"
+  - "Collision Avoidance"
+  - "Mixed-data Training"
+  - "SMPL-X"
 date: 2026-05-08
-content_hash: 5bc7acc3bcd8f03b
+content_hash: fc4b3bc7c3fd9980
 ---
+
 # InfBaGel: Human-Object-Scene Interaction Generation with Dynamic Perception and Iterative Refinement
 
 **Conference**: ICLR 2026  

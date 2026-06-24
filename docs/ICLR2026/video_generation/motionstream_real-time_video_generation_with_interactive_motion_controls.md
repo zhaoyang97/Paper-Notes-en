@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MotionStream: Real-Time Video Generation with Interactive Motion Controls
 description: >-
-  [ICLR 2026][Video Generation][streaming video generation] The authors propose MotionStream, the first real-time streaming video generation system with motion control. The method trains a bidirectional motion-controlled teacher with a lightweight track head, then distills it into a causal student via Self Forcing and DMD. By introducing attention sinks and a rolling KV cache,
+  [ICLR 2026][Video Generation][streaming video generation] The authors propose MotionStream, the first real-time streaming video generation system with motion control. The method trains a bidirectional motion-controlled teacher with a lightweight track head, then distills it into a causal student via Self Forcing and DMD. By introducing attention sinks and a rolling KV cache, the system achieves a total match between training and inference distributions. It reaches 17 FPS (29…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - streaming video generation
-  - motion control
-  - causal distillation
-  - attention sink
-  - distribution matching distillation
-  - real-time interaction
+  - "ICLR 2026"
+  - "Video Generation"
+  - "streaming video generation"
+  - "motion control"
+  - "causal distillation"
+  - "attention sink"
+  - "distribution matching distillation"
+  - "real-time interaction"
 date: 2026-05-08
-content_hash: a01634171f6e5925
+content_hash: 94245c1ef1b9d980
 ---
+
 # MotionStream: Real-Time Video Generation with Interactive Motion Controls
 
 **Conference**: ICLR 2026  
@@ -155,8 +156,8 @@ Teacher Training: Flow matching loss $\mathcal{L}_{\text{FM}} = \mathbb{E}_{z_0,
 - [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
 - [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](real-time_motion-controllable_autoregressive_video_diffusion.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
-- [\[ICLR 2026\] FastVMT: Eliminating Redundancy in Video Motion Transfer](fastvmt_eliminating_redundancy_in_video_motion_transfer.md)
-- [\[ICLR 2026\] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation](ttom_test-time_optimization_and_memorization_for_compositional_video_generation.md)
+- [\[ICLR 2026\] Rolling Forcing: Autoregressive Long Video Diffusion in Real Time](rolling_forcing_autoregressive_long_video_diffusion_in_real_time.md)
+- [\[ICLR 2026\] Streaming Drag-Oriented Interactive Video Manipulation: Drag Anything, Anytime!](streaming_drag-oriented_interactive_video_manipulation_drag_anything_anytime.md)
 
 </div>
 

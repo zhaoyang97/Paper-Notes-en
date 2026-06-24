@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering
 description: >-
-  [ICCV 2025][Video Generation][Text-video alignment evaluation] This paper proposes ETVA, a text-to-video alignment evaluation method based on fine-grained question generation and answering. It employs a multi-agent scene…
+  [ICCV 2025][Video Generation][Text-video alignment evaluation] This paper proposes ETVA, a text-to-video alignment evaluation method based on fine-grained question generation and answering. It employs a multi-agent scene graph traversal to generate atomic questions and a knowledge-augmented multi-stage reasoning pipeline to answer them. ETVA substantially outperforms existing metrics in correlation with human judgments (Spearman's ρ 58.47 vs. 31.0) and introduces an evaluatio…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "multi-agent"
   - "knowledge-augmented reasoning"
 date: 2026-05-08
-content_hash: 789f815f6fc0db08
+content_hash: 9802e916cb576226
 ---
 
 # ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering
@@ -194,9 +194,9 @@ The final alignment score is: $S = \frac{1}{n}\sum_{i=1}^{n} S_i$, where $S_i \i
 ## Related Papers
 
 - [\[ICCV 2025\] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent](motionagent_fine-grained_controllable_video_generation_via_motion_field_agent.md)
-- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
 - [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/video_generation/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
 - [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
+- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 
 </div>

@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning
 description: >-
-  [NeurIPS 2025][Recommender Systems] This work identifies two categories of sparsity artifacts introduced by L1 loss in Crosscoders—Complete Shrinkage (which erroneously zeros out weakly shared concepts) and Latent Decoup…
+  [NeurIPS 2025][Recommender Systems] This work identifies two categories of sparsity artifacts introduced by L1 loss in Crosscoders—Complete Shrinkage (which erroneously zeros out weakly shared concepts) and Latent Decoupling (which splits shared concepts into spurious model-specific latents)—and proposes Latent Scaling as a diagnostic tool and BatchTopK Crosscoder as an alternative training scheme, substantially improving the reliability of chat-tuning concept discovery.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
 date: 2026-05-08
-content_hash: 6edbfd9009b41336
+content_hash: 9636e952e9bbd8b4
 ---
 
 # Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning
@@ -144,11 +144,11 @@ Training details: base/chat models are Gemma 2 2B / Gemma 2 2B-it, layer-13 resi
 
 ## Related Papers
 
+- [\[ACL 2025\] RecLM: Recommendation Instruction Tuning](../../ACL2025/recommender/reclm_recommendation_instruction_tuning.md)
 - [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
+- [\[ACL 2025\] Laser: Bi-Tuning with Collaborative Information for Controllable LLM-Based Sequential Recommendation](../../ACL2025/recommender/bi-tuning_with_collaborative_information_for_controllable_llm-based_sequential_r.md)
 - [\[ACL 2026\] ReRec: Reasoning-Augmented LLM-based Recommendation Assistant via Reinforcement Fine-tuning](../../ACL2026/recommender/rerec_reasoning-augmented_llm-based_recommendation_assistant_via_reinforcement_f.md)
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
-- [\[NeurIPS 2025\] PAC-Bayes Bounds for Multivariate Linear Regression and Linear Autoencoders](pac-bayes_bounds_for_multivariate_linear_regression_and_linear_autoencoders.md)
-- [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
 
 </div>
 

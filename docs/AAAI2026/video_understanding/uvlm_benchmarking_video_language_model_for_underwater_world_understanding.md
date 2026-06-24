@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UVLM: Benchmarking Video Language Model for Underwater World Understanding
 description: >-
-  [AAAI 2026][Video Understanding][underwater video] This paper constructs the first benchmark for underwater video-language understanding, UVLM, comprising 2,109 video clips, 419 marine species categories, 20 sub-tasks…
+  [AAAI 2026][Video Understanding][underwater video] This paper constructs the first benchmark for underwater video-language understanding, UVLM, comprising 2,109 video clips, 419 marine species categories, 20 sub-tasks, and approximately 40K video-text pairs. Through a human-AI collaborative annotation pipeline that injects marine domain knowledge, a 7B VidLM fine-tuned on UVLM achieves performance approaching GPT-4o (73.04 vs. 77.95 Overall).
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -13,7 +13,7 @@ tags:
   - "fine-grained recognition"
   - "human-AI annotation"
 date: 2026-05-08
-content_hash: 648770ac782f2df1
+content_hash: b233a95c9a96780f
 ---
 
 # UVLM: Benchmarking Video Language Model for Underwater World Understanding
@@ -135,11 +135,11 @@ Video collection (web crawling + WebUOT re-annotation) → Manual frame-level an
 
 ## Related Papers
 
+- [\[CVPR 2026\] ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding](../../CVPR2026/video_understanding/elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi.md)
 - [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](../../ICCV2025/video_understanding/4d_bench_benchmarking_multimodal_llms_for_4d_object_understanding.md)
-- [\[NeurIPS 2025\] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity](../../NeurIPS2025/video_understanding/lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity.md)
-- [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
-- [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
-- [\[ICLR 2026\] Language-guided Open-world Video Anomaly Detection under Weak Supervision](../../ICLR2026/video_understanding/language-guided_open-world_video_anomaly_detection_under_weak_supervision.md)
+- [\[CVPR 2026\] InternVideo-Next: Towards World-Understanding Video Models](../../CVPR2026/video_understanding/internvideo-next_towards_world-understanding_video_models.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](../../CVPR2026/video_understanding/enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](../../CVPR2026/video_understanding/towards_streaming_referring_video_segmentation_via_large_language_model.md)
 
 </div>
 

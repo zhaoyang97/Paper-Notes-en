@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Subject-Driven T2I] The DisCo framework is proposed to resolve the "similarity-controllability" paradox in subject-driven image generation. It first decouples text and visual information by replacing entity words with pronouns to eliminate textual interference on the subject, and then re-couples them using GRPO with a dedicated reward mod
+  [CVPR 2026][Image Generation][Subject-Driven T2I] The DisCo framework is proposed to resolve the "similarity-controllability" paradox in subject-driven image generation. It first decouples text and visual information by replacing entity words with pronouns to eliminate textual interference on the subject, and then re-couples them using GRPO with a dedicated reward model.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Subject-Driven T2I
-  - Diffusion Transformer
-  - GRPO
-  - reward model
-  - Textual-Visual Decoupling
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Subject-Driven T2I"
+  - "Diffusion Transformer"
+  - "GRPO"
+  - "reward model"
+  - "Textual-Visual Decoupling"
 date: 2026-05-08
-content_hash: 90e2d3dcacb7b2d5
+content_hash: 498ffed240168c04
 ---
+
 # Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation
 
 **Conference**: CVPR 2026  

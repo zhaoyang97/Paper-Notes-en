@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens
 description: >-
-  [AAAI 2026][Multimodal VLM][Knowledge Distillation] This paper proposes EM-KD, a distillation framework that leverages the Hungarian algorithm to address the vision token count imbalance between teacher and student model…
+  [AAAI 2026][Multimodal Efficiency][Knowledge Distillation] This paper proposes EM-KD, a distillation framework that leverages the Hungarian algorithm to address the vision token count imbalance between teacher and student models. By combining Vision Semantic Distillation (VSD) and Vision-Language Affinity Distillation (VLAD), EM-KD transfers knowledge from a vanilla teacher to an efficient student MLLM, achieving an average score of 50.4 across 11 benchmarks at 144 tokens/pat…
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Knowledge Distillation"
   - "Efficient MLLM"
   - "Vision Token Compression"
   - "Hungarian Matching"
   - "Cross-Modal Alignment"
 date: 2026-05-08
-content_hash: 16a69ede730eba00
+content_hash: 895b9d682a2768f1
 ---
 
 # EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens
@@ -96,11 +96,11 @@ At the 8B scale, EM-KD also consistently outperforms MiniLLM (62.5) and LLaVA-KD
 
 ## Related Papers
 
-- [\[ICCV 2025\] LLaVA-KD: A Framework of Distilling Multimodal Large Language Models](../../ICCV2025/multimodal_vlm/llava-kd_a_framework_of_distilling_multimodal_large_language_models.md)
-- [\[AAAI 2026\] Towards Long-window Anchoring in Vision-Language Model Distillation](towards_long-window_anchoring_in_vision-language_model_distillation.md)
-- [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
-- [\[AAAI 2026\] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography](pet2rep_towards_vision-language_model-drived_automated_radiology_report_generati.md)
-- [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](../../CVPR2026/vlm_efficiency/transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](../../ICCV2025/vlm_efficiency/shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](../../CVPR2026/vlm_efficiency/what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
+- [\[ICLR 2026\] iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](../../ICLR2026/vlm_efficiency/illava_an_image_is_worth_fewer_than_13_input_tokens_in_large_multimodal_models.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 
 </div>
 

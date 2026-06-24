@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Crucible: Quantifying the Potential of Control Algorithms through LLM Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][tuning potential] This paper is the first to formalize the concept of **Tuning Potential**, using LLM agents to simulate multi-level developers performing dual-layer (parameter + logic) optimiza…
+  [NeurIPS 2025][LLM Agent][tuning potential] This paper is the first to formalize the concept of **Tuning Potential**, using LLM agents to simulate multi-level developers performing dual-layer (parameter + logic) optimization of control algorithms. On CartPole, Bang-bang improves from 34→500, reaching DQN-level performance; on ABR tasks, Crucible achieves up to 44.1% improvement over Bayesian optimization.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "parameter optimization"
   - "Bayesian optimization"
 date: 2026-05-08
-content_hash: ffb5d02709452be3
+content_hash: ead41abd6bd750c8
 ---
 
 # Crucible: Quantifying the Potential of Control Algorithms through LLM Agents
@@ -120,11 +120,11 @@ Crucible does not involve conventional model training. The formal definition of 
 
 ## Related Papers
 
+- [\[ACL 2025\] Enhancing Interpretable Image Classification Through LLM Agents and Conditional Concept Bottleneck Models](../../ACL2025/llm_agent/llm_agent_image_classification.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](../../ICML2026/llm_agent/evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
+- [\[ICML 2025\] Open Source Planning & Control System with Language Agents for Autonomous Scientific Discovery](../../ICML2025/llm_agent/open_source_planning_control_system_with_language_agents_for_autonomous_scientif.md)
 - [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](../../ACL2026/llm_agent/when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
-- [\[ICML 2026\] Scaling Small Agents Through Strategy Auctions](../../ICML2026/llm_agent/scaling_small_agents_through_strategy_auctions.md)
 
 </div>
 

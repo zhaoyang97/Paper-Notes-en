@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment
 description: >-
-  [AAAI 2026][LLM Alignment][Preference optimization] This paper proposes AMaPO, an algorithm that dynamically modulates gradient magnitudes via instance-level adaptive margins (combining Z-normalization and exponential sc…
+  [AAAI 2026 Oral][LLM Alignment][Preference optimization] This paper proposes AMaPO, an algorithm that dynamically modulates gradient magnitudes via instance-level adaptive margins (combining Z-normalization and exponential scaling) to address the core overfitting-underfitting dilemma in offline preference optimization methods such as DPO, thereby substantially improving ranking accuracy and downstream alignment performance.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "LLM Alignment"
   - "Preference optimization"
   - "adaptive margin"
   - "ranking accuracy"
   - "gradient dynamics analysis"
 date: 2026-05-08
-content_hash: a6ebb168db24b79b
+content_hash: 5f2d62c89ce91eea
 ---
 
 # AMaPO: Adaptive Margin-attached Preference Optimization for Language Model Alignment
@@ -135,9 +135,9 @@ The concept of adaptive learning signals is broadly applicable: analogous "hard 
 
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](../../ICLR2026/llm_alignment/towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
-- [\[ACL 2026\] Topology-Enhanced Alignment for Large Language Models: Trajectory Topology Loss and Topological Preference Optimization](../../ACL2026/llm_alignment/topology-enhanced_alignment_for_large_language_models_trajectory_topology_loss_a.md)
-- [\[ACL 2026\] S2H-DPO: Hardness-Aware Preference Optimization for Vision-Language Models](../../ACL2026/llm_alignment/s2h-dpo_hardness-aware_preference_optimization_for_vision-language_models.md)
-- [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](../../ICLR2026/llm_alignment/semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
+- [\[ACL 2025\] AMoPO: Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models](../../ACL2025/llm_alignment/amopo_adaptive_multi-objective_preference_optimization_without_reward_models_and.md)
+- [\[ACL 2025\] Debate, Reflect, and Distill: Multi-Agent Feedback with Tree-Structured Preference Optimization for Efficient Language Model Enhancement](../../ACL2025/llm_alignment/debate_reflect_and_distill_multi-agent_feedback_with_tree-structured_preference_.md)
+- [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](../../ICLR2026/llm_alignment/multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
 
 </div>
 

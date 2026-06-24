@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] Through a systematic comparison of hypernetwork LoRA adaptation vs. carefully designed few-shot prompting across four benchmarks, it was found that a 228-million-parameter hypernetwork provides zero gain—few-shot examples contribute +21.5%, document encoding contributes +5.0%, and the hypernetwork contributes 0%. A 3B
+  [ACL 2026 Findings][LLM Agent][Small language models] Through a systematic comparison of hypernetwork LoRA adaptation vs. carefully designed few-shot prompting across four benchmarks, it was found that a 228-million-parameter hypernetwork provides zero gain—few-shot examples contribute +21.5%, document encoding contributes +5.0%, and the hypernetwork contributes 0%. A 3B model with effective prompting achieves 79.7% of average GPT-5 performance with 10x lower latency.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Small language models"
+  - "tool use"
+  - "few-shot adaptation"
+  - "hypernetwork"
+  - "negative results"
 date: 2026-05-08
-content_hash: 2664a4abc19f1b83
+content_hash: 29c09c7b8ec62573
 ---
+
 # Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -139,7 +145,7 @@ The value function $V_\phi$ is learned using TD(0) on synthetic trajectories (se
 - [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ACL 2025\] Adaptive Tool Use in Large Language Models with Meta-Cognition Trigger](../../ACL2025/llm_agent/meco_metacognition_tool_use.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
+- [\[ACL 2026\] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents](clag_adaptive_memory_organization_via_agent-driven_clustering_for_small_language.md)
 - [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
 
 </div>

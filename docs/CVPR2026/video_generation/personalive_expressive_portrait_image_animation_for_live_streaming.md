@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PersonaLive! Expressive Portrait Image Animation for Live Streaming
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] PersonaLive introduces a three-stage pipeline—"Hybrid Motion Control + Few-step Appearance Distillation + Micro-chunk Autoregressive Streaming Generation"—to compress diffusion-based portrait animation from offline models requiring 20+ denoising steps and second-level latency to a real-time system capable of 4-step den
+  [CVPR 2026][Video Generation][Portrait Animation] PersonaLive introduces a three-stage pipeline—"Hybrid Motion Control + Few-step Appearance Distillation + Micro-chunk Autoregressive Streaming Generation"—to compress diffusion-based portrait animation from offline models requiring 20+ denoising steps and second-level latency to a real-time system capable of 4-step denoising with 15.82 FPS and 0.253s latency. This represents a 7–22× speedup over previous diffusion methods whil…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Portrait Animation"
+  - "Diffusion Distillation"
+  - "Streaming Generation"
+  - "Real-time Inference"
+  - "Live Streaming"
 date: 2026-05-08
-content_hash: 4014aa4560b28885
+content_hash: c17d6a0147fe8616
 ---
+
 # PersonaLive! Expressive Portrait Image Animation for Live Streaming
 
 **Conference**: CVPR 2026  
@@ -124,8 +130,20 @@ Compared to **X-Portrait**, which uses prompt traveling to smooth chunk boundari
 - **Value**: ⭐⭐⭐⭐⭐ (Directly enables real-time high-quality virtual avatars for live streaming).
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction](flashportrait_6x_faster_infinite_portrait_animation_with_adaptive_latent_predict.md)
+- [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
+- [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](multianimate_pose-guided_image_animation_made_extensible.md)
+- [\[CVPR 2025\] Teller: Real-Time Streaming Audio-Driven Portrait Animation with Autoregressive Motion Generation](../../CVPR2025/video_generation/teller_real-time_streaming_audio-driven_portrait_animation_with_autoregressive_m.md)
+- [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] FlashPortrait: 6× Faster Infinite Portrait Animation with Adaptive Latent Prediction](flashportrait_6x_faster_infinite_portrait_animation_with_adaptive_latent_predict.md)

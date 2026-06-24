@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance
 description: >-
-  [CVPR 2026][Others][Paper Note] SMVS-TAG concatenates anchors learned from each view into a third-order tensor and imposes a tensor Schatten p-norm low-rank constraint in the frequency domain. This directly couples cross-view consistency and complementarity at the "anchor itself" level. This approach improves anchor quality while ensuring the regular
+  [CVPR 2026][Multi-view clustering] SMVS-TAG concatenates anchors learned from each view into a third-order tensor and imposes a tensor Schatten p-norm low-rank constraint in the frequency domain. This directly couples cross-view consistency and complementarity at the "anchor itself" level. This approach improves anchor quality while ensuring the regularization term is independent of the sample size $n$. It significantly refreshes the ACC for large-scale multi-view clustering…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multi-view clustering"
+  - "anchor learning"
+  - "tensor Schatten p-norm"
+  - "subspace clustering"
+  - "scalability"
 date: 2026-05-08
-content_hash: 3b141d2b90c69e6d
+content_hash: 133887588dfc8fce
 ---
+
 # Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,16 @@ The method was evaluated on seven multi-view benchmarks (from 358 to 101,499 sam
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
-- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
-- [\[CVPR 2026\] Anti-Degradation Lifelong Multi-View Clustering](anti-degradation_lifelong_multi-view_clustering.md)
-- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
-- [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
+- [\[ICLR 2026\] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering](../../ICLR2026/others/aligning_collaborative_view_recovery_and_tensorial_subspace_learning_via_latent_.md)
+- [\[CVPR 2026\] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization](plug-and-play_incomplete_multi-view_clustering_via_janus-faced_affinity_learning.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
+- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
 
 </div>
 

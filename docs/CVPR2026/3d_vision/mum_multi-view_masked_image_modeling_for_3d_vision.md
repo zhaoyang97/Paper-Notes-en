@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MuM: Multi-View Masked Image Modeling for 3D Vision
 description: >-
-  [CVPR 2026][Self-Supervised Learning][MAE] MuM generalizes the "mask-and-reconstruct" objective of MAE from single images to arbitrary multi-view sequences (up to 24 views) of the same scene. By utilizing a lightweight multi-view decoder with alternating cross-frame attention, it pre-trains geometric-aware feature encoders. MuM outperforms DINOv3 and CroCo v2 o
+  [CVPR 2026][3D Vision][Masked Image Modeling] MuM generalizes the "mask-and-reconstruct" objective of MAE from single images to arbitrary multi-view sequences (up to 24 views) of the same scene. By utilizing a lightweight multi-view decoder with alternating cross-frame attention, it pre-trains geometric-aware feature encoders. MuM outperforms DINOv3 and CroCo v2 on 3D tasks such as feed-forward reconstruction, dense matching, and relative pose estimation while using approxima…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - MAE
-  - CroCo
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Masked Image Modeling"
+  - "Multi-view Self-supervision"
+  - "3D Feature Learning"
+  - "MAE"
+  - "CroCo"
 date: 2026-05-08
-content_hash: 90abe31818f2ce8c
+content_hash: f2bd78804afd8d6e
 ---
+
 # MuM: Multi-View Masked Image Modeling for 3D Vision
 
 **Conference**: CVPR 2026  
@@ -156,11 +160,11 @@ ViT-B/16 trained for 100K steps on MegaDepth, reporting linear probe EPE (↓):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)
-- [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization](geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization.md)
-- [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
-- [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](how_much_3d_do_video_foundation_models_encode.md)
+- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
+- [\[CVPR 2026\] SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion](smvrt_implicit_human_3d_modeling.md)
+- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
+- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
 
 </div>
 

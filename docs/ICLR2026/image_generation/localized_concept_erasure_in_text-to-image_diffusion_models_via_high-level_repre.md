@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] HiRM proposes a concept erasure strategy that "decouples update location from erasure target"—it updates only the weights of the first layer of the CLIP text encoder while applying erasure supervision on the high-level semantic representations of the last layer. By misdirecting target concept representations toward ran
+  [ICLR 2026][Image Generation][Concept Erasure] HiRM proposes a concept erasure strategy that "decouples update location from erasure target"—it updates only the weights of the first layer of the CLIP text encoder while applying erasure supervision on the high-level semantic representations of the last layer. By misdirecting target concept representations toward random (HiRM-R) or semantic (HiRM-S) directions, it achieves efficient erasure of styles, objects…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text Encoder"
+  - "Causal Tracing"
+  - "Representation Misdirection"
+  - "Modular Safety Patch"
 date: 2026-05-08
-content_hash: ea69dcde98a13ca6
+content_hash: 305a0a538089a2d5
 ---
+
 # Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection
 
 **Conference**: ICLR 2026  
@@ -147,15 +152,13 @@ Here $s_t^{(L)}$ is the last-layer representation of the superordinate concept, 
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](../../CVPR2026/image_generation/neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 - [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
+- [\[ICLR 2026\] SDErasure: Concept-Specific Trajectory Shifting for Concept Erasure via Adaptive Diffusion Classifier](sderasure_concept-specific_trajectory_shifting_for_concept_erasure_via_adaptive_.md)
 - [\[ICLR 2026\] AEGIS: Adversarial Target-Guided Retention-Data-Free Robust Concept Erasure from Diffusion Models](aegis_adversarial_target-guided_retention-data-free_robust_concept_erasure_from_.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
 
 </div>
 

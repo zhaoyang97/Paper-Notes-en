@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] Addressing the neglected issue of "client graph structure contaminated by random edge addition/deletion" in subgraph federated learning, FedSDR employs a spectral-domain structural fidelity metric $S_{\text{ide}}$ to identify and downweight contaminated clients during aggregation (SNAA). It then leverages feature simil
+  [CVPR 2026][Federated Graph Learning] Addressing the neglected issue of "client graph structure contaminated by random edge addition/deletion" in subgraph federated learning, FedSDR employs a spectral-domain structural fidelity metric $S_{\text{ide}}$ to identify and downweight contaminated clients during aggregation (SNAA). It then leverages feature similarity from the healthy global model to perform "spurious edge pruning + missing edge completion" (RLSR) on local damaged g…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Graph Learning"
+  - "Structural Noise"
+  - "Spectral Graph Theory"
+  - "Robust Aggregation"
+  - "Graph Structure Reconstruction"
 date: 2026-05-08
-content_hash: a49e49d6f73e93bb
+content_hash: 27b7ec17f5c4fae8
 ---
+
 # FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction
 
 **Conference**: CVPR 2026  
@@ -143,10 +148,10 @@ Tested on PubMed, Actor, and ogbn-products:
 ## Related Papers
 
 - [\[CVPR 2026\] FedSST: Rethinking Fair Federated Graph Learning under Structural Shift](fedsst_rethinking_fair_federated_graph_learning_under_structural_shift.md)
-- [\[CVPR 2026\] Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression](revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression.md)
-- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](few-for-many_personalized_federated_learning.md)
-- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
-- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
+- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
+- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
+- [\[CVPR 2026\] DP-FedAdamW: An Efficient Optimizer for Differentially Private Federated Large Models](dp-fedadamw_an_efficient_optimizer_for_differentially_private_federated_large_mo.md)
 
 </div>
 

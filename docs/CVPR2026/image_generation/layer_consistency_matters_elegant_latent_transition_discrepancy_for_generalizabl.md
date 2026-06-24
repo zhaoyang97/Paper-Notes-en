@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection
 description: >-
-  [CVPR 2026][Image Generation][CLIP-ViT] It is observed that real images exhibit stable inter-layer transitions in the intermediate representations of a frozen CLIP ViT, whereas synthetic images show significant attention mutations. The Layer Transition Discrepancy (LTD) method is proposed to model this difference, achieving a mean Acc of 96.90% on UFD, 99.54
+  [CVPR 2026][Image Generation][Synthetic Image Detection] It is observed that real images exhibit stable inter-layer transitions in the intermediate representations of a frozen CLIP ViT, whereas synthetic images show significant attention mutations. The Layer Transition Discrepancy (LTD) method is proposed to model this difference, achieving a mean Acc of 96.90% on UFD, 99.54% on DRCT-2M, and 91.62% on GenImage, outperforming current SOTAs.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - CLIP-ViT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Synthetic Image Detection"
+  - "Layer Transition Discrepancy"
+  - "CLIP-ViT"
+  - "Cross-domain Generalization"
+  - "Dynamic Layer Selection"
 date: 2026-05-08
-content_hash: 19e4e8c5541d37c8
+content_hash: 78b7f6a8ec7f1775
 ---
+
 # Layer Consistency Matters: Elegant Latent Transition Discrepancy for Generalizable Synthetic Image Detection
 
 **Conference**: CVPR 2026  
@@ -127,15 +132,16 @@ Standard binary cross-entropy loss is used. Training utilizes only 2 classes of 
 - Value: ⭐⭐⭐⭐ High practical value due to training efficiency and generalization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
 - [\[CVPR 2026\] LacTokGen: Latent Consistency Tokenizer for 1024-pixel Image Generation by 256 Tokens](lactokgen_latent_consistency_tokenizer_for_1024-pixel_image_generation_by_256_to.md)
-- [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](../../ICCV2025/image_generation/forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
 - [\[NeurIPS 2025\] FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies](../../NeurIPS2025/image_generation/ferretnet_efficient_synthetic_image_detection_via_local_pixel_dependencies.md)
-- [\[CVPR 2026\] Transition Models: Rethinking the Generative Learning Objective](transition_models_rethinking_the_generative_learning_objective.md)
+- [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](../../ICCV2025/image_generation/forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
+- [\[CVPR 2026\] Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](qwen-image-layered_towards_inherent_editability_via_layer_decomposition.md)
 
 </div>
 

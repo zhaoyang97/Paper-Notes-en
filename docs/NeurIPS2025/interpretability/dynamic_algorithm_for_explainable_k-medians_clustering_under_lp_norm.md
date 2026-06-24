@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm
 description: >-
-  [NeurIPS 2025][Interpretability][Explainable clustering] This paper presents the first explainable k-medians clustering algorithm for general $\ell_p$ norms…
+  [NeurIPS 2025][Interpretability][Explainable clustering] This paper presents the first explainable k-medians clustering algorithm for general $\ell_p$ norms, achieving an approximation ratio of $\tilde{O}(p(\log k)^{1+1/p-1/p^2})$ (improving the best known bound for $p=2$), along with the first dynamic variant: maintaining an explainable clustering under center insertions/deletions with $O(d \log^3 k)$ amortized update time and $O(\log k)$ amortized reassignments.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "dynamic algorithms"
   - "approximation ratio"
 date: 2026-05-08
-content_hash: 69dcc9e3549d8412
+content_hash: c5d60791624ebd56
 ---
 
 # Dynamic Algorithm for Explainable k-medians Clustering under lp Norm
@@ -132,9 +132,9 @@ The algorithm takes $k$ reference centers $C$ as input and outputs a $k$-leaf th
 
 - [\[NeurIPS 2025\] SpEx: A Spectral Approach to Explainable Clustering](spex_a_spectral_approach_to_explainable_clustering.md)
 - [\[NeurIPS 2025\] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference](dynamic_features_adaptation_in_networking_toward_flexible_training_and_explainab.md)
+- [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](../../ICLR2026/interpretability/explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
 - [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](empowering_decision_trees_via_shape_function_branching.md)
-- [\[ACL 2026\] Retrieval Heads are Dynamic](../../ACL2026/interpretability/retrieval_heads_are_dynamic.md)
 
 </div>
 

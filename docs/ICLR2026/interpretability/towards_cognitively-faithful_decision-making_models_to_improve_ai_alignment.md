@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Starting from a set of "weak axioms," the authors derive a class of **two-stage decision models** (first applying learnable editing rules to each feature, then using a fixed aggregation rule for dominance testing). This allows the learned preference models to maintain interpretability while faithfully reproducing the c
+  [ICLR 2026][Interpretability][Cognitive Faithfulness] Starting from a set of "weak axioms," the authors derive a class of **two-stage decision models** (first applying learnable editing rules to each feature, then using a fixed aggregation rule for dominance testing). This allows the learned preference models to maintain interpretability while faithfully reproducing the cognitive processes humans use in heuristics (such as thresholds and counting) for pairwise comparisons…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Cognitive Faithfulness"
+  - "Decision Modeling"
+  - "Axiomatization"
+  - "Preference Learning"
+  - "Kidney Allocation"
 date: 2026-05-08
-content_hash: 6bf659907fb198c8
+content_hash: 77e44ba86f9748d8
 ---
+
 # Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment
 
 **Conference**: ICLR 2026  
@@ -140,8 +146,8 @@ For participant P4, our model learned that: dependents and alcohol are most impo
 
 - [\[CVPR 2026\] Making the Classification Explanation Faithful to the Confidence Score](../../CVPR2026/interpretability/making_the_classification_explanation_faithful_to_the_confidence_score.md)
 - [\[ICLR 2026\] Learning for Highly Faithful Explainability](learning_for_highly_faithful_explainability.md)
-- [\[ICLR 2026\] Low-Pass Filtering Improves Behavioral Alignment of Vision Models](low-pass_filtering_improves_behavioral_alignment_of_vision_models.md)
 - [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](../../ACL2026/interpretability/idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
+- [\[ICLR 2026\] Low-Pass Filtering Improves Behavioral Alignment of Vision Models](low-pass_filtering_improves_behavioral_alignment_of_vision_models.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 
 </div>

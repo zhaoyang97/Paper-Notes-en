@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Multi-encoder VLM] METEOR proposes the first three-stage progressive token pruning framework for multi-encoder MLLMs: at the encoding stage…
+  [ICCV 2025][Multimodal Efficiency][Multi-encoder VLM] METEOR proposes the first three-stage progressive token pruning framework for multi-encoder MLLMs: at the encoding stage, feature rank is used to allocate sparsity ratios across encoders; at the fusion stage, collaborative pruning eliminates cross-encoder redundancy; at the decoding stage, pruning ratios are adaptively adjusted based on text prompts. The framework reduces visual tokens by 76% with only a 0.3% performance d…
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Multi-encoder VLM"
   - "visual token pruning"
   - "collaborative compression"
   - "adaptive pruning"
   - "feature rank allocation"
 date: 2026-05-08
-content_hash: 73d52db284cfdea0
+content_hash: 3a06bb3d3714e9ab
 ---
 
 # METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models
@@ -136,11 +136,11 @@ Ablation over fusion strategies and pruning methods (SFT with 1M data):
 
 ## Related Papers
 
+- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
 - [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
-- [\[CVPR 2026\] CoMP: Collaborative Multi-Mode Pruning for Vision-Language Models](../../CVPR2026/multimodal_vlm/comp_collaborative_multi-mode_pruning_for_vision-language_models.md)
-- [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](../../NeurIPS2025/multimodal_vlm/balanced_token_pruning_accelerating_vision_language_models_b.md)
-- [\[NeurIPS 2025\] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs](../../NeurIPS2025/multimodal_vlm/scope_saliency-coverage_oriented_token_pruning_for_efficient_multimodel_llms.md)
-- [\[ICCV 2025\] EVEv2: Improved Baselines for Encoder-Free Vision-Language Models](evev2_improved_baselines_for_encoderfree_visionlanguage_mode.md)
+- [\[NeurIPS 2025\] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization](../../NeurIPS2025/vlm_efficiency/balanced_token_pruning_accelerating_vision_language_models_b.md)
+- [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](../../CVPR2026/vlm_efficiency/if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] E-RayZer is the first truly self-supervised feed-forward 3D Gaussian reconstruction model. By replacing RayZer's implicit latent scene representation with explicit 3D Gaussians and employing a curriculum learning strategy based on visual overlap, it learns geometrically grounded 3D-aware representations under zero 3D a
+  [CVPR 2026][3D Vision][Self-supervised pre-training] E-RayZer is the first truly self-supervised feed-forward 3D Gaussian reconstruction model. By replacing RayZer's implicit latent scene representation with explicit 3D Gaussians and employing a curriculum learning strategy based on visual overlap, it learns geometrically grounded 3D-aware representations under zero 3D annotation. It significantly outperforms RayZer in pose estimation (RPA@5° improved from ≈0 to 90.8) and lea…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Self-supervised pre-training"
+  - "3D Gaussian Splatting"
+  - "Multi-view reconstruction"
+  - "Pose estimation"
+  - "Visual representation learning"
 date: 2026-05-08
-content_hash: 8a9df068656d411a
+content_hash: d639abc2626c3728
 ---
+
 # E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training
 
 **Conference**: CVPR 2026  
@@ -168,10 +174,10 @@ Training without a curriculum results in near-total failure (RPA@5° = 2.1%). Se
 ## Related Papers
 
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
+- [\[CVPR 2026\] ArtPro: Self-Supervised Articulated Object Reconstruction with Adaptive Integration of Mobility Proposals](artpro_self-supervised_articulated_object_reconstruction_with_adaptive_integrati.md)
+- [\[ECCV 2024\] Formula-Supervised Visual-Geometric Pre-training (FSVGP)](../../ECCV2024/3d_vision/formula-supervised_visual-geometric_pre-training.md)
+- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
 - [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] Ours proposes the MARCH benchmark (2,209 multi-hop ambiguous questions) and the CLARION framework, marks the first systematic study of QA challenges at the intersection of ambiguity resolution and multi-step reasoning, revealing significant deficiencies in existing SOTA models for such problems.
+  [ACL 2026 Findings][LLM Evaluation][Multi-hop Reasoning] Ours proposes the MARCH benchmark (2,209 multi-hop ambiguous questions) and the CLARION framework, marks the first systematic study of QA challenges at the intersection of ambiguity resolution and multi-step reasoning, revealing significant deficiencies in existing SOTA models for such problems.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Multi-hop Reasoning"
+  - "Ambiguity Resolution"
+  - "Benchmark Construction"
+  - "Hierarchical Uncertainty"
+  - "Agentic Framework"
 date: 2026-05-08
-content_hash: a31f2ceb2779e833
+content_hash: 5bf128046f24cfa2
 ---
+
 # MARCH: Evaluating the Intersection of Ambiguity Interpretation and Multi-hop Inference
 
 **Conference**: ACL 2026 Findings  
@@ -136,9 +142,9 @@ Both MARCH and CLARION are training-free solutions: MARCH is a constructed bench
 
 ## Related Papers
 
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)
-- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
+- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 - [\[ACL 2026\] CLARITY: A Framework and Benchmark for Conversational Language Ambiguity and Unanswerability in Interactive NL2SQL Systems](clarity_a_framework_and_benchmark_for_conversational_language_ambiguity_and_unan.md)
+- [\[ACL 2026\] Evaluating Temporal Consistency in Multi-Turn Language Models](evaluating_temporal_consistency_in_multi-turn_language_models.md)
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
 - [\[ACL 2026\] Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference](statistically_reliable_llm-based_ranking_evaluation_via_prediction-powered_infer.md)
 

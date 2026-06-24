@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Contrastive Diffusion Guidance for Spatial Inverse Problems
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing "spatial inverse problems" where the forward operator is non-differentiable, non-smooth, and only partially known (a typical scenario being the reconstruction of floor plans from human walking trajectories), CoGuide shifts likelihood-based diffusion guidance from the original pixel space to a smooth embeddin
+  [ICLR2026][Image Generation][Inverse Problems] Addressing "spatial inverse problems" where the forward operator is non-differentiable, non-smooth, and only partially known (a typical scenario being the reconstruction of floor plans from human walking trajectories), CoGuide shifts likelihood-based diffusion guidance from the original pixel space to a smooth embedding space trained via contrastive learning. By using the inner product of embedding vectors as a likelihood proxy t…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Inverse Problems"
+  - "Diffusion Posterior Sampling"
+  - "Contrastive Learning"
+  - "Likelihood Proxy"
+  - "Indoor Layout Reconstruction"
 date: 2026-05-08
-content_hash: 7729292d6e8af944
+content_hash: 2ead1ad9c254b0d7
 ---
+
 # Contrastive Diffusion Guidance for Spatial Inverse Problems
 
 **Conference**: ICLR2026  
@@ -147,9 +153,9 @@ CoGuide alone outperforms all baselines (including CFG) in Sparse and Medium set
 
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](../../ICML2026/image_generation/saving_foundation_flow-matching_priors_for_inverse_problems.md)
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](../../ICCV2025/image_generation/unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
-- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
-- [\[ICML 2026\] Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems](../../ICML2026/image_generation/zeroth-order_non-log-concave_sampling_with_variance_reduction_and_applications_t.md)
 - [\[AAAI 2026\] Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes](../../AAAI2026/image_generation/constrained_particle_seeking_solving_diffusion_inverse_problems_with_just_forwar.md)
+- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](../../ICML2026/image_generation/stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
+- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 
 </div>
 

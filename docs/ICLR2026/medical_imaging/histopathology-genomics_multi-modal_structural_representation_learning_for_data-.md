@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Histopathology-Genomics Multi-modal Structural Representation Learning for Data-Efficient Precision Oncology
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] MSRL uses Graph Structural Learning to pre-train a "pathology-genomics" cross-case association graph. During the fine-tuning stage, it utilizes a buffer storing real genomic features, allowing cases with only Whole Slide Images (WSI) during inference to "borrow" genomic information from diagnostically related cases. Th
+  [ICLR 2026][Medical Imaging][Pathology-genomics multimodal] MSRL uses Graph Structural Learning to pre-train a "pathology-genomics" cross-case association graph. During the fine-tuning stage, it utilizes a buffer storing real genomic features, allowing cases with only Whole Slide Images (WSI) during inference to "borrow" genomic information from diagnostically related cases. This enables the model to approach the accuracy of full multimodal fusion in scenarios where genomics…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Pathology-genomics multimodal"
+  - "missing modality"
+  - "Graph Structural Learning (GSL)"
+  - "survival prediction"
+  - "data-efficient inference"
 date: 2026-05-08
-content_hash: 646393889c2a6c74
+content_hash: 8dbba2d60403d9e9
 ---
+
 # Histopathology-Genomics Multi-modal Structural Representation Learning for Data-Efficient Precision Oncology
 
 **Conference**: ICLR 2026  
@@ -150,11 +156,11 @@ GSL pre-training contributes +1.89%. The random GSL still outperforms both KNN v
 
 ## Related Papers
 
-- [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
 - [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](../../CVPR2026/medical_imaging/cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
+- [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
 - [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](../../CVPR2026/medical_imaging/toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 - [\[ICLR 2026\] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization](frequency-balanced_retinal_representation_learning_with_mutual_information_regul.md)
-- [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
 
 </div>
 

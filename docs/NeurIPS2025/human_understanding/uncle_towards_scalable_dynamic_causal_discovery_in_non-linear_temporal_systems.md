@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UnCLe: Towards Scalable Dynamic Causal Discovery in Non-Linear Temporal Systems
 description: >-
-  [NeurIPS 2025][Human Understanding][dynamic causal discovery] This paper proposes UnCLe, a scalable dynamic causal discovery method based on TCN autoencoder disentanglement and autoregressive dependency matrices. It infe…
+  [NeurIPS 2025][Human Understanding][dynamic causal discovery] This paper proposes UnCLe, a scalable dynamic causal discovery method based on TCN autoencoder disentanglement and autoregressive dependency matrices. It infers time-varying causal relationships by measuring per-timestep prediction error increments following temporal perturbation, achieving state-of-the-art performance on both static and dynamic causal discovery benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "temporal perturbation"
   - "nonlinear systems"
 date: 2026-05-08
-content_hash: e15591bf5bb4ab06
+content_hash: f99ac503ebf34cfa
 ---
 
 # UnCLe: Towards Scalable Dynamic Causal Discovery in Non-Linear Temporal Systems
@@ -198,11 +198,11 @@ UnCLe operates in two stages:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills](kungfubot_physics-based_humanoid_whole-body_control_for_learning_highly-dynamic_.md)
 - [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](../../ICCV2025/human_understanding/one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
-- [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](../../ICCV2025/human_understanding/cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
+- [\[NeurIPS 2025\] KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills](kungfubot_physics-based_humanoid_whole-body_control_for_learning_highly-dynamic_.md)
 - [\[ICML 2026\] WaveVerse: Scalable RF Simulation in Generative 4D Worlds](../../ICML2026/human_understanding/scalable_rf_simulation_in_generative_4d_worlds.md)
-- [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
+- [\[CVPR 2025\] Efficient Video Face Enhancement with Enhanced Spatial-Temporal Consistency](../../CVPR2025/human_understanding/efficient_video_face_enhancement_with_enhanced_spatial-temporal_consistency.md)
+- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](../../CVPR2026/human_understanding/syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)
 description: >-
-  [ACL 2026][Reinforcement Learning][plan-and-execute] EAGLET decouples long-horizon agent tasks into "global planner + local executor" modules. It trains a plug-and-play planner through a two-step pipeline: "cold-start SFT with homologous consensus filtering" followed by "GRPO fine-tuning using executor capability gain as reward." It achieves new SOTA on three long-horizo
+  [ACL 2026][Reinforcement Learning][plan-and-execute] EAGLET decouples long-horizon agent tasks into "global planner + local executor" modules. It trains a plug-and-play planner through a two-step pipeline: "cold-start SFT with homologous consensus filtering" followed by "GRPO fine-tuning using executor capability gain as reward." It achieves new SOTA on three long-horizon benchmarks while reducing training costs to 1/8 of RL baselines.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - plan-and-execute
-  - GRPO
-  - executor capability gain reward
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "plan-and-execute"
+  - "GRPO"
+  - "global planner"
+  - "long-horizon tasks"
+  - "executor capability gain reward"
 date: 2026-05-08
-content_hash: 2a30851102922513
+content_hash: 2b690181cf0616a9
 ---
+
 # A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)
 
 **Conference**: ACL 2026  
@@ -136,15 +139,15 @@ RL Stage: GRPO + ECGR + Format reward. Expert trajectories are sourced from stan
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](../../ICML2026/reinforcement_learning/inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
 - [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](../../ICML2026/reinforcement_learning/long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
-- [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
+- [\[ICLR 2026\] RD-HRL: Generating Reliable Sub-Goals for Long-Horizon Sparse-Reward Tasks](../../ICLR2026/reinforcement_learning/rd-hrl_generating_reliable_sub-goals_for_long-horizon_sparse-reward_tasks.md)
 - [\[ICLR 2026\] Don't Just Fine-tune the Agent, Tune the Environment](../../ICLR2026/reinforcement_learning/dont_just_fine-tune_the_agent_tune_the_environment.md)
-- [\[ACL 2026\] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks](navimaster_learning_a_unified_policy_for_gui_and_embodied_navigation_tasks.md)
+- [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention
 description: >-
-  [ICCV 2025][Image Generation][Debiasing] This paper proposes Entanglement-Free Attention (EFA), a training-free inference-time debiasing method that injects target attributes (e.g., gender…
+  [ICCV 2025][Image Generation][Debiasing] This paper proposes Entanglement-Free Attention (EFA), a training-free inference-time debiasing method that injects target attributes (e.g., gender, race) into person regions by modifying the cross-attention mechanism, while preserving non-target attributes (e.g., background, objects). EFA eliminates generative bias without introducing new unfair associations.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Fairness"
 date: 2026-05-08
-content_hash: 722e0bb4140563dd
+content_hash: 42fab504315e61c9
 ---
 
 # Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention
@@ -173,10 +173,10 @@ Model Preservation (COCO-no-person dataset):
 ## Related Papers
 
 - [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
-- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
 - [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
-- [\[ICCV 2025\] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences](cycle_consistency_as_reward_learning_imagetext_alignment_wit.md)
+- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
 - [\[ICML 2026\] HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing](../../ICML2026/image_generation/holofair_unified_t2i_fairness_evaluation_and_fair-grpo_debiasing.md)
+- [\[ICCV 2025\] Cycle Consistency as Reward: Learning Image-Text Alignment without Human Preferences](cycle_consistency_as_reward_learning_imagetext_alignment_wit.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Degradation-agnostic Image Restoration via Channel-Wise Functional Decomposition and Manifold Regularization
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] MIRAGE achieves higher accuracy and lower computational overhead in all-in-one image restoration by "splitting attention features by channel into three branches (CNN/Attention/MLP) for specialized tasks + aligning shallow and deep features via contrastive learning in the SPD covariance space."
+  [ICLR 2026][Image Restoration][Degradation-agnostic restoration] MIRAGE achieves higher accuracy and lower computational overhead in all-in-one image restoration by "splitting attention features by channel into three branches (CNN/Attention/MLP) for specialized tasks + aligning shallow and deep features via contrastive learning in the SPD covariance space."
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Degradation-agnostic restoration"
+  - "channel-wise functional decomposition"
+  - "SPD manifold contrastive learning"
+  - "mixed degradation"
+  - "efficient model design"
 date: 2026-05-08
-content_hash: 3e957ac0802ad409
+content_hash: 54380c68ac55aedf
 ---
+
 # Efficient Degradation-agnostic Image Restoration via Channel-Wise Functional Decomposition and Manifold Regularization
 
 **Conference**: ICLR 2026  
@@ -204,10 +210,10 @@ Future directions:
 ## Related Papers
 
 - [\[CVPR 2026\] Disentanglement-wise Image Dehazing through Cross-Domain Manifold Consensus](../../CVPR2026/image_restoration/disentanglement-wise_image_dehazing_through_cross-domain_manifold_consensus.md)
+- [\[ICLR 2026\] Taming Hierarchical Image Coding Optimization: A Spectral Regularization Perspective](taming_hierarchical_image_coding_optimization_a_spectral_regularization_perspect.md)
+- [\[ICLR 2026\] Rethinking Expressivity and Degradation-Awareness in Attention for All-in-One Blind Image Restoration](rethinking_expressivity_and_degradation-awareness_in_attention_for_all-in-one_bl.md)
 - [\[CVPR 2026\] DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers](../../CVPR2026/image_restoration/diffdecompose_layer-wise_decomposition_of_alpha-composited_images_via_diffusion_.md)
 - [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](../../CVPR2026/image_restoration/retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
-- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
-- [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](../../CVPR2026/image_restoration/mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
 
 </div>
 

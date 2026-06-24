@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing
 description: >-
-  [ICLR 2026][Object Detection][Vision Transformer] The paper proposes Select and Pack Attention (SPA): it uses a lightweight gating layer supervised by **dynamic** multi-scale object labels to select informative tokens for each image, then **packs** varying numbers of tokens into fixed-length containers to restore batch parallelism. This achieves a +0.5~2.7 AP precisio
+  [ICLR 2026][Object Detection][Sparse Attention] The paper proposes Select and Pack Attention (SPA): it uses a lightweight gating layer supervised by **dynamic** multi-scale object labels to select informative tokens for each image, then **packs** varying numbers of tokens into fixed-length containers to restore batch parallelism. This achieves a +0.5~2.7 AP precision improvement and 10.9%~24.9% reduction in computational cost on object detection.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Vision Transformer
-  - Token Packing
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Sparse Attention"
+  - "Token Selection"
+  - "Vision Transformer"
+  - "Multi-scale Supervision"
+  - "Token Packing"
 date: 2026-05-08
-content_hash: 9e10fe98ebf06761
+content_hash: f168317308916d31
 ---
+
 # Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing
 
 **Conference**: ICLR 2026  
@@ -129,10 +133,18 @@ SPT consistently outperforms all baselines including dense Swin across three sca
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Long-Context Generalization with Sparse Attention](long-context_generalization_with_sparse_attention.md)
+- [\[AAAI 2026\] LampQ: Towards Accurate Layer-wise Mixed Precision Quantization for Vision Transformers](../../AAAI2026/object_detection/lampq_towards_accurate_layer-wise_mixed_precision_quantization_for_vision_transf.md)
+- [\[AAAI 2026\] Temporal Object-Aware Vision Transformer for Few-Shot Video Object Detection](../../AAAI2026/object_detection/temporal_object-aware_vision_transformer_for_few-shot_video_object_detection.md)
+- [\[ICLR 2026\] CGSA: Class-Guided Slot-Aware Adaptation for Source-Free Object Detection](cgsa_class-guided_slot-aware_adaptation_for_source-free_object_detection.md)
+- [\[ICLR 2026\] FSOD-VFM: Few-Shot Object Detection with Vision Foundation Models and Graph Diffusion](fsod-vfm_few-shot_object_detection_with_vision_foundation_models_and_graph_diffu.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Long-Context Generalization with Sparse Attention](long-context_generalization_with_sparse_attention.md)

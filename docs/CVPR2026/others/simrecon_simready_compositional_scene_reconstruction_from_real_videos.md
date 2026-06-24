@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The SimRecon framework proposes a "Perception → Generation → Simulation" pipeline to automatically construct simulator-ready compositional 3D scenes from real-world videos. The core innovations include Active View Optimization (AVO) to find optimal projection views for single-object generation and a Scene Graph Synthes
+  [CVPR 2026][Compositional Scene Reconstruction] The SimRecon framework proposes a "Perception → Generation → Simulation" pipeline to automatically construct simulator-ready compositional 3D scenes from real-world videos. The core innovations include Active View Optimization (AVO) to find optimal projection views for single-object generation and a Scene Graph Synthesizer (SGS) to guide physically plausible hierarchical assembly.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "Compositional Scene Reconstruction"
+  - "Sim-Ready"
+  - "Scene Graph"
+  - "Active View Optimization"
+  - "Physical Assembly"
 date: 2026-05-08
-content_hash: 6d546f66e7f9b19e
+content_hash: 66535ccb14080cc7
 ---
+
 # SimRecon: SimReady Compositional Scene Reconstruction from Real Videos
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ The framework does not involve end-to-end training. It reuses independent pre-tr
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
-- [\[CVPR 2025\] SLAM3R: Real-Time Dense Scene Reconstruction from Monocular RGB Videos](../../CVPR2025/3d_vision/slam3r_real-time_dense_scene_reconstruction_from_monocular_rgb_videos.md)
-- [\[AAAI 2026\] Dynamic Gaussian Scene Reconstruction from Unsynchronized Videos](../../AAAI2026/3d_vision/dynamic_gaussian_scene_reconstruction_from_unsynchronized_videos.md)
-- [\[CVPR 2026\] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion](anylift_scaling_motion_reconstruction_from_internet_videos_via_2d_diffusion.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
+- [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
+- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
+- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
+- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
 
 </div>
 

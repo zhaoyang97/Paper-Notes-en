@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search
 description: >-
-  [NeurIPS 2025][LLM/NLP][MCTS] AB-MCTS proposes an adaptive-branching Monte Carlo Tree Search framework that dynamically decides at each node whether to go "wider" (generate new candidate answers) or "deeper" (refine exis…
+  [NeurIPS 2025 Spotlight][LLM (Other)][MCTS] AB-MCTS proposes an adaptive-branching Monte Carlo Tree Search framework that dynamically decides at each node whether to go "wider" (generate new candidate answers) or "deeper" (refine existing answers using feedback), balancing exploration and exploitation via Bayesian posterior updates, and outperforms repeated sampling and standard MCTS on programming and engineering tasks.
 tags:
-  - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "NeurIPS 2025 Spotlight"
+  - "LLM (Other)"
   - "MCTS"
   - "inference-time compute"
   - "adaptive branching"
   - "Thompson sampling"
   - "code generation"
 date: 2026-05-08
-content_hash: 2ee88ec21481d7e6
+content_hash: 513f0847b1c0ee48
 ---
 
 # Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search
@@ -137,11 +137,11 @@ UCT scores are not used because GEN nodes make the problem fundamentally differe
 
 ## Related Papers
 
+- [\[ICML 2025\] BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](../../ICML2025/llm_nlp/best-route_adaptive_llm_routing_with_test-time_optimal_compute.md)
+- [\[ACL 2025\] Dynamic Parallel Tree Search for Efficient LLM Reasoning](../../ACL2025/llm_nlp/dynamic_parallel_tree_search_for_efficient_llm_reasoning.md)
+- [\[ACL 2025\] Boosting LLM's Molecular Structure Elucidation with Knowledge Enhanced Tree Search Reasoning](../../ACL2025/llm_nlp/boosting_llms_molecular_structure_elucidation_with_knowledge_enhanced_tree_searc.md)
 - [\[ICML 2026\] Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](../../ICML2026/llm_nlp/compute_as_teacher_turning_inference_compute_into_reference-free_supervision.md)
-- [\[NeurIPS 2025\] Valid Inference with Imperfect Synthetic Data](valid_inference_with_imperfect_synthetic_data.md)
-- [\[NeurIPS 2025\] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers](dont_be_lazy_completep_enables_compute-efficient_deep_transformers.md)
-- [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
-- [\[NeurIPS 2025\] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths](encompass_enhancing_agent_programming_with_search_over_program_execution_paths.md)
+- [\[ACL 2025\] BFS-Prover: Scalable Best-First Tree Search for LLM-Based Automatic Theorem Proving](../../ACL2025/llm_nlp/bfs-prover_scalable_best-first_tree_search_for_llm-based_automatic_theorem_provi.md)
 
 </div>
 

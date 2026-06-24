@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training
 description: >-
-  [ICCV 2025][LLM Agent][Thought Collapse] This paper identifies the "thought collapse" phenomenon in RL-based VLM Agent training — where CoT reasoning rapidly degenerates into state-agnostic…
+  [ICCV 2025][LLM Agent][Thought Collapse] This paper identifies the "thought collapse" phenomenon in RL-based VLM Agent training — where CoT reasoning rapidly degenerates into state-agnostic, templated thoughts that lead to ineffective actions — and proposes the GTR framework, which combines a VLM corrector for automatic thought correction (SFT) with PPO-based action optimization in a dual-objective training scheme, achieving 3–5× success rate improvements on the 24-Point Game…
 tags:
   - "ICCV 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "PPO"
   - "VLM Agent"
 date: 2026-05-08
-content_hash: 76dc3c2ab8e3a025
+content_hash: 3b14d736d903ce24
 ---
 
 # GTR: Guided Thought Reinforcement Prevents Thought Collapse in RL-based VLM Agent Training
@@ -128,11 +128,11 @@ PPO: standard clipped objective. SFT: standard autoregressive cross-entropy. A s
 
 ## Related Papers
 
+- [\[ACL 2025\] Theorem-of-Thought: A Multi-Agent Framework for Abductive, Deductive, and Inductive Reasoning in Language Models](../../ACL2025/llm_agent/theorem-of-thought_a_multi-agent_framework_for_abductive_deductive_and_inductive.md)
 - [\[ICML 2026\] Think Twice Before You Act: Enhancing Agent Behavioral Safety with Thought Correction](../../ICML2026/llm_agent/think_twice_before_you_act_enhancing_agent_behavioral_safety_with_thought_correc.md)
+- [\[CVPR 2026\] History to Future: Evolving Agent with Experience and Thought for Zero-shot Vision-and-Language Navigation](../../CVPR2026/llm_agent/history_to_future_evolving_agent_with_experience_and_thought_for_zero-shot_visio.md)
 - [\[AAAI 2026\] Loss-Guided Auxiliary Agents for Overcoming Mode Collapse in GFlowNets](../../AAAI2026/llm_agent/loss-guided_auxiliary_agents_for_overcoming_mode_collapse_in_gflownets.md)
-- [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
-- [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
-- [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](../../NeurIPS2025/llm_agent/mat-agent_adaptive_multi-agent_training_optimization.md)
+- [\[CVPR 2025\] RL-RC-DoT: A Block-level RL Agent for Task-Aware Video Compression](../../CVPR2025/llm_agent/rl-rc-dot_a_block-level_rl_agent_for_task-aware_video_compression.md)
 
 </div>
 

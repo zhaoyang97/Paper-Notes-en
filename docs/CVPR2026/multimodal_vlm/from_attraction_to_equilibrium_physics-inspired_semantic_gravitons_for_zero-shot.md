@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][CLIP] SGNet remodels CLIP's vision-text cross-modal alignment as a physical process of "energy potential field reaching equilibrium." It introduces a set of learnable "semantic gravitons" as dynamic intermediaries between vision and text, pulling the two modalities to stable localized semantic equilibrium points through attr
+  [CVPR 2026][Multimodal VLM][Zero-Shot Anomaly Detection] SGNet remodels CLIP's vision-text cross-modal alignment as a physical process of "energy potential field reaching equilibrium." It introduces a set of learnable "semantic gravitons" as dynamic intermediaries between vision and text, pulling the two modalities to stable localized semantic equilibrium points through attraction and equilibrium forces, achieving SOTA in zero-shot anomaly detection across 10 industrial/medic…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Zero-Shot Anomaly Detection"
+  - "CLIP"
+  - "Physics-inspired"
+  - "Potential Field Alignment"
+  - "Semantic Gravitons"
 date: 2026-05-08
-content_hash: b25c2badaf9b6890
+content_hash: 9da9974f24291ab6
 ---
+
 # From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -150,12 +155,20 @@ On MVTec-AD and VisA (Image-level / Pixel-level AUROC):
 - Value: ⭐⭐⭐⭐ High potential for industrial application and transferable methodology for fine-grained VLM tasks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- AnomalyCLIP: Object-agnostic Alignment for Zero-shot Anomaly Detection (ICCV 2023)
-- WinCLIP: Zero-shot Anomaly Detection via Window-based Language-Image Alignment (CVPR 2023)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
+- [\[CVPR 2026\] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models](ag-vas_anchor-guided_zero-shot_visual_anomaly_segmentation_with_large_multimodal.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)

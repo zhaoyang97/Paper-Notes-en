@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PICABench: How Far are We from Physically Realistic Image Editing?
 description: >-
-  [ICLR 2026][Image Generation][VLM-as-a-judge] This paper points out that current instruction-based image editing models prioritize "semantic correctness" while neglecting "physical realism" (e.g., removing an object without removing its shadows and reflections). The authors construct PICABench, a benchmark covering three major dimensions—Optics, Mechanics, and Sta
+  [ICLR 2026][Image Generation][Physical realism] This paper points out that current instruction-based image editing models prioritize "semantic correctness" while neglecting "physical realism" (e.g., removing an object without removing its shadows and reflections). The authors construct PICABench, a benchmark covering three major dimensions—Optics, Mechanics, and State Transition—across eight sub-dimensions. They introduce PICAEval, a region-level QA evaluation protocol…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VLM-as-a-judge
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Physical realism"
+  - "instruction-based editing"
+  - "VLM-as-a-judge"
+  - "video data"
+  - "region-level evaluation"
 date: 2026-05-08
-content_hash: 872f607282867441
+content_hash: 0aff58ae237b8be0
 ---
+
 # PICABench: How Far are We from Physically Realistic Image Editing?
 
 **Conference**: ICLR 2026  
@@ -139,9 +144,9 @@ Core Conclusion: While top closed-source models exceed 60%, they are far from sa
 
 - [\[ICLR 2026\] Does FLUX Already Know How to Perform Physically Plausible Image Composition?](does_flux_already_know_how_to_perform_physically_plausible_image_composition.md)
 - [\[CVPR 2025\] IDEA-Bench: How Far are Generative Models from Professional Designing?](../../CVPR2025/image_generation/idea-bench_how_far_are_generative_models_from_professional_designing.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
+- [\[ICLR 2026\] SketchingReality: From Hand-Drawn Scene Sketches to Photo-Realistic Images](sketchingreality_from_freehand_scene_sketches_to_photorealistic_images.md)
 - [\[ICLR 2026\] Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster](forward-learned_discrete_diffusion_learning_how_to_noise_to_denoise_faster.md)
-- [\[ICLR 2026\] Charts Are Not Images: On the Challenges of Scientific Chart Editing](charts_are_not_images_on_the_challenges_of_scientific_chart_editing.md)
-- [\[ICLR 2026\] LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing](lato_landmark-tokenized_diffusion_transformer_for_fine-grained_human_face_editin.md)
 
 </div>
 

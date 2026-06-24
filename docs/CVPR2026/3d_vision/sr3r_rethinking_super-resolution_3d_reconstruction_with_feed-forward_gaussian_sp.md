@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours redefines 3D Super-Resolution (3DSR) as a **feed-forward mapping** problem from sparse low-resolution views to high-resolution 3DGS. High-fidelity HR 3DGS reconstruction is achieved through Gaussian offset learning and feature refinement, enabling strong zero-shot generalization without per-scene optimization.
+  [CVPR2026][3D Vision][3D Super-Resolution] Ours redefines 3D Super-Resolution (3DSR) as a **feed-forward mapping** problem from sparse low-resolution views to high-resolution 3DGS. High-fidelity HR 3DGS reconstruction is achieved through Gaussian offset learning and feature refinement, enabling strong zero-shot generalization without per-scene optimization.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Super-Resolution"
+  - "3D Gaussian Splatting"
+  - "Feed-forward Reconstruction"
+  - "Gaussian Offset Learning"
+  - "Sparse-view Reconstruction"
 date: 2026-05-08
-content_hash: 2c43e10d45419376
+content_hash: 8920a6621f310624
 ---
+
 # SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting
 
 **Conference**: CVPR2026  
@@ -186,11 +192,11 @@ SR3R outperforms all feed-forward baselines and **surpasses optimization-based m
 
 ## Related Papers
 
+- [\[CVPR 2026\] TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction](tokensplat_token-aligned_3d_gaussian_splatting_for_feed-forward_pose-free_recons.md)
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
-- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
-- [\[CVPR 2025\] S2Gaussian: Sparse-View Super-Resolution 3D Gaussian Splatting](../../CVPR2025/3d_vision/s2gaussian_sparse-view_super-resolution_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
 
 </div>
 

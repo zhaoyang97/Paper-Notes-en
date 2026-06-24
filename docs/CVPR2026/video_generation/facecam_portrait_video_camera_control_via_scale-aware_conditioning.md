@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The FaceCam system is proposed to address camera control in monocular portrait videos by using facial landmarks as a scale-aware camera representation. This approach avoids the scale ambiguity inherent in traditional extrinsic camera representations. Additionally, two data augmentation strategies—synthetic camera motio
+  [CVPR 2025][Video Generation][Camera Control] The FaceCam system is proposed to address camera control in monocular portrait videos by using facial landmarks as a scale-aware camera representation. This approach avoids the scale ambiguity inherent in traditional extrinsic camera representations. Additionally, two data augmentation strategies—synthetic camera motion and multi-clip stitching—are designed to support continuous camera trajectory inference.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2025"
+  - "Video Generation"
+  - "Camera Control"
+  - "Portrait Video Generation"
+  - "Scale-Aware"
+  - "Facial Landmarks"
+  - "Video Diffusion Model"
 date: 2026-05-08
-content_hash: 8dfaf354d1e7df7e
+content_hash: 460b2438badd0365
 ---
+
 # FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning
 
 **Conference**: CVPR 2025  
@@ -165,11 +171,11 @@ The training is built on the Wan open-source video base model using a flow-match
 
 ## Related Papers
 
-- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
 - [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](physvid_physics_aware_local_conditioning_for_generative_video_models.md)
+- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
 - [\[CVPR 2026\] BulletTime: Decoupled Control of Time and Camera Pose for Video Generation](bullettime_decoupled_control_of_time_and_camera_pose_for_video_generation.md)
-- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
-- [\[CVPR 2025\] GEN3C: 3D-Informed World-Consistent Video Generation with Precise Camera Control](../../CVPR2025/video_generation/gen3c_3d-informed_world-consistent_video_generation_with_precise_camera_control.md)
+- [\[ICLR 2026\] Light-X: Generative 4D Video Rendering with Camera and Illumination Control](../../ICLR2026/video_generation/light-x_generative_4d_video_rendering_with_camera_and_illumination_control.md)
+- [\[CVPR 2025\] HunyuanPortrait: Implicit Condition Control for Enhanced Portrait Animation](../../CVPR2025/video_generation/hunyuanportrait_implicit_condition_control_for_enhanced_portrait_animation.md)
 
 </div>
 

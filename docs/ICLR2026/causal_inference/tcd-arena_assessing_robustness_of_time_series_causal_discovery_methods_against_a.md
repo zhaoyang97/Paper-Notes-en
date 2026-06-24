@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TCD-Arena: Assessing Robustness of Time Series Causal Discovery Methods Against Assumption Violations
 description: >-
-  [ICLR 2026][Causal Inference][Robustness Evaluation] TCD-Arena proposes an extensible robustness testing suite for time series causal discovery, systematically evaluating 10 categories of methods through 33 types of progressively intensified real-world assumption violations and approximately 36 million causal discovery attempts. The study finds that different algorithms
+  [ICLR2026][Causal Inference][Time Series Causal Discovery] TCD-Arena proposes an extensible robustness testing suite for time series causal discovery, systematically evaluating 10 categories of methods through 33 types of progressively intensified real-world assumption violations and approximately 36 million causal discovery attempts. The study finds that different algorithms exhibit vastly different robustness profiles, and simple ensembles can further improve stability on b…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Robustness Evaluation
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Time Series Causal Discovery"
+  - "Causal Discovery Benchmark"
+  - "Assumption Violations"
+  - "Robustness Evaluation"
+  - "Model Ensemble"
 date: 2026-05-08
-content_hash: 8961b2c67a27ab01
+content_hash: 7a8860c0247404cc
 ---
+
 # TCD-Arena: Assessing Robustness of Time Series Causal Discovery Methods Against Assumption Violations
 
 **Conference**: ICLR2026  

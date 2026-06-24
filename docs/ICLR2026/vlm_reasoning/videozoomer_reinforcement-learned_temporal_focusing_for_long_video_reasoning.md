@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] VideoZoomer reformulates long video reasoning as a multi-turn tool-calling task of "glance then zoom." A 7B MLLM autonomously decides **when and where** to invoke the `<video_zoom>` tool to capture high-frame-rate clips. Using a two-stage training process of "cold-start SFT + GRPO reinforcement learning," it outperform
+  [ICLR 2026][VLM Reasoning][Long Video Understanding] VideoZoomer reformulates long video reasoning as a multi-turn tool-calling task of "glance then zoom." A 7B MLLM autonomously decides **when and where** to invoke the `<video_zoom>` tool to capture high-frame-rate clips. Using a two-stage training process of "cold-start SFT + GRPO reinforcement learning," it outperforms open-source models on multiple long video benchmarks with a smaller frame budget and even matches closed-…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Long Video Understanding"
+  - "Agentic Reasoning"
+  - "Temporal Zooming"
+  - "Multi-turn Tool Calling"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 5ab6ba190f8a702d
+content_hash: 590423f92c7509ff
 ---
+
 # VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning
 
 **Conference**: ICLR 2026  
@@ -139,14 +144,14 @@ On LongVideoReason-eval, the model reaches 80.3, **surpassing closed-source GPT-
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/vlm_reasoning/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/vlm_reasoning/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 - [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
 

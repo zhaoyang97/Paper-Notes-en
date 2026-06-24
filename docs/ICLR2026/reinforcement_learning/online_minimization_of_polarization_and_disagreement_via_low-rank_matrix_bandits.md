@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This work formalizes the problem of minimizing polarization and disagreement under the Friedkin-Johnsen opinion dynamics model as an online low-rank matrix bandit problem (OPD-Min) for the first time. It proposes a two-stage algorithm, OPD-Min-ESTR, which reduces the dimensionality from $|V|^2$ to $O(|V|)$ through subs
+  [ICLR 2026][Reinforcement Learning][opinion polarization] This work formalizes the problem of minimizing polarization and disagreement under the Friedkin-Johnsen opinion dynamics model as an online low-rank matrix bandit problem (OPD-Min) for the first time. It proposes a two-stage algorithm, OPD-Min-ESTR, which reduces the dimensionality from $|V|^2$ to $O(|V|)$ through subspace estimation, significantly outperforming full-dimensional linear bandit baselines on both syntheti…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "opinion polarization"
+  - "Friedkin-Johnsen model"
+  - "low-rank matrix bandit"
+  - "regret minimization"
+  - "social network intervention"
 date: 2026-05-08
-content_hash: c37a4a75272b0a92
+content_hash: e6fabaafcb880f4b
 ---
+
 # Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits
 
 **Conference**: ICLR 2026  

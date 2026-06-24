@@ -2,15 +2,22 @@
 title: >-
   [Paper Note] Intrinsic Entropy of Context Length Scaling in LLMs
 description: >-
-  [ICLR 2026][learning_theory][Intrinsic Entropy] This paper decomposes the total loss of language modeling into two terms: "Bayes risk, which decreases as context length increases" and "approximation loss, which increases as context length increases." By introducing **Intrinsic Entropy**, the Bayes risk is strictly linked to context length, explaining the counter-int
+  [ICLR 2026][Language Modeling Theory][Long Context] This paper decomposes the total loss of language modeling into two terms: "Bayes risk, which decreases as context length increases" and "approximation loss, which increases as context length increases." By introducing **Intrinsic Entropy**, the Bayes risk is strictly linked to context length, explaining the counter-intuitive phenomenon that "longer context is not necessarily better" and deriving an **optimal context length**…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Intrinsic Entropy
-  - scaling law
+  - "ICLR 2026"
+  - "Language Modeling Theory"
+  - "Context Length Scaling"
+  - "Physics Perspective"
+  - "Long Context"
+  - "Intrinsic Entropy"
+  - "Bayes Risk"
+  - "Approximation Loss"
+  - "Optimal Context Length"
+  - "Scaling Law"
 date: 2026-05-08
-content_hash: 8ba00686124c8171
+content_hash: b15c81e041993236
 ---
+
 # Intrinsic Entropy of Context Length Scaling in LLMs
 
 **Conference**: ICLR 2026  
@@ -121,7 +128,7 @@ This is verified on Llama-3.1-8B, Qwen3-8B-Base, and RecurrentGemma-9B using **G
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
 - [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
 - [\[ICLR 2026\] Why We Need New Benchmarks for Local Intrinsic Dimension Estimation](why_we_need_new_benchmarks_for_local_intrinsic_dimension_estimation.md)
-- [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
+- [\[ICLR 2026\] The Serial Scaling Hypothesis](the_serial_scaling_hypothesis.md)
 
 </div>
 

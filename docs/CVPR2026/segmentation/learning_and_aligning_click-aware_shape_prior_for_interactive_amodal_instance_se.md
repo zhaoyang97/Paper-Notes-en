@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning and Aligning Click-Aware Shape Prior for Interactive Amodal Instance Segmentation
 description: >-
-  [CVPR 2026][Segmentation][triplet loss] ClickPriorNet reformulates amodal instance segmentation (segmenting both visible and occluded regions) as an interactive task. Based on user clicks, the model retrieves complementary shape priors from a codebook using the "previous mask + current clicks" as a query and aligns these priors to the target instance via def
+  [CVPR 2026][Segmentation][Amodal Segmentation] ClickPriorNet reformulates amodal instance segmentation (segmenting both visible and occluded regions) as an interactive task. Based on user clicks, the model retrieves complementary shape priors from a codebook using the "previous mask + current clicks" as a query and aligns these priors to the target instance via deformable attention. This approach achieves more complete amodal masks with fewer clicks across KINS, D2SA…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - triplet loss
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Amodal Segmentation"
+  - "Interactive Segmentation"
+  - "Shape Prior"
+  - "triplet loss"
+  - "Deformable Attention"
 date: 2026-05-08
-content_hash: fb9e4bc249c46986
+content_hash: bef97ece6f00b047
 ---
+
 # Learning and Aligning Click-Aware Shape Prior for Interactive Amodal Instance Segmentation
 
 **Conference**: CVPR 2026  
@@ -159,15 +164,20 @@ Evaluated on KINS at 3 clicks (mIoUocc):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **C2F-Seg**: Coarse-to-fine Amodal Segmentation with Global and Local Shape Priors (CVPR 2024)
-- **VRSP**: Visual Reasoning with Shape Priors for Amodal Segmentation (ICCV 2023)
-- **MFP**: Multi-round Fixed-Protocol for Interactive Segmentation Evaluation (ECCV 2022)
+## Related Papers
+
+- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](live_interactive_training_for_video_segmentation.md)
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
+- [\[CVPR 2026\] Hyperbolic Prototype Learning with Uncertainty-Aware Consistency for Continual Test-Time Segmentation](hyperbolic_prototype_learning_with_uncertainty-aware_consistency_for_continual_t.md)
+- [\[CVPR 2026\] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance](universal_3d_shape_matching_via_coarse-to-fine_language_guidance.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Live Interactive Training for Video Segmentation](live_interactive_training_for_video_segmentation.md)

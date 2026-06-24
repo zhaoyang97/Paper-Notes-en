@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder
 description: >-
-  [AAAI 2026][Interpretability][Sparse Autoencoder] SparseRM leverages sparse autoencoders (SAE) to extract preference-relevant directions from LLM intermediate representations…
+  [AAAI 2026][Interpretability][Sparse Autoencoder] SparseRM leverages sparse autoencoders (SAE) to extract preference-relevant directions from LLM intermediate representations, constructing a lightweight reward model via projection vectors. With fewer than 1% trainable parameters, it surpasses most mainstream reward models and demonstrates stronger generalization in online iterative alignment frameworks.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Preference Modeling"
   - "LLM Alignment"
 date: 2026-05-08
-content_hash: dc18433789c93be9
+content_hash: d2250b15f1d0b908
 ---
 
 # SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder
@@ -164,9 +164,9 @@ SparseRM consists of three steps:
 ## Related Papers
 
 - [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](data_whitening_improves_sparse_autoencoder_learning.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
+- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
+- [\[ICML 2026\] Rational Sparse Autoencoder](../../ICML2026/interpretability/rational_sparse_autoencoder.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
-- [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 - [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
 
 </div>

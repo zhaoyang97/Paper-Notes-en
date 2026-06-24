@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Pruning as a Cooperative Game: Surrogate-Assisted Layer Contribution Estimation for Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] LLM layer pruning is modeled as a cooperative game (each layer = player, model performance = utility). Since exact Shapley value calculation is infeasible ($2^L$ combinations), a two-stage approximation is proposed: (1) stratified Monte Carlo sampling to generate masks and evaluate PPL as supervision signals; (2) train
+  [ICLR 2026][Reinforcement Learning][Layer pruning] LLM layer pruning is modeled as a cooperative game (each layer = player, model performance = utility). Since exact Shapley value calculation is infeasible ($2^L$ combinations), a two-stage approximation is proposed: (1) stratified Monte Carlo sampling to generate masks and evaluate PPL as supervision signals; (2) training a lightweight surrogate network to predict performance for arbitrary masks. This allows efficient estimat…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Layer pruning"
+  - "cooperative game"
+  - "Shapley value"
+  - "surrogate network"
+  - "Monte Carlo sampling"
+  - "depth pruning"
 date: 2026-05-08
-content_hash: f7773a07d89a1fc2
+content_hash: 6a7c45b485538fba
 ---
+
 # Pruning as a Cooperative Game: Surrogate-Assisted Layer Contribution Estimation for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -167,8 +174,8 @@ GTAP also applies cooperative game theory but at the neuron level using power in
 - Value: ⭐⭐⭐⭐ (Practical scalability and superior performance in high-compression scenarios)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

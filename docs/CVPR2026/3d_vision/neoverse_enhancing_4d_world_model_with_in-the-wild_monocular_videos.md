@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] NeoVerse proposes a scalable 4D world model. By utilizing feed-forward pose-free 4DGS reconstruction and online monocular degradation simulation, the training pipeline can leverage massive (millions) in-the-wild monocular videos, achieving SOTA in both 4D reconstruction and novel-trajectory video generation.
+  [CVPR 2026][3D Vision][4D World Model] NeoVerse proposes a scalable 4D world model. By utilizing feed-forward pose-free 4DGS reconstruction and online monocular degradation simulation, the training pipeline can leverage massive (millions) in-the-wild monocular videos, achieving SOTA in both 4D reconstruction and novel-trajectory video generation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D World Model"
+  - "Gaussian Splatting"
+  - "Monocular Video"
+  - "Novel View Synthesis"
+  - "Feed-forward Reconstruction"
 date: 2026-05-08
-content_hash: 080268d71c363f76
+content_hash: cb09138f9d27819d
 ---
+
 # NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ This requires no multi-view labels or offline preprocessing, enabling the use of
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
+- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
 - [\[NeurIPS 2025\] 4DGT: Learning a 4D Gaussian Transformer Using Real-World Monocular Videos](../../NeurIPS2025/3d_vision/4dgt_learning_a_4d_gaussian_transformer_using_realworld_mono.md)
-- [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
 - [\[CVPR 2026\] Recovering Physically Plausible Human-Object Interactions from Monocular Videos](recovering_physically_plausible_human-object_interactions_from_monocular_videos.md)
 - [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
+- [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
 
 </div>
 

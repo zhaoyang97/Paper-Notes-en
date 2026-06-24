@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hierarchical Multi-Scale Molecular Conformer Generation
 description: >-
-  [ICLR 2026][Computational Biology][Diffusion Model] MSGEN decomposes molecular conformer generation into a multi-stage hierarchical process from "coarse scaffold to fine atoms." It utilizes the positions of key substructures generated in previous stages as geometric guidance and incorporates "molecular upsampling" that respects chemical connectivity to bridge scale gaps
+  [ICLR 2026][Computational Biology][Molecular Conformer Generation] MSGEN decomposes molecular conformer generation into a multi-stage hierarchical process from "coarse scaffold to fine atoms." It utilizes the positions of key substructures generated in previous stages as geometric guidance and incorporates "molecular upsampling" that respects chemical connectivity to bridge scale gaps. This plug-and-play framework enables various generative models like GeoDiff, ET-Flow…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Conformer Generation"
+  - "Multi-scale Hierarchical Generation"
+  - "Geometric Guidance"
+  - "Molecular Upsampling"
+  - "Diffusion Models"
+  - "Plug-and-play Framework"
 date: 2026-05-08
-content_hash: 272079e8612fbdf0
+content_hash: 460e7624b16790d3
 ---
+
 # Hierarchical Multi-Scale Molecular Conformer Generation
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,7 @@ Step-by-stage hierarchical ablation (quality of coarse layer atoms): From scratc
 - [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
 - [\[ICLR 2026\] FACET: A Fragment-Aware Conformer Ensemble Transformer](facet_a_fragment-aware_conformer_ensemble_transformer.md)
 - [\[ICLR 2026\] FragFM: Hierarchical Framework for Efficient Molecule Generation via Fragment-Level Discrete Flow Matching](fragfm_hierarchical_framework_for_efficient_molecule_generation_via_fragment-lev.md)
-- [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
+- [\[ICLR 2026\] SpectraLLM: Uncovering the Ability of LLMs for Molecular Structure Elucidation from Multi-Spectral Data](spectrallm_uncovering_the_ability_of_llms_for_molecular_structure_elucidation_fr.md)
 
 </div>
 

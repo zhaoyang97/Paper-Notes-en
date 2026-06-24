@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CompMarkGS: Robust Watermarking for Compressed 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][anchor-based 3DGS] Aiming at the problem of existing 3DGS watermarks being destroyed after quantization compression, this paper embeds the watermark into the anchor features of anchor-based 3DGS. By using a "Quantization Distortion Layer" to simulate compression noise during training, the watermark maintains ~94% bit accuracy before and
+  [ICLR 2026][3D Vision][3DGS watermarking] Aiming at the problem of existing 3DGS watermarks being destroyed after quantization compression, this paper embeds the watermark into the anchor features of anchor-based 3DGS. By using a "Quantization Distortion Layer" to simulate compression noise during training, the watermark maintains ~94% bit accuracy before and after HAC/ContextGS compression, while preserving rendering quality via Frequency-aware Anchor Growth and HSV loss.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - anchor-based 3DGS
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3DGS watermarking"
+  - "copyright protection"
+  - "anti-compression robustness"
+  - "anchor-based 3DGS"
+  - "Quantization Distortion Layer"
 date: 2026-05-08
-content_hash: 97124e63853cb8e2
+content_hash: 6c599d85790a5a63
 ---
+
 # CompMarkGS: Robust Watermarking for Compressed 3D Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -146,13 +151,20 @@ Ablation of embedding target: embedding in Position or Scaling results in PSNR d
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **Scaffold-GS**: Large-Scale Scene Rendering with Learned 3D Gaussians.
-- **HAC**: Hash-grid Assisted Contextual 3D Gaussian Splatting Compression.
-- **GaussianMarker**: Robust Watermarking of 3D Gaussian Splatting.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting](ngs-marker_robust_native_watermarking_for_3d_gaussian_splatting.md)
+- [\[CVPR 2025\] GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting](../../CVPR2025/3d_vision/guardsplat_efficient_and_robust_watermarking_for_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](../../CVPR2026/3d_vision/robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
+- [\[CVPR 2025\] 3D-GSW: 3D Gaussian Splatting for Robust Watermarking](../../CVPR2025/3d_vision/3d-gsw_3d_gaussian_splatting_for_robust_watermarking.md)
+- [\[AAAI 2026\] Can Protective Watermarking Safeguard the Copyright of 3D Gaussian Splatting?](../../AAAI2026/3d_vision/can_protective_watermarking_safeguard_the_copyright_of_3d_gaussian_splatting.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting](ngs-marker_robust_native_watermarking_for_3d_gaussian_splatting.md)

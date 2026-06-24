@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs
 description: >-
-  [CVPR 2026][AI Safety][AV-LMM] AVFakeBench is the first comprehensive audiovisual forgery detection benchmark covering "Human + Generic Scenes, 7 types of AV forgery combinations, and 4 levels of annotation" (3K segments / 12K QA). Using a multi-stage hybrid forgery framework based on "proprietary model planning + expert model execution" to mass-pro
+  [CVPR 2026][AI Safety][Audiovisual Forgery Detection] AVFakeBench is the first comprehensive audiovisual forgery detection benchmark covering "Human + Generic Scenes, 7 types of AV forgery combinations, and 4 levels of annotation" (3K segments / 12K QA). Using a multi-stage hybrid forgery framework based on "proprietary model planning + expert model execution" to mass-produce fake data, the authors evaluated 11 Audiovisual Large Multimodal Models (AV-LMMs) and 2 expert detect…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - AV-LMM
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Audiovisual Forgery Detection"
+  - "AV-LMM"
+  - "Benchmark"
+  - "Multi-level Annotation"
+  - "Hybrid Forgery Generation"
 date: 2026-05-08
-content_hash: 152f39d0c51d8863
+content_hash: 73c08f62cbf9ddf5
 ---
+
 # AVFakeBench: A Comprehensive Audio-Video Forgery Detection Benchmark for AV-LMMs
 
 **Conference**: CVPR 2026  
@@ -137,11 +142,11 @@ Key Comparison: Expert detectors achieve only 45.0/51.7% F1 on Human Subjects an
 
 ## Related Papers
 
-- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
 - [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
 - [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
 - [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
-- [\[CVPR 2026\] A Sanity Check for Multi-In-Domain Face Forgery Detection in the Real World](a_sanity_check_for_multi-in-domain_face_forgery_detection_in_the_real_world.md)
+- [\[CVPR 2026\] DeepfakeImpact: A Two-Stage Benchmark with Real-World Impact in Deepfake Detection](deepfakeimpact_a_two-stage_benchmark_with_real-world_impact_in_deepfake_detectio.md)
+- [\[ICML 2026\] MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio](../../ICML2026/ai_safety/medmosaic_a_challenging_large_scale_benchmark_of_diverse_medical_audio.md)
 
 </div>
 

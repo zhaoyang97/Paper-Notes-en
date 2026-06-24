@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective
 description: >-
-  [ICLR 2026][Video Generation][Autoregressive] Ours proposes Lumos-1, a unified video generation model based on the LLM architecture. It addresses visual spatio-temporal encoding issues via MM-RoPE (Distributed Multimodal RoPE) and solves inter-frame loss imbalance via AR-DF (Autoregressive Discrete Diffusion Forcing). With training on only 48 GPUs, it achieves com
+  [ICLR 2026][Video Generation][Autoregressive] Ours proposes Lumos-1, a unified video generation model based on the LLM architecture. It addresses visual spatio-temporal encoding issues via MM-RoPE (Distributed Multimodal RoPE) and solves inter-frame loss imbalance via AR-DF (Autoregressive Discrete Diffusion Forcing). With training on only 48 GPUs, it achieves competitive results on GenEval, VBench-I2V, and VBench-T2V.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Autoregressive
-  - RoPE
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Autoregressive"
+  - "Discrete Diffusion"
+  - "RoPE"
+  - "Unified Model"
 date: 2026-05-08
-content_hash: 813dec8aae44070c
+content_hash: 94a5341567243c3a
 ---
+
 # Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective
 
 **Conference**: ICLR 2026  
@@ -129,12 +132,12 @@ The training objective is standard cross-entropy, calculated only at masked toke
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](../../CVPR2026/video_generation/archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
+- [\[ICLR 2026\] Uniform Discrete Diffusion with Metric Path for Video Generation](uniform_discrete_diffusion_with_metric_path_for_video_generation.md)
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[CVPR 2026\] CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video](../../CVPR2026/video_generation/cubecomposer_spatio-temporal_autoregressive_4k_360_video_generation_from_perspec.md)
 - [\[ICLR 2026\] TPDiff: Temporal Pyramid Video Diffusion Model](tpdiff_temporal_pyramid_video_diffusion_model.md)

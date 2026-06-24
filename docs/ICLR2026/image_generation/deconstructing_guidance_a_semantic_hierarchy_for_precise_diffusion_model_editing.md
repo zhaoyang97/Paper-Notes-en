@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Deconstructing Guidance: A Semantic Hierarchy for Precise Diffusion Model Editing
 description: >-
-  [ICLR 2026][Image Generation][Classifier-Free Guidance] This paper discovers that the **magnitude** of the "guidance difference vector" $\Delta\epsilon$ in CFG encodes the semantic scale of editing (objects = large magnitude, background = small magnitude). Using the Tweedie formula, this is proven to be an inevitable consequence of Fisher information density. Based on this,
+  [ICLR2026][Image Generation][Text-guided image editing] This paper discovers that the **magnitude** of the "guidance difference vector" $\Delta\epsilon$ in CFG encodes the semantic scale of editing (objects = large magnitude, background = small magnitude). Using the Tweedie formula, this is proven to be an inevitable consequence of Fisher information density. Based on this, the training-free, plug-and-play Prism-Edit is proposed. By hierarchically deconstructing guidance sign…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "ICLR2026"
+  - "Image Generation"
+  - "Text-guided image editing"
+  - "Classifier-Free Guidance"
+  - "Semantic Scale"
+  - "Fisher Information"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 26c07ae7127ef50c
+content_hash: 67bfc12d4e703fa0
 ---
+
 # Deconstructing Guidance: A Semantic Hierarchy for Precise Diffusion Model Editing
 
 **Conference**: ICLR2026  
@@ -156,11 +161,11 @@ Prism-Edit maintains high DINOv2 (preserving the object) while achieving the hig
 
 ## Related Papers
 
+- [\[ICLR 2026\] SoftCFG: Uncertainty-guided Stable Guidance for Visual Autoregressive Model](softcfg_uncertainty-guided_stable_guidance_for_visual_autoregressive_model.md)
 - [\[ICLR 2026\] A Noise is Worth Diffusion Guidance](a_noise_is_worth_diffusion_guidance.md)
 - [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](../../CVPR2026/image_generation/maproute_semantic_routing_concept_erasure.md)
 - [\[CVPR 2026\] SketchAssist: A Practical Assistant for Semantic Edits and Precise Local Redrawing](../../CVPR2026/image_generation/sketchassist_a_practical_assistant_for_semantic_edits_and_precise_local_redrawin.md)
-- [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](../../NeurIPS2025/image_generation/tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
-- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
+- [\[ICLR 2026\] Learn to Guide Your Diffusion Model](learn_to_guide_your_diffusion_model.md)
 
 </div>
 

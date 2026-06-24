@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][CoT reasoning reliability] This paper demonstrates that attention head activations in intermediate layers of LLMs implicitly encode truthfulness information about reasoning steps during CoT inf…
+  [AAAI 2026][Reasoning][CoT reasoning reliability] This paper demonstrates that attention head activations in intermediate layers of LLMs implicitly encode truthfulness information about reasoning steps during CoT inference (probing accuracy up to 85%). Based on this finding, confidence predictors are trained to guide beam search in dynamically selecting high-confidence reasoning paths, surpassing Self-Consistency and PRM Guided Search on mathematical, symbolic…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "CoT reasoning reliability"
   - "internal cognition"
   - "attention head probing"
   - "confidence predictor"
   - "beam search guidance"
 date: 2026-05-08
-content_hash: a1508b561c18e665
+content_hash: 11983567bf0d1bbb
 ---
 
 # Deep Hidden Cognition Facilitates Reliable Chain-of-Thought Reasoning
@@ -132,10 +132,10 @@ A three-stage pipeline: (1) **Construct a binary-annotated CoT dataset** — lab
 ## Related Papers
 
 - [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](../../ICML2026/llm_reasoning/hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
-- [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
+- [\[ACL 2025\] DRT: Deep Reasoning Translation via Long Chain-of-Thought](../../ACL2025/llm_reasoning/drt_deep_reasoning_translation_via_long_chain-of-thought.md)
+- [\[ICLR 2026\] Deep Think with Confidence](../../ICLR2026/llm_reasoning/deep_think_with_confidence.md)
 - [\[AAAI 2026\] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation](intention_chain-of-thought_prompting_with_dynamic_routing_for_code_generation.md)
 - [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
-- [\[AAAI 2026\] BLM-Guard: Explainable Multimodal Ad Moderation with Chain-of-Thought and Policy-Aligned Rewards](blm-guard_explainable_multimodal_ad_moderation_with_chain-of.md)
 
 </div>
 

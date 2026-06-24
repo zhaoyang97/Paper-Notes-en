@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Identifying the Periodicity of Information in Natural Language
 description: >-
-  [ACL 2026][LLM (Other)][surprisal] This paper adapts the AutoPeriod detection algorithm from signal processing to token-surprisal sequences, proposing APS (AutoPeriod of Surprisal) to **directly detect** information density cycles at a single-document level (e.g., "one cycle every 53 tokens"). It discovers that approximately 11% of human-written documen
+  [ACL 2026][LLM (Other)][Information Periodicity] This paper adapts the AutoPeriod detection algorithm from signal processing to token-surprisal sequences, proposing APS (AutoPeriod of Surprisal) to **directly detect** information density cycles at a single-document level (e.g., "one cycle every 53 tokens"). It discovers that approximately 11% of human-written documents exhibit strict periodicity, and the periodicity of LLM-generated text is twice as strong as that of humans (…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - surprisal
-  - AutoPeriod
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Information Periodicity"
+  - "surprisal"
+  - "AutoPeriod"
+  - "Harmonic Regression"
+  - "LLM Detection"
 date: 2026-05-08
-content_hash: b4aab4034caee0aa
+content_hash: 8d1b0333eade4dfb
 ---
+
 # Identifying the Periodicity of Information in Natural Language
 
 **Conference**: ACL 2026  
@@ -130,10 +134,17 @@ MSE perfectly follows the order $P_2 < P_1 < \Sigma < \Sigma - P_1$.
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] LinkNav: Surfacing Interconnected Information in Scientific Articles](linknav_surfacing_interconnected_information_in_scientific_articles.md)
+- [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
+- [\[AAAI 2026\] Identifying and Analyzing Performance-Critical Tokens in Large Language Models](../../AAAI2026/llm_nlp/identifying_and_analyzing_performance-critical_tokens_in_large_language_models.md)
+- [\[ACL 2025\] Cooperating and Competing Through Natural Language](../../ACL2025/llm_nlp/cooperating_and_competing_through_natural_language.md)
+- [\[ACL 2025\] What Makes a Good Natural Language Prompt?](../../ACL2025/llm_nlp/good_natural_language_prompt.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)

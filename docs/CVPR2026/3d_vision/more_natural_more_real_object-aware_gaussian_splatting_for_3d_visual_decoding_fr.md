@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain
 description: >-
-  [CVPR 2026][3D Vision][fMRI/EEG] BrainGS is the first brain signal-to-3D object reconstruction framework based on 3D Gaussian Splatting (3DGS). It encodes fMRI/EEG signals using a spatial-temporal fusion network, decouples and aligns brain signals with vision-semantic-color anchor points via a multi-attribute controller, and tracks/corrects object vie
+  [CVPR 2026][3D Vision][Brain signal decoding] BrainGS is the first brain signal-to-3D object reconstruction framework based on 3D Gaussian Splatting (3DGS). It encodes fMRI/EEG signals using a spatial-temporal fusion network, decouples and aligns brain signals with vision-semantic-color anchor points via a multi-attribute controller, and tracks/corrects object viewpoint changes through a multi-view stabilizer. It achieves SOTA reconstruction fidelity on fMRI/EEG-3D datasets (…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - fMRI/EEG
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Brain signal decoding"
+  - "3D Gaussian Splatting (3DGS)"
+  - "fMRI/EEG"
+  - "Multi-view consistency"
+  - "Neural decoding"
 date: 2026-05-08
-content_hash: 573614036a496ecd
+content_hash: c06cf6ac2607d27b
 ---
+
 # More Natural, More Real: Object-aware Gaussian Splatting for 3D Visual Decoding from Human Brain
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ On fMRI-Shape:
 
 ## Related Papers
 
+- [\[CVPR 2026\] MoRE: 3D Visual Geometry Reconstruction Meets Mixture-of-Experts](more_3d_visual_geometry_reconstruction_meets_mixture-of-experts.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
+- [\[CVPR 2026\] 3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)
 - [\[CVPR 2026\] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting](langref3dgs_natural_language-guided_3d_referential_segmentation_from_partial_obs.md)
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
 
 </div>
 

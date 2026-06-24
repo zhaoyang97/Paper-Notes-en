@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fair Reinforcement Learning for Just AI
 description: >-
-  [ICLR 2026][AI Safety][quantile fairness] The authors transform "quantile fairness" from a tabular algorithm requiring complete MDP transition tables into an oracle-efficient algorithm that calls a standard policy optimization oracle (approximately $O(n)$ times). This allows "fair aggregation across multiple conflicting values" to scale to deep RL for the firs
+  [ICLR 2026][AI Safety][quantile fairness] The authors transform "quantile fairness" from a tabular algorithm requiring complete MDP transition tables into an oracle-efficient algorithm that calls a standard policy optimization oracle (approximately $O(n)$ times). This allows "fair aggregation across multiple conflicting values" to scale to deep RL for the first time, achieving speeds several orders of magnitude faster than prior work.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - quantile fairness
-  - policy aggregation
-  - oracle-efficient RL
-  - pluralistic alignment
-  - multiplicative weights
+  - "ICLR 2026"
+  - "AI Safety"
+  - "quantile fairness"
+  - "policy aggregation"
+  - "oracle-efficient RL"
+  - "pluralistic alignment"
+  - "multiplicative weights"
 date: 2026-05-08
-content_hash: b2675c17e0ce78d4
+content_hash: babdb9bcb5b6703c
 ---
+
 # Fair Reinforcement Learning for Just AI
 
 **Conference**: ICLR 2026  

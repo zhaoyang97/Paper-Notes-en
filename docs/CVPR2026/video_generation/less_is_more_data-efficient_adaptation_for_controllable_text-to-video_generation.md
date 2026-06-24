@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Less is More: Data-Efficient Adaptation for Controllable Text-to-Video Generation
 description: >-
-  [CVPR 2026][Video Generation][LoRA] When adding continuous control over physical camera parameters such as shutter speed, aperture, and color temperature to pre-trained text-to-video models (WAN 2.1), this paper finds that fine-tuning with sparse, low-fidelity synthetic data performs better than using photorealistic data. This is because photorealistic d
+  [CVPR 2026][Video Generation][Text-to-Video] When adding continuous control over physical camera parameters such as shutter speed, aperture, and color temperature to pre-trained text-to-video models (WAN 2.1), this paper finds that fine-tuning with sparse, low-fidelity synthetic data performs better than using photorealistic data. This is because photorealistic data destroys the backbone's pre-trained priors, leading to "content collapse," whereas simple synthetic data merely…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - LoRA
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Controllable Generation"
+  - "Data-Efficient Fine-Tuning"
+  - "Catastrophic Forgetting"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 11facc276cdc31d3
+content_hash: d63771e7e42be36f
 ---
+
 # Less is More: Data-Efficient Adaptation for Controllable Text-to-Video Generation
 
 **Conference**: CVPR 2026  

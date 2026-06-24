@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper proposes TSEF—a dual-target attack framework for joint "Time Series Classifier + Explainer" systems. By learning a "Temporal Vulnerability Mask + Frequency Perturbation Filter," it simultaneously pushes model predictions to a target label and align explanations with a reference saliency map within an $\ell_\
+  [ICML 2026][AI Safety][Time Series Explainers] This paper proposes TSEF—a dual-target attack framework for joint "Time Series Classifier + Explainer" systems. By learning a "Temporal Vulnerability Mask + Frequency Perturbation Filter," it simultaneously pushes model predictions to a target label and align explanations with a reference saliency map within an $\ell_\infty$ budget. It demonstrates that the common "stable explanation = trustworthy decision" assumption in existing…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Time Series Explainers"
+  - "Adversarial Attack"
+  - "Explanation Faithfulness"
+  - "Frequency Domain Perturbation"
+  - "Dual-Target Optimization"
 date: 2026-05-08
-content_hash: b73f83be8ad75506
+content_hash: 130eb9c90e12bb73
 ---
+
 # Exposing Vulnerabilities in Explanation for Time Series Classifiers via Dual-Target Adversarial Attack
 
 **Conference**: ICML 2026  
@@ -129,9 +135,9 @@ Comparison on ECG with TimeX++:
 
 - [\[ICML 2025\] TIMING: Temporality-Aware Integrated Gradients for Time Series Explanation](../../ICML2025/ai_safety/timing_temporality-aware_integrated_gradients_for_time_series_explanation.md)
 - [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
-- [\[AAAI 2026\] Angular Gradient Sign Method: Uncovering Vulnerabilities in Hyperbolic Networks](../../AAAI2026/ai_safety/angular_gradient_sign_method_uncovering_vulnerabilities_in_h.md)
+- [\[ICML 2026\] Dual-branch Robust Unlearnable Examples](dual-branch_robust_unlearnable_examples.md)
+- [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](../../ICLR2026/ai_safety/concept-based_adversarial_attack_a_probabilistic_perspective.md)
 - [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
-- [\[NeurIPS 2025\] Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization](../../NeurIPS2025/ai_safety/dual-flow_transferable_multi-target_instance-agnostic_attacks_via_in-the-wild_ca.md)
 
 </div>
 

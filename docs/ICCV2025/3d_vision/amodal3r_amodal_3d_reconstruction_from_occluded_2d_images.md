@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images
 description: >-
-  [ICCV 2025][3D Vision][Amodal 3D Reconstruction] This paper proposes Amodal3R, an end-to-end occlusion-aware 3D reconstruction model that introduces mask-weighted cross-attention and an occlusion-aware attention layer on…
+  [ICCV 2025][3D Vision][Amodal 3D Reconstruction] This paper proposes Amodal3R, an end-to-end occlusion-aware 3D reconstruction model that introduces mask-weighted cross-attention and an occlusion-aware attention layer on top of TRELLIS, enabling direct reconstruction of complete 3D object geometry and appearance from partially occluded 2D images in the 3D latent space, substantially outperforming prior two-stage "2D completion → 3D reconstruction" pipelines.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Attention"
   - "TRELLIS"
 date: 2026-05-08
-content_hash: d314aae4f41c0323
+content_hash: fc5c0cc3ac46b7b3
 ---
 
 # Amodal3R: Amodal 3D Reconstruction from Occluded 2D Images
@@ -119,11 +119,11 @@ The occlusion-aware mechanism of Amodal3R could potentially be extended toward s
 
 ## Related Papers
 
-- [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
 - [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
+- [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
 - [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](../../ICLR2026/3d_vision/nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
-- [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
-- [\[ICCV 2025\] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting](towards_scalable_spatial_intelligence_via_2d-to-3d_data_lifting.md)
+- [\[ICCV 2025\] Contact-Aware Amodal Completion for Human-Object Interaction via Multi-Regional Inpainting](contact-aware_amodal_completion_for_human-object_interaction_via_multi-regional_.md)
+- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](../../ICLR2026/3d_vision/holopart_generative_3d_part_amodal_segmentation.md)
 
 </div>
 

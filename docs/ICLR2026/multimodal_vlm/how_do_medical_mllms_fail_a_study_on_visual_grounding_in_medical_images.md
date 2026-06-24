@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This study systematically diagnoses the root cause of poor medical MLLM performance in zero-shot medical VQA as insufficient visual grounding—where model attention systematically deviates from clinically relevant regions. To address this, the authors propose VGRefine, a training-free inference-time attention correction
+  [ICLR 2026][Multimodal VLM][Medical VQA] This study systematically diagnoses the root cause of poor medical MLLM performance in zero-shot medical VQA as insufficient visual grounding—where model attention systematically deviates from clinically relevant regions. To address this, the authors propose VGRefine, a training-free inference-time attention correction method that achieves SOTA results across 8 imaging modalities and 110K+ samples in 6 benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Medical VQA"
+  - "Visual Grounding"
+  - "Attention Analysis"
+  - "MLLM Failure Modes"
+  - "Inference-time Correction"
 date: 2026-05-08
-content_hash: 7f98029cf340faeb
+content_hash: 1a4e78d33d1670c6
 ---
+
 # How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,7 @@ Ours shows Gain across 8 modalities in OmniMedVQA: CT +7.5%, MRI +6.4%, X-Ray +8
 - [\[ICLR 2026\] The Unseen Bias: How Norm Discrepancy in Pre-Norm MLLMs Leads to Visual Information Loss](the_unseen_bias_how_norm_discrepancy_in_pre-norm_mllms_leads_to_visual_informati.md)
 - [\[ICLR 2026\] AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding](atttok_marrying_attribute_tokens_with_generative_pre-trained_vision-language_mod.md)
 - [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](../../ICML2026/multimodal_vlm/medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
-- [\[ICLR 2026\] CitySeeker: How Do VLMs Explore Embodied Urban Navigation with Implicit Human Needs?](cityseeker_how_do_vlms_explore_embodied_urban_navigation_with_implicit_human_nee.md)
+- [\[ICML 2026\] MoDA: Modulation Adapter for Fine-Grained Visual Grounding in Instructional MLLMs](../../ICML2026/multimodal_vlm/moda_modulation_adapter_for_fine-grained_visual_grounding_in_instructional_mllms.md)
 
 </div>
 

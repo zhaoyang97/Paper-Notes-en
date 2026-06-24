@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] ROMI achieves robust value-aware model learning by transforming the dynamics uncertainty set into a state uncertainty set via Wasserstein duality. It utilizes an implicitly differentiable adaptive weighting mechanism to balance dynamics accuracy and value awareness, effectively solving the Q-value underestimation and g
+  [ICLR 2026][Reinforcement Learning][Offline RL] ROMI achieves robust value-aware model learning by transforming the dynamics uncertainty set into a state uncertainty set via Wasserstein duality. It utilizes an implicitly differentiable adaptive weighting mechanism to balance dynamics accuracy and value awareness, effectively solving the Q-value underestimation and gradient explosion issues inherited from RAMBO, and reaches SOTA performance for model-based offline RL on D4RL a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Model-based Method"
+  - "Adversarial Model Learning"
+  - "Wasserstein Duality"
+  - "Bi-level Optimization"
 date: 2026-05-08
-content_hash: bc8cbab3e982ef62
+content_hash: af2b04e3bc7bf652
 ---
+
 # ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting
 
 **Conference**: ICLR 2026  
@@ -127,11 +133,11 @@ NeoRL (Total score across 9 tasks): **472.2** (vs RAMBO 382.8, vs CQL 466.3).
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
 - [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
-- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
 
 </div>
 

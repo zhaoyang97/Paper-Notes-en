@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Content-Style Identification via Differential Independence
 description: >-
-  [ICML 2026][Image Generation][content-style disentanglement] This paper proposes CSDI (content-style differential independence), a novel identifiability condition. It proves that unpaired multi-domain content-style block identifiability is achievable under settings where content and style are statistically **correlated** and Jacobians are **dense**, provided that the column spac
+  [ICML 2026][Image Generation][content-style disentanglement] This paper proposes CSDI (content-style differential independence), a novel identifiability condition. It proves that unpaired multi-domain content-style block identifiability is achievable under settings where content and style are statistically **correlated** and Jacobians are **dense**, provided that the column spaces of the generator's Jacobians with respect to content and style are mutually orthogonal on the da…
 tags:
-  - ICML 2026
-  - Image Generation
-  - content-style disentanglement
-  - differential independence
-  - Jacobian orthogonality
-  - GAN
-  - identifiability
+  - "ICML 2026"
+  - "Image Generation"
+  - "content-style disentanglement"
+  - "differential independence"
+  - "Jacobian orthogonality"
+  - "GAN"
+  - "identifiability"
 date: 2026-05-08
-content_hash: bd4936a9bb0852ae
+content_hash: f24615540ecf5366
 ---
+
 # Content-Style Identification via Differential Independence
 
 **Conference**: ICML 2026  
@@ -125,8 +126,8 @@ Removing $\mathcal{L}_{\rm orth}$ results in a 27% drop in LPIPS on CelebA-HQ (0
 
 - [\[CVPR 2026\] SplitFlux: Learning to Decouple Content and Style from a Single Image](../../CVPR2026/image_generation/splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)
 - [\[ECCV 2024\] Implicit Style-Content Separation using B-LoRA](../../ECCV2024/image_generation/implicit_style-content_separation_using_b-lora.md)
-- [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](../../ICCV2025/image_generation/scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
 - [\[ICML 2026\] RAIGen: Rare Attribute Identification in Text-to-Image Generative Models](raigen_rare_attribute_identification_in_text-to-image_generative_models.md)
+- [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](../../ICCV2025/image_generation/scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
 - [\[CVPR 2026\] CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion](../../CVPR2026/image_generation/craft-lora_content-style_personalization_via_rank-constrained_adaptation_and_tra.md)
 
 </div>

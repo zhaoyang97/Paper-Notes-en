@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 多语言检索中的低资源语言困境：Amharic 语言证据
+  [Paper Note] Low-Resource Language Dilemma in Multilingual Retrieval: Evidence from Amharic
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Amharic] Using Amharic as a diagnostic case, this paper reveals that powerful multilingual retrieval models fail to migrate effectively to morphologically rich low-resource languages in zero-shot settings, with a 23% relative drop in MRR@10 performance. While language-specific fine-tuning provides 32-60% improvements, it still
+  [ACL 2026][Information Retrieval & RAG][Multilingual Retrieval] Using Amharic as a diagnostic case, this paper reveals that powerful multilingual retrieval models fail to migrate effectively to morphologically rich low-resource languages in zero-shot settings, with a 23% relative drop in MRR@10 performance. While language-specific fine-tuning provides 32-60% improvements, it still fails to reach the level of monolingual retrievers, indicating that multilingual retrieval is in…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Amharic
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Multilingual Retrieval"
+  - "Low-Resource Language"
+  - "Amharic"
+  - "Zero-shot Transfer"
+  - "Neural IR"
 date: 2026-05-08
-content_hash: 19a9068b746dbd9e
+content_hash: e3e57e65768046bd
 ---
+
 # Low-Resource Language Dilemma in Multilingual Retrieval: Evidence from Amharic
 
 **Conference**: ACL 2026  
@@ -132,11 +137,11 @@ Cross-encoder re-ranking achieved the highest score of MRR@10 0.830, indicating 
 
 ## Related Papers
 
-- [\[ACL 2025\] Optimized Text Embedding Models and Benchmarks for Amharic Passage Retrieval](../../ACL2025/information_retrieval/optimized_text_embedding_models_and_benchmarks_for_amharic_passage_retrieval.md)
-- [\[ACL 2026\] Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers](code-switching_information_retrieval_benchmarks_analysis_and_the_limits_of_curre.md)
-- [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
-- [\[ACL 2026\] eTracer: Towards Traceable Text Generation via Claim-Level Grounding](etracer_towards_traceable_text_generation_via_claim-level_grounding.md)
-- [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
+- [\[ACL 2026\] Reliable Evaluation Protocol for Low-Precision Retrieval](reliable_evaluation_protocol_for_low-precision_retrieval.md)
+- [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
+- [\[ACL 2026\] All Languages Matter: Understanding and Mitigating Language Bias in Multilingual RAG](all_languages_matter_understanding_and_mitigating_language_bias_in_multilingual_.md)
+- [\[ACL 2026\] Test-Time Training for Zero-Resource Dense Retrieval Reranking](test-time_training_for_zero-resource_dense_retrieval_reranking.md)
+- [\[ACL 2026\] GLIER: Generative Legal Inference and Evidence Ranking for Legal Case Retrieval](glier_generative_legal_inference_and_evidence_ranking_for_legal_case_retrieval.md)
 
 </div>
 

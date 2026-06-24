@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][flow matching] This paper proposes QHFlow, the first method to apply conditional flow matching to density functional theory (DFT) Hamiltonian matrix prediction. By designing…
+  [NeurIPS 2025 Spotlight][Physics & Scientific Computing][flow matching] This paper proposes QHFlow, the first method to apply conditional flow matching to density functional theory (DFT) Hamiltonian matrix prediction. By designing high-order SE(3)-equivariant vector fields and symmetry-aware prior distributions, QHFlow reduces Hamiltonian prediction error by 73% on MD17 and accelerates DFT computation by 54% when used as an SCF initializer.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Physics & Scientific Computing"
   - "flow matching"
   - "DFT"
@@ -13,7 +13,7 @@ tags:
   - "quantum chemistry"
   - "SCF acceleration"
 date: 2026-05-08
-content_hash: f125a4d3fa2a9ca0
+content_hash: feb0319fd4ddd564
 ---
 
 # High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction
@@ -182,11 +182,11 @@ The architecture extends QHNet with the following additions:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards a Transferable Acceleration Method for Density Functional Theory](../../ICLR2026/physics/towards_a_transferable_acceleration_method_for_density_functional_theory.md)
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
-- [\[NeurIPS 2025\] Balanced Conic Rectified Flow](balanced_conic_rectified_flow.md)
-- [\[ICML 2026\] Mesh Field Theory: Port–Hamiltonian Formulation of Mesh-Based Physics](../../ICML2026/physics/mesh_field_theory_port-hamiltonian_formulation_of_mesh-based_physics.md)
-- [\[ICML 2026\] Unbiased and Second-Order-Free Training for High-Dimensional PDEs](../../ICML2026/physics/unbiased_and_second-order-free_training_for_high-dimensional_pdes.md)
+- [\[ICLR 2026\] Orbital Transformers for Predicting Wavefunctions in Time-Dependent Density Functional Theory](../../ICLR2026/physics/orbital_transformers_for_predicting_wavefunctions_in_time-dependent_density_func.md)
+- [\[ICLR 2026\] Advancing Universal Deep Learning for Electronic-Structure Hamiltonian Prediction of Materials](../../ICLR2026/physics/advancing_universal_deep_learning_for_electronic-structure_hamiltonian_predictio.md)
 
 </div>
 

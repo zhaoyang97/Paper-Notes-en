@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing
 description: >-
-  [NeurIPS 2025][Audio & Speech][Video-to-Audio] ThinkSound is a three-stage interactive video-to-audio framework that leverages an MLLM to generate structured CoT reasoning as guidance for a unified audio foundation model…
+  [NeurIPS 2025][Audio & Speech][Video-to-Audio] ThinkSound is a three-stage interactive video-to-audio framework that leverages an MLLM to generate structured CoT reasoning as guidance for a unified audio foundation model. It achieves state-of-the-art performance on VGGSound and MovieGen Audio benchmarks while supporting object-level refinement and natural language instruction-based editing.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Reasoning"
   - "Flow Matching"
 date: 2026-05-08
-content_hash: cf68dbdfe07d565c
+content_hash: b8ad85285eba5564
 ---
 
 # ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing
@@ -131,9 +131,9 @@ ThinkSound consists of two primary modules: (1) an MLLM fine-tuned from VideoLLa
 
 - [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
 - [\[NeurIPS 2025\] AudSemThinker: Enhancing Audio-Language Models through Reasoning over Semantics of Sound](audsemthinker_enhancing_audio-language_models_through_reasoning_over_semantics_o.md)
+- [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](../../ICLR2026/audio_speech/owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
 - [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
-- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thoughts and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/audio_speech/prismaudio_decomposed_chain-of-thoughts_and_multi-dimensional_rewards_for_video-.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[ICLR 2026\] PrismAudio: Decomposed Chain-of-Thought and Multi-dimensional Rewards for Video-to-Audio Generation](../../ICLR2026/audio_speech/prismaudio_decomposed_chain-of-thought_and_multi-dimensional_rewards_for_video-t.md)
 
 </div>
 

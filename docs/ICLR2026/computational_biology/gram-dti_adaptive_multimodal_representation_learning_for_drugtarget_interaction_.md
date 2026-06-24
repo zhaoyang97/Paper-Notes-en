@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GRAM-DTI: Adaptive Multimodal Representation Learning for Drug-Target Interaction Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Gramian volume alignment] GRAM-DTI integrates drug SMILES, molecular text, hierarchical taxonomic annotations (HTA), and protein sequences into a unified pre-training framework. It utilizes Gramian volume alignment, adaptive modality dropout, and IC50 weak supervision to learn robust drug-target representations, overall surpassing strong baseli
+  [ICLR2026][Computational Biology][Drug-target interaction] GRAM-DTI integrates drug SMILES, molecular text, hierarchical taxonomic annotations (HTA), and protein sequences into a unified pre-training framework. It utilizes Gramian volume alignment, adaptive modality dropout, and IC50 weak supervision to learn robust drug-target representations, overall surpassing strong baselines in DTI / MoA prediction and zero-shot retrieval.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Gramian volume alignment
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Drug-target interaction"
+  - "multimodal pre-training"
+  - "Gramian volume alignment"
+  - "adaptive modality dropout"
+  - "IC50 weak supervision"
 date: 2026-05-08
-content_hash: 890346c4f5e49add
+content_hash: 8a959ad251f7ad23
 ---
+
 # GRAM-DTI: Adaptive Multimodal Representation Learning for Drug-Target Interaction Prediction
 
 **Conference**: ICLR2026  
@@ -124,13 +129,20 @@ Ablations confirmed that the combination of $L_{vol}$, $L_{bi}$, $L_{IC50}$, and
 - Value: ⭐⭐⭐⭐☆ Strong potential for target discovery and drug repurposing through better latent alignments.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- DTIAM: Drug-Target Interaction and Affinity Discovery with Multi-Task Learning
-- TRIDENT: A Multimodal Deep Learning Model for Molecular Representation
-- MolFormer: Large-Scale Chemical Language Representations
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction](deepsadr_deep_transfer_learning_with_subsequence_interaction_and_adaptive_readou.md)
+- [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
+- [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
+- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](../../ICML2026/computational_biology/learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
+- [\[NeurIPS 2025\] GFlowNets for Learning Better Drug-Drug Interaction Representations](../../NeurIPS2025/computational_biology/gflownets_for_learning_better_drug-drug_interaction_representations.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] DeepSADR: Deep Transfer Learning with Subsequence Interaction and Adaptive Readout for Cancer Drug Response Prediction](deepsadr_deep_transfer_learning_with_subsequence_interaction_and_adaptive_readou.md)

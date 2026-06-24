@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Addressing the fundamental issue where the MSE loss generates "autocorrelation bias" when label sequences exhibit autocorrelation, DistDF shifts from estimating conditional likelihood to directly aligning the **conditional distributions** of predicted and label sequences. It employs the "Joint-distribution Wasserstein
+  [ICLR2026][Time Series][Time-series Forecasting] Addressing the fundamental issue where the MSE loss generates "autocorrelation bias" when label sequences exhibit autocorrelation, DistDF shifts from estimating conditional likelihood to directly aligning the **conditional distributions** of predicted and label sequences. It employs the "Joint-distribution Wasserstein distance" (with a provable upper bound) as a proxy objective, leveraging the Bures–Wasserstein closed-form solu…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Time-series Forecasting"
+  - "Learning Objectives"
+  - "Autocorrelation Bias"
+  - "Wasserstein Distance"
+  - "Distribution Alignment"
 date: 2026-05-08
-content_hash: e20f36d5c0ac03fc
+content_hash: 576cd1839729eaa4
 ---
+
 # DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment
 
 **Conference**: ICLR2026  
@@ -147,8 +153,8 @@ Individually adding mean or covariance alignment consistently outperformed DF. C
 - [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
 - [\[NeurIPS 2025\] Time-O1: Time-Series Forecasting Needs Transformed Label Alignment](../../NeurIPS2025/time_series/time-o1_time-series_forecasting_needs_transformed_label_alignment.md)
 - [\[ICLR 2026\] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models](quadratic_direct_forecast_for_training_multi-step_time-series_forecast_models.md)
+- [\[ICLR 2026\] A Spectral-Grassmann Wasserstein metric for operator representations of dynamical systems](a_spectral-grassmann_wasserstein_metric_for_operator_representations_of_dynamica.md)
 - [\[ICLR 2026\] JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows](japan_joint_adaptive_prediction_areas_with_normalising_flow.md)
-- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 
 </div>
 

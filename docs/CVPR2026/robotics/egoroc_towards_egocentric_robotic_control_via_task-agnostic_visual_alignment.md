@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Embodied AI] EgoRoC decouples "how the robot sees" from "how the robot acts" by introducing a plug-and-play egocentric alignment head. Before manipulation, it aligns the wrist camera view to the target, outputting only a 6-DoF pose interface to the downstream VLA. A diffusion-based online hand-eye calibration module then transforms
+  [CVPR 2026][Robotics][Embodied AI] EgoRoC decouples "how the robot sees" from "how the robot acts" by introducing a plug-and-play egocentric alignment head. Before manipulation, it aligns the wrist camera view to the target, outputting only a 6-DoF pose interface to the downstream VLA. A diffusion-based online hand-eye calibration module then transforms or corrects the alignment action into the end-effector coordinate system. Trained once using only static image pairs…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied AI"
+  - "VLA"
+  - "Egocentric Visual Alignment"
+  - "Online Hand-eye Calibration"
+  - "Conditional Diffusion"
 date: 2026-05-08
-content_hash: 18d1f30d01f1ffcc
+content_hash: 7efe34f2efe29c5d
 ---
+
 # EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment
 
 **Conference**: CVPR 2026  

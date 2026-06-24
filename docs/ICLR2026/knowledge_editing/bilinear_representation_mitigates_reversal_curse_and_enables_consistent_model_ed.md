@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing
 description: >-
-  [ICLR 2026][Knowledge Editing][reversal curse] By training Transformers from scratch on synthetic relational knowledge graphs, it is discovered that appropriate regularization leads to the emergence of a bilinear relational structure in hidden layers. This structure not only overcomes the reversal curse but also enables logically consistent propagation of updates t
+  [ICLR 2026][Knowledge Editing][reversal curse] By training Transformers from scratch on synthetic relational knowledge graphs, it is discovered that appropriate regularization leads to the emergence of a bilinear relational structure in hidden layers. This structure not only overcomes the reversal curse but also enables logically consistent propagation of updates to related facts after editing a single fact.
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - reversal curse
-  - bilinear representation
-  - model editing
-  - relational structure
-  - knowledge graph
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "reversal curse"
+  - "bilinear representation"
+  - "model editing"
+  - "relational structure"
+  - "knowledge graph"
 date: 2026-05-08
-content_hash: a043501e342d1d59
+content_hash: a48b0d86f01fbd5d
 ---
+
 # Bilinear Representation Mitigates Reversal Curse and Enables Consistent Model Editing
 
 **Conference**: ICLR 2026  
@@ -149,7 +150,7 @@ Relationship between reverse reasoning accuracy and weight decay (tested on hidd
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

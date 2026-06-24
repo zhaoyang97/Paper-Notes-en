@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] XQC: Well-Conditioned Optimization Accelerates Deep Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][BatchNorm] XQC does not rely on scaling up models or complex architectures. Instead, starting from the "condition number" of the critic loss landscape, it proves that the combination of BatchNorm + Weight Normalization + Categorical Cross-Entropy loss can reduce the Hessian condition number by several orders of magnitude and natu
+  [ICLR 2026][Reinforcement Learning][Sample Efficiency] XQC does not rely on scaling up models or complex architectures. Instead, starting from the "condition number" of the critic loss landscape, it proves that the combination of BatchNorm + Weight Normalization + Categorical Cross-Entropy loss can reduce the Hessian condition number by several orders of magnitude and naturally bound gradient norms. This allows it to achieve SOTA sample efficiency on 70 continuous control tas…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - BatchNorm
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Sample Efficiency"
+  - "Optimization Landscape"
+  - "Condition Number"
+  - "BatchNorm"
+  - "Distributed Critic"
 date: 2026-05-08
-content_hash: 54b517ffe6ee9eef
+content_hash: 17263ceffa94a5a0
 ---
+
 # XQC: Well-Conditioned Optimization Accelerates Deep Reinforcement Learning
 
 **Conference**: ICLR 2026  

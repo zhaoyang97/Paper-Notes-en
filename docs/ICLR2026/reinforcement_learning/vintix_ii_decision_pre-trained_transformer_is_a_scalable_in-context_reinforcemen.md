@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner
 description: >-
-  [ICLR 2026][Reinforcement Learning][Decision Pre-Trained Transformer] This paper scales the Decision Pre-Trained Transformer (DPT) from simplified discrete environments to cross-domain continuous control scenarios involving 10 domains and 209 tasks. By replacing the Gaussian head with a rectified flow strategy head to model multimodal action distributions—while preserving the interpretat
+  [ICLR 2026][Reinforcement Learning][In-Context Reinforcement Learning] This paper scales the Decision Pre-Trained Transformer (DPT) from simplified discrete environments to cross-domain continuous control scenarios involving 10 domains and 209 tasks. By replacing the Gaussian head with a rectified flow strategy head to model multimodal action distributions—while preserving the interpretation of DPT as "Bayesian posterior sampling"—the authors train a 928M-parameter universal…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Decision Pre-Trained Transformer
-  - Flow Matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "In-Context Reinforcement Learning"
+  - "Decision Pre-Trained Transformer"
+  - "Flow Matching"
+  - "Posterior Sampling"
+  - "Generalist Agent"
 date: 2026-05-08
-content_hash: 9a21d054b35e87a8
+content_hash: fcbe0357d27ef784
 ---
+
 # Vintix II: Decision Pre-Trained Transformer is a Scalable In-Context Reinforcement Learner
 
 **Conference**: ICLR 2026  
@@ -138,10 +142,10 @@ On unseen tasks, Vintix II in offline mode achieved normalized scores of **102% 
 ## Related Papers
 
 - [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
-- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
 - [\[ICLR 2026\] Reward is Enough: LLMs are In-Context Reinforcement Learners](reward_is_enough_llms_are_in-context_reinforcement_learners.md)
-- [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
+- [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
 
 </div>
 

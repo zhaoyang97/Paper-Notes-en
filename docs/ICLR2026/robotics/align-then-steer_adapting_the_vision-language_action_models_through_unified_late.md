@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] ATE first aligns pre-trained robot actions and target robot actions into a single structured latent space. It then utilizes gradients generated from latent space distances to guide the fine-tuning of diffusion-based or flow-matching VLAs, enabling faster adaptation to new embodiments and tasks with limited demonstratio
+  [ICLR 2026][Robotics][VLA Adaptation] ATE first aligns pre-trained robot actions and target robot actions into a single structured latent space. It then utilizes gradients generated from latent space distances to guide the fine-tuning of diffusion-based or flow-matching VLAs, enabling faster adaptation to new embodiments and tasks with limited demonstration data.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA Adaptation"
+  - "Cross-Embodiment"
+  - "Action Latent Space"
+  - "Diffusion Policy"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 4b2152b92b7fff80
+content_hash: fe53f74cf5ca8038
 ---
+
 # Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance
 
 **Conference**: ICLR 2026  
@@ -164,6 +170,7 @@ In real-robot experiments, ATE achieved 100% success in "Cook Bun" by 90k steps,
 - **Value**: ⭐⭐⭐⭐⭐ (High practical significance for deploying VLAs on new platforms).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

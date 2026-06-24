@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture
 description: >-
-  [ICLR 2026][Human Understanding][State Space Model] QuaMo proposes a 3D human kinematics capture method based on Quaternion Differential Equations (QDE). By solving kinematic equations under the unit sphere constraint and introducing a meta-PD controller with second-order acceleration enhancement, the method achieves discontinuity-free, low-jitter online real-time human
+  [ICLR 2026][Human Understanding][Quaternion Kinematics] QuaMo proposes a 3D human kinematics capture method based on Quaternion Differential Equations (QDE). By solving kinematic equations under the unit sphere constraint and introducing a meta-PD controller with second-order acceleration enhancement, the method achieves discontinuity-free, low-jitter online real-time human motion estimation, outperforming state-of-the-art results on datasets like Human3.6M.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - State Space Model
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Quaternion Kinematics"
+  - "3D Human Motion Capture"
+  - "State-Space Models"
+  - "PD Controller"
+  - "Acceleration Enhancement"
 date: 2026-05-08
-content_hash: a31b508d7c29102d
+content_hash: 3390f08e26388520
 ---
+
 # QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture
 
 **Conference**: ICLR 2026  
@@ -154,11 +159,11 @@ The total loss is $\mathcal{L}_{total} = \mathcal{L}_{local} + \mathcal{L}_{glob
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision](sapiens2.md)
+- [\[ICLR 2026\] Sparkle: A Robust and Versatile Representation for Point Cloud-based Human Motion Capture](sparkle_a_robust_and_versatile_representation_for_point_cloud-based_human_motion.md)
 - [\[CVPR 2025\] StickMotion: Generating 3D Human Motions by Drawing a Stickman](../../CVPR2025/human_understanding/stickmotion_generating_3d_human_motions_by_drawing_a_stickman.md)
 - [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
-- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](../../AAAI2026/human_understanding/kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
 - [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
-- [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](../../AAAI2026/human_understanding/generating_attribute-aware_human_motions_from_textual_prompt.md)
 
 </div>
 

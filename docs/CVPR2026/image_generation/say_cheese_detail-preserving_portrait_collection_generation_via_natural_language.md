@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits
 description: >-
-  [CVPR 2026][Image Generation][IP-Adapter] This paper introduces the new task of "Portrait Collection Generation (PCG)"—generating a set of portraits with consistent identity and details but varying poses, perspectives, and compositions, given a reference portrait and natural language editing instructions. For this purpose, the first large-scale dataset, CHEESE
+  [CVPR 2026][Image Generation][Portrait Generation] This paper introduces the new task of "Portrait Collection Generation (PCG)"—generating a set of portraits with consistent identity and details but varying poses, perspectives, and compositions, given a reference portrait and natural language editing instructions. For this purpose, the first large-scale dataset, CHEESE (~24K collections, 576K triplets, annotated via Large Vision-Language Models + inversion verification)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - IP-Adapter
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Portrait Generation"
+  - "Natural Language Editing"
+  - "IP-Adapter"
+  - "Detail Preservation"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 95b609e0684ee039
+content_hash: a1bc45f2bc954487
 ---
+
 # Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits
 
 **Conference**: CVPR 2026  
@@ -158,10 +162,10 @@ An ablation on "Inversion Verification" shows that verification guides the LVLM 
 ## Related Papers
 
 - [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
-- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
-- [\[CVPR 2026\] Organizing Unstructured Image Collections using Natural Language](organizing_unstructured_image_collections_using_natural_language.md)
 - [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
 - [\[CVPR 2026\] ExpPortrait: Expressive Portrait Generation via Personalized Representation](expportrait_expressive_portrait_generation_via_personalized_representation.md)
+- [\[CVPR 2026\] FG-Portrait: 3D Flow Guided Editable Portrait Animation](fg-portrait_3d_flow_guided_editable_portrait_animation.md)
+- [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
 
 </div>
 

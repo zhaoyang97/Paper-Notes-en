@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance
 description: >-
-  [AAAI 2026][Attention Guidance] This paper proposes ASAG (Adversarial Sinkhorn Attention Guidance), which reinterprets self-attention scores in diffusion models from the perspective of optimal transport theory. By inject…
+  [AAAI 2026][Attention Guidance] This paper proposes ASAG (Adversarial Sinkhorn Attention Guidance), which reinterprets self-attention scores in diffusion models from the perspective of optimal transport theory. By injecting adversarial transport costs into attention layers via the Sinkhorn algorithm to deliberately reduce query-key similarity, ASAG systematically disrupts misleading attention alignment and improves both conditional and unconditional sampling quality. The meth…
 tags:
   - "AAAI 2026"
   - "Attention Guidance"
@@ -11,7 +11,7 @@ tags:
   - "Diffusion Sampling"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 1be9e45c722cd403
+content_hash: 492236bc0d57f7f4
 ---
 
 # ASAG: Toward the Frontiers of Reliable Diffusion Sampling via Adversarial Sinkhorn Attention Guidance
@@ -133,9 +133,9 @@ Comparison with multiple guidance methods on COCO-30K and PartiPrompts (Stable D
 
 - [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](boosting_adversarial_transferability_via_ensemble_non-attention.md)
 - [\[ICLR 2026\] Harpoon: Generalised Manifold Guidance for Conditional Tabular Diffusion](../../ICLR2026/others/harpoon_generalised_manifold_guidance_for_conditional_tabular_diffusion.md)
-- [\[ICLR 2026\] Contractive Diffusion Policies: Robust Action Diffusion via Contractive Score-Based Sampling with Differential Equations](../../ICLR2026/others/contractive_diffusion_policies_robust_action_diffusion_via_contractive_score-bas.md)
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](local_guidance_for_configuration-based_multi-agent_pathfinding.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
+- [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
 
 </div>
 

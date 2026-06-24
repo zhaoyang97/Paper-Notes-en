@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CharaConsist: Fine-Grained Consistent Character Generation
 description: >-
-  [ICCV 2025][Image Generation][Consistent Character Generation] This paper proposes a training-free, fine-grained consistent character generation method that achieves high-quality cross-image character consistency on a Di…
+  [ICCV 2025][Image Generation][Consistent Character Generation] This paper proposes a training-free, fine-grained consistent character generation method that achieves high-quality cross-image character consistency on a DiT architecture (FLUX.1) for the first time, via Point-Tracking Attention, adaptive token merging, and foreground-background decoupled control.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Attention Mechanism"
   - "FLUX.1"
 date: 2026-05-08
-content_hash: 093e677aefc600d9
+content_hash: 0ab422bbfa50ea78
 ---
 
 # CharaConsist: Fine-Grained Consistent Character Generation
@@ -183,10 +183,10 @@ The methodological paradigm of this work — *diagnosing positional encoding bia
 ## Related Papers
 
 - [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
+- [\[ICLR 2026\] CoCoDiff: Correspondence-Consistent Diffusion Model for Fine-grained Style Transfer](../../ICLR2026/image_generation/cocodiff_correspondence-consistent_diffusion_model_for_fine-grained_style_transf.md)
+- [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
+- [\[CVPR 2025\] FineLIP: Extending CLIP's Reach via Fine-Grained Alignment with Longer Text Inputs](../../CVPR2025/image_generation/finelip_extending_clips_reach_via_fine-grained_alignment_with_longer_text_inputs.md)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
-- [\[ICCV 2025\] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning](shortft_diffusion_model_alignment_via_shortcut-based_fine-tuning.md)
-- [\[ICCV 2025\] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing](anchor_token_matching_implicit_structure_locking_for_training-free_ar_image_edit.md)
-- [\[ICCV 2025\] Ouroboros: Single-step Diffusion Models for Cycle-consistent Forward and Inverse Rendering](ouroboros_single-step_diffusion_models_for_cycle-consistent_forward_and_inverse_.md)
 
 </div>
 

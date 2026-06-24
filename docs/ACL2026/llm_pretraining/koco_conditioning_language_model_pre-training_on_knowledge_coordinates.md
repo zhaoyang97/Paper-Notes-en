@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates
 description: >-
-  [ACL 2026][Pretraining][Paper Note] Ours proposes Knowledge Coordinate (KoCo) conditioning for pre-training, which maps each document to a three-dimensional semantic coordinate (Source, Content, Stability). These coordinates are injected into pre-training as text prefixes, providing the model with explicit context-awareness. This approach improves perfor
+  [ACL 2026][LLM Pretraining][Knowledge Coordinates] Ours proposes Knowledge Coordinate (KoCo) conditioning for pre-training, which maps each document to a three-dimensional semantic coordinate (Source, Content, Stability). These coordinates are injected into pre-training as text prefixes, providing the model with explicit context-awareness. This approach improves performance across 10 downstream tasks, accelerates convergence by approximately 30%…
 tags:
-  - ACL 2026
-  - Pretraining
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Knowledge Coordinates"
+  - "Conditional Pre-training"
+  - "Hallucination Mitigation"
+  - "Data Contextualization"
+  - "Pre-training Acceleration"
 date: 2026-05-08
-content_hash: 2647fac5a7b466f6
+content_hash: 72e55783f6aa52b7
 ---
+
 # KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates
 
 **Conference**: ACL 2026  
@@ -135,10 +141,10 @@ Continual pre-training on the MeCo 1.6B checkpoint, evaluated across 10 downstre
 ## Related Papers
 
 - [\[ICML 2025\] Metadata Conditioning Accelerates Language Model Pre-training](../../ICML2025/llm_pretraining/metadata_conditioning_accelerates_language_model_pre-training.md)
+- [\[ICLR 2026\] Pre-training Limited Memory Language Models with Internal and External Knowledge](../../ICLR2026/llm_pretraining/pre-training_limited_memory_language_models_with_internal_and_external_knowledge.md)
 - [\[ACL 2026\] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning](forever_forgetting_curve-inspired_memory_replay_for_language_model_continual_lea.md)
 - [\[ACL 2026\] Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)
-- [\[ACL 2026\] Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)
-- [\[ICML 2026\] FlexRank: Nested Low-Rank Knowledge Decomposition for Adaptive Model Deployment](../../ICML2026/llm_pretraining/flexrank_nested_low-rank_knowledge_decomposition_for_adaptive_model_deployment.md)
+- [\[ICLR 2026\] Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training](../../ICLR2026/llm_pretraining/late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][KV cache eviction] This paper reformulates KV cache eviction as a "layer-wise structural pruning" problem. By leveraging the second-order Taylor approximation from Optimal Brain Damage, it derives closed-form saliency scores for independent value pruning, independent key pruning, and joint key-value pruning units. These serve as plug-and
+  [ICML2026][LLM Efficiency][KV cache eviction] This paper reformulates KV cache eviction as a "layer-wise structural pruning" problem. By leveraging the second-order Taylor approximation from Optimal Brain Damage, it derives closed-form saliency scores for independent value pruning, independent key pruning, and joint key-value pruning units. These serve as plug-and-play "score replacements" for existing attention-only eviction frameworks such as H2O, TOVA, SnapKV, and AdaKV…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - KV cache eviction
-  - Optimal Brain Damage
-  - output-aware saliency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "KV cache eviction"
+  - "Optimal Brain Damage"
+  - "long-context inference"
+  - "second-order Taylor approximation"
+  - "output-aware saliency"
 date: 2026-05-08
-content_hash: a454baab8e3ae6ce
+content_hash: 5293463748d8d33c
 ---
+
 # OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference
 
 **Conference**: ICML2026  
@@ -143,11 +146,11 @@ Settings: LLaMA-3.1-8B-Instruct / Qwen-2.5-7B-Instruct using the KVPress framewo
 
 ## Related Papers
 
+- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](../../ICLR2026/llm_efficiency/defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](../../ICLR2026/llm_efficiency/freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
+- [\[ICML 2026\] RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference](rksc_reasoning-aware_kv_cache_sharing_and_confident_early_exit_for_multi-step_ll.md)
 - [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
-- [\[ICML 2026\] RKSC: Reasoning-Aware KV Cache Sharing and Confident Early Exit for Multi-Step LLM Inference](rksc_reasoning-aware_kv_cache_sharing_and_confident_early_exit_for_multi-step_ll.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](../../ICLR2026/llm_efficiency/lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
-- [\[ACL 2025\] Squeezed Attention: Accelerating Long Context Length LLM Inference](../../ACL2025/llm_efficiency/squeezed_attention_accelerating_long_context_length_llm_inference.md)
 
 </div>
 

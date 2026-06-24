@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] KLASS: KL-Guided Fast Inference in Masked Diffusion Models
 description: >-
-  [NeurIPS 2025][Computational Biology][Masked Diffusion Models] This paper proposes KLASS (KL-Adaptive Stability Sampling), a training-free sampling method that leverages token-level KL divergence and confidence scores to…
+  [NeurIPS 2025 Spotlight][Computational Biology][Masked Diffusion Models] This paper proposes KLASS (KL-Adaptive Stability Sampling), a training-free sampling method that leverages token-level KL divergence and confidence scores to identify stable tokens for parallel decoding, achieving up to 2.78× speedup on masked diffusion models without sacrificing—and in many cases improving—generation quality.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "Masked Diffusion Models"
   - "KL Divergence"
@@ -12,7 +12,7 @@ tags:
   - "Token Stability"
   - "Parallel Decoding"
 date: 2026-05-08
-content_hash: 7c0b4270df323404
+content_hash: e2ad3fb1c6d3dbc9
 ---
 
 # KLASS: KL-Guided Fast Inference in Masked Diffusion Models
@@ -150,9 +150,9 @@ Parallel unmasking of stable tokens outperforms single-token selection strategie
 
 - [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
 - [\[NeurIPS 2025\] SpecMER: Fast Protein Generation with K-mer Guided Speculative Decoding](specmer_fast_protein_generation_with_k-mer_guided_speculative_decoding.md)
-- [\[NeurIPS 2025\] Fractional Diffusion Bridge Models](fractional_diffusion_bridge_models.md)
-- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
-- [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
+- [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](../../ICLR2026/computational_biology/learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
+- [\[ICML 2025\] ExLM: Rethinking the Impact of \[MASK\] Tokens in Masked Language Models](../../ICML2025/computational_biology/exlm_rethinking_the_impact_of_mask_tokens_in_masked_language_models.md)
+- [\[ICLR 2026\] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models](../../ICLR2026/computational_biology/driftlite_lightweight_drift_control_for_inference-time_scaling_of_diffusion_mode.md)
 
 </div>
 

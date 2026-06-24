@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Convex Distance Operator Transport: A Convex and Geometry-Preserving Formulation
 description: >-
-  [ICML 2026][3D Vision][Gromov–Wasserstein] This paper proposes CDOT (Convex Distance Operator Transport). By "operatorizing" the distance matrices and coupling of each metric space and replacing the non-convex squared pairwise distance difference in FGW with $\|D_X T_\pi - T_\pi D_Y\|_{\mathrm{HS}}^2$, it achieves a framework for heterogeneous space alignment t
+  [ICML 2026][3D Vision][Optimal Transport] This paper proposes CDOT (Convex Distance Operator Transport). By "operatorizing" the distance matrices and coupling of each metric space and replacing the non-convex squared pairwise distance difference in FGW with $\|D_X T_\pi - T_\pi D_Y\|_{\mathrm{HS}}^2$, it achieves a framework for heterogeneous space alignment that is **strictly convex with respect to the coupling $\pi$**, while remaining a valid pseudo-metric and possessing fi…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Gromov–Wasserstein
-  - Frank–Wolfe
+  - "ICML 2026"
+  - "3D Vision"
+  - "Optimal Transport"
+  - "Gromov–Wasserstein"
+  - "Distance Operator"
+  - "Convex Optimization"
+  - "Frank–Wolfe"
 date: 2026-05-08
-content_hash: 5a4f56a48565b631
+content_hash: c4e660f4c74ac518
 ---
+
 # Convex Distance Operator Transport: A Convex and Geometry-Preserving Formulation
 
 **Conference**: ICML 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Structure-Aware Graph Hypernetworks for Neural Program Synthesis
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper recasts "program synthesis" as continuous optimization within the weight space of a fixed network architecture and proposes Meta-GNN, a structure-aware graph hypernetwork. By representing the target network as a "neural graph" (weights as edges, biases as nodes) and tying encoding/message/decoding parameters
+  [ICLR 2026][Graph Learning][Neural Program Synthesis] This paper recasts "program synthesis" as continuous optimization within the weight space of a fixed network architecture and proposes Meta-GNN, a structure-aware graph hypernetwork. By representing the target network as a "neural graph" (weights as edges, biases as nodes) and tying encoding/message/decoding parameters within permutation equivalence groups, it collapses redundant supervision caused by neuron permutations.…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Neural Program Synthesis"
+  - "Hypernetworks"
+  - "Neural Graphs"
+  - "Permutation Symmetry"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: 5a0cacba6fb41363
+content_hash: 3e61fb29041520c0
 ---
+
 # Structure-Aware Graph Hypernetworks for Neural Program Synthesis
 
 **Conference**: ICLR 2026  
@@ -123,6 +129,7 @@ The three meta-architectures demonstrate the impact of structural awareness:
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

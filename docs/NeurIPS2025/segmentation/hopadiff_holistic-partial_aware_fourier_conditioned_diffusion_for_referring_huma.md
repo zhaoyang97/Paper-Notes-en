@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios
 description: >-
-  [NeurIPS 2025][Segmentation][Referring Human Action Segmentation] This paper introduces the Referring Human Action Segmentation (RHAS) task—localizing a specific individual in multi-person videos via textual descriptions…
+  [NeurIPS 2025][Segmentation][Referring Human Action Segmentation] This paper introduces the Referring Human Action Segmentation (RHAS) task—localizing a specific individual in multi-person videos via textual descriptions and performing frame-level action segmentation. The authors construct the RHAS133 dataset comprising 133 movies, 137 action categories, and 33 hours of video, and propose HopaDIFF, a holistic-partial aware Fourier-conditioned diffusion framework that substant…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "Fourier Conditioning"
   - "RHAS"
 date: 2026-05-08
-content_hash: 0531897bc79eb466
+content_hash: 68f286f80c1c6028
 ---
 
 # HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios
@@ -150,9 +150,9 @@ Under the cross-movie setting, the advantage is even more pronounced—F1@50 imp
 
 - [\[NeurIPS 2025\] HAODiff: Human-Aware One-Step Diffusion via Dual-Prompt Guidance](haodiff_human-aware_one-step_diffusion_via_dual-prompt_guidance.md)
 - [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](../../ICCV2025/segmentation/uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
+- [\[ECCV 2024\] You Only Learn One Query: Learning Unified Human Query for Single-Stage Multi-Person Multi-Task Human-Centric Perception](../../ECCV2024/segmentation/you_only_learn_one_query_learning_unified_human_query_for_single-stage_multi-per.md)
 - [\[NeurIPS 2025\] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis](fast_foreground-aware_diffusion_with_accelerated_sampling_trajectory_for_segment.md)
 - [\[NeurIPS 2025\] Diffusion-Driven Two-Stage Active Learning for Low-Budget Semantic Segmentation](diffusion-driven_two-stage_active_learning_for_low-budget_semantic_segmentation.md)
-- [\[NeurIPS 2025\] HumanCrafter: Synergizing Generalizable Human Reconstruction and Semantic 3D Segmentation](humancrafter_synergizing_generalizable_human_reconstruction_and_semantic_3d_segm.md)
 
 </div>
 

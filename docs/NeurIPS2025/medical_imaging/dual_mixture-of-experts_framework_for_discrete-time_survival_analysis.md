@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis
 description: >-
-  [NeurIPS 2025 (TS4H Workshop)][Medical Imaging][Survival Analysis] This paper proposes a Dual Mixture-of-Experts (Dual MoE) framework for discrete-time survival analysis…
+  [NeurIPS 2025 (TS4H Workshop)][Medical Imaging][Survival Analysis] This paper proposes a Dual Mixture-of-Experts (Dual MoE) framework for discrete-time survival analysis, combining a feature encoder MoE (for modeling patient subgroup heterogeneity) with a hazard network MoE (for capturing temporal dynamics). The framework achieves improvements of up to 0.04 in time-dependent C-index on the METABRIC and GBSG breast cancer datasets.
 tags:
   - "NeurIPS 2025 (TS4H Workshop)"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Patient Heterogeneity"
   - "Breast Cancer"
 date: 2026-05-08
-content_hash: d1712ecbcdaeb657
+content_hash: 182dd1043835670b
 ---
 
 # Dual Mixture-of-Experts Framework for Discrete-Time Survival Analysis
@@ -135,11 +135,11 @@ The inputs consist of patient covariates $x_i$, observed time $\tau_i$, and even
 
 ## Related Papers
 
+- [\[ICML 2025\] I2MoE: Interpretable Multimodal Interaction-aware Mixture-of-Experts](../../ICML2025/medical_imaging/i2moe_interpretable_multimodal_interaction-aware_mixture-of-experts.md)
 - [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
+- [\[CVPR 2026\] MDCS-MoAME: Multi-directional Composite Scanning with Mixture of Attention and Mamba Experts for Cancer Survival Prediction](../../CVPR2026/medical_imaging/mdcs-moame_multi-directional_composite_scanning_with_mixture_of_attention_and_ma.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[ICML 2026\] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts](../../ICML2026/medical_imaging/eeg-based_multimodal_learning_via_hyperbolic_mixture-of-curvature_experts.md)
-- [\[AAAI 2026\] SEMC: Structure-Enhanced Mixture-of-Experts Contrastive Learning for Ultrasound Standard Plane Recognition](../../AAAI2026/medical_imaging/semc_structure-enhanced_mixture-of-experts_contrastive_learning_for_ultrasound_s.md)
-- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
+- [\[CVPR 2025\] DFLMoE: Decentralized Federated Learning via Mixture of Experts for Medical Data](../../CVPR2025/medical_imaging/dflmoe_decentralized_federated_learning_via_mixture_of_experts_for_medical_data_.md)
 
 </div>
 

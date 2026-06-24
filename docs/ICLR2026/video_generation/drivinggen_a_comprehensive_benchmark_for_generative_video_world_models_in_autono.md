@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving
 description: >-
-  [ICLR 2026][Video Generation][benchmark] DrivingGen introduces the first comprehensive benchmark for autonomous driving video world models. It features a diverse evaluation dataset across various weather, geographies, times, and complex scenarios, along with a four-dimensional evaluation system (Distribution, Quality, Temporal Consistency, and Trajectory Alig
+  [ICLR 2026][Video Generation][Video World Models] DrivingGen introduces the first comprehensive benchmark for autonomous driving video world models. It features a diverse evaluation dataset across various weather, geographies, times, and complex scenarios, along with a four-dimensional evaluation system (Distribution, Quality, Temporal Consistency, and Trajectory Alignment). Benchmarking 14 SOTA models reveals the core trade-offs between general-purpose and driving-specialize…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - benchmark
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video World Models"
+  - "Benchmark"
+  - "Driving Scene Generation"
+  - "Trajectory Evaluation"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: a897bf79222fd781
+content_hash: 2cc7f1550a6f1dff
 ---
+
 # DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving
 
 **Conference**: ICLR 2026  
@@ -137,8 +142,8 @@ Ranking of 14 models on the open-domain track (by average rank):
 
 - [\[ICLR 2026\] ConsisDrive: Identity-Preserving Driving World Models for Video Generation by Instance Mask](consisdrive_identity-preserving_driving_world_models_for_video_generation_by_ins.md)
 - [\[ICML 2026\] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation](../../ICML2026/video_generation/v2v-bench_a_comprehensive_benchmark_for_video-to-video_generation_evaluation.md)
+- [\[ICLR 2026\] $PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models](phyworldbench_a_comprehensive_evaluation_of_physical_realism_in_text-to-video_mo.md)
 - [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](../../CVPR2026/video_generation/vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
-- [\[ICLR 2026\] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation](narrlv_towards_a_comprehensive_narrative-centric_evaluation_for_long_video_gener.md)
 - [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
 
 </div>

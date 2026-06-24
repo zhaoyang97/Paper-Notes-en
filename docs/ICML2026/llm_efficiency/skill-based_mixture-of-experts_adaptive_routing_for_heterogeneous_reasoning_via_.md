@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] SKILL-MOE proposes a training-free symbolic MoE framework that uses "skills" as routing signals. It extracts required skills for each problem, dynamically recruits $k$ experts from 16 pre-trained LLMs based on skill-model profiles, and fuses multiple CoT responses via a task-level optimal aggregator. Combined with expe
+  [ICML2026][LLM Efficiency][Symbolic MoE] SKILL-MOE proposes a training-free symbolic MoE framework that uses "skills" as routing signals. It extracts required skills for each problem, dynamically recruits $k$ experts from 16 pre-trained LLMs based on skill-model profiles, and fuses multiple CoT responses via a task-level optimal aggregator. Combined with expert-batched inference, it runs 16 7-8B models on a single GPU, outperforming the strongest multi-agent baseline by 8.15%…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Symbolic MoE"
+  - "Skill Routing"
+  - "Instance-level Expert Selection"
+  - "Aggregator Selection"
+  - "Batch Inference"
 date: 2026-05-08
-content_hash: 1b0bea7acb457400
+content_hash: b5ac5a38ebddf9c9
 ---
+
 # Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills
 
 **Conference**: ICML2026  
@@ -140,14 +146,17 @@ SKILL-MOE demonstrates robustness across datasets. Its average score exceeds Qwe
 
 <div class="related-papers" markdown="1">
 
-- **MoA**: Mixture-of-Agents Enhances Large Language Model Capabilities (Wang et al., 2024)
-- **ReConcile**: Comparative Reasoning for Better Multi-Agent Collaboration (Chen et al., 2024)
-- **Self-MoA**: Self-guided Mixture-of-Agents (Li et al., 2025)
+## Related Papers
+
+- [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
+- [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
+- [\[ICLR 2026\] MoL: Adaptive Mixture-of-Length Reasoning for Efficient Question Answering with Context](../../ICLR2026/llm_efficiency/mol_adaptive_mixture-of-length_reasoning_for_efficient_question_answering_with_c.md)
+- [\[ICLR 2026\] Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs](../../ICLR2026/llm_efficiency/routing_manifold_alignment_improves_generalization_of_mixture-of-experts_llms.md)
+- [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)

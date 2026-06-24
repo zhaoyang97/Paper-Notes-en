@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces
 description: >-
-  [ICLR 2026][Others][Quality Diversity] Ours proposes Discount Model Search (DMS), which utilizes neural networks to fit continuous smooth discount functions instead of the histogram-based discrete representations in CMA-MAE. This addresses the search stagnation caused by distortion in high-dimensional measure spaces and introduces the QDDM paradigm for defi
+  [ICLR2026 Oral][Quality Diversity] Ours proposes Discount Model Search (DMS), which utilizes neural networks to fit continuous smooth discount functions instead of the histogram-based discrete representations in CMA-MAE. This addresses the search stagnation caused by distortion in high-dimensional measure spaces and introduces the QDDM paradigm for defining measure spaces directly via image datasets.
 tags:
-  - ICLR 2026
-  - Others
-  - Quality Diversity
-  - MAP-Elites
-  - CMA-MAE
-  - Discount Model
-  - High-Dimensional Measure Space
+  - "ICLR2026 Oral"
+  - "Quality Diversity"
+  - "MAP-Elites"
+  - "CMA-MAE"
+  - "Discount Model"
+  - "High-Dimensional Measure Space"
 date: 2026-05-08
-content_hash: ec2357d2355d2202
+content_hash: 8faca51f2b718aa8
 ---
+
 # Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces
 
 **Conference**: ICLR2026 Oral  

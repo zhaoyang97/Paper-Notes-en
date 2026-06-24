@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ChainMPQ: Interleaved Text-Image Reasoning Chains for Mitigating Relation Hallucinations
 description: >-
-  [ICLR 2026][Hallucination Detection][LVLM] ChainMPQ is a training-free reasoning framework that decomposes "Subject-Relation-Object" questions into five complementary sub-questions. These are fed sequentially to Large Vision-Language Models (LVLMs), passing textual answers and visual attention memory to subsequent steps to form an interleaved text-image reasoni
+  [ICLR2026][Hallucination Detection][Relation Hallucination] ChainMPQ is a training-free reasoning framework that decomposes "Subject-Relation-Object" questions into five complementary sub-questions. These are fed sequentially to Large Vision-Language Models (LVLMs), passing textual answers and visual attention memory to subsequent steps to form an interleaved text-image reasoning chain, consistently reducing relation hallucinations across multiple LVLMs and benchmarks.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - LVLM
+  - "ICLR2026"
+  - "Hallucination Detection"
+  - "Relation Hallucination"
+  - "LVLM"
+  - "Interleaved Text-Image Reasoning Chains"
+  - "Multi-perspective Problems"
+  - "Attention Enhancement"
 date: 2026-05-08
-content_hash: f12c5e2db2da5f90
+content_hash: 7d198c05b841b95e
 ---
+
 # ChainMPQ: Interleaved Text-Image Reasoning Chains for Mitigating Relation Hallucinations
 
 **Conference**: ICLR2026  

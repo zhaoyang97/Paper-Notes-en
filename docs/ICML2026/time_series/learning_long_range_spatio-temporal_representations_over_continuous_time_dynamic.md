@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models
 description: >-
-  [ICML 2026][Time Series][State Space Model] CTDG-SSM introduces a **Topology-aware HiPPO projection** and State Space Models to simultaneously capture multi-hop Long-Range Spatial (LRS) and Long-Range Temporal (LRT) dependencies in dynamic graphs. It outperforms Prev. SOTA in link prediction and node classification while using only 1/10 of the parameters of comp
+  [ICML 2026][Time Series][Continuous-Time Dynamic Graphs (CTDG)] CTDG-SSM introduces a **Topology-aware HiPPO projection** and State Space Models to simultaneously capture multi-hop Long-Range Spatial (LRS) and Long-Range Temporal (LRT) dependencies in dynamic graphs. It outperforms Prev. SOTA in link prediction and node classification while using only 1/10 of the parameters of competing methods.
 tags:
-  - ICML 2026
-  - Time Series
-  - State Space Model
+  - "ICML 2026"
+  - "Time Series"
+  - "Continuous-Time Dynamic Graphs (CTDG)"
+  - "State Space Models (SSM)"
+  - "Long-Range Dependency"
+  - "Spatio-Temporal Representation Learning"
 date: 2026-05-08
-content_hash: 7b2fabc8b880f3ef
+content_hash: a539f02e6c3bf072
 ---
+
 # Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models
 
 **Conference**: ICML 2026  
@@ -125,15 +129,16 @@ CTDG-SSM leads significantly on LRT benchmarks (LastFM, MOOC, Enron), with a 9.4
 - Value: ⭐⭐⭐⭐⭐ Solves important CTDG modeling problems; parameter efficiency is valuable for deployment, and the theory is highly transferable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
 - [\[ICML 2026\] HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models](hippo_zoo_explicit_memory_mechanisms_for_interpretable_state_space_models.md)
+- [\[ICLR 2026\] Learning Linear State-Space Models with Sparse System Matrices](../../ICLR2026/time_series/learning_linear_state-space_models_with_sparse_system_matrices.md)
 - [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](nested_spatio-temporal_time_series_forecasting.md)
-- [\[NeurIPS 2025\] WaLRUS: Wavelets for Long-range Representation Using SSMs](../../NeurIPS2025/time_series/walrus_wavelets_for_long-range_representation_using_ssms.md)
-- [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](../../NeurIPS2025/time_series/structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
+- [\[ICLR 2026\] ConvT3: Structured State Kernels for Convolutional State Space Models](../../ICLR2026/time_series/convt3_structured_state_kernels_for_convolutional_state_space_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference
 description: >-
-  [CVPR 2026][Model Compression][Diffusion Language Model] ReMix inserts an iteratively refreshed "continuous mixed state" between the discrete "mask state $\rightarrow$ token state" transitions in Diffusion Language Models (DLLMs). This allows multiple positions in parallel decoding to coordinate in continuous space before finalizing tokens. By applying a rejection rule to re
+  [CVPR 2026][LLM Efficiency][Diffusion Language Models] ReMix inserts an iteratively refreshed "continuous mixed state" between the discrete "mask state $\rightarrow$ token state" transitions in Diffusion Language Models (DLLMs). This allows multiple positions in parallel decoding to coordinate in continuous space before finalizing tokens. By applying a rejection rule to reset unstable positions to masks, the method achieves a 2–8$\times$ inference speedup without training or…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Diffusion Language Model
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Parallel Decoding"
+  - "Combinatorial Contradiction"
+  - "Continuous Intermediate States"
+  - "Training-free Acceleration"
 date: 2026-05-08
-content_hash: 716138d0ac537dd1
+content_hash: 72647c417cf99887
 ---
+
 # Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ Ours is a pure inference-time method with no training. It is evaluated directly 
 - Value: ⭐⭐⭐⭐⭐ Training-free, plug-and-play 2–8$\times$ speedup with quality gains is highly practical for DLLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] ES-dLLM: Efficient Inference for Diffusion Large Language Models by Early-Skipping](../../ICLR2026/model_compression/es-dllm_efficient_inference_for_diffusion_large_language_models_by_early-skippin.md)
-- [\[CVPR 2026\] LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction](lidere_a_lightweight_readout_for_fast_and_data-efficient_dense_prediction.md)
-- [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
-- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
-- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](sg-lora_semantic-guided_lora_parameters_generation.md)
+- [\[ICLR 2026\] Fast-dLLM v2: Efficient Block-Diffusion LLM](../../ICLR2026/llm_efficiency/fast-dllm_v2_efficient_block-diffusion_llm.md)
+- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](../../ICLR2026/llm_efficiency/fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+- [\[ICLR 2026\] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling](../../ICLR2026/llm_efficiency/semantic_parallelism_redefining_efficient_moe_inference_via_model-data_co-schedu.md)
+- [\[ICLR 2026\] Dynamic-dLLM: Dynamic Cache-Budget and Adaptive Parallel Decoding for Training-Free Acceleration of Diffusion LLM](../../ICLR2026/llm_efficiency/dynamic-dllm_dynamic_cache-budget_and_adaptive_parallel_decoding_for_training-fr.md)
 
 </div>
 

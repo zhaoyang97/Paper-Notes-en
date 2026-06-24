@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Swift-SVD: Theoretical Optimality Meets Practical Efficiency in Low-Rank LLM Compression
 description: >-
-  [ICML 2026][Model Compression][KV cache] Addressing the dilemma where existing SVD low-rank compression either yields suboptimal reconstruction errors or achieves optimality at the cost of slow and numerically unstable Cholesky + multiple SVD operations, this paper proves a closed-form spectral solution theorem—optimal activation-aware compression is achieved
+  [ICML 2026][Model Compression][SVD Compression] Addressing the dilemma where existing SVD low-rank compression either yields suboptimal reconstruction errors or achieves optimality at the cost of slow and numerically unstable Cholesky + multiple SVD operations, this paper proves a closed-form spectral solution theorem—optimal activation-aware compression is achieved by a single eigen-decomposition of $Y=XW$. Combined with incremental covariance aggregation and dynamic rank al…
 tags:
-  - ICML 2026
-  - Model Compression
-  - KV cache
+  - "ICML 2026"
+  - "Model Compression"
+  - "SVD Compression"
+  - "Activation-aware"
+  - "Closed-form Spectral Solution"
+  - "KV cache"
+  - "Dynamic Rank Allocation"
 date: 2026-05-08
-content_hash: 6022601f1a1fb2ff
+content_hash: ae33f88869dcd759
 ---
+
 # Swift-SVD: Theoretical Optimality Meets Practical Efficiency in Low-Rank LLM Compression
 
 **Conference**: ICML 2026  
@@ -137,11 +142,11 @@ The LLaMA-7B uncompressed baseline yields WikiText-2 PPL 5.68, C4 PPL 7.34, and 
 
 ## Related Papers
 
-- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](../../CVPR2026/model_compression/what_matters_in_practical_learned_image_compression.md)
-- [\[CVPR 2025\] Towards Practical Real-Time Neural Video Compression](../../CVPR2025/model_compression/towards_practical_real-time_neural_video_compression.md)
-- [\[AAAI 2026\] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](../../AAAI2026/model_compression/skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)
-- [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
+- [\[ICLR 2026\] SAES-SVD: Self-Adaptive Suppression of Accumulated and Local Errors for SVD-based LLM Compression](../../ICLR2026/model_compression/saes-svd_self-adaptive_suppression_of_accumulated_and_local_errors_for_svd-based.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
+- [\[ICML 2026\] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression](projq_project-and-quantize_for_adapter-aware_llm_compression.md)
+- [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](../../CVPR2026/model_compression/what_matters_in_practical_learned_image_compression.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] WikiCLIP revives the contrastive learning paradigm for open-domain Visual Entity Recognition (VER), which has recently been overshadowed by generative methods. It utilizes an LLM to encode Wikipedia text as knowledge representations and employs visual features at the patch level to filter out irrelevant text, resulting
+  [CVPR 2026][Multimodal VLM][Visual Entity Recognition] WikiCLIP revives the contrastive learning paradigm for open-domain Visual Entity Recognition (VER), which has recently been overshadowed by generative methods. It utilizes an LLM to encode Wikipedia text as knowledge representations and employs visual features at the patch level to filter out irrelevant text, resulting in "knowledge-aware entity vectors." Combined with synthetic hard negatives…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Entity Recognition"
+  - "Contrastive Learning"
+  - "CLIP"
+  - "LLM Knowledge Representation"
+  - "Hard Negatives"
 date: 2026-05-08
-content_hash: b43e1e5f40ca1220
+content_hash: 7478cf837417c81e
 ---
+
 # WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition
 
 **Conference**: CVPR 2026  
@@ -160,11 +165,11 @@ WikiCLIP achieves SOTA on INFOSEEK **without fine-tuning on its training set** (
 
 ## Related Papers
 
+- [\[ECCV 2024\] Grounding Language Models for Visual Entity Recognition](../../ECCV2024/multimodal_vlm/grounding_language_models_for_visual_entity_recognition.md)
 - [\[CVPR 2026\] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation](guiding_diffusion-based_reconstruction_with_contrastive_signals_for_balanced_vis.md)
-- [\[CVPR 2026\] Attention-space Contrastive Guidance for Efficient Hallucination Mitigation in LVLMs](attention-space_contrastive_guidance_for_efficient_hallucination_mitigation_in_l.md)
-- [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
 - [\[CVPR 2026\] DialogueVPR: Towards Conversational Visual Place Recognition](dialoguevpr_towards_conversational_visual_place_recognition.md)
-- [\[ACL 2026\] E2E-GMNER: End-to-End Generative Grounded Multimodal Named Entity Recognition](../../ACL2026/multimodal_vlm/e2e-gmner_end-to-end_generative_grounded_multimodal_named_entity_recognition.md)
+- [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
+- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
 
 </div>
 

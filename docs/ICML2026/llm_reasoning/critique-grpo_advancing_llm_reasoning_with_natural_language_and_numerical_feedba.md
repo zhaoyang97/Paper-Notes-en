@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] The authors first identify three critical flaws in "pure numerical reward RL" (performance plateaus, ineffective spontaneous reflection, and stubborn failures), then integrate **natural language critique** into online RL. The model learns both the initial response and "self-refinement based on critique." A shaping func
+  [ICML2026][Reasoning][Reinforcement Learning] The authors first identify three critical flaws in "pure numerical reward RL" (performance plateaus, ineffective spontaneous reflection, and stubborn failures), then integrate **natural language critique** into online RL. The model learns both the initial response and "self-refinement based on critique." A shaping function is used to bias towards "correct but unfamiliar" refinements while suppressing incorrect ones…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICML2026"
+  - "Reasoning"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Natural Language Feedback"
+  - "Self-refinement"
 date: 2026-05-08
-content_hash: 9f34fede2eef2616
+content_hash: 2fd16e91f680b608
 ---
+
 # Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback
 
 **Conference**: ICML2026  
@@ -139,9 +142,9 @@ Key takeaway: The CoT critique version reaches 47.08 Avg, which is **+4.42** hig
 
 - [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
 - [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](the_role_of_feedback_alignment_in_self-distillation.md)
+- [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](../../ICLR2026/llm_reasoning/scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
 - [\[ICML 2026\] GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)
-- [\[AAAI 2026\] In-Token Rationality Optimization: Towards Accurate and Concise LLM Reasoning via Self-Feedback](../../AAAI2026/llm_reasoning/in-token_rationality_optimization_towards_accurate_and_concise_llm_reasoning_via.md)
-- [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](../../ACL2026/llm_reasoning/discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
+- [\[ICLR 2026\] A Stitch in Time Saves Nine: Proactive Self-Refinement for Language Models](../../ICLR2026/llm_reasoning/a_stitch_in_time_saves_nine_proactive_self-refinement_for_language_models.md)
 
 </div>
 

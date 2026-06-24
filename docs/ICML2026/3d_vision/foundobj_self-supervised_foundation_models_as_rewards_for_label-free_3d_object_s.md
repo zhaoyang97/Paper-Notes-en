@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation
 description: >-
-  [ICML 2026][3D Vision][DINOv2] This paper proposes FoundObj, which utilizes 2D/3D self-supervised foundation models (DINOv2 + TRELLIS) as rewarders. By employing a "superpoint merging + PPO" RL agent, it achieves multi-class 3D object segmentation in complex indoor scenes without any scene-level human annotations, improving the unsupervised SOTA AP
+  [ICML 2026][3D Vision][Label-free 3D segmentation] This paper proposes FoundObj, which utilizes 2D/3D self-supervised foundation models (DINOv2 + TRELLIS) as rewarders. By employing a "superpoint merging + PPO" RL agent, it achieves multi-class 3D object segmentation in complex indoor scenes without any scene-level human annotations, improving the unsupervised SOTA AP from 19.6 to 24.2 on ScanNet/S3DIS/ScanNet200.
 tags:
-  - ICML 2026
-  - 3D Vision
-  - DINOv2
-  - TRELLIS
+  - "ICML 2026"
+  - "3D Vision"
+  - "Label-free 3D segmentation"
+  - "superpoint merging"
+  - "RL reward"
+  - "DINOv2"
+  - "TRELLIS"
 date: 2026-05-08
-content_hash: 72d4a6a7bb50cc79
+content_hash: 54d08c8e5eb41313
 ---
+
 # FoundObj: Self-supervised Foundation Models as Rewards for Label-free 3D Object Segmentation
 
 **Conference**: ICML 2026  

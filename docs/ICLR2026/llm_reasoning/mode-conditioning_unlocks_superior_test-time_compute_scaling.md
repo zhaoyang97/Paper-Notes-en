@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Mode-conditioning unlocks superior test-time compute scaling
 description: >-
-  [ICLR 2026][LLM Reasoning][Pass@k] Addressing the "diversity collapse" problem in parallel sampling—where models collapse into a single reasoning strategy and repeatedly commit the same errors—this paper proposes the **Mode-conditioning (ModC)** framework. By using expert models or mode prefixes to explicitly distribute test-time compute across differen
+  [ICLR 2026][Reasoning][Parallel Sampling] Addressing the "diversity collapse" problem in parallel sampling—where models collapse into a single reasoning strategy and repeatedly commit the same errors—this paper proposes the **Mode-conditioning (ModC)** framework. By using expert models or mode prefixes to explicitly distribute test-time compute across different reasoning modes, the framework lifts the Pass@k scaling curves in mathematical reasoning and graph search tasks…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Pass@k
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Parallel Sampling"
+  - "Diversity Collapse"
+  - "Pass@k"
+  - "Mode-conditioning"
+  - "Test-time Scaling"
+  - "Distillation"
 date: 2026-05-08
-content_hash: aebedd66c2255275
+content_hash: 1e511642f440d27d
 ---
+
 # Mode-conditioning unlocks superior test-time compute scaling
 
 **Conference**: ICLR 2026  
@@ -113,10 +119,10 @@ flowchart TD
 ## Related Papers
 
 - [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
-- [\[ICLR 2026\] Zero-Overhead Introspection for Adaptive Test-Time Compute](zero-overhead_introspection_for_adaptive_test-time_compute.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
+- [\[ICLR 2026\] e3: Learning to Explore Enables Extrapolation of Test-Time Compute for LLMs](e3_learning_to_explore_enables_extrapolation_of_test-time_compute_for_llms.md)
+- [\[ICLR 2026\] ATTS: Asynchronous Test-Time Scaling via Conformal Prediction](atts_asynchronous_test-time_scaling_via_conformal_prediction.md)
 
 </div>
 

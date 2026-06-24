@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Drugging the Undruggable: Benchmarking and Modeling Fragment-Based Screening
 description: >-
-  [ICLR 2026][Computational Biology][FBDD] To address the failure of traditional molecular screening on "undruggable" proteins (shallow, transient, or cryptic pockets), this paper constructs FragBench, the first fragment-level virtual screening benchmark (comprising 54 challenging targets annotated via multi-agent LLM and human collaboration). It proposes FragC
+  [ICLR2026][Computational Biology][Undruggable Targets] To address the failure of traditional molecular screening on "undruggable" proteins (shallow, transient, or cryptic pockets), this paper constructs FragBench, the first fragment-level virtual screening benchmark (comprising 54 challenging targets annotated via multi-agent LLM and human collaboration). It proposes FragCLIP, a tri-modal contrastive learning framework that jointly encodes pockets, full molecules…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - FBDD
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Undruggable Targets"
+  - "Fragment Screening"
+  - "Tri-modal Contrastive Learning"
+  - "Virtual Screening"
+  - "FBDD"
 date: 2026-05-08
-content_hash: c8b864d38202857d
+content_hash: 6541eb4346de5e4c
 ---
+
 # Drugging the Undruggable: Benchmarking and Modeling Fragment-Based Screening
 
 **Conference**: ICLR2026  
@@ -132,6 +137,7 @@ Fragment signals can recover misranked molecules. On the DUD-E molecule-level sc
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses the high-value challenge of the 85% undruggable proteome.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

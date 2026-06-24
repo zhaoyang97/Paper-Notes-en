@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] DABO treats "optimization difficulty" as a first-class conditional variable throughout the entire freeze-thaw hyperparameter optimization (HPO) pipeline. By utilizing a three-level difficulty characterization and a conditional diffusion model to generate 1 million synthetic learning curves with difficulty labels, it tr
+  [CVPR 2026][Optimization][Hyperparameter Optimization] DABO treats "optimization difficulty" as a first-class conditional variable throughout the entire freeze-thaw hyperparameter optimization (HPO) pipeline. By utilizing a three-level difficulty characterization and a conditional diffusion model to generate 1 million synthetic learning curves with difficulty labels, it trains a difficulty-aware PFN proxy and an adaptive acquisition function. DABO achieves an average regret r…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Hyperparameter Optimization"
+  - "Freeze-Thaw Bayesian Optimization"
+  - "Difficulty-Aware"
+  - "Conditional Diffusion Models"
+  - "PFN Proxy Models"
 date: 2026-05-08
-content_hash: 99fd990aade3e52d
+content_hash: 47e8a3ac7f7bdd50
 ---
+
 # DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors
 
 **Conference**: CVPR 2026  
@@ -140,16 +146,16 @@ On LCBench, the contributions of Diff (Diffusion), DA (DA-PFN), and Acq (Acquisi
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay](../../ICLR2026/optimization/incorporating_expert_priors_into_bayesian_optimization_via_dynamic_mean_decay.md)
 - [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
-- [\[CVPR 2026\] Learning to Learn Weight Generation via Local Consistency Diffusion](learning_to_learn_weight_generation_via_local_consistency_diffusion.md)
+- [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](../../ICLR2026/optimization/symmetry-aware_bayesian_optimization_via_max_kernels.md)
+- [\[ICLR 2026\] Diffusion-DFL: Decision-focused Diffusion Models for Stochastic Optimization](../../ICLR2026/optimization/diffusion-dfl_decision-focused_diffusion_models_for_stochastic_optimization.md)
 - [\[ICLR 2026\] Celo2: Towards Learned Optimization Free Lunch](../../ICLR2026/optimization/celo2_towards_learned_optimization_free_lunch.md)
-- [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](../../ICML2026/optimization/multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
-- [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Demystifying The Mechanisms Behind Emergent Exploration in Goal-Conditioned RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper uses a cognitive science-inspired "Rational Analysis + Intervention + Minimal Modeling" triplet to deconstruct why reward-free Single-Goal Contrastive RL (SGCRL) exhibits spontaneous exploration. The conclusion is that the actor maximizes an implicit reward shaped by the critic's representation (state-goal $
+  [ICLR2026][Reinforcement Learning][Goal-Conditioned RL] This paper uses a cognitive science-inspired "Rational Analysis + Intervention + Minimal Modeling" triplet to deconstruct why reward-free Single-Goal Contrastive RL (SGCRL) exhibits spontaneous exploration. The conclusion is that the actor maximizes an implicit reward shaped by the critic's representation (state-goal $\psi$-similarity), and this exploration-exploitation dynamic emerges from **low-rank representations** l…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Goal-Conditioned RL"
+  - "Emergent Exploration"
+  - "Contrastive Learning"
+  - "Implicit Reward"
+  - "Low-rank Representation"
 date: 2026-05-08
-content_hash: dbb81d0989589e4c
+content_hash: f61d52f40e91fdd0
 ---
+
 # Demystifying The Mechanisms Behind Emergent Exploration in Goal-Conditioned RL
 
 **Conference**: ICLR2026  
@@ -130,11 +136,11 @@ The final step is causal attribution. Since Theorem 2 does not require networks,
 
 ## Related Papers
 
+- [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
 - [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
-- [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
-- [\[ICLR 2026\] Safe Exploration via Policy Priors](safe_exploration_via_policy_priors.md)
-- [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
-- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
+- [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
+- [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
+- [\[ICLR 2026\] Dual Goal Representations](dual_goal_representations.md)
 
 </div>
 

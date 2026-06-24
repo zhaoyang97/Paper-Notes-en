@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inheriting Generalizable Knowledge from LLMs to Diverse Vertical Tasks
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes MASA (Matrix-level Alignment and Scalable Adaptation), which uses a set of minimal "gene matrices" to align with the FFN weights of LLMs to extract generalizable knowledge (via output and spectral alignment). These matrices are then reshaped to arbitrary dimensions using SVD-based adaptive scaling t
+  [ICLR 2026][Model Compression][Knowledge Inheritance] This paper proposes MASA (Matrix-level Alignment and Scalable Adaptation), which uses a set of minimal "gene matrices" to align with the FFN weights of LLMs to extract generalizable knowledge (via output and spectral alignment). These matrices are then reshaped to arbitrary dimensions using SVD-based adaptive scaling to initialize the FFN layers of lightweight models. This allows an 877M small model to achieve over 85% of…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Inheritance"
+  - "Gene Matrix"
+  - "Spectral Alignment"
+  - "Adaptive Scaling"
+  - "Lightweight Model Initialization"
 date: 2026-05-08
-content_hash: ba5ca9e226ef5997
+content_hash: 88120dfcc25b75f4
 ---
+
 # Inheriting Generalizable Knowledge from LLMs to Diverse Vertical Tasks
 
 **Conference**: ICLR 2026  
@@ -134,15 +140,15 @@ Effect of alignment matrix ratio $M/W$: Performance peaks at a 23% ratio (46.91 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 - [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
+- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with $\alpha$-mixture Assistant Distribution](amid_knowledge_distillation_for_llms_with_alpha-mixture_assistant_distribution.md)
 - [\[ACL 2026\] MeepleLM: A Virtual Playtester Simulating Diverse Subjective Experiences](../../ACL2026/model_compression/meeplelm_a_virtual_playtester_simulating_diverse_subjective_experiences.md)
 - [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
-- [\[ICLR 2026\] Draft-based Approximate Inference for LLMs](draft-based_approximate_inference_for_llms.md)
 
 </div>
 

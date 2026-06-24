@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Data Leakage Detection and De-duplication in Large Scale Geospatial Image Datasets
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] This paper performs a quality audit on three commonly used remote sensing datasets for building footprint extraction using perceptual hashing. It discovers that the AICrowd Mapping Challenge dataset suffers from severe duplication (approx. 89% of training images are exact/augmented duplicates) and cross-split leakage (
+  [CVPR2026][Remote Sensing][Perceptual Hashing] This paper performs a quality audit on three commonly used remote sensing datasets for building footprint extraction using perceptual hashing. It discovers that the AICrowd Mapping Challenge dataset suffers from severe duplication (approx. 89% of training images are exact/augmented duplicates) and cross-split leakage (approx. 93% of validation images appear in the training set). The authors provide a lightweight…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR2026"
+  - "Remote Sensing"
+  - "Perceptual Hashing"
+  - "Data Leakage"
+  - "De-duplication"
+  - "Building Footprint Extraction"
+  - "Dataset Auditing"
 date: 2026-05-08
-content_hash: 80a91da1ce5b86b4
+content_hash: 5828a0d80e88aa1f
 ---
+
 # Data Leakage Detection and De-duplication in Large Scale Geospatial Image Datasets
 
 **Conference**: CVPR2026  
@@ -139,8 +145,8 @@ Both hashing methods yield highly consistent contamination levels. AHash is slig
 - [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](geosane_learning_geospatial_representations_from_models_not_data.md)
 - [\[CVPR 2026\] UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)
 - [\[CVPR 2026\] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments](olbedo_an_albedo_and_shading_aerial_dataset_for_large-scale_outdoor_environments.md)
+- [\[ICLR 2026\] MoRA: Mobility as the Backbone for Geospatial Representation Learning at Scale](../../ICLR2026/remote_sensing/mora_mobility_as_the_backbone_for_geospatial_representation_learning_at_scale.md)
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
-- [\[ICCV 2025\] CityNav: A Large-Scale Dataset for Real-World Aerial Navigation](../../ICCV2025/remote_sensing/citynav_a_large-scale_dataset_for_real-world_aerial_navigation.md)
 
 </div>
 

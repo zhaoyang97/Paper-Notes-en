@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] GaussianPile is proposed to extend 3D Gaussian Splatting from surface appearance modeling to slice-based volumetric reconstruction by introducing a focus-aware physical imaging model (Focus Gaussian). It achieves high-quality volumetric compression and reconstruction on ultrasound and light-sheet microscopy data, perfo
+  [CVPR 2026][Medical Imaging][3D Gaussian Splatting] GaussianPile is proposed to extend 3D Gaussian Splatting from surface appearance modeling to slice-based volumetric reconstruction by introducing a focus-aware physical imaging model (Focus Gaussian). It achieves high-quality volumetric compression and reconstruction on ultrasound and light-sheet microscopy data, performing $11\times$ faster than NeRF-based methods and achieving $16\times$ compression compared to voxel grids…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "3D Gaussian Splatting"
+  - "Volume Compression"
+  - "Slice Imaging"
+  - "Focus-aware Model"
+  - "Real-time Rendering"
 date: 2026-05-08
-content_hash: e2298f07eafb0b69
+content_hash: 46a9d1fe5072741e
 ---
+
 # GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction
 
 **Conference**: CVPR 2026  
@@ -132,9 +138,9 @@ The loss function is $\mathcal{L} = \mathcal{L}_1 + \lambda \mathcal{L}_{\text{D
 
 - [\[CVPR 2026\] Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance](adaptive_anisotropic_gaussian_splatting_for_multi-contrast_mri_arbitrary-scale_s.md)
 - [\[CVPR 2026\] EchoPOSE: 6D Pose Estimation of Sparse Echocardiograms for Left-Ventricular 3D Shape Reconstruction](echopose_6d_pose_estimation_of_sparse_echocardiograms_for_left-ventricular_3d_sh.md)
-- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
-- [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
+- [\[ICLR 2026\] MedGMAE: Gaussian Masked Autoencoders for Medical Volumetric Representation Learning](../../ICLR2026/medical_imaging/medgmae_gaussian_masked_autoencoders_for_medical_volumetric_representation_learn.md)
 - [\[ECCV 2024\] Radiative Gaussian Splatting for Efficient X-ray Novel View Synthesis](../../ECCV2024/medical_imaging/radiative_gaussian_splatting_for_efficient_x-ray_novel_view_synthesis.md)
+- [\[ICLR 2026\] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis](../../ICLR2026/medical_imaging/omnict_towards_a_unified_slice-volume_lvlm_for_comprehensive_ct_analysis.md)
 
 </div>
 

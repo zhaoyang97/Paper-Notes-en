@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Kaleidoscopic Scintillation Event Imaging
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work reformulates radiation detection as a computer vision problem: using a "kaleidoscope-shaped" (four-sided mirrored pyramid) scintillator, a single scintillation event is captured as a "direct image + multiple mirrored reflections" on a single-photon camera. A Gaussian Mixture Model (GMM), where all components
+  [CVPR 2026][3D Vision][Scintillators] This work reformulates radiation detection as a computer vision problem: using a "kaleidoscope-shaped" (four-sided mirrored pyramid) scintillator, a single scintillation event is captured as a "direct image + multiple mirrored reflections" on a single-photon camera. A Gaussian Mixture Model (GMM), where all components are parameterized by the event's 3D coordinates $p_0$, is solved via an EM algorithm. In extreme photon-starved conditions…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scintillators"
+  - "Single-photon camera"
+  - "Kaleidoscope imaging"
+  - "3D localization"
+  - "Gaussian Mixture Model"
 date: 2026-05-08
-content_hash: deab18b0cf34cf5e
+content_hash: 67e44a998a066080
 ---
+
 # Kaleidoscopic Scintillation Event Imaging
 
 **Conference**: CVPR 2026  
@@ -128,9 +134,20 @@ The ratios of removed photons align with expectations (1/5 and 2/5), suggesting 
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
+- [\[CVPR 2026\] Spectrum from Defocus: Fast Spectral Imaging with Chromatic Focal Stack](spectrum_from_defocus_fast_spectral_imaging_with_chromatic_focal_stack.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
+- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
+- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Unsupervised 3D Motion Estimation Using Event Camera](unsupervised_3d_motion_estimation_using_event_camera.md)

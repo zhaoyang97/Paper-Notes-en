@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Context-Driven Incremental Compression for Multi-Turn Dialogue Generation
 description: >-
-  [ICML 2026][Dialogue Systems][Paper Note] Concatenating full histories in multi-turn dialogues is expensive and leads to lost clues. This paper proposes **C-DIC**: viewing dialogues as interleaved "topic threads," it stores revisable per-thread compressed states in a compact memory. Each turn follows a lightweight "Retrieval $\to$ Revision $\to$ Write-back" cy
+  [ICML 2026][Dialogue Systems][Multi-turn Dialogue] Concatenating full histories in multi-turn dialogues is expensive and leads to lost clues. This paper proposes **C-DIC**: viewing dialogues as interleaved "topic threads," it stores revisable per-thread compressed states in a compact memory. Each turn follows a lightweight "Retrieval $\to$ Revision $\to$ Write-back" cycle, trained with **retrieval-aware truncated backpropagation through time (ra-TBPTT)**…
 tags:
-  - ICML 2026
-  - Dialogue Systems
+  - "ICML 2026"
+  - "Dialogue Systems"
+  - "Multi-turn Dialogue"
+  - "Context Compression"
+  - "Revisable Latent Memory"
+  - "Clue Retrieval"
+  - "Truncated Backpropagation Through Time"
 date: 2026-05-08
-content_hash: 537f09f5f0d5a542
+content_hash: bd4a00d5bd592781
 ---
+
 # Context-Driven Incremental Compression for Multi-Turn Dialogue Generation
 
 **Conference**: ICML 2026  
@@ -136,10 +142,10 @@ C-DIC also leads on REALTALK (zero-shot, per-session): PPL 9.789, BLEU 0.035, R-
 ## Related Papers
 
 - [\[ACL 2026\] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](../../ACL2026/dialogue/spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)
-- [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](../../ACL2026/dialogue/discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
 - [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
+- [\[ACL 2026\] Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](../../ACL2026/dialogue/discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)
+- [\[ACL 2026\] Context-Agent: Dynamic Discourse Trees for Non-Linear Dialogue](../../ACL2026/dialogue/context-agent_dynamic_discourse_trees_for_non-linear_dialogue.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](../../ACL2026/dialogue/ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
-- [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation
 description: >-
-  [ICCV 2025][Multimodal VLM][modality imbalance] This paper proposes G2D (Gradient-Guided Distillation), which addresses the modality imbalance problem in multimodal learning by combining feature distillation and logit di…
+  [ICCV 2025][Multimodal VLM][modality imbalance] This paper proposes G2D (Gradient-Guided Distillation), which addresses the modality imbalance problem in multimodal learning by combining feature distillation and logit distillation from unimodal teachers to a multimodal student, together with a Sequential Modality Prioritization (SMP) gradient modulation strategy guided by unimodal teacher confidence scores. G2D achieves 85.89% accuracy on CREMA-D…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "sequential modality prioritization"
   - "multimodal fusion"
 date: 2026-05-08
-content_hash: e50de6fa5a961f52
+content_hash: fe223d5630e375bb
 ---
 
 # G2D: Boosting Multimodal Learning with Gradient-Guided Distillation
@@ -173,11 +173,11 @@ G2D remains effective in the three-modality setting without excessively suppress
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder](../../NeurIPS2025/multimodal_vlm/covmatch_crosscovariance_guided_multimodal_dataset_distillat.md)
+- [\[CVPR 2026\] Anchor-Guided Gradient Alignment for Incomplete Multimodal Learning](../../CVPR2026/multimodal_vlm/anchor-guided_gradient_alignment_for_incomplete_multimodal_learning.md)
+- [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
 - [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
 - [\[ICCV 2025\] Controlling Multimodal LLMs via Reward-guided Decoding](controlling_multimodal_llms_via_rewardguided_decoding.md)
 - [\[NeurIPS 2025\] Multimodal Negative Learning](../../NeurIPS2025/multimodal_vlm/multimodal_negative_learning.md)
-- [\[ICCV 2025\] Boosting MLLM Reasoning with Text-Debiased Hint-GRPO](boosting_mllm_reasoning_with_text-debiased_hint-grpo.md)
 
 </div>
 

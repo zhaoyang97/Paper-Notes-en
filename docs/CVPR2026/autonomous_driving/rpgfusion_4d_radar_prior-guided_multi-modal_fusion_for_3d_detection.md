@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] RPGFusion injects physical priors from 4D radar (confidence and depth maps) into the image-to-BEV transformation process. Simultaneously, it performs robust encoding and densification of sparse, noisy radar point clouds, followed by spatial alignment and semantic fusion to obtain a consistent Bird's Eye View (BEV) repr
+  [CVPR 2026][Autonomous Driving][4D mmWave Radar] RPGFusion injects physical priors from 4D radar (confidence and depth maps) into the image-to-BEV transformation process. Simultaneously, it performs robust encoding and densification of sparse, noisy radar point clouds, followed by spatial alignment and semantic fusion to obtain a consistent Bird's Eye View (BEV) representation. This approach achieves SOTA results for radar-camera 3D detection on VoD (69.31% mAP in Entire Anno…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D mmWave Radar"
+  - "Radar-Camera Fusion"
+  - "BEV Perception"
+  - "3D Object Detection"
+  - "Sparse-to-Dense"
 date: 2026-05-08
-content_hash: 1172dda7f4466e14
+content_hash: d09af6646b175141
 ---
+
 # RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection
 
 **Conference**: CVPR 2026  
@@ -131,10 +137,10 @@ Four sets of ablations decompose the contributions of prior maps, encoding/densi
 ## Related Papers
 
 - [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 - [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
 - [\[CVPR 2025\] RaCFormer: Towards High-Quality 3D Object Detection via Query-based Radar-Camera Fusion](../../CVPR2025/autonomous_driving/racformer_towards_high-quality_3d_object_detection_via_query-based_radar-camera_.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](../../ICCV2025/autonomous_driving/cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
+- [\[CVPR 2026\] CCF: Complementary Collaborative Fusion for Domain Generalized Multi-Modal 3D Object Detection](ccf_complementary_collaborative_fusion_for_domain_generalized_multi-modal_3d_obj.md)
+- [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
 
 </div>
 

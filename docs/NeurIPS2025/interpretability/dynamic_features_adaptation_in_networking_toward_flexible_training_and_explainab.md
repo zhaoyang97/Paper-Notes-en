@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference
 description: >-
-  [NeurIPS 2025][Interpretability][Adaptive Random Forest] This paper proposes DAFI (Drift-Aware Feature Importance), an algorithm that leverages distribution drift detection to dynamically switch between SHAP and MDI feat…
+  [NeurIPS 2025][Interpretability][Adaptive Random Forest] This paper proposes DAFI (Drift-Aware Feature Importance), an algorithm that leverages distribution drift detection to dynamically switch between SHAP and MDI feature importance methods. Combined with Adaptive Random Forest (ARF), DAFI enables flexible training and efficient explainable inference in communication network scenarios where features are dynamically introduced over time.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -15,7 +15,7 @@ tags:
   - "SHAP"
   - "MDI"
 date: 2026-05-08
-content_hash: 8e50996f41e9fabd
+content_hash: 81c24f61ff6fb62e
 ---
 
 # Dynamic Features Adaptation in Networking: Toward Flexible Training and Explainable Inference
@@ -133,10 +133,10 @@ On the Network dataset, DAFI reduces runtime by approximately 55% while outperfo
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dynamic Algorithm for Explainable k-medians Clustering under lp Norm](dynamic_algorithm_for_explainable_k-medians_clustering_under_lp_norm.md)
+- [\[ICML 2025\] Concept-Based Unsupervised Domain Adaptation](../../ICML2025/interpretability/concept-based_unsupervised_domain_adaptation.md)
 - [\[NeurIPS 2025\] SpEx: A Spectral Approach to Explainable Clustering](spex_a_spectral_approach_to_explainable_clustering.md)
+- [\[ICML 2025\] Towards Flexible Perception with Visual Memory](../../ICML2025/interpretability/towards_flexible_perception_with_visual_memory.md)
 - [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](../../ICLR2026/interpretability/persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
-- [\[NeurIPS 2025\] Dense SAE Latents Are Features, Not Bugs](dense_sae_latents_are_features_not_bugs.md)
-- [\[NeurIPS 2025\] Model-Behavior Alignment under Flexible Evaluation: When the Best-Fitting Model Isn't the Right One](model-behavior_alignment_under_flexible_evaluation_when_the_best-fitting_model_i.md)
 
 </div>
 

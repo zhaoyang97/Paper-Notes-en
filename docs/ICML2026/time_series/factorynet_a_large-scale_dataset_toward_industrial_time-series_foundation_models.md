@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models
 description: >-
-  [ICML 2026][Time Series][Paper Note] FactoryNet is the first large-scale industrial time-series dataset with a unified control-loop structure—51 million data points / 23k end-to-end task executions (13.3k real + 9,800 simulated) across 6 machine entities, aligning all signals according to the Setpoint-Effort-Feedback-Context (S-E-F-C) cybernetic classific
+  [ICML 2026][Time Series][Industrial Time-Series] FactoryNet is the first large-scale industrial time-series dataset with a unified control-loop structure—51 million data points / 23k end-to-end task executions (13.3k real + 9,800 simulated) across 6 machine entities, aligning all signals according to the Setpoint-Effort-Feedback-Context (S-E-F-C) cybernetic classification; 27 types of labeled anomalies + health baselines + counterfactual pairs enable zero-shot cross-entity tr…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Industrial Time-Series"
+  - "Anomaly Detection"
+  - "Cross-Entity Transfer"
+  - "S-E-F-C Pattern"
+  - "Predictive Maintenance"
 date: 2026-05-08
-content_hash: d7b9d8b59dd5741b
+content_hash: 38e87db744ef6989
 ---
+
 # FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models
 
 **Conference**: ICML 2026  
@@ -140,13 +146,18 @@ Previous datasets were single-fault (e.g., CWRU for bearings). FactoryNet provid
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
----
-**Related Papers**:
-- *Open X-Embodiment: Robotic Learning at Scale*, 2023.
-- *voraus-AD: A Dataset for Anomaly Detection in Industrial Robotics*, 2023.
-</div>
-<!-- RELATED:END -->
 
+## Related Papers
+
+- [\[ICLR 2026\] Omni-iEEG: A Large-Scale, Comprehensive iEEG Dataset and Benchmark for Epilepsy Research](../../ICLR2026/time_series/omni-ieeg_a_large-scale_comprehensive_ieeg_dataset_and_benchmark_for_epilepsy_re.md)
+- [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](../../ICLR2026/time_series/fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
+- [\[ICML 2026\] Building Social World Models with Large Language Models](building_social_world_models_with_large_language_models.md)
+- [\[ICML 2026\] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density](olivia_harmonizing_time_series_foundation_models_with_power_spectral_density.md)
+- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](../../ICLR2026/time_series/multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Omni-iEEG: A Large-Scale, Comprehensive iEEG Dataset and Benchmark for Epilepsy Research](../../ICLR2026/time_series/omni-ieeg_a_large-scale_comprehensive_ieeg_dataset_and_benchmark_for_epilepsy_re.md)

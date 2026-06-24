@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs
 description: >-
-  [AAAI 2026][LLM Reasoning][reasoning verification] This paper proposes Graph of Verification (GoV), a structured verification framework that models LLM reasoning processes as directed acyclic graphs (DAGs). Through a fle…
+  [AAAI 2026][Reasoning][reasoning verification] This paper proposes Graph of Verification (GoV), a structured verification framework that models LLM reasoning processes as directed acyclic graphs (DAGs). Through a flexible Node Block architecture, GoV enables multi-granularity verification—ranging from atomic-level steps in formal tasks to paragraph-level verification in natural language narratives—and substantially outperforms both holistic verification and other decomposed v…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "reasoning verification"
   - "directed acyclic graph"
   - "multi-granularity verification"
   - "decomposed verification"
   - "training-free method"
 date: 2026-05-08
-content_hash: 0a3293919b6fb107
+content_hash: 193674102d6a0a44
 ---
 
 # Graph of Verification: Structured Verification of LLM Reasoning with Directed Acyclic Graphs
@@ -183,11 +183,11 @@ GoV significantly outperforms both holistic verification and PARC across all dat
 
 ## Related Papers
 
+- [\[ICLR 2026\] VoG: Enhancing LLM Reasoning through Stepwise Verification on Knowledge Graphs](../../ICLR2026/llm_reasoning/vog_enhancing_llm_reasoning_through_stepwise_verification_on_knowledge_graphs.md)
+- [\[ICLR 2026\] MolecularIQ: Characterizing Chemical Reasoning Capabilities Through Symbolic Verification on Molecular Graphs](../../ICLR2026/llm_reasoning/moleculariq_characterizing_chemical_reasoning_capabilities_through_symbolic_veri.md)
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](../../ICLR2026/llm_reasoning/variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
+- [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](../../ICLR2026/llm_reasoning/plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
 - [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](../../ICML2026/llm_reasoning/internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
-- [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](../../ACL2026/llm_reasoning/efficient_prm_training_data_synthesis_via_formal_verification.md)
-- [\[NeurIPS 2025\] Rethinking Optimal Verification Granularity for Compute-Efficient Test-Time Scaling](../../NeurIPS2025/llm_reasoning/rethinking_optimal_verification_granularity_for_compute-efficient_test-time_scal.md)
-- [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](../../ICML2026/llm_reasoning/prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
-- [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](../../ICLR2026/llm_reasoning/verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PerfGuard: A Performance-Aware Agent for Visual Content Generation
 description: >-
-  [ICLR 2026][LLM Agent][AIGC] PerfGuard is proposed as a performance-aware Agent framework for visual content generation. It replaces text descriptions with a multi-dimensional scoring matrix for Performance-Aware Selection Modeling (PASM), utilizes Adaptive Preference Update (APU) to dynamically calibrate deviations between theoretical rankings an
+  [ICLR 2026][LLM Agent][Tool Selection] PerfGuard is proposed as a performance-aware Agent framework for visual content generation. It replaces text descriptions with a multi-dimensional scoring matrix for Performance-Aware Selection Modeling (PASM), utilizes Adaptive Preference Update (APU) to dynamically calibrate deviations between theoretical rankings and actual execution, and employs Capability-Aligned Planning Optimization (CAPO) to guide the Planner in generating subtas…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - AIGC
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Selection"
+  - "Performance Boundary Modeling"
+  - "Visual Generation"
+  - "AIGC"
+  - "Preference Optimization"
 date: 2026-05-08
-content_hash: c004e9e821fdef6e
+content_hash: 1b7c16a63b6b460e
 ---
+
 # PerfGuard: A Performance-Aware Agent for Visual Content Generation
 
 **Conference**: ICLR 2026  
@@ -157,14 +162,14 @@ CLOVA enhances tool success rates through self-reflection and prompt tuning. Per
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Supplement Generation Training for Enhancing Agentic Task Performance](../../ACL2026/llm_agent/supplement_generation_training_for_enhancing_agentic_task_performance.md)
 - [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
 - [\[CVPR 2025\] SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation](../../CVPR2025/llm_agent/sceneassistant_a_visual_feedback_agent_for_open-vocabulary_3d_scene_generation.md)
-- [\[ICLR 2026\] TaskCraft: Automated Generation of Agentic Tasks](taskcraft_automated_generation_of_agentic_tasks.md)
 - [\[ICLR 2026\] ViMo: A Generative Visual GUI World Model for App Agents](vimo_a_generative_visual_gui_world_model_for_app_agents.md)
 
 </div>

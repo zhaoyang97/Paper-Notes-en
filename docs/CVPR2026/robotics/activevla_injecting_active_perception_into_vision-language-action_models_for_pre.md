@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] ActiveVLA integrates "active perception" into 3D Vision-Language-Action (VLA) models: it first utilizes multi-view orthogonal projections and heatmaps to locate 3D key regions, then actively selects optimal virtual camera views around these regions and performs virtual Zoom-in to enhance resolution. This approach signi
+  [CVPR 2026][Robotics][VLA] ActiveVLA integrates "active perception" into 3D Vision-Language-Action (VLA) models: it first utilizes multi-view orthogonal projections and heatmaps to locate 3D key regions, then actively selects optimal virtual camera views around these regions and performs virtual Zoom-in to enhance resolution. This approach significantly improves success rates in scenarios involving occlusions and fine manipulations (achieving a 91.8% average on RLBench).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Active Perception"
+  - "3D Manipulation"
+  - "View Selection"
+  - "Virtual Zoom-in"
 date: 2026-05-08
-content_hash: 92bf4e3cc8abca51
+content_hash: 6b247fdd5064752b
 ---
+
 # ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -144,14 +149,13 @@ Hyperparameter Analysis (RLBench): Increasing views from 1 to 3 boosted success 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](sapave_active_perception_manipulation_vla_roboti.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
+- [\[CVPR 2025\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2025/robotics/sapave_towards_active_perception_and_manipulation_in_vision-language-action_mode.md)
 - [\[CVPR 2026\] GeoPredict: Leveraging Predictive Kinematics and 3D Gaussian Geometry for Precise VLA Manipulation](geopredict_leveraging_predictive_kinematics_and_3d_gaussian_geometry_for_precise.md)
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
-- [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
 
 </div>

@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] GTA1: GUI Test-time Scaling Agent
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] GTA1 addresses the issue of planning cascade failures through test-time scaling—sampling multiple action proposals per step and selecting the best via a multimodal judge. It further achieves precise localization using a pure RL grounding model (without CoT thinking) that directly predicts coordinates with binary "hit-o
+  [ICLR 2026][LLM Agent][GUI Agent] GTA1 addresses the issue of planning cascade failures through test-time scaling—sampling multiple action proposals per step and selecting the best via a multimodal judge. It further achieves precise localization using a pure RL grounding model (without CoT thinking) that directly predicts coordinates with binary "hit-or-miss" rewards. This two-stage agent reaches SOTA on both grounding and task execution benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Test-time Scaling
-  - GUI Grounding
-  - GRPO
-  - OSWorld
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Test-time Scaling"
+  - "GUI Grounding"
+  - "GRPO"
+  - "Two-stage Agent"
+  - "OSWorld"
 date: 2026-05-08
-content_hash: 99fcb95ceffff0a7
+content_hash: 400a80a8a6bc7b08
 ---
+
 # GTA1: GUI Test-time Scaling Agent
 
 **Conference**: ICLR 2026  
@@ -142,15 +144,14 @@ Ablation of reward design (Grounding accuracy %):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
 - [\[ACL 2025\] METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling](../../ACL2025/llm_agent/metal_a_multi-agent_framework_for_chart_generation_with_test-time_scaling.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
-- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](scaling_agent_learning_via_experience_synthesis.md)
 
 </div>
 

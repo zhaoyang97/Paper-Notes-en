@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] A Relative Error-Based Evaluation Framework of Heterogeneous Treatment Effect Estimators
 description: >-
-  [ICLR 2026][Causal Inference][HTE] This paper proposes an HTE estimator evaluation framework based on **relative error**. Through a carefully designed weighted least squares loss + balancing regularization + Dragonnet-style neural network, the relative error estimation remains $\sqrt{n}$-consistent, asymptotically normal, and provides valid confidence i
+  [ICLR 2026][Causal Inference][HTE] This paper proposes an HTE estimator evaluation framework based on **relative error**. Through a carefully designed weighted least squares loss + balancing regularization + Dragonnet-style neural network, the relative error estimation remains $\sqrt{n}$-consistent, asymptotically normal, and provides valid confidence intervals even when the **outcome regression model is misspecified** (provided the propensity score model is correct). This al…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - HTE
-  - Dragonnet
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "HTE"
+  - "Relative Error"
+  - "Semiparametric Efficiency"
+  - "Propensity Score"
+  - "Doubly Robust"
+  - "Dragonnet"
 date: 2026-05-08
-content_hash: 68a70ff30d650b53
+content_hash: 14c94752ed9df990
 ---
+
 # A Relative Error-Based Evaluation Framework of Heterogeneous Treatment Effect Estimators
 
 **Conference**: ICLR 2026  

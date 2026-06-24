@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] DP-FedAdamW: An Efficient Optimizer for Differentially Private Federated Large Models
 description: >-
-  [CVPR 2026][Optimization & Theory][AdamW] This paper discovers that directly porting AdamW to Differentially Private Federated Learning (DPFL) fails, identifying three pathologies: "amplified second-moment variance, DP-induced second-moment bias, and intensified client drift." It proposes DP-FedAdamW, the first AdamW optimizer tailored for DPFL. By employing b
+  [CVPR 2026][Differentially Private Federated Learning] This paper discovers that directly porting AdamW to Differentially Private Federated Learning (DPFL) fails, identifying three pathologies: "amplified second-moment variance, DP-induced second-moment bias, and intensified client drift." It proposes DP-FedAdamW, the first AdamW optimizer tailored for DPFL. By employing block-wise second-moment aggregation, explicit DP noise bias subtraction…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - AdamW
+  - "CVPR 2026"
+  - "Differentially Private Federated Learning"
+  - "AdamW"
+  - "second-moment bias correction"
+  - "client drift"
+  - "large model fine-tuning"
 date: 2026-05-08
-content_hash: 80d60521ea98ac9c
+content_hash: 8da8aac326d620fb
 ---
+
 # DP-FedAdamW: An Efficient Optimizer for Differentially Private Federated Large Models
 
 **Conference**: CVPR 2026  
@@ -144,11 +148,11 @@ Aggregation strategy ablation shows that coordinate-wise aggregation (Agg-v) req
 
 ## Related Papers
 
-- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](../../ICML2026/optimization/limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](../../ICML2026/optimization/memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
-- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
-- [\[CVPR 2026\] GR-Gauge: Cost-efficient Training Configuration By Gauging the Gradient Redundancy](gr-gauge_cost-efficient_training_configuration_by_gauging_the_gradient_redundanc.md)
+- [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
+- [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
+- [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
+- [\[CVPR 2026\] FedSST: Rethinking Fair Federated Graph Learning under Structural Shift](fedsst_rethinking_fair_federated_graph_learning_under_structural_shift.md)
+- [\[CVPR 2026\] Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation](bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation.md)
 
 </div>
 

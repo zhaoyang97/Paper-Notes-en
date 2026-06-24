@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Policy to Logic for Efficient and Interpretable Coverage Assessment
 description: >-
-  [AAAI 2026][Medical Imaging][Neuro-symbolic reasoning] This paper proposes a neuro-symbolic approach that combines a coverage-aware retriever with symbolic rule inference based on PyKnow…
+  [AAAI 2026][Medical Imaging][Neuro-symbolic reasoning] This paper proposes a neuro-symbolic approach that combines a coverage-aware retriever with symbolic rule inference based on PyKnow, assisting human reviewers in efficiently and interpretably assessing whether medical CPT codes are covered by insurance policies. The approach reduces inference cost by 44% while improving F1 by 4.5%.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "retrieval augmentation"
   - "explainable AI"
 date: 2026-05-08
-content_hash: d5508f7a63405738
+content_hash: db0e239b260a07aa
 ---
 
 # From Policy to Logic for Efficient and Interpretable Coverage Assessment
@@ -152,9 +152,9 @@ Performance comparison on 7 anonymized insurance plan documents (814 CPT codes p
 
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
 - [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
-- [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
-- [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](../../ICLR2026/medical_imaging/towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
+- [\[CVPR 2026\] Med-CMR: A Fine-Grained Benchmark Integrating Visual Evidence and Clinical Logic for Medical Complex Multimodal Reasoning](../../CVPR2026/medical_imaging/med-cmr_a_fine-grained_benchmark_integrating_visual_evidence_and_clinical_logic_.md)
+- [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 
 </div>
 

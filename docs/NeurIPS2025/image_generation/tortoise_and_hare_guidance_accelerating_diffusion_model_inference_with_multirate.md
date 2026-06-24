@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes Tortoise and Hare Guidance (THG), a training-free acceleration strategy for diffusion sampling that reformulates the classifier-free guid…
+  [NeurIPS 2025][Image Generation][Diffusion model acceleration] This paper proposes Tortoise and Hare Guidance (THG), a training-free acceleration strategy for diffusion sampling that reformulates the classifier-free guidance (CFG) ODE as a multirate ODE system. The noise estimation term is integrated with fine-grained steps (tortoise equation), while the additional guidance term is integrated with coarse-grained steps (hare equation), reducing the number of function evaluatio…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "NFE reduction"
   - "training-free"
 date: 2026-05-08
-content_hash: cb2328ef4ccd8ac7
+content_hash: 8761db87f7b079f5
 ---
 
 # Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration
@@ -173,9 +173,9 @@ Comparison under equal NFE budgets:
 
 - [\[AAAI 2026\] SpecDiff: Accelerating Diffusion Model Inference with Self-Speculation](../../AAAI2026/image_generation/specdiff_accelerating_diffusion_model_inference_with_self-speculation.md)
 - [\[NeurIPS 2025\] Accelerating Parallel Diffusion Model Serving with Residual Compression](accelerating_parallel_diffusion_model_serving_with_residual_compression.md)
+- [\[CVPR 2026\] SenCache: Accelerating Diffusion Model Inference via Sensitivity-Aware Caching](../../CVPR2026/image_generation/sencache_accelerating_diffusion_model_inference_via_sensitivity-aware_caching.md)
 - [\[NeurIPS 2025\] Entropy Rectifying Guidance for Diffusion and Flow Models](entropy_rectifying_guidance_for_diffusion_and_flow_models.md)
-- [\[NeurIPS 2025\] Enhancing Diffusion Model Guidance through Calibration and Regularization](enhancing_diffusion_model_guidance_through_calibration_and_regularization.md)
-- [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
+- [\[CVPR 2026\] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](../../CVPR2026/image_generation/accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)
 
 </div>
 

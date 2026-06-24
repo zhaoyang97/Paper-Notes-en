@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can we generate portable representations for clinical time series data using LLMs?
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper proposes **Record2Vec**: using a frozen LLM to convert irregular ICU time-series records into concise clinical handoff-style natural language summaries, then encoding these summaries into fixed-length vectors using a frozen text embedding model for a standard predictor. Across three hospital cohorts and five
+  [ICLR2026][Time Series][Portable Representations] This paper proposes **Record2Vec**: using a frozen LLM to convert irregular ICU time-series records into concise clinical handoff-style natural language summaries, then encoding these summaries into fixed-length vectors using a frozen text embedding model for a standard predictor. Across three hospital cohorts and five task categories, it is not only competitive in-distribution but, more importantly…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Portable Representations"
+  - "ICU Time Series"
+  - "LLM Summarization"
+  - "Text Embeddings"
+  - "Distribution Shift"
 date: 2026-05-08
-content_hash: ffe5c9e5b66e068c
+content_hash: e3c667b73378d587
 ---
+
 # Can we generate portable representations for clinical time series data using LLMs?
 
 **Conference**: ICLR2026  

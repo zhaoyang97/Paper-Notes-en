@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction
 description: >-
-  [NeurIPS 2025][Image Generation][Graph Diffusion Models] This paper proposes GeoMancer, a framework that replaces numerically unstable exponential maps with a Riemannian GyroKernel autoencoder to disentangle multi-level…
+  [NeurIPS 2025][Image Generation][Graph Diffusion Models] This paper proposes GeoMancer, a framework that replaces numerically unstable exponential maps with a Riemannian GyroKernel autoencoder to disentangle multi-level graph features onto task-specific product manifolds. By further introducing manifold-constrained diffusion and a self-guidance generation strategy, GeoMancer achieves unified modeling and state-of-the-art performance across molecular generation…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Molecular Generation"
   - "Geometric Autoencoder"
 date: 2026-05-08
-content_hash: 75efdcda830793b1
+content_hash: b8757731eaf8b645
 ---
 
 # Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction
@@ -128,10 +128,10 @@ Node classification accuracy:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
+- [\[CVPR 2025\] Dual Diffusion for Unified Image Generation and Understanding](../../CVPR2025/image_generation/dual_diffusion_for_unified_image_generation_and_understanding.md)
 - [\[NeurIPS 2025\] Riemannian Consistency Model](riemannian_consistency_model.md)
-- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](../../ICCV2025/image_generation/a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
-- [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
 - [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
+- [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Much 3D Do Video Foundation Models Encode?
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] The authors propose the first **model-agnostic** probing framework, using "frozen video foundation model features + shallow feed-forward heads predicting 3D point clouds/depth/camera poses" to quantify the internal 3D understanding of various video models. The conclusion is that leading video generation models trained
+  [CVPR 2026][Self-Supervised Learning][Video Foundation Models] The authors propose the first **model-agnostic** probing framework, using "frozen video foundation model features + shallow feed-forward heads predicting 3D point clouds/depth/camera poses" to quantify the internal 3D understanding of various video models. The conclusion is that leading video generation models trained only on 2D videos (such as WAN2.1-14B) exhibit strong emergent 3D perception…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Video Foundation Models"
+  - "3D Perception"
+  - "Probing"
+  - "Video Diffusion Models"
+  - "Geometric Reconstruction"
 date: 2026-05-08
-content_hash: 9f9785dc6480d346
+content_hash: 5f12b3fc6b91786d
 ---
+
 # How Much 3D Do Video Foundation Models Encode?
 
 **Conference**: CVPR 2026  
@@ -137,8 +143,8 @@ Replacing DINO with VidFM features (VGGT in practice, limited 3D data scenario):
 
 - [\[CVPR 2026\] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction](talo_pushing_3d_vision_foundation_models_towards_globally_consistent_online_reco.md)
 - [\[AAAI 2026\] From Pretrain to Pain: Adversarial Vulnerability of Video Foundation Models without Finetuning](../../AAAI2026/self_supervised/from_pretrain_to_pain_adversarial_vulnerability_of_video_foundation_models_witho.md)
-- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
 - [\[CVPR 2026\] Scaling Parallel Sequence Models to Vision Foundation Models](scaling_parallel_sequence_models_to_vision_foundation_models.md)
+- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](../../ICML2026/self_supervised/how_neural_is_a_neural_foundation_model.md)
 - [\[CVPR 2026\] Chain-of-Models Pre-Training: Rethinking Training Acceleration of Vision Foundation Models](com_pt_chain_of_models_pretraining.md)
 
 </div>

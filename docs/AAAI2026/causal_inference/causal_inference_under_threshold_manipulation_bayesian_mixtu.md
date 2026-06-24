@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects
 description: >-
-  [AAAI 2026][Causal Inference][threshold manipulation] This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenarios where consumers strategically manipulate spending to reach reward thresholds…
+  [AAAI 2026][Causal Inference][threshold manipulation] This paper proposes the BMTM/HBMTM Bayesian mixture model framework. In scenarios where consumers strategically manipulate spending to reach reward thresholds, the framework decomposes the observed distribution into bunching and non-bunching sub-distributions to accurately estimate threshold causal effects and heterogeneous treatment effects across subgroups.
 tags:
   - "AAAI 2026"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "regression discontinuity design"
   - "consumer behavior"
 date: 2026-05-08
-content_hash: 2262762f1ff9a53a
+content_hash: 0593a60892af1351
 ---
 
 # Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects
@@ -147,10 +147,10 @@ Real marketing data application (spending thresholds of 30,000 / 50,000 / 70,000
 ## Related Papers
 
 - [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
-- [\[ICML 2026\] Rank-Learner: Orthogonal Ranking of Treatment Effects](../../ICML2026/causal_inference/rank-learner_orthogonal_ranking_of_treatment_effects.md)
-- [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](../../ICML2026/causal_inference/controllable_generative_sandbox_for_causal_inference.md)
-- [\[NeurIPS 2025\] Transferring Causal Effects using Proxies](../../NeurIPS2025/causal_inference/transferring_causal_effects_using_proxies.md)
-- [\[ICLR 2026\] Synthesising Counterfactual Explanations via Label-Conditional Gaussian Mixture Variational Autoencoders](../../ICLR2026/causal_inference/synthesising_counterfactual_explanations_via_label-conditional_gaussian_mixture_.md)
+- [\[ICLR 2026\] Learning Exposure Mapping Functions for Inferring Heterogeneous Peer Effects](../../ICLR2026/causal_inference/learning_exposure_mapping_functions_for_inferring_heterogeneous_peer_effects.md)
+- [\[ICLR 2026\] Debiased Front-Door Learners for Heterogeneous Effects](../../ICLR2026/causal_inference/debiased_front-door_learners_for_heterogeneous_effects.md)
+- [\[CVPR 2026\] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization](../../CVPR2026/causal_inference/cgu-bayes_causal_graph_uncertainty-guided_bayesian_inference_for_domain_generali.md)
+- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](../../ICLR2026/causal_inference/matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
 
 </div>
 

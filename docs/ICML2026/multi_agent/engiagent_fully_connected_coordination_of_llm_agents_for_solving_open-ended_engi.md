@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] EngiAgent decomposes engineering problem solving into five specialist agents: Analyzer, Modeler, Verifier, Solver, and Evaluator. It utilizes a **fully connected coordinator** for dynamic feedback routing (replacing rigid pipelines). This approach improves the feasible solution rate on GPT-4o for engineering tasks from
+  [ICML 2026][Multi-Agent][Fully Connected Coordinator] EngiAgent decomposes engineering problem solving into five specialist agents: Analyzer, Modeler, Verifier, Solver, and Evaluator. It utilizes a **fully connected coordinator** for dynamic feedback routing (replacing rigid pipelines). This approach improves the feasible solution rate on GPT-4o for engineering tasks from 5.66% (zero-shot) and 7.55% (MM-Agent) to 64.15%, representing an approximate 7x increase over previous S…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Fully Connected Coordinator"
+  - "Feasibility"
+  - "Engineering Modeling"
+  - "Feedback Routing"
 date: 2026-05-08
-content_hash: 04c3c75c579b5a2d
+content_hash: 0d6d88e54b911a8d
 ---
+
 # EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions
 
 **Conference**: ICML 2026  

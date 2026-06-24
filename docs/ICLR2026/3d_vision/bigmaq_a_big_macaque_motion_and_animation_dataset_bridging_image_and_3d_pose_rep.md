@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] BigMaQ: A Big Macaque Motion and Animation Dataset Bridging Image and 3D Pose Representations
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] BigMaQ utilizes 16 calibrated cameras for markerless multi-view motion capture of real macaques, coupling "individual-specific textured 3D surface meshes + frame-wise joint rotation poses" with "ethological action labels." This constitutes the first large-scale non-human primate dataset capable of feeding generative 3D
+  [ICLR 2026][3D Vision][Macaque] BigMaQ utilizes 16 calibrated cameras for markerless multi-view motion capture of real macaques, coupling "individual-specific textured 3D surface meshes + frame-wise joint rotation poses" with "ethological action labels." This constitutes the first large-scale non-human primate dataset capable of feeding generative 3D pose vectors directly into action recognition, demonstrating that adding this pose description consistently improves mAP across…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Macaque"
+  - "Multi-view MoCap"
+  - "3D Surface Mesh"
+  - "Articulated Pose"
+  - "Action Recognition"
+  - "Non-human Primates"
 date: 2026-05-08
-content_hash: 429deff1ee3c373f
+content_hash: fe2c805182135ca1
 ---
+
 # BigMaQ: A Big Macaque Motion and Animation Dataset Bridging Image and 3D Pose Representations
 
 **Conference**: ICLR 2026  
@@ -135,10 +142,20 @@ Comparing 2D/3D keypoints, mesh vertices, and joint rotation matrices, **rotatio
 - **Value**: ⭐⭐⭐⭐⭐ Public dataset, code, and avatars are high-value resources for ethology, ecology, neuroscience, and 3D vision.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] RigMo: Unifying Rig and Motion Learning for Generative Animation](../../CVPR2026/3d_vision/rigmo_unifying_rig_and_motion_learning_for_generative_animation.md)
+- [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](../../ICCV2025/3d_vision/bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
+- [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](../../CVPR2026/3d_vision/tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
+- [\[ICLR 2026\] FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation](fastgha_generalized_few-shot_3d_gaussian_head_avatars_with_real-time_animation.md)
+- [\[CVPR 2026\] Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](../../CVPR2026/3d_vision/hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] RigMo: Unifying Rig and Motion Learning for Generative Animation](../../CVPR2026/3d_vision/rigmo_unifying_rig_and_motion_learning_for_generative_animation.md)

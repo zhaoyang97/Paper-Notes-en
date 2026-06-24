@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] H2-Surv embeds pathological WSI and genomic features into a hyperbolic (Poincaré ball) space. It models the tree-like hierarchy (patient→WSI/pathway→patch/gene) and the biological fact that genomics is more abstract than pathology using hierarchical distance constraints and cross-modal entailment cones. By employing a
+  [CVPR 2026][Medical Imaging][Survival Prediction] H2-Surv embeds pathological WSI and genomic features into a hyperbolic (Poincaré ball) space. It models the tree-like hierarchy (patient→WSI/pathway→patch/gene) and the biological fact that genomics is more abstract than pathology using hierarchical distance constraints and cross-modal entailment cones. By employing a temporal ordinal contrastive loss to preserve the continuous ranking of survival time…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Survival Prediction"
+  - "Hyperbolic Geometry"
+  - "Pathological-Genomic Multimodal"
+  - "Hierarchical Structure"
+  - "Ordinal Contrastive Learning"
 date: 2026-05-08
-content_hash: a8b0182f3707f8ca
+content_hash: e2baf188af29d1f0
 ---
+
 # H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction
 
 **Conference**: CVPR 2026  
@@ -138,6 +144,7 @@ Baseline R1 reproduces MOTCAT (average 0.668).
 - Value: ⭐⭐⭐⭐ The asymmetric geometric modeling and continuous ordinal supervision are valuable for cross-modal tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

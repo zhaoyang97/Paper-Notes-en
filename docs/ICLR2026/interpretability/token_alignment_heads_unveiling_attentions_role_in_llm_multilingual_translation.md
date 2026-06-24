@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors identify a specific class of attention heads in LLMs responsible for mapping source language tokens to target language tokens—token alignment heads (TAHs). They demonstrate that these heads are ubiquitous, highly sparse, cross-linguistically consistent, and play a direct causal role in translation. Based on
+  [ICLR 2026][Interpretability][Attention Heads] The authors identify a specific class of attention heads in LLMs responsible for mapping source language tokens to target language tokens—token alignment heads (TAHs). They demonstrate that these heads are ubiquitous, highly sparse, cross-linguistically consistent, and play a direct causal role in translation. Based on these insights, they design a data scoring algorithm, TRater, which significantly enhances the model's translati…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Attention Heads"
+  - "Mechanistic Interpretability"
+  - "Multilingual Translation"
+  - "Word Alignment"
+  - "Data Selection"
 date: 2026-05-08
-content_hash: b86321680ec117a7
+content_hash: b1c9edb71e7341e7
 ---
+
 # Token Alignment Heads: Unveiling Attention's Role in LLM Multilingual Translation
 
 **Conference**: ICLR 2026  
@@ -149,7 +155,7 @@ Cross-task Functional Specificity (Drop in performance when masking TAHs):
 - [\[ICLR 2026\] How Stable is the Next Token? A Geometric View of LLM Prediction Stability](how_stable_is_the_next_token_a_geometric_view_of_llm_prediction_stability.md)
 - [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
 - [\[ICLR 2026\] Decomposing LLM Computation with Jets](decomposing_llm_computation_with_jets.md)
-- [\[ICLR 2026\] LLMs Process Lists With General Filter Heads](llms_process_lists_with_general_filter_heads.md)
+- [\[AAAI 2026\] Finding the Translation Switch: Discovering and Exploiting the Task-Initiation Features in LLMs](../../AAAI2026/interpretability/finding_the_translation_switch_discovering_and_exploiting_the_task-initiation_fe.md)
 
 </div>
 

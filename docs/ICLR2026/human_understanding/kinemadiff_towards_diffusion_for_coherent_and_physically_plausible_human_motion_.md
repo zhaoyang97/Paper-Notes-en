@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction
 description: >-
-  [ICLR 2026][Human Understanding][Diffusion Model] KinemaDiff directly embeds human skeletal topology and joint-level dynamics **into the diffusion process itself**. By replacing the conventional practice of "implicitly encoding priors via network architecture" with a Joint-Adaptive Noise Generator and a Structural Alignment Regularizer, it significantly enhances the p
+  [ICLR 2026][Human Understanding][Human Motion Prediction] KinemaDiff directly embeds human skeletal topology and joint-level dynamics **into the diffusion process itself**. By replacing the conventional practice of "implicitly encoding priors via network architecture" with a Joint-Adaptive Noise Generator and a Structural Alignment Regularizer, it significantly enhances the physical plausibility and accuracy of stochastic human motion prediction while maintaining diversity.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Human Motion Prediction"
+  - "Diffusion Models"
+  - "Joint-adaptive Noise"
+  - "Skeletal Structure Constraints"
+  - "Physical Plausibility"
 date: 2026-05-08
-content_hash: b1ae6eeb567a8cc5
+content_hash: 28da4e800a273476
 ---
+
 # KinemaDiff: Towards Diffusion for Coherent and Physically Plausible Human Motion Prediction
 
 **Conference**: ICLR 2026  
@@ -116,14 +121,17 @@ Noise scheduler comparison: Variance (Ours) FID 0.083 outperforms Sqrt (0.108) a
 
 <div class="related-papers" markdown="1">
 
-1. **SkeletonDiffusion**: Network-Free Anisotropic Diffusion for Human Motion Prediction, CVPR 2025.
-2. **CoMusion**: Frequency-aware Diffusion for Human Motion Prediction, ICCV 2023.
-3. **BeLFusion**: Latent Diffusion for Behavior-driven Human Motion Prediction, ICCV 2023.
+## Related Papers
+
+- [\[CVPR 2025\] PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization](../../CVPR2025/human_understanding/physmodpo_physically-plausible_humanoid_motion_with_preference_optimization.md)
+- [\[ICLR 2026\] ReactDance: Hierarchical Representation for High-Fidelity and Coherent Long-Form Reactive Dance Generation](reactdance_hierarchical_representation_for_high-fidelity_and_coherent_long-form_.md)
+- [\[AAAI 2026\] mmPred: Radar-based Human Motion Prediction in the Dark](../../AAAI2026/human_understanding/mmpred_radar-based_human_motion_prediction_in_the_dark.md)
+- [\[ICLR 2026\] HUMOF: Human Motion Forecasting in Interactive Social Scenes](humof_human_motion_forecasting_in_interactive_social_scenes.md)
+- [\[ICLR 2026\] Zero-Shot Human Pose Estimation Using Diffusion-Based Inverse Solvers](zero-shot_human_pose_estimation_using_diffusion-based_inverse_solvers.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization](../../CVPR2025/human_understanding/physmodpo_physically-plausible_humanoid_motion_with_preference_optimization.md)

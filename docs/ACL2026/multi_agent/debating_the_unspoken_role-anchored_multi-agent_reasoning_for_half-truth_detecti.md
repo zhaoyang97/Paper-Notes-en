@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the RADAR framework, which detects half-truths based on omitted context through role-anchored (Politician vs. Scientist) multi-agent debate. Combined with a dual-threshold adaptive early stopping mechanism, it consistently outperforms single-agent and traditional multi-agent baselines under noisy re
+  [ACL 2026][Multi-Agent][Half-truth detection] This paper proposes the RADAR framework, which detects half-truths based on omitted context through role-anchored (Politician vs. Scientist) multi-agent debate. Combined with a dual-threshold adaptive early stopping mechanism, it consistently outperforms single-agent and traditional multi-agent baselines under noisy retrieval conditions.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Half-truth detection"
+  - "Multi-agent debate"
+  - "Omission reasoning"
+  - "Role-anchoring"
+  - "Adaptive termination"
 date: 2026-05-08
-content_hash: 23cdec9d3e15d5b0
+content_hash: 3ce849cd9f39c1a4
 ---
+
 # Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection
 
 **Conference**: ACL 2026  
@@ -136,9 +142,9 @@ Results on the PolitiFact-Hidden benchmark (under retrieval conditions):
 
 - [\[ACL 2025\] CortexDebate: Debating Sparsely and Equally for Multi-Agent Debate](../../ACL2025/multi_agent/cortexdebate_debating_sparsely_and_equally_for_multi-agent_debate.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
-- [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
-- [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
 - [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](../../ICML2026/multi_agent/voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
+- [\[CVPR 2026\] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection](../../CVPR2026/multi_agent/agentdet_a_shared-blackboard_multi-agent_framework_for_zero-few-shot_object_dete.md)
+- [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
 
 </div>
 

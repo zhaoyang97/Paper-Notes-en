@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][FLAME] MeshLAM utilizes a feed-forward Transformer to reconstruct a 3D head mesh avatar with high-fidelity textures and direct animatability from a single image in one pass. By employing a "dual shape/texture branch + GRU iterative decoding + input-to-UV back-projection guidance," it avoids test-time optimization and mesh col
+  [CVPR 2026][3D Vision][Single-image reconstruction] MeshLAM utilizes a feed-forward Transformer to reconstruct a 3D head mesh avatar with high-fidelity textures and direct animatability from a single image in one pass. By employing a "dual shape/texture branch + GRU iterative decoding + input-to-UV back-projection guidance," it avoids test-time optimization and mesh collapse while surpassing Gaussian-based LAM in both quality and speed.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - FLAME
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image reconstruction"
+  - "Animatable head avatar"
+  - "Mesh avatar"
+  - "FLAME"
+  - "Feed-forward Transformer"
 date: 2026-05-08
-content_hash: 92da5819a4ca8b0e
+content_hash: 89e854b84fe889d9
 ---
+
 # Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Key takeaway: In the pure mesh setting, Ours w/ UNet significantly outperforms R
 
 ## Related Papers
 
-- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
+- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 - [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
+- [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
+- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
 
 </div>
 

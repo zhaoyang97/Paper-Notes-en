@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DR-SAC: Distributionally Robust Soft Actor-Critic for Reinforcement Learning under Uncertainty
 description: >-
-  [ICLR 2026][Reinforcement Learning][Generative Model] DR-SAC is the first actor-critic distributionally robust reinforcement learning (DR-RL) algorithm designed for continuous action spaces in offline settings. It performs "worst-case maximum entropy optimization" over a transition distribution uncertainty set characterized by a KL divergence ball. The authors provide a d
+  [ICLR2026][Reinforcement Learning][Distributionally Robust RL] DR-SAC is the first actor-critic distributionally robust reinforcement learning (DR-RL) algorithm designed for continuous action spaces in offline settings. It performs "worst-case maximum entropy optimization" over a transition distribution uncertainty set characterized by a KL divergence ball. The authors provide a distributionally robust soft policy iteration with convergence guarantees and operationalize the a…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Generative Model
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Distributionally Robust RL"
+  - "Soft Actor-Critic"
+  - "Maximum Entropy RL"
+  - "KL Divergence Uncertainty Set"
+  - "Generative Model"
 date: 2026-05-08
-content_hash: 42b65bb1e73efd28
+content_hash: 3dc7ee15b0415086
 ---
+
 # DR-SAC: Distributionally Robust Soft Actor-Critic for Reinforcement Learning under Uncertainty
 
 **Conference**: ICLR2026  
@@ -130,15 +135,16 @@ Evaluated on 5 Gymnasium/MuJoCo tasks (Pendulum, Cartpole, LunarLander, Reacher,
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
+- [\[ICLR 2026\] SAC Flow: Sample-Efficient Reinforcement Learning of Flow-Based Policies via Velocity-Reparameterized Sequential Modeling](sac_flow_sample-efficient_reinforcement_learning_of_flow-based_policies_via_velo.md)
+- [\[ICLR 2026\] Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents](simplicial_embeddings_improve_sample_efficiency_in_actorcritic_agents.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
-- [\[ICLR 2026\] Convergence of an actor-critic gradient flow for entropy regularised MDPs in general spaces](convergence_of_an_actor-critic_gradient_flow_for_entropy_regularised_mdps_in_gen.md)
-- [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 
 </div>
 

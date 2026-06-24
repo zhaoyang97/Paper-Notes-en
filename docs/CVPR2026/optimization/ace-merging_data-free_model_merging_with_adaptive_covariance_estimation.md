@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] This paper theoretically proves that fine-tuned parameter differences contain input covariance information. Accordingly, it proposes ACE-Merging, which achieves data-free closed-form model merging through a three-step process: adaptive covariance estimation, collective structure priors, and spectral refinement. It achi
+  [CVPR 2026][Optimization][Model merging] This paper theoretically proves that fine-tuned parameter differences contain input covariance information. Accordingly, it proposes ACE-Merging, which achieves data-free closed-form model merging through a three-step process: adaptive covariance estimation, collective structure priors, and spectral refinement. It achieves an average improvement of 4% on GPT-2 and 5% on RoBERTa-Base compared to previous methods.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Optimization"
+  - "Model merging"
+  - "data-free"
+  - "covariance estimation"
+  - "spectral refinement"
+  - "closed-form solution"
 date: 2026-05-08
-content_hash: 2d117c20cf83c39c
+content_hash: b9a4f0bdb094780e
 ---
+
 # ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ ACE-Merging is a pure closed-form method and does not involve any training or op
 ## Related Papers
 
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](model_merging_in_the_essential_subspace.md)
-- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](label-free_cross-task_lora_merging_with_null-space_compression.md)
 - [\[CVPR 2026\] BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning](bd-merging_bias-aware_dynamic_model_merging_with_evidence-guided_contrastive_lea.md)
-- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
+- [\[CVPR 2026\] Label-Free Cross-Task LoRA Merging with Null-Space Compression](label-free_cross-task_lora_merging_with_null-space_compression.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](dc-merge_improving_model_merging_with_directional_consistency.md)
+- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 
 </div>
 

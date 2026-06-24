@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Some Neural Networks Inherently Preserve Subspace Clustering Structure
 description: >-
-  [ICLR 2026][learning_theory][ReLU] This paper uses perturbation theory to prove that when data possesses a "union-of-subspaces (UoS)" structure, single-layer (and even multi-layer) networks with activations such as ReLU **preserve** this clustering structure exactly, provided a spectral gap condition is met. Furthermore, networks spontaneously learn wei
+  [ICLR 2026][Learning Theory][Subspace clustering] This paper uses perturbation theory to prove that when data possesses a "union-of-subspaces (UoS)" structure, single-layer (and even multi-layer) networks with activations such as ReLU **preserve** this clustering structure exactly, provided a spectral gap condition is met. Furthermore, networks spontaneously learn weights $W$ satisfying this condition during standard training **without any explicit regularization**—implying t…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - ReLU
-  - Davis-Kahan
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Subspace clustering"
+  - "ReLU"
+  - "Perturbation theory"
+  - "Davis-Kahan"
+  - "Representation learning"
 date: 2026-05-08
-content_hash: b1bd5f230e469bfd
+content_hash: 50aa98f42957a824
 ---
+
 # Some Neural Networks Inherently Preserve Subspace Clustering Structure
 
 **Conference**: ICLR 2026  

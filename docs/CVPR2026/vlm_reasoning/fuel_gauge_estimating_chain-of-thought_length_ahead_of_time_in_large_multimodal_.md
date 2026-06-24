@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors discover an internal "fuel" signal in reasoning large multimodal models that depletes during Chain-of-Thought (CoT) reasoning. By extracting this signal with a tiny 82k-parameter network and performing linear extrapolation to the "zero-fuel" step, the total CoT length can be predicted before or at the start
+  [CVPR 2026][VLM Reasoning][CoT Length Prediction] The authors discover an internal "fuel" signal in reasoning large multimodal models that depletes during Chain-of-Thought (CoT) reasoning. By extracting this signal with a tiny 82k-parameter network and performing linear extrapolation to the "zero-fuel" step, the total CoT length can be predicted before or at the start of inference. This enables predictive KV cache allocation (reducing allocation frequency by up to 13×) and Co…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "CoT Length Prediction"
+  - "Large Multimodal Models"
+  - "Reasoning Efficiency"
+  - "KV Cache Allocation"
+  - "Test-time Regulation"
 date: 2026-05-08
-content_hash: b5e2022aebd7df96
+content_hash: f0817f333e7a6993
 ---
+
 # Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ Reductions reach up to 13.37× in long CoT scenarios.
 
 ## Related Papers
 
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 - [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
-- [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
-- [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
-- [\[CVPR 2026\] EmoThinker: Advancing Visual-Acoustic Emotion Analysis via Structural Token Selection and Chain-of-Thought Reasoning](emothinker_advancing_visual-acoustic_emotion_analysis_via_structural_token_selec.md)
+- [\[CVPR 2026\] Deeper Thought, Weaker Aim: Understanding and Mitigating Perceptual Impairment during Reasoning in Multimodal Large Language Models](deeper_thought_weaker_aim_understanding_and_mitigating_perceptual_impairment_dur.md)
 
 </div>
 

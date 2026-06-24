@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models
 description: >-
-  [ICLR 2026][Optimization & Theory][gradient masking] The proposed GradFix method constructs a binary mask using the signs of gradients computed from a very small number of samples on a target pre-trained model. This mask filters the source model’s task vector coordinate-wise, retaining only components aligned with the descent direction of the target loss landscape. It ac
+  [ICLR 2026][Optimization][Task Vectors] The proposed GradFix method constructs a binary mask using the signs of gradients computed from a very small number of samples on a target pre-trained model. This mask filters the source model’s task vector coordinate-wise, retaining only components aligned with the descent direction of the target loss landscape. It achieves cross-model task knowledge transfer without any fine-tuning, theoretically provides a strict first-order descent…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - gradient masking
+  - "ICLR 2026"
+  - "Optimization"
+  - "Task Vectors"
+  - "Model Merging"
+  - "gradient masking"
+  - "Foundation Models"
+  - "Transfer Learning"
 date: 2026-05-08
-content_hash: 53bee8a71c2635d3
+content_hash: 8ea8da1815669e3c
 ---
+
 # Gradient-Sign Masking for Task Vector Transport Across Pre-Trained Models
 
 **Conference**: ICLR 2026  
@@ -154,10 +159,10 @@ GradFix does not strictly involve a "training" process—it is a single-step tra
 ## Related Papers
 
 - [\[ICML 2025\] Adjustment for Confounding using Pre-Trained Representations](../../ICML2025/optimization/adjustment_for_confounding_using_pre-trained_representations.md)
+- [\[ICLR 2026\] From Gradient Volume to Shapley Fairness: Towards Fair Multi-Task Learning](from_gradient_volume_to_shapley_fairness_towards_fair_multi-task_learning.md)
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
 - [\[ICLR 2026\] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking](lmask_learn_to_solve_constrained_routing_problems_with_lazy_masking.md)
-- [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
-- [\[ICML 2025\] Provable In-Context Vector Arithmetic via Retrieving Task Concepts](../../ICML2025/optimization/provable_in-context_vector_arithmetic_via_retrieving_task_concepts.md)
-- [\[ICLR 2026\] ConRep4CO: Contrastive Representation Learning of Combinatorial Optimization Instances across Types](conrep4co_contrastive_representation_learning_of_combinatorial_optimization_inst.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lean4PHYS: Comprehensive Reasoning Framework for College-level Physics in Lean4
 description: >-
-  [ICLR 2026][LLM Reasoning][Lean4] This paper introduces Lean4PHYS—the first Lean4 formal reasoning framework for college physics. It consists of PhysLib, a community-driven physics theorem library with a unit system, and LeanPhysBench, an evaluation set containing 200 expert-formalized problems. The experiments reveal an overfitting phenomenon where "m
+  [ICLR 2026][Reasoning][Formal Physical Reasoning] This paper introduces Lean4PHYS—the first Lean4 formal reasoning framework for college physics. It consists of PhysLib, a community-driven physics theorem library with a unit system, and LeanPhysBench, an evaluation set containing 200 expert-formalized problems. The experiments reveal an overfitting phenomenon where "mathematical expert provers do not outperform general LLMs in the physics domain…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Lean4
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Formal Physical Reasoning"
+  - "Lean4"
+  - "Unit Systems"
+  - "Theorem Library"
+  - "University Physics Benchmark"
 date: 2026-05-08
-content_hash: b839d1973a3dfbf1
+content_hash: d041e01f52d5f04d
 ---
+
 # Lean4PHYS: Comprehensive Reasoning Framework for College-level Physics in Lean4
 
 **Conference**: ICLR 2026  
@@ -124,15 +129,14 @@ By problem type: College problems focus on numerical calculation with units and 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Structured Reasoning for LLMs: A Unified Framework for Efficiency and Explainability](structured_reasoning_for_llms_a_unified_framework_for_efficiency_and_explainabil.md)
-- [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
-- [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
 - [\[ICML 2026\] Scientific Logicality Enriched Methodology for LLM Reasoning: A Practice in Physics](../../ICML2026/llm_reasoning/scientific_logicality_enriched_methodology_for_llm_reasoning_a_practice_in_physi.md)
+- [\[ACL 2026\] MTR-Bench: A Comprehensive Benchmark for Multi-Turn Reasoning Evaluation](../../ACL2026/llm_reasoning/mtr-bench_a_comprehensive_benchmark_for_multi-turn_reasoning_evaluation.md)
+- [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
 
 </div>
 

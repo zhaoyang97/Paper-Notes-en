@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge
 description: >-
-  [ICML 2026][LLM Efficiency][Diffusion Language Model] Diffusion Language Models (DLMs) enable parallel decoding but suffer from poor quality. Directly using Monte Carlo methods to correct DLM drafts toward an Autoregressive (AR) target is computationally expensive due to the massive distribution gap. This paper proposes PoE-Bridge, which inserts a Product-of-Experts inter
+  [ICML2026][LLM Efficiency][Diffusion Language Models] Diffusion Language Models (DLMs) enable parallel decoding but suffer from poor quality. Directly using Monte Carlo methods to correct DLM drafts toward an Autoregressive (AR) target is computationally expensive due to the massive distribution gap. This paper proposes PoE-Bridge, which inserts a Product-of-Experts intermediate bridge distribution between the DLM and AR models. This decomposes the difficult "DLM $\to$ AR" co…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - Product-of-Experts
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "Parallel Decoding"
+  - "Product-of-Experts"
+  - "Speculative Sampling"
+  - "Importance Sampling"
 date: 2026-05-08
-content_hash: 4a5a4da758db8666
+content_hash: 2732746ba25ef8e0
 ---
+
 # Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge
 
 **Conference**: ICML2026  
@@ -136,11 +140,11 @@ Compared to standard entropy-based DLM decoding, PoE-Bridge significantly improv
 
 ## Related Papers
 
+- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](../../ICLR2026/llm_efficiency/refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
 - [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](../../ICLR2026/llm_efficiency/learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
-- [\[ICML 2026\] VIA-SD: Verification via Intra-Model Routing for Speculative Decoding](via-sd_verification_via_intra-model_routing_for_speculative_decoding.md)
-- [\[ICML 2026\] Structuring The Future: Diffusion LLM Speculative Decoding via Calibrated Draft Graphs](structuring_the_future_diffusion_llm_speculative_decoding_via_calibrated_draft_g.md)
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](../../ICLR2026/llm_efficiency/hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
 
 </div>
 

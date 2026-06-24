@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][W-DPO] StepORLM enables an 8B policy model and a Generative Process Reward Model (GenPRM) to refine each other in a self-evolving loop: each modeling trajectory sampled by the policy receives dual feedback from "solver result verification" and "GenPRM global process critique." The policy is aligned via weighted DPO (W-DPO) an
+  [ICLR 2026][Reasoning][Operations Research] StepORLM enables an 8B policy model and a Generative Process Reward Model (GenPRM) to refine each other in a self-evolving loop: each modeling trajectory sampled by the policy receives dual feedback from "solver result verification" and "GenPRM global process critique." The policy is aligned via weighted DPO (W-DPO) and the GenPRM is refined via SFT, achieving SOTA results across six OR benchmarks using a small model. The co-evolved…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - W-DPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Operations Research"
+  - "Generative Process Reward"
+  - "Self-Evolution"
+  - "W-DPO"
+  - "Solver Verification"
 date: 2026-05-08
-content_hash: ff4a83722f0f25fc
+content_hash: f7738dd9becde092
 ---
+
 # StepORLM: A Self-Evolving Framework with Generative Process Supervision for Operations Research Language Models
 
 **Conference**: ICLR 2026  
@@ -131,15 +136,15 @@ StepORLM (8B) achieved SOTA with an average Pass@1 of **81.4%** across six OR be
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 - [\[ICLR 2026\] Smarter Not Harder: Generative Process Evaluation with Intrinsic-Signal Driving and Ability-Adaptive Reward Shaping](smarter_not_harder_generative_process_evaluation_with_intrinsic-signal_driving_a.md)
+- [\[ICML 2026\] On the Generalization Gap in Self-Evolving Language Model Reasoning](../../ICML2026/llm_reasoning/on_the_generalization_gap_in_self-evolving_language_model_reasoning.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 - [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
-- [\[ICLR 2026\] Once-More: Continuous Self-Correction for Large Language Models via Perplexity-Guided Intervention](once-more_continuous_self-correction_for_large_language_models_via_perplexity-gu.md)
-- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 
 </div>
 

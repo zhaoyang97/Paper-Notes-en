@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration
 description: >-
-  [ICML 2026][Others][Paper Note] This paper proposes DCO-Warmstart—a "train–tune–calibrate" tripartite Bayesian conformal optimization paradigm. By placing efficiency search on an independent tuning split and reserving the conformal quantile for an untouched calibration split, it achieves standard finite-sample marginal coverage guarantees on candidat
+  [ICML2026][Split Conformal Prediction] This paper proposes DCO-Warmstart—a "train–tune–calibrate" tripartite Bayesian conformal optimization paradigm. By placing efficiency search on an independent tuning split and reserving the conformal quantile for an untouched calibration split, it achieves standard finite-sample marginal coverage guarantees on candidate structures of any size (even infinite) without requiring a confidence parameter $\delta$. Empirically…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Split Conformal Prediction"
+  - "Bayesian Optimization"
+  - "Marginal Coverage"
+  - "Data Partitioning"
+  - "Efficiency–Validity Decoupling"
 date: 2026-05-08
-content_hash: 8a9d795d00b4506b
+content_hash: 600208d1ef86c701
 ---
+
 # Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration
 
 **Conference**: ICML2026  
@@ -126,11 +131,11 @@ A systematic ablation of search range, split ratios, and target coverage was per
 
 ## Related Papers
 
+- [\[ICLR 2026\] Ensemble Prediction of Task Affinity for Efficient Multi-Task Learning](../../ICLR2026/others/ensemble_prediction_of_task_affinity_for_efficient_multi-task_learning.md)
 - [\[ICLR 2026\] Measuring Uncertainty Calibration](../../ICLR2026/others/measuring_uncertainty_calibration.md)
+- [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](../../ICLR2026/others/adaptive_conformal_guidance_for_learning_under_uncertainty.md)
 - [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](../../CVPR2026/others/adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
 - [\[ECCV 2024\] Dropout Mixture Low-Rank Adaptation for Visual Parameters-Efficient Fine-Tuning](../../ECCV2024/others/dropout_mixture_low-rank_adaptation_for_visual_parameters-efficient_fine-tuning.md)
-- [\[ICML 2026\] Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation](industrializing_prediction-powered_inference_the_glide_library_for_reliable_gena.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](../../ICLR2026/others/on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
 
 </div>
 

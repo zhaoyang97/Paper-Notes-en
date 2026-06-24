@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evaluating Language Models' Evaluations of Games
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper proposes a novel evaluation paradigm—shifting from assessing whether AI "can play a game" to whether it "can judge if a game is worth playing." Using 121 novel board games and over 450 human judgments, the authors systematically compare how well language/reasoning models align with humans, game-theoretic opt
+  [ICLR 2026][LLM Evaluation][Meta-reasoning] This paper proposes a novel evaluation paradigm—shifting from assessing whether AI "can play a game" to whether it "can judge if a game is worth playing." Using 121 novel board games and over 450 human judgments, the authors systematically compare how well language/reasoning models align with humans, game-theoretic optimal solutions, and symbolic game agents across two types of queries: "payoff estimation (fairness)" and "funness ev…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Meta-reasoning"
+  - "Game Evaluation"
+  - "Human Alignment"
+  - "Reasoning Models"
+  - "Resource Rationality"
 date: 2026-05-08
-content_hash: 1401dcb41e852066
+content_hash: 385bb24cef39ed87
 ---
+
 # Evaluating Language Models' Evaluations of Games
 
 **Conference**: ICLR 2026  

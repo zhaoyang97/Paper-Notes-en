@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Internalizing Agency from Reflective Experience
 description: >-
-  [ICML 2026][LLM Agent][agentic LLM] This paper proposes the LEAFE framework, which enables LLM agents to generate "failure $\to$ rollback $\to$ correction $\to$ success" experience data through reflection on failed trajectories. It then distills feedback-grounded recovery capabilities via SFT. This approach improves Pass@128 by up to 14% on long-horizon
+  [ICML 2026][LLM Agent][agentic LLM] This paper proposes the LEAFE framework, which enables LLM agents to generate "failure $\to$ rollback $\to$ correction $\to$ success" experience data through reflection on failed trajectories. It then distills feedback-grounded recovery capabilities via SFT. This approach improves Pass@128 by up to 14% on long-horizon tasks such as CodeContests, WebShop, and ALFWorld, significantly outperforming outcome-driven RL methods like GRPO.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - agentic LLM
-  - Pass@k
+  - "ICML 2026"
+  - "LLM Agent"
+  - "agentic LLM"
+  - "reflective experience"
+  - "rollback exploration"
+  - "experience distillation"
+  - "Pass@k"
 date: 2026-05-08
-content_hash: 41711bd953cc3b27
+content_hash: babfdf19e4568bac
 ---
+
 # Internalizing Agency from Reflective Experience
 
 **Conference**: ICML 2026  
@@ -125,16 +129,16 @@ Evaluation across 5 agentic benchmarks: CodeContests (program synthesis), WebSho
 - Value: ⭐⭐⭐⭐ (Provides a complementary paradigm to RLVR for agentic LLMs with low deployment costs)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sculptor: Empowering LLMs with Cognitive Agency via Active Context Management](../../ICLR2026/llm_agent/sculptor_empowering_llms_with_cognitive_agency_via_active_context_management.md)
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
+- [\[ICML 2026\] Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning](closing_the_feedback_loop_from_experience_extraction_to_insight_governance_in_ve.md)
 - [\[CVPR 2026\] Learning to Select Visual Tools from Experience](../../CVPR2026/llm_agent/learning_to_select_visual_tools_from_experience.md)
-- [\[ACL 2025\] R2D2: Remembering, Replaying and Dynamic Decision Making with a Reflective Agentic Memory](../../ACL2025/llm_agent/r2d2_reflective_agentic_memory.md)
-- [\[CVPR 2026\] Experience Transfer for Multimodal LLM Agents in Minecraft Game](../../CVPR2026/llm_agent/experience_transfer_for_multimodal_llm_agents_in_minecraft_game.md)
-- [\[ACL 2026\] ExpSeek: Self-Triggered Experience Seeking for Web Agents](../../ACL2026/llm_agent/expseek_self-triggered_experience_seeking_for_web_agents.md)
+- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](../../ICLR2026/llm_agent/scaling_agent_learning_via_experience_synthesis.md)
 
 </div>
 

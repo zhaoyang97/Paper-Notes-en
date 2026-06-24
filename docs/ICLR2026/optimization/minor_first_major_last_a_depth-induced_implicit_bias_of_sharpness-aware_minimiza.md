@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Sharpness-Aware Minimization] This work provides an in-depth analysis of the implicit bias of SAM trained on linear diagonal networks, revealing a qualitative shift induced by depth from $L=1$ to $L=2$: the limit direction of $\ell_\infty$-SAM is highly sensitive to initialization, while $\ell_2$-SAM exhibits a "weak-to-strong" **sequential feature
+  [ICLR 2026][Optimization][Sharpness-Aware Minimization] This work provides an in-depth analysis of the implicit bias of SAM trained on linear diagonal networks, revealing a qualitative shift induced by depth from $L=1$ to $L=2$: the limit direction of $\ell_\infty$-SAM is highly sensitive to initialization, while $\ell_2$-SAM exhibits a "weak-to-strong" **sequential feature amplification** phenomenon. The results indicate that analyses focusing solely on the $t\to\infty$ limi…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Sharpness-Aware Minimization
+  - "ICLR 2026"
+  - "Optimization"
+  - "Sharpness-Aware Minimization"
+  - "Implicit Bias"
+  - "Linear Diagonal Networks"
+  - "Feature Amplification"
+  - "Depth-Induced"
 date: 2026-05-08
-content_hash: bfa62f62ead06b8c
+content_hash: ef5c7c6e4e2c7d1c
 ---
+
 # Minor First, Major Last: A Depth-Induced Implicit Bias of Sharpness-Aware Minimization
 
 **Conference**: ICLR 2026  
@@ -123,8 +128,8 @@ Precise trajectory characterization relies on a technical tool. In the single-sa
 ## Related Papers
 
 - [\[ICLR 2026\] Hyperbolic Aware Minimization: Implicit Bias for Sparsity](hyperbolic_aware_minimization_implicit_bias_for_sparsity.md)
-- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICLR 2026\] Towards Understanding the Calibration Benefits of Sharpness-Aware Minimization](towards_understanding_the_calibration_benefits_of_sharpness-aware_minimization.md)
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
 - [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
 - [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
 

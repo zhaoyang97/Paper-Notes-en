@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models
 description: >-
-  [ICML 2026][LLM Agent][Deep Data Research] This paper introduces Deep Data Research (DDR), an open-ended agentic task paradigm where LLMs are provided only with a structured database and a minimal toolset (SQL+Python), without specific questions or turn limits, requiring the model to autonomously explore, hypothesize, and decide when to stop. The authors constr
+  [ICML 2026][LLM Agent][Deep Data Research] This paper introduces Deep Data Research (DDR), an open-ended agentic task paradigm where LLMs are provided only with a structured database and a minimal toolset (SQL+Python), without specific questions or turn limits, requiring the model to autonomously explore, hypothesize, and decide when to stop. The authors construct DDR-Bench (MIMIC-IV / GLOBEM / 10-K, featuring 291 entities and 2058 checklist items) using verifiable fact check…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Deep Data Research
-  - ReAct Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Deep Data Research"
+  - "Investigatory Intelligence"
+  - "ReAct Agent"
+  - "Checklist Evaluation"
+  - "Long-range Exploration"
 date: 2026-05-08
-content_hash: d620ea173d5b10a6
+content_hash: 21110f88cc3b6cf4
 ---
+
 # Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models
 
 **Conference**: ICML 2026  
@@ -143,11 +147,11 @@ Only Claude 4.5 Sonnet exceeds 40%, particularly dominating in 10-K (77.61). The
 
 ## Related Papers
 
+- [\[ICLR 2026\] Open Data Synthesis for Deep Research](../../ICLR2026/llm_agent/open_data_synthesis_for_deep_research.md)
 - [\[ICML 2026\] Towards Diverse Scientific Hypothesis Search with Large Language Models](towards_diverse_scientific_hypothesis_search_with_large_language_models.md)
+- [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](../../ICLR2026/llm_agent/nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
+- [\[ICLR 2026\] Do Large Language Models Know What They Are Capable Of?](../../ICLR2026/llm_agent/do_large_language_models_know_what_they_are_capable_of.md)
 - [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
-- [\[ACL 2025\] ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](../../ACL2025/llm_agent/toolhop_multi_hop_tool_use.md)
-- [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](../../CVPR2026/llm_agent/modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
-- [\[ICML 2026\] Probabilistic Modeling of Latent Agentic Substructures in Deep Neural Networks](probabilistic_modeling_of_latent_agentic_substructures_in_deep_neural_networks.md)
 
 </div>
 

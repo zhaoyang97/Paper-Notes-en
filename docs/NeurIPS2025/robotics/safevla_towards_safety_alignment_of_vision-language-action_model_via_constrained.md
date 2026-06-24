@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning
 description: >-
-  [NeurIPS 2025][Robotics][VLA safety] This work is the first to systematically apply the Constrained Markov Decision Process (CMDP) framework from Safe Reinforcement Learning (SafeRL) to safety alignment of Vision-Languag…
+  [NeurIPS 2025 Spotlight][Robotics][VLA safety] This work is the first to systematically apply the Constrained Markov Decision Process (CMDP) framework from Safe Reinforcement Learning (SafeRL) to safety alignment of Vision-Language-Action (VLA) models. Through a four-stage Integrated Safety Approach (ISA)—Model, Elicit, Constrain, and Assure—the method achieves an 83.58% reduction in safety violation costs on mobile manipulation tasks while maintaining task performance (+3.85…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "VLA safety"
   - "constrained MDP"
@@ -12,7 +12,7 @@ tags:
   - "embodied AI"
   - "robot safety"
 date: 2026-05-08
-content_hash: 5e9baa178bf7cd89
+content_hash: 7f3a63a07bf18117
 ---
 
 # SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning
@@ -148,11 +148,11 @@ Even when tasks completely fail (SR ≈ 0), ISA maintains safe behavior.
 
 ## Related Papers
 
+- [\[ICML 2025\] Action-Constrained Imitation Learning](../../ICML2025/robotics/action-constrained_imitation_learning.md)
 - [\[NeurIPS 2025\] Automaton Constrained Q-Learning](automaton_constrained_q-learning.md)
+- [\[CVPR 2026\] Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](../../CVPR2026/robotics/evo-1_lightweight_vision-language-action_model_with_preserved_semantic_alignment.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](../../ICLR2026/robotics/spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
-- [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
-- [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](../../ICML2026/robotics/from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
-- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](../../AAAI2026/robotics/continuous_vision-language-action_co-learning_with_semantic-.md)
 
 </div>
 

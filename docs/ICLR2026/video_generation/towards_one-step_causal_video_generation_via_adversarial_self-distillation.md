@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards One-Step Causal Video Generation via Adversarial Self-Distillation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Addressing the quality collapse of causal video diffusion models during 1~2 step few-step generation, this paper proposes Adversarial Self-Distillation (ASD) within the DMD distillation framework. By using a discriminator to align the distributions of $n$-step and $n+1$-step outputs from the student model, and combinin
+  [ICLR 2026][Video Generation][Causal video generation] Addressing the quality collapse of causal video diffusion models during 1~2 step few-step generation, this paper proposes Adversarial Self-Distillation (ASD) within the DMD distillation framework. By using a discriminator to align the distributions of $n$-step and $n+1$-step outputs from the student model, and combining this with a First Frame Enhancement (FFE) strategy during inference, a single distilled model maintains…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Causal video generation"
+  - "Distillation"
+  - "Adversarial Self-Distillation"
+  - "Few-step inference"
+  - "First-frame enhancement"
 date: 2026-05-08
-content_hash: c882194073f5bc98
+content_hash: 06a3051f1dafc9e0
 ---
+
 # Towards One-Step Causal Video Generation via Adversarial Self-Distillation
 
 **Conference**: ICLR 2026  

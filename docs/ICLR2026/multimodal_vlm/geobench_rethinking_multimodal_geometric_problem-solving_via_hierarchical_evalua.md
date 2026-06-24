@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] GeoBench: Rethinking Multimodal Geometric Problem-Solving via Hierarchical Evaluation
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] GeoBench utilizes the formal engine TrustGeoGen to generate 1021 verifiable synthetic geometry problems. Based on the van Hiele cognitive model, geometric reasoning is decomposed into four levels and six tasks ("Visual Perception → Goal Planning → Theorem Application → Self-reflection & Backtracking"), shifting VLM eva
+  [ICLR 2026][Multimodal VLM][Geometric problem solving] GeoBench utilizes the formal engine TrustGeoGen to generate 1021 verifiable synthetic geometry problems. Based on the van Hiele cognitive model, geometric reasoning is decomposed into four levels and six tasks ("Visual Perception → Goal Planning → Theorem Application → Self-reflection & Backtracking"), shifting VLM evaluation from "final answer only" to "diagnosing specific bottlenecks."
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Geometric problem solving"
+  - "hierarchical evaluation"
+  - "formal verification"
+  - "MLLM"
+  - "reasoning diagnosis"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 21b23aa912fe92cb
+content_hash: e0bc49cb32eb0c43
 ---
+
 # GeoBench: Rethinking Multimodal Geometric Problem-Solving via Hierarchical Evaluation
 
 **Conference**: ICLR 2026  
@@ -130,11 +135,11 @@ Visual tasks (N.P. 86.3%→47.6%) crash without images, while planning tasks (S.
 
 ## Related Papers
 
+- [\[ACL 2026\] A Survey of Deep Learning for Geometry Problem Solving](../../ACL2026/multimodal_vlm/a_survey_of_deep_learning_for_geometry_problem_solving.md)
 - [\[ICCV 2025\] Pi-GPS: Enhancing Geometry Problem Solving by Unleashing the Power of Diagrammatic Information](../../ICCV2025/multimodal_vlm/pi-gps_enhancing_geometry_problem_solving_by_unleashing_the_power_of_diagrammati.md)
 - [\[ICLR 2026\] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding](on_discriminative_vs_generative_classifiers_rethinking_mllms_for_action_understa.md)
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
 - [\[ICLR 2026\] MME-Emotion: A Holistic Evaluation Benchmark for Emotional Intelligence in Multimodal Large Language Models](mme-emotion_a_holistic_evaluation_benchmark_for_emotional_intelligence_in_multim.md)
-- [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
-- [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](../../CVPR2026/multimodal_vlm/bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
 
 </div>
 

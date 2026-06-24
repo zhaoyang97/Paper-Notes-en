@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] OServe jointly models LLM serving "resource allocation + parallel strategy + request routing" as a bi-level maximum flow problem on a flow network. Combined with LSTM-based workload prediction and ad-hoc model switching via GPU interconnects, it addresses the heterogeneity of real-world traffic in both spatial (differe
+  [ICML 2026][LLM Efficiency][LLM inference serving] OServe jointly models LLM serving "resource allocation + parallel strategy + request routing" as a bi-level maximum flow problem on a flow network. Combined with LSTM-based workload prediction and ad-hoc model switching via GPU interconnects, it addresses the heterogeneity of real-world traffic in both spatial (different request types) and temporal (varying composition over time) dimensions. End-to-end P99 latency and through…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "LLM inference serving"
+  - "heterogeneous deployment"
+  - "flow network scheduling"
+  - "workload prediction"
+  - "online model switching"
 date: 2026-05-08
-content_hash: 9e39bc0fbcd5d04d
+content_hash: e3bf30da4a192377
 ---
+
 # OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration
 
 **Conference**: ICML 2026  
@@ -133,8 +139,8 @@ Regarding spatial sensitivity, as the coefficient of variation (CV) of workload 
 - [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
 - [\[ICML 2026\] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving](theoretically_optimal_attentionffn_ratios_in_disaggregated_llm_serving.md)
 - [\[ICML 2026\] GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving](graphflow_a_graph-based_workflow_management_for_efficient_llm-agent_serving.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](../../ICLR2026/llm_efficiency/lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
+- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](../../ICLR2026/llm_efficiency/rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
+- [\[ICLR 2026\] DualMap: Enabling Both Cache Affinity and Load Balancing for Distributed LLM Serving](../../ICLR2026/llm_efficiency/dualmap_enabling_both_cache_affinity_and_load_balancing_for_distributed_llm_serv.md)
 
 </div>
 

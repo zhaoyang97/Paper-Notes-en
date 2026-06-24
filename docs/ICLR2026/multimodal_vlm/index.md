@@ -83,7 +83,7 @@ item_total: 211
 
 **🔬 ICLR2026** · **211** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (388)](../../CVPR2026/multimodal_vlm/index.md) · [💬 ACL2026 (83)](../../ACL2026/multimodal_vlm/index.md) · [🧪 ICML2026 (89)](../../ICML2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (105)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (106)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (420)](../../CVPR2026/multimodal_vlm/index.md) · [💬 ACL2026 (83)](../../ACL2026/multimodal_vlm/index.md) · [🧪 ICML2026 (89)](../../ICML2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (107)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (119)](../../ICCV2025/multimodal_vlm/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×113 · LLM ×15 · Alignment/RLHF ×10 · Few-/Zero-Shot Learning ×8 · Layout & Composition ×6
 

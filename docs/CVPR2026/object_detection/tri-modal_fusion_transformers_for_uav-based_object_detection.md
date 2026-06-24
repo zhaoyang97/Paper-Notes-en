@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tri-Modal Fusion Transformers for UAV-based Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] To address the failure of single sensors under low light, motion blur, and rapid scene changes in UAV applications, this paper employs a dual-stream hierarchical MiT Transformer to perform gated and bi-directional token exchange fusion across multiple resolution levels of the backbone for RGB, Thermal, and Event modali
+  [CVPR 2026][Object Detection][UAV Detection] To address the failure of single sensors under low light, motion blur, and rapid scene changes in UAV applications, this paper employs a dual-stream hierarchical MiT Transformer to perform gated and bi-directional token exchange fusion across multiple resolution levels of the backbone for RGB, Thermal, and Event modalities. The authors release the first synchronized and aligned tri-modal UAV dataset (10,489 frames / 24…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "UAV Detection"
+  - "Tri-modal Fusion"
+  - "Thermal Infrared"
+  - "Event Camera"
+  - "Hierarchical Transformer"
 date: 2026-05-08
-content_hash: d28f4f0e40b76e1f
+content_hash: 6a08bb1ad53db947
 ---
+
 # Tri-Modal Fusion Transformers for UAV-based Object Detection
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,16 @@ Tri-modal (84.24%) consistently outperforms all dual-modalities. RGB+Thermal (83
 - **Value**: ⭐⭐⭐⭐ The dataset and controlled benchmarks serve as solid infrastructure for the tri-modal fusion community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection](uav-cb_a_complex-background_rgb-t_dataset_and_local_frequency_bridge_network_for.md)
 - [\[CVPR 2026\] Distribution-Aligned Multimodal Fusion for Robust Object Detection](distribution-aligned_multimodal_fusion_for_robust_object_detection.md)
-- [\[CVPR 2026\] When Transformers Meet Mamba: A Hybrid Transformer-Mamba Network for Video Object Detection](when_transformers_meet_mamba_a_hybrid_transformer-mamba_network_for_video_object.md)
 - [\[CVPR 2026\] Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](visual_prototype_conditioned_focal_region_generation_for_uav-based_object_detect.md)
-- [\[CVPR 2026\] UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](uavgen_visual_prototype_conditioned_focal_region_generation_for_uav_based_object_detection.md)
+- [\[CVPR 2026\] When Transformers Meet Mamba: A Hybrid Transformer-Mamba Network for Video Object Detection](when_transformers_meet_mamba_a_hybrid_transformer-mamba_network_for_video_object.md)
+- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
 
 </div>
 

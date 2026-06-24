@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the issues of early entropy collapse and reasoning boundary stagnation in RLVR methods like GRPO that "optimize mean reward," this paper proposes RiskPO. It replaces the mean objective with a Mixed Value-at-Risk (MVaR) objective, focusing gradient signals on the left tail of the reward distribution (hard pro
+  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the issues of early entropy collapse and reasoning boundary stagnation in RLVR methods like GRPO that "optimize mean reward," this paper proposes RiskPO. It replaces the mean objective with a Mixed Value-at-Risk (MVaR) objective, focusing gradient signals on the left tail of the reward distribution (hard problems). Combined with problem bundling to transform binary feedback into a continuous distribution…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Risk metrics"
+  - "Entropy collapse"
+  - "Policy optimization"
+  - "Reasoning capability"
 date: 2026-05-08
-content_hash: 6a3bc5bec080e17d
+content_hash: 7d8ad4449c736db9
 ---
+
 # RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,10 @@ Crucially, as $k$ increases in Pass@k, the gap between RiskPO and GRPO continues
 ## Related Papers
 
 - [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](prompt_curriculum_learning_for_efficient_llm_post-training.md)
-- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 - [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
+- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
+- [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
 - [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
-- [\[ICLR 2026\] The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward](the_choice_of_divergence_a_neglected_key_to_mitigating_diversity_collapse_in_rei.md)
 
 </div>
 

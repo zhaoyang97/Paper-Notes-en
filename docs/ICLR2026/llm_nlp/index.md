@@ -83,7 +83,7 @@ item_total: 56
 
 **🔬 ICLR2026** · **56** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/llm_nlp/index.md) · [💬 ACL2026 (62)](../../ACL2026/llm_nlp/index.md) · [🧪 ICML2026 (39)](../../ICML2026/llm_nlp/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (3)](../../CVPR2026/llm_nlp/index.md) · [💬 ACL2026 (62)](../../ACL2026/llm_nlp/index.md) · [🧪 ICML2026 (39)](../../ICML2026/llm_nlp/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
 
 🔥 **Top topics:** LLM ×16 · Diffusion Models ×6 · Reasoning ×3 · Agents ×2 · Layout & Composition ×2
 

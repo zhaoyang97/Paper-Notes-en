@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] ARVFI reformulates video frame interpolation from "generating all intermediate frames at once" to "generating frames autoregressively from two endpoints towards the center." By replacing optical flow with DINOv3 features as the motion representation, it significantly enhances interpolation accuracy for large complex mo
+  [CVPR 2026][Video frame interpolation] ARVFI reformulates video frame interpolation from "generating all intermediate frames at once" to "generating frames autoregressively from two endpoints towards the center." By replacing optical flow with DINOv3 features as the motion representation, it significantly enhances interpolation accuracy for large complex motions (leading in FID across benchmarks) while reducing sampling to 15 steps—approximately 3x faster than its backbone…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Video frame interpolation"
+  - "autoregressive diffusion"
+  - "DINOv3 motion representation"
+  - "large complex motion"
+  - "temporal consistency"
 date: 2026-05-08
-content_hash: 539ac3a96cbb8a2e
+content_hash: b3ac10eac19e2cde
 ---
+
 # Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation
 
 **Conference**: CVPR 2026  
@@ -138,11 +143,11 @@ Step-wise model simplification on the FCVG dataset (Table 2):
 
 ## Related Papers
 
-- [\[CVPR 2026\] BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification](bit_matching-based_bi-directional_interaction_transformation_network_for_visible.md)
-- [\[CVPR 2026\] HSI-GPT2: A Dual-Granularity Large Motion Reasoning Model with Diffusion Refinement for Human-Scene Interaction](hsi-gpt2_a_dual-granularity_large_motion_reasoning_model_with_diffusion_refineme.md)
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](hum4d_markerless_motion_capture.md)
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
+- [\[ICML 2026\] AMDP: Asynchronous Multi-Directional Pipeline Parallelism for Large-Scale Models Training](../../ICML2026/others/amdp_asynchronous_multi-directional_pipeline_parallelism_for_large-scale_models_.md)
+- [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
+- [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](../../ICCV2025/others/syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
+- [\[CVPR 2026\] FlashVSR: Towards Real-time Diffusion-Based Streaming Video Super Resolution](flashvsr_towards_real-time_diffusion-based_streaming_video_super_resolution.md)
+- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
 
 </div>
 

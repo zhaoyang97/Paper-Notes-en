@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning
 description: >-
-  [AAAI 2026][Image Generation][Distributionally Robust RL] This paper studies online distributionally robust reinforcement learning and proposes the RVI-$f$ algorithm based on $f$-divergence uncertainty sets. It achieves…
+  [AAAI 2026][Image Generation][Distributionally Robust RL] This paper studies online distributionally robust reinforcement learning and proposes the RVI-$f$ algorithm based on $f$-divergence uncertainty sets. It achieves near minimax-optimal regret bounds under both $\chi^2$ and KL divergences without relying on any structural assumptions.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Minimax Optimal"
   - "Sample Complexity"
 date: 2026-05-08
-content_hash: 134668bfb8b00168
+content_hash: 4787c3a09abc0b39
 ---
 
 # ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning
@@ -165,11 +165,11 @@ $$\text{Regret}(K) = \sum_{k=1}^K [V_1^{\star,\sigma}(s_1^k) - V_1^{\pi^k,\sigma
 
 ## Related Papers
 
+- [\[ICML 2025\] Sample Complexity of Distributionally Robust Off-Dynamics Reinforcement Learning with Online Interaction](../../ICML2025/image_generation/sample_complexity_of_distributionally_robust_off-dynamics_reinforcement_learning.md)
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](../../ICLR2026/image_generation/flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](../../NeurIPS2025/image_generation/towards_robust_zero-shot_reinforcement_learning.md)
 - [\[ICLR 2026\] DiffusionNFT: Online Diffusion Reinforcement with Forward Process](../../ICLR2026/image_generation/diffusionnft_online_diffusion_reinforcement_with_forward_process.md)
+- [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](../../NeurIPS2025/image_generation/towards_robust_zero-shot_reinforcement_learning.md)
 - [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
-- [\[AAAI 2026\] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions
 description: >-
-  [NeurIPS 2025][Interpretability][Partial Information Decomposition] Two complementary tools are proposed: Thin-PID is an efficient Gaussian PID algorithm (10× faster than existing methods)…
+  [NeurIPS 2025][Interpretability][Partial Information Decomposition] Two complementary tools are proposed: Thin-PID is an efficient Gaussian PID algorithm (10× faster than existing methods), and Flow-PID applies normalizing flows to map arbitrary input distributions to Gaussian space before computing PID, addressing the infeasibility of PID on continuous high-dimensional data. The paper also resolves an open problem regarding whether the joint Gaussian solution is optimal.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "multimodal learning"
   - "mutual information"
 date: 2026-05-08
-content_hash: 1f514dc9937353c1
+content_hash: aa12c021d48df3b4
 ---
 
 # Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions
@@ -132,11 +132,11 @@ The Flow-PID loss is the sum of Gaussian marginal regularization terms over the 
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition](h-splid_hsic-based_saliency_preserving_latent_information_decomposition.md)
+- [\[ICML 2026\] Analytic Bijections for Smooth and Interpretable Normalizing Flows](../../ICML2026/interpretability/analytic_bijections_for_smooth_and_interpretable_normalizing_flows.md)
 - [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
 - [\[NeurIPS 2025\] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders](towards_interpretability_without_sacrifice_faithful_dense_layer_decomposition_wi.md)
 - [\[NeurIPS 2025\] Knowing When to Stop: Efficient Context Processing via Latent Sufficiency Signals](knowing_when_to_stop_efficient_context_processing_via_latent_sufficiency_signals.md)
-- [\[NeurIPS 2025\] Steering Information Utility in Key-Value Memory for Language Model Post-Training](steering_information_utility_in_key-value_memory_for_language_model_post-trainin.md)
-- [\[NeurIPS 2025\] Time-Evolving Dynamical System for Learning Latent Representations of Mouse Visual Cortex](time-evolving_dynamical_system_for_learning_latent_representations_of_mouse_visu.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Transferring Causal Effects using Proxies
 description: >-
-  [NEURIPS2025][Causal Inference][proximal causal inference] This paper proposes a multi-domain causal effect transfer method based on proxy variables. Given that only proxy variable $W$ is observed in the target domain…
+  [NEURIPS2025][Causal Inference][proximal causal inference] This paper proposes a multi-domain causal effect transfer method based on proxy variables. Given that only proxy variable $W$ is observed in the target domain, the method leverages multi-source domain data to identify and estimate the interventional distribution under unobserved confounders in the target domain, and provides two consistent estimators with asymptotic confidence intervals.
 tags:
   - "NEURIPS2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "proxy variables"
   - "interventional distribution"
 date: 2026-05-08
-content_hash: 86cf72b9c48d5a0e
+content_hash: fbad294bc10ac0b2
 ---
 
 # Transferring Causal Effects using Proxies
@@ -153,11 +153,11 @@ with softmax-constrained parameter space and gradient-based optimization (non-co
 
 ## Related Papers
 
+- [\[ICLR 2026\] Topological Causal Effects](../../ICLR2026/causal_inference/topological_causal_effects.md)
+- [\[ICML 2025\] Isolated Causal Effects of Natural Language](../../ICML2025/causal_inference/isolated_causal_effects_of_natural_language.md)
+- [\[ICML 2025\] Estimating Causal Effects in Gaussian Linear SCMs with Finite Data](../../ICML2025/causal_inference/estimating_causal_effects_in_gaussian_linear_scms_with_finite_data.md)
+- [\[CVPR 2025\] Image Quality Assessment: Investigating Causal Perceptual Effects with Abductive Counterfactual Inference](../../CVPR2025/causal_inference/image_quality_assessment_investigating_causal_perceptual_effects_with_abductive_.md)
 - [\[AAAI 2026\] Learning Subgroups with Maximum Treatment Effects without Causal Heuristics](../../AAAI2026/causal_inference/learning_subgroups_with_maximum_treatment_effects_without_causal_heuristics.md)
-- [\[AAAI 2026\] Causal Inference Under Threshold Manipulation: Bayesian Mixture Modeling and Heterogeneous Treatment Effects](../../AAAI2026/causal_inference/causal_inference_under_threshold_manipulation_bayesian_mixtu.md)
-- [\[ICML 2026\] Rank-Learner: Orthogonal Ranking of Treatment Effects](../../ICML2026/causal_inference/rank-learner_orthogonal_ranking_of_treatment_effects.md)
-- [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
-- [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
 
 </div>
 

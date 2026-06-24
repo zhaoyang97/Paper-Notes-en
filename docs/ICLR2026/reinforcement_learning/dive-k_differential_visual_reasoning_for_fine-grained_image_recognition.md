@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition
 description: >-
-  [ICLR 2026][Reinforcement Learning][fine-grained recognition] The DiVE-k framework is proposed, which leverages the top-k generation results of Large Vision-Language Models (LVLMs) to construct multiple-choice questions (MCQs). Through GRPO reinforcement learning, the model is trained to perform differential visual reasoning, significantly outperforming existing methods in base-t
+  [ICLR2026][Reinforcement Learning][fine-grained recognition] The DiVE-k framework is proposed, which leverages the top-k generation results of Large Vision-Language Models (LVLMs) to construct multiple-choice questions (MCQs). Through GRPO reinforcement learning, the model is trained to perform differential visual reasoning, significantly outperforming existing methods in base-to-novel generalization for fine-grained image recognition.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - fine-grained recognition
-  - reinforcement-learning
-  - GRPO
-  - visual reasoning
-  - multiple-choice question
-  - LVLM
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "fine-grained recognition"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "visual reasoning"
+  - "multiple-choice question"
+  - "LVLM"
 date: 2026-05-08
-content_hash: 3d0fb8966e66f93b
+content_hash: 3ec53b1a74a4075f
 ---
+
 # DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition
 
 **Conference**: ICLR2026  
@@ -155,10 +156,10 @@ The key distinction of DiVE-k is transforming open-set classification into a sel
 ## Related Papers
 
 - [\[ICLR 2026\] RewardMap: Tackling Sparse Rewards in Fine-grained Visual Reasoning via Multi-Stage Reinforcement Learning](rewardmap_tackling_sparse_rewards_in_fine-grained_visual_reasoning_via_multi-sta.md)
-- [\[ICLR 2026\] PreferThinker: Reasoning-based Personalized Image Preference Assessment](preferthinker_reasoning-based_personalized_image_preference_assessment.md)
 - [\[ICLR 2026\] Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment](reasoning_as_representation_rethinking_visual_reinforcement_learning_in_image_qu.md)
-- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](../../CVPR2026/reinforcement_learning/specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
+- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](q-learning_with_fine-grained_gap-dependent_regret.md)
+- [\[ICLR 2026\] PreferThinker: Reasoning-based Personalized Image Preference Assessment](preferthinker_reasoning-based_personalized_image_preference_assessment.md)
 
 </div>
 

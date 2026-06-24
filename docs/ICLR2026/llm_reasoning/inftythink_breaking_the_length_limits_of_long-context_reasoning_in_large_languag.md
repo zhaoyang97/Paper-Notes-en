@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Ours proposes InftyThink, a new paradigm that transforms monolithic long reasoning into iterative short reasoning with intermediate summaries. It achieves theoretically unbounded reasoning depth and significantly reduces computational costs without modifying model architectures, showing an 11% improvement for Qwen2.5-M
+  [ICLR 2026][Reasoning][Long-Context Reasoning] Ours proposes InftyThink, a new paradigm that transforms monolithic long reasoning into iterative short reasoning with intermediate summaries. It achieves theoretically unbounded reasoning depth and significantly reduces computational costs without modifying model architectures, showing an 11% improvement for Qwen2.5-Math-7B on AIME24.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long-Context Reasoning"
+  - "Iterative Reasoning"
+  - "Summarization Compression"
+  - "Computational Efficiency"
+  - "Reasoning Paradigm"
 date: 2026-05-08
-content_hash: 7812089f73070829
+content_hash: 23942fc2656cfa32
 ---
+
 # InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -146,7 +152,7 @@ Instruction fine-tuning is performed on OpenR1-Math-Inf (InftyThink format corpu
 - [\[ICLR 2026\] The Limits of Inference Scaling Through Resampling](the_limits_of_inference_scaling_through_resampling.md)
 - [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
 - [\[ICLR 2026\] HardcoreLogic: Challenging Large Reasoning Models with Long-tail Logic Puzzle Games](hardcorelogic_challenging_large_reasoning_models_with_long-tail_logic_puzzle_gam.md)
-- [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
+- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](../../ACL2026/llm_reasoning/long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 
 </div>
 

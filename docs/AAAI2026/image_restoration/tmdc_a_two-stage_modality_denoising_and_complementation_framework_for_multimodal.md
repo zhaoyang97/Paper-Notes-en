@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TMDC: A Two-Stage Modality Denoising and Complementation Framework for Multimodal Sentiment Analysis
 description: >-
-  [AAAI 2026][Image Restoration][multimodal sentiment analysis] This paper proposes TMDC, a two-stage framework in which the first stage learns denoised modality-specific and modality-common representations on complete dat…
+  [AAAI 2026][Image Restoration][multimodal sentiment analysis] This paper proposes TMDC, a two-stage framework in which the first stage learns denoised modality-specific and modality-common representations on complete data, and the second stage leverages denoised representations from available modalities to reconstruct missing ones — marking the first joint treatment of noise and missing modalities in MSA.
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "variational information bottleneck"
   - "denoising"
 date: 2026-05-08
-content_hash: 6a039406a233f00e
+content_hash: 61f8c365e91193cb
 ---
 
 # TMDC: A Two-Stage Modality Denoising and Complementation Framework for Multimodal Sentiment Analysis
@@ -131,11 +131,11 @@ $$\mathcal{L}_{IMD} = \sum_{m} \left(\sum_{b \in \{Spe,Com\}} \mathcal{L}_b^m + 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](../../CVPR2026/image_restoration/blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](../../CVPR2026/image_restoration/restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
+- [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](../../CVPR2026/image_restoration/mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[ICML 2026\] AnyMod-LLVE: Low-Light Video Enhancement with Modality-Agnostic Inference](../../ICML2026/image_restoration/anymod-llve_low-light_video_enhancement_with_modality-agnostic_inference.md)
 - [\[CVPR 2026\] Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis](../../CVPR2026/image_restoration/unicac_universal_computational_aberration_correction_benchmark.md)
-- [\[AAAI 2026\] Blur-Robust Detection via Feature Restoration: An End-to-End Framework for Prior-Guided Infrared UAV Target Detection](blur-robust_detection_via_feature_restoration_an_end-to-end_framework_for_prior-.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](../../CVPR2026/image_restoration/drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[ICCV 2025\] Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis](../../ICCV2025/image_restoration/benchmarking_burst_super-resolution_for_polarization_images_noise_dataset_and_an.md)
 
 </div>
 

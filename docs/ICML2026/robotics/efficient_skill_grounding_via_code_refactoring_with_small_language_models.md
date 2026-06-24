@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Skill Grounding via Code Refactoring with Small Language Models
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] RECENT enables robots to adapt to different morphologies (different arms or grippers) or dynamic environments without using Large Language Models (LLMs) to rewrite skill code from scratch. Instead, it decouples "semantic intent" from "execution binding" in executable code. A 7B Small Language Model (sLM) performs local
+  [ICML2026][Robotics][Skill Grounding] RECENT enables robots to adapt to different morphologies (different arms or grippers) or dynamic environments without using Large Language Models (LLMs) to rewrite skill code from scratch. Instead, it decouples "semantic intent" from "execution binding" in executable code. A 7B Small Language Model (sLM) performs local refactoring via Fill-in-the-Middle (FIM) only on the execution binding lines—addressing morphological differences through…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
+  - "ICML2026"
+  - "Robotics"
+  - "Skill Grounding"
+  - "Code Refactoring"
+  - "Small Language Models"
+  - "Embodied Control"
+  - "Ontological Reasoning"
 date: 2026-05-08
-content_hash: 3734376afd0bf6dc
+content_hash: 8310e425cc219c9e
 ---
+
 # Efficient Skill Grounding via Code Refactoring with Small Language Models
 
 **Conference**: ICML2026  
@@ -123,14 +129,17 @@ Tasks were constructed in CoppeliaSim (kinematic differences: Panda→UR5/Sawyer
 
 <div class="related-papers" markdown="1">
 
-1. **Code as Policies**: Language Model Programs for Embodied Control (ICRA 2023)
-2. **ProgPrompt**: Generating Code Probabilities for Task Planning (ICRA 2023)
-3. **RepairAgent**: Autonomous Program Repair for Embodied Agents (arXiv 2024)
+## Related Papers
+
+- [\[ICML 2026\] BEAR: Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis](dissecting_embodied_abilities_in_multimodal_language_models_through_skill-level_.md)
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](../../ICLR2026/robotics/vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
+- [\[ICML 2025\] FOUNDER: Grounding Foundation Models in World Models for Open-Ended Embodied Decision Making](../../ICML2025/robotics/founder_grounding_foundation_models_in_world_models_for_open-ended_embodied_deci.md)
+- [\[ICML 2026\] Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents](functional_cache_grafting_robust_and_rapid_code-policy_synthesis_for_embodied_ag.md)
+- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](../../ICLR2026/robotics/twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] BEAR: Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis](dissecting_embodied_abilities_in_multimodal_language_models_through_skill-level_.md)

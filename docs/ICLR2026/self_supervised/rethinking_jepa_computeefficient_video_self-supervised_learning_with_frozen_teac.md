@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking JEPA: Compute-Efficient Video Self-Supervised Learning with Frozen Teachers
 description: >-
-  [ICLR 2026][Self-Supervised Learning][JEPA] This paper replaces the "online EMA teacher" in V-JEPA with a "static teacher" that is pre-trained via pixel reconstruction and subsequently frozen. This results in SALT, a simplified two-stage framework that requires no anti-collapse regularization. SALT outperforms V-JEPA 2 in frozen backbone evaluations while saving
+  [ICLR 2026][Self-Supervised Learning][Video Self-Supervised] This paper replaces the "online EMA teacher" in V-JEPA with a "static teacher" that is pre-trained via pixel reconstruction and subsequently frozen. This results in SALT, a simplified two-stage framework that requires no anti-collapse regularization. SALT outperforms V-JEPA 2 in frozen backbone evaluations while saving compute, and unexpectedly reveals that a small, "weak" teacher can effectively supervise a very st…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - JEPA
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Video Self-Supervised"
+  - "JEPA"
+  - "Masked Latent Prediction"
+  - "Frozen Teacher"
+  - "Compute Efficiency"
 date: 2026-05-08
-content_hash: c30f3b5dcf600122
+content_hash: 92d165e5eb0cd168
 ---
+
 # Rethinking JEPA: Compute-Efficient Video Self-Supervised Learning with Frozen Teachers
 
 **Conference**: ICLR 2026  

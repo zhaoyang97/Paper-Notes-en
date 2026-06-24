@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] OS-FED: One Snapshot Is All You Need
 description: >-
-  [CVPR 2026][Optimization & Theory][Data Distillation] OS-FED encodes the cumulative gradients of a client's entire local training period into a "synthetic snapshot"—comprising one 224×224 synthetic image and a set of learnable labels. In each round, only this snapshot is transmitted. The server recovers and aggregates global updates through a single feedforward and backpr
+  [CVPR 2026][Federated Learning][Communication Efficiency] OS-FED encodes the cumulative gradients of a client's entire local training period into a "synthetic snapshot"—comprising one 224×224 synthetic image and a set of learnable labels. In each round, only this snapshot is transmitted. The server recovers and aggregates global updates through a single feedforward and backpropagation step, reducing communication overhead by 1.5–16× and accelerating convergence by 18–45% comp…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - Data Distillation
-  - One-Shot
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Communication Efficiency"
+  - "Gradient Compression"
+  - "Data Distillation"
+  - "One-Shot"
 date: 2026-05-08
-content_hash: 6ff2f6a5922b6ead
+content_hash: 3bb01eb8f64a5720
 ---
+
 # OS-FED: One Snapshot Is All You Need
 
 **Conference**: CVPR 2026  
@@ -167,11 +170,11 @@ Ablation on Error Compensation (EC) on ImageNet-10 with varying Multi-Grid facto
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift](fed-ade_adaptive_learning_rate_for_federated_post-adaptation_under_distribution_.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
-- [\[AAAI 2026\] A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication](../../AAAI2026/optimization/a_unified_convergence_analysis_for_semi-decentralized_learni.md)
-- [\[NeurIPS 2025\] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](../../NeurIPS2025/optimization/do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)
-- [\[AAAI 2026\] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing](../../AAAI2026/optimization/peoat_personalization-guided_evolutionary_question_assembly_for_one-shot_adaptiv.md)
+- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] Generalized and Personalized Federated Learning with Black-Box Foundation Models via Orthogonal Transformations](generalized_and_personalized_federated_learning_with_black-box_foundation_models.md)
+- [\[CVPR 2026\] FedAlign: Differentially Private Distribution Alignment for Non-IID Federated Learning](fedalign_differentially_private_distribution_alignment_for_non-iid_federated_lea.md)
+- [\[CVPR 2026\] FedRAC: Rolling Submodel Allocation for Collaborative Fairness in Federated Learning](fedrac_rolling_submodel_allocation_for_collaborative_fairness_in_federated_learn.md)
+- [\[CVPR 2026\] FedAdamom: Adaptive Momentum for Improved Generalization in Federated Optimization](fedadamom_adaptive_momentum_for_improved_generalization_in_federated_optimizatio.md)
 
 </div>
 

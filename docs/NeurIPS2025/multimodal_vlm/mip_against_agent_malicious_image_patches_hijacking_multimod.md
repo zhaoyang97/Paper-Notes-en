@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents
 description: >-
-  [NeurIPS 2025][Multimodal VLM][adversarial attack] This paper reveals a novel adversarial attack against multimodal OS Agents, termed MIP (Malicious Image Patches): visually imperceptible adversarial perturbation patches…
+  [NeurIPS 2025][Multimodal VLM][adversarial attack] This paper reveals a novel adversarial attack against multimodal OS Agents, termed MIP (Malicious Image Patches): visually imperceptible adversarial perturbation patches (occupying approximately 1/7 of the screen area) are embedded in screenshots, causing the OS Agent to output a predefined sequence of malicious API calls upon capture. Joint optimization enables universal generalization across user instructions and screen lay…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "VLM security"
   - "computer worm"
 date: 2026-05-08
-content_hash: 641b55838de69ed3
+content_hash: d860616a7b4327e0
 ---
 
 # MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents
@@ -120,11 +120,11 @@ The attack pipeline proceeds as follows: (1) optimize pixel perturbations within
 
 ## Related Papers
 
-- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA with Adversarial Patches for Targeted Behavior Attacks](../../ICML2026/multimodal_vlm/trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
-- [\[NeurIPS 2025\] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](vagen_reinforcing_world_model_reasoning_for_multi-turn_vlm_agents.md)
+- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches](../../ICML2026/multimodal_vlm/trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
+- [\[ACL 2025\] Agent-RewardBench: Towards a Unified Benchmark for Reward Modeling across Perception, Planning, and Safety in Real-World Multimodal Agents](../../ACL2025/multimodal_vlm/agent_rewardbench.md)
 - [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
+- [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](the_narrow_gate_localized_imagetext_communication_in_native.md)
 - [\[NeurIPS 2025\] A Frustratingly Simple Yet Highly Effective Attack Baseline: Over 90% Success Rate Against the Strong Black-box Models of GPT-4.5/4o/o1](a_frustratingly_simple_yet_highly_effective_attack_baseline.md)
-- [\[NeurIPS 2025\] GeoRanker: Distance-Aware Ranking for Worldwide Image Geolocalization](georanker_distance-aware_ranking_for_worldwide_image_geolocalization.md)
 
 </div>
 

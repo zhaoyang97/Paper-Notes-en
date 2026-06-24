@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FastJAM: a Fast Joint Alignment Model for Images
 description: >-
-  [NeurIPS 2025][Graph Learning][Joint image alignment] FastJAM is a graph-based fast joint image alignment method that computes pairwise keypoint correspondences using off-the-shelf image matchers…
+  [NeurIPS 2025][Graph Learning][Joint image alignment] FastJAM is a graph-based fast joint image alignment method that computes pairwise keypoint correspondences using off-the-shelf image matchers, constructs a keypoint graph via fast non-parametric clustering, employs a GNN to propagate and aggregate information for predicting per-image homography parameters, and adopts an inverse-compositional loss to eliminate the need for regularization hyperparameters. It reduces joint al…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "non-parametric clustering"
   - "inverse-compositional loss"
 date: 2026-05-08
-content_hash: 77779b47710baabb
+content_hash: 378551bd8a806f66
 ---
 
 # FastJAM: a Fast Joint Alignment Model for Images
@@ -151,11 +151,11 @@ FastJAM matches or surpasses all existing methods in alignment quality while bei
 
 ## Related Papers
 
+- [\[ACL 2025\] Fast-and-Frugal Text-Graph Transformers are Effective Link Predictors](../../ACL2025/graph_learning/fast-and-frugal_text-graph_transformers_are_effective_link_predictors.md)
+- [\[CVPR 2025\] Hypergraph Vision Transformers: Images are More than Nodes, More than Edges](../../CVPR2025/graph_learning/hypergraph_vision_transformers_images_are_more_than_nodes_more_than_edges.md)
 - [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[NeurIPS 2025\] Heterogeneous Swarms: Jointly Optimizing Model Roles and Weights for Multi-LLM Systems](heterogeneous_swarms_jointly_optimizing_model_roles_and_weights_for_multi-llm_sy.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](../../ICLR2026/graph_learning/entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
-- [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](../../ACL2026/graph_learning/ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
-- [\[ICML 2026\] Structure-Centric Graph Foundation Model via Geometric Bases](../../ICML2026/graph_learning/structure-centric_graph_foundation_model_via_geometric_bases.md)
+- [\[ICLR 2026\] ReLaSH: Reconstructing Joint Latent Spaces for Efficient Generation of Synthetic Hypergraphs with Hyperlink Attributes](../../ICLR2026/graph_learning/relash_reconstructing_joint_latent_spaces_for_efficient_generation_of_synthetic_.md)
 
 </div>
 

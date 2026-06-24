@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark
 description: >-
-  [ICLR 2026][Multimodal VLM][Multi-Agent] P2P decomposes the paper-to-poster generation process into three agents—figure understanding, content organization, and HTML layout orchestration—each equipped with self-checking loops. It introduces the P2PINSTRUCT dataset and the P2PEVAL dual-perspective benchmark to evaluate generated posters based on both objective
+  [ICLR 2026][Multimodal VLM][Academic poster generation] P2P decomposes the paper-to-poster generation process into three agents—figure understanding, content organization, and HTML layout orchestration—each equipped with self-checking loops. It introduces the P2PINSTRUCT dataset and the P2PEVAL dual-perspective benchmark to evaluate generated posters based on both objective content fidelity and subjective overall quality.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Academic poster generation"
+  - "Multi-agent"
+  - "Document understanding"
+  - "Fine-grained evaluation"
+  - "Instruction dataset"
 date: 2026-05-08
-content_hash: e9d3544530d2cd2a
+content_hash: 107dbed873daf2f7
 ---
+
 # P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark
 
 **Conference**: ICLR 2026  
@@ -153,6 +158,7 @@ The authors compared 35 models/systems on P2PEVAL. Using Claude-3.7-Sonnet, P2P 
 - Value: ⭐⭐⭐⭐⭐ High reference value for scientific communication automation, multimodal evaluation, and LLM agent workflows.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

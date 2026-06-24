@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BabelDOC: Better Layout-Preserving PDF Translation via Intermediate Representation
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] BabelDOC is proposed as a layout-preserving PDF translation system based on an Intermediate Representation (IR) that decouples visual layout from semantic content. This allows NLP operations—such as LLM translation, terminology extraction, cross-page context awareness, and formula masking—to be performed at the semanti
+  [ACL 2026][Multilingual & Machine Translation][PDF Translation] BabelDOC is proposed as a layout-preserving PDF translation system based on an Intermediate Representation (IR) that decouples visual layout from semantic content. This allows NLP operations—such as LLM translation, terminology extraction, cross-page context awareness, and formula masking—to be performed at the semantic layer before being re-anchored to the original layout via an adaptive typesetting engine. On a…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "PDF Translation"
+  - "Intermediate Representation"
+  - "Adaptive Typesetting"
+  - "Formula Placeholders"
+  - "Terminology Consistency"
 date: 2026-05-08
-content_hash: fe1a2080c067a2ef
+content_hash: 13945ff67d59859c
 ---
+
 # BabelDOC: Better Layout-Preserving PDF Translation via Intermediate Representation
 
 **Conference**: ACL 2026  

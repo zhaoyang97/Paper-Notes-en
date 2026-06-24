@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Half-order Fine-Tuning for Diffusion Model: A Recursive Likelihood Ratio Optimizer
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper introduces the **Recursive Likelihood Ratio (RLR)** optimizer, which unifies gradient estimation for each step of the diffusion chain into a design space of "First-Order (FO) + Half-Order (HO) + Zero-Order (ZO)". By leveraging the inherent stochastic noise of diffusion models for likelihood ratio estimation,
+  [ICLR 2026][Image Generation][Diffusion Model Alignment] This paper introduces the **Recursive Likelihood Ratio (RLR)** optimizer, which unifies gradient estimation for each step of the diffusion chain into a design space of "First-Order (FO) + Half-Order (HO) + Zero-Order (ZO)". By leveraging the inherent stochastic noise of diffusion models for likelihood ratio estimation, RLR achieves an **unbiased, low-variance, and memory-controllable** gradient estimator for fine-tuning…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Model Alignment"
+  - "Likelihood Ratio Gradient Estimation"
+  - "Half-order Optimization"
+  - "Reward Fine-Tuning"
+  - "Unbiased Low-variance"
 date: 2026-05-08
-content_hash: d305d647c78f0110
+content_hash: 1bd5409e9e8c838e
 ---
+
 # Half-order Fine-Tuning for Diffusion Model: A Recursive Likelihood Ratio Optimizer
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,6 @@ RLR leads significantly in DD and AQ, achieving the best weighted average, even 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -134,7 +139,7 @@ RLR leads significantly in DD and AQ, achieving the best weighted average, even 
 - [\[ICLR 2026\] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation](any-step_generation_via_n-th_order_recursive_consistent_velocity_field_estimatio.md)
 - [\[ICLR 2026\] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function](diffusion_fine-tuning_via_reparameterized_policy_gradient_of_the_soft_q-function.md)
 - [\[ECCV 2024\] Memory-Efficient Fine-Tuning for Quantized Diffusion Model](../../ECCV2024/image_generation/memory-efficient_fine-tuning_for_quantized_diffusion_model.md)
-- [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
+- [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
 
 </div>
 

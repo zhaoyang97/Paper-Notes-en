@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] GroundVTS is proposed as a query-guided fine-grained visual token sampling architecture for Video Large Language Models (Vid-LLMs). By adaptively retaining query-relevant spatio-temporal information at the token level, it achieves an 18.4-point mIoU improvement on Charades-STA and a 20.6-point mAP improvement on QVHigh
+  [CVPR 2026][Multimodal Efficiency][Video Temporal Grounding] GroundVTS is proposed as a query-guided fine-grained visual token sampling architecture for Video Large Language Models (Vid-LLMs). By adaptively retaining query-relevant spatio-temporal information at the token level, it achieves an 18.4-point mIoU improvement on Charades-STA and a 20.6-point mAP improvement on QVHighlights.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Video Temporal Grounding"
+  - "Visual Token Sampling"
+  - "Query-Guided"
+  - "Video Large Language Model"
+  - "Temporal Reasoning"
 date: 2026-05-08
-content_hash: 2ce9e1d3a2a9d014
+content_hash: 88cbc9534a205964
 ---
+
 # GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding
 
 **Conference**: CVPR 2026  
@@ -151,11 +157,11 @@ The objective is the standard LLM auto-regressive generation loss. The VTS modul
 
 ## Related Papers
 
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
-- [\[ICCV 2025\] Enrich and Detect: Video Temporal Grounding with Multimodal LLMs](../../ICCV2025/multimodal_vlm/enrich_and_detect_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
+- [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](../../ICLR2026/vlm_efficiency/enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
 - [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
+- [\[CVPR 2026\] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](focusui_efficient_ui_grounding_via_position-preserving_visual_token_selection.md)
+- [\[ECCV 2024\] Groma: Localized Visual Tokenization for Grounding Multimodal Large Language Models](../../ECCV2024/vlm_efficiency/groma_localized_visual_tokenization_for_grounding_multimodal_large_language_mode.md)
 
 </div>
 

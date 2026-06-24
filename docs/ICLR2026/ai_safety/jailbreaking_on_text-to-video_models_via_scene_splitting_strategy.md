@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Jailbreaking on Text-to-Video Models via Scene Splitting Strategy
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] SceneSplit decomposes a single harmful prompt into multiple "individually harmless" storyboards. By leveraging the temporal combination of these scenes, it constrains the video generation output space into unsafe regions and iteratively rewrites the most influential scenes to bypass visual safety filters, achieving Att
+  [ICLR 2026][AI Safety][Text-to-Video Generation] SceneSplit decomposes a single harmful prompt into multiple "individually harmless" storyboards. By leveraging the temporal combination of these scenes, it constrains the video generation output space into unsafe regions and iteratively rewrites the most influential scenes to bypass visual safety filters, achieving Attack Success Rates (ASR) of 68.6%–84.1% across five commercial T2V models.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Text-to-Video Generation"
+  - "Jailbreak Attack"
+  - "Black-box Attack"
+  - "Safety Filters"
+  - "Narrative Splitting"
 date: 2026-05-08
-content_hash: 6dea874f26643bc5
+content_hash: 2576e031be29b694
 ---
+
 # Jailbreaking on Text-to-Video Models via Scene Splitting Strategy
 
 **Conference**: ICLR 2026  
@@ -118,9 +124,9 @@ Additional findings: Strategy Update reduced average attempts from 6.22 to 5.54.
 
 - [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](../../CVPR2026/ai_safety/runawayevil_jailbreaking_the_image-to-video_generative_models.md)
 - [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](../../CVPR2026/ai_safety/janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
+- [\[ICLR 2026\] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models](stediff_revealing_the_spatial_and_temporal_redundancy_of_backdoor_attacks_in_tex.md)
 - [\[ICLR 2026\] Video Unlearning via Low-Rank Refusal Vector](video_unlearning_via_low-rank_refusal_vector.md)
 - [\[ICLR 2026\] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](privacy_beyond_pixels_latent_anonymization_for_privacy-preserving_video_understa.md)
-- [\[ICLR 2026\] Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity](prior-based_noisy_text_data_filtering_fast_and_strong_alternative_to_perplexity.md)
 
 </div>
 

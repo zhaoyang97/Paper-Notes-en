@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] ResT targets RL training for tool-use LLMs. It theoretically proves that "low-entropy structured tokens (tool names, parameters, format tags) are the primary determinants of rewards, and reducing average entropy minimizes policy gradient variance." Based on this, it proposes inverse reweighting of token-level policy gr
+  [ICLR 2026][Reinforcement Learning][Tool-use] ResT targets RL training for tool-use LLMs. It theoretically proves that "low-entropy structured tokens (tool names, parameters, format tags) are the primary determinants of rewards, and reducing average entropy minimizes policy gradient variance." Based on this, it proposes inverse reweighting of token-level policy gradients by regional average entropy and employs curriculum annealing to transition weights from "format correctnes…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Tool-use"
+  - "Policy Gradient"
+  - "Token-level Reweighting"
+  - "Entropy-aware"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: c251bb69e0cafb14
+content_hash: ea16f592f50a8dbb
 ---
+
 # ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models
 
 **Conference**: ICLR 2026  
@@ -135,11 +141,20 @@ Overall, ResT improves upon GRPO by up to 8.76% (BFCL) and 3.02% (API-Bank). Qwe
 - Value: ⭐⭐⭐⭐ Provides a stable, rule-based training solution for tool-use RL without extra reward models.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
+- [\[ICLR 2026\] ReTool: Reinforcement Learning for Strategic Tool Use in LLMs](retool_reinforcement_learning_for_strategic_tool_use_in_llms.md)
+- [\[ICLR 2026\] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models](spg_sandwiched_policy_gradient_for_masked_diffusion_language_models.md)
+- [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] ReTool: Reinforcement Learning for Strategic Tool Use in LLMs](retool_reinforcement_learning_for_strategic_tool_use_in_llms.md)

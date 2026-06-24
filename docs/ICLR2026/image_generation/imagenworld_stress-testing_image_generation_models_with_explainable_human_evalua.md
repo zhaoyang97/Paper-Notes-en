@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ImagenWorld: Stress-Testing Image Generation Models with Explainable Human Evaluation on Open-ended Real-World Tasks
 description: >-
-  [ICLR 2026][Image Generation][Image Editing] ImagenWorld constructs an explainable image generation benchmark capable of "locating which object or region the model failed on" using 3.6K condition sets × 6 tasks × 6 domains and 20,000 fine-grained human annotations. It systematically reveals common failure patterns in local editing and text-dense content across 14
+  [ICLR 2026][Image Generation][Image Generation Benchmark] ImagenWorld constructs an explainable image generation benchmark capable of "locating which object or region the model failed on" using 3.6K condition sets × 6 tasks × 6 domains and 20,000 fine-grained human annotations. It systematically reveals common failure patterns in local editing and text-dense content across 14 generative and editing models.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
-  - VLM-as-a-judge
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Generation Benchmark"
+  - "Explainable Human Evaluation"
+  - "Image Editing"
+  - "Unified Generative Models"
+  - "VLM-as-a-judge"
 date: 2026-05-08
-content_hash: 606cbe6108e93378
+content_hash: 6c2fd8ad26abceed
 ---
+
 # ImagenWorld: Stress-Testing Image Generation Models with Explainable Human Evaluation on Open-ended Real-World Tasks
 
 **Conference**: ICLR 2026  
@@ -102,10 +106,20 @@ flowchart LR
 - **Value**: ⭐⭐⭐⭐⭐ — Provides a "failure map" for model developers and identifies clear boundaries for VLM-as-a-judge, offering long-term reference value for both modeling and evaluation research.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark](worldedit_towards_open-world_image_editing_with_a_knowledge-informed_benchmark.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
+- [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](../../ICML2026/image_generation/wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
+- [\[CVPR 2025\] UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics](../../CVPR2025/image_generation/unireal_universal_image_generation_and_editing_via_learning_real-world_dynamics.md)
+- [\[ICLR 2026\] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](guidance_matters_rethinking_the_evaluation_pitfall_for_text-to-image_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] WorldEdit: Towards Open-World Image Editing with a Knowledge-Informed Benchmark](worldedit_towards_open-world_image_editing_with_a_knowledge-informed_benchmark.md)

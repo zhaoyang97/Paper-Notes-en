@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper discovers that RL (GRPO) fine-tuning forces lightweight (3B) video MLLMs to take "perceptual shortcuts" instead of genuine reasoning. By first training a "bias model" specialized in shortcuts and then using a repulsive objective (CDPO) with a reversed KL divergence sign to push the main model away from the b
+  [CVPR 2026][VLM Reasoning][Lightweight MLLM] This paper discovers that RL (GRPO) fine-tuning forces lightweight (3B) video MLLMs to take "perceptual shortcuts" instead of genuine reasoning. By first training a "bias model" specialized in shortcuts and then using a repulsive objective (CDPO) with a reversed KL divergence sign to push the main model away from the bias model, it achieves a 14.2% improvement on CLEVRER over GRPO using only 1% of the data.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Lightweight MLLM"
+  - "Perceptual Shortcuts"
+  - "Causal Debiasing"
+  - "RL Fine-tuning"
+  - "Repulsive KL"
 date: 2026-05-08
-content_hash: 65ca07ceed43275e
+content_hash: e2b0847a7bf1434d
 ---
+
 # Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Ours improves 14.2% on CLEVRER over the GRPO baseline at the same scale. It also
 
 ## Related Papers
 
+- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
 - [\[CVPR 2026\] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth](think_360_evaluating_the_width-centric_reasoning_capability_of_mllms_beyond_dept.md)
-- [\[CVPR 2026\] Active Perceptual Inference: A Corticothalamic-Inspired Dynamic Nested Recurrent Network for Multimodal Sentiment Analysis with Incomplete Data](active_perceptual_inference_a_corticothalamic-inspired_dynamic_nested_recurrent_.md)
+- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
 - [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
-- [\[CVPR 2026\] A Causal Marriage between VLM and IRM from Understanding to Reasoning](a_causal_marriage_between_vlm_and_irm_from_understanding_to_reasoning.md)
-- [\[CVPR 2026\] Perceptual-Evidence Anchored Reinforced Learning for Multimodal Reasoning](perceptual-evidence_anchored_reinforced_learning_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation](realign_generalizable_image_forgery_detection_via_reasoning-aligned_representati.md)
 
 </div>
 

@@ -2,15 +2,23 @@
 title: >-
   [Paper Note] Laplacian Kernelized Bandit
 description: >-
-  [ICLR 2026][learning_theory][Gang of Bandits] This paper reduces the multi-user, nonlinear reward Gang-of-Bandits problem on graphs to learning a single "lifted function" in a **unified multi-user RKHS**. The reproducing kernel elegantly fuses the graph Laplacian and the arm kernel as $K((x,u),(x',u'))=[L_\rho^{-1}]_{u,u'}K_x(x,x')$, leading to the design of LK-GP
+  [ICLR 2026][Learning Theory][Multi-user Contextual Bandits] This paper reduces the multi-user, nonlinear reward Gang-of-Bandits problem on graphs to learning a single "lifted function" in a **unified multi-user RKHS**. The reproducing kernel elegantly fuses the graph Laplacian and the arm kernel as $K((x,u),(x',u'))=[L_\rho^{-1}]_{u,u'}K_x(x,x')$, leading to the design of LK-GP-UCB / LK-GP-TS algorithms with theoretical regret guarantees.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Gang of Bandits
-  - RKHS
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Kernelized Bandits"
+  - "Multi-user Contextual Bandits"
+  - "Gang of Bandits"
+  - "Graph Homophily"
+  - "RKHS"
+  - "Gaussian Process"
+  - "Effective Dimension"
+  - "Regret Bound"
 date: 2026-05-08
-content_hash: 1bc63ee21c6e695e
+content_hash: 13243612465072b1
 ---
+
 # Laplacian Kernelized Bandit
 
 **Conference**: ICLR 2026  
@@ -114,7 +122,7 @@ Evaluated in synthetic environments with fixed noise $\sigma=0.1$ and $n=20$ use
 - [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
 - [\[ICML 2026\] Bandit Social Learning with Exploration Episodes](../../ICML2026/learning_theory/bandit_social_learning_with_exploration_episodes.md)
 - [\[ICML 2026\] Cutting LLM Evaluation Costs with SySRs: A Bandit Algorithm that Provably Exploits Model Similarity](../../ICML2026/learning_theory/cutting_llm_evaluation_costs_with_sysrs_a_bandit_algorithm_that_provably_exploit.md)
-- [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](../../NeurIPS2025/learning_theory/efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
+- [\[ICML 2025\] Learning-Augmented Algorithms for MTS with Bandit Access to Multiple Predictors](../../ICML2025/learning_theory/learning-augmented_algorithms_for_mts_with_bandit_access_to_multiple_predictors.md)
 
 </div>
 

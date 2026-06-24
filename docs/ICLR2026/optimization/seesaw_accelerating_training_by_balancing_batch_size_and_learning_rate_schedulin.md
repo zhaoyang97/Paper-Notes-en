@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Seesaw: Accelerating Training by Balancing Learning Rate and Batch Size Scheduling
 description: >-
-  [ICLR 2026][Optimization & Theory][normalized SGD] This paper theoretically proves the finite-sample equivalence between "learning rate decay" and "batch size increase" under SGD (and normalized SGD as a proxy for Adam). Based on this, it proposes the plug-and-play Seesaw scheduler: whenever a cosine schedule would halve the learning rate, it instead multiplies the lea
+  [ICLR 2026][Optimization][batch size scheduling] This paper theoretically proves the finite-sample equivalence between "learning rate decay" and "batch size increase" under SGD (and normalized SGD as a proxy for Adam). Based on this, it proposes the plug-and-play Seesaw scheduler: whenever a cosine schedule would halve the learning rate, it instead multiplies the learning rate by $1/\sqrt{2}$ and doubles the batch size. This matches the loss curve of cosine decay under iso-FL…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - normalized SGD
-  - critical batch size
+  - "ICLR 2026"
+  - "Optimization"
+  - "batch size scheduling"
+  - "learning rate decay"
+  - "training acceleration"
+  - "normalized SGD"
+  - "critical batch size"
 date: 2026-05-08
-content_hash: 36e427f6b4f10283
+content_hash: 9ea7eb732c600b04
 ---
+
 # Seesaw: Accelerating Training by Balancing Learning Rate and Batch Size Scheduling
 
 **Conference**: ICLR 2026  
@@ -142,10 +146,10 @@ Different $(\alpha, \beta)$ were taken along the equivalence line $\alpha\sqrt{\
 ## Related Papers
 
 - [\[ICLR 2026\] WSM: Decay-free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training](wsm_decay-free_learning_rate_schedule_via_checkpoint_merging_for_llm_pre-trainin.md)
-- [\[ICLR 2026\] Predictive Differential Training Guided by Training Dynamics](predictive_differential_training_guided_by_training_dynamics.md)
 - [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
+- [\[ICLR 2026\] Predictive Differential Training Guided by Training Dynamics](predictive_differential_training_guided_by_training_dynamics.md)
 - [\[ICLR 2026\] Shuffling the Data, Stretching the Step-Size: Sharper Bias in Constant Step-Size SGD](shuffling_the_data_extrapolating_the_step_sharper_bias_in_constant_step-size_sgd.md)
-- [\[ICLR 2026\] Weight Decay May Matter More Than µP for Learning Rate Transfer in Practice](weight_decay_may_matter_more_than_µp_for_learning_rate_transfer_in_practice.md)
+- [\[ICLR 2026\] Angle k-means: Accelerating Exact k-means via Angular Relationships](angle_k-means.md)
 
 </div>
 

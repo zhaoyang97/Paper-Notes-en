@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning
 description: >-
-  [CVPR 2026][LLM Agent][Silence Token] Addressing the "when to speak" challenge in streaming dense video captioning, which is difficult to control via thresholds, this paper proposes Takusen. It is an asynchronous dual-agent framework using a small model as an "Oracle" to detect event boundaries ahead of time and a large model as a "Listener" to generate de
+  [CVPR 2026][Video Understanding][Streaming Dense Video Captioning] Addressing the "when to speak" challenge in streaming dense video captioning, which is difficult to control via thresholds, this paper proposes Takusen. It is an asynchronous dual-agent framework using a small model as an "Oracle" to detect event boundaries ahead of time and a large model as a "Listener" to generate descriptions only upon receiving signals. This mechanism eliminates thresholds and achieves str…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Silence Token
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming Dense Video Captioning"
+  - "Dual-Agent"
+  - "Event Boundary Detection"
+  - "Threshold-Gated Discrepancy"
+  - "Silence Token"
 date: 2026-05-08
-content_hash: 09d542a99a0b146f
+content_hash: ad8147ffe0fab77d
 ---
+
 # Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning
 
 **Conference**: CVPR 2026  
@@ -163,11 +168,11 @@ Component breakdown on ActivityNet (selected):
 
 ## Related Papers
 
-- [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](../../ICLR2026/llm_agent/videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
-- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
-- [\[CVPR 2026\] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code](nerfify_multiagent_nerf_paper_to_code.md)
-- [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
+- [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](../../AAAI2026/video_understanding/explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
+- [\[CVPR 2026\] Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)
+- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
+- [\[CVPR 2026\] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)
+- [\[CVPR 2026\] FlexiVideo: Variation-Aware Temporal Dynamics Modeling for Efficient Video Understanding](flexivideo_variation-aware_temporal_dynamics_modeling_for_efficient_video_unders.md)
 
 </div>
 

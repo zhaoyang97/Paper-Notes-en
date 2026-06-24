@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LOCKET: Robust Feature-Locking Technique for Language Models
 description: >-
-  [ACL 2026][Dialogue Systems][Latent Adversarial Training] LOCKET is a password-less, scalable, and jailbreak-resistant feature-locking scheme designed for the "pay-to-unlock" business model of LLMs. It trains a LoRA adapter for each feature to be locked (using LAT for adversarial reinforcement of refusals). When merging multiple adapters, it applies per-layer spectral norm cl
+  [ACL 2026][Dialogue Systems][Feature Locking] LOCKET is a password-less, scalable, and jailbreak-resistant feature-locking scheme designed for the "pay-to-unlock" business model of LLMs. It trains a LoRA adapter for each feature to be locked (using LAT for adversarial reinforcement of refusals). When merging multiple adapters, it applies per-layer spectral norm clipping to prevent "over-refusal" collapse. Across 3 models and 4 features (Math/SQL/Summarize/MMLU)…
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Latent Adversarial Training
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Feature Locking"
+  - "LoRA Adapter Merging"
+  - "Latent Adversarial Training"
+  - "Spectral Norm Clipping"
+  - "Jailbreak Defense"
+  - "Pay-to-Unlock"
 date: 2026-05-08
-content_hash: 2e96eb0ae86b870b
+content_hash: f620a70e09d0122e
 ---
+
 # LOCKET: Robust Feature-Locking Technique for Language Models
 
 **Conference**: ACL 2026  
@@ -158,10 +164,10 @@ $\tau$ hyperparameter sensitivity (Figure 2 Bottom): $\tau > 0.9$ leads to faile
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flipping the Dialogue: Training and Evaluating User Language Models](../../ICLR2026/dialogue/flipping_the_dialogue_training_and_evaluating_user_language_models.md)
 - [\[NeurIPS 2025\] Less is More: Local Intrinsic Dimensions of Contextual Language Models](../../NeurIPS2025/dialogue/less_is_more_local_intrinsic_dimensions_of_contextual_language_models.md)
 - [\[ACL 2025\] UniConv: Unifying Retrieval and Response Generation for Large Language Models in Conversations](../../ACL2025/dialogue/uniconv_retrieval_response_gen.md)
 - [\[ACL 2026\] Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers](stress-testing_emotional_support_models_moving_from_homogeneous_to_diverse_help_.md)
-- [\[ICLR 2026\] Understanding Language Prior of LVLMs by Contrasting Chain-of-Embedding](../../ICLR2026/dialogue/understanding_language_prior_of_lvlms_by_contrasting_chain-of-embedding.md)
 - [\[NeurIPS 2025\] LatentGuard: Controllable Latent Steering for Robust Refusal of Attacks and Reliable Response Generation](../../NeurIPS2025/dialogue/latentguard_controllable_latent_steering_for_robust_refusal_of_attacks_and_relia.md)
 
 </div>

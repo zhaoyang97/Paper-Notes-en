@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BED-LLM: Intelligent Information Gathering with LLMs and Bayesian Experimental Design
 description: >-
-  [ICLR 2026][LLM Agent][20 Questions] This paper applies Sequential Bayesian Experimental Design (BED) to LLMs, enabling the model to select questions with the "maximum Expected Information Gain (EIG)" in each round. This transforms the LLM into a proactive and adaptive multi-turn information-gathering agent. In 20 Questions and movie preference inference
+  [ICLR 2026][LLM Agent][Expected Information Gain] This paper applies Sequential Bayesian Experimental Design (BED) to LLMs, enabling the model to select questions with the "maximum Expected Information Gain (EIG)" in each round. This transforms the LLM into a proactive and adaptive multi-turn information-gathering agent. In 20 Questions and movie preference inference tasks, the average success rate exceeds direct prompting by 37.4 percentage points.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - 20 Questions
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Expected Information Gain"
+  - "Sequential Bayesian Experimental Design"
+  - "Active Questioning"
+  - "Belief Filtering"
+  - "20 Questions"
 date: 2026-05-08
-content_hash: ade1b214de1aa039
+content_hash: 83592c8776ec5701
 ---
+
 # BED-LLM: Intelligent Information Gathering with LLMs and Bayesian Experimental Design
 
 **Conference**: ICLR 2026  

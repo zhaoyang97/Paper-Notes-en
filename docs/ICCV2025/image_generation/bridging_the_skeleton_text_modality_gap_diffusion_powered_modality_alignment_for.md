@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging the Skeleton-Text Modality Gap: Diffusion-Powered Modality Alignment for Zero-shot Skeleton-based Action Recognition
 description: >-
-  [ICCV 2025][Image Generation][Zero-shot skeleton-based action recognition] This paper proposes TDSM (Triplet Diffusion for Skeleton-Text Matching), the first work to apply diffusion models to zero-shot skeleton-based act…
+  [ICCV 2025][Image Generation][Zero-shot skeleton-based action recognition] This paper proposes TDSM (Triplet Diffusion for Skeleton-Text Matching), the first work to apply diffusion models to zero-shot skeleton-based action recognition (ZSAR). TDSM achieves implicit alignment between skeleton features and text prompts through the reverse diffusion process, and introduces a triplet diffusion loss to enhance discriminability. It substantially outperforms state-of-the-art method…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Triplet Loss"
   - "skeleton-text matching"
 date: 2026-05-08
-content_hash: 8eda1e2d5f0a1ea6
+content_hash: 664702af5542251b
 ---
 
 # Bridging the Skeleton-Text Modality Gap: Diffusion-Powered Modality Alignment for Zero-shot Skeleton-based Action Recognition
@@ -142,11 +142,11 @@ At inference, **single-step inference** is used with fixed noise $\boldsymbol{\e
 
 ## Related Papers
 
-- [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
+- [\[ECCV 2024\] Idempotent Unsupervised Representation Learning for Skeleton-Based Action Recognition](../../ECCV2024/image_generation/idempotent_unsupervised_representation_learning_for_skeleton-based_action_recogn.md)
 - [\[ICCV 2025\] GAP: Gaussianize Any Point Clouds with Text Guidance](gap_gaussianize_any_point_clouds_with_text_guidance.md)
-- [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
-- [\[ICCV 2025\] LD-RPS: Zero-Shot Unified Image Restoration via Latent Diffusion Recurrent Posterior Sampling](ld-rps_zero-shot_unified_image_restoration_via_latent_diffusion_recurrent_poster.md)
+- [\[ICCV 2025\] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers](ditfastattnv2_head-wise_attention_compression_for_multi-modality_diffusion_trans.md)
 - [\[ICCV 2025\] VIGFace: Virtual Identity Generation for Privacy-Free Face Recognition Dataset](vigface_virtual_identity_generation_for_privacy-free_face_recognition_dataset.md)
+- [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](anyportal_zero-shot_consistent_video_background_replacement.md)
 
 </div>
 

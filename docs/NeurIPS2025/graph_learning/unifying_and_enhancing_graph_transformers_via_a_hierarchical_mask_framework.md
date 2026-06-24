@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Transformer] This paper proposes a unified hierarchical mask framework that reveals the equivalence between Graph Transformer architectures and attention masks…
+  [NeurIPS 2025][Graph Learning][Graph Transformer] This paper proposes a unified hierarchical mask framework that reveals the equivalence between Graph Transformer architectures and attention masks, and introduces M3Dphormer, which achieves efficient adaptive modeling of local/cluster/global interactions via multi-level masks, bi-level expert routing, and a dual attention computation scheme, achieving state-of-the-art results on 9 benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Interaction"
   - "Node Classification"
 date: 2026-05-08
-content_hash: ac15bb89c893f4e3
+content_hash: 10bece46eed17397
 ---
 
 # Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework
@@ -136,11 +136,11 @@ $\mathbf{H}^l = \text{ACT}(\text{BiMoE}^l(\text{Norm}^l(\mathbf{H}^{l-1}), \math
 
 ## Related Papers
 
+- [\[ACL 2025\] Multimodal Transformers are Hierarchical Modal-wise Heterogeneous Graphs](../../ACL2025/graph_learning/multimodal_transformers_are_hierarchical_modal-wise_heterogeneous_graphs.md)
 - [\[NeurIPS 2025\] Relieving the Over-Aggregating Effect in Graph Transformers](relieving_the_over-aggregating_effect_in_graph_transformers.md)
 - [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
+- [\[ICML 2025\] GrokFormer: Graph Fourier Kolmogorov-Arnold Transformers](../../ICML2025/graph_learning/grokformer_graph_fourier_kolmogorov-arnold_transformers.md)
 - [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
-- [\[NeurIPS 2025\] From Sequence to Structure: Uncovering Substructure Reasoning in Transformers](from_sequence_to_structure_uncovering_substructure_reasoning_in_transformers.md)
-- [\[NeurIPS 2025\] FALCON: An ML Framework for Fully Automated Layout-Constrained Analog Circuit Design](falcon_an_ml_framework_for_fully_automated_layout-constrained_analog_circuit_des.md)
 
 </div>
 

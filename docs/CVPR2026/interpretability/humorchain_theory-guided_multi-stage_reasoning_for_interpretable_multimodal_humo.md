@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] HUMORCHAIN explicitly encodes four major humor theories—Incongruity-Resolution, Benign Violation, Superiority, and Relief—into a multi-stage LLM reasoning chain ("Visual Parsing → Strategy Selection → Generation → Discriminator Feedback"). A Qwen3-VL-4B humor discriminator is trained for a "generation-evaluation-rewrit
+  [CVPR 2026][Interpretability][Humor Generation] HUMORCHAIN explicitly encodes four major humor theories—Incongruity-Resolution, Benign Violation, Superiority, and Relief—into a multi-stage LLM reasoning chain ("Visual Parsing → Strategy Selection → Generation → Discriminator Feedback"). A Qwen3-VL-4B humor discriminator is trained for a "generation-evaluation-rewriting" loop, outperforming existing methods in human preference, Elo/BT scores, and semantic diversity across thre…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Humor Generation"
+  - "Multimodal Image Captioning"
+  - "Humor Theory"
+  - "Chain-of-Thought"
+  - "Human Preference Discriminator"
 date: 2026-05-08
-content_hash: 60942ff8e3aed8fb
+content_hash: e883390a77ff6943
 ---
+
 # HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,10 @@ I achieved the highest Elo (1554.60) and BT (3.57). In single evaluations, I rea
 ## Related Papers
 
 - [\[ACL 2025\] IRT-Router: Effective and Interpretable Multi-LLM Routing via Item Response Theory](../../ACL2025/interpretability/irt_router_multi_llm.md)
-- [\[CVPR 2026\] A Study of Failure Modes in Two-Stage Human–Object Interaction Detection](a_study_of_failure_modes_in_two-stage_human-object_interaction_detection.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
 - [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
 - [\[CVPR 2026\] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events](cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events.md)
+- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
+- [\[CVPR 2026\] H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)
 
 </div>
 

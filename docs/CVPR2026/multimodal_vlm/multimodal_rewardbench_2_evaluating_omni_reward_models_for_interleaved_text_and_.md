@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM-as-a-judge] MMRB2 is the first benchmark for evaluating reward models of "omni models" (capable of reading/writing interleaved text and images in a single sequence). Spanning four tasks—text-to-image, image editing, interleaved generation, and multimodal reasoning—with 1,000 expert-annotated preference pairs per task, it reveals a
+  [CVPR 2026][Multimodal VLM][Reward model] MMRB2 is the first benchmark for evaluating reward models of "omni models" (capable of reading/writing interleaved text and images in a single sequence). Spanning four tasks—text-to-image, image editing, interleaved generation, and multimodal reasoning—with 1,000 expert-annotated preference pairs per task, it reveals a significant gap between the strongest current judge (Gemini 3 Pro at 76.3% average consistency) and human experts (>9…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM-as-a-judge
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Reward model"
+  - "omni model"
+  - "preference benchmark"
+  - "interleaved text-image generation"
+  - "MLLM-as-a-judge"
 date: 2026-05-08
-content_hash: 7ddedaf60c90a718
+content_hash: 2912176bc2a79bef
 ---
+
 # Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,11 @@ The benchmark itself has no ablation modules; the table below organizes key anal
 
 ## Related Papers
 
-- [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](duogen_towards_autonomous_interleaved_multimodal_generation.md)
 - [\[ICCV 2025\] Multimodal LLMs as Customized Reward Models for Text-to-Image Generation](../../ICCV2025/multimodal_vlm/multimodal_llms_as_customized_reward_models_for_text-to-image_generation.md)
-- [\[CVPR 2026\] Text-Printed Image：把文本「印」成图片来弥合图文模态鸿沟](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] DuoGen: Towards Autonomous Interleaved Multimodal Generation](duogen_towards_autonomous_interleaved_multimodal_generation.md)
+- [\[ICLR 2026\] A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation](../../ICLR2026/multimodal_vlm/a_high_quality_dataset_and_reliable_evaluation_for_interleaved_image-text_genera.md)
 - [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
-- [\[CVPR 2025\] OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation](../../CVPR2025/multimodal_vlm/opening_a_comprehensive_benchmark_for_judging_open-ended_interleaved_image-text_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] X2Edit: Revisiting Arbitrary-Instruction Image Editing through Self-Constructed Data and Task-Aware Representation Learning
 description: >-
-  [AAAI2026][Image Generation][image editing] A 3.7M high-quality editing dataset covering 14 task categories is constructed, and a lightweight (0.9B parameter) plug-and-play editing module based on Task-Aware MoE-LoRA and…
+  [AAAI2026][Image Generation][image editing] A 3.7M high-quality editing dataset covering 14 task categories is constructed, and a lightweight (0.9B parameter) plug-and-play editing module based on Task-Aware MoE-LoRA and Contrastive Learning is proposed, achieving performance comparable to 12B fully fine-tuned models.
 tags:
   - "AAAI2026"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "FLUX"
   - "task-aware"
 date: 2026-05-08
-content_hash: 5539749b7fb48f86
+content_hash: aa944f54cb40bb27
 ---
 
 # X2Edit: Revisiting Arbitrary-Instruction Image Editing through Self-Constructed Data and Task-Aware Representation Learning
@@ -126,10 +126,10 @@ Final objective: $\mathcal{L} = \mathcal{L}_{task} + \lambda \mathcal{L}_{diff}$
 ## Related Papers
 
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](../../ICLR2026/image_generation/visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](../../ICLR2026/image_generation/learning_an_image_editing_model_without_image_editing_pairs.md)
 - [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
+- [\[ECCV 2024\] SAIR: Learning Semantic-aware Implicit Representation](../../ECCV2024/image_generation/sair_learning_semantic-aware_implicit_representation.md)
 - [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](../../ICLR2026/image_generation/editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
-- [\[ICCV 2025\] SuperEdit: Rectifying and Facilitating Supervision for Instruction-Based Image Editing](../../ICCV2025/image_generation/superedit_rectifying_and_facilitating_supervision_for_instruction-based_image_ed.md)
-- [\[ICML 2026\] Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Editing via In-Context Learning](../../ICML2026/image_generation/self-prompting_diffusion_transformer_for_open-vocabulary_scene_text_editing_via_.md)
 
 </div>
 

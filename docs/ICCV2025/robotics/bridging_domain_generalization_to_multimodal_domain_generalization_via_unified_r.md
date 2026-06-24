@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations
 description: >-
-  [ICCV 2025][Robotics][Multimodal Domain Generalization] This paper proposes URMMDG, a framework that constructs a cross-modal unified representation space via supervised contrastive learning and decouples class-generic i…
+  [ICCV 2025][Robotics][Multimodal Domain Generalization] This paper proposes URMMDG, a framework that constructs a cross-modal unified representation space via supervised contrastive learning and decouples class-generic information from modality/domain-specific information through mutual information minimization. This enables effective transfer of classical single-modal domain generalization methods (Mixup, JiGen, IBN-Net) to multimodal domain generalization (MMDG) settings…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Information Decoupling"
   - "Mixup"
 date: 2026-05-08
-content_hash: 18e609fe8ccca26b
+content_hash: 4740acb47952abe7
 ---
 
 # Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations
@@ -139,7 +139,7 @@ UR-JiGen additionally incorporates $L_{jig}$ (with weight set to 1).
 - [\[NeurIPS 2025\] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning](../../NeurIPS2025/robotics/pretraining_a_unified_pddl_domain_from_real-world_demonstrations_for_generalizab.md)
 - [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](../../ICML2026/robotics/turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
 - [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](../../NeurIPS2025/robotics/zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](../../NeurIPS2025/robotics/generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
+- [\[CVPR 2026\] MAPS: Preserving Vision-Language Representations via Module-Wise Proximity Scheduling for Better Vision-Language-Action Generalization](../../CVPR2026/robotics/maps_preserving_vision-language_representations_via_module-wise_proximity_schedu.md)
 
 </div>
 

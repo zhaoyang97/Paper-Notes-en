@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Obfuscated Activations Bypass LLM Latent-Space Defenses
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes "obfuscation attacks"—adding a loss term to "deceive latent-space monitors" in addition to behavioral goals like jailbreaking or SQL generation. By jointly optimizing adversarial suffixes, the authors reduce the recall of various activation probes (Linear/MLP/OOD) from 100% to 0% while maintaining a
+  [ICLR 2026][LLM Safety][Latent-space Monitoring] This paper proposes "obfuscation attacks"—adding a loss term to "deceive latent-space monitors" in addition to behavioral goals like jailbreaking or SQL generation. By jointly optimizing adversarial suffixes, the authors reduce the recall of various activation probes (Linear/MLP/OOD) from 100% to 0% while maintaining a 90% jailbreak success rate. This proves that white-box latent-space monitoring is not robust against worst-cas…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Latent-space Monitoring"
+  - "Activation Probes"
+  - "Jailbreak Attacks"
+  - "Obfuscated Activations"
+  - "OOD Detection"
 date: 2026-05-08
-content_hash: 937509e77cbfa41e
+content_hash: c770be5c986ac613
 ---
+
 # Obfuscated Activations Bypass LLM Latent-Space Defenses
 
 **Conference**: ICLR 2026  
@@ -121,10 +127,20 @@ Tested on Llama-3-8B-Instruct (Toxicity) and Gemma-2-2b (SQL).
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
+- [\[ACL 2026\] SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](../../ACL2026/llm_safety/slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)
+- [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
+- [\[ICLR 2026\] Constitutional Classifiers++: Efficient Production-Grade Defenses against Universal Jailbreaks](constitutional_classifiers_efficient_production-grade_defenses_against_universal.md)
+- [\[ICLR 2026\] A Guardrail for Safety Preservation: When Safety-Sensitive Subspace Meets Harmful-Resistant Null-Space](a_guardrail_for_safety_preservation_when_safety-sensitive_subspace_meets_harmful.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)

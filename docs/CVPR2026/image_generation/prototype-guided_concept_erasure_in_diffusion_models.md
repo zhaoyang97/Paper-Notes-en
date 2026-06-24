@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prototype-Guided Concept Erasure in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] Addressing the difficulty of thoroughly erasing broad concepts (e.g., violence, pornography) in diffusion models, this paper proposes a training-free erasure method based on concept prototypes. It extracts image prototypes by clustering concept difference directions in the CLIP embedding space, transfers them to the te
+  [CVPR 2026][Image Generation][Concept Erasure] Addressing the difficulty of thoroughly erasing broad concepts (e.g., violence, pornography) in diffusion models, this paper proposes a training-free erasure method based on concept prototypes. It extracts image prototypes by clustering concept difference directions in the CLIP embedding space, transfers them to the text prototype space via optimization, and selects the best-matching prototype during inference as a negative guida…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Model Safety"
+  - "NSFW Content Filtering"
+  - "Prototype Learning"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: 3fa2e8680fa116f4
+content_hash: 1e735ceef3c39ff2
 ---
+
 # Prototype-Guided Concept Erasure in Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -138,15 +143,16 @@ In the offline phase, 400 prompt pairs are created for "violence," generating 4 
 - Value: ⭐⭐⭐⭐ Highly practical for T2I safety, with training-free characteristics favoring deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 - [\[CVPR 2026\] Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models](groce_graph-guided_online_concept_erasure_for_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
 - [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
-- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Diversity over Uniformity: Rethinking Representation in Generated Image Detection
 description: >-
-  [CVPR 2026][Image Generation][CLIP] The Anti-Feature-Collapse Learning (AFCL) framework is proposed to maintain the diversity and complementarity of discriminative representations. By filtering irrelevant features via an information bottleneck and suppressing excessive overlap between different forgery cues, the method achieves significant improvements i
+  [CVPR 2026][Image Generation][Generated Image Detection] The Anti-Feature-Collapse Learning (AFCL) framework is proposed to maintain the diversity and complementarity of discriminative representations. By filtering irrelevant features via an information bottleneck and suppressing excessive overlap between different forgery cues, the method achieves significant improvements in cross-model generated image detection.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - CLIP
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generated Image Detection"
+  - "Feature Collapse"
+  - "Representation Diversity"
+  - "Information Bottleneck"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 21fbe4a1994d6923
+content_hash: ed94ba72abf48c6c
 ---
+
 # Diversity over Uniformity: Rethinking Representation in Generated Image Detection
 
 **Conference**: CVPR 2026  
@@ -151,8 +156,8 @@ Evaluation covers 21 generative models (11 from UniversalFakeDetect + 7 from Gen
 - [\[CVPR 2026\] Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods](training-free_detection_of_generated_videos_via_spatial-temporal_likelihoods.md)
 - [\[AAAI 2026\] CausalCLIP: Causally-Informed Feature Disentanglement and Filtering for Generalizable Detection of Generated Images](../../AAAI2026/image_generation/causalclip_causally-informed_feature_disentanglement_and_filtering_for_generaliz.md)
 - [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](../../NeurIPS2025/image_generation/epistemic_uncertainty_for_generated_image_detection.md)
-- [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
 - [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](../../AAAI2026/image_generation/aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
+- [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
 
 </div>
 

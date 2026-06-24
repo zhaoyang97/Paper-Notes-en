@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] A State-Transition Framework for Efficient LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][efficient reasoning] This paper proposes an efficient reasoning framework that models the LLM reasoning process as a state-transition process. By using Linear Attention to compress information from historical reasoning steps into a state matrix, the framework reduces attention complexity from $O(C^2)$ to $O(C)$ and KV cache from $O(C)$ to
+  [ICLR 2026][Reasoning][efficient reasoning] This paper proposes an efficient reasoning framework that models the LLM reasoning process as a state-transition process. By using Linear Attention to compress information from historical reasoning steps into a state matrix, the framework reduces attention complexity from $O(C^2)$ to $O(C)$ and KV cache from $O(C)$ to $O(1)$, while maintaining reasoning capabilities without shortening the CoT sequence. An additional momentum strateg…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - efficient reasoning
-  - linear attention
-  - state transition
-  - KV cache
-  - long CoT
+  - "ICLR 2026"
+  - "Reasoning"
+  - "efficient reasoning"
+  - "linear attention"
+  - "state transition"
+  - "KV cache"
+  - "long CoT"
 date: 2026-05-08
-content_hash: f813aba4c27dc57b
+content_hash: 01903fe01e7da81a
 ---
+
 # A State-Transition Framework for Efficient LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -127,11 +128,11 @@ To preserve the reasoning capacity of the base model, **only the LA sub-modules 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners](thinking-free_policy_initialization_makes_distilled_reasoning_models_more_effect.md)
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] ChainGPT: Dual-Reasoning Model with Recurrent Depth and Multi-Rank State Updates](chaingpt_dual-reasoning_model_with_recurrent_depth_and_multi-rank_state_updates.md)
-- [\[ICLR 2026\] Stabilizing Policy Gradients for Sample-Efficient Reinforcement Learning in LLM Reasoning](stabilizing_policy_gradients_for_sample-efficient_reinforcement_learning_in_llm_.md)
-- [\[ICLR 2026\] Structured Reasoning for LLMs: A Unified Framework for Efficiency and Explainability](structured_reasoning_for_llms_a_unified_framework_for_efficiency_and_explainabil.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](../../ICML2026/llm_reasoning/beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
 
 </div>
 

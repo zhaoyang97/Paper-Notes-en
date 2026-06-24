@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diverse Text Decoding via Iterative Reweighting
 description: >-
-  [ICLR 2026][Text Generation][Paper Note] This paper proposes OverRIDE (Reweighting-based Iterative DEcoding), which incrementally fine-tunes a "guidance model" using historical generated results during multi-round sampling. By suppressing the probabilities of tokens that lead to historical pattern recurrence, it significantly enhances diversity across multipl
+  [ICLR 2026][Text Generation][Diverse Decoding] This paper proposes OverRIDE (Reweighting-based Iterative DEcoding), which incrementally fine-tunes a "guidance model" using historical generated results during multi-round sampling. By suppressing the probabilities of tokens that lead to historical pattern recurrence, it significantly enhances diversity across multiple responses with minimal quality loss and can be integrated into serving systems like vLLM with only 6.4% through…
 tags:
-  - ICLR 2026
-  - Text Generation
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Diverse Decoding"
+  - "Reweighting"
+  - "Test-time Fine-tuning"
+  - "Guidance Model"
+  - "Parallel Decoding"
 date: 2026-05-08
-content_hash: abe87407a382c125
+content_hash: 8736b270b6772b7e
 ---
+
 # Diverse Text Decoding via Iterative Reweighting
 
 **Conference**: ICLR 2026  
@@ -131,6 +137,7 @@ $r=16$ provides the optimal balance between modeling capacity and efficiency.
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

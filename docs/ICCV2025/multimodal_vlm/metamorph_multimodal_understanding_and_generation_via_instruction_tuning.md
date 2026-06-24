@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][VPiT] This paper proposes Visual-Predictive Instruction Tuning (VPiT), which extends a pretrained LLM into a unified model—MetaMorph—capable of both visual understanding and generation via lig…
+  [ICCV 2025][Multimodal VLM][VPiT] This paper proposes Visual-Predictive Instruction Tuning (VPiT), which extends a pretrained LLM into a unified model—MetaMorph—capable of both visual understanding and generation via lightweight instruction tuning alone. A key finding is that visual generation ability emerges as a natural byproduct of visual understanding, and the two capabilities mutually benefit each other in an asymmetric manner.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Instruction Tuning"
   - "Continuous Visual Tokens"
 date: 2026-05-08
-content_hash: 2c731505a19ca436
+content_hash: c6fd8eec20778aaf
 ---
 
 # MetaMorph: Multimodal Understanding and Generation via Instruction Tuning
@@ -119,11 +119,11 @@ nified multimodal modeling. Generation quality and end-to-end integration, howev
 
 ## Related Papers
 
-- [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](harmonizing_visual_representations_for_unified_multimodal_un.md)
-- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](../../ICML2026/multimodal_vlm/weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
+- [\[ACL 2025\] MEIT: Multimodal Electrocardiogram Instruction Tuning on Large Language Models for Report Generation](../../ACL2025/multimodal_vlm/meit_multimodal_electrocardiogram_instruction_tuning_on_large_language_models_fo.md)
 - [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](../../NeurIPS2025/multimodal_vlm/visual_instruction_bottleneck_tuning.md)
-- [\[ICCV 2025\] From Holistic to Localized: Local Enhanced Adapters for Efficient Visual Instruction Fine-Tuning](from_holistic_to_localized_local_enhanced_adapters_for_efficient_visual_instruct.md)
-- [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
+- [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](../../ICML2026/multimodal_vlm/weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
+- [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](harmonizing_visual_representations_for_unified_multimodal_un.md)
+- [\[ACL 2025\] Enhancing Multimodal Continual Instruction Tuning with BranchLoRA](../../ACL2025/multimodal_vlm/branchlora_continual_instruction.md)
 
 </div>
 

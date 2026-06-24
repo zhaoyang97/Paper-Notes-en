@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Mean-field MARL] This paper investigates the bi-level NP-hard problem of "identifying the $K$ most vulnerable agents in a large-scale MARL system with $N$ agents." It formalizes this as HAD-MFC (Hierarchical Adversarial Decentralized Mean Field Control). By applying the Fenchel-Rockafellar transformation, the training of the lower-leve
+  [ICML 2026][Reinforcement Learning][Mean-field MARL] This paper investigates the bi-level NP-hard problem of "identifying the $K$ most vulnerable agents in a large-scale MARL system with $N$ agents." It formalizes this as HAD-MFC (Hierarchical Adversarial Decentralized Mean Field Control). By applying the Fenchel-Rockafellar transformation, the training of the lower-level worst-case adversarial policy is collapsed into a regularized "robust mean-field Bellman operator." The u…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Mean-field MARL
-  - Vulnerable Agent ID
-  - Fenchel-Rockafellar
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Mean-field MARL"
+  - "Vulnerable Agent ID"
+  - "Fenchel-Rockafellar"
+  - "NP-hard Combinatorial Optimization"
+  - "Robust Bellman"
 date: 2026-05-08
-content_hash: 5f9b11371dd8a16d
+content_hash: 22a46d98200510a2
 ---
+
 # Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -152,7 +155,7 @@ VAI-RL reaches -929.88 on Battle-64 with 32 adversaries, 5x stronger than the be
 - [\[ICML 2026\] Plug-and-Play Benchmarking of Reinforcement Learning Algorithms for Large-Scale Flow Control](plug-and-play_benchmarking_of_reinforcement_learning_algorithms_for_large-scale_.md)
 - [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
-- [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](../../AAAI2026/reinforcement_learning/explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
+- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](../../ICLR2026/reinforcement_learning/inter-agent_relative_representations_for_multi-agent_option_discovery.md)
 
 </div>
 

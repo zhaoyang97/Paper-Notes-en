@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MVSMamba: Multi-View Stereo with State Space Model
 description: >-
-  [NeurIPS 2025][3D Vision][Multi-View Stereo] This paper proposes MVSMamba, the first Mamba-based Multi-View Stereo (MVS) network, which achieves efficient intra-view and inter-view global omnidirectional feature aggregat…
+  [NeurIPS 2025][3D Vision][Multi-View Stereo] This paper proposes MVSMamba, the first Mamba-based Multi-View Stereo (MVS) network, which achieves efficient intra-view and inter-view global omnidirectional feature aggregation via a reference-centered dynamic scanning strategy, attaining state-of-the-art performance on DTU and Tanks-and-Temples with superior efficiency.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Feature Matching"
   - "Depth Estimation"
 date: 2026-05-08
-content_hash: fe55b55a63e82e71
+content_hash: ff40d0d68bc94dc0
 ---
 
 # MVSMamba: Multi-View Stereo with State Space Model
@@ -139,11 +139,11 @@ MVSMamba achieves the best F-score on both Intermediate and Advanced splits.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Mesh Mamba: A Unified State Space Model for Saliency Prediction in Non-Textured and Textured Meshes](../../CVPR2025/3d_vision/mesh_mamba_a_unified_state_space_model_for_saliency_prediction_in_non-textured_a.md)
+- [\[CVPR 2025\] MVSAnywhere: Zero-Shot Multi-View Stereo](../../CVPR2025/3d_vision/mvsanywhere_zero-shot_multi-view_stereo.md)
 - [\[ICCV 2025\] MeshMamba: State Space Models for Articulated 3D Mesh Generation and Reconstruction](../../ICCV2025/3d_vision/meshmamba_state_space_models_for_articulated_3d_mesh_generation_and_reconstructi.md)
 - [\[ICCV 2025\] Thermal Polarimetric Multi-view Stereo](../../ICCV2025/3d_vision/thermal_polarimetric_multi-view_stereo.md)
 - [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](../../ICCV2025/3d_vision/global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
-- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](../../CVPR2026/3d_vision/multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
-- [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](../../ICCV2025/3d_vision/ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 
 </div>
 

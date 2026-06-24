@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] Addressing the inherent "modality gap" of CLIP in Compositional Zero-Shot Learning (CZSL), this paper proposes the SAM three-stage framework: Sparse Alignment selects the image patches most relevant to the text to reduce redundant visual information; Visual Adaptive Condensation compresses key cues into a single repres
+  [CVPR 2026][Multimodal VLM][Compositional Zero-Shot Learning] Addressing the inherent "modality gap" of CLIP in Compositional Zero-Shot Learning (CZSL), this paper proposes the SAM three-stage framework: Sparse Alignment selects the image patches most relevant to the text to reduce redundant visual information; Visual Adaptive Condensation compresses key cues into a single representation; and a Dynamic Memory Bank bypasses the modality gap through pure visual classification.…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Compositional Zero-Shot Learning"
+  - "Modality Gap"
+  - "CLIP"
+  - "Sparse Alignment"
+  - "Memory Bank"
 date: 2026-05-08
-content_hash: d933bdc7540eaaf4
+content_hash: 37adb76cbd274c18
 ---
+
 # Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank
 
 **Conference**: CVPR 2026  
@@ -146,15 +151,14 @@ The AUC across the three datasets reaches 50.0 / 24.0 / 16.2. Seen accuracy is r
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] FlowComposer: Composable Flows for Compositional Zero-Shot Learning](flowcomposer_composable_flows_for_compositional_zeroshot_learning.md)
+- [\[ICLR 2026\] Decoupling Primitive with Experts: Dynamic Feature Alignment for Compositional Zero-Shot Learning](../../ICLR2026/multimodal_vlm/decoupling_primitive_with_experts_dynamic_feature_alignment_for_compositional_ze.md)
 - [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](../../NeurIPS2025/multimodal_vlm/tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
 
 </div>
 

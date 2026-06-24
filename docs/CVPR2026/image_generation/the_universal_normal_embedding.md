@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Universal Normal Embedding
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes the Universal Normal Embedding (UNE) hypothesis: generative models (diffusion models) and visual encoders (CLIP, DINO) share an underlying geometric structure in their latent spaces that is approximately Gaussian. Both can be viewed as noisy linear projections of this shared space. The hypothesis is
+  [CVPR 2026][Image Generation][Latent Space Gaussianity] This paper proposes the Universal Normal Embedding (UNE) hypothesis: generative models (diffusion models) and visual encoders (CLIP, DINO) share an underlying geometric structure in their latent spaces that is approximately Gaussian. Both can be viewed as noisy linear projections of this shared space. The hypothesis is validated through the NoiseZoo dataset and extensive experiments, demonstrating the capability to perfo…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Space Gaussianity"
+  - "Generation-Encoding Unification"
+  - "DDIM Inversion"
+  - "Linear Semantic Editing"
+  - "Representation Geometry"
 date: 2026-05-08
-content_hash: 744f347c65795929
+content_hash: 2bad82278a993f24
 ---
+
 # The Universal Normal Embedding
 
 **Conference**: CVPR 2026  

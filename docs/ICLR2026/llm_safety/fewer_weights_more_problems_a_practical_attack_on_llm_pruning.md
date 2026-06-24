@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fewer Weights, More Problems: A Practical Attack on LLM Pruning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper demonstrates for the first time that LLM pruning can be maliciously exploited. Attackers inject toxic behaviors into "parameters unlikely to be pruned" and mask them with "parameters likely to be pruned." This results in a model that appears benign upon upload but activates malicious behaviors once compresse
+  [ICLR2026][LLM Safety][Pruning Attack] This paper demonstrates for the first time that LLM pruning can be maliciously exploited. Attackers inject toxic behaviors into "parameters unlikely to be pruned" and mask them with "parameters likely to be pruned." This results in a model that appears benign upon upload but activates malicious behaviors once compressed by any pruning algorithm in vLLM. Attack Success Rates (ASR) reach up to 95.7%, 98.7%, and 99.5% for jailbreaking…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Pruning Attack"
+  - "Post-processing Trigger"
+  - "Jailbreaking"
+  - "Deployment Security"
+  - "Model Sharing Platforms"
 date: 2026-05-08
-content_hash: 2778f790f953c8bf
+content_hash: 0b843d44e198437c
 ---
+
 # Fewer Weights, More Problems: A Practical Attack on LLM Pruning
 
 **Conference**: ICLR2026  
@@ -124,7 +130,7 @@ When unpruned, ASR is comparable to baseline; upon pruning, ASR surges, peaking 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

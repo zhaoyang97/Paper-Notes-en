@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Proactive safety] This paper introduces PaSBench, a benchmark for evaluating the proactive risk awareness of multimodal language models — requiring models to autonomously observe environmen…
+  [NeurIPS 2025][Multimodal VLM][Proactive safety] This paper introduces PaSBench, a benchmark for evaluating the proactive risk awareness of multimodal language models — requiring models to autonomously observe environments and issue safety warnings without any user query. An evaluation of 36 models reveals that the strongest model (Gemini-2.5-pro) achieves only 71% accuracy, with 45% of risks failing to be detected consistently. The core bottleneck is identified as unstable p…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "anticipatory reasoning"
 date: 2026-05-08
-content_hash: 2f5387678fd6cfe8
+content_hash: 20ece01f0e2b94f6
 ---
 
 # Towards Evaluating Proactive Risk Awareness of Multimodal Language Models
@@ -52,11 +52,11 @@ PaSBench is constructed following a pipeline of knowledge collection → sample 
 1. **Knowledge Collection and Filtering**
 
    Safety knowledge is collected from Chinese safety education books and official government websites, governed by five strict principles:
-   - **User specificity**: Focus on risks arising from individual behavior (e.g., consuming wild mushrooms), excluding group- or societal-level risks.
-   - **Risk determinism**: A clear causal link must exist between the risk and the harm.
-   - **Knowledge currency**: Only safety knowledge that remains currently valid is retained.
-   - **Consequence severity**: The risk must result in significant harm.
-   - **Verifiability**: Uncertain knowledge must be verifiable via Google within five minutes.
+    - **User specificity**: Focus on risks arising from individual behavior (e.g., consuming wild mushrooms), excluding group- or societal-level risks.
+    - **Risk determinism**: A clear causal link must exist between the risk and the harm.
+    - **Knowledge currency**: Only safety knowledge that remains currently valid is retained.
+    - **Consequence severity**: The risk must result in significant harm.
+    - **Verifiability**: Uncertain knowledge must be verifiable via Google within five minutes.
 
    Three annotators performed cross-validation, filtering 288 knowledge entries from an initial pool of 495.
 
@@ -71,9 +71,9 @@ PaSBench is constructed following a pipeline of knowledge collection → sample 
 4. **Evaluation Protocol**
 
    Each sample is evaluated $N=16$ times per model, with three reported metrics:
-   - **Accuracy (Average-of-N)**: Proportion of runs in which the risk is correctly identified and explained.
-   - **Potential (Best-of-N)**: Proportion of samples for which at least one run is correct.
-   - **Robustness (Worst-of-N)**: Proportion of samples for which all 16 runs are correct.
+    - **Accuracy (Average-of-N)**: Proportion of runs in which the risk is correctly identified and explained.
+    - **Potential (Best-of-N)**: Proportion of samples for which at least one run is correct.
+    - **Robustness (Worst-of-N)**: Proportion of samples for which all 16 runs are correct.
 
    Correctness requires: (1) *Identification* — warning the user to cease the dangerous behavior; and (2) *Explanation* — providing a sound rationale for the risk. GPT-4.1 is used as the judge model (human-validated accuracy: 94.5%).
 
@@ -157,9 +157,9 @@ PaSBench is a pure evaluation benchmark; no training is involved.
 
 - [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
 - [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](adapting_visionlanguage_models_for_evaluating_world_models.md)
-- [\[NeurIPS 2025\] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios](mme-videoocr_evaluating_ocr-based_capabilities_of_multimodal_llms_in_video_scena.md)
 - [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](advancing_compositional_awareness_in_clip_with_efficient_fin.md)
-- [\[NeurIPS 2025\] Beyond Greedy Exits: Improved Early Exit Decisions for Risk Control and Reliability](beyond_greedy_exits_improved_early_exit_decisions_for_risk_control_and_reliabili.md)
+- [\[NeurIPS 2025\] MME-VideoOCR: Evaluating OCR-Based Capabilities of Multimodal LLMs in Video Scenarios](mme-videoocr_evaluating_ocr-based_capabilities_of_multimodal_llms_in_video_scena.md)
+- [\[ACL 2025\] MMSafeAware: Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs](../../ACL2025/multimodal_vlm/cant_see_the_forest_for_the.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification
 description: >-
-  [ICML 2026][Interpretability][conjoint analysis] This paper reformulates traditional conjoint analysis—moving from "estimating AMCE marginal effects" to "learning interpretable product-form Categorical stochastic policies over an exponential factor action space." It provides a closed-form solution with $L_2$ trust regions under a second-order interaction model, a dif
+  [ICML 2026][Interpretability][conjoint analysis] This paper reformulates traditional conjoint analysis—moving from "estimating AMCE marginal effects" to "learning interpretable product-form Categorical stochastic policies over an exponential factor action space." It provides a closed-form solution with $L_2$ trust regions under a second-order interaction model, a differentiable general solution, and a two-player minimax extension incorporating primary election systems. By pro…
 tags:
-  - ICML 2026
-  - Interpretability
-  - conjoint analysis
-  - factored stochastic policy
-  - minimax
-  - Delta method
-  - AMCE
+  - "ICML 2026"
+  - "Interpretability"
+  - "conjoint analysis"
+  - "factored stochastic policy"
+  - "minimax"
+  - "Delta method"
+  - "AMCE"
 date: 2026-05-08
-content_hash: ad53897490ba96bd
+content_hash: c6ebfa45b79da806
 ---
+
 # MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification
 
 **Conference**: ICML 2026  
@@ -134,15 +135,17 @@ Two types of experiments: synthetic data and the 2016 US Presidential conjoint e
 
 <div class="related-papers" markdown="1">
 
-1. **Egami & Imai (2019)**: *Causal Interaction in Conjoint Analysis: Understanding Group Differences* - Foundational work for interaction effects in AMCE.
-2. **Athey & Wager (2021)**: *Policy Learning with Observational Data* - Standard for regret bounds in offline policy learning.
-3. **Goplerud et al. (2025)**: *Clustering in Conjoint Analysis* - For modeling respondent heterogeneity.
-4. **Wainwright & Jordan (2008)**: *Graphical Models, Exponential Families, and Variational Inference* - Theoretical basis for the mean-field approximation.
+## Related Papers
+
+- [\[ICLR 2026\] Uncertainty as Feature Gaps: Epistemic Uncertainty Quantification of LLMs in Contextual Question-Answering](../../ICLR2026/interpretability/uncertainty_as_feature_gaps_epistemic_uncertainty_quantification_of_llms_in_cont.md)
+- [\[ICLR 2026\] Learning Nonlinear Causal Reductions to Explain Reinforcement Learning Policies](../../ICLR2026/interpretability/learning_nonlinear_causal_reductions_to_explain_reinforcement_learning_policies.md)
+- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
+- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
+- [\[ICLR 2026\] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data](../../ICLR2026/interpretability/xrfm_accurate_scalable_and_interpretable_feature_learning_models_for_tabular_dat.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)

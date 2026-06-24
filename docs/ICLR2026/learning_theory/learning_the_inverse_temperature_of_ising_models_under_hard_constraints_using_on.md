@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Learning the Inverse Temperature of Ising Models under Hard Constraints using One Sample
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper investigates how to estimate the inverse temperature parameter of an Ising model using only a single sample under a known bounded-degree graph and a k-SAT hard constraint truncated set. It proves that a projected gradient algorithm based on Maximum Pseudo-Likelihood Estimation (MPLE) achieves a consistency e
+  [ICLR2026][Learning Theory][Ising model] This paper investigates how to estimate the inverse temperature parameter of an Ising model using only a single sample under a known bounded-degree graph and a k-SAT hard constraint truncated set. It proves that a projected gradient algorithm based on Maximum Pseudo-Likelihood Estimation (MPLE) achieves a consistency error of $O(\Delta^3 / \sqrt{n})$ in near-linear time.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Graphical Models"
+  - "Statistical Learning"
+  - "Ising model"
+  - "inverse temperature estimation"
+  - "hard constraints"
+  - "pseudo-likelihood"
+  - "single-sample learning"
 date: 2026-05-08
-content_hash: 9d72ec5980053281
+content_hash: 9567a303a838c08c
 ---
+
 # Learning the Inverse Temperature of Ising Models under Hard Constraints using One Sample
 
 **Conference**: ICLR2026  

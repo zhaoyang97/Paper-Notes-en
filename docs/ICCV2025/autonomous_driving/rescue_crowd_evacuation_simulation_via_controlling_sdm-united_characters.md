@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters
 description: >-
-  [Autonomous Driving] This paper proposes RESCUE, the first online SDM (Sensing–Decision–Motion) unified 3D evacuation simulation framework…
+  [Autonomous Driving] This paper proposes RESCUE, the first online SDM (Sensing–Decision–Motion) unified 3D evacuation simulation framework, integrating a 3D adaptive social force model and a personalized gait controller to achieve real-time personalized evacuation simulation for hundreds of agents.
 tags:
   - "Autonomous Driving"
 date: 2026-05-08
-content_hash: 9115a10abfe3aeaa
+content_hash: d1a443830e15e989
 ---
 
 # RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters
@@ -145,9 +145,9 @@ Force sensors are integrated into 24 body parts, and contact force magnitudes ar
 
 - [\[ICCV 2025\] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions](seqgrowgraph_learning_lane_topology_as_a_chain_of_graph_expansions.md)
 - [\[ICCV 2025\] World4Drive: End-to-End Autonomous Driving via Intention-aware Physical Latent World Model](world4drive_end-to-end_autonomous_driving_via_intention-aware_physical_latent_wo.md)
+- [\[ICLR 2026\] EnvSocial-Diff: A Diffusion-Based Crowd Simulation Model with Environmental Conditioning and Individual-Group Interaction](../../ICLR2026/autonomous_driving/envsocial-diff_a_diffusion-based_crowd_simulation_model_with_environmental_condi.md)
+- [\[CVPR 2025\] Point-to-Region Loss for Semi-Supervised Point-Based Crowd Counting](../../CVPR2025/autonomous_driving/point-to-region_loss_for_semi-supervised_point-based_crowd_counting.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[ICCV 2025\] Long-term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation](long-term_traffic_simulation_with_interleaved_autoregressive_motion_and_scenario.md)
-- [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](../../NeurIPS2025/autonomous_driving/unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
 
 </div>
 

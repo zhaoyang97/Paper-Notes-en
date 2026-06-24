@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Interpretability] GRACE replaces the black-box neural network reward models in Inverse Reinforcement Learning (IRL) with "executable Python code." It utilizes code LLMs within an evolutionary search to infer readable and verifiable reward functions using only expert trajectories, without requiring task descriptions or ground-truth rewar
+  [ICLR 2026][Reinforcement Learning][Inverse Reinforcement Learning] GRACE replaces the black-box neural network reward models in Inverse Reinforcement Learning (IRL) with "executable Python code." It utilizes code LLMs within an evolutionary search to infer readable and verifiable reward functions using only expert trajectories, without requiring task descriptions or ground-truth rewards.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Interpretability
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Inverse Reinforcement Learning"
+  - "Reward-As-Code"
+  - "Large Language Models"
+  - "Evolutionary Search"
+  - "Explainability"
 date: 2026-05-08
-content_hash: 1d8254adb6a2eabe
+content_hash: 52ee276500c70b17
 ---
+
 # GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -116,9 +121,9 @@ Policies trained with GRACE code rewards generally approach the PPO oracle and m
 
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](../../AAAI2026/reinforcement_learning/distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
 - [\[ICLR 2026\] GRACE: Generative Representation Learning via Contrastive Policy Optimization](grace_generative_representation_learning_via_contrastive_policy_optimization.md)
 - [\[ICLR 2026\] Toward Efficient Exploration by Large Language Model Agents](toward_efficient_exploration_by_large_language_model_agents.md)
-- [\[ICML 2026\] Distributional Inverse Reinforcement Learning](../../ICML2026/reinforcement_learning/distributional_inverse_reinforcement_learning.md)
 
 </div>
 

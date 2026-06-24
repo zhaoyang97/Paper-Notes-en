@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Empowering Multi-Robot Cooperation via Sequential World Models
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Models] This paper proposes SeqWM (Sequential World Model), which introduces the sequential (autoregressive) paradigm into multi-robot model-based reinforcement learning. Each robot independently maintains a world model and sequentially passes predicted trajectories. While reducing modeling complexity, the system naturally evo
+  [ICLR 2026][Robotics][Multi-robot cooperation] This paper proposes SeqWM (Sequential World Model), which introduces the sequential (autoregressive) paradigm into multi-robot model-based reinforcement learning. Each robot independently maintains a world model and sequentially passes predicted trajectories. While reducing modeling complexity, the system naturally evolves advanced collaborative behaviors such as proactive adaptation, temporal alignment…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "ICLR 2026"
+  - "Robotics"
+  - "Multi-robot cooperation"
+  - "world models"
+  - "sequential paradigm"
+  - "Model Predictive Path Integral"
+  - "autoregressive dynamics modeling"
 date: 2026-05-08
-content_hash: ea5b4fd4b40eac60
+content_hash: 1f18cdebda7f9b97
 ---
+
 # Empowering Multi-Robot Cooperation via Sequential World Models
 
 **Conference**: ICLR 2026  

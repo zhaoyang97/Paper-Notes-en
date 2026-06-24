@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] MIRO: 多奖励条件预训练同时提升 T2I 质量与效率
+  [Paper Note] MIRO: Multi-Reward Conditioned Pretraining for Simultaneously Improving T2I Quality and Efficiency
 description: >-
-  [ICML 2026][Image Generation][Classifier-Free Guidance] MIRO moves "alignment" from the RLHF post-training stage directly into pretraining: it assigns 7 reward scores (aesthetics, user preference, text-alignment, visual reasoning, scientific correctness, etc.) to each training image, enabling the Flow Matching model to learn $p(x|c, s)$. During inference, multi-reward CFG g
+  [ICML 2026][Image Generation][Multi-reward conditioning] MIRO moves "alignment" from the RLHF post-training stage directly into pretraining: it assigns 7 reward scores (aesthetics, user preference, text-alignment, visual reasoning, scientific correctness, etc.) to each training image, enabling the Flow Matching model to learn $p(x|c, s)$. During inference, multi-reward CFG guides the generation toward high-reward regions. A 0.36B parameter model exceeds the 12B FLUX-dev on Ge…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Classifier-Free Guidance
+  - "ICML 2026"
+  - "Image Generation"
+  - "Multi-reward conditioning"
+  - "Flow Matching Pretraining"
+  - "Classifier-Free Guidance"
+  - "Reward-guided sampling"
+  - "Inference-time scaling"
 date: 2026-05-08
-content_hash: 502f3566bfd87666
+content_hash: c97c06427219d649
 ---
+
 # MIRO: Multi-Reward Conditioned Pretraining for Simultaneously Improving T2I Quality and Efficiency
 
 **Conference**: ICML 2026  
@@ -126,15 +131,16 @@ Detailed Synthetic Captioning (Figure 5 + Table 1): The baseline improves GenEva
 - Value: ⭐⭐⭐⭐⭐ (Potential to eliminate SFT/RLHF stages if 0.36B vs 12B results are replicable at scale).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing](holofair_unified_t2i_fairness_evaluation_and_fair-grpo_debiasing.md)
-- [\[ICLR 2026\] Infinity and Beyond: Compositional Alignment in VAR and Diffusion T2I Models](../../ICLR2026/image_generation/infinity_and_beyond_compositional_alignment_in_var_and_diffusion_t2i_models.md)
-- [\[CVPR 2026\] FailureAtlas: Mapping the Failure Landscape of T2I Models via Active Exploration](../../CVPR2026/image_generation/failureatlas_mapping_the_failure_landscape_of_t2i_models_via_active_exploration.md)
+- [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](pareto-guided_optimal_transport_for_multi-reward_alignment.md)
+- [\[ICML 2026\] Hölder++: Improving the Quality-Coherence Trade-off in Multimodal VAEs](hölder_improving_the_quality-coherence_trade-off_in_multimodal_vaes.md)
 - [\[ICLR 2026\] The Intricate Dance of Prompt Complexity, Quality, Diversity, and Consistency in T2I Models](../../ICLR2026/image_generation/the_intricate_dance_of_prompt_complexity_quality_diversity_and_consistency_in_t2.md)
-- [\[CVPR 2025\] Science-T2I: Addressing Scientific Illusions in Image Synthesis](../../CVPR2025/image_generation/science-t2i_addressing_scientific_illusions_in_image_synthesis.md)
+- [\[ICML 2026\] Latent Diffusion Pretraining for Crystal Property Prediction](latent_diffusion_pretraining_for_crystal_property_prediction.md)
+- [\[ICLR 2026\] Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization](../../ICLR2026/image_generation/pareto-conditioned_diffusion_models_for_offline_multi-objective_optimization.md)
 
 </div>
 

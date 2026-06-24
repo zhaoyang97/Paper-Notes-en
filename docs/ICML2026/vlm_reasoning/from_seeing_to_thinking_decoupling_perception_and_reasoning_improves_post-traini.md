@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models
 description: >-
-  [ICML 2026][vlm_reasoning][RLVR] This paper argues that current VLM post-training overemphasizes "long-chain reasoning" while neglecting perception bottlenecks. It explicitly decouples post-training into three independent stages: "Visual Perception $\rightarrow$ Textual Reasoning $\rightarrow$ Visual Reasoning," using RLVR (instead of caption SFT) to
+  [ICML 2026][VLM Reasoning][Visual Perception] This paper argues that current VLM post-training overemphasizes "long-chain reasoning" while neglecting perception bottlenecks. It explicitly decouples post-training into three independent stages: "Visual Perception $\rightarrow$ Textual Reasoning $\rightarrow$ Visual Reasoning," using RLVR (instead of caption SFT) to specifically refine perception. This approach improves Qwen3-VL-8B by approximately +5.9% and +1.2% on visual math…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - RLVR
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Visual Perception"
+  - "Staged Post-training"
+  - "Capability-dimension Curriculum"
+  - "RLVR"
+  - "Visual Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 5cf36aaac84a863c
+content_hash: ab1d4dbe2080ba56
 ---
+
 # From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -143,9 +148,9 @@ Compared to base: WeMath +5.24, RWQA +3.66, MMStar +3.07. Compared to the strong
 
 - [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
 - [\[ICML 2026\] From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning](from_shortcuts_to_reasoning_robust_post-training_of_theory_of_mind_with_reinforc.md)
-- [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](../../CVPR2026/vlm_reasoning/improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](../../CVPR2026/vlm_reasoning/seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](../../CVPR2026/vlm_reasoning/dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 
 </div>
 

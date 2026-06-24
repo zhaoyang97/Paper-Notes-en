@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation
 description: >-
-  [NeurIPS 2025][Image Generation][Source-Free Domain Adaptation] This paper proposes the DPTM framework, which leverages a latent diffusion model to perform semantic transformation on unreliable target samples…
+  [NeurIPS 2025][Image Generation][Source-Free Domain Adaptation] This paper proposes the DPTM framework, which leverages a latent diffusion model to perform semantic transformation on unreliable target samples, generating a pseudo-target domain and iteratively narrowing the gap with the real target domain via a progressive reconstruction mechanism. DPTM achieves up to 18.6% improvement over existing SFDA state-of-the-art methods under large domain shift scenarios.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Progressive Optimization"
   - "Semantic Transformation"
 date: 2026-05-08
-content_hash: 6b5c9e7b276f18fd
+content_hash: 669fc39f070988f0
 ---
 
 # Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation
@@ -182,9 +182,9 @@ A larger $E$ assigns more samples to the untrust set for manipulation, yielding 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
+- [\[CVPR 2025\] Everything to the Synthetic: Diffusion-driven Test-time Adaptation via Synthetic-Domain Alignment](../../CVPR2025/image_generation/everything_to_the_synthetic_diffusion-driven_test-time_adaptation_via_synthetic-.md)
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
 - [\[NeurIPS 2025\] Track, Inpaint, Resplat: Subject-driven 3D and 4D Generation with Progressive Texture Infilling](track_inpaint_resplat_subject-driven_3d_and_4d_generation_with_progressive_textu.md)
-- [\[NeurIPS 2025\] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities](progressive_inference-time_annealing_of_diffusion_models_for_sampling_from_boltz.md)
 - [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
 
 </div>

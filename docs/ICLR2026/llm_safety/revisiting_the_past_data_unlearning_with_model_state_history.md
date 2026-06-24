@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting the Past: Data Unlearning with Model State History
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The MSA (Model State Arithmetic) algorithm is proposed, which utilizes intermediate training checkpoints to construct "forgetting vectors." By performing arithmetic operations in the parameter space to remove the influence of specific data on the model, it consistently outperforms existing unlearning methods like NPO,
+  [ICLR 2026][LLM Safety][Machine Unlearning] The MSA (Model State Arithmetic) algorithm is proposed, which utilizes intermediate training checkpoints to construct "forgetting vectors." By performing arithmetic operations in the parameter space to remove the influence of specific data on the model, it consistently outperforms existing unlearning methods like NPO, RMU, and GradDiff on the TOFU and RESTOR benchmarks. Furthermore, it maintains model utility even without a retain s…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Model State Arithmetic"
+  - "Checkpoints"
+  - "Forgetting Vector"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: 4a335dcf980ff486
+content_hash: 1795d6094c93134b
 ---
+
 # Revisiting the Past: Data Unlearning with Model State History
 
 **Conference**: ICLR 2026  
@@ -178,11 +184,11 @@ MSA almost completely recovers the accuracy prior to being covered by misinforma
 
 ## Related Papers
 
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
 - [\[ICLR 2026\] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs](unlearning_isnt_invisible_detecting_unlearning_traces_in_llms_from_model_outputs.md)
 - [\[ICLR 2026\] Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data](redirection_for_erasing_memory_rem_towards_a_universal_unlearning_method_for_cor.md)
-- [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
-- [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
 - [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
+- [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
 
 </div>
 

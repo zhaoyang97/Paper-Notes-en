@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning
 description: >-
-  [ICCV 2025][Image Generation][Diffusion model alignment] ShortFT is proposed to construct denoising shortcuts using trajectory-preserving few-step diffusion models…
+  [ICCV 2025][Image Generation][Diffusion model alignment] ShortFT is proposed to construct denoising shortcuts using trajectory-preserving few-step diffusion models, substantially compressing the original lengthy denoising chain to enable complete end-to-end reward gradient backpropagation, achieving efficient and effective alignment of diffusion models with reward functions.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "timestep-aware LoRA"
   - "backpropagation"
 date: 2026-05-08
-content_hash: 62fb31f72d23d749
+content_hash: 75ffa85e8f343cfd
 ---
 
 # ShortFT: Diffusion Model Alignment via Shortcut-based Fine-Tuning
@@ -209,11 +209,11 @@ Eleven volunteers (5 image processing experts + 6 non-experts) supplemented by G
 
 ## Related Papers
 
-- [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
+- [\[ICLR 2026\] Half-order Fine-Tuning for Diffusion Model: A Recursive Likelihood Ratio Optimizer](../../ICLR2026/image_generation/half-order_fine-tuning_for_diffusion_model_a_recursive_likelihood_ratio_optimize.md)
+- [\[ECCV 2024\] Memory-Efficient Fine-Tuning for Quantized Diffusion Model](../../ECCV2024/image_generation/memory-efficient_fine-tuning_for_quantized_diffusion_model.md)
 - [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
-- [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](../../AAAI2026/image_generation/self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
-- [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](../../NeurIPS2025/image_generation/towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
-- [\[NeurIPS 2025\] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models](../../NeurIPS2025/image_generation/deft_decompositional_efficient_finetuning_for_texttoimage_mo.md)
+- [\[ICCV 2025\] TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation](taxadiffusion_progressively_trained_diffusion_model_for_fine-grained_species_gen.md)
+- [\[CVPR 2025\] Personalized Preference Fine-tuning of Diffusion Models](../../CVPR2025/image_generation/personalized_preference_fine-tuning_of_diffusion_models.md)
 
 </div>
 

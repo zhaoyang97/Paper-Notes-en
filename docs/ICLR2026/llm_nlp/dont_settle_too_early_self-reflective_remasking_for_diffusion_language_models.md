@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Diffusion Language Model] Addressing the inherent flaw in masked diffusion language models where "tokens are fixed once unmasked and cannot be corrected," this paper proposes RemeDi. The model simultaneously predicts token distributions and per-token confidence during each generation step. Based on confidence levels, it decides which positions
+  [ICLR2026][LLM (Other)][Diffusion Language Models] Addressing the inherent flaw in masked diffusion language models where "tokens are fixed once unmasked and cannot be corrected," this paper proposes RemeDi. The model simultaneously predicts token distributions and per-token confidence during each generation step. Based on confidence levels, it decides which positions to unmask and which previously generated tokens to revert to masks for resampling. Coupled with a two-stage "…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Diffusion Language Model
-  - SFT+RL
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Diffusion Language Models"
+  - "Remasking"
+  - "Self-Reflection"
+  - "Confidence Prediction"
+  - "SFT+RL"
 date: 2026-05-08
-content_hash: 36b869f7aca33d8e
+content_hash: 95f7326524f7ecc6
 ---
+
 # Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models
 
 **Conference**: ICLR2026  
@@ -138,8 +142,8 @@ Remask SFT consistently outperforms Vanilla SFT. Compared to LLaDOU RL, Remask R
 
 - [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](../../ICML2026/llm_nlp/reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)
 - [\[AAAI 2026\] IROTE: Human-like Traits Elicitation of Large Language Model via In-Context Self-Reflective Optimization](../../AAAI2026/llm_nlp/irote_human-like_traits_elicitation_of_large_language_model_via_in-context_self-.md)
-- [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ICLR 2026\] Constrained Decoding of Diffusion LLMs with Context-Free Grammars](constrained_decoding_of_diffusion_llms_with_context-free_grammars.md)
 - [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] BézierFlow shifts the focus of "what to optimize for few-step generation" from discrete ODE timesteps to continuous Stochastic Interpolant (SI) schedulers. By parameterizing the scheduler with Bézier control points, it achieves a 2–3× FID improvement for pre-trained diffusion/flow models in $\le 10$ sampling steps with
+  [ICLR2026][Image Generation][Few-step sampling] BézierFlow shifts the focus of "what to optimize for few-step generation" from discrete ODE timesteps to continuous Stochastic Interpolant (SI) schedulers. By parameterizing the scheduler with Bézier control points, it achieves a 2–3× FID improvement for pre-trained diffusion/flow models in $\le 10$ sampling steps with only 15 minutes of lightweight training.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Few-step sampling"
+  - "Stochastic Interpolant"
+  - "Bézier curves"
+  - "Scheduler learning"
+  - "Lightweight training"
 date: 2026-05-08
-content_hash: 2292b4aae38d3b75
+content_hash: 8b090dac237443a8
 ---
+
 # BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation
 
 **Conference**: ICLR2026  
@@ -143,7 +149,7 @@ Improvements are even more significant for flow models: On CIFAR-10 + RK1 at NFE
 - [\[ICLR 2026\] PairFlow: Closed-Form Source-Target Coupling for Few-Step Generation in Discrete Flow Models](pairflow_closed-form_source-target_coupling_for_few-step_generation_in_discrete_.md)
 - [\[CVPR 2026\] Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning](../../CVPR2026/image_generation/refining_few-step_text-to-multiview_diffusion_via_reinforcement_learning.md)
 - [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](../../CVPR2026/image_generation/logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
-- [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](../../NeurIPS2025/image_generation/boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
+- [\[ICLR 2026\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Investigating Redundancy in Multimodal Large Language Models with Multiple Vision Encoders
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] By systematically masking individual vision encoders in multi-encoder MLLMs, this paper reveals that the "more encoders the better" assumption is a fallacy. It proposes two metrics, CUR and IG, to quantify the marginal contribution and redundancy of each encoder, proving that most tasks can maintain over 90% performanc
+  [ICLR 2026][Multimodal VLM][Multiple Vision Encoders] By systematically masking individual vision encoders in multi-encoder MLLMs, this paper reveals that the "more encoders the better" assumption is a fallacy. It proposes two metrics, CUR and IG, to quantify the marginal contribution and redundancy of each encoder, proving that most tasks can maintain over 90% performance with only 1–2 encoders while significantly reducing training and inference costs.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multiple Vision Encoders"
+  - "Encoder Redundancy"
+  - "MLLM Efficiency"
+  - "Conditional Utilization Rate (CUR)"
+  - "Information Gap (IG)"
 date: 2026-05-08
-content_hash: 26cdba38c7364745
+content_hash: 053ea5eea6f39dc7
 ---
+
 # Investigating Redundancy in Multimodal Large Language Models with Multiple Vision Encoders
 
 **Conference**: ICLR 2026  

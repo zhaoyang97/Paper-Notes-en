@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models
 description: >-
-  [ICCV 2025][Image Generation][content-style decomposition] This work is the first to explore content-style decomposition (CSD) in visual autoregressive (VAR) models. Through three key innovations—scale-aware alternating…
+  [ICCV 2025][Image Generation][content-style decomposition] This work is the first to explore content-style decomposition (CSD) in visual autoregressive (VAR) models. Through three key innovations—scale-aware alternating optimization, SVD-based style embedding rectification, and augmented key-value memory—CSD-VAR achieves content preservation and style transfer quality that surpasses existing diffusion-model-based methods.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "personalized generation"
   - "multi-scale representation"
 date: 2026-05-08
-content_hash: 97be47a0acf493a7
+content_hash: 47af8bbf7e6092f7
 ---
 
 # CSD-VAR: Content-Style Decomposition in Visual Autoregressive Models

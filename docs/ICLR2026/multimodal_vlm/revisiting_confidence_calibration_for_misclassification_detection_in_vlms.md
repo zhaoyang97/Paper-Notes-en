@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting Confidence Calibration for Misclassification Detection in VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] This work demonstrates that standard confidence calibration limits the misclassification detection capability of VLMs even under perfect calibration. It introduces MisD-oriented reliability curves, a differentiable surrogate loss, and a lightweight posterior meta network to learn instance-wise temperature coefficients,
+  [ICLR 2026][Multimodal VLM][VLM Confidence Calibration] This work demonstrates that standard confidence calibration limits the misclassification detection capability of VLMs even under perfect calibration. It introduces MisD-oriented reliability curves, a differentiable surrogate loss, and a lightweight posterior meta network to learn instance-wise temperature coefficients, effectively separating correct predictions from incorrect ones.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM Confidence Calibration"
+  - "Misclassification Detection"
+  - "CLIP"
+  - "Posterior Calibration"
+  - "Temperature Scaling"
 date: 2026-05-08
-content_hash: bc65ad29c971d8fc
+content_hash: cd2f467a1e425dcc
 ---
+
 # Revisiting Confidence Calibration for Misclassification Detection in VLMs
 
 **Conference**: ICLR 2026  
@@ -126,6 +131,7 @@ Open-vocabulary experiments show that LMN generalizes to unseen classes better t
 - **Value**: ⭐⭐⭐⭐☆ Highly practical for posterior VLM deployment in safety-critical systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

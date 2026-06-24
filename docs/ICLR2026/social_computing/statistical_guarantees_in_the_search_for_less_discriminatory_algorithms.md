@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Statistical Guarantees in the Search for Less Discriminatory Algorithms
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] This paper formalizes the corporate process of searching for a "Less Discriminatory Alternative" (LDA) to comply with anti-discrimination laws as an **optimal stopping problem**. It provides an adaptive stopping algorithm that, under realistic conditions of unknown model distributions and finite evaluation data, provid
+  [ICLR 2026][Social Computing][Fairness] This paper formalizes the corporate process of searching for a "Less Discriminatory Alternative" (LDA) to comply with anti-discrimination laws as an **optimal stopping problem**. It provides an adaptive stopping algorithm that, under realistic conditions of unknown model distributions and finite evaluation data, provides a high-confidence upper bound on the marginal reduction in disparate impact from further retraining. This allows comp…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Fairness"
+  - "Less Discriminatory Alternative"
+  - "Optimal Stopping"
+  - "Anytime-valid Inference"
+  - "Disparate Impact"
 date: 2026-05-08
-content_hash: f3d489829b38efa1
+content_hash: 548dd4f125b0c616
 ---
+
 # Statistical Guarantees in the Search for Less Discriminatory Algorithms
 
 **Conference**: ICLR 2026  
@@ -127,10 +133,20 @@ Experiments were conducted on three credit/housing datasets: Adult, Folktables, 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine](../../ACL2026/social_computing/decide_less_communicate_more_on_the_construct_validity_of_end-to-end_fact-checki.md)
+- [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](../../AAAI2026/social_computing/t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
+- [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](../../NeurIPS2025/social_computing/auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
+- [\[NeurIPS 2025\] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding](../../NeurIPS2025/social_computing/deeptraverse_a_depth-first_search_inspired_network_for_algorithmic_visual_unders.md)
+- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] Decide less, communicate more: On the construct validity of end-to-end fact-checking in medicine](../../ACL2026/social_computing/decide_less_communicate_more_on_the_construct_validity_of_end-to-end_fact-checki.md)

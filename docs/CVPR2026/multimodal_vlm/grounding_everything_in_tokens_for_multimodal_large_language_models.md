@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Grounding Everything in Tokens for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] GETok augments the MLLM vocabulary with a set of "grid tokens + offset tokens," discretizing the image plane into a 2D anchor grid and using small-step offset iterations for error correction. Without altering the autoregressive architecture, the model represents various grounding forms (points, boxes, masks, polylines)
+  [CVPR 2026][Multimodal VLM][Visual Grounding] GETok augments the MLLM vocabulary with a set of "grid tokens + offset tokens," discretizing the image plane into a 2D anchor grid and using small-step offset iterations for error correction. Without altering the autoregressive architecture, the model represents various grounding forms (points, boxes, masks, polylines) as unified token sequences, achieving SOTA performance in both SFT and RL paradigms.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Grounding"
+  - "Spatial token"
+  - "MLLM"
+  - "Grid-offset token"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 761c85408be3bd7d
+content_hash: 36130e4b3ec27bfc
 ---
+
 # Grounding Everything in Tokens for Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -142,11 +146,11 @@ Under strict Acc@0.8, improvements are more pronounced, especially for small obj
 
 ## Related Papers
 
-- [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
-- [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
 - [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
 - [\[CVPR 2026\] WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens](wemmu_enhanced_bridging_of_vision-language_models_and_diffusion_models_via_noisy.md)
+- [\[CVPR 2026\] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping](venus_benchmarking_and_empowering_multimodal_large_language_models_for_aesthetic.md)
+- [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
+- [\[CVPR 2026\] Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models](learning_to_see_through_illumination_extremes_with_event_streaming_in_multimodal.md)
 
 </div>
 

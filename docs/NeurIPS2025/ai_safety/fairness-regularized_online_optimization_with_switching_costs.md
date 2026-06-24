@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fairness-Regularized Online Optimization with Switching Costs
 description: >-
-  [NeurIPS 2025][AI Safety][Long-term fairness regularization] This paper is the first to rigorously integrate long-term fairness and action smoothness into a unified online optimization framework. It first establishes tha…
+  [NeurIPS 2025][AI Safety][Long-term fairness regularization] This paper is the first to rigorously integrate long-term fairness and action smoothness into a unified online optimization framework. It first establishes that the original problem is fundamentally intractable under standard dynamic benchmarks, then proposes FairOBD, which online-izes the fairness cost via auxiliary variables and dual mirror descent, achieving an asymptotically optimal competitive ratio under the m…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "competitive ratio"
   - "Mirror Descent"
 date: 2026-05-08
-content_hash: 5565e4469b321839
+content_hash: b169ebedc0b6368c
 ---
 
 # Fairness-Regularized Online Optimization with Switching Costs
@@ -243,10 +243,10 @@ Finally, the paper focuses primarily on worst-case performance. Relaxing to a st
 ## Related Papers
 
 - [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
-- [\[AAAI 2026\] Alternative Fairness and Accuracy Optimization in Criminal Justice](../../AAAI2026/ai_safety/alternative_fairness_and_accuracy_optimization_in_criminal_j.md)
-- [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
-- [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](../../ICML2026/ai_safety/copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
+- [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
+- [\[AAAI 2026\] Alternative Fairness and Accuracy Optimization in Criminal Justice](../../AAAI2026/ai_safety/alternative_fairness_and_accuracy_optimization_in_criminal_j.md)
+- [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](efficient_fairness-performance_pareto_front_computation.md)
 
 </div>
 

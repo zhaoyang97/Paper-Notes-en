@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Tailoring Strictly Proper Scoring Rules for Downstream Tasks: An Application to Causal Inference
 description: >-
-  [ICML 2026][Causal Inference][proper scoring rule] This paper proposes a universal framework: by matching the local second-order curvature of the training loss $w_\ell(p)$ with the curvature of the downstream task error $w_{\text{task}}(p)$, one can derive a strictly proper scoring rule that is "geometrically aligned" with the downstream task. Applying this to IPW esti
+  [ICML 2026][Causal Inference][proper scoring rule] This paper proposes a universal framework: by matching the local second-order curvature of the training loss $w_\ell(p)$ with the curvature of the downstream task error $w_{\text{task}}(p)$, one can derive a strictly proper scoring rule that is "geometrically aligned" with the downstream task. Applying this to IPW estimation of ATE yields a closed-form loss and a closed-form canonical activation function (solving a quartic eq…
 tags:
-  - ICML 2026
-  - Causal Inference
-  - proper scoring rule
-  - IPW
-  - ATE
-  - canonical link
+  - "ICML 2026"
+  - "Causal Inference"
+  - "proper scoring rule"
+  - "IPW"
+  - "ATE"
+  - "propensity score"
+  - "canonical link"
 date: 2026-05-08
-content_hash: 8828bf0977332585
+content_hash: ecaff195eb393daf
 ---
+
 # Tailoring Strictly Proper Scoring Rules for Downstream Tasks: An Application to Causal Inference
 
 **Conference**: ICML 2026  
@@ -143,9 +145,9 @@ Note: 96 = 32 DGPs × 3 downstream estimators (IPW / Hajek / AIPW).
 
 - [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](controllable_generative_sandbox_for_causal_inference.md)
 - [\[CVPR 2025\] Joint Scheduling of Causal Prompts and Tasks for Multi-Task Learning](../../CVPR2025/causal_inference/joint_scheduling_of_causal_prompts_and_tasks_for_multi-task_learning.md)
-- [\[ICML 2025\] Causal Abstraction Inference under Lossy Representations](../../ICML2025/causal_inference/causal_abstraction_inference_under_lossy_representations.md)
-- [\[ICML 2026\] Towards a Holistic Understanding of Selection Bias for Causal Effect Identification](towards_a_holistic_understanding_of_selection_bias_for_causal_effect_identificat.md)
-- [\[CVPR 2026\] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization](../../CVPR2026/causal_inference/cgu-bayes_causal_graph_uncertainty-guided_bayesian_inference_for_domain_generali.md)
+- [\[ICLR 2026\] Exploratory Causal Inference in SAEnce](../../ICLR2026/causal_inference/exploratory_causal_inference_in_saence.md)
+- [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](../../ICLR2026/causal_inference/stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](../../ICLR2026/causal_inference/adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>
 

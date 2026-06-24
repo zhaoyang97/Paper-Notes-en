@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] The Optimas framework is proposed to maintain a Local Reward Function (LRF) aligned with the global reward for each component within a compound AI system. This enables the independent optimization of heterogeneous components (prompts, model parameters, hyperparameters, model selection), achieving an average performance
+  [ICLR 2026][LLM (Other)][Compound AI systems] The Optimas framework is proposed to maintain a Local Reward Function (LRF) aligned with the global reward for each component within a compound AI system. This enables the independent optimization of heterogeneous components (prompts, model parameters, hyperparameters, model selection), achieving an average performance gain of 11.92% across five real-world systems.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Compound AI systems"
+  - "Local Reward Functions"
+  - "Global Alignment"
+  - "Heterogeneous Parameter Optimization"
+  - "Convergence Guarantees"
 date: 2026-05-08
-content_hash: 25a5708e77dabf58
+content_hash: 8cda2651775f2d29
 ---
+
 # Optimas: Optimizing Compound AI Systems with Globally Aligned Local Rewards
 
 **Conference**: ICLR 2026  

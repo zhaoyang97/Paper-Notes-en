@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Stochastic Self-Organization in Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][multi-agent systems] Proposes the SelfOrg framework, which dynamically constructs Directed Acyclic Graphs (DAGs) for communication based on the semantic similarity of Agent responses and Shapley value contribution estimation. It achieves self-organized collaboration in multi-agent systems, showing particularly significant advantages in wea
+  [ICLR 2026][Multi-Agent][multi-agent systems] Proposes the SelfOrg framework, which dynamically constructs Directed Acyclic Graphs (DAGs) for communication based on the semantic similarity of Agent responses and Shapley value contribution estimation. It achieves self-organized collaboration in multi-agent systems, showing particularly significant advantages in weak model scenarios.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - multi-agent systems
-  - self-organization
-  - Shapley value
-  - communication graph
-  - DAG
-  - LLM collaboration
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "multi-agent systems"
+  - "self-organization"
+  - "Shapley value"
+  - "communication graph"
+  - "DAG"
+  - "LLM collaboration"
 date: 2026-05-08
-content_hash: 0345d47995a8804b
+content_hash: e85995ef614a3954
 ---
+
 # Stochastic Self-Organization in Multi-Agent Systems
 
 **Conference**: ICLR 2026  
@@ -164,8 +165,8 @@ Gains are largest for weak/medium models and nearly disappear for the 72B model 
 - [\[ICLR 2026\] MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems](mas2_self-generative_self-configuring_self-rectifying_multi-agent_systems.md)
 - [\[ACL 2026\] Towards Self-Improving Error Diagnosis in Multi-Agent Systems](../../ACL2026/multi_agent/towards_self-improving_error_diagnosis_in_multi-agent_systems.md)
 - [\[ICLR 2026\] MARSHAL: Incentivizing Multi-Agent Reasoning via Self-Play with Strategic LLMs](marshal_incentivizing_multi-agent_reasoning_via_self-play_with_strategic_llms.md)
-- [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
 - [\[ICLR 2026\] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](aegis_automated_error_generation_and_attribution_for_multi-agent_systems.md)
+- [\[ICLR 2026\] Stop Wasting Your Tokens: Towards Efficient Runtime Multi-Agent Systems](stop_wasting_your_tokens_towards_efficient_runtime_multi-agent_systems.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images
 description: >-
-  [3D Vision] This paper proposes PRO (Patch Refine Once), which achieves seamless patchwise depth refinement on high-resolution images through Grouped Patch Consistency Training (GPCT) and a Bias-Free Mask (BFM) strategy.…
+  [3D Vision] This paper proposes PRO (Patch Refine Once), which achieves seamless patchwise depth refinement on high-resolution images through Grouped Patch Consistency Training (GPCT) and a Bias-Free Mask (BFM) strategy. PRO eliminates boundary artifacts with only a single refinement pass per patch and achieves a 12× inference speedup over PatchRefiner.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: d63b98213bf65332
+content_hash: 0ba4742547268254
 ---
 
 # One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images
@@ -173,7 +173,7 @@ An overlap of 224 pixels is optimal; excessively large overlaps weaken the consi
 ## Related Papers
 
 - [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
 - [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
 - [\[ICCV 2025\] RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors](ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)
 - [\[ICCV 2025\] HORT: Monocular Hand-held Objects Reconstruction with Transformers](hort_monocular_hand-held_objects_reconstruction_with_transformers.md)

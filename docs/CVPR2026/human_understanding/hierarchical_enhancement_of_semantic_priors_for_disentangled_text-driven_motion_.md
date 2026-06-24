@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] HESP utilizes an Adaptive Gaussian VAE (AG-VAE) that explicitly decomposes the latent space into multiple semantic sub-manifolds, combined with Dynamic Cross-Modal Memory (DCMM) and Hierarchical Cross-modal Attention (HCA). This makes text-driven 3D human motion generation more controllable and interpretable, outperfor
+  [CVPR 2026][Human Understanding][Text-to-Motion] HESP utilizes an Adaptive Gaussian VAE (AG-VAE) that explicitly decomposes the latent space into multiple semantic sub-manifolds, combined with Dynamic Cross-Modal Memory (DCMM) and Hierarchical Cross-modal Attention (HCA). This makes text-driven 3D human motion generation more controllable and interpretable, outperforming baselines such as SALAD, MoMask, and MDM in FID and R-Precision on HumanML3D and KIT-ML.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion"
+  - "Latent Space Disentanglement"
+  - "Adaptive Gaussian Prior"
+  - "Cross-modal Memory"
+  - "Hierarchical Attention"
 date: 2026-05-08
-content_hash: 00c5f3c7fa2597cc
+content_hash: e6798093590ef515
 ---
+
 # Hierarchical Enhancement of Semantic Priors for Disentangled Text-Driven Motion Generation
 
 **Conference**: CVPR 2026  
@@ -131,15 +137,16 @@ The role of AG-VAE is supported by reconstruction quality and latent space visua
 - **Value**: ⭐⭐⭐⭐ Significant advancement in the controllability and interpretability of text-driven motion generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
-- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
 - [\[CVPR 2026\] MotionHiFlow: Text-to-Motion via Hierarchical Flow Matching](motionhiflow_text-to-motion_via_hierarchical_flow_matching.md)
+- [\[CVPR 2026\] Pressure2Motion: Hierarchical Human Motion Reconstruction from Ground Pressure with Text Guidance](pressure2motion_hierarchical_human_motion_reconstruction_from_ground_pressure_wi.md)
 - [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
+- [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](../../ICLR2026/human_understanding/disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][MPC] PointWorld represents scene states and robot actions as a unified set of 3D point flows. By using a large pre-trained point cloud backbone to learn "how scene points move given an action" across approximately 2 million trajectories, a single checkpoint can drive real robotic arms to complete tasks involving rigid body
+  [CVPR 2026][3D Vision][3D World Models] PointWorld represents scene states and robot actions as a unified set of 3D point flows. By using a large pre-trained point cloud backbone to learn "how scene points move given an action" across approximately 2 million trajectories, a single checkpoint can drive real robotic arms to complete tasks involving rigid body pushing, deformable objects, articulated objects, and tool use from a single RGB-D input in a zero-shot manner.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - MPC
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D World Models"
+  - "Point Flow"
+  - "Robotic Manipulation"
+  - "MPC"
+  - "Cross-Embodiment Transfer"
 date: 2026-05-08
-content_hash: b9efa2e72eaf02b2
+content_hash: f764ffc290353f0a
 ---
+
 # PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -144,11 +149,11 @@ Real-robot zero-shot MPC success rate: Tissue box pushing 70%, scarf folding 80%
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPEAR-1: Scaling Beyond Robot Demonstrations via 3D Understanding](spear-1_scaling_beyond_robot_demonstrations_via_3d_understanding.md)
-- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
-- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
-- [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](structural_action_transformer_for_3d_dexterous_manipulation.md)
-- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
+- [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
+- [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](../../NeurIPS2025/3d_vision/dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
+- [\[CVPR 2026\] Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface](real2edit2real_generating_robotic_demonstrations_via_a_3d_control_interface.md)
+- [\[ICCV 2025\] RoboTron-Mani: All-in-One Multimodal Large Model for Robotic Manipulation](../../ICCV2025/3d_vision/robotron-mani_all-in-one_multimodal_large_model_for_robotic_manipulation.md)
 
 </div>
 

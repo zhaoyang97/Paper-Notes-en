@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Frayed RoPE and Long Inputs: A Geometric Perspective
 description: >-
-  [ICLR 2026][LLM Efficiency][RoPE] This paper explains why RoPE models collapse beyond their training length through a unified geometric perspective: long inputs scatter and overlap the originally distinct key/query clusters, causing sink tokens (attention focal points) to fail. Based on this, the authors propose RoPE-ID, which applies high-frequency ro
+  [ICLR 2026][LLM Efficiency][RoPE] This paper explains why RoPE models collapse beyond their training length through a unified geometric perspective: long inputs scatter and overlap the originally distinct key/query clusters, causing sink tokens (attention focal points) to fail. Based on this, the authors propose RoPE-ID, which applies high-frequency rotation to only half of the channels, enabling training-free extrapolation to longer contexts that matches or exceeds YaRN on R…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - RoPE
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "RoPE"
+  - "Long Context Extrapolation"
+  - "Attention Sink"
+  - "Geometric Analysis"
+  - "Positional Encoding"
 date: 2026-05-08
-content_hash: d84493260b9a5afc
+content_hash: 60061b70ef164232
 ---
+
 # Frayed RoPE and Long Inputs: A Geometric Perspective
 
 **Conference**: ICLR 2026  
@@ -142,9 +147,9 @@ Common sense reasoning tasks (ARC-C / HellaSwag / PIQA) served as sanity checks;
 
 - [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](revisiting_long-context_modeling_from_context_denoising_perspective.md)
 - [\[ICLR 2026\] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective](randomization_boosts_kv_caching_learning_balances_query_load_a_joint_perspective.md)
-- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
+- [\[ICLR 2026\] Extending the Context of Pretrained LLMs by Dropping Their Positional Embedding](extending_the_context_of_pretrained_llms_by_dropping_their_positional_embedding.md)
 
 </div>
 

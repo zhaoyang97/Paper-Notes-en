@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine
 description: >-
-  [ICLR 2026][Medical NLP][Paper Note] GALAX treats a pre-trained GNN as a "process judge," using reinforcement learning to guide an LLM in incrementally constructing disease-related subgraphs. This enables explainable, patient-specific cancer target prediction without the need for step-by-step annotations.
+  [ICLR 2026][Medical LLM][Subgraph Reasoning] GALAX treats a pre-trained GNN as a "process judge," using reinforcement learning to guide an LLM in incrementally constructing disease-related subgraphs. This enables explainable, patient-specific cancer target prediction without the need for step-by-step annotations.
 tags:
-  - ICLR 2026
-  - Medical NLP
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Subgraph Reasoning"
+  - "Process Reward Model"
+  - "Multi-omics"
+  - "CRISPR Target Discovery"
+  - "GNN-LLM Fusion"
 date: 2026-05-08
-content_hash: da8bdc5587ff9505
+content_hash: 8b602a6abdc3be53
 ---
+
 # GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine
 
 **Conference**: ICLR 2026  
@@ -137,9 +143,9 @@ A rule-based term $R_{rule}$ based on BioMedGraphica relations penalizes illegal
 
 - [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
 - [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](../../AAAI2026/medical_nlp/mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
-- [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
-- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](../../NeurIPS2025/medical_nlp/cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
+- [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
+- [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](../../NeurIPS2025/medical_nlp/raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
 
 </div>
 

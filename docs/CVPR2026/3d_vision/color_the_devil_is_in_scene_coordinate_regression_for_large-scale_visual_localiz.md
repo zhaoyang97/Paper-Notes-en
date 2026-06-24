@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] CoLoR diagnoses the primary "culprits" behind the failure of large-scale Scene Coordinate Regression (SCR) as unsupervised single-view points and inconsistency between global and local features. By adopting an "explicit multi-view/single-view partitioning + two-stage strong supervision (multi-view reprojection + pseudo
+  [CVPR 2026][3D Vision][Visual localization] CoLoR diagnoses the primary "culprits" behind the failure of large-scale Scene Coordinate Regression (SCR) as unsupervised single-view points and inconsistency between global and local features. By adopting an "explicit multi-view/single-view partitioning + two-stage strong supervision (multi-view reprojection + pseudo-depth bootstrapping)" strategy, it provides supervision for **every point** in the scene. Additionally…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual localization"
+  - "scene coordinate regression"
+  - "multi-view/single-view partitioning"
+  - "pseudo-depth bootstrapping"
+  - "retrieval feature consistency"
 date: 2026-05-08
-content_hash: ccd582da95370bdc
+content_hash: bbe762ed504d3541
 ---
+
 # CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization
 
 **Conference**: CVPR 2026  
@@ -132,11 +138,11 @@ Evaluated on city-scale outdoor Aachen Day-Night (~6 km²) and large-scale indoo
 
 ## Related Papers
 
+- [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
+- [\[CVPR 2026\] Sparse-View Localization via Online Neural 3D Regression](sparse-view_localization_via_online_neural_3d_regression.md)
+- [\[CVPR 2026\] AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization](asymloc_towards_asymmetric_feature_matching_for_efficient_visual_localization.md)
 - [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
+- [\[CVPR 2026\] Learning Scene Coordinate Reconstruction from Unposed Images via Pose Graph Optimization](learning_scene_coordinate_reconstruction_from_unposed_images_via_pose_graph_opti.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Scaling Can Lead to Compositional Generalization
 description: >-
-  [NeurIPS 2025][Image Generation][compositional generalization] Through theoretical proofs and large-scale experiments, this paper demonstrates that standard MLPs can achieve compositional generalization solely by scaling…
+  [NeurIPS 2025 Spotlight][Image Generation][compositional generalization] Through theoretical proofs and large-scale experiments, this paper demonstrates that standard MLPs can achieve compositional generalization solely by scaling data and model size, without explicit modular architectural design. Moreover, when compositional generalization succeeds, task components can be linearly decoded from hidden-layer activations — a metric that correlates positively with compositional…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "compositional generalization"
   - "scaling"
@@ -12,7 +12,7 @@ tags:
   - "hyperteacher"
   - "MLP"
 date: 2026-05-08
-content_hash: da7f3a48e6925c5a
+content_hash: 7fcce6df68bc5ac9
 ---
 
 # Scaling Can Lead to Compositional Generalization
@@ -129,10 +129,10 @@ Standard MLPs with ReLU activations are used, taking as input the concatenation 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
+- [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](../../ICLR2026/image_generation/compositional_visual_planning_via_inference-time_diffusion_scaling.md)
 - [\[NeurIPS 2025\] A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective](a_closer_look_at_model_collapse_from_a_generalization-to-memorization_perspectiv.md)
-- [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
-- [\[NeurIPS 2025\] Scaling Offline RL via Efficient and Expressive Shortcut Models](scaling_offline_rl_via_efficient_and_expressive_shortcut_models.md)
+- [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
+- [\[NeurIPS 2025\] Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?](can_knowledge-graph-based_retrieval_augmented_generation_really_retrieve_what_yo.md)
 - [\[NeurIPS 2025\] AugGen: Synthetic Augmentation using Diffusion Models Can Improve Recognition](auggen_synthetic_augmentation_using_diffusion_models_can_imp.md)
 
 </div>

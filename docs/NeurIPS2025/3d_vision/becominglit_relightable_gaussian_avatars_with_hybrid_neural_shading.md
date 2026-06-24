@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading
 description: >-
-  [NeurIPS 2025][3D Vision][relightable avatar] This paper proposes BecomingLit, a method that reconstructs high-fidelity, relightable, and real-time renderable head avatars from low-cost light stage multi-view sequences u…
+  [NeurIPS 2025][3D Vision][relightable avatar] This paper proposes BecomingLit, a method that reconstructs high-fidelity, relightable, and real-time renderable head avatars from low-cost light stage multi-view sequences using 3D Gaussian primitives and hybrid neural shading (neural diffuse BRDF + analytic Cook-Torrance specular). A new publicly available OLAT facial dataset is also released.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "BRDF"
   - "face reconstruction"
 date: 2026-05-08
-content_hash: 5c06305e172a8f1d
+content_hash: 6cd42eeddae973f5
 ---
 
 # BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading
@@ -152,11 +152,11 @@ $$\mathcal{L} = \underbrace{\lambda_{l1}\mathcal{L}_{l1} + \lambda_{SSIM}\mathca
 
 ## Related Papers
 
+- [\[CVPR 2025\] RNG: Relightable Neural Gaussians](../../CVPR2025/3d_vision/rng_relightable_neural_gaussians.md)
 - [\[NeurIPS 2025\] Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics](hybrid_physical-neural_simulator_for_fast_cosmological_hydrodynamics.md)
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](../../CVPR2026/3d_vision/ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
 - [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
-- [\[ICCV 2025\] Gaussian Splatting with Discretized SDF for Relightable Assets](../../ICCV2025/3d_vision/gaussian_splatting_with_discretized_sdf_for_relightable_assets.md)
-- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
+- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](../../CVPR2026/3d_vision/ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
+- [\[NeurIPS 2025\] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](hyrf_hybrid_radiance_fields_for_memory-efficient_and_high-quality_novel_view_syn.md)
 
 </div>
 

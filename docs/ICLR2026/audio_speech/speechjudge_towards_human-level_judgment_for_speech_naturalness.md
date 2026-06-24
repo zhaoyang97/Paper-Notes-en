@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SpeechJudge: Towards Human-Level Judgment for Speech Naturalness
 description: >-
-  [ICLR 2026][Audio & Speech][GRPO] To fill the missing puzzle piece of "large-scale human preference corpora for naturalness" in speech synthesis, this paper introduces a comprehensive toolkit: a dataset (99K preference pairs), a benchmark (1000 high-consistency samples), and a reward model. By utilizing a "SFT cold-start + GRPO reinforcement" two-stage
+  [ICLR 2026][Audio & Speech][Speech Naturalness] To fill the missing puzzle piece of "large-scale human preference corpora for naturalness" in speech synthesis, this paper introduces a comprehensive toolkit: a dataset (99K preference pairs), a benchmark (1000 high-consistency samples), and a reward model. By utilizing a "SFT cold-start + GRPO reinforcement" two-stage strategy, Qwen2.5-Omni-7B is trained into a generative reward model, SpeechJudge-GRM. It achieves a 77.2% accur…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - GRPO
-  - AudioLLM
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech Naturalness"
+  - "Human Preference Dataset"
+  - "Generative Reward Model"
+  - "GRPO"
+  - "AudioLLM"
 date: 2026-05-08
-content_hash: 92e9b11541dbbc36
+content_hash: 82c1832be7d7b062
 ---
+
 # SpeechJudge: Towards Human-Level Judgment for Speech Naturalness
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Ours introduces a new analysis framework combining "subgraph sampling + Janson's inequality" to reduce the query complexity for testing whether a signed complete graph is (approximately) perfectly clusterable from $\tilde{O}(1/\varepsilon^7)$ to $O(1/\varepsilon^2)$. It provides the first $O(1/\varepsilon^4)$ tester fo
+  [ICLR 2026][Learning Theory][Sublinear Algorithms] Ours introduces a new analysis framework combining "subgraph sampling + Janson's inequality" to reduce the query complexity for testing whether a signed complete graph is (approximately) perfectly clusterable from $\tilde{O}(1/\varepsilon^7)$ to $O(1/\varepsilon^2)$. It provides the first $O(1/\varepsilon^4)$ tester for fixed $k$-clustering and a tight bound of $\Theta(1/\varepsilon)$ for structural balance ($k=2$).
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Property Testing"
+  - "Correlation Clustering"
+  - "Sublinear Algorithms"
+  - "Structural Balance"
+  - "Janson's Inequality"
+  - "Tight Bounds"
 date: 2026-05-08
-content_hash: a5261438b7391097
+content_hash: 6cd5552d77072f62
 ---
+
 # Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds
 
 **Conference**: ICLR 2026  
@@ -113,8 +120,8 @@ flowchart TD
 
 - [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/learning_theory/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
 - [\[ICLR 2026\] Testing Fourier Sparsity via Implicit Sensing](testing_fourier_sparsity_via_implicit_sensing.md)
+- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](../../ICML2026/learning_theory/simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
 - [\[ICLR 2026\] Mean Estimation from Coarse Data: Characterizations and Efficient Algorithms](mean_estimation_from_coarse_data_characterizations_and_efficient_algorithms.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
 - [\[ICLR 2026\] Sublinear Spectral Clustering Oracle with Little Memory](sublinear_spectral_clustering_oracle_with_little_memory.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text
 description: >-
-  [CVPR 2026][Audio & Speech][Diffusion Model] This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework. Utilizing a TriAttn-DiT architecture with tri-way cross-attention and a MoE gating mechanism, it achieves the unified synthesis of on-screen/off-screen ambient sounds and human speech for the first time, significant
+  [CVPR 2026][Audio & Speech][Video-to-Audio Generation] This paper proposes the Universal Holistic Audio Generation (UniHAGen) task and the OmniSonic framework. Utilizing a TriAttn-DiT architecture with tri-way cross-attention and a MoE gating mechanism, it achieves the unified synthesis of on-screen/off-screen ambient sounds and human speech for the first time, significantly outperforming SOTA models on the newly constructed UniHAGen-Bench.
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Video-to-Audio Generation"
+  - "Holistic Audio"
+  - "Diffusion Models"
+  - "Speech Synthesis"
+  - "Mixture-of-Experts"
 date: 2026-05-08
-content_hash: e9d06bf5aef94c49
+content_hash: 988d4c9e2493dd14
 ---
+
 # OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text
 
 **Conference**: CVPR 2026  
@@ -166,11 +171,11 @@ Subjective MOS Evaluation:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
 - [\[CVPR 2025\] VinTAGe: Joint Video and Text Conditioning for Holistic Audio Generation](../../CVPR2025/audio_speech/vintage_joint_video_and_text_conditioning_for_holistic_audio_generation.md)
 - [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
 - [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
 - [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
+- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 
 </div>
 

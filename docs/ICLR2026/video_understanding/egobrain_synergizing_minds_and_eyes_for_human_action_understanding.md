@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EgoBrain: Synergizing Minds and Eyes For Human Action Understanding
 description: >-
-  [ICLR 2026][Video Understanding][EEG] EgoBrain constructs the first large-scale dataset synchronizing egocentric video with 32-channel EEG for daily actions and proposes Brain-TIM, which utilizes a time-aware Transformer to fuse visual and brain signals, improving the visual baseline from 63.40% to 66.70% in cross-subject and cross-scene 29-category action
+  [ICLR2026][Video Understanding][Egocentric Video] EgoBrain constructs the first large-scale dataset synchronizing egocentric video with 32-channel EEG for daily actions and proposes Brain-TIM, which utilizes a time-aware Transformer to fuse visual and brain signals, improving the visual baseline from 63.40% to 66.70% in cross-subject and cross-scene 29-category action recognition.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - EEG
-  - Brain-TIM
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Egocentric Video"
+  - "EEG"
+  - "Action Recognition"
+  - "Multimodal Fusion"
+  - "Brain-TIM"
 date: 2026-05-08
-content_hash: b347972147bfa456
+content_hash: f92e0ed5b8f3e1a2
 ---
+
 # EgoBrain: Synergizing Minds and Eyes For Human Action Understanding
 
 **Conference**: ICLR2026  
@@ -146,9 +150,9 @@ Ablation studies examine the contributions of the embedding layers, Time Interva
 
 - [\[CVPR 2026\] MoVie: Broaden Your Views with Human Motion for Action Detection](../../CVPR2026/video_understanding/movie_broaden_your_views_with_human_motion_for_action_detection.md)
 - [\[ICLR 2026\] Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments](go_beyond_earth_understanding_human_actions_and_scenes_in_microgravity_environme.md)
+- [\[NeurIPS 2025\] Grounding Foundational Vision Models with 3D Human Poses for Robust Action Recognition](../../NeurIPS2025/video_understanding/grounding_foundational_vision_models_with_3d_human_poses_for_robust_action_recog.md)
 - [\[ICLR 2026\] V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction](v2p-bench_evaluating_video-language_understanding_with_visual_prompts_for_better.md)
 - [\[CVPR 2025\] H-MoRe: Learning Human-centric Motion Representation for Action Analysis](../../CVPR2025/video_understanding/h-more_learning_human-centric_motion_representation_for_action_analysis.md)
-- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](../../CVPR2026/video_understanding/darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 
 </div>
 

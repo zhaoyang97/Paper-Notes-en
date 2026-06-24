@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Master Skill Learning with Policy-Grounded Synergy of LLM-based Reward Shaping and Exploring
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] PoRSE enables the LLM to not only generate target-oriented rewards but also design an "affordance state space" to drive task-related exploration. Through an online policy improvement process that dynamically weights both components, it establishes a new Prev. SOTA on 24 robotic manipulation/locomotion tasks and success
+  [ICLR 2026][Reinforcement Learning][LLM Reward Design] PoRSE enables the LLM to not only generate target-oriented rewards but also design an "affordance state space" to drive task-related exploration. Through an online policy improvement process that dynamically weights both components, it establishes a new Prev. SOTA on 24 robotic manipulation/locomotion tasks and successfully solves two previously intractable complex tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "LLM Reward Design"
+  - "Curiosity Exploration"
+  - "Affordance State Space"
+  - "Reward-Policy Co-evolution"
+  - "PPO"
 date: 2026-05-08
-content_hash: d8f8628e5363675b
+content_hash: 1987b83a535c365c
 ---
+
 # Master Skill Learning with Policy-Grounded Synergy of LLM-based Reward Shaping and Exploring
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,10 @@ AFS Robustness (Tab.4, randomly assembled AFS): PoRSE-AFS-Random still significa
 ## Related Papers
 
 - [\[ICLR 2026\] Reference Grounded Skill Discovery](reference_grounded_skill_discovery.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICLR 2026\] Learn to Reason Efficiently with Adaptive Length-based Reward Shaping](learn_to_reason_efficiently_with_adaptive_length-based_reward_shaping.md)
 - [\[ICLR 2026\] Skill Learning via Policy Diversity Yields Identifiable Representations for Reinforcement Learning](skill_learning_via_policy_diversity_yields_identifiable_representations_for_rein.md)
 - [\[ICLR 2026\] Self-Improving Skill Learning for Robust Skill-based Meta-Reinforcement Learning](self-improving_skill_learning_for_robust_skill-based_meta-reinforcement_learning.md)
-- [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs
 description: >-
-  [AAAI 2026][Model Compression][Soft Prompt Transfer] This paper proposes PUMA, a framework that leverages lightweight adapters and a grouped user selection strategy to efficiently migrate personalized soft prompts from a…
+  [AAAI 2026 Oral][Model Compression][Soft Prompt Transfer] This paper proposes PUMA, a framework that leverages lightweight adapters and a grouped user selection strategy to efficiently migrate personalized soft prompts from a source LLM to a target LLM with a different architecture. PUMA matches or surpasses from-scratch training on three large-scale datasets while reducing computational cost by up to 98%.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "Soft Prompt Transfer"
   - "Personalization"
@@ -12,7 +12,7 @@ tags:
   - "Parameter-Efficient Adapter"
   - "User Selection Strategy"
 date: 2026-05-08
-content_hash: fbd91982f32e6960
+content_hash: b470b38de3dfcc19
 ---
 
 # Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs
@@ -208,9 +208,9 @@ PUMA with only 2,000 users outperforms random sampling with 6,000 users.
 ## Related Papers
 
 - [\[ICLR 2026\] Highly Efficient and Effective LLMs with Multi-Boolean Architectures](../../ICLR2026/model_compression/highly_efficient_and_effective_llms_with_multi-boolean_architectures.md)
+- [\[ACL 2025\] IAM: Efficient Inference through Attention Mapping between Different-scale LLMs](../../ACL2025/model_compression/iam_efficient_inference_through_attention_mapping_between_different-scale_llms.md)
+- [\[ICML 2026\] Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes](../../ICML2026/model_compression/detecting_fluent_optimization-based_adversarial_prompts_via_sequential_entropy_c.md)
 - [\[AAAI 2026\] Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection](explore_and_establish_synergistic_effects_between_weight_pruning_and_coreset_sel.md)
-- [\[AAAI 2026\] LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph](loom_personalized_learning_informed_by_daily_llm_conversations_toward_long-term_.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
 - [\[AAAI 2026\] HCF: Hierarchical Cascade Framework for Distributed Multi-Stage Image Compression](hcf_hierarchical_cascade_framework_for_distributed_multi-stage_image_compression.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unified Reinforcement and Imitation Learning for Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][VLM distillation] This paper proposes RIL (Unified Reinforcement and Imitation Learning), a training framework that combines GRPO-based reinforcement learning with GAIL-style adversarial im…
+  [NeurIPS 2025][Multimodal VLM][VLM distillation] This paper proposes RIL (Unified Reinforcement and Imitation Learning), a training framework that combines GRPO-based reinforcement learning with GAIL-style adversarial imitation learning to substantially improve the performance of small VLMs (7B) by learning the text generation style of large VLMs (72B), without incurring additional inference latency or requiring an explicit "thinking" process.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "GAIL"
 date: 2026-05-08
-content_hash: 048917b283bb6e43
+content_hash: a6c2a60f7696d241
 ---
 
 # Unified Reinforcement and Imitation Learning for Vision-Language Models
@@ -147,9 +147,9 @@ RIL comprises three core components: a student VLM (Generator), a Discriminator,
 ## Related Papers
 
 - [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](../../CVPR2026/multimodal_vlm/moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](../../CVPR2026/multimodal_vlm/ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
 - [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](../../ICCV2025/multimodal_vlm/docthinker_explainable_multimodal_large_language_models_with.md)
-- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
+- [\[NeurIPS 2025\] GoalLadder: Incremental Goal Discovery with Vision-Language Models](goalladder_incremental_goal_discovery_with_vision-language_models.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
 
 </div>

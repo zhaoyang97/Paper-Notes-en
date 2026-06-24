@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Interpretable Debiasing of Vision-Language Models for Social Fairness
 description: >-
-  [CVPR 2026][LLM Safety][Interpretability] DeBiasLens is proposed to locate "social neurons" encoding social attributes by training Sparse Autoencoders (SAEs) on VLM encoders, then selectively deactivating these neurons during inference to mitigate bias. It reduces Max Skew by 9-16% on CLIP and gender bias ratios by 40-50% on InternVL2 while maintaining general
+  [CVPR 2026][Multimodal VLM][VLM debiasing] DeBiasLens is proposed to locate "social neurons" encoding social attributes by training Sparse Autoencoders (SAEs) on VLM encoders, then selectively deactivating these neurons during inference to mitigate bias. It reduces Max Skew by 9-16% on CLIP and gender bias ratios by 40-50% on InternVL2 while maintaining general performance.
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Interpretability
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM debiasing"
+  - "social fairness"
+  - "Sparse Autoencoders (SAE)"
+  - "interpretability"
+  - "neuron modulation"
 date: 2026-05-08
-content_hash: 5fd59277d6d1e23f
+content_hash: 3fd7eb4e7a11e119
 ---
+
 # Interpretable Debiasing of Vision-Language Models for Social Fairness
 
 **Conference**: CVPR 2026  
@@ -123,9 +128,9 @@ Once social neurons are identified, their activations in the SAE sparse code are
 
 - [\[CVPR 2026\] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks](a_closedform_solution_for_debiasing_visionlanguage.md)
 - [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
-- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)
+- [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
+- [\[AAAI 2026\] BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models](../../AAAI2026/multimodal_vlm/biprompt_bilateral_prompt_optimization_for_visual_and_textual_debiasing_in_visio.md)
+- [\[CVPR 2026\] Spot The Ball: A Benchmark for Visual Social Inference](spot_the_ball_a_benchmark_for_visual_social_inference.md)
 
 </div>
 

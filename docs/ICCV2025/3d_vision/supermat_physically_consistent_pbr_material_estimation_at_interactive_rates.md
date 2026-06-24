@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates
 description: >-
-  [3D Vision] This paper proposes SuperMat, a single-step inference framework for PBR material decomposition. Through structured expert branches and scheduler correction…
+  [3D Vision] This paper proposes SuperMat, a single-step inference framework for PBR material decomposition. Through structured expert branches and scheduler correction, it enables end-to-end training and introduces a re-render loss to enforce physical consistency, accelerating inference from seconds to milliseconds.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: f728435e1065ec03
+content_hash: 8371ddb8a446692f
 ---
 
 # SuperMat: Physically Consistent PBR Material Estimation at Interactive Rates
@@ -134,7 +134,7 @@ Multi-view decomposition results from SuperMatMV are back-projected into UV spac
 - [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
 - [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
-- [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
 
 </div>
 

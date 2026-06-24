@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations
 description: >-
-  [CVPR 2026][Hallucination Detection][LVLM] Ours proposes a patch-level LVLM hallucination detection framework, discovering that hallucinated tokens exhibit dispersed attention patterns and low semantic alignment. Based on these signatures, Attention Dispersion Score (ADS) and Cross-modality Grounding Consistency (CGC) are designed as lightweight metrics, achiev
+  [CVPR 2026][Hallucination Detection][LVLM] Ours proposes a patch-level LVLM hallucination detection framework, discovering that hallucinated tokens exhibit dispersed attention patterns and low semantic alignment. Based on these signatures, Attention Dispersion Score (ADS) and Cross-modality Grounding Consistency (CGC) are designed as lightweight metrics, achieving a detection accuracy of 90%.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - LVLM
-  - attention dispersion
-  - patch-level grounding
-  - token-level
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "LVLM"
+  - "attention dispersion"
+  - "patch-level grounding"
+  - "token-level"
 date: 2026-05-08
-content_hash: b95121d10f49b366
+content_hash: e80219d465ef309c
 ---
+
 # Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations
 
 **Conference**: CVPR 2026  
@@ -119,15 +120,14 @@ Classifiers are trained using cross-entropy loss. Labels are derived from GPT-4o
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
 - [\[CVPR 2026\] Fine-Grained Multi-Image Object Hallucination Benchmark](fine-grained_multi_image_object_hallucination_benchmark.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
-- [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](../../NeurIPS2025/hallucination/robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
 - [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](exposing_and_evaluating_hallucinations_for_gui_grounding.md)
+- [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](../../NeurIPS2025/hallucination/robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
 
 </div>
 

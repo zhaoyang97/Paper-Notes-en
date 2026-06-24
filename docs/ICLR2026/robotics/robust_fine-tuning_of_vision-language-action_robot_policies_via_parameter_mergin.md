@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] To address the issues of generalization loss and overfitting when few-shot finetuning generalist robot policies, this paper proposes RETAIN. It performs linear interpolation between the pre-trained and finetuned policies directly in **parameter space**. With no additional training or inference overhead, it enables a si
+  [ICLR 2026][Robotics][VLA Policy] To address the issues of generalization loss and overfitting when few-shot finetuning generalist robot policies, this paper proposes RETAIN. It performs linear interpolation between the pre-trained and finetuned policies directly in **parameter space**. With no additional training or inference overhead, it enables a single policy to robustly complete various out-of-distribution (OOD) variants of new skills while retaining pre-trained general…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA Policy"
+  - "Robust Finetuning"
+  - "Weight Interpolation"
+  - "Model Merging"
+  - "Continual Learning"
 date: 2026-05-08
-content_hash: 556002c1833f907b
+content_hash: 9fb675197ba664b8
 ---
+
 # Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
 
 **Conference**: ICLR 2026  
@@ -151,8 +157,8 @@ Baselines included: Task-FT, Co-FT, LoRA, Freeze-FT (freeze language backbone, u
 - [\[CVPR 2026\] Boosting Vision-Language-Action Finetuning with Feasible Action Neighborhood Prior](../../CVPR2026/robotics/boosting_vision-language-action_finetuning_with_feasible_action_neighborhood_pri.md)
 - [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](../../CVPR2026/robotics/mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
 - [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
+- [\[ICLR 2026\] Demystifying Robot Diffusion Policies: Action Memorization and a Simple Lookup Table Alternative](demystifying_robot_diffusion_policies_action_memorization_and_a_simple_lookup_ta.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
 
 </div>
 

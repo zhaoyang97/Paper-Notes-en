@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Representation-Guided Parameter-Efficient LLM Unlearning
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes the ReGLU framework, shifting LLM unlearning from the "parameter importance" paradigm to a "representation space geometry" paradigm. By using Representation-guided LoRA Initialization (RILA), the unlearning updates are aligned with the most discriminative subspace of the forget/retain sets, coupled
+  [ACL 2026 Findings][LLM Safety][LLM Unlearning] This paper proposes the ReGLU framework, shifting LLM unlearning from the "parameter importance" paradigm to a "representation space geometry" paradigm. By using Representation-guided LoRA Initialization (RILA), the unlearning updates are aligned with the most discriminative subspace of the forget/retain sets, coupled with a Representation Orthogonal Loss (ROL) to constrain updates from interfering with retain set knowledge.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "LLM Unlearning"
+  - "Representation Space Geometry"
+  - "LoRA Initialization"
+  - "Orthogonal Regularization"
+  - "Parameter Efficiency"
 date: 2026-05-08
-content_hash: f94af59f96cf0fd0
+content_hash: ae73d8264f4d9113
 ---
+
 # Representation-Guided Parameter-Efficient LLM Unlearning
 
 **Conference**: ACL 2026 Findings  
@@ -133,11 +139,11 @@ The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{forget}} + \g
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLUE: Conflict-guided Localization for LLM Unlearning Framework](../../ICLR2026/llm_safety/clue_conflict-guided_localization_for_llm_unlearning_framework.md)
 - [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](../../ICLR2026/llm_safety/llm_unlearning_with_llm_beliefs.md)
-- [\[AAAI 2026\] ALTER: Asymmetric LoRA for Token-Entropy-Guided Unlearning of LLMs](../../AAAI2026/llm_safety/alter_asymmetric_lora_for_token-entropy-guided_unlearning_of.md)
 - [\[ACL 2026\] SWAN: Semantic Watermarking with Abstract Meaning Representation](swan_semantic_watermarking_with_abstract_meaning_representation.md)
-- [\[AAAI 2026\] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans](../../AAAI2026/llm_safety/principles2plan_llm-guided_system_for_operationalising_ethical_principles_into_p.md)
-- [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
+- [\[ACL 2026\] Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem](modeling_llm_unlearning_as_an_asymmetric_two-task_learning_problem.md)
+- [\[ACL 2026\] Unlearners Can Lie: Evaluating and Improving Honesty in LLM Unlearning](unlearners_can_lie_evaluating_and_improving_honesty_in_llm_unlearning.md)
 
 </div>
 

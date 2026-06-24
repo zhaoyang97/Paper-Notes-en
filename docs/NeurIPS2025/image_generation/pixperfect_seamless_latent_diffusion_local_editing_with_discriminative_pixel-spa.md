@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement
 description: >-
-  [NeurIPS 2025][Image Generation][Image inpainting] This paper proposes PixPerfect, a general-purpose pixel-level refinement framework that eliminates color discrepancies, texture mismatches…
+  [NeurIPS 2025][Image Generation][Image inpainting] This paper proposes PixPerfect, a general-purpose pixel-level refinement framework that eliminates color discrepancies, texture mismatches, and visible seams in local editing with latent diffusion models (LDMs) through a discriminative pixel-space loss and a comprehensive artifact simulation pipeline, achieving substantial improvements in visual fidelity across inpainting, object removal, and insertion tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "artifact simulation"
   - "local editing"
 date: 2026-05-08
-content_hash: 168e5deb705cb38b
+content_hash: 7aa5a3bf08d42880
 ---
 
 # PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement
@@ -142,9 +142,9 @@ Given an LDM-partially-synthesized image $x_\text{gen}$ and mask $m$, PixPerfect
 
 - [\[NeurIPS 2025\] FerretNet: Efficient Synthetic Image Detection via Local Pixel Dependencies](ferretnet_efficient_synthetic_image_detection_via_local_pixel_dependencies.md)
 - [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
-- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](../../CVPR2026/image_generation/dip_taming_diffusion_models_in_pixel_space.md)
+- [\[CVPR 2025\] Latent Space Imaging](../../CVPR2025/image_generation/latent_space_imaging.md)
 - [\[ICCV 2025\] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](../../ICCV2025/image_generation/whats_in_a_latent_leveraging_diffusion_latent_space_for_domain_generalization.md)
-- [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](../../ICCV2025/image_generation/motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
+- [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](../../CVPR2026/image_generation/dip_taming_diffusion_models_in_pixel_space.md)
 
 </div>
 

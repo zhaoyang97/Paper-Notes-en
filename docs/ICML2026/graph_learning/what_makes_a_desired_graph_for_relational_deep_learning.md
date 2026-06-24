@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] What Makes a Desired Graph for Relational Deep Learning?
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper points out that "mechanically converting database schemas into graphs" is not what GNNs desire, as such graphs systematically suffer from **information overload** and **semantic fragmentation**. The authors propose an end-to-end "Structural Optimizer" that uses learnable gating for **information filtering**
+  [ICML 2026][Graph Learning][Relational Deep Learning] This paper points out that "mechanically converting database schemas into graphs" is not what GNNs desire, as such graphs systematically suffer from **information overload** and **semantic fragmentation**. The authors propose an end-to-end "Structural Optimizer" that uses learnable gating for **information filtering** and templated **structural injection** to recover task-related edges. Across 26 tasks in RELBench…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Relational Deep Learning"
+  - "Heterogeneous Graphs"
+  - "Graph Structure Learning"
+  - "Information Bottleneck"
+  - "Structural Injection"
 date: 2026-05-08
-content_hash: e05ec7ff810d96da
+content_hash: 7d1767c05c56e70b
 ---
+
 # What Makes a Desired Graph for Relational Deep Learning?
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ The core "ablation" is the **structural probe experiments** (conducted on 9 RELB
 
 ## Related Papers
 
-- [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
 - [\[ACL 2026\] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations](../../ACL2026/graph_learning/what_makes_ai_research_replicable_executable_knowledge_graphs_as_scientific_know.md)
-- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
+- [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
 - [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
 - [\[ICLR 2026\] Relational Graph Transformer](../../ICLR2026/graph_learning/relational_graph_transformer.md)
+- [\[ICML 2026\] Deep Neural Sheaf Diffusion](deep_neural_sheaf_diffusion.md)
 
 </div>
 

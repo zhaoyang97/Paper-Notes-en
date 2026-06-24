@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems
 description: >-
-  [ICML 2026][Image Generation][Langevin Monte Carlo] This paper proposes a zeroth-order Langevin sampling method with variance reduction, replacing the $O(d)$ function queries per step with intermittent large-batch estimates and recursive small-batch updates. It extends the method to ZO-APMC, utilizing pre-trained score-based priors for posterior sampling with convergenc
+  [ICML2026][Image Generation][Zeroth-order sampling] This paper proposes a zeroth-order Langevin sampling method with variance reduction, replacing the $O(d)$ function queries per step with intermittent large-batch estimates and recursive small-batch updates. It extends the method to ZO-APMC, utilizing pre-trained score-based priors for posterior sampling with convergence guarantees in black-box inverse problems where only forward model queries are available.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Langevin Monte Carlo
+  - "ICML2026"
+  - "Image Generation"
+  - "Zeroth-order sampling"
+  - "non-log-concave distribution"
+  - "variance reduction"
+  - "Langevin Monte Carlo"
+  - "inverse problems"
 date: 2026-05-08
-content_hash: 4a1ea85f81a6b4e8
+content_hash: 0a8b755e968d99a1
 ---
+
 # Zeroth-Order Non-Log-Concave Sampling with Variance Reduction and Applications to Inverse Problems
 
 **Conference**: ICML2026  
@@ -124,11 +129,11 @@ The core analysis focuses on the trade-off between $p, b, b'$ and performance/co
 
 ## Related Papers
 
-- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](saving_foundation_flow-matching_priors_for_inverse_problems.md)
+- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](../../ICCV2025/image_generation/flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
+- [\[ICLR 2026\] Contrastive Diffusion Guidance for Spatial Inverse Problems](../../ICLR2026/image_generation/contrastive_diffusion_guidance_for_spatial_inverse_problems.md)
 - [\[NeurIPS 2025\] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems](../../NeurIPS2025/image_generation/npn_non-linear_projections_of_the_null-space_for_imaging_inverse_problems.md)
-- [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](stable_velocity_a_variance_perspective_on_flow_matching.md)
-- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
+- [\[AAAI 2026\] Constrained Particle Seeking: Solving Diffusion Inverse Problems with Just Forward Passes](../../AAAI2026/image_generation/constrained_particle_seeking_solving_diffusion_inverse_problems_with_just_forwar.md)
 
 </div>
 

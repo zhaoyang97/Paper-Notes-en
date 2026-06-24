@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Splat Feature Solver
 description: >-
-  [ICLR 2026][3D Vision][Feature Lifting] The problem of feature lifting in 3D splat representations is unified and modeled as a sparse linear inverse problem $AX=B$. A closed-form solver is proposed with a provable $(1+\beta)$-approximation error bound under convex loss. Combined with Tikhonov Guidance and Post-Lifting Aggregation filtering, the method achiev
+  [ICLR 2026][3D Vision][Feature Lifting] The problem of feature lifting in 3D splat representations is unified and modeled as a sparse linear inverse problem $AX=B$. A closed-form solver is proposed with a provable $(1+\beta)$-approximation error bound under convex loss. Combined with Tikhonov Guidance and Post-Lifting Aggregation filtering, the method achieves SOTA performance in open-vocabulary 3D segmentation.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Feature Lifting
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Feature Lifting"
+  - "3D Gaussian Splatting"
+  - "Linear Inverse Problem"
+  - "Open-Vocabulary 3D Segmentation"
+  - "Tikhonov Regularization"
 date: 2026-05-08
-content_hash: 2dd65469048f92ff
+content_hash: ddd25986d120dbee
 ---
+
 # Splat Feature Solver
 
 **Conference**: ICLR 2026  
@@ -130,8 +134,8 @@ The entire method requires no training and relies solely on closed-form solution
 - [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
 - [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
 - [\[ICLR 2026\] Light of Normals: Unified Feature Representation for Universal Photometric Stereo](light_of_normals_unified_feature_representation_for_universal_photometric_stereo.md)
+- [\[CVPR 2026\] PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting](../../CVPR2026/3d_vision/physir-splat_physically_consistent_thermal_infrared_radiative_transfer_in_3d_gau.md)
 - [\[CVPR 2026\] Deep Feature Deformation Weights](../../CVPR2026/3d_vision/deep_feature_deformation_weights.md)
-- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](../../CVPR2026/3d_vision/st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
 
 </div>
 

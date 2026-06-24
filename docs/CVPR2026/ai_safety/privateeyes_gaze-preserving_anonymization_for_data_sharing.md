@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PrivateEyes: Gaze-Preserving Anonymization for Data Sharing
 description: >-
-  [CVPR 2026][AI Safety][ControlNet] PrivateEyes utilizes a three-stage pipeline consisting of "segmentation + 3D eye pose estimation + ControlNet conditional diffusion" to re-synthesize eye images. By removing identifiable iris biometric features (reducing iris recognition rates by approximately 50%) while preserving gaze direction (achieving >10% higher
+  [CVPR 2026][AI Safety][Eye image anonymization] PrivateEyes utilizes a three-stage pipeline consisting of "segmentation + 3D eye pose estimation + ControlNet conditional diffusion" to re-synthesize eye images. By removing identifiable iris biometric features (reducing iris recognition rates by approximately 50%) while preserving gaze direction (achieving >10% higher gaze estimation accuracy than SOTA anonymization methods), it enables the compliant sharing of eye-tracking dat…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - ControlNet
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Eye image anonymization"
+  - "gaze preservation"
+  - "iris privacy"
+  - "conditional diffusion"
+  - "ControlNet"
 date: 2026-05-08
-content_hash: 463d444aeddbd3ee
+content_hash: 85b723f46deb773c
 ---
+
 # PrivateEyes: Gaze-Preserving Anonymization for Data Sharing
 
 **Conference**: CVPR 2026  
@@ -139,15 +144,16 @@ PrivateEyes reduces iris recognition to ~14–17% (a >50% drop compared to basel
 - Value: ⭐⭐⭐⭐ Directly addresses AR/VR data sharing bottlenecks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](../../ICLR2026/ai_safety/privacy_beyond_pixels_latent_anonymization_for_privacy-preserving_video_understa.md)
+- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
 - [\[NeurIPS 2025\] Incentivizing Time-Aware Fairness in Data Sharing](../../NeurIPS2025/ai_safety/incentivizing_time-aware_fairness_in_data_sharing.md)
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](image-based_outlier_synthesis_with_training_data.md)
-- [\[CVPR 2026\] Revisiting Geometric Obfuscation with Dual Convergent Lines for Privacy-Preserving Image Queries in Visual Localization](revisiting_geometric_obfuscation_with_dual_convergent_lines_for_privacy-preservi.md)
 - [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
-- [\[CVPR 2026\] PrivSynth: Alternating and Control-Based Optimization for Privacy and Utility in Synthetic Data](privsynth_alternating_and_control-based_optimization_for_privacy_and_utility_in_.md)
 
 </div>
 

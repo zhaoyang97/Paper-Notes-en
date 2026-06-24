@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch
 description: >-
-  [ICML 2026][Self-Supervised Learning][triplet embedding] The authors prove that in typical triplet tasks within contrastive learning, if the embedding dimension $d$ is less than a certain constant multiple of the true dimension $D$, the accuracy "collapses" to the 50% baseline (equivalent to a 1D random embedding) regardless of the optimizer. Furthermore, this phenomenon is
+  [ICML 2026 Spotlight][Self-Supervised Learning][triplet embedding] The authors prove that in typical triplet tasks within contrastive learning, if the embedding dimension $d$ is less than a certain constant multiple of the true dimension $D$, the accuracy "collapses" to the 50% baseline (equivalent to a 1D random embedding) regardless of the optimizer. Furthermore, this phenomenon is shown to be hard to approximate in polynomial time under the Unique Games Conjecture.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - triplet embedding
+  - "ICML 2026 Spotlight"
+  - "Self-Supervised Learning"
+  - "triplet embedding"
+  - "dimensionality collapse"
+  - "VC dimension"
+  - "Unique Games Conjecture"
+  - "inapproximability"
 date: 2026-05-08
-content_hash: d463edb1323307e5
+content_hash: 820da83b6f25285f
 ---
+
 # Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch
 
 **Conference**: ICML 2026 Spotlight  
@@ -112,10 +117,10 @@ Summary of the accuracy cliff observed in synthetic experiments (generalized fro
 ## Related Papers
 
 - [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
+- [\[ICLR 2026\] PAS: Estimating the Target Accuracy Before Domain Adaptation](../../ICLR2026/self_supervised/pas_estimating_the_target_accuracy_before_domain_adaptation.md)
 - [\[ICLR 2026\] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning](../../ICLR2026/self_supervised/why_prototypes_collapse_diagnosing_and_preventing_partial_collapse_in_prototypic.md)
-- [\[ICML 2025\] Contextures: Representations from Contexts](../../ICML2025/self_supervised/contextures_representations_from_contexts.md)
-- [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
-- [\[NeurIPS 2025\] Contrastive Representations for Temporal Reasoning](../../NeurIPS2025/self_supervised/contrastive_representations_for_temporal_reasoning.md)
+- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](../../ICLR2026/self_supervised/architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
+- [\[ICML 2026\] Active Learning with Foundation Model Priors: Efficient Learning under Class Imbalance](active_learning_with_foundation_model_priors_efficient_learning_under_class_imba.md)
 
 </div>
 

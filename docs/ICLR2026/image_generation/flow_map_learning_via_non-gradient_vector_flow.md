@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Flow Map Learning via Non-Gradient Vector Flow
 description: >-
-  [ICLR 2026][Image Generation][flow map] SGFlow utilizes a partial differential equation (PDE) identity containing only Jacobian-vector products (JVP)—without model inversion—to transform flow map learning into a non-conservative dynamics objective with stop-gradients. Training from scratch ensures the true flow map is the unique stationary point, achieving f
+  [ICLR 2026][Image Generation][flow map] SGFlow utilizes a partial differential equation (PDE) identity containing only Jacobian-vector products (JVP)—without model inversion—to transform flow map learning into a non-conservative dynamics objective with stop-gradients. Training from scratch ensures the true flow map is the unique stationary point, achieving few-step sampling on CIFAR-10 with lower memory usage and superior FID.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - flow map
-  - consistency model
-  - few-step sampling
-  - stop-gradient
-  - non-conservative dynamics
-  - JVP
+  - "ICLR 2026"
+  - "Image Generation"
+  - "flow map"
+  - "consistency model"
+  - "few-step sampling"
+  - "stop-gradient"
+  - "non-conservative dynamics"
+  - "JVP"
 date: 2026-05-08
-content_hash: c93e3378c0725a46
+content_hash: 4a5975d4a58f6b52
 ---
+
 # Flow Map Learning via Non-Gradient Vector Flow
 
 **Conference**: ICLR 2026  
@@ -127,8 +128,8 @@ Lagrange/Euler/Progressive are the most memory-intensive due to backpropping thr
 - [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
 - [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
 - [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
+- [\[ICLR 2026\] Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching](structured_flow_autoencoders_learning_structured_probabilistic_representations_w.md)
 - [\[CVPR 2026\] Flow Map Distillation Without Data](../../CVPR2026/image_generation/flow_map_distillation_without_data.md)
-- [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
 
 </div>
 

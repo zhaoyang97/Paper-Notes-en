@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator
 description: >-
-  [ICLR 2026][3D Vision][3DGS] The VIST3A framework is proposed, which seamlessly interfaces the latent space of a pretrained video generator with feed-forward 3D reconstruction models (such as AnySplat/MVDUSt3R/VGGT) via model stitching. Subsequently, direct reward finetuning is employed to align the generative model with the stitched 3D decoder, a
+  [ICLR 2026 Oral][3D Vision][Text-to-3D] The VIST3A framework is proposed, which seamlessly interfaces the latent space of a pretrained video generator with feed-forward 3D reconstruction models (such as AnySplat/MVDUSt3R/VGGT) via model stitching. Subsequently, direct reward finetuning is employed to align the generative model with the stitched 3D decoder, achieving high-quality end-to-end text-to-3DGS and text-to-pointmap generation. It consistently outperforms existing meth…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3DGS
+  - "ICLR 2026 Oral"
+  - "3D Vision"
+  - "Text-to-3D"
+  - "Model Stitching"
+  - "Video Generator"
+  - "3D Reconstruction"
+  - "3DGS"
+  - "Direct Reward Finetuning"
+  - "Pointmap"
 date: 2026-05-08
-content_hash: 44e241821fbb96ed
+content_hash: c4bd615171694d92
 ---
+
 # Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator
 
 **Conference**: ICLR 2026 Oral  
@@ -147,14 +154,17 @@ The NVS capability of AnySplat actually improves after stitching, as the video V
 
 <div class="related-papers" markdown="1">
 
-- **AnySplat**: [2412.03511](https://arxiv.org/abs/2412.03511)
-- **MVDUSt3R**: [2411.14445](https://arxiv.org/abs/2411.14445)
-- **Wan 2.1**: [2502.16431](https://arxiv.org/abs/2502.16431)
+## Related Papers
+
+- [\[CVPR 2025\] MUSt3R: Multi-view Network for Stereo 3D Reconstruction](../../CVPR2025/3d_vision/must3r_multi-view_network_for_stereo_3d_reconstruction.md)
+- [\[CVPR 2026\] GaussFusion: Improving 3D Reconstruction in the Wild with A Geometry-Informed Video Generator](../../CVPR2026/3d_vision/gaussfusion_improving_3d_reconstruction_in_the_wild_with_a_geometry-informed_vid.md)
+- [\[ICLR 2026\] Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction](peering_into_the_unknown_active_view_selection_with_neural_uncertainty_maps_for_.md)
+- [\[ICLR 2026\] ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation](reconviagen_towards_accurate_multi-view_3d_object_reconstruction_via_generation.md)
+- [\[ICLR 2026\] ReLi3D: Relightable Multi-View 3D Reconstruction with Disentangled Illumination](reli3d_relightable_multi-view_3d_reconstruction_with_disentangled_illumination.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] MUSt3R: Multi-view Network for Stereo 3D Reconstruction](../../CVPR2025/3d_vision/must3r_multi-view_network_for_stereo_3d_reconstruction.md)

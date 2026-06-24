@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] An Approximation Algorithm for Graph Label Selection
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper provides the first $\tilde{O}(\log^{1.5} n)$ approximation algorithm for Graph Label Selection without label budget relaxation. By employing tree cut sparsification, flow decision-making, and dynamic programming on trees, it transforms the originally globally coupled node selection problem into a solvable co
+  [ICML2026][Graph Learning][Graph label selection] This paper provides the first $\tilde{O}(\log^{1.5} n)$ approximation algorithm for Graph Label Selection without label budget relaxation. By employing tree cut sparsification, flow decision-making, and dynamic programming on trees, it transforms the originally globally coupled node selection problem into a solvable combinatorial optimization pipeline.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML2026"
+  - "Graph Learning"
+  - "Graph label selection"
+  - "active learning"
+  - "approximation algorithm"
+  - "tree cut sparsifier"
+  - "dynamic programming"
 date: 2026-05-08
-content_hash: a042a6000528da08
+content_hash: 78485f4bd4a6a594
 ---
+
 # An Approximation Algorithm for Graph Label Selection
 
 **Conference**: ICML2026  
@@ -122,11 +128,11 @@ The main analysis in the experiments concerns the impact of different sparse-cut
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards a Foundation Model for Crowdsourced Label Aggregation](../../ICLR2026/graph_learning/towards_a_foundation_model_for_crowdsourced_label_aggregation.md)
 - [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](../../AAAI2026/graph_learning/posterior_label_smoothing_for_node_classification.md)
 - [\[ICML 2026\] Identifying and Correcting Label Noise for Robust GNNs via Influence Contradiction](identifying_and_correcting_label_noise_for_robust_gnns_via_influence_contradicti.md)
 - [\[AAAI 2026\] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning](../../AAAI2026/graph_learning/echoless_label-based_pre-computation_for_memory-efficient_heterogeneous_graph_le.md)
-- [\[AAAI 2026\] RFKG-CoT: Relation-Driven Adaptive Hop-count Selection and Few-Shot Path Guidance for Knowledge-Aware QA](../../AAAI2026/graph_learning/rfkg-cot_relation-driven_adaptive_hop-count_selection_and_few-shot_path_guidance.md)
-- [\[ECCV 2024\] GKGNet: Group K-Nearest Neighbor Based Graph Convolutional Network for Multi-Label Image Recognition](../../ECCV2024/graph_learning/gkgnet_group_k-nearest_neighbor_based_graph_convolutional_network_for_multi-labe.md)
+- [\[ICLR 2026\] SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation](../../ICLR2026/graph_learning/saga_structural_aggregation_guided_alignment_with_dynamic_view_and_neighborhood_.md)
 
 </div>
 

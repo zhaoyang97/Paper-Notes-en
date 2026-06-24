@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking FID Through the Geometry of the Reference Dataset
 description: >-
-  [ICML 2026][Image Generation][FID] This paper demonstrates that the "lower-is-better" assumption of FID systematically fails across different reference datasets. By introducing two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—the authors use hierarchical linear modeling to prove these descr
+  [ICML 2026][Image Generation][FID] This paper demonstrates that the "lower-is-better" assumption of FID systematically fails across different reference datasets. By introducing two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—the authors use hierarchical linear modeling to prove these descriptors explain ~70% of the cross-dataset variance in the "sample quality → FID" slope, providing the first quantitative attri…
 tags:
-  - ICML 2026
-  - Image Generation
-  - FID
+  - "ICML 2026"
+  - "Image Generation"
+  - "FID"
+  - "Generative Evaluation"
+  - "Reference Set Geometry"
+  - "Distribution Density"
+  - "Effective Rank"
 date: 2026-05-08
-content_hash: 3112e543ffc9ea78
+content_hash: fe5724e971cec81d
 ---
+
 # Rethinking FID Through the Geometry of the Reference Dataset
 
 **Conference**: ICML 2026  
@@ -144,7 +149,7 @@ Precision / Recall Attribution ($R^2$): FFHQ 0.989 / 0.672, CelebA-HQ 0.951 / 0.
 - [\[ICML 2026\] Geometry-Aware Tabular Diffusion](geometry-aware_tabular_diffusion.md)
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](../../CVPR2026/image_generation/garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
 - [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
-- [\[ICML 2026\] GASS: Geometry-Aware Spherical Sampling for Disentangled Diversity Enhancement in Text-to-Image Generation](gass_geometry-aware_spherical_sampling_for_disentangled_diversity_enhancement_in.md)
+- [\[ICLR 2026\] Dragging with Geometry: From Pixels to Geometry-Guided Image Editing](../../ICLR2026/image_generation/dragging_with_geometry_from_pixels_to_geometry-guided_image_editing.md)
 
 </div>
 

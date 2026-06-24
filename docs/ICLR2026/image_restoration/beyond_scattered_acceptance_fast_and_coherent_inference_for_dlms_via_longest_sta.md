@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes
 description: >-
-  [ICLR 2026][Image Restoration][Diffusion Language Model] The LSP scheduler accelerates DLM inference by 3.4$\times$ by atomically committing the longest stable continuous prefix in each denoising step (rather than scattered discrete tokens), while maintaining or slightly improving output quality.
+  [ICLR 2026][Image Restoration][Diffusion Language Models] The LSP scheduler accelerates DLM inference by 3.4$\times$ by atomically committing the longest stable continuous prefix in each denoising step (rather than scattered discrete tokens), while maintaining or slightly improving output quality.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Diffusion Language Model
-  - Inference Acceleration
-  - KV cache
-  - logit margin
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Diffusion Language Models"
+  - "Inference Acceleration"
+  - "KV cache"
+  - "Prefix Commitment"
+  - "Logit Margin"
 date: 2026-05-08
-content_hash: 0635957e31cab4f4
+content_hash: 4dfa1f3bcd12e0b4
 ---
+
 # Beyond Scattered Acceptance: Fast and Coherent Inference for DLMs via Longest Stable Prefixes
 
 **Conference**: ICLR 2026  
@@ -136,9 +138,9 @@ The continuous growth and clean boundaries of the frozen prefix allow for KV cac
 ## Related Papers
 
 - [\[ICLR 2026\] LinearSR: Unlocking Linear Attention for Stable and Efficient Image Super-Resolution](linearsr_unlocking_linear_attention_for_stable_and_efficient_image_super-resolut.md)
+- [\[ICLR 2026\] Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression](turbo-ddcm_fast_and_flexible_zero-shot_diffusion-based_image_compression.md)
 - [\[ICLR 2026\] Pixel to Gaussian: Ultra-Fast Continuous Super-Resolution with 2D Gaussian Modeling](pixel_to_gaussian_ultra-fast_continuous_super-resolution_with_2d_gaussian_modeli.md)
 - [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](../../ICML2026/image_restoration/dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
-- [\[ICLR 2026\] FAST-DIPS: Adjoint-Free Analytic Steps and Hard-Constrained Likelihood Correction for Diffusion-Prior Inverse Problems](fastdips_adjointfree_analytic_steps_and_hardconstrained_likelihood_correction_fo.md)
 - [\[ICLR 2026\] Breaking Scale Anchoring: Frequency Representation Learning for Accurate High-Resolution Inference from Low-Resolution Training](breaking_scale_anchoring_frequency_representation_learning_for_accurate_high-res.md)
 
 </div>

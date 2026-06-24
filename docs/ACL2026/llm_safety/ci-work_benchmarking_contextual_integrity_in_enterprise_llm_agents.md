@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Constructs the enterprise-specific benchmark CI-Work based on Contextual Integrity theory, revealing that frontier LLM agents exhibit widespread privacy leakage in enterprise workflows, and that increasing model scale exacerbates these leaks.
+  [ACL 2026][LLM Safety][Enterprise Privacy] Constructs the enterprise-specific benchmark CI-Work based on Contextual Integrity theory, revealing that frontier LLM agents exhibit widespread privacy leakage in enterprise workflows, and that increasing model scale exacerbates these leaks.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Enterprise Privacy"
+  - "Contextual Integrity"
+  - "LLM Agents"
+  - "Information Leakage"
+  - "Privacy-Utility Trade-off"
 date: 2026-05-08
-content_hash: d123a738c2b200d1
+content_hash: 61e6a66866af32d9
 ---
+
 # CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents
 
 **Conference**: ACL 2026  
@@ -128,11 +134,11 @@ CI-Work does not involve model training. Agents-under-test are deployed using th
 
 ## Related Papers
 
+- [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](../../ICLR2026/llm_safety/cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
 - [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/llm_safety/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
 - [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](../../NeurIPS2025/llm_safety/contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 - [\[ACL 2026\] Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game](detecting_rag_extraction_attack_via_dual-path_runtime_integrity_game.md)
-- [\[ACL 2026\] AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)
-- [\[ACL 2026\] Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](../../ICLR2026/llm_safety/searching_for_privacy_risks_in_llm_agents_via_simulation.md)
 
 </div>
 

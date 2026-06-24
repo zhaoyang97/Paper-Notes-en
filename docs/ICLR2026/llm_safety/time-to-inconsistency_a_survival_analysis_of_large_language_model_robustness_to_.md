@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Time-To-Inconsistency: A Survival Analysis of Large Language Model Robustness to Adversarial Attacks
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Ours models "at which round an LLM starts to provide incorrect answers in multi-turn adversarial dialogues" as a **time-to-event** survival analysis problem. Using Cox, AFT, and Random Survival Forest models on 36,951 turns across 9 LLMs, the study finds that "abrupt semantic drift" sharply increases failure risk while
+  [ICLR 2026][LLM Safety][Multi-turn dialogue robustness] Ours models "at which round an LLM starts to provide incorrect answers in multi-turn adversarial dialogues" as a **time-to-event** survival analysis problem. Using Cox, AFT, and Random Survival Forest models on 36,951 turns across 9 LLMs, the study finds that "abrupt semantic drift" sharply increases failure risk while "cumulative drift is actually protective." Furthermore, a lightweight AFT model is transformed into a r…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multi-turn dialogue robustness"
+  - "Survival analysis"
+  - "Semantic drift"
+  - "Consistency evaluation"
+  - "Risk monitoring"
 date: 2026-05-08
-content_hash: a0f40c4aed5f2c31
+content_hash: 609c318b5ea237c6
 ---
+
 # Time-To-Inconsistency: A Survival Analysis of Large Language Model Robustness to Adversarial Attacks
 
 **Conference**: ICLR 2026  
@@ -124,7 +130,7 @@ Cox's Brier score rises monotonically and remains high in later rounds (indicati
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

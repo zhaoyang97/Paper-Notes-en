@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Relative Entropy Pathwise Policy Optimization
 description: >-
-  [ICLR 2026][Reinforcement Learning][on-policy RL] REPPO transitions "pathwise policy gradients" (updating policies via Q-function derivatives), typically reliant on large replay buffers in off-policy settings, into a purely on-policy framework. By learning a sufficiently accurate Q-function using only current policy trajectories, combined with maximum entropy explorat
+  [ICLR 2026][Reinforcement Learning][on-policy RL] REPPO transitions "pathwise policy gradients" (updating policies via Q-function derivatives), typically reliant on large replay buffers in off-policy settings, into a purely on-policy framework. By learning a sufficiently accurate Q-function using only current policy trajectories, combined with maximum entropy exploration and auto-tuned KL constraints, it outperforms PPO with higher sample efficiency and lower memory usage…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - on-policy RL
-  - pathwise policy gradient
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "on-policy RL"
+  - "pathwise policy gradient"
+  - "maximum entropy"
+  - "KL constraint"
+  - "value function learning"
 date: 2026-05-08
-content_hash: 5fb5492641189e7f
+content_hash: c1e49607edd8b088
 ---
+
 # Relative Entropy Pathwise Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -136,9 +140,9 @@ Evaluated on MuJoCo Playground DMC (23 locomotion tasks) and ManiSkill (8 manipu
 
 - [\[ICLR 2026\] Revisiting Group Relative Policy Optimization: Insights into On-Policy and Off-Policy Training](revisiting_group_relative_policy_optimization_insights_into_on-policy_and_off-po.md)
 - [\[ICLR 2026\] Relative Value Learning](relative_value_learning.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
 - [\[AAAI 2026\] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding](../../AAAI2026/reinforcement_learning/start_small_think_big_curriculum-based_relative_policy_optimization_for_visual_g.md)
-- [\[ICLR 2026\] Dichotomous Diffusion Policy Optimization](dichotomous_diffusion_policy_optimization.md)
 
 </div>
 

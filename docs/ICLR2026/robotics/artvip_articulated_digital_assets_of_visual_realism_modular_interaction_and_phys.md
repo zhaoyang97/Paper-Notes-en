@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ArtVIP: Articulated Digital Assets of Visual Realism, Modular Interaction, and Physical Fidelity for Robot Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][sim-to-real] ArtVIP constructs a set of 992 high-quality digital twin articulated objects and accompanying indoor scenes. By utilizing unified modeling standards, articulated physics parameter tuning, asset-embedded interaction behaviors, and pixel-level affordance labeling, it enables robot learning algorithms to be trained, evalu
+  [ICLR 2026][Robotics][Articulated Object Assets] ArtVIP constructs a set of 992 high-quality digital twin articulated objects and accompanying indoor scenes. By utilizing unified modeling standards, articulated physics parameter tuning, asset-embedded interaction behaviors, and pixel-level affordance labeling, it enables robot learning algorithms to be trained, evaluated, and transferred in simulation environments that more closely resemble the real world.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "ICLR 2026"
+  - "Robotics"
+  - "Articulated Object Assets"
+  - "Digital Twin"
+  - "Robot Learning"
+  - "Physical Simulation"
+  - "sim-to-real"
 date: 2026-05-08
-content_hash: 4fc010fdecc8cbca
+content_hash: a86931809da4483e
 ---
+
 # ArtVIP: Articulated Digital Assets of Visual Realism, Modular Interaction, and Physical Fidelity for Robot Learning
 
 **Conference**: ICLR 2026  
@@ -161,9 +166,9 @@ Supplementary performance analysis also shows that ArtVIP’s higher polygon cou
 
 - [\[CVPR 2025\] DRAWER: Digital Reconstruction and Articulation with Environment Realism](../../CVPR2025/robotics/drawer_digital_reconstruction_and_articulation_with_environment_realism.md)
 - [\[CVPR 2026\] RealAppliance: Let High-fidelity Appliance Assets Controllable and Workable as Aligned Real Manuals](../../CVPR2026/robotics/realappiance_let_high-fidelity_appliance_assets_controllable_and_workable_as_ali.md)
+- [\[ICLR 2026\] LeRobot: An Open-Source Library for End-to-End Robot Learning](lerobot_an_open-source_library_for_end-to-end_robot_learning.md)
 - [\[ICLR 2026\] Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations](robotic_manipulation_by_imitating_generated_videos_without_physical_demonstratio.md)
 - [\[ICLR 2026\] Rodrigues Network for Learning Robot Actions](rodrigues_network_for_learning_robot_actions.md)
-- [\[CVPR 2025\] RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins](../../CVPR2025/robotics/robotwin_dual-arm_robot_benchmark_with_generative_digital_twins.md)
 
 </div>
 

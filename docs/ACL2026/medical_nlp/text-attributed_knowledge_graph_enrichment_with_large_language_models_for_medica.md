@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper proposes CoMed, an LLM-empowered graph learning framework. It constructs a global medical knowledge graph by combining EHR statistical evidence with type-constrained LLM reasoning. It then enriches the graph into a text-attributed graph using LLM-generated node descriptions and edge rationales. Finally, it j
+  [ACL 2026][Medical LLM][Medical concept representation] This paper proposes CoMed, an LLM-empowered graph learning framework. It constructs a global medical knowledge graph by combining EHR statistical evidence with type-constrained LLM reasoning. It then enriches the graph into a text-attributed graph using LLM-generated node descriptions and edge rationales. Finally, it jointly trains a LoRA-finetuned LLaMA encoder and a heterogeneous GNN to learn unified medical concept em…
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Medical concept representation"
+  - "knowledge graph"
+  - "LLM-GNN joint learning"
+  - "Electronic Health Records"
+  - "text-attributed graphs"
 date: 2026-05-08
-content_hash: 04f9978c19425d6b
+content_hash: 25227b9e9a59837c
 ---
+
 # Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation
 
 **Conference**: ACL 2026  
@@ -148,8 +154,8 @@ A multi-label cross-entropy loss is used for the next-visit diagnosis prediction
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
 - [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
-- [\[ACL 2026\] Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework](region-grounded_report_generation_for_3d_medical_imaging_a_fine-grained_dataset_.md)
 - [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
+- [\[ACL 2026\] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)
 
 </div>
 

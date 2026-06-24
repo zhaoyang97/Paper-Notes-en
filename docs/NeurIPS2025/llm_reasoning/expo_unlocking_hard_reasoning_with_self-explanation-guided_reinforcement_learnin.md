@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Self-Explanation] This paper proposes Self-Explanation Policy Optimization (ExPO), a modular framework that addresses the fundamental challenge of distribution sharpening in RL post-training…
+  [NeurIPS 2025][Reasoning][Self-Explanation] This paper proposes Self-Explanation Policy Optimization (ExPO), a modular framework that addresses the fundamental challenge of distribution sharpening in RL post-training methods such as GRPO. When the model's initial success rate on hard reasoning tasks is near zero, effective positive samples are unavailable for learning. ExPO resolves this by prompting the model to generate reasoning chains (self-explanations) conditioned on th…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Self-Explanation"
   - "GRPO"
   - "DPO"
@@ -13,7 +13,7 @@ tags:
   - "Hard Reasoning"
   - "Distribution Sharpening"
 date: 2026-05-08
-content_hash: 573cedf634182284
+content_hash: 77b52a1368972faf
 ---
 
 # ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning
@@ -127,11 +127,11 @@ On the hardest Level-5 problems, ExP-GRPO raises accuracy from GRPO's 2% to **23
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
+- [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](../../ICLR2026/llm_reasoning/curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
 - [\[NeurIPS 2025\] Beyond Accuracy: Dissecting Mathematical Reasoning for LLMs Under Reinforcement Learning](beyond_accuracy_dissecting_mathematical_reasoning_for_llms_u.md)
 - [\[ACL 2026\] TemplateRL: Structured Template-Guided Reinforcement Learning for LLM Reasoning](../../ACL2026/llm_reasoning/templaterl_structured_template-guided_reinforcement_learning_for_llm_reasoning.md)
-- [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
 
 </div>
 

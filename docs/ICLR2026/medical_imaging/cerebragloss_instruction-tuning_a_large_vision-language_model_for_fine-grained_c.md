@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CerebraGloss: Instruction-Tuning a Large Vision-Language Model for Fine-Grained Clinical EEG Interpretation
 description: >-
-  [ICLR 2026][Medical Imaging][Vision-Language Model] This paper treats clinical electroencephalogram (EEG) waveforms as a "specialized visual language." By utilizing an automated data engine (including a custom YOLO waveform detector) to synthesize 94,000 EEG image-text instruction pairs, the authors perform two-stage instruction tuning on Qwen2.5-VL-3B. This results in
+  [ICLR2026][Medical Imaging][Clinical EEG Interpretation] This paper treats clinical electroencephalogram (EEG) waveforms as a "specialized visual language." By utilizing an automated data engine (including a custom YOLO waveform detector) to synthesize 94,000 EEG image-text instruction pairs, the authors perform two-stage instruction tuning on Qwen2.5-VL-3B. This results in CerebraGloss, the first generative EEG interpretation model capable of "description + multiple-choice q…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Vision-Language Model
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Clinical EEG Interpretation"
+  - "Vision-Language Models"
+  - "Instruction Tuning"
+  - "Automated Data Engine"
+  - "Waveform Detection"
 date: 2026-05-08
-content_hash: 4eb135391b902310
+content_hash: 42745f19dc80e99b
 ---
+
 # CerebraGloss: Instruction-Tuning a Large Vision-Language Model for Fine-Grained Clinical EEG Interpretation
 
 **Conference**: ICLR2026  

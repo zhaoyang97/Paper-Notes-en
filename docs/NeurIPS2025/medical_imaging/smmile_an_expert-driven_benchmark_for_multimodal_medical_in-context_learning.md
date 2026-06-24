@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multimodal In-Context Learning] This paper presents SMMILE — the first expert-driven benchmark for multimodal medical in-context learning (ICL)…
+  [NeurIPS 2025][Medical Imaging][Multimodal In-Context Learning] This paper presents SMMILE — the first expert-driven benchmark for multimodal medical in-context learning (ICL), comprising 111 questions (517 image-text QA triplets) spanning 6 medical specialties and 13 imaging modalities, constructed by 11 clinical experts. The benchmark systematically exposes critical deficiencies of current MLLMs in medical multimodal ICL and reveals the pivotal impact of in-context example…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "In-Context Example Quality"
   - "Recency Bias"
 date: 2026-05-08
-content_hash: 591835c9ecf6a3e0
+content_hash: 60947d8351c2eea4
 ---
 
 # SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning
@@ -156,9 +156,9 @@ Adding a single irrelevant example results in an average performance drop of 9.5
 
 - [\[NeurIPS 2025\] MTBBench: A Multimodal Sequential Clinical Decision-Making Benchmark in Oncology](mtbbench_a_multimodal_sequential_clinical_decision-making_benchmark_in_oncology.md)
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
-- [\[CVPR 2026\] MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation](../../CVPR2026/medical_imaging/medgen-bench_contextually_entangled_benchmark_for_open-ended_multimodal_medical_.md)
-- [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[NeurIPS 2025\] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)
+- [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](../../CVPR2026/medical_imaging/multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
+- [\[CVPR 2025\] Show and Segment: Universal Medical Image Segmentation via In-Context Learning](../../CVPR2025/medical_imaging/show_and_segment_universal_medical_image_segmentation_via_in-context_learning.md)
+- [\[CVPR 2025\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](../../CVPR2025/medical_imaging/cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
 
 </div>
 

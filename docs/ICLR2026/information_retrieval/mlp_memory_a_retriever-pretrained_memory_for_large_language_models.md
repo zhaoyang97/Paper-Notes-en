@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Information Retrieval & RAG][kNN-LM] The next-token distribution obtained from kNN retrieval over the entire pre-training corpus is distilled into a lightweight, all-MLP module. This allows LLMs to access "retrieval-style knowledge" via a single forward pass during inference, achieving higher QA accuracy and reduced hallucination at 2.5× the speed of RAG.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - kNN-LM
-  - MLP
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "kNN-LM"
+  - "Parameterized Memory"
+  - "Retrieval Distillation"
+  - "MLP"
+  - "Hallucination Suppression"
 date: 2026-05-08
-content_hash: 88e86338e19eb4b2
+content_hash: 5a682e65da221a56
 ---
+
 # MLP Memory: A Retriever-Pretrained Memory for Large Language Models
 
 **Conference**: ICLR 2026  

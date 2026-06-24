@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Models] This work utilizes the pre-trained video generation foundation model Cosmos-Predict2-2B as a base, **without modifying any network architecture and using only one-stage fine-tuning**. It "encodes" robot actions, future states, and state values as "latent video frames" for joint denoising and generation. This allows the
+  [ICLR2026][Robotics][Video Foundation Models] This work utilizes the pre-trained video generation foundation model Cosmos-Predict2-2B as a base, **without modifying any network architecture and using only one-stage fine-tuning**. It "encodes" robot actions, future states, and state values as "latent video frames" for joint denoising and generation. This allows the model to simultaneously serve as a policy, world model, and value function. It achieves SOTA on LIBERO (98.5%)…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "ICLR2026"
+  - "Robotics"
+  - "Video Foundation Models"
+  - "Visuomotor Policy"
+  - "World Models"
+  - "Value Functions"
+  - "Model-predictive Planning"
 date: 2026-05-08
-content_hash: b95b98259fb3eff9
+content_hash: 4f6224d6d3925b24
 ---
+
 # Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning
 
 **Conference**: ICLR2026  
@@ -142,11 +147,11 @@ In the "fold shirt" ALOHA task, the scratch version scored 80.8, which is 18.7 p
 
 ## Related Papers
 
-- [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
 - [\[ICLR 2026\] H$^3$DP: Triply-Hierarchical Diffusion Policy for Visuomotor Learning](h3dp_triplyhierarchical_diffusion_policy_for_visuomotor_learning.md)
+- [\[ICLR 2026\] Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting](actions_as_language_fine-tuning_vlms_into_vlas_without_catastrophic_forgetting.md)
+- [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
 - [\[ICLR 2026\] Masked Generative Policy for Robotic Control](masked_generative_policy_for_robotic_control.md)
 - [\[NeurIPS 2025\] PROFIT: A Specialized Optimizer for Deep Fine Tuning](../../NeurIPS2025/robotics/profit_a_specialized_optimizer_for_deep_fine_tuning.md)
-- [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
 
 </div>
 

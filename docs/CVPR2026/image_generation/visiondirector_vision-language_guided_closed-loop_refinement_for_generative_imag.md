@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VisionDirector: Vision-Language Guided Closed-Loop Refinement for Generative Image Synthesis
 description: >-
-  [CVPR 2026][Image Generation][GRPO] Addressing the frequent editing omissions of diffusion models in professional design tasks (where a single instruction contains 18–22 targets), this paper first constructs LGBench (2000 tasks, 29k annotated targets) to expose failures. It then proposes VisionDirector—a training-free "director-style" closed-loop control
+  [CVPR 2026][Image Generation][Closed-Loop Refinement] Addressing the frequent editing omissions of diffusion models in professional design tasks (where a single instruction contains 18–22 targets), this paper first constructs LGBench (2000 tasks, 29k annotated targets) to expose failures. It then proposes VisionDirector—a training-free "director-style" closed-loop controller: a VLM planner decomposes long instructions into structured goals, dynamically decides between single-…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
-  - Image Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Closed-Loop Refinement"
+  - "VLM Agents"
+  - "Long-Instruction Alignment"
+  - "GRPO"
+  - "Image Editing"
 date: 2026-05-08
-content_hash: 5a573b26a1d55de0
+content_hash: c9514204697d13f8
 ---
+
 # VisionDirector: Vision-Language Guided Closed-Loop Refinement for Generative Image Synthesis
 
 **Conference**: CVPR 2026  
@@ -153,8 +157,8 @@ Accumulation of optimization strategies (Baseline: Flux-Krea, units in %):
 - [\[CVPR 2026\] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis](synthrgb-t_language-vision_guided_image_translation_for_diversity_synthesis.md)
 - [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
 - [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
-- [\[CVPR 2026\] Closed-Form Concept Erasure via Double Projections](closed-form_concept_erasure_via_double_projections.md)
 - [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
+- [\[CVPR 2026\] DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](dtg-restore_training-free_diffusion_refinement_for_generative_video_super-resolu.md)
 
 </div>
 

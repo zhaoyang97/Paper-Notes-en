@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation
 description: >-
-  [NeurIPS 2025][Causal Inference][DML] This paper proves that Double Machine Learning (DML) is minimax optimal under Gaussian treatment noise ($O(\epsilon^2 + n^{-1/2})$)…
+  [NeurIPS 2025][Causal Inference][DML] This paper proves that Double Machine Learning (DML) is minimax optimal under Gaussian treatment noise ($O(\epsilon^2 + n^{-1/2})$), but becomes suboptimal under non-Gaussian noise. It proposes Agnostic Cumulant-based Estimation (ACE), which exploits higher-order cumulants to achieve $r$-th order insensitivity $O(\epsilon^r + n^{-1/2})$.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -13,7 +13,7 @@ tags:
   - "ACE"
   - "partially linear model"
 date: 2026-05-08
-content_hash: 6f8577b48262c1fe
+content_hash: 10385b8766c0a5b3
 ---
 
 # It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation
@@ -122,11 +122,11 @@ The framework is nonparametric — nuisance components $f(X)$ and $g(X)$ are est
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Characterization and Learning of Causal Graphs from Hard Interventions](characterization_and_learning_of_causal_graphs_from_hard_interventions.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
 - [\[NeurIPS 2025\] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation](an_analysis_of_causal_effect_estimation_using_outcome_invariant_data_augmentatio.md)
 - [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
-- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](../../ICLR2026/causal_inference/direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
 
 </div>
 

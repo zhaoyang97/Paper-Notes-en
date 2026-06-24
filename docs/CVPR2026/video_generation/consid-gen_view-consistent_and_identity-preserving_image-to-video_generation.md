@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Addressing appearance drift and geometric distortion of rigid objects under viewpoint changes in Image-to-Video (I2V) generation, ConsID-Gen intervenes at both data and model levels: constructing a large-scale object-centric dataset ConsIDVid and a multi-view consistency benchmark ConsIDVid-Bench, and proposing a "view
+  [CVPR 2026][Video Generation][Image-to-Video Generation] Addressing appearance drift and geometric distortion of rigid objects under viewpoint changes in Image-to-Video (I2V) generation, ConsID-Gen intervenes at both data and model levels: constructing a large-scale object-centric dataset ConsIDVid and a multi-view consistency benchmark ConsIDVid-Bench, and proposing a "view-assisted" framework. By supplementing the first frame with two unposed auxiliary views…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Image-to-Video Generation"
+  - "Identity Preservation"
+  - "Multi-view Consistency"
+  - "Geometric Encoding"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: 8b7362a6c8d087c2
+content_hash: 7785af8258184fd0
 ---
+
 # ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation
 
 **Conference**: CVPR 2026  
@@ -130,13 +136,20 @@ Performed with 50% training data and evaluated on a 60-video subset:
 - Value: ⭐⭐⭐⭐ Strong industrial potential for e-commerce where identity preservation is a hard requirement.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Wan2.1: A Comprehensive Library for Video Generation
-- ConsistI2V: High-Resolution Video Generation with Spatiotemporal Consistency
-- HunyuanVideo: A Unified Infrastructure for Video Generation
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] EvoID: Reinforced Evolution for Identity-Preserving Video Generation](evoid_reinforced_evolution_for_identity-preserving_video_generation.md)
+- [\[CVPR 2026\] AnyID: Ultra-Fidelity Universal Identity-Preserving Video Generation from Any Visual References](anyid_ultra-fidelity_universal_identity-preserving_video_generation_from_any_vis.md)
+- [\[CVPR 2026\] PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories](placid_identity-preserving_multi-object_compositing_via_video_diffusion_with_syn.md)
+- [\[CVPR 2026\] Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation](stand-in_a_lightweight_and_plug-and-play_identity_control_for_video_generation.md)
+- [\[CVPR 2025\] Identity-Preserving Text-to-Video Generation by Frequency Decomposition](../../CVPR2025/video_generation/identity-preserving_text-to-video_generation_by_frequency_decomposition.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)

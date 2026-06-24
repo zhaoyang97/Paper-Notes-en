@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pre-training Limited Memory Language Models with Internal and External Knowledge
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] LMLM (Limited Memory Language Model) inserts entity-level factual query calls into the corpus during the **pre-training phase** and masks the retrieved factual values from the loss. This forces the model to learn "when to query" rather than memorizing by rote. Consequently, a small 382M model approaches LLaMA2-7B in fa
+  [ICLR 2026][LLM Pretraining][Knowledge externalization] LMLM (Limited Memory Language Model) inserts entity-level factual query calls into the corpus during the **pre-training phase** and masks the retrieved factual values from the loss. This forces the model to learn "when to query" rather than memorizing by rote. Consequently, a small 382M model approaches LLaMA2-7B in factual accuracy and allows for one-click unlearning by modifying the database.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Knowledge externalization"
+  - "Pre-training"
+  - "Query masking"
+  - "Machine unlearning"
+  - "Parameter efficiency"
 date: 2026-05-08
-content_hash: 5e819c6c3d030b32
+content_hash: 63fad8951b55d55b
 ---
+
 # Pre-training Limited Memory Language Models with Internal and External Knowledge
 
 **Conference**: ICLR 2026  
@@ -134,10 +140,10 @@ The 382M LMLM approaches 7B-scale models on FactScore and surpasses them on PopQ
 ## Related Papers
 
 - [\[ACL 2026\] KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](../../ACL2026/llm_pretraining/koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)
+- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
+- [\[ICLR 2026\] Late-to-Early Training: Enabling LLMs to Learn Late-Stage Knowledge Earlier for Faster and Better Training](late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
 - [\[ICLR 2026\] Pre-training under Infinite Compute](pre-training_under_infinite_compute.md)
 - [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
-- [\[ICLR 2026\] FictionalQA: A Dataset for Studying Memorization and Knowledge Acquisition](fictionalqa_a_dataset_for_studying_memorization_and_knowledge_acquisition.md)
-- [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](steering_language_models_with_weight_arithmetic.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens
 description: >-
-  [CVPR 2026][Video Generation][World Models] The paper introduces DeltaTok, which compresses the VFM feature differences between consecutive frames into a single delta token. Combined with Best-of-Many training, DeltaWorld efficiently generates diverse future predictions in a single forward pass. With only 1/35 the parameters and 1/2000 the FLOPs of Cosmos, it ou
+  [CVPR 2026][Video Generation][World models] The paper introduces DeltaTok, which compresses the VFM feature differences between consecutive frames into a single delta token. Combined with Best-of-Many training, DeltaWorld efficiently generates diverse future predictions in a single forward pass. With only 1/35 the parameters and 1/2000 the FLOPs of Cosmos, it outperforms existing models in dense prediction tasks.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - World Models
-  - Delta token
+  - "CVPR 2026"
+  - "Video Generation"
+  - "World models"
+  - "Delta token"
+  - "video prediction"
+  - "frame-difference compression"
+  - "Best-of-Many training"
 date: 2026-05-08
-content_hash: c26147b36c466ff7
+content_hash: 8d38ee549e03461b
 ---
+
 # A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens
 
 **Conference**: CVPR 2026  
@@ -133,8 +137,8 @@ The predictor operates directly on the delta token sequence, $\hat{z}_{t+1} = f(
 
 - [\[CVPR 2026\] GT-SVJ: Generative-Transformer-Based Self-Supervised Video Judge For Efficient Video Reward Modeling](gt-svj_generative-transformer-based_self-supervised_video_judge.md)
 - [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
-- [\[CVPR 2026\] Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](thinking_with_frames_generative_video_distortion_evaluation_via_frame_reward_mod.md)
 - [\[CVPR 2026\] YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal](yose_you_only_select_essential_tokens_for_efficient_dit-based_video_object_remov.md)
+- [\[CVPR 2026\] TempoMaster: Efficient Long Video Generation via Next-Frame-Rate Prediction](tempomaster_efficient_long_video_generation_via_next-frame-rate_prediction.md)
 - [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
 
 </div>

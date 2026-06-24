@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][diffusion LLM] DIA is a training-free method for format-constrained generation in diffusion large language models. By predicting the position of end anchors before iteratively infilling between them, it significantly improves the format accuracy of reasoning templates and JSON outputs while mitigating truncation or redundancy caused
+  [ACL 2026][LLM Evaluation][diffusion LLM] DIA is a training-free method for format-constrained generation in diffusion large language models. By predicting the position of end anchors before iteratively infilling between them, it significantly improves the format accuracy of reasoning templates and JSON outputs while mitigating truncation or redundancy caused by fixed anchors.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - diffusion LLM
-  - Dynamic Anchor
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "diffusion LLM"
+  - "format constraints"
+  - "dynamic anchors"
+  - "structured generation"
+  - "JSON generation"
 date: 2026-05-08
-content_hash: 9a63f8a9af77e49d
+content_hash: c8aa69f49b3edee2
 ---
+
 # Dynamic Infilling Anchors for Format-Constrained Generation in Diffusion Large Language Models
 
 **Conference**: ACL 2026  

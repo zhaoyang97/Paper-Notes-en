@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation
 description: >-
-  [ICLR 2026][3D Vision][Knowledge Distillation] Proposes the GeoPurify framework, which purifies noisy features projected from 2D VLMs into 3D by distilling geometric priors from a 3D self-supervised teacher model. It achieves or exceeds SOTA open-vocabulary 3D segmentation performance using only ~1.5% of the training data.
+  [ICLR 2026][3D Vision][Open-vocabulary 3D segmentation] Proposes the GeoPurify framework, which purifies noisy features projected from 2D VLMs into 3D by distilling geometric priors from a 3D self-supervised teacher model. It achieves or exceeds SOTA open-vocabulary 3D segmentation performance using only ~1.5% of the training data.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Open-vocabulary 3D segmentation"
+  - "Knowledge distillation"
+  - "Geometric prior"
+  - "VLM feature purification"
+  - "Data-efficient"
 date: 2026-05-08
-content_hash: 076338bc7d31992f
+content_hash: 8e2a779e0f091189
 ---
+
 # GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation
 
 **Conference**: ICLR 2026  
@@ -148,9 +153,9 @@ Training utilizes only the InfoNCE contrastive loss ($\tau = 0.07$). The optimiz
 
 - [\[ICLR 2026\] OVSeg3R: Learn Open-vocabulary Instance Segmentation from 2D via 3D Reconstruction](ovseg3r_learn_open-vocabulary_instance_segmentation_from_2d_via_3d_reconstructio.md)
 - [\[ECCV 2024\] Open Vocabulary 3D Scene Understanding via Geometry Guided Self-Distillation](../../ECCV2024/3d_vision/open_vocabulary_3d_scene_understanding_via_geometry_guided_self-distillation.md)
+- [\[CVPR 2025\] Mosaic3D: Foundation Dataset and Model for Open-Vocabulary 3D Segmentation](../../CVPR2025/3d_vision/mosaic3d_foundation_dataset_and_model_for_open-vocabulary_3d_segmentation.md)
 - [\[ICLR 2026\] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data](partsam_a_scalable_promptable_part_segmentation_model_trained_on_native_3d_data.md)
 - [\[AAAI 2026\] Retrieving Objects from 3D Scenes with Box-Guided Open-Vocabulary Instance Segmentation](../../AAAI2026/3d_vision/retrieving_objects_from_3d_scenes_with_box-guided_open-vocabulary_instance_segme.md)
-- [\[ICLR 2026\] Progressive Gaussian Transformer with Anisotropy-aware Sampling for Open Vocabulary Occupancy Prediction](progressive_gaussian_transformer_with_anisotropy-aware_sampling_for_open_vocabul.md)
 
 </div>
 

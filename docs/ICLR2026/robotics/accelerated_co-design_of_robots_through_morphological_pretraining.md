@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerated co-design of robots through morphological pretraining
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper introduces "morphological pretraining": a morphology-agnostic universal controller is pretrained once across tens of millions of robot bodies using differentiable simulation. This frozen (or slightly fine-tuned) controller then enables zero-shot evaluation of arbitrary morphological changes, accelerating rob
+  [ICLR2026][Robotics][Co-design] This paper introduces "morphological pretraining": a morphology-agnostic universal controller is pretrained once across tens of millions of robot bodies using differentiable simulation. This frozen (or slightly fine-tuned) controller then enables zero-shot evaluation of arbitrary morphological changes, accelerating robot "body+brain" co-design by an order of magnitude and demonstrating, for the first time, that evolutionary "crossover" can prod…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Co-design"
+  - "Differentiable Simulation"
+  - "Morphological Pretraining"
+  - "Universal Controller"
+  - "Evolutionary Algorithms"
 date: 2026-05-08
-content_hash: 39e6668094e8401f
+content_hash: f409530899875a9a
 ---
+
 # Accelerated co-design of robots through morphological pretraining
 
 **Conference**: ICLR2026  
@@ -128,11 +134,11 @@ Simultaneous co-design serves as an ablation by removing pretraining and resetti
 
 ## Related Papers
 
+- [\[ICLR 2026\] House Of Dextra : Cross-Embodied Co-Design for Dexterous Hands](house_of_dextra_cross-embodied_co-design_for_dexterous_hands.md)
 - [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](../../CVPR2026/robotics/spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
 - [\[ICLR 2026\] Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining](disentangled_robot_learning_via_separate_forward_and_inverse_dynamics_pretrainin.md)
-- [\[ICLR 2026\] MetaVLA: Unified Meta Co-Training for Efficient Embodied Adaptation](metavla_unified_meta_co-training_for_efficient_embodied_adaptation.md)
 - [\[ICLR 2026\] BOLT: Decision‑Aligned Distillation and Budget-Aware Routing for Constrained Multimodal QA on Robots](bolt_decisionaligned_distillation_and_budget-aware_routing_for_constrained_multi.md)
-- [\[ICLR 2026\] Virtual Community: An Open World for Humans, Robots, and Society](virtual_community_an_open_world_for_humans_robots_and_society.md)
+- [\[ICLR 2026\] MetaVLA: Unified Meta Co-Training for Efficient Embodied Adaptation](metavla_unified_meta_co-training_for_efficient_embodied_adaptation.md)
 
 </div>
 

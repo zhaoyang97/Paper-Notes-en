@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language
 description: >-
-  [ICLR 2026][LLM Safety][ciphered reasoning] The authors systematically evaluate the mathematical reasoning capabilities of 10 models across 28 ciphers, revealing a critical "asymmetry": models can fluently translate ciphertext back into English (comprehension), but their accuracy drops significantly when performing **reasoning** directly in ciphertext (computati
+  [ICLR 2026][LLM Safety][ciphered reasoning] The authors systematically evaluate the mathematical reasoning capabilities of 10 models across 28 ciphers, revealing a critical "asymmetry": models can fluently translate ciphertext back into English (comprehension), but their accuracy drops significantly when performing **reasoning** directly in ciphertext (computation). This suggests that evading monitoring via ciphered Chain-of-Thought (CoT) is currently unfeasible for LLMs.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - ciphered reasoning
-  - chain-of-thought monitoring
-  - monitor evasion
-  - steganography
-  - scaling laws
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "ciphered reasoning"
+  - "chain-of-thought monitoring"
+  - "monitor evasion"
+  - "steganography"
+  - "scaling laws"
 date: 2026-05-08
-content_hash: 4b4fa47a2ee18958
+content_hash: 44ec08e9047da5a5
 ---
+
 # All Code, No Thought: Language Models Struggle to Reason in Ciphered Language
 
 **Conference**: ICLR 2026  
@@ -122,10 +123,10 @@ The authors analyzed factors determining ciphered reasoning capability:
 ## Related Papers
 
 - [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](codegenguard_a_watermark_for_code_generation_models.md)
+- [\[ICLR 2026\] Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training](self-jailbreaking_language_models_can_reason_themselves_out_of_safety_alignment_.md)
+- [\[ICLR 2026\] Distilling the Thought, Watermarking the Answer: A Principle Semantic Guided Watermark for Reasoning Large Language Models](distilling_the_thought_watermarking_the_answer_a_principle_semantic_guided_water.md)
+- [\[ICLR 2026\] Output Supervision Can Obfuscate the Chain of Thought](output_supervision_can_obfuscate_the_chain_of_thought.md)
 - [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
-- [\[AAAI 2026\] BadThink: Triggered Overthinking Attacks on Chain-of-Thought Reasoning in Large Language Models](../../AAAI2026/llm_safety/badthink_triggered_overthinking_attacks_on_chain-of-thought_reasoning_in_large_l.md)
-- [\[ICLR 2026\] Teach to Reason Safely: Policy-Guided Safety Tuning for MLRMs](teach_to_reason_safely_policy-guided_safety_tuning_for_mlrms.md)
-- [\[ICLR 2026\] Attention Smoothing Is All You Need For Unlearning](attention_smoothing_is_all_you_need_for_unlearning.md)
 
 </div>
 

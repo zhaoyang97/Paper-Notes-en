@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation
 description: >-
-  [CVPR 2026][Physics & Scientific Computing][Self-Supervised Learning] Ours proposes PhysSkin, a generalized physics-informed framework that directly learns continuous skinning weight fields from static 3D geometries via a neural skinning field autoencoder. Using physics-informed self-supervised learning strategies (energy minimization + smoothness + orthogonality constraints), it achieve
+  [CVPR 2026][Physics Animation] Ours proposes PhysSkin, a generalized physics-informed framework that directly learns continuous skinning weight fields from static 3D geometries via a neural skinning field autoencoder. Using physics-informed self-supervised learning strategies (energy minimization + smoothness + orthogonality constraints), it achieves real-time physics-based animation across shapes and discretizations without any labeled data or simulation trajectories.
 tags:
-  - CVPR 2026
-  - Physics & Scientific Computing
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Physics Animation"
+  - "Neural Skinning Field"
+  - "Self-supervised Learning"
+  - "Subspace Physics"
+  - "Linear Blend Skinning"
 date: 2026-05-08
-content_hash: c3168b88d6416c40
+content_hash: 1536ff5dfb08cce6
 ---
+
 # PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation
 
 **Conference**: CVPR 2026  
@@ -157,15 +161,16 @@ Ours is 6.5-230x faster than FEM and 11.5-18.3x faster than MPM, with performanc
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis](continuous_exposure-time_modeling_for_realistic_atmospheric_turbulence_synthesis.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
-- [\[NeurIPS 2025\] Simulation-Based Inference for Neutrino Interaction Model Parameter Tuning](../../NeurIPS2025/physics/simulation-based_inference_for_neutrino_interaction_model_parameter_tuning.md)
-- [\[CVPR 2026\] AeroAgent: A Vision-Physics-Decision Framework for Aerodynamic Vehicle Design](aeroagent_a_vision-physics-decision_framework_for_aerodynamic_vehicle_design.md)
-- [\[CVPR 2026\] AviaSafe: A Physics-Informed Data-Driven Model for Aviation Safety-Critical Cloud Forecasts](aviasafe_a_physics-informed_data-driven_model_for_aviation_safety-critical_cloud.md)
+- [\[CVPR 2026\] FlashVSR: Towards Real-time Diffusion-Based Streaming Video Super Resolution](flashvsr_towards_real-time_diffusion-based_streaming_video_super_resolution.md)
+- [\[CVPR 2025\] UniPhy: Learning a Unified Constitutive Model for Inverse Physics Simulation](../../CVPR2025/others/uniphy_learning_a_unified_constitutive_model_for_inverse_physics_simulation.md)
+- [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](../../ICLR2026/others/priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
+- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sculptor: Empowering LLMs with Cognitive Agency via Active Context Management
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] This paper proposes the Sculptor framework, which equips LLMs with a reversible set of "Active Context Management (ACM)" tools—slicing, folding/summarizing/restoring, and precise search. This allows models to actively remove irrelevant information and focus on key content like a sculptor. Combined with a GSPO reinforce
+  [ICLR 2026][LLM Agent][Active Context Management] This paper proposes the Sculptor framework, which equips LLMs with a reversible set of "Active Context Management (ACM)" tools—slicing, folding/summarizing/restoring, and precise search. This allows models to actively remove irrelevant information and focus on key content like a sculptor. Combined with a GSPO reinforcement learning method designed for dynamic contexts, the average score of a 13B model on multiple long-context…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Active Context Management"
+  - "Proactive Interference"
+  - "Long Context"
+  - "Tool Calling"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: f3d60bb2a8fad446
+content_hash: 376e58923841da9f
 ---
+
 # Sculptor: Empowering LLMs with Cognitive Agency via Active Context Management
 
 **Conference**: ICLR 2026  

@@ -4,14 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][World Models] Ours proposes RayNova, a geometry-agnostic multi-view world model based on dual-causal (scale + temporal) autoregression. By utilizing relative Plücker ray positional encoding, it enables unified 4D spatio-temporal reasoning, achieving SOTA multi-view video generation performance on nuScenes.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - World Models
-  - Autoregressive
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "World Models"
+  - "Multi-view Video Generation"
+  - "Autoregressive"
+  - "Plücker Rays"
+  - "Autonomous Driving"
 date: 2026-05-08
-content_hash: e97b442e028311ca
+content_hash: 3ec1034509e33139
 ---
+
 # RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space
 
 **Conference**: CVPR 2026  
@@ -155,11 +158,11 @@ The greatest enemy of long video generation is distribution drift. RayNova count
 
 ## Related Papers
 
+- [\[CVPR 2026\] P3Sim: Perceptual 3D Simulation with Physical World Modeling](perceptual_3d_simulation_with_physical_world_modeling.md)
 - [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
 - [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
 - [\[CVPR 2026\] WonderZoom: Multi-Scale 3D World Generation](wonderzoom_multi-scale_3d_world_generation.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
 
 </div>
 

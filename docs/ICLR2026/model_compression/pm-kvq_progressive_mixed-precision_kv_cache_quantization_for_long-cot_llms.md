@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] To address the KV Cache VRAM explosion in Long Chain-of-Thought (long-CoT) reasoning models, PM-KVQ utilizes "progressive precision reduction + per-block bitwidth allocation" to maximize the VRAM budget and mitigate cumulative quantization errors. It further employs "short data + Positional Interpolation" for calibrati
+  [ICLR 2026][Model Compression][KV Cache Quantization] To address the KV Cache VRAM explosion in Long Chain-of-Thought (long-CoT) reasoning models, PM-KVQ utilizes "progressive precision reduction + per-block bitwidth allocation" to maximize the VRAM budget and mitigate cumulative quantization errors. It further employs "short data + Positional Interpolation" for calibration to approximate long-sequence distributions. PM-KVQ improves reasoning benchmark accuracy by up to 8% un…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV Cache Quantization"
+  - "Mixed Precision"
+  - "Long Chain-of-Thought"
+  - "Positional Interpolation"
+  - "Cumulative Error"
 date: 2026-05-08
-content_hash: b34d90f3eb99c075
+content_hash: 4ec450761d249747
 ---
+
 # PM-KVQ: Progressive Mixed-Precision KV Cache Quantization for Long-CoT LLMs
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,7 @@ Ours achieves up to 8% higher accuracy than KIVI at the same VRAM. On Qwen-14B, 
 - [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
 - [\[ICLR 2026\] Channel-Aware Mixed-Precision Quantization for Efficient Long-Context Inference](channel-aware_mixed-precision_quantization_for_efficient_long-context_inference.md)
 - [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
+- [\[ICLR 2026\] AnyBCQ: Hardware Efficient Flexible Binary-Coded Quantization for Multi-Precision LLMs](anybcq_hardware_efficient_flexible_binary-coded_quantization_for_multi-precision.md)
 
 </div>
 

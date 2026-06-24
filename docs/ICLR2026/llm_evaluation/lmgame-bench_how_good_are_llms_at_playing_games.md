@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LMGame-Bench: How Good are LLMs at Playing Games?
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] LMGame-Bench converts six classic games into a **pluggable and modular** evaluation benchmark using a unified Gym-style API. By enabling or disabling three types of harnesses (perception/memory/reasoning), it **individually probes** capabilities such as visual perception, long-range planning, and reflection. Combined w
+  [ICLR 2026][LLM Evaluation][Game Benchmark] LMGame-Bench converts six classic games into a **pluggable and modular** evaluation benchmark using a unified Gym-style API. By enabling or disabling three types of harnesses (perception/memory/reasoning), it **individually probes** capabilities such as visual perception, long-range planning, and reflection. Combined with data contamination detection and prompt standardization, it allows for the clear differentiation of 13 frontier…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Game Benchmark"
+  - "LLM/VLM Evaluation"
+  - "Agent Harness"
+  - "Data Contamination"
+  - "Capability Decoupling"
 date: 2026-05-08
-content_hash: 6167d7c3bf855242
+content_hash: 001a29b60425636c
 ---
+
 # LMGame-Bench: How Good are LLMs at Playing Games?
 
 **Conference**: ICLR 2026  
@@ -123,8 +129,8 @@ flowchart LR
 ## Related Papers
 
 - [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
-- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 - [\[ICLR 2026\] PCB-Bench: Benchmarking LLMs for Printed Circuit Board Placement and Routing](pcb-bench_benchmarking_llms_for_printed_circuit_board_placement_and_routing.md)
+- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
 - [\[ICLR 2026\] TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them](trustjudge_inconsistencies_of_llm-as-a-judge_and_how_to_alleviate_them.md)
 - [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
 

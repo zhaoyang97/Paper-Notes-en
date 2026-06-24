@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Benchmarking Deflection and Hallucination in Large Vision-Language Models
 description: >-
-  [ACL 2026][Hallucination Detection][Vision-Language Model] This paper proposes VLM-DeflectionBench, a multimodal benchmark with 2775 samples that systematically evaluates the deflection vs. hallucination behaviors of Large Vision-Language Models (LVLMs) when evidence is insufficient or misleading across four evaluation scenarios (Parametric/Oracle/Realistic/Adversarial). Exper
+  [ACL 2026][Hallucination Detection][Vision-Language Models] This paper proposes VLM-DeflectionBench, a multimodal benchmark with 2775 samples that systematically evaluates the deflection vs. hallucination behaviors of Large Vision-Language Models (LVLMs) when evidence is insufficient or misleading across four evaluation scenarios (Parametric/Oracle/Realistic/Adversarial). Experiments covering 20 SOTA LVLMs reveal that nearly all models fail to reliably deflect under noisy evi…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Vision-Language Models"
+  - "Deflection Evaluation"
+  - "Knowledge QA"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: cfa13e44b11274a9
+content_hash: 162eb54b304b346b
 ---
+
 # Benchmarking Deflection and Hallucination in Large Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -122,9 +126,9 @@ Accuracy alone cannot distinguish between genuine understanding and guessing. Th
 ## Related Papers
 
 - [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](../../CVPR2026/hallucination/svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
-- [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
 - [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 - [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
+- [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
 - [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 
 </div>

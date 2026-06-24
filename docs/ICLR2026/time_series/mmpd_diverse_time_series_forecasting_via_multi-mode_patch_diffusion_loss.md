@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss
 description: >-
-  [ICLR 2026][Time Series][Patch-based Backbone] The training loss is upgraded from MSE, which assumes the future follows a unimodal Gaussian distribution, to a **MMPD loss** parameterized by a diffusion process. It serves as a plug-and-play module attached to any patch-based time series backbone, enabling the prediction of multiple probabilistic futures with diverse
+  [ICLR 2026][Time Series][Time series forecasting] The training loss is upgraded from MSE, which assumes the future follows a unimodal Gaussian distribution, to a **MMPD loss** parameterized by a diffusion process. It serves as a plug-and-play module attached to any patch-based time series backbone, enabling the prediction of multiple probabilistic futures with diverse shapes from the same historical input.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Patch-based Backbone
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time series forecasting"
+  - "Diffusion loss"
+  - "Multimodal forecasting"
+  - "Patch-based Backbone"
+  - "Variational Gaussian Mixture"
+  - "Probabilistic forecasting"
 date: 2026-05-08
-content_hash: e43a107113c5c4c6
+content_hash: f4e9128bdd6f8900
 ---
+
 # MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss
 
 **Conference**: ICLR 2026  
@@ -110,15 +116,16 @@ MMPD was compared against MSE and Mix across three backbones: Crossformer, SegRN
 - **Value**: ⭐⭐⭐⭐ Direct utility for risk-aware forecasting (e.g., trading) and provides a reusable paradigm for learnable loss modules.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] TEDM: Elucidated Diffusion Models for Time Series Forecasting](tedm_time_series_forecasting_with_elucidated_diffusion_models.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
 - [\[ICLR 2026\] PMDformer: Patch-Mean Decoupling Information Transformer for Long-term Forecasting](pmdformer_patch-mean_decoupling_information_transformer_for_long-term_forecastin.md)
 - [\[ICLR 2026\] Lost in the Non-convex Loss Landscape: How to Fine-tune the Large Time Series Model?](lost_in_the_non-convex_loss_landscape_how_to_fine-tune_the_large_time_series_mod.md)
 - [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
-- [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
 
 </div>
 

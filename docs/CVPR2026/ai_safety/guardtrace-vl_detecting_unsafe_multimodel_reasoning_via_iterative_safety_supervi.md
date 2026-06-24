@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GuardTrace-VL: Detecting Unsafe Multimodel Reasoning via Iterative Safety Supervision
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Addressing the blind spot where multimodal reasoning models provide safe final answers while leaking dangerous content in intermediate steps, this paper constructs the first image-text Question–Thinking–Answer (QTA) safety dataset, GuardTrace. Using a three-stage progressive training pipeline (SFT → DPO → Oracle-Guided
+  [CVPR 2026][AI Safety][Multimodal safety guardrails] Addressing the blind spot where multimodal reasoning models provide safe final answers while leaking dangerous content in intermediate steps, this paper constructs the first image-text Question–Thinking–Answer (QTA) safety dataset, GuardTrace. Using a three-stage progressive training pipeline (SFT → DPO → Oracle-Guided Refined DPO), a 3B visual safety auditor is trained, achieving a 93.1% F1 score in unsafe reasoning detect…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Multimodal safety guardrails"
+  - "reasoning trace auditing"
+  - "QTA detection"
+  - "preference optimization"
+  - "jailbreak defense"
 date: 2026-05-08
-content_hash: a24ef1eecc2584ed
+content_hash: 20b842633c5c6330
 ---
+
 # GuardTrace-VL: Detecting Unsafe Multimodel Reasoning via Iterative Safety Supervision
 
 **Conference**: CVPR 2026  
@@ -136,6 +142,7 @@ The 3B model achieves 93.10% average F1, surpassing GPT-5 by 4.24 points and the
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -143,8 +150,8 @@ The 3B model achieves 93.10% average F1, surpassing GPT-5 by 4.24 points and the
 - [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
 - [\[CVPR 2026\] Learning Latent Concepts for Detecting Out-of-Distribution Objects](learning_latent_concepts_for_detecting_out-of-distribution_objects.md)
 - [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
+- [\[ICLR 2026\] Fine-Grained Iterative Adversarial Attacks with Limited Computation Budget](../../ICLR2026/ai_safety/fine-grained_iterative_adversarial_attacks_with_limited_computation_budget.md)
 - [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
-- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
 
 </div>
 

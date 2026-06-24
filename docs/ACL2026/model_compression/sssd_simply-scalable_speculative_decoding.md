@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SSSD: Simply-Scalable Speculative Decoding
 description: >-
-  [ACL 2026][Model Compression][Paper Note] The authors propose SSSD, a training-free speculative decoding method that combines lightweight n-gram matching with hardware-aware speculation length adjustment. Without requiring the training or deployment of any draft models, it achieves up to 2.9× inference speedup and demonstrates superior robustness compared to t
+  [ACL2026][Model Compression][Speculative Decoding] The authors propose SSSD, a training-free speculative decoding method that combines lightweight n-gram matching with hardware-aware speculation length adjustment. Without requiring the training or deployment of any draft models, it achieves up to 2.9× inference speedup and demonstrates superior robustness compared to training-based methods in language/domain migration and long-context scenarios.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL2026"
+  - "Model Compression"
+  - "Speculative Decoding"
+  - "LLM Inference Acceleration"
+  - "n-gram matching"
+  - "training-free"
+  - "hardware-aware"
 date: 2026-05-08
-content_hash: e85c7ef0bf95f163
+content_hash: 18e0138f4c04a61c
 ---
+
 <!-- 由 src/gen_stubs.py 自动生成 -->
 # SSSD: Simply-Scalable Speculative Decoding
 
@@ -148,9 +154,9 @@ DeepSeek-R1-Distill-Llama-8B (MATH-500): SSSD achieves a 2.29× speedup ($batch=
 
 - [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
 - [\[ACL 2026\] Calibrated Speculative Decoding: Frequency-Guided Candidate Selection for Efficient Inference](calibrated_speculative_decoding_frequency-guided_candidate_selection_for_efficie.md)
+- [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
 - [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](../../NeurIPS2025/model_compression/traversal_verification_for_speculative_tree_decoding.md)
 - [\[ICML 2026\] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding](../../ICML2026/model_compression/lk_losses_direct_acceptance_rate_optimization_for_speculative_decoding.md)
-- [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
 
 </div>
 

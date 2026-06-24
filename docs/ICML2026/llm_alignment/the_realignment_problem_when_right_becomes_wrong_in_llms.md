@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] The Realignment Problem: When Right becomes Wrong in LLMs
 description: >-
-  [ICML 2026][Alignment & RLHF][realignment] This paper formalizes the problem of "what to do when policies change after model deployment" as the Realignment problem. It proposes the TRACE framework: using a stronger proxy model to classify existing preference pairs into three categories (Invert / Punish / Retain), followed by surgical realignment using a hybrid
+  [ICML 2026][LLM Alignment][realignment] This paper formalizes the problem of "what to do when policies change after model deployment" as the Realignment problem. It proposes the TRACE framework: using a stronger proxy model to classify existing preference pairs into three categories (Invert / Punish / Retain), followed by surgical realignment using a hybrid IPO+NPO+KL objective. This approach allows models to adapt to policy drift without a new round of human annotation.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - realignment
-  - alignment-reality gap
-  - triage
-  - IPO
-  - NPO
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "realignment"
+  - "alignment-reality gap"
+  - "triage"
+  - "IPO"
+  - "NPO"
+  - "bilevel optimization"
 date: 2026-05-08
-content_hash: 0cf4cf2b4351043c
+content_hash: a04d552f9df79ba6
 ---
+
 # The Realignment Problem: When Right becomes Wrong in LLMs
 
 **Conference**: ICML 2026  
@@ -149,11 +151,11 @@ TRACE significantly outperforms the U2A baseline (~82-85% win rate). Meanwhile, 
 
 ## Related Papers
 
-- [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](../../AAAI2026/llm_alignment/when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
+- [\[ICLR 2026\] When Weak LLMs Speak with Confidence, Preference Alignment Gets Stronger](../../ICLR2026/llm_alignment/when_weak_llms_speak_with_confidence_preference_alignment_gets_stronger.md)
 - [\[ICML 2026\] When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models](when_distance_distracts_representation_distance_bias_in_bt-loss_for_reward_model.md)
 - [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
-- [\[ICML 2025\] Diverging Preferences: When do Annotators Disagree and do Models Know?](../../ICML2025/llm_alignment/diverging_preferences_when_do_annotators_disagree_and_do_models_know.md)
-- [\[NeurIPS 2025\] Ask a Strong LLM Judge when Your Reward Model is Uncertain](../../NeurIPS2025/llm_alignment/ask_a_strong_llm_judge_when_your_reward_model_is_uncertain.md)
+- [\[ICML 2026\] TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning](truthrl_incentivizing_truthful_llms_via_reinforcement_learning.md)
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](../../ICLR2026/llm_alignment/when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 
 </div>
 

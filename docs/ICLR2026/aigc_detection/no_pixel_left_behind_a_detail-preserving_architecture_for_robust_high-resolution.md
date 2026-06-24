@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] The authors propose HiDA-Net: a dual-path input architecture using "global thumbnail + full-resolution patches covering the whole image," combined with feature aggregation, token-level forgery localization, and JPEG quality factor estimation. It achieves "no pixel left behind" and significantly advances the SOTA in hig
+  [ICLR 2026][AIGC Detection][AI-generated image detection] The authors propose HiDA-Net: a dual-path input architecture using "global thumbnail + full-resolution patches covering the whole image," combined with feature aggregation, token-level forgery localization, and JPEG quality factor estimation. It achieves "no pixel left behind" and significantly advances the SOTA in high-resolution AIGI detection.
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "AI-generated image detection"
+  - "high-resolution"
+  - "full-resolution patching"
+  - "feature aggregation"
+  - "JPEG robustness"
+  - "forgery localization"
 date: 2026-05-08
-content_hash: 4ce754b327249a8b
+content_hash: 758e03a155bc563e
 ---
+
 # No Pixel Left Behind: A Detail-Preserving Architecture for Robust High-Resolution AI-Generated Image Detection
 
 **Conference**: ICLR 2026  
@@ -124,7 +131,7 @@ On HiRes-50K, while methods like SPAI degrade as resolution increases, HiDA-Net 
 - [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
 - [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
 - [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](../../ICML2026/aigc_detection/dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
-- [\[ICLR 2026\] CLARC: C/C++ Benchmark for Robust Code Search](clarc_cc_benchmark_for_robust_code_search.md)
+- [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](../../CVPR2026/aigc_detection/ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
 
 </div>
 

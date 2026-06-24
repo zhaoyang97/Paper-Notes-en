@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Minibatch Selection via Partition Matroid Constrained Gradient Matching
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] PartitionSel models "cross-domain minibatch selection" as maximizing a **validation-guided weighted gradient matching utility** under **partition matroid constraints** (per-domain budgets). The authors prove that this objective is monotone and weak submodular, allowing it to be solved via Orthogonal Matching Pursuit (O
+  [ICML2026][Optimization][minibatch selection] PartitionSel models "cross-domain minibatch selection" as maximizing a **validation-guided weighted gradient matching utility** under **partition matroid constraints** (per-domain budgets). The authors prove that this objective is monotone and weak submodular, allowing it to be solved via Orthogonal Matching Pursuit (OMP) with approximation guarantees. This induces implicit data mixing at the batch level during every training step…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "minibatch selection"
+  - "partition matroid"
+  - "gradient matching"
+  - "weak submodularity"
+  - "data mixing"
 date: 2026-05-08
-content_hash: f3f755e24b8c9bd3
+content_hash: 7165ac1da8976778
 ---
+
 # Minibatch Selection via Partition Matroid Constrained Gradient Matching
 
 **Conference**: ICML2026  
@@ -146,11 +152,11 @@ On Mol-Instructions ($|\hat{S}_t|=128$, BLEU↑ / Edit-distance↓), PartitionSe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Convergence of Regret Matching in Potential Games and Constrained Optimization](../../ICLR2026/optimization/convergence_of_regret_matching_in_potential_games_and_constrained_optimization.md)
 - [\[ICML 2026\] Automatic Unsupervised Ensemble Outlier Model Selection–Extended Version](automatic_unsupervised_ensemble_outlier_model_selection--extended_version.md)
 - [\[ICML 2026\] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning](utility-diversity_aware_online_batch_selection_for_llm_supervised_fine-tuning.md)
-- [\[CVPR 2025\] Towards Stable and Storage-efficient Dataset Distillation: Matching Convexified Trajectory](../../CVPR2025/optimization/towards_stable_and_storage-efficient_dataset_distillation_matching_convexified_t.md)
-- [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](../../ICLR2026/optimization/adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
-- [\[ICLR 2026\] Πnet: Optimizing Hard-Constrained Neural Networks with Orthogonal Projection Layers](../../ICLR2026/optimization/pinet_optimizing_hard-constrained_neural_networks_with_orthogonal_projection_lay.md)
+- [\[ICLR 2026\] Efficient Algorithms for Incremental Metric Bipartite Matching](../../ICLR2026/optimization/efficient_algorithms_for_incremental_metric_bipartite_matching.md)
+- [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](../../ICLR2026/optimization/high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
 
 </div>
 

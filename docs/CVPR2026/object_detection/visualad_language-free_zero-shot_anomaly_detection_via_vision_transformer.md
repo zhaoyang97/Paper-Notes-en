@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer
 description: >-
-  [CVPR 2026][Object Detection][Vision Transformer] The necessity of the text branch in Zero-Shot Anomaly Detection (ZSAD) is revisited, leading to the proposal of VisualAD—a pure vision framework. By inserting two learnable tokens (anomaly/normal) into a frozen ViT, combined with Spatial-Aware Cross-Attention and a Self-Alignment Function, the model achieves SOTA perfo
+  [CVPR 2026][Object Detection][Zero-shot anomaly detection] The necessity of the text branch in Zero-Shot Anomaly Detection (ZSAD) is revisited, leading to the proposal of VisualAD—a pure vision framework. By inserting two learnable tokens (anomaly/normal) into a frozen ViT, combined with Spatial-Aware Cross-Attention and a Self-Alignment Function, the model achieves SOTA performance across 13 industrial and medical benchmarks without requiring a text encoder.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision Transformer
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Zero-shot anomaly detection"
+  - "Vision Transformer"
+  - "Language-free branch"
+  - "Learnable tokens"
+  - "Industrial + Medical"
 date: 2026-05-08
-content_hash: 75dcf09715be6e07
+content_hash: 57d0f76a5e1fa696
 ---
+
 # VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer
 
 **Conference**: CVPR 2026  
@@ -143,8 +148,8 @@ The framework seamlessly adapts to both CLIP and DINOv2 backbones. The DINOv2 ve
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 - [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
 - [\[CVPR 2026\] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection](moeclip_patch-specialized_experts_for_zero-shot_anomaly_detection.md)
-- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
 - [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
+- [\[CVPR 2026\] DLVP-CLIP: Enhancing Fine-Grained Zero-Shot Anomaly Detection via Dynamic Local Visual Prompting](dlvp-clip_enhancing_fine-grained_zero-shot_anomaly_detection_via_dynamic_local_v.md)
 
 </div>
 

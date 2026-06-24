@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Two Failure Modes of Deep Transformers and How to Avoid Them: A Unified Theory of Signal Propagation at Initialisation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper leverages the Random Energy Model (REM) from statistical physics to provide an asymptotically exact theory of signal propagation in deep Transformers at initialization. It unifies "rank collapse" and "entropy collapse" as a single phase transition controlled by the query/key initialization variance $\beta$.
+  [ICLR 2026][Learning Theory][Initialization] This paper leverages the Random Energy Model (REM) from statistical physics to provide an asymptotically exact theory of signal propagation in deep Transformers at initialization. It unifies "rank collapse" and "entropy collapse" as a single phase transition controlled by the query/key initialization variance $\beta$. Based on this, it derives an algorithm to generate "trainability maps," guiding practitioners on selecting residual…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Signal Propagation"
+  - "Initialization"
+  - "Signal Propagation"
+  - "Rank Collapse"
+  - "Entropy Collapse"
+  - "Random Energy Model"
 date: 2026-05-08
-content_hash: 117aee2f5b76c7be
+content_hash: 64b4a7904dc10ad4
 ---
+
 # Two Failure Modes of Deep Transformers and How to Avoid Them: A Unified Theory of Signal Propagation at Initialisation
 
 **Conference**: ICLR 2026  
@@ -133,16 +140,16 @@ Theoretical predictions align closely with empirical measurements, correctly pre
 - Value: ⭐⭐⭐⭐⭐ Provides "constant-level" prescriptions for deep Transformer initialization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] An evolutionary perspective on modes of learning in Transformers](an_evolutionary_perspective_on_modes_of_learning_in_transformers.md)
 - [\[ICLR 2026\] How to Square Tensor Networks and Circuits Without Squaring Them](how_to_square_tensor_networks_and_circuits_without_squaring_them.md)
-- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
-- [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
+- [\[ICLR 2026\] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels](unicon_unified_framework_for_efficient_contrastive_alignment_via_kernels.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Inference Acceleration] Addressing the issue of excessive visual tokens in Vision-Language-Action (VLA) models that consume attention computation during inference, this paper proposes ADP (Action-aware Dynamic Pruning). It utilizes text correlation for anticipatory pruning of task-related visual tokens and uses recent motion magnitude of the
+  [ICLR 2026][Robotics][VLA Models] Addressing the issue of excessive visual tokens in Vision-Language-Action (VLA) models that consume attention computation during inference, this paper proposes ADP (Action-aware Dynamic Pruning). It utilizes text correlation for anticipatory pruning of task-related visual tokens and uses recent motion magnitude of the robot's end-effector as a gating signal. This enables aggressive pruning during coarse action stages (high displacement) to sa…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA Models"
+  - "Visual Token Pruning"
+  - "Action-aware"
+  - "Inference Acceleration"
+  - "Robot Manipulation"
 date: 2026-05-08
-content_hash: 50b47c5610518738
+content_hash: 8836ffc6f45ca284
 ---
+
 # Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
 
 **Conference**: ICLR 2026  

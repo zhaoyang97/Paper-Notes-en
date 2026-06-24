@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] YOLOE: Real-Time Seeing Anything
 description: >-
-  [ICCV 2025][Object Detection][open-vocabulary detection] This paper proposes YOLOE, which unifies text prompt, visual prompt, and prompt-free open-scenario detection and segmentation within the YOLO architecture. Through…
+  [ICCV 2025][Object Detection][open-vocabulary detection] This paper proposes YOLOE, which unifies text prompt, visual prompt, and prompt-free open-scenario detection and segmentation within the YOLO architecture. Through three key designs — RepRTA (Re-parameterizable Region-Text Alignment), SAVPE (Semantic-Activated Visual Prompt Encoder), and LRPC (Lazy Region-Prompt Contrast) — YOLOE achieves high efficiency and strong performance, surpassing YOLO-World v2 on LVIS with 3× l…
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "re-parameterization"
   - "real-time"
 date: 2026-05-08
-content_hash: 4f45907704a7265a
+content_hash: b0a3fc7e03359ace
 ---
 
 # YOLOE: Real-Time Seeing Anything
@@ -106,9 +106,9 @@ The re-parameterization paradigm is transferable to other settings requiring zer
 
 - [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
-- [\[AAAI 2026\] An Overall Real-Time Mechanism for Classification and Quality Evaluation of Rice](../../AAAI2026/object_detection/an_overall_real-time_mechanism_for_classification_and_quality_evaluation_of_rice.md)
-- [\[ICCV 2025\] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion](diffusion_curriculum_synthetic-to-real_data_curriculum_via_image-guided_diffusio.md)
-- [\[ICCV 2025\] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions](voccl3d_a_video_benchmark_dataset_for_3d_human_pose_and_shape_estimation_under_r.md)
+- [\[CVPR 2026\] Detect Anything via Next Point Prediction](../../CVPR2026/object_detection/detect_anything_via_next_point_prediction.md)
+- [\[CVPR 2025\] TornadoNet: Real-Time Building Damage Detection with Ordinal Supervision](../../CVPR2025/object_detection/tornadonet_real-time_building_damage_detection_with_ordinal_supervision.md)
+- [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](../../CVPR2026/object_detection/yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data
 description: >-
-  [ICLR 2026][3D Vision][3D part segmentation] The study proposes PartSAM, the first promptable part segmentation model trained on large-scale native 3D data. It employs a dual-branch triplane encoder (combining a frozen SAM prior with a learnable 3D branch) and a SAM-style decoder. Through a model-in-the-loop annotation pipeline, the authors constructed over 5 mil
+  [ICLR 2026][3D Vision][3D part segmentation] The study proposes PartSAM, the first promptable part segmentation model trained on large-scale native 3D data. It employs a dual-branch triplane encoder (combining a frozen SAM prior with a learnable 3D branch) and a SAM-style decoder. Through a model-in-the-loop annotation pipeline, the authors constructed over 5 million shape-part pairs, achieving performance that outperforms Point-SAM by over 90% in single-click IoU under open-…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D part segmentation
-  - SAM
-  - prompt-based
-  - native 3D data
-  - open-world
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D part segmentation"
+  - "SAM"
+  - "prompt-based"
+  - "native 3D data"
+  - "open-world"
 date: 2026-05-08
-content_hash: 47f035f680809ff4
+content_hash: a1acf52b8b82b3b5
 ---
+
 # PartSAM: A Scalable Promptable Part Segmentation Model Trained on Native 3D Data
 
 **Conference**: ICLR 2026  
@@ -142,11 +143,11 @@ Where focal and dice losses supervise mask quality, $\mathcal{L}_{IoU}$ trains t
 
 ## Related Papers
 
-- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
 - [\[ICLR 2026\] Part-X-MLLM: Part-aware 3D Multimodal Large Language Model](part-x-mllm_part-aware_3d_multimodal_large_language_model.md)
+- [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
 - [\[ECCV 2024\] 3×2: 3D Object Part Segmentation by 2D Semantic Correspondences](../../ECCV2024/3d_vision/3x2_3d_object_part_segmentation_by_2d_semantic_correspondenc.md)
 - [\[ICLR 2026\] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation](geopurify_a_data-efficient_geometric_distillation_framework_for_open-vocabulary_.md)
-- [\[ICLR 2026\] PD²GS: Part-Level Decoupling and Continuous Deformation of Articulated Objects via Gaussian Splatting](pd2gs_part-level_decoupling_and_continuous_deformation_of_articulated_objects_vi.md)
+- [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](../../CVPR2026/3d_vision/geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
 
 </div>
 

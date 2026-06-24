@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?
 description: >-
-  [ICLR 2026][LLM Reasoning][reasoning LLM] This paper systematically evaluates the robustness of reasoning LLMs to various interventions (benign, neutral, adversarial) in their Chain-of-Thought (CoT). It finds that while models are generally robust and can recover from interventions, paraphrasing the CoT suppresses "self-doubt" expressions, leading to decreased
+  [ICLR 2026][Reasoning][reasoning LLM] This paper systematically evaluates the robustness of reasoning LLMs to various interventions (benign, neutral, adversarial) in their Chain-of-Thought (CoT). It finds that while models are generally robust and can recover from interventions, paraphrasing the CoT suppresses "self-doubt" expressions, leading to decreased accuracy. Furthermore, the recovery process incurs significant computational overhead…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - reasoning LLM
-  - chain-of-thought
-  - robustness
-  - self-correction
-  - doubt mechanism
+  - "ICLR 2026"
+  - "Reasoning"
+  - "reasoning LLM"
+  - "chain-of-thought"
+  - "robustness"
+  - "self-correction"
+  - "doubt mechanism"
 date: 2026-05-08
-content_hash: 850991e7726d8049
+content_hash: d7ba61b94ce415b6
 ---
+
 # Are Reasoning LLMs Robust to Interventions on Their Chain-of-Thought?
 
 **Conference**: ICLR 2026  
@@ -123,15 +124,14 @@ The authors observed that reasoning models often produce hesitant expressions li
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
-- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
 - [\[AAAI 2026\] Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models](../../AAAI2026/llm_reasoning/chain-of-thought_driven_adversarial_scenario_extrapolation_for_robust_language_m.md)
-- [\[ICLR 2026\] SceneCOT: Eliciting Grounded Chain-of-Thought Reasoning in 3D Scenes](scenecot_eliciting_grounded_chain-of-thought_reasoning_in_3d_scenes.md)
-- [\[ICLR 2026\] FaithCoT-Bench: Benchmarking Instance-Level Faithfulness of Chain-of-Thought Reasoning](faithcot-bench_benchmarking_instance-level_faithfulness_of_chain-of-thought_reas.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
+- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
+- [\[ICLR 2026\] InT: Self-Proposed Interventions Enable Credit Assignment in LLM Reasoning](int_self-proposed_interventions_enable_credit_assignment_in_llm_reasoning.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ROGR: Relightable 3D Objects using Generative Relighting
 description: >-
-  [NeurIPS 2025][3D Vision][Relighting] This paper proposes ROGR, which leverages a multi-view diffusion relighting model to generate consistent images under multiple lighting conditions…
+  [NeurIPS 2025 Spotlight][3D Vision][Relighting] This paper proposes ROGR, which leverages a multi-view diffusion relighting model to generate consistent images under multiple lighting conditions, trains a lighting-conditioned NeRF on the resulting dataset, and achieves feed-forward 3D object relighting under arbitrary environment lighting. ROGR attains state-of-the-art performance on the TensoIR and Stanford-ORB benchmarks while supporting interactive rendering.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "Relighting"
   - "Neural Radiance Field"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Model"
   - "Environment Lighting"
 date: 2026-05-08
-content_hash: b2f93f92acf21f9a
+content_hash: 71775d897a248884
 ---
 
 # ROGR: Relightable 3D Objects using Generative Relighting
@@ -166,11 +166,11 @@ The paper's core idea is: **first use a multi-view diffusion model to generate a
 
 ## Related Papers
 
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](../../CVPR2026/3d_vision/genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
+- [\[CVPR 2025\] Generative Multiview Relighting for 3D Reconstruction under Extreme Illumination Variation](../../CVPR2025/3d_vision/generative_multiview_relighting_for_3d_reconstruction_under_extreme_illumination.md)
 - [\[NeurIPS 2025\] MetaGS: A Meta-Learned Gaussian-Phong Model for Out-of-Distribution 3D Scene Relighting](metags_a_meta-learned_gaussian-phong_model_for_out-of-distribution_3d_scene_reli.md)
-- [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
-- [\[ICCV 2025\] Gaussian Splatting with Discretized SDF for Relightable Assets](../../ICCV2025/3d_vision/gaussian_splatting_with_discretized_sdf_for_relightable_assets.md)
+- [\[CVPR 2026\] Relightable Holoported Characters: Capturing and Relighting Dynamic Human Performance from Sparse Views](../../CVPR2026/3d_vision/relightable_holoported_characters_capturing_and_relighting_dynamic_human_perform.md)
+- [\[CVPR 2025\] RNG: Relightable Neural Gaussians](../../CVPR2025/3d_vision/rng_relightable_neural_gaussians.md)
+- [\[CVPR 2025\] ARM: Appearance Reconstruction Model for Relightable 3D Generation](../../CVPR2025/3d_vision/arm_appearance_reconstruction_model_for_relightable_3d_generation.md)
 
 </div>
 

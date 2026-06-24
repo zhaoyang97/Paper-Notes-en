@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos
 description: >-
-  [NeurIPS 2025][3D Vision][4D Reconstruction] This paper proposes OriGS (Orientation-anchored Gaussian Splatting), which achieves high-quality 4D dynamic scene reconstruction from casually captured monocular videos via a…
+  [NeurIPS 2025][3D Vision][4D Reconstruction] This paper proposes OriGS (Orientation-anchored Gaussian Splatting), which achieves high-quality 4D dynamic scene reconstruction from casually captured monocular videos via a global orientation field and an orientation-aware hyper-Gaussian representation.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Orientation Field"
   - "Hyper-Gaussian"
 date: 2026-05-08
-content_hash: dd04cad2d2cadc0f
+content_hash: 907b0e253e0b10dd
 ---
 
 # Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos
@@ -152,11 +152,11 @@ Contribution analysis of individual components:
 
 ## Related Papers
 
-- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](../../ICCV2025/3d_vision/longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
-- [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
+- [\[CVPR 2025\] MoSca: Dynamic Gaussian Fusion from Casual Videos via 4D Motion Scaffolds](../../CVPR2025/3d_vision/mosca_dynamic_gaussian_fusion_from_casual_videos_via_4d_motion_scaffolds.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](../../ICCV2025/3d_vision/shape_of_motion_4d_reconstruction_from_a_single_video.md)
+- [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
 - [\[NeurIPS 2025\] Flux4D: Flow-based Unsupervised 4D Reconstruction](flux4d_flow-based_unsupervised_4d_reconstruction.md)
-- [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
+- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](../../ICCV2025/3d_vision/longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion
 description: >-
-  [ICCV 2025][Image Generation][T2I diffusion model] This paper proposes **Dual Recursive Feedback (DRF)**, a training-free dual recursive feedback system that recursively refines intermediate latents via **appearance feed…
+  [ICCV 2025][Image Generation][T2I diffusion model] This paper proposes **Dual Recursive Feedback (DRF)**, a training-free dual recursive feedback system that recursively refines intermediate latents via **appearance feedback** and **generation feedback**, addressing the insufficient structure/appearance disentanglement of controllable T2I diffusion models in class-invariant scenarios, thereby achieving fine-grained pose transfer and appearance fusion.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Score Distillation"
   - "training-free"
 date: 2026-05-08
-content_hash: 7ada6e1e32d1c2e1
+content_hash: 7805018f03422fff
 ---
 
 # Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion
@@ -172,9 +172,9 @@ DRF is portable to SD 1.5 and SD 2.0, substantially reducing GPU memory consumpt
 
 - [\[ICCV 2025\] Rethink Sparse Signals for Pose-guided Text-to-Image Generation](rethink_sparse_signals_for_pose-guided_text-to-image_generation.md)
 - [\[ICCV 2025\] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior](dposer-x_diffusion_model_as_robust_3d_whole-body_human_pose_prior.md)
+- [\[CVPR 2025\] Dual Diffusion for Unified Image Generation and Understanding](../../CVPR2025/image_generation/dual_diffusion_for_unified_image_generation_and_understanding.md)
+- [\[ICML 2025\] GaussMarker: Robust Dual-Domain Watermark for Diffusion Models](../../ICML2025/image_generation/gaussmarker_robust_dual-domain_watermark_for_diffusion_models.md)
 - [\[ICCV 2025\] DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching](diffumatch_category-agnostic_spectral_diffusion_priors_for_robust_non-rigid_shap.md)
-- [\[ICCV 2025\] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation](dense2moe_restructuring_diffusion_transformer_to_moe_for_efficient_text-to-image.md)
-- [\[ICCV 2025\] Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text](fix-clip_dual-branch_hierarchical_contrastive_learning_via_synthetic_captions_fo.md)
 
 </div>
 

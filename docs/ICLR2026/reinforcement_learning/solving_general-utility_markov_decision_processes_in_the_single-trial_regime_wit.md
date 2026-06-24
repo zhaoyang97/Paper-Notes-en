@@ -2,13 +2,15 @@
 title: >-
   [Paper Note] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper presents the first method for solving infinite-horizon discounted **General-Utility MDPs (GUMDP)** under "single-trial" evaluation. It first proves that history-dependent policies are necessary in this regime and reformulates the problem into a standard MDP that tracks "running occupancy" (occupancy MDP). Th
+  [ICLR 2026][Reinforcement Learning][General-Utility MDP / Single-trial Evaluation / Occupancy MDP / Online Planning / Monte Carlo Tree Search] This paper presents the first method for solving infinite-horizon discounted **General-Utility MDPs (GUMDP)** under "single-trial" evaluation. It first proves that history-dependent policies are necessary in this regime and reformulates the problem into a standard MDP that tracks "running occupancy" (occupancy MDP). The problem is then…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "General-Utility MDP / Single-trial Evaluation / Occupancy MDP / Online Planning / Monte Carlo Tree Search"
 date: 2026-05-08
-content_hash: 8a7f8edbf039a703
+content_hash: 783557a836a63b3f
 ---
+
 # Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning
 
 **Conference**: ICLR 2026  
@@ -129,10 +131,10 @@ Three task categories utilize three convex objectives: Max-state entropy explora
 
 ## Related Papers
 
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] PAMDP: Interact to Persona Alignment via a Partially Observable Markov Decision Process](pamdp_interact_to_persona_alignment_via_a_partially_observable_markov_decision_p.md)
 - [\[ICML 2025\] Learning Utilities from Demonstrations in Markov Decision Processes](../../ICML2025/reinforcement_learning/learning_utilities_from_demonstrations_in_markov_decision_processes.md)
 - [\[ICLR 2026\] Single-stream Policy Optimization](single-stream_policy_optimization.md)
-- [\[ICLR 2026\] Analysis of Approximate Linear Programming Solution to Markov Decision Problem with Log Barrier Function](analysis_of_approximate_linear_programming_solution_to_markov_decision_problem_w.md)
 - [\[ICLR 2026\] Solving Parameter-Robust Avoid Problems with Unknown Feasibility using Reinforcement Learning](solving_parameter-robust_avoid_problems_with_unknown_feasibility_using_reinforce.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VLM-3R integrates a metric-scale feed-forward 3D reconstruction model (CUT3R) with a VLM. It extracts implicit scene geometry tokens and camera motion tokens from **pure monocular video**, which are then fused into visual features via cross-attention for instruction tuning. This allows the model to perform spatial and
+  [CVPR 2026][Multimodal VLM][Visual Spatial Intelligence] VLM-3R integrates a metric-scale feed-forward 3D reconstruction model (CUT3R) with a VLM. It extracts implicit scene geometry tokens and camera motion tokens from **pure monocular video**, which are then fused into visual features via cross-attention for instruction tuning. This allows the model to perform spatial and temporal reasoning without relying on depth sensors or pre-built point cloud maps…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Spatial Intelligence"
+  - "3D Reconstruction Instruction Tuning"
+  - "Monocular Video"
+  - "Spatio-temporal Reasoning"
+  - "Geometric Encoder"
 date: 2026-05-08
-content_hash: 6efbdcad8778b178
+content_hash: 6ab289c67fe746e8
 ---
+
 # VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ On temporal tasks, the 7B VLM-3R (58.8) significantly outperforms the 72B baseli
 
 ## Related Papers
 
-- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
 - [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
 - [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
-- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
+- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
 - [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
+- [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
 
 </div>
 

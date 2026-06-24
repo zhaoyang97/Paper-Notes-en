@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] PRISM introduces "Retrieval-Augmented Generation (RAG)" into protein inverse folding: it retrieves fine-grained structure-sequence motif representations for each residue from a database of known proteins, then utilizes a hybrid self/cross-attention decoder to integrate these local fragments into the backbone context. T
+  [ICLR 2026][Computational Biology][Inverse Folding] PRISM introduces "Retrieval-Augmented Generation (RAG)" into protein inverse folding: it retrieves fine-grained structure-sequence motif representations for each residue from a database of known proteins, then utilizes a hybrid self/cross-attention decoder to integrate these local fragments into the backbone context. This pushes SoTA perplexity and amino acid recovery rates higher with minimal additional inference overhead (…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Inverse Folding"
+  - "Retrieval Augmentation"
+  - "Latent Variable Model"
+  - "Multimodal Representation"
+  - "Protein motif"
 date: 2026-05-08
-content_hash: 9c5eb436418d878e
+content_hash: f47ed4ae9b9d7e81
 ---
+
 # PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations
 
 **Conference**: ICLR 2026  
@@ -130,6 +136,7 @@ On average, PRISM reduces PPL from 2.68 to 2.43 (~9.3%) and increases AAR from 6
 - Value: ⭐⭐⭐⭐⭐ Efficient SoTA performance boost that is highly practical for the field.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

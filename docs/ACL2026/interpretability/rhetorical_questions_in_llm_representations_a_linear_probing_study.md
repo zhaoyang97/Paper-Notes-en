@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rhetorical Questions in LLM Representations: A Linear Probing Study
 description: >-
-  [ACL 2026][Interpretability][Paper Note] Through linear probing analysis of how LLMs internally represent rhetorical questions, it is discovered that rhetorical questions are linearly separable in the representation space and transferable across datasets. However, the probe directions learned from different datasets are inconsistent—rhetorical questions are e
+  [ACL 2026][Interpretability][Rhetorical questions] Through linear probing analysis of how LLMs internally represent rhetorical questions, it is discovered that rhetorical questions are linearly separable in the representation space and transferable across datasets. However, the probe directions learned from different datasets are inconsistent—rhetorical questions are encoded by multiple heterogeneous linear directions rather than a single unified dimension.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Rhetorical questions"
+  - "linear probing"
+  - "LLM representations"
+  - "cross-dataset transfer"
+  - "rhetorical analysis"
 date: 2026-05-08
-content_hash: ec1240200781a972
+content_hash: 3721e1471c0fd79e
 ---
+
 # Rhetorical Questions in LLM Representations: A Linear Probing Study
 
 **Conference**: ACL 2026  
@@ -137,11 +143,11 @@ diffMean requires no training; Logistic Regression and hinge loss are optimized 
 
 ## Related Papers
 
-- [\[ICLR 2026\] One Language, Two Scripts: Probing Script-Invariance in LLM Concept Representations](../../ICLR2026/interpretability/one_language_two_scripts_probing_script-invariance_in_llm_concept_representation.md)
 - [\[ACL 2026\] Crosscoding Through Time: Tracking Emergence & Consolidation Of Linguistic Representations Throughout LLM Pretraining](crosscoding_through_time_tracking_emergence_consolidation_of_linguistic_represen.md)
-- [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
 - [\[ICLR 2026\] Dynamic Reflections: Probing Video Representations with Text Alignment](../../ICLR2026/interpretability/dynamic_reflections_probing_video_representations_with_text_alignment.md)
-- [\[ACL 2026\] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations](adaptivek_complexity-driven_sparse_autoencoders_for_interpretable_language_model.md)
+- [\[ACL 2026\] Probing for Reading Times](probing_for_reading_times.md)
+- [\[ACL 2026\] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing](probing_semantic_alignment_lexical_invariance_and_syntactic_influence_in_llm_met.md)
+- [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
 
 </div>
 

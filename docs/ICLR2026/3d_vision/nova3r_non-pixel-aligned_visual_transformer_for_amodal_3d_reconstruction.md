@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction
 description: >-
-  [ICLR 2026][3D Vision][flow-matching] NOVA3R is proposed for non-pixel-aligned complete 3D reconstruction from unposed images. It employs learnable scene tokens to aggregate global information across views and a flow-matching-based diffusion 3D decoder to generate complete point clouds (including occluded areas). This addresses two fundamental limitations
+  [ICLR 2026][3D Vision][Non-pixel-aligned] NOVA3R is proposed for non-pixel-aligned complete 3D reconstruction from unposed images. It employs learnable scene tokens to aggregate global information across views and a flow-matching-based diffusion 3D decoder to generate complete point clouds (including occluded areas). This addresses two fundamental limitations of pixel-aligned methods—only reconstructing visible surfaces and creating redundant geometry in overlapping regions—o…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - flow-matching
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Non-pixel-aligned"
+  - "amodal 3D reconstruction"
+  - "scene tokens"
+  - "flow-matching"
+  - "complete point clouds"
 date: 2026-05-08
-content_hash: da2265d3b939092f
+content_hash: 5c11e4ec3a1cee5b
 ---
+
 # NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction
 
 **Conference**: ICLR 2026  
@@ -144,11 +149,11 @@ Stage 2 trains an image encoder to map $K$ unposed images to the same latent spa
 
 ## Related Papers
 
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
 - [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
 - [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](fastvggt_fast_visual_geometry_transformer.md)
 - [\[ICLR 2026\] HoloPart: Generative 3D Part Amodal Segmentation](holopart_generative_3d_part_amodal_segmentation.md)
-- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](../../CVPR2026/3d_vision/dvgt_driving_visual_geometry_transformer.md)
-- [\[CVPR 2025\] Pixel-Aligned RGB-NIR Stereo Imaging and Dataset for Robot Vision](../../CVPR2025/3d_vision/pixel-aligned_rgb-nir_stereo_imaging_and_dataset_for_robot_vision.md)
+- [\[ICLR 2026\] STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer](stream3r_scalable_sequential_3d_reconstruction_with_causal_transformer.md)
 
 </div>
 

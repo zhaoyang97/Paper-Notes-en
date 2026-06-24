@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RacketVision: A Multiple Racket Sports Benchmark for Unified Ball and Racket Analysis
 description: >-
-  [AAAI 2026][Autonomous Driving][Ball Sports Analysis] This paper presents RacketVision—the first large-scale benchmark covering three racket sports (table tennis, tennis…
+  [AAAI 2026 Oral][Autonomous Driving][Ball Sports Analysis] This paper presents RacketVision—the first large-scale benchmark covering three racket sports (table tennis, tennis, and badminton)—which introduces racket pose annotations for the first time and defines three interconnected tasks: ball tracking, racket pose estimation, and ball trajectory prediction. The work reveals the critical role of cross-attention fusion in multimodal trajectory prediction.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Autonomous Driving"
   - "Ball Sports Analysis"
   - "Racket Pose Estimation"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Fusion"
   - "Cross-Sport Learning"
 date: 2026-05-08
-content_hash: d755f05dc9a0e3fd
+content_hash: b10b60e58f131038
 ---
 
 # RacketVision: A Multiple Racket Sports Benchmark for Unified Ball and Racket Analysis
@@ -182,8 +182,8 @@ Three fusion approaches are explored for the trajectory prediction task:
 ## Related Papers
 
 - [\[ICCV 2025\] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving](../../ICCV2025/autonomous_driving/uniocc_a_unified_benchmark_for_occupancy_forecasting_and_prediction_in_autonomou.md)
-- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
 - [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
+- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors](priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
 - [\[AAAI 2026\] When Person Re-Identification Meets Event Camera: A Benchmark Dataset and An Attribute-guided Re-Identification Framework](when_person_re-identification_meets_event_camera_a_benchmark_dataset_and_an_attr.md)
 - [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](../../CVPR2026/autonomous_driving/an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 

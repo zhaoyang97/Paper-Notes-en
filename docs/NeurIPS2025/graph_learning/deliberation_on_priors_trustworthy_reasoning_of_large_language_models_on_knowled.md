@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graph Question Answering] This paper proposes DP (Deliberation on Priors), a framework that leverages structural priors from knowledge graphs via progressive knowledge distillatio…
+  [NeurIPS 2025][Graph Learning][Knowledge Graph Question Answering] This paper proposes DP (Deliberation on Priors), a framework that leverages structural priors from knowledge graphs via progressive knowledge distillation to generate faithful relational paths, and validates reasoning reliability through a reasoning introspection strategy based on constraint priors, achieving new state-of-the-art performance on KGQA benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Constrained Reasoning"
   - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 05bdaab3fba8ed94
+content_hash: d80e2708d44b95da
 ---
 
 # Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs
@@ -129,11 +129,11 @@ The path generator is built on LLaMA3.1-8B-Instruct with LoRA for efficient adap
 
 ## Related Papers
 
+- [\[ICML 2025\] Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models](../../ICML2025/graph_learning/graph-constrained_reasoning_faithful_reasoning_on_knowledge_graphs_with_large_la.md)
 - [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
-- [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
-- [\[AAAI 2026\] PathMind: A Retrieve-Prioritize-Reason Framework for Knowledge Graph Reasoning with Large Language Models](../../AAAI2026/graph_learning/pathmind_a_retrieve-prioritize-reason_framework_for_knowledge_graph_reasoning_wi.md)
-- [\[NeurIPS 2025\] Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models](reasoning_meets_representation_envisioning_neuro-symbolic_wireless_foundation_mo.md)
-- [\[ICML 2026\] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering](../../ICML2026/graph_learning/kbqa-r1_reinforcing_large_language_models_for_knowledge_base_question_answering.md)
+- [\[ACL 2025\] Can Knowledge Graphs Make Large Language Models More Trustworthy? An Empirical Study Over Open-ended Question Answering](../../ACL2025/graph_learning/kg_llm_trustworthy_qa.md)
+- [\[ACL 2025\] FiDeLiS: Faithful Reasoning in Large Language Model for Knowledge Graph Question Answering](../../ACL2025/graph_learning/fidelis_faithful_reasoning_in_large_language_model_for_knowledge_graph_question_.md)
+- [\[ACL 2025\] Ontology-Guided Reverse Thinking Makes Large Language Models Stronger on Knowledge Graph Question Answering](../../ACL2025/graph_learning/ontology-guided_reverse_thinking_makes_large_language_models_stronger_on_knowled.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment
 description: >-
-  [ACL 2026][LLM Safety][jailbreak] LLM-VA discovers that LLMs encode "whether to answer" (answer vector $v_a$) and "input safety" (benign vector $v_b$) into two nearly orthogonal directions internally, leading to a persistent trade-off between jailbreak and over-refusal. By performing closed-form minimal-norm weight updates to align $v_a$ and $v_b$, the
+  [ACL 2026][LLM Safety][jailbreak] LLM-VA discovers that LLMs encode "whether to answer" (answer vector $v_a$) and "input safety" (benign vector $v_b$) into two nearly orthogonal directions internally, leading to a persistent trade-off between jailbreak and over-refusal. By performing closed-form minimal-norm weight updates to align $v_a$ and $v_b$, the model's "willingness to answer" becomes causally dependent on "input safety." Evaluated on 12 LLMs…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - jailbreak
-  - over-refusal
-  - vector steering
-  - SVM probe
+  - "ACL 2026"
+  - "LLM Safety"
+  - "jailbreak"
+  - "over-refusal"
+  - "vector steering"
+  - "SVM probe"
+  - "closed-form weight update"
 date: 2026-05-08
-content_hash: 95dd622f67460122
+content_hash: c376e9c53a678bf9
 ---
+
 # LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment
 
 **Conference**: ACL 2026  
@@ -146,10 +148,10 @@ LLM-VA is the only method that simultaneously avoids fine-tuning and architectur
 
 ## Related Papers
 
+- [\[ICLR 2026\] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](../../ICLR2026/llm_safety/managerbench_evaluating_the_safety-pragmatism_trade-off_in_autonomous_llms.md)
 - [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](../../ICLR2026/llm_safety/improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)
 - [\[ACL 2025\] From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models](../../ACL2025/llm_safety/from_tradeoff_to_synergy_a_versatile.md)
 - [\[ACL 2026\] Hard to Read, Easy to Jailbreak: How Visual Degradation Bypasses MLLM Safety Alignment](hard_to_read_easy_to_jailbreak_how_visual_degradation_bypasses_mllm_safety_align.md)
-- [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
 - [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
 
 </div>

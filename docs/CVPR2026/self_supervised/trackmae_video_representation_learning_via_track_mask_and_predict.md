@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TrackMAE: Video Representation Learning via Track, Mask, and Predict
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Masked Video Modeling] Explicit motion signals are introduced into the masked video modeling (MVM) framework: point trajectories are extracted using CoTracker3 as additional reconstruction targets, and a motion-aware masking strategy is designed to jointly learn spatial reconstruction and motion prediction. This approach significantly outper
+  [CVPR 2026][Self-Supervised Learning][Masked Video Modeling] Explicit motion signals are introduced into the masked video modeling (MVM) framework: point trajectories are extracted using CoTracker3 as additional reconstruction targets, and a motion-aware masking strategy is designed to jointly learn spatial reconstruction and motion prediction. This approach significantly outperforms existing self-supervised video methods on motion-sensitive benchmarks (SSv2, FineGym).
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Masked Video Modeling
-  - Point Tracking
-  - Motion Prediction
-  - Self-Supervised Pretraining
-  - Video Representation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Masked Video Modeling"
+  - "Point Tracking"
+  - "Motion Prediction"
+  - "Self-Supervised Pretraining"
+  - "Video Representation"
 date: 2026-05-08
-content_hash: eff80d7bb05b5a42
+content_hash: ea08c2d90b5a0f5d
 ---
+
 # TrackMAE: Video Representation Learning via Track, Mask, and Predict
 
 **Conference**: CVPR 2026  
@@ -192,8 +193,8 @@ Upsampling ($14\to28$) outperforms actual $56\times56$ dense tracking with zero 
 ## Related Papers
 
 - [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
-- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
-- [\[CVPR 2026\] Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physica.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] Recurrent Video Masked Autoencoders](recurrent_video_masked_autoencoders.md)
 - [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
 - [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](how_much_3d_do_video_foundation_models_encode.md)
 

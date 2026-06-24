@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] NAS3R is a **completely self-supervised** feed-forward 3D reconstruction framework. Without using any ground-truth (GT) labels or pre-trained priors during training, it jointly learns 3D Gaussians, camera intrinsics/extrinsics, and depth from uncalibrated, poseless multi-view images using only photometric loss signal f
+  [CVPR 2026][3D Vision][Self-Supervised 3D Reconstruction] NAS3R is a **completely self-supervised** feed-forward 3D reconstruction framework. Without using any ground-truth (GT) labels or pre-trained priors during training, it jointly learns 3D Gaussians, camera intrinsics/extrinsics, and depth from uncalibrated, poseless multi-view images using only photometric loss signal from rendered target views. Its novel view synthesis (NVS) quality approaches supervised methods…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Self-Supervised 3D Reconstruction"
+  - "Novel View Synthesis"
+  - "3D Gaussian Splatting"
+  - "Camera Pose Estimation"
+  - "Photometric BA"
 date: 2026-05-08
-content_hash: 662f1ddb031c452c
+content_hash: 8a526f70fa6f9b7a
 ---
+
 # From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -171,11 +177,11 @@ Indices for NVS, pose, and depth consistently improve with more data and views.
 
 ## Related Papers
 
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)
+- [\[CVPR 2026\] Charge: A Comprehensive Novel View Synthesis Benchmark and Dataset to Bind Them All](charge_a_comprehensive_novel_view_synthesis_benchmark_and_dataset_to_bind_them_a.md)
+- [\[ICLR 2026\] True Self-Supervised Novel View Synthesis is Transferable](../../ICLR2026/3d_vision/true_self-supervised_novel_view_synthesis_is_transferable.md)
+- [\[CVPR 2026\] Thermal is Always Wild: Characterizing and Addressing Challenges in Thermal-Only Novel View Synthesis](thermal_is_always_wild_characterizing_and_addressing_challenges_in_thermal-only_.md)
+- [\[CVPR 2026\] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis](pr-iqa_partial-reference_image_quality_assessment_for_diffusion-based_novel_view.md)
+- [\[CVPR 2026\] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments](wildrayzer_self-supervised_large_view_synthesis_in_dynamic_environments.md)
 
 </div>
 

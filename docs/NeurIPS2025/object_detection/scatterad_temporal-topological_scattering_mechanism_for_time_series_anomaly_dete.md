@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection
 description: >-
-  [NeurIPS 2025][Object Detection][time series anomaly detection] This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dime…
+  [NeurIPS 2025][Object Detection][time series anomaly detection] This paper proposes *scattering* as a novel inductive bias for anomaly detection — anomalous samples are more dispersed than normal samples in the high-dimensional representation space. A dual-encoder architecture (temporal + topological) combined with hyperspherical scattering center constraints and contrastive fusion is used to learn joint temporal-topological representations, achieving best performance in 15/2…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -13,7 +13,7 @@ tags:
   - "contrastive learning"
   - "hypersphere"
 date: 2026-05-08
-content_hash: c1d5a829b6f4ac7b
+content_hash: 2f9d0e0b63d753b6
 ---
 
 # ScatterAD: Temporal-Topological Scattering Mechanism for Time Series Anomaly Detection
@@ -132,10 +132,10 @@ $L = L_{\text{scatter}} + \alpha L_{\text{time}} + \beta L_{\text{contrast}}$. T
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
+- [\[ICML 2025\] KAN-AD: Time Series Anomaly Detection with Kolmogorov-Arnold Networks](../../ICML2025/object_detection/kan-ad_time_series_anomaly_detection_with_kolmogorov-arnold_networks.md)
+- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
 - [\[ICLR 2026\] Contextual and Seasonal LSTMs for Time Series Anomaly Detection](../../ICLR2026/object_detection/contextual_and_seasonal_lstms_for_time_series_anomaly_detection.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
 - [\[AAAI 2026\] Harnessing Vision-Language Models for Time Series Anomaly Detection](../../AAAI2026/object_detection/harnessing_vision-language_models_for_time_series_anomaly_detection.md)
-- [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
 
 </div>
 

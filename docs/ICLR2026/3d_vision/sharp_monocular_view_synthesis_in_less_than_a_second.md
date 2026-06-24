@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Sharp Monocular View Synthesis in Less Than a Second
 description: >-
-  [ICLR 2026][3D Vision][view synthesis] SHARP generates approximately 1.2 million 3D Gaussians from a single image via a single feedforward neural network. It completes inference in less than 1 second on an A100 GPU and supports rendering speeds exceeding 100 FPS. It achieves zero-shot SOTA performance across 6 datasets, reducing LPIPS by 25–34% compared to
+  [ICLR 2026][3D Vision][view synthesis] SHARP generates approximately 1.2 million 3D Gaussians from a single image via a single feedforward neural network. It completes inference in less than 1 second on an A100 GPU and supports rendering speeds exceeding 100 FPS. It achieves zero-shot SOTA performance across 6 datasets, reducing LPIPS by 25–34% compared to the strongest prior methods while shortening synthesis time by three orders of magnitude.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - view synthesis
-  - 3D Gaussian splatting
-  - monocular depth
-  - real-time rendering
-  - feedforward
+  - "ICLR 2026"
+  - "3D Vision"
+  - "view synthesis"
+  - "3D Gaussian splatting"
+  - "monocular depth"
+  - "real-time rendering"
+  - "feedforward"
 date: 2026-05-08
-content_hash: abe3060d2c9b1546
+content_hash: 58318049922739f1
 ---
+
 # Sharp Monocular View Synthesis in Less Than a Second
 
 **Conference**: ICLR 2026  
@@ -167,8 +168,8 @@ This paper achieves a Pareto optimum in quality and speed for single-image novel
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](../../CVPR2026/3d_vision/movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
 - [\[CVPR 2025\] Sharp-It: A Multi-view to Multi-view Diffusion Model for 3D Synthesis and Manipulation](../../CVPR2025/3d_vision/sharp-it_a_multi-view_to_multi-view_diffusion_model_for_3d_synthesis_and_manipul.md)
 - [\[ICLR 2026\] True Self-Supervised Novel View Synthesis is Transferable](true_self-supervised_novel_view_synthesis_is_transferable.md)
+- [\[ICLR 2026\] EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations](egoworld_translating_exocentric_view_to_egocentric_view_using_rich_exocentric_ob.md)
 - [\[ICLR 2026\] WorldTree: Towards 4D Dynamic Worlds from Monocular Video Using Tree-Chains](worldtree_towards_4d_dynamic_worlds_from_monocular_video_using_tree-chains.md)
-- [\[ICLR 2026\] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation](aligned_novel_view_image_and_geometry_synthesis_via_cross-modal_attention_instil.md)
 
 </div>
 

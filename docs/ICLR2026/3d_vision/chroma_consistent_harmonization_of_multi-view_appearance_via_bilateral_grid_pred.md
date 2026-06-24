@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] CHROMA: Consistent Harmonization of Multi-View Appearance via Bilateral Grid Prediction
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] CHROMA utilizes a multi-view aware Transformer to predict per-frame 3D bilateral grid affine transformations for an entire image sequence at once. It corrects appearance inconsistencies caused by camera ISP/exposure differences to a reference frame in a feed-forward manner, significantly improving the quality of novel
+  [ICLR 2026][3D Vision][Appearance Harmonization] CHROMA utilizes a multi-view aware Transformer to predict per-frame 3D bilateral grid affine transformations for an entire image sequence at once. It corrects appearance inconsistencies caused by camera ISP/exposure differences to a reference frame in a feed-forward manner, significantly improving the quality of novel view synthesis without slowing down 3DGS training.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Appearance Harmonization"
+  - "Bilateral Grid"
+  - "Multi-view Consistency"
+  - "3D Gaussian Splatting"
+  - "Feed-forward Transformer"
+  - "Self-supervision"
 date: 2026-05-08
-content_hash: 59f3a6fe43643ab3
+content_hash: af1a52a47588a938
 ---
+
 # CHROMA: Consistent Harmonization of Multi-View Appearance via Bilateral Grid Prediction
 
 **Conference**: ICLR 2026  
@@ -118,10 +125,10 @@ Key Note: Backends with CHROMA generally outperform per-scene methods that joint
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](../../CVPR2026/3d_vision/multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[ICLR 2026\] FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction](fantasyworld_geometry-consistent_world_modeling_via_unified_video_and_3d_predict.md)
+- [\[ICLR 2026\] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
-- [\[CVPR 2026\] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting](../../CVPR2026/3d_vision/splatsure_selective_super-resolution_for_multi-view_consistent_3d_gaussian_splat.md)
-- [\[NeurIPS 2025\] WildCAT3D: Appearance-Aware Multi-View Diffusion in the Wild](../../NeurIPS2025/3d_vision/wildcat3d_appearance-aware_multi-view_diffusion_in_the_wild.md)
-- [\[CVPR 2026\] Skullptor: High Fidelity 3D Head Reconstruction in Seconds with Multi-View Normal Prediction](../../CVPR2026/3d_vision/skullptor_high_fidelity_3d_head_reconstruction_in_seconds_with_multi-view_normal.md)
+- [\[ECCV 2024\] GaussCtrl: Multi-View Consistent Text-Driven 3D Gaussian Splatting Editing](../../ECCV2024/3d_vision/gaussctrl_multi-view_consistent_text-driven_3d_gaussian_splatting_editing.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper systematically reviews the functional evolution of uncertainty quantification (UQ) in LLMs from "passive diagnostic metrics" to "active control signals," covering three frontier domains: advanced reasoning (guiding computation allocation and self-correction), autonomous agents (driving meta-cognitive decisio
+  [ACL 2026][LLM Safety][Uncertainty Quantification] This paper systematically reviews the functional evolution of uncertainty quantification (UQ) in LLMs from "passive diagnostic metrics" to "active control signals," covering three frontier domains: advanced reasoning (guiding computation allocation and self-correction), autonomous agents (driving meta-cognitive decisions for tool use and information acquisition), and reinforcement learning (mitigating reward hacking and enabl…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Uncertainty Quantification"
+  - "Active Control Signal"
+  - "Reasoning Optimization"
+  - "Autonomous Agents"
+  - "Reward Modeling"
 date: 2026-05-08
-content_hash: bcab137864999f5d
+content_hash: 00692bd9cbd053a3
 ---
+
 # From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models
 
 **Conference**: ACL 2026  

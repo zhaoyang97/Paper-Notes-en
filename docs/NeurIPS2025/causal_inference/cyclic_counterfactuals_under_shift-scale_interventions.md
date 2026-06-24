@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cyclic Counterfactuals under Shift–Scale Interventions
 description: >-
-  [NeurIPS 2025][Causal Inference][cyclic causal models] This paper establishes a theoretical framework for counterfactual reasoning under shift–scale soft interventions in cyclic (non-DAG) structural causal models (SCMs).…
+  [NeurIPS 2025][Causal Inference][cyclic causal models] This paper establishes a theoretical framework for counterfactual reasoning under shift–scale soft interventions in cyclic (non-DAG) structural causal models (SCMs). It proves that a global contraction condition guarantees unique solvability of cyclic SCMs and derives sub-Gaussian concentration inequalities for counterfactual distributions.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -11,7 +11,7 @@ tags:
   - "soft interventions"
   - "contraction mappings"
 date: 2026-05-08
-content_hash: 1f0b90f3df697d6e
+content_hash: 1984ef146be2fe0c
 ---
 
 # Cyclic Counterfactuals under Shift–Scale Interventions
@@ -135,11 +135,11 @@ The intervention applies a scale of $\alpha=0.8$ and a shift of $\beta=1.0$ to i
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Characterization and Learning of Causal Graphs from Hard Interventions](characterization_and_learning_of_causal_graphs_from_hard_interventions.md)
+- [\[ICLR 2026\] Privacy-Protected Causal Survival Analysis Under Distribution Shift](../../ICLR2026/causal_inference/privacy-protected_causal_survival_analysis_under_distribution_shift.md)
 - [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
 - [\[CVPR 2026\] Retrieving Counterfactuals Improves Visual In-Context Learning](../../CVPR2026/causal_inference/retrieving_counterfactuals_improves_visual_in-context_learning.md)
-- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](../../ICLR2026/causal_inference/distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
-- [\[ACL 2026\] Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size](../../ACL2026/causal_inference/better_and_worse_with_scale_how_contextual_entrainment_diverges_with_model_size.md)
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations](../../ICLR2026/causal_inference/rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_perturbations.md)
+- [\[ICML 2025\] RATE: Causal Explainability of Reward Models with Imperfect Counterfactuals](../../ICML2025/causal_inference/rate_causal_explainability_of_reward_models_with_imperfect_counterfactuals.md)
 
 </div>
 

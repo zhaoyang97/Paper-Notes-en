@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][Image Editing] Constructs a high-quality dataset, EditReward-Data, containing 200K expert-annotated preference pairs, and trains the EditReward model. This model achieves SOTA human alignment across multiple image editing benchmarks and significantly improves downstream editing model performance when used as a data filter.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Image Editing
-  - VLM
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Image Editing"
+  - "Reward Model"
+  - "Human Preference"
+  - "Data Filtering"
+  - "VLM"
 date: 2026-05-08
-content_hash: 22cd9601beedf562
+content_hash: 59e09ccbeb44e4ec
 ---
+
 # EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing
 
 **Conference**: ICLR 2026  
@@ -157,10 +161,10 @@ The Top 20K subset provides the optimal balance, elevating the open-source Step1
 ## Related Papers
 
 - [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
+- [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
 - [\[CVPR 2025\] Towards Scalable Human-Aligned Benchmark for Text-Guided Image Editing](../../CVPR2025/image_generation/towards_scalable_human-aligned_benchmark_for_text-guided_image_editing.md)
+- [\[ICLR 2026\] Learning an Image Editing Model without Image Editing Pairs](learning_an_image_editing_model_without_image_editing_pairs.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
-- [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
-- [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](../../CVPR2026/image_generation/compbench_benchmarking_complex_instruction-guided_image_editing.md)
 
 </div>
 

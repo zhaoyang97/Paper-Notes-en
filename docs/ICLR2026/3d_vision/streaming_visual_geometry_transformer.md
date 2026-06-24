@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Streaming Visual Geometry Transformer
 description: >-
-  [ICLR 2026][3D Vision][Knowledge Distillation] This paper proposes StreamVGGT, which transforms the offline global-attention-based VGGT into a causal Transformer utilizing "temporal causal attention + cached memory tokens." This enables 3D geometric reconstruction to be updated incrementally frame-by-frame (reducing latency from $O(N^2)$ to $O(N)$). By distilling f
+  [ICLR 2026][3D Vision][Streaming 3D Reconstruction] This paper proposes StreamVGGT, which transforms the offline global-attention-based VGGT into a causal Transformer utilizing "temporal causal attention + cached memory tokens." This enables 3D geometric reconstruction to be updated incrementally frame-by-frame (reducing latency from $O(N^2)$ to $O(N)$). By distilling from the original VGGT as a teacher for low-cost training, StreamVGGT approaches the performance of the offli…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Streaming 3D Reconstruction"
+  - "Causal Transformer"
+  - "KV Cache Memory"
+  - "Knowledge Distillation"
+  - "Online Perception"
 date: 2026-05-08
-content_hash: 081264efedb8c1f6
+content_hash: e07ffa61f0860f39
 ---
+
 # Streaming Visual Geometry Transformer
 
 **Conference**: ICLR 2026  
@@ -165,11 +170,11 @@ Cache Mechanism Ablation (Table 10, frame 5):
 
 ## Related Papers
 
-- [\[ICLR 2026\] $\pi^3$: Permutation-Equivariant Visual Geometry Learning](pi3_permutation-equivariant_visual_geometry_learning.md)
-- [\[ICLR 2026\] IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction](iggt_instance-grounded_geometry_transformer_for_semantic_3d_reconstruction.md)
-- [\[ICLR 2026\] GeoPurify: A Data-Efficient Geometric Distillation Framework for Open-Vocabulary 3D Segmentation](geopurify_a_data-efficient_geometric_distillation_framework_for_open-vocabulary_.md)
-- [\[ICLR 2026\] Variation-Aware Flexible 3D Gaussian Editing](variation-aware_flexible_3d_gaussian_editing.md)
+- [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](quantized_visual_geometry_grounded_transformer.md)
 - [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](fastvggt_fast_visual_geometry_transformer.md)
+- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](../../CVPR2026/3d_vision/longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](../../CVPR2026/3d_vision/dvgt_driving_visual_geometry_transformer.md)
+- [\[ICLR 2026\] STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer](stream3r_scalable_sequential_3d_reconstruction_with_causal_transformer.md)
 
 </div>
 

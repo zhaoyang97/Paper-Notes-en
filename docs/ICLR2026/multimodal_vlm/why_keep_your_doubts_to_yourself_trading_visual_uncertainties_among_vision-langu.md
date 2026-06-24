@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Why Keep Your Doubts to Yourself? Trading Visual Uncertainties among Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Thompson Sampling] This paper proposes **Agora**, which reconstructs the collaboration among multiple heterogeneous VLMs into an "uncertainty trading market." It decomposes epistemic uncertainty into three-dimensional tradable assets (perceptual, semantic, and reasoning). Agents sell uncertainty to the most capable and cost-effective exp
+  [ICLR 2026][Multimodal VLM][VLM Multi-Agent] This paper proposes **Agora**, which reconstructs the collaboration among multiple heterogeneous VLMs into an "uncertainty trading market." It decomposes epistemic uncertainty into three-dimensional tradable assets (perceptual, semantic, and reasoning). Agents sell uncertainty to the most capable and cost-effective experts according to economic rules of "minimizing total system cost." A market broker extended from Thompson Sampling…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Thompson Sampling
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM Multi-Agent"
+  - "Uncertainty Trading"
+  - "Market Mechanism"
+  - "Cost-Aware Coordination"
+  - "Thompson Sampling"
 date: 2026-05-08
-content_hash: 7591ab7a88b1ac5e
+content_hash: d0507c65e587c875
 ---
+
 # Why Keep Your Doubts to Yourself? Trading Visual Uncertainties among Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -145,15 +150,16 @@ Ablation of Utility Factors (MMBench V11 Test, $N=6$):
 - **Value**: ⭐⭐⭐⭐⭐ Provides a practical, high-performance, and cost-efficient paradigm for the pressing issue of VLM economic sustainability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICCV 2025\] ViLU: Learning Vision-Language Uncertainties for Failure Prediction](../../ICCV2025/multimodal_vlm/vilu_learning_vision-language_uncertainties_for_failure_prediction.md)
 - [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 - [\[ICLR 2026\] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs](multimodal_prompt_optimization_why_not_leverage_multiple_modalities_for_mllms.md)
 - [\[ICLR 2026\] ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Models](viper_empowering_the_self-evolution_of_visual_perception_abilities_in_vision-lan.md)
 - [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](../../CVPR2026/multimodal_vlm/the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
-- [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Active Learning with Foundation Model Priors: Efficient Learning under Class Imbalance
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] This paper proposes PriorAL, which utilizes foundation model predictions as priors for joint decision-making with small models via a "Product of Experts." It employs imbalance-aware entropy filtering to partition the unlabeled pool into a "clean set (for free pseudo-labeling)" and a "noise set (for human annotation),"
+  [ICML2026][Self-Supervised Learning][Active Learning] This paper proposes PriorAL, which utilizes foundation model predictions as priors for joint decision-making with small models via a "Product of Experts." It employs imbalance-aware entropy filtering to partition the unlabeled pool into a "clean set (for free pseudo-labeling)" and a "noise set (for human annotation)," achieving over 50% savings in labeling costs on image/text tasks characterized by both class imbalance and…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML2026"
+  - "Self-Supervised Learning"
+  - "Active Learning"
+  - "Class Imbalance"
+  - "Label Noise"
+  - "Foundation Model Priors"
+  - "Product of Experts"
 date: 2026-05-08
-content_hash: 1251260aedce0c69
+content_hash: a50c347e94a2532c
 ---
+
 # Active Learning with Foundation Model Priors: Efficient Learning under Class Imbalance
 
 **Conference**: ICML2026  
@@ -145,11 +151,11 @@ Experiments across **21 dataset configurations** (text: Trec, AGNews, SST-2; ima
 
 ## Related Papers
 
+- [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](../../CVPR2026/self_supervised/parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
+- [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](../../CVPR2026/self_supervised/temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
+- [\[ICCV 2025\] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models](../../ICCV2025/self_supervised/to_label_or_not_to_label_palm_-_a_predictive_model_for_evaluating_sample_efficie.md)
+- [\[ICML 2026\] How 'Neural' is a Neural Foundation Model?](how_neural_is_a_neural_foundation_model.md)
 - [\[ICML 2026\] InfoAtlas: A Foundation Model for Zero-Shot Statistical Dependence Estimation](infoatlas_a_foundation_model_for_zero-shot_statistical_dependence_estimate.md)
-- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](partco_part-level_correspondence_priors_enhance_category_discovery.md)
-- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
-- [\[ICML 2026\] A Refined Generalization Analysis for Extreme Multi-class Supervised Contrastive Representation Learning](a_refined_generalization_analysis_for_extreme_multi-class_supervised_contrastive.md)
-- [\[ICML 2026\] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models](numleak_public_numeric_benchmarks_as_latent_labels_in_foundation_models.md)
 
 </div>
 

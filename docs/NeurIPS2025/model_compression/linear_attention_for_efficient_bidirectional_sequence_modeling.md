@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Linear Attention for Efficient Bidirectional Sequence Modeling
 description: >-
-  [NeurIPS 2025][Model Compression][Linear Attention] This paper proposes Lion, a framework that, for the first time, systematically extends linear Transformers to bidirectional sequence modeling. It unifies three equivale…
+  [NeurIPS 2025][Model Compression][Linear Attention] This paper proposes Lion, a framework that, for the first time, systematically extends linear Transformers to bidirectional sequence modeling. It unifies three equivalent representations—full linear attention, bidirectional RNN, and chunkwise parallel—achieving training speeds up to 10× faster than SSMs while matching softmax Transformer performance.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Efficient Inference"
   - "Bidirectional RNN"
 date: 2026-05-08
-content_hash: 01c0ead8b3f470fa
+content_hash: 7fee18e56c051269
 ---
 
 # Linear Attention for Efficient Bidirectional Sequence Modeling
@@ -150,10 +150,10 @@ The Lion framework provides three theoretically equivalent representations for b
 ## Related Papers
 
 - [\[NeurIPS 2025\] RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling](rat_bridging_rnn_efficiency_and_attention_accuracy_via_chunk-based_sequence_mode.md)
+- [\[CVPR 2025\] LALIC: Linear Attention Modeling for Learned Image Compression](../../CVPR2025/model_compression/linear_attention_modeling_for_learned_image_compression.md)
 - [\[NeurIPS 2025\] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings](a-thought_efficient_reasoning_via_bidirectional_compression_for_low-resource_set.md)
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
 - [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](../../ICCV2025/model_compression/fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
 
 </div>
 

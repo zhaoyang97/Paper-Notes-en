@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting 3D Reconstruction Kernels as Low-Pass Filters
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper reinterprets the "reconstruction kernel" in 3D Gaussian Splatting (3DGS) as a "low-pass filter" in signal reconstruction. It demonstrates that Gaussian, Exponential, and Student’s t kernels are non-ideal low-pass filters (causing aliasing via high-frequency leakage). Accordingly, it proposes the **Jinc kerne
+  [CVPR 2026][3D Vision][Signal Processing] This paper reinterprets the "reconstruction kernel" in 3D Gaussian Splatting (3DGS) as a "low-pass filter" in signal reconstruction. It demonstrates that Gaussian, Exponential, and Student’s t kernels are non-ideal low-pass filters (causing aliasing via high-frequency leakage). Accordingly, it proposes the **Jinc kernel**, derived from the ideal low-pass filter, and introduces a **modulated kernel** to balance frequency fidelity with…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Signal Processing"
+  - "Ideal Low-pass Filter"
+  - "Jinc Kernel"
+  - "Modulated Kernel"
+  - "Anti-aliasing"
 date: 2026-05-08
-content_hash: d2fee85f3c3c698d
+content_hash: f70853075453bcbe
 ---
+
 # Revisiting 3D Reconstruction Kernels as Low-Pass Filters
 
 **Conference**: CVPR 2026  
@@ -146,15 +152,16 @@ At 64×64, Jinc is 0.70 dB higher than SSS and 5.86 dB higher than 3DGS. PSNR ga
 - **Value**: ⭐⭐⭐⭐ Offers a transferable modulation trick and a unified analysis framework for 3DGS anti-aliasing.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
-- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 - [\[CVPR 2026\] Omni-3DEdit: Generalized Versatile 3D Editing in One-Pass](omni-3dedit_generalized_versatile_3d_editing_in_one-pass.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
+- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 - [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
+- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] CRG performs a precise linear decomposition of each attention head's output into visual and textual routes. It estimates the causal "do-effect" of both routes on the current token through one forward and one backward pass. It then systematically mitigates language prior hallucinations in LVLMs without training by suppr
+  [ICML 2026 Spotlight][Hallucination Detection][LVLM Hallucination] CRG performs a precise linear decomposition of each attention head's output into visual and textual routes. It estimates the causal "do-effect" of both routes on the current token through one forward and one backward pass. It then systematically mitigates language prior hallucinations in LVLMs without training by suppressing only the textual routes of heads where visual and textual signs conflict and the VRI i…
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026 Spotlight"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "Causal Intervention"
+  - "Attention Head Gating"
+  - "Route Decomposition"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 7b16f39b4e1b54b1
+content_hash: 3ae885e5139d5df3
 ---
+
 # Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating
 
 **Conference**: ICML 2026 Spotlight  
@@ -120,15 +126,17 @@ On LLaVA-1.5-7B, Qwen-VL-Chat, and Qwen2.5-VL-7B-Instruct, CRG consistently outp
 
 <div class="related-papers" markdown="1">
 
-1. **VCD**: Mitigating Object Hallucinations in Large Vision-Language Models through Visual Contrastive Decoding (CVPR 2024)
-2. **OPERA**: Alleviating Hallucination in Multi-Modal Large Language Models via Over-Trust Penalty and Retrospection-Allocation (CVPR 2024)
-3. **VTI**: Visual-Textual Intervention for Hallucination Mitigation (NeurIPS 2024)
-4. **PAI**: Probing and Alleviating Hallucination in Large Vision-Language Models (arXiv 2024)
+## Related Papers
+
+- [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](../../CVPR2026/hallucination/causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
+- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
+- [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
+- [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](../../ACL2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
+- [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](../../NeurIPS2025/hallucination/causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](../../CVPR2026/hallucination/causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)

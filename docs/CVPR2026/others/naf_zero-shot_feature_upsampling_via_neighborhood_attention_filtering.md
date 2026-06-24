@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering
 description: >-
-  [CVPR 2026][Others][Paper Note] NAF reformulates the task of "upsampling low-resolution features from Vision Foundation Models (VFMs)" as a neighborhood attention filtering process that **only observes the high-resolution input image, ignoring the VFM features themselves** during guidance. Trained once, it can be applied zero-shot to any VFM (includi
+  [CVPR 2026][Feature Upsampling] NAF reformulates the task of "upsampling low-resolution features from Vision Foundation Models (VFMs)" as a neighborhood attention filtering process that **only observes the high-resolution input image, ignoring the VFM features themselves** during guidance. Trained once, it can be applied zero-shot to any VFM (including 7B models) and any magnification factor. It achieves new SOTA results across downstream tasks such as semantic segmentation…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Feature Upsampling"
+  - "Vision Foundation Models"
+  - "Zero-Shot"
+  - "Neighborhood Attention"
+  - "Joint Bilateral Filtering"
 date: 2026-05-08
-content_hash: f131b113c83953e4
+content_hash: de7a4223cb60be50
 ---
+
 # NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Impact of Key design and spatial encoding (Cityscapes mIoU):
 ## Related Papers
 
 - [\[CVPR 2026\] Upsample Anything: A Simple and Hard to Beat Baseline for Feature Upsampling](upsample_anything_a_simple_and_hard_to_beat_baseline_for_feature_upsampling.md)
-- [\[CVPR 2026\] UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders](uplift_efficient_pixel-dense_feature_upsampling_with_local_attenders.md)
+- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
 - [\[ICLR 2026\] AnyUp: Universal Feature Upsampling](../../ICLR2026/others/anyup_universal_feature_upsampling.md)
 - [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
-- [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
 
 </div>
 

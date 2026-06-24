@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Fragments to Facts: A Curriculum-Driven DPO Approach for Generating Hindi News Veracity Explanations
 description: >-
-  [ACL 2026][Multilingual & Translation][Hindi fact-checking] This paper proposes DeFactoX, which organizes Hindi news preference data using curriculum learning and incorporates two signals—Actuality (factuality) and Finesse (stability)—into DPO. This enables the model to simultaneously predict news veracity and generate Hindi rationales that closely align with manual fact-checki
+  [ACL2026 Findings][Multilingual & Machine Translation][Hindi fact-checking] This paper proposes DeFactoX, which organizes Hindi news preference data using curriculum learning and incorporates two signals—Actuality (factuality) and Finesse (stability)—into DPO. This enables the model to simultaneously predict news veracity and generate Hindi rationales that closely align with manual fact-checking explanations.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - Hindi fact-checking
-  - DPO
-  - curriculum learning
-  - explanation generation
-  - hallucination mitigation
+  - "ACL2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "Hindi fact-checking"
+  - "DPO"
+  - "curriculum learning"
+  - "explanation generation"
+  - "hallucination mitigation"
 date: 2026-05-08
-content_hash: 83f812a174a1e2c2
+content_hash: b4354b4273ac7f12
 ---
+
 # From Fragments to Facts: A Curriculum-Driven DPO Approach for Generating Hindi News Veracity Explanations
 
 **Conference**: ACL2026 Findings  
@@ -149,9 +150,9 @@ Five models were fine-tuned: Gemma-2-9B-It, Llama-3.1-8B-Instruct, Mistral-7B-In
 ## Related Papers
 
 - [\[ACL 2026\] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning](clewr_curriculum_learning_with_restarts_for_machine_translation_preference_learn.md)
+- [\[ACL 2025\] Code-Switching Curriculum Learning for Multilingual Transfer in LLMs](../../ACL2025/multilingual_mt/code-switching_curriculum_learning_for_multilingual_transfer_in_llms.md)
 - [\[ACL 2025\] CLIX: Cross-Lingual Explanations of Idiomatic Expressions](../../ACL2025/multilingual_mt/clix_cross-lingual_explanations_of_idiomatic_expressions.md)
 - [\[ACL 2026\] SERM: Self-Evolving Relevance Model with Agent-Driven Learning from Massive Query Streams](serm_self-evolving_relevance_model_with_agent-driven_learning_from_massive_query.md)
-- [\[ACL 2025\] Code-Switching Curriculum Learning for Multilingual Transfer in LLMs](../../ACL2025/multilingual_mt/code-switching_curriculum_learning_for_multilingual_transfer_in_llms.md)
 - [\[ACL 2025\] Hierarchical Level-Wise News Article Clustering via Multilingual Matryoshka Embeddings](../../ACL2025/multilingual_mt/hierarchical_news_clustering.md)
 
 </div>

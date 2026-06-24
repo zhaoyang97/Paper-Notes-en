@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables
 description: >-
-  [ICCV 2025][Image Restoration][3D LUT] By decomposing 3D LUTs into linear combinations of 2D LUTs followed by SVD, and adopting a cache-efficient spatial feature fusion structure…
+  [ICCV 2025][Image Restoration][3D LUT] By decomposing 3D LUTs into linear combinations of 2D LUTs followed by SVD, and adopting a cache-efficient spatial feature fusion structure, the proposed method achieves spatially-aware image enhancement while reducing model parameters by 84% and accelerating 4K inference by 2.8×.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Cache Efficiency"
   - "Image Enhancement"
 date: 2026-05-08
-content_hash: b8491ad9bb2ca1e9
+content_hash: efd077e69fbed28a
 ---
 
 # Lightweight and Fast Real-time Image Enhancement via Decomposition of the Spatial-aware Lookup Tables
@@ -169,9 +169,9 @@ The 2D LUT + 2D Grid combination matches 3D+3D performance while reducing parame
 
 - [\[ICCV 2025\] MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices](mobileie_an_extremely_lightweight_and_effective_convnet_for_real-time_image_enha.md)
 - [\[ICCV 2025\] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement](learning_pixel-adaptive_multi-layer_perceptrons_for_real-time_image_enhancement.md)
+- [\[CVPR 2025\] DnLUT: Ultra-Efficient Color Image Denoising via Channel-Aware Lookup Tables](../../CVPR2025/image_restoration/dnlut_ultra-efficient_color_image_denoising_via_channel-aware_lookup_tables.md)
 - [\[ICCV 2025\] IM-LUT: Interpolation Mixing Look-Up Tables for Image Super-Resolution](im-lut_interpolation_mixing_look-up_tables_for_image_super-resolution.md)
-- [\[ICCV 2025\] CWNet: Causal Wavelet Network for Low-Light Image Enhancement](cwnet_causal_wavelet_network_for_low-light_image_enhancement.md)
-- [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](low-light_image_enhancement_using_event-based_illumination_estimation.md)
+- [\[ICCV 2025\] Robust Adverse Weather Removal via Spectral-based Spatial Grouping (SSGformer)](robust_adverse_weather_removal_via_spectral-based_spatial_grouping.md)
 
 </div>
 

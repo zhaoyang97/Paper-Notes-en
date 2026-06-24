@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Prototype Learning for Semantic Segmentation
 description: >-
-  [ICLR 2026][Segmentation][Paper Note] HiPoSeg attaches a "high-level + low-level" category prototype memory bank to the output of a segmentation model. It employs hierarchical contrastive learning and cross-layer margin alignment to organize the representation space following the human visual approach of "identifying the whole before distinguishing parts."
+  [ICLR 2026][Segmentation][Hierarchical Prototypes] HiPoSeg attaches a "high-level + low-level" category prototype memory bank to the output of a segmentation model. It employs hierarchical contrastive learning and cross-layer margin alignment to organize the representation space following the human visual approach of "identifying the whole before distinguishing parts." As a pure training-time plugin with zero inference overhead, it achieves an average +3.07%p mIoU gain across…
 tags:
-  - ICLR 2026
-  - Segmentation
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Hierarchical Prototypes"
+  - "Contrastive Learning"
+  - "Coarse-to-fine"
+  - "Training-time Augmentation"
+  - "Zero Inference Cost"
 date: 2026-05-08
-content_hash: 4d5378a63afb3327
+content_hash: f4356332a7782faf
 ---
+
 # Hierarchical Prototype Learning for Semantic Segmentation
 
 **Conference**: ICLR 2026  

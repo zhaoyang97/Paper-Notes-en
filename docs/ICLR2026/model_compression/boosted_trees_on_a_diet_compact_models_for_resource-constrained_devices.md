@@ -2,17 +2,21 @@
 title: >-
   [Paper Note] Boosted Trees on a Diet: Compact Models for Resource-Constrained Devices
 description: >-
-  [ICLR 2026][Model Compression][GBDT] ToaD (Trees on a Diet) introduces regularization terms during GBDT training that encourage "feature and threshold reuse." Combined with a pointer-less, bit-coded memory layout featuring globally shared thresholds and leaf values, it compresses LightGBM models by 4–16 times without accuracy loss, allowing boosted trees
+  [ICLR 2026][Model Compression][Gradient Boosted Decision Trees] ToaD (Trees on a Diet) introduces regularization terms during GBDT training that encourage "feature and threshold reuse." Combined with a pointer-less, bit-coded memory layout featuring globally shared thresholds and leaf values, it compresses LightGBM models by 4–16 times without accuracy loss, allowing boosted trees to fit within KB-level microcontrollers.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GBDT
-  - TinyML
-  - IoT
-  - LightGBM
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Gradient Boosted Decision Trees"
+  - "GBDT"
+  - "TinyML"
+  - "IoT"
+  - "LightGBM"
+  - "Feature Reuse"
+  - "Bit-level Encoding"
 date: 2026-05-08
-content_hash: 60782dc689cb62c8
+content_hash: 55bee7dec6354765
 ---
+
 # Boosted Trees on a Diet: Compact Models for Resource-Constrained Devices
 
 **Conference**: ICLR 2026  
@@ -130,8 +134,8 @@ Within the critical memory range of $\le 128$ KB, competing methods require **4�
 - [\[ICML 2026\] Memory-Efficient Partitioned DNN Inference on Resource-Constrained Android Crowds](../../ICML2026/model_compression/memory-efficient_partitioned_dnn_inference_on_resource-constrained_android_crowd.md)
 - [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
 - [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](../../ICML2026/model_compression/epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
-- [\[ICLR 2026\] Study of Training Dynamics for Memory-Constrained Fine-Tuning (TraDy)](study_of_training_dynamics_for_memory-constrained_fine-tuning.md)
-- [\[ICLR 2026\] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training](instant_compressing_gradients_and_activations_for_resource-efficient_training.md)
+- [\[ICLR 2026\] Vulcan: Tailoring Compact Class-Specific Vision Transformers for Edge Intelligence](vulcan_crafting_compact_class-specific_vision_transformers_for_edge_intelligence.md)
+- [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](../../AAAI2026/model_compression/lightweight_optimal-transport_harmonization_on_edge_devices.md)
 
 </div>
 

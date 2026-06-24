@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Log-Linear Attention
 description: >-
-  [ICLR 2026][LLM Efficiency][State Space Model] The authors replace the "fixed-size hidden state" in linear attention with a set of multi-scale hidden states that grow **logarithmically with sequence length**. This maintains matrix-multiply-friendly parallel training ($O(T \log T)$ computation, $O(\log T)$ decoding memory) while pushing the expressivity of linear at
+  [ICLR 2026][LLM Efficiency][Linear Attention] The authors replace the "fixed-size hidden state" in linear attention with a set of multi-scale hidden states that grow **logarithmically with sequence length**. This maintains matrix-multiply-friendly parallel training ($O(T \log T)$ computation, $O(\log T)$ decoding memory) while pushing the expressivity of linear attention toward that of softmax attention.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - State Space Model
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Sub-quadratic Attention"
+  - "State Space Models"
+  - "Hierarchical Matrices"
+  - "Fenwick Tree"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 2cf96535237a8f1d
+content_hash: 6e1758cc9cfb71a7
 ---
+
 # Log-Linear Attention
 
 **Conference**: ICLR 2026  
@@ -119,7 +125,7 @@ Log-Linear Gated DeltaNet outperforms the linear version on perplexity and all c
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

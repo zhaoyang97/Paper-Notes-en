@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ask a Strong LLM Judge when Your Reward Model is Uncertain
 description: >-
-  [NeurIPS 2025][LLM Alignment][Reward Model] This paper proposes an uncertainty-based routing framework that applies SNGP to a pairwise reward model for uncertainty quantification…
+  [NeurIPS 2025][LLM Alignment][Reward Model] This paper proposes an uncertainty-based routing framework that applies SNGP to a pairwise reward model for uncertainty quantification, routing high-epistemic-uncertainty samples to a strong LLM judge (DeepSeek-R1). At a judge invocation cost of only 9.2%–42.5%, the approach significantly outperforms random routing in accuracy and demonstrably improves downstream online RLHF alignment.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -13,7 +13,7 @@ tags:
   - "Routing"
   - "RLHF"
 date: 2026-05-08
-content_hash: 6d122cfac9313d90
+content_hash: 4c778f8d0f4abdba
 ---
 
 # Ask a Strong LLM Judge when Your Reward Model is Uncertain
@@ -130,10 +130,10 @@ Given a prompt $x$ and two responses $y_1, y_2$, the SNGP-PM (pairwise preferenc
 ## Related Papers
 
 - [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
-- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
 - [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
+- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
+- [\[ICLR 2026\] Don't Throw Away Your Pretrained Model](../../ICLR2026/llm_alignment/dont_throw_away_your_pretrained_model.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[ACL 2026\] P-Check: Advancing Personalized Reward Model via Learning to Generate Dynamic Checklist](../../ACL2026/llm_alignment/p-check_advancing_personalized_reward_model_via_learning_to_generate_dynamic_che.md)
 
 </div>
 

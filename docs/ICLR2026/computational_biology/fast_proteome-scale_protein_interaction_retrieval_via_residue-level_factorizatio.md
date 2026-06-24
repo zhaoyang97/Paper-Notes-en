@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Fast Proteome-Scale Protein Interaction Retrieval via Residue-Level Factorization
 description: >-
-  [ICLR 2026][Computational Biology][residue-level factorization] RaftPPI approximates traditional residue-residue protein interaction scoring as decomposable single-protein embedding inner products. By utilizing Gaussian kernels, SORF random Fourier features, and low-rank attention, it preserves residue-level modeling capabilities while reducing the time required for candidate inter
+  [ICLR2026][Computational Biology][Protein-Protein Interaction] RaftPPI approximates traditional residue-residue protein interaction scoring as decomposable single-protein embedding inner products. By utilizing Gaussian kernels, SORF random Fourier features, and low-rank attention, it preserves residue-level modeling capabilities while reducing the time required for candidate interaction retrieval across the entire human proteome from GPU-months to a few minutes on a single ma…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - residue-level factorization
-  - Random Fourier Features
-  - hard negative weighting
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Protein-Protein Interaction"
+  - "Proteome-scale Retrieval"
+  - "residue-level factorization"
+  - "Random Fourier Features"
+  - "hard negative weighting"
 date: 2026-05-08
-content_hash: 2394456c5f859689
+content_hash: 3ed6aa2ede402d98
 ---
+
 # Fast Proteome-Scale Protein Interaction Retrieval via Residue-Level Factorization
 
 **Conference**: ICLR2026  
@@ -166,15 +169,15 @@ Efficiency results underscore the impact of factorization:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Residue Level Protein Dynamics with Multiscale Gaussians](learning_residue_level_protein_dynamics_with_multiscale_gaussians.md)
 - [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
 - [\[ICLR 2026\] Discovering heterogeneous synaptic plasticity rules via large-scale neural evolution](discovering_heterogeneous_synaptic_plasticity_rules_via_large-scale_neural_evolu.md)
-- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](../../ICML2026/computational_biology/learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
 - [\[ICLR 2026\] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations](prism_enhancing_protein_inverse_folding_through_fine-_grained_retrieval_on_struc.md)
+- [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](../../ICML2026/computational_biology/learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
 
 </div>
 

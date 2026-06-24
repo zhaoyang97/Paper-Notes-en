@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training
 description: >-
-  [NeurIPS 2025][Interpretability][metadata conditioning] This paper systematically evaluates three categories of metadata (URLs, quality scores…
+  [NeurIPS 2025][Interpretability][metadata conditioning] This paper systematically evaluates three categories of metadata (URLs, quality scores, and topic/format domain information) as pretraining context. The key finding is that only URLs accelerate training (achieving equivalent downstream performance with 60B tokens instead of 100B), and this effect only holds under long prompts (5-shot); quality scores and topic/format domain information do not accelerate training but can…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "controllable generation"
   - "LLM training efficiency"
 date: 2026-05-08
-content_hash: abad82e33280843c
+content_hash: 179b37ea04a34043
 ---
 
 # URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training
@@ -144,8 +144,8 @@ During pretraining, each document is prepended with metadata wrapped in `<boc>..
 - [\[NeurIPS 2025\] Steering Information Utility in Key-Value Memory for Language Model Post-Training](steering_information_utility_in_key-value_memory_for_language_model_post-trainin.md)
 - [\[NeurIPS 2025\] LLM Probing with Contrastive Eigenproblems: Improving Understanding and Applicability of CCS](llm_probing_with_contrastive_eigenproblems_improving_understanding_and_applicabi.md)
 - [\[NeurIPS 2025\] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models](specialization_after_generalization_towards_understanding_test-time_training_in_.md)
+- [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](../../ICLR2026/interpretability/learning_is_forgetting_llm_training_as_lossy_compression.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[NeurIPS 2025\] Improving Perturbation-based Explanations by Understanding the Role of Uncertainty Calibration](improving_perturbation-based_explanations_by_understanding_the_role_of_uncertain.md)
 
 </div>
 

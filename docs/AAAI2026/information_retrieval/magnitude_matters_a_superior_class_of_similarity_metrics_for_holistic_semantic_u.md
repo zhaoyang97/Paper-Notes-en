@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Similarity Metrics] This paper proposes two parameter-free, magnitude-aware vector similarity metrics—Overlap Similarity (OS) and Hyperbolic Tangent Similarity (HTS)—that achieve…
+  [AAAI 2026][Information Retrieval & RAG][Similarity Metrics] This paper proposes two parameter-free, magnitude-aware vector similarity metrics—Overlap Similarity (OS) and Hyperbolic Tangent Similarity (HTS)—that achieve significantly lower MSE than Cosine Similarity and Dot Product on classification tasks (paraphrase detection, natural language inference) across 4 sentence embedding models and 8 NLP benchmarks, without any additional training overhead.
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Overlap Similarity"
   - "Hyperbolic Tangent Similarity"
 date: 2026-05-08
-content_hash: 76e664213954c1a2
+content_hash: a3eb0bd224d8e9ae
 ---
 
 # Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding
@@ -139,11 +139,11 @@ No training is involved—the core method is a purely parameter-free substitutio
 
 ## Related Papers
 
-- [\[AAAI 2026\] HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)
-- [\[ICLR 2026\] Mapping Semantic & Syntactic Relationships with Geometric Rotation](../../ICLR2026/information_retrieval/mapping_semantic_syntactic_relationships_with_geometric_rotation.md)
+- [\[ICLR 2026\] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics](../../ICLR2026/information_retrieval/demystifying_deep_search_a_holistic_evaluation_with_hint-free_multi-hop_question.md)
+- [\[ICLR 2026\] Welfarist Formulations for Diverse Similarity Search](../../ICLR2026/information_retrieval/welfarist_formulations_for_diverse_similarity_search.md)
 - [\[ICML 2026\] Understanding LoRA as Knowledge Memory: An Empirical Analysis](../../ICML2026/information_retrieval/understanding_lora_as_knowledge_memory_an_empirical_analysis.md)
-- [\[ICCV 2025\] External Knowledge Injection for CLIP-Based Class-Incremental Learning](../../ICCV2025/information_retrieval/external_knowledge_injection_for_clip-based_class-incremental_learning.md)
-- [\[CVPR 2026\] Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval](../../CVPR2026/information_retrieval/beyond_global_similarity_towards_fine-grained_multi-condition_multimodal_retriev.md)
+- [\[ICLR 2026\] Mapping Semantic & Syntactic Relationships with Geometric Rotation](../../ICLR2026/information_retrieval/mapping_semantic_syntactic_relationships_with_geometric_rotation.md)
+- [\[ACL 2025\] Semantic Outlier Removal with Embedding Models and LLMs](../../ACL2025/information_retrieval/semantic_outlier_removal_with_embedding_models_and_llms.md)
 
 </div>
 

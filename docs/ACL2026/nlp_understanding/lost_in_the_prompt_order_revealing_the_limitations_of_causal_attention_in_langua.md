@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper investigates the sensitivity of Large Language Models (LLMs) to the order of prompt components in multiple-choice questions (MCQA). Through systematic experiments, it excludes training bias and memory decay hypotheses, revealing that the causal attention mask is the fundamental mechanism leading to significa
+  [ACL 2026 Findings][NLP Understanding][causal attention] This paper investigates the sensitivity of Large Language Models (LLMs) to the order of prompt components in multiple-choice questions (MCQA). Through systematic experiments, it excludes training bias and memory decay hypotheses, revealing that the causal attention mask is the fundamental mechanism leading to significant performance degradation in the QOC (Question-Options-Context) order.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026 Findings"
+  - "NLP Understanding"
+  - "causal attention"
+  - "prompt order sensitivity"
+  - "multiple-choice QA"
+  - "information bottleneck"
+  - "mechanistic explanation"
 date: 2026-05-08
-content_hash: 61652a789cdeb7bf
+content_hash: 0d43b6717280d3c9
 ---
+
 # Lost in the Prompt Order: Revealing the Limitations of Causal Attention in Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -139,9 +145,9 @@ The mechanism predicts two factors: longer context increases the gap (RACE-H ~30
 
 - [\[ACL 2026\] The Imperfective Paradox in Large Language Models](the_imperfective_paradox_in_large_language_models.md)
 - [\[ACL 2026\] AdapTime: Enabling Adaptive Temporal Reasoning in Large Language Models](adaptime_enabling_adaptive_temporal_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] Revealing Temporal Framing in News Text](uncovering_temporal_framing_in_the_news.md)
 - [\[ACL 2026\] Table Question Answering in the Era of Large Language Models: A Comprehensive Survey](table_question_answering_in_the_era_of_large_language_models_a_comprehensive_sur.md)
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](../../NeurIPS2025/nlp_understanding/generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
-- [\[AAAI 2026\] Language Models and Logic Programs for Trustworthy Tax Reasoning](../../AAAI2026/nlp_understanding/language_models_and_logic_programs_for_trustworthy_tax_reasoning.md)
 
 </div>
 

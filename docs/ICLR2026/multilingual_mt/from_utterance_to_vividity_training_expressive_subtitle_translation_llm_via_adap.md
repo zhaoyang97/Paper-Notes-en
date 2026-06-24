@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization
 description: >-
-  [ICLR 2026][Multilingual & Translation][LLM-as-Judge] This paper proposes ALPO (Adaptive Local Preference Optimization) for training expressive subtitle translation LLMs. Empirical findings show that subtitle translation favors free translation and that reasoning-based LLMs outperform chat-based LLMs in paraphrasing capability. After verifying that LLMs as translation eva
+  [ICLR 2026][Multilingual & Machine Translation][Subtitle Translation] This paper proposes ALPO (Adaptive Local Preference Optimization) for training expressive subtitle translation LLMs. Empirical findings show that subtitle translation favors free translation and that reasoning-based LLMs outperform chat-based LLMs in paraphrasing capability. After verifying that LLMs as translation evaluators are highly consistent with humans, the authors propose a fine-grained process-supe…
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "Subtitle Translation"
+  - "Preference Optimization"
+  - "LLM-as-Judge"
+  - "Free Translation"
+  - "Process Supervision"
 date: 2026-05-08
-content_hash: 2638257b72e18db7
+content_hash: f220ab5212272b8b
 ---
+
 # From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization
 
 **Conference**: ICLR 2026  

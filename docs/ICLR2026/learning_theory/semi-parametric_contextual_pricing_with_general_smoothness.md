@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Semi-Parametric Contextual Pricing with General Smoothness
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] For the dynamic pricing problem with "context + unknown noise distribution," this paper combines "local polynomial regression + constrained least squares + sub-linear forced exploration" to construct a unified algorithm, LPSP, that holds for any smoothness $\beta \ge 1$. It achieves a regret upper bound of $\tilde O(T^
+  [ICLR 2026][Learning Theory][Contextual Pricing] For the dynamic pricing problem with "context + unknown noise distribution," this paper combines "local polynomial regression + constrained least squares + sub-linear forced exploration" to construct a unified algorithm, LPSP, that holds for any smoothness $\beta \ge 1$. It achieves a regret upper bound of $\tilde O(T^{\frac{\beta+1}{2\beta+1}})$, unifying and improving upon previously isolated results of $\tilde O(T^{2/3})$ fo…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Dynamic Pricing"
+  - "Contextual Pricing"
+  - "Semi-parametric Estimation"
+  - "$\\beta$-Hölder Smoothness"
+  - "Local Polynomial Regression"
+  - "Regret Upper Bound"
 date: 2026-05-08
-content_hash: 3fc9f0b871a67d60
+content_hash: f934993c38e2c72c
 ---
+
 # Semi-Parametric Contextual Pricing with General Smoothness
 
 **Conference**: ICLR 2026  
@@ -115,16 +123,16 @@ $$\mathrm{Regret}(T) \lesssim d^4 \log^{5/2}(T) \, T^{\frac{\beta+1}{2\beta+1}} 
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions](on_smoothness_bounds_for_non-clairvoyant_scheduling_with_predictions.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
+- [\[ICLR 2026\] Nonparametric Contextual Online Bilateral Trade](nonparametric_contextual_online_bilateral_trade.md)
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions](on_smoothness_bounds_for_non-clairvoyant_scheduling_with_predictions.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
-- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
-- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
 
 </div>
 

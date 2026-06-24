@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper proposes UniSpector, an open-set industrial defect detection framework. By integrating Spatial-Spectral Prompt Encoding (SSPE) and Angular-Margin Contrastive Prompt Encoding (CPE), it addresses the prompt embedding collapse issue. On the newly constructed Inspect Anything benchmark containing 360 defect cate
+  [CVPR 2026][Object Detection][Open-set Defect Detection] This paper proposes UniSpector, an open-set industrial defect detection framework. By integrating Spatial-Spectral Prompt Encoding (SSPE) and Angular-Margin Contrastive Prompt Encoding (CPE), it addresses the prompt embedding collapse issue. On the newly constructed Inspect Anything benchmark containing 360 defect categories, it outperforms the best baselines by 19.7% and 15.8% in AP50 for detection and segmentation…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-set Defect Detection"
+  - "Frequency-domain Features"
+  - "Contrastive Prompt Encoding"
+  - "Visual Prompting"
+  - "Industrial Inspection"
 date: 2026-05-08
-content_hash: f92c93d7ad903d8f
+content_hash: 0643d5a9a34861a0
 ---
+
 # UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ The total loss consists of the CPE angular margin contrastive loss plus standard
 
 ## Related Papers
 
-- [\[CVPR 2026\] Evaluating Few-Shot Pill Recognition Under Visual Domain Shift](evaluating_few-shot_pill_recognition_under_visual_domain_shift.md)
 - [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
+- [\[CVPR 2026\] DLVP-CLIP: Enhancing Fine-Grained Zero-Shot Anomaly Detection via Dynamic Local Visual Prompting](dlvp-clip_enhancing_fine-grained_zero-shot_anomaly_detection_via_dynamic_local_v.md)
 - [\[CVPR 2026\] Prompt-Free Universal Region Proposal Network](prompt-free_universal_region_proposal_network.md)
 - [\[ICML 2026\] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](../../ICML2026/object_detection/mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)
-- [\[CVPR 2026\] SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection](steeldefectx_a_coarse-to-fine_vision-language_dataset_and_benchmark_for_generali.md)
+- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](../../ICCV2025/object_detection/kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 
 </div>
 

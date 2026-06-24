@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism
 description: >-
-  [ICML 2026][Reinforcement Learning][offline RL] This paper challenges the prevailing consensus that "offline RL must be explicitly conservative" and proposes Neubay: utilizing a Bayesian perspective for posterior model ensembles, employing **long-horizon rollouts (hundreds of steps)** to naturally absorb value overestimation, and controlling compounding errors with
+  [ICML 2026][Reinforcement Learning][offline RL] This paper challenges the prevailing consensus that "offline RL must be explicitly conservative" and proposes Neubay: utilizing a Bayesian perspective for posterior model ensembles, employing **long-horizon rollouts (hundreds of steps)** to naturally absorb value overestimation, and controlling compounding errors with layer normalization and uncertainty thresholds. It matches SOTA conservative algorithms across 33 datasets in D4…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - offline RL
-  - model-based RL
-  - Bayesian RL
-  - long-horizon rollout
-  - epistemic POMDP
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "offline RL"
+  - "model-based RL"
+  - "Bayesian RL"
+  - "long-horizon rollout"
+  - "epistemic POMDP"
 date: 2026-05-08
-content_hash: b0cd04f589e247f0
+content_hash: b73e41d5184f0d8e
 ---
+
 # Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism
 
 **Conference**: ICML 2026  
@@ -156,10 +157,10 @@ Overall performance across 33 datasets (D4RL Locomotion 12 + Adroit 6 + AntMaze 
 ## Related Papers
 
 - [\[ICML 2026\] Offline Reinforcement Learning with Universal Horizon Models](offline_reinforcement_learning_with_universal_horizon_models.md)
-- [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
-- [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](../../ICLR2026/reinforcement_learning/scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ACL 2026\] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)](../../ACL2026/reinforcement_learning/a_goal_without_a_plan_is_just_a_wish_efficient_and_effective_global_planner_trai.md)
-- [\[ICLR 2026\] Strict Subgoal Execution: Reliable Long-Horizon Planning in Hierarchical Reinforcement Learning](../../ICLR2026/reinforcement_learning/strict_subgoal_execution_reliable_long-horizon_planning_in_hierarchical_reinforc.md)
+- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
+- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Prune4Web: DOM Tree Pruning Programming for Web Agent
 description: >-
-  [AAAI 2026][LLM Agent][DOM tree pruning] This paper proposes Prune4Web, a programmatic DOM pruning approach that achieves 25–50× candidate element reduction via "LLM-generated scoring function parameters + fixed heuristi…
+  [AAAI 2026][LLM Agent][DOM tree pruning] This paper proposes Prune4Web, a programmatic DOM pruning approach that achieves 25–50× candidate element reduction via "LLM-generated scoring function parameters + fixed heuristic template execution." The three-stage pipeline (Planner decomposes subtasks → Programmatic Filter generates scoring functions to prune DOM → Grounder executes actions) enables a 3B model to achieve 52.4% Step SR on Multimodal-Mind2Web…
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "element grounding"
   - "scoring function generation"
 date: 2026-05-08
-content_hash: e0ba523d8df4846b
+content_hash: 1b1473535b77deb7
 ---
 
 # Prune4Web: DOM Tree Pruning Programming for Web Agent
@@ -139,10 +139,10 @@ A three-stage pipeline: Planner → Programmatic Element Filter → Action Groun
 ## Related Papers
 
 - [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](../../ACL2026/llm_agent/webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_agent_tool_planning_via_dual-feedback_monte_carlo_tree_se.md)
-- [\[ICLR 2026\] WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](../../ICLR2026/llm_agent/weboperator_action-aware_tree_search_for_autonomous_agents_in_web_environment.md)
+- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](../../ICLR2026/llm_agent/tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[AAAI 2026\] Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis](promoting_sustainable_web_agents_benchmarking_and_estimating_energy_consumption_.md)
-- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](../../CVPR2026/llm_agent/ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
+- [\[ACL 2026\] HAG: Hierarchical Demographic Tree-based Agent Generation for Topic-Adaptive Simulation](../../ACL2026/llm_agent/hag_hierarchical_demographic_tree-based_agent_generation_for_topic-adaptive_simu.md)
 
 </div>
 

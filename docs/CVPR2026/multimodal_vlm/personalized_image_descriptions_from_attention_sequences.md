@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Personalized Image Descriptions from Attention Sequences
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] DEPER is the first to treat "how an individual views an image" (attention scanpath trajectories) as a personalization signal. It distills a cross-image stable subject embedding and injects it into a frozen Qwen2-VL via a lightweight adapter. This allows the model to generate personalized descriptions without requiring
+  [CVPR 2026][Multimodal VLM][Personalized Image Captioning] DEPER is the first to treat "how an individual views an image" (attention scanpath trajectories) as a personalization signal. It distills a cross-image stable subject embedding and injects it into a frozen Qwen2-VL via a lightweight adapter. This allows the model to generate personalized descriptions without requiring gaze data at test time or per-person fine-tuning, achieving an average improvement of approximately 2…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Personalized Image Captioning"
+  - "Human Attention Trajectories"
+  - "Subject Embedding"
+  - "Few-shot Personalization"
+  - "Frozen VLM"
 date: 2026-05-08
-content_hash: 5f7f0eeffbf90a71
+content_hash: 944d30b3d59a7084
 ---
+
 # Personalized Image Descriptions from Attention Sequences
 
 **Conference**: CVPR 2026  
@@ -161,7 +167,7 @@ Module Ablation (Tab. 5):
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
 - [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](../../ACL2026/multimodal_vlm/what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
 - [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](../../ICLR2026/multimodal_vlm/constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
-- [\[ECCV 2024\] Attention Prompting on Image for Large Vision-Language Models](../../ECCV2024/multimodal_vlm/attention_prompting_on_image_for_large_visionlanguage_models.md)
+- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
 
 </div>
 

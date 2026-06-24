@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AVEX: What Matters for Animal Vocalization Encoding
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This is a large-scale empirical study: the authors systematically disassemble "what matters most in training a generalizable bioacoustic encoder." The conclusion is that a **two-stage recipe—self-supervised pre-training on a mixture of diverse bioacoustic and general audio data, followed by supervised post-training**—i
+  [ICLR 2026][Audio & Speech][Bioacoustics] This is a large-scale empirical study: the authors systematically disassemble "what matters most in training a generalizable bioacoustic encoder." The conclusion is that a **two-stage recipe—self-supervised pre-training on a mixture of diverse bioacoustic and general audio data, followed by supervised post-training**—is the most effective for both in-distribution and out-of-distribution performance. This approach achieves new SOTA acr…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Bioacoustics"
+  - "animal vocalization"
+  - "self-supervised pre-training"
+  - "supervised post-training"
+  - "general audio encoder"
+  - "cross-species generalization"
 date: 2026-05-08
-content_hash: 8ff75aef752aa18b
+content_hash: d02b27afc5cf9fb0
 ---
+
 # AVEX: What Matters for Animal Vocalization Encoding
 
 **Conference**: ICLR 2026  
@@ -121,7 +128,6 @@ flowchart TB
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

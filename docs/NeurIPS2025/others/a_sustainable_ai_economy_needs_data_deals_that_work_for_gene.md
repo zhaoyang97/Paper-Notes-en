@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Sustainable AI Economy Needs Data Deals That Work for Generators
 description: >-
-  [NeurIPS 2025 (Position Paper Track)][Data markets] This paper introduces the concept of the "Economic Data Processing Inequality" — in the ML value chain…
+  [NeurIPS 2025 (Position Paper Track)][Data markets] This paper introduces the concept of the "Economic Data Processing Inequality" — in the ML value chain, data progresses from raw form to model weights to synthetic outputs, with each step refining technical signals while systematically stripping economic rights from data generators. The authors empirically validate this phenomenon through analysis of 73 publicly available data transactions, diagnose three structural deficien…
 tags:
   - "NeurIPS 2025 (Position Paper Track)"
   - "Data markets"
@@ -11,7 +11,7 @@ tags:
   - "EDVEX framework"
   - "data generator rights"
 date: 2026-05-08
-content_hash: 9218fb92270f122c
+content_hash: 39bccc86667524a5
 ---
 
 # A Sustainable AI Economy Needs Data Deals That Work for Generators
@@ -124,10 +124,10 @@ Not applicable (Position Paper; no model training involved).
 ## Related Papers
 
 - [\[NeurIPS 2025\] Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications](military_ai_needs_technically-informed_regulation_to_safeguard_ai_research_and_i.md)
-- [\[NeurIPS 2025\] Emergency Response Measures for Catastrophic AI Risk](emergency_response_measures_for_catastrophic_ai_risk.md)
+- [\[ICML 2025\] Democratic AI is Possible. The Democracy Levels Framework Shows How It Might Work](../../ICML2025/others/democratic_ai_is_possible_the_democracy_levels_framework_shows_how_it_might_work.md)
 - [\[ICLR 2026\] Towards Sustainable Investment Policies Informed by Opponent Shaping](../../ICLR2026/others/towards_sustainable_investment_policies_informed_by_opponent_shaping.md)
-- [\[NeurIPS 2025\] Improving Forecasts of Suicide Attempts for Patients with Little Data](improving_forecasts_of_suicide_attempts_for_patients_with_little_data.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)
+- [\[NeurIPS 2025\] Emergency Response Measures for Catastrophic AI Risk](emergency_response_measures_for_catastrophic_ai_risk.md)
+- [\[NeurIPS 2025\] Evaluating In Silico Creativity: An Expert Review of AI Chess Compositions](evaluating_in_silico_creativity_an_expert_review_of_ai_chess_compositions.md)
 
 </div>
 

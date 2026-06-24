@@ -2,14 +2,23 @@
 title: >-
   [Paper Note] Beyond Spectra: Eigenvector Overlaps in Loss Geometry
 description: >-
-  [ICLR 2026][learning_theory][Hessian] The local loss geometry of machine learning is essentially a "two-operator" problem: the training loss and the test loss each have a Hessian. Analyzing their respective spectra (eigenvalues) alone is insufficient; what truly determines generalization is the **alignment (eigenvector overlap)** between the two Hessian ei
+  [ICLR 2026][learning theory][eigenvector overlap] The local loss geometry of machine learning is essentially a "two-operator" problem: the training loss and the test loss each have a Hessian. Analyzing their respective spectra (eigenvalues) alone is insufficient; what truly determines generalization is the **alignment (eigenvector overlap)** between the two Hessian eigenspaces. This paper establishes a universal fluctuation law, a noise propagation law…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Hessian
+  - "ICLR 2026"
+  - "learning theory"
+  - "loss geometry"
+  - "random matrix theory"
+  - "eigenvector overlap"
+  - "dual loss geometry"
+  - "Hessian"
+  - "generalization"
+  - "covariate shift"
+  - "multiple descent"
+  - "random matrix"
 date: 2026-05-08
-content_hash: f32d611cb1f1dea5
+content_hash: 8e92927fa2761dad
 ---
+
 # Beyond Spectra: Eigenvector Overlaps in Loss Geometry
 
 **Conference**: ICLR 2026  
@@ -109,15 +118,16 @@ $$\mathbb{E}[\Delta L]=\frac{\sigma^2}{2\alpha}\iint \frac{\lambda_1\lambda_2}{(
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Characterizing the Discrete Geometry of ReLU Networks](characterizing_the_discrete_geometry_of_relu_networks.md)
 - [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
-- [\[ICLR 2026\] TESSAR: Geometry-Aware Active Regression via Dynamic Voronoi Tessellation](tessar_geometry-aware_active_regression_via_dynamic_voronoi_tessellation.md)
-- [\[ICLR 2026\] Learning to Adapt: In-Context Learning Beyond Stationarity](learning_to_adapt_in-context_learning_beyond_stationarity.md)
+- [\[ICLR 2026\] PAC-Bayes Bounds for Cumulative Loss in Continual Learning](pac-bayes_bounds_for_cumulative_loss_in_continual_learning.md)
 - [\[ICLR 2026\] On Powerful Ways to Generate: Autoregression, Diffusion, and Beyond](on_powerful_ways_to_generate_autoregression_diffusion_and_beyond.md)
+- [\[ICLR 2026\] TESSAR: Geometry-Aware Active Regression via Dynamic Voronoi Tessellation](tessar_geometry-aware_active_regression_via_dynamic_voronoi_tessellation.md)
 
 </div>
 

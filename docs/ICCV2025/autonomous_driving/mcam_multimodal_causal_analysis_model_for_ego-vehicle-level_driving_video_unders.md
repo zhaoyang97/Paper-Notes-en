@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding
 description: >-
-  [ICCV 2025][Autonomous Driving][driving video understanding] This paper proposes MCAM, which constructs a causal structure between visual and language modalities via a Driving State Directed Acyclic Graph (DSDAG)…
+  [ICCV 2025][Autonomous Driving][driving video understanding] This paper proposes MCAM, which constructs a causal structure between visual and language modalities via a Driving State Directed Acyclic Graph (DSDAG), combined with a multi-level feature extractor and a causal analysis module, for behavior description and causal reasoning in ego-vehicle-level driving video understanding.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "vision-language"
   - "ego-vehicle behavior understanding"
 date: 2026-05-08
-content_hash: 47042448d8c95332
+content_hash: 3f3b2f3882fe9d07
 ---
 
 # MCAM: Multimodal Causal Analysis Model for Ego-Vehicle-Level Driving Video Understanding
@@ -157,10 +157,10 @@ MCAM consists of three components:
 ## Related Papers
 
 - [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
+- [\[CVPR 2025\] Online Video Understanding: OVBench and VideoChat-Online](../../CVPR2025/autonomous_driving/online_video_understanding_ovbench_and_videochat-online.md)
+- [\[CVPR 2025\] MaskGWM: A Generalizable Driving World Model with Video Mask Reconstruction](../../CVPR2025/autonomous_driving/maskgwm_a_generalizable_driving_world_model_with_video_mask_reconstruction.md)
 - [\[NeurIPS 2025\] StreamForest: Efficient Online Video Understanding with Persistent Event Memory](../../NeurIPS2025/autonomous_driving/streamforest_efficient_online_video_understanding_with_persistent_event_memory.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 - [\[ICCV 2025\] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception](instinct_instance-level_interaction_architecture_for_query-based_collaborative_p.md)
-- [\[ICLR 2026\] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding](../../ICLR2026/autonomous_driving/marc_memory-augmented_rl_token_compression_for_efficient_video_un.md)
 
 </div>
 

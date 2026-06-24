@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics
 description: >-
-  [ICCV 2025][Video Understanding][long-form video understanding] This paper proposes HERMES, a framework comprising two general-purpose modules — the Episodic COmpressor (ECO) and the Semantics reTRiever (SeTR) — that cap…
+  [ICCV 2025][Video Understanding][long-form video understanding] This paper proposes HERMES, a framework comprising two general-purpose modules — the Episodic COmpressor (ECO) and the Semantics reTRiever (SeTR) — that capture episodic memory and semantic information from video respectively. HERMES can serve as a standalone system achieving state-of-the-art performance, or be integrated as plug-and-play components into existing video-language models…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "video question answering"
   - "plug-and-play module"
 date: 2026-05-08
-content_hash: ff348ccdfeea9acd
+content_hash: a25b918000966231
 ---
 
 # HERMES: temporal-coHERent long-forM understanding with Episodes and Semantics
@@ -184,8 +184,8 @@ Gain of **+7.3%** on LVU over the previous state-of-the-art.
 ## Related Papers
 
 - [\[ICCV 2025\] Flow4Agent: Long-form Video Understanding via Motion Prior from Optical Flow](flow4agent_long-form_video_understanding_via_motion_prior_from_optical_flow.md)
+- [\[CVPR 2025\] T*: Re-thinking Temporal Search for Long-Form Video Understanding](../../CVPR2025/video_understanding/re-thinking_temporal_search_for_long-form_video_understanding.md)
 - [\[AAAI 2026\] TSPO: Temporal Sampling Policy Optimization for Long-form Video Language Understanding](../../AAAI2026/video_understanding/tspo_temporal_sampling_policy_optimization_for_long-form_video_language_understa.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](../../CVPR2026/video_understanding/videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
 - [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 - [\[ICCV 2025\] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers](vamba_understanding_hour-long_videos_with_hybrid_mamba-transformers.md)
 

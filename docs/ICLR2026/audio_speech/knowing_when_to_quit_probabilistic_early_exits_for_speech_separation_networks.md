@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Knowing When to Quit: Probabilistic Early Exits for Speech Separation Networks
 description: >-
-  [ICLR 2026][Audio & Speech][TasNet] This paper proposes PRESS: a probabilistic model using a "signal + error variance" framework to estimate **interpretable predicted SNR distributions** for each early-exit point in speech separation networks. It decides when to stop computation during inference based on the "confidence in reaching the target SNR," achie
+  [ICLR 2026][Audio & Speech][Speech Separation] This paper proposes PRESS: a probabilistic model using a "signal + error variance" framework to estimate **interpretable predicted SNR distributions** for each early-exit point in speech separation networks. It decides when to stop computation during inference based on the "confidence in reaching the target SNR," achieving dynamic computational scaling without sacrificing reconstruction quality.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - TasNet
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Speech Separation"
+  - "Early-exit"
+  - "Uncertainty Modeling"
+  - "Student-t Likelihood"
+  - "Dynamic Computation"
+  - "TasNet"
 date: 2026-05-08
-content_hash: d4590cf13dc75db9
+content_hash: 51089a25efecb5a7
 ---
+
 # Knowing When to Quit: Probabilistic Early Exits for Speech Separation Networks
 
 **Conference**: ICLR 2026  

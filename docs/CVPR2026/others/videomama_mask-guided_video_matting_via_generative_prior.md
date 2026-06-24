@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] VideoMaMa: Mask-Guided Video Matting via Generative Prior
 description: >-
-  [CVPR 2026][Segmentation][alpha matte] VideoMaMa utilizes a pre-trained video diffusion model (SVD) to "translate" coarse binary segmentation masks into pixel-accurate alpha mattes. Trained solely on synthetic data, it achieves zero-shot generalization to real videos. It automatically converts SA-V segmentation annotations into MA-V, a matting dataset featu
+  [CVPR 2026][Video Matting] VideoMaMa utilizes a pre-trained video diffusion model (SVD) to "translate" coarse binary segmentation masks into pixel-accurate alpha mattes. Trained solely on synthetic data, it achieves zero-shot generalization to real videos. It automatically converts SA-V segmentation annotations into MA-V, a matting dataset featuring over 50,000 real video clips, which is subsequently used to fine-tune a standard SAM2 into a more robust matting model…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - alpha matte
-  - SAM2
+  - "CVPR 2026"
+  - "Video Matting"
+  - "alpha matte"
+  - "Video Diffusion Prior"
+  - "Pseudo-labeling"
+  - "SAM2"
 date: 2026-05-08
-content_hash: e290c9eefb461acd
+content_hash: bc43843e6eae5ff3
 ---
+
 # VideoMaMa: Mask-Guided Video Matting via Generative Prior
 
 **Conference**: CVPR 2026  
@@ -162,11 +165,11 @@ Training data ablation (V-HIM60 Hard / DAVIS):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MatAnyone 2: Scaling Video Matting via a Learned Quality Evaluator](matanyone_2_scaling_video_matting_via_a_learned_quality_evaluator.md)
-- [\[CVPR 2026\] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation](matchmask_mask-centric_generative_data_augmentation_for_label-scarce_semantic_se.md)
-- [\[CVPR 2025\] MatAnyone: Stable Video Matting with Consistent Memory Propagation](../../CVPR2025/segmentation/matanyone_stable_video_matting_with_consistent_memory_propagation.md)
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
-- [\[CVPR 2025\] Generative Video Propagation](../../CVPR2025/segmentation/generative_video_propagation.md)
+- [\[ECCV 2024\] COIN-Matting: Confounder Intervention for Image Matting](../../ECCV2024/others/coin-matting_confounder_intervention_for_image_matting.md)
+- [\[CVPR 2026\] FlashVSR: Towards Real-time Diffusion-Based Streaming Video Super Resolution](flashvsr_towards_real-time_diffusion-based_streaming_video_super_resolution.md)
+- [\[CVPR 2026\] When AVSR Meets Video Conferencing: Dataset, Degradation, and the Hidden Mechanism Behind Performance Collapse](when_avsr_meets_video_conferencing_dataset_degradation_and_the_hidden_mechanism_.md)
+- [\[CVPR 2026\] InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space](instantretouch_efficient_and_high-fidelity_instruction-guided_image_retouching_w.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
 
 </div>
 

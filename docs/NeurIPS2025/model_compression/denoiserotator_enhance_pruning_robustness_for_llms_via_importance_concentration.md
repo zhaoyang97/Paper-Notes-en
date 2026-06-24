@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration
 description: >-
-  [NeurIPS 2025][Model Compression][LLM pruning] This paper proposes DenoiseRotator, a pre-pruning method that applies learnable orthogonal transformations to minimize the information entropy of parameter importance scores…
+  [NeurIPS 2025][Model Compression][LLM pruning] This paper proposes DenoiseRotator, a pre-pruning method that applies learnable orthogonal transformations to minimize the information entropy of parameter importance scores, concentrating importance into a small subset of parameters. On LLaMA3-70B under 2:4 semi-structured sparsity, perplexity degradation is reduced by 58% (8.1→3.4). The method is plug-and-play and compatible with Magnitude, Wanda, and SparseGPT.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "importance concentration"
   - "semi-structured sparsity"
 date: 2026-05-08
-content_hash: 1ee5559497f28f3c
+content_hash: bd3d44f30a2e310b
 ---
 
 # DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration
@@ -162,11 +162,11 @@ Orthogonal matrices add only ~0.32 ms per layer and increase parameter count by 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
 - [\[NeurIPS 2025\] QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks](quadenhancer_leveraging_quadratic_transformations_to_enhance_deep_neural_network.md)
-- [\[NeurIPS 2025\] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs](matryoshka_pilot_learning_to_drive_black-box_llms_with_llms.md)
-- [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](../../ACL2026/model_compression/two-stage_regularization-based_structured_pruning_for_llms.md)
+- [\[ACL 2025\] Flipping Knowledge Distillation: Leveraging Small Models' Expertise to Enhance LLMs in Text Matching](../../ACL2025/model_compression/flipping_kd_small_to_large.md)
+- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
 - [\[ICCV 2025\] CIARD: Cyclic Iterative Adversarial Robustness Distillation](../../ICCV2025/model_compression/ciard_cyclic_iterative_adversarial_robustness_distillation.md)
+- [\[NeurIPS 2025\] Matryoshka Pilot: Learning to Drive Black-Box LLMs with LLMs](matryoshka_pilot_learning_to_drive_black-box_llms_with_llms.md)
 
 </div>
 

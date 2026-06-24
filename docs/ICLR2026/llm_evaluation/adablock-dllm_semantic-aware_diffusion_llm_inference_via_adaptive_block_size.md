@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size
 description: >-
-  [ICLR 2026][LLM Evaluation][Diffusion Language Model] By statistically analyzing the dynamic changes in token confidence during the denoising process of Diffusion Large Language Models (dLLMs), it was discovered that the "Volatility Band" (VB) region encodes the local semantic structure of the text. Consequently, AdaBlock-dLLM is proposed—a training-free, plug-and-play ad
+  [ICLR 2026][LLM Evaluation][Diffusion Language Models] By statistically analyzing the dynamic changes in token confidence during the denoising process of Diffusion Large Language Models (dLLMs), it was discovered that the "Volatility Band" (VB) region encodes the local semantic structure of the text. Consequently, AdaBlock-dLLM is proposed—a training-free, plug-and-play adaptive block size scheduler that naturally aligns the block boundaries of semi-autoregressive decoding wi…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Diffusion Language Model
-  - Semi-autoregressive Decoding
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Diffusion Language Models"
+  - "Semi-Autoregressive Decoding"
+  - "Adaptive Block Size"
+  - "Semantic-Aware Scheduling"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 811180e9242a01f1
+content_hash: fdc6a3f7cdd6092c
 ---
+
 # AdaBlock-dLLM: Semantic-Aware Diffusion LLM Inference via Adaptive Block Size
 
 **Conference**: ICLR 2026  
@@ -152,8 +155,8 @@ Across tasks (LLaDA-Instruct, $B_0=16$, +Ada+Cache vs +Cache):
 - Value: ⭐⭐⭐⭐ High practicality due to plug-and-play nature, though absolute gains are mostly 1-3%.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

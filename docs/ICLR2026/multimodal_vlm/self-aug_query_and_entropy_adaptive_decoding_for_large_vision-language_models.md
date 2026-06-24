@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][visual contrastive decoding] This paper proposes Self-Aug, a training-free decoding strategy that utilizes Self-Augmented Selection (SAS) Prompting to allow LVLMs to dynamically select visual augmentations aligned with query semantics using their own knowledge. It also introduces the Sparsity-Adaptive Thresholding (SAT) algorithm, which utilizes t
+  [ICLR 2026][Multimodal VLM][visual contrastive decoding] This paper proposes Self-Aug, a training-free decoding strategy that utilizes Self-Augmented Selection (SAS) Prompting to allow LVLMs to dynamically select visual augmentations aligned with query semantics using their own knowledge. It also introduces the Sparsity-Adaptive Thresholding (SAT) algorithm, which utilizes the full entropy information of the output distribution to dynamically adjust the candidate vocabulary s…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - visual contrastive decoding
-  - hallucination mitigation
-  - self-augmentation
-  - entropy-aware thresholding
-  - training-free
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "visual contrastive decoding"
+  - "hallucination mitigation"
+  - "self-augmentation"
+  - "entropy-aware thresholding"
+  - "training-free"
 date: 2026-05-08
-content_hash: 02f60cb728274e1d
+content_hash: 0641f6ce793bf71a
 ---
+
 # Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -144,11 +145,11 @@ Self-Aug is an entirely training-free method. Hyperparameter settings: $\alpha=1
 
 ## Related Papers
 
+- [\[ICLR 2026\] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models](one_patch_doesnt_fit_all_adaptive_patching_for_native-resolution_multimodal_larg.md)
+- [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](../../ICML2026/multimodal_vlm/self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
 - [\[ICLR 2026\] ViPER: Empowering the Self-Evolution of Visual Perception Abilities in Vision-Language Models](viper_empowering_the_self-evolution_of_visual_perception_abilities_in_vision-lan.md)
-- [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](../../ICML2026/multimodal_vlm/self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
-- [\[ICLR 2026\] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models](one_patch_doesnt_fit_all_adaptive_patching_for_native-resolution_multimodal_larg.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play](vision-zero_scalable_vlm_self-evolution_via_multi-agent_self-play.md)
+- [\[CVPR 2026\] WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens](../../CVPR2026/multimodal_vlm/wemmu_enhanced_bridging_of_vision-language_models_and_diffusion_models_via_noisy.md)
 
 </div>
 

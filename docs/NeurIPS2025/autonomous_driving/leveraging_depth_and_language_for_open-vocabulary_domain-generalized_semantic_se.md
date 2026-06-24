@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation
 description: >-
-  [NeurIPS 2025][Autonomous Driving][open-vocabulary segmentation] This paper proposes Vireo, the first single-stage framework that unifies open-vocabulary semantic segmentation (OVSS) and domain-generalized semantic segme…
+  [NeurIPS 2025][Autonomous Driving][open-vocabulary segmentation] This paper proposes Vireo, the first single-stage framework that unifies open-vocabulary semantic segmentation (OVSS) and domain-generalized semantic segmentation (DGSS). By introducing GeoText Query to fuse depth-geometric features with linguistic cues, Vireo achieves state-of-the-art performance under both extreme environmental conditions and on unseen categories.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "visual foundation models"
   - "semantic segmentation"
 date: 2026-05-08
-content_hash: 96417e6056feea9f
+content_hash: 3711d0c9e46920d5
 ---
 
 # Leveraging Depth and Language for Open-Vocabulary Domain-Generalized Semantic Segmentation
@@ -165,9 +165,9 @@ Input images are fed simultaneously into a frozen VFM encoder and a frozen Depth
 
 - [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](../../CVPR2026/autonomous_driving/open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
 - [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
+- [\[CVPR 2025\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](../../CVPR2025/autonomous_driving/o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
+- [\[CVPR 2025\] A Dataset for Semantic Segmentation in the Presence of Unknowns](../../CVPR2025/autonomous_driving/a_dataset_for_semantic_segmentation_in_the_presence_of_unknowns.md)
 - [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
-- [\[NeurIPS 2025\] OpenBox: Annotate Any Bounding Boxes in 3D](openbox_annotate_any_bounding_boxes_in_3d.md)
-- [\[NeurIPS 2025\] Extremely Simple Multimodal Outlier Synthesis for Out-of-Distribution Detection and Segmentation](extremely_simple_multimodal_outlier_synthesis_for_out-of-distribution_detection_.md)
 
 </div>
 

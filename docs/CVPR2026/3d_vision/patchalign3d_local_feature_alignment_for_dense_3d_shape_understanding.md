@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PatchAlign3D is the first pure encoder 3D model that directly outputs "language-aligned patch-level features" on point clouds. Through a two-stage pre-training process involving "DINOv2 feature distillation + patch-text contrast," it performs zero-shot 3D part segmentation in a single feed-forward pass without multi-vi
+  [CVPR 2026][3D Vision][3D Part Segmentation] PatchAlign3D is the first pure encoder 3D model that directly outputs "language-aligned patch-level features" on point clouds. Through a two-stage pre-training process involving "DINOv2 feature distillation + patch-text contrast," it performs zero-shot 3D part segmentation in a single feed-forward pass without multi-view rendering. On ShapeNetPart, it achieves an mIoU +31.3% higher than the previous strongest rendering-based method…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Part Segmentation"
+  - "Zero-shot"
+  - "Point Cloud Transformer"
+  - "Feature Distillation"
+  - "Multi-positive Contrastive Learning"
 date: 2026-05-08
-content_hash: 2bd0a38164d007f6
+content_hash: ba0a785297e68a06
 ---
+
 # PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding
 
 **Conference**: CVPR 2026  

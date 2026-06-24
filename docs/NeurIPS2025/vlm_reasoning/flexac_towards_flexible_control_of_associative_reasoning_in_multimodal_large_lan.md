@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hallucination control] FlexAC identifies that associative reasoning in MLLMs is primarily encoded in intermediate layers. By extracting steering vectors from hallucinated responses and inje…
+  [NeurIPS 2025][VLM Reasoning][hallucination control] FlexAC identifies that associative reasoning in MLLMs is primarily encoded in intermediate layers. By extracting steering vectors from hallucinated responses and injecting them into intermediate-layer representations at inference time, it enables flexible control over faithfulness and creativity—reducing hallucination rate by 29% (CHAIR) and improving creativity by 5.8× (Creation-MMBench), all without any training.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "hallucination control"
   - "creativity enhancement"
   - "associative reasoning"
   - "intermediate-layer intervention"
   - "steering vectors"
 date: 2026-05-08
-content_hash: 749f68ddadeb67c5
+content_hash: 932312525b09ddec
 ---
 
 # FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models
@@ -148,9 +148,9 @@ FlexAC is the only method that simultaneously improves both faithfulness and cre
 
 - [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
 - [\[NeurIPS 2025\] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments](physvlm-avr_active_visual_reasoning_for_multimodal_large_language_models_in_phys.md)
-- [\[NeurIPS 2025\] Evaluating Multimodal Large Language Models on Core Music Perception Tasks](evaluating_multimodal_large_language_models_on_core_music_perception_tasks.md)
 - [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
 - [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
+- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
 
 </div>
 

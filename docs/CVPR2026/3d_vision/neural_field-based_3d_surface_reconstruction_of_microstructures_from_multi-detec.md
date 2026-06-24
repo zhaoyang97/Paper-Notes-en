@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes NFH-SEM, a hybrid neural field-based framework that embeds the physical model of SEM electron scattering into the neural field optimization process. By reconstructing high-fidelity 3D surfaces of microstructures from multi-view multi-detector SEM images, it achieves self-calibrated and shadow-resistant re
+  [CVPR 2026][3D Vision][Scanning Electron Microscope] Ours proposes NFH-SEM, a hybrid neural field-based framework that embeds the physical model of SEM electron scattering into the neural field optimization process. By reconstructing high-fidelity 3D surfaces of microstructures from multi-view multi-detector SEM images, it achieves self-calibrated and shadow-resistant reconstruction with nanometer-scale precision (e.g., 478nm layering features, 782nm pollen textures…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scanning Electron Microscope"
+  - "3D Reconstruction"
+  - "Neural Field"
+  - "Microstructures"
+  - "Photometric Stereo"
 date: 2026-05-08
-content_hash: 5c960663017cf632
+content_hash: 01bc922bad34293b
 ---
+
 # Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,10 @@ On TPL microstructures (Wukong, Lucy, Lion), peach pollen, and silicon carbide p
 ## Related Papers
 
 - [\[CVPR 2026\] EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy](emgauss_continuous_slice-to-3d_reconstruction_via_dynamic_gaussian_modeling_in_v.md)
+- [\[CVPR 2026\] Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning](spatial-sam_spatially_consistent_3d_electron_microscopy_segmentation_with_sdf_me.md)
 - [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
 - [\[CVPR 2026\] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction](manifoldneus_manifold-aware_view_optimizability_for_pose-free_neural_surface_rec.md)
 - [\[CVPR 2026\] Seeing through boxes: Non-Line-of-Sight 3D Reconstruction from Radar Signals](seeing_through_boxes_non-line-of-sight_3d_reconstruction_from_radar_signals.md)
-- [\[CVPR 2025\] ProbeSDF: Light Field Probes for Neural Surface Reconstruction](../../CVPR2025/3d_vision/probesdf_light_field_probes_for_neural_surface_reconstruction.md)
 
 </div>
 

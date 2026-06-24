@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] By comparing the ability of self-probing (using the model's own hidden states) and external probing (using hidden states from other models) to predict correctness, this paper identifies "inter-model consensus" as a key confounding factor that masks privileged knowledge. After eliminating consensus, the study reveals do
+  [ACL 2026][LLM (Other)][Privileged Knowledge] By comparing the ability of self-probing (using the model's own hidden states) and external probing (using hidden states from other models) to predict correctness, this paper identifies "inter-model consensus" as a key confounding factor that masks privileged knowledge. After eliminating consensus, the study reveals domain-specific privileged knowledge: it exists in factual tasks but is absent in mathematical reasoning.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Privileged Knowledge"
+  - "Correctness Prediction"
+  - "Hidden State Probing"
+  - "Inter-model Consensus"
+  - "Domain Specificity"
 date: 2026-05-08
-content_hash: 9d1a64046ca92e69
+content_hash: 7a5b043c26cde4bf
 ---
+
 # Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness
 
 **Conference**: ACL 2026  
@@ -140,8 +146,8 @@ The study uses three instruction-tuned models of similar scale (Llama-3.1-8B, Qw
 - [\[ICLR 2026\] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding](../../ICLR2026/llm_nlp/stopping_computation_for_converged_tokens_in_masked_diffusion-lm_decoding.md)
 - [\[ACL 2025\] Disentangling Memory and Reasoning Ability in Large Language Models](../../ACL2025/llm_nlp/disentangle_memory_reasoning.md)
 - [\[ACL 2025\] Enabling LLM Knowledge Analysis via Extensive Materialization](../../ACL2025/llm_nlp/enabling_llm_knowledge_analysis_via_extensive_materialization.md)
-- [\[ACL 2026\] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式](when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
 - [\[ACL 2025\] Condor: Enhance LLM Alignment with Knowledge-Driven Data Synthesis and Refinement](../../ACL2025/llm_nlp/condor_enhance_llm_alignment_with_knowledge-driven_data_synthesis_and_refinement.md)
+- [\[ACL 2025\] Re-TASK: Revisiting LLM Tasks from Capability, Skill, and Knowledge Perspectives](../../ACL2025/llm_nlp/re-task_revisiting_llm_tasks_from_capability_skill_and_knowledge_perspectives.md)
 
 </div>
 

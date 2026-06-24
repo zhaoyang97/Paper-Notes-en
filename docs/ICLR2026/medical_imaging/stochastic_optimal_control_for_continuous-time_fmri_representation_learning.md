@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning
 description: >-
-  [ICLR 2026][Medical Imaging][Self-Supervised Learning] BDO treats heterogeneous fMRI time series as continuous-time latent stochastic dynamical systems, utilizing stochastic optimal control to unify MAE reconstruction and JEPA latent variable prediction. This approach learns brain dynamic representations that are more robust to TR discrepancies and more computationally eff
+  [ICLR2026][Medical Imaging][fMRI Representation Learning] BDO treats heterogeneous fMRI time series as continuous-time latent stochastic dynamical systems, utilizing stochastic optimal control to unify MAE reconstruction and JEPA latent variable prediction. This approach learns brain dynamic representations that are more robust to TR discrepancies and more computationally efficient across multiple datasets.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Self-Supervised Learning
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "fMRI Representation Learning"
+  - "Continuous-time Modeling"
+  - "Stochastic Optimal Control"
+  - "Self-supervised Learning"
+  - "Brain Dynamics"
 date: 2026-05-08
-content_hash: dfdec246333d30af
+content_hash: 2a908ee38ffc28df
 ---
+
 # Stochastic Optimal Control for Continuous-Time fMRI Representation Learning
 
 **Conference**: ICLR2026  

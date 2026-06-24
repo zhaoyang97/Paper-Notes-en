@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting
 description: >-
-  [ICLR 2026][Image Generation][image inpainting] Instead of proposing a new method, this paper returns to basics to systematically investigate fundamental questions regarding "preference alignment for image inpainting using DPO and public reward models"—whether reward models are reliable, how preference data scales, and the origins of reward hacking. It finds that **
+  [ICLR 2026][Image Generation][image inpainting] Instead of proposing a new method, this paper returns to basics to systematically investigate fundamental questions regarding "preference alignment for image inpainting using DPO and public reward models"—whether reward models are reliable, how preference data scales, and the origins of reward hacking. It finds that **simply ensembling and ranking 9 reward models** eliminates individual biases and significantly surpasses SOTA…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - image inpainting
-  - preference alignment
-  - DPO
-  - reward model
-  - reward hacking
-  - reward ensemble
+  - "ICLR 2026"
+  - "Image Generation"
+  - "image inpainting"
+  - "preference alignment"
+  - "DPO"
+  - "reward model"
+  - "reward hacking"
+  - "reward ensemble"
 date: 2026-05-08
-content_hash: ef3aa0a0a7f9b1e4
+content_hash: d9920d5b92d3d4f4
 ---
+
 # Follow-Your-Preference: Towards Preference-Aligned Image Inpainting
 
 **Conference**: ICLR 2026  
@@ -123,7 +124,7 @@ Both baselines showed comprehensive improvements after Ensemble preference align
 - [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
 - [\[CVPR 2025\] Boost Your Human Image Generation Model via Direct Preference Optimization](../../CVPR2025/image_generation/boost_your_human_image_generation_model_via_direct_preference_optimization.md)
 - [\[ICML 2026\] Anomaly-Preference Image Generation (APO)](../../ICML2026/image_generation/anomaly-preference_image_generation.md)
-- [\[ICLR 2026\] Towards Better Optimization for Listwise Preference in Diffusion Models](towards_better_optimization_for_listwise_preference_in_diffusion_models.md)
+- [\[ICLR 2026\] $\alpha$-DPO: Robust Preference Alignment for Diffusion Models via $\alpha$ Divergence](alpha-dpo_robust_preference_alignment_for_diffusion_models_via_alpha_divergence.md)
 
 </div>
 

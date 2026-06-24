@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Conflicting Biases at the Edge of Stability: Norm versus Sharpness Regularization
 description: >-
-  [ICML 2026][Optimization & Theory][Edge of Stability] This is an analytical paper: the authors point out that Gradient Descent (GD) simultaneously exhibits two **conflicting** implicit biases—small learning rates (LR) tend to suppress the parameter norm, while large learning rates (Edge of Stability) tend to suppress the loss sharpness. The learning rate interpolates betw
+  [ICML2026][Optimization][Gradient Descent] This is an analytical paper: the authors point out that Gradient Descent (GD) simultaneously exhibits two **conflicting** implicit biases—small learning rates (LR) tend to suppress the parameter norm, while large learning rates (Edge of Stability) tend to suppress the loss sharpness. The learning rate interpolates between the two, and the authors observe a phase transition divided by a critical learning rate $\eta_c$. They further us…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Edge of Stability
+  - "ICML2026"
+  - "Optimization"
+  - "Gradient Descent"
+  - "Implicit Bias"
+  - "Edge of Stability"
+  - "Sharpness Regularization"
+  - "Parameter Norm"
 date: 2026-05-08
-content_hash: 08b174fe3e92546b
+content_hash: 6e44db95c172babe
 ---
+
 # Conflicting Biases at the Edge of Stability: Norm versus Sharpness Regularization
 
 **Conference**: ICML2026  
@@ -119,10 +124,10 @@ For a diagonal linear network (shared weights) under single-point regression + s
 
 ## Related Papers
 
-- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
 - [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](../../ICLR2026/optimization/generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
+- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](stability_analysis_of_sharpness-aware_minimization.md)
 - [\[ICML 2026\] RACO: Reward-free Alignment for Conflicting Objectives](reward-free_alignment_for_conflicting_objectives.md)
-- [\[ICML 2025\] Clipping Improves Adam-Norm and AdaGrad-Norm when the Noise Is Heavy-Tailed](../../ICML2025/optimization/clipping_improves_adam-norm_and_adagrad-norm_when_the_noise_is_heavy-tailed.md)
+- [\[ICLR 2026\] Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations](../../ICLR2026/optimization/solving_the_2-norm_k-hyperplane_clustering_problem_via_multi-norm_formulations.md)
 - [\[ICML 2026\] AdaGC: Enhancing LLM Pretraining Stability via Adaptive Gradient Clipping](adagc_enhancing_llm_pretraining_stability_via_adaptive_gradient_clipping.md)
 
 </div>

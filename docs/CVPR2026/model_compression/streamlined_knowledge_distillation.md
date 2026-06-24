@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Streamlined Knowledge Distillation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper points out that the increasing complexity of recent logit distillation (stacking multiple knowledge alignments and relationship modeling) leads to redundant objectives and improper losses. It proposes a minimalist approach, SKD, which transfers only two types of knowledge: "instance-level" semantics via KL d
+  [CVPR 2026][Model Compression][logit distillation] This paper points out that the increasing complexity of recent logit distillation (stacking multiple knowledge alignments and relationship modeling) leads to redundant objectives and improper losses. It proposes a minimalist approach, SKD, which transfers only two types of knowledge: "instance-level" semantics via KL divergence and "direction-level" relations via the Gram matrix of normalized logits. For the latter…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "logit distillation"
+  - "directional relations"
+  - "Gram matrix"
+  - "Mahalanobis distance"
+  - "covariance whitening"
 date: 2026-05-08
-content_hash: 6812a7ceb9e5c3c1
+content_hash: cff23092817f6416
 ---
+
 # Streamlined Knowledge Distillation
 
 **Conference**: CVPR 2026  
@@ -126,10 +132,10 @@ CIFAR-100, ResNet32x4 → ResNet8x4 (Table 5):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-Modal Knowledge Distillation from Spatial Transcriptomics to Histology](cross-modal_knowledge_distillation_from_spatial_transcriptomics_to_histology.md)
 - [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
-- [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](../../ICCV2025/model_compression/knowledge_distillation_with_refined_logits.md)
+- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](qkd_quantum_gated_incremental_learning.md)
+- [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../../ICLR2026/model_compression/exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](distilling_balanced_knowledge_from_a_biased_teacher.md)
 
 </div>

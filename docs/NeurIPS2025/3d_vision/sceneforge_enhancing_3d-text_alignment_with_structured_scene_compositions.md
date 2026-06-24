@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions
 description: >-
-  [NeurIPS 2025][3D Vision][3D-text contrastive learning] This paper proposes SceneForge, a framework that composes individual 3D point cloud objects into multi-object scenes with explicit spatial relations…
+  [NeurIPS 2025][3D Vision][3D-text contrastive learning] This paper proposes SceneForge, a framework that composes individual 3D point cloud objects into multi-object scenes with explicit spatial relations, paired with LLM-refined compositional captions, to enhance data diversity and complexity for 3D-text contrastive learning, yielding consistent performance gains across multiple downstream tasks.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "spatial relations"
   - "zero-shot classification"
 date: 2026-05-08
-content_hash: b37180bf35fa8389
+content_hash: 9f2154f511aa3aa3
 ---
 
 # SceneForge: Enhancing 3D-text alignment with Structured Scene Compositions
@@ -162,10 +162,10 @@ This work is complementary to MixCon3D, which focuses on mixing multi-view rende
 ## Related Papers
 
 - [\[NeurIPS 2025\] VA-GS: Enhancing the Geometric Representation of Gaussian Splatting via View Alignment](va-gs_enhancing_the_geometric_representation_of_gaussian_splatting_via_view_alig.md)
+- [\[CVPR 2025\] CrossOver: 3D Scene Cross-Modal Alignment](../../CVPR2025/3d_vision/crossover_3d_scene_cross-modal_alignment.md)
 - [\[CVPR 2026\] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis](../../CVPR2026/3d_vision/dmaligner_enhancing_image_alignment_via_diffusion_model_based_view_synthesis.md)
-- [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
 - [\[NeurIPS 2025\] Enhancing Multilingual LLM Pretraining with Model-Based Data Selection](enhancing_multilingual_llm_pretraining_with_model-based_data_selection.md)
-- [\[NeurIPS 2025\] Walking the Schrödinger Bridge: A Direct Trajectory for Text-to-3D Generation](walking_the_schrödinger_bridge_a_direct_trajectory_for_text-to-3d_generation.md)
+- [\[NeurIPS 2025\] D$^2$USt3R: Enhancing 3D Reconstruction for Dynamic Scenes](d2ust3r_enhancing_3d_reconstruction_for_dynamic_scenes.md)
 
 </div>
 

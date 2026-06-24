@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] CubeBench: Diagnosing Interactive, Long-Horizon Spatial Reasoning under Partial Observations
 description: >-
-  [ICLR 2026][LLM Evaluation][POMDP] CubeBench is a generative benchmark with three difficulty tiers based on the Rubik's Cube. It isolates three core cognitive abilities—spatial reasoning, long-horizon mental simulation, and active exploration under partial observation—from perception. Findings reveal that all major LLMs, including GPT-5, achieve a consi
+  [ICLR 2026][LLM Evaluation][Spatial Intelligence] CubeBench is a generative benchmark with three difficulty tiers based on the Rubik's Cube. It isolates three core cognitive abilities—spatial reasoning, long-horizon mental simulation, and active exploration under partial observation—from perception. Findings reveal that all major LLMs, including GPT-5, achieve a consistent 0.00 pass rate on long-horizon tasks.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - POMDP
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Spatial Intelligence"
+  - "Long-horizon Planning"
+  - "Partial Observability"
+  - "POMDP"
+  - "Rubik's Cube"
+  - "LLM Agent"
 date: 2026-05-08
-content_hash: fd6ed4b32114fee5
+content_hash: 26be05690728114a
 ---
+
 # CubeBench: Diagnosing Interactive, Long-Horizon Spatial Reasoning under Partial Observations
 
 **Conference**: ICLR 2026  
@@ -116,8 +121,8 @@ Dense rewards generally improved short-horizon performance, especially pulling v
 - **Value**: ⭐⭐⭐⭐ Provides a clean, generative, and attributable suite for spatial intelligence, serving as a critical benchmark for agents moving toward the physical world.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

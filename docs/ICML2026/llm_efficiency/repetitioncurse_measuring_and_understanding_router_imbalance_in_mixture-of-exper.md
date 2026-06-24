@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress
 description: >-
-  [ICML 2026][LLM Efficiency][TTFT] By providing MoE large models with minimalist OOD prompts such as "repeating the same token N times," the authors discover that the router directs almost all tokens to a fixed small set of top-$k$ experts. Under Expert Parallelism (EP) deployment, this creates a bottleneck on a single card while leaving other GPUs idle
+  [ICML 2026][LLM Efficiency][MoE Routing Imbalance] By providing MoE large models with minimalist OOD prompts such as "repeating the same token N times," the authors discover that the router directs almost all tokens to a fixed small set of top-$k$ experts. Under Expert Parallelism (EP) deployment, this creates a bottleneck on a single card while leaving other GPUs idle, increasing TTFT by 20%–148% on 8-GPU clusters. This effectively turns the MoE parallel accelerator into a D…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - TTFT
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "MoE Routing Imbalance"
+  - "Expert Parallelism"
+  - "DoS Attack"
+  - "TTFT"
+  - "Black-box Attack"
 date: 2026-05-08
-content_hash: 99df101f91450f41
+content_hash: 993abd9aceb59c13
 ---
+
 # RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress
 
 **Conference**: ICML 2026  
@@ -118,11 +123,11 @@ Qualitative conclusions: (a) Mixtral family models generally show TTFT amplifica
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource](../../ICLR2026/llm_efficiency/mixture-of-experts_can_surpass_dense_llms_under_strictly_equal_resource.md)
+- [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](../../ICLR2026/llm_efficiency/understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
 - [\[ICML 2026\] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs](softmoe_soft_differentiable_routing_for_mixture-of-experts_in_llms.md)
 - [\[ICML 2026\] Hyperparameter Transfer with Mixture-of-Experts Layers](hyperparameter_transfer_with_mixture-of-expert_layers.md)
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
-- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[ICML 2026\] Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills](skill-based_mixture-of-experts_adaptive_routing_for_heterogeneous_reasoning_via_.md)
 
 </div>
 

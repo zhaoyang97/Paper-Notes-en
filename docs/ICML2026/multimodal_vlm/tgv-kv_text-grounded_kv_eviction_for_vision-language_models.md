@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TGV-KV: Text-Grounded KV Eviction for Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][KV cache eviction] TGV-KV introduces a triplet of mechanisms—layer-wise budgeting based on text-vision attention, re-ranking visual importance using dominant text tokens, and prioritizing text KV during eviction—to successfully migrate KV eviction strategies from LLMs to VLMs. Under a 5% retention rate, it maintains performance near full
+  [ICML2026][Multimodal VLM][VLM Inference Acceleration] TGV-KV introduces a triplet of mechanisms—layer-wise budgeting based on text-vision attention, re-ranking visual importance using dominant text tokens, and prioritizing text KV during eviction—to successfully migrate KV eviction strategies from LLMs to VLMs. Under a 5% retention rate, it maintains performance near full KV levels on LLaVA-NeXT and Qwen3-VL, while achieving a 52.6% throughput increase.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - KV cache eviction
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "VLM Inference Acceleration"
+  - "KV cache eviction"
+  - "Inter-modal Attention"
+  - "Text-grounding"
+  - "Budget Allocation"
 date: 2026-05-08
-content_hash: 282eb2fdcb5361f9
+content_hash: 0526a4000e3e6b5b
 ---
+
 # TGV-KV: Text-Grounded KV Eviction for Vision-Language Models
 
 **Conference**: ICML2026  
@@ -137,8 +142,8 @@ Summary of three key controls from Table 1 (LLaVA, 5% retention) to verify modul
 
 ## Related Papers
 
-- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
 - [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
+- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
 - [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](../../CVPR2026/multimodal_vlm/mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
 - [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](../../CVPR2026/multimodal_vlm/grounded_3d-aware_spatial_vision-language_modeling.md)
 - [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](../../NeurIPS2025/multimodal_vlm/praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)

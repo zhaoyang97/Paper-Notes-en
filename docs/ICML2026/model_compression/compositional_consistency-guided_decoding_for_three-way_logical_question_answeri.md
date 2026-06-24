@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Consistency-Guided Decoding for Three-Way Logical Question Answering
 description: >-
-  [ICML 2026][Model Compression][Paper Note] By leveraging the deterministic negation mapping between hypothesis $H$ and its negation $\neg H$ in three-way logical QA, multiple LLM calls are composed at test-time and disambiguated through consistency constraints. This reduces epistemic Unknowns and improves reasoning accuracy without requiring training.
+  [ICML 2026][Model Compression][Logical Reasoning] By leveraging the deterministic negation mapping between hypothesis $H$ and its negation $\neg H$ in three-way logical QA, multiple LLM calls are composed at test-time and disambiguated through consistency constraints. This reduces epistemic Unknowns and improves reasoning accuracy without requiring training.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Logical Reasoning"
+  - "Consistency Decoding"
+  - "Three-way QA"
+  - "Test-time Reasoning"
+  - "Negation Mapping"
 date: 2026-05-08
-content_hash: 34ba0249aebbf939
+content_hash: c2f94897bc1add5e
 ---
+
 # Compositional Consistency-Guided Decoding for Three-Way Logical Question Answering
 
 **Conference**: ICML 2026  

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Map2Seq] GROKE proposes evaluating navigation instructions **without any vision** by serializing OpenStreetMap (OSM) data into JSON and utilizing Gemini-3 Pro as a follower agent to execute instructions on the graph. Navigation metrics (Navigation Error / SR / SDTW) serve as proxies for instruction quality. Compared to heuristi
+  [ACL 2026][Robotics][Map2Seq] GROKE proposes evaluating navigation instructions **without any vision** by serializing OpenStreetMap (OSM) data into JSON and utilizing Gemini-3 Pro as a follower agent to execute instructions on the graph. Navigation metrics (Navigation Error / SR / SDTW) serve as proxies for instruction quality. Compared to heuristic baselines on Map2Seq, it reduces Navigation Error (NE) by 68.5%, and results show that NE is significantly correlated with human…
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - Map2Seq
-  - OpenStreetMap
-  - LLM agent
-  - graph reasoning
-  - agent-as-judge
+  - "ACL 2026"
+  - "Robotics"
+  - "Map2Seq"
+  - "OpenStreetMap"
+  - "LLM agent"
+  - "graph reasoning"
+  - "agent-as-judge"
 date: 2026-05-08
-content_hash: 919b8f4c09bfade7
+content_hash: 29eb43e1f26cbf7d
 ---
+
 # GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap
 
 **Conference**: ACL 2026  
@@ -159,8 +160,8 @@ Comparison of spatial representations across difficulty levels (n=100 Map2Seq se
 - [\[ACL 2026\] GoViG: Goal-Conditioned Visual Navigation Instruction Generation via Multimodal Reasoning](govig_goal-conditioned_visual_navigation_instruction_generation_via_multimodal_r.md)
 - [\[CVPR 2026\] Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory](../../CVPR2026/robotics/parse_search_and_confirmation_training-free_aerial_vision-and-dialog_navigation_.md)
 - [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](../../CVPR2026/robotics/profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](../../CVPR2026/robotics/awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 - [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](../../CVPR2026/robotics/probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
+- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](../../CVPR2026/robotics/awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
 
 </div>
 

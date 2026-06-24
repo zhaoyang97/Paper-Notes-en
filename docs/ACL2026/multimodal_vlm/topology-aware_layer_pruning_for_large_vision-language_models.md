@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Topology-Aware Layer Pruning for Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper proposes TopoVLM, a layer pruning framework based on Topological Data Analysis (TDA). It models hidden states as point clouds and quantifies inter-layer topological consistency via zigzag persistent homology to adaptively retain transition-critical layers while pruning structural redundancies. It significant
+  [ACL 2026][Multimodal VLM][Layer Pruning] This paper proposes TopoVLM, a layer pruning framework based on Topological Data Analysis (TDA). It models hidden states as point clouds and quantifies inter-layer topological consistency via zigzag persistent homology to adaptively retain transition-critical layers while pruning structural redundancies. It significantly outperforms existing pruning methods at 50-60% sparsity.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Model Compression
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Layer Pruning"
+  - "Topological Data Analysis"
+  - "Persistent Homology"
+  - "Vision-Language Models"
+  - "Model Compression"
 date: 2026-05-08
-content_hash: 9a4bb3790b7c9944
+content_hash: 94ae98e5aad7ab04
 ---
+
 # Topology-Aware Layer Pruning for Large Vision-Language Models
 
 **Conference**: ACL 2026  
@@ -149,9 +153,9 @@ VideoLLaMA2 (7B) at 60% Sparsity:
 ## Related Papers
 
 - [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](../../CVPR2026/multimodal_vlm/mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](../../CVPR2026/multimodal_vlm/beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 - [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
-- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
 - [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](../../AAAI2026/multimodal_vlm/branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
 
 </div>

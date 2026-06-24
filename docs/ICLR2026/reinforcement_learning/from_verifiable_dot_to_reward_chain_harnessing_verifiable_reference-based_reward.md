@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes the RLVRR framework, extending RLVR (Reinforcement Learning with Verifiable Rewards) from mathematical and code reasoning to open-ended text generation. By extracting keyword sequences (content reward) and executable Python check functions (style reward) from high-quality reference answers, it const
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper proposes the RLVRR framework, extending RLVR (Reinforcement Learning with Verifiable Rewards) from mathematical and code reasoning to open-ended text generation. By extracting keyword sequences (content reward) and executable Python check functions (style reward) from high-quality reference answers, it constructs a "Reward Chain" to replace single-point verification signals. With only 10K data…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Open-ended Generation"
+  - "Reward Chain"
+  - "Verifiable Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 85f27ad77fc1b8ef
+content_hash: 69fb0bd90ad0f456
 ---
+
 # From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation
 
 **Conference**: ICLR 2026  
@@ -162,10 +166,20 @@ Ours surpasses 100K SFT and 8B reward models across all metrics using only 10K d
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical, providing a low-cost, scalable RL training solution for tasks without standard answers.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
+- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[ICLR 2026\] QuRL: Rubrics As Judge For Open-Ended Question Answering](qurl_rubrics_as_judge_for_open-ended_question_answering.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)

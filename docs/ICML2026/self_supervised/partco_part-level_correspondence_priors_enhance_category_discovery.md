@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] PartCo: Part-Level Correspondence Priors Enhance Category Discovery
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] PartCo introduces a **plug-and-play** framework to enhance Generalized Category Discovery by explicitly leveraging **part-level feature correspondences** inherent in Vision Transformer patch tokens, improving baselines like SimGCD / SPTNet / FlipClass by 2-10% across multiple benchmarks including CUB, Stanford-Cars, an
+  [ICML 2026][Self-Supervised Learning][Category Discovery] PartCo introduces a **plug-and-play** framework to enhance Generalized Category Discovery by explicitly leveraging **part-level feature correspondences** inherent in Vision Transformer patch tokens, improving baselines like SimGCD / SPTNet / FlipClass by 2-10% across multiple benchmarks including CUB, Stanford-Cars, and ImageNet-100.
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Category Discovery"
+  - "Part-Level Correspondence"
+  - "ViT Features"
+  - "Part-Level Contrastive Learning"
 date: 2026-05-08
-content_hash: 91b428c423ecdff6
+content_hash: ce641d07e78a1e66
 ---
+
 # PartCo: Part-Level Correspondence Priors Enhance Category Discovery
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ PartCo does not modify the pipeline of the original method; it only adds an extr
 
 ## Related Papers
 
+- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](../../ICLR2026/self_supervised/part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
 - [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](../../CVPR2026/self_supervised/decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
 - [\[CVPR 2025\] Hyperbolic Category Discovery](../../CVPR2025/self_supervised/hyperbolic_category_discovery.md)
-- [\[ICML 2026\] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts](scaling_continual_learning_to_300_tasks_with_bi-level_routing_mixture-of-experts.md)
+- [\[ICLR 2026\] Adaptive Gaussian Expansion for On-the-fly Category Discovery](../../ICLR2026/self_supervised/adaptive_gaussian_expansion_for_on-the-fly_category_discovery.md)
 - [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
-- [\[CVPR 2026\] Beyond the Static World: Continual Category Discovery under Visual Drift](../../CVPR2026/self_supervised/beyond_the_static_world_continual_category_discovery_under_visual_drift.md)
 
 </div>
 

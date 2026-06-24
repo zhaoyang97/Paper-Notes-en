@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Structural Graph Probing of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper constructs a "correlation graph" based on the pairwise neuron correlations within each layer of a Vision-Language Model (VLM). Using GCN graph probes, the authors demonstrate that this **population-level topological structure** can predict model behavior, characterize the evolution of cross-modal fusion with
+  [CVPR 2026][Multimodal VLM][Neural Topology] This paper constructs a "correlation graph" based on the pairwise neuron correlations within each layer of a Vision-Language Model (VLM). Using GCN graph probes, the authors demonstrate that this **population-level topological structure** can predict model behavior, characterize the evolution of cross-modal fusion with depth, and locate "hub neurons" that significantly alter the output upon perturbation. This introduces a novel int…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Neural Topology"
+  - "Correlation Graphs"
+  - "Graph Probing"
+  - "Cross-modal Structure"
+  - "Causal Intervention"
 date: 2026-05-08
-content_hash: ffd11913af872d60
+content_hash: 95f3fe4b6fb56977
 ---
+
 # Structural Graph Probing of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -134,6 +140,7 @@ The graph probe significantly outperforms text-only baselines in hallucination d
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,7 +149,7 @@ The graph probe significantly outperforms text-only baselines in hallucination d
 - [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
 - [\[CVPR 2026\] CASPA: Graph-Structured Concept Anchors for Modality-Agnostic Adaptation in Vision-Language Models](caspa_graph-structured_concept_anchors_for_modality-agnostic_adaptation_in_visio.md)
 - [\[CVPR 2026\] Beyond Graph Model: Reliable VLM Fine-Tuning via Random Graph Adapter](beyond_graph_model_reliable_vlm_fine-tuning_via_random_graph_adapter.md)
-- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
+- [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
 
 </div>
 

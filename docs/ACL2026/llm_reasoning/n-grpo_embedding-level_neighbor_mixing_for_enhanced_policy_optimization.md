@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization
 description: >-
-  [ACL 2026][LLM Reasoning][GRPO] N-GRPO replaces "sampling a token then looking up its embedding" with a "weighted mixture of the anchor token and its semantic neighbors' embeddings" during the GRPO rollout phase. It injects exploration diversity via controlled embedding-level perturbations without deviating from the semantic manifold, consistently ou
+  [ACL 2026][Reasoning][GRPO] N-GRPO replaces "sampling a token then looking up its embedding" with a "weighted mixture of the anchor token and its semantic neighbors' embeddings" during the GRPO rollout phase. It injects exploration diversity via controlled embedding-level perturbations without deviating from the semantic manifold, consistently outperforming GRPO and Gaussian noise baselines on Pass@16/Pass@32 across multiple backbones such as DeepSeek-R1-Distill-Qwen.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - GRPO
+  - "ACL 2026"
+  - "Reasoning"
+  - "GRPO"
+  - "mathematical reasoning"
+  - "embedding-level exploration"
+  - "semantic neighbor mixing"
+  - "rollout diversity"
 date: 2026-05-08
-content_hash: 3a6bcc7a2ac55e74
+content_hash: 33fdeaf90868f07e
 ---
+
 # N-GRPO: Embedding-Level Neighbor Mixing for Enhanced Policy Optimization
 
 **Conference**: ACL 2026  
@@ -138,11 +143,11 @@ Conducted on DeepSeek-R1-Distill-Qwen-1.5B across mathematical benchmark average
 
 ## Related Papers
 
+- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
 - [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](../../ICLR2026/llm_reasoning/scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
 - [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](think_outside_the_policy_in-context_steered_policy_optimization.md)
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
 - [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
-- [\[NeurIPS 2025\] Segment Policy Optimization: Effective Segment-Level Credit Assignment in RL for Large Language Models](../../NeurIPS2025/llm_reasoning/segment_policy_optimization_effective_segment-level_credit_assignment_in_rl_for_.md)
+- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
 
 </div>
 

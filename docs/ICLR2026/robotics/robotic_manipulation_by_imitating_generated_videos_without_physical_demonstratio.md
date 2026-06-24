@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Video Generation] RIGVid enables robots to perform manipulation tasks such as pouring water and sweeping trash using only "AI-generated videos." Given a language instruction and a scene image, the method uses a video diffusion model to generate demonstration videos, filters failed generations with a VLM, tracks 6D pose trajectories of o
+  [ICLR 2026][Robotics][Robotic Manipulation] RIGVid enables robots to perform manipulation tasks such as pouring water and sweeping trash using only "AI-generated videos." Given a language instruction and a scene image, the method uses a video diffusion model to generate demonstration videos, filters failed generations with a VLM, tracks 6D pose trajectories of objects from the video, and retargets them for execution by a robotic arm. This process requires no real demonstratio…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Video Generation
+  - "ICLR 2026"
+  - "Robotics"
+  - "Robotic Manipulation"
+  - "Video Generation"
+  - "Imitation Learning"
+  - "6D Pose Tracking"
+  - "Zero-shot demonstration"
 date: 2026-05-08
-content_hash: 0a7cec7d6e7a2daa
+content_hash: 6226cdee88729933
 ---
+
 # Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations
 
 **Conference**: ICLR 2026  
@@ -131,11 +136,11 @@ Evaluation was conducted on an xArm7 robotic arm with an Orbbec Femto Bolt camer
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](../../CVPR2026/robotics/spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
 - [\[ICLR 2026\] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation](momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step.md)
+- [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](../../CVPR2026/robotics/spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
 - [\[ICLR 2026\] When would Vision-Proprioception Policies Fail in Robotic Manipulation?](when_would_vision-proprioception_policies_fail_in_robotic_manipulation.md)
+- [\[ICLR 2026\] Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](genie_envisioner_a_unified_world_foundation_platform_for_robotic_manipulation.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](../../CVPR2026/robotics/affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
-- [\[ICLR 2026\] Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting](actions_as_language_fine-tuning_vlms_into_vlas_without_catastrophic_forgetting.md)
 
 </div>
 

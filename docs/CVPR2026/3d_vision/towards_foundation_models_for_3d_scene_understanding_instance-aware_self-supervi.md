@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PointINS adds an "offset branch" to point cloud self-supervised pre-training, enabling the model to learn to predict offset vectors pointing to instance centers without any labels. It prevents representation collapse using two complementary regularizers: ODR (Offset Distribution Regularization), which aligns with globa
+  [CVPR 2026][3D Vision][Point cloud self-supervised learning] PointINS adds an "offset branch" to point cloud self-supervised pre-training, enabling the model to learn to predict offset vectors pointing to instance centers without any labels. It prevents representation collapse using two complementary regularizers: ODR (Offset Distribution Regularization), which aligns with global statistical priors, and SCR (Spatial Clustering Regularization)…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud self-supervised learning"
+  - "instance-aware"
+  - "offset regression"
+  - "self-distillation"
+  - "3D foundation models"
 date: 2026-05-08
-content_hash: 7dd62a776aa63ec1
+content_hash: d7c066e03588df17
 ---
+
 # Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds
 
 **Conference**: CVPR 2026  
@@ -148,16 +154,16 @@ Component ablation on ScanNet (InsSeg mAP) and nuScenes (PanSeg PQ) in linear pr
 - Value: ⭐⭐⭐⭐⭐ Plug-and-play nature and extreme label efficiency provide a practical path toward unified 3D foundation models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
+- [\[CVPR 2025\] Sonata: Self-Supervised Learning of Reliable Point Representations](../../CVPR2025/3d_vision/sonata_self-supervised_learning_of_reliable_point_representations.md)
 - [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
+- [\[CVPR 2026\] Emergent Extreme-View Geometry in 3D Foundation Models](emergent_extreme-view_geometry_in_3d_foundation_models.md)
 - [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
 - [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
 
 </div>
 

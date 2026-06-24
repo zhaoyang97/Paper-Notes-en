@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model
 description: >-
-  [AAAI 2026][Multimodal VLM][Sketch understanding] This paper constructs a large-scale sketch-image-instruction triplet dataset, SketchVCL (600K pretraining + 215K fine-tuning samples)…
+  [AAAI 2026][Multimodal VLM][Sketch understanding] This paper constructs a large-scale sketch-image-instruction triplet dataset, SketchVCL (600K pretraining + 215K fine-tuning samples), and trains O3SLM — the first open-source large vision-language model capable of fluently understanding hand-drawn sketches across four tasks: detection, counting, retrieval, and VQA — substantially outperforming existing LVLMs on all tasks.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "open vocabulary"
   - "instruction tuning"
 date: 2026-05-08
-content_hash: bd346843db5b06b4
+content_hash: 75c525c5b206eed8
 ---
 
 # O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model
@@ -189,11 +189,11 @@ At inference time, images are ranked in descending order by $p_\theta(\texttt{<y
 
 ## Related Papers
 
+- [\[CVPR 2026\] Vocabulary Scaling Law: Tuning Open-vocabulary Predictors for Their Openness](../../CVPR2026/multimodal_vlm/vocabulary_scaling_law_tuning_open-vocabulary_predictors_for_their_openness.md)
+- [\[CVPR 2026\] Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset](../../CVPR2026/multimodal_vlm/towards_open-vocabulary_industrial_defect_understanding_with_a_large-scale_multi.md)
+- [\[CVPR 2025\] Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Vision-Language Models](../../CVPR2025/multimodal_vlm/molmo_and_pixmo_open_weights_and_open_data_for_state-of-the-art_vision-language_.md)
+- [\[CVPR 2026\] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception](../../CVPR2026/multimodal_vlm/synclip_synonym-coherent_language-image_pretraining_for_robust_open-vocabulary_d.md)
 - [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](../../ICLR2026/multimodal_vlm/customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
-- [\[AAAI 2026\] SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios](stola_self-adaptive_touch-language_framework_with_tactile_commonsense_reasoning_.md)
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
-- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
-- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](../../ICML2026/multimodal_vlm/vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
 
 </div>
 

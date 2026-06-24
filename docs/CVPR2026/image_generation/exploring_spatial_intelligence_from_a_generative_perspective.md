@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Spatial Intelligence from a Generative Perspective
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper introduces the concept of "Generative Spatial Intelligence" (GSI)—the ability of unified multimodal models to adhere to and manipulate 3D spatial constraints during image generation. The authors construct the first quantitative benchmark, GSI-Bench (comprising the real-world set GSI-Real and the synthetic se
+  [CVPR 2026][Image Generation][Generative Spatial Intelligence] This paper introduces the concept of "Generative Spatial Intelligence" (GSI)—the ability of unified multimodal models to adhere to and manipulate 3D spatial constraints during image generation. The authors construct the first quantitative benchmark, GSI-Bench (comprising the real-world set GSI-Real and the synthetic set GSI-Syn), evaluated via space-anchored image editing tasks. Furthermore…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generative Spatial Intelligence"
+  - "Spatial Editing"
+  - "3D Priors"
+  - "Synthetic Benchmarking"
+  - "Unified Multimodal Models"
 date: 2026-05-08
-content_hash: 523883ea573dcaa2
+content_hash: 24e26047972ac973
 ---
+
 # Exploring Spatial Intelligence from a Generative Perspective
 
 **Conference**: CVPR 2026  
@@ -134,10 +140,10 @@ Verifying the core hypothesis: Performance of BAGEL fine-tuned only on GSI-Syn e
 ## Related Papers
 
 - [\[ICLR 2026\] Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models](../../ICLR2026/image_generation/everything_in_its_place_benchmarking_spatial_intelligence_of_text-to-image_model.md)
-- [\[ICLR 2026\] Blueprint-Bench: Comparing Spatial Intelligence of LLMs, Agents and Image Models](../../ICLR2026/image_generation/blueprint-bench_comparing_spatial_intelligence_of_llms_agents_and_image_models.md)
 - [\[CVPR 2026\] Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning](spatial-ssrl_enhancing_spatial_understanding_via_self-supervised_reinforcement_l.md)
 - [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
+- [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
 
 </div>
 

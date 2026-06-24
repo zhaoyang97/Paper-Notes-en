@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MESA: Improving MoE Safety Alignment via Decentralized Expertise
 description: >-
-  [ICML 2026][Alignment & RLHF][Safety Sparsity] MESA reformulates MoE safety alignment as a resource allocation problem of "distributing safety responsibilities across experts." It utilizes KL-regularized Sinkhorn Optimal Transport (OT) to select the lowest-cost subset of experts from the "shoulder region" for SFT. Simultaneously, an OT-constrained routing loss dire
+  [ICML 2026][LLM Alignment][MoE Safety] MESA reformulates MoE safety alignment as a resource allocation problem of "distributing safety responsibilities across experts." It utilizes KL-regularized Sinkhorn Optimal Transport (OT) to select the lowest-cost subset of experts from the "shoulder region" for SFT. Simultaneously, an OT-constrained routing loss directs safety tokens to these experts, boosting Strata safety scores to 95+% on DeepSeek-V2-Lite / Qwen3-30B-A3B while maint…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - Safety Sparsity
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "MoE Safety"
+  - "Safety Sparsity"
+  - "Optimal Transport"
+  - "Routing Alignment"
+  - "Expert Selection"
 date: 2026-05-08
-content_hash: 8fdbe84caafeac2f
+content_hash: 80d3a251d82cfb5e
 ---
+
 # MESA: Improving MoE Safety Alignment via Decentralized Expertise
 
 **Conference**: ICML 2026  
@@ -139,8 +144,8 @@ On Qwen3-30B-A3B, MESA pushes Strata to 99.00 and WildJB to 97.65 while maintain
 - **Value**: ⭐⭐⭐⭐⭐ High relevance given the dominance of MoE; the shoulder hypothesis and OT framework are highly transferable to other MoE adaptation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -148,7 +153,7 @@ On Qwen3-30B-A3B, MESA pushes Strata to 99.00 and WildJB to 97.65 while maintain
 - [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
 - [\[ICML 2026\] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment](quantifying_the_salience_of_geo-cultural_values_for_pluralistic_safety_alignment.md)
-- [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](../../ICLR2026/llm_alignment/superficial_safety_alignment_hypothesis.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](../../ICLR2026/llm_alignment/evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
 
 </div>
 

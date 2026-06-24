@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals
 description: >-
-  [NeurIPS 2025][Video Generation][force prompting] This paper proposes Force Prompting, which uses physical forces (local point forces and global wind forces) as control signals for video generation models. Using only ~15…
+  [NeurIPS 2025][Video Generation][force prompting] This paper proposes Force Prompting, which uses physical forces (local point forces and global wind forces) as control signals for video generation models. Using only ~15K synthetic training videos (Blender flags and rolling balls) and a single day of training on 4×A100 GPUs, the method achieves remarkable generalization across diverse real-world scenes with varying objects, materials, and geometries…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "sim2real"
   - "CogVideoX"
 date: 2026-05-08
-content_hash: 31bd5893809edae2
+content_hash: eadb2b458df5f622
 ---
 
 # Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals
@@ -132,10 +132,10 @@ The model takes as input a triplet $(\tau, \phi, \pi)$: text, initial frame, and
 ## Related Papers
 
 - [\[NeurIPS 2025\] PhysCtrl: Generative Physics for Controllable and Physics-Grounded Video Generation](physctrl_generative_physics_for_controllable_and_physicsgrou.md)
-- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video Models](../../CVPR2026/video_generation/physvid_physics_aware_local_conditioning_for_generative_video_models.md)
-- [\[NeurIPS 2025\] Video Diffusion Models Excel at Tracking Similar-Looking Objects Without Supervision](video_diffusion_models_excel_at_tracking_similar-looking_objects_without_supervi.md)
-- [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](../../ICCV2025/video_generation/vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
-- [\[NeurIPS 2025\] Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models](video_killed_the_energy_budget_characterizing_the_latency_and_power_regimes_of_o.md)
+- [\[CVPR 2025\] Can Text-to-Video Generation Help Video-Language Alignment?](../../CVPR2025/video_generation/can_text-to-video_generation_help_video-language_alignment.md)
+- [\[CVPR 2025\] Motion Prompting: Controlling Video Generation with Motion Trajectories](../../CVPR2025/video_generation/motion_prompting_controlling_video_generation_with_motion_trajectories.md)
+- [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](../../CVPR2026/video_generation/inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
+- [\[CVPR 2025\] Visual Prompting for One-Shot Controllable Video Editing Without Inversion](../../CVPR2025/video_generation/visual_prompting_for_one-shot_controllable_video_editing_without_inversion.md)
 
 </div>
 

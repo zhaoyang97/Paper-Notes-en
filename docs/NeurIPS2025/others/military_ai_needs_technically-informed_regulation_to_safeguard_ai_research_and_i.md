@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications
 description: >-
-  [NeurIPS 2025][Autonomous Weapons Systems] This paper proposes a behavior-oriented definition and regulatory framework for AI-powered Lethal Autonomous Weapons Systems (AI-LAWS). It identifies systems requiring enhanced…
+  [NeurIPS 2025][Autonomous Weapons Systems] This paper proposes a behavior-oriented definition and regulatory framework for AI-powered Lethal Autonomous Weapons Systems (AI-LAWS). It identifies systems requiring enhanced regulation through two technical criteria, puts forward five concrete policy recommendations, and calls on AI researchers to participate actively throughout the full lifecycle of military AI governance.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Weapons Systems"
@@ -12,7 +12,7 @@ tags:
   - "Technically-Informed Policy"
   - "AI Research Freedom"
 date: 2026-05-08
-content_hash: 726385339df14130
+content_hash: 07e1b1a461a8def2
 ---
 
 # Military AI Needs Technically-Informed Regulation to Safeguard AI Research and its Applications
@@ -153,10 +153,10 @@ This paper contains no quantitative experiments; instead, two core reference tab
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Sustainable AI Economy Needs Data Deals That Work for Generators](a_sustainable_ai_economy_needs_data_deals_that_work_for_gene.md)
+- [\[ACL 2025\] All That Glitters is Not Novel: Plagiarism in AI Generated Research](../../ACL2025/others/plagiarism_ai_generated_research.md)
 - [\[NeurIPS 2025\] Emergency Response Measures for Catastrophic AI Risk](emergency_response_measures_for_catastrophic_ai_risk.md)
+- [\[NeurIPS 2025\] Evaluating In Silico Creativity: An Expert Review of AI Chess Compositions](evaluating_in_silico_creativity_an_expert_review_of_ai_chess_compositions.md)
 - [\[NeurIPS 2025\] Fostering the Ecosystem of AI for Social Impact Requires Expanding and Strengthening Evaluation Standards](fostering_the_ecosystem_of_ai_for_social_impact_requires_expanding_and_strengthe.md)
-- [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
-- [\[ICML 2026\] AI Cap-and-Trade: Efficiency Incentives for Accessibility and Sustainability](../../ICML2026/others/ai_cap-and-trade_efficiency_incentives_for_accessibility_and_sustainability.md)
 
 </div>
 

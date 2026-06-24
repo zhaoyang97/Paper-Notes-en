@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploratory Diffusion Model for Unsupervised Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Diffusion Model] ExDM introduces diffusion models to unsupervised reinforcement learning for the first time. It utilizes diffusion models to fit heterogeneous state distributions within the replay buffer, using "poorly fitted regions" as score-based intrinsic rewards to drive exploration. Additionally, it designs an efficient online fi
+  [ICLR 2026][Reinforcement Learning][Unsupervised Reinforcement Learning] ExDM introduces diffusion models to unsupervised reinforcement learning for the first time. It utilizes diffusion models to fit heterogeneous state distributions within the replay buffer, using "poorly fitted regions" as score-based intrinsic rewards to drive exploration. Additionally, it designs an efficient online fine-tuning algorithm for diffusion policies with convergence guarantees.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised Reinforcement Learning"
+  - "Diffusion Models"
+  - "Intrinsic Reward"
+  - "State Entropy"
+  - "Online Fine-tuning"
 date: 2026-05-08
-content_hash: b2125b477905d534
+content_hash: fedce82a64ad5d3c
 ---
+
 # Exploratory Diffusion Model for Unsupervised Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -120,11 +125,11 @@ URLB Downstream Adaptation (Expert normalized score, 10 seeds, higher is better)
 
 ## Related Papers
 
+- [\[ICLR 2026\] Temporal Representations for Exploration: Learning Complex Exploratory Behavior without Extrinsic Rewards](temporal_representations_for_exploration_learning_complex_exploratory_behavior_w.md)
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] How Far Can Unsupervised RLVR Scale LLM Training?](how_far_can_unsupervised_rlvr_scale_llm_training.md)
 - [\[ICLR 2026\] SUSD: Structured Unsupervised Skill Discovery through State Factorization](susd_structured_unsupervised_skill_discovery_through_state_factorization.md)
-- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
 
 </div>
 

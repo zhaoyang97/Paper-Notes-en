@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generating Attribute-Aware Human Motions from Textual Prompt
 description: >-
-  [AAAI 2026][Human Understanding][Human motion generation] This paper proposes AttrMoGen, a framework that decouples action semantics from human attributes (age, gender…
+  [AAAI 2026][Human Understanding][Human motion generation] This paper proposes AttrMoGen, a framework that decouples action semantics from human attributes (age, gender, etc.) via a Structural Causal Model (SCM)-based Causal Information Bottleneck, enabling attribute-aware human motion generation from text prompts. The authors also introduce HumanAttr, the first large-scale text-motion dataset with extensive attribute annotations.
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "VQVAE"
   - "text-driven"
 date: 2026-05-08
-content_hash: ada7807d97e57037
+content_hash: f3f84872f5f75248
 ---
 
 # Generating Attribute-Aware Human Motions from Textual Prompt
@@ -198,11 +198,11 @@ AttrMoGen reduces FID from MoMask's 0.245 to 0.089 (−63.7%) and MM-Dist from 2
 
 ## Related Papers
 
-- [\[ICLR 2026\] QuaMo: Quaternion Motions for Vision-based 3D Human Kinematics Capture](../../ICLR2026/human_understanding/quamo_quaternion_motion_kinematics.md)
-- [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
+- [\[CVPR 2025\] StickMotion: Generating 3D Human Motions by Drawing a Stickman](../../CVPR2025/human_understanding/stickmotion_generating_3d_human_motions_by_drawing_a_stickman.md)
+- [\[CVPR 2025\] Shape My Moves: Text-Driven Shape-Aware Synthesis of Human Motions](../../CVPR2025/human_understanding/shape_my_moves_text-driven_shape-aware_synthesis_of_human_motions.md)
 - [\[AAAI 2026\] CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning](clip-fti_fine-grained_face_template_inversion_via_clip-driven_attribute_conditio.md)
-- [\[ICCV 2025\] KinMo: Kinematic-Aware Human Motion Understanding and Generation](../../ICCV2025/human_understanding/kinmo_kinematic-aware_human_motion_understanding_and_generation.md)
-- [\[ICCV 2025\] AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning](../../ICCV2025/human_understanding/ar-vrm_imitating_human_motions_for_visual_robot_manipulation_with_analogical_rea.md)
+- [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
+- [\[CVPR 2026\] Towards Storytelling Animations: Joint Synthesis of Human and Camera Motions](../../CVPR2026/human_understanding/towards_storytelling_animations_joint_synthesis_of_human_and_camera_motions.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] CTAE employs a pair of (or multiple) coupled causal Transformer autoencoders to simultaneously model neural population activity across multiple brain regions. It explicitly partitions the latent space of each region into orthogonal "cross-region shared" and "region-private" subspaces. By utilizing four loss functions t
+  [ICLR 2026][Computational Biology][Multi-region neural recordings] CTAE employs a pair of (or multiple) coupled causal Transformer autoencoders to simultaneously model neural population activity across multiple brain regions. It explicitly partitions the latent space of each region into orthogonal "cross-region shared" and "region-private" subspaces. By utilizing four loss functions to force inter-regional signals into the shared block and retain region-specific signals in th…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Multi-region neural recordings"
+  - "Shared-private disentanglement"
+  - "Transformer Autoencoder"
+  - "Communication subspace"
+  - "Latent dynamics"
 date: 2026-05-08
-content_hash: acf001308fde87a7
+content_hash: 6cfb0d442a10026d
 ---
+
 # Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics
 
 **Conference**: ICLR 2026  
@@ -129,14 +135,15 @@ Key Finding: CTAE's shared latents capture the majority of behavior-related vari
 - Value: ⭐⭐⭐⭐ Provides a practical, scalable tool for multi-region neuroscience data analysis.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
 - [\[ICML 2026\] Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference](../../ICML2026/computational_biology/disentangling_latent_risk_pathways_via_bayesian_hypergraph_inference.md)
-- [\[ICLR 2026\] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space](beyond_ensembles_simulating_all-atom_protein_dynamics_in_a_learned_latent_space.md)
 - [\[ICLR 2026\] OmniMouse: Scaling properties of multi-modal, multi-task Brain Models on 150B Neural Tokens](omnimouse_scaling_properties_of_multi-modal_multi-task_brain_models_on_150b_neur.md)
+- [\[ICLR 2026\] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space](beyond_ensembles_simulating_all-atom_protein_dynamics_in_a_learned_latent_space.md)
 - [\[ICLR 2026\] FACET: A Fragment-Aware Conformer Ensemble Transformer](facet_a_fragment-aware_conformer_ensemble_transformer.md)
 
 </div>

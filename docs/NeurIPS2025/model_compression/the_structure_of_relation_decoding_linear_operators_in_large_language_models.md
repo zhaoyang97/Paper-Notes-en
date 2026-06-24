@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] The Structure of Relation Decoding Linear Operators in Large Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Linear relation decoding] This paper reveals that linear relation embeddings (LREs) in Transformer language models do not encode fine-grained relations but instead extract shared coarse-…
+  [NeurIPS 2025 Spotlight][Model Compression][Linear relation decoding] This paper reveals that linear relation embeddings (LREs) in Transformer language models do not encode fine-grained relations but instead extract shared coarse-grained semantic attributes (e.g., "country," "gender"). A rank-3 tensor network is employed to compress large collections of relation decoding matrices by several orders of magnitude.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "Linear relation decoding"
   - "tensor networks"
@@ -12,7 +12,7 @@ tags:
   - "interpretability"
   - "semantic attributes"
 date: 2026-05-08
-content_hash: 8b0ae16b27ed6a03
+content_hash: a46066b810832efd
 ---
 
 # The Structure of Relation Decoding Linear Operators in Large Language Models
@@ -138,10 +138,10 @@ The study proceeds in three progressive stages:
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Simple Linear Patch Revives Layer-Pruned Large Language Models](a_simple_linear_patch_revives_layerpruned_large_language_mod.md)
-- [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
 - [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
+- [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
 - [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
-- [\[NeurIPS 2025\] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions](layerif_estimating_layer_quality_for_large_language_models_using_influence_funct.md)
+- [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
 
 </div>
 

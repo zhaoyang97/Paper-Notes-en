@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EvoClaw: Evaluating AI Agents on Continuous Software Evolution
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] EvoClaw proposes a "milestone-level" software evolution evaluation paradigm. Utilizing the DeepCommit pipeline, it reconstructs noisy commit histories from open-source repositories into executable and verifiable milestone dependency Directed Acyclic Graphs (DAGs). This allows agents to complete a sequence of dependent
+  [ICML2026][LLM Agent][Coding Agents] EvoClaw proposes a "milestone-level" software evolution evaluation paradigm. Utilizing the DeepCommit pipeline, it reconstructs noisy commit histories from open-source repositories into executable and verifiable milestone dependency Directed Acyclic Graphs (DAGs). This allows agents to complete a sequence of dependent development tasks on a single persistent codebase. The study reveals that while 12 frontier models can achieve scores $>80\…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "Coding Agents"
+  - "Software Evolution"
+  - "Long-range Evaluation"
+  - "Milestone DAG"
+  - "Technical Debt"
 date: 2026-05-08
-content_hash: 523765d391cbf8a3
+content_hash: a028801aa45872e4
 ---
+
 # EvoClaw: Evaluating AI Agents on Continuous Software Evolution
 
 **Conference**: ICML2026  
@@ -142,11 +148,11 @@ The authors evaluated 12 frontier models across 4 agent frameworks, comparing "C
 
 ## Related Papers
 
-- [\[ICML 2026\] Measuring Agents in Production](measuring_agents_in_production.md)
-- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](self-evolving_llm_agents_with_in-distribution_optimization.md)
-- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](adamem_test-time_adaptive_memory_for_language_agents.md)
-- [\[ICML 2026\] Position: Modular Memory is the Key to Continual Learning Agents](position_modular_memory_is_the_key_to_continual_learning_agents.md)
-- [\[ICML 2026\] Constitutional Black-Box Monitoring for Scheming in LLM Agents](constitutional_black-box_monitoring_for_scheming_in_llm_agents.md)
+- [\[ICLR 2026\] InnovatorBench: Evaluating Agents' Ability to Conduct Innovative AI Research](../../ICLR2026/llm_agent/innovatorbench_evaluating_agents_ability_to_conduct_innovative_ai_research.md)
+- [\[ICLR 2026\] Programming with Pixels: Can Computer-Use Agents do Software Engineering?](../../ICLR2026/llm_agent/programming_with_pixels_can_computer-use_agents_do_software_engineering.md)
+- [\[ICML 2026\] SE-GA: Memory-Augmented Self-Evolution for GUI Agents](se-ga_memory-augmented_self-evolution_for_gui_agents.md)
+- [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](../../ICLR2026/llm_agent/openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
+- [\[ICML 2026\] Towards a Science of AI Agent Reliability](towards_a_science_of_ai_agent_reliability.md)
 
 </div>
 

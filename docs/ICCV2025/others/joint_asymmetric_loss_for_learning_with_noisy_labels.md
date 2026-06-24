@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Joint Asymmetric Loss for Learning with Noisy Labels
 description: >-
-  [ICCV 2025][learning with noisy labels] This paper extends asymmetric loss functions to the more challenging passive loss setting, proposes Asymmetric Mean Squared Error (AMSE)…
+  [ICCV 2025][learning with noisy labels] This paper extends asymmetric loss functions to the more challenging passive loss setting, proposes Asymmetric Mean Squared Error (AMSE), rigorously establishes the necessary and sufficient conditions for AMSE to satisfy the asymmetric condition, and embeds AMSE into the APL framework to construct the Joint Asymmetric Loss (JAL), achieving comprehensive improvements over existing robust loss methods on CIFAR-10/100 and other datasets.
 tags:
   - "ICCV 2025"
   - "learning with noisy labels"
@@ -11,7 +11,7 @@ tags:
   - "APL framework"
   - "noise tolerance"
 date: 2026-05-08
-content_hash: ba78f1d37fcd195f
+content_hash: 23832dc9764af954
 ---
 
 # Joint Asymmetric Loss for Learning with Noisy Labels
@@ -217,11 +217,11 @@ $$L_{\text{JAL-FL}} = \alpha \cdot L_{\text{NFL}} + \beta \cdot L_{\text{AMSE}}$
 
 ## Related Papers
 
+- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](../../CVPR2026/others/debiased_sample_selection_for_learning_with_noisy_labels.md)
+- [\[ECCV 2024\] Foster Adaptivity and Balance in Learning with Noisy Labels](../../ECCV2024/others/foster_adaptivity_and_balance_in_learning_with_noisy_labels.md)
+- [\[ICML 2025\] Bipartite Ranking From Multiple Labels: On Loss Versus Label Aggregation](../../ICML2025/others/bipartite_ranking_from_multiple_labels_on_loss_versus_label_aggregation.md)
 - [\[ICCV 2025\] Loss Functions for Predictor-based Neural Architecture Search](loss_functions_for_predictor-based_neural_architecture_search.md)
-- [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](../../NeurIPS2025/others/reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
-- [\[NeurIPS 2025\] Asymmetric Duos: Sidekicks Improve Uncertainty](../../NeurIPS2025/others/asymmetric_duos_sidekicks_improve_uncertainty.md)
-- [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](../../NeurIPS2025/others/semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](../../ICLR2026/others/noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
+- [\[ICML 2025\] Optimal Auction Design in the Joint Advertising](../../ICML2025/others/optimal_auction_design_in_the_joint_advertising.md)
 
 </div>
 

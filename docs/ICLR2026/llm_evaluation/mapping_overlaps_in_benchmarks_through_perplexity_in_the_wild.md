@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Mapping Overlaps in Benchmarks through Perplexity in the Wild
 description: >-
-  [ICLR 2026][LLM Evaluation][benchmark overlap] This paper proposes **benchmark signature**—extracting a set of "salient tokens" from large-scale real-world corpora and using the perplexity of LLMs on these tokens to predict their performance on a specific benchmark. This characterizes the capabilities actually tested by each benchmark and quantifies the true overla
+  [ICLR 2026][LLM Evaluation][benchmark overlap] This paper proposes **benchmark signature**—extracting a set of "salient tokens" from large-scale real-world corpora and using the perplexity of LLMs on these tokens to predict their performance on a specific benchmark. This characterizes the capabilities actually tested by each benchmark and quantifies the true overlap structure among 89 benchmarks that is otherwise obscured by semantic similarity and performance correlation.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - benchmark overlap
-  - perplexity
-  - benchmark signature
-  - meta-evaluation
-  - in-the-wild corpora
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "benchmark overlap"
+  - "perplexity"
+  - "benchmark signature"
+  - "meta-evaluation"
+  - "in-the-wild corpora"
 date: 2026-05-08
-content_hash: a3bd05152d5df0fb
+content_hash: cba6d726b26716bf
 ---
+
 # Mapping Overlaps in Benchmarks through Perplexity in the Wild
 
 **Conference**: ICLR 2026  

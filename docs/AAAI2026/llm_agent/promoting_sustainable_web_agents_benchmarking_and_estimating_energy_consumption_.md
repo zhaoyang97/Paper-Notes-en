@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis
 description: >-
-  [AAAI 2026][LLM Agent][Web Agent] This paper presents the first systematic quantification of energy consumption and carbon emissions of Web Agents from both empirical benchmarking and theoretical estimation perspectives…
+  [AAAI 2026][LLM Agent][Web Agent] This paper presents the first systematic quantification of energy consumption and carbon emissions of Web Agents from both empirical benchmarking and theoretical estimation perspectives, finding that higher energy consumption does not equate to better performance, and advocating for the inclusion of energy efficiency metrics in evaluation protocols.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Green AI"
   - "Sustainable Deployment"
 date: 2026-05-08
-content_hash: 7703bf8057776b7b
+content_hash: 42188196a8350e7a
 ---
 
 # Promoting Sustainable Web Agents: Benchmarking and Estimating Energy Consumption Through Empirical and Theoretical Analysis
@@ -141,10 +141,10 @@ The practical value is notable — this paper establishes the first energy consu
 ## Related Papers
 
 - [\[AAAI 2026\] LLMTM: Benchmarking and Optimizing LLMs for Temporal Motif Analysis in Dynamic Graphs](llmtm_benchmarking_and_optimizing_llms_for_temporal_motif_analysis_in_dynamic_gr.md)
-- [\[ICML 2026\] Weasel: Domain-Generalizable Web Agents through Importance-Diversity Data Selection](../../ICML2026/llm_agent/weasel_out-of-domain_generalization_for_web_agents_via_importance-diversity_data.md)
 - [\[AAAI 2026\] CausalTrace: A Neurosymbolic Causal Analysis Agent for Smart Manufacturing](causaltrace_a_neurosymbolic_causal_analysis_agent_for_smart_manufacturing.md)
-- [\[ICML 2026\] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History](../../ICML2026/llm_agent/persona2web_benchmarking_personalized_web_agents_for_contextual_reasoning_with_u.md)
 - [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](prune4web_dom_tree_pruning_programming_for_web_agent.md)
+- [\[ICML 2026\] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History](../../ICML2026/llm_agent/persona2web_benchmarking_personalized_web_agents_for_contextual_reasoning_with_u.md)
+- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](probench_benchmarking_gui_agents_with_accurate_process_infor.md)
 
 </div>
 

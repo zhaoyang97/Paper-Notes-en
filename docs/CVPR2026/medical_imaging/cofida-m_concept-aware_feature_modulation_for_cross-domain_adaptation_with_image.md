@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] To address the domain shift between "expert dermoscopic images" and "handheld clinical images," CoFiDA-M uses MONET clinical concept scores (privileged information) to guide FiLM-based visual feature editing during **training**, creating a "clinically reasoning" teacher. The teacher's **edited features** are then disti
+  [CVPR 2026][Medical Imaging][Skin Cancer Screening] To address the domain shift between "expert dermoscopic images" and "handheld clinical images," CoFiDA-M uses MONET clinical concept scores (privileged information) to guide FiLM-based visual feature editing during **training**, creating a "clinically reasoning" teacher. The teacher's **edited features** are then distilled into an **image-only** student. This allows the student to maintain high AUROC and melanoma recall acro…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Skin Cancer Screening"
+  - "Privileged Information"
+  - "FiLM Feature Modulation"
+  - "Concept Guidance"
+  - "Teacher-Student Distillation"
 date: 2026-05-08
-content_hash: 86b40fff68ba2eaa
+content_hash: 4ca22a7372f7c914
 ---
+
 # CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,15 @@ CoFiDA-M significantly outperforms TENT (top TTA baseline) and DALUPI (PI baseli
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
+- [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
 - [\[CVPR 2026\] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET](cross-domain_dual-stream_feature_disentanglement_for_brain_disorder_prediction_w.md)
 - [\[CVPR 2026\] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration](crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
-- [\[CVPR 2026\] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model](tell2adapt_a_unified_framework_for_source_free_unsupervised_domain_adaptation_vi.md)
 
 </div>
 

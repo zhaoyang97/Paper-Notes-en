@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Non-convex Entropic Mean-Field Optimization via Best Response Flow
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Mean-field optimization] This work extends Best Response Flow from convex functional optimization to the non-convex setting…
+  [NeurIPS 2025][Reinforcement Learning][Mean-field optimization] This work extends Best Response Flow from convex functional optimization to the non-convex setting, proving that under sufficiently large entropic regularization the BR operator becomes a contraction in the $L^1$-Wasserstein distance, thereby guaranteeing the existence of a unique global minimizer and exponential convergence for non-convex objectives.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Entropic regularization"
   - "Wasserstein distance"
 date: 2026-05-08
-content_hash: 850170bc231642a6
+content_hash: 9b4a4591b4386f1b
 ---
 
 # Non-convex Entropic Mean-Field Optimization via Best Response Flow
@@ -140,8 +140,8 @@ The theoretical contribution is complete and elegant, extending BR flow theory f
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
-- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
+- [\[NeurIPS 2025\] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning](mean-field_sampling_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Evaluating Temporal Consistency in Multi-Turn Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][ChronoScope] This paper introduces ChronoScope, an evaluation suite containing 1.46 million automatically synthesized multi-turn QA chains based on Wikidata. It specifically tests whether LLMs can "maintain previously implied temporal scopes" during multi-turn interactions. The study finds that high-performing models, including GPT
+  [ACL 2026][LLM Evaluation][Temporal Consistency] This paper introduces ChronoScope, an evaluation suite containing 1.46 million automatically synthesized multi-turn QA chains based on Wikidata. It specifically tests whether LLMs can "maintain previously implied temporal scopes" during multi-turn interactions. The study finds that high-performing models, including GPT-4 and Gemini-2.5, systematically suffer from "present-day drift," which worsens as interactions lengthen and c…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - ChronoScope
-  - Wikidata
-  - present-day bias
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Temporal Consistency"
+  - "Multi-turn QA"
+  - "ChronoScope"
+  - "Wikidata"
+  - "present-day bias"
 date: 2026-05-08
-content_hash: 6e3607a2dde5ca63
+content_hash: 577754721bd26e57
 ---
+
 # Evaluating Temporal Consistency in Multi-Turn Language Models
 
 **Conference**: ACL 2026  
@@ -130,11 +133,11 @@ The strongest model, GPT-4, achieves a Final@1 of only 0.516 under Gold Context,
 
 ## Related Papers
 
+- [\[ICLR 2026\] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models](../../ICLR2026/llm_evaluation/multi-turn_evaluation_of_anthropomorphic_behaviours_in_large_language_models.md)
 - [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
+- [\[ICLR 2026\] LLMs Get Lost In Multi-Turn Conversation](../../ICLR2026/llm_evaluation/llms_get_lost_in_multi-turn_conversation.md)
 - [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
-- [\[ICML 2025\] Consistency in Language Models: Current Landscape, Challenges, and Future Directions](../../ICML2025/llm_evaluation/consistency_in_language_models_current_landscape_challenges_and_future_direction.md)
-- [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
 
 </div>
 

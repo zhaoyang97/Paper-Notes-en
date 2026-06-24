@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LookOut: Real-World Humanoid Egocentric Navigation
 description: >-
-  [ICCV 2025][Autonomous Driving][Egocentric Navigation] LookOut proposes predicting future 6D head pose sequences (translation + rotation) over a 4.5-second horizon from first-person video with known poses. It backproject…
+  [ICCV 2025][Autonomous Driving][Egocentric Navigation] LookOut proposes predicting future 6D head pose sequences (translation + rotation) over a 4.5-second horizon from first-person video with known poses. It backprojects DINOv2 features into 3D space and compresses them into a BEV representation to capture scene geometry and semantics. Trained on a self-collected 4-hour real-world dynamic scene dataset, the model learns human-like navigation behaviors including waiting…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "DINO Unprojection"
   - "Humanoid Robot"
 date: 2026-05-08
-content_hash: 226638a5a838c49b
+content_hash: 17ecb781b7531877
 ---
 
 # LookOut: Real-World Humanoid Egocentric Navigation
@@ -146,8 +146,8 @@ LookOut outperforms EgoCast in trajectory prediction accuracy by a factor of 2 (
 - [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
 - [\[ICCV 2025\] RoboTron-Sim: Improving Real-World Driving via Simulated Hard-Case](robotron-sim_improving_real-world_driving_via_simulated_hard-case.md)
 - [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
-- [\[CVPR 2026\] SimScale: Learning to Drive via Real-World Simulation at Scale](../../CVPR2026/autonomous_driving/simscale_learning_to_drive_via_real-world_simulation_at_scale.md)
-- [\[ICCV 2025\] RTMap: Real-Time Recursive Mapping with Change Detection and Localization](rtmap_real-time_recursive_mapping_with_change_detection_and_localization.md)
+- [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](../../CVPR2026/autonomous_driving/worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
+- [\[CVPR 2025\] Toward Real-World BEV Perception: Depth Uncertainty Estimation via Gaussian Splatting](../../CVPR2025/autonomous_driving/toward_real-world_bev_perception_depth_uncertainty_estimation_via_gaussian_splat.md)
 
 </div>
 

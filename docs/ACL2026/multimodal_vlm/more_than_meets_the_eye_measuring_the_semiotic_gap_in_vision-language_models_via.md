@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper reveals the "literal superiority bias" of VLMs from a cognitive semiotics perspective—models tend towards literal interpretation rather than metaphorical/idiomatic understanding on high-fidelity images. By introducing the DIVA benchmark (iconographically simplified images) and the Semantic Alignment Gap metr
+  [ACL 2026][Multimodal VLM][Vision-Language Models] This paper reveals the "literal superiority bias" of VLMs from a cognitive semiotics perspective—models tend towards literal interpretation rather than metaphorical/idiomatic understanding on high-fidelity images. By introducing the DIVA benchmark (iconographically simplified images) and the Semantic Alignment Gap metric, the authors prove that reducing visual fidelity significantly narrows the gap between literal and idiomat…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Semiotic Gap"
+  - "Literal Bias"
+  - "Iconographic Abstraction"
+  - "Noun Compounds"
 date: 2026-05-08
-content_hash: 223abc995a92bcb3
+content_hash: eb1fa4c3df8b5cc9
 ---
+
 # More Than Meets the Eye: Measuring the Semiotic Gap in Vision-Language Models via Semantic Anchorage
 
 **Conference**: ACL 2026  
@@ -144,9 +149,9 @@ This paper is purely evaluative and does not involve model training. DIVA contai
 
 - [\[CVPR 2026\] More than the Sum: Panorama-Language Models for Adverse Omni-Scenes](../../CVPR2026/multimodal_vlm/more_than_the_sum_panorama-language_models_for_adverse_omni-scenes.md)
 - [\[AAAI 2026\] PatientVLM Meets DocVLM: Pre-Consultation Dialogue Between Vision-Language Models for Efficient Diagnosis](../../AAAI2026/multimodal_vlm/patientvlm_meets_docvlm_pre-consultation_dialogue_between_vision_language_models.md)
+- [\[ICLR 2026\] Seeing What's Not There: Negation Understanding Needs More Than Training](../../ICLR2026/multimodal_vlm/seeing_whats_not_there_negation_understanding_needs_more_than_training.md)
 - [\[ACL 2026\] Cross-Modal Taxonomic Generalization in (Vision-) Language Models](cross-modal_taxonomic_generalization_in_vision-_language_models.md)
 - [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](topology-aware_layer_pruning_for_large_vision-language_models.md)
-- [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
 
 </div>
 

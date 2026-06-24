@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation
 description: >-
-  [NeurIPS 2025][3D Vision][semantic orientation] This paper introduces the concept of **Semantic Orientation**, which describes object directions using natural language (e.g.…
+  [NeurIPS 2025 Spotlight][3D Vision][semantic orientation] This paper introduces the concept of **Semantic Orientation**, which describes object directions using natural language (e.g., the "insertion direction" of a USB plug or the "handle direction" of a cup). It constructs the large-scale OrienText300K dataset to train the PointSO model for zero-shot orientation prediction, and integrates these components into the SoFar system for 6-DoF scene understanding and robotic manip…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "semantic orientation"
   - "6-DoF manipulation"
@@ -12,7 +12,7 @@ tags:
   - "3D scene graph"
   - "point cloud"
 date: 2026-05-08
-content_hash: 5d5a86870a6dee15
+content_hash: d5898e2b1df15ad3
 ---
 
 # SoFar: Language-Grounded Orientation Bridges Spatial Reasoning and Object Manipulation
@@ -166,11 +166,11 @@ SoFar achieves an overall score of 43.9%, outperforming the second-best method b
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
 - [\[CVPR 2026\] Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models](../../CVPR2026/3d_vision/scalable_object_relation_encoding_for_better_3d_spatial_reasoning_in_large_langu.md)
-- [\[NeurIPS 2025\] Orientation-anchored Hyper-Gaussian for 4D Reconstruction from Casual Videos](orientation-anchored_hyper-gaussian_for_4d_reconstruction_from_casual_videos.md)
+- [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](../../CVPR2026/3d_vision/masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
-- [\[NeurIPS 2025\] Concerto: Joint 2D-3D Self-Supervised Learning Emerges Spatial Representations](concerto_joint_2d-3d_self-supervised_learning_emerges_spatial_representations.md)
+- [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](physx-3d_physical-grounded_3d_asset_generation.md)
+- [\[CVPR 2025\] Perception Tokens Enhance Visual Reasoning in Multimodal Language Models](../../CVPR2025/3d_vision/perception_tokens_enhance_visual_reasoning_in_multimodal_language_models.md)
 
 </div>
 

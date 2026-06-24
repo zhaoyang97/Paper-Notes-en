@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations
 description: >-
-  [CVPR 2026][3D Vision][3D reconstruction] RnG proposes Reconstruction-Guided Causal Attention, reinterpreting the Transformer's KV-Cache as an implicit 3D representation. Using a single feed-forward Transformer, it unifies the reconstruction and generation of complete 3D geometry and appearance from unposed sparse images, achieving speeds over 100x faster than
+  [CVPR 2026][3D Vision][3D reconstruction] RnG proposes Reconstruction-Guided Causal Attention, reinterpreting the Transformer's KV-Cache as an implicit 3D representation. Using a single feed-forward Transformer, it unifies the reconstruction and generation of complete 3D geometry and appearance from unposed sparse images, achieving speeds over 100x faster than diffusion-based methods.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D reconstruction
-  - novel view synthesis
-  - transformer
-  - KV-Cache
-  - feed-forward
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D reconstruction"
+  - "novel view synthesis"
+  - "transformer"
+  - "KV-Cache"
+  - "feed-forward"
 date: 2026-05-08
-content_hash: cfcb5729cf27c378
+content_hash: 79327fe05241c5fb
 ---
+
 # RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations
 
 **Conference**: CVPR 2026  
@@ -186,10 +187,10 @@ Though trained on only 4 input images, RnG generalizes to an arbitrary number of
 ## Related Papers
 
 - [\[CVPR 2026\] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting](langref3dgs_natural_language-guided_3d_referential_segmentation_from_partial_obs.md)
-- [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
 - [\[CVPR 2026\] UniCorrn: Unified Correspondence Transformer Across 2D and 3D](unicorrn_unified_correspondence_transformer_across_2d_and_3d.md)
+- [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](unified_primitive_proxies_for_structured_shape_completion.md)
+- [\[CVPR 2026\] Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)
 - [\[CVPR 2026\] SMVRT: Implicit Human 3D Modeling Using Sparse Multi-View Volumetric Reconstruction with Transformer Fusion](smvrt_implicit_human_3d_modeling.md)
-- [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
 
 </div>
 

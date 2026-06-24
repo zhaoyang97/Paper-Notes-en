@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection
 description: >-
-  [AAAI 2026][Object Detection][Graph Anomaly Detection] This paper proposes M2V-UGAD, the first framework to address unsupervised graph anomaly detection under simultaneous node attribute and graph topology missingness. T…
+  [AAAI 2026][Object Detection][Graph Anomaly Detection] This paper proposes M2V-UGAD, the first framework to address unsupervised graph anomaly detection under simultaneous node attribute and graph topology missingness. Through three core mechanisms—dual-pathway independent imputation, hyperspherical latent space fusion, and pseudo-anomaly generation—the framework overcomes cross-view interference and imputation bias, consistently outperforming existing methods across 7 benchm…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Pseudo-Anomaly Generation"
   - "Sinkhorn Divergence"
 date: 2026-05-08
-content_hash: 54559e8f118501cd
+content_hash: a56c4a50481b73bf
 ---
 
 # Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection
@@ -217,10 +217,10 @@ M2V-UGAD's performance remains nearly constant (0.93→0.92) across missing rate
 ## Related Papers
 
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
-- [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
 - [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
+- [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
 - [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
-- [\[AAAI 2026\] When Trackers Date Fish: A Benchmark and Framework for Underwater Multiple Fish Tracking](when_trackers_date_fish_a_benchmark_and_framework_for_underwater_multiple_fish_t.md)
+- [\[ICLR 2026\] OwlEye: Zero-Shot Learner for Cross-Domain Graph Data Anomaly Detection](../../ICLR2026/object_detection/owleye_zero-shot_learner_for_cross-domain_graph_data_anomaly_detection.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decoupled Generative Modeling for Human-Object Interaction Synthesis
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] DecHOI decomposes "Human-Object Interaction Synthesis" into two lightweight diffusion experts: a Trajectory Generator first plans global paths for the human and object without manual waypoints, followed by an Action Generator that completes fine-grained full-body actions conditioned on these paths. It utilizes an adver
+  [CVPR 2026][Human Understanding][Human-Object Interaction (HOI) Synthesis] DecHOI decomposes "Human-Object Interaction Synthesis" into two lightweight diffusion experts: a Trajectory Generator first plans global paths for the human and object without manual waypoints, followed by an Action Generator that completes fine-grained full-body actions conditioned on these paths. It utilizes an adversarial discriminator targeting end-joint contact dynamics to bridge the realism gap.…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human-Object Interaction (HOI) Synthesis"
+  - "Motion Generation"
+  - "Diffusion Models"
+  - "Adversarial Training"
+  - "Trajectory Planning"
 date: 2026-05-08
-content_hash: 34d9364d7a00041b
+content_hash: 6573ab2951fab80e
 ---
+
 # Decoupled Generative Modeling for Human-Object Interaction Synthesis
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ On FullBodyManipulation (Baseline = Decoupling + Concatenation alignment):
 
 ## Related Papers
 
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
-- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
-- [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised Human-Object Interaction Detection](regformer_transferable_relational_grounding_for_efficient_weakly-supervised_huma.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
 - [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
+- [\[ICLR 2026\] Interaction-aware Representation Modeling With Co-Occurrence Consistency for Egocentric Hand-Object Parsing](../../ICLR2026/human_understanding/interaction-aware_representation_modeling_with_co-occurrence_consistency_for_ego.md)
 - [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
 
 </div>

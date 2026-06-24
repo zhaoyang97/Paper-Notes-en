@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization
 description: >-
-  [CVPR 2026][Others][SVG] COVec introduces the artistic concept of "Clair-Obscur" into image vectorization, performing intrinsic image decomposition in the vector domain for the first time. It decomposes a real photograph into three semantically coherent SVG layers—albedo, shade, and light—via region-level semantic binarization initialization a
+  [CVPR 2026][Image Vectorization] COVec introduces the artistic concept of "Clair-Obscur" into image vectorization, performing intrinsic image decomposition in the vector domain for the first time. It decomposes a real photograph into three semantically coherent SVG layers—albedo, shade, and light—via region-level semantic binarization initialization and a two-stage differentiable rendering optimization. This achieves high fidelity with minimal layers…
 tags:
-  - CVPR 2026
-  - Others
-  - SVG
+  - "CVPR 2026"
+  - "Image Vectorization"
+  - "SVG"
+  - "Intrinsic Decomposition"
+  - "Illumination-Aware"
+  - "Differentiable Rendering"
 date: 2026-05-08
-content_hash: b2988a178dcee03d
+content_hash: 3cc2fef4f861074c
 ---
+
 # Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization
 
 **Conference**: CVPR 2026  
@@ -148,15 +152,15 @@ Evaluated on three datasets (100 images each): Face (FFHQ), Scene (Things + TID2
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 - [\[CVPR 2026\] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](unimernet_a_universal_network_for_real-world_mathematical_expression_recognition.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
-- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
-- [\[CVPR 2026\] Advancing Image Classification with Discrete Diffusion Classification Modeling](advancing_image_classification_with_discrete_diffusion_classification_modeling.md)
+- [\[CVPR 2026\] The Missing GAP: From Solving Square Jigsaw Puzzles to Handling Real World Archaeological Fragments](the_missing_gap_from_solving_square_jigsaw_puzzles_to_handling_real_world_archae.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
+- [\[ICLR 2026\] SmellNet: A Large-scale Dataset for Real-world Smell Recognition](../../ICLR2026/others/smellnet_a_large-scale_dataset_for_real-world_smell_recognition.md)
 
 </div>
 

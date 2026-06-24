@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAM 3D: 3Dfy Anything in Images
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] SAM 3D is a generative foundation model that reconstructs complete 3D shapes, textures, and layouts for any object from a **single natural image**. It overcomes the barrier of scarce real-world 3D data through a "model-in-the-loop + human annotation" data flywheel and an LLM-style multi-stage training recipe, achieving
+  [CVPR 2026][3D Vision][Single-image 3D Reconstruction] SAM 3D is a generative foundation model that reconstructs complete 3D shapes, textures, and layouts for any object from a **single natural image**. It overcomes the barrier of scarce real-world 3D data through a "model-in-the-loop + human annotation" data flywheel and an LLM-style multi-stage training recipe, achieving at least a 5:1 human preference win rate over previous SOTAs on real objects and scenes.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image 3D Reconstruction"
+  - "Generative Reconstruction"
+  - "Flow Matching"
+  - "Data Engine"
+  - "Human Preference Alignment"
 date: 2026-05-08
-content_hash: 0cdbdba059ea8084
+content_hash: c93270df2f336d93
 ---
+
 # SAM 3D: 3Dfy Anything in Images
 
 **Conference**: CVPR 2026  
@@ -135,9 +140,9 @@ Cumulative ablation across training stages showing monotonic improvement:
 
 - [\[ICML 2026\] Fast-SAM3D: 3Dfy Anything in Images but Faster](../../ICML2026/3d_vision/fast-sam3d_3dfy_anything_in_images_but_faster.md)
 - [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] PhysX-Anything: Simulation-Ready Physical 3D Assets from Single Image](physx-anything_simulation-ready_physical_3d_assets_from_single_image.md)
-- [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
-- [\[CVPR 2026\] RoSAMDepth: Robust Self-supervised Depth Estimation Leveraging Segment Anything Model](rosamdepth_robust_self-supervised_depth_estimation_leveraging_segment_anything_m.md)
+- [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
+- [\[CVPR 2026\] CUPID: Generative 3D Reconstruction via Joint Object and Pose Modeling](cupid_generative_3d_reconstruction_via_joint_object_and_pose_modeling.md)
+- [\[CVPR 2026\] Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning](spatial-sam_spatially_consistent_3d_electron_microscopy_segmentation_with_sdf_me.md)
 
 </div>
 

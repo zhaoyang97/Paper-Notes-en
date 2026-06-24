@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PCoA: A New Benchmark for Medical Aspect-Based Summarization With Phrase-Level Context Attribution
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] PCoA constructs a medical aspect-based summarization benchmark for Randomized Controlled Trial (RCT) abstracts, aligning each aspect summary with both supporting sentences and contributory phrases, and utilizes a three-tier metric system (claim, citation, and phrase) to evaluate LLM capabilities in verifiable medical s
+  [ACL2026][Medical LLM][Medical Aspect-Based Summarization] PCoA constructs a medical aspect-based summarization benchmark for Randomized Controlled Trial (RCT) abstracts, aligning each aspect summary with both supporting sentences and contributory phrases, and utilizes a three-tier metric system (claim, citation, and phrase) to evaluate LLM capabilities in verifiable medical summarization.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL2026"
+  - "Medical LLM"
+  - "Medical Aspect-Based Summarization"
+  - "Phrase-Level Attribution"
+  - "RCT Summarization"
+  - "Verifiable Summarization"
+  - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 20443201cf41c505
+content_hash: 71dc3194aed65390
 ---
+
 # PCoA: A New Benchmark for Medical Aspect-Based Summarization With Phrase-Level Context Attribution
 
 **Conference**: ACL2026  
@@ -194,9 +200,9 @@ The reason is intuitive: if the first step's summary already includes irrelevant
 
 - [\[ACL 2025\] CSTRL: Context-Driven Sequential Transfer Learning for Abstractive Radiology Report Summarization](../../ACL2025/medical_nlp/cstrl_context-driven_sequential_transfer_learning_for_abstractive_radiology_repo.md)
 - [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](../../ICLR2026/medical_nlp/medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
 - [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 - [\[ACL 2026\] CT-Flow: Orchestrating CT Interpretation Workflow with Model Context Protocol Servers](ct-flow_orchestrating_ct_interpretation_workflow_with_model_context_protocol_ser.md)
-- [\[ACL 2025\] VITAL: A New Dataset for Benchmarking Pluralistic Alignment in Healthcare](../../ACL2025/medical_nlp/vital_pluralistic_alignment_healthcare.md)
 
 </div>
 

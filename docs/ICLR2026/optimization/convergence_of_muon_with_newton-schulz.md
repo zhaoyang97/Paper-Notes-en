@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Convergence of Muon with Newton-Schulz
 description: >-
-  [ICLR 2026][Optimization & Theory][Muon optimizer] This paper provides the first non-convex convergence guarantee for the practical Muon optimizer (which uses Newton-Schulz approximation instead of exact SVD polar decomposition). It proves that the convergence rate matches the idealized SVD version up to a constant factor that decays doubly exponentially with the numbe
+  [ICLR2026][Optimization][Muon optimizer] This paper provides the first non-convex convergence guarantee for the practical Muon optimizer (which uses Newton-Schulz approximation instead of exact SVD polar decomposition). It proves that the convergence rate matches the idealized SVD version up to a constant factor that decays doubly exponentially with the number of Newton-Schulz steps $q$, and that Muon suffers $\sqrt{r}$ times less rank-dependent loss than its vector counterpa…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Muon optimizer
-  - Newton-Schulz
-  - polar decomposition
-  - matrix optimization
-  - convergence analysis
+  - "ICLR2026"
+  - "Optimization"
+  - "Muon optimizer"
+  - "Newton-Schulz"
+  - "polar decomposition"
+  - "matrix optimization"
+  - "convergence analysis"
 date: 2026-05-08
-content_hash: 679243bfcc134494
+content_hash: 32eacc6eae29f5a2
 ---
+
 # Convergence of Muon with Newton-Schulz
 
 **Conference**: ICLR2026  
@@ -112,10 +113,10 @@ After establishing that NS-Muon is nearly as fast as SVD-Muon, the paper address
 ## Related Papers
 
 - [\[ICLR 2026\] Newton Method Revisited: Global Convergence Rates up to $O(1/k^3)$ for Stepsize Schedules and Linesearch Procedures](newton_method_revisited_global_convergence_rates_up_to_o1k3_for_stepsize_schedul.md)
+- [\[ICLR 2026\] The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm](the_polar_express_optimal_matrix_sign_methods_and_their_application_to_the_muon_.md)
+- [\[ICLR 2026\] Convergence of Regret Matching in Potential Games and Constrained Optimization](convergence_of_regret_matching_in_potential_games_and_constrained_optimization.md)
 - [\[ICLR 2026\] Error Feedback for Muon and Friends](error_feedback_for_muon_and_friends.md)
-- [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
-- [\[ICLR 2026\] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting](hinge_regression_tree_a_newton_method_for_oblique_regression_tree_splitting.md)
-- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
+- [\[ICLR 2026\] Muon Outperforms Adam in Tail-End Associative Memory Learning](muon_outperforms_adam_in_tail-end_associative_memory_learning.md)
 
 </div>
 

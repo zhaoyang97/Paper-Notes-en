@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias
 description: >-
-  [NeurIPS 2025][Optimization][SAM] Through a linear stability analysis framework, this paper demonstrates that "flat minima ⇒ better generalization" and "SGD prefers simple functions" are two sides of the same coin — data…
+  [NeurIPS 2025][Optimization][SAM] Through a linear stability analysis framework, this paper demonstrates that "flat minima ⇒ better generalization" and "SGD prefers simple functions" are two sides of the same coin — data coherence simultaneously governs both phenomena, and SAM amplifies the simplicity bias further by imposing stricter stability conditions.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "data coherence"
   - "simplicity bias"
 date: 2026-05-08
-content_hash: 9ca343ffee2ccff0
+content_hash: 4d00774c5b0b3120
 ---
 
 # A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias
@@ -128,8 +128,8 @@ Setup: two-layer ReLU network, $n=100$, variable $d$, $x \in \{-1,1\}^d$, $y = x
 - [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
 - [\[ICLR 2026\] Generalization Below the Edge of Stability: The Role of Data Geometry](../../ICLR2026/optimization/generalization_below_the_edge_of_stability_the_role_of_data_geometry.md)
-- [\[NeurIPS 2025\] Unveiling the Power of Multiple Gossip Steps: A Stability-Based Generalization Analysis in Decentralized Training](unveiling_the_power_of_multiple_gossip_steps_a_stability-based_generalization_an.md)
-- [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
+- [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](../../ICLR2026/optimization/sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
+- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
 
 </div>
 

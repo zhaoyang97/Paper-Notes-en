@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Steering Information Utility in Key-Value Memory for Language Model Post-Training
 description: >-
-  [NeurIPS 2025][Interpretability][post-training optimization] This paper proposes InfoSteer, a lightweight method that treats the FFN layers of Transformers as associative key-value memories…
+  [NeurIPS 2025][Interpretability][post-training optimization] This paper proposes InfoSteer, a lightweight method that treats the FFN layers of Transformers as associative key-value memories, promoting more complete utilization of pretrained knowledge during post-training via forward-pass intervention (boosting key coefficients of low-activation memory vectors) and backward-pass regularization (maximizing the entropy of key distributions). Across 6 models from 3 model families…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "memory vector activation"
   - "SFT enhancement"
 date: 2026-05-08
-content_hash: 0ae6a0762f276cf3
+content_hash: 0147386f57a04fdf
 ---
 
 # Steering Information Utility in Key-Value Memory for Language Model Post-Training
@@ -161,7 +161,7 @@ The base training follows standard SFT (cross-entropy language modeling loss), w
 - [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
 - [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
 - [\[NeurIPS 2025\] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training](urls_help_topics_guide_understanding_metadata_utility_in_llm_training.md)
-- [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](../../ICLR2026/interpretability/hidden_breakthroughs_in_language_model_training.md)
+- [\[ICLR 2026\] Fresh in Memory: Training-order Recency is Linearly Encoded in Language Model Activations](../../ICLR2026/interpretability/fresh_in_memory_training-order_recency_is_linearly_encoded_in_language_model_act.md)
 - [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](latent_principle_discovery_for_language_model_self-improvement.md)
 
 </div>

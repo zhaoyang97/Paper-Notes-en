@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking
 description: >-
-  [ACL 2026][Multimodal VLM][Reinforcement Learning] This paper proposes Region-R1, which models query-side region cropping in multi-modal re-ranking as a decision problem. By using reinforcement learning (r-GRPO) to learn when and how to crop question-relevant regions in the query image, it improves CondRecall@1 by 20% on E-VQA and 8% on InfoSeek.
+  [ACL 2026 Findings][Multimodal VLM][Multi-modal Re-ranking] This paper proposes Region-R1, which models query-side region cropping in multi-modal re-ranking as a decision problem. By using reinforcement learning (r-GRPO) to learn when and how to crop question-relevant regions in the query image, it improves CondRecall@1 by 20% on E-VQA and 8% on InfoSeek.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Multi-modal Re-ranking"
+  - "Query-side Region Cropping"
+  - "Reinforcement Learning"
+  - "Visual Question Answering"
+  - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: 33862c04e92b8f65
+content_hash: 55439182dbf7153b
 ---
+
 # Region-R1: Reinforcing Query-Side Region Cropping for Multi-Modal Re-Ranking
 
 **Conference**: ACL 2026 Findings  
@@ -135,9 +140,9 @@ Qwen2.5-VL-3B serves as the base policy model, fine-tuned via r-GRPO. The scorin
 
 - [\[ICLR 2026\] Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/grasp_any_region_towards_precise_contextual_pixel_understanding_for_multimodal_l.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](../../CVPR2026/multimodal_vlm/drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
+- [\[ICLR 2026\] SR-3D: 3D-Aware Region Prompted Vision Language Model](../../ICLR2026/multimodal_vlm/3d_aware_region_prompted_vision_language_model.md)
 - [\[ICLR 2026\] Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](../../ICLR2026/multimodal_vlm/efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)
 - [\[CVPR 2025\] DynRefer: Delving into Region-level Multimodal Tasks via Dynamic Resolution](../../CVPR2025/multimodal_vlm/dynrefer_delving_into_region-level_multimodal_tasks_via_dynamic_resolution.md)
-- [\[ICLR 2026\] SR-3D: 3D-Aware Region Prompted Vision Language Model](../../ICLR2026/multimodal_vlm/3d_aware_region_prompted_vision_language_model.md)
 
 </div>
 

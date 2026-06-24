@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TAPTRv3: Spatial and Temporal Context Foster Robust Tracking of Any Point in Long Video
 description: >-
-  [ICLR 2026][Video Understanding][Tracking Any Point] TAPTRv3 targets any point tracking in long videos. Built upon the DETR-like point query framework of TAPTRv2, it introduces spatial context cross-attention, visibility-aware long-term attention, and scene cut-triggered global matching. These enhancements effectively reduce feature drift under long sequences, occlusions
+  [ICLR2026][Video Understanding][Long-video Point Tracking] TAPTRv3 targets any point tracking in long videos. Built upon the DETR-like point query framework of TAPTRv2, it introduces spatial context cross-attention, visibility-aware long-term attention, and scene cut-triggered global matching. These enhancements effectively reduce feature drift under long sequences, occlusions, and camera switches, setting new state-of-the-art results on multiple TAP benchmarks.
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Tracking Any Point
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Long-video Point Tracking"
+  - "Tracking Any Point"
+  - "Spatial Context"
+  - "Long-term Attention"
+  - "Visibility Modeling"
 date: 2026-05-08
-content_hash: 2d07844a59c2d729
+content_hash: 0d6b5f8d6c820aab
 ---
+
 # TAPTRv3: Spatial and Temporal Context Foster Robust Tracking of Any Point in Long Video
 
 **Conference**: ICLR2026  
@@ -144,14 +149,17 @@ The patch-level similarity in CCA using "every two point" matching yielded 52.9 
 
 <div class="related-papers" markdown="1">
 
-- **TAPTR**: [https://arxiv.org/abs/2403.13042](https://arxiv.org/abs/2403.13042)
-- **TAPTRv2**: [https://arxiv.org/abs/2407.13527](https://arxiv.org/abs/2407.13527)
-- **CoTracker**: [https://arxiv.org/abs/2307.07635](https://arxiv.org/abs/2307.07635)
+## Related Papers
+
+- [\[CVPR 2025\] ETAP: Event-based Tracking of Any Point](../../CVPR2025/video_understanding/etap_event-based_tracking_of_any_point.md)
+- [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](../../CVPR2026/video_understanding/mv-tap_tracking_any_point_in_multi-view_videos.md)
+- [\[ECCV 2024\] Self-Supervised Any-Point Tracking by Contrastive Random Walks](../../ECCV2024/video_understanding/self-supervised_any-point_tracking_by_contrastive_random_walks.md)
+- [\[ICLR 2026\] Cambrian-S: Towards Spatial Supersensing in Video](cambrian-s_towards_spatial_supersensing_in_video.md)
+- [\[CVPR 2026\] TAPFormer: Robust Arbitrary Point Tracking via Transient Asynchronous Fusion of Frames and Events](../../CVPR2026/video_understanding/ttapformer_robust_arbitrary_point_tracking_via_transient_asynchronous_fusion_of_.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] ETAP: Event-based Tracking of Any Point](../../CVPR2025/video_understanding/etap_event-based_tracking_of_any_point.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers
 description: >-
-  [ICCV 2025][Video Understanding][Long video understanding] This paper proposes Vamba — a hybrid Mamba-Transformer large multimodal model (LMM) that encodes video tokens with linear complexity via Mamba-2 blocks and updat…
+  [ICCV 2025][Video Understanding][Long video understanding] This paper proposes Vamba — a hybrid Mamba-Transformer large multimodal model (LMM) that encodes video tokens with linear complexity via Mamba-2 blocks and updates text tokens via cross-attention. Vamba processes up to 1024 frames on a single GPU and outperforms all efficient LMM methods on hour-level video understanding benchmarks.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "large multimodal models"
   - "computational efficiency"
 date: 2026-05-08
-content_hash: 301c46c1e2ce5cd3
+content_hash: ebc7bb84d5be3a10
 ---
 
 # Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers
@@ -162,10 +162,10 @@ Distillation loss ablation (effect of $\lambda$ on G-VEval score):
 ## Related Papers
 
 - [\[ICCV 2025\] VideoMiner: Iteratively Grounding Key Frames of Hour-Long Videos via Tree-based Group Relative Policy Optimization](videominer_iteratively_grounding_key_frames_of_hour-long_videos_via_tree-based_g.md)
+- [\[CVPR 2026\] MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos](../../CVPR2026/video_understanding/ms-temba_multi-scale_temporal_mamba_for_understanding_long_untrimmed_videos.md)
 - [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](../../NeurIPS2025/video_understanding/unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
-- [\[ICCV 2025\] OVG-HQ: Online Video Grounding with Hybrid-modal Queries](ovg-hq_online_video_grounding_with_hybrid-modal_queries.md)
+- [\[CVPR 2025\] ReWind: Understanding Long Videos with Instructed Learnable Memory](../../CVPR2025/video_understanding/rewind_understanding_long_videos_with_instructed_learnable_memory.md)
 - [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
-- [\[AAAI 2026\] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval](../../AAAI2026/video_understanding/apvr_hour-level_long_video_understanding_with_adaptive_pivot.md)
 
 </div>
 

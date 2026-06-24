@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Active Intelligence in Video Avatars via Closed-loop World Modeling
 description: >-
-  [CVPR 2026][Human Understanding][POMDP] To address the issue of current video avatars "passively following speech/pose while lacking autonomous goal-driven behavior," this paper proposes the L-IVA task (modeling avatar control as a POMDP with I2V generation models as environment simulators) and the ORCA framework. ORCA utilizes an "Observe-Think-Act-Reflect"
+  [CVPR 2026][Video Understanding][Video Avatars] To address the issue of current video avatars "passively following speech/pose while lacking autonomous goal-driven behavior," this paper proposes the L-IVA task (modeling avatar control as a POMDP with I2V generation models as environment simulators) and the ORCA framework. ORCA utilizes an "Observe-Think-Act-Reflect" (OTAR) closed-loop to counteract generational randomness and a System 2/System 1 dual-system hierarchy for open…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - POMDP
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Avatars"
+  - "Internal World Model"
+  - "Closed-loop Planning"
+  - "POMDP"
+  - "Dual-system Architecture"
 date: 2026-05-08
-content_hash: c736e5789ae46436
+content_hash: f198330a067f8d26
 ---
+
 # Active Intelligence in Video Avatars via Closed-loop World Modeling
 
 **Conference**: CVPR 2026  
@@ -158,11 +163,11 @@ ORCA achieves the highest average TSR (71.0%) and PPS (3.72). Note a trade-off: 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
-- [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](../../ICCV2025/human_understanding/udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
-- [\[CVPR 2025\] RGBAvatar: Reduced Gaussian Blendshapes for Online Modeling of Head Avatars](../../CVPR2025/human_understanding/rgbavatar_reduced_gaussian_blendshapes_for_online_modeling_of_head_avatars.md)
-- [\[CVPR 2026\] LAMP: Localization Aware Multi-camera People Tracking in Metric 3D World](lamp_localization_aware_multi-camera_people_tracking_in_metric_3d_world.md)
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
+- [\[CVPR 2026\] Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation](interactive_tracking_a_human-in-the-loop_paradigm_with_memory-augmented_adaptati.md)
+- [\[CVPR 2026\] InternVideo-Next: Towards World-Understanding Video Models](internvideo-next_towards_world-understanding_video_models.md)
+- [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
+- [\[CVPR 2026\] FlexiVideo: Variation-Aware Temporal Dynamics Modeling for Efficient Video Understanding](flexivideo_variation-aware_temporal_dynamics_modeling_for_efficient_video_unders.md)
+- [\[CVPR 2026\] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)
 
 </div>
 

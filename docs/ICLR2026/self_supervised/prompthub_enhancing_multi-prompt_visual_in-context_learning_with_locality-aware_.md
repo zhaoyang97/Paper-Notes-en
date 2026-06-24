@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PromptHub: Enhancing Multi-Prompt Visual In-Context Learning with Locality-Aware Fusion, Concentration and Alignment
 description: >-
-  [ICLR 2026][Self-Supervised Learning][MAE-VQGAN] PromptHub upgrades Multi-Prompt Visual In-Context Learning (VICL) fusion from "patch-wise concatenation" to "locality-enhanced fusion in embedding space." Coupled with a triple loss loop (prediction/alignment/utilization) and VICL-specific data augmentation, it ensures the backbone backbone truly trusts and utilizes th
+  [ICLR 2026][Self-Supervised Learning][Visual In-Context Learning] PromptHub upgrades Multi-Prompt Visual In-Context Learning (VICL) fusion from "patch-wise concatenation" to "locality-enhanced fusion in embedding space." Coupled with a triple loss loop (prediction/alignment/utilization) and VICL-specific data augmentation, it ensures the backbone backbone truly trusts and utilizes the fused prompts, consistently outperforming the predecessor CONDENSER in segmentation…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - MAE-VQGAN
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Visual In-Context Learning"
+  - "multi-prompt fusion"
+  - "locality prior"
+  - "MAE-VQGAN"
+  - "cross-attention"
 date: 2026-05-08
-content_hash: eadfbbded6562f78
+content_hash: d0a763a5cb91ea27
 ---
+
 # PromptHub: Enhancing Multi-Prompt Visual In-Context Learning with Locality-Aware Fusion, Concentration and Alignment
 
 **Conference**: ICLR 2026  
@@ -143,10 +148,10 @@ Cross-domain transfer (COCO-5i → Pascal-5i): PromptHub$_{N=16}$ reached 42.17 
 ## Related Papers
 
 - [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](relationship_alignment_for_view-aware_multi-view_clustering.md)
-- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](in_context_semi-supervised_learning.md)
 - [\[ICLR 2026\] Spatially Informed Autoencoders for Interpretable Visual Representation Learning](spatially_informed_autoencoders_for_interpretable_visual_representation_learning.md)
-- [\[ICLR 2026\] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation](incomplete_multi-view_multi-label_classification_via_shared_codebook_and_fused-t.md)
-- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[ICLR 2026\] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery](bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery.md)
 
 </div>
 

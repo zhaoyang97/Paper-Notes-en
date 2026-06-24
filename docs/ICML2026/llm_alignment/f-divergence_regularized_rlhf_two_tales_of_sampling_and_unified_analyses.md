@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] $f$-Divergence Regularized RLHF: Two Tales of Sampling and Unified Analyses
 description: >-
-  [ICML 2026][Alignment & RLHF][$f$-divergence] This paper establishes the first $O(\log T)$ regret and $O(1/T)$ suboptimality gap upper bounds for online RLHF under **general $f$-divergence regularization**. It proposes two sampling strategies: (1) optimism in the face of uncertainty using bonus terms; and (2) a novel **"derivative-as-uncertainty"** perspective, wh
+  [ICML 2026][LLM Alignment][$f$-divergence] This paper establishes the first $O(\log T)$ regret and $O(1/T)$ suboptimality gap upper bounds for online RLHF under **general $f$-divergence regularization**. It proposes two sampling strategies: (1) optimism in the face of uncertainty using bonus terms; and (2) a novel **"derivative-as-uncertainty"** perspective, where $f'$ serves as an uncertainty signal to design derivative-based sampling without explicitly estimating confidence…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - $f$-divergence
-  - optimism
-  - derivative-as-uncertainty
-  - regret bound
-  - contextual bandit
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "$f$-divergence"
+  - "optimism"
+  - "derivative-as-uncertainty"
+  - "regret bound"
+  - "contextual bandit"
 date: 2026-05-08
-content_hash: 3cf6e6a2fc284dde
+content_hash: ab6ba62adc94bf31
 ---
+
 # $f$-Divergence Regularized RLHF: Two Tales of Sampling and Unified Analyses
 
 **Conference**: ICML 2026  
@@ -128,15 +129,16 @@ $\mathcal{C}(f,\mathcal{R},\eta)=\max_{r,x,a}\frac{h'(\eta(r-\lambda))}{h(\eta(r
 - Value: ⭐⭐⭐⭐ (Provides the first online theoretical guarantee for $f$-RLHF with engineering-friendly potential)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Greedy Sampling Is Provably Efficient for RLHF](../../NeurIPS2025/llm_alignment/greedy_sampling_is_provably_efficient_for_rlhf.md)
+- [\[ICML 2026\] UDM-GRPO: Stable and Efficient GRPO for Unified Discrete Diffusion Models](udm-grpo_stable_and_efficient_group_relative_policy_optimization_for_uniform_dis.md)
 - [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](efficient_preference_poisoning_attack_on_offline_rlhf.md)
+- [\[ICLR 2026\] Enhancing Trustworthiness of Fine-Tuned LLMs via Regularized Subset Selection](../../ICLR2026/llm_alignment/enhancing_trustworthiness_of_fine-tuned_llms_via_regularized_subset_selection.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](../../NeurIPS2025/llm_alignment/llm_safety_alignment_is_divergence_estimation_in_disguise.md)
-- [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
-- [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](../../ICLR2026/llm_alignment/learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EarlyTom: Early Token Compression Completes Fast Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][TTFT] EarlyTom is a training-free video token compression framework that shifts the compression point from "after the visual encoder" to "inside the visual encoder" via intra-encoder frame merging, paired with a decoupled spatial token selection strategy. On LLaVA-OneVision-7B, it reduces Time-to-First-Token (TTFT) by up to
+  [CVPR 2026][Video Understanding][Visual token compression] EarlyTom is a training-free video token compression framework that shifts the compression point from "after the visual encoder" to "inside the visual encoder" via intra-encoder frame merging, paired with a decoupled spatial token selection strategy. On LLaVA-OneVision-7B, it reduces Time-to-First-Token (TTFT) by up to $2.65\times$ and FLOPs by 61%, while maintaining over 96% of the full-token baseline accuracy.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - TTFT
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Visual token compression"
+  - "Video large models"
+  - "TTFT"
+  - "Frame merging"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 3281c49a52abf84c
+content_hash: caae8f87c1418d0e
 ---
+
 # EarlyTom: Early Token Compression Completes Fast Video Understanding
 
 **Conference**: CVPR 2026  
@@ -120,15 +125,16 @@ Note: Compared to the 889.9 ms baseline, EarlyTom achieves a $2.65\times$ TTFT s
 - Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and delivers a $2.65\times$ TTFT reduction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
-- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[CVPR 2026\] VideoITG: Multimodal Video Understanding with Instructed Temporal Grounding](videoitg_multimodal_video_understanding_with_instructed_temporal_grounding.md)
+- [\[ICLR 2026\] EAST: Early Action Prediction Sampling Strategy with Token Masking](../../ICLR2026/video_understanding/east_early_action_prediction_sampling_strategy_with_token_masking.md)
 
 </div>
 

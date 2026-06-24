@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields
 description: >-
-  [ICCV 2025][3D Vision][3D language fields] This paper proposes GeoProg3D, the first visual programming framework supporting natural language interaction with city-scale high-fidelity 3D scenes. By combining a Geo-aware C…
+  [ICCV 2025][3D Vision][3D language fields] This paper proposes GeoProg3D, the first visual programming framework supporting natural language interaction with city-scale high-fidelity 3D scenes. By combining a Geo-aware City-scale 3D Language Field (GCLF) with Geo-Visual APIs (GV-APIs) and an LLM reasoning engine, the framework enables compositional geospatial reasoning. GeoProg3D comprehensively outperforms existing 3D language field and VLM methods on the newly introduced Ge…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "compositional reasoning"
   - "geographic information"
 date: 2026-05-08
-content_hash: f2fddcb6141d1a45
+content_hash: 455983a3c6424f1e
 ---
 
 # GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields
@@ -157,7 +157,7 @@ GeoProg3D comprehensively outperforms nine strong baselines (including GPT-4o Vi
 ## Related Papers
 
 - [\[ICCV 2025\] Benchmarking Egocentric Visual-Inertial SLAM at City Scale](benchmarking_egocentric_visualinertial_slam_at_city_scale.md)
-- [\[ICCV 2025\] CF³: Compact and Fast 3D Feature Fields](cf3_compact_and_fast_3d_feature_fields.md)
+- [\[CVPR 2025\] Perception Tokens Enhance Visual Reasoning in Multimodal Language Models](../../CVPR2025/3d_vision/perception_tokens_enhance_visual_reasoning_in_multimodal_language_models.md)
 - [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
 - [\[ICCV 2025\] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars](haircup_hair_compositional_universal_prior_for_3d_gaussian_avatars.md)
 - [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)

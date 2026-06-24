@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] WestWorld: 知识编码的可扩展轨迹世界模型
+  [Paper Note] WestWorld: Scalable Trajectory World Models with Knowledge Encoding
 description: >-
-  [ICML 2026][Robotics & Embodied AI][World Models] WestWorld integrates trajectory dynamics of diverse heterogeneous robots into a single scalable world model using System-aware MoE (Sys-MoE) and knowledge-encoded structural embeddings. After pre-training on 89 simulated and real environments, its zero-shot/few-shot trajectory prediction MAE/MSE significantly outperfor
+  [ICML 2026 Spotlight][Robotics][World Models] WestWorld integrates trajectory dynamics of diverse heterogeneous robots into a single scalable world model using System-aware MoE (Sys-MoE) and knowledge-encoded structural embeddings. After pre-training on 89 simulated and real environments, its zero-shot/few-shot trajectory prediction MAE/MSE significantly outperforms MLP Ensemble, TDM, and TrajWorld. It also enhances downstream MPPI control and successfully deploys to a real U…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "ICML 2026 Spotlight"
+  - "Robotics"
+  - "World Models"
+  - "Knowledge Encoding"
+  - "Trajectory Prediction"
+  - "Robot Diversity"
+  - "Cross-Embodiment"
 date: 2026-05-08
-content_hash: 66a9c91bf80a2013
+content_hash: 46c302ed47672522
 ---
+
 # WestWorld: Scalable Trajectory World Models with Knowledge Encoding
 
 **Conference**: ICML 2026 Spotlight  
@@ -154,16 +159,16 @@ Removing structural embeddings severely impacts complex systems (Hopper/Walker2D
 - **Value**: ⭐⭐⭐⭐⭐ (Scalable foundation for multi-robot world models).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] DiBO: 用扩散语言模型做离线黑盒优化（DNA + 机器人形态）](training_diffusion_language_models_for_black-box_optimization.md)
-- [\[ICML 2026\] Position: Good Embodied Reward Models Need Bad Behavior Data](position_good_embodied_reward_models_need_bad_behavior_data.md)
-- [\[ICML 2026\] Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
+- [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](../../CVPR2026/robotics/scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
+- [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](../../ICLR2026/robotics/world-in-world_world_models_in_a_closed-loop_world.md)
+- [\[CVPR 2026\] Dexterous World Models](../../CVPR2026/robotics/dexterous_world_models.md)
+- [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](../../ICLR2026/robotics/empowering_multi-robot_cooperation_via_sequential_world_models.md)
+- [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
 
 </div>
 

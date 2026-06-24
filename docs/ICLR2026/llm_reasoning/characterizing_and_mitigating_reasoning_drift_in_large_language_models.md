@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Characterizing and Mitigating Reasoning Drift in Large Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper diagnoses a failure mode in Large Language Models (LLMs) termed "Reasoning Drift" using thousands of mathematical reasoning trajectories. It finds that models once entering a pathological functional state during the early high-plasticity phase, become locked into incorrect paths. To address this, Reasoning-A
+  [ICLR2026][Reasoning][Reasoning Drift] This paper diagnoses a failure mode in Large Language Models (LLMs) termed "Reasoning Drift" using thousands of mathematical reasoning trajectories. It finds that models once entering a pathological functional state during the early high-plasticity phase, become locked into incorrect paths. To address this, Reasoning-Aware Activation Steering (RAAS) is proposed, which uses a pre-computed library of contrastive steering vectors to nudge a…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Reasoning Drift"
+  - "Activation Steering"
+  - "Chain-of-Thought Reliability"
+  - "Functional State Transition"
+  - "Inference-time Intervention"
 date: 2026-05-08
-content_hash: f9ebd26b52276aa2
+content_hash: ea24908b82996b73
 ---
+
 # Characterizing and Mitigating Reasoning Drift in Large Language Models
 
 **Conference**: ICLR2026  
@@ -130,15 +136,16 @@ Improvements are most significant in AIME (e.g., 34.99 $\to$ 55.56 on Llama), de
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] DRIFT: Decompose, Retrieve, Illustrate, then Formalize Theorems](drift_decompose_retrieve_illustrate_then_formalize_theorems.md)
 - [\[AAAI 2026\] Answering the Unanswerable Is to Err Knowingly: Analyzing and Mitigating Abstention Failures in Large Reasoning Models](../../AAAI2026/llm_reasoning/answering_the_unanswerable_is_to_err_knowingly_analyzing_and.md)
+- [\[ICLR 2026\] DRIFT: Decompose, Retrieve, Illustrate, then Formalize Theorems](drift_decompose_retrieve_illustrate_then_formalize_theorems.md)
 - [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
 - [\[ICLR 2026\] StreamingThinker: Large Language Models Can Think While Reading](streamingthinker_large_language_models_can_think_while_reading.md)
-- [\[ICLR 2026\] Vision-R1: Incentivizing Reasoning Capability in Multimodal Large Language Models](vision-r1_incentivizing_reasoning_capability_in_multimodal_large_language_models.md)
+- [\[ICML 2026\] Reasoning Structure of Large Language Models](../../ICML2026/llm_reasoning/reasoning_structure_of_large_language_models.md)
 
 </div>
 

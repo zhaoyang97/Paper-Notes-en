@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] WATS is a post-hoc calibration framework for node classification. It predicts a personalized temperature for each node using heat-kernel graph wavelet features with adjustable scales to scale logits. Without retraining the model or relying on neighbor logits, WATS aligns GNN confidence with true accuracy, reducing ECE
+  [ICLR 2026][Graph Learning][Graph Neural Networks] WATS is a post-hoc calibration framework for node classification. It predicts a personalized temperature for each node using heat-kernel graph wavelet features with adjustable scales to scale logits. Without retraining the model or relying on neighbor logits, WATS aligns GNN confidence with true accuracy, reducing ECE by up to 41.2% across 9 datasets.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Neural Networks"
+  - "Confidence Calibration"
+  - "Temperature Scaling"
+  - "Graph Wavelets"
+  - "Post-hoc Calibration"
 date: 2026-05-08
-content_hash: 869c94485354a759
+content_hash: be8e966eebf83371
 ---
+
 # WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks
 
 **Conference**: ICLR 2026  
@@ -128,10 +134,10 @@ WATS achieves the lowest ECE in most configurations, reducing ECE by up to 41.2%
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
 - [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
 - [\[ICLR 2026\] Structure-Aware Graph Hypernetworks for Neural Program Synthesis](structure-aware_graph_hypernetworks_for_neural_program_synthesis.md)
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
+- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
 - [\[ICLR 2026\] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation](scaling_knowledge_graph_construction_through_synthetic_data_generation_and_disti.md)
 
 </div>

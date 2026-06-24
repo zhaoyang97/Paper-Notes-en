@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset
 description: >-
-  [ACL 2026][AI Safety][Paper Note] This paper constructs OmniCompliance-100K, the first large-scale, multi-domain safety compliance dataset grounded in real-world cases. It contains 12,985 human-curated regulatory/policy rules and 106,009 real-world compliance cases collected via web search agents, covering nine domains such as AI safety, data privacy,
+  [ACL 2026 Findings][AI Safety][safety compliance] This paper constructs OmniCompliance-100K, the first large-scale, multi-domain safety compliance dataset grounded in real-world cases. It contains 12,985 human-curated regulatory/policy rules and 106,009 real-world compliance cases collected via web search agents, covering nine domains such as AI safety, data privacy, finance, and healthcare. Extensive benchmarking reveals systemic shortcomings in the safety compliance capabil…
 tags:
-  - ACL 2026
-  - AI Safety
+  - "ACL 2026 Findings"
+  - "AI Safety"
+  - "safety compliance"
+  - "real-world case dataset"
+  - "multi-domain regulations"
+  - "Web search agent"
+  - "LLM benchmark"
 date: 2026-05-08
-content_hash: e6426f3b78428d5f
+content_hash: 8d60d263f4038663
 ---
+
 # OmniCompliance-100K: A Multi-Domain Rule-Grounded Real-World Safety Compliance Dataset
 
 **Conference**: ACL 2026 Findings  

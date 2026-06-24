@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models
 description: >-
-  [CVPR 2026][Autonomous Driving][catastrophic forgetting] This paper systematically investigates the catastrophic forgetting issue when fine-tuning VLMs for autonomous driving. It constructs FidelityDrivingBench, a large-scale benchmark with $180\text{K}$ scenarios, and proposes the Drive Expert Adapter (DEA), which enhances driving task performance via prompt-space routing w
+  [CVPR 2026][LLM Safety][catastrophic forgetting] This paper systematically investigates the catastrophic forgetting issue when fine-tuning VLMs for autonomous driving. It constructs FidelityDrivingBench, a large-scale benchmark with $180\text{K}$ scenarios, and proposes the Drive Expert Adapter (DEA), which enhances driving task performance via prompt-space routing without corrupting base parameters.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - catastrophic forgetting
-  - VLM
-  - benchmark
-  - expert adapter
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "catastrophic forgetting"
+  - "VLM"
+  - "autonomous driving"
+  - "benchmark"
+  - "expert adapter"
 date: 2026-05-08
-content_hash: 0342009f0f4f0cb6
+content_hash: edc283ede6a0756c
 ---
+
 # The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models
 
 **Conference**: CVPR 2026  
@@ -115,11 +117,11 @@ FidelityDrivingBench covers $3$ core driving tasks (scene understanding, motion 
 
 ## Related Papers
 
-- [\[CVPR 2026\] PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving](panda_unsupervised_domain_adaptation_for_multimodal_3d_panoptic_segmentation_in_.md)
-- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
-- [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
+- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
+- [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](../../ICLR2026/llm_safety/membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
+- [\[ICML 2025\] Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning](../../ICML2025/llm_safety/vulnerability-aware_alignment_mitigating_uneven_forgetting_in_harmful_fine-tunin.md)
+- [\[ICLR 2026\] Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance](../../ICLR2026/llm_safety/safety_at_one_shot_patching_fine-tuned_llms_with_a_single_instance.md)
+- [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](autodebias_automated_framework_for_debiasing_text-to-image_models.md)
 
 </div>
 

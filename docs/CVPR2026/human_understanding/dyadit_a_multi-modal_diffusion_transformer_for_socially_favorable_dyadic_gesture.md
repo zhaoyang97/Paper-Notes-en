@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DyaDiT: A Multi-Modal Diffusion Transformer for Socially Favorable Dyadic Gesture Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] DyaDiT is a multi-modal Diffusion Transformer designed for dyadic dialogue scenarios. It employs an Orthogonalized Cross-Attention (ORCA) module to disentangle two channels of overlapping audio, integrates social conditions such as relationships/personality and a motion dictionary prior, and generates upper-body gestur
+  [CVPR 2026][Human Understanding][Dyadic Gesture Generation] DyaDiT is a multi-modal Diffusion Transformer designed for dyadic dialogue scenarios. It employs an Orthogonalized Cross-Attention (ORCA) module to disentangle two channels of overlapping audio, integrates social conditions such as relationships/personality and a motion dictionary prior, and generates upper-body gestures that align with both dialogue dynamics and social context, surpassing existing dyadic gesture met…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dyadic Gesture Generation"
+  - "Diffusion Transformer"
+  - "Social Context"
+  - "Audio Orthogonalization"
+  - "Motion Dictionary"
 date: 2026-05-08
-content_hash: 37dd5f195a0aaa13
+content_hash: 06bc9a58eae9e3bc
 ---
+
 # DyaDiT: A Multi-Modal Diffusion Transformer for Socially Favorable Dyadic Gesture Generation
 
 **Conference**: CVPR 2026  
@@ -144,10 +150,10 @@ DyaDiT leads significantly in FD (realism) and Static Diversity, with Diversity(
 ## Related Papers
 
 - [\[CVPR 2026\] MMGait: Towards Multi-Modal Gait Recognition](mmgait_multi_modal_gait_recognition.md)
-- [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](../../ICCV2025/human_understanding/gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
 - [\[CVPR 2026\] CoordSpeaker: Exploiting Gesture Captioning for Coordinated Caption-Empowered Co-Speech Gesture Generation](coordspeaker_exploiting_gesture_captioning_for_coordinated_caption-empowered_co-.md)
-- [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
 - [\[CVPR 2026\] LiveGesture: Streamable Co-Speech Gesture Generation Model](livegesture_streamable_co-speech_gesture_generation_model.md)
+- [\[CVPR 2026\] Unifying Precise Keyframes and Semantic Control via Multi-level Diffusion](unifying_precise_keyframes_and_semantic_control_via_multi-level_diffusion.md)
+- [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
 
 </div>
 

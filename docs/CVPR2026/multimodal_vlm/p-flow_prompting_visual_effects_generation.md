@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] P-Flow: Prompting Visual Effects Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Addressing the challenge that "dynamic visual effects such as explosions, squashing, and collapsing are difficult to describe precisely with a single text prompt," P-Flow proposes a training-free framework. It treats the text prompt as an optimization variable, using a Vision-Language Model (VLM) to contrast difference
+  [CVPR 2026][Multimodal VLM][Video Effects Generation] Addressing the challenge that "dynamic visual effects such as explosions, squashing, and collapsing are difficult to describe precisely with a single text prompt," P-Flow proposes a training-free framework. It treats the text prompt as an optimization variable, using a Vision-Language Model (VLM) to contrast differences between reference and generated videos and iteratively rewrite prompts. Combined with noise prior enhanc…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video Effects Generation"
+  - "Test-time Prompt Optimization"
+  - "Training-free"
+  - "Flow Matching Inversion"
+  - "VLM Guidance"
 date: 2026-05-08
-content_hash: 450cf1b3713adfe5
+content_hash: 4e4a2d3fa461d830
 ---
+
 # P-Flow: Prompting Visual Effects Generation
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Noise prior component analysis (Open-VFX, I2V):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](synmotion_semantic-visual_adaptation_for_motion_customized_video_generation.md)
-- [\[CVPR 2025\] Visual Prompting for One-Shot Controllable Video Editing Without Inversion](../../CVPR2025/video_generation/visual_prompting_for_one-shot_controllable_video_editing_without_inversion.md)
-- [\[CVPR 2026\] RFDM: Residual Flow Diffusion Models for Video Editing](rfdm_residual_flow_diffusion_models_for_video_editing.md)
-- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
-- [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
+- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
+- [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
+- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
+- [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
+- [\[ACL 2026\] MathFlow: Enhancing the Perceptual Flow of MLLMs for Visual Mathematical Problems](../../ACL2026/multimodal_vlm/mathflow_enhancing_the_perceptual_flow_of_mllms_for_visual_mathematical_problems.md)
 
 </div>
 

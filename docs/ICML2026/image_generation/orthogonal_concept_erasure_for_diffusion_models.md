@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Orthogonal Concept Erasure for Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Concept Erasure] This paper reformulates "additive parameter editing" concept erasure (e.g., UCE/SPEED) in T2I diffusion models as a multiplicative "layered orthogonal rotation $W^* = QW$". By combining a subspace-level erasure target with a Procrustes closed-form solution, it calculates $Q$ in a single step—erasing 100 celebrity conce
+  [ICML 2026 Oral][Image Generation][Concept Erasure] This paper reformulates "additive parameter editing" concept erasure (e.g., UCE/SPEED) in T2I diffusion models as a multiplicative "layered orthogonal rotation $W^* = QW$". By combining a subspace-level erasure target with a Procrustes closed-form solution, it calculates $Q$ in a single step—erasing 100 celebrity concepts in 4.3 seconds with near-zero damage to non-target concepts.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Concept Erasure
+  - "ICML 2026 Oral"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Orthogonal Transformation"
+  - "Closed-form Solution"
+  - "Subspace Projection"
+  - "Multi-concept Erasure"
 date: 2026-05-08
-content_hash: d80dddb834b630d3
+content_hash: 80654d3eca595ee3
 ---
+
 # Orthogonal Concept Erasure for Diffusion Models
 
 **Conference**: ICML 2026 Oral  

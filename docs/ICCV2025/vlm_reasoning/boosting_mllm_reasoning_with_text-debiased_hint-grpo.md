@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Boosting MLLM Reasoning with Text-Debiased Hint-GRPO
 description: >-
-  [ICCV 2025][Multimodal VLM][MLLM reasoning] This paper identifies two critical issues in applying GRPO to MLLM reasoning — low data utilization (invalid gradients when all sampled outputs for a hard question are incorrec…
+  [ICCV 2025][VLM Reasoning][MLLM reasoning] This paper identifies two critical issues in applying GRPO to MLLM reasoning — low data utilization (invalid gradients when all sampled outputs for a hard question are incorrect) and text bias (the model ignores visual input and relies solely on textual reasoning) — and proposes two corresponding solutions: Hint-GRPO (adaptively providing reasoning hints) and text-debiasing calibration (enhancing image conditioning at test time). The…
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "MLLM reasoning"
   - "GRPO reinforcement learning"
   - "data utilization"
   - "text bias"
   - "hint-guided training"
 date: 2026-05-08
-content_hash: 4eba8e5a05428b76
+content_hash: 85130c8b0deded70
 ---
 
 # Boosting MLLM Reasoning with Text-Debiased Hint-GRPO
@@ -159,11 +159,11 @@ Hint-GRPO extends standard GRPO by adaptively providing reasoning hints for hard
 
 ## Related Papers
 
-- [\[ICCV 2025\] G2D: Boosting Multimodal Learning with Gradient-Guided Distillation](g2d_boosting_multimodal_learning_with_gradient-guided_distillation.md)
-- [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
-- [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](../../AAAI2026/multimodal_vlm/abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
-- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/multimodal_vlm/astar_boosting_multimodal_reasoning_with_automated_structure.md)
-- [\[ICCV 2025\] Information Density Principle for MLLM Benchmarks](information_density_principle_for_mllm_benchmarks.md)
+- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](../../NeurIPS2025/vlm_reasoning/enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+- [\[AAAI 2026\] AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](../../AAAI2026/vlm_reasoning/astar_boosting_multimodal_reasoning_with_automated_structure.md)
+- [\[CVPR 2026\] Boosting Reasoning in Large Multimodal Models via Activation Replay](../../CVPR2026/vlm_reasoning/boosting_reasoning_in_large_multimodal_models_via_activation_replay.md)
+- [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](../../AAAI2026/vlm_reasoning/abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
+- [\[CVPR 2026\] Adversarial Style Optimization: Enhancing VLM Jailbreaks by GRPO-based Stylistic Triggers Optimization](../../CVPR2026/vlm_reasoning/adversarial_style_optimization_enhancing_vlm_jailbreaks_by_grpo-based_stylistic_.md)
 
 </div>
 

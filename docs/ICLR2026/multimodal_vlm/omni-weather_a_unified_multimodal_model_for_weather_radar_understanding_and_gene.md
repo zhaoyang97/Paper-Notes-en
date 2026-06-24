@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation
 description: >-
-  [ICLR 2026][Multimodal VLM][SEVIR] Omni-Weather is the first foundation model to unify "meteorological generation" (radar nowcasting, satellite-to-radar inversion) and "meteorological understanding" (diagnostic reports for radar images/sequences) within a single multimodal backbone. By employing a shared self-attention mechanism and modality-specific en
+  [ICLR 2026][Multimodal VLM][Meteorological Foundation Model] Omni-Weather is the first foundation model to unify "meteorological generation" (radar nowcasting, satellite-to-radar inversion) and "meteorological understanding" (diagnostic reports for radar images/sequences) within a single multimodal backbone. By employing a shared self-attention mechanism and modality-specific encoders, it expresses various tasks in a unified sequence-to-sequence format. Accompanied by a Chain…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - SEVIR
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Meteorological Foundation Model"
+  - "Unified Generation and Understanding"
+  - "Radar Nowcasting"
+  - "Chain-of-Thought Reasoning"
+  - "SEVIR"
 date: 2026-05-08
-content_hash: c36348838e13a40e
+content_hash: 6699b2756e8fe8d6
 ---
+
 # Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation
 
 **Conference**: ICLR 2026  
@@ -154,7 +159,7 @@ Closed-source LLMs (Claude-sonnet-4, Gemini-2.5-pro, GPT-5) typically achieve ac
 - [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](../../ICML2026/multimodal_vlm/weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
 - [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](../../CVPR2026/multimodal_vlm/meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
-- [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This paper proposes LogosKG, a hardware-aligned knowledge graph retrieval framework. By transforming graph traversal into multiplication operations of ternary sparse matrices (SUB/OBJ/REL), combined with degree-aware graph partitioning, cross-graph routing, and on-demand caching, it achieves scalable and interpretable
+  [ACL 2026][Graph Learning][Knowledge Graph Retrieval] This paper proposes LogosKG, a hardware-aligned knowledge graph retrieval framework. By transforming graph traversal into multiplication operations of ternary sparse matrices (SUB/OBJ/REL), combined with degree-aware graph partitioning, cross-graph routing, and on-demand caching, it achieves scalable and interpretable high-hop retrieval on billion-edge scale KGs using a single device. Downstream KG-LLM interaction experime…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Retrieval"
+  - "Hardware-Aligned Optimization"
+  - "Multi-hop Traversal"
+  - "Sparse Matrix Operations"
+  - "KG-LLM Interaction"
 date: 2026-05-08
-content_hash: 9fa2f08a9c279370
+content_hash: a406bdfaa3e0c35b
 ---
+
 # LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval
 
 **Conference**: ACL 2026  
@@ -142,8 +148,8 @@ LogosKG is a deterministic retrieval system; the entire pipeline contains no lea
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
 - [\[ACL 2026\] Autonomous Knowledge Graph Exploration with Adaptive Breadth-Depth Retrieval](autonomous_knowledge_graph_exploration_with_adaptive_breadth-depth_retrieval.md)
 - [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
-- [\[ICML 2025\] TopInG: Topologically Interpretable Graph Learning via Persistent Rationale Filtration](../../ICML2025/graph_learning/toping_topologically_interpretable_graph_learning_via_persistent_rationale_filtr.md)
+- [\[ICLR 2026\] HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature](../../ICLR2026/graph_learning/hgnet_scalable_foundation_model_for_automated_knowledge_graph_generation_from_sc.md)
+- [\[ICLR 2026\] Graph Random Features for Scalable Gaussian Processes](../../ICLR2026/graph_learning/graph_random_features_for_scalable_gaussian_processes.md)
 
 </div>
 

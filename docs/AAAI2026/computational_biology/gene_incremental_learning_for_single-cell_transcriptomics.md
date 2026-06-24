@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gene Incremental Learning for Single-Cell Transcriptomics
 description: >-
-  [AAAI 2026][Computational Biology][gene incremental learning] This paper proposes a Gene Incremental Learning (GIL) framework that leverages the permutation-invariant nature of single-cell transcriptomics data to extend…
+  [AAAI 2026][Computational Biology][gene incremental learning] This paper proposes a Gene Incremental Learning (GIL) framework that leverages the permutation-invariant nature of single-cell transcriptomics data to extend the class incremental learning (CIL) paradigm to the token (gene) dimension. Two baseline methods—gene replay and gene distillation—are designed, and a comprehensive benchmark is established with two evaluation protocols: gene-level regression and gene-level c…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "token incremental learning"
   - "benchmark"
 date: 2026-05-08
-content_hash: 7cd996927bffb61b
+content_hash: 50b084621c610c90
 ---
 
 # Gene Incremental Learning for Single-Cell Transcriptomics
@@ -157,10 +157,10 @@ A scGPT-style Transformer (6 layers, 8 heads, hidden dimension 256) is trained o
 ## Related Papers
 
 - [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](../../ICML2026/computational_biology/scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](../../NeurIPS2025/computational_biology/learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
+- [\[ICLR 2026\] Learning Explicit Single-Cell Dynamics Using ODE Representations](../../ICLR2026/computational_biology/learning_explicit_single-cell_dynamics_using_ode_representations.md)
+- [\[ICLR 2026\] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention](../../ICLR2026/computational_biology/save_a_generalizable_framework_for_multi-condition_single-cell_generation_with_g.md)
 - [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](../../ICML2026/computational_biology/towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
-- [\[AAAI 2026\] ConSurv: Multimodal Continual Learning for Survival Analysis](consurv_multimodal_continual_learning_for_survival_analysis.md)
+- [\[ICML 2025\] scSSL-Bench: Benchmarking Self-Supervised Learning for Single-Cell Data](../../ICML2025/computational_biology/scssl-bench_benchmarking_self-supervised_learning_for_single-cell_data.md)
 
 </div>
 

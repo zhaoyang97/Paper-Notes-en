@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SiNGER: A Clearer Voice Distills Vision Transformers Further
 description: >-
-  [ICLR 2026][Audio & Speech][Vision Transformer] The SiNGER (Singular Nullspace-Guided Energy Reallocation) framework is proposed to suppress high-norm artifacts in ViTs by imposing perturbations in the nullspace direction of teacher features while preserving information signals. Combined with lightweight LoRA adapters for efficient distillation, it achieves SOTA per
+  [ICLR 2026][Audio & Speech][Vision Transformer] The SiNGER (Singular Nullspace-Guided Energy Reallocation) framework is proposed to suppress high-norm artifacts in ViTs by imposing perturbations in the nullspace direction of teacher features while preserving information signals. Combined with lightweight LoRA adapters for efficient distillation, it achieves SOTA performance across multiple downstream tasks and generates clearer, more interpretable representations.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Vision Transformer
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Vision Transformer"
+  - "Knowledge Distillation"
+  - "High-norm artifacts"
+  - "Nullspace guidance"
+  - "LoRA adapters"
 date: 2026-05-08
-content_hash: 34ca22e83a49be9d
+content_hash: 696fc86a333760ad
 ---
+
 # SiNGER: A Clearer Voice Distills Vision Transformers Further
 
 **Conference**: ICLR 2026  
@@ -156,10 +160,10 @@ SiNGER consistently outperforms all baseline methods across classification, obje
 ## Related Papers
 
 - [\[ECCV 2024\] Siamese Vision Transformers are Scalable Audio-Visual Learners](../../ECCV2024/audio_speech/siamese_vision_transformers_are_scalable_audio-visual_learners.md)
+- [\[ICLR 2026\] WearVox: An Egocentric Multichannel Voice Assistant Benchmark for Wearables](wearvox_an_egocentric_multichannel_voice_assistant_benchmark_for_wearables.md)
 - [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
+- [\[ICLR 2026\] TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization](tvtsyn_content-synchronous_time-varying_timbre_for_streaming_voice_conversion_an.md)
 - [\[ICLR 2026\] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations](drvoice_parallel_speech-text_voice_conversation_model_via_dual-resolution_speech.md)
-- [\[CVPR 2026\] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](../../CVPR2026/audio_speech/babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)
-- [\[ICML 2026\] Alethia: A Foundational Encoder for Voice Deepfakes](../../ICML2026/audio_speech/alethia_a_foundational_encoder_for_voice_deepfakes.md)
 
 </div>
 

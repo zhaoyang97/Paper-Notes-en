@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] To address the dual challenges of "noisy client annotations + Non-IID data" in Federated Learning, FedRG abandons the unreliable small-loss heuristic. Instead, it identifies clean/noisy samples based on **representation geometry**. Specifically, it first learns label-agnostic representations on a hypersphere through se
+  [CVPR 2026][Federated Learning][Noisy Labels] To address the dual challenges of "noisy client annotations + Non-IID data" in Federated Learning, FedRG abandons the unreliable small-loss heuristic. Instead, it identifies clean/noisy samples based on **representation geometry**. Specifically, it first learns label-agnostic representations on a hypersphere through self-supervision, then uses a vMF mixture model to compare "geometric evidence" with "annotated label evidence" in a…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Noisy Labels"
+  - "Representation Geometry"
+  - "vMF Mixture Model"
+  - "Data Heterogeneity"
 date: 2026-05-08
-content_hash: 6dd2bb5ec6f46ab8
+content_hash: d581d087700ecb87
 ---
+
 # FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients
 
 **Conference**: CVPR 2026  
@@ -162,11 +167,11 @@ Ablations presented via radar charts (Fig. 3, CIFAR-10 four noise scenarios) sho
 
 ## Related Papers
 
-- [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)
-- [\[ICML 2026\] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels](../../ICML2026/optimization/learning_locally_revising_globally_global_reviser_for_federated_learning_with_no.md)
-- [\[CVPR 2026\] Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression](revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression.md)
-- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
+- [\[CVPR 2026\] GDFA: Geometry-Driven Federated Unlearning with Directional Task Vector Alignment](gdfa_geometry-driven_federated_unlearning_with_directional_task_vector_alignment.md)
 - [\[CVPR 2026\] From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity](from_selection_to_scheduling_federated_geometry-aware_correction_makes_exemplar_.md)
+- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
 
 </div>
 

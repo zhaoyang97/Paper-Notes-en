@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration
 description: >-
-  [CVPR 2026][Medical Imaging][GRPO] MorphSeek redefines deformable medical image registration as "policy optimization in the encoder's latent space"—attaching a Gaussian policy head to the top layer of a U-Net encoder to treat latent features as samplable actions. It first uses unsupervised warm-up to stabilize the latent space, then employs GRPO for mul
+  [CVPR 2026][LLM Alignment][Deformable Registration] MorphSeek redefines deformable medical image registration as "policy optimization in the encoder's latent space"—attaching a Gaussian policy head to the top layer of a U-Net encoder to treat latent features as samplable actions. It first uses unsupervised warm-up to stabilize the latent space, then employs GRPO for multi-trajectory multi-step weakly supervised fine-tuning. Combined with LDVN to stabilize policy gradients in…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "Deformable Registration"
+  - "GRPO"
+  - "Latent Space Policy Optimization"
+  - "Weakly Supervised"
+  - "Label Efficiency"
 date: 2026-05-08
-content_hash: d4ce93c28c380140
+content_hash: 554933c26e6c2602
 ---
+
 # MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration
 
 **Conference**: CVPR 2026  
@@ -163,11 +168,11 @@ Ablation of Trajectories × Refinement Steps (OASIS, TransMorph, Dice↑/NJD↓)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
-- [\[CVPR 2026\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
-- [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
-- [\[CVPR 2026\] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation](kamp_knowledge-anchored_multimodal_pretraining_framework_for_medical_image_repre.md)
-- [\[NeurIPS 2025\] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations](../../NeurIPS2025/medical_imaging/polypose_deformable_2d3d_registration_via_polyrigid_transformations.md)
+- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
+- [\[ACL 2025\] ASPO: Adaptive Sentence-Level Preference Optimization for Fine-Grained Multimodal Reasoning](../../ACL2025/llm_alignment/aspo_adaptive_sentence-level_preference_optimization_for_fine-grained_multimodal.md)
+- [\[CVPR 2026\] SafeGRPO: Self-Rewarded Multimodal Safety Alignment via Rule-Governed Policy Optimization](safegrpo_self-rewarded_multimodal_safety_alignment_via_rule-governed_policy_opti.md)
+- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
+- [\[ACL 2025\] PRMBench: A Fine-grained and Challenging Benchmark for Process-Level Reward Models](../../ACL2025/llm_alignment/prmbench_a_fine-grained_and_challenging_benchmark_for_process-level_reward_model.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] HERA identifies that the failure of using Vision Foundation Models (VFMs) for cross-domain few-shot segmentation stems from "layer sensitivity + attention noise + pixel error." It proposes a three-stage select-regularize-calibrate framework: first, it adaptively selects the most stable layer per episode via Hierarchica
+  [CVPR 2026][Segmentation][Cross-Domain Few-Shot Segmentation] HERA identifies that the failure of using Vision Foundation Models (VFMs) for cross-domain few-shot segmentation stems from "layer sensitivity + attention noise + pixel error." It proposes a three-stage select-regularize-calibrate framework: first, it adaptively selects the most stable layer per episode via Hierarchical Layer Selection (HLS); second, it regularizes the self-attention of that layer using an entropy-…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Cross-Domain Few-Shot Segmentation"
+  - "Vision Foundation Models"
+  - "Test-Time Adaptation"
+  - "Layer Selection"
+  - "Attention Regularization"
 date: 2026-05-08
-content_hash: 29b282f511842c9b
+content_hash: a7f5e8646603e749
 ---
+
 # Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -142,16 +148,16 @@ Ours (DINOv3) achieves 68.3/77.9 (1-/5-shot). In 5-shot, HERA outperforms LoEC b
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[CVPR 2026\] Bayesian Decomposition and Semantic Completion for Few-shot Semantic Segmentation](bayesian_decomposition_and_semantic_completion_for_few-shot_semantic_segmentatio.md)
 - [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](../../AAAI2026/segmentation/bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
-- [\[CVPR 2025\] The Devil is in Low-Level Features for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/the_devil_is_in_low-level_features_for_cross-domain_few-shot_segmentation.md)
+- [\[ICML 2025\] Adapter Naturally Serves as Decoupler for Cross-Domain Few-Shot Semantic Segmentation](../../ICML2025/segmentation/adapter_naturally_serves_as_decoupler_for_cross-domain_few-shot_semantic_segment.md)
+- [\[CVPR 2026\] Bayesian Decomposition and Semantic Completion for Few-shot Semantic Segmentation](bayesian_decomposition_and_semantic_completion_for_few-shot_semantic_segmentatio.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes LocalDyGS, a framework that decomposes complex global dynamic scenes into local spaces defined by seed points and generates temporal Gaussians via static-…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes LocalDyGS, a framework that decomposes complex global dynamic scenes into local spaces defined by seed points and generates temporal Gaussians via static-dynamic feature decoupling to model local motions independently, achieving high-quality reconstruction of large-scale complex dynamic scenes for the first time.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "static-dynamic decoupling"
   - "temporal Gaussians"
 date: 2026-05-08
-content_hash: 24cb1adc0774cf5d
+content_hash: d98bcf0d5c27a6b7
 ---
 
 # LocalDyGS: Multi-view Global Dynamic Scene Modeling via Adaptive Local Implicit Feature Decoupling
@@ -180,7 +180,7 @@ Exceeds dynamic methods by more than 2 dB, approaching the static 3DGS upper bou
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
 - [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
 - [\[ICCV 2025\] ATLAS: Decoupling Skeletal and Shape Parameters for Expressive Parametric Human Modeling](atlas_decoupling_skeletal_and_shape_parameters_for_expressive_parametric_human_m.md)
-- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](../../CVPR2026/3d_vision/4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
+- [\[ICCV 2025\] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection](ca-i2p_channel-adaptive_registration_network_with_global_optimal_selection.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration
 description: >-
-  [CVPR 2026][Medical Imaging][Attention] Addressing the combinatorial explosion of feature relationships in Deformable Medical Image Registration (DMIR) caused by "dual-image inputs," this paper proposes DySNet. It utilizes an AdSB module to dynamically deform the receptive field (shrinking the search space) and a DySA module to dynamically generate attention
+  [CVPR 2026][Medical Imaging][Deformable Registration] Addressing the combinatorial explosion of feature relationships in Deformable Medical Image Registration (DMIR) caused by "dual-image inputs," this paper proposes DySNet. It utilizes an AdSB module to dynamically deform the receptive field (shrinking the search space) and a DySA module to dynamically generate attention weights (calibrating the search direction). These two dynamic mechanisms are unified into a single dynami…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Attention
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Deformable Registration"
+  - "Dynamic Receptive Field"
+  - "Dynamic Weights"
+  - "Combinatorial Explosion"
+  - "Attention Mechanism"
 date: 2026-05-08
-content_hash: 92254c426e141590
+content_hash: d662aee0d0ca0712
 ---
+
 # Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,17 @@ DySNet-M achieves the highest/second-highest Dice (82.0% average) across all tas
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Learning Diffeomorphism for Medical Image Registration with Time-Embedded Architectures Using Semigroup Regularization](learning_diffeomorphism_for_medical_image_registration_with_time-embedded_archit.md)
+- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
+- [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
+- [\[NeurIPS 2025\] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations](../../NeurIPS2025/medical_imaging/polypose_deformable_2d3d_registration_via_polyrigid_transformations.md)
+- [\[CVPR 2026\] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration](crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration](morphseek_fine-grained_latent_representation-level_policy_optimization_for_defor.md)

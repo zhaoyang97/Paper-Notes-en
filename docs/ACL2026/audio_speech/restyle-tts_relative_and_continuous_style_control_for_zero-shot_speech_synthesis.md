@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReStyle-TTS: Relative and Continuous Style Control for Zero-Shot Speech Synthesis
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] ReStyle-TTS enables zero-shot TTS to break free from the style of the reference audio through decoupled text/reference guidance, continuously scalable Style LoRAs, orthogonal LoRA fusion, and timbre consistency optimization. This allows for relative adjustments of pitch, energy, and emotion while maintaining text intel
+  [ACL2026][Audio & Speech][Zero-Shot Speech Synthesis] ReStyle-TTS enables zero-shot TTS to break free from the style of the reference audio through decoupled text/reference guidance, continuously scalable Style LoRAs, orthogonal LoRA fusion, and timbre consistency optimization. This allows for relative adjustments of pitch, energy, and emotion while maintaining text intelligibility and speaker timbre.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Zero-Shot Speech Synthesis"
+  - "Style Control"
+  - "LoRA Fusion"
+  - "Relative Control"
+  - "Timbre Consistency"
 date: 2026-05-08
-content_hash: fdc0c5394799f56e
+content_hash: 5f1b999f9452ffd6
 ---
+
 # ReStyle-TTS: Relative and Continuous Style Control for Zero-Shot Speech Synthesis
 
 **Conference**: ACL2026  
@@ -148,10 +154,10 @@ DCFG is critical for style controllability, while TCO is critical for timbre pre
 ## Related Papers
 
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
+- [\[ICLR 2026\] FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions](../../ICLR2026/audio_speech/flexivoice_enabling_flexible_style_control_in_zero-shot_tts_with_natural_languag.md)
 - [\[ACL 2025\] ControlSpeech: Towards Simultaneous and Independent Zero-shot Speaker Cloning and Zero-shot Language Style Control](../../ACL2025/audio_speech/controlspeech_zero_shot.md)
 - [\[ACL 2025\] TCSinger 2: Customizable Multilingual Zero-shot Singing Voice Synthesis](../../ACL2025/audio_speech/tcsinger_2_customizable_multilingual_zero-shot_singing_voice_synthesis.md)
-- [\[ACL 2026\] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models](style_amnesia_investigating_speaking_style_degradation_and_mitigation_in_multi-t.md)
-- [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](../../ICML2026/audio_speech/musicdet_zero-shot_ai-generated_music_detection.md)
+- [\[ACL 2026\] UniVocal: Unified Speech-Singing Code-Mixed Synthesis](univocal_unified_speech-singing_code-switching_synthesis.md)
 
 </div>
 

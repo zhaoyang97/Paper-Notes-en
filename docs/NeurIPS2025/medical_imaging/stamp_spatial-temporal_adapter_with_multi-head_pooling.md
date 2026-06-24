@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STAMP: Spatial-Temporal Adapter with Multi-Head Pooling
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG Classification] STAMP introduces a lightweight spatial-temporal adapter with only 750K parameters for Time Series Foundation Models (TSFMs). Through three sets of positional encodings…
+  [NeurIPS 2025][Medical Imaging][EEG Classification] STAMP introduces a lightweight spatial-temporal adapter with only 750K parameters for Time Series Foundation Models (TSFMs). Through three sets of positional encodings (token/spatial/temporal), cross-gated MLP mixing, and multi-head attention pooling, it enables a frozen TSFM (e.g., MOMENT 385M) to compete with or surpass EEG-specific models with 29M parameters (CBraMod) across 8 EEG datasets…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Head Pooling"
   - "Parameter Efficiency"
 date: 2026-05-08
-content_hash: 84312c5cd5c62eeb
+content_hash: d4d639e59220ce76
 ---
 
 # STAMP: Spatial-Temporal Adapter with Multi-Head Pooling
@@ -131,11 +131,11 @@ STAMP is competitive or superior on 6/8 datasets, with relative weakness on emot
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
 - [\[NeurIPS 2025\] Interpretable Next-token Prediction via the Generalized Induction Head](interpretable_next-token_prediction_via_the_generalized_induction_head.md)
-- [\[NeurIPS 2025\] A Unified Solution to Video Fusion: From Multi-Frame Learning to Benchmarking](a_unified_solution_to_video_fusion_from_multi-frame_learning_to_benchmarking.md)
+- [\[ICLR 2026\] Dual-Kernel Adapter: Expanding Spatial Horizons for Data-Constrained Medical Image Analysis](../../ICLR2026/medical_imaging/dual-kernel_adapter_expanding_spatial_horizons_for_data-constrained_medical_imag.md)
+- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
+- [\[ICLR 2026\] HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation](../../ICLR2026/medical_imaging/hfsti-net_hierarchical_frequency-spatial-temporal_interactions_for_video_polyp_s.md)
 - [\[NeurIPS 2025\] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation](physiowave_a_multi-scale_wavelet-transformer_for_physiological_signal_representa.md)
-- [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
 
 </div>
 

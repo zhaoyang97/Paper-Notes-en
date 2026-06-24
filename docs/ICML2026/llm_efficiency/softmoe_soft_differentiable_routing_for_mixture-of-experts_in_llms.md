@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs
 description: >-
-  [ICML 2026][LLM Efficiency][LapSum] SoftMoE replaces the non-differentiable hard top-$k$ selection in MoE with a LapSum-based differentiable "soft top-$k$" operator. This enables gradient optimization for routing and allows the number of activated experts to adapt per token. Furthermore, a global budget constraint allows the model to **self-learn the opt
+  [ICML2026][LLM Efficiency][Mixture-of-Experts] SoftMoE replaces the non-differentiable hard top-$k$ selection in MoE with a LapSum-based differentiable "soft top-$k$" operator. This enables gradient optimization for routing and allows the number of activated experts to adapt per token. Furthermore, a global budget constraint allows the model to **self-learn the optimal expert allocation per layer**. Results show that SoftMoE matches or exceeds sparse MoE while using experts m…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - LapSum
-  - Autoregressive
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Differentiable Routing"
+  - "Soft top-k"
+  - "LapSum"
+  - "Expert Allocation"
+  - "Autoregressive"
 date: 2026-05-08
-content_hash: c0b7001321cfc453
+content_hash: e96579b8595aaadf
 ---
+
 # SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs
 
 **Conference**: ICML2026  
@@ -159,9 +164,9 @@ In the ≤2 budget category, SoftMoE* achieves lower loss while **activating 17%
 
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ICML 2026\] Skill-Based Mixture-of-Experts: Adaptive Routing for Heterogeneous Reasoning via Inferred Skills](skill-based_mixture-of-experts_adaptive_routing_for_heterogeneous_reasoning_via_.md)
-- [\[ICML 2026\] RepetitionCurse: Measuring and Understanding Router Imbalance in Mixture-of-Experts LLMs under DoS Stress](repetitioncurse_measuring_and_understanding_router_imbalance_in_mixture-of-exper.md)
-- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
-- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
+- [\[ICLR 2026\] Routing Manifold Alignment Improves Generalization of Mixture-of-Experts LLMs](../../ICLR2026/llm_efficiency/routing_manifold_alignment_improves_generalization_of_mixture-of-experts_llms.md)
+- [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](../../ICLR2026/llm_efficiency/dirmoe_dirichlet-routed_mixture_of_experts.md)
+- [\[ICML 2026\] DOT-MoE: Transforming Dense LLMs into MoE with Differentiable Optimal Transport](dot-moe_differentiable_optimal_transport_for_moefication.md)
 
 </div>
 

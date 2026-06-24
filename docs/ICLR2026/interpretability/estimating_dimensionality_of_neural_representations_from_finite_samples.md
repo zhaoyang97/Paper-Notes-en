@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Estimating Dimensionality of Neural Representations from Finite Samples
 description: >-
-  [ICLR 2026][Interpretability][Participation Ratio] Addressing the long-standing issue where the Participation Ratio (PR), a global dimensionality metric, is severely biased under finite samples, this paper derives an unbiased estimator $\gamma_{\text{both}}$ that simultaneously debiases for **row sampling, column sampling, and noise**. This allows dimensionality estima
+  [ICLR 2026][Interpretability][dimensionality estimation] Addressing the long-standing issue where the Participation Ratio (PR), a global dimensionality metric, is severely biased under finite samples, this paper derives an unbiased estimator $\gamma_{\text{both}}$ that simultaneously debiases for **row sampling, column sampling, and noise**. This allows dimensionality estimates to remain nearly invariant as the number of samples changes and extends to sparse matrices and loca…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Participation Ratio
+  - "ICLR 2026"
+  - "Interpretability"
+  - "dimensionality estimation"
+  - "Participation Ratio"
+  - "finite-sample bias"
+  - "neural manifold"
+  - "representation geometry"
 date: 2026-05-08
-content_hash: ccdecfc2ffc073f4
+content_hash: 60ebe82e7c0f7d87
 ---
+
 # Estimating Dimensionality of Neural Representations from Finite Samples
 
 **Conference**: ICLR 2026  

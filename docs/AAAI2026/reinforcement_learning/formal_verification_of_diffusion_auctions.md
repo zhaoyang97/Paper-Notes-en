@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Formal Verification of Diffusion Auctions
 description: >-
-  [AAAI 2026][Reinforcement Learning][Diffusion auctions] This paper presents the first formal logical framework for diffusion auctions, introducing the $n$-seller diffusion incentive logic $\mathcal{L}^n$ and its strategi…
+  [AAAI 2026][Reinforcement Learning][Diffusion auctions] This paper presents the first formal logical framework for diffusion auctions, introducing the $n$-seller diffusion incentive logic $\mathcal{L}^n$ and its strategic extension $\mathcal{SL}^n$. The framework supports model-checking verification of auction properties such as Nash equilibria and the existence of seller strategies, with complexity results of P and PSPACE-complete respectively.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "game theory"
   - "strategy logic"
 date: 2026-05-08
-content_hash: 9717e7a703910793
+content_hash: f864dbd66282d550
 ---
 
 # Formal Verification of Diffusion Auctions
@@ -168,11 +168,11 @@ The paper is primarily a theoretical contribution; detailed running examples rep
 
 ## Related Papers
 
+- [\[ICLR 2026\] GAR: Generative Adversarial Reinforcement Learning for Formal Theorem Proving](../../ICLR2026/reinforcement_learning/gar_generative_adversarial_reinforcement_learning_for_formal_theorem_proving.md)
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](../../ICLR2026/reinforcement_learning/group_verification-based_policy_optimization_for_interactive_coding_agents.md)
 - [\[AAAI 2026\] CHDP: Cooperative Hybrid Diffusion Policies for RL in Parametric Environments](chdp_cooperative_hybrid_diffusion_policies_for_reinforcement_learning_in_paramet.md)
+- [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](../../ICLR2026/reinforcement_learning/dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
 - [\[NeurIPS 2025\] Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification](../../NeurIPS2025/reinforcement_learning/kimina_lean_server_a_high-performance_lean_server_for_large-scale_verification.md)
-- [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
-- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
-- [\[NeurIPS 2025\] Comparing Uniform Price and Discriminatory Multi-Unit Auctions through Regret Minimization](../../NeurIPS2025/reinforcement_learning/comparing_uniform_price_and_discriminatory_multi-unit_auctions_through_regret_mi.md)
 
 </div>
 

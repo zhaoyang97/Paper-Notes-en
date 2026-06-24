@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Plug-and-Play Compositionality for Boosting Continual Learning with Foundation Models
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Slot Attention] CompSLOT utilizes Slot Attention to unsupervisedly extract image concept slots from frozen ViT backbones. It then selects class-related "primitives" and distills the pairwise similarities of these primitives into the logits of arbitrary continual learners. This "plug-and-play" mechanism consistently improves performanc
+  [ICLR 2026][Self-Supervised Learning][Continual Learning] CompSLOT utilizes Slot Attention to unsupervisedly extract image concept slots from frozen ViT backbones. It then selects class-related "primitives" and distills the pairwise similarities of these primitives into the logits of arbitrary continual learners. This "plug-and-play" mechanism consistently improves performance and alleviates catastrophic forgetting across various foundation-model-based continual learning meth…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Slot Attention
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Compositionality"
+  - "Slot Attention"
+  - "Concept Learning"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: e2885652c5f61e38
+content_hash: 398c18ea26123fcf
 ---
+
 # Plug-and-Play Compositionality for Boosting Continual Learning with Foundation Models
 
 **Conference**: ICLR 2026  
@@ -138,9 +142,9 @@ Decomposition of components on RanPAC/CPrompt (CGQA):
 
 - [\[CVPR 2025\] OCRT: Boosting Foundation Models in the Open World with Object-Concept-Relation Triad](../../CVPR2025/self_supervised/ocrt_boosting_foundation_models_in_the_open_world_with_object-concept-relation_t.md)
 - [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](../../CVPR2026/self_supervised/exemplar-free_continual_learning_for_state_space_models.md)
+- [\[ICLR 2026\] Detect, Decide, Unlearn: A Transfer-Aware Framework for Continual Learning](detect_decide_unlearn_a_transfer-aware_framework_for_continual_learning.md)
+- [\[ICLR 2026\] SplitLoRA: Balancing Stability and Plasticity in Continual Learning Through Gradient Space Splitting](splitlora_balancing_stability_and_plasticity_in_continual_learning_through_gradi.md)
 - [\[ICLR 2026\] Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models](regularized_latent_dynamics_prediction_is_a_strong_baseline_for_behavioral_found.md)
-- [\[ICLR 2026\] Boosting Open Set Recognition Performance through Modulated Representation Learning](boosting_open_set_recognition_performance_through_modulated_representation_learn.md)
-- [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
 
 </div>
 

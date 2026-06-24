@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] SAVE aggregates thousands of genes into several "gene blocks" based on LLM semantic similarity. It performs Transformer attention at the block level, combined with a Variational Autoencoder (VAE) for compression and Latent Flow Matching for generation. By using AdaLN to inject conditions and condition masking to unify
+  [ICLR 2026][Computational Biology][Single-cell RNA sequencing] SAVE aggregates thousands of genes into several "gene blocks" based on LLM semantic similarity. It performs Transformer attention at the block level, combined with a Variational Autoencoder (VAE) for compression and Latent Flow Matching for generation. By using AdaLN to inject conditions and condition masking to unify generation and transfer tasks, SAVE significantly outperforms existing methods across conditional…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Single-cell RNA sequencing"
+  - "Gene Block Attention"
+  - "Conditional Generation"
+  - "Flow Matching"
+  - "Batch Correction"
 date: 2026-05-08
-content_hash: 900419ca5f9b55c0
+content_hash: 5eb0148abdede5fd
 ---
+
 # SAVE: A Generalizable Framework for Multi-Condition Single-Cell Generation with Gene Block Attention
 
 **Conference**: ICLR 2026  
@@ -147,12 +152,13 @@ Impact of gene block size $K$ on efficiency and quality:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](../../ICML2026/computational_biology/towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
 - [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](../../ICML2026/computational_biology/scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
+- [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](../../ICML2026/computational_biology/towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/computational_biology/gene_incremental_learning_for_single-cell_transcriptomics.md)
 - [\[ICLR 2026\] A Foundation Model with Multi-Variate Parallel Attention to Generate Neuronal Activity](a_foundation_model_with_multi-variate_parallel_attention_to_generate_neuronal_ac.md)
 - [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](../../NeurIPS2025/computational_biology/scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)

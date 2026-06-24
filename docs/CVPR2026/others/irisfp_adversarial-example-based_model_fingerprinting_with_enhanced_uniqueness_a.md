@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Ours proposes IrisFP, a model fingerprinting framework that simultaneously enhances uniqueness and robustness through three innovations: placing fingerprints at multi-class decision boundary intersections, constructing composite sample fingerprints, and screening fingerprints based on statistical separability. It consi
+  [CVPR 2026][Model fingerprinting] Ours proposes IrisFP, a model fingerprinting framework that simultaneously enhances uniqueness and robustness through three innovations: placing fingerprints at multi-class decision boundary intersections, constructing composite sample fingerprints, and screening fingerprints based on statistical separability. It consistently outperforms SOTA methods in AUC across five datasets.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "Model fingerprinting"
+  - "adversarial examples"
+  - "IP protection"
+  - "ownership verification"
+  - "decision boundary"
 date: 2026-05-08
-content_hash: 5367d5632982d9a4
+content_hash: b75d492ddc571f64
 ---
+
 # IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Both generation phases use the objective of "KL approximation of biased distribu
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
-- [\[CVPR 2026\] A Combination of Noise and Bilateral Filters Achieve Supralinear and Scalable Adversarial Robustness in CNNs](a_combination_of_noise_and_bilateral_filters_achieve_supralinear_and_scalable_ad.md)
-- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
-- [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
-- [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
+- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
+- [\[CVPR 2025\] Towards Million-Scale Adversarial Robustness Evaluation With Stronger Individual Attacks](../../CVPR2025/others/towards_million-scale_adversarial_robustness_evaluation_with_stronger_individual.md)
+- [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](../../AAAI2026/others/decor_deep_embedding_clustering_with_orientation_robustness.md)
+- [\[ACL 2025\] Multi-Facet Blending for Faceted Query-by-Example Retrieval](../../ACL2025/others/multi-facet_blending_for_faceted_query-by-example_retrieval.md)
+- [\[ICML 2025\] Curvature Enhanced Data Augmentation for Regression](../../ICML2025/others/curvature_enhanced_data_augmentation_for_regression.md)
 
 </div>
 

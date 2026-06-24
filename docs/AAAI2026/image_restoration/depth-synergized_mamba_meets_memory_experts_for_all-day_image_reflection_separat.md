@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation
 description: >-
-  [AAAI 2026][Image Restoration][Image Reflection Separation] This paper proposes DMDNet, which employs a depth-aware scanning strategy (DAScan) to guide Mamba toward salient structures…
+  [AAAI 2026][Image Restoration][Image Reflection Separation] This paper proposes DMDNet, which employs a depth-aware scanning strategy (DAScan) to guide Mamba toward salient structures, incorporates a depth-synergized state space model (DS-SSM) to suppress ambiguous feature propagation, and introduces a memory expert compensation module (MECM) to leverage cross-image historical knowledge, achieving all-day (daytime + nighttime) image reflection separation.
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Memory Experts"
   - "Nighttime Imaging"
 date: 2026-05-08
-content_hash: a11d8bc9b9fbb54a
+content_hash: 814c80a84d1d7a60
 ---
 
 # Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation
@@ -197,10 +197,10 @@ DMDNet cleverly integrates depth estimation, Mamba state space models, and memor
 ## Related Papers
 
 - [\[CVPR 2026\] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation](../../CVPR2026/image_restoration/reflexsplit_single_image_reflection_separation_via_layer_fusion-separation.md)
+- [\[CVPR 2026\] Reflection Separation from a Single Image via Joint Latent Diffusion](../../CVPR2026/image_restoration/reflection_separation_from_a_single_image_via_joint_latent_diffusion.md)
 - [\[AAAI 2026\] SpatioTemporal Difference Network for Video Depth Super-Resolution](spatiotemporal_difference_network_for_video_depth_super-resolution.md)
-- [\[AAAI 2026\] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model](mfmamba_a_multi-function_network_for_panchromatic_image_resolution_restoration_b.md)
-- [\[AAAI 2026\] RefiDiff: Progressive Refinement Diffusion for Efficient Missing Data Imputation](refidiff_progressive_refinement_diffusion_for_efficient_missing_data_imputation.md)
-- [\[AAAI 2026\] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration](clear_nights_ahead_towards_multi-weather_nighttime_image_res.md)
+- [\[ICLR 2026\] Content-Aware Mamba for Learned Image Compression](../../ICLR2026/image_restoration/content-aware_mamba_for_learned_image_compression.md)
+- [\[CVPR 2026\] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing](../../CVPR2026/image_restoration/multi-scale_gradient-guided_unrolling_architecture_with_adaptive_mamba_for_compr.md)
 
 </div>
 

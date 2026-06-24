@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test
 description: >-
-  [ICLR 2026][Interpretability][grokking] This paper validates the grokking phenomenon—characterized by asynchronous memorization across different data groups and delayed generalization—for the first time in near-single-pass pretraining of actual-scale LLMs (7B MoE). By analyzing the evolution of MoE routing pathways (from instance-specific to structured/share
+  [ICLR 2026][Interpretability][grokking] This paper validates the grokking phenomenon—characterized by asynchronous memorization across different data groups and delayed generalization—for the first time in near-single-pass pretraining of actual-scale LLMs (7B MoE). By analyzing the evolution of MoE routing pathways (from instance-specific to structured/shared), the authors propose two zero-cost metrics to monitor generalization progress without the need for instruction tuning…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - grokking
-  - memorization
-  - generalization
-  - MoE pathway
-  - pretraining dynamics
+  - "ICLR 2026"
+  - "Interpretability"
+  - "grokking"
+  - "memorization"
+  - "generalization"
+  - "MoE pathway"
+  - "pretraining dynamics"
 date: 2026-05-08
-content_hash: d2c12dd81c6a4790
+content_hash: ba915d86500df608
 ---
+
 # Grokking in LLM Pretraining? Monitor Memorization-to-Generalization without Test
 
 **Conference**: ICLR 2026  

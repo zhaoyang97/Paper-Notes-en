@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization
 description: >-
-  [ICCV 2025][Video Generation][Video Customized Generation] DualReal is the first framework to propose adaptive joint training for identity and motion…
+  [ICCV 2025][Video Generation][Video Customized Generation] DualReal is the first framework to propose adaptive joint training for identity and motion, achieving lossless fusion along both dimensions via Dual-aware Adaptation and a StageBlender Controller, with average gains of 21.7% and 31.8% on CLIP-I and DINO-I metrics.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Transformer"
   - "Adaptive Control"
 date: 2026-05-08
-content_hash: 52aa5468726ed52a
+content_hash: 10404e053bab3e72
 ---
 
 # DualReal: Adaptive Joint Training for Lossless Identity-Motion Fusion in Video Customization
@@ -155,8 +155,8 @@ Weight group ablation: $n=1$ (0.662/0.766), $n=2$ (0.632/0.660), $n=42$ (0.631/0
 
 ## Related Papers
 
-- [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[ICCV 2025\] DreamRelation: Relation-Centric Video Customization](dreamrelation_relation-centric_video_customization.md)
+- [\[ICCV 2025\] MotionShot: Adaptive Motion Transfer across Arbitrary Objects for Text-to-Video Generation](motionshot_adaptive_motion_transfer_across_arbitrary_objects_for_text-to-video_g.md)
 - [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
 - [\[ICCV 2025\] MagicDrive-V2: High-Resolution Long Video Generation for Autonomous Driving with Adaptive Control](magicdrive-v2_high-resolution_long_video_generation_for_autonomous_driving_with_.md)
 - [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)

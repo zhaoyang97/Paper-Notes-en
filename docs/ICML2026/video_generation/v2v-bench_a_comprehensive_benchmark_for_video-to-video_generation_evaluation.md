@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation
 description: >-
-  [ICML 2026][Video Generation][Paper Note] Addressing the core challenge in Video-to-Video (V2V) editing—following instructions while maintaining frame-level alignment with the source video—which existing T2V/I2V metrics fail to capture, this paper proposes V2V-Bench. It introduces a benchmark with 11 decoupled dimensions across 5 categories (6 of which are V2V
+  [ICML 2026][Video Generation][Video-to-Video Generation] Addressing the core challenge in Video-to-Video (V2V) editing—following instructions while maintaining frame-level alignment with the source video—which existing T2V/I2V metrics fail to capture, this paper proposes V2V-Bench. It introduces a benchmark with 11 decoupled dimensions across 5 categories (6 of which are V2V-exclusive) and uses a four-stage pipeline that first checks compliance before detailed evaluation. It…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026"
+  - "Video Generation"
+  - "Video-to-Video Generation"
+  - "Evaluation Benchmarks"
+  - "Frame-level Correspondence"
+  - "Temporal Consistency"
+  - "Edit Faithfulness"
 date: 2026-05-08
-content_hash: 046f80cc1b2920d8
+content_hash: 871839bd56576a86
 ---
+
 # V2V-Bench: A Comprehensive Benchmark for Video-to-Video Generation Evaluation
 
 **Conference**: ICML 2026  
@@ -146,15 +152,15 @@ Human/VLM Preference Alignment (Spearman Correlation):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](../../CVPR2026/video_generation/vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
 - [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](../../CVPR2026/video_generation/vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
+- [\[ICLR 2026\] DrivingGen: A Comprehensive Benchmark for Generative Video World Models in Autonomous Driving](../../ICLR2026/video_generation/drivinggen_a_comprehensive_benchmark_for_generative_video_world_models_in_autono.md)
+- [\[ICLR 2026\] NarrLV: Towards a Comprehensive Narrative-Centric Evaluation for Long Video Generation](../../ICLR2026/video_generation/narrlv_towards_a_comprehensive_narrative-centric_evaluation_for_long_video_gener.md)
 - [\[CVPR 2025\] VEU-Bench: Towards Comprehensive Understanding of Video Editing](../../CVPR2025/video_generation/veu-bench_towards_comprehensive_understanding_of_video_editing.md)
-- [\[CVPR 2025\] Video-Bench: Human-Aligned Video Generation Benchmark](../../CVPR2025/video_generation/video-bench_human-aligned_video_generation_benchmark.md)
-- [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](../../CVPR2026/video_generation/activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
 
 </div>
 

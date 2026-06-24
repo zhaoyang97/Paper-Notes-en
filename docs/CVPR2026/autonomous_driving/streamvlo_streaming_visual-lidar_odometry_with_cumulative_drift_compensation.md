@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StreamVLO: Streaming Visual-LiDAR Odometry with Cumulative Drift Compensation
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] StreamVLO unifies the spatial fusion of vision and LiDAR with multi-frame temporal modeling into a Mamba-based MMG module. It utilizes a differentiable "Cumulative Drift Compensation" (CDC) to backtrack historical frames and learn residual corrections online. Without relying on mapping or loop closure, it significantly
+  [CVPR 2026][Autonomous Driving][Visual-LiDAR Odometry] StreamVLO unifies the spatial fusion of vision and LiDAR with multi-frame temporal modeling into a Mamba-based MMG module. It utilizes a differentiable "Cumulative Drift Compensation" (CDC) to backtrack historical frames and learn residual corrections online. Without relying on mapping or loop closure, it significantly reduces long-range drift, achieving a 19%/22% reduction in $t_{rel}/r_{rel}$ on KITTI and an 18%/16% red…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Visual-LiDAR Odometry"
+  - "Cumulative Drift Compensation"
+  - "Mamba Temporal Modeling"
+  - "Streaming Estimation"
+  - "Multi-modal Fusion"
 date: 2026-05-08
-content_hash: c0e7fda6518604b9
+content_hash: 04b12ba02250da4b
 ---
+
 # StreamVLO: Streaming Visual-LiDAR Odometry with Cumulative Drift Compensation
 
 **Conference**: CVPR 2026  
@@ -142,10 +148,17 @@ KITTI 07–10 average:
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ECCV 2024\] DVLO: Deep Visual-LiDAR Odometry with Local-to-Global Feature Fusion and Bi-directional Structure Alignment](../../ECCV2024/autonomous_driving/dvlo_deep_visual-lidar_odometry_with_local-to-global_feature_fusion_and_bi-direc.md)
+- [\[CVPR 2025\] ZeroVO: Visual Odometry with Minimal Assumptions](../../CVPR2025/autonomous_driving/zerovo_visual_odometry_with_minimal_assumptions.md)
+- [\[CVPR 2026\] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting](sharp_short-window_streaming_for_accurate_and_robust_prediction_in_motion_foreca.md)
+- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
+- [\[CVPR 2026\] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] ZeroVO: Visual Odometry with Minimal Assumptions](../../CVPR2025/autonomous_driving/zerovo_visual_odometry_with_minimal_assumptions.md)

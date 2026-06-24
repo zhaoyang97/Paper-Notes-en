@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling
 description: >-
-  [NeurIPS 2025][Robotics][Theory of Mind] AutoToM achieves fully automated model-based Theory of Mind inference—without requiring manual agent model specification—by automatically proposing Bayesian network structures and…
+  [NeurIPS 2025 Spotlight][Robotics][Theory of Mind] AutoToM achieves fully automated model-based Theory of Mind inference—without requiring manual agent model specification—by automatically proposing Bayesian network structures and executing Bayesian inverse planning. Through uncertainty-driven iterative model refinement (adding mental variables or extending time steps), it achieves an average accuracy of 82.43% across 5 ToM benchmarks, surpassing SOTA models such as GPT-4o (6…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "Theory of Mind"
   - "Bayesian inverse planning"
@@ -12,7 +12,7 @@ tags:
   - "mental inference"
   - "LLM"
 date: 2026-05-08
-content_hash: c7fcf1a58221c2f0
+content_hash: 91b10442ccbfc0ff
 ---
 
 # AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling
@@ -123,11 +123,11 @@ AutoToM requires no trainable parameters—it relies entirely on LLM in-context 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](the_impact_of_scaling_training_data_on_adversarial_robustness.md)
+- [\[CVPR 2025\] ShowUI: One Vision-Language-Action Model for GUI Visual Agent](../../CVPR2025/robotics/showui_one_vision-language-action_model_for_gui_visual_agent.md)
 - [\[NeurIPS 2025\] Can Agents Fix Agent Issues?](can_agents_fix_agent_issues.md)
 - [\[NeurIPS 2025\] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents](benchmarking_egocentric_multimodal_goal_inference_for_assist.md)
+- [\[NeurIPS 2025\] The Impact of Scaling Training Data on Adversarial Robustness](the_impact_of_scaling_training_data_on_adversarial_robustness.md)
 - [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](../../CVPR2026/robotics/mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
 
 </div>
 

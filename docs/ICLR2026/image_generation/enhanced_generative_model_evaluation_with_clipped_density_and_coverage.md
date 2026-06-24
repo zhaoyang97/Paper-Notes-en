@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhanced Generative Model Evaluation with Clipped Density and Coverage
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes Clipped Density and Clipped Coverage metrics for evaluating generative models. By clipping single-sample contributions, limiting the radius of outlier nearest-neighbor spheres, and performing linear calibration, fidelity and coverage scores are made robust against outliers and interpretable as the "
+  [ICLR2026][Image Generation][Generative model evaluation] This paper proposes Clipped Density and Clipped Coverage metrics for evaluating generative models. By clipping single-sample contributions, limiting the radius of outlier nearest-neighbor spheres, and performing linear calibration, fidelity and coverage scores are made robust against outliers and interpretable as the "equivalent proportion of good samples."
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Generative model evaluation"
+  - "Fidelity"
+  - "Coverage"
+  - "Outlier robustness"
+  - "Absolute interpretable metrics"
 date: 2026-05-08
-content_hash: 58a31b03027d7b2f
+content_hash: 93ac4cf35aaf122f
 ---
+
 # Enhanced Generative Model Evaluation with Clipped Density and Coverage
 
 **Conference**: ICLR2026  

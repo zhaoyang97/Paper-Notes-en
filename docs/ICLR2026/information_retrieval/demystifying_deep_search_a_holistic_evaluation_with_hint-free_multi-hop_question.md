@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Web Agent] Addressing the two major issues of "reasoning path leakage in questions" and "reliance on a single pass rate" in current deep search evaluations, this paper constructs **WebDetective**, a hint-free multi-hop QA benchmark (controlled Wikipedia sandbox + full traceability), and a set of factorised metrics that decouple "
+  [ICLR 2026][Information Retrieval & RAG][Multi-hop QA] Addressing the two major issues of "reasoning path leakage in questions" and "reliance on a single pass rate" in current deep search evaluations, this paper constructs **WebDetective**, a hint-free multi-hop QA benchmark (controlled Wikipedia sandbox + full traceability), and a set of factorised metrics that decouple "Search Sufficiency / Knowledge Utilisation / Refusal Behaviour." After evaluating 25 frontier models…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Web Agent
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-hop QA"
+  - "RAG Evaluation"
+  - "Web Agent"
+  - "Hint-free Questions"
+  - "Factorised Metrics"
+  - "Refusal Calibration"
 date: 2026-05-08
-content_hash: 3d289f538c29eb45
+content_hash: 86e2a1d450cba785
 ---
+
 # Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,10 @@ weighted by the knowledge sufficiency rate to prevent "always refuse" from gamin
 ## Related Papers
 
 - [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
+- [\[ICLR 2026\] MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG](mergeprag_orthogonal_merging_of_passage-experts_for_multi-hop_parametric_rag.md)
 - [\[ICLR 2026\] Hybrid Deep Searcher: Scalable Parallel and Sequential Search Reasoning](hybrid_deep_searcher_scalable_parallel_and_sequential_search_reasoning.md)
 - [\[AAAI 2026\] Magnitude Matters: A Superior Class of Similarity Metrics for Holistic Semantic Understanding](../../AAAI2026/information_retrieval/magnitude_matters_a_superior_class_of_similarity_metrics_for_holistic_semantic_u.md)
 - [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](../../AAAI2026/information_retrieval/reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
-- [\[ICLR 2026\] MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG](mergeprag_orthogonal_merging_of_passage-experts_for_multi-hop_parametric_rag.md)
 
 </div>
 

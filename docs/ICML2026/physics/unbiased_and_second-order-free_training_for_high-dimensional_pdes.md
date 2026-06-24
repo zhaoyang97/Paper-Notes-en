@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Unbiased and Second-Order-Free Training for High-Dimensional PDEs
 description: >-
-  [ICML 2026][Physics & Scientific Computing][BSDE] This paper addresses the discretization bias issue in EM-BSDE training loss by proposing Un-EM-BSDE: it forms an unbiased estimator by taking the "product" of single-step errors averaged over two independent Monte Carlo sub-samples. This approach eliminates bias without requiring the Hessian, achieving the accuracy of
+  [ICML 2026][Physics & Scientific Computing][BSDE] This paper addresses the discretization bias issue in EM-BSDE training loss by proposing Un-EM-BSDE: it forms an unbiased estimator by taking the "product" of single-step errors averaged over two independent Monte Carlo sub-samples. This approach eliminates bias without requiring the Hessian, achieving the accuracy of Heun-BSDE / FS-PINNs on benchmarks such as HJB, BSB, and AC, while training time remains only 1.79× that of EM…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - BSDE
-  - Euler-Maruyama
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "BSDE"
+  - "High-dimensional PDEs"
+  - "Euler-Maruyama"
+  - "Unbiased estimation"
+  - "Second-order-free"
 date: 2026-05-08
-content_hash: 247cdb876ac5293c
+content_hash: 91f4095a73e27da9
 ---
+
 # Unbiased and Second-Order-Free Training for High-Dimensional PDEs
 
 **Conference**: ICML 2026  
@@ -151,11 +155,11 @@ Training time multipliers (Table 1):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Supervised Evolution Operator Learning for High-Dimensional Dynamical Systems](../../ICLR2026/physics/self-supervised_evolution_operator_learning_for_high-dimensional_dynamical_syste.md)
+- [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](../../ICLR2026/physics/physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
 - [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/physics/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
-- [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](../../NeurIPS2025/physics/enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
 - [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](../../NeurIPS2025/physics/high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
-- [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[NeurIPS 2025\] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data](../../NeurIPS2025/physics/neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin.md)
+- [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](../../NeurIPS2025/physics/enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
 
 </div>
 

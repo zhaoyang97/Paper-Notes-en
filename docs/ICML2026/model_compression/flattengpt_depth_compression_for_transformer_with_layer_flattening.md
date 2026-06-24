@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlattenGPT: Depth Compression for Transformer with Layer Flattening
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper proposes FlattenGPT, which first "flattens" adjacent Transformer layers with high input similarity into a single layer of $2\times$ width (preserving all parameter knowledge) and then applies channel pruning to restore the width to its original scale. This approach achieves the inference speedup of depth com
+  [ICML 2026][Model Compression][LLM Pruning] This paper proposes FlattenGPT, which first "flattens" adjacent Transformer layers with high input similarity into a single layer of $2\times$ width (preserving all parameter knowledge) and then applies channel pruning to restore the width to its original scale. This approach achieves the inference speedup of depth compression while avoiding the performance collapse caused by knowledge loss in traditional layer pruning.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "LLM Pruning"
+  - "Depth Compression"
+  - "Layer Merging"
+  - "Channel Pruning"
+  - "Nyström Approximation"
 date: 2026-05-08
-content_hash: 065f999b0577b605
+content_hash: f02dcfbe6f40c601
 ---
+
 # FlattenGPT: Depth Compression for Transformer with Layer Flattening
 
 **Conference**: ICML 2026  
@@ -151,7 +157,7 @@ On LLaMA-2 70B, FlattenGPT at 20% sparsity achieves $1.27\times$ throughput and 
 - [\[NeurIPS 2025\] ReplaceMe: Network Simplification via Depth Pruning and Transformer Block Linearization](../../NeurIPS2025/model_compression/replaceme_network_simplification_via_depth_pruning_and_transformer_block_lineari.md)
 - [\[ACL 2026\] LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference](../../ACL2026/model_compression/leap_layer-wise_exit-aware_pretraining_for_efficient_transformer_inference.md)
 - [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
-- [\[ICML 2025\] Strategic Fusion Optimizes Transformer Compression](../../ICML2025/model_compression/strategic_fusion_optimizes_transformer_compression.md)
+- [\[ICML 2026\] QHyer: Q-conditioned Hybrid Attention-mamba Transformer for Offline Goal-conditioned RL](qhyer_q-conditioned_hybrid_attention-mamba_transformer_for_offline_goal-conditio.md)
 
 </div>
 

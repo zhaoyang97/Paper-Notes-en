@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning
 description: >-
-  [ACL 2026][Graph Learning][Multi-Agent] LegalGraphRAG constructs a hierarchical legal graph using fact, ontology, and rule graphs, and utilizes a Researcher-Auditor-Adjudicator multi-agent workflow for retrieval, verification, and adjudication, improving accuracy and evidence traceability in legal judgment generation.
+  [ACL2026][Graph Learning][Legal RAG] LegalGraphRAG constructs a hierarchical legal graph using fact, ontology, and rule graphs, and utilizes a Researcher-Auditor-Adjudicator multi-agent workflow for retrieval, verification, and adjudication, improving accuracy and evidence traceability in legal judgment generation.
 tags:
-  - ACL 2026
-  - Graph Learning
-  - Multi-Agent
+  - "ACL2026"
+  - "Graph Learning"
+  - "Legal RAG"
+  - "Hierarchical Knowledge Graph"
+  - "Multi-Agent"
+  - "Evidence Verification"
+  - "Traceable Reasoning"
 date: 2026-05-08
-content_hash: fdd0fe751b2c2d9a
+content_hash: 2b07126700f1d29a
 ---
+
 # LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning
 
 **Conference**: ACL2026  
@@ -148,10 +153,17 @@ In formal evaluations, LegalGraphRAG achieved gains of 6.3% to 19.1% over strong
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
+- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
+- [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
+- [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](../../CVPR2026/graph_learning/m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)

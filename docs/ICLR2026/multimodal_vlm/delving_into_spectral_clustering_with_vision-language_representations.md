@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Delving into Spectral Clustering with Vision-Language Representations
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] This paper advances spectral clustering from an image-only unimodal paradigm to a multimodal one: it utilizes "positive nouns" from the CLIP text end to anchor a Neural Tangent Kernel (NTK), making the affinity between two images a product of "visual proximity $\times$ semantic overlap." This naturally strengthens the
+  [ICLR2026][Multimodal VLM][Spectral Clustering] This paper advances spectral clustering from an image-only unimodal paradigm to a multimodal one: it utilizes "positive nouns" from the CLIP text end to anchor a Neural Tangent Kernel (NTK), making the affinity between two images a product of "visual proximity $\times$ semantic overlap." This naturally strengthens the block-diagonal structure. Furthermore, a regularized affinity diffusion mechanism is used to adaptively integrat…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - CLIP
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Spectral Clustering"
+  - "Neural Tangent Kernel"
+  - "Vision-Language Models"
+  - "Affinity Matrix"
+  - "CLIP"
 date: 2026-05-08
-content_hash: eaf7ed12e70eefea
+content_hash: 290f66528cc659f7
 ---
+
 # Delving into Spectral Clustering with Vision-Language Representations
 
 **Conference**: ICLR2026  

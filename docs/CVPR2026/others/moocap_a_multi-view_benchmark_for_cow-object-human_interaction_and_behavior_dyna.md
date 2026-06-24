@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics
 description: >-
-  [CVPR 2026][Others][Paper Note] MooCap integrates classic ethological "controlled stimulus experiments" into computer vision. Utilizing 43 cows, 7 standardized interaction scenarios, 42 hours of synchronized multi-view video, and dense annotations (23 fine-grained behaviors + 39 keypoints + 4 spatial zones + three longitudinal rearing labels), it est
+  [CVPR 2026][Animal behavior] MooCap integrates classic ethological "controlled stimulus experiments" into computer vision. Utilizing 43 cows, 7 standardized interaction scenarios, 42 hours of synchronized multi-view video, and dense annotations (23 fine-grained behaviors + 39 keypoints + 4 spatial zones + three longitudinal rearing labels), it establishes three benchmarks: temporal action segmentation, skeleton action recognition, and longitudinal phenotypic classification. S…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Animal behavior"
+  - "Multi-view benchmark"
+  - "Temporal action segmentation"
+  - "Skeleton action recognition"
+  - "Longitudinal phenotypic inference"
 date: 2026-05-08
-content_hash: 09b673e8f82cbb3f
+content_hash: 3c6111efd50395d5
 ---
+
 # MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics
 
 **Conference**: CVPR 2026  
@@ -141,15 +146,16 @@ MS-G3D leads with $0.39$ mean F1, excelling at "stereotypical repetitive movemen
 - Value: ⭐⭐⭐⭐ (Public data and evaluation tools fill a critical gap in precisely-monitored animal welfare).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] SyncDiff: Synchronized Motion Diffusion for Multi-Body Human-Object Interaction Synthesis](../../ICCV2025/others/syncdiff_synchronized_motion_diffusion_for_multi-body_human-object_interaction_s.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
-- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)
 - [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
+- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Protein Circuit Tracing via Cross-layer Transcoders
 description: >-
-  [ICML 2026][Computational Biology][pLM] The authors adapt cross-layer transcoders from NLP to the protein language model (pLM) ESM2, proposing the ProtoMech framework. This framework recovers 79% of downstream performance using sparse latent circuits composed of < 1% of total latents and enables designing high-fitness protein variants by steering along the d
+  [ICML 2026][Computational Biology][pLM] The authors adapt cross-layer transcoders from NLP to the protein language model (pLM) ESM2, proposing the ProtoMech framework. This framework recovers 79% of downstream performance using sparse latent circuits composed of < 1% of total latents and enables designing high-fitness protein variants by steering along the discovered circuits, outperforming baselines in over 70% of cases.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - pLM
-  - ESM2
-  - cross-layer transcoder
-  - steering
+  - "ICML 2026"
+  - "Computational Biology"
+  - "pLM"
+  - "ESM2"
+  - "cross-layer transcoder"
+  - "circuit tracing"
+  - "steering"
 date: 2026-05-08
-content_hash: 010312d0bd3495bf
+content_hash: 634e88fb392462b5
 ---
+
 # Protein Circuit Tracing via Cross-layer Transcoders
 
 **Conference**: ICML 2026  
@@ -127,8 +129,8 @@ Steering Mean scores across seven DMS assays (selected):
 
 - [\[ICML 2026\] Circuit Tracing in Autoregressive Protein Language Models](circuit_tracing_in_autoregressive_protein_language_models.md)
 - [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
-- [\[ICLR 2026\] Tracing Pharmacological Knowledge in Large Language Models](../../ICLR2026/computational_biology/tracing_pharmacological_knowledge_in_large_language_models.md)
 - [\[ICML 2026\] Learning the Interaction Prior for Protein-Protein Interaction Prediction: A Model-Agnostic Approach](learning_the_interaction_prior_for_protein-protein_interaction_prediction_a_mode.md)
+- [\[ICML 2026\] Flexible Kernels for Protein Property Prediction](flexible_kernels_for_protein_property_prediction.md)
 - [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
 
 </div>

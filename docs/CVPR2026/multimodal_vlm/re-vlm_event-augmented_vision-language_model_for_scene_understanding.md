@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] Addressing the limitations where conventional RGB degrades in low-light, high-dynamic, or fast-motion scenarios, and pure event streams lack color/texture, this paper proposes RE-VLM, the first dual-stream RGB-Event Vision-Language Model. It utilizes parallel RGB/event encoders and a three-stage progressive alignment t
+  [CVPR 2026][Multimodal VLM][Event camera] Addressing the limitations where conventional RGB degrades in low-light, high-dynamic, or fast-motion scenarios, and pure event streams lack color/texture, this paper proposes RE-VLM, the first dual-stream RGB-Event Vision-Language Model. It utilizes parallel RGB/event encoders and a three-stage progressive alignment to map heterogeneous visual features into language space. Furthermore, a graph-driven…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Event camera"
+  - "RGB-Event fusion"
+  - "Vision-Language Model"
+  - "Scene graph data generation"
+  - "Adverse lighting"
 date: 2026-05-08
-content_hash: cd3024ee8f4e7463
+content_hash: 11fb39f2af286188
 ---
+
 # RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -129,15 +134,16 @@ Ablation of modalities and STAM (PEOD-Chat):
 - **Value**: ⭐⭐⭐⭐⭐ Provides a robust baseline for event-augmented VLM and two valuable datasets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
 - [\[CVPR 2026\] µVLM: A Vision Language Model for µNPUs](mvlm_a_vision_language_model_for_mnpus.md)
+- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
 - [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
-- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
 - [\[CVPR 2026\] Learning to See through Illumination Extremes with Event Streaming in Multimodal Large Language Models](learning_to_see_through_illumination_extremes_with_event_streaming_in_multimodal.md)
+- [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
 
 </div>
 

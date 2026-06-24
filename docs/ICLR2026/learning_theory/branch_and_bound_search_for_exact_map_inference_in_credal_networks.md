@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Branch and Bound Search for Exact MAP Inference in Credal Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper designs the first depth-first branch-and-bound algorithm for exact MAP inference in credal networks. By formalizing the problem into maximax and maximin MAP tasks, it utilizes problem decomposition within an AND/OR search space and employs a mini-bucket heuristic with cost-shifting for pruning. The approach
+  [ICLR2026][Probabilistic Graphical Models][Credal networks] This paper designs the first depth-first branch-and-bound algorithm for exact MAP inference in credal networks. By formalizing the problem into maximax and maximin MAP tasks, it utilizes problem decomposition within an AND/OR search space and employs a mini-bucket heuristic with cost-shifting for pruning. The approach solves large-scale instances with over 3,000 variables while guaranteeing optimality…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Probabilistic Graphical Models"
+  - "Exact Inference"
+  - "Heuristic Search"
+  - "Credal networks"
+  - "MAP inference"
+  - "Branch and Bound"
+  - "AND/OR search"
+  - "mini-bucket heuristic"
 date: 2026-05-08
-content_hash: 960fd6c3ad23a3fd
+content_hash: 98f173552c9674df
 ---
+
 # Branch and Bound Search for Exact MAP Inference in Credal Networks
 
 **Conference**: ICLR2026  
@@ -128,10 +136,20 @@ Table 1 compares heuristics on random 100-variable networks.
 - Value: ⭐⭐⭐⭐ Fills a gap in exact credal MAP algorithms with practical significance for uncertain inference and causal modeling.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Efficient Credal Prediction through Decalibration](efficient_credal_prediction_through_decalibration.md)
+- [\[ICLR 2026\] Achieving Approximate Symmetry Is Exponentially Easier than Exact Symmetry](achieving_approximate_symmetry_is_exponentially_easier_than_exact_symmetry.md)
+- [\[ICLR 2026\] Bound by Semanticity: Universal Laws Governing the Generalization-Identification Tradeoff](bound_by_semanticity_universal_laws_governing_the_generalization-identification_.md)
+- [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
+- [\[ICLR 2026\] Multiple-Prediction-Powered Inference](multiple-prediction-powered_inference.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Credal Prediction through Decalibration](efficient_credal_prediction_through_decalibration.md)

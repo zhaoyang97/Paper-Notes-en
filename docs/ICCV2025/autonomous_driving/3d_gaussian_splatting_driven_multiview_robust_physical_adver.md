@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes PGA, the first physical adversarial attack framework based on 3D Gaussian Splatting (3DGS). By addressing mutual occlusion and self-occlusion amo…
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes PGA, the first physical adversarial attack framework based on 3D Gaussian Splatting (3DGS). By addressing mutual occlusion and self-occlusion among Gaussians to ensure cross-viewpoint consistency, and by designing a min-max optimization strategy to filter non-robust adversarial features, PGA substantially outperforms state-of-the-art methods in both the digital and physical domains.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Multi-View Robustness"
   - "Autonomous Driving Security"
 date: 2026-05-08
-content_hash: 8fbe7ff4743df0b3
+content_hash: 2bd6cd3562e97be7
 ---
 
 # 3D Gaussian Splatting Driven Multi-View Robust Physical Adversarial Camouflage Generation
@@ -185,11 +185,11 @@ Compared with NeRF-based attack methods (Adv3D, Huang et al.), PGA inherits the 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Generative Gaussian Splatting for Unbounded 3D City Generation](../../CVPR2025/autonomous_driving/generative_gaussian_splatting_for_unbounded_3d_city_generation.md)
 - [\[ICCV 2025\] CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting](ccl-lgs_contrastive_codebook_learning_for_3d_language_gaussian_splatting.md)
 - [\[ICCV 2025\] EMD: Explicit Motion Modeling for High-Quality Street Gaussian Splatting](emd_explicit_motion_modeling_for_high-quality_street_gaussian_splatting.md)
-- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
-- [\[CVPR 2026\] F3DGS: Federated 3D Gaussian Splatting for Decentralized Multi-Agent World Modeling](../../CVPR2026/autonomous_driving/f3dgs_federated_3d_gaussian_splatting_for_decentralized_multi-agent_world_modeli.md)
+- [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](../../CVPR2026/autonomous_driving/parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
 
 </div>
 

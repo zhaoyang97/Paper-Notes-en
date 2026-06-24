@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] S2C2Seg is a training-free, plug-and-play framework compatible with any CLIP-based segmentation method. It first prunes ultra-large vocabularies into a compact Candidate Subset (CSS) through a three-way scoring mechanism involving "global semantics + local spatial + cross-view consistency." Then, it adaptively fuses CL
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] S2C2Seg is a training-free, plug-and-play framework compatible with any CLIP-based segmentation method. It first prunes ultra-large vocabularies into a compact Candidate Subset (CSS) through a three-way scoring mechanism involving "global semantics + local spatial + cross-view consistency." Then, it adaptively fuses CLIP's global features with CLIPSeg's local predictions using category confidence weighting (CSG). Across…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "training-free"
+  - "category subset selection"
+  - "global-local fusion"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 34a7ccb0fa1d816a
+content_hash: 3708d1b3f2e09d01
 ---
+
 # S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation
 
 **Conference**: CVPR 2026  
@@ -156,10 +161,10 @@ For the CSG fusion strategy comparison, category-aware fusion achieved 49.1% ave
 ## Related Papers
 
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
-- [\[CVPR 2026\] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation](seeing_both_sides_towards_bidirectional_semantic_alignment_for_open-vocabulary_c.md)
+- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
+- [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 
 </div>
 

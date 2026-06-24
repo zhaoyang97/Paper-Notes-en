@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory
 description: >-
-  [ICML 2026][Reinforcement Learning][agent memory] BudgetMem reorganizes "runtime agent memory extraction" into a modular pipeline consisting of "filtering → parallel entity/temporal/topic extraction → summarization." Each module is equipped with LOW/MID/HIGH budget tier interfaces. A shared lightweight router is trained via PPO to select tiers for each module upon the
+  [ICML 2026][Reinforcement Learning][agent memory] BudgetMem reorganizes "runtime agent memory extraction" into a modular pipeline consisting of "filtering → parallel entity/temporal/topic extraction → summarization." Each module is equipped with LOW/MID/HIGH budget tier interfaces. A shared lightweight router is trained via PPO to select tiers for each module upon the arrival of a query, simultaneously improving F1/Judge scores and reducing the average cost per query on LoCoM…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - agent memory
-  - runtime extraction
-  - budget-tier routing
-  - RL router
-  - performance-cost trade-off
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "agent memory"
+  - "runtime extraction"
+  - "budget-tier routing"
+  - "RL router"
+  - "performance-cost trade-off"
 date: 2026-05-08
-content_hash: 21c65fad607c4b9c
+content_hash: 67b5439ea8a1bac0
 ---
+
 # Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory
 
 **Conference**: ICML 2026  
@@ -137,10 +138,10 @@ All three tiering strategies outperform strong runtime baselines like LightMem b
 ## Related Papers
 
 - [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
-- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
-- [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
+- [\[ICLR 2026\] MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance](../../ICLR2026/reinforcement_learning/mira_memory-integrated_reinforcement_learning_agent_with_limited_llm_guidance.md)
 - [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](../../ICLR2026/reinforcement_learning/routing_cascades_and_user_choice_for_llms.md)
-- [\[ICLR 2026\] Recurrent Action Transformer with Memory](../../ICLR2026/reinforcement_learning/recurrent_action_transformer_with_memory.md)
+- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
+- [\[ICLR 2026\] Instance-Dependent Fixed-Budget Pure Exploration in Reinforcement Learning](../../ICLR2026/reinforcement_learning/instance-dependent_fixed-budget_pure_exploration_in_reinforcement_learning.md)
 
 </div>
 

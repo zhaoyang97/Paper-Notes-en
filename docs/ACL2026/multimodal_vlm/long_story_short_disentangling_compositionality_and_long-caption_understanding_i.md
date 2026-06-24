@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs
 description: >-
-  [ACL 2026][Multimodal VLM][CLIP] This work systematically disentangles the relationship between "compositionality" and "long-caption understanding" in contrastive VLMs. It finds that these capabilities mutually promote each other in a bidirectional manner, yet this transfer is **highly sensitive to training data quality and optimization strategies**.
+  [ACL 2026 Findings][Multimodal VLM][CLIP] This work systematically disentangles the relationship between "compositionality" and "long-caption understanding" in contrastive VLMs. It finds that these capabilities mutually promote each other in a bidirectional manner, yet this transfer is **highly sensitive to training data quality and optimization strategies**. Specifically, grounded long-caption data with high vocabulary coverage combined with full-parameter fine-tuning allows…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - CLIP
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Compositional Reasoning"
+  - "Long-Caption Understanding"
+  - "Data Quality"
+  - "Positional Encoding Freezing"
+  - "Bidirectional Transfer"
 date: 2026-05-08
-content_hash: 3977cbeff96c9dd2
+content_hash: bb879ae6337289e3
 ---
+
 # Long Story Short: Disentangling Compositionality and Long-Caption Understanding in Contrastive VLMs
 
 **Conference**: ACL 2026 Findings  
@@ -137,9 +143,9 @@ No new loss is proposed; LSS utilizes the original CLIP InfoNCE contrastive loss
 
 - [\[AAAI 2026\] URaG: Unified Retrieval and Generation in Multimodal LLMs for Efficient Long Document Understanding](../../AAAI2026/multimodal_vlm/urag_unified_retrieval_and_generation_in_multimodal_llms_for.md)
 - [\[CVPR 2026\] MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding](../../CVPR2026/multimodal_vlm/msjoe_jointly_evolving_mllm_and_sampler_for_efficient_long-form_video_understand.md)
+- [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](../../CVPR2026/multimodal_vlm/personavlm_long_term_personalized_multimodal_llms.md)
 - [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](../../CVPR2026/multimodal_vlm/remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
 - [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](../../CVPR2026/multimodal_vlm/scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
-- [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](../../CVPR2026/multimodal_vlm/personavlm_long_term_personalized_multimodal_llms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Better Literary Translation: A Multi-Aspect Data Generation and LLM Training Approach
 description: >-
-  [ACL 2026][Alignment & RLHF][GRPO] This paper decomposes literary translation quality into two dimensions: "expression fluency" and "literary effect." By using specialized LLMs to iteratively generate high-quality reference translations and preference pairs, the authors employ SFT + explicit Reward Model + GRPO to train LitMT. This allows 8B/14B small m
+  [ACL2026][LLM Alignment][Literary Translation] This paper decomposes literary translation quality into two dimensions: "expression fluency" and "literary effect." By using specialized LLMs to iteratively generate high-quality reference translations and preference pairs, the authors employ SFT + explicit Reward Model + GRPO to train LitMT. This allows 8B/14B small models to approach or even surpass some large models in English-to-Chinese literary translation.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - GRPO
+  - "ACL2026"
+  - "LLM Alignment"
+  - "Literary Translation"
+  - "Multi-dimensional Data Generation"
+  - "Preference Optimization"
+  - "Reward Model"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a981831c8e02a073
+content_hash: 6aac1bb3c34ac331
 ---
+
 # Better Literary Translation: A Multi-Aspect Data Generation and LLM Training Approach
 
 **Conference**: ACL2026  
@@ -158,11 +163,11 @@ The multi-aspect data generation also makes a clear contribution.
 
 ## Related Papers
 
+- [\[ICLR 2026\] StoryAlign: Evaluating and Training Reward Models for Story Generation](../../ICLR2026/llm_alignment/storyalign_evaluating_and_training_reward_models_for_story_generation.md)
 - [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](../../NeurIPS2025/llm_alignment/limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
 - [\[ACL 2026\] Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data](too_correct_to_learn_reinforcement_learning_on_saturated_reasoning_data.md)
-- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 - [\[AAAI 2026\] LaF-GRPO: In-Situ Navigation Instruction Generation for the Visually Impaired via GRPO with LLM-as-Follower Reward](../../AAAI2026/llm_alignment/laf-grpo_in-situ_navigation_instruction_generation_for_the_visually_impaired_via.md)
-- [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](../../ICLR2026/llm_alignment/safedpo_preference_optimization_safety.md)
+- [\[ACL 2026\] MDP-GRPO: Stabilized Group Relative Policy Optimization for Multi-Constraint Instruction Following](mdp-grpo_stabilized_group_relative_policy_optimization_for_multi-constraint_inst.md)
 
 </div>
 

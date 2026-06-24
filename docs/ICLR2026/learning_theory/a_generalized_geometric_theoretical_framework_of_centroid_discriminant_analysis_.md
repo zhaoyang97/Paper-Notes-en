@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes a unified theoretical framework called Geometric Discriminant Analysis (GDA), which views a class of linear classifiers as a "connection between two class centroids (CDB0) + geometric corrections under different constraints." It proves that MDC and LDA are special cases of this framework. Based on t
+  [ICLR 2026][Learning Theory][Geometric Discriminant Analysis] This paper proposes a unified theoretical framework called Geometric Discriminant Analysis (GDA), which views a class of linear classifiers as a "connection between two class centroids (CDB0) + geometric corrections under different constraints." It proves that MDC and LDA are special cases of this framework. Based on this, a new classifier, CDA, is designed. Starting from CDB0, CDA performs "performance-driven rota…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Linear Classifiers"
+  - "Discriminant Analysis"
+  - "Geometric Discriminant Analysis"
+  - "Centroid Discriminant Basis"
+  - "Linear Classification"
+  - "Bayesian Optimization"
+  - "Scalability"
 date: 2026-05-08
-content_hash: c6dcd43c37fe17d6
+content_hash: 7b4a19ef6952ce79
 ---
+
 # A Generalized Geometric Theoretical Framework of Centroid Discriminant Analysis for Linear Classification of Multi-dimensional Data
 
 **Conference**: ICLR 2026  
@@ -148,8 +156,8 @@ Kernel CDA achieved the best results in 2 out of 3 datasets (with a small gap to
 
 ## Related Papers
 
-- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
 - [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
 - [\[ICLR 2026\] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification](high-dimensional_analysis_of_single-layer_attention_for_sparse-token_classificat.md)
 - [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
 - [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)

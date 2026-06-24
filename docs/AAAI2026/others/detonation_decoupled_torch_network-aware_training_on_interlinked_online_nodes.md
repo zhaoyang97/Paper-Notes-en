@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes
 description: >-
-  [AAAI 2026][distributed training] This paper proposes FlexDeMo — a hybrid sharding training strategy that integrates Fully Sharded Data Parallelism (FSDP) with decoupled momentum optimization. It applies FSDP sharding wi…
+  [AAAI 2026][distributed training] This paper proposes FlexDeMo — a hybrid sharding training strategy that integrates Fully Sharded Data Parallelism (FSDP) with decoupled momentum optimization. It applies FSDP sharding within nodes and synchronizes only the fast-moving momentum components across nodes, achieving loss convergence comparable to full-synchronization AdamW while substantially accelerating training.
 tags:
   - "AAAI 2026"
   - "distributed training"
@@ -11,7 +11,7 @@ tags:
   - "gradient compression"
   - "large language models"
 date: 2026-05-08
-content_hash: 46307d67da360615
+content_hash: 9a2cecd8a1d9f538
 ---
 
 # DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes
@@ -191,10 +191,10 @@ A variant of AdamW is implemented in which the first- and second-order moments (
 ## Related Papers
 
 - [\[AAAI 2026\] ParaRevSNN: A Parallel Reversible Spiking Neural Network for Efficient Training and Inference](pararevsnn_a_parallel_reversible_spiking_neural_network_for_efficient_training_a.md)
+- [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](../../ICLR2026/others/online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
 - [\[AAAI 2026\] Learning Network Dismantling Without Handcrafted Inputs](learning_network_dismantling_without_handcrafted_inputs.md)
-- [\[CVPR 2026\] Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](../../CVPR2026/others/rethinking_snn_online_training_and_deployment_grad.md)
-- [\[ICML 2026\] HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces](../../ICML2026/others/haste_hardware-aware_dynamic_sparse_training_for_large_output_spaces.md)
 - [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](online_linear_regression_with_paid_stochastic_features.md)
+- [\[ICML 2026\] HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces](../../ICML2026/others/haste_hardware-aware_dynamic_sparse_training_for_large_output_spaces.md)
 
 </div>
 

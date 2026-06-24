@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Best-of-N] By distilling confidence derived from self-consistency back into the model itself (Self-Calibration), LLMs can provide reliable confidence in a single forward pass. This enables calibrated test-time scaling (CaTS) for repeated sampling methods like Best-of-N and Self-consistency, dynamically allocating compute based on
+  [ICLR 2026][Reasoning][Test-time Scaling] By distilling confidence derived from self-consistency back into the model itself (Self-Calibration), LLMs can provide reliable confidence in a single forward pass. This enables calibrated test-time scaling (CaTS) for repeated sampling methods like Best-of-N and Self-consistency, dynamically allocating compute based on task difficulty. This approach significantly improves accuracy under the same sampling budget and saves substantial c…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Best-of-N
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Test-time Scaling"
+  - "Confidence Calibration"
+  - "Self-consistency"
+  - "Best-of-N"
+  - "Adaptive Sampling"
+  - "Early Stopping"
 date: 2026-05-08
-content_hash: 8cc52d95e56cb29f
+content_hash: 044ef602e8cccd36
 ---
+
 # CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -125,10 +131,10 @@ Self-calibrated confidence achieves comparable or higher accuracy than external 
 ## Related Papers
 
 - [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
-- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
-- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
+- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Scaling with Reflective Generative Model](test-time_scaling_with_reflective_generative_model.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nonparametric LLM Evaluation from Preference Data
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] Addressing the issues where current LLM leaderboards rely on parametric Bradley–Terry models and fail to provide valid confidence intervals under model misspecification or when using black-box ML/LLM-as-a-judge, this paper proposes a nonparametric framework **DMLRank**: it abstracts ranking scores as functionals of con
+  [ICML 2026][LLM Evaluation][Preference Data Ranking] Addressing the issues where current LLM leaderboards rely on parametric Bradley–Terry models and fail to provide valid confidence intervals under model misspecification or when using black-box ML/LLM-as-a-judge, this paper proposes a nonparametric framework **DMLRank**: it abstracts ranking scores as functionals of context-dependent preference probabilities (GARS), applies Debiased Machine Learning to derive asymptotically…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Preference Data Ranking"
+  - "Debiased Machine Learning"
+  - "Semiparametric Efficiency"
+  - "Confidence Intervals"
+  - "Experimental Design"
 date: 2026-05-08
-content_hash: 3c10fd52f09f2b35
+content_hash: 996efadc5d059198
 ---
+
 # Nonparametric LLM Evaluation from Preference Data
 
 **Conference**: ICML 2026  
@@ -143,9 +149,9 @@ A-optimal sampling vs. uniform random sampling (budget $\beta=2000$, ranking MSE
 
 - [\[ICML 2026\] RouteJudge: An Open Platform for Reproducible and Preference-Aware LLM Routing](routejudge_an_open_platform_for_reproducible_and_preference-aware_llm_routing.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ICLR 2026\] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework](../../ICLR2026/llm_evaluation/unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo.md)
+- [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](../../ICLR2026/llm_evaluation/rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
 - [\[ICML 2026\] Resolution Diagnostics for Paired LLM Evaluation](resolution_diagnostics_for_paired_llm_evaluation.md)
-- [\[ICLR 2026\] Subliminal Signals in Preference Labels](../../ICLR2026/llm_evaluation/subliminal_signals_in_preference_labels.md)
+- [\[ICLR 2026\] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework](../../ICLR2026/llm_evaluation/unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo.md)
 
 </div>
 

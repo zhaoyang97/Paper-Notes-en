@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] This paper presents the first systematic study of scaling behaviors in LLM reinforcement learning (RL) post-training. Conducted on the Qwen2.5 series (0.5B-72B), the study reveals that performance follows a power-law relationship with training resources, and learning efficiency tends toward saturation as model scale in
+  [ACL 2026][Reinforcement Learning][Reinforcement Learning Post-Training] This paper presents the first systematic study of scaling behaviors in LLM reinforcement learning (RL) post-training. Conducted on the Qwen2.5 series (0.5B-72B), the study reveals that performance follows a power-law relationship with training resources, and learning efficiency tends toward saturation as model scale increases.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Reinforcement Learning Post-Training"
+  - "Scaling Laws"
+  - "Mathematical Reasoning"
+  - "Learning Efficiency"
+  - "Data Reuse"
 date: 2026-05-08
-content_hash: 58e3913d0b2877c6
+content_hash: 45ec3498bcf4dfd0
 ---
+
 # Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study
 
 **Conference**: ACL 2026  
@@ -114,9 +120,9 @@ The standard GRPO algorithm is used with a binary reward signal (Correct=1, Inco
 
 - [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](../../ICML2026/reinforcement_learning/how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
 - [\[ACL 2026\] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models](why_does_reinforcement_learning_generalize_a_feature-level_mechanistic_study_of_.md)
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](../../ICLR2026/reinforcement_learning/prompt_curriculum_learning_for_efficient_llm_post-training.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](../../ICLR2026/reinforcement_learning/riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
-- [\[ACL 2026\] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning](ce-gppo_coordinating_entropy_via_gradient-preserving_clipping_policy_optimizatio.md)
-- [\[NeurIPS 2025\] Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/empirical_study_on_robustness_and_resilience_in_cooperative_multi-agent_reinforc.md)
 
 </div>
 

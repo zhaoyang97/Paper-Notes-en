@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images
 description: >-
-  [ICCV 2025][3D Vision][Semantic 3DGS] SpatialSplat is proposed to generate compact semantic 3D Gaussians from sparse unposed images via feed-forward inference…
+  [ICCV 2025][3D Vision][Semantic 3DGS] SpatialSplat is proposed to generate compact semantic 3D Gaussians from sparse unposed images via feed-forward inference, leveraging a dual-field semantic representation and a selective Gaussian mechanism that reduces representation parameters by 60% while surpassing state-of-the-art methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Dual-field Architecture"
   - "Gaussian Selection"
 date: 2026-05-08
-content_hash: 020d5dd08c763ebb
+content_hash: badf1cfeb58e286d
 ---
 
 # SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images
@@ -133,9 +133,9 @@ SpatialSplat uses only 40% of the representation parameters of the baseline whil
 
 - [\[ICCV 2025\] Sparfels: Fast Reconstruction from Sparse Unposed Imagery](sparfels_fast_reconstruction_from_sparse_unposed_imagery.md)
 - [\[ICCV 2025\] RegGS: Unposed Sparse Views Gaussian Splatting with 3DGS Registration](reggs_unposed_sparse_views_gaussian_splatting_with_3dgs_registration.md)
+- [\[ECCV 2024\] MVSplat: Efficient 3D Gaussian Splatting from Sparse Multi-View Images](../../ECCV2024/3d_vision/mvsplat_efficient_3d_gaussian_splatting_from_sparse_multi-view_images.md)
+- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](../../CVPR2026/3d_vision/uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
 - [\[ICCV 2025\] FROSS: Faster-than-Real-Time Online 3D Semantic Scene Graph Generation from RGB-D Images](fross_faster-than-real-time_online_3d_semantic_scene_graph_generation_from_rgb-d.md)
-- [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](../../ICLR2026/3d_vision/ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
-- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
 
 </div>
 

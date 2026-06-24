@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Semantic-constrained Adversarial Example with Instruction Uncertainty Reduction
 description: >-
-  [NeurIPS 2025][Image Generation][adversarial examples] This paper proposes InSUR, a multi-dimensional instruction uncertainty reduction framework that stabilizes adversarial optimization via a ResAdv-DDIM sampler…
+  [NeurIPS 2025][Image Generation][adversarial examples] This paper proposes InSUR, a multi-dimensional instruction uncertainty reduction framework that stabilizes adversarial optimization via a ResAdv-DDIM sampler, constrains attack scenarios through context-aware encoding, and evaluates semantic fidelity using WordNet-based semantic abstraction. InSUR is the first method to generate 2D/3D semantic-constrained adversarial examples (SemanticAE) from natural language instruction…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "3D adversarial"
   - "transfer attack"
 date: 2026-05-08
-content_hash: c95b4869af5d228b
+content_hash: 444493e2227643f3
 ---
 
 # Exploring Semantic-constrained Adversarial Example with Instruction Uncertainty Reduction
@@ -148,10 +148,10 @@ The residual prediction concept in ResAdv-DDIM can be adapted to other diffusion
 ## Related Papers
 
 - [\[NeurIPS 2025\] Epistemic Uncertainty for Generated Image Detection](epistemic_uncertainty_for_generated_image_detection.md)
-- [\[NeurIPS 2025\] Training-Free Constrained Generation with Stable Diffusion Models](training-free_constrained_generation_with_stable_diffusion_models.md)
+- [\[CVPR 2025\] CustAny: Customizing Anything from A Single Example](../../CVPR2025/image_generation/custany_customizing_anything_from_a_single_example.md)
+- [\[CVPR 2025\] Instant Adversarial Purification with Adversarial Consistency Distillation](../../CVPR2025/image_generation/instant_adversarial_purification_with_adversarial_consistency_distillation.md)
 - [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
 - [\[NeurIPS 2025\] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](semantic_surgery_zero-shot_concept_erasure_in_diffusion_models.md)
-- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](../../CVPR2026/image_generation/language-free_generative_editing_from_one_visual_example.md)
 
 </div>
 

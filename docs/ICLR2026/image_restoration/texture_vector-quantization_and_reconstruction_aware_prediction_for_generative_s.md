@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] Addressing two major issues in VQ-based generative SR—high quantization error in codebooks and "code-level" supervision for predictors—this paper proposes **Texture Vector Quantization (TVQ)**, which assigns only missing textures to the codebook while stripping away structures, and **Reconstruction-Aware Prediction (RA
+  [ICLR 2026][Image Restoration][Super-Resolution] Addressing two major issues in VQ-based generative SR—high quantization error in codebooks and "code-level" supervision for predictors—this paper proposes **Texture Vector Quantization (TVQ)**, which assigns only missing textures to the codebook while stripping away structures, and **Reconstruction-Aware Prediction (RAP)**, which leverages a Straight-Through Estimator to feed image-level reconstruction losses directly back to t…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Super-Resolution"
+  - "Vector Quantization"
+  - "Texture Codebook"
+  - "Straight-Through Estimator"
+  - "Reconstruction-Aware"
 date: 2026-05-08
-content_hash: 67695afd8069bcb3
+content_hash: 37f070d2075aee25
 ---
+
 # Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -158,8 +164,8 @@ The runtime is only ~5.5% of ResShift-15 and ~16.5% of UPSR-5, with parameters r
 - [\[ICCV 2025\] Outlier-Aware Post-Training Quantization for Image Super-Resolution](../../ICCV2025/image_restoration/outlier-aware_post-training_quantization_for_image_super-resolution.md)
 - [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](../../CVPR2026/image_restoration/expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
 - [\[ICLR 2026\] Trajectory-aware Shifted State Space Models for Online Video Super-Resolution](trajectory-aware_shifted_state_space_models_for_online_video_super-resolution.md)
-- [\[ICLR 2026\] Trust but Verify: Adaptive Conditioning for Reference-Based Diffusion Super-Resolution](trust_but_verify_adaptive_conditioning_for_reference-based_diffusion_super-resol.md)
 - [\[CVPR 2026\] Edit-aware RAW Reconstruction](../../CVPR2026/image_restoration/edit-aware_raw_reconstruction.md)
+- [\[ICLR 2026\] SoFlow: Solution Flow Models for One-Step Generative Modeling](soflow_solution_flow_models_for_one-step_generative_modeling.md)
 
 </div>
 

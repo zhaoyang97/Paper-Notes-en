@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training
 description: >-
-  [CVPR 2026][3D Vision][Test-Time Training] ZipMap "compresses" an entire image collection into a fixed-size fast-weight MLP using Test-Time Training (TTT) layers, enabling bidirectional feed-forward 3D reconstruction (camera pose + depth + point cloud) in **linear time**. It achieves or exceeds the accuracy of quadratic-complexity methods like VGGT/π³, reconstr
+  [CVPR 2026][3D Vision][Feed-forward 3D Reconstruction] ZipMap "compresses" an entire image collection into a fixed-size fast-weight MLP using Test-Time Training (TTT) layers, enabling bidirectional feed-forward 3D reconstruction (camera pose + depth + point cloud) in **linear time**. It achieves or exceeds the accuracy of quadratic-complexity methods like VGGT/π³, reconstructing over 700 frames in under 10 seconds (20× faster than VGGT), while the resulting implicit scene sta…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Test-Time Training
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D Reconstruction"
+  - "Test-Time Training"
+  - "Linear Complexity"
+  - "Stateful Representation"
+  - "Implicit Scenes"
 date: 2026-05-08
-content_hash: 9643ebc871cb3685
+content_hash: 68e45b844f198243
 ---
+
 # ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Ablation of TTT Key Components (Tab.6, ETH3D Point Map, lower is better):
 ## Related Papers
 
 - [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
-- [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
+- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](../../ICLR2026/3d_vision/ttt3r_3d_reconstruction_as_test-time_training.md)
 - [\[CVPR 2026\] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models](low-rank_test-time_training_for_pre-trained_point_cloud_models.md)
-- [\[CVPR 2026\] Rethinking Dense Optical Flow without Test-Time Scaling](rethinking_dense_optical_flow_without_test-time_scaling.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
+- [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
 
 </div>
 

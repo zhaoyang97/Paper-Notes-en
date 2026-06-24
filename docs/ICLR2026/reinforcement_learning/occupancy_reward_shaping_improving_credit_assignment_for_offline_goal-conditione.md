@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Flow Matching] This paper proposes Occupancy Reward Shaping (ORS), which first learns a generative model of "occupancy measures" (future state distributions) using flow matching, and then extracts the world geometry implicit in this model (shortest-path distances from states to goals) via optimal transport into a dense reward. This s
+  [ICLR 2026][Reinforcement Learning][Offline GCRL] This paper proposes Occupancy Reward Shaping (ORS), which first learns a generative model of "occupancy measures" (future state distributions) using flow matching, and then extracts the world geometry implicit in this model (shortest-path distances from states to goals) via optimal transport into a dense reward. This significantly alleviates the credit assignment challenge in sparse-reward offline GCRL—achieving an average 2.2…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Flow Matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline GCRL"
+  - "Credit Assignment"
+  - "Reward Shaping"
+  - "Occupancy Measure"
+  - "Flow Matching"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: b405d93202a79b5e
+content_hash: e5292397c81d8604
 ---
+
 # Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -139,15 +145,15 @@ In 3 real nuclear fusion Tokamak control tasks (DIII-D sensor/actuator data, con
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
 - [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
 - [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
+- [\[ICLR 2026\] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training](ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
 - [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
-- [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
 
 </div>
 

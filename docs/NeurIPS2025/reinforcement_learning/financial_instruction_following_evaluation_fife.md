@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Financial Instruction Following Evaluation (FIFE)
 description: >-
-  [NeurIPS 2025 (GenAI Finance Workshop)][Reinforcement Learning][Instruction Following] FIFE is a challenging instruction-following benchmark for financial analysis tasks…
+  [NeurIPS 2025 (GenAI Finance Workshop)][Reinforcement Learning][Instruction Following] FIFE is a challenging instruction-following benchmark for financial analysis tasks, comprising 88 manually authored complex prompts and 40+ chainable, domain-specific verifiable constraints. It evaluates 53 models under both strict and loose modes, revealing that even the strongest open-weight model (76.1% strict) fails to perfectly follow complex financial instruction requirements.
 tags:
   - "NeurIPS 2025 (GenAI Finance Workshop)"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Chainable Constraints"
   - "LLM Evaluation"
 date: 2026-05-08
-content_hash: 139e48b19f7820cb
+content_hash: 8d0924f27b7063fb
 ---
 
 # Financial Instruction Following Evaluation (FIFE)
@@ -134,7 +134,7 @@ FIFE is an evaluation benchmark rather than a training methodology. All models a
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
 - [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](../../ACL2026/reinforcement_learning/imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
 - [\[NeurIPS 2025\] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning](finite-sample_analysis_of_policy_evaluation_for_robust_average_reward_reinforcem.md)
-- [\[NeurIPS 2025\] Quantifying Generalisation in Imitation Learning](quantifying_generalisation_in_imitation_learning.md)
+- [\[ICML 2025\] On the Dynamic Regret of Following the Regularized Leader: Optimism with History Pruning](../../ICML2025/reinforcement_learning/on_the_dynamic_regret_of_following_the_regularized_leader_optimism_with_history_.md)
 
 </div>
 

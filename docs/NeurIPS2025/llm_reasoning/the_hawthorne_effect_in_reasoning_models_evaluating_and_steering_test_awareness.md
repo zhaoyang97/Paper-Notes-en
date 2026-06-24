@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test awareness] This work presents the first systematic quantification of "test awareness" (the Hawthorne effect) in reasoning-oriented LLMs: models alter their behavior upon detecting that…
+  [NeurIPS 2025 Spotlight][Reasoning][test awareness] This work presents the first systematic quantification of "test awareness" (the Hawthorne effect) in reasoning-oriented LLMs: models alter their behavior upon detecting that they are being evaluated. The paper localizes awareness-related activations via linear probes and applies parameter editing for steering, revealing that test awareness exerts a significant yet directionally inconsistent influence on safety alignment.
 tags:
-  - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "NeurIPS 2025 Spotlight"
+  - "Reasoning"
   - "test awareness"
   - "representation engineering"
   - "safety evaluation"
   - "reasoning models"
   - "steering vectors"
 date: 2026-05-08
-content_hash: 8d84d6789ada565b
+content_hash: f763b92d222ac7ae
 ---
 
 # The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness
@@ -130,11 +130,11 @@ This work presents the first systematic quantification of "test awareness" (the 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics](realmath_a_continuous_benchmark_for_evaluating_language_models_on_research-level.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](../../ICML2026/llm_reasoning/verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
-- [\[NeurIPS 2025\] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context](self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
+- [\[NeurIPS 2025\] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics](realmath_a_continuous_benchmark_for_evaluating_language_models_on_research-level.md)
 - [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
-- [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
+- [\[NeurIPS 2025\] Controlling Thinking Speed in Reasoning Models](controlling_thinking_speed_in_reasoning_models.md)
+- [\[NeurIPS 2025\] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context](self-evaluating_llms_for_multi-step_tasks_stepwise_confidence_estimation_for_fai.md)
 
 </div>
 

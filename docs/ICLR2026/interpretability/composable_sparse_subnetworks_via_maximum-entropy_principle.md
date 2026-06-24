@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Composable Sparse Subnetworks via Maximum-Entropy Principle
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors utilize a "Maximum-Entropy Loss" based on KL divergence to train neural networks into sparse subnetworks (functional modules) that recognize only specified classes while remaining deliberately uncertain about others via uniform distributions. These expert modules are then combined into a generalist model th
+  [ICLR2026][Interpretability][Maximum Entropy Principle] The authors utilize a "Maximum-Entropy Loss" based on KL divergence to train neural networks into sparse subnetworks (functional modules) that recognize only specified classes while remaining deliberately uncertain about others via uniform distributions. These expert modules are then combined into a generalist model through weight summation or logit averaging, reversing the paradigm from "post-hoc probing of entangled re…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Maximum Entropy Principle"
+  - "Functional Modules"
+  - "Sparse Subnetworks"
+  - "Iterative Magnitude Pruning"
+  - "Model Merging"
 date: 2026-05-08
-content_hash: 4b28de09841daf2d
+content_hash: 3a46f93d971445f5
 ---
+
 # Composable Sparse Subnetworks via Maximum-Entropy Principle
 
 **Conference**: ICLR2026  
@@ -139,15 +145,16 @@ Pairwise merging accuracy (with IMP):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](probing_rotary_position_embeddings_through_frequency_entropy.md)
 - [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](../../ICML2026/interpretability/gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](the_price_of_amortized_inference_in_sparse_autoencoders.md)
 - [\[NeurIPS 2025\] Latent Principle Discovery for Language Model Self-Improvement](../../NeurIPS2025/interpretability/latent_principle_discovery_for_language_model_self-improvement.md)
 - [\[NeurIPS 2025\] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](../../NeurIPS2025/interpretability/bigram_subnetworks_mapping_to_next_tokens_in_transformer_language_models.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 
 </div>
 

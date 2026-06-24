@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] PCR-GS is proposed to achieve high-quality 3D-GS reconstruction and pose estimation under complex camera trajectories without COLMAP priors…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] PCR-GS is proposed to achieve high-quality 3D-GS reconstruction and pose estimation under complex camera trajectories without COLMAP priors, via co-regularizing camera poses through DINO feature reprojection regularization and wavelet-based frequency regularization.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "Wavelet Transform"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: b13e3465d70aad1c
+content_hash: 3c421e447638a086
 ---
 
 # PCR-GS: COLMAP-Free 3D Gaussian Splatting via Pose Co-Regularizations
@@ -192,10 +192,10 @@ PCR-GS outperforms all baselines in pose accuracy, reducing RPE_t by 48% and ATE
 ## Related Papers
 
 - [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
-- [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
+- [\[CVPR 2025\] SelfSplat: Pose-Free and 3D Prior-Free Generalizable 3D Gaussian Splatting](../../CVPR2025/3d_vision/selfsplat_pose-free_and_3d_prior-free_generalizable_3d_gaussian_splatting.md)
+- [\[ECCV 2024\] CoR-GS: Sparse-View 3D Gaussian Splatting via Co-Regularization](../../ECCV2024/3d_vision/cor-gs_sparse-view_3d_gaussian_splatting_via_co-regularization.md)
 - [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction](degauss_dynamic-static_decomposition_with_gaussian_splatting_for_distractor-free.md)
-- [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](../../NeurIPS2025/3d_vision/ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
 
 </div>
 

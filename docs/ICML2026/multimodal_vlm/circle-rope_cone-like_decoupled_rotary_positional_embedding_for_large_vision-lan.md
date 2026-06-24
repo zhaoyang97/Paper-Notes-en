@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][RoPE] The authors propose Circle-RoPE, which maps the 2D coordinates of image tokens onto a torus orthogonal to the text position axis. This forms a conical geometry where the RoPE distance from each text token to all image tokens is equal (PTD=0), eliminating cross-modal pseudo-positional biases while preserving internal im
+  [ICML 2026][Multimodal VLM][Positional Encoding] The authors propose Circle-RoPE, which maps the 2D coordinates of image tokens onto a torus orthogonal to the text position axis. This forms a conical geometry where the RoPE distance from each text token to all image tokens is equal (PTD=0), eliminating cross-modal pseudo-positional biases while preserving internal image spatial structure through Alternating Geometric Encoding (AGE).
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - RoPE
-  - Vision-Language Model
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Vision-Language Models"
+  - "Cross-modal Decoupling"
+  - "Spatial Reasoning"
 date: 2026-05-08
-content_hash: 4d2bea6dba2ed9b1
+content_hash: 876db028647d1b31
 ---
+
 # Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -128,11 +132,11 @@ Func-IoU on the TAM benchmark improved by +3.45 (71.19→74.64), validating the 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Revisiting Multimodal Positional Encoding in Vision-Language Models](../../ICLR2026/multimodal_vlm/revisiting_multimodal_positional_encoding_in_visionlanguage_models.md)
 - [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](../../CVPR2026/multimodal_vlm/modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
-- [\[ICML 2026\] Vision Language Models 无法推理物理变换](vision_language_models_cannot_reason_about_physical_transformation.md)
 - [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](../../AAAI2026/multimodal_vlm/positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
 - [\[CVPR 2026\] Ego: Embedding-Guided Personalization of Vision-Language Models](../../CVPR2026/multimodal_vlm/ego_embedding-guided_personalization_of_vision-language_models.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
+- [\[ICLR 2026\] Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models](../../ICLR2026/multimodal_vlm/reading_images_like_texts_sequential_image_understanding_in_vision-language_mode.md)
 
 </div>
 

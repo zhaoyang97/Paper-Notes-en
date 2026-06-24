@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The UNCHA framework is proposed to model the semantic representativeness of part images relative to the whole scene using hyperbolic uncertainty in hyperbolic VLMs. By utilizing uncertainty-guided contrastive and entailment losses, it enhances compositional scene understanding and outperforms existing hyperbolic VLMs a
+  [CVPR2026][Multimodal VLM][Hyperbolic VLM] The UNCHA framework is proposed to model the semantic representativeness of part images relative to the whole scene using hyperbolic uncertainty in hyperbolic VLMs. By utilizing uncertainty-guided contrastive and entailment losses, it enhances compositional scene understanding and outperforms existing hyperbolic VLMs across multiple downstream tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Hyperbolic VLM"
+  - "uncertainty modeling"
+  - "part-to-whole alignment"
+  - "compositional understanding"
+  - "entailment loss"
 date: 2026-05-08
-content_hash: 99328618c1a1db67
+content_hash: 7522ff19c295571f
 ---
+
 # Uncertainty-guided Compositional Alignment with Part-to-Whole Semantic Representativeness in Hyperbolic Vision-Language Models
 
 **Conference**: CVPR2026  
@@ -122,7 +128,7 @@ The entire process is conducted in hyperbolic space based on the Lorentz model, 
 - [\[CVPR 2026\] Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment](proxy3d_efficient_3d_representations_for_vision-language_models_via_semantic_clu.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
+- [\[CVPR 2025\] Calico: Part-Focused Semantic Co-Segmentation with Large Vision-Language Models](../../CVPR2025/multimodal_vlm/calico_part-focused_semantic_co-segmentation_with_large_vision-language_models.md)
 
 </div>
 

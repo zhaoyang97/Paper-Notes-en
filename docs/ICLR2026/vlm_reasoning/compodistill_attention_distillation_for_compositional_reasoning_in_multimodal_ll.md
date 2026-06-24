@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs
 description: >-
-  [ICLR 2026][vlm_reasoning][Knowledge Distillation] CompoDistill finds that existing knowledge distillation (KD) for Multimodal Large Language Models (MLLMs) only acquires "visual recognition" but fails in "visual perception," rooted in the misalignment of visual attention distributions between teacher and student. It introduces a VAT module to align student visual atte
+  [ICLR2026][VLM Reasoning][Multimodal Large Language Models] CompoDistill finds that existing knowledge distillation (KD) for Multimodal Large Language Models (MLLMs) only acquires "visual recognition" but fails in "visual perception," rooted in the misalignment of visual attention distributions between teacher and student. It introduces a VAT module to align student visual attention to the teacher and a TAF module to reuse the teacher's adapter. With a three-stage training st…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Knowledge Distillation
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Multimodal Large Language Models"
+  - "Knowledge Distillation"
+  - "Visual Attention Alignment"
+  - "Compositional Reasoning"
+  - "Visual Perception"
 date: 2026-05-08
-content_hash: 2e19ce4fc7a2c4a5
+content_hash: 10344be059204907
 ---
+
 # CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs
 
 **Conference**: ICLR2026  
@@ -142,11 +147,11 @@ Fine-grained VAT ablation: Cosine similarity (CR 66.7) is superior to MSE (65.2)
 
 ## Related Papers
 
-- [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
 - [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](../../CVPR2026/vlm_reasoning/vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
+- [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
 - [\[ICLR 2026\] NePTune: A Neuro-Pythonic Framework for Tunable Compositional Reasoning on Vision-Language](neptune_a_neuro-pythonic_framework_for_tunable_compositional_reasoning_on_vision.md)
 - [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](../../CVPR2026/vlm_reasoning/self-critical_distillation_network_for_video-based_commonsense_captioning.md)
-- [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
+- [\[AAAI 2026\] Leveraging Textual Compositional Reasoning for Robust Change Captioning](../../AAAI2026/vlm_reasoning/leveraging_textual_compositional_reasoning_for_robust_change_captioning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion Model] Proposes NEC-Diff, a diffusion-based event-RAW hybrid imaging framework that utilizes illumination priors from RAW images to guide event denoising and high dynamic range edges from events to assist image denoising. By combining dual-modal SNR-guided reliable information extraction and cross-modal attention diffusion, i
+  [CVPR 2026][Image Restoration][Extreme low-light imaging] Proposes NEC-Diff, a diffusion-based event-RAW hybrid imaging framework that utilizes illumination priors from RAW images to guide event denoising and high dynamic range edges from events to assist image denoising. By combining dual-modal SNR-guided reliable information extraction and cross-modal attention diffusion, it achieves high-quality dynamic scene reconstruction in extreme darkness (0.001-0.8 lux) with a PSNR o…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Extreme low-light imaging"
+  - "Event camera"
+  - "RAW image"
+  - "Collaborative denoising"
+  - "Diffusion model"
 date: 2026-05-08
-content_hash: 7a2ddbc9722cc9b4
+content_hash: 96cdae1b21e79724
 ---
+
 # NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness
 
 **Conference**: CVPR 2026  
@@ -148,9 +153,9 @@ The gradient term (weight 10) emphasizes edge sharpness, and the consistency ter
 
 - [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
 - [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
-- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
 - [\[CVPR 2026\] Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor](spatio-temporal_difference_guided_motion_deblurring_with_the_complementary_visio.md)
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
+- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
+- [\[CVPR 2026\] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition](time-specialized_event-image_alignment_for_blur-to-video_decomposition.md)
 
 </div>
 

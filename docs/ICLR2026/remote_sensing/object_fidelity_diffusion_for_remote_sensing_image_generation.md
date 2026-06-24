@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Object Fidelity Diffusion for Remote Sensing Image Generation
 description: >-
-  [ICLR 2026][Remote Sensing][Layout-to-Image] OF-Diff utilizes category labels to directly extract "shape mask priors" of remote sensing objects to constrain diffusion generation. An "online distillation" framework is employed to distill mixed features containing real image information into a shape-dependent decoder. This enables the model to generate high-fidelit
+  [ICLR 2026][Remote Sensing][Layout-to-Image] OF-Diff utilizes category labels to directly extract "shape mask priors" of remote sensing objects to constrain diffusion generation. An "online distillation" framework is employed to distill mixed features containing real image information into a shape-dependent decoder. This enables the model to generate high-fidelity, layout-consistent remote sensing images **without requiring real image references** during inference. Finally…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Layout-to-Image
-  - DDPO
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Layout-to-Image"
+  - "Shape Prior"
+  - "Online Distillation"
+  - "DDPO"
 date: 2026-05-08
-content_hash: 1318aae22477fa20
+content_hash: 4a39316eb102093d
 ---
+
 # Object Fidelity Diffusion for Remote Sensing Image Generation
 
 **Conference**: ICLR 2026  
@@ -149,8 +152,8 @@ Downstream Detection (data doubling augmentation): mAP for DIOR/DOTA improved by
 - [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](../../CVPR2026/remote_sensing/changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 - [\[CVPR 2026\] Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework](../../CVPR2026/remote_sensing/remote_sensing_image_super-resolution_for_imbalanced_textures_a_texture-aware_di.md)
 - [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](../../CVPR2026/remote_sensing/prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[ICLR 2026\] SatDreamer360: Multiview-Consistent Generation of Ground-Level Scenes from Satellite Imagery](satdreamer360_multiview-consistent_generation_of_ground-level_scenes_from_satell.md)
 - [\[CVPR 2026\] ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition](../../CVPR2026/remote_sensing/orsatr-x_a_foundation_model_based_on_differential-and-excitation_networks_for_op.md)
-- [\[ICLR 2026\] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models](towards_faithful_reasoning_in_remote_sensing_a_perceptually-grounded_geospatial_.md)
 
 </div>
 

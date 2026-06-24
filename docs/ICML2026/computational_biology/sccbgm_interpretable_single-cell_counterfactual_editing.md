@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] scCBGM: Interpretable Single-Cell Counterfactual Editing
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] This paper proposes scCBGM, a single-cell concept bottleneck generative model. By transferring the "concept bottleneck" architecture to scRNA-seq data and employing decoder skip connections along with cross-covariance decoupling penalties, it achieves interpretable and controllable counterfactual editing of "what would
+  [ICML 2026][Computational Biology][Single-cell] This paper proposes scCBGM, a single-cell concept bottleneck generative model. By transferring the "concept bottleneck" architecture to scRNA-seq data and employing decoder skip connections along with cross-covariance decoupling penalties, it achieves interpretable and controllable counterfactual editing of "what would happen if a biological concept were changed" for individual cells. It can also be integrated into flow matching…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
-  - Interpretability
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Single-cell"
+  - "Concept Bottleneck"
+  - "Counterfactual Editing"
+  - "Flow Matching"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: b11e37ebd1bd8182
+content_hash: 82488d353a5f2b26
 ---
+
 # scCBGM: Interpretable Single-Cell Counterfactual Editing
 
 **Conference**: ICML 2026  
@@ -148,11 +152,11 @@ Ablations on three components were conducted on three synthetic datasets (5 inte
 
 ## Related Papers
 
+- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
 - [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
 - [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](../../AAAI2026/computational_biology/gene_incremental_learning_for_single-cell_transcriptomics.md)
-- [\[ICML 2026\] Scalable Single-Cell Gene Expression Generation with Latent Diffusion Models](scalable_single-cell_gene_expression_generation_with_latent_diffusion_models.md)
-- [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](../../ICLR2026/computational_biology/scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
 - [\[ICML 2026\] Towards Universal Gene Regulatory Network Inference: Unlocking Generalizable Regulatory Knowledge in Single-cell Foundation Models](towards_universal_gene_regulatory_network_inference_unlocking_generalizable_regu.md)
+- [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](../../ICLR2026/computational_biology/fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Exploring the Potential of Encoder-free Architectures in 3D LMMs
 description: >-
-  [ICLR 2026][3D Vision][encoder-free] This paper proposes **ENEL**, the first **encoder-free 3D Large Multimodal Model**. It delegates "high-level semantic extraction" and "local geometric inductive bias"—tasks previously handled by pre-trained 3D encoders—directly to the LLM. The 7B model matches the performance of PointLLM-PiSA-13B in classification, cap
+  [ICLR 2026][3D Vision][encoder-free] This paper proposes **ENEL**, the first **encoder-free 3D Large Multimodal Model**. It delegates "high-level semantic extraction" and "local geometric inductive bias"—tasks previously handled by pre-trained 3D encoders—directly to the LLM. The 7B model matches the performance of PointLLM-PiSA-13B in classification, captioning, and VQA.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - encoder-free
-  - 3D LMM
+  - "ICLR 2026"
+  - "3D Vision"
+  - "encoder-free"
+  - "3D LMM"
+  - "point cloud understanding"
+  - "self-supervised loss"
+  - "geometric aggregation"
 date: 2026-05-08
-content_hash: 036d6340ad8f6664
+content_hash: 385d92e779fe8f56
 ---
+
 # Exploring the Potential of Encoder-free Architectures in 3D LMMs
 
 **Conference**: ICLR 2026  
@@ -118,10 +122,10 @@ ENEL-7B at the 7B scale outperforms or matches 13B encoder-based SOTA models. Us
 ## Related Papers
 
 - [\[ICLR 2026\] Weight Space Representation Learning on Diverse NeRF Architectures](weight_space_representation_learning_on_diverse_nerf_architectures.md)
-- [\[CVPR 2026\] VENI: Variational Encoder for Natural Illumination](../../CVPR2026/3d_vision/veni_variational_encoder_for_natural_illumination.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 - [\[CVPR 2025\] 3D-LLaVA: Towards Generalist 3D LMMs with Omni Superpoint Transformer](../../CVPR2025/3d_vision/3d-llava_towards_generalist_3d_lmms_with_omni_superpoint_transformer.md)
+- [\[CVPR 2026\] VENI: Variational Encoder for Natural Illumination](../../CVPR2026/3d_vision/veni_variational_encoder_for_natural_illumination.md)
 - [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](../../ICCV2025/3d_vision/gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
-- [\[CVPR 2025\] DUNE: Distilling a Universal Encoder from Heterogeneous 2D and 3D Teachers](../../CVPR2025/3d_vision/dune_distilling_a_universal_encoder_from_heterogeneous_2d_and_3d_teachers.md)
 
 </div>
 

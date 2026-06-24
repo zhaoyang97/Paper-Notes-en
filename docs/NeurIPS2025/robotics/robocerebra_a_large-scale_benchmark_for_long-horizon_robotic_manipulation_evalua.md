@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation
 description: >-
-  [NeurIPS 2025][Robotics][Long-horizon manipulation] This paper proposes RoboCerebra, a long-horizon robotic manipulation benchmark comprising 1,000 human demonstration trajectories (averaging 2,972 steps…
+  [NeurIPS 2025][Robotics][Long-horizon manipulation] This paper proposes RoboCerebra, a long-horizon robotic manipulation benchmark comprising 1,000 human demonstration trajectories (averaging 2,972 steps, approximately 6× longer than existing benchmarks). Through a hierarchical planning and execution framework and a multi-dimensional evaluation protocol, it systematically assesses VLMs across three System 2 cognitive dimensions: planning, reflection, and memory.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical planning"
   - "VLM evaluation"
 date: 2026-05-08
-content_hash: 856836f2db8f20e9
+content_hash: 537fb9ca8ed58a81
 ---
 
 # RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation
@@ -146,11 +146,11 @@ RoboCerebra consists of three major components: (1) a large-scale simulation dat
 
 ## Related Papers
 
+- [\[CVPR 2025\] Towards Long-Horizon Vision-Language Navigation: Platform, Benchmark and Method](../../CVPR2025/robotics/towards_long-horizon_vision-language_navigation_platform_benchmark_and_method.md)
 - [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/robotics/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](../../AAAI2026/robotics/actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
-- [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](../../AAAI2026/robotics/manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
-- [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](../../ICML2026/robotics/hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
+- [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](../../ICLR2026/robotics/conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
+- [\[CVPR 2025\] Lift3D Foundation Policy: Lifting 2D Large-Scale Pretrained Models for Robust 3D Robotic Manipulation](../../CVPR2025/robotics/lift3d_policy_lifting_2d_foundation_models_for_robust_3d_robotic_manipulation.md)
+- [\[ICML 2025\] Closed-loop Long-horizon Robotic Planning via Equilibrium Sequence Modeling](../../ICML2025/robotics/closed-loop_long-horizon_robotic_planning_via_equilibrium_sequence_modeling.md)
 
 </div>
 

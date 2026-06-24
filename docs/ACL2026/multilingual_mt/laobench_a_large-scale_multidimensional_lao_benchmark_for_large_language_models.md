@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] LaoBench is the first large-scale, multidimensional Lao evaluation benchmark for LLMs, containing 17,000+ expert-curated samples. It covers three dimensions: Culture-Knowledge Application, Lao K12 Curriculum, and Lao-Chinese-English trilingual translation. It features a unique three-part design—Open-source 7k + Black-b
+  [ACL 2026][Multilingual & Machine Translation][Lao] LaoBench is the first large-scale, multidimensional Lao evaluation benchmark for LLMs, containing 17,000+ expert-curated samples. It covers three dimensions: Culture-Knowledge Application, Lao K12 Curriculum, and Lao-Chinese-English trilingual translation. It features a unique three-part design—Open-source 7k + Black-box 10k + Open-ended 500. The 10k black-box set prevents contamination via a controlled scoring service. Main…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Lao"
+  - "Low-resource NLP"
+  - "Cultural Reasoning"
+  - "Black-box Evaluation"
+  - "Expert + Agent Collaborative Construction"
 date: 2026-05-08
-content_hash: a8e489a44d25c23f
+content_hash: 8f7921eb93e6fd17
 ---
+
 # LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models
 
 **Conference**: ACL 2026  
@@ -162,8 +168,8 @@ The gap between GPT-5-High and humans remains ~9 points in K12 and as high as ~2
 - [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
 - [\[ACL 2026\] LLM-XTM: Enhancing Cross-Lingual Topic Models with Large Language Models](llm-xtm_enhancing_cross-lingual_topic_models_with_large_language_models.md)
 - [\[ACL 2026\] TransLaw: A Large-Scale Dataset and Multi-Agent Benchmark Simulating Professional Translation of Hong Kong Case Law](translaw_a_large-scale_dataset_and_multi-agent_benchmark_simulating_professional.md)
+- [\[ACL 2026\] Multilingual Refusal Alignment for Safer Large Language Models](multilingual_refusal_alignment_for_safer_large_language_models.md)
 - [\[ACL 2026\] Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors](evaluating_robustness_of_large_language_models_against_multilingual_typographica.md)
-- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
 
 </div>
 

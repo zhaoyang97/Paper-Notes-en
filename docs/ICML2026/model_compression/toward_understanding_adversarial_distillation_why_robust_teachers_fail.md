@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Toward Understanding Adversarial Distillation: Why Robust Teachers Fail
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper identifies a "robustly unlearnable set" that remains stable across various adversarial training methods. Through the feature learning theory of two-layer networks, it proves that when a strongly robust teacher provides high-confidence supervision on these samples, it forces the student to memorize pseudo-noi
+  [ICML 2026][Model Compression][Adversarial Distillation] This paper identifies a "robustly unlearnable set" that remains stable across various adversarial training methods. Through the feature learning theory of two-layer networks, it proves that when a strongly robust teacher provides high-confidence supervision on these samples, it forces the student to memorize pseudo-noise, thereby triggering robust overfitting. Conversely, maintaining high entropy on these samples suppre…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Adversarial Distillation"
+  - "Robust Overfitting"
+  - "Unlearnable Samples"
+  - "Feature Learning Theory"
+  - "Teacher Selection"
 date: 2026-05-08
-content_hash: 06d38c99b7ad4686
+content_hash: 4f4b84b367708918
 ---
+
 # Toward Understanding Adversarial Distillation: Why Robust Teachers Fail
 
 **Conference**: ICML 2026  
@@ -132,7 +138,7 @@ The statistics for $|\mathcal{S}_U|$ and $|\mathcal{S}_L|$ based on the intersec
 - [\[CVPR 2026\] Continual Distillation of Teachers from Different Domains](../../CVPR2026/model_compression/continual_distillation_of_teachers_from_different_domains.md)
 - [\[ICML 2026\] The Bridge-Garden Dilemma in LLM Distillation: Why Mixing Hard and Soft Labels Works](the_bridge-garden_dilemma_in_llm_distillation_why_mixing_hard_and_soft_labels_wo.md)
 - [\[ICML 2026\] Detecting Fluent Optimization-Based Adversarial Prompts via Sequential Entropy Changes](detecting_fluent_optimization-based_adversarial_prompts_via_sequential_entropy_c.md)
-- [\[ACL 2025\] Who Taught You That? Tracing Teachers in Model Distillation](../../ACL2025/model_compression/who_taught_you_that_tracing_teachers_in_model_distillation.md)
+- [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](../../ICLR2026/model_compression/sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
 
 </div>
 

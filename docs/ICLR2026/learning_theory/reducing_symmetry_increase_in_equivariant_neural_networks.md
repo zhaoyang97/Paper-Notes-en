@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Reducing Symmetry Increase in Equivariant Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper systematically characterizes the degenerative phenomenon where the "output symmetry is amplified and directional information is lost" when equivariant neural networks process symmetric inputs. It proves that the amplified symmetry has a symmetry infimum uniquely determined by the feature space structure and
+  [ICLR 2026][Learning Theory][Equivariant networks] This paper systematically characterizes the degenerative phenomenon where the "output symmetry is amplified and directional information is lost" when equivariant neural networks process symmetric inputs. It proves that the amplified symmetry has a symmetry infimum uniquely determined by the feature space structure and provides a computable algorithm and feature design guidelines to predict and avoid harmful symmetry increase.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Equivariant Neural Networks"
+  - "Geometric Deep Learning"
+  - "Equivariant networks"
+  - "symmetry increase"
+  - "orbit types"
+  - "symmetry infimum"
+  - "equivariant maps"
 date: 2026-05-08
-content_hash: 05b99f2dee5978fd
+content_hash: 091c7bd9611a66eb
 ---
+
 # Reducing Symmetry Increase in Equivariant Neural Networks
 
 **Conference**: ICLR 2026  
@@ -151,8 +159,8 @@ Predicting isotropic polarizability $\alpha$ using HEGNN as the backbone. A shar
 - [\[ICLR 2026\] On Universality of Deep Equivariant Networks](on_universality_of_deep_equivariant_networks.md)
 - [\[ICLR 2026\] Quasi-Equivariant Metanetworks](quasi-equivariant_metanetworks.md)
 - [\[ICLR 2026\] Proper Velocity Neural Networks](proper_velocity_neural_networks.md)
-- [\[ICLR 2026\] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks](from_neural_networks_to_logical_theories_the_correspondence_between_fibring_moda.md)
-- [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
+- [\[ICLR 2026\] To Augment or Not to Augment? Diagnosing Distributional Symmetry Breaking](to_augment_or_not_to_augment_diagnosing_distributional_symmetry_breaking.md)
 
 </div>
 

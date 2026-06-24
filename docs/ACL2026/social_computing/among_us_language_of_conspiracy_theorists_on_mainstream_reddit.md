@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Among Us: Language of Conspiracy Theorists on Mainstream Reddit
 description: >-
-  [ACL 2026][Social Computing][Paper Note] Analyzing 10 years of longitudinal data from 510 million Reddit comments, the study finds that users active in conspiracy communities exhibit detectable unique linguistic patterns even in mainstream communities (average 87% classification accuracy). However, these patterns are highly dependent on community context, wit
+  [ACL 2026][Social Computing][Conspiracy theories] Analyzing 10 years of longitudinal data from 510 million Reddit comments, the study finds that users active in conspiracy communities exhibit detectable unique linguistic patterns even in mainstream communities (average 87% classification accuracy). However, these patterns are highly dependent on community context, with community-specific models outperforming global models by up to 17 percentage points.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Conspiracy theories"
+  - "Linguistic features"
+  - "Reddit analysis"
+  - "Psycholinguistics"
+  - "Community adaptation"
 date: 2026-05-08
-content_hash: 7633469904646be9
+content_hash: be111c99f7be3825
 ---
+
 # Among Us: Language of Conspiracy Theorists on Mainstream Reddit
 
 **Conference**: ACL 2026  
@@ -125,7 +131,7 @@ Random Forest was tuned using grid search with 5-fold cross-validation, with an 
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](bayesian_social_deduction_with_graph-informed_language_models.md)
 - [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
-- [\[ACL 2026\] FigSIM: A Dataset for Fine-grained Suicide Severity and Figurative Language in Suicide Memes](figsim_a_dataset_for_fine-grained_suicide_severity_and_figurative_language_in_su.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 
 </div>
 

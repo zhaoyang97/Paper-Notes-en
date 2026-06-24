@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Culturally-Adapted Red-Teaming Across East and Southeast Asian Contexts: A Methodological and Comparative Analysis
 description: >-
-  [ICML 2026][AI Safety][Paper Note] The authors point out that "directly translating English safety benchmarks into target languages" systematically underestimates the true risks of large language models (LLMs). They constructed 500 paired Direct Translation (DT) and Culturally-Adapted (CA) red-teaming samples for Korean, Japanese, Thai, and Khmer. The r
+  [ICML 2026][AI Safety][Red-Teaming] The authors point out that "directly translating English safety benchmarks into target languages" systematically underestimates the true risks of large language models (LLMs). They constructed 500 paired Direct Translation (DT) and Culturally-Adapted (CA) red-teaming samples for Korean, Japanese, Thai, and Khmer. The results demonstrate that CA leads to higher Attack Success Rates (ASR) across all 16 language-model combinations (averaging +…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Red-Teaming"
+  - "Multilingual Safety Evaluation"
+  - "Cultural Adaptation"
+  - "Attack Success Rate"
+  - "Direct Translation"
 date: 2026-05-08
-content_hash: bd8f193547c0a0d3
+content_hash: 7a77a0b177ed4e71
 ---
+
 # Culturally-Adapted Red-Teaming Across East and Southeast Asian Contexts: A Methodological and Comparative Analysis
 
 **Conference**: ICML 2026  

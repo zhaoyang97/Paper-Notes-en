@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer
 description: >-
-  [CVPR 2026][Image Generation][MM-DiT] Multi-view videos are organized into a "camera $\times$ time" grid. By leveraging the dual-stream self-attention of MM-DiT, adjacent viewpoint and temporal features are fused simultaneously within local subgrids. This consistency is propagated across the entire grid using token inheritance and flow-guided token replace
+  [CVPR 2026][Image Generation][4D Gaussian Splatting] Multi-view videos are organized into a "camera $\times$ time" grid. By leveraging the dual-stream self-attention of MM-DiT, adjacent viewpoint and temporal features are fused simultaneously within local subgrids. This consistency is propagated across the entire grid using token inheritance and flow-guided token replacement. The edited frames are then used to optimize a pre-trained 4DGS without further training.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MM-DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "4D Gaussian Splatting"
+  - "Text-driven Editing"
+  - "MM-DiT"
+  - "Spatio-temporal Consistency"
+  - "Training-free"
 date: 2026-05-08
-content_hash: ba97e4041cd9b562
+content_hash: 4a7bd55b1126268c
 ---
+
 # Dynamic-eDiTor: Training-Free Text-Driven 4D Scene Editing with Multimodal Diffusion Transformer
 
 **Conference**: CVPR 2026  
@@ -131,15 +136,16 @@ Ablation of STGA and CTP (values from Table 2):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](../../ICLR2026/image_generation/training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
 - [\[ICML 2026\] Self-Prompting Diffusion Transformer for Open-Vocabulary Scene Text Editing via In-Context Learning](../../ICML2026/image_generation/self-prompting_diffusion_transformer_for_open-vocabulary_scene_text_editing_via_.md)
-- [\[ICCV 2025\] Free4D: Tuning-free 4D Scene Generation with Spatial-Temporal Consistency](../../ICCV2025/image_generation/free4d_tuning-free_4d_scene_generation_with_spatial-temporal_consistency.md)
-- [\[AAAI 2026\] Playmate2: Training-Free Multi-Character Audio-Driven Animation via Diffusion Transformer with Reward Feedback](../../AAAI2026/image_generation/playmate2_training-free_multi-character_audio-driven_animation_via_diffusion_tra.md)
+- [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](dpcache_denoising_path_planning_diffusion_accel.md)
 - [\[CVPR 2026\] UniEdit-I: Training-free Image Editing for Unified VLM via Iterative Understanding, Editing and Verifying](uniedit-i_training-free_image_editing_for_unified_vlm_via_iterative_understandin.md)
-- [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
 
 </div>
 

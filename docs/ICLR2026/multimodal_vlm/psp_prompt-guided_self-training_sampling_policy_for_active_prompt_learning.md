@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][CLIP] PSP models the "sample selection" process as a reinforcement learning problem. It utilizes Soft Actor-Critic (SAC) with a "real-pseudo hybrid reward" derived from prompt learning feedback to optimize the sampling policy end-to-end. Simultaneously, it leverages a teacher CLIP model to assign reliable pseudo-labels to un
+  [ICLR 2026][Multimodal VLM][Active Prompt Learning] PSP models the "sample selection" process as a reinforcement learning problem. It utilizes Soft Actor-Critic (SAC) with a "real-pseudo hybrid reward" derived from prompt learning feedback to optimize the sampling policy end-to-end. Simultaneously, it leverages a teacher CLIP model to assign reliable pseudo-labels to unselected samples, ensuring selected samples effectively serve the optimization of prompt templates. This app…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - CLIP
-  - Soft Actor-Critic
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Active Prompt Learning"
+  - "CLIP"
+  - "Soft Actor-Critic"
+  - "Self-Training"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 990923952b4588ba
+content_hash: a104cdda044ebee6
 ---
+
 # PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning
 
 **Conference**: ICLR 2026  
@@ -139,16 +143,16 @@ Removing VSSP leads to a 1.26% drop, while removing UST leads to a 2.10% drop. U
 - Value: ⭐⭐⭐⭐ Provides a feasible paradigm for sample selection and prompt learning integration in low-budget VLM adaptation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)
-- [\[AAAI 2026\] Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection](../../AAAI2026/multimodal_vlm/multi-agent_vlms_guided_self-training_with_pnu_loss_for_low-resource_offensive_c.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](../../CVPR2026/multimodal_vlm/controllable_federated_prompt_learning_at_test_time.md)
 - [\[AAAI 2026\] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias](../../AAAI2026/multimodal_vlm/sage_spuriousness-aware_guided_prompt_exploration_for_mitigating_multimodal_bias.md)
 - [\[ICLR 2026\] PI-CCA: Prompt-Invariant CCA Certificates for Replay-Free Continual Multimodal Learning](pi-cca_prompt-invariant_cca_certificates_for_replay-free_continual_multimodal_le.md)
+- [\[CVPR 2026\] ReBaPL: Repulsive Bayesian Prompt Learning](../../CVPR2026/multimodal_vlm/rebapl_repulsive_bayesian_prompt_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] FLOCK replaces the conventional message passing and deterministic equivariance constraints of Knowledge Graph Foundation Models (KGFMs) with a paradigm of "sampling random walks → anonymizing into sequences → encoding with sequence models → consensus pooling." By leveraging **probabilistic node-relation equivariance**,
+  [ICLR 2026][Graph Learning][Knowledge Graph Foundation Models] FLOCK replaces the conventional message passing and deterministic equivariance constraints of Knowledge Graph Foundation Models (KGFMs) with a paradigm of "sampling random walks → anonymizing into sequences → encoding with sequence models → consensus pooling." By leveraging **probabilistic node-relation equivariance**, it maintains cross-graph generalization while breaking symmetry to distinguish "structurally iso…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Knowledge Graph Foundation Models"
+  - "Zero-shot Link Prediction"
+  - "Random Walks"
+  - "Probabilistic Equivariance"
+  - "Sequence Models"
 date: 2026-05-08
-content_hash: 8713ccd18b9594ed
+content_hash: 8b6b626df0e01c74
 ---
+
 # FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks
 
 **Conference**: ICLR 2026  

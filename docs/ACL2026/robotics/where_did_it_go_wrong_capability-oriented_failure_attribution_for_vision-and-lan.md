@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 视觉语言导航代理的能力导向失败归因
+  [Paper Note] Ability-Oriented Failure Attribution for Vision-Language Navigation Agents
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Paper Note] This paper addresses multi-level ability failures in embodied agents (specifically Vision-Language Navigation VLN agents) by proposing the CanTest framework. Through ability-oriented test oracles and failure attribution mechanisms, it precisely localizes specific ability defects (Perception/Memory/Planning/Decision-mak
+  [ACL 2026][Robotics][Vision-Language Navigation] This paper addresses multi-level ability failures in embodied agents (specifically Vision-Language Navigation VLN agents) by proposing the CanTest framework. Through ability-oriented test oracles and failure attribution mechanisms, it precisely localizes specific ability defects (Perception/Memory/Planning/Decision-making) leading to task failure, discovering 23–34% more failure cases than existing methods.
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
+  - "ACL 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Ability Failure Diagnosis"
+  - "Testing Framework"
+  - "Embodied Agents"
+  - "Fuzz Testing"
 date: 2026-05-08
-content_hash: b115f68838abb094
+content_hash: 674de92a3b4916e6
 ---
+
 # Ability-Oriented Failure Attribution for Vision-Language Navigation Agents
 
 **Conference**: ACL 2026  
@@ -169,11 +175,11 @@ Repair rates > 81% indicate high oracle credibility. Upstream abilities (Percept
 
 ## Related Papers
 
-- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
-- [\[ACL 2026\] Limited Linguistic Diversity in Embodied AI Datasets](limited_linguistic_diversity_in_embodied_ai_datasets.md)
 - [\[ACL 2026\] Breaking Down and Building Up: Mixture of Skill-Based Vision-and-Language Navigation Agents](breaking_down_and_building_up_mixture_of_skill-based_vision-and-language_navigat.md)
-- [\[ACL 2026\] GROKE: Vision-Free Navigation Instruction Evaluation via Graph Reasoning on OpenStreetMap](groke_vision-free_navigation_instruction_evaluation_via_graph_reasoning_on_opens.md)
-- [\[ACL 2026\] Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](libra-vla_achieving_learning_equilibrium_via_asynchronous_coarse-to-fine_dual-sy.md)
+- [\[ICLR 2026\] Self-Refining Vision Language Model for Robotic Failure Detection and Reasoning](../../ICLR2026/robotics/self-refining_vision_language_model_for_robotic_failure_detection_and_reasoning.md)
+- [\[ACL 2026\] VLN-NF: Feasibility-Aware Vision-and-Language Navigation with False-Premise Instructions](vln-nf_feasibility-aware_vision-and-language_navigation_with_false-premise_instr.md)
+- [\[NeurIPS 2025\] SAFE: Multitask Failure Detection for Vision-Language-Action Models](../../NeurIPS2025/robotics/safe_multitask_failure_detection_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](../../ICLR2026/robotics/uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 
 </div>
 

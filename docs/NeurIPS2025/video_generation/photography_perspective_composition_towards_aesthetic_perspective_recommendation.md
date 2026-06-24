@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Photography Perspective Composition: Towards Aesthetic Perspective Recommendation
 description: >-
-  [NeurIPS 2025][Video Generation][Photography Composition] This paper proposes a novel "Photography Perspective Composition" (PPC) paradigm that goes beyond traditional cropping-based approaches. It constructs a perspecti…
+  [NeurIPS 2025][Video Generation][Photography Composition] This paper proposes a novel "Photography Perspective Composition" (PPC) paradigm that goes beyond traditional cropping-based approaches. It constructs a perspective transformation dataset via 3D reconstruction, generates recommended viewpoints through Image-to-Video generation, aligns with human preferences via RLHF, and evaluates perspective quality using a PQA model.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -11,7 +11,7 @@ tags:
   - "Aesthetic Assessment"
   - "RLHF"
 date: 2026-05-08
-content_hash: 924240bb3c9e0d91
+content_hash: 7d2bb8b5feb599d2
 ---
 
 # Photography Perspective Composition: Towards Aesthetic Perspective Recommendation
@@ -141,11 +141,11 @@ Three major modules: (1) Automatic PPC dataset construction → (2) PPC video ge
 
 ## Related Papers
 
+- [\[ICML 2025\] How Far is Video Generation from World Model: A Physical Law Perspective](../../ICML2025/video_generation/how_far_is_video_generation_from_world_model_a_physical_law_perspective.md)
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](../../ICLR2026/video_generation/lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
 - [\[CVPR 2026\] CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video](../../CVPR2026/video_generation/cubecomposer_spatio-temporal_autoregressive_4k_360_video_generation_from_perspec.md)
 - [\[NeurIPS 2025\] Force Prompting: Video Generation Models Can Learn and Generalize Physics-based Control Signals](force_prompting_video_generation_models_can_learn_and_generalize_physics-based_c.md)
 - [\[NeurIPS 2025\] Safe-Sora: Safe Text-to-Video Generation via Graphical Watermarking](safesora_safe_texttovideo_generation_via_graphical_watermark.md)
-- [\[NeurIPS 2025\] LeMiCa: Lexicographic Minimax Path Caching for Efficient Diffusion-Based Video Generation](lemica_lexicographic_minimax_path_caching_for_efficient_diffusion-based_video_ge.md)
 
 </div>
 

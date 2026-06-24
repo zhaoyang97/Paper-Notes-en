@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation
 description: >-
-  [ICCV 2025][Human Understanding][pose estimation] This paper proposes simultaneously predicting the 3D coordinates of both the front and back surfaces of an object and densely sampling between the two surfaces to constru…
+  [ICCV 2025][Human Understanding][pose estimation] This paper proposes simultaneously predicting the 3D coordinates of both the front and back surfaces of an object and densely sampling between the two surfaces to construct ultra-dense 2D-3D correspondences. Combined with a novel Hierarchical Continuous Coordinate Encoding (HCCE), the method surpasses existing state-of-the-art approaches on all seven core BOP benchmark datasets.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical continuous encoding"
   - "PnP"
 date: 2026-05-08
-content_hash: 356c98f42f15144a
+content_hash: b798c2e06decdf36
 ---
 
 # HccePose(BF): Predicting Front & Back Surfaces to Construct Ultra-Dense 2D-3D Correspondences for Pose Estimation
@@ -138,9 +138,9 @@ Ablation of front/back surface information (average BOP AP% on LM-O/TUD-L/IC-BIN
 
 - [\[ICCV 2025\] PoseSyn: Synthesizing Diverse 3D Pose Data from In-the-Wild 2D Data](posesyn_synthesizing_diverse_3d_pose_data_from_in-the-wild_2d_data.md)
 - [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](../../NeurIPS2025/human_understanding/pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
-- [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](../../NeurIPS2025/human_understanding/raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
-- [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
+- [\[CVPR 2026\] Differentially Private 2D Human Pose Estimation](../../CVPR2026/human_understanding/differentially_private_2d_human_pose_estimation.md)
+- [\[ICLR 2026\] From Sparse to Dense: Spatio-Temporal Fusion for Multi-View 3D Human Pose Estimation with DenseWarper](../../ICLR2026/human_understanding/from_sparse_to_dense_spatio-temporal_fusion_for_multi-view_3d_human_pose_estimat.md)
+- [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](../../NeurIPS2025/human_understanding/learning_dense_hand_contact_estimation_from_imbalanced_data.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Radiant Foam: Real-Time Differentiable Ray Tracing
 description: >-
-  [ICCV 2025][3D Vision][Differentiable Rendering] This paper proposes Radiant Foam, a novel differentiable scene representation based on volumetric tetrahedral mesh ray tracing. Without relying on rasterization…
+  [ICCV 2025][3D Vision][Differentiable Rendering] This paper proposes Radiant Foam, a novel differentiable scene representation based on volumetric tetrahedral mesh ray tracing. Without relying on rasterization, it achieves rendering speed and quality comparable to Gaussian Splatting while natively supporting light transport phenomena such as reflection and refraction.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Scene Representation"
   - "Real-Time Rendering"
 date: 2026-05-08
-content_hash: 515ccf84a29695b1
+content_hash: 55e09aab1e16bfde
 ---
 
 # Radiant Foam: Real-Time Differentiable Ray Tracing
@@ -136,10 +136,10 @@ Comparisons with 3DGS and its variants on standard benchmarks including Mip-NeRF
 ## Related Papers
 
 - [\[ICCV 2025\] Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation](simulating_dual-pixel_images_from_ray_tracing_for_depth_estimation.md)
-- [\[NeurIPS 2025\] Every Camera Effect, Every Time, All at Once: 4D Gaussian Ray Tracing for Physics-based Camera Effect Data Generation](../../NeurIPS2025/3d_vision/every_camera_effect_every_time_all_at_once_4d_gaussian_ray_tracing_for_physics-b.md)
-- [\[CVPR 2026\] UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes](../../CVPR2026/3d_vision/utrice_unifying_primitives_in_differentiable_ray_tracing_and_rasterization_via_t.md)
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](../../CVPR2026/3d_vision/ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
-- [\[ICCV 2025\] FlashDepth: Real-time Streaming Video Depth Estimation at 2K Resolution](flashdepth_real-time_streaming_video_depth_estimation_at_2k_resolution.md)
+- [\[CVPR 2026\] Lens Component Deletion based on Differentiable Ray Tracing](../../CVPR2026/3d_vision/lens_component_deletion_based_on_differentiable_ray_tracing.md)
+- [\[CVPR 2026\] Stochastic Ray Tracing for the Reconstruction of 3D Gaussian Splatting](../../CVPR2026/3d_vision/stochastic_ray_tracing_for_the_reconstruction_of_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
+- [\[CVPR 2025\] IRGS: Inter-Reflective Gaussian Splatting with 2D Gaussian Ray Tracing](../../CVPR2025/3d_vision/irgs_inter-reflective_gaussian_splatting_with_2d_gaussian_ray_tracing.md)
 
 </div>
 

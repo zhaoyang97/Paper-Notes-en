@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] FlowPortal requires no model training. Instead, it utilizes "Residual-Corrected Flow" to transform off-the-shelf video diffusion flow models into editing models. By enforcing perfect reconstruction when source and target conditions are identical and specifically altering the lighting direction otherwise—supplemented by
+  [CVPR 2026][Video Generation][Video Relighting] FlowPortal requires no model training. Instead, it utilizes "Residual-Corrected Flow" to transform off-the-shelf video diffusion flow models into editing models. By enforcing perfect reconstruction when source and target conditions are identical and specifically altering the lighting direction otherwise—supplemented by decoupled conditions, high-frequency transfer, and foreground masks—it achieves temporally coherent…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Relighting"
+  - "Background Replacement"
+  - "Training-free"
+  - "Flow Editing"
+  - "Residual Correction"
 date: 2026-05-08
-content_hash: 4b01d9dc0c62e63f
+content_hash: ca14064d1b51eb59
 ---
+
 # FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ FlowPortal performs best in text alignment (CLIP-T), temporal smoothness (CLIP-I
 
 ## Related Papers
 
-- [\[CVPR 2026\] RFDM: Residual Flow Diffusion Models for Video Editing](rfdm_residual_flow_diffusion_models_for_video_editing.md)
+- [\[ICLR 2026\] LightCtrl: Training-free Controllable Video Relighting](../../ICLR2026/video_generation/lightctrl_training-free_controllable_video_relighting.md)
 - [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
-- [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
+- [\[CVPR 2026\] RFDM: Residual Flow Diffusion Models for Video Editing](rfdm_residual_flow_diffusion_models_for_video_editing.md)
+- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
 
 </div>
 

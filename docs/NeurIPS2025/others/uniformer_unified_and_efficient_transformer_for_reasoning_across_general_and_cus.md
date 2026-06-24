@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing
 description: >-
-  [NeurIPS 2025][Efficient Attention] This paper proposes UniFormer, a unified and efficient Transformer architecture for cross-platform deployment on both GPUs and FPGAs. Through a dual-branch attention mechanism consisti…
+  [NeurIPS 2025][Efficient Attention] This paper proposes UniFormer, a unified and efficient Transformer architecture for cross-platform deployment on both GPUs and FPGAs. Through a dual-branch attention mechanism consisting of global linear attention and local block attention, UniFormer achieves high parallelism and compute-memory fusion.
 tags:
   - "NeurIPS 2025"
   - "Efficient Attention"
@@ -11,7 +11,7 @@ tags:
   - "Triton Kernel"
   - "Dual-Branch Attention"
 date: 2026-05-08
-content_hash: 863ecd8140168406
+content_hash: d9e339c61b8a2242
 ---
 
 # UniFormer: Unified and Efficient Transformer for Reasoning Across General and Custom Computing
@@ -125,10 +125,10 @@ This paper proposes UniFormer, a unified and efficient Transformer architecture 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
 - [\[AAAI 2026\] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer](../../AAAI2026/others/synweather_weather_observation_data_synthesis_across_multiple_regions_and_variab.md)
+- [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
 - [\[NeurIPS 2025\] Look-Ahead Reasoning on Learning Platforms](look-ahead_reasoning_on_learning_platforms.md)
-- [\[NeurIPS 2025\] Active Measurement: Efficient Estimation at Scale](active_measurement_efficient_estimation_at_scale.md)
+- [\[ACL 2025\] Principled Understanding of Generalization for Generative Transformer Models in Arithmetic Reasoning Tasks](../../ACL2025/others/principled_generalization_arithmetic.md)
 
 </div>
 

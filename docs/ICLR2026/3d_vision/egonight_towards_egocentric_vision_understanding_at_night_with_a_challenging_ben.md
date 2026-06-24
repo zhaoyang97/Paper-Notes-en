@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Ours proposes EgoNight, the first nocturnal egocentric vision benchmark, featuring day-night aligned videos and 3658 human-verified QA pairs, revealing a performance degradation of up to 32.8% in MLLMs under low-light conditions.
+  [ICLR 2026][3D Vision] Ours proposes EgoNight, the first nocturnal egocentric vision benchmark, featuring day-night aligned videos and 3658 human-verified QA pairs, revealing a performance degradation of up to 32.8% in MLLMs under low-light conditions.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
 date: 2026-05-08
-content_hash: b85fe4eddea95d3f
+content_hash: 659f107dc5969a29
 ---
+
 # EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark
 
 **Conference**: ICLR 2026  
@@ -142,15 +143,14 @@ Day-night performance gap: Average decrease of **32.8%** on EgoNight-Synthetic a
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance](../../ICCV2025/3d_vision/egocentric_action-aware_inertial_localization_in_point_clouds_with_vision-langua.md)
 - [\[AAAI 2026\] OpenScan: A Benchmark for Generalized Open-Vocabulary 3D Scene Understanding](../../AAAI2026/3d_vision/openscan_a_benchmark_for_generalized_open-vocabulary_3d_scene_understanding.md)
 - [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](../../CVPR2026/3d_vision/ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](../../CVPR2026/3d_vision/ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[ICLR 2026\] EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations](egoworld_translating_exocentric_view_to_egocentric_view_using_rich_exocentric_ob.md)
 
 </div>
 

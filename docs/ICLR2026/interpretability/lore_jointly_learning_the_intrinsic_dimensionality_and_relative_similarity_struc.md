@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The authors propose LORE, the first framework to jointly learn embedding representations and intrinsic dimensionality from ordinal triplet comparisons. By replacing traditional pre-specified dimensionality strategies with a non-convex Schatten-p quasi-norm ($p<1$) regularization, solved via an Iterative Reweighted Nucl
+  [ICLR 2026][Interpretability][Ordinal Embedding] The authors propose LORE, the first framework to jointly learn embedding representations and intrinsic dimensionality from ordinal triplet comparisons. By replacing traditional pre-specified dimensionality strategies with a non-convex Schatten-p quasi-norm ($p<1$) regularization, solved via an Iterative Reweighted Nuclear Norm (IRNN) algorithm with guaranteed convergence to a stationary point, LORE significantly outperforms all…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Ordinal Embedding"
+  - "Intrinsic Dimensionality Recovery"
+  - "Schatten-p Quasi-norm"
+  - "Triplet Comparison"
+  - "Perceptual Space"
+  - "Low-rank Regularization"
 date: 2026-05-08
-content_hash: 00f9e9aeaeb1b585
+content_hash: a152c8c41ca0d681
 ---
+
 # LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data
 
 **Conference**: ICLR 2026  

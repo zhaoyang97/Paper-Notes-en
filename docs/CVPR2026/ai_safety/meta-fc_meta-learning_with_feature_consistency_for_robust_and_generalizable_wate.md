@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Meta-FC replaces the conventional "Single Random Distortion" (SRD) strategy in deep watermarking—which randomly selects one distortion per batch—with meta-learning. Each batch samples multiple distortions for meta-train and reserves one as an "unseen distortion" for meta-test, combined with a feature consistency loss t
+  [CVPR 2026][AI Safety][Robust Watermarking] Meta-FC replaces the conventional "Single Random Distortion" (SRD) strategy in deep watermarking—which randomly selects one distortion per batch—with meta-learning. Each batch samples multiple distortions for meta-train and reserves one as an "unseen distortion" for meta-test, combined with a feature consistency loss to align decoder features. This allows the model to learn distortion-invariant representations. As a plug-and-play st…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Robust Watermarking"
+  - "Meta-Learning"
+  - "Feature Consistency"
+  - "Distortion-Invariant Representation"
+  - "Plug-and-play Training"
 date: 2026-05-08
-content_hash: 075f1284b269c8f8
+content_hash: 6f7c7f639147ffa9
 ---
+
 # Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,15 @@ Meta-FC outperforms SRD across all five models and all three scenarios. The impr
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples](dash_a_meta-attack_framework_for_synthesizing_effective_and_stealthy_adversarial.md)
-- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](../../ICCV2025/ai_safety/fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
-- [\[CVPR 2026\] TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking](tiacam_text-anchored_invariant_feature_learning_with_auto-augmentation_for_camer.md)
+- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
+- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
 
 </div>
 

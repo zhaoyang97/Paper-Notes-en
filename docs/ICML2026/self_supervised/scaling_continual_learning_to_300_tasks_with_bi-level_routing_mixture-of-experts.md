@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts
 description: >-
-  [ICML 2026][Self-Supervised Learning][Bi-Level Routing] The authors propose CaRE: inserting a **Bi-Level Routing MoE (BR-MoE)** into each ViT block. It first uses a "class-perceiver" to select Top-M relevant task routes based on entropy, then each route activates Top-K task experts while adding a shared EMA expert. This allows the model to retain old knowledge while absorbi
+  [ICML 2024][Self-Supervised Learning][Class-Incremental Learning] The authors propose CaRE: inserting a **Bi-Level Routing MoE (BR-MoE)** into each ViT block. It first uses a "class-perceiver" to select Top-M relevant task routes based on entropy, then each route activates Top-K task experts while adding a shared EMA expert. This allows the model to retain old knowledge while absorbing new classes even in sequences exceeding 300 tasks. The work also introduces the 1000-class…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - Bi-Level Routing
-  - Mixture-of-Experts
-  - OmniBenchmark-1K
+  - "ICML 2024"
+  - "Self-Supervised Learning"
+  - "Class-Incremental Learning"
+  - "Bi-Level Routing"
+  - "Mixture-of-Experts"
+  - "Long Task Sequences"
+  - "OmniBenchmark-1K"
 date: 2026-05-08
-content_hash: 9478dc3d82221264
+content_hash: 3153f67334eb4c99
 ---
+
 # Scaling Continual Learning to 300+ Tasks with Bi-Level Routing Mixture-of-Experts
 
 **Conference**: ICML 2024  
@@ -135,15 +138,16 @@ CaRE outperforms MOS by 4 percentage points on the 301-task sequence and maintai
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](../../CVPR2026/self_supervised/spectral_mixture-of-experts_for_continual_learning.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](../../CVPR2026/self_supervised/is_parameter_isolation_better_for_prompt-based_continual_learning.md)
+- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](../../NeurIPS2025/self_supervised/soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
 - [\[ICML 2026\] Learning to Extrapolate to New Tasks: A Relational Approach to Task Extrapolation](learning_to_extrapolate_to_new_tasks_a_relational_approach_to_task_extrapolation.md)
 - [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](partco_part-level_correspondence_priors_enhance_category_discovery.md)
-- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](../../CVPR2026/self_supervised/is_parameter_isolation_better_for_prompt-based_continual_learning.md)
-- [\[ICML 2026\] LEC: Linear Expectation Constraints for Selection-Conditioned Risk Control in Selective Prediction and Routing Systems](lec_linear_expectation_constraints_for_selection-conditioned_risk_control_in_sel.md)
 
 </div>
 

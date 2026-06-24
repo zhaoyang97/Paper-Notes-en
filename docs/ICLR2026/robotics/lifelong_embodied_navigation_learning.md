@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Lifelong Embodied Navigation Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes the Lifelong Embodied Navigation Learning task and the Uni-Walker framework, enabling LLM-driven embodied navigation agents to sequentially learn multiple navigation tasks (VLN, OLN, DUN). This approach allows the agent to absorb new scenes and instruction styles while significantly reducing the for
+  [ICLR2026][Robotics][Embodied Navigation] This paper proposes the Lifelong Embodied Navigation Learning task and the Uni-Walker framework, enabling LLM-driven embodied navigation agents to sequentially learn multiple navigation tasks (VLN, OLN, DUN). This approach allows the agent to absorb new scenes and instruction styles while significantly reducing the forgetting of previous tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Embodied Navigation"
+  - "Lifelong Learning"
+  - "Catastrophic Forgetting"
+  - "LoRA Experts"
+  - "Navigation Reasoning"
 date: 2026-05-08
-content_hash: 31eb2f9290ae1ef9
+content_hash: 373433da36c28a8d
 ---
+
 # Lifelong Embodied Navigation Learning
 
 **Conference**: ICLR2026  
@@ -158,16 +164,16 @@ Among task-specific components, NSCoT has the largest impact. Removing it drops 
 - Value: ⭐⭐⭐⭐⭐ Highly relevant for long-term deployed navigation agents, effectively combining PEFT, expert routing, and reasoning templates.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Arcadia: Toward a Full-Lifecycle Framework for Embodied Lifelong Learning](../../CVPR2026/robotics/arcadia_toward_a_full-lifecycle_framework_for_embodied_lifelong_learning.md)
 - [\[ICLR 2026\] All-day Multi-scenes Lifelong Vision-and-Language Navigation with Tucker Adaptation](all-day_multi-scenes_lifelong_vision-and-language_navigation_with_tucker_adaptat.md)
 - [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
+- [\[CVPR 2026\] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](../../CVPR2026/robotics/lifelong_imitation_learning_multimodal_latent_rep.md)
 - [\[CVPR 2025\] Think Small, Act Big: Primitive Prompt Learning for Lifelong Robot Manipulation](../../CVPR2025/robotics/think_small_act_big_primitive_prompt_learning_for_lifelong_robot_manipulation.md)
-- [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](../../NeurIPS2025/robotics/mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
 
 </div>
 

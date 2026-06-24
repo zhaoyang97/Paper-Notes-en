@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FSPO: Few-Shot Optimization of Synthetic Preferences Effectively Personalizes to Real Users
 description: >-
-  [ICLR 2026][Alignment & RLHF][Sim2Real] Reward modeling is reformulated as a "user-as-task" black-box meta-learning problem. LLMs use few-shot in-context preferences to rapidly infer personalized reward functions. Combined with a million-scale synthetic preference dataset (emphasizing diversity and structure), the approach enables Sim2Real transfer to real u
+  [ICLR 2026][LLM Alignment][Personalized Alignment] Reward modeling is reformulated as a "user-as-task" black-box meta-learning problem. LLMs use few-shot in-context preferences to rapidly infer personalized reward functions. Combined with a million-scale synthetic preference dataset (emphasizing diversity and structure), the approach enables Sim2Real transfer to real users, achieving a 70% win rate against humans in open-ended QA.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Sim2Real
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Personalized Alignment"
+  - "Meta-Learning"
+  - "Few-Shot Preference Optimization"
+  - "Synthetic Preference Data"
+  - "Sim2Real"
+  - "Reward Modeling"
 date: 2026-05-08
-content_hash: 7d514a9693cf0b17
+content_hash: 78d7547dc36a064e
 ---
+
 # FSPO: Few-Shot Optimization of Synthetic Preferences Effectively Personalizes to Real Users
 
 **Conference**: ICLR 2026  
@@ -157,10 +163,10 @@ Data Diversity Ablation (ALOE / BGE-M3 similarity, lower is better):
 ## Related Papers
 
 - [\[NeurIPS 2025\] PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors](../../NeurIPS2025/llm_alignment/polyjuice_makes_it_real_black-box_universal_red_teaming_for_synthetic_image_dete.md)
+- [\[ICLR 2026\] Learning from Noisy Preferences: A Semi-Supervised Learning Approach to Direct Preference Optimization](learning_from_noisy_preferences_a_semi-supervised_learning_approach_to_direct_pr.md)
 - [\[ICLR 2026\] Learning Ordinal Probabilistic Reward from Preferences (OPRM)](learning_ordinal_probabilistic_reward_from_preferences.md)
 - [\[ICLR 2026\] Aligning Deep Implicit Preferences by Learning to Reason Defensively](aligning_deep_implicit_preferences_by_learning_to_reason_defensively.md)
 - [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
-- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](data_selection_for_llm_alignment_using_fine-grained_preferences.md)
 
 </div>
 

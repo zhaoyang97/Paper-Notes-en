@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning
 description: >-
-  [NeurIPS 2025][Transfer Learning / Multi-Source Transfer Learning / High-Dimensional Statistics][Multi-source transfer learning] This paper proposes a theoretical framework based on K-L divergence and high-dimensional st…
+  [NeurIPS 2025][Transfer Learning][optimal transfer quantity] This paper proposes a theoretical framework based on K-L divergence and high-dimensional statistical analysis to determine the optimal number of samples to transfer from each source task in multi-source transfer learning. The framework avoids the negative transfer caused by naively using all source data, and the resulting algorithm OTQMS surpasses the state of the art by 1.0–1.5% on DomainNet and Office-Home while r…
 tags:
   - "NeurIPS 2025"
-  - "Transfer Learning / Multi-Source Transfer Learning / High-Dimensional Statistics"
-  - "Multi-source transfer learning"
+  - "Transfer Learning"
+  - "Multi-Source Transfer Learning"
+  - "High-Dimensional Statistics"
   - "optimal transfer quantity"
   - "K-L divergence"
   - "Fisher information matrix"
   - "data efficiency"
 date: 2026-05-08
-content_hash: b1e1b3978b61c525
+content_hash: 3e1c2fcd69d04259
 ---
 
 # A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning
@@ -121,10 +122,10 @@ Comparison with other baselines (10-shot, DomainNet Avg):
 ## Related Papers
 
 - [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
+- [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](../../ICLR2026/learning_theory/transfer_learning_in_infinite_width_feature_learning_networks.md)
+- [\[ICLR 2026\] Residual Feature Integration is Sufficient to Prevent Negative Transfer](../../ICLR2026/learning_theory/residual_feature_integration_is_sufficient_to_prevent_negative_transfer.md)
 - [\[NeurIPS 2025\] Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification](diffusion_transformers_for_imputation_statistical_efficiency_and_uncertainty_qua.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
+- [\[ICLR 2026\] Understanding the Mechanisms of Fast Hyperparameter Transfer](../../ICLR2026/learning_theory/understanding_the_mechanisms_of_fast_hyperparameter_transfer.md)
 
 </div>
 

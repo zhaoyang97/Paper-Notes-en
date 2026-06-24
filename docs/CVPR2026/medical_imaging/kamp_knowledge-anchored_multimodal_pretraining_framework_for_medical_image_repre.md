@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation
 description: >-
-  [CVPR 2026][Medical Imaging][GRPO] KAMP utilizes LLM-generated "patient-personalized diagnostic knowledge" as a semantic anchor to align medical images with multimodal biomedical signals (pathological, genomic, etc.). Through a three-stage training process (alignment → GRPO-refined generator → retraining alignment), knowledge accuracy is iteratively imp
+  [CVPR 2026][Medical Imaging][Medical image pretraining] KAMP utilizes LLM-generated "patient-personalized diagnostic knowledge" as a semantic anchor to align medical images with multimodal biomedical signals (pathological, genomic, etc.). Through a three-stage training process (alignment → GRPO-refined generator → retraining alignment), knowledge accuracy is iteratively improved. It outperforms unimodal, bimodal, and trimodal baselines in few-shot classification for brain…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - GRPO
-  - few-shot
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical image pretraining"
+  - "cross-modal alignment"
+  - "LLM personalized knowledge"
+  - "semantic anchor"
+  - "GRPO"
+  - "few-shot"
 date: 2026-05-08
-content_hash: 0e09bd6275e0ae2e
+content_hash: 0a1c7f0972c329c8
 ---
+
 # KAMP: Knowledge-Anchored Multimodal Pretraining Framework for Medical Image Representation
 
 **Conference**: CVPR 2026  
@@ -139,8 +144,8 @@ Comparison of reinforcement learning objectives on FedBCa 20-shot (macro-AUC):
 
 - [\[CVPR 2026\] MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration](medkco_medical_vision-language_pretraining_via_knowledge-driven_cognitive_orches.md)
 - [\[CVPR 2026\] Multimodal Causality-Driven Representation Learning for Generalizable Medical Image Segmentation](multimodal_causal-driven_representation_learning_for_generalizable_medical_image.md)
+- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
 - [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
-- [\[CVPR 2026\] MorphSeek: Fine-grained Latent Representation-Level Policy Optimization for Deformable Image Registration](morphseek_fine-grained_latent_representation-level_policy_optimization_for_defor.md)
 - [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
 
 </div>

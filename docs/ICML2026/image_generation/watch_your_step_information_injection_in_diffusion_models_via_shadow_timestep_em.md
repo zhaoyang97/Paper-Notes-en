@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Watch Your Step: Information Injection in Diffusion Models via Shadow Timestep Embedding
 description: >-
-  [ICML 2026][Image Generation][Timestep embedding] This paper reveals that the long-overlooked "timestep embedding" in diffusion models serves as an unoccupied information side channel. By extending the training timestep range to a "shadow interval" (shadow timestep) and binding an alternative data distribution to it, the same diffusion model can generate normal images
+  [ICML 2026][Image Generation][Timestep embedding] This paper reveals that the long-overlooked "timestep embedding" in diffusion models serves as an unoccupied information side channel. By extending the training timestep range to a "shadow interval" (shadow timestep) and binding an alternative data distribution to it, the same diffusion model can generate normal images in the explicit interval and "hidden" images in the shadow interval without changing the scheduler interface.…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Timestep embedding
-  - Shadow Timestep
-  - Watermarking
+  - "ICML 2026"
+  - "Image Generation"
+  - "Timestep embedding"
+  - "Shadow Timestep"
+  - "Backdoor Attack"
+  - "Watermarking"
+  - "Mutual Coherence"
+  - "Steganography"
 date: 2026-05-08
-content_hash: f4f99a290970bbe3
+content_hash: 15f47294dd6c0a18
 ---
+
 # Watch Your Step: Information Injection in Diffusion Models via Shadow Timestep Embedding
 
 **Conference**: ICML 2026  
@@ -120,11 +124,11 @@ Core conclusion: **STE can reliably inject auxiliary data distributions while ma
 
 ## Related Papers
 
-- [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](information-geometric_adaptive_sampling_for_graph_diffusion.md)
-- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
-- [\[ICLR 2026\] RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation](../../ICLR2026/image_generation/rmflow_refined_mean_flow_by_a_noise-injection_step_for_multimodal_generation.md)
-- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](../../ICLR2026/image_generation/the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
 - [\[ICML 2026\] Timestep Rescheduling in Diffusion Inversion](timestep_rescheduling_in_diffusion_inversion.md)
+- [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](information-geometric_adaptive_sampling_for_graph_diffusion.md)
+- [\[ICLR 2026\] RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation](../../ICLR2026/image_generation/rmflow_refined_mean_flow_by_a_noise-injection_step_for_multimodal_generation.md)
+- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
+- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](../../ICLR2026/image_generation/the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
 
 </div>
 

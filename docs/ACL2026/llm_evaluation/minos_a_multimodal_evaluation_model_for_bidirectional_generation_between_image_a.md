@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] By employing a three-step strategy of "stringent data quality control + SFT + DPO alignment," the authors trained Minos, an 8B evaluation model. Using 57K high-quality evaluation samples—less than half the scale of existing works—Minos can score bidirectional multimodal generation tasks (I2T and T2I). It outperforms al
+  [ACL 2026 Findings][LLM Evaluation][Multimodal Evaluation] By employing a three-step strategy of "stringent data quality control + SFT + DPO alignment," the authors trained Minos, an 8B evaluation model. Using 57K high-quality evaluation samples—less than half the scale of existing works—Minos can score bidirectional multimodal generation tasks (I2T and T2I). It outperforms all open-source MLLM-evaluators across 16 out-of-domain tasks and approaches the performance of GPT-4o.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Multimodal Evaluation"
+  - "Data Quality Control"
+  - "I2T/T2I Bidirectional Evaluation"
+  - "DPO Alignment"
+  - "reference-free scoring"
 date: 2026-05-08
-content_hash: c7cb771c88765a7d
+content_hash: b87defb6d243ca45
 ---
+
 # Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text
 
 **Conference**: ACL 2026 Findings  
@@ -141,9 +147,9 @@ The evaluation protocol follows LLaVA-Critic: Pearson-r measures the correlation
 
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 - [\[ACL 2025\] EditInspector: A Benchmark for Evaluation of Text-Guided Image Edits](../../ACL2025/llm_evaluation/editinspector_a_benchmark_for_evaluation_of_text-guided_image_edits.md)
+- [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
 - [\[ICML 2025\] Communicating Activations Between Language Model Agents](../../ICML2025/llm_evaluation/communicating_activations_between_language_model_agents.md)
 - [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
-- [\[ACL 2026\] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation](illusions_of_the_gold_standard_a_large-scale_analysis_of_human_evaluation_protoc.md)
 
 </div>
 

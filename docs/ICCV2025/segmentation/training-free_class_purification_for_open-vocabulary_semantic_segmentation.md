@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Open-vocabulary semantic segmentation] This paper proposes FreeCP, a training-free class purification framework that addresses class redundancy and visual-language ambiguity arising from over-co…
+  [ICCV 2025][Segmentation][Open-vocabulary semantic segmentation] This paper proposes FreeCP, a training-free class purification framework that addresses class redundancy and visual-language ambiguity arising from over-complete vocabularies in open-vocabulary semantic segmentation (OVSS), via a two-stage strategy of redundancy purification and ambiguity purification. As a plug-and-play module, FreeCP consistently improves existing methods across eight benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "class redundancy"
   - "visual-language ambiguity"
 date: 2026-05-08
-content_hash: ddf2696506049d35
+content_hash: d8cb2631e15de6aa
 ---
 
 # Training-Free Class Purification for Open-Vocabulary Semantic Segmentation
@@ -169,8 +169,8 @@ Key findings:
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](../../CVPR2026/segmentation/the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

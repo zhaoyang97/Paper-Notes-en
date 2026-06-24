@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Exploratory Causal Inference in SAEnce
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes the "Exploratory Causal Inference" paradigm: rather than requiring scientists to presuppose which effects to measure, it uses foundation models + Sparse Autoencoders (SAEs) to map high-dimensional raw observations (e.g., ant behavior videos) into interpretable neural channels. Then, a recursive hier
+  [ICLR 2026][Causal Inference][Exploratory Causal Inference] This paper proposes the "Exploratory Causal Inference" paradigm: rather than requiring scientists to presuppose which effects to measure, it uses foundation models + Sparse Autoencoders (SAEs) to map high-dimensional raw observations (e.g., ant behavior videos) into interpretable neural channels. Then, a recursive hierarchical testing algorithm titled **Neural Effect Search** automatically discovers unknown outcome v…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Exploratory Causal Inference"
+  - "Sparse Autoencoders"
+  - "Foundation Models"
+  - "Multiple Hypothesis Testing"
+  - "Treatment Effect Discovery"
+  - "Neural Effect Search"
 date: 2026-05-08
-content_hash: 58eabbdf8092fa3b
+content_hash: 7406316c3bf99549
 ---
+
 # Exploratory Causal Inference in SAEnce
 
 **Conference**: ICLR 2026  

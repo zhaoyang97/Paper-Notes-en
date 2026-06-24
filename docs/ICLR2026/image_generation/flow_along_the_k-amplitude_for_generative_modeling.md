@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Flow Along the $K$-Amplitude for Generative Modeling
 description: >-
-  [ICLR 2026][Image Generation][K-Flow] This paper proposes K-Flow, which reinterprets the "time" in flow matching as a **scaling parameter $k$** that organizes frequencies/scales. By allowing generation to unfold along the K-amplitude (frequency bands/coefficients) space from low to high frequencies, the model achieves natural scale-controllable generation
+  [ICLR 2026][Image Generation][K-Flow] This paper proposes K-Flow, which reinterprets the "time" in flow matching as a **scaling parameter $k$** that organizes frequencies/scales. By allowing generation to unfold along the K-amplitude (frequency bands/coefficients) space from low to high frequencies, the model achieves natural scale-controllable generation (omitting class conditions, frequency editing, training-free restoration) and obtains competitive FIDs in image generation…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - K-Flow
-  - Flow Matching
-  - PCA
+  - "ICLR 2026"
+  - "Image Generation"
+  - "K-Flow"
+  - "Flow Matching"
+  - "Frequency Domain Generation"
+  - "Wavelet Transform"
+  - "Fourier Transform"
+  - "PCA"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: 7a740b84c3e10ea4
+content_hash: c88fa932922c6c2e
 ---
+
 # Flow Along the $K$-Amplitude for Generative Modeling
 
 **Conference**: ICLR 2026  
@@ -124,10 +129,10 @@ Ablations focused on "scale controllability," quantified by CDR (Conditional Dis
 ## Related Papers
 
 - [\[ICLR 2026\] LapFlow: Laplacian Multi-scale Flow Matching for Generative Modeling](lapflow_laplacian_multi-scale_flow_matching_for_generative_modeling.md)
-- [\[ICLR 2026\] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains](mirror_flow_matching_with_heavy-tailed_priors_for_generative_modeling_on_convex_.md)
-- [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
 - [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](../../CVPR2026/image_generation/rectok_reconstruction_distillation_along_rectified_flow.md)
-- [\[ICLR 2026\] Partition Generative Modeling: Masked Modeling Without Masks](partition_generative_modeling_masked_modeling_without_masks.md)
+- [\[ICLR 2026\] Mirror Flow Matching with Heavy-Tailed Priors for Generative Modeling on Convex Domains](mirror_flow_matching_with_heavy-tailed_priors_for_generative_modeling_on_convex_.md)
+- [\[ICLR 2026\] Gauge Flow Matching: Efficient Constrained Generative Modeling over General Convex Set and Beyond](gauge_flow_matching_efficient_constrained_generative_modeling_over_general_conve.md)
+- [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
 
 </div>
 

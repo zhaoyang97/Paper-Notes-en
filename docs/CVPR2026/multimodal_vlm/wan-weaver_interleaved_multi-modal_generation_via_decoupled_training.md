@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Wan-Weaver proposes a decoupled architecture consisting of a Planner (VLM) and a Visualizer (DiT). By training the planner with large-scale textual-proxy data instead of real interleaved data, it achieves SOTA interleaved text-image generation. It reaches an Overall score of 8.67 on OpenING, surpassing GPT-4o (8.20) an
+  [CVPR 2026][Multimodal VLM][Interleaved multi-modal generation] Wan-Weaver proposes a decoupled architecture consisting of a Planner (VLM) and a Visualizer (DiT). By training the planner with large-scale textual-proxy data instead of real interleaved data, it achieves SOTA interleaved text-image generation. It reaches an Overall score of 8.67 on OpenING, surpassing GPT-4o (8.20) and performing competitively with Nano Banana (8.85), while maintaining strong understanding capab…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Interleaved multi-modal generation"
+  - "decoupled training"
+  - "textual-proxy data"
+  - "visual consistency"
+  - "planning-visualization"
 date: 2026-05-08
-content_hash: 42693acfdfeed927
+content_hash: edd12f7438236760
 ---
+
 # Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training
 
 **Conference**: CVPR 2026  
@@ -145,7 +151,7 @@ The visualizer uses a Flow-matching loss, while the planner uses standard autore
 - [\[CVPR 2026\] Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning](narrative_weaver_towards_controllable_long-range_visual_consistency_with_multi-m.md)
 - [\[CVPR 2026\] WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation](weave_unleashing_and_benchmarking_the_in-context_interleaved_comprehension_and_g.md)
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
-- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
+- [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
 
 </div>
 

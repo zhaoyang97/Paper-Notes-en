@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Aiming at the "hard noise" in Noisy Triplet Correspondence (NTC) for Composed Image Retrieval (CIR)—where the reference and target images are highly similar but the modification text is incorrect—this paper proposes ConeSep. It first quantifies the matching fidelity of each sample using geometric boundaries in a cone s
+  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] Aiming at the "hard noise" in Noisy Triplet Correspondence (NTC) for Composed Image Retrieval (CIR)—where the reference and target images are highly similar but the modification text is incorrect—this paper proposes ConeSep. It first quantifies the matching fidelity of each sample using geometric boundaries in a cone space for noise separation, then learns a "diagonal negative composition" for each query as an explicit sem…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Noisy Triplet Correspondence"
+  - "Machine Unlearning"
+  - "Optimal Transport"
+  - "Negative Anchor"
 date: 2026-05-08
-content_hash: 03b4d9ec8db89c4d
+content_hash: 287d1aa040abbc3d
 ---
+
 # ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -146,10 +152,10 @@ Ablation by module on FashionIQ / CIRR at $\sigma=0.2$:
 ## Related Papers
 
 - [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
 - [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 - [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
-- [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](../../ACL2026/multimodal_vlm/tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
 
 </div>
 

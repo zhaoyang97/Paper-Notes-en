@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ItDPDM: Information-Theoretic Discrete Poisson Diffusion Model
 description: >-
-  [NeurIPS 2025][Image Generation][Discrete Diffusion] This paper proposes ItDPDM (Information-Theoretic Discrete Poisson Diffusion Model)…
+  [NeurIPS 2025][Image Generation][Discrete Diffusion] This paper proposes ItDPDM (Information-Theoretic Discrete Poisson Diffusion Model), which achieves exact likelihood estimation for non-negative discrete data via a Poisson noise channel and a Poisson Reconstruction Loss (PRL), eliminating ELBO approximation and dequantization. The model outperforms existing discrete diffusion models in likelihood estimation on synthetic data, CIFAR-10, and MIDI music.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Likelihood Estimation"
   - "Symbolic Music"
 date: 2026-05-08
-content_hash: 4b03aceedf3910c8
+content_hash: 22813bf8fddca61f
 ---
 
 # ItDPDM: Information-Theoretic Discrete Poisson Diffusion Model

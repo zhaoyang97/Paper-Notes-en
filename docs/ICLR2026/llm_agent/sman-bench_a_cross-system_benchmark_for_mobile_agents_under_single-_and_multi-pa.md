@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SMAN-Bench: A Cross-System Benchmark for Mobile Agents under Single- and Multi-path, Ambiguous, and Noisy Tasks
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] SMAN-Bench transforms a 3-million-page graph-structured mobile operation corpus (Mobile3M) into a mobile agent benchmark. By using slot templates to automatically label multiple trajectories with the same instruction, it supports "offline multi-path" evaluation (where one instruction can have several correct solutions)
+  [ICLR 2026][LLM Agent][Mobile GUI Agent] SMAN-Bench transforms a 3-million-page graph-structured mobile operation corpus (Mobile3M) into a mobile agent benchmark. By using slot templates to automatically label multiple trajectories with the same instruction, it supports "offline multi-path" evaluation (where one instruction can have several correct solutions). It additionally constructs two subsets—one with advertising noise and one with ambiguous instructions—to systematical…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Mobile GUI Agent"
+  - "Multi-path Evaluation"
+  - "Noise Robustness"
+  - "Proactive Interaction"
+  - "Slot Labeling"
 date: 2026-05-08
-content_hash: 40754452f1608529
+content_hash: d5744aae2512bd5f
 ---
+
 # SMAN-Bench: A Cross-System Benchmark for Mobile Agents under Single- and Multi-path, Ambiguous, and Noisy Tasks
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ The proactive interaction module brings up to +17.5% improvement, but the gain i
 
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
 - [\[ICLR 2026\] From Single to Multi-Granularity: Toward Long-Term Memory Association and Selection of Conversational Agents](from_single_to_multi-granularity_toward_long-term_memory_association_and_selecti.md)
+- [\[ICLR 2026\] Terminal-Bench: Benchmarking Agents on Difficult, Real-World Tasks in the Command Line Interface](terminal-bench_benchmarking_agents_on_hard_realistic_tasks_in_command_line_inter.md)
 - [\[ICLR 2026\] WARC-Bench: Web Archive based Benchmark for GUI Subtask Executions](warc-bench_web_archive_based_benchmark_for_gui_subtask_executions.md)
-- [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
-- [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Product of Experts for Visual Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper unifies controllable image/video generation as a "sampling problem from a product distribution of multiple heterogeneous expert models"—treating generative models as priors, discriminative models (VLMs) as soft constraints, and physics simulators as hard constraints. By utilizing "Annealed MCMC + SMC Resampl
+  [ICLR 2026][Image Generation][Product of Experts] This paper unifies controllable image/video generation as a "sampling problem from a product distribution of multiple heterogeneous expert models"—treating generative models as priors, discriminative models (VLMs) as soft constraints, and physics simulators as hard constraints. By utilizing "Annealed MCMC + SMC Resampling" during inference without retraining, the approach achieves superior controllability and fidelity compared…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Product of Experts"
+  - "Annealed MCMC"
+  - "Sequential Monte Carlo"
+  - "Heterogeneous Model Composition"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: d0a6d23126934f17
+content_hash: ab86347d319e7498
 ---
+
 # Product of Experts for Visual Generation
 
 **Conference**: ICLR 2026  

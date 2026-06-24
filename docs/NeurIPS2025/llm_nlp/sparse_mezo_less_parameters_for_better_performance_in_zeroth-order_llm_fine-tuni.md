@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning
 description: >-
-  [NeurIPS 2025][LLM/NLP][zeroth-order optimization] This paper proposes Sparse MeZO (S-MeZO), motivated by the observation that zeroth-order gradient noise disproportionately affects parameters with large magnitudes. S-Me…
+  [NeurIPS 2025][LLM (Other)][zeroth-order optimization] This paper proposes Sparse MeZO (S-MeZO), motivated by the observation that zeroth-order gradient noise disproportionately affects parameters with large magnitudes. S-MeZO selectively applies zeroth-order perturbation and updates only to small-magnitude parameters, achieving significant performance gains (+9% on RTE) and convergence acceleration (3.5×) without any additional memory overhead.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "zeroth-order optimization"
   - "sparse fine-tuning"
   - "memory efficiency"
   - "LLM fine-tuning"
   - "gradient noise"
 date: 2026-05-08
-content_hash: 194a79dfd6dab8df
+content_hash: 74a5f63adaedef16
 ---
 
 # Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning
@@ -164,11 +164,11 @@ S-MeZO achieves **+9.0%** on RTE, **+5.0%** on BoolQ, and **+3.7%** on average o
 
 ## Related Papers
 
+- [\[ACL 2025\] Refining Salience-Aware Sparse Fine-Tuning Strategies for Language Models](../../ACL2025/llm_nlp/refining_salience-aware_sparse_fine-tuning_strategies_for_language_models.md)
 - [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
 - [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
 - [\[NeurIPS 2025\] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models](space_noise_contrastive_estimation_stabilizes_self-play_fine-tuning_for_large_la.md)
-- [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
-- [\[NeurIPS 2025\] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery](moose-chem2_exploring_llm_limits_in_fine-grained_scientific_hypothesis_discovery.md)
+- [\[ICML 2025\] LaRoSA: Enhancing LLM Efficiency via Layerwise Rotated Sparse Activation](../../ICML2025/llm_nlp/la_rosa_enhancing_llm_efficiency_via_layerwise_rotated_sparse_activation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TP-MDDN: Task-Preferenced Multi-Demand-Driven Navigation with Autonomous Decision-Making
 description: >-
-  [NeurIPS 2025][3D Vision][Embodied Navigation] This paper proposes the Task-Preferenced Multi-Demand-Driven Navigation (TP-MDDN) benchmark and the AWMSystem autonomous decision-making framework…
+  [NeurIPS 2025][3D Vision][Embodied Navigation] This paper proposes the Task-Preferenced Multi-Demand-Driven Navigation (TP-MDDN) benchmark and the AWMSystem autonomous decision-making framework, which achieves long-horizon multi-subtask navigation through three LLM modules—instruction decomposition, dynamic goal selection, and task status monitoring—coupled with a multi-dimensional cumulative semantic map.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Map"
   - "Large Language Models"
 date: 2026-05-08
-content_hash: f906511a669b936e
+content_hash: 357f05291a0e8c55
 ---
 
 # TP-MDDN: Task-Preferenced Multi-Demand-Driven Navigation with Autonomous Decision-Making
@@ -143,10 +143,10 @@ The system design draws on the world model concepts of WMNav and the autonomous 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
+- [\[CVPR 2026\] Task-Driven Implicit Representations for Automated Design of LiDAR Systems](../../CVPR2026/3d_vision/task-driven_implicit_representations_for_automated_design_of_lidar_systems.md)
+- [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](../../CVPR2026/3d_vision/multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
 - [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](../../CVPR2026/3d_vision/lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
-- [\[CVPR 2026\] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation](../../CVPR2026/3d_vision/context-nav_context-driven_exploration_and_viewpoint-aware_3d_spatial_reasoning_.md)
 - [\[NeurIPS 2025\] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion](geocomplete_geometry-aware_diffusion_for_reference-driven_image_completion.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](../../CVPR2026/3d_vision/3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
 
 </div>
 

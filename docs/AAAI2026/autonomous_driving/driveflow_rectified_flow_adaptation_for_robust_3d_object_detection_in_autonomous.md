@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving
 description: >-
-  [AAAI 2026][Autonomous Driving][3D Object Detection] DriveFlow is a rectified flow adaptation method built upon pretrained T2I Flow models. Through frequency decomposition…
+  [AAAI 2026][Autonomous Driving][3D Object Detection] DriveFlow is a rectified flow adaptation method built upon pretrained T2I Flow models. Through frequency decomposition, it preserves high-frequency foreground content while applying dual-frequency optimization to the background, enabling training-free driving scene image editing for data augmentation and significantly improving the OOD robustness of vision-based 3D detectors.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Image Editing"
   - "Robustness"
 date: 2026-05-08
-content_hash: 1b9485f26e13b51c
+content_hash: c478119d02f198e5
 ---
 
 # DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving
@@ -170,9 +170,9 @@ Key conclusion: **DriveFlow with only Snow augmentation surpasses DriveGEN with 
 
 - [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](exploring_surround-view_fisheye_camera_3d_object_detection.md)
 - [\[AAAI 2026\] FQ-PETR: Fully Quantized Position Embedding Transformation for Multi-View 3D Object Detection](fq-petr_fully_quantized_position_embedding_transformation_fo.md)
+- [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](../../ICLR2026/autonomous_driving/asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
+- [\[ECCV 2024\] GraphBEV: Towards Robust BEV Feature Alignment for Multi-Modal 3D Object Detection](../../ECCV2024/autonomous_driving/graphbev_towards_robust_bev_feature_alignment_for_multi-modal_3d_object_detectio.md)
 - [\[ICCV 2025\] Robust 3D Object Detection using Probabilistic Point Clouds from Single-Photon LiDARs](../../ICCV2025/autonomous_driving/robust_3d_object_detection_using_probabilistic_point_clouds_from_single-photon_l.md)
-- [\[AAAI 2026\] MOBA: A Material-Oriented Backdoor Attack against LiDAR-based 3D Object Detection](moba_a_material-oriented_backdoor_attack_against_lidar-based_3d_object_detection.md)
-- [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](../../CVPR2026/autonomous_driving/look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
 
 </div>
 

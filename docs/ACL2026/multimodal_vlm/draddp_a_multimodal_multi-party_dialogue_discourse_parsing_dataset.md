@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DraDDP: A Multimodal Multi-Party Dialogue Discourse Parsing Dataset
 description: >-
-  [ACL 2026][Multimodal VLM][SDRT] DraDDP constructs the first publicly available English multimodal multi-party dialogue discourse parsing dataset. Using traditional parsers, LLMs, and multimodal LLMs, it systematically evaluates the varying contributions of text, audio, and video cues to dependency edge and discourse relation recognition.
+  [ACL 2026 Findings][Multimodal VLM][Multi-party dialogue] DraDDP constructs the first publicly available English multimodal multi-party dialogue discourse parsing dataset. Using traditional parsers, LLMs, and multimodal LLMs, it systematically evaluates the varying contributions of text, audio, and video cues to dependency edge and discourse relation recognition.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - SDRT
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Multi-party dialogue"
+  - "Discourse parsing"
+  - "Multimodal dataset"
+  - "Audio-visual cues"
+  - "SDRT"
 date: 2026-05-08
-content_hash: 0192e5e7e0931f6a
+content_hash: 91467a95361f9ac7
 ---
+
 # DraDDP: A Multimodal Multi-Party Dialogue Discourse Parsing Dataset
 
 **Conference**: ACL 2026 Findings  
@@ -134,10 +139,20 @@ The paper does not propose a new loss function; the training strategy follows ex
 - Value: ⭐⭐⭐⭐⭐ Highly useful for multimodal dialogue understanding, meeting parsing, social scenario modeling, and MLLM diagnostics; sits at the high-value end of resource-oriented papers.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2025\] AkaCE: A Multimodal Multi-party Dataset for Emotion Recognition in Movie Dialogues](../../ACL2025/multimodal_vlm/akan_cinematic_emotions_ace_a_multimodal_multi-party_dataset_for_emotion_recogni.md)
+- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](../../CVPR2026/multimodal_vlm/chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
+- [\[ICLR 2026\] ChartGalaxy: A Dataset for Infographic Chart Understanding and Generation](../../ICLR2026/multimodal_vlm/chartgalaxy_a_dataset_for_infographic_chart_understanding_and_generation.md)
+- [\[ACL 2026\] GuideDog: A Real-World Egocentric Multimodal Dataset for Blind and Low-Vision Accessibility-Aware Guidance](guidedog_a_real-world_egocentric_multimodal_dataset_for_blind_and_low-vision_acc.md)
+- [\[ACL 2026\] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval](sculpting_the_vector_space_towards_efficient_multi-vector_visual_document_retrie.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] AkaCE: A Multimodal Multi-party Dataset for Emotion Recognition in Movie Dialogues](../../ACL2025/multimodal_vlm/akan_cinematic_emotions_ace_a_multimodal_multi-party_dataset_for_emotion_recogni.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InfinityHuman: Towards Long-Term Audio-Driven Human Animation
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Model] InfinityHuman proposes a coarse-to-fine framework that "generates motion at low resolution first, then refines via pose guidance." By utilizing pose sequences—which are decoupled from appearance and naturally resistant to temporal degradation—alongside a first-frame visual anchor, the method combats identity drift and
+  [CVPR 2026][Audio & Speech][Audio-driven Animation] InfinityHuman proposes a coarse-to-fine framework that "generates motion at low resolution first, then refines via pose guidance." By utilizing pose sequences—which are decoupled from appearance and naturally resistant to temporal degradation—alongside a first-frame visual anchor, the method combats identity drift and color shifts in long videos. It further introduces hand-specific reward feedback learning to correct hand di…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Audio-driven Animation"
+  - "Long Video Generation"
+  - "Pose-guided Refinement"
+  - "Hand Reward Learning"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 922ea5a301aaba26
+content_hash: 547f2b42f5d2a590
 ---
+
 # InfinityHuman: Towards Long-Term Audio-Driven Human Animation
 
 **Conference**: CVPR 2026  
@@ -137,11 +142,11 @@ Both LR-A2V and PG-Refiner are initialized from pre-trained Goku-I2V. The refine
 
 ## Related Papers
 
-- [\[CVPR 2026\] Soul: Breathe Life into Digital Human for High-fidelity Long-term Multimodal Animation](soul_breathe_life_into_digital_human_for_high-fidelity_long-term_multimodal_anim.md)
-- [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
-- [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
-- [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
-- [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
+- [\[ICLR 2026\] When and Where to Reset Matters for Long-Term Test-Time Adaptation](../../ICLR2026/audio_speech/when_and_where_to_reset_matters_for_long-term_test-time_adaptation.md)
+- [\[CVPR 2026\] AudioStory: Generating Long-Form Narrative Audio with Large Language Models](audiostory_generating_long-form_narrative_audio_with_large_language_models.md)
+- [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
+- [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](../../ACL2026/audio_speech/planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
+- [\[ICLR 2026\] SpeechJudge: Towards Human-Level Judgment for Speech Naturalness](../../ICLR2026/audio_speech/speechjudge_towards_human-level_judgment_for_speech_naturalness.md)
 
 </div>
 

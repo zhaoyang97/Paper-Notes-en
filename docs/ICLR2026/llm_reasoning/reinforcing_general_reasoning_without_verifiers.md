@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reinforcing General Reasoning without Verifiers
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper proposes VeriFree—a DeepSeek-R1-Zero-style reinforcement learning method that **requires no verifier**. Instead of judging the correctness of an answer, it directly maximizes the probability of the reference answer being generated conditioned on the model's self-generated reasoning chain. Strictly derived fr
+  [ICLR 2026][Reasoning][Verifier-free RL] This paper proposes VeriFree—a DeepSeek-R1-Zero-style reinforcement learning method that **requires no verifier**. Instead of judging the correctness of an answer, it directly maximizes the probability of the reference answer being generated conditioned on the model's self-generated reasoning chain. Strictly derived from the RL objective, this approach extends R1-Zero training from mathematical and code domains to general reasoning fie…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Verifier-free RL"
+  - "RLVR"
+  - "Chain-of-Thought"
+  - "Variance Reduction"
+  - "General Reasoning"
 date: 2026-05-08
-content_hash: 73801beb094ce4e0
+content_hash: ded1a23b5ff45c37
 ---
+
 # Reinforcing General Reasoning without Verifiers
 
 **Conference**: ICLR 2026  
@@ -149,8 +154,8 @@ Starting from the base models, VeriFree increases average accuracy by 12%–40%,
 
 - [\[ICLR 2026\] Taming Imperfect Process Verifiers: A Sampling Perspective on Backtracking](taming_imperfect_process_verifiers_a_sampling_perspective_on_backtracking.md)
 - [\[ICLR 2026\] ProofOptimizer: Training Language Models to Simplify Proofs without Human Demonstrations](proofoptimizer_training_language_models_to_simplify_proofs_without_human_demonst.md)
-- [\[ICLR 2026\] C-Voting: Confidence-Based Test-Time Voting without Explicit Energy Functions](c-voting_confidence-based_test-time_voting_without_explicit_energy_functions.md)
 - [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](../../NeurIPS2025/llm_reasoning/on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
+- [\[ICLR 2026\] C-Voting: Confidence-Based Test-Time Voting without Explicit Energy Functions](c-voting_confidence-based_test-time_voting_without_explicit_energy_functions.md)
 - [\[ACL 2026\] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration](../../ACL2026/llm_reasoning/self-reinforcing_controllable_synthesis_of_rare_relational_data_via_bayesian_cal.md)
 
 </div>

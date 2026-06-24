@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporally Detailed Hypergraph Neural ODEs for Disease Progression Modeling
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] The paper models clinically recognized disease progression pathways as "Temporally Detailed Hypergraphs" (TD-Hypergraphs) with per-marker timestamps. It utilizes a Neural ODE driven by a learnable Hypergraph Laplacian to characterize continuous-time progression dynamics under irregular visit data. On two real-world EHR
+  [ICLR 2026][Computational Biology][Disease progression modeling] The paper models clinically recognized disease progression pathways as "Temporally Detailed Hypergraphs" (TD-Hypergraphs) with per-marker timestamps. It utilizes a Neural ODE driven by a learnable Hypergraph Laplacian to characterize continuous-time progression dynamics under irregular visit data. On two real-world EHR datasets, it predicts complication markers for the next visit…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Disease progression modeling"
+  - "Hypergraph neural ODE"
+  - "EHR"
+  - "continuous-time dynamics"
+  - "patient subtyping"
 date: 2026-05-08
-content_hash: 5f2af73d566fcadf
+content_hash: 5b8be52f47263c36
 ---
+
 # Temporally Detailed Hypergraph Neural ODEs for Disease Progression Modeling
 
 **Conference**: ICLR 2026  
@@ -144,10 +150,10 @@ Effectiveness of the two core components: Adaptive Incidence Matrix $H_p$ and Le
 ## Related Papers
 
 - [\[ICLR 2026\] Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction](automatic_and_structure-aware_sparsification_of_hybrid_neural_odes_with_applicat.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 - [\[ICLR 2026\] Intrinsic Lorentz Neural Network](intrinsic_lorentz_neural_network.md)
 - [\[ICML 2026\] Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference](../../ICML2026/computational_biology/disentangling_latent_risk_pathways_via_bayesian_hypergraph_inference.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[ICLR 2026\] Animal behavioral analysis and neural encoding with transformer-based self-supervised pretraining](animal_behavioral_analysis_and_neural_encoding_with_transformer-based_self-super.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
 
 </div>
 

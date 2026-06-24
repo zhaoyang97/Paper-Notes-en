@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Intervention-Aware Multiscale Representation Learning from Imaging Phenomics and Perturbation Transcriptomics
 description: >-
-  [CVPR 2026][Multimodal VLM][Knowledge Distillation] Paired perturbation transcriptomics (RNA-seq) is utilized as "privileged information" during training to guide microscopy image encoders. Through a "transcriptome-conditional teacher → image-only student" distillation framework, mechanistic signals of drug actions are injected into image representations. This enables *
+  [CVPR 2026][Multimodal VLM][Phenotypic Screening] Paired perturbation transcriptomics (RNA-seq) is utilized as "privileged information" during training to guide microscopy image encoders. Through a "transcriptome-conditional teacher → image-only student" distillation framework, mechanistic signals of drug actions are injected into image representations. This enables **one-shot migration to unseen drugs/genetic perturbations** and drug-target discovery at test time using only…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Phenotypic Screening"
+  - "Knowledge Distillation"
+  - "Perturbation Transcriptomics"
+  - "Drug Discovery"
+  - "Weakly Paired Data"
 date: 2026-05-08
-content_hash: 68ef2b7eacf22d34
+content_hash: b1039a1c5eb054a9
 ---
+
 # Intervention-Aware Multiscale Representation Learning from Imaging Phenomics and Perturbation Transcriptomics
 
 **Conference**: CVPR 2026  
@@ -170,9 +175,9 @@ Under DINO, the two cell lines perform similarly (U2OS even slightly higher). Wi
 
 - [\[CVPR 2026\] Multi-Modal Image Fusion via Intervention-Stable Feature Learning](multi-modal_image_fusion_via_intervention-stable_feature_learning.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[CVPR 2026\] MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding](moon20_dynamic_modality-balanced_multimodal_representation_learning_for_e-commer.md)
-- [\[CVPR 2026\] Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis](multi-metric_representation_learning_strategy_based_on_clustering_for_fine-grain.md)
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](../../NeurIPS2025/multimodal_vlm/structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
+- [\[CVPR 2026\] MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding](moon20_dynamic_modality-balanced_multimodal_representation_learning_for_e-commer.md)
+- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
 
 </div>
 

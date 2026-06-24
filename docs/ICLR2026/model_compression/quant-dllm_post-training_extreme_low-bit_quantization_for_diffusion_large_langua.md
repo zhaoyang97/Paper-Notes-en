@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Diffusion Language Model] This paper proposes Quant-dLLM, a 2-bit weight-only post-training quantization (PTQ) framework specifically designed for Diffusion Large Language Models (dLLMs). It utilizes Masked Calibration Simulation (MCS) to align calibration data with the timestep-mask distribution of diffusion denoising, a Data-Aware arbitrary-o
+  [ICLR 2026][Model Compression][Diffusion Language Models] This paper proposes Quant-dLLM, a 2-bit weight-only post-training quantization (PTQ) framework specifically designed for Diffusion Large Language Models (dLLMs). It utilizes Masked Calibration Simulation (MCS) to align calibration data with the timestep-mask distribution of diffusion denoising, a Data-Aware arbitrary-order Quantizer (DAQ) to represent weights as an aggregation of multiple binary matrices…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Diffusion Language Model
-  - 2-bit
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Diffusion Language Models"
+  - "Post-Training Quantization"
+  - "2-bit"
+  - "Multi-binarization"
+  - "Mixed-precision"
 date: 2026-05-08
-content_hash: 4c19398ab2932960
+content_hash: a4a431c036ea826f
 ---
+
 # Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models
 
 **Conference**: ICLR 2026  
@@ -138,11 +142,11 @@ Performed on LLaDA-8B-Base and Dream-7B-Base under strict 2-bit average budget.
 
 ## Related Papers
 
-- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](../../ICML2026/model_compression/fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
-- [\[ICLR 2026\] DVD-Quant: Data-free Video Diffusion Transformers Quantization](dvd-quant_data-free_video_diffusion_transformers_quantization.md)
 - [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
-- [\[ICML 2026\] TWLA: Achieving Ternary Weights and Low-Bit Activations for LLMs via Post-Training Quantization](../../ICML2026/model_compression/twla_achieving_ternary_weights_and_low-bit_activations_for_llms_via_post-trainin.md)
+- [\[ICLR 2026\] DVD-Quant: Data-free Video Diffusion Transformers Quantization](dvd-quant_data-free_video_diffusion_transformers_quantization.md)
 - [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
+- [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 
 </div>
 

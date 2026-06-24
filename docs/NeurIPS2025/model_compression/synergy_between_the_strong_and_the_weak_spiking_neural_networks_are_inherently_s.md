@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing
 description: >-
-  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper identifies that SNNs can be naturally decomposed into multiple sub-models along the temporal dimension. By comparing output confidence across timestep…
+  [NeurIPS 2025][Model Compression][Spiking Neural Networks] This paper identifies that SNNs can be naturally decomposed into multiple sub-models along the temporal dimension. By comparing output confidence across timestep sub-models to identify "strong" and "weak" instances, the paper proposes two self-distillation schemes — Strong2Weak and Weak2Strong — that significantly improve SNN performance without any external teacher model, achieving gains of up to 5.36% on neuromorphi…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Dimension"
   - "Strong2Weak"
 date: 2026-05-08
-content_hash: 4f094195234fe38f
+content_hash: 5032542f77e34bc7
 ---
 
 # Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing
@@ -152,10 +152,10 @@ An SNN $f(\theta)$ running for $T$ timesteps is decomposed into $T$ sub-models $
 ## Related Papers
 
 - [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
-- [\[NeurIPS 2025\] QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks](quadenhancer_leveraging_quadratic_transformations_to_enhance_deep_neural_network.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
-- [\[NeurIPS 2025\] Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks](global_minimizers_of_ellp-regularized_objectives_yield_the_sparsest_relu_neural_.md)
-- [\[NeurIPS 2025\] S2M-Former: Spiking Symmetric Mixing Branchformer for Brain Auditory Attention Detection](s2m-former_spiking_symmetric_mixing_branchformer_for_brain_auditory_attention_de.md)
+- [\[ICML 2025\] Efficient Logit-based Knowledge Distillation of Deep Spiking Neural Networks for Full-Range Timestep Deployment](../../ICML2025/model_compression/efficient_logit-based_knowledge_distillation_of_deep_spiking_neural_networks_for.md)
+- [\[ICLR 2026\] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks](../../ICLR2026/model_compression/many_eyes_one_mind_temporal_multi-perspective_and_progressive_distillation_for_s.md)
+- [\[ICML 2025\] Weak-to-Strong Jailbreaking on Large Language Models](../../ICML2025/model_compression/weak-to-strong_jailbreaking_on_large_language_models.md)
+- [\[ICLR 2026\] Robust Selective Activation with Randomized Temporal K-Winner-Take-All in Spiking Neural Networks for Continual Learning](../../ICLR2026/model_compression/robust_selective_activation_with_randomized_temporal_k-winner-take-all_in_spikin.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SURF: Signature-Retained Fast Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] SURF decomposes high-resolution video generation into two stages: "low-resolution preview from a pre-trained large model + lightweight Refiner upsampling." By using training-free noise reshifting, it enables large models to maintain their layout/semantic/motion "signatures" even at low resolutions. For Wan 2.1, it achi
+  [CVPR 2026][Video Generation][Video Generation Acceleration] SURF decomposes high-resolution video generation into two stages: "low-resolution preview from a pre-trained large model + lightweight Refiner upsampling." By using training-free noise reshifting, it enables large models to maintain their layout/semantic/motion "signatures" even at low resolutions. For Wan 2.1, it achieves a 12.5× speedup for 720p video generation with almost no loss in quality.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Generation Acceleration"
+  - "Resolution Dynamics"
+  - "Noise Reshifting"
+  - "Super-resolution Refiner"
+  - "Signature Retention"
 date: 2026-05-08
-content_hash: fb4d1801c22e97d1
+content_hash: 4f7ff61f83e5ba74
 ---
+
 # SURF: Signature-Retained Fast Video Generation
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,16 @@ SURF leads in quality metrics (highest DOVER 81.20) while taking only 76.5s—32
 - Value: ⭐⭐⭐⭐ Plug-and-play utility for multiple SOTA models (Wan/Hunyuan), 12× speedup with quality preservation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters](fastlightgen_fast_and_light_video_generation_with_fewer_steps_and_parameters.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](transition_matching_distillation_for_fast_video_generation.md)
 - [\[NeurIPS 2025\] MagCache: Fast Video Generation with Magnitude-Aware Cache](../../NeurIPS2025/video_generation/magcache_fast_video_generation_with_magnitudeaware_cache.md)
+- [\[ICLR 2026\] FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge](../../ICLR2026/video_generation/fastcar_cache_attentive_replay_for_fast_auto-regressive_video_generation_on_the_.md)
 - [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](../../ICCV2025/video_generation/generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
-- [\[CVPR 2025\] From Slow Bidirectional to Fast Autoregressive Video Diffusion Models](../../CVPR2025/video_generation/from_slow_bidirectional_to_fast_autoregressive_video_diffusion_models.md)
-- [\[CVPR 2026\] Plenoptic Video Generation](plenoptic_video_generation.md)
 
 </div>
 

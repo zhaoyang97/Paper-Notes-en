@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception
 description: >-
-  [ICLR 2026][Autonomous Driving][3D Gaussian Splatting] Ours replaces discrete BEV grids with continuous 3D Gaussian representations as a unified space for camera-LiDAR multi-modal fusion. By completing cross-modal alignment and interaction before quantization, it achieves new state-of-the-art accuracy in both 3D detection and occupancy prediction while significantly reduci
+  [ICLR 2026][Autonomous Driving][3D Gaussian Splatting] Ours replaces discrete BEV grids with continuous 3D Gaussian representations as a unified space for camera-LiDAR multi-modal fusion. By completing cross-modal alignment and interaction before quantization, it achieves new state-of-the-art accuracy in both 3D detection and occupancy prediction while significantly reducing memory overhead and latency.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - 3D Gaussian Splatting
-  - BEV
-  - nuScenes
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "3D Gaussian Splatting"
+  - "Multi-modal Fusion"
+  - "BEV"
+  - "3D Object Detection"
+  - "Semantic Occupancy Prediction"
+  - "nuScenes"
 date: 2026-05-08
-content_hash: a904419a7a8511aa
+content_hash: f2f55a4357321726
 ---
+
 # GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception
 
 **Conference**: ICLR 2026  
@@ -135,11 +139,11 @@ Gaussian Initialization Strategies (Table 8) and Encoder Components (Table 9):
 
 ## Related Papers
 
-- [\[ECCV 2024\] UniM2AE: Multi-modal Masked Autoencoders with Unified 3D Representation for 3D Perception in Autonomous Driving](../../ECCV2024/autonomous_driving/unim2ae_multi-modal_masked_autoencoders_with_unified_3d_representation_for_3d_pe.md)
-- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](../../CVPR2026/autonomous_driving/gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
 - [\[ICLR 2026\] UniSplat: Unified Spatio-Temporal Fusion via 3D Latent Scaffolds for Dynamic Driving Scene Reconstruction](unisplat_unified_spatio-temporal_fusion_via_3d_latent_scaffolds_for_dynamic_driv.md)
+- [\[ECCV 2024\] UniM2AE: Multi-modal Masked Autoencoders with Unified 3D Representation for 3D Perception in Autonomous Driving](../../ECCV2024/autonomous_driving/unim2ae_multi-modal_masked_autoencoders_with_unified_3d_representation_for_3d_pe.md)
 - [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](../../CVPR2026/autonomous_driving/rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
-- [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](simo_single-modality-operable_multimodal_collaborative_perceptio.md)
+- [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](../../CVPR2026/autonomous_driving/gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
+- [\[ICLR 2026\] Beyond Visual Reconstruction Quality: Object Perception-aware 3D Gaussian Splatting for Autonomous Driving](beyond_visual_reconstruction_quality_object_perception-aware_3d_gaussian_splatti.md)
 
 </div>
 

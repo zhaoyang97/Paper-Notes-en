@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper identifies an overlooked "retention-forgetting dilemma" in training-free Verbal Reinforcement Learning (which distills experience into rules in the context without updating parameters) within non-stationary environments. It proposes a transition from experience accumulation to governance via a "Rule/Evidence
+  [ICML 2026][LLM Agent][Verbal Reinforcement Learning] This paper identifies an overlooked "retention-forgetting dilemma" in training-free Verbal Reinforcement Learning (which distills experience into rules in the context without updating parameters) within non-stationary environments. It proposes a transition from experience accumulation to governance via a "Rule/Evidence/Skill" three-layer architecture and a critic-proposer-curator loop. This approach flips the performance o…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Verbal Reinforcement Learning"
+  - "World Feedback"
+  - "Knowledge Governance"
+  - "Agent Memory"
+  - "Non-stationary Environments"
 date: 2026-05-08
-content_hash: 3d8651eb3c857c92
+content_hash: 0698be3950d9b328
 ---
+
 # Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -143,11 +149,11 @@ Three findings directly correspond to the capability diagnosis table:
 
 ## Related Papers
 
+- [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
+- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](../../ICLR2026/llm_agent/scaling_agent_learning_via_experience_synthesis.md)
 - [\[CVPR 2026\] Learning to Select Visual Tools from Experience](../../CVPR2026/llm_agent/learning_to_select_visual_tools_from_experience.md)
 - [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
-- [\[ICML 2026\] Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents](agentic_monte_carlo_simulating_reinforcement_learning_for_black-box_agents.md)
-- [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
-- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
+- [\[ICML 2026\] Internalizing Agency from Reflective Experience](internalizing_agency_from_reflective_experience.md)
 
 </div>
 

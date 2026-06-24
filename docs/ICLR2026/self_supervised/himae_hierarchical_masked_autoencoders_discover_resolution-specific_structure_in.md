@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] HiMAE: Hierarchical Masked Autoencoders Discover Resolution-Specific Structure in Wearable Time Series
 description: >-
-  [ICLR 2026][Self-Supervised Learning][U-Net] HiMAE integrates masked autoencoders into a U-Net-style hierarchical 1D CNN, allowing intermediate layers to naturally correspond to embeddings at different temporal resolutions. This transforms "resolution" from a hyperparameter into a probe-based diagnostic tool, while the model is small enough to perform sub-millise
+  [ICLR 2026][Self-Supervised Learning][Masked Autoencoders] HiMAE integrates masked autoencoders into a U-Net-style hierarchical 1D CNN, allowing intermediate layers to naturally correspond to embeddings at different temporal resolutions. This transforms "resolution" from a hyperparameter into a probe-based diagnostic tool, while the model is small enough to perform sub-millisecond inference on smartwatch CPUs.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - U-Net
-  - PPG
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Masked Autoencoders"
+  - "Hierarchical Convolution"
+  - "U-Net"
+  - "Multi-resolution Representations"
+  - "PPG"
+  - "Edge Inference"
 date: 2026-05-08
-content_hash: 1c28a082d0f81014
+content_hash: fcec4272fabb3a58
 ---
+
 # HiMAE: Hierarchical Masked Autoencoders Discover Resolution-Specific Structure in Wearable Time Series
 
 **Conference**: ICLR 2026  
@@ -124,10 +129,10 @@ Compared to SOTA wearable/time-series foundation models (PaPaGei-SRA, Swin-Trans
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
-- [\[ICLR 2026\] Spatial Structure and Selective Text Jointly Facilitate Image Clustering](spatial_structure_and_selective_text_jointly_facilitate_image_clustering.md)
-- [\[ICLR 2026\] Spatially Informed Autoencoders for Interpretable Visual Representation Learning](spatially_informed_autoencoders_for_interpretable_visual_representation_learning.md)
+- [\[CVPR 2026\] Recurrent Video Masked Autoencoders](../../CVPR2026/self_supervised/recurrent_video_masked_autoencoders.md)
 - [\[ECCV 2024\] Efficient Image Pre-Training with Siamese Cropped Masked Autoencoders](../../ECCV2024/self_supervised/efficient_image_pre-training_with_siamese_cropped_masked_autoencoders.md)
-- [\[ICCV 2025\] From Linearity to Non-Linearity: How Masked Autoencoders Capture Spatial Correlations](../../ICCV2025/self_supervised/from_linearity_to_non-linearity_how_masked_autoencoders_capture_spatial_correlat.md)
+- [\[ICLR 2026\] Spatial Structure and Selective Text Jointly Facilitate Image Clustering](spatial_structure_and_selective_text_jointly_facilitate_image_clustering.md)
+- [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
 
 </div>
 

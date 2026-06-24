@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProtocolBench: Which LLM MultiAgent Protocol to Choose?
 description: >-
-  [ICML 2026][Multi-Agent][A2A / ACP / ANP / Agora] ProtocolBench presents the first systematic comparison of four major LLM multi-agent communication protocols (A2A, ACP, ANP, Agora) across four axes: task success, end-to-end latency, message byte overhead, and failure robustness. The study reveals that protocol choice results in a 36.5% difference in completion time a
+  [ICML 2026][Multi-Agent][Multi-agent protocols] ProtocolBench presents the first systematic comparison of four major LLM multi-agent communication protocols (A2A, ACP, ANP, Agora) across four axes: task success, end-to-end latency, message byte overhead, and failure robustness. The study reveals that protocol choice results in a 36.5% difference in completion time and a 3.48s difference in latency; it further proposes ProtocolRouter for dynamic scenario-based protocol selecti…
 tags:
-  - ICML 2026
-  - Multi-Agent
-  - A2A / ACP / ANP / Agora
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "Multi-agent protocols"
+  - "A2A / ACP / ANP / Agora"
+  - "Protocol routing"
+  - "Failure recovery"
+  - "End-to-end latency"
 date: 2026-05-08
-content_hash: be84048e492f3218
+content_hash: 1ea7db5c3b278482
 ---
+
 # ProtocolBench: Which LLM MultiAgent Protocol to Choose?
 
 **Conference**: ICML 2026  
@@ -152,15 +157,15 @@ The router provides precise improvements to target metrics under explicit constr
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Which LLM Multi-Agent Protocol to Choose?](../../ICLR2026/multi_agent/which_llm_multi-agent_protocol_to_choose.md)
+- [\[NeurIPS 2025\] Thought Communication in Multiagent Collaboration](../../NeurIPS2025/multi_agent/thought_communication_in_multiagent_collaboration.md)
+- [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](../../AAAI2026/multi_agent/a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
+- [\[NeurIPS 2025\] Debate or Vote: Which Yields Better Decisions in Multi-Agent Large Language Models?](../../NeurIPS2025/multi_agent/debate_or_vote_which_yields_better_decisions_in_multi-agent_large_language_model.md)
 - [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
 - [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
-- [\[ICML 2026\] Beyond Majority Voting: LLM Aggregation by Leveraging Higher-Order Information](beyond_majority_voting_llm_aggregation_by_leveraging_higher-order_information.md)
-- [\[ICML 2026\] EngiAgent: Fully Connected Coordination of LLM Agents for Solving Open-ended Engineering Problems with Feasible Solutions](engiagent_fully_connected_coordination_of_llm_agents_for_solving_open-ended_engi.md)
 
 </div>
 

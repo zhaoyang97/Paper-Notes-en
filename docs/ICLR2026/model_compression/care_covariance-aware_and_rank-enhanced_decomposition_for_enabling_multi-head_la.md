@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CARE: Covariance-Aware and Rank-Enhanced Decomposition for Enabling Multi-Head Latent Attention
 description: >-
-  [ICLR 2026][Model Compression][Multi-Head Latent Attention] CARE utilizes "activation covariance-weighted SVD + layer-wise adaptive rank allocation" to convert pre-trained GQA/MHA into MLA with an equivalent KV budget in a one-shot manner. By shifting the error minimization target from "weight space" to "activation space," it reduces one-shot perplexity by up to 215× and improv
+  [ICLR 2026][Model Compression][KV-cache compression] CARE utilizes "activation covariance-weighted SVD + layer-wise adaptive rank allocation" to convert pre-trained GQA/MHA into MLA with an equivalent KV budget in a one-shot manner. By shifting the error minimization target from "weight space" to "activation space," it reduces one-shot perplexity by up to 215× and improves average accuracy by up to 1.70×.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Multi-Head Latent Attention
+  - "ICLR 2026"
+  - "Model Compression"
+  - "KV-cache compression"
+  - "Multi-Head Latent Attention"
+  - "Low-rank decomposition"
+  - "activation-aware SVD"
+  - "attention conversion"
 date: 2026-05-08
-content_hash: 9702ad1b863a9266
+content_hash: ad977d4a755d8286
 ---
+
 # CARE: Covariance-Aware and Rank-Enhanced Decomposition for Enabling Multi-Head Latent Attention
 
 **Conference**: ICLR 2026  
@@ -108,11 +113,11 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
 - [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 - [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](../../ACL2026/model_compression/enabling_agents_to_communicate_entirely_in_latent_space.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
 - [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
+- [\[ICLR 2026\] Ensembling Pruned Attention Heads for Uncertainty-Aware Efficient Transformers](ensembling_pruned_attention_heads_for_uncertainty-aware_efficient_transformers.md)
 
 </div>
 

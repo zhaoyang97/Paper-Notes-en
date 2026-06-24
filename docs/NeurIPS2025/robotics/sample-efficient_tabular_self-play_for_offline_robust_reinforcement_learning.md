@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Robotics][offline RL] This paper proposes the RTZ-VI-LCB algorithm for offline robust two-player zero-sum Markov games (RTZM G). By combining pessimistic robust value iteration with Bernstein-style penalti…
+  [NeurIPS 2025][Robotics][offline RL] This paper proposes the RTZ-VI-LCB algorithm for offline robust two-player zero-sum Markov games (RTZM G). By combining pessimistic robust value iteration with Bernstein-style penalties, it achieves a near-optimal sample complexity of $O(C_r^* \cdot H^4 \cdot S \cdot (A+B) / \varepsilon^2)$, significantly improving upon the prior best result of $O(H^5 \cdot S^2 \cdot AB / \varepsilon^2)$ in terms of dependence on both the state space and t…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "sample complexity"
   - "pessimism"
 date: 2026-05-08
-content_hash: 05a03963f2fc6108
+content_hash: f1f1a0ee8eecc05c
 ---
 
 # Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning
@@ -137,10 +137,10 @@ This paper proposes the RTZ-VI-LCB algorithm for offline robust two-player zero-
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sample Complexity of Distributionally Robust Average-Reward Reinforcement Learning](sample_complexity_of_distributionally_robust_average-reward_reinforcement_learni.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
+- [\[ICML 2025\] Graph-Assisted Stitching for Offline Hierarchical Reinforcement Learning](../../ICML2025/robotics/graph-assisted_stitching_for_offline_hierarchical_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
-- [\[NeurIPS 2025\] Opinion: Towards Unified Expressive Policy Optimization for Robust Robot Learning](opinion_towards_unified_expressive_policy_optimization_for_robust_robot_learning.md)
 
 </div>
 

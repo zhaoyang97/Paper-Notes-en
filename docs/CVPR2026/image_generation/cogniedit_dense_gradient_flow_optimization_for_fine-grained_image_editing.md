@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing
 description: >-
-  [CVPR 2026][Image Generation][GRPO] CogniEdit utilizes an MLLM to decompose complex instructions into executable editing commands and employs dynamic token focus to let different network layers attend to attributes of varying granularities. It transforms GRPO from "single-step independent optimization" into "trajectory-level dense optimization" by accumu
+  [CVPR 2026][Image Generation][Instructed Image Editing] CogniEdit utilizes an MLLM to decompose complex instructions into executable editing commands and employs dynamic token focus to let different network layers attend to attributes of varying granularities. It transforms GRPO from "single-step independent optimization" into "trajectory-level dense optimization" by accumulating gradients across consecutive denoising steps. The approach achieves SOTA performance on Kris-Benc…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instructed Image Editing"
+  - "Fine-grained Alignment"
+  - "GRPO"
+  - "Dense Reward Optimization"
+  - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: d2ec08653c0c8bd7
+content_hash: 9a99d53a5aedac37
 ---
+
 # CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing
 
 **Conference**: CVPR 2026  

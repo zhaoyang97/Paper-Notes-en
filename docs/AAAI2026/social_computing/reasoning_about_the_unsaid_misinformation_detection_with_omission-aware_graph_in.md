@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference
 description: >-
-  [AAAI 2026][Social Computing][Misinformation Detection] This paper proposes OmiGraph, the first omission-aware misinformation detection framework. By constructing omission-aware graphs…
+  [AAAI 2026][Social Computing][Misinformation Detection] This paper proposes OmiGraph, the first omission-aware misinformation detection framework. By constructing omission-aware graphs, leveraging LLMs to reason about omission intent, and employing omission-guided message passing and aggregation mechanisms, OmiGraph extracts deception patterns from "what is unsaid," achieving average gains of +5.4% F1 and +5.3% ACC on bilingual datasets.
 tags:
   - "AAAI 2026"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Large Language Models"
   - "Information Manipulation"
 date: 2026-05-08
-content_hash: 6ecd949579c623c1
+content_hash: f4b1d4331bfed777
 ---
 
 # Reasoning About the Unsaid: Misinformation Detection with Omission-Aware Graph Inference
@@ -171,11 +171,11 @@ All improvements are statistically significant at $p < 0.005$.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Probabilistic Concept Graph Reasoning for Multimodal Misinformation Detection](../../CVPR2026/social_computing/probabilistic_concept_graph_reasoning_for_multimodal_misinformation_detection.md)
 - [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
-- [\[AAAI 2026\] From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks](from_imitation_to_discrimination_toward_a_generalized_curriculum_advantage_mecha.md)
-- [\[AAAI 2026\] Argumentative Debates for Transparent Bias Detection](argumentative_debates_for_transparent_bias_detection_technic.md)
 - [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](../../ICML2026/social_computing/ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
+- [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](../../ACL2026/social_computing/livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
+- [\[AAAI 2026\] From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks](from_imitation_to_discrimination_toward_a_generalized_curriculum_advantage_mecha.md)
+- [\[ACL 2025\] BiasGuard: A Reasoning-Enhanced Bias Detection Tool for Large Language Models](../../ACL2025/social_computing/biasguard_a_reasoning-enhanced_bias_detection_tool_for_large_language_models.md)
 
 </div>
 

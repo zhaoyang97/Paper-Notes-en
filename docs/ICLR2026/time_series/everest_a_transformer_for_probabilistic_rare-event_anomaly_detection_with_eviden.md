@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty
 description: >-
-  [ICLR 2026][Time Series][Paper Note] EVEREST utilizes a compact Transformer for multivariate time-series rare-event prediction. It attaches three auxiliary heads to a shared backbone—**active only during training** (an Evidential NIG head for calibration, an EVT head for tail risk, and a Precursor head for early supervision). During inference, only the cl
+  [ICLR2026][Time Series][Rare Event Prediction] EVEREST utilizes a compact Transformer for multivariate time-series rare-event prediction. It attaches three auxiliary heads to a shared backbone—**active only during training** (an Evidential NIG head for calibration, an EVT head for tail risk, and a Precursor head for early supervision). During inference, only the classification head remains, resulting in zero additional overhead. On ten years of solar flare data…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Rare Event Prediction"
+  - "Evidential Deep Learning"
+  - "Extreme Value Theory"
+  - "Calibration"
+  - "Solar Flares"
 date: 2026-05-08
-content_hash: b18e4cd2ab840a78
+content_hash: 55c188e6663c4953
 ---
+
 # EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty
 
 **Conference**: ICLR2026  
@@ -141,6 +147,7 @@ Leave-one-component-out results for the M5–72h task:
 - Value: ⭐⭐⭐⭐ High utility for high-risk operations (space weather, industry) given compactness and calibration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

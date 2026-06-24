@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UniSite: The First Cross-Structure Dataset and Learning Framework for End-to-End Ligand Binding Site Detection
 description: >-
-  [NeurIPS 2025][Computational Biology][protein binding site detection] This work introduces UniSite-DS, the first UniProt (unique protein)-centric ligand binding site dataset, and UniSite…
+  [NeurIPS 2025 Spotlight][Computational Biology][protein binding site detection] This work introduces UniSite-DS, the first UniProt (unique protein)-centric ligand binding site dataset, and UniSite, the first end-to-end binding site detection framework. UniSite directly predicts multiple potentially overlapping binding sites via set prediction loss and bijective matching, and further proposes IoU-based AP as a more accurate evaluation metric.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "protein binding site detection"
   - "end-to-end set prediction"
@@ -12,7 +12,7 @@ tags:
   - "Hungarian matching"
   - "IoU evaluation metric"
 date: 2026-05-08
-content_hash: d501078bbf94ab08
+content_hash: e84e3030e2eec1eb
 ---
 
 # UniSite: The First Cross-Structure Dataset and Learning Framework for End-to-End Ligand Binding Site Detection
@@ -130,9 +130,9 @@ The IoU-based AP metric ranks predictions by confidence, matches each ground-tru
 ## Related Papers
 
 - [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/computational_biology/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
-- [\[NeurIPS 2025\] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data](inferring_stochastic_dynamics_with_growth_from_cross-sectional_data.md)
-- [\[NeurIPS 2025\] A Unified Framework for Variable Selection in Model-Based Clustering with Missing Not at Random](a_unified_framework_for_variable_selection_in_modelbased_clu.md)
-- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](../../ICLR2026/computational_biology/a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
+- [\[ICML 2025\] Protriever: End-to-End Differentiable Protein Homology Search for Fitness Prediction](../../ICML2025/computational_biology/protriever_end-to-end_differentiable_protein_homology_search_for_fitness_predict.md)
+- [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](../../ICLR2026/computational_biology/optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
 - [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)
 
 </div>

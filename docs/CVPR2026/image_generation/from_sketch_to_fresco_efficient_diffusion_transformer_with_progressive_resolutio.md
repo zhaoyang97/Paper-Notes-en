@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Sketch to Fresco: Efficient Diffusion Transformer with Progressive Resolution
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Fresco replaces the fragmented stage-by-stage re-noising in traditional dynamic resolution sampling with a "coordinate-bound unified noise field" + "token variance-adaptive progressive upsampling." This ensures that low-resolution sketches and high-resolution refinements converge toward the same target. It is training-
+  [CVPR 2026][Image Generation][Dynamic Resolution Sampling] Fresco replaces the fragmented stage-by-stage re-noising in traditional dynamic resolution sampling with a "coordinate-bound unified noise field" + "token variance-adaptive progressive upsampling." This ensures that low-resolution sketches and high-resolution refinements converge toward the same target. It is training-free and accelerates FLUX by 10× and HunyuanVideo by 5×. It is orthogonal to distillation/feature cac…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Dynamic Resolution Sampling"
+  - "Diffusion Acceleration"
+  - "Unified Noise Field"
+  - "Progressive Upsampling"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 72d7c823eb085ad8
+content_hash: db7d6b29bf8e4a3c
 ---
+
 # From Sketch to Fresco: Efficient Diffusion Transformer with Progressive Resolution
 
 **Conference**: CVPR 2026  
@@ -140,15 +146,15 @@ Notably, at 4.72× acceleration, Fresco's ImageReward (1.0369) is **higher than 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards High-resolution and Disentangled Reference-based Sketch Colorization](towards_high-resolution_and_disentangled_reference-based_sketch_colorization.md)
+- [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
 - [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](ditic_aligned_diffusion_transformer_for_efficient.md)
 - [\[CVPR 2026\] NAMI: Efficient Image Generation via Bridged Progressive Rectified Flow Transformers](nami_efficient_image_generation_via_bridged_progressive_rectified_flow_transform.md)
-- [\[CVPR 2026\] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
-- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
+- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
 
 </div>
 

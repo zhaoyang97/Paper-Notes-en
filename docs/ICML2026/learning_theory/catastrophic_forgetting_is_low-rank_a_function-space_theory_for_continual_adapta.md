@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation
 description: >-
-  [ICML 2026][learning_theory][Paper Note] Instead of treating catastrophic forgetting as "parameter drift," this work provides a closed-form characterization in function space under the NTK framework: new task training drags old task predictions away via the cross-task kernel $K_{AB}$, and this "forgetting vector" is precisely predictable before training. This
+  [ICML 2026][Learning Theory][Neural Tangent Kernel] Instead of treating catastrophic forgetting as "parameter drift," this work provides a closed-form characterization in function space under the NTK framework: new task training drags old task predictions away via the cross-task kernel $K_{AB}$, and this "forgetting vector" is precisely predictable before training. This vector concentrates on an extremely small number of eigenmodes of the old task kernel $K_{AA}$ (1–6 modes c…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "NTK"
+  - "Neural Tangent Kernel"
+  - "Function Space"
+  - "Spectral Regularization"
 date: 2026-05-08
-content_hash: e7358f1f5c2e1d97
+content_hash: c446ad6b569e5c3a
 ---
+
 # Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation
 
 **Conference**: ICML 2026  
@@ -146,10 +153,10 @@ On Split-MNIST with a shared head and $k=10$, Spectral regularizer reduces drift
 ## Related Papers
 
 - [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](active_learning_with_low-rank_structure_for_data_selection.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
-- [\[ICML 2026\] Performative Learning Theory](performative_learning_theory.md)
-- [\[ICML 2026\] Task-Restricted Symmetries in Recurrent Weight Space](task-restricted_symmetries_in_recurrent_weight_space.md)
+- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](../../ICLR2026/learning_theory/understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 - [\[ICML 2026\] On the Robustness of Langevin Dynamics to Score Function Error](on_the_robustness_of_langevin_dynamics_to_score_function_error.md)
+- [\[ICML 2026\] Performative Learning Theory](performative_learning_theory.md)
+- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
 
 </div>
 

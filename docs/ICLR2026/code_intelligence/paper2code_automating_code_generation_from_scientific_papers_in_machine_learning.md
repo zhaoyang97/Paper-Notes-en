@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning
 description: >-
-  [ICLR 2026][Code Intelligence][LLM] PaperCoder is proposed—a multi-agent LLM framework that automatically transforms machine learning papers into runnable code repositories via a three-stage pipeline of Planning, Analysis, and Coding. 88% of the generated repositories were rated as best by the original authors, significantly outperforming baselines on th
+  [ICLR 2026][Code Intelligence][Paper-to-code] PaperCoder is proposed—a multi-agent LLM framework that automatically transforms machine learning papers into runnable code repositories via a three-stage pipeline of Planning, Analysis, and Coding. 88% of the generated repositories were rated as best by the original authors, significantly outperforming baselines on the PaperBench benchmark.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - LLM
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Paper-to-code"
+  - "multi-agent framework"
+  - "repository-level code generation"
+  - "scientific reproducibility"
+  - "LLM"
 date: 2026-05-08
-content_hash: 088a183425cb5250
+content_hash: db7f2107a3ea1214
 ---
+
 # Paper2Code: Automating Code Generation from Scientific Papers in Machine Learning
 
 **Conference**: ICLR 2026  
@@ -162,7 +167,7 @@ This ensures that every new file is aware of existing dependencies and the curre
 - [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](../../ACL2026/code_intelligence/scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
 - [\[ICLR 2026\] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment](agnostics_learning_to_synthesize_code_in_any_programming_language_with_a_univers.md)
 - [\[ICLR 2026\] The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning](the_natural_geometry_of_code_hyperbolic_representation_learning_for_program_reas.md)
-- [\[ICLR 2026\] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md)
+- [\[ICLR 2026\] ATGen: Adversarial Reinforcement Learning for Test Case Generation](atgen_adversarial_reinforcement_learning_for_test_case_generation.md)
 
 </div>
 

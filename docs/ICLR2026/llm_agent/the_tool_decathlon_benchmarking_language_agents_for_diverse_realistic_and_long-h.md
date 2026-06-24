@@ -2,18 +2,21 @@
 title: >-
   [Paper Note] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution
 description: >-
-  [ICLR 2026][LLM Agent][language agent] This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks. It emphasizes realistic and diverse environment states and long-horizon multi-step interactions (averaging ~20 tool calls). The strongest model, Claude-4.5-Sonnet, achieves only a 38.6% success rate
+  [ICLR 2026][LLM Agent][language agent] This paper introduces Toolathlon, a language agent benchmark covering 32 software applications, 604 tools, and 108 tasks. It emphasizes realistic and diverse environment states and long-horizon multi-step interactions (averaging ~20 tool calls). The strongest model, Claude-4.5-Sonnet, achieves only a 38.6% success rate.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - language agent
-  - benchmark
-  - MCP
-  - tool calling
-  - long-horizon
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "language agent"
+  - "benchmark"
+  - "MCP"
+  - "tool calling"
+  - "long-horizon"
+  - "multi-app interaction"
+  - "execution-based evaluation"
 date: 2026-05-08
-content_hash: 768f5e3deec8345b
+content_hash: f43376bc6fd47089
 ---
+
 # The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution
 
 **Conference**: ICLR 2026  
@@ -126,10 +129,10 @@ Using LLM scoring or string matching introduces noise and reduces reproducibilit
 ## Related Papers
 
 - [\[ICLR 2026\] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent](longhorizonui_a_unified_framework_for_robust_long-horizon_task_automation_of_gui.md)
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
 - [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](../../CVPR2026/llm_agent/webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
 - [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
-- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
-- [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
+- [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
 
 </div>
 

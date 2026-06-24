@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection
 description: >-
-  [AAAI 2026][Computational Biology][Cancer region detection] SpaCRD is proposed as a transfer learning-based multimodal deep fusion framework that integrates histology images and spatial transcriptomics (ST) data through…
+  [AAAI 2026 Oral][Computational Biology][Cancer region detection] SpaCRD is proposed as a transfer learning-based multimodal deep fusion framework that integrates histology images and spatial transcriptomics (ST) data through a Variational Reconstruction-guided Bidirectional Cross-Attention (VRBCA) fusion network. It achieves state-of-the-art performance in cancer tissue region (CTR) detection across samples, platforms, and batches on 23 paired datasets.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Computational Biology"
   - "Cancer region detection"
   - "spatial transcriptomics"
@@ -14,7 +14,7 @@ tags:
   - "variational autoencoder"
   - "cross-attention"
 date: 2026-05-08
-content_hash: 86821a7ef1fa72da
+content_hash: d0449bdd0f25d649
 ---
 
 # SpaCRD: Multimodal Deep Fusion of Histology and Spatial Transcriptomics for Cancer Region Detection
@@ -165,11 +165,11 @@ Representative results:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics](../../CVPR2026/computational_biology/bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v.md)
 - [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
-- [\[NeurIPS 2025\] Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow](../../NeurIPS2025/computational_biology/modeling_microenvironment_trajectories_on_spatial_transcriptomics_with_nicheflow.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
-- [\[AAAI 2026\] ConSurv: Multimodal Continual Learning for Survival Analysis](consurv_multimodal_continual_learning_for_survival_analysis.md)
-- [\[NeurIPS 2025\] Learning Relative Gene Expression Trends from Pathology Images in Spatial Transcriptomics](../../NeurIPS2025/computational_biology/learning_relative_gene_expression_trends_from_pathology_images_in_spatial_transc.md)
+- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](../../CVPR2026/computational_biology/predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
+- [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](../../CVPR2026/computational_biology/from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
+- [\[ICML 2025\] Scalable Generation of Spatial Transcriptomics from Histology Images via Whole-Slide Flow Matching](../../ICML2025/computational_biology/scalable_generation_of_spatial_transcriptomics_from_histology_images_via_whole-s.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Transformer] DiTFastAttnV2 is proposed for multi-modality diffusion Transformers (MMDiT), achieving fine-grained attention compression via Head-wise Arrow Attention and Head-wise C…
+  [ICCV 2025][Image Generation][Diffusion Transformer] DiTFastAttnV2 is proposed for multi-modality diffusion Transformers (MMDiT), achieving fine-grained attention compression via Head-wise Arrow Attention and Head-wise Caching mechanisms. It reduces attention FLOPs by 68% and achieves 1.5× end-to-end speedup on 2K image generation without visual quality degradation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Sparse Attention"
   - "Inference Acceleration"
 date: 2026-05-08
-content_hash: e8d1966491ac194b
+content_hash: 17a5d1c8f47eab95
 ---
 
 # DiTFastAttnV2: Head-wise Attention Compression for Multi-Modality Diffusion Transformers
@@ -155,8 +155,8 @@ DiTFastAttnV2 is a post-training compression framework comprising three componen
 - [\[NeurIPS 2025\] Head Pursuit: Probing Attention Specialization in Multimodal Transformers](../../NeurIPS2025/image_generation/head_pursuit_probing_attention_specialization_in_multimodal.md)
 - [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
 - [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
+- [\[ICCV 2025\] Bridging the Skeleton-Text Modality Gap: Diffusion-Powered Modality Alignment for Zero-shot Skeleton-based Action Recognition](bridging_the_skeleton_text_modality_gap_diffusion_powered_modality_alignment_for.md)
 - [\[ICCV 2025\] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization](m2sformer_multi-spectral_and_multi-scale_attention_with_edge-aware_difficulty_gu.md)
-- [\[ICCV 2025\] UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer](unicombine_unified_multi-conditional_combination_with_diffusion_transformer.md)
 
 </div>
 

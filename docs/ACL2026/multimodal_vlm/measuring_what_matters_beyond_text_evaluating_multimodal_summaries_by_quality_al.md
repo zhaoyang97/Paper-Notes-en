@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Measuring What Matters Beyond Text: Evaluating Multimodal Summaries by Quality, Alignment, and Diversity (MM-Eval)
 description: >-
-  [ACL 2026][Multimodal VLM][OpenFActScore] Proposed the MM-Eval evaluation framework for the "Multimodal Summarization with Multimodal Output (MSMO)" task. It aggregates three sub-scores—text quality (OpenFActScore + G-Eval), cross-modal alignment (MLLM-as-Judge), and visual diversity (Truncated CLIP Entropy)—into a single score using weights learned via Ridge
+  [ACL 2026 Findings][Multimodal VLM][Multimodal Summarization] Proposed the MM-Eval evaluation framework for the "Multimodal Summarization with Multimodal Output (MSMO)" task. It aggregates three sub-scores—text quality (OpenFActScore + G-Eval), cross-modal alignment (MLLM-as-Judge), and visual diversity (Truncated CLIP Entropy)—into a single score using weights learned via Ridge regression. On the mLLM-EVAL news benchmark, it improves the Kendall $\tau$ relative to human pref…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - OpenFActScore
-  - MLLM-as-Judge
-  - Truncated CLIP Entropy
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Multimodal Summarization"
+  - "Evaluation Framework"
+  - "OpenFActScore"
+  - "MLLM-as-Judge"
+  - "Truncated CLIP Entropy"
 date: 2026-05-08
-content_hash: 4932fed03e656d6f
+content_hash: 6e5d461667b2532e
 ---
+
 # Measuring What Matters Beyond Text: Evaluating Multimodal Summaries by Quality, Alignment, and Diversity (MM-Eval)
 
 **Conference**: ACL 2026 Findings  

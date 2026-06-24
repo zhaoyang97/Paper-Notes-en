@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper presents the first parameter-free algorithm for the triple setting of **unconstrained** online convex optimization (OCO), **time-varying movement costs**, and **dynamic comparator sequences**. By reducing delayed feedback and time-varying memory to OCO with time-varying movement costs, the authors provide a
+  [ICML2026][Reinforcement Learning][Dynamic Regret] This paper presents the first parameter-free algorithm for the triple setting of **unconstrained** online convex optimization (OCO), **time-varying movement costs**, and **dynamic comparator sequences**. By reducing delayed feedback and time-varying memory to OCO with time-varying movement costs, the authors provide a unified refresh of dynamic regret upper bounds for these three scenarios.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Dynamic Regret"
+  - "Movement Costs"
+  - "Delayed Feedback"
+  - "Online Learning with Memory"
+  - "Unconstrained OCO"
 date: 2026-05-08
-content_hash: 881c373cfa29fa1b
+content_hash: 9178fb4d596de632
 ---
+
 # Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory
 
 **Conference**: ICML2026  
@@ -140,10 +146,10 @@ All three results recover the known optimal dynamic regret for unconstrained OCO
 ## Related Papers
 
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](../../NeurIPS2025/reinforcement_learning/bandit_and_delayed_feedback_in_online_structured_prediction.md)
+- [\[ICML 2026\] Multi-Agent Reinforcement Learning from Delayed Marketplace Feedback for Objective-Weight Adaptation in Three-Sided Dispatch](multi-agent_reinforcement_learning_from_delayed_marketplace_feedback_for_objecti.md)
+- [\[NeurIPS 2025\] Dynamic Regret Reduces to Kernelized Static Regret](../../NeurIPS2025/reinforcement_learning/dynamic_regret_reduces_to_kernelized_static_regret.md)
 - [\[AAAI 2026\] Bi-Level Contextual Bandits for Individualized Resource Allocation under Delayed Feedback](../../AAAI2026/reinforcement_learning/bi-level_contextual_bandits_for_individualized_resource_allocation_under_delayed.md)
 - [\[ICML 2026\] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments](flow_equivariant_world_models_memory_for_partially_observed_dynamic_environments.md)
-- [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
-- [\[NeurIPS 2025\] Dynamic Regret Reduces to Kernelized Static Regret](../../NeurIPS2025/reinforcement_learning/dynamic_regret_reduces_to_kernelized_static_regret.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShapeR: Robust Conditional 3D Shape Generation from Casual Captures
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ShapeR converts casual image sequences through SLAM + 3D detection + VLM description into a three-way multi-modal condition: "sparse point clouds + multi-view posed images + text." These are fed into a FLUX-style rectified flow Transformer to denoise VecSet latent codes. It generates metric-accurate, complete single-ob
+  [CVPR 2026][3D Vision][3D Shape Generation] ShapeR converts casual image sequences through SLAM + 3D detection + VLM description into a three-way multi-modal condition: "sparse point clouds + multi-view posed images + text." These are fed into a FLUX-style rectified flow Transformer to denoise VecSet latent codes. It generates metric-accurate, complete single-object meshes in real-world occluded/cluttered scenes, achieving a 2.7× improvement in Chamfer Distance over the SOTA.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Shape Generation"
+  - "Rectified Flow"
+  - "Multi-modal Conditioning"
+  - "Casual Capture Reconstruction"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 870c54aaa18ce8aa
+content_hash: 54fc084ae39ec6ad
 ---
+
 # ShapeR: Robust Conditional 3D Shape Generation from Casual Captures
 
 **Conference**: CVPR 2026  
@@ -132,15 +138,16 @@ Note: Baseline image-to-3D models were given manually selected clear views and i
 - Value: ⭐⭐⭐⭐⭐ High practical value for moving 3D generation toward real-world application.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)
+- [\[CVPR 2026\] FHAvatar: Fast and High-Fidelity Reconstruction of Face-and-Hair Composable 3D Head Avatar from Few Casual Captures](fhavatar_fast_and_high-fidelity_reconstruction_of_face-and-hair_composable_3d_he.md)
+- [\[CVPR 2026\] Nestwork: Conditional 3D Furnished House Layout Generation through Latent Heterogeneous Graph Diffusion](nestwork_conditional_3d_furnished_house_layout_generation_through_latent_heterog.md)
 - [\[CVPR 2026\] RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval](ri-mamba_rotation-invariant_mamba_for_robust_text-to-shape_retrieval.md)
 - [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](../../ICCV2025/3d_vision/longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)
-- [\[CVPR 2026\] Enhancing Hands in 3D Whole-Body Pose Estimation with Conditional Hands Modulator](enhancing_hands_in_3d_whole-body_pose_estimation_with_conditional_hands_modulato.md)
+- [\[CVPR 2026\] From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)
 
 </div>
 

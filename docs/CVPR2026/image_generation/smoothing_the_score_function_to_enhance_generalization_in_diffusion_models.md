@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Smoothing the Score Function to Enhance Generalization in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][score function] This paper theoretically demonstrates that memorization in diffusion models (where generated samples verbatim copy training samples) originates from the empirical score function being a sum of Gaussian components with "sharp softmax weighting," causing a single training point to dominate sampling and lead to collapse.
+  [CVPR 2026][Image Generation][Memorization] This paper theoretically demonstrates that memorization in diffusion models (where generated samples verbatim copy training samples) originates from the empirical score function being a sum of Gaussian components with "sharp softmax weighting," causing a single training point to dominate sampling and lead to collapse. Accordingly, two methods for smoothing weights—Noise Unconditioning and Temperature Smoothing—are proposed…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - score function
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Memorization"
+  - "Generalization"
+  - "Score Function"
+  - "Gaussian Mixture"
+  - "Temperature Smoothing"
 date: 2026-05-08
-content_hash: c0acadd1ba6ac3af
+content_hash: e66941f5ee0e523b
 ---
+
 # Smoothing the Score Function to Enhance Generalization in Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -129,15 +134,16 @@ Key Insight: Unconditioning performs comparably to or better than the baseline o
 - **Value**: ⭐⭐⭐⭐⭐ Provides both a theoretical foundation for diffusion privacy and a practical tool for generalization.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework](smoothing_the_score_function_for_generalization_in_diffusion_models.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
 - [\[CVPR 2026\] Efficient Weighted Sampling via Score-based Generative Models](efficient_weighted_sampling_via_score-based_generative_models.md)
 - [\[CVPR 2026\] Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance](improving_diffusion_generalization_with_weak-to-strong_segmented_guidance.md)
+- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](../../ICLR2026/image_generation/generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
 - [\[CVPR 2026\] Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval](imagine_before_concentration_diffusion-guided_registers_enhance_partially_releva.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)
 
 </div>
 

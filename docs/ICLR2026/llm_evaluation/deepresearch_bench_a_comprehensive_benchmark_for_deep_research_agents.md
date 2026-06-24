@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents
 description: >-
-  [ICLR 2026][LLM Evaluation][Deep Research Agent] Proposes **DeepResearch Bench**, the first systematic benchmark for "Deep Research Agents" (DRA)—comprising 100 PhD-level research tasks across 22 disciplines crafted by experts, supported by two automated and highly human-aligned evaluation frameworks: RACE for report quality and FACT for information retrieval and cit
+  [ICLR 2026][LLM Evaluation][Deep Research Agent] Proposes **DeepResearch Bench**, the first systematic benchmark for "Deep Research Agents" (DRA)—comprising 100 PhD-level research tasks across 22 disciplines crafted by experts, supported by two automated and highly human-aligned evaluation frameworks: RACE for report quality and FACT for information retrieval and citation reliability.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Deep Research Agent
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Deep Research Agent"
+  - "Long-form report evaluation"
+  - "Citation reliability"
+  - "LLM-as-a-Judge"
+  - "Automated evaluation"
 date: 2026-05-08
-content_hash: 55715170a5f3459d
+content_hash: 1f073ccd9d9ea007
 ---
+
 # DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents
 
 **Conference**: ICLR 2026  

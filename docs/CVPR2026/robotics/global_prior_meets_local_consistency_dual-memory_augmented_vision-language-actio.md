@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Flow Matching] OptimusVLA equips the action generator of a hierarchical VLA with two memory modules: the Global Prior Memory (GPM) replaces the Gaussian noise starting point with retrieved similar trajectories to shorten the flow matching path, and the Local Consistency Memory (LCM) models historical actions with a lightweight struct
+  [CVPR 2026][Robotics][Vision-Language-Action Model] OptimusVLA equips the action generator of a hierarchical VLA with two memory modules: the Global Prior Memory (GPM) replaces the Gaussian noise starting point with retrieved similar trajectories to shorten the flow matching path, and the Local Consistency Memory (LCM) models historical actions with a lightweight structure to inject temporal consistency constraints. This achieves higher success rates (98.6% on LIBERO) while d…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language-Action Model"
+  - "Flow Matching"
+  - "Retrieval-based Prior"
+  - "Temporal Consistency"
+  - "Memory Mechanism"
 date: 2026-05-08
-content_hash: e8907dbb8d83f653
+content_hash: d87c2455711d592f
 ---
+
 # Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation
 
 **Conference**: CVPR 2026  

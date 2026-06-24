@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 当梯度相撞：多目标提示优化对 LLM 评判员的失效模式
+  [Paper Note] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper systematically investigates the failure modes of textual gradient methods when simultaneously optimizing prompts for multiple evaluation criteria. It identifies gradient dilution and instruction interference as two key bottlenecks that prevent multi-objective optimization from significantly improving upon in
+  [ACL 2026][LLM (Other)][Multi-objective optimization] This paper systematically investigates the failure modes of textual gradient methods when simultaneously optimizing prompts for multiple evaluation criteria. It identifies gradient dilution and instruction interference as two key bottlenecks that prevent multi-objective optimization from significantly improving upon initial prompts.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Multi-objective optimization"
+  - "Textual gradients"
+  - "LLM Judge"
+  - "Prompt engineering"
+  - "Gradient dilution"
 date: 2026-05-08
-content_hash: 850e9dea60f27f9b
+content_hash: bd4e25f61f5bcd01
 ---
+
 # When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges
 
 **Conference**: ACL 2026  
@@ -161,15 +167,16 @@ The Oracle experiment selects the best instructions for each dimension from sepa
 - Value: ⭐⭐⭐⭐⭐ Provides critical warnings for developers of multi-criteria LLM evaluation systems; the diagnostic framework is generalizable to other multi-stage LLM systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] Masked by Consensus: Disentangling Privileged Knowledge in LLM Correctness](masked_by_consensus_disentangling_privileged_knowledge_in_llm_correctness.md)
-- [\[ACL 2026\] EVE: A Domain-Specific LLM Framework for Earth Intelligence](eve_a_domain-specific_llm_framework_for_earth_intelligence.md)
-- [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](../../ICML2026/llm_nlp/universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
-- [\[ICML 2026\] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化](../../ICML2026/llm_nlp/model-preserving_adaptive_rounding.md)
-- [\[ACL 2026\] One Persona, Many Cues, Different Results: How Sociodemographic Cues Impact LLM Personalization](one_persona_many_cues_different_results_how_sociodemographic_cues_impact_llm_per.md)
+- [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](../../ICLR2026/llm_nlp/efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
+- [\[ICLR 2026\] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](../../ICLR2026/llm_nlp/llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)
+- [\[ACL 2025\] Gradient-Adaptive Policy Optimization: Towards Multi-Objective Alignment of Large Language Models](../../ACL2025/llm_nlp/gapo_multi_objective_alignment.md)
+- [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](../../NeurIPS2025/llm_nlp/system_prompt_optimization_with_meta-learning.md)
+- [\[ACL 2026\] From Fallback to Frontline: When Can LLMs be Superior Annotators of Human Perspectives?](from_fallback_to_frontline_when_can_llms_be_superior_annotators_of_human_perspec.md)
 
 </div>
 

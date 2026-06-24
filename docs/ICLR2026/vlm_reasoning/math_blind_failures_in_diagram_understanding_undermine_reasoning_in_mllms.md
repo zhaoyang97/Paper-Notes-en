@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Math Blind: Failures in Diagram Understanding Undermine Reasoning in MLLMs
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] This paper introduces the diagnostic benchmark MATHEMETRIC to decouple "perception" from "reasoning," revealing that current MLLMs exhibit extremely poor foundational perception (shape/counting/relationships/grounding) on mathematical diagrams—specifically, fine-grained grounding is near zero, leading to "blindly trust
+  [ICLR 2026][VLM Reasoning][Mathematical diagram perception] This paper introduces the diagnostic benchmark MATHEMETRIC to decouple "perception" from "reasoning," revealing that current MLLMs exhibit extremely poor foundational perception (shape/counting/relationships/grounding) on mathematical diagrams—specifically, fine-grained grounding is near zero, leading to "blindly trusting text" (Math Blind). Furthermore, after training on the graph-structured geometric perception dat…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Mathematical diagram perception"
+  - "MLLM"
+  - "Geometric perception"
+  - "Visual grounding"
+  - "Perception-reasoning transfer"
+  - "Structured diagrams"
 date: 2026-05-08
-content_hash: 8e932c0160e2ace5
+content_hash: 336df73b17ea4a34
 ---
+
 # Math Blind: Failures in Diagram Understanding Undermine Reasoning in MLLMs
 
 **Conference**: ICLR 2026  
@@ -129,8 +135,8 @@ Key Point: Solely by strengthening perception (no extra reasoning data), perform
 
 - [\[ICLR 2026\] We-Math 2.0: A Versatile MathBook System for Incentivizing Visual Mathematical Reasoning](we-math_20_a_versatile_mathbook_system_for_incentivizing_visual_mathematical_rea.md)
 - [\[ICLR 2026\] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](expvid_a_benchmark_for_experiment_video_understanding_reasoning.md)
-- [\[ICLR 2026\] Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs](childrens_intelligence_tests_pose_challenges_for_mllms_kidgym_a_2d_grid-based_re.md)
 - [\[CVPR 2025\] MV-MATH: Evaluating Multimodal Math Reasoning in Multi-Visual Contexts](../../CVPR2025/vlm_reasoning/mv-math_evaluating_multimodal_math_reasoning_in_multi-visual_contexts.md)
+- [\[ICLR 2026\] Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs](childrens_intelligence_tests_pose_challenges_for_mllms_kidgym_a_2d_grid-based_re.md)
 - [\[ICLR 2026\] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)
 
 </div>

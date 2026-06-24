@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Reinforced Sequential Monte Carlo for Amortised Sampling
 description: >-
-  [ICML 2026][Reinforcement Learning][SMC] This work unifies hierarchical variational inference (HVI), MaxEnt RL, and Sequential Monte Carlo (SMC)/Annealed Importance Sampling (AIS) into a single framework. The learned policy and flow function serve simultaneously as the proposal kernel and twisting target for SMC. Conversely, near-target samples produced by SM
+  [ICML 2026][Reinforcement Learning][Amortised Sampling] This work unifies hierarchical variational inference (HVI), MaxEnt RL, and Sequential Monte Carlo (SMC)/Annealed Importance Sampling (AIS) into a single framework. The learned policy and flow function serve simultaneously as the proposal kernel and twisting target for SMC. Conversely, near-target samples produced by SMC are used as an off-policy behavior policy to train the neural sampler. Coupled with adaptive weight te…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - SMC
-  - MaxEnt RL
-  - GFlowNet
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Amortised Sampling"
+  - "SMC"
+  - "MaxEnt RL"
+  - "GFlowNet"
+  - "Importance Weighted Replay"
 date: 2026-05-08
-content_hash: 16cf821f70b7e1af
+content_hash: 0efd194a21701a29
 ---
+
 # Reinforced Sequential Monte Carlo for Amortised Sampling
 
 **Conference**: ICML 2026  
@@ -151,8 +154,8 @@ The policy utilizes only TB (Eq. 8), while the flow utilizes only SubTB (Eq. 7).
 - [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](../../NeurIPS2025/reinforcement_learning/sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](../../ICLR2026/reinforcement_learning/rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
 - [\[NeurIPS 2025\] Feel-Good Thompson Sampling for Contextual Bandits: a Markov Chain Monte Carlo Showdown](../../NeurIPS2025/reinforcement_learning/feel-good_thompson_sampling_for_contextual_bandits_a_markov_chain_monte_carlo_sh.md)
-- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
 - [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](../../ICLR2026/reinforcement_learning/bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
+- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
 
 </div>
 

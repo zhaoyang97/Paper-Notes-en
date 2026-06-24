@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Epistemic Uncertainty for Generated Image Detection
 description: >-
-  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes WePe (Weight Perturbation), which estimates epistemic uncertainty by applying weight perturbations to a pretrained vision foundation mode…
+  [NeurIPS 2025][Image Generation][AI-generated image detection] This paper proposes WePe (Weight Perturbation), which estimates epistemic uncertainty by applying weight perturbations to a pretrained vision foundation model (DINOv2). The method exploits the divergence between natural and AI-generated images in uncertainty space for detection, requiring no training.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "DINOv2"
   - "out-of-distribution detection"
 date: 2026-05-08
-content_hash: f667cf7fffd62718
+content_hash: 38f108e8e97e59d0
 ---
 
 # Epistemic Uncertainty for Generated Image Detection
@@ -160,10 +160,10 @@ This upper bound requires only the original and perturbed model parameters, with
 ## Related Papers
 
 - [\[NeurIPS 2025\] Is Artificial Intelligence Generated Image Detection a Solved Problem?](is_artificial_intelligence_generated_image_detection_a_solved_problem.md)
+- [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
 - [\[NeurIPS 2025\] Physics-Driven Spatiotemporal Modeling for AI-Generated Video Detection](physics-driven_spatiotemporal_modeling_for_ai-generated_video_detection.md)
 - [\[AAAI 2026\] Aggregating Diverse Cue Experts for AI-Generated Image Detection](../../AAAI2026/image_generation/aggregating_diverse_cue_experts_for_ai-generated_image_detec.md)
-- [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
-- [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](../../CVPR2026/image_generation/diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
+- [\[ECCV 2024\] Zero-Shot Detection of AI-Generated Images](../../ECCV2024/image_generation/zero-shot_detection_of_ai-generated_images.md)
 
 </div>
 

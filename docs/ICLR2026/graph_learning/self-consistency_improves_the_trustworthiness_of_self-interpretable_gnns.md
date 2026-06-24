@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Consistency Improves the Trustworthiness of Self-Interpretable GNNs
 description: >-
-  [ICLR 2026][Graph Learning][Fine-tuning] Self-interpretable GNNs (SI-GNNs) optimize cross-entropy and sparsity during training but are evaluated on faithfulness, creating a training-evaluation misalignment. This paper posits that faithfulness is essentially equivalent to "explanation self-consistency." By introducing a self-consistency (SC) loss that aligns t
+  [ICLR 2026][Graph Learning][Self-interpretable GNNs] Self-interpretable GNNs (SI-GNNs) optimize cross-entropy and sparsity during training but are evaluated on faithfulness, creating a training-evaluation misalignment. This paper posits that faithfulness is essentially equivalent to "explanation self-consistency." By introducing a self-consistency (SC) loss that aligns the original explanation with a secondary explanation generated after feeding the first back into the model…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Fine-tuning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Self-interpretable GNNs"
+  - "Explanation Faithfulness"
+  - "Self-Consistency"
+  - "Explanation Redundancy"
+  - "Fine-tuning"
 date: 2026-05-08
-content_hash: d586bd911181c4bd
+content_hash: c65c0958aeebd55b
 ---
+
 # Self-Consistency Improves the Trustworthiness of Self-Interpretable GNNs
 
 **Conference**: ICLR 2026  
@@ -142,8 +147,8 @@ Self-consistency is also directly verified: in Table 2, the cosine similarity be
 - [\[ICLR 2026\] HarmonyGNNs: Harmonizing Heterophily and Homophily in GNNs via Self-Supervised Node Encoding](harmonygnns_harmonizing_heterophily_and_homophily_in_gnns_via_self-supervised_no.md)
 - [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](../../AAAI2026/graph_learning/self-adaptive_graph_mixture_of_models.md)
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](../../AAAI2026/graph_learning/self-correction_distillation_for_structured_data_question_answering.md)
-- [\[ECCV 2024\] SENC: Handling Self-collision in Neural Cloth Simulation](../../ECCV2024/graph_learning/senc_handling_self-collision_in_neural_cloth_simulation.md)
-- [\[ICLR 2026\] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs](structurally_human_semantically_biased_detecting_llm-generated_references_with_e.md)
+- [\[ICLR 2026\] Compactness and Consistency: A Conjoint Framework for Deep Graph Clustering](compactness_and_consistency_a_conjoint_framework_for_deep_graph_clustering.md)
+- [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
 
 </div>
 

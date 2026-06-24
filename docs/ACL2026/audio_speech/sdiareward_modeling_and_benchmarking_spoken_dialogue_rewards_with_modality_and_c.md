@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] SDiaReward constructs a pairwise preference dataset and ESDR-Bench for multi-turn spoken dialogue, training an end-to-end speech reward model. This allows evaluation to transcend text semantics, simultaneously assessing the modality gap (prosody/emotion) and the colloquialness gap (natural spoken style).
+  [ACL2026][Audio & Speech][Spoken Dialogue Evaluation] SDiaReward constructs a pairwise preference dataset and ESDR-Bench for multi-turn spoken dialogue, training an end-to-end speech reward model. This allows evaluation to transcend text semantics, simultaneously assessing the modality gap (prosody/emotion) and the colloquialness gap (natural spoken style).
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Spoken Dialogue Evaluation"
+  - "Preference Learning"
+  - "Prosodic Naturalness"
+  - "Colloquialness"
+  - "Reward Model"
 date: 2026-05-08
-content_hash: 5961445d54518e99
+content_hash: a3378e8d69facd31
 ---
+
 # SDiaReward: Modeling and Benchmarking Spoken Dialogue Rewards with Modality and Colloquialness
 
 **Conference**: ACL2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Reranking at Inference Time for Hard Examples in Rhetorical Role Labeling
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper proposes RiSE, an inference-time semantic reranking framework that automatically identifies low-confidence hard examples and utilizes label semantic representations obtained from contrastive learning to rerank model outputs. It achieves an average gain of +9.15 macro-F1 on hard examples across eight Rhetoric
+  [ACL 2026][NLP Understanding][Rhetorical Role Labeling] This paper proposes RiSE, an inference-time semantic reranking framework that automatically identifies low-confidence hard examples and utilizes label semantic representations obtained from contrastive learning to rerank model outputs. It achieves an average gain of +9.15 macro-F1 on hard examples across eight Rhetorical Role Labeling datasets.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Rhetorical Role Labeling"
+  - "Inference-time Reranking"
+  - "Label Semantics"
+  - "Contrastive Learning"
+  - "Hard Examples"
 date: 2026-05-08
-content_hash: 115b8ed14684837c
+content_hash: 6b688251eed8da33
 ---
+
 # Semantic Reranking at Inference Time for Hard Examples in Rhetorical Role Labeling
 
 **Conference**: ACL 2026  

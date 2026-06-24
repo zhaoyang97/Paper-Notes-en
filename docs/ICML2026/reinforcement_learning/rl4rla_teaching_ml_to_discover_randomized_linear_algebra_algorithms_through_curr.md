@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] RL4RLA utilizes a "numerical curriculum of increasing difficulty + Monte Carlo Graph Search (MCGS)" to drive an RL agent to compose interpretable Randomized Numerical Linear Algebra (RLA) algorithms from linear algebra primitives, successfully reproducing classic methods such as Sketch-and-Precondition, Randomized Kacz
+  [ICML 2026][Reinforcement Learning][Curriculum Learning] RL4RLA utilizes a "numerical curriculum of increasing difficulty + Monte Carlo Graph Search (MCGS)" to drive an RL agent to compose interpretable Randomized Numerical Linear Algebra (RLA) algorithms from linear algebra primitives, successfully reproducing classic methods such as Sketch-and-Precondition, Randomized Kaczmarz, and Newton Sketch.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Curriculum Learning"
+  - "Monte Carlo Graph Search"
+  - "Symbolic Program Synthesis"
+  - "Sketching Algorithms"
+  - "Preconditioners"
 date: 2026-05-08
-content_hash: 4126b5590893b0e9
+content_hash: c85443430e084701
 ---
+
 # RL4RLA: Teaching ML to Discover Randomized Linear Algebra Algorithms Through Curriculum Design and Graph-Based Search
 
 **Conference**: ICML 2026  
@@ -132,15 +138,15 @@ Across all curricula, MCGS reduces playouts by 2–3x compared to MCTS. The more
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Provable Benefit of Curriculum in Transformer Tree-Reasoning Post-Training](provable_benefit_of_curriculum_in_transformer_tree-reasoning_post-training.md)
 - [\[ICML 2026\] Adaptive Bandit Algorithms for Contextual Matching Markets](adaptive_bandit_algorithms_for_contextual_matching_markets.md)
-- [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
-- [\[ICML 2026\] Learning to Search and Searching to Learn for Generalization in Planning](learning_to_search_and_searching_to_learn_for_generalization_in_planning.md)
 - [\[ICML 2026\] Learning to Approximate Uniform Facility Location via Graph Neural Networks](learning_to_approximate_uniform_facility_location_via_graph_neural_networks.md)
+- [\[NeurIPS 2025\] DISCOVER: Automated Curricula for Sparse-Reward Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/discover_automated_curricula_for_sparse-reward_reinforcement_learning.md)
+- [\[ICLR 2026\] Prompt Curriculum Learning for Efficient LLM Post-Training](../../ICLR2026/reinforcement_learning/prompt_curriculum_learning_for_efficient_llm_post-training.md)
 
 </div>
 

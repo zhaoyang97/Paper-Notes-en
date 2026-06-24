@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The authors propose COLD-Steer, which achieves training-free LLM activation steering by approximating representation changes produced by gradient descent on in-context examples. It achieves 95% of the steering effect using only 1/50th of the sample size.
+  [ICLR 2026][Optimization][Activation Steering] The authors propose COLD-Steer, which achieves training-free LLM activation steering by approximating representation changes produced by gradient descent on in-context examples. It achieves 95% of the steering effect using only 1/50th of the sample size.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Activation Steering"
+  - "Learning Dynamics"
+  - "Training-free Inference"
+  - "Sample Efficiency"
+  - "Pluralistic Alignment"
 date: 2026-05-08
-content_hash: de2654fd384ad3f4
+content_hash: d2fe52ceee17c21b
 ---
+
 # COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics
 
 **Conference**: ICLR 2026  
@@ -136,15 +142,13 @@ By substituting different loss functions and kernels into the kernel approximati
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models](vitsp_a_vision_language_models_guided_framework_for_solving_large-scale_travelin.md)
 - [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
-- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
-- [\[NeurIPS 2025\] The Trilemma of Truth in Large Language Models](../../NeurIPS2025/optimization/the_trilemma_of_truth_in_large_language_models.md)
-- [\[ICLR 2026\] Gradient Descent with Large Step Sizes: Chaos and Fractal Convergence Region](gradient_descent_with_large_step_sizes_chaos_and_fractal_convergence_region.md)
-- [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](../../NeurIPS2025/optimization/doubly_robust_alignment_for_large_language_models.md)
+- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
+- [\[ICLR 2026\] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models](hbo_hierarchical_balancing_optimization_for_fine-tuning_large_language_models.md)
+- [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
 
 </div>
 

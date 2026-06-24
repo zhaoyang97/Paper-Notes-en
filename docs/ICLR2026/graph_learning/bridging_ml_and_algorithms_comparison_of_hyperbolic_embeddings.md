@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This is an empirical benchmark paper that "bridges academic silos." The authors bring together 14 hyperbolic embedding methods from the Machine Learning (ML), Network Theory (NT), and Algorithms communities—which have long ignored each other—to compete on 38 real-world networks + 600 simulated networks. They find that
+  [ICLR 2026][Graph Learning][Hyperbolic Embeddings] This is an empirical benchmark paper that "bridges academic silos." The authors bring together 14 hyperbolic embedding methods from the Machine Learning (ML), Network Theory (NT), and Algorithms communities—which have long ignored each other—to compete on 38 real-world networks + 600 simulated networks. They find that the near-linear BFKL algorithm from the 2016 Algorithms community is approximately 100x faster than the popul…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Hyperbolic Embeddings"
+  - "Scale-free Networks"
+  - "HRG Model"
+  - "Benchmark Comparison"
+  - "Information Criterion"
+  - "Greedy Routing"
 date: 2026-05-08
-content_hash: cf95f6cfeac346c0
+content_hash: f3e79e107ae32788
 ---
+
 # Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings
 
 **Conference**: ICLR 2026  

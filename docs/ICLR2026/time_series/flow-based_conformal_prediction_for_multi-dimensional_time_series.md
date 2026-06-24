@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Flow-based Conformal Prediction for Multi-dimensional Time Series
 description: >-
-  [ICLR 2026][Time Series][guided flow] This paper proposes FCP, which utilizes flows with classifier-free guidance to learn multi-dimensional predictive residual distributions conditioned on historical context. It maps probability balls in a Gaussian source space into flexible prediction sets, maintaining target coverage while significantly reducing set vol
+  [ICLR 2026][Time Series][Multi-dimensional time series] This paper proposes FCP, which utilizes flows with classifier-free guidance to learn multi-dimensional predictive residual distributions conditioned on historical context. It maps probability balls in a Gaussian source space into flexible prediction sets, maintaining target coverage while significantly reducing set volume on wind power, traffic, and solar radiation data.
 tags:
-  - ICLR 2026
-  - Time Series
-  - guided flow
-  - classifier-free guidance
+  - "ICLR 2026"
+  - "Time Series"
+  - "Multi-dimensional time series"
+  - "conformal prediction"
+  - "uncertainty quantification"
+  - "guided flow"
+  - "classifier-free guidance"
 date: 2026-05-08
-content_hash: b41e3591f7b87030
+content_hash: 3b00d1eebf9a1711
 ---
+
 # Flow-based Conformal Prediction for Multi-dimensional Time Series
 
 **Conference**: ICLR 2026  

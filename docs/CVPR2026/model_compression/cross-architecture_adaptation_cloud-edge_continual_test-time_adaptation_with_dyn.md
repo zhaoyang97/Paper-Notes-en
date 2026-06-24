@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the constraints of existing cloud-edge Continual Test-Time Adaptation (CTTA) which default to isomorphic CNNs, CAA enables the cloud to run a large ViT teacher while the edge runs a lightweight CNN student. Through a mechanism of "selective sample uploading via communication budget + cross-architecture heter
+  [CVPR 2026][Model Compression][Continual Test-Time Adaptation] Addressing the constraints of existing cloud-edge Continual Test-Time Adaptation (CTTA) which default to isomorphic CNNs, CAA enables the cloud to run a large ViT teacher while the edge runs a lightweight CNN student. Through a mechanism of "selective sample uploading via communication budget + cross-architecture heterogeneous distillation," it achieves heterogeneous synergistic adaptation…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Continual Test-Time Adaptation"
+  - "Cloud-Edge Synergy"
+  - "Heterogeneous Knowledge Distillation"
+  - "Cross-Domain Detection"
+  - "Dynamic Sampling"
 date: 2026-05-08
-content_hash: 92fc3d12b8dfce9e
+content_hash: f06e6a948bc19fc2
 ---
+
 # Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Communication Overhead (Samples uploaded as % of test stream):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
 - [\[CVPR 2026\] FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)
 - [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
+- [\[CVPR 2026\] Edge-RecViT: Efficient Vision Transformer via Semantic-Refined Dynamic Recursion](edge-recvit_efficient_vision_transformer_via_semantic-refined_dynamic_recursion.md)
 - [\[CVPR 2026\] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)
-- [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
-- [\[CVPR 2026\] TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery](talon_test-time_adaptive_learning_for_on-the-fly_category_discovery.md)
 
 </div>
 

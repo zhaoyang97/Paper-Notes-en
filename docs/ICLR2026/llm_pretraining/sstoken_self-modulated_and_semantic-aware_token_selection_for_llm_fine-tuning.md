@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning
 description: >-
-  [ICLR 2026][Pretraining][SFT] ssToken performs token-level data filtering during LLM supervised fine-tuning (SFT). It utilizes the model's own historical checkpoints instead of external reference models to calculate "Retrospective Excess Loss" (a self-modulated signal), combined with an attention-based semantic importance metric. By weighting these
+  [ICLR 2026][LLM Pretraining][token-level data selection] ssToken performs token-level data filtering during LLM supervised fine-tuning (SFT). It utilizes the model's own historical checkpoints instead of external reference models to calculate "Retrospective Excess Loss" (a self-modulated signal), combined with an attention-based semantic importance metric. By weighting these two orthogonal signals, the method computes loss only on the top-$\rho$ tokens. Experiments on 3B–14B…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - SFT
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "token-level data selection"
+  - "SFT"
+  - "self-modulation"
+  - "attention semantics"
+  - "reference model"
 date: 2026-05-08
-content_hash: 9f83bfd3de5b4a62
+content_hash: c6d2fc55eceb91ea
 ---
+
 # ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning
 
 **Conference**: ICLR 2026  
@@ -140,6 +145,7 @@ Ours achieves the highest average score across all models. While RHO-1/TokenClea
 - Value: ⭐⭐⭐⭐ High practical value for SFT data engineering with zero extra cost.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

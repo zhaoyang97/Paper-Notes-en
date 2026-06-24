@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][Dynamic Text-Attributed Graph] To address the gap in "Generative Dynamic Text-Attributed Graph (DyTAG) Learning," the authors construct the GDGB benchmark with 8 high-quality text datasets, define two new generative tasks (TDGG and IDGG) with multi-dimensional evaluation protocols, and propose GAG-General, an LLM multi-agent framework, as a reproduc
+  [ICLR 2026][Graph Learning][Dynamic Text-Attributed Graph] To address the gap in "Generative Dynamic Text-Attributed Graph (DyTAG) Learning," the authors construct the GDGB benchmark with 8 high-quality text datasets, define two new generative tasks (TDGG and IDGG) with multi-dimensional evaluation protocols, and propose GAG-General, an LLM multi-agent framework, as a reproducible unified baseline.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Dynamic Text-Attributed Graph
-  - Benchmark
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Dynamic Text-Attributed Graph"
+  - "Graph Generation"
+  - "LLM Multi-agent"
+  - "Benchmark"
+  - "Dynamic Graph"
 date: 2026-05-08
-content_hash: 0a93bec7780d405e
+content_hash: 3606df2229435a05
 ---
+
 # GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning
 
 **Conference**: ICLR 2026  

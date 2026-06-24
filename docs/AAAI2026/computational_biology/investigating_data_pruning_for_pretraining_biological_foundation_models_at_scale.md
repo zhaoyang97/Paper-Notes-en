@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Investigating Data Pruning for Pretraining Biological Foundation Models at Scale
 description: >-
-  [AAAI 2026][Computational Biology][Data Pruning] This paper proposes a post-hoc data pruning framework based on influence functions, leveraging Subset-Based Self-Influence estimation and two selection strategies (Top-k I…
+  [AAAI 2026][Computational Biology][Data Pruning] This paper proposes a post-hoc data pruning framework based on influence functions, leveraging Subset-Based Self-Influence estimation and two selection strategies (Top-k Influence and Coverage-Centric Influence). Under an extreme pruning rate exceeding 99%, an RNA-FM pretrained on only 0.2M sequences matches or surpasses the full model trained on 23M sequences across multiple downstream tasks, revealing substantial redundancy i…
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -14,7 +14,7 @@ tags:
   - "ESM"
   - "Protein Language Models"
 date: 2026-05-08
-content_hash: 9a5efaf09fed802c
+content_hash: 3ded74b31b3f6cac
 ---
 
 # Investigating Data Pruning for Pretraining Biological Foundation Models at Scale
@@ -187,10 +187,10 @@ Lightweight fine-tuning on the subset prior to influence score computation consi
 ## Related Papers
 
 - [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
+- [\[ICLR 2026\] Controllable Diffusion-based Generation for Multi-channel Biological Data](../../ICLR2026/computational_biology/controllable_diffusion-based_generation_for_multi-channel_biological_data.md)
+- [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
+- [\[ICLR 2026\] HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data](../../ICLR2026/computational_biology/heist_a_graph_foundation_model_for_spatial_transcriptomics_and_proteomics_data.md)
 - [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](../../NeurIPS2025/computational_biology/edbench_large-scale_electron_density_data_for_molecular_modeling.md)
-- [\[AAAI 2026\] Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes](distributional_priors_guided_diffusion_for_generating_3d_molecules_in_low_data_r.md)
-- [\[AAAI 2026\] ProtSAE: Disentangling and Interpreting Protein Language Models via Semantically-Guided Sparse Autoencoders](protsae_disentangling_and_interpreting_protein_language_models_via_semantically-.md)
-- [\[AAAI 2026\] CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data](cellstream_dynamical_optimal_transport_informed_embeddings_for_reconstructing_ce.md)
 
 </div>
 

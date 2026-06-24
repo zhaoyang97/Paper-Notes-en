@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity
 description: >-
-  [ICLR 2026][Medical NLP][Multi-Agent] This paper proposes a two-stage pipeline of "social media posts $\rightarrow$ structured electronic medical records (EMR) $\rightarrow$ multi-agent diagnostic dialogues." By adapting the SCID-5 clinical interview protocol into a Hierarchical Diagnostic State Machine (HDSM) and a Diagnostic Context Tree (DCT), the autho
+  [ICLR 2026][Medical LLM][Psychiatric comorbidity] This paper proposes a two-stage pipeline of "social media posts $\rightarrow$ structured electronic medical records (EMR) $\rightarrow$ multi-agent diagnostic dialogues." By adapting the SCID-5 clinical interview protocol into a Hierarchical Diagnostic State Machine (HDSM) and a Diagnostic Context Tree (DCT), the authors construct PsyCoTalk—the first large-scale psychiatric comorbidity diagnostic dialogue dataset (3…
 tags:
-  - ICLR 2026
-  - Medical NLP
-  - Multi-Agent
-  - SCID-5
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Psychiatric comorbidity"
+  - "diagnostic dialogue generation"
+  - "multi-agent"
+  - "synthetic EMR"
+  - "SCID-5"
+  - "hierarchical state machine"
 date: 2026-05-08
-content_hash: 30e84ba9b135dc17
+content_hash: e39044d1c16c9655
 ---
+
 # From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity
 
 **Conference**: ICLR 2026  
@@ -135,14 +140,17 @@ In AB Truthfulness tests (judging "Real vs. AI"), PsyCoTalk (5/10) ranked second
 
 <div class="related-papers" markdown="1">
 
-[1] **D4: a Chinese Dialogue Dataset for Depression Diagnosis-oriented Chatbot**, 2022.  
-[2] **MDD-5k: A Large-scale Dataset for Multi-type Mental Disorder Diagnosis**, 2024.  
-[3] **SCID-5-RV: Structured Clinical Interview for DSM-5 Disorders, Research Version**, American Psychiatric Association.
+## Related Papers
+
+- [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](../../ACL2026/medical_nlp/principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
+- [\[ACL 2026\] Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework](../../ACL2026/medical_nlp/region-grounded_report_generation_for_3d_medical_imaging_a_fine-grained_dataset_.md)
+- [\[ICML 2026\] A Machine-Learned Comorbidity Index](../../ICML2026/medical_nlp/a_machine-learned_comorbidity_index.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
+- [\[ACL 2026\] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](../../ACL2026/medical_nlp/dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](../../ACL2026/medical_nlp/principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ConceptScope: Characterizing Dataset Bias via Disentangled Visual Concepts
 description: >-
-  [NeurIPS 2025][Human Understanding][Dataset Bias] This paper proposes ConceptScope, a framework that trains sparse autoencoders (SAE) on representations from visual foundation models to automatically discover and quantif…
+  [NeurIPS 2025][Human Understanding][Dataset Bias] This paper proposes ConceptScope, a framework that trains sparse autoencoders (SAE) on representations from visual foundation models to automatically discover and quantify visual concept biases in datasets, categorizing concepts into target / context / bias without any manual annotation.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Bias Detection"
   - "Interpretability"
 date: 2026-05-08
-content_hash: 0d39dfbee3042bae
+content_hash: eb5b4be4dcfed0e4
 ---
 
 # ConceptScope: Characterizing Dataset Bias via Disentangled Visual Concepts
@@ -127,11 +127,11 @@ $$\mathcal{L} = \|z - \text{SAE}(z)\|_2^2 + \lambda \|z\|_1$$
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual Dyadic Interactive Human Generation](../../ICLR2026/human_understanding/speakervid-5m_a_large-scale_high-quality_dataset_for_audio-visual_dyadic_interac.md)
+- [\[CVPR 2026\] Gaze Target Estimation Anywhere with Concepts](../../CVPR2026/human_understanding/gaze_target_estimation_anywhere_with_concepts.md)
+- [\[CVPR 2025\] Design2GarmentCode: Turning Design Concepts to Tangible Garments Through Program Synthesis](../../CVPR2025/human_understanding/design2garmentcode_turning_design_concepts_to_tangible_garments_through_program_.md)
+- [\[CVPR 2025\] D3-Human: Dynamic Disentangled Digital Human from Monocular Video](../../CVPR2025/human_understanding/d3-human_dynamic_disentangled_digital_human_from_monocular_video.md)
 - [\[ICCV 2025\] What's Making That Sound Right Now? Video-centric Audio-Visual Localization](../../ICCV2025/human_understanding/whats_making_that_sound_right_now_video-centric_audio-visual_localization.md)
-- [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](../../ICCV2025/human_understanding/humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
-- [\[ICCV 2025\] MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation](../../ICCV2025/human_understanding/mdd_a_dataset_for_text-and-music_conditioned_duet_dance_generation.md)
-- [\[ICCV 2025\] AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning](../../ICCV2025/human_understanding/ar-vrm_imitating_human_motions_for_visual_robot_manipulation_with_analogical_rea.md)
-- [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](../../ICCV2025/human_understanding/udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DMAP: A Distribution Map for Text
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] Ours proposes DMAP (Distribution Map), a mathematical framework that maps text to $i.i.d.$ samples in the range $[0,1]$ via next-token probability ranking of language models. It theoretically proves that pure sampling produces a uniform distribution, enabling the use of $\chi^2$ tests to verify generation parameters, u
+  [ICLR 2026][AIGC Detection][Text Distribution Map] Ours proposes DMAP (Distribution Map), a mathematical framework that maps text to $i.i.d.$ samples in the range $[0,1]$ via next-token probability ranking of language models. It theoretically proves that pure sampling produces a uniform distribution, enabling the use of $\chi^2$ tests to verify generation parameters, uncovering the root cause of why "probability curvature" detectors fail under pure sampling…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Text Distribution Map"
+  - "Machine Text Detection"
+  - "Statistical Testing"
+  - "Token Probabilities"
+  - "Language Model Analysis"
 date: 2026-05-08
-content_hash: 8cc221b3e78286d1
+content_hash: 72e2cc664598f389
 ---
+
 # DMAP: A Distribution Map for Text
 
 **Conference**: ICLR 2026  
@@ -145,15 +151,14 @@ Given the $i.i.d.$ uniformity from Proposition 3.1, this statistic asymptoticall
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection](hld_approximate_hierarchical_linguistic_distribution_modeling_for_llm-generated_.md)
 - [\[ICLR 2026\] Learn-to-Distance: Distance Learning for Detecting LLM-Generated Text](learn-to-distance_distance_learning_for_detecting_llm-generated_text.md)
 - [\[ICLR 2026\] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices](tsm-bench_detecting_llm-generated_text_in_real-world_wikipedia_editing_practices.md)
+- [\[ICLR 2026\] Learning From Dictionary: Enhancing Robustness of Machine-Generated Text Detection in Zero-Shot Language via Adversarial Training](learning_from_dictionary_enhancing_robustness_of_machine-generated_text_detectio.md)
 - [\[ICLR 2026\] EditLens: Quantifying the Extent of AI Editing in Text](editlens_quantifying_the_extent_of_ai_editing_in_text.md)
-- [\[ICLR 2026\] D&R: Recovery-based AI-Generated Text Detection via a Single Black-box LLM Call](dr_recovery-based_ai-generated_text_detection_via_a_single_black-box_llm_call.md)
 
 </div>
 

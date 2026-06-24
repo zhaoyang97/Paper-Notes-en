@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering
 description: >-
-  [ICML 2026][Graph Learning][KBQA] Redefines KBQA from a "one-shot logical expression generation" task to a "multi-turn decision process." It utilizes Referenced Rejection Sampling guided by gold-standard action sequences to generate executable reasoning trajectories for SFT cold start, followed by GRPO optimization based on F1 outcome rewards. This all
+  [ICML 2026][Graph Learning][KBQA] Redefines KBQA from a "one-shot logical expression generation" task to a "multi-turn decision process." It utilizes Referenced Rejection Sampling guided by gold-standard action sequences to generate executable reasoning trajectories for SFT cold start, followed by GRPO optimization based on F1 outcome rewards. This allows an 8B Llama to outperform both GPT-4 prompting methods and graph retrieval SOTA across three benchmarks: WebQSP, GrailQA…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - KBQA
-  - GRPO
+  - "ICML 2026"
+  - "Graph Learning"
+  - "KBQA"
+  - "Multi-turn RL"
+  - "GRPO"
+  - "Referenced Rejection Sampling"
+  - "Action Space"
 date: 2026-05-08
-content_hash: 3daaaaad1097d5c6
+content_hash: f765d71dc9990997
 ---
+
 # KBQA-R1: Reinforcing Large Language Models for Knowledge Base Question Answering
 
 **Conference**: ICML 2026  

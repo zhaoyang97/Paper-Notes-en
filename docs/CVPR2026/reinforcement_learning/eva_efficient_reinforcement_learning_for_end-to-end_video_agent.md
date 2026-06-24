@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] EVA: Efficient Reinforcement Learning for End-to-End Video Agent
 description: >-
-  [CVPR 2026][Reinforcement Learning][GRPO] EVA models long video understanding as a "planning-before-perception" Markov Decision Process (MDP), enabling the MLLM agent to decide "which segment to watch, how many frames to sample, and at what resolution" based solely on the text question. Through a three-stage training pipeline (SFT Cold Start $\rightarrow$ KTO
+  [CVPR 2026][Reinforcement Learning][Video agent] EVA models long video understanding as a "planning-before-perception" Markov Decision Process (MDP), enabling the MLLM agent to decide "which segment to watch, how many frames to sample, and at what resolution" based solely on the text question. Through a three-stage training pipeline (SFT Cold Start $\rightarrow$ KTO Offline Correction $\rightarrow$ Data-Enhanced GRPO), the model evolves from a format imitator to an active vid…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - GRPO
-  - KTO
-  - planning-before-perception
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Video agent"
+  - "GRPO"
+  - "KTO"
+  - "planning-before-perception"
 date: 2026-05-08
-content_hash: 58a39e0614b6acbc
+content_hash: ade8c9ad3ec04e85
 ---
+
 # EVA: Efficient Reinforcement Learning for End-to-End Video Agent
 
 **Conference**: CVPR 2026  
@@ -153,11 +155,11 @@ On Video-Holmes, EVA-GRPO reaches 37.2%, surpassing Video-R1 (36.5%).
 
 ## Related Papers
 
-- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
+- [\[ICML 2026\] You Can Learn Tokenization End-to-End with Reinforcement Learning](../../ICML2026/reinforcement_learning/you_can_learn_tokenization_end-to-end_with_reinforcement_learning.md)
+- [\[ICLR 2026\] ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents](../../ICLR2026/reinforcement_learning/computerrl_scaling_end-to-end_online_reinforcement_learning_for_computer_use_age.md)
 - [\[CVPR 2026\] PlannerRFT: Reinforcing Diffusion Planners through Closed-Loop and Sample-Efficient Fine-Tuning](plannerrft_reinforcing_diffusion_planners.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
-- [\[CVPR 2026\] JoPPO: Hierarchical Photography Assessment via Contrastive Joint Conditional Probabilistic Reinforcement Learning](joppo_hierarchical_photography_assessment_via_contrastive_joint_conditional_prob.md)
+- [\[CVPR 2026\] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning](cross-modal_identity_mapping_minimizing_information_loss_in_modality_conversion_.md)
+- [\[CVPR 2026\] PanoEnv: Exploring 3D Spatial Intelligence in Panoramic Environments with Reinforcement Learning](panoenv_exploring_3d_spatial_intelligence_in_panoramic_environments_with_reinfor.md)
 
 </div>
 

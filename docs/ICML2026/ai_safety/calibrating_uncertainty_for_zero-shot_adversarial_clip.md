@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Calibrating Uncertainty for Zero-Shot Adversarial CLIP
 description: >-
-  [ICML 2026][AI Safety][CLIP] The UCAT framework is proposed to reparameterize CLIP logits as concentration parameters of a Dirichlet distribution. By aligning the Dirichlet distributions of clean and adversarial samples via reverse KL divergence, the method simultaneously calibrates uncertainty and preserves semantic structure during zero-shot adv
+  [ICML 2026][AI Safety][Adversarial Robustness] The UCAT framework is proposed to reparameterize CLIP logits as concentration parameters of a Dirichlet distribution. By aligning the Dirichlet distributions of clean and adversarial samples via reverse KL divergence, the method simultaneously calibrates uncertainty and preserves semantic structure during zero-shot adversarial fine-tuning, achieving an optimal balance between robustness and calibration across 16 benchmarks.
 tags:
-  - ICML 2026
-  - AI Safety
-  - CLIP
+  - "ICML 2026"
+  - "AI Safety"
+  - "Adversarial Robustness"
+  - "Uncertainty Calibration"
+  - "CLIP"
+  - "Dirichlet Distribution"
+  - "Zero-Shot Classification"
 date: 2026-05-08
-content_hash: c308bec8f42717e7
+content_hash: 3da3180c58fe9d76
 ---
+
 # Calibrating Uncertainty for Zero-Shot Adversarial CLIP
 
 **Conference**: ICML 2026  
@@ -150,10 +155,10 @@ UCAT significantly improves robustness across different contrastive VLM backbone
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](../../CVPR2026/ai_safety/hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[AAAI 2026\] OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description](../../AAAI2026/ai_safety/oad-promoter_enhancing_zero-shot_vqa_using_large_language_models_with_object_att.md)
-- [\[ECCV 2024\] CLIP-Guided Generative Networks for Transferable Targeted Adversarial Attacks](../../ECCV2024/ai_safety/clip-guided_generative_networks_for_transferable_targeted_adversarial_attacks.md)
+- [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](../../ICLR2026/ai_safety/identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
 - [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
-- [\[AAAI 2026\] Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference](../../AAAI2026/ai_safety/diversifying_counterattacks_orthogonal_exploration_for_robust_clip_inference.md)
+- [\[AAAI 2026\] OAD-Promoter: Enhancing Zero-shot VQA using Large Language Models with Object Attribute Description](../../AAAI2026/ai_safety/oad-promoter_enhancing_zero-shot_vqa_using_large_language_models_with_object_att.md)
+- [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)
 
 </div>
 

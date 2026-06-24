@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SIGMA-GEN: Structure and Identity Guided Multi-Subject Assembly for Image Generation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] SIGMA-GEN unifies "what each subject looks like (identity)" and "where each subject is placed, its orientation, and occlusion (structure)" into two control maps. This enables a Diffusion Transformer to incorporate up to 10 identity-preserving subjects in a **single forward pass**. The authors curate a synthetic dataset
+  [ICLR 2026][Image Generation][Multi-subject generation] SIGMA-GEN unifies "what each subject looks like (identity)" and "where each subject is placed, its orientation, and occlusion (structure)" into two control maps. This enables a Diffusion Transformer to incorporate up to 10 identity-preserving subjects in a **single forward pass**. The authors curate a synthetic dataset, SIGMA-SET27K, with identity/mask/depth/2D/3D box annotations. SIGMA-GEN outperforms iterative baseline…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-subject generation"
+  - "Identity preservation"
+  - "Structural control"
+  - "Synthetic dataset"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: d6c715990e32d727
+content_hash: f1b3c65f413a4f5f
 ---
+
 # SIGMA-GEN: Structure and Identity Guided Multi-Subject Assembly for Image Generation
 
 **Conference**: ICLR 2026  
@@ -135,9 +141,9 @@ The advantage in multi-subject scenarios is significant. Compared to iterative I
 
 - [\[CVPR 2026\] MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment](../../CVPR2026/image_generation/multicrafter_high-fidelity_multi-subject_generation_via_disentangled_attention_a.md)
 - [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
-- [\[CVPR 2026\] SIGMA: Selective-Interleaved Generation with Multi-Attribute Tokens](../../CVPR2026/image_generation/sigma_selective-interleaved_generation_with_multi-attribute_tokens.md)
 - [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](../../CVPR2026/image_generation/identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[ICLR 2026\] ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation](contextgen_contextual_layout_anchoring_for_identity-consistent_multi-instance_ge.md)
+- [\[CVPR 2026\] SIGMA: Selective-Interleaved Generation with Multi-Attribute Tokens](../../CVPR2026/image_generation/sigma_selective-interleaved_generation_with_multi-attribute_tokens.md)
 
 </div>
 

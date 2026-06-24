@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression
 description: >-
-  [AAAI 2026][Model Compression][Image compression quantization] To address the deployment inefficiency of learned image compression (LIC) models, this paper proposes DynaQuant…
+  [AAAI 2026][Model Compression][Image compression quantization] To address the deployment inefficiency of learned image compression (LIC) models, this paper proposes DynaQuant, a framework that achieves content-adaptive quantization at the parameter level via learnable scale/zero-point combined with a Distance-Aware Gradient Modulator, and dynamically assigns optimal bit-widths per layer at the architecture level via a lightweight Bit-Width Selector. Across three baselines (Ch…
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "quantization-aware training"
   - "learned image compression"
 date: 2026-05-08
-content_hash: 27aa7884e7ca2fc6
+content_hash: 98593da2c10685de
 ---
 
 # DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression
@@ -129,11 +129,11 @@ The DGM gradient modulation idea is transferable to other scenarios requiring di
 
 ## Related Papers
 
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](../../CVPR2026/model_compression/what_matters_in_practical_learned_image_compression.md)
 - [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](../../ICML2026/model_compression/efficient_learned_image_compression_without_entropy_coding.md)
-- [\[ICCV 2025\] Learned Image Compression with Hierarchical Progressive Context Modeling](../../ICCV2025/model_compression/learned_image_compression_with_hierarchical_progressive_context_modeling.md)
-- [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](../../ICML2026/model_compression/gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
-- [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](../../ICCV2025/model_compression/mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
+- [\[CVPR 2026\] Block-based Learned Image Compression without Blocking Artifacts](../../CVPR2026/model_compression/block-based_learned_image_compression_without_blocking_artifacts.md)
+- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](../../ICLR2026/model_compression/stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
 
 </div>
 

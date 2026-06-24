@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Anomaly-Preference Image Generation (APO)
 description: >-
-  [ICML 2026][Image Generation][DPO] The authors reformulate "few-shot anomaly image generation" as a "preference optimization problem without manual annotation." Using real anomalies as positive samples and the denoising bias of a reference model at the same timestep as implicit negative samples, they align the diffusion model with the anomaly distributi
+  [ICML 2026][Image Generation][Few-shot Anomaly Generation] The authors reformulate "few-shot anomaly image generation" as a "preference optimization problem without manual annotation." Using real anomalies as positive samples and the denoising bias of a reference model at the same timestep as implicit negative samples, they align the diffusion model with the anomaly distribution via a DPO-style loss. Combined with Time-Aware Capacity Allocation (TACA) to adjust LoRA rank by t…
 tags:
-  - ICML 2026
-  - Image Generation
-  - DPO
+  - "ICML 2026"
+  - "Image Generation"
+  - "Few-shot Anomaly Generation"
+  - "DPO"
+  - "Implicit Preference"
+  - "Time-aware LoRA"
+  - "Hierarchical Sampling"
 date: 2026-05-08
-content_hash: 11e331cb173aada5
+content_hash: b0770ff6fadc7d76
 ---
+
 # Anomaly-Preference Image Generation (APO)
 
 **Conference**: ICML 2026  
@@ -122,15 +127,16 @@ APO improves both realism and diversity simultaneously across almost every categ
 - **Value**: ⭐⭐⭐⭐⭐ High potential for industrial deployment in anomaly generation and augmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](../../ICLR2026/image_generation/follow-your-preference_towards_preference-aligned_image_inpainting.md)
 - [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dual-interrelated_diffusion_model_for_few-shot_anomaly_image_generation.md)
 - [\[ICML 2025\] Preference Adaptive and Sequential Text-to-Image Generation](../../ICML2025/image_generation/preference_adaptive_and_sequential_text-to-image_generation.md)
 - [\[CVPR 2025\] Boost Your Human Image Generation Model via Direct Preference Optimization](../../CVPR2025/image_generation/boost_your_human_image_generation_model_via_direct_preference_optimization.md)
 - [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
-- [\[ICML 2026\] Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs](offline_preference_optimization_for_rectified_flow_with_noise-tracked_pairs.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook
 description: >-
-  [ICLR 2026][Pretraining][SGHC] Proposes SemHiTok—a unified tokenizer for understanding and generation via Semantic-Guided Hierarchical Codebook (SGHC). It establishes pixel sub-codebooks based on a pre-trained semantic codebook. Structural and training decoupling (staged optimization) avoids semantic-pixel conflicts, achieving SOTA in both understan
+  [ICLR 2026][LLM Pretraining][Image Tokenizer] Proposes SemHiTok—a unified tokenizer for understanding and generation via Semantic-Guided Hierarchical Codebook (SGHC). It establishes pixel sub-codebooks based on a pre-trained semantic codebook. Structural and training decoupling (staged optimization) avoids semantic-pixel conflicts, achieving SOTA in both understanding and reconstruction among discrete tokenizers under LLaVA settings.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - SGHC
-  - MLLM
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Image Tokenizer"
+  - "Hierarchical Codebook"
+  - "Semantic Guidance"
+  - "Unified Understanding and Generation"
+  - "SGHC"
+  - "MLLM"
 date: 2026-05-08
-content_hash: c776420a0e7eb371
+content_hash: 379ac21e5a9a5252
 ---
+
 # SemHiTok: A Unified Image Tokenizer via Semantic-Guided Hierarchical Codebook
 
 **Conference**: ICLR 2026  

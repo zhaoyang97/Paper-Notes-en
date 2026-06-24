@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods
 description: >-
-  [ICLR 2026][learning_theory][Attention] This paper establishes the first theoretical framework for In-Context Learning (ICL) of Hölder function regression on manifolds. It proves that the attention mechanism of transformers essentially performs Gaussian kernel regression (Nadaraya–Watson estimation) and derives generalization error bounds revealing that the
+  [ICLR 2026][Learning Theory][In-Context Learning] This paper establishes the first theoretical framework for In-Context Learning (ICL) of Hölder function regression on manifolds. It proves that the attention mechanism of transformers essentially performs Gaussian kernel regression (Nadaraya–Watson estimation) and derives generalization error bounds revealing that the error decay rate depends solely on the **intrinsic dimension** $d$ of the data rather than the ambient dimensi…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Attention
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "In-Context Learning Theory"
+  - "In-Context Learning"
+  - "Kernel Methods"
+  - "Attention Mechanism"
+  - "Manifold Regression"
+  - "Generalization Error Bound"
 date: 2026-05-08
-content_hash: 68d43352376898f5
+content_hash: 46690104f2576154
 ---
+
 # Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods
 
 **Conference**: ICLR 2026  
@@ -133,7 +139,7 @@ The final layer attention scores of a trained transformer were compared to Gauss
 - [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
 - [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 - [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
+- [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
 
 </div>
 

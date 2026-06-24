@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Large Language Model Compression with Global Rank and Sparsity Optimization
 description: >-
-  [ICLR 2026][Model Compression][RPCA] This paper proposes CAP—a two-stage LLM compression framework that first uses Robust Principal Component Analysis (RPCA) to decompose weight matrices into low-rank and sparse candidate subspaces, then utilizes a global budget allocation based on Bernoulli probabilities and policy gradients to automatically decide which
+  [ICLR 2026][Model Compression][Low-rank+sparse decomposition] This paper proposes CAP—a two-stage LLM compression framework that first uses Robust Principal Component Analysis (RPCA) to decompose weight matrices into low-rank and sparse candidate subspaces, then utilizes a global budget allocation based on Bernoulli probabilities and policy gradients to automatically decide which singular values and sparse entries to retain across layers. This approach requires no manual thre…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - RPCA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Low-rank+sparse decomposition"
+  - "RPCA"
+  - "Global resource allocation"
+  - "Policy gradient"
+  - "Training-free pruning"
 date: 2026-05-08
-content_hash: 5b9244863ea98ac6
+content_hash: 1f935c09bad0a9a7
 ---
+
 # Large Language Model Compression with Global Rank and Sparsity Optimization
 
 **Conference**: ICLR 2026  
@@ -115,9 +120,9 @@ flowchart LR
 
 - [\[ICLR 2026\] LSA: Layer-wise Sparsity Allocation for Large Language Model Pruning Based on Minimal Linear Reconstruction Error](lsa_layer-wise_sparsity_allocation_for_large_language_model_pruning_based_on_min.md)
 - [\[ICML 2025\] RADIO: Rate-Distortion Optimization for Large Language Model Compression](../../ICML2025/model_compression/radio_rate-distortion_optimization_for_large_language_model_compression.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
 - [\[ICLR 2026\] WINA: Weight Informed Neuron Activation for Accelerating Large Language Model Inference](wina_weight_informed_neuron_activation_for_accelerating_large_language_model_inf.md)
-- [\[ICLR 2026\] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery](paser_post-training_data_selection_for_efficient_pruned_large_language_model_rec.md)
-- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
+- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
 
 </div>
 

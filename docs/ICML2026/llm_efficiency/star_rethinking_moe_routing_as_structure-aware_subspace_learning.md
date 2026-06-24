@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] STAR reinterprets MoE routing as a "subspace learning" problem. Beyond the traditional shallow linear router, it employs the Generalized Hebbian Algorithm (GHA) to online-learn a set of orthogonal bases tracking the principal directions of the input. This aligns routing decisions directly with the input structure, achi
+  [ICML 2026][LLM Efficiency][Mixture-of-Experts] STAR reinterprets MoE routing as a "subspace learning" problem. Beyond the traditional shallow linear router, it employs the Generalized Hebbian Algorithm (GHA) to online-learn a set of orthogonal bases tracking the principal directions of the input. This aligns routing decisions directly with the input structure, achieving more stable expert specialization and superior downstream performance across synthetic tasks…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Routing"
+  - "Principal Subspace"
+  - "Generalized Hebbian Algorithm"
+  - "Expert Specialization"
 date: 2026-05-08
-content_hash: c6ec0abafc9dff4a
+content_hash: a006d3f84bd7d7f5
 ---
+
 # STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning
 
 **Conference**: ICML 2026  
@@ -132,11 +138,11 @@ Based on GLUE (8,4), removing key components of STAR:
 
 ## Related Papers
 
-- [\[ICML 2026\] Variational Routing: 校准 MoE Transformer 的可扩展贝叶斯框架](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
-- [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](../../ICLR2026/llm_efficiency/deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
+- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
+- [\[ICLR 2026\] LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation](../../ICLR2026/llm_efficiency/loragen_structure-aware_weight_space_learning_for_lora_generation.md)
+- [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](../../ACL2026/llm_efficiency/mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
-- [\[ICML 2026\] DOT-MoE: 用可微 optimal transport 把 dense LLM 转成 MoE](dot-moe_differentiable_optimal_transport_for_moefication.md)
+- [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](../../ICLR2026/llm_efficiency/deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
 
 </div>
 

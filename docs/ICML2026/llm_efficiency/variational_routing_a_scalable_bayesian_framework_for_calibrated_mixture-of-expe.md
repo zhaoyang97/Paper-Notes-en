@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Variational Routing: 校准 MoE Transformer 的可扩展贝叶斯框架
+  [Paper Note] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This paper proposes VMoER, a variational routing framework that achieves efficient Bayesian uncertainty modeling by performing variational inference on MoE routing decisions rather than weights. It reduces calibration error by 94% and improves routing stability by 38% while maintaining <1% extra FLOPs overhead.
+  [ICML 2026][LLM Efficiency][Mixture-of-Experts] This paper proposes VMoER, a variational routing framework that achieves efficient Bayesian uncertainty modeling by performing variational inference on MoE routing decisions rather than weights. It reduces calibration error by 94% and improves routing stability by 38% while maintaining <1% extra FLOPs overhead.
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Bayesian Inference"
+  - "Calibration"
+  - "Uncertainty Quantification"
+  - "Sparse Routing"
 date: 2026-05-08
-content_hash: 89b8ac334429c253
+content_hash: b25418b0afc0a5da
 ---
+
 # Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers
 
 **Conference**: ICML 2026  
@@ -132,10 +138,10 @@ Both VGLR and VTSR rely on a shared premise: the variational solution is not lea
 ## Related Papers
 
 - [\[ICML 2026\] STAR: Rethinking MoE Routing as Structure-Aware Subspace Learning](star_rethinking_moe_routing_as_structure-aware_subspace_learning.md)
-- [\[ICML 2026\] DOT-MoE: 用可微 optimal transport 把 dense LLM 转成 MoE](dot-moe_differentiable_optimal_transport_for_moefication.md)
+- [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](../../NeurIPS2025/llm_efficiency/flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
 - [\[ICML 2026\] ProbMoE: Differentiable Probabilistic Routing for Mixture-of-Experts](probmoe_differentiable_probabilistic_routing_for_mixture-of-experts.md)
-- [\[CVPR 2025\] Associative Transformer](../../CVPR2025/llm_efficiency/associative_transformer.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
+- [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
+- [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](../../ICLR2026/llm_efficiency/concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][hand-object interaction] This paper proposes OpenHOI, a framework that leverages the commonsense reasoning capabilities of multimodal large language models (MLLMs) to infer contact regions…
+  [NeurIPS 2025 Oral][Multimodal VLM][hand-object interaction] This paper proposes OpenHOI, a framework that leverages the commonsense reasoning capabilities of multimodal large language models (MLLMs) to infer contact regions and grasp types for unseen objects, enabling open-world hand-object interaction synthesis without requiring per-object training data collection.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Multimodal VLM"
   - "hand-object interaction"
   - "open-world"
@@ -12,7 +12,7 @@ tags:
   - "contact reasoning"
   - "grasp synthesis"
 date: 2026-05-08
-content_hash: b0b8092f1f2483e0
+content_hash: 7c63b58411dc6333
 ---
 
 # OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models
@@ -126,11 +126,11 @@ Diffusion model training uses a denoising objective $\|ε - ε_\theta(x_t, t, c)
 
 ## Related Papers
 
+- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](../../CVPR2026/multimodal_vlm/handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](../../ICCV2025/multimodal_vlm/on_large_multimodal_models_as_open-world_image_classifiers.md)
-- [\[NeurIPS 2025\] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models](affordbot_3d_fine-grained_embodied_reasoning_via_multimodal_large_language_model.md)
-- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
-- [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
+- [\[CVPR 2025\] Img-Diff: Contrastive Data Synthesis for Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/img-diff_contrastive_data_synthesis_for_multimodal_large_language_models.md)
 - [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](adapting_visionlanguage_models_for_evaluating_world_models.md)
+- [\[CVPR 2025\] Locality-Aware Zero-Shot Human-Object Interaction Detection](../../CVPR2025/multimodal_vlm/locality-aware_zero-shot_human-object_interaction_detection.md)
 
 </div>
 

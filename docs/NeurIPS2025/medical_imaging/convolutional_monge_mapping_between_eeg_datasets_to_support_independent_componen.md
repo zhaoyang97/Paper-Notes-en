@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG] This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing two strategies — channel-averaged PSD with $\ell_1$-normalized barycenter and subject-to-subject match…
+  [NeurIPS 2025][Medical Imaging][EEG] This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing two strategies — channel-averaged PSD with $\ell_1$-normalized barycenter and subject-to-subject matching — to generate a single time-domain filter for domain adaptation across EEG datasets with differing channel counts. On independent component (IC) brain/non-brain classification, the F1 score improves from 0.77 to 0.84, surpassing ICLabel (0.88→0.91).
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Convolutional Monge Mapping"
   - "Independent Component Classification"
 date: 2026-05-08
-content_hash: d4e31ee2b24c2c09
+content_hash: c3fe6fc6ac62d235
 ---
 
 # Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling
@@ -140,11 +140,11 @@ This paper extends CMMN (Convolutional Monge Mapping Normalization) by proposing
 
 ## Related Papers
 
+- [\[CVPR 2025\] NOIR: Neural Operator Mapping for Implicit Representations](../../CVPR2025/medical_imaging/noir_neural_operator_mapping_for_implicit_representations.md)
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
 - [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](../../ICCV2025/medical_imaging/radgpt_constructing_3d_image-text_tumor_datasets.md)
 - [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](../../ICLR2026/medical_imaging/heegnet_hyperbolic_embeddings_for_eeg.md)
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](../../ICCV2025/medical_imaging/multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
-- [\[NeurIPS 2025\] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding](eegrexfernet_a_lightweight_gen-ai_framework_for_eeg_subspace_reconstruction_via_.md)
 
 </div>
 

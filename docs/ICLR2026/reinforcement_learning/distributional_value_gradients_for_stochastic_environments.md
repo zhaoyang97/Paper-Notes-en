@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distributional value gradients for stochastic environments
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] Addressing the failure of "value gradient for credit assignment" methods like MAGE in stochastic/noisy environments, this paper extends distributional RL from "modeling return distributions" to "jointly modeling the return and its action-gradient distribution." It proposes a Sobolev distributional Bellman operator, a d
+  [ICLR2026][Reinforcement Learning][Distributional Reinforcement Learning] Addressing the failure of "value gradient for credit assignment" methods like MAGE in stochastic/noisy environments, this paper extends distributional RL from "modeling return distributions" to "jointly modeling the return and its action-gradient distribution." It proposes a Sobolev distributional Bellman operator, a differentiable world model, and the max-sliced MMD metric…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Distributional Reinforcement Learning"
+  - "Value Gradients"
+  - "Sobolev Training"
+  - "World Models"
+  - "Maximum Mean Discrepancy"
 date: 2026-05-08
-content_hash: 83a07a914a6b5e2b
+content_hash: 0981ce2e286fce23
 ---
+
 # Distributional value gradients for stochastic environments
 
 **Conference**: ICLR2026  
@@ -158,9 +163,9 @@ The paper primarily reports results via figures. The following table summarizes 
 ## Related Papers
 
 - [\[ICML 2026\] DRIVE: Distributional and Retrieval-Augmented Bidding with Value Evaluation](../../ICML2026/reinforcement_learning/drive_distributional_and_retrieval-augmented_bidding_with_value_evaluation.md)
-- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
 - [\[ICLR 2026\] One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration](one_life_to_learn_inferring_symbolic_world_models_for_stochastic_environments_fr.md)
-- [\[ICLR 2026\] Value Flows](value_flows.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
 - [\[ICML 2026\] Distributional Inverse Reinforcement Learning](../../ICML2026/reinforcement_learning/distributional_inverse_reinforcement_learning.md)
 
 </div>

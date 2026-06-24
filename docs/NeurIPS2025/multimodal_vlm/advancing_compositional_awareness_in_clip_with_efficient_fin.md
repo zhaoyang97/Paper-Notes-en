@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][CLIP compositional reasoning] This paper proposes CLIC, which concatenates two images to form a composite scene and generates hard negatives via cross-image lexical swapping…
+  [NeurIPS 2025][Multimodal VLM][CLIP compositional reasoning] This paper proposes CLIC, which concatenates two images to form a composite scene and generates hard negatives via cross-image lexical swapping, while constructing multiple positive captions to enhance semantic invariance. By fine-tuning only the CLIP text encoder, CLIC simultaneously improves compositional reasoning (achieving SOTA on SugarCrepe++) and downstream retrieval performance…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "hard negatives"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: b5f837e534f4ccbe
+content_hash: 58dfa0d5331f32b7
 ---
 
 # Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning
@@ -130,11 +130,11 @@ Only the text encoder is fine-tuned at $224 \times 224$ resolution. Standard sin
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
 - [\[NeurIPS 2025\] VITRIX-CLIPIN: Enhancing Fine-Grained Visual Understanding in CLIP via Instruction Editing Data and Long Captions](vitrix-clipin_enhancing_fine-grained_visual_understanding_in_clip_via_instructio.md)
-- [\[ICLR 2026\] Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](../../ICLR2026/multimodal_vlm/breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)
 - [\[NeurIPS 2025\] Towards Evaluating Proactive Risk Awareness of Multimodal Language Models](towards_evaluating_proactive_risk_awareness_of_multimodal_language_models.md)
-- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
+- [\[CVPR 2025\] VladVA: Discriminative Fine-tuning of LVLMs](../../CVPR2025/multimodal_vlm/vladva_discriminative_fine-tuning_of_lvlms.md)
+- [\[ICLR 2026\] Visual Compositional Tuning](../../ICLR2026/multimodal_vlm/visual_compositional_tuning.md)
+- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
 
 </div>
 

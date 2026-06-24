@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning
 description: >-
-  [ICCV 2025][Image Generation][universal image generation] This paper presents VisualCloze, which unifies diverse image generation tasks under a "visual cloze" paradigm—defining tasks via visual in-context examples rather…
+  [ICCV 2025][Image Generation][universal image generation] This paper presents VisualCloze, which unifies diverse image generation tasks under a "visual cloze" paradigm—defining tasks via visual in-context examples rather than text instructions, performing unified generation through an image infilling model, and constructing the Graph200K graph-structured dataset to enhance cross-task knowledge transfer. The framework supports in-distribution tasks, unseen-task generalization…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Graph200K"
   - "multi-task unification"
 date: 2026-05-08
-content_hash: 2d0c01ca74caa0ea
+content_hash: c023e4e57e3b9fcc
 ---
 
 # VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning
@@ -218,9 +218,9 @@ Adding in-context examples further improves controllability (RMSE decreases from
 
 - [\[ICCV 2025\] Pretrained Reversible Generation as Unsupervised Visual Representation Learning](pretrained_reversible_generation_as_unsupervised_visual_representation_learning.md)
 - [\[ICCV 2025\] Golden Noise for Diffusion Models: A Learning Framework](golden_noise_for_diffusion_models_a_learning_framework.md)
+- [\[CVPR 2025\] UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics](../../CVPR2025/image_generation/unireal_universal_image_generation_and_editing_via_learning_real-world_dynamics.md)
 - [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
 - [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
-- [\[ICCV 2025\] OminiControl: Minimal and Universal Control for Diffusion Transformer](ominicontrol_minimal_and_universal_control_for_diffusion_transformer.md)
 
 </div>
 

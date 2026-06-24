@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification
 description: >-
-  [NeurIPS 2025][Robotics][VLA] CogVLA proposes a three-stage VLA architecture inspired by human multimodal cognition—comprising EFA-Routing for visual aggregation and compression to 25%…
+  [NeurIPS 2025][Robotics][VLA] CogVLA proposes a three-stage VLA architecture inspired by human multimodal cognition—comprising EFA-Routing for visual aggregation and compression to 25%, LFP-Routing for instruction-aware pruning of 50% of tokens within the LLM, and V-L-A coupled attention—achieving a 97.4% success rate on LIBERO with 2.5× training and 2.8× inference speedups over SOTA methods such as OpenVLA-OFT, and a 70.0% success rate on real-robot tasks.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "instruction-driven"
   - "robotic manipulation"
 date: 2026-05-08
-content_hash: f8f5e681f45bff4a
+content_hash: 47771f965ffdd3d4
 ---
 
 # CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification
@@ -131,11 +131,11 @@ Standard action prediction loss (MSE or token classification loss) is used for t
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
 - [\[AAAI 2026\] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](../../AAAI2026/robotics/semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)
 - [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
+- [\[NeurIPS 2025\] MesaTask: Towards Task-Driven Tabletop Scene Generation via 3D Spatial Reasoning](mesatask_towards_task-driven_tabletop_scene_generation_via_3d_spatial_reasoning.md)
 - [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
+- [\[ICLR 2026\] Vision-Language-Action Instruction Tuning: From Understanding to Manipulation](../../ICLR2026/robotics/vision-language-action_instruction_tuning_from_understanding_to_manipulation.md)
 
 </div>
 

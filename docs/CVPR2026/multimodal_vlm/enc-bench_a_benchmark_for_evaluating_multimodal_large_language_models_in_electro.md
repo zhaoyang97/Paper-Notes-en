@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Ours proposes ENC-Bench, the first professional-grade benchmark for Electronic Navigational Chart (ENC) understanding. It contains 20,490 samples and a three-level hierarchical evaluation system (Perception $\rightarrow$ Spatial Reasoning $\rightarrow$ Maritime Decision-making). Systematically evaluating 10 MLLMs revea
+  [CVPR 2026][Multimodal VLM][Chart understanding] Ours proposes ENC-Bench, the first professional-grade benchmark for Electronic Navigational Chart (ENC) understanding. It contains 20,490 samples and a three-level hierarchical evaluation system (Perception $\rightarrow$ Spatial Reasoning $\rightarrow$ Maritime Decision-making). Systematically evaluating 10 MLLMs reveals that the best model achieves only $47.88\%$ accuracy, uncovering a significant capability gap of general-pur…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chart understanding"
+  - "Multimodal benchmark"
+  - "Spatial reasoning"
+  - "Safety-critical AI"
+  - "Symbol grounding"
 date: 2026-05-08
-content_hash: 3c459c613bbef9a6
+content_hash: 584eb8b93918832c
 ---
+
 # ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding
 
 **Conference**: CVPR 2026  
@@ -138,9 +144,9 @@ ENC-Bench is a pure evaluation benchmark and does not include training component
 ## Related Papers
 
 - [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](../../ACL2026/multimodal_vlm/vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
-- [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
-- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
+- [\[CVPR 2026\] Twin-T & TwintVQA: A Reliable Structure-Detail Separating VLM and a Comprehensive Benchmark for Chart and Table Tasks](twin-t_twintvqa_a_reliable_structure-detail_separating_vlm_and_a_comprehensive_b.md)
+- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
+- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
 - [\[CVPR 2026\] Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly](flat-pack_bench_evaluating_spatio-temporal_understanding_in_large_vision-languag.md)
 
 </div>

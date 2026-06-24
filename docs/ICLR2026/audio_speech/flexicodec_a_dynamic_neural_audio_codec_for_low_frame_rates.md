@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Audio & Speech][Neural Audio Codec] FlexiCodec is proposed, implementing a high-quality speech codec at ultra-low frame rates (3–12.5Hz) through an ASR-feature-guided dynamic frame merging strategy, while maintaining superior semantic information retention.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Neural Audio Codec
-  - Dynamic Frame Rate
-  - Low Frame Rate
-  - Speech Tokenization
-  - TTS
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Neural Audio Codec"
+  - "Dynamic Frame Rate"
+  - "Low Frame Rate"
+  - "Speech Tokenization"
+  - "TTS"
 date: 2026-05-08
-content_hash: afdc7a4ebc5da02d
+content_hash: 5d3145d5a758d10f
 ---
+
 # FlexiCodec: A Dynamic Neural Audio Codec for Low Frame Rates
 
 **Conference**: ICLR 2026  
@@ -184,8 +185,8 @@ Ground Truth WER = 2.1%. FlexiCodec achieves SOTA semantic retention and audio q
 - [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](../../ACL2026/audio_speech/indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
 - [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
 - [\[ICLR 2026\] Toward Complex-Valued Neural Networks for Waveform Generation](toward_complex-valued_neural_networks_for_waveform_generation.md)
+- [\[ICLR 2026\] Gogo: Group-wise Granularity-ordered Codec for Stable and Efficient Speech Generation](gogo_group-wise_granularity-ordered_codec_for_stable_and_efficient_speech_genera.md)
 - [\[ICML 2025\] FLAM: Frame-Wise Language-Audio Modeling](../../ICML2025/audio_speech/flam_frame-wise_language-audio_modeling.md)
-- [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](../../CVPR2026/audio_speech/hierarchical_codec_diffusion_for_video-to-speech_generation.md)
 
 </div>
 

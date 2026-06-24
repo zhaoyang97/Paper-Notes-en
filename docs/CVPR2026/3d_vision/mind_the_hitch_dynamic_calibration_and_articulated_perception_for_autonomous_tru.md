@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes the dCAP framework, which achieves real-time 6-DoF relative pose estimation between the tractor and trailer in articulated autonomous trucks via Transformer-based cross-view and temporal attention mechanisms. It is integrated into BEVFormer to enhance 3D object detection performance under articulated moti
+  [CVPR 2026][3D Vision][Autonomous Trucks] Ours proposes the dCAP framework, which achieves real-time 6-DoF relative pose estimation between the tractor and trailer in articulated autonomous trucks via Transformer-based cross-view and temporal attention mechanisms. It is integrated into BEVFormer to enhance 3D object detection performance under articulated motion (translation error 0.452m, rotation error 0.042 rad).
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Autonomous Trucks"
+  - "Dynamic Calibration"
+  - "Articulated Perception"
+  - "Trailer Pose Estimation"
+  - "BEV Detection"
 date: 2026-05-08
-content_hash: 0419d4856666e0f3
+content_hash: 6999f525833d0a9f
 ---
+
 # Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks
 
 **Conference**: CVPR 2026  
@@ -165,11 +171,11 @@ The final MLP head outputs the 6-DoF pose in quaternion form over 3 iterations. 
 
 ## Related Papers
 
-- [\[CVPR 2026\] LiDAS: Lighting-driven Dynamic Active Sensing for Nighttime Perception](lidas_lighting-driven_dynamic_active_sensing_for_nighttime_perception.md)
-- [\[CVPR 2026\] Perception Characteristics Distance: Measuring Stability and Robustness of Perception System in Dynamic Conditions under a Certain Decision Rule](perception_characteristics_distance_measuring_stability_and_robustness_of_percep.md)
 - [\[CVPR 2026\] DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving](dynamicvggt_learning_dynamic_point_maps_for_4d_scene_reconstruction_in_autonomou.md)
-- [\[CVPR 2026\] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration](lirec-net_a_target-free_and_learning-based_network_for_lidar_rgb_and_event_calib.md)
-- [\[CVPR 2026\] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)
+- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
+- [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
+- [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
+- [\[CVPR 2026\] From Corners to Fiducial Tags: Revisiting Checkerboard Calibration for Event Cameras](from_corners_to_fiducial_tags_revisiting_checkerboard_calibration_for_event_came.md)
 
 </div>
 

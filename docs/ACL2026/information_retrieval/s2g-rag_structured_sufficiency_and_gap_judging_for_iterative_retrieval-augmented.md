@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] S2G-RAG explicitly models "evidence sufficiency" and "next-step gaps" in iterative RAG as a structured controller named S2G-Judge. Using gap-guided queries and sentence-level evidence extraction to mitigate noise, it improves F1 from 43.3 (SIM-RAG) to 56.5 under the HotpotQA BM25 setting.
+  [ACL2026][Information Retrieval & RAG][Iterative Retrieval] S2G-RAG explicitly models "evidence sufficiency" and "next-step gaps" in iterative RAG as a structured controller named S2G-Judge. Using gap-guided queries and sentence-level evidence extraction to mitigate noise, it improves F1 from 43.3 (SIM-RAG) to 56.5 under the HotpotQA BM25 setting.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Iterative Retrieval"
+  - "Sufficiency Judgment"
+  - "Information Gap"
+  - "Evidence Compression"
+  - "Multi-hop QA"
 date: 2026-05-08
-content_hash: f514e4b4118f2c01
+content_hash: 5b956f372e7e7515
 ---
+
 # S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA
 
 **Conference**: ACL2026  
@@ -134,15 +140,14 @@ Compared to SIM-RAG, S2G-RAG achieves a +10.6 EM and +13.2 F1 improvement on Hot
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs](../../ICLR2026/information_retrieval/long-document_qa_with_chain-of-structured-thought_and_fine-tuned_slms.md)
+- [\[ACL 2026\] Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking](beyond_chunks_and_graphs_retrieval-augmented_generation_through_triplet-driven_t.md)
+- [\[ACL 2025\] SGIC: A Self-Guided Iterative Calibration Framework for RAG](../../ACL2025/information_retrieval/sgic_a_self-guided_iterative_calibration_framework_for_rag.md)
 - [\[ACL 2025\] Mitigating Lost-in-Retrieval Problems in RAG Multi-Hop QA](../../ACL2025/information_retrieval/mitigating_lost-in-retrieval_problems_in_retrieval_augmented_multi-hop_question_.md)
 - [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
-- [\[ACL 2026\] CRAFT: Training-Free Cascaded Retrieval for Tabular QA](craft_training-free_cascaded_retrieval_for_tabular_qa.md)
-- [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
-- [\[ACL 2025\] SGIC: A Self-Guided Iterative Calibration Framework for RAG](../../ACL2025/information_retrieval/sgic_a_self-guided_iterative_calibration_framework_for_rag.md)
 
 </div>
 

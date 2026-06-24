@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal
 description: >-
-  [CVPR 2026][AI Safety][Object Detection] The authors invert style transfer into "style removal" to eliminate the "random texture style" of adversarial patches from images. By locating and masking patch pixels based on these style changes, they develop a zero-shot defense that is agnostic to models, patches, and attacks. This method avoids training and preserv
+  [CVPR 2026][AI Safety][Adversarial patch defense] The authors invert style transfer into "style removal" to eliminate the "random texture style" of adversarial patches from images. By locating and masking patch pixels based on these style changes, they develop a zero-shot defense that is agnostic to models, patches, and attacks. This method avoids training and preserves clean image performance while improving adversarial mAP by 8–15 points, achieving real-time detection at 10…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Object Detection
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial patch defense"
+  - "Object detection"
+  - "Style removal"
+  - "Zero-shot defense"
+  - "Real-time inference"
 date: 2026-05-08
-content_hash: 597ad312cd0b8c5b
+content_hash: 008cd5aa6fd5b378
 ---
+
 # AntiStyler: Defending Object Detection Models Against Adversarial Patch Attacks Using Style Removal
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ Ablation of pipeline stages (COCO + Faster R-CNN, mAP%): UP = No padding, UM = S
 ## Related Papers
 
 - [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[ICLR 2026\] Defending against Backdoor Attacks via Module Switching](../../ICLR2026/ai_safety/defending_against_backdoor_attacks_via_module_switching.md)
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 - [\[CVPR 2026\] Mitigating Simplicity Bias in OOD Detection through Object Co-occurrence Analysis](mitigating_simplicity_bias_in_ood_detection_through_object_co-occurrence_analysi.md)
 - [\[CVPR 2026\] Phantom: Physical Object Interactions as Dynamic Triggers for NMS-Exploited Backdoors](phantom_physical_object_interactions_as_dynamic_triggers_for_nms-exploited_backd.md)
-- [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
-- [\[CVPR 2026\] RemedyGS: Defend 3D Gaussian Splatting Against Computation Cost Attacks](remedygs_defend_3d_gaussian_splatting_against_computation_cost_attacks.md)
 
 </div>
 

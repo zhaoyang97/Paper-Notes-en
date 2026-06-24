@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design
 description: >-
-  [ICLR 2026][Computational Biology][Diffusion Model] VIDD reformulates "fine-tuning diffusion models with rewards" as **offline policy distillation**: using a soft-optimal policy as a teacher, it is distilled into a student model by minimizing forward KL (value-weighted MLE). This achieves more stable and efficient reward optimization than PPO-based RL methods for biomol
+  [ICLR 2026][Computational Biology][Diffusion Models] VIDD reformulates "fine-tuning diffusion models with rewards" as **offline policy distillation**: using a soft-optimal policy as a teacher, it is distilled into a student model by minimizing forward KL (value-weighted MLE). This achieves more stable and efficient reward optimization than PPO-based RL methods for biomolecular design tasks (proteins, DNA, small molecules) involving **non-differentiable rewards**.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Diffusion Models"
+  - "Reward-guided Fine-tuning"
+  - "Policy Distillation"
+  - "Non-differentiable Rewards"
+  - "Protein Design"
+  - "Molecular Generation"
+  - "Soft-optimal Policy"
 date: 2026-05-08
-content_hash: 03256ebfaf0b1092
+content_hash: f8158764a234b47a
 ---
+
 # Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design
 
 **Conference**: ICLR 2026  
@@ -123,11 +130,20 @@ IFNAR2 is a more difficult target. DDPO reaches only 0.240 ipTM, whereas VIDD do
 - **Value**: ⭐⭐⭐⭐ Directly addresses the need for non-differentiable reward optimization in drug and protein design.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Papers will be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Fine-Tuning Diffusion Models via Intermediate Distribution Shaping](fine-tuning_diffusion_models_via_intermediate_distribution_shaping.md)
+- [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](thompson_sampling_via_fine-tuning_of_llms.md)
+- [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](../../NeurIPS2025/computational_biology/iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+- [\[ICLR 2026\] Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence](antibody_strengthening_defense_against_harmful_fine-tuning_for_large_language_mo.md)
+- [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](../../ICML2026/computational_biology/constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Fine-Tuning Diffusion Models via Intermediate Distribution Shaping](fine-tuning_diffusion_models_via_intermediate_distribution_shaping.md)

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Sampling-Aware Quantization for Diffusion Models
 description: >-
-  [CVPR 2026][Model Compression][PTQ] This paper points out that the two acceleration paths for diffusion models—"fast samplers" and "network quantization"—conflict when used together: quantization noise perturbs the directional estimation of high-order samplers at each step, causing the smooth Probability Flow ODE to degrade into a variance-exploding SDE.
+  [CVPR 2026][Model Compression][Diffusion Model Quantization] This paper points out that the two acceleration paths for diffusion models—"fast samplers" and "network quantization"—conflict when used together: quantization noise perturbs the directional estimation of high-order samplers at each step, causing the smooth Probability Flow ODE to degrade into a variance-exploding SDE. The authors propose "Sampling-Aware Quantization," which uses a Mixed-Order Trajectory Alignment o…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - PTQ
-  - QLoRA
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Diffusion Model Quantization"
+  - "High-order Samplers"
+  - "Probability Flow ODE"
+  - "Trajectory Alignment"
+  - "PTQ"
+  - "QLoRA"
 date: 2026-05-08
-content_hash: febde37636c253cb
+content_hash: 2ea8ec8fda8aa311
 ---
+
 # Sampling-Aware Quantization for Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -135,11 +140,11 @@ W8A8/W4A8/W4A4 reach bit compression of 3.99×/7.95×/7.95× and bit-op speedups
 
 ## Related Papers
 
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](../../ICML2026/model_compression/fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
 - [\[ECCV 2024\] Adaptive Compressed Sensing with Diffusion-Based Posterior Sampling](../../ECCV2024/model_compression/adaptive_compressed_sensing_with_diffusionbased_posterior_sa.md)
 - [\[ICML 2025\] Diffusion Sampling Correction via Approximately 10 Parameters](../../ICML2025/model_compression/diffusion_sampling_correction_via_approximately_10_parameters.md)
-- [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
-- [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
+- [\[CVPR 2026\] DeltaQuant: 4-bit Video Diffusion Models with Spatiotemporal Delta Smoothing](deltaquant_4-bit_video_diffusion_models_with_spatiotemporal_delta_smoothing.md)
+- [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](../../ICLR2026/model_compression/gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 
 </div>
 

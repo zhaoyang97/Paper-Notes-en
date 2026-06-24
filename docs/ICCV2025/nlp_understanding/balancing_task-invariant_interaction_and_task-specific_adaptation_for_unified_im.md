@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion
 description: >-
-  [ICCV 2025][NLP Understanding][Unified Image Fusion] TITA proposes a unified image fusion framework that requires no task identifier at inference. It employs an Interaction-enhanced Pixel Attention (IPA) module to explor…
+  [ICCV 2025][NLP Understanding][Unified Image Fusion] TITA proposes a unified image fusion framework that requires no task identifier at inference. It employs an Interaction-enhanced Pixel Attention (IPA) module to explore task-invariant complementary information extraction, an Operation-based Adaptive Fusion (OAF) module to dynamically adapt to task-specific requirements, and the FAMO strategy to mitigate multi-task gradient conflicts.
 tags:
   - "ICCV 2025"
   - "NLP Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Fusion"
   - "Gradient Conflict"
 date: 2026-05-08
-content_hash: 92f963dd83afb581
+content_hash: c8cb96047b82b069
 ---
 
 # Balancing Task-Invariant Interaction and Task-Specific Adaptation for Unified Image Fusion
@@ -161,11 +161,11 @@ All three components are mutually reinforcing; MO yields the largest gain for TA
 
 ## Related Papers
 
+- [\[ACL 2025\] QQSUM: A Novel Task and Model of Quantitative Query-Focused Summarization for Review-based Product Question Answering](../../ACL2025/nlp_understanding/qqsum_a_novel_task_and_model_of_quantitative_query-focused_summarization_for_rev.md)
 - [\[ACL 2026\] MetFuse: Figurative Fusion between Metonymy and Metaphor](../../ACL2026/nlp_understanding/metfuse_figurative_fusion_between_metonymy_and_metaphor.md)
+- [\[ACL 2025\] CaLMQA: Exploring Culturally Specific Long-Form Question Answering across 23 Languages](../../ACL2025/nlp_understanding/calmqa_cultural_multilingual_qa.md)
 - [\[ACL 2026\] Knowledge-driven Augmentation and Retrieval for Integrative Temporal Adaptation](../../ACL2026/nlp_understanding/knowledge-driven_augmentation_and_retrieval_for_integrative_temporal_adaptation.md)
-- [\[NeurIPS 2025\] Planning without Search: Refining Frontier LLMs with Offline Goal-Conditioned RL](../../NeurIPS2025/nlp_understanding/planning_without_search_refining_frontier_llms_with_offline_goal-conditioned_rl.md)
-- [\[NeurIPS 2025\] Weak-to-Strong Generalization under Distribution Shifts](../../NeurIPS2025/nlp_understanding/weak-to-strong_generalization_under_distribution_shifts.md)
-- [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](../../NeurIPS2025/nlp_understanding/generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
+- [\[ACL 2025\] End-to-End Dialog Neural Coreference Resolution: Balancing Efficiency and Accuracy in Large-Scale Systems](../../ACL2025/nlp_understanding/end-to-end_dialog_neural_coreference_resolution_balancing_efficiency_and_accurac.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes SDST (Sparse-Dense Side-Tuner), the first anchor-free side-tuning architecture for video temporal grounding (VTG). Through a sparse-dense dua…
+  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes SDST (Sparse-Dense Side-Tuner), the first anchor-free side-tuning architecture for video temporal grounding (VTG). Through a sparse-dense dual-stream design, SDST jointly addresses moment retrieval (MR) and highlight detection (HD). A novel Reference-based Deformable Self-Attention (RDSA) module is introduced to resolve the context deficiency in standard deformable cross-attention. SDST achieves st…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Deformable Attention"
   - "InternVideo2"
 date: 2026-05-08
-content_hash: 8b6d005ba8707056
+content_hash: 6a71081c78a9349a
 ---
 
 # Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding
@@ -155,11 +155,11 @@ SDST achieves competitive or superior performance using only 27% of the paramete
 
 ## Related Papers
 
-- [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](moment_quantization_for_video_temporal_grounding.md)
 - [\[ICCV 2025\] ResidualViT for Efficient Temporally Dense Video Encoding](residualvit_for_efficient_temporally_dense_video_encoding.md)
+- [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](moment_quantization_for_video_temporal_grounding.md)
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
-- [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
 - [\[ICCV 2025\] AllTracker: Efficient Dense Point Tracking at High Resolution](alltracker_efficient_dense_point_tracking_at_high_resolution.md)
+- [\[ICCV 2025\] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding](timeexpert_an_expert-guided_video_llm_for_video_temporal_grounding.md)
 
 </div>
 

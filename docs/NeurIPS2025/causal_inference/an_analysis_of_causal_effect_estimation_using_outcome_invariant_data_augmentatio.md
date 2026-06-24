@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation
 description: >-
-  [NeurIPS 2025][Causal Inference][causal effect estimation] This paper presents the first systematic analysis of outcome invariant data augmentation (DA) for causal effect estimation. It proves that when DA operations pre…
+  [NeurIPS 2025][Causal Inference][causal effect estimation] This paper presents the first systematic analysis of outcome invariant data augmentation (DA) for causal effect estimation. It proves that when DA operations preserve the outcome variable, they are equivalent to soft interventions on the treatment variable, thereby reducing confounding bias. The paper further proposes an IV-like (IVL) regression framework that treats DA parameters as "instrument-like" variables…
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "IV-like regression"
   - "confounding bias"
 date: 2026-05-08
-content_hash: 7816674c1b19c48f
+content_hash: d1669927f6dfbcd3
 ---
 
 # An Analysis of Causal Effect Estimation Using Outcome Invariant Data Augmentation
@@ -128,10 +128,10 @@ Under a linear Gaussian setting:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](do-pfn_in-context_learning_for_causal_effect_estimation.md)
+- [\[ACL 2025\] Leveraging Variation Theory in Counterfactual Data Augmentation for Optimized Active Learning](../../ACL2025/causal_inference/leveraging_variation_theory_in_counterfactual_data_augmentation_for_optimized_ac.md)
+- [\[ICLR 2026\] IGC-Net for Conditional Average Potential Outcome Estimation Over Time](../../ICLR2026/causal_inference/igc-net_for_conditional_average_potential_outcome_estimation_over_time.md)
 - [\[NeurIPS 2025\] Root Cause Analysis of Outliers with Missing Structural Knowledge](root_cause_analysis_of_outliers_with_missing_structural_knowledge.md)
-- [\[NeurIPS 2025\] Differentiable Structure Learning and Causal Discovery for General Binary Data](differentiable_structure_learning_and_causal_discovery_for_general_binary_data.md)
-- [\[NeurIPS 2025\] It's Hard to Be Normal: The Impact of Noise on Structure-agnostic Estimation](its_hard_to_be_normal_the_impact_of_noise_on_structure-agnostic_estimation.md)
-- [\[ICML 2026\] Outcome-Aware Spectral Feature Learning for Instrumental Variable Regression](../../ICML2026/causal_inference/outcome-aware_spectral_feature_learning_for_instrumental_variable_regression.md)
+- [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](../../ICLR2026/causal_inference/overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
 
 </div>
 

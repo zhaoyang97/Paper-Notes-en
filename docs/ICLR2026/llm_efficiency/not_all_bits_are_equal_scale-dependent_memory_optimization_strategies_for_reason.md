@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Not All Bits Are Equal: Scale-Dependent Memory Optimization Strategies for Reasoning Models
 description: >-
-  [ICLR 2026][LLM Efficiency][test-time scaling] Through 1700+ groups of experiments, this paper systematically demonstrates that the conclusion "4-bit quantization is memory-optimal" for non-reasoning models fails for reasoning models. The memory-optimal strategy is determined by the model's **effective size** (parameter count × bit-width), with a critical point at
+  [ICLR 2026][LLM Efficiency][Reasoning Models] Through 1700+ groups of experiments, this paper systematically demonstrates that the conclusion "4-bit quantization is memory-optimal" for non-reasoning models fails for reasoning models. The memory-optimal strategy is determined by the model's **effective size** (parameter count × bit-width), with a critical point at "8-bit 4B". Small models should spend memory on larger weights, while large models should spend it on longer gener…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - test-time scaling
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Reasoning Models"
+  - "KV cache compression"
+  - "weight quantization"
+  - "test-time scaling"
+  - "memory-accuracy trade-off"
+  - "Pareto frontier"
 date: 2026-05-08
-content_hash: db8d5ae60225b053
+content_hash: ea3f6e60c6b29546
 ---
+
 # Not All Bits Are Equal: Scale-Dependent Memory Optimization Strategies for Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -116,8 +122,8 @@ This paper does not propose a new method but conducts a **controlled empirical s
 - [\[ICLR 2026\] Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models](not_all_models_suit_expert_offloading_on_local_routing_consistency_of_mixture-of.md)
 - [\[ICLR 2026\] ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models](thinkv_thought-adaptive_kv_cache_compression_for_efficient_reasoning_models.md)
 - [\[ICLR 2026\] Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource](mixture-of-experts_can_surpass_dense_llms_under_strictly_equal_resource.md)
+- [\[ICLR 2026\] Attention Is All You Need for KV Cache in Diffusion LLMs](attention_is_all_you_need_for_kv_cache_in_diffusion_llms.md)
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
-- [\[ICLR 2026\] Stacked From One: Multi-Scale Self-Injection for Context Window Extension](stacked_from_one_multi-scale_self-injection_for_context_window_extension.md)
 
 </div>
 

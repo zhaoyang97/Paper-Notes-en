@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models
 description: >-
-  [ACL 2026][Medical NLP][MedCheck] The authors propose MedCheck—the first evaluation framework for the **lifecycle** of medical LLM benchmarks, decomposing benchmark construction into 5 stages with a total of 46 criteria. Auditing 56 medical benchmarks using this framework reveals three systemic issues: (1) 50% do not align with any medical standards (I
+  [ACL 2026][Medical LLM][MedCheck] The authors propose MedCheck—the first evaluation framework for the **lifecycle** of medical LLM benchmarks, decomposing benchmark construction into 5 stages with a total of 46 criteria. Auditing 56 medical benchmarks using this framework reveals three systemic issues: (1) 50% do not align with any medical standards (ICD/SNOMED), (2) 88% do not handle data contamination, and (3) 89% do not test model robustness while 91% do not test uncertain…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - MedCheck
+  - "ACL 2026"
+  - "Medical LLM"
+  - "MedCheck"
+  - "Medical benchmark"
+  - "Lifecycle assessment"
+  - "Clinical validity"
+  - "Data contamination"
 date: 2026-05-08
-content_hash: b318bf4b818ced0a
+content_hash: 00bee5f13716f571
 ---
+
 # Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models
 
 **Conference**: ACL 2026  
@@ -140,8 +145,8 @@ This paper does not train a model; it focuses on evaluation methodology. The res
 - [\[ACL 2026\] Inflated Excellence or True Performance? Rethinking Medical Diagnostic Benchmarks with Dynamic Evaluation](inflated_excellence_or_true_performance_rethinking_medical_diagnostic_benchmarks.md)
 - [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
 - [\[AAAI 2026\] Measuring Stability Beyond Accuracy in Small Open-Source Medical Large Language Models for Pediatric Endocrinology](../../AAAI2026/medical_nlp/measuring_stability_beyond_accuracy_in_small_open-source_medical_large_language_.md)
-- [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
 - [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
+- [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
 
 </div>
 

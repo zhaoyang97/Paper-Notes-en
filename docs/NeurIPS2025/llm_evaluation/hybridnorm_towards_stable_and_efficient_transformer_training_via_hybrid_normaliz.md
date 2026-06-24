@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Hybrid Normalization] This paper proposes HybridNorm, a hybrid normalization strategy that applies QKV normalization within the attention module to decouple gradients and Post-Norm within t…
+  [NeurIPS 2025][LLM Evaluation][Hybrid Normalization] This paper proposes HybridNorm, a hybrid normalization strategy that applies QKV normalization within the attention module to decouple gradients and Post-Norm within the FFN to enhance regularization. Across scales from 550M to 7B parameters, HybridNorm simultaneously achieves the training stability of Pre-Norm and the generalization performance of Post-Norm, yielding an average downstream task improvement of 2.45% at the 7…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "Gradient Flow"
   - "Training Stability"
 date: 2026-05-08
-content_hash: 306595ccfdb87c2f
+content_hash: e76c7babe4d28fa5
 ---
 
 # HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization
@@ -123,11 +123,11 @@ Wikitext PPL decreases by 9.2%; average downstream performance improves by 2.45%
 
 ## Related Papers
 
+- [\[ICML 2025\] Disentangling and Integrating Relational and Sensory Information in Transformer Architectures](../../ICML2025/llm_evaluation/disentangling_and_integrating_relational_and_sensory_information_in_transformer_.md)
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
 - [\[NeurIPS 2025\] AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners](adastar_adaptive_data_sampling_for_training_self-taught_reasoners.md)
 - [\[NeurIPS 2025\] Exploiting Vocabulary Frequency Imbalance in Language Model Pre-training](exploiting_vocabulary_frequency_imbalance_in_language_model_pre-training.md)
-- [\[ICLR 2026\] When to Ensemble: Identifying Token-Level Points for Stable and Fast LLM Ensembling](../../ICLR2026/llm_evaluation/when_to_ensemble_identifying_token-level_points_for_stable_and_fast_llm_ensembli.md)
-- [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](../../ICML2026/llm_evaluation/reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
+- [\[NeurIPS 2025\] ConfTuner: Training Large Language Models to Express Their Confidence Verbally](conftuner_training_large_language_models_to_express_their_confidence_verbally.md)
 
 </div>
 

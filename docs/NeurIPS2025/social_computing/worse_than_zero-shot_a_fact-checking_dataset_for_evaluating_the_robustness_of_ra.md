@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Worse than Zero-shot? A Fact-Checking Dataset for Evaluating the Robustness of RAG Against Misleading Retrievals
 description: >-
-  [NeurIPS 2025][Social Computing][RAG robustness] This paper introduces RAGuard, the first benchmark dataset to systematically evaluate the robustness of RAG systems against misleading retrieved content. By constructing a…
+  [NeurIPS 2025][Social Computing][RAG robustness] This paper introduces RAGuard, the first benchmark dataset to systematically evaluate the robustness of RAG systems against misleading retrieved content. By constructing a realistic retrieval corpus from Reddit — containing supporting, misleading, and unrelated documents — it demonstrates that all tested LLM-RAG systems perform **worse than a zero-shot baseline** when exposed to misleading retrievals…
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "misinformation"
 date: 2026-05-08
-content_hash: 1403fb8793a2f874
+content_hash: 9af655541e4bc8f3
 ---
 
 # Worse than Zero-shot? A Fact-Checking Dataset for Evaluating the Robustness of RAG Against Misleading Retrievals
@@ -179,10 +179,10 @@ Core contrast: **Humans benefit from, or are at least unaffected by, additional 
 ## Related Papers
 
 - [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](../../ACL2026/social_computing/diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 - [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](../../ICCV2025/social_computing/learning_visual_proxy_for_compositional_zero-shot_learning.md)
+- [\[ICML 2025\] DEFAME: Dynamic Evidence-based FAct-checking with Multimodal Experts](../../ICML2025/social_computing/defame_dynamic_evidence-based_fact-checking_with_multimodal_experts.md)
 - [\[NeurIPS 2025\] Noise-Robustness Through Noise: A Framework Combining Asymmetric LoRA with Poisoning MoE](noise-robustness_through_noise_a_framework_combining_asymmetric_lora_with_poison.md)
-- [\[ACL 2026\] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](../../ACL2026/social_computing/veritas_the_first_dynamic_benchmark_for_multimodal_automated_fact-checking.md)
-- [\[AAAI 2026\] Fact2Fiction: Targeted Poisoning Attack to Agentic Fact-checking System](../../AAAI2026/social_computing/fact2fiction_targeted_poisoning_attack_to_agentic_fact-check.md)
 
 </div>
 

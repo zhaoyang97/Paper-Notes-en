@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ECA: Efficient Continual Alignment for Open-Ended Image-to-Text Generation
 description: >-
-  [ICML 2026][Multimodal VLM][Q-Former] ECA proposes exemplar-free incremental learning on the "alignment module" (the Q-Former in BLIP-2) of pretrained VLMs. By utilizing Mixture-of-Query to compositionally aggregate task-specific queries per image, expanding parallel adapters on-demand based on a Fisher Information Matrix criterion, and preserving prior kn
+  [ICML2026][Multimodal VLM][Continual Alignment] ECA proposes exemplar-free incremental learning on the "alignment module" (the Q-Former in BLIP-2) of pretrained VLMs. By utilizing Mixture-of-Query to compositionally aggregate task-specific queries per image, expanding parallel adapters on-demand based on a Fisher Information Matrix criterion, and preserving prior knowledge via sparse dictionary replay, the method successfully learns new subjects without catastrophic forgettin…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Q-Former
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "Continual Alignment"
+  - "Exemplar-free Incremental Learning"
+  - "Open-Ended Image-to-Text Generation"
+  - "Q-Former"
+  - "Fisher Information Matrix"
 date: 2026-05-08
-content_hash: bda83bce6b870a51
+content_hash: 962a19e5cb16e887
 ---
+
 # ECA: Efficient Continual Alignment for Open-Ended Image-to-Text Generation
 
 **Conference**: ICML2026  
@@ -143,6 +148,7 @@ ECA uses the same 12.29M trainable parameters as the smallest baseline but achie
 - Value: ⭐⭐⭐⭐ The paradigm of efficient continual learning on the alignment module is highly practical for VLM deployment and incremental updates.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -150,8 +156,8 @@ ECA uses the same 12.29M trainable parameters as the smallest baseline but achie
 - [\[CVPR 2025\] OpenING: A Comprehensive Benchmark for Judging Open-ended Interleaved Image-Text Generation](../../CVPR2025/multimodal_vlm/opening_a_comprehensive_benchmark_for_judging_open-ended_interleaved_image-text_.md)
 - [\[ICLR 2026\] Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading](../../ICLR2026/multimodal_vlm/decoding_open-ended_information_seeking_goals_from_eye_movements_in_reading.md)
 - [\[CVPR 2026\] GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks](../../CVPR2026/multimodal_vlm/guide_a_benchmark_for_understanding_and_assisting_users_in_open-ended_gui_tasks.md)
-- [\[ICLR 2026\] A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation](../../ICLR2026/multimodal_vlm/a_high_quality_dataset_and_reliable_evaluation_for_interleaved_image-text_genera.md)
 - [\[ECCV 2024\] Towards Open-ended Visual Quality Comparison](../../ECCV2024/multimodal_vlm/towards_open-ended_visual_quality_comparison.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](../../CVPR2026/multimodal_vlm/text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 
 </div>
 

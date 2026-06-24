@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IEBGL:An Interpretability-Enhanced Brain Graph Learning Framework with LLM-Instructed Topology and Literature-Augmented Semantics
 description: >-
-  [CVPR 2026][Medical Imaging][rs-fMRI] IEBGL injects two streams of external knowledge—"LLM reasoning" and "biomedical literature semantics"—into rs-fMRI brain graphs. Specifically, it uses LLMs to reconstruct brain connection topology and literature embeddings to enhance brain region node features. These are processed by a graph-bidirectional Mamba network
+  [CVPR 2026][Medical Imaging][Brain Graph Learning] IEBGL injects two streams of external knowledge—"LLM reasoning" and "biomedical literature semantics"—into rs-fMRI brain graphs. Specifically, it uses LLMs to reconstruct brain connection topology and literature embeddings to enhance brain region node features. These are processed by a graph-bidirectional Mamba network for depression/autism diagnosis. While improving accuracy, it also aligns abnormal brain regions with releva…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - rs-fMRI
-  - Interpretability
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain Graph Learning"
+  - "rs-fMRI"
+  - "Large Language Model"
+  - "Literature Augmentation"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: c8c648b14c3c80e4
+content_hash: cacd5d23af9105ec
 ---
+
 # IEBGL:An Interpretability-Enhanced Brain Graph Learning Framework with LLM-Instructed Topology and Literature-Augmented Semantics
 
 **Conference**: CVPR 2026  
@@ -128,15 +132,16 @@ IEBGL notably outperforms SK-GNN, which also utilizes literature data, highlight
 - Value: ⭐⭐⭐⭐ (Practical framework for knowledge-enhanced medical diagnosis)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
-- [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 - [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
+- [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](../../ICLR2026/medical_imaging/the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[CVPR 2026\] MedTVT-R1: A Multimodal LLM Empowering Medical Reasoning and Diagnosis](medtvt-r1_a_multimodal_llm_empowering_medical_reasoning_and_diagnosis.md)
-- [\[CVPR 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graphbased_learning_of_inter_and_intraview_de.md)
 
 </div>
 

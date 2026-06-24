@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes HOG-Diff, a graph diffusion framework that utilizes higher-order topological structures (e.g., rings, triangles, motifs) as generation guidance. By extracting higher-order skeletons via Cell Complex Filtering (CCF) combined with generalized OU diffusion bridges, it achieves "coarse-to-fine" progress
+  [ICLR 2026][Image Generation][Graph generation] This paper proposes HOG-Diff, a graph diffusion framework that utilizes higher-order topological structures (e.g., rings, triangles, motifs) as generation guidance. By extracting higher-order skeletons via Cell Complex Filtering (CCF) combined with generalized OU diffusion bridges, it achieves "coarse-to-fine" progressive graph generation, reaching SOTA performance on 8 benchmarks for molecule and general graph generation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Graph generation"
+  - "diffusion models"
+  - "higher-order topology"
+  - "cell complexes"
+  - "diffusion bridges"
 date: 2026-05-08
-content_hash: 2d4e8a2944e0cb03
+content_hash: 3ca948e32a063bdd
 ---
+
 # HOG-Diff: Higher-Order Guided Diffusion for Graph Generation
 
 **Conference**: ICLR 2026  

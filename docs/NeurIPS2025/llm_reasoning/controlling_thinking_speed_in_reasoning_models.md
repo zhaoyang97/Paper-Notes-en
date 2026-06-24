@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Controlling Thinking Speed in Reasoning Models
 description: >-
-  [NeurIPS 2025][LLM Reasoning][thinking speed] By applying Representation Engineering (RepE) to extract steering vectors that control fast/slow thinking transitions from the hidden space of Large Reasoning Models (LRMs)…
+  [NeurIPS 2025 Spotlight][Reasoning][thinking speed] By applying Representation Engineering (RepE) to extract steering vectors that control fast/slow thinking transitions from the hidden space of Large Reasoning Models (LRMs), and combining these with a real-time reasoning difficulty estimator based on inter-layer logit divergence, the method achieves training-free adaptive reasoning speed control — yielding an average of +1.3% accuracy improvement and −8.6% token reduction ac…
 tags:
-  - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "NeurIPS 2025 Spotlight"
+  - "Reasoning"
   - "thinking speed"
   - "representation engineering"
   - "System 1/2"
   - "test-time scaling"
   - "steering vector"
 date: 2026-05-08
-content_hash: 037945c92cf9e158
+content_hash: 79f5a345b84b6cbb
 ---
 
 # Controlling Thinking Speed in Reasoning Models
@@ -134,11 +134,11 @@ Averaged across 4 LRMs and 4 benchmarks: +1.3% accuracy, −8.6% tokens, entirel
 
 ## Related Papers
 
+- [\[ICLR 2026\] The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models](../../ICLR2026/llm_reasoning/the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
 - [\[NeurIPS 2025\] Does Thinking More Always Help? Mirage of Test-Time Scaling in Reasoning Models](does_thinking_more_always_help_mirage_of_test-time_scaling_in_reasoning_models.md)
+- [\[NeurIPS 2025\] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)
 - [\[NeurIPS 2025\] The Illusion of Thinking: Understanding the Strengths and Limitations of Reasoning Models via the Lens of Problem Complexity](the_illusion_of_thinking_understanding_the_strengths_and_limitations_of_reasonin.md)
 - [\[NeurIPS 2025\] Towards Thinking-Optimal Scaling of Test-Time Compute for LLM Reasoning](towards_thinking-optimal_scaling_of_test-time_compute_for_llm_reasoning.md)
-- [\[ICML 2026\] Modeling Hierarchical Thinking in Large Reasoning Models](../../ICML2026/llm_reasoning/modeling_hierarchical_thinking_in_large_reasoning_models.md)
-- [\[NeurIPS 2025\] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)
 
 </div>
 

@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning
 description: >-
-  [CVPR 2026][Others][Partial Label Learning] To address the "instance entanglement" problem in Instance-Dependent Partial Label Learning (ID-PLL), where instances from similar classes share overlapping features and candidate labels, this paper proposes the CAD framework. CAD mitigates class confusion through a two-pronged approach: intra-class alignment via class
+  [CVPR2026][Partial Label Learning] To address the "instance entanglement" problem in Instance-Dependent Partial Label Learning (ID-PLL), where instances from similar classes share overlapping features and candidate labels, this paper proposes the CAD framework. CAD mitigates class confusion through a two-pronged approach: intra-class alignment via class-specific augmentation and inter-class separation via weighted penalty loss.
 tags:
-  - CVPR 2026
-  - Others
-  - Partial Label Learning
-  - Instance Entanglement
-  - Class-specific Augmentation
-  - Contrastive Learning
-  - Weakly Supervised Classification
+  - "CVPR2026"
+  - "Partial Label Learning"
+  - "Instance Entanglement"
+  - "Class-specific Augmentation"
+  - "Contrastive Learning"
+  - "Weakly Supervised Classification"
 date: 2026-05-08
-content_hash: 0683a6a2c5890c3b
+content_hash: 7f2ae83d80caa8e2
 ---
+
 # Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning
 
 **Conference**: CVPR2026  

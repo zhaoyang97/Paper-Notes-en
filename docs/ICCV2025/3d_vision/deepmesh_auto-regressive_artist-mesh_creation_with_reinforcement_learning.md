@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning
 description: >-
-  [ICCV 2025][3D Vision][3D mesh generation] This paper proposes DeepMesh, a framework that achieves human preference alignment in 3D mesh generation through an improved efficient mesh tokenization algorithm (72% compressi…
+  [ICCV 2025][3D Vision][3D mesh generation] This paper proposes DeepMesh, a framework that achieves human preference alignment in 3D mesh generation through an improved efficient mesh tokenization algorithm (72% compression rate) and the first application of DPO-based reinforcement learning to 3D mesh generation, capable of producing high-quality artist-like triangle meshes with up to 30K faces.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "mesh tokenization"
   - "point cloud conditioned generation"
 date: 2026-05-08
-content_hash: 3c477702bc84541f
+content_hash: 325e94cf5318dfd4
 ---
 
 # DeepMesh: Auto-Regressive Artist-Mesh Creation with Reinforcement Learning
@@ -163,11 +163,11 @@ Qualitative analysis shows:
 
 ## Related Papers
 
+- [\[CVPR 2026\] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](../../CVPR2026/3d_vision/buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)
 - [\[ICCV 2025\] MeshAnything V2: Artist-Created Mesh Generation with Adjacent Mesh Tokenization](meshanything_v2_artist-created_mesh_generation_with_adjacent_mesh_tokenization.md)
 - [\[ICLR 2026\] Topology-Preserved Auto-regressive Mesh Generation in the Manner of Weaving Silk](../../ICLR2026/3d_vision/topology-preserved_auto-regressive_mesh_generation_in_the_manner_of_weaving_silk.md)
 - [\[ICCV 2025\] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing](meshpad_interactive_sketch-conditioned_artist-reminiscent_mesh_generation_and_ed.md)
 - [\[NeurIPS 2025\] Mesh-RFT: Enhancing Mesh Generation via Fine-Grained Reinforcement Fine-Tuning](../../NeurIPS2025/3d_vision/mesh-rft_enhancing_mesh_generation_via_fine-grained_reinforcement_fine-tuning.md)
-- [\[ICCV 2025\] LACONIC: A 3D Layout Adapter for Controllable Image Creation](laconic_a_3d_layout_adapter_for_controllable_image_creation.md)
 
 </div>
 

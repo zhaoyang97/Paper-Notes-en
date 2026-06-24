@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Toward Long-Tailed Online Anomaly Detection through Class-Agnostic Concepts
 description: >-
-  [ICCV 2025][Object Detection][long-tailed anomaly detection] This paper proposes a new task and benchmark for Long-Tailed Online Anomaly Detection (LTOAD). The core innovation is replacing class-label dependency with a l…
+  [ICCV 2025][Object Detection][long-tailed anomaly detection] This paper proposes a new task and benchmark for Long-Tailed Online Anomaly Detection (LTOAD). The core innovation is replacing class-label dependency with a learnable class-agnostic concept set, combined with a Concept VQ-VAE and a comprehensive prompt learning framework. The proposed method achieves state-of-the-art performance in both offline and online settings without requiring class labels.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "VQ-VAE"
   - "prompt learning"
 date: 2026-05-08
-content_hash: b8a195c0960e18ce
+content_hash: 6e28c0968259e586
 ---
 
 # Toward Long-Tailed Online Anomaly Detection through Class-Agnostic Concepts
@@ -132,11 +132,11 @@ The model adopts a two-branch pipeline: (1) Reconstruction branch R — reconstr
 
 ## Related Papers
 
-- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting (WS-COC)](../../ICLR2026/object_detection/bootstrapping_mllm_for_weakly-supervised_class-agnostic_object_counting.md)
-- [\[ICML 2026\] Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection](../../ICML2026/object_detection/testing_the_test_score-direction_instability_in_class-split_anomaly_detection.md)
-- [\[ICCV 2025\] UPRE: Zero-Shot Domain Adaptation for Object Detection via Unified Prompt and Representation Enhancement](upre_zero-shot_domain_adaptation_for_object_detection_via_unified_prompt_and_rep.md)
-- [\[NeurIPS 2025\] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing](../../NeurIPS2025/object_detection/autoscidact_automated_scientific_discovery_through_contrastive_embedding_and_hyp.md)
-- [\[NeurIPS 2025\] Video-RAG: Visually-aligned Retrieval-Augmented Long Video Comprehension](../../NeurIPS2025/object_detection/video-rag_visually-aligned_retrieval-augmented_long_video_comprehension.md)
+- [\[CVPR 2025\] SimLTD: Simple Supervised and Semi-Supervised Long-Tailed Object Detection](../../CVPR2025/object_detection/simltd_simple_supervised_and_semi-supervised_long-tailed_object_detection.md)
+- [\[ECCV 2024\] Rectify the Regression Bias in Long-Tailed Object Detection](../../ECCV2024/object_detection/rectify_the_regression_bias_in_long-tailed_object_detection.md)
+- [\[ICLR 2026\] Bootstrapping MLLM for Weakly-Supervised Class-Agnostic Object Counting](../../ICLR2026/object_detection/bootstrapping_mllm_for_weaklysupervised_classagnostic_object_counting.md)
+- [\[ICML 2025\] CostFilter-AD: Enhancing Anomaly Detection through Matching Cost Filtering](../../ICML2025/object_detection/costfilter-ad_enhancing_anomaly_detection_through_matching_cost_filtering.md)
+- [\[CVPR 2025\] AnomalyNCD: Towards Novel Anomaly Class Discovery in Industrial Scenarios](../../CVPR2025/object_detection/anomalyncd_towards_novel_anomaly_class_discovery_in_industrial_scenarios.md)
 
 </div>
 

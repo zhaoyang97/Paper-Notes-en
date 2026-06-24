@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] Vision-SR1 decomposes VLM reasoning into two stages: "visual perception" and "linguistic reasoning." It requires the model to first generate a **self-consistent visual description** that allows answering the question even if the original image is removed. The same VLM then provides a visual reward by re-answering based
+  [ICLR 2026][VLM Reasoning][Visual Hallucination] Vision-SR1 decomposes VLM reasoning into two stages: "visual perception" and "linguistic reasoning." It requires the model to first generate a **self-consistent visual description** that allows answering the question even if the original image is removed. The same VLM then provides a visual reward by re-answering based solely on this description. Through decoupled multi-reward policy optimization…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Hallucination"
+  - "Language Shortcuts"
+  - "Self-Rewarding Reinforcement Learning"
+  - "Reasoning Decomposition"
+  - "Multi-Reward Policy Optimization"
 date: 2026-05-08
-content_hash: 26d7f0d1ff549209
+content_hash: c87aa6de21e1c81a
 ---
+
 # Vision-SR1: Self-Rewarding Vision-Language Model via Reasoning Decomposition and Multi-Reward Policy Optimization
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,10 @@ Removing the self-visual reward (w/o self-reward) leads to an increase in the La
 ## Related Papers
 
 - [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](perception-aware_policy_optimization_for_multimodal_reasoning.md)
+- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](../../ICML2026/vlm_reasoning/vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[ICLR 2026\] Unlocking the Essence of Beauty: Advanced Aesthetic Reasoning with Relative-Absolute Policy Optimization](unlocking_the_essence_of_beauty_advanced_aesthetic_reasoning_with_relative-absol.md)
 - [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](../../CVPR2026/vlm_reasoning/unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
 - [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
-- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](../../ICML2026/vlm_reasoning/vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 
 </div>
 

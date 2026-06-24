@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes GS-LIVM, the first real-time photo-realistic LiDAR-inertial-visual mapping framework designed for large-scale unbounded outdoor scenes. It addres…
+  [ICCV 2025][Autonomous Driving][3D Gaussian Splatting] This paper proposes GS-LIVM, the first real-time photo-realistic LiDAR-inertial-visual mapping framework designed for large-scale unbounded outdoor scenes. It addresses the problem of sparse and non-uniform LiDAR point clouds via voxel-level Gaussian Process Regression (Voxel-GPR), and leverages a covariance-centric design to rapidly initialize 3D Gaussian parameters. The method achieves state-of-the-art mapping efficienc…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian Process Regression"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: b8e5ebbb5f9f1a93
+content_hash: 9a10a4e160798876
 ---
 
 # GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting
@@ -136,7 +136,7 @@ Joint optimization is performed over the current camera window $\mathcal{Q}_{cur
 - [\[ICCV 2025\] RTMap: Real-Time Recursive Mapping with Change Detection and Localization](rtmap_real-time_recursive_mapping_with_change_detection_and_localization.md)
 - [\[ICCV 2025\] 6DOPE-GS: Online 6D Object Pose Estimation using Gaussian Splatting](6dopegs_online_6d_object_pose_estimation_using_gaussian_spla.md)
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
-- [\[ICCV 2025\] A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds](a_constrained_optimization_approach_for_gaussian_splatting_from_coarsely-posed_i.md)
+- [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 
 </div>
 

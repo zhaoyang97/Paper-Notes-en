@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] Ours proposes the SafeDrive end-to-end planning framework, which simulates the future behavior of key entities through a trajectory-conditioned Sparse World Network (SWNet). It then employs a Fine-grained Reasoning Network (FRNet) for per-instance collision assessment and per-timestep drivable area compliance evaluatio
+  [CVPR 2026][Interpretability][End-to-End Driving] Ours proposes the SafeDrive end-to-end planning framework, which simulates the future behavior of key entities through a trajectory-conditioned Sparse World Network (SWNet). It then employs a Fine-grained Reasoning Network (FRNet) for per-instance collision assessment and per-timestep drivable area compliance evaluation. SafeDrive achieves 91.6 PDMS and a collision rate of only 0.5% on NAVSIM…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "End-to-End Driving"
+  - "Safety Reasoning"
+  - "Sparse World Models"
+  - "Trajectory Evaluation"
+  - "Collision Prediction"
 date: 2026-05-08
-content_hash: f3e664c8e8b43da4
+content_hash: a056a62e582cf4d2
 ---
+
 # SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ SafeDrive achieves a driving score of 66.8%, and records only 61 collisions (0.5
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](../../ICLR2026/interpretability/sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
 - [\[CVPR 2026\] TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment](tdatr_improving_end-to-end_table_recognition_via_table_detail-aware_learning_and.md)
-- [\[ACL 2025\] Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety](../../ACL2025/interpretability/safety_is_not_only_about_refusal_reasoning-enhanced_fine-tuning_for_interpretabl.md)
 - [\[ACL 2026\] Fine-Grained Analysis of Shared Syntactic Mechanisms in Language Models](../../ACL2026/interpretability/fine-grained_analysis_of_shared_syntactic_mechanisms_in_language_models.md)
+- [\[ACL 2025\] Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety](../../ACL2025/interpretability/safety_is_not_only_about_refusal_reasoning-enhanced_fine-tuning_for_interpretabl.md)
 - [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)
-- [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](../../ACL2026/interpretability/finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
 
 </div>
 

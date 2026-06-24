@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prompt Optimization Is a Coin Flip: Diagnosing When It Helps in Compound AI Systems
 description: >-
-  [ICML 2026][Interpretability][compound AI] This paper empirically examines two implicit assumptions of end-to-end prompt optimization in compound AI systems—coupling between agents and the worthiness of single-agent prompt optimization—using 18,000 grid evaluations and 144 optimization runs. It finds that neither assumption holds for most mid-tier models (49% o
+  [ICML 2026][Interpretability][prompt optimization] This paper empirically examines two implicit assumptions of end-to-end prompt optimization in compound AI systems—coupling between agents and the worthiness of single-agent prompt optimization—using 18,000 grid evaluations and 144 optimization runs. It finds that neither assumption holds for most mid-tier models (49% of runs perform worse than zero-shot; A×B interaction term $p>0.52$). Consequently…
 tags:
-  - ICML 2026
-  - Interpretability
-  - compound AI
+  - "ICML 2026"
+  - "Interpretability"
+  - "prompt optimization"
+  - "compound AI"
+  - "ANOVA variance decomposition"
+  - "multi-agent coupling"
+  - "headroom test"
 date: 2026-05-08
-content_hash: cffe42719c565deb
+content_hash: 4192d1ac153bd399
 ---
+
 # Prompt Optimization Is a Coin Flip: Diagnosing When It Helps in Compound AI Systems
 
 **Conference**: ICML 2026  
@@ -142,7 +147,7 @@ Across 72 runs, 49% were inferior to zero-shot; binomial tests ($p=0.91$) could 
 - [\[ICML 2026\] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](diagnosing_the_reliability_of_llm-as-a-judge_via_item_response_theory.md)
 - [\[ICML 2026\] Adaptive Querying with AI Persona Priors](adaptive_querying_with_ai_persona_priors.md)
 - [\[ICML 2026\] OmniSapiens: A Foundation Model for Social Behavior Processing via Heterogeneity-Aware Relative Policy Optimization](omnisapiens_a_foundation_model_for_social_behavior_processing_via_heterogeneity-.md)
-- [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](../../ICLR2026/interpretability/exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
+- [\[ICLR 2026\] GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning](../../ICLR2026/interpretability/gepa_reflective_prompt_evolution_can_outperform_reinforcement_learning.md)
 
 </div>
 

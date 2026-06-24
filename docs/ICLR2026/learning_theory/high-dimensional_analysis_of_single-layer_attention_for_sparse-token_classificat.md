@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The authors provide a precise high-dimensional theory of single-layer attention on a "sparse-weak-rare" signal classification model: at the representation level, attention requires only $\theta=\Theta(\log L)$ signal strength for perfect classification (whereas linear classifiers require $\sqrt{L}$); at the learnabilit
+  [ICLR 2026][learning theory][Attention mechanism theory] The authors provide a precise high-dimensional theory of single-layer attention on a "sparse-weak-rare" signal classification model: at the representation level, attention requires only $\theta=\Theta(\log L)$ signal strength for perfect classification (whereas linear classifiers require $\sqrt{L}$); at the learnability level, it is proven that **two gradient steps** are sufficient for the query weight $q$ to align with…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "learning theory"
+  - "Attention mechanism theory"
+  - "sparse token classification"
+  - "high-dimensional asymptotic analysis"
+  - "gradient descent learnability"
+  - "signal detection"
 date: 2026-05-08
-content_hash: b9eacdca7ce699ee
+content_hash: dcbbd38775f96ddb
 ---
+
 # High-Dimensional Analysis of Single-Layer Attention for Sparse-Token Classification
 
 **Conference**: ICLR 2026  

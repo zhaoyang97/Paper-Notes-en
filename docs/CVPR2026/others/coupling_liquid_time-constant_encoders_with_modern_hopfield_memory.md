@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Coupling Liquid Time-Constant Encoders with Modern Hopfield Memory
 description: >-
-  [CVPR 2026][Others][Modern Hopfield] This work attaches an external Modern Hopfield associative memory module to Liquid Time-Constant (LTC) networks to decouple "real-time encoding" from "long-term memory" within a single hidden state. It theoretically demonstrates that this coupling maintains bounded stability while contracting upstream gradients and dep
+  [CVPR 2026][Liquid Neural Networks] This work attaches an external Modern Hopfield associative memory module to Liquid Time-Constant (LTC) networks to decouple "real-time encoding" from "long-term memory" within a single hidden state. It theoretically demonstrates that this coupling maintains bounded stability while contracting upstream gradients and depressing the Hessian trace, smoothing the training surface and yielding an average accuracy gain of 2.3% across six time-seri…
 tags:
-  - CVPR 2026
-  - Others
-  - Modern Hopfield
+  - "CVPR 2026"
+  - "Liquid Neural Networks"
+  - "Continuous-time"
+  - "Modern Hopfield"
+  - "Associative Memory"
+  - "Loss Surface"
 date: 2026-05-08
-content_hash: 1bb852a746edcf5e
+content_hash: ccb4cf7da00d8bb0
 ---
+
 # Coupling Liquid Time-Constant Encoders with Modern Hopfield Memory
 
 **Conference**: CVPR 2026  
@@ -141,10 +145,10 @@ To prove gains stem from "retrieval dynamics" rather than "parameter count," six
 ## Related Papers
 
 - [\[ICML 2025\] Nonparametric Modern Hopfield Models](../../ICML2025/others/nonparametric_modern_hopfield_models.md)
-- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
 - [\[ICML 2025\] Modern Methods in Associative Memory](../../ICML2025/others/modern_methods_in_associative_memory.md)
 - [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](dream_document_recognition_with_explicit_adaptive_memory.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
+- [\[CVPR 2026\] PhysSkin: Real-Time and Generalizable Physics-Based Skin Simulation](physskin_real-time_and_generalizable_physics-based_animation_via_self-supervised.md)
 
 </div>
 

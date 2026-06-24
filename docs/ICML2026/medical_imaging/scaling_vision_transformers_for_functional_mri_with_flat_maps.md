@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Scaling Vision Transformers for Functional MRI with Flat Maps
 description: >-
-  [ICML 2026][Medical Imaging][Cortical Flat Map] By projecting 3D fMRI volumes into 2D videos via "cortical flat maps" and feeding them into a standard spacetime MAE-ViT, the authors develop CortexMAE trained on 2.1K hours of HCP data. It significantly outperforms SOTA in cognitive state decoding, validating that the flat map is the "goldilocks zone" between voxel-wi
+  [ICML 2026][Medical Imaging][fMRI Foundation Model] By projecting 3D fMRI volumes into 2D videos via "cortical flat maps" and feeding them into a standard spacetime MAE-ViT, the authors develop CortexMAE trained on 2.1K hours of HCP data. It significantly outperforms SOTA in cognitive state decoding, validating that the flat map is the "goldilocks zone" between voxel-wise (volume) and region-averaged (parcellation) representations. Simultaneously…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - Cortical Flat Map
-  - MAE
-  - Scaling Law
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "fMRI Foundation Model"
+  - "Cortical Flat Map"
+  - "MAE"
+  - "Brainmarks Evaluation"
+  - "Scaling Law"
 date: 2026-05-08
-content_hash: 7c0e8419cc7c9fa1
+content_hash: d7c235d0e293e4e4
 ---
+
 # Scaling Vision Transformers for Functional MRI with Flat Maps
 
 **Conference**: ICML 2026  
@@ -147,11 +150,11 @@ Controlled benchmark (Figure 8): **No model significantly outperforms simple FC 
 
 ## Related Papers
 
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](../../CVPR2026/medical_imaging/scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[CVPR 2026\] EEGiT: Teaching Vision Transformers to Understand the EEG signal](../../CVPR2026/medical_imaging/eegit_teaching_vision_transformers_to_understand_the_eeg_signal.md)
 - [\[CVPR 2026\] MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy](../../CVPR2026/medical_imaging/muvit_multi-resolution_vision_transformers_for_learning_across_scales_in_microsc.md)
+- [\[ICLR 2026\] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification](../../ICLR2026/medical_imaging/functional_mri_time_series_generation_via_wavelet-based_image_transform_and_spec.md)
 - [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](../../CVPR2026/medical_imaging/keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
-- [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](../../CVPR2026/medical_imaging/turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
-- [\[AAAI 2026\] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation](../../AAAI2026/medical_imaging/funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se.md)
 
 </div>
 

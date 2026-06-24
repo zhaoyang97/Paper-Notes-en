@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][visual invariance] Proposes the Stretch-and-Squeeze (SnS) algorithm, a gradient-free, model-agnostic bi-objective optimization framework that systematically probes the invariance manifold of visual systems by "stretching" representations at different processing levels while "squeezing" target unit activations, revealing hierarchical diff
+  [ICLR 2026][Physics & Scientific Computing][visual invariance] Proposes the Stretch-and-Squeeze (SnS) algorithm, a gradient-free, model-agnostic bi-objective optimization framework that systematically probes the invariance manifold of visual systems by "stretching" representations at different processing levels while "squeezing" target unit activations, revealing hierarchical differences in invariance interpretability between standard and robust CNNs.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - visual invariance
-  - gradient-free optimization
-  - adversarial examples
-  - feature visualization
-  - CNN interpretability
-  - robust models
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "visual invariance"
+  - "gradient-free optimization"
+  - "adversarial examples"
+  - "feature visualization"
+  - "CNN interpretability"
+  - "robust models"
 date: 2026-05-08
-content_hash: ec433d5d2aa76213
+content_hash: 83bd73249d4af346
 ---
+
 # Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance
 
 **Conference**: ICLR 2026  
@@ -154,9 +155,9 @@ Using PCA + SVM classifiers to distinguish invariant images produced by differen
 
 - [\[ICML 2026\] Loss Landscape Diagnosis for Gradient-Based Gray-Scott System Inversion: Disentangling the Roles of PINN Components](../../ICML2026/physics/loss_landscape_diagnosis_for_gradient-based_gray-scott_system_inversion_disentan.md)
 - [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
+- [\[ICLR 2026\] Learning Escorted Protocols For Multistate Free-Energy Estimation](learning_escorted_protocols_for_multistate_free-energy_estimation.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
 - [\[ICLR 2026\] MoMa: A Simple Modular Learning Framework for Material Property Prediction](moma_a_simple_modular_learning_framework_for_material_property_prediction.md)
-- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
-- [\[ICLR 2026\] Beyond Structure: Invariant Crystal Property Prediction with Pseudo-Particle Ray Diffraction](beyond_structure_invariant_crystal_property_prediction_with_pseudo-particle_ray_.md)
 
 </div>
 

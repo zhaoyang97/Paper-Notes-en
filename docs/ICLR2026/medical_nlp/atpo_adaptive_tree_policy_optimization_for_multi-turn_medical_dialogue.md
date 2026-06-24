@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue
 description: >-
-  [ICLR 2026][Medical NLP][Paper Note] This paper proposes the ATPO (Adaptive Tree Policy Optimization) algorithm, which models multi-turn medical dialogues as a Hierarchical Markov Decision Process (H-MDP). It dynamically allocates rollout budgets through an uncertainty-aware adaptive tree expansion mechanism, guiding exploration via a composite uncertaint
+  [ICLR 2026][Medical LLM][Multi-turn medical dialogue] This paper proposes the ATPO (Adaptive Tree Policy Optimization) algorithm, which models multi-turn medical dialogues as a Hierarchical Markov Decision Process (H-MDP). It dynamically allocates rollout budgets through an uncertainty-aware adaptive tree expansion mechanism, guiding exploration via a composite uncertainty measure of Bellman error and action-value variance. Using Qwen3-8B, it outperforms GPT-4o on three medic…
 tags:
-  - ICLR 2026
-  - Medical NLP
+  - "ICLR 2026"
+  - "Medical LLM"
+  - "Multi-turn medical dialogue"
+  - "Tree search"
+  - "Policy optimization"
+  - "Uncertainty-guided"
+  - "Hierarchical MDP"
+  - "Value function estimation"
+  - "LLM alignment"
 date: 2026-05-08
-content_hash: 8d6324bf4e717da6
+content_hash: 91c47e39e79c6f5d
 ---
+
 # ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue
 
 **Conference**: ICLR 2026  
@@ -154,11 +162,11 @@ Each trajectory is used to update the policy with a PPO-style objective, where t
 
 ## Related Papers
 
+- [\[ACL 2026\] IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages](../../ACL2026/medical_nlp/indicmeddialog_a_parallel_multi-turn_medical_dialogue_dataset_for_accessible_hea.md)
+- [\[AAAI 2026\] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment](../../AAAI2026/medical_nlp/a_principle-driven_adaptive_policy_for_group_cognitive_stimu.md)
+- [\[NeurIPS 2025\] Shallow Robustness, Deep Vulnerabilities: Multi-Turn Evaluation of Medical LLMs](../../NeurIPS2025/medical_nlp/shallow_robustness_deep_vulnerabilities_multi-turn_evaluation_of_medical_llms.md)
 - [\[ICLR 2026\] KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning](knowguard_knowledge-driven_abstention_for_multi-round_clinical_reasoning.md)
-- [\[ICLR 2026\] Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)
-- [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
-- [\[ICLR 2026\] GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)
-- [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
+- [\[ACL 2025\] Adaptive-VP: A Framework for LLM-Based Virtual Patients that Adapts to Trainees' Dialogue to Facilitate Nurse Communication Training](../../ACL2025/medical_nlp/adaptive-vp_a_framework_for_llm-based_virtual_patients_that_adapts_to_trainees_d.md)
 
 </div>
 

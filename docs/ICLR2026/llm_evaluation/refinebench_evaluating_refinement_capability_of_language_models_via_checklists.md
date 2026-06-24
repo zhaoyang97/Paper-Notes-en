@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RefineBench: Evaluating Refinement Capability of Language Models via Checklists
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] The authors propose RefineBench—a multi-round refinement evaluation benchmark covering 11 domains and 1,000 difficult problems scored via "checklists." By systematically distinguishing between "self-refinement (no feedback)" and "guided refinement (with feedback)," the study finds that even frontier models like Gemini-
+  [ICLR 2026][LLM Evaluation][Self-correction] The authors propose RefineBench—a multi-round refinement evaluation benchmark covering 11 domains and 1,000 difficult problems scored via "checklists." By systematically distinguishing between "self-refinement (no feedback)" and "guided refinement (with feedback)," the study finds that even frontier models like Gemini-2.5-Pro and GPT-5 achieve extremely low scores (31.3%/29.1%) after five rounds of self-refinement. However…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Self-correction"
+  - "Guided refinement"
+  - "Checklist evaluation"
+  - "Multi-round interaction"
+  - "Reasoning models"
 date: 2026-05-08
-content_hash: 2425e0c90c511f06
+content_hash: aa4cc4c56a824972
 ---
+
 # RefineBench: Evaluating Refinement Capability of Language Models via Checklists
 
 **Conference**: ICLR 2026  
@@ -122,15 +128,15 @@ Simply providing the full checklist (telling the model which items were not sati
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
 - [\[ICLR 2026\] ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists](expertlongbench_benchmarking_language_models_on_expert-level_long-form_generatio.md)
+- [\[ICLR 2026\] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models](chemeval_a_multi-level_and_fine-grained_chemical_capability_evaluation_for_large.md)
 - [\[ICLR 2026\] CMPhysBench: A Benchmark for Evaluating Large Language Models in Condensed Matter Physics](cmphysbench_a_benchmark_for_evaluating_large_language_models_in_condensed_matter.md)
 - [\[ACL 2026\] Evaluating Memory Capability in Continuous Lifelog Scenario](../../ACL2026/llm_evaluation/evaluating_memory_capability_in_continuous_lifelog_scenario.md)
-- [\[ICLR 2026\] Cost-of-Pass: An Economic Framework for Evaluating Language Models](cost-of-pass_an_economic_framework_for_evaluating_language_models.md)
 
 </div>
 

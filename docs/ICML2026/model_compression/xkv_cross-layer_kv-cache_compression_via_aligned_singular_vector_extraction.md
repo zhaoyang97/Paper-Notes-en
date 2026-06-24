@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction
 description: >-
-  [ICML 2026][Model Compression][CKA] xKV discovers that while the per-token cosine similarity of KV-caches across different LLM layers is low, their principal singular vectors are highly aligned. Consequently, xKV utilizes a cross-layer shared low-rank basis to compress multiple layers of KV-cache simultaneously. Combined with selective reconstruction, it
+  [ICML 2026][Model Compression][KV-cache Compression] xKV discovers that while the per-token cosine similarity of KV-caches across different LLM layers is low, their principal singular vectors are highly aligned. Consequently, xKV utilizes a cross-layer shared low-rank basis to compress multiple layers of KV-cache simultaneously. Combined with selective reconstruction, it achieves up to 8x compression and a 4.23x increase in end-to-end throughput for long-context inference.
 tags:
-  - ICML 2026
-  - Model Compression
-  - CKA
+  - "ICML 2026"
+  - "Model Compression"
+  - "KV-cache Compression"
+  - "Long-Context Inference"
+  - "Cross-Layer Low-Rank Decomposition"
+  - "Selective Reconstruction"
+  - "CKA"
 date: 2026-05-08
-content_hash: 55364a50398e22ce
+content_hash: 3cc444d84db15fab
 ---
+
 # xKV: Cross-Layer KV-Cache Compression via Aligned Singular Vector Extraction
 
 **Conference**: ICML 2026  
@@ -148,8 +153,8 @@ Selective reconstruction and window size are the critical factors. The first set
 - [\[ACL 2026\] The Pitfalls of KV Cache Compression](../../ACL2026/model_compression/the_pitfalls_of_kv_cache_compression.md)
 - [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
 - [\[ICML 2026\] FlattenGPT: Depth Compression for Transformer with Layer Flattening](flattengpt_depth_compression_for_transformer_with_layer_flattening.md)
-- [\[AAAI 2026\] KVmix: Gradient-Based Layer Importance-Aware Mixed-Precision Quantization for KV Cache](../../AAAI2026/model_compression/kvmix_gradient-based_layer_importance-aware_mixed-precision_.md)
 - [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
+- [\[ICML 2026\] A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints](a_queueing-theoretic_framework_for_stability_analysis_of_llm_inference_with_kv_c.md)
 
 </div>
 

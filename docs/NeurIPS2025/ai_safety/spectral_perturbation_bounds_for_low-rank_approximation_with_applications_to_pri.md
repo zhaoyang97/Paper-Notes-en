@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy
 description: >-
-  [NeurIPS 2025][AI Safety][low-rank approximation] This paper establishes novel high-probability perturbation bounds for low-rank approximation of symmetric matrices under the spectral norm…
+  [NeurIPS 2025][AI Safety][low-rank approximation] This paper establishes novel high-probability perturbation bounds for low-rank approximation of symmetric matrices under the spectral norm, improving upon the classical Eckart–Young–Mirsky theorem, and resolves an open problem in differentially private PCA.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "contour bootstrapping"
   - "matrix perturbation theory"
 date: 2026-05-08
-content_hash: 29679a8951a29748
+content_hash: 4bba90d62ffa1248
 ---
 
 # Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy
@@ -125,11 +125,11 @@ This is a theoretical paper. The core technical contribution is **contour bootst
 
 ## Related Papers
 
+- [\[ICLR 2026\] Video Unlearning via Low-Rank Refusal Vector](../../ICLR2026/ai_safety/video_unlearning_via_low-rank_refusal_vector.md)
 - [\[NeurIPS 2025\] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming](differential_privacy_for_euclidean_jordan_algebra_with_applications_to_private_s.md)
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
-- [\[ICCV 2025\] SpecGuard: Spectral Projection-based Advanced Invisible Watermarking](../../ICCV2025/ai_safety/specguard_spectral_projection-based_advanced_invisible_watermarking.md)
-- [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
 - [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](sequentially_auditing_differential_privacy.md)
+- [\[NeurIPS 2025\] Multi-Class Support Vector Machine with Differential Privacy](multi-class_support_vector_machine_with_differential_privacy.md)
 
 </div>
 

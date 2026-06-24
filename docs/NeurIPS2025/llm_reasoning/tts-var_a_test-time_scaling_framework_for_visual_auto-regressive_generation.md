@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] TTS-VAR: A Test-Time Scaling Framework for Visual Auto-Regressive Generation
 description: >-
-  [NeurIPS 2025][LLM Reasoning][test-time scaling] This paper proposes TTS-VAR — the first test-time scaling framework specifically designed for Visual Auto-Regressive (VAR) models. It formulates image generation as a path…
+  [NeurIPS 2025][Reasoning][test-time scaling] This paper proposes TTS-VAR — the first test-time scaling framework specifically designed for Visual Auto-Regressive (VAR) models. It formulates image generation as a path searching problem and achieves an 8.7% improvement on GenEval (0.69 → 0.75) with Infinity 2B by combining adaptive descending batch sizes, early-stage clustering-based diversity search, and late-stage resampling-based potential selection. With $N=2$…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "test-time scaling"
   - "visual auto-regressive"
   - "VAR"
   - "path searching"
   - "image generation"
 date: 2026-05-08
-content_hash: 5b37b0582e8c0bda
+content_hash: a08855aeda5bc376
 ---
 
 # TTS-VAR: A Test-Time Scaling Framework for Visual Auto-Regressive Generation

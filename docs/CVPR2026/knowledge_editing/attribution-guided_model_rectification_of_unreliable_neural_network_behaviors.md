@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors
 description: >-
-  [CVPR 2026][Knowledge Editing][rank-one model editing] This paper proposes an attribution-guided dynamic model rectification framework that repositions rank-one model editing from domain adaptation to behavior rectification. By quantifying layer editability via Integrated Gradients to automatically locate suspect layers, it repairs three types of unreliable behaviors—backd
+  [CVPR 2026][Knowledge Editing][rank-one model editing] This paper proposes an attribution-guided dynamic model rectification framework that repositions rank-one model editing from domain adaptation to behavior rectification. By quantifying layer editability via Integrated Gradients to automatically locate suspect layers, it repairs three types of unreliable behaviors—backdoor attacks, spurious correlations, and feature leakage—using only a single clean sample.
 tags:
-  - CVPR 2026
-  - Knowledge Editing
-  - rank-one model editing
+  - "CVPR 2026"
+  - "Knowledge Editing"
+  - "rank-one model editing"
+  - "attribution analysis"
+  - "backdoor defense"
+  - "spurious correlation"
+  - "model rectification"
 date: 2026-05-08
-content_hash: ef440fcb53a80b78
+content_hash: 15d0b7d16c8a15c3
 ---
+
 # Attribution-Guided Model Rectification of Unreliable Neural Network Behaviors
 
 **Conference**: CVPR 2026  
@@ -170,11 +175,11 @@ The individual rank-one edit targeting a constrained least-squares problem: $\mi
 
 ## Related Papers
 
+- [\[ICLR 2026\] ACE: Attribution-Controlled Knowledge Editing for Multi-hop Factual Recall](../../ICLR2026/knowledge_editing/ace_attribution-controlled_knowledge_editing_for_multi-hop_factual_recall.md)
+- [\[ICLR 2026\] Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database](../../ICLR2026/knowledge_editing/scaling_knowledge_editing_in_llms_to_100000_facts_with_neural_kv_database.md)
+- [\[ICLR 2026\] TangleScore: Tangle-Guided Purge and Imprint for Unstructured Knowledge Editing](../../ICLR2026/knowledge_editing/tanglescore_tangle-guided_purge_and_imprint_for_unstructured_knowledge_editing.md)
+- [\[ACL 2025\] ChainEdit: Propagating Ripple Effects in LLM Knowledge Editing through Logical Rule-Guided Chains](../../ACL2025/knowledge_editing/chainedit_propagating_ripple_effects_in_llm.md)
 - [\[CVPR 2026\] SAME: Sparse and Anchored Model Editing for Heterogeneous Incremental Learning under Limited Data](same_sparse_and_anchored_model_editing_for_heterogeneous_incremental_learning_un.md)
-- [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](../../ICLR2026/knowledge_editing/fine-tuning_done_right_in_model_editing.md)
-- [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](../../ICML2026/knowledge_editing/reverse-engineering_model_editing_on_language_models.md)
-- [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](../../ICLR2026/knowledge_editing/energy-regularized_sequential_model_editing_on_hyperspheres.md)
-- [\[ACL 2026\] HiEdit: Lifelong Model Editing with Hierarchical Reinforcement Learning](../../ACL2026/knowledge_editing/hiedit_lifelong_model_editing_with_hierarchical_reinforcement_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?
 description: >-
-  [ICCV 2025][Multimodal VLM][High-Resolution Image Understanding] This paper introduces HRScene, a benchmark covering 25 real-world scenarios and 2 diagnostic datasets (resolution 1K–35K). Evaluating 28 VLMs reveals that…
+  [ICCV 2025][Multimodal VLM][High-Resolution Image Understanding] This paper introduces HRScene, a benchmark covering 25 real-world scenarios and 2 diagnostic datasets (resolution 1K–35K). Evaluating 28 VLMs reveals that current state-of-the-art models achieve an average accuracy of only ~50% on real high-resolution tasks, with significant regional performance divergence and a pronounced lost-in-middle problem.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Evaluation"
   - "Needle-in-a-Haystack"
 date: 2026-05-08
-content_hash: f2a86cfedc5e5331
+content_hash: d28e759299404c90
 ---
 
 # HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?
@@ -161,11 +161,11 @@ HRScene consists of two main components:
 
 ## Related Papers
 
-- [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](../../ICLR2026/multimodal_vlm/vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
 - [\[ICCV 2025\] Effective Training Data Synthesis for Improving MLLM Chart Understanding](effective_training_data_synthesis_for_improving_mllm_chart_understanding.md)
 - [\[ICCV 2025\] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers](falcon_resolving_visual_redundancy_and_fragmentation_in_high.md)
+- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](../../ICLR2026/multimodal_vlm/ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 - [\[ICML 2026\] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception](../../ICML2026/multimodal_vlm/cvsearch_empowering_multimodal_llms_with_cognitive_visual_search_for_high-resolu.md)
-- [\[ICCV 2025\] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning](babyvlm_data-efficient_pretraining_of_vlms_inspired_by_infant_learning.md)
+- [\[ICCV 2025\] Training-free Generation of Temporally Consistent Rewards from VLMs](training-free_generation_of_temporally_consistent_rewards_from_vlms.md)
 
 </div>
 

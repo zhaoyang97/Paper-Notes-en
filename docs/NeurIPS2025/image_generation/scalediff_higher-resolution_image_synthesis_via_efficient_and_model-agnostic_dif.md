@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion
 description: >-
-  [NeurIPS 2025][Image Generation][High-resolution generation] ScaleDiff is a framework that eliminates redundant overlap computation in conventional patch-based methods via Neighborhood Patch Attention (NPA). Combined wit…
+  [NeurIPS 2025][Image Generation][High-resolution generation] ScaleDiff is a framework that eliminates redundant overlap computation in conventional patch-based methods via Neighborhood Patch Attention (NPA). Combined with Latent Frequency Mixing (LFM) and Structure Guidance (SG), it extends pretrained diffusion models to high resolutions (e.g., 4096²) without any additional training, achieving state-of-the-art quality among training-free methods and significant inference acce…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Frequency mixing"
   - "Structure guidance"
 date: 2026-05-08
-content_hash: 2c7e47fa171d131e
+content_hash: f788af6fc12e2490
 ---
 
 # ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion
@@ -130,9 +130,9 @@ ScaleDiff requires only 113 seconds on SDXL at 4096², making it the fastest amo
 
 - [\[ICCV 2025\] InfGen: A Resolution-Agnostic Paradigm for Scalable Image Synthesis](../../ICCV2025/image_generation/infgen_a_resolution-agnostic_paradigm_for_scalable_image_synthesis.md)
 - [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
+- [\[ECCV 2024\] AccDiffusion: An Accurate Method for Higher-Resolution Image Generation](../../ECCV2024/image_generation/accdiffusion_an_accurate_method_for_higher-resolution_image_generation.md)
 - [\[ICCV 2025\] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution](../../ICCV2025/image_generation/patchscaler_an_efficient_patch-independent_diffusion_model_for_image_super-resol.md)
-- [\[NeurIPS 2025\] Tortoise and Hare Guidance: Accelerating Diffusion Model Inference with Multirate Integration](tortoise_and_hare_guidance_accelerating_diffusion_model_inference_with_multirate.md)
-- [\[NeurIPS 2025\] BlurDM: A Blur Diffusion Model for Image Deblurring](blurdm_a_blur_diffusion_model_for_image_deblurring.md)
+- [\[ECCV 2024\] FouriScale: A Frequency Perspective on Training-Free High-Resolution Image Synthesis](../../ECCV2024/image_generation/fouriscale_a_frequency_perspective_on_training-free_high-resolution_image_synthe.md)
 
 </div>
 

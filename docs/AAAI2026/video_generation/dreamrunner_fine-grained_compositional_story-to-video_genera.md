@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation
 description: >-
-  [AAAI 2026][Video Generation][Story video generation] This paper proposes DreamRunner, a framework that achieves fine-grained controllable multi-character multi-event story video generation via LLM-based dual-level plann…
+  [AAAI 2026][Video Generation][Story video generation] This paper proposes DreamRunner, a framework that achieves fine-grained controllable multi-character multi-event story video generation via LLM-based dual-level planning, retrieval-augmented motion prior learning, and a spatial-temporal region-based 3D attention injection module (SR3AI).
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "compositional video generation"
   - "LoRA injection"
 date: 2026-05-08
-content_hash: 47149824f6ce1dd2
+content_hash: d8e3c8f6c81922c6
 ---
 
 # DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation
@@ -207,10 +207,10 @@ Key distinction: DreamRunner is the first to simultaneously realize spatial-temp
 ## Related Papers
 
 - [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
-- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](../../CVPR2026/video_generation/training-free_motion_factorization_for_compositional_video_generation.md)
 - [\[ICCV 2025\] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent](../../ICCV2025/video_generation/motionagent_fine-grained_controllable_video_generation_via_motion_field_agent.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
-- [\[ICLR 2026\] TTOM: Test-Time Optimization and Memorization for Compositional Video Generation](../../ICLR2026/video_generation/ttom_test-time_optimization_and_memorization_for_compositional_video_generation.md)
+- [\[CVPR 2025\] The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation](../../CVPR2025/video_generation/the_devil_is_in_the_prompts_retrieval-augmented_prompt_optimization_for_text-to-.md)
+- [\[CVPR 2026\] AlcheMinT: Fine-grained Temporal Control for Multi-Reference Consistent Video Generation](../../CVPR2026/video_generation/alchemint_fine-grained_temporal_control_for_multi-reference_consistent_video_gen.md)
 
 </div>
 

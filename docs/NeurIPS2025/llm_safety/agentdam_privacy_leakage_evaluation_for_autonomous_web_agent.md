@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents
 description: >-
-  [NeurIPS 2025][LLM Safety][AI agent privacy] This paper proposes AgentDAM, the first benchmark for end-to-end evaluation of data minimization compliance by AI agents in real web environments. It comprises 246 tasks spann…
+  [NeurIPS 2025][LLM Safety][AI agent privacy] This paper proposes AgentDAM, the first benchmark for end-to-end evaluation of data minimization compliance by AI agents in real web environments. It comprises 246 tasks spanning Reddit, GitLab, and Shopping platforms, and finds that leading models such as GPT-4o exhibit privacy leakage rates of 36–46% without mitigation, while a CoT-based privacy prompt reduces leakage rates to 6–8%.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "privacy benchmark"
   - "inference-time leakage"
 date: 2026-05-08
-content_hash: c608f8a1885425f9
+content_hash: d63362a3434ac6bb
 ---
 
 # AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents
@@ -121,10 +121,10 @@ AgentDAM consists of three components: (1) **Task Design**: 246 tasks, each comp
 ## Related Papers
 
 - [\[NeurIPS 2025\] ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search](reliabilityrag_effective_and_provably_robust_defense_for_rag-based_web-search.md)
+- [\[ACL 2025\] Estimating Privacy Leakage of Augmented Contextual Knowledge in Language Models](../../ACL2025/llm_safety/estimating_privacy_leakage_of_augmented_contextual_knowledge_in_language_models.md)
 - [\[NeurIPS 2025\] Evaluation of Vision-LLMs in Surveillance Video](evaluation_of_vision-llms_in_surveillance_video.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](../../ICLR2026/llm_safety/searching_for_privacy_risks_in_llm_agents_via_simulation.md)
 - [\[NeurIPS 2025\] Music Arena: Live Evaluation for Text-to-Music](music_arena_live_evaluation_for_text-to-music.md)
-- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](../../ICLR2026/llm_safety/doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
-- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
 
 </div>
 

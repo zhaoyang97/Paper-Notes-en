@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the issue where edge-based methods rely on one-to-one Hungarian matching—leaving most edge proposals "unsupervised"—this paper introduces the "intra-group relative advantage" concept from GRPO into wireframe reconstruction. The proposed GREO calculates a continuous reward for every edge based on geometric al
+  [CVPR 2026][3D Vision][Building wireframe reconstruction] To address the issue where edge-based methods rely on one-to-one Hungarian matching—leaving most edge proposals "unsupervised"—this paper introduces the "intra-group relative advantage" concept from GRPO into wireframe reconstruction. The proposed GREO calculates a continuous reward for every edge based on geometric alignment quality, normalizes it within the group to form a target confidence distribution…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Building wireframe reconstruction"
+  - "point clouds"
+  - "group relative optimization"
+  - "dense supervision"
+  - "RL-style training"
 date: 2026-05-08
-content_hash: 500a72a3d8da6591
+content_hash: 38b3168e2492c862
 ---
+
 # Edges Compete for Trust: Group Relative Edge Optimization for Building Reconstruction from Point Clouds
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Breakdown of GREO components on the Tallinn subset (using EdgeDiff):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)
 - [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
-- [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
+- [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
+- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
+- [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
 
 </div>
 

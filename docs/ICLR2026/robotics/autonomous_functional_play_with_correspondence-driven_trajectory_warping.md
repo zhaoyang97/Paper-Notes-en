@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Autonomous Functional Play with Correspondence-Driven Trajectory Warping
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes Tether: an open-loop strategy that "warps" demonstration trajectories (requiring only $\le10$ trials) to new scenes via semantic keypoint correspondence. This is integrated into a closed "autonomous functional play" loop scheduled by a Vision-Language Model (VLM). The system enables a robot to autom
+  [ICLR2026][Robotics][Autonomous Data Generation] This paper proposes Tether: an open-loop strategy that "warps" demonstration trajectories (requiring only $\le10$ trials) to new scenes via semantic keypoint correspondence. This is integrated into a closed "autonomous functional play" loop scheduled by a Vision-Language Model (VLM). The system enables a robot to automatically generate 1000+ expert-level trajectories over 26 hours in the real world with minimal human interventi…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Autonomous Data Generation"
+  - "Keypoint Correspondence"
+  - "Trajectory Warping"
+  - "Imitation Learning"
+  - "VLM Guidance"
 date: 2026-05-08
-content_hash: 619a5cb0c22f8d28
+content_hash: a5fec0a4c8fe666f
 ---
+
 # Autonomous Functional Play with Correspondence-Driven Trajectory Warping
 
 **Conference**: ICLR2026  
@@ -138,9 +144,9 @@ The platform uses a 7-DoF Franka Emika Panda with dual ZED cameras. Tether uses 
 
 - [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](../../CVPR2026/robotics/scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](../../CVPR2026/robotics/affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
+- [\[ICML 2026\] WestWorld: Scalable Trajectory World Models with Knowledge Encoding](../../ICML2026/robotics/westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)
 - [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
 - [\[ICCV 2025\] Weakly-Supervised Learning of Dense Functional Correspondences](../../ICCV2025/robotics/weakly-supervised_learning_of_dense_functional_correspondences.md)
-- [\[CVPR 2026\] DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning](../../CVPR2026/robotics/demofungrasp_universal_dexterous_functional_grasping_via_demonstration-editing_r.md)
 
 </div>
 

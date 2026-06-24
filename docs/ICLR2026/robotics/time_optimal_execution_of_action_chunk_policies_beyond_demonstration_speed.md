@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] Addressing the issue where imitation learning (including VLA) execution speed is bottlenecked by demonstration speed, this paper proposes RACE: it redefines "actions" as desired states, performs reachability-aware time-optimal re-timing for each action chunk, and utilizes test-time search to select the smoothest and mo
+  [ICLR 2026][Robotics][Imitation Learning] Addressing the issue where imitation learning (including VLA) execution speed is bottlenecked by demonstration speed, this paper proposes RACE: it redefines "actions" as desired states, performs reachability-aware time-optimal re-timing for each action chunk, and utilizes test-time search to select the smoothest and most controllable future chunks. It doubles execution speed compared to demonstrations and quadruples it compared to ori…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Action Chunking"
+  - "Time-Optimal Path Parameterization"
+  - "Asynchronous Inference"
+  - "Test-time Search"
 date: 2026-05-08
-content_hash: ad844bc3008278bf
+content_hash: 94ff5243fae3cedb
 ---
+
 # Time Optimal Execution of Action Chunk Policies Beyond Demonstration Speed
 
 **Conference**: ICLR 2026  
@@ -133,10 +139,20 @@ Real-robot experiments further verified: on high-precision Door Insertion (Furni
 - Value: ⭐⭐⭐⭐⭐ Policy-agnostic, minimal training changes, stackable on VLAs. Directly addresses the speed bottleneck in imitation learning for industrial throughput.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](real-time_robot_execution_with_masked_action_chunking.md)
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](verifier-free_test-time_sampling_for_vision-language-action_models.md)
+- [\[ICLR 2026\] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control](action_chunking_and_data_augmentation_yield_exponential_improvements_in_behavior.md)
+- [\[ICLR 2026\] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](robust_fine-tuning_of_vision-language-action_robot_policies_via_parameter_mergin.md)
+- [\[ICLR 2026\] Contractive Diffusion Policies](contractive_diffusion_policies.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](real-time_robot_execution_with_masked_action_chunking.md)

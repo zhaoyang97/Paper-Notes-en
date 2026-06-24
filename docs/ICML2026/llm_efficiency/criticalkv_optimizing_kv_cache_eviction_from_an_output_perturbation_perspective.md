@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective
 description: >-
-  [ICML 2026][LLM Efficiency][KV cache eviction] The authors reframe the heuristic-based problem of "identifying critical KV cache entries" as an optimization problem of "minimizing attention output perturbation." They derive an analytical upper bound for perturbation (weighted by both attention weights and value norms projected via $W^O$) and design a plug-and-play
+  [ICML 2026][LLM Efficiency][KV cache eviction] The authors reframe the heuristic-based problem of "identifying critical KV cache entries" as an optimization problem of "minimizing attention output perturbation." They derive an analytical upper bound for perturbation (weighted by both attention weights and value norms projected via $W^O$) and design a plug-and-play two-stage greedy selection algorithm. This method reduces the compression loss of SOTA eviction approaches like S…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - KV cache eviction
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "KV cache eviction"
+  - "output perturbation upper bound"
+  - "long-context inference"
+  - "attention weights"
+  - "projected value norm"
 date: 2026-05-08
-content_hash: 4a17411293afc282
+content_hash: 38d8dad13fa7701e
 ---
+
 # CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective
 
 **Conference**: ICML 2026  
@@ -135,10 +140,10 @@ Three findings: (1) Integrating Ours generally cuts the performance drop by more
 
 ## Related Papers
 
+- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](../../ICLR2026/llm_efficiency/defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
+- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](../../ICLR2026/llm_efficiency/rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
 - [\[AAAI 2026\] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction](../../AAAI2026/llm_efficiency/judge_q_trainable_queries_for_optimized_information_retention_in_kv_cache_evicti.md)
 - [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
-- [\[ICLR 2026\] Randomization Boosts KV Caching, Learning Balances Query Load: A Joint Perspective](../../ICLR2026/llm_efficiency/randomization_boosts_kv_caching_learning_balances_query_load_a_joint_perspective.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
 - [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](../../ICLR2026/llm_efficiency/cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
 
 </div>

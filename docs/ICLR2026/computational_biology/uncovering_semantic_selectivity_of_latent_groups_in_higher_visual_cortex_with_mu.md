@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes MIG-Vis: first, a "group-disentangled VAE" encodes macaque IT cortex neural spikes into multiple low-dimensional latent groups; then, "mutual information-guided deterministic DDIM editing" visualizes perturbations of each latent group as image changes, allowing researchers to **directly see** which
+  [ICLR 2026][Computational Biology][Higher Visual Cortex] This paper proposes MIG-Vis: first, a "group-disentangled VAE" encodes macaque IT cortex neural spikes into multiple low-dimensional latent groups; then, "mutual information-guided deterministic DDIM editing" visualizes perturbations of each latent group as image changes, allowing researchers to **directly see** which neural clusters in the higher visual cortex are responsible for pose, category, or intra-class details.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Higher Visual Cortex"
+  - "Semantic Selectivity"
+  - "Group Disentanglement"
+  - "Mutual Information-Guided Diffusion"
+  - "IT Cortex"
 date: 2026-05-08
-content_hash: d46c2d3e53089514
+content_hash: b3f00b8a99bd67d2
 ---
+
 # Uncovering Semantic Selectivity of Latent Groups in Higher Visual Cortex with Mutual Information-Guided Diffusion
 
 **Conference**: ICLR 2026  
@@ -145,10 +151,20 @@ Comparing three baselines focused on "neural guidance" using Face as the origina
 - Value: ⭐⭐⭐⭐⭐ Provides a direct, interpretable new tool for understanding the compositional multi-dimensional encoding of the higher visual cortex.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] PepTri: Physical, Evolutionary, and Mutual Information Tri-guided All-atom Diffusion Peptide Design](peptri_tri-guided_all-atom_diffusion_for_peptide_design_via_physics_evolution_an.md)
+- [\[ICLR 2026\] A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex](a_tale_of_two_tails_preferred_and_anti-preferred_natural_stimuli_in_visual_corte.md)
+- [\[ICLR 2026\] MindPilot: Closed-loop Visual Stimulation Optimization for Brain Modulation with EEG-guided Diffusion](mindpilot_closed-loop_visual_stimulation_optimization_for_brain_modulation_with_.md)
+- [\[ICLR 2026\] Model-Guided Microstimulation Steers Primate Visual Behavior](model-guided_microstimulation_steers_primate_visual_behavior.md)
+- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](../../ICML2026/computational_biology/neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Model-Guided Microstimulation Steers Primate Visual Behavior](model-guided_microstimulation_steers_primate_visual_behavior.md)

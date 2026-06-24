@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models
 description: >-
-  [ICLR 2026][LLM Reasoning][Model Compression] Ours systematically investigates the impact of quantization, distillation, and pruning on Large Reasoning Models (LRM). Through performance benchmarking and mechanistic interpretability analysis, the study reveals core findings: the number of weights affects knowledge memory more than reasoning, the last-layer MLP up_p
+  [ICLR2026][Reasoning][Model Compression] Ours systematically investigates the impact of quantization, distillation, and pruning on Large Reasoning Models (LRM). Through performance benchmarking and mechanistic interpretability analysis, the study reveals core findings: the number of weights affects knowledge memory more than reasoning, the last-layer MLP up_proj is the most critical component, and current quantization methods over-compress the final layers.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Model Compression
-  - Quantization
-  - Interpretability
+  - "ICLR2026"
+  - "Reasoning"
+  - "Model Compression"
+  - "Reasoning Models"
+  - "Quantization"
+  - "Distillation"
+  - "Pruning"
+  - "Interpretability"
+  - "DeepSeek-R1"
 date: 2026-05-08
-content_hash: a0206aa5eeb0b086
+content_hash: a3f42957480e227f
 ---
+
 # When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models
 
 **Conference**: ICLR2026  
@@ -170,9 +175,9 @@ The collapse point is negatively correlated with task difficulty: AIME collapses
 
 - [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
 - [\[ACL 2026\] Can Reasoning Path still be Effective as Input? Bridging Post-Reasoning to Chain-of-Thought Compression](../../ACL2026/llm_reasoning/can_reasoning_path_still_be_effective_as_input_bridging_post-reasoning_to_chain-.md)
-- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 - [\[ICML 2026\] Internalizing Safety Understanding in Large Reasoning Models via Verification](../../ICML2026/llm_reasoning/internalizing_safety_understanding_in_large_reasoning_models_via_verification.md)
-- [\[ICLR 2026\] Characterizing and Mitigating Reasoning Drift in Large Language Models](characterizing_and_mitigating_reasoning_drift_in_large_language_models.md)
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
+- [\[ICLR 2026\] Adaptive Thinking: Large Language Models Know When to Think in Latent Space](adaptive_thinking_large_language_models_know_when_to_think_in_latent_space.md)
 
 </div>
 

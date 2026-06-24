@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation
 description: >-
-  [ICML 2026][Alignment & RLHF][safety steering] This paper addresses the failure of supervised safety steering on unseen jailbreak attacks by proposing "unsupervised latent direction discovery + bi-level adversarial training" to simulate new jailbroken states in the activation space. These simulated states are used as adversarial samples to train an OT potential fun
+  [ICML 2026][LLM Alignment][safety steering] This paper addresses the failure of supervised safety steering on unseen jailbreak attacks by proposing "unsupervised latent direction discovery + bi-level adversarial training" to simulate new jailbroken states in the activation space. These simulated states are used as adversarial samples to train an OT potential function (whose gradient forms a spatially varying steering field). The method reduces the attack success rate to under…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - safety steering
-  - jailbreak defense
-  - unsupervised latent direction
-  - bi-level adversarial training
-  - optimal transport
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "safety steering"
+  - "jailbreak defense"
+  - "unsupervised latent direction"
+  - "bi-level adversarial training"
+  - "optimal transport"
 date: 2026-05-08
-content_hash: dca13e884976294a
+content_hash: 3f59356c41a4e828
 ---
+
 # Steering Beyond the Support: Adversarial Training on Unsupervised Jailbroken Activation Simulation
 
 **Conference**: ICML 2026  
@@ -155,8 +156,8 @@ CB/LAT show strong defense but severe over-refusal (Mistral OR-FPR 83.3%). Ours 
 - [\[ICML 2026\] Adaptive Probe-based Steering for Robust LLM Jailbreaking](adaptive_probe-based_steering_for_robust_llm_jailbreaking.md)
 - [\[NeurIPS 2025\] Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks](../../NeurIPS2025/llm_alignment/short-length_adversarial_training_helps_llms_defend_long-length_jailbreak_attack.md)
 - [\[ICLR 2026\] AlphaSteer: Learning Refusal Steering with Principled Null-Space Constraint](../../ICLR2026/llm_alignment/alphasteer_learning_refusal_steering_with_principled_null-space_constraint.md)
-- [\[ICML 2026\] Consistency Training Can Entrench Misalignment](consistency_training_can_entrench_misalignment.md)
 - [\[CVPR 2026\] Principled Steering via Null-space Projection for Jailbreak Defense in Vision-Language Models](../../CVPR2026/llm_alignment/principled_steering_via_null-space_projection_for_jailbreak_defense_in_vision-la.md)
+- [\[ICML 2026\] Consistency Training Can Entrench Misalignment](consistency_training_can_entrench_misalignment.md)
 
 </div>
 

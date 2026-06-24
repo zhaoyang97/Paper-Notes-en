@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation
 description: >-
-  [ICML 2026][Image Generation][layout-to-image] To address "representation fragmentation" in layout-to-image generation within 5-shot atypical domains (aerial / underwater / extreme dark), the authors explicitly decompose the conditional representation of each category into global semantic anchors and local recomposable primitives. By using a saliency-aware loss to
+  [ICML 2026][Image Generation][layout-to-image] To address "representation fragmentation" in layout-to-image generation within 5-shot atypical domains (aerial / underwater / extreme dark), the authors explicitly decompose the conditional representation of each category into global semantic anchors and local recomposable primitives. By using a saliency-aware loss to enforce foreground consistency, they reduce the Bootstrap FID on DIOR from 82.5 to 74.3 and improve mAP to 26.1.
 tags:
-  - ICML 2026
-  - Image Generation
-  - layout-to-image
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "layout-to-image"
+  - "few-shot adaptation"
+  - "representation disentanglement"
+  - "visual primitives"
+  - "diffusion models"
 date: 2026-05-08
-content_hash: 3cb0492cbfd3f0cf
+content_hash: 521ce42d23d549f4
 ---
+
 # Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation
 
 **Conference**: ICML 2026  
@@ -131,16 +135,16 @@ In variant ablations, *PI-SA Swapping* (placing semantic anchors in late upsampl
 - Value: ⭐⭐⭐⭐ Provides a ready-to-use solution for few-shot atypical L2I with open-source code. The disentanglement logic and GradCAM-as-loss are valuable for other few-shot generation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Patches: Global-aware Autoregressive Model for Multimodal Few-Shot Font Generation](../../CVPR2026/image_generation/beyond_patches_global-aware_autoregressive_model_for_multimodal_few-shot_font_ge.md)
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](../../CVPR2026/image_generation/uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
 - [\[CVPR 2025\] Zero-Shot Image Restoration Using Few-Step Guidance of Consistency Models (and Beyond)](../../CVPR2025/image_generation/zero-shot_image_restoration_using_few-step_guidance_of_consistency_models_and_be.md)
+- [\[ICLR 2026\] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data](../../ICLR2026/image_generation/i-druid_layout_to_image_generation_via_instance-disentangled_representation_and_.md)
 - [\[CVPR 2026\] Few-shot Acoustic Synthesis with Multimodal Flow Matching](../../CVPR2026/image_generation/few-shot_acoustic_synthesis_with_multimodal_flow_matching.md)
-- [\[CVPR 2025\] DualAnoDiff: Dual-Interrelated Diffusion Model for Few-Shot Anomaly Image Generation](../../CVPR2025/image_generation/dual-interrelated_diffusion_model_for_few-shot_anomaly_image_generation.md)
 
 </div>
 

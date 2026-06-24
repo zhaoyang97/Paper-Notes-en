@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Instance-Level Composed Image Retrieval
 description: >-
-  [NeurIPS 2025][Image Generation][Composed Image Retrieval] This paper proposes the instance-level composed image retrieval (i-CIR) benchmark and a training-free method, BASIC…
+  [NeurIPS 2025][Image Generation][Composed Image Retrieval] This paper proposes the instance-level composed image retrieval (i-CIR) benchmark and a training-free method, BASIC, which independently estimates image and text query similarities and fuses them via multiplicative combination, achieving state-of-the-art performance on both i-CIR and existing CIR datasets without any training.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free"
   - "Feature Fusion"
 date: 2026-05-08
-content_hash: 769e81f2ef8fefb1
+content_hash: e6433682f8c991bd
 ---
 
 # Instance-Level Composed Image Retrieval
@@ -211,9 +211,9 @@ Each component yields consistent gains; contrastive PCA projection and query exp
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](instanceassemble_layoutaware_image_generation_via_instance_a.md)
-- [\[CVPR 2026\] WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2026/image_generation/wiser_wider_search_deeper_thinking_and_adaptive_fusion_for_training-free_zero-sh.md)
+- [\[CVPR 2025\] ILIAS: Instance-Level Image Retrieval At Scale](../../CVPR2025/image_generation/ilias_instance-level_image_retrieval_at_scale.md)
 - [\[NeurIPS 2025\] GenIR: Generative Visual Feedback for Mental Image Retrieval](genir_generative_visual_feedback_for_mental_image_retrieval.md)
+- [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](instanceassemble_layoutaware_image_generation_via_instance_a.md)
 - [\[NeurIPS 2025\] Highlighting What Matters: Promptable Embeddings for Attribute-Focused Image Retrieval](highlighting_what_matters_promptable_embeddings_for_attribute-focused_image_retr.md)
 - [\[NeurIPS 2025\] Aligning Compound AI Systems via System-level DPO](aligning_compound_ai_systems_via_system-level_dpo.md)
 

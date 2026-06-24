@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Synthia: Scalable Grounded Persona Generation from Social Media Data
 description: >-
-  [ACL 2026][Social Computing][Paper Note] The Synthia framework is proposed to generate grounded LLM persona narratives based on real social media posts (Bluesky). It improves social survey alignment by up to 11.6% compared to the SOTA while using smaller models and preserving social network topology to support network-aware analysis.
+  [ACL 2026][Social Computing][Persona Generation] The Synthia framework is proposed to generate grounded LLM persona narratives based on real social media posts (Bluesky). It improves social survey alignment by up to 11.6% compared to the SOTA while using smaller models and preserving social network topology to support network-aware analysis.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Persona Generation"
+  - "Synthetic Populations"
+  - "Social Media"
+  - "Social Survey Simulation"
+  - "Fairness Analysis"
 date: 2026-05-08
-content_hash: 15a40a09668dbf8c
+content_hash: 2ca59c01fc3a53df
 ---
+
 # Synthia: Scalable Grounded Persona Generation from Social Media Data
 
 **Conference**: ACL 2026  
@@ -143,10 +149,10 @@ Synthia requires no training and directly uses pre-trained LLMs for persona gene
 ## Related Papers
 
 - [\[ACL 2026\] Persona-E2: A Human-Grounded Dataset for Personality-Shaped Emotional Responses to Textual Events](persona-e2_a_human-grounded_dataset_for_personality-shaped_emotional_responses_t.md)
-- [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
 - [\[ICML 2026\] Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data](../../ICML2026/social_computing/three_years_of_rchatgpt_societal_impact_evaluations_from_social_media_data.md)
+- [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
+- [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
 - [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
-- [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](bayesian_social_deduction_with_graph-informed_language_models.md)
 
 </div>
 

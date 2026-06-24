@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database
 description: >-
-  [ICLR 2026][Knowledge Editing][Locate-and-Edit] This paper reinterprets existing Locate-and-Edit knowledge editing methods as "querying a KV database" and proposes NeuralDB. By replacing the traditional linear perturbation $\Delta$ with a non-linear gated retrieval module, the fact capacity is extended from several hundred to 100,000, while maintaining the model's g
+  [ICLR 2026][Knowledge Editing][Locate-and-Edit] This paper reinterprets existing Locate-and-Edit knowledge editing methods as "querying a KV database" and proposes NeuralDB. By replacing the traditional linear perturbation $\Delta$ with a non-linear gated retrieval module, the fact capacity is extended from several hundred to 100,000, while maintaining the model's general capabilities.
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - Locate-and-Edit
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Locate-and-Edit"
+  - "KV Database"
+  - "Gated Retrieval"
+  - "Mass Editing"
 date: 2026-05-08
-content_hash: d7b6cc76198e4eee
+content_hash: 63bd22b6759a417f
 ---
+
 # Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database
 
 **Conference**: ICLR 2026  

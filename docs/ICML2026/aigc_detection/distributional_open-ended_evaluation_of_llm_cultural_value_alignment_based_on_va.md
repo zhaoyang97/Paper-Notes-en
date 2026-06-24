@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distributional Open-Ended Evaluation of LLM Cultural Value Alignment Based on Value Codebook
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] DOVE utilizes rate-distortion variational optimization to automatically construct a compact "Value Codebook" from 10,000 human texts. It then uses Unbalanced Optimal Transport (UOT) to measure distribution differences between human and LLM long-form texts in the value space, improving the "Evaluation-Downstream Task" c
+  [ICML 2026][AIGC Detection][Cultural Alignment] DOVE utilizes rate-distortion variational optimization to automatically construct a compact "Value Codebook" from 10,000 human texts. It then uses Unbalanced Optimal Transport (UOT) to measure distribution differences between human and LLM long-form texts in the value space, improving the "Evaluation-Downstream Task" correlation from $\le 24\%$ in baselines to $31.56\%$ across 12 LLMs.
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "Cultural Alignment"
+  - "Value Evaluation"
+  - "Value Codebook"
+  - "Rate-Distortion"
+  - "Unbalanced Optimal Transport"
 date: 2026-05-08
-content_hash: 5bdc8d193a9a61e1
+content_hash: 0eabb0f883cfd7d6
 ---
+
 # Distributional Open-Ended Evaluation of LLM Cultural Value Alignment Based on Value Codebook
 
 **Conference**: ICML 2026  
@@ -136,9 +142,9 @@ Across 12 LLMs and 4 cultures, DOVE's predictive correlation on downstream "cult
 
 - [\[NeurIPS 2025\] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content](../../NeurIPS2025/aigc_detection/can_llms_write_faithfully_an_agent-based_evaluation_of_llm-generated_islamic_con.md)
 - [\[CVPR 2025\] SGC-Net: Stratified Granular Comparison Network for Open-Vocabulary HOI Detection](../../CVPR2025/aigc_detection/sgc-net_stratified_granular_comparison_network_for_open-vocabulary_hoi_detection.md)
+- [\[ICML 2026\] LLM Self-Recognition: Steering and Retrieving Activation Signatures](llm_self-recognition_steering_and_retrieving_activation_signatures.md)
 - [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](../../ACL2026/aigc_detection/temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[ICML 2026\] LLM Self-Recognition: Steering and Retrieving Activation Signatures](llm_self-recognition_steering_and_retrieving_activation_signatures.md)
 
 </div>
 

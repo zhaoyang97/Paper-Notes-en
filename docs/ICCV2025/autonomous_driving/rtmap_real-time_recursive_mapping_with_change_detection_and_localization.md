@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RTMap: Real-Time Recursive Mapping with Change Detection and Localization
 description: >-
-  [ICCV 2025][Autonomous Driving][HD Map] RTMap is proposed as the first end-to-end framework that simultaneously addresses three core challenges in multi-traversal online HD map construction: prior-map-based localization…
+  [ICCV 2025][Autonomous Driving][HD Map] RTMap is proposed as the first end-to-end framework that simultaneously addresses three core challenges in multi-traversal online HD map construction: prior-map-based localization, road structure change detection, and probabilistic crowdsourced map fusion. It achieves improvements in both map quality and localization accuracy on TbV and nuScenes.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "Uncertainty Modeling"
   - "Multi-Traversal Fusion"
 date: 2026-05-08
-content_hash: e74ababecbdfe386
+content_hash: 2444853464e62f3a
 ---
 
 # RTMap: Real-Time Recursive Mapping with Change Detection and Localization
@@ -201,10 +201,10 @@ RTMap achieves higher recall on changed categories; in practice, higher recall i
 ## Related Papers
 
 - [\[ICCV 2025\] GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](gs-livm_real-time_photo-realistic_lidar-inertial-visual_mapping_with_gaussian_sp.md)
-- [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[NeurIPS 2025\] ChronoGraph: A Real-World Graph-Based Multivariate Time Series Dataset](../../NeurIPS2025/autonomous_driving/chronograph_a_real-world_graph-based_multivariate_time_series_dataset.md)
 - [\[ICCV 2025\] Splat-LOAM: Gaussian Splatting LiDAR Odometry and Mapping](splat-loam_gaussian_splatting_lidar_odometry_and_mapping.md)
-- [\[ICCV 2025\] LookOut: Real-World Humanoid Egocentric Navigation](lookout_real-world_humanoid_egocentric_navigation.md)
+- [\[CVPR 2025\] RENO: Real-Time Neural Compression for 3D LiDAR Point Clouds](../../CVPR2025/autonomous_driving/reno_real-time_neural_compression_for_3d_lidar_point_clouds.md)
 
 </div>
 

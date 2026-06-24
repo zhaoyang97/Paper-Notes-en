@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semantic Discrepancy-aware Detector for Image Forgery Identification
 description: >-
-  [ICCV 2025][Image Generation][Image forgery detection] This paper proposes the Semantic Discrepancy-aware Detector (SDD), which leverages three modules — Semantic Token Sampling (STS)…
+  [ICCV 2025][Image Generation][Image forgery detection] This paper proposes the Semantic Discrepancy-aware Detector (SDD), which leverages three modules — Semantic Token Sampling (STS), Concept-level Forgery Discrepancy Learning (CFDL), and a Low-level Forgery Feature Enhancer — to align CLIP's visual semantic concept space with the forgery space via reconstruction learning. SDD achieves state-of-the-art performance on the UnivFD and SynRIS benchmarks ($ap_m$ 98.51%…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "vision-language models"
 date: 2026-05-08
-content_hash: f411dd97d38f4190
+content_hash: c266f573a1ab322f
 ---
 
 # Semantic Discrepancy-aware Detector for Image Forgery Identification
@@ -163,9 +163,9 @@ Comparison of adaptive weight functions:
 
 - [\[ICCV 2025\] ForgeLens: Data-Efficient Forgery Focus for Generalizable Forgery Image Detection](forgelens_data-efficient_forgery_focus_for_generalizable_forgery_image_detection.md)
 - [\[ICCV 2025\] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization](m2sformer_multi-spectral_and_multi-scale_attention_with_edge-aware_difficulty_gu.md)
-- [\[ICCV 2025\] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent](describe_dont_dictate_semantic_image_editing_with_natural_language_intent.md)
 - [\[ICCV 2025\] DeepShield: Fortifying Deepfake Video Detection with Local and Global Forgery Analysis](deepshield_fortifying_deepfake_video_detection_with_local_and_global_forgery_ana.md)
-- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
+- [\[ECCV 2024\] SAIR: Learning Semantic-aware Implicit Representation](../../ECCV2024/image_generation/sair_learning_semantic-aware_implicit_representation.md)
+- [\[ICCV 2025\] Describe, Don't Dictate: Semantic Image Editing with Natural Language Intent](describe_dont_dictate_semantic_image_editing_with_natural_language_intent.md)
 
 </div>
 

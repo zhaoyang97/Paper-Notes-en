@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence
 description: >-
-  [ICLR 2026][AI Safety][optimal transport] This work leverages the geometric singularity boundaries of semi-discrete Optimal Transport (OT) to locate semantically ambiguous regions and generates proxy OOD samples (OTIS) near these boundaries. By employing a confidence suppression loss during training, the model is forced to produce uniform predictions in struct
+  [ICLR 2026][AI Safety][optimal transport] This work leverages the geometric singularity boundaries of semi-discrete Optimal Transport (OT) to locate semantically ambiguous regions and generates proxy OOD samples (OTIS) near these boundaries. By employing a confidence suppression loss during training, the model is forced to produce uniform predictions in structurally uncertain areas, systematically mitigating the OOD overconfidence issue in DNNs.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - optimal transport
-  - OOD overconfidence
-  - singularity boundaries
-  - confidence calibration
-  - OTIS
+  - "ICLR 2026"
+  - "AI Safety"
+  - "optimal transport"
+  - "OOD overconfidence"
+  - "singularity boundaries"
+  - "confidence calibration"
+  - "OTIS"
 date: 2026-05-08
-content_hash: ce6d601382158145
+content_hash: 3109da02737e341c
 ---
+
 # Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence
 
 **Conference**: ICLR 2026  
@@ -166,10 +167,10 @@ The proposed method significantly reduces OOD MMC across most ID/OOD combination
 ## Related Papers
 
 - [\[CVPR 2026\] Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport](../../CVPR2026/ai_safety/bypassing_the_transport_plan_dynamic_reweighting_for_out-of-distribution_detecti.md)
+- [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](../../ICML2026/ai_safety/optimal_transport_under_group_fairness_constraints.md)
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)
 - [\[ICLR 2026\] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection](gradpca_leveraging_ntk_alignment_for_reliable_out-of-distribution_detection.md)
 - [\[ICLR 2026\] SCOPED: Score–Curvature Out-of-Distribution Proximity Evaluator for Diffusion](scoped_scorecurvature_out-of-distribution_proximity_evaluator_for_diffusion.md)
-- [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](../../ICML2026/ai_safety/optimal_transport_under_group_fairness_constraints.md)
 
 </div>
 

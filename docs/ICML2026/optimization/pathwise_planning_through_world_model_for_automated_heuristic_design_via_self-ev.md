@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs
 description: >-
-  [ICML 2026][Optimization & Theory][World Models] PathWise reformulates LLM-based Automated Heuristic Design (AHD) as a sequential decision process on an "entailment graph." Four LLM agents—Policy, World Model, and Dual-Critics—collaborate to replace gradient updates with natural language reflections. On problems such as TSP, CVRP, KP, and Bin Packing, it outperforms
+  [ICML 2026][Optimization][Automated Heuristic Design] PathWise reformulates LLM-based Automated Heuristic Design (AHD) as a sequential decision process on an "entailment graph." Four LLM agents—Policy, World Model, and Dual-Critics—collaborate to replace gradient updates with natural language reflections. On problems such as TSP, CVRP, KP, and Bin Packing, it outperforms mainstream baselines like FunSearch, EoH, ReEvo, HSEvo, and MCTS-AHD with only 50% of the evaluation budge…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - World Models
+  - "ICML 2026"
+  - "Optimization"
+  - "Automated Heuristic Design"
+  - "Multi-agent LLM"
+  - "Entailment Graph"
+  - "World Model"
+  - "Combinatorial Optimization"
 date: 2026-05-08
-content_hash: 60968bd0aa11ff38
+content_hash: fde7af2a11620698
 ---
+
 # PathWise: Planning through World Model for Automated Heuristic Design via Self-Evolving LLMs
 
 **Conference**: ICML 2026  
@@ -123,15 +128,16 @@ Evaluated on 7 COPs (TSP, CVRP, KP, BPP, JSSP, etc.) using GPT-4o-mini and GPT-5
 - Value: ⭐⭐⭐⭐ Provides a reusable template for stateful search in training-free LLM tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Generalizable Heuristic Generation Through LLMs with Meta-Optimization](../../ICLR2026/optimization/generalizable_heuristic_generation_through_llms_with_meta-optimization.md)
 - [\[ICLR 2026\] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design](../../ICLR2026/optimization/calm_co-evolution_of_algorithms_and_language_model_for_automatic_heuristic_desig.md)
 - [\[NeurIPS 2025\] Automated Algorithm Design via Nevanlinna-Pick Interpolation](../../NeurIPS2025/optimization/automated_algorithm_design_via_nevanlinna-pick_interpolation.md)
 - [\[ICML 2026\] Memory-Efficient LLM Pretraining via Minimalist Optimizer Design](memory-efficient_llm_pretraining_via_minimalist_optimizer_design.md)
 - [\[ICML 2026\] Learning a Zeroth-Order Optimizer for Fine-Tuning LLMs](learning_a_zeroth-order_optimizer_for_fine-tuning_llms.md)
-- [\[ICML 2026\] TPV: Parameter Perturbations Through the Lens of Test Prediction Variance](tpv_parameter_perturbations_through_the_lens_of_test_prediction_variance.md)
 
 </div>
 

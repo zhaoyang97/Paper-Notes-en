@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fused-Planes: Why Train a Thousand Tri-Planes When You Can Share?
 description: >-
-  [ICLR 2026][3D Vision][tri-plane] The paper proposes Fused-Planes, which decomposes the Tri-Plane representation into shared class-level base planes (macro) and object-specific detail planes (micro) through a macro-micro decomposition. Combined with latent space rendering, it achieves 7× training speedup and 3× memory compression while maintaining or e
+  [ICLR 2026][3D Vision][tri-plane] The paper proposes Fused-Planes, which decomposes the Tri-Plane representation into shared class-level base planes (macro) and object-specific detail planes (micro) through a macro-micro decomposition. Combined with latent space rendering, it achieves 7× training speedup and 3× memory compression while maintaining or even exceeding the reconstruction quality of independent Tri-Planes.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - tri-plane
-  - NeRF
-  - shared representation
-  - large-scale 3D
-  - latent space
+  - "ICLR 2026"
+  - "3D Vision"
+  - "tri-plane"
+  - "NeRF"
+  - "shared representation"
+  - "large-scale 3D"
+  - "latent space"
 date: 2026-05-08
-content_hash: 269a74295cf35a91
+content_hash: ba19a054584b13a5
 ---
+
 # Fused-Planes: Why Train a Thousand Tri-Planes When You Can Share?
 
 **Conference**: ICLR 2026  

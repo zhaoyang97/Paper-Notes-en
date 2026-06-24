@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates
 description: >-
-  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper systematically studies bilevel optimization under differential privacy (DP). For the convex setting…
+  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper systematically studies bilevel optimization under differential privacy (DP). For the convex setting, it establishes near-tight upper and lower bounds via the exponential mechanism and regularized exponential mechanism, matching the optimal rate of single-level DP-ERM. For the non-convex setting, it proposes a second-order DP method achieving state-of-the-art convergence rates that are independent of the inner-level di…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Log-Concave Sampling"
   - "Non-Convex Optimization"
 date: 2026-05-08
-content_hash: 090a17d46b8a7d08
+content_hash: 12d19e453712fa17
 ---
 
 # Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates
@@ -133,10 +133,10 @@ The input is a sensitive dataset, and the goal is to solve bilevel ERM or stocha
 ## Related Papers
 
 - [\[NeurIPS 2025\] Differentially Private High-dimensional Variable Selection via Integer Programming](differentially_private_high-dimensional_variable_selection_via_integer_programmi.md)
-- [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
+- [\[NeurIPS 2025\] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization](stochastic_regret_guarantees_for_online_zeroth-_and_first-order_bilevel_optimiza.md)
+- [\[ICML 2025\] Faster Rates for Private Adversarial Bandits](../../ICML2025/ai_safety/faster_rates_for_private_adversarial_bandits.md)
 - [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
-- [\[NeurIPS 2025\] Locally Optimal Private Sampling: Beyond the Global Minimax](locally_optimal_private_sampling_beyond_the_global_minimax.md)
 
 </div>
 

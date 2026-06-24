@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] VisionReasoner unifies ten categories of visual perception tasks—including detection, segmentation, and counting—into a "multi-object cognition" problem. By employing a unified reward mechanism and GRPO reinforcement learning, a single Qwen2.5-VL model is trained to generate structured reasoning before outputting resul
+  [ICLR 2026][VLM Reasoning][Visual Perception] VisionReasoner unifies ten categories of visual perception tasks—including detection, segmentation, and counting—into a "multi-object cognition" problem. By employing a unified reward mechanism and GRPO reinforcement learning, a single Qwen2.5-VL model is trained to generate structured reasoning before outputting results. This approach achieves relative improvements of 29.1%, 22.1%, and 13.2% over baselines on COCO detection…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Perception"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Multi-object Cognition"
+  - "Unified Framework"
 date: 2026-05-08
-content_hash: 1ffb33224b184246
+content_hash: 024471058ea0f442
 ---
+
 # VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -148,7 +152,7 @@ The single unified model outperforms the Qwen2.5-VL baseline across the board an
 - [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
 - [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](../../CVPR2026/vlm_reasoning/reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[ICML 2026\] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning](../../ICML2026/vlm_reasoning/ivgr_internalizing_visually_grounded_reasoning_for_mllms_with_reinforcement_lear.md)
 
 </div>
 

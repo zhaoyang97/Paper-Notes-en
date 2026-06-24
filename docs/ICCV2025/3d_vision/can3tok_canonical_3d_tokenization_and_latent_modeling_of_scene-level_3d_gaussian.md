@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes Can3Tok, the first variational autoencoder capable of encoding scene-level 3DGS into a low-dimensional latent space. It achieves efficient tokenization vi…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes Can3Tok, the first variational autoencoder capable of encoding scene-level 3DGS into a low-dimensional latent space. It achieves efficient tokenization via cross-attention with canonical queries, and addresses scale inconsistency through 3DGS normalization and semantic-aware filtering, successfully generalizing to novel scenes on DL3DV-10K.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Canonical Tokens"
   - "Latent Space Modeling"
 date: 2026-05-08
-content_hash: 62cac3757d51641e
+content_hash: 9072daf4b82ca6b5
 ---
 
 # Can3Tok: Canonical 3D Tokenization and Latent Modeling of Scene-Level 3D Gaussians
@@ -153,11 +153,11 @@ Failure rate is defined as the proportion of scenes with reconstruction L2 error
 
 ## Related Papers
 
+- [\[CVPR 2025\] Textured Gaussians for Enhanced 3D Scene Appearance Modeling](../../CVPR2025/3d_vision/textured_gaussians_for_enhanced_3d_scene_appearance_modeling.md)
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
 - [\[CVPR 2026\] LoST: Level of Semantics Tokenization for 3D Shapes](../../CVPR2026/3d_vision/lost_level_of_semantics_tokenization_for_3d_shapes.md)
 - [\[ICCV 2025\] AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering](aaa-gaussians_anti-aliased_and_artifact-free_3d_gaussian_rendering.md)
 - [\[ICCV 2025\] TimeFormer: Capturing Temporal Relationships of Deformable 3D Gaussians for Robust Reconstruction](timeformer_capturing_temporal_relationships_of_deformable_3d_gaussians_for_robus.md)
-- [\[ICCV 2025\] Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models](representing_3d_shapes_with_64_latent_vectors_for_3d_diffusion_models.md)
 
 </div>
 

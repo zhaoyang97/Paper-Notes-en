@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT
 description: >-
-  [CVPR 2026][Model Compression][VGGT] HeSS proposes the Head Sensitivity Score to quantify the sensitivity of each attention head in the global attention layers of VGGT to sparsification. Based on this score, it redistributes the attention budget from insensitive heads to sensitive ones, significantly outperforming the uniform sparsification method SparseV
+  [CVPR 2026][Model Compression][Attention Sparsification] HeSS proposes the Head Sensitivity Score to quantify the sensitivity of each attention head in the global attention layers of VGGT to sparsification. Based on this score, it redistributes the attention budget from insensitive heads to sensitive ones, significantly outperforming the uniform sparsification method SparseVGGT at high sparsity levels with almost no additional runtime overhead.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - VGGT
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Attention Sparsification"
+  - "VGGT"
+  - "Head Sensitivity"
+  - "Fisher Information Matrix"
+  - "3D Reconstruction Acceleration"
 date: 2026-05-08
-content_hash: 088719c2ce608a8e
+content_hash: f5e62547a4df97a7
 ---
+
 # HeSS: Head Sensitivity Score for Sparsity Redistribution in VGGT
 
 **Conference**: CVPR 2026  
@@ -161,11 +166,11 @@ Comparison on CO3Dv2 (pose) and DTU (MVS):
 
 ## Related Papers
 
-- [\[CVPR 2026\] HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)
 - [\[CVPR 2026\] Batch Loss Score for Dynamic Data Pruning](batch_loss_score_for_dynamic_data_pruning.md)
-- [\[CVPR 2026\] LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)
+- [\[CVPR 2026\] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)
 - [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
-- [\[CVPR 2026\] SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer](soda_sensitivity-oriented_dynamic_acceleration_for_diffusion_transformer.md)
+- [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
+- [\[CVPR 2026\] When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence](when_lines_meet_textures_spatial-frequency_aligned_diffusion_features_for_cross-.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers
 description: >-
-  [ICLR 2026][Others][TEM] This paper replaces the expensive tensor-product Hebbian memory in TEM with a "Meta-MLP fast weight" relational memory, resulting in mm-TEM—a structured spatial memory that is training-efficient, exhibits spontaneous grid cell emergence, and generalizes to long sequences. By paralleling mm-TEM with a single-layer Trans
+  [ICLR 2026][Hippocampus] This paper replaces the expensive tensor-product Hebbian memory in TEM with a "Meta-MLP fast weight" relational memory, resulting in mm-TEM—a structured spatial memory that is training-efficient, exhibits spontaneous grid cell emergence, and generalizes to long sequences. By paralleling mm-TEM with a single-layer Transformer to form Hippoformer, the model complements the Transformer's precise short-range memory with structured long-range memory…
 tags:
-  - ICLR 2026
-  - Others
-  - TEM
-  - Transformer
+  - "ICLR 2026"
+  - "Hippocampus"
+  - "Entorhinal Cortex"
+  - "TEM"
+  - "Grid Cells"
+  - "Spatial Reasoning"
+  - "Transformer"
+  - "Test-time Memory"
 date: 2026-05-08
-content_hash: ada17ba4b78e47f3
+content_hash: ae24f78e7ac3f63b
 ---
+
 # Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers
 
 **Conference**: ICLR 2026  
@@ -120,8 +125,8 @@ For 1-step prediction, Hippoformer slightly outperforms Transformer/Titans. For 
 - [\[ICLR 2026\] The Counting Power of Transformers](the_counting_power_of_transformers.md)
 - [\[ECCV 2024\] SpatialFormer: Towards Generalizable Vision Transformers with Explicit Spatial Understanding](../../ECCV2024/others/spatialformer_towards_generalizable_vision_transformers_with_explicit_spatial_un.md)
 - [\[ICML 2026\] Spatial Priors via Space Filling Curves for Small and Limited Data Vision Transformers](../../ICML2026/others/spatial_priors_via_space_filling_curves_for_small_and_limited_data_vision_transf.md)
-- [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](neural_dynamics_self-attention_for_spiking_transformers.md)
 - [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
+- [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
 
 </div>
 

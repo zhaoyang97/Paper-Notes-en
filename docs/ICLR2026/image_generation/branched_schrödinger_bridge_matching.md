@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Branched Schrödinger Bridge Matching
 description: >-
-  [ICLR 2026][Image Generation][Schrödinger Bridge] The authors propose the BranchSBM framework, which extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and growth processes. This approach models bifurcating dynamic trajectories from a single initial distribution to multiple target distributions, signifi
+  [ICLR 2026][Image Generation][Schrödinger Bridge] The authors propose the BranchSBM framework, which extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and growth processes. This approach models bifurcating dynamic trajectories from a single initial distribution to multiple target distributions, significantly outperforming single-branch methods in tasks such as LiDAR surface navigation and single-cell perturbat…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Schrödinger Bridge
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Schrödinger Bridge"
+  - "Branched Trajectories"
+  - "Flow Matching"
+  - "Cell Fate Differentiation"
+  - "Optimal Transport"
 date: 2026-05-08
-content_hash: 023dc02c7bc6d974
+content_hash: 6f168d27fb2ecce5
 ---
+
 # Branched Schrödinger Bridge Matching
 
 **Conference**: ICLR 2026  
@@ -145,8 +149,8 @@ BranchSBM is supported by a series of theorems. **Proposition 3** ensures that S
 - [\[NeurIPS 2025\] Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres](../../NeurIPS2025/image_generation/schrödinger_bridge_matching_for_tree-structured_costs_and_entropic_wasserstein_b.md)
 - [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
 - [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](../../NeurIPS2025/image_generation/dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
-- [\[ICLR 2026\] Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport](entering_the_era_of_discrete_diffusion_models_a_benchmark_for_schrödinger_bridge.md)
-- [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](../../NeurIPS2025/image_generation/grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
+- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
 
 </div>
 

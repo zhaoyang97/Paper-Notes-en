@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces
 description: >-
-  [NeurIPS 2025][Interpretability][feature selection] This paper proposes TangledFeatures, a selection framework centered on **feature stability**…
+  [NeurIPS 2025][Interpretability][feature selection] This paper proposes TangledFeatures, a selection framework centered on **feature stability**, implementing a three-stage pipeline of correlation-graph clustering → ensemble representative selection → random forest refinement. The framework achieves highly reproducible, domain-knowledge-consistent feature subsets across resampling in highly correlated feature spaces, validated on alanine dipeptide backbone torsion angle predi…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "random forests"
   - "structural biology"
 date: 2026-05-08
-content_hash: d8b6019343136a38
+content_hash: 3ba0d300e31cbf63
 ---
 
 # TangledFeatures: Robust Feature Selection in Highly Correlated Spaces
@@ -134,10 +134,10 @@ TangledFeatures is a nonparametric method and involves no gradient optimization 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](superposition_yields_robust_neural_scaling.md)
 - [\[AAAI 2026\] Unsupervised Feature Selection Through Group Discovery](../../AAAI2026/interpretability/unsupervised_feature_selection_through_group_discovery.md)
+- [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](superposition_yields_robust_neural_scaling.md)
 - [\[NeurIPS 2025\] OrdShap: Feature Position Importance for Sequential Black-Box Models](ordshap_feature_position_importance_for_sequential_black-box_models.md)
-- [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
+- [\[ICLR 2026\] Learning for Highly Faithful Explainability](../../ICLR2026/interpretability/learning_for_highly_faithful_explainability.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](../../ICML2026/interpretability/corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
 
 </div>

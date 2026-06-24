@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification
 description: >-
-  [NeurIPS 2025 (MATH-AI Workshop)][Reinforcement Learning][Lean 4] This paper presents Kimina Lean Server — a high-performance Lean 4 verification server designed for large-scale reinforcement learning training. By levera…
+  [NeurIPS 2025 (MATH-AI Workshop)][Reinforcement Learning][Lean 4] This paper presents Kimina Lean Server — a high-performance Lean 4 verification server designed for large-scale reinforcement learning training. By leveraging server-side parallelization and an LRU caching mechanism, it achieves 1.5–2× speedups over existing tools and has been used to train the state-of-the-art theorem proving model Kimina-Prover.
 tags:
   - "NeurIPS 2025 (MATH-AI Workshop)"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "formal verification"
   - "high-performance server"
 date: 2026-05-08
-content_hash: bf0ad3ce1420b9ec
+content_hash: cef9716511d40855
 ---
 
 # Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification
@@ -165,11 +165,11 @@ Caching yields a **1.94×** speedup, particularly effective for workflows that f
 
 ## Related Papers
 
+- [\[ICML 2025\] Beyond The Rainbow: High Performance Deep Reinforcement Learning on a Desktop PC](../../ICML2025/reinforcement_learning/beyond_the_rainbow_high_performance_deep_reinforcement_learning_on_a_desktop_pc.md)
 - [\[NeurIPS 2025\] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining](graphchain_large_language_models_for_large-scale_graph_analysis_via_tool_chainin.md)
 - [\[AAAI 2026\] Formal Verification of Diffusion Auctions](../../AAAI2026/reinforcement_learning/formal_verification_of_diffusion_auctions.md)
 - [\[AAAI 2026\] QiMeng-Kernel: Macro-Thinking Micro-Coding Paradigm for LLM-Based High-Performance GPU Kernel Generation](../../AAAI2026/reinforcement_learning/qimeng-kernel_macro-thinking_micro-coding_paradigm_for_llm-based_high-performanc.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](../../ICLR2026/reinforcement_learning/post-training_large_language_models_for_diverse_high-quality_responses.md)
-- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
 
 </div>
 

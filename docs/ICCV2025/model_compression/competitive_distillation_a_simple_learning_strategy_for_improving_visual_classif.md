@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification
 description: >-
-  [ICCV 2025][Model Compression][Competitive Distillation] This paper proposes a competitive distillation strategy in which, during multi-network joint training…
+  [ICCV 2025][Model Compression][Competitive Distillation] This paper proposes a competitive distillation strategy in which, during multi-network joint training, the best-performing network is dynamically selected as the teacher at each iteration. Combined with a stochastic perturbation mechanism that introduces mutation operations analogous to genetic algorithms, the approach achieves significant improvements in visual classification performance.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Stochastic Perturbation"
   - "Collective Intelligence"
 date: 2026-05-08
-content_hash: e2c8a379d878b156
+content_hash: 7ca73a7610d09a8d
 ---
 
 # Competitive Distillation: A Simple Learning Strategy for Improving Visual Classification
@@ -43,7 +43,7 @@ Competitive distillation organizes a group of networks $\Theta = \{\Theta_i | i=
 
 1. **Competitive Optimization**:
    At each training iteration, all networks compute the cross-entropy loss $L_C$ on the current batch. **The network with the lowest loss is designated as the teacher** $\Theta_T^t$, and the remaining networks become students $\Theta_S^t$. The teacher network updates its parameters using only the classification loss, whereas student networks additionally incorporate distillation and feature losses:
-   $$\Theta_i^{t+1} \leftarrow \begin{cases} \Theta_i^t - \gamma \frac{\partial L_{C_i}}{\partial \Theta_i^t}, & \text{if } \Theta_i^t = \Theta_T^t \\ \Theta_i^t - \gamma \left(\frac{\partial L_{C_i}}{\partial \Theta_i^t} + \frac{\partial L_{D_i}}{\partial \Theta_i^t} + \frac{\partial L_{F_i}}{\partial \Theta_i^t}\right), & \text{otherwise} \end{cases}$$
+    $\Theta_i^{t+1} \leftarrow \begin{cases} \Theta_i^t - \gamma \frac{\partial L_{C_i}}{\partial \Theta_i^t}, & \text{if } \Theta_i^t = \Theta_T^t \\ \Theta_i^t - \gamma \left(\frac{\partial L_{C_i}}{\partial \Theta_i^t} + \frac{\partial L_{D_i}}{\partial \Theta_i^t} + \frac{\partial L_{F_i}}{\partial \Theta_i^t}\right), & \text{otherwise} \end{cases}$
    The teacher and student roles **switch dynamically at every iteration**, giving all networks an opportunity to act as the teacher.
 
 2. **Stochastic Perturbation**:
@@ -52,8 +52,8 @@ Competitive distillation organizes a group of networks $\Theta = \{\Theta_i | i=
 
 3. **Multi-Level Knowledge Transfer**:
    Student networks receive two forms of supervisory signal from the teacher:
-   - Distillation loss $L_D$: aligns the soft-label distributions of the student and teacher via KL divergence.
-   - Feature loss $L_F$: aligns the feature maps of the student and teacher via L2 distance.
+    - Distillation loss $L_D$: aligns the soft-label distributions of the student and teacher via KL divergence.
+    - Feature loss $L_F$: aligns the feature maps of the student and teacher via L2 distance.
 
 ### Loss & Training
 
@@ -128,9 +128,9 @@ Competitive distillation organizes a group of networks $\Theta = \{\Theta_i | i=
 
 - [\[ICCV 2025\] Cross-Architecture Distillation Made Simple with Redundancy Suppression](cross-architecture_distillation_made_simple_with_redundancy_suppression.md)
 - [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](../../NeurIPS2025/model_compression/preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
-- [\[ICCV 2025\] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning](soft_separation_and_distillation_toward_global_uniformity_in_federated_unsupervi.md)
-- [\[ICCV 2025\] Bridging Continuous and Discrete Tokens for Autoregressive Visual Generation](bridging_continuous_and_discrete_tokens_for_autoregressive_visual_generation.md)
-- [\[ICCV 2025\] Gain-MLP: Improving HDR Gain Map Encoding via a Lightweight MLP](gain-mlp_improving_hdr_gain_map_encoding_via_a_lightweight_mlp.md)
+- [\[ECCV 2024\] Improving Knowledge Distillation via Regularizing Feature Direction and Norm](../../ECCV2024/model_compression/improving_knowledge_distillation_via_regularizing_feature_direction_and_norm.md)
+- [\[CVPR 2025\] DELT: A Simple Diversity-driven EarlyLate Training for Dataset Distillation](../../CVPR2025/model_compression/delt_a_simple_diversity-driven_earlylate_training_for_dataset_distillation.md)
+- [\[ECCV 2024\] Anytime Continual Learning for Open Vocabulary Classification](../../ECCV2024/model_compression/anytime_continual_learning_for_open_vocabulary_classification.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] FlowSymm: Physics–Aware, Symmetry–Preserving Graph Attention for Network Flow Completion
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This work decomposes the "missing flow completion" inverse problem into two phases: first, spanning a feasible solution subspace using a set of algebraic group actions that **preserve node conservation and freeze observed edges**; second, using graph attention to select correction directions within this physically vali
+  [ICLR 2026][Graph Learning][Network flow completion] This work decomposes the "missing flow completion" inverse problem into two phases: first, spanning a feasible solution subspace using a set of algebraic group actions that **preserve node conservation and freeze observed edges**; second, using graph attention to select correction directions within this physically valid basis. Finally, a differentiable Tikhonov convex solver is employed to absorb noise…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Network flow completion"
+  - "conservation constraints"
+  - "group action"
+  - "graph attention (GATv2)"
+  - "implicit bi-level optimization"
+  - "Tikhonov regularization"
 date: 2026-05-08
-content_hash: 4aec6a7fd70a1d3b
+content_hash: 455e1a45c942206b
 ---
+
 # FlowSymm: Physics–Aware, Symmetry–Preserving Graph Attention for Network Flow Completion
 
 **Conference**: ICLR 2026  

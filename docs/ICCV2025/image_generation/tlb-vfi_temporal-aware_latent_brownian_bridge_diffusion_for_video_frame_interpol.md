@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation
 description: >-
-  [ICCV 2025][Image Generation][Video Frame Interpolation] This paper proposes TLB-VFI, an efficient video diffusion model for frame interpolation. It employs a temporal-aware autoencoder—comprising a latent-space temporal…
+  [ICCV 2025][Image Generation][Video Frame Interpolation] This paper proposes TLB-VFI, an efficient video diffusion model for frame interpolation. It employs a temporal-aware autoencoder—comprising a latent-space temporal block and a pixel-space 3D wavelet gating mechanism—to extract rich temporal information, combined with a redesigned Brownian bridge diffusion process. With only 46.7M parameters (3× fewer than image diffusion methods and 20× fewer than video diffusion method…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "3D Wavelet"
   - "Optical Flow Guidance"
 date: 2026-05-08
-content_hash: a8adda6d41919c6f
+content_hash: 69d9a9da0eae45dd
 ---
 
 # TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation
@@ -164,11 +164,11 @@ $$\hat{I}_n = M \odot \text{warp}(I_0) + (1-M) \odot \text{warp}(I_1) + \Delta$$
 
 ## Related Papers
 
+- [\[CVPR 2025\] Hierarchical Flow Diffusion for Efficient Frame Interpolation](../../CVPR2025/image_generation/hierarchical_flow_diffusion_for_efficient_frame_interpolation.md)
+- [\[CVPR 2025\] EDEN: Enhanced Diffusion for High-quality Large-motion Video Frame Interpolation](../../CVPR2025/image_generation/eden_enhanced_diffusion_for_high-quality_large-motion_video_frame_interpolation.md)
 - [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
-- [\[NeurIPS 2025\] Towards General Modality Translation with Contrastive and Predictive Latent Diffusion Bridge](../../NeurIPS2025/image_generation/towards_general_modality_translation_with_contrastive_and_predictive_latent_diff.md)
 - [\[ICCV 2025\] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](whats_in_a_latent_leveraging_diffusion_latent_space_for_domain_generalization.md)
-- [\[ICCV 2025\] MaskControl: Spatio-Temporal Control for Masked Motion Synthesis](maskcontrol_spatio-temporal_control_for_masked_motion_synthesis.md)
-- [\[ICCV 2025\] SummDiff: Generative Modeling of Video Summarization with Diffusion](summdiff_generative_modeling_of_video_summarization_with_diffusion.md)
+- [\[ECCV 2024\] EBDM: Exemplar-guided Image Translation with Brownian-bridge Diffusion Models](../../ECCV2024/image_generation/ebdm_exemplar-guided_image_translation_with_brownian-bridge_diffusion_models.md)
 
 </div>
 

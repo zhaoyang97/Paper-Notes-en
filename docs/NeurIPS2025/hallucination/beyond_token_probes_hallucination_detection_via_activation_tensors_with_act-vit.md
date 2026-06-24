@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT
 description: >-
-  [NeurIPS 2025][Hallucination Detection][Activation Tensors] This paper organizes all hidden-layer activations of an LLM into an "activation tensor" (layers × tokens × hidden dimension), treats it analogously to an image…
+  [NeurIPS 2025][Hallucination Detection][Activation Tensors] This paper organizes all hidden-layer activations of an LLM into an "activation tensor" (layers × tokens × hidden dimension), treats it analogously to an image, and processes it with a ViT-based architecture (ACT-ViT) that supports joint training across multiple LLMs. The method consistently outperforms conventional probing approaches across 15 LLM–dataset combinations and demonstrates strong zero-shot/few-shot trans…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -11,7 +11,7 @@ tags:
   - "Cross-Model Generalization"
   - "Probing"
 date: 2026-05-08
-content_hash: 1d805e99a76a2e2a
+content_hash: c6b95da6cb36ba22
 ---
 
 # Beyond Token Probes: Hallucination Detection via Activation Tensors with ACT-ViT
@@ -123,10 +123,10 @@ Extract the LLM activation tensor → Apply pooling to compress spatial dimensio
 ## Related Papers
 
 - [\[NeurIPS 2025\] Robust Hallucination Detection in LLMs via Adaptive Token Selection](robust_hallucination_detection_in_llms_via_adaptive_token_selection.md)
+- [\[CVPR 2026\] Lyapunov Probes for Hallucination Detection in Large Foundation Models](../../CVPR2026/hallucination/lyapunov_probes_for_hallucination_detection_in_large_foundation_models.md)
+- [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](../../ICLR2026/hallucination/beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](../../CVPR2026/hallucination/beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
-- [\[ICLR 2026\] Token-Guard: Towards Token-Level Hallucination Control via Self-Checking Decoding](../../ICLR2026/hallucination/token-guard_towards_token-level_hallucination_control_via_self-checking_decoding.md)
-- [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](../../ICML2026/hallucination/from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
+- [\[ACL 2025\] Beyond Facts: Evaluating Intent Hallucination in Large Language Models](../../ACL2025/hallucination/intent_hallucination_eval.md)
 
 </div>
 

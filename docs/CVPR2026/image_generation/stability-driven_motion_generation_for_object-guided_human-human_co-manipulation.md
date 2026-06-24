@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation
 description: >-
-  [CVPR 2026][Human Understanding][flow matching] Given an object mesh and its trajectory, this paper employs a flow matching framework to generate full-body motions for two individuals collaborating on object transport. Through three modules—affordance-guided contact strategy, adversarial interaction prior, and sampling-based stability simulation—the generated motion
+  [CVPR 2026][Image Generation][Dual-person collaborative manipulation] Given an object mesh and its trajectory, this paper employs a flow matching framework to generate full-body motions for two individuals collaborating on object transport. Through three modules—affordance-guided contact strategy, adversarial interaction prior, and sampling-based stability simulation—the generated motions simultaneously satisfy intentional correctness (correct grasping), natural poses…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - flow matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Dual-person collaborative manipulation"
+  - "flow matching"
+  - "grasping affordance"
+  - "adversarial interaction prior"
+  - "stability simulation"
 date: 2026-05-08
-content_hash: 6b4dc1ddaa58e075
+content_hash: 7e15c04ac4f69cab
 ---
+
 # Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation
 
 **Conference**: CVPR 2026  
@@ -136,10 +141,20 @@ Ablations on Core4D-S1 demonstrate the contribution of each module:
 - **Value**: ⭐⭐⭐⭐ (Significant for robotics and VR, although inference speed is a bottleneck).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](onehoi_unifying_human-object_interaction_generation_and_editing.md)
+- [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
+- [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)
+- [\[CVPR 2026\] PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose](posed-flow_versatile_and_guided_flow_matching_model_of_human_pose.md)
+- [\[CVPR 2026\] Cross-Axis Feature Fusion with Joint-Wise Motion Difference Prediction for Text-Based 3D Human Motion Editing](cross-axis_feature_fusion_with_joint-wise_motion_difference_prediction_for_text-.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ArcLight: A Lightweight LLM Inference Architecture for Many-Core CPUs
 description: >-
-  [ACL 2026][Model Compression][Many-Core CPU] ArcLight is a lightweight LLM inference framework written from scratch (approximately 10 C++ files) designed for many-core CPUs with multiple NUMA nodes. By utilizing NUMA-local memory pools, multi-view thread pools, cross-NUMA tensor parallelism, and asynchronous subgraph synchronization, it breaks the "remote memory
+  [ACL 2026][Model Compression][Many-Core CPU] ArcLight is a lightweight LLM inference framework written from scratch (approximately 10 C++ files) designed for many-core CPUs with multiple NUMA nodes. By utilizing NUMA-local memory pools, multi-view thread pools, cross-NUMA tensor parallelism, and asynchronous subgraph synchronization, it breaks the "remote memory wall." On a 192-core ARM Kunpeng platform, it improves the decode throughput of Qwen3-4B Q4_0 by up to 46% compared…
 tags:
-  - ACL 2026
-  - Model Compression
-  - Many-Core CPU
-  - NUMA-aware
-  - llama.cpp
+  - "ACL 2026"
+  - "Model Compression"
+  - "Many-Core CPU"
+  - "NUMA-aware"
+  - "Tensor Parallelism"
+  - "llama.cpp"
+  - "LLM Inference Framework"
 date: 2026-05-08
-content_hash: db38b1bc7e462a56
+content_hash: 3204e14d71a8b851
 ---
+
 # ArcLight: A Lightweight LLM Inference Architecture for Many-Core CPUs
 
 **Conference**: ACL 2026  

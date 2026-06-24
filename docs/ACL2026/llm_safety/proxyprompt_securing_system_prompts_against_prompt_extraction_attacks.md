@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks
 description: >-
-  [ACL 2026][LLM Safety][Prompt Extraction] Instead of instructing the model "not to leak the system prompt," ProxyPrompt replaces the original prompt with a functionally equivalent but semantically obfuscated proxy prompt. This maintains task utility while ensuring that extracted prompts are difficult to use for replicating the original task, achieving a 94.70%
+  [ACL 2026 Findings][LLM Safety][System Prompt Protection] Instead of instructing the model "not to leak the system prompt," ProxyPrompt replaces the original prompt with a functionally equivalent but semantically obfuscated proxy prompt. This maintains task utility while ensuring that extracted prompts are difficult to use for replicating the original task, achieving a 94.70% protection rate across 264 configurations, significantly higher than filter-based and instruction-bas…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Prompt Extraction
-  - Soft Prompt
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "System Prompt Protection"
+  - "Prompt Extraction"
+  - "Soft Prompt"
+  - "Semantic Leakage Detection"
+  - "LLM Security"
 date: 2026-05-08
-content_hash: 42265c79c3e77efa
+content_hash: 269b4c05ee337667
 ---
+
 # ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks
 
 **Conference**: ACL 2026 Findings  
@@ -137,8 +141,8 @@ The experiments cover three victim LLMs (Phi-3.5-mini-instruct, Llama-3.1-8B-Ins
 - [\[ACL 2026\] Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction](robustness_via_referencing_defending_against_prompt_injection_attacks_by_referen.md)
 - [\[ACL 2026\] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)
 - [\[ACL 2026\] PARASITE: Conditional System Prompt Poisoning to Hijack LLMs](parasite_conditional_system_prompt_poisoning_to_hijack_llms.md)
-- [\[ACL 2025\] TIP of the Iceberg: Task-in-Prompt Adversarial Attacks on LLMs](../../ACL2025/llm_safety/tip_iceberg_adversarial_attacks.md)
 - [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
+- [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
 
 </div>
 

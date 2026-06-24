@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Proposes π-Light (PI-Light), a two-stage full-image relighting framework: the first stage performs intrinsic property decomposition (albedo, normal, roughness, etc.) via a physics-guided diffusion model, and the second stage achieves re-rendering under target lighting conditions through a physics-guided neural renderin
+  [ICLR 2026][Image Generation][Diffusion Models] Proposes π-Light (PI-Light), a two-stage full-image relighting framework: the first stage performs intrinsic property decomposition (albedo, normal, roughness, etc.) via a physics-guided diffusion model, and the second stage achieves re-rendering under target lighting conditions through a physics-guided neural rendering module. It introduces batch-aware attention mechanisms and physics-inspired losses to achieve superior general…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Image Relighting"
+  - "Inverse Rendering"
+  - "Physics-Guided"
+  - "Intrinsic Decomposition"
 date: 2026-05-08
-content_hash: 5f49db9d0d612135
+content_hash: c07deed79c7d311c
 ---
+
 # PI-Light: Physics-Inspired Diffusion for Full-Image Relighting
 
 **Conference**: ICLR 2026  
@@ -160,10 +165,10 @@ Both stages are fine-tuned on pre-trained diffusion models, with the primary los
 ## Related Papers
 
 - [\[ICLR 2026\] A Physics-Inspired Optimizer: Velocity Regularized Adam](a_physics-inspired_optimizer_velocity_regularized_adam.md)
+- [\[ICLR 2026\] WILD-Diffusion: A WDRO-inspired Training Method for Limited Data Diffusion Models](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
 - [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
 - [\[NeurIPS 2025\] UniLumos: Fast and Unified Image and Video Relighting with Physics-Plausible Feedback](../../NeurIPS2025/image_generation/unilumos_fast_and_unified_image_and_video_relighting_with_physics-plausible_feed.md)
 - [\[ICLR 2026\] CroCoDiLight: Repurposing Cross-View Completion Encoders for Relighting](crocodilight_repurposing_cross-view_completion_encoders_for_relighting.md)
-- [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](condition_matters_in_full-head_3d_gans.md)
 
 </div>
 

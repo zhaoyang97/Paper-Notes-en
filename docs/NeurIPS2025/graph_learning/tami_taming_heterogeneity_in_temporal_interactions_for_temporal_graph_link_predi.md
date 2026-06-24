@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction
 description: >-
-  [NeurIPS 2025][Graph Learning][Temporal graphs] This paper is the first to systematically identify the heterogeneity problem in temporal graph interactions (interaction intervals follow a power-law distribution)…
+  [NeurIPS 2025][Graph Learning][Temporal graphs] This paper is the first to systematically identify the heterogeneity problem in temporal graph interactions (interaction intervals follow a power-law distribution), and proposes the TAMI framework comprising two modules—Log Time Encoding (LTE) and Link History Aggregation (LHA)—that can be seamlessly integrated into existing TGNNs, consistently improving link prediction performance across 16 datasets with gains of up to 87.05%.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "heterogeneity"
   - "interaction frequency"
 date: 2026-05-08
-content_hash: a8b7ba0afa2fc553
+content_hash: 8d2c40f3bd34b3d0
 ---
 
 # TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction
@@ -164,11 +164,11 @@ The method is concise and effective, backed by thorough experiments (16 datasets
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
+- [\[ICML 2025\] L-STEP: Learnable Spatial-Temporal Positional Encoding for Link Prediction](../../ICML2025/graph_learning/learnable_spatial-temporal_positional_encoding_for_link_prediction.md)
 - [\[NeurIPS 2025\] OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction](ocn_effectively_utilizing_higher-order_common_neighbors_for_better_link_predicti.md)
-- [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](../../ICLR2026/graph_learning/revisiting_node_affinity_prediction_in_temporal_graphs.md)
+- [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
+- [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](../../ICLR2026/graph_learning/revisting_node_affinity_prediction_in_temporal_graphs.md)
 - [\[NeurIPS 2025\] Spatio-Temporal Directed Graph Learning for Account Takeover Fraud Detection](spatio-temporal_directed_graph_learning_for_account_takeover_fraud_detection.md)
-- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
 
 </div>
 

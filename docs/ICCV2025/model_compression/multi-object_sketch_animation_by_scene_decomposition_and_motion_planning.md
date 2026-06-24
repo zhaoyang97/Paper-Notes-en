@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Object Sketch Animation by Scene Decomposition and Motion Planning
 description: >-
-  [ICCV 2025][Model Compression][Sketch Animation] MoSketch is the first method to address multi-object sketch animation. It integrates four modules — LLM-based scene decomposition, LLM-based motion planning…
+  [ICCV 2025][Model Compression][Sketch Animation] MoSketch is the first method to address multi-object sketch animation. It integrates four modules — LLM-based scene decomposition, LLM-based motion planning, a motion refinement network, and compositional SDS — under a divide-and-conquer strategy to tackle two core challenges: object-aware motion modeling and complex motion optimization. High-quality multi-object sketch animation is achieved without any training data.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Score Distillation Sampling"
   - "Compositional Generation"
 date: 2026-05-08
-content_hash: 2b1591dc15eaa412
+content_hash: 58f6244783169d04
 ---
 
 # Multi-Object Sketch Animation by Scene Decomposition and Motion Planning
@@ -138,9 +138,9 @@ Quantitative comparison on a test set of 60 multi-object sketches:
 
 - [\[NeurIPS 2025\] Find your Needle: Small Object Image Retrieval via Multi-Object Attention Optimization](../../NeurIPS2025/model_compression/find_your_needle_small_object_image_retrieval_via_multi-object_attention_optimiz.md)
 - [\[NeurIPS 2025\] DeltaFlow: An Efficient Multi-frame Scene Flow Estimation Method](../../NeurIPS2025/model_compression/deltaflow_an_efficient_multi-frame_scene_flow_estimation_method.md)
+- [\[CVPR 2025\] Sketch Down the FLOPs: Towards Efficient Networks for Human Sketch](../../CVPR2025/model_compression/sketch_down_the_flops_towards_efficient_networks_for_human_sketch.md)
 - [\[ICCV 2025\] VQ-SGen: A Vector Quantized Stroke Representation for Creative Sketch Generation](vq-sgen_a_vector_quantized_stroke_representation_for_creative_sketch_generation.md)
 - [\[ICCV 2025\] MotionFollower: Editing Video Motion via Lightweight Score-Guided Diffusion](motionfollower_editing_video_motion_via_score-guided_diffusion.md)
-- [\[ICCV 2025\] SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation](samo_a_lightweight_sharpness-aware_approach_for_multi-task_optimization_with_joi.md)
 
 </div>
 

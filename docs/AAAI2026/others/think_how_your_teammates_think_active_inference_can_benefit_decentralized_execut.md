@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution
 description: >-
-  [AAAI 2026][Multi-agent cooperation] This paper proposes AIM (Active Inference Modeling), a framework for decentralized multi-agent reinforcement learning that models teammates' active inference processes — as perception…
+  [AAAI 2026][Multi-agent cooperation] This paper proposes AIM (Active Inference Modeling), a framework for decentralized multi-agent reinforcement learning that models teammates' active inference processes — as perception–belief–action triple portraits — based solely on local observations without any communication. A dual filtering mechanism based on accuracy and relevance selectively integrates teammate belief portraits to assist decision-making. AIM achieves state-of-the-art…
 tags:
   - "AAAI 2026"
   - "Multi-agent cooperation"
@@ -11,7 +11,7 @@ tags:
   - "communication-free framework"
   - "decentralized execution"
 date: 2026-05-08
-content_hash: 4e15a824aff6a384
+content_hash: b3958c07276f930d
 ---
 
 # Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution

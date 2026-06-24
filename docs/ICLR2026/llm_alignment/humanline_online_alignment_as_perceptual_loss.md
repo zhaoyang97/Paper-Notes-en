@@ -2,15 +2,23 @@
 title: >-
   [Paper Note] Humanline: Online Alignment as Perceptual Loss
 description: >-
-  [ICLR 2026][Alignment & RLHF][GRPO] This paper explains "why online alignment is superior to offline alignment" using **Prospect Theory** from behavioral economics—online on-policy sampling is closer to the subjective human perception distribution of model outputs. Furthermore, the clipping mechanism in PPO/GRPO implicitly recovers this perceptual bias,
+  [ICLR 2026][LLM Alignment][Online Alignment] This paper explains "why online alignment is superior to offline alignment" using **Prospect Theory** from behavioral economics—online on-policy sampling is closer to the subjective human perception distribution of model outputs. Furthermore, the clipping mechanism in PPO/GRPO implicitly recovers this perceptual bias, making them essentially "perceptual losses." Based on this, a design paradigm (humanline variants) is proposed to e…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - GRPO
-  - DPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Online Alignment"
+  - "Offline Alignment"
+  - "Prospect Theory"
+  - "Perceptual Loss"
+  - "GRPO"
+  - "DPO"
+  - "KTO"
+  - "Rejection Sampling"
+  - "Clipping"
 date: 2026-05-08
-content_hash: 785af25cf2b1ca57
+content_hash: 2c66995f4217cd10
 ---
+
 # Humanline: Online Alignment as Perceptual Loss
 
 **Conference**: ICLR 2026  

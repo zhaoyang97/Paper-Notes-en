@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLIP-like Model as a Foundational Density Ratio Estimator
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper reinterprets contrastively trained vision-language models like CLIP/SigLIP as "off-the-shelf density ratio estimators." The similarity scores implicitly optimized by contrastive objectives are shown to be proportional to log-density ratios. This enables two training-free capabilities: single-prompt importanc
+  [CVPR 2026][Multimodal VLM][Density Ratio Estimation] This paper reinterprets contrastively trained vision-language models like CLIP/SigLIP as "off-the-shelf density ratio estimators." The similarity scores implicitly optimized by contrastive objectives are shown to be proportional to log-density ratios. This enables two training-free capabilities: single-prompt importance-weighted pre-training (F1 gain up to +7 points) and image-text KL divergence estimation (measuring seman…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Density Ratio Estimation"
+  - "Contrastive Learning"
+  - "Importance Weighting"
+  - "KL Divergence"
+  - "Data Selection"
 date: 2026-05-08
-content_hash: 9de65d07f039167a
+content_hash: 45145a839a8440ae
 ---
+
 # CLIP-like Model as a Foundational Density Ratio Estimator
 
 **Conference**: CVPR 2026  
@@ -144,14 +150,17 @@ Importance Weighted Learning (IWL): Pre-training on CC12M with re-weighting usin
 
 <div class="related-papers" markdown="1">
 
-- **SigLIP**: Sigmoid Loss for Language-Image Pre-training (Zhai et al., ICCV 2023)
-- **DataComp**: Purifying Diffusion Models with CLIP (Gadre et al., NeurIPS 2023)
-- **Logit Scale Analysis**: On the temperature parameter in InfoNCE (various)
+## Related Papers
+
+- [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](a_more_word-like_image_tokenization_for_mllms.md)
+- [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
+- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
+- [\[CVPR 2026\] Reevaluating the Intra-Modal Misalignment Hypothesis in CLIP](reevaluating_the_intra-modal_misalignment_hypothesis_in_clip.md)
+- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](explaining_clip_zero-shot_predictions_through_concepts.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](a_more_word-like_image_tokenization_for_mllms.md)

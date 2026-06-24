@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Adversarial Encoding Perturbation and Synthesis for Set Representation Auxiliary Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Sliced-Wasserstein] SRAL treats each set as an empirical distribution and uses 2-Sliced-Wasserstein distance to encode "distribution-aware" representations. It injects adversarial perturbations at the **feature/encoding layer rather than the input layer** and employs min-max optimization to force the model to resist worst-case perturbatio
+  [ICLR 2026][Self-Supervised Learning][Set representation] SRAL treats each set as an empirical distribution and uses 2-Sliced-Wasserstein distance to encode "distribution-aware" representations. It injects adversarial perturbations at the **feature/encoding layer rather than the input layer** and employs min-max optimization to force the model to resist worst-case perturbations. This serves as a plug-and-play self-supervised auxiliary objective for various downstream tasks. T…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - Sliced-Wasserstein
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Set representation"
+  - "Optimal Transport"
+  - "Sliced-Wasserstein"
+  - "Adversarial perturbation"
+  - "self-supervised auxiliary learning"
 date: 2026-05-08
-content_hash: 96c9251ed443bc41
+content_hash: 6f53c4f5c2877e6d
 ---
+
 # Adversarial Encoding Perturbation and Synthesis for Set Representation Auxiliary Learning
 
 **Conference**: ICLR 2026  
@@ -138,7 +143,6 @@ Evaluation across four downstream tasks covering inter-set sensitivity (Tasks 1/
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

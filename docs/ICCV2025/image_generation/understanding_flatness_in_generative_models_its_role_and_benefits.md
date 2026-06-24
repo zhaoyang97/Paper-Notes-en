@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Flatness in Generative Models: Its Role and Benefits
 description: >-
-  [ICCV 2025][Image Generation][flat minima] This paper presents the first systematic study of loss landscape flatness in generative models…
+  [ICCV 2025][Image Generation][flat minima] This paper presents the first systematic study of loss landscape flatness in generative models, particularly diffusion models. It theoretically demonstrates that flat minima enhance robustness to perturbations in the prior distribution, and empirically shows that SAM effectively promotes flatness in diffusion models, leading to improved generation quality, reduced exposure bias, and greater quantization robustness.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "quantization robustness"
   - "exposure bias"
 date: 2026-05-08
-content_hash: d8de1814a43e7942
+content_hash: 9d8fb293b4dfcf10
 ---
 
 # Understanding Flatness in Generative Models: Its Role and Benefits
@@ -138,11 +138,11 @@ The $\|\epsilon\|^2$ gap of SAM-trained models is approximately one-third that o
 
 ## Related Papers
 
-- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
 - [\[NeurIPS 2025\] Why Diffusion Models Don't Memorize: The Role of Implicit Dynamical Regularization in Training](../../NeurIPS2025/image_generation/why_diffusion_models_dont_memorize_the_role_of_implicit_dynamical_regularization.md)
+- [\[ICML 2025\] Understanding and Mitigating Memorization in Generative Models via Sharpness of Probability Landscapes](../../ICML2025/image_generation/understanding_and_mitigating_memorization_in_generative_models_via_sharpness_of_.md)
+- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
-- [\[NeurIPS 2025\] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models](../../NeurIPS2025/image_generation/understanding_representation_dynamics_of_diffusion_models_via_low-dimensional_mo.md)
-- [\[ICCV 2025\] Deeply Supervised Flow-Based Generative Models](deeply_supervised_flow-based_generative_models.md)
+- [\[ICML 2025\] Compositional Scene Understanding through Inverse Generative Modeling](../../ICML2025/image_generation/compositional_scene_understanding_through_inverse_generative_modeling.md)
 
 </div>
 

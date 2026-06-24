@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] S$^2$-MLLM: Boosting Spatial Reasoning Capability of MLLMs for 3D Visual Grounding with Structural Guidance
 description: >-
-  [CVPR 2026][3D Vision][MLLM] S²-MLLM enables Multimodal Large Language Models (MLLMs) to perform 3D Visual Grounding (3DVG) **without relying on expensive point cloud reconstruction and multi-view rendering during the inference phase**. Instead, it treats feed-forward 3D reconstruction as "spatial guidance" for joint optimization during training,
+  [CVPR 2026][3D Vision][3D Visual Grounding] S²-MLLM enables Multimodal Large Language Models (MLLMs) to perform 3D Visual Grounding (3DVG) **without relying on expensive point cloud reconstruction and multi-view rendering during the inference phase**. Instead, it treats feed-forward 3D reconstruction as "spatial guidance" for joint optimization during training, paired with a structural enhancement module that injects 3D coordinates and camera rays into visual features. This a…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - MLLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Visual Grounding"
+  - "MLLM"
+  - "Spatial Reasoning"
+  - "Feed-forward 3D Reconstruction"
+  - "Implicit Spatial Reasoning"
 date: 2026-05-08
-content_hash: 86ea6ea4ec64e7f9
+content_hash: 689b4d6b083de15b
 ---
+
 # S$^2$-MLLM: Boosting Spatial Reasoning Capability of MLLMs for 3D Visual Grounding with Structural Guidance
 
 **Conference**: CVPR 2026  
@@ -169,11 +174,11 @@ Ours requires only ~25% of the trainable parameters and GPU hours of Video-3D-LL
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAMMER: Harnessing MLLMs via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllms_via_cross-modal_integration_for_intention-driven_3d_affo.md)
+- [\[ECCV 2024\] ScanReason: Empowering 3D Visual Grounding with Reasoning Capabilities](../../ECCV2024/3d_vision/scanreason_empowering_3d_visual_grounding_with_reasoning_capabilities.md)
+- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
+- [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
 - [\[CVPR 2026\] PV-Ground: Text-Guided Point-Voxel Interaction for 3D Visual Grounding](pv-ground_text-guided_point-voxel_interaction_for_3d_visual_grounding.md)
 - [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
-- [\[ECCV 2024\] ScanReason: Empowering 3D Visual Grounding with Reasoning Capabilities](../../ECCV2024/3d_vision/scanreason_empowering_3d_visual_grounding_with_reasoning_capabilities.md)
-- [\[CVPR 2026\] Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation](context-nav_context-driven_exploration_and_viewpoint-aware_3d_spatial_reasoning_.md)
 
 </div>
 

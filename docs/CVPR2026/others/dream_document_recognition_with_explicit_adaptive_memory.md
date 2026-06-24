@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] DREAM: Document Recognition with Explicit Adaptive Memory
 description: >-
-  [CVPR 2026][Others][Paper Note] DREAM equips document recognition models with an "explicit prototype memory"—compressing recurring layout structures and writing styles (margins, skewed text, table lines, etc.) from the training corpus into a set of retrievable prototype vectors. Regional features sparsely "read" these prototypes using cross-attention
+  [CVPR 2026][Prototype Memory] DREAM equips document recognition models with an "explicit prototype memory"—compressing recurring layout structures and writing styles (margins, skewed text, table lines, etc.) from the training corpus into a set of retrievable prototype vectors. Regional features sparsely "read" these prototypes using cross-attention, which are then "written" back via EMA during training. Serving as non-parametric structural knowledge…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Prototype Memory"
+  - "Document Recognition"
+  - "Cross-Attention"
+  - "EMA Consolidation"
+  - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 1f1377bac72a73d4
+content_hash: 7c9ec5448925fea1
 ---
+
 # DREAM: Document Recognition with Explicit Adaptive Memory
 
 **Conference**: CVPR 2026  
@@ -122,16 +127,16 @@ Breakdown on Fox (EN Edit Distance):
 - Value: ⭐⭐⭐⭐ (Effective plug-and-play solution)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning](smart_replay_adaptive_scheduling_of_memory_rehearsal_for_computational_resource-.md)
+- [\[CVPR 2026\] Why Not Hyperparameter-Friendly Optimisation? A Monotonic Adaptive Norm Rescaling Approach For Long-Tailed Recognition](why_not_hyperparameter-friendly_optimisation_a_monotonic_adaptive_norm_rescaling.md)
 - [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
+- [\[ICLR 2026\] MaRS: Memory-Adaptive Routing for Reliable Capacity Expansion and Knowledge Retention](../../ICLR2026/others/mars_memory-adaptive_routing_for_reliable_capacity_expansion_and_knowledge_reten.md)
 - [\[AAAI 2026\] Axis-Aligned Document Dewarping](../../AAAI2026/others/axis-aligned_document_dewarping.md)
 - [\[CVPR 2026\] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition](confusion-aware_spectral_regularizer_for_long-tailed_recognition.md)
-- [\[CVPR 2026\] Coupling Liquid Time-Constant Encoders with Modern Hopfield Memory](coupling_liquid_time-constant_encoders_with_modern_hopfield_memory.md)
 
 </div>
 

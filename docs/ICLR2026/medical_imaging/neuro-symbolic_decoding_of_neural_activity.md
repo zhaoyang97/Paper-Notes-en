@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neuro-Symbolic Decoding of Neural Activity
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] The paper proposes NEURONA, a neuro-symbolic framework for fMRI decoding and conceptual grounding. By decomposing visual scenes into symbolic programs (logical combinations of concepts), it significantly outperforms end-to-end neural decoding and linear models in fMRI question-answering tasks.
+  [ICLR 2026][Medical Imaging][fMRI decoding] The paper proposes NEURONA, a neuro-symbolic framework for fMRI decoding and conceptual grounding. By decomposing visual scenes into symbolic programs (logical combinations of concepts), it significantly outperforms end-to-end neural decoding and linear models in fMRI question-answering tasks.
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI decoding"
+  - "Neuro-symbolic"
+  - "Conceptual grounding"
+  - "Language of Thought hypothesis"
+  - "VQA"
 date: 2026-05-08
-content_hash: 4dcafdcb8f518cf6
+content_hash: 2fc6f1f4a21adc44
 ---
+
 # Neuro-Symbolic Decoding of Neural Activity
 
 **Conference**: ICLR 2026  
@@ -124,16 +130,16 @@ The method achieves approximately **47% relative gain** over the strongest basel
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] NeuroFlow: Toward Unified Visual Encoding and Decoding from Neural Activity](../../CVPR2026/medical_imaging/neuroflow_toward_unified_visual_encoding_and_decoding_from_neural_activity.md)
 - [\[NeurIPS 2025\] FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification](../../NeurIPS2025/medical_imaging/firegnn_neuro-symbolic_graph_neural_networks_with_trainable_fuzzy_rules_for_inte.md)
+- [\[ICLR 2026\] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment](mindmix_a_multimodal_foundation_model_for_auditory_perception_decoding_via_deep_.md)
 - [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
-- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] Aiming at the realistic drug discovery scenario where source training data is inaccessible and only a pre-trained source model is available, this paper proposes TAB—a test-time adaptation framework. It employs uncertainty-weighted consistency learning to force model attention towards genuine binding regions and suppres
+  [ICLR 2026][Computational Biology][Bioactivity Prediction] Aiming at the realistic drug discovery scenario where source training data is inaccessible and only a pre-trained source model is available, this paper proposes TAB—a test-time adaptation framework. It employs uncertainty-weighted consistency learning to force model attention towards genuine binding regions and suppress reliance on shortcut substructures, combined with contrastive learning to prevent representation co…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Bioactivity Prediction"
+  - "Out-of-Distribution Generalization"
+  - "Test-Time Adaptation"
+  - "Source-Free"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 56fdded9e5a940a4
+content_hash: 900ebacf44cddca9
 ---
+
 # Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction
 
 **Conference**: ICLR 2026  

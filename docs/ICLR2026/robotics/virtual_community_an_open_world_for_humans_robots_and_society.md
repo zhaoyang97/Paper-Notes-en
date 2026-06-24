@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Virtual Community: An Open World for Humans, Robots, and Society
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper constructs Virtual Community—an embodied multi-agent simulation platform based on the Genesis physics engine. It automatically generates open-world scenes and agent societies using real geospatial data, allowing humanoid avatars and various robots to coexist and interact within the same physical world. The p
+  [ICLR 2026][Robotics][Open-world simulation] This paper constructs Virtual Community—an embodied multi-agent simulation platform based on the Genesis physics engine. It automatically generates open-world scenes and agent societies using real geospatial data, allowing humanoid avatars and various robots to coexist and interact within the same physical world. The platform includes two benchmarks, the "Community Planning Challenge" and the "Community Robot Challenge…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Open-world simulation"
+  - "Embodied multi-agent"
+  - "Human-robot coexistence"
+  - "Physics engine"
+  - "Scene generation"
 date: 2026-05-08
-content_hash: 9f2a88c540198f8b
+content_hash: ab6e958908915183
 ---
+
 # Virtual Community: An Open World for Humans, Robots, and Society
 
 **Conference**: ICLR 2026  
@@ -149,9 +155,9 @@ Mobile manipulator + wheeled carrier collaboration on 21 scenes:
 
 - [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](world-in-world_world_models_in_a_closed-loop_world.md)
 - [\[CVPR 2025\] Solving Instance Detection from an Open-World Perspective](../../CVPR2025/robotics/solving_instance_detection_from_an_open-world_perspective.md)
+- [\[ICLR 2026\] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots](manipulation_as_in_simulation_enabling_accurate_geometry_perception_in_robots.md)
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
 - [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
-- [\[ICLR 2026\] RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots](robocasa365_a_large-scale_simulation_framework_for_training_and_benchmarking_gen.md)
 
 </div>
 

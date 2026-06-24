@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation
 description: >-
-  [AAAI 2026 (Student Abstract)][Medical Imaging][Semi-supervised segmentation] This paper proposes TGC (Topology Graph Consistency), a framework that introduces graph-theoretic topological constraints by aligning the Lapl…
+  [AAAI 2026 (Student Abstract)][Medical Imaging][Semi-supervised segmentation] This paper proposes TGC (Topology Graph Consistency), a framework that introduces graph-theoretic topological constraints by aligning the Laplacian spectra, connected component counts, and adjacency statistics between prediction graphs and reference graphs. TGC achieves near-fully-supervised histopathology segmentation performance using only 5–10% of labeled data.
 tags:
   - "AAAI 2026 (Student Abstract)"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "graph-theoretic constraints"
   - "pseudo-labels"
 date: 2026-05-08
-content_hash: 6dc31fb76a9b799c
+content_hash: 9012ee92479ffbf2
 ---
 
 # Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation
@@ -134,10 +134,10 @@ Evaluated on the GlaS and CRAG histopathology segmentation datasets.
 ## Related Papers
 
 - [\[NeurIPS 2025\] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation](../../NeurIPS2025/medical_imaging/match_multi-faceted_adaptive_topo-consistency_for_semi-supervised_histopathology.md)
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](../../CVPR2026/medical_imaging/a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
+- [\[CVPR 2026\] Divide, Conquer, and Aggregate: Asymmetric Experts for Class-Imbalanced Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/divide_conquer_and_aggregate_asymmetric_experts_for_class-imbalanced_semi-superv.md)
 - [\[AAAI 2026\] Bidirectional Channel-selective Semantic Interaction for Semi-Supervised Medical Segmentation](bidirectional_channel-selective_semantic_interaction_for_semi-supervised_medical.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](../../CVPR2026/medical_imaging/semantic_class_distribution_learning_for_debiasing.md)
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
+- [\[AAAI 2026\] DualFete: Revisiting Teacher-Student Interactions from a Feedback Perspective for Semi-supervised Medical Image Segmentation](dualfete_revisiting_teacher-student_interactions_from_a_feedback_perspective_for.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Steering When Necessary: Flexible Steering Large Language Models with Backtracking
 description: >-
-  [NeurIPS 2025][LLM Safety][activation steering] This paper proposes FASB (Flexible Activation Steering with Backtracking), a framework that dynamically determines the necessity and intensity of intervention by tracking t…
+  [NeurIPS 2025][LLM Safety][activation steering] This paper proposes FASB (Flexible Activation Steering with Backtracking), a framework that dynamically determines the necessity and intensity of intervention by tracking the internal states of an LLM during generation, and introduces a backtracking mechanism to correct already-deviated tokens. FASB achieves a True\*Info score of 80.56% on TruthfulQA and an average accuracy of 78.8% across six multiple-choice tasks…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "truthfulness"
   - "dynamic intervention"
 date: 2026-05-08
-content_hash: 585c39d09fc4b5ab
+content_hash: f9a4eb8c934d1361
 ---
 
 # Steering When Necessary: Flexible Steering Large Language Models with Backtracking
@@ -149,9 +149,9 @@ Average accuracy across six multiple-choice tasks:
 
 - [\[NeurIPS 2025\] On Optimal Steering to Achieve Exact Fairness](on_optimal_steering_to_achieve_exact_fairness.md)
 - [\[NeurIPS 2025\] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](saemark_steering_personalized_multilingual_llm_watermarks_with_sparse_autoencode.md)
-- [\[NeurIPS 2025\] Reinforcement Learning with Backtracking Feedback](reinforcement_learning_with_backtracking_feedback.md)
-- [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](../../ACL2026/llm_safety/compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
-- [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
+- [\[ICLR 2026\] RepIt: Steering Language Models with Concept-Specific Refusal Vectors](../../ICLR2026/llm_safety/repit_steering_language_models_with_concept-specific_refusal_vectors.md)
+- [\[ACL 2025\] MorphMark: Flexible Adaptive Watermarking for Large Language Models](../../ACL2025/llm_safety/morphmark_adaptive_watermarking.md)
+- [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](../../ICLR2026/llm_safety/steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)
 
 </div>
 

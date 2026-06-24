@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating
 description: >-
-  [ICCV 2025][LLM Evaluation][spectral sensitivity] A practical method is proposed for estimating camera spectral sensitivity using an uncalibrated diffraction grating film. By jointly estimating spectral sensitivity and g…
+  [ICCV 2025][LLM Evaluation][spectral sensitivity] A practical method is proposed for estimating camera spectral sensitivity using an uncalibrated diffraction grating film. By jointly estimating spectral sensitivity and grating efficiency, accurate closed-form solutions are obtained from a single capture of a light source with known spectrum. The method significantly outperforms traditional color chart approaches at an equipment cost of under $5 USD.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "closed-form solution"
   - "pixel-wavelength mapping"
 date: 2026-05-08
-content_hash: fabef97b3cb86e85
+content_hash: 08cb3f5648f8d97d
 ---
 
 # Spectral Sensitivity Estimation with an Uncalibrated Diffraction Grating
@@ -139,11 +139,11 @@ Images of a known-spectrum light source transmitted through an uncalibrated diff
 
 ## Related Papers
 
+- [\[ACL 2025\] Access Denied Inc: The First Benchmark Environment for Sensitivity Awareness](../../ACL2025/llm_evaluation/access_denied_inc_the_first_benchmark_environment_for_sensitivity_awareness.md)
 - [\[ACL 2026\] RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity](../../ACL2026/llm_evaluation/roleconflictbench_a_benchmark_of_role_conflict_scenarios_for_evaluating_llms39_c.md)
-- [\[ICLR 2026\] Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas](../../ICLR2026/llm_evaluation/doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas.md)
-- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](../../ACL2026/llm_evaluation/question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
-- [\[ICCV 2025\] HiERO: Understanding the Hierarchy of Human Behavior Enhances Reasoning on Egocentric Videos](hiero_understanding_the_hierarchy_of_human_behavior_enhances_reasoning_on_egocen.md)
-- [\[ICCV 2025\] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting](sketchsplat_3d_edge_reconstruction_via_differentiable_multi-view_sketch_splattin.md)
+- [\[ECCV 2024\] MERLiN: Single-Shot Material Estimation and Relighting for Photometric Stereo](../../ECCV2024/llm_evaluation/merlin_single-shot_material_estimation_and_relighting_for_photometric_stereo.md)
+- [\[ICLR 2026\] NAIPv2: Debiased Pairwise Learning for Efficient Paper Quality Estimation](../../ICLR2026/llm_evaluation/naipv2_debiased_pairwise_learning_for_efficient_paper_quality_estimation.md)
+- [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](../../ICLR2026/llm_evaluation/tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning
 description: >-
-  [ICLR 2026][LLM Efficiency][continual learning] The SMoPE framework is proposed, organizing a single shared prompt into multiple prompt experts within a sparse MoE structure. By implementing dynamic sparse activation via prompt-attention score aggregation, it significantly alleviates knowledge interference while maintaining high parameter efficiency, achieving SOTA
+  [ICLR 2026][LLM Efficiency][continual learning] The SMoPE framework is proposed, organizing a single shared prompt into multiple prompt experts within a sparse MoE structure. By implementing dynamic sparse activation via prompt-attention score aggregation, it significantly alleviates knowledge interference while maintaining high parameter efficiency, achieving SOTA results across multiple continual learning benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - continual learning
-  - prompt tuning
-  - Mixture of Experts
-  - Sparse MoE
-  - Prefix Tuning
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "continual learning"
+  - "prompt tuning"
+  - "Mixture of Experts"
+  - "Sparse MoE"
+  - "Prefix Tuning"
 date: 2026-05-08
-content_hash: 7cc0199cfec45810
+content_hash: 08e762e841f1d217
 ---
+
 # One-Prompt Strikes Back: Sparse Mixture of Experts for Prompt-based Continual Learning
 
 **Conference**: ICLR 2026  
@@ -165,11 +166,11 @@ Self-supervised pre-training (ImageNet-R): iBOT-1K FAA 72.17 / DINO-1K FAA 68.61
 
 ## Related Papers
 
-- [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
-- [\[ICLR 2026\] Expert Merging in Sparse Mixture of Experts with Nash Bargaining](expert_merging_in_sparse_mixture_of_experts_with_nash_bargaining.md)
-- [\[ICLR 2026\] Merge before Forget: A Single LoRA Continual Learning via Continual Merging](merge_before_forget_a_single_lora_continual_learning_via_continual_merging.md)
-- [\[ICLR 2026\] RESA: Bringing Back What Sparse Attention Ignores with Residual Estimation](resa_bringing_back_what_sparse_attention_ignores_with_residual_estimation.md)
 - [\[ICML 2026\] Turning Back Without Forgetting: Selective Backward Refinement for Parameter-Efficient Continual Learning](../../ICML2026/llm_efficiency/turning_back_without_forgetting_selective_backward_refinement_for_parameter-effi.md)
+- [\[ICLR 2026\] Merge before Forget: A Single LoRA Continual Learning via Continual Merging](merge_before_forget_a_single_lora_continual_learning_via_continual_merging.md)
+- [\[ICLR 2026\] Expert Merging in Sparse Mixture of Experts with Nash Bargaining](expert_merging_in_sparse_mixture_of_experts_with_nash_bargaining.md)
+- [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
 
 </div>
 

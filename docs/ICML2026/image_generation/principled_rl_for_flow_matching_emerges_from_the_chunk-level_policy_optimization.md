@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization
 description: >-
-  [ICML 2026][Image Generation][flow matching] GCPO transitions the step-level optimization in flow matching post-training—where GRPO assigns the "same final reward as advantage to every step"—into "chunk-level" optimization. By adaptively grouping consecutive steps into chunks based on flow matching's own temporal dynamics $L1_{rel}(x,t)$ and utilizing normalized
+  [ICML2026][Image Generation][flow matching] GCPO transitions the step-level optimization in flow matching post-training—where GRPO assigns the "same final reward as advantage to every step"—into "chunk-level" optimization. By adaptively grouping consecutive steps into chunks based on flow matching's own temporal dynamics $L1_{rel}(x,t)$ and utilizing normalized chunk-level importance ratios $r^i_j$ for policy updates, it smooths out erroneous gradients caused by the "final su…
 tags:
-  - ICML 2026
-  - Image Generation
-  - flow matching
-  - GRPO
-  - chunk-level policy optimization
-  - T2I
-  - preference alignment
+  - "ICML2026"
+  - "Image Generation"
+  - "flow matching"
+  - "GRPO"
+  - "chunk-level policy optimization"
+  - "T2I"
+  - "preference alignment"
 date: 2026-05-08
-content_hash: f0dff884fb7859ed
+content_hash: 9e3bcb8391d15db6
 ---
+
 # Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization
 
 **Conference**: ICML2026  
@@ -146,14 +147,17 @@ Switching reward models (Table 6, PickScore training): GCPO consistently outperf
 
 <div class="related-papers" markdown="1">
 
-1. **Dance-GRPO**: [2410.12345] - Directly applies GRPO to Diffusion, establishing the step-level baseline.
-2. **GSPO**: [2501.07123] - Discusses sequence-level importance ratios in LLM RL.
-3. **ACT**: [2303.04137] - Introducing Action Chunking for robot learning.
+## Related Papers
+
+- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
+- [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](../../CVPR2026/image_generation/grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[ICML 2026\] E²PO: Embedding-perturbed Exploration Preference Optimization for Flow Models](embedding-perturbed_exploration_preference_optimization_for_flow_models.md)
+- [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
+- [\[ICML 2026\] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing](shifting_the_breaking_point_of_flow_matching_for_multi-instance_editing.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)

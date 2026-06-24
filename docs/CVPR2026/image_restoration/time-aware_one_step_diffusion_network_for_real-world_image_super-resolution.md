@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] TADSR identifies that existing one-step diffusion SR methods fix the student's timestep at 999, wasting the diverse generative priors of Stable Diffusion (SD) across different timesteps. It introduces a time embedding to the VAE encoder, allowing the same image to encode different latents based on the timestep, and uti
+  [CVPR 2026][Image Restoration][Real-world SR] TADSR identifies that existing one-step diffusion SR methods fix the student's timestep at 999, wasting the diverse generative priors of Stable Diffusion (SD) across different timesteps. It introduces a time embedding to the VAE encoder, allowing the same image to encode different latents based on the timestep, and utilizes a mapping function to bind student and teacher timesteps. This enables consistent generative guidance in a s…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Real-world SR"
+  - "One-step Diffusion"
+  - "Variational Score Distillation"
+  - "Time-aware"
+  - "Fidelity-Realism Trade-off"
 date: 2026-05-08
-content_hash: 9f8f996b6342a949
+content_hash: b5fb306add55ee22
 ---
+
 # Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -145,15 +151,16 @@ Baseline = Original VAE encoder + Original VSD (with random timestep sampling).
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] IFCSR: Inference-Free Fidelity-Realism Control for One-Step Diffusion-based Real-World Image Super-Resolution](ifcsr_inference-free_fidelity-realism_control_for_one-step_diffusion-based_real-.md)
 - [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
-- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
+- [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
+- [\[ICLR 2026\] VARestorer: One-Step VAR Distillation for Real-World Image Super-Resolution](../../ICLR2026/image_restoration/varestorer_one-step_var_distillation_for_real-world_image_super-resolution.md)
+- [\[CVPR 2026\] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution](dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su.md)
 
 </div>
 

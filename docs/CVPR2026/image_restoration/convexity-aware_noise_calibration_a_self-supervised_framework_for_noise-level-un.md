@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising
 description: >-
-  [CVPR 2026][Image Restoration][Noisier2Noise] Ours (CANC) discovers that after adding synthetic noise to a noisy image and applying Noisier2Noise correction, the variance of the denoised output is a **convex curve** with respect to the ratio $k$ (synthetic noise/real noise variance), reaching its minimum at $k=1$ (where synthetic noise exactly matches real noise).
+  [CVPR 2026][Image Restoration][Self-supervised denoising] Ours (CANC) discovers that after adding synthetic noise to a noisy image and applying Noisier2Noise correction, the variance of the denoised output is a **convex curve** with respect to the ratio $k$ (synthetic noise/real noise variance), reaching its minimum at $k=1$ (where synthetic noise exactly matches real noise). By using a network conditioned on synthetic noise variance combined with a ternary search…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Noisier2Noise
-  - AWGN
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Self-supervised denoising"
+  - "Noise estimation"
+  - "Noisier2Noise"
+  - "Ternary search"
+  - "AWGN"
 date: 2026-05-08
-content_hash: c381dce36f28e345
+content_hash: b98d7bac9db047a3
 ---
+
 # Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising
 
 **Conference**: CVPR 2026  
@@ -147,8 +151,8 @@ Variance trend validation (Sec. 5.3): When scanning $\sigma_M$ from 5/255 to 60/
 - [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](../../ICCV2025/image_restoration/blind2sound_self-supervised_image_denoising_without_residual_noise.md)
 - [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
 - [\[CVPR 2026\] TM-BSN: Triangular-Masked Blind-Spot Network for Real-World Self-Supervised Image Denoising](tm-bsn_triangular-masked_blind-spot_network_for_real-world_self-supervised_image.md)
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)
 - [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
+- [\[CVPR 2026\] LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)
 
 </div>
 

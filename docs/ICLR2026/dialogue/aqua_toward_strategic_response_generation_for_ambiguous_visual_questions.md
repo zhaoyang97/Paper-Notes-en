@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions
 description: >-
-  [ICLR 2026][Dialogue Systems][ambiguity] The authors propose AQuA, the first VQA dataset (7.2K samples) with fine-grained ambiguity levels (4 levels), defining optimal response strategies for each level (Direct Answer/Inference/Enumeration/Request Clarification). The study finds that GPT-5 and Gemini are overconfident, consistently providing direct answers to
+  [ICLR 2026][Dialogue Systems][ambiguity] The authors propose AQuA, the first VQA dataset (7.2K samples) with fine-grained ambiguity levels (4 levels), defining optimal response strategies for each level (Direct Answer/Inference/Enumeration/Request Clarification). The study finds that GPT-5 and Gemini are overconfident, consistently providing direct answers to ambiguous questions. Conversely, a 3B model trained via SFT+GRPO can surpass the strategy adaptation capabilities of c…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
-  - ambiguity
-  - VQA
-  - response strategy
-  - uncertainty handling
-  - GRPO
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "ambiguity"
+  - "VQA"
+  - "response strategy"
+  - "uncertainty handling"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 840f2350bf7bd53d
+content_hash: 9a70e47a5fc33142
 ---
+
 # AQuA: Toward Strategic Response Generation for Ambiguous Visual Questions
 
 **Conference**: ICLR 2026  

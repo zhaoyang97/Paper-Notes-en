@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Urban Design] This paper proposes a human-AI collaborative computer vision framework that employs Grounding DINO for urban object detection…
+  [NeurIPS 2025][Multimodal VLM][Urban Design] This paper proposes a human-AI collaborative computer vision framework that employs Grounding DINO for urban object detection, constructs co-occurrence embeddings from the ADE20K dataset to capture real-world spatial configurations, leverages a VLM for scene-aware third-object recommendation, and generates 3D models for AR preview — all aimed at enabling residents to participate in micro-scale urban design.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "VLM Recommendation"
   - "AR Interaction"
 date: 2026-05-08
-content_hash: 33e15d1a9d83c742
+content_hash: 3796f875fa285ba5
 ---
 
 # Scene-Aware Urban Design: A Human-AI Recommendation Framework Using Co-Occurrence Embeddings and Vision-Language Models
@@ -117,11 +117,11 @@ No model training is involved. The co-occurrence matrix is constructed through s
 
 ## Related Papers
 
+- [\[ACL 2025\] MIRA: Empowering One-Touch AI Services on Smartphones with MLLM-based Instruction Recommendation](../../ACL2025/multimodal_vlm/mira_empowering_one-touch_ai_services_on_smartphones_with_mllm-based_instruction.md)
 - [\[NeurIPS 2025\] Text to Robotic Assembly of Multi Component Objects using 3D Generative AI and Vision Language Models](text_to_robotic_assembly_of_multi_component_objects_using_3d_generative_ai_and_v.md)
-- [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
 - [\[ICML 2026\] Benchmarks for Vision-Language Models in Urban Perception Should Be Reliability-Aware and Negotiated](../../ICML2026/multimodal_vlm/benchmarks_for_vision-language_models_in_urban_perception_should_be_reliability-.md)
 - [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
-- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
+- [\[CVPR 2025\] Embodied Scene Understanding for Vision Language Models via MetaVQA](../../CVPR2025/multimodal_vlm/embodied_scene_understanding_for_vision_language_models_via_metavqa.md)
 
 </div>
 

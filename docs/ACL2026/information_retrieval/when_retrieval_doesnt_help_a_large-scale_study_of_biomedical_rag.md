@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 生物医学 RAG 中检索何时无效：大规模实证研究
+  [Paper Note] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] This large-scale empirical study spanning 5 models, 10 datasets, 4 retrieval methods, and 4 retrieval corpora finds that biomedical RAG only provides marginal and unstable improvements of 1-2 points. The true bottleneck is the model's capacity to effectively utilize retrieved evidence rather than the quality of retriev
+  [ACL 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This large-scale empirical study spanning 5 models, 10 datasets, 4 retrieval methods, and 4 retrieval corpora finds that biomedical RAG only provides marginal and unstable improvements of 1-2 points. The true bottleneck is the model's capacity to effectively utilize retrieved evidence rather than the quality of retrieval itself.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Biomedical QA"
+  - "RAG"
+  - "Large Language Models"
+  - "Evidence Utilization"
 date: 2026-05-08
-content_hash: 71a288df50ef400a
+content_hash: c0f61b4e6edb0de8
 ---
+
 # When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study
 
 **Conference**: ACL 2026  
@@ -135,11 +140,11 @@ Key finding: Small models (7-8B) are often harmed by retrieval; Mistral-7B even 
 
 ## Related Papers
 
-- [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
+- [\[ACL 2026\] A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval](a_picture_is_worth_a_thousand_words_an_empirical_study_of_aggregation_strategies.md)
+- [\[ACL 2026\] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](navigating_large-scale_document_collections_mudabench_for_multi-document_analyti.md)
+- [\[ICLR 2026\] LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora](../../ICLR2026/information_retrieval/linearrag_linear_graph_retrieval_augmented_generation_on_large-scale_corpora.md)
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
 - [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[CVPR 2026\] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](../../CVPR2026/information_retrieval/m4-rag_a_massive-scale_multilingual_multi-cultural_multimodal_rag.md)
-- [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
-- [\[ICML 2026\] Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains](../../ICML2026/information_retrieval/ranking_free_rag_replacing_re-ranking_with_selection_in_rag_for_sensitive_domain.md)
 
 </div>
 

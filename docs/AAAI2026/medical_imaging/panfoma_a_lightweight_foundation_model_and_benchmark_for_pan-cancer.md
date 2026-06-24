@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis
 description: >-
-  [AAAI 2026][Medical Imaging][Single-cell RNA-seq] This paper proposes PanFoMa, a lightweight hybrid neural network that integrates Transformer-based local modeling with Mamba-based global integration for pan-cancer singl…
+  [AAAI 2026][Medical Imaging][Single-cell RNA-seq] This paper proposes PanFoMa, a lightweight hybrid neural network that integrates Transformer-based local modeling with Mamba-based global integration for pan-cancer single-cell transcriptomic representation learning. It also introduces PanFoMaBench, a large-scale benchmark dataset covering 33 cancer subtypes and over 3.5 million cells.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "foundation model"
   - "benchmark"
 date: 2026-05-08
-content_hash: 5eab74e6a1afefd2
+content_hash: 945bacb60995398b
 ---
 
 # PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis
@@ -204,9 +204,9 @@ PanFoMa achieves best performance on the majority of metrics across 5 batch inte
 
 - [\[AAAI 2026\] G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning](g2lfrom_giga-scale_to_cancer-specific_large-scale_pathology_foundation_models_vi.md)
 - [\[ICLR 2026\] Glance and Focus Reinforcement for Pan-cancer Screening](../../ICLR2026/medical_imaging/glance_and_focus_reinforcement_for_pan-cancer_screening.md)
+- [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](../../CVPR2026/medical_imaging/gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
+- [\[CVPR 2025\] Unmasking Biases and Reliability Concerns in Convolutional Neural Networks Analysis of Cancer Pathology Images](../../CVPR2025/medical_imaging/unmasking_biases_and_reliability_concerns_in_convolutional_neural_networks_analy.md)
 - [\[ICML 2026\] PathCTM: Thinking in Scales — Accelerating Gigapixel Pathology Image Analysis via Adaptive Continuous Reasoning](../../ICML2026/medical_imaging/thinking_in_scales_accelerating_gigapixel_pathology_image_analysis_via_adaptive_.md)
-- [\[AAAI 2026\] Vascular Anatomy-aware Self-supervised Pre-training for X-ray Angiogram Analysis](vascular_anatomy-aware_self-supervised_pre-training_for_x-ray_angiogram_analysis.md)
-- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
 
 </div>
 

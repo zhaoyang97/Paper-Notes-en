@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM] Model-Dowser scores each parameter of an MLLM using a three-factor multiplication of "weight magnitude $\times$ input activation $\times$ output Jacobian." By freezing high-score parameters and updating only low-score ones, it enables deep fine-tuning on LLaVA/NVILA that masters downstream tasks while preserving pre-tr
+  [ICML 2026][Multimodal VLM][MLLM] Model-Dowser scores each parameter of an MLLM using a three-factor multiplication of "weight magnitude $\times$ input activation $\times$ output Jacobian." By freezing high-score parameters and updating only low-score ones, it enables deep fine-tuning on LLaVA/NVILA that masters downstream tasks while preserving pre-trained knowledge, consistently outperforming SPIDER and ModelTailor on H-score.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - MLLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Catastrophic Forgetting"
+  - "Sparse Fine-tuning"
+  - "Parameter Importance"
+  - "Data-Free Probing"
 date: 2026-05-08
-content_hash: 8f1297d055b48f7e
+content_hash: 124c5e8642120937
 ---
+
 # Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models
 
 **Conference**: ICML 2026  
@@ -129,9 +134,9 @@ Data from Table 1 of the paper shows that while maintaining downstream adaptabil
 
 - [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](../../ICCV2025/multimodal_vlm/smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
 - [\[CVPR 2026\] Efficient Encoder-Free Fourier-based 3D Large Multimodal Model](../../CVPR2026/multimodal_vlm/efficient_encoder-free_fourier-based_3d_large_multimodal_model.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 - [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](../../CVPR2026/multimodal_vlm/structural_graph_probing_of_vision-language_models.md)
 - [\[ICML 2026\] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](debate_with_images_detecting_deceptive_behaviors_in_multimodal_large_language_mo.md)
-- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
 
 </div>
 

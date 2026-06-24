@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ForCenNet: Foreground-Centric Network for Document Image Rectification
 description: >-
-  [ICCV 2025][LLM Evaluation][document image rectification] This paper proposes ForCenNet, a foreground-centric document rectification network featuring three key contributions: foreground label generation…
+  [ICCV 2025][LLM Evaluation][document image rectification] This paper proposes ForCenNet, a foreground-centric document rectification network featuring three key contributions: foreground label generation, a mask-guided Transformer decoder, and a curvature consistency loss. The method requires only undistorted images for training and achieves state-of-the-art performance on four benchmarks: DocUNet, DIR300, WarpDoc, and DocReal.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "mask guidance"
   - "deformation field prediction"
 date: 2026-05-08
-content_hash: bb156f354b39558d
+content_hash: e8089a920a597963
 ---
 
 # ForCenNet: Foreground-Centric Network for Document Image Rectification
@@ -178,9 +178,9 @@ Performance saturates at approximately ×500–×1000.
 
 - [\[ICCV 2025\] PHATNet: A Physics-guided Haze Transfer Network for Domain-adaptive Real-world Image Dehazing](phatnet_a_physics-guided_haze_transfer_network_for_domain-adaptive_real-world_im.md)
 - [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
-- [\[NeurIPS 2025\] DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering](../../NeurIPS2025/llm_evaluation/dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc.md)
-- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](../../ACL2026/llm_evaluation/stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
-- [\[ACL 2026\] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows](../../ACL2026/llm_evaluation/finch_benchmarking_finance_amp_accounting_across_spreadsheet-centric_enterprise_.md)
+- [\[ACL 2025\] READoc: A Unified Benchmark for Realistic Document Structured Extraction](../../ACL2025/llm_evaluation/readoc_a_unified_benchmark_for_realistic_document_structured_extraction.md)
+- [\[ACL 2025\] EditInspector: A Benchmark for Evaluation of Text-Guided Image Edits](../../ACL2025/llm_evaluation/editinspector_a_benchmark_for_evaluation_of_text-guided_image_edits.md)
+- [\[ACL 2025\] MDBench: A Synthetic Multi-Document Reasoning Benchmark Generated with Knowledge Guidance](../../ACL2025/llm_evaluation/mdbench_a_synthetic_multi-document_reasoning_benchmark_generated_with_knowledge_.md)
 
 </div>
 

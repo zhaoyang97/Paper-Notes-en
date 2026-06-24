@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeepMath-103K: A Large-Scale, Challenging, Decontaminated, and Verifiable Mathematical Dataset for Advancing Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] DeepMath-103K is a large-scale mathematical reasoning training set specifically designed for Reinforcement Learning from Verifiable Rewards (RLVR). Starting from 2.869 million raw math forum problems, it undergoes rigorous decontamination, difficulty filtering (primarily levels 5–9), and answer verifiability checks. Th
+  [ICLR2026][Reasoning][Mathematical Reasoning Dataset] DeepMath-103K is a large-scale mathematical reasoning training set specifically designed for Reinforcement Learning from Verifiable Rewards (RLVR). Starting from 2.869 million raw math forum problems, it undergoes rigorous decontamination, difficulty filtering (primarily levels 5–9), and answer verifiability checks. The resulting 103,000 high-difficulty problems have almost no overlap with mainstream evaluation benchmarks…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Mathematical Reasoning Dataset"
+  - "Verifiable Reward"
+  - "Decontamination"
+  - "Difficulty Filtering"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 32447691abd0147b
+content_hash: 082680bba7d837df
 ---
+
 # DeepMath-103K: A Large-Scale, Challenging, Decontaminated, and Verifiable Mathematical Dataset for Advancing Reasoning
 
 **Conference**: ICLR2026  
@@ -134,10 +139,10 @@ The authors trained a series of **DeepMath** models using two RL paradigms: **Ze
 ## Related Papers
 
 - [\[ICLR 2026\] HardcoreLogic: Challenging Large Reasoning Models with Long-tail Logic Puzzle Games](hardcorelogic_challenging_large_reasoning_models_with_long-tail_logic_puzzle_gam.md)
+- [\[CVPR 2025\] VideoEspresso: A Large-Scale Chain-of-Thought Dataset for Fine-Grained Video Reasoning via Core Frame Selection](../../CVPR2025/llm_reasoning/videoespresso_a_large-scale_chain-of-thought_dataset_for_fine-grained_video_reas.md)
 - [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
 - [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
 - [\[ICLR 2026\] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards](random_policy_valuation_is_enough_for_llm_reasoning_with_verifiable_rewards.md)
-- [\[ICLR 2026\] AceReason-Nemotron 1.1: Advancing Math and Code Reasoning through SFT and RL Synergy](acereason-nemotron_11_advancing_math_and_code_reasoning_through_sft_and_rl_syner.md)
 
 </div>
 

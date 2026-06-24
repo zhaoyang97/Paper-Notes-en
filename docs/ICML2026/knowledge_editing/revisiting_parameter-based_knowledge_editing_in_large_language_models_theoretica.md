@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence
 description: >-
-  [ICML 2026][Knowledge Editing][Paper Note] Ours starts from the "dimension collapse" hypothesis, proving that parameter-level knowledge editing is amplified along directions with low singular values and accumulates linearly with sequential editing. This systematically degrades core LLM capabilities across multiple models, datasets, and evaluation dimensions. Ou
+  [ICML 2026][Knowledge Editing][Parameter-based knowledge editing] Ours starts from the "dimension collapse" hypothesis, proving that parameter-level knowledge editing is amplified along directions with low singular values and accumulates linearly with sequential editing. This systematically degrades core LLM capabilities across multiple models, datasets, and evaluation dimensions. Ours further indicates that a simple retrieval-based baseline, SCR…
 tags:
-  - ICML 2026
-  - Knowledge Editing
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "Parameter-based knowledge editing"
+  - "dimension collapse"
+  - "sequential editing"
+  - "representation space perturbation"
+  - "retrieval-augmented baseline"
 date: 2026-05-08
-content_hash: 6fe8af717c6a265b
+content_hash: c3b5927f7bdb6c81
 ---
+
 # Revisiting Parameter-Based Knowledge Editing in Large Language Models: Theoretical Limits and Empirical Evidence
 
 **Conference**: ICML 2026  
@@ -134,7 +140,7 @@ Negative correlations are widely significant, confirming that the causal chain o
 - [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
 - [\[ICML 2026\] Reverse-Engineering Model Editing on Language Models](reverse-engineering_model_editing_on_language_models.md)
 - [\[ICML 2026\] KORE: Enhancing Knowledge Injection for Large Multimodal Models via Knowledge-Oriented Controls](kore_enhancing_knowledge_injection_for_large_multimodal_models_via_knowledge-ori.md)
-- [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](../../NeurIPS2025/knowledge_editing/uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
+- [\[ACL 2026\] Can Factual Opinions Be Edited (Manipulated) in Large Language Models?](../../ACL2026/knowledge_editing/can_factual_opinions_be_edited_manipulated_in_large_language_models.md)
 
 </div>
 

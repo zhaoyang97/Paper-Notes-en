@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts
 description: >-
-  [NeurIPS 2025][Optimization][LoRA] Inspired by the fly olfactory circuit, FlyLoRA replaces the down-projection matrix $A$ in LoRA with a frozen sparse random projection and employs top-$k$ activation selection to realize…
+  [NeurIPS 2025][Optimization][LoRA] Inspired by the fly olfactory circuit, FlyLoRA replaces the down-projection matrix $A$ in LoRA with a frozen sparse random projection and employs top-$k$ activation selection to realize implicit rank-wise MoE routing. This design eliminates routing parameters, reduces intra-task interference, and naturally supports multi-task model merging by exploiting the near-orthogonality of random projections.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Fly Olfactory Circuit"
   - "Model Merging"
 date: 2026-05-08
-content_hash: 0912bfa9e4425d3e
+content_hash: fc470c03eefdcdc0
 ---
 
 # FlyLoRA: Boosting Task Decoupling and Parameter Efficiency via Implicit Rank-Wise Mixture-of-Experts
@@ -143,9 +143,9 @@ FlyLoRA exhibits far smaller performance degradation after merging compared to a
 
 - [\[NeurIPS 2025\] On Minimax Estimation of Parameters in Softmax-Contaminated Mixture of Experts](on_minimax_estimation_of_parameters_in_softmax-contaminated_mixture_of_experts.md)
 - [\[NeurIPS 2025\] Training-Free Bayesianization for Low-Rank Adapters of Large Language Models](training-free_bayesianization_for_low-rank_adapters_of_large_language_models.md)
-- [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Kernel Learning with Adversarial Features: Numerical Efficiency and Adaptive Regularization](kernel_learning_with_adversarial_features_numerical_efficiency_and_adaptive_regu.md)
-- [\[NeurIPS 2025\] Contribution of Task-Irrelevant Stimuli to Drift of Neural Representations](contribution_of_task-irrelevant_stimuli_to_drift_of_neural_representations.md)
+- [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
+- [\[NeurIPS 2025\] Layer-wise Update Aggregation with Recycling for Communication-Efficient Federated Learning](layer-wise_update_aggregation_with_recycling_for_communication-efficient_federat.md)
 
 </div>
 

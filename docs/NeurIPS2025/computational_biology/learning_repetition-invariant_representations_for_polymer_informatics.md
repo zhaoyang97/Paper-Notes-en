@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Repetition-Invariant Representations for Polymer Informatics
 description: >-
-  [NeurIPS 2025][Computational Biology][Polymer Informatics] This paper proposes GRIN (Graph Repetition-Invariant Network), which achieves invariance to the number of repeated monomer units in polymer representations via M…
+  [NeurIPS 2025][Computational Biology][Polymer Informatics] This paper proposes GRIN (Graph Repetition-Invariant Network), which achieves invariance to the number of repeated monomer units in polymer representations via Max aggregation and a specialized graph construction strategy, addressing a fundamental symmetry problem in polymer representation learning.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Max Aggregation"
   - "Molecular Representation"
 date: 2026-05-08
-content_hash: 5a3ea91c903148f5
+content_hash: ca31c8683c1e1d79
 ---
 
 # Learning Repetition-Invariant Representations for Polymer Informatics
@@ -129,10 +129,10 @@ Standard regression/classification losses (MSE/BCE) are used with no special tra
 ## Related Papers
 
 - [\[NeurIPS 2025\] GFlowNets for Learning Better Drug-Drug Interaction Representations](gflownets_for_learning_better_drug-drug_interaction_representations.md)
-- [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
+- [\[ICLR 2026\] Controlling Repetition in Protein Language Models](../../ICLR2026/computational_biology/controlling_repetition_in_protein_language_models.md)
 - [\[NeurIPS 2025\] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation](bidirectional_representations_augmented_autoregressive_biological_sequence_gener.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[NeurIPS 2025\] Understanding and Enhancing Mask-Based Pretraining towards Universal Representations](understanding_and_enhancing_mask-based_pretraining_towards_universal_representat.md)
+- [\[ACL 2025\] Align-Pro: Align Protein Representations Through Multi-Modal Learning](../../ACL2025/computational_biology/align-pro_align_protein_representations_through_multi-modal_learning.md)
+- [\[ICML 2025\] PolyConf: Unlocking Polymer Conformation Generation through Hierarchical Generative Models](../../ICML2025/computational_biology/polyconf_unlocking_polymer_conformation_generation_through_hierarchical_generati.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis
 description: >-
-  [NeurIPS 2025][Video Understanding][Video Anomaly Detection] A fully zero-shot, training-free video anomaly analysis framework that employs Intra-Task Reasoning (confidence-gated self-refinement) and Inter-Task Chaining…
+  [NeurIPS 2025][Video Understanding][Video Anomaly Detection] A fully zero-shot, training-free video anomaly analysis framework that employs Intra-Task Reasoning (confidence-gated self-refinement) and Inter-Task Chaining (cascaded prompt passing from temporal detection to spatial localization to semantic understanding), achieving comprehensive improvements of 4–6% AUC over prior zero-shot methods across 4 benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "VLM"
   - "Anomaly Localization & Understanding"
 date: 2026-05-08
-content_hash: e31f95f420f571fa
+content_hash: 7f65df66631d3cc3
 ---
 
 # A Unified Reasoning Framework for Holistic Zero-Shot Video Anomaly Analysis
@@ -101,8 +101,8 @@ VAU: GPT-C on UCF-Crime improves from 0.384 to 0.444 (+InterTC).
 ## Related Papers
 
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](../../CVPR2026/video_understanding/no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
-- [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
 - [\[ICCV 2025\] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding](../../ICCV2025/video_understanding/towards_video_thinking_test_a_holistic_benchmark_for_advanced_video_reasoning_an.md)
+- [\[NeurIPS 2025\] VADTree: Explainable Training-Free Video Anomaly Detection via Hierarchical Granularity](vadtree_explainable_training-free_video_anomaly_detection_via_hierarchical_granu.md)
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
 - [\[NeurIPS 2025\] Video Finetuning Improves Reasoning Between Frames](video_finetuning_improves_reasoning_between_frames.md)
 

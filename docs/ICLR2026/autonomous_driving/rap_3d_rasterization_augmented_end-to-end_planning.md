@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAP: 3D Rasterization Augmented End-to-End Planning
 description: >-
-  [ICLR 2026][Autonomous Driving][3D Rasterization] RAP utilizes lightweight 3D rasterization to generate controllable counterfactual views and recovery scenes from real driving logs. It then stabilizes the transfer of these synthetic samples to real-image planners through feature-space Raster-to-Real alignment, significantly enhancing end-to-end planning robustness on
+  [ICLR 2026][Autonomous Driving][End-to-End Autonomous Driving] RAP utilizes lightweight 3D rasterization to generate controllable counterfactual views and recovery scenes from real driving logs. It then stabilizes the transfer of these synthetic samples to real-image planners through feature-space Raster-to-Real alignment, significantly enhancing end-to-end planning robustness on closed-loop/long-tail benchmarks such as NAVSIM, WOD-E2E, and Bench2Drive.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - 3D Rasterization
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Autonomous Driving"
+  - "3D Rasterization"
+  - "Data Augmentation"
+  - "Raster-to-Real Alignment"
+  - "Closed-loop Robustness"
 date: 2026-05-08
-content_hash: bfce49c2f235fd2f
+content_hash: 96f7ec336aa202d9
 ---
+
 # RAP: 3D Rasterization Augmented End-to-End Planning
 
 **Conference**: ICLR 2026  
@@ -125,6 +130,7 @@ RAP was validated on four major benchmarks: NAVSIM v1/v2, WOD-E2E, and Bench2Dri
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical recipe for improving E2E planning robustness via synthetic augmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

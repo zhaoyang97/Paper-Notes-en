@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Incentives Of EdTech: A Systematic Review Of EduNLP Research
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This is the first systematic literature review of EduNLP (Educational Natural Language Processing) focusing on the ACL Anthology. The authors manually annotated 204 papers from the 2024–2025 BEA/NLP4CALL workshops and main conferences across five dimensions: tasks, motives, stakeholder inclusion, incentive structures,
+  [ACL2026][LLM (Other)][Educational Technology] This is the first systematic literature review of EduNLP (Educational Natural Language Processing) focusing on the ACL Anthology. The authors manually annotated 204 papers from the 2024–2025 BEA/NLP4CALL workshops and main conferences across five dimensions: tasks, motives, stakeholder inclusion, incentive structures, and ethical risks. A core tension is identified: research is driven by private sector incentives (e.g.…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL2026"
+  - "LLM (Other)"
+  - "Educational Technology"
+  - "Systematic Literature Review"
+  - "Stakeholders"
+  - "Research Incentives"
+  - "AI Ethics"
 date: 2026-05-08
-content_hash: 704bef98e4b59792
+content_hash: 675eb87983147daa
 ---
+
 # Incentives Of EdTech: A Systematic Review Of EduNLP Research
 
 **Conference**: ACL2026  
@@ -122,7 +128,7 @@ Overall distribution of inclusion levels: Middling 47.0%, High 32.1%, Low 20.9%�
 - [\[ACL 2026\] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future](can_ai_be_a_good_peer_reviewer_a_survey_of_peer_review_process_evaluation_and_th.md)
 - [\[ICML 2026\] Stop Automating Peer Review Without Rigorous Evaluation](../../ICML2026/llm_nlp/stop_automating_peer_review_without_rigorous_evaluation.md)
 - [\[ICLR 2026\] Compositional-ARC: Assessing Systematic Generalization in Abstract Spatial Reasoning](../../ICLR2026/llm_nlp/compositional-arc_assessing_systematic_generalization_in_abstract_spatial_reason.md)
-- [\[ACL 2025\] SCULPT: Systematic Tuning of Long Prompts](../../ACL2025/llm_nlp/sculpt_systematic_tuning_of_long_prompts.md)
+- [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](../../ICML2026/llm_nlp/position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
 
 </div>
 

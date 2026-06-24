@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation
 description: >-
-  [AAAI 2026][Robotics][VLA models] This paper proposes the SemanticVLA framework, which integrates three modules — a Semantic-guided Dual-encoder Pruner (SD-Pruner), a Semantic-complementary Hierarchical Fuser (SH-Fuser)…
+  [AAAI 2026 Oral][Robotics][VLA models] This paper proposes the SemanticVLA framework, which integrates three modules — a Semantic-guided Dual-encoder Pruner (SD-Pruner), a Semantic-complementary Hierarchical Fuser (SH-Fuser), and a Semantic-conditioned Action Coupler (SA-Coupler) — to substantially reduce visual redundancy while enhancing instruction–vision–action alignment. On the LIBERO benchmark, SemanticVLA achieves a 97.7% success rate, surpassing OpenVLA by 21.1%…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Robotics"
   - "VLA models"
   - "visual sparsification"
@@ -12,7 +12,7 @@ tags:
   - "semantic alignment"
   - "efficient inference"
 date: 2026-05-08
-content_hash: c8d75db1d42e52c8
+content_hash: 0669bf64c8fa55d9
 ---
 
 # SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation
@@ -224,10 +224,10 @@ Sparsification ratio ablation:
 ## Related Papers
 
 - [\[NeurIPS 2025\] CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification](../../NeurIPS2025/robotics/cogvla_cognition-aligned_vision-language-action_model_via_instruction-driven_rou.md)
-- [\[ICCV 2025\] PASG: A Closed-Loop Framework for Automated Geometric Primitive Extraction and Semantic Anchoring in Robotic Manipulation](../../ICCV2025/robotics/pasg_a_closed-loop_framework_for_automated_geometric_primitive_extraction_and_se.md)
+- [\[CVPR 2026\] SemanticVLA: Towards Semantic Reasoning over Action Memorization via Synergistic Explicit Trace and Latent Action Planning](../../CVPR2026/robotics/semanticvla_towards_semantic_reasoning_over_action_memorization_via_synergistic_.md)
+- [\[ECCV 2024\] SemGrasp: Semantic Grasp Generation via Language Aligned Discretization](../../ECCV2024/robotics/semgrasp_semantic_grasp_generation_via_language_aligned_discretization.md)
+- [\[ICLR 2026\] ManipEvalAgent: Promptable and Efficient Evaluation Framework for Robotic Manipulation Policies](../../ICLR2026/robotics/manipevalagent_promptable_and_efficient_evaluation_framework_for_robotic_manipul.md)
 - [\[AAAI 2026\] SpatialActor: Exploring Disentangled Spatial Representations for Robust Robotic Manipulation](spatialactor_exploring_disentangled_spatial_representations_for_robust_robotic_m.md)
-- [\[AAAI 2026\] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation](h-gar_a_hierarchical_interaction_framework_via_goal-driven_observation-action_re.md)
-- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](continuous_vision-language-action_co-learning_with_semantic-.md)
 
 </div>
 

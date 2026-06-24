@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning
 description: >-
-  [ICLR 2026][Multi-Agent][GRPO] Instead of searching for multi-agent topologies, AgentPO freezes a powerful Actor within a fixed topology and uses Reinforcement Learning (GRPO) to train a lightweight Collaborator to learn "how to assist teammates." With only 500 training samples and 7.8% of the inference overhead of EvoAgent, it consistently outperfo
+  [ICLR2026][Multi-Agent][Multi-agent collaboration] Instead of searching for multi-agent topologies, AgentPO freezes a powerful Actor within a fixed topology and uses Reinforcement Learning (GRPO) to train a lightweight Collaborator to learn "how to assist teammates." With only 500 training samples and 7.8% of the inference overhead of EvoAgent, it consistently outperforms strong baselines like Role Assignment and EvoAgent across multiple mathematical reasoning benchmarks.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - GRPO
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-agent collaboration"
+  - "GRPO"
+  - "Collaborative optimization"
+  - "Fixed topology"
+  - "Mathematical reasoning"
 date: 2026-05-08
-content_hash: edd2bb98d8b54c20
+content_hash: 443f28adf0d39ff9
 ---
+
 # AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -144,11 +149,11 @@ Training a lightweight Collaborator outperformed all baselines that directly fin
 
 ## Related Papers
 
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 - [\[ICLR 2026\] BRIDGE: Bi-level Reinforcement Learning for Dynamic Group Structure in Coalition Formation Games](bridge_bi-level_reinforcement_learning_for_dynamic_group_structure_in_coalition_.md)
 - [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
+- [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
 - [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
-- [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](context_learning_for_multi-agent_discussion.md)
-- [\[CVPR 2025\] Collaborative Tree Search for Enhancing Embodied Multi-Agent Collaboration](../../CVPR2025/multi_agent/collaborative_tree_search_for_enhancing_embodied_multi-agent_collaboration.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] The authors developed a controlled synthetic programming benchmark, DELTA, demonstrating that on "hard problem families" where base models fail to sample any correct solution ($pass@K=0$), a staged RL recipe—initial dense per-test reward warmup followed by a switch to binary full-pass reward—enables models to undergo a
+  [ICLR 2026][Reinforcement Learning][RLVR] The authors developed a controlled synthetic programming benchmark, DELTA, demonstrating that on "hard problem families" where base models fail to sample any correct solution ($pass@K=0$), a staged RL recipe—initial dense per-test reward warmup followed by a switch to binary full-pass reward—enables models to undergo a grokking phase transition after a near-zero reward plateau, jumping to near-perfect scores. This process unlocks enti…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - grokking
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "grokking"
+  - "learnability"
+  - "generalization"
+  - "controlled synthetic benchmarks"
 date: 2026-05-08
-content_hash: 1f5d8e14899ca9c6
+content_hash: c95eb044c118f1b7
 ---
+
 # RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?
 
 **Conference**: ICLR 2026  
@@ -124,7 +128,7 @@ Grokking occurred around step 200 on the Basic mix, reaching ~0.7 full-pass. Eva
 
 ## Related Papers
 
-- [\[ICLR 2026\] From f(x) and g(x) to f(g(x)): LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
+- [\[ICLR 2026\] From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
 - [\[ICML 2026\] How Does Reasoning Flow? Tracing Attention-Induced Information Flow for Targeted RL in LLMs](../../ICML2026/reinforcement_learning/how_does_reasoning_flow_tracing_attention-induced_information_flow_for_targeted_.md)
 - [\[ICLR 2026\] Prosperity before Collapse: How Far Can Off-Policy RL Reach with Stale Data on LLMs?](prosperity_before_collapse_how_far_can_off-policy_rl_reach_with_stale_data_on_ll.md)
 - [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)

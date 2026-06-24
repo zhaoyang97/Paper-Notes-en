@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TGT: Text-Grounded Trajectories for Locally Controlled Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] TGT associates each point trajectory in text-to-video generation with a segment of local text. It utilizes a plug-and-play "Location-Aware Cross-Attention (LACA)" to align "which object, appearance, and motion" to the trajectory neighborhood. Combined with a Dual CFG strategy for global/local guidance control, it reduc
+  [CVPR 2026][Video Generation][Controllable Video Generation] TGT associates each point trajectory in text-to-video generation with a segment of local text. It utilizes a plug-and-play "Location-Aware Cross-Attention (LACA)" to align "which object, appearance, and motion" to the trajectory neighborhood. Combined with a Dual CFG strategy for global/local guidance control, it reduces trajectory error (EPE) by nearly half compared to the strongest baseline while maintaining the v…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Controllable Video Generation"
+  - "Trajectory Control"
+  - "Local Text"
+  - "Cross-Attention"
+  - "Text-to-Video"
 date: 2026-05-08
-content_hash: 3240c8e22f66421d
+content_hash: dab1ad64aa0a2610
 ---
+
 # TGT: Text-Grounded Trajectories for Locally Controlled Video Generation
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ CFG Strategy Ablation (Table 4):
 ## Related Papers
 
 - [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](yume15_a_text-controlled_interactive_world_generation_model.md)
-- [\[CVPR 2026\] Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)
+- [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
 - [\[CVPR 2026\] Unified Camera Positional Encoding for Controlled Video Generation](unified_camera_positional_encoding_for_controlled_video_generation.md)
+- [\[CVPR 2026\] ID-Crafter: VLM-Grounded Online RL for Compositional Multi-Subject Video Generation](id-crafter_vlm-grounded_online_rl_for_compositional_multi-subject_video_generati.md)
 - [\[CVPR 2026\] M4V: Multimodal Mamba for Efficient Text-to-Video Generation](m4v_multimodal_mamba_for_efficient_text-to-video_generation.md)
-- [\[CVPR 2026\] Less is More: Data-Efficient Adaptation for Controllable Text-to-Video Generation](less_is_more_data-efficient_adaptation_for_controllable_text-to-video_generation.md)
 
 </div>
 

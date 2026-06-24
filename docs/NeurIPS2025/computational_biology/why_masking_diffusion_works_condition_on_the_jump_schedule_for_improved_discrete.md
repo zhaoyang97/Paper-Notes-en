@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion
 description: >-
-  [NeurIPS 2025][Computational Biology][discrete diffusion models] This paper reveals the fundamental reason for the superiority of masking diffusion models — they implicitly condition on the known jump-time distribution —…
+  [NeurIPS 2025][Computational Biology][discrete diffusion models] This paper reveals the fundamental reason for the superiority of masking diffusion models — they implicitly condition on the known jump-time distribution — and proposes the Schedule-Conditioned Diffusion (SCUD) framework, which generalizes this advantage to arbitrary discrete diffusion models. Combined with structured forward processes, SCUD surpasses masking diffusion on both image and protein generation tasks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "SCUD"
   - "protein generation"
 date: 2026-05-08
-content_hash: 6b4e318151a91d43
+content_hash: b2495a0a42a52396
 ---
 
 # Why Masking Diffusion Works: Condition on the Jump Schedule for Improved Discrete Diffusion
@@ -49,7 +49,7 @@ SCUD (Schedule-Conditioned Diffusion) decomposes the ELBO into a *when-to-jump* 
 
    The conventional ELBO is written as an integral over instantaneous time $t$. This work introduces the *jump schedule* $S = \{t_1, t_2, \ldots, t_M\}$ and re-decomposes the ELBO as:
 
-   $$\text{ELBO} = \underbrace{E_{p} \log \frac{q_\theta((x_t)_t | x_1, S)}{p((x_t)_t | x_0, x_1, S)}}_{\text{where to jump}} - \underbrace{\text{KL}(p(S) \| q_\theta(S))}_{\text{when to jump}} - E_{p(S,x_0)} \text{KL}(p(x_1|S,x_0) \| q_\theta(x_1|S)) + C$$
+    $\text{ELBO} = \underbrace{E_{p} \log \frac{q_\theta((x_t)_t | x_1, S)}{p((x_t)_t | x_0, x_1, S)}}_{\text{where to jump}} - \underbrace{\text{KL}(p(S) \| q_\theta(S))}_{\text{when to jump}} - E_{p(S,x_0)} \text{KL}(p(x_1|S,x_0) \| q_\theta(x_1|S)) + C$
 
    The first term measures whether the forward and reverse processes agree on jump destinations given known jump times; the second term measures the discrepancy in jump timing; the third term measures how well the forward process has converged.
 
@@ -59,20 +59,20 @@ SCUD (Schedule-Conditioned Diffusion) decomposes the ELBO into a *when-to-jump* 
 
    For a general infinitesimal generator $\mathcal{L}$, an event rate $r$ and transition kernel $K$ are introduced such that $\mathcal{L} = r(K - I)$. Inter-event intervals follow $\text{Exp}(r)$, and at each event the state transitions according to the row distribution of $K$ (potentially remaining unchanged). The reverse process is parameterized by predicting the previous state at each event:
 
-   $$q_\theta(\text{pr}(x_t^d) | x_t, s_t)$$
+    $q_\theta(\text{pr}(x_t^d) | x_t, s_t)$
 
    where $s_t$ is a $D$-dimensional vector counting the number of events up to time $t$ per dimension, providing **finer-grained** noise information than a scalar time $t$.
 
    The efficient SCUD loss takes the form:
 
-   $$-E_{t \sim \text{Unif}(0,1)} E_{p(x_t, x_0, S)} \frac{\beta_t}{\int_0^t \beta_s ds} \sum_d s_t^d \text{KL}(p(\text{pr}(x_t^d) | x_t^d, s_t^d, x_0^d) \| q_\theta(\text{pr}(x_t^d) | x_t, s_t))$$
+    $-E_{t \sim \text{Unif}(0,1)} E_{p(x_t, x_0, S)} \frac{\beta_t}{\int_0^t \beta_s ds} \sum_d s_t^d \text{KL}(p(\text{pr}(x_t^d) | x_t^d, s_t^d, x_0^d) \| q_\theta(\text{pr}(x_t^d) | x_t, s_t))$
 
 3. **Unified Relationship with Masking and Classical Diffusion**
 
    A parameter $\gamma$ controls the degree of schedule conditioning via $r = \gamma^{-1} r^*$:
 
-   - When $\gamma = 1 - 1/D$ and $\mathcal{L}$ is the uniform process, SCUD is **exactly equivalent to masking diffusion** — the masking indicator $m_t^d = \mathbb{I}[s_t^d > 0]$ serves as the conditioning information.
-   - As $\gamma \to 0$, the event count approaches infinity, the input $s_t$ approximates $t$, and SCUD **reduces to classical discrete diffusion (SEDD)**.
+    - When $\gamma = 1 - 1/D$ and $\mathcal{L}$ is the uniform process, SCUD is **exactly equivalent to masking diffusion** — the masking indicator $m_t^d = \mathbb{I}[s_t^d > 0]$ serves as the conditioning information.
+    - As $\gamma \to 0$, the event count approaches infinity, the input $s_t$ approximates $t$, and SCUD **reduces to classical discrete diffusion (SEDD)**.
 
    This unified view **explains** why masking diffusion consistently outperforms uniform diffusion: masking diffusion implicitly encodes jump schedule information.
 
@@ -156,8 +156,8 @@ Architecturally, SCUD replaces the additive time-injection layers (conditioned o
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](constrained_discrete_diffusion.md)
 - [\[NeurIPS 2025\] Split Gibbs Discrete Diffusion Posterior Sampling](split_gibbs_discrete_diffusion_posterior_sampling.md)
 - [\[NeurIPS 2025\] Remasking Discrete Diffusion Models with Inference-Time Scaling](remasking_discrete_diffusion_models_with_inference-time_scaling.md)
+- [\[ICML 2025\] GenMol: A Drug Discovery Generalist with Discrete Diffusion](../../ICML2025/computational_biology/genmol_a_drug_discovery_generalist_with_discrete_diffusion.md)
 - [\[NeurIPS 2025\] Fractional Diffusion Bridge Models](fractional_diffusion_bridge_models.md)
-- [\[NeurIPS 2025\] Graph Diffusion that can Insert and Delete](graph_diffusion_that_can_insert_and_delete.md)
 
 </div>
 

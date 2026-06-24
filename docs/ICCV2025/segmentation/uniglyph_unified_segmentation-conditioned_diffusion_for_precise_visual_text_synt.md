@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis
 description: >-
-  [ICCV 2025][Segmentation][Visual text generation] This paper proposes UniGlyph, a visual text generation framework that adopts segmentation masks as a unified conditioning signal. By replacing conventional rendered glyph…
+  [ICCV 2025][Segmentation][Visual text generation] This paper proposes UniGlyph, a visual text generation framework that adopts segmentation masks as a unified conditioning signal. By replacing conventional rendered glyph conditions with Adaptive Glyph Conditioning (AGC) and Glyph Region Loss (GRL), UniGlyph achieves state-of-the-art bilingual (Chinese and English) text image generation under a single ControlNet architecture, with particularly large margins in small-font and c…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -13,7 +13,7 @@ tags:
   - "small-font generation"
   - "ControlNet"
 date: 2026-05-08
-content_hash: 170e234658c3d32d
+content_hash: 44d24428526efde5
 ---
 
 # UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis
@@ -171,9 +171,9 @@ Key findings:
 ## Related Papers
 
 - [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
-- [\[NeurIPS 2025\] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis](../../NeurIPS2025/segmentation/fast_foreground-aware_diffusion_with_accelerated_sampling_trajectory_for_segment.md)
 - [\[NeurIPS 2025\] HopaDIFF: Holistic-Partial Aware Fourier Conditioned Diffusion for Referring Human Action Segmentation in Multi-Person Scenarios](../../NeurIPS2025/segmentation/hopadiff_holistic-partial_aware_fourier_conditioned_diffusion_for_referring_huma.md)
-- [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
+- [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
+- [\[NeurIPS 2025\] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis](../../NeurIPS2025/segmentation/fast_foreground-aware_diffusion_with_accelerated_sampling_trajectory_for_segment.md)
 - [\[ICCV 2025\] Learning Precise Affordances from Egocentric Videos for Robotic Manipulation](learning_precise_affordances_from_egocentric_videos_for_robotic_manipulation.md)
 
 </div>

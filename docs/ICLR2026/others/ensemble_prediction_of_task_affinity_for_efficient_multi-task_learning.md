@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Ensemble Prediction of Task Affinity for Efficient Multi-Task Learning
 description: >-
-  [ICLR 2026][Others][Paper Note] ETAP combines white-box gradient affinity analysis with data-driven ensemble prediction. Using a minimal number of training groups, it accurately predicts performance gains in multi-task learning (MTL), enabling efficient task partitioning into optimal groups.
+  [ICLR 2026][Multi-task learning] ETAP combines white-box gradient affinity analysis with data-driven ensemble prediction. Using a minimal number of training groups, it accurately predicts performance gains in multi-task learning (MTL), enabling efficient task partitioning into optimal groups.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Multi-task learning"
+  - "task affinity"
+  - "task grouping"
+  - "ensemble prediction"
+  - "gradient affinity"
 date: 2026-05-08
-content_hash: 51ca3fdc2198d510
+content_hash: 8670b00fe2fa40d6
 ---
+
 # Ensemble Prediction of Task Affinity for Efficient Multi-Task Learning
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,6 @@ flowchart LR
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

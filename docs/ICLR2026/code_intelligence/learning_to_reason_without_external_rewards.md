@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Learning to Reason without External Rewards
 description: >-
-  [ICLR 2026][Code Intelligence][RLIF] Proposes Intuitor, an RLIF method that replaces external verifiable rewards with the model's own self-certainty (KL divergence between the output distribution and a uniform distribution). It matches GRPO performance in mathematical reasoning while demonstrating better generalization in out-of-distribution tasks such as
+  [ICLR 2026][Code Intelligence][RLIF] Proposes Intuitor, an RLIF method that replaces external verifiable rewards with the model's own self-certainty (KL divergence between the output distribution and a uniform distribution). It matches GRPO performance in mathematical reasoning while demonstrating better generalization in out-of-distribution tasks such as code generation.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - RLIF
-  - Self-Certainty
-  - GRPO
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "RLIF"
+  - "Self-Certainty"
+  - "Intrinsic Rewards"
+  - "GRPO"
+  - "Unsupervised Reinforcement Learning"
 date: 2026-05-08
-content_hash: 30c7ec2e713b5017
+content_hash: 83c355cf731f8e98
 ---
+
 # Learning to Reason without External Rewards
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Empowering LLM Tool Invocation with Tool-call Reward Model
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] Addressing the issues of coarse-grained reward signals and subsequent gradient conflicts in LLM tool invocation, this paper proposes the Tool-call Reward Model (TRM). TRM is a process reward model that independently scores each tool call. The authors further design turn-level credit assignment and advantage estimation
+  [ICLR 2026][LLM Agent][Tool-call Reward Model] Addressing the issues of coarse-grained reward signals and subsequent gradient conflicts in LLM tool invocation, this paper proposes the Tool-call Reward Model (TRM). TRM is a process reward model that independently scores each tool call. The authors further design turn-level credit assignment and advantage estimation strategies integrated with PPO/GRPO, achieving consistent performance improvements across search-based QA and cod…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
-  - PPO/GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool-call Reward Model"
+  - "Process Reward Model"
+  - "Reinforcement Learning"
+  - "PPO/GRPO"
+  - "Gradient Conflict"
 date: 2026-05-08
-content_hash: 334213b80c261cc3
+content_hash: 86660fbba3912945
 ---
+
 # Empowering LLM Tool Invocation with Tool-call Reward Model
 
 **Conference**: ICLR 2026  
@@ -144,7 +148,7 @@ Using standard group-level normalization in GRPO (calculating mean and variance 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

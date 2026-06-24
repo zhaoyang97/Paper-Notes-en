@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers
 description: >-
-  [ICML 2026][Model Compression][Spectral Energy Pattern] The authors utilize a three-perspective diagnostic—sample-wise SVD, dataset-level PCA, and token-level Spectral Energy Pattern (SEP)—to reveal a seemingly paradoxical ViT representation geometry: "while per-image feature matrices are low-rank, the shared subspace across the dataset is nearly full-rank, and single-token
+  [ICML 2026][Model Compression][Feature Distillation] The authors utilize a three-perspective diagnostic—sample-wise SVD, dataset-level PCA, and token-level Spectral Energy Pattern (SEP)—to reveal a seemingly paradoxical ViT representation geometry: "while per-image feature matrices are low-rank, the shared subspace across the dataset is nearly full-rank, and single-token spectral bandwidth approaches 100%." Based on this, they propose two minimalist patches…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Spectral Energy Pattern
+  - "ICML 2026"
+  - "Model Compression"
+  - "Feature Distillation"
+  - "ViT Compression"
+  - "Subspace Rotation"
+  - "Spectral Energy Pattern"
+  - "Latent Capacity Bottleneck"
 date: 2026-05-08
-content_hash: a84d333e377e76ce
+content_hash: b46fc7791443cb99
 ---
+
 # From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers
 
 **Conference**: ICML 2026  
@@ -145,8 +150,8 @@ Naive feature KD is nearly ineffective (+0.21), but with Lift, **MSE alone** yie
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](../../AAAI2026/model_compression/distillation_dynamics_towards_understanding_feature-based_di.md)
 - [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](energy-structured_low-rank_adaptation_for_continual_learning.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](../../ICLR2026/model_compression/stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
 - [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
-- [\[ICLR 2026\] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation](../../ICLR2026/model_compression/taming_momentum_rethinking_optimizer_states_through_low-rank_approximation.md)
 
 </div>
 

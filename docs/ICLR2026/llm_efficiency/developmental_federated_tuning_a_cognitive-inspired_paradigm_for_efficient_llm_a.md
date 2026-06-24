@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] DEVFT decomposes federated fine-tuning into "small-to-large" developmental stages, growing from a compact sub-model to a full LLM. By employing de-conflicting layer grouping and differential layer fusion to enable cross-stage knowledge transfer, it achieves 4.59× convergence acceleration, 10.67× communication savings,
+  [ICLR 2026][LLM Efficiency][Federated Fine-Tuning] DEVFT decomposes federated fine-tuning into "small-to-large" developmental stages, growing from a compact sub-model to a full LLM. By employing de-conflicting layer grouping and differential layer fusion to enable cross-stage knowledge transfer, it achieves 4.59× convergence acceleration, 10.67× communication savings, and a 9.07% average performance improvement on edge devices.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Federated Fine-Tuning"
+  - "LoRA"
+  - "Progressive Training"
+  - "Curriculum Learning"
+  - "Edge Devices"
+  - "Layer Fusion"
 date: 2026-05-08
-content_hash: 1e9e615dda79f2ad
+content_hash: a0a9c5187f747bab
 ---
+
 # Developmental Federated Tuning: A Cognitive-Inspired Paradigm for Efficient LLM Adaptation
 
 **Conference**: ICLR 2026  

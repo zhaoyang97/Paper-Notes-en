@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Depth Anything with Any Prior
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Prior Depth Anything employs a two-stage "coarse-to-fine" pipeline to fuse **precise but sparse** metric depth priors measured by sensors with **complete but relative** geometric structures predicted by monocular depth models. A single model unifies three tasks—depth completion, super-resolution, and inpainting—in a ze
+  [ICLR2026][3D Vision][Monocular depth estimation] Prior Depth Anything employs a two-stage "coarse-to-fine" pipeline to fuse **precise but sparse** metric depth priors measured by sensors with **complete but relative** geometric structures predicted by monocular depth models. A single model unifies three tasks—depth completion, super-resolution, and inpainting—in a zero-shot manner, matching or even exceeding the performance of specialized SOTAs across 7 real-world datasets.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Monocular depth estimation"
+  - "metric depth"
+  - "depth completion"
+  - "depth super-resolution"
+  - "depth prior"
 date: 2026-05-08
-content_hash: cb4a01b7e9c0be1b
+content_hash: 811cb93c634742f0
 ---
+
 # Depth Anything with Any Prior
 
 **Conference**: ICLR2026  
@@ -138,15 +144,16 @@ PriorDA not only leads in absolute performance but is notably **less sensitive t
 - Value: ⭐⭐⭐⭐⭐ High practical value given the zero-shot unification of tasks and its plug-and-play upgrade capability.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] DA$^{2}$: Depth Anything in Any Direction](da2_depth_anything_in_any_direction.md)
+- [\[ICLR 2026\] Trace Anything: Representing Any Video in 4D via Trajectory Fields](trace_anything_representing_any_video_in_4d_via_trajectory_fields.md)
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](../../CVPR2026/3d_vision/depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](depthlm_metric_depth_from_vision_language_models.md)
 - [\[CVPR 2026\] The Midas Touch for Metric Depth](../../CVPR2026/3d_vision/the_midas_touch_for_metric_depth.md)
-- [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](../../CVPR2026/3d_vision/unidac_universal_metric_depth_estimation_for_any_camera.md)
 
 </div>
 

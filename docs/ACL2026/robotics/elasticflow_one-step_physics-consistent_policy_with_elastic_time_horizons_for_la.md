@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ElasticFlow: One-Step Physics-Consistent Policy with Elastic Time Horizons for Language-Guided Manipulation
 description: >-
-  [ACL 2026][Robotics & Embodied AI][Flow Matching] The paper proposes ElasticFlow, which replaces instantaneous velocity fields with MeanFlow (mean velocity fields) for learning language-conditioned robotic actions. By explicitly encoding control granularity using an "Elastic Time Horizon $\Delta t=t-r$", it achieves 1-NFE single-step inference (~71Hz) and outperforms
+  [ACL 2026 Findings][Robotics][One-step diffusion] The paper proposes ElasticFlow, which replaces instantaneous velocity fields with MeanFlow (mean velocity fields) for learning language-conditioned robotic actions. By explicitly encoding control granularity using an "Elastic Time Horizon $\Delta t=t-r$", it achieves 1-NFE single-step inference (~71Hz) and outperforms OpenVLA and $\pi_0$ on long-horizon tasks such as LIBERO-Long and CALVIN ABC-D.
 tags:
-  - ACL 2026
-  - Robotics & Embodied AI
-  - Flow Matching
-  - VLA
+  - "ACL 2026 Findings"
+  - "Robotics"
+  - "One-step diffusion"
+  - "Mean velocity field"
+  - "Elastic time"
+  - "Flow matching"
+  - "VLA"
 date: 2026-05-08
-content_hash: 27f3d3f061e6852f
+content_hash: 0792d19ec30b95b2
 ---
+
 # ElasticFlow: One-Step Physics-Consistent Policy with Elastic Time Horizons for Language-Guided Manipulation
 
 **Conference**: ACL 2026 Findings  
@@ -152,15 +156,17 @@ ElasticFlow provides a 5× speedup over Diffusion Policy and 14× over OpenVLA.
 
 <div class="related-papers" markdown="1">
 
-1. **Geng et al.**, "MeanFlow: One-step Generation with Mean Velocity Fields," 2025.
-2. **Chi et al.**, "Diffusion Policy: Visuomotor Policy Learning via Action Diffusion," RSS 2023.
-3. **Black et al.**, "$\pi_0$: A Flow-matching-based Vision-Language-Action Model," arXiv 2024.
-4. **Prasad et al.**, "Consistency Policy: Accelerated Visuomotor Policy Training via Consistency Models," RSS 2024.
+## Related Papers
+
+- [\[ICML 2026\] Mixture of Horizons in Action Chunking](../../ICML2026/robotics/mixture_of_horizons_in_action_chunking.md)
+- [\[ACL 2026\] When Does Language Matter? Multilingual Instructions Reveal Step-wise Language Sensitivity in Vision-Language-Action Models](when_does_language_matter_multilingual_instructions_reveal_step-wise_language_se.md)
+- [\[ICLR 2026\] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](../../ICLR2026/robotics/vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)
+- [\[CVPR 2026\] RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model](../../CVPR2026/robotics/rehearsevla_simulated_post-training_for_vlas_with_physically-consistent_world_mo.md)
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](../../ICLR2026/robotics/verifier-free_test-time_sampling_for_vision-language-action_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Mixture of Horizons in Action Chunking](../../ICML2026/robotics/mixture_of_horizons_in_action_chunking.md)

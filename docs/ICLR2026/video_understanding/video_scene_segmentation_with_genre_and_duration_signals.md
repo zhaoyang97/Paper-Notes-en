@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Video Scene Segmentation with Genre and Duration Signals
 description: >-
-  [ICLR 2026][Video Understanding][Self-Supervised Learning] This paper introduces "genre conventions" and "shot duration patterns" from professional filmmaking as metadata signals for video scene segmentation. It uses IMDb text definitions as soft semantic priors to enhance shot representations, employs inverse-duration-weighted sampling to generate diverse pseudo-boundaries du
+  [ICLR 2026][Video Understanding][Video Scene Segmentation] This paper introduces "genre conventions" and "shot duration patterns" from professional filmmaking as metadata signals for video scene segmentation. It uses IMDb text definitions as soft semantic priors to enhance shot representations, employs inverse-duration-weighted sampling to generate diverse pseudo-boundaries during pre-training, and splits long shots during inference. This approach achieves SOTA performance on…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video Scene Segmentation"
+  - "Self-supervised Learning"
+  - "Genre Prior"
+  - "Shot Duration"
+  - "Long Video Understanding"
 date: 2026-05-08
-content_hash: f8003aba0ca919e4
+content_hash: 88d4bdab42949c56
 ---
+
 # Video Scene Segmentation with Genre and Duration Signals
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes an audio-only semi-supervised learning framework that jointly models pathological speech features at session, clip, and frame levels within clinical dialogues. By utilizing an EMA teacher-student network to dynamically generate high-quality pseudo-labels, the framework achieves 90% of fully supervis
+  [ACL 2026 Findings][Audio & Speech][Semi-supervised learning] This paper proposes an audio-only semi-supervised learning framework that jointly models pathological speech features at session, clip, and frame levels within clinical dialogues. By utilizing an EMA teacher-student network to dynamically generate high-quality pseudo-labels, the framework achieves 90% of fully supervised performance in depression and Alzheimer's detection using only 11 labeled samples.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Semi-supervised learning"
+  - "pathological speech detection"
+  - "multi-granularity modeling"
+  - "pseudo-labeling"
+  - "clinical dialogues"
 date: 2026-05-08
-content_hash: 0213c930640d3518
+content_hash: 4809089ee66e6a79
 ---
+
 # Semi-Supervised Diseased Detection from Speech Dialogues with Multi-Level Data Modeling
 
 **Conference**: ACL 2026 Findings  
@@ -151,16 +157,16 @@ The total loss is a weighted sum: $Loss = \alpha Loss_{session} + \beta Loss_{cl
 - Value: ⭐⭐⭐⭐ Practical SSL solution for low-resource medical speech analysis.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
 - [\[ACL 2026\] \[b\] = \[d\] − \[t\] + \[p\]: Self-supervised Speech Models Discover Phonological Vector Arithmetic](bd-tp_self-supervised_speech_models_discover_phonological_vector_arithmetic.md)
+- [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](../../ICLR2026/audio_speech/hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
 - [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
-- [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](../../ICLR2026/audio_speech/echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation
 description: >-
-  [ACL 2026][Alignment & RLHF][DPO] RbtAct treats author rebuttals as implicit supervision for "which review comments actually prompt modifications," constructs a dataset of 75,000 review-rebuttal segment-level mappings, and employs SFT+DPO to train an 8B model to generate more specific and actionable paper review feedback.
+  [ACL 2026 Findings][LLM Alignment][Author rebuttal] RbtAct treats author rebuttals as implicit supervision for "which review comments actually prompt modifications," constructs a dataset of 75,000 review-rebuttal segment-level mappings, and employs SFT+DPO to train an 8B model to generate more specific and actionable paper review feedback.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - DPO
+  - "ACL 2026 Findings"
+  - "LLM Alignment"
+  - "Author rebuttal"
+  - "actionable review feedback"
+  - "preference optimization"
+  - "DPO"
+  - "peer review dataset"
 date: 2026-05-08
-content_hash: 9d243718b2453546
+content_hash: 476e757c7c3222c3
 ---
+
 # RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation
 
 **Conference**: ACL 2026 Findings  
@@ -163,11 +168,11 @@ Quality control for data construction demonstrates that training signals are not
 
 ## Related Papers
 
-- [\[ACL 2026\] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](wildfeedback_aligning_llms_with_in-situ_user_interactions_and_feedback.md)
 - [\[CVPR 2025\] Continual SFT Matches Multimodal RLHF with Negative Supervision](../../CVPR2025/llm_alignment/continual_sft_matches_multimodal_rlhf_with_negative_supervision.md)
+- [\[ACL 2026\] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](wildfeedback_aligning_llms_with_in-situ_user_interactions_and_feedback.md)
 - [\[ACL 2026\] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms](towards_bridging_the_reward-generation_gap_in_direct_alignment_algorithms.md)
-- [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
-- [\[ACL 2026\] Better Literary Translation: A Multi-Aspect Data Generation and LLM Training Approach](better_literary_translation_a_multi-aspect_data_generation_and_llm_training_appr.md)
+- [\[ICLR 2026\] Semi-Supervised Preference Optimization with Limited Feedback](../../ICLR2026/llm_alignment/semi-supervised_preference_optimization_with_limited_feedback.md)
+- [\[ICLR 2026\] RLBFF: Binary Flexible Feedback to Bridge Between Human Feedback & Verifiable Rewards](../../ICLR2026/llm_alignment/rlbff_binary_flexible_feedback_to_bridge_between_human_feedback_verifiable_rewar.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic Cache Distillation: Efficient State Transfer via Reuse and Selective Patching
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Targeting the disaggregated LLM serving scenario where a "base model acts as the producer and a fine-tuned model acts as the consumer," this paper proposes SCD: replacing raw KV Cache transferred across devices with offline-learned low-rank semantic codes. Most layers use "Reuse" for bandwidth-saving low-rank reconstru
+  [ICML2026][Model Compression][KV Cache Compression] Targeting the disaggregated LLM serving scenario where a "base model acts as the producer and a fine-tuned model acts as the consumer," this paper proposes SCD: replacing raw KV Cache transferred across devices with offline-learned low-rank semantic codes. Most layers use "Reuse" for bandwidth-saving low-rank reconstruction, while a few key layers use "Patch" to recompute pre-normalization inputs to truncate error accumulati…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "KV Cache Compression"
+  - "Disaggregated Serving"
+  - "Cross-model Cache Reuse"
+  - "Low-rank Reconstruction"
+  - "Semantic Alignment"
 date: 2026-05-08
-content_hash: f9c8f4fcfd398463
+content_hash: e6d499804ca9455b
 ---
+
 # Semantic Cache Distillation: Efficient State Transfer via Reuse and Selective Patching
 
 **Conference**: ICML2026  
@@ -134,11 +140,11 @@ Impact of Patch budget $k$ on WikiText-2 (starting from Reuse-only):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](../../CVPR2026/model_compression/selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
 - [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
-- [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](../../CVPR2026/model_compression/memory_efficient_transfer_learning_with_fading_side_networks.md)
-- [\[ACL 2025\] State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models](../../ACL2025/model_compression/state_offset_tuning_ssm_peft.md)
 - [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](../../NeurIPS2025/model_compression/chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
+- [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](../../CVPR2026/model_compression/selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
+- [\[CVPR 2026\] Memory-Efficient Transfer Learning with Fading Side Networks via Masked Dual Path Distillation](../../CVPR2026/model_compression/memory_efficient_transfer_learning_with_fading_side_networks.md)
+- [\[ICML 2026\] ZipMoE: Efficient On-Device MoE Serving via Lossless Compression and Cache-Affinity Scheduling](zipmoe_efficient_on-device_moe_serving_via_lossless_compression_and_cache-affini.md)
 
 </div>
 

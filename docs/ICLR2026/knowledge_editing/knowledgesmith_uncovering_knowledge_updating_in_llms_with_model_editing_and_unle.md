@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KnowledgeSmith: Uncovering Knowledge Updating in LLMs with Model Editing and Unlearning
 description: >-
-  [ICLR 2026][Knowledge Editing][Paper Note] This paper proposes KnowledgeSmith, which unifies "knowledge editing" and "machine unlearning" into a single constrained optimization problem. By using knowledge graphs (KG) to automatically generate large-scale evaluation benchmarks across different hierarchies (root/intermediate/leaf) and data scales, the study syste
+  [ICLR 2026][Knowledge Editing][Machine Unlearning] This paper proposes KnowledgeSmith, which unifies "knowledge editing" and "machine unlearning" into a single constrained optimization problem. By using knowledge graphs (KG) to automatically generate large-scale evaluation benchmarks across different hierarchies (root/intermediate/leaf) and data scales, the study systematically reveals counter-intuitive phenomena in LLM knowledge updates, such as propagation asymmetry…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Machine Unlearning"
+  - "Knowledge Graphs"
+  - "Consistency-Capacity Trade-off"
+  - "Propagation Asymmetry"
+  - "Evaluation Benchmark"
 date: 2026-05-08
-content_hash: 388add701a4dfb12
+content_hash: cf43c9f0cecf3789
 ---
+
 # KnowledgeSmith: Uncovering Knowledge Updating in LLMs with Model Editing and Unlearning
 
 **Conference**: ICLR 2026  
@@ -133,9 +139,9 @@ When the data scale exceeds model capacity, direct probe accuracy saturates/decl
 
 - [\[ICLR 2026\] MobiEdit: Resource-efficient Knowledge Editing for Personalized On-device LLMs](mobiedit_resource-efficient_knowledge_editing_for_personalized_on-device_llms.md)
 - [\[ICLR 2026\] MoEEdit: Efficient and Routing-Stable Knowledge Editing for Mixture-of-Experts LLMs](moeedit_efficient_and_routing-stable_knowledge_editing_for_mixture-of-experts_ll.md)
+- [\[ICLR 2026\] Scaling Knowledge Editing in LLMs to 100,000 Facts with Neural KV Database](scaling_knowledge_editing_in_llms_to_100000_facts_with_neural_kv_database.md)
 - [\[NeurIPS 2025\] MEMOIR: Lifelong Model Editing with Minimal Overwrite and Informed Retention for LLMs](../../NeurIPS2025/knowledge_editing/memoir_lifelong_model_editing_with_minimal_overwrite_and_informed_retention_for_.md)
 - [\[ICLR 2026\] Fine-tuning Done Right in Model Editing](fine-tuning_done_right_in_model_editing.md)
-- [\[ICLR 2026\] Energy-Regularized Sequential Model Editing on Hyperspheres](energy-regularized_sequential_model_editing_on_hyperspheres.md)
 
 </div>
 

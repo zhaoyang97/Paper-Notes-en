@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion
 description: >-
-  [NeurIPS 2025][Autonomous Driving][interpretability] This paper proposes LMD (Layer-Wise Modality Decomposition), a post-hoc, model-agnostic interpretability method that linearizes neural network operations layer by laye…
+  [NeurIPS 2025][Autonomous Driving][interpretability] This paper proposes LMD (Layer-Wise Modality Decomposition), a post-hoc, model-agnostic interpretability method that linearizes neural network operations layer by layer to exactly decompose the predictions of multimodal fusion models into per-sensor modality contributions. LMD is the first method to achieve prediction attribution to individual input modalities in autonomous driving perception models…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "modality decomposition"
   - "LRP"
 date: 2026-05-08
-content_hash: 795e62dd85f723ab
+content_hash: 4a6e1a26b0c483af
 ---
 
 # Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion
@@ -162,8 +162,8 @@ This paper proposes LMD (Layer-Wise Modality Decomposition), a post-hoc, model-a
 ## Related Papers
 
 - [\[NeurIPS 2025\] Availability-aware Sensor Fusion via Unified Canonical Space](availability-aware_sensor_fusion_via_unified_canonical_space.md)
-- [\[ICCV 2025\] Self-Supervised Sparse Sensor Fusion for Long Range Perception](../../ICCV2025/autonomous_driving/self-supervised_sparse_sensor_fusion_for_long_range_perception.md)
 - [\[NeurIPS 2025\] DBLoss: Decomposition-based Loss Function for Time Series Forecasting](dbloss_decomposition-based_loss_function_for_time_series_forecasting.md)
+- [\[ICCV 2025\] Self-Supervised Sparse Sensor Fusion for Long Range Perception](../../ICCV2025/autonomous_driving/self-supervised_sparse_sensor_fusion_for_long_range_perception.md)
 - [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](../../ICLR2026/autonomous_driving/simo_single-modality-operable_multimodal_collaborative_perceptio.md)
 - [\[NeurIPS 2025\] Extremely Simple Multimodal Outlier Synthesis for Out-of-Distribution Detection and Segmentation](extremely_simple_multimodal_outlier_synthesis_for_out-of-distribution_detection_.md)
 

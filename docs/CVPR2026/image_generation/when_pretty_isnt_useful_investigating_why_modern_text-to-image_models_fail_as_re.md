@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Pretty Isn't Useful: Investigating Why Modern Text-to-Image Models Fail as Reliable Training Data Generators
 description: >-
-  [CVPR 2026][Image Generation][density-coverage] The authors evaluate over ten open-source T2I diffusion models released between 2022 and 2025 as "synthetic training data generators." By training classifiers on synthetic images and evaluating them on real test sets, they discover a counter-intuitive trend: newer models with better visual quality and prompt following
+  [CVPR 2026][Image Generation][Text-to-Image] The authors evaluate over ten open-source T2I diffusion models released between 2022 and 2025 as "synthetic training data generators." By training classifiers on synthetic images and evaluating them on real test sets, they discover a counter-intuitive trend: newer models with better visual quality and prompt following produce less useful data. The Synth→Real accuracy has consistently declined over time because newer models collapse…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - density-coverage
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Synthetic Training Data"
+  - "Distribution Collapse"
+  - "Spectral Analysis"
+  - "density-coverage"
 date: 2026-05-08
-content_hash: bcb881d09e267e2c
+content_hash: dea59f46c9b699ff
 ---
+
 # When Pretty Isn't Useful: Investigating Why Modern Text-to-Image Models Fail as Reliable Training Data Generators
 
 **Conference**: CVPR 2026  
@@ -143,8 +148,8 @@ A **bidirectional transfer control**—Real→Synth (train real, test synth) vs.
 - [\[CVPR 2026\] The Drift Kernel: Why Diffusion Models Change Even When Told Not To](the_drift_kernel_why_diffusion_models_change_even_when_told_not_to.md)
 - [\[CVPR 2026\] When Anonymity Breaks: Identifying Models Behind Text-to-Image Leaderboards](when_anonymity_breaks_identifying_models_behind_text-to-image_leaderboards.md)
 - [\[CVPR 2026\] Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models](black-box_membership_inference_attacks_on_the_pre-training_data_of_image-generat.md)
+- [\[CVPR 2026\] Selectively Extracting and Injecting Visual Attributes into Text-to-Image Models](selectively_extracting_and_injecting_visual_attributes_into_text-to-image_models.md)
 - [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
-- [\[ICCV 2025\] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/trce_towards_reliable_malicious_concept_erasure_in_text-to-image_diffusion_model.md)
 
 </div>
 

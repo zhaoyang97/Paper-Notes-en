@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CountGD++: Generalized Prompting for Open-World Counting
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] CountGD++ generalizes the "prompting" mechanism for open-world object counting: it allows users to specify "what to count" and "what NOT to count" using both text and visual exemplars. It enables the model to self-generate visual exemplars (pseudo-exemplars), borrow exemplars from external or synthetic images, and oper
+  [CVPR 2026][Multimodal VLM][Open-world Counting] CountGD++ generalizes the "prompting" mechanism for open-world object counting: it allows users to specify "what to count" and "what NOT to count" using both text and visual exemplars. It enables the model to self-generate visual exemplars (pseudo-exemplars), borrow exemplars from external or synthetic images, and operate as an LLM-invoked counting expert agent. It achieves significant improvements in counting and detection acc…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Open-world Counting"
+  - "Positive and Negative Prompts"
+  - "Pseudo-exemplars"
+  - "External/Synthetic Exemplars"
+  - "LLM Visual Expert Agent"
 date: 2026-05-08
-content_hash: 71243343e5024cf0
+content_hash: df66ff146ef2b730
 ---
+
 # CountGD++: Generalized Prompting for Open-World Counting
 
 **Conference**: CVPR 2026  
@@ -163,15 +169,17 @@ Under text-only conditions, MAE/RMSE dropped ~7x, even outperforming CountVid wi
 
 <div class="related-papers" markdown="1">
 
-1. (ICCV 2023) **CountGD: Multi-modal Open-world Counting**
-2. (CVPR 2024) **CountGD-Box: Generalized Object Counting with Bounding Boxes**
-3. (CVPR 2024) **CountSE: Semi-supervised Open-world Counting**
-4. (ECCV 2022) **FSC-147: A Few-shot Object Counting Dataset**
+## Related Papers
+
+- [\[CVPR 2026\] UNICBench: UNIfied Counting Benchmark for MLLM](unicbench_unified_counting_benchmark_for_mllm.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
+- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
+- [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](../../ICCV2025/multimodal_vlm/on_large_multimodal_models_as_open-world_image_classifiers.md)
+- [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)

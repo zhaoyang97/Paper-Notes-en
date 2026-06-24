@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EA-ViT: Efficient Adaptation for Elastic Vision Transformer
 description: >-
-  [ICCV 2025][Model Compression][Vision Transformer] This paper proposes the first ViT framework that introduces elastic structure at the adaptation stage. Through a multi-dimensional elastic architecture…
+  [ICCV 2025][Model Compression][Vision Transformer] This paper proposes the first ViT framework that introduces elastic structure at the adaptation stage. Through a multi-dimensional elastic architecture, curriculum learning, and a lightweight router, a single adaptation run yields sub-models covering $10^{26}$ configurations, consistently outperforming existing elastic methods across multiple downstream tasks.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Curriculum Learning"
   - "Pareto Optimization"
 date: 2026-05-08
-content_hash: e07bd0455c691234
+content_hash: a6e9d822aa0349a9
 ---
 
 # EA-ViT: Efficient Adaptation for Elastic Vision Transformer
@@ -50,10 +50,10 @@ EA-ViT proceeds in two stages:
 1. **Multi-Dimensional Elastic Architecture**
 
    Elastic configurations are introduced along four dimensions:
-   - MLP expansion ratio $R^{(l)}$: controls the hidden dimension of the MLP in each layer.
-   - Number of attention heads $H^{(l)}$: controls the active attention heads per layer.
-   - Embedding dimension $E$: a unified embedding dimension shared across all layers.
-   - Network depth $D^{(l)}$: a binary indicator that skips specific layers via identity mapping.
+    - MLP expansion ratio $R^{(l)}$: controls the hidden dimension of the MLP in each layer.
+    - Number of attention heads $H^{(l)}$: controls the active attention heads per layer.
+    - Embedding dimension $E$: a unified embedding dimension shared across all layers.
+    - Network depth $D^{(l)}$: a binary indicator that skips specific layers via identity mapping.
 
    The overall configuration space is defined as:
    $\theta = (\{R^{(l)}\}_{l=1}^{L}, \{H^{(l)}\}_{l=1}^{L}, E, \{D_{\text{MLP}}^{(l)}, D_{\text{MHA}}^{(l)}\}_{l=1}^{L})$
@@ -63,9 +63,9 @@ EA-ViT proceeds in two stages:
 2. **Curriculum Elastic Adaptation (CEA)**
 
    Simultaneously training a large number of sub-models causes gradient conflicts and parameter interference. CEA employs a curriculum learning strategy that progressively expands the elastic range from simple to complex:
-   - In the initial phase, only the largest sub-model is trained ($R_{\min}=R_{\max}$, $H_{\min}=H_{\max}$, etc.).
-   - During training, the sampling lower bound is gradually decreased according to a preset schedule, introducing smaller sub-models.
-   - Each dimension's parameters are sampled from a uniform distribution: $R \sim \mathcal{U}(R_{\min}^{(t)}, R_{\max})$.
+    - In the initial phase, only the largest sub-model is trained ($R_{\min}=R_{\max}$, $H_{\min}=H_{\max}$, etc.).
+    - During training, the sampling lower bound is gradually decreased according to a preset schedule, introducing smaller sub-models.
+    - Each dimension's parameters are sampled from a uniform distribution: $R \sim \mathcal{U}(R_{\min}^{(t)}, R_{\max})$.
 
    This preserves pre-trained knowledge and prevents interference with the performance of larger sub-models.
 
@@ -160,9 +160,9 @@ Incrementally adding elastic dimensions consistently improves MACs coverage, pea
 
 - [\[ICCV 2025\] Efficient Adaptation of Pre-Trained Vision Transformer Underpinned by Approximation Theory](efficient_adaptation_of_pre-trained_vision_transformer_underpinned_by_approximat.md)
 - [\[ICCV 2025\] ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models](vit-linearizer_distilling_quadratic_knowledge_into_linear-time_vision_models.md)
+- [\[CVPR 2026\] ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference](../../CVPR2026/model_compression/thinkingvit_matryoshka_thinking_vision_transformer_for_elastic_inference.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
-- [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
-- [\[ICCV 2025\] Context Guided Transformer Entropy Modeling for Video Compression](context_guided_transformer_entropy_modeling_for_video_compression.md)
+- [\[CVPR 2025\] BHViT: Binarized Hybrid Vision Transformer](../../CVPR2025/model_compression/bhvit_binarized_hybrid_vision_transformer.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning
 description: >-
-  [AAAI 2026][Medical Imaging][Pathology Foundation Models] This paper proposes G2L (Giga-to-Large), a distillation framework that transfers knowledge from a 1.9B-parameter giga-scale pathology foundation model (H-optimus-…
+  [AAAI 2026][Medical Imaging][Pathology Foundation Models] This paper proposes G2L (Giga-to-Large), a distillation framework that transfers knowledge from a 1.9B-parameter giga-scale pathology foundation model (H-optimus-0) to a 300M-parameter large-scale model (Hibou-L) using only 1K whole slide images, achieving performance on par with or superior to the teacher model and larger models across multiple cancer-specific downstream tasks.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Cancer Specificity"
   - "Vision Transformer"
 date: 2026-05-08
-content_hash: 715811333045d632
+content_hash: 9070af10594494fd
 ---
 
 # G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning
@@ -172,10 +172,10 @@ G2L achieves the highest robustness index across all values of $k$, surpassing b
 ## Related Papers
 
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
+- [\[CVPR 2025\] Accelerating Stroke MRI with Diffusion Probabilistic Models through Large-Scale Pre-training and Target-Specific Fine-Tuning](../../CVPR2025/medical_imaging/accelerating_stroke_mri_with_diffusion_probabilistic_models_through_large-scale_.md)
 - [\[AAAI 2026\] Personalization of Large Foundation Models for Health Interventions](personalization_of_large_foundation_models_for_health_interventions.md)
 - [\[AAAI 2026\] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)
-- [\[AAAI 2026\] Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models](coarse-to-fine_open-set_graph_node_classification_with_large_language_models.md)
-- [\[AAAI 2026\] Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty](fine-tuned_llms_know_they_dont_know_a_parameter-efficient_approach_to_recovering.md)
+- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](../../CVPR2026/medical_imaging/efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
 
 </div>
 

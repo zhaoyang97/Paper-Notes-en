@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes OverlapBPE, an overlapping molecular tokenization algorithm, along with h-MINT, a hierarchical molecular interaction network. By utilizing many-to-many mappings where "fragments can share atoms," it preserves chemical contexts such as aromaticity, chirality, and charge, outperforming existing state-
+  [ICLR 2026][Computational Biology][Protein-ligand binding] This paper proposes OverlapBPE, an overlapping molecular tokenization algorithm, along with h-MINT, a hierarchical molecular interaction network. By utilizing many-to-many mappings where "fragments can share atoms," it preserves chemical contexts such as aromaticity, chirality, and charge, outperforming existing state-of-the-art methods in affinity prediction, virtual screening, and high-throughput screening.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein-ligand binding"
+  - "molecular tokenization"
+  - "fragmented representation"
+  - "hierarchical graph network"
+  - "SE(3) equivariant"
+  - "virtual screening"
 date: 2026-05-08
-content_hash: 850cd502361eab57
+content_hash: 20b12a7e81c8e9ed
 ---
+
 # h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network
 
 **Conference**: ICLR 2026  
@@ -134,10 +141,10 @@ Comparison of three tokenization variants for GET (Murcko/BRICS/PS) also shows t
 ## Related Papers
 
 - [\[ICLR 2026\] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins](pallatom-ligand_an_all-atom_diffusion_model_for_designing_ligand-binding_protein.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 - [\[ICLR 2026\] Quantifying Cross-Attention Interaction in Transformers for Interpreting TCR-pMHC Binding](quantifying_cross-attention_interaction_in_transformers_for_interpreting_tcr-pmh.md)
-- [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
 - [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
-- [\[ICLR 2026\] Intrinsic Lorentz Neural Network](intrinsic_lorentz_neural_network.md)
+- [\[ICLR 2026\] I2Mole: Interaction-aware Invariant Molecular Learning for Generalizable Drug-Drug Interaction Prediction](i2mole_interaction-aware_invariant_molecular_learning_for_generalizable_property.md)
 
 </div>
 

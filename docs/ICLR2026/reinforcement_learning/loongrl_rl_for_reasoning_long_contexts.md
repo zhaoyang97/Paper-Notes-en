@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts
 description: >-
-  [ICLR 2026][Reinforcement Learning][long-context reasoning] LoongRL is proposed, which utilizes synthesized KeyChain data for reinforcement learning to induce the emergence of "plan–retrieve–reason–recheck" patterns in LLMs for long-context reasoning. Models trained solely on 16K contexts generalize to 128K; the 14B model achieves a score of 74.2, nearing the performance of o3-
+  [ICLR 2026 Oral][Reinforcement Learning][long-context reasoning] LoongRL is proposed, which utilizes synthesized KeyChain data for reinforcement learning to induce the emergence of "plan–retrieve–reason–recheck" patterns in LLMs for long-context reasoning. Models trained solely on 16K contexts generalize to 128K; the 14B model achieves a score of 74.2, nearing the performance of o3-mini (74.5) and DeepSeek-R1 (74.9).
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - long-context reasoning
-  - reinforcement-learning
-  - GRPO
-  - multi-hop QA
-  - emergent reasoning patterns
+  - "ICLR 2026 Oral"
+  - "Reinforcement Learning"
+  - "long-context reasoning"
+  - "reinforcement-learning"
+  - "GRPO"
+  - "multi-hop QA"
+  - "emergent reasoning patterns"
 date: 2026-05-08
-content_hash: f7691de844805e27
+content_hash: cc0595a1c27eef6e
 ---
+
 # LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts
 
 **Conference**: ICLR 2026 Oral  
@@ -148,9 +149,9 @@ Group Relative Policy Optimization (GRPO) is utilized with group size $G=8$, lea
 
 - [\[ICLR 2026\] Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning](echo_towards_advanced_audio_comprehension_via_audio-interleaved_reasoning.md)
 - [\[ICLR 2026\] RLVMR: Reinforcement Learning with Verifiable Meta-Reasoning Rewards for Robust Long-Horizon Agents](rlvmr_reinforcement_learning_with_verifiable_meta-reasoning_rewards_for_robust_l.md)
+- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICLR 2026\] LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning](longwriter-zero_mastering_ultra-long_text_generation_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](../../NeurIPS2025/reinforcement_learning/incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hybrid Reinforcement: When Reward Is Sparse, Better to Be Dense
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] HERO uses rule verifiers as "gates" to hierarchically normalize continuous Reward Model (RM) scores (scaling the correct and incorrect groups separately) and applies variance-adaptive weighting to amplify difficult prompts. By fusing sparse binary verification rewards with dense RM rewards into a stable and fine-graine
+  [ICLR 2026][Reasoning][Verifiable Reward] HERO uses rule verifiers as "gates" to hierarchically normalize continuous Reward Model (RM) scores (scaling the correct and incorrect groups separately) and applies variance-adaptive weighting to amplify difficult prompts. By fusing sparse binary verification rewards with dense RM rewards into a stable and fine-grained hybrid reward, it out-performs both "verifier-only" and "RM-only" baselines in mathematical reasoning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Verifiable Reward"
+  - "Reward Model"
+  - "Hybrid Reward"
+  - "GRPO"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: de10def38b2cc16f
+content_hash: 02eb63662c77a346
 ---
+
 # Hybrid Reinforcement: When Reward Is Sparse, Better to Be Dense
 
 **Conference**: ICLR 2026  
@@ -135,11 +140,11 @@ Starting from a weaker baseline (16.9 verifiable / 23.6 hard), HERO maintains a 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] MAGO: Beyond Fixed Hyperparameters with Multi-Objective Pareto Optimization for Hybrid LLM Reasoning](mago_beyond_fixed_hyperparameters_with_multi-objective_pareto_optimization_for_h.md)
 - [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
 - [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](../../ICML2026/llm_reasoning/when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
-- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 
 </div>
 

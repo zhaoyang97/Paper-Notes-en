@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FAME: Formal Abstract Minimal Explanation for Neural Networks
 description: >-
-  [ICLR 2026][Interpretability][LiRPA/CROWN] FAME establishes "Abductive Explanations" on the foundation of abstract interpretation. By using LiRPA bounds to prove and prune a batch of irrelevant features simultaneously, it overcomes the bottleneck of traditional formal XAI’s dependence on "feature traversal order." This scales provable minimal explanations to la
+  [ICLR 2026][Interpretability][Abductive Explanation (AXp)] FAME establishes "Abductive Explanations" on the foundation of abstract interpretation. By using LiRPA bounds to prove and prune a batch of irrelevant features simultaneously, it overcomes the bottleneck of traditional formal XAI’s dependence on "feature traversal order." This scales provable minimal explanations to large networks like ResNet for the first time.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - LiRPA/CROWN
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Abductive Explanation (AXp)"
+  - "Formal XAI"
+  - "Abstract Interpretation"
+  - "LiRPA/CROWN"
+  - "Perturbation Domain"
+  - "Neural Network Verification"
 date: 2026-05-08
-content_hash: 8735f07df73f1048
+content_hash: 1a7822b47d4b492b
 ---
+
 # FAME: Formal Abstract Minimal Explanation for Neural Networks
 
 **Conference**: ICLR 2026  
@@ -128,7 +134,7 @@ Evaluations were conducted on MNIST and GTSRB using four FC/CNN models, comparin
 - [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[ICLR 2026\] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks](discovering_alternative_solutions_beyond_the_simplicity_bias_in_recurrent_neural.md)
 - [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 
 </div>
 

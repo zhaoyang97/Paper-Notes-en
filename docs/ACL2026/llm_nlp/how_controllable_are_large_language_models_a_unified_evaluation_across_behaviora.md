@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities
 description: >-
-  [ACL 2026][LLM (Other)][LLM steering] SteerEval decomposes LLM controllability into L1 (what to express), L2 (how to express), and L3 (specific words) following Marr’s three-level analytical framework. Covering 7,560 paired samples across three domains—Personality, Sentiment, and Language Features—it systematically reveals a critical gap: "existing steerin
+  [ACL 2026][LLM (Other)][LLM steering] SteerEval decomposes LLM controllability into L1 (what to express), L2 (how to express), and L3 (specific words) following Marr’s three-level analytical framework. Covering 7,560 paired samples across three domains—Personality, Sentiment, and Language Features—it systematically reveals a critical gap: "existing steering methods generally collapse at a fine-grained level."
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - LLM steering
-  - controllability
-  - hierarchical benchmark
-  - activation steering
-  - Marr's levels
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "LLM steering"
+  - "controllability"
+  - "hierarchical benchmark"
+  - "activation steering"
+  - "Marr's levels"
 date: 2026-05-08
-content_hash: a48b7cebe14b1205
+content_hash: 3ff81223290f4292
 ---
+
 # SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities
 
 **Conference**: ACL 2026  
@@ -138,10 +139,10 @@ Metrics: CS (Concept Score) / HM (Harmonic Mean with quality score). L1→L3 inc
 ## Related Papers
 
 - [\[CVPR 2025\] MG-MotionLLM: A Unified Framework for Motion Comprehension and Generation across Multiple Granularities](../../CVPR2025/llm_nlp/mg-motionllm_a_unified_framework_for_motion_comprehension_and_generation_across_.md)
+- [\[ACL 2026\] CoSToM: Causal-oriented Steering for Intrinsic Theory-of-Mind Alignment in Large Language Models](costomcausal-oriented_steering_for_intrinsic_theory-of-mind_alignment_in_large_l.md)
 - [\[ACL 2026\] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models](mind_the_gap_how_elicitation_protocols_shape_the_stated-revealed_preference_gap_.md)
 - [\[ACL 2025\] Behavioral Analysis of Information Salience in Large Language Models](../../ACL2025/llm_nlp/behavioral_analysis_of_information_salience_in_large_language_models.md)
 - [\[ACL 2026\] Repeated Sequences Reveal Gaps between Large Language Models and Natural Language](repeated_sequences_reveal_gaps_between_large_language_models_and_natural_languag.md)
-- [\[ACL 2026\] Adam's Law: Textual Frequency Law on Large Language Models](adam39s_law_textual_frequency_law_on_large_language_models.md)
 
 </div>
 

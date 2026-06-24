@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MetaVLA: Unified Meta Co-Training for Efficient Embodied Adaptation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language-Action] MetaVLA introduces a lightweight context memory module (Action-ANP) derived from Attentive Neural Processes during the VLA post-training phase. It transforms multi-task co-training from a state where "more tasks lead to collapse" to one where "auxiliary tasks improve performance." Using a single model on LIBERO, it red
+  [ICLR 2026][Robotics][Vision-Language-Action] MetaVLA introduces a lightweight context memory module (Action-ANP) derived from Attentive Neural Processes during the VLA post-training phase. It transforms multi-task co-training from a state where "more tasks lead to collapse" to one where "auxiliary tasks improve performance." Using a single model on LIBERO, it reduces OpenVLA training from 240K steps to 75K steps, cuts GPU time by 76%, and outperforms the baseline by 8% on lo…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language-Action
-  - Meta-Learning
-  - Multi-Task Co-Training
-  - Attentive Neural Processes
-  - Post-Training Efficiency
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action"
+  - "Meta-Learning"
+  - "Multi-Task Co-Training"
+  - "Attentive Neural Processes"
+  - "Post-Training Efficiency"
 date: 2026-05-08
-content_hash: 7ad8e89c582871b5
+content_hash: 122cfee00053135f
 ---
+
 # MetaVLA: Unified Meta Co-Training for Efficient Embodied Adaptation
 
 **Conference**: ICLR 2026  
@@ -115,15 +116,14 @@ With six auxiliary tasks, MetaVLA outperforms OpenVLA by **4.4%** and SFT-4LIBER
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](../../ICML2026/robotics/online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
 - [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](../../NeurIPS2025/robotics/generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
 - [\[ICLR 2026\] Hybrid Training for Vision-Language-Action Models](hybrid_training_for_vision-language-action_models.md)
-- [\[ICLR 2026\] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model](hybridvla_collaborative_diffusion_and_autoregression_in_a_unified_vision-languag.md)
-- [\[ICLR 2026\] EVLP: Learning Unified Embodied Vision-Language Planner with Reinforced Supervised Fine-Tuning](evlp_learning_unified_embodied_vision-language_planner_with_reinforced_supervise.md)
+- [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
+- [\[ICLR 2026\] House Of Dextra : Cross-Embodied Co-Design for Dexterous Hands](house_of_dextra_cross-embodied_co-design_for_dexterous_hands.md)
 
 </div>
 

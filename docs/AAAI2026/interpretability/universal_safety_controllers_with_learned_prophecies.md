@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Universal Safety Controllers with Learned Prophecies
 description: >-
-  [AAAI 2026][Interpretability][Universal Safety Controllers] This paper proposes UCLearn, which learns CTL (Computation Tree Logic) formulas as approximate representations of prophecies from a small number of representati…
+  [AAAI 2026][Interpretability][Universal Safety Controllers] This paper proposes UCLearn, which learns CTL (Computation Tree Logic) formulas as approximate representations of prophecies from a small number of representative plant models, replacing exact but computationally expensive tree automata to achieve efficient, scalable, and interpretable universal safety controller synthesis.
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Reactive Synthesis"
   - "Prophecy Approximation"
 date: 2026-05-08
-content_hash: a955151300143d33
+content_hash: 747c77093e443b6e
 ---
 
 # Universal Safety Controllers with Learned Prophecies
@@ -124,11 +124,11 @@ This paper does not involve deep learning. The core algorithmic pipeline is as f
 
 ## Related Papers
 
-- [\[ICML 2026\] Universal 1/3 Time Scaling in Learning Peaked Distributions](../../ICML2026/interpretability/universal_one-third_time_scaling_in_learning_peaked_distributions.md)
+- [\[ICML 2026\] Universal 1/3 Time Scaling in Learning Spiked Distributions](../../ICML2026/interpretability/universal_one-third_time_scaling_in_learning_peaked_distributions.md)
 - [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](../../ICLR2026/interpretability/gavel_towards_rule-based_safety_through_activation_monitoring.md)
 - [\[ICLR 2026\] Universal Properties of Activation Sparsity in Modern Large Language Models](../../ICLR2026/interpretability/universal_properties_of_activation_sparsity_in_modern_large_language_models.md)
-- [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](../../ICLR2026/interpretability/beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
-- [\[CVPR 2026\] SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World](../../CVPR2026/interpretability/safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world.md)
+- [\[ICLR 2026\] Task Vectors, Learned Not Extracted: Performance Gains and Mechanistic Insights](../../ICLR2026/interpretability/task_vectors_learned_not_extracted_performance_gains_and_mechanistic_insights.md)
+- [\[ACL 2025\] Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety](../../ACL2025/interpretability/safety_is_not_only_about_refusal_reasoning-enhanced_fine-tuning_for_interpretabl.md)
 
 </div>
 

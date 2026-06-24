@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects
 description: >-
-  [ICLR 2026][learning_theory][GNN] This paper establishes two minimax lower bounds for ReLU message-passing GNNs: on arbitrary graphs, the error is no faster than the classic $\sqrt{\log d / n}$. However, under "strong homophily + weak spectral expansion" (spectral-homophily), the transductive node prediction error is as slow as $d/\log n$—revealing tha
+  [ICLR 2026][learning theory][GNN] This paper establishes two minimax lower bounds for ReLU message-passing GNNs: on arbitrary graphs, the error is no faster than the classic $\sqrt{\log d / n}$. However, under "strong homophily + weak spectral expansion" (spectral-homophily), the transductive node prediction error is as slow as $d/\log n$—revealing that the sample complexity of real-world graph tasks is primarily dictated by graph topology rather than neural architecture.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - GNN
+  - "ICLR 2026"
+  - "learning theory"
+  - "GNN"
+  - "minimax lower bounds"
+  - "sample complexity"
+  - "spectral-homophily"
+  - "Fano’s inequality"
+  - "effective sample size"
 date: 2026-05-08
-content_hash: 2cbc8e9af56d4cdd
+content_hash: fcbedcbedaba5e9d
 ---
+
 # Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects
 
 **Conference**: ICLR 2026  
@@ -105,16 +111,16 @@ The three real-world graphs fall into the structural regime of Theorem 2.
 - **Value**: ⭐⭐⭐⭐ Significant for understanding why certain graph tasks require more data and how topology dictates statistical difficulty.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
 - [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
-- [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
 
 </div>
 

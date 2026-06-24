@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Graph Neural Networks] This paper proposes MAPI-GNN, which dynamically constructs multiple activation planes in semantic subspaces via a multi-dimensional feature discriminator…
+  [AAAI 2026][Medical Imaging][Graph Neural Networks] This paper proposes MAPI-GNN, which dynamically constructs multiple activation planes in semantic subspaces via a multi-dimensional feature discriminator, then aggregates intra- and inter-sample relationships through a hierarchical fusion network. The method achieves significant improvements over existing SOTA on two multimodal diagnostic tasks—prostate cancer and coronary heart disease (ACC 0.9432, AUC 0.9838 on PI-CAI).
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Feature Discriminator"
   - "Hierarchical Fusion"
 date: 2026-05-08
-content_hash: e5828ba308ec6f6d
+content_hash: aa77bb1965a0dbef
 ---
 
 # MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis
@@ -147,9 +147,9 @@ On CHD, removing MDFD yields the largest impact (ACC ↓ 6.9pp), indicating that
 
 - [\[AAAI 2026\] GIIM: Graph-based Learning of Inter- and Intra-view Dependencies for Multi-view Medical Image Diagnosis](giim_graph-based_learning_of_inter-_and_intra-view_dependencies_for_multi-view_m.md)
 - [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
-- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
 - [\[AAAI 2026\] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening](nutriscreener_retrieval-augmented_multi-pose_graph_attention_network_for_malnour.md)
-- [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
+- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
+- [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
 
 </div>
 

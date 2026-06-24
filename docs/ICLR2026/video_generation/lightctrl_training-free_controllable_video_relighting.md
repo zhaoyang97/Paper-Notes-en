@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LightCtrl: Training-free Controllable Video Relighting
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] LightCtrl extends the training-free paradigm of "per-frame image relighting + video diffusion prior for temporal consistency" into the first controllable video relighting method supporting **user-defined light trajectories**. By utilizing two modules, Light Map Injection and Geometry-Aware Relighting, it enables the ge
+  [ICLR 2026][Video Generation][Video Relighting] LightCtrl extends the training-free paradigm of "per-frame image relighting + video diffusion prior for temporal consistency" into the first controllable video relighting method supporting **user-defined light trajectories**. By utilizing two modules, Light Map Injection and Geometry-Aware Relighting, it enables the generated lighting to follow user-drawn paths while suppressing interference from the original illumination in the…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Relighting"
+  - "Light Trajectory Control"
+  - "Training-free"
+  - "Diffusion Prior"
+  - "Frequency Domain Fusion"
 date: 2026-05-08
-content_hash: e10cfd3b20cd9e17
+content_hash: 1029180211f61649
 ---
+
 # LightCtrl: Training-free Controllable Video Relighting
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,7 @@ Setup: Test set of 50 videos (primarily from Pixabay) with 6 predefined light tr
 - [\[ICLR 2026\] FreeViS: Training-free Video Stylization with Inconsistent References](freevis_training-free_video_stylization_with_inconsistent_references.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[ICLR 2026\] Real-Time Motion-Controllable Autoregressive Video Diffusion](real-time_motion-controllable_autoregressive_video_diffusion.md)
+- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](../../CVPR2026/video_generation/flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Any-Subgroup Equivariant Networks via Symmetry Breaking
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper proposes ASEN (Any-Subgroup Equivariant Network), which utilizes an equivariant backbone network for a large group combined with a "breaking input" whose automorphism group exactly matches the target subgroup. This allows a **single network** to become equivariant to any permutation subgroup by simply switch
+  [ICLR 2026][Equivariant Networks] This paper proposes ASEN (Any-Subgroup Equivariant Network), which utilizes an equivariant backbone network for a large group combined with a "breaking input" whose automorphism group exactly matches the target subgroup. This allows a **single network** to become equivariant to any permutation subgroup by simply switching the auxiliary input. Utilizing the 2-closure for an efficient approximation algorithm, the model outperforms discrete equi…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Equivariant Networks"
+  - "Symmetry Breaking"
+  - "Permutation Subgroups"
+  - "2-closure"
+  - "Graph Neural Networks"
 date: 2026-05-08
-content_hash: 0dd128a029ef9fb2
+content_hash: 5d7799a5ca75fbda
 ---
+
 # Any-Subgroup Equivariant Networks via Symmetry Breaking
 
 **Conference**: ICLR 2026  
@@ -150,8 +155,8 @@ The experiments address two questions: Q1) Can a single architecture explore dif
 
 ## Related Papers
 
-- [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](../../ICML2026/others/identifiable_equivariant_networks_are_layerwise_equivariant.md)
 - [\[AAAI 2026\] Faster Certified Symmetry Breaking Using Orders With Auxiliary Variables](../../AAAI2026/others/faster_certified_symmetry_breaking_using_orders_with_auxiliary_variables.md)
+- [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](../../ICML2026/others/identifiable_equivariant_networks_are_layerwise_equivariant.md)
 - [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 - [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](a_single_architecture_for_representing_invariance_under_any_space_group.md)
 - [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](../../NeurIPS2025/others/on_universality_classes_of_equivariant_networks.md)

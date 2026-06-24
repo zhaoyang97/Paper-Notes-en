@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Variance-Dependent Regret Lower Bounds for Contextual Bandits
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper establishes the first lower bound for "variance-dependent regret" in linear contextual bandits that matches the upper bound (up to logarithmic factors) at $\Omega\!\big(d\sqrt{\sum_k \sigma_k^2}\big)$. This result covers any pre-determined variance sequence as well as adaptive weak adversary sequences. Furth
+  [ICLR 2026][Learning Theory][Contextual bandits] This paper establishes the first lower bound for "variance-dependent regret" in linear contextual bandits that matches the upper bound (up to logarithmic factors) at $\Omega\!\big(d\sqrt{\sum_k \sigma_k^2}\big)$. This result covers any pre-determined variance sequence as well as adaptive weak adversary sequences. Furthermore, it demonstrates through a counter-example that such lower bounds cannot hold once an adversary can sele…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Contextual bandits"
+  - "Variance-dependent regret"
+  - "Lower bounds"
+  - "Peeling technique"
+  - "High-probability lower bounds"
 date: 2026-05-08
-content_hash: 3ccd5a7789606501
+content_hash: ac3b8009aeddc239
 ---
+
 # Variance-Dependent Regret Lower Bounds for Contextual Bandits
 
 **Conference**: ICLR 2026  
@@ -128,15 +135,16 @@ This is a pure theory paper with no numerical experiments. The following tables 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
-- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
-- [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
 - [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 - [\[ICLR 2026\] Nonparametric Contextual Online Bilateral Trade](nonparametric_contextual_online_bilateral_trade.md)
+- [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
 
 </div>
 

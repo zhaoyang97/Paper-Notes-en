@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][prompt learning] The NA-MVP framework is proposed, which achieves fine-grained patch-to-prompt alignment through a bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT). It utilizes classic OT to perform selective label refinement on identified noisy samples, consistently surpass
+  [CVPR 2026][Multimodal VLM][Noisy labels] The NA-MVP framework is proposed, which achieves fine-grained patch-to-prompt alignment through a bi-directional (clean + noise-aware) multi-view prompt design combined with Unbalanced Optimal Transport (UOT). It utilizes classic OT to perform selective label refinement on identified noisy samples, consistently surpassing SOTA in noisy few-shot learning scenarios.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - prompt learning
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Noisy labels"
+  - "prompt learning"
+  - "optimal transport"
+  - "CLIP"
+  - "few-shot learning"
 date: 2026-05-08
-content_hash: f3e1bf1e66a3271d
+content_hash: 4fb2fbac223380ed
 ---
+
 # Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment
 
 **Conference**: CVPR 2026  
@@ -202,11 +206,11 @@ DEFT drops sharply at 75% noise (75.87), while NA-MVP maintains 86.23 (+10.36), 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
 - [\[CVPR 2025\] NLPrompt: Noise-Label Prompt Learning for Vision-Language Models](../../CVPR2025/multimodal_vlm/nlprompt_noise-label_prompt_learning_for_vision-language_models.md)
-- [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
+- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
+- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
 - [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
-- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
 
 </div>
 

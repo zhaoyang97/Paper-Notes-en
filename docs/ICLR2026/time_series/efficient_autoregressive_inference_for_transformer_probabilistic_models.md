@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Efficient Autoregressive Inference for Transformer Probabilistic Models
 description: >-
-  [ICLR 2026][Time Series][Transformer Neural Processes] The paper proposes a Causal AR Buffer that decouples "one-time encoding of static context" from "autoregressive modeling of dependencies between targets." Without significant loss in prediction quality, it transforms the high-cost process of joint sampling and joint density evaluation—which typically requires repeated
+  [ICLR 2026][Time Series][Autoregressive Buffer] The paper proposes a Causal AR Buffer that decouples "one-time encoding of static context" from "autoregressive modeling of dependencies between targets." Without significant loss in prediction quality, it transforms the high-cost process of joint sampling and joint density evaluation—which typically requires repeated re-encoding—into an efficient, cacheable, and parallelizable workflow. This achieves up to approximately 20x inf…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Transformer Neural Processes
+  - "ICLR 2026"
+  - "Time Series"
+  - "Autoregressive Buffer"
+  - "Transformer Neural Processes"
+  - "Joint Predictive Density"
+  - "Efficient Inference"
+  - "Tabular Foundation Models"
 date: 2026-05-08
-content_hash: 9fbc1d919c78026e
+content_hash: 98efd47d7c725c1b
 ---
+
 # Efficient Autoregressive Inference for Transformer Probabilistic Models
 
 **Conference**: ICLR 2026  
@@ -192,8 +197,8 @@ Possible improvements:
 - [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
 - [\[NeurIPS 2025\] Transformer Embeddings for Fast Microlensing Inference](../../NeurIPS2025/time_series/transformer_embeddings_for_fast_microlensing_inference.md)
 - [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
-- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
 - [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
+- [\[ICML 2026\] U-Cast: A Surprisingly Simple and Efficient Frontier Probabilistic AI Weather Forecasting](../../ICML2026/time_series/u-cast_a_surprisingly_simple_and_efficient_frontier_probabilistic_ai_weather_for.md)
 
 </div>
 

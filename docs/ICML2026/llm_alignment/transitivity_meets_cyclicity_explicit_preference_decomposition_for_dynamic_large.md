@@ -1,16 +1,21 @@
 ---
 title: >-
-  [Paper Note] HRC + DSPPO: 用博弈论分解把传递偏好和循环偏好分开学
+  [Paper Note] HRC + DSPPO: Separating Transitive and Cyclic Preferences via Game-Theoretic Decomposition
 description: >-
-  [ICML 2026][Alignment & RLHF][Bradley-Terry] HRC explicitly decomposes human preferences into orthogonal "transitive scalar components" (BT model) + "cyclic vector components" (GPM). Using game-theoretic decomposition theorems, it proves this hybrid form preserves dominant candidates while modeling Rock-Paper-Scissors (RPS) style cycles. Complemented by the time-
+  [ICML 2026][LLM Alignment][Preference Modeling] HRC explicitly decomposes human preferences into orthogonal "transitive scalar components" (BT model) + "cyclic vector components" (GPM). Using game-theoretic decomposition theorems, it proves this hybrid form preserves dominant candidates while modeling Rock-Paper-Scissors (RPS) style cycles. Complemented by the time-varying game DSPPO, the alignment process transitions from "stabilizing the transitive backbone" to "learning cy…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - Bradley-Terry
-  - GPM
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Preference Modeling"
+  - "Bradley-Terry"
+  - "GPM"
+  - "Cyclic Preferences"
+  - "Time-varying Games"
+  - "Self-play"
 date: 2026-05-08
-content_hash: 922aafc8be7c4459
+content_hash: b78c77fb12507f05
 ---
+
 # HRC + DSPPO: Separating Transitive and Cyclic Preferences via Game-Theoretic Decomposition
 
 **Conference**: ICML 2026  
@@ -168,11 +173,11 @@ On Arena-Hard-v0.1, HRC+DSPPO reaches 46.8%, outperforming SPPO+BT/GPM baselines
 
 ## Related Papers
 
-- [\[ICML 2026\] F-TIS: Harnessing Diverse Models in Collaborative GRPO](f-tis_harnessing_diverse_models_in_collaborative_grpo.md)
-- [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
-- [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](efficient_preference_poisoning_attack_on_offline_rlhf.md)
-- [\[ICML 2026\] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards](decoupling_reasoning_and_confidence_resurrecting_calibration_in_reinforcement_le.md)
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
+- [\[ICML 2026\] Reward Shaping for (Inference-Time) Alignment: A Stackelberg Game Perspective](reward_shaping_for_inference-time_alignment_a_stackelberg_game_perspective.md)
+- [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
+- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](../../ICLR2026/llm_alignment/eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
+- [\[ICLR 2026\] OrthAlign: Orthogonal Subspace Decomposition for Non-Interfering Multi-Objective Alignment](../../ICLR2026/llm_alignment/orthalign_orthogonal_subspace_decomposition_for_non-interfering_multi-objective_.md)
+- [\[ICLR 2026\] Stackelberg Learning from Human Feedback: Preference Optimization as a Sequential Game](../../ICLR2026/llm_alignment/stackelberg_learning_from_human_feedback_preference_optimization_as_a_sequential.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Joint Spectral Image Reconstruction and Semantic Segmentation with Cooperative Unfolding
 description: >-
-  [CVPR 2026][Segmentation][CASSI] To address error accumulation in the "reconstruction-then-segmentation" two-stage pipeline for Coded Aperture Snapshot Spectral Imaging (CASSI) and the loss of complementary clues between tasks, this paper proposes the first Cooperative Reconstruction-Segmentation Deep Unfolding Network (CRSDUN). It integrates HSI reco
+  [CVPR 2026][Segmentation][CASSI] To address error accumulation in the "reconstruction-then-segmentation" two-stage pipeline for Coded Aperture Snapshot Spectral Imaging (CASSI) and the loss of complementary clues between tasks, this paper proposes the first Cooperative Reconstruction-Segmentation Deep Unfolding Network (CRSDUN). It integrates HSI reconstruction and segmentation into a unified Half-Quadratic Splitting (HQS) optimization framework for alternating solutions. A C…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CASSI
+  - "CVPR 2026"
+  - "Segmentation"
+  - "CASSI"
+  - "Hyperspectral Reconstruction"
+  - "Semantic Segmentation"
+  - "Deep Unfolding"
+  - "Super-token Attention"
 date: 2026-05-08
-content_hash: ededcebe980b7e7d
+content_hash: df9c1ae186a12628
 ---
+
 # Joint Spectral Image Reconstruction and Semantic Segmentation with Cooperative Unfolding
 
 **Conference**: CVPR 2026  
@@ -159,7 +164,7 @@ Ablation of the Cross-Aggregation (CA) mechanism (CRSDUN-3stg):
 - [\[CVPR 2026\] Hilbert Curve-Based Attention Enabling Topology-Preserving Image Tensor Representation for Semantic Segmentation Network](hilbert_curve-based_attention_enabling_topology-preserving_image_tensor_represen.md)
 - [\[CVPR 2025\] Robust 3D Shape Reconstruction in Zero-Shot from a Single Image in the Wild](../../CVPR2025/segmentation/robust_3d_shape_reconstruction_in_zero-shot_from_a_single_image_in_the_wild.md)
 - [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
 
 </div>
 

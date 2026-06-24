@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Aligning Text to Image in Diffusion Models is Easier Than You Think
 description: >-
-  [NeurIPS 2025][Image Generation][SoftREPA] This paper proposes SoftREPA — a lightweight contrastive fine-tuning strategy that introduces learnable soft text tokens (fewer than 1M parameters) to perform contrastive learni…
+  [NeurIPS 2025][Image Generation][SoftREPA] This paper proposes SoftREPA — a lightweight contrastive fine-tuning strategy that introduces learnable soft text tokens (fewer than 1M parameters) to perform contrastive learning on frozen pretrained T2I diffusion models, explicitly maximizing mutual information between text and image representations. SoftREPA significantly improves text-image alignment on SD1.5/SDXL/SD3 and generalizes to both image generation and image editing tas…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Text-Image Alignment"
   - "Mutual Information"
 date: 2026-05-08
-content_hash: af958034bbb68ac8
+content_hash: ad93712f592d5eeb
 ---
 
 # Aligning Text to Image in Diffusion Models is Easier Than You Think

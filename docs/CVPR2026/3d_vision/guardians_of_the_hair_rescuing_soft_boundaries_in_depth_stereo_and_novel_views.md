@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] HairGuard leverages image matting datasets to construct fine-grained depth supervision for soft boundaries (e.g., hair). It employs a "depth fixer + scene painter + color fuser" trio as a plug-and-play solution to correct depth, repair occlusions, and fuse textures, achieving SOTA performance on soft boundary details i
+  [CVPR 2026][3D Vision][Soft boundaries] HairGuard leverages image matting datasets to construct fine-grained depth supervision for soft boundaries (e.g., hair). It employs a "depth fixer + scene painter + color fuser" trio as a plug-and-play solution to correct depth, repair occlusions, and fuse textures, achieving SOTA performance on soft boundary details in monocular depth, stereo conversion, and novel view synthesis.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Soft boundaries"
+  - "Monocular depth estimation"
+  - "Stereo conversion"
+  - "Novel view synthesis"
+  - "Image matting"
 date: 2026-05-08
-content_hash: 91e490e2d99c87b9
+content_hash: 504b23efbd38ffce
 ---
+
 # Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views
 
 **Conference**: CVPR 2026  
@@ -157,15 +163,16 @@ Stepwise addition of components on Marvel-10K stereo conversion:
 - Value: ⭐⭐⭐⭐ Directly addresses the long-standing pain point of hair details in film and VR.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] PRIMU: Uncertainty Estimation for Novel Views in Gaussian Splatting from Primitive-Based Representations of Error and Coverage](primu_uncertainty_estimation_for_novel_views_in_gaussian_splatting_from_primitiv.md)
+- [\[CVPR 2026\] InfiniDepth: Arbitrary-Resolution and Fine-Grained Depth Estimation with Neural Implicit Fields](infinidepth_arbitrary-resolution_and_fine-grained_depth_estimation_with_neural_i.md)
 - [\[ECCV 2024\] Flying with Photons: Rendering Novel Views of Propagating Light](../../ECCV2024/3d_vision/flying_with_photons_rendering_novel_views_of_propagating_light.md)
 - [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
 - [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)
 
 </div>
 

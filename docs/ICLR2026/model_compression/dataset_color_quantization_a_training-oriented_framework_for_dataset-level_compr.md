@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The Dataset Color Quantization (DCQ) framework is proposed to reduce color redundancy at the dataset level through three mechanisms: chroma-aware clustering, attention-guided palette allocation, and texture-preserving optimization, achieving storage compression while maintaining training effectiveness.
+  [ICLR2026][Model Compression][Dataset Compression] The Dataset Color Quantization (DCQ) framework is proposed to reduce color redundancy at the dataset level through three mechanisms: chroma-aware clustering, attention-guided palette allocation, and texture-preserving optimization, achieving storage compression while maintaining training effectiveness.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR2026"
+  - "Model Compression"
+  - "Dataset Compression"
+  - "Color Quantization"
+  - "Palette Sharing"
+  - "Attention Guidance"
+  - "Texture Preservation"
 date: 2026-05-08
-content_hash: c995a420c67ee796
+content_hash: b36e2b964a30e874
 ---
+
 # Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression
 
 **Conference**: ICLR2026  
@@ -119,7 +125,7 @@ Naive color quantization produces color patches in smooth areas and introduces a
 - [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](../../AAAI2026/model_compression/post_training_quantization_for_efficient_dataset_condensation.md)
 - [\[AAAI 2026\] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling](../../AAAI2026/model_compression/rethinking_long-tailed_dataset_distillation_a_uni-level_framework_with_unbiased_.md)
 - [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
-- [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
 
 </div>
 

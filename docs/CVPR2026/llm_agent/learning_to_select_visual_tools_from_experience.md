@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning to Select Visual Tools from Experience
 description: >-
-  [CVPR 2026][LLM Agent][Reinforcement Learning] This paper proposes VisTA (VisualToolAgent), which trains an agent using reinforcement learning to autonomously select the most useful combinations from 23 heterogeneous visual tools based solely on "correctness" feedback. These tools are provided to a **frozen** VLM reasoner. VisTA significantly outperforms training-f
+  [CVPR 2026][LLM Agent][Tool Selection] This paper proposes VisTA (VisualToolAgent), which trains an agent using reinforcement learning to autonomously select the most useful combinations from 23 heterogeneous visual tools based solely on "correctness" feedback. These tools are provided to a **frozen** VLM reasoner. VisTA significantly outperforms training-free and fine-tuned baselines on ChartQA, Geometry3K, MathVerse, and BlindTest. Furthermore…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Tool Selection"
+  - "Reinforcement Learning"
+  - "Verifiable Reward"
+  - "Visual Reasoning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: caa09a70f9b2048e
+content_hash: d9917986d5c7919b
 ---
+
 # Learning to Select Visual Tools from Experience
 
 **Conference**: CVPR 2026  
@@ -131,15 +135,16 @@ Multi-round ablation (average rounds with confidence-based early stopping):
 - Value: ⭐⭐⭐⭐ The "weak training, strong deployment" transferable tool policy is highly attractive for practical multimodal system implementations.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](../../ICLR2026/llm_agent/scaling_agent_learning_via_experience_synthesis.md)
+- [\[ICLR 2026\] Dyna-Mind: Learning to Simulate from Experience for Better AI Agents](../../ICLR2026/llm_agent/dyna-mind_learning_to_simulate_from_experience_for_better_ai_agents.md)
 - [\[CVPR 2026\] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing](refact_empowering_multimodal_web_agents_with_visual_and_context_focusing.md)
-- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](../../ICML2026/llm_agent/skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
 - [\[CVPR 2026\] Experience Transfer for Multimodal LLM Agents in Minecraft Game](experience_transfer_for_multimodal_llm_agents_in_minecraft_game.md)
 - [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
-- [\[CVPR 2026\] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](orca_orchestrated_reasoning_with_collaborative_agents_for_document_visual_questi.md)
 
 </div>
 

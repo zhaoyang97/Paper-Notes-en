@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][neural operators] This paper proposes DeltaPhi, a framework that forgoes direct learning of the input-to-output mapping for PDEs and instead learns **residuals between simil…
+  [NeurIPS 2025][Physics & Scientific Computing][neural operators] This paper proposes DeltaPhi, a framework that forgoes direct learning of the input-to-output mapping for PDEs and instead learns **residuals between similar physical states**. By exploiting the stability of physical systems as implicit data augmentation, DeltaPhi significantly improves the performance of diverse neural operators under data-scarce regimes.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "PDE solving"
   - "implicit data augmentation"
 date: 2026-05-08
-content_hash: 578d992fb5979ae2
+content_hash: d9e3f3a781472b94
 ---
 
 # DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving
@@ -143,11 +143,11 @@ Key conclusions: (1) similarity-based retrieval is critical—random pairing deg
 
 ## Related Papers
 
+- [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](../../ICLR2026/physics/locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
+- [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](../../ICLR2026/physics/learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
 - [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](hamiltonian_neural_pde_solvers_through_functional_approximation.md)
-- [\[NeurIPS 2025\] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data](neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin.md)
-- [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](towards_universal_neural_operators_through_multiphysics_pretraining.md)
 - [\[NeurIPS 2025\] Neural Green's Functions](neural_greens_functions.md)
-- [\[AAAI 2026\] SVD-NO: Learning PDE Solution Operators with SVD Integral Kernels](../../AAAI2026/physics/svd-no_learning_pde_solution_operators_with_svd_integral_kernels.md)
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](../../ICLR2026/physics/operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
 
 </div>
 

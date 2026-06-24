@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] A "teacher router" constructed from a frozen dense teacher model generates a stable expert assignment distribution. KL distillation is used to supervise the sparse MoE student's router, mitigating the "gradient only for selected experts" issue that causes routing fluctuation in early training. This achieves stable perf
+  [CVPR 2026][Model Compression][Sparse MoE] A "teacher router" constructed from a frozen dense teacher model generates a stable expert assignment distribution. KL distillation is used to supervise the sparse MoE student's router, mitigating the "gradient only for selected experts" issue that causes routing fluctuation in early training. This achieves stable performance gains on ImageNet-1K / CIFAR-100 with zero additional inference overhead.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Sparse MoE"
+  - "Routing Stability"
+  - "Knowledge Distillation"
+  - "Vision Transformer"
+  - "Teacher Guidance"
 date: 2026-05-08
-content_hash: b613f8f3e4de8556
+content_hash: 0deefd166da4868b
 ---
+
 # Teacher-Guided Routing for Sparse Vision Mixture-of-Experts
 
 **Conference**: CVPR 2026  
@@ -158,10 +163,10 @@ Distillation timing and upper bound analysis (Tiny, 8 experts, ImageNet-1K):
 ## Related Papers
 
 - [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
-- [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
 - [\[ICML 2026\] Parameters as Experts: Adapting Vision Models with Dynamic Parameter Routing](../../ICML2026/model_compression/parameters_as_experts_adapting_vision_models_with_dynamic_parameter_routing.md)
+- [\[CVPR 2026\] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling](enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling.md)
+- [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](distilling_balanced_knowledge_from_a_biased_teacher.md)
 
 </div>
 

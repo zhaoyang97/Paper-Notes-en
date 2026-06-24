@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning
 description: >-
-  [NeurIPS 2025][LLM Safety][contextual integrity] This paper proposes CI-RL, a framework that combines Chain-of-Thought reasoning prompts with GRPO reinforcement learning to train LLMs to understand contextual integrity (…
+  [NeurIPS 2025][LLM Safety][contextual integrity] This paper proposes CI-RL, a framework that combines Chain-of-Thought reasoning prompts with GRPO reinforcement learning to train LLMs to understand contextual integrity (CI) using only ~700 synthetic samples. On the PrivacyLens benchmark, it reduces privacy leakage rates by up to 40%, and smaller models trained with CI-RL can surpass larger baseline models.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "chain-of-thought"
   - "information disclosure"
 date: 2026-05-08
-content_hash: dd35fb4ffbd9569a
+content_hash: cdfb74acd2a6277d
 ---
 
 # Contextual Integrity in LLMs via Reasoning and Reinforcement Learning
@@ -67,14 +67,14 @@ The method consists of three components: (1) **CI-CoT**: a structured prompt tem
     - **Function**: Further optimizes the model's CI reasoning capabilities via RL.
     - **Mechanism**: The GRPO algorithm (no critic network required) is used with the objective:
 
-   $$J(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^G \left(\min\left(\frac{\pi_\theta(a_i|q)}{\pi_{\text{old}}(a_i|q)}A_i, \text{clip}(\cdot)A_i\right) - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right)\right]$$
+    $J(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^G \left(\min\left(\frac{\pi_\theta(a_i|q)}{\pi_{\text{old}}(a_i|q)}A_i, \text{clip}(\cdot)A_i\right) - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{ref}})\right)\right]$
 
    The reward function $R$ consists of two components—a format reward (presence of correct think/answer tags) and a CI score:
 
-   $$R = \frac{|A_{\text{present}}|}{|A|} - \frac{|D_{\text{present}}|}{|D|}$$
+    $R = \frac{|A_{\text{present}}|}{|A|} - \frac{|D_{\text{present}}|}{|D|}$
 
    where $A$ is the set of required keywords and $D$ is the set of restricted keywords. Higher scores are awarded for including more required information; larger penalties are incurred for leaking more restricted information.
-   - **Design Motivation**: Rule-based rewards are more stable and controllable than reward models; GRPO eliminates the critic network to reduce computational overhead; advantage estimation uses within-group normalization $A_i = (r_i - \text{mean}(r)) / \text{std}(r)$.
+    - **Design Motivation**: Rule-based rewards are more stable and controllable than reward models; GRPO eliminates the critic network to reduce computational overhead; advantage estimation uses within-group normalization $A_i = (r_i - \text{mean}(r)) / \text{std}(r)$.
 
 ### Loss & Training
 
@@ -153,11 +153,11 @@ Training uses the VERL framework with 590 training / 66 validation / 73 test sam
 
 ## Related Papers
 
+- [\[ICLR 2026\] CIMemories: A Compositional Benchmark For Contextual Integrity In LLMs](../../ICLR2026/llm_safety/cimemories_a_compositional_benchmark_for_contextual_integrity_in_llms.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Backtracking Feedback](reinforcement_learning_with_backtracking_feedback.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
-- [\[NeurIPS 2025\] Probabilistic Reasoning with LLMs for K-Anonymity Estimation](probabilistic_reasoning_with_llms_for_k-anonymity_estimation.md)
 - [\[NeurIPS 2025\] Reverse Engineering Human Preferences with Reinforcement Learning](reverse_engineering_human_preferences_with_reinforcement_learning.md)
-- [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](../../ICLR2026/llm_safety/do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
+- [\[NeurIPS 2025\] Probabilistic Reasoning with LLMs for K-Anonymity Estimation](probabilistic_reasoning_with_llms_for_k-anonymity_estimation.md)
+- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
 
 </div>
 

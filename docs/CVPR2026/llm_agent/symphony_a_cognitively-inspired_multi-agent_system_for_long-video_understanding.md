@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] Symphony mimics human cognition by decomposing long-video understanding into multiple specialized agents based on "capability dimensions" (Planning, Reflection, Grounding, Caption, and Visual Perception). It employs an Actor-Critic-style reflection-enhanced dynamic collaboration mechanism to iteratively correct reasoni
+  [CVPR 2026][LLM Agent][Long-video understanding] Symphony mimics human cognition by decomposing long-video understanding into multiple specialized agents based on "capability dimensions" (Planning, Reflection, Grounding, Caption, and Visual Perception). It employs an Actor-Critic-style reflection-enhanced dynamic collaboration mechanism to iteratively correct reasoning and introduces a grounding agent that "expands queries first, then scores with VLM" for complex problems. It…
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Long-video understanding"
+  - "Multi-agent system"
+  - "Cognitive capability decoupling"
+  - "Reflection-enhanced collaboration"
+  - "Video grounding"
 date: 2026-05-08
-content_hash: f09f8a8ece71b51d
+content_hash: df8e34ab3bdfd0a0
 ---
+
 # Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding
 
 **Conference**: CVPR 2026  
@@ -139,9 +145,9 @@ Grounding strategy ablation (LVBench, Tab. 5; time in seconds):
 ## Related Papers
 
 - [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
+- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
 - [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
-- [\[ICLR 2026\] LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions](../../ICLR2026/multi_agent/lh-deception_simulating_and_understanding_llm_deceptive_behaviors_in_long-horizo.md)
-- [\[CVPR 2026\] MOTOR-Bench: A Real-world Dataset and Multi-agent Framework for Zero-shot Human Mental State Understanding](motor-bench_a_real-world_dataset_and_multi-agent_framework_for_zero-shot_human_m.md)
+- [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
 - [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
 
 </div>

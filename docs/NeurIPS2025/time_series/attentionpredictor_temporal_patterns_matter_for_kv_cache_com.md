@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AttentionPredictor: Temporal Patterns Matter for KV Cache Compression
 description: >-
-  [NeurIPS 2025][Time Series][KV cache compression] AttentionPredictor is the first learning-based method that directly predicts attention patterns for KV cache compression and critical token identification. By leveraging…
+  [NeurIPS 2025][Time Series][KV cache compression] AttentionPredictor is the first learning-based method that directly predicts attention patterns for KV cache compression and critical token identification. By leveraging a lightweight CNN to capture spatiotemporal patterns in attention scores, it achieves 13× KV cache compression and 5.6× inference speedup, with a unified prediction model of only 21 KB shared across all Transformer layers.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "LLM inference acceleration"
   - "cache prefetching"
 date: 2026-05-08
-content_hash: 0705173784ef2ff5
+content_hash: 44781785fe56db2f
 ---
 
 # AttentionPredictor: Temporal Patterns Matter for KV Cache Compression
@@ -130,10 +130,10 @@ The core pipeline of AttentionPredictor: (1) during the prefill phase, prepare t
 ## Related Papers
 
 - [\[NeurIPS 2025\] How Patterns Dictate Learnability in Sequential Data](how_patterns_dictate_learnability_in_sequential_data.md)
+- [\[CVPR 2025\] FLAVC: Learned Video Compression with Feature Level Attention](../../CVPR2025/time_series/flavc_learned_video_compression_with_feature_level_attention.md)
 - [\[NeurIPS 2025\] Simple and Efficient Heterogeneous Temporal Graph Neural Network](simple_and_efficient_heterogeneous_temporal_graph_neural_network.md)
 - [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
-- [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
 
 </div>
 

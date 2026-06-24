@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Addressing the flaw in multi-step time-series forecasting where MSE treats each future step as an independent, equal-weighted task, this paper derives a "quadratic learning objective" weighted by the inverse conditional covariance matrix from a maximum likelihood perspective. Using a bilevel optimization framework (QDF
+  [ICLR2026][Time Series][Time-series forecasting] Addressing the flaw in multi-step time-series forecasting where MSE treats each future step as an independent, equal-weighted task, this paper derives a "quadratic learning objective" weighted by the inverse conditional covariance matrix from a maximum likelihood perspective. Using a bilevel optimization framework (QDF), this weighting matrix is treated as a learnable parameter and learned on a hold-out set to maximize generali…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Time-series forecasting"
+  - "Learning objectives"
+  - "Label autocorrelation"
+  - "Heterogeneous task weights"
+  - "Bilevel optimization"
 date: 2026-05-08
-content_hash: 22199db6ac4a8360
+content_hash: 989b8ea84e4f7e8f
 ---
+
 # Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models
 
 **Conference**: ICLR2026  
@@ -155,11 +161,11 @@ Decomposing the two components of QDF (Hetero. = Heterogeneous weights / diagona
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Forecast After the Forecast: A Post-Processing Shift in Time Series](the_forecast_after_the_forecast_a_post-processing_shift_in_time_series.md)
 - [\[ICLR 2026\] Panda: A Pretrained Forecast Model for Chaotic Dynamics](panda_a_pretrained_forecast_model_for_chaotic_dynamics.md)
 - [\[ICLR 2026\] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment](distdf_time-series_forecasting_needs_joint-distribution_wasserstein_alignment.md)
-- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
 - [\[ICML 2026\] Simulation-Augmented Multi-Step Split Conformal Prediction for Aggregated Forecasts](../../ICML2026/time_series/simulation-augmented_multi-step_split_conformal_prediction_for_aggregated_foreca.md)
-- [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
+- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
 
 </div>
 

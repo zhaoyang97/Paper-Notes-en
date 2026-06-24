@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Bridging Creative Intent and Visual Quality: Creator-Driven Recurrent Video Generation with Agentic Feedback Loops
 description: >-
-  [ICML 2026][Video Generation][Paper Note] CHIEF places the creator at the center of the video generation iterative loop. It utilizes "anthropomorphic multi-modal LLM audience agents" to automatically generate subjective film reviews for generated videos, which are then structured into actionable prompt modifications by a translator. This allows even middle sch
+  [ICML 2026 (Workshop on Human-AI Co-Creativity)][Video Generation][Human-AI Collaboration] CHIEF places the creator at the center of the video generation iterative loop. It utilizes "anthropomorphic multi-modal LLM audience agents" to automatically generate subjective film reviews for generated videos, which are then structured into actionable prompt modifications by a translator. This allows even middle school students without filming experience to scale from 1-minute clips…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML 2026 (Workshop on Human-AI Co-Creativity)"
+  - "Video Generation"
+  - "Human-AI Collaboration"
+  - "Multi-Agent Feedback"
+  - "Anthropomorphic Simulation"
+  - "Iterative Refinement"
 date: 2026-05-08
-content_hash: ff128a41d9d03f51
+content_hash: 1566017845312c50
 ---
+
 # Bridging Creative Intent and Visual Quality: Creator-Driven Recurrent Video Generation with Agentic Feedback Loops
 
 **Conference**: ICML 2026 (Workshop on Human-AI Co-Creativity)  
@@ -124,7 +129,7 @@ The authors **deliberately avoid** standard benchmarks like VBench or VideoRewar
 - [\[ICML 2026\] MotiMotion: Motion-Controlled Video Generation with Visual Reasoning](motimotion_motion-controlled_video_generation_with_visual_reasoning.md)
 - [\[CVPR 2026\] ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](../../CVPR2026/video_generation/rehyat_recurrent_hybrid_attention_for_video_diffusion_transformers.md)
 - [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](../../ICLR2026/video_generation/anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
-- [\[CVPR 2026\] SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](../../CVPR2026/video_generation/synmotion_semantic-visual_adaptation_for_motion_customized_video_generation.md)
+- [\[ICLR 2026\] FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation](../../ICLR2026/video_generation/filmaster_bridging_cinematic_principles_and_generative_ai_for_automated_film_gen.md)
 
 </div>
 

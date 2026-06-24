@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Escaping Mode Collapse in LLM Generation via Geometric Regulation
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper reinterprets "mode collapse" (repetition, cycles, monotony) in long-form LLM generation from a dynamical systems perspective as "geometric collapse" of hidden state trajectories in representation space. It proposes RMR—a lightweight low-rank damping on the Transformer value cache—to suppress the most persist
+  [ICML 2026][Image Generation][Mode Collapse] This paper reinterprets "mode collapse" (repetition, cycles, monotony) in long-form LLM generation from a dynamical systems perspective as "geometric collapse" of hidden state trajectories in representation space. It proposes RMR—a lightweight low-rank damping on the Transformer value cache—to suppress the most persistent self-reinforcing directions, maintaining stable, high-quality generation even in extremely low-entropy decoding…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Mode Collapse"
+  - "Geometric Collapse"
+  - "Correlation Dimension"
+  - "KV Cache Intervention"
+  - "Low-rank Damping"
 date: 2026-05-08
-content_hash: 329a0547bd0a3c10
+content_hash: 554b02f303a7e7bd
 ---
+
 # Escaping Mode Collapse in LLM Generation via Geometric Regulation
 
 **Conference**: ICML 2026  
@@ -113,14 +119,13 @@ The authors tested multiple open-source LLMs (including Qwen3-4B-Base) under "te
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DiverseGRPO: Mitigating Mode Collapse in Image Generation via Diversity-Aware GRPO](../../CVPR2026/image_generation/diversegrpo_mitigating_mode_collapse_in_image_generation_via_diversity-aware_grp.md)
 - [\[CVPR 2026\] Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning](../../CVPR2026/image_generation/taming_preference_mode_collapse_via_directional_decoupling_alignment_in_diffusio.md)
-- [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](information-geometric_adaptive_sampling_for_graph_diffusion.md)
 - [\[ICML 2026\] Quantifying Error Propagation and Model Collapse in Diffusion Models](quantifying_error_propagation_and_model_collapse_in_diffusion_models.md)
+- [\[ICML 2026\] Information-Geometric Adaptive Sampling for Graph Diffusion](information-geometric_adaptive_sampling_for_graph_diffusion.md)
 - [\[ICML 2026\] Restoring Initial Noise Sensitivity in Text-to-Image Distillation via Geometric Alignment](restoring_initial_noise_sensitivity_in_text-to-image_distillation_via_geometric_.md)
 
 </div>

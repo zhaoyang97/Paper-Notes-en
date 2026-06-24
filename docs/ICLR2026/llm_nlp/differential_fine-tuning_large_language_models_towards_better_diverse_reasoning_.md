@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] This paper discovers that different reasoning abilities (math/code/logic/commonsense) correspond to their own "exclusive" key parameters within LLMs. It proposes DiFT (Differential SFT): first locating key parameter rows for each task using DSR scores, then updating only the union of these key parameters during mix-up
+  [ICLR2026][LLM (Other)][Differential Fine-Tuning] This paper discovers that different reasoning abilities (math/code/logic/commonsense) correspond to their own "exclusive" key parameters within LLMs. It proposes DiFT (Differential SFT): first locating key parameter rows for each task using DSR scores, then updating only the union of these key parameters during mix-up fine-tuning, and only the current task's unique key parameters during continual fine-tuning. This approach pre…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "Differential Fine-Tuning"
+  - "Parameter Sensitivity"
+  - "Multi-task Conflict"
+  - "Continual Learning"
+  - "Reasoning Abilities"
 date: 2026-05-08
-content_hash: fcd84cb0a9c4ec44
+content_hash: 115e853f685779ca
 ---
+
 # Differential Fine-Tuning Large Language Models Towards Better Diverse Reasoning Abilities
 
 **Conference**: ICLR2026  
@@ -134,15 +140,16 @@ DiFT consistently outperforms baselines (DMT, CoBa, HFT) across models and task 
 - Value: ⭐⭐⭐⭐ Provides a practical parameter-level solution for multi-task reasoning SFT.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] HFT: Half Fine-Tuning for Large Language Models](../../ACL2025/llm_nlp/hft_half_fine-tuning_for_large_language_models.md)
+- [\[ICLR 2026\] IA2: Alignment with ICL Activations improves Supervised Fine-Tuning](ia2_alignment_with_icl_activations_improves_supervised_fine-tuning.md)
 - [\[ICML 2025\] Safe Delta: Consistently Preserving Safety when Fine-Tuning LLMs on Diverse Datasets](../../ICML2025/llm_nlp/safe_delta_consistently_preserving_safety_when_fine-tuning_llms_on_diverse_datas.md)
 - [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](../../NeurIPS2025/llm_nlp/triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
 - [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](../../NeurIPS2025/llm_nlp/sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
-- [\[ACL 2025\] Assessing and Enhancing the Causal Reasoning Abilities of Language Models via Faithful Textual Interpretation](../../ACL2025/llm_nlp/assessing_and_enhancing_the_causal_reasoning_abilities_of_language_models_via_fai.md)
 
 </div>
 

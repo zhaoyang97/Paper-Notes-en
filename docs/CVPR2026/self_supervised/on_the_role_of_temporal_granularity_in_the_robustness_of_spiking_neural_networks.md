@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper revisits the robustness of Spiking Neural Networks (SNNs) from the perspective of "temporal granularity" (individual time steps) rather than "temporal averaging." It proposes TG-Attack, which constructs perturbations step-by-step (stronger attack), and defines the Temporal Sensitivity Value (TSV) using the H
+  [CVPR 2026][Self-Supervised Learning][Spiking Neural Networks] This paper revisits the robustness of Spiking Neural Networks (SNNs) from the perspective of "temporal granularity" (individual time steps) rather than "temporal averaging." It proposes TG-Attack, which constructs perturbations step-by-step (stronger attack), and defines the Temporal Sensitivity Value (TSV) using the Hessian of the per-step input-output gradient to estimate robustness without generating adversaria…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Spiking Neural Networks"
+  - "Temporal Granularity"
+  - "Adversarial Attack"
+  - "Robustness Analysis"
+  - "Hessian Regularization"
 date: 2026-05-08
-content_hash: 10b69e00b9f6d947
+content_hash: 3be4b62b6a915961
 ---
+
 # On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ Under the strongest AutoAttack, TG-Reg improves robust accuracy from RAT's 7.04%
 ## Related Papers
 
 - [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
+- [\[ICLR 2026\] PredNext: Explicit Cross-View Temporal Prediction for Unsupervised Learning in Spiking Neural Networks](../../ICLR2026/self_supervised/prednext_explicit_cross-view_temporal_prediction_for_unsupervised_learning_in_sp.md)
 - [\[CVPR 2026\] Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)
-- [\[CVPR 2026\] Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features](temporal_representation_enhancement_tre_learning_to_forget_dominant_patterns_for.md)
-- [\[ICML 2026\] Bullet Trains: Parallelizing Training of Temporally Precise Spiking Neural Networks](../../ICML2026/others/bullet_trains_parallelizing_training_of_temporally_precise_spiking_neural_networ.md)
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](../../AAAI2026/others/tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
+- [\[AAAI 2026\] Spikingformer: A Key Foundation Model for Spiking Neural Networks](../../AAAI2026/self_supervised/spikingformer_a_key_foundation_model_for_spiking_neural_networks.md)
 
 </div>
 

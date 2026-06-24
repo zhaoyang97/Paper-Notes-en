@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] ARTDECO：用分层高斯结构 + 前馈先验做高保真在线 3D 重建
+  [Paper Note] ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors
 description: >-
-  [ICLR 2026][3D Vision][On-the-fly Reconstruction] ARTDECO utilizes feed-forward 3D foundation models (MASt3R / π³) as modular pose and point cloud priors, coupled with a Gaussian decoder that decodes structured Gaussians from multi-scale features, and a hierarchical semi-implicit Gaussian representation with LoD. This system achieves SLAM-level speed, feed-forward rob
+  [ICLR 2026][3D Vision][On-the-fly Reconstruction] ARTDECO utilizes feed-forward 3D foundation models (MASt3R / π³) as modular pose and point cloud priors, coupled with a Gaussian decoder that decodes structured Gaussians from multi-scale features, and a hierarchical semi-implicit Gaussian representation with LoD. This system achieves SLAM-level speed, feed-forward robustness, and rendering quality approaching per-scene optimization from monocular video streams.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - On-the-fly Reconstruction
-  - Monocular SLAM
-  - 3D Gaussian Splatting
-  - Feed-forward Foundation Model
-  - Level-of-Detail
+  - "ICLR 2026"
+  - "3D Vision"
+  - "On-the-fly Reconstruction"
+  - "Monocular SLAM"
+  - "3D Gaussian Splatting"
+  - "Feed-forward Foundation Model"
+  - "Level-of-Detail"
 date: 2026-05-08
-content_hash: 547e5b426e53f24e
+content_hash: df68ce4be7fa9705
 ---
+
 # ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors
 
 **Conference**: ICLR 2026  
@@ -134,11 +135,11 @@ On TUM fr1, ARTDECO (0.028) also outperforms pure SLAM systems like DROID-SLAM (
 
 ## Related Papers
 
+- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
 - [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
-- [\[ICLR 2026\] Uncertainty-Aware 3D Reconstruction for Dynamic Underwater Scenes](uncertainty-aware_3d_reconstruction_for_dynamic_underwater_scenes.md)
-- [\[ICLR 2026\] NGS-Marker: Robust Native Watermarking for 3D Gaussian Splatting](ngs-marker_robust_native_watermarking_for_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] 3DGEER: 3D Gaussian Rendering Made Exact and Efficient for Generic Cameras](3dgeer_3d_gaussian_rendering_made_exact_and_efficient_for_generic_cameras.md)
-- [\[ICLR 2026\] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image](one2scene_geometric_consistent_explorable_3d_scene_generation_from_a_single_imag.md)
+- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](../../CVPR2026/3d_vision/anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[ICLR 2026\] Flash-Mono: Feed-Forward Accelerated Gaussian Splatting Monocular SLAM](flash-mono_feed-forward_accelerated_gaussian_splatting_monocular_slam.md)
+- [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
 
 </div>
 

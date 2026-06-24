@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning to Act Robustly with View-Invariant Latent Actions
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] VILA proposes that view-invariance should not be imposed on the "visual representation of the entire scene," but rather solely on "action-related dynamic changes." It learns a compact latent action encoding adjacent frame changes via IDM/FDM, then uses ground-truth action sequences for action-guided weighted contrastiv
+  [CVPR 2026][Robotics][View-Invariance] VILA proposes that view-invariance should not be imposed on the "visual representation of the entire scene," but rather solely on "action-related dynamic changes." It learns a compact latent action encoding adjacent frame changes via IDM/FDM, then uses ground-truth action sequences for action-guided weighted contrastive learning and structural alignment to align latent actions of the same movement across different views. Finally…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "View-Invariance"
+  - "Latent Actions"
+  - "Visuomotor Policy"
+  - "Contrastive Learning"
+  - "Robot Pre-training"
 date: 2026-05-08
-content_hash: 20d7a48ecdaa4b15
+content_hash: 5d5a555e99f635ea
 ---
+
 # Learning to Act Robustly with View-Invariant Latent Actions
 
 **Conference**: CVPR 2026  
@@ -134,8 +140,8 @@ Under the frozen encoder setting, VILA is the only method that maintains non-tri
 ## Related Papers
 
 - [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
-- [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](mm-act_learn_from_multimodal_parallel_generation_to_act.md)
 - [\[ICML 2026\] From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation](../../ICML2026/robotics/from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_.md)
+- [\[CVPR 2026\] MM-ACT: Learn from Multimodal Parallel Generation to Act](mm-act_learn_from_multimodal_parallel_generation_to_act.md)
 - [\[CVPR 2026\] Training One Model to Master Cross-Level Agentic Actions via Reinforcement Learning](training_one_model_to_master_cross-level_agentic_actions_via_reinforcement_learn.md)
 - [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
 

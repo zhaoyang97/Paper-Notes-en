@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SafeMIL: Learning Offline Safe Imitation Policy from Non-Preferred Trajectories
 description: >-
-  [AAAI 2026][Reinforcement Learning][Offline safe imitation learning] This paper proposes SafeMIL, which formulates cost function learning as a Multiple Instance Learning (MIL) problem to learn a safe imitation policy fro…
+  [AAAI 2026][Reinforcement Learning][Offline safe imitation learning] This paper proposes SafeMIL, which formulates cost function learning as a Multiple Instance Learning (MIL) problem to learn a safe imitation policy from a limited set of non-preferred trajectories and a large collection of unlabeled trajectories—without requiring step-level reward or cost annotations—achieving constraint satisfaction performance 3.7× better than the strongest baseline.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "behavioral cloning"
   - "cost function learning"
 date: 2026-05-08
-content_hash: 3b8b1e5f5e9187cb
+content_hash: 5be809046b88792b
 ---
 
 # SafeMIL: Learning Offline Safe Imitation Policy from Non-Preferred Trajectories
@@ -249,11 +249,11 @@ When $K$ is sufficiently large, safety performance is insensitive to trajectory 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/online_optimization_for_offline_safe_reinforcement_learning.md)
+- [\[ICLR 2026\] Safe Exploration via Policy Priors](../../ICLR2026/reinforcement_learning/safe_exploration_via_policy_priors.md)
 - [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
-- [\[ICLR 2026\] Deep SPI: Safe Policy Improvement via World Models](../../ICLR2026/reinforcement_learning/deep_spi_safe_policy_improvement_via_world_models.md)
-- [\[NeurIPS 2025\] Boundary-to-Region Supervision for Offline Safe Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/boundary_to_region_supervision_for_offline_safe_rl.md)
-- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](../../NeurIPS2025/reinforcement_learning/forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
+- [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/online_optimization_for_offline_safe_reinforcement_learning.md)
+- [\[ICLR 2026\] Off-Policy Safe Reinforcement Learning with Constrained Optimistic Exploration](../../ICLR2026/reinforcement_learning/off-policy_safe_reinforcement_learning_with_cost-constrained_optimistic_explorat.md)
+- [\[ICML 2026\] CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning](../../ICML2026/reinforcement_learning/cspo_constraint-sensitive_policy_optimization_for_safe_reinforcement_learning.md)
 
 </div>
 

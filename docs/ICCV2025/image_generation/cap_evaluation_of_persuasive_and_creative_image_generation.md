@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAP: Evaluation of Persuasive and Creative Image Generation
 description: >-
-  [ICCV 2025][Image Generation][advertising image generation] This paper proposes three novel evaluation metrics (creativity, alignment, and persuasiveness) for the task of advertising image generation…
+  [ICCV 2025][Image Generation][advertising image generation] This paper proposes three novel evaluation metrics (creativity, alignment, and persuasiveness) for the task of advertising image generation, and leverages LLMs to expand implicit messages into explicit visual descriptions to improve T2I model performance on advertisement generation, achieving significantly higher agreement with human annotations than baselines such as CLIPScore.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "text-image alignment"
   - "implicit message"
 date: 2026-05-08
-content_hash: a36e7e67bed5cece
+content_hash: 9d6a5168fcff8745
 ---
 
 # CAP: Evaluation of Persuasive and Creative Image Generation
@@ -135,11 +135,11 @@ The human–AI agreement of $P_{comp+AIM}$ on commercial advertisements (0.85) e
 
 ## Related Papers
 
+- [\[CVPR 2025\] Redefining <Creative> in Dictionary: Towards an Enhanced Semantic Understanding of Creative Generation](../../CVPR2025/image_generation/redefining_creative_in_dictionary_towards_an_enhanced_semantic_understanding_of_.md)
+- [\[CVPR 2026\] CREval: An Automated Interpretable Evaluation for Creative Image Manipulation under Complex Instructions](../../CVPR2026/image_generation/creval_an_automated_interpretable_evaluation_for_creative_image_manipulation_und.md)
 - [\[ICCV 2025\] ADIEE: Automatic Dataset Creation and Scorer for Instruction-Guided Image Editing Evaluation](adiee_automatic_dataset_creation_and_scorer_for_instruction_guided_image_editing_evaluation.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
-- [\[NeurIPS 2025\] OVERT: A Benchmark for Over-Refusal Evaluation on Text-to-Image Models](../../NeurIPS2025/image_generation/overt_a_benchmark_for_over-refusal_evaluation_on_text-to-image_models.md)
-- [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](../../ICML2026/image_generation/wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
-- [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
+- [\[CVPR 2025\] Enhancing Creative Generation on Stable Diffusion-based Models](../../CVPR2025/image_generation/enhancing_creative_generation_on_stable_diffusion-based_models.md)
 
 </div>
 

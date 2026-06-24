@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing the issue where generative models fail to strictly satisfy physical constraints in scientific sampling, this paper draws from the variational perspective of Langevin dynamics and Lagrangian duality to propose **CASAL (Constrained Alternated Split Augmented Langevin)**. By using variable splitting to decouple
+  [ICLR 2026][Image Generation][Constrained Langevin] Addressing the issue where generative models fail to strictly satisfy physical constraints in scientific sampling, this paper draws from the variational perspective of Langevin dynamics and Lagrangian duality to propose **CASAL (Constrained Alternated Split Augmented Langevin)**. By using variable splitting to decouple "exploration" and "constraint satisfaction" into two separate variables and employing a dual variable for c…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Constrained Langevin"
+  - "Variable Splitting"
+  - "Primal-Dual"
+  - "Diffusion Posterior Sampling"
+  - "Physical Conservation"
 date: 2026-05-08
-content_hash: fc3696c58bf0a447
+content_hash: 0c2de5c915cdf1a7
 ---
+
 # Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling
 
 **Conference**: ICLR 2026  

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Handwritten Mathematical Expression Recognition] This paper proposes Uni-MuMER, which performs unified multi-task fine-tuning of an open-source VLM via three data-driven tasks (Tree-CoT…
+  [NeurIPS 2025 Spotlight][Multimodal VLM][Handwritten Mathematical Expression Recognition] This paper proposes Uni-MuMER, which performs unified multi-task fine-tuning of an open-source VLM via three data-driven tasks (Tree-CoT, Error-Driven Learning, and Symbol Counting), achieving substantial improvements over both specialized lightweight models and zero-shot commercial VLMs on the CROHME and HME100K benchmarks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multimodal VLM"
   - "Handwritten Mathematical Expression Recognition"
   - "Vision-Language Model"
@@ -12,7 +12,7 @@ tags:
   - "Chain-of-Thought"
   - "Error-Driven Learning"
 date: 2026-05-08
-content_hash: 25abbe7b32ed57a0
+content_hash: 79b8e12457c53343
 ---
 
 # Uni-MuMER: Unified Multi-Task Fine-Tuning of Vision-Language Model for Handwritten Mathematical Expression Recognition
@@ -122,11 +122,11 @@ Zero-shot comparison: Uni-MuMER† surpasses Gemini2.5-flash (55.32% → 79.74%,
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
-- [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](advancing_compositional_awareness_in_clip_with_efficient_fin.md)
+- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](../../CVPR2026/multimodal_vlm/rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](../../CVPR2026/multimodal_vlm/trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
-- [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
-- [\[NeurIPS 2025\] Can Multi-Modal LLMs Provide Live Step-by-Step Task Guidance?](can_multi-modal_llms_provide_live_step-by-step_task_guidance.md)
+- [\[ACL 2025\] Can Vision-Language Models Evaluate Handwritten Math?](../../ACL2025/multimodal_vlm/can_vision-language_models_evaluate_handwritten_math.md)
+- [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](advancing_compositional_awareness_in_clip_with_efficient_fin.md)
+- [\[ICLR 2026\] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models](../../ICLR2026/multimodal_vlm/pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ada-Diffuser: Latent-Aware Adaptive Diffusion for Decision-Making
 description: >-
-  [ICLR 2026][Reinforcement Learning][POMDP] Ada-Diffuser explicitly incorporates "time-evolving hidden contexts (wind, goals, skills)" into diffusion-based decision models. It theoretically demonstrates that latent variables can be identified using a small temporal block of only 4 adjacent observations. By employing a "denoising-refinement" mechanism and zig-zag
+  [ICLR2026][Reinforcement Learning][Diffusion Decision-Making] Ada-Diffuser explicitly incorporates "time-evolving hidden contexts (wind, goals, skills)" into diffusion-based decision models. It theoretically demonstrates that latent variables can be identified using a small temporal block of only 4 adjacent observations. By employing a "denoising-refinement" mechanism and zig-zag sampling, the model performs online latent inference and planning/control…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - POMDP
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Diffusion Decision-Making"
+  - "Latent Variable Identification"
+  - "POMDP"
+  - "Autoregressive Diffusion"
+  - "Causal Generation"
 date: 2026-05-08
-content_hash: 8b77a190700365ae
+content_hash: 0f3bd8396e42d862
 ---
+
 # Ada-Diffuser: Latent-Aware Adaptive Diffusion for Decision-Making
 
 **Conference**: ICLR2026  
@@ -140,15 +145,16 @@ Testing across 8 environments and 23 settings, including MuJoCo locomotion, Maze
 - Value: ⭐⭐⭐⭐⭐ Provides a theoretically grounded and scalable paradigm for generative decision-making with latent processes.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bayesian Ensemble for Sequential Decision-Making](bayesian_ensemble_for_sequential_decision-making.md)
 - [\[ICLR 2026\] EMFuse: Energy-based Model Fusion for Decision Making](emfuse_energy-based_model_fusion_for_decision_making.md)
 - [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
 - [\[ICLR 2026\] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation](accelerating_diffusion_planners_in_offline_rl_via_reward-aware_consistency_traje.md)
 - [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](../../NeurIPS2025/reinforcement_learning/structured_reinforcement_learning_for_combinatorial_decision-making.md)
-- [\[ICML 2025\] Counterfactual Effect Decomposition in Multi-Agent Sequential Decision Making](../../ICML2025/reinforcement_learning/counterfactual_effect_decomposition_in_multi-agent_sequential_decision_making.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis
 description: >-
-  [AAAI 2026][Medical Imaging][Medical multimodal model] This paper proposes PulseMind, a multimodal medical diagnostic model comprising three core contributions: MediScope…
+  [AAAI 2026][Medical Imaging][Medical multimodal model] This paper proposes PulseMind, a multimodal medical diagnostic model comprising three core contributions: MediScope, a large-scale multi-turn diagnostic dialogue dataset; PulseMind Benchmark, a multi-dimensional clinical dialogue evaluation benchmark; and CRPO, a comparison-based reinforcement policy optimization method. The system achieves superior performance in real-world clinical diagnostic dialogue scenarios.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "comparative reward"
   - "clinical evaluation benchmark"
 date: 2026-05-08
-content_hash: e03c9fb4d9d59ebc
+content_hash: 69e8052a77de8768
 ---
 
 # PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis
@@ -168,10 +168,10 @@ On the PulseMind Benchmark, PulseMind achieves win rates of 94% (MedDiagnose) an
 ## Related Papers
 
 - [\[AAAI 2026\] Experience with Single Domain Generalization in Real World Medical Imaging Deployments](experience_with_single_domain_generalization_in_real_world_medical_imaging_deplo.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
 - [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
 - [\[AAAI 2026\] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes](note2chat_improving_llms_for_multi-turn_clinical_history_taking_using_medical_no.md)
-- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
+- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
+- [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](../../ICML2026/medical_imaging/evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
 
 </div>
 

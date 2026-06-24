@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zero-Shot Depth Completion with Vision-Language Model
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] Sparse depth is injected into a minimally modified VLM (Qwen2.5-VL 3B) via "visual tokens + text prompts + text supervision." This allows the model to understand "where to fill and where to preserve" like verbal instructions, enabling zero-shot depth completion without dense ground truth and achieving up to a 17.3% imp
+  [CVPR 2026][3D Vision][Depth Completion] Sparse depth is injected into a minimally modified VLM (Qwen2.5-VL 3B) via "visual tokens + text prompts + text supervision." This allows the model to understand "where to fill and where to preserve" like verbal instructions, enabling zero-shot depth completion without dense ground truth and achieving up to a 17.3% improvement across 7 cross-domain benchmarks.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Depth Completion"
+  - "Vision-Language Model"
+  - "Zero-Shot"
+  - "Sparse Depth"
+  - "Textual Supervision"
 date: 2026-05-08
-content_hash: 63bce3f0ab074f05
+content_hash: c6f00c9ba2dd0d2d
 ---
+
 # Zero-Shot Depth Completion with Vision-Language Model
 
 **Conference**: CVPR 2026  
@@ -130,9 +135,9 @@ Even the label-free w/ SD version consistently outperforms zero-shot methods **u
 
 ## Related Papers
 
+- [\[CVPR 2026\] Copy-Transform-Paste: Zero-Shot Object-Object Alignment Guided by Vision-Language and Geometric Constraints](copy-transform-paste_zero-shot_object-object_alignment_guided_by_vision-language.md)
 - [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
 - [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
 - [\[CVPR 2026\] SO(3)-Equivariant ViT-Adapter for Data-Efficient Zero-Shot Sim-to-Real Indoor Panoramic Depth Estimation](so3-equivariant_vit-adapter_for_data-efficient_zero-shot_sim-to-real_indoor_pano.md)
 - [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
 

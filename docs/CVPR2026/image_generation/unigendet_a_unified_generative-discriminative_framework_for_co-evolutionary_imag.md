@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] UniGenDet: 面向生成-检测协同进化的统一生成-判别框架
+  [Paper Note] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] UniGenDet integrates "faking" (image generation) and "fake-detecting" (AI-generated image detection) into a single unified multi-modal model for two-stage joint training. By employing Symbiotic Multimodal Self-Attention to inject the generator's understanding of image distributions into the detector, and using a frozen
+  [CVPR 2026][Image Generation][Generation-Detection Co-evolution] UniGenDet integrates "faking" (image generation) and "fake-detecting" (AI-generated image detection) into a single unified multi-modal model for two-stage joint training. By employing Symbiotic Multimodal Self-Attention to inject the generator's understanding of image distributions into the detector, and using a frozen detector as an "authenticity teacher" to reversely align generator features…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generation-Detection Co-evolution"
+  - "Unified Framework"
+  - "Symbiotic Self-Attention"
+  - "Detector-Guided Alignment"
+  - "AIGI Detection"
 date: 2026-05-08
-content_hash: 976866db8349d164
+content_hash: 500b3f20d57d4ca0
 ---
+
 # UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection
 
 **Conference**: CVPR 2026  
@@ -150,15 +156,16 @@ GenEval Text-to-Image Alignment: Ours scores 0.86, nearly equal to original BAGE
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching](mpdit_multi-patch_global-to-local_transformer_architecture_for_efficient_flow_ma.md)
-- [\[CVPR 2026\] Prompt Yourself: Awakening Textual Semantics in 1D Visual Tokenizers](prompt_yourself_awakening_textual_semantics_in_1d_visual_tokenizers.md)
-- [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
-- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
+- [\[CVPR 2026\] RDF-MIG: A Robust Diffusion Framework for Masked Image Generation to Augment Semantic Segmentation and Change Detection](rdf-mig_a_robust_diffusion_framework_for_masked_image_generation_to_augment_sema.md)
+- [\[CVPR 2026\] Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation](adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u.md)
+- [\[ICLR 2026\] PosterCraft: Rethinking High-Quality Aesthetic Poster Generation in a Unified Framework](../../ICLR2026/image_generation/postercraft_rethinking_high-quality_aesthetic_poster_generation_in_a_unified_fra.md)
+- [\[CVPR 2026\] UniVerse: A Unified Modulation Framework for Segmentation-Free, Disentangled Multi-Concept Personalization](universe_a_unified_modulation_framework_for_segmentation-free_disentangled_multi.md)
+- [\[CVPR 2026\] A Temporal and Content Co-Awareness Latent Diffusion for Controllable Hand Image Generation](a_temporal_and_content_co-awareness_latent_diffusion_for_controllable_hand_image.md)
 
 </div>
 

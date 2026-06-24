@@ -4,14 +4,18 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][GPTQ] Independent of Chen et al. (2026), this work provides a more concise and elegant proof that GPTQ is equivalent to Babai's nearest plane algorithm, elucidating the potential of lattice basis reduction to improve neural network quantization.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - GPTQ
-  - CVP
-  - Quantization
+  - "ICLR 2026"
+  - "Model Compression"
+  - "GPTQ"
+  - "Babai's Algorithm"
+  - "Lattice Theory"
+  - "CVP"
+  - "Quantization"
+  - "Equivalence Proof"
 date: 2026-05-08
-content_hash: 439383287971813c
+content_hash: 8fa3c7f7dffcb593
 ---
+
 # The Lattice Geometry of Neural Network Quantization -- A Short Equivalence Proof of GPTQ and Babai's Algorithm
 
 **Conference**: ICLR 2026  
@@ -120,8 +124,8 @@ is exactly the $w_1$ that GPTQ rounds. On the other side, **Babai ≡ Babai-Proj
 - [\[ICLR 2026\] The Geometry of LLM Quantization: GPTQ as Babai's Nearest Plane Algorithm](the_geometry_of_llm_quantization_gptq_as_babais_nearest_plane_algorithm.md)
 - [\[ICLR 2026\] Beyond Student: An Asymmetric Network for Neural Network Inheritance](beyond_student_an_asymmetric_network_for_neural_network_inheritance.md)
 - [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
-- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
 - [\[ICLR 2026\] Rethinking Residual Errors in Compensation-based LLM Quantization](rethinking_residual_errors_in_compensation-based_llm_quantization.md)
+- [\[ICLR 2026\] SAFA-SNN: Sparse-aware Fast Adaptive Spiking Neural Network for On-device Few-Shot Class-Incremental Learning](safa-snn_sparsity-aware_on-device_few-shot_class-incremental_learning_with_fast-.md)
 
 </div>
 

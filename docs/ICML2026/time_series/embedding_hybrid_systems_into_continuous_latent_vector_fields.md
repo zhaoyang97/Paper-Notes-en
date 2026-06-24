@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Embedding Hybrid Systems into Continuous Latent Vector Fields
 description: >-
-  [ICML 2026][Time Series][Neural ODE] This paper first proves an existence theorem—stating that as long as the latent space dimension $m>2n$, an essentially **discontinuous** $n$-dimensional hybrid system can be embedded into $m$-dimensional Euclidean space with a **continuous** vector field on its image. Based on this, it designs the latent Neural ODE fra
+  [ICML2026][Time Series][Hybrid Systems] This paper first proves an existence theorem—stating that as long as the latent space dimension $m>2n$, an essentially **discontinuous** $n$-dimensional hybrid system can be embedded into $m$-dimensional Euclidean space with a **continuous** vector field on its image. Based on this, it designs the latent Neural ODE framework CHyLL++, which recovers hybrid system flows across various geometries and topologies with high precision from tim…
 tags:
-  - ICML 2026
-  - Time Series
-  - Neural ODE
+  - "ICML2026"
+  - "Time Series"
+  - "Hybrid Systems"
+  - "Neural ODE"
+  - "Latent Space Embedding"
+  - "Whitney Embedding Theorem"
+  - "Transversality"
 date: 2026-05-08
-content_hash: fb092a44425c454c
+content_hash: 7cf879900afcfd9a
 ---
+
 # Embedding Hybrid Systems into Continuous Latent Vector Fields
 
 **Conference**: ICML2026  
@@ -137,11 +142,11 @@ Ablation of activation functions (sine vs. ReLU) and loss combinations (Table 2)
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Mixtures of Linear Dynamical Systems via Hybrid Tensor-EM Method](../../ICLR2026/time_series/learning_mixtures_of_linear_dynamical_systems_via_hybrid_tensor-em_method.md)
 - [\[ICML 2026\] QuITE: Query-based Irregular Time Series Embedding](quite_query-based_irregular_time_series_embedding.md)
-- [\[ICLR 2026\] Detection of Unknown Unknowns in Autonomous Systems](../../ICLR2026/time_series/detection_of_unknown_unknowns_in_autonomous_systems.md)
 - [\[ICML 2026\] From Observations to States: Latent Time Series Forecasting](from_observations_to_states_latent_time_series_forecasting.md)
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
-- [\[ICML 2026\] HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation](helix_hybrid_encoding_with_learnable_identity_and_cross-dimensional_synthesis_fo.md)
+- [\[AAAI 2026\] Finding Time Series Anomalies using Granular-ball Vector Data Description](../../AAAI2026/time_series/finding_time_series_anomalies_using_granular-ball_vector_data_description.md)
 
 </div>
 

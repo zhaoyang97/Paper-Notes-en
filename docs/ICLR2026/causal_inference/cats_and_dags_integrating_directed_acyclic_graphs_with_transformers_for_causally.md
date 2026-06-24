@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CaTs and DAGs: Integrating Directed Acyclic Graphs with Transformers for Causally Constrained Predictions
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] This paper proposes the **Causal Transformer (CaT)**, which injects the adjacency matrix of a pre-specified Directed Acyclic Graph (DAG) as a mask into the transformer's cross-attention. This allows the network to strictly adhere to the causal structure while retaining strong functional approximation capabilities, resu
+  [ICLR 2026][Causal Inference][Causal Transformer] This paper proposes the **Causal Transformer (CaT)**, which injects the adjacency matrix of a pre-specified Directed Acyclic Graph (DAG) as a mask into the transformer's cross-attention. This allows the network to strictly adhere to the causal structure while retaining strong functional approximation capabilities, resulting in improved robustness to covariate shift, better interpretability, and the ability to directly estimate…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Transformer"
+  - "DAG Constraints"
+  - "Masked Attention"
+  - "Covariate Shift Robustness"
+  - "Intervention Effect Estimation"
 date: 2026-05-08
-content_hash: 20edcbcef1530a9b
+content_hash: f5166171bd2f91c8
 ---
+
 # CaTs and DAGs: Integrating Directed Acyclic Graphs with Transformers for Causally Constrained Predictions
 
 **Conference**: ICLR 2026  
@@ -109,7 +115,7 @@ CaT/CFCN achieve performance comparable to specialized causal inference methods 
 - [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
 - [\[ICLR 2026\] Theoretical Guarantees for Causal Discovery on Large Random Graphs](theoretical_guarantees_for_causal_discovery_on_large_random_graphs.md)
 - [\[AAAI 2026\] I-CAM-UV: Integrating Causal Graphs over Non-Identical Variable Sets Using Causal Additive Models with Unobserved Variables](../../AAAI2026/causal_inference/i-cam-uv_integrating_causal_graphs_over_non-identical_variable_sets_using_causal.md)
-- [\[ICLR 2026\] Learning Dynamic Causal Graphs Under Parametric Uncertainty via Polynomial Chaos Expansions](learning_dynamic_causal_graphs_under_parametric_uncertainty_via_polynomial_chaos.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
 
 </div>
 

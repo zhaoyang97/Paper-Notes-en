@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] PRInTS: 面向长程信息检索的过程奖励建模
+  [Paper Note] PRInTS: Process Reward Modeling for Long-range Information Retrieval
 description: >-
-  [ACL 2026][LLM Agent][GRPO] PRInTS migrates "Process Reward Models (PRM)" from short-form mathematical reasoning to long-range information retrieval (IR) Agents. By utilizing a 4B model that simultaneously learns to "assign dense scores to each step based on information gain" and "recursively compress expanding trajectory contexts," the method ac
+  [ACL 2026][LLM Agent][Process Reward Model] PRInTS migrates "Process Reward Models (PRM)" from short-form mathematical reasoning to long-range information retrieval (IR) Agents. By utilizing a 4B model that simultaneously learns to "assign dense scores to each step based on information gain" and "recursively compress expanding trajectory contexts," the method achieves a 9.3% average improvement for 32B-scale Agents via test-time best-of-$n$ selection. Notably…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GRPO
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Process Reward Model"
+  - "Information Retrieval Agent"
+  - "Information Gain"
+  - "Trajectory Summarization"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 2ce562a436677c12
+content_hash: 0332a0144baf2c1e
 ---
+
 # PRInTS: Process Reward Modeling for Long-range Information Retrieval
 
 **Conference**: ACL 2026  
@@ -124,15 +129,16 @@ Validating core components on Qwen3-32B using FRAMES + GAIA (L1, L2):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] How Adversarial Environments Mislead Agentic AI](how_adversarial_environments_mislead_agentic_ai.md)
-- [\[ACL 2026\] AnchorMem: Anchored Facts with Associative Contexts for Building Memory in Large Language Models](anchormem_anchored_facts_with_associative_contexts_for_building_memory_in_large_.md)
-- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
-- [\[ACL 2026\] AVA: Attentive VLM Agent for Mastering StarCraft II](ava_attentive_vlm_agent_for_mastering_starcraft_ii.md)
-- [\[ACL 2026\] Mem²Evolve: Towards Self-Evolving Agents via Co-Evolutionary Capability Expansion and Experience Distillation](mem2evolve_towards_self-evolving_agents_via_co-evolutionary_capability_expansion.md)
+- [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
+- [\[ACL 2026\] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](intragent_an_llm_agent_for_content-grounded_information_retrieval_through_litera.md)
+- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
+- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](../../AAAI2026/llm_agent/probench_benchmarking_gui_agents_with_accurate_process_infor.md)
 
 </div>
 

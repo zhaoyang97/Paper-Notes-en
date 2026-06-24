@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Valid Inference with Imperfect Synthetic Data
 description: >-
-  [NeurIPS 2025][LLM/NLP][synthetic data] A hyperparameter-free framework based on Generalized Method of Moments (GMM) is proposed to integrate imperfect LLM-generated synthetic data with real data for statistically valid…
+  [NeurIPS 2025][LLM (Other)][synthetic data] A hyperparameter-free framework based on Generalized Method of Moments (GMM) is proposed to integrate imperfect LLM-generated synthetic data with real data for statistically valid inference. When the residuals of synthetic data are correlated with those of real data, the framework can substantially reduce estimation variance, while guaranteeing no harm to estimation quality in the worst case (i.e., when synthetic data is entirely un…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "synthetic data"
   - "statistical inference"
   - "GMM"
   - "prediction-powered inference"
   - "computational social science"
 date: 2026-05-08
-content_hash: 8b1cb1c084bf6167
+content_hash: 40e89192c0360c30
 ---
 
 # Valid Inference with Imperfect Synthetic Data
@@ -186,11 +186,11 @@ This demonstrates that the GMM framework integrates synthetic data more effectiv
 
 ## Related Papers
 
+- [\[ACL 2025\] Theorem Prover as a Judge for Synthetic Data Generation](../../ACL2025/llm_nlp/theorem_prover_as_a_judge_for_synthetic_data_generation.md)
+- [\[ACL 2025\] Evaluating Language Models as Synthetic Data Generators](../../ACL2025/llm_nlp/evaluating_lms_synthetic_data_gen.md)
+- [\[ACL 2025\] DiffLM: Controllable Synthetic Data Generation via Diffusion Language Models](../../ACL2025/llm_nlp/difflm_controllable_synthetic_data_generation_via_diffusion_language_models.md)
+- [\[ICLR 2026\] SIPDO: Closed-Loop Prompt Optimization via Synthetic Data Feedback](../../ICLR2026/llm_nlp/sipdo_closed-loop_prompt_optimization_via_synthetic_data_feedback.md)
 - [\[ACL 2026\] Synthetic Eggs in Many Baskets: The Impact of Synthetic Data Diversity on LLM Fine-Tuning](../../ACL2026/llm_nlp/synthetic_eggs_in_many_baskets_the_impact_of_synthetic_data_diversity_on_llm_fin.md)
-- [\[NeurIPS 2025\] Wider or Deeper: Scaling LLM Inference-Time Compute with Adaptive Branching Tree Search](wider_or_deeper_scaling_llm_inference-time_compute_with_adaptive_branching_tree_.md)
-- [\[NeurIPS 2025\] Detecting High-Stakes Interactions with Activation Probes](detecting_high-stakes_interactions_with_activation_probes.md)
-- [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
-- [\[NeurIPS 2025\] Q♯: Provably Optimal Distributional RL for LLM Post-Training](qsharp_provably_optimal_distributional_rl_for_llm_post-training.md)
 
 </div>
 

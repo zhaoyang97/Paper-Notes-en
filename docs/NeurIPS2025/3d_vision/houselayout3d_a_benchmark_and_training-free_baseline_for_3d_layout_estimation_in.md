@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild
 description: >-
-  [NeurIPS 2025][3D layout estimation] This paper introduces HouseLayout3D—the first real-world 3D layout estimation benchmark targeting large-scale multi-floor buildings—and MultiFloor3D…
+  [NeurIPS 2025][3D Vision][3D layout estimation] This paper introduces HouseLayout3D—the first real-world 3D layout estimation benchmark targeting large-scale multi-floor buildings—and MultiFloor3D, a training-free baseline that combines modern 3D reconstruction and segmentation models to surpass existing deep learning methods on multi-floor building layout estimation.
 tags:
   - "NeurIPS 2025"
+  - "3D Vision"
   - "3D layout estimation"
   - "multi-floor buildings"
   - "benchmark"
   - "training-free"
   - "scene graph"
 date: 2026-05-08
-content_hash: 5f6e3cd9dec25e4c
+content_hash: 4fa532e2647768ee
 ---
 
 # HouseLayout3D: A Benchmark and Training-Free Baseline for 3D Layout Estimation in the Wild
@@ -168,8 +169,8 @@ MultiFloor3D substantially outperforms all baselines across every metric without
 - [\[ICCV 2025\] Event-based Tiny Object Detection: A Benchmark Dataset and Baseline](../../ICCV2025/3d_vision/event-based_tiny_object_detection_a_benchmark_dataset_and_baseline.md)
 - [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
 - [\[NeurIPS 2025\] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](from_objects_to_anywhere_a_holistic_benchmark_for_multi-level_visual_grounding_i.md)
-- [\[NeurIPS 2025\] OnlineSplatter: Pose-Free Online 3D Reconstruction for Free-Moving Objects](onlinesplatter_pose-free_online_3d_reconstruction_for_free-moving_objects.md)
 - [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](../../CVPR2026/3d_vision/conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
+- [\[CVPR 2025\] Extreme Rotation Estimation in the Wild](../../CVPR2025/3d_vision/extreme_rotation_estimation_in_the_wild.md)
 
 </div>
 

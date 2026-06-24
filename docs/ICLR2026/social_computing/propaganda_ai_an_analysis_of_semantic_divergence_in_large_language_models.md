@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] Ours proposes the RAVEN audit framework to detect concept-conditioned semantic divergence in LLMs—a propaganda-like behavior pattern where high-level conceptual cues (ideologies, public figures) trigger abnormally consistent stance responses—by combining intra-model semantic entropy and cross-model divergence.
+  [ICLR 2026][Social Computing][LLM Safety] Ours proposes the RAVEN audit framework to detect concept-conditioned semantic divergence in LLMs—a propaganda-like behavior pattern where high-level conceptual cues (ideologies, public figures) trigger abnormally consistent stance responses—by combining intra-model semantic entropy and cross-model divergence.
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "LLM Safety"
+  - "Semantic Divergence"
+  - "Concept Trigger"
+  - "Audit Framework"
+  - "Propaganda Behavior"
 date: 2026-05-08
-content_hash: ca5f5acce8c910c9
+content_hash: 91a7528ce440d2ca
 ---
+
 # Propaganda AI: An Analysis of Semantic Divergence in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -147,8 +153,8 @@ Black-box auditing of five LLM families over 12 sensitive themes (360 prompts pe
 - [\[ICLR 2026\] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions](measuring_and_mitigating_rapport_bias_of_large_language_models_under_multi-agent.md)
 - [\[ICLR 2026\] From Five Dimensions to Many: Large Language Models as Precise and Interpretable Psychological Profilers](from_five_dimensions_to_many_large_language_models_as_precise_and_interpretable_.md)
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](../../ACL2026/social_computing/inertia_in_moral_and_value_judgments_of_large_language_models.md)
-- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](the_value_of_information_in_human-ai_decision-making.md)
 - [\[ICML 2026\] Self-Debias: Self-correcting for Debiasing Large Language Models](../../ICML2026/social_computing/self-debias_self-correcting_for_debiasing_large_language_models.md)
+- [\[ICLR 2026\] INTIMA: A Benchmark for Human-AI Companionship Behavior](intima_a_benchmark_for_human-ai_companionship_behavior.md)
 
 </div>
 

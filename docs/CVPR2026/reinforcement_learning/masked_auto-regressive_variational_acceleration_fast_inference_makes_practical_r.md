@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Masked Auto-Regressive Variational Acceleration: Fast Inference Makes Practical Reinforcement Learning
 description: >-
-  [CVPR 2026][Reinforcement Learning][MAR] MARVAL utilizes Guided Score Implicit Matching (GSIM) with CFG guidance to compress the multi-step diffusion denoising chain within Masked Auto-Regressive models into "single-step generation." It achieves FID=2.00 on ImageNet 256×256—over 30 times faster than MAR—and leverages this acceleration to enable the first prac
+  [CVPR 2026][Reinforcement Learning][MAR] MARVAL utilizes Guided Score Implicit Matching (GSIM) with CFG guidance to compress the multi-step diffusion denoising chain within Masked Auto-Regressive models into "single-step generation." It achieves FID=2.00 on ImageNet 256×256—over 30 times faster than MAR—and leverages this acceleration to enable the first practical reinforcement learning post-training for MAR-like models using verifiable rewards…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - MAR
-  - RLHF
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "MAR"
+  - "Diffusion Distillation"
+  - "Single-step Generation"
+  - "Score Distillation"
+  - "RLHF"
 date: 2026-05-08
-content_hash: 2840a3e72305265b
+content_hash: dae455db75e995fe
 ---
+
 # Masked Auto-Regressive Variational Acceleration: Fast Inference Makes Practical Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -144,11 +148,11 @@ Text-to-Image (DC-AR, 50K samples) generalization: while 20-step DDIM yields Ima
 
 ## Related Papers
 
-- [\[CVPR 2026\] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)
 - [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](../../ICML2026/reinforcement_learning/safe_reinforcement_learning_with_preference-based_constraint_inference.md)
-- [\[ICLR 2026\] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning](../../ICLR2026/reinforcement_learning/principled_fast_and_meta_knowledge_learners_for_continual_reinforcement_learning.md)
 - [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](../../ICML2026/reinforcement_learning/coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[ICLR 2026\] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning](../../ICLR2026/reinforcement_learning/principled_fast_and_meta_knowledge_learners_for_continual_reinforcement_learning.md)
+- [\[ICML 2026\] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning](../../ICML2026/reinforcement_learning/fast_and_highly_expressive_policy_learning_for_offline_reinforcement_learning_vi.md)
+- [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](../../NeurIPS2025/reinforcement_learning/temporal-difference_variational_continual_learning.md)
 
 </div>
 

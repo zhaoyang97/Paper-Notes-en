@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffPBR: Point-Based Rendering via Spatial-Aware Residual Diffusion
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] DiffPBR directly renders colored point clouds into photo-realistic, cross-view consistent images: first using adaptive CoNo-Splatting to rasterize sparse point clouds into "just-right" initial color maps and geometry-aware noise maps, then employing Spatial-Aware Residual Diffusion (RDDM) to supplement only the missing
+  [ICLR2026][3D Vision][Point Cloud Rendering] DiffPBR directly renders colored point clouds into photo-realistic, cross-view consistent images: first using adaptive CoNo-Splatting to rasterize sparse point clouds into "just-right" initial color maps and geometry-aware noise maps, then employing Spatial-Aware Residual Diffusion (RDDM) to supplement only the missing high-frequency details. It outperforms SOTA by 3–5 dB PSNR across three datasets…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Point Cloud Rendering"
+  - "Novel View Synthesis"
+  - "Residual Diffusion"
+  - "Geometrically Consistent Noise"
+  - "Adaptive Rasterization"
 date: 2026-05-08
-content_hash: 6f32f290c4f62b2a
+content_hash: 3b0b870a5664b419
 ---
+
 # DiffPBR: Point-Based Rendering via Spatial-Aware Residual Diffusion
 
 **Conference**: ICLR2026  

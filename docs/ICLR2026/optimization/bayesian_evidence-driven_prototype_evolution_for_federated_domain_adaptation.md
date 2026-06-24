@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] FedPTE treats the server-side global prototype set as a **dynamically evolving topological structure**. It employs a Bayesian Gaussian Mixture Model (BGMM) and marginal likelihood ratios as "statistical evidence" to decide when to **split** or **merge** prototype clusters. Complemented by stability penalties and client
+  [ICLR 2026][Optimization][Federated Learning] FedPTE treats the server-side global prototype set as a **dynamically evolving topological structure**. It employs a Bayesian Gaussian Mixture Model (BGMM) and marginal likelihood ratios as "statistical evidence" to decide when to **split** or **merge** prototype clusters. Complemented by stability penalties and client-side topology-aware contrastive learning, it continuously characterizes fine-grained intra-class structures and m…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Domain Shift"
+  - "Prototype Learning"
+  - "Bayesian Gaussian Mixture Model"
+  - "Topological Evolution"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: f02aeda3b6b2c775
+content_hash: 72a8f7b071151bb8
 ---
+
 # Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation
 
 **Conference**: ICLR 2026  

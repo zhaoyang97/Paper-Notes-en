@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] GIST: 用梯度子空间投影做 instruction tuning 的 targeted 数据选择
+  [Paper Note] GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection
 description: >-
-  [ICML 2026][Alignment & RLHF][targeted data selection] GIST frames "selecting instruction tuning data for a target task" as gradient subspace alignment. It demonstrates that methods like LESS, which use Adam states as a diagonal preconditioner, fail on LoRA due to cross-parameter coupling and low-rank task subspaces. Instead, GIST extracts a task-specific low-rank subspace
+  [ICML 2026][LLM Alignment][targeted data selection] GIST frames "selecting instruction tuning data for a target task" as gradient subspace alignment. It demonstrates that methods like LESS, which use Adam states as a diagonal preconditioner, fail on LoRA due to cross-parameter coupling and low-rank task subspaces. Instead, GIST extracts a task-specific low-rank subspace via SVD of validation gradients and uses cosine similarity for sample selection. It matches or exceeds LESS…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - targeted data selection
-  - instruction tuning
-  - LoRA
-  - gradient subspace
-  - SVD
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "targeted data selection"
+  - "instruction tuning"
+  - "LoRA"
+  - "gradient subspace"
+  - "SVD"
 date: 2026-05-08
-content_hash: 20d9704254843412
+content_hash: b434c7e9e011d144
 ---
+
 # GIST: Targeted Data Selection for Instruction Tuning with Gradient Subspace Projection
 
 **Conference**: ICML 2026  
@@ -124,10 +125,20 @@ SVD of validation gradient matrix for Llama2-7B on MMLU:
 - Value: ⭐⭐⭐⭐⭐ (100x storage saving makes data selection practical for large workloads).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] SPARD: Defending Harmful Fine-Tuning Attack via Safety Projection with Relevance-Diversity Data Selection](spard_defending_harmful_fine-tuning_attack_via_safety_projection_with_relevance-.md)
+- [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
+- [\[ACL 2025\] Beyond Similarity: A Gradient-based Graph Method for Instruction Tuning Data Selection](../../ACL2025/llm_alignment/beyond_similarity_a_gradient-based_graph_method_for_instruction_tuning_data_sele.md)
+- [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
+- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](../../ACL2026/llm_alignment/what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2025\] JsonTuning: Towards Generalizable, Robust, and Controllable Instruction Tuning](../../ACL2025/llm_alignment/jsontuning_towards_generalizable_robust_and_controllable_instruction_tuning.md)

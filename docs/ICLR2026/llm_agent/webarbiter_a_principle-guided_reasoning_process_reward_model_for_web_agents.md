@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] WebArbiter proposes a reasoning-first, principle-guided process reward model (WebPRM) that formalizes reward modeling as a text generation task. Through a two-stage training process involving reasoning distillation and reinforcement learning, the 7B model outperforms GPT-5 by 9.1 percentage points on WebPRMBench.
+  [ICLR2026][LLM Agent][Web Agent] WebArbiter proposes a reasoning-first, principle-guided process reward model (WebPRM) that formalizes reward modeling as a text generation task. Through a two-stage training process involving reasoning distillation and reinforcement learning, the 7B model outperforms GPT-5 by 9.1 percentage points on WebPRMBench.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Process Reward Model"
+  - "Reasoning-First"
+  - "Principle-Guided"
+  - "Reinforcement Learning"
+  - "Reasoning Distillation"
 date: 2026-05-08
-content_hash: 157b96613f7af316
+content_hash: e27efaa77df54d75
 ---
+
 # WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents
 
 **Conference**: ICLR2026  
@@ -168,11 +173,11 @@ In reward-guided trajectory search, WebArbiter outperforms WebShepherd by up to 
 
 ## Related Papers
 
+- [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
 - [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](../../ACL2026/llm_agent/exploring_reasoning_reward_model_for_agents.md)
 - [\[ICLR 2026\] Empowering LLM Tool Invocation with Tool-call Reward Model](empowering_llm_tool_invocation_with_tool-call_reward_model.md)
-- [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
 - [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
 
 </div>
 

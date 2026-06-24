@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Global Text Conditioning in Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][pooled embedding] This paper systematically analyzes the "global conditioning path via modulation of pooled text embeddings" in Diffusion Transformers. It finds that while nearly ineffective in conventional usage, repurposing this path from a "condition" to a "guidance direction" significantly improves image/video quality and controllab
+  [ICLR 2026][Image Generation][Diffusion Transformer] This paper systematically analyzes the "global conditioning path via modulation of pooled text embeddings" in Diffusion Transformers. It finds that while nearly ineffective in conventional usage, repurposing this path from a "condition" to a "guidance direction" significantly improves image/video quality and controllability for text-to-image/video and image editing in a training-free, near-zero-overhead manner.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - pooled embedding
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "global text conditioning"
+  - "pooled embedding"
+  - "modulation guidance"
+  - "training-free"
 date: 2026-05-08
-content_hash: 811caedab91464c2
+content_hash: ba7f67c11dd6f8db
 ---
+
 # Rethinking Global Text Conditioning in Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -125,15 +130,16 @@ Compared to Normalized Attention Guidance, aesthetic win rate is 34% higher. Com
 - Value: ⭐⭐⭐⭐⭐ Training-free, near-zero cost, and plug-and-play for SOTA models; highly practical.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
 - [\[ICLR 2026\] What Matters for Representation Alignment: Global Information or Spatial Structure?](what_matters_for_representation_alignment_global_information_or_spatial_structur.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 - [\[ICLR 2026\] Guidance Matters: Rethinking the Evaluation Pitfall for Text-to-Image Generation](guidance_matters_rethinking_the_evaluation_pitfall_for_text-to-image_generation.md)
 - [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
-- [\[ICLR 2026\] Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](massive_activations_are_the_key_to_local_detail_synthesis_in_diffusion_transform.md)
 
 </div>
 

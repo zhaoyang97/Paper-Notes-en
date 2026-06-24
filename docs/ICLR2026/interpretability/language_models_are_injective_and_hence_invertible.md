@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Language Models are Injective and Hence Invertible
 description: >-
-  [ICLR 2026][Interpretability][SIPIT] This paper mathematically proves that decoder-only Transformer language models are almost surely **injective** (different prompts produce different last-token representations). Based on this, the authors propose the SIPIT algorithm, which can **precisely** reconstruct input text from hidden states in linear time.
+  [ICLR 2026][Interpretability][Injectivity] This paper mathematically proves that decoder-only Transformer language models are almost surely **injective** (different prompts produce different last-token representations). Based on this, the authors propose the SIPIT algorithm, which can **precisely** reconstruct input text from hidden states in linear time.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - SIPIT
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Injectivity"
+  - "Invertibility"
+  - "Real Analytic Functions"
+  - "Prompt Inversion"
+  - "SIPIT"
+  - "Hidden States"
 date: 2026-05-08
-content_hash: 8695aece1904a184
+content_hash: a61ec7495ea451bb
 ---
+
 # Language Models are Injective and Hence Invertible
 
 **Conference**: ICLR 2026  

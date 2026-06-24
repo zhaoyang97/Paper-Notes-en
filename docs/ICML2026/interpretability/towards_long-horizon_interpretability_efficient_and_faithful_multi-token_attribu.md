@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs
 description: >-
-  [ICML 2026][Interpretability][token attribution] Addressing the efficiency bottleneck of $\mathcal{O}(M\cdot N)$ in token-wise attribution and the "information absorption" effect where intermediate reasoning tokens soak up attribution mass in reasoning LLMs, this paper proposes FlashTrace. It utilizes span-wise aggregation to compute attribution for an entire target
+  [ICML 2026 Oral][Interpretability][token attribution] Addressing the efficiency bottleneck of $\mathcal{O}(M\cdot N)$ in token-wise attribution and the "information absorption" effect where intermediate reasoning tokens soak up attribution mass in reasoning LLMs, this paper proposes FlashTrace. It utilizes span-wise aggregation to compute attribution for an entire target span in a single pass and employs recursive attribution to backtrace importance from the output through th…
 tags:
-  - ICML 2026
-  - Interpretability
-  - token attribution
-  - reasoning LLM
-  - span-wise aggregation
-  - recursive attribution
-  - long-context interpretability
+  - "ICML 2026 Oral"
+  - "Interpretability"
+  - "token attribution"
+  - "reasoning LLM"
+  - "span-wise aggregation"
+  - "recursive attribution"
+  - "long-context interpretability"
 date: 2026-05-08
-content_hash: 625da95a00f7e3ba
+content_hash: 7627d12ba28dd4c5
 ---
+
 # Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs
 
 **Conference**: ICML 2026 Oral  
@@ -136,11 +137,11 @@ Evaluated on RULER (Needle-in-a-Haystack mq, Variable Tracking mv, HotpotQA), us
 
 ## Related Papers
 
+- [\[ICLR 2026\] Hessian-Enhanced Token Attribution (HETA): Interpreting Autoregressive LLMs](../../ICLR2026/interpretability/hessian-enhanced_token_attribution_heta_interpreting_autoregressive_llms.md)
+- [\[ACL 2026\] Jacobian Scopes: Token-Level Causal Attributions in LLMs](../../ACL2026/interpretability/jacobian_scopes_token-level_causal_attributions_in_llms.md)
 - [\[ICML 2026\] IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring](iqa-spider_unifying_multi-granularity_image_quality_assessment_with_reasoning_gr.md)
-- [\[ICML 2026\] Manifold-Aligned Guided Integrated Gradients for Reliable Feature Attribution](manifold-aligned_guided_integrated_gradients_for_reliable_feature_attribution.md)
-- [\[ICML 2026\] Interpretability Can Be Actionable](interpretability_can_be_actionable.md)
 - [\[ICML 2026\] From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets](from_rashomon_theory_to_praxis_efficient_decision_tree_rashomon_sets.md)
-- [\[ICML 2026\] Beyond Additive Decompositions: Interpretability Through Separability](beyond_additive_decompositions_interpretability_through_separability.md)
+- [\[ICML 2026\] Interpretability Can Be Actionable](interpretability_can_be_actionable.md)
 
 </div>
 

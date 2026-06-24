@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Generation][Super-Resolution] This paper proposes PatchScaler, a patch-level independent diffusion super-resolution pipeline that employs a Global Restoration Module to generate confidence maps quantify…
+  [ICCV 2025][Image Generation][Super-Resolution] This paper proposes PatchScaler, a patch-level independent diffusion super-resolution pipeline that employs a Global Restoration Module to generate confidence maps quantifying per-region reconstruction difficulty, partitions patches into easy/medium/hard groups with different sampling step budgets, and incorporates a texture prompt retrieval mechanism — achieving superior quality on RealSR at only 0.23× the inference time of Res…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Texture Prompt"
   - "DiT"
 date: 2026-05-08
-content_hash: acc63c593e9da5d6
+content_hash: 21a46ec8bca782bc
 ---
 
 # PatchScaler: An Efficient Patch-Independent Diffusion Model for Image Super-Resolution
@@ -143,11 +143,11 @@ Built upon DiT, which is naturally suited for patch-level features represented a
 
 ## Related Papers
 
+- [\[CVPR 2025\] Uncertainty-guided Perturbation for Image Super-Resolution Diffusion Model](../../CVPR2025/image_generation/uncertainty-guided_perturbation_for_image_super-resolution_diffusion_model.md)
 - [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](../../NeurIPS2025/image_generation/dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
-- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](../../CVPR2026/image_generation/vosr_a_vision_only_generative_model_for_image_super_resolution.md)
 - [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
+- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](../../CVPR2026/image_generation/vosr_a_vision_only_generative_model_for_image_super_resolution.md)
 - [\[NeurIPS 2025\] Image Super-Resolution with Guarantees via Conformalized Generative Models](../../NeurIPS2025/image_generation/image_super-resolution_with_guarantees_via_conformalized_generative_models.md)
-- [\[NeurIPS 2025\] ScaleDiff: Higher-Resolution Image Synthesis via Efficient and Model-Agnostic Diffusion](../../NeurIPS2025/image_generation/scalediff_higher-resolution_image_synthesis_via_efficient_and_model-agnostic_dif.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MCHDoc: A Comprehensive Benchmark for Reading Multi-Carrier Chinese Historical Documents
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] MCHDoc organizes 15,724 high-resolution historical document images spanning over 3,000 years and six writing carriers (ancient paper, bamboo/wood slips, calligraphy rice paper, stone inscriptions, silk, and oracle bones) into a unified benchmark. Mirroring the expert workflow of "recognition followed by textual researc
+  [CVPR 2026][Multimodal VLM][Chinese Historical Documents] MCHDoc organizes 15,724 high-resolution historical document images spanning over 3,000 years and six writing carriers (ancient paper, bamboo/wood slips, calligraphy rice paper, stone inscriptions, silk, and oracle bones) into a unified benchmark. Mirroring the expert workflow of "recognition followed by textual research and correction," it designs four tasks: page-level recognition, character-level recognition…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chinese Historical Documents"
+  - "Multi-carrier OCR"
+  - "Post-correction"
+  - "MLLM Evaluation"
+  - "Retrieval-Augmentation"
 date: 2026-05-08
-content_hash: b7fe3c87fa5b2047
+content_hash: 6e7bdaa8b73a2f17
 ---
+
 # MCHDoc: A Comprehensive Benchmark for Reading Multi-Carrier Chinese Historical Documents
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,11 @@ The "ablations" correspond to model behavior comparisons across different tasks/
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
 - [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
 - [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
+- [\[CVPR 2026\] Twin-T & TwintVQA: A Reliable Structure-Detail Separating VLM and a Comprehensive Benchmark for Chart and Table Tasks](twin-t_twintvqa_a_reliable_structure-detail_separating_vlm_and_a_comprehensive_b.md)
+- [\[ACL 2025\] AGRI-CM3: A Chinese Massive Multi-Modal Multi-Level Benchmark for Agricultural Understanding](../../ACL2025/multimodal_vlm/agri-cm3_a_chinese_massive_multi-modal_multi-level_benchmark_for_agricultural_un.md)
+- [\[AAAI 2026\] OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive](../../AAAI2026/multimodal_vlm/oida-qa_a_multimodal_benchmark_for_analyzing_the_opioid_industry_documents_archi.md)
 
 </div>
 

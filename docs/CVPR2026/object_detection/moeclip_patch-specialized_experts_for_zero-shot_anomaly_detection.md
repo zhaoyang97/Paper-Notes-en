@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][CLIP] This paper proposes MoECLIP, which introduces the Mixture-of-Experts architecture into Zero-Shot Anomaly Detection (ZSAD). By employing Frozen Orthogonal Feature Separation (FOFS) and Equiangular Tight Frame (ETF) loss, it achieves patch-level dynamic expert routing and specialization, reaching SOTA performance across
+  [CVPR 2026][Object Detection][Zero-shot anomaly detection] This paper proposes MoECLIP, which introduces the Mixture-of-Experts architecture into Zero-Shot Anomaly Detection (ZSAD). By employing Frozen Orthogonal Feature Separation (FOFS) and Equiangular Tight Frame (ETF) loss, it achieves patch-level dynamic expert routing and specialization, reaching SOTA performance across 14 industrial and medical benchmarks.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - CLIP
-  - LoRA
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Zero-shot anomaly detection"
+  - "Mixture-of-Experts"
+  - "CLIP"
+  - "LoRA"
+  - "expert specialization"
 date: 2026-05-08
-content_hash: a7ba50c137e3538c
+content_hash: 970d540ba7475165
 ---
+
 # MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -186,10 +190,10 @@ Evaluated against 6 SOTA methods across 14 datasets (5 industrial + 9 medical). 
 ## Related Papers
 
 - [\[AAAI 2026\] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts](../../AAAI2026/object_detection/promptmoe_generalizable_zero-shot_anomaly_detection_via_visually-guided_prompt_m.md)
-- [\[CVPR 2026\] From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)
 - [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 - [\[CVPR 2026\] FB-CLIP: Fine-Grained Zero-Shot Anomaly Detection with Foreground-Background Disentanglement](fb-clip_fine-grained_zero-shot_anomaly_detection_with_foreground-background_dise.md)
-- [\[CVPR 2026\] CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)
+- [\[CVPR 2026\] DLVP-CLIP: Enhancing Fine-Grained Zero-Shot Anomaly Detection via Dynamic Local Visual Prompting](dlvp-clip_enhancing_fine-grained_zero-shot_anomaly_detection_via_dynamic_local_v.md)
+- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Graph Learning][GNN] STEM reformulates multi-hop KGQA from step-by-step path searching to a two-stage process: "generating a query schema graph first, then tracing the evidence subgraph by structure." Through semantic-to-structure projection, Triple-GNN global guidance, and structure-matching retrieval, it significantly improves answer acc
+  [ACL2026][Graph Learning][KGQA] STEM reformulates multi-hop KGQA from step-by-step path searching to a two-stage process: "generating a query schema graph first, then tracing the evidence subgraph by structure." Through semantic-to-structure projection, Triple-GNN global guidance, and structure-matching retrieval, it significantly improves answer accuracy and evidence coverage on WebQSP and CWQ.
 tags:
-  - ACL 2026
-  - Graph Learning
-  - GNN
-  - RAG
+  - "ACL2026"
+  - "Graph Learning"
+  - "KGQA"
+  - "Multi-hop Reasoning"
+  - "Structured Retrieval"
+  - "GNN"
+  - "RAG"
 date: 2026-05-08
-content_hash: 569cd06bc9f048ee
+content_hash: 5b98e6ea2ce53be6
 ---
+
 # STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation
 
 **Conference**: ACL2026  
@@ -151,10 +155,10 @@ STEM + GPT-4o achieves the best results across three metrics, particularly on CW
 ## Related Papers
 
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
-- [\[ACL 2025\] SimGRAG: Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation](../../ACL2025/graph_learning/simgrag_leveraging_similar_subgraphs_for_knowledge_graphs_driven_retrieval-augme.md)
+- [\[NeurIPS 2025\] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation](../../NeurIPS2025/graph_learning/gfm-rag_graph_foundation_model_for_retrieval_augmented_generation.md)
 - [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
+- [\[ACL 2025\] SimGRAG: Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation](../../ACL2025/graph_learning/simgrag_leveraging_similar_subgraphs_for_knowledge_graphs_driven_retrieval-augme.md)
 - [\[ACL 2026\] LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning](legalgraphrag_multi-agent_graph_retrieval-augmented_generation_for_reliable_lega.md)
-- [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
 
 </div>
 

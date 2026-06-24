@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient DP-SGD for LLMs with Randomized Clipping
 description: >-
-  [ICML 2026][AI Safety][DP-SGD] This paper proposes DP-SGD-RC, which replaces the exact per-sample gradient norm computation in DP-SGD with Hutchinson / Hutch++ stochastic trace estimation. This reduces the clipping memory overhead for long-context LLM training from $O(B\min\{T^2,d^2\})$ to $O(BkT+kp)$. Accompanied by a tight $f$-DP analysis based on
+  [ICML 2026][AI Safety][DP-SGD] This paper proposes DP-SGD-RC, which replaces the exact per-sample gradient norm computation in DP-SGD with Hutchinson / Hutch++ stochastic trace estimation. This reduces the clipping memory overhead for long-context LLM training from $O(B\min\{T^2,d^2\})$ to $O(BkT+kp)$. Accompanied by a tight $f$-DP analysis based on a chi-squared mixture envelope CDF, the method maintains accuracy in Llama-3.2-1B long-context fine-tuning while reducing peak m…
 tags:
-  - ICML 2026
-  - AI Safety
-  - DP-SGD
-  - Hutchinson
+  - "ICML 2026"
+  - "AI Safety"
+  - "DP-SGD"
+  - "Randomized Clipping"
+  - "Stochastic Trace Estimation"
+  - "Hutchinson"
+  - "Long-context LLM"
 date: 2026-05-08
-content_hash: b8c241d499d8f3ab
+content_hash: bfab4501fb9b5dc0
 ---
+
 # Efficient DP-SGD for LLMs with Randomized Clipping
 
 **Conference**: ICML 2026  
@@ -137,11 +141,11 @@ Efficiency Ablation (Llama-3.2-1B largest linear layer $8192\times 2048$, $T=409
 
 ## Related Papers
 
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: 转移、动力学与可逆性](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 - [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
-- [\[ICML 2026\] PipeSD: An Efficient Cloud-Edge Collaborative Pipeline Inference Framework with Speculative Decoding](pipesd_an_efficient_cloud-edge_collaborative_pipeline_inference_framework_with_s.md)
+- [\[ICLR 2026\] INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy](../../ICLR2026/ai_safety/ino-sgd_addressing_utility_imbalance_under_individualized_differential_privacy.md)
 
 </div>
 

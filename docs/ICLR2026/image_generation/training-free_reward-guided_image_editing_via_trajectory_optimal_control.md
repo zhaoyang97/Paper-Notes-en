@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control
 description: >-
-  [ICLR 2026][Image Generation][Optimal Control] Reward-guided image editing is reformulated as a trajectory optimal control problem. The reverse process of diffusion/flow models is treated as a controllable trajectory, optimized via adjoint state iteration based on Pontryagin's Maximum Principle (PMP) across the entire trajectory. This achieves effective training-fr
+  [ICLR 2026][Image Generation][Optimal Control] Reward-guided image editing is reformulated as a trajectory optimal control problem. The reverse process of diffusion/flow models is treated as a controllable trajectory, optimized via adjoint state iteration based on Pontryagin's Maximum Principle (PMP) across the entire trajectory. This achieves effective training-free reward-guided editing without reward hacking.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Optimal Control
-  - Reward-Guided
-  - training-free
-  - Adjoint State
-  - Pontryagin's Maximum Principle
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Optimal Control"
+  - "Reward-Guided"
+  - "training-free"
+  - "Adjoint State"
+  - "Pontryagin's Maximum Principle"
 date: 2026-05-08
-content_hash: 3d1e0e1f6ad4c3aa
+content_hash: 7cb2abeb04fdbaed
 ---
+
 # Training-Free Reward-Guided Image Editing via Trajectory Optimal Control
 
 **Conference**: ICLR 2026  
@@ -157,9 +158,9 @@ The method requires no parameter training and only optimizes control terms at in
 
 - [\[ICLR 2026\] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control](follow-your-shape_shape-aware_image_editing_via_trajectory-guided_region_control.md)
 - [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
+- [\[ICLR 2026\] Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View](shortcut_diffusion_training_with_cumulative_consistency_loss_an_optimal_control_.md)
 - [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
-- [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
-- [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](../../ICML2026/image_generation/pareto-guided_optimal_transport_for_multi-reward_alignment.md)
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval
 description: >-
-  [ACL 2026][Audio & Speech][CLAP] This paper proposes OEA (Omni-Embed-Audio), which leverages multimodal LLMs as a unified encoder to construct a retrieval-oriented audio-text embedding space. It introduces the User-Intent Queries (UIQ) benchmark and hard negative discrimination metrics (HNSR/TFR). The study finds that the LLM backbone significantly ou
+  [ACL 2026][Audio & Speech][Audio-text retrieval] This paper proposes OEA (Omni-Embed-Audio), which leverages multimodal LLMs as a unified encoder to construct a retrieval-oriented audio-text embedding space. It introduces the User-Intent Queries (UIQ) benchmark and hard negative discrimination metrics (HNSR/TFR). The study finds that the LLM backbone significantly outperforms the CLAP series in T2T retrieval (+22%) and hard negative discrimination (+4.3%p HNSR@10).
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - CLAP
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Audio-text retrieval"
+  - "CLAP"
+  - "Multimodal LLM"
+  - "User-Intent Queries"
+  - "Hard negative discrimination"
 date: 2026-05-08
-content_hash: 00eb8c412048ce99
+content_hash: 22d6264baa404b2b
 ---
+
 # Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval
 
 **Conference**: ACL 2026  
@@ -140,10 +145,10 @@ The model uses a symmetric InfoNCE contrastive loss with a temperature $\tau = 0
 ## Related Papers
 
 - [\[ACL 2026\] Protecting Bystander Privacy via Selective Hearing in Audio LLMs](protecting_bystander_privacy_via_selective_hearing_in_audio_llms.md)
+- [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](../../ICLR2026/audio_speech/beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
 - [\[CVPR 2026\] OmniRet: Efficient and High-Fidelity Omni Modality Retrieval](../../CVPR2026/audio_speech/omniret_efficient_and_high-fidelity_omni_modality_retrieval.md)
 - [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
 - [\[ACL 2026\] Music Audio-Visual Question Answering Requires Specialized Multimodal Designs](music_audio-visual_question_answering_requires_specialized_multimodal_designs.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](../../NeurIPS2025/audio_speech/node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
 
 </div>
 

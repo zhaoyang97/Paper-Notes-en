@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Sound Separation] MARS-Sep reformulates query-conditioned sound separation as a reinforcement learning problem. It performs stochastic decision-making in the time-frequency domain via a factorized Beta mask policy and utilizes a progressively aligned multimodal encoder to provide semantic reward signals, achieving simultaneous improveme
+  [ICLR 2026][Reinforcement Learning][Sound Separation] MARS-Sep reformulates query-conditioned sound separation as a reinforcement learning problem. It performs stochastic decision-making in the time-frequency domain via a factorized Beta mask policy and utilizes a progressively aligned multimodal encoder to provide semantic reward signals, achieving simultaneous improvements in signal fidelity and semantic consistency.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Sound Separation
-  - Multimodal Alignment
-  - Beta Policy
-  - Preference Reward
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Sound Separation"
+  - "Multimodal Alignment"
+  - "Beta Policy"
+  - "Preference Reward"
 date: 2026-05-08
-content_hash: bd2d427e37bb85a3
+content_hash: 8c1ef9b9e7bd96a3
 ---
+
 # MARS-Sep: Multimodal-Aligned Reinforced Sound Separation
 
 **Conference**: ICLR 2026  
@@ -155,9 +156,9 @@ The total training loss is $\mathcal{L}_{\text{RL}}(\theta) = -\mathcal{J}_{\tex
 
 - [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](self-aligned_reward_towards_effective_and_efficient_reasoners.md)
 - [\[ICLR 2026\] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling](rulereasoner_reinforced_rule-based_reasoning_via_domain-aware_dynamic_sampling.md)
-- [\[ICLR 2026\] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](multimodal_llm-assisted_evolutionary_search_for_programmatic_control_policies.md)
-- [\[ICLR 2026\] UME-R1: Exploring Reasoning-Driven Generative Multimodal Embeddings](ume-r1_exploring_reasoning-driven_generative_multimodal_embeddings.md)
 - [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
+- [\[ICML 2026\] Reinforced Sequential Monte Carlo for Amortised Sampling](../../ICML2026/reinforcement_learning/reinforced_sequential_monte_carlo_for_amortised_sampling.md)
+- [\[ICLR 2026\] LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection](laddersym_a_multimodal_interleaved_transformer_for_music_practice_error_detectio.md)
 
 </div>
 

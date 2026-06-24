@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Parsimonious Learning-Augmented Online Metric Matching
 description: >-
-  [ICML 2026][learning_theory][Follow-the-Prediction] This paper addresses an open problem posed by Im et al. (2022) by bringing "action-predicted" Online Metric Matching (OMM) into a "parsimonious prediction" framework—where predictions are expensive and provided only every $k$ steps. Using the Follow-the-Prediction (FtP) framework combined with a meta-algorithm that aut
+  [ICML 2026][Online Optimization][Parsimonious Prediction] This paper addresses an open problem posed by Im et al. (2022) by bringing "action-predicted" Online Metric Matching (OMM) into a "parsimonious prediction" framework—where predictions are expensive and provided only every $k$ steps. Using the Follow-the-Prediction (FtP) framework combined with a meta-algorithm that automatically fills in "virtual predictions," the authors provide deterministic and randomized competitiv…
 tags:
-  - ICML 2026
-  - learning_theory
-  - Follow-the-Prediction
+  - "ICML 2026"
+  - "Online Optimization"
+  - "Learning-Augmented Algorithms"
+  - "Online Metric Matching"
+  - "Parsimonious Prediction"
+  - "Follow-the-Prediction"
+  - "Competitive Ratio"
 date: 2026-05-08
-content_hash: 9ec9f3f2796f2492
+content_hash: 5525d23514f59fbf
 ---
+
 # Parsimonious Learning-Augmented Online Metric Matching
 
 **Conference**: ICML 2026  
@@ -134,8 +139,8 @@ Note: All instances fix $n=100$ servers and $100$ requests. Results are averages
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](../../NeurIPS2025/learning_theory/learning-augmented_online_bipartite_fractional_matching.md)
 - [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
 - [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](../../ICLR2026/learning_theory/better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
-- [\[ICML 2026\] Realizable Bayes-Consistency for General Metric Losses](realizable_bayes-consistency_for_general_metric_losses.md)
-- [\[AAAI 2026\] A Switching Framework for Online Interval Scheduling with Predictions](../../AAAI2026/learning_theory/a_switching_framework_for_online_interval_scheduling_with_pr.md)
+- [\[ICLR 2026\] Online Rounding and Learning Augmented Algorithms for Facility Location](../../ICLR2026/learning_theory/online_rounding_and_learning_augmented_algorithms_for_facility_location.md)
+- [\[ICML 2025\] Near-Optimal Consistency-Robustness Trade-Offs for Learning-Augmented Online Knapsack Problems](../../ICML2025/learning_theory/near-optimal_consistency-robustness_trade-offs_for_learning-augmented_online_kna.md)
 
 </div>
 

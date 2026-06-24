@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization
 description: >-
-  [ICLR 2026][Model Compression][DPO] The MetaAPO framework is proposed, using a lightweight meta-learner (two-layer MLP) to dynamically estimate the alignment gap between offline and online data. It guides "which prompts require online sampling" (addressing distribution mismatch) and adaptively weights offline/online data during training (optimizing learn
+  [ICLR 2026][Model Compression][Preference Optimization] The MetaAPO framework is proposed, using a lightweight meta-learner (two-layer MLP) to dynamically estimate the alignment gap between offline and online data. It guides "which prompts require online sampling" (addressing distribution mismatch) and adaptively weights offline/online data during training (optimizing learning efficiency). MetaAPO surpasses baselines like DPO and Online DPO on AlpacaEval 2, Arena-Hard…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - DPO
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Preference Optimization"
+  - "Online Sampling"
+  - "Meta-Learning Weights"
+  - "Distribution Mismatch"
+  - "DPO"
 date: 2026-05-08
-content_hash: 37ecbca41e88eb56
+content_hash: 35b8bf5240120950
 ---
+
 # Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -128,15 +133,16 @@ Ours consistently outperforms offline, online, and hybrid baselines across all t
 - Value: ⭐⭐⭐⭐ Practical solution for balancing offline/online data in real-world alignment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] Bridging the Gap Between Promise and Performance for Microscaling FP4 Quantization](bridging_the_gap_between_promise_and_performance_for_microscaling_fp4_quantizati.md)
 - [\[AAAI 2026\] MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](../../AAAI2026/model_compression/metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)
 - [\[ACL 2026\] Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](../../ACL2026/model_compression/alignment_tuning_for_large_language_models_a_data-centric_lens_on_alignment_data.md)
 - [\[ICML 2025\] ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization](../../ICML2025/model_compression/confpo_exploiting_policy_model_confidence_for_critical_token_selection_in_prefer.md)
-- [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
 
 </div>
 

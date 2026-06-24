@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper provides the first rigorous analysis for the "offline imitation + online preference fine-tuning" paradigm, which is widely used in RLHF and robotics but lacks theoretical support. It proposes the BRIDGE algorithm, which first constructs a Hellinger confidence ball in the trajectory distribution space with a
+  [ICLR 2026][Reinforcement Learning][Behavioral Cloning] This paper provides the first rigorous analysis for the "offline imitation + online preference fine-tuning" paradigm, which is widely used in RLHF and robotics but lacks theoretical support. It proposes the BRIDGE algorithm, which first constructs a Hellinger confidence ball in the trajectory distribution space with a radius shrinking at $O(1/\sqrt{n})$ using expert demonstrations, then constrains online preference explo…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Behavioral Cloning"
+  - "Preference Reinforcement Learning"
+  - "Offline-to-Online"
+  - "Regret Bound"
+  - "Hellinger Confidence Sets"
 date: 2026-05-08
-content_hash: 82e3f7e4707a5338
+content_hash: c5e1258e9d5e9694
 ---
+
 # Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -143,7 +149,7 @@ Results are averages across 20 random seeds with 95% confidence intervals. Figur
 - [\[ICLR 2026\] SRFT: A Single-Stage Method with Supervised and Reinforcement Fine-Tuning for Reasoning](srft_a_single-stage_method_with_supervised_and_reinforcement_fine-tuning_for_rea.md)
 - [\[ICLR 2026\] All Roads Lead to Likelihood: The Value of Reinforcement Learning in Fine-Tuning](all_roads_lead_to_likelihood_the_value_of_reinforcement_learning_in_fine-tuning.md)
 - [\[ICLR 2026\] On-Policy RL Meets Off-Policy Experts: Harmonizing Supervised Fine-Tuning and Reinforcement Learning via Dynamic Weighting](on-policy_rl_meets_off-policy_experts_harmonizing_supervised_fine-tuning_and_rei.md)
-- [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
+- [\[ICLR 2026\] EXPO: Stable Reinforcement Learning with Expressive Policies](expo_stable_reinforcement_learning_with_expressive_policies.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training
 description: >-
-  [CVPR 2026][Image Generation][DiT/Flux] DiT360 does not focus on model architecture but instead uses "perspective + panoramic hybrid training" to address the scarcity of high-quality real-world panoramic data. It injects cross-domain knowledge via perspective guidance and panoramic refinement at the image level (pre-VAE) and enforces geometric consistency vi
+  [CVPR 2026][Image Generation][Panorama Generation] DiT360 does not focus on model architecture but instead uses "perspective + panoramic hybrid training" to address the scarcity of high-quality real-world panoramic data. It injects cross-domain knowledge via perspective guidance and panoramic refinement at the image level (pre-VAE) and enforces geometric consistency via circular padding, yaw loss, and cube loss at the token level (post-VAE). It achieves state-of-the-art perfo…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DiT/Flux
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Panorama Generation"
+  - "DiT/Flux"
+  - "Hybrid Training"
+  - "Equirectangular Projection (ERP)"
+  - "Cubemap Supervision"
 date: 2026-05-08
-content_hash: 27b60d3e505e020b
+content_hash: 677ee2152ea114a3
 ---
+
 # DiT360: High-Fidelity Panoramic Image Generation via Hybrid Training
 
 **Conference**: CVPR 2026  
@@ -154,15 +159,16 @@ Impact of modules added to the Flux+LoRA baseline:
 - Value: ⭐⭐⭐⭐ Strong baseline for 3D scene generation with practical in/outpainting support.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Flash-DMD: Towards High-Fidelity Few-Step Image Generation with Efficient Distillation and Joint Reinforcement Learning](flash-dmd_towards_high-fidelity_few-step_image_generation_with_efficient_distill.md)
 - [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
 - [\[CVPR 2026\] FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation](fontcrafter_high-fidelity_element-driven_artistic_font_creation_with_visual_in-c.md)
 - [\[CVPR 2026\] FastHybrid: Accelerating Hybrid Autoregressive Image Generation with Lookahead and Guided Decoding](fasthybrid_accelerating_hybrid_autoregressive_image_generation_with_lookahead_an.md)
 - [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
-- [\[CVPR 2026\] MatPedia: A Universal Generative Foundation for High-Fidelity Material Synthesis](matpedia_a_universal_generative_foundation_for_high-fidelity_material_synthesis.md)
 
 </div>
 

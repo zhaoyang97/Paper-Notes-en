@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] TELS performs the entire policy optimization of offline RL within a compact latent space constrained by "time-reversal symmetry" (T-symmetry) for state stitching. By learning out-of-distribution (OOD) friendly latent representations through a T-symmetry enforced inverse dynamics model (TS-IDM), it completely bypasses t
+  [ICLR 2026][Reinforcement Learning][Offline RL] TELS performs the entire policy optimization of offline RL within a compact latent space constrained by "time-reversal symmetry" (T-symmetry) for state stitching. By learning out-of-distribution (OOD) friendly latent representations through a T-symmetry enforced inverse dynamics model (TS-IDM), it completely bypasses traditional action-level conservative constraints. It significantly outperforms methods like TSRL, POR…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Sample Efficiency"
+  - "Time-Reversal Symmetry"
+  - "State Stitching"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: c3ce980ce7693606
+content_hash: c46e2eba321a1613
 ---
+
 # Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching
 
 **Conference**: ICLR 2026  
@@ -151,9 +157,9 @@ Stepwise addition of TS-IDM sub-modules (10k dataset, me tasks):
 
 - [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
+- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
 - [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
-- [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
 
 </div>
 

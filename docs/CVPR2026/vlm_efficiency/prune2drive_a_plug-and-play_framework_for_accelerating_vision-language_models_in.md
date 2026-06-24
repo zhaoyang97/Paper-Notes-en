@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The first plug-and-play token pruning framework dedicated to multi-view autonomous driving VLMs. By utilizing T-FPS (Token-level Farthest Point Sampling) to maintain semantic and spatial diversity, combined with view-adaptive pruning rates to optimize token budgets across cameras, it achieves 6.40× prefill acceleration
+  [CVPR 2026][Multimodal Efficiency][Multi-view VLM] The first plug-and-play token pruning framework dedicated to multi-view autonomous driving VLMs. By utilizing T-FPS (Token-level Farthest Point Sampling) to maintain semantic and spatial diversity, combined with view-adaptive pruning rates to optimize token budgets across cameras, it achieves 6.40× prefill acceleration on DriveLM with only 10% tokens remaining and a performance drop of just 3%.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Multi-view VLM"
+  - "Visual Token Pruning"
+  - "Farthest Point Sampling"
+  - "View-Adaptive"
+  - "Autonomous Driving Acceleration"
 date: 2026-05-08
-content_hash: abec1ff7eaea61b6
+content_hash: 9f1a41b0a50e709e
 ---
+
 # Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ Prune2Drive acts as an orthogonal plug-and-play module for these models without 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness](seeing_clearly_reasoning_confidently_plug-and-play_remedies_for_vision_language_.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](../../AAAI2026/multimodal_vlm/llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
-- [\[CVPR 2026\] TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration](treeteaming_autonomous_red-teaming_of_vision-language_models_via_hierarchical_s.md)
-- [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](../../ICCV2025/multimodal_vlm/fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
+- [\[AAAI 2026\] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](../../AAAI2026/vlm_efficiency/global_compression_commander_plug-and-play_inference_acceler.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[CVPR 2026\] LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
 
 </div>
 

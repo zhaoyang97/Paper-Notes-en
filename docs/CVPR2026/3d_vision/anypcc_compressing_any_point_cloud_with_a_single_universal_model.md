@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][3D Vision][point cloud compression] AnyPcc is proposed to achieve SOTA point cloud geometry compression across 15 diverse datasets using a single model. By employing a Universal Context Model (integrating spatial and channel-wise dual-granularity priors) and an Instance-Adaptive Fine-Tuning (IAFT) strategy, it achieves ~12% bitrate gain over G-PCC v23.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - point cloud compression
-  - universal context model
-  - instance-adaptive fine-tuning
-  - occupancy code
-  - lossless/lossy compression
+  - "CVPR 2026"
+  - "3D Vision"
+  - "point cloud compression"
+  - "universal context model"
+  - "instance-adaptive fine-tuning"
+  - "occupancy code"
+  - "lossless/lossy compression"
 date: 2026-05-08
-content_hash: 46a76f92983fa148
+content_hash: 2b7bb7a5d24f9675
 ---
+
 # AnyPcc: Compressing Any Point Cloud with a Single Universal Model
 
 **Conference**: CVPR 2026  
@@ -161,11 +162,11 @@ Key Finding: CG alone (as in RENO) is nearly ineffective (+0.13%); it must colla
 
 ## Related Papers
 
+- [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] HumanNOVA: Photorealistic, Universal and Rapid 3D Human Avatar Modeling from a Single Image](humannova_photorealistic_universal_and_rapid_3d_human_avatar_modeling_from_a_sin.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
+- [\[ECCV 2024\] SegPoint: Segment Any Point Cloud via Large Language Model](../../ECCV2024/3d_vision/segpoint_segment_any_point_cloud_via_large_language_model.md)
+- [\[CVPR 2026\] SuP: Sub-cloud Driven Point Cloud Registration](sup_sub-cloud_driven_point_cloud_registration.md)
 - [\[CVPR 2026\] Any Resolution Any Geometry: From Multi-View To Multi-Patch](any_resolution_any_geometry_from_multi-view_to_multi-patch.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
 
 </div>
 

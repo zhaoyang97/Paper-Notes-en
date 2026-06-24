@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][VAR] Transferring the "Visual Autoregressive (VAR)" paradigm from the image domain to trajectory modeling in offline RL: a coarse-grained global trajectory sketch is generated first, followed by layer-wise autoregressive refinement to fine granularity. This approach simultaneously ensures global coherence and local controll
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] Transferring the "Visual Autoregressive (VAR)" paradigm from the image domain to trajectory modeling in offline RL: a coarse-grained global trajectory sketch is generated first, followed by layer-wise autoregressive refinement to fine granularity. This approach simultaneously ensures global coherence and local controllability in long-horizon sparse-reward tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - VAR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Multi-scale Autoregressive"
+  - "Trajectory Generation"
+  - "VAR"
+  - "Long-horizon Sparse Reward"
 date: 2026-05-08
-content_hash: 04a13245977eb2ed
+content_hash: 25df06592ed3c189
 ---
+
 # MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -123,16 +128,14 @@ Ablations on Adroit Pen-Expert / Door-Cloned (Ours represents full MAGE):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
 - [\[ICLR 2026\] MOBODY: Model-Based Off-Dynamics Offline Reinforcement Learning](mobody_model-based_off-dynamics_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Belief-Based Offline Reinforcement Learning for Delay-Robust Policy Optimization](belief-based_offline_reinforcement_learning_for_delay-robust_policy_optimization.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
-- [\[ICML 2026\] Vulnerable Agent Identification in Large-Scale Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/vulnerable_agent_identification_in_large-scale_multi-agent_reinforcement_learnin.md)
 
 </div>
 

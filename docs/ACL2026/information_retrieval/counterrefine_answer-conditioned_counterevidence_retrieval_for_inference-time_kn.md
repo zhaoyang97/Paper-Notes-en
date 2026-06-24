@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper proposes CounterRefine, a lightweight inference-time repair layer: first, a standard RAG generates a preliminary answer; then, answer-conditioned counterevidence retrieval gathers supporting/refuting evidence; finally, a constrained KEEP/REVISE decision and deterministic verification repair incorrect answers
+  [ACL 2026][Information Retrieval & RAG][Inference-time repair] This paper proposes CounterRefine, a lightweight inference-time repair layer: first, a standard RAG generates a preliminary answer; then, answer-conditioned counterevidence retrieval gathers supporting/refuting evidence; finally, a constrained KEEP/REVISE decision and deterministic verification repair incorrect answers. It improves the accuracy of GPT-5 on SimpleQA from 67.3% to 73.1%.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Inference-time repair"
+  - "counterevidence retrieval"
+  - "answer conditioning"
+  - "factual QA"
+  - "RAG enhancement"
 date: 2026-05-08
-content_hash: 89d66c7f220471ed
+content_hash: d6d814240cd5a9a7
 ---
+
 # CounterRefine: Answer-Conditioned Counterevidence Retrieval for Inference-Time Knowledge Repair in Factual Question Answering
 
 **Conference**: ACL 2026  
@@ -131,9 +137,9 @@ No training required. CounterRefine is a pure inference-time pipeline, utilizing
 
 - [\[ACL 2026\] DQA: Diagnostic Question Answering for IT Support](dqa_diagnostic_question_answering_for_it_support.md)
 - [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
-- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](../../AAAI2026/information_retrieval/towards_inference-time_scaling_for_continuous_space_reasoning.md)
 - [\[ACL 2026\] FinRAG-12B: A Production-Validated Recipe for Grounded Question Answering in Banking](finrag-12b_a_production-validated_recipe_for_grounded_question_answering_in_bank.md)
 - [\[ICML 2026\] REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment](../../ICML2026/information_retrieval/real_resolving_knowledge_conflicts_in_knowledge-intensive_visual_question_answer.md)
+- [\[AAAI 2026\] Towards Inference-Time Scaling for Continuous Space Reasoning](../../AAAI2026/information_retrieval/towards_inference-time_scaling_for_continuous_space_reasoning.md)
 
 </div>
 

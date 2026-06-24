@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive gradient descent on Riemannian manifolds and its applications to Gaussian variational inference
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes RAdaGD—a family of Riemannian adaptive gradient descent methods that do not require line searches. By automatically adjusting step sizes through online estimation of local smoothness constants, RAdaGD achieves a non-ergodic convergence rate of $f(x_k)-f(x^\star)\le O(1/k)$ under the weak assumptions
+  [ICLR2026][Optimization][Riemannian optimization] This paper proposes RAdaGD—a family of Riemannian adaptive gradient descent methods that do not require line searches. By automatically adjusting step sizes through online estimation of local smoothness constants, RAdaGD achieves a non-ergodic convergence rate of $f(x_k)-f(x^\star)\le O(1/k)$ under the weak assumptions of "local geodesic smoothness + generalized geodesic convexity." Based on this…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Riemannian optimization"
+  - "adaptive step size"
+  - "convergence rate"
+  - "Gaussian variational inference"
+  - "Bures-Wasserstein geometry"
 date: 2026-05-08
-content_hash: 1e9d5f789936b296
+content_hash: d75c25e72648ae4a
 ---
+
 # Adaptive gradient descent on Riemannian manifolds and its applications to Gaussian variational inference
 
 **Conference**: ICLR2026  

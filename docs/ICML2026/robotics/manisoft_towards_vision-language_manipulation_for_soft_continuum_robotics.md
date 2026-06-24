@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics
 description: >-
-  [ICML 2026][Robotics & Embodied AI][vision-language manipulation] This work addresses the gap where vision-language manipulation research primarily covers rigid arms and ignores soft continuum arms. ManiSoft benchmark is constructed using a hybrid simulator coupling "Cosserat rod soft dynamics + MuJoCo rigid body contact + elastic force constraints." It defines 4 categories of tasks
+  [ICML 2026][Robotics][Soft robot] This work addresses the gap where vision-language manipulation research primarily covers rigid arms and ignores soft continuum arms. ManiSoft benchmark is constructed using a hybrid simulator coupling "Cosserat rod soft dynamics + MuJoCo rigid body contact + elastic force constraints." It defines 4 categories of tasks reflecting soft arm control difficulties and automatically generates 6,300 scenes and expert trajectories via a "high-level ru…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - vision-language manipulation
-  - benchmark
+  - "ICML 2026"
+  - "Robotics"
+  - "Soft robot"
+  - "vision-language manipulation"
+  - "benchmark"
+  - "hybrid simulation"
+  - "hierarchical expert trajectories"
 date: 2026-05-08
-content_hash: 1e76efe4450a7f68
+content_hash: 7d28b43e456d22ea
 ---
+
 # ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics
 
 **Conference**: ICML 2026  
@@ -153,9 +157,9 @@ Ablation of low-level RL actuator stability reward $R_s$ (Control stability = va
 
 - [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 - [\[CVPR 2025\] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics](../../CVPR2025/robotics/sapave_towards_active_perception_and_manipulation_in_vision-language-action_mode.md)
-- [\[NeurIPS 2025\] Bridging Embodiment Gaps: Deploying Vision-Language-Action Models on Soft Robots](../../NeurIPS2025/robotics/bridging_embodiment_gaps_deploying_vision-language-action_models_on_soft_robots.md)
+- [\[ICLR 2026\] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](../../ICLR2026/robotics/x-vla_soft-prompted_transformer_as_scalable_cross-embodiment_vision-language-act.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
 - [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
-- [\[ICLR 2026\] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation](../../ICLR2026/robotics/momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step.md)
 
 </div>
 

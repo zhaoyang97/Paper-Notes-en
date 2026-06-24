@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] (U)NFV: (Un)supervised Neural Finite Volume Methods for Solving Hyperbolic PDEs
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This work replaces the "hand-designed numerical flux" in the classic Finite Volume (FV) method with a lightweight CNN. By preserving the conservative update structure of FV, it learns flux approximations across larger spatio-temporal stencils. It supports both supervised training (NFV) and unsupervised training via wea
+  [ICLR 2026][Physics & Scientific Computing][Hyperbolic conservation laws] This work replaces the "hand-designed numerical flux" in the classic Finite Volume (FV) method with a lightweight CNN. By preserving the conservative update structure of FV, it learns flux approximations across larger spatio-temporal stencils. It supports both supervised training (NFV) and unsupervised training via weak-form residuals (UNFV). On 1D hyperbolic conservation laws…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Hyperbolic conservation laws"
+  - "Finite Volume Method"
+  - "Neural Operators"
+  - "Weak-form residual"
+  - "Traffic flow modeling"
 date: 2026-05-08
-content_hash: 895450357dbefb80
+content_hash: e5ed83dcec0f209d
 ---
+
 # (U)NFV: (Un)supervised Neural Finite Volume Methods for Solving Hyperbolic PDEs
 
 **Conference**: ICLR 2026  
@@ -143,9 +149,9 @@ $\text{NFV}^5_4$ achieves up to a 10x (one order of magnitude) error reduction c
 
 - [\[ICLR 2026\] OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs](orthosolver_a_neural_proper_orthogonal_decomposition_solver_for_pdes.md)
 - [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
-- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
 - [\[ICML 2026\] TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs](../../ICML2026/physics/tinns_time-induced_neural_networks_for_solving_time-dependent_pdes.md)
-- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
+- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes a synthetic-organic supervision pipeline to transform raw judicial rulings into reasoning instruction tuning data. It achieves high-fidelity simulation of individual judges' reasoning styles through a "Chain-of-LoRA" strategy (CLM → Instruction Tuning). In Hebrew low-resource scenarios, the generate
+  [ACL 2026 Findings][Model Compression][LLM Personalization] This paper proposes a synthetic-organic supervision pipeline to transform raw judicial rulings into reasoning instruction tuning data. It achieves high-fidelity simulation of individual judges' reasoning styles through a "Chain-of-LoRA" strategy (CLM → Instruction Tuning). In Hebrew low-resource scenarios, the generated content is indistinguishable from real judicial writing.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "LLM Personalization"
+  - "Judicial Reasoning"
+  - "Low-resource language"
+  - "PEFT"
+  - "Synthetic instruction data"
 date: 2026-05-08
-content_hash: 97d2f9a89b029a97
+content_hash: a206e4f0dc44939c
 ---
+
 # JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew
 
 **Conference**: ACL 2026 Findings  
@@ -142,7 +148,7 @@ Gemma 3 (4B) is used as the base with QLoRA configuration (rank=8). Each judge h
 - [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](../../AAAI2026/model_compression/efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
 - [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](../../ICLR2026/model_compression/landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
 - [\[ACL 2026\] Training-Free Test-Time Contrastive Learning for Large Language Models](training-free_test-time_contrastive_learning_for_large_language_models.md)
-- [\[ACL 2026\] TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)
+- [\[ACL 2026\] TLoRA: Task-aware Low Rank Adaptation of Large Language Models](tlora_task-aware_low_rank_adaptation_of_large_language_models.md)
 
 </div>
 

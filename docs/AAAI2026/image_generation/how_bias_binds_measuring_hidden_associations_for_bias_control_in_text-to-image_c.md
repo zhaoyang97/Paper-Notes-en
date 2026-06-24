@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Bias Binds: Measuring Hidden Associations for Bias Control in Text-to-Image Compositions
 description: >-
-  [AAAI 2026][Image Generation][Text-to-image generation] This work is the first to investigate **compositional semantic binding bias** in text-to-image generation. It proposes the Bias Adherence Score (BA-Score) to quanti…
+  [AAAI 2026][Image Generation][Text-to-image generation] This work is the first to investigate **compositional semantic binding bias** in text-to-image generation. It proposes the Bias Adherence Score (BA-Score) to quantify how object–attribute binding activates bias, and introduces a training-free Context-Bias Control (CBC) framework that achieves over 10% debiasing improvement in compositional generation via token embedding decoupling and residual injection.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "compositional generation"
   - "fairness"
 date: 2026-05-08
-content_hash: c3bf187b8a579c32
+content_hash: 7d085426abc2a04b
 ---
 
 # How Bias Binds: Measuring Hidden Associations for Bias Control in Text-to-Image Compositions
@@ -175,10 +175,10 @@ CBC is a **completely training-free** framework. It uses pretrained Stable Diffu
 ## Related Papers
 
 - [\[NeurIPS 2025\] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models](../../NeurIPS2025/image_generation/fairimagen_post-processing_for_bias_mitigation_in_text-to-image_models.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](../../CVPR2026/image_generation/bias_reward_models_t2i.md)
+- [\[CVPR 2025\] Bias for Action: Video Implicit Neural Representations with Bias Modulation](../../CVPR2025/image_generation/bias_for_action_video_implicit_neural_representations_with_bias_modulation.md)
 - [\[CVPR 2026\] Elucidating the SNR-t Bias of Diffusion Probabilistic Models](../../CVPR2026/image_generation/dcw_snr_t_bias_diffusion.md)
-- [\[AAAI 2026\] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation](right_looks_wrong_reasons_compositional_fidelity_in_text-to-image_generation.md)
-- [\[ICLR 2026\] GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models](../../ICLR2026/image_generation/geodiv_framework_for_measuring_geographical_diversity_in_text-to-image_models.md)
+- [\[CVPR 2025\] Implicit Bias Injection Attacks against Text-to-Image Diffusion Models](../../CVPR2025/image_generation/implicit_bias_injection_attacks_against_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] MixFlow Training: Alleviating Exposure Bias with Slowed Interpolation Mixture](../../CVPR2026/image_generation/mixflow_training_alleviating_exposure_bias_with_slowed_interpolation_mixture.md)
 
 </div>
 

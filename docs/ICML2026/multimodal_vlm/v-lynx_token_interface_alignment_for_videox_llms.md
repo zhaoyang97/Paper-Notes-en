@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] V-LynX: Token Interface Alignment for VideoX LLMs
 description: >-
-  [ICML 2026][Multimodal VLM][Video LLM] V-LynX discovers the **continuous token interface (manifold)** within Video LLMs—a geometric prior carved by the visual encoder and projection layer that is compatible with the LLM's internal operation space. By utilizing lightweight LoRA (68.7M parameters) and **unpaired unimodal data**, V-LynX efficiently integrates
+  [ICML 2026][Multimodal VLM][Video LLM] V-LynX discovers the **continuous token interface (manifold)** within Video LLMs—a geometric prior carved by the visual encoder and projection layer that is compatible with the LLM's internal operation space. By utilizing lightweight LoRA (68.7M parameters) and **unpaired unimodal data**, V-LynX efficiently integrates new modalities (audio, 3D, high-frame-rate video) into pre-trained Video LLMs, achieving a CIDEr of 145.7 vs. PAVE's 134.…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - Video LLM
-  - Token Interface
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Video LLM"
+  - "Modality Adaptation"
+  - "Lightweight Adaptation"
+  - "Token Interface"
+  - "Multimodal Alignment"
 date: 2026-05-08
-content_hash: b4526faee8c6e2f4
+content_hash: cedafbf4600404b5
 ---
+
 # V-LynX: Token Interface Alignment for VideoX LLMs
 
 **Conference**: ICML 2026  
@@ -139,11 +143,11 @@ $\mathcal{L}_{V\text{-LynX}} = \mathcal{L}_{\text{attn}} + \beta \cdot \mathcal{
 
 ## Related Papers
 
-- [\[ICML 2026\] RESTORE: 通过矫正失真改进视觉 Token 缩减以提升 MLLM 推理效率](improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
-- [\[ICML 2026\] Deep Pre-Alignment for VLMs](deep_pre-alignment_for_vlms.md)
-- [\[ICML 2026\] DenseMLLM: Standard Multimodal LLMs for Dense Prediction](densemllm_standard_multimodal_llms_for_dense_prediction.md)
+- [\[ICML 2026\] RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency](improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](../../CVPR2026/multimodal_vlm/on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
+- [\[ICML 2026\] Deep Pre-Alignment for VLMs](deep_pre-alignment_for_vlms.md)
 - [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](../../ICLR2026/multimodal_vlm/sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
+- [\[ICML 2026\] DenseMLLM: Standard Multimodal LLMs for Dense Prediction](densemllm_standard_multimodal_llms_for_dense_prediction.md)
 
 </div>
 

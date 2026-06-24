@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Think Then Embed: Generative Context Improves Multimodal Embedding
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Think-Then-Embed] To address the failure of using Multimodal Large Language Models (MLLMs) directly as encoders under complex instructions, this work proposes the Think-Then-Embed (TTE) framework. It first employs a reasoner to generate an "Embedding-Centric Reasoning" (ECR) trajectory, and then utilizes an embedder to produce vectors c
+  [ICLR 2026][Information Retrieval & RAG][Universal Multimodal Embedding] To address the failure of using Multimodal Large Language Models (MLLMs) directly as encoders under complex instructions, this work proposes the Think-Then-Embed (TTE) framework. It first employs a reasoner to generate an "Embedding-Centric Reasoning" (ECR) trajectory, and then utilizes an embedder to produce vectors conditioned on both the original input and this reasoning trajectory. TTE achieves SOTA…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Think-Then-Embed
-  - MMEB
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Universal Multimodal Embedding"
+  - "Think-Then-Embed"
+  - "Chain-of-Thought"
+  - "Retrieval"
+  - "MMEB"
 date: 2026-05-08
-content_hash: 52713289cadf3262
+content_hash: 9686d82a16341c89
 ---
+
 # Think Then Embed: Generative Context Improves Multimodal Embedding
 
 **Conference**: ICLR 2026  
@@ -137,9 +141,9 @@ Embedding head ablation (MMEB-V1, TTE$_s$=68.7): Simple attention pooler only ac
 
 - [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](embedding-based_context-aware_reranker.md)
 - [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
+- [\[ICLR 2026\] Uncertainty-driven Embedding Convolution](uncertainty-driven_embedding_convolution.md)
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](../../ACL2026/information_retrieval/more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 - [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
-- [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
 
 </div>
 

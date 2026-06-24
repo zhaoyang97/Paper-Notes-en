@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Omni-Mol: Multitask Molecular Model for Any-to-Any Modalities
 description: >-
-  [NeurIPS2025][Computational Biology][Molecular large language model] This paper proposes Omni-Mol, a unified molecular understanding and generation framework built upon a multimodal LLM. Through a 1.42M-sample instructio…
+  [NeurIPS2025][Computational Biology][Molecular large language model] This paper proposes Omni-Mol, a unified molecular understanding and generation framework built upon a multimodal LLM. Through a 1.42M-sample instruction tuning dataset, Gradient Adaptive LoRA (GAL), and a Mixture-of-GAL-Experts (MoGE) architecture, Omni-Mol is the first single model to jointly learn 16 molecular tasks (Mol2Mol / Mol2Text / Mol2Num / Text2Mol), achieving SOTA on 13 tasks with only 2.2B parame…
 tags:
   - "NeurIPS2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "adaptive LoRA"
   - "unified instruction tuning"
 date: 2026-05-08
-content_hash: bf012bb35c1d9322
+content_hash: 111b034ceae85bc8
 ---
 
 # Omni-Mol: Multitask Molecular Model for Any-to-Any Modalities
@@ -170,9 +170,9 @@ Omni-Mol surpasses nearly all expert baselines with only 33% of their parameter 
 
 - [\[NeurIPS 2025\] Mol-LLaMA: Towards General Understanding of Molecules in Large Molecular Language Models](mol-llama_towards_general_understanding_of_molecules_in_large_molecular_language.md)
 - [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
-- [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
-- [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](edbench_large-scale_electron_density_data_for_molecular_modeling.md)
+- [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](../../ICML2026/computational_biology/evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
 - [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
+- [\[ICLR 2026\] PETRI: Learning Unified Cell Embeddings from Unpaired Modalities via Early-Fusion Joint Reconstruction](../../ICLR2026/computational_biology/petri_learning_unified_cell_embeddings_from_unpaired_modalities_via_early-fusion.md)
 
 </div>
 

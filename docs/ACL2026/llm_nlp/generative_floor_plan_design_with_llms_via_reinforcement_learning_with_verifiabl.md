@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards
 description: >-
-  [ACL 2026][LLM (Other)][GRPO] The authors converted 80,000 real apartment floor plans from RPLAN into JSON polygon formats and conducted two-stage training (SFT + GRPO with verifiable rewards: connectivity + total-area rewards, with overlap/parsing failures hard-zeroed) using Llama-3.3-70B-Instruct. This enables the LLM to output CAD-ready floor pl
+  [ACL 2026 Findings][LLM (Other)][floor plan generation] The authors converted 80,000 real apartment floor plans from RPLAN into JSON polygon formats and conducted two-stage training (SFT + GRPO with verifiable rewards: connectivity + total-area rewards, with overlap/parsing failures hard-zeroed) using Llama-3.3-70B-Instruct. This enables the LLM to output CAD-ready floor plans that satisfy both bubble diagram topological constraints and numerical area constraints. On the 8-ro…
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - GRPO
-  - verifiable rewards
-  - bubble diagram
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "floor plan generation"
+  - "JSON structured output"
+  - "GRPO"
+  - "verifiable rewards"
+  - "bubble diagram"
 date: 2026-05-08
-content_hash: dd8fbd02101b5e87
+content_hash: 5000276d686f62a2
 ---
+
 # Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards
 
 **Conference**: ACL 2026 Findings  
@@ -134,6 +137,7 @@ On average (5-8 rooms), RLVR reduced Overlap by 65% and Compatibility by 56% com
 - **Value**: ⭐⭐⭐⭐⭐ Provides a template for structured text generation + verifiable RL in professional domains (PCB, UI design, etc.).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -141,7 +145,7 @@ On average (5-8 rooms), RLVR reduced Overlap by 65% and Compatibility by 56% com
 - [\[ACL 2026\] Generative Interfaces for Language Models](generative_interfaces_for_language_models.md)
 - [\[ACL 2026\] Solver-Independent Automated Problem Formulation via LLMs for High-Cost Simulation-Driven Design](solver-independent_automated_problem_formulation_via_llms_for_high-cost_simulati.md)
 - [\[ICML 2026\] T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning](../../ICML2026/llm_nlp/t2po_uncertainty-guided_exploration_control_for_stable_multi-turn_agentic_reinfo.md)
-- [\[NeurIPS 2025\] Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options](../../NeurIPS2025/llm_nlp/preference-based_reinforcement_learning_beyond_pairwise_comparisons_benefits_of_.md)
+- [\[ICLR 2026\] Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning](../../ICLR2026/llm_nlp/achieving_olympia-level_geometry_large_language_model_agent_via_complexity_boost.md)
 - [\[ICLR 2026\] Rethinking Code Similarity for Automated Algorithm Design with LLMs](../../ICLR2026/llm_nlp/rethinking_code_similarity_for_automated_algorithm_design_with_llms.md)
 
 </div>

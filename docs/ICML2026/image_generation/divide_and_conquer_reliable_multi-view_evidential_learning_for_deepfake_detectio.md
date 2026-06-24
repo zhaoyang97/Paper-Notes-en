@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection
 description: >-
-  [ICML 2026][Image Generation][Paper Note] This paper proposes the DiCoME framework, which uses geometric orthogonal projection to force the decoupling of CLIP semantic features and forgery artifact features into two complementary "expert views." It then employs Dempster–Shafer evidence fusion to explicitly model "epistemic conflict" between these views to outp
+  [ICML 2026][Image Generation][Deepfake Detection] This paper proposes the DiCoME framework, which uses geometric orthogonal projection to force the decoupling of CLIP semantic features and forgery artifact features into two complementary "expert views." It then employs Dempster–Shafer evidence fusion to explicitly model "epistemic conflict" between these views to output reliable uncertainty. The framework improves average AUC from 0.923 to 0.939 (cross-dataset) and 0.976 (cro…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Deepfake Detection"
+  - "Multi-view Learning"
+  - "Evidential Learning"
+  - "Geometric Orthogonal Decomposition"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: d6746124cebc3db7
+content_hash: 498e663e2cc1af08
 ---
+
 # Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection
 
 **Conference**: ICML 2026  
@@ -133,8 +139,8 @@ Cross-dataset Avg is 1.6 points higher than the runner-up GenD; cross-manipulati
 - [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
 - [\[CVPR 2025\] Divide and Conquer: Heterogeneous Noise Integration for Diffusion-based Adversarial Purification](../../CVPR2025/image_generation/divide_and_conquer_heterogeneous_noise_integration_for_diffusion-based_adversari.md)
 - [\[ICML 2026\] ViewMask-1-to-3: Multi-View Consistent Image Generation via Multimodal Discrete Diffusion Models](viewmask-1-to-3_multi-view_consistent_image_generation_via_multimodal_discrete_d.md)
+- [\[ICML 2026\] Divide-and-Denoise: A Game-Theoretic Method for Fairly Composing Diffusion Models](divide-and-denoise_a_game-theoretic_method_for_fairly_composing_diffusion_models.md)
 - [\[ICML 2026\] Gradient Preconditioning for Efficient and Reliable Reward-Guided Generation](gradient_preconditioning_for_efficient_and_reliable_reward-guided_generation.md)
-- [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Zero-shot Learning] ZEUS is the first zero-shot clustering method for tabular data. By pretraining a Transformer encoder on synthetic datasets…
+  [NeurIPS 2025][LLM Pretraining][Zero-shot Learning] ZEUS is the first zero-shot clustering method for tabular data. By pretraining a Transformer encoder on synthetic datasets, it learns generalizable representations that enable high-quality clustering of new datasets in a single forward pass, requiring no additional training or hyperparameter tuning.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "Prior-data Fitted Networks"
 date: 2026-05-08
-content_hash: 7fa6b2bf9fa63330
+content_hash: d632645e7e0f222b
 ---
 
 # ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data
@@ -153,10 +153,10 @@ Data prior ablation:
 ## Related Papers
 
 - [\[NeurIPS 2025\] CLIMB: Class-Imbalanced Learning Benchmark on Tabular Data](climb_class-imbalanced_learning_benchmark_on_tabular_data.md)
-- [\[AAAI 2026\] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](../../AAAI2026/llm_pretraining/granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri.md)
-- [\[NeurIPS 2025\] Nemotron-CLIMB: CLustering-based Iterative Data Mixture Bootstrapping for Language Model Pre-training](nemotron-climb_clustering-based_iterative_data_mixture_bootstrapping_for_languag.md)
-- [\[NeurIPS 2025\] Enhancing Training Data Attribution with Representational Optimization](enhancing_training_data_attribution_with_representational_optimization.md)
-- [\[NeurIPS 2025\] Predict Training Data Quality via Its Geometry in Metric Space](predict_training_data_quality_via_its_geometry_in_metric_space.md)
+- [\[ACL 2025\] AutoDS: Autonomous Data Selection with Zero-shot Generative Classifiers for Mathematical Texts](../../ACL2025/llm_pretraining/autonomous_data_selection_with_zero-shot_generative_classifiers_for_mathematical.md)
+- [\[ECCV 2024\] Prompting Language-Informed Distribution for Compositional Zero-Shot Learning](../../ECCV2024/llm_pretraining/prompting_language-informed_distribution_for_compositional_zero-shot_learning.md)
+- [\[ACL 2025\] Unsupervised Morphological Tree Tokenizer](../../ACL2025/llm_pretraining/unsupervised_morphological_tree_tokenizer.md)
+- [\[CVPR 2026\] Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization](../../CVPR2026/llm_pretraining/unlocking_pre-trained_weights_parameter_inheritance_for_zero-shot_initialization.md)
 
 </div>
 

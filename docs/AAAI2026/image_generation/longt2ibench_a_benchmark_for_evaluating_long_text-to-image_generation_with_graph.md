@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations
 description: >-
-  [AAAI 2026][Image Generation][Text-to-Image] This paper proposes LongT2IBench, the first evaluation benchmark targeting long-text-to-image (T2I) alignment…
+  [AAAI 2026][Image Generation][Text-to-Image] This paper proposes LongT2IBench, the first evaluation benchmark targeting long-text-to-image (T2I) alignment, comprising 14K long-text–image pairs with graph-structured human annotations. It further introduces LongT2IExpert, an evaluator built by fine-tuning an MLLM via Hierarchical Alignment Chain-of-Thought (HA-CoT) instruction tuning, which jointly produces alignment scores and structured explanations.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Evaluation Benchmark"
   - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: 29b7e178d55e71d0
+content_hash: 34beeff669273329
 ---
 
 # LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations
@@ -185,10 +185,10 @@ Insight: Graph-structured representations provide a powerful tool for fine-grain
 ## Related Papers
 
 - [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](../../NeurIPS2025/image_generation/evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
+- [\[CVPR 2025\] From Words to Structured Visuals: A Benchmark and Framework for Text-to-Diagram Generation and Editing](../../CVPR2025/image_generation/from_words_to_structured_visuals_a_benchmark_and_framework_for_text-to-diagram_g.md)
 - [\[AAAI 2026\] T2I-RiskyPrompt: A Benchmark for Safety Evaluation, Attack, and Defense on Text-to-Image Model](t2i-riskyprompt_a_benchmark_for_safety_evaluation_attack_and_defense_on_text-to-.md)
+- [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](../../ICLR2026/image_generation/long-text-to-image_generation_via_compositional_prompt_decomposition.md)
 - [\[AAAI 2026\] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation](right_looks_wrong_reasons_compositional_fidelity_in_text-to-image_generation.md)
-- [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](../../CVPR2026/image_generation/multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
-- [\[AAAI 2026\] Unleashing the Potential of Large Language Models for Text-to-Image Generation through Autoregressive Representation Alignment](unleashing_the_potential_of_large_language_models_for_text-to-image_generation_t.md)
 
 </div>
 

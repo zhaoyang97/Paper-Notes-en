@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Deep-ICE: The First Globally Optimal Algorithm for Minimizing 0–1 Loss in Two-Layer ReLU and Maxout Networks
 description: >-
-  [ICLR 2026][Optimization & Theory][ReLU/Maxout] This paper employs constructive algorithmics (list homomorphism + fusion law) to derive **Deep-ICE**, the first globally optimal algorithm for Empirical Risk Minimization (ERM) of two-layer ReLU/Maxout networks under **0-1 loss**. With a worst-case complexity of approximately $O(N D^{K+1})$, it achieves superior traini
+  [ICLR 2026][Optimization][Global Optimal ERM] This paper employs constructive algorithmics (list homomorphism + fusion law) to derive **Deep-ICE**, the first globally optimal algorithm for Empirical Risk Minimization (ERM) of two-layer ReLU/Maxout networks under **0-1 loss**. With a worst-case complexity of approximately $O(N D^{K+1})$, it achieves superior training and test accuracy compared to SVMs and gradient-descent-trained MLPs across 11 UCI datasets using an accompanyi…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - ReLU/Maxout
-  - fusion law
+  - "ICLR 2026"
+  - "Optimization"
+  - "Global Optimal ERM"
+  - "0-1 Loss"
+  - "Two-layer Networks"
+  - "ReLU/Maxout"
+  - "Constructive Algorithmics"
+  - "fusion law"
+  - "Exact Training"
 date: 2026-05-08
-content_hash: f90951fc89cec198
+content_hash: 62314269966f5ab8
 ---
+
 # Deep-ICE: The First Globally Optimal Algorithm for Minimizing 0–1 Loss in Two-Layer ReLU and Maxout Networks
 
 **Conference**: ICLR 2026  
@@ -112,6 +118,7 @@ Gradient descent fails to utilize model capacity; the second hyperplane often fa
 - **Value**: ⭐⭐⭐⭐ Provides a "provably optimal" tool for high-stakes interpretability and challenges the "optimality entails overfitting" dogma.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -119,7 +126,7 @@ Gradient descent fails to utilize model capacity; the second hyperplane often fa
 - [\[ICML 2026\] Sharp Description of Local Minima in the Loss Landscape of High-Dimensional Two-Layer ReLU Networks](../../ICML2026/optimization/sharp_description_of_local_minima_in_the_loss_landscape_of_high-dimensional_two-.md)
 - [\[ICLR 2026\] Directional Convergence, Benign Overfitting of Gradient Descent in leaky ReLU two-layer Neural Networks](directional_convergence_benign_overfitting_of_gradient_descent_in_leaky_relu_two.md)
 - [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
-- [\[ICLR 2026\] A Memory-Efficient Hierarchical Algorithm for Large-scale Optimal Transport Problems](a_memory-efficient_hierarchical_algorithm_for_large-scale_optimal_transport_prob.md)
+- [\[ICLR 2026\] LDT: Layer-Decomposition Training Makes Networks More Generalizable](ldt_layer-decomposition_training_makes_networks_more_generalizable.md)
 - [\[ICLR 2026\] Globally Aware Optimization with Resurgence](globally_aware_optimization_with_resurgence.md)
 
 </div>

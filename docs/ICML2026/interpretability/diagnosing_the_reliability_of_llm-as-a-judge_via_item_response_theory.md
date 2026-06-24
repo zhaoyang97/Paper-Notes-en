@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory
 description: >-
-  [ICML 2026][Interpretability][Item Response Theory] This paper applies the Graded Response Model (GRM) from psychometric Item Response Theory (IRT) to LLM-as-a-Judge. It decomposes "judgment scores" into judge attributes $(\alpha, \beta)$ and latent sample quality $\theta$. Using four interpretable metrics, it systematically diagnoses whether 7 mainstream LLMs across 11
+  [ICML 2026][Interpretability][Item Response Theory] This paper applies the Graded Response Model (GRM) from psychometric Item Response Theory (IRT) to LLM-as-a-Judge. It decomposes "judgment scores" into judge attributes $(\alpha, \beta)$ and latent sample quality $\theta$. Using four interpretable metrics, it systematically diagnoses whether 7 mainstream LLMs across 11 evaluation criteria act as "stable measurement instruments" through a two-stage process (intrinsic consiste…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Item Response Theory
-  - Graded Response Model
+  - "ICML 2026"
+  - "Interpretability"
+  - "Item Response Theory"
+  - "Graded Response Model"
+  - "Judge Consistency"
+  - "Human Alignment"
+  - "Latent Quality"
 date: 2026-05-08
-content_hash: 5620c13430b4bc3f
+content_hash: 327451591fe33853
 ---
+
 # Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory
 
 **Conference**: ICML 2026  
@@ -134,8 +138,8 @@ Evaluated across 7 models (Gemini 2.5 Flash, GPT-4o, GPT-4o-mini, Qwen3-30B-A3B,
 - Value: ⭐⭐⭐⭐ Provides the first theoretically grounded, standardized calibration process for LLM judges.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -143,7 +147,7 @@ Evaluated across 7 models (Gemini 2.5 Flash, GPT-4o, GPT-4o-mini, Qwen3-30B-A3B,
 - [\[ICML 2026\] From Rashomon Theory to PRAXIS: Efficient Decision Tree Rashomon Sets](from_rashomon_theory_to_praxis_efficient_decision_tree_rashomon_sets.md)
 - [\[ICML 2026\] Prompt Optimization Is a Coin Flip: Diagnosing When It Helps in Compound AI Systems](prompt_optimization_is_a_coin_flip_diagnosing_when_it_helps_in_compound_ai_syste.md)
 - [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](steer_like_the_llm_activation_steering_that_mimics_prompting.md)
-- [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 
 </div>
 

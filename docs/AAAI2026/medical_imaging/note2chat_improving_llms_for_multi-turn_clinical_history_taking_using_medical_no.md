@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes
 description: >-
-  [AAAI 2026][Medical Imaging][Clinical history taking] This paper proposes Note2Chat, a framework that trains LLMs for structured history taking and diagnosis using widely available medical notes rather than scarce dialog…
+  [AAAI 2026][Medical Imaging][Clinical history taking] This paper proposes Note2Chat, a framework that trains LLMs for structured history taking and diagnosis using widely available medical notes rather than scarce dialogue data. Through note-driven dialogue generation, a three-stage fine-tuning strategy, and a single-turn reasoning paradigm, it substantially outperforms GPT-4o in information gathering (F1 +16.9) and diagnostic accuracy (Top-1 +21.0).
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "preference optimization"
   - "differential diagnosis"
 date: 2026-05-08
-content_hash: e09aa09d2b550b78
+content_hash: 0e9314ee062b680b
 ---
 
 # Note2Chat: Improving LLMs for Multi-Turn Clinical History Taking Using Medical Notes
@@ -197,10 +197,10 @@ The method is comprehensive and innovative, forming a closed loop from data cons
 ## Related Papers
 
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](../../ICLR2026/medical_imaging/care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
+- [\[ECCV 2024\] Improving Medical Multi-modal Contrastive Learning with Expert Annotations](../../ECCV2024/medical_imaging/improving_medical_multi-modal_contrastive_learning_with_expert_annotations.md)
 - [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
 - [\[AAAI 2026\] qa-FLoRA: Data-free Query-Adaptive Fusion of LoRAs for LLMs](qa-flora_data-free_query-adaptive_fusion_of_loras_for_llms.md)
-- [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](../../ICLR2026/medical_imaging/improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
+- [\[AAAI 2026\] Fine-Tuned LLMs Know They Don't Know: A Parameter-Efficient Approach to Recovering Honesty](fine-tuned_llms_know_they_dont_know_a_parameter-efficient_approach_to_recovering.md)
 
 </div>
 

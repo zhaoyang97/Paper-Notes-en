@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OT-Bridge Editor: Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport
 description: >-
-  [ICML 2026][Medical Imaging][Schrödinger Bridge] OT-Bridge Editor reformulates "editing a vascular stenosis on coronary angiography" as a constrained entropic OT problem in a vessel-structure composite domain. By employing Schrödinger Bridge with path-level geometric projection supervision, it achieves pixel-level shape/position controllable synthetic angiography, re
+  [ICML 2026][Medical Imaging][Coronary Angiography] OT-Bridge Editor reformulates "editing a vascular stenosis on coronary angiography" as a constrained entropic OT problem in a vessel-structure composite domain. By employing Schrödinger Bridge with path-level geometric projection supervision, it achieves pixel-level shape/position controllable synthetic angiography, resulting in a 27.8% relative gain in downstream stenosis detection mAP@0.5 on the ARCADE public dataset.
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - Schrödinger Bridge
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Coronary Angiography"
+  - "Stenosis Editing"
+  - "Schrödinger Bridge"
+  - "Entropic Optimal Transport"
+  - "Path-level Geometric Supervision"
 date: 2026-05-08
-content_hash: 21200bece138915a
+content_hash: 72f26a72b505edb0
 ---
+
 # OT-Bridge Editor: Geometrically Constrained Stenosis Editing in Coronary Angiography via Entropic Optimal Transport
 
 **Conference**: ICML 2026  
@@ -133,9 +138,9 @@ Synthetic data scale scans show saturation of gains at $r=1.0$ (Synth:Real = 1:1
 
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](../../CVPR2026/medical_imaging/biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[AAAI 2026\] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks](../../AAAI2026/medical_imaging/neural_bandit_based_optimal_llm_selection_for_a_pipeline_of_tasks.md)
-- [\[AAAI 2026\] MIRNet: Integrating Constrained Graph-Based Reasoning with Pre-training for Diagnostic Medical Imaging](../../AAAI2026/medical_imaging/mirnet_integrating_constrained_graph-based_reasoning_with_pre-training_for_diagn.md)
 - [\[CVPR 2025\] Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos](../../CVPR2025/medical_imaging/uncertainty-aware_concept_and_motion_segmentation_for_semi-supervised_angiograph.md)
-- [\[NeurIPS 2025\] Exploring and Leveraging Class Vectors for Classifier Editing](../../NeurIPS2025/medical_imaging/exploring_and_leveraging_class_vectors_for_classifier_editing.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](../../ICLR2026/medical_imaging/stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
+- [\[ICLR 2026\] BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals](../../ICLR2026/medical_imaging/biox-bridge_model_bridging_for_unsupervised_cross-modal_knowledge_transfer_acros.md)
 
 </div>
 

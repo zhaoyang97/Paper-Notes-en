@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] This paper proposes Deliberative Searcher, a reasoning-primary framework that integrates search operations into CoT generation while maintaining explicit confidence calibration. By employing constrained RL with adaptive Lagrange multipliers to jointly optimize correctness and reliability, the framework reduces the aver
+  [ACL 2026][Reinforcement Learning][Confidence Calibration] This paper proposes Deliberative Searcher, a reasoning-primary framework that integrates search operations into CoT generation while maintaining explicit confidence calibration. By employing constrained RL with adaptive Lagrange multipliers to jointly optimize correctness and reliability, the framework reduces the average "false-certain" rate of 7B models from a 54% baseline to 2%.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Confidence Calibration"
+  - "Search-Augmented LLM"
+  - "Constrained RL"
+  - "Reliability"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 57bf5c9ea4d34735
+content_hash: 2b276e8304040ed5
 ---
+
 # Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints
 
 **Conference**: ACL 2026  
@@ -138,11 +144,11 @@ The total loss of constrained RL = standard policy gradient loss + $\lambda \cdo
 
 ## Related Papers
 
+- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Reliability-Adjusted Prioritized Experience Replay](../../ICLR2026/reinforcement_learning/reliability-adjusted_prioritized_experience_replay.md)
 - [\[ACL 2026\] Scaling Behaviors of LLM Reinforcement Learning Post-Training: An Empirical Study](scaling_behaviors_of_llm_reinforcement_learning_post-training_an_empirical_study.md)
 - [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](../../ICLR2026/reinforcement_learning/understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
 - [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
-- [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](../../ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning](../../ICLR2026/reinforcement_learning/cuda-l1_improving_cuda_optimization_via_contrastive_reinforcement_learning.md)
 
 </div>
 

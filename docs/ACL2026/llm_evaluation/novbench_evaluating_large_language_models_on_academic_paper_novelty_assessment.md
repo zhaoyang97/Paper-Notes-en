@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] NovBench pairs "novelty claims in paper introductions" with "textual novelty evaluations from reviewers" to create a benchmark of 1,684 samples. Using four dimensions—Relevance, Correctness, Coverage, and Clarity—it systematically reveals that while current general-purpose and specialized LLMs can generate fluent evalu
+  [ACL2026][LLM Evaluation][Academic Novelty Assessment] NovBench pairs "novelty claims in paper introductions" with "textual novelty evaluations from reviewers" to create a benchmark of 1,684 samples. Using four dimensions—Relevance, Correctness, Coverage, and Clarity—it systematically reveals that while current general-purpose and specialized LLMs can generate fluent evaluations, they still struggle to truly understand and comprehensively judge academic novelty.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Academic Novelty Assessment"
+  - "Automated Peer Review"
+  - "Review Text Generation"
+  - "Semantic Evaluation Metrics"
 date: 2026-05-08
-content_hash: 7a8839a81bf799dd
+content_hash: 8968a883f3a0cb41
 ---
+
 # NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment
 
 **Conference**: ACL2026  
@@ -152,9 +157,9 @@ Rather than module ablation of a single model, the authors analyzed prompting st
 
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
 - [\[ACL 2026\] EngiBench: A Benchmark for Evaluating Large Language Models on Engineering Problem Solving](engibench_a_benchmark_for_evaluating_large_language_models_on_engineering_proble.md)
+- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
 - [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
 - [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
-- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
 
 </div>
 

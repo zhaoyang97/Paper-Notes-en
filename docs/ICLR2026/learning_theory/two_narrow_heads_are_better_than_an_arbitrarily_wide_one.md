@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Two (narrow) heads are better than (an arbitrarily wide) one
 description: >-
-  [ICLR 2026][learning_theory][Endpoint Selection Problem] Using the Endpoint Selection Problem, this paper proves that a single-head attention-only Transformer of arbitrary width and precision cannot perform endpoint selection on cyclic directed graphs, whereas two narrow heads can solve it with zero error on all directed graphs, providing a clear separation in the expressivi
+  [ICLR2026][Learning Theory][Transformer theory] Using the Endpoint Selection Problem, this paper proves that a single-head attention-only Transformer of arbitrary width and precision cannot perform endpoint selection on cyclic directed graphs, whereas two narrow heads can solve it with zero error on all directed graphs, providing a clear separation in the expressivity of multi-head attention.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Endpoint Selection Problem
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Transformer Expressivity"
+  - "Transformer theory"
+  - "multi-head attention"
+  - "expressivity lower bounds"
+  - "Endpoint Selection Problem"
+  - "induction heads"
 date: 2026-05-08
-content_hash: 6fde6e49a4acbff8
+content_hash: c2a294ea486cfa73
 ---
+
 # Two (narrow) heads are better than (an arbitrarily wide) one
 
 **Conference**: ICLR2026  
@@ -166,9 +172,9 @@ Ours further compares performance across graph structures, head counts, and the 
 
 - [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](better_bounds_for_the_distributed_experts_problem.md)
 - [\[ICLR 2026\] Achieving Approximate Symmetry Is Exponentially Easier than Exact Symmetry](achieving_approximate_symmetry_is_exponentially_easier_than_exact_symmetry.md)
+- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
 - [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
 - [\[ICLR 2026\] Learning the Inverse Temperature of Ising Models under Hard Constraints using One Sample](learning_the_inverse_temperature_of_ising_models_under_hard_constraints_using_on.md)
-- [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
 
 </div>
 

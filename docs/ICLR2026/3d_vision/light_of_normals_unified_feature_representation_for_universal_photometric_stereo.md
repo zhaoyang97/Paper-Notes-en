@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Light of Normals: Unified Feature Representation for Universal Photometric Stereo
 description: >-
-  [ICLR 2026][3D Vision][Universal Photometric Stereo] LINO UniPS utilizes "Light Register Tokens with light alignment supervision + interleaved attention" to explicitly decouple illumination from normal features within the encoder. It further employs a "wavelet dual-branch + normal-gradient perception loss" to preserve high-frequency geometric details, achieving new SOTA
+  [ICLR 2026][3D Vision][Universal Photometric Stereo] LINO UniPS utilizes "Light Register Tokens with light alignment supervision + interleaved attention" to explicitly decouple illumination from normal features within the encoder. It further employs a "wavelet dual-branch + normal-gradient perception loss" to preserve high-frequency geometric details, achieving new SOTA normal accuracy on benchmarks like DiLiGenT and Luces.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Universal Photometric Stereo
-  - Register Token
-  - ViT
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Universal Photometric Stereo"
+  - "Normal Estimation"
+  - "Illumination Decoupling"
+  - "Register Token"
+  - "Wavelet Transform"
+  - "ViT"
 date: 2026-05-08
-content_hash: 48e09ff4c18da8a6
+content_hash: a4528e1d417f90f5
 ---
+
 # Light of Normals: Unified Feature Representation for Universal Photometric Stereo
 
 **Conference**: ICLR 2026  

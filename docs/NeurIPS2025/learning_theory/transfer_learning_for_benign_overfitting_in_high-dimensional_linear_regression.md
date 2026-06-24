@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression
 description: >-
-  [NeurIPS 2025][transfer learning] This paper proposes a two-step Transfer MNI (TM) method that enhances generalization of benign overfitting in overparameterized high-dimensional linear regression via a "preserve target…
+  [NeurIPS 2025 Spotlight][transfer learning] This paper proposes a two-step Transfer MNI (TM) method that enhances generalization of benign overfitting in overparameterized high-dimensional linear regression via a "preserve target signal + transfer source knowledge in the null space" mechanism. Non-asymptotic excess risk bounds are derived under both model shift and covariate shift, and a "free lunch" covariate shift regime is identified.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "transfer learning"
   - "benign overfitting"
   - "high-dimensional linear regression"
@@ -12,7 +12,7 @@ tags:
   - "covariate shift"
   - "model shift"
 date: 2026-05-08
-content_hash: 69a21161e152a93a
+content_hash: 96f8cb9ee0b9df80
 ---
 
 # Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression
@@ -159,10 +159,10 @@ Key finding: Under free lunch covariate shift, the corrected $\text{SNR}_\alpha 
 ## Related Papers
 
 - [\[NeurIPS 2025\] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning](a_highdimensional_statistical_method_for_optimizing_transfer.md)
-- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](infrequent_exploration_in_linear_bandits.md)
+- [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](../../ICLR2026/learning_theory/learning_under_quantization_for_high-dimensional_linear_regression.md)
+- [\[ICLR 2026\] Risk Phase Transitions in Spiked Regression: Alignment Driven Benign and Catastrophic Overfitting](../../ICLR2026/learning_theory/risk_phase_transitions_in_spiked_regression_alignment_driven_benign_and_catastro.md)
 - [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
-- [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
+- [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](../../ICLR2026/learning_theory/high-dimensional_analysis_of_synthetic_data_selection.md)
 
 </div>
 

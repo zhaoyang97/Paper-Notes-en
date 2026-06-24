@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation
 description: >-
-  [AAAI 2026][Video Generation][human video generation] This paper proposes the MotionCharacter framework, which decouples motion into two independently controllable dimensions—action type and motion intensity—to achieve f…
+  [AAAI 2026][Video Generation][human video generation] This paper proposes the MotionCharacter framework, which decouples motion into two independently controllable dimensions—action type and motion intensity—to achieve fine-grained motion control and identity consistency in high-fidelity human video generation.
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "optical flow"
   - "diffusion models"
 date: 2026-05-08
-content_hash: b7b935c27e9b05d9
+content_hash: 3e2ac3b242ed5018
 ---
 
 # MotionCharacter: Fine-Grained Motion Controllable Human Video Generation
@@ -170,9 +170,9 @@ Key finding: IPA-FaceID-PlusV2 achieves the highest Face Similarity (0.617) but 
 
 - [\[ICCV 2025\] MotionAgent: Fine-grained Controllable Video Generation via Motion Field Agent](../../ICCV2025/video_generation/motionagent_fine-grained_controllable_video_generation_via_motion_field_agent.md)
 - [\[AAAI 2026\] DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation](dreamrunner_fine-grained_compositional_story-to-video_genera.md)
+- [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 - [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](../../CVPR2026/video_generation/lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
 - [\[ICLR 2026\] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling](../../ICLR2026/video_generation/mosa_motion-coherent_human_video_generation_via_structure-appearance_decoupling.md)
-- [\[AAAI 2026\] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding](omnivdiff_omni_controllable_video_diffusion_for_generation_and_understanding.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Noisy-TVs: Noise-Robust Exploration Via Learning Progress Monitoring
 description: >-
-  [ICLR 2026][Reinforcement Learning][Noisy-TV] To address the classic "Noisy-TV" trap in intrinsic motivation exploration, this paper proposes **Learning Progress Monitoring (LPM)**: using "how much the model improved this round compared to the last" as an intrinsic reward instead of prediction error or novelty. Since unlearnable random transitions yield zero progr
+  [ICLR2026][Reinforcement Learning][Noise-Robust Exploration] To address the classic "Noisy-TV" trap in intrinsic motivation exploration, this paper proposes **Learning Progress Monitoring (LPM)**: using "how much the model improved this round compared to the last" as an intrinsic reward instead of prediction error or novelty. Since unlearnable random transitions yield zero progress, the agent is naturally immune to noise. LPM achieves faster convergence, higher state coverage…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Noisy-TV
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Noise-Robust Exploration"
+  - "Noisy-TV"
+  - "Learning Progress"
+  - "Intrinsic Reward"
+  - "Information Gain"
 date: 2026-05-08
-content_hash: 553a03d5b00dfd21
+content_hash: 7d99ee1a64ffbe0f
 ---
+
 # Beyond Noisy-TVs: Noise-Robust Exploration Via Learning Progress Monitoring
 
 **Conference**: ICLR2026  

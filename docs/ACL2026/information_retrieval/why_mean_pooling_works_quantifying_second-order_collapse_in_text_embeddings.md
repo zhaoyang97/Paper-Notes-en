@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Mean Pooling] This paper argues that mean pooling theoretically loses the second-order structure of token embeddings and proposes the SOCM metric to quantify this second-order collapse; experiments demonstrate that modern contrastively fine-tuned text encoders produce more concentrated token embeddings, making them less prone to col
+  [ACL2026][Information Retrieval & RAG][Mean Pooling] This paper argues that mean pooling theoretically loses the second-order structure of token embeddings and proposes the SOCM metric to quantify this second-order collapse; experiments demonstrate that modern contrastively fine-tuned text encoders produce more concentrated token embeddings, making them less prone to collapse than base models, and lower SOCM correlates with higher MTEB performance.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Mean Pooling
-  - SOCM
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Mean Pooling"
+  - "Text Embeddings"
+  - "Second-Order Statistics"
+  - "SOCM"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 197bbf86e23b0ec5
+content_hash: 1adabe58b40d121e
 ---
+
 # Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings
 
 **Conference**: ACL2026  
@@ -127,9 +131,9 @@ The authors replicated experiments on MS MARCO and compared the correlation betw
 
 - [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
 - [\[ACL 2025\] Sticking to the Mean: Detecting Sticky Tokens in Text Embedding Models](../../ACL2025/information_retrieval/sticking_to_the_mean_detecting_sticky_tokens_in_text_embedding_models.md)
+- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](../../ICLR2026/information_retrieval/let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 - [\[ACL 2025\] Enhancing Lexicon-Based Text Embeddings with Large Language Models](../../ACL2025/information_retrieval/enhancing_lexicon-based_text_embeddings_with_large_language_models.md)
 - [\[ACL 2025\] Redundancy, Isotropy and Intrinsic Dimensionality of Prompt-Based Text Embeddings](../../ACL2025/information_retrieval/redundancy_isotropy_and_intrinsic_dimensionality_of_prompt-based_text_embeddings.md)
-- [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
 
 </div>
 

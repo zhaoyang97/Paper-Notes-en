@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedHarmony: Harmonizing Heterogeneous Label Correlations in Federated Multi-Label Learning
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the issue in Federated Multi-Label Learning (FedMLL) where clients observe only local label spaces and generate conflicting label correlations (Label Correlation Drift), FedHarmony utilizes "Consensus Correlation" from the majority of clients as a global teacher to correct local training biases. Furthermore,
+  [CVPR 2026][Federated Learning][Federated Multi-Label Learning] To address the issue in Federated Multi-Label Learning (FedMLL) where clients observe only local label spaces and generate conflicting label correlations (Label Correlation Drift), FedHarmony utilizes "Consensus Correlation" from the majority of clients as a global teacher to correct local training biases. Furthermore, it weights clients during server aggregation based on both data volume and correlation quality.…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "Federated Learning"
+  - "Federated Multi-Label Learning"
+  - "Label Correlation Drift"
+  - "Consensus Correlation"
+  - "Correlation-Aware Aggregation"
+  - "Intra-Block Optimization"
 date: 2026-05-08
-content_hash: c7197337b4e372b3
+content_hash: f4bf5d42b655eafc
 ---
+
 # FedHarmony: Harmonizing Heterogeneous Label Correlations in Federated Multi-Label Learning
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Intra-block Optimization (C) Impact: There is no significant difference in accur
 
 ## Related Papers
 
-- [\[CVPR 2025\] Infighting in the Dark: Multi-Label Backdoor Attack in Federated Learning](../../CVPR2025/ai_safety/infighting_in_the_dark_multi-label_backdoor_attack_in_federated_learning.md)
-- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
-- [\[AAAI 2026\] Rethinking Target Label Conditioning in Adversarial Attacks: A 2D Tensor-Guided Generative Approach](../../AAAI2026/ai_safety/rethinking_target_label_conditioning_in_adversarial_attacks_a_2d_tensor-guided_g.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
+- [\[CVPR 2026\] FedARA: Resource-adaptive Low-rank Personalized Federated Learning via Anchor-driven Representation Alignment on Heterogeneous Edge Devices](fedara_resource-adaptive_low-rank_personalized_federated_learning_via_anchor-dri.md)
+- [\[CVPR 2026\] Domain Sensitive Federated Learning with Fisher-Informed Pruning](domain_sensitive_federated_learning_with_fisher-informed_pruning.md)
+- [\[CVPR 2026\] Single-Round Scalable Analytic Federated Learning](single-round_scalable_analytic_federated_learning.md)
+- [\[CVPR 2026\] HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning](hilora_hierarchical_low-rank_adaptation_for_personalized_federated_learning.md)
+- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
 
 </div>
 

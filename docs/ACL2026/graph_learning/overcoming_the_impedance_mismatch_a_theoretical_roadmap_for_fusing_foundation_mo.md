@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Overcoming the Impedance Mismatch: A Theoretical Roadmap for Fusing Foundation Models and Knowledge Graphs
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This is a purely theoretical position paper: the authors formalize the phenomenon where foundation models (continuous probability spaces) and knowledge graphs (discrete deterministic structures) are difficult to truly integrate as **Impedance Mismatch**. Using metric embedding theory, they prove mathematical failure up
+  [ACL2026][Graph Learning][Impedance Mismatch] This is a purely theoretical position paper: the authors formalize the phenomenon where foundation models (continuous probability spaces) and knowledge graphs (discrete deterministic structures) are difficult to truly integrate as **Impedance Mismatch**. Using metric embedding theory, they prove mathematical failure upper bounds for three mainstream categories of solutions—ranging from lexical injection to attention-level integrat…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL2026"
+  - "Graph Learning"
+  - "Impedance Mismatch"
+  - "Neuro-symbolic fusion"
+  - "Knowledge Graphs"
+  - "Multi-hop reasoning"
+  - "Vector Symbolic Architecture"
 date: 2026-05-08
-content_hash: 6b4f2e79efcbcf48
+content_hash: b378f495f517e637
 ---
+
 # Overcoming the Impedance Mismatch: A Theoretical Roadmap for Fusing Foundation Models and Knowledge Graphs
 
 **Conference**: ACL2026  
@@ -125,15 +131,13 @@ There are **no experiments**; the authors admit in the Limitations that the fram
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
 - [\[ICML 2025\] Towards Graph Foundation Models: Learning Generalities Across Graphs via Task-Trees](../../ICML2025/graph_learning/towards_graph_foundation_models_learning_generalities_across_graphs_via_task-tre.md)
-- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
+- [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](../../ICLR2026/graph_learning/bridging_input_feature_spaces_towards_graph_foundation_models.md)
 - [\[ACL 2026\] What Makes AI Research Replicable? Executable Knowledge Graphs as Scientific Knowledge Representations](what_makes_ai_research_replicable_executable_knowledge_graphs_as_scientific_know.md)
-- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](../../NeurIPS2025/graph_learning/deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
-- [\[NeurIPS 2025\] Reasoning Meets Representation: Envisioning Neuro-Symbolic Wireless Foundation Models](../../NeurIPS2025/graph_learning/reasoning_meets_representation_envisioning_neuro-symbolic_wireless_foundation_mo.md)
+- [\[ICML 2026\] When Do Graph Foundation Models Transfer? A Data-Centric Theory](../../ICML2026/graph_learning/when_do_graph_foundation_models_transfer_a_data-centric_theory.md)
 
 </div>
 

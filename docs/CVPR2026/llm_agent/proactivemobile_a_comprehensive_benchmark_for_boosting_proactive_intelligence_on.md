@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices
 description: >-
-  [CVPR 2026][LLM Agent][Benchmark] Addressing the limitations of current mobile agents as passive command executors, this paper proposes ProactiveMobile—a large-scale benchmark that formalizes "proactive intelligence" as "inferring potential user intent from 4D device context and generating executable function sequences" (3,660 multi-intent samples / 14
+  [CVPR 2026][LLM Agent][Proactive Intelligence] Addressing the limitations of current mobile agents as passive command executors, this paper proposes ProactiveMobile—a large-scale benchmark that formalizes "proactive intelligence" as "inferring potential user intent from 4D device context and generating executable function sequences" (3,660 multi-intent samples / 14 scenarios / 63 APIs). Equipped with objectively evaluable SR/FTR metrics, it demonstrates that proactivity is a…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Benchmark
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Proactive Intelligence"
+  - "Mobile GUI Agent"
+  - "Benchmark"
+  - "Function Calling"
+  - "Intent Inference"
 date: 2026-05-08
-content_hash: 07be6d48081da2c4
+content_hash: f952e58042ab3a9e
 ---
+
 # ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices
 
 **Conference**: CVPR 2026  
@@ -139,15 +144,16 @@ Evaluation compares closed-source SOTA MLLMs with fine-tuned models. 8,876 train
 - **Value**: ⭐⭐⭐⭐⭐ Provides a much-needed training and evaluation foundation for proactive mobile agents.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](../../ICLR2026/llm_agent/fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
-- [\[CVPR 2026\] Ego2Web: A Web Agent Benchmark Grounded in Egocentric Videos](ego2web_a_web_agent_benchmark_grounded_in_egocentric_videos.md)
+- [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](../../ICLR2026/llm_agent/mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
 - [\[CVPR 2026\] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models](os-oracle_a_comprehensive_framework_for_cross-platform_gui_critic_models.md)
-- [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](../../ICLR2026/llm_agent/a_benchmark_for_deep_information_synthesis.md)
+- [\[ICLR 2026\] SMAN-Bench: A Cross-System Benchmark for Mobile Agents under Single- and Multi-path, Ambiguous, and Noisy Tasks](../../ICLR2026/llm_agent/sman-bench_a_cross-system_benchmark_for_mobile_agents_under_single-_and_multi-pa.md)
 
 </div>
 

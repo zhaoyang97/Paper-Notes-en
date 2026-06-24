@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments
 description: >-
-  [ICLR 2026][Audio & Speech][computer-use agents] The study constructs RedTeamCUA, the first red teaming framework for CUA in hybrid Web-OS environments, along with RTC-Bench containing 864 test cases. It systematically evaluates the vulnerability of 9+ frontier CUAs to indirect prompt injection, finding that all CUAs are attackable (highest ASR 83%). Furthermore, mor
+  [ICLR 2026 Oral][Audio & Speech][computer-use agents] The study constructs RedTeamCUA, the first red teaming framework for CUA in hybrid Web-OS environments, along with RTC-Bench containing 864 test cases. It systematically evaluates the vulnerability of 9+ frontier CUAs to indirect prompt injection, finding that all CUAs are attackable (highest ASR 83%). Furthermore, more capable models prove more dangerous—the fact that the Attempt Rate (AR) is significantly higher than the…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - computer-use agents
-  - red teaming
-  - indirect prompt injection
-  - adversarial testing
-  - CUA safety
+  - "ICLR 2026 Oral"
+  - "Audio & Speech"
+  - "computer-use agents"
+  - "red teaming"
+  - "indirect prompt injection"
+  - "adversarial testing"
+  - "CUA safety"
 date: 2026-05-08
-content_hash: f3c1332145d01ba0
+content_hash: 07e4c8cbab9849d2
 ---
+
 # RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments
 
 **Conference**: ICLR 2026 Oral  
@@ -135,15 +136,14 @@ The Attack Success Rate (ASR) measures whether the malicious instruction was ful
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)
 - [\[ICML 2026\] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents](../../ICML2026/audio_speech/safesearch_automated_red-teaming_of_llm-based_search_agents.md)
 - [\[ICML 2026\] JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments](../../ICML2026/audio_speech/jaeger_joint_3d_audio-visual_grounding_and_reasoning_in_simulated_physical_envir.md)
 - [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
 - [\[ACL 2026\] XLSR-MamBo: Scaling the Hybrid Mamba-Attention Backbone for Audio Deepfake Detection](../../ACL2026/audio_speech/xlsr-mambo_scaling_the_hybrid_mamba-attention_backbone_for_audio_deepfake_detect.md)
+- [\[ICML 2026\] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration](../../ICML2026/audio_speech/group_cognition_learning_making_everything_better_through_governed_two-stage_age.md)
 
 </div>
 

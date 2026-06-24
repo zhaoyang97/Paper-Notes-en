@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals
 description: >-
-  [CVPR 2026][Autonomous Driving][ISAC] Rascene is proposed as an Integrated Sensing and Communication (ISAC) framework that utilizes mmWave OFDM communication signals (e.g., 5G/Wi-Fi) for high-fidelity 3D scene imaging. It achieves geometrically consistent recovery from sparse, multipath-interfered RF observations through confidence-weighted multi-frame fus
+  [CVPR 2026][Autonomous Driving][mmWave Communication] Rascene is proposed as an Integrated Sensing and Communication (ISAC) framework that utilizes mmWave OFDM communication signals (e.g., 5G/Wi-Fi) for high-fidelity 3D scene imaging. It achieves geometrically consistent recovery from sparse, multipath-interfered RF observations through confidence-weighted multi-frame fusion.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - ISAC
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "mmWave Communication"
+  - "3D Scene Imaging"
+  - "OFDM Signals"
+  - "Multi-frame Fusion"
+  - "ISAC"
 date: 2026-05-08
-content_hash: bc6756b2b2ed1a24
+content_hash: 534ee268f07ab9b1
 ---
+
 # Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals
 
 **Conference**: CVPR 2026  

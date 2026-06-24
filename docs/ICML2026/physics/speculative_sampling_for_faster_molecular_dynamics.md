@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Speculative Sampling for Faster Molecular Dynamics
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] This paper transfers speculative sampling from language models to second-order Langevin molecular dynamics, proposing LSD: serial extrapolation using a fast draft potential and parallel verification using a slow target potential. By ensuring trajectory distributions strictly match the target model through reflection-ma
+  [ICML2026][Physics & Scientific Computing][Speculative Sampling] This paper transfers speculative sampling from language models to second-order Langevin molecular dynamics, proposing LSD: serial extrapolation using a fast draft potential and parallel verification using a slow target potential. By ensuring trajectory distributions strictly match the target model through reflection-maximal coupling, it achieves 3–9× lossless speedup on systems such as FCC copper.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML2026"
+  - "Physics & Scientific Computing"
+  - "Speculative Sampling"
+  - "Langevin Dynamics"
+  - "MLIP Acceleration"
+  - "Reflection-Maximal Coupling"
+  - "Parallel Verification"
 date: 2026-05-08
-content_hash: 660f86779b3d751b
+content_hash: a648978ea2c7afbc
 ---
+
 # Speculative Sampling for Faster Molecular Dynamics
 
 **Conference**: ICML2026  
@@ -150,8 +156,8 @@ Li-ion diffusivity in LGPS: The Arrhenius fit slopes and 95% CIs for UMA-S and t
 
 - [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
 - [\[ICLR 2026\] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics](../../ICLR2026/physics/atom_a_pretrained_neural_operator_for_multitask_molecular_dynamics.md)
-- [\[NeurIPS 2025\] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](../../NeurIPS2025/physics/flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)
 - [\[ICML 2026\] From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints](from_geometry_to_dynamics_learning_overdamped_langevin_dynamics_from_sparse_obse.md)
+- [\[NeurIPS 2025\] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](../../NeurIPS2025/physics/flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)
 - [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
 
 </div>

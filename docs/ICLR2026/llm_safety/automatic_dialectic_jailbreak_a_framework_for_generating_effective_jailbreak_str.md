@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] ADJ models the jailbreak attack against LLMs as a Stackelberg multi-objective game of "Hegelian dialectic debate" between an attacker and a defender. Through the iteration of thesis-antithesis-synthesis, it produces diverse and defense-resistant jailbreak strategies. It utilizes Haar wavelets to project gradients into
+  [ICLR2026][LLM Safety][Jailbreak Attack] ADJ models the jailbreak attack against LLMs as a Stackelberg multi-objective game of "Hegelian dialectic debate" between an attacker and a defender. Through the iteration of thesis-antithesis-synthesis, it produces diverse and defense-resistant jailbreak strategies. It utilizes Haar wavelets to project gradients into Hilbert space to find a common descent direction, paired with Armijo line search to converge to a Pareto–Nash equilibri…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Jailbreak Attack"
+  - "Hegelian Dialectic"
+  - "Stackelberg Multi-objective Game"
+  - "Haar Wavelet"
+  - "Pareto-Nash Equilibrium"
 date: 2026-05-08
-content_hash: f9925c2dec05175d
+content_hash: 775b97d196dde953
 ---
+
 # Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies
 
 **Conference**: ICLR2026  

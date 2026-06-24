@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This work constructs ODI-Bench, the first benchmark for systematically evaluating the Omnidirectional Image (ODI) understanding capabilities of MLLMs (2,000 real-world panoramas, 4,254 QAs, 10 fine-grained tasks, dual closed+open formats). Evaluating 20 mainstream models reveals that current MLLMs perform only slightly
+  [ICLR 2026][Multimodal VLM][Omnidirectional Image Understanding] This work constructs ODI-Bench, the first benchmark for systematically evaluating the Omnidirectional Image (ODI) understanding capabilities of MLLMs (2,000 real-world panoramas, 4,254 QAs, 10 fine-grained tasks, dual closed+open formats). Evaluating 20 mainstream models reveals that current MLLMs perform only slightly better than random guessing in immersive spatial understanding. A training-free Chain-of-Thoug…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Omnidirectional Image Understanding"
+  - "MLLM Benchmark"
+  - "Spatial Reasoning"
+  - "Chain-of-Thought"
+  - "Immersive Environments"
 date: 2026-05-08
-content_hash: cdcdc8ce4c1a384e
+content_hash: 609632229466a2c3
 ---
+
 # ODI-Bench: Can MLLMs Understand Immersive Omnidirectional Environments?
 
 **Conference**: ICLR 2026  
@@ -145,10 +151,10 @@ Necessity of the three steps using Gemini-2.0-flash / InternVL2.5-8B:
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 - [\[ICLR 2026\] IWR-Bench: Can LVLMs Reconstruct Interactive Webpage from a User Interaction Video?](iwr-bench_can_lvlms_reconstruct_interactive_webpage_from_a_user_interaction_vide.md)
 - [\[ACL 2025\] Can MLLMs Understand the Deep Implication Behind Chinese Images?](../../ACL2025/multimodal_vlm/can_mllms_understand_the_deep_implication_behind_chinese_images.md)
 - [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](../../CVPR2026/multimodal_vlm/vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
-- [\[ICLR 2026\] SpatialViz-Bench：一个认知科学驱动、用于诊断 MLLM 空间可视化能力的基准](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 - [\[ACL 2025\] Can Vision Language Models Understand Mimed Actions?](../../ACL2025/multimodal_vlm/can_vision_language_models_understand_mimed_actions.md)
 
 </div>

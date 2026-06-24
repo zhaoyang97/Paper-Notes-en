@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Distillation of Large Language Models via Concrete Score Matching
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] Concrete Score Distillation (CSD) is proposed as a knowledge distillation loss for LLMs based on discrete score matching. By matching the relative logit differences between student and teacher across all vocabulary pairs, it concurrently overcomes the issues of softmax smoothing and the restricted solution space inhere
+  [ICLR 2026][Model Compression][Knowledge Distillation] Concrete Score Distillation (CSD) is proposed as a knowledge distillation loss for LLMs based on discrete score matching. By matching the relative logit differences between student and teacher across all vocabulary pairs, it concurrently overcomes the issues of softmax smoothing and the restricted solution space inherent in direct logit distillation.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "LLM Compression"
+  - "Score Matching"
+  - "Logit Distillation"
+  - "Discrete Score Matching"
 date: 2026-05-08
-content_hash: 6a150d994841bd76
+content_hash: 73ee68895eaaf4b6
 ---
+
 # Distillation of Large Language Models via Concrete Score Matching
 
 **Conference**: ICLR 2026  
@@ -126,8 +131,8 @@ The gradient structure of CSD is similar to KL divergence, with the key differen
 *   Value: ⭐⭐⭐⭐ Provides a unified framework for logit distillation design; practical performance gains are stable though modest in magnitude.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -135,7 +140,7 @@ The gradient structure of CSD is similar to KL divergence, with the key differen
 - [\[CVPR 2026\] Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](../../CVPR2026/model_compression/phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
-- [\[ICLR 2026\] MoSA: Mosaic Shared Adaptation of Large Language Models](mosa_mosaic_shared_adaptation_of_large_language_models.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] To address the "trajectory overfitting" problem where VLAs fail under minute object pose variations, this paper proposes PDF—a verifier-free test-time adaptation framework that keeps the backbone frozen. It employs uncertainty-driven adaptive data augmentation and multi-view voting to suppress spurious correlations, co
+  [CVPR 2026][Robotics][Vision-Language-Action Models] To address the "trajectory overfitting" problem where VLAs fail under minute object pose variations, this paper proposes PDF—a verifier-free test-time adaptation framework that keeps the backbone frozen. It employs uncertainty-driven adaptive data augmentation and multi-view voting to suppress spurious correlations, combined with a lightweight perturbation head trained via delayed feedback after episode completion to correc…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language-Action Models"
+  - "Test-Time Adaptation"
+  - "Trajectory Overfitting"
+  - "Delayed Feedback"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: fda73ac479c587ea
+content_hash: 78f96ae9fc1db4cc
 ---
+
 # Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ PDF achieves the best average success rate (0.77) and rank (2.5) with the fewest
 ## Related Papers
 
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Test-time Sparsity for Extreme Fast Action Diffusion](test-time_sparsity_for_extreme_fast_action_diffusion.md)
 - [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
-- [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](cross-hand_latent_representation_for_vision-language-action_models.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
+- [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](../../ICML2026/robotics/test-time_training_for_visual_foresight_vision-language-action_models.md)
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](../../ICLR2026/robotics/verifier-free_test-time_sampling_for_vision-language-action_models.md)
+- [\[ICLR 2026\] VITA: Zero-Shot Value Functions via Test-Time Adaptation of Vision–Language Models](../../ICLR2026/robotics/vita_zero-shot_value_functions_via_test-time_adaptation_of_visionlanguage_models.md)
 
 </div>
 

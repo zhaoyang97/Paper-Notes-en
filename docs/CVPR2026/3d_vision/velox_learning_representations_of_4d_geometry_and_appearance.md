@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Velox: Learning Representations of 4D Geometry and Appearance
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] Velox utilizes a Perceiver encoder to compress unstructured spatiotemporal colored point clouds into a small set of "dynamic tokens" (>30× compression). These tokens are jointly supervised by two complementary decoders: a Flow Matching 4D surface decoder for geometry and a 3D Gaussian decoder for appearance. This creat
+  [CVPR 2026][3D Vision][4D Representation Learning] Velox utilizes a Perceiver encoder to compress unstructured spatiotemporal colored point clouds into a small set of "dynamic tokens" (>30× compression). These tokens are jointly supervised by two complementary decoders: a Flow Matching 4D surface decoder for geometry and a 3D Gaussian decoder for appearance. This creates a general latent representation that characterizes both 4D geometry and appearance without requiring tempo…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Representation Learning"
+  - "Dynamic Point Clouds"
+  - "Dynamic Tokens"
+  - "Flow Matching"
+  - "3D Gaussians"
 date: 2026-05-08
-content_hash: b6d89b3ad49de033
+content_hash: 3b1ce9eeaa183787
 ---
+
 # Velox: Learning Representations of 4D Geometry and Appearance
 
 **Conference**: CVPR 2026  
@@ -173,10 +178,10 @@ Velox leads in L2, APD, and AJ metrics, performing particularly well on texturel
 ## Related Papers
 
 - [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
 - [\[CVPR 2026\] Learning to Infer Parameterized Representations of Plants from 3D Scans](learning_to_infer_parameterized_representations_of_plants_from_3d_scans.md)
+- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
 - [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
-- [\[CVPR 2026\] Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)
+- [\[ICLR 2026\] Learning Hierarchical and Geometry-Aware Graph Representations for Text-to-CAD](../../ICLR2026/3d_vision/learning_hierarchical_and_geometry-aware_graph_representations_for_text-to-cad.md)
 
 </div>
 

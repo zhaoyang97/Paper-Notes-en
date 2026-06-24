@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Controllable Generation: Faster Training and Better Performance via x0-Supervision
 description: >-
-  [CVPR 2026][Image Generation][ControlNet] This paper identifies that inheriting the base model's $\epsilon$-supervision loss for controllable generation methods like ControlNet is suboptimal. Since $\epsilon$-loss is equivalent to $x_0$-loss weighted by Signal-to-Noise Ratio (SNR), it effectively assigns near-zero weight to early denoising steps that determine
+  [CVPR 2026][Image Generation][Controllable generation] This paper identifies that inheriting the base model's $\epsilon$-supervision loss for controllable generation methods like ControlNet is suboptimal. Since $\epsilon$-loss is equivalent to $x_0$-loss weighted by Signal-to-Noise Ratio (SNR), it effectively assigns near-zero weight to early denoising steps that determine global layout. By switching to direct supervision of the clean image $x_0$ (removing this weighting)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - ControlNet
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Controllable generation"
+  - "ControlNet"
+  - "x0-supervision"
+  - "Diffusion training"
+  - "Convergence acceleration"
 date: 2026-05-08
-content_hash: 49dd3274c9c23660
+content_hash: 7cd22dcdb2b71116
 ---
+
 # Improving Controllable Generation: Faster Training and Better Performance via x0-Supervision
 
 **Conference**: CVPR 2026  
@@ -127,6 +132,7 @@ $x_0$-supervision at bs32 achieves higher mAUCC than $\epsilon$-supervision at b
 - Value: ⭐⭐⭐⭐ Highly practical for accelerating adapter training with zero inference overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -134,8 +140,8 @@ $x_0$-supervision at bs32 achieves higher mAUCC than $\epsilon$-supervision at b
 - [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)
 - [\[CVPR 2026\] PhyCo: Learning Controllable Physical Priors for Generative Motion](phyco_learning_controllable_physical_priors_for_generative_motion.md)
 - [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
+- [\[ICLR 2026\] Interleaving Reasoning for Better Text-to-Image Generation](../../ICLR2026/image_generation/interleaving_reasoning_for_better_text-to-image_generation.md)
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
-- [\[CVPR 2026\] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation](ospo_object-centric_self-improving_preference_optimization_for_text-to-image_gen.md)
 
 </div>
 

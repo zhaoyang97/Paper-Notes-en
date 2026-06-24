@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] SketchEvo：用绘画动态过程提升草图引导图像生成
+  [Paper Note] SketchEvo: Enhancing Sketch-Guided Image Generation with Dynamic Drawing Processes
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] SketchEvo treats the dynamic sequence of drawing—from the first stroke to completion—as a source of diversity for preference optimization. During training, sketches with different completion levels are used as conditions to construct significantly distinct positive and negative pairs for aligning with human aesthetics.
+  [ICLR 2026][Image Generation][Sketch-guided generation] SketchEvo treats the dynamic sequence of drawing—from the first stroke to completion—as a source of diversity for preference optimization. During training, sketches with different completion levels are used as conditions to construct significantly distinct positive and negative pairs for aligning with human aesthetics. During inference, an initial sketch stroke-guided rollback mechanism is employed to strengthen semantic…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Sketch-guided generation"
+  - "Human preference alignment"
+  - "Drawing sequences"
+  - "Diffusion models"
+  - "Rollback mechanism"
 date: 2026-05-08
-content_hash: af8448427ef370c6
+content_hash: 856d3babd2666ac7
 ---
+
 # SketchEvo: Enhancing Sketch-Guided Image Generation with Dynamic Drawing Processes
 
 **Conference**: ICLR 2026  
@@ -149,11 +154,11 @@ The model **automatically balances aesthetics and sketch similarity based on abs
 
 ## Related Papers
 
-- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
-- [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
-- [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
-- [\[ICLR 2026\] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](pi-light_physics-inspired_diffusion_for_full-image_relighting.md)
+- [\[ICLR 2026\] ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation](imagerag_dynamic_image_retrieval_for_reference-guided_image_generation.md)
+- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
+- [\[ICML 2026\] UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning](../../ICML2026/image_generation/unhype_clip-guided_hypernetworks_for_dynamic_lora_unlearning.md)
+- [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
+- [\[CVPR 2026\] Enhancing Spatial Understanding in Image Generation via Reward Modeling](../../CVPR2026/image_generation/enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Idiom Understanding as a Tool to Measure the Dialect Gap
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes three new French idiom understanding benchmark datasets (Quebec French QFrCoRE/QFrCoRT and Standard French MFrCoE). Evaluation of 111 LLMs reveals that 65.77% of models perform significantly worse on dialectal idioms than on standard French, quantifying the dialect gap phenomenon.
+  [ACL 2026 Findings][LLM Evaluation][Dialect Gap] This paper proposes three new French idiom understanding benchmark datasets (Quebec French QFrCoRE/QFrCoRT and Standard French MFrCoE). Evaluation of 111 LLMs reveals that 65.77% of models perform significantly worse on dialectal idioms than on standard French, quantifying the dialect gap phenomenon.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Dialect Gap"
+  - "Idiom Understanding"
+  - "Quebec French"
+  - "Benchmark Datasets"
+  - "Multilingual Evaluation"
 date: 2026-05-08
-content_hash: a5cdfb054b385cf8
+content_hash: adda9b9e6d9d3b73
 ---
+
 # Idiom Understanding as a Tool to Measure the Dialect Gap
 
 **Conference**: ACL 2026 Findings  
@@ -108,11 +114,11 @@ Distribution of dialect gaps across 111 LLMs:
 
 ## Related Papers
 
-- [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
 - [\[ACL 2025\] Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models](../../ACL2025/llm_evaluation/retrieval_models_arent_tool-savvy_benchmarking_tool_retrieval_for_large_language.md)
 - [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](../../ICML2026/llm_evaluation/on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
+- [\[ICLR 2026\] The Ideation-Execution Gap: Execution Outcomes of LLM-Generated versus Human Research Ideas](../../ICLR2026/llm_evaluation/the_ideation-execution_gap_execution_outcomes_of_llm-generated_versus_human_rese.md)
+- [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
 - [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
-- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](../../ICLR2026/llm_evaluation/benchmarking_llm_tool-use_in_the_wild.md)
 
 </div>
 

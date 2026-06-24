@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PlantTraitNet: An Uncertainty-Aware Multimodal Framework for Global-Scale Plant Trait Inference from Citizen Science Data
 description: >-
-  [AAAI 2026][Multimodal VLM][Plant trait prediction] This paper proposes PlantTraitNet, a multimodal, multi-task, uncertainty-aware deep learning framework that leverages weakly supervised plant photographs from citizen s…
+  [AAAI 2026][Multimodal VLM][Plant trait prediction] This paper proposes PlantTraitNet, a multimodal, multi-task, uncertainty-aware deep learning framework that leverages weakly supervised plant photographs from citizen science platforms (iNaturalist, Pl@ntNet) in combination with image features (DINOv2), depth priors (Depth-Anything-V2), and geospatial priors (Climplicit) to simultaneously predict four key plant functional traits (plant height, leaf area, specific leaf area…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "citizen science"
   - "global-scale mapping"
 date: 2026-05-08
-content_hash: 5896f5d5564536f4
+content_hash: 670160da73cc859b
 ---
 
 # PlantTraitNet: An Uncertainty-Aware Multimodal Framework for Global-Scale Plant Trait Inference from Citizen Science Data
@@ -147,9 +147,9 @@ Global plant trait maps (e.g., leaf nitrogen content, plant height) are fundamen
 
 - [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
-- [\[AAAI 2026\] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](global_compression_commander_plug-and-play_inference_acceler.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](../../ICLR2026/multimodal_vlm/human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
+- [\[AAAI 2026\] Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[ACL 2026\] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](../../ACL2026/multimodal_vlm/vauq_vision-aware_uncertainty_quantification_for_lvlm_self-evaluation.md)
 
 </div>
 

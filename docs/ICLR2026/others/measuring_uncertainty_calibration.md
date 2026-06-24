@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Measuring Uncertainty Calibration
 description: >-
-  [ICLR 2026][Others][Paper Note] Addressing the finite-sample estimation problem of $L_1$ calibration error for binary classifiers, this work proposes the first non-asymptotic, distribution-free certifiable upper bounds under two structural assumptions: bounded variation and bounded derivatives. The latter is constructively guaranteed by applying mino
+  [ICLR 2026][Calibration Error] Addressing the finite-sample estimation problem of $L_1$ calibration error for binary classifiers, this work proposes the first non-asymptotic, distribution-free certifiable upper bounds under two structural assumptions: bounded variation and bounded derivatives. The latter is constructively guaranteed by applying minor perturbations to classifier outputs. Experiments demonstrate that the calibration error upper bound can be controlled at approx…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Calibration Error"
+  - "Finite-sample Bound"
+  - "Distribution-free"
+  - "Bounded Variation"
+  - "Kernel Estimation"
 date: 2026-05-08
-content_hash: 35c66084cfcaa939
+content_hash: 8e08a95fa2c28b85
 ---
+
 # Measuring Uncertainty Calibration
 
 **Conference**: ICLR 2026  

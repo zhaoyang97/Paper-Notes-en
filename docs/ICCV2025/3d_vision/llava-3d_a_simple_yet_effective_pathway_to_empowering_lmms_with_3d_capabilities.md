@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities
 description: >-
-  [ICCV 2025][3D Vision][3D Scene Understanding] This paper proposes LLaVA-3D, which constructs "3D Patches" by injecting 3D positional embeddings into 2D CLIP patch features…
+  [ICCV 2025][3D Vision][3D Scene Understanding] This paper proposes LLaVA-3D, which constructs "3D Patches" by injecting 3D positional embeddings into 2D CLIP patch features, extending a 2D LMM (LLaVA-Video) into a unified 2D/3D understanding model with minimal architectural modifications. The approach achieves 3.5× faster training convergence than existing 3D LMMs, reaches state-of-the-art performance on multiple 3D benchmarks, and preserves 2D capabilities without degradatio…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Positional Encoding"
   - "Visual Grounding"
 date: 2026-05-08
-content_hash: 82888ef685edc6ea
+content_hash: 38dec77920b0aca4
 ---
 
 # LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities
@@ -143,9 +143,9 @@ Two-stage training:
 
 - [\[ICCV 2025\] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation](easy3d_a_simple_yet_effective_method_for_3d_interactive_segmentation.md)
 - [\[ICCV 2025\] A Simple yet Mighty Hartley Diffusion Versatilist for Generalizable Dense Vision Tasks](a_simple_yet_mighty_hartley_diffusion_versatilist_for_genera.md)
+- [\[CVPR 2025\] 3D-LLaVA: Towards Generalist 3D LMMs with Omni Superpoint Transformer](../../CVPR2025/3d_vision/3d-llava_towards_generalist_3d_lmms_with_omni_superpoint_transformer.md)
 - [\[ICCV 2025\] Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness](ross3d_reconstructive_visual_instruction_tuning_with_3d-awareness.md)
-- [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
-- [\[ICCV 2025\] Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval](describe_adapt_and_combine_empowering_clip_encoders_for_open-set_3d_object_retri.md)
+- [\[ECCV 2024\] ScanReason: Empowering 3D Visual Grounding with Reasoning Capabilities](../../ECCV2024/3d_vision/scanreason_empowering_3d_visual_grounding_with_reasoning_capabilities.md)
 
 </div>
 

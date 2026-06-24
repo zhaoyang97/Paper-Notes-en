@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset
 description: >-
-  [CVPR 2026][Medical Imaging][Vision-Language Model] Ours proposes the Instruction-guided Lesion Segmentation (ILS) task for chest X-rays, constructs the first large-scale automatically generated instruction-answering dataset MIMIC-ILS (1.1M samples, 192K images, 91K masks), and trains the ROSALIA model to achieve 71.2% gIoU and 91.8% null-target accuracy, significantly
+  [CVPR 2026][Medical Imaging][Chest X-ray] Ours proposes the Instruction-guided Lesion Segmentation (ILS) task for chest X-rays, constructs the first large-scale automatically generated instruction-answering dataset MIMIC-ILS (1.1M samples, 192K images, 91K masks), and trains the ROSALIA model to achieve 71.2% gIoU and 91.8% null-target accuracy, significantly outperforming existing general and medical segmentation models.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Chest X-ray"
+  - "Lesion Segmentation"
+  - "Instruction Guidance"
+  - "Automated Dataset Construction"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: ef9ac59605152b99
+content_hash: d7676538f4ae6624
 ---
+
 # Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset
 
 **Conference**: CVPR 2026  
@@ -169,15 +174,16 @@ $$\mathcal{L} = \lambda_{txt}\mathcal{L}_{txt} + \lambda_{bce}\mathcal{L}_{bce} 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Temporal Inversion for Learning Interval Change in Chest X-Rays](temporal_inversion_for_learning_interval_change_in_chest_x-rays.md)
-- [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](../../NeurIPS2025/medical_imaging/cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
-- [\[ICCV 2025\] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis](../../ICCV2025/medical_imaging/gemex_a_large-scale_groundable_and_explainable_medical_vqa_benchmark_for_chest_x.md)
 - [\[CVPR 2026\] BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation](backsplit_the_importance_of_sub-dividing_the_background_in_biomedical_lesion_seg.md)
-- [\[ECCV 2024\] CheX: Interactive Localization and Region Description in Chest X-rays](../../ECCV2024/medical_imaging/chex_interactive_localization_and_region_description_in_chest_x-rays.md)
+- [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](../../NeurIPS2025/medical_imaging/cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
+- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
+- [\[ICLR 2026\] OpenPros: A Large-Scale Dataset for Limited View Prostate Ultrasound Computed Tomography](../../ICLR2026/medical_imaging/openpros_a_large-scale_dataset_for_limited_view_prostate_ultrasound_computed_tom.md)
 
 </div>
 

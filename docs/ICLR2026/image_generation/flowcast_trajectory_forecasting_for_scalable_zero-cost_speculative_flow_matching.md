@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] The FlowCast framework is proposed to introduce speculative decoding into Flow Matching models. By leveraging the local smoothness of the velocity field, current velocity predictions are used as zero-cost drafts to extrapolate future states. Selective skipping of redundant steps via MSE verification achieves >2.5× acce
+  [ICLR 2026][Image Generation][Flow Matching] The FlowCast framework is proposed to introduce speculative decoding into Flow Matching models. By leveraging the local smoothness of the velocity field, current velocity predictions are used as zero-cost drafts to extrapolate future states. Selective skipping of redundant steps via MSE verification achieves >2.5× acceleration without quality loss.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Speculative Decoding"
+  - "Zero-cost Acceleration"
+  - "Inference Optimization"
+  - "Trajectory Forecasting"
 date: 2026-05-08
-content_hash: 5529c09d0d2f3520
+content_hash: 140da9555f6f35cb
 ---
+
 # FlowCast: Trajectory Forecasting for Scalable Zero-Cost Speculative Flow Matching
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ Text-to-Image Generation (GenEval Dataset + FLUX Model):
 - [\[ICLR 2026\] FlowCast: Advancing Precipitation Nowcasting with Conditional Flow Matching](flowcast_advancing_precipitation_nowcasting_with_conditional_flow_matching.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
 - [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 - [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting](doflow_flow-based_generative_models_for_interventional_and_counterfactual_foreca.md)
 
 </div>
 

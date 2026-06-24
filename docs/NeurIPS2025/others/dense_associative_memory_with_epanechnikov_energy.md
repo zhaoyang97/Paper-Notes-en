@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Dense Associative Memory with Epanechnikov Energy
 description: >-
-  [NeurIPS 2025][associative memory] This paper proposes a log-sum-ReLU (LSR) energy function based on the Epanechnikov kernel as a replacement for the conventional log-sum-exp (LSE) energy in Dense Associative Memory. For…
+  [NeurIPS 2025 Spotlight][associative memory] This paper proposes a log-sum-ReLU (LSR) energy function based on the Epanechnikov kernel as a replacement for the conventional log-sum-exp (LSE) energy in Dense Associative Memory. For the first time, it achieves the coexistence of exact retrieval of all stored patterns and the emergence of novel creative local minima, while preserving exponential memory capacity.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "associative memory"
   - "Hopfield network"
   - "energy function"
@@ -12,7 +12,7 @@ tags:
   - "emergent memory"
   - "ReLU"
 date: 2026-05-08
-content_hash: 41b3c015f3ab471c
+content_hash: dd8374ea841f7b0c
 ---
 
 # Dense Associative Memory with Epanechnikov Energy
@@ -127,11 +127,11 @@ Within the general DenseAM energy framework $E_\beta(\mathbf{x}) = -Q[\sum_\mu F
 
 ## Related Papers
 
+- [\[ICML 2025\] Modern Methods in Associative Memory](../../ICML2025/others/modern_methods_in_associative_memory.md)
 - [\[NeurIPS 2025\] Fixed-Point RNNs: Interpolating from Diagonal to Dense](fixed-point_rnns_interpolating_from_diagonal_to_dense.md)
 - [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
-- [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](../../AAAI2026/others/piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
-- [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](../../AAAI2026/others/spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
-- [\[AAAI 2026\] Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters](../../AAAI2026/others/deadline-aware_energy-efficient_control_of_domestic_immersion_hot_water_heater.md)
+- [\[ACL 2025\] If Attention Serves as a Cognitive Model of Human Memory Retrieval, What is the Plausible Memory Representation?](../../ACL2025/others/if_attention_serves_as_a_cognitive_model_of_human_memory_retrieval_what_is_the_p.md)
+- [\[ACL 2025\] Hierarchical Memory Organization for Wikipedia Generation](../../ACL2025/others/hierarchical_memory_wikipedia_gen.md)
 
 </div>
 

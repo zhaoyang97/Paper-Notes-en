@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] CutS3D: Cutting Semantics in 3D for 2D Unsupervised Instance Segmentation
 description: >-
-  [3D Vision] CutS3D is the first method to introduce 3D information (monocular depth estimation) into unsupervised instance segmentation. By cutting semantic regions in 3D point clouds…
+  [3D Vision] CutS3D is the first method to introduce 3D information (monocular depth estimation) into unsupervised instance segmentation. By cutting semantic regions in 3D point clouds, it separates overlapping instances in 2D, and introduces a spatial confidence mechanism to improve pseudo-label quality, surpassing CutLER and other SoTA methods on multiple benchmarks.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 69bb1969815f3237
+content_hash: 09e0f754a9607053
 ---
 
 # CutS3D: Cutting Semantics in 3D for 2D Unsupervised Instance Segmentation
@@ -176,7 +176,7 @@ Performance is comparable across different depth estimators, indicating that the
 - [\[ICCV 2025\] Disentangling Instance and Scene Contexts for 3D Semantic Scene Completion](disentangling_instance_and_scene_contexts_for_3d_semantic_scene_completion.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 - [\[ICCV 2025\] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation](easy3d_a_simple_yet_effective_method_for_3d_interactive_segmentation.md)
-- [\[ICCV 2025\] SplatTalk: 3D VQA with Gaussian Splatting](splattalk_3d_vqa_with_gaussian_splatting.md)
+- [\[CVPR 2025\] DUNE: Distilling a Universal Encoder from Heterogeneous 2D and 3D Teachers](../../CVPR2025/3d_vision/dune_distilling_a_universal_encoder_from_heterogeneous_2d_and_3d_teachers.md)
 
 </div>
 

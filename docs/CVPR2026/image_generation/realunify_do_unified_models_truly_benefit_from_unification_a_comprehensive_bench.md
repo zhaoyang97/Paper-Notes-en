@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1000 human-annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that while current unified models po
+  [CVPR 2026][Image Generation][Unified models] This paper proposes RealUnify, the first benchmark specifically designed to evaluate the bidirectional synergy between understanding and generation capabilities in unified models. Through 1000 human-annotated instances and a dual evaluation protocol (direct and stepwise), it reveals that while current unified models possess both understanding and generation capabilities, they fail to achieve true capability synergy in end-to-end s…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified models"
+  - "capability synergy"
+  - "understanding and generation"
+  - "benchmark"
+  - "bidirectional evaluation"
 date: 2026-05-08
-content_hash: bc886b15d41aaf37
+content_hash: e3c0590f6f9c923b
 ---
+
 # RealUnify: Do Unified Models Truly Benefit from Unification? A Comprehensive Benchmark
 
 **Conference**: CVPR 2026  
@@ -108,11 +114,11 @@ This work is a benchmark study and does not involve model training. Regarding da
 
 ## Related Papers
 
-- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[CVPR 2026\] EMMA: Concept Erasure Benchmark with Comprehensive Semantic Metrics and Diverse Categories](emma_concept_erasure_benchmark_with_comprehensive_semantic_metrics_and_diverse_c.md)
+- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
 - [\[CVPR 2026\] Do Less, Achieve More: Do We Need Every-Step Optimization for RL Fine-tuning of Diffusion Models?](do_less_achieve_more_do_we_need_every-step_optimization_for_rl_fine-tuning_of_di.md)
-- [\[CVPR 2026\] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition](mico-150k_a_comprehensive_dataset_advancing_multi-image_composition.md)
-- [\[CVPR 2026\] VecGlypher: Unified Vector Glyph Generation with Language Models](vecglypher_unified_vector_glyph_generation_with_language_models.md)
+- [\[CVPR 2026\] UniGen-1.5: Enhancing Image Generation and Editing through Reward Unification in RL](unigen-15_enhancing_image_generation_and_editing_through_reward_unification_in_r.md)
 
 </div>
 

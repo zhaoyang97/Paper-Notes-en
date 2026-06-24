@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras
 description: >-
-  [CVPR 2026][Object Detection][RGB-to-RAW] The authors propose SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to adapt to reconstruction difficulties across different pixel intensity regions and introduces the CamLoRA module to achieve lightweight cross-camera adaptation within a single model
+  [CVPR2026][Object Detection][RGB-to-RAW] The authors propose SpiralDiff, a diffusion framework for RGB-to-RAW conversion that employs a signal-dependent noise weighting strategy to adapt to reconstruction difficulties across different pixel intensity regions and introduces the CamLoRA module to achieve lightweight cross-camera adaptation within a single model.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - RGB-to-RAW
-  - Diffusion Model
-  - LoRA
+  - "CVPR2026"
+  - "Object Detection"
+  - "RGB-to-RAW"
+  - "Diffusion models"
+  - "Signal-dependent noise"
+  - "LoRA"
+  - "Cross-camera adaptation"
 date: 2026-05-08
-content_hash: 80b6eb57f553eda8
+content_hash: a1c2726769430c9e
 ---
+
 # SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras
 
 **Conference**: CVPR2026  
@@ -147,11 +150,11 @@ Following the objective of ResShift: the network $f_\theta(\mathbf{x}_t, \mathbf
 
 ## Related Papers
 
-- [\[CVPR 2026\] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)
 - [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
 - [\[CVPR 2025\] Towards RAW Object Detection in Diverse Conditions](../../CVPR2025/object_detection/towards_raw_object_detection_in_diverse_conditions.md)
+- [\[CVPR 2026\] Beyond Duality: A Hybrid Framework of Leveraging Shared and Private Features for RGB-Event Object Detection](beyond_duality_a_hybrid_framework_of_leveraging_shared_and_private_features_for_.md)
+- [\[CVPR 2026\] UAV-CB: A Complex-Background RGB-T Dataset and Local Frequency Bridge Network for UAV Detection](uav-cb_a_complex-background_rgb-t_dataset_and_local_frequency_bridge_network_for.md)
 - [\[ICCV 2025\] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion](../../ICCV2025/object_detection/diffusion_curriculum_synthetic-to-real_data_curriculum_via_image-guided_diffusio.md)
-- [\[CVPR 2025\] Generalized Diffusion Detector: Mining Robust Features from Diffusion Models for Domain-Generalized Detection](../../CVPR2025/object_detection/generalized_diffusion_detector_mining_robust_features_from_diffusion_models_for_.md)
 
 </div>
 

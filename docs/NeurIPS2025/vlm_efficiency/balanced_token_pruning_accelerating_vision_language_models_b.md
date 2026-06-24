@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual token pruning] This paper proposes Balanced Token Pruning (BTP), which jointly considers the impact of pruning on both the current layer (local) and subsequent layers (global). BTP e…
+  [NeurIPS 2025][Multimodal Efficiency][visual token pruning] This paper proposes Balanced Token Pruning (BTP), which jointly considers the impact of pruning on both the current layer (local) and subsequent layers (global). BTP emphasizes diversity preservation in shallow layers to maintain downstream representation quality, and attention-based selection in deep layers to preserve local output consistency. On multiple LVLMs including LLaVA and Qwen2.5-VL…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "visual token pruning"
   - "local-global optimization"
   - "attention pruning"
   - "diversity pruning"
   - "LVLM inference acceleration"
 date: 2026-05-08
-content_hash: 6f5a56f4b8b5784d
+content_hash: adb4a007f8764aec
 ---
 
 # Balanced Token Pruning: Accelerating Vision Language Models Beyond Local Optimization
@@ -139,10 +139,10 @@ By computing cosine similarity of image token hidden states between adjacent lay
 ## Related Papers
 
 - [\[NeurIPS 2025\] ViSpec: Accelerating Vision-Language Models with Vision-Aware Speculative Decoding](vispec_accelerating_vision-language_models_with_vision-aware_speculative_decodin.md)
+- [\[CVPR 2025\] MBQ: Modality-Balanced Quantization for Large Vision-Language Models](../../CVPR2025/vlm_efficiency/mbq_modality-balanced_quantization_for_large_vision-language_models.md)
+- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](../../ICCV2025/vlm_efficiency/meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
+- [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
 - [\[NeurIPS 2025\] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs](scope_saliency-coverage_oriented_token_pruning_for_efficient_multimodel_llms.md)
-- [\[ICCV 2025\] METEOR: Multi-Encoder Collaborative Token Pruning for Efficient Vision Language Models](../../ICCV2025/multimodal_vlm/meteor_multi-encoder_collaborative_token_pruning_for_efficient_vision_language_m.md)
-- [\[ICCV 2025\] Feather the Throttle: Revisiting Visual Token Pruning for Vision-Language Model Acceleration](../../ICCV2025/multimodal_vlm/feather_the_throttle_revisiting_visual_token_pruning_for_vision-language_model_a.md)
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
 
 </div>
 

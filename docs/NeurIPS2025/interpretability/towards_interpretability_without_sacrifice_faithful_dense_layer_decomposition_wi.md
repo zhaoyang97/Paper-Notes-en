@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders
 description: >-
-  [NeurIPS 2025][Interpretability][mechanistic interpretability] This paper proposes Mixture of Decoders (MxD), which decomposes the MLP layers of LLMs into tens of thousands of sparsely activated expert sub-layers (layer-…
+  [NeurIPS 2025][Interpretability][mechanistic interpretability] This paper proposes Mixture of Decoders (MxD), which decomposes the MLP layers of LLMs into tens of thousands of sparsely activated expert sub-layers (layer-level sparsity). Each expert implements a full-rank linear transformation via Hadamard product tensor factorization. MxD significantly outperforms Transcoders on the sparsity–accuracy trade-off while maintaining interpretability.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "tensor factorization"
   - "MLP decomposition"
 date: 2026-05-08
-content_hash: a3e125833a1e552d
+content_hash: a912760974e80a35
 ---
 
 # Towards Interpretability Without Sacrifice: Faithful Dense Layer Decomposition with Mixture of Decoders
@@ -125,10 +125,10 @@ MxD Pareto-dominates Transcoders across all sparsity levels.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dense SAE Latents Are Features, Not Bugs](dense_sae_latents_are_features_not_bugs.md)
-- [\[ICLR 2026\] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts](../../ICLR2026/interpretability/exploring_interpretability_for_visual_prompt_tuning_with_cross-layer_concepts.md)
-- [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
-- [\[NeurIPS 2025\] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions](partial_information_decomposition_via_normalizing_flows_in_latent_gaussian_distr.md)
-- [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](../../ICLR2026/interpretability/understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
+- [\[ICLR 2026\] Evaluating SAE Interpretability Without Generating Explanations](../../ICLR2026/interpretability/evaluating_sae_interpretability_without_generating_explanations.md)
+- [\[ICML 2025\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2025/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
+- [\[NeurIPS 2025\] H-SPLID: HSIC-based Saliency Preserving Latent Information Decomposition](h-splid_hsic-based_saliency_preserving_latent_information_decomposition.md)
 
 </div>
 

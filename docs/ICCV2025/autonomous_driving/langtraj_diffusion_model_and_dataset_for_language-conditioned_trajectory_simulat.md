@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation
 description: >-
-  [ICCV 2025][Autonomous Driving][traffic simulation] LangTraj is proposed as the first diffusion-based trajectory simulator that incorporates natural language as a training-time condition. It is accompanied by the InterDr…
+  [ICCV 2025][Autonomous Driving][traffic simulation] LangTraj is proposed as the first diffusion-based trajectory simulator that incorporates natural language as a training-time condition. It is accompanied by the InterDrive dataset, containing 150K human-annotated interaction behaviors, enabling language-controllable multi-agent interaction simulation and safety-critical scenario generation.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "diffusion model"
   - "trajectory generation"
 date: 2026-05-08
-content_hash: 9ed33cd8bcb10634
+content_hash: 0db3ab5614a998b3
 ---
 
 # LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation

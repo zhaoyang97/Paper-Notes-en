@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] In "understanding-generation unified" multimodal models, ParaUni shifts from using only the final layer of VLM as the diffusion condition to a parallel integration of all VLM layer visual features through a Layer Integration Module (LIM). During the RL stage, a Layer-wise Dynamic Adjustment Mechanism (LDAM) is employed
+  [CVPR 2026][Image Generation][Unified Multimodal Model] In "understanding-generation unified" multimodal models, ParaUni shifts from using only the final layer of VLM as the diffusion condition to a parallel integration of all VLM layer visual features through a Layer Integration Module (LIM). During the RL stage, a Layer-wise Dynamic Adjustment Mechanism (LDAM) is employed to specifically perturb different layers based on distinct rewards, thereby enhancing both fine details…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Unified Multimodal Model"
+  - "Text-to-Image"
+  - "Diffusion Model"
+  - "VLM Hierarchical Features"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 39f564a241da3e80
+content_hash: c1addf99bb31e28d
 ---
+
 # ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction
 
 **Conference**: CVPR 2026  
@@ -147,16 +151,16 @@ ParaUni's GenEval score of 0.87 and DPG-Bench score of 83.45 outperform unified 
 - Value: ⭐⭐⭐⭐ (Practical plug-and-play module for improving unified models).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](../../NeurIPS2025/image_generation/coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
-- [\[CVPR 2026\] UniVerse: Empower Unified Generation with Reasoning and Knowledge](universe_empower_unified_generation_with_reasoning_and_knowledge.md)
 - [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)
-- [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
+- [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
 
 </div>
 

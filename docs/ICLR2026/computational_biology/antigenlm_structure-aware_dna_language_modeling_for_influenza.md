@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AntigenLM: Structure-Aware DNA Language Modeling for Influenza
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] AntigenLM is a GPT-2 style DNA language model that preserves the integrity of genomic functional units. By pre-training and fine-tuning on whole genomes of influenza viruses, it autoregressively predicts antigen sequences of future dominant strains, significantly outperforming the evolutionary model beth-1 and general-
+  [ICLR 2026][Computational Biology][DNA Language Models] AntigenLM is a GPT-2 style DNA language model that preserves the integrity of genomic functional units. By pre-training and fine-tuning on whole genomes of influenza viruses, it autoregressively predicts antigen sequences of future dominant strains, significantly outperforming the evolutionary model beth-1 and general-purpose genomic models in amino acid mismatch rates.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "DNA Language Models"
+  - "Influenza Virus Prediction"
+  - "Functional Unit Encoding"
+  - "Whole-Genome Modeling"
+  - "Vaccine Design"
 date: 2026-05-08
-content_hash: 24ce46560c37054f
+content_hash: b2c7a9b8144f347c
 ---
+
 # AntigenLM: Structure-Aware DNA Language Modeling for Influenza
 
 **Conference**: ICLR 2026  
@@ -133,15 +139,15 @@ A shared Transformer backbone is used with two heads: an LM head predicts the ne
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
-- [\[ICLR 2026\] Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction](automatic_and_structure-aware_sparsification_of_hybrid_neural_odes_with_applicat.md)
 - [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
 - [\[ICLR 2026\] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA](patchdna_a_flexible_and_biologically-informed_alternative_to_tokenization_for_dn.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
+- [\[ICLR 2026\] Automatic and Structure-Aware Sparsification of Hybrid Neural ODEs with Application to Glucose Prediction](automatic_and_structure-aware_sparsification_of_hybrid_neural_odes_with_applicat.md)
+- [\[ICLR 2026\] Physically Valid Biomolecular Interaction Modeling with Gauss-Seidel Projection](physically_valid_biomolecular_interaction_modeling_with_gauss-seidel_projection.md)
 
 </div>
 

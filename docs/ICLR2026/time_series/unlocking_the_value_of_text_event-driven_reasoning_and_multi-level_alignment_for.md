@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Value of Text: Event-Driven Reasoning and Multi-Level Alignment for Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] VoT is proposed, a multi-modal time series forecasting method that fully exploits text value through event-driven reasoning (utilizing LLMs for structured reasoning on exogenous text to obtain numerical predictions) and multi-level alignment (representation-level endogenous text alignment + prediction-level adaptive fr
+  [ICLR 2026][Time Series][Multi-modal time series forecasting] VoT is proposed, a multi-modal time series forecasting method that fully exploits text value through event-driven reasoning (utilizing LLMs for structured reasoning on exogenous text to obtain numerical predictions) and multi-level alignment (representation-level endogenous text alignment + prediction-level adaptive frequency fusion). It comprehensively outperforms existing methods across 10 real-world domains.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Multi-modal time series forecasting"
+  - "event-driven reasoning"
+  - "text alignment"
+  - "adaptive frequency fusion"
+  - "LLM reasoning"
 date: 2026-05-08
-content_hash: 9e87c0dece919c24
+content_hash: 15e588ca9f90b732
 ---
+
 # Unlocking the Value of Text: Event-Driven Reasoning and Multi-Level Alignment for Time Series Forecasting
 
 **Conference**: ICLR 2026  

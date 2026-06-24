@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Retrospective Forecasting Case Study
 description: >-
-  [ACL 2026][Time Series][Paper Note] This paper systematically audits the date filters of Google and DuckDuckGo, finding that search engine date filtering fails significantly in retrospective forecasting (RF) evaluations—$71\%$ (Google) and $81\%$ (DuckDuckGo) of questions contain at least one page with major post-cutoff information leakage, causing predi
+  [ACL 2026][Time Series][Temporal leakage] This paper systematically audits the date filters of Google and DuckDuckGo, finding that search engine date filtering fails significantly in retrospective forecasting (RF) evaluations—$71\%$ (Google) and $81\%$ (DuckDuckGo) of questions contain at least one page with major post-cutoff information leakage, causing prediction Brier scores to artificially drop from $0.24$ to $0.10$.
 tags:
-  - ACL 2026
-  - Time Series
+  - "ACL 2026"
+  - "Time Series"
+  - "Temporal leakage"
+  - "date filtering"
+  - "retrospective forecasting"
+  - "search engine audit"
+  - "evaluation reliability"
 date: 2026-05-08
-content_hash: a9641df058e09202
+content_hash: bb044216c4cfb53e
 ---
+
 # Temporal Leakage in Search-Engine Date-Filtered Web Retrieval: A Retrospective Forecasting Case Study
 
 **Conference**: ACL 2026  
@@ -148,11 +154,11 @@ No model training is involved. For long documents exceeding 7680 tokens, MMR is 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](../../NeurIPS2025/time_series/strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
+- [\[ICLR 2026\] Understanding Transformers in Time Series Forecasting: A Case Study on MOIRAI](../../ICLR2026/time_series/understanding_transformers_for_time_series_forecasting_a_case_study_on_moirai.md)
 - [\[ICML 2026\] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting](../../ICML2026/time_series/semantics-enhanced_retrieval-augmented_time_series_forecasting.md)
-- [\[AAAI 2026\] Task-Aware Retrieval Augmentation for Dynamic Recommendation](../../AAAI2026/time_series/task-aware_retrieval_augmentation_for_dynamic_recommendation.md)
-- [\[ICML 2026\] Nested Spatio-Temporal Time Series Forecasting](../../ICML2026/time_series/nested_spatio-temporal_time_series_forecasting.md)
+- [\[NeurIPS 2025\] StRap: Spatio-Temporal Pattern Retrieval for Out-of-Distribution Generalization](../../NeurIPS2025/time_series/strap_spatio-temporal_pattern_retrieval_for_out-of-distribution_generalization.md)
 - [\[ACL 2026\] STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation](stk-adapter_incorporating_evolving_graph_and_event_chain_for_temporal_knowledge_.md)
+- [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](../../ICLR2026/time_series/a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
 
 </div>
 

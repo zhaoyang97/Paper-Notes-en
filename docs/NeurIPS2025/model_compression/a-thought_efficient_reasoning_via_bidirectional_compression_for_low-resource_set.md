@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings
 description: >-
-  [NeurIPS 2025][Model Compression][reasoning efficiency] This paper proposes A*-Thought, a CoT compression framework based on the A* search algorithm. It introduces Bidirectional Importance Scoring (BIS) to measure each r…
+  [NeurIPS 2025][Model Compression][reasoning efficiency] This paper proposes A*-Thought, a CoT compression framework based on the A* search algorithm. It introduces Bidirectional Importance Scoring (BIS) to measure each reasoning step's relevance to both the question and the answer, and combines path-level A* search to efficiently identify the most compact valid reasoning path within an exponentially large search space. Under a 512-token budget…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "bidirectional importance"
   - "long-to-short"
 date: 2026-05-08
-content_hash: 0c30bf6b8938f0d5
+content_hash: bd953df0da32c2cc
 ---
 
 # A*-Thought: Efficient Reasoning via Bidirectional Compression for Low-Resource Settings
@@ -136,8 +136,8 @@ A two-level design: (1) **Step level** — Bidirectional Importance Scoring (BIS
 - [\[NeurIPS 2025\] Linear Attention for Efficient Bidirectional Sequence Modeling](linear_attention_for_efficient_bidirectional_sequence_modeling.md)
 - [\[NeurIPS 2025\] TokenSqueeze: Performance-Preserving Compression for Reasoning LLMs](tokensqueeze_performance-preserving_compression_for_reasoning_llms.md)
 - [\[NeurIPS 2025\] REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning](rep_resource-efficient_prompting_for_rehearsal-free_continual_learning.md)
-- [\[NeurIPS 2025\] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression](qsvd_efficient_low-rank_approximation_for_unified_query-key-value_weight_compres.md)
 - [\[NeurIPS 2025\] FirstAidQA: A Synthetic Dataset for First Aid and Emergency Response in Low-Connectivity Settings](firstaidqa_a_synthetic_dataset_for_first_aid_and_emergency_response_in_low-conne.md)
+- [\[ICLR 2026\] Reasoning Models Can be Accurately Pruned Via Chain-of-Thought Reconstruction](../../ICLR2026/model_compression/reasoning_models_can_be_accurately_pruned_via_chain-of-thought_reconstruction.md)
 
 </div>
 

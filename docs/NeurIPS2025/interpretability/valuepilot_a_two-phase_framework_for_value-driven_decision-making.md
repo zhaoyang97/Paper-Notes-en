@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making
 description: >-
-  [NeurIPS 2025][Interpretability][value-driven decision-making] This paper proposes ValuePilot, a two-phase framework that constructs value-annotated decision scenarios via a Dataset Generation Toolkit (DGT) and performs…
+  [NeurIPS 2025][Interpretability][value-driven decision-making] This paper proposes ValuePilot, a two-phase framework that constructs value-annotated decision scenarios via a Dataset Generation Toolkit (DGT) and performs multi-criteria decision-making through a Decision-Making Module (DMM) conditioned on personalized user value preferences, outperforming strong baselines including GPT-5 in alignment with human decisions.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "multi-criteria decision-making"
   - "human values"
 date: 2026-05-08
-content_hash: d383c341b5f49d88
+content_hash: e5383bc82c0f61c7
 ---
 
 # ValuePilot: A Two-Phase Framework for Value-Driven Decision-Making
@@ -192,8 +192,8 @@ DMM outperforms GPT-5 by approximately 3.93% on OS-Sim and by 8.13% on First-Act
 - [\[ACL 2026\] IDEA: An Interpretable and Editable Decision-Making Framework for LLMs via Verbal-to-Numeric Calibration](../../ACL2026/interpretability/idea_an_interpretable_and_editable_decision-making_framework_for_llms_via_verbal.md)
 - [\[NeurIPS 2025\] Empowering Decision Trees via Shape Function Branching](empowering_decision_trees_via_shape_function_branching.md)
 - [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
-- [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
 - [\[NeurIPS 2025\] ARC-JSD: Attributing Response to Context via Jensen-Shannon Divergence Driven Mechanistic Study](attributing_response_to_context_a_jensen-shannon_divergence_driven_mechanistic_s.md)
+- [\[ICLR 2026\] Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment](../../ICLR2026/interpretability/towards_cognitively-faithful_decision-making_models_to_improve_ai_alignment.md)
 
 </div>
 

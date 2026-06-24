@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM
 description: >-
-  [CVPR 2026][3D Vision][SLAM] Addressing the issue where image appearance drift caused by camera Auto-Exposure (AE) in real-world scenes destroys the photometric consistency of 3DGS, AERGS-SLAM introduces a Camera Exposure Network (CEN) that decouples the "rendered radiance map" from the "exposure process." Combined with learned illumination-robust
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Addressing the issue where image appearance drift caused by camera Auto-Exposure (AE) in real-world scenes destroys the photometric consistency of 3DGS, AERGS-SLAM introduces a Camera Exposure Network (CEN) that decouples the "rendered radiance map" from the "exposure process." Combined with learned illumination-robust feature localization and temporal-aware coarse-to-fine optimization, it produces the first decoupled 3DGS SLAM ro…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "SLAM"
+  - "Auto-Exposure"
+  - "Camera Response Function"
+  - "Decoupled Localization"
 date: 2026-05-08
-content_hash: 97075f95697423fd
+content_hash: 0f751e4fbc2d87c1
 ---
+
 # AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Average RMSE and PSNR reported on processed EuRoC and self-collected datasets (R
 
 ## Related Papers
 
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
-- [\[CVPR 2026\] HumanBA: Human-Aware Bundle Adjustment via Global Human-Camera Decoupling](humanba_human-aware_bundle_adjustment_via_global_human-camera_decoupling.md)
-- [\[CVPR 2026\] A Survey of Spatial Memory Representations for Efficient Robot Navigation](a_survey_of_spatial_memory_representations_for_efficient_robot_navigation.md)
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
 - [\[CVPR 2026\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
+- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
+- [\[ECCV 2024\] I²-SLAM: Inverting Imaging Process for Robust Photorealistic Dense SLAM](../../ECCV2024/3d_vision/i2-slam_inverting_imaging_process_for_robust_photorealistic_dense_slam.md)
+- [\[CVPR 2025\] WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments](../../CVPR2025/3d_vision/wildgs-slam_monocular_gaussian_splatting_slam_in_dynamic_environments.md)
 
 </div>
 

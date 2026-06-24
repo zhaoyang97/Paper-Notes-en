@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales
 description: >-
-  [NeurIPS 2025][Functional connectivity] This paper generalizes the conventional discrete-time Poisson GLM to a continuous-time Poisson point process framework. Two approaches—Monte Carlo sampling and second-order polynom…
+  [NeurIPS 2025][Functional connectivity] This paper generalizes the conventional discrete-time Poisson GLM to a continuous-time Poisson point process framework. Two approaches—Monte Carlo sampling and second-order polynomial approximation—are proposed to bypass the intractable integral in the likelihood. Combined with orthogonal generalized Laguerre basis functions, the method achieves minute-scale training on recordings spanning hundreds of neurons and thousands of seconds…
 tags:
   - "NeurIPS 2025"
   - "Functional connectivity"
@@ -11,7 +11,7 @@ tags:
   - "Monte Carlo estimation"
   - "synaptic coupling filters"
 date: 2026-05-08
-content_hash: 4ad817bb5295e1be
+content_hash: 11fe8e96231fa6d2
 ---
 
 # Scalable Inference of Functional Neural Connectivity at Submillisecond Timescales
@@ -122,8 +122,8 @@ The MC model is optimized via gradient descent with adaptive step sizes (backtra
 ## Related Papers
 
 - [\[NeurIPS 2025\] Learning to Condition: A Neural Heuristic for Scalable MPE Inference](learning_to_condition_a_neural_heuristic_for_scalable_mpe_inference.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
 - [\[NeurIPS 2025\] Statistical Inference Under Performativity](statistical_inference_under_performativity.md)
+- [\[ICML 2026\] Functional Equivalence in Attention: A Comprehensive Study with Applications to Linear Mode Connectivity](../../ICML2026/others/functional_equivalence_in_attention_a_comprehensive_study_with_applications_to_l.md)
 - [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
 

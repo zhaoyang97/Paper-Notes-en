@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hyperbolic Continuous Structural Entropy for Hierarchical Clustering
 description: >-
-  [AAAI 2026][Graph Learning][Hierarchical Clustering] This paper proposes HypCSE, which relaxes discrete Structural Entropy (SE) into a Continuous Structural Entropy (CSE) defined in hyperbolic space. Combined with graph…
+  [AAAI 2026][Graph Learning][Hierarchical Clustering] This paper proposes HypCSE, which relaxes discrete Structural Entropy (SE) into a Continuous Structural Entropy (CSE) defined in hyperbolic space. Combined with graph structure learning and contrastive learning, HypCSE enables end-to-end differentiable hierarchical clustering and consistently outperforms both discrete and continuous hierarchical clustering methods across 7 datasets.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Graph Structure Learning"
   - "Contrastive Learning"
 date: 2026-05-08
-content_hash: b1a1591dc87b79a0
+content_hash: 6401329f074f0611
 ---
 
 # Hyperbolic Continuous Structural Entropy for Hierarchical Clustering
@@ -113,11 +113,11 @@ The relaxation approach underlying CSE can be generalized to the continuous rela
 
 ## Related Papers
 
+- [\[ICLR 2026\] CORDS - Continuous Representations of Discrete Structures](../../ICLR2026/graph_learning/cords_-_continuous_representations_of_discrete_structures.md)
+- [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](../../ICLR2026/graph_learning/bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
+- [\[ICLR 2026\] $\ell_1$ Latent Distance Based Continuous-Time Graph Representation](../../ICLR2026/graph_learning/ell_1_latent_distance_based_continuous-time_graph_representation.md)
 - [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](../../ICLR2026/graph_learning/entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
-- [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
-- [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](../../ACL2026/graph_learning/gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
-- [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](../../ACL2026/graph_learning/tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework](../../NeurIPS2025/graph_learning/unifying_and_enhancing_graph_transformers_via_a_hierarchical_mask_framework.md)
+- [\[ICML 2025\] Hyperbolic-PDE GNN: Spectral Graph Neural Networks in the Perspective of A System of Hyperbolic Partial Differential Equations](../../ICML2025/graph_learning/hyperbolic-pde_gnn_spectral_graph_neural_networks_in_the_perspective_of_a_system.md)
 
 </div>
 

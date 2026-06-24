@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][GraphRAG] LinearRAG identifies that performance bottlenecks in existing GraphRAG methods stem from unstable and expensive relationship extraction. It proposes a "Tri-Graph" that extracts only entities without relations, coupled with a two-stage retrieval process (semantic bridging for entity activation + global importance aggreg
+  [ICLR 2026][Information Retrieval & RAG][GraphRAG] LinearRAG identifies that performance bottlenecks in existing GraphRAG methods stem from unstable and expensive relationship extraction. It proposes a "Tri-Graph" that extracts only entities without relations, coupled with a two-stage retrieval process (semantic bridging for entity activation + global importance aggregation for passage retrieval). This approach reduces indexing time by 77% with zero LLM token consumption whil…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - GraphRAG
-  - Personalized PageRank
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "GraphRAG"
+  - "relation-agnostic graph construction"
+  - "multi-hop retrieval"
+  - "Personalized PageRank"
+  - "linear scalability"
 date: 2026-05-08
-content_hash: 1d94b5a334a45000
+content_hash: 59672561f46f1295
 ---
+
 # LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora
 
 **Conference**: ICLR 2026  
@@ -135,11 +139,11 @@ Pruning Strategy (2Wiki): Full version Acc 66.95 / 0.093s; w/o Pruning 64.50 / 0
 
 ## Related Papers
 
+- [\[ICLR 2026\] When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation](when_to_use_graphs_in_rag_a_comprehensive_analysis_for_graph_retrieval-augmented.md)
 - [\[ICLR 2026\] Youtu-GraphRAG: Vertically Unified Agents for Graph Retrieval-Augmented Complex Reasoning](youtu-graphrag_vertically_unified_agents_for_graph_retrieval-augmented_complex_r.md)
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](../../ACL2026/information_retrieval/when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 - [\[ACL 2026\] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](../../ACL2026/information_retrieval/navigating_large-scale_document_collections_mudabench_for_multi-document_analyti.md)
-- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
-- [\[ACL 2025\] Graph of Records: Boosting Retrieval Augmented Generation for Long-context Summarization with Graphs](../../ACL2025/information_retrieval/gor_rag_long_context_summary.md)
-- [\[ICLR 2026\] HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation](hiprag_hierarchical_process_rewards_for_efficient_agentic_retrieval_augmented_ge.md)
+- [\[ICLR 2026\] The Topology of Reasoning: Augmenting Generation with Retrieved Cell Complexes for Text-Graph QA](topology_of_reasoning_retrieved_cell_complex-augmented_generation_for_textual_gr.md)
 
 </div>
 

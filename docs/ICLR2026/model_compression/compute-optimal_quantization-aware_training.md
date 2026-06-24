@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Compute-Optimal Quantization-Aware Training
 description: >-
-  [ICLR 2026][Model Compression][Scaling Law] Based on 757 QAT experiments (86M-2.2B parameters, 1-6 bits), this paper discovers that the optimal QAT training fraction increases as total compute grows (contrary to the previous conclusion of a fixed 10%). It proposes a tokens-per-parameter-byte statistic and a new loss scaling law to accurately predict optimal QAT
+  [ICLR 2026][Model Compression][Quantization-Aware Training] Based on 757 QAT experiments (86M-2.2B parameters, 1-6 bits), this paper discovers that the optimal QAT training fraction increases as total compute grows (contrary to the previous conclusion of a fixed 10%). It proposes a tokens-per-parameter-byte statistic and a new loss scaling law to accurately predict optimal QAT allocation strategies and final loss.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Scaling Law
-  - tokens-per-parameter-byte
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Quantization-Aware Training"
+  - "Scaling Law"
+  - "Compute-Optimal Allocation"
+  - "tokens-per-parameter-byte"
+  - "Low-bit Quantization"
 date: 2026-05-08
-content_hash: 7b85d3d236354ed5
+content_hash: 2f8462551da0e3bf
 ---
+
 # Compute-Optimal Quantization-Aware Training
 
 **Conference**: ICLR 2026  
@@ -141,7 +145,7 @@ The standard process is FP training → cooldown → QAT. However, FP updates du
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[ICLR 2026\] Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs](optimal_brain_restoration_for_joint_quantization_and_sparsification_of_llms.md)
-- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
+- [\[ACL 2025\] EfficientQAT: Efficient Quantization-Aware Training for Large Language Models](../../ACL2025/model_compression/efficientqat.md)
 
 </div>
 

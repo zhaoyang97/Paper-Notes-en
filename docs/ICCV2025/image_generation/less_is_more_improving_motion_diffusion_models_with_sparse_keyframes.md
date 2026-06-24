@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Less is More: Improving Motion Diffusion Models with Sparse Keyframes
 description: >-
-  [Image Generation] This paper proposes sMDM, a motion diffusion framework centered on sparse keyframes. By introducing a masking-interpolation strategy and the Visvalingam-Whyatt keyframe selection algorithm…
+  [Image Generation] This paper proposes sMDM, a motion diffusion framework centered on sparse keyframes. By introducing a masking-interpolation strategy and the Visvalingam-Whyatt keyframe selection algorithm, sMDM reduces redundant frame processing and consistently outperforms dense-frame baselines in text alignment and motion quality.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 56dd70296a107f98
+content_hash: b0fb189c23c6b6aa
 ---
 
 # Less is More: Improving Motion Diffusion Models with Sparse Keyframes
@@ -143,10 +143,10 @@ sPriorMDM generates more expressive motions (EES 2.338 vs. 1.856) with greater f
 ## Related Papers
 
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
+- [\[CVPR 2025\] Dynamic Motion Blending for Versatile Motion Editing (MotionReFit)](../../CVPR2025/image_generation/dynamic_motion_blending_for_versatile_motion_editing.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](joint_diffusion_models_in_continual_learning.md)
 - [\[ICCV 2025\] LoRAverse: A Submodular Framework to Retrieve Diverse Adapters for Diffusion Models](loraverse_a_submodular_framework_to_retrieve_diverse_adapters_for_diffusion_mode.md)
 - [\[ICCV 2025\] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](trce_towards_reliable_malicious_concept_erasure_in_text-to-image_diffusion_model.md)
-- [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)
 description: >-
-  [ICML 2026][vlm_reasoning][VLM agent] GLANCE introduces a self-supervised "think-and-see alignment" head for RL in VLM agents: the "next-state prediction" generated in the LLM's CoT is mapped via a lightweight projector to the representation of the actual next frame encoded by an EMA target visual encoder. The gap between prediction and reality serves simu
+  [ICML 2026 Spotlight][VLM Reasoning][VLM agent] GLANCE introduces a self-supervised "think-and-see alignment" head for RL in VLM agents: the "next-state prediction" generated in the LLM's CoT is mapped via a lightweight projector to the representation of the actual next frame encoded by an EMA target visual encoder. The gap between prediction and reality serves simultaneously as an intrinsic curiosity reward, a training signal for the visual encoder…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - VLM agent
-  - internal world model
-  - curiosity drain
+  - "ICML 2026 Spotlight"
+  - "VLM Reasoning"
+  - "VLM agent"
+  - "curiosity-driven exploration"
+  - "cross-modal alignment"
+  - "internalized world model"
+  - "curiosity drain"
 date: 2026-05-08
-content_hash: 9bc0d1f21975d3b0
+content_hash: 1a7f5d731efa133a
 ---
+
 # What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)
 
 **Conference**: ICML 2026 Spotlight  
@@ -141,10 +144,10 @@ The authors also reported "zero extrinsic reward" experiments: with $r_t^e$ set 
 ## Related Papers
 
 - [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](../../CVPR2026/vlm_reasoning/see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
-- [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](../../CVPR2026/vlm_reasoning/see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
 - [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](../../CVPR2026/vlm_reasoning/hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
-- [\[ACL 2026\] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](../../ACL2026/vlm_reasoning/what39s_missing_in_screen-to-action_towards_a_ui-in-the-loop_paradigm_for_multim.md)
-- [\[CVPR 2026\] CARE What Fails: Contrastive Anchored-REflection for Verifiable Multimodal Reasoning](../../CVPR2026/vlm_reasoning/care_what_fails_contrastive_anchored-reflection_for_verifiable_multimodal_reason.md)
+- [\[CVPR 2026\] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection](../../CVPR2026/vlm_reasoning/see_further_think_deeper_advancing_vlms_reasoning_ability_with_low-level_visual_.md)
+- [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](../../ICLR2026/vlm_reasoning/empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
+- [\[ICLR 2026\] MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos](../../ICLR2026/vlm_reasoning/mmr-v_whats_left_unsaid_a_benchmark_for_multimodal_deep_reasoning_in_videos.md)
 
 </div>
 

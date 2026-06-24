@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection
 description: >-
-  [CVPR 2026][Object Detection][Vision-Language Model] To address the "cross-view gap" where Vision-Language Models (VLMs) perform strongly in ground views but poorly in aerial views, CrossVL introduces a **Complexity-aware Pathway Aggregation (CPA)** module that routes visual features based on scene density (**active only during training with zero inference overhead**) an
+  [CVPR 2026][Object Detection][Cross-View Detection] To address the "cross-view gap" where Vision-Language Models (VLMs) perform strongly in ground views but poorly in aerial views, CrossVL introduces a **Complexity-aware Pathway Aggregation (CPA)** module that routes visual features based on scene density (**active only during training with zero inference overhead**) and a **Paired Curriculum Learning (PCL)** strategy that transitions from paired to random sampling. CrossVL i…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Cross-View Detection"
+  - "Vision-Language Models"
+  - "Complexity-Aware Routing"
+  - "Curriculum Learning"
+  - "Ground-Aerial Pairing"
 date: 2026-05-08
-content_hash: a8e0af9ca085d2e1
+content_hash: aff18cf6a38918a3
 ---
+
 # CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ Cross-View Robustness (Gap = Ground − Aerial, lower is better):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
-- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
-- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 - [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
-- [\[CVPR 2026\] Thermal-Det: Language-Guided Cross-Modal Distillation for Open-Vocabulary Thermal Object Detection](thermal-det_language-guided_cross-modal_distillation_for_open-vocabulary_thermal.md)
+- [\[CVPR 2026\] FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)
+- [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
+- [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
+- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
 
 </div>
 

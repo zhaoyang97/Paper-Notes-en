@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] LASER: Learning Active Sensing for Continuum Field Reconstruction
 description: >-
-  [ICML 2026][Reinforcement Learning][World Models] This work models the problem of "where to place sparse sensors" as a POMDP. It employs a "continuum field latent world model" (comprising an encoder, GRU, diffusion dynamics predictor, and implicit neural field decoder) to provide imagined next-step latent states as policy conditions. The cross-attention policy is trai
+  [ICML 2026 Oral][Reinforcement Learning][Active Sensing] This work models the problem of "where to place sparse sensors" as a POMDP. It employs a "continuum field latent world model" (comprising an encoder, GRU, diffusion dynamics predictor, and implicit neural field decoder) to provide imagined next-step latent states as policy conditions. The cross-attention policy is trained using GRPO with dynamic group filtering and multi-step lookahead rewards. LASER consistently outper…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - World Models
-  - GRPO
-  - POMDP
+  - "ICML 2026 Oral"
+  - "Reinforcement Learning"
+  - "Active Sensing"
+  - "World Models"
+  - "GRPO"
+  - "POMDP"
+  - "Continuum Field Reconstruction"
 date: 2026-05-08
-content_hash: 74aa5635002d18b5
+content_hash: ac3e5721e364513a
 ---
+
 # LASER: Learning Active Sensing for Continuum Field Reconstruction
 
 **Conference**: ICML 2026 Oral  
@@ -154,11 +157,11 @@ GRU history length ablation (Table 6): Stronger turbulence (NS-1e-5, Shallow-Wat
 
 ## Related Papers
 
-- [\[ICLR 2026\] cadrille: Multi-modal CAD Reconstruction with Reinforcement Learning](../../ICLR2026/reinforcement_learning/cadrille_multi-modal_cad_reconstruction_with_reinforcement_learning.md)
+- [\[ICLR 2026\] LaSeR: Reinforcement Learning with Last-Token Self-Rewarding](../../ICLR2026/reinforcement_learning/laser_reinforcement_learning_with_last-token_self-rewarding.md)
 - [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
+- [\[ICLR 2026\] Learning Human Habits with Rule-Guided Active Inference](../../ICLR2026/reinforcement_learning/learning_human_habits_with_rule-guided_active_inference.md)
 - [\[ICML 2026\] Mind Dreamer: Untethering Imagination via Active Causal Intervention on Latent Manifolds](mind_dreamer_untethering_imagination_via_active_causal_intervention_on_latent_ma.md)
 - [\[ICML 2025\] Learning Mean Field Control on Sparse Graphs](../../ICML2025/reinforcement_learning/learning_mean_field_control_on_sparse_graphs.md)
-- [\[ICML 2025\] Stochastic Encodings for Active Feature Acquisition](../../ICML2025/reinforcement_learning/stochastic_encodings_for_active_feature_acquisition.md)
 
 </div>
 

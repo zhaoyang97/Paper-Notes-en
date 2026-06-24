@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task
 description: >-
-  [NeurIPS2025][Video Understanding][VideoQA] This paper proposes a video toolkit comprising 22 tools and the STAR (Spatiotemporal Reasoning) framework…
+  [NeurIPS2025][Video Understanding][VideoQA] This paper proposes a video toolkit comprising 22 tools and the STAR (Spatiotemporal Reasoning) framework, which progressively localizes a 3D Region of Interest (RoI) via an alternating temporal–spatial tool scheduling strategy. The approach improves GPT-4o by 8.2% on VideoMME while substantially reducing the number of processed frames and computational overhead.
 tags:
   - "NeurIPS2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "agentic framework"
   - "video toolkit"
 date: 2026-05-08
-content_hash: 3aa0f0f383c996c4
+content_hash: 382a8ad43b691aa1
 ---
 
 # Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task
@@ -135,11 +135,11 @@ NExT-QA test set (STAR vs. best baseline AKeyS 78.1%):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](egogazevqa_egocentric_gaze_guided_video_question_answering.md)
 - [\[ICLR 2026\] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering](../../ICLR2026/video_understanding/air_enabling_adaptive_iterative_and_reasoning-based_frame_selection_for_video_qu.md)
+- [\[NeurIPS 2025\] EgoGazeVQA: Egocentric Gaze-Guided Video Question Answering Benchmark](egogazevqa_egocentric_gaze_guided_video_question_answering.md)
 - [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
-- [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](../../CVPR2026/video_understanding/movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
-- [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](../../CVPR2026/video_understanding/herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
+- [\[CVPR 2025\] QA-TIGER: Question-Aware Gaussian Experts for Audio-Visual Question Answering](../../CVPR2025/video_understanding/question-aware_gaussian_experts_for_audio-visual_question_answering.md)
+- [\[CVPR 2025\] EgoTextVQA: Towards Egocentric Scene-Text Aware Video Question Answering](../../CVPR2025/video_understanding/egotextvqa_towards_egocentric_scene-text_aware_video_question_answering.md)
 
 </div>
 

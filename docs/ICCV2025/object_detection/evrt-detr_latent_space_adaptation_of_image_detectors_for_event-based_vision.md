@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision
 description: >-
-  [ICCV 2025][Object Detection][event camera] This paper proposes I2EvDet, a framework that adapts mainstream image detectors to event-based video detection by inserting lightweight RNN temporal modules into the frozen lat…
+  [ICCV 2025][Object Detection][event camera] This paper proposes I2EvDet, a framework that adapts mainstream image detectors to event-based video detection by inserting lightweight RNN temporal modules into the frozen latent space of RT-DETR, achieving state-of-the-art results of +2.3 and +1.4 mAP on the Gen1 and 1Mpx benchmarks, respectively, with minimal architectural modifications.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -11,7 +11,7 @@ tags:
   - "latent space adaptation"
   - "temporal modeling"
 date: 2026-05-08
-content_hash: 824020b29c3c1f0f
+content_hash: 45c1b1fe0066404b
 ---
 
 # EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision
@@ -136,8 +136,8 @@ A two-stage training strategy is employed. In the first stage, RT-DETR is traine
 - [\[ICCV 2025\] Visual Modality Prompt for Adapting Vision-Language Object Detectors](visual_modality_prompt_for_adapting_vision-language_object_detectors.md)
 - [\[ICCV 2025\] Sim-DETR: Unlock DETR for Temporal Sentence Grounding](sim-detr_unlock_detr_for_temporal_sentence_grounding.md)
 - [\[ICCV 2025\] DISTIL: Data-Free Inversion of Suspicious Trojan Inputs via Latent Diffusion](distil_data-free_inversion_of_suspicious_trojan_inputs_via_latent_diffusion.md)
-- [\[NeurIPS 2025\] FlexEvent: Towards Flexible Event-Frame Object Detection at Varying Operational Frequencies](../../NeurIPS2025/object_detection/flexevent_towards_flexible_event-frame_object_detection_at_varying_operational_f.md)
 - [\[ICCV 2025\] UPRE: Zero-Shot Domain Adaptation for Object Detection via Unified Prompt and Representation Enhancement](upre_zero-shot_domain_adaptation_for_object_detection_via_unified_prompt_and_rep.md)
+- [\[CVPR 2026\] AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](../../CVPR2026/object_detection/anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)
 
 </div>
 

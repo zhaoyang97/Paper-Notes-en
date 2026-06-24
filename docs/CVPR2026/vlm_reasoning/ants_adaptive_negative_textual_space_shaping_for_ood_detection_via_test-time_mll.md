@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] ANTS allows Multimodal Large Language Models (MLLM) to "understand" cached suspected OOD images at test-time. It generates "descriptive negative sentences" to characterize far-OOD and "visually similar negative labels" to characterize near-OOD. These two negative textual spaces are dynamically fused via an adaptive wei
+  [CVPR 2026][VLM Reasoning][OOD Detection] ANTS allows Multimodal Large Language Models (MLLM) to "understand" cached suspected OOD images at test-time. It generates "descriptive negative sentences" to characterize far-OOD and "visually similar negative labels" to characterize near-OOD. These two negative textual spaces are dynamically fused via an adaptive weight. On the ImageNet benchmark, ANTS achieves a zero-shot, training-free 3.1% reduction in FPR95, setting a new SOTA.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "OOD Detection"
+  - "Negative Labels"
+  - "MLLM"
+  - "Test-Time Adaptation"
+  - "Zero-shot"
 date: 2026-05-08
-content_hash: 64578a2e6e5d18fc
+content_hash: 424381fcf209761d
 ---
+
 # ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ NIM = Negative Image Mining, SIM = Similarity ID Subset Mining (FPR95↓, OpenOO
 
 ## Related Papers
 
-- [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
-- [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
-- [\[CVPR 2026\] Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs](mind_the_way_you_select_negative_texts_pursuing_the_distance_consistency_in_ood_.md)
-- [\[ICCV 2025\] NegRefine: Refining Negative Label-Based Zero-Shot OOD Detection](../../ICCV2025/multimodal_vlm/negrefine_refining_negative_label-based_zero-shot_ood_detection.md)
-- [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
+- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[ICLR 2026\] ARES: Multimodal Adaptive Reasoning via Difficulty-Aware Token-Level Entropy Shaping](../../ICLR2026/vlm_reasoning/ares_multimodal_adaptive_reasoning_via_difficulty-aware_token-level_entropy_shap.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm
 description: >-
-  [AAAI 2026][SHAP] This paper proposes Woodelf, an algorithm that converts decision tree ensemble models into pseudo-Boolean functions in Weighted Disjunctive Normal Form (WDNF)…
+  [AAAI 2026][SHAP] This paper proposes Woodelf, an algorithm that converts decision tree ensemble models into pseudo-Boolean functions in Weighted Disjunctive Normal Form (WDNF), enabling linear-time computation of both Background SHAP and Path-Dependent SHAP within a unified framework, achieving 16–31× CPU speedup and 24–333× GPU speedup on large-scale datasets.
 tags:
   - "AAAI 2026"
   - "SHAP"
@@ -11,7 +11,7 @@ tags:
   - "Boolean Logic"
   - "GPU Acceleration"
 date: 2026-05-08
-content_hash: 03802a2d9458b1b5
+content_hash: f957233dbb6db46c
 ---
 
 # From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm
@@ -155,8 +155,8 @@ Performance comparison on two large-scale industrial datasets (XGBoost, 100 tree
 
 ## Related Papers
 
-- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
 - [\[AAAI 2026\] DFDT: Dynamic Fast Decision Tree for IoT Data Stream Mining on Edge Devices](dfdt_dynamic_fast_decision_tree_for_iot_data_stream_mining_on_edge_devices.md)
+- [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](../../ICLR2026/others/active_learning_for_decision_trees_with_provable_guarantees.md)
 - [\[AAAI 2026\] Model Change for Description Logic Concepts](model_change_for_description_logic_concepts.md)
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
 - [\[AAAI 2026\] How Hard is it to Explain Preferences Using Few Boolean Attributes?](how_hard_is_it_to_explain_preferences_using_few_boolean_attributes.md)

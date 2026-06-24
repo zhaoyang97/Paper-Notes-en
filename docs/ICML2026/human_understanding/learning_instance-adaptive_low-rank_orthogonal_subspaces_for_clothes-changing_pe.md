@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification
 description: >-
-  [ICML 2026][Human Understanding][Vision-Language Model] The "clothing" semantic concept is explicitly modeled as an **instance-adaptive low-rank subspace** (initialized using the SVD principal components of CLIP text descriptions and refined via cross-attention with image patches). Identity features are then forced to be strictly orthogonal to this subspace through geometri
+  [ICML2026][Human Understanding][Clothes-Changing Person Re-ID] The "clothing" semantic concept is explicitly modeled as an **instance-adaptive low-rank subspace** (initialized using the SVD principal components of CLIP text descriptions and refined via cross-attention with image patches). Identity features are then forced to be strictly orthogonal to this subspace through geometric constraints, achieving SOTA results in clothes-changing re-identification (PRCC +5.9% Rank-1) w…
 tags:
-  - ICML 2026
-  - Human Understanding
-  - Vision-Language Model
+  - "ICML2026"
+  - "Human Understanding"
+  - "Clothes-Changing Person Re-ID"
+  - "Low-Rank Subspaces"
+  - "Vision-Language Models"
+  - "Orthogonal Projection"
+  - "Decoupled Representation"
 date: 2026-05-08
-content_hash: afa40c43ddffc3c6
+content_hash: 90b2a103f3467b35
 ---
+
 # Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification
 
 **Conference**: ICML2026  
@@ -152,15 +157,14 @@ The method sets new SOTAs on PRCC, Celeb-reID-light, and LaST. On LTCC, it remai
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification](../../CVPR2026/human_understanding/ssm-aware_token-efficient_vmamba_via_adaptive_patch_pruning_and_merging_for_pers.md)
 - [\[CVPR 2026\] Spatial-Frequency Collaborative Learning for Occluded Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/spatial-frequency_collaborative_learning_for_occluded_visible-infrared_person_re.md)
 - [\[CVPR 2026\] Pose-guided Enriched Feature Learning for Federated-by-camera Person Re-identification](../../CVPR2026/human_understanding/pose-guided_enriched_feature_learning_for_federated-by-camera_person_re-identifi.md)
+- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](../../CVPR2026/human_understanding/vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 - [\[NeurIPS 2025\] DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces](../../NeurIPS2025/human_understanding/devfd_developmental_face_forgery_detection_by_learning_shared_and_orthogonal_lor.md)
-- [\[AAAI 2026\] Modality-Aware Bias Mitigation and Invariance Learning for Unsupervised Visible-Infrared Person Re-Identification](../../AAAI2026/human_understanding/modality-aware_bias_mitigation_and_invariance_learning_for_unsupervised_visible-.md)
 
 </div>
 

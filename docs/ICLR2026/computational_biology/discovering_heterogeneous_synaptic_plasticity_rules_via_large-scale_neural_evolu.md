@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Discovering heterogeneous synaptic plasticity rules via large-scale neural evolution
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper constructs the mouse primary visual cortex (V1) as a plastic spiking neural network. By utilizing a multi-objective evolutionary algorithm to search for individual learning rules for different synapse types within a vast interpretable rule space composed of spikes, eligibility traces, and reward prediction e
+  [ICLR2026][Computational Biology][Heterogeneous synaptic plasticity] This paper constructs the mouse primary visual cortex (V1) as a plastic spiking neural network. By utilizing a multi-objective evolutionary algorithm to search for individual learning rules for different synapse types within a vast interpretable rule space composed of spikes, eligibility traces, and reward prediction error signals, researchers discovered that various mathematically distinct rules can simulta…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Heterogeneous synaptic plasticity"
+  - "evolutionary search"
+  - "Mouse V1"
+  - "working memory"
+  - "biological plausibility"
 date: 2026-05-08
-content_hash: f9791b3c30602ba0
+content_hash: b250257be6ba734c
 ---
+
 # Discovering heterogeneous synaptic plasticity rules via large-scale neural evolution
 
 **Conference**: ICLR2026  
@@ -194,11 +200,11 @@ where $\theta=\{c,g,\tau_E,\tau_R\}$ and $\phi$ is the shared readout threshold.
 
 ## Related Papers
 
+- [\[ICML 2026\] CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences](../../ICML2026/computational_biology/conditionally_site-independent_neural_evolution_of_antibody_sequences.md)
 - [\[ICLR 2026\] Distilling Causal Signals for One-Shot Directed Evolution of Antibodies](distilling_causal_signals_for_one-shot_directed_evolution_of_antibodies.md)
 - [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](../../NeurIPS2025/computational_biology/edbench_large-scale_electron_density_data_for_molecular_modeling.md)
 - [\[ICLR 2026\] Fast Proteome-Scale Protein Interaction Retrieval via Residue-Level Factorization](fast_proteome-scale_protein_interaction_retrieval_via_residue-level_factorizatio.md)
 - [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
-- [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](continuous_multinomial_logistic_regression_for_neural_decoding.md)
 
 </div>
 

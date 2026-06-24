@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] To address the misuse of "identity-preserving personalized generation" in diffusion models for face theft, this paper proposes IDGuardian. It abstracts the personalization process into two stages: "identity extraction" and "identity injection." By simultaneously disrupting both stages through cross-encoder identity fie
+  [CVPR 2026][AI Safety][Facial Privacy] To address the misuse of "identity-preserving personalized generation" in diffusion models for face theft, this paper proposes IDGuardian. It abstracts the personalization process into two stages: "identity extraction" and "identity injection." By simultaneously disrupting both stages through cross-encoder identity field confusion and guided flow identity deflection, it achieves the first universal, model-agnostic facial identity protect…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Facial Privacy"
+  - "Proactive Defense"
+  - "Personalized Generation"
+  - "Adversarial Perturbation"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 5f5c42c635249470
+content_hash: 21a2878f06d85a57
 ---
+
 # No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation
 
 **Conference**: CVPR 2026  
@@ -143,6 +148,7 @@ IDGuardian achieves the lowest identity similarity across all pipelines, demonst
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses face theft privacy concerns with a lightweight, practical solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

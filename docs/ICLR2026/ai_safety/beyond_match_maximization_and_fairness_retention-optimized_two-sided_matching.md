@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Ours proposes the Matching for Retention (MRet) algorithm, which shifts the optimization objective of two-sided matching platforms from "maximizing match counts" or "satisfying fairness" to "directly maximizing user retention rates." By learning personalized retention curves and utilizing concavity properties, the NP-h
+  [ICLR 2026][AI Safety][Two-sided matching] Ours proposes the Matching for Retention (MRet) algorithm, which shifts the optimization objective of two-sided matching platforms from "maximizing match counts" or "satisfying fairness" to "directly maximizing user retention rates." By learning personalized retention curves and utilizing concavity properties, the NP-hard joint optimization of bilateral retention gain is reduced to an $O(N \log N)$ sorting problem. MRet significantly…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Two-sided matching"
+  - "user retention"
+  - "learning to rank"
+  - "online dating platforms"
+  - "retention optimization"
 date: 2026-05-08
-content_hash: f3b5ed93e5d7c374
+content_hash: d8aa7de25ea571df
 ---
+
 # Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching
 
 **Conference**: ICLR 2026  
@@ -154,10 +160,10 @@ Real-world data (Japanese dating platform, 1000M x 1000F, ALS-completed matrix):
 
 ## Related Papers
 
-- [\[ICLR 2026\] PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning](pategail_utility_optimized_private_trajectory_generation_with_imitation_learning.md)
 - [\[ICML 2026\] Beyond Procedure: Substantive Fairness in Conformal Prediction](../../ICML2026/ai_safety/beyond_procedure_substantive_fairness_in_conformal_prediction.md)
+- [\[ICLR 2026\] PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning](pategail_utility_optimized_private_trajectory_generation_with_imitation_learning.md)
+- [\[ICLR 2026\] Dual Randomized Smoothing: Beyond Global Noise Variance](dual_randomized_smoothing_beyond_global_noise_variance.md)
 - [\[AAAI 2026\] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity](../../AAAI2026/ai_safety/breaking_the_dyadic_barrier_rethinking_fairness_in_link_prediction_beyond_demogr.md)
-- [\[ICLR 2026\] Privacy Beyond Pixels: Latent Anonymization for Privacy-Preserving Video Understanding](privacy_beyond_pixels_latent_anonymization_for_privacy-preserving_video_understa.md)
 - [\[ICLR 2026\] Test-Time Poisoned Sample Detection by Exploiting Shallow Malicious Matching in Backdoored CLIP](test-time_poisoned_sample_detection_by_exploiting_shallow_malicious_matching_in_.md)
 
 </div>

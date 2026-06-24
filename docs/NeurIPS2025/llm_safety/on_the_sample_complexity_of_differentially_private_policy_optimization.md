@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Sample Complexity of Differentially Private Policy Optimization
 description: >-
-  [NeurIPS 2025][LLM Safety][Differential Privacy] This paper presents the first systematic study of sample complexity for policy optimization (PO) under differential privacy (DP) constraints. It proposes a unified meta-al…
+  [NeurIPS 2025][LLM Safety][Differential Privacy] This paper presents the first systematic study of sample complexity for policy optimization (PO) under differential privacy (DP) constraints. It proposes a unified meta-algorithm framework and analyzes three private policy optimization algorithms—DP-PG, DP-NPG, and DP-REBEL—proving that the privacy cost typically appears only as a lower-order term in the sample complexity.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "Privacy Protection"
 date: 2026-05-08
-content_hash: a655fb36e1b92612
+content_hash: 77e22b45665be73a
 ---
 
 # On the Sample Complexity of Differentially Private Policy Optimization
@@ -151,8 +151,8 @@ Core conclusion: Across all settings, the privacy cost manifests as an **additiv
 
 ## Related Papers
 
+- [\[ICLR 2026\] EEPO: Exploration-Enhanced Policy Optimization via Sample-then-Forget](../../ICLR2026/llm_safety/eepo_exploration-enhanced_policy_optimization_via_sample-then-forget.md)
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
-- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](../../ICML2026/llm_safety/privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](../../ICLR2026/llm_safety/wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 - [\[NeurIPS 2025\] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA](fedsvd_adaptive_orthogonalization_for_private_federated_learning_with_lora.md)
 - [\[NeurIPS 2025\] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma](position_the_complexity_of_perfect_ai_alignment_--_formalizing_the_rlhf_trilemma.md)

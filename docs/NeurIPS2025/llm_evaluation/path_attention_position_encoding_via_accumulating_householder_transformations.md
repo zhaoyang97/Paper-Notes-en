@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PaTH Attention: Position Encoding via Accumulating Householder Transformations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][position encoding] This paper proposes PaTH (Position encoding via accumulating Householder Transformations)…
+  [NeurIPS 2025][LLM Evaluation][position encoding] This paper proposes PaTH (Position encoding via accumulating Householder Transformations), a data-dependent multiplicative position encoding scheme that replaces RoPE's static rotation matrices with accumulated Householder transformations, achieving superior theoretical expressiveness and empirical language modeling performance over RoPE.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "state tracking"
   - "RoPE"
 date: 2026-05-08
-content_hash: 80a759c0a7b50500
+content_hash: d912e5674e41f719
 ---
 
 # PaTH Attention: Position Encoding via Accumulating Householder Transformations
@@ -175,10 +175,10 @@ PaTH achieves near-perfect performance on FFLM tasks (error rate approaching 0),
 ## Related Papers
 
 - [\[NeurIPS 2025\] DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering](dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc.md)
+- [\[ICML 2025\] Position: Theory of Mind Benchmarks are Broken for Large Language Models](../../ICML2025/llm_evaluation/position_theory_of_mind_benchmarks_are_broken_for_large_language_models.md)
 - [\[ACL 2026\] Gated Tree Cross-Attention for Checkpoint-Compatible Syntax Injection in Decoder-Only LLMs](../../ACL2026/llm_evaluation/gated_tree_cross-attention_for_checkpoint-compatible_syntax_injection_in_decoder.md)
 - [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
-- [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
 
 </div>
 

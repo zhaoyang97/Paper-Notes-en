@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rational Sparse Autoencoder
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The hardcoded ReLU/JumpReLU/TopK encoder gates in Sparse Autoencoders (SAEs) are replaced with an **element-wise trainable rational function** $r(t)=P(t)/Q(t)$. This is combined with a two-step upgrade process—"Copying teacher weights + Remez fitting coefficients → Unfreezing and fine-tuning"—allowing any pre-trained S
+  [ICML2026][Interpretability][Sparse Autoencoders] The hardcoded ReLU/JumpReLU/TopK encoder gates in Sparse Autoencoders (SAEs) are replaced with an **element-wise trainable rational function** $r(t)=P(t)/Q(t)$. This is combined with a two-step upgrade process—"Copying teacher weights + Remez fitting coefficients → Unfreezing and fine-tuning"—allowing any pre-trained SAE to strictly improve reconstruction fidelity without sacrificing sparsity or interpretability…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Trainable Activations"
+  - "Rational Functions"
+  - "Approximation Theory"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: c8982bf01a91eea4
+content_hash: c8ab58edce3db3c5
 ---
+
 # Rational Sparse Autoencoder
 
 **Conference**: ICML2026  
@@ -135,11 +141,11 @@ The improvement on JumpReLU teachers is most striking (e.g., Gemma-2-2B MSE halv
 
 ## Related Papers
 
-- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
-- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](../../AAAI2026/interpretability/sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
 - [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
-- [\[ICLR 2026\] SALVE: Sparse Autoencoder-Latent Vector Editing for Mechanistic Control of Neural Networks](../../ICLR2026/interpretability/salve_sparse_autoencoder-latent_vector_editing_for_mechanistic_control_of_neural.md)
+- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](../../CVPR2026/interpretability/improving_sparse_autoencoder_with_dynamic_attention.md)
+- [\[AAAI 2026\] SparseRM: A Lightweight Preference Modeling with Sparse Autoencoder](../../AAAI2026/interpretability/sparserm_a_lightweight_preference_modeling_with_sparse_autoencoder.md)
+- [\[ICML 2026\] Ensembling Sparse Autoencoders](ensembling_sparse_autoencoders.md)
 
 </div>
 

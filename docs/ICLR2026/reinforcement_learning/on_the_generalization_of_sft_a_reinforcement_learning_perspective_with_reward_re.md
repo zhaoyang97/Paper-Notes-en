@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification
 description: >-
-  [ICLR 2026][Reinforcement Learning][Dynamic Fine-Tuning] This work mathematically proves from an RL policy gradient perspective that the SFT gradient implicitly encodes a pathological reward structure of inverse probability weighting ($1/\pi_\theta$). This causes excessively large gradients for low-probability tokens, which limits generalization. The authors propose DFT (Dyn
+  [ICLR 2026][Reinforcement Learning][SFT Generalization] This work mathematically proves from an RL policy gradient perspective that the SFT gradient implicitly encodes a pathological reward structure of inverse probability weighting ($1/\pi_\theta$). This causes excessively large gradients for low-probability tokens, which limits generalization. The authors propose DFT (Dynamic Fine-Tuning), which eliminates this weighting via a one-line code modification (multiplying CE loss…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Dynamic Fine-Tuning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "SFT Generalization"
+  - "Policy Gradient"
+  - "Inverse Probability Weighting"
+  - "Dynamic Fine-Tuning"
+  - "Reward Rectification"
 date: 2026-05-08
-content_hash: 1195eeb2004dad36
+content_hash: 6372ef8417d9ba80
 ---
+
 # On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification
 
 **Conference**: ICLR 2026  
@@ -140,11 +145,11 @@ SFT performance degraded across the board on Qwen2.5-Coder-7B, whereas DFT consi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
 - [\[ICLR 2026\] Getting Your LLMs Ready for Reinforcement Learning with Lightweight SFT](getting_your_llms_ready_for_reinforcement_learning_with_lightweight_sft.md)
 - [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
 - [\[ICLR 2026\] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning](leveraging_explanation_to_improve_generalization_of_meta_reinforcement_learning.md)
 - [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
-- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
 
 </div>
 

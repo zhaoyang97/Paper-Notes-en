@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning
 description: >-
-  [ACL 2026][Pretraining][Paper Note] The authors realign the "spaced repetition" concept of the Ebbinghaus forgetting curve from "training steps" to "model time" (accumulated parameter update norm $\Delta_t = \|\Theta_t - \Theta_{t-1}\|_2$). Specifically, cumulative model time $\tau_t$ determines **when to replay**, while the instability ratio $r_t$ (curr
+  [ACL 2026][LLM Pretraining][Forgetting Curve] The authors realign the "spaced repetition" concept of the Ebbinghaus forgetting curve from "training steps" to "model time" (accumulated parameter update norm $\Delta_t = \|\Theta_t - \Theta_{t-1}\|_2$). Specifically, cumulative model time $\tau_t$ determines **when to replay**, while the instability ratio $r_t$ (current update intensity $\mu_t$ vs. baseline $\mu_0$) adaptively controls **how to replay** (regularization strength)…
 tags:
-  - ACL 2026
-  - Pretraining
+  - "ACL 2026"
+  - "LLM Pretraining"
+  - "Forgetting Curve"
+  - "Model Time"
+  - "Parameter Update Dynamics"
+  - "Spaced Repetition"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 78c9e5512ece2f97
+content_hash: a98ba0fa14b8dfe9
 ---
+
 # FOREVER: Forgetting Curve-Inspired Memory Replay for Language Model Continual Learning
 
 **Conference**: ACL 2026  

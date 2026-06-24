@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning
 description: >-
-  [AAAI 2026][Self-Supervised Learning][Graph Contrastive Learning] This paper proposes EPA-GRL (Explanation-Preserving Augmentation for Graph Representation Learning)…
+  [AAAI 2026][Self-Supervised Learning][Graph Contrastive Learning] This paper proposes EPA-GRL (Explanation-Preserving Augmentation for Graph Representation Learning), which employs a GNN explainer trained with a small number of labels to identify semantic subgraphs (explanation subgraphs). During augmentation, only the non-semantic portions (marginal subgraphs) are perturbed, achieving semantics-preserving graph augmentation. EPA-GRL significantly outperforms semantics-agnost…
 tags:
   - "AAAI 2026"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Semi-Supervised Learning"
   - "GNN Explainer"
 date: 2026-05-08
-content_hash: 7e0e419682d58886
+content_hash: dc3643cd763982f0
 ---
 
 # Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning
@@ -126,11 +126,11 @@ Graph classification accuracy on 6 benchmarks (BA-2motifs, MUTAG, PROTEINS, DD, 
 
 ## Related Papers
 
+- [\[ICLR 2026\] In Context Semi-Supervised Learning](../../ICLR2026/self_supervised/in_context_semi-supervised_learning.md)
 - [\[AAAI 2026\] Let the Void Be Void: Robust Open-Set Semi-Supervised Learning via Selective Non-Alignment](let_the_void_be_void_robust_open-set_semi-supervised_learning_via_selective_non-.md)
-- [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](../../NeurIPS2025/self_supervised/starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
 - [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](../../ICML2026/self_supervised/learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
 - [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
-- [\[ICML 2026\] Beyond Distribution Estimation: Simplex Anchored Structural Inference Towards Universal Semi-Supervised Learning](../../ICML2026/self_supervised/beyond_distribution_estimation_simplex_anchored_structural_inference_towards_uni.md)
+- [\[ICLR 2026\] FedOpenMatch: Towards Semi-Supervised Federated Learning in Open-Set Environments](../../ICLR2026/self_supervised/fedopenmatch_towards_semi-supervised_federated_learning_in_open-set_environments.md)
 
 </div>
 

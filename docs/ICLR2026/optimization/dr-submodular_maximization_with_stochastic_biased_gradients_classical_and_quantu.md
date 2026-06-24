@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DR-Submodular Maximization with Stochastic Biased Gradients: Classical and Quantum Gradient Algorithms
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper systematically investigates continuous DR-submodular maximization under "stochastic biased gradients." It extends the analytical Lyapunov framework from exact gradients to gradients with bias and noise. Consequently, it proves a $1/e$ approximation for a new class of constraints (convex sets with a greatest
+  [ICLR2026][Optimization][DR-submodular maximization] This paper systematically investigates continuous DR-submodular maximization under "stochastic biased gradients." It extends the analytical Lyapunov framework from exact gradients to gradients with bias and noise. Consequently, it proves a $1/e$ approximation for a new class of constraints (convex sets with a greatest element), surpassing the $1/4$ hardness of general convex constraints. The authors provide both classical (…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "DR-submodular maximization"
+  - "biased stochastic gradients"
+  - "Lyapunov framework"
+  - "zeroth-order optimization"
+  - "quantum acceleration"
 date: 2026-05-08
-content_hash: 8cac425bab7cb161
+content_hash: d3bd73e16e911bbd
 ---
+
 # DR-Submodular Maximization with Stochastic Biased Gradients: Classical and Quantum Gradient Algorithms
 
 **Conference**: ICLR2026  

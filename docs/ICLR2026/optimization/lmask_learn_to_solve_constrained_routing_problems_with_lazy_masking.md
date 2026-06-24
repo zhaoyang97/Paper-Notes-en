@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking
 description: >-
-  [ICLR 2026][Optimization & Theory][TSPTW] LMask transforms the "one-pass forward, no-look-back" construction paradigm of neural routing solvers into a forward-and-backtracking lazy masking decoding. Combined with search trajectory embeddings and soft constraint penalties during training, it reduces the infeasibility rate to near 0% on constrained TSP (Time Win
+  [ICLR 2026][Optimization][Neural Combinatorial Optimization] LMask transforms the "one-pass forward, no-look-back" construction paradigm of neural routing solvers into a forward-and-backtracking lazy masking decoding. Combined with search trajectory embeddings and soft constraint penalties during training, it reduces the infeasibility rate to near 0% on constrained TSP (Time Windows/Draft Limits) while achieving superior solutions.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - TSPTW
-  - TSPDL
+  - "ICLR 2026"
+  - "Optimization"
+  - "Neural Combinatorial Optimization"
+  - "Constrained Routing"
+  - "TSPTW"
+  - "TSPDL"
+  - "Feasibility Mask"
+  - "Backtracking Decoding"
 date: 2026-05-08
-content_hash: 58525dc609fc29a4
+content_hash: 887bd3094d321f8c
 ---
+
 # LMask: Learn to Solve Constrained Routing Problems with Lazy Masking
 
 **Conference**: ICLR 2026  
@@ -132,10 +137,10 @@ On Hard difficulty, the contrast is stark: while PIP/PIP-D still show 13%–32% 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Segment for Vehicle Routing Problems](learning_to_segment_for_vehicle_routing_problems.md)
 - [\[ICLR 2026\] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems](combination-of-experts_with_knowledge_sharing_for_cross-task_vehicle_routing_pro.md)
 - [\[AAAI 2026\] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation](../../AAAI2026/optimization/bridging_synthetic_and_real_routing_problems_via_llm-guided_instance_generation_.md)
 - [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
-- [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](../../NeurIPS2025/optimization/rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
 - [\[ICLR 2026\] Neural Multi-Objective Combinatorial Optimization for Flexible Job Shop Scheduling Problems](neural_multi-objective_combinatorial_optimization_for_flexible_job_shop_scheduli.md)
 
 </div>

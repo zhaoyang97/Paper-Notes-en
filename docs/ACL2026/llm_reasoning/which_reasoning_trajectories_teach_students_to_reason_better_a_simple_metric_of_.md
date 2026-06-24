@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment
 description: >-
-  [ACL 2026][LLM Reasoning][Knowledge Distillation] The authors propose the Rank-Surprisal Ratio (RSR) metric, which evaluates training data suitability by jointly measuring the "informativeness" and "alignment" of reasoning trajectories for a student model. RSR achieves an average Spearman correlation of 0.86 with post-training performance across 5 student and 11 teach
+  [ACL 2026][Reasoning][Knowledge Distillation] The authors propose the Rank-Surprisal Ratio (RSR) metric, which evaluates training data suitability by jointly measuring the "informativeness" and "alignment" of reasoning trajectories for a student model. RSR achieves an average Spearman correlation of 0.86 with post-training performance across 5 student and 11 teacher model combinations, and it is successfully applied to trajectory and teacher selection.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Knowledge Distillation
+  - "ACL 2026"
+  - "Reasoning"
+  - "Knowledge Distillation"
+  - "Reasoning Trajectories"
+  - "Data Selection"
+  - "Chain-of-Thought"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: ad20ad29a4a14e90
+content_hash: 72a5e240f0ee9a3a
 ---
+
 # Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment
 
 **Conference**: ACL 2026  
@@ -128,9 +133,9 @@ RSR is a data selection metric rather than a training method. During application
 
 - [\[ACL 2026\] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals](llm_reasoning_as_trajectories_step-specific_representation_geometry_and_correctn.md)
 - [\[ACL 2026\] Do Not Step Into the Same River Twice: Learning to Reason from Trial and Error](do_not_step_into_the_same_river_twice_learning_to_reason_from_trial_and_error.md)
+- [\[ICLR 2026\] GPG: A Simple and Strong Reinforcement Learning Baseline for Model Reasoning](../../ICLR2026/llm_reasoning/gpg_a_simple_and_strong_reinforcement_learning_baseline_for_model_reasoning.md)
 - [\[ACL 2026\] Chain-of-Thought as a Lens: Evaluating Structured Reasoning Alignment between Human Preferences and Large Language Models](chain-of-thought_as_a_lens_evaluating_structured_reasoning_alignment_between_hum.md)
 - [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
-- [\[NeurIPS 2025\] Martingale Score: An Unsupervised Metric for Bayesian Rationality in LLM Reasoning](../../NeurIPS2025/llm_reasoning/martingale_score_an_unsupervised_metric_for_bayesian_rationality_in_llm_reasonin.md)
 
 </div>
 

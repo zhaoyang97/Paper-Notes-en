@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer
 description: >-
-  [ICML 2026][Image Generation][1D Tokenizer] EOSTok employs a single-stage end-to-end pipeline to jointly train a 1D ViT tokenizer and an autoregressive model. By utilizing a newly proposed APR (Autoregressive Prediction Reconstruction) loss, gradients from "next-token prediction" are effectively propagated back to the pixel space to prevent codebook collapse. Fu
+  [ICML 2026 Spotlight][Image Generation][1D Tokenizer] EOSTok employs a single-stage end-to-end pipeline to jointly train a 1D ViT tokenizer and an autoregressive model. By utilizing a newly proposed APR (Autoregressive Prediction Reconstruction) loss, gradients from "next-token prediction" are effectively propagated back to the pixel space to prevent codebook collapse. Furthermore, "implicit alignment" is introduced to inject DINOv2 semantics into the 1D latent space without…
 tags:
-  - ICML 2026
-  - Image Generation
-  - 1D Tokenizer
-  - APR loss
-  - ImageNet FID
+  - "ICML 2026 Spotlight"
+  - "Image Generation"
+  - "1D Tokenizer"
+  - "Autoregressive Image Generation"
+  - "APR loss"
+  - "VFM Implicit Alignment"
+  - "ImageNet FID"
 date: 2026-05-08
-content_hash: 73ec60431eee10b6
+content_hash: 2a00399f3dbcdb24
 ---
+
 # End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer
 
 **Conference**: ICML 2026 Spotlight  

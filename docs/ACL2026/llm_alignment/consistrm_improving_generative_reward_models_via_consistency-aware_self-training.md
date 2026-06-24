@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] ConsistRM proposes a consistency-aware self-training framework. By utilizing two modules—temporal consistency pseudo-labels (preference consistency merging online states and historical memory) and semantic consistency critique rewards (measuring semantic similarity of multiple generated critiques)—it improves the avera
+  [ACL 2026][LLM Alignment][Generative Reward Models] ConsistRM proposes a consistency-aware self-training framework. By utilizing two modules—temporal consistency pseudo-labels (preference consistency merging online states and historical memory) and semantic consistency critique rewards (measuring semantic similarity of multiple generated critiques)—it improves the average performance of generative reward models by 1.5% across five benchmarks without human annotation…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Generative Reward Models"
+  - "Self-training"
+  - "Consistency-aware"
+  - "Pseudo-labels"
+  - "Position bias"
 date: 2026-05-08
-content_hash: c42de55adfe810ad
+content_hash: c1f6abda1ff5b48a
 ---
+
 # ConsistRM: Improving Generative Reward Models via Consistency-Aware Self-Training
 
 **Conference**: ACL 2026  
@@ -143,10 +149,10 @@ Training uses GRPO for 4 epochs, with a maximum generation length of 1024 (train
 ## Related Papers
 
 - [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ICML 2026\] Consistency Training Can Entrench Misalignment](../../ICML2026/llm_alignment/consistency_training_can_entrench_misalignment.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
 - [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
-- [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
 
 </div>
 

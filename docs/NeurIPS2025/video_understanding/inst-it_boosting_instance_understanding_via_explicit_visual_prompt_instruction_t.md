@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning
 description: >-
-  [NeurIPS 2025][Video Understanding][Instance-level Understanding] This work presents the complete Inst-IT framework: a GPT-4o-assisted automatic annotation pipeline for generating instance-level fine-grained data…
+  [NeurIPS 2025][Video Understanding][Instance-level Understanding] This work presents the complete Inst-IT framework: a GPT-4o-assisted automatic annotation pipeline for generating instance-level fine-grained data, an Inst-IT Bench evaluation benchmark, a 335K QA-pair instruction tuning dataset, and a continual fine-tuning paradigm that effectively enhances instance-level understanding in LMMs while also improving general image and video comprehension.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Large Multimodal Models"
   - "Spatiotemporal Understanding"
 date: 2026-05-08
-content_hash: 3f834ab5f6f1a8e0
+content_hash: ba2ffe3d34236168
 ---
 
 # INST-IT: Boosting Instance Understanding via Explicit Visual Prompt Instruction Tuning
@@ -189,10 +189,10 @@ Explicit `[ID]` label markers outperform simple bounding boxes, as the ID system
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoniTor: Exploiting Large Language Models with Instruction for Online Video Anomaly Detection](monitor_exploiting_large_language_models_with_instruction_for_online_video_anoma.md)
+- [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](../../CVPR2026/video_understanding/beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
 - [\[NeurIPS 2025\] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](tempsampr1_effective_temporal_sampling_with_reinforcement_fi.md)
-- [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](../../CVPR2026/video_understanding/vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
-- [\[ICCV 2025\] RainbowPrompt: Diversity-Enhanced Prompt-Evolving for Continual Learning](../../ICCV2025/video_understanding/rainbowprompt_diversity-enhanced_prompt-evolving_for_continual_learning.md)
-- [\[NeurIPS 2025\] PreFM: Online Audio-Visual Event Parsing via Predictive Future Modeling](prefm_online_audio-visual_event_parsing_via_predictive_future_modeling.md)
+- [\[ICLR 2026\] PPLLaVA: Varied Video Sequence Understanding With Prompt Guidance](../../ICLR2026/video_understanding/ppllava_varied_video_sequence_understanding_with_prompt_guidance.md)
+- [\[CVPR 2025\] Number it: Temporal Grounding Videos like Flipping Manga](../../CVPR2025/video_understanding/number_it_temporal_grounding_videos_like_flipping_manga.md)
 
 </div>
 

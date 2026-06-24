@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Tree-based Search
 description: >-
-  [ICLR 2026][Reinforcement Learning][Tree-GRPO] DeepSearch shifts MCTS from the inference phase forward into the RLVR training loop, utilizing global frontier selection, confident error trajectory supervision, and replay buffer caching to enhance exploration efficiency in mathematical reasoning. It surpasses extended training baselines on a 1.5B model with a 62.95%
+  [ICLR2026][Reinforcement Learning][Verifiable Rewards] DeepSearch shifts MCTS from the inference phase forward into the RLVR training loop, utilizing global frontier selection, confident error trajectory supervision, and replay buffer caching to enhance exploration efficiency in mathematical reasoning. It surpasses extended training baselines on a 1.5B model with a 62.95% average accuracy while significantly reducing GPU overhead.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Tree-GRPO
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Verifiable Rewards"
+  - "Monte Carlo Tree Search"
+  - "Training-time Search"
+  - "Mathematical Reasoning"
+  - "Tree-GRPO"
 date: 2026-05-08
-content_hash: b3b68e5f1df9b4bb
+content_hash: 6c634410a1f34417
 ---
+
 # DeepSearch: Overcome the Bottleneck of Reinforcement Learning with Verifiable Rewards via Tree-based Search
 
 **Conference**: ICLR2026  

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection
 description: >-
-  [AAAI2026][Object Detection][Multi-modal remote sensing] SM3Det introduces the M2Det task for remote sensing (multi-modal datasets + multi-task object detection)…
+  [AAAI2026 Oral][Object Detection][Multi-modal remote sensing] SM3Det introduces the M2Det task for remote sensing (multi-modal datasets + multi-task object detection), employing a grid-level sparse MoE backbone and a Dynamic Sub-module Optimization (DSO) mechanism to handle SAR/optical/infrared modalities with both horizontal and oriented bounding box detection in a single unified model, substantially outperforming three independently trained modality-specific models combined…
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Object Detection"
   - "Multi-modal remote sensing"
   - "sparse MoE"
   - "dynamic learning rate optimization"
   - "unified model"
 date: 2026-05-08
-content_hash: 6bf9d8efa2aba38a
+content_hash: fd13fd1e045e3619
 ---
 
 # SM3Det: A Unified Model for Multi-Modal Remote Sensing Object Detection
@@ -159,8 +159,8 @@ GradNorm balances learning by adjusting gradient magnitudes across tasks. SM3Det
 - [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](../../CVPR2026/object_detection/a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
 - [\[CVPR 2026\] UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](../../CVPR2026/object_detection/unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)
 - [\[CVPR 2026\] Fourier Angle Alignment for Oriented Object Detection in Remote Sensing](../../CVPR2026/object_detection/fourier_angle_alignment_for_oriented_object_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](../../CVPR2026/object_detection/rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)
 - [\[ICCV 2025\] OpenRSD: Towards Open-prompts for Object Detection in Remote Sensing Images](../../ICCV2025/object_detection/openrsd_towards_open-prompts_for_object_detection_in_remote_sensing_images.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](../../CVPR2026/object_detection/learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
 
 </div>
 

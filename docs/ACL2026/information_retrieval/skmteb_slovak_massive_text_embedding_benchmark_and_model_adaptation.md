@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][MTEB] This paper establishes the first comprehensive MTEB-style text embedding benchmark for Slovak (a low-resource West Slavic language with ~5 million speakers), named SkMTEB (31 datasets, 7 task categories, approximately 4x the depth of existing multilingual coverage). The study evaluates 31 embedding models and utilizes
+  [ACL 2026][Information Retrieval & RAG][Slovak] This paper establishes the first comprehensive MTEB-style text embedding benchmark for Slovak (a low-resource West Slavic language with ~5 million speakers), named SkMTEB (31 datasets, 7 task categories, approximately 4x the depth of existing multilingual coverage). The study evaluates 31 embedding models and utilizes **vocabulary trimming + targeted fine-tuning** to compress Multilingual E5 into locally deployable Slovak embedd…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - MTEB
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Slovak"
+  - "Text Embeddings"
+  - "MTEB"
+  - "Vocabulary Trimming"
+  - "Low-resource NLP"
 date: 2026-05-08
-content_hash: 80defb54fb19df68
+content_hash: d9e8c4dbfa3a8132
 ---
+
 # SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation
 
 **Conference**: ACL 2026  
@@ -134,9 +139,9 @@ Multi-task learning: Cosine Similarity Loss for STS tasks, and Multiple Negative
 
 - [\[ACL 2026\] PL-MTEB: Polish Massive Text Embedding Benchmark](pl-mteb_polish_massive_text_embedding_benchmark.md)
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](../../ICLR2026/information_retrieval/hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
-- [\[ACL 2026\] FLARE: Task-Agnostic Embedding Model Evaluation via Normalizing Flows](flare_task-agnostic_embedding_model_evaluation_through_a_normalization_process.md)
 - [\[ACL 2026\] More Than Efficiency: Embedding Compression Improves Domain Adaptation in Dense Retrieval](more_than_efficiency_embedding_compression_improves_domain_adaptation_in_dense_r.md)
 - [\[ACL 2026\] REZE: Representation Regularization for Domain-adaptive Text Embedding Pre-finetuning](reze_representation_regularization_for_domain-adaptive_text_embedding_pre-finetu.md)
+- [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
 
 </div>
 

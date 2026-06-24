@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Less You Depend, the More You Learn: Synthesizing Novel Views from Sparse, Unposed Images with Minimal 3D Knowledge
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper systematically demonstrates the scalability law that "the less one depends on explicit 3D knowledge, the more one can learn from large-scale data." Based on this, the authors propose UP-LVSM—a pure Transformer feed-forward NVS framework that requires no explicit scene structure or camera pose annotations. By
+  [ICLR 2026][3D Vision][Feed-forward NVS] This paper systematically demonstrates the scalability law that "the less one depends on explicit 3D knowledge, the more one can learn from large-scale data." Based on this, the authors propose UP-LVSM—a pure Transformer feed-forward NVS framework that requires no explicit scene structure or camera pose annotations. By utilizing a self-supervised "Latent Plücker Learner," it synthesizes high-fidelity novel views directly from unposed 2…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Feed-forward NVS"
+  - "unposed"
+  - "data scalability"
+  - "implicit 3D"
+  - "Plücker rays"
 date: 2026-05-08
-content_hash: fa0c05550c79523e
+content_hash: 0e14c0da6ff9d80c
 ---
+
 # The Less You Depend, the More You Learn: Synthesizing Novel Views from Sparse, Unposed Images with Minimal 3D Knowledge
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ Comparison of different sources for target pose $P_T$ in the Latent Plücker Lea
 ## Related Papers
 
 - [\[ICLR 2026\] YoNoSplat: You Only Need One Model for Feedforward 3D Gaussian Splatting](yonosplat_you_only_need_one_model_for_feedforward_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](../../ICCV2025/3d_vision/spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
 - [\[ICLR 2026\] Fused-Planes: Why Train a Thousand Tri-Planes When You Can Share?](fused-planes_why_train_a_thousand_tri-planes_when_you_can_share.md)
 - [\[ICLR 2026\] UFO-4D: Unposed Feedforward 4D Reconstruction from Two Images](ufo-4d_unposed_feedforward_4d_reconstruction_from_two_images.md)
 - [\[CVPR 2025\] You See it, You Got it: Learning 3D Creation on Pose-Free Videos at Scale](../../CVPR2025/3d_vision/you_see_it_you_got_it_learning_3d_creation_on_pose-free_videos_at_scale.md)
+- [\[ICCV 2025\] SpatialSplat: Efficient Semantic 3D from Sparse Unposed Images](../../ICCV2025/3d_vision/spatialsplat_efficient_semantic_3d_from_sparse_unposed_images.md)
 
 </div>
 

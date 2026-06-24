@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Anti-Aliased 2D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][2D Gaussian Splatting] This paper proposes AA-2DGS, which addresses severe aliasing artifacts in 2D Gaussian Splatting under varying sampling rates through two complementary mechanisms: a world-…
+  [NeurIPS 2025][3D Vision][2D Gaussian Splatting] This paper proposes AA-2DGS, which addresses severe aliasing artifacts in 2D Gaussian Splatting under varying sampling rates through two complementary mechanisms: a world-space flat smoothing kernel and an object-space Mip filter. The method significantly improves multi-scale rendering quality while preserving the geometric accuracy advantages of 2DGS.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Surface Reconstruction"
   - "Mip Filtering"
 date: 2026-05-08
-content_hash: bf317825e46032f6
+content_hash: 2749b0e9b1e404ab
 ---
 
 # Anti-Aliased 2D Gaussian Splatting
@@ -175,11 +175,11 @@ The loss function follows the design of 2DGS. Depth and normal regularization ar
 
 ## Related Papers
 
+- [\[ECCV 2024\] Analytic-Splatting: Anti-Aliased 3D Gaussian Splatting via Analytic Integration](../../ECCV2024/3d_vision/analytic-splatting_anti-aliased_3d_gaussian_splatting_via_analytic_integration.md)
 - [\[ICCV 2025\] AAA-Gaussians: Anti-Aliased and Artifact-Free 3D Gaussian Rendering](../../ICCV2025/3d_vision/aaa_gaussians_anti_aliased_artifact_free_3d_gaussian_rendering.md)
 - [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
 - [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
-- [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
 
 </div>
 

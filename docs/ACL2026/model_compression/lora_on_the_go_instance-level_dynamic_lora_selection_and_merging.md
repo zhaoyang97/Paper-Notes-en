@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging
 description: >-
-  [ACL 2026][Model Compression][Paper Note] LoGo (LoRA on the Go) is proposed as a training-free framework that extracts LoRA activation signals (norm or entropy) via a single forward pass to dynamically select and merge the most relevant LoRA adapters at the instance level, enabling cross-task generalization without labeled data or additional training.
+  [ACL 2026][Model Compression][LoRA Dynamic Selection] LoGo (LoRA on the Go) is proposed as a training-free framework that extracts LoRA activation signals (norm or entropy) via a single forward pass to dynamically select and merge the most relevant LoRA adapters at the instance level, enabling cross-task generalization without labeled data or additional training.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026"
+  - "Model Compression"
+  - "LoRA Dynamic Selection"
+  - "Multi-adapter Merging"
+  - "Training-free Framework"
+  - "Instance-level Adaptation"
+  - "PEFT"
 date: 2026-05-08
-content_hash: 0213bcac8dc8cb6a
+content_hash: f32c15b48dfc9ee7
 ---
+
 # LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging
 
 **Conference**: ACL 2026  
@@ -138,9 +144,9 @@ Evaluations across 5 NLP benchmarks, 27 datasets, and 3 model families (LLaMA-3.
 
 - [\[ACL 2026\] Evolutionary Negative Module Pruning for Better LoRA Merging](evolutionary_negative_module_pruning_for_better_lora_merging.md)
 - [\[ICLR 2026\] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA](../../ICLR2026/model_compression/titok_transfer_token-level_knowledge_via_contrastive_excess_to_transplant_lora.md)
-- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](../../CVPR2026/model_compression/sg-lora_semantic-guided_lora_parameters_generation.md)
-- [\[CVPR 2025\] IterIS: Iterative Inference-Solving Alignment for LoRA Merging](../../CVPR2025/model_compression/iteris_iterative_inference-solving_alignment_for_lora_merging.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
+- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](../../ICML2026/model_compression/fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
+- [\[CVPR 2026\] SG-LoRA: Semantic-guided LoRA Parameters Generation](../../CVPR2026/model_compression/sg-lora_semantic-guided_lora_parameters_generation.md)
 
 </div>
 

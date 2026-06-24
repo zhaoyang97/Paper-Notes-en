@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs
 description: >-
-  [3D Vision] GaussianProperty presents a training-free framework that assigns physical properties (density, elastic modulus, friction coefficient…
+  [3D Vision] GaussianProperty presents a training-free framework that assigns physical properties (density, elastic modulus, friction coefficient, etc.) to 3D Gaussians by leveraging SAM for segmentation and GPT-4V for recognition, via a global-local reasoning module and a multi-view voting strategy. The framework supports two downstream tasks: physics-based simulation and robotic grasping.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: fae91e32102a8461
+content_hash: d33a37fa6d58a5ad
 ---
 
 # GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs

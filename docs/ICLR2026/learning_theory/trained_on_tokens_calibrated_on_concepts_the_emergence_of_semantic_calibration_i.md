@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Trained on Tokens, Calibrated on Concepts: The Emergence of Semantic Calibration in LLMs
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper discovers that base LLMs trained solely on next-token prediction are also well-calibrated at the **semantic level** (the confidence in the "meaning" of their answers matches the actual accuracy). It provides a theoretical mechanism based on the equivalence between "calibration and local loss optimality" to e
+  [ICLR 2026][Learning Theory][Semantic Calibration] This paper discovers that base LLMs trained solely on next-token prediction are also well-calibrated at the **semantic level** (the confidence in the "meaning" of their answers matches the actual accuracy). It provides a theoretical mechanism based on the equivalence between "calibration and local loss optimality" to explain this emergence, predicting that instruction-tuning and chain-of-thought (CoT) disrupt this calibration…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Calibration"
+  - "LLM Uncertainty"
+  - "Semantic Calibration"
+  - "Confidence"
+  - "Local Loss Optimality"
+  - "B-calibration"
+  - "Emergence"
 date: 2026-05-08
-content_hash: ab51395850becd51
+content_hash: 539e2d9c09a4e474
 ---
+
 # Trained on Tokens, Calibrated on Concepts: The Emergence of Semantic Calibration in LLMs
 
 **Conference**: ICLR 2026  
@@ -146,8 +154,8 @@ Base models in concise / sentence styles are generally well-calibrated (smECE in
 - Value: ⭐⭐⭐⭐⭐ Provides a solid theoretical foundation for LLM uncertainty research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TAVAE: A VAE with Adaptable Priors Explains Contextual Modulation in the Visual Cortex
 description: >-
-  [ICLR 2026][Image Generation][V1] A Task-Amortized VAE (TAVAE) is proposed by extending the VAE formalism to explain contextual modulation in mouse V1 by flexibly learning task-specific priors over learned representations. This explains the bimodal population responses observed during orientation discrimination tasks when training stimuli and test stim
+  [ICLR 2026][Image Generation][Variational Autoencoders] A Task-Amortized VAE (TAVAE) is proposed by extending the VAE formalism to explain contextual modulation in mouse V1 by flexibly learning task-specific priors over learned representations. This explains the bimodal population responses observed during orientation discrimination tasks when training stimuli and test stimuli are mismatched.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - V1
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Variational Autoencoders"
+  - "Task Priors"
+  - "V1"
+  - "Contextual Modulation"
+  - "Probabilistic Inference"
 date: 2026-05-08
-content_hash: e319d3033cf27c12
+content_hash: 36e94f54caf81273
 ---
+
 # TAVAE: A VAE with Adaptable Priors Explains Contextual Modulation in the Visual Cortex
 
 **Conference**: ICLR 2026  

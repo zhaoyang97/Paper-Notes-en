@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CRONOS: Continuous time reconstruction for 4D medical longitudinal series
 description: >-
-  [ICLR 2026][Medical Imaging][Flow Matching] CRONOS reframes Flow Matching (FM) as a "sequence-to-image" transport problem. By utilizing a shared spatiotemporal velocity field to simultaneously transport multiple historical 3D scans toward a target volume, it supports both discrete grid-aligned and continuous real-valued timestamp voxel-level 4D medical image pre
+  [ICLR2026][Medical Imaging][4D Medical Imaging] CRONOS reframes Flow Matching (FM) as a "sequence-to-image" transport problem. By utilizing a shared spatiotemporal velocity field to simultaneously transport multiple historical 3D scans toward a target volume, it supports both discrete grid-aligned and continuous real-valued timestamp voxel-level 4D medical image prediction within a single model. It outperforms existing spatiotemporal baselines and the strong LCI heuristic acr…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Flow Matching
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "4D Medical Imaging"
+  - "Longitudinal Series"
+  - "Continuous Time"
+  - "Flow Matching"
+  - "Sequence-to-Image Prediction"
 date: 2026-05-08
-content_hash: 999dd6d9c2678b24
+content_hash: c60ca756ec73c642
 ---
+
 # CRONOS: Continuous time reconstruction for 4D medical longitudinal series
 
 **Conference**: ICLR2026  
@@ -157,11 +162,11 @@ Under irregular sampling, the discrete variant without explicit timestamps only 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[ICLR 2026\] ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks](odebrain_continuous-time_eeg_graph_for_modeling_dynamic_brain_networks.md)
 - [\[ICLR 2026\] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification](functional_mri_time_series_generation_via_wavelet-based_image_transform_and_spec.md)
 - [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](../../NeurIPS2025/medical_imaging/self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
-- [\[CVPR 2026\] Learning Diffeomorphism for Medical Image Registration with Time-Embedded Architectures Using Semigroup Regularization](../../CVPR2026/medical_imaging/learning_diffeomorphism_for_medical_image_registration_with_time-embedded_archit.md)
-- [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](../../CVPR2026/medical_imaging/personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
+- [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)
 
 </div>
 

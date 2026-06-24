@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Adaptive Time Series Reasoning via Segment Selection
 description: >-
-  [ICML 2026][Time Series][segment selection] This paper proposes ARTIST, which frames time series question answering (TSQA) as a sequential decision-making problem of "reasoning while selecting segments." Through a controller-reasoner architecture and hierarchical self-play RL, the model selectively reads task-relevant temporal segments, thereby improving reasoni
+  [ICML 2026][Time Series][Time Series Reasoning] This paper proposes ARTIST, which frames time series question answering (TSQA) as a sequential decision-making problem of "reasoning while selecting segments." Through a controller-reasoner architecture and hierarchical self-play RL, the model selectively reads task-relevant temporal segments, thereby improving reasoning accuracy.
 tags:
-  - ICML 2026
-  - Time Series
-  - segment selection
-  - controller-reasoner
-  - self-play RL
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Reasoning"
+  - "segment selection"
+  - "controller-reasoner"
+  - "self-play RL"
+  - "hierarchical policy optimization"
 date: 2026-05-08
-content_hash: 8de207d71870e70f
+content_hash: 8a1b125365dd33bd
 ---
+
 # Adaptive Time Series Reasoning via Segment Selection
 
 **Conference**: ICML 2026  
@@ -140,11 +143,11 @@ Ablations report accuracy on ECG-QA and RCW to verify core components.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
 - [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
+- [\[ICLR 2026\] TimeSeriesExamAgent: Creating Time Series Reasoning Benchmarks at Scale](../../ICLR2026/time_series/timeseriesexamagent_creating_time_series_reasoning_benchmarks_at_scale.md)
+- [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
 - [\[ICLR 2026\] TimeOmni-1: Incentivizing Complex Reasoning with Time Series in Large Language Models](../../ICLR2026/time_series/timeomni-1_incentivizing_complex_reasoning_with_time_series_in_large_language_mo.md)
 - [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
-- [\[ICLR 2026\] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning](../../ICLR2026/time_series/swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi.md)
 
 </div>
 

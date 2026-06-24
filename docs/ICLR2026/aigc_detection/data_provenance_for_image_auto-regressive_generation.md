@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Data Provenance for Image Auto-Regressive Generation
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] Without altering the generation process or requiring watermarks, this paper leverages the "features left by Image Autoregressive (IAR) models in the codebook quantization space." By utilizing a trained inverse decoder and two complementary signals—QuantLoss and EncLoss—it achieves nearly 100% TPR@1%FPR for post-hoc pro
+  [ICLR2026][AIGC Detection][Data Provenance] Without altering the generation process or requiring watermarks, this paper leverages the "features left by Image Autoregressive (IAR) models in the codebook quantization space." By utilizing a trained inverse decoder and two complementary signals—QuantLoss and EncLoss—it achieves nearly 100% TPR@1%FPR for post-hoc provenance detection across mainstream IAR models including VAR, RAR, LlamaGen, and Infinity.
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "Data Provenance"
+  - "Image Autoregressive Models"
+  - "Codebook Quantization"
+  - "Decoder Inverse Mapping"
+  - "Post-hoc Detection"
 date: 2026-05-08
-content_hash: 2c8eea1d5efe81b0
+content_hash: c89926e396943f9b
 ---
+
 # Data Provenance for Image Auto-Regressive Generation
 
 **Conference**: ICLR2026  
@@ -165,8 +171,8 @@ Table 2 shows robustness against post-processing on RAR:
 - [\[ACL 2025\] ChemActor: Enhancing Automated Extraction of Chemical Synthesis Actions with LLM-Generated Data](../../ACL2025/aigc_detection/chemactor_enhancing_automated_extraction_of_chemical_synthesis_actions_with_llm-.md)
 - [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
 - [\[ICLR 2026\] All Patches Matter, More Patches Better: Enhance AI-Generated Image Detection via Panoptic Patch Learning](all_patches_matter_more_patches_better_enhance_ai-generated_image_detection_via_.md)
+- [\[ICLR 2026\] Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection](attack-resistant_watermarking_for_aigc_image_forensics_via_diffusion-based_seman.md)
 - [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
-- [\[ICLR 2026\] HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection](hsic_bottleneck_for_cross-generator_and_domain-incremental_synthetic_image_detec.md)
 
 </div>
 

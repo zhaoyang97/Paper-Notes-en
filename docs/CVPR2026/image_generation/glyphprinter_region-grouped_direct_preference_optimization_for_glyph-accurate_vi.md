@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering
 description: >-
-  [CVPR 2026][Image Generation][DPO] Ours proposes GlyphPrinter, which significantly improves glyph accuracy in visual text rendering without relying on an explicit reward model by constructing the region-level glyph preference dataset GlyphCorrector and the Region-Grouped DPO (R-GDPO) objective function, while introducing inference-time Regional Reward G
+  [CVPR 2026][Image Generation][Visual Text Rendering] Ours proposes GlyphPrinter, which significantly improves glyph accuracy in visual text rendering without relying on an explicit reward model by constructing the region-level glyph preference dataset GlyphCorrector and the Region-Grouped DPO (R-GDPO) objective function, while introducing inference-time Regional Reward Guidance for controllable generation.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - DPO
-  - FLUX
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Visual Text Rendering"
+  - "DPO"
+  - "Glyph Accuracy"
+  - "Region-level Preference Optimization"
+  - "FLUX"
 date: 2026-05-08
-content_hash: eb067fed44dae0ef
+content_hash: 4434310f0dc7c9bc
 ---
+
 # GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering
 
 **Conference**: CVPR 2026  
@@ -186,10 +190,10 @@ Contribution of R-GDPO components:
 ## Related Papers
 
 - [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[CVPR 2026\] TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering](textpecker_rewarding_structural_anomaly_quantification_for_enhancing_visual_text.md)
 - [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](../../AAAI2026/image_generation/rethinking_direct_preference_optimization_in_diffusion_models.md)
 - [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 - [\[CVPR 2026\] Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization](fusion_in_your_way_aligning_image_fusion_with_heterogeneous_demands_via_direct_p.md)
-- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
 
 </div>
 

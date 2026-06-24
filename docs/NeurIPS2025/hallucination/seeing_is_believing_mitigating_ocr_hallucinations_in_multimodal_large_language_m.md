@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Hallucination Detection][OCR hallucination] This paper addresses OCR hallucinations in MLLMs under degraded document conditions. It introduces KIE-HVQA…
+  [NeurIPS 2025][Hallucination Detection][OCR hallucination] This paper addresses OCR hallucinations in MLLMs under degraded document conditions. It introduces KIE-HVQA, the first benchmark for evaluating hallucinations in degraded document scenarios, and proposes a multi-objective reward reinforcement learning framework based on GRPO. The resulting 7B-parameter model achieves approximately 28% higher hallucination-suppression accuracy than GPT-4o.
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "GRPO"
   - "visual degradation"
 date: 2026-05-08
-content_hash: 7b1398c7360044d6
+content_hash: 3bc75f15924fe7f5
 ---
 
 # Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models
@@ -121,9 +121,9 @@ Training follows a two-stage strategy:
 
 - [\[NeurIPS 2025\] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations](when_semantics_mislead_vision_mitigating_large_multimodal_models_hallucinations_.md)
 - [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
-- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
-- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
+- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
+- [\[CVPR 2025\] ODE: Open-Set Evaluation of Hallucinations in Multimodal Large Language Models](../../CVPR2025/hallucination/ode_open-set_evaluation_of_hallucinations_in_multimodal_large_language_models.md)
 
 </div>
 

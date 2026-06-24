@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] To address the persistent "alignment ambiguity" in Text-to-Image Person Retrieval, this paper utilizes Multimodal Large Language Models (MLLM) to extract fine-grained attributes through "multi-turn QA" and summarizes them into a compact description. A Bi-directional Cross-attention Mixer refines these summaries with im
+  [CVPR 2026][Multimodal VLM][Text-to-Image Person Retrieval] To address the persistent "alignment ambiguity" in Text-to-Image Person Retrieval, this paper utilizes Multimodal Large Language Models (MLLM) to extract fine-grained attributes through "multi-turn QA" and summarizes them into a compact description. A Bi-directional Cross-attention Mixer refines these summaries with image tokens, while a Confidence-Aware Weighted Loss suppresses noise in MLLM-generated dialogues…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-to-Image Person Retrieval"
+  - "Cross-modal Alignment"
+  - "MLLM"
+  - "Conversational Attribute Mining"
+  - "Confidence Weighting"
 date: 2026-05-08
-content_hash: 74e312dc173f3e13
+content_hash: 03a83bc29da96b5a
 ---
+
 # Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining
 
 **Conference**: CVPR 2026  
@@ -132,15 +138,16 @@ Removing components (Rank-1 / mAP across datasets):
 - Value: ⭐⭐⭐⭐ Consistent SOTA results on TIPR; the CAM/CAWL paradigm is transferable to other retrieval tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
-- [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
-- [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
-- [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
-- [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
+- [\[CVPR 2026\] Quota-Calibrated Fine-Grained Alignment with Context-Aware Marginals for Text-based Person Retrieval](quota-calibrated_fine-grained_alignment_with_context-aware_marginals_for_text-ba.md)
+- [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
+- [\[CVPR 2026\] ReMatch: Boosting Representation through Matching for Multimodal Retrieval](rematch_boosting_representation_through_matching_for_multimodal_retrieval.md)
+- [\[CVPR 2026\] DialogueVPR: Towards Conversational Visual Place Recognition](dialoguevpr_towards_conversational_visual_place_recognition.md)
+- [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
 
 </div>
 

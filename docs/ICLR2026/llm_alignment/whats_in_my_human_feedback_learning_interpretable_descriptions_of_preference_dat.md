@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] WIMHF uses Sparse Autoencoders (SAEs) on the "embedding difference between two candidate responses" to learn a small set of human-readable features. It then quantifies the impact of each feature on preference labels using logistic regression. This process automatically characterizes what a preference dataset "can measu
+  [ICLR 2026][LLM Alignment][Preference Data] WIMHF uses Sparse Autoencoders (SAEs) on the "embedding difference between two candidate responses" to learn a small set of human-readable features. It then quantifies the impact of each feature on preference labels using logistic regression. This process automatically characterizes what a preference dataset "can measure" and what "annotators actually prefer" without pre-defined hypotheses, providing controllable levers for data san…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Preference Data"
+  - "Sparse Autoencoders"
+  - "RLHF"
+  - "Interpretable Features"
+  - "Data Sanitation"
 date: 2026-05-08
-content_hash: e417b74e8b8e4eca
+content_hash: 61f0e69ad45e3acc
 ---
+
 # What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data
 
 **Conference**: ICLR 2026  

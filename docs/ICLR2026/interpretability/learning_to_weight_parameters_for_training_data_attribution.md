@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning to Weight Parameters for Training Data Attribution
 description: >-
-  [ICLR 2026][Interpretability][data attribution] This paper points out that the "huge disparity in attribution quality across different parameter groups" in gradient attribution is ignored by existing methods. It proposes a unified framework that uses **self-supervision** to directly learn a set of parameter group weights $w$ from data. Without requiring annotations,
+  [ICLR 2026][Interpretability][data attribution] This paper points out that the "huge disparity in attribution quality across different parameter groups" in gradient attribution is ignored by existing methods. It proposes a unified framework that uses **self-supervision** to directly learn a set of parameter group weights $w$ from data. Without requiring annotations, it systematically improves the attribution precision of methods like TracIn / TRAK / EK-FAC and can decouple se…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - data attribution
-  - influence functions
-  - gradient-based attribution
-  - parameter heterogeneity
-  - self-supervised
-  - diffusion models
+  - "ICLR 2026"
+  - "Interpretability"
+  - "data attribution"
+  - "influence functions"
+  - "gradient-based attribution"
+  - "parameter heterogeneity"
+  - "self-supervised"
+  - "diffusion models"
 date: 2026-05-08
-content_hash: aa60ad5efbf553aa
+content_hash: 52648ee55653fa4a
 ---
+
 # Learning to Weight Parameters for Training Data Attribution
 
 **Conference**: ICLR 2026  
@@ -153,8 +154,8 @@ Fine-grained attribution (SB-Pokemon, D-TRAK, Recall@10 %): After learning seman
 - [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](influence_dynamics_and_stagewise_data_attribution.md)
 - [\[ICLR 2026\] Learning to Interpret Weight Differences in Language Models](learning_to_interpret_weight_differences_in_language_models.md)
 - [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](../../ICML2026/interpretability/explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
+- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
 - [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](learning_is_forgetting_llm_training_as_lossy_compression.md)
-- [\[ICLR 2026\] LORE: Jointly Learning the Intrinsic Dimensionality and Relative Similarity Structure from Ordinal Data](lore_jointly_learning_the_intrinsic_dimensionality_and_relative_similarity_struc.md)
 
 </div>
 

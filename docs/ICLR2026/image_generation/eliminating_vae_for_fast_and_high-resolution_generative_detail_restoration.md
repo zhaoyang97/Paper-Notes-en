@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration
 description: >-
-  [ICLR 2026][Image Generation][pixel-shuffle] By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle, this work converts Latent Diffusion Super-Resolution (GenDR) into Pixel-space Super-Resolution (GenDR-Pix). Combined with multi-stage adversarial distillation and a PadCFG inference strategy, it achieves a 2.8× speedup and 60% VRAM savings while mainta
+  [ICLR 2026][Image Generation][VAE elimination] By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle, this work converts Latent Diffusion Super-Resolution (GenDR) into Pixel-space Super-Resolution (GenDR-Pix). Combined with multi-stage adversarial distillation and a PadCFG inference strategy, it achieves a 2.8× speedup and 60% VRAM savings while maintaining negligible visual degradation, enabling 4K image restoration in under 1 second with only 6GB of VRAM.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - pixel-shuffle
+  - "ICLR 2026"
+  - "Image Generation"
+  - "VAE elimination"
+  - "Super-resolution"
+  - "Pixel-space diffusion"
+  - "Adversarial distillation"
+  - "pixel-shuffle"
 date: 2026-05-08
-content_hash: fcb1c102dfa582dc
+content_hash: fbb33f926af6fe95
 ---
+
 # Eliminating VAE for Fast and High-Resolution Generative Detail Restoration
 
 **Conference**: ICLR 2026  
@@ -164,9 +169,9 @@ The total loss for the Stage II generator is: $$\mathcal{L}_{\mathcal{G}_2} = \|
 
 - [\[ICLR 2026\] GenDR: Lighten Generative Detail Restoration](gendr_lighten_generative_detail_restoration.md)
 - [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
-- [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](../../CVPR2026/image_generation/da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
 - [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
-- [\[ICLR 2026\] Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](massive_activations_are_the_key_to_local_detail_synthesis_in_diffusion_transform.md)
+- [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](../../CVPR2026/image_generation/da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 
 </div>
 

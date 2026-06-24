@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors
 description: >-
-  [ICLR 2026][Pretraining][pre-caching] By decomposing training gradient signals into three components—direct, pre-cached, and circuit sharing—this work explains why Transformers trained with NTP learn features "useless" for predicting the current next token. The explanatory power of this framework is validated on OthelloGPT, small language models, and a pre
+  [ICLR 2026][LLM Pretraining][Next-token prediction] By decomposing training gradient signals into three components—direct, pre-cached, and circuit sharing—this work explains why Transformers trained with NTP learn features "useless" for predicting the current next token. The explanatory power of this framework is validated on OthelloGPT, small language models, and a pre-trained LLM (Gemma 2).
 tags:
-  - ICLR 2026
-  - Pretraining
-  - pre-caching
-  - circuit sharing
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Next-token prediction"
+  - "feature emergence"
+  - "pre-caching"
+  - "circuit sharing"
+  - "mechanistic interpretability"
 date: 2026-05-08
-content_hash: 11c005cf4c43d3e9
+content_hash: e69c4bfdef27f5ce
 ---
+
 # Understanding the Emergence of Seemingly Useless Features in Next-Token Predictors
 
 **Conference**: ICLR 2026  
@@ -144,10 +148,10 @@ Conditioned Majority requires a two-layer attention construction similar to an i
 ## Related Papers
 
 - [\[ICLR 2026\] Next-ToBE: Probabilistic Next Token-Bag Exploitation for Activating Anticipatory Capacity in LLMs](next-tobe_probabilistic_next_token-bag_exploitation_for_activating_anticipatory_.md)
+- [\[ICLR 2026\] FoNE: Precise Single-Token Number Embeddings via Fourier Features](fone_precise_single-token_number_embeddings_via_fourier_features.md)
 - [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](a_law_of_data_reconstruction_for_random_features_and_beyond.md)
 - [\[ICLR 2026\] StochasTok: Improving Fine-Grained Subword Understanding in LLMs](stochastok_improving_fine-grained_subword_understanding_in_llms.md)
 - [\[ICLR 2026\] Understanding and Improving Shampoo and SOAP via Kullback-Leibler Minimization](understanding_and_improving_shampoo_and_soap_via_kullback-leibler_minimization.md)
-- [\[ICLR 2026\] Explaining Grokking and Information Bottleneck through Neural Collapse Emergence](explaining_grokking_and_information_bottleneck_through_neural_collapse_emergence.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper proposes FedPoisonMIA, a poisoning-based membership inference attack for federated learning that maximizes angular deviation…
+  [ICCV 2025][AI Safety][Federated Learning] This paper proposes FedPoisonMIA, a poisoning-based membership inference attack for federated learning that maximizes angular deviation, along with a defense mechanism called Angular Trimmed-mean (ATM) that filters malicious gradients via angular distance.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Byzantine-Robust Aggregation"
   - "Privacy Preservation"
 date: 2026-05-08
-content_hash: b850e0801536c4f9
+content_hash: 36252918cdfe31eb
 ---
 
 # Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning
@@ -134,10 +134,10 @@ Greedy mask selection improves attack accuracy by over 20% compared to random se
 ## Related Papers
 
 - [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](membership_inference_attacks_with_false_discovery_rate_control.md)
+- [\[ACL 2025\] Crafting Privacy-Preserving Adversarial Examples: A Defense Against Membership Inference](../../ACL2025/ai_safety/crafting_privacy-preserving_adversarial_examples_a_defense_against_membership_inf.md)
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
-- [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
-- [\[ICLR 2026\] Hide and Find: A Distributed Adversarial Attack on Federated Graph Learning](../../ICLR2026/ai_safety/hide_and_find_a_distributed_adversarial_attack_on_federated_graph_learning.md)
 - [\[ICCV 2025\] Active Membership Inference Test (aMINT): Enhancing Model Auditability with Multi-Task Learning](active_membership_inference_test_amint_enhancing_model_auditability_with_multi-t.md)
+- [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
 
 </div>
 

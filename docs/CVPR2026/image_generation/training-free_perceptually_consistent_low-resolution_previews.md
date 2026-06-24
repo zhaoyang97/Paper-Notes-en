@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][flow matching] To alleviate the high-resolution (HR) computational burden during the user's "seed/prompt trial-and-error" stage, this paper proposes a **training-free** low-resolution (LR) "preview" generation method. The goal of "perceptual consistency between LR and HR" is reformulated as a **commutator-zero condition** between the
+  [CVPR 2026][Image Generation][Preview generation] To alleviate the high-resolution (HR) computational burden during the user's "seed/prompt trial-and-error" stage, this paper proposes a **training-free** low-resolution (LR) "preview" generation method. The goal of "perceptual consistency between LR and HR" is reformulated as a **commutator-zero condition** between the flow matching model and the downsampling operator. This condition is approximately satisfied during sampling…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - flow matching
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Preview generation"
+  - "flow matching"
+  - "commutator condition"
+  - "training-free"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: 34cd81a8ac578cc4
+content_hash: e559b71411154bc8
 ---
+
 # Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -140,15 +144,16 @@ $\arg\min$ selection of the commutator norm is the optimal strategy. Adding guid
 - **Value**: ⭐⭐⭐⭐ Significant. Training-free and orthogonal implementation makes it highly practical.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Low-Resolution Editing is All You Need for High-Resolution Editing](low-resolution_editing_is_all_you_need_for_high-resolution_editing.md)
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
-- [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
+- [\[CVPR 2026\] HierEdit: Region-Aware Hierarchical Diffusion for Efficient High-Resolution Editing](hieredit_region-aware_hierarchical_diffusion_for_efficient_high-resolution_editi.md)
+- [\[CVPR 2026\] DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](dtg-restore_training-free_diffusion_refinement_for_generative_video_super-resolu.md)
 - [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
-- [\[CVPR 2026\] From Sketch to Fresco: Efficient Diffusion Transformer with Progressive Resolution](from_sketch_to_fresco_efficient_diffusion_transformer_with_progressive_resolutio.md)
+- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](pixelrush_ultrafast_trainingfree_highresolution_im.md)
 
 </div>
 

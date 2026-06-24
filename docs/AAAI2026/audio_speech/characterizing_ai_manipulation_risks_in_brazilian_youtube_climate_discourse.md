@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Characterizing AI Manipulation Risks in Brazilian YouTube Climate Discourse
 description: >-
-  [AAAI2026][Audio & Speech][Climate Discourse] Through a psycholinguistic framework, this work analyzes 226,775 Brazilian YouTube climate change videos and 2,756,165 comments…
+  [AAAI2026][Audio & Speech][Climate Discourse] This paper analyzes 226k climate change videos and 2.75M comments on Brazilian YouTube using a psycholinguistic framework, revealing that emotional/moral rhetoric significantly drives user engagement. It also demonstrates that fine-tuned LLMs can automatically generate highly engaging climate-denial comments, warning of the potential risks of generative AI in public opinion manipulation.
 tags:
   - "AAAI2026"
   - "Audio & Speech"
@@ -13,167 +13,167 @@ tags:
   - "LLM-generated Manipulation"
   - "Social Media Analysis"
 date: 2026-05-08
-content_hash: 2987a7a2ac97a2e8
+content_hash: 7a4ceccf83f22f07
 ---
 
 # Characterizing AI Manipulation Risks in Brazilian YouTube Climate Discourse
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026  
 **arXiv**: [2511.06091](https://arxiv.org/abs/2511.06091)  
 **Code**: To be confirmed  
-**Area**: Audio & Speech
-**Keywords**: Climate Discourse, Persuasion, Theory of Mind, YouTube, LLM-generated Manipulation, Social Media Analysis
+**Area**: Audio & Speech  
+**Keywords**: Climate Discourse, Persuasion, Theory of Mind, YouTube, LLM-generated Manipulation, Social Media Analysis  
 
 ## TL;DR
 
-Through a psycholinguistic framework, this work analyzes 226,775 Brazilian YouTube climate change videos and 2,756,165 comments, revealing that emotional and moral rhetoric significantly drives user engagement. It further demonstrates that fine-tuned LLMs can automatically generate high-engagement climate denial comments, warning of the potential risks of generative AI in public opinion manipulation.
+This paper analyzes 226k climate change videos and 2.75M comments on Brazilian YouTube using a psycholinguistic framework, revealing that emotional/moral rhetoric significantly drives user engagement. It also demonstrates that fine-tuned LLMs can automatically generate highly engaging climate-denial comments, warning of the potential risks of generative AI in public opinion manipulation.
 
 ## Background & Motivation
 
-Climate change is a global threat that demands evidence-based policymaking and adequate public understanding. Social media platforms—YouTube in particular—have become primary channels for the dissemination of climate narratives, while simultaneously serving as breeding grounds for misinformation. Brazil, as a representative country of the Global South with significant ecological importance due to the Amazon rainforest, and with YouTube reaching approximately 68% of its population, constitutes an ideal setting for studying climate discourse.
+Climate change is a global threat, and addressing it requires evidence-based policy-making and public understanding. Social media (particularly YouTube) has increasingly become a major channel for disseminating climate narratives, while also serving as a breeding ground for misinformation. As a representative country of the Global South, Brazil holds a significant ecological position due to the Amazon rainforest, and YouTube covers approximately 68% of its population, making it an ideal scenario for studying climate discourse.
 
-The rapid development of LLMs in recent years has introduced a new risk dimension: prior research has shown that AI-generated text is persuasive and can even influence the formation of beliefs in conspiracy theories. This raises a central concern—can generative AI be weaponized to automate large-scale manipulation of climate discourse, for instance by fabricating a false consensus of "climate denial"?
+The rapid development of LLMs in recent years has introduced new risk dimensions: existing research indicates that AI-generated texts are persuasive and can even influence beliefs in conspiracy theories. This raises a core concern: can generative AI be exploited to manipulate climate discourse at scale and in an automated manner, such as by fabricating a false consensus of "climate denial"?
 
-The motivation of this paper is twofold: (1) to systematically quantify the effect of psycholinguistic features (persuasion strategies and Theory of Mind) on user engagement; and (2) to assess whether these patterns can be exploited by LLMs to automatically generate high-engagement manipulative content.
+The motivation of this study is to: (1) systematically quantify the impact of psycholinguistic features (persuasion strategies + Theory of Mind) on user engagement; and (2) evaluate whether these patterns can be exploited by LLMs to automatically generate highly engaging, manipulative content.
 
 ## Core Problem
 
-1. Which psychological content features (persuasion strategies) most effectively drive audience engagement in Brazilian climate YouTube videos?
+1. Which psychological content features (persuasion strategies) are most effective at driving viewer engagement in Brazilian climate YouTube videos?
 2. To what extent can these psychological features predict content popularity?
-3. Can these insights be leveraged to design automated persuasive synthetic content (e.g., climate denial campaigns)?
+3. Can these insights be exploited to design automated, persuasive synthetic content (e.g., climate denial campaigns)?
 
 ## Method
 
 ### Dataset Construction
 
-- **Scale**: 226,775 Brazilian Portuguese-language YouTube video metadata entries and 2,756,165 user comments, spanning 2019–2025.
-- **Collection Pipeline**: Videos retrieved via the YouTube Data API v3 using 65 climate-related keywords; non-Portuguese content filtered using FastText language identification; low-relevance videos subsequently filtered by GPT-4.1-mini (temperature = 0).
-- **Video Classification**: Videos categorized as short-form (< 3 minutes) or long-form (≥ 3 minutes); since 2023, short-form videos have become the dominant format for climate topics.
+* **Scale**: Metadata of 226,775 Brazilian Portuguese YouTube videos + 2,756,165 user comments, spanning from 2019 to 2025
+* **Collection Process**: Retrieved via YouTube Data API v3 based on 65 climate-related keywords, filtered non-Portuguese content using FastText for language identification, and then filtered low-relevance videos using GPT-4.1-mini (temperature = 0)
+* **Video Classification**: Categorized by duration into Short videos (<3 minutes) and Long videos ($\ge 3$ minutes); shorts have become the mainstream format for climate topics since 2023
 
 ### Psycholinguistic Annotation
 
 #### Persuasion Strategy Annotation (Video Level)
 
-GPT-4.1 with 5-shot prompting is used to annotate 10 persuasion strategies at the video level:
+Using GPT-4.1 via 5-shot prompting to annotate 10 types of persuasion strategies on video content:
 
 | Strategy | Description |
 |---|---|
-| Logical Appeal | Persuading through reasons and evidence |
-| Emotional Appeal | Eliciting emotional responses |
+| Logical Appeal | Persuasion based on reason and evidence |
+| Emotional Appeal | Evoking emotional responses |
 | Statistical Evidence | Providing concrete data and statistics |
-| Social Norm | Applying pressure through social conformity |
+| Social Norm | Exerting pressure through social proof/consensus |
 | Authority | Citing experts, institutions, and official reports |
-| Personal Stories | Narrating personal experiences |
+| Personal Stories | Sharing personal experiences |
 | Moral Appeal | Appealing to moral responsibility |
-| Reciprocity | Emphasizing mutual benefits |
-| Scarcity | Presenting time-limited and irreversible consequences |
-| Common Ground | Building shared identity and values |
+| Reciprocity | Emphasizing reciprocal benefits |
+| Scarcity | Presenting temporal urgency and irreversible impacts |
+| Common Ground | Establishing shared identity and values |
 
-Manual validation yields an average F1 = 0.93 and accuracy = 0.98.
+Human validation results: Average F1 = 0.93, Accuracy = 0.98.
 
 #### Theory of Mind Annotation (Comment Level)
 
-GPT-4.1-mini is used to annotate user comments with 7 Theory of Mind categories: Belief, Intention, Desire, Emotion, Knowledge, Percept, and Non-literal. Manual validation yields F1 = 0.66 and accuracy = 0.83.
+Using GPT-4.1-mini to annotate user comments with 7 Theory of Mind (ToM) categories: Belief, Intention, Desire, Emotion, Knowledge, Percept, and Non-literal. Human validation: F1 = 0.66, Accuracy = 0.83.
 
 ### Case Study 1: Engagement Modeling
 
-The impact of psycholinguistic features on user engagement is assessed through a three-stage analysis:
+Evaluating the impact of psycholinguistic features on user engagement in three stages:
 
-1. **Video level**: Linear regression is applied to analyze the effect of the persuasion strategy vector $\mathbf{p}_i$ on normalized like rate $L_i$ and comment rate $R_i$, controlling for confounders such as video duration and channel identity.
-2. **Strategy–Mind correlation**: Each video's comment ToM vectors are aggregated as $\bar{\mathbf{t}}_i = (1/|C_i|)\sum_{c_k \in C_i} \mathbf{t}_k$, and partial correlations between persuasion strategies and ToM categories are computed.
-3. **Comment level**: Comment like counts and reply counts serve as dependent variables, with ToM annotations as independent variables, controlling for comment length and temporal distance.
+1. **Video Level**: Using linear regression to analyze the impact of persuasion strategy vector $\mathbf{p}_i$ on standardized comment rate $R_i$ and like rate $L_i$, controlling for confounding factors such as video duration and channel attributes.
+2. **Strategy-Mind Association**: Aggregating the comment ToM vector of each video as $\bar{\mathbf{t}}_i = (1/|C_i|)\sum_{c_k \in C_i} \mathbf{t}_k$, and computing the partial correlation between persuasion strategies and ToM categories.
+3. **Comment Level**: Treating the number of likes and replies on comments as dependent variables and ToM annotations as independent variables, while controlling for comment length and time delta.
 
 ### Case Study 2: Popularity Prediction
 
-Comment pairs $(c_i, c_j)$ are constructed with binary label $y_{ij}^{(\ell)} = \mathbb{I}[\ell_i > \ell_j]$, predicting which comment is more popular. Three classes of methods are employed:
+Pairing comments as $(c_i, c_j)$ and defining a binary label $y_{ij}^{(\ell)} = \mathbb{I}[\ell_i > \ell_j]$ to predict which comment will be more popular. Three types of methods are used:
 
 - **LLM-as-a-Judge**: GPT-4.1, o4-mini, Phi-4, Llama-3.1-8B, Llama-4-Maverick
-- **Fine-tuned Encoder Models**: BERTimbau (Brazilian Portuguese BERT), DeBERTa V3
-- **Bradley-Terry Model**: A linear classifier trained on comment embeddings
+- **Encoder Model Fine-tuning**: BERTimbau (Brazilian Portuguese BERT), DeBERTa V3
+- **Bradley-Terry Model**: Training linear classifiers based on comment embeddings
 
 ### Case Study 3: Comment Generation
 
-Llama-3-8B is fine-tuned to generate targeted comments under three scenarios:
+Fine-tuning Llama-3-8B to generate targeted comments across three scenarios:
 
-1. **Sampling by persuasion strategy**: Controlling for video-level effects.
-2. **Sampling by ToM profile**: Generating comments that reflect specific mental states.
-3. **Sampling by belief stance**: Three distinct models corresponding to "belief in climate change," "climate denial," and "extreme denial."
+1. **Sampling by Persuasion Strategy**: Controlling video-level effects
+2. **Sampling by ToM Profile**: Generating comments reflecting specific mental states
+3. **Subdivision by Belief/Stance**: Disentangling three models: "Believe Climate Change", "Climate Denial", and "Extreme Denial"
 
-Evaluation: For each generated comment, $K$ most similar real comments are retrieved, and their average like/reply counts serve as a proxy evaluation metric.
+Evaluation Method: Retrieving $K$ most similar real comments for each generated comment, using their average number of likes/replies as proxy evaluation metrics.
 
 ## Key Experimental Results
 
-### Effect of Persuasion Strategies on Engagement
+### Impact of Persuasion Strategies on Engagement
 
 - The most frequently used strategies (Logical Appeal 51%, Authority 47%, Common Ground 36%) are all associated with **lower** user engagement.
-- Emotional Appeal (33%) and Moral Appeal (26%) are associated with **significantly higher** engagement; moral appeals increase video likes by an average of 2.1%.
-- The effectiveness of moral rhetoric in short-form videos has grown consistently over time.
+- Emotional Appeal (33%) and Moral Appeal (26%) are associated with **significantly higher** engagement; specifically, moral appeal yields an average of 2.1% increase in video likes.
+- The effectiveness of moral rhetoric in short videos has grown steadily over time.
 
 ### Popularity Prediction
 
 | Model | Best Accuracy | Condition |
 |---|---|---|
-| BERTimbau | **88%** | No context, random pairing |
+| BERTimbau | **88%** | No context, random pairings |
 | GPT-4.1 | 82% | With video context + few-shot |
 | DeBERTa V3 | 84% | With video context |
 
-- Emotional ToM improves prediction performance by an average of **4.69%**.
-- BERTimbau achieves 88% using comment text alone, indicating that comment content itself contains sufficient signals for engagement prediction.
+- Emotional ToM improves prediction performance by **4.69%** on average.
+- BERTimbau achieves 88% accuracy relying on comment text alone, indicating that comment content itself contains sufficient signals to predict engagement.
 
 ### Comment Generation
 
-| Model | Estimated Like Count $\hat{\ell}_{gen|1}$ |
+| Model | Estimated Likes $\hat{\ell}_{gen|1}$ |
 |---|---|
-| Baseline (random comments) | 2.20 |
-| Engaging (fine-tuned on high-like comments) | **7.25** (3.3× improvement) |
-| Believe (climate belief) | 3.23 |
-| Denial (climate denial) | 1.91 |
-| Extreme (extreme denial) | 2.37 |
+| Baseline (Random Comments) | 2.20 |
+| Engaging (Fine-tuned on High-like Comments) | **7.25** (3.3x increase) |
+| Believe (Believe Climate Change) | 3.23 |
+| Denial (Climate Denial) | 1.91 |
+| Extreme (Extreme Denial) | 2.37 |
 
-Comments generated by the extreme denial model exhibit greater detail and rhetorical intensity, making them more engaging than those from the standard denial model.
+Comments generated by the Extreme Denial model contain more details and rhetorical intensity, making them more engaging than those from the standard Denial model.
 
 ## Highlights & Insights
 
-1. **Large-scale psycholinguistic dataset**: A Brazilian climate discourse dataset comprising 226,775 videos and 2,756,165 comments, annotated with persuasion strategies and ToM labels, is released—one of the largest non-English resources in this domain.
-2. **Clear causal chain from persuasion to engagement**: A complete analytical pipeline from "persuasion strategies → user psychological states → engagement behavior" is established across three progressively layered case studies.
-3. **Empirical demonstration of AI manipulation risks**: Rather than remaining at the level of theoretical discussion, the work demonstrates the feasibility of automated opinion manipulation through actual LLM fine-tuning; the outputs of the extreme denial model exhibit a striking degree of realism.
-4. **Unique Brazilian/Portuguese perspective**: This work fills a gap in climate discourse research concerning Global South countries. The finding that BERTimbau outperforms GPT-4.1 on Portuguese comments further underscores the importance of language-specificity.
-5. **In-depth analysis of short-form video trends**: The paper reveals that climate short-form videos have surpassed long-form videos since 2023, a format shift that further compresses the space available for fact-checking.
+1. **Large-scale Psycholinguistic Dataset**: Releasing a Brazilian climate discourse dataset containing 226k videos and 2.75M comments with persuasion strategy and ToM annotations, representing one of the largest non-English resources in this domain.
+2. **Clear Causal Chain of Persuasion and Engagement**: A complete analysis pipeline from "persuasion strategy $\rightarrow$ user mental state $\rightarrow$ engagement behavior" developed across three progressive case studies.
+3. **Empirically Uncovering AI Manipulation Risks**: Moving beyond theoretical discussions, this study demonstrates the feasibility of automated opinion manipulation via actual LLM fine-tuning; the outputs from the extreme denial model exhibit a striking and alarming level of realism.
+4. **Unique Brazil + Portuguese Perspective**: Filling a gap in Global South representation within climate discourse research. BERTimbau outperforming GPT-4.1 on Portuguese comments highlights the crucial importance of language specificity.
+5. **In-depth Analysis of Short Video Trends**: Revealing that short climate videos have surpassed long ones since 2023, a format shift that further compresses the space available for fact-checking.
 
 ## Limitations & Future Work
 
-- **Text-only analysis**: Visual, audio, and other multimodal elements affecting persuasiveness are not considered—a particularly notable limitation given YouTube's nature as a video platform.
-- **Incomplete engagement metrics**: Important factors such as recommendation algorithms, individual psychological differences, and user demographics are not accounted for.
-- **Geographic and linguistic scope**: All findings are limited to Brazilian Portuguese YouTube content; cross-lingual and cross-platform generalizability remains unverified.
-- **Moderate ToM annotation quality**: An F1 of 0.66 represents a substantial gap compared to the 0.93 achieved for persuasion strategy annotation, potentially affecting the reliability of downstream analyses.
-- **Indirect evaluation of generated comments**: Proxy evaluation via nearest-neighbor retrieval rather than real-platform deployment precludes confirmation of actual engagement effects.
-- Future work may extend the framework to multilingual and multi-platform (TikTok/X) comparisons, and incorporate multimodal analysis.
+- **Text-Only Analysis**: Ignores the persuasive effects of visual, audio, and other multimodal elements, a limitation that is particularly pronounced for YouTube as a video platform.
+- **Incomplete Engagement Metrics**: Does not account for crucial factors affecting engagement such as recommendation algorithms, individual psychological differences, and user profiles.
+- **Geographic and Language Limitations**: All findings are restricted to Brazilian Portuguese YouTube content; cross-lingual and cross-platform generalizability remains unverified.
+- **Moderate ToM Annotation Quality**: The F1 score of only 0.66 is substantially lower than the 0.93 achieved for persuasion strategy annotations, potentially affecting the reliability of downstream analyses.
+- **Indirect Evaluation of Generated Comments**: Uses proxy evaluations via nearest neighbor retrieval rather than staging real-world platform testing, preventing confirmation of actual engagement effects.
+- Future work can expand to cross-lingual and cross-platform (e.g., TikTok/X) comparisons and introduce a multimodal analysis framework.
 
 ## Related Work & Insights
 
-| Dimension | Ours | Existing Climate Discourse Research |
+| Aspect | Ours | Prior Climate Discourse Research |
 |---|---|---|
 | Language/Region | Brazilian Portuguese | Predominantly English |
-| Analytical Framework | Dual-dimension: persuasion strategies + ToM | Typically single-dimension (stance detection or sentiment analysis) |
+| Analysis Framework | Dual-dimensional (Persuasion Strategy + ToM) | Typically single-dimensional (stance detection or sentiment analysis) |
 | Manipulation Risk Assessment | LLM fine-tuning generation experiments | Primarily theoretical discussion |
-| Data Scale | 226,775 videos + 2,756,165 comments | Typically < 150,000 tweets |
-| Platform | YouTube (videos + comments) | Predominantly Twitter/X |
+| Data Scale | 226k videos + 2.75M comments | Typically <150k tweets |
+| Platform | YouTube (Videos + Comments) | Predominantly Twitter/X |
 
-Compared to Costello et al. (2024) on AI persuasion, this work shifts focus from controlled experiments to real-world social media settings. Compared to Breum et al. (2024) on LLM persuasiveness analysis, this work adds the ToM dimension and actual generation experiments.
+Compared to the AI persuasion study by Costello et al. (2024), this work shifts the focus from controlled experiments to real-world social media settings. Compared to the LLM persuasiveness analysis by Breum et al. (2024), this study introduces the ToM dimension and practical generation experiments.
 
-**Implications and Connections**
+## Implications & Takeaways
 
-- **Warning for generative AI governance**: The high engagement efficacy of emotional and moral rhetoric, combined with LLMs' generative capacity, creates the conditions for low-cost, large-scale opinion manipulation, calling for governance frameworks around synthetic media.
-- **Aggravated challenges for fact-checking**: The shift toward short-form video compresses the space for in-depth information dissemination, and algorithmic recommendation further amplifies emotional content, undermining fact-checking effectiveness.
-- **BERTimbau > GPT-4.1** suggests that in specific linguistic and cultural contexts, localized smaller models may outperform general-purpose large models—an important finding for multilingual AI research.
-- **Transferable methodology**: The dual-dimension analytical framework of persuasion strategies and ToM can be applied to other social issues (e.g., vaccine hesitancy, political polarization) and other platforms.
+- **Warning for Generative AI Governance**: The high engagement efficacy of emotional and moral rhetoric + the generative capacity of LLMs = the possibility of low-cost, large-scale public opinion manipulation, calling for establishing a governance framework for synthetic media.
+- **Escalating Challenges for Fact-checking**: The trend toward short-form videos compresses the space for disseminating in-depth information. Algorithmic recommendations further amplify emotional content, raising concerns about the efficacy of fact-checking.
+- **Finding of BERTimbau > GPT-4.1**: This suggests that in specific linguistic and cultural scenarios, localized smaller models can be more effective than general large models, offering important insights for multilingual AI research.
+- **Transferable Methodology**: The dual-dimensional analytical framework of persuasion strategies + ToM can be applied to other societal issues (e.g., vaccine hesitancy, political polarization) and other platforms.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (The dual-dimension framework of persuasion strategies + ToM is novel; the empirical analysis of LLM manipulation risks is forward-looking.)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Three well-designed case studies with large-scale data, though ToM annotation quality and the generation evaluation approach leave room for improvement.)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure, rich case studies, and a coherent logical chain from analysis to risk warning.)
-- Value: ⭐⭐⭐⭐ (Significant implications for AI ethics and social media governance; the public release of the dataset constitutes a meaningful community contribution.)
+- **Novelty**: ⭐⭐⭐⭐ (The dual-dimensional framework of persuasion strategies + ToM is novel, and the empirical analysis of LLM manipulation risks is forward-looking.)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ (Three Case Studies are comprehensively designed with a large data scale, though there is room for improvement in ToM annotation quality and generation evaluation methods.)
+- **Writing Quality**: ⭐⭐⭐⭐ (The structure is clear with rich cases, presenting a coherent logical chain from analysis to risk warning.)
+- **Value**: ⭐⭐⭐⭐ (Holds significant warning value for AI ethics and social media governance, and the open release of the dataset constitutes a valuable community contribution.)
 
 <!-- RELATED:START -->
 
@@ -185,7 +185,7 @@ Compared to Costello et al. (2024) on AI persuasion, this work shifts focus from
 - [\[AAAI 2026\] Aligning Generative Music AI with Human Preferences: Methods and Challenges](aligning_generative_music_ai_with_human_preferences_methods_and_challenges.md)
 - [\[ICML 2026\] MusicDET: Zero-Shot AI-Generated Music Detection](../../ICML2026/audio_speech/musicdet_zero-shot_ai-generated_music_detection.md)
 - [\[NeurIPS 2025\] Accelerate Creation of Product Claims Using Generative AI](../../NeurIPS2025/audio_speech/accelerate_creation_of_product_claims_using_generative_ai.md)
-- [\[NeurIPS 2025\] Echoes of Humanity: Exploring the Perceived Humanness of AI Music](../../NeurIPS2025/audio_speech/echoes_of_humanity_exploring_the_perceived_humanness_of_ai_music.md)
+- [\[ICML 2026\] Probing Token Spaces under Generator Shift in AI-Generated Music Detection](../../ICML2026/audio_speech/probing_token_spaces_under_generator_shift_in_ai-generated_music_detection.md)
 
 </div>
 

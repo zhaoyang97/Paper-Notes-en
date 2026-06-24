@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Linear Image Generation by Synthesizing Exposure Brackets
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] Addressing the limitation that existing generative models only produce ISP-compressed sRGB display images lack editing flexibility, this paper proposes the task of text-to-linear image generation. A high-dynamic-range linear image is split into four "exposure brackets" with different exposure levels. A Flux-based flow
+  [CVPR 2026][Image Generation][Linear Image Generation] Addressing the limitation that existing generative models only produce ISP-compressed sRGB display images lack editing flexibility, this paper proposes the task of text-to-linear image generation. A high-dynamic-range linear image is split into four "exposure brackets" with different exposure levels. A Flux-based flow matching DiT concurrently generates the bracket sequence and irradiance scale…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
-  - DiT
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Linear Image Generation"
+  - "Exposure Bracketing"
+  - "Flow Matching"
+  - "DiT"
+  - "High Dynamic Range (HDR)"
 date: 2026-05-08
-content_hash: ecbc1df13910631a
+content_hash: 06cf91413460b4bf
 ---
+
 # Linear Image Generation by Synthesizing Exposure Brackets
 
 **Conference**: CVPR 2026  
@@ -135,11 +139,11 @@ Ours achieves an LS of 23.06, nearly doubling the strongest baseline (CameraCtrl
 
 ## Related Papers
 
+- [\[CVPR 2026\] MixFlow Training: Alleviating Exposure Bias with Slowed Interpolation Mixture](mixflow_training_alleviating_exposure_bias_with_slowed_interpolation_mixture.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](../../ICCV2025/image_generation/lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
 - [\[CVPR 2025\] LEDiff: Latent Exposure Diffusion for HDR Generation](../../CVPR2025/image_generation/lediff_latent_exposure_diffusion_for_hdr_generation.md)
 - [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)
 - [\[CVPR 2026\] Beyond Fixed Formulas: Data-Driven Linear Predictor for Efficient Diffusion Models](beyond_fixed_formulas_data-driven_linear_predictor_for_efficient_diffusion_model.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 
 </div>
 

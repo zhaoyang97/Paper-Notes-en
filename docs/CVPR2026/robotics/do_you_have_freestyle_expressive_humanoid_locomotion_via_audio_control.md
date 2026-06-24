@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] RoboPerform establishes an end-to-end, retargeting-free generative framework for "audio-to-humanoid motion." It aligns audio latents with the motion latent space via contrastive learning, trains a teacher policy using Residual Mixture of Experts ($\Delta$MoE), and distills a diffusion student policy that decouples "con
+  [CVPR 2026][Robotics][Humanoid robot] RoboPerform establishes an end-to-end, retargeting-free generative framework for "audio-to-humanoid motion." It aligns audio latents with the motion latent space via contrastive learning, trains a teacher policy using Residual Mixture of Experts ($\Delta$MoE), and distills a diffusion student policy that decouples "content" (text-specified task) and "style" (audio rhythm/prosody). This enables the Unitree G1 to directly dance to music or…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Humanoid robot"
+  - "audio-driven motion"
+  - "diffusion policy"
+  - "Mixture of Experts"
+  - "motion tracking"
 date: 2026-05-08
-content_hash: 66282360789b278e
+content_hash: ee80637150bd1908
 ---
+
 # Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,16 @@ Ours shows significant Gain in high-dynamic tasks (FineDance), demonstrating the
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](../../ICLR2026/robotics/from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
+- [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](../../ICLR2026/robotics/hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 - [\[CVPR 2026\] Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains](gallant_voxel_grid-based_humanoid_locomotion_and_local-navigation_across_3-d_con.md)
 - [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
-- [\[CVPR 2026\] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control](iterative_closed-loop_motion_synthesis_for_scaling_the_capabilities_of_humanoid_.md)
-- [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
-- [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](../../NeurIPS2025/robotics/adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Gap-K%: Measuring Top-1 Prediction Gap for Detecting Pretraining Data
 description: >-
-  [ACL 2026][LLM Safety][Top-1 gap] This paper proposes Gap-K%, which uses the normalized log probability gap between the target token and the model's top-1 prediction, combined with sequential sliding window smoothing, to detect whether text appeared in the LLM pretraining data. It outperforms baselines like Min-K%++ on WikiMIA, MIMIR, recent models, an
+  [ACL 2026][LLM Safety][Pretraining data detection] This paper proposes Gap-K%, which uses the normalized log probability gap between the target token and the model's top-1 prediction, combined with sequential sliding window smoothing, to detect whether text appeared in the LLM pretraining data. It outperforms baselines like Min-K%++ on WikiMIA, MIMIR, recent models, and under strong paraphrase attacks.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Top-1 gap
-  - Min-K%
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Pretraining data detection"
+  - "Membership inference"
+  - "Top-1 gap"
+  - "Min-K%"
+  - "Sequential smoothing"
 date: 2026-05-08
-content_hash: 565e2c7f8966a71c
+content_hash: 1f0c37199495883d
 ---
+
 # Gap-K%: Measuring Top-1 Prediction Gap for Detecting Pretraining Data
 
 **Conference**: ACL 2026  
@@ -135,15 +139,14 @@ Gap-K% itself requires no training and has no optimization loss. It is a referen
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
-- [\[AAAI 2026\] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures](../../AAAI2026/llm_safety/ghost_in_the_transformer_detecting_model_reuse_with_invariant_spectral_signature.md)
 - [\[ACL 2026\] Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game](detecting_rag_extraction_attack_via_dual-path_runtime_integrity_game.md)
+- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 - [\[ICLR 2026\] When Priors Backfire: On the Vulnerability of Unlearnable Examples to Pretraining](../../ICLR2026/llm_safety/when_priors_backfire_on_the_vulnerability_of_unlearnable_examples_to_pretraining.md)
-- [\[ICLR 2026\] Train Once, Answer All: Many Pretraining Experiments for the Cost of One](../../ICLR2026/llm_safety/train_once_answer_all_many_pretraining_experiments_for_the_cost_of_one.md)
+- [\[AAAI 2026\] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures](../../AAAI2026/llm_safety/ghost_in_the_transformer_detecting_model_reuse_with_invariant_spectral_signature.md)
+- [\[ICLR 2026\] ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases](../../ICLR2026/llm_safety/impossiblebench_measuring_llms_propensity_of_exploiting_test_cases.md)
 
 </div>
 

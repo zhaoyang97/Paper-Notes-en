@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Benchmark] This paper crawls 150K+ user videos from real social platforms to construct MIMIC-Data, selects 4,000 high-interaction videos for MIMIC-Bench, and shifts MLLM evaluation from "what happens in the video" to "how humans think and comment." It also trains MIMIC-Chat, which can generate realistic human-like comments.
+  [ICLR 2026][VLM Reasoning][Multimodal Large Language Models] This paper crawls 150K+ user videos from real social platforms to construct MIMIC-Data, selects 4,000 high-interaction videos for MIMIC-Bench, and shifts MLLM evaluation from "what happens in the video" to "how humans think and comment." It also trains MIMIC-Chat, which can generate realistic human-like comments.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Large Language Models"
+  - "Video Understanding"
+  - "User Generated Content"
+  - "Comment Mimicking"
+  - "Human Alignment"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: fb99be0ad4e4d0e2
+content_hash: d92b6b8450683b92
 ---
+
 # MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -113,11 +119,11 @@ Both multiple-choice (output "A") and open-ended generation (output full text) a
 
 ## Related Papers
 
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
 - [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
 - [\[ACL 2026\] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry](../../ACL2026/vlm_reasoning/thinking_like_a_botanist_challenging_multimodal_language_models_with_intent-driv.md)
 - [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/vlm_reasoning/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
-- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/vlm_reasoning/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
 
 </div>
 

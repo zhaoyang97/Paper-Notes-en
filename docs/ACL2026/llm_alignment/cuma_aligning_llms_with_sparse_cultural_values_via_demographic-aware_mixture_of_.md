@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters
 description: >-
-  [ACL 2026][Alignment & RLHF][LoRA] CuMA argues that dense models suffer from "Mean Collapse" when fitting conflicting cultural values, resulting in representations that represent no specific group well. By utilizing a "Demographic + Semantic" joint routing in a Mixture of LoRA Adapters, the method decouples conflicting gradients into dedicated expert su
+  [ACL 2026][LLM Alignment][Cultural Alignment] CuMA argues that dense models suffer from "Mean Collapse" when fitting conflicting cultural values, resulting in representations that represent no specific group well. By utilizing a "Demographic + Semantic" joint routing in a Mixture of LoRA Adapters, the method decouples conflicting gradients into dedicated expert subspaces, improving accuracy while preserving cultural diversity across multiple benchmarks.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - LoRA
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Cultural Alignment"
+  - "Value Pluralism"
+  - "Mixture of Experts"
+  - "LoRA"
+  - "Demographic Routing"
 date: 2026-05-08
-content_hash: 54fda6d8149f81b9
+content_hash: 0e1cdfc965f34b47
 ---
+
 # CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters
 
 **Conference**: ACL 2026  
@@ -137,7 +142,7 @@ Results are consistent on Qwen3-8B, where CuMA(r=64) pushes CA Acc to 57.20, gen
 - [\[ACL 2026\] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](wildfeedback_aligning_llms_with_in-situ_user_interactions_and_feedback.md)
 - [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
 - [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
-- [\[ICML 2026\] Korean Culture into LLM Alignment: Toward Cultural Coherence](../../ICML2026/llm_alignment/korean_culture_into_llm_alignment_toward_cultural_coherence.md)
+- [\[ICLR 2026\] COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences](../../ICLR2026/llm_alignment/comal_a_convergent_meta-algorithm_for_aligning_llms_with_general_preferences.md)
 
 </div>
 

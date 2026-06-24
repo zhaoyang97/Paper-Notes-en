@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Exactly Does Guidance Do in Masked Discrete Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][classifier-free guidance] This paper provides the first rigorous characterization of classifier-free guidance (CFG) in **masked discrete diffusion models** under low-dimensional ($1D/2D$) analytical settings. It demonstrates that CFG moves probability mass from "inter-class overlapping regions" to "class-exclusive regions," and the convergence
+  [ICLR 2026][Image Generation][Masked Discrete Diffusion] This paper provides the first rigorous characterization of classifier-free guidance (CFG) in **masked discrete diffusion models** under low-dimensional ($1D/2D$) analytical settings. It demonstrates that CFG moves probability mass from "inter-class overlapping regions" to "class-exclusive regions," and the convergence speed of reverse sampling dynamics toward the target distribution accelerates **doubly exponentially**…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - classifier-free guidance
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Masked Discrete Diffusion"
+  - "classifier-free guidance"
+  - "tilted distribution"
+  - "convergence rate"
+  - "double exponential"
 date: 2026-05-08
-content_hash: 456080b63592e1bd
+content_hash: d15f14833bb244d2
 ---
+
 # What Exactly Does Guidance Do in Masked Discrete Diffusion Models
 
 **Conference**: ICLR 2026  

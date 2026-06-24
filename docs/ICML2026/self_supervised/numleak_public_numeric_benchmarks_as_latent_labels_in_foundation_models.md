@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] NumLeak detects and quantifies the degree of foundation model memorization of public numeric benchmarks (financial factors, macroeconomic data, climate data) via a **four-layer diagnostic protocol**—revealing how such contamination leaks into downstream financial signals and mitigating risks through system prompt defen
+  [ICML 2026][Self-Supervised Learning][Numeric Benchmark Memorization] NumLeak detects and quantifies the degree of foundation model memorization of public numeric benchmarks (financial factors, macroeconomic data, climate data) via a **four-layer diagnostic protocol**—revealing how such contamination leaks into downstream financial signals and mitigating risks through system prompt defenses; Opus 4.7 achieves a within-25 bps accuracy of 0.60 and a Pearson $r = 0.99$ on the Mk…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Numeric Benchmark Memorization"
+  - "Foundation Model Contamination"
+  - "Evaluation Trustworthiness"
+  - "Fama-French Factors"
 date: 2026-05-08
-content_hash: e7d959583397631c
+content_hash: e7a199b395340a10
 ---
+
 # NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models
 
 **Conference**: ICML 2026  
@@ -148,8 +153,8 @@ NumLeak tests four system prompt defenses against adversarial stress: no prefix 
 ## Related Papers
 
 - [\[ICLR 2026\] Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models](../../ICLR2026/self_supervised/regularized_latent_dynamics_prediction_is_a_strong_baseline_for_behavioral_found.md)
-- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
 - [\[ICML 2026\] Learning Graph Foundation Models on Riemannian Graph-of-Graphs](learning_graph_foundation_models_on_riemannian_graph-of-graphs.md)
+- [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
 - [\[ICML 2026\] From Zero to Hero: Advancing Zero-Shot Foundation Models for Tabular Outlier Detection](from_zero_to_hero_advancing_zero-shot_foundation_models_for_tabular_outlier_dete.md)
 - [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
 

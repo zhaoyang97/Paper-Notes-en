@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
 description: >-
-  [CVPR 2026][3D Vision][Self-Supervised Learning] The problem of anisotropic slice reconstruction in volume electron microscopy (vEM) is re-modeled as a dynamic 3D scene rendering task based on deformable 2D Gaussian Splatting. High-fidelity continuous slice synthesis is achieved under sparse data conditions through a Teacher-Student pseudo-label mechanism.
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] The problem of anisotropic slice reconstruction in volume electron microscopy (vEM) is re-modeled as a dynamic 3D scene rendering task based on deformable 2D Gaussian Splatting. High-fidelity continuous slice synthesis is achieved under sparse data conditions through a Teacher-Student pseudo-label mechanism.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Volume Electron Microscopy"
+  - "Anisotropic Reconstruction"
+  - "Dynamic Scene Modeling"
+  - "Self-supervised Learning"
 date: 2026-05-08
-content_hash: 1e1000e40354cb88
+content_hash: 7c663589c42d88b0
 ---
+
 # EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ Training progresses through three stages to unlock deformation capabilities sequ
 
 ## Related Papers
 
+- [\[CVPR 2026\] Neural Field-Based 3D Surface Reconstruction of Microstructures from Multi-Detector Signals in Scanning Electron Microscopy](neural_field-based_3d_surface_reconstruction_of_microstructures_from_multi-detec.md)
+- [\[CVPR 2026\] Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning](spatial-sam_spatially_consistent_3d_electron_microscopy_segmentation_with_sdf_me.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](hyperbolic_multiview_pretraining_for_robotic_manipulation.md)
-- [\[CVPR 2026\] Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)
-- [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
 
 </div>
 

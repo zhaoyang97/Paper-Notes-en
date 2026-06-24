@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Addressing the General Vision-Language Navigation (GSA-VLN) task in open environments, this paper proposes the slow4fast-VLN framework, inspired by the human dual-process cognitive system. The fast reasoning module performs real-time navigation and accumulates historical memory based on an end-to-end policy network. Th
+  [CVPR 2026][Robotics][Vision-Language Navigation] Addressing the General Vision-Language Navigation (GSA-VLN) task in open environments, this paper proposes the slow4fast-VLN framework, inspired by the human dual-process cognitive system. The fast reasoning module performs real-time navigation and accumulates historical memory based on an end-to-end policy network. The slow reasoning module utilizes LLMs to reflect on and generate structured generalization experiences. These…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Fast-Slow Reasoning"
+  - "Experience Library"
+  - "Scene Generalization"
+  - "Instruction Style Transfer"
 date: 2026-05-08
-content_hash: 23554871337482e6
+content_hash: 0a1c9bb253703db2
 ---
+
 # Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,17 @@ While GR-DUET focuses on scene adaptation, it overlooks instruction styling. The
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](../../ICLR2026/robotics/ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
+- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
+- [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
+- [\[ICLR 2026\] SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System](../../ICLR2026/robotics/spikepingpong_spike_vision-based_fast-slow_pingpong_robot_system.md)
+- [\[CVPR 2026\] Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning](fast-thinkact_efficient_vision-language-action_reasoning_via_verbalizable_latent.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)

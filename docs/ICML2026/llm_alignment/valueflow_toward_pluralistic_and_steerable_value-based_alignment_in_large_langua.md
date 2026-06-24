@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] To address the challenges of LLMs being highly unstable at scoring absolute value intensities and unable to control the strength of value expression, this paper proposes VALUEFLOW—a unified framework connecting "extraction-evaluation-steering." Its core consists of a hierarchical value embedding space (HIVES), a value
+  [ICML 2026][LLM Alignment][Value Alignment] To address the challenges of LLMs being highly unstable at scoring absolute value intensities and unable to control the strength of value expression, this paper proposes VALUEFLOW—a unified framework connecting "extraction-evaluation-steering." Its core consists of a hierarchical value embedding space (HIVES), a value intensity database (VIDB) aggregated via Plackett–Luce ranking, and an anchor-ranking-based intensity evaluator. The…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Value Alignment"
+  - "Pluralism"
+  - "Steerable Intensity"
+  - "Ranking-based Evaluation"
+  - "Hierarchical Embedding"
 date: 2026-05-08
-content_hash: 02e067a031973b1f
+content_hash: 1879f07a547c91b5
 ---
+
 # VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models
 
 **Conference**: ICML 2026  
@@ -133,8 +139,8 @@ Profile steering outperformed the "attribute-only" default and Modular Pluralism
 - [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
 - [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
-- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
 - [\[ICML 2026\] Steerable Cultural Preference Optimization of Reward Models](steerable_cultural_preference_optimization_of_reward_models.md)
+- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
 
 </div>
 

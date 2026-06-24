@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agriculture
 description: >-
-  [NeurIPS 2025][Multimodal VLM][benchmark] MIRAGE is the first multimodal benchmark constructed from real agricultural expert consultation dialogues (35,000+)…
+  [NeurIPS 2025][VLM Reasoning][benchmark] MIRAGE is the first multimodal benchmark constructed from real agricultural expert consultation dialogues (35,000+), evaluating vision-language models on domain-level entity identification, causal reasoning, and clarify-or-respond decision-making. It reveals a severe challenge in which even GPT-4.1 achieves only 43.9% identification accuracy.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "benchmark"
   - "multimodal"
   - "VLM"
@@ -13,7 +13,7 @@ tags:
   - "visual grounding"
   - "multi-turn dialogue"
 date: 2026-05-08
-content_hash: 5051449ed705904e
+content_hash: f94d661348b96607
 ---
 
 # MIRAGE: A Benchmark for Multimodal Information-Seeking and Reasoning in Agriculture
@@ -136,10 +136,10 @@ After LoRA fine-tuning of Qwen2.5-VL-3B, accuracy on seen entities improves from
 ## Related Papers
 
 - [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
-- [\[ICLR 2026\] Decoding Open-Ended Information Seeking Goals from Eye Movements in Reading](../../ICLR2026/multimodal_vlm/decoding_open-ended_information_seeking_goals_from_eye_movements_in_reading.md)
-- [\[ICLR 2026\] LiveWeb-IE: A Benchmark For Online Web Information Extraction](../../ICLR2026/multimodal_vlm/liveweb-ie_a_benchmark_for_online_web_information_extraction.md)
-- [\[NeurIPS 2025\] WearVQA: A Visual Question Answering Benchmark for Wearables in Egocentric Authentic Real-world scenarios](wearvqa_a_visual_question_answering_benchmark_for_wearables_in_egocentric_authen.md)
-- [\[NeurIPS 2025\] FlowCut: Rethinking Redundancy via Information Flow for Efficient Vision-Language Models](flowcut_rethinking_redundancy_via_information_flow_for_effic.md)
+- [\[ICLR 2026\] Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation](../../ICLR2026/vlm_reasoning/small_drafts_big_verdict_information-intensive_visual_reasoning_via_speculation.md)
+- [\[CVPR 2025\] Beyond Final Answers: CRYSTAL Benchmark for Transparent Multimodal Reasoning Evaluation](../../CVPR2025/vlm_reasoning/beyond_final_answers_crystal_benchmark_for_transparent_multimodal_reasoning_eval.md)
+- [\[ICLR 2026\] MathNet: A Global Multimodal Benchmark for Mathematical Reasoning and Retrieval](../../ICLR2026/vlm_reasoning/mathnet_a_global_multimodal_benchmark_for_mathematical_reasoning_and_retrieval.md)
+- [\[ICLR 2026\] SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports](../../ICLR2026/vlm_reasoning/sportr_a_benchmark_for_multimodal_large_language_model_reasoning_in_sports.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] End-to-End Hyper-Relational Information Extraction for Engineering Diagrams via Dynamically Tokenized Relation Transformer
 description: >-
-  [CVPR 2026][Others][P&ID] This work reframes the parsing of engineering diagrams (P&ID, Electrical Diagrams) from a multi-model workflow of detecting symbols, lines, and text separately into a one-time scene graph generation task. By employing a vision backbone with dynamic token pruning and a one-stage Relation Transformer (DTRT), the system e
+  [CVPR 2026][Optimization][Engineering diagram parsing] This work reframes the parsing of engineering diagrams (P&ID, Electrical Diagrams) from a multi-model workflow of detecting symbols, lines, and text separately into a one-time scene graph generation task. By employing a vision backbone with dynamic token pruning and a one-stage Relation Transformer (DTRT), the system end-to-end outputs a Hyper-Relational Knowledge Graph (HKG) containing "entities + connectivity + text qua…
 tags:
-  - CVPR 2026
-  - Others
-  - P&ID
+  - "CVPR 2026"
+  - "Optimization"
+  - "Engineering diagram parsing"
+  - "Hyper-relational knowledge graph"
+  - "One-stage scene graph generation"
+  - "Dynamic token pruning"
+  - "P&ID"
 date: 2026-05-08
-content_hash: 179ecfb9fa72aec3
+content_hash: 9a85df24cf234b82
 ---
+
 # End-to-End Hyper-Relational Information Extraction for Engineering Diagrams via Dynamically Tokenized Relation Transformer
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,20 @@ Incremental gains for Relation Transformer (P&ID):
 - Value: ⭐⭐⭐⭐ End-to-end, low-computation solution addresses a real industrial pain point.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Muon Outperforms Adam in Tail-End Associative Memory Learning](../../ICLR2026/optimization/muon_outperforms_adam_in_tail-end_associative_memory_learning.md)
+- [\[ICLR 2026\] DNT: a Deeply Normalized Transformer that can be trained by Momentum SGD](../../ICLR2026/optimization/dnt_a_deeply_normalized_transformer_that_can_be_trained_by_momentum_sgd.md)
+- [\[ICLR 2026\] Taming Curvature: Architecture Warm-up for Stable Transformer Training](../../ICLR2026/optimization/taming_curvature_architecture_warm-up_for_stable_transformer_training.md)
+- [\[AAAI 2026\] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering](../../AAAI2026/optimization/instance_generation_for_meta-black-box_optimization_through_latent_space_reverse.md)
+- [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](../../NeurIPS2025/optimization/set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)

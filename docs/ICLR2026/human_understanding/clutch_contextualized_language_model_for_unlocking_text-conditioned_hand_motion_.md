@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CLUTCH: Contextualized Language model for Unlocking Text-Conditioned Hand motion modelling in the wild
 description: >-
-  [ICLR 2026][Human Understanding][VQ-VAE] CLUTCH utilizes a triad of "32,000 VLM-auto-labeled in-the-wild hand motion data (3D-HIW) + a SHIFT decomposed VQ-VAE that discretizes trajectory/pose and left/right hands separately + LLM fine-tuning with geometric reconstruction loss in the motion space." For the first time, text $\leftrightarrow$ hand motion modelin
+  [ICLR2026][Human Understanding][Hand Motion Generation] CLUTCH utilizes a triad of "32,000 VLM-auto-labeled in-the-wild hand motion data (3D-HIW) + a SHIFT decomposed VQ-VAE that discretizes trajectory/pose and left/right hands separately + LLM fine-tuning with geometric reconstruction loss in the motion space." For the first time, text $\leftrightarrow$ hand motion modeling is achieved in "in-the-wild" scenarios (e.g., playing piano, kneading dough, writing)…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - VQ-VAE
+  - "ICLR2026"
+  - "Human Understanding"
+  - "Hand Motion Generation"
+  - "Text-to-Motion"
+  - "VQ-VAE"
+  - "Motion Language Model"
+  - "Auto-labeling"
 date: 2026-05-08
-content_hash: 195e9fe2d1c93e65
+content_hash: 9a6653147a30e12c
 ---
+
 # CLUTCH: Contextualized Language model for Unlocking Text-Conditioned Hand motion modelling in the wild
 
 **Conference**: ICLR2026  
@@ -146,11 +151,11 @@ Motion-to-Text (M2T): CLUTCH scores RP3 0.571 / BLEU4 0.181 / BLEU1 0.420 / Roug
 
 ## Related Papers
 
+- [\[ICLR 2026\] UniHand: A Unified Model for Diverse Controlled 4D Hand Motion Modeling](unihand_a_unified_model_for_diverse_controlled_4d_hand_motion_modeling.md)
 - [\[ECCV 2024\] HUMOS: Human Motion Model Conditioned on Body Shape](../../ECCV2024/human_understanding/humos_human_motion_model_conditioned_on_body_shape.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](../../ICCV2025/human_understanding/genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
-- [\[CVPR 2026\] OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis](../../CVPR2026/human_understanding/openfs_multi-hand-capable_fingerspelling_recognition_with_implicit_signing-hand_.md)
-- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](motion-aligned_word_embeddings_for_text-to-motion_generation.md)
+- [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](../../CVPR2026/human_understanding/party_part-guidance_for_expressive_text-to-motion_synthesis.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
 
 </div>
 

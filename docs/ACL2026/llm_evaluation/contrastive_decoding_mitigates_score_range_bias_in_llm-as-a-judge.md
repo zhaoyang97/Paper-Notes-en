@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper reveals that LLM-as-a-Judge exhibits **score range bias** in direct assessment tasks, where model outputs are highly sensitive to predefined score ranges. It proposes using a **contrastive decoding** method to mitigate this issue by canceling out similar biases within the same model family, achieving an aver
+  [ACL 2026][LLM Evaluation][LLM-as-a-Judge] This paper reveals that LLM-as-a-Judge exhibits **score range bias** in direct assessment tasks, where model outputs are highly sensitive to predefined score ranges. It proposes using a **contrastive decoding** method to mitigate this issue by canceling out similar biases within the same model family, achieving an average relative improvement of up to 11.3% in Spearman correlation.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Contrastive Decoding"
+  - "Score Range Bias"
+  - "Direct Assessment"
+  - "Model Family Bias"
 date: 2026-05-08
-content_hash: c3d5eaab7f26fc89
+content_hash: d6ff5964afb011fc
 ---
+
 # Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge
 
 **Conference**: ACL 2026  
@@ -132,8 +138,8 @@ The final score is determined by $\log p_{\text{main}} - \lambda \log p_{\text{a
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[ACL 2026\] When Vision-Language Models Judge Without Seeing: Exposing Informativeness Bias](when_vision-language_models_judge_without_seeing_exposing_informativeness_bias.md)
 - [\[ACL 2026\] Common to Whom? Regional Cultural Commonsense and LLM Bias in India](common_to_whom_regional_cultural_commonsense_and_llm_bias_in_india.md)
+- [\[ACL 2026\] Fin-Bias: Comprehensive Evaluation for LLM Decision-Making under human bias in Finance Domain](fin-bias_comprehensive_evaluation_for_llm_decision-making_under_human_bias_in_fi.md)
 - [\[ACL 2026\] Reasoning Model Is Superior LLM-Judge, Yet Suffers from Biases](reasoning_model_is_superior_llm-judge_yet_suffers_from_biases.md)
-- [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 
 </div>
 

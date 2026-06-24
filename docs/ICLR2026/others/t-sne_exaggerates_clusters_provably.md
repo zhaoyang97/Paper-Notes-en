@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] t-SNE Exaggerates Clusters, Provably
 description: >-
-  [ICLR 2026][Others][t-SNE] This work provides a rigorous theoretical proof that t-SNE suffers from two fundamental failure modes: (1) inability to infer the strength of input clustering from the output, and (2) inability to faithfully represent extreme outliers. Even when the input lacks cluster structure or contains extreme outliers, t-SNE can
+  [ICLR 2026][t-SNE] This work provides a rigorous theoretical proof that t-SNE suffers from two fundamental failure modes: (1) inability to infer the strength of input clustering from the output, and (2) inability to faithfully represent extreme outliers. Even when the input lacks cluster structure or contains extreme outliers, t-SNE can produce visualizations with perfect clustering.
 tags:
-  - ICLR 2026
-  - Others
-  - t-SNE
+  - "ICLR 2026"
+  - "t-SNE"
+  - "Cluster Exaggeration"
+  - "Dimensionality Reduction"
+  - "Misleading Visualization"
+  - "Outliers"
 date: 2026-05-08
-content_hash: a293aa3041e64714
+content_hash: 5876870f7d2c6889
 ---
+
 # t-SNE Exaggerates Clusters, Provably
 
 **Conference**: ICLR 2026  

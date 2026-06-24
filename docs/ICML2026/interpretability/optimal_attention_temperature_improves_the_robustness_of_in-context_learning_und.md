@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions
 description: >-
-  [ICML 2026][Interpretability][attention temperature] Within the high-dimensional linear regression ICL framework, this paper adopts "approximate softmax attention"—a surrogate that preserves row-wise normalization and temperature selectivity while remaining analytically solvable—to **derive the closed-form solution for ICL generalization error and an explicit expression
+  [ICML 2026][Interpretability][attention temperature] Within the high-dimensional linear regression ICL framework, this paper adopts "approximate softmax attention"—a surrogate that preserves row-wise normalization and temperature selectivity while remaining analytically solvable—to **derive the closed-form solution for ICL generalization error and an explicit expression for the optimal attention temperature** $\tau_{\text{opt}}$. It proves that correctly tuning the inference-…
 tags:
-  - ICML 2026
-  - Interpretability
-  - attention temperature
-  - ICL
-  - approximate softmax
+  - "ICML 2026"
+  - "Interpretability"
+  - "attention temperature"
+  - "ICL"
+  - "distribution shift"
+  - "high-dimensional linear regression"
+  - "approximate softmax"
 date: 2026-05-08
-content_hash: e9f794caad241857
+content_hash: 5713717136612eae
 ---
+
 # Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions
 
 **Conference**: ICML 2026  
@@ -114,10 +117,10 @@ Verified across synthetic linear regression and LLM QA:
 ## Related Papers
 
 - [\[NeurIPS 2025\] FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed](../../NeurIPS2025/interpretability/fastdinov2_frequency_based_curriculum_learning_improves_robustness_and_training_.md)
-- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
+- [\[ICLR 2026\] Localizing Task Recognition and Task Learning in In-Context Learning via Attention Head Analysis](../../ICLR2026/interpretability/localizing_task_recognition_and_task_learning_in_in-context_learning_via_attenti.md)
+- [\[ICLR 2026\] Faithfulness Under the Distribution: A New Look at Attribution Evaluation](../../ICLR2026/interpretability/faithfulness_under_the_distribution_a_new_look_at_attribution_evaluation.md)
 - [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
-- [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
-- [\[ICML 2026\] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence](pine_pruning_boosted_tree_ensembles_with_conformal_in-distribution_prediction_eq.md)
+- [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
 
 </div>
 

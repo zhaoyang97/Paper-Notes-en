@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] SpeakerSleuth constructs the first benchmark (1,818 instances) to evaluate the ability of LALMs to judge speaker consistency in multi-turn dialogues. Systematic evaluations of 12 LALMs and 6 embedding methods reveal that models struggle to detect and localize acoustic inconsistencies and exhibit severe text-over-audio
+  [ACL 2026][Audio & Speech][Large Audio-Language Models] SpeakerSleuth constructs the first benchmark (1,818 instances) to evaluate the ability of LALMs to judge speaker consistency in multi-turn dialogues. Systematic evaluations of 12 LALMs and 6 embedding methods reveal that models struggle to detect and localize acoustic inconsistencies and exhibit severe text-over-audio modality bias, though they perform better at comparing and ranking acoustic variants.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Large Audio-Language Models"
+  - "Speaker Consistency"
+  - "Multi-turn Dialogue"
+  - "Benchmark"
+  - "Modality Bias"
 date: 2026-05-08
-content_hash: 829e3f5b0d216e11
+content_hash: 29efde1a7b395c98
 ---
+
 # SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?
 
 **Conference**: ACL 2026  
@@ -135,11 +141,11 @@ In practical applications, LALMs receive both audio and text. Besides the main e
 
 ## Related Papers
 
-- [\[ACL 2026\] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models](style_amnesia_investigating_speaking_style_degradation_and_mitigation_in_multi-t.md)
 - [\[ACL 2025\] Who Can Withstand Chat-Audio Attacks? An Evaluation Benchmark for Large Audio-Language Models](../../ACL2025/audio_speech/who_can_withstand_chat-audio_attacks_an_evaluation_benchmark_for_large_audio-lan.md)
 - [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
+- [\[ACL 2026\] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models](style_amnesia_investigating_speaking_style_degradation_and_mitigation_in_multi-t.md)
+- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
-- [\[ACL 2026\] StressTest: Can YOUR Speech LM Handle the Stress?](stresstest_can_your_speech_lm_handle_the_stress.md)
 
 </div>
 

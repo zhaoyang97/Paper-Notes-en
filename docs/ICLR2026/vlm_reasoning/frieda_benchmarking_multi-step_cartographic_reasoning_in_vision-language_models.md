@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][cartographic reasoning] The FRIEDA benchmark is proposed to systematically evaluate the multi-step, cross-map cartographic reasoning capabilities of large vision-language models. Results show the strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, significantly lower than the human performance of 84.87%.
+  [ICLR2026][VLM Reasoning][cartographic reasoning] The FRIEDA benchmark is proposed to systematically evaluate the multi-step, cross-map cartographic reasoning capabilities of large vision-language models. Results show the strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, significantly lower than the human performance of 84.87%.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - cartographic reasoning
-  - map VQA
-  - spatial relations
-  - multi-image reasoning
-  - benchmark
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "cartographic reasoning"
+  - "map VQA"
+  - "spatial relations"
+  - "multi-image reasoning"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 6072835bdf06fd03
+content_hash: fee50f78382413ac
 ---
+
 # FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models
 
 **Conference**: ICLR2026  
@@ -145,11 +146,11 @@ Unlike natural image spatial reasoning works like SpatialVLM, FRIEDA focuses on 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
-- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
-- [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
+- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
+- [\[ICCV 2025\] LLaVA-CoT: Let Vision Language Models Reason Step-by-Step](../../ICCV2025/vlm_reasoning/llava-cot_let_vision_language_models_reason_step-by-step.md)
 - [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](../../AAAI2026/vlm_reasoning/finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
+- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
 
 </div>
 

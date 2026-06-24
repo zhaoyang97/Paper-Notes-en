@@ -2,19 +2,22 @@
 title: >-
   [Paper Note] Learning Admissible Heuristics for A*: Theory and Practice
 description: >-
-  [ICLR 2026][learning_theory][admissible heuristic] The paper formalizes "learning A* heuristic functions" as a constrained optimization problem. It proposes the Cross-Entropy Admissibility (CEA) loss to enforce admissibility (never overestimate) during training and provides a generalization sample complexity bound using pseudo-dimension that depends on network size rat
+  [ICLR 2026][Learning Theory][admissible heuristic] The paper formalizes "learning A* heuristic functions" as a constrained optimization problem. It proposes the Cross-Entropy Admissibility (CEA) loss to enforce admissibility (never overestimate) during training and provides a generalization sample complexity bound using pseudo-dimension that depends on network size rather than graph size. On Rubik's Cube, the learned heuristics are nearly perfectly admissible and stronger tha…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - admissible heuristic
-  - A* search
-  - sample complexity
-  - pseudo-dimension
-  - generalization bound
-  - pattern database
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Heuristic Search (A* Learnable Heuristics)"
+  - "admissible heuristic"
+  - "A* search"
+  - "sample complexity"
+  - "pseudo-dimension"
+  - "generalization bound"
+  - "pattern database"
+  - "Rubik's Cube"
 date: 2026-05-08
-content_hash: f8737bf99767362c
+content_hash: e0ec34256af0dba2
 ---
+
 # Learning Admissible Heuristics for A*: Theory and Practice
 
 **Conference**: ICLR 2026  
@@ -128,9 +131,9 @@ Setup: 3×3 Rubik's Cube, four PDBs (8-Corner, $\Delta(6,4)$-Edge, 6-Edge, 7-Edg
 
 - [\[ICML 2026\] Performative Learning Theory](../../ICML2026/learning_theory/performative_learning_theory.md)
 - [\[ICLR 2026\] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization](sharp_asymptotic_theory_for_q-learning_with_textttld2z_learning_rate_and_its_gen.md)
+- [\[ICLR 2026\] Almost Bayesian: Dynamics of SGD Through Singular Learning Theory](almost_bayesian_dynamics_of_sgd_through_singular_learning_theory.md)
 - [\[ICLR 2026\] Does the Data Processing Inequality Reflect Practice? On the Utility of Low-Level Tasks](does_the_data_processing_inequality_reflect_practice_on_the_utility_of_low-level.md)
 - [\[ICLR 2026\] Why Less is More (Sometimes): A Theory of Data Curation](why_less_is_more_sometimes_a_theory_of_data_curation.md)
-- [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
 
 </div>
 

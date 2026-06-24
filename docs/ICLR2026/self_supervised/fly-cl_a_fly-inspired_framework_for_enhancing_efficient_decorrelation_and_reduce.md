@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][continual learning] Inspired by the fruit fly olfactory circuit, this work proposes the Fly-CL framework. It achieves SOTA performance in pre-trained model-based continual learning while significantly reducing training time through a three-stage progressive decorrelation process involving sparse random projection, top-k operation, and str
+  [ICLR 2026][Self-Supervised Learning][continual learning] Inspired by the fruit fly olfactory circuit, this work proposes the Fly-CL framework. It achieves SOTA performance in pre-trained model-based continual learning while significantly reducing training time through a three-stage progressive decorrelation process involving sparse random projection, top-k operation, and streaming ridge classification.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - continual learning
-  - fly olfactory circuit
-  - decorrelation
-  - representation learning
-  - prototype
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "continual learning"
+  - "fly olfactory circuit"
+  - "decorrelation"
+  - "representation learning"
+  - "prototype"
 date: 2026-05-08
-content_hash: 4f47b336abfc2848
+content_hash: 79455dedd0e61cd5
 ---
+
 # Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning
 
 **Conference**: ICLR 2026  
@@ -134,8 +135,8 @@ No backpropagation is required throughout the process. A streaming incremental u
 
 - [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 - [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](../../CVPR2026/self_supervised/parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
+- [\[ICLR 2026\] Detect, Decide, Unlearn: A Transfer-Aware Framework for Continual Learning](detect_decide_unlearn_a_transfer-aware_framework_for_continual_learning.md)
 - [\[ICLR 2026\] Adaptive Gaussian Expansion for On-the-fly Category Discovery](adaptive_gaussian_expansion_for_on-the-fly_category_discovery.md)
-- [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
 - [\[CVPR 2026\] Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](../../CVPR2026/self_supervised/representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)
 
 </div>

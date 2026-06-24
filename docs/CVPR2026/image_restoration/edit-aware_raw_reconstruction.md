@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Edit-aware RAW Reconstruction
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Addressing the mismatch where the true objective of RAW reconstruction is downstream post-editing while existing methods only optimize pixel-wise RAW fidelity, this paper proposes a plug-and-play **edit-aware loss**. By utilizing a differentiable, modular, and randomly parameterized simplified ISP to render both ground
+  [CVPR2026][Image Restoration][RAW reconstruction] Addressing the mismatch where the true objective of RAW reconstruction is downstream post-editing while existing methods only optimize pixel-wise RAW fidelity, this paper proposes a plug-and-play **edit-aware loss**. By utilizing a differentiable, modular, and randomly parameterized simplified ISP to render both ground truth and reconstructed RAW to sRGB for error calculation, the reconstruction results become more robust unde…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR2026"
+  - "Image Restoration"
+  - "RAW reconstruction"
+  - "differentiable ISP"
+  - "edit-aware loss"
+  - "photo post-processing"
+  - "plug-and-play loss"
 date: 2026-05-08
-content_hash: 169ab1dc5fae0732
+content_hash: 8a345ea80f60b6de
 ---
+
 # Edit-aware RAW Reconstruction
 
 **Conference**: CVPR2026  
@@ -144,10 +150,10 @@ Based on the UNet model across 50 difficult images under Edit 5, the contributio
 ## Related Papers
 
 - [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](../../ICLR2026/image_restoration/texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
 - [\[CVPR 2026\] RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](rawdomain_degradation_models_smartphone_sr.md)
 - [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
+- [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
 
 </div>
 

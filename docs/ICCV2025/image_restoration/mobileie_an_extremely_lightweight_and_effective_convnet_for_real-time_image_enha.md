@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices
 description: >-
-  [ICCV 2025][Image Restoration][Mobile image enhancement] This paper proposes MobileIE, an extremely lightweight CNN framework with approximately 4K parameters…
+  [ICCV 2025][Image Restoration][Mobile image enhancement] This paper proposes MobileIE, an extremely lightweight CNN framework with approximately 4K parameters, which achieves real-time image enhancement at over 1100 FPS on mobile devices for the first time. This is accomplished through multi-branch re-parameterizable convolution (MBRConv), a feature self-transformation (FST) module, hierarchical dual-path attention (HDPA), and an incremental weight optimization (IWO) strategy…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "real-time inference"
   - "attention mechanism"
 date: 2026-05-08
-content_hash: f9f39e40269d02dc
+content_hash: 71bd636a0441bbcc
 ---
 
 # MobileIE: An Extremely Lightweight and Effective ConvNet for Real-Time Image Enhancement on Mobile Devices

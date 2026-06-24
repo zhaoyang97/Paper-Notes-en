@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"
 description: >-
-  [ACL 2026][LLM Agent][answer-first] ToolGrad reverses tool-use data generation from "writing queries first and searching tool chains via DFS" to "generating successfully executable tool chains first and then back-inferring user queries." By using an API selection loop similar to textual gradients to construct ToolGrad-500, the pass rate for data generati
+  [ACL2026][LLM Agent][Tool call] ToolGrad reverses tool-use data generation from "writing queries first and searching tool chains via DFS" to "generating successfully executable tool chains first and then back-inferring user queries." By using an API selection loop similar to textual gradients to construct ToolGrad-500, the pass rate for data generation reaches 99.8%. Small models like Gemma-3 trained on this data outperform several powerful closed-source models in single-turn…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - answer-first
+  - "ACL2026"
+  - "LLM Agent"
+  - "Tool call"
+  - "synthetic data"
+  - "textual gradient"
+  - "answer-first"
+  - "API workflow"
 date: 2026-05-08
-content_hash: e62347e580db29c2
+content_hash: eaeebc5cca3562b3
 ---
+
 # ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"
 
 **Conference**: ACL2026  
@@ -136,11 +141,11 @@ Consistency across Gemma model versions also supports data effectiveness: ToolGr
 
 ## Related Papers
 
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
+- [\[ICLR 2026\] Efficient Agent Training for Computer Use](../../ICLR2026/llm_agent/efficient_agent_training_for_computer_use.md)
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](../../ICLR2026/llm_agent/benchmarking_llm_tool-use_in_the_wild.md)
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
-- [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](../../ICLR2026/llm_agent/agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
+- [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](../../AAAI2026/llm_agent/autotool_efficient_tool_selection_for_large_language_model_agents.md)
 
 </div>
 

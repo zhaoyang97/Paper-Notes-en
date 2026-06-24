@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probing Multimodal Large Language Models on Cognitive Biases in Chinese Short-Video Misinformation
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper constructs a high-quality evaluation set of 200 Chinese health short-video rumors (Fine-VDK). By systematically evaluating 8 cutting-edge MLLMs using evidence chains, error types, and social cues, the study finds that Gemini-2.5-Pro is the most stable. However, most models remain susceptible to label bias, a
+  [ACL 2026 Findings][Social Computing][Short-Video Misinformation] This paper constructs a high-quality evaluation set of 200 Chinese health short-video rumors (Fine-VDK). By systematically evaluating 8 cutting-edge MLLMs using evidence chains, error types, and social cues, the study finds that Gemini-2.5-Pro is the most stable. However, most models remain susceptible to label bias, authoritative accounts, and traffic metrics in multimodal rumor judgment.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026 Findings"
+  - "Social Computing"
+  - "Short-Video Misinformation"
+  - "Multimodal Large Language Models"
+  - "Chinese Health Information"
+  - "Cognitive Bias"
+  - "Authority Bias"
 date: 2026-05-08
-content_hash: f6ce2f677d74a00a
+content_hash: 04ef668aac2ca776
 ---
+
 # Probing Multimodal Large Language Models on Cognitive Biases in Chinese Short-Video Misinformation
 
 **Conference**: ACL 2026 Findings  
@@ -139,8 +145,8 @@ All Belief Scores for 8 MLLMs across five input settings. "Claim" serves as the 
 - [\[ACL 2026\] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation](dynamics_of_cognitive_heterogeneity_investigating_behavioral_biases_in_multi-sta.md)
 - [\[ACL 2025\] A Survey on Proactive Defense Strategies Against Misinformation in Large Language Models](../../ACL2025/social_computing/a_survey_on_proactive_defense_strategies_against_misinformation_in_large_languag.md)
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
-- [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
 - [\[ACL 2026\] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection](toxitrace_gradient-aligned_training_for_explainable_chinese_toxicity_detection.md)
+- [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
 
 </div>
 

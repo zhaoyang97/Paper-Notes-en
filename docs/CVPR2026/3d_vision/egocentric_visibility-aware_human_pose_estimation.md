@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Egocentric Visibility-Aware Human Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][Dataset] Addressing the "frequently invisible keypoints" issue in egocentric human pose estimation for head-mounted devices (HMDs), this paper constructs Eva-3M, the first large-scale real-world dataset with visibility annotations (3 million frames, 435,000 visibility labels). It proposes EvaPose, which explicitly predicts the
+  [CVPR 2026][3D Vision][Egocentric Pose Estimation] Addressing the "frequently invisible keypoints" issue in egocentric human pose estimation for head-mounted devices (HMDs), this paper constructs Eva-3M, the first large-scale real-world dataset with visibility annotations (3 million frames, 435,000 visibility labels). It proposes EvaPose, which explicitly predicts the visibility of each keypoint and weights the loss accordingly, reducing the MPJPE of visible keypoints from 49…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Dataset
-  - VR/AR
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Egocentric Pose Estimation"
+  - "Keypoint Visibility"
+  - "VQ-VAE Pose Prior"
+  - "Dataset"
+  - "VR/AR"
 date: 2026-05-08
-content_hash: df176ec5438446df
+content_hash: 82da9a63476dc7d9
 ---
+
 # Egocentric Visibility-Aware Human Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ Visible point error was nearly halved (70.0→42.5), while invisible points saw 
 
 ## Related Papers
 
-- [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] Differentially Private 2D Human Pose Estimation](differentially_private_2d_human_pose_estimation.md)
-- [\[CVPR 2026\] EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)
-- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
-- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
+- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
+- [\[CVPR 2026\] VIMCAN: Visual-Inertial 3D Human Pose Estimation with Hybrid Mamba-Cross-Attention Network](vimcan_visual-inertial_3d_human_pose_estimation_with_hybrid_mamba-cross-attentio.md)
+- [\[ICCV 2025\] Bring Your Rear Cameras for Egocentric 3D Human Pose Estimation](../../ICCV2025/3d_vision/bring_your_rear_cameras_for_egocentric_3d_human_pose_estimation.md)
+- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
 
 </div>
 

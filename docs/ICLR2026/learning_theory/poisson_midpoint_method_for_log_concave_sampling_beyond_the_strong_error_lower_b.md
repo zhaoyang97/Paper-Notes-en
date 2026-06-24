@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds
 description: >-
-  [ICLR 2026][learning_theory][Wasserstein-2] This paper provides a sharp $W_2$ convergence analysis for Poisson Midpoint Discretization (PLMC) in strongly log-concave sampling. It proves that PLMC further compresses the precision $\epsilon$ dependency from $\tilde O(\epsilon^{-2/3})$ to $\tilde O(\epsilon^{-1/3})$ under both overdamped and underdamped Langevin dy
+  [ICLR 2026][Learning Theory][Strongly log-concave sampling] This paper provides a sharp $W_2$ convergence analysis for Poisson Midpoint Discretization (PLMC) in strongly log-concave sampling. It proves that PLMC further compresses the precision $\epsilon$ dependency from $\tilde O(\epsilon^{-2/3})$ to $\tilde O(\epsilon^{-1/3})$ under both overdamped and underdamped Langevin dynamics—an order of magnitude faster than the previously assumed optimal randomized midpoint method.…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Wasserstein-2
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Sampling Algorithms"
+  - "Langevin Monte Carlo"
+  - "Strongly log-concave sampling"
+  - "Poisson Midpoint Method"
+  - "Langevin Dynamics"
+  - "Wasserstein-2"
+  - "oracle complexity"
 date: 2026-05-08
-content_hash: 9613f67d226773f0
+content_hash: b2fe65002581ccfc
 ---
+
 # Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds
 
 **Conference**: ICLR 2026  
@@ -135,8 +142,8 @@ Compared to the $\tilde O(\epsilon^{-1})$ of underdamped LMC, PLMC similarly off
 ## Related Papers
 
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
-- [\[ICLR 2026\] Complexity Analysis of Normalizing Constant Estimation: from Jarzynski Equality to Annealed Importance Sampling and Beyond](complexity_analysis_of_normalizing_constant_estimation_from_jarzynski_equality_t.md)
 - [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
+- [\[ICLR 2026\] Complexity Analysis of Normalizing Constant Estimation: from Jarzynski Equality to Annealed Importance Sampling and Beyond](complexity_analysis_of_normalizing_constant_estimation_from_jarzynski_equality_t.md)
 - [\[ICML 2026\] On Regret Bounds of Thompson Sampling for Bayesian Optimization](../../ICML2026/learning_theory/on_regret_bounds_of_thompson_sampling_for_bayesian_optimization.md)
 - [\[ICLR 2026\] Bounds of Chain-of-Thought Robustness: Reasoning Steps, Embed Norms, and Beyond](bounds_of_chain-of-thought_robustness_reasoning_steps_embed_norms_and_beyond.md)
 

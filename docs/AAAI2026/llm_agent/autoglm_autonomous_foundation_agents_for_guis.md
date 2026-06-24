@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoGLM: Autonomous Foundation Agents for GUIs
 description: >-
-  [AAAI 2026][LLM Agent][GUI Agent] AutoGLM builds a GUI foundation agent for web browsers and Android devices on top of ChatGLM. By introducing an intermediate interface design that decouples planning from grounding…
+  [AAAI 2026][LLM Agent][GUI Agent] AutoGLM builds a GUI foundation agent for web browsers and Android devices on top of ChatGLM. By introducing an intermediate interface design that decouples planning from grounding, and proposing a self-evolving online curriculum reinforcement learning framework, the system achieves a 55.2% success rate on VAB-WebArena-Lite, substantially surpassing GPT-4o's 18.2%.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Self-Evolving Curriculum Learning"
   - "Foundation Agent"
 date: 2026-05-08
-content_hash: e190459c1fbb7911
+content_hash: b12ceaf62acf90de
 ---
 
 # AutoGLM: Autonomous Foundation Agents for GUIs
@@ -123,10 +123,10 @@ Training follows a progressive curriculum: pretraining to introduce weak supervi
 ## Related Papers
 
 - [\[AAAI 2026\] Co-EPG: A Framework for Co-Evolution of Planning and Grounding in Autonomous GUI Agents](co-epg_a_framework_for_co-evolution_of_planning_and_groundin.md)
+- [\[ICLR 2026\] A$^2$FM: An Adaptive Agent Foundation Model for Tool-Aware Hybrid Reasoning](../../ICLR2026/llm_agent/a2fm_an_adaptive_agent_foundation_model_for_tool-aware_hybrid_reasoning.md)
 - [\[AAAI 2026\] Physics-Informed Autonomous LLM Agents for Explainable Power Electronics Modulation Design](physics-informed_autonomous_llm_agents_for_explainable_power_electronics_modulat.md)
-- [\[ACL 2026\] AgencyBench: Benchmarking the Frontiers of Autonomous Agents in 1M-Token Real-World Contexts](../../ACL2026/llm_agent/agencybench_benchmarking_the_frontiers_of_autonomous_agents_in_1m-token_real-wor.md)
-- [\[ICLR 2026\] WebOperator: Action-Aware Tree Search for Autonomous Agents in Web Environment](../../ICLR2026/llm_agent/weboperator_action-aware_tree_search_for_autonomous_agents_in_web_environment.md)
-- [\[AAAI 2026\] History-Aware Reasoning for GUI Agents](history-aware_reasoning_for_gui_agents.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](../../ICLR2026/llm_agent/scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
+- [\[ICML 2025\] Aguvis: Unified Pure Vision Agents for Autonomous GUI Interaction](../../ICML2025/llm_agent/aguvis_unified_pure_vision_agents_for_autonomous_gui_interaction.md)
 
 </div>
 

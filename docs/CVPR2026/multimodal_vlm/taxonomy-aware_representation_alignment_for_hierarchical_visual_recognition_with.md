@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The TARA framework is proposed to inject taxonomic hierarchical knowledge into Large Multimodal Models (LMMs) by aligning their intermediate representations with the taxonomy-aware features of Biological Foundation Models (BFMs), significantly improving hierarchical visual recognition performance for both known and nov
+  [CVPR 2026][Multimodal VLM][Hierarchical visual recognition] The TARA framework is proposed to inject taxonomic hierarchical knowledge into Large Multimodal Models (LMMs) by aligning their intermediate representations with the taxonomy-aware features of Biological Foundation Models (BFMs), significantly improving hierarchical visual recognition performance for both known and novel categories.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Hierarchical visual recognition"
+  - "Biological taxonomy"
+  - "Representation alignment"
+  - "Biological foundation model"
+  - "Reinforcement learning fine-tuning"
 date: 2026-05-08
-content_hash: e0895d889217785a
+content_hash: ba5f626e2549bc87
 ---
+
 # Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ The total loss is $\mathcal{L}_{\text{alignment}} = (\mathcal{L}_V + \mathcal{L}
 
 ## Related Papers
 
+- [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
 - [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
 - [\[CVPR 2026\] Predictive Regularization Against Visual Representation Degradation in Multimodal Large Language Models](predictive_regularization_against_visual_representation_degradation_in_multimoda.md)
 - [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Direction-aware 3D Large Multimodal Models](direction-aware_3d_large_multimodal_models.md)
-- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
+- [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
 
 </div>
 

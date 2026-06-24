@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FACE: Faithful Automatic Concept Extraction
 description: >-
-  [NeurIPS 2025][concept explanation] This paper proposes FACE, a framework that incorporates a KL divergence regularization term into non-negative matrix factorization (NMF) to constrain reconstructed activations to remai…
+  [NeurIPS 2025][concept explanation] This paper proposes FACE, a framework that incorporates a KL divergence regularization term into non-negative matrix factorization (NMF) to constrain reconstructed activations to remain consistent with the original model's predictions, thereby extracting concept explanations that are truly faithful to the model's decision process. FACE comprehensively outperforms CRAFT and ICE on ImageNet, COCO, and CelebA.
 tags:
   - "NeurIPS 2025"
   - "concept explanation"
@@ -12,7 +12,7 @@ tags:
   - "non-negative matrix factorization"
   - "interpretability"
 date: 2026-05-08
-content_hash: f4a05fe8e66a7c84
+content_hash: 151bec278a9b4044
 ---
 
 # FACE: Faithful Automatic Concept Extraction
@@ -143,10 +143,10 @@ FACE maintains 100% top-1 accuracy after reconstruction across all classes, wher
 ## Related Papers
 
 - [\[NeurIPS 2025\] Faithful Group Shapley Value](faithful_group_shapley_value.md)
-- [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
+- [\[ACL 2025\] Graph-Structured Trajectory Extraction from Travelogues](../../ACL2025/others/graph-structured_trajectory_extraction_from_travelogues.md)
 - [\[NeurIPS 2025\] Obliviator Reveals the Cost of Nonlinear Guardedness in Concept Erasure](obliviator_reveals_the_cost_of_nonlinear_guardedness_in_concept_erasure.md)
-- [\[AAAI 2026\] On the Variability of Concept Activation Vectors](../../AAAI2026/others/on_the_variability_of_concept_activation_vectors.md)
-- [\[AAAI 2026\] Autonomous Concept Drift Threshold Determination](../../AAAI2026/others/autonomous_concept_drift_threshold_determination.md)
+- [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
+- [\[ICML 2025\] Efficient Network Automatic Relevance Determination](../../ICML2025/others/efficient_network_automatic_relevance_determination.md)
 
 </div>
 

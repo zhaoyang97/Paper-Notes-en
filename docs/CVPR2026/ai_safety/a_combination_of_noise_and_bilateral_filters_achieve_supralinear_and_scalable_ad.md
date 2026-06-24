@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Combination of Noise and Bilateral Filters Achieve Supralinear and Scalable Adversarial Robustness in CNNs
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] This paper theoretically demonstrates from the perspective of decision boundary geometry that "Gaussian noise" and "image filtering" defend against adversarial attacks through two **complementary** mechanisms. Consequently, their combination yields **supralinear** robustness gains. Based on this, a minimalist preproces
+  [CVPR 2026][AI Safety][Adversarial Robustness] This paper theoretically demonstrates from the perspective of decision boundary geometry that "Gaussian noise" and "image filtering" defend against adversarial attacks through two **complementary** mechanisms. Consequently, their combination yields **supralinear** robustness gains. Based on this, a minimalist preprocessor (pixel-level Gaussian noise + iterative bilateral filtering, applied during both training and inference) is p…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Robustness"
+  - "Gaussian Noise"
+  - "Bilateral Filter"
+  - "Geometric Theory"
+  - "Supralinear Gain"
 date: 2026-05-08
-content_hash: 54c242bc4cf4b2f3
+content_hash: aeff22182e75cd14
 ---
+
 # A Combination of Noise and Bilateral Filters Achieve Supralinear and Scalable Adversarial Robustness in CNNs
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Supralinearity holds for four out of six perturbations (FGSM / L∞ / EoT / C&W)
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](../../ICLR2026/ai_safety/on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
-- [\[CVPR 2026\] IrisFP: Adversarial-Example-based Model Fingerprinting with Enhanced Uniqueness and Robustness](irisfp_adversarial-example-based_model_fingerprinting_with_enhanced_uniqueness_a.md)
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 - [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
 - [\[CVPR 2026\] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats](robustness_under_data_scarcity_few-shot_continual_adversarial_training_for_evolv.md)
-- [\[CVPR 2025\] MOS-Attack: A Scalable Multi-Objective Adversarial Attack Framework](../../CVPR2025/ai_safety/mos-attack_a_scalable_multi-objective_adversarial_attack_framework.md)
 
 </div>
 

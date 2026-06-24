@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper identifies that model merging suffers not only from task conflicts but also from the redundant accumulation of shared spectral directions into excessively large singular values. It proposes Singular Value Calibration (SVC), a training-free and data-free method that recalibrates singular values without alteri
+  [ICML2026][Model Compression][Model Merging] This paper identifies that model merging suffers not only from task conflicts but also from the redundant accumulation of shared spectral directions into excessively large singular values. It proposes Singular Value Calibration (SVC), a training-free and data-free method that recalibrates singular values without altering singular vectors, consistently improving merging performance across vision and language tasks.
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Spectral Calibration"
+  - "Singular Values"
+  - "Task Vectors"
+  - "Data-free Post-processing"
 date: 2026-05-08
-content_hash: 725112c558aa49c3
+content_hash: ac1d8e808c5a1e72
 ---
+
 # When Shared Knowledge Hurts: Spectral Over-Accumulation in Model Merging
 
 **Conference**: ICML2026  
@@ -126,14 +132,17 @@ The key ablation compares output space calibration with input space calibration.
 
 <div class="related-papers" markdown="1">
 
-- [Task Arithmetic in the Wild: A Spectral Analysis](https://arxiv.org/abs/2403.04782)
-- [TIES-Merging: Resolving Interference When Merging Models](https://arxiv.org/abs/2306.01708)
-- [Language Models are Super Mario: Absorbing Abilities from Homologous Models as a Free Lunch](https://arxiv.org/abs/2311.03099)
+## Related Papers
+
+- [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)
+- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](../../ICLR2026/model_compression/adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
+- [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](../../ICLR2026/model_compression/mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
+- [\[ICML 2026\] Post-Hoc Merging Is Not Enough: Many-Shot Model Merging with Loss-Gap Balancing](post-hoc_merging_is_not_enough_many-shot_model_merging_with_loss-gap_balancing.md)
+- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Saliency-Aware Model Merging](saliency-aware_model_merging.md)

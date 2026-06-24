@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Benign Overfitting in Nadaraya-Watson Interpolators
 description: >-
-  [NeurIPS 2025][LLM Pretraining][benign overfitting] By tuning a single bandwidth parameter $\beta$ in the Nadaraya-Watson interpolator, this paper precisely characterizes the complete phase transition spectrum from catas…
+  [NeurIPS 2025][LLM Pretraining][benign overfitting] By tuning a single bandwidth parameter $\beta$ in the Nadaraya-Watson interpolator, this paper precisely characterizes the complete phase transition spectrum from catastrophic overfitting ($\beta < d$) → benign overfitting ($\beta = d$) → tempered overfitting ($\beta > d$), demonstrating that overestimating the intrinsic dimensionality of data is safer than underestimating it.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -13,7 +13,7 @@ tags:
   - "generalization theory"
   - "overfitting phase transition"
 date: 2026-05-08
-content_hash: c4b90492025e0b3d
+content_hash: 66cdd64ab227551a
 ---
 
 # Beyond Benign Overfitting in Nadaraya-Watson Interpolators
@@ -130,11 +130,11 @@ MNIST 0/1 classification (extrinsic dimension $d_\text{extrinsic}=784$):
 
 ## Related Papers
 
-- [\[ICLR 2026\] A Law of Data Reconstruction for Random Features (and Beyond)](../../ICLR2026/llm_pretraining/a_law_of_data_reconstruction_for_random_features_and_beyond.md)
-- [\[ICML 2026\] Beyond Structural Symmetries: Linear Mode Connectivity via Neuron Identifiability](../../ICML2026/llm_pretraining/beyond_structural_symmetries_linear_mode_connectivity_via_neuron_identifiability.md)
-- [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](../../AAAI2026/llm_pretraining/beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
+- [\[ICML 2025\] Benign Overfitting in Token Selection of Attention Mechanism](../../ICML2025/llm_pretraining/benign_overfitting_in_token_selection_of_attention_mechanism.md)
+- [\[ICML 2025\] On the Clean Generalization and Robust Overfitting in Adversarial Training from Two Theoretical Views: Representation Complexity and Training Dynamics](../../ICML2025/llm_pretraining/on_the_clean_generalization_and_robust_overfitting_in_adversarial_training_from_.md)
 - [\[NeurIPS 2025\] Breaking the Frozen Subspace: Importance Sampling for Low-Rank Optimization in LLM Pretraining](breaking_the_frozen_subspace_importance_sampling_for_low-rank_optimization_in_ll.md)
 - [\[NeurIPS 2025\] Through the River: Understanding the Benefit of Schedule-Free Methods for Language Model Training](through_the_river_understanding_the_benefit_of_schedule-free_methods_for_languag.md)
+- [\[NeurIPS 2025\] Heterogeneous Adversarial Play in Interactive Environments](heterogeneous_adversarial_play_in_interactive_environments.md)
 
 </div>
 

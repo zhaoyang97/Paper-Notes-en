@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] CORAL reframes multilingual RAG failures as "retrieval condition misalignment"—not just query reformulation, but the need to dynamically switch the retrieval corpus. Through a closed loop consisting of a planner and a critic agent performing "corpus selection → retrieval → scoring/filtering → sufficiency check → corpus
+  [ACL 2026 Findings][Information Retrieval & RAG][Multicultural RAG] CORAL reframes multilingual RAG failures as "retrieval condition misalignment"—not just query reformulation, but the need to dynamically switch the retrieval corpus. Through a closed loop consisting of a planner and a critic agent performing "corpus selection → retrieval → scoring/filtering → sufficiency check → corpus/query adjustment," the method achieves a 3.58pp improvement over the strongest baseline for…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Multicultural RAG"
+  - "planner-critic loop"
+  - "dynamic corpus selection"
+  - "query rewriting"
+  - "low-resource languages"
 date: 2026-05-08
-content_hash: 12f2062a1bdd5394
+content_hash: d8ea7975028588fe
 ---
+
 # CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG
 
 **Conference**: ACL 2026 Findings  

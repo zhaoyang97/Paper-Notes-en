@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance
 description: >-
-  [CVPR 2026][Social Computing][Paper Note] This paper proposes utilizing "provenance" automatically obtained during the synthetic data generation process as an auxiliary supervision signal. By employing input gradient guidance—specifically inhibiting input gradients in non-target regions—the method directly encourages models to learn discriminative representati
+  [CVPR 2026][Video Understanding][Synthetic Data Learning] This paper proposes utilizing "provenance" automatically obtained during the synthetic data generation process as an auxiliary supervision signal. By employing input gradient guidance—specifically inhibiting input gradients in non-target regions—the method directly encourages models to learn discriminative representations focused on target areas. Its effectiveness is validated across multiple tasks and modalities…
 tags:
-  - CVPR 2026
-  - Social Computing
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Synthetic Data Learning"
+  - "Input Gradient Guidance"
+  - "Spurious Correlation Suppression"
+  - "Data Augmentation"
+  - "Provenance Information"
 date: 2026-05-08
-content_hash: 4e2a582e1ab3f5f4
+content_hash: 8ea3834354461077
 ---
+
 # Learning from Synthetic Data via Provenance-Based Input Gradient Guidance
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,15 @@ Ablation on provenance quality (Classification): Dilating/eroding foreground mas
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](../../ICCV2025/social_computing/gradient_extrapolation_for_debiased_representation_learning.md)
-- [\[ACL 2026\] PSK@EEUCA 2026: Fine-Tuning Large Language Models with Synthetic Data Augmentation for Multi-Class Toxicity Detection in Gaming Chat](../../ACL2026/social_computing/pskeeuca_2026_fine-tuning_large_language_models_with_synthetic_data_augmentation.md)
-- [\[ACL 2026\] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection](../../ACL2026/social_computing/toxitrace_gradient-aligned_training_for_explainable_chinese_toxicity_detection.md)
-- [\[ECCV 2024\] Distribution-Aware Robust Learning from Long-Tailed Data with Noisy Labels](../../ECCV2024/social_computing/distribution-aware_robust_learning_from_long-tailed_data_with_noisy_labels.md)
-- [\[CVPR 2026\] Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning](revisiting_unknowns_towards_effective_and_efficient_open-set_active_learning.md)
+- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
+- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)
+- [\[CVPR 2026\] MDS-VQA: Model-Informed Data Selection for Video Quality Assessment](mds-vqa_model-informed_data_selection_for_video_quality_assessment.md)
+- [\[CVPR 2026\] Image Guides Images: Consistent Video Amodal Completion with Rectified In-Context Exemplar Guidance](image_guides_images_consistent_video_amodal_completion_with_rectified_in-context.md)
+- [\[ICLR 2026\] PPLLaVA: Varied Video Sequence Understanding With Prompt Guidance](../../ICLR2026/video_understanding/ppllava_varied_video_sequence_understanding_with_prompt_guidance.md)
 
 </div>
 

@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems
 description: >-
-  [ACL 2026][Others][Knowledge Component] This paper utilizes LLMs to automatically generate and cluster Knowledge Components (KCs) for open-ended programming problems. It proposes KCGen-KT, which converts student mastery of each KC into soft tokens as input for Llama 3, improving both correctness prediction and student code generation performance on CodeWorko
+  [ACL2026 Findings][Knowledge Component] This paper utilizes LLMs to automatically generate and cluster Knowledge Components (KCs) for open-ended programming problems. It proposes KCGen-KT, which converts student mastery of each KC into soft tokens as input for Llama 3, improving both correctness prediction and student code generation performance on CodeWorkout and FalconCode.
 tags:
-  - ACL 2026
-  - Others
-  - Knowledge Component
-  - Knowledge Tracing
-  - LLM
+  - "ACL2026 Findings"
+  - "Knowledge Component"
+  - "Knowledge Tracing"
+  - "Programming Education"
+  - "LLM"
+  - "Interpretable Student Modeling"
 date: 2026-05-08
-content_hash: a71735c09ce4f6d5
+content_hash: 6ec20d9f2e66ca33
 ---
+
 # Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems
 
 **Conference**: ACL2026 Findings  

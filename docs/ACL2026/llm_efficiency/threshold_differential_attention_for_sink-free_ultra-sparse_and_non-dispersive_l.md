@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 阈值差分注意力：无 Sink、超稀疏且非分散的长上下文注意力
+  [Paper Note] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention
 description: >-
-  [ACL 2026][LLM Efficiency][Attention] TDA achieves sink-free, 99% precise sparsity, and competitive performance in long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
+  [ACL 2026][LLM Efficiency][Attention Mechanism] TDA achieves sink-free, 99% precise sparsity, and competitive performance in long-context Transformer attention by combining length-adaptive thresholds with differential inhibitory views.
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - Attention
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Attention Mechanism"
+  - "Long Context"
+  - "Sparse Attention"
+  - "Differential Attention"
+  - "Extreme Value Theory"
 date: 2026-05-08
-content_hash: 3f3a0932d46e888a
+content_hash: 8977010b3c131765
 ---
+
 # Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention
 
 **Conference**: ACL 2026  
@@ -146,11 +151,11 @@ TDA demonstrates strong competitive performance on the long-context SCROLLS benc
 
 ## Related Papers
 
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[ACL 2026\] Lizard: An Efficient Linearization Framework for Large Language Models](lizard_an_efficient_linearization_framework_for_large_language_models.md)
-- [\[ACL 2026\] Understanding LLM Performance Degradation in Multi-Instance Processing: The Roles of Instance Count and Context Length](understanding_llm_performance_degradation_in_multi-instance_processing_the_roles.md)
-- [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](native_hybrid_attention_for_efficient_sequence_modeling.md)
+- [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](../../ICLR2026/llm_efficiency/tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
+- [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](../../ICLR2026/llm_efficiency/retrospective_sparse_attention_for_efficient_long-context_generation.md)
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](../../ICLR2026/llm_efficiency/sparse_attention_adaptation_for_long_reasoning.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](../../ICLR2026/llm_efficiency/sparsed_sparse_attention_for_diffusion_language_models.md)
+- [\[ICLR 2026\] SinkTrack: Attention Sink based Context Anchoring for Large Language Models](../../ICLR2026/llm_efficiency/sinktrack_attention_sink_based_context_anchoring_for_large_language_models.md)
 
 </div>
 

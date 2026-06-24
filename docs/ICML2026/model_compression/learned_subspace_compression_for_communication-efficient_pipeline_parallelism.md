@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learned Subspace Compression for Communication-Efficient Pipeline Parallelism
 description: >-
-  [ICML 2026][Model Compression][Paper Note] To address the "inter-stage communication" bottleneck of pipeline parallelism in low-bandwidth networks, this paper proposes MAPL: allowing each pipeline stage to **learn its own orthogonal projection** on the Stiefel manifold to compress boundary activations. Combined with factorized anchor embeddings to decouple toke
+  [ICML2026][Model Compression][Pipeline Parallelism] To address the "inter-stage communication" bottleneck of pipeline parallelism in low-bandwidth networks, this paper proposes MAPL: allowing each pipeline stage to **learn its own orthogonal projection** on the Stiefel manifold to compress boundary activations. Combined with factorized anchor embeddings to decouple token shifts and residual vector quantization (RVQ), it achieves 4–16× communication compression on 150M–1B LLaM…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML2026"
+  - "Model Compression"
+  - "Pipeline Parallelism"
+  - "Activation Compression"
+  - "Stiefel Manifold"
+  - "Learned Subspace"
+  - "Vector Quantization"
 date: 2026-05-08
-content_hash: 92481d641234ba07
+content_hash: 02796b5f67145d71
 ---
+
 # Learned Subspace Compression for Communication-Efficient Pipeline Parallelism
 
 **Conference**: ICML2026  
@@ -129,16 +135,16 @@ MAPL reduces the gap to the uncompressed baseline to $\sim 1\%$ across all scale
 - Value: ⭐⭐⭐⭐ Provides a high-compression, low-degradation solution for decentralized training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Otil: Accelerating Diffusion Model Inference via Communication-Efficient Multi-GPU Parallelism](../../CVPR2026/model_compression/otil_accelerating_diffusion_model_inference_via_communication-efficient_multi-gp.md)
 - [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](efficient_learned_image_compression_without_entropy_coding.md)
+- [\[CVPR 2026\] Otil: Accelerating Diffusion Model Inference via Communication-Efficient Multi-GPU Parallelism](../../CVPR2026/model_compression/otil_accelerating_diffusion_model_inference_via_communication-efficient_multi-gp.md)
 - [\[ACL 2026\] Efficient Learned Data Compression via Dual-Stream Feature Decoupling](../../ACL2026/model_compression/efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)
 - [\[AAAI 2026\] InfoCom: Kilobyte-Scale Communication-Efficient Collaborative Perception with Information-Aware Feature Compression](../../AAAI2026/model_compression/infocom_kilobyte-scale_communication-efficient_collaborative_perception_with_inf.md)
-- [\[ICML 2026\] ReSpinQuant: Efficient Layer-Wise LLM Quantization via Subspace Residual Rotation Approximation](respinquant_efficient_layer-wise_llm_quantization_via_subspace_residual_rotation.md)
+- [\[CVPR 2026\] What Matters in Practical Learned Image Compression](../../CVPR2026/model_compression/what_matters_in_practical_learned_image_compression.md)
 
 </div>
 

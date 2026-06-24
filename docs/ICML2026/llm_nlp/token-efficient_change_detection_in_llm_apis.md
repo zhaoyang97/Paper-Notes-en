@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Token-Efficient Change Detection in LLM APIs
 description: >-
-  [ICML 2026][LLM (Other)][Local Asymptotic Normality] The authors demonstrate that under low-temperature sampling, specific inputs where "two token logits are nearly tied" (Border Inputs) are extremely sensitive to parameter perturbations—theoretically, the SNR diverges as $T \to 0$. This allows for LLM API change detection using minimal requests by observing only output
+  [ICML 2026][LLM (Other)][Black-box change detection] The authors demonstrate that under low-temperature sampling, specific inputs where "two token logits are nearly tied" (Border Inputs) are extremely sensitive to parameter perturbations—theoretically, the SNR diverges as $T \to 0$. This allows for LLM API change detection using minimal requests by observing only output tokens (strict black-box). The proposed B3IT matches gray-box logprob methods at 1/30th the cost on the Tin…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Local Asymptotic Normality
-  - B3IT
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Black-box change detection"
+  - "Border Inputs (BI)"
+  - "Low-temperature phase transition"
+  - "Local Asymptotic Normality"
+  - "B3IT"
 date: 2026-05-08
-content_hash: 27bfb1be05433292
+content_hash: 65bffced5234d30d
 ---
+
 # Token-Efficient Change Detection in LLM APIs
 
 **Conference**: ICML 2026  
@@ -138,10 +142,10 @@ In-vivo commercial endpoint evaluation (93 endpoints, 64 models, 20 providers, 2
 ## Related Papers
 
 - [\[CVPR 2025\] The Change You Want To Detect: Semantic Change Detection In Earth Observation With Hybrid Data Generation](../../CVPR2025/llm_nlp/the_change_you_want_to_detect_semantic_change_detection_in_earth_observation_wit.md)
-- [\[ICML 2026\] 结构化广义线性 token mixing：用 SND + Kronecker 在复杂度与表达力之间换挡](trading_complexity_for_expressivity_through_structured_generalized_linear_token_.md)
 - [\[ACL 2025\] AgentDropout: Dynamic Agent Elimination for Token-Efficient and High-Performance LLM-Based Multi-Agent Collaboration](../../ACL2025/llm_nlp/agentdropout-dynamic-agent-elimination-for-multi-agent-collaboration.md)
-- [\[ICML 2026\] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化](model-preserving_adaptive_rounding.md)
-- [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)
+- [\[ICML 2026\] Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker](trading_complexity_for_expressivity_through_structured_generalized_linear_token_.md)
+- [\[ICML 2026\] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)
+- [\[CVPR 2026\] LLM-Guided Probabilistic Fusion for Label-Efficient Document Layout Analysis](../../CVPR2026/llm_nlp/llm-guided_probabilistic_fusion_for_label-efficient_document_layout_analysis.md)
 
 </div>
 

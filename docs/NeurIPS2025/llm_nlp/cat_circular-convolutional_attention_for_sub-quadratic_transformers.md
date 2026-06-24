@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers
 description: >-
-  [NeurIPS 2025][LLM/NLP][Circulant convolution] CAT replaces the $N \times N$ attention matrix in standard self-attention with a circulant matrix generated from an $N$-dimensional vector…
+  [NeurIPS 2025][LLM (Other)][Circulant convolution] CAT replaces the $N \times N$ attention matrix in standard self-attention with a circulant matrix generated from an $N$-dimensional vector, leveraging FFT to achieve $O(N \log N)$ attention computation. While strictly preserving the softmax row-normalization structure, CAT matches or surpasses standard attention on ImageNet-1k (avg pool, CLIP-L accuracy 0.694 vs. 0.646) and WikiText-103 masked LM (PPL 8.32 vs. 9.82).
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Circulant convolution"
   - "FFT attention"
   - "sub-quadratic complexity"
   - "softmax preservation"
   - "EIT framework"
 date: 2026-05-08
-content_hash: f82c1e8d1c524307
+content_hash: 70d46d48da474270
 ---
 
 # CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers
@@ -145,7 +145,7 @@ Comparison of Q/K/V parameterization variants (CLIP-L, avg pool):
 - [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
 - [\[AAAI 2026\] Vision Transformers are Circulant Attention Learners](../../AAAI2026/llm_nlp/vision_transformers_are_circulant_attention_learners.md)
 - [\[NeurIPS 2025\] msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML](msf-cnn_patch-based_multi-stage_fusion_with_convolutional_neural_networks_for_ti.md)
-- [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](spectral_conditioning_of_attention_improves_transformer_performance.md)
+- [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
 
 </div>
 

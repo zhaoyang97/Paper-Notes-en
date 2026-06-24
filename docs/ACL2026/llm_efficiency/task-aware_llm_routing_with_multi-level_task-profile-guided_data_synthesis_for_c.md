@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] A multi-level task-profile-guided data synthesis framework is proposed to address the cold-start problem in LLM routing. TRouter, a routing method using task types as latent variables, is designed to model the query-cost-performance relationship via variational inference, achieving effective routing in both cold-start
+  [ACL 2026][LLM Efficiency][LLM Routing] A multi-level task-profile-guided data synthesis framework is proposed to address the cold-start problem in LLM routing. TRouter, a routing method using task types as latent variables, is designed to model the query-cost-performance relationship via variational inference, achieving effective routing in both cold-start and in-domain settings.
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "LLM Routing"
+  - "Cold-Start"
+  - "Data Synthesis"
+  - "Task-Aware"
+  - "Cost-Performance Trade-off"
 date: 2026-05-08
-content_hash: 2f46a858720d328c
+content_hash: b9c7f2bbf56bb925
 ---
+
 # Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios
 
 **Conference**: ACL 2026  
@@ -136,9 +142,9 @@ Total loss is $\mathcal{L} = \mathcal{L}_{CE} + \frac{1}{|\mathcal{M}||\mathcal{
 
 - [\[ACL 2026\] MTRouter: Cost-Aware Multi-Turn LLM Routing with History-Model Joint Embeddings](mtrouter_cost-aware_multi-turn_llm_routing_with_history-model_joint_embeddings.md)
 - [\[CVPR 2026\] Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](../../CVPR2026/llm_efficiency/few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)
+- [\[ICLR 2026\] DiSRouter: Distributed Self-Routing for LLM Selections](../../ICLR2026/llm_efficiency/disrouter_distributed_self-routing_for_llm_selections.md)
+- [\[ICLR 2026\] Meta-UCF: Unified Task-Conditioned LoRA Generation for Continual Learning in Large Language Models](../../ICLR2026/llm_efficiency/meta-ucf_unified_task-conditioned_lora_generation_for_continual_learning_in_larg.md)
 - [\[NeurIPS 2025\] Efficient Training-Free Online Routing for High-Volume Multi-LLM Serving](../../NeurIPS2025/llm_efficiency/efficient_training-free_online_routing_for_high-volume_multi-llm_serving.md)
-- [\[AAAI 2026\] Resource Efficient Sleep Staging via Multi-Level Masking and Prompt Learning](../../AAAI2026/llm_efficiency/resource_efficient_sleep_staging_via_multi-level_masking_and_prompt_learning.md)
-- [\[ICML 2026\] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference](../../ICML2026/llm_efficiency/fast-dllm_fréchet_profile_decoding_for_faster_diffusion_llm_inference.md)
 
 </div>
 

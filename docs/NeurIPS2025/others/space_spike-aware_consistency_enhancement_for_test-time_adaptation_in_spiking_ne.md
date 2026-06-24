@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks
 description: >-
-  [NeurIPS 2025][SNN] This paper proposes SPACE, the first source-free single-sample test-time adaptation (TTA) method specifically designed for spiking neural networks (SNNs). By maximizing the consistency of spike-based…
+  [NeurIPS 2025][SNN] This paper proposes SPACE, the first source-free single-sample test-time adaptation (TTA) method specifically designed for spiking neural networks (SNNs). By maximizing the consistency of spike-based feature maps across augmented views of a test sample, SPACE achieves robust adaptation across multiple datasets and architectures.
 tags:
   - "NeurIPS 2025"
   - "SNN"
@@ -11,7 +11,7 @@ tags:
   - "distribution shift"
   - "single-sample adaptation"
 date: 2026-05-08
-content_hash: 0c653ad9be7b2513
+content_hash: fdc1df352f706e68
 ---
 
 # SPACE: SPike-Aware Consistency Enhancement for Test-Time Adaptation in Spiking Neural Networks
@@ -136,9 +136,9 @@ $$\mathcal{L}(\theta_E;\mathbf{x}) = \sum_{1 \leq j < i \leq M}(1 - \bar{\mathca
 
 - [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](test-time_adaptation_by_causal_trimming.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
-- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
-- [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
+- [\[ICML 2025\] Beyond Entropy: Region Confidence Proxy for Wild Test-Time Adaptation](../../ICML2025/others/beyond_entropy_region_confidence_proxy_for_wild_test-time_adaptation.md)
+- [\[ICML 2025\] Ranked Entropy Minimization for Continual Test-Time Adaptation](../../ICML2025/others/ranked_entropy_minimization_for_continual_test-time_adaptation.md)
+- [\[CVPR 2025\] Effortless Active Labeling for Long-Term Test-Time Adaptation](../../CVPR2025/others/effortless_active_labeling_for_long-term_test-time_adaptation.md)
 
 </div>
 

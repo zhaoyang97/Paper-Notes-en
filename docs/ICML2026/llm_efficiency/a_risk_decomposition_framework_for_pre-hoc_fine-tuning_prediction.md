@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] Fine-tuning LLMs is expensive and hard to predict. This paper formalizes "predicting final fine-tuning performance before or during early training" as a stochastic estimation problem under information constraints. It decomposes prediction risk into an **irreducible intrinsic limit (static data-model compatibility) + re
+  [ICML2026][LLM Efficiency][pre-hoc prediction] Fine-tuning LLMs is expensive and hard to predict. This paper formalizes "predicting final fine-tuning performance before or during early training" as a stochastic estimation problem under information constraints. It decomposes prediction risk into an **irreducible intrinsic limit (static data-model compatibility) + reducible optimization variance**. It proves a mandatory lower bound of $c^{-\alpha}$ for the decay rate of optimiz…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML2026"
+  - "LLM Efficiency"
+  - "pre-hoc prediction"
+  - "risk decomposition"
+  - "optimization variance"
+  - "power-law decay"
+  - "optimal stopping"
 date: 2026-05-08
-content_hash: f838102ad2dbd2ef
+content_hash: 727aee6d706c4a75
 ---
+
 # A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction
 
 **Conference**: ICML2026  
@@ -131,10 +137,10 @@ Fig. 2 shows linear log-log relationships, confirming power-law predictions. Fig
 ## Related Papers
 
 - [\[ICML 2026\] TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins](tuneahead_predicting_fine-tuning_performance_before_full_training_begins.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
 - [\[ICLR 2026\] When Does Divide and Conquer Work for Long Context LLM? A Noise Decomposition Framework](../../ICLR2026/llm_efficiency/when_does_divide_and_conquer_work_for_long_context_llm_a_noise_decomposition_fra.md)
+- [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](../../ICLR2026/llm_efficiency/cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
+- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](../../ICLR2026/llm_efficiency/explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
 - [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ACL 2026\] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning](../../ACL2026/llm_efficiency/small_data_big_noise_adversarial_training_for_robust_parameter-efficient_fine-tu.md)
 
 </div>
 

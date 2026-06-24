@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models
 description: >-
-  [ICCV 2025][Model Compression][Cross-architecture distillation] This paper proposes ViT-Linearizer, a cross-architecture distillation framework that transfers the "quadratic knowledge" learned by ViT self-attention into…
+  [ICCV 2025][Model Compression][Cross-architecture distillation] This paper proposes ViT-Linearizer, a cross-architecture distillation framework that transfers the "quadratic knowledge" learned by ViT self-attention into linear-complexity recurrent models (Mamba-based Adventurer) via two core mechanisms: **activation matching** and **masked prediction**. The approach achieves 84.3% accuracy on ImageNet while delivering up to 4.2× inference speedup on high-resolution tasks.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -13,7 +13,7 @@ tags:
   - "activation matching"
   - "masked prediction"
 date: 2026-05-08
-content_hash: 20fc0509a840ac18
+content_hash: e6831ae767a25de2
 ---
 
 # ViT-Linearizer: Distilling Quadratic Knowledge into Linear-Time Vision Models
@@ -173,10 +173,10 @@ A "reverse distillation" phenomenon is observed: a larger student can still bene
 ## Related Papers
 
 - [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
-- [\[NeurIPS 2025\] REOrdering Patches Improves Vision Models](../../NeurIPS2025/model_compression/reordering_patches_improves_vision_models.md)
+- [\[ICML 2025\] Distilling Tool Knowledge into Language Models via Back-Translated Traces](../../ICML2025/model_compression/distilling_tool_knowledge_into_language_models_via_back-translated_traces.md)
+- [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](../../CVPR2026/model_compression/masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
 - [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
-- [\[ICCV 2025\] FastVAR: Linear Visual Autoregressive Modeling via Cached Token Pruning](fastvar_linear_visual_autoregressive_modeling_via_cached_token_pruning.md)
-- [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](../../AAAI2026/model_compression/distilling_cross-modal_knowledge_via_feature_disentanglement.md)
+- [\[ACL 2025\] Towards the Law of Capacity Gap in Distilling Language Models](../../ACL2025/model_compression/law_of_capacity_gap_distilling_language_models.md)
 
 </div>
 

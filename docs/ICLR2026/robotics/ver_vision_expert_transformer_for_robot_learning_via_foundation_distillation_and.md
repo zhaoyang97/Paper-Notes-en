@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VER: Vision Expert Transformer for Robot Learning via Foundation Distillation and Dynamic Routing
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] VER distills multiple vision foundation models (DINOv2 / ViT / CLIP) into an MoE-style "Vision Expert Library." For downstream robot tasks, only a lightweight router (less than 0.4% parameters) is fine-tuned to dynamically select task-relevant experts per patch. Combined with curriculum Top-K annealing to prevent early
+  [ICLR 2026][Robotics][Vision foundation model distillation] VER distills multiple vision foundation models (DINOv2 / ViT / CLIP) into an MoE-style "Vision Expert Library." For downstream robot tasks, only a lightweight router (less than 0.4% parameters) is fine-tuned to dynamically select task-relevant experts per patch. Combined with curriculum Top-K annealing to prevent early routing collapse, VER achieves SOTA performance across 17 robot tasks and various policy heads.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision foundation model distillation"
+  - "Mixture-of-Experts (MoE)"
+  - "dynamic routing"
+  - "visuomotor policy"
+  - "curriculum Top-K annealing"
 date: 2026-05-08
-content_hash: d7abed673ce5a0c5
+content_hash: f88f3b2f642f8197
 ---
+
 # VER: Vision Expert Transformer for Robot Learning via Foundation Distillation and Dynamic Routing
 
 **Conference**: ICLR 2026  

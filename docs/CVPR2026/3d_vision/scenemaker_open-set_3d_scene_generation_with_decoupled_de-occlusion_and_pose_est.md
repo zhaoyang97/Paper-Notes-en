@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] SceneMaker decouples single-image 3D scene generation into three sub-tasks: "de-occlusion / 3D object generation / pose estimation," leveraging image data, 3D object data, and scene data respectively to acquire sufficient open-set priors. It compensates for occluded objects using a de-occlusion model fine-tuned from im
+  [CVPR 2026][3D Vision][Open-set 3D scene generation] SceneMaker decouples single-image 3D scene generation into three sub-tasks: "de-occlusion / 3D object generation / pose estimation," leveraging image data, 3D object data, and scene data respectively to acquire sufficient open-set priors. It compensates for occluded objects using a de-occlusion model fine-tuned from image editing models and predicts the rotation, translation, and scale of each object directly via a unified…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-set 3D scene generation"
+  - "de-occlusion"
+  - "pose estimation"
+  - "diffusion models"
+  - "decoupled framework"
 date: 2026-05-08
-content_hash: 5b3776863942072c
+content_hash: a5af5d853801db38
 ---
+
 # SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model
 
 **Conference**: CVPR 2026  
@@ -131,10 +136,10 @@ Ablation of attention mechanisms in pose estimation (using GT meshes to exclude 
 ## Related Papers
 
 - [\[CVPR 2026\] DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval](dino_eats_clip_adapting_beyond_knowns_for_open-set_3d_object_retrieval.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)
+- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
 
 </div>
 

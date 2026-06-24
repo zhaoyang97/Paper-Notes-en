@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Transformer] SyncDreamer utilizes a Diffusion Transformer framework to generate identity-preserving, emotionally expressive avatar videos with fine-grained text control over gestures and gaze, using only a single reference image, audio, and text prompts. It locks identity through a visual adapter (with attention localization loss),
+  [CVPR 2026][Human Understanding][Audio-driven talking head] SyncDreamer utilizes a Diffusion Transformer framework to generate identity-preserving, emotionally expressive avatar videos with fine-grained text control over gestures and gaze, using only a single reference image, audio, and text prompts. It locks identity through a visual adapter (with attention localization loss), converts speech rhythm/energy into expression drivers via an audio dynamics encoder…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Transformer
-  - GRPO
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Audio-driven talking head"
+  - "Diffusion Transformer"
+  - "Identity preservation"
+  - "Text-controlled movement"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 8a05088f2b3a4699
+content_hash: 761a3419c530a510
 ---
+
 # SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head
 
 **Conference**: CVPR 2026  
@@ -156,9 +160,9 @@ The paper reports qualitative impacts of the three modules (Fig. 8/10/9) without
 
 - [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
 - [\[ICCV 2025\] Controllable and Expressive One-Shot Video Head Swapping](../../ICCV2025/human_understanding/controllable_and_expressive_one-shot_video_head_swapping.md)
-- [\[CVPR 2026\] OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)
-- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
 - [\[ECCV 2024\] Avatar Fingerprinting for Authorized Use of Synthetic Talking-Head Videos](../../ECCV2024/human_understanding/avatar_fingerprinting_for_authorized_use_of_synthetic_talking-head_videos.md)
+- [\[CVPR 2026\] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)
+- [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
 
 </div>
 

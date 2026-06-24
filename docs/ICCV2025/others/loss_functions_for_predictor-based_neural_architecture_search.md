@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Loss Functions for Predictor-based Neural Architecture Search
 description: >-
-  [ICCV 2025][Neural Architecture Search] This paper presents the first comprehensive and systematic study of 8 loss functions for performance predictors, spanning regression, ranking…
+  [ICCV 2025][Neural Architecture Search] This paper presents the first comprehensive and systematic study of 8 loss functions for performance predictors, spanning regression, ranking, and weighting categories. Evaluated across 13 tasks on 5 search spaces, the study reveals the characteristics and complementarity of each loss type, and proposes PWLNAS—a piecewise loss (PW loss) combination method—that surpasses existing state-of-the-art on multiple benchmarks.
 tags:
   - "ICCV 2025"
   - "Neural Architecture Search"
@@ -11,7 +11,7 @@ tags:
   - "Learning to Rank"
   - "Weighted Loss"
 date: 2026-05-08
-content_hash: ee96d9217690ec7a
+content_hash: b94eed4c8b830b3f
 ---
 
 # Loss Functions for Predictor-based Neural Architecture Search
@@ -158,11 +158,11 @@ All experiments employ a unified GCN-based performance predictor. Each loss func
 
 ## Related Papers
 
+- [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](../../CVPR2026/others/hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
+- [\[CVPR 2025\] Subnet-Aware Dynamic Supernet Training for Neural Architecture Search](../../CVPR2025/others/subnet-aware_dynamic_supernet_training_for_neural_architecture_search.md)
+- [\[CVPR 2026\] InTrain: Intrinsic Trainability for Zero-Cost Neural Architecture Search](../../CVPR2026/others/intrain_intrinsic_trainability_for_zero-cost_neural_architecture_search.md)
+- [\[CVPR 2025\] VKDNW: Training-free Neural Architecture Search through Variance of Knowledge of Deep Network Weights](../../CVPR2025/others/training-free_neural_architecture_search_through_variance_of_knowledge_of_deep_n.md)
 - [\[ICCV 2025\] Joint Asymmetric Loss for Learning with Noisy Labels](joint_asymmetric_loss_for_learning_with_noisy_labels.md)
-- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](../../ICLR2026/others/on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
-- [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](../../ICLR2026/others/a_single_architecture_for_representing_invariance_under_any_space_group.md)
-- [\[AAAI 2026\] Learning Compact Latent Space for Representing Neural Signed Distance Functions with High-fidelity Geometry Details](../../AAAI2026/others/learning_compact_latent_space_for_representing_neural_signed_distance_functions_.md)
-- [\[ICCV 2025\] Recover Biological Structure from Sparse-View Diffraction Images with Neural Volumetric Prior](recover_biological_structure_from_sparse-view_diffraction_images_with_neural_vol.md)
 
 </div>
 

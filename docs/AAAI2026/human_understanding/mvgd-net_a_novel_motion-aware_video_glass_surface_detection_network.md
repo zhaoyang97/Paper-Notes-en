@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network
 description: >-
-  [AAAI 2026][Human Understanding][Glass surface detection] Grounded in the physical observation that objects in reflection/transmission layers move at different velocities than those in non-glass regions…
+  [AAAI 2026][Human Understanding][Glass surface detection] Grounded in the physical observation that objects in reflection/transmission layers move at different velocities than those in non-glass regions, this paper proposes MVGD-Net, which leverages optical flow motion cues to guide glass surface detection in videos. The framework comprises four core modules: Cross-scale Multimodal Fusion Module (CMFM), History-Guided Attention Module (HGAM), Temporal Cross-Attention Module (…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal fusion"
   - "temporal attention"
 date: 2026-05-08
-content_hash: 265a5535ca590e36
+content_hash: 1381886f01e2036c
 ---
 
 # MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network
@@ -187,10 +187,10 @@ On MVGD-D, compared to the second-best GhostingNet: IoU +3.26%, MAE −13.46%, B
 
 ## Related Papers
 
-- [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](../../CVPR2026/human_understanding/unleashing_vision-language_semantics_for_deepfake_video_detection.md)
+- [\[AAAI 2026\] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment](realign_text-to-motion_generation_via_step-aware_reward-guided_alignment.md)
 - [\[AAAI 2026\] AHAN: Asymmetric Hierarchical Attention Network for Identical Twin Face Verification](ahan_asymmetric_hierarchical_attention_network_for_identical.md)
-- [\[CVPR 2026\] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation](../../CVPR2026/human_understanding/cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re.md)
+- [\[AAAI 2026\] Toward Gaze Target Detection in Young Autistic Children](toward_gaze_target_detection_of_young_autistic_children.md)
 - [\[ICCV 2025\] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection](../../ICCV2025/human_understanding/sequential_keypoint_density_estimator_an_overlooked_baseline_of_skeleton-based_v.md)
 
 </div>

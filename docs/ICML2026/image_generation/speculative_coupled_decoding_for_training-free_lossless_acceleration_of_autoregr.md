@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation
 description: >-
-  [ICML 2026][Image Generation][Coupling] This paper identifies the root cause of limited acceleration in Speculative Jacobi Decoding (SJD) for autoregressive visual generation: independent sampling of draft tokens between successive iterations leads to a collision probability near zero. By replacing independent sampling with Maximal or Gumbel Coupling (a one-
+  [ICML 2026][Image Generation][Speculative Decoding] This paper identifies the root cause of limited acceleration in Speculative Jacobi Decoding (SJD) for autoregressive visual generation: independent sampling of draft tokens between successive iterations leads to a collision probability near zero. By replacing independent sampling with Maximal or Gumbel Coupling (a one-line modification with zero additional training), image generation is accelerated by up to $4.2\times$ and v…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Coupling
+  - "ICML 2026"
+  - "Image Generation"
+  - "Speculative Decoding"
+  - "Jacobi Iteration"
+  - "Coupling"
+  - "Autoregressive Image Generation"
+  - "Lossless Acceleration"
 date: 2026-05-08
-content_hash: 29065e0ae5f1201f
+content_hash: 1bfb87d4640b55d7
 ---
+
 # Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation
 
 **Conference**: ICML 2026  
@@ -133,15 +138,17 @@ Entirely training-free. SCD is a pure inference-time algorithm replacement. All 
 
 <div class="related-papers" markdown="1">
 
-1. **SJD**: Speculative Jacobi Decoding for Joint Image-Text Generation.
-2. **GSD**: Group Speculative Decoding for Autoregressive Visual Generation.
-3. **Cosmos-1**: High-Resolution Autoregressive Video Generation.
-4. **Lumina-mGPT**: Illuminate Any Language with Magickal Generative Pre-trained Transformer.
+## Related Papers
+
+- [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
+- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
+- [\[ICML 2026\] DFlash: Block Diffusion for Flash Speculative Decoding](dflash_block_diffusion_for_flash_speculative_decoding.md)
+- [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](../../CVPR2026/image_generation/sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
+- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)

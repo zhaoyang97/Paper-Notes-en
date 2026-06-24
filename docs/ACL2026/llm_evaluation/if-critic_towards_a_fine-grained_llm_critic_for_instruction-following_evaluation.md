@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Checklist Critic] This paper proposes IF-Critic-14B: it first uses a Checklist Generator to decompose complex instructions into a list of constraints, then enables the critic to provide "explanation + 0/1 judgment" for all constraints within a **single inference**. Through high-quality critique training with multi-stage filtering and co
+  [ACL 2026][LLM Evaluation][Instruction following evaluation] This paper proposes IF-Critic-14B: it first uses a Checklist Generator to decompose complex instructions into a list of constraints, then enables the critic to provide "explanation + 0/1 judgment" for all constraints within a **single inference**. Through high-quality critique training with multi-stage filtering and constraint-level DPO, it outperforms o4-mini / Gemini-1.5-Pro (noted as Gemini-3-Pro in original text…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - Checklist Critic
-  - Critique Filtering
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Instruction following evaluation"
+  - "Checklist Critic"
+  - "constraint-level DPO"
+  - "Critique Filtering"
+  - "GRPO reward signals"
 date: 2026-05-08
-content_hash: 3f89d0d6cff58d99
+content_hash: 1c554fc328be1f32
 ---
+
 # IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation
 
 **Conference**: ACL 2026  
@@ -156,14 +160,15 @@ GRPO + IF-Critic boosted Qwen2.5-7B's SysBench SSR from 19.10 to 44.44, matching
 - Value: ⭐⭐⭐⭐⭐ Provides an open-source 14B critic and training recipe that significantly reduces compute for RLHF/GRPO.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
+- [\[ACL 2026\] WildIFEval: Instruction Following in the Wild](wildifeval_instruction_following_in_the_wild.md)
 - [\[ACL 2026\] Rethinking Meeting Effectiveness: A Benchmark and Framework for Temporal Fine-grained Automatic Meeting Effectiveness Evaluation](rethinking_meeting_effectiveness_a_benchmark_and_framework_for_temporal_fine-gra.md)
 - [\[ACL 2026\] Revisiting the Reliability of Language Models in Instruction-Following](revisiting_the_reliability_of_language_models_in_instruction-following.md)
-- [\[ACL 2026\] WildIFEval: Instruction Following in the Wild](wildifeval_instruction_following_in_the_wild.md)
 - [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
 
 </div>

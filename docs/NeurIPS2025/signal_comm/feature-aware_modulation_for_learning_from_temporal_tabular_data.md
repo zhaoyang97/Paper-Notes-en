@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Feature-aware Modulation for Learning from Temporal Tabular Data
 description: >-
-  [NeurIPS 2025][Signal & Communication][temporal shift] This paper argues that the core challenge in temporal tabular learning is not simply "adding a time embedding…
+  [NeurIPS 2025][Signal & Communication][temporal shift] This paper argues that the core challenge in temporal tabular learning is not simply "adding a time embedding," but rather that the semantics of many features drift over time. To address this, the paper proposes feature-aware modulation, which uses temporal context to dynamically generate per-feature shift, scale, and nonlinear shape parameters, re-aligning cross-temporal semantics. The approach enables deep models to con…
 tags:
   - "NeurIPS 2025"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "Yeo-Johnson"
   - "tabular deep learning"
 date: 2026-05-08
-content_hash: a3beb6f1c9ced535
+content_hash: e80265d4faa2abb6
 ---
 
 # Feature-aware Modulation for Learning from Temporal Tabular Data
@@ -225,7 +225,7 @@ Several directions for future work are promising: designing modulation variants 
 - [\[NeurIPS 2025\] Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning](contrastive_consolidation_of_top-down_modulations_achieves_sparsely_supervised_c.md)
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
 - [\[ICML 2026\] Joint Model and Data Sparsification via the Marginal Likelihood](../../ICML2026/signal_comm/joint_model_and_data_sparsification_via_the_marginal_likelihood.md)
-- [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
+- [\[CVPR 2025\] Neural Video Compression with Context Modulation](../../CVPR2025/signal_comm/neural_video_compression_with_context_modulation.md)
 
 </div>
 

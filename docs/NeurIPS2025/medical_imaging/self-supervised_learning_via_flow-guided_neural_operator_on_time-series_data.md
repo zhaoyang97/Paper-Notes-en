@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data
 description: >-
-  [NeurIPS 2025][Medical Imaging][Self-supervised learning] This paper proposes FGNO (Flow-Guided Neural Operator), which combines Flow Matching with operator learning for self-supervised pre-training on time-series data.…
+  [NeurIPS 2025][Medical Imaging][Self-supervised learning] This paper proposes FGNO (Flow-Guided Neural Operator), which combines Flow Matching with operator learning for self-supervised pre-training on time-series data. By leveraging STFT for resolution-invariant function-space learning and treating flow time and network layer depth as adjustable "knobs" for controlling feature granularity, FGNO substantially outperforms baselines such as MAE on biomedical tasks.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Time series"
   - "Biomedical signals"
 date: 2026-05-08
-content_hash: 2636738a2cc2bab5
+content_hash: 3273fc061cc7fa97
 ---
 
 # Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data
@@ -150,9 +150,9 @@ With only 5% labeled data, FGNO nearly matches the performance achieved with ful
 
 - [\[NeurIPS 2025\] Ditch the Denoiser: Emergence of Noise Robustness in Self-Supervised Learning from Data Curriculum](ditch_the_denoiser_emergence_of_noise_robustness_in_self-supervised_learning_fro.md)
 - [\[NeurIPS 2025\] Self-supervised Learning of Echocardiographic Video Representations via Online Cluster Distillation](self-supervised_learning_of_echocardiographic_video_representations_via_online_c.md)
-- [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
-- [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](../../ICCV2025/medical_imaging/an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
-- [\[NeurIPS 2025\] UniMRSeg: Unified Modality-Relax Segmentation via Hierarchical Self-Supervised Compensation](unimrseg_unified_modality-relax_segmentation_via_hierarchical_self-supervised_co.md)
+- [\[CVPR 2025\] NOIR: Neural Operator Mapping for Implicit Representations](../../CVPR2025/medical_imaging/noir_neural_operator_mapping_for_implicit_representations.md)
+- [\[CVPR 2025\] Addressing Data Scarcity in 3D Trauma Detection through Self-Supervised and Semi-Supervised Learning with Vertex Relative Position Encoding](../../CVPR2025/medical_imaging/addressing_data_scarcity_in_3d_trauma_detection_through_self-supervised_and_semi.md)
+- [\[ICLR 2026\] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification](../../ICLR2026/medical_imaging/functional_mri_time_series_generation_via_wavelet-based_image_transform_and_spec.md)
 
 </div>
 

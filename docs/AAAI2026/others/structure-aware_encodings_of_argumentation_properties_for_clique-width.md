@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Structure-Aware Encodings of Argumentation Properties for Clique-width
 description: >-
-  [AAAI 2026][Abstract Argumentation] This paper designs directed decomposition-guided (DDG) reductions from abstract argumentation problems to (Q)SAT that linearly preserve clique-width…
+  [AAAI 2026][Abstract Argumentation] This paper designs directed decomposition-guided (DDG) reductions from abstract argumentation problems to (Q)SAT that linearly preserve clique-width, establishing tractability upper bounds parameterized by clique-width for all standard argumentation semantics (stable, admissible, complete, preferred, semi-stable, stage) across extension existence, argument acceptance, and counting problems. Under the ETH, it further proves that the overhead…
 tags:
   - "AAAI 2026"
   - "Abstract Argumentation"
@@ -13,7 +13,7 @@ tags:
   - "$k$-expressions"
   - "Decomposition-Guided Reductions"
 date: 2026-05-08
-content_hash: b2fe7ad88776d237
+content_hash: 74034558afc632b0
 ---
 
 # Structure-Aware Encodings of Argumentation Properties for Clique-width
@@ -146,7 +146,7 @@ Clique-width strictly generalizes treewidth, enabling the results of this paper 
 - [\[AAAI 2026\] Tab-PET: Graph-Based Positional Encodings for Tabular Transformers](tab-pet_graph-based_positional_encodings_for_tabular_transformers.md)
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 - [\[NeurIPS 2025\] Structure-Aware Spectral Sparsification via Uniform Edge Sampling](../../NeurIPS2025/others/structure-aware_spectral_sparsification_via_uniform_edge_sampling.md)
-- [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](../../CVPR2026/others/crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
+- [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](../../ICLR2026/others/characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
 - [\[AAAI 2026\] DeToNATION: Decoupled Torch Network-Aware Training on Interlinked Online Nodes](detonation_decoupled_torch_network-aware_training_on_interlinked_online_nodes.md)
 
 </div>

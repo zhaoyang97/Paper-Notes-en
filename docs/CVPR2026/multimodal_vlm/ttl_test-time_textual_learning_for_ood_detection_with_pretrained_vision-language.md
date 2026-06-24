@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] Addressing the limitation where existing CLIP-based OOD detection relies on "fixed external OOD labels" that fail to cover the open world, TTL **updates only a set of learnable OOD textual prompts** on the test stream. It employs pseudo-labels to amplify OOD similarity, a purification loss to eliminate noise from ID bo
+  [CVPR 2026][Multimodal VLM][OOD Detection] Addressing the limitation where existing CLIP-based OOD detection relies on "fixed external OOD labels" that fail to cover the open world, TTL **updates only a set of learnable OOD textual prompts** on the test stream. It employs pseudo-labels to amplify OOD similarity, a purification loss to eliminate noise from ID boundary samples, and a textual knowledge base for cross-batch score calibration. TTL reduces the average FPR95 by 12.6…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "CLIP"
+  - "Test-time Adaptation"
+  - "Prompt Learning"
+  - "Pseudo-label Purification"
 date: 2026-05-08
-content_hash: 1ab40fb9ba421bf4
+content_hash: 30973f98dbdd5528
 ---
+
 # TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -172,10 +177,10 @@ Comparison of OKB update strategies (Ours vs. Random/FIFO/Store-All):
 ## Related Papers
 
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[CVPR 2026\] ANTS: Adaptive Negative Textual Space Shaping for OOD Detection via Test-Time MLLM Understanding and Reasoning](ants_adaptive_negative_textual_space_shaping_for_ood_detection_via_test-time_mll.md)
 - [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
-- [\[CVPR 2026\] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining](improving_calibration_in_test-time_prompt_tuning_for_vision-language_models_via_.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
+- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
 
 </div>
 

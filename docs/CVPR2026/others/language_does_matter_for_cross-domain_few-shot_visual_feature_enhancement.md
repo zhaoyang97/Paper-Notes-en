@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement
 description: >-
-  [CVPR 2026][Others][CLIP] To address the issue that "pure visual features easily learn non-transferable shortcut patterns" in cross-domain few-shot tasks, this paper uses image captioning models and Large Language Models (LLMs) to generate "image-level + domain-level" language attributes for each image. A lightweight residual cross-attention me
+  [CVPR 2026][Cross-Domain Few-Shot] To address the issue that "pure visual features easily learn non-transferable shortcut patterns" in cross-domain few-shot tasks, this paper uses image captioning models and Large Language Models (LLMs) to generate "image-level + domain-level" language attributes for each image. A lightweight residual cross-attention mechanism then embeds language semantics into visual features. This plug-and-play module can be integrated into classification…
 tags:
-  - CVPR 2026
-  - Others
-  - CLIP
+  - "CVPR 2026"
+  - "Cross-Domain Few-Shot"
+  - "Language Attributes"
+  - "Residual Cross-Attention"
+  - "CLIP"
+  - "Feature Enhancement"
 date: 2026-05-08
-content_hash: 19d9dc1dc2d3d021
+content_hash: 271d4810f692d4db
 ---
+
 # Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement
 
 **Conference**: CVPR 2026  
@@ -131,10 +135,10 @@ Additional variant comparisons (Table 5) show: ① Even when the baseline is sup
 ## Related Papers
 
 - [\[CVPR 2026\] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification](hyperbolic_defect_feature_synthesis_for_few-shot_defect_classification.md)
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
 - [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](data-centric_meta-learning_for_robust_few-shot_generalization.md)
 - [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
-- [\[CVPR 2026\] DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process](ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin.md)
-- [\[ACL 2025\] ALGEN: Few-Shot Inversion Attacks on Textual Embeddings via Cross-Model Alignment](../../ACL2025/others/algen_few-shot_inversion_attacks_on_textual_embeddings_via_cross-model_alignment.md)
+- [\[CVPR 2026\] Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation](basis-oriented_low-rank_transfer_for_few-shot_and_test-time_adaptation.md)
 
 </div>
 

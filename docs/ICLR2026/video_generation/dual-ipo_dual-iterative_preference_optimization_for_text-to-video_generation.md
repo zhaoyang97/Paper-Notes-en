@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation
 description: >-
-  [ICLR 2026][Video Generation][DPO] The Dual-IPO framework is proposed to continuously improve the quality and human preference alignment of text-to-video generation through multi-round bidirectional iterative optimization between a reward model and a video generation model, enabling a 2B model to surpass a 5B model without massive human annotations.
+  [ICLR 2026][Video Generation][Preference Optimization] The Dual-IPO framework is proposed to continuously improve the quality and human preference alignment of text-to-video generation through multi-round bidirectional iterative optimization between a reward model and a video generation model, enabling a 2B model to surpass a 5B model without massive human annotations.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - DPO
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Preference Optimization"
+  - "Reward Model"
+  - "DPO"
+  - "Iterative Training"
 date: 2026-05-08
-content_hash: f46d87ca48291b25
+content_hash: 58010f4c13523a94
 ---
+
 # Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation
 
 **Conference**: ICLR 2026  
@@ -126,9 +130,9 @@ Training diffusion models on fixed offline preference datasets is prone to overf
 
 - [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
 - [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](../../CVPR2026/video_generation/dual-granularity_memory_for_efficient_video_generation.md)
+- [\[ICLR 2026\] Time-to-Move: Training-Free Motion-Controlled Video Generation via Dual-Clock Denoising](time-to-move_training-free_motion-controlled_video_generation_via_dual-clock_den.md)
 - [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[CVPR 2026\] DynamicsBoost: Dynamic Plausible Video Generation via Annotation-Free Continuation Preference Optimization](../../CVPR2026/video_generation/dynamicsboost_dynamic_plausible_video_generation_via_annotation-free_continuatio.md)
-- [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](../../ICCV2025/video_generation/vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
 
 </div>
 

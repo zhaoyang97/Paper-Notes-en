@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] ThinkingViT integrates a progressive mechanism—"predict quickly with fewer heads, rethink by expanding the sub-network if uncertain"—into a nested ViT. By utilizing Token Recycling to feed features from previous stages into subsequent rounds, it outperforms nested baselines like MatFormer and HydraViT on ImageNet-1K by
+  [CVPR 2026][Model Compression][Nested Transformer] ThinkingViT integrates a progressive mechanism—"predict quickly with fewer heads, rethink by expanding the sub-network if uncertain"—into a nested ViT. By utilizing Token Recycling to feed features from previous stages into subsequent rounds, it outperforms nested baselines like MatFormer and HydraViT on ImageNet-1K by up to 2.0 p.p. under equivalent throughput.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Nested Transformer"
+  - "Elastic Inference"
+  - "Input-Adaptive Computation"
+  - "Token Recycling"
+  - "Entropy Early-Exit"
 date: 2026-05-08
-content_hash: ba21d7287df0eb41
+content_hash: 2058826d2f9dfcca
 ---
+
 # ThinkingViT: Matryoshka Thinking Vision Transformer for Elastic Inference
 
 **Conference**: CVPR 2026  
@@ -139,8 +145,8 @@ Trade-offs in thinking stage configurations (Figure 3):
 ## Related Papers
 
 - [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](../../ICCV2025/model_compression/ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
+- [\[CVPR 2026\] Edge-RecViT: Efficient Vision Transformer via Semantic-Refined Dynamic Recursion](edge-recvit_efficient_vision_transformer_via_semantic-refined_dynamic_recursion.md)
 - [\[CVPR 2026\] LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
 - [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
 - [\[CVPR 2026\] Dual-branch Distilled Transformer for Efficient Asymmetric UAV Tracking](dual-branch_distilled_transformer_for_efficient_asymmetric_uav_tracking.md)
 

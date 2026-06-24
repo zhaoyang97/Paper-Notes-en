@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] URS：统一的神经路由求解器
+  [Paper Note] URS: Unified Neural Routing Solver
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] The authors propose a Unified Data Representation (UDR) and a Mixed Bias Module (MBM) to replace problem enumeration—enabling a single neural model to generalize zero-shot to 110 VRP variants (99 unseen) without fine-tuning.
+  [ICML 2026][Optimization][Routing Problems] The authors propose a Unified Data Representation (UDR) and a Mixed Bias Module (MBM) to replace problem enumeration—enabling a single neural model to generalize zero-shot to 110 VRP variants (99 unseen) without fine-tuning.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Routing Problems"
+  - "Zero-shot Generalization"
+  - "Unified Representation"
+  - "Multi-task Learning"
 date: 2026-05-08
-content_hash: ed9b50e814b784df
+content_hash: e8f9ca39996dc986
 ---
+
 # URS: Unified Neural Routing Solver
 
 **Conference**: ICML 2026  
@@ -123,11 +128,11 @@ While UDR and MBM solve "how to represent the problem," the final step is "how t
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Learning to Insert for Constructive Neural Vehicle Routing Solver](../../NeurIPS2025/optimization/learning_to_insert_for_constructive_neural_vehicle_routing_solver.md)
 - [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
-- [\[ICML 2026\] Towards Understanding Continual Factual Knowledge Acquisition of Language Models: From Theory to Algorithm](towards_understanding_continual_factual_knowledge_acquisition_of_language_models.md)
-- [\[ICML 2026\] Distribution-Free Uncertainty Quantification for Continuous AI Agent Evaluation](distribution-free_uncertainty_quantification_for_continuous_ai_agent_evaluation.md)
-- [\[ICML 2026\] On the Expressive Power of GNNs to Solve Linear SDPs](on_the_expressive_power_of_gnns_to_solve_linear_sdps.md)
-- [\[ICML 2026\] Follow-the-Perturbed-Leader for Decoupled Bandits: Best-of-Both-Worlds and Practicality](follow-the-perturbed-leader_for_decoupled_bandits_best-of-both-worlds_and_practi.md)
+- [\[ICML 2026\] LoRe: Adaptive Interaction-Evaluation Routing with Per-Step Interaction Budgets for Iterative Graph Solvers](lore_adaptive_interaction-evaluation_routing_with_per-step_interaction_budgets_f.md)
+- [\[ICML 2026\] Probing Neural TSP Representations for Prescriptive Decision Support](probing_neural_tsp_representations_for_prescriptive_decision_support.md)
+- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
 
 </div>
 

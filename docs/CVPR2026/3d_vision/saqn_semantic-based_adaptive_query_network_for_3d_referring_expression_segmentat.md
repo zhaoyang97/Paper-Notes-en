@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] SAQN replaces the "point-based query generation" approach in 3D referring expression segmentation with "one learnable query per semantic class." It utilizes a minimal set of queries (21 classes + 10 adaptive queries, totaling 31) to replace the hundreds of queries used in previous works. The Adaptive Query Fusion modul
+  [CVPR 2026][3D Vision][3D Referring Expression Segmentation] SAQN replaces the "point-based query generation" approach in 3D referring expression segmentation with "one learnable query per semantic class." It utilizes a minimal set of queries (21 classes + 10 adaptive queries, totaling 31) to replace the hundreds of queries used in previous works. The Adaptive Query Fusion module resolves ambiguities caused by a single class query representing all identical objects in a scene…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Referring Expression Segmentation"
+  - "Semantic-level Query"
+  - "Adaptive Query"
+  - "Point Cloud Segmentation"
+  - "Vision-Language"
 date: 2026-05-08
-content_hash: 5250d3f6efa89e7a
+content_hash: 5c0cc696fcd5e03e
 ---
+
 # SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,16 @@ Component Ablation (Multi3DRefer, Acc@0.5 Distractor / mIoU):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)
+- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
 - [\[CVPR 2026\] CompetitorFormer: Mitigating Query Conflicts for 3D Instance Segmentation via Competitive Strategy](competitorformer_mitigating_query_conflicts_for_3d_instance_segmentation_via_com.md)
-- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
-- [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
-- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
+- [\[CVPR 2026\] ST4R-Splat: Spatio-Temporal Referring Segmentation in 4D Gaussian Splatting](st4r-splat_spatio-temporal_referring_segmentation_in_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
 
 </div>
 

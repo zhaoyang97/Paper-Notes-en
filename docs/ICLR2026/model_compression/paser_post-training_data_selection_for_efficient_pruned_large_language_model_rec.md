@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper proposes PASER, a post-training data selection method for recovering pruned LLMs. By utilizing manifold learning and spectral clustering to identify capability-related instruction sets and adaptively allocating data budgets based on capability degradation, PASER significantly outperforms full-data recovery u
+  [ICLR 2026][Model Compression][LLM Pruning] This paper proposes PASER, a post-training data selection method for recovering pruned LLMs. By utilizing manifold learning and spectral clustering to identify capability-related instruction sets and adaptively allocating data budgets based on capability degradation, PASER significantly outperforms full-data recovery using only 4%-20% of the original data.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LLM Pruning"
+  - "Data Selection"
+  - "Post-Training Recovery"
+  - "Manifold Learning"
+  - "Capability Degradation-Awareness"
 date: 2026-05-08
-content_hash: 5eea6a60edef6d1e
+content_hash: b45ab362a4aff43b
 ---
+
 # PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery
 
 **Conference**: ICLR 2026  
@@ -156,9 +162,9 @@ Note: **Full-data recovery causes model collapse** (PPL 20→736), whereas PASER
 
 - [\[ICLR 2026\] Quant-dLLM: Post-Training Extreme Low-Bit Quantization for Diffusion Large Language Models](quant-dllm_post-training_extreme_low-bit_quantization_for_diffusion_large_langua.md)
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](../../ICML2026/model_compression/decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
-- [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 
 </div>
 

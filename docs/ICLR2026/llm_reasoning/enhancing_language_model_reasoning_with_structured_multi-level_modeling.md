@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Enhancing Language Model Reasoning with Structured Multi-Level Modeling
 description: >-
-  [ICLR 2026][LLM Reasoning][Multi-Level Reasoning] This work reconstructs single-policy long Chain-of-Thought (CoT) generation into a two-level stochastic process (MLR), where a high-level planner outputs step descriptors and a low-level executor writes detailed content. By using Twisted SMC to construct process-level preferences for iterative Step-DPO, the method enab
+  [ICLR 2026][Reasoning][Multi-Level Reasoning] This work reconstructs single-policy long Chain-of-Thought (CoT) generation into a two-level stochastic process (MLR), where a high-level planner outputs step descriptors and a low-level executor writes detailed content. By using Twisted SMC to construct process-level preferences for iterative Step-DPO, the method enables small models to perform stable long-range reasoning under limited data budgets.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Multi-Level Reasoning
-  - Step-DPO
-  - Twisted Sequential Monte Carlo
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Multi-Level Reasoning"
+  - "Long CoT"
+  - "Hierarchical RL"
+  - "Step-DPO"
+  - "Twisted Sequential Monte Carlo"
 date: 2026-05-08
-content_hash: f20489f4419650fb
+content_hash: de15770eb0137b3a
 ---
+
 # Enhancing Language Model Reasoning with Structured Multi-Level Modeling
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards
 description: >-
-  [ACL 2026][Interpretability][Miracle Steps] This paper identifies the widespread presence of "Miracle Steps"—phenomena where reasoning chains leap to the correct answer without derivation—in current LLM mathematical reasoning. It proposes the Rubric Reward Model (RRM), a process-based reward function using problem-specific scoring rubrics. During RL training, RR
+  [ACL 2026][Interpretability][Mathematical Reasoning] This paper identifies the widespread presence of "Miracle Steps"—phenomena where reasoning chains leap to the correct answer without derivation—in current LLM mathematical reasoning. It proposes the Rubric Reward Model (RRM), a process-based reward function using problem-specific scoring rubrics. During RL training, RRM significantly reduces Miracle Steps by 71% and improves the Verified Pass@1024 on AIME2024 from 26.7% to…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Miracle Steps
+  - "ACL 2026"
+  - "Interpretability"
+  - "Mathematical Reasoning"
+  - "Miracle Steps"
+  - "Reward Hacking"
+  - "Process Rewards"
+  - "Rubric Rewards"
 date: 2026-05-08
-content_hash: b235be2d67f45b05
+content_hash: ba066fc5c2165f4f
 ---
+
 # Curing "Miracle Steps" in LLM Mathematical Reasoning with Rubric Rewards
 
 **Conference**: ACL 2026  
@@ -138,11 +143,11 @@ Standard binary outcome rewards treat all "correct answer" trajectories equally,
 
 ## Related Papers
 
+- [\[ICLR 2026\] Thought Branches: Interpreting LLM Reasoning Requires Resampling](../../ICLR2026/interpretability/thought_branches_interpreting_llm_reasoning_requires_resampling.md)
 - [\[ICML 2025\] Configurable Preference Tuning with Rubric-Guided Synthetic Data](../../ICML2025/interpretability/configurable_preference_tuning_with_rubric-guided_synthetic_data.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
-- [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](../../NeurIPS2025/interpretability/llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
+- [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](../../NeurIPS2025/interpretability/llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
 
 </div>
 

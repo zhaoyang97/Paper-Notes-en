@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences
 description: >-
-  [ICLR 2026][Human Understanding][gait recognition] Ours proposes the Snippet paradigm: organizing gait silhouette sequences into multiple "snippets," where each snippet consists of frames randomly sampled within a continuous interval. This approach balances short-range temporal context with long-range temporal dependencies. Using a 2D convolutional backbone, it achieve
+  [ICLR2026][Human Understanding][gait recognition] Ours proposes the Snippet paradigm: organizing gait silhouette sequences into multiple "snippets," where each snippet consists of frames randomly sampled within a continuous interval. This approach balances short-range temporal context with long-range temporal dependencies. Using a 2D convolutional backbone, it achieves 77.5% Rank-1 on Gait3D, surpassing all 3D convolutional methods.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - gait recognition
-  - snippet paradigm
-  - temporal modeling
-  - silhouette
-  - 2D convolution
+  - "ICLR2026"
+  - "Human Understanding"
+  - "gait recognition"
+  - "snippet paradigm"
+  - "temporal modeling"
+  - "silhouette"
+  - "2D convolution"
 date: 2026-05-08
-content_hash: 727ca073111596d0
+content_hash: c63f2682bab25cdf
 ---
+
 # GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences
 
 **Conference**: ICLR2026  
@@ -152,7 +153,7 @@ Key Findings:
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](../../CVPR2026/human_understanding/eventgait_towards_robust_gait_recognition_with_event_streams.md)
 - [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](../../CVPR2026/human_understanding/hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
 - [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](../../CVPR2026/human_understanding/text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
-- [\[CVPR 2026\] Goldilocks Test Sets for Face Verification](../../CVPR2026/human_understanding/goldilocks_test_sets_for_face_verification.md)
+- [\[CVPR 2026\] Unlocking Motion from Large Vision Models with a Semantic and Kinematic Duality for Gait Recognition](../../CVPR2026/human_understanding/unlocking_motion_from_large_vision_models_with_a_semantic_and_kinematic_duality_.md)
 
 </div>
 

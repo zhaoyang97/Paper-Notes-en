@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective
 description: >-
-  [ICLR 2026][Reinforcement Learning][Q-learning] This paper utilizes path planning on graphs as an analyzable abstraction for language model planning. It theoretically demonstrates that SFT tends to learn co-occurrence memorization, and the advantage of policy gradient primarily stems from exploration but at the cost of output diversity. In contrast, Q-learning with
+  [ICLR 2026][Reinforcement Learning][RL post-training] This paper utilizes path planning on graphs as an analyzable abstraction for language model planning. It theoretically demonstrates that SFT tends to learn co-occurrence memorization, and the advantage of policy gradient primarily stems from exploration but at the cost of output diversity. In contrast, Q-learning with process rewards is shown to potentially maintain correctness, diversity…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Q-learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RL post-training"
+  - "Language model planning"
+  - "Policy gradient"
+  - "Q-learning"
+  - "Diversity collapse"
 date: 2026-05-08
-content_hash: 2638147d46f1ef6c
+content_hash: 34deee177d4921ae
 ---
+
 # Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective
 
 **Conference**: ICLR 2026  
@@ -145,13 +150,20 @@ Ablations focus on KL regularization intensity and reward design. For PG, as $\l
 - **Value**: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Wang et al. 2024b, "Path planning in autoregressive learning"
-- Chu et al. 2024, "RL generalizes, SFT memorizes"
-- Cui et al. 2024, "Entropy mechanisms in reasoning RL"
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)
+- [\[ICLR 2026\] On the Generalization of SFT: A Reinforcement Learning Perspective with Reward Rectification](on_the_generalization_of_sft_a_reinforcement_learning_perspective_with_reward_re.md)
+- [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
+- [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](../../AAAI2026/reinforcement_learning/language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
+- [\[ICLR 2026\] GRACE: A Language Model Framework for Explainable Inverse Reinforcement Learning](grace_a_language_model_framework_for_explainable_inverse_reinforcement_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] The Sample Complexity of Online Reinforcement Learning: A Multi-Model Perspective](the_sample_complexity_of_online_reinforcement_learning_a_multi-model_perspective.md)

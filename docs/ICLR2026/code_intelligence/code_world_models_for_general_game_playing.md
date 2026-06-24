@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Code World Models for General Game Playing
 description: >-
-  [ICLR 2026][Code Intelligence][MCTS] Instead of using the LLM as a direct "player," it is tasked with **translating game rules and a few match trajectories into executable Python Code World Model (CWM)** (including state transitions, legal actions, terminal state detection, plus value functions and hidden state inference functions). This code is then proc
+  [ICLR 2026][Code Intelligence][Code World Models] Instead of using the LLM as a direct "player," it is tasked with **translating game rules and a few match trajectories into executable Python Code World Model (CWM)** (including state transitions, legal actions, terminal state detection, plus value functions and hidden state inference functions). This code is then processed by classical planners like MCTS/ISMCTS for deep search. Across 10 games (including 4 entirely new OOD ga…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - MCTS
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Code World Models"
+  - "General Game Playing"
+  - "MCTS"
+  - "Imperfect Information Games"
+  - "Program Synthesis"
 date: 2026-05-08
-content_hash: e52c6254d1b01474
+content_hash: 1a0fe37fb7ccbd82
 ---
+
 # Code World Models for General Game Playing
 
 **Conference**: ICLR 2026  
@@ -131,8 +136,8 @@ Evaluation covers 10 games (5 perfect information + 5 imperfect information, inc
 
 ## Related Papers
 
-- [\[ICLR 2026\] CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning](codesense_a_real-world_benchmark_and_dataset_for_code_semantic_reasoning.md)
 - [\[ICLR 2026\] EDIT-Bench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits](edit-bench_evaluating_llm_abilities_to_perform_real-world_instructed_code_edits.md)
+- [\[ICLR 2026\] CodeSense: a Real-World Benchmark and Dataset for Code Semantic Reasoning](codesense_a_real-world_benchmark_and_dataset_for_code_semantic_reasoning.md)
 - [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
 - [\[ICLR 2026\] CrossPL: Systematic Evaluation of Large Language Models for Cross Programming Language Interoperating Code Generation](crosspl_systematic_evaluation_of_large_language_models_for_cross_programming_lan.md)
 - [\[ACL 2026\] ReFEree: Reference-Free and Fine-Grained Method for Evaluating Factual Consistency in Real-World Code Summarization](../../ACL2026/code_intelligence/referee_reference-free_and_fine-grained_method_for_evaluating_factual_consistenc.md)

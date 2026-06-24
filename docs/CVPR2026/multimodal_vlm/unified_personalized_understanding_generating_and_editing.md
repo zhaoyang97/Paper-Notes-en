@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified Personalized Understanding, Generating and Editing
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] OmniPersona achieves "personalized understanding, generation, and editing" within a single unified Large Multimodal Model (LMM). By using structurally decoupled concept tokens, the model routes the same concept to different expert subspaces according to the task to reduce mutual interference. It further employs an infe
+  [CVPR 2026][Multimodal VLM][Personalization] OmniPersona achieves "personalized understanding, generation, and editing" within a single unified Large Multimodal Model (LMM). By using structurally decoupled concept tokens, the model routes the same concept to different expert subspaces according to the task to reduce mutual interference. It further employs an inference-time "explicit knowledge recaptioning" mechanism to extract concept attributes through QA before feeding them…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Personalization"
+  - "Unified Multimodal Model"
+  - "Concept Token Decoupling"
+  - "Knowledge Recaptioning"
+  - "Personalized Image Editing"
 date: 2026-05-08
-content_hash: 5fa0292bb25115ce
+content_hash: ccebb8b33091b5bc
 ---
+
 # Unified Personalized Understanding, Generating and Editing
 
 **Conference**: CVPR 2026  
@@ -124,16 +130,16 @@ OmniPersona outperforms Unictoken by +7.8% in recognition and +13.1% in VQA. In 
 - Value: ⭐⭐⭐⭐ Significant push for the "unified personalization" direction with a strong benchmark.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
+- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
 - [\[CVPR 2026\] PersonaVLM: Long-Term Personalized Multimodal LLMs](personavlm_long_term_personalized_multimodal_llms.md)
 - [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
 - [\[CVPR 2026\] Personalized Image Descriptions from Attention Sequences](personalized_image_descriptions_from_attention_sequences.md)
-- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
+- [\[CVPR 2026\] OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation](onecat_decoder-only_auto-regressive_model_for_unified_understanding_and_generati.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] CaT-GS transforms the 3DGS rendering pipeline from "per-frame computation" to "frame-group reuse." By employing speculative multi-frame pre-processing and inter-frame caching, it eliminates redundant view-frustum culling, sorting, and tile intersection across consecutive frames. Combined with a load-aware CUDA kernel s
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] CaT-GS transforms the 3DGS rendering pipeline from "per-frame computation" to "frame-group reuse." By employing speculative multi-frame pre-processing and inter-frame caching, it eliminates redundant view-frustum culling, sorting, and tile intersection across consecutive frames. Combined with a load-aware CUDA kernel split for heavy tiles to balance GPU utilization, it achieves up to a 10× speedup over vanilla 3DGS and is up to 70…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Real-time Rendering"
+  - "Inter-frame Caching"
+  - "Speculative Pre-processing"
+  - "Load Balancing"
 date: 2026-05-08
-content_hash: d5322b3a7625a109
+content_hash: b710f41134344d20
 ---
+
 # CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ CaT-GS exceeds 200 FPS on all large UAV scenes, whereas baselines fail to mainta
 
 ## Related Papers
 
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
+- [\[CVPR 2026\] MetroGS: Efficient and Stable Reconstruction of Geometrically Accurate High-Fidelity Large-Scale Scenes](metrogs_efficient_and_stable_reconstruction_of_geometrically_accurate_high-fidel.md)
+- [\[CVPR 2026\] EDGS: Eliminating Densification for Efficient Convergence of 3DGS](edgs_eliminating_densification_for_efficient_convergence_of_3dgs.md)
+- [\[CVPR 2026\] BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction](bea-gs_beyond_radiance_supervision_in_3dgs_for_precise_object_extraction.md)
+- [\[ICLR 2026\] Implicit 4D Gaussian Splatting for Fast Motion with Large Inter-Frame Displacements](../../ICLR2026/3d_vision/implicit_4d_gaussian_splatting_for_fast_motion_with_large_inter-frame_displaceme.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)
 
 </div>
 

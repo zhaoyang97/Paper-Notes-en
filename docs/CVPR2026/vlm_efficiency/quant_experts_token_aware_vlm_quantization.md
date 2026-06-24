@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization
 description: >-
-  [CVPR 2026][Model Compression][post-training quantization] Quant Experts (QE) is proposed, a token-aware adaptive quantization error reconstruction framework based on Mixture-of-Experts. It partitions important channels into two groups: token-independent (high-frequency, global) and token-dependent (low-frequency, local). These are compensated using low-rank adapters from shar
+  [CVPR 2026][Multimodal Efficiency][post-training quantization] Quant Experts (QE) is proposed, a token-aware adaptive quantization error reconstruction framework based on Mixture-of-Experts. It partitions important channels into two groups: token-independent (high-frequency, global) and token-dependent (low-frequency, local). These are compensated using low-rank adapters from shared and routed experts, respectively, to mitigate global and local quantization errors. QE consist…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - post-training quantization
-  - VLM
-  - MoE
-  - token-aware
-  - low-rank adapter
-  - channel importance
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "post-training quantization"
+  - "VLM"
+  - "MoE"
+  - "token-aware"
+  - "low-rank adapter"
+  - "channel importance"
 date: 2026-05-08
-content_hash: 0e7bac04e6e2463b
+content_hash: ee012d3c095f4175
 ---
+
 # Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization
 
 **Conference**: CVPR 2026  
@@ -155,10 +156,17 @@ Component contribution (Qwen2VL-2B, W4A6):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
+- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
+- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
+- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](../../ICLR2026/model_compression/unveiling_super_experts_in_mixture-of-experts_large_language_models.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Menlo: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages
 description: >-
-  [ICLR 2026][Reinforcement Learning][LLM-as-Judge] The Menlo framework is proposed to decompose native-like response quality into four dimensions based on Audience Design theory. It constructs a dataset of 6,423 annotated preference pairs across 47 language variants and demonstrates that an LLM judge trained with pairwise evaluation and Reinforcement Learning (RL) can
+  [ICLR 2026][Reinforcement Learning][Multilingual Evaluation] The Menlo framework is proposed to decompose native-like response quality into four dimensions based on Audience Design theory. It constructs a dataset of 6,423 annotated preference pairs across 47 language variants and demonstrates that an LLM judge trained with pairwise evaluation and Reinforcement Learning (RL) can achieve performance nearing that of human annotators.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multilingual Evaluation"
+  - "Native-like Quality"
+  - "LLM-as-Judge"
+  - "Preference Learning"
+  - "Audience Design"
 date: 2026-05-08
-content_hash: 91e0e2973064a0ec
+content_hash: 6af789850d9e4c44
 ---
+
 # Menlo: From Preferences to Proficiency – Evaluating and Modeling Native-like Quality Across 47 Languages
 
 **Conference**: ICLR 2026  
@@ -125,7 +130,7 @@ Zero-shot judges, even with pairwise comparison and rubrics, still lag behind hu
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](rm-r1_reward_modeling_as_reasoning.md)
 - [\[ICLR 2026\] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization](autoqd_automatic_discovery_of_diverse_behaviors_with_quality-diversity_optimizat.md)
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](post-training_large_language_models_for_diverse_high-quality_responses.md)
-- [\[ICLR 2026\] Chessformer: A Unified Architecture for Chess Modeling](chessformer_a_unified_architecture_for_chess_modeling.md)
+- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShapeGen4D: Towards High Quality 4D Shape Generation from Videos
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] ShapeGen4D adapts a large-scale pre-trained 3D shape diffusion model into a feed-forward "video-to-4D mesh sequence" generator. By employing temporally aligned latent codes, spatio-temporal attention, and cross-frame shared noise, it end-to-end generates geometrically consistent dynamic mesh sequences capable of handli
+  [ICLR 2026][3D Vision][4D Shape Generation] ShapeGen4D adapts a large-scale pre-trained 3D shape diffusion model into a feed-forward "video-to-4D mesh sequence" generator. By employing temporally aligned latent codes, spatio-temporal attention, and cross-frame shared noise, it end-to-end generates geometrically consistent dynamic mesh sequences capable of handling topological changes and volumetric expansion/contraction, outperforming baselines like L4GM, V2M4…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "4D Shape Generation"
+  - "Video-conditioned Generation"
+  - "Latent Diffusion Transformer"
+  - "Temporal Consistency"
+  - "Mesh Sequences"
 date: 2026-05-08
-content_hash: e8260d6182e474fc
+content_hash: a2a98c8f5d6e9ddd
 ---
+
 # ShapeGen4D: Towards High Quality 4D Shape Generation from Videos
 
 **Conference**: ICLR 2026  
@@ -131,15 +137,15 @@ Components were removed progressively (using 8 frames for efficiency):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
 - [\[ICLR 2026\] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation](ctrlshift_high-quality_geometry-aware_object_manipulation_in_visual_generation.md)
 - [\[AAAI 2026\] 4DSTR: Advancing Generative 4D Gaussians with Spatial-Temporal Rectification for High-Quality and Consistent 4D Generation](../../AAAI2026/3d_vision/4dstr_advancing_generative_4d_gaussians_with_spatial-tempora.md)
 - [\[ICLR 2026\] Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from Alternating-exposure Monocular Videos](mono4dgs-hdr_high_dynamic_range_4d_gaussian_splatting_from_alternating-exposure_.md)
-- [\[ICLR 2026\] Mango-GS: Enhancing Spatio-Temporal Consistency in Dynamic Scenes Reconstruction using Multi-Frame Node-Guided 4D Gaussian Splatting](mango-gs_enhancing_spatio-temporal_consistency_in_dynamic_scenes_reconstruction_.md)
-- [\[CVPR 2026\] Sculpt4D: Generating 4D Shapes via Sparse-Attention Diffusion Transformers](../../CVPR2026/3d_vision/sculpt4d_generating_4d_shapes_via_sparse-attention_diffusion_transformers.md)
+- [\[ICLR 2026\] PAGE-4D: VGGT-4D Perception via Disentangled Pose and Geometry Estimation](page-4d_vggt-4d_perception_via_disentangled_pose_and_geometry_estimation.md)
 
 </div>
 

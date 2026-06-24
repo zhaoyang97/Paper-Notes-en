@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Planning with an Embodied Learnable Memory
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLM] This paper proposes EPM (Embodied Perception Memory)—a learnable memory that uses a single VLM to maintain a "textual scene representation" through add/delete/update operations from first-person observations. Combined with "human demonstration imitation + Dynamic Difficulty-Aware Fine-Tuning (DDAFT)", the LLM planner a
+  [ICLR 2026][Robotics][Embodied Memory] This paper proposes EPM (Embodied Perception Memory)—a learnable memory that uses a single VLM to maintain a "textual scene representation" through add/delete/update operations from first-person observations. Combined with "human demonstration imitation + Dynamic Difficulty-Aware Fine-Tuning (DDAFT)", the LLM planner achieves up to a 55% success rate improvement over strong baselines on long-horizon mobile manipulation tasks in dynamic h…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLM
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Robotics"
+  - "Embodied Memory"
+  - "Mobile Manipulation"
+  - "VLM"
+  - "Task Planning"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 980f38f966eacfbb
+content_hash: b71cb2f806357151
 ---
+
 # Planning with an Embodied Learnable Memory
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Barriers to Counterfactual Credit Attribution for Autoregressive Models
 description: >-
-  [ICML 2026][Image Generation][RAG] This paper formally investigates the problem of "Counterfactual Credit Attribution (CCA)" for generative models in RAG/in-context deployment. It proves two surprising negative results: (1) An autoregressive rollout is not necessarily CCA even if the underlying next-token predictor is $(0,0)$-CCA—CCA does not compose na
+  [ICML 2026][Image Generation][Counterfactual Credit Attribution] This paper formally investigates the problem of "Counterfactual Credit Attribution (CCA)" for generative models in RAG/in-context deployment. It proves two surprising negative results: (1) An autoregressive rollout is not necessarily CCA even if the underlying next-token predictor is $(0,0)$-CCA—CCA does not compose naturally under autoregression like DP does; (2) Black-box "CCA retrofitting" for a deployed non-…
 tags:
-  - ICML 2026
-  - Image Generation
-  - RAG
+  - "ICML 2026"
+  - "Image Generation"
+  - "Counterfactual Credit Attribution"
+  - "Differential Privacy"
+  - "Autoregressive Models"
+  - "RAG"
+  - "Infeasibility Lower Bounds"
 date: 2026-05-08
-content_hash: 350c3b4edd5dc497
+content_hash: 20ba8d9fc173cfa1
 ---
+
 # Barriers to Counterfactual Credit Attribution for Autoregressive Models
 
 **Conference**: ICML 2026  
@@ -111,10 +116,10 @@ The paper uses "tightening cases" instead of traditional ablations:
 ## Related Papers
 
 - [\[ICML 2026\] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning](guda_counterfactual_group-wise_training_data_attribution_for_diffusion_models_vi.md)
-- [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](../../ICLR2026/image_generation/pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
+- [\[CVPR 2026\] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](../../CVPR2026/image_generation/attribution_as_retrieval_modelagnostic_aigenerated.md)
 - [\[ICML 2026\] Visual Implicit Autoregressive Modeling](visual_implicit_autoregressive_modeling.md)
 - [\[ICLR 2026\] DoFlow: Flow-based Generative Models for Interventional and Counterfactual Forecasting](../../ICLR2026/image_generation/doflow_flow-based_generative_models_for_interventional_and_counterfactual_foreca.md)
-- [\[CVPR 2026\] Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](../../CVPR2026/image_generation/attribution_as_retrieval_modelagnostic_aigenerated.md)
+- [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](../../ICLR2026/image_generation/pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
 
 </div>
 

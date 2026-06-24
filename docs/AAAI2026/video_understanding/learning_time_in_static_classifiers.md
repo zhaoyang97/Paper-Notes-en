@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Time in Static Classifiers
 description: >-
-  [AAAI 2026][Video Understanding][temporal reasoning] This paper proposes the Support-Exemplar-Query (SEQ) learning framework, which injects temporal reasoning capabilities into standard feed-forward classifiers through l…
+  [AAAI 2026][Video Understanding][temporal reasoning] This paper proposes the Support-Exemplar-Query (SEQ) learning framework, which injects temporal reasoning capabilities into standard feed-forward classifiers through loss function design rather than architectural modification. By aligning predicted sequences with class-level temporal prototypes via soft DTW, the method achieves consistent improvements on both fine-grained image classification and video anomaly detection.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "temporal prototype alignment"
   - "video anomaly detection"
 date: 2026-05-08
-content_hash: 65f5a3de642ae8ee
+content_hash: 8e24f835ee74d375
 ---
 
 # Learning Time in Static Classifiers
@@ -137,11 +137,11 @@ $$\mathcal{L} = \mathcal{L}_{\text{align}} + \alpha \mathcal{L}_{\text{CE}} + \b
 
 ## Related Papers
 
-- [\[ACL 2026\] ArrowGEV: Grounding Events in Video via Learning the Arrow of Time](../../ACL2026/video_understanding/arrowgev_grounding_events_in_video_via_learning_the_arrow_of_time.md)
+- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](../../CVPR2026/video_understanding/a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
+- [\[ICLR 2026\] StPR: Space-Time Preserving and Routing for Exemplar-Free Video Class-Incremental Learning](../../ICLR2026/video_understanding/stpr_spatiotemporal_preservation_and_routing_for_exemplar-free_video_class-incre.md)
+- [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](../../CVPR2026/video_understanding/beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
 - [\[AAAI 2026\] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos](uncovering_zero-shot_generalization_gaps_in_time-series_foundation_models_using_.md)
 - [\[CVPR 2026\] Envisioning the Future, One Step at a Time](../../CVPR2026/video_understanding/envisioning_the_future_one_step_at_a_time.md)
-- [\[AAAI 2026\] Learning Topology-Driven Multi-Subspace Fusion for Grassmannian Deep Networks](learning_topology-driven_multi-subspace_fusion_for_grassmannian_deep_network.md)
-- [\[AAAI 2026\] SUGAR: Learning Skeleton Representation with Visual-Motion Knowledge for Action Recognition](sugar_learning_skeleton_representation_with_visual-motion_knowledge_for_action_r.md)
 
 </div>
 

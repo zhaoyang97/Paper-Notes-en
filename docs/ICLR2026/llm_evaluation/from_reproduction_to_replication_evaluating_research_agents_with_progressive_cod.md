@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] From Reproduction to Replication: Evaluating Research Agents with Progressive Code Masking
 description: >-
-  [ICLR 2026][LLM Evaluation][Pass@k] The AUTOEXPERIMENT benchmark is proposed: an Agent is provided with a paper, a codebase with several core functions "progressively masked," and execution commands. The Agent must complete the missing code, run experiments, and report results. By adjusting the number of masked functions $n$, the benchmark continuously i
+  [ICLR 2026][LLM Evaluation][Research Agent] The AUTOEXPERIMENT benchmark is proposed: an Agent is provided with a paper, a codebase with several core functions "progressively masked," and execution commands. The Agent must complete the missing code, run experiments, and report results. By adjusting the number of masked functions $n$, the benchmark continuously interpolates between "reproduction" and "replication," quantifying the true capability boundaries of research Agents.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Pass@k
-  - Test-Time Compute
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Research Agent"
+  - "Experimental Reproduction"
+  - "Progressive Code Masking"
+  - "Pass@k"
+  - "Interactive Agent"
+  - "Test-time Computation"
 date: 2026-05-08
-content_hash: 426d10113ab14d6b
+content_hash: 354913d134d98ffe
 ---
+
 # From Reproduction to Replication: Evaluating Research Agents with Progressive Code Masking
 
 **Conference**: ICLR 2026  

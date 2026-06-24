@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Minimum-Cost Network Flow with Dual Predictions
 description: >-
-  [AAAI 2026][Autonomous Driving][Minimum-cost flow] This paper presents the first learning-augmented algorithm for minimum-cost network flow (MCF) based on dual predictions. By warm-starting the classical ε-relaxation alg…
+  [AAAI 2026][Autonomous Driving][Minimum-cost flow] This paper presents the first learning-augmented algorithm for minimum-cost network flow (MCF) based on dual predictions. By warm-starting the classical ε-relaxation algorithm with machine-learned dual solutions, the proposed method ties its complexity bound to the $\ell_\infty$-norm of the prediction error (achieving both consistency and robustness), and demonstrates average speedups of 12.74× on traffic networks and 1.64× o…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -13,7 +13,7 @@ tags:
   - "chip routing"
   - "traffic networks"
 date: 2026-05-08
-content_hash: 61b1816ae699d617
+content_hash: 77c7b6f1a9181853
 ---
 
 # Minimum-Cost Network Flow with Dual Predictions
@@ -133,7 +133,7 @@ The core idea is that ε-relaxation maintains a pair $(x,p)$ satisfying ε-compl
 - [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
 - [\[AAAI 2026\] Debiased Dual-Invariant Defense for Adversarially Robust Person Re-Identification](debiased_dual-invariant_defense_for_adversarially_robust_person_re-identificatio.md)
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
-- [\[AAAI 2026\] AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead](ai-based_traffic_modeling_for_network_security_and_privacy_challenges_ahead.md)
+- [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
 
 </div>
 

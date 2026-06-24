@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions
 description: >-
-  [NeurIPS 2025][Video Understanding][Multi-Moment Retrieval] This paper proposes the QV-M2 dataset (the first fully human-annotated multi-moment retrieval benchmark) and the FlashMMR framework (incorporating a Post-Verifi…
+  [NeurIPS 2025][Video Understanding][Multi-Moment Retrieval] This paper proposes the QV-M2 dataset (the first fully human-annotated multi-moment retrieval benchmark) and the FlashMMR framework (incorporating a Post-Verification Module), extending video moment retrieval from single-moment to multi-moment scenarios and establishing a standardized evaluation protocol for multi-moment retrieval.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Post-Verification Module"
   - "Moment Retrieval"
 date: 2026-05-08
-content_hash: a6ca3b5076890df6
+content_hash: 8b062451de8186f6
 ---
 
 # When One Moment Isn't Enough: Multi-Moment Retrieval with Cross-Moment Interactions
@@ -176,9 +176,9 @@ The representation learning loss $\mathcal{L}_{\text{repr}} = \sum_i \text{CE}(\
 
 - [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](../../ICCV2025/video_understanding/moment_quantization_for_video_temporal_grounding.md)
 - [\[NeurIPS 2025\] MUVR: A Multi-Modal Untrimmed Video Retrieval Benchmark with Multi-Level Visual Correspondence](muvr_a_multi-modal_untrimmed_video_retrieval_benchmark_with_multi-level_visual_c.md)
-- [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](token_bottleneck_one_token_to_remember_dynamics.md)
 - [\[NeurIPS 2025\] When Thinking Drifts: Evidential Grounding for Robust Video Reasoning](when_thinking_drifts_evidential_grounding_for_robust_video_reasoning.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
+- [\[NeurIPS 2025\] Token Bottleneck: One Token to Remember Dynamics](token_bottleneck_one_token_to_remember_dynamics.md)
+- [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
 
 </div>
 

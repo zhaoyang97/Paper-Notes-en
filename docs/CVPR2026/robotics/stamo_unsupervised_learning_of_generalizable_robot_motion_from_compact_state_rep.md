@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][World Models] StaMo utilizes a lightweight encoder and a pre-trained DiT decoder to unsupervisedly compress a static image into a compact state representation of only two 1024-dimensional tokens. It proves that the "difference between two state tokens" naturally serves as an executable robot action (latent action). Without any video
+  [CVPR 2026][Robotics][Compact State Representation] StaMo utilizes a lightweight encoder and a pre-trained DiT decoder to unsupervisedly compress a static image into a compact state representation of only two 1024-dimensional tokens. It proves that the "difference between two state tokens" naturally serves as an executable robot action (latent action). Without any video or temporal modeling, it improves VLA performance on LIBERO by 11.6% and increases the success rate on real…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - World Models
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "Compact State Representation"
+  - "Latent Action"
+  - "Diffusion Autoencoder"
+  - "World Model"
+  - "VLA"
 date: 2026-05-08
-content_hash: 689a36e3e4637eac
+content_hash: 656aa9dfdef668c2
 ---
+
 # StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation
 
 **Conference**: CVPR 2026  
@@ -148,11 +152,20 @@ Real-world success rate increased from 0.25 to 0.56 (+31 points).
 - **Value**: ⭐⭐⭐⭐⭐ High practical value for robot learning by enabling the use of unlabeled video data with zero inference overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
+- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
+- [\[CVPR 2026\] Rethinking Intermediate Representation for VLM-based Robot Manipulation](rethinking_intermediate_representation_for_vlm-based_robot_manipulation.md)
+- [\[CVPR 2026\] Chain of World: World Model Thinking in Latent Motion (CoWVLA)](chain_of_world_world_model_thinking_in_latent_motion.md)
+- [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)

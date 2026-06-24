@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Certified Circuits: Stability Guarantees for Mechanistic Circuits
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The authors propose the Certified Circuits framework, which provides provable dataset-level stability guarantees for circuit discovery in mechanistic interpretability via deletion-based randomized smoothing. This ensures that discovered circuits remain invariant under bounded edit distance perturbations of the concept
+  [ICML 2026][Interpretability][Mechanistic Interpretability] The authors propose the Certified Circuits framework, which provides provable dataset-level stability guarantees for circuit discovery in mechanistic interpretability via deletion-based randomized smoothing. This ensures that discovered circuits remain invariant under bounded edit distance perturbations of the concept dataset, resulting in more compact, accurate circuits with superior OOD generalization.
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Mechanistic Interpretability"
+  - "Circuit Discovery"
+  - "Randomized Smoothing"
+  - "Robustness Certification"
+  - "Dataset Stability"
 date: 2026-05-08
-content_hash: a43e97f7bb8d223c
+content_hash: 3a58d45143d181c0
 ---
+
 # Certified Circuits: Stability Guarantees for Mechanistic Circuits
 
 **Conference**: ICML 2026  
@@ -119,10 +125,10 @@ Experiments cover three architectures (ResNet-101/50, ViT-B/16, GPT-2 Small) acr
 ## Related Papers
 
 - [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
-- [\[ACL 2025\] Reasoning Circuits in Language Models: A Mechanistic Interpretation of Syllogistic Inference](../../ACL2025/interpretability/reasoning_circuits_in_language_models_a_mechanistic_interpretation_of_syllogisti.md)
 - [\[ICML 2026\] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs](all_circuits_lead_to_rome_rethinking_functional_anisotropy_in_circuit_and_sheaf_.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
-- [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](../../ICCV2025/interpretability/granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
+- [\[ACL 2025\] Reasoning Circuits in Language Models: A Mechanistic Interpretation of Syllogistic Inference](../../ACL2025/interpretability/reasoning_circuits_in_language_models_a_mechanistic_interpretation_of_syllogisti.md)
+- [\[NeurIPS 2025\] Discovering Transformer Circuits via a Hybrid Attribution and Pruning Framework](../../NeurIPS2025/interpretability/discovering_transformer_circuits_via_a_hybrid_attribution_and_pruning_framework.md)
 
 </div>
 

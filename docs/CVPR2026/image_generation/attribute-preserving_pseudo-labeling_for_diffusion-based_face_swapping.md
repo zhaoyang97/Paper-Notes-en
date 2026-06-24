@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] APPLE utilizes a pure diffusion teacher-student framework for face swapping by training a precise teacher to generate high-quality pseudo-labels for the student. The teacher employs **conditional deblurring** (instead of full-face masking) to preserve the target's skin tone, lighting, and pose, while **attribute-aware
+  [CVPR 2026][Image Generation][Face Swapping] APPLE utilizes a pure diffusion teacher-student framework for face swapping by training a precise teacher to generate high-quality pseudo-labels for the student. The teacher employs **conditional deblurring** (instead of full-face masking) to preserve the target's skin tone, lighting, and pose, while **attribute-aware inversion** anchors fine-grained attributes (makeup, glasses) into the noise to produce clean pseudo-labels. The st…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Face Swapping"
+  - "Diffusion Models"
+  - "Teacher-Student"
+  - "Attribute Preservation"
+  - "Pseudo-labeling"
 date: 2026-05-08
-content_hash: 31cfc779209937fb
+content_hash: af49e2912b1dd0a5
 ---
+
 # Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ Pseudo-label quality comparison (Student metrics using different teachers): Face
 - Value: ⭐⭐⭐⭐ Excellent deployment potential and a transferable paradigm for pseudo-supervision.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
 - [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
-- [\[CVPR 2026\] Say Cheese! Detail-Preserving Portrait Collection Generation via Natural Language Edits](say_cheese_detail-preserving_portrait_collection_generation_via_natural_language.md)
-- [\[CVPR 2026\] Reviving ConvNeXt for Efficient Convolutional Diffusion Models](reviving_convnext_for_efficient_convolutional_diffusion_models.md)
+- [\[CVPR 2026\] Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization](omni-attribute_open-vocabulary_attribute_encoder_for_visual_concept_personalizat.md)
+- [\[CVPR 2026\] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)
+- [\[CVPR 2026\] All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)
 
 </div>
 

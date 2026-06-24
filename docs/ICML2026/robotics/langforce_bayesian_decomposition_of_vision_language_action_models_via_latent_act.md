@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] LangForce formulates the VLA policy as a Bayesian decomposition $\pi(a\mid v,\ell)=p(\ell\mid a,v)\,p(a\mid v)/p(\ell\mid v)$. By introducing learnable Latent Action Queries, it executes both "vision-only" and "vision+language" branches using a single set of VLM weights. It explicitly penalizes "visual shortcuts" by ma
+  [ICML 2026][Robotics][VLA] LangForce formulates the VLA policy as a Bayesian decomposition $\pi(a\mid v,\ell)=p(\ell\mid a,v)\,p(a\mid v)/p(\ell\mid v)$. By introducing learnable Latent Action Queries, it executes both "vision-only" and "vision+language" branches using a single set of VLM weights. It explicitly penalizes "visual shortcuts" by maximizing the log-likelihood ratio between actions and instructions, achieving an 11.3 percentage point absolute improvement over the…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "visual shortcuts"
+  - "Bayesian decomposition"
+  - "latent action queries"
+  - "pointwise mutual information"
 date: 2026-05-08
-content_hash: 436dc6f1f1a043f4
+content_hash: 2841b9a7d9922f44
 ---
+
 # LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries
 
 **Conference**: ICML 2026

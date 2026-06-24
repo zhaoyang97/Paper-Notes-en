@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rectifying LLM Thought from Lens of Optimization
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] This paper analogizes the reasoning process of long Chain-of-Thought (CoT) to a "gradient descent" process and proposes REPRO. Using the model's log-likelihood of the correct answer as a proxy objective function, it synthesizes process-level rewards from two scores (Magnitude and Stability) along the reasoning trajecto
+  [ICLR 2026][Reasoning][Long Chain-of-Thought] This paper analogizes the reasoning process of long Chain-of-Thought (CoT) to a "gradient descent" process and proposes REPRO. Using the model's log-likelihood of the correct answer as a proxy objective function, it synthesizes process-level rewards from two scores (Magnitude and Stability) along the reasoning trajectory. These rewards are integrated into RLVR training, consistently improving reasoning accuracy across math…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Long Chain-of-Thought"
+  - "Process-level Reward"
+  - "RLVR"
+  - "Overthinking"
+  - "Optimization Perspective"
 date: 2026-05-08
-content_hash: 83fa4856cc3bdfe8
+content_hash: a08cdfdf6e89681f
 ---
+
 # Rectifying LLM Thought from Lens of Optimization
 
 **Conference**: ICLR 2026  
@@ -140,9 +145,9 @@ REPRO provides consistent gains across all four RL algorithms. Improvements gene
 
 - [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICLR 2026\] Asymmetric Proximal Policy Optimization: Mini-Critics Boost LLM Reasoning](asymmetric_proximal_policy_optimization_mini-critics_boost_llm_reasoning.md)
+- [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
 - [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
-- [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
 
 </div>
 

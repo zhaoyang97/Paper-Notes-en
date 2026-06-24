@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes a new task called Forgery Attribution Report Generation and constructs the MMTT dataset containing 152,217 samples (the first large-scale facial forgery dataset providing both pixel-level masks and human text descriptions). It further introduces ForgeryTalker, an end-to-end baseline that jointly gen
+  [ACL 2026][LLM Safety][Facial forgery detection] This paper proposes a new task called Forgery Attribution Report Generation and constructs the MMTT dataset containing 152,217 samples (the first large-scale facial forgery dataset providing both pixel-level masks and human text descriptions). It further introduces ForgeryTalker, an end-to-end baseline that jointly generates localization masks and attribution reports via a shared encoder and dual decoders (mask + language model…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Facial forgery detection"
+  - "attribution report generation"
+  - "multimodal forensics"
+  - "image manipulation localization"
+  - "explainable AI"
 date: 2026-05-08
-content_hash: 067560805a86371c
+content_hash: 4ef2f783aaedf435
 ---
+
 # ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images
 
 **Conference**: ACL 2026  
@@ -136,10 +142,10 @@ Pre-training stage loss: $\mathcal{L} = \mathcal{L}_{mlm} + \mathcal{L}_{lm} + \
 ## Related Papers
 
 - [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](de-anonymization_at_scale_via_tournament-style_attribution.md)
-- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 - [\[ICLR 2026\] Automatic Dialectic Jailbreak: A Framework for Generating Effective Jailbreak Strategies](../../ICLR2026/llm_safety/automatic_dialectic_jailbreak_a_framework_for_generating_effective_jailbreak_str.md)
+- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](../../ICLR2026/llm_safety/reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
-- [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](../../NeurIPS2025/llm_safety/attention_your_vision_language_model_could_be_maliciously_manipulated.md)
+- [\[ICLR 2026\] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated](../../ICLR2026/llm_safety/ghost_in_the_cloud_your_geo-distributed_large_language_models_training_is_easily.md)
 
 </div>
 

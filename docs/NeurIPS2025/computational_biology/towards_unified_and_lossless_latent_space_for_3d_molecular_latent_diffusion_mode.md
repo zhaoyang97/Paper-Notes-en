@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling
 description: >-
-  [NeurIPS 2025][Computational Biology][3D molecule generation] This paper proposes UAE-3D, a multimodal variational autoencoder that compresses atomic types, chemical bonds, and 3D coordinates of molecules into a unified…
+  [NeurIPS 2025][Computational Biology][3D molecule generation] This paper proposes UAE-3D, a multimodal variational autoencoder that compresses atomic types, chemical bonds, and 3D coordinates of molecules into a unified, near-lossless latent space. By eliminating the complexity of handling multimodality and equivariance, a general-purpose Diffusion Transformer achieves state-of-the-art 3D molecular generation.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "drug discovery"
   - "SE(3) equivariance"
 date: 2026-05-08
-content_hash: 13251eacdde5d635
+content_hash: dd109318e1dafb28
 ---
 
 # Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling
@@ -142,8 +142,8 @@ DiT vs. other diffusion backbones (QM9):
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
 - [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
 - [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+- [\[ICML 2025\] LDMol: A Text-to-Molecule Diffusion Model with Structurally Informative Latent Space Surpasses AR Models](../../ICML2025/computational_biology/ldmol_a_text-to-molecule_diffusion_model_with_structurally_informative_latent_sp.md)
 - [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](edbench_large-scale_electron_density_data_for_molecular_modeling.md)
-- [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
 
 </div>
 

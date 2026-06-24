@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prime Once, then Reprogram Locally: An Efficient Alternative to Black-Box Service Model Adaptation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes AReS, a method that replaces the continuous API calls of traditional Zero-Order Optimization (ZOO) with a single-query API priming of a local encoder. It achieves a +27.8% gain on GPT-4o (where ZOO methods are nearly ineffective) while reducing API calls by over 99.99%, enabling cost-free inference.
+  [CVPR 2026][Multimodal VLM][Model-as-a-Service] This paper proposes AReS, a method that replaces the continuous API calls of traditional Zero-Order Optimization (ZOO) with a single-query API priming of a local encoder. It achieves a +27.8% gain on GPT-4o (where ZOO methods are nearly ineffective) while reducing API calls by over 99.99%, enabling cost-free inference.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Model-as-a-Service"
+  - "Black-box Adaptation"
+  - "Visual Reprogramming"
+  - "Zero-order Optimization"
+  - "API Efficiency"
 date: 2026-05-08
-content_hash: e17d16597cff2f20
+content_hash: 6939b1c0f7276ad7
 ---
+
 # Prime Once, then Reprogram Locally: An Efficient Alternative to Black-Box Service Model Adaptation
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ Priming phase: KL divergence loss, Adam optimizer with lr=0.001. Reprogramming p
 
 ## Related Papers
 
-- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
 - [\[CVPR 2026\] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer](decoupled_and_reusable_adaptation_for_efficient_cross-modal_transfer.md)
+- [\[ACL 2026\] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval](../../ACL2026/multimodal_vlm/sculpting_the_vector_space_towards_efficient_multi-vector_visual_document_retrie.md)
+- [\[CVPR 2026\] Efficient Encoder-Free Fourier-based 3D Large Multimodal Model](efficient_encoder-free_fourier-based_3d_large_multimodal_model.md)
 - [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
-- [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
 
 </div>
 

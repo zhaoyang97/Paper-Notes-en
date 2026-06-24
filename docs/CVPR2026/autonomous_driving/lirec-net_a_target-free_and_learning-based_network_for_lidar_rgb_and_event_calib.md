@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes LiREC-Net, the first unified framework to simultaneously perform target-free extrinsic calibration for LiDAR-RGB and LiDAR-Event cameras. By utilizing a shared LiDAR representation (fusing 3D point features and projected depth features) and paired cost volumes for cross-modal alignment, it achieves calibr
+  [CVPR 2026][Autonomous Driving][Multi-sensor calibration] Ours proposes LiREC-Net, the first unified framework to simultaneously perform target-free extrinsic calibration for LiDAR-RGB and LiDAR-Event cameras. By utilizing a shared LiDAR representation (fusing 3D point features and projected depth features) and paired cost volumes for cross-modal alignment, it achieves calibration accuracies of 1.80cm/0.11° on KITTI, and 2.51cm/0.14° (LiDAR-RGB) and 1.18cm/0.07° (LiDAR-Event)…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Multi-sensor calibration"
+  - "Target-free calibration"
+  - "Tri-modal fusion"
+  - "Event camera"
+  - "Extrinsic estimation"
 date: 2026-05-08
-content_hash: 4fe852931a1bc765
+content_hash: 7bd7c14c9a86ffe2
 ---
+
 # LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration
 
 **Conference**: CVPR 2026  
@@ -190,9 +196,9 @@ Training details: Adam optimizer, lr=3e-4 with milestone decay (×0.5); 150 epoc
 
 - [\[CVPR 2026\] DSERT-RoLL: Robust Multi-Modal Perception for Diverse Driving Conditions with Stereo Event-RGB-Thermal Cameras, 4D Radar, and Dual-LiDAR](dsert-roll_robust_multi-modal_perception_for_diverse_driving_conditions_with_ste.md)
 - [\[CVPR 2026\] Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos](learning_to_drive_is_a_free_gift_large-scale_label-free_autonomy_pretraining_fro.md)
-- [\[CVPR 2026\] EventDrive: Event Cameras for Vision-Language Driving Intelligence](eventdrive_event_cameras_for_vision-language_driving_intelligence.md)
 - [\[CVPR 2026\] SG-NLF: Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](sgnlf_spectralgeometric_neural_fields_for_posefre.md)
 - [\[CVPR 2026\] FlashCap: Millisecond-Accurate Human Motion Capture via Flashing LEDs and Event-Based Vision](flashcap_millisecond-accurate_human_motion_capture_via_flashing_leds_and_event-b.md)
+- [\[CVPR 2025\] RC-AutoCalib: An End-to-End Radar-Camera Automatic Calibration Network](../../CVPR2025/autonomous_driving/rc-autocalib_an_end-to-end_radar-camera_automatic_calibration_network.md)
 
 </div>
 

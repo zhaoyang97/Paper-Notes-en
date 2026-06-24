@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GeoRC: A Benchmark for Geolocation Reasoning Chains
 description: >-
-  [ACL 2026][vlm_reasoning][GeoGuessr] Proposes GeoRC, the first geolocation reasoning chain benchmark written by GeoGuessr champion-level experts (800 reasoning chains, 500 scenes). It evaluates the ability of VLMs to generate auditable reasoning chains, finding that while closed-source VLMs can match human localization accuracy, the quality of their reaso
+  [ACL 2026][VLM Reasoning][Geolocation] Proposes GeoRC, the first geolocation reasoning chain benchmark written by GeoGuessr champion-level experts (800 reasoning chains, 500 scenes). It evaluates the ability of VLMs to generate auditable reasoning chains, finding that while closed-source VLMs can match human localization accuracy, the quality of their reasoning chains lags significantly, while open-source VLMs are almost equivalent to a pure hallucination baseline.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - GeoGuessr
-  - Interpretability
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Geolocation"
+  - "Reasoning Chains"
+  - "VLM Evaluation"
+  - "GeoGuessr"
+  - "Explainability"
 date: 2026-05-08
-content_hash: 3ca291a8551cc526
+content_hash: bf45d234bf6f4bd2
 ---
+
 # GeoRC: A Benchmark for Geolocation Reasoning Chains
 
 **Conference**: ACL 2026  
@@ -114,11 +118,11 @@ The Hallucination baseline is the most diagnostic: it represents the score achie
 
 ## Related Papers
 
-- [\[ACL 2026\] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](mmerror_a_benchmark_for_erroneous_reasoning_in_vision-language_models.md)
+- [\[ICLR 2026\] Read the Room: Video Social Reasoning with Mental-Physical Causal Chains](../../ICLR2026/vlm_reasoning/read_the_room_video_social_reasoning_with_mental-physical_causal_chains.md)
 - [\[CVPR 2026\] ReaGEN: Adaptive Generation of Structured Chains-of-Thought for Efficient Multimodal Reasoning](../../CVPR2026/vlm_reasoning/reagen_adaptive_generation_of_structured_chains-of-thought_for_efficient_multimo.md)
+- [\[ACL 2026\] MMErroR: A Benchmark for Erroneous Reasoning in Vision-Language Models](mmerror_a_benchmark_for_erroneous_reasoning_in_vision-language_models.md)
 - [\[ACL 2026\] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning](decoding_scientific_experimental_images_the_spur_benchmark_for_perception_unders.md)
 - [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
-- [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](../../AAAI2026/vlm_reasoning/crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
 
 </div>
 

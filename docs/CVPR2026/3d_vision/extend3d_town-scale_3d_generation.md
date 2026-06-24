@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Extend3D: Town-Scale 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes Extend3D, a training-free 3D scene generation pipeline. By extending the voxel latent space of a pre-trained object-level 3D generative model (Trellis) and introducing joint denoising of overlapping patches, under-noising SDEdit initialization, and 3D-aware optimization, it generates town-scale larg
+  [CVPR 2026][3D Vision][3D Scene Generation] This paper proposes Extend3D, a training-free 3D scene generation pipeline. By extending the voxel latent space of a pre-trained object-level 3D generative model (Trellis) and introducing joint denoising of overlapping patches, under-noising SDEdit initialization, and 3D-aware optimization, it generates town-scale large 3D scenes from a single image. It outperforms existing methods in both human preference and quantitative evaluatio…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Scene Generation"
+  - "Large-scale Scenes"
+  - "Training-free"
+  - "Extended Latent Space"
+  - "Voxel Generation"
 date: 2026-05-08
-content_hash: 9d79f170f1ffc849
+content_hash: db2803281d2b8564
 ---
+
 # Extend3D: Town-Scale 3D Generation
 
 **Conference**: CVPR 2026  
@@ -149,16 +155,15 @@ The process is training-free. Optimization losses are applied only during infere
 
 ## Related Papers
 
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
+- [\[CVPR 2026\] WonderZoom: Multi-Scale 3D World Generation](wonderzoom_multi-scale_3d_world_generation.md)
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](lattice_democratize_high-fidelity_3d_generation_at_scale.md)
+- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] WonderZoom: Multi-Scale 3D World Generation](wonderzoom_multi-scale_3d_world_generation.md)

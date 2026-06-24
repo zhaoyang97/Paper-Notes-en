@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaSpec: Adaptive Spectrum for Enhanced Node Distinguishability
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper characterizes the expressive power of spectral GNNs from the perspective of "node distinguishability." It proves that the lower bound of distinguishable nodes is jointly determined by the number of distinct eigenvalues of the graph matrix and the number of non-zero frequency components of node features. Base
+  [ICLR 2026][Graph Learning][Spectral GNNs] This paper characterizes the expressive power of spectral GNNs from the perspective of "node distinguishability." It proves that the lower bound of distinguishable nodes is jointly determined by the number of distinct eigenvalues of the graph matrix and the number of non-zero frequency components of node features. Based on this, the authors propose AdaSpec, a plug-and-play adaptive graph matrix generation module that significantly en…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Spectral GNNs"
+  - "Node Distinguishability"
+  - "Graph Matrix Generation"
+  - "Feature Frequency"
+  - "Permutation Equivariance"
 date: 2026-05-08
-content_hash: 91e011229a9f1761
+content_hash: c1c84e0c8aea25f2
 ---
+
 # AdaSpec: Adaptive Spectrum for Enhanced Node Distinguishability
 
 **Conference**: ICLR 2026  
@@ -115,15 +121,15 @@ Decomposition of the three components using ChebNet + AdaSpec:
 - Value: ⭐⭐⭐⭐ Practical, plug-and-play, and provides a framework for quantifying expressivity.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Low-Rank Few-Shot Node Classification by Node-Level Graph Diffusion](low-rank_few-shot_node_classification_by_node-level_graph_diffusion.md)
+- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
 - [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[ICLR 2026\] Revisiting Node Affinity Prediction in Temporal Graphs](revisting_node_affinity_prediction_in_temporal_graphs.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](../../ICML2026/graph_learning/full-spectrum_graph_neural_network_expressive_and_scalable.md)
 - [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](forest-based_graph_learning_for_semi-supervised_node_classification.md)
 
 </div>

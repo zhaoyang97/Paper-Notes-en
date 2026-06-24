@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OptiMVMap: Offline Vectorized Map Construction via Optimal Multi-vehicle Perspectives
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] OptiMVMap extends offline vectorized HD map construction from "single-vehicle trajectories" to "multi-vehicle collaboration." It proposes a plug-and-play "select-then-fuse" framework: an uncertainty-guided OVS module selects the 2–5 most complementary helper vehicles, which are then fused at the BEV level after pose-to
+  [CVPR 2026][Autonomous Driving][Offline vectorized map] OptiMVMap extends offline vectorized HD map construction from "single-vehicle trajectories" to "multi-vehicle collaboration." It proposes a plug-and-play "select-then-fuse" framework: an uncertainty-guided OVS module selects the 2–5 most complementary helper vehicles, which are then fused at the BEV level after pose-tolerant alignment (CVA) and semantic noise filtering (SNF). It improves MapTRv2 by +10.5 and +9.3 mAP on…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Offline vectorized map"
+  - "multi-vehicle perspectives"
+  - "vehicle selection"
+  - "BEV fusion"
+  - "uncertainty guidance"
 date: 2026-05-08
-content_hash: 5d48105487115447
+content_hash: 000521dda12c6a0c
 ---
+
 # OptiMVMap: Offline Vectorized Map Construction via Optimal Multi-vehicle Perspectives
 
 **Conference**: CVPR 2026  
@@ -120,11 +126,11 @@ Incremental components (nuScenes 1/4 subset):
 
 ## Related Papers
 
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](mapgclr_geospatial_contrastive_learning_of_represe.md)
 - [\[ECCV 2024\] Stream Query Denoising for Vectorized HD-Map Construction](../../ECCV2024/autonomous_driving/stream_query_denoising_for_vectorized_hd-map_construction.md)
 - [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
+- [\[CVPR 2025\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2025/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_representations_for_online_vectorized.md)
+- [\[CVPR 2026\] Neuro-Cognitive Reward Modeling for Human-Centered Autonomous Vehicle Control](neuro-cognitive_reward_modeling_for_human-centered_autonomous_vehicle_control.md)
 - [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
-- [\[CVPR 2026\] RAG-TP: A General Framework for Vehicle Trajectory Prediction via Retrieval-Augmented Generation](rag-tp_a_general_framework_for_vehicle_trajectory_prediction_via_retrieval-augme.md)
 
 </div>
 

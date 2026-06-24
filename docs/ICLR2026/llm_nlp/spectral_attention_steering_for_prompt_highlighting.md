@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Spectral Attention Steering for Prompt Highlighting
 description: >-
-  [ICLR 2026][LLM (Other)][attention steering] Proposes SEKA/AdaSEKA, which learns a "relevance subspace" through spectral decomposition of key embeddings and implements prompt highlighting by directly editing key vectors before attention calculation. This approach requires no storage of the full attention matrix, is fully compatible with FlashAttention, and incurs
+  [ICLR2026][LLM (Other)][attention steering] Proposes SEKA/AdaSEKA, which learns a "relevance subspace" through spectral decomposition of key embeddings and implements prompt highlighting by directly editing key vectors before attention calculation. This approach requires no storage of the full attention matrix, is fully compatible with FlashAttention, and incurs minimal overhead (+0.03s/sample).
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - attention steering
-  - prompt highlighting
-  - spectral decomposition
-  - FlashAttention
-  - key embedding editing
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "attention steering"
+  - "prompt highlighting"
+  - "spectral decomposition"
+  - "FlashAttention"
+  - "key embedding editing"
 date: 2026-05-08
-content_hash: 43187496f698203d
+content_hash: fc73be72a30a62ef
 ---
+
 # Spectral Attention Steering for Prompt Highlighting
 
 **Conference**: ICLR2026  
@@ -169,15 +170,13 @@ SEKA incurs almost zero overhead, while PASTA doubles memory and triples latency
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] Spectral Conditioning of Attention Improves Transformer Performance](../../NeurIPS2025/llm_nlp/spectral_conditioning_of_attention_improves_transformer_performance.md)
-- [\[ICLR 2026\] Statistical Advantage of Softmax Attention: Insights from Single-Location Regression](statistical_advantage_of_softmax_attention_insights_from_single-location_regress.md)
 - [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](fine-grained_activation_steering_steering_less_achieving_more.md)
 - [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
-- [\[ICLR 2026\] Beyond Magic Words: Sharpness-Aware Prompt Evolving for Robust Large Language Models with TARE](beyond_magic_words_sharpness-aware_prompt_evolving_for_robust_large_language_mod.md)
+- [\[ICLR 2026\] Statistical Advantage of Softmax Attention: Insights from Single-Location Regression](statistical_advantage_of_softmax_attention_insights_from_single-location_regress.md)
+- [\[ICLR 2026\] Attend to the Active: Structure-Aware Dynamic Attention in LLMs for Compositional Instruction Following](attend_to_the_active_structure-aware_dynamic_attention_in_llms_for_compositional.md)
 
 </div>
 

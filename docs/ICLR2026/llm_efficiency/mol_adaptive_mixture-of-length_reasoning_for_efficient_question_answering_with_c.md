@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MoL: Adaptive Mixture-of-Length Reasoning for Efficient Question Answering with Context
 description: >-
-  [ICLR 2026][LLM Efficiency][GRPO] MoL utilizes a difficulty assessment based on cross-document information redundancy to assign a "difficulty score" to each question. It employs a dual-objective reward—rewarding expansion for incorrect answers and compression for correct ones—integrated with GRPO training. This encourages the model to naturally exhibit
+  [ICLR 2026][LLM Efficiency][Adaptive Reasoning Length] MoL utilizes a difficulty assessment based on cross-document information redundancy to assign a "difficulty score" to each question. It employs a dual-objective reward—rewarding expansion for incorrect answers and compression for correct ones—integrated with GRPO training. This encourages the model to naturally exhibit "intelligent conciseness": answering simple questions briefly and complex ones extensively…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Adaptive Reasoning Length"
+  - "Difficulty Assessment"
+  - "Dual-Objective Rewards"
+  - "GRPO"
+  - "Contextual QA"
 date: 2026-05-08
-content_hash: 5f1ae236cafa9309
+content_hash: 04ec32fe9565ac51
 ---
+
 # MoL: Adaptive Mixture-of-Length Reasoning for Efficient Question Answering with Context
 
 **Conference**: ICLR 2026  

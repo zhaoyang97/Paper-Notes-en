@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control
 description: >-
-  [ICCV 2025][Video Generation][Camera Control] RealCam-I2V integrates monocular metric depth estimation to construct 3D scenes for metric-scale-aligned training…
+  [ICCV 2025][Video Generation][Camera Control] RealCam-I2V integrates monocular metric depth estimation to construct 3D scenes for metric-scale-aligned training, provides an interactive 3D scene trajectory drawing interface, and introduces a scene-constrained noise shaping mechanism, addressing the scale inconsistency and real-world usability issues inherent in existing trajectory-guided I2V methods.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Noise Shaping"
   - "I2V"
 date: 2026-05-08
-content_hash: f10f45a2225fd029
+content_hash: 365d41ce249e913b
 ---
 
 # RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control
@@ -137,10 +137,10 @@ Metric-scale error is reduced by over 32%; FVD improves by 14.8%.
 ## Related Papers
 
 - [\[ICCV 2025\] TIP-I2V: A Million-Scale Real Text and Image Prompt Dataset for Image-to-Video Generation](tip-i2v_a_million-scale_real_text_and_image_prompt_dataset_for_image-to-video_ge.md)
+- [\[CVPR 2025\] GEN3C: 3D-Informed World-Consistent Video Generation with Precise Camera Control](../../CVPR2025/video_generation/gen3c_3d-informed_world-consistent_video_generation_with_precise_camera_control.md)
 - [\[ICCV 2025\] Free-Form Motion Control: Controlling the 6D Poses of Camera and Objects in Video Generation](free-form_motion_control_controlling_the_6d_poses_of_camera_and_objects_in_video.md)
 - [\[ICCV 2025\] ReCamMaster: Camera-Controlled Generative Rendering from A Single Video](recammaster_camera-controlled_generative_rendering_from_a_single_video.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
-- [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
 
 </div>
 

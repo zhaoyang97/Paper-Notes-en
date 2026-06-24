@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation
 description: >-
-  [ACL 2026][Audio & Speech][Symbolic Music Generation] This paper proposes the Anchored Cyclic Generation (ACG) paradigm, which alleviates error accumulation in long-sequence symbolic music generation by using confirmed musical content as anchors to calibrate the generation direction during the autoregressive process. A hierarchical framework, Hi-ACG, is constructed to ach
+  [ACL 2026 Findings][Audio & Speech][Symbolic Music Generation] This paper proposes the Anchored Cyclic Generation (ACG) paradigm, which alleviates error accumulation in long-sequence symbolic music generation by using confirmed musical content as anchors to calibrate the generation direction during the autoregressive process. A hierarchical framework, Hi-ACG, is constructed to achieve music generation from global structure to local details.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Symbolic Music Generation
-  - Error Accumulation
-  - Anchored Cyclic Generation
-  - Hierarchical Framework
-  - Piano Token
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Symbolic Music Generation"
+  - "Error Accumulation"
+  - "Anchored Cyclic Generation"
+  - "Hierarchical Framework"
+  - "Piano Token"
 date: 2026-05-08
-content_hash: 26dbf26cbfadee95
+content_hash: 3c6c9d8e2b1c5b1c
 ---
+
 # Anchored Cyclic Generation: A Novel Paradigm for Long-Sequence Symbolic Music Generation
 
 **Conference**: ACL 2026 Findings  
@@ -134,15 +135,16 @@ The Sketch Loop and Refinement Loop are trained separately. Models were pre-trai
 - Value: ⭐⭐⭐⭐ The anchoring mechanism is generalizable to other long-sequence generation tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Segment-Factorized Full-Song Generation on Symbolic Piano Music](../../NeurIPS2025/audio_speech/segment-factorized_full-song_generation_on_symbolic_piano_music.md)
+- [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](../../ICLR2026/audio_speech/yue_scaling_open_foundation_models_for_long-form_music_generation.md)
 - [\[ACL 2026\] Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios](comprehensive_benchmarking_of_long-form_speech_generation_in_diverse_scenarios.md)
 - [\[ACL 2026\] PlanRAG-Audio: Planning and Retrieval Augmented Generation for Long-form Audio Understanding](planrag-audio_planning_and_retrieval_augmented_generation_for_long-form_audio_un.md)
 - [\[ACL 2026\] UniSonate: A Unified Model for Speech, Music, and Sound Effect Generation with Text Instructions](unisonate_a_unified_model_for_speech_music_and_sound_effect_generation_with_text.md)
-- [\[ICLR 2026\] Dynamic Parameter Memory: Temporary LoRA-Enhanced LLM for Long-Sequence Emotion Recognition in Conversation](../../ICLR2026/audio_speech/dynamic_parameter_memory_temporary_lora-enhanced_llm_for_long-sequence_emotion_r.md)
 
 </div>
 

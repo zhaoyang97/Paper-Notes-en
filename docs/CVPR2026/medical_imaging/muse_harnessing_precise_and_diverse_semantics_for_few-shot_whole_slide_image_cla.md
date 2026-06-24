@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification
 description: >-
-  [CVPR 2026][Medical Imaging][MoE] This paper proposes the MUSE framework, which significantly enhances generalization performance in few-shot Whole Slide Image (WSI) classification through MoE-driven Sample-level Fine-grained Semantic Enhancement (SFSE) and LLM knowledge base-based Stochastic Multi-view Model Optimization (SMMO).
+  [CVPR2026][Medical Imaging][Whole Slide Image Classification] This paper proposes the MUSE framework, which significantly enhances generalization performance in few-shot Whole Slide Image (WSI) classification through MoE-driven Sample-level Fine-grained Semantic Enhancement (SFSE) and LLM knowledge base-based Stochastic Multi-view Model Optimization (SMMO).
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - MoE
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Whole Slide Image Classification"
+  - "Few-Shot Learning"
+  - "Multiple Instance Learning"
+  - "Vision-Language Models"
+  - "Semantic Augmentation"
+  - "MoE"
+  - "Knowledge Base Retrieval"
 date: 2026-05-08
-content_hash: a5963a11a4c409be
+content_hash: dfaec5a548ef248a
 ---
+
 # MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification
 
 **Conference**: CVPR2026  
@@ -150,10 +157,10 @@ MUSE’s core distinction lies in elevating semantics from "static category desc
 ## Related Papers
 
 - [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
-- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
 - [\[ECCV 2024\] Pathology-knowledge Enhanced Multi-instance Prompt Learning for Few-shot Whole Slide Image Classification](../../ECCV2024/medical_imaging/pathology-knowledge_enhanced_multi-instance_prompt_learning_for_few-shot_whole_s.md)
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
 - [\[CVPR 2026\] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification](dual-level_hypergraph_generation_for_addressing_feature_scarcity_in_whole-slide_.md)
-- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
+- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flex-Judge: Text-Only Reasoning Unleashes Zero-Shot Multimodal Evaluators
 description: >-
-  [NeurIPS 2025][Image Generation][LLM-as-a-Judge] This paper proposes Flex-Judge, which fine-tunes a multimodal large language model on only 1K text-only reasoning samples to achieve zero-shot generalization across image…
+  [NeurIPS 2025][Image Generation][LLM-as-a-Judge] This paper proposes Flex-Judge, which fine-tunes a multimodal large language model on only 1K text-only reasoning samples to achieve zero-shot generalization across image, video, audio, and molecular evaluation tasks, matching or surpassing commercial APIs such as GPT-4o and specialized evaluators trained on large-scale annotated data.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Zero-Shot Generalization"
   - "Preference Optimization"
 date: 2026-05-08
-content_hash: 5ae82e25ad6be89d
+content_hash: a8e133ede31f2ae6
 ---
 
 # Flex-Judge: Text-Only Reasoning Unleashes Zero-Shot Multimodal Evaluators
@@ -178,8 +178,8 @@ On the PAMPA permeability prediction task, DPO-trained Mol-LLaMA achieves 80.10%
 - [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
 - [\[NeurIPS 2025\] Semantic Surgery: Zero-Shot Concept Erasure in Diffusion Models](semantic_surgery_zero-shot_concept_erasure_in_diffusion_models.md)
+- [\[CVPR 2025\] Emuru: Zero-Shot Styled Text Image Generation, but Make It Autoregressive](../../CVPR2025/image_generation/zero-shot_styled_text_image_generation_but_make_it_autoregressive.md)
 - [\[ICCV 2025\] AnyPortal: Zero-Shot Consistent Video Background Replacement](../../ICCV2025/image_generation/anyportal_zero-shot_consistent_video_background_replacement.md)
-- [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](../../ICCV2025/image_generation/dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
 
 </div>
 

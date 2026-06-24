@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Turbulence Simulation] EddyFormer is a Transformer architecture based on the Spectral Element Method (SEM) that decomposes the flow field into two parallel streams — LES (la…
+  [NeurIPS 2025][Physics & Scientific Computing][Turbulence Simulation] EddyFormer is a Transformer architecture based on the Spectral Element Method (SEM) that decomposes the flow field into two parallel streams — LES (large-scale) and SGS (small-scale) — achieving DNS-level accuracy on 3D turbulence at $256^3$ resolution with a 30× speedup, while generalizing well to unseen domains 4× larger.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "LES"
   - "Neural PDE Solver"
 date: 2026-05-08
-content_hash: 4ada556585ae16a0
+content_hash: eab371270a10c9c2
 ---
 
 # EddyFormer: Accelerated Neural Simulations of Three-Dimensional Turbulence at Scale
@@ -119,7 +119,7 @@ EddyFormer interpolates PDE initial conditions using SEM and splits them into a 
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
 - [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
 - [\[AAAI 2026\] PhysicsCorrect: A Training-Free Approach for Stable Neural PDE Simulations](../../AAAI2026/physics/physicscorrect_a_training-free_approach_for_stable_neural_pde_simulations.md)
-- [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
+- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
 
 </div>
 

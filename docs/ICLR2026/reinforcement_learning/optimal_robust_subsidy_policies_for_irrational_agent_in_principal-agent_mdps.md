@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimal Robust Subsidy Policies for Irrational Agent in Principal-Agent MDPs
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper investigates how a principal can design subsidies within an MDP framework to guide a **potentially partially irrational** agent. It proves that when the agent is "globally $\epsilon$-incentive compatible," the seemingly complex bi-level minimax problem can be equivalently reduced to **one-dimensional concave
+  [ICLR 2026][Reinforcement Learning][Principal-agent problem] This paper investigates how a principal can design subsidies within an MDP framework to guide a **potentially partially irrational** agent. It proves that when the agent is "globally $\epsilon$-incentive compatible," the seemingly complex bi-level minimax problem can be equivalently reduced to **one-dimensional concave optimization**. Conversely, when incentive compatibility constraints are refined to a "per-state"…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Principal-agent problem"
+  - "subsidy mechanism"
+  - "bounded rationality"
+  - "incentive compatibility"
+  - "robust optimization"
 date: 2026-05-08
-content_hash: 14ce3f42376aa506
+content_hash: 9ff6424920c8f1a2
 ---
+
 # Optimal Robust Subsidy Policies for Irrational Agent in Principal-Agent MDPs
 
 **Conference**: ICLR 2026  
@@ -110,10 +116,20 @@ While there is no training process, the paper provides a **social welfare loss b
 - Value: ⭐⭐⭐⭐ Provides a solvability map for robust incentive design under irrationality, relevant for RLHF and mechanism design.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
+- [\[ICLR 2026\] Inter-Agent Relative Representations for Multi-Agent Option Discovery](inter-agent_relative_representations_for_multi-agent_option_discovery.md)
+- [\[ICML 2025\] Learning to Incentivize in Repeated Principal-Agent Problems with Adversarial Agent Arrivals](../../ICML2025/reinforcement_learning/learning_to_incentivize_in_repeated_principal-agent_problems_with_adversarial_ag.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)

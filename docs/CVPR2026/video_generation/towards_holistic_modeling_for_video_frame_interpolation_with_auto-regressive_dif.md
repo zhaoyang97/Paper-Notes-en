@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers
 description: >-
-  [CVPR 2026][Video Generation][Diffusion Forcing] LDF-VFI transforms Video Frame Interpolation (VFI) from "independent triplet processing" to "unified holistic modeling." By using an auto-regressive Diffusion Transformer, it synthesizes all frames within a temporal block simultaneously. Coupled with skip-concatenate sampling to suppress auto-regressive error accumulat
+  [CVPR 2026][Video Generation][Video Frame Interpolation] LDF-VFI transforms Video Frame Interpolation (VFI) from "independent triplet processing" to "unified holistic modeling." By using an auto-regressive Diffusion Transformer, it synthesizes all frames within a temporal block simultaneously. Coupled with skip-concatenate sampling to suppress auto-regressive error accumulation, and sparse attention with tiled VAE for training-free 4K generalization…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Diffusion Forcing
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Frame Interpolation"
+  - "Auto-regressive Diffusion"
+  - "Diffusion Forcing"
+  - "Sparse Attention"
+  - "4K Scalability"
 date: 2026-05-08
-content_hash: d94ff4c981ae370c
+content_hash: 19f48c5dc8cd63d4
 ---
+
 # Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -162,11 +167,11 @@ Note: EDEN (frame-centric diffusion baseline) collapses during recursive inferen
 
 ## Related Papers
 
-- [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](../../ICML2026/video_generation/quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
+- [\[ICLR 2026\] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling](../../ICLR2026/video_generation/realtime_video_frame_interpolation_using_one-step_diffusion_sampling.md)
 - [\[CVPR 2026\] A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens](a_frame_is_worth_one_token_efficient_generative_world_modeling_with_delta_tokens.md)
-- [\[CVPR 2026\] Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](efficient_long-context_modeling_in_diffusion_language_models_via_block_approxima.md)
-- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
-- [\[CVPR 2026\] Archon: A Unified Multimodal Model for Holistic Digital Human Generation](archon_a_unified_multimodal_model_for_holistic_digital_human_generation.md)
+- [\[ICLR 2026\] FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge](../../ICLR2026/video_generation/fastcar_cache_attentive_replay_for_fast_auto-regressive_video_generation_on_the_.md)
+- [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](../../ICML2026/video_generation/quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
+- [\[CVPR 2026\] ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](rehyat_recurrent_hybrid_attention_for_video_diffusion_transformers.md)
 
 </div>
 

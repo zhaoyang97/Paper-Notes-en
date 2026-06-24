@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Explaining Is Harder than Predicting Alone: Evaluating Concept-Based Explanations of MLLMs as ICL Visual Classifiers
 description: >-
-  [ICML 2026][Multimodal VLM][LLM-as-a-judge] The authors utilize a five-level formalization ladder of explanation conditions (classification only → natural language explanation → feature list → IF-THEN knowledge base → DL axioms) and an LLM-as-a-judge pipeline evaluating 9 XAI metrics to conduct 2,080 ICL classification experiments on four SOTA MLLMs. They find t
+  [ICML 2026][Multimodal VLM][Concept Explanation] The authors utilize a five-level formalization ladder of explanation conditions (classification only → natural language explanation → feature list → IF-THEN knowledge base → DL axioms) and an LLM-as-a-judge pipeline evaluating 9 XAI metrics to conduct 2,080 ICL classification experiments on four SOTA MLLMs. They find that "forcing models to generate more formal concept explanations leads to a monotonic decline in classification…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - LLM-as-a-judge
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Concept Explanation"
+  - "Description Logic"
+  - "LLM-as-a-judge"
+  - "Few-shot ICL"
+  - "XAI Evaluation"
 date: 2026-05-08
-content_hash: 83fb976a8ebce5e5
+content_hash: 0ef57d1a6b247eda
 ---
+
 # Explaining Is Harder than Predicting Alone: Evaluating Concept-Based Explanations of MLLMs as ICL Visual Classifiers
 
 **Conference**: ICML 2026  
@@ -131,10 +136,10 @@ Judge scores for 9 explanation quality metrics across 4 explanation conditions (
 ## Related Papers
 
 - [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
+- [\[ICLR 2026\] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding](../../ICLR2026/multimodal_vlm/on_discriminative_vs_generative_classifiers_rethinking_mllms_for_action_understa.md)
+- [\[ICLR 2026\] RL Makes MLLMs See Better Than SFT](../../ICLR2026/multimodal_vlm/rl_makes_mllms_see_better_than_sft.md)
 - [\[CVPR 2026\] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation](../../CVPR2026/multimodal_vlm/where_mllms_attend_and_what_they_rely_on_explaining_autoregressive_token_generat.md)
 - [\[ICCV 2025\] SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs](../../ICCV2025/multimodal_vlm/sparsemm_head_sparsity_emerges_from_visual_concept_responses_in_mllms.md)
-- [\[ICML 2026\] 通用骨架理解：可微渲染与 MLLMs](universal_skeleton_understanding_via_differentiable_rendering_and_mllms.md)
-- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](../../CVPR2026/multimodal_vlm/enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
 
 </div>
 

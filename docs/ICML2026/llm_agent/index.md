@@ -81,7 +81,7 @@ item_total: 59
 
 **🧪 ICML2026** · **59** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (39)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (162)](../../ICLR2026/llm_agent/index.md) · [💬 ACL2026 (82)](../../ACL2026/llm_agent/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/llm_agent/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (42)](../../CVPR2026/llm_agent/index.md) · [🔬 ICLR2026 (162)](../../ICLR2026/llm_agent/index.md) · [💬 ACL2026 (82)](../../ACL2026/llm_agent/index.md) · [🤖 AAAI2026 (33)](../../AAAI2026/llm_agent/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/llm_agent/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/llm_agent/index.md)
 
 🔥 **Top topics:** LLM ×22 · Agents ×12 · Reasoning ×5 · Reinforcement Learning ×4
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Foundation Encoders Are All You Need for Preference-Aware Personalization
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] FAN does not add any additional structures or fine-tuning to text-to-image models. Instead, it "repurposes" the self-attention within pre-trained text encoders into personalized attention and pairs it with a target-query-oriented profiling strategy. This enables personalized synthesis across various base models like SD
+  [CVPR 2026][Multimodal VLM][Preference-aware personalization] FAN does not add any additional structures or fine-tuning to text-to-image models. Instead, it "repurposes" the self-attention within pre-trained text encoders into personalized attention and pairs it with a target-query-oriented profiling strategy. This enables personalized synthesis across various base models like SD V1/XL/V3 and FLUX that aligns with user preferences without sacrificing target semantics.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Preference-aware personalization"
+  - "foundation encoders"
+  - "personalized attention"
+  - "condition-level personalization"
+  - "tuning-free"
 date: 2026-05-08
-content_hash: d63b1fe5fd6d9c0e
+content_hash: e92786183a45f7ad
 ---
+
 # Foundation Encoders Are All You Need for Preference-Aware Personalization
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Profiling Strategy Comparison (10% sampling, SD V1 + OpenCLIP ViT-L, Average Tar
 ## Related Papers
 
 - [\[CVPR 2025\] Distraction is All You Need for Multimodal Large Language Model Jailbreaking](../../CVPR2025/multimodal_vlm/distraction_is_all_you_need_for_multimodal_large_language_model_jailbreaking.md)
-- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
 - [\[ICCV 2025\] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis](../../ICCV2025/multimodal_vlm/oasis_one_image_is_all_you_need_for_multimodal_instruction_data_synthesis.md)
+- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
 - [\[CVPR 2026\] Ego: Embedding-Guided Personalization of Vision-Language Models](ego_embedding-guided_personalization_of_vision-language_models.md)
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
+- [\[CVPR 2026\] Unified Multimodal Models as Auto-Encoders](unified_multimodal_models_as_auto-encoders.md)
 
 </div>
 

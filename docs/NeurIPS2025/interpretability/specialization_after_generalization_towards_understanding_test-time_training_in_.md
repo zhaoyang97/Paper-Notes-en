@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
 description: >-
-  [NeurIPS 2025][Interpretability][test-time training] This paper proposes a "specialization after generalization" framework that theoretically and empirically explains the effectiveness of test-time training (TTT) on in-d…
+  [NeurIPS 2025 Oral][Interpretability][test-time training] This paper proposes a "specialization after generalization" framework that theoretically and empirically explains the effectiveness of test-time training (TTT) on in-distribution data under the Linear Representation Hypothesis (LRH). Foundation models are globally underparameterized, leading to concept superposition interference. TTT mitigates this by locally specializing the model—reallocating model capacity to the sm…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Interpretability"
   - "test-time training"
   - "linear representation hypothesis"
@@ -13,7 +13,7 @@ tags:
   - "local specialization"
   - "underparameterization"
 date: 2026-05-08
-content_hash: ceb06a3afdf3fdb6
+content_hash: a541d990b3c4803e
 ---
 
 # Specialization after Generalization: Towards Understanding Test-Time Training in Foundation Models
@@ -155,11 +155,11 @@ TTT performance is nearly identical across both spaces, with predictions agreein
 
 ## Related Papers
 
+- [\[CVPR 2025\] TIDE: Training Locally Interpretable Domain Generalization Models Enables Test-time Correction](../../CVPR2025/interpretability/tide_domain_generalization.md)
 - [\[NeurIPS 2025\] Benchmarking Probabilistic Time Series Forecasting Models on Neural Activity](benchmarking_probabilistic_time_series_forecasting_models_on_neural_activity.md)
-- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
 - [\[NeurIPS 2025\] URLs Help, Topics Guide: Understanding Metadata Utility in LLM Training](urls_help_topics_guide_understanding_metadata_utility_in_llm_training.md)
-- [\[NeurIPS 2025\] An Analysis of Concept Bottleneck Models: Measuring, Understanding, and Mitigating the Impact of Noisy Annotations](an_analysis_of_concept_bottleneck_models_measuring_understanding_and_mitigating_.md)
-- [\[NeurIPS 2025\] Representation Consistency for Accurate and Coherent LLM Answer Aggregation](representation_consistency_for_accurate_and_coherent_llm_answer_aggregation.md)
+- [\[NeurIPS 2025\] From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit](from_flat_to_hierarchical_extracting_sparse_representations_with_matching_pursui.md)
+- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
 
 </div>
 

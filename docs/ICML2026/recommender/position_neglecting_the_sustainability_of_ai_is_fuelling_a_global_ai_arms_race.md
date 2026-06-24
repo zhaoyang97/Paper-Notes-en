@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Position: Neglecting the Sustainability of AI is Fuelling a Global AI Arms Race
 description: >-
-  [ICML 2026][Recommender Systems][AI arms race] Utilizing Karl Marx's "base-superstructure" framework, this position paper argues that current "sustainable AI" discussions are dominated by environmental dimensions while neglecting economic and social ones. It calls for the simultaneous elevation of both **climate awareness** and **resource awareness** axes and propo
+  [ICML 2026][Recommender Systems][Sustainable AI] Utilizing Karl Marx's "base-superstructure" framework, this position paper argues that current "sustainable AI" discussions are dominated by environmental dimensions while neglecting economic and social ones. It calls for the simultaneous elevation of both **climate awareness** and **resource awareness** axes and proposes the CARAML five-layer action framework (Individual / Community / Industry / Government / Global) to curb th…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - AI arms race
-  - CARAML
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Sustainable AI"
+  - "Climate Awareness"
+  - "Resource Awareness"
+  - "AI arms race"
+  - "CARAML"
 date: 2026-05-08
-content_hash: 4a4ae4e2965d2eae
+content_hash: e2c32024a0b50ee2
 ---
+
 # Position: Neglecting the Sustainability of AI is Fuelling a Global AI Arms Race
 
 **Conference**: ICML 2026  

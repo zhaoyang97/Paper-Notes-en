@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Latent Speech-Text Transformer
 description: >-
-  [ICLR 2026][Audio & Speech][speech-text modeling] The authors propose Latent Speech-Text Transformer (LST), which aggregates discrete speech tokens into higher-level "latent speech patches" as autoregressive units (similar to how BLT processes bytes). This aligns the sequence modeling granularity of speech and text (reducing from 20× to ~1:1), achieving a +6.5% absolu
+  [ICLR 2026 Oral][Audio & Speech][speech-text modeling] The authors propose Latent Speech-Text Transformer (LST), which aggregates discrete speech tokens into higher-level "latent speech patches" as autoregressive units (similar to how BLT processes bytes). This aligns the sequence modeling granularity of speech and text (reducing from 20× to ~1:1), achieving a +6.5% absolute gain on Speech HellaSwag with sustained gains from 420M to 7B parameters…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - speech-text modeling
-  - latent patches
-  - autoregressive
-  - ASR
-  - TTS
-  - cross-modal alignment
+  - "ICLR 2026 Oral"
+  - "Audio & Speech"
+  - "speech-text modeling"
+  - "latent patches"
+  - "autoregressive"
+  - "ASR"
+  - "TTS"
+  - "cross-modal alignment"
+  - "BLT"
 date: 2026-05-08
-content_hash: f10b5bfe935c31b2
+content_hash: d6af360c547fd2fa
 ---
+
 # Latent Speech-Text Transformer
 
 **Conference**: ICLR 2026 Oral  

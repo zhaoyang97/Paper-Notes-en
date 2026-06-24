@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stackelberg Coupling of Online Representation Learning and Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Deep Q-Learning] The SCORER framework is proposed to model representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-time-scale updates (slow update for the Q-network as the leader and fast update for the encoder as the follower), it achieves stable co-adaptation and enhances performance
+  [ICLR 2026][Reinforcement Learning][Stackelberg Game] The SCORER framework is proposed to model representation learning and value function learning in Deep Q-Learning as a Stackelberg game. Through two-time-scale updates (slow update for the Q-network as the leader and fast update for the encoder as the follower), it achieves stable co-adaptation and enhances performance without altering the network architecture.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Deep Q-Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Stackelberg Game"
+  - "Representation Learning"
+  - "Deep Q-Learning"
+  - "Two-Time-Scale"
+  - "Variance Minimization"
 date: 2026-05-08
-content_hash: aa8e29c27c2b95fe
+content_hash: 6a7ec50e07134ff6
 ---
+
 # Stackelberg Coupling of Online Representation Learning and Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -144,10 +149,10 @@ This game-theoretic restructuring is implemented simply by splitting existing ne
 ## Related Papers
 
 - [\[ICLR 2026\] 3D-aware Disentangled Representation for Compositional Reinforcement Learning](3d-aware_disentangled_representation_for_compositional_reinforcement_learning.md)
+- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
 - [\[ICLR 2026\] Learning to Play Multi-Follower Bayesian Stackelberg Games](learning_to_play_multi-follower_bayesian_stackelberg_games.md)
-- [\[ICLR 2026\] What Matters for Batch Online Reinforcement Learning in Robotics?](what_matters_for_batch_online_reinforcement_learning_in_robotics.md)
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
-- [\[ICLR 2026\] GRACE: Generative Representation Learning via Contrastive Policy Optimization](grace_generative_representation_learning_via_contrastive_policy_optimization.md)
+- [\[ICLR 2026\] What Matters for Batch Online Reinforcement Learning in Robotics?](what_matters_for_batch_online_reinforcement_learning_in_robotics.md)
 
 </div>
 

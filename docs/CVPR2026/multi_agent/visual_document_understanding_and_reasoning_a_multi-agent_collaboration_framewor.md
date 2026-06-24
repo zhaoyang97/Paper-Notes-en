@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] MACT decomposes the "monolithic single-model" visual document QA into four agents with distinct roles: planning, execution, judging, and answering. It adaptively allocates test-time compute according to the cognitive load of each agent rather than uniformly increasing parameters. On 15 benchmarks, it consistently ranks
+  [CVPR 2026][Multi-Agent][Visual Document Understanding] MACT decomposes the "monolithic single-model" visual document QA into four agents with distinct roles: planning, execution, judging, and answering. It adaptively allocates test-time compute according to the cognitive load of each agent rather than uniformly increasing parameters. On 15 benchmarks, it consistently ranks in the top three with <30B parameters, achieving an average improvement of 9.9–11.5% over the base mode…
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "Multi-Agent"
+  - "Visual Document Understanding"
+  - "Multi-Agent Collaboration"
+  - "Test-Time Scaling"
+  - "Process Reward"
+  - "Self-Correction"
 date: 2026-05-08
-content_hash: d94440702913e1c6
+content_hash: 5e7b6b326ba8af88
 ---
+
 # Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling
 
 **Conference**: CVPR 2026  
@@ -136,14 +142,17 @@ Agent Combination (Table 3): Only $A_{plan}+A_{exe}$ yields 68.4 (+3.9 vs base);
 
 <div class="related-papers" markdown="1">
 
-1. **Procedural Reasoning for Documents** (arXiv 2025)
-2. **Beyond Parameters: Scaling Test-Time Compute for VLMs** (CVPR 2025)
-3. **MDocAgent: A Multi-Agent System for Document Knowledge** (NeurIPS 2024)
+## Related Papers
+
+- [\[ACL 2026\] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling](../../ACL2026/multi_agent/multi-agent_reasoning_improves_compute_efficiency_pareto-optimal_test-time_scali.md)
+- [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/multi_agent/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
+- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](../../ACL2026/multi_agent/scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+- [\[CVPR 2026\] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection](agentdet_a_shared-blackboard_multi-agent_framework_for_zero-few-shot_object_dete.md)
+- [\[ICLR 2026\] PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images](../../ICLR2026/multi_agent/pixelcraft_a_multi-agent_system_for_high-fidelity_visual_reasoning_on_structured.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling](../../ACL2026/multi_agent/multi-agent_reasoning_improves_compute_efficiency_pareto-optimal_test-time_scali.md)

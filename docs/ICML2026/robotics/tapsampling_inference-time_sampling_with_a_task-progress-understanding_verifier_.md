@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Action-VAE] TapSampling proposes a policy-agnostic, plug-and-play inference-time sampling framework. It first learns a low-dimensional posterior from a small number of policy-generated actions using an Action-VAE to efficiently sample many candidate actions. Subsequently, a semantically interpretable verifier, which predicts "chan
+  [ICML 2026][Robotics][Inference-Time Sampling] TapSampling proposes a policy-agnostic, plug-and-play inference-time sampling framework. It first learns a low-dimensional posterior from a small number of policy-generated actions using an Action-VAE to efficiently sample many candidate actions. Subsequently, a semantically interpretable verifier, which predicts "changes in task progress," is used to score and fuse candidates via weighted averaging. Without fine-tuning original…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Action-VAE
+  - "ICML 2026"
+  - "Robotics"
+  - "Inference-Time Sampling"
+  - "Action-VAE"
+  - "Task Progress Verifier"
+  - "General Robotic Policy"
+  - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 989ecfbfb1f3de1a
+content_hash: 6be238ce360301dc
 ---
+
 # TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation
 
 **Conference**: ICML 2026  
@@ -147,15 +152,16 @@ Distribution Fidelity (MMD, lower is better, multi-bandwidth RBF):
 - Value: ⭐⭐⭐⭐ High practical value for VLA deployment; policy-agnostic gains without re-training are highly desirable for engineering.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Verifier-Free Test-Time Sampling for Vision-Language-Action Models](../../ICLR2026/robotics/verifier-free_test-time_sampling_for_vision-language-action_models.md)
 - [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
-- [\[ICML 2026\] Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning](drift_is_a_sampling_error_snr-aware_power_distributions_for_long-horizon_robotic.md)
 - [\[ICML 2026\] Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](decompose_and_recompose_reasoning_new_skills_from_existing_abilities_for_cross-t.md)
+- [\[ICML 2026\] Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning](drift_is_a_sampling_error_snr-aware_power_distributions_for_long-horizon_robotic.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](../../CVPR2026/robotics/adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](../../CVPR2026/robotics/recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
 
 </div>
 

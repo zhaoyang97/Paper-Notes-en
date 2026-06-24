@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Logit Adjustment for Debiasing Multimodal Language Models
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] ALA is a **post-processing** debiasing method. During each step of autoregressive generation, it utilizes external image and text classifiers to measure the discrepancy between the "attributes the image should have" and the "current bias expressed in the text." It then performs proportional fine-tuning **only on the lo
+  [ICLR2026][AI Safety][Multimodal debiasing] ALA is a **post-processing** debiasing method. During each step of autoregressive generation, it utilizes external image and text classifiers to measure the discrepancy between the "attributes the image should have" and the "current bias expressed in the text." It then performs proportional fine-tuning **only on the logits of bias-related tokens** along the gradient direction. This aligns image-text attributes or neutralizes harmful…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Multimodal debiasing"
+  - "logit adjustment"
+  - "fairness"
+  - "integrated gradients"
+  - "post-processing intervention"
 date: 2026-05-08
-content_hash: 403f23fb6ed75cd6
+content_hash: 6428ad36bd634f1a
 ---
+
 # Adaptive Logit Adjustment for Debiasing Multimodal Language Models
 
 **Conference**: ICLR2026  
@@ -135,9 +141,9 @@ $MR_C=\sqrt{MR_O^2+(MR_F-MR_M)^2}$ characterizes overall error and gender dispar
 
 - [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](../../CVPR2026/ai_safety/towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 - [\[ICLR 2026\] Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing](wring_out_the_bias_a_rotation-based_alternative_to_projection_debiasing.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 - [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](../../CVPR2026/ai_safety/φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
 - [\[ICLR 2026\] Adversarial Attacks Already Tell the Answer: Directional Bias-Guided Test-time Defense for Vision-Language Models](adversarial_attacks_already_tell_the_answer_directional_bias-guided_test-time_de.md)
-- [\[CVPR 2026\] FVBench: Benchmarking Deepfake Video Detection Capability of Large Multimodal Models](../../CVPR2026/ai_safety/fvbench_benchmarking_deepfake_video_detection_capability_of_large_multimodal_mod.md)
 
 </div>
 

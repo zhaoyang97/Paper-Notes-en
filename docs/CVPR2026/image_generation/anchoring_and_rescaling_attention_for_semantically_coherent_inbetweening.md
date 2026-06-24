@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anchoring and Rescaling Attention for Semantically Coherent Inbetweening
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Proposes KAB (Keyframe-Anchored Attention Bias) and ReTRo (Rescaled Temporal RoPE), two training-free inference-time methods based on the Wan2.1 video diffusion model, to address semantic infidelity, frame inconsistency, and rhythm instability in generative inbetweening (GI) with large motion under sparse keyframes. It
+  [CVPR 2026][Image Generation][Generative Frame Inbetweening] Proposes KAB (Keyframe-Anchored Attention Bias) and ReTRo (Rescaled Temporal RoPE), two training-free inference-time methods based on the Wan2.1 video diffusion model, to address semantic infidelity, frame inconsistency, and rhythm instability in generative inbetweening (GI) with large motion under sparse keyframes. It also constructs TGI-Bench, the first text-conditioned GI evaluation benchmark.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Generative Frame Inbetweening"
+  - "Attention Anchoring"
+  - "Temporal RoPE Rescaling"
+  - "Keyframe Guidance"
+  - "Video Diffusion Models"
 date: 2026-05-08
-content_hash: 4aeada7b724ce467
+content_hash: b8f37f4f4edb877f
 ---
+
 # Anchoring and Rescaling Attention for Semantically Coherent Inbetweening
 
 **Conference**: CVPR 2026  
@@ -165,9 +171,9 @@ Key Observation: While the gap between methods is small for short sequences (25 
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoEmoGen: Towards Semantically-Coherent and Scalable Emotional Image Content Generation](../../ICLR2026/image_generation/coemogen_towards_semantically-coherent_and_scalable_emotional_image_content_gene.md)
 - [\[CVPR 2026\] LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)
-- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
-- [\[ICLR 2026\] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening](../../ICLR2026/image_generation/motion_prior_distillation_in_time_reversal_sampling_for_generative_inbetweening.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 - [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)
 - [\[CVPR 2026\] The Devil is in Attention Sharing: Improving Complex Non-rigid Image Editing Faithfulness via Attention Synergy](the_devil_is_in_attention_sharing_improving_complex_non-rigid_image_editing_fait.md)
 

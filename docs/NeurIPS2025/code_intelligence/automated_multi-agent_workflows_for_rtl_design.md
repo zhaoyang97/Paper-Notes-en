@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VeriMaAS: Automated Multi-Agent Workflows for RTL Design
 description: >-
-  [NeurIPS 2025][Code Intelligence][RTL code generation] VeriMaAS proposes a framework for automatically composing multi-agent workflows for RTL code generation. Its core innovation is the direct integration of formal veri…
+  [NeurIPS 2025][Code Intelligence][RTL code generation] VeriMaAS proposes a framework for automatically composing multi-agent workflows for RTL code generation. Its core innovation is the direct integration of formal verification feedback from HDL tools (Yosys synthesis + OpenSTA timing analysis) into workflow orchestration, achieving a 2–12% pass@1 improvement on VeriThoughts while requiring only a few hundred samples for controller tuning—an order of magnitude fewer than ful…
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "HDL"
   - "EDA"
 date: 2026-05-08
-content_hash: 7a0a6a4e9189d789
+content_hash: c26773a60ba9fdf7
 ---
 
 # VeriMaAS: Automated Multi-Agent Workflows for RTL Design
@@ -134,7 +134,7 @@ with $\lambda=10^{-3}$. In the PPA-aware optimization variant, the cost term is 
 - [\[NeurIPS 2025\] A Self-Improving Coding Agent](a_selfimproving_coding_agent.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
 - [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
-- [\[NeurIPS 2025\] Learning From Design Procedure To Generate CAD Programs for Data Augmentation](learning_from_design_procedure_to_generate_cad_programs_for_data_augmentation.md)
+- [\[ICML 2026\] How can we assess human-agent interactions? Case studies in software agent design](../../ICML2026/code_intelligence/how_can_we_assess_human-agent_interactions_case_studies_in_software_agent_design.md)
 
 </div>
 

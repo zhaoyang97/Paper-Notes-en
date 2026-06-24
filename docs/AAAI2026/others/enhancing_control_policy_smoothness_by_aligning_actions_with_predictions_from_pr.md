@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States
 description: >-
-  [AAAI 2026][Reinforcement Learning] This paper proposes **ASAP (Action Smoothing by Aligning Actions with Predictions from Preceding States)**…
+  [AAAI 2026][Reinforcement Learning] This paper proposes **ASAP (Action Smoothing by Aligning Actions with Predictions from Preceding States)**, a reinforcement learning action smoothing method based on **transition-induced similar state definitions**. ASAP suppresses high-frequency action oscillations via a spatial constraint (aligning actions with predictions from the preceding state) and a temporal constraint (penalizing second-order action differences). It outperforms exis…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Policy Smoothness"
   - "Robot Control"
 date: 2026-05-08
-content_hash: fea471f350353d9d
+content_hash: 419ec89ca4c460de
 ---
 
 # Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States
@@ -223,9 +223,9 @@ ASAP can be stacked with architectural methods for further gains.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](../../ICLR2026/others/enhancing_generative_auto_bidding.md)
 - [\[AAAI 2026\] Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters](deadline-aware_energy-efficient_control_of_domestic_immersion_hot_water_heater.md)
 - [\[AAAI 2026\] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning](sampling_control_for_imbalanced_calibration_in_semi-supervised_learning.md)
+- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
 - [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
 - [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
 

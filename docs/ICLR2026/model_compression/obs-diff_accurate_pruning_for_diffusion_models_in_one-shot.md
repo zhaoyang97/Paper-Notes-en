@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OBS-Diff: Accurate Pruning For Diffusion Models in One-Shot
 description: >-
-  [ICLR 2026][Model Compression][Optimal Brain Surgeon] OBS-Diff resurrects and adapts the classic Optimal Brain Surgeon (OBS) pruning for large-scale text-to-image diffusion models. Through a "Timestep-aware Hessian," it makes pruning criteria more sensitive to early denoising steps. By using "Module Packages," it amortizes expensive layer-wise calibration. Without requiri
+  [ICLR 2026][Model Compression][One-shot Pruning] OBS-Diff resurrects and adapts the classic Optimal Brain Surgeon (OBS) pruning for large-scale text-to-image diffusion models. Through a "Timestep-aware Hessian," it makes pruning criteria more sensitive to early denoising steps. By using "Module Packages," it amortizes expensive layer-wise calibration. Without requiring any training or fine-tuning, it supports unstructured, N:M semi-structured, and structured granularities…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Optimal Brain Surgeon
+  - "ICLR 2026"
+  - "Model Compression"
+  - "One-shot Pruning"
+  - "Optimal Brain Surgeon"
+  - "Timestep-aware Hessian"
+  - "Text-to-Image Diffusion Models"
+  - "Training-free Compression"
 date: 2026-05-08
-content_hash: 09af788ded0ba314
+content_hash: 6361a8acf935d8a0
 ---
+
 # OBS-Diff: Accurate Pruning For Diffusion Models in One-Shot
 
 **Conference**: ICLR 2026  
@@ -143,10 +148,10 @@ Structured pruning also dominates (SD3.5-Large, Table 4): at 15% sparsity, L1-no
 ## Related Papers
 
 - [\[ICLR 2026\] REAP the Experts: Why Pruning Prevails for One-Shot MoE Compression](reap_the_experts_why_pruning_prevails_for_one-shot_moe_compression.md)
+- [\[ICLR 2026\] Diffusion Models as Dataset Distillation Priors](diffusion_models_as_dataset_distillation_priors.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 - [\[ICLR 2026\] Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models](gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md)
 - [\[ICML 2025\] SlimLLM: Accurate Structured Pruning for Large Language Models](../../ICML2025/model_compression/slimllm_accurate_structured_pruning_for_large_language_models.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 
 </div>
 

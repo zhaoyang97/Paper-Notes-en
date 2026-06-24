@@ -4,14 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][Watermarking] The MOLM watermarking framework is proposed, reinterpreting LoRA adapters as watermark markers. It embeds verifiable and robust watermarks into frozen generative models through a binary key-driven routing mechanism, eliminating the need for per-key retraining.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Watermarking
-  - LoRA
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Watermarking"
+  - "LoRA"
+  - "Diffusion Models"
+  - "Routing Mechanism"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 078dd5355e8c6578
+content_hash: 3c21113efc15bd58
 ---
+
 # MOLM: Mixture of LoRA Markers
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion
 description: >-
-  [NeurIPS 2025][Incomplete multi-view clustering] This paper proposes the HSACC framework, which employs a two-level semantic space design (low-level mutual information consistency + high-level adaptive weighted fusion) c…
+  [NeurIPS 2025][Incomplete multi-view clustering] This paper proposes the HSACC framework, which employs a two-level semantic space design (low-level mutual information consistency + high-level adaptive weighted fusion) combined with cooperatively optimized implicit missing-view recovery, achieving significant improvements over existing incomplete multi-view clustering methods on five benchmark datasets.
 tags:
   - "NeurIPS 2025"
   - "Incomplete multi-view clustering"
@@ -11,7 +11,7 @@ tags:
   - "MMD"
   - "cooperative completion"
 date: 2026-05-08
-content_hash: 3f278b19d2e216f0
+content_hash: 3979df8c685afca4
 ---
 
 # Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion
@@ -136,9 +136,9 @@ ACC comparison across five datasets at varying missing rates (selected results):
 
 - [\[AAAI 2026\] Deep Incomplete Multi-View Clustering via Hierarchical Imputation and Alignment](../../AAAI2026/others/deep_incomplete_multi-view_clustering_via_hierarchical_imputation_and_alignment.md)
 - [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](../../AAAI2026/others/hierarchical_semantic_alignment_for_image_clustering.md)
-- [\[NeurIPS 2025\] Graph Alignment via Birkhoff Relaxation](graph_alignment_via_birkhoff_relaxation.md)
+- [\[ICLR 2026\] Aligning Collaborative View Recovery and Tensorial Subspace Learning via Latent Representation for Incomplete Multi-View Clustering](../../ICLR2026/others/aligning_collaborative_view_recovery_and_tensorial_subspace_learning_via_latent_.md)
+- [\[CVPR 2026\] Plug-and-Play Incomplete Multi-View Clustering via Janus-Faced Affinity Learning with Topology Harmonization](../../CVPR2026/others/plug-and-play_incomplete_multi-view_clustering_via_janus-faced_affinity_learning.md)
 - [\[NeurIPS 2025\] Coresets for Clustering Under Stochastic Noise](coresets_for_clustering_under_stochastic_noise.md)
-- [\[NeurIPS 2025\] Training the Untrainable: Introducing Inductive Bias via Representational Alignment](training_the_untrainable_introducing_inductive_bias_via_representational_alignme.md)
 
 </div>
 

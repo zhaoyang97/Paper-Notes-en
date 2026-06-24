@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAGA: Source Attribution of Generative AI Videos
 description: >-
-  [CVPR 2026][AI Safety][Interpretability] SAGA upgrades the question "is this video AI-generated?" to "which generator did it come from?". By utilizing frozen Vision Large Model features and a spatio-temporal dual-layer Transformer, combined with a two-stage strategy of "binary classification pre-training followed by contrastive adaptation with 0.5% labels," i
+  [CVPR 2026][AI Safety][Video Source Attribution] SAGA upgrades the question "is this video AI-generated?" to "which generator did it come from?". By utilizing frozen Vision Large Model features and a spatio-temporal dual-layer Transformer, combined with a two-stage strategy of "binary classification pre-training followed by contrastive adaptation with 0.5% labels," it achieves five-level source attribution from real/fake to specific models across 19 video generators. It furth…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Interpretability
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Video Source Attribution"
+  - "Synthetic Video Forensics"
+  - "Data-efficient"
+  - "Contrastive Learning"
+  - "Explainability"
 date: 2026-05-08
-content_hash: 500744959abc1b0a
+content_hash: 073cf073575afe56
 ---
+
 # SAGA: Source Attribution of Generative AI Videos
 
 **Conference**: CVPR 2026  
@@ -148,11 +153,11 @@ Comparison with semi-HNM: CE+semi-HNM achieves only 70.31% on GEN-L, while CE+HN
 
 ## Related Papers
 
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[ICLR 2026\] Watermark-based Detection and Attribution of AI-Generated Content](../../ICLR2026/ai_safety/watermark-based_attribution_of_ai-generated_content.md)
-- [\[CVPR 2026\] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
-- [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](gvis_generative_vector_image_steganography.md)
 - [\[CVPR 2026\] TokenTrace: Multi-Concept Attribution through Watermarked Token Recovery](tokentrace_multi-concept_attribution_through_watermarked_token_recovery.md)
+- [\[CVPR 2026\] GVIS: Generative Vector Image Steganography](gvis_generative_vector_image_steganography.md)
+- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](runawayevil_jailbreaking_the_image-to-video_generative_models.md)
+- [\[CVPR 2026\] Generative Adversarial Perturbations with Cross-paradigm Transferability on Localized Crowd Counting](generative_adversarial_perturbations_with_cross-paradigm_transferability_on_loca.md)
 
 </div>
 

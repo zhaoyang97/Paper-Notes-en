@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding
 description: >-
-  [NeurIPS 2025][LLM Agent][video understanding] This paper proposes DVD (Deep Video Discovery), an agent that frames long-form video understanding as a multi-step information search problem. It first constructs a multi-gr…
+  [NeurIPS 2025][LLM Agent][video understanding] This paper proposes DVD (Deep Video Discovery), an agent that frames long-form video understanding as a multi-step information search problem. It first constructs a multi-granular structured database from a long video (global summary + clip-level caption embeddings + frame-level pixels), then provides three search tools (Global Browse / Clip Search / Frame Inspect). A reasoning LLM autonomously orchestrates the search trajectory…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "multi-granular database"
   - "adaptive workflow"
 date: 2026-05-08
-content_hash: 81b3838145fe21c3
+content_hash: 3a562ada36fef009
 ---
 
 # Deep Video Discovery: Agentic Search with Tool Use for Long-form Video Understanding
@@ -150,10 +150,10 @@ The paper categorizes agent tool-calling behavior into five patterns and analyze
 ## Related Papers
 
 - [\[CVPR 2026\] HAVEN: Hierarchical Long Video Understanding with Audiovisual Entity Cohesion and Agentic Search](../../CVPR2026/llm_agent/haven_hierarchical_long_video_understanding_with_audiovisual_entity_cohesion.md)
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](../../CVPR2026/llm_agent/symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[ACL 2025\] Self-Taught Agentic Long-Context Understanding](../../ACL2025/llm_agent/self_taught_agentic_long_ctx.md)
 - [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](../../CVPR2026/llm_agent/think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
-- [\[NeurIPS 2025\] LLM Agents for Knowledge Discovery in Atomic Layer Processing](llm_agents_for_knowledge_discovery_in_atomic_layer_processing.md)
-- [\[NeurIPS 2025\] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning](t1_a_tool-oriented_conversational_dataset_for_multi-turn_agentic_planning.md)
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](../../CVPR2026/llm_agent/worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
+- [\[ECCV 2024\] VideoAgent: A Memory-augmented Multimodal Agent for Video Understanding](../../ECCV2024/llm_agent/videoagent_a_memory-augmented_multimodal_agent_for_video_understanding.md)
 
 </div>
 

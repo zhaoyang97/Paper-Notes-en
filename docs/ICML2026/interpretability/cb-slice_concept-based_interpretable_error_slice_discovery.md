@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CB-SLICE: Concept-Based Interpretable Error Slice Discovery
 description: >-
-  [ICML 2026][Interpretability][Paper Note] CB-SLICE utilizes the concept prediction space of Concept Bottleneck Models (CBMs) to discover and explain systematic error slices in deep learning models. Through a three-step pipeline—filtering error-prone concepts, GMM clustering for slice formation, and keyword-based concept explanation—it consistently outperforms
+  [ICML2026][Interpretability][Error Slice Discovery] CB-SLICE utilizes the concept prediction space of Concept Bottleneck Models (CBMs) to discover and explain systematic error slices in deep learning models. Through a three-step pipeline—filtering error-prone concepts, GMM clustering for slice formation, and keyword-based concept explanation—it consistently outperforms existing methods across multiple benchmarks while providing faithful explanations directly grounded in the m…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Error Slice Discovery"
+  - "Concept Bottleneck Models"
+  - "Model Debugging"
+  - "Bias Detection"
+  - "Explainable AI"
 date: 2026-05-08
-content_hash: baa1ea2dc295c395
+content_hash: e93a0e16570c7da9
 ---
+
 # CB-SLICE: Concept-Based Interpretable Error Slice Discovery
 
 **Conference**: ICML2026  
@@ -119,15 +125,16 @@ On four datasets (Waterbirds, CelebA, MetaShift, MNIST-Sum), CB-SLICE was compar
 - **Insight**: Concept bottlenecks are not just tools for interpretability but natural infrastructure for model debugging. Any architecture decomposing decision-making into interpretable intermediate representations can leverage a similar "error analysis in the intermediate space" strategy.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Concept Discovery for Interpretable Few-Shot Text Classification](../../ICLR2026/interpretability/adaptive_concept_discovery_for_interpretable_few-shot_text_classification.md)
 - [\[CVPR 2025\] Towards Human-Understandable Multi-Dimensional Concept Discovery](../../CVPR2025/interpretability/towards_human-understandable_multi-dimensional_concept_discovery.md)
-- [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](../../ICCV2025/interpretability/granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
+- [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](../../ICLR2026/interpretability/from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 - [\[ACL 2025\] CLEME2.0: Towards Interpretable Evaluation by Disentangling Edits for Grammatical Error Correction](../../ACL2025/interpretability/cleme2_gec_evaluation.md)
-- [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](../../CVPR2026/interpretability/hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
+- [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](../../ICCV2025/interpretability/granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
 
 </div>
 

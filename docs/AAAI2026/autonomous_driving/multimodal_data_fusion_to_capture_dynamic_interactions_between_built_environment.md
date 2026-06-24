@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multimodal Data Fusion to Capture Dynamic Interactions between Built Environment and Vulnerable Older Adults
 description: >-
-  [AAAI 2026][Autonomous Driving][Multimodal Data Fusion] This paper proposes a **multimodal data fusion framework** that integrates eye-tracking, motion sensors (IMU), physiological monitoring (EDA/HRV), GPS…
+  [AAAI 2026][Autonomous Driving][Multimodal Data Fusion] This paper proposes a **multimodal data fusion framework** that integrates eye-tracking, motion sensors (IMU), physiological monitoring (EDA/HRV), GPS, and video recording to dynamically characterize interactions between vulnerable older adults (with knee osteoarthritis or fall history) and the urban built environment. Through AI-driven data fusion, the framework identifies urban street segments that significantly influe…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "SLAM Trajectory Reconstruction"
   - "Urban Planning"
 date: 2026-05-08
-content_hash: d383a2a3952c5453
+content_hash: 6a5d0727db8bcfa6
 ---
 
 # Multimodal Data Fusion to Capture Dynamic Interactions between Built Environment and Vulnerable Older Adults
@@ -200,11 +200,11 @@ Although no traditional ablation experiments are conducted, the paper systematic
 
 ## Related Papers
 
+- [\[ECCV 2024\] LiveHPS++: Robust and Coherent Motion Capture in Dynamic Free Environment](../../ECCV2024/autonomous_driving/livehps_robust_and_coherent_motion_capture_in_dynamic_free_environment.md)
 - [\[AAAI 2026\] CaTFormer: Causal Temporal Transformer with Dynamic Contextual Fusion for Driving Intention Prediction](catformer_causal_temporal_transformer_with_dynamic_contextual_fusion_for_driving.md)
-- [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](../../NeurIPS2025/autonomous_driving/layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
-- [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
 - [\[AAAI 2026\] Understanding Dynamic Scenes in Egocentric 4D Point Clouds](understanding_dynamic_scenes_in_ego_centric_4d_point_clouds.md)
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
+- [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
 
 </div>
 

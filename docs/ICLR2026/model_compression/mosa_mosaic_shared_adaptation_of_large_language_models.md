@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MoSA: Mosaic Shared Adaptation of Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][PEFT] MoSA replaces LoRA's low-rank decomposition with mosaic-style parameter sharing, where the weight matrix is randomly partitioned into small blocks with each sharing a learnable scalar. This achieves full-rank, element-wise weight updates under an identical parameter budget, while custom backward kernels ensure zero inf
+  [ICLR 2026][Model Compression][PEFT] MoSA replaces LoRA's low-rank decomposition with mosaic-style parameter sharing, where the weight matrix is randomly partitioned into small blocks with each sharing a learnable scalar. This achieves full-rank, element-wise weight updates under an identical parameter budget, while custom backward kernels ensure zero inference overhead and efficient training.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - PEFT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "PEFT"
+  - "LoRA alternative"
+  - "parameter sharing"
+  - "full-rank update"
+  - "random grouping"
+  - "mosaic"
 date: 2026-05-08
-content_hash: 458228841ac811ee
+content_hash: 9229a9ce48b8e0d0
 ---
+
 # MoSA: Mosaic Shared Adaptation of Large Language Models
 
 **Conference**: ICLR 2026  
@@ -125,7 +131,7 @@ The massive +7.19% lead in OOD (Out-of-Distribution) mathematical reasoning is n
 - [\[ICLR 2026\] QWHA: Quantization-Aware Walsh-Hadamard Adaptation for Parameter-Efficient Fine-Tuning on Large Language Models](qwha_quantization-aware_walsh-hadamard_adaptation_for_parameter-efficient_fine-t.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](distillation_of_large_language_models_via_concrete_score_matching.md)
 - [\[ICLR 2026\] Knowledge Fusion of Large Language Models Via Modular Skillpacks](knowledge_fusion_of_large_language_models_via_modular_skillpacks.md)
-- [\[AAAI 2026\] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](../../AAAI2026/model_compression/skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)
+- [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 
 </div>
 

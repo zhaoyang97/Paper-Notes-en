@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Designing Incident Reporting Systems for Harms from General-Purpose AI
 description: >-
-  [AAAI 2026][AI Incident Reporting] Through a literature review and case studies of nine safety-critical industries (nuclear energy, aviation, healthcare, etc.)…
+  [AAAI 2026][AI Incident Reporting] Through a literature review and case studies of nine safety-critical industries (nuclear energy, aviation, healthcare, etc.), this paper proposes a seven-dimensional institutional design framework for AI incident reporting systems, providing systematic guidance for policy design of general-purpose AI incident reporting in the United States.
 tags:
   - "AAAI 2026"
   - "AI Incident Reporting"
@@ -11,7 +11,7 @@ tags:
   - "Policy Design"
   - "General-Purpose AI"
 date: 2026-05-08
-content_hash: 923b836d5f96e2ce
+content_hash: 10a09df306d1befe
 ---
 
 # Designing Incident Reporting Systems for Harms from General-Purpose AI
@@ -179,11 +179,11 @@ The study employs qualitative case analysis, with a methodology adapted from Raj
 
 ## Related Papers
 
+- [\[AAAI 2026\] Regular Games – an Automata-Based General Game Playing Language](regular_games_--_an_automata-based_general_game_playing_language.md)
 - [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](../../ICML2026/others/mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
 - [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](../../ICML2026/others/beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
-- [\[AAAI 2026\] Regular Games – an Automata-Based General Game Playing Language](regular_games_--_an_automata-based_general_game_playing_language.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
-- [\[AAAI 2026\] SynWeather: Weather Observation Data Synthesis across Multiple Regions and Variables via a General Diffusion Transformer](synweather_weather_observation_data_synthesis_across_multiple_regions_and_variab.md)
+- [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
 
 </div>
 

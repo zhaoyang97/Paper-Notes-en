@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference
 description: >-
-  [NeurIPS 2025][Model Compression][KV Cache] Existing KV cache eviction methods uniformly allocate budgets across all attention heads…
+  [NeurIPS 2025][Model Compression][KV Cache] Existing KV cache eviction methods uniformly allocate budgets across all attention heads, ignoring the substantial variation in attention concentration across heads. This paper proposes Ada-KV — the first head-wise adaptive budget allocation strategy — which redistributes budget from sparse heads to dispersed heads. It provides a theoretical proof that the approach minimizes an upper bound on eviction loss…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Long-Sequence Inference"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: d8f6b58821abeb82
+content_hash: 7524d80fe492e2b8
 ---
 
 # Ada-KV: Optimizing KV Cache Eviction by Adaptive Budget Allocation for Efficient LLM Inference
@@ -134,8 +134,8 @@ Given total budget $B$ and per-head attention weights $\{A_i\}$ → concatenate 
 ## Related Papers
 
 - [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
-- [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
+- [\[NeurIPS 2025\] ChunkKV: Semantic-Preserving KV Cache Compression for Efficient Long-Context LLM Inference](chunkkv_semanticpreserving_kv_cache_compression_for_efficien.md)
 - [\[NeurIPS 2025\] Inference-Time Hyper-Scaling with KV Cache Compression](inference-time_hyper-scaling_with_kv_cache_compression.md)
 - [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](../../ACL2026/model_compression/dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
 

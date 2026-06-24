@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper comprehensively validates a key finding across five open-source LLMs through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis): safety alignment behaviors are highly entangled with general learning in both the weight space and activation
+  [ICLR 2026][LLM Alignment][Safety alignment] This paper comprehensively validates a key finding across five open-source LLMs through four systematic experiments (parallel projection, orthogonal projection, subspace overlap, and activation space analysis): safety alignment behaviors are highly entangled with general learning in both the weight space and activation space. There is no linearly separable independent safety subspace, indicating that defense strategies based on sub…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Safety alignment"
+  - "subspace"
+  - "fine-tuning attacks"
+  - "linear separability"
+  - "weight space"
 date: 2026-05-08
-content_hash: 92b55da62a3370a1
+content_hash: 837cfe574e1b0240
 ---
+
 # Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study
 
 **Conference**: ICLR 2026  
@@ -127,15 +133,15 @@ Fine-tuning uses standard training: useful data from a 20K subset of MetaMathQA,
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Anchored Supervised Fine-Tuning](anchored_supervised_fine-tuning.md)
 - [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](../../ACL2026/llm_alignment/why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
 - [\[ICML 2026\] Safety Anchor: Defending Harmful Fine-tuning via Geometric Bottlenecks](../../ICML2026/llm_alignment/safety_anchor_defending_harmful_fine-tuning_via_geometric_bottlenecks.md)
+- [\[ICLR 2026\] TS²: Sparsemax+ for Training and Softmax for Testing for Accurate and Diverse LLM Fine-tuning](ts2_training_with_sparsemax_testing_with_softmax_for_accurate_and_diverse_llm_fi.md)
 - [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](pretrain_value_not_reward_decoupled_value_policy_optimization.md)
-- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 
 </div>
 

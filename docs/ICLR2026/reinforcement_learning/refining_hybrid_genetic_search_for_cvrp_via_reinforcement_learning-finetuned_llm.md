@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Refining Hybrid Genetic Search for CVRP via Reinforcement Learning-Finetuned LLM
 description: >-
-  [ICLR 2026][Reinforcement Learning][CVRP] This paper proposes RFTHGS, which fine-tunes a 14B small model using reinforcement learning to automatically generate crossover operators for the Hybrid Genetic Search (HGS) solver. The operators generated for CVRP outperform those manually designed by human experts and generalize stably to instances with up to 1000 no
+  [ICLR 2026][Reinforcement Learning][CVRP] This paper proposes RFTHGS, which fine-tunes a 14B small model using reinforcement learning to automatically generate crossover operators for the Hybrid Genetic Search (HGS) solver. The operators generated for CVRP outperform those manually designed by human experts and generalize stably to instances with up to 1000 nodes, surpassing trillion-parameter commercial models such as GPT-4o, o3, and o4-mini.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - CVRP
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "CVRP"
+  - "Hybrid Genetic Search"
+  - "Operator Generation"
+  - "Reinforcement Fine-tuning"
+  - "Curriculum Reward"
 date: 2026-05-08
-content_hash: 4aca93f73dcbfad3
+content_hash: d02a63dd822857fc
 ---
+
 # Refining Hybrid Genetic Search for CVRP via Reinforcement Learning-Finetuned LLM
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] ChainGPT: Dual-Reasoning Model with Recurrent Depth and Multi-Rank State Updates
 description: >-
-  [ICLR 2026][LLM Reasoning][RWKV] ChainGPT shifts reasoning from "generating more tokens" into the latent space. By combining **intra-layer multi-substep state updates (RWKV-Product) + State-Guided Sparse Attention (SGSA)** for deep local computation with **cross-layer recurrent depth** for iterative refinement, it enables small models to achieve reaso
+  [ICLR 2026][Reasoning][Latent Space Reasoning] ChainGPT shifts reasoning from "generating more tokens" into the latent space. By combining **intra-layer multi-substep state updates (RWKV-Product) + State-Guided Sparse Attention (SGSA)** for deep local computation with **cross-layer recurrent depth** for iterative refinement, it enables small models to achieve reasoning capabilities exceeding fixed-depth Transformers at near-linear complexity.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RWKV
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Latent Space Reasoning"
+  - "Recurrent Depth"
+  - "Multi-Rank State Updates"
+  - "RWKV"
+  - "Sparse Attention"
+  - "Hybrid Architecture"
 date: 2026-05-08
-content_hash: 19d174d560ce5533
+content_hash: e8bef461311f01db
 ---
+
 # ChainGPT: Dual-Reasoning Model with Recurrent Depth and Multi-Rank State Updates
 
 **Conference**: ICLR 2026  

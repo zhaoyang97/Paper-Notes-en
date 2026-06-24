@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] EgoViT employs a teacher-student ViT framework to jointly optimize three mechanisms—"proto-object discovery + depth geometric regularization + teacher-filtered temporal consistency"—from unlabeled egocentric videos. It achieves an +8.0% improvement in unsupervised object discovery CorLoc and a +4.8% increase in semanti
+  [CVPR 2026][Self-Supervised Learning][Egocentric Video] EgoViT employs a teacher-student ViT framework to jointly optimize three mechanisms—"proto-object discovery + depth geometric regularization + teacher-filtered temporal consistency"—from unlabeled egocentric videos. It achieves an +8.0% improvement in unsupervised object discovery CorLoc and a +4.8% increase in semantic segmentation mIoU.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Egocentric Video"
+  - "Self-Supervised"
+  - "Object Discovery"
+  - "Temporal Consistency"
+  - "Depth Regularization"
 date: 2026-05-08
-content_hash: 5a3b5651f39cf64d
+content_hash: 102f2a18957da5ea
 ---
+
 # Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ EgoViT-WT-all, trained on the full Walking Tours dataset, further increases CorL
 
 ## Related Papers
 
-- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
 - [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
-- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
-- [\[CVPR 2025\] AutoSSVH: Automated Frame Sampling for Self-Supervised Video Hashing](../../CVPR2025/self_supervised/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_.md)
+- [\[ICLR 2026\] OrthoRF: Exploring Orthogonality in Object-Centric Representations](../../ICLR2026/self_supervised/orthorf_exploring_orthogonality_in_object-centric_representations.md)
 - [\[CVPR 2026\] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation](teflow_enabling_multi-frame_supervision_for_self-supervised_feed-forward_scene_f.md)
+- [\[ICLR 2026\] Rethinking JEPA: Compute-Efficient Video Self-Supervised Learning with Frozen Teachers](../../ICLR2026/self_supervised/rethinking_jepa_computeefficient_video_self-supervised_learning_with_frozen_teac.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models
 description: >-
-  [ICCV 2025][Self-Supervised Learning][Active Learning] This paper proposes PALM — a unified mathematical model that characterizes active learning trajectories using four interpretable parameters (maximum accuracy $A_{\ma…
+  [ICCV 2025][Self-Supervised Learning][Active Learning] This paper proposes PALM — a unified mathematical model that characterizes active learning trajectories using four interpretable parameters (maximum accuracy $A_{\max}$, coverage efficiency $\delta$, initial learning offset $\alpha$, and scalability $\beta$). The model predicts complete learning curves from limited labeled data, enabling quantitative and fair comparison of active learning strategies.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Coverage Efficiency"
   - "Self-Supervised Representations"
 date: 2026-05-08
-content_hash: e48b633c30c2c240
+content_hash: 8fa8fabe244b9efa
 ---
 
 # To Label or Not to Label: PALM – A Predictive Model for Evaluating Sample Efficiency in Active Learning Models
@@ -162,10 +162,10 @@ where:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](../../NeurIPS2025/self_supervised/hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
+- [\[ICLR 2026\] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering](../../ICLR2026/self_supervised/samples_are_not_equal_a_sample_selection_approach_for_deep_clustering.md)
+- [\[ICML 2026\] Active Learning with Foundation Model Priors: Efficient Learning under Class Imbalance](../../ICML2026/self_supervised/active_learning_with_foundation_model_priors_efficient_learning_under_class_imba.md)
+- [\[CVPR 2025\] BoSS: A Best-of-Strategies Selector as an Oracle for Deep Active Learning](../../CVPR2025/self_supervised/boss_a_best-of-strategies_selector_as_an_oracle_for_deep_active_learning.md)
 - [\[ICML 2026\] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment](../../ICML2026/self_supervised/mitigating_label_shift_in_tabular_in-context_learning_via_test-time_posterior_ad.md)
-- [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
-- [\[ICCV 2025\] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)](a_tokenlevel_text_image_foundation_model_for_document_unders.md)
-- [\[ICCV 2025\] Improving Large Vision and Language Models by Learning from a Panel of Peers](improving_large_vision_and_language_models_by_learning_from_a_panel_of_peers.md)
 
 </div>
 

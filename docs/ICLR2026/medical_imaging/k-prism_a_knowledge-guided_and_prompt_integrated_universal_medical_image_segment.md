@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model
 description: >-
-  [ICLR 2026][Medical Imaging][Mixture-of-Experts] K-Prism unifies semantic priors, few-shot reference examples, and user interactive feedback into 1-D sparse and 2-D dense prompts, dynamically routed by a Mixture-of-Experts (MoE) decoder. It establishes new benchmarks across 18 medical image datasets for semantic, in-context, and interactive segmentation.
+  [ICLR2026][Medical Imaging][Medical image segmentation] K-Prism unifies semantic priors, few-shot reference examples, and user interactive feedback into 1-D sparse and 2-D dense prompts, dynamically routed by a Mixture-of-Experts (MoE) decoder. It establishes new benchmarks across 18 medical image datasets for semantic, in-context, and interactive segmentation.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Mixture-of-Experts
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "Universal segmentation"
+  - "In-context learning"
+  - "Interactive segmentation"
+  - "Mixture-of-Experts"
 date: 2026-05-08
-content_hash: 19cc25d9ea9848c6
+content_hash: c46b897a2013b0fb
 ---
+
 # K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model
 
 **Conference**: ICLR2026  
@@ -139,11 +144,20 @@ Removing MoE significantly degrades performance, especially for semantic and in-
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Papers will be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](../../AAAI2026/medical_imaging/propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)
+- [\[CVPR 2025\] Show and Segment: Universal Medical Image Segmentation via In-Context Learning](../../CVPR2025/medical_imaging/show_and_segment_universal_medical_image_segmentation_via_in-context_learning.md)
+- [\[ICLR 2026\] Rethinking Model Calibration through Spectral Entropy Regularization in Medical Image Segmentation](rethinking_model_calibration_through_spectral_entropy_regularization_in_medical_.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](../../CVPR2026/medical_imaging/universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
+- [\[CVPR 2026\] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation](../../CVPR2026/medical_imaging/voxtell_free-text_promptable_universal_3d_medical_image_segmentation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] ProPL: Universal Semi-Supervised Ultrasound Image Segmentation via Prompt-Guided Pseudo-Labeling](../../AAAI2026/medical_imaging/propl_universal_semi-supervised_ultrasound_image_segmentation_via_prompt-guided_.md)

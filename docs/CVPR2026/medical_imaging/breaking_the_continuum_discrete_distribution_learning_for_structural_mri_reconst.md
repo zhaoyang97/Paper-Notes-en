@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction
 description: >-
-  [CVPR 2026][Medical Imaging][Diffusion Model] For undersampled MRI reconstruction, DiCoS moves away from the "single-trajectory" continuous manifold refinement used in diffusion models. Instead, it employs a discrete prior network to generate $K$ anatomical candidates, applies extremely short micro-diffusion cycles for texture refinement and data consistency proje
+  [CVPR 2026][Medical Imaging][MRI Reconstruction] For undersampled MRI reconstruction, DiCoS moves away from the "single-trajectory" continuous manifold refinement used in diffusion models. Instead, it employs a discrete prior network to generate $K$ anatomical candidates, applies extremely short micro-diffusion cycles for texture refinement and data consistency projection, and uses a Dual-domain Balancing Score (k-space + image domain) to chains-of-select the best hypothesis.…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "MRI Reconstruction"
+  - "Discrete Distribution Learning"
+  - "Multi-hypothesis Generation"
+  - "Diffusion Models"
+  - "Dual-domain Scoring"
 date: 2026-05-08
-content_hash: 3878244c5b9eafc4
+content_hash: 878908fb0fbf9a7d
 ---
+
 # Breaking the Continuum: Discrete Distribution Learning for Structural MRI Reconstruction
 
 **Conference**: CVPR 2026  
@@ -135,10 +140,10 @@ On Knee dataset at 12× acceleration (C2F=Coarse-to-Fine, MDC=Micro-diffusion, D
 ## Related Papers
 
 - [\[CVPR 2026\] Prospective Dynamic 3D MRI Reconstruction via Latent-Space Motion Tracking from Single Measurement](prospective_dynamic_3d_mri_reconstruction_via_latent-space_motion_tracking_from_.md)
-- [\[CVPR 2026\] Semantic Class Distribution Learning for Debiasing Semi-Supervised Medical Image Segmentation](semantic_class_distribution_learning_for_debiasing.md)
-- [\[CVPR 2026\] SemiGDA: Generative Dual-distribution Alignment for Semi-Supervised Medical Image Segmentation](semigda_generative_dual-distribution_alignment_for_semi-supervised_medical_image.md)
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
 - [\[CVPR 2026\] The Invisible Gorilla Effect in Out-of-distribution Detection](the_invisible_gorilla_effect_in_out-of-distribution_detection.md)
+- [\[CVPR 2026\] TANGO: Learning Distribution-wise Foundation Prior Consistency and Instance-wise Style Calibration for Medical Image Generalization](tango_learning_distribution-wise_foundation_prior_consistency_and_instance-wise_.md)
+- [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
 
 </div>
 

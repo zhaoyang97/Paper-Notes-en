@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Multimodal Aligned Semantic Knowledge for Unpaired Image-text Matching
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] MASK uses pre-trained word vectors as a bridge to align each word to a "prototypical region representation." It leverages the semantic structure of word vectors to reconstruct visual prototypes for out-of-distribution (OOD) words and employs a prototype consistency contrastive loss to compress intra-class variance. Thi
+  [ICLR 2026][Multimodal VLM][Unpaired Image-Text Matching] MASK uses pre-trained word vectors as a bridge to align each word to a "prototypical region representation." It leverages the semantic structure of word vectors to reconstruct visual prototypes for out-of-distribution (OOD) words and employs a prototype consistency contrastive loss to compress intra-class variance. This approach significantly outperforms existing knowledge-based methods in "unpaired image-text matching…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Unpaired Image-Text Matching"
+  - "Cross-modal Alignment"
+  - "Visual Prototypes"
+  - "Word Embeddings"
+  - "Contrastive Learning"
+  - "OOD Generalization"
 date: 2026-05-08
-content_hash: ffbbf4f2b88f6d3e
+content_hash: 83a9c5cb29fb7193
 ---
+
 # Multimodal Aligned Semantic Knowledge for Unpaired Image-text Matching
 
 **Conference**: ICLR 2026  
@@ -115,11 +122,11 @@ In zero-shot re-ranking, CLIP+MASK improved Flickr30K Rs from 525.5 to 534.3 and
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">...</div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text-Printed Image：把文本「印」成图片来弥合图文模态鸿沟](../../CVPR2026/multimodal_vlm/text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
+- [\[CVPR 2026\] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images](../../CVPR2026/multimodal_vlm/text-printed_image_bridging_the_image-text_modality_gap_for_text-centric_trainin.md)
 - [\[ICLR 2026\] A High Quality Dataset and Reliable Evaluation for Interleaved Image-Text Generation](a_high_quality_dataset_and_reliable_evaluation_for_interleaved_image-text_genera.md)
 - [\[ICLR 2026\] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation](asynchronous_matching_with_dynamic_sampling_for_multimodal_dataset_distillation.md)
 - [\[CVPR 2026\] ReMatch: Boosting Representation through Matching for Multimodal Retrieval](../../CVPR2026/multimodal_vlm/rematch_boosting_representation_through_matching_for_multimodal_retrieval.md)

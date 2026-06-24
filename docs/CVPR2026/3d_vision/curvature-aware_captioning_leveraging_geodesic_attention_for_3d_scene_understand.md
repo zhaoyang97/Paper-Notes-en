@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] To address the conflicting geometric space requirements of "precise localization" and "hierarchical semantics" in 3D dense captioning, this paper introduces a multi-stage non-Euclidean geodesic attention mechanism. The encoder performs localization on the Oblique manifold, while the decoder constructs semantic hierarch
+  [CVPR 2026][3D Vision][3D Dense Captioning] To address the conflicting geometric space requirements of "precise localization" and "hierarchical semantics" in 3D dense captioning, this paper introduces a multi-stage non-Euclidean geodesic attention mechanism. The encoder performs localization on the Oblique manifold, while the decoder constructs semantic hierarchies in Lorentz hyperbolic space, upgrading the Vote2Cap-DETR++ framework to the CAC framework. It achieves new SOTA…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Dense Captioning"
+  - "Geodesic Attention"
+  - "Oblique Manifold"
+  - "Lorentz Hyperbolic Space"
+  - "Non-Euclidean Geometry"
 date: 2026-05-08
-content_hash: e45dbba0ef011992
+content_hash: 52d363d38a673b53
 ---
+
 # Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Comparison with BiCA under identical conditions (IoU=0.5):
 
 ## Related Papers
 
+- [\[CVPR 2026\] OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding](openvoxel_training-free_grouping_and_captioning_voxels_for_open-vocabulary_3d_sc.md)
 - [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[ECCV 2024\] Bi-directional Contextual Attention for 3D Dense Captioning](../../ECCV2024/3d_vision/bi-directional_contextual_attention_for_3d_dense_captioning.md)
+- [\[CVPR 2026\] Towards Foundation Models for 3D Scene Understanding: Instance-Aware Self-Supervised Learning for Point Clouds](towards_foundation_models_for_3d_scene_understanding_instance-aware_self-supervi.md)
+- [\[ICCV 2025\] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail](../../ICCV2025/3d_vision/excap3d_expressive_3d_scene_understanding_via_object_captioning_with_varying_det.md)
 
 </div>
 

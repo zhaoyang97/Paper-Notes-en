@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Retrieval-Augmented Tutoring for Algorithm Tracing and Problem-Solving in AI Education
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG tutoring] Ours proposes KITE, a RAG tutoring system for course materials oriented towards algorithm tracing and problem-solving. Through intent-aware Socratic feedback and multi-stage retrieval, it demonstrates superior grounding and pedagogical scaffolding effects across automated metrics, simulated students, and expert reviews
+  [ACL2026][Information Retrieval & RAG][RAG tutoring] Ours proposes KITE, a RAG tutoring system for course materials oriented towards algorithm tracing and problem-solving. Through intent-aware Socratic feedback and multi-stage retrieval, it demonstrates superior grounding and pedagogical scaffolding effects across automated metrics, simulated students, and expert reviews.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG tutoring
-  - Socratic scaffolding
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "RAG tutoring"
+  - "algorithm learning"
+  - "Socratic scaffolding"
+  - "intent classification"
+  - "simulated student evaluation"
 date: 2026-05-08
-content_hash: 2537aa1fd3ff2a37
+content_hash: a516c06c02abf61a
 ---
+
 # Retrieval-Augmented Tutoring for Algorithm Tracing and Problem-Solving in AI Education
 
 **Conference**: ACL2026  
@@ -167,7 +171,7 @@ Ours does not perform traditional module ablation, but the Round 1 → Round 2 t
 - [\[ICLR 2026\] CFT-RAG: An Entity Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter](../../ICLR2026/information_retrieval/cft-rag_an_entity_tree_based_retrieval_augmented_generation_algorithm_with_cucko.md)
 - [\[ICML 2026\] Position: Reliable AI Needs to Externalize Implicit Knowledge: A Human-AI Collaboration Perspective](../../ICML2026/information_retrieval/reliable_ai_needs_to_externalize_implicit_knowledge_a_human-ai_collaboration_per.md)
 - [\[ACL 2026\] S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](s2g-rag_structured_sufficiency_and_gap_judging_for_iterative_retrieval-augmented.md)
-- [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
+- [\[ACL 2026\] Beyond Chunks and Graphs: Retrieval-Augmented Generation through Triplet-Driven Thinking](beyond_chunks_and_graphs_retrieval-augmented_generation_through_triplet-driven_t.md)
 
 </div>
 

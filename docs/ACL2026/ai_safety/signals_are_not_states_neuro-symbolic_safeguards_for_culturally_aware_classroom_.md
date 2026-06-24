@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Signals Are Not States: Neuro-Symbolic Safeguards for Culturally Aware Classroom AI
 description: >-
-  [ACL 2026][AI Safety][Paper Note] The paper argues that classroom AI should not directly interpret culturally contextualized signals such as "silence, averted gaze, or code-switching" as educational judgments like "low engagement, inattention, or low ability." It proposes the NSCR neuro-symbolic framework: mapping multimodal signals into typed facts wi
+  [ACL 2026][AI Safety][Classroom AI] The paper argues that classroom AI should not directly interpret culturally contextualized signals such as "silence, averted gaze, or code-switching" as educational judgments like "low engagement, inattention, or low ability." It proposes the NSCR neuro-symbolic framework: mapping multimodal signals into typed facts with uncertainty, provenance, and **cultural scope**, followed by executable reasoning and governance policies to generate evi…
 tags:
-  - ACL 2026
-  - AI Safety
+  - "ACL 2026"
+  - "AI Safety"
+  - "Classroom AI"
+  - "Stereotypes"
+  - "Neuro-symbolic"
+  - "Cultural Scope"
+  - "Deferral"
 date: 2026-05-08
-content_hash: 047647beaea8a068
+content_hash: b85a035e7276a1cb
 ---
+
 # Signals Are Not States: Neuro-Symbolic Safeguards for Culturally Aware Classroom AI
 
 **Conference**: ACL 2026  
@@ -143,11 +149,11 @@ The paper argues that evaluation should happen at the reasoning and governance l
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards a Certificate of Trust: Task-Aware OOD Detection for Scientific AI](../../ICLR2026/ai_safety/towards_a_certificate_of_trust_task-aware_ood_detection_for_scientific_ai.md)
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](../../CVPR2026/ai_safety/scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
-- [\[CVPR 2025\] NoT: Federated Unlearning via Weight Negation](../../CVPR2025/ai_safety/not_federated_unlearning_via_weight_negation.md)
 - [\[ICML 2026\] Where Rectified Flows Leak: Characterising Membership Signals Along the Interpolation Path](../../ICML2026/ai_safety/where_rectified_flows_leak_characterising_membership_signals_along_the_interpola.md)
 - [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](../../ICML2026/ai_safety/privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
-- [\[CVPR 2026\] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测](../../CVPR2026/ai_safety/saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](../../CVPR2026/ai_safety/saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 
 </div>
 

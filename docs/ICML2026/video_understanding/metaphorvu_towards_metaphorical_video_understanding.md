@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] MetaphorVU: Towards Metaphorical Video Understanding
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] This paper proposes the first metaphorical video understanding benchmark, MetaphorVU-Bench (860 videos + 8-category metaphor taxonomy), and an enhancement method, MetaphorBoost. By utilizing a metaphor knowledge graph with 54K nodes and 200K edges as an external cognitive scaffold, the study quantitatively reveals that
+  [ICML 2026 Spotlight][Video Understanding][Metaphorical Video Understanding] This paper proposes the first metaphorical video understanding benchmark, MetaphorVU-Bench (860 videos + 8-category metaphor taxonomy), and an enhancement method, MetaphorBoost. By utilizing a metaphor knowledge graph with 54K nodes and 200K edges as an external cognitive scaffold, the study quantitatively reveals that the core bottleneck for MLLMs in metaphorical video understanding is the "lack of…
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026 Spotlight"
+  - "Video Understanding"
+  - "Metaphorical Video Understanding"
+  - "Multimodal Large Language Models"
+  - "Cross-domain Mapping"
+  - "Knowledge Graph Enhancement"
 date: 2026-05-08
-content_hash: baf241d56c8e2d29
+content_hash: 79e14f6d8a6764a4
 ---
+
 # MetaphorVU: Towards Metaphorical Video Understanding
 
 **Conference**: ICML 2026 Spotlight  
@@ -130,9 +135,9 @@ All three factors are effective: external knowledge compensates for MLLM deficit
 
 - [\[CVPR 2026\] Video Panels for Long Video Understanding](../../CVPR2026/video_understanding/video_panels_for_long_video_understanding.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
-- [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](../../CVPR2026/video_understanding/efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
 - [\[ICML 2026\] VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking](videotemp-o3_harmonizing_temporal_grounding_and_video_understanding_in_agentic_t.md)
 - [\[CVPR 2026\] InternVideo-Next: Towards World-Understanding Video Models](../../CVPR2026/video_understanding/internvideo-next_towards_world-understanding_video_models.md)
+- [\[ICLR 2026\] VUDG: A Dataset for Video Understanding Domain Generalization](../../ICLR2026/video_understanding/vudg_a_dataset_for_video_understanding_domain_generalization.md)
 
 </div>
 

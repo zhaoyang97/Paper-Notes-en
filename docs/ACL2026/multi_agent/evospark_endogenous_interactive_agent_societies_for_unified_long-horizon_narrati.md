@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] EvoSpark proposes a multi-agent framework for long-horizon narrative evolution. It addresses social memory stacking and narrative-spatial misalignment through three designs: hierarchical recursive memory (RSB for social cognitive metabolism), Generative Mise-en-scène (GMS for character-location-plot alignment), and the
+  [ACL 2026][Multi-Agent][Multi-agent Narrative] EvoSpark proposes a multi-agent framework for long-horizon narrative evolution. It addresses social memory stacking and narrative-spatial misalignment through three designs: hierarchical recursive memory (RSB for social cognitive metabolism), Generative Mise-en-scène (GMS for character-location-plot alignment), and the Emergent Character Grounding Protocol (ECGP to transform LLM hallucinations into persistent characters).
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Multi-agent Narrative"
+  - "Long-horizon Story Evolution"
+  - "Social Memory Metabolism"
+  - "Spatial Alignment"
+  - "Emergent Characters"
 date: 2026-05-08
-content_hash: 2e90cc5c01c8569e
+content_hash: ffcadbca44ac1f05
 ---
+
 # EvoSpark: Endogenous Interactive Agent Societies for Unified Long-Horizon Narrative Evolution
 
 **Conference**: ACL 2026  
@@ -121,8 +127,8 @@ EvoSpark significantly outperforms Open-Theatre, BookWorld, and HoLLMwood across
 - [\[ICLR 2026\] LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions](../../ICLR2026/multi_agent/lh-deception_simulating_and_understanding_llm_deceptive_behaviors_in_long-horizo.md)
 - [\[ACL 2026\] EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery](evosci_a_bio-inspired_multi-agent_framework_for_the_evolution_of_scientific_disc.md)
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
-- [\[ICLR 2026\] Auditing Cascading Risks in Multi-Agent Systems via Semantic–Geometric Co-evolution](../../ICLR2026/multi_agent/auditing_cascading_risks_in_multi-agent_systems_via_semanti-geometric_co-evolut.md)
 - [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](../../AAAI2026/multi_agent/llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

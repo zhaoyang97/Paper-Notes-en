@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] DARC separately treats two types of spurious correlations in multi-label chest X-ray classification—shortcut learning from non-pathological visual confounders and feature entanglement caused by pathological co-occurrence—using a global stream for backdoor adjustment and a local stream for counterfactual reasoning. Thes
+  [CVPR 2026][Medical Imaging][Chest X-ray classification] DARC separately treats two types of spurious correlations in multi-label chest X-ray classification—shortcut learning from non-pathological visual confounders and feature entanglement caused by pathological co-occurrence—using a global stream for backdoor adjustment and a local stream for counterfactual reasoning. These are fused at the logit level, leading to superior classification performance, interpretability…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Chest X-ray classification"
+  - "Causal inference"
+  - "Counterfactual reasoning"
+  - "Backdoor adjustment"
+  - "Multi-label classification"
 date: 2026-05-08
-content_hash: 798b56427ad85832
+content_hash: 294327f0e65103dc
 ---
+
 # DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification
 
 **Conference**: CVPR 2026  

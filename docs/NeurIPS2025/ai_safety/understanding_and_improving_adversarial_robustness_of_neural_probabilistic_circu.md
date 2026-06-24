@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits
 description: >-
-  [NeurIPS 2025][AI Safety][Concept Bottleneck Models] This paper theoretically establishes that the adversarial robustness of Neural Probabilistic Circuits (NPC) depends solely on the attribute recognition model and is in…
+  [NeurIPS 2025][AI Safety][Concept Bottleneck Models] This paper theoretically establishes that the adversarial robustness of Neural Probabilistic Circuits (NPC) depends solely on the attribute recognition model and is independent of the probabilistic circuit. Building on this finding, it proposes RNPC, which achieves provably improved robustness via class-wise inference aggregation, significantly enhancing adversarial robustness while maintaining benign accuracy.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Class-wise Reasoning"
   - "Interpretability"
 date: 2026-05-08
-content_hash: 3f1902128127041f
+content_hash: ed5d677c2857ba3f
 ---
 
 # Understanding and Improving Adversarial Robustness of Neural Probabilistic Circuits
@@ -142,10 +142,10 @@ RNPC matches or slightly surpasses NPC on benign inputs, confirming that the rob
 ## Related Papers
 
 - [\[NeurIPS 2025\] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)
+- [\[ICML 2025\] Solving Probabilistic Verification Problems of Neural Networks Using Branch and Bound](../../ICML2025/ai_safety/solving_probabilistic_verification_problems_of_neural_networks_using_branch_and_.md)
 - [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
-- [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](../../ICCV2025/ai_safety/towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
-- [\[NeurIPS 2025\] Enhancing Graph Classification Robustness with Singular Pooling](enhancing_graph_classification_robustness_with_singular_pooling.md)
-- [\[NeurIPS 2025\] Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification](keep_it_real_challenges_in_attacking_compression-based_adversarial_purification.md)
+- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
+- [\[ICML 2025\] Understanding Model Ensemble in Transferable Adversarial Attack](../../ICML2025/ai_safety/understanding_model_ensemble_in_transferable_adversarial_attack.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FLOW: Optimal Transport-Driven Feature Warping for Generalized Remote Physiological Measurement
 description: >-
-  [CVPR 2026][Human Understanding][rPPG] FLOW treats "distributional shift" in end-to-end rPPG models during cross-domain deployment as a feature-level Optimal Transport (OT) problem. It first utilizes a lightweight Temporal Refinement Module (TRM) to unify and denoise temporal features across domains, then applies Prototype-based Cross-temporal Optimal Trans
+  [CVPR 2026][Human Understanding][rPPG] FLOW treats "distributional shift" in end-to-end rPPG models during cross-domain deployment as a feature-level Optimal Transport (OT) problem. It first utilizes a lightweight Temporal Refinement Module (TRM) to unify and denoise temporal features across domains, then applies Prototype-based Cross-temporal Optimal Transport (PCOT) using a learnable prototype bank for soft alignment. Coupled with two regularization terms…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - rPPG
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "rPPG"
+  - "Domain Generalization"
+  - "Optimal Transport"
+  - "Prototype Alignment"
+  - "Temporal Features"
 date: 2026-05-08
-content_hash: 7e6d9995668ffdc5
+content_hash: 7bd9a1912f1083be
 ---
+
 # FLOW: Optimal Transport-Driven Feature Warping for Generalized Remote Physiological Measurement
 
 **Conference**: CVPR 2026  
@@ -137,7 +142,7 @@ Removing TRM and PCOT sequentially on BUAA-MIHR and MMPD (Table 5):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -145,7 +150,7 @@ Removing TRM and PCOT sequentially on BUAA-MIHR and MMPD (Table 5):
 - [\[CVPR 2025\] Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing](../../CVPR2025/human_understanding/optimal_transport-guided_source-free_adaptation_for_face_anti-spoofing.md)
 - [\[CVPR 2026\] FlowPalm: Optical Flow Driven Non-Rigid Deformation for Geometrically Diverse Palmprint Generation](flowpalm_optical_flow_driven_non-rigid_deformation_for_geometrically_diverse_pal.md)
 - [\[CVPR 2026\] HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations](humaps-4d_a_multimodal_dataset_for_human_motion_analysis_with_physiological_and_.md)
-- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
+- [\[CVPR 2026\] Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)
 
 </div>
 

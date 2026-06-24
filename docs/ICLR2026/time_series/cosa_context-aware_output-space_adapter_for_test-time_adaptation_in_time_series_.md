@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] COSA attaches a lightweight linear adapter that operates **exclusively in the output space** to a frozen time series forecasting model. It computes a residual using "base model predictions + recent ground truth statistics," constrained by a gating mechanism for calibration. During deployment, these few parameters are u
+  [ICLR2026][Time Series][Test-Time Adaptation] COSA attaches a lightweight linear adapter that operates **exclusively in the output space** to a frozen time series forecasting model. It computes a residual using "base model predictions + recent ground truth statistics," constrained by a gating mechanism for calibration. During deployment, these few parameters are updated only on ground truth that arrives with a delay. This approach is much simpler than existing "input + output…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Test-Time Adaptation"
+  - "Time Series Forecasting"
+  - "Output-Space Residual"
+  - "Gating"
+  - "Adaptive Learning Rate"
 date: 2026-05-08
-content_hash: e3e9a8dbd19df969
+content_hash: e7b04c6080fcfda4
 ---
+
 # COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting
 
 **Conference**: ICLR2026  
@@ -142,15 +148,16 @@ Computational Overhead: Inference time for COSA is **1.25ms** per batch, which i
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 - [\[ICLR 2026\] Bridging Past and Future: Distribution-Aware Alignment for Time Series Forecasting](bridging_past_and_future_distribution-aware_alignment_for_time_series_forecastin.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
 - [\[CVPR 2026\] Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport](../../CVPR2026/time_series/towards_uncertainty-aware_unsupervised_domain_adaptation_for_videos_and_time-ser.md)
-- [\[ICLR 2026\] DistDF: Time-series Forecasting Needs Joint-distribution Wasserstein Alignment](distdf_time-series_forecasting_needs_joint-distribution_wasserstein_alignment.md)
-- [\[CVPR 2026\] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](../../CVPR2026/time_series/sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)
+- [\[ICLR 2026\] Aurora: Towards Universal Generative Multimodal Time Series Forecasting](aurora_towards_universal_generative_multimodal_time_series_forecasting.md)
 
 </div>
 

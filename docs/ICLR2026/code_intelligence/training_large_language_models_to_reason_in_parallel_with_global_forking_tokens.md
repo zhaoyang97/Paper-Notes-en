@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Training Large Language Models To Reason In Parallel With Global Forking Tokens
 description: >-
-  [ICLR 2026][Code Intelligence][parallel reasoning] This paper proposes Set Supervised Fine-Tuning (SSFT), which aligns global forking tokens with diverse reasoning trajectories through bipartite matching. This enables LLMs to globally steer different reasoning patterns from a single control token, significantly outperforming standard SFT and GRPO on mathematical reason
+  [ICLR2026][Code Intelligence][parallel reasoning] This paper proposes Set Supervised Fine-Tuning (SSFT), which aligns global forking tokens with diverse reasoning trajectories through bipartite matching. This enables LLMs to globally steer different reasoning patterns from a single control token, significantly outperforming standard SFT and GRPO on mathematical reasoning and code generation tasks.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - parallel reasoning
-  - global forking tokens
-  - set supervised fine-tuning
-  - bipartite matching
-  - test-time compute
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "parallel reasoning"
+  - "global forking tokens"
+  - "set supervised fine-tuning"
+  - "bipartite matching"
+  - "test-time compute"
 date: 2026-05-08
-content_hash: b34ec8b5e5d9586b
+content_hash: 8af1af443b953192
 ---
+
 # Training Large Language Models To Reason In Parallel With Global Forking Tokens
 
 **Conference**: ICLR2026  

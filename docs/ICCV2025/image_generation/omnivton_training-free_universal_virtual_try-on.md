@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniVTON: Training-Free Universal Virtual Try-On
 description: >-
-  [ICCV2025][Image Generation][virtual try-on] OmniVTON proposes the first training-free universal virtual try-on framework. By decoupling garment texture and pose conditions…
+  [ICCV2025][Image Generation][virtual try-on] OmniVTON proposes the first training-free universal virtual try-on framework. By decoupling garment texture and pose conditions, the method employs three core modules—Structured Garment Morphing (SGM), Continuous Boundary Stitching (CBS), and Spectral Pose Injection (SPI)—to achieve high-fidelity try-on in both in-shop and in-the-wild settings, while also supporting multi-person try-on for the first time.
 tags:
   - "ICCV2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "garment warping"
   - "pose alignment"
 date: 2026-05-08
-content_hash: b8aba788ee6b488b
+content_hash: d86841029f9a5229
 ---
 
 # OmniVTON: Training-Free Universal Virtual Try-On
@@ -155,11 +155,11 @@ The paper presents a highly innovative approach as the first training-free unive
 
 ## Related Papers
 
-- [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](../../CVPR2026/image_generation/promo_promptable_virtual_tryon_efficient.md)
+- [\[CVPR 2025\] BooW-VTON: Boosting In-the-Wild Virtual Try-On via Mask-Free Pseudo Data Training](../../CVPR2025/image_generation/boow-vton_boosting_in-the-wild_virtual_try-on_via_mask-free_pseudo_data_training.md)
+- [\[CVPR 2026\] PG-VTON: Single-Pass Training-Free Virtual Try-On via Patch-Guided Reference Alignment](../../CVPR2026/image_generation/pg-vton_single-pass_training-free_virtual_try-on_via_patch-guided_reference_alig.md)
+- [\[CVPR 2025\] Shining Yourself: High-Fidelity Ornaments Virtual Try-on with Diffusion Model](../../CVPR2025/image_generation/shining_yourself_high-fidelity_ornaments_virtual_try-on_with_diffusion_model.md)
 - [\[ICCV 2025\] VIGFace: Virtual Identity Generation for Privacy-Free Face Recognition Dataset](vigface_virtual_identity_generation_for_privacy-free_face_recognition_dataset.md)
-- [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](matchdiffusion_training-free_generation_of_match-cuts.md)
-- [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](../../CVPR2026/image_generation/garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
-- [\[ICCV 2025\] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features](introstyle_training-free_introspective_style_attribution_using_diffusion_feature.md)
+- [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](../../CVPR2026/image_generation/high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
 
 </div>
 

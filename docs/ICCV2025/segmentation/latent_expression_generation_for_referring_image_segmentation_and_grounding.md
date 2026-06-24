@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Expression Generation for Referring Image Segmentation and Grounding
 description: >-
-  [ICCV 2025][Segmentation][Referring image segmentation] This paper proposes the Latent-VG framework, which generates multiple latent expressions from a single textual description — each sharing the same subject but highl…
+  [ICCV 2025][Segmentation][Referring image segmentation] This paper proposes the Latent-VG framework, which generates multiple latent expressions from a single textual description — each sharing the same subject but highlighting distinct visual attributes — to bridge the semantic gap between sparse text and rich visual information via complementary visual details. The method achieves state-of-the-art performance on both referring image segmentation and referring expression com…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "multimodal fusion"
 date: 2026-05-08
-content_hash: 5f190247a99a03bb
+content_hash: acc296495a474c11
 ---
 
 # Latent Expression Generation for Referring Image Segmentation and Grounding
@@ -164,9 +164,9 @@ On GRES, Latent-VG substantially surpasses prior state of the art by simply addi
 
 - [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
 - [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
+- [\[ECCV 2024\] ReMamber: Referring Image Segmentation with Mamba Twister](../../ECCV2024/segmentation/remamber_referring_image_segmentation_with_mamba_twister.md)
 - [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](../../NeurIPS2025/segmentation/safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
-- [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
-- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
+- [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
 
 </div>
 

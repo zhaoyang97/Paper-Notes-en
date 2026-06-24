@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spiking Discrepancy Transformer for Point Cloud Analysis
 description: >-
-  [ICLR 2026][3D Vision][Spiking Transformer] To address the issues in Spiking Neural Networks (SNNs) for point cloud analysis, where "dot-product attention tends to smooth edges and struggles to model local and global features simultaneously," this paper proposes using the **discrepancy** between spike sequences instead of dot-product similarity as the attention
+  [ICLR 2026][3D Vision][Spiking Neural Networks] To address the issues in Spiking Neural Networks (SNNs) for point cloud analysis, where "dot-product attention tends to smooth edges and struggles to model local and global features simultaneously," this paper proposes using the **discrepancy** between spike sequences instead of dot-product similarity as the attention mechanism. Combined with a spatial-aware spiking neuron that injects coordinates into the initial membrane poten…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Spiking Transformer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Spiking Neural Networks"
+  - "Point Cloud Analysis"
+  - "Spiking Transformer"
+  - "Spiking Discrepancy Attention"
+  - "Energy Efficiency"
 date: 2026-05-08
-content_hash: eca1d28fabbbd7f6
+content_hash: fe7a712a20241c9b
 ---
+
 # Spiking Discrepancy Transformer for Point Cloud Analysis
 
 **Conference**: ICLR 2026  
@@ -135,8 +140,8 @@ Time step ablation (Table 7): OA on ModelNet40 for $T=1/2/4/6$ is 92.18 / 92.34 
 - [\[ICLR 2026\] 3DSMT: A Hybrid Spiking Mamba-Transformer for Point Cloud Analysis](3dsmt_a_hybrid_spiking_mamba-transformer_for_point_cloud_analysis.md)
 - [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](../../ICCV2025/3d_vision/efficient_spiking_point_mamba_for_point_cloud_analysis.md)
 - [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
-- [\[ICLR 2026\] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)
-- [\[CVPR 2026\] PQDT: Pseudo-Query Dual Transformer for Robust Point Cloud Restoration](../../CVPR2026/3d_vision/pqdt_pseudo-query_dual_transformer_for_robust_point_cloud_restoration.md)
+- [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
+- [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](../../CVPR2026/3d_vision/learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Analyzing and Evaluating Unbiased Language Model Watermark
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes UWBENCH—the first open-source benchmark specifically designed for evaluating "distortion-free language model watermarks." It theoretically proves an impossibility theorem stating that "any detectable unbiased watermark cannot maintain the original distribution under repeated queries for the same pro
+  [ICLR2026][LLM Safety][Unbiased Watermarking] This paper proposes UWBENCH—the first open-source benchmark specifically designed for evaluating "distortion-free language model watermarks." It theoretically proves an impossibility theorem stating that "any detectable unbiased watermark cannot maintain the original distribution under repeated queries for the same prompt," introduces the SPMG metric to quantify distribution shift across multiple generations…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Unbiased Watermarking"
+  - "Distribution Shift"
+  - "Impossibility Theorem"
+  - "Certified Robustness"
+  - "Evaluation Benchmark"
 date: 2026-05-08
-content_hash: 5750f6da01133254
+content_hash: 84a1090b651276ed
 ---
+
 # Analyzing and Evaluating Unbiased Language Model Watermark
 
 **Conference**: ICLR2026  
@@ -144,14 +150,17 @@ Robustness (TPR@1%FPR) comparison highlighting the difference between paraphrase
 
 <div class="related-papers" markdown="1">
 
-- **DiPmark**: [https://arxiv.org/abs/2310.07710](https://arxiv.org/abs/2310.07710)
-- **SynthID-Text**: [https://arxiv.org/abs/2405.00208](https://arxiv.org/abs/2405.00208)
-- **KGW (Green-Red List)**: [https://arxiv.org/abs/2301.10226](https://arxiv.org/abs/2301.10226)
+## Related Papers
+
+- [\[ICLR 2026\] An Ensemble Framework for Unbiased Language Model Watermarking](an_ensemble_framework_for_unbiased_language_model_watermarking.md)
+- [\[ACL 2025\] Improved Unbiased Watermark for Large Language Models](../../ACL2025/llm_safety/improved_unbiased_watermark_for_large_language.md)
+- [\[ICLR 2026\] Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents](breaking_agent_backbones_evaluating_the_security_of_backbone_llms_in_ai_agents.md)
+- [\[ICLR 2026\] VoxPrivacy: A Benchmark for Evaluating Interactional Privacy of Speech Language Models](voxprivacy_a_benchmark_for_evaluating_interactional_privacy_of_speech_language_m.md)
+- [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] Improved Unbiased Watermark for Large Language Models](../../ACL2025/llm_safety/improved_unbiased_watermark_for_large_language.md)

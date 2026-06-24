@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
 description: >-
-  [ICCV 2025][3D Vision][Human Mesh Recovery] The first 3D human mesh recovery framework for amputees — by synthesizing 1M+ amputee images (A3D)…
+  [ICCV 2025][3D Vision][Human Mesh Recovery] The first 3D human mesh recovery framework for amputees — by synthesizing 1M+ amputee images (A3D), designing the BPAC-Net amputation classifier to distinguish amputation from occlusion, and employing a dual-tokenizer switching strategy to encode amputation/normal pose priors separately. The method achieves substantial improvements on amputee data (MVE 16.87 lower than TokenHMR on ITW-amputee) while remaining competitive on non-ampu…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Synthetic Dataset"
   - "Body Part Classifier"
 date: 2026-05-08
-content_hash: 853aec8f4d03f647
+content_hash: d94c1d80633ba3b2
 ---
 
 # AJAHR: Amputated Joint Aware 3D Human Mesh Recovery
@@ -122,10 +122,10 @@ An end-to-end ViT-based architecture: input images are encoded by a ViT into emb
 ## Related Papers
 
 - [\[ICCV 2025\] Fish2Mesh Transformer: 3D Human Mesh Recovery from Egocentric Vision](fish2mesh_transformer_3d_human_mesh_recovery_from_egocentric_vision.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](../../CVPR2026/3d_vision/anny-fit_all-age_human_mesh_recovery.md)
-- [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](../../CVPR2026/3d_vision/onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
-- [\[CVPR 2026\] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](../../CVPR2026/3d_vision/fall_risk_gait_analysis_hmr.md)
-- [\[AAAI 2026\] PressTrack-HMR: Pressure-Based Top-Down Multi-Person Global Human Mesh Recovery](../../AAAI2026/3d_vision/presstrack-hmr_pressure-based_top-down_multi-person_global_human_mesh_recovery.md)
+- [\[CVPR 2025\] PromptHMR: Promptable Human Mesh Recovery](../../CVPR2025/3d_vision/prompthmr_promptable_human_mesh_recovery.md)
+- [\[CVPR 2025\] MEGA: Masked Generative Autoencoder for Human Mesh Recovery](../../CVPR2025/3d_vision/mega_masked_generative_autoencoder_for_human_mesh_recovery.md)
+- [\[CVPR 2025\] HeatFormer: A Neural Optimizer for Multiview Human Mesh Recovery](../../CVPR2025/3d_vision/heatformer_a_neural_optimizer_for_multiview_human_mesh_recovery.md)
+- [\[ECCV 2024\] Global-to-Pixel Regression for Human Mesh Recovery](../../ECCV2024/3d_vision/global-to-pixel_regression_for_human_mesh_recovery.md)
 
 </div>
 

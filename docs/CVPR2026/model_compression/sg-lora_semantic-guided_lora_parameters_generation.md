@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SG-LoRA: Semantic-guided LoRA Parameters Generation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] SG-LoRA utilizes a textual task description as a "semantic bridge" to perform weighted aggregation of task semantics from a set of pre-trained expert LoRAs. It then directly samples and generates target LoRA parameters using a Conditional VAE (CVAE). This enables fine-tuning-free real-time model adaptation under condit
+  [CVPR 2026][Model Compression][LoRA Generation] SG-LoRA utilizes a textual task description as a "semantic bridge" to perform weighted aggregation of task semantics from a set of pre-trained expert LoRAs. It then directly samples and generates target LoRA parameters using a Conditional VAE (CVAE). This enables fine-tuning-free real-time model adaptation under conditions where **no target task data is available and the task space is open**, achieving or even surpassing the per…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA Generation"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Zero-Shot Open-world"
+  - "Conditional VAE"
+  - "Semantic Guidance"
 date: 2026-05-08
-content_hash: 70fe2ca04d293e01
+content_hash: 4f2f67db29c7ded2
 ---
+
 # SG-LoRA: Semantic-guided LoRA Parameters Generation
 
 **Conference**: CVPR 2026  
@@ -120,15 +126,16 @@ On MS-COCO and OxfordPets I2T R@1, SG-LoRA **outperforms the Oracle**. This is a
 - Value: ⭐⭐⭐⭐ Real-time, data-free LoRA generation holds high practical value for edge deployment and privacy scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] TAS-LoRA: Transformer Architecture Search with Mixture-of-LoRA Experts](tas-lora_transformer_architecture_search_with_mixture-of-lora_experts.md)
-- [\[ICML 2026\] A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search](../../ICML2026/model_compression/a_language-guided_bayesian_optimization_for_efficient_lora_hyperparameter_search.md)
 - [\[CVPR 2026\] Is Bin Generation Indispensable? A Bin-Generation-Free Dataset Quantization via Semantic Perspective](is_bin_generation_indispensable_a_bin-generation-free_dataset_quantization_via_s.md)
-- [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
+- [\[ICML 2026\] A Language-Guided Bayesian Optimization for Efficient LoRA Hyperparameter Search](../../ICML2026/model_compression/a_language-guided_bayesian_optimization_for_efficient_lora_hyperparameter_search.md)
+- [\[ICLR 2026\] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing](../../ICLR2026/model_compression/lora-mixer_coordinate_modular_lora_experts_through_serial_attention_routing.md)
 
 </div>
 

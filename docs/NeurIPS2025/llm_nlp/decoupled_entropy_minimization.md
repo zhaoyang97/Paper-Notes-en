@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Decoupled Entropy Minimization
 description: >-
-  [NeurIPS 2025][LLM/NLP][entropy minimization] This paper decouples classical entropy minimization (EM) into two opposing components — the Cluster Aggregation Driving Factor (CADF…
+  [NeurIPS 2025][LLM (Other)][entropy minimization] This paper decouples classical entropy minimization (EM) into two opposing components — the Cluster Aggregation Driving Factor (CADF, which rewards dominant classes) and the Gradient Mitigation Calibrator (GMC, which penalizes high-confidence classes) — revealing two inherent flaws of classical EM (reward collapse and easy-class bias). The proposed AdaDEM addresses these issues via normalized rewards and marginal entropy calib…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "entropy minimization"
   - "domain adaptation"
   - "test-time adaptation"
   - "self-supervised learning"
   - "reward collapse"
 date: 2026-05-08
-content_hash: 531bd0679c721e10
+content_hash: 6d33da2c1f376a57
 ---
 
 # Decoupled Entropy Minimization
@@ -132,11 +132,11 @@ The AdaDEM loss consists of a normalized CADF term and a MEC term. No manual hyp
 
 ## Related Papers
 
-- [\[ICML 2026\] YAQA: End-to-End KL Minimization LLM Adaptive Weight Quantization](../../ICML2026/llm_nlp/model-preserving_adaptive_rounding.md)
+- [\[ACL 2025\] Systematic Generalization in Language Models Scales with Information Entropy](../../ACL2025/llm_nlp/systematic_generalization_in_language_models_scales_with_information_entropy.md)
+- [\[ACL 2025\] Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training](../../ACL2025/llm_nlp/derta_decoupled_refusal.md)
 - [\[AAAI 2026\] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs](../../AAAI2026/llm_nlp/uncertainty_under_the_curve_a_sequence-level_entropy_area_metric_for_reasoning_l.md)
 - [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
 - [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
-- [\[NeurIPS 2025\] What One Cannot, Two Can: Two-Layer Transformers Provably Represent Induction Heads on Any-Order Markov Chains](what_one_cannot_two_can_two-layer_transformers_provably_represent_induction_head.md)
 
 </div>
 

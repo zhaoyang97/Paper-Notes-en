@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] The CDTSDE framework is proposed, which embeds a learnable spatially adaptive domain mixing field $\Lambda_t$ into the reverse SDE of diffusion models. This allows the cross-modality translation path to proceed along a low-energy manifold, achieving higher fidelity with fewer denoising steps in MRI modality conversion,
+  [ICLR 2026][Medical Imaging][Cross-modality image translation] The CDTSDE framework is proposed, which embeds a learnable spatially adaptive domain mixing field $\Lambda_t$ into the reverse SDE of diffusion models. This allows the cross-modality translation path to proceed along a low-energy manifold, achieving higher fidelity with fewer denoising steps in MRI modality conversion, SAR-to-optical, and industrial defect semantic mapping tasks.
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Cross-modality image translation"
+  - "Diffusion SDE"
+  - "Domain shift scheduling"
+  - "Spatially adaptive mixing"
+  - "Reverse SDE"
 date: 2026-05-08
-content_hash: bfb68339f053b372
+content_hash: 60c31c29a221be76
 ---
+
 # Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation
 
 **Conference**: ICLR 2026  

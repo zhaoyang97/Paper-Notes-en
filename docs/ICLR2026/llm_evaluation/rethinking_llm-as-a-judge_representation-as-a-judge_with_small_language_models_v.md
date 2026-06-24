@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper proposes the "Representation-as-a-Judge" paradigm: instead of requiring small language models (SLMs) to generate scoring text, they are frozen and a lightweight probe classifier reads evaluation scores directly from their hidden layer representations. This approach significantly outperforms prompt-based scor
+  [ICLR 2026][LLM Evaluation][Reference-free evaluation] This paper proposes the "Representation-as-a-Judge" paradigm: instead of requiring small language models (SLMs) to generate scoring text, they are frozen and a lightweight probe classifier reads evaluation scores directly from their hidden layer representations. This approach significantly outperforms prompt-based scoring by models of the same size on reasoning tasks like GSM8K/MATH/GPQA, approaches the performance of LLM…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Reference-free evaluation"
+  - "representation probing"
+  - "small language models"
+  - "semantic capacity asymmetry"
+  - "data filtering"
 date: 2026-05-08
-content_hash: 34c0495a099b2550
+content_hash: ff698442131d8446
 ---
+
 # Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry
 
 **Conference**: ICLR 2026  
@@ -128,8 +134,8 @@ Ablations on pooling and classifiers were conducted using binary classification 
 - [\[ICLR 2026\] TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them](trustjudge_inconsistencies_of_llm-as-a-judge_and_how_to_alleviate_them.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 - [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](../../ICML2026/llm_evaluation/real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
-- [\[ICLR 2026\] Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas](doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas.md)
+- [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
+- [\[ICML 2026\] On Cost-Effective LLM-as-a-Judge Improvement Techniques](../../ICML2026/llm_evaluation/on_cost-effective_llm-as-a-judge_improvement_techniques.md)
 
 </div>
 

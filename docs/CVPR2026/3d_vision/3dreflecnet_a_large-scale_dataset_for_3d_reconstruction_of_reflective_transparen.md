@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects
 description: >-
-  [CVPR 2026][3D Vision][Dataset] 3DReflecNet constructs a hybrid dataset exceeding 22 TB, containing over 120k synthetic instances and 1,000+ real scans with a total of 7M+ multi-view frames. It specifically targets three challenging material categories that "break photometric consistency assumptions"—reflective, transparent, and low-texture—and provi
+  [CVPR 2026][3D Vision][3D Reconstruction] 3DReflecNet constructs a hybrid dataset exceeding 22 TB, containing over 120k synthetic instances and 1,000+ real scans with a total of 7M+ multi-view frames. It specifically targets three challenging material categories that "break photometric consistency assumptions"—reflective, transparent, and low-texture—and provides benchmarks for five major tasks. Experiments systematically expose the catastrophic failure of current SOTA recons…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Dataset
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Reflective and Transparent Objects"
+  - "Physical Rendering"
+  - "Multi-view Benchmark"
+  - "Dataset"
 date: 2026-05-08
-content_hash: 4899bb84423114f1
+content_hash: 6a3b8d6bc3b0f3a9
 ---
+
 # 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects
 
 **Conference**: CVPR 2026  
@@ -158,11 +163,11 @@ While triangulation errors are small on Diffuse, PGSR's CD on Transparent spikes
 
 ## Related Papers
 
-- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
-- [\[CVPR 2026\] iLRM: An Iterative Large 3D Reconstruction Model](ilrm_an_iterative_large_3d_reconstruction_model.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
+- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
+- [\[CVPR 2026\] Opti-NeuS: Neural Reconstruction for Dual-Layered Transparent and Opaque Objects](opti-neus_neural_reconstruction_for_dual-layered_transparent_and_opaque_objects.md)
+- [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
+- [\[CVPR 2026\] SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations](scenescribe-1m_a_large-scale_video_dataset_with_comprehensive_geometric_and_sema.md)
 
 </div>
 

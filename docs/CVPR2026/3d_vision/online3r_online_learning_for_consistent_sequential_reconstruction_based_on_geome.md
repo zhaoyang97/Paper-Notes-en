@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Online3R integrates a set of lightweight learnable visual prompts into a frozen geometry foundation model (MASt3R-SLAM), updating them online during test time via "local fusion pseudo-ground truth + global reference frame invariance" self-supervised constraints. This allows the feed-forward reconstruction network to ad
+  [CVPR 2026][3D Vision][Sequential reconstruction] Online3R integrates a set of lightweight learnable visual prompts into a frozen geometry foundation model (MASt3R-SLAM), updating them online during test time via "local fusion pseudo-ground truth + global reference frame invariance" self-supervised constraints. This allows the feed-forward reconstruction network to adapt to new scenes during the reconstruction process, thereby eliminating inconsistency and long-range drift in…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sequential reconstruction"
+  - "geometry foundation model"
+  - "visual prompt tuning"
+  - "test-time self-supervision"
+  - "consistency constraint"
 date: 2026-05-08
-content_hash: 5121534327149e2a
+content_hash: acb185b549696f97
 ---
+
 # Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model
 
 **Conference**: CVPR 2026  
@@ -155,15 +161,20 @@ In 7-Scenes, Accuracy improved from 0.068 to 0.039, surpassing even offline glob
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **MASt3R**: Groundwater for the dense SLAM backend.
-- **Test3R**: Precursor in using prompt tuning for reconstruction consistency.
-- **VPT**: Methodological foundation for visual prompt tuning.
+## Related Papers
+
+- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)
+- [\[CVPR 2026\] Emergent Extreme-View Geometry in 3D Foundation Models](emergent_extreme-view_geometry_in_3d_foundation_models.md)
+- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] 2D-LFM: Lifting Foundation Model without 3D Supervision](2d-lfm_lifting_foundation_model_without_3d_supervision.md)
+- [\[CVPR 2026\] BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction
 description: >-
-  [CVPR 2026][Remote Sensing][Transformer] The first to advance Spectral Compressive Imaging (SCI) from image-level to video-level reconstruction, constructing the first high-quality dynamic hyperspectral dataset DynaSpec (30 sequences/300 frames). Proposed PG-SVRT achieves 41.52dB PSNR and optimal temporal consistency through spatial-then-temporal progressive
+  [CVPR 2026][Remote Sensing][Spectral Compressive Imaging] The first to advance Spectral Compressive Imaging (SCI) from image-level to video-level reconstruction, constructing the first high-quality dynamic hyperspectral dataset DynaSpec (30 sequences/300 frames). Proposed PG-SVRT achieves 41.52dB PSNR and optimal temporal consistency through spatial-then-temporal progressive attention + bridging tokens, with FLOPs (28.18G) lower than several image-level SOTA methods.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Transformer
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Spectral Compressive Imaging"
+  - "Hyperspectral Video Reconstruction"
+  - "Spatiotemporal Feature Propagation"
+  - "Transformer"
+  - "DynaSpec Dataset"
 date: 2026-05-08
-content_hash: b6da4e3e3ca26e61
+content_hash: ec096b16f8247a37
 ---
+
 # Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Training uses multi-stage RMSE loss, Adam optimizer ($\beta_1=0.9, \beta_2=0.999
 
 ## Related Papers
 
+- [\[CVPR 2026\] Regulating Rather than Constraining: Adaptive Guidance for Complex Spectral Reconstruction in Pansharpening](regulating_rather_than_constraining_adaptive_guidance_for_complex_spectral_recon.md)
+- [\[CVPR 2026\] FUSAR-GPT: A Spatiotemporal Feature-Embedded and Two-Stage Decoupled Visual Language Model for SAR Imagery](fusar-gpt_a_spatiotemporal_feature-embedded_and_two-stage_decoupled_visual_langu.md)
 - [\[AAAI 2026\] M3SR: Multi-Scale Multi-Perceptual Mamba for Efficient Spectral Reconstruction](../../AAAI2026/remote_sensing/m3sr_multi-scale_multi-perceptual_mamba_for_efficient_spectral_reconstruction.md)
 - [\[CVPR 2026\] Semantic-Adaptive Diffusion for Dynamic Spatiotemporal Fusion](semantic-adaptive_diffusion_for_dynamic_spatiotemporal_fusion.md)
-- [\[CVPR 2026\] Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency](beyond_tie_points_satellite_image_block_adjustment_based_on_dense_feature_consis.md)
-- [\[CVPR 2026\] Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)
-- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
+- [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
 
 </div>
 

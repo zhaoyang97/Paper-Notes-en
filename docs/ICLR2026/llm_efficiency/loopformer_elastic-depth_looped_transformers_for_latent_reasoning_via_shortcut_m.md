@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation
 description: >-
-  [ICLR 2026][LLM Efficiency][shortcut consistency] LoopFormer explicitly conditions each iteration of a looped Transformer on a "normalized time $t$ + step size $\Delta t$" and uses shortcut-consistency training to align trajectories of different lengths to the same endpoint. This enables a single model to gracefully scale its depth based on any **arbitrarily specified
+  [ICLR 2026][LLM Efficiency][Looped Transformer] LoopFormer explicitly conditions each iteration of a looped Transformer on a "normalized time $t$ + step size $\Delta t$" and uses shortcut-consistency training to align trajectories of different lengths to the same endpoint. This enables a single model to gracefully scale its depth based on any **arbitrarily specified inference budget $M$ without retraining**, avoiding the representation collapse typical of naive early exiting.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - shortcut consistency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Looped Transformer"
+  - "Latent Reasoning"
+  - "Elastic Depth"
+  - "Budget-Conditioned Inference"
+  - "Shortcut Consistency"
+  - "Trajectory Modeling"
 date: 2026-05-08
-content_hash: 14863da361833551
+content_hash: 30aa626f117d6b22
 ---
+
 # LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation
 
 **Conference**: ICLR 2026  
@@ -116,13 +122,20 @@ Users select a budget $M \le L$ and a step schedule $\Delta_M$. The model runs $
 - **Value**: ⭐⭐⭐⭐ — Provides a practical path for budget-aware LLM inference that does not require retraining or specialized routing.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **TMLT**: Timestep-Modulated Looped Transformer (Baseline improved by LoopFormer).
-- **Consistency Models**: The primary inspiration for the shortcut-consistency loss.
-- **Universal Transformer**: The foundational architecture for weight-sharing recurrence.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
+- [\[NeurIPS 2025\] From Shortcut to Induction Head: How Data Diversity Shapes Algorithm Selection in Transformers](../../NeurIPS2025/llm_efficiency/from_shortcut_to_induction_head_how_data_diversity_shapes_algorithm_selection_in.md)
+- [\[ICLR 2026\] STEM: Scaling Transformers with Embedding Modules](stem_scaling_transformers_with_embedding_modules.md)
+- [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
+- [\[ICLR 2026\] MeSH: Memory-as-State-Highways for Recursive Transformers](mesh_memory-as-state-highways_for_recursive_transformers.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] MeSH: Memory-as-State-Highways for Recursive Transformers](mesh_memory-as-state-highways_for_recursive_transformers.md)

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] FinReporting: An Agentic Workflow for Localized Reporting of Cross-Jurisdiction Financial Disclosures
 description: >-
-  [ACL 2026][LLM Reasoning][agentic workflow] FinReporting decomposes the localization of US, Japanese, and Chinese financial reports into an auditable agent workflow comprising "rule-based extraction + ontological mapping + constrained LLM verification/repair + human review." It utilizes a unified IS/BS/CF schema to mitigate inconsistencies in financial disclosur
+  [ACL2026][Reasoning][Financial Disclosures] FinReporting decomposes the localization of US, Japanese, and Chinese financial reports into an auditable agent workflow comprising "rule-based extraction + ontological mapping + constrained LLM verification/repair + human review." It utilizes a unified IS/BS/CF schema to mitigate inconsistencies in financial disclosure formats and accounting semantics across different jurisdictions.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - agentic workflow
-  - canonical ontology
-  - LLM guardrail
+  - "ACL2026"
+  - "Reasoning"
+  - "Financial Disclosures"
+  - "Cross-Jurisdiction"
+  - "agentic workflow"
+  - "canonical ontology"
+  - "LLM guardrail"
 date: 2026-05-08
-content_hash: 8b7fb16ce384daac
+content_hash: 6b34c21817249881
 ---
+
 # FinReporting: An Agentic Workflow for Localized Reporting of Cross-Jurisdiction Financial Disclosures
 
 **Conference**: ACL2026  
@@ -141,10 +144,10 @@ The hardest part of cross-jurisdictional reporting is semantic alignment. FinRep
 ## Related Papers
 
 - [\[ACL 2026\] Towards Effective In-context Cross-domain Knowledge Transfer via Domain-invariant-neurons-based Retrieval](towards_effective_in-context_cross-domain_knowledge_transfer_via_domain-invarian.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
 - [\[AAAI 2026\] L2V-CoT: Cross-Modal Transfer of Chain-of-Thought Reasoning via Latent Intervention](../../AAAI2026/llm_reasoning/l2v-cot_cross-modal_transfer_of_chain-of-thought_reasoning_v.md)
-- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
-- [\[ICML 2026\] Deliberate Evolution: Agentic Reasoning for Sample-Efficient Symbolic Regression with LLMs](../../ICML2026/llm_reasoning/deliberate_evolution_agentic_reasoning_for_sample-efficient_symbolic_regression_.md)
 - [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](../../CVPR2026/llm_reasoning/scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
+- [\[ACL 2026\] HISR: Hindsight Information Modulated Segmental Process Rewards for Multi-turn Agentic Reinforcement Learning](hisr_hindsight_information_modulated_segmental_process_rewards_for_multi-turn_ag.md)
 
 </div>
 

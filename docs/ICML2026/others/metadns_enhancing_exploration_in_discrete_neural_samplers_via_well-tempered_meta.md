@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] MetaDNS: Enhancing Exploration in Discrete Neural Samplers via Well-Tempered Metadynamics
 description: >-
-  [ICML 2026][Others][Metadynamics] This work adapts "well-tempered metadynamics" from molecular dynamics into discrete neural samplers. By accumulating a history-dependent bias potential $V_t(s)$ along low-dimensional collective variables to flatten visited energy basins, it forces MDNS-like models to cross energy barriers and cover multimodal Boltzmann
+  [ICML 2026][Discrete Diffusion] This work adapts "well-tempered metadynamics" from molecular dynamics into discrete neural samplers. By accumulating a history-dependent bias potential $V_t(s)$ along low-dimensional collective variables to flatten visited energy basins, it forces MDNS-like models to cross energy barriers and cover multimodal Boltzmann distributions, while preserving unbiased estimation through importance reweighting.
 tags:
-  - ICML 2026
-  - Others
-  - Metadynamics
+  - "ICML 2026"
+  - "Discrete Diffusion"
+  - "Metadynamics"
+  - "Mode Collapse"
+  - "Free Energy Reconstruction"
+  - "Boltzmann Sampling"
 date: 2026-05-08
-content_hash: afc564271326758f
+content_hash: e4356f04869c0d60
 ---
+
 # MetaDNS: Enhancing Exploration in Discrete Neural Samplers via Well-Tempered Metadynamics
 
 **Conference**: ICML 2026  

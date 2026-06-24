@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This paper proposes GeoGuide, a hierarchical geometric guidance framework for open-vocabulary 3D semantic segmentation. By utilizing three complementary modules—uncertainty-guided superpoint distillation, instance-level mask reconstruction, and inter-instance relationship consistency—the framework leverages geometric p
+  [CVPR 2026][Segmentation][Open-vocabulary 3D semantic segmentation] This paper proposes GeoGuide, a hierarchical geometric guidance framework for open-vocabulary 3D semantic segmentation. By utilizing three complementary modules—uncertainty-guided superpoint distillation, instance-level mask reconstruction, and inter-instance relationship consistency—the framework leverages geometric priors from pre-trained 3D models to correct geometric biases in 2D-to-3D knowledge distillat…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary 3D semantic segmentation"
+  - "geometric priors"
+  - "2D-to-3D distillation"
+  - "superpoint aggregation"
+  - "instance-level consistency"
 date: 2026-05-08
-content_hash: 878b2d88f7ccfde5
+content_hash: b5ae5eaf481a505a
 ---
+
 # GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -166,10 +172,10 @@ Freezing the 3D backbone and using a lightweight adapter yields a +2.9 mIoU gain
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
 - [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
-- [\[CVPR 2026\] HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement](hops_hierarchical_open-vocabulary_part_segmentation_with_attention-aware_filteri.md)
 - [\[CVPR 2026\] Universal 3D Shape Matching via Coarse-to-Fine Language Guidance](universal_3d_shape_matching_via_coarse-to-fine_language_guidance.md)
+- [\[CVPR 2026\] HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement](hops_hierarchical_open-vocabulary_part_segmentation_with_attention-aware_filteri.md)
+- [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 
 </div>

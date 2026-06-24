@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LD-EnSF: Synergizing Latent Dynamics with Ensemble Score Filters for Fast Data Assimilation with Sparse Observations
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Ensemble Score Filter] LD-EnSF replaces expensive full-space numerical forward simulations with a learnable latent dynamics network (LDNet), migrates the Ensemble Score Filter (EnSF) entirely into an extremely low-dimensional latent space, and aligns sparse irregular observations using a history-aware LSTM encoder. This synergistically accel
+  [ICLR 2026][Physics & Scientific Computing][Data Assimilation] LD-EnSF replaces expensive full-space numerical forward simulations with a learnable latent dynamics network (LDNet), migrates the Ensemble Score Filter (EnSF) entirely into an extremely low-dimensional latent space, and aligns sparse irregular observations using a history-aware LSTM encoder. This synergistically accelerates data assimilation by several orders of magnitude while maintaining high precision.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Ensemble Score Filter
-  - LDNet
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Data Assimilation"
+  - "Ensemble Score Filter"
+  - "Latent Dynamics"
+  - "LDNet"
+  - "Sparse Observations"
+  - "LSTM Encoder"
 date: 2026-05-08
-content_hash: cde52d40987f0785
+content_hash: 3d82fb4278ba7ecd
 ---
+
 # LD-EnSF: Synergizing Latent Dynamics with Ensemble Score Filters for Fast Data Assimilation with Sparse Observations
 
 **Conference**: ICLR 2026  
@@ -114,7 +119,7 @@ VAE-dyn (VAE+LSTM for latent dynamics) shows instability and rapid error accumul
 - [\[ICLR 2026\] VisionLaw: Inferring Interpretable Intrinsic Dynamics from Visual Observations via Bilevel Optimization](visionlaw_inferring_interpretable_intrinsic_dynamics_from_visual_observations_vi.md)
 - [\[ICLR 2026\] Incomplete Data, Complete Dynamics: A Diffusion Approach](incomplete_data_complete_dynamics_a_diffusion_approach.md)
 - [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](../../AAAI2026/physics/fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
-- [\[ICLR 2026\] Neural Latent Arbitrary Lagrangian-Eulerian Grids for Fluid-Solid Interaction](neural_latent_arbitrary_lagrangian-eulerian_grids_for_fluid-solid_interaction.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
 
 </div>
 

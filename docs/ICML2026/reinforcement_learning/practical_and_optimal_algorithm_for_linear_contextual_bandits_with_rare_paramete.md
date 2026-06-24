@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Practical and Optimal Algorithm for Linear Contextual Bandits with Rare Parameter Updates
 description: >-
-  [ICML 2026][Reinforcement Learning][batched bandit] In linear contextual bandits, the authors explicitly decouple "when rewards are received" and "whether context within an interval can be utilized," two axes previously confused by the term "batched." They define a more practical "rare parameter updates" setting (restricting only reward-driven updates while allowing rew
+  [ICML2026][Reinforcement Learning][Linear contextual bandit] In linear contextual bandits, the authors explicitly decouple "when rewards are received" and "whether context within an interval can be utilized," two axes previously confused by the term "batched." They define a more practical "rare parameter updates" setting (restricting only reward-driven updates while allowing reward-free context adaptivity). Based on this, they propose BLCE-G and BLCE…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - batched bandit
-  - rare parameter updates
-  - minimax regret
-  - G-optimal design
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Linear contextual bandit"
+  - "batched bandit"
+  - "rare parameter updates"
+  - "minimax regret"
+  - "G-optimal design"
 date: 2026-05-08
-content_hash: e9c323e1ff160bf6
+content_hash: 4c26cd03162cc291
 ---
+
 # Practical and Optimal Algorithm for Linear Contextual Bandits with Rare Parameter Updates
 
 **Conference**: ICML2026  

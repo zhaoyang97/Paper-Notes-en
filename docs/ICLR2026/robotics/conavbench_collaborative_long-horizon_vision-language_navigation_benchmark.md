@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] CoNavBench is the first Vision-Language Navigation (VLN) benchmark for "multi-robot collaboration," containing 4,048 single-agent/collaborative tasks. It includes NavCraft, an automated data generation platform (two-stage agent + scene graph + efficiency toolbox). Using a fine-tuned Qwen2.5-VL-3B as a reference policy,
+  [ICLR 2026][Robotics][Collaborative Navigation] CoNavBench is the first Vision-Language Navigation (VLN) benchmark for "multi-robot collaboration," containing 4,048 single-agent/collaborative tasks. It includes NavCraft, an automated data generation platform (two-stage agent + scene graph + efficiency toolbox). Using a fine-tuned Qwen2.5-VL-3B as a reference policy, it demonstrates that collaborative decomposition improves step-level task success rates by a relative 18.11%.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Collaborative Navigation"
+  - "Vision-Language Navigation"
+  - "Long-Horizon Tasks"
+  - "Multi-Robot"
+  - "Data Generation Platform"
 date: 2026-05-08
-content_hash: 69dfb22ad7aabe69
+content_hash: 58222edff4b23e6a
 ---
+
 # CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark
 
 **Conference**: ICLR 2026  
@@ -117,8 +123,8 @@ Key comparison: Under the step-by-step protocol, fine-tuned 3B SR rises from 29.
 - Value: ⭐⭐⭐⭐⭐ (Provides an extensible platform for the collaborative embodied AI community)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -126,7 +132,7 @@ Key comparison: Under the step-by-step protocol, fine-tuned 3B SR rises from 29.
 - [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 - [\[ICLR 2026\] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model](hybridvla_collaborative_diffusion_and_autoregression_in_a_unified_vision-languag.md)
 - [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
-- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
+- [\[ICLR 2026\] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation](ground_slow_move_fast_a_dual-system_foundation_model_for_generalizable_vision-la.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes the Pram framework, the first to utilize Multimodal Language Models (MLM) to solve Multi-Commodity Flow (MCF) problems. By partitioning the original problem into sub-problems and using Multi-Agent Reinforcement Learning (MARL) to coordinate global consistency, the method is theoretically proven to c
+  [ICLR 2026][Reinforcement Learning][Multi-commodity flow] This paper proposes the Pram framework, the first to utilize Multimodal Language Models (MLM) to solve Multi-Commodity Flow (MCF) problems. By partitioning the original problem into sub-problems and using Multi-Agent Reinforcement Learning (MARL) to coordinate global consistency, the method is theoretically proven to converge to the optimal solution. Empirical results show it is 1-2 orders of magnitude faster than LP s…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Multi-commodity flow"
+  - "multimodal language models"
+  - "multi-agent reinforcement learning"
+  - "network optimization"
+  - "partition-based solving"
 date: 2026-05-08
-content_hash: ba1cc8db26f7dc2b
+content_hash: ef41d870dc446406
 ---
+
 # Divide, Harmonize, Then Conquer It: Shooting Multi-Commodity Flow Problems with Multimodal Language Models
 
 **Conference**: ICLR 2026  
@@ -142,7 +148,7 @@ Pram is 100x faster than LP on the largest topology (754 nodes, 1.9M path weight
 
 ## Related Papers
 
-- [\[ICLR 2026\] Transitive RL: Value Learning via Divide and Conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
 - [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
 - [\[ICLR 2026\] Towards Strategic Persuasion with Language Models](towards_strategic_persuasion_with_language_models.md)
 - [\[CVPR 2026\] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs](../../CVPR2026/reinforcement_learning/see_it_say_it_sorted_an_iterative_training-free_framework_for_visually-grounded_.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RIVER: A Real-Time Interaction Benchmark for Video LLMs
 description: >-
-  [ICLR 2026][Video Understanding][Video LLM] RIVER Bench decomposes the online interaction capabilities of video LLMs into three categories: recalling the past, understanding the present, and proactively responding after waiting for future events. By utilizing timestamped QA and response timing metrics, it demonstrates that traditional offline Video LLMs, despite
+  [ICLR2026][Video Understanding][Real-time video understanding] RIVER Bench decomposes the online interaction capabilities of video LLMs into three categories: recalling the past, understanding the present, and proactively responding after waiting for future events. By utilizing timestamped QA and response timing metrics, it demonstrates that traditional offline Video LLMs, despite performing well in offline QA, significantly lack memory and timing judgment in authentic stream…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Video LLM
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Real-time video understanding"
+  - "Video LLM"
+  - "Online interaction"
+  - "Long-short term memory"
+  - "Proactive response"
 date: 2026-05-08
-content_hash: 58e74c5a89e7316c
+content_hash: a4b17cb5505ccf4c
 ---
+
 # RIVER: A Real-Time Interaction Benchmark for Video LLMs
 
 **Conference**: ICLR2026  
@@ -123,6 +128,7 @@ Ablation results highlight the memory curve across distances. Most models exhibi
 - **Value**: ⭐⭐⭐⭐⭐ (Essential for the transition from "video analysis" to "video assistants")
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

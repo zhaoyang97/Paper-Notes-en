@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] MotionWeaver: Holistic 4D-Anchored Framework for Multi-Humanoid Image Animation
 description: >-
-  [ICLR 2026][Video Generation][SMPL] MotionWeaver extends character image animation from single-person to multi-humanoid (robots, anthropomorphic animals, game characters) scenes. By "extracting identity-agnostic unified motion representations + fusing motion and video latents in a shared 4D space + hierarchical 4D supervision," it effectively addresses i
+  [ICLR 2026][Video Generation][Multi-Humanoid Animation] MotionWeaver extends character image animation from single-person to multi-humanoid (robots, anthropomorphic animals, game characters) scenes. By "extracting identity-agnostic unified motion representations + fusing motion and video latents in a shared 4D space + hierarchical 4D supervision," it effectively addresses identity confusion and occlusion in multi-character interactions.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - SMPL
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Multi-Humanoid Animation"
+  - "4D Representation"
+  - "SMPL"
+  - "Occlusion Modeling"
+  - "Diffusion Transformer"
+  - "Motion-Appearance Decoupling"
 date: 2026-05-08
-content_hash: 61dd5eddd17869da
+content_hash: 6daa8414e817d85d
 ---
+
 # MotionWeaver: Holistic 4D-Anchored Framework for Multi-Humanoid Image Animation
 
 **Conference**: ICLR 2026  
@@ -129,14 +134,17 @@ Ours leads across nine metrics, with FVD dropping from a second-best 164.6 to 14
 
 <div class="related-papers" markdown="1">
 
-- **UniAnimate**: [https://arxiv.org/abs/2406.01188](https://arxiv.org/abs/2406.01188) (UniAnimate-DiT baseline)
-- **MimicMotion**: [https://arxiv.org/abs/2406.19680](https://arxiv.org/abs/2406.19680) (Single-person SOTA)
-- **Wan2.1**: [https://github.com/Wan-Video/Wan2.1](https://github.com/Wan-Video/Wan2.1) (Base model)
+## Related Papers
+
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
+- [\[ICLR 2026\] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation](mtvcraft_tokenizing_4d_motion_for_arbitrary_character_animation.md)
+- [\[CVPR 2026\] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative](../../CVPR2026/video_generation/stage_storyboard-anchored_generation_for_cinematic_multi-shot_narrative.md)
+- [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](../../ICCV2025/video_generation/multi-identity_human_image_animation_with_structural_video_diffusion.md)
+- [\[CVPR 2026\] MultiAnimate: Pose-Guided Image Animation Made Extensible](../../CVPR2026/video_generation/multianimate_pose-guided_image_animation_made_extensible.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation](mtvcraft_tokenizing_4d_motion_for_arbitrary_character_animation.md)

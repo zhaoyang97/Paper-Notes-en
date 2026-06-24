@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Boosting Direct Preference Optimization with Penalization
 description: >-
-  [ICML 2026][Alignment & RLHF][DPO] This paper proposes DPOP (Direct Preference Optimization with Penalization), which adds an extra **penalty to the "reference model's own greedy-decoded response" $y_g$** for the same prompt alongside the standard DPO preference loss. A detached gate activates this penalty only when the policy "still ranks the rejected
+  [ICML2026][LLM Alignment][DPO] This paper proposes DPOP (Direct Preference Optimization with Penalization), which adds an extra **penalty to the "reference model's own greedy-decoded response" $y_g$** for the same prompt alongside the standard DPO preference loss. A detached gate activates this penalty only when the policy "still ranks the rejected response higher than the chosen response," effectively transforming the unused reference-greedy signal into a valid offline align…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - DPO
-  - SimNPO
+  - "ICML2026"
+  - "LLM Alignment"
+  - "DPO"
+  - "Preference Optimization"
+  - "Reference-Greedy Response"
+  - "Gated Penalization"
+  - "SimNPO"
 date: 2026-05-08
-content_hash: 436b49338bf2b56f
+content_hash: 80693c58c0396400
 ---
+
 # Boosting Direct Preference Optimization with Penalization
 
 **Conference**: ICML2026  
@@ -133,10 +137,10 @@ DPOP achieved the highest LC-WR on both models, with relative gains of 5.3% and 
 ## Related Papers
 
 - [\[ICML 2026\] Autoregressive Direct Preference Optimization](autoregressive_direct_preference_optimization.md)
+- [\[ACL 2025\] SDPO: Segment-Level Direct Preference Optimization for Social Agents](../../ACL2025/llm_alignment/sdpo_segment-level_direct_preference_optimization_for_social_agents.md)
 - [\[ICLR 2026\] SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety](../../ICLR2026/llm_alignment/safedpo_preference_optimization_safety.md)
-- [\[ICLR 2026\] Token-Importance Guided Direct Preference Optimization (TI-DPO)](../../ICLR2026/llm_alignment/token-importance_guided_direct_preference_optimization.md)
 - [\[ICLR 2026\] ActiveDPO: Active Direct Preference Optimization for Sample-Efficient Alignment](../../ICLR2026/llm_alignment/activedpo_active_direct_preference_optimization_for_sample-efficient_alignment.md)
-- [\[ACL 2025\] DiffPO: Diffusion Alignment with Direct Preference Optimization](../../ACL2025/llm_alignment/diffpo_diffusion_alignment.md)
+- [\[ACL 2025\] Boosting Vulnerability Detection of LLMs via Curriculum Preference Optimization with Synthetic Reasoning Data](../../ACL2025/llm_alignment/boosting_vulnerability_detection_of_llms_via_curriculum_preference_optimization_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Model Change for Description Logic Concepts
 description: >-
-  [AAAI 2026][Description Logic] This paper studies the problem of modifying description logic concepts in response to new model evidence represented as pointed interpretations. It defines three operations — eviction…
+  [AAAI 2026][Description Logic] This paper studies the problem of modifying description logic concepts in response to new model evidence represented as pointed interpretations. It defines three operations — eviction, reception, and revision — and establishes positive and negative compatibility results for the EL and ALC description logics.
 tags:
   - "AAAI 2026"
   - "Description Logic"
@@ -11,7 +11,7 @@ tags:
   - "EL/ALC"
   - "Satisfiability"
 date: 2026-05-08
-content_hash: 7dadf53820624988
+content_hash: 6cac910fdffc2888
 ---
 
 # Model Change for Description Logic Concepts

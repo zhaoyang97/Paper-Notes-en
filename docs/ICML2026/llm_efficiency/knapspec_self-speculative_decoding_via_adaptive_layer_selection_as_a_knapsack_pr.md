@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] KnapSpec reformulates draft layer selection in Self-Speculative Decoding (SSD) as a 0/1 knapsack problem. By decoupling Attention and MLP modules, using context-length-dependent hardware latency as "weight" and hidden state cosine similarity (with the first rigorous proof provided) as "value," it adaptively identifies
+  [ICML 2026][LLM Efficiency][Self-Speculative Decoding] KnapSpec reformulates draft layer selection in Self-Speculative Decoding (SSD) as a 0/1 knapsack problem. By decoupling Attention and MLP modules, using context-length-dependent hardware latency as "weight" and hidden state cosine similarity (with the first rigorous proof provided) as "value," it adaptively identifies the subnetwork that maximizes Tokens-per-Time via parallel DP at each step. It achieves up to 1.47× wall-…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Self-Speculative Decoding"
+  - "Layer Selection"
+  - "Knapsack Problem"
+  - "Long-Context Inference"
+  - "Dynamic Programming"
 date: 2026-05-08
-content_hash: 1a3df6fe0a24da72
+content_hash: eff41b28b4fff13a
 ---
+
 # KnapSpec: Self-Speculative Decoding via Adaptive Layer Selection as a Knapsack Problem
 
 **Conference**: ICML 2026  
@@ -138,9 +144,9 @@ KnapSpec achieved the highest TPT and speedup across **all 48 configurations**, 
 
 - [\[ACL 2025\] CLaSp: In-Context Layer Skip for Self-Speculative Decoding](../../ACL2025/llm_efficiency/clasp_self_speculative_decoding.md)
 - [\[ACL 2026\] SpecBound: Adaptive Bounded Self-Speculation with Layer-wise Confidence Calibration](../../ACL2026/llm_efficiency/specbound_adaptive_bounded_self-speculation_with_layer-wise_confidence_calibrati.md)
-- [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
-- [\[ACL 2025\] Tetris: Optimal Draft Token Selection for Batch Speculative Decoding](../../ACL2025/llm_efficiency/tetris_optimal_draft_token_selection_for_batch_speculative_decoding.md)
+- [\[ICLR 2026\] Self-Speculative Masked Diffusions](../../ICLR2026/llm_efficiency/self-speculative_masked_diffusions.md)
+- [\[ICLR 2026\] Distilling to Hybrid Attention Models via KL-Guided Layer Selection](../../ICLR2026/llm_efficiency/distilling_to_hybrid_attention_models_via_kl-guided_layer_selection.md)
+- [\[ICML 2026\] VIA-SD: Verification via Intra-Model Routing for Speculative Decoding](via-sd_verification_via_intra-model_routing_for_speculative_decoding.md)
 
 </div>
 

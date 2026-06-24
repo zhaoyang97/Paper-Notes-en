@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning
 description: >-
-  [NeurIPS 2025][Medical NLP][Clinical Reasoning] CureAgent proposes an Executor-Analyst collaborative framework that decouples precise tool invocation (TxAgent/Llama-8B as Executor) from high-level clinical reasoning (Gem…
+  [NeurIPS 2025][Medical LLM][Clinical Reasoning] CureAgent proposes an Executor-Analyst collaborative framework that decouples precise tool invocation (TxAgent/Llama-8B as Executor) from high-level clinical reasoning (Gemini 2.5 as Analyst). Combined with a Stratified Ensemble Late Fusion topology that preserves evidence diversity, the system achieves 83.8% accuracy on CURE-Bench without end-to-end fine-tuning, and reveals two critical scaling findings: the context–performance…
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Clinical Reasoning"
   - "Multi-Agent"
   - "Executor-Analyst"
   - "Stratified Ensemble"
   - "Training-Free Architecture Engineering"
 date: 2026-05-08
-content_hash: 4dad6f87ea5e2741
+content_hash: 27800a2eec147ef0
 ---
 
 # CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning
@@ -145,10 +145,10 @@ CureAgent proposes an Executor-Analyst collaborative framework that decouples pr
 ## Related Papers
 
 - [\[NeurIPS 2025\] CGBench: Benchmarking Language Model Scientific Reasoning for Clinical Genetics Research](cgbench_benchmarking_language_model_scientific_reasoning_for_clinical_genetics_r.md)
+- [\[ACL 2025\] Adaptive-VP: A Framework for LLM-Based Virtual Patients that Adapts to Trainees' Dialogue to Facilitate Nurse Communication Training](../../ACL2025/medical_nlp/adaptive-vp_a_framework_for_llm-based_virtual_patients_that_adapts_to_trainees_d.md)
 - [\[NeurIPS 2025\] H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis](h-ddx_a_hierarchical_evaluation_framework_for_differential_diagnosis.md)
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
-- [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](../../ACL2026/medical_nlp/multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
-- [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](../../ACL2026/medical_nlp/sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
+- [\[ACL 2025\] RedactX: An LLM-Powered Framework for Automatic Clinical Data De-Identification](../../ACL2025/medical_nlp/redactor_an_llm-powered_framework_for_automatic_clinical_data_de-identification.md)
 
 </div>
 

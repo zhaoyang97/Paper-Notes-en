@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Flow Straight and Fast in Hilbert Space: Functional Rectified Flow
 description: >-
-  [ICLR 2026][Image Generation][Rectified Flow] This paper rigorously extends rectified flow to infinite-dimensional separable Hilbert spaces, proving that its "marginal-preserving" property remains valid in functional spaces. It unifies functional flow matching and functional probability flow ODEs as nonlinear special cases within this framework while removing unve
+  [ICLR 2026][Image Generation][Rectified Flow] This paper rigorously extends rectified flow to infinite-dimensional separable Hilbert spaces, proving that its "marginal-preserving" property remains valid in functional spaces. It unifies functional flow matching and functional probability flow ODEs as nonlinear special cases within this framework while removing unverifiable measure-theoretic assumptions present in existing theories.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Rectified Flow
-  - Flow Matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Hilbert Space"
+  - "Functional Generative Models"
+  - "Flow Matching"
+  - "Superposition Principle"
+  - "Neural Operators"
 date: 2026-05-08
-content_hash: d59f050c23f54c91
+content_hash: fa0d02d2488958b6
 ---
+
 # Flow Straight and Fast in Hilbert Space: Functional Rectified Flow
 
 **Conference**: ICLR 2026  
@@ -140,8 +145,8 @@ Rather than traditional component-wise ablation, the paper uses "same-architectu
 - [\[CVPR 2026\] Functional Mean Flow in Hilbert Space](../../CVPR2026/image_generation/functional_mean_flow_in_hilbert_space.md)
 - [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](free_lunch_for_stabilizing_rectified_flow_inversion.md)
 - [\[ICLR 2026\] SafeFlowMatcher: Safe and Fast Planning using Flow Matching with Control Barrier Functions](safeflowmatcher_safe_and_fast_planning_using_flow_matching_with_control_barrier_.md)
-- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
+- [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
+- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
 
 </div>
 

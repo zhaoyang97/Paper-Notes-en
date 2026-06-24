@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] WildRayZer extends RayZer, a self-supervised pose-free large view synthesis model, to real-world "moving camera and moving objects" scenarios. By utilizing a static renderer that only captures rigid structures, the model automatically discovers dynamic objects through rendering residuals, distills a motion mask estimat
+  [CVPR 2026][3D Vision][Self-supervised Novel View Synthesis] WildRayZer extends RayZer, a self-supervised pose-free large view synthesis model, to real-world "moving camera and moving objects" scenarios. By utilizing a static renderer that only captures rigid structures, the model automatically discovers dynamic objects through rendering residuals, distills a motion mask estimator to discard dynamic tokens before scene encoding, and gates dynamic pixels in the rendering loss.…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Self-supervised Novel View Synthesis"
+  - "Dynamic Scenes"
+  - "Motion Masks"
+  - "Feed-forward Rendering"
+  - "Residual Analysis"
 date: 2026-05-08
-content_hash: 4c76457a316d770f
+content_hash: 39ca11ef27624378
 ---
+
 # WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments
 
 **Conference**: CVPR 2026  
@@ -145,8 +151,8 @@ Incorporating DINOv3 features reduced the steps needed to reach mIoU=30 from 20k
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 - [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
 - [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
+- [\[ICLR 2026\] True Self-Supervised Novel View Synthesis is Transferable](../../ICLR2026/3d_vision/true_self-supervised_novel_view_synthesis_is_transferable.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
 
 </div>
 

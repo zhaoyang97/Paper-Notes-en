@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes Prototype-as-Prompt (PaP), which compresses audio-visual modalities into a set of **sentiment prototypes with explicit semantics** as soft prompts for frozen LLMs in multimodal sentiment analysis. Through sentiment supervision, cross-modal alignment, and diversity constraints, these prototypes are f
+  [CVPR 2026][Multimodal VLM][Multimodal Sentiment Analysis] This paper proposes Prototype-as-Prompt (PaP), which compresses audio-visual modalities into a set of **sentiment prototypes with explicit semantics** as soft prompts for frozen LLMs in multimodal sentiment analysis. Through sentiment supervision, cross-modal alignment, and diversity constraints, these prototypes are forced to encode clear emotional meanings. With only 0.09%–0.26% trainable parameters…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Sentiment Analysis"
+  - "Sentiment Prototypes"
+  - "Soft Prompting"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Frozen LLM"
 date: 2026-05-08
-content_hash: ef1604a81853f059
+content_hash: a4fcead7313c8c95
 ---
+
 # Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis
 
 **Conference**: CVPR 2026  
@@ -146,8 +152,8 @@ All three constraints are contributive: removing CPA drops ChatGLM performance b
 - [\[CVPR 2026\] Factorize, Reconstruct, Enhance: A Unified Framework for Multimodal Sentiment Analysis](factorize_reconstruct_enhance_a_unified_framework_for_multimodal_sentiment_analy.md)
 - [\[CVPR 2026\] Conflict-Aware Adaptive Cross-Reconstruction for Multimodal Sentiment Analysis](conflict-aware_adaptive_cross-reconstruction_for_multimodal_sentiment_analysis.md)
 - [\[CVPR 2026\] Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal.md)
-- [\[CVPR 2026\] EBMC: Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis](ebmc_multimodal_sentiment_analysis.md)
 - [\[CVPR 2026\] Multi-Metric Representation Learning Strategy Based on Clustering for Fine-Grained Multimodal Sentiment Analysis](multi-metric_representation_learning_strategy_based_on_clustering_for_fine-grain.md)
+- [\[CVPR 2026\] CICA: Coupling Confidence-Aware Pretraining with Confidence-Informed Attention for Robust Multimodal Sentiment Analysis](cica_coupling_confidence-aware_pretraining_with_confidence-informed_attention_fo.md)
 
 </div>
 

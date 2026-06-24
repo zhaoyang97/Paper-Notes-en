@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Curvature-Guided Task Synergy for Skeleton based Temporal Action Segmentation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] CurvSeg addresses the inherent conflict between "temporal invariance for classification" and "temporal sensitivity for boundary localization" in skeleton-based temporal action segmentation. It proposes using the **geometric curvature of classification feature trajectories** as a boundary prior—where curvature is high w
+  [ICLR2026][Human Understanding][Skeleton Action Segmentation] CurvSeg addresses the inherent conflict between "temporal invariance for classification" and "temporal sensitivity for boundary localization" in skeleton-based temporal action segmentation. It proposes using the **geometric curvature of classification feature trajectories** as a boundary prior—where curvature is high within action segments and low at transitions. This establishes a bidirectional closed-loop synergy…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR2026"
+  - "Human Understanding"
+  - "Skeleton Action Segmentation"
+  - "Curvature Geometric Prior"
+  - "Task Synergy"
+  - "Mixture-of-Experts"
+  - "Boundary Localization"
 date: 2026-05-08
-content_hash: 69461eaf50e558f7
+content_hash: 8c87979d423325e8
 ---
+
 # Curvature-Guided Task Synergy for Skeleton based Temporal Action Segmentation
 
 **Conference**: ICLR2026  
@@ -142,10 +148,20 @@ Comparison of Guiding Signals (LARa): Curvature vs. other boundary proxies.
 - Value: ⭐⭐⭐⭐ Plug-and-play, parameter-free, and privacy-friendly for skeletal TAS scenarios.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] PRISM: Learning a Shared Primitive Space for Transferable Skeleton Action Representation](../../CVPR2026/human_understanding/prism_learning_a_shared_primitive_space_for_transferable_skeleton_action_represe.md)
+- [\[ICLR 2026\] TriC-Motion: Tri-domain Causal Modeling for Text-to-Action Generation](tric-motion_tri-domain_causal_modeling_grounded_text-to-motion_generation.md)
+- [\[ICLR 2026\] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis](from_pixels_to_semantics_unified_facial_action_representation_learning_for_micro.md)
+- [\[ICLR 2026\] From Sparse to Dense: Spatio-Temporal Fusion for Multi-View 3D Human Pose Estimation with DenseWarper](from_sparse_to_dense_spatio-temporal_fusion_for_multi-view_3d_human_pose_estimat.md)
+- [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] PRISM: Learning a Shared Primitive Space for Transferable Skeleton Action Representation](../../CVPR2026/human_understanding/prism_learning_a_shared_primitive_space_for_transferable_skeleton_action_represe.md)

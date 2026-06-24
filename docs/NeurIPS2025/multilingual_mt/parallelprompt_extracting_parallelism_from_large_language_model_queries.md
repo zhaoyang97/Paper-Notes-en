@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ParallelPrompt: Extracting Parallelism from Large Language Model Queries
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][Intra-query parallelism] This work presents ParallelPrompt, the first benchmark for intra-query parallelism, comprising structured decomposition annotations for 37…
+  [NeurIPS 2025][Multilingual & Machine Translation][Intra-query parallelism] This work presents ParallelPrompt, the first benchmark for intra-query parallelism, comprising structured decomposition annotations for 37,000+ real user prompts. It demonstrates that approximately 10% of user queries contain exploitable parallel structure, and that parallel execution can achieve up to 5.7× latency speedup with limited quality degradation.
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "semantic fidelity"
 date: 2026-05-08
-content_hash: 9edeead904d71ac7
+content_hash: a5daade9c7ce5728
 ---
 
 # ParallelPrompt: Extracting Parallelism from Large Language Model Queries
@@ -124,10 +124,10 @@ ParallelPrompt consists of three components: (1) **Data filtering pipeline**: mu
 ## Related Papers
 
 - [\[NeurIPS 2025\] Exploring the Translation Mechanism of Large Language Models](exploring_the_translation_mechanism_of_large_language_models.md)
+- [\[ACL 2025\] Group then Scale: Dynamic Mixture-of-Experts Multilingual Language Model](../../ACL2025/multilingual_mt/group_then_scale_dynamic_mixture-of-experts_multilingual_language_model.md)
 - [\[NeurIPS 2025\] XIFBench: Evaluating Large Language Models on Multilingual Instruction Following](xifbench_evaluating_large_language_models_on_multilingual_instruction_following.md)
-- [\[ACL 2026\] LaoBench: A Large-Scale Multidimensional Lao Benchmark for Large Language Models](../../ACL2026/multilingual_mt/laobench_a_large-scale_multidimensional_lao_benchmark_for_large_language_models.md)
-- [\[AAAI 2026\] Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](../../AAAI2026/multilingual_mt/focusing_on_language_revealing_and_exploiting_language_attention_heads_in_multil.md)
-- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](../../ACL2026/multilingual_mt/tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
+- [\[ICLR 2026\] Language Confusion Gate: Language-Aware Decoding Through Model Self-Distillation](../../ICLR2026/multilingual_mt/language_confusion_gate_language-aware_decoding_through_model_self-distillation.md)
+- [\[ACL 2025\] Disentangling Language and Culture for Evaluating Multilingual Large Language Models](../../ACL2025/multilingual_mt/disentangle_language_culture.md)
 
 </div>
 

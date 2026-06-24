@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper introduces PolicyBench (a 21K-item cross-regime policy understanding benchmark for China and the US) and PolicyMoE (a Mixture-of-Experts model based on cognitive levels). It systematically evaluates the capabilities of 11 SOTA LLMs across three cognitive tiers—memory, understanding, and application—revealing
+  [ACL 2026 (Findings)][LLM Evaluation][Public Policy Understanding] This paper introduces PolicyBench (a 21K-item cross-regime policy understanding benchmark for China and the US) and PolicyMoE (a Mixture-of-Experts model based on cognitive levels). It systematically evaluates the capabilities of 11 SOTA LLMs across three cognitive tiers—memory, understanding, and application—revealing that while models perform well in structured reasoning, they remain weak in abstract policy…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 (Findings)"
+  - "LLM Evaluation"
+  - "Public Policy Understanding"
+  - "Cross-Regime Benchmark"
+  - "Bloom's Taxonomy"
+  - "Mixture of Experts (MoE)"
+  - "Policy Reasoning"
 date: 2026-05-08
-content_hash: 224c68abeb5bd502
+content_hash: 032b3aacb42fe504
 ---
+
 # PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models
 
 **Conference**: ACL 2026 (Findings)  
@@ -124,10 +130,17 @@ Experts were trained for 3 epochs and the router for 4 epochs using standard cro
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Agentic Reinforced Policy Optimization](../../ICLR2026/llm_evaluation/agentic_reinforced_policy_optimization.md)
+- [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
+- [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
+- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
+- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Inverting the Shield: Systematically Generating Safety Tests from Policy Specifications](inverting_the_shield_systematically_generating_safety_tests_from_policy_specific.md)

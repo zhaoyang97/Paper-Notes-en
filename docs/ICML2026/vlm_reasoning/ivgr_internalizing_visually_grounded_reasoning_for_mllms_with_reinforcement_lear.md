@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning
 description: >-
-  [ICML 2026][vlm_reasoning][CoT] Addressing the counter-intuitive phenomenon where "explicit visual grounding actually hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously. Using a consistency reward, the visual localization capabilities of
+  [ICML 2026][VLM Reasoning][Visual Reasoning] Addressing the counter-intuitive phenomenon where "explicit visual grounding actually hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously. Using a consistency reward, the visual localization capabilities of high-quality grounded trajectories are "internalized" into pure textual CoT, enabling the model to reap the benefi…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - CoT
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Visual Reasoning"
+  - "CoT"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Consistency Reward"
 date: 2026-05-08
-content_hash: 45f32d9c238a942a
+content_hash: 4b8f25c19f7bf117
 ---
+
 # iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -145,10 +148,10 @@ The textual mode is superior on average, falsifying the assumption that "explici
 ## Related Papers
 
 - [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](../../CVPR2026/vlm_reasoning/incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[ICLR 2026\] MedVR: Annotation-Free Medical Visual Reasoning via Agentic Reinforcement Learning](../../ICLR2026/vlm_reasoning/medvr_annotation-free_medical_visual_reasoning_via_agentic_reinforcement_learnin.md)
+- [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](../../ICLR2026/vlm_reasoning/visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
 - [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](../../CVPR2026/vlm_reasoning/reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](../../CVPR2026/vlm_reasoning/moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](../../CVPR2026/vlm_reasoning/r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
+- [\[ICML 2026\] From Shortcuts to Reasoning: Robust Post-Training of Theory of Mind with Reinforcement Learning](from_shortcuts_to_reasoning_robust_post-training_of_theory_of_mind_with_reinforc.md)
 
 </div>
 

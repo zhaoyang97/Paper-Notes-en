@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unified 3D Scene Understanding Through Physical World Modeling
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] 3WM unifies RGB image patches, optical flow patches, and camera poses into a random-access probabilistic graphical model. Using GPT-style autoregressive prediction, it completes novel view synthesis (NVS), 3D object manipulation, and self-supervised depth estimation within a single prompt interface, outperforming speci
+  [ICLR2026][3D Vision][3D scene understanding] 3WM unifies RGB image patches, optical flow patches, and camera poses into a random-access probabilistic graphical model. Using GPT-style autoregressive prediction, it completes novel view synthesis (NVS), 3D object manipulation, and self-supervised depth estimation within a single prompt interface, outperforming specialized models on multiple real-world benchmarks.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D scene understanding"
+  - "physical world model"
+  - "optical flow control"
+  - "novel view synthesis"
+  - "depth estimation"
 date: 2026-05-08
-content_hash: d39322d26a1a6705
+content_hash: fa277705dd16ddc6
 ---
+
 # Unified 3D Scene Understanding Through Physical World Modeling
 
 **Conference**: ICLR2026  
@@ -151,11 +157,11 @@ Training data consists of the large-scale internet video dataset BVD and several
 
 ## Related Papers
 
+- [\[CVPR 2026\] P3Sim: Perceptual 3D Simulation with Physical World Modeling](../../CVPR2026/3d_vision/perceptual_3d_simulation_with_physical_world_modeling.md)
 - [\[ICLR 2026\] FantasyWorld: Geometry-Consistent World Modeling via Unified Video and 3D Prediction](fantasyworld_geometry-consistent_world_modeling_via_unified_video_and_3d_predict.md)
 - [\[ICLR 2026\] Omni-View: Unlocking How Generation Facilitates Understanding in Unified 3D Model based on Multiview images](omni-view_unlocking_how_generation_facilitates_understanding_in_unified_3d_model.md)
 - [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
-- [\[CVPR 2026\] CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling](../../CVPR2026/3d_vision/cosmo3d_open-world_promptable_3d_semantic_segmentation_through_llm-guided_canoni.md)
-- [\[AAAI 2026\] Point Cloud Quantization through Multimodal Prompting for 3D Understanding](../../AAAI2026/3d_vision/point_cloud_quantization_through_multimodal_prompting_for_3d_understanding.md)
+- [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](../../CVPR2026/3d_vision/rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
 
 </div>
 

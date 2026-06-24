@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Attention Is All You Need for KV Cache in Diffusion LLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][Diffusion Language Model] To address the redundancy in Diffusion Language Models (DLMs) where all tokens and layer KV pairs are recalculated at every step, this paper proposes Elastic-Cache—a training-free and architecture-agnostic method. It uses the "attention drift of the most-attended tokens" to determine **when** to refresh the cache, leve
+  [ICLR 2026][LLM Efficiency][Diffusion Language Models] To address the redundancy in Diffusion Language Models (DLMs) where all tokens and layer KV pairs are recalculated at every step, this paper proposes Elastic-Cache—a training-free and architecture-agnostic method. It uses the "attention drift of the most-attended tokens" to determine **when** to refresh the cache, leverages the "deep-layers-change-first" pattern to decide **from which layer** to refresh…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Diffusion Language Model
-  - KV Cache
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Language Models"
+  - "KV Cache"
+  - "Adaptive Caching"
+  - "Attention Drift"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 1969a1d09fa43c0e
+content_hash: 4b253306746c8b16
 ---
+
 # Attention Is All You Need for KV Cache in Diffusion LLMs
 
 **Conference**: ICLR 2026  
@@ -155,7 +158,7 @@ Compared to fixed scheduling methods, adaptive attention-aware caching provides 
 - [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](../../NeurIPS2025/llm_efficiency/tensor_product_attention_is_all_you_need.md)
 - [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
 - [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
-- [\[ICLR 2026\] FlashDLM: Accelerating Diffusion Language Model Inference via Efficient KV Caching and Guided Diffusion](flashdlm_accelerating_diffusion_language_model_inference_via_efficient_kv_cachin.md)
+- [\[ICLR 2026\] Diffusion Language Models Know the Answer Before Decoding](diffusion_language_model_knows_the_answer_before_it_decodes.md)
 
 </div>
 

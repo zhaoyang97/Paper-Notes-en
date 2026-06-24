@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] Proposes Source-Shielded Updates (SSU), a column-wise freezing strategy driven by source data importance scores. In continual pre-training (CPT) using only unlabeled target language data, it reduces source language performance degradation from 20.3% (Full Fine-Tuning) to 3.4% while maintaining comparable or superior ta
+  [ACL 2026][Multilingual & Machine Translation][Catastrophic Forgetting] Proposes Source-Shielded Updates (SSU), a column-wise freezing strategy driven by source data importance scores. In continual pre-training (CPT) using only unlabeled target language data, it reduces source language performance degradation from 20.3% (Full Fine-Tuning) to 3.4% while maintaining comparable or superior target language performance.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Catastrophic Forgetting"
+  - "Language Adaptation"
+  - "Selective Parameter Updates"
+  - "Column-wise Freezing"
+  - "Source Knowledge Protection"
 date: 2026-05-08
-content_hash: b83be341e0cc4ad9
+content_hash: 7c2d073c32d10cfc
 ---
+
 # Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates
 
 **Conference**: ACL 2026  
@@ -124,10 +130,10 @@ The model is trained on 200M tokens of target language data using standard causa
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
+- [\[ACL 2026\] Modular Monolingual Adaptation using Pretrained Language Models](modular_monolingual_adaptation_using_pretrained_language_models.md)
 - [\[ACL 2025\] Registering Source Tokens to Target Language Spaces in Multilingual Neural Machine Translation](../../ACL2025/multilingual_mt/registering_source_tokens_to_target_language_spaces_in_multilingual_neural_machi.md)
 - [\[ACL 2026\] Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models](exploring_continual_fine-tuning_for_enhancing_language_ability_in_large_language.md)
 - [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
-- [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
 
 </div>
 

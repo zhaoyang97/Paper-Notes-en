@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Adaptive Graph Mixture of Models
 description: >-
-  [AAAI 2026][Graph Learning][Graph Neural Networks] This paper proposes SAGMM (Self-Adaptive Graph Mixture of Models), a graph MoE framework that leverages architectural diversity by employing a Topology-Aware Attention G…
+  [AAAI 2026][Graph Learning][Graph Neural Networks] This paper proposes SAGMM (Self-Adaptive Graph Mixture of Models), a graph MoE framework that leverages architectural diversity by employing a Topology-Aware Attention Gating (TAAG) mechanism to adaptively select and combine heterogeneous GNN experts, coupled with an adaptive pruning mechanism. SAGMM consistently outperforms individual GNNs and existing MoE methods across 16 benchmarks spanning node classification…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Expert Pruning"
   - "Topology-Aware Attention"
 date: 2026-05-08
-content_hash: 6d251d2594460e67
+content_hash: f7ab5d603bea3f29
 ---
 
 # Self-Adaptive Graph Mixture of Models
@@ -133,10 +133,10 @@ The training objective combines task loss, importance loss (encouraging uniform 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
+- [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](../../ICLR2026/graph_learning/adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
 - [\[AAAI 2026\] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification](ntsformer_a_self-teaching_graph_transformer_for_multimodal_isolated_cold-start_n.md)
+- [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
 - [\[AAAI 2026\] Self-Correction Distillation for Structured Data Question Answering](self-correction_distillation_for_structured_data_question_answering.md)
-- [\[AAAI 2026\] On Stealing Graph Neural Network Models](on_stealing_graph_neural_network_models.md)
 - [\[AAAI 2026\] Adaptive Initial Residual Connections for GNNs with Theoretical Guarantees](adaptive_initial_residual_connections_for_gnns_with_theoretical_guarantees.md)
 
 </div>

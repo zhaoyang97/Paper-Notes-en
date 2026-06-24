@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Diffusion Differentiable Resampling
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper proposes **diffusion resampling**: a **training-free** diffusion process that serves as a naturally differentiable reparameterization replacement for the resampling step in Sequential Monte Carlo (SMC). It proves consistent convergence relative to the number of samples $N$ under the Wasserstein distance and
+  [ICML 2026][Image Generation][Diffusion Models] This paper proposes **diffusion resampling**: a **training-free** diffusion process that serves as a naturally differentiable reparameterization replacement for the resampling step in Sequential Monte Carlo (SMC). It proves consistent convergence relative to the number of samples $N$ under the Wasserstein distance and outperforms existing differentiable resampling methods such as OT, Gumbel-Softmax…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - SMC
-  - State Space Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Particle Filtering"
+  - "SMC"
+  - "Differentiable Resampling"
+  - "State-Space Models"
 date: 2026-05-08
-content_hash: f39163aa9eb8d90b
+content_hash: 055dee36e3850a4a
 ---
+
 # Diffusion Differentiable Resampling
 
 **Conference**: ICML 2026  
@@ -162,9 +165,9 @@ Linear Gaussian SSM Particle Filtering ($N{=}32$, 128 steps, mean of 100 runs):
 
 - [\[ICML 2025\] FlexTok: Resampling Images into 1D Token Sequences of Flexible Length](../../ICML2025/image_generation/flextok_resampling_images_into_1d_token_sequences_of_flexible_length.md)
 - [\[CVPR 2025\] Reward Fine-Tuning Two-Step Diffusion Models via Learning Differentiable Latent-Space Surrogate Reward](../../CVPR2025/image_generation/reward_fine-tuning_two-step_diffusion_models_via_learning_differentiable_latent-.md)
-- [\[ICML 2026\] Recovering Hidden Reward in Diffusion-Based Policies](recovering_hidden_reward_in_diffusion-based_policies.md)
-- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
 - [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[ICML 2026\] Quantifying Error Propagation and Model Collapse in Diffusion Models](quantifying_error_propagation_and_model_collapse_in_diffusion_models.md)
+- [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
 
 </div>
 

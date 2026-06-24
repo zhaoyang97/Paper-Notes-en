@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The paper proposes HierLoc, which remodels geolocation as an image-entity alignment problem in hyperbolic space. By replacing 5M+ image embeddings with 240k hierarchical geographic entity embeddings, it reduces the mean geodesic error by 19.5% and improves sub-region accuracy by 43% on the OSV5M dataset.
+  [ICLR 2026][Image Generation][Visual Geolocation] The paper proposes HierLoc, which remodels geolocation as an image-entity alignment problem in hyperbolic space. By replacing 5M+ image embeddings with 240k hierarchical geographic entity embeddings, it reduces the mean geodesic error by 19.5% and improves sub-region accuracy by 43% on the OSV5M dataset.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Visual Geolocation"
+  - "Hyperbolic Embeddings"
+  - "Hierarchical Entities"
+  - "Contrastive Learning"
+  - "Retrieval"
 date: 2026-05-08
-content_hash: 1afbbbc5b01ee57f
+content_hash: 7f099ab3d1ee9106
 ---
+
 # HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization
 description: >-
-  [AAAI 2026][Hyperparameter Optimization] HyperSHAP proposes a game-theoretic framework based on Shapley values and Shapley interactions to explain hyperparameter optimization (HPO). By defining four categories of explana…
+  [AAAI 2026][Hyperparameter Optimization] HyperSHAP proposes a game-theoretic framework based on Shapley values and Shapley interactions to explain hyperparameter optimization (HPO). By defining four categories of explanation games—ablation, sensitivity, tunability, and optimizer bias—it provides more actionable hyperparameter importance analysis than fANOVA.
 tags:
   - "AAAI 2026"
   - "Hyperparameter Optimization"
@@ -11,7 +11,7 @@ tags:
   - "Game Theory"
   - "Hyperparameter Importance"
 date: 2026-05-08
-content_hash: 4db8cec7180c27fb
+content_hash: da0bd3d234766cd8
 ---
 
 # HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization
@@ -142,10 +142,10 @@ On the LCBench benchmark, subsequent HPO using the top-2 hyperparameters selecte
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Unified Framework for Provably Efficient Algorithms to Estimate Shapley Values](../../NeurIPS2025/others/a_unified_framework_for_provably_efficient_algorithms_to_estimate_shapley_values.md)
+- [\[ACL 2025\] Using Shapley Interactions to Understand How Models Use Structure](../../ACL2025/others/using_shapley_interactions_to_understand_how_models_use_structure.md)
+- [\[ICML 2025\] Prediction via Shapley Value Regression (ViaSHAP)](../../ICML2025/others/prediction_via_shapley_value_regression.md)
 - [\[AAAI 2026\] OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems](or-r1_automating_modeling_and_solving_of_operations_research_optimization_proble.md)
 - [\[AAAI 2026\] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)
-- [\[AAAI 2026\] DS-ATGO: Dual-Stage Synergistic Learning via Forward Adaptive Threshold and Backward Gradient Optimization for Spiking Neural Networks](ds-atgo_dual-stage_synergistic_learning_via_forward_adaptive_threshold_and_backw.md)
-- [\[NeurIPS 2025\] Faithful Group Shapley Value](../../NeurIPS2025/others/faithful_group_shapley_value.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-Thought] This paper reveals the mathematical equivalence between Transformer self-attention and $k$-means clustering. Based on this, it designs the KCoT framework, which explicitly decomposes CoT reasoning into "assignment-update" semantic filtering prompts. It employs Condition-Net to dynamically fuse topological priors with e
+  [ICML 2026][Reasoning][Chain-of-Thought] This paper reveals the mathematical equivalence between Transformer self-attention and $k$-means clustering. Based on this, it designs the KCoT framework, which explicitly decomposes CoT reasoning into "assignment-update" semantic filtering prompts. It employs Condition-Net to dynamically fuse topological priors with evolving thought representations, consistently surpassing SOTA in node classification and link prediction.
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Chain-of-Thought
-  - Graph Learning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Chain-of-Thought"
+  - "Graph Learning"
+  - "$k$-means clustering"
+  - "Text-Attributed Graphs"
+  - "semantic-structural alignment"
 date: 2026-05-08
-content_hash: 63fc906dd1006512
+content_hash: a6d8115f5fb0aa05
 ---
+
 # Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning
 
 **Conference**: ICML 2026  
@@ -125,10 +129,10 @@ All improvements were verified via $t$-test ($p < 0.01$). Comprehensive leadersh
 ## Related Papers
 
 - [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](../../ICLR2026/llm_reasoning/verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
-- [\[ICML 2026\] The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought](the_expressive_power_of_low_precision_softmax_transformers_with_summarized_chain.md)
-- [\[ICML 2026\] How Far Ahead Do LLMs Plan? Uncovering the Latent Horizon in Chain-of-Thought Reasoning](how_far_ahead_do_llms_plan_uncovering_the_latent_horizon_in_chain-of-thought_rea.md)
-- [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
+- [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
 - [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](../../ICLR2026/llm_reasoning/dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
+- [\[ICML 2026\] When the Chain of Thought Knows Better: Failure Modes in Multi-Turn Reasoning Models](when_the_chain_of_thought_knows_better_failure_modes_in_multi-turn_reasoning_mod.md)
+- [\[ACL 2026\] Learning to Edit Knowledge via Instruction-based Chain-of-Thought Prompting](../../ACL2026/llm_reasoning/learning_to_edit_knowledge_via_instruction-based_chain-of-thought_prompting.md)
 
 </div>
 

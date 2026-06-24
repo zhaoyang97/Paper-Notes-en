@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][OCR] The authors constructed OCR-Reasoning—the first benchmark to systematically evaluate the "text-rich image reasoning" capabilities of multimodal large language models (MLLMs). It includes 1,069 human-annotated samples covering 6 core reasoning capabilities across 18 practical tasks, providing both final answers and step
+  [ICLR 2026][VLM Reasoning][Text-Rich Image Reasoning] The authors constructed OCR-Reasoning—the first benchmark to systematically evaluate the "text-rich image reasoning" capabilities of multimodal large language models (MLLMs). It includes 1,069 human-annotated samples covering 6 core reasoning capabilities across 18 practical tasks, providing both final answers and step-by-step reasoning processes. Results show that even the strongest MLLMs do not exceed 50% accuracy…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - OCR
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Text-Rich Image Reasoning"
+  - "OCR"
+  - "Slow Thinking"
+  - "Reasoning Process Evaluation"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 0cec67709bb3c651
+content_hash: b8237f9b78752ca4
 ---
+
 # OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning
 
 **Conference**: ICLR 2026  
@@ -140,11 +145,11 @@ Core conclusion: **No model exceeds 50%**. The strongest model (DouBao) reaches 
 
 ## Related Papers
 
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/vlm_reasoning/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
 - [\[ICLR 2026\] Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs](childrens_intelligence_tests_pose_challenges_for_mllms_kidgym_a_2d_grid-based_re.md)
-- [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
-- [\[CVPR 2026\] Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching](../../CVPR2026/vlm_reasoning/eliciting_complex_spatial_reasoning_in_mllms_through_wide-baseline_matching.md)
 
 </div>
 

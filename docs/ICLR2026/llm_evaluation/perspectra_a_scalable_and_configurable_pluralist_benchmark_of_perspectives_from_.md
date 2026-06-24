@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PerSpectra: A Scalable and Configurable Pluralist Benchmark of Perspectives from Arguments
 description: >-
-  [ICLR 2026][LLM Evaluation][Kialo+Reddit] PerSpectra integrates the "clear structure" of Kialo debate graphs with the "linguistic diversity" of real Reddit discussions through a retrieval-rewriting pipeline. It constructs a configurable benchmark featuring 100 controversial topics, 762 pro/con stances, and 3,810 naturalized arguments. Three derived tasks—persp
+  [ICLR 2026][LLM Evaluation][Pluralism] PerSpectra integrates the "clear structure" of Kialo debate graphs with the "linguistic diversity" of real Reddit discussions through a retrieval-rewriting pipeline. It constructs a configurable benchmark featuring 100 controversial topics, 762 pro/con stances, and 3,810 naturalized arguments. Three derived tasks—perspective counting, perspective matching, and polarity judgment—reveal systematic failures in current LLMs regarding multi-p…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Kialo+Reddit
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Pluralism"
+  - "perspective understanding"
+  - "debate corpus"
+  - "benchmark construction"
+  - "Kialo+Reddit"
 date: 2026-05-08
-content_hash: 385278fd9dd0497a
+content_hash: b69a794164b264e3
 ---
+
 # PerSpectra: A Scalable and Configurable Pluralist Benchmark of Perspectives from Arguments
 
 **Conference**: ICLR 2026  

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision
 description: >-
-  [ICCV 2025][Infrared small target detection] This paper proposes a Progressive Active Learning (PAL) framework that trains infrared small target detection networks through a three-stage strategy—model pre-start…
+  [ICCV 2025][Object Detection][Infrared small target detection] This paper proposes a Progressive Active Learning (PAL) framework that trains infrared small target detection networks through a three-stage strategy—model pre-start, model enhancement, and model refinement—driving the network to actively identify and learn from hard samples in an easy-to-hard manner. Under single point supervision, PAL substantially narrows the performance gap with fully supervised methods (IoU i…
 tags:
   - "ICCV 2025"
+  - "Object Detection"
   - "Infrared small target detection"
   - "single point supervision"
   - "progressive active learning"
   - "curriculum learning"
   - "pseudo-label evolution"
 date: 2026-05-08
-content_hash: 09a5ced1dd06a1d1
+content_hash: 81595ce9712905b7
 ---
 
 # From Easy to Hard: Progressive Active Learning Framework for Infrared Small Target Detection with Single Point Supervision
@@ -201,10 +202,10 @@ where $\lambda$ is the decay factor and $N_n$ is the candidate region mask
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
+- [\[CVPR 2026\] Target-Aware Invertible Encoder with Reconstruction Guidance for Infrared Small Target Detection](../../CVPR2026/object_detection/target-aware_invertible_encoder_with_reconstruction_guidance_for_infrared_small_.md)
+- [\[CVPR 2025\] Small Target Detection Based on Mask-Enhanced Attention Fusion of Visible and Infrared Remote Sensing Images](../../CVPR2025/object_detection/small_target_detection_based_on_mask-enhanced_attention_fusion_of_visible_and_in.md)
+- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](../../CVPR2026/object_detection/chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
 - [\[ICCV 2025\] Uncertainty-Aware Gradient Stabilization for Small Object Detection](uncertainty-aware_gradient_stabilization_for_small_object_detection.md)
-- [\[ICCV 2025\] Augmenting Moment Retrieval: Zero-Dependency Two-Stage Learning](augmenting_moment_retrieval_zero-dependency_two-stage_learning.md)
-- [\[ICCV 2025\] The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning](the_devil_is_in_the_spurious_correlations_boosting_moment_retrieval_with_dynamic.md)
-- [\[ICCV 2025\] Diffusion Curriculum: Synthetic-to-Real Data Curriculum via Image-Guided Diffusion](diffusion_curriculum_synthetic-to-real_data_curriculum_via_image-guided_diffusio.md)
 
 </div>
 

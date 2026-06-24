@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design
 description: >-
-  [NeurIPS 2025][Computational Biology][Diffusion Models] This paper proposes an uncertainty-aware multi-objective reinforcement learning framework that guides a 3D molecular diffusion model (EDM) to simultaneously optimiz…
+  [NeurIPS 2025][Computational Biology][Diffusion Models] This paper proposes an uncertainty-aware multi-objective reinforcement learning framework that guides a 3D molecular diffusion model (EDM) to simultaneously optimize drug-likeness (QED), synthetic accessibility (SAS), and binding affinity. The framework dynamically shapes the reward function using predictive uncertainty from surrogate models, consistently outperforms baselines across three benchmark datasets…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "3D Molecular Generation"
   - "Drug Discovery"
 date: 2026-05-08
-content_hash: 002ff4bcb9661e96
+content_hash: dbf815f0229bff4d
 ---
 
 # Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design
@@ -157,10 +157,10 @@ Key findings:
 
 ## Related Papers
 
+- [\[ICML 2025\] PepTune: De Novo Generation of Therapeutic Peptides with Multi-Objective-Guided Discrete Diffusion](../../ICML2025/computational_biology/peptune_de_novo_generation_of_therapeutic_peptides_with_multi-objective-guided_d.md)
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
-- [\[NeurIPS 2025\] De novo generation of functional terpene synthases using TpsGPT](de_novo_generation_of_functional_terpene_synthases_using_tpsgpt.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
-- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
+- [\[NeurIPS 2025\] De novo generation of functional terpene synthases using TpsGPT](de_novo_generation_of_functional_terpene_synthases_using_tpsgpt.md)
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
 
 </div>

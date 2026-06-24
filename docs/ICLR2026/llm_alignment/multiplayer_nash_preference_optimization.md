@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Multiplayer Nash Preference Optimization
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] This work generalizes Nash learning from human feedback (NLHF) from "two-player games" to "n-player games," allowing a policy to simultaneously compete against an entire population of opponents (historical checkpoints or multiple heterogeneous reward models). By using multiplicative weights updates to find approximate
+  [ICLR 2026][LLM Alignment][RLHF] This work generalizes Nash learning from human feedback (NLHF) from "two-player games" to "n-player games," allowing a policy to simultaneously compete against an entire population of opponents (historical checkpoints or multiple heterogeneous reward models). By using multiplicative weights updates to find approximate Nash equilibria, the method more stably and comprehensively captures non-transitive and heterogeneous human preferences in the…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
-  - Nash learning from human feedback
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "Nash learning from human feedback"
+  - "Multiplayer games"
+  - "Preference non-transitivity"
+  - "Heterogeneous reward models"
 date: 2026-05-08
-content_hash: 20e373f078b61d6f
+content_hash: d8a1ebd894ede30a
 ---
+
 # Multiplayer Nash Preference Optimization
 
 **Conference**: ICLR 2026  

@@ -2,18 +2,13 @@
 title: >-
   [Paper Note] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models
 description: >-
-  [ICLR 2026][Model Compression][Mixture-of-Experts] The SERE method is proposed to dynamically re-route secondary experts to the most similar primary experts during batch decoding by pre-computing an expert similarity matrix. This achieves up to 2.0× acceleration with minimal quality loss and provides a plug-and-play CUDA kernel for vLLM.
+  [Model Compression] The SERE method is proposed to dynamically re-route secondary experts to the most similar primary experts during batch decoding by pre-computing an expert similarity matrix. This achieves up to 2.0× acceleration with minimal quality loss and provides a plug-and-play CUDA kernel for vLLM.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mixture-of-Experts
-  - Batch Decoding
-  - Expert Skipping
-  - CUDA Kernel
-  - vLLM
+  - "Model Compression"
 date: 2026-05-08
-content_hash: 13d8fdb55b9369f4
+content_hash: 91ccb23b1db29a42
 ---
+
 # SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models
 
 ## Basic Information

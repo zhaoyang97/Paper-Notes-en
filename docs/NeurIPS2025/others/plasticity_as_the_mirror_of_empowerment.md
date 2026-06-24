@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Plasticity as the Mirror of Empowerment
 description: >-
-  [NeurIPS 2025][Plasticity] This paper proposes **Generalized Directed Information (GDI)** as an information-theoretic tool for measuring agent plasticity…
+  [NeurIPS 2025][Plasticity] This paper proposes **Generalized Directed Information (GDI)** as an information-theoretic tool for measuring agent plasticity, revealing that plasticity is the "mirror" of empowerment — both use the same measure but in opposite directions — and proves a strict tension bound between the two.
 tags:
   - "NeurIPS 2025"
   - "Plasticity"
@@ -11,7 +11,7 @@ tags:
   - "Generalized Directed Information"
   - "Agent Design"
 date: 2026-05-08
-content_hash: 040ceecc68143a39
+content_hash: f64faab98501d861
 ---
 
 # Plasticity as the Mirror of Empowerment
@@ -157,10 +157,10 @@ In a corridor of $n+1$ rooms, each containing a switch and a light, the agent's 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Meta-learning three-factor plasticity rules for structured credit assignment with sparse feedback](meta-learning_three-factor_plasticity_rules_for_structured_credit_assignment_wit.md)
-- [\[ICLR 2026\] FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability-Plasticity Tradeoff](../../ICLR2026/others/fire_frobenius_isometry_reinitialization.md)
 - [\[NeurIPS 2025\] Training the Untrainable: Introducing Inductive Bias via Representational Alignment](training_the_untrainable_introducing_inductive_bias_via_representational_alignme.md)
 - [\[NeurIPS 2025\] Learning Dynamics of RNNs in Closed-Loop Environments](learning_dynamics_of_rnns_in_closed-loop_environments.md)
 - [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
+- [\[NeurIPS 2025\] Incomplete Multi-view Clustering via Hierarchical Semantic Alignment and Cooperative Completion](incomplete_multi-view_clustering_via_hierarchical_semantic_alignment_and_coopera.md)
 
 </div>
 

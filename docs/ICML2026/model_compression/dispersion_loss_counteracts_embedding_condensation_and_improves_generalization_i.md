@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dispersion Loss Counteracts Embedding Condensation and Improves Generalization in Small Language Models
 description: >-
-  [ICML 2026][Model Compression][Knowledge Distillation] This paper systematically observes the universal phenomenon of "embedding condensation," where token embeddings in small language models collapse into a narrow cone as depth increases—unlike in large models. The authors design an angular dispersion loss $\mathcal{L}_{\text{disp}}$ to explicitly force embeddings to spre
+  [ICML 2026][Model Compression][Embedding Collapse] This paper systematically observes the universal phenomenon of "embedding condensation," where token embeddings in small language models collapse into a narrow cone as depth increases—unlike in large models. The authors design an angular dispersion loss $\mathcal{L}_{\text{disp}}$ to explicitly force embeddings to spread out. Without adding any parameters, this approach achieves an average improvement of 3.3% for Qwen3 / GPT2…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Knowledge Distillation
-  - GPT2 / Qwen3
+  - "ICML 2026"
+  - "Model Compression"
+  - "Embedding Collapse"
+  - "Dispersion Loss"
+  - "Small Model Generalization"
+  - "Knowledge Distillation"
+  - "GPT2 / Qwen3"
 date: 2026-05-08
-content_hash: 55b9291b70b89d18
+content_hash: d0f64d97ec86d91a
 ---
+
 # Dispersion Loss Counteracts Embedding Condensation and Improves Generalization in Small Language Models
 
 **Conference**: ICML 2026  
@@ -123,15 +127,14 @@ Confounder-controlled scale study: Training four GPT2-like models from scratch w
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
+- [\[ICML 2026\] Making Models Unmergeable via Scaling-Sensitive Loss Landscape](making_models_unmergeable_via_scaling-sensitive_loss_landscape.md)
 - [\[NeurIPS 2025\] REOrdering Patches Improves Vision Models](../../NeurIPS2025/model_compression/reordering_patches_improves_vision_models.md)
 - [\[ICLR 2026\] FutureMind: Equipping Small Language Models with Strategic Thinking-Pattern Priors via Adaptive Knowledge Distillation](../../ICLR2026/model_compression/futuremind_equipping_small_language_models_with_strategic_thinking-pattern_prior.md)
-- [\[ICML 2026\] Making Models Unmergeable via Scaling-Sensitive Loss Landscape](making_models_unmergeable_via_scaling-sensitive_loss_landscape.md)
 
 </div>
 

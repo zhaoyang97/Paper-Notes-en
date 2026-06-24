@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Complet4R: Geometric Complete 4D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][decoder-only transformer] Complet4R redefines "dynamic scene 4D reconstruction" as "aggregating observed geometry from all frames in a video into a complete geometry for each target timestamp (including parts occluded in that frame but visible in others)." This is implemented end-to-end using a decoder-only transformer with switchable target-ti
+  [CVPR 2026][3D Vision][4D Reconstruction] Complet4R redefines "dynamic scene 4D reconstruction" as "aggregating observed geometry from all frames in a video into a complete geometry for each target timestamp (including parts occluded in that frame but visible in others)." This is implemented end-to-end using a decoder-only transformer with switchable target-timestamp aggregation tokens, achieving SOTA on a self-built 4D complete reconstruction benchmark and in 3D point tracki…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - decoder-only transformer
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Reconstruction"
+  - "Dynamic Scenes"
+  - "Geometric Completion"
+  - "3D Point Tracking"
+  - "decoder-only transformer"
 date: 2026-05-08
-content_hash: 9bc3ba28b29651b3
+content_hash: bf7d9fd3f998979f
 ---
+
 # Complet4R: Geometric Complete 4D Reconstruction
 
 **Conference**: CVPR 2026  
@@ -148,10 +153,10 @@ Ours leads across all datasets; APD on PO/DR is ~12 points higher than St4RTrack
 ## Related Papers
 
 - [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
-- [\[CVPR 2026\] BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[ICCV 2025\] Geo4D: Leveraging Video Generators for Geometric 4D Scene Reconstruction](../../ICCV2025/3d_vision/geo4d_leveraging_video_generators_for_geometric_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
+- [\[CVPR 2026\] MotionCrafter: Dense Geometry and Motion Reconstruction with a 4D VAE](motioncrafter_dense_geometry_and_motion_reconstruction_with_a_4d_vae.md)
 
 </div>
 

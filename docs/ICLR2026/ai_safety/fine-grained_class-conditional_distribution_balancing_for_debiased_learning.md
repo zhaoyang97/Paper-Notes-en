@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fine-Grained Class-Conditional Distribution Balancing for Debiased Learning
 description: >-
-  [ICLR 2026][AI Safety][worst-group robustness] This paper decomposes group-robust learning without bias annotations into "overfitting a model to identify bias patterns followed by fine-grained class-conditional distribution matching via a confusion matrix." It proposes MST and FG-CCDB, which approach or exceed the performance of methods relying on manual group anno
+  [ICLR 2026][AI Safety][Spurious Correlation] This paper decomposes group-robust learning without bias annotations into "overfitting a model to identify bias patterns followed by fine-grained class-conditional distribution matching via a confusion matrix." It proposes MST and FG-CCDB, which approach or exceed the performance of methods relying on manual group annotations in binary, multi-shortcut, and extreme multi-class scenarios.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - worst-group robustness
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Spurious Correlation"
+  - "Debiased Learning"
+  - "Worst-group Robustness"
+  - "Class-conditional Distribution Balancing"
+  - "Sample Reweighting"
 date: 2026-05-08
-content_hash: dcabc6c5d1ed69a9
+content_hash: e25021918f1883fc
 ---
+
 # Fine-Grained Class-Conditional Distribution Balancing for Debiased Learning
 
 **Conference**: ICLR 2026  
@@ -179,11 +184,11 @@ The ablation clarifies two points: pseudo mode labels from MST are sufficient to
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fine-Grained Iterative Adversarial Attacks with Limited Computation Budget](fine-grained_iterative_adversarial_attacks_with_limited_computation_budget.md)
 - [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
 - [\[ICML 2026\] VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection](../../ICML2026/ai_safety/vpd-100k_towards_generalizable_and_fine-grained_visual_privacy_protection.md)
-- [\[ECCV 2024\] SkyMask: Attack-Agnostic Robust Federated Learning with Fine-Grained Learnable Masks](../../ECCV2024/ai_safety/skymask_attack-agnostic_robust_federated_learning_with_fine-grained_learnable_ma.md)
 - [\[CVPR 2026\] RankOOD: Class Ranking-based Out-of-Distribution Detection](../../CVPR2026/ai_safety/rankood_-_class_ranking-based_out-of-distribution_detection.md)
-- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
+- [\[ECCV 2024\] SkyMask: Attack-Agnostic Robust Federated Learning with Fine-Grained Learnable Masks](../../ECCV2024/ai_safety/skymask_attack-agnostic_robust_federated_learning_with_fine-grained_learnable_ma.md)
 
 </div>
 

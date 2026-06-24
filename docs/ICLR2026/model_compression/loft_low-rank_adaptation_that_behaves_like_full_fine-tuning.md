@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
 description: >-
-  [ICLR 2026][Model Compression][LoRA] Ours proposes LoFT, a low-rank adaptation method that aligns internal optimizer dynamics (momentum and second moment) with full fine-tuning behavior. Composed of six building blocks, LoFT exactly recovers AdamW in the full-rank limit and significantly narrows the performance gap between LoRA and full fine-tuning across
+  [ICLR 2026][Model Compression][LoRA] Ours proposes LoFT, a low-rank adaptation method that aligns internal optimizer dynamics (momentum and second moment) with full fine-tuning behavior. Composed of six building blocks, LoFT exactly recovers AdamW in the full-rank limit and significantly narrows the performance gap between LoRA and full fine-tuning across multiple benchmarks.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
-  - AdamW
+  - "ICLR 2026"
+  - "Model Compression"
+  - "LoRA"
+  - "Low-Rank Adaptation"
+  - "Full Fine-Tuning"
+  - "Optimizer State Alignment"
+  - "AdamW"
 date: 2026-05-08
-content_hash: 34a3cdf17707ab03
+content_hash: 55fc2f9391ae4140
 ---
+
 # LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning
 
 **Conference**: ICLR 2026  
@@ -165,15 +169,16 @@ For gradient clipping, using raw LoRA gradients to estimate norms leads to clipp
 - **Value**: ⭐⭐⭐⭐⭐ — Provides critical guidance for LoRA improvements; potential to become a new standard.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](../../ICML2026/model_compression/scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
-- [\[ACL 2026\] Polynomial Expansion Rank Adaptation: Enhancing Low-Rank Fine-Tuning with High-Order Interactions](../../ACL2026/model_compression/polynomial_expansion_rank_adaptation_enhancing_low-rank_fine-tuning_with_high-or.md)
+- [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](../../ICML2026/model_compression/scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
 - [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
-- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
+- [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
 
 </div>
 

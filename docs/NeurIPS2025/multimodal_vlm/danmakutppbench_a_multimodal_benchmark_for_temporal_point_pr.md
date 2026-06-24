@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][temporal point process] This paper introduces DanmakuTPPBench, the first multimodal temporal point process benchmark. DanmakuTPP-Events provides 7…
+  [NeurIPS 2025][Multimodal VLM][temporal point process] This paper introduces DanmakuTPPBench, the first multimodal temporal point process benchmark. DanmakuTPP-Events provides 7,250 sequences comprising 10.8 million Danmaku events with natural three-modal alignment (time–text–video). DanmakuTPP-QA automatically generates 10 categories of reasoning question–answer pairs via a multi-agent pipeline. The benchmark systematically reveals significant deficiencies of both classical…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "LLM evaluation"
   - "multi-agent pipeline"
 date: 2026-05-08
-content_hash: da8703f2de7c1f23
+content_hash: 4e9bfb66697e24c7
 ---
 
 # DanmakuTPPBench: A Multi-modal Benchmark for Temporal Point Process Modeling and Understanding
@@ -129,11 +129,11 @@ Classical TPP models: NHP achieves the best log-likelihood (0.799) and RMSE (0.9
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Face-Human-Bench: A Comprehensive Benchmark of Face and Human Understanding for Multi-modal Assistants](face-human-bench_a_comprehensive_benchmark_of_face_and_human_understanding_for_m.md)
+- [\[ACL 2025\] AGRI-CM3: A Chinese Massive Multi-Modal Multi-Level Benchmark for Agricultural Understanding](../../ACL2025/multimodal_vlm/agri-cm3_a_chinese_massive_multi-modal_multi-level_benchmark_for_agricultural_un.md)
 - [\[NeurIPS 2025\] mmWalk: Towards Multi-modal Multi-view Walking Assistance](mmwalk_towards_multi-modal_multi-view_walking_assistance.md)
-- [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](../../CVPR2026/multimodal_vlm/videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
-- [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
+- [\[ACL 2025\] MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark](../../ACL2025/multimodal_vlm/mmmu_pro_robust_benchmark.md)
+- [\[CVPR 2026\] Point Cloud as a Foreign Language for Multi-modal Large Language Model](../../CVPR2026/multimodal_vlm/point_cloud_as_a_foreign_language_for_multi-modal_large_language_model.md)
 
 </div>
 

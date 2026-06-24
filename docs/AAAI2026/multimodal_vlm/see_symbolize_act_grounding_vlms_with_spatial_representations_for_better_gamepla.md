@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay
 description: >-
-  [AAAI 2026][Multimodal VLM][Symbolic grounding] This paper systematically evaluates the effect of symbolic spatial representations (object coordinates) on VLM gameplay…
+  [AAAI 2026][Multimodal VLM][Symbolic grounding] This paper systematically evaluates the effect of symbolic spatial representations (object coordinates) on VLM gameplay, finding that symbolic information is beneficial only when detection is accurate; when VLMs self-extract symbols, effectiveness depends on model capability and scene complexity, while visual frames remain indispensable throughout.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "object detection"
   - "Atari"
 date: 2026-05-08
-content_hash: 243eb9ee91aef528
+content_hash: fe1f3a33713794fd
 ---
 
 # See, Symbolize, Act: Grounding VLMs with Spatial Representations for Better Gameplay
@@ -169,11 +169,11 @@ Results in 3D environments confirm the core finding: symbolic information is ben
 
 ## Related Papers
 
-- [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](../../CVPR2026/multimodal_vlm/see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/multimodal_vlm/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](../../ICLR2026/multimodal_vlm/spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
+- [\[ICLR 2026\] RL Makes MLLMs See Better Than SFT](../../ICLR2026/multimodal_vlm/rl_makes_mllms_see_better_than_sft.md)
+- [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](../../CVPR2026/multimodal_vlm/see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
 - [\[AAAI 2026\] The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations](the_triangle_of_similarity_a_multi-faceted_framework_for_comparing_neural_networ.md)
-- [\[AAAI 2026\] Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection](yes_florence_i_will_do_better_next_time_agentic_feedback_reasoning_for_humorous_.md)
+- [\[CVPR 2026\] See and Fix the Flaws: Enabling VLMs and Diffusion Models to Comprehend Visual Artifacts via Agentic Data Synthesis](../../CVPR2026/multimodal_vlm/see_and_fix_the_flaws_enabling_vlms_and_diffusion_models_to_comprehend_visual_ar.md)
+- [\[AAAI 2026\] Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation](recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua.md)
 
 </div>
 

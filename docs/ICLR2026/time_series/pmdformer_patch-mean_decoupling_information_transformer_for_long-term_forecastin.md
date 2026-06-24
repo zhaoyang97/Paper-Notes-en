@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PMDformer: Patch-Mean Decoupling Information Transformer for Long-term Forecasting
 description: >-
-  [ICLR 2026][Time Series][Paper Note] PMDformer points out that the true "shape similarity" between patches is often drowned out by different numerical scales (means). It explicitly decouples trends and residual shapes by "subtracting the mean of each patch." It then re-stitches local shapes with global trends using Proximal Variable Attention (cross-varia
+  [ICLR 2026][Time Series][Long-term time series forecasting] PMDformer points out that the true "shape similarity" between patches is often drowned out by different numerical scales (means). It explicitly decouples trends and residual shapes by "subtracting the mean of each patch." It then re-stitches local shapes with global trends using Proximal Variable Attention (cross-variable interaction only on the most recent patch) and Trend Restoration Attention (injecting means back…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Long-term time series forecasting"
+  - "patch attention"
+  - "shape similarity"
+  - "cross-variable modeling"
+  - "trend-residual decoupling"
 date: 2026-05-08
-content_hash: d1e8f230c8632758
+content_hash: ebba1e549b239226
 ---
+
 # PMDformer: Patch-Mean Decoupling Information Transformer for Long-term Forecasting
 
 **Conference**: ICLR 2026  
@@ -147,11 +153,11 @@ PMD module ablation (Table 3) validates "subtracting mean only":
 
 ## Related Papers
 
+- [\[AAAI 2026\] CometNet: Contextual Motif-guided Long-term Time Series Forecasting](../../AAAI2026/time_series/cometnet_contextual_motif-guided_long-term_time_series_forecasting.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
-- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
 - [\[ICLR 2026\] Inferring brain plasticity rule under long-term stimulation with structured recurrent dynamics](inferring_brain_plasticity_rule_under_long-term_stimulation_with_structured_recu.md)
-- [\[ICLR 2026\] PhaseFormer: From Patches to Phases for Efficient and Effective Time Series Forecasting](phaseformer_from_patches_to_phases_for_efficient_and_effective_time_series_forec.md)
-- [\[ICLR 2026\] Semantic-Enhanced Time-Series Forecasting via Large Language Models](semantic-enhanced_time-series_forecasting_via_large_language_models.md)
+- [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Linear Transformers Implicitly Discover Unified Numerical Algorithms
 description: >-
-  [NeurIPS 2025][LLM/NLP][in-context learning] After training linear Transformers on a masked block matrix completion task, algebraic analysis of the learned weights reveals that the models implicitly converge to the same…
+  [NeurIPS 2025][LLM (Other)][in-context learning] After training linear Transformers on a masked block matrix completion task, algebraic analysis of the learned weights reveals that the models implicitly converge to the same two-line iterative update rule—EAGLE—under three fundamentally different computational constraints (centralized, distributed, and compute-limited). This rule achieves second-order convergence with only logarithmic dependence on the condition number.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "in-context learning"
   - "linear transformer"
   - "numerical algorithm discovery"
   - "matrix completion"
   - "Newton-Schulz"
 date: 2026-05-08
-content_hash: 1daf202174516868
+content_hash: 959445987722ed28
 ---
 
 # Linear Transformers Implicitly Discover Unified Numerical Algorithms

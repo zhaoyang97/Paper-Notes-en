@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] In reality, defenders often only obtain a very small number of adversarial samples to counter emerging new attacks. This paper proposes a new setting called "Few-Shot Continual Adversarial Training (FS-CAT)" and introduces a three-component toolkit: the Adversarial Boundary Loss (ADM) that pushes clean samples away fro
+  [CVPR 2026][AI Safety][Adversarial Training] In reality, defenders often only obtain a very small number of adversarial samples to counter emerging new attacks. This paper proposes a new setting called "Few-Shot Continual Adversarial Training (FS-CAT)" and introduces a three-component toolkit: the Adversarial Boundary Loss (ADM) that pushes clean samples away from decision boundaries, GMM Prototypical Replay that synthesizes pseudo-features using Gaussian Mixture Models for m…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Training"
+  - "Continual Learning"
+  - "Few-Shot"
+  - "Catastrophic Forgetting"
+  - "Adversarial Boundary"
 date: 2026-05-08
-content_hash: 6d9771d1602a5eb3
+content_hash: 2528bd1d4af2d9fe
 ---
+
 # Robustness Under Data Scarcity: Few-Shot Continual Adversarial Training for Evolving Threats
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ Individual component ablation on ImageNet-1K, ResNet-50, 10-shot (summarized bas
 ## Related Papers
 
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](image-based_outlier_synthesis_with_training_data.md)
+- [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](../../ICLR2026/ai_safety/identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
+- [\[ICLR 2026\] Nasty Adversarial Training: A Probability Sparsity Perspective for Robustness Enhancement](../../ICLR2026/ai_safety/nasty_adversarial_training_a_probability_sparsity_perspective_for_robustness_enh.md)
 - [\[CVPR 2026\] Taming the Long Tail: Rebalancing Adversarial Training via Adaptive Perturbation](taming_the_long_tail_rebalancing_adversarial_training_via_adaptive_perturbation.md)
 - [\[CVPR 2026\] SafeLogo: Turning Your Logos into Jailbreak Shields via Micro-Regional Adversarial Training](safelogo_turning_your_logos_into_jailbreak_shields_via_micro-regional_adversaria.md)
-- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
-- [\[CVPR 2026\] Mitigating Error Amplification in Fast Adversarial Training](mitigating_error_amplification_in_fast_adversarial_training.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL
 description: >-
-  [ACL 2026][LLM Agent][GRPO] MemSearcher replaces the "history concatenation" of search agents with "LLM-managed compact memory"—where only the `(question, memory)` is processed each round instead of `(question, t₁, a₁, o₁, …)`. Utilizing multi-context GRPO, it propagates the advantage of the entire trajectory to each round for independent optimiz
+  [ACL 2026][LLM Agent][Search Agent] MemSearcher replaces the "history concatenation" of search agents with "LLM-managed compact memory"—where only the `(question, memory)` is processed each round instead of `(question, t₁, a₁, o₁, …)`. Utilizing multi-context GRPO, it propagates the advantage of the entire trajectory to each round for independent optimization. MemSearcher outperforms same-sized ReAct baselines across 3B/7B/14B scales on 7 QA benchmarks (the 7B model even surp…
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GRPO
-  - Multi-Context RL
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Search Agent"
+  - "Memory Management"
+  - "GRPO"
+  - "Multi-Context RL"
+  - "ReAct Alternative"
 date: 2026-05-08
-content_hash: 0f69785e2505dc8c
+content_hash: e1d9786f3eb69d82
 ---
+
 # MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL
 
 **Conference**: ACL 2026  
@@ -143,15 +147,14 @@ Simple datasets (e.g., Bamboogle) saturate at 256 tokens, while complex multi-ho
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](../../NeurIPS2025/llm_agent/lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
+- [\[ICLR 2026\] Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL](../../ICLR2026/llm_agent/unlocking_long-horizon_agentic_search_with_large-scale_end-to-end_rl.md)
 - [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
-- [\[ACL 2026\] LiTS: A Modular Framework for LLM Tree Search](lits_a_modular_framework_for_llm_tree_search.md)
-- [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ICLR 2026\] Look Back to Reason Forward: Revisitable Memory for Long-Context LLM Agents](../../ICLR2026/llm_agent/look_back_to_reason_forward_revisitable_memory_for_long-context_llm_agents.md)
 
 </div>
 

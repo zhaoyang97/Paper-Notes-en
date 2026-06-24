@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SIC: Similarity-Based Interpretable Image Classification with Neural Networks
 description: >-
-  [ICCV 2025][Medical Imaging][Interpretability] This paper proposes SIC, an inherently interpretable neural network that simultaneously provides local, global…
+  [ICCV 2025][Medical Imaging][Interpretability] This paper proposes SIC, an inherently interpretable neural network that simultaneously provides local, global, and faithful explanations. By extracting class-representative support vectors from training images and computing input-to-support-vector similarities via B-cos transformations for classification, SIC achieves accuracy comparable to black-box models while delivering pixel-level contribution maps and case-based global exp…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Support Vectors"
   - "Case-Based Reasoning"
 date: 2026-05-08
-content_hash: e922853c46b4b610
+content_hash: db48272b7a2e3bab
 ---
 
 # SIC: Similarity-Based Interpretable Image Classification with Neural Networks
@@ -216,10 +216,10 @@ SIC **outperforms** ProtoPNet and B-cos on **8 out of 9** interpretability metri
 ## Related Papers
 
 - [\[NeurIPS 2025\] FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification](../../NeurIPS2025/medical_imaging/firegnn_neuro-symbolic_graph_neural_networks_with_trainable_fuzzy_rules_for_inte.md)
-- [\[ICCV 2025\] GECKO: Gigapixel Vision-Concept Contrastive Pretraining in Histopathology](gecko_gigapixel_vision-concept_contrastive_pretraining_in_histopathology.md)
-- [\[ICCV 2025\] RadGPT: Constructing 3D Image-Text Tumor Datasets](radgpt_constructing_3d_image-text_tumor_datasets.md)
+- [\[CVPR 2025\] Interactive Medical Image Analysis with Concept-based Similarity Reasoning](../../CVPR2025/medical_imaging/interactive_medical_image_analysis_with_concept-based_similarity_reasoning.md)
+- [\[CVPR 2025\] Unmasking Biases and Reliability Concerns in Convolutional Neural Networks Analysis of Cancer Pathology Images](../../CVPR2025/medical_imaging/unmasking_biases_and_reliability_concerns_in_convolutional_neural_networks_analy.md)
+- [\[ICML 2025\] I2MoE: Interpretable Multimodal Interaction-aware Mixture-of-Experts](../../ICML2025/medical_imaging/i2moe_interpretable_multimodal_interaction-aware_mixture-of-experts.md)
 - [\[NeurIPS 2025\] Interpretable Next-token Prediction via the Generalized Induction Head](../../NeurIPS2025/medical_imaging/interpretable_next-token_prediction_via_the_generalized_induction_head.md)
-- [\[ICCV 2025\] Progressive Test Time Energy Adaptation for Medical Image Segmentation](progressive_test_time_energy_adaptation_for_medical_image_segmentation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The NGFF framework is proposed to construct 3D Gaussian representations from multi-view RGB images and learn explicit neural force fields to drive physical dynamics. By employing ODE solvers, it achieves interactive, physically realistic 4D video generation, running two orders of magnitude faster than traditional Gauss
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] The NGFF framework is proposed to construct 3D Gaussian representations from multi-view RGB images and learn explicit neural force fields to drive physical dynamics. By employing ODE solvers, it achieves interactive, physically realistic 4D video generation, running two orders of magnitude faster than traditional Gaussian simulators and surpassing Veo3 and NVIDIA Cosmos.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Force Field Learning"
+  - "Physical Reasoning"
+  - "4D Video Prediction"
+  - "Neural Operator"
 date: 2026-05-08
-content_hash: 09bf9aa727f10483
+content_hash: f918b3a787e15b04
 ---
+
 # Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields
 
 **Conference**: ICLR 2026  
@@ -132,9 +138,9 @@ Training occurs in two stages: first, the feed-forward reconstruction module is 
 ## Related Papers
 
 - [\[ICLR 2026\] DiffWind: Physics-Informed Differentiable Modeling of Wind-Driven Object Dynamics](diffwind_physics-informed_differentiable_modeling_of_wind-driven_object_dynamics.md)
+- [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](../../NeurIPS2025/3d_vision/mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
 - [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
 - [\[ICLR 2026\] Einstein Fields: A Neural Perspective To Computational General Relativity](einstein_fields_a_neural_perspective_to_computational_general_relativity.md)
-- [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](../../NeurIPS2025/3d_vision/mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
 - [\[CVPR 2026\] Dynamic Black-hole Emission Tomography with Physics-informed Neural Fields](../../CVPR2026/3d_vision/dynamic_black-hole_emission_tomography_with_physics-informed_neural_fields.md)
 
 </div>

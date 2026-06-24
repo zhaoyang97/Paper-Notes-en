@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][Gaze Redirection] This paper proposes GazeGaussian, the first high-fidelity gaze redirection method based on 3D Gaussian Splatting (3DGS). By employing a dual-stream 3DGS model to separately repres…
+  [ICCV 2025][3D Vision][Gaze Redirection] This paper proposes GazeGaussian, the first high-fidelity gaze redirection method based on 3D Gaussian Splatting (3DGS). By employing a dual-stream 3DGS model to separately represent the facial and eye regions, the method introduces an explicit Gaussian eyeball rotation representation and an expression-guided neural renderer (EGNR), achieving state-of-the-art performance in gaze accuracy, synthesis quality, and rendering speed.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Dual-Stream Model"
   - "Eyeball Rotation Representation"
 date: 2026-05-08
-content_hash: 14706a0c72b6747c
+content_hash: 53a782187ffcf6d6
 ---
 
 # GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting
@@ -59,10 +59,10 @@ Preprocessing includes background removal, gaze direction normalization, and fac
    A facial Gaussian $\{\mu_0^f, z_0^f, R_0^f, S_0^f, \alpha_0^f\}$ is constructed in canonical space, where $z_0^f \in \mathbb{R}^{128}$ denotes the per-point feature vector.
 
    A key innovation is the distance-based influence weighting mechanism:
-   - The minimum distance $d$ from each Gaussian center $\mu$ to 3D facial landmarks is computed.
-   - Regions near landmarks ($d < d_1 = 0.15$) are primarily influenced by the expression code $\tau$, with $\lambda_\tau = 1$.
-   - Distant regions ($d > d_2 = 0.25$) are primarily influenced by the head pose $\gamma$, with $\lambda_\tau = 0$.
-   - Transition regions are interpolated smoothly: $\lambda_\tau = (d_2 - d)/(d_2 - d_1)$.
+    - The minimum distance $d$ from each Gaussian center $\mu$ to 3D facial landmarks is computed.
+    - Regions near landmarks ($d < d_1 = 0.15$) are primarily influenced by the expression code $\tau$, with $\lambda_\tau = 1$.
+    - Distant regions ($d > d_2 = 0.25$) are primarily influenced by the head pose $\gamma$, with $\lambda_\tau = 0$.
+    - Transition regions are interpolated smoothly: $\lambda_\tau = (d_2 - d)/(d_2 - d_1)$.
 
    Deformation is realized via an MLP: $\mu^f = \mu_0^f + \lambda_\tau E_\mu^f(\mu_0^f, \tau) + \lambda_\gamma P_\mu^f(\mu_0^f, \gamma)$
 
@@ -172,10 +172,10 @@ GazeGaussian achieves the best gaze accuracy and identity preservation across al
 ## Related Papers
 
 - [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
-- [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
 - [\[AAAI 2026\] RTGaze: Real-Time 3D-Aware Gaze Redirection from a Single Image](../../AAAI2026/3d_vision/rtgaze_real-time_3d-aware_gaze_redirection_from_a_single_image.md)
-- [\[CVPR 2026\] 3D Gaussian Splatting with Self-Constrained Priors for High Fidelity Surface Reconstruction](../../CVPR2026/3d_vision/3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec.md)
+- [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
 - [\[NeurIPS 2025\] PlanarGS: High-Fidelity Indoor 3D Gaussian Splatting Guided by Vision-Language Planar Priors](../../NeurIPS2025/3d_vision/planargs_high-fidelity_indoor_3d_gaussian_splatting_guided_by_vision-language_pl.md)
+- [\[ICCV 2025\] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging](hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging.md)
 
 </div>
 

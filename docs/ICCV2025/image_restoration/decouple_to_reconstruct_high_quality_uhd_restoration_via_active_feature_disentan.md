@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decouple to Reconstruct: High Quality UHD Restoration via Active Feature Disentanglement and Reversible Fusion
 description: >-
-  [ICCV 2025][Image Restoration][UHD image restoration] This paper proposes D²R-UHDNet, a framework that employs a Controlled Differential Disentangled VAE (CD²-VAE) to actively decompose degraded images into a degradation…
+  [ICCV 2025][Image Restoration][UHD image restoration] This paper proposes D²R-UHDNet, a framework that employs a Controlled Differential Disentangled VAE (CD²-VAE) to actively decompose degraded images into a degradation-dominant latent space and background-dominant features, and processes the background features via a complex-domain invertible multi-scale fusion network. The method achieves state-of-the-art performance across six UHD restoration tasks with only 1M parameters…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "invertible networks"
   - "complex-domain fusion"
 date: 2026-05-08
-content_hash: b51de23cb87d3668
+content_hash: 430ae9884a689b4d
 ---
 
 # Decouple to Reconstruct: High Quality UHD Restoration via Active Feature Disentanglement and Reversible Fusion
@@ -146,10 +146,10 @@ The model contains only **1.0M** parameters, significantly fewer than non-UHD-sp
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start](../../NeurIPS2025/image_restoration/real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni.md)
 - [\[ICCV 2025\] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement](towards_a_universal_image_degradation_model_via_content-degradation_disentanglem.md)
+- [\[NeurIPS 2025\] Real-World Adverse Weather Image Restoration via Dual-Level Reinforcement Learning with High-Quality Cold Start](../../NeurIPS2025/image_restoration/real-world_adverse_weather_image_restoration_via_dual-level_reinforcement_learni.md)
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](../../NeurIPS2025/image_restoration/latent_harmony_synergistic_unified_uhd_image_restoration_via_latent_space_regula.md)
-- [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
+- [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
 - [\[NeurIPS 2025\] DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance](../../NeurIPS2025/image_restoration/dynaguide_steering_diffusion_polices_with_active_dynamic_guidance.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Building Reliable Long-Form Generation via Hallucination Rejection Sampling
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper proposes the SHARS framework, which detects and rejects hallucinated content sentence-by-sentence during inference, retaining only verified factual segments to continue generation. Combined with an improved semantic entropy detector, HalluSE, it improves factual precision by approximately 20–26% on FactScore
+  [ICML 2026][Hallucination Detection][Hallucination mitigation] This paper proposes the SHARS framework, which detects and rejects hallucinated content sentence-by-sentence during inference, retaining only verified factual segments to continue generation. Combined with an improved semantic entropy detector, HalluSE, it improves factual precision by approximately 20–26% on FactScore while maintaining or increasing the volume of factual information in the output.
 tags:
-  - ICML 2026
-  - Hallucination Detection
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Hallucination mitigation"
+  - "inference-time computation"
+  - "semantic entropy"
+  - "rejection sampling"
+  - "long-form generation"
 date: 2026-05-08
-content_hash: 1d4ce01c6af77db6
+content_hash: a028896b158e7bdc
 ---
+
 # Building Reliable Long-Form Generation via Hallucination Rejection Sampling
 
 **Conference**: ICML 2026  
@@ -139,9 +145,9 @@ FactualBio hallucination detection evaluation (Qwen3-32B, Major+Minor):
 
 - [\[ACL 2025\] Learning Auxiliary Tasks Improves Reference-Free Hallucination Detection in Open-Domain Long-Form Generation](../../ACL2025/hallucination/learning_auxiliary_tasks_improves_reference-free_hallucination_detection_in_open.md)
 - [\[ICML 2026\] TAG: Tangential Amplifying Guidance for Hallucination-Resistant Sampling](tag_tangential_amplifying_guidance_for_hallucination-resistant_sampling.md)
+- [\[ICLR 2026\] Micro-Macro Retrieval: Reducing Long-Form Hallucination in Large Language Models](../../ICLR2026/hallucination/micro-macro_retrieval_reducing_long-form_hallucination_in_large_language_models.md)
 - [\[ACL 2025\] Fine-grained Hallucination Detection and Mitigation in Long-form Question Answering](../../ACL2025/hallucination/localizing_and_mitigating_errors_in_long-form_question_answering.md)
 - [\[ICML 2026\] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy](finding_the_correct_visual_evidence_without_forgetting_mitigating_hallucination_.md)
-- [\[AAAI 2026\] ESG-Bench: Benchmarking Long-Context ESG Reports for Hallucination Mitigation](../../AAAI2026/hallucination/esg-bench_benchmarking_long-context_esg_reports_for_hallucination_mitigation.md)
 
 </div>
 

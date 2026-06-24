@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHANDS: A Multi-View Dataset and Benchmark for Surgical Hand-Gesture and Error Recognition Toward Medical Training
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] SHANDS is the first multi-view RGB video dataset for open surgery training, recording incision and suturing operations from 52 experts/trainees using five synchronized cameras. It provides frame-level annotations for 15 gesture primitives and 8 clinically-validated error categories, establishing benchmarks for mainstre
+  [CVPR 2026][Video Understanding][Surgical Training] SHANDS is the first multi-view RGB video dataset for open surgery training, recording incision and suturing operations from 52 experts/trainees using five synchronized cameras. It provides frame-level annotations for 15 gesture primitives and 8 clinically-validated error categories, establishing benchmarks for mainstream video models across single-view, multi-view, and cross-view protocols.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Surgical Training"
+  - "Multi-View Video"
+  - "Gesture Recognition"
+  - "Error Detection"
+  - "Cross-View Generalization"
 date: 2026-05-08
-content_hash: 38e5d6a0f62a306f
+content_hash: 690aba0d43d1c719
 ---
+
 # SHANDS: A Multi-View Dataset and Benchmark for Surgical Hand-Gesture and Error Recognition Toward Medical Training
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,10 @@ In cross-view generalization (C1–C3 training → C4–C5 testing), DVANet is m
 ## Related Papers
 
 - [\[CVPR 2026\] SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](savax_egotoexo_imitation_error_detection_via_scene.md)
-- [\[CVPR 2026\] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation](tacsim_a_dataset_and_benchmark_for_football_tactical_style_imitation.md)
 - [\[CVPR 2026\] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition](smv-ear_bring_spatiotemporal_multi-view_representation_learning_into_efficient_e.md)
-- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
+- [\[CVPR 2026\] TacSIm: A Dataset and Benchmark for Football Tactical Style Imitation](tacsim_a_dataset_and_benchmark_for_football_tactical_style_imitation.md)
 - [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](mv-tap_tracking_any_point_in_multi-view_videos.md)
+- [\[CVPR 2026\] OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The study proposes GEPA (Genetic-Pareto), a prompt optimizer that diagnoses issues and iteratively optimizes prompts through natural language reflection based on a small number of execution trajectories. It outperforms GRPO by an average of 6% (up to 20%) across six tasks while using only 1/35 of the sampling volume.
+  [ICLR 2026 (Oral)][Interpretability][Prompt Optimization] The study proposes GEPA (Genetic-Pareto), a prompt optimizer that diagnoses issues and iteratively optimizes prompts through natural language reflection based on a small number of execution trajectories. It outperforms GRPO by an average of 6% (up to 20%) across six tasks while using only 1/35 of the sampling volume.
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026 (Oral)"
+  - "Interpretability"
+  - "Prompt Optimization"
+  - "Evolutionary Search"
+  - "Natural Language Reflection"
+  - "Pareto Frontier"
+  - "GRPO Alternative"
 date: 2026-05-08
-content_hash: 7e6ba6b4401143d8
+content_hash: a3ff82e918b90b3d
 ---
+
 # GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning
 
 **Conference**: ICLR 2026 (Oral)  

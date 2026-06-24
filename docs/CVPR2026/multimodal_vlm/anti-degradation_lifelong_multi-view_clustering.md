@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anti-Degradation Lifelong Multi-View Clustering
 description: >-
-  [CVPR 2026][Others][Paper Note] Addressing the "streaming views arriving over time" scenario, ALMC projects the prototypes of each new view onto the **null space** (orthogonal direction) of the old knowledge subspace before fusion. This mathematically ensures that new knowledge does not overwrite old knowledge, achieving SOTA results on six benchmark
+  [CVPR 2026][Multimodal VLM][Multi-view clustering] Addressing the "streaming views arriving over time" scenario, ALMC projects the prototypes of each new view onto the **null space** (orthogonal direction) of the old knowledge subspace before fusion. This mathematically ensures that new knowledge does not overwrite old knowledge, achieving SOTA results on six benchmarks (e.g., ALOI-10 ACC improved from 87.4% to 90.9%).
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-view clustering"
+  - "Lifelong learning"
+  - "Null space projection"
+  - "Knowledge degradation"
+  - "Streaming views"
 date: 2026-05-08
-content_hash: 223376ba2be97755
+content_hash: 00deab11d274b654
 ---
+
 # Anti-Degradation Lifelong Multi-View Clustering
 
 **Conference**: CVPR 2026  
@@ -131,10 +137,20 @@ The framework contains three components: Reconstruction ($L_r$), Knowledge Space
 - Value: ⭐⭐⭐⭐ The anti-degradation paradigm offers transferable guidance for lifelong representation learning.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
+- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
+- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
+- [\[CVPR 2026\] Cluster-aware Anchor Learning for Multi-View Clustering](cluster-aware_anchor_learning_for_multi-view_clustering.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)

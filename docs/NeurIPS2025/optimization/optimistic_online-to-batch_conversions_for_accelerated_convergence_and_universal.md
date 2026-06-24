@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality
 description: >-
-  [NeurIPS 2025][Optimization][Online Learning] This paper proposes an optimistic online-to-batch (O2B) conversion framework that relocates optimism from the online algorithm to the conversion mechanism itself…
+  [NeurIPS 2025][Optimization][Online Learning] This paper proposes an optimistic online-to-batch (O2B) conversion framework that relocates optimism from the online algorithm to the conversion mechanism itself, enabling simple online gradient descent (OGD) to achieve an $O(T^{-2})$ accelerated convergence rate. It is the first to achieve optimal convergence for strongly convex smooth objectives via O2B conversion, while simultaneously attaining universality with respect to smoo…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "O2B Conversion"
   - "Universal Optimization"
 date: 2026-05-08
-content_hash: 989f86d26e1b017c
+content_hash: fb34f818d4183f1c
 ---
 
 # Optimistic Online-to-Batch Conversions for Accelerated Convergence and Universality
@@ -134,10 +134,10 @@ Three settings are considered: (i) convex smooth objectives → optimistic O2B +
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)
+- [\[ICML 2026\] Utility-Diversity Aware Online Batch Selection for LLM Supervised Fine-tuning](../../ICML2026/optimization/utility-diversity_aware_online_batch_selection_for_llm_supervised_fine-tuning.md)
 - [\[NeurIPS 2025\] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints](beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve.md)
-- [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
 - [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
-- [\[NeurIPS 2025\] Learning Provably Improves the Convergence of Gradient Descent](learning_provably_improves_the_convergence_of_gradient_descent.md)
+- [\[NeurIPS 2025\] Effective Policy Learning for Multi-Agent Online Coordination Beyond Submodular Objectives](effective_policy_learning_for_multi-agent_online_coordination_beyond_submodular_.md)
 
 </div>
 

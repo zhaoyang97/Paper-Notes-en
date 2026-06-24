@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] A Perturbation Approach to Unconstrained Linear Bandits
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper revisits the perturbation-based bandit linear optimization approach by Abernethy et al., proposing the PABLO reduction. This reduction transforms unconstrained linear bandits into a problem that can call any OLO subroutine, thereby obtaining comparator-adaptive static/dynamic regret, high-probability bounds,
+  [ICML2026][Optimization][Unconstrained linear bandits] This paper revisits the perturbation-based bandit linear optimization approach by Abernethy et al., proposing the PABLO reduction. This reduction transforms unconstrained linear bandits into a problem that can call any OLO subroutine, thereby obtaining comparator-adaptive static/dynamic regret, high-probability bounds, and discussions on various lower bounds.
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Optimization"
+  - "Online Learning"
+  - "Bandit Theory"
+  - "Unconstrained linear bandits"
+  - "online linear optimization"
+  - "perturbation estimation"
+  - "dynamic regret"
+  - "high-probability bounds"
 date: 2026-05-08
-content_hash: 0ae0010010b1e3a9
+content_hash: 0abc1ebdd902559c
 ---
+
 # A Perturbation Approach to Unconstrained Linear Bandits
 
 **Conference**: ICML2026  
@@ -141,9 +149,9 @@ This theoretical paper does not have modular ablation experiments. The following
 
 - [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](../../ICLR2026/learning_theory/a_new_approach_to_controlling_linear_dynamical_systems.md)
 - [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](../../NeurIPS2025/learning_theory/infrequent_exploration_in_linear_bandits.md)
-- [\[ICML 2025\] Heavy-Tailed Linear Bandits: Huber Regression with One-Pass Update](../../ICML2025/learning_theory/heavy-tailed_linear_bandits_huber_regression_with_one-pass_update.md)
+- [\[ICLR 2026\] Breaking the Total Variance Barrier: Sharp Sample Complexity for Linear Heteroscedastic Bandits with Fixed Action Set](../../ICLR2026/learning_theory/breaking_the_total_variance_barrier_sharp_sample_complexity_for_linear_heterosce.md)
+- [\[ICLR 2026\] Combinatorial Rising Bandits](../../ICLR2026/learning_theory/combinatorial_rising_bandits.md)
 - [\[ICML 2026\] Online Learning with Recency: Algorithms for Sliding-window Streaming Multi-armed Bandits](online_learning_with_recency_algorithms_for_sliding-window_streaming_multi-armed.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](../../ICLR2026/learning_theory/lipschitz_bandits_with_stochastic_delayed_feedback.md)
 
 </div>
 

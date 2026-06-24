@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Differentially Private High-dimensional Variable Selection via Integer Programming
 description: >-
-  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes two pure differentially private sparse variable selection methods (top-R and mistakes) that leverage modern mixed integer programming (MIP) techniques t…
+  [NeurIPS 2025][AI Safety][Differential Privacy] This paper proposes two pure differentially private sparse variable selection methods (top-R and mistakes) that leverage modern mixed integer programming (MIP) techniques to efficiently explore non-convex objective landscapes, achieving state-of-the-art support recovery rates in high-dimensional settings (p up to 10,000) while providing theoretical recovery guarantees.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Exponential Mechanism"
   - "Best Subset Selection"
 date: 2026-05-08
-content_hash: 914aa018bf77b7e7
+content_hash: 19ec5b01e139f4cb
 ---
 
 # Differentially Private High-dimensional Variable Selection via Integer Programming
@@ -133,8 +133,8 @@ The input consists of a data matrix $X$, observations $y$, and privacy parameter
 - [\[NeurIPS 2025\] Nearly-Linear Time Private Hypothesis Selection with the Optimal Approximation Factor](nearly-linear_time_private_hypothesis_selection_with_the_optimal_approximation_f.md)
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
 - [\[NeurIPS 2025\] Differential Privacy for Euclidean Jordan Algebra with Applications to Private Symmetric Cone Programming](differential_privacy_for_euclidean_jordan_algebra_with_applications_to_private_s.md)
+- [\[ICLR 2026\] Differentially Private Two-Stage Gradient Descent for Instrumental Variable Regression](../../ICLR2026/ai_safety/differentially_private_two-stage_gradient_descent_for_instrumental_variable_regr.md)
 - [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
-- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](../../ICML2026/ai_safety/prism_gauge-invariant_tangent-space_differentially_private_lora.md)
 
 </div>
 

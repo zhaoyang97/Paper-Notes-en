@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Phrase-grounded APO for Improving Chest X-ray Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper proposes "Phrase-grounded Automatic Preference Optimization (APO)": during the inference phase and without any additional ground truth, a fact-checking model + LLM correction converts the radiology report generator's own output into "preferred/rejected" pairs. A new APO loss, combining preference alignment a
+  [CVPR 2026][Medical Imaging][Chest X-ray report generation] This paper proposes "Phrase-grounded Automatic Preference Optimization (APO)": during the inference phase and without any additional ground truth, a fact-checking model + LLM correction converts the radiology report generator's own output into "preferred/rejected" pairs. A new APO loss, combining preference alignment and phrase-grounding terms, is used for lightweight weight updates. This improves report quality by a…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Chest X-ray report generation"
+  - "test-time alignment"
+  - "automatic preference optimization"
+  - "phrase-level grounding"
+  - "fact-checking"
 date: 2026-05-08
-content_hash: 31433fac7e41522b
+content_hash: 50f734841e4816f9
 ---
+
 # Phrase-grounded APO for Improving Chest X-ray Report Generation
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ Across four metrics, the average gain of (C, G) relative to (A, G) ranges from 1
 
 ## Related Papers
 
-- [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
+- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](../../ICLR2026/medical_imaging/learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
+- [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
 - [\[CVPR 2026\] DARC: Dual Adjustment Reasoning with Counterfactuals for Trustworthy Chest X-ray Classification](darc_dual_adjustment_reasoning_with_counterfactuals_for_trustworthy_chest_x-ray_.md)
-- [\[CVPR 2025\] Enhanced Contrastive Learning with Multi-view Longitudinal Data for Chest X-ray Report Generation](../../CVPR2025/medical_imaging/enhanced_contrastive_learning_with_multi-view_longitudinal_data_for_chest_x-ray_.md)
 
 </div>
 

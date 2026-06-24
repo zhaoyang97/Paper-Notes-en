@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Vision-Language Model] AGILE redefines "jigsaw puzzle solving" as an interactive process where the model generates code and observes feedback. Combined with infinitely scalable procedurally synthesized data, cold-start SFT, and GRPO reinforcement learning, it improves Qwen2.5-VL-7B accuracy on 2×2 puzzles from 9.5% to 82.8% and achieves an a
+  [ICLR2026][VLM Reasoning][Vision-Language Models] AGILE redefines "jigsaw puzzle solving" as an interactive process where the model generates code and observes feedback. Combined with infinitely scalable procedurally synthesized data, cold-start SFT, and GRPO reinforcement learning, it improves Qwen2.5-VL-7B accuracy on 2×2 puzzles from 9.5% to 82.8% and achieves an average gain of 3.1% across 9 general vision benchmarks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Vision-Language Model
-  - GRPO
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Vision-Language Models"
+  - "Jigsaw Agent"
+  - "Interactive Reinforcement Learning"
+  - "GRPO"
+  - "Perception and Reasoning"
 date: 2026-05-08
-content_hash: 124bb282a491d9a2
+content_hash: c2f80624b3bf50e9
 ---
+
 # Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models
 
 **Conference**: ICLR2026  
@@ -147,6 +151,7 @@ Data scaling analysis shows clear improvements: increasing RL data from 0 to 15.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -155,7 +160,7 @@ Data scaling analysis shows clear improvements: increasing RL data from 0 to 15.
 - [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
 - [\[CVPR 2026\] BOP-Ask: Object-Interaction Reasoning for Vision-Language Models](../../CVPR2026/vlm_reasoning/bop-ask_object-interaction_reasoning_for_vision-language_models.md)
 - [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](../../CVPR2026/vlm_reasoning/moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[ICLR 2026\] Mini-o3: Scaling Up Reasoning Patterns and Interaction Turns for Visual Search](mini-o3_scaling_up_reasoning_patterns_and_interaction_turns_for_visual_search.md)
+- [\[ICLR 2026\] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](internspatial_a_comprehensive_dataset_for_spatial_reasoning_in_vision-language_m.md)
 
 </div>
 

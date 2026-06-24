@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads
 description: >-
-  [ICCV 2025][3D Vision][Vision Foundation Models] Grounded in the key observation that VFM layers can be partitioned into low-level feature extractors and high-level task adapters, this paper proposes ViT-Split…
+  [ICCV 2025][3D Vision][Vision Foundation Models] Grounded in the key observation that VFM layers can be partitioned into low-level feature extractors and high-level task adapters, this paper proposes ViT-Split, which freezes the VFM backbone and introduces a task head (replicating the last $K_t$ layers) and a prior head (a lightweight CNN aggregating multi-scale prior features). On ADE20K, ViT-Split achieves 58.2 mIoU (DINOv2-L) with only a linear head…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Hierarchical Features"
   - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: a3586c83737b9449
+content_hash: 9a00ce94135bffec
 ---
 
 # ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads
@@ -215,10 +215,10 @@ The entire VFM backbone is frozen. Two "split heads" are introduced: (1) **Task 
 ## Related Papers
 
 - [\[ICCV 2025\] DAViD: Data-efficient and Accurate Vision Models from Synthetic Data](david_data-efficient_and_accurate_vision_models_from_synthetic_data.md)
+- [\[AAAI 2026\] FoundationSLAM: Unleashing the Power of Depth Foundation Models for End-to-End Dense Visual SLAM](../../AAAI2026/3d_vision/foundationslam_unleashing_the_power_of_depth_foundation_models_for.md)
+- [\[CVPR 2025\] Gaussian Eigen Models for Human Heads](../../CVPR2025/3d_vision/gaussian_eigen_models_for_human_heads.md)
+- [\[ECCV 2024\] Sapiens: Foundation for Human Vision Models](../../ECCV2024/3d_vision/sapiens_foundation_for_human_vision_models.md)
 - [\[AAAI 2026\] Parameter-Free Fine-tuning via Redundancy Elimination for Vision Foundation Models](../../AAAI2026/3d_vision/parameter-free_fine-tuning_via_redundancy_elimination_for_vision_foundation_mode.md)
-- [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](../../CVPR2026/3d_vision/geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
-- [\[ICLR 2026\] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra](../../ICLR2026/3d_vision/giq_benchmarking_3d_geometric_reasoning_of_vision_foundation_models_with_simulat.md)
-- [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
 
 </div>
 

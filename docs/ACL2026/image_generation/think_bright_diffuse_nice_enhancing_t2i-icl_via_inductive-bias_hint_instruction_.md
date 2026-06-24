@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Think Bright, Diffuse Nice: Enhancing T2I-ICL via Inductive-Bias Hint Instruction and Query Contrastive Decoding
 description: >-
-  [ACL 2026][Image Generation][T2I-ICL] This paper proposes TBDN, a training-free framework that utilizes Hint Instruction to focus LVLMs on the final query and Query Contrastive Decoding to suppress prior-dominated hallucinations. By delivering more accurate textual descriptions to diffusion models, it significantly improves text-to-image in-context learnin
+  [ACL 2026][Image Generation][T2I-ICL] This paper proposes TBDN, a training-free framework that utilizes Hint Instruction to focus LVLMs on the final query and Query Contrastive Decoding to suppress prior-dominated hallucinations. By delivering more accurate textual descriptions to diffusion models, it significantly improves text-to-image in-context learning performance on CoBSAT and T2I Fast Mini-ImageNet.
 tags:
-  - ACL 2026
-  - Image Generation
-  - T2I-ICL
-  - Diffusion Model
+  - "ACL 2026"
+  - "Image Generation"
+  - "T2I-ICL"
+  - "Prompt Inductive Bias"
+  - "Query Contrastive Decoding"
+  - "Diffusion Models"
+  - "In-Context Learning"
 date: 2026-05-08
-content_hash: 827f9491813fd092
+content_hash: 519dfcacb040b55d
 ---
+
 # Think Bright, Diffuse Nice: Enhancing T2I-ICL via Inductive-Bias Hint Instruction and Query Contrastive Decoding
 
 **Conference**: ACL 2026  
@@ -133,14 +137,17 @@ Ablation results show that HI and QCD serve different functions. HI provides sta
 
 <div class="related-papers" markdown="1">
 
-- **ThinkDiff**: [2311.16713](https://arxiv.org/abs/2311.16713)
-- **CoBSAT**: [2405.01254](https://arxiv.org/abs/2405.01254)
-- **GILL**: [2305.17216](https://arxiv.org/abs/2305.17216)
+## Related Papers
+
+- [\[CVPR 2026\] Elucidating the SNR-t Bias of Diffusion Probabilistic Models](../../CVPR2026/image_generation/dcw_snr_t_bias_diffusion.md)
+- [\[AAAI 2026\] How Bias Binds: Measuring Hidden Associations for Bias Control in Text-to-Image Compositions](../../AAAI2026/image_generation/how_bias_binds_measuring_hidden_associations_for_bias_control_in_text-to-image_c.md)
+- [\[CVPR 2025\] Bias for Action: Video Implicit Neural Representations with Bias Modulation](../../CVPR2025/image_generation/bias_for_action_video_implicit_neural_representations_with_bias_modulation.md)
+- [\[ICLR 2026\] Diverse Text-to-Image Generation via Contrastive Noise Optimization](../../ICLR2026/image_generation/diverse_text-to-image_generation_via_contrastive_noise_optimization.md)
+- [\[CVPR 2026\] MixFlow Training: Alleviating Exposure Bias with Slowed Interpolation Mixture](../../CVPR2026/image_generation/mixflow_training_alleviating_exposure_bias_with_slowed_interpolation_mixture.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] MIRO: 多奖励条件预训练同时提升 T2I 质量与效率](../../ICML2026/image_generation/miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)

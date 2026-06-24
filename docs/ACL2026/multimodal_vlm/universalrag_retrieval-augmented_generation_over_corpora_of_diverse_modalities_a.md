@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] UniversalRAG: 多模态语料库的检索增强生成
+  [Paper Note] UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] UniversalRAG proposes a general any-to-any RAG framework that utilizes modality-aware routing and granularity-aware retrieval to dynamically select the most appropriate knowledge sources from heterogeneous multimodal corpora (text, image, video at varying granularities). This approach avoids the modality gap problem in
+  [ACL 2026][Multimodal VLM][Retrieval-Augmented Generation] UniversalRAG proposes a general any-to-any RAG framework that utilizes modality-aware routing and granularity-aware retrieval to dynamically select the most appropriate knowledge sources from heterogeneous multimodal corpora (text, image, video at varying granularities). This approach avoids the modality gap problem inherent in unified embedding spaces and significantly outperforms single-modality and unified methods…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Retrieval-Augmented Generation"
+  - "Multimodal"
+  - "Routing Mechanism"
+  - "Modality Gap"
+  - "Granularity-Aware Retrieval"
 date: 2026-05-08
-content_hash: de289752f23838b2
+content_hash: dfa1b9f1079325b3
 ---
+
 # UniversalRAG: Retrieval-Augmented Generation for Multimodal Corpora
 
 **Conference**: ACL 2026  
@@ -155,11 +161,11 @@ Comprehensive comparison across 10 benchmarks (using Qwen3-VL-8B-Instruct as the
 
 ## Related Papers
 
-- [\[ACL 2026\] Dynamic Emotion and Personality Profiling for Multimodal Deception Detection](dynamic_emotion_and_personality_profiling_for_multimodal_deception_detection.md)
-- [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
-- [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
-- [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
-- [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](topology-aware_layer_pruning_for_large_vision-language_models.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[ACL 2026\] MM-BizRAG: Rethinking Multimodal Retrieval-Augmented Generation for General Purpose Enterprise Q&A](mm-bizrag_rethinking_multimodal_retrieval-augmented_generation_for_general_purpo.md)
+- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/multimodal_vlm/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](../../ICLR2026/multimodal_vlm/rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
+- [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](../../ICLR2026/multimodal_vlm/ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Ours constructs PRISMM-Bench, the first scientific paper multimodal inconsistency benchmark grounded in real-world reviewer annotations. By mining 384 cross-modal inconsistencies from 18,009 ICLR open reviews, it designs Identifier/Remedy/Matching tasks and proposes a JSON-structured debiased answer representation. Eva
+  [ICLR 2026][Multimodal VLM][Multimodal Consistency] Ours constructs PRISMM-Bench, the first scientific paper multimodal inconsistency benchmark grounded in real-world reviewer annotations. By mining 384 cross-modal inconsistencies from 18,009 ICLR open reviews, it designs Identifier/Remedy/Matching tasks and proposes a JSON-structured debiased answer representation. Evaluation of 21 top-tier LMMs shows a peak performance of only 53.9%, systematically exposing severe deficienc…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Consistency"
+  - "Peer Review"
+  - "Scientific Papers"
+  - "LMM Benchmark"
+  - "JSON Debiasing"
 date: 2026-05-08
-content_hash: de1a27524a4bf353
+content_hash: 5131fd38b02ba9dd
 ---
+
 # PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies
 
 **Conference**: ICLR 2026  
@@ -149,7 +155,7 @@ Overall Assessment: Pioneer work establishing a benchmark based on real reviewer
 - [\[CVPR 2025\] UPME: An Unsupervised Peer Review Framework for Multimodal Large Language Model Evaluation](../../CVPR2025/multimodal_vlm/upme_an_unsupervised_peer_review_framework_for_multimodal_large_language_model_e.md)
 - [\[ICML 2026\] Does AI Reviewer See the Full Picture? Attacking and Defending Multimodal Peer Review](../../ICML2026/multimodal_vlm/does_ai_reviewer_see_the_full_picture_attacking_and_defending_multimodal_peer_re.md)
 - [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
-- [\[ICLR 2026\] SpatialViz-Bench：一个认知科学驱动、用于诊断 MLLM 空间可视化能力的基准](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
+- [\[ICLR 2026\] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs](spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 - [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
 
 </div>

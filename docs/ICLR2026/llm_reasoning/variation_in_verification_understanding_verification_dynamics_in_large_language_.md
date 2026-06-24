@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Variation in Verification: Understanding Verification Dynamics in Large Language Models
 description: >-
-  [ICLR 2026][LLM Reasoning][TPR/TNR] This paper systematically deconstructs the question of "when LLM verifiers are reliable." Through large-scale controlled experiments across 12 benchmarks and 15 models, the authors find that verification effectiveness is jointly determined by three dimensions: **problem difficulty, generator capability, and verifier ca
+  [ICLR 2026][Reasoning][Generative Verifier] This paper systematically deconstructs the question of "when LLM verifiers are reliable." Through large-scale controlled experiments across 12 benchmarks and 15 models, the authors find that verification effectiveness is jointly determined by three dimensions: **problem difficulty, generator capability, and verifier capability**. Specifically, difficulty dominates the recognition of correct answers (TPR)…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - TPR/TNR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Generative Verifier"
+  - "Test-time Scaling"
+  - "Verification Dynamics"
+  - "Problem Difficulty"
+  - "TPR/TNR"
 date: 2026-05-08
-content_hash: 188d626d06b10d2c
+content_hash: 550065143f1077bc
 ---
+
 # Variation in Verification: Understanding Verification Dynamics in Large Language Models
 
 **Conference**: ICLR 2026  

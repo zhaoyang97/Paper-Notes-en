@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Semi-Structured Sparsity for LLMs via Shared and Context-Aware Hypernetwork
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This work employs a lightweight hypernetwork, shared across layers and conditioned on layer/component embeddings, to directly generate n:m semi-structured sparsity masks for LLMs layer-by-layer. By merging the advantages of "fast but coarse" heuristics and "refined but expensive" optimization, it enables pruning LLaMA-
+  [ICLR 2026][Model Compression][n:m semi-structured sparsity] This work employs a lightweight hypernetwork, shared across layers and conditioned on layer/component embeddings, to directly generate n:m semi-structured sparsity masks for LLMs layer-by-layer. By merging the advantages of "fast but coarse" heuristics and "refined but expensive" optimization, it enables pruning LLaMA-2 models ranging from 7B to 70B on a single A100 while achieving the state-of-the-art precision-spa…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "n:m semi-structured sparsity"
+  - "hypernetwork"
+  - "layer-wise pruning"
+  - "continual learning"
+  - "feature outlier regularization"
 date: 2026-05-08
-content_hash: e5d91b88d69ab4d3
+content_hash: 792c371a7af2ef4a
 ---
+
 # Learning Semi-Structured Sparsity for LLMs via Shared and Context-Aware Hypernetwork
 
 **Conference**: ICLR 2026  

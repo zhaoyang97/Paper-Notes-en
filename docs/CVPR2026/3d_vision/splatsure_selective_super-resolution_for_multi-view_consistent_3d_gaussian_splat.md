@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SplatSuRe avoids uniformly applying super-resolution (SR) to all pixels. Instead, it calculates a fidelity score based on how sufficiently each Gaussian is sampled across views and renders per-view weight maps. SR supervision is injected only into undersampled regions lacking high-frequency observations, resulting in s
+  [CVPR 2026][3D Vision][Gaussian Splatting] SplatSuRe avoids uniformly applying super-resolution (SR) to all pixels. Instead, it calculates a fidelity score based on how sufficiently each Gaussian is sampled across views and renders per-view weight maps. SR supervision is injected only into undersampled regions lacking high-frequency observations, resulting in sharper and multi-view consistent high-resolution reconstructions without additional neural components or modification…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Super-Resolution"
+  - "Multi-view Consistency"
+  - "Novel View Synthesis"
+  - "Geometry-aware Supervision"
 date: 2026-05-08
-content_hash: 58f498103e7ff02c
+content_hash: effb780e2188b871
 ---
+
 # SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -132,9 +138,9 @@ Ours is optimal across nearly all metrics on Tanks & Temples and is strongest on
 
 - [\[CVPR 2025\] S2Gaussian: Sparse-View Super-Resolution 3D Gaussian Splatting](../../CVPR2025/3d_vision/s2gaussian_sparse-view_super-resolution_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
+- [\[CVPR 2026\] Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)
 - [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
 - [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[AAAI 2026\] Arbitrary-Scale 3D Gaussian Super-Resolution](../../AAAI2026/3d_vision/arbitrary-scale_3d_gaussian_super-resolution.md)
 
 </div>
 

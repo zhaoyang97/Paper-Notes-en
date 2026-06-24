@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering
 description: >-
-  [NeurIPS 2025][3D Vision][Gaussian Splatting] This paper proposes LODGE, which manages 3D Gaussian Splatting at multiple scales through a hierarchical Level-of-Detail (LOD) strategy. By dynamically selecting Gaussian rep…
+  [NeurIPS 2025][3D Vision][Gaussian Splatting] This paper proposes LODGE, which manages 3D Gaussian Splatting at multiple scales through a hierarchical Level-of-Detail (LOD) strategy. By dynamically selecting Gaussian representations of appropriate granularity based on camera distance, LODGE enables high-quality real-time rendering of large-scale scenes.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Efficient Rendering"
   - "LOD"
 date: 2026-05-08
-content_hash: de4afdc91b3d5c2d
+content_hash: 38d9ef1cd021a31d
 ---
 
 # LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering
@@ -130,10 +130,10 @@ Each level is trained independently: $\mathcal{L} = \lambda_1 \mathcal{L}_{photo
 ## Related Papers
 
 - [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
+- [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](../../ICLR2026/3d_vision/clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] UrbanGS: Efficient and Scalable Architecture for Geometrically Accurate Large-Scale Urban Gaussian Splatting](../../ICLR2026/3d_vision/urbangs_efficient_and_scalable_architecture_for_geometrically_accurate_large-sce.md)
 - [\[ICCV 2025\] ResGS: Residual Densification of 3D Gaussian for Efficient Detail Recovery](../../ICCV2025/3d_vision/resgs_residual_densification_of_3d_gaussian_for_efficient_detail_recovery.md)
-- [\[ICCV 2025\] VertexRegen: Mesh Generation with Continuous Level of Detail](../../ICCV2025/3d_vision/vertexregen_mesh_generation_with_continuous_level_of_detail.md)
-- [\[CVPR 2026\] CaT-GS: Efficient 3DGS Rendering for Large-Scale Scenes with Inter-frame Caching and Tile Scheduling](../../CVPR2026/3d_vision/cat-gs_efficient_3dgs_rendering_for_large-scale_scenes_with_inter-frame_caching_.md)
-- [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](../../ICCV2025/3d_vision/occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
+- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](../../CVPR2026/3d_vision/pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
 
 </div>
 

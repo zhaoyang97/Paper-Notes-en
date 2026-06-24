@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] The authors argue that existing Machine-Generated Text (MGT) detection benchmarks rely on free-form prompts like "write an article about machine learning." In contrast, real Wikipedia editing involves **constrained task-specific generation** such as summarization, continuation, and neutralization. Such texts are more s
+  [ICLR 2026][AIGC Detection][MGT Detection] The authors argue that existing Machine-Generated Text (MGT) detection benchmarks rely on free-form prompts like "write an article about machine learning." In contrast, real Wikipedia editing involves **constrained task-specific generation** such as summarization, continuation, and neutralization. Such texts are more similar to human-written text. The authors constructed TSM-Bench, covering 3 languages, 4 tasks, 6 generators…
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "MGT Detection"
+  - "Wikipedia"
+  - "Task-Specific Generation"
+  - "Multilingual Benchmark"
+  - "Generalization Asymmetry"
 date: 2026-05-08
-content_hash: b0d42157a7fff8bf
+content_hash: ace8462565725279
 ---
+
 # TSM-Bench: Detecting LLM-Generated Text in Real-World Wikipedia Editing Practices
 
 **Conference**: ICLR 2026  
@@ -135,9 +141,9 @@ Supervised models generally score between 79.7–91.8% (except TST), while zero-
 
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](../../ACL2026/aigc_detection/detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 - [\[ICLR 2026\] Learn-to-Distance: Distance Learning for Detecting LLM-Generated Text](learn-to-distance_distance_learning_for_detecting_llm-generated_text.md)
-- [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](../../ACL2026/aigc_detection/c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
 - [\[ICLR 2026\] EditLens: Quantifying the Extent of AI Editing in Text](editlens_quantifying_the_extent_of_ai_editing_in_text.md)
-- [\[ICLR 2026\] HLD: Approximate Hierarchical Linguistic Distribution Modeling for LLM-Generated Text Detection](hld_approximate_hierarchical_linguistic_distribution_modeling_for_llm-generated_.md)
+- [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](../../ACL2026/aigc_detection/c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
+- [\[ICLR 2026\] Tell me Habibi, is it Real or Fake?](tell_me_habibi_is_it_real_or_fake.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] One2Scene is proposed to decompose the ill-posed problem of single-image to explorable 3D scene generation into three sub-tasks: (1) panoramic image generation to extend visual coverage, (2) a feed-forward 3DGS network to construct an explicit 3D geometric scaffold from sparse anchor views, and (3) scaffold-guided nove
+  [ICLR 2026][3D Vision][Single-image 3D scene generation] One2Scene is proposed to decompose the ill-posed problem of single-image to explorable 3D scene generation into three sub-tasks: (1) panoramic image generation to extend visual coverage, (2) a feed-forward 3DGS network to construct an explicit 3D geometric scaffold from sparse anchor views, and (3) scaffold-guided novel view synthesis. By fusing high-quality anchor views and geometric priors via Dual-LoRA…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Single-image 3D scene generation"
+  - "panoramic depth estimation"
+  - "3D Gaussian Splatting"
+  - "geometric scaffold"
+  - "novel view synthesis"
 date: 2026-05-08
-content_hash: e198f9d35b59000f
+content_hash: 4762e9138b2d8839
 ---
+
 # One2Scene: Geometric Consistent Explorable 3D Scene Generation from a Single Image
 
 **Conference**: ICLR 2026  
@@ -142,15 +147,15 @@ A **Dual-LoRA** strategy is employed: two independent LoRA modules encode anchor
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Sat3DGen: Comprehensive Street-level 3D Scene Generation from Single Satellite Image](sat3dgen_comprehensive_street-level_3d_scene_generation_from_single_satellite_im.md)
 - [\[ICLR 2026\] SceneTransporter: Optimal Transport-Guided Compositional Latent Diffusion for Single-Image Structured 3D Scene Generation](scenetransporter_optimal_transport-guided_compositional_latent_diffusion_for_sin.md)
-- [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
-- [\[CVPR 2025\] WonderWorld: Interactive 3D Scene Generation from a Single Image](../../CVPR2025/3d_vision/wonderworld_interactive_3d_scene_generation_from_a_single_image.md)
 - [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](../../CVPR2026/3d_vision/pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
+- [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
 
 </div>
 

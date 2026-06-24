@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent Systems] This paper proposes an adaptively coordinated multi-agent LLM framework that achieves a 27% improvement in compliance accuracy and a 74% reduction in revision rate on high-co…
+  [AAAI 2026][Multi-Agent][Multi-Agent Systems] This paper proposes an adaptively coordinated multi-agent LLM framework that achieves a 27% improvement in compliance accuracy and a 74% reduction in revision rate on high-complexity financial document analysis tasks, through parallel competitive evaluation, dynamic task routing, and bidirectional feedback mechanisms.
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -13,7 +13,7 @@ tags:
   - "Financial Analysis"
   - "Competitive Evaluation"
 date: 2026-05-08
-content_hash: dc06503929af532b
+content_hash: ed0224842c58f268
 ---
 
 # Parallelism Meets Adaptiveness: Scalable Documents Understanding in Multi-Agent LLM Systems
@@ -144,7 +144,7 @@ vs. **MetaGPT/CrewAI**: These frameworks focus on role definition and conversati
 - [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](../../ACL2026/multi_agent/silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
 - [\[ICLR 2026\] LH-Deception: Simulating and Understanding LLM Deceptive Behaviors in Long-Horizon Interactions](../../ICLR2026/multi_agent/lh-deception_simulating_and_understanding_llm_deceptive_behaviors_in_long-horizo.md)
 - [\[AAAI 2026\] Shadows in the Code: Exploring the Risks and Defenses of LLM-based Multi-Agent Software Development Systems](shadows_in_the_code_exploring_the_risks_and_defenses_of_llm-.md)
-- [\[ICML 2026\] MASPO: Joint Prompt Optimization for LLM-based Multi-Agent Systems](../../ICML2026/multi_agent/maspo_joint_prompt_optimization_for_llm-based_multi-agent_systems.md)
+- [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
 
 </div>
 

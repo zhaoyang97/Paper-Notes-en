@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Front-Loading Reasoning: The Synergy between Pretraining and Post-Training Data
 description: >-
-  [ICLR 2026][LLM Reasoning][Pretraining] Under a fixed reasoning token budget, this study systematically decomposes whether "reasoning data should be placed in pre-training or post-training." It finds that front-loading reasoning data into **pre-training** builds a persistent advantage that SFT cannot compensate for and proposes an asymmetric data allocation
+  [ICLR 2026][Reasoning][Reasoning data] Under a fixed reasoning token budget, this study systematically decomposes whether "reasoning data should be placed in pre-training or post-training." It finds that front-loading reasoning data into **pre-training** builds a persistent advantage that SFT cannot compensate for and proposes an asymmetric data allocation principle: "diversity for pre-training, quality for SFT."
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Pretraining
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning data"
+  - "Pre-training"
+  - "Supervised Fine-Tuning"
+  - "Data scaling"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 30b0e909d2013860
+content_hash: cf635b0ca3cc39cd
 ---
+
 # Front-Loading Reasoning: The Synergy between Pretraining and Post-Training Data
 
 **Conference**: ICLR 2026  
@@ -120,9 +124,9 @@ Pre-training ratio sensitivity (Table 6, MLMQ): Increasing $D_{base}:D_{res}$ fr
 
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
 - [\[ICLR 2026\] Native Reasoning Models: Training Language Models to Reason on Unverifiable Data](native_reasoning_models_training_language_models_to_reason_on_unverifiable_data.md)
+- [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](../../ACL2026/llm_reasoning/efficient_prm_training_data_synthesis_via_formal_verification.md)
 - [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
 - [\[ICLR 2026\] OpenThoughts: Data Recipes for Reasoning Models](openthoughts_data_recipes_for_reasoning_models.md)
-- [\[ICLR 2026\] ProofOptimizer: Training Language Models to Simplify Proofs without Human Demonstrations](proofoptimizer_training_language_models_to_simplify_proofs_without_human_demonst.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model
 description: >-
-  [AAAI 2026][Image Generation][Virtual multiplex staining] This paper proposes a virtual multiplex staining framework based on a marker-wise conditioned diffusion model. Through a two-stage training procedure (marker-wise…
+  [AAAI 2026][Image Generation][Virtual multiplex staining] This paper proposes a virtual multiplex staining framework based on a marker-wise conditioned diffusion model. Through a two-stage training procedure (marker-wise conditional diffusion learning followed by pixel-level fine-tuning), it is the first method to generate multiplex immunofluorescence images of up to 18 distinct markers from a single H&E image, achieving state-of-the-art performance on two public datasets…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "marker-wise conditional generation"
   - "latent diffusion model"
 date: 2026-05-08
-content_hash: 8cc4519df5026810
+content_hash: e61e1ae7f81e6a28
 ---
 
 # Virtual Multiplex Staining for Histological Images Using a Marker-wise Conditioned Diffusion Model
@@ -137,8 +137,8 @@ Stage 1 trains the U-Net using the standard v-prediction diffusion loss averaged
 - [\[AAAI 2026\] Structure-based RNA Design by Step-wise Optimization of Latent Diffusion Model](structure-based_rna_design_by_step-wise_optimization_of_latent_diffusion_model.md)
 - [\[NeurIPS 2025\] DiffEye: Diffusion-Based Continuous Eye-Tracking Data Generation Conditioned on Natural Images](../../NeurIPS2025/image_generation/diffeye_diffusion-based_continuous_eye-tracking_data_generation_conditioned_on_n.md)
 - [\[AAAI 2026\] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition](conditional_diffusion_model_for_multi-agent_dynamic_task_dec.md)
-- [\[ICLR 2026\] Intention-Conditioned Flow Occupancy Models](../../ICLR2026/image_generation/intention-conditioned_flow_occupancy_models.md)
-- [\[AAAI 2026\] Beautiful Images, Toxic Words: Understanding and Addressing Offensive Text in Generated Images](beautiful_images_toxic_words_understanding_and_addressing_offensive_text_in_gene.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](../../CVPR2026/image_generation/a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[CVPR 2025\] Shining Yourself: High-Fidelity Ornaments Virtual Try-on with Diffusion Model](../../CVPR2025/image_generation/shining_yourself_high-fidelity_ornaments_virtual_try-on_with_diffusion_model.md)
 
 </div>
 

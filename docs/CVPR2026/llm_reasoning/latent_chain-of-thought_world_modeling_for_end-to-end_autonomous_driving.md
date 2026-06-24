@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][LLM Reasoning][World Models] LCDrive proposes the Latent Chain-of-Thought (Latent CoT) framework, which replaces natural language CoT for reasoning with action proposal tokens and world model prediction tokens. Through cold-start and RL post-training, it achieves lower latency and superior trajectory quality for end-to-end autonomous driving.
+  [CVPR 2026][Reasoning][Latent Space Reasoning] LCDrive proposes the Latent Chain-of-Thought (Latent CoT) framework, which replaces natural language CoT for reasoning with action proposal tokens and world model prediction tokens. Through cold-start and RL post-training, it achieves lower latency and superior trajectory quality for end-to-end autonomous driving.
 tags:
-  - CVPR 2026
-  - LLM Reasoning
-  - World Models
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Latent Space Reasoning"
+  - "Chain-of-Thought"
+  - "World Model"
+  - "End-to-End Driving"
+  - "VLA Model"
 date: 2026-05-08
-content_hash: a65ec1da5300631a
+content_hash: d8343b23c9960efc
 ---
+
 # Latent Chain-of-Thought World Modeling for End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -121,10 +126,10 @@ Cold-start phase: Action prediction loss + world model prediction loss (LWM head
 ## Related Papers
 
 - [\[ICLR 2026\] Generalizable End-to-End Tool-Use RL with Synthetic CodeGym](../../ICLR2026/llm_reasoning/generalizable_end-to-end_tool-use_rl_with_synthetic_codegym.md)
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](../../ICLR2026/llm_reasoning/simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
+- [\[CVPR 2026\] EagleVision: A Dual-Stage Framework with BEV-grounding-based Chain-of-Thought for Spatial Intelligence](eaglevision_a_dual-stage_framework_with_bev-grounding-based_chain-of-thought_for.md)
 - [\[CVPR 2026\] Rationale-Enhanced Decoding for Multi-modal Chain-of-Thought](rationale-enhanced_decoding_for_multi-modal_chain-of-thought.md)
-- [\[CVPR 2026\] ReLaX: Reasoning with Latent Exploration for Large Reasoning Models](relax_reasoning_with_latent_exploration_for_large_reasoning_models.md)
-- [\[CVPR 2026\] FireScope: Wildfire Risk Raster Prediction with a Chain-of-Thought Oracle](firescope_wildfire_risk_raster_prediction_with_a_chain-of-thought_oracle.md)
+- [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](../../ICML2026/llm_reasoning/a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Domain Generalization for Image Super-Resolution
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] For pixel-level tasks like Super-Resolution (SR), this paper proposes MC-TTDG: training a set of "domain-invariant codebooks + multiple domain-specific codebooks" on the source domain. During testing, target domain features are migrated via pixel-wise nearest neighbor codeword replacement to achieve fine-grained transf
+  [ICLR 2026][Image Restoration][Test-Time Domain Generalization] For pixel-level tasks like Super-Resolution (SR), this paper proposes MC-TTDG: training a set of "domain-invariant codebooks + multiple domain-specific codebooks" on the source domain. During testing, target domain features are migrated via pixel-wise nearest neighbor codeword replacement to achieve fine-grained transfer, and a voting strategy selects the most suitable domain-specific codebook. This significantly…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Test-Time Domain Generalization"
+  - "Image Super-Resolution"
+  - "Multi-Codebook"
+  - "Pixel-Level Feature Migration"
+  - "Voting Selection"
 date: 2026-05-08
-content_hash: 33ca2750c08ed5fe
+content_hash: 81c2988b61806671
 ---
+
 # Test-Time Domain Generalization for Image Super-Resolution
 
 **Conference**: ICLR 2026  
@@ -146,10 +152,10 @@ Compared to TF-Cal, TSB, DG-PIC, TTDG, and TTMG (all based on coarse-grained sty
 ## Related Papers
 
 - [\[ECCV 2024\] Domain-Adaptive Video Deblurring via Test-Time Blurring](../../ECCV2024/image_restoration/domain-adaptive_video_deblurring_via_test-time_blurring.md)
+- [\[ICLR 2026\] Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content](exploring_real-time_super-resolution_benchmarking_and_fine-tuning_for_streaming_.md)
 - [\[ICLR 2026\] Learning Domain-Aware Task Prompt Representations for Multi-Domain All-in-One Image Restoration](learning_domain-aware_task_prompt_representations_for_multi-domain_all-in-one_im.md)
+- [\[ICLR 2026\] LinearSR: Unlocking Linear Attention for Stable and Efficient Image Super-Resolution](linearsr_unlocking_linear_attention_for_stable_and_efficient_image_super-resolut.md)
 - [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](../../CVPR2026/image_restoration/degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
-- [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](../../CVPR2026/image_restoration/time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
-- [\[ICLR 2026\] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](continuous_space-time_video_super-resolution_with_3d_fourier_fields.md)
 
 </div>
 

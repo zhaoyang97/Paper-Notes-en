@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Localized, High-resolution Geographic Representations with Slepian Functions
 description: >-
-  [ICML 2026][Remote Sensing][Paper Note] This paper constructs a geographic positional encoder that concentrates representation capacity on a Region of Interest (ROI) using spherical Slepian functions. It proposes a Slepian-Spherical Harmonic (SH) hybrid encoding to simultaneously capture local high-resolution details and global coarse-grained context. It con
+  [ICML 2026][Remote Sensing][Slepian functions] This paper constructs a geographic positional encoder that concentrates representation capacity on a Region of Interest (ROI) using spherical Slepian functions. It proposes a Slepian-Spherical Harmonic (SH) hybrid encoding to simultaneously capture local high-resolution details and global coarse-grained context. It consistently outperforms mainstream baselines such as SH, Wavelets, and RFF across five classification, regression…
 tags:
-  - ICML 2026
-  - Remote Sensing
+  - "ICML 2026"
+  - "Remote Sensing"
+  - "Slepian functions"
+  - "Spherical harmonics"
+  - "Positional encoding"
+  - "Local high-resolution"
+  - "Geographic machine learning"
 date: 2026-05-08
-content_hash: 7cbd20e8fd4d9db7
+content_hash: a70d3d0ef98f51b1
 ---
+
 # Localized, High-resolution Geographic Representations with Slepian Functions
 
 **Conference**: ICML 2026  
@@ -141,10 +147,10 @@ Across five tasks and over a dozen baselines, the most critical comparisons are 
 
 ## Related Papers
 
+- [\[ICLR 2026\] SelvaBox: A high-resolution dataset for tropical tree crown detection](../../ICLR2026/remote_sensing/selvabox_a_highresolution_dataset_for_tropical_tree_crown_detection.md)
 - [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](../../CVPR2026/remote_sensing/yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 - [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](../../CVPR2026/remote_sensing/zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
 - [\[NeurIPS 2025\] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](../../NeurIPS2025/remote_sensing/cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)
-- [\[ICML 2025\] High-Resolution Live Fuel Moisture Content (LFMC) Maps for Wildfire Risk from Multimodal Earth Observation Data](../../ICML2025/remote_sensing/high-resolution_live_fuel_moisture_content_lfmc_maps_for_wildfire_risk_from_mult.md)
 - [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](../../ICLR2026/remote_sensing/measuring_the_intrinsic_dimension_of_earth_representations.md)
 
 </div>

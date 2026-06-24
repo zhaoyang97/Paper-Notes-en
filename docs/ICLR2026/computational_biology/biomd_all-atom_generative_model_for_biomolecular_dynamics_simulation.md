@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation
 description: >-
-  [ICLR 2026][Computational Biology][Flow Matching] BioMD is the first all-atom generative molecular dynamics model for protein-ligand systems. Using a hierarchical flow matching framework of "coarse-grained prediction + fine-grained interpolation," it compresses long-range trajectories (including ligand dissociation paths) that traditionally take hours of MD into tens
+  [ICLR2026][Computational Biology][Molecular Dynamics] BioMD is the first all-atom generative molecular dynamics model for protein-ligand systems. Using a hierarchical flow matching framework of "coarse-grained prediction + fine-grained interpolation," it compresses long-range trajectories (including ligand dissociation paths) that traditionally take hours of MD into tens of seconds, successfully reconstructing dissociation paths for 97.1% of systems in DD-13M.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Molecular Dynamics"
+  - "All-atom Generation"
+  - "Flow Matching"
+  - "Protein-Ligand"
+  - "Dissociation Path"
 date: 2026-05-08
-content_hash: 6e7b350273726bc6
+content_hash: 6294baf46f7c53ee
 ---
+
 # BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation
 
 **Conference**: ICLR2026  
@@ -143,9 +148,9 @@ On ATLAS (1390 single-chain proteins, 100 ns trajectories), BioMD achieved SOTA 
 
 - [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
 - [\[ICLR 2026\] Beyond Ensembles: Simulating All-Atom Protein Dynamics in a Learned Latent Space](beyond_ensembles_simulating_all-atom_protein_dynamics_in_a_learned_latent_space.md)
+- [\[ICLR 2026\] MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models](mars-fm_generative_modeling_of_molecular_dynamics_via_markov_state_models.md)
+- [\[ICLR 2026\] Triangle Multiplication is All You Need for Biomolecular Structure Representations](triangle_multiplication_is_all_you_need_for_biomolecular_structure_representatio.md)
 - [\[ICLR 2026\] Pallatom-Ligand: an All-Atom Diffusion Model for Designing Ligand-Binding Proteins](pallatom-ligand_an_all-atom_diffusion_model_for_designing_ligand-binding_protein.md)
-- [\[ICLR 2026\] VCWorld: A Biological World Model for Virtual Cell Simulation](vcworld_a_biological_world_model_for_virtual_cell_simulation.md)
-- [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
 
 </div>
 

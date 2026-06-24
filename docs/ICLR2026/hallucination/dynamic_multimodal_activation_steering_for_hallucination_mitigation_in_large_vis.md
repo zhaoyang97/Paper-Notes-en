@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] Proposes Dynamic Multimodal Activation Steering (DMAS), which dynamically selects relevant steering vectors from a semantic-based truthfulness database and vision-aware vectors to intervene in critical attention heads during inference. It significantly mitigates LVLM hallucinations without training, improving MME by 94
+  [ICLR 2026][Hallucination Detection][Hallucination Mitigation] Proposes Dynamic Multimodal Activation Steering (DMAS), which dynamically selects relevant steering vectors from a semantic-based truthfulness database and vision-aware vectors to intervene in critical attention heads during inference. It significantly mitigates LVLM hallucinations without training, improving MME by 94.66 points and reducing the CHAIR hallucination rate by 20.2%.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Hallucination Mitigation"
+  - "Activation Engineering"
+  - "Attention Head Intervention"
+  - "Training-free Method"
+  - "Large Vision-Language Models (LVLMs)"
 date: 2026-05-08
-content_hash: b1e3c5a83449fe32
+content_hash: 97000865de083c1e
 ---
+
 # Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Let OOD Feature Exploring Vast Predefined Classifiers
 description: >-
-  [ICLR 2026][Anomaly Detection][Outlier Exposure] This paper proposes VPC, which utilizes a set of fixed equiangular prototypes to map ID classes and OOD samples into two distinct predefined subspaces. By using the difference in $L_2$ activation intensity between these two subspaces as an OOD score, it consistently reduces FPR95 in Outlier Exposure (OE) training scena
+  [ICLR 2026][Anomaly Detection][OOD Detection] This paper proposes VPC, which utilizes a set of fixed equiangular prototypes to map ID classes and OOD samples into two distinct predefined subspaces. By using the difference in $L_2$ activation intensity between these two subspaces as an OOD score, it consistently reduces FPR95 in Outlier Exposure (OE) training scenarios on CIFAR and ImageNet-1k.
 tags:
-  - ICLR 2026
-  - Anomaly Detection
-  - Outlier Exposure
-  - Evidential Learning
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "OOD Detection"
+  - "Outlier Exposure"
+  - "Neural Collapse"
+  - "Predefined Classifiers"
+  - "Evidential Learning"
 date: 2026-05-08
-content_hash: a7bfdb7b6511b020
+content_hash: e60e9ce3b8b922aa
 ---
+
 # Let OOD Feature Exploring Vast Predefined Classifiers
 
 **Conference**: ICLR 2026  

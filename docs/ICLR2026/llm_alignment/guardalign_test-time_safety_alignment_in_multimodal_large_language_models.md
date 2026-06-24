@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper proposes GuardAlign, a training-free inference-time safety defense framework for Large Vision-Language Models (LVLMs). It utilizes Optimal Transport (OT) to precisely detect and mask unsafe regions in images and applies cross-modal attention calibration to prevent the influence of safety prefixes from decayi
+  [ICLR 2026][LLM Alignment][LVLM Safety] This paper proposes GuardAlign, a training-free inference-time safety defense framework for Large Vision-Language Models (LVLMs). It utilizes Optimal Transport (OT) to precisely detect and mask unsafe regions in images and applies cross-modal attention calibration to prevent the influence of safety prefixes from decaying. GuardAlign reduces the unsafe response rate by up to 39% across six LVLMs while maintaining or even enhancing genera…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "LVLM Safety"
+  - "Optimal Transport (OT)"
+  - "Attention Calibration"
+  - "Test-time Defense"
+  - "Visual Safety Detection"
 date: 2026-05-08
-content_hash: 9eedd9fefcd2bc94
+content_hash: 27faadffc677115c
 ---
+
 # GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -152,10 +158,10 @@ Here, $\gamma > 0$ controls the amplification strength. The mask $\mathbf{M}^{\t
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
-- [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
-- [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
 - [\[ACL 2026\] On the Rejection Criterion for Proxy-Based Test-Time Alignment](../../ACL2026/llm_alignment/on_the_rejection_criterion_for_proxy-based_test-time_alignment.md)
+- [\[ICLR 2026\] A2D: Any-Order, Any-Step Safety Alignment for Diffusion Language Models](a2d_any-order_any-step_safety_alignment_for_diffusion_language_models.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](../../ICML2026/llm_alignment/towards_context-invariant_safety_alignment_for_large_language_models.md)
+- [\[ICLR 2026\] JULI: Jailbreak Large Language Models by Self-Introspection](juli_jailbreak_large_language_models_by_self-introspection.md)
 
 </div>
 

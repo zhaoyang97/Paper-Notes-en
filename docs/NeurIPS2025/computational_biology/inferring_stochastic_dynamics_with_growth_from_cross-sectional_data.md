@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Inferring Stochastic Dynamics with Growth from Cross-Sectional Data
 description: >-
-  [NeurIPS 2025][Computational Biology][Probability flow inference] This paper proposes Unbalanced Probabilistic Flow Inference (UPFI), which jointly infers the drift, diffusion…
+  [NeurIPS 2025][Computational Biology][Probability flow inference] This paper proposes Unbalanced Probabilistic Flow Inference (UPFI), which jointly infers the drift, diffusion, and growth rate of stochastic dynamical systems from cross-sectional data via a Lagrangian formulation of the Fokker-Planck equation, constituting the first method to accurately handle scenarios involving cell proliferation and death.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "optimal transport"
   - "branching diffusion process"
 date: 2026-05-08
-content_hash: d2d1b1d7835e7566
+content_hash: d056b7b75565c1b1
 ---
 
 # Inferring Stochastic Dynamics with Growth from Cross-Sectional Data
@@ -132,11 +132,11 @@ Path Energy Distance on the bistable system (lower is better):
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Curly Flow Matching for Learning Non-gradient Field Dynamics](curly_flow_matching_for_learning_non-gradient_field_dynamics.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
 - [\[NeurIPS 2025\] ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression](confrover_simultaneous_modeling_of_protein_conformation_and_dynamics_via_autoreg.md)
-- [\[NeurIPS 2025\] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles](jamun_bridging_smoothed_molecular_dynamics_and_score-based_learning_for_conforma.md)
 - [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
-- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
+- [\[NeurIPS 2025\] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles](jamun_bridging_smoothed_molecular_dynamics_and_score-based_learning_for_conforma.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization
 description: >-
-  [CVPR 2026][Anomaly Detection][Paper Note] ANoCo redefines anomaly detection from "how similar is this patch to normal ones" to "**how much cost is required to pull this patch back to the normal manifold**." By minimizing an anchored bipartite graph Laplacian energy to pull query patches toward the normal manifold, the **displacement magnitude itself** serves a
+  [CVPR 2026][Object Detection][Anomaly Detection] ANoCo redefines anomaly detection from "how similar is this patch to normal ones" to "**how much cost is required to pull this patch back to the normal manifold**." By minimizing an anchored bipartite graph Laplacian energy to pull query patches toward the normal manifold, the **displacement magnitude itself** serves as the anomaly score. This approach requires no training, no message passing, and provides a closed-form solutio…
 tags:
-  - CVPR 2026
-  - Anomaly Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Anomaly Detection"
+  - "Graph Laplacian"
+  - "Non-Conformity"
+  - "Training-Free"
+  - "Few-Shot"
 date: 2026-05-08
-content_hash: 222dcbab4cf7848c
+content_hash: d885ff1b106a6525
 ---
+
 # Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization
 
 **Conference**: CVPR 2026  
@@ -144,7 +150,11 @@ Backbone ablations (Table 3) show ANoCo's consistent lead: 89.7 on WideResNet50 
 
 ## Related Papers
 
-- [\[CVPR 2026\] LayoutAD: Exploring Semantic-Geometric Misalignment Reasoning for Scene Layout Anomaly Detection](layoutad_exploring_semantic-geometric_misalignment_reasoning_for_scene_layout_an.md)
+- [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
+- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
+- [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
+- [\[CVPR 2026\] InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models](invad_inversion-based_reconstruction-free_anomaly_detection_with_diffusion_model.md)
+- [\[CVPR 2025\] UniVAD: A Training-free Unified Model for Few-shot Visual Anomaly Detection](../../CVPR2025/object_detection/univad_a_training-free_unified_model_for_few-shot_visual_anomaly_detection.md)
 
 </div>
 

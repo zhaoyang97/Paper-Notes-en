@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Small Language Models as Compiler Experts: Auto-Parallelization for Heterogeneous Systems
 description: >-
-  [NeurIPS 2025 (ML for Systems Workshop)][LLM Evaluation][small language models] This work systematically evaluates three language models with fewer than 1.5B parameters (gemma3, llama3.2…
+  [NeurIPS 2025 (ML for Systems Workshop)][LLM Evaluation][small language models] This work systematically evaluates three language models with fewer than 1.5B parameters (gemma3, llama3.2, qwen2.5) on compiler auto-parallelization tasks. Using six inference strategies across 11 real-world kernels, the approach achieves an average speedup of 6.81x and a peak speedup of 43.25x, demonstrating that small models can serve as powerful compiler optimization reasoning engines.
 tags:
   - "NeurIPS 2025 (ML for Systems Workshop)"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "heterogeneous systems"
   - "inference strategies"
 date: 2026-05-08
-content_hash: d5324aee20ce1197
+content_hash: c855fab810c42fb4
 ---
 
 # Small Language Models as Compiler Experts: Auto-Parallelization for Heterogeneous Systems
@@ -161,10 +161,10 @@ A total of 376 evaluations covering a comprehensive comparison across models, st
 ## Related Papers
 
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](../../ACL2026/llm_evaluation/retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
+- [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](../../ICLR2026/llm_evaluation/rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
+- [\[ICML 2025\] DataDecide: How to Predict Best Pretraining Data with Small Experiments](../../ICML2025/llm_evaluation/datadecide_how_to_predict_best_pretraining_data_with_small_experiments.md)
 - [\[NeurIPS 2025\] On the Entropy Calibration of Language Models](on_the_entropy_calibration_of_language_models.md)
-- [\[ACL 2026\] CLARITY: A Framework and Benchmark for Conversational Language Ambiguity and Unanswerability in Interactive NL2SQL Systems](../../ACL2026/llm_evaluation/clarity_a_framework_and_benchmark_for_conversational_language_ambiguity_and_unan.md)
 - [\[NeurIPS 2025\] Hyperbolic Fine-Tuning for Large Language Models](hyperbolic_fine-tuning_for_large_language_models.md)
-- [\[NeurIPS 2025\] Can Large Language Models Master Complex Card Games?](can_large_language_models_master_complex_card_games.md)
 
 </div>
 

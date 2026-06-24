@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Conformational Ensembles of Proteins Based on Backbone Geometry
 description: >-
-  [NeurIPS 2025][Computational Biology][protein conformational ensembles] This paper proposes BBFlow, a flow matching generative model based on protein backbone geometry for conformational ensemble sampling. BBFlow requireâ€¦
+  [NeurIPS 2025][Computational Biology][protein conformational ensembles] This paper proposes BBFlow, a flow matching generative model based on protein backbone geometry for conformational ensemble sampling. BBFlow requires neither evolutionary sequence information nor pretrained folding models, achieves inference speeds more than an order of magnitude faster than AlphaFlow, and generalizes to multi-chain proteins.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -11,7 +11,7 @@ tags:
   - "backbone geometry"
   - "molecular dynamics simulation"
 date: 2026-05-08
-content_hash: 14a6d7744fc71b7c
+content_hash: 6bc8a8000587c8a3
 ---
 
 # Learning Conformational Ensembles of Proteins Based on Backbone Geometry
@@ -157,10 +157,10 @@ BBFlow achieves accuracy comparable to AlphaFlow-T while being approximately 40Ã
 ## Related Papers
 
 - [\[NeurIPS 2025\] JAMUN: Bridging Smoothed Molecular Dynamics and Score-Based Learning for Conformational Ensembles](jamun_bridging_smoothed_molecular_dynamics_and_score-based_learning_for_conforma.md)
+- [\[ICLR 2026\] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles](../../ICLR2026/computational_biology/rigidity-aware_geometric_pretraining_for_protein_design_and_conformational_ensem.md)
+- [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](../../ICML2026/computational_biology/viral_proteins_reveal_geometry_of_protein_language_models.md)
+- [\[NeurIPS 2025\] Curly Flow Matching for Learning Non-gradient Field Dynamics](curly_flow_matching_for_learning_non-gradient_field_dynamics.md)
 - [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](learning_repetition-invariant_representations_for_polymer_informatics.md)
-- [\[NeurIPS 2025\] Self Iterative Label Refinement via Robust Unlabeled Learning](self_iterative_label_refinement_via_robust_unlabeled_learning.md)
-- [\[NeurIPS 2025\] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning](generative_distribution_embeddings_lifting_autoencoders_to_the_space_of_distribu.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
 
 </div>
 

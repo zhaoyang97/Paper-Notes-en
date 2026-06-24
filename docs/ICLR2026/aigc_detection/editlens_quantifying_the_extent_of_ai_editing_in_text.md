@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EditLens: Quantifying the Extent of AI Editing in Text
 description: >-
-  [ICLR 2026][AIGC Detection][Paper Note] EditLens moves beyond binary "Human vs. AI" classification by using lightweight similarity metrics (cosine distance, soft n-grams) as intermediate supervision to fine-tune a regression model. It continuously predicts "how much the text was edited by AI," achieving SOTA performance in both binary (F1=95.6%) and ternary
+  [ICLR2026][AIGC Detection][AI Editing Detection] EditLens moves beyond binary "Human vs. AI" classification by using lightweight similarity metrics (cosine distance, soft n-grams) as intermediate supervision to fine-tune a regression model. It continuously predicts "how much the text was edited by AI," achieving SOTA performance in both binary (F1=95.6%) and ternary (macro-F1=90.4%) classification tasks.
 tags:
-  - ICLR 2026
-  - AIGC Detection
+  - "ICLR2026"
+  - "AIGC Detection"
+  - "AI Editing Detection"
+  - "Mixed Authorship Attribution"
+  - "Similarity Supervision"
+  - "Regression Detection"
+  - "Content Moderation"
 date: 2026-05-08
-content_hash: 1f8bd5b6a2941c70
+content_hash: 4edb7be5179612c3
 ---
+
 # EditLens: Quantifying the Extent of AI Editing in Text
 
 **Conference**: ICLR2026  
@@ -128,6 +134,7 @@ On the **AI Polish (APT-Eval)** dataset, EditLens scores correlate strongly with
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the false-positive pain point of current detectors with high practical utility.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

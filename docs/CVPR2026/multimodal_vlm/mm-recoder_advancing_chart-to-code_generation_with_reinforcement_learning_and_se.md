@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction
 description: >-
-  [CVPR 2026][Code Intelligence][Reinforcement Learning] Ours proposes MM-ReCoder, the first Multi-modal LLM (MLLM) for chart-to-code generation with self-correction capabilities. Through a two-stage multi-turn GRPO reinforcement learning framework (Shared-First-Turn optimization of correction followed by Full-Trajectory optimization of coding), it achieves an 86.5% low-leve
+  [CVPR 2026][Multimodal VLM][Chart-to-code] Ours proposes MM-ReCoder, the first Multi-modal LLM (MLLM) for chart-to-code generation with self-correction capabilities. Through a two-stage multi-turn GRPO reinforcement learning framework (Shared-First-Turn optimization of correction followed by Full-Trajectory optimization of coding), it achieves an 86.5% low-level score on ChartMimic with only 7B parameters, comparable to Qwen3-VL-235B.
 tags:
-  - CVPR 2026
-  - Code Intelligence
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Chart-to-code"
+  - "Reinforcement Learning"
+  - "Self-correction"
+  - "Multi-turn dialogue"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 9cb1bf7a691ad9be
+content_hash: c27c6e25cafec522
 ---
+
 # MM-ReCoder: Advancing Chart-to-Code Generation with Reinforcement Learning and Self-Correction
 
 **Conference**: CVPR 2026  
@@ -137,15 +141,16 @@ RL Strategy Comparison (ChartMimic):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/code_intelligence/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
-- [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
-- [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](../../AAAI2026/code_intelligence/recode_updating_code_api_knowledge_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](../../ICLR2026/multimodal_vlm/breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 - [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
-- [\[ACL 2026\] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward](../../ACL2026/code_intelligence/omnidiagram_advancing_unified_diagram_code_generation_via_visual_interrogation_r.md)
+- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
+- [\[ACL 2025\] ChartCoder: Advancing Multimodal Large Language Model for Chart-to-Code Generation](../../ACL2025/multimodal_vlm/chartcoder_chart_to_code.md)
+- [\[ACL 2026\] CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution](../../ACL2026/multimodal_vlm/chartide_data-centric_chart-to-code_generation_via_tri-perspective_tuning_and_in.md)
 
 </div>
 

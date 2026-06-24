@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation
 description: >-
-  [AAAI 2026][Audio & Speech][Simultaneous speech translation] This paper proposes REINA (Regularized Entropy INformation Adaptation), a loss function grounded in mutual information theory that efficiently converts a non-s…
+  [AAAI 2026 Oral][Audio & Speech][Simultaneous speech translation] This paper proposes REINA (Regularized Entropy INformation Adaptation), a loss function grounded in mutual information theory that efficiently converts a non-streaming speech translation model into a streaming simultaneous speech translation model. REINA achieves state-of-the-art streaming translation performance across multiple language directions and introduces a new streaming efficiency metric, NoSE.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Audio & Speech"
   - "Simultaneous speech translation"
   - "streaming translation"
@@ -12,7 +12,7 @@ tags:
   - "adaptive policy"
   - "speech translation"
 date: 2026-05-08
-content_hash: e98a86e5bac8959d
+content_hash: 98ec4698f741792c
 ---
 
 # REINA: Regularized Entropy Information-Based Loss for Efficient Simultaneous Speech Translation
@@ -200,10 +200,10 @@ Selected operating point comparison (MUST-C, low latency):
 ## Related Papers
 
 - [\[NeurIPS 2025\] SimulMEGA: MoE Routers are Advanced Policy Makers for Simultaneous Speech Translation](../../NeurIPS2025/audio_speech/simulmega_moe_routers_are_advanced_policy_makers_for_simultaneous_speech_transla.md)
+- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](../../ICLR2026/audio_speech/uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
 - [\[ICLR 2026\] Scalable Multilingual Multimodal Machine Translation with Speech-Text Fusion](../../ICLR2026/audio_speech/scalable_multilingual_multimodal_machine_translation_with_speech-text_fusion.md)
 - [\[AAAI 2026\] SpikCommander: A High-Performance Spiking Transformer with Multi-View Learning for Efficient Speech Command Recognition](spikcommander_a_high-performance_spiking_transformer_with_multi-view_learning_fo.md)
-- [\[ACL 2026\] From Flat Language Labels to Typological Priors: Structured Language Conditioning for Multilingual Speech-to-Speech Translation](../../ACL2026/audio_speech/from_flat_language_labels_to_typological_priors_structured_language_conditioning.md)
-- [\[ACL 2026\] Speculative End-Turn Detector for Efficient Speech Chatbot Assistant](../../ACL2026/audio_speech/speculative_end-turn_detector_for_efficient_speech_chatbot_assistant.md)
+- [\[ACL 2025\] Different Speech Translation Models Encode and Translate Speaker Gender Differently](../../ACL2025/audio_speech/different_speech_translation_models_encode_and_translate_speaker_gender_differen.md)
 
 </div>
 

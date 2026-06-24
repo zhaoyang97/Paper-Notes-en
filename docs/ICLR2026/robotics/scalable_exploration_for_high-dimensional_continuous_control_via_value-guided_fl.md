@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][actor-critic] Proposes Qflex (Q-guided Flow Exploration), an RL method for scalable exploration in high-dimensional continuous action spaces: actions are transported from a learnable source distribution along a probability flow induced by the Q-function $\to$ exploration is aligned with task-relevant gradients (rather than isotropic
+  [ICLR 2026][Robotics][High-dimensional control] Proposes Qflex (Q-guided Flow Exploration), an RL method for scalable exploration in high-dimensional continuous action spaces: actions are transported from a learnable source distribution along a probability flow induced by the Q-function $\to$ exploration is aligned with task-relevant gradients (rather than isotropic noise) $\to$ outperforms Gaussian and Diffusion RL baselines on various high-dimensional benchmarks…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - actor-critic
+  - "ICLR 2026"
+  - "Robotics"
+  - "High-dimensional control"
+  - "value-guided flow"
+  - "probability flow exploration"
+  - "musculoskeletal models"
+  - "actor-critic"
 date: 2026-05-08
-content_hash: d9532664b936379b
+content_hash: ea0d59531113d15a
 ---
+
 # Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation
 description: >-
-  [ICCV 2025][Human Understanding][Category-level pose estimation] This work is the first to introduce causal reasoning into category-level object pose estimation (COPE). It eliminates spurious correlations induced by data…
+  [ICCV 2025][Human Understanding][Category-level pose estimation] This work is the first to introduce causal reasoning into category-level object pose estimation (COPE). It eliminates spurious correlations induced by data bias via a front-door adjustment-based causal reasoning module, and provides unbiased categorical semantic supervision through residual knowledge distillation from the 3D foundation model ULIP-2. The method achieves 61.7% on the strict 5°2cm metric on REAL275…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "front-door adjustment"
   - "data bias"
 date: 2026-05-08
-content_hash: 623117983bbe6ae9
+content_hash: 3650c44e4e7da8db
 ---
 
 # CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation
@@ -178,11 +178,11 @@ Comparison of feature storage and update strategies:
 
 ## Related Papers
 
-- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
-- [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
-- [\[AAAI 2026\] VPHO: Joint Visual-Physical Cue Learning and Aggregation for Hand-Object Pose Estimation](../../AAAI2026/human_understanding/vpho_joint_visual-physical_cue_learning_and_aggregation_for_hand-object_pose_est.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](../../CVPR2026/human_understanding/cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
+- [\[CVPR 2025\] GCE-Pose: Global Context Enhancement for Category-Level Object Pose Estimation](../../CVPR2025/human_understanding/gce-pose_global_context_enhancement_for_category-level_object_pose_estimation.md)
+- [\[ECCV 2024\] GS-Pose: Category-Level Object Pose Estimation via Geometric and Semantic Correspondence](../../ECCV2024/human_understanding/gs-pose_category-level_object_pose_estimation_via_geometric_and_semantic_corresp.md)
+- [\[ECCV 2024\] U-COPE: Taking a Further Step to Universal 9D Category-Level Object Pose Estimation](../../ECCV2024/human_understanding/u-cope_taking_a_further_step_to_universal_9d_category-level_object_pose_estimati.md)
+- [\[ICLR 2026\] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection](../../ICLR2026/human_understanding/link_learning_instance-level_knowledge_from_vision-language_models_for_human-obj.md)
+- [\[ECCV 2024\] LaPose: Laplacian Mixture Shape Modeling for RGB-Based Category-Level Object Pose Estimation](../../ECCV2024/human_understanding/lapose_laplacian_mixture_shape_modeling_for_rgb-based_category-level_object_pose.md)
 
 </div>
 

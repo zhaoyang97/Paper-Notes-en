@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper proposes MORPHOGEN, a large-scale gender-aware morphological generation benchmark covering French, Arabic, and Hindi (20,328 sentence pairs). It defines the GENFORM task (rewriting first-person sentences to the opposite gender) and introduces three evaluation metrics: SGA, GIoU, and CGA. Benchmarking 15 mult
+  [ACL 2026][Multilingual & Machine Translation][Gender-aware morphological generation] This paper proposes MORPHOGEN, a large-scale gender-aware morphological generation benchmark covering French, Arabic, and Hindi (20,328 sentence pairs). It defines the GENFORM task (rewriting first-person sentences to the opposite gender) and introduces three evaluation metrics: SGA, GIoU, and CGA. Benchmarking 15 multilingual LLMs reveals systematic deficiencies in complex morphological rea…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Gender-aware morphological generation"
+  - "multilingual benchmark"
+  - "French Arabic Hindi"
+  - "LLM morphological reasoning"
+  - "gender bias evaluation"
 date: 2026-05-08
-content_hash: 8bec6d7e64caec75
+content_hash: 5d7ee7ef546e34ca
 ---
+
 # MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation
 
 **Conference**: ACL 2026  

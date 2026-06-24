@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions
 description: >-
-  [ICML 2026][LLM (Other)][CVaR] This paper replaces the point estimation of "predicting a single output length" in LLM inference scheduling with log-t distribution fitting. It substitutes the output length in SJF with Tail Inflated Expectation (TIE), which incorporates a CVaR tail penalty. On LMSYS-Chat-1M, it reduces online per-token latency by $2.3
+  [ICML 2026][LLM (Other)][SJF Scheduling] This paper replaces the point estimation of "predicting a single output length" in LLM inference scheduling with log-t distribution fitting. It substitutes the output length in SJF with Tail Inflated Expectation (TIE), which incorporates a CVaR tail penalty. On LMSYS-Chat-1M, it reduces online per-token latency by $2.31\times$ compared to the strongest baseline LTR and improves offline SDG throughput by $1.42\times$.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - CVaR
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "SJF Scheduling"
+  - "Output Length Prediction"
+  - "Heavy-tailed Distribution"
+  - "log-t Distribution"
+  - "CVaR"
 date: 2026-05-08
-content_hash: f8fb06ff964065ce
+content_hash: e147012724f0ada9
 ---
+
 # Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions
 
 **Conference**: ICML 2026  
@@ -145,8 +150,8 @@ LMSYS-Chat-1M + 8B online service, PTLA / 3K time:
 
 - [\[ACL 2025\] Revisiting Uncertainty Quantification Evaluation in Language Models: Spurious Interactions with Response Length Bias Results](../../ACL2025/llm_nlp/revisiting_uncertainty_quantification_evaluation_in_language_models_spurious_int.md)
 - [\[ICML 2026\] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State](a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu.md)
-- [\[ICML 2026\] SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel](slay_geometry-aware_spherical_linearized_attention_with_yat-kernel.md)
 - [\[ACL 2025\] LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates](../../ACL2025/llm_nlp/llm_braces_straightening.md)
+- [\[ICML 2026\] SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel](slay_geometry-aware_spherical_linearized_attention_with_yat-kernel.md)
 - [\[ICML 2026\] Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](compute_as_teacher_turning_inference_compute_into_reference-free_supervision.md)
 
 </div>

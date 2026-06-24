@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Predicting Kernel Regression Learning Curves from Only Raw Data Statistics
 description: >-
-  [ICLR 2026][Others][Paper Note] The authors propose the Hermite Eigenstructure Ansatz (HEA), which enables analytical prediction of learning curves (test error vs. sample size) for rotation-invariant kernels on real image datasets (CIFAR-5m, SVHN, ImageNet) using only two statistics: the data covariance matrix and the Hermite decomposition of the tar
+  [ICLR 2026][Kernel Regression Learning Curves] The authors propose the Hermite Eigenstructure Ansatz (HEA), which enables analytical prediction of learning curves (test error vs. sample size) for rotation-invariant kernels on real image datasets (CIFAR-5m, SVHN, ImageNet) using only two statistics: the data covariance matrix and the Hermite decomposition of the target function. The paper proves this ansatz holds for Gaussian data and demonstrates that MLPs in the feature-lear…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Kernel Regression Learning Curves"
+  - "Hermite Eigenstructure"
+  - "Anisotropic Data"
+  - "Kernel Ridge Regression"
+  - "Feature Learning"
 date: 2026-05-08
-content_hash: a05fee5e7635f439
+content_hash: 44700841cd7a22ea
 ---
+
 # Predicting Kernel Regression Learning Curves from Only Raw Data Statistics
 
 **Conference**: ICLR 2026  
@@ -124,6 +129,7 @@ To find the target coefficients $v_i$, the authors address the slight non-Gaussi
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

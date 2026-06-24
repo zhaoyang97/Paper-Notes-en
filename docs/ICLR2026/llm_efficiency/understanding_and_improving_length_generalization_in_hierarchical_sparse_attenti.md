@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Chunk-based Attention] This paper systematically dissects chunk-based sparse attention architectures and identifies three critical design principles (Non-linear Chunk Encoder + CLS token, Bypassing Residual Path, and Forced Sparsity during training). These principles enable a model trained on a 4K context to successfully extrapolate to 32 mi
+  [ICLR 2026][LLM Efficiency][Long Context] This paper systematically dissects chunk-based sparse attention architectures and identifies three critical design principles (Non-linear Chunk Encoder + CLS token, Bypassing Residual Path, and Forced Sparsity during training). These principles enable a model trained on a 4K context to successfully extrapolate to 32 million tokens.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Chunk-based Attention
-  - Hierarchical Sparse Attention
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long Context"
+  - "Sparse Attention"
+  - "Length Generalization"
+  - "Chunk-based Attention"
+  - "Hierarchical Sparse Attention"
 date: 2026-05-08
-content_hash: 44130b0c1a4733bc
+content_hash: 764c6abbc8a61540
 ---
+
 # Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models
 
 **Conference**: ICLR 2026  
@@ -144,11 +148,11 @@ Standard autoregressive language modeling loss is used, with pre-training on a 4
 
 ## Related Papers
 
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
+- [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](../../NeurIPS2025/llm_efficiency/hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
 - [\[ICLR 2026\] Tactic: Adaptive Sparse Attention with Clustering and Distribution Fitting for Long-Context LLMs](tactic_adaptive_sparse_attention_with_clustering_and_distribution_fitting_for_lo.md)
-- [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
 - [\[ICLR 2026\] Sparse Attention Adaptation for Long Reasoning](sparse_attention_adaptation_for_long_reasoning.md)
 - [\[ICLR 2026\] vAttention: Verified Sparse Attention via Sampling](vattention_verified_sparse_attention_via_sampling.md)
-- [\[ICLR 2026\] InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation](infllm-v2_dense-sparse_switchable_attention_for_seamless_short-to-long_adaptatio.md)
 
 </div>
 

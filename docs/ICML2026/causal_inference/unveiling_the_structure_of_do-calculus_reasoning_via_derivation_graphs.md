@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Unveiling the Structure of Do-Calculus Reasoning via Derivation Graphs
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] Explicitly representing all equivalent transformations of do-calculus rules through derivation graphs—revealing the structure of the causal expression space and proving that any equivalent expression is reachable within at most 4 rule applications.
+  [ICML 2026][Causal Inference][Do-calculus] Explicitly representing all equivalent transformations of do-calculus rules through derivation graphs—revealing the structure of the causal expression space and proving that any equivalent expression is reachable within at most 4 rule applications.
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Do-calculus"
+  - "Equivalence"
+  - "Derivation Graphs"
+  - "Identifiability"
 date: 2026-05-08
-content_hash: d72db6bff6229594
+content_hash: a542744d206bfdc2
 ---
+
 # Unveiling the Structure of Do-Calculus Reasoning via Derivation Graphs
 
 **Conference**: ICML 2026  
@@ -99,10 +104,10 @@ The ID algorithm returns only a single identification formula, but different equ
 ## Related Papers
 
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](../../NeurIPS2025/causal_inference/practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
+- [\[ICLR 2026\] CARL: Preserving Causal Structure in Representation Learning](../../ICLR2026/causal_inference/carl_preserving_causal_structure_in_representation_learning.md)
 - [\[NeurIPS 2025\] Do-PFN: In-Context Learning for Causal Effect Estimation](../../NeurIPS2025/causal_inference/do-pfn_in-context_learning_for_causal_effect_estimation.md)
-- [\[NeurIPS 2025\] Characterization and Learning of Causal Graphs from Hard Interventions](../../NeurIPS2025/causal_inference/characterization_and_learning_of_causal_graphs_from_hard_interventions.md)
-- [\[AAAI 2026\] Sparse Additive Model Pruning for Order-Based Causal Structure Learning](../../AAAI2026/causal_inference/sparse_additive_model_pruning_for_order-based_causal_structure_learning.md)
-- [\[ACL 2025\] CausalRAG: Integrating Causal Graphs into Retrieval-Augmented Generation](../../ACL2025/causal_inference/causalrag_integrating_causal_graphs_into_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](../../ICLR2026/causal_inference/on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](../../ICLR2026/causal_inference/causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
 
 </div>
 

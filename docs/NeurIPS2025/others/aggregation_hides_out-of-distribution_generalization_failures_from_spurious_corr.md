@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Aggregation Hides OOD Generalization Failures from Spurious Correlations
 description: >-
-  [NeurIPS 2025][OOD generalization] This paper reveals the "aggregation masking" phenomenon in OOD generalization benchmarks: while aggregate evaluation exhibits accuracy-on-the-line (AoTL)—a positive correlation between…
+  [NeurIPS 2025 Spotlight][OOD generalization] This paper reveals the "aggregation masking" phenomenon in OOD generalization benchmarks: while aggregate evaluation exhibits accuracy-on-the-line (AoTL)—a positive correlation between ID and OOD accuracy—the proposed OODSelect method can identify large, semantically coherent subsets (up to 75%) from the same OOD data on which higher ID accuracy corresponds to lower OOD accuracy (Pearson R as low as −0.92)…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "OOD generalization"
   - "spurious correlations"
   - "aggregation bias"
   - "accuracy-on-the-line"
   - "subset analysis"
 date: 2026-05-08
-content_hash: 5ef64824c130fa55
+content_hash: d195377f0cd1b784
 ---
 
 # Aggregation Hides OOD Generalization Failures from Spurious Correlations
@@ -126,11 +126,11 @@ Given $N$ models and $d$ OOD samples, a correct-classification matrix $\mathbf{Z
 
 ## Related Papers
 
+- [\[ICML 2025\] OOD-Chameleon: Is Algorithm Selection for OOD Generalization Learnable?](../../ICML2025/others/ood-chameleon_is_algorithm_selection_for_ood_generalization_learnable.md)
+- [\[ICLR 2026\] Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations](../../ICLR2026/others/regulating_internal_alignment_flows_for_robust_learning_under_spurious_correlati.md)
 - [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
-- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](../../ICLR2026/others/noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
-- [\[ICML 2026\] Networked Information Aggregation for Binary Classification](../../ICML2026/others/networked_information_aggregation_for_binary_classification.md)
-- [\[ICCV 2025\] Adversarial Data Augmentation for Single Domain Generalization via Lyapunov Exponents](../../ICCV2025/others/adversarial_data_augmentation_for_single_domain_generalization_via_lyapunov_expo.md)
-- [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
+- [\[ICML 2025\] NeuronTune: Towards Self-Guided Spurious Bias Mitigation](../../ICML2025/others/neurontune_towards_self-guided_spurious_bias_mitigation.md)
+- [\[ACL 2025\] Subword Models Struggle with Word Learning, but Surprisal Hides It](../../ACL2025/others/subword_models_struggle_with_word_learning_but_surprisal_hides_it.md)
 
 </div>
 

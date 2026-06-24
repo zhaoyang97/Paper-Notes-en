@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Thermal Polarimetric Multi-view Stereo
 description: >-
-  [ICCV2025][3D Vision][thermal imaging] This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR pol…
+  [ICCV2025][3D Vision][thermal imaging] This paper proposes a method for high-fidelity 3D shape reconstruction using thermal polarimetric (long-wave infrared polarimetric) cues. It theoretically demonstrates that LWIR polarimetric observations are unaffected by illumination conditions and material optical properties, enabling accurate 3D reconstruction of transparent, translucent, and heterogeneous objects—significantly outperforming visible-light polarimetric methods.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "SDF"
   - "shape from polarization"
 date: 2026-05-08
-content_hash: 5efecad01d9c25da
+content_hash: 8ac3f2e5222e4f51
 ---
 
 # Thermal Polarimetric Multi-view Stereo
@@ -151,11 +151,11 @@ Key qualitative findings:
 
 ## Related Papers
 
+- [\[CVPR 2025\] MVSAnywhere: Zero-Shot Multi-View Stereo](../../CVPR2025/3d_vision/mvsanywhere_zero-shot_multi-view_stereo.md)
 - [\[NeurIPS 2025\] MVSMamba: Multi-View Stereo with State Space Model](../../NeurIPS2025/3d_vision/mvsmamba_multi-view_stereo_with_state_space_model.md)
+- [\[CVPR 2026\] Thermal is Always Wild: Characterizing and Addressing Challenges in Thermal-Only Novel View Synthesis](../../CVPR2026/3d_vision/thermal_is_always_wild_characterizing_and_addressing_challenges_in_thermal-only_.md)
+- [\[CVPR 2025\] MUSt3R: Multi-view Network for Stereo 3D Reconstruction](../../CVPR2025/3d_vision/must3r_multi-view_network_for_stereo_3d_reconstruction.md)
 - [\[ICCV 2025\] Stereo Any Video: Temporally Consistent Stereo Matching](stereo_any_video_temporally_consistent_stereo_matching.md)
-- [\[ICCV 2025\] SpinMeRound: Consistent Multi-View Identity Generation Using Diffusion Models](spinmeround_consistent_multi-view_identity_generation_using_diffusion_models.md)
-- [\[CVPR 2026\] LiDAR Prompted Spatio-Temporal Multi-View Stereo for Autonomous Driving](../../CVPR2026/3d_vision/lidar_prompted_spatio-temporal_multi-view_stereo_for_autonomous_driving.md)
-- [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
 
 </div>
 

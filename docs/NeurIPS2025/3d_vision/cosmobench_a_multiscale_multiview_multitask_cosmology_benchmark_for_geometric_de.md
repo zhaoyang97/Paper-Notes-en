@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning
 description: >-
-  [NeurIPS 2025][3D Vision][geometric deep learning] This paper introduces CosmoBench—the largest cosmological geometric deep learning benchmark to date—comprising 34,752 point clouds and 24…
+  [NeurIPS 2025][3D Vision][geometric deep learning] This paper introduces CosmoBench—the largest cosmological geometric deep learning benchmark to date—comprising 34,752 point clouds and 24,996 directed trees across multiple scales, viewpoints, and tasks. A key finding is that simple linear models sometimes outperform large GNNs.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "graph neural network"
   - "merger tree"
 date: 2026-05-08
-content_hash: 5d77dd7f40ffe5e4
+content_hash: 8e307e5852ff89fb
 ---
 
 # CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning
@@ -135,9 +135,9 @@ CosmoBench curates data from three major cosmological simulation suites—Quijot
 ## Related Papers
 
 - [\[NeurIPS 2025\] Copresheaf Topological Neural Networks: A Generalized Deep Learning Framework](copresheaf_topological_neural_networks_a_generalized_deep_learning_framework.md)
+- [\[CVPR 2025\] A2Z-10M+: Geometric Deep Learning with A-to-Z BRep Annotations for AI-Assisted CAD Modeling and Reverse Engineering](../../CVPR2025/3d_vision/a2z-10m_geometric_deep_learning_with_a-to-z_brep_annotations_for_ai-assisted_cad.md)
 - [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](../../ICCV2025/3d_vision/sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
 - [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](../../ICCV2025/3d_vision/egom2p_egocentric_multimodal_multitask_pretraining.md)
-- [\[NeurIPS 2025\] You Can Trust Your Clustering Model: A Parameter-free Self-Boosting Plug-in for Deep Clustering](you_can_trust_your_clustering_model_a_parameter-free_self-boosting_plug-in_for_d.md)
 - [\[NeurIPS 2025\] Learning Generalizable Shape Completion with SIM(3) Equivariance](learning_generalizable_shape_completion_with_sim3_equivariance.md)
 
 </div>

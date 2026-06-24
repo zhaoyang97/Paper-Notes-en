@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] In-Context Compositional Learning via Sparse Coding Transformer
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Sparse Coding] Inspired by sparse coding, this work reinterprets the Transformer attention mechanism as projection onto encoding and decoding dictionaries…
+  [NeurIPS 2025][Multimodal VLM][Sparse Coding] Inspired by sparse coding, this work reinterprets the Transformer attention mechanism as projection onto encoding and decoding dictionaries, explicitly represents compositional rules via sparse coefficients, and transfers compositional rules from in-context tasks to target tasks using a lifting scheme.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "In-Context Learning"
   - "Transformer"
 date: 2026-05-08
-content_hash: 1bfa780d8ef87b6e
+content_hash: dfc54ef5cf95b29b
 ---
 
 # In-Context Compositional Learning via Sparse Coding Transformer
@@ -162,11 +162,11 @@ Under the strict criterion of PSNR > 40, nearly 0% of test samples from the stan
 
 ## Related Papers
 
+- [\[ICML 2025\] RollingQ: Reviving the Cooperation Dynamics in Multimodal Transformer](../../ICML2025/multimodal_vlm/rollingq_reviving_the_cooperation_dynamics_in_multimodal_transformer.md)
+- [\[CVPR 2025\] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks](../../CVPR2025/multimodal_vlm/hificl_high-fidelity_in-context_learning_for_multimodal_tasks.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[NeurIPS 2025\] Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models](sparse_autoencoders_learn_monosemantic_features_in_visionlan.md)
-- [\[NeurIPS 2025\] Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning](advancing_compositional_awareness_in_clip_with_efficient_fin.md)
-- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
-- [\[NeurIPS 2025\] READ: Enhancing Compositional Reasoning in CLIP via Reconstruction and Alignment of Text Descriptions](enhancing_compositional_reasoning_in_clip_via_reconstruction.md)
+- [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](../../CVPR2026/multimodal_vlm/bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
+- [\[CVPR 2025\] Mimic In-Context Learning for Multimodal Tasks](../../CVPR2025/multimodal_vlm/mimic_in-context_learning_for_multimodal_tasks.md)
 
 </div>
 

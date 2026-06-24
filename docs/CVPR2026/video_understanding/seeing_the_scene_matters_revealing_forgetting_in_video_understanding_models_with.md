@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark
 description: >-
-  [CVPR 2026][Video Understanding][Vision-Language Model] This paper proposes a scene-level long video understanding benchmark, **SceneBench**, which reveals the severe "forgetting" phenomenon of mainstream VLMs in long-range contexts across "scenes" (indicated by a sharp drop in accuracy). A lightweight **Scene-RAG** (Scene Retrieval-Augmented Generation) is employed to dyna
+  [CVPR 2026 (Highlight)][Video Understanding][Long video understanding] This paper proposes a scene-level long video understanding benchmark, **SceneBench**, which reveals the severe "forgetting" phenomenon of mainstream VLMs in long-range contexts across "scenes" (indicated by a sharp drop in accuracy). A lightweight **Scene-RAG** (Scene Retrieval-Augmented Generation) is employed to dynamically recall cross-scene contexts into the input, yielding a $+2.50\%$ improvement…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Vision-Language Model
+  - "CVPR 2026 (Highlight)"
+  - "Video Understanding"
+  - "Long video understanding"
+  - "scene-level benchmark"
+  - "context forgetting"
+  - "retrieval-augmented generation"
+  - "vision-language models"
 date: 2026-05-08
-content_hash: a01a217738c99e86
+content_hash: 8e33044dc809ce78
 ---
+
 # Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark
 
 **Conference**: CVPR 2026 (Highlight)  
@@ -119,10 +124,10 @@ Ours does not introduce new training objectives. SceneBench serves as an evaluat
 ## Related Papers
 
 - [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
-- [\[CVPR 2026\] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](towards_spatio-temporal_world_scene_graph_generation_from_monocular_videos.md)
+- [\[ICLR 2026\] Video Scene Segmentation with Genre and Duration Signals](../../ICLR2026/video_understanding/video_scene_segmentation_with_genre_and_duration_signals.md)
 - [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](../../NeurIPS2025/video_understanding/seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
+- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](../../ICLR2026/video_understanding/scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
 - [\[CVPR 2025\] EgoTextVQA: Towards Egocentric Scene-Text Aware Video Question Answering](../../CVPR2025/video_understanding/egotextvqa_towards_egocentric_scene-text_aware_video_question_answering.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a 3D Gaussian Map based on 3D Gaussian Splatting for scene representation, combined with an open-set semantic grouping mechanism…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes a 3D Gaussian Map based on 3D Gaussian Splatting for scene representation, combined with an open-set semantic grouping mechanism, to construct a 3D environmental representation that captures both geometric structure and rich semantic information for Vision-Language Navigation (VLN). A Multi-Level Action Prediction strategy is further designed to integrate multi-granularity spatial-semantic cues for navigation d…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Level Action Prediction"
   - "Scene Representation"
 date: 2026-05-08
-content_hash: a7b4482094daa4ff
+content_hash: 41dc7675c509771a
 ---
 
 # 3D Gaussian Map with Open-Set Semantic Grouping for Vision-Language Navigation
@@ -152,9 +152,9 @@ The core advances over the predecessor VER are: (1) upgrading the representation
 
 - [\[ICCV 2025\] AutoOcc: Automatic Open-Ended Semantic Occupancy Annotation via Vision-Language Guided Gaussian Splatting](autoocc_automatic_openended_semantic_occupancy_annotation_vi.md)
 - [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] Multi-Scale Gaussian-Language Map for Zero-shot Embodied Navigation and Reasoning](../../CVPR2026/3d_vision/multi-scale_gaussian-language_map_for_zero-shot_embodied_navigation_and_reasonin.md)
 - [\[ICCV 2025\] Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval](describe_adapt_and_combine_empowering_clip_encoders_for_open-set_3d_object_retri.md)
 - [\[ICLR 2026\] OpenFly: A Comprehensive Platform for Aerial Vision-Language Navigation](../../ICLR2026/3d_vision/openfly_a_comprehensive_platform_for_aerial_vision-language_navigation.md)
-- [\[ICCV 2025\] EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device](embodiedsplat_personalized_real-to-sim-to-real_navigation_with_gaussian_splats_f.md)
 
 </div>
 

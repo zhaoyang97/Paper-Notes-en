@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives
 description: >-
-  [AAAI 2026][LLM Reasoning][Syllogistic Reasoning] This work systematically evaluates 14 LLMs on 160 syllogisms using a dual-dimensional ground truth framework (syntactic validity + NLU believability)…
+  [AAAI 2026][Reasoning][Syllogistic Reasoning] This work systematically evaluates 14 LLMs on 160 syllogisms using a dual-dimensional ground truth framework (syntactic validity + NLU believability), revealing that top models approach near-perfect performance on formal logic (99.6%) while performing at chance level on natural language believability (~52%)—the inverse of human reasoning patterns. 12 out of 14 models exhibit significant belief bias…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Syllogistic Reasoning"
   - "Belief Bias"
   - "Formal Logic"
@@ -13,7 +13,7 @@ tags:
   - "LLM Evaluation"
   - "Dual-Dimensional Evaluation"
 date: 2026-05-08
-content_hash: 01127058ca97e7d7
+content_hash: 180193f6f937122f
 ---
 
 # Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives
@@ -166,11 +166,11 @@ $C_{\text{all}}$ measures the proportion of syllogisms on which a model is fully
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mathesis: Towards Formal Theorem Proving from Natural Languages](../../ICLR2026/llm_reasoning/mathesis_towards_formal_theorem_proving_from_natural_languages.md)
 - [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](../../ICML2026/llm_reasoning/reward_modeling_from_natural_language_human_feedback.md)
-- [\[ICLR 2026\] When Reasoning Meets Compression: Understanding the Effects of LLMs Compression on Large Reasoning Models](../../ICLR2026/llm_reasoning/when_reasoning_meets_compression_understanding_the_effects_of_pruning_and_quant.md)
-- [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](../../ACL2026/llm_reasoning/discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
-- [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](../../NeurIPS2025/llm_reasoning/sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
-- [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](../../ICML2026/llm_reasoning/a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
+- [\[ICML 2026\] Critique-GRPO: Advancing LLM Reasoning with Natural Language and Numerical Feedback](../../ICML2026/llm_reasoning/critique-grpo_advancing_llm_reasoning_with_natural_language_and_numerical_feedba.md)
+- [\[ICLR 2026\] When More Is Less: Understanding Chain-of-Thought Length in LLMs](../../ICLR2026/llm_reasoning/when_more_is_less_understanding_chain-of-thought_length_in_llms.md)
+- [\[ICLR 2026\] Variation in Verification: Understanding Verification Dynamics in Large Language Models](../../ICLR2026/llm_reasoning/variation_in_verification_understanding_verification_dynamics_in_large_language_.md)
 
 </div>
 

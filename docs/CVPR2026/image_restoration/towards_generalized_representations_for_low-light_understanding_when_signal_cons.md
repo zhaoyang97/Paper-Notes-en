@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] UniPrior unifies the "illumination-invariant signal prior" with the "semantic prior from Visual Foundation Models (DINOv2/CLIP)." Without using **any real low-light data** for training, it enables models trained on daytime data to robustly generalize to unseen nocturnal/low-light scenes, significantly setting new zero-
+  [CVPR 2026][Image Restoration][Low-light adaptation] UniPrior unifies the "illumination-invariant signal prior" with the "semantic prior from Visual Foundation Models (DINOv2/CLIP)." Without using **any real low-light data** for training, it enables models trained on daytime data to robustly generalize to unseen nocturnal/low-light scenes, significantly setting new zero-shot SOTAs across classification, segmentation, and face detection tasks.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light adaptation"
+  - "Illumination-invariant prior"
+  - "Visual Foundation Models"
+  - "Contrastive learning"
+  - "Test-time augmentation"
 date: 2026-05-08
-content_hash: 562b32158cfca0e3
+content_hash: 3e739d7b2bdf695f
 ---
+
 # Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment
 
 **Conference**: CVPR 2026  
@@ -152,15 +158,16 @@ Segmentation (mIoU) and Face Detection (mAP@0.5) also set new zero-shot SOTAs:
 - Value: ⭐⭐⭐⭐⭐ (New zero-shot SOTA, transferable tricks)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
 - [\[CVPR 2026\] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)
 - [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
 - [\[CVPR 2026\] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation](udapose_unsupervised_domain_adaptation_for_low_light_human_pose_estimation.md)
 - [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 
 </div>
 

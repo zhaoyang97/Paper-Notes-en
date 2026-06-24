@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Block-Sample MAC-Bayes Generalization Bounds
 description: >-
-  [ICLR 2026][Pretraining][PAC-Bayes] This paper proposes block-sample MAC-Bayes (mean approximately correct) generalization bounds. By partitioning training data into $J$ blocks and replacing the global KL divergence with the sum of KL divergences conditioned on each block, the framework provides finite, meaningful generalization error bounds in scenarios
+  [ICLR2026][LLM Pretraining][PAC-Bayes] This paper proposes block-sample MAC-Bayes (mean approximately correct) generalization bounds. By partitioning training data into $J$ blocks and replacing the global KL divergence with the sum of KL divergences conditioned on each block, the framework provides finite, meaningful generalization error bounds in scenarios where traditional PAC-Bayes bounds are vacuous (e.g., deterministic learning algorithms like mean estimation). It also d…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - PAC-Bayes
-  - MAC-Bayes
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "PAC-Bayes"
+  - "MAC-Bayes"
+  - "Generalization bounds"
+  - "Information theory"
+  - "Block-samples"
 date: 2026-05-08
-content_hash: 4d7a1f6b1177d542
+content_hash: a8f654e98843b196
 ---
+
 # Block-Sample MAC-Bayes Generalization Bounds
 
 **Conference**: ICLR2026  
@@ -137,8 +141,8 @@ The paper includes a numerical validation of Gaussian mean estimation ($Z_i \sim
 - [\[NeurIPS 2025\] Generalization Bounds for Rank-sparse Neural Networks](../../NeurIPS2025/llm_pretraining/generalization_bounds_for_rank-sparse_neural_networks.md)
 - [\[ICML 2026\] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning](../../ICML2026/llm_pretraining/data_difficulty_and_the_generalization--extrapolation_tradeoff_in_llm_fine-tunin.md)
 - [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](../../ICML2026/llm_pretraining/ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
+- [\[ACL 2025\] Diversity Explains Inference Scaling Laws: Through a Case Study of Minimum Bayes Risk Decoding](../../ACL2025/llm_pretraining/diversity_explains_inference_scaling_laws_through_a_case_study_of_minimum_bayes_.md)
 - [\[ICLR 2026\] Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods](rethinking_data_curation_in_llm_training_online_reweighting_offers_better_genera.md)
-- [\[ICML 2026\] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity](../../ICML2026/llm_pretraining/tuning_the_implicit_regularizer_of_masked_diffusion_language_models_enhancing_ge.md)
 
 </div>
 

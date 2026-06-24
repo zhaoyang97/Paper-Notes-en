@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts
 description: >-
-  [ICCV 2025][3D Vision][Stereo Matching] This paper proposes SMoEStereo, which integrates variable-rank MoE-LoRA and variable-kernel MoE-Adapter modules into a frozen Visual Foundation Model (VFM)…
+  [ICCV 2025][3D Vision][Stereo Matching] This paper proposes SMoEStereo, which integrates variable-rank MoE-LoRA and variable-kernel MoE-Adapter modules into a frozen Visual Foundation Model (VFM), combined with a lightweight decision network for selective activation of MoE modules, achieving scene-adaptive robust stereo matching with state-of-the-art performance on cross-domain and joint generalization benchmarks.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "Cross-Domain Generalization"
 date: 2026-05-08
-content_hash: 3d91c5f390717836
+content_hash: ced2fd62031ca972
 ---
 
 # Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts
@@ -156,8 +156,8 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{disp}} + \lambda_1 \mathcal{L}
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
 - [\[ICCV 2025\] BANet: Bilateral Aggregation Network for Mobile Stereo Matching](banet_bilateral_aggregation_network_for_mobile_stereo_matching.md)
 - [\[ICCV 2025\] ZeroStereo: Zero-shot Stereo Matching from Single Images](zerostereo_zero-shot_stereo_matching_from_single_images.md)
-- [\[ICCV 2025\] MaskHand: Generative Masked Modeling for Robust Hand Mesh Reconstruction in the Wild](maskhand_generative_masked_modeling_for_robust_hand_mesh_reconstruction_in_the_w.md)
 - [\[ICCV 2025\] Stereo Any Video: Temporally Consistent Stereo Matching](stereo_any_video_temporally_consistent_stereo_matching.md)
+- [\[CVPR 2025\] DEFOM-Stereo: Depth Foundation Model Based Stereo Matching](../../CVPR2025/3d_vision/defom-stereo_depth_foundation_model_based_stereo_matching.md)
 
 </div>
 

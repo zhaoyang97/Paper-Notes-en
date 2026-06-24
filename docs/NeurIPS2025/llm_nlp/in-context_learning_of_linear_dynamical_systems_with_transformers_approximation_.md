@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation
 description: >-
-  [NeurIPS 2025][LLM/NLP][in-context learning] This paper analyzes the ICL approximation capability of linear Transformers on noisy linear dynamical systems: $O(\log T)$ depth suffices to achieve $O(\log T / T)$ test error…
+  [NeurIPS 2025][LLM (Other)][in-context learning] This paper analyzes the ICL approximation capability of linear Transformers on noisy linear dynamical systems: $O(\log T)$ depth suffices to achieve $O(\log T / T)$ test error (approaching the least-squares estimator), while single-layer linear Transformers admit an irreducible lower bound — revealing a depth-separation phenomenon under non-IID data.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "in-context learning"
   - "linear dynamical systems"
   - "approximation theory"
   - "depth separation"
   - "transformer expressivity"
 date: 2026-05-08
-content_hash: a1bde3f3c2d1743a
+content_hash: 131a18f042b30bf5
 ---
 
 # In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation
@@ -120,10 +120,10 @@ Consider a noisy linear dynamical system $x_t = Wx_{t-1} + \xi_t$, where the Tra
 ## Related Papers
 
 - [\[NeurIPS 2025\] Linear Transformers Implicitly Discover Unified Numerical Algorithms](linear_transformers_implicitly_discover_unified_numerical_algorithms.md)
+- [\[ICML 2025\] TabFlex: Scaling Tabular Learning to Millions with Linear Attention](../../ICML2025/llm_nlp/tabflex_scaling_tabular_learning_to_millions_with_linear_attention.md)
 - [\[NeurIPS 2025\] Unifying Attention Heads and Task Vectors via Hidden State Geometry in In-Context Learning](unifying_attention_heads_and_task_vectors_via_hidden_state_geometry_in_in-contex.md)
 - [\[NeurIPS 2025\] Composing Linear Layers from Irreducibles](composing_linear_layers_from_irreducibles.md)
-- [\[ACL 2026\] UCS: Estimating Unseen Coverage for Improved In-Context Learning](../../ACL2026/llm_nlp/ucs_estimating_unseen_coverage_for_improved_in-context_learning.md)
-- [\[AAAI 2026\] Learning Spatial Decay for Vision Transformers](../../AAAI2026/llm_nlp/learning_spatial_decay_for_vision_transformers.md)
+- [\[NeurIPS 2025\] Do Language Models Use Their Depth Efficiently?](do_language_models_use_their_depth_efficiently.md)
 
 </div>
 

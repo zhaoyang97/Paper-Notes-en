@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Real-Time Trust Verification for Safe Agentic Actions Using TrustBench
 description: >-
-  [AAAI 2026][Medical NLP][Trust Verification] This paper proposes a real-time trust verification framework and the TrustBench benchmark for evaluating and ensuring the safety and trustworthiness of AI agent actions during…
+  [AAAI 2026][Medical LLM][Trust Verification] This paper proposes a real-time trust verification framework and the TrustBench benchmark for evaluating and ensuring the safety and trustworthiness of AI agent actions during execution.
 tags:
   - "AAAI 2026"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Trust Verification"
   - "Agent Safety"
   - "TrustBench"
   - "Real-Time Monitoring"
 date: 2026-05-08
-content_hash: 038c61c70f1d86bf
+content_hash: afe00a395d04ec05
 ---
 
 # Real-Time Trust Verification for Safe Agentic Actions Using TrustBench
@@ -163,9 +163,9 @@ As LLM agents are granted increasing operational permissions (e.g., executing co
 
 - [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
 - [\[NeurIPS 2025\] Time-IMM: A Dataset and Benchmark for Irregular Multimodal Multivariate Time Series](../../NeurIPS2025/medical_nlp/time-imm_a_dataset_and_benchmark_for_irregular_multimodal_multivariate_time_seri.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](../../ICLR2026/medical_nlp/doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[ICLR 2026\] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](../../ICLR2026/medical_nlp/medagentgym_agentic_training_biomedical.md)
 - [\[ACL 2026\] Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness](../../ACL2026/medical_nlp/learning_dynamic_representations_and_policies_from_multimodal_clinical_time-seri.md)
-- [\[NeurIPS 2025\] RAxSS: Retrieval-Augmented Sparse Sampling for Explainable Variable-Length Medical Time Series Classification](../../NeurIPS2025/medical_nlp/raxss_retrieval-augmented_sparse_sampling_for_explainable_variable-length_medica.md)
 
 </div>
 

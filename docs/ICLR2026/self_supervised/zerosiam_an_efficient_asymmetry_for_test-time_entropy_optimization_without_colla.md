@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse
 description: >-
-  [ICLR 2026][Self-Supervised Learning][stop-gradient] To address the issue where test-time entropy minimization easily collapses into degenerate solutions (predicting the same class for all samples), this paper transfers the "asymmetric structure" from negative-free SSL. By inserting a learnable predictor before the classifier and applying a stop-gradient, it creates asym
+  [ICLR 2026][Self-Supervised Learning][Test-Time Entropy Minimization] To address the issue where test-time entropy minimization easily collapses into degenerate solutions (predicting the same class for all samples), this paper transfers the "asymmetric structure" from negative-free SSL. By inserting a learnable predictor before the classifier and applying a stop-gradient, it creates asymmetric online/target branches within a single forward pass. Alignment regularization exclu…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - stop-gradient
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Test-Time Entropy Minimization"
+  - "Model Collapse"
+  - "Asymmetric Siamese"
+  - "stop-gradient"
+  - "Test-Time Adaptation"
 date: 2026-05-08
-content_hash: 573c538f87fe355e
+content_hash: 10c0db3f1b856d06
 ---
+
 # ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse
 
 **Conference**: ICLR 2026  
@@ -146,9 +151,9 @@ ZeroSiam achieves 52.9% avg. in label shift vs SAR's 38.8%, and +8.5% over DeYO 
 
 - [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
 - [\[ICLR 2026\] NEO — No-Optimization Test-Time Adaptation through Latent Re-Centering](neo_no-optimization_test-time_adaptation_through_latent_re-centering.md)
+- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 - [\[ICLR 2026\] Adaptive Test-Time Training for Predicting Need for Invasive Mechanical Ventilation in Multi-Center Cohorts](adaptive_test-time_training_for_predicting_need_for_invasive_mechanical_ventilat.md)
 - [\[ICLR 2026\] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning](why_prototypes_collapse_diagnosing_and_preventing_partial_collapse_in_prototypic.md)
-- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 
 </div>
 

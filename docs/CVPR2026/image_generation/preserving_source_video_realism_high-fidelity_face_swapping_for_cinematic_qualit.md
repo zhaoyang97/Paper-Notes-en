@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] LivingSwap is proposed as the first video-reference-guided face swapping model. Utilizing a controllable pipeline of keyframe identity injection, source video reference completion, and temporal stitching, it achieves high-fidelity face swapping in long videos. By maintaining source details such as expressions, lighting
+  [CVPR 2026][Image Generation][Face swapping] LivingSwap is proposed as the first video-reference-guided face swapping model. Utilizing a controllable pipeline of keyframe identity injection, source video reference completion, and temporal stitching, it achieves high-fidelity face swapping in long videos. By maintaining source details such as expressions, lighting, and motion while consistently injecting the target identity, it reduces manual editing effort by 40 times.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Face swapping"
+  - "video-reference guidance"
+  - "keyframe injection"
+  - "temporal stitching"
+  - "cinematic quality"
 date: 2026-05-08
-content_hash: 5999be03a6f2a371
+content_hash: a3b1e92ce4f705ca
 ---
+
 # Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality
 
 **Conference**: CVPR 2026  
@@ -149,9 +155,9 @@ On FF++, the model achieved an Avg Rank of 3.17 (second only to Inswapper), but 
 
 - [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
 - [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
 - [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](cinematic_audio_source_separation_using_visual_cues.md)
 - [\[CVPR 2026\] MMFace-DiT: A Dual-Stream Diffusion Transformer for High-Fidelity Multimodal Face Generation](mmface-dit_a_dual-stream_diffusion_transformer_for_high-fidelity_multimodal_face.md)
+- [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
 
 </div>
 

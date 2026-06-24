@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?
 description: >-
-  [ACL 2026][Multimodal VLM][MultiPun benchmark] This paper introduces MultiPun—the first multimodal pun benchmark featuring "adversarial non-pun distractors" (445 puns + 890 non-puns, covering both homophonic and homographic types). It systematically evaluates 11 VLMs across three tasks: detection, localization, and explanation. The study finds that **all models ten
+  [ACL 2026][Multimodal VLM][Multimodal Puns] This paper introduces MultiPun—the first multimodal pun benchmark featuring "adversarial non-pun distractors" (445 puns + 890 non-puns, covering both homophonic and homographic types). It systematically evaluates 11 VLMs across three tasks: detection, localization, and explanation. The study finds that **all models tend to misidentify non-puns as puns** (TNR generally < 0.4). The authors propose Pun-CoT prompting and Pun-Tuning stra…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - MultiPun benchmark
-  - Pun-CoT
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multimodal Puns"
+  - "Homophonic/Homographic Puns"
+  - "VLM Evaluation"
+  - "MultiPun Benchmark"
+  - "Pun-CoT"
 date: 2026-05-08
-content_hash: 9caf314b5983c1ae
+content_hash: 66ee3eba3c5bd12d
 ---
+
 # "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?
 
 **Conference**: ACL 2026  

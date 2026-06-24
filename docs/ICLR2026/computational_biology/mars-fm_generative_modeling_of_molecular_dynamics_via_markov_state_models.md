@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models
 description: >-
-  [ICLR 2026][Computational Biology][Molecular Dynamics] Instead of learning frame-by-frame MD transition densities with a fixed lag time, this work first uses Markov State Models (MSM) to coarse-grain trajectories into discrete metastable states, then employs Flow Matching to learn "state-to-state" jump distributions. This approach replaces molecular dynamics sampling with
+  [ICLR 2026][Computational Biology][Molecular Dynamics] Instead of learning frame-by-frame MD transition densities with a fixed lag time, this work first uses Markov State Models (MSM) to coarse-grain trajectories into discrete metastable states, then employs Flow Matching to learn "state-to-state" jump distributions. This approach replaces molecular dynamics sampling with a two-order-of-magnitude speedup and enhanced capability for exploring rare large conformational changes.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Molecular Dynamics
-  - Markov State Model
-  - Flow Matching
-  - Protein Conformation
-  - Generative Surrogate
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Dynamics"
+  - "Markov State Model"
+  - "Flow Matching"
+  - "Protein Conformation"
+  - "Generative Surrogate"
 date: 2026-05-08
-content_hash: 4a0e1e0c6b68a789
+content_hash: 05ef5696994d2db0
 ---
+
 # MarS-FM: Generative Modeling of Molecular Dynamics via Markov State Models
 
 **Conference**: ICLR 2026  
@@ -126,11 +127,11 @@ For tetrapeptides with low chemical diversity and no large conformational moveme
 
 ## Related Papers
 
-- [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
 - [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
+- [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
+- [\[ICLR 2026\] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics](align_your_structures_generating_trajectories_with_structure_pretraining_for_mol.md)
 - [\[ICLR 2026\] Multi-state Protein Sequence Design with DynamicMPNN](multi-state_protein_sequence_design_with_dynamicmpnn.md)
-- [\[ICLR 2026\] h-MINT: Modeling Pocket-Ligand Binding with Hierarchical Molecular Interaction Network](h-mint_modeling_pocket-ligand_binding_with_hierarchical_molecular_interaction_ne.md)
-- [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](../../NeurIPS2025/computational_biology/consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
+- [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](../../NeurIPS2025/computational_biology/energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
 
 </div>
 

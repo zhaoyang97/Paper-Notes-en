@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Beyond Majority Voting: Towards Fine-grained and More Reliable Reward Signal for Test-Time Reinforcement Learning
 description: >-
-  [ACL 2026][Reinforcement Learning][TTRL] Addressing the "confirmation bias + sparse reward" issues in TTRL caused by using majority voting for pseudo-labels, SCOPE proposes step-wise confidence-weighted voting (moving beyond frequency-based selection) and Pareto-optimal dynamic subgroup partitioning (bootstrapping local consensus in independent subgroups). On
+  [ACL 2026][Reinforcement Learning][TTRL] Addressing the "confirmation bias + sparse reward" issues in TTRL caused by using majority voting for pseudo-labels, SCOPE proposes step-wise confidence-weighted voting (moving beyond frequency-based selection) and Pareto-optimal dynamic subgroup partitioning (bootstrapping local consensus in independent subgroups). On Qwen3-8B, it improves AIME 2024 from 47.13 → 52.70 and AIME 2025 from 27.40 → 31.00.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - TTRL
-  - majority voting
-  - step-wise confidence
-  - subgroup partition
-  - Pareto optimization
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "TTRL"
+  - "majority voting"
+  - "step-wise confidence"
+  - "subgroup partition"
+  - "Pareto optimization"
 date: 2026-05-08
-content_hash: 82b142171dae2aab
+content_hash: 05a9f96eeeeacb1c
 ---
+
 # Beyond Majority Voting: Towards Fine-grained and More Reliable Reward Signal for Test-Time Reinforcement Learning
 
 **Conference**: ACL 2026  
@@ -151,9 +152,9 @@ Analysis of Pseudo-Label Accuracy (PLA): TTRL (25.42) → SCOPE (30.71, +20.81%)
 
 - [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 - [\[ACL 2026\] SCRL: What If Consensus Lies? Selective-Complementary Reinforcement Learning at Test Time](what_if_consensus_lies_selective-complementary_reinforcement_learning_at_test_ti.md)
-- [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](../../CVPR2026/reinforcement_learning/specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
+- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](../../ICLR2026/reinforcement_learning/q-learning_with_fine-grained_gap-dependent_regret.md)
 - [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](../../ICLR2026/reinforcement_learning/p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
-- [\[ICLR 2026\] DiVE-k: Differential Visual Reasoning for Fine-grained Image Recognition](../../ICLR2026/reinforcement_learning/dive-k_differential_visual_reasoning_for_fine-grained_image_recognition.md)
+- [\[CVPR 2026\] Specificity-aware Reinforcement Learning for Fine-grained Open-world Classification](../../CVPR2026/reinforcement_learning/specificity-aware_reinforcement_learning_for_fine-grained_open-world_classificat.md)
 
 </div>
 

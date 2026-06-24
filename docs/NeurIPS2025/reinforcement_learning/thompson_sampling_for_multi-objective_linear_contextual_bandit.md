@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Thompson Sampling for Multi-Objective Linear Contextual Bandit
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Thompson Sampling] This paper proposes MOL-TS—the first multi-objective linear contextual bandit Thompson Sampling algorithm with worst-case Pareto regret guarantees. By introducing…
+  [NeurIPS 2025][Reinforcement Learning][Thompson Sampling] This paper proposes MOL-TS—the first multi-objective linear contextual bandit Thompson Sampling algorithm with worst-case Pareto regret guarantees. By introducing the concept of "effective Pareto optimal arms" and an optimistic sampling strategy, MOL-TS achieves a regret upper bound of $\widetilde{O}(d^{3/2}\sqrt{T})$, with the number of objectives $L$ contributing only an $O(\log L)$ factor.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Pareto Optimality"
   - "Effective Pareto Front"
 date: 2026-05-08
-content_hash: 1ab00a1006d9f728
+content_hash: e81747f174309583
 ---
 
 # Thompson Sampling for Multi-Objective Linear Contextual Bandit

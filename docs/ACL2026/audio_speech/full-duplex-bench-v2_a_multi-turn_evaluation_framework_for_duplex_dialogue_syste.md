@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner
 description: >-
-  [ACL 2026][Audio & Speech][LLM-as-judge] The authors propose Full-Duplex-Bench-v2, where a GPT-Realtime-powered Examiner interacts with full-duplex models in real-time via WebRTC across four task categories (Daily/Correction/Entity/Safety) and two pacing modes (Fast/Slow). Evaluation scores cover turn-taking, instruction-following, and task-specific dimension
+  [ACL 2026][Audio & Speech][Full-duplex dialogue] The authors propose Full-Duplex-Bench-v2, where a GPT-Realtime-powered Examiner interacts with full-duplex models in real-time via WebRTC across four task categories (Daily/Correction/Entity/Safety) and two pacing modes (Fast/Slow). Evaluation scores cover turn-taking, instruction-following, and task-specific dimensions. Findings reveal that performance for GPT-Realtime, Moshi, and Freeze-Omni degrades as dialogues progress…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - LLM-as-judge
-  - turn-taking
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Full-duplex dialogue"
+  - "multi-turn evaluation"
+  - "LLM-as-judge"
+  - "WebRTC streaming orchestration"
+  - "turn-taking"
 date: 2026-05-08
-content_hash: 4ecbe54ca5e4a05c
+content_hash: 1e4561feeb8590a8
 ---
+
 # Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner
 
 **Conference**: ACL 2026  
@@ -137,7 +141,7 @@ Across 120 sessions, the correlation between the LLM judge and human raters is $
 - [\[ACL 2026\] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](mtr-duplexbench_towards_a_comprehensive_evaluation_of_multi-round_conversations_.md)
 - [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](../../ICML2026/audio_speech/the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
 - [\[ICML 2026\] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models](../../ICML2026/audio_speech/moshirag_asynchronous_knowledge_retrieval_for_full-duplex_speech_language_models.md)
-- [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 
 </div>

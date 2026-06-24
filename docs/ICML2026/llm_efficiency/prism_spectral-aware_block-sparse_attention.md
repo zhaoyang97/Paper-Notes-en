@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prism: Spectral-Aware Block-Sparse Attention
 description: >-
-  [ICML 2026][LLM Efficiency][RoPE] Prism decomposes "block importance estimation" into high-frequency and low-frequency bands of RoPE, performing mean-pooling and softmax separately. It automatically calibrates logit magnitudes using a temperature derived from energy ratios. This approach relies entirely on block-level operations (eliminating token-leve
+  [ICML 2026][LLM Efficiency][Block-Sparse Attention] Prism decomposes "block importance estimation" into high-frequency and low-frequency bands of RoPE, performing mean-pooling and softmax separately. It automatically calibrates logit magnitudes using a temperature derived from energy ratios. This approach relies entirely on block-level operations (eliminating token-level search), achieving accuracy comparable to full attention and a 5.1× speedup over FlashAttention-2 at 128K…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - RoPE
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Block-Sparse Attention"
+  - "RoPE"
+  - "Spectral Decomposition"
+  - "Long Context"
+  - "Pre-filling Acceleration"
 date: 2026-05-08
-content_hash: ccc5250a62ceedd3
+content_hash: b6193c25754100cf
 ---
+
 # Prism: Spectral-Aware Block-Sparse Attention
 
 **Conference**: ICML 2026  
@@ -128,9 +133,20 @@ Evaluated on PG19, LongBench, RULER, VideoMME, and HunyuanVideo against MInferen
 - Value: ⭐⭐⭐⭐⭐ (Training-free, low overhead, stable gains from 8K context).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)
+- [\[ACL 2025\] Efficient Many-Shot In-Context Learning with Dynamic Block-Sparse Attention](../../ACL2025/llm_efficiency/efficient_many-shot_in-context_learning_with_dynamic_block-sparse_attention.md)
+- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](stochastic_sparse_attention_for_memory-bound_inference.md)
+- [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](../../ICLR2026/llm_efficiency/sparsed_sparse_attention_for_diffusion_language_models.md)
+- [\[ICLR 2026\] InfLLM-V2: Dense-Sparse Switchable Attention for Seamless Short-to-Long Adaptation](../../ICLR2026/llm_efficiency/infllm-v2_dense-sparse_switchable_attention_for_seamless_short-to-long_adaptatio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bolt3D: Generating 3D Scenes in Seconds
 description: >-
-  [ICCV 2025][3D Vision][Latent Diffusion Model] A feed-forward 3D scene generation method based on latent diffusion models that represents 3D scenes as multiple sets of Splatter Images and employs a dedicated geometry VAE…
+  [ICCV 2025][3D Vision][Latent Diffusion Model] A feed-forward 3D scene generation method based on latent diffusion models that represents 3D scenes as multiple sets of Splatter Images and employs a dedicated geometry VAE, **generating a complete 3D scene on a single GPU in 7 seconds**—reducing inference cost by 300× compared to optimization-based methods (CAT3D).
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Geometry VAE"
   - "Splatter Image"
 date: 2026-05-08
-content_hash: 08fd85afa04fe44f
+content_hash: e3a3bea602285ce8
 ---
 
 # Bolt3D: Generating 3D Scenes in Seconds
@@ -206,9 +206,9 @@ Bolt3D adopts a two-stage feed-forward pipeline:
 
 - [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
 - [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](a_recipe_for_generating_3d_worlds_from_a_single_image.md)
+- [\[CVPR 2025\] Hearing Hands: Generating Sounds from Physical Interactions in 3D Scenes](../../CVPR2025/3d_vision/hearing_hands_generating_sounds_from_physical_interactions_in_3d_scenes.md)
 - [\[ICCV 2025\] Auto-Regressively Generating Multi-View Consistent Images](auto-regressively_generating_multi-view_consistent_images.md)
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
-- [\[ICCV 2025\] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes](instascene_towards_complete_3d_instance_decomposition_and_reconstruction_from_cl.md)
 
 </div>
 

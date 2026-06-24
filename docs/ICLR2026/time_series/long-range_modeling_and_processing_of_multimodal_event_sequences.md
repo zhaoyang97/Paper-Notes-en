@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Long-range Modeling and Processing of Multimodal Event Sequences
 description: >-
-  [ICLR 2026][Time Series][Temporal Point Process] MM-TPP extends Temporal Point Processes (TPP) from "Time + Type + Text" to a full multimodal generation framework including "Time + Type + Text + Image." By employing adaptive sequence compression based on time-interval similarity, it fits long sequences involving thousands of events and tens of thousands of tokens int
+  [ICLR 2026][Time Series][Temporal Point Process] MM-TPP extends Temporal Point Processes (TPP) from "Time + Type + Text" to a full multimodal generation framework including "Time + Type + Text + Image." By employing adaptive sequence compression based on time-interval similarity, it fits long sequences involving thousands of events and tens of thousands of tokens into a fixed context window, outperforming SOTA TPP baselines in both prediction accuracy and long-form analytical…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Temporal Point Process
-  - Multimodal LLM
-  - Long-context
-  - Sequence Compression
-  - Qwen2.5-VL
+  - "ICLR 2026"
+  - "Time Series"
+  - "Temporal Point Process"
+  - "Multimodal LLM"
+  - "Long-context"
+  - "Sequence Compression"
+  - "Qwen2.5-VL"
 date: 2026-05-08
-content_hash: 39a63c15e796e32d
+content_hash: 9a8bbe2d2ae03533
 ---
+
 # Long-range Modeling and Processing of Multimodal Event Sequences
 
 **Conference**: ICLR 2026  
@@ -115,14 +116,14 @@ Compression hyperparameter $\Delta$: The default 0.2 is optimal; $\Delta=0.05$ r
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] WaLRUS: Wavelets for Long-range Representation Using SSMs](../../NeurIPS2025/time_series/walrus_wavelets_for_long-range_representation_using_ssms.md)
 - [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](../../ICML2026/time_series/fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
 - [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](../../ICML2026/time_series/learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
-- [\[ICLR 2026\] PHAT: Modeling Period Heterogeneity for Multivariate Time Series Forecasting](phat_modeling_period_heterogeneity_for_multivariate_time_series_forecasting.md)
+- [\[ICLR 2026\] The Forecast After the Forecast: A Post-Processing Shift in Time Series](the_forecast_after_the_forecast_a_post-processing_shift_in_time_series.md)
 - [\[ICLR 2026\] Towards Multimodal Time Series Anomaly Detection with Semantic Alignment and Condensed Interaction](towards_multimodal_time_series_anomaly_detection_with_semantic_alignment_and_con.md)
 
 </div>

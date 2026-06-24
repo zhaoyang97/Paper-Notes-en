@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CORE: Full-Path Evaluation of LLM Agents Beyond Final State
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent Evaluation] This paper proposes CORE, a framework that encodes legitimate tool-calling paths for agent tasks using deterministic finite automata (DFA) and introduces five complementary met…
+  [NeurIPS 2025][LLM Agent][Agent Evaluation] This paper proposes CORE, a framework that encodes legitimate tool-calling paths for agent tasks using deterministic finite automata (DFA) and introduces five complementary metrics (path correctness, order correctness, prefix criticality, harm rate, and efficiency) to evaluate agent behavior along the full execution path rather than the final state alone, revealing safety and efficiency differences invisible to conventional final-st…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Safety"
   - "Tool Calling"
 date: 2026-05-08
-content_hash: 58017974e5e414ad
+content_hash: b9f2ff433556e9a5
 ---
 
 # CORE: Full-Path Evaluation of LLM Agents Beyond Final State
@@ -146,9 +146,9 @@ The CORE framework comprises three layers:
 
 - [\[NeurIPS 2025\] AgentAuditor: Human-Level Safety and Security Evaluation for LLM Agents](agentauditor_humanlevel_safety_and_security_evaluation_for_l.md)
 - [\[NeurIPS 2025\] AgentChangeBench: A Multi-Dimensional Evaluation Framework for Goal-Shift Robustness](agentchangebench_a_multi-dimensional_evaluation_framework_for_goal-shift_robustn.md)
+- [\[ACL 2025\] Beyond Numeric Rewards: In-Context Dueling Bandits with LLM Agents](../../ACL2025/llm_agent/beyond_numeric_rewards_in-context_dueling_bandits_with_llm_agents.md)
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](../../ICLR2026/llm_agent/traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
 - [\[AAAI 2026\] Agent-SAMA: State-Aware Mobile Assistant](../../AAAI2026/llm_agent/agent-sama_state-aware_mobile_assistant.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
-- [\[NeurIPS 2025\] LLM Agents for Knowledge Discovery in Atomic Layer Processing](llm_agents_for_knowledge_discovery_in_atomic_layer_processing.md)
 
 </div>
 

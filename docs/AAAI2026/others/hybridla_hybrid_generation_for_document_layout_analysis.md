@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] HybriDLA: Hybrid Generation for Document Layout Analysis
 description: >-
-  [AAAI 2026][Document layout analysis] HybriDLA is the first approach to unify diffusion-based bounding box refinement and autoregressive query expansion within a single decoding layer…
+  [AAAI 2026 Oral][Document layout analysis] HybriDLA is the first approach to unify diffusion-based bounding box refinement and autoregressive query expansion within a single decoding layer, simulating a human coarse-to-fine reading strategy for document layout analysis. It achieves 83.5% mAP on DocLayNet with a vision-only model, approaching multimodal systems.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Document layout analysis"
   - "diffusion models"
   - "autoregressive generation"
   - "hybrid decoding"
   - "multi-scale feature fusion"
 date: 2026-05-08
-content_hash: 4bafa26a1d7984e9
+content_hash: 4618d6165690f648
 ---
 
 # HybriDLA: Hybrid Generation for Document Layout Analysis
@@ -148,10 +148,10 @@ HybriDLA achieves 83.5% mAP with vision-only input, trailing the multimodal DLAF
 ## Related Papers
 
 - [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
-- [\[AAAI 2026\] Controllable Financial Market Generation with Diffusion Guided Meta Agent](controllable_financial_market_generation_with_diffusion_guided_meta_agent.md)
+- [\[ACL 2025\] An Analysis of Datasets, Metrics and Models in Keyphrase Generation](../../ACL2025/others/an_analysis_of_datasets_metrics_and_models_in_keyphrase_generation.md)
+- [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](../../CVPR2026/others/dream_document_recognition_with_explicit_adaptive_memory.md)
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](../../CVPR2026/others/progressive_neural_architecture_generation.md)
 - [\[AAAI 2026\] Bayesian Network Structural Consensus via Greedy Min-Cut Analysis](bayesian_network_structural_consensus_via_greedy_min-cut_analysis.md)
-- [\[AAAI 2026\] Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms](theoretical_and_empirical_analysis_of_lehmer_codes_to_search_permutation_spaces_.md)
 
 </div>
 

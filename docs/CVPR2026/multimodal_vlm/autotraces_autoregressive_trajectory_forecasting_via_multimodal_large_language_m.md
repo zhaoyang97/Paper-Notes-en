@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] AutoTraces extends a multimodal LLM (LLaVA-Video) by introducing a `<point>` token with a corresponding Point Encoder/Head representation. This maps 2D waypoints into the LLM latent space, allowing the model to predict future robotic trajectories point-by-point through native autoregressive mechanisms. Combined with au
+  [CVPR 2026][Multimodal VLM][Trajectory prediction] AutoTraces extends a multimodal LLM (LLaVA-Video) by introducing a `<point>` token with a corresponding Point Encoder/Head representation. This maps 2D waypoints into the LLM latent space, allowing the model to predict future robotic trajectories point-by-point through native autoregressive mechanisms. Combined with automatically generated Chain-of-Thought (CoT) reasoning and two-stage training…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Trajectory prediction"
+  - "Multimodal LLM"
+  - "Autoregressive generation"
+  - "Trajectory tokenization"
+  - "Social navigation"
 date: 2026-05-08
-content_hash: 236a92d3b824f8e8
+content_hash: 583c00371ad64fda
 ---
+
 # AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -143,8 +149,8 @@ Comparison of L2 error on SCAND:
 
 - [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
 - [\[CVPR 2026\] UVU: Improving Multimodal Understanding via Vision-Language Unified Autoregressive Paradigm](uvu_improving_multimodal_understanding_via_vision-language_unified_autoregressiv.md)
-- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
-- [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/multimodal_vlm/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
+- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
 - [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 
 </div>

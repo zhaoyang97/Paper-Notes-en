@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper identifies the theoretical requirement of "**frame-wise injectivity**" and proposes Causal Forcing—a method that replaces the **bidirectional teacher with an autoregressive teacher** for ODE distillation initialization. This avoids the performance collapse seen in Self-Forcing, achieving significant gains ov
+  [ICML 2026][Model Compression][Autoregressive Video Generation] This paper identifies the theoretical requirement of "**frame-wise injectivity**" and proposes Causal Forcing—a method that replaces the **bidirectional teacher with an autoregressive teacher** for ODE distillation initialization. This avoids the performance collapse seen in Self-Forcing, achieving significant gains over Self-Forcing in dynamics (+19.3%), VisionReward (+8.7%), and instruction following (+16.7%)…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Autoregressive Video Generation"
+  - "Diffusion Distillation"
+  - "Causal Attention"
+  - "Frame-wise Injectivity"
 date: 2026-05-08
-content_hash: fbdcb66369b7e074
+content_hash: a69479ca5fdf713a
 ---
+
 # Causal Forcing: Autoregressive Diffusion Distillation Done Right for High-Quality Real-Time Interactive Video
 
 **Conference**: ICML 2026  
@@ -132,11 +137,11 @@ Improvements over Self-Forcing: Dynamics +19.3%, VisionReward +8.7%, Instruction
 
 ## Related Papers
 
-- [\[ICML 2026\] Semantic Integrity Matters: Benchmarking and Preserving High-Density Reasoning in KV Cache Compression](semantic_integrity_matters_benchmarking_and_preserving_high-density_reasoning_in.md)
-- [\[ICML 2026\] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)
-- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
-- [\[ICML 2026\] FedSDR: Federated Self-Distillation with Rectification](fedsdr_federated_self-distillation_with_rectification.md)
-- [\[ICML 2026\] Toward Understanding Adversarial Distillation: Why Robust Teachers Fail](toward_understanding_adversarial_distillation_why_robust_teachers_fail.md)
+- [\[CVPR 2026\] InstantViR: Real-Time Video Inverse Problem Solver with Distilled Diffusion Prior](../../CVPR2026/model_compression/instantvir_real-time_video_inverse_problem_solver_with_distilled_diffusion_prior.md)
+- [\[CVPR 2025\] Towards Practical Real-Time Neural Video Compression](../../CVPR2025/model_compression/towards_practical_real-time_neural_video_compression.md)
+- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](../../CVPR2026/model_compression/real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
+- [\[ICML 2026\] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning](beyond_tokens_enhancing_rtl_quality_estimation_via_structural_graph_learning.md)
+- [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
 
 </div>
 

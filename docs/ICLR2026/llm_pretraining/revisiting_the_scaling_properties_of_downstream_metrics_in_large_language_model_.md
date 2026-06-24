@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training
 description: >-
-  [ICLR 2026][Pretraining][pass@k] This paper challenges the conventional wisdom that "downstream benchmark accuracy is unpredictable" and proposes a two-parameter power law $-\log Q = A/C^{\alpha}$ to **directly** model downstream accuracy from training FLOPs. It extends this to different token-to-parameter ratios and repeated sampling (pass@k). Experi
+  [ICLR 2026][LLM Pretraining][Downstream metric scaling law] This paper challenges the conventional wisdom that "downstream benchmark accuracy is unpredictable" and proposes a two-parameter power law $-\log Q = A/C^{\alpha}$ to **directly** model downstream accuracy from training FLOPs. It extends this to different token-to-parameter ratios and repeated sampling (pass@k). Experiments on a grid up to 17B parameters and 350B tokens demonstrate that this method is more accurate a…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - pass@k
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Downstream metric scaling law"
+  - "Power law"
+  - "Direct prediction"
+  - "Two-stage method"
+  - "pass@k"
 date: 2026-05-08
-content_hash: 898805fc04a760b4
+content_hash: 90d6e7ab767dc826
 ---
+
 # Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ Extrapolating from $3\times10^{18}\dots6\times10^{21}$ FLOPs to models with up t
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

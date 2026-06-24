@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors decompose the three most difficult nonlinear operators in Transformers (Softmax, SiLU, RMSNorm) into three common primitives: "division / exponential / $\ell_2$ norm." These are implemented as spike-friendly modules using LIF neuron group computation and shift-scaling, which can be assembled like building b
+  [ICML 2026][Model Compression][Spiking Neural Networks] The authors decompose the three most difficult nonlinear operators in Transformers (Softmax, SiLU, RMSNorm) into three common primitives: "division / exponential / $\ell_2$ norm." These are implemented as spike-friendly modules using LIF neuron group computation and shift-scaling, which can be assembled like building blocks back into the original operators. This plug-and-play approach requires no fine-tuning and integrat…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Spiking Neural Networks"
+  - "Transformer Nonlinear Operators"
+  - "ANN-to-SNN Conversion"
+  - "LIF Neurons"
+  - "Training-free"
 date: 2026-05-08
-content_hash: fef8ed0a09d652d8
+content_hash: d891da6b2710866c
 ---
+
 # Plug-and-Play Spiking Operators: Breaking the Nonlinearity Bottleneck in Spiking Transformers
 
 **Conference**: ICML 2026  
@@ -135,15 +141,14 @@ Accuracy changes across WinoGrande, HellaSwag, ArcC, ArcE, and PIQA tasks are al
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] TP-Spikformer: Token Pruned Spiking Transformer](../../ICLR2026/model_compression/tp-spikformer_token_pruned_spiking_transformer.md)
 - [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](../../NeurIPS2025/model_compression/spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 - [\[CVPR 2025\] Plug-and-Play Versatile Compressed Video Enhancement](../../CVPR2025/model_compression/plug-and-play_versatile_compressed_video_enhancement.md)
-- [\[CVPR 2026\] ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning](../../CVPR2026/model_compression/refta_breaking_the_weight_reconstruction_bottleneck_in_tensorized_parameter-effi.md)
-- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
+- [\[ICLR 2026\] Cannistraci-Hebb Training on Ultra-Sparse Spiking Neural Networks](../../ICLR2026/model_compression/cannistraci-hebb_training_on_ultra-sparse_spiking_neural_networks.md)
+- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 
 </div>
 

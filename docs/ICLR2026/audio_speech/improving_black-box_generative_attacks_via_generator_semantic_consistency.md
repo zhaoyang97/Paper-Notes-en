@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Black-Box Generative Attacks via Generator Semantic Consistency
 description: >-
-  [ICLR 2026][Audio & Speech][Mean Teacher] By analyzing the semantic degradation phenomenon in the intermediate layer features of generators, this paper proposes a Mean Teacher-based semantic structure-aware framework. It performs self-feature distillation in the early layers of the generator to maintain semantic consistency, thereby enhancing the transferabili
+  [ICLR 2026][Audio & Speech][Generative Adversarial Attacks] By analyzing the semantic degradation phenomenon in the intermediate layer features of generators, this paper proposes a Mean Teacher-based semantic structure-aware framework. It performs self-feature distillation in the early layers of the generator to maintain semantic consistency, thereby enhancing the transferability of adversarial examples across models, domains, and tasks.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Mean Teacher
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Generative Adversarial Attacks"
+  - "Black-box Transferability"
+  - "Mean Teacher"
+  - "Semantic Consistency"
+  - "Feature Distillation"
 date: 2026-05-08
-content_hash: 2c396f45b9223fcd
+content_hash: adb89dd800f3d2dd
 ---
+
 # Improving Black-Box Generative Attacks via Generator Semantic Consistency
 
 **Conference**: ICLR 2026  
@@ -153,10 +158,10 @@ Using BIA as the baseline with a VGG-19 surrogate:
 
 ## Related Papers
 
-- [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
-- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
+- [\[NeurIPS 2025\] From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease](../../NeurIPS2025/audio_speech/from_black_box_to_biomarker_sparse_autoencoders_for_interpreting_speech_models_o.md)
 - [\[ICLR 2026\] StableToken: A Noise-Robust Semantic Speech Tokenizer for Resilient SpeechLLMs](stabletoken_a_noise-robust_semantic_speech_tokenizer_for_resilient_speechllms.md)
-- [\[ICLR 2026\] Automatic Stage Lighting Control: Is it a Rule-Driven Process or Generative Task?](automatic_stage_lighting_control_is_it_a_rule-driven_process_or_generative_task.md)
+- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
+- [\[ICLR 2026\] SpeechOp: Inference-Time Task Composition for Generative Speech Processing](speechop_inference-time_task_composition_for_generative_speech_processing.md)
 - [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
 
 </div>

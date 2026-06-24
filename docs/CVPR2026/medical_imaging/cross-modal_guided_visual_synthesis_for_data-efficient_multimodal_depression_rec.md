@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition
 description: >-
-  [CVPR 2026][Medical Imaging][CVAE] This work utilizes audio and text as conditions to synthesize novel "visual behavioral features" at the feature level via a CVAE to alleviate clinical depression data scarcity. The synthesis process is backward-guided by the loss of the downstream recognizer, ensuring synthesized features prioritize "utility for recogn
+  [CVPR 2026][Medical Imaging][Depression Recognition] This work utilizes audio and text as conditions to synthesize novel "visual behavioral features" at the feature level via a CVAE to alleviate clinical depression data scarcity. The synthesis process is backward-guided by the loss of the downstream recognizer, ensuring synthesized features prioritize "utility for recognition" over mere "realism," achieving SOTA on DAIC-WOZ and E-DAIC.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - CVAE
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Depression Recognition"
+  - "Multimodal Fusion"
+  - "Conditional Generative Augmentation"
+  - "CVAE"
+  - "Task-Guided Optimization"
 date: 2026-05-08
-content_hash: 1f625446b6b174fa
+content_hash: e0ef27a971b7e1a6
 ---
+
 # Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition
 
 **Conference**: CVPR 2026  
@@ -144,9 +149,9 @@ A key highlight is the significantly higher Precision (0.846), indicating fewer 
 
 - [\[AAAI 2026\] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection](../../AAAI2026/medical_imaging/personality-guided_public-private_domain_disentangled_hypergraph-former_network_.md)
 - [\[CVPR 2026\] MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning](multimodalpfn_extending_prior-data_fitted_networks_for_multimodal_tabular_learni.md)
+- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[CVPR 2026\] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration](crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr.md)
-- [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
-- [\[CVPR 2026\] OctoMed: Data Recipes for State-of-the-Art Multimodal Medical Reasoning](octomed_data_recipes_for_state-of-the-art_multimodal_medical_reasoning.md)
 
 </div>
 

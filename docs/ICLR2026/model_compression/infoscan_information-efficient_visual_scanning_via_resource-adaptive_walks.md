@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InfoScan: Information-Efficient Visual Scanning via Resource-Adaptive Walks
 description: >-
-  [ICLR 2026][Model Compression][Visual Mamba] InfoScan replaces the fixed raster or Hilbert scanning orders in Mamba-like visual backbones with content-adaptive paths. By quantifying the information of each patch via "entropy + local variance," it utilizes reinforcement learning to learn a scanning sequence that prioritizes information-dense regions, achieving hig
+  [ICLR 2026][Model Compression][Visual Mamba] InfoScan replaces the fixed raster or Hilbert scanning orders in Mamba-like visual backbones with content-adaptive paths. By quantifying the information of each patch via "entropy + local variance," it utilizes reinforcement learning to learn a scanning sequence that prioritizes information-dense regions, achieving higher accuracy with fewer parameters across classification, detection, and segmentation tasks.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Visual Mamba
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Visual Mamba"
+  - "Content-Adaptive Scanning"
+  - "Information Theory"
+  - "RL Scanning Strategy"
+  - "High-Resolution Representation Learning"
 date: 2026-05-08
-content_hash: 9c92637dfabc4aac
+content_hash: b45dd0fbcd4621a9
 ---
+
 # InfoScan: Information-Efficient Visual Scanning via Resource-Adaptive Walks
 
 **Conference**: ICLR 2026  
@@ -128,9 +133,9 @@ Reward Term Ablation (M1 Revisit / M2 Exploration / M3 Neighborhood Gain):
 
 ## Related Papers
 
-- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[ICLR 2026\] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training](instant_compressing_gradients_and_activations_for_resource-efficient_training.md)
 - [\[ICLR 2026\] InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression](infotok_adaptive_discrete_video_tokenizer_via_information-theoretic_compression.md)
+- [\[ICLR 2026\] INSTANT: Compressing Gradients and Activations for Resource-Efficient Training](instant_compressing_gradients_and_activations_for_resource-efficient_training.md)
+- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
 - [\[AAAI 2026\] Sharp Eyes and Memory for VideoLLMs: Information-Aware Visual Token Pruning for Efficient and Reliable VideoLLM Reasoning](../../AAAI2026/model_compression/sharp_eyes_and_memory_for_videollms_information-aware_visual_token_pruning_for_e.md)
 - [\[ICLR 2026\] Expressive yet Efficient Feature Expansion with Adaptive Cross-Hadamard Products](expressive_yet_efficient_feature_expansion_with_adaptive_cross-hadamard_products.md)
 

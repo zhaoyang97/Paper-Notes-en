@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DROID-W: DROID-SLAM in the Wild
 description: >-
-  [CVPR 2026][3D Vision][SLAM] Ours proposes DROID-W, which introduces Uncertainty-aware Bundle Adjustment (UBA) combined with a DINOv2 feature-driven dynamic uncertainty update mechanism and monocular depth regularization. This enables DROID-SLAM to achieve robust camera pose estimation and scene reconstruction in highly dynamic in-the-wild scenari
+  [CVPR2026][3D Vision][SLAM] Ours proposes DROID-W, which introduces Uncertainty-aware Bundle Adjustment (UBA) combined with a DINOv2 feature-driven dynamic uncertainty update mechanism and monocular depth regularization. This enables DROID-SLAM to achieve robust camera pose estimation and scene reconstruction in highly dynamic in-the-wild scenarios, running in real-time at approximately 10 FPS.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SLAM
-  - dynamic scenes
-  - uncertainty estimation
-  - bundle adjustment
-  - DINOv2
+  - "CVPR2026"
+  - "3D Vision"
+  - "SLAM"
+  - "dynamic scenes"
+  - "uncertainty estimation"
+  - "bundle adjustment"
+  - "DINOv2"
 date: 2026-05-08
-content_hash: bf01f773f9012dc5
+content_hash: 569e0d6d8196c134
 ---
+
 # DROID-W: DROID-SLAM in the Wild
 
 **Conference**: CVPR2026  
@@ -189,11 +190,11 @@ DROID-W achieves the best balance between "general dynamic robustness" and "real
 
 ## Related Papers
 
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
 - [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
 - [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
-- [\[CVPR 2026\] Dynamic Visual SLAM using a General 3D Prior](dynamic_visual_slam_using_a_general_3d_prior.md)
-- [\[CVPR 2026\] Scene Grounding In the Wild](scene_grounding_in_the_wild.md)
+- [\[CVPR 2025\] WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments](../../CVPR2025/3d_vision/wildgs-slam_monocular_gaussian_splatting_slam_in_dynamic_environments.md)
 
 </div>
 

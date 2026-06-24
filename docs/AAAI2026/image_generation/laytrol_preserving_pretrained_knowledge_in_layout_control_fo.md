@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers
 description: >-
-  [AAAI 2026][Image Generation][Layout Control] Laytrol achieves high-quality layout-to-image generation on FLUX by initializing the layout control network via parameter copying from MM-DiT…
+  [AAAI 2026][Image Generation][Layout Control] Laytrol achieves high-quality layout-to-image generation on FLUX by initializing the layout control network via parameter copying from MM-DiT, adopting a dedicated initialization scheme (layout encoder initialized as a pure text encoder with zero-initialized outputs), and constructing the LaySyn dataset using FLUX-generated images to mitigate distribution shift.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "ControlNet"
   - "FLUX"
 date: 2026-05-08
-content_hash: f3e2f67ddcdbb58b
+content_hash: f1d35d3317e60f29
 ---
 
 # Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers
@@ -105,9 +105,9 @@ Laytrol constructs a parallel layout control network on top of FLUX's MM-DiT. In
 
 - [\[AAAI 2026\] RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers](relactrl_relevance-guided_efficient_control_for_diffusion_transformers.md)
 - [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](../../CVPR2026/image_generation/consistcompose_multimodal_layout_control.md)
+- [\[CVPR 2025\] Multitwine: Multi-Object Compositing with Text and Layout Control](../../CVPR2025/image_generation/multitwine_multi-object_compositing_with_text_and_layout_control.md)
 - [\[AAAI 2026\] Improved Masked Image Generation with Knowledge-Augmented Token Representations](improved_masked_image_generation_with_knowledge-augmented_token_representations.md)
 - [\[ICML 2026\] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers](../../ICML2026/image_generation/diagnosing_and_correcting_concept_omission_in_multimodal_diffusion_transformers.md)
-- [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](../../ICCV2025/image_generation/rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
 
 </div>
 

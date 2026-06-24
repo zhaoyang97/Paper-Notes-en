@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] The authors propose Disco-RAG, which explicitly injects Rhetorical Structure Theory (RST) into the RAG pipeline. By parsing intra-chunk RST trees (local hierarchy), constructing inter-chunk rhetorical graphs (global coherence), and generating discourse-aware blueprints to guide responses, it achieves training-free SOTA
+  [ACL 2026][Information Retrieval & RAG][RAG] The authors propose Disco-RAG, which explicitly injects Rhetorical Structure Theory (RST) into the RAG pipeline. By parsing intra-chunk RST trees (local hierarchy), constructing inter-chunk rhetorical graphs (global coherence), and generating discourse-aware blueprints to guide responses, it achieves training-free SOTA performance on three long-document benchmarks: Loong, ASQA, and SciNews (Loong overall +12.74 LLM Score).
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
-  - RST
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "RST"
+  - "Discourse Structure"
+  - "Rhetorical Graph"
+  - "Long Document Reasoning"
 date: 2026-05-08
-content_hash: d7a53b6053e1d2c5
+content_hash: b9c9cc59e95244d3
 ---
+
 # Disco-RAG: Discourse-Aware Retrieval-Augmented Generation
 
 **Conference**: ACL 2026  
@@ -136,10 +140,10 @@ The system is entirely **training-free**. The four roles (parser, graph construc
 ## Related Papers
 
 - [\[ACL 2025\] Typed-RAG: Type-Aware Decomposition of Non-Factoid Questions for Retrieval-Augmented Generation](../../ACL2025/information_retrieval/typed-rag_type-aware_decomposition_of_non-factoid_questions_for_retrieval-augmen.md)
-- [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](../../ICLR2026/information_retrieval/gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
+- [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
 - [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
-- [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
 
 </div>
 

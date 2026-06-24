@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] AttWarp is proposed as a plug-and-play test-time image warping method that utilizes the cross-modal attention maps of an MLLM to perform rectangular grid resampling. By expanding high-attention regions and compressing low-attention ones, it consistently improves accuracy, enhances compositional reasoning, and reduces h
+  [ICLR 2026][Multimodal VLM][MLLM] AttWarp is proposed as a plug-and-play test-time image warping method that utilizes the cross-modal attention maps of an MLLM to perform rectangular grid resampling. By expanding high-attention regions and compressing low-attention ones, it consistently improves accuracy, enhances compositional reasoning, and reduces hallucinations across 5 benchmarks and 4 MLLMs.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - image warping
-  - attention-guided
-  - fine-grained perception
-  - test-time intervention
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "image warping"
+  - "attention-guided"
+  - "fine-grained perception"
+  - "test-time intervention"
 date: 2026-05-08
-content_hash: e95a0965b4f3b45f
+content_hash: a646672db80b39e9
 ---
+
 # Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping
 
 **Conference**: ICLR 2026  
@@ -141,9 +142,9 @@ Distribution Shift Analysis: AttWarp KID=31.5 vs. Non-Rectilinear Warp KID=174.9
 
 - [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
 - [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](../../CVPR2026/multimodal_vlm/token_warping_helps_mllms_look_from_nearby_viewpoints.md)
-- [\[ICLR 2026\] RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models](rar_reversing_visual_attention_re-sinking_for_unlocking_potential_in_multimodal_.md)
-- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
+- [\[ICML 2026\] RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency](../../ICML2026/multimodal_vlm/improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
 - [\[CVPR 2026\] Personalized Image Descriptions from Attention Sequences](../../CVPR2026/multimodal_vlm/personalized_image_descriptions_from_attention_sequences.md)
+- [\[ICLR 2026\] RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models](rar_reversing_visual_attention_re-sinking_for_unlocking_potential_in_multimodal_.md)
 
 </div>
 

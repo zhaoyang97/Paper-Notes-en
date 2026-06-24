@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Chain-of-Thought] This paper proposes a new paradigm called audio-interleaved reasoning, where audio is treated as an active component in the reasoning process rather than a static context. This allows Large Audio-Language Models (LALMs) to dynamically locate and re-listen to audio segments during inference. Through a two-stage SFT+RL t
+  [ICLR 2026][Reinforcement Learning][Audio Understanding] This paper proposes a new paradigm called audio-interleaved reasoning, where audio is treated as an active component in the reasoning process rather than a static context. This allows Large Audio-Language Models (LALMs) to dynamically locate and re-listen to audio segments during inference. Through a two-stage SFT+RL training framework and a structured data generation pipeline, the Echo model is constructed…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Audio Understanding"
+  - "Large Audio-Language Models"
+  - "Audio-Interleaved Reasoning"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 02e73c95376d8276
+content_hash: 70b549e8d81bbf13
 ---
+
 # Echo: Towards Advanced Audio Comprehension via Audio-Interleaved Reasoning
 
 **Conference**: ICLR 2026  
@@ -160,7 +164,7 @@ Echo exceeds Audio-Thinker by +2.41% on MMAU-mini and +1.22% on MMAU.
 - [\[ICLR 2026\] LadderSym: A Multimodal Interleaved Transformer for Music Practice Error Detection](laddersym_a_multimodal_interleaved_transformer_for_music_practice_error_detectio.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](../../NeurIPS2025/reinforcement_learning/incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
 - [\[ICLR 2026\] STAIRS-Former: Spatio-Temporal Attention with Interleaved Recursive Structure Transformer for Offline Multi-Task Multi-Agent Reinforcement Learning](stairs-former_spatio-temporal_attention_with_interleaved_recursive_structure_tra.md)
-- [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](rl_for_reasoning_by_adaptively_revealing_rationales.md)
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
 
 </div>
 

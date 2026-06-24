@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective
 description: >-
-  [CVPR 2026][Object Detection][Mamba] This paper proposes IB-IUMAD, a unified framework for industrial multimodal anomaly detection (RGB+Depth) that enables a single model to learn new objects incrementally. By employing a Mamba decoder to decouple spurious feature coupling between objects and an Information Bottleneck Fusion Module to filter redundant inf
+  [CVPR 2026][Object Detection][Industrial Anomaly Detection] This paper proposes IB-IUMAD, a unified framework for industrial multimodal anomaly detection (RGB+Depth) that enables a single model to learn new objects incrementally. By employing a Mamba decoder to decouple spurious feature coupling between objects and an Information Bottleneck Fusion Module to filter redundant information from fused features, the framework significantly mitigates catastrophic forgetting in incre…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Mamba
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Industrial Anomaly Detection"
+  - "Multimodal Fusion"
+  - "Incremental Learning"
+  - "Information Bottleneck"
+  - "Mamba"
 date: 2026-05-08
-content_hash: 29c91f3b709eface
+content_hash: 41e1fdf6f071ad44
 ---
+
 # Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective
 
 **Conference**: CVPR 2026  
@@ -138,8 +143,8 @@ Ablation of core modules on MVTec 3D-AD (I-AUROC / FM):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

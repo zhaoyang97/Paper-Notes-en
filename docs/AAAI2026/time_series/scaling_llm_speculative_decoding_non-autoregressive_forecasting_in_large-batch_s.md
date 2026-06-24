@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios
 description: >-
-  [AAAI 2026][Time Series][Speculative Decoding] This paper proposes SpecFormer, a non-autoregressive draft model architecture that integrates unidirectional and bidirectional attention. By reducing reliance on large prefi…
+  [AAAI 2026][Time Series][Speculative Decoding] This paper proposes SpecFormer, a non-autoregressive draft model architecture that integrates unidirectional and bidirectional attention. By reducing reliance on large prefix trees and minimizing position-dependent parameters, SpecFormer achieves consistent LLM inference acceleration in large-batch scenarios.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "LLM Acceleration"
   - "SpecFormer"
 date: 2026-05-08
-content_hash: 9856b9e4778593ce
+content_hash: 0fda9904da335f9d
 ---
 
 # Scaling LLM Speculative Decoding: Non-Autoregressive Forecasting in Large-Batch Scenarios
@@ -196,8 +196,8 @@ The effect of self-distillation is highly significant: without it, $\kappa$ drop
 - [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](../../ICLR2026/time_series/from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
 - [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
 - [\[AAAI 2026\] IdealTSF: Can Non-Ideal Data Contribute to Enhancing Time Series Forecasting?](idealtsf_can_non-ideal_data_contribute_to_enhancing_the_performance_of_time_seri.md)
-- [\[AAAI 2026\] A Theoretical Analysis of Detecting Large Model-Generated Time Series](a_theoretical_analysis_of_detecting_large_model-generated_time_series.md)
-- [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](../../NeurIPS2025/time_series/parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
+- [\[ICLR 2026\] Lost in the Non-convex Loss Landscape: How to Fine-tune the Large Time Series Model?](../../ICLR2026/time_series/lost_in_the_non-convex_loss_landscape_how_to_fine-tune_the_large_time_series_mod.md)
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](../../ICLR2026/time_series/efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 
 </div>
 

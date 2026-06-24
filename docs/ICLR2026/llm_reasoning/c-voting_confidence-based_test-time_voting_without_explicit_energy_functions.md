@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] C-Voting: Confidence-Based Test-Time Voting without Explicit Energy Functions
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] For "recurrent" reasoning models that repeatedly apply the same layer, this paper proposes C-voting—a test-time voting strategy that requires no explicit energy function. By sampling multiple trajectories from random initial hidden states and selecting the one with the "highest average top-1 probability" (i.e., the mos
+  [ICLR2026][Reasoning][Test-time scaling] For "recurrent" reasoning models that repeatedly apply the same layer, this paper proposes C-voting—a test-time voting strategy that requires no explicit energy function. By sampling multiple trajectories from random initial hidden states and selecting the one with the "highest average top-1 probability" (i.e., the most confident), it outperforms energy-based voting (E-voting) on AKOrN by 4.9% in Sudoku-hard. Furthermore…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "recurrent models"
+  - "voting strategy"
+  - "confidence calibration"
+  - "Sudoku solving"
 date: 2026-05-08
-content_hash: f129e4f19577eab2
+content_hash: 2d3f16988d76fd20
 ---
+
 # C-Voting: Confidence-Based Test-Time Voting without Explicit Energy Functions
 
 **Conference**: ICLR2026  
@@ -124,15 +130,16 @@ When applying C-voting to the **same AKOrN model** instead of E-voting (Sudoku-h
 - Value: ⭐⭐⭐⭐ Practical, parallelizable, and model-agnostic scaling strategy.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Stable Voting and the Splitting of Cycles](../../AAAI2026/llm_reasoning/stable_voting_and_the_splitting_of_cycles.md)
-- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](understanding_the_role_of_training_data_in_test-time_scaling.md)
-- [\[ICLR 2026\] Optimal Aggregation of LLM and PRM Signals for Efficient Test-Time Scaling](optimal_aggregation_of_llm_and_prm_signals_for_efficient_test-time_scaling.md)
-- [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
+- [\[ICLR 2026\] ContextPRM: Leveraging Contextual Coherence for multi-domain Test-Time Scaling](contextprm_leveraging_contextual_coherence_for_multi-domain_test-time_scaling.md)
+- [\[ICLR 2026\] CaTS: Calibrated Test-Time Scaling for Efficient LLM Reasoning](cats_calibrated_test-time_scaling_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Deep Think with Confidence](deep_think_with_confidence.md)
 
 </div>
 

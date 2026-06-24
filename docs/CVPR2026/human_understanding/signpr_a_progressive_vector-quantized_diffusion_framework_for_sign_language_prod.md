@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SignPR: A Progressive Vector-Quantized Diffusion Framework for Sign Language Production
 description: >-
-  [CVPR 2026][Human Understanding][Text2Pose] Addressing the gloss-free Text2Pose task, SignPR proposes a "structural + temporal" dual-progressive vector-quantized diffusion framework. It utilizes a structured VQVAE to decompose each frame's pose into semantic-level (global) and regional-level (hand/face/body) discrete tokens. The diffusion process first generates
+  [CVPR 2026][Human Understanding][Sign Language Production] Addressing the gloss-free Text2Pose task, SignPR proposes a "structural + temporal" dual-progressive vector-quantized diffusion framework. It utilizes a structured VQVAE to decompose each frame's pose into semantic-level (global) and regional-level (hand/face/body) discrete tokens. The diffusion process first generates semantically consistent coarse poses before refining regional details. During inference…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Text2Pose
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Sign Language Production"
+  - "Text2Pose"
+  - "Vector-Quantized Diffusion"
+  - "Discrete Diffusion"
+  - "Temporal Coherence"
 date: 2026-05-08
-content_hash: 79c351f016d808d9
+content_hash: 5e8eb82bd9a108d0
 ---
+
 # SignPR: A Progressive Vector-Quantized Diffusion Framework for Sign Language Production
 
 **Conference**: CVPR 2026  
@@ -126,10 +131,10 @@ On Phoenix14T TEST:
 ## Related Papers
 
 - [\[CVPR 2026\] Focal–General Diffusion Model with Semantic Consistent Guidance for Sign Language Production](focal-general_diffusion_model_with_semantic_consistent_guidance_for_sign_languag.md)
-- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/human_understanding/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
 - [\[CVPR 2026\] BoostSLT: Boosting Sign Language Translation via a Plug-and-Play Diffusion-Based Semantic Enhancer](boostslt_boosting_sign_language_translation_via_a_plug-and-play_diffusion-based_.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
 - [\[CVPR 2026\] Learning Effective Sign Features without Text for Gloss-free Sign Language Translation](learning_effective_sign_features_without_text_for_gloss-free_sign_language_trans.md)
+- [\[CVPR 2026\] Progressive Guessing to Fixed Point: Rethinking Human Motion Prediction with Deep Equilibrium Models](progressive_guessing_to_fixed_point_rethinking_human_motion_prediction_with_deep.md)
+- [\[ECCV 2024\] A Simple Baseline for Spoken Language to Sign Language Translation with 3D Avatars](../../ECCV2024/human_understanding/a_simple_baseline_for_spoken_language_to_sign_language_trans.md)
 
 </div>
 

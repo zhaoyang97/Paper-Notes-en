@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Neural Sheaf Diffusion
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper identifies that Neural Sheaf Diffusion (NSD) loses its theoretically guaranteed resistance to collapse at deep layers because the "disagreement signal" of the sheaf Laplacian vanishes as diffusion converges. DNSD replaces the Laplacian with a **sheaf adjacency operator** and incorporates LayerNorm, odd activ
+  [ICML2026][Graph Learning][Neural Sheaf Diffusion] This paper identifies that Neural Sheaf Diffusion (NSD) loses its theoretically guaranteed resistance to collapse at deep layers because the "disagreement signal" of the sheaf Laplacian vanishes as diffusion converges. DNSD replaces the Laplacian with a **sheaf adjacency operator** and incorporates LayerNorm, odd activation functions, and per-stalk gating. This allows the sheaf architecture to be stably stacked up to 16 layer…
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML2026"
+  - "Graph Learning"
+  - "Neural Sheaf Diffusion"
+  - "Deep GNN"
+  - "Sheaf Adjacency Operator"
+  - "Oversmoothing"
+  - "Graph Foundation Models"
 date: 2026-05-08
-content_hash: 835a35e995475a0f
+content_hash: 32323639e7143007
 ---
+
 # Deep Neural Sheaf Diffusion
 
 **Conference**: ICML2026  
@@ -128,7 +134,7 @@ On real heterophilic benchmarks (Roman Empire, Amazon Ratings, Minesweeper, Tolo
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](../../ICLR2026/graph_learning/cooperative_sheaf_neural_networks.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
 - [\[ICML 2026\] What Makes a Desired Graph for Relational Deep Learning?](what_makes_a_desired_graph_for_relational_deep_learning.md)
-- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
+- [\[ICLR 2026\] Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations](../../ICLR2026/graph_learning/geometric_graph_neural_diffusion_for_stable_molecular_dynamics_simulations.md)
 
 </div>
 

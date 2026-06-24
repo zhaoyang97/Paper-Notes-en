@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines
 description: >-
-  [AAAI 2026][Image Generation][backdoor attack] This paper exposes a backdoor vulnerability in the ControlNet conditional branch: injecting as little as 1–5% poisoned data suffices to implant a backdoor without modifying…
+  [AAAI 2026][Image Generation][backdoor attack] This paper exposes a backdoor vulnerability in the ControlNet conditional branch: injecting as little as 1–5% poisoned data suffices to implant a backdoor without modifying the diffusion backbone. Upon trigger activation, the model ignores text prompts and generates attacker-specified content. Clean fine-tuning (CFT) is proposed as a practical defense.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "supply-chain security"
   - "clean fine-tuning"
 date: 2026-05-08
-content_hash: b8173ddd0d2c8ffd
+content_hash: 773fd932cc9b5fdf
 ---
 
 # Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines
@@ -151,11 +151,11 @@ Homogeneous data (faces) provides consistent gradients that effectively overwrit
 
 ## Related Papers
 
+- [\[CVPR 2026\] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](../../CVPR2026/image_generation/accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)
 - [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](../../CVPR2026/image_generation/ahs_adaptive_head_synthesis.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](../../ICLR2026/image_generation/do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 - [\[AAAI 2026\] Conditional Diffusion Model for Multi-Agent Dynamic Task Decomposition](conditional_diffusion_model_for_multi-agent_dynamic_task_dec.md)
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](../../CVPR2026/image_generation/dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
-- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](../../ICCV2025/image_generation/generating_multi-image_synthetic_data_for_text-to-image_customization.md)
-- [\[AAAI 2026\] Targeted Data Protection for Diffusion Model by Matching Training Trajectory](targeted_data_protection_for_diffusion_model_by_matching_training_trajectory.md)
 
 </div>
 

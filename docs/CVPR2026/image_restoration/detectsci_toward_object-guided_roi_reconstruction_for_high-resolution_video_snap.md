@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging
 description: >-
-  [CVPR 2026][Image Restoration][Object Detection] Addressing the pain points of high-resolution video Snapshot Compressive Imaging (SCI), where "full-frame reconstruction consumes excessive memory while backgrounds dominate but lack information," DetectSCI proposes a workflow that performs **object detection directly on encoded measurements** and reconstructs only the
+  [CVPR 2026][Image Restoration][Snapshot Compressive Imaging] Addressing the pain points of high-resolution video Snapshot Compressive Imaging (SCI), where "full-frame reconstruction consumes excessive memory while backgrounds dominate but lack information," DetectSCI proposes a workflow that performs **object detection directly on encoded measurements** and reconstructs only the Regions of Interest (ROI) based on detected boxes. Its detector utilizes weight-sharing Mamba-Impl…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Object Detection
-  - Mamba
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Snapshot Compressive Imaging"
+  - "ROI Reconstruction"
+  - "Object Detection"
+  - "Mamba"
+  - "Frequency Domain Attention"
 date: 2026-05-08
-content_hash: 2a7018d85d86f95f
+content_hash: 2791ee2ed7698e1e
 ---
+
 # DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging
 
 **Conference**: CVPR 2026  
@@ -147,8 +151,8 @@ FM Frequency Bands (B1 is without FM):
 - [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](../../ICML2026/image_restoration/phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
 - [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
 - [\[CVPR 2026\] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing](multi-scale_gradient-guided_unrolling_architecture_with_adaptive_mamba_for_compr.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
-- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
+- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](textovsr_text-guided_real-world_opera_video_super-resolution.md)
 
 </div>
 

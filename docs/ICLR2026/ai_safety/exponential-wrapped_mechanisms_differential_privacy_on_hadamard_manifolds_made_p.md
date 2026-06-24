@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Exponential-Wrapped Mechanisms: Differential Privacy on Hadamard Manifolds Made Practical
 description: >-
-  [ICLR 2026][AI Safety][Gaussian DP] This paper systematizes the simple technique of "sampling in the tangent space + push-forward via the exponential map" into Exponential-Wrapped Laplace/Gaussian mechanisms. It **unifies the implementation of $\epsilon$-DP, $(\epsilon, \delta)$-DP, GDP, and RDP on general Hadamard manifolds for the first time while comp
+  [ICLR 2026][AI Safety][Differential Privacy] This paper systematizes the simple technique of "sampling in the tangent space + push-forward via the exponential map" into Exponential-Wrapped Laplace/Gaussian mechanisms. It **unifies the implementation of $\epsilon$-DP, $(\epsilon, \delta)$-DP, GDP, and RDP on general Hadamard manifolds for the first time while completely eliminating MCMC sampling**, making differential privacy for manifold data truly computable and scalable.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Gaussian DP
-  - Rényi DP
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Hadamard Manifolds"
+  - "Exponential-Wrapped Distributions"
+  - "Gaussian DP"
+  - "Rényi DP"
+  - "Fréchet Mean"
 date: 2026-05-08
-content_hash: 4445607dc922baec
+content_hash: 1d78f449cba3bfa9
 ---
+
 # Exponential-Wrapped Mechanisms: Differential Privacy on Hadamard Manifolds Made Practical
 
 **Conference**: ICLR 2026  
@@ -120,11 +125,11 @@ Covariance descriptors of $5 \times 5$ were extracted from OCTMNIST images (gray
 
 ## Related Papers
 
+- [\[ICLR 2026\] Concept-Aware Privacy Mechanisms for Defending Embedding Inversion Attacks](concept-aware_privacy_mechanisms_for_defending_embedding_inversion_attacks.md)
 - [\[ICLR 2026\] Beyond Membership: Limitations of Add/Remove Adjacency in Differential Privacy](beyond_membership_limitations_of_addremove_adjacency_in_differential_privacy.md)
 - [\[ICLR 2026\] Convergent Differential Privacy Analysis for General Federated Learning](convergent_differential_privacy_analysis_for_general_federated_learning.md)
 - [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](federated_learning_of_quantile_inference_under_local_differential_privacy.md)
 - [\[ICLR 2026\] INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy](ino-sgd_addressing_utility_imbalance_under_individualized_differential_privacy.md)
-- [\[NeurIPS 2025\] Sequentially Auditing Differential Privacy](../../NeurIPS2025/ai_safety/sequentially_auditing_differential_privacy.md)
 
 </div>
 

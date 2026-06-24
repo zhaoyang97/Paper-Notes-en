@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal
 description: >-
-  [ACL 2026][LLM (Other)][cloze surprisal] The paper systematically compares cloze responses and GPT-2 surprisal regarding their explanatory power for human word-by-word reading times. Through three types of probabilistic interventions, it demonstrates that the advantage of LM surprisal primarily stems from higher probability resolution, the ability to distingu
+  [ACL2026][LLM (Other)][cloze surprisal] The paper systematically compares cloze responses and GPT-2 surprisal regarding their explanatory power for human word-by-word reading times. Through three types of probabilistic interventions, it demonstrates that the advantage of LM surprisal primarily stems from higher probability resolution, the ability to distinguish semantically similar words, and the assignment of fine-grained probabilities to low-frequency words.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - cloze surprisal
-  - LM surprisal
+  - "ACL2026"
+  - "LLM (Other)"
+  - "cloze surprisal"
+  - "LM surprisal"
+  - "reading time"
+  - "language prediction"
+  - "cognitive modeling"
 date: 2026-05-08
-content_hash: d70bcb3711e36e7c
+content_hash: 08aea3fbec56deed
 ---
+
 # Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal
 
 **Conference**: ACL2026  
@@ -127,7 +131,7 @@ Ours does not train neural models; statistical modeling utilizes linear mixed-ef
 - [\[ACL 2026\] Expect the Unexpected? Testing the Surprisal of Salient Entities](expect_the_unexpected_testing_the_surprisal_of_salient_entities.md)
 - [\[ACL 2026\] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal](an_existence_proof_for_neural_language_models_that_can_explain_garden-path_effec.md)
 - [\[ACL 2026\] Mind the Gap: How Elicitation Protocols Shape the Stated-Revealed Preference Gap in Language Models](mind_the_gap_how_elicitation_protocols_shape_the_stated-revealed_preference_gap_.md)
-- [\[ACL 2026\] Why Did Apple Fall: Evaluating Curiosity in Large Language Models](why_did_apple_fall_evaluating_curiosity_in_large_language_models.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal](../../ICML2026/llm_nlp/ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Subject-level Inference for Realistic Text Anonymization Evaluation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] SPIA proposes the first subject-level PII inference evaluation benchmark (675 documents, 1,712 subjects, 7,040 PII), revealing that even when 90%+ of PII spans are masked, the subject-level inference protection rate can be as low as 33%, and focusing anonymization on a single target subject leads to greater exposure of
+  [ACL 2026][LLM Safety][Text anonymization] SPIA proposes the first subject-level PII inference evaluation benchmark (675 documents, 1,712 subjects, 7,040 PII), revealing that even when 90%+ of PII spans are masked, the subject-level inference protection rate can be as low as 33%, and focusing anonymization on a single target subject leads to greater exposure of non-target subjects.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Text anonymization"
+  - "privacy evaluation"
+  - "subject-level inference"
+  - "PII inference"
+  - "multi-subject protection"
 date: 2026-05-08
-content_hash: d5114ee784e24fea
+content_hash: 9ad6ccf2212d14de
 ---
+
 # Subject-level Inference for Realistic Text Anonymization Evaluation
 
 **Conference**: ACL 2026  
@@ -140,10 +146,10 @@ This work represents an evaluation benchmark and framework and does not involvin
 ## Related Papers
 
 - [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
-- [\[ACL 2026\] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization](look_twice_before_you_leap_a_rational_framework_for_localized_adversarial_anonym.md)
+- [\[ICLR 2026\] DP-Fusion: Token-Level Differentially Private Inference for Large Language Models](../../ICLR2026/llm_safety/dp-fusion_token-level_differentially_private_inference_for_large_language_models.md)
 - [\[ACL 2026\] De-Anonymization at Scale via Tournament-Style Attribution](de-anonymization_at_scale_via_tournament-style_attribution.md)
+- [\[ACL 2026\] Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization](look_twice_before_you_leap_a_rational_framework_for_localized_adversarial_anonym.md)
 - [\[NeurIPS 2025\] Music Arena: Live Evaluation for Text-to-Music](../../NeurIPS2025/llm_safety/music_arena_live_evaluation_for_text-to-music.md)
-- [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
 
 </div>
 

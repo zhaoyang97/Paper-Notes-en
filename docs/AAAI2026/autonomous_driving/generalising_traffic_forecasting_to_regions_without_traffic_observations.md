@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenCast: Generalizing Traffic Forecasting to Regions without Observations
 description: >-
-  [AAAI 2026][Autonomous Driving][traffic forecasting] This paper proposes GenCast, which achieves generalization of traffic forecasting from sensor-covered regions to unobserved continuous regions via three key innovation…
+  [AAAI 2026][Autonomous Driving][traffic forecasting] This paper proposes GenCast, which achieves generalization of traffic forecasting from sensor-covered regions to unobserved continuous regions via three key innovations: a physics-informed neural network (incorporating the LWR traffic equation as a soft constraint), dynamic external weather signal fusion, and a spatial grouping module. GenCast consistently outperforms existing state-of-the-art methods across five real-world…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "graph neural networks"
   - "generalization"
 date: 2026-05-08
-content_hash: c197ba4db5080772
+content_hash: 7bec513670562ba0
 ---
 
 # GenCast: Generalizing Traffic Forecasting to Regions without Observations
@@ -158,11 +158,11 @@ GenCast variants also outperform all baselines on the solar energy NREL dataset,
 
 ## Related Papers
 
+- [\[ACL 2025\] Embracing Large Language Models in Traffic Flow Forecasting](../../ACL2025/autonomous_driving/embracing_large_language_models_in_traffic_flow_forecasting.md)
 - [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](meta_dynamic_graph_for_traffic_flow_prediction.md)
 - [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](../../CVPR2026/autonomous_driving/generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[AAAI 2026\] AI-based Traffic Modeling for Network Security and Privacy: Challenges Ahead](ai-based_traffic_modeling_for_network_security_and_privacy_challenges_ahead.md)
-- [\[AAAI 2026\] RAST: A Retrieval Augmented Spatio-Temporal Framework for Traffic Prediction](rast_a_retrieval_augmented_spatio-temporal_framework_for_traffic_prediction.md)
-- [\[AAAI 2026\] TSBOW: Traffic Surveillance Benchmark for Occluded Vehicles Under Various Weather Conditions](tsbow_traffic_surveillance_benchmark_for_occluded_vehicles_under_various_weather.md)
+- [\[ICML 2025\] SafeMap: Robust HD Map Construction from Incomplete Observations](../../ICML2025/autonomous_driving/safemap_robust_hd_map_construction_from_incomplete_observations.md)
 
 </div>
 

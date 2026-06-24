@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] Ours proposes a Probability Density Geodesic Flow Matching (PDG-FM) framework, replacing the stochastic noise-to-data diffusion process with data-to-data deterministic flow matching. By utilizing probability density-based geodesic optimization, the interpolation paths are forced to traverse high-density regions of the
+  [CVPR 2026][3D Vision][Novel View Synthesis] Ours proposes a Probability Density Geodesic Flow Matching (PDG-FM) framework, replacing the stochastic noise-to-data diffusion process with data-to-data deterministic flow matching. By utilizing probability density-based geodesic optimization, the interpolation paths are forced to traverse high-density regions of the data manifold, achieving more geometrically consistent novel view synthesis.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Flow Matching"
+  - "Geodesic"
+  - "Probability Density Manifold"
+  - "Data-to-Data Mapping"
 date: 2026-05-08
-content_hash: 1da730fc4f0fe304
+content_hash: 0a0aea4aca80b7f6
 ---
+
 # GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -149,7 +154,7 @@ Geodesic FM vs Linear FM:
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 - [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 - [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
-- [\[ICML 2026\] Geodesic Flow Matching for Denoising High-Dimensional Structured Representations](../../ICML2026/3d_vision/geodesic_flow_matching_for_denoising_high-dimensional_structured_representations.md)
+- [\[CVPR 2026\] Charge: A Comprehensive Novel View Synthesis Benchmark and Dataset to Bind Them All](charge_a_comprehensive_novel_view_synthesis_benchmark_and_dataset_to_bind_them_a.md)
 
 </div>
 

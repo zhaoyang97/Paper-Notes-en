@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] DextER reformulates "language-driven multi-finger dexterous grasping" into an autoregressive sequence—the model first generates **contact tokens** (specifying which finger link contacts which 3D position on the object surface) and then generates grasp action tokens. By using "contact reasoning" as an intermediate step
+  [CVPR 2026][Robotics][Dexterous Grasping] DextER reformulates "language-driven multi-finger dexterous grasping" into an autoregressive sequence—the model first generates **contact tokens** (specifying which finger link contacts which 3D position on the object surface) and then generates grasp action tokens. By using "contact reasoning" as an intermediate step for an embodied Chain-of-Thought, the success rate on DexGYS is pushed to 67.14% (+3.83 p.p.)…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Dexterous Grasping"
+  - "Embodied Reasoning"
+  - "Contact Prediction"
+  - "Autoregressive Generation"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: 32fb86af1b2fbecb
+content_hash: 3469ca48fa23eaea
 ---
+
 # DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning
 
 **Conference**: CVPR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PLoP: Precise LoRA Placement for Efficient Finetuning of Large Models
 description: >-
-  [ICLR 2026][LLM Efficiency][LoRA] PLoP utilizes a gradient-free, near-zero-overhead "Normalized Feature Norm" (NFN) to automatically determine which module types should receive LoRA adapters. By placing adapters on modules with the lowest alignment to the task, PLoP consistently outperforms (or at least matches) common heuristics, such as "Attention-on
+  [ICLR 2026][LLM Efficiency][LoRA] PLoP utilizes a gradient-free, near-zero-overhead "Normalized Feature Norm" (NFN) to automatically determine which module types should receive LoRA adapters. By placing adapters on modules with the lowest alignment to the task, PLoP consistently outperforms (or at least matches) common heuristics, such as "Attention-only" or "MLP-only," across both SFT and RL post-training scenarios.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LoRA"
+  - "adapter placement"
+  - "parameter-efficient fine-tuning"
+  - "module-data alignment"
+  - "feature norm"
 date: 2026-05-08
-content_hash: 613c11ab73e55e69
+content_hash: 5ea6dcc363f24983
 ---
+
 # PLoP: Precise LoRA Placement for Efficient Finetuning of Large Models
 
 **Conference**: ICLR 2026  

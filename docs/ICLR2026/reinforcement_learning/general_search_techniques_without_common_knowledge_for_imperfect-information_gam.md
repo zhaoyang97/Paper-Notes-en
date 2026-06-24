@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess
 description: >-
-  [ICLR 2026][Reinforcement Learning][Fog of War chess] This paper proposes Obscuro, which extends real-time imperfect-information search to Fog of War chess by employing knowledge-limited subgame solving that avoids enumerating common knowledge sets, single-sided GT-CFR expansion, and policy purification, achieving superhuman performance in this game for the first time.
+  [ICLR2026][Reinforcement Learning][Imperfect-information games] This paper proposes Obscuro, which extends real-time imperfect-information search to Fog of War chess by employing knowledge-limited subgame solving that avoids enumerating common knowledge sets, single-sided GT-CFR expansion, and policy purification, achieving superhuman performance in this game for the first time.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Fog of War chess
-  - CFR
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Imperfect-information games"
+  - "subgame solving"
+  - "Fog of War chess"
+  - "CFR"
+  - "game search"
 date: 2026-05-08
-content_hash: 132f4541ce6ccc9c
+content_hash: 09f4b73ed65922f1
 ---
+
 # General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess
 
 **Conference**: ICLR2026  

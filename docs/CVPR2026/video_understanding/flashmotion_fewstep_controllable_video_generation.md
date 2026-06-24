@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] Ours proposes FlashMotion, the first three-stage training framework to achieve few-step (4-step) trajectory-controllable video generation. By employing a strategy of training a trajectory adapter $\rightarrow$ distilling a fast generator $\rightarrow$ fine-tuning the adapter with a hybrid adversarial-diffusion approach
+  [CVPR 2026][Video Understanding][Trajectory-Controllable Video Generation] Ours proposes FlashMotion, the first three-stage training framework to achieve few-step (4-step) trajectory-controllable video generation. By employing a strategy of training a trajectory adapter $\rightarrow$ distilling a fast generator $\rightarrow$ fine-tuning the adapter with a hybrid adversarial-diffusion approach, it simultaneously outperforms existing multi-step methods in visual quality and tra…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Trajectory-Controllable Video Generation"
+  - "Few-Step Distillation"
+  - "Adversarial Training"
+  - "Diffusion Discriminator"
+  - "Video Acceleration"
 date: 2026-05-08
-content_hash: 42e5a02b5e8557b0
+content_hash: 93fbfea2886693fd
 ---
+
 # FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ In early training, high $\lambda$ allows diffusion loss to lead, positioning obj
 
 ## Related Papers
 
-- [\[CVPR 2026\] LAMP: Language-Assisted Motion Planning for Controllable Video Generation](lamp_language-assisted_motion_planning_for_controllable_video_generation.md)
-- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
-- [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
-- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
-- [\[CVPR 2026\] EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses](egocontrol_controllable_egocentric_video_generation_via_3d_full-body_poses.md)
+- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
+- [\[CVPR 2026\] DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)
+- [\[CVPR 2026\] Envisioning the Future, One Step at a Time](envisioning_the_future_one_step_at_a_time.md)
+- [\[CVPR 2026\] Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)
+- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
 
 </div>
 

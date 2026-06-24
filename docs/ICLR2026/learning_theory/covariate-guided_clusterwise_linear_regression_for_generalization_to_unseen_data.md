@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Covariate-Guided Clusterwise Linear Regression for Generalization to Unseen Data
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Targeting regression tasks where tabular data is only locally linear, this paper proposes CG-CLR: it uses a proxy network to generate local coefficients for each sample, then routes them via **hard vector quantization** to one of $K$ shared linear regressors. This allows **simultaneous learning of "how to allocate new
+  [ICLR2026][Learning Theory][clusterwise regression] Targeting regression tasks where tabular data is only locally linear, this paper proposes CG-CLR: it uses a proxy network to generate local coefficients for each sample, then routes them via **hard vector quantization** to one of $K$ shared linear regressors. This allows **simultaneous learning of "how to allocate new samples" and "linear models for each cluster"** within a single gradient loop…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Tabular Regression"
+  - "Clusterwise Linear Regression"
+  - "clusterwise regression"
+  - "covariate-guided routing"
+  - "vector quantization"
+  - "convergence analysis"
+  - "PAC generalization bounds"
 date: 2026-05-08
-content_hash: 429af670d5434220
+content_hash: 11d40a5fd5c54b15
 ---
+
 # Covariate-Guided Clusterwise Linear Regression for Generalization to Unseen Data
 
 **Conference**: ICLR2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack
 description: >-
-  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedCSPACK, a personalized federated learning method based on cosine-similarity-guided sparse parameter packing and double-weight aggregation. By performin…
+  [AAAI 2026][Optimization][Federated Learning] This paper proposes FedCSPACK, a personalized federated learning method based on cosine-similarity-guided sparse parameter packing and double-weight aggregation. By performing parameter selection and sharing at the pack level, FedCSPACK simultaneously addresses data heterogeneity and client resource constraints, achieving 2–5× faster training, up to 96% reduction in communication overhead, and a 3.34% improvement in model accuracy…
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Sparse Communication"
   - "Personalized Federated Learning"
 date: 2026-05-08
-content_hash: 12e422ef4b699dd4
+content_hash: ce346fc408647470
 ---
 
 # Tackling Resource-Constrained and Data-Heterogeneity in Federated Learning with Double-Weight Sparse Pack
@@ -209,10 +209,10 @@ Communication compression: 96.0% on EMNIST (18.18 GB → 0.73 GB) and 27× compr
 ## Related Papers
 
 - [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
+- [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](../../ICLR2026/optimization/unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
 - [\[AAAI 2026\] FedPM: Federated Learning Using Second-order Optimization with Preconditioned Mixing of Local Parameters](fedpm_federated_learning_using_second-order_optimization_with_preconditioned_mix.md)
-- [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](../../NeurIPS2025/optimization/efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
-- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[ICML 2025\] FedSWA: Improving Generalization in Federated Learning with Highly Heterogeneous Data via Momentum-Based Stochastic Controlled Weight Averaging](../../ICML2025/optimization/fedswa_improving_generalization_in_federated_learning_with_highly_heterogeneous_.md)
 
 </div>
 

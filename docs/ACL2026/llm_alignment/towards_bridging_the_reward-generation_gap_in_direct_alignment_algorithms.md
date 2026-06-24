@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms
 description: >-
-  [ACL 2026][Alignment & RLHF][DPO/SimPO] This paper identifies the "reward-generation gap" in Direct Alignment Algorithms (DAAs)—a mismatch between training objectives and autoregressive decoding dynamics. The authors propose POET (Prefix-Oriented Equal-length Training), which implicitly constrains the token-level MDP to converge at all timesteps by truncatin
+  [ACL 2026 Findings][LLM Alignment][Direct Alignment Algorithms] This paper identifies the "reward-generation gap" in Direct Alignment Algorithms (DAAs)—a mismatch between training objectives and autoregressive decoding dynamics. The authors propose POET (Prefix-Oriented Equal-length Training), which implicitly constrains the token-level MDP to converge at all timesteps by truncating preference pairs to the length of the shorter response, achieving up to an 11.8 percentage poi…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - DPO/SimPO
+  - "ACL 2026 Findings"
+  - "LLM Alignment"
+  - "Direct Alignment Algorithms"
+  - "Prefix Importance"
+  - "Equal-length Training"
+  - "Reward-Generation Gap"
+  - "DPO/SimPO"
 date: 2026-05-08
-content_hash: d835a6aea4b94184
+content_hash: 00d98c0e927687a3
 ---
+
 # Towards Bridging the Reward-Generation Gap in Direct Alignment Algorithms
 
 **Conference**: ACL 2026 Findings  
@@ -132,7 +137,7 @@ The optimization objectives of DPO/SimPO are not modified; only the input data c
 - [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
 - [\[ACL 2026\] RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation](rbtact_rebuttal_as_supervision_for_actionable_review_feedback_generation.md)
 - [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](../../CVPR2026/llm_alignment/bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
-- [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](../../ICLR2026/llm_alignment/is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
+- [\[ICLR 2026\] StoryAlign: Evaluating and Training Reward Models for Story Generation](../../ICLR2026/llm_alignment/storyalign_evaluating_and_training_reward_models_for_story_generation.md)
 
 </div>
 

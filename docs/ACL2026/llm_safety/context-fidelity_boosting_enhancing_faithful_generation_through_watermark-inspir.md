@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding
 description: >-
-  [ACL 2026][LLM Safety][faithfulness hallucination] CFB repurposes the additive logit bias technique used in text watermarking—applying a bonus to tokens "supported by the input context" at each decoding step. It proposes three progressive strategies: static, context-aware (adaptive scaling via JSD), and token-aware (redistribution via attention + semantic relevance). T
+  [ACL 2026][LLM Safety][faithfulness hallucination] CFB repurposes the additive logit bias technique used in text watermarking—applying a bonus to tokens "supported by the input context" at each decoding step. It proposes three progressive strategies: static, context-aware (adaptive scaling via JSD), and token-aware (redistribution via attention + semantic relevance). This approach consistently improves faithfulness metrics in summarization and QA across multiple models with n…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - faithfulness hallucination
-  - logit shaping
-  - watermark
-  - context-aware decoding
-  - RAG
+  - "ACL 2026"
+  - "LLM Safety"
+  - "faithfulness hallucination"
+  - "logit shaping"
+  - "watermark"
+  - "context-aware decoding"
+  - "RAG"
 date: 2026-05-08
-content_hash: b8aed7ca147d05d5
+content_hash: baa31f5296799c88
 ---
+
 # Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding
 
 **Conference**: ACL 2026  
@@ -156,10 +157,10 @@ Human + GPT-4o judge evaluation (100 cases each for CNN-DM and NQ-Swap):
 
 ## Related Papers
 
+- [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](../../ICLR2026/llm_safety/codegenguard_a_watermark_for_code_generation_models.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
 - [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](membership_inference_attacks_on_llm-based_recommender_systems.md)
-- [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
 
 </div>

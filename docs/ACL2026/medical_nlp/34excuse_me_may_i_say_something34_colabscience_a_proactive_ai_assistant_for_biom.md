@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] "Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery
 description: >-
-  [ACL 2026][Medical NLP][Reinforcement Learning] CoLabScience utilizes the PULI (Positive-Unlabeled Learning for Intervention) framework to train an LLM assistant capable of **proactively deciding when and how to intervene** in biomedical team discussions. It leverages GRPO and an RL coordinator to automatically identify optimal intervention timings and generate scie
+  [ACL 2026][Medical LLM][Proactive Intervention] CoLabScience utilizes the PULI (Positive-Unlabeled Learning for Intervention) framework to train an LLM assistant capable of **proactively deciding when and how to intervene** in biomedical team discussions. It leverages GRPO and an RL coordinator to automatically identify optimal intervention timings and generate scientific suggestions from streaming dialogues.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Proactive Intervention"
+  - "Scientific Collaboration"
+  - "Positive-Unlabeled Learning"
+  - "Reinforcement Learning"
+  - "Biomedical Dialogue"
 date: 2026-05-08
-content_hash: 6c501bc3bdcad093
+content_hash: 6abe0c756145f30f
 ---
+
 # "Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery
 
 **Conference**: ACL 2026  

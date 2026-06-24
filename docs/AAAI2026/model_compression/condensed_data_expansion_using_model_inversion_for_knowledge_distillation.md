@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Condensed Data Expansion Using Model Inversion for Knowledge Distillation
 description: >-
-  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes using condensed datasets as prototypes to guide the model inversion (MI) process. A feature-alignment discriminator enforces distributional consi…
+  [AAAI 2026][Model Compression][Knowledge Distillation] This paper proposes using condensed datasets as prototypes to guide the model inversion (MI) process. A feature-alignment discriminator enforces distributional consistency between synthesized data and condensed samples, thereby expanding the condensed dataset for knowledge distillation. The method achieves up to 11.4% improvement over standard MI-based distillation on CIFAR/ImageNet.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Feature Alignment"
   - "Data-Free Distillation"
 date: 2026-05-08
-content_hash: f46e5824cab7303e
+content_hash: 1e79556c14cd51a9
 ---
 
 # Condensed Data Expansion Using Model Inversion for Knowledge Distillation
@@ -131,9 +131,9 @@ The largest gains are observed on heterogeneous teacher–student pairs (R34→M
 
 - [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](../../ICLR2026/model_compression/pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
+- [\[ICLR 2026\] Knowledge Distillation as Decontamination? Revisiting the "Data Laundering" Concern in Classification Tasks](../../ICLR2026/model_compression/knowledge_distillation_as_decontamination_revisiting_the_data_laundering_concern.md)
 - [\[AAAI 2026\] Pairing-free Group-level Knowledge Distillation for Robust Gastrointestinal Lesion Classification in White-Light Endoscopy](pairing-free_group-level_knowledge_distillation_for_robust_gastrointestinal_lesi.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[AAAI 2026\] Error Correction in Radiology Reports: A Knowledge Distillation-Based Multi-Stage Framework](error_correction_in_radiology_reports_a_knowledge_distillation-based_multi-stage.md)
 
 </div>
 

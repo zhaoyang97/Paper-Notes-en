@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling
 description: >-
-  [ICLR 2026][Autonomous Driving][GRPO] The paper treats autonomous driving trajectory planning as "language modeling"—first pre-training a motion token predictor autoregressively on expert data to learn "driving like a human," and then applying reinforcement learning fine-tuning with rule-based rewards and an improved GRPO (VD-GRPO). This explicitly aligns
+  [ICLR 2026][Autonomous Driving][Trajectory Planning] The paper treats autonomous driving trajectory planning as "language modeling"—first pre-training a motion token predictor autoregressively on expert data to learn "driving like a human," and then applying reinforcement learning fine-tuning with rule-based rewards and an improved GRPO (VD-GRPO). This explicitly aligns the model with driving principles such as safety, comfort, and compliance, achieving SOTA on nuPlan…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - GRPO
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Trajectory Planning"
+  - "Reinforcement Learning Fine-tuning"
+  - "GRPO"
+  - "Safety Alignment"
 date: 2026-05-08
-content_hash: d66d914954ee682a
+content_hash: fbb088850b0599b3
 ---
+
 # Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling
 
 **Conference**: ICLR 2026  
@@ -143,14 +147,17 @@ World Model Ablation (R-CLS): Pre-train only 82.81 $\rightarrow$ Double model pa
 
 <div class="related-papers" markdown="1">
 
-- **DeepSeek-V3 Technical Report** (GRPO reference)
-- **PLUTO: Predictive Learning with Universal Tokenized Outputs**
-- **Gen-Drive: Generative Autonomous Driving with Large Language Models**
+## Related Papers
+
+- [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
+- [\[ICLR 2026\] DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking](driveagent-r1_advancing_vlm-based_autonomous_driving_with_active_perception_and_.md)
+- [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](../../NeurIPS2025/autonomous_driving/future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
+- [\[ICLR 2026\] BridgeDrive: Diffusion Bridge Policy for Closed-Loop Trajectory Planning in Autonomous Driving](bridgedrive_diffusion_bridge_policy_for_closed-loop_trajectory_planning_in_auton.md)
+- [\[ICLR 2026\] OccDriver: Future Occupancy Guided Dual-branch Trajectory Planner in Autonomous Driving](occdriver_future_occupancy_guided_dual-branch_trajectory_planner_in_autonomous_d.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)

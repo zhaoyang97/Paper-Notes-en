@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] SPECTRE：面向体积 CT Transformer 的自监督与跨模态预训练
+  [Paper Note] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers
 description: >-
-  [CVPR 2026][Medical Imaging][3D Vision Transformer] SPECTRE is a **pure Transformer-based volumetric CT foundation model**. It addresses three core challenges of volumetric CT—"cubic token explosion, geometric anisotropy, and weak/noisy clinical supervision"—through anisotropic 3D tokenization, a two-level (local/global) ViT, and 3D RoPE. Utilizing a two-stage pretraini
+  [CVPR 2026][Medical Imaging][CT Foundation Model] SPECTRE is a **pure Transformer-based volumetric CT foundation model**. It addresses three core challenges of volumetric CT—"cubic token explosion, geometric anisotropy, and weak/noisy clinical supervision"—through anisotropic 3D tokenization, a two-level (local/global) ViT, and 3D RoPE. Utilizing a two-stage pretraining pipeline of "DINOv3 SSL → SigLIP Vision-Language Alignment" with **only public CT data**…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - 3D Vision Transformer
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "CT Foundation Model"
+  - "3D Vision Transformer"
+  - "Self-supervised"
+  - "Vision-language alignment"
+  - "Geometry-aware"
 date: 2026-05-08
-content_hash: 2c94a8b8d42eac7d
+content_hash: cac6446f716a56d4
 ---
+
 # SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ SPECTRE outperformed all Transformer foundation models and approached the perfor
 - Value: ⭐⭐⭐⭐⭐ (Public-data-only, open-source 3D foundation model with high reuse potential).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)](diffusion_mri_transformer_with_a_diffusion_space_rotary_positional_embedding_d-r.md)
-- [\[CVPR 2026\] Splat-Based Metal Artifact Reduction in Cone-Beam CT via Compact Attenuation Modeling](splat-based_metal_artifact_reduction_in_cone-beam_ct_via_compact_attenuation_mod.md)
-- [\[CVPR 2026\] GraPHFormer: A Multimodal Graph Persistent Homology Transformer for the Analysis of Neuroscience Morphologies](graphformer_a_multimodal_graph_persistent_homology_transformer_for_the_analysis_.md)
+- [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
+- [\[CVPR 2026\] Depth Any Endoscopy: Towards Self-Supervised Generalizable Depth Estimation in Monocular Endoscopy](depth_any_endoscopy_towards_self-supervised_generalizable_depth_estimation_in_mo.md)
+- [\[ICML 2026\] Scaling Vision Transformers for Functional MRI with Flat Maps](../../ICML2026/medical_imaging/scaling_vision_transformers_for_functional_mri_with_flat_maps.md)
 - [\[CVPR 2026\] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration](crft_consistent-recurrent_feature_flow_transformer_for_cross-modal_image_registr.md)
-- [\[CVPR 2026\] VesMamba: 3D Pulmonary Vessel Segmentation from CT images via Mamba with Structural Perception and Scale-aware Filtering](vesmamba_3d_pulmonary_vessel_segmentation_from_ct_images_via_mamba_with_structur.md)
+- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Post Training Quantization for Efficient Dataset Condensation
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This work is the first to apply post-training quantization (PTQ) to dataset distillation…
+  [AAAI 2026 Oral][Model Compression][Dataset Distillation] This work is the first to apply post-training quantization (PTQ) to dataset distillation, proposing a patch-based quantization framework (PAQ + grouping + refinement) that nearly doubles test accuracy of distilled datasets at the extreme 2-bit regime (e.g., DM IPC=1 improves from 26.0% to 54.1%). The framework is plug-and-play and can be applied to various distillation methods.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "Dataset Distillation"
   - "Post-Training Quantization"
@@ -12,7 +12,7 @@ tags:
   - "Image Compression"
   - "Patch Quantization"
 date: 2026-05-08
-content_hash: 993fd633443c404d
+content_hash: 76e30ca86ebef321
 ---
 
 # Post Training Quantization for Efficient Dataset Condensation
@@ -179,11 +179,11 @@ Pipeline: (I) Synthetic images → quantization-aware refinement → (II) patch 
 
 ## Related Papers
 
-- [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
-- [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
-- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](../../ICLR2026/model_compression/ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
-- [\[ICLR 2026\] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression](../../ICLR2026/model_compression/dataset_color_quantization_a_training-oriented_framework_for_dataset-level_compr.md)
+- [\[ICLR 2026\] LogART: Pushing the Limit of Efficient Logarithmic Post-Training Quantization](../../ICLR2026/model_compression/logart_pushing_the_limit_of_efficient_logarithmic_post-training_quantization.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](../../ICLR2026/model_compression/post-training_quantization_for_video_matting.md)
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](../../ICLR2026/model_compression/training_dynamics_impact_post-training_quantization_robustness.md)
+- [\[ECCV 2024\] Leveraging Hierarchical Feature Sharing for Efficient Dataset Condensation](../../ECCV2024/model_compression/leveraging_hierarchical_feature_sharing_for_efficient_dataset_condensation.md)
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](../../ICLR2026/model_compression/sliderquant_accurate_post-training_quantization_for_llms.md)
 
 </div>
 

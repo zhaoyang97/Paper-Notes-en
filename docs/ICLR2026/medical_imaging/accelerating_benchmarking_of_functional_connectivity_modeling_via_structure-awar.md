@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerating Benchmarking of Functional Connectivity Modeling via Structure-aware Core-set Selection
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] To make the expensive task of "comparing hundreds of functional connectivity (FC) modeling operators on large-scale fMRI data" affordable, this paper reformulates benchmarking as a "rank-preserving subset selection" problem. It proposes a self-supervised framework, SCLCS, which learns the connectivity structure of each
+  [ICLR2026][Medical Imaging][Functional Connectivity] To make the expensive task of "comparing hundreds of functional connectivity (FC) modeling operators on large-scale fMRI data" affordable, this paper reformulates benchmarking as a "rank-preserving subset selection" problem. It proposes a self-supervised framework, SCLCS, which learns the connectivity structure of each sample using an adaptive Transformer, identifies stable "prototype" samples using the Structure Perturbati…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Functional Connectivity"
+  - "Core-set Selection"
+  - "Benchmarking Acceleration"
+  - "Self-supervised"
+  - "Attention Structure"
 date: 2026-05-08
-content_hash: 2112711757bc7b82
+content_hash: 90f2f4891cacee51
 ---
+
 # Accelerating Benchmarking of Functional Connectivity Modeling via Structure-aware Core-set Selection
 
 **Conference**: ICLR2026  
@@ -130,6 +136,7 @@ SCLCS achieves significantly higher scores and lower variance (e.g., $81.21\pm2.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

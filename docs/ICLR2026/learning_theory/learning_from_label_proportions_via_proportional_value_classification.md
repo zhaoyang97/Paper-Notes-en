@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning from Label Proportions via Proportional Value Classification
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper reformulates the "bag-level mean prediction matching" in Learning from Label Proportions (LLP) as a proportional value classification task. Through invertible instance posterior aggregation and FFT-accelerated computation, the model learns sharper instance-level classifiers using only label proportions, sign
+  [ICLR2026][Weakly Supervised Learning][proportional value classification] This paper reformulates the "bag-level mean prediction matching" in Learning from Label Proportions (LLP) as a proportional value classification task. Through invertible instance posterior aggregation and FFT-accelerated computation, the model learns sharper instance-level classifiers using only label proportions, significantly outperforming existing LLP methods across various bag construction strategie…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Weakly Supervised Learning"
+  - "Learning from Label Proportions"
+  - "Learning Theory"
+  - "proportional value classification"
+  - "over-smoothing"
+  - "FFT aggregation"
 date: 2026-05-08
-content_hash: a6e237245ffaf0a9
+content_hash: 2340bcb9df3f575d
 ---
+
 # Learning from Label Proportions via Proportional Value Classification
 
 **Conference**: ICLR2026  

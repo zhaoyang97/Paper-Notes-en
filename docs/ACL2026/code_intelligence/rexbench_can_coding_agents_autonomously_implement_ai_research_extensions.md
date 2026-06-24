@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RExBench: Can coding agents autonomously implement AI research extensions?
 description: >-
-  [ACL 2026][Code Intelligence][Coding Agent] RExBench places coding agents into real AI paper repositories to implement expert-designed research extensions. Performance is scored via controlled execution results, revealing that even the strongest current agents achieve only about a one-third success rate, indicating a significant gap in autonomous research capabi
+  [ACL2026][Code Intelligence][Coding Agent] RExBench places coding agents into real AI paper repositories to implement expert-designed research extensions. Performance is scored via controlled execution results, revealing that even the strongest current agents achieve only about a one-third success rate, indicating a significant gap in autonomous research capabilities.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Coding Agent
-  - AI Research Agent
+  - "ACL2026"
+  - "Code Intelligence"
+  - "Coding Agent"
+  - "AI Research Agent"
+  - "Research Extension"
+  - "Automated Evaluation"
+  - "Code Generation Benchmark"
 date: 2026-05-08
-content_hash: f7f5a6c58c976460
+content_hash: 9381471baeaf5e39
 ---
+
 # RExBench: Can coding agents autonomously implement AI research extensions?
 
 **Conference**: ACL2026  

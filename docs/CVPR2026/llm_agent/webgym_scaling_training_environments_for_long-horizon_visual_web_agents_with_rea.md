@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] WebGym aggregates 10 existing web benchmarks and programmatically expands them into nearly 300,000 realistic web tasks with rubric evaluations. Combined with an asynchronous rollout system that provides 4-5× acceleration, it uses vanilla REINFORCE to improve the open-source Qwen3-VL-8B from 26.2% to 42.9% on an OOD tes
+  [CVPR 2026][LLM Agent][Visual web agent] WebGym aggregates 10 existing web benchmarks and programmatically expands them into nearly 300,000 realistic web tasks with rubric evaluations. Combined with an asynchronous rollout system that provides 4-5× acceleration, it uses vanilla REINFORCE to improve the open-source Qwen3-VL-8B from 26.2% to 42.9% on an OOD test set consisting entirely of unseen websites, outperforming GPT-4o (27.1%) and GPT-5-Thinking (29.8%).
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Visual web agent"
+  - "reinforcement learning training environment"
+  - "asynchronous rollout"
+  - "task decomposition"
+  - "rubric evaluation"
 date: 2026-05-08
-content_hash: be128afa577bf3bd
+content_hash: 11fb00d55aad70cf
 ---
+
 # WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks
 
 **Conference**: CVPR 2026  
@@ -114,16 +120,16 @@ Ours outperforms GPT-5-Thinking by approximately 13.1 percentage points on unsee
 - Value: ⭐⭐⭐⭐⭐ (Provides the largest open-source training environment and an optimized rollout system; achieves SOTA results with an 8B model).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning](sage_training_smart_any-horizon_agents_for_long_video_reasoning_with_reinforceme.md)
-- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
 - [\[CVPR 2026\] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing](refact_empowering_multimodal_web_agents_with_visual_and_context_focusing.md)
-- [\[ICML 2026\] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks](../../ICML2026/llm_agent/lifting_traces_to_logic_programmatic_skill_induction_with_neuro-symbolic_learnin.md)
-- [\[ICML 2026\] ACON: Optimizing Context Compression for Long-horizon LLM Agents](../../ICML2026/llm_agent/acon_optimizing_context_compression_for_long-horizon_llm_agents.md)
+- [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](../../ICLR2026/llm_agent/agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
+- [\[ICLR 2026\] The Tool Decathlon: Benchmarking Language Agents for Diverse, Realistic, and Long-Horizon Task Execution](../../ICLR2026/llm_agent/the_tool_decathlon_benchmarking_language_agents_for_diverse_realistic_and_long-h.md)
+- [\[ICLR 2026\] Scaling Agents via Continual Pre-training](../../ICLR2026/llm_agent/scaling_agents_via_continual_pre-training.md)
 
 </div>
 

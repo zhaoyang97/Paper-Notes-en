@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations
 description: >-
-  [ICLR 2026][Computational Biology][Cell Painting] CP-Agent integrates an experimental context-aware image-text alignment module (CP-CLIP) with a multi-agent MLLM reasoning pipeline. Starting from a pair of Cell Painting microscopy images, it automatically retrieves experimental background, segments and extracts single-cell morphological features, statistically compare
+  [ICLR 2026][Computational Biology][Cell Painting] CP-Agent integrates an experimental context-aware image-text alignment module (CP-CLIP) with a multi-agent MLLM reasoning pipeline. Starting from a pair of Cell Painting microscopy images, it automatically retrieves experimental background, segments and extracts single-cell morphological features, statistically compares perturbed vs. control groups, and generates traceable, interpretable Mechanism of Action (MoA) reports.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Cell Painting
-  - Agentic MLLM
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Cell Painting"
+  - "High-Content Imaging"
+  - "MoA Inference"
+  - "CLIP Alignment"
+  - "Experimental Context"
+  - "Agentic MLLM"
+  - "Drug Discovery"
 date: 2026-05-08
-content_hash: 2a9a6eb2f7eed7c9
+content_hash: e885a985fed64551
 ---
+
 # CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations
 
 **Conference**: ICLR 2026  

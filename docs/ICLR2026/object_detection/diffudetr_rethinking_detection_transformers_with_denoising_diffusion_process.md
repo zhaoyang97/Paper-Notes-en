@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiffuDETR: Rethinking Detection Transformers with Denoising Diffusion Process
 description: >-
-  [ICLR 2026][Object Detection][DETR] DiffuDETR reformulates object detection as an "object query generation task conditioned on an image and a set of noisy reference points." By using denoising diffusion training, the DETR decoder learns to gradually denoise query reference points from Gaussian noise into precise object locations. It consistently outperfo
+  [ICLR2026][Object Detection][Detection Transformer] DiffuDETR reformulates object detection as an "object query generation task conditioned on an image and a set of noisy reference points." By using denoising diffusion training, the DETR decoder learns to gradually denoise query reference points from Gaussian noise into precise object locations. It consistently outperforms baselines such as Deformable DETR and DINO on COCO, LVIS, and V3Det, while adding negligible computation…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - DETR
+  - "ICLR2026"
+  - "Object Detection"
+  - "Detection Transformer"
+  - "Denoising Diffusion"
+  - "Query Initialization"
+  - "Reference Point"
+  - "DETR"
 date: 2026-05-08
-content_hash: 6839ccbc6659a023
+content_hash: 972ee76bd46560e6
 ---
+
 # DiffuDETR: Rethinking Detection Transformers with Denoising Diffusion Process
 
 **Conference**: ICLR2026  
@@ -166,10 +171,10 @@ Gains are more significant on LVIS and V3Det, which have more categories and lon
 ## Related Papers
 
 - [\[ICLR 2026\] RF-DETR: Neural Architecture Search for Real-Time Detection Transformers](rf-detr_neural_architecture_search_for_real-time_detection_transformers.md)
-- [\[ECCV 2024\] TAPTR: Tracking Any Point with Transformers as Detection](../../ECCV2024/object_detection/taptr_tracking_any_point_with_transformers_as_detection.md)
-- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 - [\[NeurIPS 2025\] Rethinking Evaluation of Infrared Small Target Detection](../../NeurIPS2025/object_detection/rethinking_evaluation_of_infrared_small_target_detection.md)
-- [\[CVPR 2026\] Tri-Modal Fusion Transformers for UAV-based Object Detection](../../CVPR2026/object_detection/tri-modal_fusion_transformers_for_uav-based_object_detection.md)
+- [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](../../CVPR2026/object_detection/towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
+- [\[CVPR 2025\] Mr. DETR++: Instructive Multi-Route Training for Detection Transformers with MoE](../../CVPR2025/object_detection/mr_detr_instructive_multi-route_training_for_detection_transformers.md)
+- [\[ICLR 2026\] Enhancing Vision Transformers for Object Detection via Context-Aware Token Selection and Packing](enhancing_vision_transformers_for_object_detection_via_context-aware_token_selec.md)
 
 </div>
 

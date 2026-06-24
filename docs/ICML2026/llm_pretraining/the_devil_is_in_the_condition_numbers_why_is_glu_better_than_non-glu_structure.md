@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Devil is in the Condition Numbers: Why is GLU Better than non-GLU Structure?
 description: >-
-  [ICML 2026][Pretraining][GLU] From an NTK perspective, this work proves that GLU rewrites the kernel matrix of a two-layer network as the "Hadamard product of the original NTK and the data Gram matrix," which significantly compresses the condition number and accelerates convergence. Empirical results demonstrate that GLU does not improve the genera
+  [ICML 2026][LLM Pretraining][GLU] From an NTK perspective, this work proves that GLU rewrites the kernel matrix of a two-layer network as the "Hadamard product of the original NTK and the data Gram matrix," which significantly compresses the condition number and accelerates convergence. Empirical results demonstrate that GLU does not improve the generalization gap; its benefits derive entirely from superior optimization.
 tags:
-  - ICML 2026
-  - Pretraining
-  - GLU
-  - SwiGLU
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "GLU"
+  - "SwiGLU"
+  - "Neural Tangent Kernel"
+  - "Condition Number"
+  - "Training Dynamics"
 date: 2026-05-08
-content_hash: 1dccb8acf568fc73
+content_hash: 7bb1fee6eeb6d547
 ---
+
 # The Devil is in the Condition Numbers: Why is GLU Better than non-GLU Structure?
 
 **Conference**: ICML 2026  
@@ -118,10 +122,10 @@ This is a theoretical analysis and does not introduce new losses or training str
 ## Related Papers
 
 - [\[ACL 2025\] Byte Latent Transformer: Patches Scale Better Than Tokens](../../ACL2025/llm_pretraining/byte_latent_transformer.md)
+- [\[ICLR 2026\] Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods](../../ICLR2026/llm_pretraining/rethinking_data_curation_in_llm_training_online_reweighting_offers_better_genera.md)
 - [\[AAAI 2026\] ELSPR: Evaluator LLM Training Data Self-Purification on Non-Transitive Preferences](../../AAAI2026/llm_pretraining/elspr_evaluator_llm_training_data_self-purification_on_non-transitive_preference.md)
-- [\[ACL 2025\] Splintering Nonconcatenative Languages for Better Tokenization](../../ACL2025/llm_pretraining/splintering_nonconcatenative_languages_for_better_tokenization.md)
 - [\[CVPR 2025\] Influence Malleability in Linearized Attention: Dual Implications of Non-Convergent NTK Dynamics](../../CVPR2025/llm_pretraining/influence_malleability_in_linearized_attention_dual_implications_of_non-converge.md)
-- [\[NeurIPS 2025\] Broken Tokens: Your Language Model Can Secretly Handle Non-Canonical Tokenization](../../NeurIPS2025/llm_pretraining/broken_tokens_your_language_model_can_secretly_handle_non-canonical_tokenization.md)
+- [\[ACL 2025\] Splintering Nonconcatenative Languages for Better Tokenization](../../ACL2025/llm_pretraining/splintering_nonconcatenative_languages_for_better_tokenization.md)
 
 </div>
 

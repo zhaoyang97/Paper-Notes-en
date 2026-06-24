@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unsupervised Representation Learning for 3D Mesh Parameterization with Semantic and Visibility Objectives
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper advances unsupervised neural UV parameterization from "geometry distortion only" to "serving real-world texturing workflows." By using semantic partitioning to align UV islands with 3D components and ambient occlusion (AO) to guide seams into inconspicuous areas, the method produces 3D mesh UV atlases better
+  [ICLR2026][3D Vision][3D Mesh Parameterization] This paper advances unsupervised neural UV parameterization from "geometry distortion only" to "serving real-world texturing workflows." By using semantic partitioning to align UV islands with 3D components and ambient occlusion (AO) to guide seams into inconspicuous areas, the method produces 3D mesh UV atlases better suited for editing, texture generation, and asset reuse.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D Mesh Parameterization"
+  - "UV Unwrapping"
+  - "Semantic-aware"
+  - "Visibility-aware"
+  - "Unsupervised Representation Learning"
 date: 2026-05-08
-content_hash: c492afba6df46fc6
+content_hash: b3e167d9df7f4f85
 ---
+
 # Unsupervised Representation Learning for 3D Mesh Parameterization with Semantic and Visibility Objectives
 
 **Conference**: ICLR2026  
@@ -138,10 +144,20 @@ The data confirms that the method excels in semantic and visibility-specific met
 - Value: ⭐⭐⭐⭐⭐ Extremely useful for 3D content production and generative pipelines as an editable UV pre-processing module.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] CLAP: Unsupervised 3D Representation Learning for Fusion 3D Perception via Curvature Sampling and Prototype Learning](clap_unsupervised_3d_representation_learning_for_fusion_3d_perception_via_curvat.md)
+- [\[CVPR 2026\] GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](../../CVPR2026/3d_vision/gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)
+- [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
+- [\[AAAI 2026\] Point-SRA: Self-Representation Alignment for 3D Representation Learning](../../AAAI2026/3d_vision/point-sra_self-representation_alignment_for_3d_representation_learning.md)
+- [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] CLAP: Unsupervised 3D Representation Learning for Fusion 3D Perception via Curvature Sampling and Prototype Learning](clap_unsupervised_3d_representation_learning_for_fusion_3d_perception_via_curvat.md)

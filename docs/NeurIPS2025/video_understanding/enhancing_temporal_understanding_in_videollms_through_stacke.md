@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders
 description: >-
-  [Video Understanding] This paper proposes STAVEQ2, which inserts parameter-efficient Stacked Temporal Attention (STA) modules into the Vision Encoder to address fundamental architectural deficiencies in existing Video-LL…
+  [Video Understanding] This paper proposes STAVEQ2, which inserts parameter-efficient Stacked Temporal Attention (STA) modules into the Vision Encoder to address fundamental architectural deficiencies in existing Video-LLMs for fine-grained temporal understanding (e.g., distinguishing "pulling from left to right" vs. "pulling from right to left"), achieving up to 5.5% improvement on VITATECS/MVBench/Video-MME.
 tags:
   - "Video Understanding"
 date: 2026-05-08
-content_hash: 7a51d95ac32b0ea5
+content_hash: 75f41992aac5671a
 ---
 
 # Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders
@@ -132,7 +132,7 @@ Final output: $X^{(m)} = \text{MLP}(\text{LN}(Z^{(m)})) + Z^{(m)}$
 - [\[NeurIPS 2025\] Seeing Beyond the Scene: Analyzing and Mitigating Background Bias in Action Recognition](seeing_beyond_the_scene_analyzing_and_mitigating_background_bias_in_action_recog.md)
 - [\[CVPR 2026\] Understanding Temporal Logic Consistency in Video-Language Models through Cross-Modal Attention Discriminability](../../CVPR2026/video_understanding/understanding_temporal_logic_consistency_in_video-language_models_through_cross-.md)
 - [\[NeurIPS 2025\] TempSamp-R1: Effective Temporal Sampling with Reinforcement Fine-Tuning for Video LLMs](tempsampr1_effective_temporal_sampling_with_reinforcement_fi.md)
-- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](../../ACL2026/video_understanding/temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](../../CVPR2026/video_understanding/enhancing_video_vision_language_model_with_hippocampal_sensing.md)
 
 </div>
 

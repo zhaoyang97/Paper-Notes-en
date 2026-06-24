@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Faithful-First Reasoning, Planning, and Acting for Multimodal LLMs
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] This paper proposes the Faithful-First RPA framework, which evaluates perceptual faithfulness (whether claimed objects truly exist in the image) at each reasoning step via the FaithEvi pipeline and enforces evidence-based planning and action through the FaithAct mechanism during generation. This approach improves perce
+  [ACL 2026 Findings][VLM Reasoning][Perceptual Faithfulness] This paper proposes the Faithful-First RPA framework, which evaluates perceptual faithfulness (whether claimed objects truly exist in the image) at each reasoning step via the FaithEvi pipeline and enforces evidence-based planning and action through the FaithAct mechanism during generation. This approach improves perceptual faithfulness by up to 24% without compromising task accuracy.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Perceptual Faithfulness"
+  - "Reasoning Planning and Execution"
+  - "Multimodal Hallucination"
+  - "Visual Evidence Verification"
+  - "Step-by-step Reasoning"
 date: 2026-05-08
-content_hash: 7d352fc186c524ea
+content_hash: b6045e28cd7751fe
 ---
+
 # Faithful-First Reasoning, Planning, and Acting for Multimodal LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -162,10 +168,10 @@ This is an inference-time framework and does not involve MLLM training. The pref
 ## Related Papers
 
 - [\[ACL 2026\] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction](shredbench_evaluating_the_semantic_reasoning_capabilities_of_multimodal_llms_in_.md)
-- [\[NeurIPS 2025\] To See or To Read: User Behavior Reasoning in Multimodal LLMs](../../NeurIPS2025/vlm_reasoning/to_see_or_to_read_user_behavior_reasoning_in_multimodal_llms.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/vlm_reasoning/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
+- [\[ICLR 2026\] CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs](../../ICLR2026/vlm_reasoning/compodistill_attention_distillation_for_compositional_reasoning_in_multimodal_ll.md)
 - [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](../../CVPR2026/vlm_reasoning/codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[ICLR 2026\] Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences](../../ICLR2026/vlm_reasoning/evaluating_vlms_spatial_reasoning_over_robot_motion_a_step_towards_robot_plannin.md)
+- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
+- [\[CVPR 2026\] VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image](../../CVPR2026/vlm_reasoning/visionleaf_entropy-guided_leaf-first_reasoning_for_efficient_and_accurate_think-.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fairness via Independence: A General Regularization Framework for Machine Learning
 description: >-
-  [ICLR 2026][AI Safety][utility-fairness trade-off] This paper proposes using Cauchy-Schwarz (CS) divergence as a fairness regularization term to minimize the statistical dependence between "model predictions" and "sensitive attributes." Using a unified framework that is model-agnostic and independent of specific fairness definitions, it simultaneously improves $\Delta$
+  [ICLR2026][AI Safety][Group Fairness] This paper proposes using Cauchy-Schwarz (CS) divergence as a fairness regularization term to minimize the statistical dependence between "model predictions" and "sensitive attributes." Using a unified framework that is model-agnostic and independent of specific fairness definitions, it simultaneously improves $\Delta$DP and $\Delta$EO while maintaining accuracy and demonstrating greater robustness to hyperparameter variations.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - utility-fairness trade-off
+  - "ICLR2026"
+  - "AI Safety"
+  - "Group Fairness"
+  - "Cauchy-Schwarz Divergence"
+  - "Independence Regularization"
+  - "Debiasing"
+  - "Utility-Fairness Trade-off"
 date: 2026-05-08
-content_hash: 530e7f1a192a5d0c
+content_hash: 6d07cbf0e1a660a7
 ---
+
 # Fairness via Independence: A General Regularization Framework for Machine Learning
 
 **Conference**: ICLR2026  
@@ -145,7 +150,7 @@ Datasets: 4 tabular (Adult, COMPAS, ACS-I, ACS-T) + 1 image (CelebA-A); sensitiv
 - [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
 - [\[ICLR 2026\] RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility](resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md)
 - [\[ICLR 2026\] Fair Graph Machine Learning under Adversarial Missingness Processes](fair_graph_machine_learning_under_adversarial_missingness_processes.md)
-- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
+- [\[AAAI 2026\] Learning to Collaborate: An Orchestrated-Decentralized Framework for Peer-to-Peer Collaborative Learning](../../AAAI2026/ai_safety/learning_to_collaborate_an_orchestrated-decentralized_framework_for_peer-to-peer.md)
 
 </div>
 

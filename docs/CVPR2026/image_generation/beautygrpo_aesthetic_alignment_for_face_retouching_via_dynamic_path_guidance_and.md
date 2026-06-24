@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 description: >-
-  [CVPR 2026][Image Generation][Reinforcement Learning] Ours proposes BeautyGRPO, a reinforcement learning-based face retouching framework. By constructing a fine-grained preference dataset FRPref-10K to train a specialized reward model and designing a Dynamic Path Guidance (DPG) mechanism to balance random exploration and high fidelity, the framework achieves natural retou
+  [CVPR2026][Image Generation][Face Retouching] Ours proposes BeautyGRPO, a reinforcement learning-based face retouching framework. By constructing a fine-grained preference dataset FRPref-10K to train a specialized reward model and designing a Dynamic Path Guidance (DPG) mechanism to balance random exploration and high fidelity, the framework achieves natural retouching results aligned with human aesthetic preferences.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Reinforcement Learning
-  - Flow Matching
-  - GRPO
+  - "CVPR2026"
+  - "Image Generation"
+  - "Face Retouching"
+  - "Reinforcement Learning"
+  - "Aesthetic Alignment"
+  - "Flow Matching"
+  - "Preference Modeling"
+  - "GRPO"
+  - "Dynamic Path Guidance"
 date: 2026-05-08
-content_hash: a2e75ab68081d4f8
+content_hash: 075ceced61708c08
 ---
+
 # BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 
 **Conference**: CVPR2026  
@@ -159,7 +164,7 @@ A GRPO objective (clipped surrogate objective) is used alongside normalized adva
 - [\[CVPR 2026\] SpatialReward: Verifiable Spatial Reward Modeling for Fine-Grained Spatial Consistency in Text-to-Image Generation](spatialreward_verifiable_spatial_reward_modeling_for_fine-grained_spatial_consis.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
 - [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
-- [\[CVPR 2026\] PromptEnhancer: Taming Your Rewriter for Text-to-Image Generation via Fine-Grained Reward](promptenhancer_taming_your_rewriter_for_text-to-image_generation_via_fine-graine.md)
+- [\[ICLR 2026\] LaTo: Landmark-tokenized Diffusion Transformer for Fine-grained Human Face Editing](../../ICLR2026/image_generation/lato_landmark-tokenized_diffusion_transformer_for_fine-grained_human_face_editin.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Boundary-to-Region Supervision for Offline Safe Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Offline Safe Reinforcement Learning] This paper proposes B2R (Boundary-to-Region), a framework that addresses the symmetric conditioning fallacy of sequence models in offline safe R…
+  [NeurIPS 2025][Reinforcement Learning][Offline Safe Reinforcement Learning] This paper proposes B2R (Boundary-to-Region), a framework that addresses the symmetric conditioning fallacy of sequence models in offline safe RL by introducing Cost-to-Go (CTG) Realignment. It converts sparse boundary supervision into dense safe-region supervision, satisfying safety constraints on 35 out of 38 safety-critical tasks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Asymmetric Conditioning"
   - "Safe Region Supervision"
 date: 2026-05-08
-content_hash: 2f564445f63ede62
+content_hash: e02044a6b036b6d7
 ---
 
 # Boundary-to-Region Supervision for Offline Safe Reinforcement Learning
@@ -118,10 +118,10 @@ Training is performed on the CTG-realigned safe dataset, and at deployment the f
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Optimization for Offline Safe Reinforcement Learning](online_optimization_for_offline_safe_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
 - [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
 - [\[NeurIPS 2025\] Structural Information-based Hierarchical Diffusion for Offline Reinforcement Learning](structural_information-based_hierarchical_diffusion_for_offline_reinforcement_le.md)
 - [\[NeurIPS 2025\] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning](roirl_efficient_self-supervised_reasoning_with_offline_iterative_reinforcement_l.md)
+- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
 
 </div>
 

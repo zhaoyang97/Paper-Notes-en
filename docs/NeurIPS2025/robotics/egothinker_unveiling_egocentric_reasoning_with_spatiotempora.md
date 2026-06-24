@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT
 description: >-
-  [NeurIPS 2025][Robotics][Egocentric video] EgoThinker constructs EgoRe-5M, a 5-million-sample egocentric video QA dataset with causal CoT annotations and fine-grained hand-object localization data. Through a two-stage tr…
+  [NeurIPS 2025][Robotics][Egocentric video] EgoThinker constructs EgoRe-5M, a 5-million-sample egocentric video QA dataset with causal CoT annotations and fine-grained hand-object localization data. Through a two-stage training paradigm—SFT for reasoning followed by GRPO for grounding—the approach enables a 7B MLLM to simultaneously perform egocentric causal reasoning and spatio-temporal fine-grained localization for the first time, achieving state-of-the-art results on 8+ ben…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "GRPO reinforcement fine-tuning"
   - "large-scale dataset"
 date: 2026-05-08
-content_hash: cbf77506389aa9bb
+content_hash: d0dd5dd9d559ac88
 ---
 
 # EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT
@@ -135,11 +135,11 @@ The SFT stage uses standard cross-entropy supervised loss. The RFT stage uses th
 
 ## Related Papers
 
-- [\[CVPR 2026\] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation](../../CVPR2026/robotics/strnet_visual_navigation_with_spatio-temporal_representation_through_dynamic_gra.md)
+- [\[CVPR 2025\] CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models](../../CVPR2025/robotics/cot-vla_visual_chain-of-thought_reasoning_for_vision-language-action_models.md)
 - [\[NeurIPS 2025\] Benchmarking Egocentric Multimodal Goal Inference for Assistive Wearable Agents](benchmarking_egocentric_multimodal_goal_inference_for_assist.md)
-- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
 - [\[NeurIPS 2025\] STAIR: Addressing Stage Misalignment through Temporal-Aligned Preference Reinforcement Learning](stair_addressing_stage_misalignment_through_temporal-aligned_preference_reinforc.md)
-- [\[NeurIPS 2025\] NeSyPr: Neurosymbolic Proceduralization For Efficient Embodied Reasoning](nesypr_neurosymbolic_proceduralization_for_efficient_embodied_reasoning.md)
+- [\[CVPR 2026\] TRM-VLA: Temporal-Aware Chain-of-Thought Reasoning and Memorization for Vision-Language-Action Models](../../CVPR2026/robotics/trm-vla_temporal-aware_chain-of-thought_reasoning_and_memorization_for_vision-la.md)
+- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
 
 </div>
 

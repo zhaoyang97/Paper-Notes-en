@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VISOR proposes a new efficiency paradigm distinct from vision token compression—by sparsifying vision-language interaction layers within the LLM (utilizing minimal cross-attention and dynamically selected self-attention layers). It achieves 8.6-18$\times$ FLOPs savings while preserving full high-resolution vision token
+  [CVPR 2026][Multimodal VLM][Large Vision-Language Model Efficiency] VISOR proposes a new efficiency paradigm distinct from vision token compression—by sparsifying vision-language interaction layers within the LLM (utilizing minimal cross-attention and dynamically selected self-attention layers). It achieves 8.6-18$\times$ FLOPs savings while preserving full high-resolution vision tokens, significantly outperforming token compression methods particularly on difficult tasks req…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Large Vision-Language Model Efficiency"
+  - "Visual Token Sparsification"
+  - "Dynamic Computation Allocation"
+  - "Cross-Attention"
+  - "Self-Attention Selection"
 date: 2026-05-08
-content_hash: 25cf2e9e19502eef
+content_hash: dc36f689ee078849
 ---
+
 # VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions
 
 **Conference**: CVPR 2026  
@@ -143,8 +149,8 @@ VISOR outperforms all token compression methods on hard tasks while achieving hi
 - [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
 - [\[CVPR 2026\] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](tipsv2_patch_text_alignment.md)
 - [\[CVPR 2026\] WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens](wemmu_enhanced_bridging_of_vision-language_models_and_diffusion_models_via_noisy.md)
-- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
-- [\[CVPR 2025\] VLsI: Verbalized Layers-to-Interactions from Large to Small Vision Language Models](../../CVPR2025/multimodal_vlm/vlsi_verbalized_layers-to-interactions_from_large_to_small_vision_language_model.md)
+- [\[ICML 2026\] RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency](../../ICML2026/multimodal_vlm/improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
+- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 
 </div>
 

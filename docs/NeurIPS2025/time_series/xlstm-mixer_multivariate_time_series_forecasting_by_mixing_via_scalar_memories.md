@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] xLSTM-Mixer: Multivariate Time Series Forecasting by Mixing via Scalar Memories
 description: >-
-  [NeurIPS2025][Time Series][Time series forecasting] This paper proposes xLSTM-Mixer, the first architecture to combine the Extended Long Short-Term Memory network (sLSTM) with a Mixer framework. Through a three-stage des…
+  [NeurIPS2025][Time Series][Time series forecasting] This paper proposes xLSTM-Mixer, the first architecture to combine the Extended Long Short-Term Memory network (sLSTM) with a Mixer framework. Through a three-stage design comprising temporal mixing, joint temporal-variate mixing, and multi-view mixing, the model achieves state-of-the-art performance on multivariate long-term time series forecasting while maintaining an extremely low memory footprint.
 tags:
   - "NeurIPS2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "recurrent neural networks"
   - "multivariate forecasting"
 date: 2026-05-08
-content_hash: fb5ad4fc7a54c9f6
+content_hash: 82cf9b31dd4e1ade
 ---
 
 # xLSTM-Mixer: Multivariate Time Series Forecasting by Mixing via Scalar Memories
@@ -164,10 +164,10 @@ The sLSTM block and temporal mixing are the most critical components. All compon
 ## Related Papers
 
 - [\[ICLR 2026\] Free Energy Mixer](../../ICLR2026/time_series/free_energy_mixer.md)
+- [\[ICML 2025\] TimePro: Efficient Multivariate Long-term Time Series Forecasting with Variable- and Time-Aware Hyper-state](../../ICML2025/time_series/timepro_efficient_multivariate_long-term_time_series_forecasting_with_variable-_.md)
+- [\[ICML 2025\] Winner-takes-all for Multivariate Probabilistic Time Series Forecasting](../../ICML2025/time_series/winner-takes-all_for_multivariate_probabilistic_time_series_forecasting.md)
 - [\[NeurIPS 2025\] Channel Matters: Estimating Channel Influence for Multivariate Time Series](channel_matters_estimating_channel_influence_for_multivariate_time_series.md)
-- [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
-- [\[NeurIPS 2025\] TimePerceiver: An Encoder-Decoder Framework for Generalized Time-Series Forecasting](timeperceiver_an_encoder-decoder_framework_for_generalized_time-series_forecasti.md)
-- [\[AAAI 2026\] Revitalizing Canonical Pre-Alignment for Irregular Multivariate Time Series Forecasting](../../AAAI2026/time_series/revitalizing_canonical_pre-alignment_for_irregular_multivariate_time_series_fore.md)
+- [\[ICML 2025\] HyperIMTS: Hypergraph Neural Network for Irregular Multivariate Time Series Forecasting](../../ICML2025/time_series/hyperimts_hypergraph_neural_network_for_irregular_multivariate_time_series_forec.md)
 
 </div>
 

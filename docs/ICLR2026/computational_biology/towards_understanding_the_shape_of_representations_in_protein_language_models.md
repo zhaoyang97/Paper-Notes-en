@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Understanding the Shape of Representations in Protein Language Models
 description: >-
-  [ICLR 2026][Computational Biology][ESM2] Rather than explaining how Protein Language Models (PLMs) process individual sequences, this work utilizes Square-Root Velocity (SRV) representation from shape analysis and graph filtration tools to characterize "how the entire protein space is deformed by PLMs" as measurable geometric objects. It discovers that repres
+  [ICLR 2026][Computational Biology][Protein Language Models] Rather than explaining how Protein Language Models (PLMs) process individual sequences, this work utilizes Square-Root Velocity (SRV) representation from shape analysis and graph filtration tools to characterize "how the entire protein space is deformed by PLMs" as measurable geometric objects. It discovers that representations in ESM2 layers undergo expansion followed by contraction…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ESM2
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Language Models"
+  - "ESM2"
+  - "Shape Space"
+  - "SRV Representation"
+  - "Graph Filtration"
 date: 2026-05-08
-content_hash: d87ffd0e48e41f6c
+content_hash: 2195fc28924c2708
 ---
+
 # Towards Understanding the Shape of Representations in Protein Language Models
 
 **Conference**: ICLR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SplitFlux: Learning to Decouple Content and Style from a Single Image
 description: >-
-  [CVPR 2026][Image Generation][FLUX] This work systematically analyzes the functional division of blocks within the FLUX model, discovering that single stream blocks are essential for image generation, with the early stages controlling content and the late stages controlling style. Based on this, SplitFlux fine-tunes these blocks using LoRA for content-st
+  [CVPR 2026][Image Generation][Content-Style Decoupling] This work systematically analyzes the functional division of blocks within the FLUX model, discovering that single stream blocks are essential for image generation, with the early stages controlling content and the late stages controlling style. Based on this, SplitFlux fine-tunes these blocks using LoRA for content-style decoupling from a single image. By incorporating Rank-Constrained Adaptation (RCA) to preserve ident…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - FLUX
-  - LoRA
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Content-Style Decoupling"
+  - "FLUX"
+  - "LoRA"
+  - "Personalized Generation"
+  - "Re-contextualization"
 date: 2026-05-08
-content_hash: f01c1e4f0b99ad57
+content_hash: 0a2173635062ca98
 ---
+
 # SplitFlux: Learning to Decouple Content and Style from a Single Image
 
 **Conference**: CVPR 2026  
@@ -128,14 +132,17 @@ SplitFlux leads in content fidelity: VLM content preference jumped from 17.5% (L
 
 <div class="related-papers" markdown="1">
 
-- **B-LoRA**: Implicit Block-Language Matching for Content-Style Dissociation (arXiv:2403.14572)
-- **UnZipLoRA**: Separating Content and Style from a Single Image (arXiv:2404.09347)
-- **FLUX.1**: Black Forest Labs’ Rectified Flow Transformer (2024)
+## Related Papers
+
+- [\[CVPR 2026\] CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion](craft-lora_content-style_personalization_via_rank-constrained_adaptation_and_tra.md)
+- [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
+- [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](../../ICCV2025/image_generation/scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
+- [\[ICML 2026\] Content-Style Identification via Differential Independence](../../ICML2026/image_generation/content-style_identification_via_differential_independence.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion](craft-lora_content-style_personalization_via_rank-constrained_adaptation_and_tra.md)

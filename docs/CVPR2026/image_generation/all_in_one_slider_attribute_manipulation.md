@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] All-in-One Slider for Attribute Manipulation in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The All-in-One Slider framework is proposed, which trains an Attribute Sparse Autoencoder (SAE) on the text embedding space to decouple multiple facial attributes into sparse semantic directions. This enables a single lightweight module to achieve fine-grained continuous control of 52+ attributes, supporting multi-attr
+  [CVPR 2026][Image Generation][Attribute manipulation] The All-in-One Slider framework is proposed, which trains an Attribute Sparse Autoencoder (SAE) on the text embedding space to decouple multiple facial attributes into sparse semantic directions. This enables a single lightweight module to achieve fine-grained continuous control of 52+ attributes, supporting multi-attribute composition and zero-shot manipulation of unseen attributes.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Attribute manipulation"
+  - "Sparse Autoencoder"
+  - "Text embedding decoupling"
+  - "Continuous control"
+  - "Zero-shot generalization"
 date: 2026-05-08
-content_hash: 7b92a327cd1a8e21
+content_hash: bb6fa1864572062c
 ---
+
 # All-in-One Slider for Attribute Manipulation in Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -130,11 +136,11 @@ The SAE direction improves QS by 0.212 and IS by 0.196 compared to direct text e
 
 ## Related Papers
 
-- [\[CVPR 2026\] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge](quantization_with_unified_adaptive_distillation_to_enable_multi-lora_based_one-f.md)
+- [\[CVPR 2026\] One Algorithm to Align Them All](one_algorithm_to_align_them_all.md)
 - [\[CVPR 2026\] Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization](omni-attribute_open-vocabulary_attribute_encoder_for_visual_concept_personalizat.md)
 - [\[ICCV 2025\] CompSlider: Compositional Slider for Disentangled Multiple-Attribute Image Generation](../../ICCV2025/image_generation/compslider_compositional_slider_for_disentangled_multiple-attribute_image_genera.md)
 - [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
+- [\[CVPR 2026\] ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](imageragturbo_towards_one-step_text-to-image_generation_with_retrieval-augmented.md)
 
 </div>
 

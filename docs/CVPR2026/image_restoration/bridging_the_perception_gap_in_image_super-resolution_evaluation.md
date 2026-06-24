@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bridging the Perception Gap in Image Super-Resolution Evaluation
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] A large-scale user study reveals that existing SR evaluation metrics (PSNR, SSIM, LPIPS, etc.) are severely inconsistent with human perception. After analyzing these inherent defects, a minimalist yet effective framework called Relative Quality Index (RQI) is proposed. By learning the relative quality difference betwee
+  [CVPR 2026][Image Restoration][Super-resolution evaluation] A large-scale user study reveals that existing SR evaluation metrics (PSNR, SSIM, LPIPS, etc.) are severely inconsistent with human perception. After analyzing these inherent defects, a minimalist yet effective framework called Relative Quality Index (RQI) is proposed. By learning the relative quality difference between image pairs, RQI achieves more reliable SR evaluation and can serve as a loss function to guide SR…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Super-resolution evaluation"
+  - "image quality metrics"
+  - "perception gap"
+  - "relative quality index"
+  - "user study"
 date: 2026-05-08
-content_hash: b045e26ed33f5d7b
+content_hash: 51cc9760cd72119e
 ---
+
 # Bridging the Perception Gap in Image Super-Resolution Evaluation
 
 **Conference**: CVPR 2026  
@@ -119,11 +125,11 @@ Huber loss is used to regress relative differences, where $\delta$ is the smooth
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
-- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
-- [\[CVPR 2026\] Task-Aware Image Signal Processor for Advanced Visual Perception](task-aware_image_signal_processor_for_advanced_visual_perception.md)
 - [\[CVPR 2026\] AceTone: Bridging Words and Colors for Conditional Image Grading](acetone_bridging_words_and_colors_for_conditional_image_grading.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](sat_selective_aggregation_transformer_for_image_super_resolution.md)
+- [\[CVPR 2026\] Task-Aware Image Signal Processor for Advanced Visual Perception](task-aware_image_signal_processor_for_advanced_visual_perception.md)
+- [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
+- [\[CVPR 2026\] White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation](white-balance_first_adjust_later_cross-camera_color_constancy_via_vision-languag.md)
+- [\[CVPR 2026\] DVAR: Dynamic Visual Autoregressive Modeling for Image Super-Resolution](dvar_dynamic_visual_autoregressive_modeling_for_image_super-resolution.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] DARTS redefines the long-tail bottleneck of LLM RL training rollouts from "scheduling circumvention" to "active distribution shaping." Through intra-prompt redundancy sampling + dual-end length sampling + variance-driven redundancy budget allocation, it explicitly shortens and tightens the rollout length distribution.
+  [ICML 2026][Reinforcement Learning][GRPO] DARTS redefines the long-tail bottleneck of LLM RL training rollouts from "scheduling circumvention" to "active distribution shaping." Through intra-prompt redundancy sampling + dual-end length sampling + variance-driven redundancy budget allocation, it explicitly shortens and tightens the rollout length distribution. Compared to VeRL, it achieves up to a 1.77× speedup on Qwen series 3B–32B models without sacrificing downstream accura…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "rollout acceleration"
+  - "long-tail distribution"
+  - "active shaping"
+  - "dual-end sampling"
+  - "adaptive redundancy allocation"
 date: 2026-05-08
-content_hash: ab2837b6cfd10990
+content_hash: 5ca2c618d5f0bd53
 ---
+
 # DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -132,7 +138,7 @@ Experiments were conducted on 8 nodes (each with 8×H20 96GB + NVLink + 1.6Tbps 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

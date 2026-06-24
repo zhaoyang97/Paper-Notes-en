@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Learning to Reason for Hallucination Span Detection
 description: >-
-  [ICLR 2026][Hallucination Detection][Reinforcement Learning] This paper proposes RL4HS: using reinforcement learning (GRPO based on span-F1 rewards) to train 7B/14B models to perform "reason-then-locate" for precise hallucination span detection. It introduces Class-Aware Policy Optimization (CAPO) to correct systematic reward biases towards the "no-hallucination" class, outperfo
+  [ICLR 2026][Hallucination Detection][Hallucination span detection] This paper proposes RL4HS: using reinforcement learning (GRPO based on span-F1 rewards) to train 7B/14B models to perform "reason-then-locate" for precise hallucination span detection. It introduces Class-Aware Policy Optimization (CAPO) to correct systematic reward biases towards the "no-hallucination" class, outperforming SFT and proprietary large reasoning models (GPT-5, o3) on RAGTruth.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - Reinforcement Learning
-  - GRPO
-  - span-F1
-  - RAGTruth
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Hallucination span detection"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Reasoning"
+  - "span-F1"
+  - "RAGTruth"
 date: 2026-05-08
-content_hash: 44334075a9df3622
+content_hash: b12908ad9d0529af
 ---
+
 # Learning to Reason for Hallucination Span Detection
 
 **Conference**: ICLR 2026  
@@ -121,9 +124,9 @@ flowchart LR
 
 - [\[ICLR 2026\] Hallucination Reduction with CASAL: Contrastive Activation Steering for Amortized Learning](hallucination_reduction_with_casal_contrastive_activation_steering_for_amortized.md)
 - [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
 - [\[ACL 2025\] Learning Auxiliary Tasks Improves Reference-Free Hallucination Detection in Open-Domain Long-Form Generation](../../ACL2025/hallucination/learning_auxiliary_tasks_improves_reference-free_hallucination_detection_in_open.md)
-- [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
 
 </div>
 

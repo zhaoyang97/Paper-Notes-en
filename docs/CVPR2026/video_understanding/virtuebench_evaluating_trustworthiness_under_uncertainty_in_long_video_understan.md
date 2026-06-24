@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes VirtueBench, the first long video understanding benchmark evaluating VLM trustworthiness under uncertainty. By constructing multi-level frame sampling for each video and labeling answerable/unanswerable ground truths, it reveals a widespread tendency among existing models to guess rather than honest
+  [CVPR 2026][Video Understanding][Video Understanding Benchmark] This paper proposes VirtueBench, the first long video understanding benchmark evaluating VLM trustworthiness under uncertainty. By constructing multi-level frame sampling for each video and labeling answerable/unanswerable ground truths, it reveals a widespread tendency among existing models to guess rather than honestly refuse.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Understanding Benchmark"
+  - "Trustworthiness under Uncertainty"
+  - "Long Video Understanding"
+  - "Refusal Behavior Evaluation"
+  - "VLM Evaluation"
 date: 2026-05-08
-content_hash: 75675917bd82d812
+content_hash: 8b3bcf9fb0f6510a
 ---
+
 # VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding
 
 **Conference**: CVPR 2026  
@@ -151,9 +157,9 @@ Open-ended answers cannot be scored via string matching, and the goal is to eval
 
 - [\[CVPR 2026\] Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)
 - [\[CVPR 2026\] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning](efficient_frame_selection_for_long_video_understanding_via_reinforcement_learnin.md)
-- [\[CVPR 2026\] META: Meta Evolution of Tool Trajectory Adaptation for Long-Video Understanding](meta_meta_evolution_of_tool_trajectory_adaptation_for_long-video_understanding.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
-- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
+- [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
+- [\[CVPR 2026\] Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration](enhancing_accuracy_of_uncertainty_estimation_in_appearance-based_gaze_tracking_w.md)
+- [\[ICLR 2026\] V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction](../../ICLR2026/video_understanding/v2p-bench_evaluating_video-language_understanding_with_visual_prompts_for_better.md)
 
 </div>
 

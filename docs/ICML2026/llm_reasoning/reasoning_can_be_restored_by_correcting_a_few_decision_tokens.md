@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reasoning Can Be Restored by Correcting a Few Decision Tokens
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] The authors quantify the gap between base LLMs and reasoning LRMs using token-level distribution divergence. They find that the gap is highly concentrated in a small number of early, planning-related tokens where the base model is inherently uncertain (accounting for ~8% of tokens). Based on this, they propose "Diverge
+  [ICML 2026][Reasoning][Reasoning Gap] The authors quantify the gap between base LLMs and reasoning LRMs using token-level distribution divergence. They find that the gap is highly concentrated in a small number of early, planning-related tokens where the base model is inherently uncertain (accounting for ~8% of tokens). Based on this, they propose "Divergence-Gated Single-Token Takeover"—letting the LRM generate only one token at divergence spikes before immediately handing c…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Reasoning Gap"
+  - "Token-level Intervention"
+  - "Sparse Control"
+  - "Planning Tokens"
+  - "Inference-time Collaborative Decoding"
 date: 2026-05-08
-content_hash: 3212189ad5283a71
+content_hash: ffcdb55155812611
 ---
+
 # Reasoning Can Be Restored by Correcting a Few Decision Tokens
 
 **Conference**: ICML 2026  
@@ -144,11 +150,11 @@ Sample-level flips: Out of 400 questions, 152 flipped from wrong to right, while
 
 ## Related Papers
 
+- [\[ICLR 2026\] Soft Tokens, Hard Truths](../../ICLR2026/llm_reasoning/soft_tokens_hard_truths.md)
 - [\[ACL 2025\] DeFine: Decision-Making with Analogical Reasoning over Factor Profiles](../../ACL2025/llm_reasoning/define_decision-making_with_analogical_reasoning_over_factor_profiles.md)
-- [\[NeurIPS 2025\] KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning](../../NeurIPS2025/llm_reasoning/ktae_a_model-free_algorithm_to_key-tokens_advantage_estimation_in_mathematical_r.md)
-- [\[NeurIPS 2025\] Beyond the 80/20 Rule: High-Entropy Minority Tokens Drive Effective Reinforcement Learning for LLM Reasoning](../../NeurIPS2025/llm_reasoning/beyond_the_8020_rule_highentropy_minority_tokens_drive_effec.md)
-- [\[ACL 2026\] Can Reasoning Path still be Effective as Input? Bridging Post-Reasoning to Chain-of-Thought Compression](../../ACL2026/llm_reasoning/can_reasoning_path_still_be_effective_as_input_bridging_post-reasoning_to_chain-.md)
-- [\[ACL 2026\] Is Chain-of-Thought Really Not Explainability? Chain-of-Thought Can Be Faithful without Hint Verbalization](../../ACL2026/llm_reasoning/is_chain-of-thought_really_not_explainability_chain-of-thought_can_be_faithful_w.md)
+- [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](../../ICLR2026/llm_reasoning/learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Off-Trajectory Reasoning: Can LLMs Collaborate on Reasoning Trajectories?](../../ICLR2026/llm_reasoning/off-trajectory_reasoning_can_llms_collaborate_on_reasoning_trajectories.md)
+- [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
 
 </div>
 

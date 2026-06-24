@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ResiliBench: Evaluating Agentic Workflow Adaptation in Stochastic Environments
 description: >-
-  [ICLR 2026][LLM Evaluation][Agentic Workflow] ResiliBench treats two types of real-world deployment uncertainties—"probabilistic tool failure" and "flaws in user-provided workflow instructions"—as the primary evaluation targets. Using a tool library of 30 APIs, it automatically generates 5040 tasks, each paired with an MDP-derived optimal workflow and seven types
+  [ICLR 2026][LLM Evaluation][Agentic Workflow] ResiliBench treats two types of real-world deployment uncertainties—"probabilistic tool failure" and "flaws in user-provided workflow instructions"—as the primary evaluation targets. Using a tool library of 30 APIs, it automatically generates 5040 tasks, each paired with an MDP-derived optimal workflow and seven types of systematically perturbed flawed workflows, to quantify LLMs' error correction and replanning capabilities in st…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Agentic Workflow
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Agentic Workflow"
+  - "Tool Calling"
+  - "Robustness Evaluation"
+  - "MDP Optimal Workflow"
+  - "Stochastic Environments"
 date: 2026-05-08
-content_hash: c617c642ab24e082
+content_hash: 6f422e4671cb00d0
 ---
+
 # ResiliBench: Evaluating Agentic Workflow Adaptation in Stochastic Environments
 
 **Conference**: ICLR 2026  
@@ -136,9 +141,9 @@ On average, FSR was 62.1% for Optimal vs. 54.3% for Flawed workflows.
 
 - [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
 - [\[ICLR 2026\] Agentic Reinforced Policy Optimization](agentic_reinforced_policy_optimization.md)
-- [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](../../ICML2026/llm_evaluation/on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
-- [\[ICLR 2026\] HackWorld: Evaluating Computer-Use Agents on Exploiting Web Application Vulnerabilities](hackworld_evaluating_computer-use_agents_on_exploiting_web_application_vulnerabi.md)
 - [\[ICLR 2026\] Evaluating Language Models' Evaluations of Games](evaluating_language_models_evaluations_of_games.md)
+- [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](pitfalls_in_evaluating_language_model_forecasters.md)
+- [\[ACL 2025\] Towards Dynamic Theory of Mind: Evaluating LLM Adaptation to Temporal Evolution of Human States](../../ACL2025/llm_evaluation/towards_dynamic_theory_of_mind_evaluating_llm_adaptation_to_temporal_evolution_o.md)
 
 </div>
 

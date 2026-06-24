@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReCogDrive: A Reinforced Cognitive Framework for End-to-End Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][DiffGRPO] ReCogDrive replaces the "trajectory as text generation" paradigm with a "Cognitive VLM + Diffusion Planner" framework. It first injects human driving cognition into a VLM through a hierarchical data pipeline, then treats VLM hidden states as conditions for a diffusion planner to output continuous trajectories. Finally,
+  [ICLR 2026][Autonomous Driving][End-to-End Driving] ReCogDrive replaces the "trajectory as text generation" paradigm with a "Cognitive VLM + Diffusion Planner" framework. It first injects human driving cognition into a VLM through a hierarchical data pipeline, then treats VLM hidden states as conditions for a diffusion planner to output continuous trajectories. Finally, a DiffGRPO reinforcement learning stage, tailored for diffusion policies…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - DiffGRPO
-  - NAVSIM
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "End-to-End Driving"
+  - "VLM Cognitive Prior"
+  - "Diffusion Planner"
+  - "DiffGRPO"
+  - "NAVSIM"
 date: 2026-05-08
-content_hash: bafb7116afa1eb69
+content_hash: 6565cbdc9606f9f5
 ---
+
 # ReCogDrive: A Reinforced Cognitive Framework for End-to-End Autonomous Driving
 
 **Conference**: ICLR 2026  
@@ -136,8 +140,8 @@ Benchmark against text output (Tab. 4): Pure text output takes 1.07s/sample with
 - [\[ICLR 2026\] VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning](vadv2_end-to-end_vectorized_autonomous_driving_via_probabilistic_planning.md)
 - [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
+- [\[ICLR 2026\] RAP: 3D Rasterization Augmented End-to-End Planning](rap_3d_rasterization_augmented_end-to-end_planning.md)
 - [\[ICML 2026\] RoCA: Robust Cross-Domain End-to-End Autonomous Driving](../../ICML2026/autonomous_driving/roca_robust_cross-domain_end-to-end_autonomous_driving.md)
-- [\[ICLR 2026\] DriveMamba: Task-Centric Scalable State Space Model for Efficient End-to-End Autonomous Driving](drivemamba_task-centric_scalable_state_space_model_for_efficient_end-to-end_auto.md)
 
 </div>
 

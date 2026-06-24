@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] Addressing the issue where GUI agents frequently fail to recover from "self-inflicted errors" in real-world deployments, the authors construct GUI-RobustEval (1,216 executable tests covering 11 types of policy-induced errors across 4 error depths) for fine-grained evaluation. Simultaneously, they propose RoTS—an online
+  [ICML 2026 Spotlight][LLM Agent][GUI Agents] Addressing the issue where GUI agents frequently fail to recover from "self-inflicted errors" in real-world deployments, the authors construct GUI-RobustEval (1,216 executable tests covering 11 types of policy-induced errors across 4 error depths) for fine-grained evaluation. Simultaneously, they propose RoTS—an online data synthesis framework based on trajectory trees. It uses Fragility-based UCB to actively expose new errors in s…
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026 Spotlight"
+  - "LLM Agent"
+  - "GUI Agents"
+  - "Policy-Induced Errors"
+  - "Error Recovery"
+  - "Trajectory Tree Synthesis"
+  - "Reflection Data"
 date: 2026-05-08
-content_hash: ee5d0b08e8db1bc6
+content_hash: 29e318a8bb5dfee9
 ---
+
 # Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents
 
 **Conference**: ICML 2026 Spotlight  
@@ -136,8 +142,20 @@ Ablation of rollout strategies (100k data scale, PS = parallel sampling):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](../../CVPR2026/llm_agent/hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)
+- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](../../ACL2026/llm_agent/robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
+- [\[ICML 2026\] Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation](rule2drc_benchmarking_llm_agents_for_drc_script_synthesis_with_execution-guided_.md)
+- [\[ACL 2025\] OS-Genesis: Automating GUI Agent Trajectory Construction via Reverse Task Synthesis](../../ACL2025/llm_agent/os_genesis_gui_agent_trajectory.md)
+- [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] HATS: Hardness-Aware Trajectory Synthesis for GUI Agents](../../CVPR2026/llm_agent/hats_hardness-aware_trajectory_synthesis_for_gui_agents.md)

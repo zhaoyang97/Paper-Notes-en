@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts when aggregating multiple categories. It dynamically identifies the harmful category most aligned with the current generation state and applies safety gu
+  [Image Generation] Ours proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts when aggregating multiple categories. It dynamically identifies the harmful category most aligned with the current generation state and applies safety guidance only along that direction.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
-content_hash: 71c7dda2ba2cd34e
+content_hash: 014977190a305f86
 ---
+
 # When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
 
 ## Basic Information
@@ -139,7 +139,7 @@ LLM-assisted schemes (GPT-4o/QwenGuard pre-classification followed by SLD) show 
 - [\[CVPR 2025\] Multi-party Collaborative Attention Control for Image Customization](../../CVPR2025/image_generation/multi-party_collaborative_attention_control_for_image_customization.md)
 - [\[CVPR 2025\] Fine-Grained Erasure in Text-to-Image Diffusion-based Foundation Models](../../CVPR2025/image_generation/fine-grained_erasure_in_text-to-image_diffusion-based_foundation_models.md)
 - [\[ICCV 2025\] TRCE: Towards Reliable Malicious Concept Erasure in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/trce_towards_reliable_malicious_concept_erasure_in_text-to-image_diffusion_model.md)
-- [\[AAAI 2026\] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](../../AAAI2026/image_generation/hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)
+- [\[ICCV 2025\] DynamicID: Zero-Shot Multi-ID Image Personalization with Flexible Facial Editability](../../ICCV2025/image_generation/dynamicid_zero-shot_multi-id_image_personalization_with_flexible_facial_editabil.md)
 
 </div>
 

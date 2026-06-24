@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Transcripts: A Renewed Perspective on Audio Chaptering
 description: >-
-  [ACL 2026][Audio & Speech][audio chaptering] This paper systematically reconstructs the long-form audio chaptering task: advancing evaluation from transcript-dependent text space to transcript-invariant temporal space, and demonstrating that AudioSeg, utilizing direct audio representations, significantly outperforms text-based segmentation and existing MLLM solut
+  [ACL2026][Audio & Speech][audio chaptering] This paper systematically reconstructs the long-form audio chaptering task: advancing evaluation from transcript-dependent text space to transcript-invariant temporal space, and demonstrating that AudioSeg, utilizing direct audio representations, significantly outperforms text-based segmentation and existing MLLM solutions on YTSeg.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - audio chaptering
-  - AudioSeg
+  - "ACL2026"
+  - "Audio & Speech"
+  - "audio chaptering"
+  - "AudioSeg"
+  - "timeline evaluation"
+  - "acoustic features"
+  - "multimodal large language models"
 date: 2026-05-08
-content_hash: ce97894c7a5c09c7
+content_hash: 774bcc6a1d82653f
 ---
+
 # Beyond Transcripts: A Renewed Perspective on Audio Chaptering
 
 **Conference**: ACL2026  
@@ -142,9 +146,9 @@ Ablation of specific manual acoustic features shows that pauses are significantl
 
 - [\[ACL 2026\] Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs](beyond_transcription_unified_audio_schema_for_perception-aware_audiollms.md)
 - [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](../../ICLR2026/audio_speech/beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
+- [\[ICML 2026\] Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models](../../ICML2026/audio_speech/beyond_classification_a_cough_regression_benchmark_for_respiratory_acoustic_foun.md)
 - [\[ICML 2025\] One Wave To Explain Them All: A Unifying Perspective On Feature Attribution](../../ICML2025/audio_speech/one_wave_to_explain_them_all_a_unifying_perspective_on_feature_attribution.md)
 - [\[NeurIPS 2025\] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity](../../NeurIPS2025/audio_speech/a_triangle_enables_multimodal_alignment_beyond_cosine_simila.md)
-- [\[ICML 2026\] Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models](../../ICML2026/audio_speech/beyond_classification_a_cough_regression_benchmark_for_respiratory_acoustic_foun.md)
 
 </div>
 

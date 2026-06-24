@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ViLearn: Accelerating Training Convergence of Image-to-3D Generation via Visibility Learning
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ViLearn explicitly decouples two inherently different sub-tasks in "single-image-to-3D"—**visible region reconstruction** and **invisible region hallucination**—during the training phase. It utilizes the cross-attention of a pre-trained VecSet decoder to partition unordered shape tokens into two groups (Visibility Grou
+  [CVPR 2026][Multimodal Efficiency][Single-image-to-3D generation] ViLearn explicitly decouples two inherently different sub-tasks in "single-image-to-3D"—**visible region reconstruction** and **invisible region hallucination**—during the training phase. It utilizes the cross-attention of a pre-trained VecSet decoder to partition unordered shape tokens into two groups (Visibility Grouping, VG): visible and invisible. Subsequently, it employs Visibility-Aware Positional Encodin…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Single-image-to-3D generation"
+  - "VecSet latent diffusion"
+  - "visibility learning"
+  - "convergence acceleration"
+  - "positional encoding"
 date: 2026-05-08
-content_hash: 93210bf2c382cef7
+content_hash: d3ef8f557f560d93
 ---
+
 # ViLearn: Accelerating Training Convergence of Image-to-3D Generation via Visibility Learning
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ ViLearn leads across all metrics. Compared to the vanilla baseline, it achieves 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)
-- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
-- [\[CVPR 2026\] Image-to-Point Cloud Feature Back-Projection for Multimodal Training of 3D Semantic Segmentation](image-to-point_cloud_feature_back-projection_for_multimodal_training_of_3d_seman.md)
-- [\[CVPR 2026\] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](nvgs_neural_visibility_for_occlusion_culling_in_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
+- [\[CVPR 2026\] Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging](merge3d_efficient_3d_multimodal_llms_via_joint_2d-3d_token_merging.md)
+- [\[CVPR 2026\] VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping](vvs_accelerating_speculative_decoding_for_visual_autoregressive_generation_via_p.md)
+- [\[CVPR 2026\] MM-SeR: Multimodal Self-Refinement for Lightweight Image Captioning](mm-ser_multimodal_self-refinement_for_lightweight_image_captioning.md)
+- [\[CVPR 2026\] Adapting Lightweight Image-based Counting Models for Video Crowd Counting](adapting_lightweight_image-based_counting_models_for_video_crowd_counting.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] How to Train Data-Efficient LLMs
 description: >-
-  [ICLR 2026][Pretraining][Ask-LLM] This paper systematically compares 22 data selection strategies for LLM pre-training. It proposes **Ask-LLM**, which uses instruction-tuned LLMs to directly provide quality scores, and **Density**, which performs coverage sampling based on kernel density estimation. The study finds that quality filtering (Ask-LLM) can
+  [ICLR 2026][LLM Pretraining][Data-efficient pre-training] This paper systematically compares 22 data selection strategies for LLM pre-training. It proposes **Ask-LLM**, which uses instruction-tuned LLMs to directly provide quality scores, and **Density**, which performs coverage sampling based on kernel density estimation. The study finds that quality filtering (Ask-LLM) can outperform full-scale training while converging 70% faster even when keeping only 10% of the data…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Ask-LLM
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data-efficient pre-training"
+  - "Data selection"
+  - "Quality scoring"
+  - "Coverage sampling"
+  - "Ask-LLM"
+  - "Density sampling"
 date: 2026-05-08
-content_hash: c8587fa12d9938bc
+content_hash: 8b0160f2f5727ca7
 ---
+
 # How to Train Data-Efficient LLMs
 
 **Conference**: ICLR 2026  
@@ -118,10 +124,10 @@ Taking Ask-LLM-T5-XL scoring for training T5-Large as an example: Figure 1 shows
 ## Related Papers
 
 - [\[ICLR 2026\] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning](train_on_validation_tov_fast_data_selection_with_applications_to_fine-tuning.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
 - [\[ICLR 2026\] GneissWeb: Preparing High Quality Data for LLMs at Scale](gneissweb_preparing_high_quality_data_for_llms_at_scale.md)
+- [\[ICLR 2026\] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining](how_learning_rate_decay_wastes_your_best_data_in_curriculum-based_llm_pretrainin.md)
 - [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
-- [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
-- [\[ICML 2025\] How to Synthesize Text Data without Model Collapse?](../../ICML2025/llm_pretraining/how_to_synthesize_text_data_without_model_collapse.md)
 
 </div>
 

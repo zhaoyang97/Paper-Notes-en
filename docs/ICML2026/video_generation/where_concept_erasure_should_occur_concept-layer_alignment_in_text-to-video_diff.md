@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Where Concept Erasure Should Occur: Concept-Layer Alignment in Text-to-Video Diffusion Models
 description: >-
-  [ICML 2026][Video Generation][Concept Erasure] This paper discovers that target concepts in text-to-video (T2V) diffusion models are most separable only at specific depths. It proposes CLEAR, which utilizes Gumbel-Softmax to learn "where to erase" and Sparse Autoencoders (SAE) to learn "which concept direction to erase," enabling precise suppression of target conce
+  [ICML 2026][Video Generation][Text-to-Video Diffusion] This paper discovers that target concepts in text-to-video (T2V) diffusion models are most separable only at specific depths. It proposes CLEAR, which utilizes Gumbel-Softmax to learn "where to erase" and Sparse Autoencoders (SAE) to learn "which concept direction to erase," enabling precise suppression of target concepts while preserving video quality without modifying diffusion model weights.
 tags:
-  - ICML 2026
-  - Video Generation
-  - Concept Erasure
+  - "ICML 2026"
+  - "Video Generation"
+  - "Text-to-Video Diffusion"
+  - "Concept Erasure"
+  - "Layer Selection"
+  - "Sparse Autoencoder"
+  - "Safety Generation"
 date: 2026-05-08
-content_hash: 73839cc1d267e8f4
+content_hash: 8c119deec973d1df
 ---
+
 # Where Concept Erasure Should Occur: Concept-Layer Alignment in Text-to-Video Diffusion Models
 
 **Conference**: ICML 2026  
@@ -132,15 +137,14 @@ The study extended beyond object concepts to investigate harder categories like 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Composing Concepts from Images and Videos via Concept-prompt Binding](../../CVPR2026/video_generation/composing_concepts_from_images_and_videos_via_concept-prompt_binding.md)
+- [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](../../ICLR2026/video_generation/moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
 - [\[ICML 2026\] Exploring Data-Free LoRA Transferability for Video Diffusion Models](exploring_data-free_lora_transferability_for_video_diffusion_models.md)
 - [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](../../CVPR2026/video_generation/inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[ICML 2026\] LocoT2V-Bench: Benchmarking Long-form and Complex Text-to-Video Generation](locot2v-bench_benchmarking_long-form_and_complex_text-to-video_generation.md)
-- [\[ICML 2026\] World-R1: Reinforcing 3D Constraints for Text-to-Video Generation](world-r1_reinforcing_3d_constraints_for_text-to-video_generation.md)
 
 </div>
 

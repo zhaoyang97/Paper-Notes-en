@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Rejection Criterion for Proxy-Based Test-Time Alignment
 description: >-
-  [ACL 2026][Alignment & RLHF][guided decoding] This paper unifies proxy-based test-time alignment methods, such as implicit rewards, Nudging, and KAD, into a "sample-then-decide" probabilistic graphical model. It proposes a **conservative confidence bet** that uses the best confidence of a small alignment model as a reference, improving hybrid decoding accuracy acr
+  [ACL2026][LLM Alignment][test-time alignment] This paper unifies proxy-based test-time alignment methods, such as implicit rewards, Nudging, and KAD, into a "sample-then-decide" probabilistic graphical model. It proposes a **conservative confidence bet** that uses the best confidence of a small alignment model as a reference, improving hybrid decoding accuracy across multiple mathematical and commonsense reasoning datasets.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - guided decoding
+  - "ACL2026"
+  - "LLM Alignment"
+  - "test-time alignment"
+  - "proxy models"
+  - "rejection criterion"
+  - "guided decoding"
+  - "LLM inference"
 date: 2026-05-08
-content_hash: 30ba900d52ac1872
+content_hash: d6e088c5ed709f81
 ---
+
 # On the Rejection Criterion for Proxy-Based Test-Time Alignment
 
 **Conference**: ACL2026  
@@ -149,11 +154,11 @@ The paper analyzes the sensitivity of the margin $\lambda$ as a proxy for ablati
 
 ## Related Papers
 
+- [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](../../ICLR2026/llm_alignment/test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](../../ICLR2026/llm_alignment/guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
 - [\[CVPR 2025\] Jailbreaking the Non-Transferable Barrier via Test-Time Data Disguising](../../CVPR2025/llm_alignment/jailbreaking_the_non-transferable_barrier_via_test-time_data_disguising.md)
-- [\[ACL 2026\] Pref-CTRL: Preference Driven LLM Alignment using Representation Editing](pref-ctrl_preference_driven_llm_alignment_using_representation_editing.md)
 - [\[ACL 2026\] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending](to_intervene_or_not_guiding_inference-time_alignment_with_probabilistic_model_bl.md)
-- [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
+- [\[ACL 2026\] Pref-CTRL: Preference Driven LLM Alignment using Representation Editing](pref-ctrl_preference_driven_llm_alignment_using_representation_editing.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning
 description: >-
-  [ICLR 2026][LLM Evaluation][test-time scaling] TokUR utilizes low-rank random perturbations of attention weights to construct a lightweight Bayesian model ensemble. It estimates total, aleatoric, and epistemic uncertainty for each generated token, then aggregates these signals into a response-level confidence score to identify faulty reasoning, filter high-quality
+  [ICLR2026][LLM Evaluation][token-level uncertainty] TokUR utilizes low-rank random perturbations of attention weights to construct a lightweight Bayesian model ensemble. It estimates total, aleatoric, and epistemic uncertainty for each generated token, then aggregates these signals into a response-level confidence score to identify faulty reasoning, filter high-quality answers, and assist in test-time scaling.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - test-time scaling
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "token-level uncertainty"
+  - "LLM reasoning"
+  - "Bayesian perturbation"
+  - "erroneous path detection"
+  - "test-time scaling"
 date: 2026-05-08
-content_hash: 00397fa00c2b0fc0
+content_hash: 00742b37b8424ca4
 ---
+
 # TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning
 
 **Conference**: ICLR2026  
@@ -155,6 +160,7 @@ In test-time scaling, TokUR consistently outperformed log-likelihood (LL) baseli
 - **Value**: ⭐⭐⭐⭐⭐ (Highly valuable for reliability, verifiers, and test-time scaling).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] QPrompt-R1: Real-Time Reasoning for Domain-Generalized Semantic Segmentation via Group-Relative Query Alignment
 description: >-
-  [ICLR 2026][Segmentation][Query Prompt] Addressing the challenge of achieving both real-time performance and cross-domain robustness in semantic segmentation, this paper identifies that the bottleneck of slow DGSS lies in the heavy segmentation head rather than the VFM backbone. By injecting learnable queries only into the final layer of the VFM (QPrompt), t
+  [ICLR 2026][Segmentation][Domain Generalized Segmentation] Addressing the challenge of achieving both real-time performance and cross-domain robustness in semantic segmentation, this paper identifies that the bottleneck of slow DGSS lies in the heavy segmentation head rather than the VFM backbone. By injecting learnable queries only into the final layer of the VFM (QPrompt), the authors achieve a lightweight architecture approximating query-decoding. Combined with Group-Relat…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Query Prompt
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Domain Generalized Segmentation"
+  - "Real-Time Segmentation"
+  - "Visual Foundation Models"
+  - "Query Prompt"
+  - "Group-Relative Optimization"
 date: 2026-05-08
-content_hash: 52ba2bdbd0784fbb
+content_hash: 4863953207be93c1
 ---
+
 # QPrompt-R1: Real-Time Reasoning for Domain-Generalized Semantic Segmentation via Group-Relative Query Alignment
 
 **Conference**: ICLR 2026  

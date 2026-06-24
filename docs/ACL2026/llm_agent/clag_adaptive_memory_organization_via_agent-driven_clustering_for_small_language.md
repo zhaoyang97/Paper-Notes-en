@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes CLAG, a cluster-based Agent memory framework. It organizes memories into semantically consistent clusters via SLM-driven routing, performs local evolutionary updates within clusters, and filters noise through two-stage retrieval. It significantly outperforms global memory pool baselines across multi
+  [ACL 2026 Findings][LLM Agent][Small Language Models] This paper proposes CLAG, a cluster-based Agent memory framework. It organizes memories into semantically consistent clusters via SLM-driven routing, performs local evolutionary updates within clusters, and filters noise through two-stage retrieval. It significantly outperforms global memory pool baselines across multiple QA datasets.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Small Language Models"
+  - "Clustering Memory"
+  - "Agent Memory Management"
+  - "Local Evolution"
+  - "Two-stage Retrieval"
 date: 2026-05-08
-content_hash: cebc716aa8079e06
+content_hash: 2a74c22f4fb8cef0
 ---
+
 # CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents
 
 **Conference**: ACL 2026 Findings  
@@ -137,10 +143,10 @@ No training is required; the framework operates at inference time. Routing, evol
 ## Related Papers
 
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
-- [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](context-value-action_architecture_for_value-driven_large_language_model_agents.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
+- [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](context-value-action_architecture_for_value-driven_large_language_model_agents.md)
 - [\[CVPR 2026\] Universal Guideline-Driven Image Clustering via a Hybrid LLM Agent](../../CVPR2026/llm_agent/universal_guideline-driven_image_clustering_via_a_hybrid_llm_agent.md)
-- [\[ACL 2026\] Polaris: A Gödel Agent Framework for Small Language Models through Experience-Abstracted Policy Repair](polaris_a_gödel_agent_framework_for_small_language_models_through_experience-abs.md)
+- [\[ICML 2026\] AdaMEM: Test-Time Adaptive Memory for Language Agents](../../ICML2026/llm_agent/adamem_test-time_adaptive_memory_for_language_agents.md)
 
 </div>
 

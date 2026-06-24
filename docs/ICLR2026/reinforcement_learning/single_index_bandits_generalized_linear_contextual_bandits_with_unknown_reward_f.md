@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes the Single Index Bandits (SIB) problem, extending generalized linear bandits to settings with unknown reward functions. A family of efficient algorithms (STOR/ESTOR/GSTOR) based on Stein's method is designed, achieving a near-optimal regret bound of $\tilde{O}(\sqrt{T})$ under monotonically increasi
+  [ICLR 2026][Reinforcement Learning][Contextual Multi-armed Bandits] This paper proposes the Single Index Bandits (SIB) problem, extending generalized linear bandits to settings with unknown reward functions. A family of efficient algorithms (STOR/ESTOR/GSTOR) based on Stein's method is designed, achieving a near-optimal regret bound of $\tilde{O}(\sqrt{T})$ under monotonically increasing reward functions.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Contextual Multi-armed Bandits"
+  - "Generalized Linear Model (GLM)"
+  - "Single Index Model (SIM)"
+  - "Stein's Method"
+  - "Regret Bound"
 date: 2026-05-08
-content_hash: 76442b9a09d3d319
+content_hash: 05769b91c12a2e11
 ---
+
 # Single Index Bandits: Generalized Linear Contextual Bandits with Unknown Reward Functions
 
 **Conference**: ICLR 2026  
@@ -153,10 +159,10 @@ Comparison across four link functions ($T=10,000$, $d=10$):
 ## Related Papers
 
 - [\[ICML 2026\] Practical and Optimal Algorithm for Linear Contextual Bandits with Rare Parameter Updates](../../ICML2026/reinforcement_learning/practical_and_optimal_algorithm_for_linear_contextual_bandits_with_rare_paramete.md)
+- [\[NeurIPS 2025\] Exploration via Feature Perturbation in Contextual Bandits](../../NeurIPS2025/reinforcement_learning/exploration_via_feature_perturbation_in_contextual_bandits.md)
 - [\[ICLR 2026\] Revisiting Matrix Sketching in Linear Bandits: Achieving Sublinear Regret via Dyadic Block Sketching](revisiting_matrix_sketching_in_linear_bandits_achieving_sublinear_regret_via_dya.md)
 - [\[NeurIPS 2025\] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities](../../NeurIPS2025/reinforcement_learning/tractable_multinomial_logit_contextual_bandits_with_non-linear_utilities.md)
 - [\[NeurIPS 2025\] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](../../NeurIPS2025/reinforcement_learning/generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)
-- [\[ICLR 2026\] Online Minimization of Polarization and Disagreement via Low-Rank Matrix Bandits](online_minimization_of_polarization_and_disagreement_via_low-rank_matrix_bandits.md)
 
 </div>
 

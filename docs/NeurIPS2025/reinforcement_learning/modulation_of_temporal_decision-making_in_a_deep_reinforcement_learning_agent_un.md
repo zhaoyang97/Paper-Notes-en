@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Temporal perception] DRL agents trained in a simplified Overcooked environment to perform either a single task (temporal production) or a dual task (temporal production + numerical…
+  [NeurIPS 2025][Reinforcement Learning][Temporal perception] DRL agents trained in a simplified Overcooked environment to perform either a single task (temporal production) or a dual task (temporal production + numerical comparison) exhibit significantly greater temporal overproduction across all four target durations in the dual-task condition—an emergent behavior that closely parallels the time overestimation phenomenon observed in human temporal perception research under du…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "cognitive science"
   - "LSTM neural dynamics"
 date: 2026-05-08
-content_hash: 436f6aff706c2cc4
+content_hash: d4e7af061627fc04
 ---
 
 # Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm
@@ -123,10 +123,10 @@ Dual-task agents significantly overproduce time across all target durations (25 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
+- [\[ICML 2025\] Counterfactual Effect Decomposition in Multi-Agent Sequential Decision Making](../../ICML2025/reinforcement_learning/counterfactual_effect_decomposition_in_multi-agent_sequential_decision_making.md)
+- [\[ICLR 2026\] Information-based Value Iteration Networks for Decision Making Under Uncertainty](../../ICLR2026/reinforcement_learning/information-based_value_iteration_networks_for_decision_making_under_uncertainty.md)
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](temporal-difference_variational_continual_learning.md)
-- [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](../../AAAI2026/reinforcement_learning/think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
 - [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
-- [\[NeurIPS 2025\] Incremental Sequence Classification with Temporal Consistency](incremental_sequence_classification_with_temporal_consistency.md)
 
 </div>
 

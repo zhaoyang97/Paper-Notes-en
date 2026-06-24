@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Return of Frustratingly Easy Unsupervised Video Domain Adaptation
 description: >-
-  [ICML 2026][Video Understanding][Paper Note] This paper proposes MetaTrans—a "frustratingly easy" Unsupervised Video Domain Adaptation (UVDA) method. It decouples spatial and temporal domain gaps through spatio-temporal feature subtraction in a dual-stream Transformer. By using only two basic losses (supervised + domain adversarial), it outperforms complex SOTA m
+  [ICML 2026][Video Understanding][Unsupervised Video Domain Adaptation (UVDA)] This paper proposes MetaTrans—a "frustratingly easy" Unsupervised Video Domain Adaptation (UVDA) method. It decouples spatial and temporal domain gaps through spatio-temporal feature subtraction in a dual-stream Transformer. By using only two basic losses (supervised + domain adversarial), it outperforms complex SOTA methods and reduces hyperparameter search costs from exponential to linear.
 tags:
-  - ICML 2026
-  - Video Understanding
+  - "ICML 2026"
+  - "Video Understanding"
+  - "Unsupervised Video Domain Adaptation (UVDA)"
+  - "Cross-domain Action Recognition"
+  - "Spatio-temporal Feature Decoupling"
+  - "Permutation Invariance"
 date: 2026-05-08
-content_hash: a2232fd0fb1f0e4c
+content_hash: 379aafbf443e63c0
 ---
+
 # Return of Frustratingly Easy Unsupervised Video Domain Adaptation
 
 **Conference**: ICML 2026  
@@ -145,8 +150,8 @@ Epic-Kitchens (Average across 6 cross-domain sub-tasks):
 - [\[CVPR 2026\] Learnable Motion-Focused Tokenization for Effective and Efficient Video Unsupervised Domain Adaptation](../../CVPR2026/video_understanding/learnable_motion-focused_tokenization_for_effective_and_efficient_video_unsuperv.md)
 - [\[ICML 2026\] SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition](skelhcc_a_hyperbolic_clip-driven_cache_adaptation_framework_for_skeleton-based_o.md)
 - [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](../../CVPR2026/video_understanding/scene-centric_unsupervised_video_panoptic_segmentation.md)
+- [\[ICLR 2026\] VUDG: A Dataset for Video Understanding Domain Generalization](../../ICLR2026/video_understanding/vudg_a_dataset_for_video_understanding_domain_generalization.md)
 - [\[ICML 2026\] Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)
-- [\[AAAI 2026\] StegaVAR: Privacy-Preserving Video Action Recognition via Steganographic Domain Analysis](../../AAAI2026/video_understanding/stegavar_privacy-preserving_video_action_recognition_via_steganographic_domain_a.md)
 
 </div>
 

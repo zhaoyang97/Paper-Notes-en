@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper treats the entire training trajectory of an MLP as a sequence of "parameter graph" snapshots and uses a permutation-symmetry-preserving hyperbolic graph attention meta-network (GTH-GMN) to embed them into the Poincaré ball. This approach reconstructs the self-organizing geometry of the network during trainin
+  [ICLR 2026][Interpretability][Intrinsic Explainability] This paper treats the entire training trajectory of an MLP as a sequence of "parameter graph" snapshots and uses a permutation-symmetry-preserving hyperbolic graph attention meta-network (GTH-GMN) to embed them into the Poincaré ball. This approach reconstructs the self-organizing geometry of the network during training within a negative curvature space, matching strong baselines in tasks such as INR classification…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Intrinsic Explainability"
+  - "Training Dynamics"
+  - "Hyperbolic Embedding"
+  - "Parameter Graphs"
+  - "Meta-learning"
 date: 2026-05-08
-content_hash: 76973bcf40ba88eb
+content_hash: 3121d993ababbef6
 ---
+
 # Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability
 
 **Conference**: ICLR 2026  
@@ -133,8 +139,8 @@ Link prediction uses a Fermi-Dirac decoder $\psi^{(t)}(u,v)=\big(1+\exp(\frac{d_
 ## Related Papers
 
 - [\[ICLR 2026\] Temporal Superposition and Feature Geometry of RNNs under Memory Demands](temporal_superposition_and_feature_geometry_of_rnns_under_memory_demands.md)
-- [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
 - [\[ICLR 2026\] On The Geometry and Topology of Representations: the Manifolds of Modular Addition](on_the_geometry_and_topology_of_representations_the_manifolds_of_modular_additio.md)
+- [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
 - [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
 - [\[ICLR 2026\] Learning for Highly Faithful Explainability](learning_for_highly_faithful_explainability.md)
 

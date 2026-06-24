@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TNT: Improving Chunkwise Training for Test-Time Memorization
 description: >-
-  [ICLR 2026][Pretraining][Titans] Ours proposes the TNT training paradigm, which utilizes "hierarchical memory + periodic state reset" to break the sequential dependencies of non-linear RNNs to achieve large-scale context parallelism. A subsequent lightweight fine-tuning stage adapts local memory to small chunks, accelerating the training of Titans-lik
+  [ICLR 2026][LLM Pretraining][Test-time memorization] Ours proposes the TNT training paradigm, which utilizes "hierarchical memory + periodic state reset" to break the sequential dependencies of non-linear RNNs to achieve large-scale context parallelism. A subsequent lightweight fine-tuning stage adapts local memory to small chunks, accelerating the training of Titans-like deep memory models by up to $17 \times$ while improving accuracy.
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Titans
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Test-time memorization"
+  - "deep memory modules"
+  - "chunkwise training"
+  - "context parallelism"
+  - "Titans"
 date: 2026-05-08
-content_hash: 61cb0ced3094ca3c
+content_hash: adf9a8d602e71c50
 ---
+
 # TNT: Improving Chunkwise Training for Test-Time Memorization
 
 **Conference**: ICLR 2026  
@@ -132,8 +137,8 @@ Training speed (time to reach target loss 3.20 for 150M model):
 - Value: ⭐⭐⭐⭐⭐ Removes a critical scalability barrier for expressive RNN architectures.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

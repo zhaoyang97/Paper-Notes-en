@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding
 description: >-
-  [ICLR 2026][Medical Imaging][subject-agnostic brain decoding] VCFLOW incorporates the "ventral-dorsal dual-stream" mechanism of the human visual cortex into a decoding model. It decomposes fMRI signals into early visual, ventral, and dorsal streams, aligning them with different hierarchical CLIP features. By using a redistribution adapter to decouple "subject-agnostic semantics"
+  [ICLR 2026][Medical Imaging][subject-agnostic brain decoding] VCFLOW incorporates the "ventral-dorsal dual-stream" mechanism of the human visual cortex into a decoding model. It decomposes fMRI signals into early visual, ventral, and dorsal streams, aligning them with different hierarchical CLIP features. By using a redistribution adapter to decouple "subject-agnostic semantics" from "subject identity," it achieves fMRI-to-video reconstruction **without retraining on new subj…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - subject-agnostic brain decoding
-  - fMRI-to-video
-  - ventral-dorsal stream
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "subject-agnostic brain decoding"
+  - "fMRI-to-video"
+  - "ventral-dorsal stream"
+  - "CLIP hierarchical alignment"
+  - "contrastive learning"
+  - "cross-subject generalization"
 date: 2026-05-08
-content_hash: 5fd015c2d2a17228
+content_hash: 1cdf6a9e21346e5c
 ---
+
 # A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding
 
 **Conference**: ICLR 2026  
@@ -117,9 +121,9 @@ Data: DIR + GOD (8 subjects) for pre-training; cc2017 fMRI-video (8640/1200 spli
 
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
 - [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](../../AAAI2026/medical_imaging/neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
 
 </div>
 

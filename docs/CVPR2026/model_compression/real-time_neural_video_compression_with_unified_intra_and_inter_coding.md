@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Real-Time Neural Video Compression with Unified Intra and Inter Coding
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the weak intra-coding capability of real-time neural video compression (e.g., DCVC-RT) during scene cuts or new content—which typically causes quality drops, bitrate spikes, and error propagation due to "periodic refresh" mechanisms—this paper proposes a single-model unified intra/inter coding approach. By u
+  [CVPR 2026][Model Compression][Neural Video Compression] To address the weak intra-coding capability of real-time neural video compression (e.g., DCVC-RT) during scene cuts or new content—which typically causes quality drops, bitrate spikes, and error propagation due to "periodic refresh" mechanisms—this paper proposes a single-model unified intra/inter coding approach. By using dual-frame compression and mixed reference training, the model adaptively switches between intra a…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Neural Video Compression"
+  - "Unified Intra/Inter Coding"
+  - "Dual-frame Compression"
+  - "Error Propagation"
+  - "Real-time Codec"
 date: 2026-05-08
-content_hash: a46878f74c6d7388
+content_hash: 37eefbf34a21c0d2
 ---
+
 # Real-Time Neural Video Compression with Unified Intra and Inter Coding
 
 **Conference**: CVPR 2026  
@@ -134,16 +140,16 @@ Anchored to the full model without refresh (BD-rate=0, HEVC average, Table 3 exc
 - Value: ⭐⭐⭐⭐ Real-time + no refresh + stable bitrate; high direct value for low-latency video streaming applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
 - [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
-- [\[CVPR 2026\] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition](time-specialized_event-image_alignment_for_blur-to-video_decomposition.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
-- [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
+- [\[CVPR 2025\] Towards Practical Real-Time Neural Video Compression](../../CVPR2025/model_compression/towards_practical_real-time_neural_video_compression.md)
+- [\[CVPR 2026\] InstantViR: Real-Time Video Inverse Problem Solver with Distilled Diffusion Prior](instantvir_real-time_video_inverse_problem_solver_with_distilled_diffusion_prior.md)
+- [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
 
 </div>
 

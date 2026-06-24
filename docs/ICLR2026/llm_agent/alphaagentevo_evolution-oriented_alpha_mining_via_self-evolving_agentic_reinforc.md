@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning
 description: >-
-  [ICLR 2026][LLM Agent][Agentic RL] The quantitative "factor mining" process is redefined from a fragile "search-backtest-restart" cycle into a **continuous evolution trajectory**. By using a 4B LLM agent guided by hierarchical rewards in multi-turn tool calls, the system learns long-term planning and reflection, ultimately outperforming factor evolution
+  [ICLR 2026][LLM Agent][Quantitative Stock Factor Mining] The quantitative "factor mining" process is redefined from a fragile "search-backtest-restart" cycle into a **continuous evolution trajectory**. By using a 4B LLM agent guided by hierarchical rewards in multi-turn tool calls, the system learns long-term planning and reflection, ultimately outperforming factor evolution methods driven by GPT-5-mini / DeepSeek-R1 with only 4B parameters.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Agentic RL
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Quantitative Stock Factor Mining"
+  - "Self-Evolving Agent"
+  - "Agentic RL"
+  - "GRPO"
+  - "Hierarchical Reward"
+  - "Multi-turn Tool Call"
 date: 2026-05-08
-content_hash: 19f7bf5adb7ddf06
+content_hash: 858f120a525148f0
 ---
+
 # AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -131,10 +136,10 @@ Training significantly improves the valid tool call rate (AlphaEvo500: 0.938 →
 ## Related Papers
 
 - [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
 - [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
-- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
-- [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](../../ICML2026/llm_agent/on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 
 </div>
 

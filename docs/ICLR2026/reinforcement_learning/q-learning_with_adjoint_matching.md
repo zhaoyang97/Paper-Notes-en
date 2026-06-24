@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Q-Learning with Adjoint Matching
 description: >-
-  [ICLR 2026][Reinforcement Learning][Adjoint Matching] QAM incorporates adjoint matching techniques from generative modeling into Q-learning. It uses gradients from the critic on "clean actions" as direct step-by-step supervision to fine-tune multi-step flow policies. This approach preserves the expressivity of flow policies while avoiding numerical instability from backpr
+  [ICLR 2026][Reinforcement Learning][Offline RL] QAM incorporates adjoint matching techniques from generative modeling into Q-learning. It uses gradients from the critic on "clean actions" as direct step-by-step supervision to fine-tune multi-step flow policies. This approach preserves the expressivity of flow policies while avoiding numerical instability from backpropagating through denoising chains, achieving an aggregate score of 44/46 across 50 sparse-reward tasks in OGBen…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Adjoint Matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Flow Matching"
+  - "Adjoint Matching"
+  - "Policy Extraction"
+  - "TD Learning"
 date: 2026-05-08
-content_hash: 1ae458be8605af44
+content_hash: 76d2d9ea7ce49317
 ---
+
 # Q-Learning with Adjoint Matching
 
 **Conference**: ICLR 2026  
@@ -156,11 +161,11 @@ QAM outscored all 13 baselines with 44; variants QAM-F/QAM-E further improved to
 
 ## Related Papers
 
-- [\[ICLR 2026\] floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL](floq_training_critics_via_flow-matching_for_scaling_compute_in_value-based_rl.md)
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
+- [\[ICLR 2026\] Imitation Learning as Return Distribution Matching](imitation_learning_as_return_distribution_matching.md)
 - [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
-- [\[ICML 2026\] Adaptive Bandit Algorithms for Contextual Matching Markets](../../ICML2026/reinforcement_learning/adaptive_bandit_algorithms_for_contextual_matching_markets.md)
-- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](../../ICML2026/reinforcement_learning/reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
-- [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](../../ICML2026/reinforcement_learning/moment_matching_q-learning.md)
+- [\[ICLR 2026\] floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL](floq_training_critics_via_flow-matching_for_scaling_compute_in_value-based_rl.md)
 
 </div>
 

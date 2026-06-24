@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification
 description: >-
-  [NeurIPS 2025][Image Generation][Unified Framework] This paper proposes the Latent Zoning Network (LZN)—a framework that unifies generative modeling, representation learning…
+  [NeurIPS 2025][Image Generation][Unified Framework] This paper proposes the Latent Zoning Network (LZN)—a framework that unifies generative modeling, representation learning, and classification within a shared Gaussian latent space. Each data type is equipped with an encoder-decoder pair that maps samples to disjoint latent zones. Only two atomic operations—*latent computation* and *latent alignment*—are required to support diverse ML tasks. LZN reduces unconditional generati…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Representation Learning"
   - "Joint Generation-Classification"
 date: 2026-05-08
-content_hash: 9da7531be4d67b1c
+content_hash: 492a0778cefa0643
 ---
 
 # Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification
@@ -144,11 +144,11 @@ LZN constructs a shared Gaussian latent space connected to multiple encoder-deco
 
 ## Related Papers
 
+- [\[CVPR 2025\] Generative Modeling of Class Probability for Multi-Modal Representation Learning](../../CVPR2025/image_generation/generative_modeling_of_class_probability_for_multi_modal_representation_learning.md)
 - [\[AAAI 2026\] Symmetrical Flow Matching: Unified Image Generation, Segmentation, and Classification with Score-Based Generative Models](../../AAAI2026/image_generation/symmetrical_flow_matching_unified_image_generation_segmentation_and_classificati.md)
 - [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
 - [\[NeurIPS 2025\] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation](infinitystar_unified_spacetime_autoregressive_modeling_for_v.md)
 - [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
-- [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 
 </div>
 

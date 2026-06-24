@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper provides a theoretical characterization of convergence rates and scaling laws for Muon on a linear associative memory model with softmax retrieval and hierarchical spectra: compared to GD, Muon achieves exponential acceleration in the noiseless case and improves the loss scaling law from $\tilde{\Omega}(T^{-
+  [ICML2026][Optimization][Muon optimizer] This paper provides a theoretical characterization of convergence rates and scaling laws for Muon on a linear associative memory model with softmax retrieval and hierarchical spectra: compared to GD, Muon achieves exponential acceleration in the noiseless case and improves the loss scaling law from $\tilde{\Omega}(T^{-(1-1/\beta)})$ to $\tilde{\mathcal{O}}(T^{-2})$ in the power-law spectrum noise case…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Muon optimizer"
+  - "associative memory"
+  - "matrix sign operator"
+  - "scaling laws"
+  - "training dynamics"
 date: 2026-05-08
-content_hash: 81fdb58897dfeb4d
+content_hash: 008c824d4af17760
 ---
+
 # Muon in Associative Memory Learning: Training Dynamics and Scaling Laws
 
 **Conference**: ICML2026  
@@ -118,11 +124,11 @@ Experiments serve as a sanity check, verifying theoretical predictions using syn
 
 ## Related Papers
 
+- [\[ICLR 2026\] Muon Outperforms Adam in Tail-End Associative Memory Learning](../../ICLR2026/optimization/muon_outperforms_adam_in_tail-end_associative_memory_learning.md)
 - [\[NeurIPS 2025\] Learning Quadratic Neural Networks in High Dimensions: SGD Dynamics and Scaling Laws](../../NeurIPS2025/optimization/learning_quadratic_neural_networks_in_high_dimensions_sgd_dynamics_and_scaling_l.md)
-- [\[NeurIPS 2025\] Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules](../../NeurIPS2025/optimization/functional_scaling_laws_in_kernel_regression_loss_dynamics_and_learning_rate_sch.md)
 - [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
 - [\[NeurIPS 2025\] Emergence and Scaling Laws in SGD Learning of Shallow Neural Networks](../../NeurIPS2025/optimization/emergence_and_scaling_laws_in_sgd_learning_of_shallow_neural_networks.md)
-- [\[ICML 2026\] Mirror Mean-Field Langevin Dynamics](mirror_mean-field_langevin_dynamics.md)
+- [\[NeurIPS 2025\] Functional Scaling Laws in Kernel Regression: Loss Dynamics and Learning Rate Schedules](../../NeurIPS2025/optimization/functional_scaling_laws_in_kernel_regression_loss_dynamics_and_learning_rate_sch.md)
 
 </div>
 

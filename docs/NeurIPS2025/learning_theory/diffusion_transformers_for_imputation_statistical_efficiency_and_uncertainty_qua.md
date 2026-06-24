@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification
 description: >-
-  [NeurIPS 2025][Time Series / Generative Model Theory][Diffusion models] This paper analyzes the sample complexity and uncertainty quantification performance of conditional diffusion Transformers (DiT) for time series imp…
+  [NeurIPS 2025][Time Series][Diffusion models] This paper analyzes the sample complexity and uncertainty quantification performance of conditional diffusion Transformers (DiT) for time series imputation from a statistical learning perspective, and proposes a mixed-masking training strategy to improve imputation quality.
 tags:
   - "NeurIPS 2025"
-  - "Time Series / Generative Model Theory"
+  - "Time Series"
+  - "Generative Model Theory"
   - "Diffusion models"
   - "Transformer"
   - "time series imputation"
   - "uncertainty quantification"
   - "statistical learning theory"
 date: 2026-05-08
-content_hash: a7e0967cabe11c5a
+content_hash: 39e4a56c8bb79958
 ---
 
 # Diffusion Transformers for Imputation: Statistical Efficiency and Uncertainty Quantification
@@ -160,11 +161,11 @@ Ablation of the mixed-masking strategy:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Epistemic Uncertainty Quantification To Improve Decisions From Black-Box Models](../../ICLR2026/learning_theory/epistemic_uncertainty_quantification_to_improve_decisions_from_black-box_models.md)
 - [\[NeurIPS 2025\] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning](a_highdimensional_statistical_method_for_optimizing_transfer.md)
-- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](../../ICML2026/learning_theory/mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
-- [\[NeurIPS 2025\] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning](keep_it_on_a_leash_controllable_pseudo-label_generation_towards_realistic_long-t.md)
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](infrequent_exploration_in_linear_bandits.md)
+- [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](../../ICLR2026/learning_theory/transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
+- [\[ICLR 2026\] Quotient-Space Diffusion Models](../../ICLR2026/learning_theory/quotient-space_diffusion_models.md)
+- [\[ICLR 2026\] A Unification of Discrete, Gaussian, and Simplicial Diffusion](../../ICLR2026/learning_theory/a_unification_of_discrete_gaussian_and_simplicial_diffusion.md)
 
 </div>
 

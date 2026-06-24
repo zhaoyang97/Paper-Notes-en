@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers
 description: >-
-  [NeurIPS 2025][Hallucination Detection][out-of-context reasoning] This paper argues that LLM generalization and hallucination share a common mechanism — out-of-context reasoning (OCR) — and provides theoretical guarantee…
+  [NeurIPS 2025][Hallucination Detection][out-of-context reasoning] This paper argues that LLM generalization and hallucination share a common mechanism — out-of-context reasoning (OCR) — and provides theoretical guarantees on a single-layer attention model: the factorized parameterization $(W_O, W_V)$ can perform OCR due to the nuclear norm implicit bias of gradient descent, whereas the merged parameterization $W_{OV}$ cannot due to its Frobenius norm bias. Moreover…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -13,7 +13,7 @@ tags:
   - "nuclear norm"
   - "matrix factorization"
 date: 2026-05-08
-content_hash: e85a6db6405d494b
+content_hash: 5ee6b3f6281f1ffb
 ---
 
 # Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers
@@ -157,11 +157,11 @@ The proof exploits parameter symmetry — different $(b_i, c_i)$ pairs are inter
 
 ## Related Papers
 
+- [\[ACL 2025\] Stochastic Chameleons: Irrelevant Context Hallucinations Reveal Class-Based (Mis)Generalization in LLMs](../../ACL2025/hallucination/stochastic_chameleons_irrelevant_context_hallucinations_reveal_class-based_misge.md)
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
 - [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](../../ICML2026/hallucination/from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
-- [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/hallucination/enhancing_hallucination_detection_via_future_context.md)
 
 </div>
 

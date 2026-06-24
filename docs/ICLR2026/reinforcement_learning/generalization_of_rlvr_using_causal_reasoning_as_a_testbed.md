@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Generalization of RLVR Using Causal Reasoning as a Testbed
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper uses "probabilistic inference on causal graphs" as a strictly verifiable microscope to decompose the generalization advantages of RLVR (Reinforcement Learning from Verifiable Rewards) over SFT. The findings suggest that RLVR's benefits emerge only when the model possesses sufficient initial reasoning capabil
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper uses "probabilistic inference on causal graphs" as a strictly verifiable microscope to decompose the generalization advantages of RLVR (Reinforcement Learning from Verifiable Rewards) over SFT. The findings suggest that RLVR's benefits emerge only when the model possesses sufficient initial reasoning capability, primarily manifesting through improved marginalization strategies and reduced intermediate derivation errors.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "Causal Inference"
+  - "Generalization"
+  - "SFT Comparison"
+  - "Reasoning Priors"
 date: 2026-05-08
-content_hash: 283fa718035b72c5
+content_hash: 43925532275f58a2
 ---
+
 # Generalization of RLVR Using Causal Reasoning as a Testbed
 
 **Conference**: ICLR 2026  
@@ -97,15 +102,16 @@ flowchart LR
 - **Value**: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Controllable Exploration in Hybrid-Policy RLVR for Multi-Modal Reasoning](controllable_exploration_in_hybrid-policy_rlvr_for_multi-modal_reasoning.md)
+- [\[ICLR 2026\] Negotiated Reasoning: On Provably Addressing Relative Over-Generalization](negotiated_reasoning_on_provably_addressing_relative_over-generalization.md)
 - [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](../../ICML2026/reinforcement_learning/safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
 - [\[ICLR 2026\] Exploration vs Exploitation: Rethinking RLVR through Clipping, Entropy, and Spurious Reward](exploration_vs_exploitation_rethinking_rlvr_through_clipping_entropy_and_spuriou.md)
 - [\[ICLR 2026\] PROS: Towards Compute-Efficient RLVR via Rollout Prefix Reuse](pros_towards_compute-efficient_rlvr_via_rollout_prefix_reuse.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](../../ACL2026/reinforcement_learning/semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PLAN: Proactive Low-Rank Allocation for Continual Learning
 description: >-
-  [ICCV 2025][Model Compression][Continual Learning] This paper proposes PLAN, a framework that proactively allocates orthogonal low-rank subspaces for each task and employs a perturbation-based strategy to minimize inter-…
+  [ICCV 2025][Model Compression][Continual Learning] This paper proposes PLAN, a framework that proactively allocates orthogonal low-rank subspaces for each task and employs a perturbation-based strategy to minimize inter-task interference, achieving efficient and forgetting-free fine-tuning of large models in continual learning (CL) settings, establishing a new state of the art on standard CL benchmarks.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Subspace Allocation"
 date: 2026-05-08
-content_hash: 93132bc53fc6bad0
+content_hash: 5f8ec5fa7237efaf
 ---
 
 # PLAN: Proactive Low-Rank Allocation for Continual Learning
@@ -141,8 +141,8 @@ Performance on standard Class-Incremental Learning and Task-Incremental Learning
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](../../NeurIPS2025/model_compression/gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
 - [\[ICCV 2025\] Beyond Low-Rank Tuning: Model Prior-Guided Rank Allocation for Effective Transfer in Low-Data and Large-Gap Regimes](beyond_low-rank_tuning_model_prior-guided_rank_allocation_for_effective_transfer.md)
 - [\[ICML 2026\] Energy-Structured Low-Rank Adaptation for Continual Learning](../../ICML2026/model_compression/energy-structured_low-rank_adaptation_for_continual_learning.md)
+- [\[CVPR 2025\] CL-LoRA: Continual Low-Rank Adaptation for Rehearsal-Free Class-Incremental Learning](../../CVPR2025/model_compression/cl-lora_continual_low-rank_adaptation_for_rehearsal-free_class-incremental_learn.md)
 - [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
-- [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](../../NeurIPS2025/model_compression/beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
 
 </div>
 

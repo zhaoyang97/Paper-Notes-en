@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][TD-learning] The Q-function is reframed from a "single network mapping to a scalar" to a "velocity field flowing toward a Q-value via multi-step numerical integration." By using flow-matching to introduce dense supervision into value learning, critic capacity can be scaled by increasing integration steps (rather than just depth or
+  [ICLR 2026][Reinforcement Learning][offline reinforcement learning] The Q-function is reframed from a "single network mapping to a scalar" to a "velocity field flowing toward a Q-value via multi-step numerical integration." By using flow-matching to introduce dense supervision into value learning, critic capacity can be scaled by increasing integration steps (rather than just depth or width), increasing success rates by approximately 1.8x on difficult offline RL tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - TD-learning
-  - flow-matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "offline reinforcement learning"
+  - "value function"
+  - "TD-learning"
+  - "flow-matching"
+  - "iterative computation"
+  - "scaling compute"
 date: 2026-05-08
-content_hash: 8ac6fdd84aacd291
+content_hash: 89d5e6f25d4b05bb
 ---
+
 # floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL
 
 **Conference**: ICLR 2026  
@@ -123,11 +128,11 @@ Success rates increase monotonically with $K$, verifying that "integration steps
 
 ## Related Papers
 
+- [\[ICLR 2026\] Flow Matching Policy Gradients](flow_matching_policy_gradients.md)
 - [\[ICLR 2026\] The Art of Scaling Reinforcement Learning Compute for LLMs](the_art_of_scaling_reinforcement_learning_compute_for_llms.md)
 - [\[ICLR 2026\] Reinforcement Learning via Value Gradient Flow](reinforcement_learning_via_value_gradient_flow.md)
-- [\[ICLR 2026\] Q-Learning with Adjoint Matching](q-learning_with_adjoint_matching.md)
-- [\[ICLR 2026\] Guided Flow Policy: Learning from High-Value Actions in Offline Reinforcement Learning](guided_flow_policy_learning_from_high-value_actions_in_offline_reinforcement_lea.md)
-- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICLR 2026\] transitive rl value learning via divide and conquer](transitive_rl_value_learning_via_divide_and_conquer.md)
+- [\[ICLR 2026\] Bridging Successor Measure and Online Policy Learning with Flow Matching-Based Representations](bridging_successor_measure_and_online_policy_learning_with_flow_matching-based_r.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification
 description: >-
-  [CVPR 2026][Others][Boosting] To address the conflict in Multi-view Multi-label Classification (MVMLC) where "feature-level fusion is expressive but lacks supervision, while decision-level fusion is supervised but relies on weak representations," DF²-VB unifies both levels into a single framework. It utilizes fuzzy membership functions for dynamic
+  [CVPR 2026][Multi-view Multi-label Classification] To address the conflict in Multi-view Multi-label Classification (MVMLC) where "feature-level fusion is expressive but lacks supervision, while decision-level fusion is supervised but relies on weak representations," DF²-VB unifies both levels into a single framework. It utilizes fuzzy membership functions for dynamic element-level weighting of consistent features (FDF) and employs Boosting to adaptively measure the importanc…
 tags:
-  - CVPR 2026
-  - Others
-  - Boosting
+  - "CVPR 2026"
+  - "Multi-view Multi-label Classification"
+  - "Fuzzy Set Theory"
+  - "Feature-level Fusion"
+  - "Decision-level Fusion"
+  - "Boosting"
 date: 2026-05-08
-content_hash: 3eaba12876bc8fbb
+content_hash: 7a907e097b0ee08f
 ---
+
 # DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification
 
 **Conference**: CVPR 2026  
@@ -141,15 +145,16 @@ Comparison of four variants on Emotions/Scene (W/o FDF, W/o VB, W/o Both, W/o DL
 - Value: ⭐⭐⭐⭐ High transferability of the element-level fuzzy weighting and efficient decoupling tricks for multi-view research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
 - [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
-- [\[CVPR 2026\] Learning Anchor in Dual Orthogonal Space for Fast Multi-view Clustering](learning_anchor_in_dual_orthogonal_space_for_fast_multi-view_clustering.md)
-- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
+- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
+- [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
 
 </div>
 

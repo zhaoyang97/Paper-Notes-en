@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Latent Space Factorization in LoRA
 description: >-
-  [NeurIPS 2025][Audio & Speech][LoRA] This paper proposes FVAE-LoRA, which incorporates a VAE with dual latent spaces into the LoRA framework. Through a novel ELBO objective…
+  [NeurIPS 2025][Audio & Speech][LoRA] This paper proposes FVAE-LoRA, which incorporates a VAE with dual latent spaces into the LoRA framework. Through a novel ELBO objective, it explicitly factorizes task-relevant features ($\mathbf{z}_1$) from residual information ($\mathbf{z}_2$), consistently outperforming standard LoRA across text, image, and audio tasks.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "parameter-efficient fine-tuning"
   - "spurious correlation robustness"
 date: 2026-05-08
-content_hash: e58aec3487bd0ab7
+content_hash: 6738e631ca793088
 ---
 
 # Latent Space Factorization in LoRA
@@ -167,8 +167,8 @@ The theoretical formulation is elegant, the experiments are comprehensive, cross
 - [\[NeurIPS 2025\] Efficient Speech Language Modeling via Energy Distance in Continuous Latent Space](efficient_speech_language_modeling_via_energy_distance_in_continuous_latent_spac.md)
 - [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](multi-head_temporal_latent_attention.md)
 - [\[NeurIPS 2025\] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction](mge-ldm_joint_latent_diffusion_for_simultaneous_music_generation_and_source_extr.md)
-- [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
 - [\[ICML 2026\] An Exterior Method for Nonnegative Matrix Factorization](../../ICML2026/audio_speech/an_exterior_method_for_nonnegative_matrix_factorization.md)
+- [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
 
 </div>
 

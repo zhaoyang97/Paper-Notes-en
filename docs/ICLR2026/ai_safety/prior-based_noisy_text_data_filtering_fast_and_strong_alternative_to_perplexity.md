@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity
 description: >-
-  [ICLR 2026][AI Safety][Pretraining] A text data filtering method based on token priors (word frequency statistics) is proposed. By utilizing the mean and standard deviation of in-document token priors as an approximation for PPL, it achieves the highest average performance across 20 downstream benchmarks while being over 1000x faster than PPL-based filte
+  [ICLR 2026][AI Safety][Data Filtering] A text data filtering method based on token priors (word frequency statistics) is proposed. By utilizing the mean and standard deviation of in-document token priors as an approximation for PPL, it achieves the highest average performance across 20 downstream benchmarks while being over 1000x faster than PPL-based filtering.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Pretraining
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Data Filtering"
+  - "Pre-training"
+  - "Perplexity"
+  - "Word Frequency Prior"
+  - "Data Quality"
 date: 2026-05-08
-content_hash: 417e35d35618b340
+content_hash: 636852f699399a94
 ---
+
 # Prior-based Noisy Text Data Filtering: Fast and Strong Alternative for Perplexity
 
 **Conference**: ICLR 2026  
@@ -157,9 +162,9 @@ The prior-based method also outperforms PPL filtering in symbolic languages like
 
 - [\[ICLR 2026\] Wring Out the Bias: A Rotation-Based Alternative to Projection Debiasing](wring_out_the_bias_a_rotation-based_alternative_to_projection_debiasing.md)
 - [\[CVPR 2025\] Joint Out-of-Distribution Filtering and Data Discovery Active Learning](../../CVPR2025/ai_safety/joint_out-of-distribution_filtering_and_data_discovery_active_learning.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 - [\[CVPR 2025\] Data-free Universal Adversarial Perturbation with Pseudo-Semantic Prior](../../CVPR2025/ai_safety/data-free_universal_adversarial_perturbation_with_pseudo-semantic_prior.md)
 - [\[ICLR 2026\] No Prior, No Leakage: Revisiting Reconstruction Attacks in Trained Neural Networks](no_prior_no_leakage_revisiting_reconstruction_attacks_in_trained_neural_networks.md)
-- [\[ICLR 2026\] Jailbreaking on Text-to-Video Models via Scene Splitting Strategy](jailbreaking_on_text-to-video_models_via_scene_splitting_strategy.md)
 
 </div>
 

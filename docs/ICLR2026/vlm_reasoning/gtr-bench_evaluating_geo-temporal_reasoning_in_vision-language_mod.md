@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Vision-Language Model] Ours proposes GTR-Bench, a new benchmark for geo-temporal reasoning of moving targets in large-scale camera networks. Evaluation reveals that the strongest model, Gemini-2.5-Pro (34.9%), lags significantly behind human performance (78.61%), uncovering three major flaws in current VLMs: imbalanced spatio-temporal contex
+  [ICLR 2026][VLM Reasoning][Geo-Temporal Reasoning] Ours proposes GTR-Bench, a new benchmark for geo-temporal reasoning of moving targets in large-scale camera networks. Evaluation reveals that the strongest model, Gemini-2.5-Pro (34.9%), lags significantly behind human performance (78.61%), uncovering three major flaws in current VLMs: imbalanced spatio-temporal context utilization, weak temporal prediction ability, and insufficient map-video alignment.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Vision-Language Model
-  - benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Geo-Temporal Reasoning"
+  - "Vision-Language Models"
+  - "Multi-Camera Networks"
+  - "Benchmark"
+  - "Spatio-Temporal Intelligence"
 date: 2026-05-08
-content_hash: b1975e88c5383e99
+content_hash: 4bd80da899d03cac
 ---
+
 # GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models
 
 **Conference**: ICLR 2026  

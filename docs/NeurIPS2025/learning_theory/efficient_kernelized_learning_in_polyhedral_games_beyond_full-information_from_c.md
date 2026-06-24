@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games
 description: >-
-  [NeurIPS 2025][Other][polyhedral games] This paper proposes a kernelization-based framework for designing computationally efficient no-regret learning algorithms for polyhedral games (Colonel Blotto…
+  [NeurIPS 2025][Other][polyhedral games] This paper proposes a kernelization-based framework for designing computationally efficient no-regret learning algorithms for polyhedral games (Colonel Blotto, graphic matroid congestion games, and network congestion games) under partial-information feedback, significantly improving the runtime complexity for learning coarse correlated equilibria (CCE).
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -12,7 +12,7 @@ tags:
   - "Colonel Blotto"
   - "congestion games"
 date: 2026-05-08
-content_hash: 73123783df7b0dee
+content_hash: fa44b1bbc6b1b442
 ---
 
 # Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games
@@ -188,10 +188,10 @@ There are no ablation experiments in the conventional sense; instead, the contri
 ## Related Papers
 
 - [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
+- [\[ICLR 2026\] Differentially Private Equilibrium Finding in Polymatrix Games](../../ICLR2026/learning_theory/differentially_private_equilibrium_finding_in_polymatrix_games.md)
+- [\[ICML 2025\] Provably Efficient Algorithm for Best Scoring Rule Identification in Online Principal-Agent Information Acquisition](../../ICML2025/learning_theory/provably_efficient_algorithm_for_best_scoring_rule_identification_in_online_prin.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
 - [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
-- [\[NeurIPS 2025\] Product Distribution Learning with Imperfect Advice](product_distribution_learning_with_imperfect_advice.md)
-- [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](kernel_conditional_tests_from_learning-theoretic_bounds.md)
 
 </div>
 

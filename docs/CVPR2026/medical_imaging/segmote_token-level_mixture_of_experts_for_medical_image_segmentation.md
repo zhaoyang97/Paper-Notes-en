@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] SegMoTE freezes the entire SAM and embeds a set of learnable "expert tokens" and a Token-level MoE router (MoTE) only within the mask decoder. It dynamically selects experts based on the imaging modality and incorporates a Progressive Prompt Tokenization (PPT) module to achieve interaction-free segmentation. By trainin
+  [CVPR 2026][Medical Imaging][Medical Image Segmentation] SegMoTE freezes the entire SAM and embeds a set of learnable "expert tokens" and a Token-level MoE router (MoTE) only within the mask decoder. It dynamically selects experts based on the imaging modality and incorporates a Progressive Prompt Tokenization (PPT) module to achieve interaction-free segmentation. By training only 17M parameters using the MedSeg-HQ dataset (approx. 0.15M masks)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Image Segmentation"
+  - "SAM Adaptation"
+  - "Token-Level Mixture of Experts"
+  - "Modality Adaptive"
+  - "Low Annotation Cost"
 date: 2026-05-08
-content_hash: 961a6a6df5f08b80
+content_hash: 1243fd70f4dab686
 ---
+
 # SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation
 
 **Conference**: CVPR 2026  

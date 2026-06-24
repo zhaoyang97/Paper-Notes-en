@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations
 description: >-
-  [NeurIPS 2025][Hallucination Detection][semantic hallucination] This paper identifies a "semantic hallucination" problem in Large Multimodal Models (LMMs) for scene text recognition—where non-semantic text is misread as…
+  [NeurIPS 2025][Hallucination Detection][semantic hallucination] This paper identifies a "semantic hallucination" problem in Large Multimodal Models (LMMs) for scene text recognition—where non-semantic text is misread as semantically plausible words. Analysis reveals that Transformer layers whose attention is more focused on text regions are less prone to hallucination. Based on this finding, the authors propose a training-free framework, ZoomText + Grounded Layer Correction…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "attention correction"
   - "training-free"
 date: 2026-05-08
-content_hash: 8b7e88ed3617f316
+content_hash: 15baf4b4bd553bd9
 ---
 
 # When Semantics Mislead Vision: Mitigating Large Multimodal Models Hallucinations
@@ -141,7 +141,7 @@ The method is entirely training-free and operates as a test-time adaptive plugin
 - [\[NeurIPS 2025\] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models](seeing_is_believing_mitigating_ocr_hallucinations_in_multimodal_large_language_m.md)
 - [\[NeurIPS 2025\] Causal-LLaVA: Causal Disentanglement for Mitigating Hallucination in Multimodal Large Language Models](causalllava_causal_disentanglement_for_mitigating_hallucinat.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
-- [\[ICCV 2025\] ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models](../../ICCV2025/hallucination/only_onelayer_intervention_sufficiently_mitigates_hallucinat.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 - [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](../../CVPR2026/hallucination/residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 
 </div>

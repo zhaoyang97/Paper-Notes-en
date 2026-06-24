@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Flatness Does (Not) Guarantee Adversarial Robustness
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper reformulates the empirical intuition of whether "flat minima lead to adversarial robustness" into a provable problem. It concludes that flatness provides a lower bound for local loss stability around a point but cannot guarantee global robustness, as adversarial examples often fall into high-confidence, low-
+  [ICLR2026][AI Safety][Adversarial robustness] This paper reformulates the empirical intuition of whether "flat minima lead to adversarial robustness" into a provable problem. It concludes that flatness provides a lower bound for local loss stability around a point but cannot guarantee global robustness, as adversarial examples often fall into high-confidence, low-curvature, but incorrectly classified flat regions.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Adversarial robustness"
+  - "flatness"
+  - "relative sharpness"
+  - "loss landscape"
+  - "gradient masking"
 date: 2026-05-08
-content_hash: ef9a07f105f44443
+content_hash: 39b8991648ec76dc
 ---
+
 # When Flatness Does (Not) Guarantee Adversarial Robustness
 
 **Conference**: ICLR2026  
@@ -177,7 +183,7 @@ Experiments cover ResNet-18, WideResNet-28-4, DenseNet-121, and VGG-11 with Batc
 - [\[ICLR 2026\] Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.](reducing_information_dependency_does_not_cause_training_data_privacy_adversarial.md)
 - [\[ICLR 2026\] On the Interaction of Compressibility and Adversarial Robustness](on_the_interaction_of_compressibility_and_adversarial_robustness.md)
 - [\[CVPR 2026\] When CLIP Sees More, It Fights Back Harder: Multi-View Guided Adaptive Counterattacks for Test-Time Adversarial Robustness](../../CVPR2026/ai_safety/when_clip_sees_more_it_fights_back_harder_multi-view_guided_adaptive_counteratta.md)
-- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
+- [\[NeurIPS 2025\] Bridging Symmetry and Robustness: On the Role of Equivariance in Enhancing Adversarial Robustness](../../NeurIPS2025/ai_safety/bridging_symmetry_and_robustness_on_the_role_of_equivariance_in_enhancing_advers.md)
 - [\[ICML 2026\] Flatness-Aware Stochastic Gradient Langevin Dynamics](../../ICML2026/ai_safety/flatness-aware_stochastic_gradient_langevin_dynamics.md)
 
 </div>

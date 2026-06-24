@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph
 description: >-
-  [AAAI 2026][Model Compression][Personalized Learning] This paper proposes LOOM, an agentic pipeline system that observes users' daily LLM conversations, infers learning needs, maintains a Dynamic Learner Memory Graph…
+  [AAAI 2026][Model Compression][Personalized Learning] This paper proposes LOOM, an agentic pipeline system that observes users' daily LLM conversations, infers learning needs, maintains a Dynamic Learner Memory Graph, and automatically generates personalized mini-courses. LOOM unifies **continuity** (long-term progress tracking) and **initiative** (immediate responsiveness to emerging interests) in a single framework.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Agentic Pipeline"
   - "Adaptive Curriculum"
 date: 2026-05-08
-content_hash: c21fcd9ef028da6d
+content_hash: e1cf4ce3b1a42a06
 ---
 
 # LOOM: Personalized Learning Informed by Daily LLM Conversations Toward Long-Term Mastery via a Dynamic Learner Memory Graph
@@ -214,8 +214,8 @@ This paper involves no model training; instead, it relies on a **prompt engineer
 - [\[AAAI 2026\] XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs](xlinear_a_lightweight_and_accurate_mlp-based_model_for_long-term_time_series_for.md)
 - [\[ACL 2026\] HeteroCache: A Dynamic Retrieval Approach to Heterogeneous KV Cache Compression for Long-Context LLM Inference](../../ACL2026/model_compression/heterocache_a_dynamic_retrieval_approach_to_heterogeneous_kv_cache_compression_f.md)
 - [\[ICML 2026\] EpiCache: Episodic KV Cache Management for Long-Term Conversation on Resource-Constrained Environments](../../ICML2026/model_compression/epicache_episodic_kv_cache_management_for_long-term_conversation_on_resource-con.md)
-- [\[AAAI 2026\] Don't Start Over: A Cost-Effective Framework for Migrating Personalized Prompts Between LLMs](dont_start_over_a_cost-effective_framework_for_migrating_personalized_prompts_be.md)
-- [\[ICML 2026\] Beyond Tokens: Enhancing RTL Quality Estimation via Structural Graph Learning](../../ICML2026/model_compression/beyond_tokens_enhancing_rtl_quality_estimation_via_structural_graph_learning.md)
+- [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](../../ICLR2026/model_compression/drllm_dynamic_layer_routing_in_llms.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](../../ICLR2026/model_compression/quantized_gradient_projection_for_memory-efficient_continual_learning.md)
 
 </div>
 

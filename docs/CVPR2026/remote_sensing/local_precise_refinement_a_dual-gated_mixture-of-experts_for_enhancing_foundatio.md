@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Local Precise Refinement: A Dual-Gated Mixture-of-Experts for Enhancing Foundation Model Generalization against Spectral Shifts
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] SpectralMoE feeds per-layer features of frozen foundation models (DINOv3/DOFA) into a **dual-gated MoE** for per-pixel fine-grained modulation, while injecting structural depth priors estimated from RGB bands via cross-attention to achieve SOTA across seven remote sensing domain generalization benchmarks.
+  [CVPR 2026][Remote Sensing][Spectral Remote Sensing] SpectralMoE feeds per-layer features of frozen foundation models (DINOv3/DOFA) into a **dual-gated MoE** for per-pixel fine-grained modulation, while injecting structural depth priors estimated from RGB bands via cross-attention to achieve SOTA across seven remote sensing domain generalization benchmarks.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Spectral Remote Sensing"
+  - "Domain Generalization Segmentation"
+  - "Mixture-of-Experts"
+  - "Depth Prior"
+  - "Foundation Model Fine-tuning"
 date: 2026-05-08
-content_hash: 71f58d78f5e1d3ce
+content_hash: 4149288770f223f7
 ---
+
 # Local Precise Refinement: A Dual-Gated Mixture-of-Experts for Enhancing Foundation Model Generalization against Spectral Shifts
 
 **Conference**: CVPR 2026  
@@ -117,11 +123,11 @@ SpectralMoE outperforms previous global adapters (REIN/DepthForge) by introducin
 
 ## Related Papers
 
-- [\[CVPR 2026\] HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)
+- [\[CVPR 2026\] ORSATR-X: A Foundation Model based on Differential-and-Excitation Networks for Optical Remote Sensing Object Recognition](orsatr-x_a_foundation_model_based_on_differential-and-excitation_networks_for_op.md)
 - [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
-- [\[CVPR 2026\] LNEM: Lunar Neural Elevation Model](lnem_lunar_neural_elevation_model.md)
-- [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
+- [\[ICLR 2026\] TerraFM: A Scalable Foundation Model for Unified Multisensor Earth Observation](../../ICLR2026/remote_sensing/terrafm_a_scalable_foundation_model_for_unified_multisensor_earth_observation.md)
+- [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
+- [\[CVPR 2026\] Regulating Rather than Constraining: Adaptive Guidance for Complex Spectral Reconstruction in Pansharpening](regulating_rather_than_constraining_adaptive_guidance_for_complex_spectral_recon.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] EditMGT is the first instruction-based image editing model built on Masked Generative Transformers (MGT). By leveraging the "token-by-token flipping" local decoding characteristic of MGT, it employs multi-layer attention aggregation to localize editing regions and uses region-preserving sampling to revert tokens in low
+  [CVPR 2026][Image Generation][Instruct Image Editing] EditMGT is the first instruction-based image editing model built on Masked Generative Transformers (MGT). By leveraging the "token-by-token flipping" local decoding characteristic of MGT, it employs multi-layer attention aggregation to localize editing regions and uses region-preserving sampling to revert tokens in low-attention areas back to the original image. This mechanism inherently eliminates "editing leakage" common…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruct Image Editing"
+  - "Masked Generative Transformer (MGT)"
+  - "Attention Injection"
+  - "Region-Preserving Sampling"
+  - "Editing Leakage"
 date: 2026-05-08
-content_hash: 9b2cbca62fa795b2
+content_hash: bcf1f30dc2cc14cc
 ---
+
 # EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ The mask rate $r\in[0,1]$ is sampled from a truncated arccos distribution with d
 
 ## Related Papers
 
-- [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
 - [\[CVPR 2026\] MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale](mrt_masked_region_transformer_for_layered_image_generation_and_editing_at_scale.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
-- [\[NeurIPS 2025\] Unleashing Diffusion Transformers for Visual Correspondence by Modulating Massive Activations](../../NeurIPS2025/image_generation/unleashing_diffusion_transformers_for_visual_correspondence_by_modulating_massiv.md)
-- [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](reasonedit_towards_reasoning-enhanced_image_editing_models.md)
+- [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
+- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
+- [\[CVPR 2026\] MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing](morphany3d_unleashing_the_power_of_structured_latent_in_3d_morphing.md)
 
 </div>
 

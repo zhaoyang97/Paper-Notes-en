@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rodrigues Network for Learning Robot Actions
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper transforms the classical Rodrigues' rotation formula into a learnable Neural Rodrigues Operator and constructs RodriNet, an architecture that explicitly encodes joint kinematic structures. RodriNet significantly outperforms general backbones like MLP, GCN, and Transformer across four categories of tasks: for
+  [ICLR 2026][Robotics][Articulated robots] This paper transforms the classical Rodrigues' rotation formula into a learnable Neural Rodrigues Operator and constructs RodriNet, an architecture that explicitly encodes joint kinematic structures. RodriNet significantly outperforms general backbones like MLP, GCN, and Transformer across four categories of tasks: forward kinematics fitting, motion prediction, robot arm imitation learning, and single-image hand reconstruction.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Articulated robots"
+  - "forward kinematics"
+  - "inductive bias"
+  - "Rodrigues' rotation formula"
+  - "imitation learning"
 date: 2026-05-08
-content_hash: 8cf2ec44dc3cadbb
+content_hash: 8f16d9e224478e2b
 ---
+
 # Rodrigues Network for Learning Robot Actions
 
 **Conference**: ICLR 2026  
@@ -159,8 +165,8 @@ Single-image 3D Hand Reconstruction (FreiHAND, replacing transformer in HaMeR): 
 - [\[ICLR 2026\] ViPRA: Video Prediction for Robot Actions](vipra_video_prediction_for_robot_actions.md)
 - [\[ICML 2026\] From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation](../../ICML2026/robotics/from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_.md)
 - [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
+- [\[ICLR 2026\] LeRobot: An Open-Source Library for End-to-End Robot Learning](lerobot_an_open-source_library_for_end-to-end_robot_learning.md)
 - [\[ICLR 2026\] DataMIL: Selecting Data for Robot Imitation Learning with Datamodels](datamil_selecting_data_for_robot_imitation_learning_with_datamodels.md)
-- [\[ICLR 2026\] Cross-Embodiment Offline Reinforcement Learning for Heterogeneous Robot Datasets](cross-embodiment_offline_reinforcement_learning_for_heterogeneous_robot_datasets.md)
 
 </div>
 

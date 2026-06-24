@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ALE: Attribute-Leakage-free Editing for Text-based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Text-guided image editing] This paper identifies semantic entanglement in the EOS embeddings of autoregressive text encoders as the root cause of attribute leakage in text-guided image editi…
+  [ICCV 2025][Image Generation][Text-guided image editing] This paper identifies semantic entanglement in the EOS embeddings of autoregressive text encoders as the root cause of attribute leakage in text-guided image editing, and proposes the ALE framework to eliminate such leakage via three components: Object-Restricted Embedding (ORE), Region-Guided Cross-Attention Masking (RGB-CAM), and Background Blending (BB). A dedicated benchmark, ALE-Bench…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "cross-attention masking"
   - "multi-target editing"
 date: 2026-05-08
-content_hash: bf00d8578c29a259
+content_hash: f1936f75f77fd6b2
 ---
 
 # ALE: Attribute-Leakage-free Editing for Text-based Image Editing

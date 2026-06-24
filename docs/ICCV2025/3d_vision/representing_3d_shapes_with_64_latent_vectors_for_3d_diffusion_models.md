@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models
 description: >-
-  [ICCV 2025][3D Vision][3D VAE] This paper proposes COD-VAE, a two-stage autoencoder framework—comprising a progressive encoder, a triplane decoder…
+  [ICCV 2025][3D Vision][3D VAE] This paper proposes COD-VAE, a two-stage autoencoder framework—comprising a progressive encoder, a triplane decoder, and uncertainty-guided token pruning—that encodes 3D shapes into only 64 one-dimensional latent vectors, achieving a 16× compression ratio and 20.8× generation speedup while maintaining reconstruction quality.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Triplane Decoding"
   - "Token Pruning"
 date: 2026-05-08
-content_hash: 4f9d45cd672e4a00
+content_hash: ac9a461ae0d6f441
 ---
 
 # Representing 3D Shapes with 64 Latent Vectors for 3D Diffusion Models
@@ -71,10 +71,10 @@ The key innovation is the introduction of intermediate representation spaces (po
 
    Rather than directly mapping latent vectors to query-point occupancy values as in VecSet, COD-VAE first reconstructs dense triplane features, then decodes neural fields via bilinear interpolation and a shallow MLP.
 
-   - Learnable token sequences $\mathbf{e} \in \mathbb{R}^{(R/f \times R/f) \times C}$ encode triplane token positions.
-   - Initialization: initial triplane tokens are queried from the decoded vectors $\mathcal{F}'$ via cross-attention.
-   - Token processing: ViT-style transformer blocks (with uncertainty-guided pruning).
-   - Final projection: a linear layer projects tokens to triplane features.
+    - Learnable token sequences $\mathbf{e} \in \mathbb{R}^{(R/f \times R/f) \times C}$ encode triplane token positions.
+    - Initialization: initial triplane tokens are queried from the decoded vectors $\mathcal{F}'$ via cross-attention.
+    - Token processing: ViT-style transformer blocks (with uncertainty-guided pruning).
+    - Final projection: a linear layer projects tokens to triplane features.
 
    For a query point $\mathbf{q}$, features are retrieved from the three planes and summed, then passed through a shallow MLP to obtain the occupancy value. This eliminates the cross-attention bottleneck over 2M+ query points present in VecSet.
 
@@ -199,8 +199,8 @@ On the more complex Objaverse dataset, COD-VAE ($M=64$) even surpasses VecSet ($
 
 ## Related Papers
 
-- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 - [\[ICCV 2025\] χ: Symmetry Understanding of 3D Shapes via Chirality Disentanglement](kh_symmetry_understanding_of_3d_shapes_via_chirality_disentanglement.md)
+- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
 - [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation
 description: >-
-  [Image Generation] This paper proposes InfinityStar, the first purely discrete autoregressive model capable of generating industrial-grade 720p video. Through spacetime pyramid modeling…
+  [Image Generation] This paper proposes InfinityStar, the first purely discrete autoregressive model capable of generating industrial-grade 720p video. Through spacetime pyramid modeling, it unifies T2I/T2V/I2V/interactive long video generation, achieving a VBench score of 83.74 that surpasses HunyuanVideo, with inference speeds 10–32× faster than diffusion models.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 6841b67546af92ff
+content_hash: 6a190df5f495720d
 ---
 
 # InfinityStar: Unified Spacetime AutoRegressive Modeling for Visual Generation
@@ -154,9 +154,9 @@ This design: (1) decouples appearance and motion; (2) allows direct inheritance 
 ## Related Papers
 
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](../../ICLR2026/image_generation/toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
+- [\[CVPR 2025\] Dual Diffusion for Unified Image Generation and Understanding](../../CVPR2025/image_generation/dual_diffusion_for_unified_image_generation_and_understanding.md)
 - [\[ICCV 2025\] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space](../../ICCV2025/image_generation/motionstreamer_streaming_motion_generation_via_diffusion-based_autoregressive_mo.md)
 - [\[ICCV 2025\] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities](../../ICCV2025/image_generation/rethinking_the_embodied_gap_in_vision-and-language_navigation_a_holistic_study_o.md)
-- [\[ICCV 2025\] MatchDiffusion: Training-free Generation of Match-Cuts](../../ICCV2025/image_generation/matchdiffusion_training-free_generation_of_match-cuts.md)
 - [\[NeurIPS 2025\] Denoising Weak Lensing Mass Maps with Diffusion Model and Generative Adversarial Network](denoising_weak_lensing_mass_maps_with_diffusion_model_and_generative_adversarial.md)
 
 </div>

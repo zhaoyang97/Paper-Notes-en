@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EgoEdit: Dataset, Real-Time Streaming Model, and Benchmark for Egocentric Video Editing
 description: >-
-  [CVPR 2026][Video Generation][AR] Addressing egocentric video editing scenarios in Augmented Reality (AR) characterized by "first-person perspective, frequent hand-object interaction, and large ego-motion," the authors introduce a complete ecosystem: data (EgoEditData, 93.6k editing pairs), a model (EgoEdit, a channel-concatenation editor + EgoEdit-RT,
+  [CVPR 2026][Video Generation][Egocentric video editing] Addressing egocentric video editing scenarios in Augmented Reality (AR) characterized by "first-person perspective, frequent hand-object interaction, and large ego-motion," the authors introduce a complete ecosystem: data (EgoEditData, 93.6k editing pairs), a model (EgoEdit, a channel-concatenation editor + EgoEdit-RT, a real-time streaming version distilled in two stages achieving 38.1 fps and 855 ms first-frame latency…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - AR
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Egocentric video editing"
+  - "real-time streaming generation"
+  - "instructive editing"
+  - "autoregressive distillation"
+  - "AR"
 date: 2026-05-08
-content_hash: 2a13d4cb9301060b
+content_hash: bb7e59b21f14ab1e
 ---
+
 # EgoEdit: Dataset, Real-Time Streaming Model, and Benchmark for Egocentric Video Editing
 
 **Conference**: CVPR 2026  
@@ -144,10 +149,10 @@ Data Volume Ablation (evaluating 10k step checkpoints):
 
 ## Related Papers
 
-- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
+- [\[CVPR 2026\] EditCtrl: Disentangled Local and Global Control for Real-Time Generative Video Editing](editctrl_disentangled_local_and_global_control_for_real-time_generative_video_ed.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
 - [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
 - [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
-- [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
 
 </div>

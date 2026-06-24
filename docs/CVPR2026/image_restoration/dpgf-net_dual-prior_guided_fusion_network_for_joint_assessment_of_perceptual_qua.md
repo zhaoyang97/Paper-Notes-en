@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images
 description: >-
-  [CVPR 2026][Others][AGIQA] DPGF-Net utilizes the dual encoders of Re-IQA to extract a "distortion prior Qmap" and a "content prior Cmap" to decouple rendering distortions from semantic content. Combined with a single text template and a dual-path adaptive fusion of "local TCPGA + global FIM," the model assesses both "perceptual quality" and "tex
+  [CVPR 2026][Image Restoration][AI-Generated Image Quality Assessment] DPGF-Net utilizes the dual encoders of Re-IQA to extract a "distortion prior Qmap" and a "content prior Cmap" to decouple rendering distortions from semantic content. Combined with a single text template and a dual-path adaptive fusion of "local TCPGA + global FIM," the model assesses both "perceptual quality" and "text-image alignment" within a unified CLIP framework, achieving 11 first-place results acros…
 tags:
-  - CVPR 2026
-  - Others
-  - AGIQA
-  - CLIP
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "AI-Generated Image Quality Assessment"
+  - "AGIQA"
+  - "Dual-prior Decoupling"
+  - "Cross-modal Fusion"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 45f3b8ecceee0d9f
+content_hash: 41bcd9cdd2e20315
 ---
+
 # DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images
 
 **Conference**: CVPR 2026  
@@ -144,15 +148,14 @@ Patch number analysis: Average scores for Patch=4/6/8/10/12/14 were 0.8490/0.851
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Difference-in-Difference Approach to Detecting AI-Generated Images](a_difference-in-difference_approach_to_detecting_ai-generated_images.md)
 - [\[CVPR 2026\] Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)
-- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
-- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
-- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
+- [\[CVPR 2026\] RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360deg Image Quality Assessment](rl-scaniqa_reinforcement-learned_scanpaths_for_blind_360deg_image_quality_assess.md)
+- [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
+- [\[CVPR 2026\] Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling](life-iqa_boosting_blind_image_quality_assessment_through_gcn-enhanced_layer_inte.md)
 
 </div>
 

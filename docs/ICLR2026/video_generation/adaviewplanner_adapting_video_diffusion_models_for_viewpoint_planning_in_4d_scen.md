@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaViewPlanner: Adapting Video Diffusion Models for Viewpoint Planning in 4D Scenes
 description: >-
-  [ICLR 2026][Video Generation][World Models] By treating a pre-trained text-to-video (T2V) diffusion model as a "virtual cinematographer," this work implements a two-stage paradigm—first generating videos with implicit professional camera movements based on 4D human actions, and then explicitly extracting the viewpoint via a camera extrinsic diffusion branch—achi
+  [ICLR2026][Video Generation][Text-to-Video Diffusion] By treating a pre-trained text-to-video (T2V) diffusion model as a "virtual cinematographer," this work implements a two-stage paradigm—first generating videos with implicit professional camera movements based on 4D human actions, and then explicitly extracting the viewpoint via a camera extrinsic diffusion branch—achieving automatic camera trajectory planning in 4D scenes with open-domain generalization and text controlla…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - World Models
+  - "ICLR2026"
+  - "Video Generation"
+  - "Text-to-Video Diffusion"
+  - "Camera Trajectory Planning"
+  - "4D Scenes"
+  - "Computational Cinematography"
+  - "World Models"
 date: 2026-05-08
-content_hash: 64754cf2cd0743a9
+content_hash: 2293c746e10b46b9
 ---
+
 # AdaViewPlanner: Adapting Video Diffusion Models for Viewpoint Planning in 4D Scenes
 
 **Conference**: ICLR2026  
@@ -142,7 +147,7 @@ Table 3 shows ablation for camera trajectory generation:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -150,7 +155,7 @@ Table 3 shows ablation for camera trajectory generation:
 - [\[CVPR 2026\] DriveLaW: Unifying Planning and Video Generation in a Latent Driving World](../../CVPR2026/video_generation/drivelaw_unifying_planning_and_video_generation_in_a_latent_driving_world.md)
 - [\[ICCV 2025\] SteerX: Creating Any Camera-Free 3D and 4D Scenes with Geometric Steering](../../ICCV2025/video_generation/steerx_creating_any_camera-free_3d_and_4d_scenes_with_geometric_steering.md)
 - [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
-- [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
+- [\[ICLR 2026\] Consistent Noisy Latent Rewards for Trajectory Preference Optimization in Diffusion Models](consistent_noisy_latent_rewards_for_trajectory_preference_optimization_in_diffus.md)
 
 </div>
 

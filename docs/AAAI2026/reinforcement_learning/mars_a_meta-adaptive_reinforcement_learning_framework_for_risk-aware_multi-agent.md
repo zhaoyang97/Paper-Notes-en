@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management
 description: >-
-  [AAAI 2026][Reinforcement Learning][Portfolio Management] This paper proposes the MARS framework, which achieves risk-aware portfolio management under dynamic market conditions through a two-level architecture comprising…
+  [AAAI 2026][Reinforcement Learning][Portfolio Management] This paper proposes the MARS framework, which achieves risk-aware portfolio management under dynamic market conditions through a two-level architecture comprising a Heterogeneous Agent Ensemble (HAE)—where each agent has a distinct risk preference and Safety-Critic—and a Meta-Adaptive Controller (MAC). The framework significantly reduces maximum drawdown and volatility.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Meta-Learning"
   - "Safety Critic"
 date: 2026-05-08
-content_hash: 4c307ca5661f2807
+content_hash: 760f7d8705b4cdd1
 ---
 
 # MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management
@@ -162,9 +162,9 @@ Key result: MARS achieves relative Sharpe Ratio improvements of 70.6% and 101.4%
 
 - [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
 - [\[AAAI 2026\] Explaining Decentralized Multi-Agent Reinforcement Learning Policies](explaining_decentralized_multi-agent_reinforcement_learning_policies.md)
+- [\[ICLR 2026\] BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management](../../ICLR2026/reinforcement_learning/borearl_a_multi-objective_reinforcement_learning_environment_for_climate-adaptiv.md)
 - [\[AAAI 2026\] Think, Speak, Decide: Language-Augmented Multi-Agent Reinforcement Learning for Economic Decision-Making](think_speak_decide_language-augmented_multi-agent_reinforcement_learning_for_eco.md)
 - [\[ICML 2026\] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/interaction-breaking_adversarial_learning_framework_for_robust_multi-agent_reinf.md)
-- [\[AAAI 2026\] Beyond Monotonicity: Revisiting Factorization Principles in Multi-Agent Q-Learning](beyond_monotonicity_revisiting_factorization_principles_in_multi-agent_q-learnin.md)
 
 </div>
 

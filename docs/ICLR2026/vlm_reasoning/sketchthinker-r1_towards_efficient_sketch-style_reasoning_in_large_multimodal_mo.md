@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] SketchThinker-R1 introduces a three-stage pipeline—compressing long reasoning into sketches, training a SketchJudge reward model, and applying GRPO reinforcement learning—enabling Large Multimodal Models (LMMs) to significantly reduce intermediate reasoning tokens in visual question answering and logic/math/physics tas
+  [ICLR 2026][VLM Reasoning][Sketch-style reasoning] SketchThinker-R1 introduces a three-stage pipeline—compressing long reasoning into sketches, training a SketchJudge reward model, and applying GRPO reinforcement learning—enabling Large Multimodal Models (LMMs) to significantly reduce intermediate reasoning tokens in visual question answering and logic/math/physics tasks while maintaining or improving accuracy.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Sketch-style reasoning"
+  - "Multimodal reasoning"
+  - "Reinforcement Learning"
+  - "Inference efficiency"
+  - "Reward model"
 date: 2026-05-08
-content_hash: c554a06cbc3cd53a
+content_hash: 84813c49fac2dc75
 ---
+
 # SketchThinker-R1: Towards Efficient Sketch-Style Reasoning in Large Multimodal Models
 
 **Conference**: ICLR 2026  
@@ -143,15 +148,16 @@ For the 7B model, SketchThinker-R1 significantly reduces tokens compared to Vani
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[ICLR 2026\] ReWatch-R1: Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis](rewatch-r1_boosting_complex_video_reasoning_in_large_vision-language_models_thro.md)
-- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
-- [\[ICLR 2026\] Efficient Multimodal Spatial Reasoning via Dynamic and Asymmetric Routing](efficient_multimodal_spatial_reasoning_via_dynamic_and_asymmetric_routing.md)
+- [\[NeurIPS 2025\] Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval](../../NeurIPS2025/vlm_reasoning/retrv-r1_a_reasoning-driven_mllm_framework_for_universal_and_efficient_multimoda.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] STAGE reformulates "keyframe-based multi-shot video generation" into a storyboard-anchored problem by "predicting a pair of start/end frames for each shot." By using the STEP2 model (multi-shot memory pack + dual encoding + two-stage training) to iteratively generate these pairs and delegating the completion to off-the
+  [CVPR 2026][Video Generation][Multi-shot video generation] STAGE reformulates "keyframe-based multi-shot video generation" into a storyboard-anchored problem by "predicting a pair of start/end frames for each shot." By using the STEP2 model (multi-shot memory pack + dual encoding + two-stage training) to iteratively generate these pairs and delegating the completion to off-the-shelf I2V models, it significantly outperforms existing end-to-end and keyframe methods in cross-sho…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-shot video generation"
+  - "storyboard"
+  - "start-end frame pairs"
+  - "shot consistency"
+  - "cinematic language"
 date: 2026-05-08
-content_hash: b216fd767c3ce028
+content_hash: 87a9498504baf5f9
 ---
+
 # STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative
 
 **Conference**: CVPR 2026  
@@ -159,8 +165,6 @@ Preference rates for shot consistency (72.8%) and transitions (69.6%) are overwh
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-...
-</div>
 
 ## Related Papers
 

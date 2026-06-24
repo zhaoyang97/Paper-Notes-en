@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From 2D Grids to 1D Tokens: Reforming Shared Representations for Multimodal Image Fusion
 description: >-
-  [ICML 2026][Image Restoration][1D token] Multimodal image fusion has long relied on shared representations in 2D feature grids, leading to the entanglement of global appearance (brightness/contrast/tone) and local details, making them difficult to regulate independently. This paper moves "global appearance" into the compact token space of a frozen 1D tokenize
+  [ICML 2026][Image Restoration][Multimodal image fusion] Multimodal image fusion has long relied on shared representations in 2D feature grids, leading to the entanglement of global appearance (brightness/contrast/tone) and local details, making them difficult to regulate independently. This paper moves "global appearance" into the compact token space of a frozen 1D tokenizer (TiTok-32). By employing "Selective Token Editing (STE)" to modify only a few token-channel entries…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - 1D token
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Multimodal image fusion"
+  - "1D token"
+  - "selective token editing"
+  - "global/local decoupling"
+  - "infrared-visible fusion"
 date: 2026-05-08
-content_hash: 460569ed78bd8ff4
+content_hash: 1fa38c1d3b07ac09
 ---
+
 # From 2D Grids to 1D Tokens: Reforming Shared Representations for Multimodal Image Fusion
 
 **Conference**: ICML 2026  
@@ -126,16 +131,16 @@ Ours achieves SOTA results on most metrics, with significant gains in SD (contra
 - Value: ⭐⭐⭐⭐ Lightweight, plug-and-play, and insightful for the image fusion community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
 - [\[CVPR 2026\] Physically-Grounded Turbulence Mitigation with Frame-Shared Degradation Parameters](../../CVPR2026/image_restoration/physically-grounded_turbulence_mitigation_with_frame-shared_degradation_paramete.md)
+- [\[ICLR 2026\] Pixel to Gaussian: Ultra-Fast Continuous Super-Resolution with 2D Gaussian Modeling](../../ICLR2026/image_restoration/pixel_to_gaussian_ultra-fast_continuous_super-resolution_with_2d_gaussian_modeli.md)
 - [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](../../CVPR2026/image_restoration/mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
 - [\[CVPR 2026\] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations](../../CVPR2026/image_restoration/the_surprising_effectiveness_of_noise_pretraining_for_implicit_neural_representa.md)
-- [\[CVPR 2026\] FusionRegister: Every Infrared and Visible Image Fusion Deserves Registration](../../CVPR2026/image_restoration/fusionregister_every_infrared_and_visible_image_fusion_deserves_registration.md)
 
 </div>
 

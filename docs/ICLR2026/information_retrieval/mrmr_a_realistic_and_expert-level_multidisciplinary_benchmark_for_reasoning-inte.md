@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][MMMU-Pro] MRMR constructs the first multimodal retrieval benchmark targeting **expert-level, multidisciplinary, and reasoning-intensive** scenarios. It includes 1,435 queries spanning 23 domains, represents both queries and documents as interleaved image-text sequences, and introduces a novel "Contradiction Retrieval" task. Eval
+  [ICLR 2026][Information Retrieval & RAG][Multimodal Retrieval] MRMR constructs the first multimodal retrieval benchmark targeting **expert-level, multidisciplinary, and reasoning-intensive** scenarios. It includes 1,435 queries spanning 23 domains, represents both queries and documents as interleaved image-text sequences, and introduces a novel "Contradiction Retrieval" task. Evaluations reveal that current multimodal retrieval models significantly lag behind a naive "text re…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - MMMU-Pro
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Multimodal Retrieval"
+  - "Reasoning-Intensive Retrieval"
+  - "Expert Domain"
+  - "Contradiction Retrieval"
+  - "Interleaved Image-Text"
+  - "MMMU-Pro"
 date: 2026-05-08
-content_hash: a1e925844e02d083
+content_hash: 82f00a56e73a0831
 ---
+
 # MRMR: A Realistic and Expert-Level Multidisciplinary Benchmark for Reasoning-Intensive Multimodal Retrieval
 
 **Conference**: ICLR 2026  
@@ -120,9 +126,9 @@ flowchart LR
 
 - [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 - [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
-- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
-- [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](../../ACL2026/information_retrieval/reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
 - [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](../../ACL2026/information_retrieval/a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
+- [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
+- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cutting the Skip: Training Residual-Free Transformers
 description: >-
-  [ICLR 2026][Optimization & Theory][Vision Transformer] Starting from the condition number of the Transformer Jacobian, this paper reveals that the essence of skip (residual) connections is to improve the network's condition number. Based on this, a scheme is proposed that **modifies only the initialization without changing the architecture**. This allows a Transformer comp
+  [ICLR2026][Optimization][Residual Connections] Starting from the condition number of the Transformer Jacobian, this paper reveals that the essence of skip (residual) connections is to improve the network's condition number. Based on this, a scheme is proposed that **modifies only the initialization without changing the architecture**. This allows a Transformer completely devoid of residual connections to be trained as fast as models with residuals for the first time…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Vision Transformer
+  - "ICLR2026"
+  - "Optimization"
+  - "Residual Connections"
+  - "Network Initialization"
+  - "Jacobian Condition Number"
+  - "Second-order Optimization"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: f31ccc053dcb0bb2
+content_hash: 41739b67e8347647
 ---
+
 # Cutting the Skip: Training Residual-Free Transformers
 
 **Conference**: ICLR2026  
@@ -144,10 +149,10 @@ Self-supervised (DINO ViT-Small, 300 epochs) mIoU for dense linear probe segment
 ## Related Papers
 
 - [\[ICLR 2026\] WSM: Decay-free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training](wsm_decay-free_learning_rate_schedule_via_checkpoint_merging_for_llm_pre-trainin.md)
-- [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
 - [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](../../NeurIPS2025/optimization/covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
-- [\[ICLR 2026\] Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers](neural_sum-of-squares_certifying_the_nonnegativity_of_polynomials_with_transform.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](sign-sgd_via_parameter-free_optimization.md)
 - [\[ICLR 2026\] Markovian Transformers for Informative Language Modeling](markovian_transformers_for_informative_language_modeling.md)
+- [\[ICLR 2026\] Learning to Recall with Transformers Beyond Orthogonal Embeddings](learning_to_recall_with_transformers_beyond_orthogonal_embeddings.md)
 
 </div>
 

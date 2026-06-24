@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Revela: Dense Retriever Learning via Language Modeling
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][dense retrieval] The authors propose Revela, which integrates retriever learning into language modeling via an in-batch attention mechanism. In this framework, Next Token Prediction (NTP) depends not only on the intra-sequence context but also on other sequences within the batch (weighted by retriever similarity), enabling the training
+  [ICLR2026 Oral][Information Retrieval & RAG][dense retrieval] The authors propose Revela, which integrates retriever learning into language modeling via an in-batch attention mechanism. In this framework, Next Token Prediction (NTP) depends not only on the intra-sequence context but also on other sequences within the batch (weighted by retriever similarity), enabling the training of powerful dense retrievers without labeled query-document pairs.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - dense retrieval
-  - self-supervised learning
-  - language modeling
-  - in-batch attention
-  - retriever
+  - "ICLR2026 Oral"
+  - "Information Retrieval & RAG"
+  - "dense retrieval"
+  - "self-supervised learning"
+  - "language modeling"
+  - "in-batch attention"
+  - "retriever"
 date: 2026-05-08
-content_hash: 1204a05003f29b2b
+content_hash: 7131773fbdf51e70
 ---
+
 # Revela: Dense Retriever Learning via Language Modeling
 
 **Conference**: ICLR2026 Oral  
@@ -142,10 +143,10 @@ General retrieval is trained on Wikipedia, while code retrieval is trained on St
 ## Related Papers
 
 - [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
+- [\[AAAI 2026\] RRRA: Resampling and Reranking through a Retriever Adapter](../../AAAI2026/information_retrieval/rrra_resampling_and_reranking_through_a_retriever_adapter.md)
 - [\[ACL 2025\] FlashBack: Efficient Retrieval-Augmented Language Modeling for Fast Inference](../../ACL2025/information_retrieval/flashbackefficient_retrieval-augmented_language_modeling_for_long_context_infere.md)
+- [\[ACL 2025\] Drama: Diverse Augmentation from Large Language Models to Smaller Dense Retrievers](../../ACL2025/information_retrieval/drama_diverse_augmentation_from_large_language_models_to_smaller_dense_retriever.md)
 - [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](../../ACL2026/information_retrieval/language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
-- [\[ICLR 2026\] ChronoPlay: A Framework for Modeling Dual Dynamics and Authenticity in Game RAG Benchmarks](chronoplay_a_framework_for_modeling_dual_dynamics_and_authenticity_in_game_rag_b.md)
-- [\[ICLR 2026\] A Dense Subset Index for Collective Query Coverage](a_dense_subset_index_for_collective_query_coverage.md)
 
 </div>
 

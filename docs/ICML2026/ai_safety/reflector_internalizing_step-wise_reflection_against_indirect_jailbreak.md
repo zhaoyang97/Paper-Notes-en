@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] REFLECTOR：把"边走边自省"内化进生成轨迹以抵御间接越狱
+  [Paper Note] REFLECTOR: Internalizing "Self-Reflection during Generation" into Trajectories to Resist Indirect Jailbreaking
 description: >-
-  [ICML 2026][AI Safety][Paper Note] To address indirect jailbreak attacks that only "expose" themselves in the middle or late stages of long generations, the authors use a teacher model to synthesize reflection trajectories labeled with `<|reflect|>/<|explore|>` for SFT cold-starting. Subsequently, a dual-reward GDPO (combining safety and reflection effe
+  [ICML 2026][AI Safety][Indirect Jailbreak] To address indirect jailbreak attacks that only "expose" themselves in the middle or late stages of long generations, the authors use a teacher model to synthesize reflection trajectories labeled with `<|reflect|>/<|explore|>` for SFT cold-starting. Subsequently, a dual-reward GDPO (combining safety and reflection effectiveness rewards) is employed to internalize "search-and-recovery" behavior into the policy. This approach elevates…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Indirect Jailbreak"
+  - "Trajectory-level Safety"
+  - "Self-reflection"
+  - "Two-stage SFT+RL"
+  - "Dual-reward GDPO"
 date: 2026-05-08
-content_hash: 651fb63bdbef7d37
+content_hash: ce1be1971cad8949
 ---
+
 # REFLECTOR: Internalizing "Self-Reflection during Generation" into Trajectories to Resist Indirect Jailbreaking
 
 **Conference**: ICML 2026  
@@ -145,11 +151,11 @@ The critical comparisons are in the DRA/ReNeLLM/DrAttack columns—the typical i
 
 ## Related Papers
 
-- [\[ICML 2025\] Enhancing Certified Robustness via Block Reflector Orthogonal Layers and Logit Annealing Loss](../../ICML2025/ai_safety/enhancing_certified_robustness_via_block_reflector_orthogonal_layers_and_logit_a.md)
 - [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
-- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
-- [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
+- [\[ICML 2026\] Hiding in Plain Floats: Steganographic Carriers for Indirect Prompt and Content Injection](hiding_in_plain_floats_steganographic_carriers_for_indirect_prompt_and_content_i.md)
+- [\[CVPR 2026\] RunawayEvil: Jailbreaking the Image-to-Video Generative Models](../../CVPR2026/ai_safety/runawayevil_jailbreaking_the_image-to-video_generative_models.md)
+- [\[ICLR 2026\] The Self-Re-Watermarking Trap: From Exploit to Resilience](../../ICLR2026/ai_safety/the_self-re-watermarking_trap_from_exploit_to_resilience.md)
+- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
 
 </div>
 

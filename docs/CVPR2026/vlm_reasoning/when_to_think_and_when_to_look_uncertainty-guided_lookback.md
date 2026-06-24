@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When to Think and When to Look: Uncertainty-Guided Lookback
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper provides the first systematic analysis of the impact of test-time thinking on visual reasoning in LVLMs. It discovers that "thinking more is often inferior to looking more"—lengthy reasoning chains frequently overlook the image, leading to "long-wrong" trajectories. Based on this, the authors propose an unce
+  [CVPR 2026][VLM Reasoning][Visual Reasoning] This paper provides the first systematic analysis of the impact of test-time thinking on visual reasoning in LVLMs. It discovers that "thinking more is often inferior to looking more"—lengthy reasoning chains frequently overlook the image, leading to "long-wrong" trajectories. Based on this, the authors propose an uncertainty-guided lookback decoding strategy. By injecting visual lookback prompts when the reasoning chain drifts…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Reasoning"
+  - "Chain-of-Thought"
+  - "Large Vision-Language Models"
+  - "Adaptive Decoding"
+  - "Uncertainty-Guided"
 date: 2026-05-08
-content_hash: 51d59bb9a8e314ed
+content_hash: 59462de4cefce665
 ---
+
 # When to Think and When to Look: Uncertainty-Guided Lookback
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ The method is entirely training-free. PPL estimation for phrase mining is done o
 
 ## Related Papers
 
-- [\[CVPR 2026\] Breaking the Illusion: When Positive Meets Negative in Multimodal Decoding](breaking_the_illusion_when_positive_meets_negative_in_multimodal_decoding.md)
-- [\[CVPR 2026\] The Coherence Trap: When MLLM-Crafted Narratives Exploit Manipulated Visual Contexts](the_coherence_trap_when_mllm-crafted_narratives_exploit_manipulated_visual_conte.md)
 - [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
-- [\[CVPR 2026\] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs](when_token_pruning_is_worse_than_random_understanding_visual_token_information_i.md)
 - [\[CVPR 2026\] VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image](visionleaf_entropy-guided_leaf-first_reasoning_for_efficient_and_accurate_think-.md)
+- [\[ACL 2026\] When Slower Isn't Truer: Inverse Scaling Law of Truthfulness in Multimodal Reasoning](../../ACL2026/vlm_reasoning/when_slower_isn39t_truer_inverse_scaling_law_of_truthfulness_in_multimodal_reaso.md)
+- [\[NeurIPS 2025\] When One Modality Sabotages the Others: A Diagnostic Lens on Multimodal Reasoning](../../NeurIPS2025/vlm_reasoning/when_one_modality_sabotages_the_others_a_diagnostic_lens_on_multimodal_reasoning.md)
+- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](reinforcing_video_object_segmentation_to_think_before_it_segments.md)
 
 </div>
 

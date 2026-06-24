@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction
 description: >-
-  [ICLR 2026][Autonomous Driving][token group prediction] SceneStreamer encodes entire driving scenarios (maps, traffic lights, agent states, motion) into a discrete token sequence, generating them by "predicting the next group of tokens" via a single autoregressive Transformer. This enables continuous traffic generation in open systems over infinite horizons with dynamic age
+  [ICLR 2026][Autonomous Driving][Traffic simulation] SceneStreamer encodes entire driving scenarios (maps, traffic lights, agent states, motion) into a discrete token sequence, generating them by "predicting the next group of tokens" via a single autoregressive Transformer. This enables continuous traffic generation in open systems over infinite horizons with dynamic agent entry/exit, significantly enhancing the robustness and generalization of downstream RL planners as a high…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - token group prediction
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Traffic simulation"
+  - "autoregressive generation"
+  - "token group prediction"
+  - "closed-loop simulation"
+  - "reinforcement learning planning"
 date: 2026-05-08
-content_hash: 750cafbe576c857b
+content_hash: 2da6a0326e989a7e
 ---
+
 # SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction
 
 **Conference**: ICLR 2026  
@@ -138,8 +143,8 @@ Compared to two-stage methods like **TrafficGen**, SceneStreamer enables context
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

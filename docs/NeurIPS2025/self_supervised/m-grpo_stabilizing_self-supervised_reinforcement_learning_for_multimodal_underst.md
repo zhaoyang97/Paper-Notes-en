@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][self-supervised reinforcement learning] To address the pervasive "policy collapse" problem in self-supervised reinforcement learning from verifiable rewards (SS-RLVR) during exten…
+  [NeurIPS 2025][Self-Supervised Learning][self-supervised reinforcement learning] To address the pervasive "policy collapse" problem in self-supervised reinforcement learning from verifiable rewards (SS-RLVR) during extended training, this paper proposes M-GRPO: a framework that employs a momentum model to provide stable pseudo-label targets alongside IQR-based low-entropy trajectory filtering to prevent entropy collapse. Training Qwen3-4B-Base on unlabeled MATH data…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "entropy filtering"
   - "pseudo-labels"
 date: 2026-05-08
-content_hash: e4e400f6845cd4a7
+content_hash: ca8942e390e319dc
 ---
 
 # M-GRPO: Stabilizing Self-Supervised Reinforcement Learning for Large Language Models with Momentum-Anchored Policy Optimization
@@ -153,10 +153,10 @@ Built upon GRPO (Group Relative Policy Optimization). A momentum model $\pi_{\th
 ## Related Papers
 
 - [\[ICCV 2025\] Improving Large Vision and Language Models by Learning from a Panel of Peers](../../ICCV2025/self_supervised/improving_large_vision_and_language_models_by_learning_from_a_panel_of_peers.md)
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](../../CVPR2026/self_supervised/videossr_video_self-supervised_reinforcement_learning.md)
 - [\[ACL 2026\] LLMSurgeon: Diagnosing Data Mixture of Large Language Models](../../ACL2026/self_supervised/llmsurgeon_diagnosing_data_mixture_of_large_language_models.md)
+- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
-- [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
 
 </div>
 

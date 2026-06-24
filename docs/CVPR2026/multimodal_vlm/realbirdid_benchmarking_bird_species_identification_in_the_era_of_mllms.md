@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RealBirdID: Benchmarking Bird Species Identification in the Era of MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] RealBirdID is a fine-grained bird identification benchmark focused on "identifying species if possible, and providing reasons if not." By mining $3.4\text{k}$ "unanswerable" images from real iNaturalist disputes (categorized into three abstention reasons: need vocalization / angle or occlusion / poor quality) paired wi
+  [CVPR 2026][Multimodal VLM][Fine-grained recognition] RealBirdID is a fine-grained bird identification benchmark focused on "identifying species if possible, and providing reasons if not." By mining $3.4\text{k}$ "unanswerable" images from real iNaturalist disputes (categorized into three abstention reasons: need vocalization / angle or occlusion / poor quality) paired with "answerable" samples from the same genus, the study evaluates models using three metrics. Results show…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Fine-grained recognition"
+  - "abstention"
+  - "bird benchmark"
+  - "taxonomic hierarchy"
+  - "MLLM calibration"
 date: 2026-05-08
-content_hash: ef6f292000d64b38
+content_hash: 5227ae3b287cac8e
 ---
+
 # RealBirdID: Benchmarking Bird Species Identification in the Era of MLLMs
 
 **Conference**: CVPR 2026  
@@ -127,16 +133,16 @@ Models exhibit a systematic bias: almost all failures are attributed to "Quality
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Revisiting Model Stitching in the Foundation Model Era](revisiting_model_stitching_in_the_foundation_model.md)
-- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
-- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
 - [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
 - [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](../../ICCV2025/multimodal_vlm/mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
+- [\[CVPR 2026\] EgoSound: Benchmarking Sound Understanding in Egocentric Videos](egosound_benchmarking_sound_understanding_in_egocentric_videos.md)
+- [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](benchmarking_single-factor_physical_video-to-audio_generation.md)
 
 </div>
 

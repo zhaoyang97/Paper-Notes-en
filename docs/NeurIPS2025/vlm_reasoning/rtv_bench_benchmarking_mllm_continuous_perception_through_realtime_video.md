@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video
 description: >-
-  [NeurIPS 2025][Multimodal VLM][real-time video understanding] This paper proposes RTV-Bench, a fine-grained evaluation benchmark for assessing the continuous real-time video analysis capabilities of MLLMs. Comprising 552…
+  [NeurIPS 2025][VLM Reasoning][real-time video understanding] This paper proposes RTV-Bench, a fine-grained evaluation benchmark for assessing the continuous real-time video analysis capabilities of MLLMs. Comprising 552 videos and 4,608 QA pairs, it comprehensively evaluates model perception, understanding, and reasoning in dynamic video streams through a multi-timestamp QA mechanism, hierarchical question structure, and multi-dimensional assessment.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "real-time video understanding"
   - "multimodal large model evaluation"
   - "continuous analysis"
   - "multi-timestamp QA"
   - "video benchmark"
 date: 2026-05-08
-content_hash: 4db29fdfa73fd00c
+content_hash: 3da7a1ef3753d742
 ---
 
 # RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video
@@ -118,11 +118,11 @@ RTV-Bench is an evaluation benchmark and does not involve model training. The an
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
-- [\[NeurIPS 2025\] GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images](gem_empowering_mllm_for_grounded_ecg_understanding_with_time_series_and_images.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] DynamicVL: Benchmarking MLLMs for Dynamic City Understanding](dynamicvl_benchmarking_multimodal_large_language_models_for_dynamic_city_underst.md)
+- [\[NeurIPS 2025\] Retrv-R1: A Reasoning-Driven MLLM Framework for Universal and Efficient Multimodal Retrieval](retrv-r1_a_reasoning-driven_mllm_framework_for_universal_and_efficient_multimoda.md)
+- [\[NeurIPS 2025\] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models](recognition_through_reasoning_reinforcing_image_geo-localization_with_large_visi.md)
 - [\[NeurIPS 2025\] Struct2D: A Perception-Guided Framework for Spatial Reasoning in MLLMs](struct2d_a_perception-guided_framework_for_spatial_reasoning_in_mllms.md)
+- [\[NeurIPS 2025\] SSR: Enhancing Depth Perception in VLMs via Rationale-Guided Spatial Reasoning](ssr_enhancing_depth_perception_in_vision-language_models_via_rationale-guided_sp.md)
 
 </div>
 

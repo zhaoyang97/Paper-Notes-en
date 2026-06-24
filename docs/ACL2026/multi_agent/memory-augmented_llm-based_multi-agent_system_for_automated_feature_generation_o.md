@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data
 description: >-
-  [ACL 2026][Multi-Agent][AutoML] MALMAS is proposed as a memory-augmented LLM multi-agent system for automated feature generation on tabular data. Through a workforce of six specialized Agents exploring different feature space dimensions and a three-level memory mechanism (Procedural/Feedback/Conceptual) for cross-iteration optimization, it outperform
+  [ACL 2026][Multi-Agent][Automated Feature Engineering] MALMAS is proposed as a memory-augmented LLM multi-agent system for automated feature generation on tabular data. Through a workforce of six specialized Agents exploring different feature space dimensions and a three-level memory mechanism (Procedural/Feedback/Conceptual) for cross-iteration optimization, it outperforms existing baselines across 16 classification and 7 regression datasets.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - AutoML
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Automated Feature Engineering"
+  - "Multi-Agent System"
+  - "Memory Augmentation"
+  - "Tabular Data"
+  - "AutoML"
 date: 2026-05-08
-content_hash: 18f1dbbbd54778cf
+content_hash: 7532379df7051cbe
 ---
+
 # Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data
 
 **Conference**: ACL 2026  
@@ -139,11 +144,11 @@ The objective is to maximize the performance metrics of the downstream model on 
 
 ## Related Papers
 
-- [\[ACL 2026\] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search](efficient_multi-agent_system_training_with_data_influence-oriented_tree_search.md)
 - [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
+- [\[ACL 2026\] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search](efficient_multi-agent_system_training_with_data_influence-oriented_tree_search.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ICLR 2026\] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](../../ICLR2026/multi_agent/graphplanner_graph_memory-augmented_agentic_routing_for_multi-agent_llms.md)
 - [\[ACL 2026\] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation](a_multi-agent_framework_for_feature-constrained_difficulty_control_in_reading_co.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
 
 </div>
 

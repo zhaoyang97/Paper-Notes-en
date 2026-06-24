@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Continuous Chain of Thought Enables Parallel Exploration and Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] CoT2 proposes using continuous-valued tokens (convex combinations of vocabulary embeddings) instead of discrete tokens for chain-of-thought reasoning. This enables the model to track multiple reasoning paths in parallel within a single inference pass, which is theoretically equivalent to $K$-wise self-consistency or be
+  [ICLR 2026][Reasoning][Continuous Chain of Thought] CoT2 proposes using continuous-valued tokens (convex combinations of vocabulary embeddings) instead of discrete tokens for chain-of-thought reasoning. This enables the model to track multiple reasoning paths in parallel within a single inference pass, which is theoretically equivalent to $K$-wise self-consistency or best-of-N sampling. Performance is further enhanced through GRPO reinforcement learning.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Continuous Chain of Thought"
+  - "Parallel Reasoning"
+  - "Multi-trajectory Tracking"
+  - "GRPO"
+  - "Information Theory"
 date: 2026-05-08
-content_hash: 60b94dbb8d183ab2
+content_hash: b47090774e5fae1c
 ---
+
 # Continuous Chain of Thought Enables Parallel Exploration and Reasoning
 
 **Conference**: ICLR 2026  
@@ -140,9 +145,9 @@ Post-CSFT, the base CoT2 is deterministic: for a given input, $\bm{\alpha}_t$ is
 
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICLR 2026\] Generalized Parallel Scaling with Interdependent Generations](generalized_parallel_scaling_with_interdependent_generations.md)
+- [\[ICLR 2026\] Elastic Reasoning: Scalable Chain-of-Thought via Elastic Reasoning](scalable_chain_of_thoughts_via_elastic_reasoning.md)
 - [\[ICLR 2026\] Think in Parallel, Answer as One: Logit Averaging for Open-Ended Reasoning](think_in_parallel_answer_as_one_logit_averaging_for_open-ended_reasoning.md)
 - [\[ICLR 2026\] e3: Learning to Explore Enables Extrapolation of Test-Time Compute for LLMs](e3_learning_to_explore_enables_extrapolation_of_test-time_compute_for_llms.md)
-- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
 
 </div>
 

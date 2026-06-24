@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MedCoG: Maximizing LLM Inference Density in Medical Reasoning via Meta-Cognitive Regulation
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] MedCoG enables LLMs to perform a three-dimensional self-assessment of "complexity / familiarity / knowledge density" for medical questions before invoking SCoT, memory, and knowledge graphs (KG) on demand. This approach increases inference density (theoretical cost/actual cost required to achieve equivalent accuracy) t
+  [ICML 2026][Graph Learning][Meta-cognitive regulation] MedCoG enables LLMs to perform a three-dimensional self-assessment of "complexity / familiarity / knowledge density" for medical questions before invoking SCoT, memory, and knowledge graphs (KG) on demand. This approach increases inference density (theoretical cost/actual cost required to achieve equivalent accuracy) to 6.2×, while improving average accuracy from 34.5% (AFlow) to 37.5% across five MedQA hard sets.
 tags:
-  - ICML 2026
-  - Graph Learning
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Meta-cognitive regulation"
+  - "Medical reasoning"
+  - "Knowledge graph"
+  - "Inference density"
+  - "On-demand reasoning"
 date: 2026-05-08
-content_hash: 05d5f5fafdfcbe70
+content_hash: 07aa631b35657d30
 ---
+
 # MedCoG: Maximizing LLM Inference Density in Medical Reasoning via Meta-Cognitive Regulation
 
 **Conference**: ICML 2026  
@@ -153,10 +159,10 @@ Oracle results indicate the strategy pool ceiling exceeds o1. MedCoG-Meta achiev
 ## Related Papers
 
 - [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
+- [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](../../ICLR2026/graph_learning/a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
 - [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
 - [\[ICML 2026\] Whom to Query for What: Adaptive Group Elicitation via Multi-Turn LLM Interactions](whom_to_query_for_what_adaptive_group_elicitation_via_multi-turn_llm_interaction.md)
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
-- [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](../../NeurIPS2025/graph_learning/medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
 
 </div>
 

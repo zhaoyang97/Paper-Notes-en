@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation
 description: >-
-  [AAAI 2026][Multi-Agent][Device-Cloud Collaboration] This paper proposes EcoAgent, a closed-loop device-cloud collaborative multi-agent framework for mobile automation. By combining Dual-ReACT two-level reasoning and pla…
+  [AAAI 2026][Multi-Agent][Device-Cloud Collaboration] This paper proposes EcoAgent, a closed-loop device-cloud collaborative multi-agent framework for mobile automation. By combining Dual-ReACT two-level reasoning and planning, lightweight on-device verification feedback, and a Pre-Understanding text compression module, EcoAgent achieves success rates comparable to fully cloud-based agents on AndroidWorld while substantially reducing latency (3.9s vs. 15.3s)…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Privacy Protection"
   - "Dual-ReACT"
 date: 2026-05-08
-content_hash: a28124262ba1dbc5
+content_hash: 0d42de8a9e08d776
 ---
 
 # EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation
@@ -134,8 +134,8 @@ Latency comparison:
 - [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 - [\[AAAI 2026\] COACH: Collaborative Agents for Contextual Highlighting -- A Multi-Agent Framework for Sports Video Analysis](coach_collaborative_agents_for_contextual_highlighting_--_a_multi-agent_framewor.md)
 - [\[AAAI 2026\] MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning](maps_multi-agent_personality_shaping_for_collaborative_reaso.md)
-- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
 - [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
+- [\[AAAI 2026\] iMAD: Intelligent Multi-Agent Debate for Efficient and Accurate LLM Inference](imad_intelligent_multi-agent_debate_for_efficient_and_accura.md)
 
 </div>
 

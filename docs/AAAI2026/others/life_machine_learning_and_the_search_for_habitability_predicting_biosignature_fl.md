@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Life, Machine Learning, and the Search for Habitability: Predicting Biosignature Fluxes for the Habitable Worlds Observatory
 description: >-
-  [AAAI 2026 (IAAI Emerging Applications)][Exoplanets] To address the observation prioritization needs of NASA's Habitable Worlds Observatory (HWO)…
+  [AAAI 2026 (IAAI Emerging Applications)][Exoplanets] To address the observation prioritization needs of NASA's Habitable Worlds Observatory (HWO), this paper proposes two architectures — a Bayesian Convolutional Neural Network (BCNN) and a novel Spectral Query-Adaptive Transformer (SQuAT) — for predicting biosignature species fluxes from planetary reflected spectra. Both achieve high predictive accuracy on an augmented dataset, with complementary strengths in uncertainty quan…
 tags:
   - "AAAI 2026 (IAAI Emerging Applications)"
   - "Exoplanets"
@@ -11,7 +11,7 @@ tags:
   - "Bayesian CNN"
   - "Attention Mechanism"
 date: 2026-05-08
-content_hash: 93bbd61ff9a1a5e9
+content_hash: d05084fbec4e9b72
 ---
 
 # Life, Machine Learning, and the Search for Habitability: Predicting Biosignature Fluxes for the Habitable Worlds Observatory
@@ -126,10 +126,10 @@ The BCNN uses a negative log-likelihood loss (jointly learning the predictive me
 ## Related Papers
 
 - [\[ICLR 2026\] Predicting Kernel Regression Learning Curves from Only Raw Data Statistics](../../ICLR2026/others/predicting_kernel_regression_learning_curves_from_only_raw_data_statistics.md)
+- [\[ICLR 2026\] OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation](../../ICLR2026/others/osiris_bridging_analog_circuit_design_and_machine_learning_with_scalable_dataset.md)
 - [\[ICLR 2026\] Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning](../../ICLR2026/others/oversmoothing_oversquashing_heterophily_long-range_and_more_demystifying_common_.md)
 - [\[NeurIPS 2025\] Put CASH on Bandits: A Max K-Armed Problem for Automated Machine Learning](../../NeurIPS2025/others/put_cash_on_bandits_a_max_k-armed_problem_for_automated_machine_learning.md)
 - [\[NeurIPS 2025\] Directional Non-Commutative Monoidal Structures for Compositional Embeddings in Machine Learning](../../NeurIPS2025/others/directional_non-commutative_monoidal_structures_for_compositional_embeddings_in_.md)
-- [\[AAAI 2026\] Approximation Algorithm for Constrained k-Center Clustering: A Local Search Approach](approximation_algorithm_for_constrained_k-center_clustering_.md)
 
 </div>
 

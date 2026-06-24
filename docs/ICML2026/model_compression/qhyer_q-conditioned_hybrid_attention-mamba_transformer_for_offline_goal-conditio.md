@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] QHyer: Q-conditioned Hybrid Attention-mamba Transformer for Offline Goal-conditioned RL
 description: >-
-  [ICML 2026][Model Compression][Offline GCRL] QHyer replaces the trajectory-dependent RTG in Decision Transformers with state-dependent Q-values estimated via Normalizing Flows, and utilizes a gated Attention-Mamba hybrid backbone to achieve content-adaptive history compression, simultaneously setting a new SOTA on the non-Markovian and Markovian offline goal-cond
+  [ICML 2026][Model Compression][Offline GCRL] QHyer replaces the trajectory-dependent RTG in Decision Transformers with state-dependent Q-values estimated via Normalizing Flows, and utilizes a gated Attention-Mamba hybrid backbone to achieve content-adaptive history compression, simultaneously setting a new SOTA on the non-Markovian and Markovian offline goal-conditioned RL datasets of OGBench/D4RL.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Offline GCRL
-  - Decision Transformer
-  - Normalizing Flows
-  - Mamba
+  - "ICML 2026"
+  - "Model Compression"
+  - "Offline GCRL"
+  - "Decision Transformer"
+  - "Normalizing Flows"
+  - "Mamba"
+  - "Trajectory Stitching"
 date: 2026-05-08
-content_hash: d004f35d3877fb57
+content_hash: 9eada493739cb9b4
 ---
+
 # QHyer: Q-conditioned Hybrid Attention-mamba Transformer for Offline Goal-conditioned RL
 
 **Conference**: ICML 2026  
@@ -145,8 +147,8 @@ Performance climbed monotonically with expectile $\tau$ up to 0.9, but regressed
 
 ## Related Papers
 
-- [\[CVPR 2025\] BHViT: Binarized Hybrid Vision Transformer](../../CVPR2025/model_compression/bhvit_binarized_hybrid_vision_transformer.md)
 - [\[ACL 2026\] No-Worse Context-Aware Decoding: Preventing Neutral Regression in Context-Conditioned Generation](../../ACL2026/model_compression/no-worse_context-aware_decoding_preventing_neutral_regression_in_context-conditi.md)
+- [\[CVPR 2025\] BHViT: Binarized Hybrid Vision Transformer](../../CVPR2025/model_compression/bhvit_binarized_hybrid_vision_transformer.md)
 - [\[ICML 2026\] Provably Learning Attention with Queries](provably_learning_attention_with_queries.md)
 - [\[ICML 2026\] FlattenGPT: Depth Compression for Transformer with Layer Flattening](flattengpt_depth_compression_for_transformer_with_layer_flattening.md)
 - [\[CVPR 2025\] Binarized Mamba-Transformer for Lightweight Quad Bayer HybridEVS Demosaicing](../../CVPR2025/model_compression/binarized_mamba-transformer_for_lightweight_quad_bayer_hybridevs_demosaicing.md)

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Agentic RAG] This paper proposes DGPO: using teacher demonstrations for cold-start KD initialization, followed by applying KL distillation penalties to "error samples" during the PPO stage. This allows 0.5B compact models to acquire Agentic RAG capabilities, increasing the average EM across 7 QA benchmarks from 0.006 to 0.329, with
+  [ACL 2026][Information Retrieval & RAG][Agentic RAG] This paper proposes DGPO: using teacher demonstrations for cold-start KD initialization, followed by applying KL distillation penalties to "error samples" during the PPO stage. This allows 0.5B compact models to acquire Agentic RAG capabilities, increasing the average EM across 7 QA benchmarks from 0.006 to 0.329, with some datasets even surpassing the 3B teacher.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Agentic RAG
-  - Knowledge Distillation
-  - Reinforcement Learning
-  - PPO
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Agentic RAG"
+  - "Knowledge Distillation"
+  - "Reinforcement Learning"
+  - "Compact Models"
+  - "PPO"
 date: 2026-05-08
-content_hash: 7e085cbac15a4097
+content_hash: 3571819cb3a81cb1
 ---
+
 # Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities
 
 **Conference**: ACL 2026  
@@ -141,8 +143,8 @@ Cross-model generalization: Qwen 7B→0.5B improved avg EM from 0.238 (PPO) to 0
 - [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
 - [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
 - [\[ACL 2026\] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning](agentic_conversational_search_with_contextualized_reasoning_via_reinforcement_le.md)
-- [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 - [\[ACL 2026\] GIFT: Guided Fine-Tuning and Transfer for Enhancing Instruction-Tuned Language Models](gift_guided_fine-tuning_and_transfer_for_enhancing_instruction-tuned_language_mo.md)
+- [\[ACL 2026\] End-to-End Optimization of LLM-Driven Multi-Agent Search Systems via Heterogeneous-Group-Based Reinforcement Learning](end-to-end_optimization_of_llm-driven_multi-agent_search_systems_via_heterogeneo.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReMoT: Reinforcement Learning with Motion Contrast Triplets
 description: >-
-  [CVPR 2026][Autonomous Driving][GRPO] Ours proposes ReMoT—a unified training paradigm that constructs a 16.5K motion contrast triplet dataset (ReMoT-16K) through a rule-driven multi-expert collaboration. Combined with GRPO reinforcement learning optimization featuring logical consistency rewards and length regularization, it systematically addresses fine-g
+  [CVPR 2026][Autonomous Driving][Motion Contrast Triplets] Ours proposes ReMoT—a unified training paradigm that constructs a 16.5K motion contrast triplet dataset (ReMoT-16K) through a rule-driven multi-expert collaboration. Combined with GRPO reinforcement learning optimization featuring logical consistency rewards and length regularization, it systematically addresses fine-grained spatio-temporal reasoning deficiencies of VLMs in scenarios such as navigation…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - GRPO
-  - VLM
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Motion Contrast Triplets"
+  - "GRPO"
+  - "Spatio-temporal Reasoning"
+  - "VLM"
+  - "Data Construction"
 date: 2026-05-08
-content_hash: f90672c810aa2b24
+content_hash: 74b41a242652ebcc
 ---
+
 # ReMoT: Reinforcement Learning with Motion Contrast Triplets
 
 **Conference**: CVPR 2026  
@@ -160,9 +164,9 @@ The alternating hybrid strategy achieves a leap of +17.3 Overall / +25.1 Partial
 
 - [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
 - [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
 - [\[CVPR 2026\] RLFTSim: Realistic and Controllable Multi-Agent Traffic Simulation via Reinforcement Learning Fine-Tuning](rlftsim_realistic_and_controllable_multi-agent_traffic_simulation_via_reinforcem.md)
 - [\[ICML 2026\] Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion](../../ICML2026/autonomous_driving/constrained_multi-objective_reinforcement_learning_with_max-min_criterion.md)
-- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
 
 </div>
 

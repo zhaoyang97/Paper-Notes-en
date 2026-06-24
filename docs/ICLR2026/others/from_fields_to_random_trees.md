@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Fields to Random Trees
 description: >-
-  [ICLR 2026][Others][MRF] This paper proposes the SPT method: by **uniformly sampling random spanning trees** from the underlying graph of a Markov Random Field (MRF) to break loops, the originally NP-hard MAP inference is decomposed into a series of exactly solvable subproblems on trees. After correcting edge weights using effective resistance
+  [ICLR 2026][MRF] This paper proposes the SPT method: by **uniformly sampling random spanning trees** from the underlying graph of a Markov Random Field (MRF) to break loops, the originally NP-hard MAP inference is decomposed into a series of exactly solvable subproblems on trees. After correcting edge weights using effective resistance and merging results, SPT significantly outperforms LBP / TRBP on sparse and locally connected graphs.
 tags:
-  - ICLR 2026
-  - Others
-  - MRF
+  - "ICLR 2026"
+  - "MRF"
+  - "MAP inference"
+  - "Random Spanning Trees"
+  - "Belief Propagation"
+  - "Effective Resistance"
+  - "Wilson's Algorithm"
 date: 2026-05-08
-content_hash: 85d830d81414f5d1
+content_hash: b0572c7aecf5dff7
 ---
+
 # From Fields to Random Trees
 
 **Conference**: ICLR 2026  
@@ -125,8 +130,8 @@ The inference time of SPT is significantly higher than LBP/TRBP (e.g., on Grids 
 - [\[ACL 2025\] Bregman Conditional Random Fields: Sequence Labeling with Parallelizable Inference](../../ACL2025/others/bregman_conditional_random_fields_sequence_labeling_with_parallelizable_inferenc.md)
 - [\[ICLR 2026\] Active Learning for Decision Trees with Provable Guarantees](active_learning_for_decision_trees_with_provable_guarantees.md)
 - [\[ICLR 2026\] Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds](deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds.md)
+- [\[ICLR 2026\] Energy-Efficient Random Variate Generation via Compressed Lookup Tables](energy-efficient_random_variate_generation_via_compressed_lookup_tables.md)
 - [\[ICLR 2026\] Refine Now, Query Fast: A Decoupled Refinement Paradigm for Implicit Neural Fields](refine_now_query_fast_a_decoupled_refinement_paradigm_for_implicit_neural_fields.md)
-- [\[ICLR 2026\] Random Anchors with Low-rank Decorrelated Learning: A Minimalist Pipeline for Class-Incremental Medical Image Classification](random_anchors_with_low-rank_decorrelated_learning_a_minimalist_pipeline_for_cla.md)
 
 </div>
 

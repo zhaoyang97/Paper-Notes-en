@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-protocol segmentation] This paper proposes the Pancakes framework, which, given a collection of biomedical images from an unseen domain…
+  [NeurIPS 2025][Medical Imaging][Multi-protocol segmentation] This paper proposes the Pancakes framework, which, given a collection of biomedical images from an unseen domain, automatically generates label maps for multiple plausible segmentation protocols, ensuring **semantic consistency** across images within the same protocol—i.e., the same label refers to the same anatomical structure across all images.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "biomedical imaging"
   - "unsupervised segmentation"
 date: 2026-05-08
-content_hash: 73bef1204f592af8
+content_hash: 0018f7e9a6653997
 ---
 
 # Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains
@@ -153,10 +153,10 @@ Pancakes outperforms all baselines on all 7 held-out datasets, typically by 20+ 
 
 ## Related Papers
 
+- [\[CVPR 2025\] Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation](../../CVPR2025/medical_imaging/noise-consistent_siamese-diffusion_for_medical_image_synthesis_and_segmentation.md)
+- [\[CVPR 2025\] BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation](../../CVPR2025/medical_imaging/biclip_bidirectional_and_consistent_language-image_processing_for_robust_medical.md)
 - [\[NeurIPS 2025\] Orochi: Versatile Biomedical Image Processor](orochi_versatile_biomedical_image_processor.md)
 - [\[NeurIPS 2025\] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation](lomix_learnable_weighted_multi-scale_logits_mixing_for_medical_image_segmentatio.md)
-- [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](../../ICCV2025/medical_imaging/multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
-- [\[NeurIPS 2025\] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing](unpaired_image-to-image_translation_for_segmentation_and_signal_unmixing.md)
 - [\[CVPR 2026\] LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol](../../CVPR2026/medical_imaging/lumina_a_multi-vendor_mammography_benchmark_with_energy_harmonization_protocol.md)
 
 </div>

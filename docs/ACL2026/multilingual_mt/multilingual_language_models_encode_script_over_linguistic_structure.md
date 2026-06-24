@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multilingual Language Models Encode Script Over Linguistic Structure
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper systematically analyzes language-associated units in multilingual LMs using LAPE metrics and Sparse Autoencoders (SAEs), discovering that these units are primarily driven by orthography (writing systems) rather than abstract linguistic structure: Romanized transliterations activate almost entirely non-overla
+  [ACL 2026][Multilingual & Machine Translation][Multilingual Representation] This paper systematically analyzes language-associated units in multilingual LMs using LAPE metrics and Sparse Autoencoders (SAEs), discovering that these units are primarily driven by orthography (writing systems) rather than abstract linguistic structure: Romanized transliterations activate almost entirely non-overlapping sets of neurons, word shuffling has minimal impact…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "Multilingual Representation"
+  - "Writing Systems"
+  - "Orthography"
+  - "Language-associated Neurons"
+  - "Sparse Autoencoders"
 date: 2026-05-08
-content_hash: da8c53ade55352f3
+content_hash: 940f91a4a76a8a30
 ---
+
 # Multilingual Language Models Encode Script Over Linguistic Structure
 
 **Conference**: ACL 2026  
@@ -154,7 +160,7 @@ This is an analytical work and involves no training. Pre-trained Top-K SAEs (Lla
 - [\[ACL 2025\] LangSAMP: Language-Script Aware Multilingual Pretraining](../../ACL2025/multilingual_mt/langsamp_multilingual_pretraining.md)
 - [\[ACL 2026\] Language Models Entangle Language and Culture](language_models_entangle_language_and_culture.md)
 - [\[ACL 2026\] Evaluating Robustness of Large Language Models Against Multilingual Typographical Errors](evaluating_robustness_of_large_language_models_against_multilingual_typographica.md)
-- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
+- [\[ACL 2026\] Multilingual Refusal Alignment for Safer Large Language Models](multilingual_refusal_alignment_for_safer_large_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] T$^2$PO attributes the training collapse of multi-turn agentic RL to "hesitation"—characterized by over-thinking at the token level and repetitive invalidity at the turn level. It utilizes a self-calibrated uncertainty signal $M_t$, which fuses entropy and confidence, to simultaneously drive Token-level Thinking Interv
+  [ICML 2026 Spotlight][LLM (Other)][Multi-turn RL] T$^2$PO attributes the training collapse of multi-turn agentic RL to "hesitation"—characterized by over-thinking at the token level and repetitive invalidity at the turn level. It utilizes a self-calibrated uncertainty signal $M_t$, which fuses entropy and confidence, to simultaneously drive Token-level Thinking Intervention (dynamically truncating think blocks) and Turn-level Dynamical Sampling (resampling ineffective turns).…
 tags:
-  - ICML 2026
-  - LLM (Other)
+  - "ICML 2026 Spotlight"
+  - "LLM (Other)"
+  - "Multi-turn RL"
+  - "training collapse"
+  - "self-calibrated uncertainty"
+  - "token-level thinking intervention"
+  - "turn-level dynamic resampling"
 date: 2026-05-08
-content_hash: 8b78e4d6fab806f3
+content_hash: eb763383cfef65ff
 ---
+
 # T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning
 
 **Conference**: ICML 2026 Spotlight  
@@ -136,9 +142,9 @@ Key Metric: T$^2$PO achieves the best performance across all three tasks while m
 
 ## Related Papers
 
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[ACL 2026\] Confidence Estimation for LLMs in Multi-turn Interactions](../../ACL2026/llm_nlp/confidence_estimation_for_llms_in_multi-turn_interactions.md)
+- [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](../../ICLR2026/llm_nlp/efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
+- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[ACL 2026\] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards](../../ACL2026/llm_nlp/generative_floor_plan_design_with_llms_via_reinforcement_learning_with_verifiabl.md)
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/llm_nlp/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
 

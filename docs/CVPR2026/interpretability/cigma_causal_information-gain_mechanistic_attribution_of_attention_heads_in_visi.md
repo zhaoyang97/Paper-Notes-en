@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] CIGMA quantifies the contribution of each attention head to background shortcuts using two counterfactual edits (masking foreground/background). By ranking heads according to causal information gain and surgically zeroing out the top-K "spurious heads," ViT/VLM models are encouraged to shift attention from the backgrou
+  [CVPR 2026][Interpretability][Attention Head Attribution] CIGMA quantifies the contribution of each attention head to background shortcuts using two counterfactual edits (masking foreground/background). By ranking heads according to causal information gain and surgically zeroing out the top-K "spurious heads," ViT/VLM models are encouraged to shift attention from the background to foreground objects without requiring training. This leads to classification accuracy gains of 7.…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Attention Head Attribution"
+  - "Spurious Correlation"
+  - "Information Gain"
+  - "Causal Intervention"
+  - "Training-free Pruning"
 date: 2026-05-08
-content_hash: fc918a2166438239
+content_hash: 1b3c59b4ee2d1311
 ---
+
 # CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers
 
 **Conference**: CVPR 2026  
@@ -156,10 +162,10 @@ Even on fine-tuned backbones, CIGMA (ft) improves accuracy by 4.7–22.9 points 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](../../NeurIPS2025/interpretability/causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
+- [\[CVPR 2026\] Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers](align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio.md)
 - [\[ICML 2026\] Singular Vectors of Attention Heads Align with Features](../../ICML2026/interpretability/singular_vectors_of_attention_heads_align_with_features.md)
-- [\[CVPR 2026\] Improving Sparse Autoencoder with Dynamic Attention](improving_sparse_autoencoder_with_dynamic_attention.md)
+- [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](../../ICLR2026/interpretability/from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 - [\[CVPR 2026\] Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings](inside-out_measuring_generalization_in_vision_transformers_through_inner_working.md)
-- [\[CVPR 2026\] NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)
 
 </div>
 

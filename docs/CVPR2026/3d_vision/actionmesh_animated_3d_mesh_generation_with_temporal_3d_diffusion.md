@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ActionMesh is proposed to add a temporal axis to pre-trained 3D diffusion models through minimal extension (temporal 3D diffusion), and then utilizes a temporal 3D autoencoder to convert independent shape sequences into topology-consistent animated meshes. Generating production-grade animated 3D meshes from various inp
+  [CVPR 2026][3D Vision][Animated 3D Mesh Generation] ActionMesh is proposed to add a temporal axis to pre-trained 3D diffusion models through minimal extension (temporal 3D diffusion), and then utilizes a temporal 3D autoencoder to convert independent shape sequences into topology-consistent animated meshes. Generating production-grade animated 3D meshes from various inputs such as video, text, or 3D meshes in only 2 minutes, it achieves SOTA in both geometric accuracy and tem…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Animated 3D Mesh Generation"
+  - "Temporal 3D Diffusion"
+  - "Topology Consistency"
+  - "Rigging-free"
+  - "Feed-forward"
 date: 2026-05-08
-content_hash: 220dcf580ae713a8
+content_hash: c8645b50f606d1c2
 ---
+
 # ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ The two stages are trained independently and concatenated during inference. Stag
 
 ## Related Papers
 
+- [\[CVPR 2026\] PartDiffuser: Part-wise 3D Mesh Generation via Discrete Diffusion](partdiffuser_part-wise_3d_mesh_generation_via_discrete_diffusion.md)
+- [\[CVPR 2026\] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer](meshflow_efficient_artistic_mesh_generation_via_meshvae_and_flow-based_diffusion.md)
+- [\[CVPR 2026\] MeshMosaic: Scaling Artist Mesh Generation via Local-to-Global Assembly](meshmosaic_scaling_artist_mesh_generation_via_local-to-global_assembly.md)
 - [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] Extend3D: Town-Scale 3D Generation](extend3d_town-scale_3d_generation.md)
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](fall_risk_gait_analysis_hmr.md)
+- [\[CVPR 2026\] Nestwork: Conditional 3D Furnished House Layout Generation through Latent Heterogeneous Graph Diffusion](nestwork_conditional_3d_furnished_house_layout_generation_through_latent_heterog.md)
 
 </div>
 

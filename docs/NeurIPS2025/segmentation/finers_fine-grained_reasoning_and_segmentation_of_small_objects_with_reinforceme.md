@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Segmentation][small object segmentation] FineRS is a two-stage MLLM reinforcement learning framework comprising Global Semantic Exploration (GSE) and Localized Perceptual Refinement (LPR)…
+  [NeurIPS 2025][Segmentation][small object segmentation] FineRS is a two-stage MLLM reinforcement learning framework comprising Global Semantic Exploration (GSE) and Localized Perceptual Refinement (LPR), coupled via a locate-informed retrospective reward. Evaluated on the newly constructed FineRS-4k UAV high-resolution dataset, it achieves reasoning and segmentation of ultra-small objects with a gIoU of 55.1% (surpassing Seg-Zero† by 8.5%) while simultaneously supporting VQA…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -14,7 +14,7 @@ tags:
   - "high-resolution"
   - "UAV"
 date: 2026-05-08
-content_hash: 63cef2c5b5231e6f
+content_hash: 3c5f7dbf8bd955d2
 ---
 
 # FineRS: Fine-grained Reasoning and Segmentation of Small Objects with Reinforcement Learning
@@ -162,11 +162,11 @@ FineRS achieves substantial improvements on non-UAV scenes as well, demonstratin
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset](gtpbd_a_fine-grained_global_terraced_parcel_and_boundary_dataset.md)
 - [\[NeurIPS 2025\] SAM-R1: Leveraging SAM for Reward Feedback in Multimodal Segmentation via Reinforcement Learning](sam-r1_leveraging_sam_for_reward_feedback_in_multimodal_segmentation_via_reinfor.md)
+- [\[NeurIPS 2025\] GTPBD: A Fine-Grained Global Terraced Parcel and Boundary Dataset](gtpbd_a_fine-grained_global_terraced_parcel_and_boundary_dataset.md)
 - [\[NeurIPS 2025\] PartNeXt: A Next-Generation Dataset for Fine-Grained and Hierarchical 3D Part Understanding](partnext_a_next-generation_dataset_for_fine-grained_and_hierarchical_3d_part_und.md)
-- [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
-- [\[NeurIPS 2025\] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning](fast_and_fluent_diffusion_language_models_via_convolutional_decoding_and_rejecti.md)
+- [\[CVPR 2025\] Fine-Grained Image-Text Correspondence with Cost Aggregation for Open-Vocabulary Part Segmentation](../../CVPR2025/segmentation/fine-grained_image-text_correspondence_with_cost_aggregation_for_open-vocabulary.md)
+- [\[CVPR 2025\] Paint by Inpaint: Learning to Add Image Objects by Removing Them First](../../CVPR2025/segmentation/paint_by_inpaint_learning_to_add_image_objects_by_removing_them_first.md)
 
 </div>
 

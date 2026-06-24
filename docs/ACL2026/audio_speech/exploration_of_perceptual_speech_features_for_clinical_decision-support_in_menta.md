@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploration of Perceptual Speech Features for Clinical Decision-Support in Mental Health Care
 description: >-
-  [ACL 2026][Audio & Speech][SHAP/LIME] This paper proposes an explainable speech analysis framework for clinical mental health assistance. It combines perceptually understandable acoustic and linguistic features with XGBoost, statistical testing, SHAP, and LIME to identify stable behavioral vocal cues across multiple datasets (stress, depression, anxiety, A
+  [ACL2026][Audio & Speech][Vocal Mental Health] This paper proposes an explainable speech analysis framework for clinical mental health assistance. It combines perceptually understandable acoustic and linguistic features with XGBoost, statistical testing, SHAP, and LIME to identify stable behavioral vocal cues across multiple datasets (stress, depression, anxiety, ADHD), rather than pursuing black-box end-to-end diagnosis.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - SHAP/LIME
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Vocal Mental Health"
+  - "Explainable Machine Learning"
+  - "Acoustic Features"
+  - "Linguistic Features"
+  - "SHAP/LIME"
 date: 2026-05-08
-content_hash: 5823c626800fbc88
+content_hash: 29d0a3df7054bfdd
 ---
+
 # Exploration of Perceptual Speech Features for Clinical Decision-Support in Mental Health Care
 
 **Conference**: ACL2026  
@@ -152,9 +157,9 @@ This is not an end-to-end deep training paper; the core training targets are XGB
 
 - [\[ACL 2026\] An Exploration of Mamba for Speech Self-Supervised Models](an_exploration_of_mamba_for_speech_self-supervised_models.md)
 - [\[ICLR 2026\] MAPSS: Manifold-Based Assessment of Perceptual Source Separation](../../ICLR2026/audio_speech/mapss_manifold-based_assessment_of_perceptual_source_separation.md)
+- [\[ICLR 2026\] SupCLAP: Controlling Optimization Trajectory Drift in Audio-Text Contrastive Learning with Support Vector Regularization](../../ICLR2026/audio_speech/supclap_controlling_optimization_trajectory_drift_in_audio-text_contrastive_lear.md)
 - [\[ACL 2026\] S2S-Arena: Evaluating Paralinguistic Instruction Following in Speech-to-Speech Models](s2s-arena_evaluating_paralinguistic_instruction_following_in_speech-to-speech_mo.md)
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
-- [\[ACL 2026\] RTCFake: Speech Deepfake Detection in Real-Time Communication](rtcfake_speech_deepfake_detection_in_real-time_communication.md)
 
 </div>
 

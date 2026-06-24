@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] This paper defines the new task of Aesthetic Guidance (AG) and constructs the AesGuide benchmark (10,748 images with aesthetic scores, analysis, and guidance annotations). It proposes Venus, a two-stage framework that first empowers MLLMs with aesthetic guidance capabilities through progressive aesthetic Q&A, and then
+  [CVPR 2026][Multimodal VLM][Aesthetic Guidance] This paper defines the new task of Aesthetic Guidance (AG) and constructs the AesGuide benchmark (10,748 images with aesthetic scores, analysis, and guidance annotations). It proposes Venus, a two-stage framework that first empowers MLLMs with aesthetic guidance capabilities through progressive aesthetic Q&A, and then activates aesthetic cropping capabilities via CoT reasoning, achieving SOTA performance on both tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Aesthetic Guidance"
+  - "Image Cropping"
+  - "MLLM"
+  - "Aesthetic Evaluation"
+  - "CoT Reasoning"
 date: 2026-05-08
-content_hash: 6eac37c864c293f5
+content_hash: cdd55609af98f321
 ---
+
 # Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping
 
 **Conference**: CVPR 2026  
@@ -137,10 +142,10 @@ where $x$ is the image and $q$ is the question. Stage 1 freezes the vision encod
 ## Related Papers
 
 - [\[CVPR 2026\] A3: Towards Advertising Aesthetic Assessment](a3_towards_advertising_aesthetic_assessment.md)
-- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
+- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
+- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
 
 </div>
 

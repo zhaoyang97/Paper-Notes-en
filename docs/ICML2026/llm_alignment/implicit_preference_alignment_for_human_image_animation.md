@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Implicit Preference Alignment for Human Image Animation
 description: >-
-  [ICML 2026][Alignment & RLHF][DPO] The authors propose Implicit Preference Alignment (IPA): a post-training method that requires only "good samples" without constructing positive/negative pairs. By maximizing the KL interval relative to a pre-trained reference model, the method equivalently maximizes implicit rewards. Combined with a HALO module that in
+  [ICML 2026][LLM Alignment][Preference Alignment] The authors propose Implicit Preference Alignment (IPA): a post-training method that requires only "good samples" without constructing positive/negative pairs. By maximizing the KL interval relative to a pre-trained reference model, the method equivalently maximizes implicit rewards. Combined with a HALO module that integrates hand-mask weighting into the loss, it enables a large-scale video DiT to significantly improve hand fi…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - DPO
-  - Flow Matching
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Preference Alignment"
+  - "DPO"
+  - "Flow Matching"
+  - "Human Animation"
+  - "Hand Generation"
 date: 2026-05-08
-content_hash: e6eede08d049af8d
+content_hash: d66b9cb4412aafe5
 ---
+
 # Implicit Preference Alignment for Human Image Animation
 
 **Conference**: ICML 2026  
@@ -137,7 +141,7 @@ The total loss combines the components: $\mathcal{L} = \mathbb{E}_{t,v}[-\log\si
 - [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](../../CVPR2026/llm_alignment/bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
 - [\[ICML 2026\] Alignment-Aware Decoding](alignment-aware_decoding.md)
 - [\[ICML 2026\] Efficient Preference Poisoning Attack on Offline RLHF](efficient_preference_poisoning_attack_on_offline_rlhf.md)
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
+- [\[ICLR 2026\] When Weak LLMs Speak with Confidence, Preference Alignment Gets Stronger](../../ICLR2026/llm_alignment/when_weak_llms_speak_with_confidence_preference_alignment_gets_stronger.md)
 
 </div>
 

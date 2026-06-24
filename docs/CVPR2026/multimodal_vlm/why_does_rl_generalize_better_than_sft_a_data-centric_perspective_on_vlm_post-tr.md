@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training
 description: >-
-  [CVPR 2026][Multimodal VLM][RL vs SFT] This paper explains why RL (GRPO) post-trained VLMs generalize better to out-of-distribution (OOD) data than SFT from a "data perspective": the advantage of RL does not stem from the algorithm itself, but from its advantage function naturally concentrating training signals on "medium-difficulty" samples, acting as an i
+  [CVPR 2026][Multimodal VLM][VLM post-training] This paper explains why RL (GRPO) post-trained VLMs generalize better to out-of-distribution (OOD) data than SFT from a "data perspective": the advantage of RL does not stem from the algorithm itself, but from its advantage function naturally concentrating training signals on "medium-difficulty" samples, acting as an implicit data filter. Accordingly, the authors propose DC-SFT—explicitly removing hard samples before standard SFT…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - RL vs SFT
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM post-training"
+  - "RL vs SFT"
+  - "OOD generalization"
+  - "data difficulty"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 47d2fe93c8f0f518
+content_hash: eabf94a5c97c837a
 ---
+
 # Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training
 
 **Conference**: CVPR 2026  
@@ -146,15 +150,15 @@ Gradually adding hard samples back into SFT-EM quantifies their harm (Qwen2.5-VL
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
+- [\[ICLR 2026\] RL Makes MLLMs See Better Than SFT](../../ICLR2026/multimodal_vlm/rl_makes_mllms_see_better_than_sft.md)
 - [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
 - [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
 - [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](../../ICML2026/multimodal_vlm/med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
-- [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](../../ICLR2026/multimodal_vlm/shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
+- [\[ACL 2026\] CharTide: Data-Centric Chart-to-Code Generation via Tri-Perspective Tuning and Inquiry-Driven Evolution](../../ACL2026/multimodal_vlm/chartide_data-centric_chart-to-code_generation_via_tri-perspective_tuning_and_in.md)
 
 </div>
 

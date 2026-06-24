@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] ScholScan proposes a new "scan-oriented" paradigm for academic paper reasoning—moving away from pre-defined retrieval targets and instead tasking models to read an entire paper like a reviewer to actively discover internal scientific inconsistencies. Based on 715 real-world papers, 9 error categories, and 1,800 tasks,
+  [ICLR 2026][VLM Reasoning][Scan-oriented reasoning] ScholScan proposes a new "scan-oriented" paradigm for academic paper reasoning—moving away from pre-defined retrieval targets and instead tasking models to read an entire paper like a reviewer to actively discover internal scientific inconsistencies. Based on 715 real-world papers, 9 error categories, and 1,800 tasks, this multimodal benchmark evaluated 15 models under 24 input configurations. The findings reveal that even t…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Scan-oriented reasoning"
+  - "academic paper understanding"
+  - "scientific error detection"
+  - "MLLM evaluation"
+  - "process-aware assessment"
 date: 2026-05-08
-content_hash: d978d950a669eee1
+content_hash: ea12b1f394d3121f
 ---
+
 # Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning
 
 **Conference**: ICLR 2026  
@@ -137,9 +143,9 @@ The best performance (Gemini 2.5 Pro via Text, 30.3) **did not exceed the 60-poi
 
 - [\[ICML 2026\] Imagination Helps Visual Reasoning, But Not Yet in Latent Space](../../ICML2026/vlm_reasoning/imagination_helps_visual_reasoning_but_not_yet_in_latent_space.md)
 - [\[ICLR 2026\] JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA](judo_a_juxtaposed_domain-oriented_multimodal_reasoner_for_industrial_anomaly_qa.md)
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
 - [\[ICLR 2026\] What "Not" to Detect: Negation-Aware VLMs via Structured Reasoning and Token Merging](what_not_to_detect_negation-aware_vlms_via_structured_reasoning_and_token_mergin.md)
 - [\[ICLR 2026\] Mini-o3: Scaling Up Reasoning Patterns and Interaction Turns for Visual Search](mini-o3_scaling_up_reasoning_patterns_and_interaction_turns_for_visual_search.md)
-- [\[ICLR 2026\] Children's Intelligence Tests Pose Challenges for MLLMs? KidGym: A 2D Grid-Based Reasoning Benchmark for MLLMs](childrens_intelligence_tests_pose_challenges_for_mllms_kidgym_a_2d_grid-based_re.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software
 description: >-
-  [ICML 2026][Code Intelligence][specification gaming] This study presents a single-case ($N=1$) analysis where a physicist developed ~2,100 lines of differentiable cosmological perturbation theory code, `clax-pt`, using Claude Code over 12 days and 57 sessions. By quantifying 15 supervision events, the authors demonstrate that credibility in scientific software stems not
+  [ICML 2026][Code Intelligence][Supervision Protocols] This study presents a single-case ($N=1$) analysis where a physicist developed ~2,100 lines of differentiable cosmological perturbation theory code, `clax-pt`, using Claude Code over 12 days and 57 sessions. By quantifying 15 supervision events, the authors demonstrate that credibility in scientific software stems not from raw model capability, but from a structured human supervision protocol built around oracle tests…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - specification gaming
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Supervision Protocols"
+  - "Scientific Software"
+  - "Oracle Testing"
+  - "Specification Gaming"
+  - "Explanatory Agency"
 date: 2026-05-08
-content_hash: 5060c6d12cd62a06
+content_hash: dcb4a1d7c73732b0
 ---
+
 # Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software
 
 **Conference**: ICML 2026  
@@ -96,15 +101,15 @@ Precision of `clax-pt` v0.1.0 vs. C reference `class-pt` under Planck 2018 fiduc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/code_intelligence/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
+- [\[ICLR 2026\] From Assistant to Independent Developer — Are GPTs Ready for Software Development?](../../ICLR2026/code_intelligence/from_assistant_to_independent_developer_are_gpts_ready_for_software_development.md)
 - [\[ICML 2026\] How can we assess human-agent interactions? Case studies in software agent design](how_can_we_assess_human-agent_interactions_case_studies_in_software_agent_design.md)
-- [\[ICML 2026\] MARS: Modular Agent with Reflective Search for Automated AI Research](mars_modular_agent_with_reflective_search_for_automated_ai_research.md)
-- [\[ICLR 2026\] InnoGym: Benchmarking the Innovation Potential of AI Agents](../../ICLR2026/code_intelligence/innogym_benchmarking_the_innovation_potential_of_ai_agents.md)
-- [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](../../ACL2026/code_intelligence/scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
+- [\[ICLR 2026\] DevOps-Gym: Benchmarking AI Agents in Software DevOps Cycle](../../ICLR2026/code_intelligence/devops-gym_benchmarking_ai_agents_in_software_devops_cycle.md)
+- [\[ACL 2026\] KoCo-Bench: Can Large Language Models Leverage Domain Knowledge in Software Development?](../../ACL2026/code_intelligence/koco-bench_can_large_language_models_leverage_domain_knowledge_in_software_devel.md)
+- [\[ICLR 2026\] The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution](../../ICLR2026/code_intelligence/the_matthew_effect_of_ai_programming_assistants_a_hidden_bias_in_software_evolut.md)
 
 </div>
 

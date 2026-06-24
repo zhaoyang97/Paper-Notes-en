@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Do LLMs Forget What They Should? Evaluating In-Context Forgetting in Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][In-Context Forgetting] This paper introduces ICF-Bench—the first benchmark to systematically evaluate the "in-context selective forgetting" capabilities of LLMs. Using paired NoForget/Forget tasks and the SFRR metric, it reveals a counter-intuitive fact: models can remember but fail to forget, and stronger memory capability does not necessar
+  [ICLR 2026][LLM Safety][In-Context Forgetting] This paper introduces ICF-Bench—the first benchmark to systematically evaluate the "in-context selective forgetting" capabilities of LLMs. Using paired NoForget/Forget tasks and the SFRR metric, it reveals a counter-intuitive fact: models can remember but fail to forget, and stronger memory capability does not necessarily imply stronger forgetting capability.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - In-Context Forgetting
-  - ICF-Bench
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "In-Context Forgetting"
+  - "Selective Forgetting"
+  - "Privacy Protection"
+  - "Multi-turn Dialogue Evaluation"
+  - "ICF-Bench"
 date: 2026-05-08
-content_hash: 731064420658b86b
+content_hash: 91a97757e12d89c4
 ---
+
 # Do LLMs Forget What They Should? Evaluating In-Context Forgetting in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -138,8 +142,8 @@ The evaluation covers 8 open-source models (Mistral-7B, Llama3-8B/70B, Qwen2.5-7
 - [\[ICLR 2026\] LLMs on Trial: Evaluating Judicial Fairness for Large Language Models](llms_on_trial_evaluating_judicial_fairness_for_large_language_models.md)
 - [\[ICLR 2026\] In-Context Watermarks for Large Language Models](in-context_watermarks_for_large_language_models.md)
 - [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)
-- [\[ACL 2026\] Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens](../../ACL2026/llm_safety/forget_what_matters_keep_the_rest_selective_unlearning_of_informative_tokens.md)
-- [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
+- [\[ACL 2025\] Answer When Needed, Forget When Not: Language Models Pretend to Forget via In-Context Knowledge Unlearning](../../ACL2025/llm_safety/answer_when_needed_forget_when_not_language_models_pretend_to_forget_via_in-cont.md)
+- [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
 
 </div>
 

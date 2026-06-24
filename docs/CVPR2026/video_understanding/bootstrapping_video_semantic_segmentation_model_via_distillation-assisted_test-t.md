@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] DiTTA utilizes a lightweight temporal add-on to perform test-time adaptation (TTA) on the initial frames of a test video for an image semantic segmentation (ISS) model. By distilling the temporal propagation capabilities of SAM2, it "bootstraps" the model into a video-specific VSS model. The model is subsequently froze
+  [CVPR 2026][Video Understanding][Video Semantic Segmentation] DiTTA utilizes a lightweight temporal add-on to perform test-time adaptation (TTA) on the initial frames of a test video for an image semantic segmentation (ISS) model. By distilling the temporal propagation capabilities of SAM2, it "bootstraps" the model into a video-specific VSS model. The model is subsequently frozen for high-speed inference on the remaining frames without requiring video labels…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Semantic Segmentation"
+  - "Test-Time Adaptation"
+  - "SAM2 Distillation"
+  - "Temporal Consistency"
+  - "Unlabeled"
 date: 2026-05-08
-content_hash: a5132033724af31a
+content_hash: 2fd7c592f5f65372
 ---
+
 # Bootstrapping Video Semantic Segmentation Model via Distillation-assisted Test-Time Adaptation
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,10 @@ All three components provide individual gains. The SAM2 distillation target (B, 
 ## Related Papers
 
 - [\[CVPR 2026\] Dual-level Adaptation for Multi-Object Tracking: Building Test-Time Calibration from Experience and Intuition](tcei_test_time_calibration_experience_intuition_mot.md)
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
 - [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
 - [\[CVPR 2026\] Polyphony: Diffusion-based Dual-Hand Action Segmentation with Alternating Vision Transformer and Semantic Conditioning](polyphony_diffusion-based_dual-hand_action_segmentation_with_alternating_vision_.md)
-- [\[CVPR 2026\] Robust Promptable Video Object Segmentation](robust_promptable_video_object_segmentation.md)
-- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](self-critical_distillation_network_for_video-based_commonsense_captioning.md)
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
 
 </div>
 

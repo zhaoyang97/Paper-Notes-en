@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] PhenoYieldNet utilizes a unified model for multi-crop county-level yield prediction: it assigns learnable query vectors via a "Crop Phenology Bank" to each crop, decomposes temporal features into long-term trends and short-term fluctuations via "Crop Phenology Attention" (injecting them into attention biases), and util
+  [CVPR 2026][Remote Sensing][Multi-crop yield prediction] PhenoYieldNet utilizes a unified model for multi-crop county-level yield prediction: it assigns learnable query vectors via a "Crop Phenology Bank" to each crop, decomposes temporal features into long-term trends and short-term fluctuations via "Crop Phenology Attention" (injecting them into attention biases), and utilizes two-stage Temporal Contrastive Adaptation to transfer remote sensing foundation models to agricult…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Multi-crop yield prediction"
+  - "crop phenology"
+  - "temporal attention"
+  - "remote sensing foundation models"
+  - "contrastive adaptation"
 date: 2026-05-08
-content_hash: eb19d3f486b27f24
+content_hash: 184b3d593cbbb7f3
 ---
+
 # PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,15 @@ The unified PhenoYieldNet-MC outperforms its single-crop version on Corn/Cotton,
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
-- [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](geosane_learning_geospatial_representations_from_models_not_data.md)
 - [\[CVPR 2026\] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data](orthogonal_spatial-aware_multi-view_anchor_graph_clustering_for_incomplete_remot.md)
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
+- [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](geosane_learning_geospatial_representations_from_models_not_data.md)
 - [\[CVPR 2026\] QuCNet: Quantum Deep Learning Driven Multi-Circuit Network for Remote Sensing Image Classification](qucnet_quantum_deep_learning_driven_multi-circuit_network_for_remote_sensing_ima.md)
+- [\[CVPR 2026\] Multigrain-aware Semantic Prototype Scanning and Tri-Token Prompt Learning Embraced High-Order RWKV for Pan-Sharpening](multigrain-aware_semantic_prototype_scanning_and_tri-token_prompt_learning_embra.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Intermediate Representation for VLM-based Robot Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][RAG] Addressing the task of "VLM translating human instructions into executable intermediate representations," this work draws inspiration from Context-Free Grammar (CFG) to decompose intermediate representations into **Vocabulary + Grammar**. It designs the SEAM representation, which is both comprehensible for VLMs and gen
+  [CVPR 2026][Robotics][VLM Robot Manipulation] Addressing the task of "VLM translating human instructions into executable intermediate representations," this work draws inspiration from Context-Free Grammar (CFG) to decompose intermediate representations into **Vocabulary + Grammar**. It designs the SEAM representation, which is both comprehensible for VLMs and generalizable to unseen tasks, paired with a RAG-based few-shot open-vocabulary part segmentation module. Real-robot…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - RAG
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLM Robot Manipulation"
+  - "Intermediate Representation"
+  - "Context-Free Grammar"
+  - "Open-vocabulary Segmentation"
+  - "RAG"
 date: 2026-05-08
-content_hash: 8670e7acfba56bc1
+content_hash: e4990f3b43ec9432
 ---
+
 # Rethinking Intermediate Representation for VLM-based Robot Manipulation
 
 **Conference**: CVPR 2026  
@@ -121,8 +126,8 @@ The authors also propose two new metrics to quantify the quality of the intermed
 ## Related Papers
 
 - [\[ICLR 2026\] RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation](../../ICLR2026/robotics/robointer_a_holistic_intermediate_representation_suite_towards_robotic_manipulat.md)
-- [\[CVPR 2026\] StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation](stamo_unsupervised_learning_of_generalizable_robot_motion_from_compact_state_rep.md)
 - [\[CVPR 2026\] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation](rethinking_camera_choice_an_empirical_study_on_fisheye_camera_properties_in_robo.md)
+- [\[CVPR 2026\] StaMo: Unsupervised Learning of Generalizable Robot Motion from Compact State Representation](stamo_unsupervised_learning_of_generalizable_robot_motion_from_compact_state_rep.md)
 - [\[CVPR 2026\] Rethinking Visual Rearrangement from A Diffusion Perspective](rethinking_visual_rearrangement_from_a_diffusion_perspective.md)
 - [\[CVPR 2026\] Language-Grounded Decoupled Action Representation for Robotic Manipulation (LaDA)](lada_robotic_manipulation.md)
 

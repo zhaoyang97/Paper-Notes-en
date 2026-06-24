@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] CineSRD is proposed as a training-free multi-modal speaker diarization framework. It performs speaker registration via visual anchor clustering and speaker transition detection using an audio language model, addressing open-world challenges in cinematic works such as long-duration videos, large character counts, and au
+  [CVPR 2026][Video Understanding][Speaker Diarization] CineSRD is proposed as a training-free multi-modal speaker diarization framework. It performs speaker registration via visual anchor clustering and speaker transition detection using an audio language model, addressing open-world challenges in cinematic works such as long-duration videos, large character counts, and audio-visual asynchrony.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Speaker Diarization"
+  - "Multi-modal Fusion"
+  - "Visual Anchor Clustering"
+  - "Audio Language Model"
+  - "Open-world"
 date: 2026-05-08
-content_hash: 80867c347c218f53
+content_hash: e8e1a1f91499a8a1
 ---
+
 # CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization
 
 **Conference**: CVPR 2026  
@@ -156,11 +162,11 @@ Text modality provides semantic coherence through the ALM, effectively distingui
 
 ## Related Papers
 
-- [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
 - [\[CVPR 2026\] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)
 - [\[CVPR 2026\] OmniVTG: A Large-Scale Dataset and Training Paradigm for Open-World Video Temporal Grounding](omnivtg_a_large-scale_dataset_and_training_paradigm_for_open-world_video_tempora.md)
 - [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
+- [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
 
 </div>
 

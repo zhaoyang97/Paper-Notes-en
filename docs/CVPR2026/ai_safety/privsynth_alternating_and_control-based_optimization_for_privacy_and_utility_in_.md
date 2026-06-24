@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PrivSynth: Alternating and Control-Based Optimization for Privacy and Utility in Synthetic Data
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] PrivSynth models the "privacy-utility trade-off in synthetic data generation" as a **bi-objective optimization** problem, alternating optimization between the generator and data selection parameters. It reformulates the data selection step as a **discrete-time optimal control** problem solved via the Pontryagin Maximum
+  [CVPR 2026][AI Safety][Synthetic Data] PrivSynth models the "privacy-utility trade-off in synthetic data generation" as a **bi-objective optimization** problem, alternating optimization between the generator and data selection parameters. It reformulates the data selection step as a **discrete-time optimal control** problem solved via the Pontryagin Maximum Principle (PMP), reducing the Membership Inference Attack (MIA) success rate from 48% to approximately 2% while guarante…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Synthetic Data"
+  - "Privacy-Utility Trade-off"
+  - "Optimal Control"
+  - "Pontryagin Maximum Principle"
+  - "Data Selection"
 date: 2026-05-08
-content_hash: c610306a6fd4ad63
+content_hash: 3e9e39919a155b40
 ---
+
 # PrivSynth: Alternating and Control-Based Optimization for Privacy and Utility in Synthetic Data
 
 **Conference**: CVPR 2026  
@@ -129,9 +135,9 @@ Analysis of the impact of alternating optimization rounds on DomainNet (Round 0 
 
 - [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](../../ICML2026/ai_safety/position_embodied_ai_requires_a_privacy-utility_trade-off.md)
+- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
+- [\[AAAI 2026\] An Improved Privacy and Utility Analysis of Differentially Private SGD with Bounded Domain and Smooth Losses](../../AAAI2026/ai_safety/an_improved_privacy_and_utility_analysis_of_differentially_p.md)
 - [\[CVPR 2026\] One-to-More: High-Fidelity Training-Free Anomaly Generation with Attention Control](one-to-more_high-fidelity_training-free_anomaly_generation_with_attention_control.md)
-- [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](image-based_outlier_synthesis_with_training_data.md)
-- [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](dso_direct_steering_optimization_for_bias_mitigation.md)
 
 </div>
 

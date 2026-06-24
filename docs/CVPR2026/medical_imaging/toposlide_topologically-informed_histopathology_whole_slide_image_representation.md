@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] TopoSlide incorporates the diagnostic logic of pathologists—"observing local tissues first, then analyzing global spatial arrangement"—into a self-supervised objective. It first clusters millions of patches into histological clusters, then encodes the spatial arrangement of each cluster into topological descriptors usi
+  [CVPR 2026][Medical Imaging][Whole Slide Images] TopoSlide incorporates the diagnostic logic of pathologists—"observing local tissues first, then analyzing global spatial arrangement"—into a self-supervised objective. It first clusters millions of patches into histological clusters, then encodes the spatial arrangement of each cluster into topological descriptors using persistent homology. Finally, a ViT is trained to infer these topologies from slide-level representations un…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Images"
+  - "Persistent Homology"
+  - "Topological Data Analysis"
+  - "Self-supervised"
+  - "Pathology Foundation Models"
 date: 2026-05-08
-content_hash: b8a4495a43566287
+content_hash: 689ef7ca86bc571d
 ---
+
 # TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning
 
 **Conference**: CVPR 2026  
@@ -144,8 +150,8 @@ The paper does not provide a refined numerical table for each individual loss te
 - [\[CVPR 2026\] Turning Pre-Trained Vision Transformers into End-to-End Histopathology Whole Slide Image Models for Survival Prediction](turning_pre-trained_vision_transformers_into_end-to-end_histopathology_whole_sli.md)
 - [\[CVPR 2026\] MLLM-HWSI: A Multimodal Large Language Model for Hierarchical Whole Slide Image Understanding](mllm-hwsi_a_multimodal_large_language_model_for_hierarchical_whole_slide_image_u.md)
 - [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
-- [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](../../AAAI2026/medical_imaging/towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
 - [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 
 </div>
 

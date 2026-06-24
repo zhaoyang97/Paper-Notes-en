@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Denoise and Align: Towards Source-Free UDA for Robust Panoramic Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] DAPASS transfers a pinhole-pre-trained segmentation model to the panoramic domain without source data. It partitions target samples into reliable and unreliable sets based on confidence consistency, cleans pseudo-labels via bilevel optimization and class-balanced copy-paste, and aligns local details with global semanti
+  [CVPR 2026][Segmentation][SFUDA] DAPASS transfers a pinhole-pre-trained segmentation model to the panoramic domain without source data. It partitions target samples into reliable and unreliable sets based on confidence consistency, cleans pseudo-labels via bilevel optimization and class-balanced copy-paste, and aligns local details with global semantics using a cross-resolution attention module to mitigate ERP distortion. It achieves 55.04% and 70.38% mIoU on outdoor C-to-D a…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "SFUDA"
+  - "Panoramic Segmentation"
+  - "Pseudo-label Denoising"
+  - "Class Imbalance"
+  - "Cross-Resolution Attention"
 date: 2026-05-08
-content_hash: 2e04b77e58695af4
+content_hash: 189863b9e2ccc2ff
 ---
+
 # Denoise and Align: Towards Source-Free UDA for Robust Panoramic Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,15 @@ Module-level ablation:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICCV 2025\] OmniSAM: Omnidirectional Segment Anything Model for UDA in Panoramic Semantic Segmentation](../../ICCV2025/segmentation/omnisam_omnidirectional_segment_anything_model_for_uda_in_panoramic_semantic_seg.md)
 - [\[CVPR 2026\] REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion](rel-sf4pass_panoramic_semantic_segmentation_with_rel_depth_representation_and_sp.md)
 - [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
-- [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
+- [\[CVPR 2026\] CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation](clp_a_real-world_dataset_of_contaminated_lens_protectors_for_robust_semantic_seg.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding
 description: >-
-  [ICLR 2026][LLM Evaluation][MLLM-as-a-Judge] VideoJudge utilizes a bootstrapping loop where a "generator creates samples according to target scores and an evaluator validates score alignment" to synthesize 100,000 video evaluation samples with score supervision without human labeling. This enables training 3B/7B small video evaluator models that match or exceed 3
+  [ICLR 2026][LLM Evaluation][MLLM-as-a-Judge] VideoJudge utilizes a bootstrapping loop where a "generator creates samples according to target scores and an evaluator validates score alignment" to synthesize 100,000 video evaluation samples with score supervision without human labeling. This enables training 3B/7B small video evaluator models that match or exceed 32B/72B general-purpose MLLM judges on most meta-evaluation benchmarks.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - MLLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "MLLM-as-a-Judge"
+  - "Video Understanding Evaluation"
+  - "Bootstrapping Data Synthesis"
+  - "Generator-Evaluator"
+  - "Instance-level Rubric"
 date: 2026-05-08
-content_hash: 335dfe8f104e0500
+content_hash: 263ce61c0588470b
 ---
+
 # VideoJudge: Bootstrapping Enables Scalable Supervision of MLLM-as-a-Judge for Video Understanding
 
 **Conference**: ICLR 2026  
@@ -132,7 +137,7 @@ The inclusion of feedback (FB) consistently improves 3B/7B baselines. Rubric abl
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

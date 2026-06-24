@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos
 description: >-
-  [ICCV 2025][3D Vision][video object insertion] This paper proposes a hybrid pipeline for realistically inserting 3D bracelets into videos. It leverages 3D Gaussian Splatting (3DGS) to ensure temporal consistency…
+  [ICCV 2025][3D Vision][video object insertion] This paper proposes a hybrid pipeline for realistically inserting 3D bracelets into videos. It leverages 3D Gaussian Splatting (3DGS) to ensure temporal consistency, employs a 2D diffusion model to enhance photorealistic illumination, and introduces a Shading-Driven pipeline that separately optimizes albedo, shading, and specular residuals. The method achieves an 81.7% realism preference rate in user studies…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "temporal consistency"
   - "virtual try-on"
 date: 2026-05-08
-content_hash: 5854d5579db2aecd
+content_hash: 589c065b3347d2af
 ---
 
 # From Gallery to Wrist: Realistic 3D Bracelet Insertion in Videos
@@ -163,11 +163,11 @@ The proposed method achieves the best scores on all three metrics; temporal cons
 
 ## Related Papers
 
+- [\[CVPR 2025\] Towards Realistic Example-Based Modeling via 3D Gaussian Stitching](../../CVPR2025/3d_vision/towards_realistic_example-based_modeling_via_3d_gaussian_stitching.md)
 - [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
+- [\[CVPR 2025\] Vid2Sim: Realistic and Interactive Simulation from Video for Urban Navigation](../../CVPR2025/3d_vision/vid2sim_realistic_and_interactive_simulation_from_video_for_urban_navigation.md)
 - [\[ICCV 2025\] MonoMobility: Zero-Shot 3D Mobility Analysis from Monocular Videos](monomobility_zero-shot_3d_mobility_analysis_from_monocular_videos.md)
 - [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
-- [\[ICCV 2025\] How Far are AI-generated Videos from Simulating the 3D Visual World: A Learned 3D Evaluation Approach](how_far_are_ai-generated_videos_from_simulating_the_3d_visual_world_a_learned_3d.md)
-- [\[CVPR 2026\] Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion](../../CVPR2026/3d_vision/yocity_personalized_and_boundless_3d_realistic_city_scene_generation_via_self-cr.md)
 
 </div>
 

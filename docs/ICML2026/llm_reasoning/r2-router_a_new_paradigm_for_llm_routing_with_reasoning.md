@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] R2-Router: A New Paradigm for LLM Routing with Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] This paper proposes R2-Router, which transforms "output token budget" from a passive estimate into a controllable variable. By enabling the router to search in the joint (LLM, budget) space and using a lightweight multi-head quality predictor to extend each LLM from a static point into a quality-cost curve, it achieves
+  [ICML 2026][Reasoning][LLM Routing] This paper proposes R2-Router, which transforms "output token budget" from a passive estimate into a controllable variable. By enabling the router to search in the joint (LLM, budget) space and using a lightweight multi-head quality predictor to extend each LLM from a static point into a quality-cost curve, it achieves comparable quality to existing routers at 4–5× lower cost.
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "LLM Routing"
+  - "Output Length Budget"
+  - "Quality-Cost Curve"
+  - "Reasoning Routing"
+  - "Length-Constraint Prompting"
 date: 2026-05-08
-content_hash: 7af62116a03ff8c7
+content_hash: 66569c6d1d7548f5
 ---
+
 # R2-Router: A New Paradigm for LLM Routing with Reasoning
 
 **Conference**: ICML 2026  
@@ -135,10 +141,10 @@ MSE regression is performed independently for each (LLM $i$, budget anchor $k$):
 ## Related Papers
 
 - [\[AAAI 2026\] A Reasoning Paradigm for Named Entity Recognition](../../AAAI2026/llm_reasoning/a_reasoning_paradigm_for_named_entity_recognition.md)
+- [\[ICML 2026\] UniScale: Adaptive Unified Inference Scaling through Online Joint Optimization of Model Routing and Test-Time Scaling](uniscale_adaptive_unified_inference_scaling_via_online_joint_optimization_of_mod.md)
 - [\[AAAI 2026\] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation](../../AAAI2026/llm_reasoning/intention_chain-of-thought_prompting_with_dynamic_routing_for_code_generation.md)
-- [\[ICML 2026\] TRACE: 用 Toulmin 论证模型评 LLM CoT 推理过程质量](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
-- [\[ICML 2026\] Beyond Test-Time Memory: State-Space Optimal Control for LLM Reasoning](beyond_test-time_memory_state-space_optimal_control_for_llm_reasoning.md)
+- [\[ICLR 2026\] TRIM: Hybrid Inference via Targeted Stepwise Routing in Multi-Step Reasoning Tasks](../../ICLR2026/llm_reasoning/trim_hybrid_inference_via_targeted_stepwise_routing_in_multi-step_reasoning_task.md)
+- [\[ACL 2025\] Chain-of-Reasoning: Towards Unified Mathematical Reasoning in Large Language Models via a Multi-Paradigm Perspective](../../ACL2025/llm_reasoning/chain_of_reasoning_unified_math.md)
 
 </div>
 

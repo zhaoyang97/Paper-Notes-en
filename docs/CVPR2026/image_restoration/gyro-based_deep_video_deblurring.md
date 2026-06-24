@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Gyro-based Deep Video Deblurring
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] GyroDVD is the first learning-based framework for "gyro-assisted video deblurring." It utilizes a decomposed camera motion model to split per-pixel movement into rotational (measured by gyro) and translational (estimated via optical flow) components to construct per-pixel blur kernels. These kernels guide an image enco
+  [CVPR 2026][Image Restoration][Gyro-based Deblurring] GyroDVD is the first learning-based framework for "gyro-assisted video deblurring." It utilizes a decomposed camera motion model to split per-pixel movement into rotational (measured by gyro) and translational (estimated via optical flow) components to construct per-pixel blur kernels. These kernels guide an image encoder and video decoder to restore clean video. It significantly outperforms all prior gyro-based image/vide…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Gyro-based Deblurring"
+  - "Video Deblurring"
+  - "Blur Kernel Construction"
+  - "Translational Motion"
+  - "Deformable Convolution"
 date: 2026-05-08
-content_hash: e43128f0cddde82c
+content_hash: fa4ce06f322698c0
 ---
+
 # Gyro-based Deep Video Deblurring
 
 **Conference**: CVPR 2026  
@@ -157,9 +163,9 @@ Network architecture ablation:
 
 - [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
 - [\[CVPR 2025\] Gyro-based Neural Single Image Deblurring](../../CVPR2025/image_restoration/gyro-based_neural_single_image_deblurring.md)
+- [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 - [\[ECCV 2024\] Domain-Adaptive Video Deblurring via Test-Time Blurring](../../ECCV2024/image_restoration/domain-adaptive_video_deblurring_via_test-time_blurring.md)
 - [\[CVPR 2026\] Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)
-- [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
 
 </div>
 

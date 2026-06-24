@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Unleashing Perception-Time Scaling to Multimodal Reasoning Models
 description: >-
-  [ICLR 2026][vlm_reasoning][RLVR] Addressing the phenomenon where "inference-time scaling makes Large Vision-Language Models (LVLMs) think longer but not see more accurately," this paper proposes **Perception-Time Scaling (PTS)**. By rewriting perception as a token-dense, decomposable explicit process (symbolic distance + segment-wise accumulation) and
+  [ICLR 2026][VLM Reasoning][Perception-time scaling] Addressing the phenomenon where "inference-time scaling makes Large Vision-Language Models (LVLMs) think longer but not see more accurately," this paper proposes **Perception-Time Scaling (PTS)**. By rewriting perception as a token-dense, decomposable explicit process (symbolic distance + segment-wise accumulation) and employing SFT cold-start followed by GRPO reinforcement, the authors improve high-precision accuracy on the…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Perception-time scaling"
+  - "visual estimation"
+  - "RLVR"
+  - "symbolic tokens"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 75371593f7bd0a2e
+content_hash: 1fe43cfd9ea7522f
 ---
+
 # Unleashing Perception-Time Scaling to Multimodal Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -114,15 +118,20 @@ PTS increased average RA$_{avg}$ from 21.5% to 88.3% and high-precision RA$_{0.1
 - Value: ⭐⭐⭐⭐⭐ Fixes a major blind spot in RLVR for perception.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **Vision-R1**: Applying RLVR to multimodal reasoning (baseline).
-- **Visual Sketchpad**: Tool-augmentation for perception (PTS outperforms it without external tools).
-- **Spatial-R1**: Size estimation for real-world objects.
+## Related Papers
+
+- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
+- [\[ICLR 2026\] Perception-Aware Policy Optimization for Multimodal Reasoning](perception-aware_policy_optimization_for_multimodal_reasoning.md)
+- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](../../CVPR2026/vlm_reasoning/unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Matching: Unlocking Compositional Reasoning in Multimodal Models](test-time_matching_unlocking_compositional_reasoning_in_multimodal_models.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](../../CVPR2026/vlm_reasoning/scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)

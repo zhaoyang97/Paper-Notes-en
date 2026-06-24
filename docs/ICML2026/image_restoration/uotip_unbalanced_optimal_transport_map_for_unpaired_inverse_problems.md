@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] UOTIP：无须配对的反演问题的非平衡最优传输映射
+  [Paper Note] UOTIP: Unbalanced Optimal Transport Mapping for Unpaired Inversion Problems
 description: >-
-  [ICML 2026][Image Restoration][Paper Note] The UOTIP method is proposed—formulating the unpaired image inversion problem as mapping learning from a noisy measurement distribution to a clean signal distribution through an Unbalanced Optimal Transport (UOT) framework, achieving robustness and theoretical guarantees by introducing a likelihood cost function and a
+  [ICML 2026][Image Restoration][Unbalanced Optimal Transport] The UOTIP method is proposed—formulating the unpaired image inversion problem as mapping learning from a noisy measurement distribution to a clean signal distribution through an Unbalanced Optimal Transport (UOT) framework, achieving robustness and theoretical guarantees by introducing a likelihood cost function and a quadratic cost term.
 tags:
-  - ICML 2026
-  - Image Restoration
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Unbalanced Optimal Transport"
+  - "Unpaired Learning"
+  - "Inverse Problems"
+  - "Image Deblurring"
+  - "Super-Resolution"
 date: 2026-05-08
-content_hash: f736640ffb449558
+content_hash: 478c51d12e3a6f89
 ---
+
 # UOTIP: Unbalanced Optimal Transport Mapping for Unpaired Inversion Problems
 
 **Conference**: ICML 2026  
@@ -112,11 +118,11 @@ Directly solving the Monge form is non-convex and difficult to optimize. UOTIP e
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](learning_normalized_energy_models_for_linear_inverse_problems.md)
-- [\[ICML 2026\] Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models](early_decisions_matter_proximity_bias_and_initial_trajectory_shaping_in_non-auto.md)
+- [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
-- [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
-- [\[ICML 2026\] Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges](structured_diffusion_bridges_inductive_bias_for_denoising_diffusion_bridges.md)
+- [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](learning_normalized_energy_models_for_linear_inverse_problems.md)
+- [\[CVPR 2026\] Unpaired Image Deraining Using Reward-Guided Self-Reinforcement Strategy](../../CVPR2026/image_restoration/unpaired_image_deraining_using_reward-guided_self-reinforcement_strategy.md)
+- [\[CVPR 2026\] FastGaMer: Efficient GainMap Learning for Practical Inverse Tone Mapping](../../CVPR2026/image_restoration/fastgamer_efficient_gainmap_learning_for_practical_inverse_tone_mapping.md)
 
 </div>
 

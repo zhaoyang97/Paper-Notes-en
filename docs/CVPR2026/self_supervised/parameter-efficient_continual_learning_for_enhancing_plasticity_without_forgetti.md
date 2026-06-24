@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity
 description: >-
-  [CVPR 2026][Others][Paper Note] GRAPA is a parameter-efficient continual learning method designed for "capacity-limited" scenarios. It first identifies safely reusable frozen parameters from old tasks using gradient direction consistency, and then adaptively determines a "just enough" pruning rate for each new task via A2C reinforcement learning. Thi
+  [CVPR 2026][Self-Supervised Learning][Continual Learning] GRAPA is a parameter-efficient continual learning method designed for "capacity-limited" scenarios. It first identifies safely reusable frozen parameters from old tasks using gradient direction consistency, and then adaptively determines a "just enough" pruning rate for each new task via A2C reinforcement learning. This significantly enhances plasticity (learning new tasks) without sacrificing stability (no forgetting)…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "Parameter Isolation"
+  - "Catastrophic Forgetting"
+  - "Gradient Consistency"
+  - "RL-based Pruning"
 date: 2026-05-08
-content_hash: b2db59e0711bf77f
+content_hash: e8c0a5039bb8e0e2
 ---
+
 # Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ GRAPA outperforms all baselines across all sequences and approaches the empirica
 
 ## Related Papers
 
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
+- [\[ICLR 2026\] Fly-CL: A Fly-Inspired Framework for Enhancing Efficient Decorrelation and Reduced Training Time in Pre-trained Model-based Continual Representation Learning](../../ICLR2026/self_supervised/fly-cl_a_fly-inspired_framework_for_enhancing_efficient_decorrelation_and_reduce.md)
 - [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
-- [\[CVPR 2026\] A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)
-- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
-- [\[CVPR 2026\] Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis](subspace_alignment_for_clip-based_continual_learning_via_canonical_correlation_a.md)
-- [\[CVPR 2026\] FEAT: Federated Geometry-Aware Correction for Exemplar Replay under Continual Dynamic Heterogeneity](feat_federated_geometry_aware_correction_for_exemplar_replay_under_continual_dynamic_heterogeneity.md)
+- [\[ICML 2026\] Active Learning with Foundation Model Priors: Efficient Learning under Class Imbalance](../../ICML2026/self_supervised/active_learning_with_foundation_model_priors_efficient_learning_under_class_imba.md)
+- [\[CVPR 2026\] Beyond the Static World: Continual Category Discovery under Visual Drift](beyond_the_static_world_continual_category_discovery_under_visual_drift.md)
 
 </div>
 

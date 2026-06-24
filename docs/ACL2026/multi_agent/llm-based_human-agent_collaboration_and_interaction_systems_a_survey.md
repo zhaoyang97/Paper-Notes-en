@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey
 description: >-
-  [ACL 2026][Multi-Agent][human-in-the-loop] This paper provides the first systematic review of "LLM-based Human-Agent Collaboration and Interaction Systems (LLM-HAS)"—reintegrating humans into the agent loop. It establishes a unified taxonomy across five dimensions (Environment/Profiling, Human Feedback, Interaction Type, Orchestration, and Communication) and in
+  [ACL 2026 Findings][Multi-Agent][human-in-the-loop] This paper provides the first systematic review of "LLM-based Human-Agent Collaboration and Interaction Systems (LLM-HAS)"—reintegrating humans into the agent loop. It establishes a unified taxonomy across five dimensions (Environment/Profiling, Human Feedback, Interaction Type, Orchestration, and Communication) and introduces a Human Agency Scale (A1–A5) to quantify the necessary depth of human involvement in tasks.
 tags:
-  - ACL 2026
-  - Multi-Agent
-  - human-in-the-loop
-  - agent orchestration
-  - human feedback
-  - human agency scale
-  - LLM-HAS
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "human-in-the-loop"
+  - "agent orchestration"
+  - "human feedback"
+  - "human agency scale"
+  - "LLM-HAS"
 date: 2026-05-08
-content_hash: 35547097c9381e08
+content_hash: afdf262fafd96c6e
 ---
+
 # LLM-Based Human-Agent Collaboration and Interaction Systems: A Survey
 
 **Conference**: ACL 2026 Findings  
@@ -136,11 +137,11 @@ Comparison of representative LLM-HAS frameworks:
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards](../../ICLR2026/multi_agent/comas_co-evolving_multi-agent_systems_via_interaction_rewards.md)
 - [\[ICML 2026\] Searching for Synergy in Shared Workspace Human-AI Collaboration](../../ICML2026/multi_agent/searching_for_synergy_in_shared_workspace_human-ai_collaboration.md)
+- [\[ICML 2026\] Representational Similarity and Model Behavior in Multi-Agent Interaction](../../ICML2026/multi_agent/representational_similarity_and_model_behavior_in_multi-agent_interaction.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[NeurIPS 2025\] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems](../../NeurIPS2025/multi_agent/metamind_modeling_human_social_thoughts_with_metacognitive_multi-agent_systems.md)
-- [\[ICML 2026\] Representational Similarity and Model Behavior in Multi-Agent Interaction](../../ICML2026/multi_agent/representational_similarity_and_model_behavior_in_multi-agent_interaction.md)
-- [\[ACL 2026\] Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation](diversity_collapse_in_multi-agent_llm_systems_structural_coupling_and_collective.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Shifting the Breaking Point of Flow Matching for Multi-Instance Editing
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] To address the persistent issue of "attribute leakage" during simultaneous multi-instance editing in MMDiT-based models (e.g., FLUX.1 Kontext) utilizing Rectified Flow Matching, this paper proposes Instance-Disentangled Attention (IDAttn). By applying structured masks to joint attention, each editing instruction is bou
+  [ICML2026][Image Generation][Flow Matching] To address the persistent issue of "attribute leakage" during simultaneous multi-instance editing in MMDiT-based models (e.g., FLUX.1 Kontext) utilizing Rectified Flow Matching, this paper proposes Instance-Disentangled Attention (IDAttn). By applying structured masks to joint attention, each editing instruction is bound to its corresponding bounding box. Combined with a hierarchical disentanglement/harmonization schedule and effici…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
-  - MMDiT
+  - "ICML2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "MMDiT"
+  - "Multi-Instance Editing"
+  - "Attention Disentanglement"
+  - "Infographic Text Editing"
 date: 2026-05-08
-content_hash: f5b3e21fe9968b06
+content_hash: 998eb622060525ee
 ---
+
 # Shifting the Breaking Point of Flow Matching for Multi-Instance Editing
 
 **Conference**: ICML2026  
@@ -154,11 +158,11 @@ User studies and Gemini 3 Flash LLM-as-Judge ELO ratings show the proposed metho
 
 ## Related Papers
 
+- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](../../ICLR2026/image_generation/edit-based_flow_matching_for_temporal_point_processes.md)
 - [\[ICML 2026\] Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching](bootstrap_your_generator_unpaired_visual_editing_with_flow_matching.md)
 - [\[NeurIPS 2025\] Equivariant Flow Matching for Symmetry-Breaking Bifurcation Problems](../../NeurIPS2025/image_generation/equivariant_flow_matching_for_symmetry-breaking_bifurcation_problems.md)
 - [\[ICML 2026\] Principled RL for Flow Matching Emerges from the Chunk-level Policy Optimization](principled_rl_for_flow_matching_emerges_from_the_chunk-level_policy_optimization.md)
-- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](../../ICLR2026/image_generation/laplacian_multi-scale_flow_matching_for_generative_modeling.md)
-- [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
+- [\[ICML 2026\] (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction](hb-arfm_history-bootstrapped_flow_matching_for_inverse_boiling_reconstruction.md)
 
 </div>
 

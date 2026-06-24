@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] GoR: A Unified and Extensible Generative Framework for Ordinal Regression
 description: >-
-  [ICLR 2026][Others][ordinal regression] This paper reformulates ordinal regression (predicting targets with intrinsic order, such as age, aesthetic scores, watching duration) from "discretizing continuous space into fixed bins for classification" into "autoregressively generating a sequence of ordered tokens, accumulating their values for prediction, and det
+  [ICLR 2026][ordinal regression] This paper reformulates ordinal regression (predicting targets with intrinsic order, such as age, aesthetic scores, watching duration) from "discretizing continuous space into fixed bins for classification" into "autoregressively generating a sequence of ordered tokens, accumulating their values for prediction, and determining termination via a dynamic ⟨EOS⟩." Derived from a bias-variance decomposition, the authors propose an error bound and th…
 tags:
-  - ICLR 2026
-  - Others
-  - ordinal regression
-  - autoregressive generation
-  - vocabulary construction
-  - bias-variance trade-off
-  - model-agnostic
+  - "ICLR 2026"
+  - "ordinal regression"
+  - "autoregressive generation"
+  - "vocabulary construction"
+  - "bias-variance trade-off"
+  - "model-agnostic"
 date: 2026-05-08
-content_hash: e906f184b9a743ec
+content_hash: f14b3506f5be7744
 ---
+
 # GoR: A Unified and Extensible Generative Framework for Ordinal Regression
 
 **Conference**: ICLR 2026  
@@ -128,11 +128,20 @@ CoDi consistently enhances all initialization strategies. Performance relative t
 - **Value**: ⭐⭐⭐⭐⭐ Provides a versatile and theoretically grounded baseline for high-value tasks in recommendation (LTV) and computer vision (age/aesthetics).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
+- [\[ACL 2025\] MapQaTor: An Extensible Framework for Efficient Annotation of Map-Based QA Datasets](../../ACL2025/others/mapqator_an_extensible_framework_for_efficient_annotation_of_map-based_qa_datase.md)
+- [\[NeurIPS 2025\] Neural Collapse in Cumulative Link Models for Ordinal Regression: An Analysis with Unconstrained Feature Model](../../NeurIPS2025/others/neural_collapse_in_cumulative_link_models_for_ordinal_regression_an_analysis_wit.md)
+- [\[ECCV 2024\] An Incremental Unified Framework for Small Defect Inspection](../../ECCV2024/others/an_incremental_unified_framework_for_small_defect_inspection.md)
+- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)

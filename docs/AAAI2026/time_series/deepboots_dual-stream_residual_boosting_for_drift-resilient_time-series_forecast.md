@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepBooTS: Dual-Stream Residual Boosting for Drift-Resilient Time-Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][time series forecasting] This paper proposes DeepBooTS, which leverages bias-variance decomposition theory to demonstrate that weighted ensembling reduces variance and thereby mitigates concept d…
+  [AAAI 2026][Time Series][time series forecasting] This paper proposes DeepBooTS, which leverages bias-variance decomposition theory to demonstrate that weighted ensembling reduces variance and thereby mitigates concept drift. The method introduces a dual-stream residual-decreasing boosting architecture in which each block corrects the residual of the preceding block, achieving an average improvement of 15.8% across multiple datasets.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "residual boosting"
   - "bias-variance decomposition"
 date: 2026-05-08
-content_hash: e96a3233c073fe30
+content_hash: e0ee072138645f2c
 ---
 
 # DeepBooTS: Dual-Stream Residual Boosting for Drift-Resilient Time-Series Forecasting
@@ -135,11 +135,11 @@ Univariate forecasting results are also comprehensively superior—ETTh1 MSE 0.0
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tackling Time-Series Forecasting Generalization via Mitigating Concept Drift](../../ICLR2026/time_series/tackling_time-series_forecasting_generalization_via_mitigating_concept_drift.md)
 - [\[ICML 2026\] DAG: A Dual Correlation Network for Time Series Forecasting with Exogenous Variables](../../ICML2026/time_series/dag_a_dual_correlation_network_for_time_series_forecasting_with_exogenous_variab.md)
-- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
+- [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](../../ICLR2026/time_series/cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 - [\[AAAI 2026\] Harmonic Dataset Distillation for Time Series Forecasting](harmonic_dataset_distillation_for_time_series_forecasting.md)
-- [\[AAAI 2026\] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting](freqcycle_a_multi-scale_time-frequency_analysis_method_for_time_series_forecasti.md)
-- [\[AAAI 2026\] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning](optimal_look-back_horizon_for_time_series_forecasting_in_federated_learning.md)
+- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
 
 </div>
 

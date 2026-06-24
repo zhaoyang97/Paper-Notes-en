@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Native Hybrid Attention for Efficient Sequence Modeling
 description: >-
-  [ACL 2026][LLM Efficiency][Paper Note] This paper proposes Native Hybrid Attention (NHA), which unifies the long-term memory slots of linear RNNs with the short-term precise tokens of sliding windows through a single softmax attention operation. This achieves native unification of intra-layer and inter-layer mixing—dynamically allocating attention weights b
+  [ACL 2026][LLM Efficiency][Hybrid Attention] This paper proposes Native Hybrid Attention (NHA), which unifies the long-term memory slots of linear RNNs with the short-term precise tokens of sliding windows through a single softmax attention operation. This achieves native unification of intra-layer and inter-layer mixing—dynamically allocating attention weights between long and short terms without extra fusion parameters—outperforming Transformer and other hybrid baselines on…
 tags:
-  - ACL 2026
-  - LLM Efficiency
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "Hybrid Attention"
+  - "Linear Attention"
+  - "Sliding Window"
+  - "Fusion of Long-short Term Memory"
+  - "Efficient Sequence Modeling"
 date: 2026-05-08
-content_hash: f7d212a3e25cd35e
+content_hash: 3a156354524449a2
 ---
+
 # Native Hybrid Attention for Efficient Sequence Modeling
 
 **Conference**: ACL 2026  
@@ -145,11 +151,11 @@ Standard language modeling cross-entropy loss. The 340M model was trained on 15B
 
 ## Related Papers
 
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention for Long-Sequence Training](../../ICLR2026/llm_efficiency/race_attention_a_strictly_linear-time_attention_for_long-sequence_training.md)
+- [\[ICLR 2026\] Householder-Diagonalized Linear Attention (HDLA): Utilizing Rank-Enhanced Decay Mechanism for Efficient Sequence Modeling](../../ICLR2026/llm_efficiency/householder-diagonalized_linear_attention_hdla_utilizing_enhanced_decay_mechanis.md)
+- [\[ICLR 2026\] MoM: Linear Sequence Modeling with Mixture-of-Memories](../../ICLR2026/llm_efficiency/mom_linear_sequence_modeling_with_mixture-of-memories.md)
+- [\[ICLR 2026\] FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel](../../ICLR2026/llm_efficiency/fsa_an_alternative_efficient_implementation_of_native_sparse_attention_kernel.md)
 - [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
-- [\[CVPR 2025\] LOCORE: Image Re-ranking with Long-Context Sequence Modeling](../../CVPR2025/llm_efficiency/locore_image_re-ranking_with_long-context_sequence_modeling.md)
-- [\[ICML 2025\] Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling](../../ICML2025/llm_efficiency/efficient_length-generalizable_attention_via_causal_retrieval_for_long-context_l.md)
+- [\[ICLR 2026\] Distilling to Hybrid Attention Models via KL-Guided Layer Selection](../../ICLR2026/llm_efficiency/distilling_to_hybrid_attention_models_via_kl-guided_layer_selection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffSparse: Accelerating Diffusion Transformers with Learned Token Sparsity
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] DiffSparse reformulates token cache acceleration for Diffusion Transformers as a differentiable optimization problem of "allocating sparsity rates per layer and time step under a fixed compression rate." It uses a learnable sparsity cost predictor to output a cost matrix, solves for the global optimal allocation via dy
+  [ICLR2026][Image Generation][Diffusion Transformer] DiffSparse reformulates token cache acceleration for Diffusion Transformers as a differentiable optimization problem of "allocating sparsity rates per layer and time step under a fixed compression rate." It uses a learnable sparsity cost predictor to output a cost matrix, solves for the global optimal allocation via dynamic programming, and employs a two-stage training process to eliminate "full-step computation" required by…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Token Cache"
+  - "Layer-wise Sparsity"
+  - "Dynamic Programming"
+  - "Perceptual Distillation"
 date: 2026-05-08
-content_hash: f55886c6a2465fd6
+content_hash: f90c1d3b0a3a3f6c
 ---
+
 # DiffSparse: Accelerating Diffusion Transformers with Learned Token Sparsity
 
 **Conference**: ICLR2026  
@@ -145,15 +151,17 @@ At R=43%, FID 26.91 is a +5.1% relative improvement over ToCa (28.35). At R=54%,
 
 <div class="related-papers" markdown="1">
 
-**Related Papers**
-- **ToCa**: [arXiv:2410.05258] (Token Caching for Diffusion Transformers)
-- **DuCa**: [arXiv:2410.07133] (Dual-level Cache for DiT)
-- **TaylorSeer**: [arXiv:2411.19632] (Taylor-based Feature Forecasting)
+## Related Papers
+
+- [\[ICLR 2026\] Diffusion Transformers with Representation Autoencoders](diffusion_transformers_with_representation_autoencoders.md)
+- [\[CVPR 2025\] TinyFusion: Diffusion Transformers Learned Shallow](../../CVPR2025/image_generation/tinyfusion_diffusion_transformers_learned_shallow.md)
+- [\[ICLR 2026\] SPRINT: Sparse-Dense Residual Fusion for Efficient Diffusion Transformers](sprint_sparse-dense_residual_fusion_for_efficient_diffusion_transformers.md)
+- [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
+- [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] TinyFusion: Diffusion Transformers Learned Shallow](../../CVPR2025/image_generation/tinyfusion_diffusion_transformers_learned_shallow.md)

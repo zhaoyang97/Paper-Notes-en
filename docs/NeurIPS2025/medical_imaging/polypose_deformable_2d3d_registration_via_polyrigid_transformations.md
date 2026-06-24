@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations
 description: >-
-  [NeurIPS 2025][Medical Imaging][2D/3D registration] This paper presents PolyPose, a deformable 2D/3D registration method based on polyrigid transformations. Leveraging the anatomical prior that bones are rigid bodies…
+  [NeurIPS 2025][Medical Imaging][2D/3D registration] This paper presents PolyPose, a deformable 2D/3D registration method based on polyrigid transformations. Leveraging the anatomical prior that bones are rigid bodies, PolyPose parameterizes complex 3D deformation fields as weighted combinations of multiple rigid transformations in the Lie algebra $\mathfrak{se}(3)$, enabling accurate 3D volumetric registration from as few as two X-ray images without any regularization or hype…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "intraoperative navigation"
   - "sparse-view"
 date: 2026-05-08
-content_hash: d2218f9d54a940bd
+content_hash: 0567d0a3b636c7fc
 ---
 
 # PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations
@@ -134,11 +134,11 @@ A multi-scale patch-wise normalized cross-correlation loss is applied to both th
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dynamic Stream Network for Combinatorial Explosion Problem in Deformable Medical Image Registration](../../CVPR2026/medical_imaging/dynamic_stream_network_for_combinatorial_explosion_problem_in_deformable_medical.md)
 - [\[NeurIPS 2025\] Surf2CT: Cascaded 3D Flow Matching Models for Torso 3D CT Synthesis from Skin Surface](surf2ct_cascaded_3d_flow_matching_models_for_torso_3d_ct_synthesis_from_skin_sur.md)
-- [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](../../ICLR2026/medical_imaging/improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
+- [\[ICML 2025\] Raptor: Scalable Train-Free Embeddings for 3D Medical Volumes Leveraging Pretrained 2D Foundation Models](../../ICML2025/medical_imaging/raptor_scalable_train-free_embeddings_for_3d_medical_volumes_leveraging_pretrain.md)
+- [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](../../CVPR2026/medical_imaging/revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
 - [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
-- [\[CVPR 2026\] NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization](../../CVPR2026/medical_imaging/neuroseg_meets_dinov3_transferring_2d_self-supervised_visual_priors_to_3d_neuron.md)
-- [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
 
 </div>
 

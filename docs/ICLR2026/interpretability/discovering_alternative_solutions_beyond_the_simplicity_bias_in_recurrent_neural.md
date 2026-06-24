@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks
 description: >-
-  [ICLR 2026][Interpretability][RNN] To address the issue where task-trained RNNs repeatedly collapse into a single "simplest" dynamical solution, this paper proposes Iterative Neural Similarity Decoupling (INSD). By online penalizing the linear predictability of new RNNs relative to existing solutions, the method uncovers novel classes of solutions that
+  [ICLR 2026][Interpretability][RNN] To address the issue where task-trained RNNs repeatedly collapse into a single "simplest" dynamical solution, this paper proposes Iterative Neural Similarity Decoupling (INSD). By online penalizing the linear predictability of new RNNs relative to existing solutions, the method uncovers novel classes of solutions that rely on dynamically evolving subspaces rather than fixed-point attractors, occasionally outperforming standard solutions unde…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - RNN
+  - "ICLR 2026"
+  - "Interpretability"
+  - "RNN"
+  - "simplicity bias"
+  - "dynamic collapse"
+  - "similarity penalty"
+  - "fixed-point attractors"
+  - "neural computation hypotheses"
 date: 2026-05-08
-content_hash: 3639dc6d9ac07875
+content_hash: e2f6ecbde8b468e7
 ---
+
 # Discovering Alternative Solutions Beyond the Simplicity Bias in Recurrent Neural Networks
 
 **Conference**: ICLR 2026  
@@ -126,11 +132,11 @@ Experiments were conducted on three classic neuroscience tasks: **Context-depend
 
 ## Related Papers
 
-- [\[ICLR 2026\] Certified Evaluation of Model-Level Explanations for Graph Neural Networks](certified_evaluation_of_model-level_explanations_for_graph_neural_networks.md)
+- [\[ICLR 2026\] Bayesian Neural Networks for Functional ANOVA Model](bayesian_neural_networks_for_functional_anova_model.md)
 - [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](explainable_k_-means_neural_networks_for_multi-view_clustering.md)
-- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 - [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
-- [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
+- [\[ICLR 2026\] Addressing Divergent Representations from Causal Interventions on Neural Networks](addressing_divergent_representations_causal.md)
 
 </div>
 

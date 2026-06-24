@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge
 description: >-
-  [ICML 2026][LLM Evaluation][LLM-as-a-Judge] RACER models the decision of whether to invoke reasoning mode for each judge query as a distributionally robust constrained optimization problem with a KL uncertainty set. It uses a primal-dual algorithm to derive an optimal routing strategy that satisfies cost budgets under OOD conditions and provides the first theore
+  [ICML 2026][LLM Evaluation][LLM-as-a-Judge] RACER models the decision of whether to invoke reasoning mode for each judge query as a distributionally robust constrained optimization problem with a KL uncertainty set. It uses a primal-dual algorithm to derive an optimal routing strategy that satisfies cost budgets under OOD conditions and provides the first theoretical guarantee of linear convergence for LLM router policies.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
-  - primal-dual
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "reasoning model routing"
+  - "KL uncertainty set"
+  - "primal-dual"
+  - "OOD robustness"
 date: 2026-05-08
-content_hash: d097e7d9c15c1eac
+content_hash: bca0837e90a2d5b6
 ---
+
 # Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge
 
 **Conference**: ICML 2026  
@@ -136,13 +140,20 @@ Ours matches or exceeds All-Reasoning accuracy at roughly half the cost and outp
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **ThinkSwitcher**: Heuristic mode switching for reasoning models.
-- **Think-on-Graph**: Reasoning-based judge application.
-- **Distributionally Robust RL**: Foundations for the KL ball reweighting technique.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] On Cost-Effective LLM-as-a-Judge Improvement Techniques](on_cost-effective_llm-as-a-judge_improvement_techniques.md)
+- [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
+- [\[ICLR 2026\] Doubly-Robust LLM-as-a-Judge: Externally Valid Estimation with Imperfect Personas](../../ICLR2026/llm_evaluation/doubly-robust_llm-as-a-judge_externally_valid_estimation_with_imperfect_personas.md)
+- [\[ACL 2025\] YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering](../../ACL2025/llm_evaluation/yescieval_llm_judge_science.md)
+- [\[ICML 2026\] REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] On Cost-Effective LLM-as-a-Judge Improvement Techniques](on_cost-effective_llm-as-a-judge_improvement_techniques.md)

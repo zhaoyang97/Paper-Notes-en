@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ContextNav: Towards Agentic Multimodal In-Context Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] ContextNav transforms the task of "selecting and cleaning examples for multimodal in-context learning" into an MLLM-driven closed-loop agentic workflow. It first performs resource-aware embedding and candidate retrieval, followed by agent-based reasoning to eliminate semantic and structural noise. Finally, an Operation
+  [ICLR2026][Multimodal VLM][Multimodal ICL] ContextNav transforms the task of "selecting and cleaning examples for multimodal in-context learning" into an MLLM-driven closed-loop agentic workflow. It first performs resource-aware embedding and candidate retrieval, followed by agent-based reasoning to eliminate semantic and structural noise. Finally, an Operational Grammar Graph (OGG) constrains the tool-calling sequence, while downstream ICL feedback continuously optimizes the…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Multimodal ICL"
+  - "agentic workflow"
+  - "context denoising"
+  - "retrieval"
+  - "operational grammar graph"
 date: 2026-05-08
-content_hash: b8ba09bfc9300f2c
+content_hash: 6a643150514664bb
 ---
+
 # ContextNav: Towards Agentic Multimodal In-Context Learning
 
 **Conference**: ICLR2026  

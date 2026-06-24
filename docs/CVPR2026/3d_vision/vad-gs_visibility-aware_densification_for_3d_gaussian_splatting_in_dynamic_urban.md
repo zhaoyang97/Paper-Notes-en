@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] VAD-GS targets the issues of sparse point clouds and minimal camera overlap in autonomous driving scenes. By utilizing voxel visibility reasoning, it proactively identifies instances with missing or distorted geometry. It then selects supporting views across cameras and timestamps for Multi-View Stereo (MVS) reconstruc
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] VAD-GS targets the issues of sparse point clouds and minimal camera overlap in autonomous driving scenes. By utilizing voxel visibility reasoning, it proactively identifies instances with missing or distorted geometry. It then selects supporting views across cameras and timestamps for Multi-View Stereo (MVS) reconstruction to supplement missing structures as reliable geometric priors for initializing new Gaussians. This approach e…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Dynamic Urban Scenes"
+  - "Visibility Reasoning"
+  - "Multi-View Stereo"
+  - "Densification"
 date: 2026-05-08
-content_hash: c4472370973e0e05
+content_hash: 0c748565fd9a2116
 ---
+
 # VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes
 
 **Conference**: CVPR 2026  
@@ -154,7 +160,7 @@ On nuScenes, removing components (components are interdependent; removing visibi
 - [\[CVPR 2026\] NVGS: Neural Visibility for Occlusion Culling in 3D Gaussian Splatting](nvgs_neural_visibility_for_occlusion_culling_in_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
-- [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
+- [\[CVPR 2026\] EDGS: Eliminating Densification for Efficient Convergence of 3DGS](edgs_eliminating_densification_for_efficient_convergence_of_3dgs.md)
 
 </div>
 

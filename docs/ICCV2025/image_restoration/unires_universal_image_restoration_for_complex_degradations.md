@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniRes: Universal Image Restoration for Complex Degradations
 description: >-
-  [ICCV 2025][Image Restoration][Complex degradations] This paper proposes UniRes — a diffusion-based universal image restoration framework that acquires expert knowledge across four tasks (super-resolution…
+  [ICCV 2025][Image Restoration][Complex degradations] This paper proposes UniRes — a diffusion-based universal image restoration framework that acquires expert knowledge across four tasks (super-resolution, motion deblurring, defocus deblurring, and denoising) through multi-task training. At inference time, it handles arbitrary combinations of real-world complex degradations end-to-end by flexibly composing latent-space prediction weights from different tasks.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "latent space composition"
   - "real-world restoration"
 date: 2026-05-08
-content_hash: 25f6f1b62fe8d387
+content_hash: 9ba4ec477e28d2d9
 ---
 
 # UniRes: Universal Image Restoration for Complex Degradations
@@ -166,9 +166,9 @@ UniRes surpasses the second-best method (StableSR) by **6.83 points** on MUSIQ, 
 
 - [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
 - [\[ICCV 2025\] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement](towards_a_universal_image_degradation_model_via_content-degradation_disentanglem.md)
-- [\[ICCV 2025\] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance](enhancing_image_restoration_transformer_via_adaptive_translation_equivariance.md)
-- [\[ICCV 2025\] Exploiting Diffusion Prior for Task-driven Image Restoration](exploiting_diffusion_prior_for_task-driven_image_restoration.md)
-- [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
+- [\[ICLR 2026\] UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity](../../ICLR2026/image_restoration/unirestorer_universal_image_restoration_via_adaptively_estimating_image_degradat.md)
+- [\[ECCV 2024\] MoE-DiffIR: Task-customized Diffusion Priors for Universal Compressed Image Restoration](../../ECCV2024/image_restoration/moe-diffir_task-customized_diffusion_priors_for_universal_compressed_image_resto.md)
+- [\[NeurIPS 2025\] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](../../NeurIPS2025/image_restoration/elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)
 
 </div>
 

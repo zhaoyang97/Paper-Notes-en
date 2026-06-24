@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection
 description: >-
-  [ACL 2026][Medical NLP][GRPO] ProMedical utilizes hierarchical fine-grained clinical rubrics, constructed with physician participation, across preference data, reward models, and benchmarks. Through explicit criteria injection to train multi-dimensional reward models, it achieves a improvement of 22.3% in overall accuracy and 21.7% in safety compli
+  [ACL 2026][Medical LLM][Medical LLM alignment] ProMedical utilizes hierarchical fine-grained clinical rubrics, constructed with physician participation, across preference data, reward models, and benchmarks. Through explicit criteria injection to train multi-dimensional reward models, it achieves a improvement of 22.3% in overall accuracy and 21.7% in safety compliance for Qwen3-8B during medical alignment.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - GRPO
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Medical LLM alignment"
+  - "fine-grained rubric"
+  - "safety veto"
+  - "reward model"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 61961650439a119c
+content_hash: 35494a56d2556baf
 ---
+
 # ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection
 
 **Conference**: ACL 2026  

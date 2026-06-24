@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection
 description: >-
-  [ICLR 2026][AIGC Detection][Diffusion Model] Ours proposes PAI—a training-free, plug-and-play inherent watermarking framework for diffusion models. By combining "initialization embedding" and "key-guided denoising trajectory deflection," user identity is deeply entangled with image semantics. The "initialization bias" obtained via DDIM inversion serves as a unifi
+  [ICLR 2026][AIGC Detection][Inherent Watermarking] Ours proposes PAI—a training-free, plug-and-play inherent watermarking framework for diffusion models. By combining "initialization embedding" and "key-guided denoising trajectory deflection," user identity is deeply entangled with image semantics. The "initialization bias" obtained via DDIM inversion serves as a unified forensic signal for copyright verification, attack detection, and semantic-level tamper localization. PAI…
 tags:
-  - ICLR 2026
-  - AIGC Detection
-  - Diffusion Model
+  - "ICLR 2026"
+  - "AIGC Detection"
+  - "Inherent Watermarking"
+  - "Diffusion Models"
+  - "Copyright Forensics"
+  - "Tamper Localization"
+  - "DDIM Inversion"
 date: 2026-05-08
-content_hash: 451a0c09d60d18de
+content_hash: 1a0287a29ea8e117
 ---
+
 # Attack-Resistant Watermarking for AIGC Image Forensics via Diffusion-based Semantic Deflection
 
 **Conference**: ICLR 2026  
@@ -139,8 +144,21 @@ Regarding localization, EditGuard fails against global semantic editing (Stable 
 - Value: ⭐⭐⭐⭐⭐ (Practical solution for breaking the removal-spoofing trade-off)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models](spherical_watermark_encryption-free_lossless_watermarking_for_diffusion_models.md)
+- [\[ICLR 2026\] Semantic Visual Anomaly Detection and Reasoning in AI-Generated Images](semantic_visual_anomaly_detection_and_reasoning_in_ai-generated_images.md)
+- [\[ICLR 2026\] Omni-IML: Towards Unified Interpretable Image Manipulation Localization](omni-iml_towards_unified_interpretable_image_manipulation_localization.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
+- [\[ICLR 2026\] HSIC Bottleneck for Cross-Generator and Domain-Incremental Synthetic Image Detection](hsic_bottleneck_for_cross-generator_and_domain-incremental_synthetic_image_detec.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

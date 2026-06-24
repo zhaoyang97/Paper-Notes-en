@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Critical Confabulation: Can LLMs Hallucinate for Social Good?
+  [Paper Note] Critical Confabulations: Can LLMs Hallucinate for Social Good?
 description: >-
-  [ICLR 2026][Hallucination Detection][Paper Note] This paper reframes "hallucination" as a viable resource: it proposes **critical confabulation**, where LLMs "fill in" structural gaps in historical archives under evidentiary constraints. By evaluating 19 models on a "narrative cloze" task using unpublished Black history corpora, the authors demonstrate that controlle
+  [ICLR 2026][Hallucination Detection][Critical confabulation] This paper reframes "hallucination" as a viable resource: it proposes **critical confabulation**, where LLMs "fill in" structural gaps in historical archives under evidentiary constraints. By evaluating 19 models on a "narrative cloze" task using unpublished Black history corpora, the authors demonstrate that controlled, well-defined hallucinations can serve knowledge production without collapsing into falsehood.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Critical confabulation"
+  - "controlled hallucination"
+  - "narrative cloze"
+  - "data contamination audit"
+  - "digital humanities"
 date: 2026-05-08
-content_hash: c59e13ecb5914aa3
+content_hash: 99a3d63da32aa308
 ---
+
 # Critical Confabulations: Can LLMs Hallucinate for Social Good?
 
 **Conference**: ICLR 2026  
@@ -122,11 +128,11 @@ flowchart LR
 
 ## Related Papers
 
-- [\[ICML 2026\] Honest Lying: Understanding Memory Confabulation in Reflexive Agents](../../ICML2026/hallucination/honest_lying_understanding_memory_confabulation_in_reflexive_agents.md)
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](../../ACL2026/hallucination/why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
 - [\[ICLR 2026\] HalluGuard: Demystifying Data-Driven and Reasoning-Driven Hallucinations in LLMs](halluguard_demystifying_data-driven_and_reasoning-driven_hallucinations_in_llms.md)
-- [\[ACL 2026\] Vocabulary Hijacking in LVLMs: Unveiling Critical Attention Heads by Excluding Inert Tokens to Mitigate Hallucination](../../ACL2026/hallucination/vocabulary_hijacking_in_lvlms_unveiling_critical_attention_heads_by_excluding_in.md)
-- [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](../../CVPR2026/hallucination/finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
+- [\[ICLR 2026\] Semantic Uncertainty Quantification of Hallucinations in LLMs: A Quantum Tensor Network Based Method](semantic_uncertainty_quantification_of_hallucinations_in_llms_a_quantum_tensor_n.md)
 - [\[ICLR 2026\] GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs](ghost_hallucination-inducing_image_generation_for_multimodal_llms.md)
+- [\[ACL 2026\] Vocabulary Hijacking in LVLMs: Unveiling Critical Attention Heads by Excluding Inert Tokens to Mitigate Hallucination](../../ACL2026/hallucination/vocabulary_hijacking_in_lvlms_unveiling_critical_attention_heads_by_excluding_in.md)
 
 </div>
 

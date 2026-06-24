@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective
 description: >-
-  [AAAI 2026][Multilingual & Machine Translation][multilingual LLM] This paper proposes a ternary neuron classification scheme (language-specific / language-related / universal) and decomposes multilingual LLM inference in…
+  [AAAI 2026 Oral][Multilingual & Machine Translation][multilingual LLM] This paper proposes a ternary neuron classification scheme (language-specific / language-related / universal) and decomposes multilingual LLM inference into a four-stage framework. It finds that multilingual alignment improves performance by increasing language-related neurons (while reducing language-specific ones), and further demonstrates a "spontaneous multilingual alignment" effect on untrained langua…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multilingual & Machine Translation"
   - "multilingual LLM"
   - "language neurons"
@@ -12,7 +12,7 @@ tags:
   - "ternary classification"
   - "spontaneous alignment"
 date: 2026-05-08
-content_hash: 492b9a7bce11a661
+content_hash: 7e71c780dea9934e
 ---
 
 # How Does Alignment Enhance LLMs' Multilingual Capabilities? A Language Neurons Perspective
@@ -134,11 +134,11 @@ MAPO-DPO training. Alignment scores are computed using the NLLB-200 translation 
 
 ## Related Papers
 
-- [\[AAAI 2026\] Bridging the Multilingual Safety Divide: Efficient, Culturally-Aware Alignment for Global South Languages](bridging_the_multilingual_safety_divide_efficient_culturally-aware_alignment_for.md)
+- [\[ICLR 2026\] LinguaMap: Which Layers of LLMs Speak Your Language and How to Tune Them?](../../ICLR2026/multilingual_mt/linguamap_which_layers_of_llms_speak_your_language_and_how_to_tune_them.md)
+- [\[ACL 2025\] Multi-perspective Alignment for Increasing Naturalness in Neural Machine Translation](../../ACL2025/multilingual_mt/multi-perspective_alignment_for_increasing_naturalness_in_neural_machine_transla.md)
+- [\[ACL 2025\] Just Go Parallel: Improving the Multilingual Capabilities of Large Language Models](../../ACL2025/multilingual_mt/just_go_parallel_improving_the_multilingual_capabilities_of_large_language_model.md)
+- [\[ACL 2025\] ShifCon: Enhancing Non-Dominant Language Capabilities with a Shift-based Multilingual Contrastive Framework](../../ACL2025/multilingual_mt/shifcon_nondominant_language.md)
 - [\[AAAI 2026\] Focusing on Language: Revealing and Exploiting Language Attention Heads in Multilingual Large Language Models](focusing_on_language_revealing_and_exploiting_language_attention_heads_in_multil.md)
-- [\[ACL 2026\] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax](../../ACL2026/multilingual_mt/reinforcement_learning_with_semantic_rewards_enables_low-resource_language_expan.md)
-- [\[ACL 2026\] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs](../../ACL2026/multilingual_mt/no_one_fits_all_from_fixed_prompting_to_learned_routing_in_multilingual_llms.md)
-- [\[ICML 2026\] Toward Robust Multilingual Adaptation of LLMs for Low-Resource Languages](../../ICML2026/multilingual_mt/toward_robust_multilingual_adaptation_of_llms_for_low-resource_languages.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning
 description: >-
-  [NEURIPS2025][LLM Safety][Multimodal LLM] This paper proposes HoloLLM, the first framework to integrate rare sensing modalities — including LiDAR, infrared, mmWave radar…
+  [NEURIPS2025][LLM Safety][Multimodal LLM] This paper proposes HoloLLM, the first framework to integrate rare sensing modalities — including LiDAR, infrared, mmWave radar, and WiFi — into a multimodal large language model (MLLM). Through a Universal Modality-Injection Projector (UMIP), HoloLLM achieves efficient alignment between sensing modalities and text under data-scarce conditions, improving human action QA and captioning by approximately 30% over existing MLLMs.
 tags:
   - "NEURIPS2025"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "WiFi"
   - "Modality Alignment"
 date: 2026-05-08
-content_hash: 3f87079a299d5e8d
+content_hash: 0ccfdf9da764377c
 ---
 
 # HoloLLM: Multisensory Foundation Model for Language-Grounded Human Sensing and Reasoning
@@ -124,9 +124,9 @@ UMIP's coarse-to-fine progressive alignment strategy generalizes to other data-s
 
 - [\[NeurIPS 2025\] Distributive Fairness in Large Language Models: Evaluating Alignment with Human Values](distributive_fairness_in_large_language_models_evaluating_alignment_with_human_v.md)
 - [\[NeurIPS 2025\] VMDT: Decoding the Trustworthiness of Video Foundation Models](vmdt_decoding_the_trustworthiness_of_video_foundation_models.md)
-- [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
 - [\[NeurIPS 2025\] Reverse Engineering Human Preferences with Reinforcement Learning](reverse_engineering_human_preferences_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Poly-Guard: Massive Multi-Domain Safety Policy-Grounded Guardrail Dataset](poly-guard_massive_multi-domain_safety_policy-grounded_guardrail_dataset.md)
+- [\[ICLR 2026\] TrustGen: A Dynamic Evaluation Platform for Generative Foundation Model Trustworthiness](../../ICLR2026/llm_safety/trustgen_a_platform_of_dynamic_benchmarking_on_the_trustworthiness_of_generative.md)
+- [\[NeurIPS 2025\] One Token Embedding Is Enough to Deadlock Your Large Reasoning Model](one_token_embedding_is_enough_to_deadlock_your_large_reasoning_model.md)
 
 </div>
 

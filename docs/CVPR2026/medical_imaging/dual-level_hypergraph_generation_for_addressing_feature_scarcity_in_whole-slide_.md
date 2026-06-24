@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the dual scarcity of minority class samples (ITC, micrometastasis) and positive nodes in quaternary lymph node metastasis classification, this paper proposes Dual-HGNet. It uses a category-prompt-guided hierarchical hypergraph VAE at the **hypergraph level** to synthesize topologically consistent minority hy
+  [CVPR 2026][Medical Imaging][Whole-slide pathology] Addressing the dual scarcity of minority class samples (ITC, micrometastasis) and positive nodes in quaternary lymph node metastasis classification, this paper proposes Dual-HGNet. It uses a category-prompt-guided hierarchical hypergraph VAE at the **hypergraph level** to synthesize topologically consistent minority hypergraphs and employs anchor-diffusion mixup at the **node level** to enhance high-attention positive node f…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole-slide pathology"
+  - "hypergraph generation"
+  - "category scarcity"
+  - "lymph node metastasis"
+  - "variational autoencoder"
 date: 2026-05-08
-content_hash: 3b0fdc9e9eafd5cc
+content_hash: 3244473323e696bf
 ---
+
 # Dual-Level Hypergraph Generation for Addressing Feature Scarcity in Whole-Slide Image Classification
 
 **Conference**: CVPR 2026  
@@ -177,14 +183,17 @@ HGVAE internal variant ablation:
 
 <div class="related-papers" markdown="1">
 
-[1] TransMIL: Transformer-based Multi-instance Learning for Whole Slide Image Classification (NeurIPS 2021)
-[2] Whole Slide Images are Graphs: Multi-Instance Learning for Digital Pathology (MICCAI 2021)
-[3] Multi-scale Hypergraph Neural Network for Pathological WSI Classification (CVPR 2023)
+## Related Papers
+
+- [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
+- [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
+- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
+- [\[CVPR 2026\] Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning](act_like_a_pathologist_tissue-aware_whole_slide_image_reasoning.md)
+- [\[CVPR 2026\] TopoSlide: Topologically-Informed Histopathology Whole Slide Image Representation Learning](toposlide_topologically-informed_histopathology_whole_slide_image_representation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)

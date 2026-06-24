@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Emergent Coordination in Multi-Agent Language Models
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] This paper proposes a quantifiable framework based on Partial Information Decomposition (PID) and Time-Delayed Mutual Information (TDMI), proving that multi-LLM agent systems can leap from loose aggregations to true collectives with high-order coordination structures under appropriate prompting (Persona + ToM). It furt
+  [ICLR 2026][Multi-Agent][Multi-agent coordination] This paper proposes a quantifiable framework based on Partial Information Decomposition (PID) and Time-Delayed Mutual Information (TDMI), proving that multi-LLM agent systems can leap from loose aggregations to true collectives with high-order coordination structures under appropriate prompting (Persona + ToM). It further reveals that the "Synergy $\times$ Redundancy" interaction is the critical mechanism for performance impr…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent coordination"
+  - "emergence"
+  - "partial information decomposition"
+  - "Theory of Mind"
+  - "collective intelligence"
 date: 2026-05-08
-content_hash: ed0e984544c1735c
+content_hash: ca6f530795da4aab
 ---
+
 # Emergent Coordination in Multi-Agent Language Models
 
 **Conference**: ICLR 2026  
@@ -164,8 +170,8 @@ Sample entropy estimation uses the Jeffreys prior ($\alpha = 1/2$ pseudo-count D
 - [\[ICLR 2026\] Multi-agent Coordination via Flow Matching](multi-agent_coordination_via_flow_matching.md)
 - [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](cache-to-cache_direct_semantic_communication_between_large_language_models.md)
 - [\[AAAI 2026\] LieCraft: A Multi-Agent Framework for Evaluating Deceptive Capabilities in Language Models](../../AAAI2026/multi_agent/liecraft_a_multi-agent_framework_for_evaluating_deceptive_capabilities_in_langua.md)
-- [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](../../NeurIPS2025/multi_agent/large_language_models_miss_the_multi-agent_mark.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](../../ACL2026/multi_agent/agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
+- [\[NeurIPS 2025\] Large Language Models Miss the Multi-Agent Mark](../../NeurIPS2025/multi_agent/large_language_models_miss_the_multi-agent_mark.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Probabilistic Hard Concept Bottleneck for Steerable Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper reformulates the concept bottleneck in generative models into a probabilistic hard binary concept layer, VHCB. This allows users to directly sample images from specified concepts or perform interventions on existing generations. Systematic validation on StyleGAN2 and DDPM demonstrates superior steerability a
+  [ICLR2026][Image Generation][Concept Bottleneck] This paper reformulates the concept bottleneck in generative models into a probabilistic hard binary concept layer, VHCB. This allows users to directly sample images from specified concepts or perform interventions on existing generations. Systematic validation on StyleGAN2 and DDPM demonstrates superior steerability and reduced concept leakage compared to soft concept bottlenecks.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Concept Bottleneck"
+  - "Steerable Generation"
+  - "Hard Concepts"
+  - "Binary VAE"
+  - "Generative Model Evaluation"
 date: 2026-05-08
-content_hash: ad242b6dd9218517
+content_hash: 9aed61326bf6c42b
 ---
+
 # A Probabilistic Hard Concept Bottleneck for Steerable Generative Models
 
 **Conference**: ICLR2026  
@@ -155,15 +161,16 @@ Direct sampling results (unique to VHCB): On StyleGAN2 + CelebA-HQ, sampling con
 - **Value**: ⭐⭐⭐⭐☆ Strong contribution to interpretable generation and evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](../../CVPR2026/image_generation/interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)
 - [\[ICLR 2026\] Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting](conditionally_whitened_generative_models_for_probabilistic_time_series_forecasti.md)
+- [\[ICLR 2026\] Enhanced Generative Model Evaluation with Clipped Density and Coverage](enhanced_generative_model_evaluation_with_clipped_density_and_coverage.md)
 - [\[ICLR 2026\] FastFlow: Accelerating The Generative Flow Matching Models with Bandit Inference](fastflow_accelerating_the_generative_flow_matching_models_with_bandit_inference.md)
 - [\[ICLR 2026\] CASteer: Cross-Attention Steering for Controllable Concept Erasure](casteer_cross-attention_steering_for_controllable_concept_erasure.md)
-- [\[ICLR 2026\] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers](a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md)
 
 </div>
 

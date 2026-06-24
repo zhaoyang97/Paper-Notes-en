@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI
 description: >-
-  [AAAI 2026][Medical Imaging][4D Flow MRI] This paper proposes PINGS-X, a framework that transfers the explicit representation paradigm of 3D Gaussian Splatting (3DGS) into the domain of physics-informed super-resolution.…
+  [AAAI 2026][Medical Imaging][4D Flow MRI] This paper proposes PINGS-X, a framework that transfers the explicit representation paradigm of 3D Gaussian Splatting (3DGS) into the domain of physics-informed super-resolution. Through three key innovations—Normalized Gaussian Splatting (NGS), axes-aligned Gaussians, and a Gaussian merging strategy—PINGS-X achieves training speeds an order of magnitude faster than PINNs while maintaining superior super-resolution accuracy on both sy…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "Navier-Stokes Equations"
   - "Normalized Kernel Regression"
 date: 2026-05-08
-content_hash: 006ebb5f29fe0427
+content_hash: 43208ca324428007
 ---
 
 # PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI
@@ -152,11 +152,11 @@ The cross-domain transfer is elegant, the theoretical analysis is rigorous (conv
 
 ## Related Papers
 
+- [\[CVPR 2026\] Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance](../../CVPR2026/medical_imaging/adaptive_anisotropic_gaussian_splatting_for_multi-contrast_mri_arbitrary-scale_s.md)
 - [\[AAAI 2026\] CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution](cd-dpe_dual-prompt_expert_network_based_on_convolutional_dictionary_feature_deco.md)
-- [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](../../CVPR2026/medical_imaging/gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
 - [\[AAAI 2026\] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)
+- [\[ECCV 2024\] Radiative Gaussian Splatting for Efficient X-ray Novel View Synthesis](../../ECCV2024/medical_imaging/radiative_gaussian_splatting_for_efficient_x-ray_novel_view_synthesis.md)
 - [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
-- [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](../../CVPR2026/medical_imaging/solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
 
 </div>
 

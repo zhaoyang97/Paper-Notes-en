@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement
 description: >-
-  [NeurIPS 2025][Model Compression][Federated Graph Learning] This work is the first to propose the Federated Graph Foundation Model (FedGFM) paradigm…
+  [NeurIPS 2025][Model Compression][Federated Graph Learning] This work is the first to propose the Federated Graph Foundation Model (FedGFM) paradigm, which integrates the distributed collaborative capability of federated graph learning with the cross-domain generalization capability of graph foundation models. Two modules — AncDAI (Anchor-based Domain-Aware Initialization) and AdaDPP (Adaptive Domain-sensitive Prompt Pool) — are introduced to mitigate knowledge entanglement…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Vector Quantization"
   - "Prompt Learning"
 date: 2026-05-08
-content_hash: 562f51ae3a5f5c41
+content_hash: deab3035e4296c88
 ---
 
 # Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement
@@ -165,7 +165,7 @@ Gains over the best baseline: node classification ≥2.70%, edge classification 
 - [\[NeurIPS 2025\] PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation](ppg-distill_efficient_photoplethysmography_signals_analysis_via_foundation_model.md)
 - [\[NeurIPS 2025\] Graph Your Own Prompt](graph_your_own_prompt.md)
 - [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](../../ICML2026/model_compression/fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
-- [\[NeurIPS 2025\] Explaining and Mitigating Crosslingual Tokenizer Inequities](explaining_and_mitigating_crosslingual_tokenizer_inequities.md)
+- [\[NeurIPS 2025\] Robust Federated Finetuning of LLMs via Alternating Optimization of LoRA](robust_federated_finetuning_of_llms_via_alternating_optimization_of_lora.md)
 
 </div>
 

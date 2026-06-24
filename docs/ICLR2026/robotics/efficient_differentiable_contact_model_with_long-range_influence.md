@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Efficient Differentiable Contact Model with Long-range Influence
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper systematically characterizes four properties that a "well-conditioned contact model" must satisfy (barrier-form, second-order smoothness, non-prehensile, and non-vanishing). It designs a differentiable contact potential function that is efficiently evaluated using a Bounding Sphere Hierarchy (BSH) and provid
+  [ICLR 2026][Robotics][Differentiable Simulation] This paper systematically characterizes four properties that a "well-conditioned contact model" must satisfy (barrier-form, second-order smoothness, non-prehensile, and non-vanishing). It designs a differentiable contact potential function that is efficiently evaluated using a Bounding Sphere Hierarchy (BSH) and provides non-zero gradients even when objects are far apart, enabling gradient-based optimizers to discover complex c…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Differentiable Simulation"
+  - "Contact Model"
+  - "Long-range Gradient"
+  - "Barrier Potential"
+  - "Bounding Sphere Hierarchy (BSH)"
+  - "Contact-rich Manipulation"
 date: 2026-05-08
-content_hash: 974312c09e9a76d4
+content_hash: cf01805a7d8842ec
 ---
+
 # Efficient Differentiable Contact Model with Long-range Influence
 
 **Conference**: ICLR 2026  
@@ -126,8 +133,8 @@ On tasks like Billiards, Push, Sort, Gather, and Ant-Push, Ours is compared with
 - Value: ⭐⭐⭐⭐⭐ — Directly addresses the core pain point of differentiable physics (vanishing gradients), providing a reusable contact model foundation for control and co-design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

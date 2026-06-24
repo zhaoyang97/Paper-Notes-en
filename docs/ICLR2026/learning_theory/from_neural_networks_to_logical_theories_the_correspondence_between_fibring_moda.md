@@ -2,17 +2,23 @@
 title: >-
   [Paper Note] From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks
 description: >-
-  [ICLR 2026][learning_theory][fibring] This paper establishes a **precise correspondence** between fibring neural networks (where pre-activations of a parent network are fed into a fibring function to generate weights and inputs for a sub-network, which then injects its output back) and fibring modal logics for the first time. Based on this, it unifies GNNs
+  [ICLR 2026][Learning Theory][fibring] This paper establishes a **precise correspondence** between fibring neural networks (where pre-activations of a parent network are fed into a fibring function to generate weights and inputs for a sub-network, which then injects its output back) and fibring modal logics for the first time. Based on this, it unifies GNNs, GATs, and Transformer encoders as fragments of fibred modal logic formulas and provides their **non-uniform logical expr…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - fibring
-  - GNN
-  - GAT
-  - Transformer encoder
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Neuro-symbolic AI (Logical Expressivity)"
+  - "fibring"
+  - "modal logic"
+  - "Kripke models"
+  - "GNN"
+  - "GAT"
+  - "Transformer encoder"
+  - "non-uniform expressivity"
+  - "neuro-symbolic AI"
 date: 2026-05-08
-content_hash: 2a9c18dd1d5cfb60
+content_hash: a8543f774a1ab87a
 ---
+
 # From Neural Networks to Logical Theories: The Correspondence between Fibring Modal Logics and Fibring Neural Networks
 
 **Conference**: ICLR 2026  
@@ -108,11 +114,11 @@ The proof uses induction on the depth of $F$: the leaf case is guaranteed by (C0
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Logical Expressiveness of Topological Neural Networks](the_logical_expressiveness_of_topological_neural_networks.md)
 - [\[ICLR 2026\] Proper Velocity Neural Networks](proper_velocity_neural_networks.md)
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
-- [\[ICLR 2026\] Random Spiking Neural Networks are Stable and Spectrally Simple](random_spiking_neural_networks_are_stable_and_spectrally_simple.md)
-- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
-- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
+- [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
+- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
 
 </div>
 

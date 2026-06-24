@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] S2GO: Streaming Sparse Gaussian Occupancy
 description: >-
-  [ICLR 2026][Autonomous Driving][Paper Note] S2GO uses a set of approximately 1k sparse 3D queries to summarize driving scenes in an online streaming fashion. In each frame, queries are decoded into dense semantic Gaussians and then "splatted" into voxel occupancy. Combined with a geometric denoising and rendering pre-training task, sparse queries learn to move t
+  [ICLR 2026][Autonomous Driving][3D Occupancy Prediction] S2GO uses a set of approximately 1k sparse 3D queries to summarize driving scenes in an online streaming fashion. In each frame, queries are decoded into dense semantic Gaussians and then "splatted" into voxel occupancy. Combined with a geometric denoising and rendering pre-training task, sparse queries learn to move toward occupied regions. It achieves a 2.7 IoU improvement over GaussianWorld on nuScenes/KITTI with 4.5…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "3D Occupancy Prediction"
+  - "Sparse Query"
+  - "Semantic Gaussian"
+  - "Streaming Perception"
+  - "Denoising Pre-training"
 date: 2026-05-08
-content_hash: 67c45556e3697a7c
+content_hash: c6be5afb29645664
 ---
+
 # S2GO: Streaming Sparse Gaussian Occupancy
 
 **Conference**: ICLR 2026  
@@ -153,11 +159,11 @@ SSCBench-KITTI-360 Test Set (Monocular):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](../../CVPR2026/autonomous_driving/generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[CVPR 2025\] GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction](../../CVPR2025/autonomous_driving/gaussianworld_gaussian_world_model_for_streaming_3d_occupancy_prediction.md)
+- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](../../CVPR2026/autonomous_driving/generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](../../ICCV2025/autonomous_driving/gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
 - [\[CVPR 2026\] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model](../../CVPR2026/autonomous_driving/sparseworld_tc_trajectory_conditioned_sparse_occupancy_world_model.md)
-- [\[ECCV 2024\] Fully Sparse 3D Occupancy Prediction](../../ECCV2024/autonomous_driving/fully_sparse_3d_occupancy_prediction.md)
+- [\[ICCV 2025\] GaussRender: Learning 3D Occupancy with Gaussian Rendering](../../ICCV2025/autonomous_driving/gaussrender_learning_3d_occupancy_with_gaussian_rendering.md)
 
 </div>
 

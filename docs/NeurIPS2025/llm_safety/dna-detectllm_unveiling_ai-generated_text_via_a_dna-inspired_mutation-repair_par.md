@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm
 description: >-
-  [NeurIPS 2025][LLM Safety][AI-generated text detection] This paper proposes DNA-DetectLLM, a zero-shot AI-generated text detection method inspired by the DNA mutation-repair mechanism. It constructs an ideal AI sequence…
+  [NeurIPS 2025 Spotlight][LLM Safety][AI-generated text detection] This paper proposes DNA-DetectLLM, a zero-shot AI-generated text detection method inspired by the DNA mutation-repair mechanism. It constructs an ideal AI sequence and quantifies the cumulative difficulty of repairing the input text toward that sequence as the detection signal, achieving state-of-the-art results with a relative AUROC improvement of 5.55% and F1 improvement of 2.08% across multiple benchmark dat…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Safety"
   - "AI-generated text detection"
   - "zero-shot detection"
@@ -12,7 +12,7 @@ tags:
   - "perplexity"
   - "adversarial robustness"
 date: 2026-05-08
-content_hash: 46a9fab00f8a5806
+content_hash: 91cbc56b08f2e03a
 ---
 
 # DNA-DetectLLM: Unveiling AI-Generated Text via a DNA-Inspired Mutation-Repair Paradigm
@@ -148,9 +148,9 @@ Ablation over different LLM combinations:
 
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
 - [\[NeurIPS 2025\] Securing the Language of Life: Inheritable Watermarks from DNA Language Models to Proteins](securing_the_language_of_life_inheritable_watermarks_from_dna_language_models_to.md)
+- [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](../../ICLR2026/llm_safety/genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
 - [\[NeurIPS 2025\] Stop DDoS Attacking the Research Community with AI-Generated Survey Papers](stop_ddos_attacking_the_research_community_with_ai-generated_survey_papers.md)
 - [\[NeurIPS 2025\] AgentStealth: Reinforcing Large Language Model for Anonymizing User-generated Text](agentstealth_reinforcing_large_language_model_for_anonymizing_user-generated_tex.md)
-- [\[NeurIPS 2025\] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma](position_the_complexity_of_perfect_ai_alignment_--_formalizing_the_rlhf_trilemma.md)
 
 </div>
 

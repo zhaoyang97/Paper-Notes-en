@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work reveals the "smoothing misalignment" problem when channel-wise smoothing quantization (e.g., SmoothQuant) is directly applied to MLLMs—where huge differences in activation magnitudes across modalities lead to over-smoothing of non-dominant modalities. MASQuant addresses this via modality-aware smoothing facto
+  [CVPR 2026][Multimodal Efficiency][Post-Training Quantization] This work reveals the "smoothing misalignment" problem when channel-wise smoothing quantization (e.g., SmoothQuant) is directly applied to MLLMs—where huge differences in activation magnitudes across modalities lead to over-smoothing of non-dominant modalities. MASQuant addresses this via modality-aware smoothing factors and cross-modal low-rank compensation based on SVD whitening.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Post-Training Quantization"
+  - "Multimodal LLM"
+  - "Smoothing Quantization"
+  - "Cross-modal Compensation"
+  - "Low-rank Decomposition"
 date: 2026-05-08
-content_hash: 29aaa78b5a6a8101
+content_hash: b548f1b975ce7a3c
 ---
+
 # MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,14 @@ Both paths share the same primary quantized weight; the difference lies in using
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
-- [\[CVPR 2026\] Direction-aware 3D Large Multimodal Models](direction-aware_3d_large_multimodal_models.md)
-- [\[CVPR 2025\] MBQ: Modality-Balanced Quantization for Large Vision-Language Models](../../CVPR2025/multimodal_vlm/mbq_modality-balanced_quantization_for_large_vision-language_models.md)
-- [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
-- [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
+- [\[CVPR 2025\] MBQ: Modality-Balanced Quantization for Large Vision-Language Models](../../CVPR2025/vlm_efficiency/mbq_modality-balanced_quantization_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
 
 </div>
 

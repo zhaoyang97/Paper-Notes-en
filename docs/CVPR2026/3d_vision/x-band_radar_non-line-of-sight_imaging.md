@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] X-band Radar Non-Line-of-Sight Imaging
 description: >-
-  [CVPR 2026][Others][Paper Note] This work replaces optical and millimeter-wave (mmWave) sensors with 10 GHz X-band radar for non-line-of-sight (NLOS) imaging. By leveraging longer wavelengths, it transforms "diffuse reflection" on rough walls into "specular reflection." A neural network utilizing "dense prediction + geometric-aware residual reconstru
+  [CVPR 2026][3D Vision][Non-Line-of-Sight Imaging] This work replaces optical and millimeter-wave (mmWave) sensors with 10 GHz X-band radar for non-line-of-sight (NLOS) imaging. By leveraging longer wavelengths, it transforms "diffuse reflection" on rough walls into "specular reflection." A neural network utilizing "dense prediction + geometric-aware residual reconstruction" is employed to counter the low angular resolution inherent in long wavelengths…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Non-Line-of-Sight Imaging"
+  - "X-band Radar"
+  - "Specular Reflection"
+  - "Geometric-aware Reconstruction"
+  - "Autonomous Driving Perception"
 date: 2026-05-08
-content_hash: 3a686eaf6b209750
+content_hash: 2bc0315180104973
 ---
+
 # X-band Radar Non-Line-of-Sight Imaging
 
 **Conference**: CVPR 2026  
@@ -124,15 +130,16 @@ Ours outperforms RTN by 32.9% in Macro-F1 and reduces CD by 65.3% relative to th
 - **Value**: ⭐⭐⭐⭐⭐ Significant potential for autonomous driving "around-the-corner" perception at meaningful distances.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ECCV 2024\] Domain Reduction Strategy for Non-Line-of-Sight Imaging](../../ECCV2024/others/domain_reduction_strategy_for_non-line-of-sight_imaging.md)
-- [\[CVPR 2026\] Region-Wise Correspondence Prediction between Manga Line Art Images](region-wise_correspondence_prediction_between_manga_line_art_images.md)
-- [\[CVPR 2026\] Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions](dual_band_thermal_videography_separating_time-varying_reflection_and_emission_ne.md)
-- [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
-- [\[CVPR 2026\] NexusFlow: Unifying Disparate Tasks under Partial Supervision via Invertible Flow Networks](nexusflow_unifying_disparate_tasks_under_partial_supervision_via_invertible_flow.md)
+- [\[CVPR 2026\] Seeing through boxes: Non-Line-of-Sight 3D Reconstruction from Radar Signals](seeing_through_boxes_non-line-of-sight_3d_reconstruction_from_radar_signals.md)
+- [\[CVPR 2026\] DENALI: A Dataset Enabling Non-Line-of-Sight Spatial Reasoning with Low-Cost LiDARs](denali_a_dataset_enabling_non-line-of-sight_spatial_reasoning_with_low-cost_lida.md)
+- [\[CVPR 2026\] Kaleidoscopic Scintillation Event Imaging](kaleidoscopic_scintillation_event_imaging.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] RISE: Single Static Radar-based Indoor Scene Understanding](rise_single_static_radar-based_indoor_scene_understanding.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Aria: an Agent for Retrieval and Iterative Auto-Formalization via Dependency Graph
 description: >-
-  [ICLR 2026][LLM Agent][Lean] Aria transforms the translation of natural language mathematical propositions into Lean formal code into a **retrieval + iterative synthesis** agent. It employs a "Graph-of-Thought" (GoT) to decompose propositions top-down into a concept dependency graph. Concepts found in Mathlib are anchored, while missing ones are s
+  [ICLR2026][LLM Agent][Auto-formalization] Aria transforms the translation of natural language mathematical propositions into Lean formal code into a **retrieval + iterative synthesis** agent. It employs a "Graph-of-Thought" (GoT) to decompose propositions top-down into a concept dependency graph. Concepts found in Mathlib are anchored, while missing ones are synthesized bottom-up into new definitions. A semantic checker, AriaScorer, validates results by pulling real definitio…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Lean
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Auto-formalization"
+  - "Lean"
+  - "Graph-of-Thought"
+  - "Retrieval-Augmented Generation"
+  - "Semantic Validation"
 date: 2026-05-08
-content_hash: dcd36e9c5658277b
+content_hash: 0cbc52516a256fdb
 ---
+
 # Aria: an Agent for Retrieval and Iterative Auto-Formalization via Dependency Graph
 
 **Conference**: ICLR2026  
@@ -142,14 +147,15 @@ LeanScorer is an ablation of AriaScorer **without term-level grounding**. The F1
 - Value: ⭐⭐⭐⭐⭐ Successfully pushing conjecture-level auto-formalization from 0 to 40%+ opens a realistic path for automating advanced mathematics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] GeAR: Graph-enhanced Agent for Retrieval-augmented Generation](../../ACL2025/llm_agent/gear_graph-enhanced_agent_for_retrieval-augmented_generation.md)
-- [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
 - [\[ICLR 2026\] MobileIPL: Enhancing Mobile Agents Thinking Process via Iterative Preference Learning](mobileipl_enhancing_mobile_agents_thinking_process_via_iterative_preference_lear.md)
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
+- [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](../../ACL2026/llm_agent/ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] ZS-HPD trains a denoising network using training pairs generated from a single noisy image. It utilizes a "gradient-sorted grouping" downsampler to capture local priors and a "Gaussian-constrained global random sampler" to capture non-local self-similarity priors. Combined with a frequency-domain loss that weights high
+  [CVPR 2026][Image Restoration][Zero-Shot Denoising] ZS-HPD trains a denoising network using training pairs generated from a single noisy image. It utilizes a "gradient-sorted grouping" downsampler to capture local priors and a "Gaussian-constrained global random sampler" to capture non-local self-similarity priors. Combined with a frequency-domain loss that weights high-frequency components, ZS-HPD outperforms existing methods like Pixel2Pixel in both performance and efficien…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Zero-Shot Denoising"
+  - "Pseudo Sample Generation"
+  - "Spatial Locality"
+  - "Non-Local Self-Similarity"
+  - "Frequency Domain Loss"
 date: 2026-05-08
-content_hash: 6283c24ed72325d7
+content_hash: b52ebf57994052c2
 ---
+
 # Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation
 
 **Conference**: CVPR 2026  
@@ -168,8 +174,8 @@ Regarding efficiency, ZS-HPD requires only 780MB of peak memory (vs. 3902MB for 
 - [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 - [\[CVPR 2026\] Hybrid Agents for Image Restoration](hybrid_agents_for_image_restoration.md)
 - [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
-- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
-- [\[CVPR 2026\] Statistical Characteristic-Guided Denoising for Rapid High-Resolution Transmission Electron Microscopy Imaging](statistical_characteristic-guided_denoising_for_rapid_high-resolution_transmissi.md)
+- [\[ICLR 2026\] Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression](../../ICLR2026/image_restoration/turbo-ddcm_fast_and_flexible_zero-shot_diffusion-based_image_compression.md)
+- [\[CVPR 2026\] DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images](dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua.md)
 
 </div>
 

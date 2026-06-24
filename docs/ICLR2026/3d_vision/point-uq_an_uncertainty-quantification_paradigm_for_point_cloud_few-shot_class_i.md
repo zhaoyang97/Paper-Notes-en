@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Point-UQ：面向点云小样本类增量学习的不确定性量化范式
+  [Paper Note] Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Point-UQ shifts the focus of 3D Few-Shot Class-Incremental Learning (FSCIL) from "repeatedly fine-tuning features" to "dynamically optimizing decisions." It uses predictive entropy to measure cognitive uncertainty for each sample to adaptively arbitrate between semantic classifiers and geometric prototypes, thereby pre
+  [ICLR 2026][3D Vision][Point Cloud] Point-UQ shifts the focus of 3D Few-Shot Class-Incremental Learning (FSCIL) from "repeatedly fine-tuning features" to "dynamically optimizing decisions." It uses predictive entropy to measure cognitive uncertainty for each sample to adaptively arbitrate between semantic classifiers and geometric prototypes, thereby preserving old class knowledge while correctly identifying new class samples without retraining.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Point Cloud"
+  - "Few-Shot Class-Incremental Learning"
+  - "Uncertainty Quantification"
+  - "Decision Decoupling"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 96155744adac7abb
+content_hash: 25fe8457ad5ae57d
 ---
+
 # Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning
 
 **Conference**: ICLR 2026  
@@ -136,15 +142,15 @@ Feature fusion ablation (Tab.4): Deep-Semantic-only (60.0), LayerWise-To-Last (6
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
+- [\[AAAI 2026\] EPSegFZ: Efficient Point Cloud Semantic Segmentation for Few- and Zero-Shot Scenarios](../../AAAI2026/3d_vision/epsegfz_efficient_point_cloud_semantic_segmentation_for_few-_and_zero-shot_scena.md)
 - [\[ICLR 2026\] Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation](point-focused_attention_meets_context-scan_state_space_robust_biological_visual_.md)
 - [\[ICLR 2026\] Guaranteed Simply Connected Mesh Reconstruction from an Unorganized Point Cloud](guaranteed_simply_connected_mesh_reconstruction_from_an_unorganized_point_cloud.md)
-- [\[ICLR 2026\] PointRePar: SpatioTemporal Point Relation Parsing for Robust Category-Unified 3D Tracking](pointrepar_spatiotemporal_point_relation_parsing_for_robust_category-unified_3d_.md)
-- [\[ICLR 2026\] Spiking Discrepancy Transformer for Point Cloud Analysis](spiking_discrepancy_transformer_for_point_cloud_analysis.md)
-- [\[ICLR 2026\] RayI2P: Learning Rays for Image-to-Point Cloud Registration](rayi2p_learning_rays_for_image-to-point_cloud_registration.md)
+- [\[CVPR 2026\] CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation](../../CVPR2026/3d_vision/clipoint3d_language-grounded_few-shot_unsupervised_3d_point_cloud_domain_adaptat.md)
 
 </div>
 

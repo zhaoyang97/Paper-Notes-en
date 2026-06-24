@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Continual Learning] This paper proposes MVP (Mixture of Visual Projectors), a Mixture-of-Experts framework for visual projectors conditioned on instruction context. Through an expert recommend…
+  [ICCV 2025][Multimodal VLM][Continual Learning] This paper proposes MVP (Mixture of Visual Projectors), a Mixture-of-Experts framework for visual projectors conditioned on instruction context. Through an expert recommendation strategy and an expert pruning mechanism, MVP enables generative VLMs to continually learn new vision-language tasks without catastrophic forgetting, while maintaining responsiveness to diverse instruction types. MVP consistently outperforms existing met…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Visual Projector"
   - "Instruction-Awareness"
 date: 2026-05-08
-content_hash: 954a8b20ca695736
+content_hash: 0d1f6d162355f152
 ---
 
 # Instruction-Grounded Visual Projectors for Continual Learning of Generative Vision-Language Models
@@ -175,10 +175,10 @@ This paper bridges two research directions: MoE and VLM continual learning. Comp
 ## Related Papers
 
 - [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
-- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](../../CVPR2026/multimodal_vlm/continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
+- [\[CVPR 2025\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](../../CVPR2025/multimodal_vlm/continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
+- [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](../../ICLR2026/multimodal_vlm/reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
-- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](../../NeurIPS2025/multimodal_vlm/continual_multimodal_contrastive_learning.md)
-- [\[NeurIPS 2025\] Learning to Instruct for Visual Instruction Tuning](../../NeurIPS2025/multimodal_vlm/learning_to_instruct_for_visual_instruction_tuning.md)
+- [\[ECCV 2024\] Select and Distill: Selective Dual-Teacher Knowledge Transfer for Continual Learning on Vision-Language Models](../../ECCV2024/multimodal_vlm/select_and_distill_selective_dual-teacher_knowledge_transfer_for_continual_learn.md)
 
 </div>
 

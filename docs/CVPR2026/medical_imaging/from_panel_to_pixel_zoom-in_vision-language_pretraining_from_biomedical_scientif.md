@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Addressing the issue that biomedical literature figures are typically composite images containing multiple panels and annotated arrows, whereas existing VLP methods compress the entire figure into a single coarse image-text pair, this paper proposes the Panel2Patch data pipeline. It utilizes off-the-shelf LVLMs to auto
+  [CVPR 2026][Medical Imaging][Biomedical Vision-Language Pretraining] Addressing the issue that biomedical literature figures are typically composite images containing multiple panels and annotated arrows, whereas existing VLP methods compress the entire figure into a single coarse image-text pair, this paper proposes the Panel2Patch data pipeline. It utilizes off-the-shelf LVLMs to automatically decompose literature figures into three levels of aligned image-text pairs: "Glob…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Biomedical Vision-Language Pretraining"
+  - "Hierarchical Supervision"
+  - "Panel Deconstruction"
+  - "Region-level Alignment"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: ae359825e4703678
+content_hash: a6f51b7c59373475
 ---
+
 # From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature
 
 **Conference**: CVPR 2026  

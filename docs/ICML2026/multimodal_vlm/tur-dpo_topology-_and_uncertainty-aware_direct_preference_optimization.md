@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization
 description: >-
-  [ICML 2026][Multimodal VLM][DPO] TUR-DPO overlays a "semantic + topological structure" shaping reward difference and a dynamic "per-sample uncertainty" down-weighting instance weight on the preference logits of DPO. This allows the model to explicitly reward reasoning process structural rationality and weaken the influence of fragile preference pairs
+  [ICML 2026][Multimodal VLM][DPO] TUR-DPO overlays a "semantic + topological structure" shaping reward difference and a dynamic "per-sample uncertainty" down-weighting instance weight on the preference logits of DPO. This allows the model to explicitly reward reasoning process structural rationality and weaken the influence of fragile preference pairs while maintaining the simplicity of RL-free training. It systematically outperforms DPO and IPO on reasoning tasks like GSM8K /…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - DPO
-  - instance-weighted Bradley-Terry
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "DPO"
+  - "Reasoning Topology Graph"
+  - "Uncertainty Weighting"
+  - "instance-weighted Bradley-Terry"
+  - "RL-free Alignment"
 date: 2026-05-08
-content_hash: 0a083367d2e73a58
+content_hash: aa56509bb9774bdd
 ---
+
 # TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization
 
 **Conference**: ICML 2026  
@@ -146,15 +150,16 @@ TUR-DPO consistently outperforms DPO and IPO across all reasoning and factual ta
 - Value: ⭐⭐⭐⭐ Provides a practical path to improve reasoning alignment without sacrificing DPO's simplicity, compatible with other RL-free losses.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](../../ICLR2026/multimodal_vlm/uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)
+- [\[ICLR 2026\] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization](../../ICLR2026/multimodal_vlm/importance_sampling_for_multi-negative_multimodal_direct_preference_optimization.md)
 - [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](../../CVPR2026/multimodal_vlm/dynamics-aware_preference_optimization_for_vision-language_models.md)
 - [\[CVPR 2025\] SymDPO: Boosting In-Context Learning of Large Multimodal Models with Symbol Demonstration Direct Preference Optimization](../../CVPR2025/multimodal_vlm/symdpo_boosting_in-context_learning_of_large_multimodal_models_with_symbol_demon.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
-- [\[ICML 2026\] Furina: Fragmented Uncertainty-Driven Refusal Instability Attack](furina_fragmented_uncertainty-driven_refusal_instability_attack.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training Large Reasoning Models Efficiently via Progressive Thought Encoding
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper proposes Progressive Thought Encoding, which encodes evicted thought tokens into LoRA weights under KV cache constraints. This allows Large Reasoning Models (LRMs) to reduce GPU memory consumption by half during RL training while reasoning accuracy surpasses full-cache LoRA (with a maximum improvement of +23
+  [ICLR 2026][Reasoning][Large Reasoning Models] This paper proposes Progressive Thought Encoding, which encodes evicted thought tokens into LoRA weights under KV cache constraints. This allows Large Reasoning Models (LRMs) to reduce GPU memory consumption by half during RL training while reasoning accuracy surpasses full-cache LoRA (with a maximum improvement of +23.4% on AIME2024/2025).
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Large Reasoning Models"
+  - "RL training efficiency"
+  - "KV cache compression"
+  - "Parameter-efficient fine-tuning"
+  - "Progressive thought encoding"
 date: 2026-05-08
-content_hash: 149fd9f05d854dc0
+content_hash: 4b3d3e879c7ad900
 ---
+
 # Training Large Reasoning Models Efficiently via Progressive Thought Encoding
 
 **Conference**: ICLR 2026  
@@ -142,7 +148,7 @@ Impact of global tokens and eviction strategies (DeepSeek-R1-Distill-8B, MATH-50
 ## Related Papers
 
 - [\[ICLR 2026\] Your Models Have Thought Enough: Training Large Reasoning Models to Stop Overthinking](your_models_have_thought_enough_training_large_reasoning_models_to_stop_overthin.md)
-- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ICML 2026\] SmartThinker: Progressive Chain-of-Thought Length Calibration for Efficient Large Language Model Reasoning](../../ICML2026/llm_reasoning/smartthinker_progressive_chain-of-thought_length_calibration_for_efficient_large.md)
 - [\[ICLR 2026\] Exposing Weaknesses of Large Reasoning Models through Graph Algorithm Problems](exposing_weaknesses_of_large_reasoning_models_through_graph_algorithm_problems.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
 - [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)

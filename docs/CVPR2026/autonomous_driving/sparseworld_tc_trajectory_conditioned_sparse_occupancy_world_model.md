@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model
 description: >-
-  [CVPR 2026][Autonomous Driving][World Models] Ours proposes SparseWorld-TC, a pure-attention sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations. It end-to-end predicts trajectory-conditioned multi-frame future occupancy directly from raw image features, significantly outperforming existing methods on nuScenes.
+  [CVPR 2026][Autonomous Driving][4D Occupancy Prediction] Ours proposes SparseWorld-TC, a pure-attention sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations. It end-to-end predicts trajectory-conditioned multi-frame future occupancy directly from raw image features, significantly outperforming existing methods on nuScenes.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - World Models
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D Occupancy Prediction"
+  - "World Models"
+  - "Sparse Representation"
+  - "Trajectory Conditioning"
+  - "Pure-Attention Architecture"
 date: 2026-05-08
-content_hash: c1987e88f8eb0e22
+content_hash: 22310dedf9a3f1ff
 ---
+
 # SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ Alignment between predicted points and Ground Truth (GT) occupancy voxel centers
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[CVPR 2026\] Think Before You Drive: World Model-Inspired Multimodal Grounding](think_before_you_drive_world_model-inspired_multimodal_grounding.md)
+- [\[CVPR 2026\] GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation](geniedrive_towards_physics-aware_driving_world_model_with_4d_occupancy_guided_vi.md)
 - [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](../../ICCV2025/autonomous_driving/langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
 - [\[CVPR 2026\] GEM: Generating LiDAR World Model via Deformable Mamba](gem_generating_lidar_world_model_via_deformable_mamba.md)
-- [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
 
 </div>
 

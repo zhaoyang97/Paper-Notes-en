@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GOT-Edit: Geometry-Aware Generic Object Tracking via Online Model Editing
 description: >-
-  [ICLR 2026][Knowledge Editing][VGGT] By using null-space constrained online model editing, this work integrates 3D geometric information provided by VGGT into a 2D generic object tracker. This enhances geometric awareness while maintaining semantic discriminative power, significantly improving tracking performance in scenarios with occlusions and backgrou
+  [ICLR 2026][Knowledge Editing][Object Tracking] By using null-space constrained online model editing, this work integrates 3D geometric information provided by VGGT into a 2D generic object tracker. This enhances geometric awareness while maintaining semantic discriminative power, significantly improving tracking performance in scenarios with occlusions and background clutter.
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - VGGT
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Object Tracking"
+  - "3D Geometry"
+  - "Null Space Editing"
+  - "Online Model Updating"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 1466b812ee1eb74b
+content_hash: 2e31cd4e22f4d981
 ---
+
 # GOT-Edit: Geometry-Aware Generic Object Tracking via Online Model Editing
 
 **Conference**: ICLR 2026  
@@ -140,7 +145,7 @@ The training target is a weighted sum of a classification loss (compound hinge l
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Let it Snow! Animating 3D Gaussian Scenes with Dynamic Weather Effects via Physics-Guided Score Distillation
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] Proposes the Physics-Guided Score Distillation framework, which utilizes Material Point Method (MPM) simulations as motion priors to guide Video-SDS optimization. This approach generates dynamic weather effects (snow, rain, fog, sandstorms) with physically plausible motion and realistic appearance within static 3DGS sc
+  [CVPR2026][3D Vision][3D Gaussian Splatting] Proposes the Physics-Guided Score Distillation framework, which utilizes Material Point Method (MPM) simulations as motion priors to guide Video-SDS optimization. This approach generates dynamic weather effects (snow, rain, fog, sandstorms) with physically plausible motion and realistic appearance within static 3DGS scenes.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Score Distillation Sampling
-  - MPM
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Dynamic scene editing"
+  - "Weather effects"
+  - "Physics simulation"
+  - "Score Distillation Sampling"
+  - "MPM"
 date: 2026-05-08
-content_hash: fa9d4857dd49cb9a
+content_hash: 2c4f87c57cefaf0b
 ---
+
 # Let it Snow! Animating 3D Gaussian Scenes with Dynamic Weather Effects via Physics-Guided Score Distillation
 
 **Conference**: CVPR2026  
@@ -155,11 +159,11 @@ Ours outperforms static editing methods across all image and video metrics, with
 
 ## Related Papers
 
+- [\[CVPR 2026\] Write Where It Matters: Policy-Guided Watermarks for 3D Gaussian Splatting](write_where_it_matters_policy-guided_watermarks_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials](gaussianfluent_gaussian_simulation_for_dynamic_scenes_with_mixed_materials.md)
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners](featurising_pixels_from_dynamic_3d_scenes_with_linear_in-context_learners.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
-- [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[ICCV 2025\] Stable Score Distillation](../../ICCV2025/3d_vision/stable_score_distillation.md)
+- [\[CVPR 2026\] RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing](rap_fast_feedforward_rendering-free_attribute-guided_primitive_importance_score_.md)
+- [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
 
 </div>
 

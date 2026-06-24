@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper discovers that Spoken Language Models (SLMs) fail to maintain initially specified speaking styles (emotion, accent, volume, speaking rate) during multi-turn dialogues, a phenomenon termed "Style Amnesia." Through attention analysis, the study reveals the cause (attention decay) and proposes an explicit recal
+  [ACL 2026 Findings][Audio & Speech][Spoken language models] This paper discovers that Spoken Language Models (SLMs) fail to maintain initially specified speaking styles (emotion, accent, volume, speaking rate) during multi-turn dialogues, a phenomenon termed "Style Amnesia." Through attention analysis, the study reveals the cause (attention decay) and proposes an explicit recall process as a mitigation method.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Spoken language models"
+  - "style amnesia"
+  - "multi-turn dialogue"
+  - "speaking style"
+  - "instruction following"
 date: 2026-05-08
-content_hash: ba86189e26c8b46e
+content_hash: e74af9ab19e1693a
 ---
+
 # Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -120,8 +126,8 @@ flowchart TD
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 - [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](../../ICLR2026/audio_speech/when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
 - [\[ACL 2026\] ReStyle-TTS: Relative and Continuous Style Control for Zero-Shot Speech Synthesis](restyle-tts_relative_and_continuous_style_control_for_zero-shot_speech_synthesis.md)
+- [\[ICLR 2026\] FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions](../../ICLR2026/audio_speech/flexivoice_enabling_flexible_style_control_in_zero-shot_tts_with_natural_languag.md)
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
-- [\[ACL 2026\] MTR-DuplexBench: Towards a Comprehensive Evaluation of Multi-Round Conversations for Full-Duplex Speech Language Models](mtr-duplexbench_towards_a_comprehensive_evaluation_of_multi-round_conversations_.md)
 
 </div>
 

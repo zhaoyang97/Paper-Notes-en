@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Multi-ReduNet: Interpretable Class-Wise Decomposition of ReduNet
 description: >-
-  [ICLR 2026][Interpretability][ReduNet] The global MCR² objective of ReduNet is theoretically decomposed into $K$ independent "class-wise subproblems." Combined with the Woodbury identity, the complexity of per-layer matrix inversion is reduced from $O(d^3)$ to $O(m_j^3)$. In high-dimensional undersampled scenarios ($m \ll d$), this approach achieves higher
+  [ICLR 2026][Interpretability][ReduNet] The global MCR² objective of ReduNet is theoretically decomposed into $K$ independent "class-wise subproblems." Combined with the Woodbury identity, the complexity of per-layer matrix inversion is reduced from $O(d^3)$ to $O(m_j^3)$. In high-dimensional undersampled scenarios ($m \ll d$), this approach achieves higher accuracy, approximately 2× training acceleration, and nearly an order of magnitude improvement in learning rate robustnes…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - ReduNet
-  - MCR²
+  - "ICLR 2026"
+  - "Interpretability"
+  - "ReduNet"
+  - "MCR²"
+  - "White-box Networks"
+  - "Class-wise Decomposition"
+  - "Undersampling"
+  - "Woodbury Identity"
 date: 2026-05-08
-content_hash: 9f93a839118a4767
+content_hash: 62af67d0b28ede6c
 ---
+
 # Multi-ReduNet: Interpretable Class-Wise Decomposition of ReduNet
 
 **Conference**: ICLR 2026  

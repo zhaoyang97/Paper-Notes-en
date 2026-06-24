@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MMaDA: Multimodal Large Diffusion Language Models
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Diffusion language models] This paper presents MMaDA, the first multimodal foundation model that simultaneously achieves text reasoning, multimodal understanding…
+  [NeurIPS 2025][Reinforcement Learning][Diffusion language models] This paper presents MMaDA, the first multimodal foundation model that simultaneously achieves text reasoning, multimodal understanding, and text-to-image generation within a unified discrete diffusion architecture. MMaDA bridges the gap between diffusion model pre-training and post-training through mixed long chain-of-thought (CoT) fine-tuning and the UniGRPO reinforcement learning algorithm.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "mixed long chain-of-thought"
   - "discrete diffusion"
 date: 2026-05-08
-content_hash: ff0cbd069ce051a1
+content_hash: 3c1546fe7c97dbf5
 ---
 
 # MMaDA: Multimodal Large Diffusion Language Models
@@ -174,8 +174,8 @@ MMaDA's training pipeline consists of three stages:
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 - [\[NeurIPS 2025\] MRO: Enhancing Reasoning in Diffusion Language Models via Multi-Reward Optimization](mro_enhancing_reasoning_in_diffusion_language_models_via_multi-reward_optimizati.md)
 - [\[NeurIPS 2025\] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining](graphchain_large_language_models_for_large-scale_graph_analysis_via_tool_chainin.md)
+- [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](../../ICLR2026/reinforcement_learning/revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
-- [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 
 </div>
 

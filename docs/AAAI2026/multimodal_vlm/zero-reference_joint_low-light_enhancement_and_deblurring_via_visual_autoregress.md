@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Reference Joint Low-Light Enhancement and Deblurring via Visual Autoregressive Modeling with VLM-Derived Modulation
 description: >-
-  [AAAI 2026][Multimodal VLM][Low-light enhancement] This paper proposes VAR-LIDE, a fully unsupervised visual autoregressive framework that jointly addresses low-light enhancement and deblurring through three modules guid…
+  [AAAI 2026][Multimodal VLM][Low-light enhancement] This paper proposes VAR-LIDE, a fully unsupervised visual autoregressive framework that jointly addresses low-light enhancement and deblurring through three modules guided by VLM perceptual priors: adaptive illumination modulation, spatial-frequency RoPE, and recursive phase-domain modulation. Without paired training data, the method achieves perceptual quality comparable to or exceeding supervised approaches.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "unsupervised"
   - "frequency-domain phase modulation"
 date: 2026-05-08
-content_hash: 10c9e7b20daa0fe3
+content_hash: 8d1950345f3de64b
 ---
 
 # Zero-Reference Joint Low-Light Enhancement and Deblurring via Visual Autoregressive Modeling with VLM-Derived Modulation
@@ -190,8 +190,8 @@ $$\mathcal{L} = \mathcal{L}_{ex} + \lambda_{en}\mathcal{L}_{en} + \lambda_{con}\
 - [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
 - [\[AAAI 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](empowering_semantic-sensitive_underwater_image_enhancement_with_vlm.md)
 - [\[ICML 2026\] Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling](../../ICML2026/multimodal_vlm/beyond_vlm-based_rewards_diffusion-native_latent_reward_modeling.md)
+- [\[ICML 2026\] MoDA: Modulation Adapter for Fine-Grained Visual Grounding in Instructional MLLMs](../../ICML2026/multimodal_vlm/moda_modulation_adapter_for_fine-grained_visual_grounding_in_instructional_mllms.md)
 - [\[NeurIPS 2025\] Unifying Vision-Language Latents for Zero-Label Image Caption Enhancement](../../NeurIPS2025/multimodal_vlm/unifying_vision-language_latents_for_zero-label_image_caption_enhancement.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning
 description: >-
-  [ACL 2026][LLM Agent][Web Agent] WebClipper models long tool-call trajectories of Web Agents as "Action Node-Information Node" state graphs and mines the minimum necessary DAG to prune cyclic searches and invalid branches. This reduces the average tool rounds by approximately 21% and tokens by 19.4% for Deep Research agents while maintaining or even i
+  [ACL2026][LLM Agent][Web Agent] WebClipper models long tool-call trajectories of Web Agents as "Action Node-Information Node" state graphs and mines the minimum necessary DAG to prune cyclic searches and invalid branches. This reduces the average tool rounds by approximately 21% and tokens by 19.4% for Deep Research agents while maintaining or even improving accuracy.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Web Agent
+  - "ACL2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Trajectory Pruning"
+  - "State Graph"
+  - "Tool Call Efficiency"
+  - "Agent Training"
 date: 2026-05-08
-content_hash: f93c4a86c036cb88
+content_hash: 01b4a56d45fcc858
 ---
+
 # WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning
 
 **Conference**: ACL2026  
@@ -136,9 +141,9 @@ Ablations verified three designs: Graph Pruning (GP), PPL-based rewrite selectio
 
 - [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
 - [\[ACL 2025\] Explorer: Scaling Exploration-Driven Web Trajectory Synthesis for Multimodal Web Agents](../../ACL2025/llm_agent/explorer_scaling_exploration-driven_web_trajectory_synthesis_for_multimodal_web_.md)
-- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_agent_tool_planning_via_dual-feedback_monte_carlo_tree_se.md)
 - [\[ACL 2026\] CoEvolve: Training LLM Agents via Agent-Data Mutual Evolution](coevolve_training_llm_agents_via_agent-data_mutual_evolution.md)
+- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_tool_planning_via_dual-feedback_monte_carlo_tree_search_a.md)
+- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
 
 </div>
 

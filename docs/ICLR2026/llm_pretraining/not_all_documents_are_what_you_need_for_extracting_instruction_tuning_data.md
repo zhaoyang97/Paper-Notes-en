@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Not All Documents Are What You Need for Extracting Instruction Tuning Data
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Addressing the issue that "extracting instruction tuning QA data from web corpora is expensive and noisy," this paper proposes EQUAL. It aligns document and QA feature spaces using contrastive learning before clustering, treats each document cluster as an arm of a Multi-Armed Bandit (MAB), and utilizes Optimal Transpor
+  [ICLR 2026][LLM Pretraining][Instruction Tuning] Addressing the issue that "extracting instruction tuning QA data from web corpora is expensive and noisy," this paper proposes EQUAL. It aligns document and QA feature spaces using contrastive learning before clustering, treats each document cluster as an arm of a Multi-Armed Bandit (MAB), and utilizes Optimal Transport (OT) scores to measure how closely a cluster's projected QA distribution matches the target distribution. Thr…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Instruction Tuning"
+  - "Data Extraction"
+  - "Multi-armed Bandit"
+  - "Optimal Transport"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 265e7a1ebc68497d
+content_hash: 51ab2cc7d27c94a9
 ---
+
 # Not All Documents Are What You Need for Extracting Instruction Tuning Data
 
 **Conference**: ICLR 2026  

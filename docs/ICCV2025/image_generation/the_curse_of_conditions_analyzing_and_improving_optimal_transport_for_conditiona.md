@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation
 description: >-
-  [ICCV 2025][Image Generation][Optimal Transport] This paper identifies the "curse of conditions" in conditional flow matching — a training-test mismatch caused by standard optimal transport (OT) ignoring conditioning inf…
+  [ICCV 2025][Image Generation][Optimal Transport] This paper identifies the "curse of conditions" in conditional flow matching — a training-test mismatch caused by standard optimal transport (OT) ignoring conditioning information, which induces a conditionally skewed prior during training while an unbiased prior is used at test time. The authors propose C²OT (Conditional Optimal Transport), which resolves this issue by incorporating a condition-weighted term into the OT cost m…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Conditionally Skewed Prior"
   - "ODE Solving"
 date: 2026-05-08
-content_hash: 6015e10ff41fdc5d
+content_hash: 2704b82a262c43ae
 ---
 
 # The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation
@@ -144,9 +144,9 @@ W2 distance on the 8-gaussians-to-moons toy experiment (lower is better):
 
 - [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](../../NeurIPS2025/image_generation/counterfactual_identifiability_via_dynamic_optimal_transport.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](../../NeurIPS2025/image_generation/on_the_relation_between_rectified_flows_and_optimal_transport.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/image_generation/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
+- [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](../../ICLR2026/image_generation/alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
 - [\[ICCV 2025\] Contrastive Flow Matching (ΔFM)](contrastive_flow_matching.md)
-- [\[NeurIPS 2025\] Improving Posterior Inference of Galaxy Properties with Image-Based Conditional Flow Matching](../../NeurIPS2025/image_generation/improving_posterior_inference_of_galaxy_properties_with_image-based_conditional_.md)
+- [\[NeurIPS 2025\] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model](../../NeurIPS2025/image_generation/pairwise_optimal_transports_for_training_all-to-all_flow-based_condition_transfe.md)
 
 </div>
 

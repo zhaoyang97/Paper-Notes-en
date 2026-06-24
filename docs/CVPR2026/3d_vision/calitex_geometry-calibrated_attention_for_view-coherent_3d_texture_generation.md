@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation
 description: >-
-  [CVPR 2026][3D Vision][Attention] CaliTex diagnoses the root cause of "cross-view texture inconsistency" as **attention ambiguity caused by undiscriminated full attention** in multi-view diffusion. It proposes two types of geometry-calibrated attention: Part-Aligned Attention (calculating cross-view attention grouped by 3D semantic parts) and Condition
+  [CVPR 2026][3D Vision][3D texture generation] CaliTex diagnoses the root cause of "cross-view texture inconsistency" as **attention ambiguity caused by undiscriminated full attention** in multi-view diffusion. It proposes two types of geometry-calibrated attention: Part-Aligned Attention (calculating cross-view attention grouped by 3D semantic parts) and Condition-Routed Attention (routing reference appearance through geometric conditions before injecting into noise). Impleme…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Attention
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D texture generation"
+  - "multi-view diffusion"
+  - "attention mechanism"
+  - "geometric consistency"
+  - "part priors"
 date: 2026-05-08
-content_hash: 867aa02e940f8af3
+content_hash: c2727cccb8ce748f
 ---
+
 # CaliTex: Geometry-Calibrated Attention for View-Coherent 3D Texture Generation
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ $$\text{MV-MSE} = \frac{2}{N(N-1)}\sum_{(i,j)} \frac{1}{|\Omega_i(j)|}\sum_{p\in
 
 ## Related Papers
 
-- [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
+- [\[CVPR 2026\] NaTex: Seamless Texture Generation as Latent Color Diffusion](natex_seamless_texture_generation_as_latent_color_diffusion.md)
 - [\[CVPR 2026\] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers](block-sparse_global_attention_for_efficient_multi-view_geometry_transformers.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
-- [\[CVPR 2026\] Curvature-Aware Captioning: Leveraging Geodesic Attention for 3D Scene Understanding](curvature-aware_captioning_leveraging_geodesic_attention_for_3d_scene_understand.md)
+- [\[CVPR 2026\] TEXTRIX: Latent Attribute Grid for Native Texture Generation and Beyond](textrix_latent_attribute_grid_for_native_texture_generation_and_beyond.md)
+- [\[CVPR 2026\] MatLat: Material Latent Space for PBR Texture Generation](matlat_material_latent_space_for_pbr_texture_generation.md)
+- [\[CVPR 2026\] NI-Tex: Non-isometric Image-based Garment Texture Generation](ni-tex_non-isometric_image-based_garment_texture_generation.md)
 
 </div>
 

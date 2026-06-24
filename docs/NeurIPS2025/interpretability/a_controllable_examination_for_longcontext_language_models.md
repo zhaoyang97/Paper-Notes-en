@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A Controllable Examination for Long-Context Language Models
 description: >-
-  [NeurIPS 2025][Interpretability][long-context evaluation] This paper proposes LongBioBench, which uses synthetically generated fictional biographies as both needles and haystacks to construct a long-context LLM evaluatio…
+  [NeurIPS 2025 Spotlight][Interpretability][long-context evaluation] This paper proposes LongBioBench, which uses synthetically generated fictional biographies as both needles and haystacks to construct a long-context LLM evaluation framework satisfying three core principles: seamless context, controllable settings, and reliable evaluation. Evaluating 18 models, the benchmark reveals that current LCLMs exhibit substantial deficiencies in reasoning and trustworthiness despite a…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Interpretability"
   - "long-context evaluation"
   - "LongBioBench"
@@ -12,7 +12,7 @@ tags:
   - "controllable experiments"
   - "biography generation"
 date: 2026-05-08
-content_hash: 41eb7335989a3ef3
+content_hash: 11cb5a1cefaf600f
 ---
 
 # A Controllable Examination for Long-Context Language Models
@@ -109,8 +109,8 @@ The **gap between retrieval and reasoning** revealed by this paper is a signific
 - [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](../../ACL2026/interpretability/from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
 - [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](emergence_of_linear_truth_encodings_in_language_models.md)
+- [\[ICML 2025\] Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs](../../ICML2025/interpretability/towards_long-horizon_interpretability_efficient_and_faithful_multi-token_attribu.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[NeurIPS 2025\] Better Estimation of the Kullback-Leibler Divergence Between Language Models](better_estimation_of_the_kullback--leibler_divergence_between_language_models.md)
 
 </div>
 

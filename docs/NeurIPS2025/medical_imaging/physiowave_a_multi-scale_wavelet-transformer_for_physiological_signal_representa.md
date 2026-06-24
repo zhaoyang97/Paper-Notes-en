@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Wavelet transform] This paper proposes PhysioWave, a multi-scale Transformer architecture based on learnable wavelet decomposition and frequency-guided masking. It establishes…
+  [NeurIPS 2025][Medical Imaging][Wavelet transform] This paper proposes PhysioWave, a multi-scale Transformer architecture based on learnable wavelet decomposition and frequency-guided masking. It establishes, for the first time, large-scale pretrained foundation models for EMG and ECG, and achieves state-of-the-art performance on both unimodal and multimodal physiological signal tasks through a multimodal fusion framework.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "multimodal fusion"
   - "foundation model"
 date: 2026-05-08
-content_hash: e7ddf2e5524ad6df
+content_hash: d9f53535eeff56c6
 ---
 
 # PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation
@@ -123,11 +123,11 @@ The pretraining pipeline of PhysioWave consists of four stages: (1) learnable wa
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing](unpaired_image-to-image_translation_for_segmentation_and_signal_unmixing.md)
 - [\[NeurIPS 2025\] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology](starc-9_a_large-scale_dataset_for_multi-class_tissue_classification_for_crc_hist.md)
 - [\[NeurIPS 2025\] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation](lomix_learnable_weighted_multi-scale_logits_mixing_for_medical_image_segmentatio.md)
-- [\[NeurIPS 2025\] Unpaired Image-to-Image Translation for Segmentation and Signal Unmixing](unpaired_image-to-image_translation_for_segmentation_and_signal_unmixing.md)
+- [\[ICML 2025\] From Token to Rhythm: A Multi-Scale Approach for ECG-Language Pretraining](../../ICML2025/medical_imaging/from_token_to_rhythm_a_multi-scale_approach_for_ecg-language_pretraining.md)
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](../../CVPR2026/medical_imaging/must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
-- [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](../../AAAI2026/medical_imaging/small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
 
 </div>
 

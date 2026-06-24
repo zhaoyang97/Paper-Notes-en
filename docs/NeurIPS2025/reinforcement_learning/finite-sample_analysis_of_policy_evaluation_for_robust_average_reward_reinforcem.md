@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Robust Reinforcement Learning] This work provides the first finite-sample complexity analysis for policy evaluation in robust average reward MDPs. By constructing a carefully design…
+  [NeurIPS 2025][Reinforcement Learning][Robust Reinforcement Learning] This work provides the first finite-sample complexity analysis for policy evaluation in robust average reward MDPs. By constructing a carefully designed semi-norm, it proves that the robust Bellman operator is a contraction, and combines this with a truncated Multi-Level Monte Carlo (MLMC) estimator to achieve finite expected sample complexity, ultimately attaining an order-optimal sample complexity of $\ti…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Finite-Sample Analysis"
   - "Semi-norm Contraction"
 date: 2026-05-08
-content_hash: 3860bc305b9ec013
+content_hash: 200c3ca0d054edc2
 ---
 
 # Finite-Sample Analysis of Policy Evaluation for Robust Average Reward Reinforcement Learning
@@ -135,8 +135,8 @@ This is a purely theoretical work with no numerical experiments. The main result
 - [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
 - [\[NeurIPS 2025\] Succeed or Learn Slowly: Sample Efficient Off-Policy Reinforcement Learning for Mobile App Control](succeed_or_learn_slowly_sample_efficient_off-policy_reinforcement_learning_for_m.md)
 - [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
-- [\[NeurIPS 2025\] Risk-Averse Total-Reward Reinforcement Learning](risk-averse_total-reward_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Reward-Aware Proto-Representations in Reinforcement Learning](reward-aware_proto-representations_in_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
+- [\[ICLR 2026\] Finite-Time Analysis of Actor-Critic Methods with Deep Neural Network Approximation](../../ICLR2026/reinforcement_learning/finite-time_analysis_of_actor-critic_methods_with_deep_neural_network_approximat.md)
 
 </div>
 

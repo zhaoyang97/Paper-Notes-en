@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM Watermarking] This paper proposes SAEMark, a framework that leverages sparse autoencoders (SAEs) to extract Feature Concentration Scores (FCS) from text…
+  [NeurIPS 2025][LLM Safety][LLM Watermarking] This paper proposes SAEMark, a framework that leverages sparse autoencoders (SAEs) to extract Feature Concentration Scores (FCS) from text, and embeds multi-bit watermarks via inference-time feature-guided rejection sampling. The approach requires no modification to model weights or logits, natively supports black-box APIs, multilingual text, and code, and achieves state-of-the-art watermark detectability and text quality across En…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Black-box Watermarking"
   - "Personalized Attribution"
 date: 2026-05-08
-content_hash: ec8c31c2ce5a3fa7
+content_hash: 5bde16388c61a786
 ---
 
 # SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders
@@ -130,10 +130,10 @@ With $N=50$, the per-unit success rate exceeds 99%; with $N=10$, it remains at 6
 
 ## Related Papers
 
+- [\[ICML 2025\] SAEBench: A Comprehensive Benchmark for Sparse Autoencoders in Language Model Interpretability](../../ICML2025/llm_safety/saebench_a_comprehensive_benchmark_for_sparse_autoencoders_in_language_model_int.md)
 - [\[ACL 2026\] CRISP: Persistent Concept Unlearning via Sparse Autoencoders](../../ACL2026/llm_safety/crisp_persistent_concept_unlearning_via_sparse_autoencoders.md)
 - [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
 - [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
-- [\[NeurIPS 2025\] On Optimal Steering to Achieve Exact Fairness](on_optimal_steering_to_achieve_exact_fairness.md)
 - [\[NeurIPS 2025\] TRUST -- Transformer-Driven U-Net for Sparse Target Recovery](trust_--_transformer-driven_u-net_for_sparse_target_recovery.md)
 
 </div>

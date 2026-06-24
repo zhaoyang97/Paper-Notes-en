@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Post-training Feature Pruning for Fundus Images Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] GFP is a post-training, architecture-agnostic feature pruning framework that freezes the backbone and performs "greedy + minimum retention ratio" subset selection only on the final flattened feature vector. By removing redundant dimensions, it frequently improves AUROC/AUPRC across 5 fundus datasets while cutting 4%–96
+  [CVPR 2026][Medical Imaging][Fundus image classification] GFP is a post-training, architecture-agnostic feature pruning framework that freezes the backbone and performs "greedy + minimum retention ratio" subset selection only on the final flattened feature vector. By removing redundant dimensions, it frequently improves AUROC/AUPRC across 5 fundus datasets while cutting 4%–96% of feature dimensions and improving cross-dataset generalization.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Fundus image classification"
+  - "feature pruning"
+  - "post-training"
+  - "greedy algorithm"
+  - "cross-domain generalization"
 date: 2026-05-08
-content_hash: 98d68bed5597d4ef
+content_hash: 66b6f0348d9cb884
 ---
+
 # Post-training Feature Pruning for Fundus Images Classification
 
 **Conference**: CVPR 2026  

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment
 description: >-
-  [ICML 2026][Self-Supervised Learning][TabPFN] This work proposes posterior correction for "Tabular Foundation Models" such as TabPFN, which feed training sets directly into attention mechanisms as context. It identifies severe overfitting to the training set's majority class and introduces DistPFN: a posterior reweighting method using $\tilde{p}(y) \propto \hat{p}
+  [ICML 2026][Self-Supervised Learning][TabPFN] This work proposes posterior correction for "Tabular Foundation Models" such as TabPFN, which feed training sets directly into attention mechanisms as context. It identifies severe overfitting to the training set's majority class and introduces DistPFN: a posterior reweighting method using $\tilde{p}(y) \propto \hat{p}(y)^2 / p_{train}(y)$. Across 253 OpenML datasets, it improves the accuracy of TabPFN-v2 from 72.7% to 76.9% under…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - TabPFN
-  - label shift
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "TabPFN"
+  - "label shift"
+  - "posterior adjustment"
+  - "temperature scaling"
+  - "plug-in correction"
 date: 2026-05-08
-content_hash: 8bd4421d1e320119
+content_hash: 667798bafc4e992a
 ---
+
 # Mitigating Label Shift in Tabular In-Context Learning via Test-Time Posterior Adjustment
 
 **Conference**: ICML 2026  
@@ -134,8 +138,21 @@ Evaluated on 253 OpenML datasets (50/50 split, 5 seeds), 6 $\beta$ levels, repor
 - Value: ⭐⭐⭐⭐ (High industrial utility as a zero-cost plug-in for foundation models)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
+- [\[ICML 2025\] Test-Time Training Provably Improves Transformers as In-Context Learners](../../ICML2025/self_supervised/test-time_training_provably_improves_transformers_as_in-context_learners.md)
+- [\[ICLR 2026\] Test-Time Efficient Pretrained Model Portfolios for Time Series Forecasting](../../ICLR2026/self_supervised/test-time_efficient_pretrained_model_portfolios_for_time_series_forecasting.md)
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](towards_one-for-all_anomaly_detection_for_tabular_data.md)
+- [\[CVPR 2026\] Energy Waveify and Redistribution for Test-Time Adaptation: A Control System Perspective](../../CVPR2026/self_supervised/energy_waveify_and_redistribution_for_test-time_adaptation_a_control_system_pers.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

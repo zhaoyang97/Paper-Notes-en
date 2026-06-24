@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sample Reward Soups: Query-efficient Multi-Reward Guidance for Text-to-Image Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Without training the diffusion model, this paper replaces "querying black-box rewards for every weight combination" with "interpolated search gradients." This allows text-to-image models to align with multiple black-box rewards simultaneously during inference, significantly reducing reward queries in the early denoisin
+  [ICLR 2026][Image Generation][Multi-reward Alignment] Without training the diffusion model, this paper replaces "querying black-box rewards for every weight combination" with "interpolated search gradients." This allows text-to-image models to align with multiple black-box rewards simultaneously during inference, significantly reducing reward queries in the early denoising stages (up to 2.7×) while avoiding the reward over-optimization common in fine-tuning methods.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-reward Alignment"
+  - "Inference-time Guidance"
+  - "Black-box Rewards"
+  - "Search Gradients"
+  - "Pareto Optimality"
 date: 2026-05-08
-content_hash: ab3d25b92401a7ac
+content_hash: db09925afc72f239
 ---
+
 # Sample Reward Soups: Query-efficient Multi-Reward Guidance for Text-to-Image Diffusion Models
 
 **Conference**: ICLR 2026  

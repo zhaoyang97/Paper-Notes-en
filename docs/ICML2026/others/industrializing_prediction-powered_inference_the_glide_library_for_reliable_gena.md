@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation
 description: >-
-  [ICML 2026][Others][Prediction-Powered Inference] GLIDE unifies the latest estimators (PPI++, Stratified PPI, PTD, ASI) and samplers (uniform, stratified, active, cost-optimal) from the PPI (prediction-powered inference) family into a scipy-style mean estimation library. It specifically addresses the hybrid evaluation challenge of "expensive human annotation + cheap b
+  [ICML2026][Prediction-Powered Inference] GLIDE unifies the latest estimators (PPI++, Stratified PPI, PTD, ASI) and samplers (uniform, stratified, active, cost-optimal) from the PPI (prediction-powered inference) family into a scipy-style mean estimation library. It specifically addresses the hybrid evaluation challenge of "expensive human annotation + cheap but biased LLM-as-judge," accompanied by Monte Carlo validation and a decision tree to enable industrialized…
 tags:
-  - ICML 2026
-  - Others
-  - Prediction-Powered Inference
-  - LLM-as-Judge
-  - Stratified Sampling
-  - Active Sampling
+  - "ICML2026"
+  - "Prediction-Powered Inference"
+  - "LLM-as-Judge"
+  - "Stratified Sampling"
+  - "Active Sampling"
+  - "Effective Sample Size"
 date: 2026-05-08
-content_hash: 9e85896ccee67826
+content_hash: 1f6764ddb7d9953b
 ---
+
 # Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation
 
 **Conference**: ICML2026  
@@ -175,11 +176,11 @@ PTD matches the 90% nominal coverage across all $\rho$; better proxies result in
 
 ## Related Papers
 
-- [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
+- [\[ICML 2025\] Prediction-Powered Adaptive Shrinkage Estimation](../../ICML2025/others/prediction-powered_adaptive_shrinkage_estimation.md)
+- [\[ACL 2025\] SEOE: A Scalable and Reliable Semantic Evaluation Framework for Open Domain Event Detection](../../ACL2025/others/seoe_semantic_eval.md)
+- [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](../../AAAI2026/others/microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
 - [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
-- [\[ICML 2026\] Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment](evaluation_of_ml_resource_utilization_requires_model_life_cycle_assessment.md)
-- [\[ICML 2026\] Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration](decoupled_conformal_optimisation_efficient_prediction_sets_via_independent_tunin.md)
-- [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
+- [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
 
 </div>
 

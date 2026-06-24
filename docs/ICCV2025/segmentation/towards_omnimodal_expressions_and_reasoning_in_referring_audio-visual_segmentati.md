@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Audio-visual segmentation] This paper proposes the OmniAVS dataset and OISA model, extending referring audio-visual segmentation (RAVS) beyond simple acoustic attribute perception to **omnimodal…
+  [ICCV 2025][Segmentation][Audio-visual segmentation] This paper proposes the OmniAVS dataset and OISA model, extending referring audio-visual segmentation (RAVS) beyond simple acoustic attribute perception to **omnimodal expressions (arbitrary combinations of text/speech/sound/image)** and **deep reasoning (understanding sound content + world knowledge)**, achieving SOTA on the new benchmark and multiple related tasks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "multimodal large language models"
   - "query propagation"
 date: 2026-05-08
-content_hash: 069358894e6f0077
+content_hash: a4c9a798c2e0c43a
 ---
 
 # Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation
@@ -179,9 +179,9 @@ Query propagation improves over OTSA by +5.3 $\mathcal{J\&F}$ on the M2F head wh
 
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](implicit_counterfactual_learning_for_audio-visual_segmentation.md)
 - [\[ICCV 2025\] TAViS: Text-bridged Audio-Visual Segmentation with Foundation Models](tavis_text-bridged_audio-visual_segmentation_with_foundation_models.md)
-- [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](../../NeurIPS2025/segmentation/unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
+- [\[CVPR 2025\] Robust Audio-Visual Segmentation via Audio-Guided Visual Convergent Alignment](../../CVPR2025/segmentation/robust_audio-visual_segmentation_via_audio-guided_visual_convergent_alignment.md)
 - [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
-- [\[ICCV 2025\] How Do Optical Flow and Textual Prompts Collaborate to Assist in Audio-Visual Semantic Segmentation?](how_do_optical_flow_and_textual_prompts_collaborate_to_assist_in_audio-visual_se.md)
+- [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](../../NeurIPS2025/segmentation/unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
 
 </div>
 

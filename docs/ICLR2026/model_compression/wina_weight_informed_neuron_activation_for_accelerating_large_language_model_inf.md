@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WINA: Weight Informed Neuron Activation for Accelerating Large Language Model Inference
 description: >-
-  [ICLR 2026][Model Compression][Inference Acceleration] WINA incorporates "weight column norm" and "hidden state magnitude" into the gating criterion for training-free sparse activation. By selecting top-K neurons using $|x_i \cdot c_i|$ instead of merely $|x_i|$, it provides a theoretically tighter approximate error upper bound. It achieves higher accuracy than TEAL/CATS/R
+  [ICLR 2026][Model Compression][Sparse Activation] WINA incorporates "weight column norm" and "hidden state magnitude" into the gating criterion for training-free sparse activation. By selecting top-K neurons using $|x_i \cdot c_i|$ instead of merely $|x_i|$, it provides a theoretically tighter approximate error upper bound. It achieves higher accuracy than TEAL/CATS/R-Sparse at identical sparsity levels on Llama/Mistral/Phi-4, with significant advantages at extreme sparsity l…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Sparse Activation"
+  - "Training-free Acceleration"
+  - "Weight-aware Gating"
+  - "Approximate Error Bound"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: d167d436519cebfa
+content_hash: 0079750d0db6141a
 ---
+
 # WINA: Weight Informed Neuron Activation for Accelerating Large Language Model Inference
 
 **Conference**: ICLR 2026  
@@ -137,10 +142,10 @@ WINA provides the lowest approximate error across all sparsity levels and theore
 ## Related Papers
 
 - [\[CVPR 2026\] Otil: Accelerating Diffusion Model Inference via Communication-Efficient Multi-GPU Parallelism](../../CVPR2026/model_compression/otil_accelerating_diffusion_model_inference_via_communication-efficient_multi-gp.md)
-- [\[ICLR 2026\] Large Language Model Compression with Global Rank and Sparsity Optimization](large_language_model_compression_with_global_rank_and_sparsity_optimization.md)
-- [\[ICLR 2026\] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery](paser_post-training_data_selection_for_efficient_pruned_large_language_model_rec.md)
-- [\[AAAI 2026\] Consensus-Aligned Neuron Efficient Fine-Tuning Large Language Models for Multi-Domain Machine Translation](../../AAAI2026/model_compression/consensus-aligned_neuron_efficient_fine-tuning_large_language_models_for_multi-d.md)
 - [\[ICLR 2026\] ES-dLLM: Efficient Inference for Diffusion Large Language Models by Early-Skipping](es-dllm_efficient_inference_for_diffusion_large_language_models_by_early-skippin.md)
+- [\[ICLR 2026\] Large Language Model Compression with Global Rank and Sparsity Optimization](large_language_model_compression_with_global_rank_and_sparsity_optimization.md)
+- [\[ICLR 2026\] GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching](gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md)
+- [\[ICLR 2026\] PASER: Post-Training Data Selection for Efficient Pruned Large Language Model Recovery](paser_post-training_data_selection_for_efficient_pruned_large_language_model_rec.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework
 description: >-
-  [AAAI 2026][Multilingual & Machine Translation][Hate Speech Detection] This paper proposes the X-MuTeST framework, which combines LLM semantic reasoning with a two-stage training strategy enhanced by n-gram attention for…
+  [AAAI 2026][Multilingual & Machine Translation][Hate Speech Detection] This paper proposes the X-MuTeST framework, which combines LLM semantic reasoning with a two-stage training strategy enhanced by n-gram attention for explainable multilingual hate speech detection. It also introduces the first token-level human-annotated rationale benchmark datasets for Hindi and Telugu.
 tags:
   - "AAAI 2026"
   - "Multilingual & Machine Translation"
@@ -12,7 +12,7 @@ tags:
   - "LLM Explanation"
   - "Human-Annotated Rationales"
 date: 2026-05-08
-content_hash: e32ca10c4e283ea0
+content_hash: ac7a651c22e0c12e
 ---
 
 # X-MuTeST: A Multilingual Benchmark for Explainable Hate Speech Detection and A Novel LLM-consulted Explanation Framework
@@ -123,11 +123,11 @@ Both stages share the same loss structure: $\mathcal{L} = \alpha \mathcal{L}_{at
 
 ## Related Papers
 
-- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](../../ACL2026/multilingual_mt/the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
+- [\[ACL 2025\] Comparative Analysis of Multilingual Hate Speech Detection](../../ACL2025/multilingual_mt/comparative_analysis_of_multilingual_hate_speech_detection.md)
+- [\[ACL 2025\] EXECUTE: A Multilingual Benchmark for LLM Token Understanding](../../ACL2025/multilingual_mt/execute_a_multilingual_benchmark_for_llm_token_understanding.md)
 - [\[ACL 2026\] Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI](../../ACL2026/multilingual_mt/is_human-like_text_liked_by_humans_multilingual_human_detection_and_preference_a.md)
-- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](../../ACL2026/multilingual_mt/prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
-- [\[ACL 2026\] MORPHOGEN: A Multilingual Benchmark for Evaluating Gender-Aware Morphological Generation](../../ACL2026/multilingual_mt/morphogen_a_multilingual_benchmark_for_evaluating_gender-aware_morphological_gen.md)
-- [\[ACL 2026\] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech](../../ACL2026/multilingual_mt/hierarchical_policy_optimization_for_simultaneous_translation_of_unbounded_speec.md)
+- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](../../ACL2026/multilingual_mt/the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
+- [\[AAAI 2026\] MIDB: Multilingual Instruction Data Booster for Enhancing Cultural Equality in Multilingual Instruction Synthesis](midb_multilingual_instruction_data_booster_for_enhancing_cultural_equality_in_mu.md)
 
 </div>
 

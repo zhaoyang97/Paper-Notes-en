@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MoCha: End-to-End Video Character Replacement without Structural Guidance
 description: >-
-  [CVPR 2026][Video Generation][condition-aware RoPE] MoCha shifts video character replacement from the "frame-by-frame mask + skeleton/depth-guided reconstruction paradigm" to an end-to-end non-reconstruction paradigm. By providing only a single arbitrary frame mask and no structural guidance, the model leverages the inherent tracking capabilities of video diffusion mode
+  [CVPR 2026][Video Generation][Video Character Replacement] MoCha shifts video character replacement from the "frame-by-frame mask + skeleton/depth-guided reconstruction paradigm" to an end-to-end non-reconstruction paradigm. By providing only a single arbitrary frame mask and no structural guidance, the model leverages the inherent tracking capabilities of video diffusion models to transfer the source character's motion and expressions to a reference identity. Utilizing condi…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - condition-aware RoPE
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Character Replacement"
+  - "Video Diffusion Models"
+  - "in-context conditional training"
+  - "condition-aware RoPE"
+  - "RL post-training"
 date: 2026-05-08
-content_hash: cef48b23e8773a5c
+content_hash: db0e2d872fc10423
 ---
+
 # MoCha: End-to-End Video Character Replacement without Structural Guidance
 
 **Conference**: CVPR 2026  
@@ -147,8 +152,8 @@ Qualitative observations:
 ## Related Papers
 
 - [\[CVPR 2026\] STARFlow-V: End-to-End Video Generative Modeling with Autoregressive Normalizing Flows](starflow-v_end-to-end_video_generative_modeling_with_autoregressive_normalizing_.md)
-- [\[CVPR 2026\] AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)
-- [\[CVPR 2026\] Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)
+- [\[CVPR 2026\] EasyOmnimatte: Taming Pretrained Inpainting Diffusion Models for End-to-End Video Layered Decomposition](easyomnimatte_taming_pretrained_inpainting_diffusion_models_for_end-to-end_video.md)
+- [\[ICLR 2026\] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation](../../ICLR2026/video_generation/moga_mixture-of-groups_attention_for_end-to-end_long_video_generation.md)
 - [\[CVPR 2026\] FlowPortal: Residual-Corrected Flow for Training-Free Video Relighting and Background Replacement](flowportal_residual-corrected_flow_for_training-free_video_relighting_and_backgr.md)
 - [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
 

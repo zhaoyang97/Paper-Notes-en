@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access
 description: >-
-  [NEURIPS2025][LLM Efficiency][sparse attention] This paper proposes Hierarchical Sparse Attention (HSA) and the RAMba architecture, which enable Mamba to perform efficient long-range random access through a two-stage tok…
+  [NEURIPS2025][LLM Efficiency][sparse attention] This paper proposes Hierarchical Sparse Attention (HSA) and the RAMba architecture, which enable Mamba to perform efficient long-range random access through a two-stage token-to-chunk relevance learning mechanism and hardware-aligned kernel design. Pretrained on only 4K context, RAMba achieves 100% accuracy on 64M passkey retrieval.
 tags:
   - "NEURIPS2025"
   - "LLM Efficiency"
@@ -14,7 +14,7 @@ tags:
   - "chunk selection"
   - "hardware-aligned kernel"
 date: 2026-05-08
-content_hash: 917719aff4a8fe04
+content_hash: 7843208b7544fc04
 ---
 
 # Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access
@@ -123,11 +123,11 @@ This paper proposes Hierarchical Sparse Attention (HSA) and the RAMba architectu
 
 ## Related Papers
 
+- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
 - [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICML 2026\] Stochastic Sparse Attention for Memory-Bound Inference](../../ICML2026/llm_efficiency/stochastic_sparse_attention_for_memory-bound_inference.md)
 - [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
-- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](../../ACL2026/llm_efficiency/threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
+- [\[NeurIPS 2025\] The Emergence of Sparse Attention: Impact of Data Distribution and Benefits of Repetition](the_emergence_of_sparse_attention_impact_of_data_distribution_and_benefits_of_re.md)
 
 </div>
 

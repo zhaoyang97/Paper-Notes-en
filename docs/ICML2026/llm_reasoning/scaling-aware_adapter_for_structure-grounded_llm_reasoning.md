@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Scaling-Aware Adapter for Structure-Grounded LLM Reasoning
 description: >-
-  [ICML 2026][LLM Reasoning][Cuttlefish] Cuttlefish replaces the "fixed-length query tokens" typical of Q-Former with "instruction-conditioned patch tokens" that grow adaptively based on structural complexity. It utilizes cross-attention to inject geometric features extracted by an EGNN as modality tokens into the LLM, effectively reducing hallucinations and
+  [ICML2026][Reasoning][Cuttlefish] Cuttlefish replaces the "fixed-length query tokens" typical of Q-Former with "instruction-conditioned patch tokens" that grow adaptively based on structural complexity. It utilizes cross-attention to inject geometric features extracted by an EGNN as modality tokens into the LLM, effectively reducing hallucinations and handling scaling across four all-atom modalities: molecules, proteins, DNA, and RNA, outperforming several modality-specific b…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Cuttlefish
-  - Scaling-Aware Patching
-  - Geometry Grounding
-  - EGNN
+  - "ICML2026"
+  - "Reasoning"
+  - "Cuttlefish"
+  - "Scaling-Aware Patching"
+  - "Geometry Grounding"
+  - "Structural Hallucination"
+  - "EGNN"
+  - "Q-Former Alternative"
 date: 2026-05-08
-content_hash: 96f49c0abf239afb
+content_hash: 008c8a79e953217e
 ---
+
 # Scaling-Aware Adapter for Structure-Grounded LLM Reasoning
 
 **Conference**: ICML2026  
@@ -148,9 +151,9 @@ Core ablations provided in the paper focus on the two main modules and training 
 ## Related Papers
 
 - [\[ICML 2026\] Reasoning Structure of Large Language Models](reasoning_structure_of_large_language_models.md)
-- [\[ACL 2026\] Budget-Aware Anytime Reasoning with LLM-Synthesized Preference Data](../../ACL2026/llm_reasoning/budget-aware_anytime_reasoning_with_llm-synthesized_preference_data.md)
-- [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](../../ACL2026/llm_reasoning/shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
-- [\[ACL 2026\] Reliability-Aware Adaptive Self-Consistency for Efficient Sampling in LLM Reasoning](../../ACL2026/llm_reasoning/reliability-aware_adaptive_self-consistency_for_efficient_sampling_in_llm_reason.md)
+- [\[ICLR 2026\] TATTOO: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular Reasoning](../../ICLR2026/llm_reasoning/tattoo_tool-grounded_thinking_prm_for_test-time_scaling_in_tabular_reasoning.md)
+- [\[ICLR 2026\] Theory-Grounded Evaluation of Human-Like Fallacy Patterns in LLM Reasoning](../../ICLR2026/llm_reasoning/theory-grounded_evaluation_of_human-like_fallacy_patterns_in_llm_reasoning.md)
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](ucpo_uncertainty-aware_policy_optimization.md)
 - [\[ICML 2026\] Dynamics Within Latent Chain-of-Thought: An Empirical Study of Causal Structure](dynamics_within_latent_chain-of-thought_an_empirical_study_of_causal_structure.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization
 description: >-
-  [ICLR 2026][Computational Biology][AlphaFold2] CAPSUL constructs the first human protein benchmark (20,181 proteins) that provides both 3D structure information and 20 fine-grained subcellular localization labels. By evaluating 11 sequence/structure baselines under a unified framework, it demonstrates the necessity of 3D structures for localization prediction and d
+  [ICLR2026][Computational Biology][Subcellular Localization] CAPSUL constructs the first human protein benchmark (20,181 proteins) that provides both 3D structure information and 20 fine-grained subcellular localization labels. By evaluating 11 sequence/structure baselines under a unified framework, it demonstrates the necessity of 3D structures for localization prediction and discovers a decisive $\alpha$-helix localization pattern in the Golgi apparatus through attention vis…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - AlphaFold2
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Subcellular Localization"
+  - "Protein 3D Structure"
+  - "AlphaFold2"
+  - "Fine-grained Annotation"
+  - "Structure-based Models"
 date: 2026-05-08
-content_hash: 14da5136b39cfdc3
+content_hash: 8c2e23db5dd0d75a
 ---
+
 # CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization
 
 **Conference**: ICLR2026  
@@ -137,8 +142,8 @@ Replacing $C\alpha$ coordinates with **randomly sampled** coordinates leads to a
 ## Related Papers
 
 - [\[ICLR 2026\] GeomMotif: A Benchmark for Arbitrary Geometric Preservation in Protein Generation](geommotif_a_benchmark_for_arbitrary_geometric_preservation_in_protein_generation.md)
+- [\[ICLR 2026\] PepBenchmark: A Standardized Benchmark for Peptide Machine Learning](pepbenchmark_a_standardized_benchmark_for_peptide_machine_learning.md)
 - [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
-- [\[ICLR 2026\] 3DCS: Datasets and Benchmark for Evaluating Conformational Sensitivity in Molecular Representations](3dcs_datasets_and_benchmark_for_evaluating_conformational_sensitivity_in_molecul.md)
 - [\[ICLR 2026\] The Human Brain as a Dynamic Mixture of Expert Models in Video Understanding](the_human_brain_as_a_dynamic_mixture_of_expert_models_in_video_understanding.md)
 - [\[ICML 2026\] TadA-Bench: A Million-Variant Benchmark for Future-Round Discovery Toward Agentic Protein Engineering](../../ICML2026/computational_biology/tada-bench_a_million-variant_benchmark_for_future-round_discovery_toward_agentic.md)
 

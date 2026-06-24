@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] Addressing the "long-term decay" problem in Large Vision-Language Models (LVLMs)—where models increasingly detach from images and fabricate objects later in the generation process—this paper proposes First Logit Boosting (FLB). The method **stores the logit of the first generated token and adds it back to the logits of
+  [CVPR 2026][Hallucination Detection][Object Hallucination] Addressing the "long-term decay" problem in Large Vision-Language Models (LVLMs)—where models increasingly detach from images and fabricate objects later in the generation process—this paper proposes First Logit Boosting (FLB). The method **stores the logit of the first generated token and adds it back to the logits of each subsequent step with a weight that increases over time**. FLB is training-free…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination"
+  - "Visual Grounding"
+  - "Contrastive Decoding"
+  - "Training-free"
+  - "Long-term Decay"
 date: 2026-05-08
-content_hash: 194673e69b9f997c
+content_hash: 16558d6496ec2dd1
 ---
+
 # First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -146,12 +152,20 @@ Isolating the two effects (AMBER, LLaVA-1.5):
 - Value: ⭐⭐⭐⭐ High utility for real-time systems due to zero training and zero inference overhead.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- VCD: Mitigating Object Hallucinations in Large Vision-Language Models via Visual Contrastive Decoding (CVPR 2024)
-- M3ID: Multi-Modal Model-Agnostic Integrated Decoding for Hallucination Mitigation (arXiv 2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
+- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
+- [\[ACL 2025\] Retrieval Visual Contrastive Decoding to Mitigate Object Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/retrieval_visual_contrastive_decoding_to_mitigate_object_hallucinations_in_large.md)
+- [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
+- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)

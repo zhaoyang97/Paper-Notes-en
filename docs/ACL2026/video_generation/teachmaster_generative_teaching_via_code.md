@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TeachMaster: Generative Teaching via Code
 description: >-
-  [ACL 2026][Video Generation][Multi-Agent] TeachMaster proposes the Generative Teaching paradigm, using code as an interpretable intermediate representation for educational videos. It employs collaborating agents for planning, code generation, narration, debugging, synchronization, and layout to produce full-course videos, achieving near-human quality while red
+  [ACL2026][Video Generation][Generative Teaching] TeachMaster proposes the Generative Teaching paradigm, using code as an interpretable intermediate representation for educational videos. It employs collaborating agents for planning, code generation, narration, debugging, synchronization, and layout to produce full-course videos, achieving near-human quality while reducing the production cost of a 45-hour course to approximately 0.3% of traditional methods.
 tags:
-  - ACL 2026
-  - Video Generation
-  - Multi-Agent
-  - Manim
+  - "ACL2026"
+  - "Video Generation"
+  - "Generative Teaching"
+  - "Code Intermediate Representation"
+  - "Multi-agent"
+  - "Manim"
+  - "Educational Video Generation"
 date: 2026-05-08
-content_hash: fec353b2a298ade6
+content_hash: fec65379dfc9db7f
 ---
+
 # TeachMaster: Generative Teaching via Code
 
 **Conference**: ACL2026  
@@ -160,10 +164,10 @@ While a traditional ablation via module removal was not provided, the paper demo
 ## Related Papers
 
 - [\[CVPR 2026\] MoReGen: Multi-Agent Motion-Reasoning Engine for Code-based Text-to-Video Synthesis](../../CVPR2026/video_generation/moregen_multi-agent_motion-reasoning_engine_for_code-based_text-to-video_synthes.md)
+- [\[ICLR 2026\] Generative View Stitching](../../ICLR2026/video_generation/generative_view_stitching.md)
 - [\[ICLR 2026\] Arbitrary Generative Video Interpolation](../../ICLR2026/video_generation/arbitrary_generative_video_interpolation.md)
 - [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](../../CVPR2026/video_generation/physvid_physics_aware_local_conditioning_for_generative_video_models.md)
 - [\[CVPR 2026\] Generative Neural Video Compression via Video Diffusion Prior](../../CVPR2026/video_generation/generative_neural_video_compression_via_video_diffusion_prior.md)
-- [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](../../CVPR2026/video_generation/lightmover_generative_light_movement_with_color_and_intensity_controls.md)
 
 </div>
 

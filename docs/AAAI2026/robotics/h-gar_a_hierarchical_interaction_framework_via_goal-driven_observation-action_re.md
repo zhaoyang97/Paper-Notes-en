@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation
 description: >-
-  [AAAI2026][Robotics][robotic manipulation] This paper proposes H-GAR, a hierarchical goal-driven framework that first predicts a goal observation and then synthesizes intermediate observations…
+  [AAAI2026 Oral][Robotics][robotic manipulation] This paper proposes H-GAR, a hierarchical goal-driven framework that first predicts a goal observation and then synthesizes intermediate observations, while refining coarse-grained actions via a historical action memory bank. This design enables explicit bidirectional interaction between observations and actions, achieving state-of-the-art performance on both simulated and real-robot manipulation tasks.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Robotics"
   - "robotic manipulation"
   - "goal-conditioned planning"
@@ -12,7 +12,7 @@ tags:
   - "diffusion policy"
   - "coarse-to-fine refinement"
 date: 2026-05-08
-content_hash: 11860b061d3e15cf
+content_hash: 062d05e743930156
 ---
 
 # H-GAR: A Hierarchical Interaction Framework via Goal-Driven Observation-Action Refinement for Robotic Manipulation
@@ -168,9 +168,9 @@ H-GAR is the first method to unify explicit goal observation anchoring, bidirect
 
 - [\[NeurIPS 2025\] Human-assisted Robotic Policy Refinement via Action Preference Optimization](../../NeurIPS2025/robotics/human-assisted_robotic_policy_refinement_via_action_preference_optimization.md)
 - [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[ICLR 2026\] ManipEvalAgent: Promptable and Efficient Evaluation Framework for Robotic Manipulation Policies](../../ICLR2026/robotics/manipevalagent_promptable_and_efficient_evaluation_framework_for_robotic_manipul.md)
+- [\[CVPR 2026\] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching](../../CVPR2026/robotics/geninav_generative_model_driven_image-goal_navigation_via_imagination-guided_con.md)
 - [\[AAAI 2026\] SemanticVLA: Semantic-Aligned Sparsification and Enhancement for Efficient Robotic Manipulation](semanticvla_semantic-aligned_sparsification_and_enhancement_for_efficient_roboti.md)
-- [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](../../ICLR2026/robotics/memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
-- [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
 
 </div>
 

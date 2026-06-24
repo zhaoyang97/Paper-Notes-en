@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] AI4SLT: Empirical Processes in Lean 4 for Formal Statistical Learning Theory
 description: >-
-  [ICML 2026][learning_theory][Lean 4] This work presents the first systematic formalization of "Empirical Process-based Statistical Learning Theory (SLT)" from scratch in Lean 4. It fills gaps in Mathlib by implementing Gaussian Lipschitz concentration, the Dudley entropy integral theorem, and sharp rates for least squares regression (including $\ell_1$ co
+  [ICML 2026][Learning Theory][Statistical Learning Theory] This work presents the first systematic formalization of "Empirical Process-based Statistical Learning Theory (SLT)" from scratch in Lean 4. It fills gaps in Mathlib by implementing Gaussian Lipschitz concentration, the Dudley entropy integral theorem, and sharp rates for least squares regression (including $\ell_1$ constraints). The project consists of approximately 30,000 lines of Lean code without `sorry` or `axiom`…
 tags:
-  - ICML 2026
-  - learning_theory
-  - Lean 4
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Formal Verification"
+  - "Statistical Learning Theory"
+  - "Lean 4"
+  - "Empirical Processes"
+  - "Concentration Inequalities"
+  - "Human-AI Collaborative Formalization"
 date: 2026-05-08
-content_hash: d24e67274aa40476
+content_hash: 59b56e77cf9f723b
 ---
+
 # AI4SLT: Empirical Processes in Lean 4 for Formal Statistical Learning Theory
 
 **Conference**: ICML 2026  
@@ -123,13 +129,20 @@ As a formalization project, results are measured by verified theorems and engine
 - Value: ⭐⭐⭐⭐⭐ Provides a reusable library and human-AI collaborative "recipe" for verifying ML theory.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **Sonoda et al. (2025)**: Formalized global Rademacher complexity bounds.
-- **Wainwright (2019)**: *High-Dimensional Statistics*, the primary mathematical reference for this formalization.
-- **Bocheron et al. (2013)**: *Concentration Inequalities*, the reference for Gaussian LSI and Herbst arguments.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Performative Learning Theory](performative_learning_theory.md)
+- [\[ICLR 2026\] A Statistical Theory of Overfitting for Imbalanced Classification](../../ICLR2026/learning_theory/a_statistical_theory_of_overfitting_for_imbalanced_classification.md)
+- [\[ICLR 2026\] Learning Admissible Heuristics for A*: Theory and Practice](../../ICLR2026/learning_theory/learning_admissible_heuristics_for_a_theory_and_practice.md)
+- [\[ICML 2026\] Catastrophic Forgetting is Low-Rank: A Function-Space Theory for Continual Adaptation](catastrophic_forgetting_is_low-rank_a_function-space_theory_for_continual_adapta.md)
+- [\[ICLR 2026\] Learning Correlated Reward Models: Statistical Barriers and Opportunities](../../ICLR2026/learning_theory/learning_correlated_reward_models_statistical_barriers_and_opportunities.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] A Statistical Theory of Overfitting for Imbalanced Classification](../../ICLR2026/learning_theory/a_statistical_theory_of_overfitting_for_imbalanced_classification.md)

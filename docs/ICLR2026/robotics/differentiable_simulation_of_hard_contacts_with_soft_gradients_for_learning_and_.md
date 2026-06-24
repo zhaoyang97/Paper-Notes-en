@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Differentiable Simulation of Hard Contacts with Soft Gradients for Learning and Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][MuJoCo] Addressing the long-standing issues in penalty-based simulators (MuJoCo) where automatic differentiation gradients distort under hard contact and gradients vanish when objects are not in contact, this paper introduces "Adaptive Step Integration (DiffMJX)" to correct discretization-induced gradient errors. It then uses
+  [ICLR2026][Robotics][Differentiable simulation] Addressing the long-standing issues in penalty-based simulators (MuJoCo) where automatic differentiation gradients distort under hard contact and gradients vanish when objects are not in contact, this paper introduces "Adaptive Step Integration (DiffMJX)" to correct discretization-induced gradient errors. It then uses "Distance Contact (CFD) + Straight-Through Trick" to inject informative gradients for non-contacting objects wit…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - MuJoCo
+  - "ICLR2026"
+  - "Robotics"
+  - "Differentiable simulation"
+  - "hard contacts"
+  - "adaptive integration"
+  - "straight-through estimation"
+  - "MuJoCo"
 date: 2026-05-08
-content_hash: af2114542384b786
+content_hash: f9cfdfbf996afc45
 ---
+
 # Differentiable Simulation of Hard Contacts with Soft Gradients for Learning and Control
 
 **Conference**: ICLR2026  
@@ -141,7 +146,7 @@ The baseline is the predictive sampling of MuJoCo MPC ($k=\{64, 256, 1024\}$ tra
 - [\[ICLR 2026\] Efficient Differentiable Contact Model with Long-range Influence](efficient_differentiable_contact_model_with_long-range_influence.md)
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
 - [\[ICLR 2026\] AutoBio: A Simulation and Benchmark for Robotic Automation in Digital Biology Laboratory](autobio_a_simulation_and_benchmark_for_robotic_automation_in_digital_biology_lab.md)
-- [\[ICLR 2026\] BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning](bfm-zero_a_promptable_behavioral_foundation_model_for_humanoid_control_using_uns.md)
+- [\[ICLR 2026\] X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model](x-vla_soft-prompted_transformer_as_scalable_cross-embodiment_vision-language-act.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pull Requests as a Training Signal for Repo-Level Code Editing
 description: >-
-  [ICML 2026][Code Intelligence][mid-training] This paper proposes the Clean-PR training paradigm, converting 16.4 million noisy GitHub Pull Requests into 2 million executable Search/Replace editing block corpora through filtering, reconstruction, and round-trip validation. By combining Agentless-aligned SFT with error-driven data augmentation, Qwen2.5-Coder-32B ac
+  [ICML2026][Code Intelligence][repo-level code editing] This paper proposes the Clean-PR training paradigm, converting 16.4 million noisy GitHub Pull Requests into 2 million executable Search/Replace editing block corpora through filtering, reconstruction, and round-trip validation. By combining Agentless-aligned SFT with error-driven data augmentation, Qwen2.5-Coder-32B achieves relative gains of 13.6% and 12.3% on SWE-bench Lite and Verified respectively…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - mid-training
-  - SWE-bench
+  - "ICML2026"
+  - "Code Intelligence"
+  - "repo-level code editing"
+  - "Pull Request training signals"
+  - "Search/Replace editing blocks"
+  - "mid-training"
+  - "SWE-bench"
 date: 2026-05-08
-content_hash: 6fdbbb66c664d752
+content_hash: c04ec2cdee46a0c2
 ---
+
 # Pull Requests as a Training Signal for Repo-Level Code Editing
 
 **Conference**: ICML2026  

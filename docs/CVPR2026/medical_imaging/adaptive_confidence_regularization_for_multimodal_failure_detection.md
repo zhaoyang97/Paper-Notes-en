@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Adaptive Confidence Regularization for Multimodal Failure Detection
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] The ACR framework is proposed to systematically address misclassification detection in multimodal scenarios for the first time. By combining Adaptive Confidence Loss (penalizing the "confidence degradation" phenomenon where multimodal fusion confidence is lower than unimodal confidence) and Multimodal Feature Swapping
+  [CVPR2026][Medical Imaging][Multimodal failure detection] The ACR framework is proposed to systematically address misclassification detection in multimodal scenarios for the first time. By combining Adaptive Confidence Loss (penalizing the "confidence degradation" phenomenon where multimodal fusion confidence is lower than unimodal confidence) and Multimodal Feature Swapping (synthesizing failure samples in the feature space), ACR significantly outperforms existing methods ac…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Multimodal failure detection"
+  - "confidence degradation"
+  - "adaptive confidence regularization"
+  - "feature swapping"
+  - "misclassification detection"
+  - "selective classification"
 date: 2026-05-08
-content_hash: c10eecd2d6568fad
+content_hash: 6118b818d546a55b
 ---
+
 <!-- 由 src/gen_stubs.py 自动生成 -->
 # Adaptive Confidence Regularization for Multimodal Failure Detection
 
@@ -150,9 +157,9 @@ Both modules are effective individually, and their combination yields the best r
 
 - [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
 - [\[AAAI 2026\] Personality-guided Public-Private Domain Disentangled Hypergraph-Former Network for Multimodal Depression Detection](../../AAAI2026/medical_imaging/personality-guided_public-private_domain_disentangled_hypergraph-former_network_.md)
+- [\[CVPR 2026\] Learning Diffeomorphism for Medical Image Registration with Time-Embedded Architectures Using Semigroup Regularization](learning_diffeomorphism_for_medical_image_registration_with_time-embedded_archit.md)
+- [\[ICLR 2026\] Frequency-Balanced Retinal Representation Learning with Mutual Information Regularization](../../ICLR2026/medical_imaging/frequency-balanced_retinal_representation_learning_with_mutual_information_regul.md)
 - [\[CVPR 2026\] The Invisible Gorilla Effect in Out-of-distribution Detection](the_invisible_gorilla_effect_in_out-of-distribution_detection.md)
-- [\[AAAI 2026\] Refine and Align: Confidence Calibration through Multi-Agent Interaction in VQA](../../AAAI2026/medical_imaging/refine_and_align_confidence_calibration_through_multi-agent_interaction_in_vqa.md)
-- [\[ECCV 2024\] Architecture-Agnostic Untrained Network Priors for Image Reconstruction with Frequency Regularization](../../ECCV2024/medical_imaging/architecture-agnostic_untrained_network_priors_for_image_reconstruction_with_fre.md)
 
 </div>
 

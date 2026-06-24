@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] InsCal: Calibrated Multi-Source Fully Test-Time Prompt Tuning for Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Vision-Language Model] This paper extends test-time prompt tuning (TPT) from classification to text-driven object detection and identifies that entropy minimization leads to overconfidence and miscalibration. Consequently, the authors propose InsCal, which aggregates multi-domain knowledge through multi-source prompt tuning, narrows domain g
+  [CVPR 2026][Object Detection][Test-time prompt tuning] This paper extends test-time prompt tuning (TPT) from classification to text-driven object detection and identifies that entropy minimization leads to overconfidence and miscalibration. Consequently, the authors propose InsCal, which aggregates multi-domain knowledge through multi-source prompt tuning, narrows domain gaps via text-guided style augmentation, and suppresses overconfidence using instance-level calibration en…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Test-time prompt tuning"
+  - "cross-domain object detection"
+  - "model calibration"
+  - "entropy minimization"
+  - "vision-language models"
 date: 2026-05-08
-content_hash: 9610cb4797d5fe26
+content_hash: a800f8a5b7a50af7
 ---
+
 # InsCal: Calibrated Multi-Source Fully Test-Time Prompt Tuning for Object Detection
 
 **Conference**: CVPR 2026  
@@ -125,15 +130,16 @@ Incremental addition of components on DWD:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
 - [\[CVPR 2026\] Parameterized Prompt for Incremental Object Detection](parameterized_prompt_for_incremental_object_detection.md)
-- [\[CVPR 2025\] Test-Time Backdoor Detection for Object Detection Models](../../CVPR2025/object_detection/test-time_backdoor_detection_for_object_detection_models.md)
+- [\[CVPR 2026\] Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection](foundation_model_priors_enhance_object_focus_in_feature_space_for_source-free_ob.md)
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
-- [\[NeurIPS 2025\] Test-Time Adaptive Object Detection with Foundation Model](../../NeurIPS2025/object_detection/test-time_adaptive_object_detection_with_foundation_model.md)
+- [\[CVPR 2025\] Test-Time Backdoor Detection for Object Detection Models](../../CVPR2025/object_detection/test-time_backdoor_detection_for_object_detection_models.md)
 
 </div>
 

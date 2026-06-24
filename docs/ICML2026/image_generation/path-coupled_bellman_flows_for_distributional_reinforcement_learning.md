@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Path-Coupled Bellman Flows for Distributional Reinforcement Learning
 description: >-
-  [ICML 2026][Image Generation][Flow Matching] The geometric "affine transport" property of the distributional Bellman equation is explicitly woven into the flow matching path: a shared base noise drives the paths of both the current and successor states simultaneously, while a $\lambda$ control variate balances bias and variance. This results in a stable distribut
+  [ICML 2026][Image Generation][Distributional Reinforcement Learning] The geometric "affine transport" property of the distributional Bellman equation is explicitly woven into the flow matching path: a shared base noise drives the paths of both the current and successor states simultaneously, while a $\lambda$ control variate balances bias and variance. This results in a stable distributional critic that is consistent with both the source distribution and the Bellman endpoints…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Flow Matching
+  - "ICML 2026"
+  - "Image Generation"
+  - "Distributional Reinforcement Learning"
+  - "Flow Matching"
+  - "Bellman Equation"
+  - "Control Variates"
+  - "Offline RL"
 date: 2026-05-08
-content_hash: a96087c46be8f4b8
+content_hash: 037f88fecde1e801
 ---
+
 # Path-Coupled Bellman Flows for Distributional Reinforcement Learning
 
 **Conference**: ICML 2026  

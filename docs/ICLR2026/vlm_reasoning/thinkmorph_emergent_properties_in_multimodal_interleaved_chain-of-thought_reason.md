@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] ThinkMorph proposes the principle that "text and images should be complementary rather than isomorphic reasoning modalities." By fine-tuning a unified multimodal model (Bagel-7B) on approximately 24K carefully constructed interleaved reasoning trajectories, the model learns an interleaved reasoning process of "Textual
+  [ICLR 2026][VLM Reasoning][Interleaved Chain-of-Thought] ThinkMorph proposes the principle that "text and images should be complementary rather than isomorphic reasoning modalities." By fine-tuning a unified multimodal model (Bagel-7B) on approximately 24K carefully constructed interleaved reasoning trajectories, the model learns an interleaved reasoning process of "Textual Hypothesis → Visual Manipulation → Textual Verification." It achieves an average performance gain of 34…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Interleaved Chain-of-Thought"
+  - "Multimodal Reasoning"
+  - "Unified Model"
+  - "Visual Manipulation"
+  - "Emergent Abilities"
 date: 2026-05-08
-content_hash: b1cace1ea5480dcd
+content_hash: ddb467f3c7203b1d
 ---
+
 # ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning
 
 **Conference**: ICLR 2026  
@@ -137,16 +143,16 @@ Interleaved reasoning leads in nearly all vision-centric tasks, with an average 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
 - [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
 - [\[ICLR 2026\] CoPRS: Learning Positional Prior from Chain-of-Thought for Reasoning Segmentation](coprs_learning_positional_prior_from_chain-of-thought_for_reasoning_segmentation.md)
 - [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](../../CVPR2026/vlm_reasoning/unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
 - [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/vlm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
-- [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](../../CVPR2026/vlm_reasoning/when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
 
 </div>
 

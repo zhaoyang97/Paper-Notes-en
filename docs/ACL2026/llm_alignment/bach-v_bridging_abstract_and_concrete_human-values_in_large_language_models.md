@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] This paper proposes an abstraction-grounding framework that decomposes the conceptual understanding of LLMs into three layers: "abstract-abstract, abstract-concrete, and concrete-concrete." Using concept probing and activation steering across 6 open-source LLMs and 10 value dimensions, the authors demonstrate that stru
+  [ACL 2026][LLM Alignment][Value representation] This paper proposes an abstraction-grounding framework that decomposes the conceptual understanding of LLMs into three layers: "abstract-abstract, abstract-concrete, and concrete-concrete." Using concept probing and activation steering across 6 open-source LLMs and 10 value dimensions, the authors demonstrate that structured value representations exist within LLMs, migrate across abstraction layers…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Value representation"
+  - "concept probing"
+  - "activation steering"
+  - "alignment mechanism"
+  - "abstraction-grounding"
 date: 2026-05-08
-content_hash: b13c10f2dd1c378d
+content_hash: 3d8ad1d6a43aa9a1
 ---
+
 # BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models
 
 **Conference**: ACL 2026  
@@ -136,10 +142,10 @@ External Validation: Using GPT-5.2 / Gemini-3-Pro / Claude-Sonnet-4.5 to score v
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](../../CVPR2026/llm_alignment/bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
-- [\[ACL 2026\] Large Language Models Are Overconfident in Their Own Responses](large_language_models_are_overconfident_in_their_own_responses.md)
-- [\[ACL 2026\] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models](why_supervised_fine-tuning_fails_to_learn_a_systematic_study_of_incomplete_learn.md)
 - [\[ICML 2026\] Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences](../../ICML2026/llm_alignment/large_language_models_should_learn_personalized_rather_than_aggregated_human_pre.md)
+- [\[ACL 2026\] Large Language Models Are Overconfident in Their Own Responses](large_language_models_are_overconfident_in_their_own_responses.md)
 
 </div>
 

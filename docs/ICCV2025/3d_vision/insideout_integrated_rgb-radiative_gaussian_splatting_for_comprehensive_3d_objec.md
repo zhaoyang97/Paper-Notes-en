@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InsideOut: Integrated RGB-Radiative Gaussian Splatting for Comprehensive 3D Object Representation
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] InsideOut extends 3D Gaussian Splatting (3DGS) beyond RGB surface modeling to simultaneously represent internal X-ray structures…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] InsideOut extends 3D Gaussian Splatting (3DGS) beyond RGB surface modeling to simultaneously represent internal X-ray structures, achieving joint representation of RGB appearance and internal radiative structure through hierarchical fitting and an X-ray reference loss.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Reconstruction"
   - "Non-Destructive Testing"
 date: 2026-05-08
-content_hash: 98e4dcebde96b40e
+content_hash: 2689333c4cc76199
 ---
 
 # InsideOut: Integrated RGB-Radiative Gaussian Splatting for Comprehensive 3D Object Representation
@@ -135,10 +135,10 @@ InsideOut maintains RGB rendering quality close to that of pure RGB 3DGS while s
 ## Related Papers
 
 - [\[ICCV 2025\] CLIP-GS: Unifying Vision-Language Representation with 3D Gaussian Splatting](clip-gs_unifying_vision-language_representation_with_3d_gaussian_splatting.md)
+- [\[CVPR 2025\] VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM](../../CVPR2025/3d_vision/varsplat_uncertainty-aware_3d_gaussian_splatting_for_robust_rgb-d_slam.md)
 - [\[ICCV 2025\] Unified Category-Level Object Detection and Pose Estimation from RGB Images using 3D Prototypes](unified_category-level_object_detection_and_pose_estimation_from_rgb_images_usin.md)
 - [\[ICCV 2025\] SAS: Segment Any 3D Scene with Integrated 2D Priors](sas_segment_any_3d_scene_with_integrated_2d_priors.md)
-- [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](../../ICLR2026/3d_vision/learning_unified_representation_of_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] Discretized Gaussian Representation for Tomographic Reconstruction](discretized_gaussian_representation_for_tomographic_reconstruction.md)
+- [\[CVPR 2026\] PhysIR-Splat: Physically Consistent Thermal Infrared Radiative Transfer in 3D Gaussian Splatting](../../CVPR2026/3d_vision/physir-splat_physically_consistent_thermal_infrared_radiative_transfer_in_3d_gau.md)
 
 </div>
 

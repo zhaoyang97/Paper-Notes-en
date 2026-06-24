@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling
 description: >-
-  [CVPR 2026][Video Understanding][State Space Model] HieraMamba proposes a Mamba-based hierarchical video temporal grounding architecture centered on the Anchor-MambaPooling (AMP) module. This module uses Mamba's selective scanning to compress video features layer-by-layer into multi-scale anchor tokens. Combined with anchor-conditioned and segment-pooled contrastive los
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] HieraMamba proposes a Mamba-based hierarchical video temporal grounding architecture centered on the Anchor-MambaPooling (AMP) module. This module uses Mamba's selective scanning to compress video features layer-by-layer into multi-scale anchor tokens. Combined with anchor-conditioned and segment-pooled contrastive losses, it enhances the compactness and discriminativeness of hierarchical representations…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - State Space Model
-  - Mamba
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "State Space Model"
+  - "Mamba"
+  - "Hierarchical Representation"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: a30715d081ecd7e0
+content_hash: b38ca71e4de86270
 ---
+
 # HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling
 
 **Conference**: CVPR 2026  
@@ -161,10 +165,10 @@ HieraMamba is the only method that avoids all four undesirable characteristics s
 ## Related Papers
 
 - [\[CVPR 2026\] HERO: Hierarchical Embedding-Refinement for Open-Vocabulary Temporal Sentence Grounding in Videos](hero_hierarchical_embedding-refinement_for_open-vocabulary_temporal_sentence_gro.md)
-- [\[CVPR 2026\] MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos](ms-temba_multi-scale_temporal_mamba_for_understanding_long_untrimmed_videos.md)
-- [\[CVPR 2026\] Gamba: Mamba-based Graph Convolutional Network with Dynamic Graph Topology Learning for Action Recognition](gamba_mamba-based_graph_convolutional_network_with_dynamic_graph_topology_learni.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
 - [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
+- [\[CVPR 2026\] MS-Temba: Multi-Scale Temporal Mamba for Understanding Long Untrimmed Videos](ms-temba_multi-scale_temporal_mamba_for_understanding_long_untrimmed_videos.md)
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](../../ICLR2026/video_understanding/hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
 
 </div>
 

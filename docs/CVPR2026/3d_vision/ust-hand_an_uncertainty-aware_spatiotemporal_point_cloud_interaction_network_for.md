@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] UST-Hand utilizes conditional normalizing flows to model 2D hand joints from each view as a **probabilistic distribution** rather than deterministic points. By sampling multiple hypotheses and triangulating them into a unified probabilistic 3D point cloud space, followed by iterative refinement using a Spatiotemporal P
+  [CVPR2026][3D Vision][Self-supervised hand pose estimation] UST-Hand utilizes conditional normalizing flows to model 2D hand joints from each view as a **probabilistic distribution** rather than deterministic points. By sampling multiple hypotheses and triangulating them into a unified probabilistic 3D point cloud space, followed by iterative refinement using a Spatiotemporal Point Transformer (STPT), the model reduces the Mean Per Vertex Position Error (MPVPE) by up to 37.8%…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Self-supervised hand pose estimation"
+  - "uncertainty modeling"
+  - "normalizing flows"
+  - "probabilistic point clouds"
+  - "spatiotemporal attention"
 date: 2026-05-08
-content_hash: bd0342f8ce1b4592
+content_hash: adfdb114aafa75a2
 ---
+
 # UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation
 
 **Conference**: CVPR2026  
@@ -122,16 +128,16 @@ Evaluated on HanCo (8 views), DexYCB-MV (8 views), and OakInk-MV (4 views) again
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
 - [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
-- [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
 - [\[CVPR 2026\] SCAPO: Self-Supervised Category-Level Articulated Pose Estimation from a Single 3D Observation](scapo_self-supervised_category-level_articulated_pose_estimation_from_a_single_3.md)
 - [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
 
 </div>
 

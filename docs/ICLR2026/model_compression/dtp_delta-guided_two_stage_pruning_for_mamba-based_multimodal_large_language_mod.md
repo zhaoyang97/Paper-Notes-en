@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DTP: Delta-Guided Two Stage Pruning for Mamba-based Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Mamba] Addressing the vision token redundancy in Mamba-based Multimodal Large Language Models (MLLMs), DTP utilizes the input-dependent internal parameter $\Delta_t$ of Mamba to estimate token importance. It employs selective pruning in early layers and complete pruning in late layers to nearly halve FLOPs while maintaining m
+  [ICLR2026][Model Compression][Mamba] Addressing the vision token redundancy in Mamba-based Multimodal Large Language Models (MLLMs), DTP utilizes the input-dependent internal parameter $\Delta_t$ of Mamba to estimate token importance. It employs selective pruning in early layers and complete pruning in late layers to nearly halve FLOPs while maintaining multimodal task performance.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mamba
-  - Inference Acceleration
+  - "ICLR2026"
+  - "Model Compression"
+  - "Mamba"
+  - "Multimodal Large Language Models"
+  - "Vision Token Pruning"
+  - "Inference Acceleration"
+  - "Delta Importance"
 date: 2026-05-08
-content_hash: e457b716faabfcc9
+content_hash: 8baa56695933e084
 ---
+
 # DTP: Delta-Guided Two Stage Pruning for Mamba-based Multimodal Large Language Models
 
 **Conference**: ICLR2026  
@@ -169,9 +173,9 @@ On Cobra, DTP's superiority is clear: at $r=0.9$, FLOPs are reduced to 67% while
 ## Related Papers
 
 - [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](../../ACL2026/model_compression/two-stage_regularization-based_structured_pruning_for_llms.md)
+- [\[ICLR 2026\] ES-dLLM: Efficient Inference for Diffusion Large Language Models by Early-Skipping](es-dllm_efficient_inference_for_diffusion_large_language_models_by_early-skippin.md)
 - [\[ICLR 2026\] Entropy-Based Block Pruning for Efficient Large Language Models](entropy-based_block_pruning_for_efficient_large_language_models.md)
 - [\[ICLR 2026\] RCPU: Rotation-Constrained Error Compensation for Structured Pruning of Large Language Models](rcpu_rotation-constrained_error_compensation_for_structured_pruning_of_large_lan.md)
-- [\[ICLR 2026\] ES-dLLM: Efficient Inference for Diffusion Large Language Models by Early-Skipping](es-dllm_efficient_inference_for_diffusion_large_language_models_by_early-skippin.md)
 - [\[ICLR 2026\] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models](kbvq-moe_klt-guided_svd_with_bias-corrected_vector_quantization_for_moe_large_la.md)
 
 </div>

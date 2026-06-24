@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables
 description: >-
-  [ICLR 2026][Model Compression][SQL] Ours proposes SPARTA, an end-to-end framework for automatically constructing large-scale table-text multi-hop QA benchmarks. It generates high-quality nested SQL queries by referencing fact databases, utilizing provenance-based refinement and realistic structural constraints. SOTA models show an F1 drop of over 30 poin
+  [ICLR 2026][Model Compression][Multi-hop Reasoning] Ours proposes SPARTA, an end-to-end framework for automatically constructing large-scale table-text multi-hop QA benchmarks. It generates high-quality nested SQL queries by referencing fact databases, utilizing provenance-based refinement and realistic structural constraints. SOTA models show an F1 drop of over 30 points on SPARTA.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - SQL
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Multi-hop Reasoning"
+  - "Table-Text QA"
+  - "Benchmark Construction"
+  - "SQL"
+  - "Cross-modal Reasoning"
 date: 2026-05-08
-content_hash: ba39456e4715487d
+content_hash: 05d458ecc963bd99
 ---
+
 # SPARTA: Scalable and Principled Benchmark of Tree-Structured Multi-hop QA over Text and Tables
 
 **Conference**: ICLR 2026  

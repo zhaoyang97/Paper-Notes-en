@@ -52,10 +52,10 @@ To be added after in-depth reading.
 ## Related Papers
 
 - [\[ICML 2026\] In Defense of Information Leakage in Concept-based Models](in_defense_of_information_leakage_in_concept-based_models.md)
-- [\[ICML 2026\] CB-SLICE: Concept-Based Interpretable Error Slice Discovery](cb-slice_concept-based_interpretable_error_slice_discovery.md)
-- [\[ICML 2026\] Universal 1/3 Time Scaling in Learning Spiked Distributions](universal_one-third_time_scaling_in_learning_peaked_distributions.md)
-- [\[ICML 2026\] Dimensionality Controls When Modularity Helps in Continual Learning](dimensionality_controls_when_modularity_helps_in_continual_learning.md)
-- [\[ICML 2026\] Neural Collapse by Design: Learning Class Prototypes on the Hypersphere](neural_collapse_by_design_learning_class_prototypes_on_the_hypersphere.md)
+- [\[AAAI 2026\] Flexible Concept Bottleneck Model](../../AAAI2026/interpretability/flexible_concept_bottleneck_model.md)
+- [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](../../ICLR2026/interpretability/sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
+- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept attribution](../../ICLR2026/interpretability/concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept_a.md)
+- [\[ECCV 2024\] Improving Intervention Efficacy via Concept Realignment in Concept Bottleneck Models](../../ECCV2024/interpretability/improving_intervention_efficacy_via_concept_realignment_in_concept_bottleneck_mo.md)
 
 </div>
 

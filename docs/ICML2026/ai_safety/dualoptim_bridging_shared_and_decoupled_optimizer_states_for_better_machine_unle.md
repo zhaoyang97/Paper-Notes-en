@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models
 description: >-
-  [ICML 2026][AI Safety][AdamW] DualOptim+ decomposes Adam optimizer states into a "shared base state + decoupled delta states," allowing LLM machine unlearning to adaptively transition between shared and decoupled optimizers as forget/retain gradients fluctuate between conflict and synergy. Theoretically, it reduces to Alternate optimization (under
+  [ICML 2026][AI Safety][Machine Unlearning] DualOptim+ decomposes Adam optimizer states into a "shared base state + decoupled delta states," allowing LLM machine unlearning to adaptively transition between shared and decoupled optimizers as forget/retain gradients fluctuate between conflict and synergy. Theoretically, it reduces to Alternate optimization (under positive correlation) and DualOptim (under negative correlation), while an 8-bit quantized variant reduces extra memo…
 tags:
-  - ICML 2026
-  - AI Safety
-  - AdamW
+  - "ICML 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Optimizer States"
+  - "Gradient Conflicts"
+  - "8-bit Quantization"
+  - "AdamW"
 date: 2026-05-08
-content_hash: 48635bba9b6af6ef
+content_hash: 7cae5e7329cad51b
 ---
+
 # DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models
 
 **Conference**: ICML 2026  
@@ -133,15 +138,16 @@ Consistently leads by 4–5 points across tasks.
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
+- [\[ICML 2026\] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks](unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
+- [\[ICML 2026\] Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
 - [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
 - [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
-- [\[ICML 2026\] The Unlearnability Phenomenon in RLVR for Language Models](the_unlearnability_phenomenon_in_rlvr_for_language_models.md)
-- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 
 </div>
 

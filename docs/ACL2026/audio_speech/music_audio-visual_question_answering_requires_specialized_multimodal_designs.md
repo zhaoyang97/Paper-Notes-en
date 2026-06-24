@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Music Audio-Visual Question Answering Requires Specialized Multimodal Designs
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] As the first comprehensive survey in the Music Audio-Visual Question Answering (Music AVQA) field, this paper systematically analyzes dataset evolution and methodological designs. It demonstrates that specialized input processing, spatio-temporal architectural design, and music domain knowledge are essential for this t
+  [ACL 2026][Audio & Speech][Music Audio-Visual Question Answering] As the first comprehensive survey in the Music Audio-Visual Question Answering (Music AVQA) field, this paper systematically analyzes dataset evolution and methodological designs. It demonstrates that specialized input processing, spatio-temporal architectural design, and music domain knowledge are essential for this task, as general multimodal models are insufficient for the unique challenges of musical perfor…
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Music Audio-Visual Question Answering"
+  - "Spatio-temporal Reasoning"
+  - "Multimodal Design"
+  - "Domain Specialization"
+  - "Survey"
 date: 2026-05-08
-content_hash: d2dcda9440c91624
+content_hash: cdca57cff4801fdf
 ---
+
 # Music Audio-Visual Question Answering Requires Specialized Multimodal Designs
 
 **Conference**: ACL 2026  

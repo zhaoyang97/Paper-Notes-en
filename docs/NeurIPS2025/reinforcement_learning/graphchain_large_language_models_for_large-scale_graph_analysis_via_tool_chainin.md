@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][large-scale graph analysis] This paper proposes GraphChain, a framework that enables LLMs to analyze large-scale graphs in a progressive…
+  [NeurIPS 2025][Reinforcement Learning][large-scale graph analysis] This paper proposes GraphChain, a framework that enables LLMs to analyze large-scale graphs in a progressive, human-like exploratory manner through two key components: progressive graph distillation (RL-driven tool-chain sequence generation) and structure-aware test-time adaptation (lightweight adapters conditioned on graph topology fingerprints). GraphChain achieves an average accuracy of 84.7%…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "test-time adaptation"
   - "graph analysis"
 date: 2026-05-08
-content_hash: 766e4adfa5bd3264
+content_hash: 8f984e7e0187dc37
 ---
 
 # GraphChain: Large Language Models for Large-scale Graph Analysis via Tool Chaining
@@ -173,7 +173,7 @@ This balances chain length efficiency with policy regularization. Only the adapt
 - [\[NeurIPS 2025\] Incentivizing Reasoning for Advanced Instruction-Following of Large Language Models](incentivizing_reasoning_for_advanced_instruction-following_of_large_language_mod.md)
 - [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](../../ICML2026/reinforcement_learning/the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
 - [\[NeurIPS 2025\] Kimina Lean Server: A High-Performance Lean Server for Large-Scale Verification](kimina_lean_server_a_high-performance_lean_server_for_large-scale_verification.md)
-- [\[ICLR 2026\] GraphOmni: A Comprehensive and Extensible Benchmark Framework for Large Language Models on Graph-theoretic Tasks](../../ICLR2026/reinforcement_learning/graphomni_a_comprehensive_and_extensible_benchmark_framework_for_large_language_.md)
+- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](../../ICLR2026/reinforcement_learning/rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
 
 </div>
 

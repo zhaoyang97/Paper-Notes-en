@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ELECTRA: A Cartesian Network for 3D Charge Density Prediction with Floating Orbitals
 description: >-
-  [NeurIPS 2025][3D Vision][Electron density prediction] This paper proposes ELECTRA (Electronic Tensor Reconstruction Algorithm), an equivariant Cartesian tensor network that reconstructs electron density by predicting th…
+  [NeurIPS 2025][3D Vision][Electron density prediction] This paper proposes ELECTRA (Electronic Tensor Reconstruction Algorithm), an equivariant Cartesian tensor network that reconstructs electron density by predicting the positions, weights, and covariance matrices of floating Gaussian orbitals. On the QM9 benchmark, ELECTRA achieves 2.4× higher accuracy than the state-of-the-art method SCDP while being 4.4–11× faster at inference, and reduces the number of SCF iterations in…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian splatting"
   - "DFT acceleration"
 date: 2026-05-08
-content_hash: ecd2bd61f5843a90
+content_hash: a5d50990bf7749ba
 ---
 
 # ELECTRA: A Cartesian Network for 3D Charge Density Prediction with Floating Orbitals

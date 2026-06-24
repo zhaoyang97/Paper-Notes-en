@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper identifies that Behavioral Foundation Models (BFMs) based on Forward-Backward (FB) representations tend to average future occupancy distributions across different environments when trained on offline data with mixed dynamics, making them unable to adapt to unseen dynamical changes. The authors propose estima
+  [ICLR2026][Reinforcement Learning][Behavioral Foundation Models] This paper identifies that Behavioral Foundation Models (BFMs) based on Forward-Backward (FB) representations tend to average future occupancy distributions across different environments when trained on offline data with mixed dynamics, making them unable to adapt to unseen dynamical changes. The authors propose estimating a hidden dynamics belief using a transformer and conditioning the FB forward representatio…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Behavioral Foundation Models"
+  - "Zero-Shot Reinforcement Learning"
+  - "Forward-Backward Representations"
+  - "Latent Dynamics"
+  - "Contextual Belief Estimation"
 date: 2026-05-08
-content_hash: 0d97693ef36d75e9
+content_hash: 48f97a786434fd81
 ---
+
 # Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics
 
 **Conference**: ICLR2026  
@@ -178,8 +184,8 @@ The Oracle-ID contrast is revealing: it excels in training environments by memor
 
 - [\[ICLR 2026\] TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning](td-jepa_latent-predictive_representations_for_zero-shot_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](../../NeurIPS2025/reinforcement_learning/dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
-- [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](optimistic_task_inference_behavior_models.md)
+- [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
 - [\[ICML 2026\] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards](../../ICML2026/reinforcement_learning/unlocking_zero-shot_geospatial_reasoning_via_indirect_rewards.md)
 
 </div>

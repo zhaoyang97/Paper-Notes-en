@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Action-Guided Attention for Video Action Anticipation
 description: >-
-  [ICLR 2026][Causal Inference][Attention] The authors propose the Action-Guided Attention (AGA) mechanism, which employs the model's own action prediction sequences as attention Query and Key (rather than pixel features). Combined with adaptive gated fusion of historical context and current frame features, it achieves robust generalization from validation to t
+  [ICLR 2026][Causal Inference][Action Anticipation] The authors propose the Action-Guided Attention (AGA) mechanism, which employs the model's own action prediction sequences as attention Query and Key (rather than pixel features). Combined with adaptive gated fusion of historical context and current frame features, it achieves robust generalization from validation to test sets on EPIC-Kitchens-100 while supporting post-training interpretability analysis.
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - Attention
-  - Interpretability
-  - EPIC-Kitchens
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Action Anticipation"
+  - "Attention Mechanism"
+  - "Video Transformer"
+  - "Explainability"
+  - "EPIC-Kitchens"
 date: 2026-05-08
-content_hash: f399f833c67a08c3
+content_hash: 633ecb2f93f546fb
 ---
+
 # Action-Guided Attention for Video Action Anticipation
 
 **Conference**: ICLR 2026  
@@ -141,7 +144,7 @@ Standard cross-entropy loss is used to predict future actions. A modular design 
 - [\[CVPR 2026\] CGU-Bayes: Causal Graph Uncertainty-Guided Bayesian Inference for Domain Generalization](../../CVPR2026/causal_inference/cgu-bayes_causal_graph_uncertainty-guided_bayesian_inference_for_domain_generali.md)
 - [\[ICML 2026\] Density-Guided Robust Counterfactual Explanations on Tabular Data under Model Multiplicity](../../ICML2026/causal_inference/density-guided_robust_counterfactual_explanations_on_tabular_data_under_model_mu.md)
 - [\[ACL 2025\] Reasoning is All You Need for Video Generalization: A Counterfactual Benchmark with Sub-question Evaluation](../../ACL2025/causal_inference/reasoning_is_all_you_need_for_video_generalization_a_counterfactual_benchmark_wi.md)
-- [\[ICLR 2026\] Counterfactual Explanations on Robust Perceptual Geodesics](counterfactual_explanations_on_robust_perceptual_geodesics.md)
+- [\[ICLR 2026\] An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes](an_orthogonal_learner_for_individualized_outcomes_in_markov_decision_processes.md)
 
 </div>
 

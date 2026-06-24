@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features
 description: >-
-  [CVPR 2026][Image Restoration][Diffusion Model] DGAF-VSR revisits the role of "alignment + compensation" in diffusion-based video super-resolution (VSR). Based on two quantitative observations—that the feature domain exhibits stronger spatio-temporal correlation than the pixel domain, and that warping at high resolutions better preserves high-frequency details—the a
+  [CVPR 2026][Image Restoration][Video Super-Resolution] DGAF-VSR revisits the role of "alignment + compensation" in diffusion-based video super-resolution (VSR). Based on two quantitative observations—that the feature domain exhibits stronger spatio-temporal correlation than the pixel domain, and that warping at high resolutions better preserves high-frequency details—the authors design the OGWM module for "up-warp-down" alignment in the feature domain and the FTCM module usin…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Video Super-Resolution"
+  - "Diffusion Models"
+  - "Feature Alignment"
+  - "Optical Flow Warping"
+  - "Dense Temporal Guidance"
 date: 2026-05-08
-content_hash: 117acf17f7810e28
+content_hash: 17ac94675d59f7c4
 ---
+
 # Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Deconstruction of dense guidance (FTCM) and rescaling-based warping (OGWM) on RE
 
 ## Related Papers
 
+- [\[CVPR 2026\] HDW-SR: High-Frequency Guided Diffusion Model based on Wavelet Decomposition for Image Super-Resolution](hdw-sr_high-frequency_guided_diffusion_model_based_on_wavelet_decomposition_for_.md)
+- [\[AAAI 2026\] Temporal Inconsistency Guidance for Super-resolution Video Quality Assessment](../../AAAI2026/image_restoration/temporal_inconsistency_guidance_for_super-resolution_video_quality_assessment.md)
 - [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
-- [\[CVPR 2026\] PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)
-- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
-- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
+- [\[CVPR 2026\] TextOVSR: Text-Guided Real-World Opera Video Super-Resolution](textovsr_text-guided_real-world_opera_video_super-resolution.md)
+- [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
 
 </div>
 

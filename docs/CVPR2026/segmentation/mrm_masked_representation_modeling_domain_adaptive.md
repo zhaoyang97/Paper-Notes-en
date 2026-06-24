@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Masked Representation Modeling for Domain-Adaptive Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] The paper proposes MRM, an auxiliary task that performs masked modeling in latent space instead of input space. By using a lightweight Rebuilder module to perform mask-reconstruction on encoder features supervised by segmentation loss, it achieves an average +2.3 mIoU improvement across four UDA baselines on GTA→Citysc
+  [CVPR 2026][Segmentation][Unsupervised Domain Adaptation] The paper proposes MRM, an auxiliary task that performs masked modeling in latent space instead of input space. By using a lightweight Rebuilder module to perform mask-reconstruction on encoder features supervised by segmentation loss, it achieves an average +2.3 mIoU improvement across four UDA baselines on GTA→Cityscapes with zero extra overhead during inference.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Unsupervised Domain Adaptation"
+  - "Masked Representation Modeling"
+  - "Semantic Segmentation"
+  - "Auxiliary Tasks"
+  - "Feature Reconstruction"
 date: 2026-05-08
-content_hash: 202b982ed155e498
+content_hash: 64bc71d3193ca93c
 ---
+
 # Masked Representation Modeling for Domain-Adaptive Segmentation
 
 **Conference**: CVPR 2026  
@@ -118,11 +124,11 @@ MIC+MRM reaches 77.5 mIoU, surpassing all Prev. SOTA methods at the time (e.g., 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Heuristic Self-Paced Learning for Domain Adaptive Semantic Segmentation under Adverse Conditions](heuristic_self-paced_learning_for_domain_adaptive_semantic_segmentation_under_ad.md)
+- [\[CVPR 2026\] SARMAE: Masked Autoencoder for SAR Representation Learning](sarmae_masked_autoencoder_for_sar_representation_learning.md)
 - [\[CVPR 2026\] Seeing Beyond: Extrapolative Domain Adaptive Panoramic Segmentation](seeing_beyond_extrapolative_domain_adaptive_panoramic_segmentation.md)
-- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
 - [\[CVPR 2026\] Mixture of Prototypes for Test-time Adaptive Segmentation](mixture_of_prototypes_for_test-time_adaptive_segmentation.md)
-- [\[CVPR 2026\] Concept-Aware LoRA for Domain-Aligned Segmentation Dataset Generation](concept-aware_lora_for_domain-aligned_segmentation_dataset_generation.md)
-- [\[CVPR 2026\] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)
+- [\[ICML 2025\] Dual form Complementary Masking for Domain-Adaptive Image Segmentation](../../ICML2025/segmentation/dual_form_complementary_masking_for_domain-adaptive_image_segmentation.md)
 
 </div>
 

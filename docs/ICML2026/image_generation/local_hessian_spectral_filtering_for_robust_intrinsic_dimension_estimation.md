@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Local Hessian Spectral Filtering for Robust Intrinsic Dimension Estimation
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper proposes LHSD, which applies a Hill-type spectral filter to the log-density Hessian of a score model to retain only near-zero eigenvalues for counting tangent space dimensions. By leveraging Stochastic Lanczos Quadrature, it reduces the computational cost from $\mathcal{O}(D^3)$ to $\mathcal{O}(D)$, enabling
+  [ICML 2026][Image Generation][Local Intrinsic Dimension] This paper proposes LHSD, which applies a Hill-type spectral filter to the log-density Hessian of a score model to retain only near-zero eigenvalues for counting tangent space dimensions. By leveraging Stochastic Lanczos Quadrature, it reduces the computational cost from $\mathcal{O}(D^3)$ to $\mathcal{O}(D)$, enabling stable estimation of Local Intrinsic Dimension (LID) in 3072-dimensional image spaces and diagnosing t…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - Stochastic Lanczos Quadrature
+  - "ICML 2026"
+  - "Image Generation"
+  - "Local Intrinsic Dimension"
+  - "Hessian Spectral Filtering"
+  - "Diffusion Models"
+  - "Stochastic Lanczos Quadrature"
+  - "Memorization Detection"
 date: 2026-05-08
-content_hash: e884ad193eb37791
+content_hash: f15773952c35d675
 ---
+
 # Local Hessian Spectral Filtering for Robust Intrinsic Dimension Estimation
 
 **Conference**: ICML 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Actor-Free Continuous Control via Structurally Maximizable Q-Functions
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][actor-free Q-learning] This paper proposes Q3C (Q-learning for Continuous Control with Control-points)…
+  [NeurIPS 2025][Reinforcement Learning][actor-free Q-learning] This paper proposes Q3C (Q-learning for Continuous Control with Control-points), which approximates the Q-function via a learned set of control points such that the maximum value is structurally attained at one of those points. Combined with action-conditioned Q-value generation, a control-point diversity loss, and scale normalization, Q3C matches TD3 on standard benchmarks and substantially outperforms all actor-c…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "wire-fitting"
   - "structural maximization"
 date: 2026-05-08
-content_hash: d77545206908572b
+content_hash: 31c5ca985b16f332
 ---
 
 # Actor-Free Continuous Control via Structurally Maximizable Q-Functions
@@ -142,11 +142,11 @@ Constrained environments (non-convex Q-functions):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](../../ICLR2026/reinforcement_learning/learning_massively_multitask_world_models_for_continuous_control.md)
+- [\[ICLR 2026\] Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning](../../ICLR2026/reinforcement_learning/beyond_distributions_geometric_action_control_for_continuous_reinforcement_learn.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](../../ICLR2026/reinforcement_learning/wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
-- [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](../../ICML2026/reinforcement_learning/debiased_model-based_representations_for_sample-efficient_continuous_control.md)
-- [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
 - [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
-- [\[NeurIPS 2025\] A Differential and Pointwise Control Approach to Reinforcement Learning](a_differential_and_pointwise_control_approach_to_reinforceme.md)
+- [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](../../ICML2026/reinforcement_learning/debiased_model-based_representations_for_sample-efficient_continuous_control.md)
 
 </div>
 

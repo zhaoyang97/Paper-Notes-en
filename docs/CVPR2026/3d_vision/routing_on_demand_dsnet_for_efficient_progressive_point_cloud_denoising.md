@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Routing on Demand: DSNet for Efficient Progressive Point Cloud Denoising
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] DSNet (Dynamic Skip Net) is a "Routing on Demand" progressive point cloud denoising framework. It employs a normal similarity-based noise discriminator to quantify the noise intensity of each local patch, which is then mapped by an anti-monotonic decision function to an appropriate denoising module entry. This allows c
+  [CVPR 2026][3D Vision][Point cloud denoising] DSNet (Dynamic Skip Net) is a "Routing on Demand" progressive point cloud denoising framework. It employs a normal similarity-based noise discriminator to quantify the noise intensity of each local patch, which is then mapped by an anti-monotonic decision function to an appropriate denoising module entry. This allows clean regions to skip redundant denoising while noisy regions receive sufficient refinement…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Point cloud denoising"
+  - "Progressive denoising"
+  - "Dynamic routing"
+  - "Normal similarity"
+  - "Adaptive skip connections"
 date: 2026-05-08
-content_hash: 9ed9ccda9826fa2b
+content_hash: 67cb4a8648de1e0b
 ---
+
 # Routing on Demand: DSNet for Efficient Progressive Point Cloud Denoising
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Trade-off Between Expressivity and Privacy in Graph Representation Learning
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper theoretically characterizes the fundamental tension between "expressivity of graph representations" and "edge-level differential privacy" for the first time. It proposes using **noisy homomorphism density vectors** as graph embeddings: these maintain full discriminative power in expectation while injecting c
+  [ICLR 2026][Graph Learning][Homomorphism Density] This paper theoretically characterizes the fundamental tension between "expressivity of graph representations" and "edge-level differential privacy" for the first time. It proposes using **noisy homomorphism density vectors** as graph embeddings: these maintain full discriminative power in expectation while injecting calibrated noise based on the smooth sensitivity of each density to satisfy formal differential privacy guarant…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Homomorphism Density"
+  - "Differential Privacy"
+  - "Graph Expressivity"
+  - "Smooth Sensitivity"
+  - "Privacy-Expressivity Trade-off"
 date: 2026-05-08
-content_hash: fcb0db1d076e8929
+content_hash: 3697380b649cd8cf
 ---
+
 # On the Trade-off Between Expressivity and Privacy in Graph Representation Learning
 
 **Conference**: ICLR 2026  

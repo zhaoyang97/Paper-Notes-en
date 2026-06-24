@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset
 description: >-
-  [NeurIPS 2025][Image Generation][Ultra-High-Resolution] This work constructs UltraHR-100K, a large-scale dataset comprising 100K ultra-high-resolution images with rich annotations…
+  [NeurIPS 2025][Image Generation][Ultra-High-Resolution] This work constructs UltraHR-100K, a large-scale dataset comprising 100K ultra-high-resolution images with rich annotations, and proposes a Frequency-Aware Post-Training (FAPT) method combining Detail-Oriented Timestep Sampling (DOTS) and Soft-Weighted Frequency Regularization (SWFR) based on DFT, enabling pretrained T2I models to generate fine-grained details at ultra-high resolutions.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Detail Generation"
   - "Post-Training"
 date: 2026-05-08
-content_hash: e497081b18560654
+content_hash: 5cdf09bb24108482
 ---
 
 # UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset
@@ -149,11 +149,11 @@ This work comprises two components:
 
 ## Related Papers
 
-- [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](../../ICCV2025/image_generation/enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
+- [\[CVPR 2026\] VINS-120K: Ultra High-Resolution Image Editing with A Large-Scale Dataset](../../CVPR2026/image_generation/vins-120k_ultra_high-resolution_image_editing_with_a_large-scale_dataset.md)
 - [\[NeurIPS 2025\] ICEdit: Enabling Instructional Image Editing with In-Context Generation in Large Scale Diffusion Transformer](in-context_edit_enabling_instructional_image_editing_with_in-context_generation_.md)
 - [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
-- [\[NeurIPS 2025\] RepLDM: Reprogramming Pretrained Latent Diffusion Models for High-Quality, High-Efficiency, High-Resolution Image Generation](repldm_reprogramming_pretrained_latent_diffusion_models_for_high-quality_high-ef.md)
 - [\[NeurIPS 2025\] Hephaestus: Mixture Generative Modeling with Energy Guidance for Large-scale QoS Degradation](hephaestus_mixture_generative_modeling_with_energy_guidance_for_large-scale_qos_.md)
+- [\[CVPR 2025\] OmniStyle: Filtering High Quality Style Transfer Data at Scale](../../CVPR2025/image_generation/omnistyle_filtering_high_quality_style_transfer_data_at_scale.md)
 
 </div>
 

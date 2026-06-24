@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space
 description: >-
-  [ICLR 2026][Medical Imaging][semantic navigation] The authors propose modeling human concept production as cumulative trajectories in Transformer embedding spaces, defining five kinematic metrics (distance, velocity, acceleration, entropy, and distance to centroid). This framework successfully distinguishes clinical groups and concept categories across four datasets (
+  [ICLR2026][Medical Imaging][semantic navigation] The authors propose modeling human concept production as cumulative trajectories in Transformer embedding spaces, defining five kinematic metrics (distance, velocity, acceleration, entropy, and distance to centroid). This framework successfully distinguishes clinical groups and concept categories across four datasets (three languages; covering neurodegenerative diseases, swear word fluency, and property listing)…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - semantic navigation
-  - embedding trajectory
-  - cognitive modeling
-  - verbal fluency
-  - neurodegenerative disease
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "semantic navigation"
+  - "embedding trajectory"
+  - "cognitive modeling"
+  - "verbal fluency"
+  - "neurodegenerative disease"
 date: 2026-05-08
-content_hash: a4a1772b7925ac0a
+content_hash: d2e90bc17cb00a6e
 ---
+
 # Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space
 
 **Conference**: ICLR2026  
@@ -137,8 +138,8 @@ Generalized Linear Mixed Models (GLMM) were utilized, with participants and conc
 - [\[CVPR 2026\] Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)](../../CVPR2026/medical_imaging/diffusion_mri_transformer_with_a_diffusion_space_rotary_positional_embedding_d-r.md)
 - [\[ICLR 2026\] BioTamperNet: Affinity-Guided State-Space Model Detecting Tampered Biomedical Images](biotampernet_affinity-guided_state-space_model_detecting_tampered_biomedical_ima.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
+- [\[ICLR 2026\] Reducing Semantic Mismatch in Brain-to-Text Decoding Through Personalized Multimodal Masking](reducing_semantic_mismatch_in_brain-to-text_decoding_through_personalized_multim.md)
 - [\[ICLR 2026\] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation](bridging_radiology_and_pathology_foundation_models_via_concept-based_multimodal_.md)
-- [\[AAAI 2026\] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence](../../AAAI2026/medical_imaging/human-in-the-loop_interactive_report_generation_for_chronic_disease_adherence.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs
 description: >-
-  [CVPR 2026][Graph Learning][Paper Note] This paper introduces Graph2Eval, a knowledge-graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents/webpages, performing subgraph sampling, LLM conditional generation, and multi-stage filtering, it automatically produces multimodal agen
+  [CVPR 2026][Graph Learning][Knowledge Graph] This paper introduces Graph2Eval, a knowledge-graph-driven framework for the automatic generation of agent evaluation tasks. By constructing structured knowledge graphs from documents/webpages, performing subgraph sampling, LLM conditional generation, and multi-stage filtering, it automatically produces multimodal agent tasks with significantly improved semantic consistency (+20%) and solvability (+17%)…
 tags:
-  - CVPR 2026
-  - Graph Learning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Knowledge Graph"
+  - "Automatic Task Generation"
+  - "Agent Evaluation"
+  - "Document Understanding"
+  - "Web Understanding"
+  - "Benchmark Construction"
 date: 2026-05-08
-content_hash: bdebf00684c5c261
+content_hash: 428b9947d0803042
 ---
+
 # Graph2Eval: Automatic Multimodal Task Generation for Agents via Knowledge Graphs
 
 **Conference**: CVPR 2026  
@@ -160,8 +167,8 @@ The benchmark provides high discriminative power; even GPT-4o scores only 56.8%.
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
 - [\[ACL 2025\] Can LLMs Evaluate Complex Attribution in QA? Automatic Benchmarking using Knowledge Graphs](../../ACL2025/graph_learning/paper_2401_14640.md)
+- [\[ICLR 2026\] Controllable Logical Hypothesis Generation for Abductive Reasoning in Knowledge Graphs](../../ICLR2026/graph_learning/controllable_logical_hypothesis_generation_for_abductive_reasoning_in_knowledge_.md)
 - [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](mario_multimodal_graph_reasoning_with_large_language_models.md)
-- [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](../../ACL2026/graph_learning/stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
 
 </div>
 

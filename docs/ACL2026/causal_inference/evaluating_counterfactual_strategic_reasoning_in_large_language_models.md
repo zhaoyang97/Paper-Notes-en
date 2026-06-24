@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Evaluating Counterfactual Strategic Reasoning in Large Language Models
 description: >-
-  [ACL 2026][Causal Inference][Prisoner's Dilemma] This paper evaluates the strategic adaptation capabilities of LLMs using label perturbations, payoff perturbations, and joint counterfactual versions of the Repeated Prisoner's Dilemma and Rock-Paper-Scissors. It finds that while many models appear proficient in familiar games, they continue to apply templated strategi
+  [ACL2026][Causal Inference][counterfactual games] This paper evaluates the strategic adaptation capabilities of LLMs using label perturbations, payoff perturbations, and joint counterfactual versions of the Repeated Prisoner's Dilemma and Rock-Paper-Scissors. It finds that while many models appear proficient in familiar games, they continue to apply templated strategies even after payoff structures are altered.
 tags:
-  - ACL 2026
-  - Causal Inference
-  - Prisoner's Dilemma
-  - Rock-Paper-Scissors
-  - opponent comprehension
+  - "ACL2026"
+  - "Causal Inference"
+  - "counterfactual games"
+  - "strategic reasoning"
+  - "Prisoner's Dilemma"
+  - "Rock-Paper-Scissors"
+  - "opponent comprehension"
 date: 2026-05-08
-content_hash: 5095517b3fa0404a
+content_hash: 3bb97b098ac23104
 ---
+
 # Evaluating Counterfactual Strategic Reasoning in Large Language Models
 
 **Conference**: ACL2026  
@@ -119,7 +122,7 @@ Specifically, the default PD payoffs are $(C,C)=(4,4)$, $(C,D)=(1,6)$, $(D,C)=(6
 - [\[ACL 2025\] Counterfactual-Consistency Prompting for Relative Temporal Understanding in Large Language Models](../../ACL2025/causal_inference/counterfactual-consistency_prompting_for_relative_temporal_understanding_in_larg.md)
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](../../NeurIPS2025/causal_inference/revealing_multimodal_causality_with_large_language_models.md)
 - [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
-- [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](../../ICML2026/causal_inference/evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
+- [\[ECCV 2024\] Learning Chain of Counterfactual Thought for Bias-Robust Vision-Language Reasoning](../../ECCV2024/causal_inference/learning_chain_of_counterfactual_thought_for_bias-robust_vision-language_reasoni.md)
 
 </div>
 

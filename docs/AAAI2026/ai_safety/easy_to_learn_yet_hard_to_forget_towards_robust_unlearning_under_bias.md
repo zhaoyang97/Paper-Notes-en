@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias
 description: >-
-  [AAAI2026][AI Safety][machine unlearning] This paper proposes the CUPID framework, which partitions the forget set into causal and bias subsets via loss landscape sharpness analysis…
+  [AAAI2026][AI Safety][machine unlearning] Proposes the CUPID framework, which partitions the forget set into causal/bias subsets through loss landscape sharpness analysis, and identifies and disentangles the causal/bias pathways in the model. This achieves precise class unlearning on biased models, effectively resolving the "shortcut unlearning" issue.
 tags:
   - "AAAI2026"
   - "AI Safety"
@@ -12,149 +12,154 @@ tags:
   - "loss landscape"
   - "causal pathway"
 date: 2026-05-08
-content_hash: e9f345fd49137096
+content_hash: 40d368ddbb158937
 ---
 
 # Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026  
 **arXiv**: [2602.21773](https://arxiv.org/abs/2602.21773)  
-**Code**: To be confirmed  
-**Area**: AI Safety
+**Code**: TBD  
+**Area**: AI Safety  
 **Keywords**: machine unlearning, shortcut learning, data bias, loss landscape, causal pathway
 
 ## TL;DR
 
-This paper proposes the CUPID framework, which partitions the forget set into causal and bias subsets via loss landscape sharpness analysis, identifies and disentangles causal and bias pathways within the model, and achieves precise class-level unlearning on biased models — effectively addressing the shortcut unlearning problem.
+Proposes the CUPID framework, which partitions the forget set into causal/bias subsets through loss landscape sharpness analysis, and identifies and disentangles the causal/bias pathways in the model. This achieves precise class unlearning on biased models, effectively resolving the "shortcut unlearning" issue.
 
 ## Background & Motivation
 
-Machine unlearning aims to efficiently remove the influence of specific data from a pretrained model, in order to comply with privacy regulations such as the right to be forgotten. Existing methods generally assume that target information is separable in the model's parameter space; however, real-world data often contains spurious correlations — for instance, the class "waterbird" is highly correlated with "water" backgrounds. Models tend to exploit such shortcuts, causing class features and bias features to become deeply entangled.
+The goal of machine unlearning is to efficiently remove the influence of specific data from pretrained models to comply with privacy regulations such as the "right to be forgotten." Existing methods generally assume that target information is separable within the model parameters. However, real-world data often contains spurious correlations—for example, the "waterbird" class is highly correlated with "water surface" backgrounds. Models learn such shortcuts, leading to deep entanglement between class features and bias features.
 
-The authors are the first to systematically study the behavior of unlearning algorithms applied to biased models, and identify two key phenomena:
+The authors systematically investigate the behavior of unlearning algorithms on biased models for the first time, revealing two key phenomena:
 
-1. **"Easy to learn, hard to forget" asymmetry**: Bias-aligned samples (where spurious features are consistent with class labels) are learned fastest yet are the most difficult to unlearn; bias-conflicting samples, by contrast, are relatively easy to unlearn.
-2. **Counter-intuitive debiasing effect**: The unlearning process paradoxically improves accuracy on bias-conflicting samples of the target class.
+1. **"Easy-to-learn, hard-to-forget" asymmetry**: Bias-aligned samples (i.e., samples where spurious features match class labels) are learned fastest but are the hardest to forget; conversely, bias-conflicting samples are easy to forget.
+2. **Counter-intuitive debiasing effect**: The unlearning process abnormally improves the accuracy of bias-conflicting samples in the target class.
 
-These two phenomena jointly constitute what the authors define as **shortcut unlearning** — when asked to forget a target class, the model primarily erases spurious shortcut features rather than genuine causal class features.
+These two phenomena collectively constitute what the authors define as **shortcut unlearning**—when requested to forget the target class, the model primarily erases the spurious shortcut features rather than the actual causal class features.
 
 ## Core Problem
 
-How can an unlearning algorithm precisely erase causal class information when internal model representations are highly entangled, without taking the shortcut of merely erasing bias features? The core challenges include:
+How can an unlearning algorithm precisely erase causal class information, rather than taking a shortcut and erasing only bias features, when internal representations of the model are highly entangled? The key challenges include:
 
-- Distinguishing parameters that rely on causal features versus shortcut features within the model
-- Applying different update strategies to different parameter subsets
-- Accomplishing all of this without relying on a retain set, to accommodate privacy-constrained scenarios
+- Needing to distinguish parameters in the model that rely on causal features vs. shortcut features.
+- Needing to apply different update strategies to different parameter subsets.
+- The entire process should not rely on a retain set to accommodate privacy-constrained scenarios.
 
 ## Method
 
 CUPID (Causal Unlearning via Pathway Identification and Disentanglement) consists of three stages:
 
-### Stage 1: Sharpness-Aware Partitioning
+### Phase 1: Sharpness-Aware Partitioning (Sharpness-Based Partitioning)
 
-The core intuition stems from generalization theory: the model converges to flat minima (low curvature) for easy-to-learn bias-aligned samples, and resides in sharp regions (high curvature) for hard-to-learn bias-conflicting samples.
+The core intuition comes from generalization theory: the model converges to a flat minimum (low curvature) for "easy-to-learn" bias-aligned samples, while remaining in sharp regions (high curvature) for "hard-to-learn" bias-conflicting samples.
 
-For each sample in the forget set, local sharpness is computed as follows:
+Calculate local sharpness for each sample in the forget set:
 
-- An adversarial perturbation of step size $\eta$ is applied along the gradient direction: $\theta_{adv} = \theta_o + \eta \frac{\nabla L(\theta_o, x_i)}{\|\nabla L(\theta_o, x_i)\|}$
-- Sharpness is defined as the loss difference before and after perturbation: $\omega_{sharpness}(x_i) = L(\theta_{adv}, x_i) - L(\theta_o, x_i)$
+- First, apply an adversarial perturbation of step size $\eta$ along the gradient direction: $\theta_{adv} = \theta_o + \eta \frac{\nabla L(\theta_o, x_i)}{\|\nabla L(\theta_o, x_i)\|}$
+- Sharpness is defined as the difference in loss before and after perturbation: $\omega_{sharpness}(x_i) = L(\theta_{adv}, x_i) - L(\theta_o, x_i)$
 
-Using the top-$k$% sharpness threshold, the forget set is partitioned into:
+Based on a top-$k$% threshold of sharpness values, partition the forget set into:
 
 - $\mathcal{D}_f^{bias}$ (low sharpness, approximating bias-aligned samples)
 - $\mathcal{D}_f^{causal}$ (high sharpness, approximating bias-conflicting/causal samples)
 
-Experiments show that $k=5\%$ yields the best performance — purity is not monotonically beneficial; moderately including some bias-aligned samples regularizes the causal gradient direction.
+Experiments show that $k=5\%$ yields the best results—it is not "the purer, the better," as moderately including some bias-aligned samples can regularize the causal gradient direction.
 
-### Stage 2: Causal Pathway Identification
+### Phase 2: Causal Pathway Identification (Causal Pathway Identification)
 
-The goal is to decompose the model parameters $\theta_o$ into causal and bias pathways. For each parameter $\theta_{o,i}$, a causal mask is defined by combining its magnitude with the diagonal of the Hessian:
+The goal is to separate the model parameters $\theta_o$ into causal pathways and bias pathways. For each parameter $\theta_{o,i}$, a causal mask is defined by combining its magnitude and Hessian diagonal elements:
 
 $$m_c(\theta_{o,i}) = \mathbb{1}\left(\frac{1}{2}\theta_{o,i}^2 \cdot \mathbb{E}_{x \sim \mathcal{D}_f^{causal}}[H(\theta_o, x)_{ii}] \geq \tau_p\right)$$
 
-where $\tau_p$ is set to select the top 50% most influential parameters. This design draws on classical network pruning (LeCun et al. 1989), using parameter magnitude × second-order derivatives to measure parameter saliency. Parameters with $m_c=1$ constitute the causal pathway; the remainder form the bias pathway.
+where $\tau_p$ is set to select the top 50% most influential parameters. This design draws on classical network pruning concepts (LeCun et al. 1989), measuring parameter significance using parameter magnitude $\times$ second derivative. Parameters with $m_c=1$ constitute the causal pathways, while the rest form the bias pathways.
 
-### Stage 3: Targeted Pathway Update
+### Phase 3: Targeted Pathway Update (Targeted Pathway Update)
 
-Different gradient updates are applied to the two pathways:
+Apply different gradient updates to the two pathways:
 
-1. Compute the causal gradient direction $g_{causal}$ (mean gradient over $\mathcal{D}_f^{causal}$)
-2. Project the full forget-set gradient $g_f$ onto the causal direction: $g_{proj} = \frac{g_f \cdot g_{causal}}{\|g_{causal}\|^2} g_{causal}$
+1. Compute the causal gradient direction $g_{causal}$ (average gradient on $\mathcal{D}_f^{causal}$).
+2. Project the full forget set gradient $g_f$ onto the causal direction: $g_{proj} = \frac{g_f \cdot g_{causal}}{\|g_{causal}\|^2} g_{causal}$
 3. The orthogonal component serves as the bias gradient: $g_{bias} = g_f - g_{proj}$
 
-The final update rule is:
+Final update rule:
 
 $$\theta_{t+1} \leftarrow \theta_t + \alpha \cdot [(\omega_{sharpness} \cdot g_{proj} \odot m_c) + (g_{bias} \odot (1 - m_c))]$$
 
-- **Causal pathway** ($m_c=1$): Updated using the projected causal gradient, weighted by sample sharpness to impose stronger forgetting on harder samples.
-- **Bias pathway** ($m_c=0$): Updated using only the bias gradient, preventing inadvertent erasure of causal information.
+- Causal pathway ($m_c=1$): Updated using the projected causal gradient and weighted by sample sharpness, applying stronger unlearning force to "hard samples".
+- Bias pathway ($m_c=0$): Updated only with the bias gradient to avoid mistakenly deleting causal information.
 
 ## Key Experimental Results
 
-Evaluated on three biased datasets (training set bias ratio 99.5:0.5; test set 50:50):
+Evaluated on three biased datasets (training set bias ratio 99.5:0.5, test set 50:50):
 
-**Unlearning performance on the biased training set (Table 1)**:
+**Unlearning performance on biased training sets (Table 1)**:
 
 | Method | Waterbirds FA↓ | BAR FA↓ | NICO++ FA↓ |
-|--------|----------------|---------|------------|
-| Retrain (upper bound) | 0.00 | 0.00 | 0.00 |
+|------|----------------|---------|------------|
+| Retrain (Upper Bound) | 0.00 | 0.00 | 0.00 |
 | NegGrad | 34.96 | 58.59 | 22.33 |
 | DELETE | 18.42 | 34.86 | 27.84 |
 | **CUPID** | **6.91** | **7.70** | **7.71** |
 
-**Generalized unlearning on the unbiased test set (Table 2)**:
+**Generalized unlearning on unbiased test sets (Table 2)**:
 
 | Method | Waterbirds FA↓ | BAR FA↓ | NICO++ FA↓ |
-|--------|----------------|---------|------------|
+|------|----------------|---------|------------|
 | Retrain | 0.00 | 0.00 | 0.00 |
 | DELETE | 8.73 | 34.38 | 22.95 |
 | **CUPID** | **6.02** | **3.75** | **8.34** |
 
-CUPID achieves the lowest FA across all datasets, with the lowest $\triangle_{gap}$ and WGA, indicating the most balanced unlearning effect between bias-aligned and bias-conflicting sample groups.
+CUPID achieves the lowest FA across all datasets, and $\triangle_{gap}$ and WGA are also the lowest, indicating that the unlearning effect is most balanced between the bias-aligned and bias-conflicting sample groups.
 
 **Ablation Study (Table 3, Waterbirds)**:
 
 | Sharpness Partitioning | Pathway Identification | Targeted Update | FA↓ |
-|------------------------|----------------------|-----------------|-----|
+|----------|---------|---------|-----|
 | ✗ | ✗ | ✗ | 34.96 |
 | ✓ | ✗ | ✗ | 20.38 |
 | ✓ | ✓ | ✗ | 14.56 |
 | ✓ | ✓ | ✓ | **6.91** |
 
-Each component contributes incrementally and is indispensable.
+All three components contribute incrementally, and none can be omitted.
 
 ## Highlights & Insights
 
-- **Novel problem formulation**: The paper is the first to formally define the shortcut unlearning problem, revealing the "easy to learn, hard to forget" asymmetry and exposing fundamental failure modes of existing unlearning methods on biased data.
-- **Elegant method design**: Loss landscape geometry (flat vs. sharp regions) is leveraged as an unsupervised signal to differentiate sample types without requiring bias labels.
-- **No retain set required**: CUPID operates solely on the forget set, making it more practical in privacy-constrained scenarios.
-- **Substantial performance gains**: On the BAR dataset, CUPID achieves an FA of only 3.75%, compared to 30.26% for the next-best method — a remarkable margin.
-- **Grad-CAM visualizations** clearly demonstrate that CUPID shifts model attention away from spurious features, providing interpretable evidence of its effectiveness.
+- **Novel Problem Definition**: Formally introduces the shortcut unlearning problem for the first time, exposing the asymmetry of "easy-to-learn, hard-to-forget" and pointing out a fundamental failure mode of existing unlearning methods on biased data.
+- **Elegant Method Design**: Leverages loss landscape geometric properties (flat vs. sharp regions) as an unsupervised signal to distinguish sample types without requiring bias labels.
+- **No Retain Set Required**: CUPID operates using only the forget set, making it highly practical in privacy-restricted scenarios.
+- **Significant Performance**: Achieves an FA of only 3.75% on the BAR dataset, compared to 30.26% for the second-best method, showing a substantial performance gap.
+- **Clear Grad-CAM Visualization** clearly shows CUPID's attention shifting away from spurious features, validating the effectiveness of the method.
 
 ## Limitations & Future Work
 
-- Validated only on image classification tasks; NLP and generative model settings are not explored.
-- Computing the Hessian diagonal may become a computational bottleneck for large-scale models.
-- The sharpness threshold $k$ and pathway ratio $\tau_p$ require tuning and may need adjustment for different bias intensities.
-- Only single-attribute bias scenarios are considered; behavior under multiple co-existing biases remains unexplored.
-- Applicability to concept unlearning in LLMs (e.g., RLHF unlearning) is not discussed.
+- Only validated on image classification tasks, leaving NLP or generative models unexplored.
+- The computation cost of the Hessian diagonal might be a bottleneck on large-scale models.
+- The sharpness threshold $k$ and pathway ratio $\tau_p$ require tuning and may need different settings for different bias intensities.
+- Only considered scenarios with a single bias attribute; behavior under co-existing multiple biases remains unexplored.
+- The applicability to concept unlearning in LLMs (such as RLHF unlearning) was not discussed.
 
 ## Related Work & Insights
 
-- **NegGrad** (gradient negation): Performs poorly on biased data with FA as high as 34.96%, as gradient negation preferentially erases the most salient shortcut features.
-- **SALUN** (saliency-based unlearning): Attempts to selectively update key parameters but does not distinguish causal from bias pathways, and remains limited under biased data.
-- **Bad Teaching** (retain-set-free): Uses an incompetent teacher for distillation, but yields extremely high FA in biased settings (88.35% on Waterbirds).
-- **DELETE** (latest distillation-based method): The strongest baseline, yet still exhibits a notable $\triangle_{gap}$, indicating unbalanced forgetting.
+- **NegGrad** (direct gradient reversal): Performs poorly on biased data, with FA as high as 34.96%, because gradient reversal preferentially erases the most salient shortcut features.
+- **SALUN** (saliency-based unlearning): Attempts to select key parameters to update but does not distinguish between causal and bias pathways, remaining limited on biased data.
+- **Bad Teaching** (no retain set needed): Uses an incompetent teacher for distillation but exhibits extremely high FA in biased scenarios (88.35% on Waterbirds).
+- **DELETE** (state-of-the-art distillation method): Represents the strongest baseline but still suffers from a notable $\triangle_{gap}$, indicating imbalanced unlearning.
 
-CUPID's core advantage lies in elevating parameter selection from simple saliency analysis to the disentanglement of causal versus bias pathways — a distinction absent from all competing methods.
+The core advantage of CUPID lies in elevating "parameter selection" from mere saliency analysis to "causal vs. bias pathway" separation, which is absent in other methods.
 
-The sharpness-based approach to unsupervised sample differentiation has broad applicability and may extend to data cleaning and anomaly detection. The causal/bias pathway disentanglement framework may inspire future work in model debiasing. Conceptual overlap with parameter localization in model editing suggests opportunities for cross-domain inspiration. Finally, the shortcut unlearning problem serves as a cautionary note for discussions of unlearning capabilities in LLM safety alignment, where models may similarly erase only surface-level patterns.
+## Inspirations & Connections
+
+- The concept of utilizing loss landscape sharpness as an unsupervised signal to distinguish sample types has broad applicability and could be extended to areas such as data cleaning and anomaly detection.
+- The separation framework of "causal pathway vs. bias pathway" could inspire subsequent work in the direction of model debiasing.
+- It shares common ground with parameter localization concepts in the field of model editing, offering opportunities for cross-disciplinary insights.
+- The shortcut unlearning problem serves as a reminder: when discussing the "unlearning" capabilities of LLM safety alignment, we must remain vigilant about whether the model is merely forgetting superficial patterns.
 
 ## Rating
-- Novelty: 9/10 (first formalization of shortcut unlearning; profound problem insights)
-- Experimental Thoroughness: 8/10 (three datasets + ablation + visualization, but lacking NLP experiments)
-- Writing Quality: 9/10 (analysis-driven narrative structure is clear; figures and tables are persuasive)
-- Value: 8/10 (provides a solid foundation for unlearning under biased settings)
+- **Novelty**: 9/10 (First to formalize shortcut unlearning, providing deep insights into the problem)
+- **Experimental Thoroughness**: 8/10 (Evaluated on three datasets with ablations and visualizations, though lacking NLP experiments)
+- **Writing Quality**: 9/10 (Analysis-driven narrative structure with clear and highly persuasive charts)
+- **Value**: 8/10 (Establishes a solid foundation for the unlearning problem in biased scenarios)
 
 <!-- RELATED:START -->
 
@@ -162,11 +167,11 @@ The sharpness-based approach to unsupervised sample differentiation has broad ap
 
 ## Related Papers
 
+- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](../../ICLR2026/ai_safety/machine_unlearning_under_retainforget_entanglement.md)
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](../../ICLR2026/ai_safety/mitigating_privacy_risk_via_forget_set-free_unlearning.md)
 - [\[ICML 2026\] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning](../../ICML2026/ai_safety/how_hard_can_it_be_hardness-aware_multi-objective_unlearning.md)
+- [\[ICLR 2026\] Don't Shift the Trigger: Robust Gradient Ascent for Backdoor Unlearning](../../ICLR2026/ai_safety/dont_shift_the_trigger_robust_gradient_ascent_for_backdoor_unlearning.md)
 - [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
-- [\[NeurIPS 2025\] The Unseen Threat: Residual Knowledge in Machine Unlearning under Perturbed Samples](../../NeurIPS2025/ai_safety/the_unseen_threat_residual_knowledge_in_machine_unlearning_under_perturbed_sampl.md)
-- [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
-- [\[ICML 2026\] Two Blind Spots of Machine Unlearning: Over-unlearning and Prototype Relearning Attacks](../../ICML2026/ai_safety/unlearnings_blind_spots_over-unlearning_and_prototypical_relearning_attack.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Endpoints: Path-Centric Reasoning for Vectorized Off-Road Network Extraction
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Addressing the frequent fragmentation and incorrect connections of urban road models in wilderness/off-road scenarios, this paper proposes "path-centric" connectivity reasoning. Instead of relying solely on local features of two endpoints, the method samples multi-scale road evidence along the entire geodesic of candid
+  [CVPR 2026][Remote Sensing][Off-road extraction] Addressing the frequent fragmentation and incorrect connections of urban road models in wilderness/off-road scenarios, this paper proposes "path-centric" connectivity reasoning. Instead of relying solely on local features of two endpoints, the method samples multi-scale road evidence along the entire geodesic of candidate edges to determine connectivity. The authors also release WildRoad, the first intercontinental vectorized o…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Off-road extraction"
+  - "Path-centric reasoning"
+  - "Vectorized road network"
+  - "Geodesic features"
+  - "Remote sensing imagery"
 date: 2026-05-08
-content_hash: 60159af3bf0c5c49
+content_hash: 64951e4dbd93cef9
 ---
+
 # Beyond Endpoints: Path-Centric Reasoning for Vectorized Off-Road Network Extraction
 
 **Conference**: CVPR 2026  
@@ -131,10 +137,20 @@ Compared to **node-centric** methods (SAM-Road), MaGRoad is more robust to occlu
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction](roadgie_towards_a_global-scale_aerial_benchmark_for_generalizable_interactive_ro.md)
+- [\[ICML 2025\] Neural Augmented Kalman Filters for Road Network Assisted GNSS Positioning](../../ICML2025/remote_sensing/neural_augmented_kalman_filters_for_road_network_assisted_gnss_positioning.md)
+- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
+- [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
+- [\[CVPR 2026\] Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency](beyond_tie_points_satellite_image_block_adjustment_based_on_dense_feature_consis.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction](roadgie_towards_a_global-scale_aerial_benchmark_for_generalizable_interactive_ro.md)

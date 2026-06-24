@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Weights to Activations: Is Steering the Next Frontier of Adaptation?
 description: >-
-  [ACL 2026][Interpretability][steering] This paper systematically argues that steering (inference-time activation space intervention) should be considered an independent model adaptation paradigm. It proposes eight functional evaluation criteria to compare steering with traditional methods like fine-tuning, PEFT, and prompt engineering, positioning steering
+  [ACL 2026][Interpretability][Activation space intervention] This paper systematically argues that steering (inference-time activation space intervention) should be considered an independent model adaptation paradigm. It proposes eight functional evaluation criteria to compare steering with traditional methods like fine-tuning, PEFT, and prompt engineering, positioning steering as a locally reversible behavior modification method based on activation space with unique advantage…
 tags:
-  - ACL 2026
-  - Interpretability
-  - steering
+  - "ACL 2026"
+  - "Interpretability"
+  - "Activation space intervention"
+  - "Model adaptation taxonomy"
+  - "steering"
+  - "parameter efficient"
+  - "inference-time behavior modification"
 date: 2026-05-08
-content_hash: 3405d39a407b0354
+content_hash: 8dbfc31a5b8d3ab5
 ---
+
 # From Weights to Activations: Is Steering the Next Frontier of Adaptation?
 
 **Conference**: ACL 2026  
@@ -110,9 +115,9 @@ This is the conceptual landing point of the paper, condensing the three mechanis
 ## Related Papers
 
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
+- [\[ICLR 2026\] REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering](../../ICLR2026/interpretability/real_reading_out_transformer_activations_for_precise_localization_in_language_mo.md)
 - [\[ACL 2026\] Similarity-Distance-Magnitude Activations](similarity-distance-magnitude_activations.md)
 - [\[ICML 2025\] Concept-Based Unsupervised Domain Adaptation](../../ICML2025/interpretability/concept-based_unsupervised_domain_adaptation.md)
-- [\[CVPR 2025\] Learning on Model Weights using Tree Experts](../../CVPR2025/interpretability/learning_on_model_weights_using_tree_experts.md)
 - [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
 
 </div>

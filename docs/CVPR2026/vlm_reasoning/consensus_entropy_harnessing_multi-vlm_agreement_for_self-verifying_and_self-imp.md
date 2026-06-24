@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Consensus Entropy: Harnessing Multi-VLM Agreement for Self-Verifying and Self-Improving OCR
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes Consensus Entropy (CE), a training-free and model-agnostic metric that judges output reliability in an unsupervised manner by measuring whether OCR results from multiple VLMs converge. Based on this, the CE-OCR framework is built (consensus entropy-weighted ensemble + entropy threshold routing to a
+  [CVPR 2026][VLM Reasoning][OCR quality verification] This paper proposes Consensus Entropy (CE), a training-free and model-agnostic metric that judges output reliability in an unsupervised manner by measuring whether OCR results from multiple VLMs converge. Based on this, the CE-OCR framework is built (consensus entropy-weighted ensemble + entropy threshold routing to a stronger model), improving quality verification F1 by 42.1% compared to VLM-as-Judge and increasing OCR acc…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "OCR quality verification"
+  - "multi-model consensus"
+  - "entropy"
+  - "unsupervised"
+  - "adaptive routing"
 date: 2026-05-08
-content_hash: 189401103705a19d
+content_hash: e290ae838e0c04eb
 ---
+
 # Consensus Entropy: Harnessing Multi-VLM Agreement for Self-Verifying and Self-Improving OCR
 
 **Conference**: CVPR 2026  
@@ -148,15 +154,16 @@ Comparison with classic ensemble methods (3-VLM, average $\Delta$): ROVER's disc
 - Value: ⭐⭐⭐⭐⭐ Practical solution for unsupervised OCR quality control and data cleaning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2025\] Improving MLLM's Document Image Machine Translation via Synchronously Self-reviewing Its OCR Proficiency](../../ACL2025/multimodal_vlm/improving_mllms_document_image_machine_translation_via_synchronously_self-review.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)
-- [\[ICLR 2026\] Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models](../../ICLR2026/multimodal_vlm/self-aug_query_and_entropy_adaptive_decoding_for_large_vision-language_models.md)
-- [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/multimodal_vlm/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
-- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
+- [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](../../ICLR2026/vlm_reasoning/through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
+- [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/vlm_reasoning/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
+- [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](self-critical_distillation_network_for_video-based_commonsense_captioning.md)
 
 </div>
 

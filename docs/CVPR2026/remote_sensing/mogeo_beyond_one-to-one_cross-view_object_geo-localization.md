@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MOGeo: Beyond One-to-One Cross-View Object Geo-localization
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Addressing the unrealistic assumption that existing Cross-View Object Geo-localization (CVOGL) can only locate a single target per image, this paper proposes a new multi-target task CVMOGL and the accompanying CMLocation benchmark (25,520 image pairs, 63,888 instances). It designs MOGeo, an end-to-end method whose core
+  [CVPR 2026][Remote Sensing][Cross-View Localization] Addressing the unrealistic assumption that existing Cross-View Object Geo-localization (CVOGL) can only locate a single target per image, this paper proposes a new multi-target task CVMOGL and the accompanying CMLocation benchmark (25,520 image pairs, 63,888 instances). It designs MOGeo, an end-to-end method whose core is to ground each query target into sharp attention peaks using Dirac-like one-hot position encoding…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Localization"
+  - "Multi-Object"
+  - "Impulse Position Encoding"
+  - "Satellite-Ground Matching"
+  - "Attention"
 date: 2026-05-08
-content_hash: f6fcbffa8883907f
+content_hash: c3a0d23d888a6f3b
 ---
+
 # MOGeo: Beyond One-to-One Cross-View Object Geo-localization
 
 **Conference**: CVPR 2026  
@@ -141,7 +147,7 @@ Image-level CVGL methods (FRGeo 8.06 / GeoDTR+ 7.44 / Sample4Geo 29.19 in acc@0.
 - [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
 - [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
 - [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
-- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
+- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 
 </div>
 

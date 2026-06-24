@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations
 description: >-
-  [AAAI 2026][Human Understanding][Eye Gaze Analysis] This paper proposes GazeInterpreter, an LLM-based hierarchical framework that converts raw gaze signals into textual narrations via a symbolic gaze parser…
+  [AAAI 2026][Human Understanding][Eye Gaze Analysis] This paper proposes GazeInterpreter, an LLM-based hierarchical framework that converts raw gaze signals into textual narrations via a symbolic gaze parser, integrates them with body motion narrations to produce eye-body-coordinated descriptions, and iteratively refines outputs through a self-correction loop, yielding significant improvements on downstream tasks including text-driven motion generation, action prediction…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Fusion"
   - "Motion Generation"
 date: 2026-05-08
-content_hash: 7e206fb028ea6aa1
+content_hash: 427c3bcea18d862a
 ---
 
 # GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations
@@ -190,10 +190,10 @@ The introduction of each evaluation dimension yields cumulative performance gain
 ## Related Papers
 
 - [\[AAAI 2026\] Toward Gaze Target Detection in Young Autistic Children](toward_gaze_target_detection_of_young_autistic_children.md)
-- [\[CVPR 2026\] ViBES: A Conversational Agent with Behaviorally-Intelligent 3D Virtual Body](../../CVPR2026/human_understanding/vibes_a_conversational_agent_with_behaviorally_intelligent_3d_virtual_body.md)
-- [\[ICCV 2025\] Multi-view Gaze Target Estimation](../../ICCV2025/human_understanding/multi-view_gaze_target_estimation.md)
-- [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](../../CVPR2026/human_understanding/cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[NeurIPS 2025\] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild](../../NeurIPS2025/human_understanding/omnigaze_reward-inspired_generalizable_gaze_estimation_in_the_wild.md)
+- [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](../../CVPR2026/human_understanding/hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
+- [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](../../CVPR2026/human_understanding/sam_3d_body_robust_full-body_human_mesh_recovery.md)
+- [\[CVPR 2026\] CoordSpeaker: Exploiting Gesture Captioning for Coordinated Caption-Empowered Co-Speech Gesture Generation](../../CVPR2026/human_understanding/coordspeaker_exploiting_gesture_captioning_for_coordinated_caption-empowered_co-.md)
+- [\[ICLR 2026\] Interaction-aware Representation Modeling With Co-Occurrence Consistency for Egocentric Hand-Object Parsing](../../ICLR2026/human_understanding/interaction-aware_representation_modeling_with_co-occurrence_consistency_for_ego.md)
 
 </div>
 

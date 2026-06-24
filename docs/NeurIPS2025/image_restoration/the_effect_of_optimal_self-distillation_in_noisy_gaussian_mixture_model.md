@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model
 description: >-
-  [NeurIPS 2025][Image Restoration][Self-distillation] This paper presents a rigorous theoretical analysis of hyperparameter-optimized multi-stage self-distillation on noisy Gaussian mixture data using the replica method f…
+  [NeurIPS 2025][Image Restoration][Self-distillation] This paper presents a rigorous theoretical analysis of hyperparameter-optimized multi-stage self-distillation on noisy Gaussian mixture data using the replica method from statistical physics. It reveals that the denoising effect of hard pseudo-labels is the primary driver of performance gains in self-distillation, that moderate-sized datasets benefit the most, and proposes two practical improvement strategies—early stopping…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -13,7 +13,7 @@ tags:
   - "pseudo-labels"
   - "denoising"
 date: 2026-05-08
-content_hash: 712197eac1d9c674
+content_hash: f12bcf45fe425d12
 ---
 
 # The Effect of Optimal Self-Distillation in Noisy Gaussian Mixture Model
@@ -124,11 +124,11 @@ Noisy Gaussian mixture data → binary classification with a linear classifier �
 
 ## Related Papers
 
+- [\[CVPR 2025\] Generalized Recorrupted-to-Recorrupted: Self-Supervised Learning Beyond Gaussian Noise](../../CVPR2025/image_restoration/generalized_recorrupted-to-recorrupted_self-supervised_learning_beyond_gaussian_.md)
+- [\[ACL 2025\] A Self-Denoising Model for Robust Few-Shot Relation Extraction](../../ACL2025/image_restoration/a_self-denoising_model_for_robust_few-shot_relation_extraction.md)
 - [\[ICCV 2025\] Blind Noisy Image Deblurring Using Residual Guidance Strategy](../../ICCV2025/image_restoration/blind_noisy_image_deblurring_using_residual_guidance_strateg.md)
 - [\[NeurIPS 2025\] MoE-Gyro: Self-Supervised Over-Range Reconstruction and Denoising for MEMS Gyroscopes](moe-gyro_self-supervised_over-range_reconstruction_and_denoising_for_mems_gyrosc.md)
-- [\[CVPR 2026\] MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](../../CVPR2026/image_restoration/motionaware_animatable_gaussian_avatars_deblurring.md)
-- [\[ICML 2026\] UOTIP: Unbalanced Optimal Transport Mapping for Unpaired Inverse Problems](../../ICML2026/image_restoration/uotip_unbalanced_optimal_transport_map_for_unpaired_inverse_problems.md)
-- [\[ICCV 2025\] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement](../../ICCV2025/image_restoration/towards_a_universal_image_degradation_model_via_content-degradation_disentanglem.md)
+- [\[ICLR 2026\] Pixel to Gaussian: Ultra-Fast Continuous Super-Resolution with 2D Gaussian Modeling](../../ICLR2026/image_restoration/pixel_to_gaussian_ultra-fast_continuous_super-resolution_with_2d_gaussian_modeli.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReMatch: Boosting Representation through Matching for Multimodal Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM embedding] ReMatch fine-tunes Multi-modal Large Language Models (MLLMs) as embedding models by appending a "chat-style Yes/No matching" task and a "multi-learnable token" representation. This allows generative capabilities to provide instance-level discriminative signals for retrieval embeddings, achieving a new SOTA on MMEB with
+  [CVPR 2026][Multimodal VLM][Multimodal retrieval] ReMatch fine-tunes Multi-modal Large Language Models (MLLMs) as embedding models by appending a "chat-style Yes/No matching" task and a "multi-learnable token" representation. This allows generative capabilities to provide instance-level discriminative signals for retrieval embeddings, achieving a new SOTA on MMEB with almost zero additional inference cost.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM embedding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal retrieval"
+  - "MLLM embedding"
+  - "generative matching"
+  - "learnable tokens"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: b85d4206d7af84a9
+content_hash: 7c6aca493d6be685
 ---
+
 # ReMatch: Boosting Representation through Matching for Multimodal Retrieval
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Ours outperformed benchmarks of similar size by +1.1% (B3++-2B), +2.7% (MoCa-3B)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching](eliciting_complex_spatial_reasoning_in_mllms_through_wide-baseline_matching.md)
+- [\[CVPR 2026\] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)
 - [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
-- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
 - [\[CVPR 2026\] MOON2.0: Dynamic Modality-balanced Multimodal Representation Learning for E-commerce Product Understanding](moon20_dynamic_modality-balanced_multimodal_representation_learning_for_e-commer.md)
-- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
+- [\[ACL 2025\] Maximal Matching Matters: Preventing Representation Collapse for Robust Cross-Modal Retrieval](../../ACL2025/multimodal_vlm/maximal_matching_matters_preventing_representation_collapse_for_robust_cross-mod.md)
+- [\[CVPR 2026\] Guiding Diffusion-based Reconstruction with Contrastive Signals for Balanced Visual Representation](guiding_diffusion-based_reconstruction_with_contrastive_signals_for_balanced_vis.md)
 
 </div>
 

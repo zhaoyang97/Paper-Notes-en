@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions
 description: >-
-  [ICLR 2026][Audio & Speech][DPO] FlexiVoice utilizes an LLM backbone to simultaneously process text, style instructions, and timbre reference speech. Through a three-stage progressive post-training process comprising "DPO → Decoupling GRPO → Instruction GRPO," it specifically addresses the challenge of style-timbre-content entanglement, enabling zero-
+  [ICLR 2026][Audio & Speech][Zero-shot TTS] FlexiVoice utilizes an LLM backbone to simultaneously process text, style instructions, and timbre reference speech. Through a three-stage progressive post-training process comprising "DPO → Decoupling GRPO → Instruction GRPO," it specifically addresses the challenge of style-timbre-content entanglement, enabling zero-shot TTS to accurately follow natural language style instructions while maintaining stable timbre cloning.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - DPO
-  - GRPO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Zero-shot TTS"
+  - "Natural Language Instruction Control"
+  - "Style-Timbre Decoupling"
+  - "DPO"
+  - "GRPO"
+  - "Progressive Post-Training"
 date: 2026-05-08
-content_hash: 34d87f08df066516
+content_hash: ee2facdd021079bb
 ---
+
 # FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions
 
 **Conference**: ICLR 2026  

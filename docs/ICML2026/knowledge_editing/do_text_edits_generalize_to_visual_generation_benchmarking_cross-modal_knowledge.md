@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Do Text Edits Generalize to Visual Generation? Benchmarking Cross-Modal Knowledge Editing in UMMs
 description: >-
-  [ICML 2026][Knowledge Editing][Paper Note] This paper proposes UniKE—the first "cross-modal knowledge editing" benchmark for Unified Multimodal Models (UMMs) (2,971 editing subjects, 5,535 VQA-verifiable instances). It systematically reveals a modality gap where the "text-side editing success rate is ~92%, yet image generation VQA is only ~18.5%." By using a "r
+  [ICML 2026][Knowledge Editing][cross-modal transfer] This paper proposes UniKE—the first "cross-modal knowledge editing" benchmark for Unified Multimodal Models (UMMs) (2,971 editing subjects, 5,535 VQA-verifiable instances). It systematically reveals a modality gap where the "text-side editing success rate is ~92%, yet image generation VQA is only ~18.5%." By using a "reasoning-augmented parameter editing" protocol, it increases VQA accuracy by up to 18.6 percentage points a…
 tags:
-  - ICML 2026
-  - Knowledge Editing
+  - "ICML 2026"
+  - "Knowledge Editing"
+  - "cross-modal transfer"
+  - "unified multimodal models"
+  - "reasoning augmentation"
+  - "conditioning path"
 date: 2026-05-08
-content_hash: 39591be94d0ead6e
+content_hash: 17cddc7b78bf1a0a
 ---
+
 # Do Text Edits Generalize to Visual Generation? Benchmarking Cross-Modal Knowledge Editing in UMMs
 
 **Conference**: ICML 2026  
@@ -110,6 +115,7 @@ Ovis-U1 has the weakest implicit drift at the LLM output (filtered by projection
 - Value: ⭐⭐⭐⭐⭐ Establishes a benchmark for the new UMM editing track and provides a strong training-free baseline and clear research directions.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

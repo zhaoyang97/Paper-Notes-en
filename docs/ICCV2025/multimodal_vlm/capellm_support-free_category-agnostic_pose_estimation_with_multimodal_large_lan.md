@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Category-agnostic pose estimation] This work is the first to introduce multimodal large language models (MLLMs) into category-agnostic pose estimation (CAPE)…
+  [ICCV 2025][Multimodal VLM][Category-agnostic pose estimation] This work is the first to introduce multimodal large language models (MLLMs) into category-agnostic pose estimation (CAPE), enabling keypoint localization for arbitrary categories using only a query image and textual descriptions—without requiring traditional support images or annotations—surpassing the 5-shot state-of-the-art on the MP-100 benchmark.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "keypoint detection"
   - "distribution modeling"
 date: 2026-05-08
-content_hash: e32c3a658bf73de7
+content_hash: bf8aa0b0d70111bd
 ---
 
 # CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models
@@ -49,7 +49,7 @@ CapeLLM consists of three core components: (1) a DINOv2 visual encoder for image
 
 1. **Floating-Point Decoding**:
    Coordinates are generated directly in the format `[0.abc, 0.def]`, with each decimal digit predicted as an independent token. For a scalar value $y$, the prediction is approximated via autoregressive factorization over $K=3$ digit tokens:
-   $$p(y|\mathbf{x}) \approx \prod_{k=1}^{K} p_{\phi,\theta}(\mathbf{Y}_k | \mathbf{x}, \mathbf{Y}_1, ..., \mathbf{Y}_{k-1})$$
+    $p(y|\mathbf{x}) \approx \prod_{k=1}^{K} p_{\phi,\theta}(\mathbf{Y}_k | \mathbf{x}, \mathbf{Y}_1, ..., \mathbf{Y}_{k-1})$
    This is equivalent to modeling a truncated conditional density at precision $10^{-K}$, offering greater flexibility than Gaussian parameterization. It implicitly models arbitrary probability distributions, avoiding the limitations of fixed-variance Gaussians (e.g., keypoints at object boundaries should not spread probability mass into the background).
 
 2. **Instruction Design**:
@@ -139,9 +139,9 @@ CapeLLM consists of three core components: (1) a DINOv2 visual encoder for image
 
 - [\[ICCV 2025\] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs](autocompose_automatic_generation_of_pose_transition_descriptions_for_composed_po.md)
 - [\[ICCV 2025\] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval](bidirectional_likelihood_estimation_with_multi-modal_large_language_models_for_t.md)
+- [\[ICCV 2025\] Visual-Oriented Fine-Grained Knowledge Editing for MultiModal Large Language Models](visual-oriented_fine-grained_knowledge_editing_for_multimodal_large_language_mod.md)
 - [\[ICCV 2025\] BASIC: Boosting Visual Alignment with Intrinsic Refined Embeddings in Multimodal Large Language Models](basic_boosting_visual_alignment_with_intrinsic_refined_embeddings_in_multimodal_.md)
 - [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
-- [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi_holmes_towards_explainable_and_generalizable_ai_generated_image_detection_via_mllm.md)
 
 </div>
 

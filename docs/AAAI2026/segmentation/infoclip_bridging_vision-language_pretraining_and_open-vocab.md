@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer
 description: >-
-  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes InfoCLIP, which adopts an information-theoretic perspective to design two objectives—information bottleneck compression and mutual info…
+  [AAAI 2026][Segmentation][Open-vocabulary semantic segmentation] This paper proposes InfoCLIP, which adopts an information-theoretic perspective to design two objectives—information bottleneck compression and mutual information distillation—to remove noise in pretrained pixel-text alignment and preserve semantic alignment knowledge during CLIP fine-tuning. InfoCLIP achieves state-of-the-art results across six open-vocabulary semantic segmentation benchmarks (A-847: 16.6…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "mutual information distillation"
   - "modality alignment"
 date: 2026-05-08
-content_hash: 2fa8d2856400acb0
+content_hash: 9f050400da8c88d5
 ---
 
 # InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer
@@ -99,10 +99,10 @@ InfoCLIP outperforms MAFT+ (ViT-L) by 8.4% on PC-459 and 4.5% on PC-59. Training
 ## Related Papers
 
 - [\[AAAI 2026\] Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective](target_refocusing_via_attention_redistribution_for_open-vocabulary_semantic_segm.md)
+- [\[ICML 2025\] InfoSAM: Fine-Tuning the Segment Anything Model from An Information-Theoretic Perspective](../../ICML2025/segmentation/infosam_fine-tuning_the_segment_anything_model_from_an_information-theoretic_per.md)
+- [\[ECCV 2024\] SiLC: Improving Vision Language Pretraining with Self-Distillation](../../ECCV2024/segmentation/silc_improving_vision_language_pretraining_with_self-distillation.md)
+- [\[CVPR 2026\] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation](../../CVPR2026/segmentation/seeing_both_sides_towards_bidirectional_semantic_alignment_for_open-vocabulary_c.md)
 - [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[NeurIPS 2025\] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation](../../NeurIPS2025/segmentation/langhops_language_grounded_hierarchical_open-vocabulary_part_segmentation.md)
 
 </div>
 

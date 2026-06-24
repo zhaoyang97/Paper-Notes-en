@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MOAI: Module-Optimizing Architecture for Non-Interactive Secure Transformer Inference
 description: >-
-  [ICLR 2026][LLM Safety][CKKS] MOAI utilizes a "column packing + diagonal packing inter-layer consistency" evaluation flow and rotation-free Softmax/LayerNorm algorithms to minimize expensive HE rotation operations in pure FHE non-interactive Transformer inference. In a BERT-base model, MOAI reduces the total matrix multiplication rotations to 9648
+  [ICLR 2026][LLM Safety][Fully Homomorphic Encryption (FHE)] MOAI utilizes a "column packing + diagonal packing inter-layer consistency" evaluation flow and rotation-free Softmax/LayerNorm algorithms to minimize expensive HE rotation operations in pure FHE non-interactive Transformer inference. In a BERT-base model, MOAI reduces the total matrix multiplication rotations to 9648 and eliminates Softmax/LayerNorm rotations entirely, achieving a 52.8% end-to-end speedup over the s…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - CKKS
-  - rotation-free
-  - BERT
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Fully Homomorphic Encryption (FHE)"
+  - "CKKS"
+  - "Non-interactive Secure Inference"
+  - "Matrix Packing"
+  - "rotation-free"
+  - "BERT"
 date: 2026-05-08
-content_hash: 5e33798fee5b2ad5
+content_hash: 6a4682ea1a9b9879
 ---
+
 # MOAI: Module-Optimizing Architecture for Non-Interactive Secure Transformer Inference
 
 **Conference**: ICLR 2026  

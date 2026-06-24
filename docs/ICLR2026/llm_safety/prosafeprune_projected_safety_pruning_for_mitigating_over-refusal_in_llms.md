@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper attributes "over-refusal" in LLMs (refusing harmless instructions containing sensitive keywords) to a small set of "harmful-feature-amplifying" low-rank directions within parameters. By using SVD to decompose safety, harmful, and pseudo-harmful subspaces and designing an overlap operator to precisely locate
+  [ICLR 2026][LLM Safety][Over-refusal] This paper attributes "over-refusal" in LLMs (refusing harmless instructions containing sensitive keywords) to a small set of "harmful-feature-amplifying" low-rank directions within parameters. By using SVD to decompose safety, harmful, and pseudo-harmful subspaces and designing an overlap operator to precisely locate amplified harmful components in pseudo-harmful instructions, it performs low-rank pruning in the row space of discriminati…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Over-refusal"
+  - "Subspace Projection"
+  - "Low-rank Pruning"
+  - "Safety Alignment"
+  - "Hidden State Probing"
 date: 2026-05-08
-content_hash: 2cb1de18b82aafc8
+content_hash: 610b620a2a182386
 ---
+
 # ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs
 
 **Conference**: ICLR 2026  
@@ -152,9 +158,9 @@ On LLaMA-2-7B, ProSafePrune improves OR-Bench compliance to 73.0% (vs. 57.5% for
 
 - [\[ICLR 2026\] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation](dualedit_mitigating_safety_fallback_in_llm_backdoor_editing_via_affirmation-refu.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](../../ACL2026/llm_safety/please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
+- [\[ICLR 2026\] Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement](discern_truth_from_falsehood_reducing_over-refusal_via_contrastive_refinement.md)
+- [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
 - [\[ICLR 2026\] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](managerbench_evaluating_the_safety-pragmatism_trade-off_in_autonomous_llms.md)
-- [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
-- [\[ACL 2026\] DART: Mitigating Harm Drift in Difference-Aware LLMs via Distill-Audit-Repair Training](../../ACL2026/llm_safety/dart_mitigating_harm_drift_in_difference-aware_llms_via_distill-audit-repair_tra.md)
 
 </div>
 

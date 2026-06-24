@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation
 description: >-
-  [ICCV2025][3D Vision][dual-pixel] Sdirt proposes a ray-tracing-based dual-pixel (DP) image simulation framework that computes spatially varying DP PSFs incorporating lens aberrations and phase-splitting characteristics…
+  [ICCV2025][3D Vision][dual-pixel] Sdirt proposes a ray-tracing-based dual-pixel (DP) image simulation framework that computes spatially varying DP PSFs incorporating lens aberrations and phase-splitting characteristics, thereby bridging the domain gap between simulated and real DP data and improving the generalization of depth estimation models on real DP images.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "PSF simulation"
   - "domain gap"
 date: 2026-05-08
-content_hash: 13c4442df9b22f3c
+content_hash: 7d572b2016df4688
 ---
 
 # Simulating Dual-Pixel Images From Ray Tracing For Depth Estimation
@@ -156,10 +156,10 @@ The problem is clearly defined (DP simulation domain gap), the method is grounde
 ## Related Papers
 
 - [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](radiant_foam_real-time_differentiable_ray_tracing.md)
+- [\[CVPR 2025\] IRGS: Inter-Reflective Gaussian Splatting with 2D Gaussian Ray Tracing](../../CVPR2025/3d_vision/irgs_inter-reflective_gaussian_splatting_with_2d_gaussian_ray_tracing.md)
+- [\[CVPR 2026\] Stochastic Ray Tracing for the Reconstruction of 3D Gaussian Splatting](../../CVPR2026/3d_vision/stochastic_ray_tracing_for_the_reconstruction_of_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](../../CVPR2026/3d_vision/geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
-- [\[NeurIPS 2025\] DualFocus: Depth from Focus with Spatio-Focal Dual Variational Constraints](../../NeurIPS2025/3d_vision/dualfocus_depth_from_focus_with_spatio-focal_dual_variational_constraints.md)
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
-- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
 
 </div>
 

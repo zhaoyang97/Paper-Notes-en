@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment
 description: >-
-  [ICCV 2025][3D Vision][Compositional 3D Generation] This paper proposes REPARO, which generates compositional 3D assets from a single image by first reconstructing individual object meshes separately and then performing…
+  [ICCV 2025][3D Vision][Compositional 3D Generation] This paper proposes REPARO, which generates compositional 3D assets from a single image by first reconstructing individual object meshes separately and then performing layout alignment via optimal transport-based differentiable rendering.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Layout Alignment"
   - "Multi-Object Scene"
 date: 2026-05-08
-content_hash: 3780d14f4cb71ecc
+content_hash: b99dcdea5bea2c38
 ---
 
 # REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment
@@ -142,10 +142,10 @@ REPARO completes the full pipeline under a VRAM constraint of ≤8 GB, demonstra
 ## Related Papers
 
 - [\[ICCV 2025\] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di.md)
+- [\[ECCV 2024\] ComboVerse: Compositional 3D Assets Creation Using Spatially-Aware Diffusion Guidance](../../ECCV2024/3d_vision/comboverse_compositional_3d_assets_creation_using_spatially-aware_diffusion_guid.md)
 - [\[ICCV 2025\] LACONIC: A 3D Layout Adapter for Controllable Image Creation](laconic_a_3d_layout_adapter_for_controllable_image_creation.md)
 - [\[ICCV 2025\] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars](haircup_hair_compositional_universal_prior_for_3d_gaussian_avatars.md)
 - [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](radiant_foam_real-time_differentiable_ray_tracing.md)
-- [\[ICCV 2025\] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields](geoprog3d_compositional_visual_reasoning_for_city-scale_3d_language_fields.md)
 
 </div>
 

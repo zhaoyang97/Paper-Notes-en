@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization
 description: >-
-  [AAAI 2026][Model Compression][Quantization] SpecQuant proposes a two-stage quantization framework based on adaptive Fourier-domain decomposition: it first smoothly migrates activation outliers into weights…
+  [AAAI 2026][Model Compression][Quantization] SpecQuant proposes a two-stage quantization framework based on adaptive Fourier-domain decomposition: it first smoothly migrates activation outliers into weights, then suppresses high-frequency noise in the weights via channel-wise low-frequency Fourier truncation. On LLaMA-3 8B, W4A4 quantization achieves only 1.5% accuracy degradation, while delivering 2× speedup and 3× memory savings.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Ultra-Low-Bit"
   - "Fourier Truncation"
 date: 2026-05-08
-content_hash: 807e16810f3ba2e0
+content_hash: 6730056e6e1d23cb
 ---
 
 # SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization
@@ -178,11 +178,11 @@ SpecQuant is a two-stage framework:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](../../NeurIPS2025/model_compression/littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
 - [\[AAAI 2026\] QuantVSR: Low-Bit Post-Training Quantization for Real-World Video Super-Resolution](quantvsr_low-bit_post-training_quantization_for_real-world_video_super-resolutio.md)
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](../../ICML2026/model_compression/neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
-- [\[AAAI 2026\] Beyond Sharpness: A Flatness Decomposition Framework for Efficient Continual Learning](beyond_sharpness_a_flatness_decomposition_framework_for_efficient_continual_lear.md)
-- [\[ICML 2026\] LFQ: Logit-aware Final-block Quantization for Boosting the Generation Quality of Low-Bit Quantized LLMs](../../ICML2026/model_compression/lfq_logit-aware_final-block_quantization_for_boosting_the_generation_quality_of_.md)
+- [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](../../ICLR2026/model_compression/uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
 
 </div>
 

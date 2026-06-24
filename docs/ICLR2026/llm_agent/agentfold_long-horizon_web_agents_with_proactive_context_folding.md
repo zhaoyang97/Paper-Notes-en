@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AgentFold: Long-Horizon Web Agents with Proactive Context Folding
 description: >-
-  [ICLR 2026][LLM Agent][web agent] AgentFold treats the context of a web agent as a proactively carved "cognitive workspace." During reasoning, the agent outputs an additional "fold command" at each step to perform fine-grained condensation or multi-step deep consolidation of the historical trajectory. This keeps the context at approximately 7k tokens e
+  [ICLR2026][LLM Agent][Context Folding] AgentFold treats the context of a web agent as a proactively carved "cognitive workspace." During reasoning, the agent outputs an additional "fold command" at each step to perform fine-grained condensation or multi-step deep consolidation of the historical trajectory. This keeps the context at approximately 7k tokens even after 100 interaction rounds. A 30B model (with 3B activated) achieves 36.2% on BrowseComp…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - web agent
-  - Information Retrieval
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Context Folding"
+  - "Long-Horizon Tasks"
+  - "Web Agent"
+  - "Cognitive Workspace"
+  - "Information Retrieval"
 date: 2026-05-08
-content_hash: 4e9bf35c18f6abe5
+content_hash: e78dfd9e22d9b9fe
 ---
+
 # AgentFold: Long-Horizon Web Agents with Proactive Context Folding
 
 **Conference**: ICLR2026  
@@ -122,6 +126,7 @@ Evaluation spans across three information retrieval benchmarks (BrowseComp, Brow
 - Value: ⭐⭐⭐⭐⭐ (High practical value for 30B models beating 671B models)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

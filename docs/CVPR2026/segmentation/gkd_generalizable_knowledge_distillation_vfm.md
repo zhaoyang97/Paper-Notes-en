@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Knowledge Distillation] Ours proposes the GKD framework, which decouples representation learning from task learning using a multi-stage distillation process (general feature learning → freeze encoder → task head training) combined with a Query-based Soft Distillation (QSD) mechanism. By distilling cross-domain generalization capabilities from
+  [CVPR 2026][Segmentation][Knowledge Distillation] Ours proposes the GKD framework, which decouples representation learning from task learning using a multi-stage distillation process (general feature learning → freeze encoder → task head training) combined with a Query-based Soft Distillation (QSD) mechanism. By distilling cross-domain generalization capabilities from VFMs into lightweight student models, it achieves an average mIoU gain of +10.6% in F2L settings and +1.9% in…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Knowledge Distillation
-  - DINOv2
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Knowledge Distillation"
+  - "Vision Foundation Models"
+  - "Domain Generalizable Segmentation"
+  - "DINOv2"
+  - "Multi-stage Distillation"
 date: 2026-05-08
-content_hash: b1f08c9cca7fbdb1
+content_hash: 17720f89617f642c
 ---
+
 # GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -151,9 +155,9 @@ Distillation Stage: AdamW, lr=5e-4, weight decay 0.05. F2L Setup: ImageNet 100 e
 
 - [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
 - [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](../../AAAI2026/segmentation/causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
-- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
-- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
 - [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
+- [\[CVPR 2026\] Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation](brewing_stronger_features_dual-teacher_distillation_for_multispectral_earth_obse.md)
+- [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](../../ICLR2026/segmentation/how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
 
 </div>
 

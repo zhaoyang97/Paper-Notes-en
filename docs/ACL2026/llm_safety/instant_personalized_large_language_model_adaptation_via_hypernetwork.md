@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Instant Personalized Large Language Model Adaptation via Hypernetwork
 description: >-
-  [ACL 2026][LLM Safety][Hypernetwork] Profile-to-PEFT (P2P) utilizes a hypernetwork to directly map user profiles to personalized LoRA parameters. This avoids the need for OPPU to retrain adapters for each user, achieving faster, more scalable LLM personalization that generalizes to unseen users.
+  [ACL2026][LLM Safety][Personalized LLM] Profile-to-PEFT (P2P) utilizes a hypernetwork to directly map user profiles to personalized LoRA parameters. This avoids the need for OPPU to retrain adapters for each user, achieving faster, more scalable LLM personalization that generalizes to unseen users.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Hypernetwork
-  - LoRA
-  - PEFT
+  - "ACL2026"
+  - "LLM Safety"
+  - "Personalized LLM"
+  - "Hypernetwork"
+  - "LoRA"
+  - "PEFT"
+  - "User Profile"
 date: 2026-05-08
-content_hash: 56ed823ef1ab7450
+content_hash: 881afd986c2618c1
 ---
+
 # Instant Personalized Large Language Model Adaptation via Hypernetwork
 
 **Conference**: ACL2026  
@@ -147,8 +150,8 @@ P2P achieves the highest average classification Acc and generation R-1/R-L in th
 - [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
 - [\[ACL 2026\] TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards](trojail_trajectory-level_optimization_for_multi-turn_large_language_model_jailbr.md)
 - [\[ACL 2026\] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack](dualguard_dual-stream_large_language_model_watermarking_defense_against_paraphra.md)
-- [\[ACL 2026\] SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)
-- [\[ACL 2025\] Exploring Forgetting in Large Language Model Pre-Training](../../ACL2025/llm_safety/exploring_forgetting_in_large_language_model_pre-training.md)
+- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
+- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](../../ICLR2026/llm_safety/from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
 
 </div>
 

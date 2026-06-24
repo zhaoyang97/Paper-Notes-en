@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AlphaSAGE: Structure-Aware Alpha Mining via GFlowNets for Robust Exploration
 description: >-
-  [ICLR 2026][Reinforcement Learning][GFlowNets] AlphaSAGE reformulates formulaic alpha mining in quantitative stock selection from "Reinforcement Learning maximizing expected return" to "Generative Flow Networks (GFlowNets) sampling proportional to rewards." By incorporating an RGCN structural encoder and multifaceted dense rewards, the method discovers a collection
+  [ICLR 2026][Reinforcement Learning][alpha mining] AlphaSAGE reformulates formulaic alpha mining in quantitative stock selection from "Reinforcement Learning maximizing expected return" to "Generative Flow Networks (GFlowNets) sampling proportional to rewards." By incorporating an RGCN structural encoder and multifaceted dense rewards, the method discovers a collection of alpha factors that are simultaneously predictive, low-correlated, and structurally novel…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GFlowNets
-  - RGCN
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "alpha mining"
+  - "GFlowNets"
+  - "RGCN"
+  - "structure-aware"
+  - "diversity reward"
 date: 2026-05-08
-content_hash: c8c6697c58ea83a2
+content_hash: 9780023e81e0ff4b
 ---
+
 # AlphaSAGE: Structure-Aware Alpha Mining via GFlowNets for Robust Exploration
 
 **Conference**: ICLR 2026  

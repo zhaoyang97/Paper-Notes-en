@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn
 description: >-
-  [ICML 2026][LLM Reasoning][many-shot ICL] This paper systematically reveals that the "rules of thumb" for many-shot ICL in non-reasoning tasks **fail entirely** in CoT reasoning—similarity retrieval is actually harmful, and order sensitivity increases with the number of shots. The study reinterprets successful many-shot CoT as "in-context test-time learning" a
+  [ICML 2026][Reasoning][many-shot ICL] This paper systematically reveals that the "rules of thumb" for many-shot ICL in non-reasoning tasks **fail entirely** in CoT reasoning—similarity retrieval is actually harmful, and order sensitivity increases with the number of shots. The study reinterprets successful many-shot CoT as "in-context test-time learning" and proposes the CDS method, which orders demonstrations by embedding trajectory curvature…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - many-shot ICL
-  - chain-of-thought
-  - in-context test-time learning
-  - demonstration ordering
+  - "ICML 2026"
+  - "Reasoning"
+  - "many-shot ICL"
+  - "chain-of-thought"
+  - "in-context test-time learning"
+  - "demonstration ordering"
+  - "curvature regularization"
 date: 2026-05-08
-content_hash: b49dad9432aa320b
+content_hash: c47da25e7d969ca9
 ---
+
 # Many-Shot CoT-ICL: Making In-Context Learning Truly Learn
 
 **Conference**: ICML 2026  
@@ -121,16 +123,16 @@ CDS improvements on Qwen3 series:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2025\] CoT-ICL Lab: A Synthetic Framework for Studying Chain-of-Thought Learning from In-Context Demonstrations](../../ACL2025/llm_reasoning/cot-icl_lab_a_synthetic_framework_for_studying_chain-of-thought_learning_from_in.md)
 - [\[AAAI 2026\] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning](../../AAAI2026/llm_reasoning/llms_for_game_theory_entropy-guided_in-context_learning_and_adaptive_cot_reasoni.md)
-- [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
 - [\[ICLR 2026\] CoT-RVS: Zero-Shot Chain-of-Thought Reasoning Segmentation for Videos](../../ICLR2026/llm_reasoning/cot-rvs_zero-shot_chain-of-thought_reasoning_segmentation_for_videos.md)
 - [\[ICLR 2026\] Is In-Context Learning Learning?](../../ICLR2026/llm_reasoning/is_in-context_learning_learning.md)
+- [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
 
 </div>
 

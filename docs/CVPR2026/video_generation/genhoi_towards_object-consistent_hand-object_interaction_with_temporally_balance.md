@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection
 description: >-
-  [CVPR 2026][Human Understanding][Head-Sliding RoPE] GenHOI attaches a lightweight module of only 157M parameters (approx. 0.95%) to a pre-trained large video generation model (Wan-14B-I2V). By employing **Head-Sliding RoPE** (balancing the influence of reference object tokens across frames temporally) and **Spatial Attention Gating** (focusing object-conditioned attenti
+  [CVPR 2026][Video Generation][Hand-Object Interaction] GenHOI attaches a lightweight module of only 157M parameters (approx. 0.95%) to a pre-trained large video generation model (Wan-14B-I2V). By employing **Head-Sliding RoPE** (balancing the influence of reference object tokens across frames temporally) and **Spatial Attention Gating** (focusing object-conditioned attention on interaction zones spatially), it achieves natural hand-object interaction videos with consistent ob…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Head-Sliding RoPE
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Hand-Object Interaction"
+  - "Video Re-enactment"
+  - "Head-Sliding RoPE"
+  - "Spatial Attention Gating"
+  - "Object Consistency"
 date: 2026-05-08
-content_hash: 15d9853334c1ac71
+content_hash: ea4297096279cb55
 ---
+
 # GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection
 
 **Conference**: CVPR 2026  
@@ -144,16 +149,16 @@ Ablations under self-re-enactment (HCU as baseline):
 - Value: ⭐⭐⭐⭐ The lightweight adapter paradigm for HOI consistency is highly practical for e-commerce and digital human applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
-- [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised Human-Object Interaction Detection](regformer_transferable_relational_grounding_for_efficient_weakly-supervised_huma.md)
-- [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
-- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
+- [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
+- [\[CVPR 2026\] HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis](hvg-3d_bridging_real_and_simulation_domains_for_3d-conditional_hand-object_inter.md)
+- [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](physical_object_understanding_with_a_physically_controllable_world_model.md)
+- [\[CVPR 2026\] Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](ego-inbetween_generating_object_state_transitions_in_ego-centric_videos.md)
+- [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
 
 </div>
 

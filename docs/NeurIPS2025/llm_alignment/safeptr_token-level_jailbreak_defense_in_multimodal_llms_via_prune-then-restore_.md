@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism
 description: >-
-  [NeurIPS 2025][LLM Alignment][multimodal safety] By analyzing the propagation mechanism of harmful tokens in multimodal LLMs, this work finds that fewer than 1% of tokens trigger jailbreak behavior in early-to-middle lay…
+  [NeurIPS 2025][LLM Alignment][multimodal safety] By analyzing the propagation mechanism of harmful tokens in multimodal LLMs, this work finds that fewer than 1% of tokens trigger jailbreak behavior in early-to-middle layers. Based on this finding, the training-free SafePTR framework is proposed, which prunes harmful tokens at vulnerable layers and restores benign features in subsequent layers, significantly improving safety without sacrificing task performance.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "MLLM"
   - "training-free defense"
 date: 2026-05-08
-content_hash: 5a15072a7e3b3bf4
+content_hash: e032b4d5aa7dd643
 ---
 
 # SafePTR: Token-Level Jailbreak Defense in Multimodal LLMs via Prune-then-Restore Mechanism
@@ -152,11 +152,11 @@ SafePTR achieves performance close to the original model on MME and MM-Vet bench
 
 ## Related Papers
 
+- [\[ACL 2025\] Beyond Surface-Level Patterns: An Essence-Driven Defense Framework Against Jailbreak Attacks in LLMs](../../ACL2025/llm_alignment/beyond_surface-level_patterns_an_essence-driven_defense_framework_against_jailbr.md)
 - [\[ICLR 2026\] Reasoned Safety Alignment: Ensuring Jailbreak Defense via Answer-Then-Check](../../ICLR2026/llm_alignment/reasoned_safety_alignment_ensuring_jailbreak_defense_via_answer-then-check.md)
 - [\[NeurIPS 2025\] Short-length Adversarial Training Helps LLMs Defend Long-length Jailbreak Attacks](short-length_adversarial_training_helps_llms_defend_long-length_jailbreak_attack.md)
-- [\[NeurIPS 2025\] Attack via Overfitting: 10-shot Benign Fine-tuning to Jailbreak LLMs](attack_via_overfitting_10-shot_benign_fine-tuning_to_jailbreak_llms.md)
 - [\[NeurIPS 2025\] Mechanism Design for LLM Fine-tuning with Multiple Reward Models](mechanism_design_for_llm_fine-tuning_with_multiple_reward_models.md)
-- [\[ICCV 2025\] Heuristic-Induced Multimodal Risk Distribution Jailbreak Attack for Multimodal Large Language Models](../../ICCV2025/llm_alignment/heuristic-induced_multimodal_risk_distribution_jailbreak_attack_for_multimodal_l.md)
+- [\[ACL 2025\] T-REG: Preference Optimization with Token-Level Reward Regularization](../../ACL2025/llm_alignment/t-reg_preference_optimization_with_token-level_reward_regularization.md)
 
 </div>
 

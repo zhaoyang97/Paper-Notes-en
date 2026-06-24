@@ -4,14 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][Knowledge Distillation] The STAR framework is proposed to synergize Constrained Knowledge Distillation (CKD) and Similarity-guided Reinforcement Learning (Sim-RL). It effectively transfers the function calling capabilities of large models to super-tiny 0.6B models, significantly outperforming baselines on BFCL and ACEBench.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Reinforcement Learning
-  - Function Calling
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Reinforcement Learning"
+  - "Function Calling"
+  - "Super-tiny Models"
+  - "Similarity Reward"
 date: 2026-05-08
-content_hash: 0727f69a77d2a675
+content_hash: b8284fce7cb83ed9
 ---
+
 # STAR: Similarity-guided Teacher-Assisted Refinement for Super-Tiny Function Calling Models
 
 **Conference**: ICLR 2026  

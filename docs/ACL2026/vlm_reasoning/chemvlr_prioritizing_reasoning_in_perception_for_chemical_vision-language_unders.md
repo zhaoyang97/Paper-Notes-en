@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] ChemVLR is proposed as the first reasoning-based VLM in the chemical domain. It constructs a 760K reasoning dataset via a cross-modal reverse engineering strategy and employs a three-stage training pipeline (CPT-SFT-RL), significantly outperforming proprietary models and domain-specific VLMs in molecular recognition an
+  [ACL 2026 Findings][VLM Reasoning][Chemical Visual Understanding] ChemVLR is proposed as the first reasoning-based VLM in the chemical domain. It constructs a 760K reasoning dataset via a cross-modal reverse engineering strategy and employs a three-stage training pipeline (CPT-SFT-RL), significantly outperforming proprietary models and domain-specific VLMs in molecular recognition and reaction prediction.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Chemical Visual Understanding"
+  - "Reasoning VLM"
+  - "Cross-modal Reverse Engineering"
+  - "Three-stage Training"
+  - "Molecular Recognition"
 date: 2026-05-08
-content_hash: 48965fa80dc0e823
+content_hash: 914ec232d2b81335
 ---
+
 # ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding
 
 **Conference**: ACL 2026 Findings  
@@ -127,15 +133,15 @@ The RL stage utilizes DAPO (Decoupled Clip and Dynamic Sampling Policy Optimizat
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning](decoding_scientific_experimental_images_the_spur_benchmark_for_perception_unders.md)
 - [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
-- [\[ICCV 2025\] Understanding Museum Exhibits using Vision-Language Reasoning](../../ICCV2025/vlm_reasoning/understanding_museum_exhibits_using_vision-language_reasoning.md)
-- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](../../ICML2026/vlm_reasoning/bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
 - [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
+- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](../../CVPR2026/vlm_reasoning/pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
+- [\[ICCV 2025\] Understanding Museum Exhibits using Vision-Language Reasoning](../../ICCV2025/vlm_reasoning/understanding_museum_exhibits_using_vision-language_reasoning.md)
 
 </div>
 

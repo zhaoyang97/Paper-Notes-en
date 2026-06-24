@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Causal Analysis] This paper proposes Causal-Tune, a causality-driven VFM fine-tuning strategy that decomposes VFM features into causal (domain-invariant) and non-causal (domain-specific) compone…
+  [AAAI 2026][Segmentation][Causal Analysis] This paper proposes Causal-Tune, a causality-driven VFM fine-tuning strategy that decomposes VFM features into causal (domain-invariant) and non-causal (domain-specific) components via DCT frequency-domain transformation and Gaussian band-pass filtering. Learnable tokens are applied exclusively to the causal components for refinement, effectively suppressing VFM artifacts and improving generalization in domain generalized semantic se…
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Band-pass Filtering"
   - "Domain Generalized Segmentation"
 date: 2026-05-08
-content_hash: 1b046fe6682eb4e7
+content_hash: 000d400f355110e6
 ---
 
 # Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation
@@ -123,11 +123,11 @@ Standard cross-entropy loss for semantic segmentation. The VFM (DINOv2) is froze
 
 ## Related Papers
 
-- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
 - [\[AAAI 2026\] Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation](do_we_need_perfect_data_leveraging_noise_for_domain_generalized_segmentation.md)
+- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](../../CVPR2026/segmentation/selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
 - [\[ICCV 2025\] VSSD: Vision Mamba with Non-Causal State Space Duality](../../ICCV2025/segmentation/vssd_vision_mamba_with_non-causal_state_space_duality.md)
-- [\[AAAI 2026\] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation](bridging_granularity_gaps_hierarchical_semantic_learning_for_cross-domain_few-sh.md)
-- [\[AAAI 2026\] InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer](infoclip_bridging_vision-language_pretraining_and_open-vocab.md)
+- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
+- [\[ICLR 2026\] QPrompt-R1: Real-Time Reasoning for Domain-Generalized Semantic Segmentation via Group-Relative Query Alignment](../../ICLR2026/segmentation/qprompt-r1_real-time_reasoning_for_domain-generalized_semantic_segmentation_via_.md)
 
 </div>
 

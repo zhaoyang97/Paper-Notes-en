@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] PlaceIt3D: Language-Guided Object Placement in Real 3D Scenes
 description: >-
-  [3D Vision] This paper introduces PlaceIt3D, a language-guided object placement task in real 3D scenes, comprising a benchmark, a large-scale dataset…
+  [3D Vision] This paper introduces PlaceIt3D, a language-guided object placement task in real 3D scenes, comprising a benchmark, a large-scale dataset, and a 3D LLM-based baseline method called PlaceWizard that performs joint reasoning over scenes, objects, and natural language instructions.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: ac70a68878e238ff
+content_hash: 282aacd764042bc0
 ---
 
 # PlaceIt3D: Language-Guided Object Placement in Real 3D Scenes
@@ -166,8 +166,8 @@ Key findings:
 
 ## Related Papers
 
-- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/3d_vision/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
 - [\[ICCV 2025\] InstaScene: Towards Complete 3D Instance Decomposition and Reconstruction from Cluttered Scenes](instascene_towards_complete_3d_instance_decomposition_and_reconstruction_from_cl.md)
+- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/3d_vision/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
 - [\[ICCV 2025\] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization](memorytalker_personalized_speech-driven_3d_facial_animation_via_audio-guided_sty.md)
 - [\[ICCV 2025\] Demeter: A Parametric Model of Crop Plant Morphology from the Real World](demeter_a_parametric_model_of_crop_plant_morphology_from_the_real_world.md)
 - [\[ICCV 2025\] Relative Illumination Fields: Learning Medium and Light Independent Underwater Scenes](relative_illumination_fields_learning_medium_and_light_independent_underwater_sc.md)

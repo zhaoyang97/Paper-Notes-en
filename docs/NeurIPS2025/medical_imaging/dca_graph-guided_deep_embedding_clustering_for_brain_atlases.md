@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DCA: Graph-Guided Deep Embedding Clustering for Brain Atlases
 description: >-
-  [NeurIPS 2025][Medical Imaging][Brain atlas] DCA (Deep Cluster Atlas) proposes a graph-guided deep embedding clustering framework that combines voxel-level spatiotemporal embeddings from a pretrained Swin-UNETR with KNN…
+  [NeurIPS 2025][Medical Imaging][Brain atlas] DCA (Deep Cluster Atlas) proposes a graph-guided deep embedding clustering framework that combines voxel-level spatiotemporal embeddings from a pretrained Swin-UNETR with KNN graph spatial regularization. By aligning soft assignments with atlas clustering auxiliary labels via KL divergence, the framework generates functionally homogeneous and spatially contiguous individualized brain atlases. On the HCP dataset…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "graph regularization"
   - "individualized parcellation"
 date: 2026-05-08
-content_hash: 7be466f126b955d9
+content_hash: 467311a0534f3322
 ---
 
 # DCA: Graph-Guided Deep Embedding Clustering for Brain Atlases
@@ -151,11 +151,11 @@ DCA (Deep Cluster Atlas) proposes a graph-guided deep embedding clustering frame
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](../../CVPR2026/medical_imaging/spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
+- [\[ICLR 2026\] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders](../../ICLR2026/medical_imaging/a_brain_graph_foundation_model_pre-training_and_prompt-tuning_across_broad_atlas.md)
+- [\[NeurIPS 2025\] EvoBrain: Dynamic Multi-Channel EEG Graph Modeling for Time-Evolving Brain Networks](evobrain_dynamic_multi-channel_eeg_graph_modeling_for_time-evolving_brain_networ.md)
 - [\[NeurIPS 2025\] EEGReXferNet: A Lightweight Gen-AI Framework for EEG Subspace Reconstruction via Cross-Subject Transfer Learning and Channel-Aware Embedding](eegrexfernet_a_lightweight_gen-ai_framework_for_eeg_subspace_reconstruction_via_.md)
-- [\[NeurIPS 2025\] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology](semantic_and_visual_crop-guided_diffusion_models_for_heterogeneous_tissue_synthe.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
-- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](../../AAAI2026/medical_imaging/grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
+- [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
+- [\[CVPR 2026\] SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation](../../CVPR2026/medical_imaging/spegc_continual_test-time_adaptation_via_semantic-prompt-enhanced_graph_clusteri.md)
 
 </div>
 

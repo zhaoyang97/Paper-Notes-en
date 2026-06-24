@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation
 description: >-
-  [ICCV2025][LLM Safety][federated unlearning] This paper proposes FUCRT, a federated unlearning method based on class-aware representation transformation. Rather than directly erasing the representations of forget classes…
+  [ICCV2025][LLM Safety][federated unlearning] This paper proposes FUCRT, a federated unlearning method based on class-aware representation transformation. Rather than directly erasing the representations of forget classes, FUCRT transforms them toward the semantically nearest retain classes, and employs dual contrastive learning to align transformation consistency across clients. The method guarantees 100% unlearning on four datasets while maintaining or even improving perform…
 tags:
   - "ICCV2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "transformation alignment"
   - "Non-IID"
 date: 2026-05-08
-content_hash: a9241139fdff1e26
+content_hash: 09fd49b6bff8c546
 ---
 
 # Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation
@@ -146,10 +146,10 @@ Key findings:
 ## Related Papers
 
 - [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](../../ACL2026/llm_safety/safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
+- [\[ICML 2025\] Vulnerability-Aware Alignment: Mitigating Uneven Forgetting in Harmful Fine-Tuning](../../ICML2025/llm_safety/vulnerability-aware_alignment_mitigating_uneven_forgetting_in_harmful_fine-tunin.md)
 - [\[AAAI 2026\] Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion](../../AAAI2026/llm_safety/beyond_superficial_forgetting_thorough_unlearning_through_knowledge_density_esti.md)
-- [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](../../ACL2026/llm_safety/representation-guided_parameter-efficient_llm_unlearning.md)
-- [\[ICCV 2025\] Cooperative Pseudo Labeling for Unsupervised Federated Classification](cooperative_pseudo_labeling_for_unsupervised_federated_classification.md)
+- [\[ICLR 2026\] Unlearning Evaluation through Subset Statistical Independence](../../ICLR2026/llm_safety/unlearning_evaluation_through_subset_statistical_independence.md)
 
 </div>
 

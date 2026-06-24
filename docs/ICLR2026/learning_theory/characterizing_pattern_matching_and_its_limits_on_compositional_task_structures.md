@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Characterizing Pattern Matching and Its Limits on Compositional Task Structures
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper strictly formalizes "pattern matching" in LLMs as **functional equivalence**—where a model safely substitutes between two input fragments only if they are repeatedly observed to produce identical outputs in the same context. Based on this, it defines a decidable and falsifiable **coverage boundary**. It prov
+  [ICLR 2026][Learning Theory][Pattern Matching] This paper strictly formalizes "pattern matching" in LLMs as **functional equivalence**—where a model safely substitutes between two input fragments only if they are repeatedly observed to produce identical outputs in the same context. Based on this, it defines a decidable and falsifiable **coverage boundary**. It proves data scaling laws for compositional tasks and reveals a structural failure mode called "path ambiguity…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Compositional Generalization"
+  - "Pattern Matching"
+  - "Functional Equivalence"
+  - "Coverage Boundary"
+  - "Sample Complexity"
+  - "Path Ambiguity"
 date: 2026-05-08
-content_hash: 0cf1af2eefb82f92
+content_hash: 69a54656cf7453c5
 ---
+
 # Characterizing Pattern Matching and Its Limits on Compositional Task Structures
 
 **Conference**: ICLR 2026  
@@ -138,9 +145,9 @@ All models are trained from scratch using standard next-token prediction (GPT-2 
 ## Related Papers
 
 - [\[ICLR 2026\] Characterizing the Discrete Geometry of ReLU Networks](characterizing_the_discrete_geometry_of_relu_networks.md)
-- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] Towards Sampling Data Structures for Tensor Products in Turnstile Streams](towards_sampling_data_structures_for_tensor_products_in_turnstile_streams.md)
 - [\[ICLR 2026\] The Expressive Limits of Diagonal SSMs for State-Tracking](the_expressive_limits_of_diagonal_ssms_for_state-tracking.md)
-- [\[ICLR 2026\] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization](sharp_asymptotic_theory_for_q-learning_with_textttld2z_learning_rate_and_its_gen.md)
 - [\[ICLR 2026\] Neural Collapse in Multi-Task Learning](neural_collapse_in_multi-task_learning.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On Emergent Social World Models -- Evidence for Functional Integration of Theory of Mind and Pragmatic Reasoning in Language Models
 description: >-
-  [ACL 2026][Interpretability][Theory of Mind] This paper provides evidence through large-scale behavioral evaluation and cognitive neuroscience-inspired functional localization/ablation experiments that Theory of Mind (ToM) and pragmatic reasoning in language models likely share internal computational mechanisms. It advances the concept of "Social World Models" fr
+  [ACL2026][Interpretability][Theory of Mind] This paper provides evidence through large-scale behavioral evaluation and cognitive neuroscience-inspired functional localization/ablation experiments that Theory of Mind (ToM) and pragmatic reasoning in language models likely share internal computational mechanisms. It advances the concept of "Social World Models" from mere capability scores to a testable functional integration hypothesis.
 tags:
-  - ACL 2026
-  - Interpretability
-  - Theory of Mind
+  - "ACL2026"
+  - "Interpretability"
+  - "Theory of Mind"
+  - "Pragmatic Reasoning"
+  - "Functional Localization"
+  - "Causal Ablation"
+  - "Social World Models"
 date: 2026-05-08
-content_hash: 3247e23fcf1ffb40
+content_hash: 959722b611ef4435
 ---
+
 # On Emergent Social World Models -- Evidence for Functional Integration of Theory of Mind and Pragmatic Reasoning in Language Models
 
 **Conference**: ACL2026  
@@ -140,11 +145,20 @@ Granular analysis shows that not all localizers contribute equally. P1.1, P2.1, 
 - Value: ⭐⭐⭐⭐☆ Provides a rigorous framework for investigating high-level functional integration in LLMs.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](../../NeurIPS2025/interpretability/llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
+- [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] METER: Evaluating Multi-Level Contextual Causal Reasoning in Large Language Models](meter_evaluating_multi-level_contextual_causal_reasoning_in_large_language_model.md)
+- [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
+- [\[ACL 2026\] Sparse Feature Coactivation Reveals Causal Semantic Modules in Large Language Models](sparse_feature_coactivation_reveals_causal_semantic_modules_in_large_language_mo.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](../../NeurIPS2025/interpretability/llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Unified Federated Framework for Trajectory Data Preparation via LLMs
 description: >-
-  [ICLR 2026][Time Series][Paper Note] FedTDP unifies "Trajectory Data Preparation" (ten categories of tasks including denoising, completion, and map matching) into a cross-regional federated learning problem without sharing raw data. It utilizes a lightweight privacy autoencoder for data protection, a trajectory knowledge enhancer to transform general LLMs
+  [ICLR 2026][Time Series][Trajectory Data Preparation] FedTDP unifies "Trajectory Data Preparation" (ten categories of tasks including denoising, completion, and map matching) into a cross-regional federated learning problem without sharing raw data. It utilizes a lightweight privacy autoencoder for data protection, a trajectory knowledge enhancer to transform general LLMs into "trajectory cleaning brains" with spatio-temporal awareness, and parallel optimization to reduce com…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Trajectory Data Preparation"
+  - "Federated Learning"
+  - "Vertical Partitioning"
+  - "Privacy Protection"
+  - "LLM Fine-tuning"
 date: 2026-05-08
-content_hash: 18fb8be46cd22598
+content_hash: bf2494d1b0363498
 ---
+
 # A Unified Federated Framework for Trajectory Data Preparation via LLMs
 
 **Conference**: ICLR 2026  

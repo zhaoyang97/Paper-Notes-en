@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sampling Control for Imbalanced Calibration in Semi-Supervised Learning
 description: >-
-  [AAAI 2026][semi-supervised learning] This paper proposes SC-SSL, a framework that introduces an **expansion classifier** for decoupled sampling control to mitigate feature-level imbalance…
+  [AAAI 2026][semi-supervised learning] This paper proposes SC-SSL, a framework that introduces an **expansion classifier** for decoupled sampling control to mitigate feature-level imbalance, and leverages the **bias term** of a linear layer as an optimized bias vector to directly calibrate logits at inference time, achieving state-of-the-art performance across multiple data distribution settings.
 tags:
   - "AAAI 2026"
   - "semi-supervised learning"
@@ -11,7 +11,7 @@ tags:
   - "pseudo-labels"
   - "calibration"
 date: 2026-05-08
-content_hash: 97b60ec2414450fd
+content_hash: 4f7641639b2ca2b3
 ---
 
 # Sampling Control for Imbalanced Calibration in Semi-Supervised Learning
@@ -132,11 +132,11 @@ Results on ImageNet-127:
 
 ## Related Papers
 
+- [\[ECCV 2024\] Rebalancing Using Estimated Class Distribution for Imbalanced Semi-Supervised Learning under Class Distribution Mismatch](../../ECCV2024/others/rebalancing_using_estimated_class_distribution_for_imbalanced_semi-supervised_le.md)
 - [\[AAAI 2026\] Semi-Supervised High Dynamic Range Image Reconstructing via Bi-Level Uncertain Area Masking](semi-supervised_high_dynamic_range_image_reconstructing_via_bi-level_uncertain_a.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](../../NeurIPS2025/others/semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
 - [\[AAAI 2026\] Enhancing Control Policy Smoothness by Aligning Actions with Predictions from Preceding States](enhancing_control_policy_smoothness_by_aligning_actions_with_predictions_from_pr.md)
-- [\[AAAI 2026\] Deadline-Aware, Energy-Efficient Control of Domestic Immersion Hot Water Heaters](deadline-aware_energy-efficient_control_of_domestic_immersion_hot_water_heater.md)
+- [\[AAAI 2026\] Area-Optimal Control Strategies for Heterogeneous Multi-Agent Pursuit](area-optimal_control_strategies_for_heterogeneous_multi-agen.md)
 
 </div>
 

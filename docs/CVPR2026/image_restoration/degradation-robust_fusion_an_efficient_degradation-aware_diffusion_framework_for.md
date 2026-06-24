@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Aiming at multimodal image fusion where source images are commonly degraded by noise, blur, or low resolution in real-world scenarios, this paper transforms the diffusion model from "explicit noise prediction" to "direct regression of the fused image." It incorporates a "Joint Observation Correction" step within DDIM s
+  [CVPR 2026][Image Restoration][Degradation-aware diffusion] Aiming at multimodal image fusion where source images are commonly degraded by noise, blur, or low resolution in real-world scenarios, this paper transforms the diffusion model from "explicit noise prediction" to "direct regression of the fused image." It incorporates a "Joint Observation Correction" step within DDIM sampling, which integrates dual degradation constraints and fusion constraints into a single matrix.…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Degradation-aware diffusion"
+  - "image fusion"
+  - "joint observation constraint"
+  - "implicit denoising"
+  - "infrared-visible fusion"
 date: 2026-05-08
-content_hash: 5fad924b0d720362
+content_hash: 2bd7983c388a07a5
 ---
+
 # Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios
 
 **Conference**: CVPR 2026  
@@ -165,11 +171,11 @@ Removing the joint constraint leads to a general decline in all metrics, particu
 
 ## Related Papers
 
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 - [\[CVPR 2026\] MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)
-- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
-- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
+- [\[CVPR 2026\] Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)
+- [\[CVPR 2026\] SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging](sgde_self-supervised_geometry_degradation_estimation_framework_for_coded_apertur.md)
+- [\[CVPR 2026\] ZeroIDIR: Zero-Reference Illumination Degradation Image Restoration with Perturbed Consistency Diffusion Models](zeroidir_zero-reference_illumination_degradation_image_restoration_with_perturbe.md)
+- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 
 </div>
 

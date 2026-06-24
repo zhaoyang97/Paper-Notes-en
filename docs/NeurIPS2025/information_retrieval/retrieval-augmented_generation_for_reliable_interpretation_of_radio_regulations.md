@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper presents a dedicated RAG pipeline for radio regulations—a legally sensitive…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper presents a dedicated RAG pipeline for radio regulations—a legally sensitive, high-stakes domain—and introduces the first ITU radio regulation multiple-choice evaluation benchmark. The proposed system achieves 97% retrieval accuracy and an +11.9% QA accuracy gain over GPT-4o, substantially outperforming naive full-document insertion into the prompt.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Retrieval-Augmented Generation"
   - "ITU"
 date: 2026-05-08
-content_hash: f4df4abf7bdb3254
+content_hash: 493d07441e304eb3
 ---
 
 # Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations
@@ -135,9 +135,9 @@ No training is required—the entire pipeline is training-free: retrieval relies
 
 - [\[NeurIPS 2025\] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation](reliable_decision_making_via_calibration_oriented_retrieval_augmented_generation.md)
 - [\[NeurIPS 2025\] Chain-of-Retrieval Augmented Generation (CoRAG)](chain-of-retrieval_augmented_generation.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
 - [\[NeurIPS 2025\] HyperGraphRAG: Retrieval-Augmented Generation via Hypergraph-Structured Knowledge Representation](hypergraphrag_retrieval-augmented_generation_via_hypergraph-structured_knowledge.md)
 - [\[NeurIPS 2025\] Cooperative Retrieval-Augmented Generation for Question Answering: Mutual Information Exchange and Ranking by Contrasting Layers](cooperative_retrieval-augmented_generation_for_question_answering_mutual_informa.md)
+- [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](../../ACL2026/information_retrieval/authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
 
 </div>
 

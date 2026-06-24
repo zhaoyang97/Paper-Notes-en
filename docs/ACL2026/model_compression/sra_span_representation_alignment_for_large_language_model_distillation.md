@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SRA: Span Representation Alignment for Large Language Model Distillation
 description: >-
-  [ACL 2026][Model Compression][span alignment] SRA replaces the fragile token-level alignment unit in cross-tokenizer LLM distillation with tokenizer-agnostic text spans. By utilizing LCS character offset matching, attention-weighted center-of-mass representations, geometric structure regularization, and shared vocabulary span logit distillation, it consistently ou
+  [ACL 2026][Model Compression][Cross-tokenizer distillation] SRA replaces the fragile token-level alignment unit in cross-tokenizer LLM distillation with tokenizer-agnostic text spans. By utilizing LCS character offset matching, attention-weighted center-of-mass representations, geometric structure regularization, and shared vocabulary span logit distillation, it consistently outperforms ULD, MinED, DSKD, and MultiLevelOT across multiple teacher-student compression experiments…
 tags:
-  - ACL 2026
-  - Model Compression
-  - span alignment
-  - center of mass
+  - "ACL 2026"
+  - "Model Compression"
+  - "Cross-tokenizer distillation"
+  - "span alignment"
+  - "center of mass"
+  - "geometric regularization"
+  - "LLM compression"
 date: 2026-05-08
-content_hash: e82f8acc7129c8dc
+content_hash: 032deb400f7ac445
 ---
+
 # SRA: Span Representation Alignment for Large Language Model Distillation
 
 **Conference**: ACL 2026  
@@ -144,9 +148,9 @@ The overall objective is $L_{overall}=\alpha L_{CE}+(1-\alpha)(L_{HS}^{Span}+L_{
 
 - [\[ACL 2026\] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation](mta_multi-granular_trajectory_alignment_for_large_language_model_distillation.md)
 - [\[ACL 2026\] Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](alignment_tuning_for_large_language_models_a_data-centric_lens_on_alignment_data.md)
+- [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](../../ICLR2026/model_compression/knowledge_distillation_for_large_language_models_through_residual_learning.md)
 - [\[ACL 2025\] Quantification of Large Language Model Distillation](../../ACL2025/model_compression/quantification_of_large_language_model_distillation.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 
 </div>
 

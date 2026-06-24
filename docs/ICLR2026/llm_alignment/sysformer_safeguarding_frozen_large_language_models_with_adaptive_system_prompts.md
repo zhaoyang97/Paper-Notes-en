@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts
 description: >-
-  [ICLR 2026][Alignment & RLHF][system prompt] Proposes Sysformer, a lightweight Transformer module pluggable to the front-end of any frozen LLM. It adaptively transforms system prompts in the embedding space based on user input, enabling the model to reject harmful requests while responding normally to safe ones without modifying LLM parameters or filtering user i
+  [ICLR 2026][LLM Alignment][system prompt] Proposes Sysformer, a lightweight Transformer module pluggable to the front-end of any frozen LLM. It adaptively transforms system prompts in the embedding space based on user input, enabling the model to reject harmful requests while responding normally to safe ones without modifying LLM parameters or filtering user inputs.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - system prompt
-  - LLM safety
-  - jailbreak defense
-  - frozen model
-  - adaptive prompting
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "system prompt"
+  - "LLM safety"
+  - "jailbreak defense"
+  - "frozen model"
+  - "adaptive prompting"
 date: 2026-05-08
-content_hash: 58b90c53e9ab6bea
+content_hash: a29d5b5ab711f80c
 ---
+
 # Sysformer: Safeguarding Frozen Large Language Models with Adaptive System Prompts
 
 **Conference**: ICLR 2026  
@@ -159,8 +160,8 @@ Note: Trained on JailbreakBench and tested directly on StrongReject; performance
 - [\[ICLR 2026\] JULI: Jailbreak Large Language Models by Self-Introspection](juli_jailbreak_large_language_models_by_self-introspection.md)
 - [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
 - [\[ACL 2025\] Red Queen: Safeguarding Large Language Models against Concealed Multi-Turn Jailbreaking](../../ACL2025/llm_alignment/red_queen_safeguarding_large_language_models_against_concealed_multi-turn_jailbr.md)
-- [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
 - [\[ACL 2026\] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System](../../ACL2026/llm_alignment/ares_adaptive_red-teaming_and_end-to-end_repair_of_policy-reward_system.md)
+- [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaDrive: Self-Adaptive Slow-Fast System for Language-Grounded Autonomous Driving
 description: >-
-  [ICCV 2025][Autonomous Driving][Large Language Models] AdaDrive presents the first LLM-augmented autonomous driving framework with an adaptive slow-fast architecture. Two adaptive connectors dynamically determine *when t…
+  [ICCV 2025][Autonomous Driving][Large Language Models] AdaDrive presents the first LLM-augmented autonomous driving framework with an adaptive slow-fast architecture. Two adaptive connectors dynamically determine *when to activate the LLM* (Connector-W) and *how much the LLM contributes* (Connector-H), achieving SOTA performance on language-grounded driving benchmarks (driving score 80.9%) while reducing inference latency to 189ms and GPU memory to 6.79GB.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "Language-Grounded Driving"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: 125e45ef7bfcb5dd
+content_hash: b9aaae33a40105b9
 ---
 
 # AdaDrive: Self-Adaptive Slow-Fast System for Language-Grounded Autonomous Driving
@@ -141,9 +141,9 @@ AdaDrive adopts a parallel slow-fast dual-path architecture: the fast path (ligh
 
 - [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[CVPR 2026\] MeanFuser: Fast One-Step Multi-Modal Trajectory Generation and Adaptive Reconstruction via MeanFlow for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/meanfuser_fast_one-step_multi-modal_trajectory_generation_and_adaptive_reconstru.md)
+- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](../../CVPR2026/autonomous_driving/counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[ICCV 2025\] Hermes: A Unified Self-Driving World Model for Simultaneous 3D Scene Understanding and Generation](hermes_a_unified_self-driving_world_model_for_simultaneous_3d_scene_understandin.md)
 - [\[ICCV 2025\] ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models](eta_efficiency_through_thinking_ahead_a_dual_approach_to_self-driving_with_large.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 
 </div>
 

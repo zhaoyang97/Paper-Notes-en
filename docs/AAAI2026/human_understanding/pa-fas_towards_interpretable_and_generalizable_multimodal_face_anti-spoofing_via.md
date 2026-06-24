@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning
 description: >-
-  [AAAI 2026][Human Understanding][Face Anti-Spoofing] This paper proposes PA-FAS, a framework that addresses two critical bottlenecks of the SFT+RL paradigm in multimodal FAS — insufficient reasoning path diversity and re…
+  [AAAI 2026 Oral][Human Understanding][Face Anti-Spoofing] This paper proposes PA-FAS, a framework that addresses two critical bottlenecks of the SFT+RL paradigm in multimodal FAS — insufficient reasoning path diversity and reasoning shortcut — via a Reasoning Path Augmentation strategy and an answer shuffling mechanism, achieving the first unified solution for multimodal fusion, domain generalization, and interpretability simultaneously.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Human Understanding"
   - "Face Anti-Spoofing"
   - "Multimodal Fusion"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "Interpretability"
 date: 2026-05-08
-content_hash: 102c04fedf2ab1c3
+content_hash: be38212334cb36e6
 ---
 
 # PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning
@@ -178,9 +178,9 @@ PA-FAS maintains superior performance under missing modality conditions, demonst
 
 - [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](../../CVPR2026/human_understanding/from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
 - [\[ICCV 2025\] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing](../../ICCV2025/human_understanding/dadm_dual_alignment_of_domain_and_modality_for_face_anti-spoofing.md)
+- [\[ECCV 2024\] TF-FAS: Twofold-Element Fine-Grained Semantic Guidance for Generalizable Face Anti-Spoofing](../../ECCV2024/human_understanding/tf-fas_twofold-element_fine-grained_semantic_guidance_for_generalizable_face_ant.md)
 - [\[CVPR 2026\] FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing](../../CVPR2026/human_understanding/facecot_cot_reasoning_face_anti_spoofing.md)
-- [\[AAAI 2026\] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis](facial-r1_aligning_reasoning_and_recognition_for_facial_emotion_analysis.md)
-- [\[AAAI 2026\] GazeInterpreter: Parsing Eye Gaze to Generate Eye-Body-Coordinated Narrations](gazeinterpreter_parsing_eye_gaze_to_generate_eye-body-coordinated_narrations.md)
+- [\[CVPR 2025\] Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing](../../CVPR2025/human_understanding/optimal_transport-guided_source-free_adaptation_for_face_anti-spoofing.md)
 
 </div>
 

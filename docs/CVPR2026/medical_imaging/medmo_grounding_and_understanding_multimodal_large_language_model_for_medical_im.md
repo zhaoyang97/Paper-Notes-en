@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] MedMO utilizes Qwen3-VL as its base model and undergoes a four-stage post-training process using 26M+ cross-modal medical data: "General Medical SFT → High-resolution Grounding SFT → Instruction Tuning → GRPO Reinforcement Learning with Bounding Box Rewards." This approach unifies medical image understanding (VQA / QA
+  [CVPR 2026][Medical Imaging][Medical Multimodal Large Language Models] MedMO utilizes Qwen3-VL as its base model and undergoes a four-stage post-training process using 26M+ cross-modal medical data: "General Medical SFT → High-resolution Grounding SFT → Instruction Tuning → GRPO Reinforcement Learning with Bounding Box Rewards." This approach unifies medical image understanding (VQA / QA / Report Generation) and fine-grained spatial localization (Bbox grounding) into an open-…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical Multimodal Large Language Models"
+  - "Visual Grounding"
+  - "Multi-stage Post-training"
+  - "Bounding Box Reward"
+  - "Verifiable Reward Reinforcement Learning"
 date: 2026-05-08
-content_hash: 0e052189aa419fcb
+content_hash: 8d367bcc6fefce2a
 ---
+
 # MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images
 
 **Conference**: CVPR 2026  
@@ -127,7 +133,7 @@ Gains of MedMO relative to the base model and baselines across different tasks (
 - [\[CVPR 2026\] OralGPT-Omni: A Versatile Dental Multimodal Large Language Model](oralgpt-omni_a_versatile_dental_multimodal_large_language_model.md)
 - [\[CVPR 2026\] LLaDA-MedV: Exploring Large Language Diffusion Models for Biomedical Image Understanding](llada-medv_exploring_large_language_diffusion_models_for_biomedical_image_unders.md)
 - [\[CVPR 2026\] fMRI-LM: Towards a Universal Foundation Model for Language-Aligned fMRI Understanding](fmri-lm_towards_a_universal_foundation_model_for_language-aligned_fmri_understan.md)
-- [\[CVPR 2026\] LEMON: A Large Endoscopic MONocular Dataset and Foundation Model for Perception in Surgical Settings](lemon_a_large_endoscopic_monocular_dataset_and_foundation_model_for_perception_in.md)
+- [\[CVPR 2026\] MedLoc-R1: Performance-Aware Curriculum Reward Scheduling for GRPO-Based Medical Visual Grounding](medloc-r1_performance-aware_curriculum_reward_scheduling_for_grpo-based_medical_.md)
 
 </div>
 

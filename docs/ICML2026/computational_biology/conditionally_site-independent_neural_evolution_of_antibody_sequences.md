@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] CoSiNE: 条件位点独立的抗体序列神经进化模型
+  [Paper Note] CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] CoSiNE models the antibody affinity maturation process using a neural-parameterized conditional site-independent Continuous-Time Markov Chain (CTMC). It captures inter-site epistatic effects while maintaining tractability and enables antigen-specific antibody optimization via Guided Gillespie sampling, outperforming ex
+  [ICML2026][Computational Biology][Antibody Evolution] CoSiNE models the antibody affinity maturation process using a neural-parameterized conditional site-independent Continuous-Time Markov Chain (CTMC). It captures inter-site epistatic effects while maintaining tractability and enables antigen-specific antibody optimization via Guided Gillespie sampling, outperforming existing language and evolutionary models in zero-shot variant effect prediction.
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Antibody Evolution"
+  - "Continuous-Time Markov Chain"
+  - "Affinity Maturation"
+  - "Variant Effect Prediction"
+  - "Classifier-Guided Sampling"
 date: 2026-05-08
-content_hash: 8734c48273503274
+content_hash: d04f4109bb4ceb10
 ---
+
 # CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences
 
 **Conference**: ICML2026  
@@ -130,11 +136,11 @@ Ours achieves the best performance on 6 out of 7 datasets, notably taking a sign
 
 ## Related Papers
 
-- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
-- [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
-- [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](dnachunker_learnable_tokenization_for_dna_language_models.md)
-- [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
-- [\[ICML 2026\] From Feasible to Practical: Pareto-Optimal Synthesis Planning](from_feasible_to_practical_pareto-optimal_synthesis_planning.md)
+- [\[ICLR 2026\] Discovering heterogeneous synaptic plasticity rules via large-scale neural evolution](../../ICLR2026/computational_biology/discovering_heterogeneous_synaptic_plasticity_rules_via_large-scale_neural_evolu.md)
+- [\[ICML 2026\] STRIDE: Post-Training LLMs to Reason and Refine Bio-Sequences via Edit Trajectories](stride_post-training_llms_to_reason_and_refine_bio-sequences_via_edit_trajectori.md)
+- [\[CVPR 2026\] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](../../CVPR2026/computational_biology/mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)
+- [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
+- [\[ICML 2026\] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes](flow_sampling_learning_to_sample_from_unnormalized_densities_via_denoising_condi.md)
 
 </div>
 

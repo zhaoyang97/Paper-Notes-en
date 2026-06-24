@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] AHS overcomes the limitations of self-supervised training by utilizing a head reenactment model (GAGAvatar) to generate synthetic augmented data. Combined with a dual-encoder attention mechanism and an adaptive mask strategy, it achieves SOTA performance in head swapping tasks for full-body images.
+  [CVPR 2026][Image Generation][Head Swapping] AHS overcomes the limitations of self-supervised training by utilizing a head reenactment model (GAGAvatar) to generate synthetic augmented data. Combined with a dual-encoder attention mechanism and an adaptive mask strategy, it achieves SOTA performance in head swapping tasks for full-body images.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Head Swapping"
+  - "Data Augmentation"
+  - "Head Reenactment"
+  - "Diffusion Models"
+  - "Facial Synthesis"
 date: 2026-05-08
-content_hash: 5519a6bac9ff096e
+content_hash: 64c742172313edcd
 ---
+
 # AHS: Adaptive Head Synthesis via Synthetic Data Augmentations
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ Quantitative and qualitative evaluations demonstrate that AHS outperforms baseli
 ## Related Papers
 
 - [\[CVPR 2026\] ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets](chimeralora_multi-head_lora-guided_synthetic_datasets.md)
-- [\[CVPR 2026\] OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance](ontoaug_rethinking_generative_data_augmentation_via_ontology_guidance.md)
+- [\[CVPR 2026\] Head-wise Adaptive Rotary Positional Encoding for Fine-Grained Image Generation](head-wise_adaptive_rotary_positional_encoding_for_fine-grained_image_generation.md)
 - [\[CVPR 2026\] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data](dynavid_learning_to_generate_highly_dynamic_videos_using_synthetic_motion_data.md)
 - [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
-- [\[AAAI 2026\] Backdoors in Conditional Diffusion: Threats to Responsible Synthetic Data Pipelines](../../AAAI2026/image_generation/backdoors_in_conditional_diffusion_threats_to_responsible_synthetic_data_pipelin.md)
+- [\[CVPR 2026\] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)
 
 </div>
 

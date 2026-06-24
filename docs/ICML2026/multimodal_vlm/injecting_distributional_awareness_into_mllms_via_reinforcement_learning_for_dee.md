@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression
 description: >-
-  [ICML 2026][Multimodal VLM][GRPO] This work transforms the "regression to the mean" problem of MLLM continuous value regression under long-tailed distributions into a distribution-aware RL problem. Within the GRPO framework, the Concordance Correlation Coefficient (CCC) is utilized as a batch-level reward—evaluating correlation, variance, and mean simu
+  [ICML 2026][Multimodal VLM][MLLM Regression] This work transforms the "regression to the mean" problem of MLLM continuous value regression under long-tailed distributions into a distribution-aware RL problem. Within the GRPO framework, the Concordance Correlation Coefficient (CCC) is utilized as a batch-level reward—evaluating correlation, variance, and mean simultaneously—to explicitly penalize predictive distribution collapse. Across four long-tailed regression tasks using…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - GRPO
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "MLLM Regression"
+  - "Long-tailed Distribution"
+  - "GRPO"
+  - "Concordance Correlation Coefficient"
+  - "Batch-level Reward"
 date: 2026-05-08
-content_hash: e4c22b5ed4e44640
+content_hash: f4c073554edff1e2
 ---
+
 # Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression
 
 **Conference**: ICML 2026  
@@ -130,15 +135,15 @@ Best performance also observed on 7B: AgeDB All MAE 5.33 vs. SFT 5.82; Movie All
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
 - [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](../../CVPR2026/multimodal_vlm/imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
+- [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](../../ICLR2026/multimodal_vlm/mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
 - [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](../../CVPR2026/multimodal_vlm/tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
 - [\[ICML 2026\] Deep Pre-Alignment for VLMs](deep_pre-alignment_for_vlms.md)
-- [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
-- [\[CVPR 2026\] Learning to Focus and Precise Cropping: A Reinforcement Learning Framework with Information Gaps and Grounding Loss for MLLMs](../../CVPR2026/multimodal_vlm/learning_to_focus_and_precise_croppinga_reinforcement_learning_framework_with_in.md)
 
 </div>
 

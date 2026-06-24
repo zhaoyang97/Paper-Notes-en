@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization
 description: >-
-  [NeurIPS 2025][Model Compression][Extremely low-bit quantization] This paper proposes ParetoQ — the first unified framework supporting 1/1.58/2/3/4-bit quantization — which systematically studies training strategies (ful…
+  [NeurIPS 2025][Model Compression][Extremely low-bit quantization] This paper proposes ParetoQ — the first unified framework supporting 1/1.58/2/3/4-bit quantization — which systematically studies training strategies (full-precision pretraining vs. QAT budget allocation) and quantization function design (introducing the SEQ quantizer). The work demonstrates that 2-bit and 1.58-bit quantization outperform conventional 4-bit in the accuracy–model-size trade-off…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "2-bit quantization"
   - "Pareto optimality"
 date: 2026-05-08
-content_hash: e042d4d6dc4487fd
+content_hash: d21ed15caf2aab99
 ---
 
 # ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization
@@ -147,9 +147,9 @@ ParetoQ's methodology proceeds in three steps:
 
 - [\[NeurIPS 2025\] LittleBit: Ultra Low-Bit Quantization via Latent Factorization](littlebit_ultra_low-bit_quantization_via_latent_factorization.md)
 - [\[NeurIPS 2025\] Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression](learning_grouped_lattice_vector_quantizers_for_low-bit_llm_compression.md)
+- [\[ACL 2025\] Spectra 1.1: Scaling Laws and Efficient Inference for Ternary Language Models](../../ACL2025/model_compression/scaling_laws_and_efficient_inference_for_ternary_language_models.md)
 - [\[NeurIPS 2025\] Q-Palette: Fractional-Bit Quantizers Toward Optimal Bit Allocation for Efficient LLM Deployment](q-palette_fractional-bit_quantizers_toward_optimal_bit_allocation_for_efficient_.md)
-- [\[ICML 2026\] OSAQ: Outlier Self-Absorption for Accurate Low-bit LLM Quantization](../../ICML2026/model_compression/osaq_outlier_self-absorption_for_accurate_low-bit_llm_quantization.md)
-- [\[NeurIPS 2025\] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic](falqon_accelerating_lora_fine-tuning_with_low-bit_floating-point_arithmetic.md)
+- [\[ACL 2025\] PTQ1.61: Push the Real Limit of Extremely Low-Bit Post-Training Quantization Methods for Large Language Models](../../ACL2025/model_compression/ptq161_low_bit_quantization.md)
 
 </div>
 

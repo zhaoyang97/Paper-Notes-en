@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CARPRT: Class-Aware Zero-Shot Prompt Reweighting for Vision-Language Model
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] CARPRT points out that existing VLM prompt ensembling methods assign weights to each prompt template that are "shared across all classes," which contradicts the fact that "different prompts have different affinities for different classes." It employs a training-free, purely black-box (score-only) two-stage pipeline to
+  [ICLR2026][Multimodal VLM][Vision-Language Models] CARPRT points out that existing VLM prompt ensembling methods assign weights to each prompt template that are "shared across all classes," which contradicts the fact that "different prompts have different affinities for different classes." It employs a training-free, purely black-box (score-only) two-stage pipeline to estimate a set of prompt weights for each class individually, consistently outperforming MPE / WPE and even h…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Vision-Language Models"
+  - "Prompt Ensembling"
+  - "Zero-Shot Classification"
+  - "Black-Box Inference"
+  - "Prompt Reweighting"
 date: 2026-05-08
-content_hash: 6eface30cf20c216
+content_hash: 5a4c2fd64925479d
 ---
+
 # CARPRT: Class-Aware Zero-Shot Prompt Reweighting for Vision-Language Model
 
 **Conference**: ICLR2026  
@@ -134,10 +139,10 @@ Robustness to distribution shifts (CLIP-ViT-B/16, weights estimated only once on
 
 ## Related Papers
 
-- [\[ICLR 2026\] SR-3D: 3D-Aware Region Prompted Vision Language Model](3d_aware_region_prompted_vision_language_model.md)
 - [\[ICML 2026\] Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs](../../ICML2026/multimodal_vlm/density-aware_translation_of_spurious_correlations_in_zero-shot_vlms.md)
 - [\[ICLR 2026\] Naming to Learn: Class Incremental Learning for Vision-Language Model with Unlabeled Data](naming_to_learn_class_incremental_learning_for_vision-language_model_with_unlabe.md)
 - [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/multimodal_vlm/explaining_clip_zero-shot_predictions_through_concepts.md)
+- [\[ICLR 2026\] SR-3D: 3D-Aware Region Prompted Vision Language Model](3d_aware_region_prompted_vision_language_model.md)
 - [\[CVPR 2025\] Locality-Aware Zero-Shot Human-Object Interaction Detection](../../CVPR2025/multimodal_vlm/locality-aware_zero-shot_human-object_interaction_detection.md)
 
 </div>

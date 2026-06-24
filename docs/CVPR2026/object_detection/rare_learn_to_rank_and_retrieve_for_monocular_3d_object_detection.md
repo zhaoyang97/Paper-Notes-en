@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RARE: Learn to RAnk and REtrieve for Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][Object Detection][learning-to-rank] RARE employs "ranking + retrieval" mechanisms to unify and solve two persistent issues in monocular 3D detection: it transforms confidence estimation from absolute regression to **learning relative rankings**, and constructs a set of queries for each object to predict multiple plausible 3D hypotheses, **retrieving** th
+  [CVPR 2026][Object Detection][Monocular 3D Detection] RARE employs "ranking + retrieval" mechanisms to unify and solve two persistent issues in monocular 3D detection: it transforms confidence estimation from absolute regression to **learning relative rankings**, and constructs a set of queries for each object to predict multiple plausible 3D hypotheses, **retrieving** the optimal solution based on learned confidence. It outperforms several monocular SOTA methods on KITTI and…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - learning-to-rank
-  - query set
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Monocular 3D Detection"
+  - "Confidence Estimation"
+  - "learning-to-rank"
+  - "Multiple Hypotheses"
+  - "query set"
 date: 2026-05-08
-content_hash: 4b060bb94df18528
+content_hash: 1185fdbe3c7d75ef
 ---
+
 # RARE: Learn to RAnk and REtrieve for Monocular 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -128,9 +132,9 @@ Decomposition of confidence learning (Tab.5): Baseline Pearson/Spearman is only 
 
 - [\[ICCV 2025\] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection](../../ICCV2025/object_detection/3dmood_lifting_2d_to_3d_for_monocular_openset_object_detecti.md)
 - [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
-- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
 - [\[CVPR 2026\] FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search](fslora_harmonizing_detection_and_re-identification_via_freq-spatial_low-rank_ada.md)
-- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
+- [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
+- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
 
 </div>
 

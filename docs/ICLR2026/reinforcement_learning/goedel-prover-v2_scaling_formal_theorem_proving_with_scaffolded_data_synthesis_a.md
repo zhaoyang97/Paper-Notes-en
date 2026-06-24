@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction
 description: >-
-  [ICLR 2026][Reinforcement Learning][Lean] By integrating a trio of "Scaffolded Data Synthesis + Compiler Feedback-driven Self-Correction + Model Averaging," an open-source Lean theorem prover achieves a new SOTA. The 8B model outperforms the 671B DeepSeek-Prover-V2, and the 32B model reaches a 90.4% pass@32 on MiniF2F with 20x fewer parameters and a significan
+  [ICLR 2026][Reinforcement Learning][Automated Theorem Proving] By integrating a trio of "Scaffolded Data Synthesis + Compiler Feedback-driven Self-Correction + Model Averaging," an open-source Lean theorem prover achieves a new SOTA. The 8B model outperforms the 671B DeepSeek-Prover-V2, and the 32B model reaches a 90.4% pass@32 on MiniF2F with 20x fewer parameters and a significantly lower computational budget.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Lean
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Automated Theorem Proving"
+  - "Lean"
+  - "Expert Iteration"
+  - "Reinforcement Learning (GRPO/DAPO)"
+  - "Self-Correction"
+  - "Data Synthesis"
+  - "Model Averaging"
 date: 2026-05-08
-content_hash: 17aaf119f085014b
+content_hash: 83fbd8287dd42c85
 ---
+
 # Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction
 
 **Conference**: ICLR 2026  
@@ -117,9 +124,9 @@ The 8B model outperforms the 671B DeepSeek-Prover-V2 on MiniF2F while being 80×
 
 - [\[ICLR 2026\] GAR: Generative Adversarial Reinforcement Learning for Formal Theorem Proving](gar_generative_adversarial_reinforcement_learning_for_formal_theorem_proving.md)
 - [\[ICLR 2026\] Webscale-RL: Automated Data Pipeline for Scaling RL Data to Pretraining Levels](webscale-rl_automated_data_pipeline_for_scaling_rl_data_to_pretraining_levels.md)
+- [\[ICLR 2026\] Koopman-Assisted Trajectory Synthesis: A Data Augmentation Framework for Offline Imitation Learning](koopman-assisted_trajectory_synthesis_a_data_augmentation_framework_for_offline_.md)
 - [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[ICLR 2026\] Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains RLVR](beyond_pass_1_self-play_with_variational_problem_synthesis_sustains_rlvr.md)
-- [\[ICML 2026\] ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research](../../ICML2026/reinforcement_learning/orloopbench_solver-in-the-loop_benchmarks_for_self-correction_and_behavioral_rat.md)
 
 </div>
 

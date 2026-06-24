@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Reinforcement Learning] This paper models the numerical confidence expression of LLMs as a "betting-style" reinforcement learning problem. By rewarding high confidence for correct answers and penalizing overconfidence for incorrect ones using strictly proper logarithmic scoring rules, the authors significantly improve model calibration and cr
+  [ICLR 2026][LLM Evaluation][Confidence Calibration] This paper models the numerical confidence expression of LLMs as a "betting-style" reinforcement learning problem. By rewarding high confidence for correct answers and penalizing overconfidence for incorrect ones using strictly proper logarithmic scoring rules, the authors significantly improve model calibration and cross-task generalization without compromising response accuracy.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Confidence Calibration"
+  - "Reinforcement Learning"
+  - "Logarithmic Scoring Rules"
+  - "Uncertainty Expression"
 date: 2026-05-08
-content_hash: 8df1df8bcc8a76e4
+content_hash: e806c097fe30e2b2
 ---
+
 # Rewarding Doubt: A Reinforcement Learning Approach to Calibrated Confidence Expression of Large Language Models
 
 **Conference**: ICLR 2026  
@@ -137,6 +141,7 @@ The authors analyzed cross-architecture performance (LLaMA, Qwen, Gemma) and cro
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for trustworthy LLM deployment and serves as a strong baseline for uncertainty-aware models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SCI-Verifier: Scientific Verifier with Thinking
 description: >-
-  [ICLR 2026][LLM Reasoning][Chain-of-Thought] Addressing the pain point where scientific reasoning answers possess diverse forms making equivalence judgment difficult, this work tackles the problem from both data and modeling sides: constructing SCI-VerifyBench, an interdisciplinary verification benchmark with equivalent transformations covering five subjects (Mat
+  [ICLR 2026][Reasoning][Answer Verifier] Addressing the pain point where scientific reasoning answers possess diverse forms making equivalence judgment difficult, this work tackles the problem from both data and modeling sides: constructing SCI-VerifyBench, an interdisciplinary verification benchmark with equivalent transformations covering five subjects (Math, Physics, Chemistry, Biology, and General QA), and post-training a verifier SCI-Verifier with "concise thinking" via S…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Answer Verifier"
+  - "Equivalence Judgment"
+  - "Chain-of-Thought"
+  - "Interdisciplinary Benchmark"
+  - "Post-training"
 date: 2026-05-08
-content_hash: e80080821d591a8d
+content_hash: fe3fe9837afc07f9
 ---
+
 # SCI-Verifier: Scientific Verifier with Thinking
 
 **Conference**: ICLR 2026  
@@ -139,8 +144,8 @@ On external benchmarks VerifierBench and VerifyBench-Hard, SCI-Verifier also lea
 
 - [\[ICLR 2026\] ROC-n-Reroll: How Verifier Imperfection Affects Test-Time Scaling](roc-n-reroll_how_verifier_imperfection_affects_test-time_scaling.md)
 - [\[AAAI 2026\] Improving Value-based Process Verifier via Low-Cost Variance Reduction](../../AAAI2026/llm_reasoning/improving_value-based_process_verifier_via_low-cost_variance_reduction.md)
-- [\[ICLR 2026\] Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism](unleashing_scientific_reasoning_for_bio-experimental_protocol_generation_via_str.md)
 - [\[ACL 2025\] Local Look-Ahead Guidance via Verifier-in-the-Loop for Automated Theorem Proving](../../ACL2025/llm_reasoning/local_look-ahead_guidance_via_verifier-in-the-loop_for_automated_theorem_proving.md)
+- [\[ICLR 2026\] Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism](unleashing_scientific_reasoning_for_bio-experimental_protocol_generation_via_str.md)
 - [\[ICLR 2026\] TSLM: Tree-Structured Language Modeling for Divergent Thinking](tslm_tree-structured_language_modeling_for_divergent_thinking.md)
 
 </div>

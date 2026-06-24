@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction
 description: >-
-  [ICLR 2026][Graph Learning][RGCN] UrbanGraph encodes **known physical laws**—such as solar shading, vegetation evapotranspiration, and convective diffusion—directly into the graph topology. By reconstructing a sparse dynamic heterogeneous graph hourly based on physical equations and utilizing an RGCN+LSTM architecture to decouple spatial and temporal f
+  [ICLR 2026][Graph Learning][Dynamic Heterogeneous Graphs] UrbanGraph encodes **known physical laws**—such as solar shading, vegetation evapotranspiration, and convective diffusion—directly into the graph topology. By reconstructing a sparse dynamic heterogeneous graph hourly based on physical equations and utilizing an RGCN+LSTM architecture to decouple spatial and temporal features, it achieves SOTA performance on urban microclimate prediction ($R^2=0.8542$). Compared to the…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - RGCN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Dynamic Heterogeneous Graphs"
+  - "Physical Prior Inductive Bias"
+  - "Urban Microclimate"
+  - "Causal Pruning"
+  - "RGCN"
 date: 2026-05-08
-content_hash: 9db298191f134528
+content_hash: 37e1c3be76bbc0d7
 ---
+
 # UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction
 
 **Conference**: ICLR 2026  

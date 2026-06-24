@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CountsDiff: A Diffusion Model on the Natural Numbers for Generation and Imputation of Count-Based Data
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] To address the issue that biological sequence counts (scRNA-seq, ATAC-seq, etc., which are inherently natural numbers) are unsuitable for either continuous or categorical diffusion, this paper proposes CountsDiff—a diffusion framework operating directly on the set of natural numbers $\mathbb{N}_0$. It reparameterizes B
+  [ICML2026][Computational Biology][Discrete Diffusion] To address the issue that biological sequence counts (scRNA-seq, ATAC-seq, etc., which are inherently natural numbers) are unsuitable for either continuous or categorical diffusion, this paper proposes CountsDiff—a diffusion framework operating directly on the set of natural numbers $\mathbb{N}_0$. It reparameterizes Blackout diffusion using "survival probability scheduling $p(t)$ + explicit loss weighting" and integrates…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Discrete Diffusion"
+  - "Natural Number Generation"
+  - "Single-cell Imputation"
+  - "Blackout Diffusion"
+  - "Non-monotonic Reverse Process"
 date: 2026-05-08
-content_hash: 3dd0bdd54574c6b2
+content_hash: c17165dc22b6ed3a
 ---
+
 # CountsDiff: A Diffusion Model on the Natural Numbers for Generation and Imputation of Count-Based Data
 
 **Conference**: ICML2026  
@@ -140,15 +146,20 @@ CountsDiff matches or outperforms SOTA specialized imputation methods.
 - Value: ⭐⭐⭐⭐⭐ Open-sourced and highly practical for real-world biological count data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **Santos et al., 2023**: Blackout Diffusion: Generative Modeling of Discrete Data [arXiv:2305.11075]
-- **Nichol & Dhariwal, 2021**: Improved Denoising Diffusion Probabilistic Models [arXiv:2102.09672]
-- **Nisonoff et al., 2025**: Corrected Continuous-Time Guidance for Discrete Diffusion [arXiv:2410.22013]
+## Related Papers
+
+- [\[ICLR 2026\] Count Bridges enable Modeling and Deconvolving Transcriptomic Data](../../ICLR2026/computational_biology/count_bridges_enable_modeling_and_deconvolving_transcriptomic_data.md)
+- [\[ICLR 2026\] Controllable Diffusion-based Generation for Multi-channel Biological Data](../../ICLR2026/computational_biology/controllable_diffusion-based_generation_for_multi-channel_biological_data.md)
+- [\[CVPR 2026\] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](../../CVPR2026/computational_biology/mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)
+- [\[ICLR 2026\] A Diffusion Model to Shrink Proteins While Maintaining Their Function](../../ICLR2026/computational_biology/a_diffusion_model_to_shrink_proteins_while_maintaining_their_function.md)
+- [\[ICLR 2026\] HEIST: A Graph Foundation Model for Spatial Transcriptomics and Proteomics Data](../../ICLR2026/computational_biology/heist_a_graph_foundation_model_for_spatial_transcriptomics_and_proteomics_data.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](../../CVPR2026/computational_biology/mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)

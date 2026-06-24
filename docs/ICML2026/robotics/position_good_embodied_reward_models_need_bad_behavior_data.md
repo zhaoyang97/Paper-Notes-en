@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Position: Good Embodied Reward Models Need Bad Behavior Data
 description: >-
-  [ICML 2026][Robotics & Embodied AI][RoboArena] This position paper utilizes human ratings from RoboArena to empirically demonstrate that three types of SOTA embodied reward models (ReWind, GVL, and Dopamine) systematically "overestimate" actual failed robot behaviors. The root cause is identified as the training data consisting almost exclusively of expert success
+  [ICML 2026 Spotlight][Robotics][Embodied Reward Models] This position paper utilizes human ratings from RoboArena to empirically demonstrate that three types of SOTA embodied reward models (ReWind, GVL, and Dopamine) systematically "overestimate" actual failed robot behaviors. The root cause is identified as the training data consisting almost exclusively of expert success demonstrations. By inserting real "bad" behavior videos and dense negative reward labels into GVL's in-c…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - RoboArena
+  - "ICML 2026 Spotlight"
+  - "Robotics"
+  - "Embodied Reward Models"
+  - "Failure Data"
+  - "RoboArena"
+  - "VLM Reward"
+  - "Preference Alignment"
 date: 2026-05-08
-content_hash: 6218d95c595a324a
+content_hash: dd4629e513b9ddf7
 ---
+
 # Position: Good Embodied Reward Models Need Bad Behavior Data
 
 **Conference**: ICML 2026 Spotlight  
@@ -121,11 +126,12 @@ Qualitatively, in a task where a robot hits a bowl while replacing a lid, all th
 - **vs. UQ**: UQ and bad data are complementary; UQ alone cannot define the boundaries of the negative distribution without anchor points.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Task Tokens: A Flexible Approach to Adapting Behavior Foundation Models](../../ICLR2026/robotics/task_tokens_a_flexible_approach_to_adapting_behavior_foundation_models.md)
+- [\[ICLR 2026\] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control](../../ICLR2026/robotics/action_chunking_and_data_augmentation_yield_exponential_improvements_in_behavior.md)
 - [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
 - [\[ICML 2026\] TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance](timerewarder_learning_dense_reward_from_passive_videos_via_frame-wise_temporal_d.md)
 - [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)

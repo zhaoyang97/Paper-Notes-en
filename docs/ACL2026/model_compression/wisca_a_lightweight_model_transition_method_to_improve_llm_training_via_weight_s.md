@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling
 description: >-
-  [ACL 2026][Model Compression][LoRA] This paper proposes the Equivalent Model Theory and the WISCA weight scaling strategy. By dynamically adjusting the $W_q/W_k$ and $W_v/W_o$ weights of Transformer attention layers during training to equalize their L1 norms (while maintaining model output), the optimization is guided toward flatter local minima. This ac
+  [ACL 2026 Findings][Model Compression][Weight Scaling] This paper proposes the Equivalent Model Theory and the WISCA weight scaling strategy. By dynamically adjusting the $W_q/W_k$ and $W_v/W_o$ weights of Transformer attention layers during training to equalize their L1 norms (while maintaining model output), the optimization is guided toward flatter local minima. This achieves an average 5.6% zero-shot evaluation improvement and a 2.12% reduction in training perplexity on G…
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Weight Scaling"
+  - "Equivalent Models"
+  - "Loss Landscape"
+  - "GQA Optimization"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 29b9aef11a4d355d
+content_hash: 7e647ebf6f0863ca
 ---
+
 # WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling
 
 **Conference**: ACL 2026 Findings  
@@ -145,10 +150,10 @@ Ours does not modify the loss function and is compatible with standard training 
 ## Related Papers
 
 - [\[ICML 2026\] Decouple Searching from Training: Scaling Data Mixing via Model Merging for Large Language Model Pre-training](../../ICML2026/model_compression/decouple_searching_from_training_scaling_data_mixing_via_model_merging_for_large.md)
+- [\[ICLR 2026\] MOSS: Efficient and Accurate FP8 LLM Training with Microscaling and Automatic Scaling](../../ICLR2026/model_compression/moss_efficient_and_accurate_fp8_llm_training_with_microscaling_and_automatic_sca.md)
 - [\[ACL 2026\] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)
 - [\[ACL 2026\] ArcLight: A Lightweight LLM Inference Architecture for Many-Core CPUs](arclight_a_lightweight_llm_inference_architecture_for_many-core_cpus.md)
 - [\[ECCV 2024\] SpaceJAM: a Lightweight and Regularization-free Method for Fast Joint Alignment of Images](../../ECCV2024/model_compression/spacejam_a_lightweight_and_regularization-free_method_for_fast_joint_alignment_o.md)
-- [\[ACL 2026\] DeepPrune: Parallel Scaling without Inter-Trace Redundancy](deepprune_parallel_scaling_without_inter-trace_redundancy.md)
 
 </div>
 

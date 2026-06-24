@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Critique-Guided Distillation for Robust Reasoning via Refinement
 description: >-
-  [ICML 2026][Model Compression][Knowledge Distillation] Enable the student to **consume** rather than **generate** the teacher's critique during training—predict the teacher's refined answer conditioned on (prompt, student draft, teacher critique). At inference, a single prompt pass generates longer and more accurate reasoning chains without compromising instruction-followi
+  [ICML 2026][Model Compression][Knowledge Distillation] Enable the student to **consume** rather than **generate** the teacher's critique during training—predict the teacher's refined answer conditioned on (prompt, student draft, teacher critique). At inference, a single prompt pass generates longer and more accurate reasoning chains without compromising instruction-following capabilities, unlike CFT.
 tags:
-  - ICML 2026
-  - Model Compression
-  - Knowledge Distillation
-  - Critique
+  - "ICML 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Mathematical Reasoning"
+  - "Critique"
+  - "Self-Correction"
+  - "Supervised Fine-Tuning"
 date: 2026-05-08
-content_hash: 14da2b9294e187e3
+content_hash: 4c5ddbbab83bff9b
 ---
+
 # Critique-Guided Distillation for Robust Reasoning via Refinement
 
 **Conference**: ICML 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering
 description: >-
-  [CVPR 2026][AI Safety][VQ-VAE] Proposes ClusterMark, a watermarking scheme based on visual token clustering that adapts KGW-style LLM watermarking to autoregressive (AR) image generators. By assigning visually similar tokens to the same green/red sets, the method significantly enhances watermark robustness against image perturbations while preservin
+  [CVPR 2026][AI Safety][Autoregressive Image Generation] Proposes ClusterMark, a watermarking scheme based on visual token clustering that adapts KGW-style LLM watermarking to autoregressive (AR) image generators. By assigning visually similar tokens to the same green/red sets, the method significantly enhances watermark robustness against image perturbations while preserving visual quality.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - VQ-VAE
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Autoregressive Image Generation"
+  - "Watermark Detection"
+  - "Visual Token Clustering"
+  - "Robust Watermarking"
+  - "VQ-VAE"
 date: 2026-05-08
-content_hash: dde9bd666f96c8d3
+content_hash: 698197675b76f566
 ---
+
 # ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering
 
 **Conference**: CVPR 2026  
@@ -140,8 +145,8 @@ Token classifier loss: $\mathcal{L}_{TC} = \mathbb{E}[\sum_i \text{CE}(\mathcal{
 ## Related Papers
 
 - [\[CVPR 2026\] PECCAVI: Overcoming the Brittleness of AI Image Watermarking Under Visual Paraphrasing Attacks](peccvai_overcoming_the_brittleness_of_ai_image_watermarking_under_visual_paraphr.md)
-- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[CVPR 2026\] AdvMark: Decoupling Defense Strategies for Robust Image Watermarking](decoupling_defense_strategies_for_robust_image_watermarking.md)
+- [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
 - [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 - [\[CVPR 2026\] X-AVDT: Audio-Visual Cross-Attention for Robust Deepfake Detection](x-avdt_audio-visual_cross-attention_for_robust_deepfake_detection.md)
 

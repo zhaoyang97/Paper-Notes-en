@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Parameters as Experts: Adapting Vision Models with Dynamic Parameter Routing
 description: >-
-  [ICML 2026][Model Compression][PEFT] The authors treat "parameters themselves as experts"—maintaining a per-stage shared trainable parameter reservoir (shared expert center). A lightweight router **dynamically synthesizes** weights for low-rank projections and multi-scale depthwise convolutions for each ParaX adapter based on the current input. This simul
+  [ICML 2026][Model Compression][PEFT] The authors treat "parameters themselves as experts"—maintaining a per-stage shared trainable parameter reservoir (shared expert center). A lightweight router **dynamically synthesizes** weights for low-rank projections and multi-scale depthwise convolutions for each ParaX adapter based on the current input. This simultaneously addresses the "input-agnosticism" and "cross-layer redundancy" of traditional adapters…
 tags:
-  - ICML 2026
-  - Model Compression
-  - PEFT
+  - "ICML 2026"
+  - "Model Compression"
+  - "PEFT"
+  - "MoE Adapter"
+  - "Shared Expert Center"
+  - "Dynamic Parameter Routing"
+  - "Dense Prediction"
 date: 2026-05-08
-content_hash: 55e03c2ef3842a0c
+content_hash: 43ff9a02fc9bc1fd
 ---
+
 # Parameters as Experts: Adapting Vision Models with Dynamic Parameter Routing
 
 **Conference**: ICML 2026  
@@ -172,9 +177,9 @@ Panoptic segmentation is demanding on representations. ParaX outperforms Mona an
 
 - [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](../../CVPR2026/model_compression/teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
+- [\[ICLR 2026\] Dr.LLM: Dynamic Layer Routing in LLMs](../../ICLR2026/model_compression/drllm_dynamic_layer_routing_in_llms.md)
+- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
 - [\[ICML 2026\] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization](prism_synergizing_vision_foundation_models_via_self-organized_expert_specializat.md)
-- [\[ICML 2026\] Continual Model Routing in Evolving Model Hubs](continual_model_routing_in_evolving_model_hubs.md)
-- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
 
 </div>
 

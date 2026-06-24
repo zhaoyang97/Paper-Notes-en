@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Relational Feature Caching for Accelerating Diffusion Transformers
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The Relational Feature Caching (RFC) framework is proposed to enhance the precision of cached feature prediction by leveraging the strong correlation between input and output features of DiT modules. It includes Relational Feature Estimation (RFE) to estimate output change magnitudes from input changes and Relational C
+  [ICLR 2026][Time Series][Feature Caching] The Relational Feature Caching (RFC) framework is proposed to enhance the precision of cached feature prediction by leveraging the strong correlation between input and output features of DiT modules. It includes Relational Feature Estimation (RFE) to estimate output change magnitudes from input changes and Relational Cache Scheduling (RCS) to trigger full computation using input errors as a proxy. RFC significantly outperforms existin…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Feature Caching"
+  - "DiT Acceleration"
+  - "Input-Output Relationship"
+  - "Dynamic Scheduling"
+  - "Prediction Accuracy"
 date: 2026-05-08
-content_hash: 736b7f2b9f45b0fc
+content_hash: 92b80c4026417051
 ---
+
 # Relational Feature Caching for Accelerating Diffusion Transformers
 
 **Conference**: ICLR 2026  

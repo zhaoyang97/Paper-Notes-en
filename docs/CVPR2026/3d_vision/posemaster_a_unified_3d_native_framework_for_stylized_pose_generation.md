@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PoseMaster proposes a 3D native approach that unifies pose stylization and 3D generation into an end-to-end framework. It directly utilizes 3D skeletons as pose control signals (instead of 2D skeleton maps), designs a skeleton densification strategy and a Point Transformer encoder to extract fine-grained spatial topolo
+  [CVPR 2026][3D Vision][3D Pose Stylization] PoseMaster proposes a 3D native approach that unifies pose stylization and 3D generation into an end-to-end framework. It directly utilizes 3D skeletons as pose control signals (instead of 2D skeleton maps), designs a skeleton densification strategy and a Point Transformer encoder to extract fine-grained spatial topological features. Trained through a large-scale "Image-Skeleton-Mesh" triplet data engine…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Pose Stylization"
+  - "Skeleton Encoder"
+  - "3D Native Generation"
+  - "Data Engine"
+  - "End-to-End"
 date: 2026-05-08
-content_hash: b480292005b96b7f
+content_hash: 601c4f4c078f2b82
 ---
+
 # PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ The model is trained using a Conditional Flow Matching objective $\mathbb{E}_{t,
 
 ## Related Papers
 
+- [\[CVPR 2026\] WildPose: A Unified Framework for Robust Pose Estimation in the Wild](wildpose_a_unified_framework_for_robust_pose_estimation_in_the_wild.md)
 - [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
-- [\[CVPR 2026\] Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices](seele_a_unified_acceleration_framework_for_real-time_gaussian_splatting_on_mobil.md)
-- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
-- [\[CVPR 2026\] PointCNN++: Performant Convolution on Native Points](pointcnn_performant_convolution_on_native_points.md)
-- [\[CVPR 2026\] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds](mmwaveflow_unified_enhancement_and_generation_of_mmwave_human_point_clouds.md)
+- [\[CVPR 2026\] Native and Compact Structured Latents for 3D Generation](native_and_compact_structured_latents_for_3d_generation.md)
+- [\[CVPR 2026\] TEXTRIX: Latent Attribute Grid for Native Texture Generation and Beyond](textrix_latent_attribute_grid_for_native_texture_generation_and_beyond.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
 
 </div>
 

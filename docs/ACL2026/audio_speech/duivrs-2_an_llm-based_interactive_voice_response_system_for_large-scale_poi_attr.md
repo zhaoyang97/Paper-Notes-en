@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DuIVRS-2: An LLM-based Interactive Voice Response System for Large-scale POI Attribute Acquisition
 description: >-
-  [ACL 2026][Audio & Speech][IVR] DuIVRS-2 transforms the modular telephone IVR system used for Baidu Maps' large-scale POI attribute acquisition into an LLM-driven end-to-end dialogue system. Through FSM-guided data augmentation, selective generation, and co-evaluator iterative learning, it achieves 83.9% TSR, 130ms average response latency, and a cap
+  [ACL 2026][Audio & Speech][IVR] DuIVRS-2 transforms the modular telephone IVR system used for Baidu Maps' large-scale POI attribute acquisition into an LLM-driven end-to-end dialogue system. Through FSM-guided data augmentation, selective generation, and co-evaluator iterative learning, it achieves 83.9% TSR, 130ms average response latency, and a capacity of 0.4M calls per day in production.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - IVR
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "IVR"
+  - "POI Attribute Acquisition"
+  - "Task-oriented Dialogue"
+  - "Selective Generation"
+  - "Co-iterative Learning"
 date: 2026-05-08
-content_hash: 6d7eae048e99238f
+content_hash: f7e9eeee7606ac74
 ---
+
 # DuIVRS-2: An LLM-based Interactive Voice Response System for Large-scale POI Attribute Acquisition
 
 **Conference**: ACL 2026  

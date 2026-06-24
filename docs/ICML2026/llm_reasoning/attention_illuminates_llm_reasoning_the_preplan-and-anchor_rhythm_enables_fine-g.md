@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Attention Illuminates LLM Reasoning: The Preplan-and-Anchor Rhythm Enables Fine-Grained Policy Optimization
 description: >-
-  [ICML 2026][LLM Reasoning][RLVR] The authors use attention dynamics to "develop" the reasoning process—discovering a "preplan-and-anchor" two-beat rhythm during generation. They convert two internal metrics (WAAD/FAI) characterizing this rhythm into token-level advantage amplification coefficients for RL. This allows GRPO to concentrate credit on crit
+  [ICML2026][Reasoning][RLVR] The authors use attention dynamics to "develop" the reasoning process—discovering a "preplan-and-anchor" two-beat rhythm during generation. They convert two internal metrics (WAAD/FAI) characterizing this rhythm into token-level advantage amplification coefficients for RL. This allows GRPO to concentrate credit on critical tokens that dictate the direction of downstream reasoning, achieving consistent performance gains across Countdown, QA…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ICML2026"
+  - "Reasoning"
+  - "RLVR"
+  - "Credit Assignment"
+  - "Attention Analysis"
+  - "GRPO"
+  - "token-level advantage"
 date: 2026-05-08
-content_hash: 7ff63d5169d18879
+content_hash: d1f55ef236980635
 ---
+
 # Attention Illuminates LLM Reasoning: The Preplan-and-Anchor Rhythm Enables Fine-Grained Policy Optimization
 
 **Conference**: ICML2026  
@@ -129,15 +133,16 @@ Mathematical Reasoning (Qwen3-4B-Base, 1K context; AIME uses avg@16, others pass
 - Value: ⭐⭐⭐⭐ Provides a reusable paradigm and engineering trick for internal signal-driven credit assignment in RLVR.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](../../CVPR2026/llm_reasoning/appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
-- [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](../../ACL2026/llm_reasoning/think_outside_the_policy_in-context_steered_policy_optimization.md)
-- [\[ICLR 2026\] Scaf-GRPO: Scaffolded Group Relative Policy Optimization for Enhancing LLM Reasoning](../../ICLR2026/llm_reasoning/scaf-grpo_scaffolded_group_relative_policy_optimization_for_enhancing_llm_reason.md)
+- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
+- [\[CVPR 2026\] APPO: Attention-guided Perception Policy Optimization for Video Reasoning](../../CVPR2026/llm_reasoning/appo_attention-guided_perception_policy_optimization_for_video_reasoning.md)
+- [\[ICML 2026\] UCPO: Uncertainty-Aware Policy Optimization](ucpo_uncertainty-aware_policy_optimization.md)
 
 </div>
 

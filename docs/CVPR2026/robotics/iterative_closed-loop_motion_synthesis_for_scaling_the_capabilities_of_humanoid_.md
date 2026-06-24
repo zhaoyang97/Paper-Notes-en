@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] This paper proposes CLAIMS—a closed-loop framework where "motion data synthesis" and "humanoid controller training" co-evolve. It utilizes motion diffusion models to generate professional high-dynamic motions from difficulty-graded semantic template prompts. Following dual filtering via physics and VLM, a physics-based
+  [CVPR 2026][Robotics][Humanoid Control] This paper proposes CLAIMS—a closed-loop framework where "motion data synthesis" and "humanoid controller training" co-evolve. It utilizes motion diffusion models to generate professional high-dynamic motions from difficulty-graded semantic template prompts. Following dual filtering via physics and VLM, a physics-based motion tracker is trained. Feedback from physics metrics and VLM then drives an LLM to automatically escalate difficult…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Humanoid Control"
+  - "Closed-loop data generation"
+  - "Motion Diffusion Models"
+  - "Difficulty Curriculum"
+  - "Physics Simulation"
 date: 2026-05-08
-content_hash: 349206aee7f9a509
+content_hash: 4ddae423ec0b7399
 ---
+
 # Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ The consistent ranking is **No Observation < No Physics < No VLM < Full**.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Closed-Loop Neural Activation Control in Vision-Language-Action Models](closed-loop_neural_activation_control_in_vision-language-action_models.md)
+- [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](../../ICLR2026/robotics/world-in-world_world_models_in_a_closed-loop_world.md)
 - [\[CVPR 2026\] Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots](towards_motion_turing_test_evaluating_human-likeness_in_humanoid_robots.md)
-- [\[CVPR 2026\] DAWN: Pixel Motion Diffusion is What We Need for Robot Control](dawn_pixel_motion_diffusion_robot_control.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
+- [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](../../ICLR2026/robotics/from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
 - [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](end-to-end_language-action_model_for_humanoid_whole_body_control.md)
-- [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
 
 </div>
 

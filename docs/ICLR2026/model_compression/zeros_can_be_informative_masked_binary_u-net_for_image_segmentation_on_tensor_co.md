@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores
 description: >-
-  [ICLR 2026][Model Compression][U-Net] The authors observe that adding an explicit "zero" state to the weights of a binary U-Net allows sparsity to reach 90%+ while significantly recovering accuracy. Consequently, they propose **MBU-Net**, which selects key layers for zero-masking based on "cost-effectiveness" and maps these masked binary weights directly t
+  [ICLR 2026][Model Compression][Binary Neural Networks] The authors observe that adding an explicit "zero" state to the weights of a binary U-Net allows sparsity to reach 90%+ while significantly recovering accuracy. Consequently, they propose **MBU-Net**, which selects key layers for zero-masking based on "cost-effectiveness" and maps these masked binary weights directly to GPU binary Tensor Cores (BMMA) using a "subtractive bit encoding" scheme. It achieves near full-precisi…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - U-Net
-  - Tensor Core
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Binary Neural Networks"
+  - "Ternary Quantization"
+  - "U-Net"
+  - "Tensor Core"
+  - "Real-time Segmentation"
 date: 2026-05-08
-content_hash: b2dc600cbd189c84
+content_hash: d4fb8c2d34ff61e7
 ---
+
 # Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores
 
 **Conference**: ICLR 2026  
@@ -146,11 +150,11 @@ MBU-Net drops only 0.029 / 0.037 / 0.024 (Dice/IoU/F1) on average compared to FP
 
 ## Related Papers
 
-- [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
 - [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
 - [\[AAAI 2026\] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?](../../AAAI2026/model_compression/bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks.md)
+- [\[ICML 2026\] Selective Coupling of Decoupled Informative Regions: Masked Attention Alignment for Data-Free Quantization of Vision Transformers](../../ICML2026/model_compression/selective_coupling_of_decoupled_informative_regions_masked_attention_alignment_f.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ICLR 2026\] LeSTD: LLM Compression via Learning-based Sparse Tensor Decomposition](lestd_llm_compression_via_learning-based_sparse_tensor_decomposition.md)
-- [\[ICLR 2026\] Reasoning Models Can be Accurately Pruned Via Chain-of-Thought Reconstruction](reasoning_models_can_be_accurately_pruned_via_chain-of-thought_reconstruction.md)
 
 </div>
 

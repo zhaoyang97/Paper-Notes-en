@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UnZipLoRA: Separating Content and Style from a Single Image
 description: >-
-  [ICCV 2025][Robotics][LoRA] This paper proposes UnZipLoRA, a method that simultaneously trains two decoupled and compatible LoRAs (a content LoRA and a style LoRA) from a single image. Through three strategies—prompt sep…
+  [ICCV 2025][Robotics][LoRA] This paper proposes UnZipLoRA, a method that simultaneously trains two decoupled and compatible LoRAs (a content LoRA and a style LoRA) from a single image. Through three strategies—prompt separation, column separation, and block separation—the method achieves effective disentanglement of content and style, enabling independent manipulation and free recombination. UnZipLoRA surpasses DreamBooth-LoRA, Inspiration Tree…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "image generation"
   - "concept decoupling"
 date: 2026-05-08
-content_hash: 32895193db1c1629
+content_hash: 57f35f4b916387c5
 ---
 
 # UnZipLoRA: Separating Content and Style from a Single Image
@@ -144,11 +144,11 @@ Automatic alignment scores:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Image Quality Assessment for Embodied AI](../../ICLR2026/robotics/image_quality_assessment_for_embodied_ai.md)
+- [\[ICLR 2026\] DemoGrasp: Universal Dexterous Grasping from a Single Demonstration](../../ICLR2026/robotics/demograsp_universal_dexterous_grasping_from_a_single_demonstration.md)
+- [\[CVPR 2026\] SIR: Structured Image Representations for Explainable Robot Learning](../../CVPR2026/robotics/sir_structured_image_representations_for_explainable_robot_learning.md)
+- [\[ICLR 2026\] Interleave-VLA: Enhancing Robot Manipulation with Image-Text Interleaved Instructions](../../ICLR2026/robotics/interleave-vla_enhancing_robot_manipulation_with_image-text_interleaved_instruct.md)
 - [\[ICLR 2026\] One Demo Is All It Takes: Planning Domain Derivation with LLMs from A Single Demonstration](../../ICLR2026/robotics/one_demo_is_all_it_takes_planning_domain_derivation_with_llms_from_a_single_demo.md)
-- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](../../ICLR2026/robotics/twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
-- [\[ICCV 2025\] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment](evolvinggrasp_evolutionary_grasp_generation_via_efficient_preference_alignment.md)
-- [\[ICCV 2025\] Embodied Representation Alignment with Mirror Neurons](embodied_representation_alignment_with_mirror_neurons.md)
-- [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
 
 </div>
 

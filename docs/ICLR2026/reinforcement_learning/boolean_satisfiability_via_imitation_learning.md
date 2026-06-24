@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Boolean Satisfiability via Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][SAT] ImitSAT is proposed as the first CDCL solver branching strategy based on imitation learning. By compressing solver runs into conflict-free KeyTrace expert sequences, branching decisions are modeled as an autoregressive prediction task conditioned on prefixes. This approach significantly reduces the number of propagatio
+  [ICLR2026][Reinforcement Learning][SAT] ImitSAT is proposed as the first CDCL solver branching strategy based on imitation learning. By compressing solver runs into conflict-free KeyTrace expert sequences, branching decisions are modeled as an autoregressive prediction task conditioned on prefixes. This approach significantly reduces the number of propagations and solving time with a small query budget, while demonstrating strong generalization capabilities on structured SAT…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SAT
-  - CDCL
-  - Autoregressive
-  - Transformer
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "SAT"
+  - "Imitation Learning"
+  - "CDCL"
+  - "Branching Strategy"
+  - "Autoregressive"
+  - "Transformer"
 date: 2026-05-08
-content_hash: b1bac0604d4c4b72
+content_hash: d64bf81ed05e6140
 ---
+
 # Boolean Satisfiability via Imitation Learning
 
 **Conference**: ICLR2026  
@@ -129,9 +132,9 @@ Trained only on random 3-SAT, the model generalizes to structured problems witho
 
 - [\[ICLR 2026\] Latent Wasserstein Adversarial Imitation Learning](latent_wasserstein_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
+- [\[ICLR 2026\] Imitation Learning as Return Distribution Matching](imitation_learning_as_return_distribution_matching.md)
 - [\[NeurIPS 2025\] Quantifying Generalisation in Imitation Learning](../../NeurIPS2025/reinforcement_learning/quantifying_generalisation_in_imitation_learning.md)
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
-- [\[ICML 2026\] Noise-Guided Transport: Imitation Learning from Random Priors](../../ICML2026/reinforcement_learning/noise-guided_transport_for_imitation_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification
 description: >-
-  [ICCV 2025][Image Generation][Protective Perturbation] This paper proposes AntiPure, an adversarial perturbation method that directly attacks the diffusion-based purification process through two guidance mechanisms—Patch…
+  [ICCV 2025][Image Generation][Protective Perturbation] This paper proposes AntiPure, an adversarial perturbation method that directly attacks the diffusion-based purification process through two guidance mechanisms—Patch-wise Frequency Guidance (PFG) and Erroneous Timestep Guidance (ETG)—to generate protective perturbations that continue to disrupt customization fine-tuning even after purification, outperforming all existing protection methods under the purification-customiza…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Purification"
   - "adversarial attack"
 date: 2026-05-08
-content_hash: 299d91037beab330
+content_hash: b0c3924ea59f8e11
 ---
 
 # Towards Robust Defense against Customization via Protective Perturbation Resistant to Diffusion-based Purification
@@ -155,7 +155,7 @@ Under the same $\eta$ constraint, AntiPure achieves the lowest LPIPS perceptual 
 - [\[ICCV 2025\] DCT-Shield: A Robust Frequency Domain Defense against Malicious Image Editing](dct-shield_a_robust_frequency_domain_defense_against_malicious_image_editing.md)
 - [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](pla_prompt_learning_attack_against_text-to-image_generative_models.md)
 - [\[ICCV 2025\] FreeCus: Free Lunch Subject-driven Customization in Diffusion Transformers](freecus_free_lunch_subject-driven_customization_in_diffusion_transformers.md)
-- [\[ICCV 2025\] Generating Multi-Image Synthetic Data for Text-to-Image Customization](generating_multi-image_synthetic_data_for_text-to-image_customization.md)
+- [\[CVPR 2025\] Enhancing Facial Privacy Protection via Weakening Diffusion Purification](../../CVPR2025/image_generation/enhancing_facial_privacy_protection_via_weakening_diffusion_purification.md)
 - [\[ICCV 2025\] Disrupting Model Merging: A Parameter-Level Defense Without Sacrificing Accuracy](disrupting_model_merging_a_parameter-level_defense_without_sacrificing_accuracy.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BoGrape: Bayesian optimization over graphs with shortest-path encoded
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] BoGrape transforms the challenging task of "Bayesian optimization over the graph structure itself" into a Mixed-Integer Programming (MIP) problem. It precisely characterizes the shortest-path structure of an unknown graph using decision variables and encodes the shortest-path graph kernel along with the Gaussian Proces
+  [ICLR2026][Optimization][Bayesian optimization] BoGrape transforms the challenging task of "Bayesian optimization over the graph structure itself" into a Mixed-Integer Programming (MIP) problem. It precisely characterizes the shortest-path structure of an unknown graph using decision variables and encodes the shortest-path graph kernel along with the Gaussian Process (GP) posterior into the MIP. This allows for **global** optimization of the acquisition function and the integ…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Bayesian optimization"
+  - "Graph optimization"
+  - "Shortest-path graph kernel"
+  - "Mixed-integer programming"
+  - "Molecular design"
 date: 2026-05-08
-content_hash: 305502dcf03cf2f1
+content_hash: 6b744cb56eefac12
 ---
+
 # BoGrape: Bayesian optimization over graphs with shortest-path encoded
 
 **Conference**: ICLR2026  
@@ -116,8 +122,8 @@ Experiments used GNNs (GAT/GCN/GraphSAGE) as synthetic black-box functions and p
 
 - [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
 - [\[ICLR 2026\] Adaptive Acquisition Selection for Bayesian Optimization with Large Language Models](adaptive_acquisition_selection_for_bayesian_optimization_with_large_language_mod.md)
+- [\[ICLR 2026\] Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery](unleashing_llms_in_bayesian_optimization_preference-guided_framework_for_scienti.md)
 - [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
-- [\[ICLR 2026\] Contextual Causal Bayesian Optimisation](contextual_causal_bayesian_optimisation.md)
 - [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
 
 </div>

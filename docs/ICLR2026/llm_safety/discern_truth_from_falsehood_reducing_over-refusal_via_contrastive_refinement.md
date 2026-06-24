@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper identifying that the root cause of "over-refusal" in LLMs after safety alignment is that internal representations of "seemingly harmful but actually benign" prompts and "truly harmful" prompts are too similar (high gradient kernel similarity). The authors introduce DCR, a contrastive refinement stage before
+  [ICLR2026][LLM Safety][Over-refusal] This paper identifying that the root cause of "over-refusal" in LLMs after safety alignment is that internal representations of "seemingly harmful but actually benign" prompts and "truly harmful" prompts are too similar (high gradient kernel similarity). The authors introduce DCR, a contrastive refinement stage before standard SFT safety alignment. DCR uses Circle loss to push these two types of prompts apart at an intermediate layer…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Over-refusal"
+  - "Safety Alignment"
+  - "Contrastive Learning"
+  - "Learning Dynamics"
+  - "Neural Tangent Kernel"
 date: 2026-05-08
-content_hash: 6aa742ae1201ed86
+content_hash: 53467508fde3f714
 ---
+
 # Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement
 
 **Conference**: ICLR2026  
@@ -135,9 +141,9 @@ DCR only slightly reduces accuracy in knowledge-based QA (MMLU/ARC/OpenBookQA/PI
 ## Related Papers
 
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](../../ACL2026/llm_safety/please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
-- [\[ICLR 2026\] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation](dualedit_mitigating_safety_fallback_in_llm_backdoor_editing_via_affirmation-refu.md)
 - [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
 - [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
+- [\[ICLR 2026\] DualEdit: Mitigating Safety Fallback in LLM Backdoor Editing via Affirmation-Refusal Regulation](dualedit_mitigating_safety_fallback_in_llm_backdoor_editing_via_affirmation-refu.md)
 - [\[ICLR 2026\] RepIt: Steering Language Models with Concept-Specific Refusal Vectors](repit_steering_language_models_with_concept-specific_refusal_vectors.md)
 
 </div>

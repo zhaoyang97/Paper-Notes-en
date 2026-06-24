@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection
 description: >-
-  [ICLR 2026][learning_theory][RLVR] This paper abstracts LLM reasoning into a two-stage process $q\to r\to a$ ("selecting a reasoning pattern $r$, then deriving an answer $a$ based on it"). It uses a tabular policy and gradient flow to characterize the training dynamics of RLVR and RLIF. The study proves that RLVR stably converges to the reasoning patter
+  [ICLR 2026][Learning Theory][RL Training Dynamics] This paper abstracts LLM reasoning into a two-stage process $q\to r\to a$ ("selecting a reasoning pattern $r$, then deriving an answer $a$ based on it"). It uses a tabular policy and gradient flow to characterize the training dynamics of RLVR and RLIF. The study proves that RLVR stably converges to the reasoning pattern with the highest success rate (strong base models converge quickly, while weak ones undergo an "entanglemen…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - RLVR
-  - RLIF
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "LLM Reasoning"
+  - "Reinforcement Learning"
+  - "RL Training Dynamics"
+  - "RLVR"
+  - "RLIF"
+  - "Reasoning Pattern Selection"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: bc0d9a3e5e502dda
+content_hash: 33b8fa81937f2fdc
 ---
+
 # Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection
 
 **Conference**: ICLR 2026  
@@ -128,10 +134,17 @@ Ratios were mostly <10%, proving RL modifies only sparse critical points; RLIF s
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Theoretical Modeling of Large Language Model Self-Improvement Training Dynamics Through Solver-Verifier Gap](theoretical_modeling_of_large_language_model_self-improvement_training_dynamics_.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
+- [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)
+- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](optimizing_data_augmentation_through_bayesian_model_selection.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Theoretical Analysis of Contrastive Learning under Imbalanced Data: From Training Dynamics to a Pruning Solution](theoretical_analysis_of_contrastive_learning_under_imbalanced_data_from_training.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection
 description: >-
-  [ACL 2026][Social Computing][Paper Note] The authors reconstruct multimodal stance detection into a 4-stage multi-agent pipeline: CLIP retrieval of similar samples providing few-shot CoT, three expert agents (text/image/cross-modal conflict) for analysis, three debater agents (pro/con/neutral) for debating, and a final adjudicator agent for self-reflection an
+  [ACL 2026][Social Computing][Multimodal Stance Detection] The authors reconstruct multimodal stance detection into a 4-stage multi-agent pipeline: CLIP retrieval of similar samples providing few-shot CoT, three expert agents (text/image/cross-modal conflict) for analysis, three debater agents (pro/con/neutral) for debating, and a final adjudicator agent for self-reflection and labeling. Across five datasets, it outperforms strong baselines including GPT-4V, TMPT…
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Multimodal Stance Detection"
+  - "Retrieval-Augmented Generation"
+  - "Multi-agent Debate"
+  - "Self-reflection"
+  - "Cross-modal Conflict"
 date: 2026-05-08
-content_hash: c757e3e13434da0b
+content_hash: 6ea5ae444c8bd7b9
 ---
+
 # MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection
 
 **Conference**: ACL 2026  
@@ -136,6 +142,7 @@ Zero-shot improvements are more significant: gain of +3.3 on MRUC-RUS and +8.2 o
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -144,7 +151,7 @@ Zero-shot improvements are more significant: gain of +3.3 on MRUC-RUS and +8.2 o
 - [\[ICML 2026\] MIND: Multi-Rationale Integrated Discriminative Reasoning Framework for Multi-Modal Fake News](../../ICML2026/social_computing/mind_multi-rationale_integrated_discriminative_reasoning_framework_for_multi-mod.md)
 - [\[AAAI 2026\] Multi-modal Dynamic Proxy Learning for Personalized Multiple Clustering](../../AAAI2026/social_computing/multi-modal_dynamic_proxy_learning_for_personalized_multiple_clustering.md)
 - [\[AAAI 2026\] T2Agent: A Tool-augmented Multimodal Misinformation Detection Agent with Monte Carlo Tree Search](../../AAAI2026/social_computing/t2agent_a_tool-augmented_multimodal_misinformation_detection_agent_with_monte_ca.md)
-- [\[ACL 2026\] Beyond the Crowd: LLM-Augmented Community Notes for Governing Health Misinformation](beyond_the_crowd_llm-augmented_community_notes_for_governing_health_misinformati.md)
+- [\[ACL 2026\] RV-HATE: Reinforced Multi-Module Voting for Implicit Hate Speech Detection](rv-hate_reinforced_multi-module_voting_for_implicit_hate_speech_detection.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On The Geometry and Topology of Representations: the Manifolds of Modular Addition
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper adopts a perspective of "viewing a whole cluster of neurons with the same frequency as a manifold," proving that various networks previously thought to have learned "completely different circuits (Clock vs. Pizza)" actually learn the **same class of torus/vector-addition disk manifolds** in the first layer.
+  [ICLR 2026][Interpretability][Modular Addition] This paper adopts a perspective of "viewing a whole cluster of neurons with the same frequency as a manifold," proving that various networks previously thought to have learned "completely different circuits (Clock vs. Pizza)" actually learn the **same class of torus/vector-addition disk manifolds** in the first layer. This is statistically validated across hundreds of networks using closed-form formulas and Topological Data Anal…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Modular Addition"
+  - "Mechanistic Interpretability"
+  - "Universality Hypothesis"
+  - "Topological Data Analysis"
+  - "Representational Manifolds"
 date: 2026-05-08
-content_hash: e2e5417ad18841ef
+content_hash: 2d35b39b7c0d001b
 ---
+
 # On The Geometry and Topology of Representations: the Manifolds of Modular Addition
 
 **Conference**: ICLR 2026  
@@ -131,10 +137,10 @@ Logits for all four architectures align highly with the **circle/annulus** (CKA 
 ## Related Papers
 
 - [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
+- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
 - [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
 - [\[ICLR 2026\] The Geometry of Reasoning: Flowing Logics in Representation Space](the_geometry_of_reasoning_flowing_logics_in_representation_space.md)
 - [\[ICLR 2026\] Diagnosing Generalization Failures from Representational Geometry Markers](diagnosing_generalization_failures_from_representational_geometry_markers.md)
-- [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 
 </div>
 

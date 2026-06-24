@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Drift Kernel: Why Diffusion Models Change Even When Told Not To
 description: >-
-  [CVPR 2026][Image Generation][No-Op Drift] When a diffusion model is instructed to "change nothing," it still subtly modifies the input. This paper quantifies this "no-op drift" as a **Drift Kernel** $K_M(\sigma)\approx k_M\sigma^2+c_M$, which grows quadratically with noise strength $\sigma$. Based on the first-order Taylor expansion of the decoder Jacobian and
+  [CVPR 2026][Image Generation][No-Op Drift] When a diffusion model is instructed to "change nothing," it still subtly modifies the input. This paper quantifies this "no-op drift" as a **Drift Kernel** $K_M(\sigma)\approx k_M\sigma^2+c_M$, which grows quadratically with noise strength $\sigma$. Based on the first-order Taylor expansion of the decoder Jacobian and verified on 120,000 image pairs, the study proves that drift is a structural property of the decoder rather than an…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - No-Op Drift
-  - Drift Kernel
+  - "CVPR 2026"
+  - "Image Generation"
+  - "No-Op Drift"
+  - "Drift Kernel"
+  - "Identity Preservation"
+  - "Decoder Jacobian"
+  - "Diffusion Stability"
 date: 2026-05-08
-content_hash: 171ba15264e500d9
+content_hash: 2627e21997c47b60
 ---
+
 # The Drift Kernel: Why Diffusion Models Change Even When Told Not To
 
 **Conference**: CVPR 2026  
@@ -130,15 +134,16 @@ Aggregated $R^2=0.97$ confirms the $\sigma^2$ scaling. Coefficients for null/cop
 - Value: ⭐⭐⭐⭐ Provides diagnostic tools and benchmarks essential for identity-sensitive applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] When Pretty Isn't Useful: Investigating Why Modern Text-to-Image Models Fail as Reliable Training Data Generators](when_pretty_isnt_useful_investigating_why_modern_text-to-image_models_fail_as_re.md)
+- [\[ICLR 2026\] Why Adversarially Train Diffusion Models?](../../ICLR2026/image_generation/why_adversarially_train_diffusion_models.md)
 - [\[CVPR 2026\] When Anonymity Breaks: Identifying Models Behind Text-to-Image Leaderboards](when_anonymity_breaks_identifying_models_behind_text-to-image_leaderboards.md)
 - [\[CVPR 2026\] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models](when_local_rules_create_global_order_self-organized_representation_learning_for_.md)
 - [\[CVPR 2026\] RDF-MIG: A Robust Diffusion Framework for Masked Image Generation to Augment Semantic Segmentation and Change Detection](rdf-mig_a_robust_diffusion_framework_for_masked_image_generation_to_augment_sema.md)
-- [\[CVPR 2026\] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)
 
 </div>
 

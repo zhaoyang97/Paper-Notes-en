@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally
 description: >-
-  [NeurIPS 2025 (Main Conference)][LLM Evaluation][central bank communication] This paper constructs WCB, the most comprehensive central bank monetary policy corpus to date (380,000+ sentences, 25 central banks…
+  [NeurIPS 2025 (Main Conference)][LLM Evaluation][central bank communication] This paper constructs WCB, the most comprehensive central bank monetary policy corpus to date (380,000+ sentences, 25 central banks, spanning 28 years), defines three NLP tasks (stance detection, temporal classification, uncertainty estimation), and through 15,075 benchmark experiments demonstrates that models trained on aggregated multi-bank data significantly outperform single-bank training…
 tags:
   - "NeurIPS 2025 (Main Conference)"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "large language models"
   - "dataset benchmark"
 date: 2026-05-08
-content_hash: 344a8cd201883e5a
+content_hash: 919e09c797590c97
 ---
 
 # Words That Unite The World: A Unified Framework for Deciphering Central Bank Communications Globally
@@ -135,11 +135,11 @@ PLMs follow a standard fine-tuning protocol (classification head + cross-entropy
 
 ## Related Papers
 
+- [\[ACL 2025\] Learning to Align Multi-Faceted Evaluation: A Unified and Robust Framework](../../ACL2025/llm_evaluation/learning_to_align_multi-faceted_evaluation_a_unified_and_robust_framework.md)
 - [\[ICCV 2025\] Discontinuity-aware Normal Integration for Generic Central Camera Models](../../ICCV2025/llm_evaluation/discontinuity-aware_normal_integration_for_generic_central_camera_models.md)
+- [\[ACL 2025\] READoc: A Unified Benchmark for Realistic Document Structured Extraction](../../ACL2025/llm_evaluation/readoc_a_unified_benchmark_for_realistic_document_structured_extraction.md)
+- [\[ACL 2025\] TUMLU: A Unified and Native Language Understanding Benchmark for Turkic Languages](../../ACL2025/llm_evaluation/tumlu_a_unified_and_native_language_understanding_benchmark_for_turkic_languages.md)
 - [\[ICCV 2025\] A Real-world Display Inverse Rendering Dataset](../../ICCV2025/llm_evaluation/a_real-world_display_inverse_rendering_dataset.md)
-- [\[AAAI 2026\] Towards a Common Framework for Autoformalization](../../AAAI2026/llm_evaluation/towards_a_common_framework_for_autoformalization.md)
-- [\[NeurIPS 2025\] DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering](dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc.md)
-- [\[ICCV 2025\] A Conditional Probability Framework for Compositional Zero-shot Learning](../../ICCV2025/llm_evaluation/a_conditional_probability_framework_for_compositional_zerosh.md)
 
 </div>
 

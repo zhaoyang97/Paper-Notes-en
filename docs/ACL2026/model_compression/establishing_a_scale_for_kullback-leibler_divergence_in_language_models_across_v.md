@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper utilizes log-likelihood vectors to embed language models of various architectures into a unified space, systematically measuring characteristic scales of KL divergence across settings including pre-training, model scale, random seeds, quantization, fine-tuning, and layers. It discovers that pre-training traj
+  [ACL 2026 Findings][Model Compression][KL Divergence] This paper utilizes log-likelihood vectors to embed language models of various architectures into a unified space, systematically measuring characteristic scales of KL divergence across settings including pre-training, model scale, random seeds, quantization, fine-tuning, and layers. It discovers that pre-training trajectories exhibit sub-diffusive behavior in log-likelihood space—model output distributions stabilize early…
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "KL Divergence"
+  - "Language Models"
+  - "Pre-training Trajectory"
+  - "Log-likelihood Vectors"
+  - "Anomalous Diffusion"
 date: 2026-05-08
-content_hash: 91a4e4bd0244b8bf
+content_hash: 301644528a7e590f
 ---
+
 # Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings
 
 **Conference**: ACL 2026 Findings  

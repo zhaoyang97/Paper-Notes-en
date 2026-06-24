@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs
 description: >-
-  [NeurIPS 2025][Time Series][Electricity price forecasting] This paper introduces NSW-EPNews, the first electricity price forecasting benchmark augmented with news text…
+  [NeurIPS 2025][Time Series][Electricity price forecasting] This paper introduces NSW-EPNews, the first electricity price forecasting benchmark augmented with news text, systematically evaluating both traditional models and LLMs on multimodal electricity price prediction. Key findings show that news features provide marginal gains for traditional models, while LLMs suffer from severe hallucination issues.
 tags:
   - "NeurIPS 2025"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "hallucination detection"
   - "prompt engineering"
 date: 2026-05-08
-content_hash: 217990e95b6372ef
+content_hash: 5d71055d7d43c23d
 ---
 
 # NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs
@@ -130,9 +130,9 @@ This work connects two research directions: traditional time series forecasting 
 ## Related Papers
 
 - [\[NeurIPS 2025\] DemandCast: Global hourly electricity demand forecasting](demandcast_global_hourly_electricity_demand_forecasting.md)
+- [\[ICML 2025\] Are LLMs Prescient? A Continuous Evaluation using Daily News as the Oracle](../../ICML2025/time_series/are_llms_prescient_a_continuous_evaluation_using_daily_news_as_the_oracle.md)
 - [\[NeurIPS 2025\] CausalDynamics: A Large-Scale Benchmark for Structural Discovery of Dynamical Causal Models](causaldynamics_a_large-scale_benchmark_for_structural_discovery_of_dynamical_cau.md)
-- [\[ICCV 2025\] VLRMBench: A Comprehensive and Challenging Benchmark for Vision-Language Reward Models](../../ICCV2025/time_series/vlrmbench_a_comprehensive_and_challenging_benchmark_for_vision-language_reward_m.md)
-- [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](../../ICLR2026/time_series/scits_scientific_time_series_understanding_and_generation_with_llms.md)
+- [\[ICML 2026\] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting](../../ICML2026/time_series/semantics-enhanced_retrieval-augmented_time_series_forecasting.md)
 - [\[NeurIPS 2025\] BubbleFormer: Forecasting Boiling with Transformers](bubbleformer_forecasting_boiling_with_transformers.md)
 
 </div>

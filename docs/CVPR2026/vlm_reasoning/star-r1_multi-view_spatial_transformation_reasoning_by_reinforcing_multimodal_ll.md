@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] STAR-R1 utilizes a two-stage training approach—"Process-supervised SFT cold start + Reference-aware RL"—on Qwen2.5-VL-7B. This allows the model to mimic human behavior by first anchoring key references and then performing cross-view alignment for scene reconstruction, significantly outperforming open-source and several
+  [CVPR 2026][VLM Reasoning][Multi-view spatial reasoning] STAR-R1 utilizes a two-stage training approach—"Process-supervised SFT cold start + Reference-aware RL"—on Qwen2.5-VL-7B. This allows the model to mimic human behavior by first anchoring key references and then performing cross-view alignment for scene reconstruction, significantly outperforming open-source and several closed-source models on multi-view spatial understanding benchmarks such as TVR, MMSI-Bench…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multi-view spatial reasoning"
+  - "Reinforcement Learning"
+  - "Cross-view correspondence"
+  - "GRPO"
+  - "Process supervision"
 date: 2026-05-08
-content_hash: 27e79e39e7e71abd
+content_hash: 761d3a0d85e3105f
 ---
+
 # STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs
 
 **Conference**: CVPR 2026  
@@ -136,14 +140,15 @@ STAR-R1 achieved state-of-the-art results across all TVR metrics. On SPAR-Bench,
 - Value: ⭐⭐⭐⭐ Demonstrates that an open-source 7B can achieve near-human performance in spatial intelligence using efficient RL strategies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/multimodal_vlm/video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/multimodal_vlm/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
-- [\[ICLR 2026\] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](../../ICLR2026/multimodal_vlm/sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)
-- [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/vlm_reasoning/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
+- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
+- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
 - [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
 
 </div>

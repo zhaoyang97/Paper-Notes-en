@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] This paper identifies that standard KL divergence regularization in RLHF only compares token probabilities at the same index while ignoring semantic similarity. It proposes Semantic-aware Wasserstein Policy Regularization (WPR) based on entropy-regularized Wasserstein distance. By leveraging a dual formulation, the reg
+  [ICLR 2026][LLM Alignment][Wasserstein distance] This paper identifies that standard KL divergence regularization in RLHF only compares token probabilities at the same index while ignoring semantic similarity. It proposes Semantic-aware Wasserstein Policy Regularization (WPR) based on entropy-regularized Wasserstein distance. By leveraging a dual formulation, the regularization is transformed into a token-level penalty term, which consistently outperforms KL and various f-div…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Wasserstein distance"
+  - "RLHF regularization"
+  - "semantic-aware"
+  - "optimal transport"
+  - "Sinkhorn algorithm"
 date: 2026-05-08
-content_hash: a8fef82d4e418f45
+content_hash: 134408d547181296
 ---
+
 # Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment
 
 **Conference**: ICLR 2026  
@@ -139,8 +145,8 @@ The overall process follows the standard three-stage RLHF pipeline: SFT → Rewa
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
 - [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
 - [\[ICLR 2026\] Test-Time Alignment for Large Language Models via Textual Model Predictive Control](test-time_alignment_for_large_language_models_via_textual_model_predictive_contr.md)
-- [\[ICLR 2026\] GuardAlign: Test-time Safety Alignment in Multimodal Large Language Models](guardalign_test-time_safety_alignment_in_multimodal_large_language_models.md)
 - [\[ICLR 2026\] Chasing the Tail: Effective Rubric-based Reward Modeling for Large Language Model Post-Training](chasing_the_tail_effective_rubric-based_reward_modeling_for_large_language_model.md)
+- [\[ICLR 2026\] IDEAL: Data Equilibrium Adaptation for Multi-Capability Language Model Alignment](ideal_data_equilibrium_adaptation_for_multi-capability_language_model_alignment.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reference Grounded Skill Discovery
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] RGSD utilizes reference motion data to first "ground" the latent skill space onto a semantically meaningful unit hypersphere (via contrastive pre-training). It then performs simultaneous imitation and exploration within this structured space, successfully scaling unsupervised skill discovery to a 69-DoF SMPL humanoid.
+  [ICLR 2026][Reinforcement Learning][Skill Discovery] RGSD utilizes reference motion data to first "ground" the latent skill space onto a semantically meaningful unit hypersphere (via contrastive pre-training). It then performs simultaneous imitation and exploration within this structured space, successfully scaling unsupervised skill discovery to a 69-DoF SMPL humanoid. This enables the high-fidelity reproduction of walking, running, sidestepping, and punching…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Skill Discovery"
+  - "High-DoF Control"
+  - "Contrastive Learning"
+  - "Imitation Learning"
+  - "Humanoid Robots"
 date: 2026-05-08
-content_hash: dfeccbf1016d8f7a
+content_hash: cb6c0f9a078a928b
 ---
+
 # Reference Grounded Skill Discovery
 
 **Conference**: ICLR 2026  
@@ -122,7 +128,6 @@ RGSD achieved the lowest Cartesian error in 4 out of 5 tasks, significantly outp
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

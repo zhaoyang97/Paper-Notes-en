@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction
 description: >-
-  [AAAI 2026][Time Series][Domain Generalization] This paper proposes HydroDCM, the first framework to introduce Domain Generalization (DG) into hydrological forecasting. It constructs pseudo-domain labels from spatial met…
+  [AAAI 2026][Time Series][Domain Generalization] This paper proposes HydroDCM, the first framework to introduce Domain Generalization (DG) into hydrological forecasting. It constructs pseudo-domain labels from spatial meta-attributes to guide adversarial learning for invariant feature extraction, then employs a FiLM adapter to modulate features conditioned on the target reservoir's geographical information, enabling cross-domain inflow prediction for unseen reservoirs.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "FiLM Modulation"
   - "Spatial Meta-Attributes"
 date: 2026-05-08
-content_hash: a8a56491239a5577
+content_hash: 259ea43c952a8b26
 ---
 
 # HydroDCM: Hydrological Domain-Conditioned Modulation for Cross-Reservoir Inflow Prediction
@@ -157,10 +157,10 @@ HydroDCM consistently outperforms all DG baselines across all forecast horizons,
 ## Related Papers
 
 - [\[ICLR 2026\] ResCP: Reservoir Conformal Prediction for Time Series Forecasting](../../ICLR2026/time_series/rescp_reservoir_conformal_prediction_for_time_series_forecasting.md)
+- [\[ICLR 2026\] TRIDENT: Cross-Domain Trajectory Spatio-Temporal Representation via Distance-Preserving Triplet Learning](../../ICLR2026/time_series/trident_cross-domain_trajectory_spatio-temporal_representation_via_distance-pres.md)
 - [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
 - [\[ICML 2026\] HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series](../../ICML2026/time_series/hepa_a_self-supervised_horizon-conditioned_event_predictive_architecture_for_tim.md)
 - [\[AAAI 2026\] Finding Time Series Anomalies using Granular-ball Vector Data Description](finding_time_series_anomalies_using_granular-ball_vector_data_description.md)
-- [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](../../ICLR2026/time_series/online_time_series_prediction_using_feature_adjustment.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray
 description: >-
-  [NeurIPS 2025][Medical Imaging][Vision-language alignment] This paper proposes RadZero, a framework centered on VL-CABS (Vision-Language Cross-Attention Based on Similarity)…
+  [NeurIPS 2025][Medical Imaging][Vision-language alignment] This paper proposes RadZero, a framework centered on VL-CABS (Vision-Language Cross-Attention Based on Similarity), enabling explainable and fine-grained vision-language alignment on chest X-rays with unified support for zero-shot classification, localization, and segmentation.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "explainability"
   - "cross-attention"
 date: 2026-05-08
-content_hash: 9152623c0c49c49f
+content_hash: 0077ad64c16f728b
 ---
 
 # RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray
@@ -158,8 +158,8 @@ Contribution of each component (CheXpert AUC):
 - [\[ICCV 2025\] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis](../../ICCV2025/medical_imaging/gemex_a_large-scale_groundable_and_explainable_medical_vqa_benchmark_for_chest_x.md)
 - [\[NeurIPS 2025\] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling](few-shot_learning_from_gigapixel_images_via_hierarchical_vision-language_alignme.md)
 - [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
-- [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[ICML 2026\] PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder](../../ICML2026/medical_imaging/pacx-mae_physiology-augmented_chest_x-ray_masked_autoencoder.md)
+- [\[CVPR 2025\] Enhanced Contrastive Learning with Multi-view Longitudinal Data for Chest X-ray Report Generation](../../CVPR2025/medical_imaging/enhanced_contrastive_learning_with_multi-view_longitudinal_data_for_chest_x-ray_.md)
+- [\[NeurIPS 2025\] Sequential Attention-based Sampling for Histopathological Analysis](sequential_attention-based_sampling_for_histopathological_analysis.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Joint Audio-Video Generation] JavisDiT++ is proposed as a concise and unified framework for Joint Audio-Video Generation (JAVG). It enhances generation quality via modality-specific MoE, achieves frame-level synchronization through time-aligned RoPE, and aligns with human preferences via audio-video DPO. Based on Wan2.1-1.3B, it achieves SOTA perfo
+  [ICLR 2026][Video Generation][Joint Audio-Video Generation] JavisDiT++ is proposed as a concise and unified framework for Joint Audio-Video Generation (JAVG). It enhances generation quality via modality-specific MoE, achieves frame-level synchronization through time-aligned RoPE, and aligns with human preferences via audio-video DPO. Based on Wan2.1-1.3B, it achieves SOTA performance using only approximately 1M public data samples.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Joint Audio-Video Generation
-  - DiT
-  - Mixture-of-Experts
-  - RoPE
-  - DPO
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Joint Audio-Video Generation"
+  - "DiT"
+  - "Mixture-of-Experts"
+  - "RoPE"
+  - "DPO"
 date: 2026-05-08
-content_hash: 39f59a4e711d6c3a
+content_hash: 7d6b9541fb4624f6
 ---
+
 # JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation
 
 **Conference**: ICLR 2026  
@@ -143,8 +144,8 @@ A three-stage training strategy is employed: Audio Pre-training uses 780K audio-
 - [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
 - [\[ICLR 2026\] Dual-IPO: Dual-Iterative Preference Optimization for Text-to-Video Generation](dual-ipo_dual-iterative_preference_optimization_for_text-to-video_generation.md)
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
-- [\[ICML 2026\] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation](../../ICML2026/video_generation/t2av-compass_towards_unified_evaluation_for_text-to-audio-video_generation.md)
 - [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](../../CVPR2026/video_generation/uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
+- [\[ICML 2026\] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation](../../ICML2026/video_generation/t2av-compass_towards_unified_evaluation_for_text-to-audio-video_generation.md)
 
 </div>
 

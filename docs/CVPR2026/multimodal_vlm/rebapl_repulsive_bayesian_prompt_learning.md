@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] ReBaPL: Repulsive Bayesian Prompt Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][SGHMC] ReBaPL transforms CLIP prompt learning from searching for a "single optimal solution" to "sampling a diverse set of high-quality prompts from the posterior using cyclical SGHMC." By introducing a "repulsive force" in the representation space via MMD/Wasserstein metrics to prevent sampling collapse into a single mode, i
+  [CVPR 2026][Multimodal VLM][prompt learning] ReBaPL transforms CLIP prompt learning from searching for a "single optimal solution" to "sampling a diverse set of high-quality prompts from the posterior using cyclical SGHMC." By introducing a "repulsive force" in the representation space via MMD/Wasserstein metrics to prevent sampling collapse into a single mode, it serves as a plug-and-play Bayesian extension for any MLE prompt learning method (e.g., MaPLe, MMRL)…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - SGHMC
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "prompt learning"
+  - "Bayesian inference"
+  - "SGHMC"
+  - "repulsive force"
+  - "posterior sampling"
+  - "generalization"
 date: 2026-05-08
-content_hash: 39864e9b01663d6e
+content_hash: 3109c6661cc94efc
 ---
+
 # ReBaPL: Repulsive Bayesian Prompt Learning
 
 **Conference**: CVPR 2026  
@@ -123,11 +129,11 @@ Choice of Repulsion and Probabilistic Metric (11-dataset avg, Base/Novel/HM, Tab
 
 ## Related Papers
 
+- [\[ICCV 2025\] Calibrating MLLM-as-a-Judge via Multimodal Bayesian Prompt Ensembles](../../ICCV2025/multimodal_vlm/calibrating_mllm-as-a-judge_via_multimodal_bayesian_prompt_ensembles.md)
 - [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
 - [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
 - [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[ICCV 2025\] Calibrating MLLM-as-a-Judge via Multimodal Bayesian Prompt Ensembles](../../ICCV2025/multimodal_vlm/calibrating_mllm-as-a-judge_via_multimodal_bayesian_prompt_ensembles.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Ours proposes P-GenRM, the first personalized generative reward model. Through three-stage training (PSI supervised fine-tuning to build structured evaluation chains → CRE reinforcement learning to enhance reasoning under missing preferences → hard negative curriculum learning to improve robustness), mixed preference s
+  [ICLR 2026 Oral][Reinforcement Learning][Personalized Reward Model] Ours proposes P-GenRM, the first personalized generative reward model. Through three-stage training (PSI supervised fine-tuning to build structured evaluation chains → CRE reinforcement learning to enhance reasoning under missing preferences → hard negative curriculum learning to improve robustness), mixed preference signals are transformed into scenario-adaptive user personas and scoring rubrics. By introduc…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026 Oral"
+  - "Reinforcement Learning"
+  - "Personalized Reward Model"
+  - "Generative Critique"
+  - "Structured Evaluation Chain"
+  - "Test-time Scaling"
+  - "Collaborative Filtering"
 date: 2026-05-08
-content_hash: a53727e6e8091a9c
+content_hash: 7ed7185540176216
 ---
+
 # P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 
 **Conference**: ICLR 2026 Oral  
@@ -189,10 +195,10 @@ P-GenRM-8B outperforms the Prev. SOTA (FT RM + SynthesizeMe-70B) by an average o
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_teachers_of_test_time_scaling.md)
+- [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
 
 </div>
 

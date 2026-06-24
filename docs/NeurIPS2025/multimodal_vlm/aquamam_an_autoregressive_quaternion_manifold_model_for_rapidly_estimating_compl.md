@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AQuaMaM: An Autoregressive, Quaternion Manifold Model for Rapidly Estimating Complex SO(3) Distributions
 description: >-
-  [NeurIPS 2025][Multimodal VLM][SO(3) distribution] This paper proposes AQuaMaM—a Transformer-based autoregressive quaternion manifold model that represents each projected component of the unit quaternion as a geometrical…
+  [NeurIPS 2025][Multimodal VLM][SO(3) distribution] This paper proposes AQuaMaM—a Transformer-based autoregressive quaternion manifold model that represents each projected component of the unit quaternion as a geometrically constrained mixture of uniform distributions, enabling exact likelihood computation and fast sampling on the SO(3) rotation manifold. AQuaMaM achieves 52× faster inference and 14% higher log-likelihood compared to IPDF, with sampled distributions that close…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "mixture of uniforms"
   - "pose estimation"
 date: 2026-05-08
-content_hash: 01b2d50ff289418e
+content_hash: faa7eca1fecd0274
 ---
 
 # AQuaMaM: An Autoregressive, Quaternion Manifold Model for Rapidly Estimating Complex SO(3) Distributions
@@ -127,11 +127,11 @@ IPDF would theoretically require approximately 6 trillion grid cells to match AQ
 
 ## Related Papers
 
-- [\[AAAI 2026\] vMFCoOp: Towards Equilibrium on a Unified Hyperspherical Manifold for Prompting Biomedical VLMs](../../AAAI2026/multimodal_vlm/vmfcoop_towards_equilibrium_on_a_unified_hyperspherical_manifold_for_prompting_b.md)
-- [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
-- [\[NeurIPS 2025\] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness](robustmerge_parameter-efficient_model_merging_for_mllms_with_direction_robustnes.md)
-- [\[NeurIPS 2025\] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](vagen_reinforcing_world_model_reasoning_for_multi-turn_vlm_agents.md)
-- [\[NeurIPS 2025\] Enhancing Vision-Language Model Reliability with Uncertainty-Guided Dropout Decoding](enhancing_visionlanguage_model_reliability_with_uncertaintyg.md)
+- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/multimodal_vlm/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
+- [\[CVPR 2025\] Ground-V: Teaching VLMs to Ground Complex Instructions in Pixels](../../CVPR2025/multimodal_vlm/ground-v_teaching_vlms_to_ground_complex_instructions_in_pixels.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
+- [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](../../CVPR2026/multimodal_vlm/so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
+- [\[ACL 2025\] CrafText Benchmark: Advancing Instruction Following in Complex Multimodal Open-Ended World](../../ACL2025/multimodal_vlm/craftext_benchmark_advancing_instruction_following_in_complex_multimodal_open-en.md)
 
 </div>
 

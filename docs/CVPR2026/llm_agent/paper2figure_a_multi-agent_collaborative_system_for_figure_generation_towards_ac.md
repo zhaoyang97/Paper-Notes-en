@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper
 description: >-
-  [CVPR 2026][Multi-Agent][Paper Note] Paper2Figure utilizes a dual multi-agent system comprising "Generator Agents + Refiner Agents." It first translates text descriptions of papers into a self-developed structured intermediate language, FigScript, used for rendering. A closed-loop Critic-Refine agent system then performs self-correction. Coupled with an i
+  [CVPR 2026][LLM Agent][Multi-agent] Paper2Figure utilizes a dual multi-agent system comprising "Generator Agents + Refiner Agents." It first translates text descriptions of papers into a self-developed structured intermediate language, FigScript, used for rendering. A closed-loop Critic-Refine agent system then performs self-correction. Coupled with an interactive Web editor that returns control to the author, the system outperforms SVG/Mermaid code generation and text-to-ima…
 tags:
-  - CVPR 2026
-  - Multi-Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multi-agent"
+  - "Academic figure generation"
+  - "Structured intermediate language"
+  - "Self-refinement"
+  - "Interactive editing"
 date: 2026-05-08
-content_hash: 9c84434c9df1d661
+content_hash: d97f3b1f68dd144e
 ---
+
 # Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper
 
 **Conference**: CVPR 2026  
@@ -127,11 +133,11 @@ Note: The generation-only version already exhibits strong structural alignment; 
 
 ## Related Papers
 
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](../../ACL2026/multi_agent/roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
 - [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
-- [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](../../AAAI2026/multi_agent/finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](../../AAAI2026/multi_agent/lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
-- [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
+- [\[ICLR 2026\] Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations](../../ICLR2026/llm_agent/presenting_a_paper_is_an_art_self-improvement_aesthetic_agents_for_academic_pres.md)
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[ACL 2025\] PaSa: An LLM Agent for Comprehensive Academic Paper Search](../../ACL2025/llm_agent/pasa_an_llm_agent_for_comprehensive_academic_paper_search.md)
+- [\[CVPR 2026\] SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System](scieducator_scientific_video_understanding_and_educating_via_deming-cycle_multi-.md)
 
 </div>
 

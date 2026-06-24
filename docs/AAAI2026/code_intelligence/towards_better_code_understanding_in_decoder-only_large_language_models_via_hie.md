@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Towards Better Code Understanding in Decoder-Only Models with Contrastive Learning
 description: >-
-  [Code Intelligence] This paper proposes CL4D, a contrastive learning framework that adapts pretrained decoder-only code generation models to code understanding tasks (code search…
+  [Code Intelligence] This paper proposes CL4D, a contrastive learning framework that adapts pretrained decoder-only code generation models to code understanding tasks (code search, clone detection) via continued pretraining, achieving performance comparable to or better than encoder-only models of equivalent scale without retraining them from scratch.
 tags:
   - "Code Intelligence"
 date: 2026-05-08
-content_hash: 46ffb375aa006881
+content_hash: bac335bfdca20d9e
 ---
 
 # Towards Better Code Understanding in Decoder-Only Models with Contrastive Learning
@@ -151,11 +151,11 @@ Ablation experiments reveal that:
 
 ## Related Papers
 
-- [\[ACL 2026\] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility](../../ACL2026/code_intelligence/can_llms_compress_and_decompress_evaluating_code_understanding_and_execution_via.md)
-- [\[ACL 2026\] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding](../../ACL2026/code_intelligence/sense_and_sensitivity_examining_the_influence_of_semantic_recall_on_long_context.md)
+- [\[ICLR 2026\] DiffuCoder: Understanding and Improving Masked Diffusion Models for Code Generation](../../ICLR2026/code_intelligence/diffucoder_understanding_and_improving_masked_diffusion_models_for_code_generati.md)
+- [\[ACL 2025\] LongCodeU: Benchmarking Long-Context Language Models on Long Code Understanding](../../ACL2025/code_intelligence/benchmarking_long-context_language_models_on_long_code_understanding.md)
+- [\[ACL 2025\] GALLa: Graph Aligned Large Language Models for Improved Source Code Understanding](../../ACL2025/code_intelligence/galla_graph_aligned_large_language_models.md)
+- [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](../../ICLR2026/code_intelligence/critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[AAAI 2026\] ReCode: Updating Code API Knowledge with Reinforcement Learning](recode_updating_code_api_knowledge_with_reinforcement_learning.md)
-- [\[ICML 2026\] BoostAPR: Boosting Automated Program Repair via Execution-Grounded Reinforcement Learning with Dual Reward Models](../../ICML2026/code_intelligence/boostapr_boosting_automated_program_repair_via_execution-grounded_reinforcement_.md)
-- [\[ACL 2026\] From Charts to Code: A Hierarchical Benchmark for Multimodal Models](../../ACL2026/code_intelligence/from_charts_to_code_a_hierarchical_benchmark_for_multimodal_models.md)
 
 </div>
 

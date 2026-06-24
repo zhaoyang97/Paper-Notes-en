@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Associative Syntax and Maximal Repetitions Reveal Context-Dependent Complexity in Fruit Bat Communication
 description: >-
-  [NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)][Audio & Speech][animal communication] This paper proposes an unsupervised approach for inferring discrete units, grammar types…
+  [NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)][Audio & Speech][animal communication] This paper proposes an unsupervised approach for inferring discrete units, grammar types, and temporal structure from fruit bat vocalizations, and introduces Maximal Repetitions (MRs) to animal communication research for the first time, finding that communicative complexity is significantly higher in conflict contexts than in affiliative ones.
 tags:
   - "NeurIPS 2025 (Workshop on AI for Non-Human Animal Communication)"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "associative syntax"
   - "maximal repetitions"
 date: 2026-05-08
-content_hash: 9746bc17858f4057
+content_hash: 842cb9465ca5b3ea
 ---
 
 # Associative Syntax and Maximal Repetitions Reveal Context-Dependent Complexity in Fruit Bat Communication
@@ -144,7 +144,7 @@ As a workshop paper, the contribution lies in the methodological cross-disciplin
 - [\[ICML 2026\] Algorithmic Recourse of In-Context Learning for Tabular Data](../../ICML2026/audio_speech/algorithmic_recourse_of_in-context_learning_for_tabular_data.md)
 - [\[ACL 2026\] DRInQ: Evaluating Conversational Implicature with Controlled Context Variation](../../ACL2026/audio_speech/drinq_evaluating_conversational_implicature_with_controlled_context_variation.md)
 - [\[ACL 2026\] Multimodal In-Context Learning for ASR of Low-Resource Languages](../../ACL2026/audio_speech/multimodal_in-context_learning_for_asr_of_low-resource_languages.md)
-- [\[NeurIPS 2025\] LeVo: High-Quality Song Generation with Multi-Preference Alignment](levo_high-quality_song_generation_with_multi-processing_refined_supervision.md)
+- [\[ACL 2025\] Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models](../../ACL2025/audio_speech/does_your_voice_assistant_remember_analyzing_conversational_context_recall_and_u.md)
 
 </div>
 

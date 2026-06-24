@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GLINT achieves SOTA geometric and appearance reconstruction of scene-scale transparent surfaces (e.g., glass walls, display cases) by decomposing Gaussian representations into interface, transmission, and reflection components integrated within a hybrid rasterization + ray tracing pipeline.
+  [CVPR 2026][3D Vision][Gaussian Splatting] GLINT achieves SOTA geometric and appearance reconstruction of scene-scale transparent surfaces (e.g., glass walls, display cases) by decomposing Gaussian representations into interface, transmission, and reflection components integrated within a hybrid rasterization + ray tracing pipeline.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Transparent Surface Reconstruction"
+  - "Radiance Transport Decomposition"
+  - "Hybrid Rendering"
+  - "Scene Reconstruction"
 date: 2026-05-08
-content_hash: 2e19d5d62fdf21f9
+content_hash: 1978fc8db4cfc32e
 ---
+
 # GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ Total loss: $\mathcal{L}_{\text{photo}} = \lambda_1 \mathcal{L}_1 + \lambda_{\te
 ## Related Papers
 
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
-- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[CVPR 2026\] DiffSoup: Direct Differentiable Rasterization of Triangle Soup for Extreme Radiance Field Simplification](diffsoup_direct_differentiable_rasterization_of_triangle_soup_for_extreme_radian.md)
-- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
+- [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
+- [\[CVPR 2026\] RT-Splatting: Joint Reflection-Transmission Modeling with Gaussian Splatting](rt-splatting_joint_reflection-transmission_modeling_with_gaussian_splatting.md)
+- [\[CVPR 2026\] SparseOIT: Improving Order-Independent Transparency 3DGS via Active Set Method](sparseoit_improving_order-independent_transparency_3dgs_via_active_set_method.md)
+- [\[CVPR 2026\] Revisiting Monocular SLAM with Spatio-Temporal Scene Modeling](revisiting_monocular_slam_with_spatio-temporal_scene_modeling.md)
 
 </div>
 

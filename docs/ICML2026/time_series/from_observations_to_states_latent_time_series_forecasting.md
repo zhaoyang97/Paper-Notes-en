@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Observations to States: Latent Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][Latent Chaos] The authors discover that existing TSF models, despite high prediction accuracy, often exhibit "Latent Chaos" in their latent spaces. They propose LatentTSF—which first compresses observations into a high-dimensional latent state space using an AutoEncoder, then allows any mainstream backbone to perform future predicti
+  [ICML 2026][Time Series][Time Series Forecasting] The authors discover that existing TSF models, despite high prediction accuracy, often exhibit "Latent Chaos" in their latent spaces. They propose LatentTSF—which first compresses observations into a high-dimensional latent state space using an AutoEncoder, then allows any mainstream backbone to perform future prediction within this space (using a dual Pred + Align loss), and finally decodes back to the observation space. This…
 tags:
-  - ICML 2026
-  - Time Series
-  - Latent Chaos
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Forecasting"
+  - "Latent State Space"
+  - "Latent Chaos"
+  - "Representation Alignment"
+  - "Mutual Information"
 date: 2026-05-08
-content_hash: 66aecb366480c0b2
+content_hash: da5af321384a91b6
 ---
+
 # From Observations to States: Latent Time Series Forecasting
 
 **Conference**: ICML 2026  
@@ -143,10 +148,10 @@ LatentTSF reduces error across nearly all backbone × dataset combinations. **Th
 ## Related Papers
 
 - [\[ICML 2026\] Latent Laplace Diffusion for Irregular Multivariate Time Series](latent_laplace_diffusion_for_irregular_multivariate_time_series.md)
-- [\[ICML 2026\] Ellipsoidal Time Series Forecasting](ellipsoidal_time_series_forecasting.md)
-- [\[NeurIPS 2025\] OmniCast: A Masked Latent Diffusion Model for Weather Forecasting Across Time Scales](../../NeurIPS2025/time_series/omnicast_a_masked_latent_diffusion_model_for_weather_forecasting_across_time_sca.md)
-- [\[ICML 2026\] Embedding Hybrid Systems into Continuous Latent Vector Fields](embedding_hybrid_systems_into_continuous_latent_vector_fields.md)
-- [\[ICML 2026\] Time-series Forecasting Through the Lens of Dynamics](time-series_forecasting_through_the_lens_of_dynamics.md)
+- [\[ICLR 2026\] A Study of Posterior Stability in Time-Series Latent Diffusion](../../ICLR2026/time_series/a_study_of_posterior_stability_in_time-series_latent_diffusion.md)
+- [\[ICML 2026\] It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks](its_time_towards_the_next_generation_of_time_series_forecasting_benchmarks.md)
+- [\[ICML 2026\] Semantics-Enhanced Retrieval-Augmented Time Series Forecasting](semantics-enhanced_retrieval-augmented_time_series_forecasting.md)
+- [\[ICLR 2026\] Latent-to-Data Cascaded Diffusion Models for Unconditional Time Series Generation](../../ICLR2026/time_series/latent-to-data_cascaded_diffusion_models_for_unconditional_time_series_generatio.md)
 
 </div>
 

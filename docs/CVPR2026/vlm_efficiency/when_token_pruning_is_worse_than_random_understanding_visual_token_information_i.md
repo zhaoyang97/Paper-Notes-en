@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper discovers that existing token pruning methods perform worse than random pruning in deep layers of VLLMs. It proposes a method to quantify visual token information based on output probability variations, revealing the "Information Horizon"—a critical layer where visual token information uniformly dissipates t
+  [CVPR 2026][Multimodal Efficiency][token pruning] This paper discovers that existing token pruning methods perform worse than random pruning in deep layers of VLLMs. It proposes a method to quantify visual token information based on output probability variations, revealing the "Information Horizon"—a critical layer where visual token information uniformly dissipates to zero. This horizon is dynamically influenced by task visual complexity and model capability…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "token pruning"
+  - "information horizon"
+  - "visual token information"
+  - "random pruning"
+  - "VLM inference acceleration"
 date: 2026-05-08
-content_hash: 28038af860d4149c
+content_hash: aff3b52a628bb0de
 ---
+
 # When Token Pruning is Worse than Random: Understanding Visual Token Information in VLLMs
 
 **Conference**: CVPR 2026  
@@ -116,11 +122,11 @@ Since deep information is uniform and no criterion holds an advantage, there is 
 
 ## Related Papers
 
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[CVPR 2026\] LazyVAR: Accelerating Visual Autoregressive Models via Scale-wise Token Pruning and Parallel Group Decoding](lazyvar_accelerating_visual_autoregressive_models_via_scale-wise_token_pruning_a.md)
 - [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
-- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
-- [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](../../ICLR2026/multimodal_vlm/index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
-- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
-- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
+- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
 
 </div>
 

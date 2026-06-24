@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning
 description: >-
-  [ICCV 2025][Image Generation][Reinforcement Learning] This paper proposes GenFlowRL, which integrates generative object-centric optical flow with reinforcement learning by shaping rewards using a δ-flow representation ex…
+  [ICCV 2025][Image Generation][Reinforcement Learning] This paper proposes GenFlowRL, which integrates generative object-centric optical flow with reinforcement learning by shaping rewards using a δ-flow representation extracted from a flow generation model trained on cross-embodiment datasets. The approach enables robust and generalizable robot manipulation policy learning, significantly outperforming flow-based imitation learning and video-guided RL methods across 10 manipul…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Cross-Embodiment"
   - "Video Generative Models"
 date: 2026-05-08
-content_hash: 733998b6bf3edbb7
+content_hash: 0c6de1e933de2f43
 ---
 
 # GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning
@@ -163,10 +163,10 @@ Value ★★★☆☆: Requires training both a flow generation model and an RL 
 
 ## Related Papers
 
+- [\[CVPR 2025\] CTRL-O: Language-Controllable Object-Centric Visual Representation Learning](../../CVPR2025/image_generation/ctrl-o_language-controllable_object-centric_visual_representation_learning.md)
+- [\[CVPR 2025\] GLASS: Guided Latent Slot Diffusion for Object-Centric Learning](../../CVPR2025/image_generation/glass_guided_latent_slot_diffusion_for_object-centric_learning.md)
 - [\[NeurIPS 2025\] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data](../../NeurIPS2025/image_generation/composite_flow_matching_for_reinforcement_learning_with_shifted-dynamics_data.md)
 - [\[ICCV 2025\] GenHancer: Imperfect Generative Models are Secretly Strong Vision-Centric Enhancers](genhancer_imperfect_generative_models_are_secretly_strong_vision-centric_enhance.md)
-- [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](../../ICLR2026/image_generation/hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
-- [\[ICLR 2026\] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)](../../ICLR2026/image_generation/improved_object-centric_diffusion_learning_with_registers_and_contrastive_alignm.md)
 - [\[ICCV 2025\] Deeply Supervised Flow-Based Generative Models](deeply_supervised_flow-based_generative_models.md)
 
 </div>

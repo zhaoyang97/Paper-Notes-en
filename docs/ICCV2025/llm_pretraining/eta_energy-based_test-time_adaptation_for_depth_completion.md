@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ETA: Energy-based Test-time Adaptation for Depth Completion
 description: >-
-  [ICCV 2025][LLM Pretraining][test-time adaptation] This paper proposes ETA, a method that employs an energy-based model to quantify the likelihood of depth predictions belonging to the source domain distribution…
+  [ICCV 2025][LLM Pretraining][test-time adaptation] This paper proposes ETA, a method that employs an energy-based model to quantify the likelihood of depth predictions belonging to the source domain distribution, and guides a pre-trained depth completion model to adapt to new environments at test time by minimizing the energy of target-domain predictions. ETA achieves average improvements of 6.94% and 10.23% over the previous state of the art on outdoor and indoor scenes…
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "domain adaptation"
   - "adversarial perturbation"
 date: 2026-05-08
-content_hash: 0a86fce1e6d829a4
+content_hash: 13a7263b14334047
 ---
 
 # ETA: Energy-based Test-time Adaptation for Depth Completion
@@ -131,11 +131,11 @@ The energy model is trained with a cross-entropy loss: $\mathcal{L}_{\text{energ
 
 ## Related Papers
 
+- [\[ICLR 2026\] TNT: Improving Chunkwise Training for Test-Time Memorization](../../ICLR2026/llm_pretraining/tnt_improving_chunkwise_training_for_test-time_memorization.md)
 - [\[ICLR 2026\] Implicit Bias and Loss of Plasticity in Matrix Completion: Depth Promotes Low-Rank](../../ICLR2026/llm_pretraining/implicit_bias_and_loss_of_plasticity_in_matrix_completion_depth_promotes_low-ran.md)
+- [\[ICLR 2026\] Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling](../../ICLR2026/llm_pretraining/distilled_pretraining_a_modern_lens_of_data_in-context_learning_and_test-time_sc.md)
 - [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](../../NeurIPS2025/llm_pretraining/the_curse_of_depth_in_large_language_models.md)
-- [\[NeurIPS 2025\] One Prompt Fits All: Universal Graph Adaptation for Pretrained Models](../../NeurIPS2025/llm_pretraining/one_prompt_fits_all_universal_graph_adaptation_for_pretrained_models.md)
-- [\[NeurIPS 2025\] Gradient-Weight Alignment as a Train-Time Proxy for Generalization in Classification Tasks](../../NeurIPS2025/llm_pretraining/gradient-weight_alignment_as_a_train-time_proxy_for_generalization_in_classifica.md)
-- [\[ICML 2026\] Predicting Large Model Test Losses with a Noisy Quadratic System](../../ICML2026/llm_pretraining/predicting_large_model_test_losses_with_a_noisy_quadratic_system.md)
+- [\[ACL 2025\] TokAlign: Efficient Vocabulary Adaptation via Token Alignment](../../ACL2025/llm_pretraining/tokalign_vocab_adaptation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Entropy-Preserving Reinforcement Learning (REPO / ADAPO)
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] This paper reveals the theoretical root cause of systemic policy entropy collapse in policy gradient RL algorithms during LLM post-training (the positive correlation between advantage functions and log-probabilities). It proposes two complementary solutions: REPO (decorrelation by modifying the advantage function) and
+  [ICLR 2026][Reinforcement Learning][Entropy Preservation] This paper reveals the theoretical root cause of systemic policy entropy collapse in policy gradient RL algorithms during LLM post-training (the positive correlation between advantage functions and log-probabilities). It proposes two complementary solutions: REPO (decorrelation by modifying the advantage function) and ADAPO (adaptive asymmetric clipping), achieving SOTA performance on interactive tool-use tasks.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Entropy Preservation"
+  - "Policy Gradient"
+  - "LLM Post-training"
+  - "GRPO"
+  - "Exploration"
 date: 2026-05-08
-content_hash: 252ca1cd8778f262
+content_hash: 0c80787a7c8ebbd2
 ---
+
 # Entropy-Preserving Reinforcement Learning (REPO / ADAPO)
 
 **Conference**: ICLR 2026  
@@ -138,8 +143,8 @@ AIME 2024/2025 (Mathematical Reasoning) — Qwen-3-8B: Minor differences (0.43-0
 
 - [\[ACL 2026\] CE-GPPO: Coordinating Entropy via Gradient-Preserving Clipping Policy Optimization in Reinforcement Learning](../../ACL2026/reinforcement_learning/ce-gppo_coordinating_entropy_via_gradient-preserving_clipping_policy_optimizatio.md)
 - [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
-- [\[ACL 2026\] Targeted Exploration via Unified Entropy Control for Reinforcement Learning](../../ACL2026/reinforcement_learning/targeted_exploration_via_unified_entropy_control_for_reinforcement_learning.md)
 - [\[ICLR 2026\] Exploration vs Exploitation: Rethinking RLVR through Clipping, Entropy, and Spurious Reward](exploration_vs_exploitation_rethinking_rlvr_through_clipping_entropy_and_spuriou.md)
+- [\[ACL 2026\] Targeted Exploration via Unified Entropy Control for Reinforcement Learning](../../ACL2026/reinforcement_learning/targeted_exploration_via_unified_entropy_control_for_reinforcement_learning.md)
 - [\[ICLR 2026\] Relative Entropy Pathwise Policy Optimization](relative_entropy_pathwise_policy_optimization.md)
 
 </div>

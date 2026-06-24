@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Phase Transition for Opinion Dynamics with Competing Biases
 description: >-
-  [AAAI 2026][phase transition] This paper models the competition between two opposing forces — external subversive bias and individual stubbornness — on binary opinion spreading over directed random graphs. It proves that…
+  [AAAI 2026][phase transition] This paper models the competition between two opposing forces — external subversive bias and individual stubbornness — on binary opinion spreading over directed random graphs. It proves that the system exhibits a sharp phase transition: when the bias exceeds a critical threshold $p_c$, the population rapidly reaches a new consensus; below the threshold, the system remains in a long-lived metastable polarized state. The critical point is determine…
 tags:
   - "AAAI 2026"
   - "phase transition"
@@ -11,7 +11,7 @@ tags:
   - "competing biases"
   - "metastability"
 date: 2026-05-08
-content_hash: 48196f417ee482a4
+content_hash: 7f310dd728b0aace
 ---
 
 # A Phase Transition for Opinion Dynamics with Competing Biases

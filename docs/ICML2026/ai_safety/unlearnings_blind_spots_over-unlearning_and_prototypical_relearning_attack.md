@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 机器遗忘的两个盲点：过度遗忘与原型重学习攻击
+  [Paper Note] Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper reveals two critical blind spots in machine unlearning—over-unlearning (collateral damage to samples near the decision boundary) and prototype re-learning attacks (recovery of forgotten knowledge using few samples)—and proposes the Spotter framework to simultaneously mitigate both issues through boundary mas
+  [ICML 2026][AI Safety][Machine Unlearning] This paper reveals two critical blind spots in machine unlearning—over-unlearning (collateral damage to samples near the decision boundary) and prototype re-learning attacks (recovery of forgotten knowledge using few samples)—and proposes the Spotter framework to simultaneously mitigate both issues through boundary mask distillation and intra-class dispersion loss.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Over-unlearning"
+  - "Re-learning Attacks"
+  - "Privacy"
+  - "Classifiers"
 date: 2026-05-08
-content_hash: eab2c1332cb1395c
+content_hash: b9f91074a82c1835
 ---
+
 # Two Blind Spots in Machine Unlearning: Over-Unlearning and Prototype Re-learning Attacks
 
 **Conference**: ICML 2026  
@@ -121,11 +127,11 @@ Taking the unlearning of the "airplane" class in CIFAR-10 as an example: inverti
 
 ## Related Papers
 
-- [\[ICML 2026\] 遗忘并非删除：大语言模型机器遗忘中的可逆性调查](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
-- [\[ICML 2026\] Demystifying the Optimal Fair Classifier in Multi-Class Classification](demystifying_the_optimal_fair_classifier_in_multi-class_classification.md)
-- [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
-- [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
-- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[ICML 2026\] Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
+- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](../../ICLR2026/ai_safety/retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
+- [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
+- [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](../../ICLR2026/ai_safety/label_smoothing_improves_machine_unlearning.md)
+- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](../../ICLR2026/ai_safety/machine_unlearning_under_retainforget_entanglement.md)
 
 </div>
 

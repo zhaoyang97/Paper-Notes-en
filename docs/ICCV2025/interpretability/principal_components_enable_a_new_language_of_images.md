@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] "Principal Components" Enable A New Language of Images
 description: >-
-  [ICCV 2025][Interpretability][visual tokenizer] This paper proposes Semanticist, a visual tokenization framework that embeds a provable PCA structure into the latent token space—where each subsequent token contributes de…
+  [ICCV 2025][Interpretability][visual tokenizer] This paper proposes Semanticist, a visual tokenization framework that embeds a provable PCA structure into the latent token space—where each subsequent token contributes decreasing, non-overlapping information—and employs a diffusion decoder to decouple the semantic-spectral entanglement effect, achieving state-of-the-art performance on both image reconstruction and autoregressive generation.
 tags:
   - "ICCV 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "diffusion decoder"
   - "autoregressive generation"
 date: 2026-05-08
-content_hash: 0e527cc1ce176ecf
+content_hash: ad278930d2b3144d
 ---
 
 # "Principal Components" Enable A New Language of Images
@@ -144,9 +144,9 @@ Comparison of image reconstruction and generation performance on ImageNet 256×2
 
 - [\[NeurIPS 2025\] Beyond Components: Singular Vector-Based Interpretability of Transformer Circuits](../../NeurIPS2025/interpretability/beyond_components_singular_vector-based_interpretability_of_transformer_circuits.md)
 - [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](../../ICML2026/interpretability/courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
+- [\[ICLR 2026\] Faithfulness Under the Distribution: A New Look at Attribution Evaluation](../../ICLR2026/interpretability/faithfulness_under_the_distribution_a_new_look_at_attribution_evaluation.md)
+- [\[ICLR 2026\] From Concepts to Components: Concept-Agnostic Attention Module Discovery in Transformers](../../ICLR2026/interpretability/from_concepts_to_components_concept-agnostic_attention_module_discovery_in_trans.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](../../NeurIPS2025/interpretability/table_as_a_modality_for_large_language_models.md)
-- [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](../../NeurIPS2025/interpretability/a_controllable_examination_for_longcontext_language_models.md)
-- [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](../../NeurIPS2025/interpretability/emergence_of_linear_truth_encodings_in_language_models.md)
 
 </div>
 

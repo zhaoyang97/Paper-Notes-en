@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Pandora's Box] This paper proposes new algorithms for the online Pandora's Box problem, improving regret from $\widetilde{O}(n\sqrt{T})$ to $\widetilde{O}(\sqrt{nT})$ (matching the…
+  [NeurIPS 2025][Reinforcement Learning][Pandora's Box] This paper proposes new algorithms for the online Pandora's Box problem, improving regret from $\widetilde{O}(n\sqrt{T})$ to $\widetilde{O}(\sqrt{nT})$ (matching the lower bound), and introduces the first contextual linear extension achieving $\widetilde{O}(nd\sqrt{T})$ regret.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "regret bound"
   - "contextual linear bandits"
 date: 2026-05-08
-content_hash: e06702e7e846660d
+content_hash: 6d967464da5792de
 ---
 
 # Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality
@@ -136,7 +136,7 @@ Each round requires constructing an optimistic distribution and solving for thre
 - [\[NeurIPS 2025\] Generalized Linear Bandits: Almost Optimal Regret with One-Pass Update](generalized_linear_bandits_almost_optimal_regret_with_one-pass_update.md)
 - [\[NeurIPS 2025\] Thompson Sampling for Multi-Objective Linear Contextual Bandit](thompson_sampling_for_multi-objective_linear_contextual_bandit.md)
 - [\[NeurIPS 2025\] Tractable Multinomial Logit Contextual Bandits with Non-Linear Utilities](tractable_multinomial_logit_contextual_bandits_with_non-linear_utilities.md)
-- [\[NeurIPS 2025\] Dynamic Regret Reduces to Kernelized Static Regret](dynamic_regret_reduces_to_kernelized_static_regret.md)
+- [\[NeurIPS 2025\] Establishing Linear Surrogate Regret Bounds for Convex Smooth Losses via Convolutional Fenchel–Young Losses](establishing_linear_surrogate_regret_bounds_for_convex_smooth_losses_via_convolu.md)
 
 </div>
 

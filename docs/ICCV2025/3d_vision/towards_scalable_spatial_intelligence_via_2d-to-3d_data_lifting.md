@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting
 description: >-
-  [ICCV 2025][3D Vision][Spatial Intelligence] This paper proposes a scalable data generation pipeline that automatically converts single-view 2D images into metric-scale 3D representations—including point clouds…
+  [ICCV 2025][3D Vision][Spatial Intelligence] This paper proposes a scalable data generation pipeline that automatically converts single-view 2D images into metric-scale 3D representations—including point clouds, camera poses, and depth maps—by integrating depth estimation, camera calibration, and scale calibration. The pipeline produces COCO-3D and Objects365-v2-3D datasets comprising approximately 2 million scenes, yielding significant performance gains across multiple 3D ta…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Scale Calibration"
   - "Point Cloud Dataset"
 date: 2026-05-08
-content_hash: 8031ef75ace747b8
+content_hash: 0356bf0abc80fbd6
 ---
 
 # Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting
@@ -143,11 +143,11 @@ Zero-shot generalization is also strong: models trained solely on COCO-3D can be
 
 ## Related Papers
 
-- [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 - [\[ICCV 2025\] DAViD: Data-efficient and Accurate Vision Models from Synthetic Data](david_data-efficient_and_accurate_vision_models_from_synthetic_data.md)
-- [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](../../CVPR2026/3d_vision/unisplat_3d_representations_unposed.md)
-- [\[CVPR 2026\] 2D-LFM: Lifting Foundation Model without 3D Supervision](../../CVPR2026/3d_vision/2d-lfm_lifting_foundation_model_without_3d_supervision.md)
+- [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
 - [\[CVPR 2026\] Lifting Unlabeled Internet-level Data for 3D Scene Understanding](../../CVPR2026/3d_vision/lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](../../CVPR2026/3d_vision/learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
+- [\[NeurIPS 2025\] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming](../../NeurIPS2025/3d_vision/trim_scalable_3d_gaussian_diffusion_inference_with_temporal_and_spatial_trimming.md)
 
 </div>
 

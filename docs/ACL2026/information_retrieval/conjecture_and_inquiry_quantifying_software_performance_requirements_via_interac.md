@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] The authors propose IRAP, an Interactive Retrieval-Augmented Preference elicitation method that quantifies natural language software performance requirements into mathematical functions. IRAP achieves up to a 40x performance improvement over 10 state-of-the-art (SOTA) methods across four real-world datasets with only 5
+  [ACL 2026][Information Retrieval & RAG][Requirement Quantification] The authors propose IRAP, an Interactive Retrieval-Augmented Preference elicitation method that quantifies natural language software performance requirements into mathematical functions. IRAP achieves up to a 40x performance improvement over 10 state-of-the-art (SOTA) methods across four real-world datasets with only 5 rounds of interaction.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Requirement Quantification"
+  - "Preference Elicitation"
+  - "Retrieval-Augmented Generation"
+  - "Interactive Systems"
+  - "Software Performance Requirements"
 date: 2026-05-08
-content_hash: a6cb70ad266a2b0c
+content_hash: 754d641c8b480d8b
 ---
+
 # Conjecture and Inquiry: Quantifying Software Performance Requirements via Interactive Retrieval-Augmented Preference Elicitation
 
 **Conference**: ACL 2026  
@@ -131,14 +137,14 @@ To minimize the burden of open-ended questions, IRAP uses a **tree-based multipl
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Quantifying and Improving the Robustness of Retrieval-Augmented Language Models Against Spurious Features in Grounding Data](quantifying_and_improving_the_robustness_of_retrieval-augmented_language_models_.md)
+- [\[ICML 2026\] Temporal Preference Optimization for Unsupervised Retrieval](../../ICML2026/information_retrieval/temporal_preference_optimization_for_unsupervised_retrieval.md)
 - [\[ACL 2026\] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings](why_mean_pooling_works_quantifying_second-order_collapse_in_text_embeddings.md)
 - [\[ICLR 2026\] AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations](../../ICLR2026/information_retrieval/amemgym_interactive_memory_benchmarking_for_assistants_in_long-horizon_conversat.md)
-- [\[ICML 2026\] Temporal Preference Optimization for Unsupervised Retrieval](../../ICML2026/information_retrieval/temporal_preference_optimization_for_unsupervised_retrieval.md)
 - [\[ACL 2025\] GainRAG: Preference Alignment in Retrieval-Augmented Generation through Gain Signal Synthesis](../../ACL2025/information_retrieval/gainrag_preference_alignment.md)
 
 </div>

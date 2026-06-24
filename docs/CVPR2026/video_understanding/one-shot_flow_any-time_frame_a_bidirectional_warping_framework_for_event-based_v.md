@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Addressing the dilemma in Event-based Video Frame Interpolation (E-VFI) where "forward warping is fast but suffers from holes, while backward warping yields high quality but requires recomputation for every frame," this paper proposes "One-Shot Flow, Any-Time Frame." By computing a bidirectional motion representation c
+  [CVPR 2026][Video Understanding][Event Camera] Addressing the dilemma in Event-based Video Frame Interpolation (E-VFI) where "forward warping is fast but suffers from holes, while backward warping yields high quality but requires recomputation for every frame," this paper proposes "One-Shot Flow, Any-Time Frame." By computing a bidirectional motion representation covering the entire duration once, optical flow at any time can be queried directly. A bidirectional warping mecha…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event Camera"
+  - "Video Frame Interpolation"
+  - "Optical Flow"
+  - "Forward/Backward Warping"
+  - "Any-time Interpolation"
 date: 2026-05-08
-content_hash: 054271c82a561002
+content_hash: f2026ecb34eaec91
 ---
+
 # One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation
 
 **Conference**: CVPR 2026  
@@ -171,11 +177,11 @@ Crucially, the cost of Ours is **amortized** over the frames: flow is estimated 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Time-Specialized Event-Image Alignment for Blur-to-Video Decomposition](time-specialized_event-image_alignment_for_blur-to-video_decomposition.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
-- [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
-- [\[ECCV 2024\] Exploiting Dual-Correlation for Multi-frame Time-of-Flight Denoising](../../ECCV2024/image_restoration/exploiting_dual-correlation_for_multi-frame_time-of-flight_denoising.md)
-- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
+- [\[CVPR 2026\] From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation](from_contrast_to_consistency_rethinking_event-based_continuous-time_optical_flow.md)
+- [\[AAAI 2026\] BAT: Learning Event-based Optical Flow with Bidirectional Adaptive Temporal Correlation](../../AAAI2026/video_understanding/bat_learning_event-based_optical_flow_with_bidirectional_adaptive_temporal_corre.md)
+- [\[AAAI 2026\] VTinker: Guided Flow Upsampling and Texture Mapping for High-Resolution Video Frame Interpolation](../../AAAI2026/video_understanding/vtinker_guided_flow_upsampling_and_texture_mapping_for_high-resolution_video_fra.md)
+- [\[ECCV 2024\] IAM-VFI: Interpolate Any Motion for Video Frame Interpolation with Motion Complexity Map](../../ECCV2024/video_understanding/iam-vfi_interpolate_any_motion_for_video_frame_interpolation_with_motion_complex.md)
+- [\[CVPR 2026\] Envisioning the Future, One Step at a Time](envisioning_the_future_one_step_at_a_time.md)
 
 </div>
 

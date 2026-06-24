@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scene Grounding In the Wild
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper proposes an inverse optimization framework based on semantic features to align local 3D reconstructions (SfM) captured in the wild to a complete pseudo-synthetic reference model (e.g., Google Earth Studio). By utilizing DINOv2 features and robust optimization, it bridges significant domain gaps and achieves
+  [CVPR 2026][3D Vision][Scene grounding] This paper proposes an inverse optimization framework based on semantic features to align local 3D reconstructions (SfM) captured in the wild to a complete pseudo-synthetic reference model (e.g., Google Earth Studio). By utilizing DINOv2 features and robust optimization, it bridges significant domain gaps and achieves globally consistent fusion of non-overlapping local reconstructions.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene grounding"
+  - "3D reconstruction"
+  - "Gaussian Splatting"
+  - "semantic features"
+  - "cross-domain alignment"
 date: 2026-05-08
-content_hash: f00f211a774dd797
+content_hash: 51235dffe9eb8ddd
 ---
+
 # Scene Grounding In the Wild
 
 **Conference**: CVPR 2026  
@@ -160,10 +166,10 @@ The error of this method is an order of magnitude lower than feed-forward models
 ## Related Papers
 
 - [\[CVPR 2026\] EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents](embodmocap_in-the-wild_4d_human-scene_reconstruction_for_embodied_agents.md)
+- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
 - [\[CVPR 2026\] NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)
 - [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
-- [\[CVPR 2026\] ORBIT: Benchmarking SfM in the Wild with 360° Video](orbit_benchmarking_sfm_in_the_wild_with_360deg_video.md)
-- [\[CVPR 2026\] ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)
+- [\[ICLR 2026\] Joint Optimization for 4D Human-Scene Reconstruction in the Wild](../../ICLR2026/3d_vision/joint_optimization_for_4d_human-scene_reconstruction_in_the_wild.md)
 
 </div>
 

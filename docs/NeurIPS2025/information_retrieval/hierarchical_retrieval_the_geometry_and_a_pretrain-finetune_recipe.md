@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Retrieval: The Geometry and a Pretrain-Finetune Recipe
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][hierarchical retrieval] This paper investigates the feasibility of Dual Encoders (DE) for Hierarchical Retrieval (HR)…
+  [NeurIPS 2025][Information Retrieval & RAG][hierarchical retrieval] This paper investigates the feasibility of Dual Encoders (DE) for Hierarchical Retrieval (HR), theoretically proving that embedding dimensionality need only grow linearly with hierarchy depth and logarithmically with document count. After identifying the "lost-in-the-long-distance" phenomenon, the paper proposes a pretrain-finetune strategy that improves long-distance recall from 19% to 76% on WordNet.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "pretrain-finetune"
   - "long-distance retrieval"
 date: 2026-05-08
-content_hash: 9d5bef2d0725670b
+content_hash: abc0738e8226a808
 ---
 
 # Hierarchical Retrieval: The Geometry and a Pretrain-Finetune Recipe
@@ -173,10 +173,10 @@ At $d=64$, pretrain+finetune improves overall recall from 71.4% to **92.3%**, an
 ## Related Papers
 
 - [\[NeurIPS 2025\] HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG](hifi-rag_hierarchical_content_filtering_and_two-pass_generation_for_open-domain_.md)
-- [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](../../ICLR2026/information_retrieval/hierarchical_concept-based_interpretable_models.md)
-- [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](../../ICML2026/information_retrieval/hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
-- [\[ACL 2026\] Why These Documents? Explainable Generative Retrieval with Hierarchical Category Paths](../../ACL2026/information_retrieval/why_these_documents_explainable_generative_retrieval_with_hierarchical_category_.md)
+- [\[ACL 2025\] Hierarchical Document Refinement for Long-context Retrieval-augmented Generation](../../ACL2025/information_retrieval/hierarchical_document_refinement_for_long-context_retrieval-augmented_generation.md)
+- [\[ACL 2025\] Beyond True or False: Retrieval-Augmented Hierarchical Analysis of Nuanced Claims](../../ACL2025/information_retrieval/beyond_true_or_false_retrieval-augmented_hierarchical_analysis_of_nuanced_claims.md)
 - [\[ACL 2026\] FinRAG-12B: A Production-Validated Recipe for Grounded Question Answering in Banking](../../ACL2026/information_retrieval/finrag-12b_a_production-validated_recipe_for_grounded_question_answering_in_bank.md)
+- [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](../../ICLR2026/information_retrieval/hierarchical_concept-based_interpretable_models.md)
 
 </div>
 

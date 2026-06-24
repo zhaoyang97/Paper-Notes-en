@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EI-Part: Explode for Completion and Implode for Refinement
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] EI-Part proposes an "Explode-Implode" part-level 3D generation framework: incomplete segmented parts are **exploded** into a dispersed state to make room for structural completion, then **imploded** back to a compact state to dedicate full resolution to detail refinement. Self-attention is used in both states to mainta
+  [CVPR 2026][3D Vision][Part-level 3D Generation] EI-Part proposes an "Explode-Implode" part-level 3D generation framework: incomplete segmented parts are **exploded** into a dispersed state to make room for structural completion, then **imploded** back to a compact state to dedicate full resolution to detail refinement. Self-attention is used in both states to maintain structural consistency among parts, ultimately outperforming SOTA models like HoloPart, X-Part…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Part-level 3D Generation"
+  - "Explode-Implode Strategy"
+  - "Sparse Voxels"
+  - "Structured Diffusion"
+  - "Structural Consistency"
 date: 2026-05-08
-content_hash: f7e2912001945638
+content_hash: 8cd734c7614c4cd5
 ---
+
 # EI-Part: Explode for Completion and Implode for Refinement
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Ours achieves the best performance across **all 6 metrics**. Most notably, CD is
 
 ## Related Papers
 
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement](dehallu3d_hallucination-mitigated_3d_generation_from_a_single_image_via_cyclic_v.md)
-- [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
-- [\[CVPR 2026\] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion](learning_spatial-temporal_consistency_for_3d_semantic_scene_completion.md)
-- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
+- [\[CVPR 2026\] X-Part: High Fidelity And Structure Coherent Shape Decomposition And Completion](x-part_high_fidelity_and_structure_coherent_shape_decomposition_and_completion.md)
+- [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] UniPart: Part-Level 3D Generation with Unified 3D Geom-Seg Latents](unipart_part-level_3d_generation_with_unified_3d_geom-seg_latents.md)
+- [\[CVPR 2026\] PARSE: Part-Aware Relational Spatial Modeling](parse_part-aware_relational_spatial_modeling.md)
+- [\[CVPR 2026\] VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement](viaformer_voxel-image_alignment_transformer_for_high-fidelity_voxel_refinement.md)
 
 </div>
 

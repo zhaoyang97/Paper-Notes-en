@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] SOC is an "object-centric" synthetic data pipeline: it first generates 20 million high-quality single-object segmented snippets using generative models, then assembles them into 2 million images using 3D geometric layout and camera configuration augmentations, accompanied by pixel-precise masks, boxes, and referring ex
+  [CVPR 2026][Segmentation][Synthetic data] SOC is an "object-centric" synthetic data pipeline: it first generates 20 million high-quality single-object segmented snippets using generative models, then assembles them into 2 million images using 3D geometric layout and camera configuration augmentations, accompanied by pixel-precise masks, boxes, and referring expressions. Training with only 100,000 synthetic images allows open-vocabulary detection, segmentation…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Synthetic data"
+  - "object compositions"
+  - "3D layout augmentation"
+  - "generative harmonization"
+  - "open-vocabulary detection"
 date: 2026-05-08
-content_hash: 5daef9edf5aced58
+content_hash: a18a2a51d19aa434
 ---
+
 # Synthetic Object Compositions for Scalable and Accurate Learning in Detection, Segmentation, and Grounding
 
 **Conference**: CVPR 2026  
@@ -147,15 +153,16 @@ COCO zero-shot instance segmentation AP (Sec 4.7), validating the four major des
 - Value: ⭐⭐⭐⭐⭐ The first large-scale synthetic data to systematically outperform real datasets across multiple tasks and models, with an open, controllable, and scalable framework.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision](conversational_image_segmentation_grounding_abstract_concepts_with_scalable_supe.md)
+- [\[ICLR 2026\] S3OD: Towards Generalizable Salient Object Detection with Synthetic Data](../../ICLR2026/segmentation/s3od_towards_generalizable_salient_object_detection_with_synthetic_data.md)
 - [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
 - [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](../../ICCV2025/segmentation/legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
 - [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
-- [\[CVPR 2026\] RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](raven_radar_adaptive_vision_encoders_for_efficient_chirp-wise_object_detection_a.md)
 
 </div>
 

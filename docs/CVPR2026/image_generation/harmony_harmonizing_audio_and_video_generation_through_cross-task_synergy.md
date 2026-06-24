@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy
 description: >-
-  [CVPR 2026][Video Generation][Classifier-Free Guidance] Harmony co-trains the joint generation task with two unidirectional auxiliary tasks using **clean signals** (audio-driven video and video-driven audio). By incorporating a decoupled interaction module that separates coarse style from fine-grained temporal alignment, alongside SyncCFG—which utilizes "silence/stillness"
+  [CVPR 2026][Image Generation][Joint audio-video generation] Harmony co-trains the joint generation task with two unidirectional auxiliary tasks using **clean signals** (audio-driven video and video-driven audio). By incorporating a decoupled interaction module that separates coarse style from fine-grained temporal alignment, alongside SyncCFG—which utilizes "silence/stillness" as negative anchors to amplify synchronization signals—Harmony achieves the first stable open-source…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Classifier-Free Guidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Joint audio-video generation"
+  - "cross-task synergy"
+  - "audio-visual synchronization"
+  - "decoupled attention"
+  - "Classifier-Free Guidance"
 date: 2026-05-08
-content_hash: 689c88774c0cfa18
+content_hash: 2020b7e7fb9dc565
 ---
+
 # Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy
 
 **Conference**: CVPR 2026  
@@ -141,16 +146,16 @@ Incremental component testing on speech data:
 - **Value**: ⭐⭐⭐⭐⭐ Sets a new open-source standard for audio-visual synchronization quality.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
-- [\[CVPR 2026\] VABench: A Comprehensive Benchmark for Audio-Video Generation](vabench_a_comprehensive_benchmark_for_audio-video_generation.md)
-- [\[CVPR 2026\] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation](unityvideo_unified_multi-modal_multi-task_learning_for_enhancing_world-aware_vid.md)
-- [\[CVPR 2026\] UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation](unitalking_a_unified_audio-video_framework_for_talking_portrait_generation.md)
-- [\[CVPR 2026\] InfinityHuman: Towards Long-Term Audio-Driven Human Animation](infinityhuman_towards_long-term_audio-driven_human_animation.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video](cross-modal_emotion_transfer_for_emotion_editing_in_talking_face_video.md)
+- [\[CVPR 2026\] FaithFusion: Harmonizing Reconstruction and Generation via Pixel-wise Information Gain](faithfusion_harmonizing_reconstruction_and_generation_via_pixel-wise_information.md)
+- [\[CVPR 2026\] Group Diffusion: Enhancing Image Generation by Unlocking Cross-Sample Collaboration](group_diffusion_enhancing_image_generation_by_unlocking_cross-sample_collaborati.md)
+- [\[CVPR 2026\] Cinematic Audio Source Separation Using Visual Cues](cinematic_audio_source_separation_using_visual_cues.md)
 
 </div>
 

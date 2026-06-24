@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PixNerd: Pixel Neural Field Diffusion
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] PixNerd replaces the final linear projection of the Diffusion Transformer with a "per-patch implicit neural field head" that dynamically generates weights from Transformer features. This head decodes fine-grained pixels within large patches, enabling single-stage, end-to-end diffusion in the original pixel space withou
+  [ICLR 2026][Image Generation][Pixel-space Diffusion] PixNerd replaces the final linear projection of the Diffusion Transformer with a "per-patch implicit neural field head" that dynamically generates weights from Transformer features. This head decodes fine-grained pixels within large patches, enabling single-stage, end-to-end diffusion in the original pixel space without relying on VAEs or cascaded multi-scale architectures. It achieves a 1.93 FID on ImageNet $256 \times 256…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Pixel-space Diffusion"
+  - "Neural Field"
+  - "Diffusion Transformer"
+  - "Large Patch"
+  - "End-to-End"
 date: 2026-05-08
-content_hash: e01ab6a277cda7ae
+content_hash: 3e35ac5c80ad3ce9
 ---
+
 # PixNerd: Pixel Neural Field Diffusion
 
 **Conference**: ICLR 2026  

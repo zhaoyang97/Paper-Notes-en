@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives
 description: >-
-  [AAAI 2026][Medical NLP][dense retrieval] This paper proposes a hard negative mining method that constructs a multi-hop semantic graph from PubMed citation chains and performs random walks thereon. Using only 20k trainin…
+  [AAAI 2026 Oral][Medical LLM][dense retrieval] This paper proposes a hard negative mining method that constructs a multi-hop semantic graph from PubMed citation chains and performs random walks thereon. Using only 20k training samples and minimal fine-tuning steps, 33M/110M small models surpass retrieval baselines with billions of parameters on BEIR and LoTTE.
 tags:
-  - "AAAI 2026"
-  - "Medical NLP"
+  - "AAAI 2026 Oral"
+  - "Medical LLM"
   - "dense retrieval"
   - "hard negative mining"
   - "citation graph"
   - "biomedical IR"
   - "PubMed"
 date: 2026-05-08
-content_hash: ad5f1124b9ff9ccb
+content_hash: 9a0c3403ab46b458
 ---
 
 # BiCA: Effective Biomedical Dense Retrieval with Citation-Aware Hard Negatives
@@ -145,9 +145,9 @@ The Doc2Query (all-t5-base-v1) model is used to generate synthetic queries from 
 
 - [\[ACL 2026\] Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction](../../ACL2026/medical_nlp/efficient_and_effective_internal_memory_retrieval_for_llm-based_healthcare_predi.md)
 - [\[ACL 2026\] BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels](../../ACL2026/medical_nlp/biohicl_hierarchical_multi-label_contrastive_learning_for_biomedical_retrieval_w.md)
-- [\[AAAI 2026\] LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems](lucid_learning-enabled_uncertainty-aware_certification_of_stochastic_dynamical_s.md)
 - [\[AAAI 2026\] Learning Cell-Aware Hierarchical Multi-Modal Representations for Robust Molecular Modeling](learning_cell-aware_hierarchical_multi-modal_representations.md)
-- [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
+- [\[AAAI 2026\] LUCID: Learning-Enabled Uncertainty-Aware Certification of Stochastic Dynamical Systems](lucid_learning-enabled_uncertainty-aware_certification_of_stochastic_dynamical_s.md)
+- [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](../../ACL2026/medical_nlp/ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
 
 </div>
 

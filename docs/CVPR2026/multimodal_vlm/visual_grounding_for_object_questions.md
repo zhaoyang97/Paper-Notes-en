@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Visual Grounding for Object Questions
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper proposes a new task, **Visual Grounding for Object Questions (VGOQ)**, which shifts the focus from "where the direct answer is" to "locating visual evidence/context that supports answering open-ended abstract questions." The authors developed two automated data pipelines to create the VizWiz-VGOQ and ABO-VGO
+  [CVPR 2026][Multimodal VLM][Visual Grounding] This paper proposes a new task, **Visual Grounding for Object Questions (VGOQ)**, which shifts the focus from "where the direct answer is" to "locating visual evidence/context that supports answering open-ended abstract questions." The authors developed two automated data pipelines to create the VizWiz-VGOQ and ABO-VGOQ benchmarks and trained a lightweight CLIPSeg-style model with only 1.77M parameters. This model outperforms larg…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Grounding"
+  - "Object Questions"
+  - "Evidence Segmentation"
+  - "Synthetic Data Generation"
+  - "Lightweight Models"
 date: 2026-05-08
-content_hash: 5784a60aee6d84da
+content_hash: 01b4e0f90d8f73c0
 ---
+
 # Visual Grounding for Object Questions
 
 **Conference**: CVPR 2026  
@@ -120,10 +126,10 @@ Evaluation uses gIoU (mean per-sample IoU). The table below highlights performan
 ## Related Papers
 
 - [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
-- [\[CVPR 2026\] VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction](vgent_visual_grounding_via_modular_design_for_disentangling_reasoning_and_predic.md)
+- [\[CVPR 2026\] IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)
 - [\[CVPR 2026\] From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding](from_failure_to_feedback_group_revision_unlocks_hard_cases_in_object-level_groun.md)
 - [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
-- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
+- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 
 </div>
 

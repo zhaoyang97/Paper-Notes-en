@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][foundation models] This paper proposes a three-stage framework (meta-scientific integration → hybrid human-AI co-creation → autonomous scientific discovery) to characterize how fo…
+  [NeurIPS 2025][Self-Supervised Learning][foundation models] This paper proposes a three-stage framework (meta-scientific integration → hybrid human-AI co-creation → autonomous scientific discovery) to characterize how foundation models are driving a transition in scientific paradigms from tool-based enhancement toward paradigm-level transformation. It also provides a systematic survey of FM integration across the four classical scientific paradigms: experimental, theoretical…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "human-AI collaboration"
   - "AI for Science"
 date: 2026-05-08
-content_hash: 632217b4b17277ef
+content_hash: cc3beed1c17837f7
 ---
 
 # Foundation Models for Scientific Discovery: From Paradigm Enhancement to Paradigm Transition
@@ -154,9 +154,9 @@ Three major future directions are identified: embodied scientific agents, closed
 
 - [\[NeurIPS 2025\] Implicit Modeling for Transferability Estimation of Vision Foundation Models](implicit_modeling_for_transferability_estimation_of_vision_foundation_models.md)
 - [\[NeurIPS 2025\] Mitra: Mixed Synthetic Priors for Enhancing Tabular Foundation Models](mitra_mixed_synthetic_priors_for_enhancing_tabular_foundation_models.md)
-- [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
+- [\[ICML 2025\] Test-Time Canonicalization by Foundation Models for Robust Perception](../../ICML2025/self_supervised/test-time_canonicalization_by_foundation_models_for_robust_perception.md)
+- [\[ICML 2025\] Towards Benchmarking Foundation Models for Tabular Data With Text](../../ICML2025/self_supervised/towards_benchmarking_foundation_models_for_tabular_data_with_text.md)
 - [\[AAAI 2026\] Robust Tabular Foundation Models](../../AAAI2026/self_supervised/robust_tabular_foundation_models.md)
-- [\[ICCV 2025\] LoftUp: Learning a Coordinate-Based Feature Upsampler for Vision Foundation Models](../../ICCV2025/self_supervised/loftup_learning_a_coordinatebased_feature_upsampler_for_visi.md)
 
 </div>
 

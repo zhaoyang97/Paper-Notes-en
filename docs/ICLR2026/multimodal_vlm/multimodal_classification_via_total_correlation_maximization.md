@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Multimodal Classification via Total Correlation Maximization
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] This paper analyzes the modality competition problem in multimodal classification from an information-theoretic perspective. It proposes the TCMax loss function, which maximizes the Total Correlation (TC) between multimodal features and labels. By simultaneously addressing joint learning, unimodal learning, and cross-m
+  [ICLR 2026][Multimodal VLM][Multimodal Learning] This paper analyzes the modality competition problem in multimodal classification from an information-theoretic perspective. It proposes the TCMax loss function, which maximizes the Total Correlation (TC) between multimodal features and labels. By simultaneously addressing joint learning, unimodal learning, and cross-modal alignment, it outperforms SOTA on several audio-visual and image-text classification benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Learning"
+  - "Modality Competition"
+  - "Total Correlation"
+  - "Information Theory"
+  - "Loss Function Design"
 date: 2026-05-08
-content_hash: cc10da415ceb4f8c
+content_hash: 9bb39ad4088cd76d
 ---
+
 # Multimodal Classification via Total Correlation Maximization
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,10 @@ Evaluated on 5 audio-visual/image-text datasets against 10+ methods using ResNet
 ## Related Papers
 
 - [\[ICLR 2026\] MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs](mmtok_multimodal_coverage_maximization_for_efficient_inference_of_vlms.md)
+- [\[ICLR 2026\] Unlocking the Power of Co-Occurrence in CLIP: A DualPrompt-Driven Method for Training-Free Zero-Shot Multi-Label Classification](unlocking_the_power_of_co-occurrence_in_clip_a_dualprompt-driven_method_for_trai.md)
 - [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](../../ACL2026/multimodal_vlm/moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
 - [\[NeurIPS 2025\] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion](../../NeurIPS2025/multimodal_vlm/rethinking_multimodal_learning_from_the_perspective_of_mitig.md)
 - [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/multimodal_vlm/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
-- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](../../ICCV2025/multimodal_vlm/enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
 
 </div>
 

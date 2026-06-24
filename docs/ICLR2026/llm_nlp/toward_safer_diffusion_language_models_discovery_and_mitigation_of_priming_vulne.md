@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][LLM (Other)][diffusion language models] This paper reveals "priming vulnerability" in Masked Diffusion Language Models (MDLM)—where injecting affirmative tokens during intermediate denoising steps can bypass safety filters. It proposes Recovery Alignment (RA) to train models to recover from contaminated intermediate states to secure responses.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - diffusion language models
-  - jailbreak attacks
-  - priming vulnerability
-  - safety alignment
-  - masked diffusion
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "diffusion language models"
+  - "jailbreak attacks"
+  - "priming vulnerability"
+  - "safety alignment"
+  - "masked diffusion"
 date: 2026-05-08
-content_hash: d53f58164d9ee1b5
+content_hash: 6aecabca4628f003
 ---
+
 # Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities
 
 **Conference**: ICLR 2026  
@@ -162,10 +163,17 @@ First-Step GCG is approximately 20x faster and 3-4x more effective.
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
+- [\[ICLR 2026\] Don't Settle Too Early: Self-Reflective Remasking for Diffusion Language Models](dont_settle_too_early_self-reflective_remasking_for_diffusion_language_models.md)
+- [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
+- [\[ICLR 2026\] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery](llema_evolutionary_search_with_llms_for_multi-objective_material_design.md)
+- [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](../../ICML2026/llm_nlp/reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)

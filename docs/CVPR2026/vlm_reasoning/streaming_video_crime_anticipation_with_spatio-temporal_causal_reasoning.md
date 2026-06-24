@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning
 description: >-
-  [CVPR 2026][Video Understanding][Vision-Language Model] To address the issue where "existing surveillance systems only provide post-event/mid-event alerts and cannot anticipate crimes before they occur," this paper makes two contributions: constructing the STCRC dataset with spatio-temporal causal annotations (73K samples, 5 progressive causal reasoning tasks) and designing
+  [CVPR 2026][VLM Reasoning][Crime anticipation] To address the issue where "existing surveillance systems only provide post-event/mid-event alerts and cannot anticipate crimes before they occur," this paper makes two contributions: constructing the STCRC dataset with spatio-temporal causal annotations (73K samples, 5 progressive causal reasoning tasks) and designing a streaming co-processor STCH that converts implicit entity dynamics into explicit causal hypergraphs for VLMs.…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Crime anticipation"
+  - "streaming video understanding"
+  - "spatio-temporal causality"
+  - "hypergraph"
+  - "Vision-Language Model"
 date: 2026-05-08
-content_hash: 0c7d108050ccdb6c
+content_hash: 8eae1586539481c1
 ---
+
 # Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning
 
 **Conference**: CVPR 2026  
@@ -128,10 +133,10 @@ Hierarchical removal results (Table 4, UCF-Crime):
 ## Related Papers
 
 - [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
-- [\[CVPR 2026\] Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](towards_spatio-temporal_world_scene_graph_generation_from_monocular_videos.md)
-- [\[CVPR 2026\] Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)
-- [\[CVPR 2026\] VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](vista_video_interaction_spatio-temporal_analysis_benchmark.md)
 - [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
+- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
+- [\[CVPR 2026\] Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 
 </div>
 

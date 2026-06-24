@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] Targeting professional fields lacking high-quality annotations such as chemistry, earth sciences, and multimodal mathematics, DoGe decouples the RL self-evolution of VLMs into "Cognitive Process Decoupling" (forcing the Thinker to analyze context first without seeing the question) and "Data Decoupling" (iterative curri
+  [CVPR 2026][VLM Reasoning][Visual-Language Reasoning] Targeting professional fields lacking high-quality annotations such as chemistry, earth sciences, and multimodal mathematics, DoGe decouples the RL self-evolution of VLMs into "Cognitive Process Decoupling" (forcing the Thinker to analyze context first without seeing the question) and "Data Decoupling" (iterative curriculum synthesis of Knowledge Pools and Seed Problem Pools). By using a two-stage RL cycle to avoid reward…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual-Language Reasoning"
+  - "Reinforcement Learning"
+  - "Self-Evolving LVLM"
+  - "Data Scarcity"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 002f6e87d79b4191
+content_hash: 904cab6001ccef5d
 ---
+
 # Decouple to Generalize: Context-First Self-Evolving Learning for Data-Scarce Vision-Language Reasoning
 
 **Conference**: CVPR 2026  
@@ -140,11 +145,11 @@ DoGe consistently outperforms the baseline in each round, with the gap being mos
 
 ## Related Papers
 
-- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
-- [\[CVPR 2026\] OVOD-Agent: A Markov-Bandit Framework for Proactive Visual Reasoning and Self-Evolving Detection](ovod-agent_a_markov-bandit_framework_for_proactive_visual_reasoning_and_self-evo.md)
-- [\[CVPR 2026\] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration](multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati.md)
-- [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
-- [\[CVPR 2026\] Why Does RL Generalize Better Than SFT? A Data-Centric Perspective on VLM Post-Training](why_does_rl_generalize_better_than_sft_a_data-centric_perspective_on_vlm_post-tr.md)
+- [\[CVPR 2026\] HoneyBee: Data Recipes for Vision-Language Reasoners](honeybee_data_recipes_for_vision-language_reasoners.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[ICLR 2026\] Play to Generalize: Learning to Reason Through Game Play](../../ICLR2026/vlm_reasoning/play_to_generalize_learning_to_reason_through_game_play.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
+- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
 
 </div>
 

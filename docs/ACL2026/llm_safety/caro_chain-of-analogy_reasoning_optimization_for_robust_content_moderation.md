@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes CarO (Chain-of-Analogy Reasoning Optimization), a two-stage training framework. It uses RAG to guide the generation of analogy reasoning chains followed by SFT and customized DPO optimization. This allows LLMs to autonomously generate analogical reference cases for content moderation during inferenc
+  [ACL 2026 Findings][LLM Safety][Content Moderation] This paper proposes CarO (Chain-of-Analogy Reasoning Optimization), a two-stage training framework. It uses RAG to guide the generation of analogy reasoning chains followed by SFT and customized DPO optimization. This allows LLMs to autonomously generate analogical reference cases for content moderation during inference. On ambiguous moderation benchmarks, it achieves an average F1 improvement of 24.9%…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Content Moderation"
+  - "Analogical Reasoning"
+  - "Direct Preference Optimization"
+  - "LLM Reasoning"
+  - "Decision Shortcuts"
 date: 2026-05-08
-content_hash: 41ca6ed65cf2e836
+content_hash: 9f5f04f3ece15ca1
 ---
+
 # CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation
 
 **Conference**: ACL 2026 Findings  
@@ -142,11 +148,11 @@ The first stage is standard SFT, where the supervision signal consists of analog
 
 ## Related Papers
 
-- [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
-- [\[ACL 2026\] FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation](flexguard_continuous_risk_scoring_for_strictness-adaptive_llm_content_moderation.md)
 - [\[ICLR 2026\] ExpGuard: LLM Content Moderation in Specialized Domains](../../ICLR2026/llm_safety/expguard_llm_content_moderation_in_specialized_domains.md)
+- [\[ACL 2026\] FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation](flexguard_continuous_risk_scoring_for_strictness-adaptive_llm_content_moderation.md)
+- [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](../../ICLR2026/llm_safety/advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 - [\[ACL 2026\] Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge](beyond_end-to-end_dynamic_chain_optimization_for_private_llm_adaptation_on_the_e.md)
-- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
 
 </div>
 

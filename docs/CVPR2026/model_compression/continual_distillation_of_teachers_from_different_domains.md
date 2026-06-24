@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Continual Distillation of Teachers from Different Domains
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] The paper proposes a new paradigm called "Continual Distillation (CD)" — where a student sequentially distills from **a stream of teachers who arrive one after another, belong to different domains, and are mutually invisible**. It identifies that distilling with "external data" (unseen by teachers) can transfer unseen
+  [CVPR 2026][Model Compression][Continual Distillation] The paper proposes a new paradigm called "Continual Distillation (CD)" — where a student sequentially distills from **a stream of teachers who arrive one after another, belong to different domains, and are mutually invisible**. It identifies that distilling with "external data" (unseen by teachers) can transfer unseen domain knowledge (UKT), but sequential progression leads to the forgetting of this knowledge (UKF). Conse…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Continual Distillation"
+  - "Knowledge Distillation"
+  - "External Data"
+  - "Unseen Knowledge Forgetting"
+  - "Foundation Models"
 date: 2026-05-08
-content_hash: e3ff92d0826800f3
+content_hash: 44ce5fa2a609b4c2
 ---
+
 # Continual Distillation of Teachers from Different Domains
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ SE2D vs Self-Distillation across datasets (Related ED, Avg):
 
 ## Related Papers
 
+- [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](../../ICLR2026/model_compression/sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
 - [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](bridging_domains_through_subspace-aware_model_merging.md)
 - [\[ICML 2026\] Toward Understanding Adversarial Distillation: Why Robust Teachers Fail](../../ICML2026/model_compression/toward_understanding_adversarial_distillation_why_robust_teachers_fail.md)
 - [\[ACL 2025\] Who Taught You That? Tracing Teachers in Model Distillation](../../ACL2025/model_compression/who_taught_you_that_tracing_teachers_in_model_distillation.md)
 - [\[CVPR 2026\] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation](cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn.md)
-- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](elastic_weight_consolidation_done_right_for_continual_learning.md)
 
 </div>
 

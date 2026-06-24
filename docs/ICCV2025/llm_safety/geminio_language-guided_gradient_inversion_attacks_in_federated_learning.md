@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning
 description: >-
-  [ICCV 2025][LLM Safety][Federated Learning] This paper proposes Geminio, the first gradient inversion attack (GIA) leveraging vision-language models (VLMs) to enable natural language-guided targeted reconstruction. A mal…
+  [ICCV 2025][LLM Safety][Federated Learning] This paper proposes Geminio, the first gradient inversion attack (GIA) leveraging vision-language models (VLMs) to enable natural language-guided targeted reconstruction. A malicious server can specify the type of data to steal via natural language queries, precisely locating and reconstructing semantically matching private samples from large-batch gradients, without disrupting normal FL model training.
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Privacy Attack"
   - "Natural Language Guidance"
 date: 2026-05-08
-content_hash: c268a859750aec7f
+content_hash: 1f43e26ac10b8f52
 ---
 
 # Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning
@@ -160,8 +160,8 @@ Geminio operates in two stages:
 - [\[ICCV 2025\] Enhancing Adversarial Transferability by Balancing Exploration and Exploitation with Gradient-Guided Sampling](enhancing_adversarial_transferability_by_balancing_exploration_and_exploitation_.md)
 - [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
 - [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](../../NeurIPS2025/llm_safety/fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
-- [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](../../ICML2026/llm_safety/gradient_transformer_learning_to_generate_updates_for_llms.md)
 - [\[NeurIPS 2025\] FedSVD: Adaptive Orthogonalization for Private Federated Learning with LoRA](../../NeurIPS2025/llm_safety/fedsvd_adaptive_orthogonalization_for_private_federated_learning_with_lora.md)
+- [\[ICML 2025\] Federated In-Context Learning: Iterative Refinement for Improved Answer Quality](../../ICML2025/llm_safety/federated_in-context_learning_iterative_refinement_for_improved_answer_quality.md)
 
 </div>
 

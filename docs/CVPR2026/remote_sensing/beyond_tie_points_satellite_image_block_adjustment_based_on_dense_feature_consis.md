@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency
 description: >-
-  [CVPR 2026][Remote Sensing][DINOv3] Addressing the long-standing limitation of Planar Block Adjustment (PBA) relying on sparse tie points and accumulating errors in high-disparity regions such as tall buildings, this paper proposes the "Beyond Tie Points" paradigm. It utilizes a pre-trained feature extractor to generate dense features and confidence maps
+  [CVPR 2026][Remote Sensing][Planar Block Adjustment] Addressing the long-standing limitation of Planar Block Adjustment (PBA) relying on sparse tie points and accumulating errors in high-disparity regions such as tall buildings, this paper proposes the "Beyond Tie Points" paradigm. It utilizes a pre-trained feature extractor to generate dense features and confidence maps, reformulating block adjustment as a self-supervised optimization problem to "minimize the dense feature d…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - DINOv3
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Planar Block Adjustment"
+  - "Dense Feature Consistency"
+  - "Confidence Weighting"
+  - "RPC Model"
+  - "DINOv3"
 date: 2026-05-08
-content_hash: 7c99e692dae0509e
+content_hash: e60f4d2b18696314
 ---
+
 # Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,10 @@ Ablations on Guangzhou-b (large initial error, high disparity):
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation](beyond_matching_to_tiles_bridging_unaligned_aerial_and_satellite_views_for_visio.md)
-- [\[CVPR 2026\] HarmoniDiff-RS: Training-Free Diffusion Harmonization for Satellite Image Composition](harmonidiff-rs_training-free_diffusion_harmonization_for_satellite_image_composi.md)
 - [\[CVPR 2026\] Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction](exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra.md)
 - [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
 - [\[CVPR 2026\] Beyond Endpoints: Path-Centric Reasoning for Vectorized Off-Road Network Extraction](beyond_endpoints_path-centric_reasoning_for_vectorized_off-road_network_extracti.md)
+- [\[CVPR 2026\] FUSAR-GPT: A Spatiotemporal Feature-Embedded and Two-Stage Decoupled Visual Language Model for SAR Imagery](fusar-gpt_a_spatiotemporal_feature-embedded_and_two-stage_decoupled_visual_langu.md)
 
 </div>
 

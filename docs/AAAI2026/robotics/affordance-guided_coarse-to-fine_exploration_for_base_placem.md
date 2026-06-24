@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation
 description: >-
-  [AAAI 2026][Robotics][open-vocabulary mobile manipulation] This paper addresses the base placement problem in open-vocabulary mobile manipulation (OVMM) and proposes a zero-shot framework that constructs a cross-modal re…
+  [AAAI 2026][Robotics][open-vocabulary mobile manipulation] This paper addresses the base placement problem in open-vocabulary mobile manipulation (OVMM) and proposes a zero-shot framework that constructs a cross-modal representation (Affordance RGB + Obstacle Map+) to project semantic affordance cues onto an obstacle map, followed by a coarse-to-fine iterative optimization that balances semantic and geometric constraints. The method achieves an 85% success rate across five ma…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "VLM visual prompting"
   - "coarse-to-fine optimization"
 date: 2026-05-08
-content_hash: 58d1a28c19019728
+content_hash: e8130541f105556a
 ---
 
 # Affordance-Guided Coarse-to-Fine Exploration for Base Placement in Open-Vocabulary Mobile Manipulation
@@ -136,9 +136,9 @@ The cross-modal projection paradigm (using color-consistent visual anchors to br
 
 - [\[ACL 2026\] Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System](../../ACL2026/robotics/libra-vla_achieving_learning_equilibrium_via_asynchronous_coarse-to-fine_dual-sy.md)
 - [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](../../ICLR2026/robotics/scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/robotics/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
+- [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](../../CVPR2026/robotics/scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
+- [\[CVPR 2026\] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation](../../CVPR2026/robotics/memory-augmented_scene_understanding_and_exploration_for_open-world_aerial_objec.md)
 - [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[AAAI 2026\] UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories](urbannav_learning_language-guided_urban_navigation_from_web-scale_human_trajecto.md)
 
 </div>
 

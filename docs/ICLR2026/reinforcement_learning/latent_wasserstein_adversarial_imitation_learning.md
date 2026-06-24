@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Latent Wasserstein Adversarial Imitation Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][ICVF] The authors propose LWAIL, which utilizes ICVF to learn dynamics-aware latent representations from a small amount of random data. By upgrading the "ground metric" of the Wasserstein distance from Euclidean distance to latent space distance, the method achieves expert-level imitation performance using only a single stat
+  [ICLR 2026][Reinforcement Learning][Wasserstein Distance] The authors propose LWAIL, which utilizes ICVF to learn dynamics-aware latent representations from a small amount of random data. By upgrading the "ground metric" of the Wasserstein distance from Euclidean distance to latent space distance, the method achieves expert-level imitation performance using only a single state trajectory.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - ICVF
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Wasserstein Distance"
+  - "ICVF"
+  - "Dynamics-aware Embedding"
+  - "State-only Imitation"
+  - "Few-shot"
 date: 2026-05-08
-content_hash: cc16230d7c6cc500
+content_hash: 8dfcca7706bee8f8
 ---
+
 # Latent Wasserstein Adversarial Imitation Learning
 
 **Conference**: ICLR 2026  
@@ -134,8 +139,8 @@ MuJoCo environments, single state-only trajectory (no actions):
 - [\[ICLR 2026\] On Discovering Algorithms for Adversarial Imitation Learning](on_discovering_algorithms_for_adversarial_imitation_learning.md)
 - [\[ICLR 2026\] Model Predictive Adversarial Imitation Learning for Planning from Observation](model_predictive_adversarial_imitation_learning_for_planning_from_observation.md)
 - [\[ICLR 2026\] Near-Optimal Second-Order Guarantees for Model-Based Adversarial Imitation Learning](near-optimal_second-order_guarantees_for_model-based_adversarial_imitation_learn.md)
+- [\[ICLR 2026\] Imitation Learning as Return Distribution Matching](imitation_learning_as_return_distribution_matching.md)
 - [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
-- [\[ICLR 2026\] Learning to Generate Unit Test via Adversarial Reinforcement Learning](learning_to_generate_unit_test_via_adversarial_reinforcement_learning.md)
 
 </div>
 

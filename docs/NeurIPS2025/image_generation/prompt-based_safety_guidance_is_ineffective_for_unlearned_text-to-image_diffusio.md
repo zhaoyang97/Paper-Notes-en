@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][Concept Unlearning] This paper identifies that combining training-based concept unlearning with training-free safety guidance (negative prompt guidance) yields degraded performance…
+  [NeurIPS 2025][Image Generation][Concept Unlearning] This paper identifies that combining training-based concept unlearning with training-free safety guidance (negative prompt guidance) yields degraded performance, and proposes replacing explicit negative prompts with implicit concept embeddings obtained via Concept Inversion, effectively restoring the defensive capability of training-free methods on unlearned models.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Concept Inversion"
   - "Text-to-Image Safety"
 date: 2026-05-08
-content_hash: 9beec0fb9bca42ee
+content_hash: d8393019d20cd41a
 ---
 
 # Prompt-Based Safety Guidance Is Ineffective for Unlearned Text-to-Image Diffusion Models
@@ -132,9 +132,9 @@ Concept embeddings extracted from the $\beta=500$ checkpoint are directly applie
 
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
 - [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](../../CVPR2026/image_generation/when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
-- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
-- [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] Towards Resilient Safety-Driven Unlearning for Diffusion Models Against Downstream Fine-tuning](towards_resilient_safety-driven_unlearning_for_diffusion_models_against_downstre.md)
+- [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
+- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 
 </div>
 

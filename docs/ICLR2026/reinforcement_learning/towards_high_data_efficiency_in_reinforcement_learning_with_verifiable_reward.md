@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] DEPO integrates "offline data curation" and "online rollout pruning" into a unified RLVR workflow for the first time. Off-line, it employs PageRank-weighted DPP and difficulty-aware normal sampling to select a diverse, influential, and moderately difficult subset. Online, it utilizes a sample-level explorability metric
+  [ICLR 2026][Reinforcement Learning][RLVR] DEPO integrates "offline data curation" and "online rollout pruning" into a unified RLVR workflow for the first time. Off-line, it employs PageRank-weighted DPP and difficulty-aware normal sampling to select a diverse, influential, and moderately difficult subset. Online, it utilizes a sample-level explorability metric to skip rollouts of low-potential samples and replay underexplored ones. Consequently…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Data Efficiency"
+  - "Data Selection"
+  - "Explorability"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 9789c9b23e3c8c21
+content_hash: d15e86be1ab4233b
 ---
+
 # Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward
 
 **Conference**: ICLR 2026  
@@ -156,15 +160,13 @@ DeepSeek-R1-Distill-Qwen-7B (AIME24 / AIME25 / MATH500):
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
 - [\[ICLR 2026\] The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward](the_choice_of_divergence_a_neglected_key_to_mitigating_diversity_collapse_in_rei.md)
 - [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
-- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 
 </div>
 

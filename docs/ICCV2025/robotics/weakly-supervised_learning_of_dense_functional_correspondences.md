@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Weakly-Supervised Learning of Dense Functional Correspondences
 description: >-
-  [ICCV 2025][Robotics][Dense Functional Correspondence] This paper defines the task of *Dense Functional Correspondence*—establishing pixel-level dense correspondences between objects of different categories based on shar…
+  [ICCV 2025][Robotics][Dense Functional Correspondence] This paper defines the task of *Dense Functional Correspondence*—establishing pixel-level dense correspondences between objects of different categories based on shared functionality (e.g., "pouring")—and proposes a weakly-supervised learning framework that distills functional and structural knowledge into a new model via VLM-based pseudo-labeling of functional parts combined with multi-view contrastive learning.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: 4f45338f04f9e0d5
+content_hash: d6d201a8e553a209
 ---
 
 # Weakly-Supervised Learning of Dense Functional Correspondences

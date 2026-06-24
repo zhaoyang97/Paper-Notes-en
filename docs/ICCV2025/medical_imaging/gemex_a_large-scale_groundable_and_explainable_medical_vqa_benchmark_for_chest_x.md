@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis
 description: >-
-  [ICCV 2025][Medical Imaging][Medical Visual Question Answering] This paper presents GEMeX, the largest chest X-ray VQA dataset to date (151K images, 1.6M questions)…
+  [ICCV 2025][Medical Imaging][Medical Visual Question Answering] This paper presents GEMeX, the largest chest X-ray VQA dataset to date (151K images, 1.6M questions), which for the first time simultaneously provides textual reasoning explanations and visual region grounding across four question types, and systematically evaluates 12 representative large vision-language models.
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Visual Grounding"
   - "Large-Scale Benchmark"
 date: 2026-05-08
-content_hash: 74934baf109508e6
+content_hash: afdcd69655e0e218
 ---
 
 # GEMeX: A Large-Scale, Groundable, and Explainable Medical VQA Benchmark for Chest X-ray Diagnosis
@@ -155,8 +155,8 @@ Transfer Learning (zero-shot evaluation on SLAKE-CXR):
 - [\[NeurIPS 2025\] RadZero: Similarity-Based Cross-Attention for Explainable Vision-Language Alignment in Chest X-ray](../../NeurIPS2025/medical_imaging/radzero_similarity-based_cross-attention_for_explainable_vision-language_alignme.md)
 - [\[CVPR 2026\] Instruction-Guided Lesion Segmentation for Chest X-rays with Automatically Generated Large-Scale Dataset](../../CVPR2026/medical_imaging/instruction-guided_lesion_segmentation_for_chest_x-rays_with_automatically_gener.md)
 - [\[NeurIPS 2025\] CXReasonBench: A Benchmark for Evaluating Structured Diagnostic Reasoning in Chest X-rays](../../NeurIPS2025/medical_imaging/cxreasonbench_a_benchmark_for_evaluating_structured_diagnostic_reasoning_in_ches.md)
-- [\[ICML 2026\] PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder](../../ICML2026/medical_imaging/pacx-mae_physiology-augmented_chest_x-ray_masked_autoencoder.md)
-- [\[NeurIPS 2025\] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology](../../NeurIPS2025/medical_imaging/starc-9_a_large-scale_dataset_for_multi-class_tissue_classification_for_crc_hist.md)
+- [\[ECCV 2024\] OphNet: A Large-Scale Video Benchmark for Ophthalmic Surgical Workflow Understanding](../../ECCV2024/medical_imaging/ophnet_a_large-scale_video_benchmark_for_ophthalmic_surgical_workflow_understand.md)
+- [\[CVPR 2025\] Enhanced Contrastive Learning with Multi-view Longitudinal Data for Chest X-ray Report Generation](../../CVPR2025/medical_imaging/enhanced_contrastive_learning_with_multi-view_longitudinal_data_for_chest_x-ray_.md)
 
 </div>
 

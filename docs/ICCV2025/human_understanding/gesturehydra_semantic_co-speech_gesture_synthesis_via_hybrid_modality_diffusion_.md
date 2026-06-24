@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation
 description: >-
-  [ICCV 2025][Human Understanding][Co-speech gesture generation] This paper proposes GestureHYDRA, a co-speech gesture synthesis system based on a Hybrid-Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-A…
+  [ICCV 2025][Human Understanding][Co-speech gesture generation] This paper proposes GestureHYDRA, a co-speech gesture synthesis system based on a Hybrid-Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation, capable of reliably activating semantically explicit gestures such as numerical and directional indications.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "retrieval-augmented generation"
   - "semantic gesture"
 date: 2026-05-08
-content_hash: 4239ba57633d8d0d
+content_hash: 58e4cb742d24d7cb
 ---
 
 # GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation
@@ -179,9 +179,9 @@ $$\mathcal{L} = \lambda_t \mathcal{L}_t + \lambda_{vec} \mathcal{L}_{vec} + \lam
 
 - [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
 - [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
+- [\[CVPR 2026\] CoordSpeaker: Exploiting Gesture Captioning for Coordinated Caption-Empowered Co-Speech Gesture Generation](../../CVPR2026/human_understanding/coordspeaker_exploiting_gesture_captioning_for_coordinated_caption-empowered_co-.md)
+- [\[CVPR 2026\] LiveGesture: Streamable Co-Speech Gesture Generation Model](../../CVPR2026/human_understanding/livegesture_streamable_co-speech_gesture_generation_model.md)
 - [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](../../NeurIPS2025/human_understanding/vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
-- [\[AAAI 2026\] Streaming Generation of Co-Speech Gestures via Accelerated Rolling Diffusion](../../AAAI2026/human_understanding/streaming_generation_of_co-speech_gestures_via_accelerated_rolling_diffusion.md)
-- [\[ICCV 2025\] Signs as Tokens: A Retrieval-Enhanced Multilingual Sign Language Generator](signs_as_tokens_a_retrieval-enhanced_multilingual_sign_language_generator.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Data Selection for LLM Alignment Using Fine-Grained Preferences
 description: >-
-  [ICLR 2026][Alignment & RLHF][DPO] Addressing the issue that training DPO on aggregated aspect-specific preferences is hindered by preference conflicts, this paper proposes Preference Divergence (PD) to quantify the degree of conflict between a sample and other preferences. It proves that "selecting only the samples with the most negative PD for standar
+  [ICLR2026][LLM Alignment][Fine-grained preferences] Addressing the issue that training DPO on aggregated aspect-specific preferences is hindered by preference conflicts, this paper proposes Preference Divergence (PD) to quantify the degree of conflict between a sample and other preferences. It proves that "selecting only the samples with the most negative PD for standard DPO" achieves optimal upper and lower bounds for the loss. Consequently…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - DPO
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Fine-grained preferences"
+  - "Data selection"
+  - "Preference divergence"
+  - "DPO"
+  - "Preference conflict"
 date: 2026-05-08
-content_hash: 934748fa5bdb0033
+content_hash: 51e3ebc0a6594648
 ---
+
 # Data Selection for LLM Alignment Using Fine-Grained Preferences
 
 **Conference**: ICLR2026  
@@ -157,7 +162,7 @@ As conflict levels increase, full DPO (ALL) drops from 21.14 to 16.44, while PD 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -165,7 +170,7 @@ As conflict levels increase, full DPO (ALL) drops from 21.14 to 16.44, while PD 
 - [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](../../ACL2026/llm_alignment/alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
 - [\[ICLR 2026\] Enhancing Trustworthiness of Fine-Tuned LLMs via Regularized Subset Selection](enhancing_trustworthiness_of_fine-tuned_llms_via_regularized_subset_selection.md)
-- [\[NeurIPS 2025\] Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay](../../NeurIPS2025/llm_alignment/improving_data_efficiency_for_llm_reinforcement_fine-tuning_through_difficulty-t.md)
+- [\[ACL 2025\] Fine-grained Video Dubbing Duration Alignment with Segment Supervised Preference Optimization](../../ACL2025/llm_alignment/fine-grained_video_dubbing_duration_alignment_with_segment_supervised_preference.md)
 
 </div>
 

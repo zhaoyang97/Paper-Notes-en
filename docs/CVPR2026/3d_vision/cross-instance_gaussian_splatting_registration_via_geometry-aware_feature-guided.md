@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] The authors propose GSA (Gaussian Splatting Alignment), the first method to achieve cross-instance category-level 3DGS registration. By combining geometry-aware feature-guided coarse alignment (extended ICP for Sim(3) similarity transformation) and multi-view feature consistency fine alignment, the method significantly
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] The authors propose GSA (Gaussian Splatting Alignment), the first method to achieve cross-instance category-level 3DGS registration. By combining geometry-aware feature-guided coarse alignment (extended ICP for Sim(3) similarity transformation) and multi-view feature consistency fine alignment, the method significantly outperforms existing approaches in both same-object and cross-object scenarios.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Cross-Instance Registration"
+  - "Similarity Transformation"
+  - "Geometry-Aware Features"
+  - "Inverse Radiance Fields"
 date: 2026-05-08
-content_hash: 4d9702e286f52555
+content_hash: f1de90667549c824
 ---
+
 # Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment
 
 **Conference**: CVPR 2026  
@@ -140,10 +145,10 @@ Key generalizations include: optimizing Sim(3) instead of SE(3), and rendering f
 ## Related Papers
 
 - [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] Geometric-Photometric Event-based 3D Gaussian Ray Tracing](geometric-photometric_event-based_3d_gaussian_ray_tracing.md)
+- [\[CVPR 2026\] Energy-GS: Image Energy-guided Pose Alignment Gaussian Splatting with redesigned pose gradient flow](energy-gs_image_energy-guided_pose_alignment_gaussian_splatting_with_redesigned_.md)
+- [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
+- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
+- [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
 
 </div>
 

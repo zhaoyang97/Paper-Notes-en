@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling
 description: >-
-  [ICLR 2026][Image Generation][Masked Autoregressive] Image generation in Masked Autoregressive (MAR) models is decomposed into a two-stage sampling process: "slow checkerboard skeleton generation" followed by "fast single-step detail reconstruction." Combined with extra diffusion steps allocated to high-frequency detail tokens, this achieves a 3.72× speedup for MAR-H wit
+  [ICLR 2026][Image Generation][Masked Autoregressive] Image generation in Masked Autoregressive (MAR) models is decomposed into a two-stage sampling process: "slow checkerboard skeleton generation" followed by "fast single-step detail reconstruction." Combined with extra diffusion steps allocated to high-frequency detail tokens, this achieves a 3.72× speedup for MAR-H without training and with almost no loss in FID/IS.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Masked Autoregressive
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Masked Autoregressive"
+  - "Training-free Acceleration"
+  - "Two-stage sampling"
+  - "Checkerboard sampling"
+  - "Frequency-weighting"
 date: 2026-05-08
-content_hash: 77c4dddc12e229b3
+content_hash: 0b452cb6f958ef44
 ---
+
 # Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling
 
 **Conference**: ICLR 2026  
@@ -125,9 +130,9 @@ Comparison of FTS token selection strategies: High-Freq. (Ours) FID 1.59 / IS 30
 
 - [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](../../ICCV2025/image_generation/lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
+- [\[ICLR 2026\] STORK: Accelerating Diffusion and Flow Matching Sampling by Simultaneously Solving Stiffness and Structural Dependency](stork_faster_diffusion_and_flow_matching_sampling_by_resolving_both_stiffness_an.md)
+- [\[ICLR 2026\] D-AR: Diffusion via Autoregressive Models](d-ar_diffusion_via_autoregressive_models.md)
 - [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
-- [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
-- [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
 
 </div>
 

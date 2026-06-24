@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-ControlNet: Training-Free Fusion of Multiple Conditions for Text-to-Image Generation
 description: >-
-  [ICLR 2026][Image Generation][ControlNet] This paper proposes Cross-ControlNet, a **completely training-free** multi-condition T2I framework. Grounded in two observations—natural spatial alignment of intermediate features across ControlNet branches and quantifiable condition strength via variance—the framework utilizes PixFusion (pixel-level variance-guided fu
+  [ICLR 2026][Image Generation][Multi-condition controllable generation] This paper proposes Cross-ControlNet, a **completely training-free** multi-condition T2I framework. Grounded in two observations—natural spatial alignment of intermediate features across ControlNet branches and quantifiable condition strength via variance—the framework utilizes PixFusion (pixel-level variance-guided fusion), ChannelFusion (channel-level consistency ratio gated fusion)…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - ControlNet
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Multi-condition controllable generation"
+  - "ControlNet"
+  - "Training-free fusion"
+  - "Feature variance"
+  - "KV injection"
 date: 2026-05-08
-content_hash: a1c0b4cc81a232a7
+content_hash: f21efd95f5f78853
 ---
+
 # Cross-ControlNet: Training-Free Fusion of Multiple Conditions for Text-to-Image Generation
 
 **Conference**: ICLR 2026  
@@ -127,11 +132,11 @@ Incremental contribution of modules under conflicting conditions:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 - [\[ICLR 2026\] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation](omnitext_a_training-free_generalist_for_controllable_text-image_manipulation.md)
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](../../AAAI2026/image_generation/infinite-story_a_training-free_consistent_text-to-image_gene.md)
-- [\[CVPR 2026\] DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation](../../CVPR2026/image_generation/dynfusion_rethinking_condition_fusion_for_adaptive_multi-conditional_text-to-ima.md)
+- [\[ICLR 2026\] ColorCtrl: Training-Free Text-Guided Color Editing Based on Multi-Modal Diffusion Transformer](training-free_text-guided_color_editing_with_multi-modal_diffusion_transformer.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
-- [\[CVPR 2026\] CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion](../../CVPR2026/image_generation/craft-lora_content-style_personalization_via_rank-constrained_adaptation_and_tra.md)
 
 </div>
 

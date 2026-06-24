@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zero-shot Large Language Models for Automatic Readability Assessment
 description: >-
-  [ACL 2026][LLM Evaluation][LAURAE] This paper systematically evaluates the zero-shot ARA capabilities of 10 open-source LLMs across 14 multilingual readability datasets and proposes LAURAE: an ensemble method that weights the LLM's expected readability score against traditional formulas using verbal confidence, outperforming existing unsupervised method
+  [ACL2026][LLM Evaluation][Readability Assessment] This paper systematically evaluates the zero-shot ARA capabilities of 10 open-source LLMs across 14 multilingual readability datasets and proposes LAURAE: an ensemble method that weights the LLM's expected readability score against traditional formulas using verbal confidence, outperforming existing unsupervised methods on 13/14 datasets.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LAURAE
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Readability Assessment"
+  - "Zero-shot LLM"
+  - "LAURAE"
+  - "Confidence Ensemble"
+  - "Medical Text"
 date: 2026-05-08
-content_hash: 2ee9d44e7a26a94c
+content_hash: a737016f858d3996
 ---
+
 # Zero-shot Large Language Models for Automatic Readability Assessment
 
 **Conference**: ACL2026  
@@ -136,16 +141,16 @@ Expected value scoring improved results across all 14 datasets (12 significantly
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
 - [\[NeurIPS 2025\] Benchmarking Large Language Models for Zero-Shot and Few-Shot Phishing URL Detection](../../NeurIPS2025/llm_evaluation/benchmarking_large_language_models_for_zero-shot_and_few-shot_phishing_url_detec.md)
+- [\[ICLR 2026\] AutoCodeBench: Large Language Models are Automatic Code Benchmark Generators](../../ICLR2026/llm_evaluation/autocodebench_large_language_models_are_automatic_code_benchmark_generators.md)
 - [\[ACL 2026\] The Silent Vote: Improving Zero-Shot LLM Reliability by Aggregating Semantic Neighborhoods](the_silent_vote_improving_zero-shot_llm_reliability_by_aggregating_semantic_neig.md)
-- [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
-- [\[ACL 2026\] SciCustom: A Framework for Custom Evaluation of Scientific Capabilities in Large Language Models](scicustom_a_framework_for_custom_evaluation_of_scientific_capabilities_in_large_.md)
+- [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
 
 </div>
 

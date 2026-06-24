@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Refaçade: Editing Object with Given Reference Texture
 description: >-
-  [CVPR 2026][Image Generation][Video Editing] Refaçade extends "object retexturing" (repainting a target object using local textures from a reference image while preserving its original geometry) from images to videos. The core consists of two decoupling strategies: training a "texture eraser" to reduce the source object into an untextured video containing only ge
+  [CVPR 2026][Image Generation][Object Retexturing] Refaçade extends "object retexturing" (repainting a target object using local textures from a reference image while preserving its original geometry) from images to videos. The core consists of two decoupling strategies: training a "texture eraser" to reduce the source object into an untextured video containing only geometry, and using "jigsaw permutation" to break the reference image into texture fragments without global stru…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Video Editing
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Object Retexturing"
+  - "Texture-Structure Decoupling"
+  - "Jigsaw Permutation"
+  - "Texture Erasure"
+  - "Video Editing"
 date: 2026-05-08
-content_hash: f1cc025cc0435f53
+content_hash: 5512fe49e6e1a765
 ---
+
 # Refaçade: Editing Object with Given Reference Texture
 
 **Conference**: CVPR 2026  
@@ -134,11 +139,11 @@ On images, stage 2 leads in background reconstruction (PSNR 36.20) and foregroun
 
 ## Related Papers
 
+- [\[CVPR 2026\] OrionEdit: Bridging Reference and Source Images for Generalized Cross-Image Editing](orionedit_bridging_reference_and_source_images_for_generalized_cross-image_editi.md)
 - [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](onehoi_unifying_human-object_interaction_generation_and_editing.md)
-- [\[CVPR 2026\] NI-Tex: Non-isometric Image-based Garment Texture Generation](ni-tex_non-isometric_image-based_garment_texture_generation.md)
-- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 - [\[CVPR 2026\] Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion](semantics_lead_the_way_harmonizing_semantic_and_texture_modeling_with_asynchrono.md)
-- [\[CVPR 2026\] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation](multibanana_a_challenging_benchmark_for_multi_reference_text_to_image_generation.md)
+- [\[CVPR 2026\] Towards High-resolution and Disentangled Reference-based Sketch Colorization](towards_high-resolution_and_disentangled_reference-based_sketch_colorization.md)
+- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 
 </div>
 

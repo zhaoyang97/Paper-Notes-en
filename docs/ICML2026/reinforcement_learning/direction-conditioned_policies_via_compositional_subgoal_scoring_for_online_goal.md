@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][HJB] This paper proposes DCP (Direction-Conditioned Policies), which replaces the standard practice of the actor taking raw goal coordinates with a learned unit direction plus magnitude in representation space. By utilizing a scoring rule to select subgoals from historically visited states, the direction is stabilized durin
+  [ICML2026][Reinforcement Learning][Goal-Conditioned Reinforcement Learning] This paper proposes DCP (Direction-Conditioned Policies), which replaces the standard practice of the actor taking raw goal coordinates with a learned unit direction plus magnitude in representation space. By utilizing a scoring rule to select subgoals from historically visited states, the direction is stabilized during early training. DCP outperforms Contrastive RL (CRL) on most metrics across nine n…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - HJB
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Goal-Conditioned Reinforcement Learning"
+  - "Contrastive Reinforcement Learning"
+  - "Direction-Conditioned"
+  - "Subgoal Scoring"
+  - "HJB"
 date: 2026-05-08
-content_hash: 418b2e34971de125
+content_hash: ac6171dd453e7f42
 ---
+
 # Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -142,15 +147,16 @@ The zero-shot perturbation deployment (Table 2, 3 seeds) is illustrative: on Ant
 - Value: ⭐⭐⭐⭐ Use of "interface-level improvement" is transferable to any metric/contrastive GCRL with zero deployment overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
+- [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](../../ICLR2026/reinforcement_learning/scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
 - [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
-- [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
-- [\[ICLR 2026\] InFOM: Intention-Conditioned Flow Occupancy Models](../../ICLR2026/reinforcement_learning/infom_intention_flow_occupancy.md)
+- [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Peng's Q(λ)] CPQL introduces the multi-step operator Peng's Q($\lambda$) from online RL into offline RL for the first time, replacing the single-step Bellman operator in CQL for conservative value estimation. By leveraging the property that the PQL fixed point naturally aligns with the behavioral policy value, it mitigates over-pes
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] CPQL introduces the multi-step operator Peng's Q($\lambda$) from online RL into offline RL for the first time, replacing the single-step Bellman operator in CQL for conservative value estimation. By leveraging the property that the PQL fixed point naturally aligns with the behavioral policy value, it mitigates over-pessimism, consistently outperforms various single-step baselines on D4RL…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Peng's Q(λ)
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Multi-step Operators"
+  - "Conservative Value Estimation"
+  - "Peng's Q(λ)"
+  - "Offline-to-Online"
 date: 2026-05-08
-content_hash: 19b921618b1e080c
+content_hash: 0063dc23be0f9245
 ---
+
 # Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Structured Reinforcement Learning for Combinatorial Decision-Making
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][combinatorial MDP] This paper proposes Structured Reinforcement Learning (SRL), which embeds a combinatorial optimization solver as a differentiable layer within the actor of an act…
+  [NeurIPS 2025][Reinforcement Learning][combinatorial MDP] This paper proposes Structured Reinforcement Learning (SRL), which embeds a combinatorial optimization solver as a differentiable layer within the actor of an actor-critic framework. End-to-end gradient propagation is achieved via Fenchel-Young loss with Gaussian perturbations, enabling purely online learning without expert demonstrations. SRL matches imitation learning and outperforms unstructured RL by up to 92% acro…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "COAML pipeline"
   - "primal-dual algorithm"
 date: 2026-05-08
-content_hash: d0e107bc4ef947ce
+content_hash: 8fd61bd0bc4c1fab
 ---
 
 # Structured Reinforcement Learning for Combinatorial Decision-Making
@@ -142,8 +142,8 @@ The paper provides a detailed justification for choosing PPO rather than SAC as 
 - [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
 - [\[NeurIPS 2025\] Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm](modulation_of_temporal_decision-making_in_a_deep_reinforcement_learning_agent_un.md)
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](bandit_and_delayed_feedback_in_online_structured_prediction.md)
-- [\[NeurIPS 2025\] Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning](learning_to_focus_prioritizing_informative_histories_with_structured_attention_m.md)
 - [\[NeurIPS 2025\] Complexity Scaling Laws for Neural Models using Combinatorial Optimization](complexity_scaling_laws_for_neural_models_using_combinatorial_optimization.md)
+- [\[ICLR 2026\] Bayesian Ensemble for Sequential Decision-Making](../../ICLR2026/reinforcement_learning/bayesian_ensemble_for_sequential_decision-making.md)
 
 </div>
 

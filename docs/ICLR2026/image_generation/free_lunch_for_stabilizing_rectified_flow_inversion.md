@@ -4,14 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Image Generation][Rectified Flow] Two training-free methods, PMI (Proximal-Mean Inversion) and mimic-CFG, are proposed to stabilize Rectified Flow inversion by performing proximal gradient correction of the velocity field toward its historical mean, achieving SOTA reconstruction and editing quality with fewer NFE on PIE-Bench.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Rectified Flow
-  - Proximal-Mean Inversion
-  - Image Editing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Inversion Stability"
+  - "Proximal-Mean Inversion"
+  - "Image Editing"
+  - "Velocity Field Correction"
 date: 2026-05-08
-content_hash: a5121ccee0c2867e
+content_hash: 048d497ed746ca34
 ---
+
 # Free Lunch for Stabilizing Rectified Flow Inversion
 
 **Conference**: ICLR 2026  

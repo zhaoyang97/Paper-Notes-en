@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Amortized Inference] ALINE proposes a unified framework for amortized Bayesian inference and active data acquisition. By combining a Transformer architecture with RL-based training…
+  [NeurIPS 2025][Reinforcement Learning][Amortized Inference] ALINE proposes a unified framework for amortized Bayesian inference and active data acquisition. By combining a Transformer architecture with RL-based training, the model simultaneously learns to strategically select the most informative data points and perform instant posterior inference. It further supports flexible data acquisition targeting specific parameter subsets or predictive objectives.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Transformer"
   - "Information Gain"
 date: 2026-05-08
-content_hash: 1e751f03a44845f2
+content_hash: 37ccbe4699a199f1
 ---
 
 # ALINE: Joint Amortization for Bayesian Inference and Active Data Acquisition
@@ -119,11 +119,11 @@ ALINE achieves the highest EIG on CES with a reasonable inference time.
 
 ## Related Papers
 
+- [\[ICML 2025\] Stochastic Encodings for Active Feature Acquisition](../../ICML2025/reinforcement_learning/stochastic_encodings_for_active_feature_acquisition.md)
 - [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
 - [\[NeurIPS 2025\] Open-World Drone Active Tracking with Goal-Centered Rewards](open-world_drone_active_tracking_with_goal-centered_rewards.md)
+- [\[ICLR 2026\] Learning Human Habits with Rule-Guided Active Inference](../../ICLR2026/reinforcement_learning/learning_human_habits_with_rule-guided_active_inference.md)
 - [\[NeurIPS 2025\] Optimizing the Unknown: Black Box Bayesian Optimization with Energy-Based Model and Reinforcement Learning](optimizing_the_unknown_black_box_bayesian_optimization_with_energy-based_model_a.md)
-- [\[NeurIPS 2025\] NoisyRollout: Reinforcing Visual Reasoning with Data Augmentation](noisyrollout_reinforcing_visual_reasoning_with_data_augmenta.md)
-- [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](../../ICML2026/reinforcement_learning/safe_reinforcement_learning_with_preference-based_constraint_inference.md)
 
 </div>
 

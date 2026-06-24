@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Complementing Self-Consistency with Cross-Model Disagreement for Uncertainty Quantification
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] Addressing the failure of self-consistency when a "model confidently gives a wrong answer," this paper estimates epistemic uncertainty (EU) using **semantic disagreement** among a group of same-scale, cross-family open-source LLMs. By adding EU to the original aleatoric uncertainty (AU) to obtain total uncertainty (TU)
+  [ICLR2026][LLM Evaluation][Uncertainty Quantification] Addressing the failure of self-consistency when a "model confidently gives a wrong answer," this paper estimates epistemic uncertainty (EU) using **semantic disagreement** among a group of same-scale, cross-family open-source LLMs. By adding EU to the original aleatoric uncertainty (AU) to obtain total uncertainty (TU), the study demonstrates that TU's calibration (AUROC) and selective prediction performance are consisten…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Uncertainty Quantification"
+  - "Epistemic Uncertainty"
+  - "Self-Consistency"
+  - "Cross-Model Disagreement"
+  - "Selective Prediction"
 date: 2026-05-08
-content_hash: 7a4ef6787b10a9f6
+content_hash: b0ab564adc66f0d4
 ---
+
 # Complementing Self-Consistency with Cross-Model Disagreement for Uncertainty Quantification
 
 **Conference**: ICLR2026  
@@ -147,10 +153,10 @@ TU is equal to or higher than AU on **all** benchmarks. The largest gains occur 
 ## Related Papers
 
 - [\[ICML 2026\] Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs](../../ICML2026/llm_evaluation/who_flips_self-_and_cross-model_counterarguments_reveal_answer_instability_in_ll.md)
+- [\[ICLR 2026\] TokUR: Token-Level Uncertainty Estimation for Large Language Model Reasoning](tokur_token-level_uncertainty_estimation_for_large_language_model_reasoning.md)
 - [\[ACL 2025\] Benchmarking Uncertainty Quantification Methods for Large Language Models with LM-Polygraph](../../ACL2025/llm_evaluation/benchmarking_uncertainty_quantification_methods_for_large_language_models_with_l.md)
 - [\[NeurIPS 2025\] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling](../../NeurIPS2025/llm_evaluation/efficient_semantic_uncertainty_quantification_in_language_models_via_diversity-s.md)
-- [\[ICLR 2026\] Textual Bayes: Quantifying Prompt Uncertainty in LLM-based Systems](textual_bayes_quantifying_prompt_uncertainty_in_llm-based_systems.md)
-- [\[ICLR 2026\] How Reliable is Language Model Micro-Benchmarking?](how_reliable_is_language_model_micro-benchmarking.md)
+- [\[ICLR 2026\] Don't Throw Away Your Beams: Improving Consistency-based Uncertainties in LLMs via Beam Search](dont_throw_away_your_beams_improving_consistency-based_uncertainties_in_llms_via.md)
 
 </div>
 

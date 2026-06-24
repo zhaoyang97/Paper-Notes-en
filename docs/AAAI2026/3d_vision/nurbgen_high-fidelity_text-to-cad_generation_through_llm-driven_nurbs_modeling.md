@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling
 description: >-
-  [AAAI 2026][3D Vision][Text-to-CAD] NURBGen is the first text-to-CAD generation framework based on NURBS surface representation. By fine-tuning an LLM…
+  [AAAI 2026][3D Vision][Text-to-CAD] This paper proposes NURBGen, the first text-to-CAD generation framework based on NURBS surface representation. By fine-tuning an LLM to convert natural language descriptions into structured NURBS parameter JSONs, and introducing a hybrid representation (untrimmed NURBS + analytical primitives) alongside the large-scale partABC dataset, it significantly outperforms existing methods in geometric fidelity and dimensional accuracy.
 tags:
   - "AAAI 2026"
   - "3D Vision"
@@ -12,55 +12,55 @@ tags:
   - "BRep"
   - "3D Generation"
 date: 2026-05-08
-content_hash: e3326020942e0e24
+content_hash: 8944c35ec00811d3
 ---
 
 # NURBGen: High-Fidelity Text-to-CAD Generation through LLM-Driven NURBS Modeling
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2511.06194](https://arxiv.org/abs/2511.06194)  
 **Code**: Coming soon  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: Text-to-CAD, NURBS, LLM, BRep, 3D Generation
 
 ## TL;DR
 
-NURBGen is the first text-to-CAD generation framework based on NURBS surface representation. By fine-tuning an LLM, it maps natural language descriptions to structured NURBS parameter JSONs. A hybrid representation (untrimmed NURBS + analytic primitives) and a large-scale partABC dataset are introduced, achieving significant improvements over existing methods in geometric fidelity and dimensional accuracy.
+This paper proposes NURBGen, the first text-to-CAD generation framework based on NURBS surface representation. By fine-tuning an LLM to convert natural language descriptions into structured NURBS parameter JSONs, and introducing a hybrid representation (untrimmed NURBS + analytical primitives) alongside the large-scale partABC dataset, it significantly outperforms existing methods in geometric fidelity and dimensional accuracy.
 
 ## Background & Motivation
 
 ### Problem Definition
 
-CAD modeling is essential in modern engineering and product design, yet creating detailed CAD models typically requires expertise in professional software (e.g., Onshape, AutoCAD) and is highly time-consuming. Text-to-CAD technology aims to enable designers to describe 3D objects in natural language without requiring professional modeling skills.
+CAD modeling is essential in modern engineering and product design, but creating detailed CAD models typically requires expertise in professional software (such as Onshape, AutoCAD) and is highly time-consuming. Text-to-CAD technology aims to enable designers to describe 3D objects using natural language without requiring professional modeling skills.
 
 ### Limitations of Prior Work
 
-**Design-history dependency**: Nearly all existing methods (e.g., DeepCAD, Text2CAD, CAD-LLaMA) rely on design-history-based representations, where shapes are constructed via sequences of parametric operations (extrusion, 2D sketches). Although intuitive and editable, the training datasets (e.g., DeepCAD-170k) are small in scale and low in complexity (mostly cuboids and cylinders), limiting generalization capability.
+**Design-History Dependence**: Almost all existing methods (such as DeepCAD, Text2CAD, CAD-LLaMA) rely on design-history-based representations, where shapes are constructed through a sequence of parametric operations (extrusion, 2D sketches). Although intuitive and editable, the training datasets (such as DeepCAD-170k) are small in scale and low in complexity (mostly cuboids and cylinders), limiting generalization capability.
 
-**Underutilization of the ABC dataset**: The ABC dataset contains over one million 3D CAD models, but has two key limitations: (a) models are stored in BRep (Boundary Representation) format without design history; (b) high-quality text descriptions are absent.
+**Underutilization of the ABC Dataset**: The ABC dataset contains over 1 million 3D CAD models, but faces two key limitations: (a) it stores models in BRep (Boundary Representation) format, lacking design history; (b) it lacks high-quality text descriptions.
 
-**Difficulty of NURBS modeling**: Analytic surfaces in BRep are most commonly represented as NURBS, yet NURBS have rarely been explored in deep generative research due to challenges including efficient representation, non-differentiability of knot vectors, high parametric variability, and trimming complexity.
+**Difficulty in NURBS Modeling**: Analytical surfaces in BRep are most commonly represented by NURBS, but NURBS have been rarely explored in deep generation research due to challenges in efficient representation, the non-differentiability of knot vectors, high parameter variability, and trimming complexity.
 
-### Paper Goals
+### Design Motivation
 
-- Treat NURBS surfaces as language-aligned objects, encoding each surface as a JSON token sequence containing control points, degrees, weights, and knot vectors.
-- Reformulate text-to-CAD as a language modeling task.
-- Leverage the large scale and geometric diversity of the ABC dataset.
+- Treating NURBS surfaces as language-aligned objects, encoding each surface into a JSON token sequence containing control points, degrees, weights, and knot vectors.
+- Formulating the text-to-CAD problem as a language modeling task.
+- Leveraging the large scale and geometric diversity of the ABC dataset.
 
 ## Method
 
 ### Overall Architecture
 
-The NURBGen pipeline proceeds as follows: (1) extract part-level CAD models from the ABC dataset → (2) encode each part in a hybrid format (NURBS + analytic primitives) and generate high-quality descriptions using a VLM → (3) fine-tune Qwen3-4B to map text descriptions to structured hybrid CAD representations → (4) output JSON is directly convertible to BRep models.
+The overall pipeline of NURBGen: (1) Extract part-level CAD models from the ABC dataset $\rightarrow$ (2) Encode each part into a hybrid format (untrimmed NURBS + analytical primitives) and generate high-quality descriptions using a VLM $\rightarrow$ (3) Fine-tune Qwen3-4B to map text descriptions to structured hybrid CAD representations $\rightarrow$ (4) Convert the output JSON directly into a BRep model.
 
 ### Key Designs
 
 #### 1. **CAD Representation (NURBS Parameter Extraction)**
 
-- **Normalization**: Geometry is normalized into a $2 \times 2 \times 2$ bounding box centered at the origin.
-- **NURBS conversion**: Each face is converted to an untrimmed NURBS representation using PythonOCC's `BRepBuilderAPI_NurbsConvert`, unifying all underlying surfaces.
-- **Parameter extraction**: For each face, the following are extracted: control points (poles), knot vectors in both parametric directions, knot multiplicities, degrees in the u and v directions, rational weights, and periodicity flags.
-- **Exact reconstruction**: Given these parameters, the original surface can be exactly reconstructed via the `Geom_BSplineSurface` constructor.
+- **Normalization**: Normalize the geometry into a $2 \times 2 \times 2$ bounding box centered at the origin.
+- **NURBS Conversion**: Use PythonOCC's `BRepBuilderAPI_NurbsConvert` to convert each face into an untrimmed NURBS representation, unifying all underlying surfaces.
+- **Parameter Extraction**: Extract control points (poles), knot vectors in both parametric directions, knot multiplicities, degrees in $u$ and $v$ directions, rational weights, and periodicity flags for each face.
+- **Precise Reconstruction**: With these parameters, the original surface can be precisely reconstructed using the `Geom_BSplineSurface` constructor.
 
 The mathematical definition of a NURBS surface is:
 
@@ -68,96 +68,96 @@ $$\mathbf{S}(u,v) = \frac{\sum_{i=0}^{n}\sum_{j=0}^{m}N_{i,p}(u)M_{j,q}(v)w_{ij}
 
 #### 2. **Hybrid Representation**
 
-This is one of the core innovations. Not all surfaces can be robustly represented as untrimmed NURBS — thin regions near holes or fillets in particular frequently introduce geometric artifacts.
+One of the core innovations. Not all surfaces can be robustly represented by untrimmed NURBS—especially thin regions near holes or fillets, which often introduce geometric artifacts.
 
-- **Degeneracy detection**: The Chamfer Distance between each reconstructed surface $f_n$ and the ground-truth surface $f_{gt}$ is compared: $CD(f_n, f_{gt}) \leq \epsilon$, with threshold $\epsilon = 6 \times 10^{-4}$.
-- **Fallback strategy**: When NURBS approximation is unacceptable, the original analytic primitive is retained (lines, circles, B-splines, ellipses, parabolas, hyperbolas).
-- **Statistics**: In practice, approximately 70% of faces are modeled with NURBS, while 30% fall back to analytic primitives.
-- **Advantages**: More expressive and compact than pure NURBS format, reducing parameter count and producing shorter, more token-efficient inputs.
+- **Degeneration Detection**: Compare the Chamfer Distance between each reconstructed surface $f_n$ and the ground-truth surface $f_gt$: $CD(f_n, f_gt) \leq \epsilon$, with a threshold of $\epsilon = 6 \times 10^{-4}$.
+- **Fallback Strategy**: When the NURBS approximation is unacceptable, retain the original analytical primitives (lines, circles, B-splines, ellipses, parabolas, hyperbolas).
+- **Statistics**: In practice, approximately 70% of the faces are modeled with NURBS, while 30% fall back to analytical primitives.
+- **Advantages**: More expressive and compact than the pure NURBS format, reducing the number of parameters and producing shorter, more token-efficient inputs.
 
 #### 3. **Automatic Annotation Pipeline**
 
-This addresses the lack of text descriptions in the ABC dataset:
+Resolving the lack of text descriptions in the ABC dataset:
 
-- **Multi-view rendering**: Each BRep is first converted to a triangular mesh, then rendered in Blender from 6 viewpoints at 512×512 resolution with the Freestyle renderer enabled to overlay contour edges.
-- **Metadata-guided annotation**: Geometric metadata inaccessible to VLMs is extracted — bounding box dimensions, surface area, volume, and topological hole count (genus computed via the Euler–Poincaré formula: $g = 0.5 \times (2 - \chi)$).
-- **Description generation**: InternVL3-13B, a multi-view VLM, takes 6 rendered views and metadata-augmented prompts as input to generate shape-centric descriptions.
-- **Quality validation**: GPT-4o validates a random sample of 1,000 instances, achieving approximately 85% accuracy.
+- **Multi-view Rendering**: Each BRep is first converted into a triangular mesh and rendered from 6 views at a resolution of 512×512 in Blender, with the Freestyle renderer enabled to overlay feature edges.
+- **Metadata Guidance**: Extract geometric metadata that VLMs cannot directly perceive—dimensions (length, width, height), surface area, volume, and the number of topological holes (calculated via the Euler-Poincaré formula for genus $g = 0.5 \times (2 - \chi)$).
+- **Description Generation**: Use the InternVL3-13B multi-view VLM, inputting the 6 rendered views and metadata-augmented annotation prompts to generate shape-centric descriptions.
+- **Quality Verification**: GPT-4o validates an accuracy of approximately 85% on 1000 random samples.
 
 ### Dataset Construction (partABC)
 
-- Part-level substructures are extracted from 200k models in ABC, yielding 3 million part-level CAD instances.
-- **Complexity filtering**: A weighted scoring function is applied: $w(B) = l_1 \times \text{token\_count} + l_2 \times \text{through\_holes} + l_3 \times \frac{\text{surface\_area}}{\text{volume}} + l_4 \times \text{bbox\_diag}$
-- Parts are categorized into three tiers: simple (≤0.12), moderate (0.12–0.23), and complex (>0.23).
-- A subset of 10% simple + 50% moderate + 40% complex instances is retained, yielding approximately 300k high-quality samples.
+- Extract part-level substructures from 200k models in ABC, obtaining 3 million part-level CAD instances.
+- **Complexity Filtering**: Use a weighted scoring function $w(B) = l_1 \times \text{token\_count} + l_2 \times \text{through\_holes} + l_3 \times \frac{\text{surface\_area}}{\text{volume}} + l_4 \times \text{bbox\_diag}$.
+- Categorize parts into three levels: simple ($\le 0.12$), moderate ($0.12\text{--}0.23$), and complex ($> 0.23$).
+- Retain 10% simple + 50% moderate + 40% complex, yielding approximately 300k high-quality samples in the end.
 
 ### Loss & Training
 
-- **Base model**: Qwen3-4B
+- **Base Model**: Qwen3-4B
 - **Optimizer**: AdamW, learning rate $5 \times 10^{-5}$, linear warmup
 - **LoRA**: rank=64, $\alpha=128$
 - **Training**: 180k steps, batch size=1, 4×H200 GPUs, 3 days
-- **Context window**: 8192 for training, 14k for inference
+- **Context Window**: 8192 for training, 14k for inference
 - **Temperature**: 0.3
-- **Generation speed**: ~800 tokens/s on RTX 3090
-- **Data processing**: Control point coordinates are retained to 6 decimal places; weights are compressed using (value, frequency) encoding.
+- **Generation Speed**: Approximately 800 tokens/s on RTX 3090
+- **Data Processing**: Control point coordinates are kept to 6 decimal places; weights are compressed using (value, frequency)
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | User Pref. (1k)↑ | GPT Pref.↑ | IR↓ | CD↓ | HD↓ | JSD↓ | MMD↓ |
-|-------|-----------------|-----------|-----|-----|-----|------|------|
+| Model | User Preference (1k)↑ | GPT Preference↑ | Invalidity Rate IR↓ | CD↓ | HD↓ | JSD↓ | MMD↓ |
+|------|---------|--------|-------|------|------|------|------|
 | GPT-4o | 1.5 | 1.9 | 0.17 | 7.2 | 0.36 | 72.87 | 4.17 |
 | DeepCAD | 5.6 | 6.1 | 0.32 | 10.28 | 0.45 | 89.77 | 4.43 |
 | Text2CAD | 26.1 | 27.2 | 0.05 | 9.66 | 0.42 | 85.27 | 4.54 |
 | **NURBGen** | **64.1** | **61.6** | **0.018** | **4.43** | **0.25** | **57.94** | **2.14** |
 
-Note: CD, JSD, and MMD are multiplied by $10^2$. NURBGen substantially outperforms all baselines across every metric.
+Note: CD, JSD, and MMD are scaled by $10^2$. NURBGen leads significantly across all metrics.
 
 ### Ablation Study
 
-| Configuration | Human Pref.↑ | GPT-4o Pref.↑ | Notes |
-|--------------|-------------|--------------|-------|
-| NURBS-only | 28% | 21% | Untrimmed NURBS only, no analytic primitive fallback |
-| **Hybrid (full)** | **72%** | **79%** | NURBS + analytic primitives |
+| Configuration | Human Preference↑ | GPT-4o Preference↑ | Note |
+|------|----------|-----------|------|
+| NURBS-only | 28% | 21% | Only untrimmed NURBS, no analytical primitive fallback |
+| **Hybrid (Full)** | **72%** | **79%** | Hybrid NURBS + analytical primitives |
 
-The NURBS-only model exhibits pronounced geometric artifacts and reconstruction errors near holes, sharp transitions, and regions where NURBS fitting is imprecise.
+The NURBS-only model exhibits obvious geometric artifacts and reconstruction errors in areas with holes, sharp transitions, and imprecise NURBS fitting.
 
 ### Key Findings
 
-1. NURBGen achieves a CD of 4.43 (×$10^2$) on 7,500 test samples, 54% lower than the second-best method Text2CAD (9.66).
-2. A top-1 human preference rate of 64.1% is achieved, far exceeding Text2CAD's 26.1%.
-3. An invalidity rate of only 0.018 demonstrates strong geometric correctness of the generated BRep models.
-4. The hybrid representation improves human preference by 44 percentage points over pure NURBS.
+1. NURBGen achieves a CD of only 4.43 ($\times 10^2$) on 7500 test samples, which is 54% lower than the runner-up Text2CAD (9.66).
+2. A top-1 preference rate of 64.1% in human evaluation, far exceeding Text2CAD's 26.1%.
+3. An invalidity rate of only 0.018, indicating high geometric correctness of the generated BReps.
+4. The hybrid representation yields a 44 percentage point improvement over pure NURBS in human evaluation.
 
 ## Highlights & Insights
 
-1. **NURBS as language**: Serializing NURBS surface parameters as JSON tokens elegantly reformulates CAD generation as a language modeling task — a significant paradigm shift.
-2. **Practical utility of hybrid representation**: The 70% NURBS + 30% analytic primitive strategy achieves a favorable balance between robustness and token efficiency.
-3. **Bottom-up data engineering**: The complete pipeline — from part extraction to complexity filtering to automatic annotation — enables effective utilization of the large-scale, unannotated ABC dataset.
-4. **Extremely low invalidity rate**: An IR of 0.018 indicates strong geometric consistency in the structured parameters generated by the LLM.
+1. **NURBS as Language**: Serializing NURBS surface parameters into JSON tokens elegantly converts CAD generation into a language modeling task, which represents a major paradigm shift.
+2. **Utility of Hybrid Representation**: The hybrid strategy of 70% NURBS + 30% analytical primitives balances robustness and token efficiency effectively.
+3. **Bottom-up Data Engineering**: The complete pipeline design, spanning part extraction $\rightarrow$ complexity filtering $\rightarrow$ automatic annotation, enables the utilization of the large-scale, unlabeled ABC dataset.
+4. **Extremely Low Invalidity Rate**: An invalidity rate of 0.018 demonstrates that structured parameters generated by the LLM maintain strong geometric consistency.
 
 ## Limitations & Future Work
 
-1. **Complex prompts**: For prompts involving complex descriptions (e.g., "a two-story house with a gable roof"), NURBGen struggles to capture fine-grained structural details.
-2. **Geometric artifacts**: Self-intersections or topological inconsistencies arise in a minority of cases.
-3. **Engraved text**: Prompts involving engraved text cannot be reconstructed.
-4. **Context window limitation**: Current training is limited to 8,192 tokens; future work may explore long-context training to handle more complex assemblies.
-5. Only 200k of the 1 million models in the ABC dataset have been processed; scaling to the full dataset remains as future work.
+1. **Complex Prompts**: For complex descriptions (e.g., "a two-story house with a gabled roof"), NURBGen struggles to capture fine structures.
+2. **Geometric Artifacts**: Self-intersections or topological inconsistencies occur in a minority of cases.
+3. **Text Engraving**: Incapable of reconstructing prompts containing engraved text.
+4. **Context Window Limitations**: Current training is limited to 8192 tokens. Future research could investigate long-context training to process more complex assemblies.
+5. Only 200k models (from a total of 1 million) in the ABC dataset were processed; this can be scaled up in the future.
 
 ## Related Work & Insights
 
-- **Distinction from NeuroNURBS**: NeuroNURBS employs a non-autoregressive transformer VAE to learn latent encodings of untrimmed NURBS, but does not support language-conditioned generation and cannot handle trimming.
-- **Comparison with LLaMA-Mesh**: LLaMA-Mesh fine-tunes LLaMA to generate mesh vertices and faces as plain text, whereas NURBGen generates structured, editable NURBS parameters.
-- **Insight**: Structured symbolic representations (vs. latent encodings) may be a more promising direction for LLM-driven 3D generation.
+- **Differences from NeuroNURBS**: NeuroNURBS uses a non-autoregressive transformer VAE to learn latent codes of untrimmed NURBS, but it does not support language-conditional generation and cannot handle trimming issues.
+- **Comparison with LLaMA-Mesh**: LLaMA-Mesh fine-tunes LLaMA to generate plain text representing mesh vertices and faces, whereas NURBGen generates structured, editable NURBS parameters.
+- **Insights**: Structured symbolic representations (vs. latent codes) may represent a more promising direction in LLM-driven 3D generation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First NURBS-based text-to-CAD framework with an elegantly designed hybrid representation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-metric evaluation combined with human assessment, though ablation studies are limited in scope.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure with complete technical details.
-- Value: ⭐⭐⭐⭐⭐ — Establishes NURBS as a viable alternative to design-history-based methods; the partABC dataset represents a substantial contribution.
+- Novelty: ⭐⭐⭐⭐⭐ — The first NURBS-based text-to-CAD framework, featuring an ingeniously designed hybrid representation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Evaluated across multiple metrics along with human evaluation, though ablation studies are relatively limited.
+- Writing Quality: ⭐⭐⭐⭐ — Clear structure and highly detailed technical presentation.
+- Value: ⭐⭐⭐⭐⭐ — Pioneers a new direction using NURBS as an alternative to design-history-based approaches; the partABC dataset is highly valuable.
 
 <!-- RELATED:START -->
 
@@ -165,11 +165,11 @@ The NURBS-only model exhibits pronounced geometric artifacts and reconstruction 
 
 ## Related Papers
 
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](../../CVPR2026/3d_vision/lattice_democratize_high-fidelity_3d_generation_at_scale.md)
 - [\[ICML 2026\] RelaxFlow: Text-Driven Amodal 3D Generation](../../ICML2026/3d_vision/relaxflow_text-driven_amodal_3d_generation.md)
-- [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
-- [\[AAAI 2026\] MR-CoSMo: Visual-Text Memory Recall and Direct Cross-Modal Alignment Method for Query-Driven 3D Segmentation](mr-cosmo_visual-text_memory_recall_and_direct_cross-modal_alignment_method_for_q.md)
-- [\[CVPR 2026\] Text–Image Conditioned 3D Generation](../../CVPR2026/3d_vision/text-image_conditioned_3d_generation.md)
-- [\[AAAI 2026\] AnchorDS: Anchoring Dynamic Sources for Semantically Consistent Text-to-3D Generation](anchords_anchoring_dynamic_sources_for_semantically_consiste.md)
+- [\[CVPR 2026\] CoSMo3D: Open-World Promptable 3D Semantic Segmentation through LLM-Guided Canonical Spatial Modeling](../../CVPR2026/3d_vision/cosmo3d_open-world_promptable_3d_semantic_segmentation_through_llm-guided_canoni.md)
+- [\[ICLR 2026\] Learning Hierarchical and Geometry-Aware Graph Representations for Text-to-CAD](../../ICLR2026/3d_vision/learning_hierarchical_and_geometry-aware_graph_representations_for_text-to-cad.md)
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](../../CVPR2026/3d_vision/text-driven_3d_hand_motion_generation_from_sign_language_data.md)
 
 </div>
 

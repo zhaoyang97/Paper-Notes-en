@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models
 description: >-
-  [ICCV 2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes ETA, a dual-system framework that shifts large-model computation from the current frame to preceding time steps and applies batch inferen…
+  [ICCV 2025][Autonomous Driving][End-to-end autonomous driving] This paper proposes ETA, a dual-system framework that shifts large-model computation from the current frame to preceding time steps and applies batch inference, enabling large-model features to be available at every frame. ETA achieves a driving score of 69.53 on Bench2Drive with a 50 ms latency, improving the state of the art by 8%.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "real-time large model deployment"
   - "feature forecasting"
 date: 2026-05-08
-content_hash: 2b56e0d7f71d47d2
+content_hash: 42d75c50a29af40f
 ---
 
 # ETA: Efficiency through Thinking Ahead, A Dual Approach to Self-Driving with Large Models
@@ -155,11 +155,11 @@ Capability-level ablations show that removing the small model causes the steepes
 
 ## Related Papers
 
+- [\[CVPR 2025\] Distilling Multi-modal Large Language Models for Autonomous Driving](../../CVPR2025/autonomous_driving/distilling_multi-modal_large_language_models_for_autonomous_driving.md)
+- [\[ACL 2025\] Embracing Large Language Models in Traffic Flow Forecasting](../../ACL2025/autonomous_driving/embracing_large_language_models_in_traffic_flow_forecasting.md)
+- [\[CVPR 2025\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](../../CVPR2025/autonomous_driving/vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
 - [\[NeurIPS 2025\] FutureSightDrive: Thinking Visually with Spatio-Temporal CoT for Autonomous Driving](../../NeurIPS2025/autonomous_driving/futuresightdrive_thinking_visually_with_spatiotemporal_cot_f.md)
-- [\[ICCV 2025\] ReconDreamer++: Harmonizing Generative and Reconstructive Models for Driving Scene Representation](recondreamer_harmonizing_generative_and_reconstructive_models_for_driving_scene_.md)
-- [\[ICCV 2025\] AdaDrive: Self-Adaptive Slow-Fast System for Language-Grounded Autonomous Driving](adadrive_self-adaptive_slow-fast_system_for_language-grounded_autonomous_driving.md)
-- [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
-- [\[ICCV 2025\] A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds](a_constrained_optimization_approach_for_gaussian_splatting_from_coarsely-posed_i.md)
+- [\[ECCV 2024\] DySeT: A Dynamic Masked Self-distillation Approach for Robust Trajectory Prediction](../../ECCV2024/autonomous_driving/dyset_a_dynamic_masked_self-distillation_approach_for_robust_trajectory_predicti.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dataset Distillation via the Wasserstein Metric
 description: >-
-  [ICCV 2025][Model Compression][Dataset Distillation] This paper proposes WMDD (Wasserstein Metric-based Dataset Distillation), which replaces MMD with Wasserstein barycenters for distribution matching and incorporates pe…
+  [ICCV 2025][Model Compression][Dataset Distillation] This paper proposes WMDD (Wasserstein Metric-based Dataset Distillation), which replaces MMD with Wasserstein barycenters for distribution matching and incorporates per-class BatchNorm regularization, achieving state-of-the-art dataset distillation performance on large-scale benchmarks including ImageNet-1K.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Distribution Matching"
   - "BatchNorm Regularization"
 date: 2026-05-08
-content_hash: 006081cd7f0ec7e9
+content_hash: 692b8eabd193b3c8
 ---
 
 # Dataset Distillation via the Wasserstein Metric
@@ -58,7 +58,7 @@ WMDD proceeds in three steps: (1) extract features of the full dataset using a p
 2. **Per-Class BatchNorm Regularization (PCBN)**: Conventional methods (e.g., SRe2L) align synthetic and real data statistics using global BN moments. However, feature distributions can vary substantially across classes, and global BN cannot provide class-differentiated guidance. PCBN independently computes and matches per-class mean and variance at each BN layer, and further incorporates the Wasserstein barycenter weights $w_{k,j}$ for weighted statistic computation.
 
 3. **Joint Optimization Objective**:
-   $$\mathcal{L}(\tilde{\mathbf{X}}) = \mathcal{L}_{\text{feature}}(\tilde{\mathbf{X}}) + \lambda \mathcal{L}_{\text{BN}}(\tilde{\mathbf{X}})$$
+    $\mathcal{L}(\tilde{\mathbf{X}}) = \mathcal{L}_{\text{feature}}(\tilde{\mathbf{X}}) + \lambda \mathcal{L}_{\text{BN}}(\tilde{\mathbf{X}})$
    where the feature loss is the sum of squared L2 distances from each synthetic image's feature to its corresponding barycenter atom, and $\lambda$ is the regularization coefficient.
 
 ### Loss & Training
@@ -132,9 +132,9 @@ The combination of PCBN and Wasserstein matching consistently outperforms all ot
 
 - [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](../../NeurIPS2025/model_compression/hyperbolic_dataset_distillation.md)
 - [\[ICCV 2025\] Heavy Labels Out! Dataset Distillation with Label Space Lightening](heavy_labels_out_dataset_distillation_with_label_space_lightening.md)
+- [\[CVPR 2025\] Dataset Distillation with Neural Characteristic Function: A Minmax Perspective](../../CVPR2025/model_compression/dataset_distillation_with_neural_characteristic_function_a_minmax_perspective.md)
 - [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](../../ICLR2026/model_compression/dataset_distillation_as_pushforward_optimal_quantization.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](../../NeurIPS2025/model_compression/optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
-- [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](../../AAAI2026/model_compression/tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
 
 </div>
 

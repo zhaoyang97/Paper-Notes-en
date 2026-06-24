@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Video LLM] PAS diagnoses the instability of temporal encoding in Video LLMs as "sampling an inverse Fourier temporal kernel with high-frequency ripples." It proposes training-free multi-head inverse phase smoothing—applying small, opposite temporal phase offsets to different attention head queries before standard aggregation. Thi
+  [CVPR 2026][Multimodal VLM][Video LLM] PAS diagnoses the instability of temporal encoding in Video LLMs as "sampling an inverse Fourier temporal kernel with high-frequency ripples." It proposes training-free multi-head inverse phase smoothing—applying small, opposite temporal phase offsets to different attention head queries before standard aggregation. This effectively performs a controlled moving average to smooth out ripples, consistently improving performance across nine…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Video LLM
-  - M-RoPE
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video LLM"
+  - "M-RoPE"
+  - "Temporal Encoding"
+  - "Phase Smoothing"
+  - "Training-Free"
 date: 2026-05-08
-content_hash: 917ec28d46828278
+content_hash: 209c2c37c8f29ef8
 ---
+
 # PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs
 
 **Conference**: CVPR 2026  
@@ -133,9 +137,9 @@ Since PAS has no "removable modules," the core verification comes from parameter
 
 - [\[CVPR 2026\] Pointing at Parts: Training-Free Few-Shot Grounding in Multimodal LLMs](pointing_at_parts_training-free_few-shot_grounding_in_multimodal_llms.md)
 - [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 - [\[CVPR 2026\] DRS-GUI: Dynamic Region Search for Training-Free GUI Grounding](drs-gui_dynamic_region_search_for_training-free_gui_grounding.md)
 - [\[NeurIPS 2025\] Training-free Online Video Step Grounding](../../NeurIPS2025/multimodal_vlm/training-free_online_video_step_grounding.md)
+- [\[CVPR 2026\] LLMind: Bio-inspired Training-free Adaptive Visual Representations for Vision-Language Models](llmind_bio-inspired_training-free_adaptive_visual_representations_for_vision-lan.md)
 
 </div>
 

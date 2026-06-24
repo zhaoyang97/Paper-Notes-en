@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] HBO decomposes the data mixing problem in LLM instruction fine-tuning into two levels: "how to sample across datasets" and "how to sample within each dataset according to difficulty." Using Global and Local Actors to dynamically update sampling probabilities based on the training state, HBO consistently outperforms sta
+  [ICLR2026][Optimization][Hierarchical Sampling] HBO decomposes the data mixing problem in LLM instruction fine-tuning into two levels: "how to sample across datasets" and "how to sample within each dataset according to difficulty." Using Global and Local Actors to dynamically update sampling probabilities based on the training state, HBO consistently outperforms static sampling and existing dynamic data mixing methods in multilingual and multi-task fine-tuning.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Hierarchical Sampling"
+  - "Bi-level Optimization"
+  - "Data Mixing"
+  - "LLM Fine-tuning"
+  - "Dynamic Curriculum Learning"
 date: 2026-05-08
-content_hash: 9456ed79ef203545
+content_hash: 32515204726bf2f1
 ---
+
 # HBO: Hierarchical Balancing Optimization for Fine-Tuning Large Language Models
 
 **Conference**: ICLR2026  

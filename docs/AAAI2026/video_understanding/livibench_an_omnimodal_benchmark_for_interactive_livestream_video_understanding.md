@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding
 description: >-
-  [AAAI 2026][Video Understanding][livestream video understanding] This paper presents LiViBench, the first omnimodal benchmark for interactive livestream video understanding (3,168 videos, 3,175 MCQs, 24 tasks)…
+  [AAAI 2026][Video Understanding][livestream video understanding] This paper presents LiViBench, the first omnimodal benchmark for interactive livestream video understanding (3,168 videos, 3,175 MCQs, 24 tasks), introduces a multi-agent seed-guided semi-automatic annotation pipeline, and develops LiVi-LLM-7B — a specialized model featuring a Video-to-Comment Retrieval (VCR) module and two-stage instruction tuning — which surpasses 72B open-source models at the 7B scale.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "instruction tuning"
   - "omnimodal model"
 date: 2026-05-08
-content_hash: c8fa0ce042c1098e
+content_hash: 1197feeb83127f38
 ---
 
 # LiViBench: An Omnimodal Benchmark for Interactive Livestream Video Understanding
@@ -203,10 +203,10 @@ LiVi-LLM-7B achieves the best results on Video-MME and VideoEval-Pro, demonstrat
 ## Related Papers
 
 - [\[AAAI 2026\] FineVAU: A Novel Human-Aligned Benchmark for Fine-Grained Video Anomaly Understanding](finevau_a_novel_human-aligned_benchmark_for_fine-grained_video_anomaly_understan.md)
-- [\[ICCV 2025\] Towards Video Thinking Test: A Holistic Benchmark for Advanced Video Reasoning and Understanding](../../ICCV2025/video_understanding/towards_video_thinking_test_a_holistic_benchmark_for_advanced_video_reasoning_an.md)
-- [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](../../CVPR2026/video_understanding/herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
-- [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](../../CVPR2026/video_understanding/movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
-- [\[CVPR 2026\] MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](../../CVPR2026/video_understanding/minerva-cultural_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)
+- [\[ICLR 2026\] ScaleLong: A Multi-Timescale Benchmark for Long Video Understanding](../../ICLR2026/video_understanding/scalelong_a_multi-timescale_benchmark_for_long_video_understanding.md)
+- [\[CVPR 2026\] Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation](../../CVPR2026/video_understanding/interactive_tracking_a_human-in-the-loop_paradigm_with_memory-augmented_adaptati.md)
+- [\[CVPR 2026\] FPS-Bench: A Benchmark for High Frame-Rate Video Understanding](../../CVPR2026/video_understanding/fps-bench_a_benchmark_for_high_frame-rate_video_understanding.md)
+- [\[CVPR 2025\] Q-Bench-Video: Benchmark the Video Quality Understanding of LMMs](../../CVPR2025/video_understanding/q-bench-video_benchmark_the_video_quality_understanding_of_lmms.md)
 
 </div>
 

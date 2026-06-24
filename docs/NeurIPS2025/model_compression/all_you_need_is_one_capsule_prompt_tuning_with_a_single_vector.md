@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] All You Need is One: Capsule Prompt Tuning with a Single Vector
 description: >-
-  [NeurIPS 2025][Model Compression][prompt tuning] This paper proposes Capsule Prompt-Tuning (CaPT), identifying that existing task-aware soft prompts exhibit minimal interaction with input tokens — an "attention island" p…
+  [NeurIPS 2025][Model Compression][prompt tuning] This paper proposes Capsule Prompt-Tuning (CaPT), identifying that existing task-aware soft prompts exhibit minimal interaction with input tokens — an "attention island" phenomenon. Incorporating instance-aware information into a single capsule prompt enables it to serve as an "attention anchor" that activates attention toward critical structural information, achieving superior performance over multi-prompt methods with extreme…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "attention anchor"
   - "parameter efficiency"
 date: 2026-05-08
-content_hash: 76e443b06a59ec53
+content_hash: 490fda5d9dafeb8a
 ---
 
 # All You Need is One: Capsule Prompt Tuning with a Single Vector
@@ -111,10 +111,10 @@ Standard task loss (e.g., cross-entropy for classification); only the capsule pr
 ## Related Papers
 
 - [\[NeurIPS 2025\] Uni-LoRA: One Vector is All You Need](uni-lora_one_vector_is_all_you_need.md)
-- [\[NeurIPS 2025\] Graph Your Own Prompt](graph_your_own_prompt.md)
 - [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
+- [\[NeurIPS 2025\] Graph Your Own Prompt](graph_your_own_prompt.md)
 - [\[NeurIPS 2025\] One-Step Diffusion-Based Image Compression with Semantic Distillation](one-step_diffusion-based_image_compression_with_semantic_distillation.md)
-- [\[NeurIPS 2025\] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation](beyond_higher_rank_token-wise_input-output_projections_for_efficient_low-rank_ad.md)
+- [\[ACL 2025\] One QuantLLM for ALL: Fine-tuning Quantized LLMs Once for Efficient Deployments](../../ACL2025/model_compression/one_quantllm_for_all_fine-tuning_quantized_llms_once_for_efficient_deployments.md)
 
 </div>
 

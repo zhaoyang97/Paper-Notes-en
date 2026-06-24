@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issue in Generalist Anomaly Detection (GAD) where "directly modeling residual distributions" leads to misjudgments due to inconsistency between residuals and instance features, Ours no longer classifies residuals directly. Instead, it treats residuals as a **guide**: learnable proxies extract patterns fr
+  [CVPR 2026][Anomaly Detection][Generalist Anomaly Detection] Addressing the issue in Generalist Anomaly Detection (GAD) where "directly modeling residual distributions" leads to misjudgments due to inconsistency between residuals and instance features, Ours no longer classifies residuals directly. Instead, it treats residuals as a **guide**: learnable proxies extract patterns from residuals (RFL), then these residual proxies aggregate query-related "normality proxies" (NLS) f…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Anomaly Detection"
+  - "Generalist Anomaly Detection"
+  - "Residual Features"
+  - "Cross-Domain Generalization"
+  - "Attention Proxies"
+  - "Normality Modeling"
 date: 2026-05-08
-content_hash: 05f1e763980e8b94
+content_hash: eec4d4411f3fda62
 ---
+
 # Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,10 @@ Note: ResAD\* is the authors' reproduction. The gain in pixel-level PRO is parti
 ## Related Papers
 
 - [\[CVPR 2026\] Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)
-- [\[NeurIPS 2025\] Normal-Abnormal Guided Generalist Anomaly Detection](../../NeurIPS2025/object_detection/normal-abnormal_guided_generalist_anomaly_detection.md)
 - [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
-- [\[CVPR 2026\] CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)
-- [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
+- [\[ICLR 2026\] PIRN: Prototypical-based Intra-modal Reconstruction with Normality Communication for Multi-modal Anomaly Detection.](../../ICLR2026/anomaly_detection/pirn_prototypical-based_intra-modal_reconstruction_with_normality_communication_.md)
+- [\[CVPR 2026\] RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)
+- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Illumination-Consistent Human-Scene Reconstruction from Monocular Video
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper jointly reconstructs an animatable human and a static scene from monocular video using 3DGS. The core involves introducing a "light volume" to provide spatially-varying local illumination clues for human PBR and an implicit shadow module to decouple soft shadows cast by the human onto the scene, ensuring hum
+  [CVPR 2026][3D Vision][Monocular video reconstruction] This paper jointly reconstructs an animatable human and a static scene from monocular video using 3DGS. The core involves introducing a "light volume" to provide spatially-varying local illumination clues for human PBR and an implicit shadow module to decouple soft shadows cast by the human onto the scene, ensuring human-scene consistency in illumination and shadows while supporting relighting and cross-scene synthesis.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular video reconstruction"
+  - "Human-scene joint"
+  - "3D Gaussian Splatting"
+  - "Relightable human"
+  - "Shadow estimation"
+  - "Light volume"
 date: 2026-05-08
-content_hash: a4b4ab44eff14f82
+content_hash: a96100f5cb409b75
 ---
+
 # Illumination-Consistent Human-Scene Reconstruction from Monocular Video
 
 **Conference**: CVPR 2026  
@@ -133,11 +140,11 @@ Trained/rendered on the NeuMan "Lab" sequence.
 
 ## Related Papers
 
+- [\[CVPR 2026\] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video](physho_physics-based_dynamic_3d_gaussian_human_and_object_from_monocular_video.md)
 - [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)
-- [\[CVPR 2026\] HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
+- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
+- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
+- [\[CVPR 2026\] Mesh4D: 4D Mesh Reconstruction and Tracking from Monocular Video](mesh4d_4d_mesh_reconstruction_and_tracking_from_monocular_video.md)
 
 </div>
 

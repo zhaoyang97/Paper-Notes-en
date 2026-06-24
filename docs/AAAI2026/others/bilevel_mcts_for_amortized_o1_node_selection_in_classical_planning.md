@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning
 description: >-
-  [AAAI 2026][MCTS] This paper proposes Bilevel MCTS, which launches a depth-proportional budgeted best-first search at the leaf node selected by MCTS…
+  [AAAI 2026][MCTS] This paper proposes Bilevel MCTS, which launches a depth-proportional budgeted best-first search at the leaf node selected by MCTS, reducing the amortized node-selection complexity from $O(\log N)$ to $O(1)$. Complemented by Tree Collapsing to reduce the number of action-selection steps, these components are integrated into the Nεbula planner, which solves 192.2/230.6 problems on IPC2018/2023 benchmarks (5min/30min), outperforming all prior SOTA planners inc…
 tags:
   - "AAAI 2026"
   - "MCTS"
@@ -13,7 +13,7 @@ tags:
   - "IPC Benchmark"
   - "Agile Planning"
 date: 2026-05-08
-content_hash: e5c86b450c1cbb15
+content_hash: c15dc6c6b95016e2
 ---
 
 # Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning
@@ -159,8 +159,8 @@ Removing any single component causes clear degradation, confirming the orthogona
 - [\[AAAI 2026\] Extreme Value Monte Carlo Tree Search for Classical Planning](extreme_value_monte_carlo_tree_search_for_classical_planning.md)
 - [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
 - [\[ICML 2026\] Amortized Simulation-Based Inference in Generalized Bayes via Neural Posterior Estimation](../../ICML2026/others/amortized_simulation-based_inference_in_generalized_bayes_via_neural_posterior_e.md)
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/others/compositional_diffusion_long_horizon_planning.md)
-- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](../../NeurIPS2025/others/distributionally_robust_feature_selection.md)
+- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](../../CVPR2026/others/debiased_sample_selection_for_learning_with_noisy_labels.md)
+- [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](../../CVPR2026/others/differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
 
 </div>
 

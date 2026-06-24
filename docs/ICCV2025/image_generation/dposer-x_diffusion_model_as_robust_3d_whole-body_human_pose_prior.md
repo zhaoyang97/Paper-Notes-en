@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Model] This paper proposes DPoser-X, a 3D whole-body human pose prior based on an unconditional diffusion model. It unifies various pose-related tasks as inverse problems and perfo…
+  [ICCV 2025][Image Generation][Diffusion Model] This paper proposes DPoser-X, a 3D whole-body human pose prior based on an unconditional diffusion model. It unifies various pose-related tasks as inverse problems and performs test-time optimization via a truncated timestep schedule for variational diffusion sampling. A hybrid training strategy is introduced to effectively combine whole-body and part-specific datasets. DPoser-X achieves up to 61% improvement across 8 benchmarks…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Inverse Problems"
   - "Variational Diffusion Sampling"
 date: 2026-05-08
-content_hash: 2d85ba8befe7367f
+content_hash: 810dbb9fd08a73b2
 ---
 
 # DPoser-X: Diffusion Model as Robust 3D Whole-Body Human Pose Prior
@@ -164,11 +164,11 @@ The mixed strategy significantly outperforms fused on zero-shot generalization (
 
 ## Related Papers
 
+- [\[CVPR 2025\] InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions](../../CVPR2025/image_generation/intermimic_towards_universal_whole-body_control_for_physics-based_human-object_i.md)
 - [\[ICCV 2025\] Learning Deblurring Texture Prior from Unpaired Data with Diffusion Model](learning_deblurring_texture_prior_from_unpaired_data_with_diffusion_model.md)
 - [\[ICCV 2025\] DIIP: Diffusion Image Prior](diffusion_image_prior.md)
+- [\[CVPR 2026\] PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose](../../CVPR2026/image_generation/posed-flow_versatile_and_guided_flow_matching_model_of_human_pose.md)
 - [\[ICCV 2025\] Dual Recursive Feedback on Generation and Appearance Latents for Pose-Robust Text-to-Image Diffusion](dual_recursive_feedback_on_generation_and_appearance_latents_for_pose-robust_tex.md)
-- [\[ICCV 2025\] DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses](dreamdance_animating_human_images_by_enriching_3d_geometry_cues_from_2d_poses.md)
-- [\[NeurIPS 2025\] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior](../../NeurIPS2025/image_generation/diff-icmh_harmonizing_machine_and_human_vision_in_image_compression_with_generat.md)
 
 </div>
 

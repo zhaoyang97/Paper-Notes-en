@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DGH: Dynamic Gaussian Hair
 description: >-
-  [NeurIPS 2025][3D Vision][Dynamic hair modeling] This paper proposes Dynamic Gaussian Hair (DGH), a data-driven coarse-to-fine framework that learns hair dynamics via a volumetric implicit deformation model…
+  [NeurIPS 2025][3D Vision][Dynamic hair modeling] This paper proposes Dynamic Gaussian Hair (DGH), a data-driven coarse-to-fine framework that learns hair dynamics via a volumetric implicit deformation model, and achieves photorealistic novel-view rendering of dynamic hair by combining cylindrical Gaussian representations with a curvature blending strategy.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "novel view synthesis"
   - "digital avatars"
 date: 2026-05-08
-content_hash: 0edc42cc53f9cd0d
+content_hash: 0fb32b834b61d616
 ---
 
 # DGH: Dynamic Gaussian Hair
@@ -141,10 +141,10 @@ DGH reduces deformation error by approximately 49% (L2) and 37% (Chamfer), effec
 ## Related Papers
 
 - [\[NeurIPS 2025\] Dynamic Gaussian Splatting from Defocused and Motion-blurred Monocular Videos](dynamic_gaussian_splatting_from_defocused_and_motion-blurred_monocular_videos.md)
+- [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](../../CVPR2026/3d_vision/cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
 - [\[NeurIPS 2025\] HAIF-GS: Hierarchical and Induced Flow-Guided Gaussian Splatting for Dynamic Scene](haif-gs_hierarchical_and_induced_flow-guided_gaussian_splatting_for_dynamic_scen.md)
 - [\[ICCV 2025\] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars](../../ICCV2025/3d_vision/haircup_hair_compositional_universal_prior_for_3d_gaussian_avatars.md)
-- [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](../../CVPR2026/3d_vision/cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
-- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
+- [\[CVPR 2025\] Learnable Infinite Taylor Gaussian for Dynamic View Rendering](../../CVPR2025/3d_vision/learnable_infinite_taylor_gaussian_for_dynamic_view_rendering.md)
 
 </div>
 

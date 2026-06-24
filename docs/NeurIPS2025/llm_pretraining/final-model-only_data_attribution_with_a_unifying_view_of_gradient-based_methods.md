@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods
 description: >-
-  [NeurIPS 2025][LLM Pretraining][Training Data Attribution] This paper explicitly formulates the "Final-Model-Only" (FiMO) setting for training data attribution (TDA)…
+  [NeurIPS 2025][LLM Pretraining][Training Data Attribution] This paper explicitly formulates the "Final-Model-Only" (FiMO) setting for training data attribution (TDA), reframes the problem from measuring *contribution* to measuring *sensitivity*, proposes further training as the gold standard, and provides a unified derivation showing that various gradient-based methods (Grad-Dot, influence functions, TRAK, DataInf, etc.) are all approximations of further training at different…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Further Training"
   - "Final-Model-Only"
 date: 2026-05-08
-content_hash: 107a4d4c38542ae1
+content_hash: f7b02fc8f0d0c877
 ---
 
 # Final-Model-Only Data Attribution with a Unifying View of Gradient-Based Methods

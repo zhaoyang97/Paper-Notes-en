@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LittleBit: Ultra Low-Bit Quantization via Latent Factorization
 description: >-
-  [NeurIPS 2025][Model Compression][Ultra low-bit quantization] This paper proposes LittleBit, a framework that achieves extreme LLM compression down to 0.1 BPW (bits per weight) via low-rank latent-space matrix factorizat…
+  [NeurIPS 2025][Model Compression][Ultra low-bit quantization] This paper proposes LittleBit, a framework that achieves extreme LLM compression down to 0.1 BPW (bits per weight) via low-rank latent-space matrix factorization, binarization, and a multi-scale compensation mechanism. It compresses Llama2-13B to under 0.9 GB and substantially outperforms STBLLM in the sub-1-bit regime.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "sub-1-bit"
   - "LLM compression"
 date: 2026-05-08
-content_hash: 54dcdc87c0f9cdfe
+content_hash: b5350754cc579b7b
 ---
 
 # LittleBit: Ultra Low-Bit Quantization via Latent Factorization
@@ -160,10 +160,10 @@ Zero-shot reasoning performance (average accuracy across 7 benchmarks):
 ## Related Papers
 
 - [\[NeurIPS 2025\] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization](paretoq_improving_scaling_laws_in_extremely_low-bit_llm_quantization.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
+- [\[ACL 2025\] PTQ1.61: Push the Real Limit of Extremely Low-Bit Post-Training Quantization Methods for Large Language Models](../../ACL2025/model_compression/ptq161_low_bit_quantization.md)
 - [\[AAAI 2026\] SpecQuant: Spectral Decomposition and Adaptive Truncation for Ultra-Low-Bit LLMs Quantization](../../AAAI2026/model_compression/specquant_spectral_decomposition_and_adaptive_truncation_for_ultra-low-bit_llms_.md)
 - [\[NeurIPS 2025\] Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression](learning_grouped_lattice_vector_quantizers_for_low-bit_llm_compression.md)
-- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
-- [\[NeurIPS 2025\] FALQON: Accelerating LoRA Fine-tuning with Low-Bit Floating-Point Arithmetic](falqon_accelerating_lora_fine-tuning_with_low-bit_floating-point_arithmetic.md)
 
 </div>
 

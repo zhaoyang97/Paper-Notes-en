@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Textual Supervision Enhances Geospatial Representations in Vision-Language Models
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The authors use **hierarchical linear probes** to investigate whether vision/multimodal models encode information regarding "where on Earth an image was taken" within their hidden layers without explicit geographic supervision; the conclusion is that **VLMs with textual supervision (CLIP, LLaVA, Qwen, Gemma) encode lat
+  [ICML2026][Interpretability][Geospatial representation] The authors use **hierarchical linear probes** to investigate whether vision/multimodal models encode information regarding "where on Earth an image was taken" within their hidden layers without explicit geographic supervision; the conclusion is that **VLMs with textual supervision (CLIP, LLaVA, Qwen, Gemma) encode latitude and longitude far better than vision-only models (ViT, DINOv2)**…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Geospatial representation"
+  - "linear probes"
+  - "mechanistic interpretability"
+  - "textual supervision"
+  - "model steering"
 date: 2026-05-08
-content_hash: 49236a26f0b62ba7
+content_hash: dded11c3e68a76ba
 ---
+
 # Textual Supervision Enhances Geospatial Representations in Vision-Language Models
 
 **Conference**: ICML2026  
@@ -139,15 +145,15 @@ The ranking of downstream accuracy **strictly follows the ranking of probing $R^
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[ICLR 2026\] Inducing Dyslexia in Vision Language Models](../../ICLR2026/interpretability/inducing_dyslexia_in_vision_language_models.md)
+- [\[ICML 2026\] How Language Models Process Negation](how_language_models_process_negation.md)
+- [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
 - [\[ICML 2026\] Vision-Language Asymmetry in Bistable Image Captioning](vision-language_asymmetry_in_bistable_image_captioning.md)
-- [\[ACL 2026\] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models](../../ACL2026/interpretability/follow_the_flow_on_information_flow_across_textual_tokens_in_text-to-image_model.md)
-- [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
-- [\[ICML 2026\] Towards Atoms of Large Language Models](towards_atoms_of_large_language_models.md)
-- [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](../../ICLR2026/interpretability/cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 
 </div>
 

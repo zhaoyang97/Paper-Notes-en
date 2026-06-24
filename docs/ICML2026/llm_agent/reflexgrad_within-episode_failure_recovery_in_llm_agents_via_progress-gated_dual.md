@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ReflexGrad: Within-Episode Failure Recovery in LLM Agents via Progress-Gated Dual-Process Routing
 description: >-
-  [ICML 2026][LLM Agent][TextGrad] ReflexGrad integrates TextGrad-style "local gradient refinement every 3 steps" as a fast process and Reflexion-style "causal re-planning triggered by consecutive low scores" as a slow process. Using a progress-gated routing rule to switch between them zero-shot within a **single episode**, it improves Qwen-3-8B's succe
+  [ICML 2026 Workshop (FoGen)][LLM Agent][Dual-process architecture] ReflexGrad integrates TextGrad-style "local gradient refinement every 3 steps" as a fast process and Reflexion-style "causal re-planning triggered by consecutive low scores" as a slow process. Using a progress-gated routing rule to switch between them zero-shot within a **single episode**, it improves Qwen-3-8B's success rate on 134 ALFWorld tasks from 35.1% to 75.4% (+40.3pp)…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - TextGrad
-  - Reflexion
-  - ALFWorld
+  - "ICML 2026 Workshop (FoGen)"
+  - "LLM Agent"
+  - "Dual-process architecture"
+  - "Progress-gated routing"
+  - "TextGrad"
+  - "Reflexion"
+  - "ALFWorld"
 date: 2026-05-08
-content_hash: 266613393704d5db
+content_hash: e9ec3acb1f5f1cbb
 ---
+
 # ReflexGrad: Within-Episode Failure Recovery in LLM Agents via Progress-Gated Dual-Process Routing
 
 **Conference**: ICML 2026 Workshop (FoGen)  
@@ -159,10 +162,10 @@ Maximum fluctuation across sweeps is 3.8pp. Even the worst configuration ($m=3$ 
 ## Related Papers
 
 - [\[AAAI 2026\] DEPO: Dual-Efficiency Preference Optimization for LLM Agents](../../AAAI2026/llm_agent/depo_dual-efficiency_preference_optimization_for_llm_agents.md)
+- [\[ICLR 2026\] AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?](../../ICLR2026/llm_agent/agentracer_who_is_inducing_failure_in_the_llm_agentic_systems.md)
+- [\[ICLR 2026\] Dual-Scale World Memory for LLM Agents towards Hard-Exploration Problems](../../ICLR2026/llm_agent/dual-scale_world_memory_for_llm_agents_towards_hard-exploration_problems.md)
 - [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
 - [\[ACL 2025\] Leveraging Dual Process Theory in Language Agent Framework for Real-time Simultaneous Human-AI Collaboration](../../ACL2025/llm_agent/dpt_agent_dual_process.md)
-- [\[ICLR 2026\] AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?](../../ICLR2026/llm_agent/agentracer_who_is_inducing_failure_in_the_llm_agentic_systems.md)
-- [\[AAAI 2026\] ProBench: Benchmarking GUI Agents with Accurate Process Information](../../AAAI2026/llm_agent/probench_benchmarking_gui_agents_with_accurate_process_infor.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation
 description: >-
-  [AAAI 2026][Multimodal VLM][Precise Event Spotting] This paper proposes UMEG-Net for few-shot Precise Event Spotting (PES). The method constructs a unified multi-entity graph integrating human skeletal keypoints…
+  [AAAI 2026][Multimodal VLM][Precise Event Spotting] This paper proposes UMEG-Net for few-shot Precise Event Spotting (PES). The method constructs a unified multi-entity graph integrating human skeletal keypoints, sports object keypoints, and environmental landmarks, combined with efficient spatiotemporal graph convolution and a parameter-free multi-scale temporal shift module. A multimodal knowledge distillation scheme transfers graph features to an RGB student network. The a…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Distillation"
   - "Sports Video Analysis"
 date: 2026-05-08
-content_hash: faf16d38ee45d27a
+content_hash: 0b4ba8bc847daf74
 ---
 
 # Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation
@@ -185,10 +185,10 @@ UMEG-Net achieves consistent improvements over all baselines on all five dataset
 ## Related Papers
 
 - [\[ICLR 2026\] Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](../../ICLR2026/multimodal_vlm/meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)
+- [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](../../CVPR2026/multimodal_vlm/training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
 - [\[CVPR 2026\] Noise-Aware Few-Shot Learning through Bi-directional Multi-View Prompt Alignment](../../CVPR2026/multimodal_vlm/noise-aware_few-shot_learning_through_bi-directional_multi-view_prompt_alignment.md)
 - [\[AAAI 2026\] Towards Long-window Anchoring in Vision-Language Model Distillation](towards_long-window_anchoring_in_vision-language_model_distillation.md)
-- [\[AAAI 2026\] vMFCoOp: Towards Equilibrium on a Unified Hyperspherical Manifold for Prompting Biomedical VLMs](vmfcoop_towards_equilibrium_on_a_unified_hyperspherical_manifold_for_prompting_b.md)
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
 
 </div>
 

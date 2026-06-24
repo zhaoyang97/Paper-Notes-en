@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 description: >-
-  [ACL 2026][Audio & Speech][Perception Enhancement] Reveals that current AudioLLM perception weaknesses stem from ASR-centric training patterns (systemic suppression of paralinguistic and non-linguistic information). Proposes the Unified Audio Schema (UAS) to structure audio information into a JSON format across three dimensions: transcription, paralinguistics, and non-
+  [ACL 2026 Findings][Audio & Speech][AudioLLM] Reveals that current AudioLLM perception weaknesses stem from ASR-centric training patterns (systemic suppression of paralinguistic and non-linguistic information). Proposes the Unified Audio Schema (UAS) to structure audio information into a JSON format across three dimensions: transcription, paralinguistics, and non-linguistic events. Achieving a 10.9% improvement in perception accuracy on the MMSU benchmark while maintaining re…
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Perception Enhancement
-  - Unified Audio Schema
-  - Paralinguistic Information
-  - ASR
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "AudioLLM"
+  - "Perception Enhancement"
+  - "Unified Audio Schema"
+  - "Paralinguistic Information"
+  - "ASR"
 date: 2026-05-08
-content_hash: 3f21a5863730aa18
+content_hash: c6a9add8c34a1719
 ---
+
 # Beyond Transcription: Unified Audio Schema for Perception-Aware AudioLLMs
 
 **Conference**: ACL 2026 Findings  
@@ -137,9 +139,9 @@ A standard four-stage流程 is adopted, with UAS data injected in the middle two
 
 - [\[ACL 2026\] Beyond Transcripts: A Renewed Perspective on Audio Chaptering](beyond_transcripts_a_renewed_perspective_on_audio_chaptering.md)
 - [\[ACL 2026\] Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception](speech-hands_a_self-reflection_voice_agentic_approach_to_speech_recognition_and_.md)
-- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](../../CVPR2026/audio_speech/pavas_physics-aware_video-to-audio_synthesis.md)
-- [\[ICML 2026\] Two-Dimensional Quantization for Geometry-Aware Audio Coding](../../ICML2026/audio_speech/two-dimensional_quantization_for_geometry-aware_audio_coding.md)
 - [\[ICLR 2026\] AudioX: A Unified Framework for Anything-to-Audio Generation](../../ICLR2026/audio_speech/audiox_a_unified_framework_for_anything-to-audio_generation.md)
+- [\[CVPR 2026\] PAVAS: Physics-Aware Video-to-Audio Synthesis](../../CVPR2026/audio_speech/pavas_physics-aware_video-to-audio_synthesis.md)
+- [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](../../ICLR2026/audio_speech/beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
 
 </div>
 

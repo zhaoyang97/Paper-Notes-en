@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Step Length Confounding in LLM Reasoning Data Selection
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] This paper identifies a "step length confounding" issue in naturalness-based LLM reasoning data selection methods—a systematic preference for samples with longer steps rather than higher quality, rooted in the dilution of low-probability first tokens in long steps. Two correction methods, Aslec-drop (discarding first t
+  [ACL 2026 Findings][Reasoning][Reasoning data selection] This paper identifies a "step length confounding" issue in naturalness-based LLM reasoning data selection methods—a systematic preference for samples with longer steps rather than higher quality, rooted in the dilution of low-probability first tokens in long steps. Two correction methods, Aslec-drop (discarding first token probabilities) and Aslec-casl (causal regression debiasing), are proposed…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Reasoning data selection"
+  - "Step length confounding"
+  - "Naturalness"
+  - "First token"
+  - "Causal debiasing"
 date: 2026-05-08
-content_hash: 5e36d57e0394cb32
+content_hash: 149eed6e910b0d1c
 ---
+
 # On the Step Length Confounding in LLM Reasoning Data Selection
 
 **Conference**: ACL 2026 Findings  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Align to Misalign: Automatic LLM Jailbreak with Meta-Optimized LLM Judges
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] AMIS upgrades "automatic jailbreaking" from "optimizing only attack prompts" to a bi-level meta-optimization framework that "simultaneously evolves attack prompts and scoring templates." The inner loop uses fine-grained continuous scores to guide prompt iteration, while the outer loop employs a newly proposed "ASR Alig
+  [ICLR2026][LLM Safety][Jailbreak Attack] AMIS upgrades "automatic jailbreaking" from "optimizing only attack prompts" to a bi-level meta-optimization framework that "simultaneously evolves attack prompts and scoring templates." The inner loop uses fine-grained continuous scores to guide prompt iteration, while the outer loop employs a newly proposed "ASR Alignment Score" to optimize the scoring template in reverse. This ensures scores increasingly align with actual attack suc…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Jailbreak Attack"
+  - "Meta-Optimization"
+  - "LLM Judge"
+  - "Bi-level Optimization"
+  - "Scoring Template"
 date: 2026-05-08
-content_hash: 0d8d3dffdde4ebb0
+content_hash: 36cb511f37bbbe53
 ---
+
 # Align to Misalign: Automatic LLM Jailbreak with Meta-Optimized LLM Judges
 
 **Conference**: ICLR2026  
@@ -147,7 +153,7 @@ Removing components on AdvBench + Claude-3.5-Haiku (ASR %):
 - [\[ICLR 2026\] STAR: Strategy-driven Automatic Jailbreak Red-teaming for Large Language Model](star_strategy-driven_automatic_jailbreak_red-teaming_for_large_language_model.md)
 - [\[ICLR 2026\] Auto-RT: Automatic Jailbreak Strategy Exploration for Red-Teaming Large Language Models](auto-rt_automatic_jailbreak_strategy_exploration_for_red-teaming_large_language_.md)
 - [\[ICML 2025\] Align-then-Unlearn: Embedding Alignment for LLM Unlearning](../../ICML2025/llm_safety/align-then-unlearn_embedding_alignment_for_llm_unlearning.md)
-- [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
+- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 
 </div>
 

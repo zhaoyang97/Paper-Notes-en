@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][INLP] Authors find that demographic bias in VLM embeddings is not concentrated on a few coordinate dimensions but rather distributed across several linear subspaces. They propose SPD: iteratively learning the entire "bias subspace" that can linearly predict sensitive attributes using INLP, projecting embeddings onto its orth
+  [CVPR 2026][Multimodal VLM][Post-hoc debiasing] Authors find that demographic bias in VLM embeddings is not concentrated on a few coordinate dimensions but rather distributed across several linear subspaces. They propose SPD: iteratively learning the entire "bias subspace" that can linearly predict sensitive attributes using INLP, projecting embeddings onto its orthogonal complement (null space) to eliminate decodable attribute signals, and then reinjecting a neutral mean to…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - INLP
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Post-hoc debiasing"
+  - "Subspace projection"
+  - "INLP"
+  - "Vision-Language Models"
+  - "Fairness"
 date: 2026-05-08
-content_hash: 6edcc167441aab51
+content_hash: f562ae7f8d64b9aa
 ---
+
 # Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -141,15 +145,14 @@ Diagnosis of attribute decodability (Table 3, linear probe accuracy, closer to r
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Post-hoc Probabilistic Vision-Language Models](../../ICLR2026/multimodal_vlm/post-hoc_probabilistic_vision-language_models.md)
-- [\[CVPR 2026\] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing](dsca_dynamic_subspace_concept_alignment_for_lifelong_vlm_editing.md)
+- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
 - [\[CVPR 2026\] Same or Not? Enhancing Visual Perception in Vision-Language Models](same_or_not_enhancing_visual_perception_in_vision-language_models.md)
-- [\[CVPR 2026\] Rethinking VLMs for Image Forgery Detection and Localization](rethinking_vlms_for_image_forgery_detection_and_localization.md)
-- [\[CVPR 2026\] Diagnosing and Repairing Unsafe Channels in Vision-Language Models via Causal Discovery and Dual-Modal Safety Subspace Projection](diagnosing_and_repairing_unsafe_channels_in_vision-language_models_via_causal_di.md)
+- [\[CVPR 2026\] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing](dsca_dynamic_subspace_concept_alignment_for_lifelong_vlm_editing.md)
+- [\[CVPR 2026\] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks](a_closedform_solution_for_debiasing_visionlanguage.md)
 
 </div>
 

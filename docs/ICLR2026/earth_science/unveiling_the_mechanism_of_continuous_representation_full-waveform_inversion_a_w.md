@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 揭示连续表示全波形反演的机制：一个基于波的神经正切核框架
+  [Paper Note] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework
 description: >-
-  [ICLR 2026][Earth Science][Paper Note] This paper extends Neural Tangent Kernel (NTK) theory to Full Waveform Inversion (FWI), proposing a "Wave-based NTK" to unify the characterization of traditional FWI and Continuous Representation FWI (CR-FWI). It explains the phenomenon "why INR representations are more robust but converge slowly at high frequencies" t
+  [ICLR 2026][Earth Science][Full Waveform Inversion] This paper extends Neural Tangent Kernel (NTK) theory to Full Waveform Inversion (FWI), proposing a "Wave-based NTK" to unify the characterization of traditional FWI and Continuous Representation FWI (CR-FWI). It explains the phenomenon "why INR representations are more robust but converge slowly at high frequencies" through eigenvalue decay rates. Based on this, it designs IG-FWI, a hybrid of INR and multi-resolution grids…
 tags:
-  - ICLR 2026
-  - Earth Science
+  - "ICLR 2026"
+  - "Earth Science"
+  - "Full Waveform Inversion"
+  - "Continuous Representation"
+  - "Neural Tangent Kernel"
+  - "Eigenvalue Decay"
+  - "Implicit Neural Representation"
 date: 2026-05-08
-content_hash: e82919baf3d95116
+content_hash: 12237a537a916ab0
 ---
+
 # Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework
 
 **Conference**: ICLR 2026  
@@ -144,11 +150,11 @@ Traditional FWI and MPE-FWI converge quickly at high frequencies under smooth in
 
 ## Related Papers
 
-- [\[ICLR 2026\] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning](omnifield_conditioned_neural_fields_for_robust_multimodal_spatiotemporal_learnin.md)
-- [\[ICLR 2026\] TianQuan-S2S：通过引入气候态构建次季节-季节全球天气预报模型](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
 - [\[ICLR 2026\] The Seismic Wavefield Common Task Framework](the_seismic_wavefield_common_task_framework.md)
-- [\[ICLR 2026\] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours](rainpro-8_an_efficient_deep_learning_model_to_estimate_rainfall_probabilities_ov.md)
-- [\[ICML 2026\] Scaling Laws of Global Weather Models](../../ICML2026/earth_science/scaling_laws_of_global_weather_models.md)
+- [\[ICLR 2026\] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning](omnifield_conditioned_neural_fields_for_robust_multimodal_spatiotemporal_learnin.md)
+- [\[NeurIPS 2025\] ControlFusion: A Controllable Image Fusion Framework with Language-Vision Degradation Prompts](../../NeurIPS2025/earth_science/controlfusion_a_controllable_image_fusion_framework_with_language-vision_degrada.md)
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
 
 </div>
 

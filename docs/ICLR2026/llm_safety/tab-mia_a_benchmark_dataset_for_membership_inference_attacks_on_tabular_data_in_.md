@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes Tab-MIA, the first benchmark for Membership Inference Attacks (MIA) on Large Language Models (LLMs) fine-tuned on tabular data. By unifying 5 real-world tabular datasets and serializing them into 6 encoding formats, the study systematically evaluates how encoding formats, fine-tuning epochs, and mod
+  [ICLR 2026][LLM Safety][Membership Inference Attack] This paper proposes Tab-MIA, the first benchmark for Membership Inference Attacks (MIA) on Large Language Models (LLMs) fine-tuned on tabular data. By unifying 5 real-world tabular datasets and serializing them into 6 encoding formats, the study systematically evaluates how encoding formats, fine-tuning epochs, and model scales affect privacy leakage—finding that with only 3 epochs of fine-tuning…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Membership Inference Attack"
+  - "Tabular Data"
+  - "Memorization"
+  - "Encoding Format"
+  - "Privacy Leakage"
 date: 2026-05-08
-content_hash: 6001a6edae99199e
+content_hash: 921c4ab9dab53511
 ---
+
 # Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs
 
 **Conference**: ICLR 2026  
@@ -127,10 +133,10 @@ Cross-format generalization (Gemma-3 4B / WTQ, Training Encoding ≠ Attack Enco
 ## Related Papers
 
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
+- [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
 - [\[ACL 2026\] Fast-MIA: Efficient and Scalable Membership Inference for LLMs](../../ACL2026/llm_safety/fast-mia_efficient_and_scalable_membership_inference_for_llms.md)
 - [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
 - [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
-- [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model
 description: >-
-  [AAAI 2026][Image Restoration][Remote sensing imagery] This paper proposes MFmamba, a multi-function network built upon a UNet++ backbone that integrates a Mamba Upsampling Block (MUB), Dual Pooling Attention (DPA)…
+  [AAAI 2026][Image Restoration][Remote sensing imagery] This paper proposes MFmamba, a multi-function network built upon a UNet++ backbone that integrates a Mamba Upsampling Block (MUB), Dual Pooling Attention (DPA), and a Multi-scale Hybrid Cross Block (MHCB). Using only panchromatic (PAN) images as input, the unified framework simultaneously supports three tasks: super-resolution, spectral restoration, and joint SR with colorization.
 tags:
   - "AAAI 2026"
   - "Image Restoration"
@@ -14,7 +14,7 @@ tags:
   - "state-space model"
   - "UNet++"
 date: 2026-05-08
-content_hash: 5a32e9bcab1ddf42
+content_hash: e5ce4d573679f0a0
 ---
 
 # MFmamba: A Multi-function Network for Panchromatic Image Resolution Restoration Based on State-Space Model
@@ -166,11 +166,11 @@ MFmamba achieves 35.569 dB PSNR on the colorization task, surpassing RSI by **+2
 
 ## Related Papers
 
+- [\[ECCV 2024\] MambaIR: A Simple Baseline for Image Restoration with State-Space Model](../../ECCV2024/image_restoration/mambair_a_simple_baseline_for_image_restoration_with_state-space_model.md)
 - [\[AAAI 2026\] SD-PSFNet: Sequential and Dynamic Point Spread Function Network for Image Deraining](sd-psfnet_sequential_and_dynamic_point_spread_function_netwo.md)
-- [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](../../ICCV2025/image_restoration/eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
-- [\[AAAI 2026\] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration](clear_nights_ahead_towards_multi-weather_nighttime_image_res.md)
-- [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](../../ICCV2025/image_restoration/pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
-- [\[AAAI 2026\] SpatioTemporal Difference Network for Video Depth Super-Resolution](spatiotemporal_difference_network_for_video_depth_super-resolution.md)
+- [\[CVPR 2025\] MambaIRv2: Attentive State Space Restoration](../../CVPR2025/image_restoration/mambairv2_attentive_state_space_restoration.md)
+- [\[CVPR 2025\] Efficient Visual State Space Model for Image Deblurring](../../CVPR2025/image_restoration/efficient_visual_state_space_model_for_image_deblurring.md)
+- [\[CVPR 2025\] QMambaBSR: Burst Image Super-Resolution with Query State Space Model](../../CVPR2025/image_restoration/qmambabsr_burst_image_super-resolution_with_query_state_space_model.md)
 
 </div>
 

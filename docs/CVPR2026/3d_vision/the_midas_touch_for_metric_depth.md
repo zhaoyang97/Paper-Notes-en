@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Midas Touch for Metric Depth
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MTD (Midas Touch for Depth) employs a training-free, mathematically interpretable "coarse-to-fine" algorithm to convert relative depth from foundation models into metric depth using extremely sparse 3D seeds (e.g., LiDAR or stereo matching). It aligns local scales via segment-wise graph optimization and performs pixel-
+  [CVPR 2026][3D Vision][Metric Depth] MTD (Midas Touch for Depth) employs a training-free, mathematically interpretable "coarse-to-fine" algorithm to convert relative depth from foundation models into metric depth using extremely sparse 3D seeds (e.g., LiDAR or stereo matching). It aligns local scales via segment-wise graph optimization and performs pixel-level detailing using "discontinuity-aware geodesic cost + dynamic programming." It outperforms SOTA methods like BP-Net…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Metric Depth"
+  - "Relative Depth"
+  - "Depth Completion"
+  - "Sparse Point Clouds"
+  - "Geodesics"
 date: 2026-05-08
-content_hash: 0dfd5a6082486a64
+content_hash: 05fecc3650bce5c3
 ---
+
 # The Midas Touch for Metric Depth
 
 **Conference**: CVPR 2026  
@@ -153,7 +159,7 @@ Summary of results on KITTI (outdoor) + VOID (indoor):
 - [\[CVPR 2026\] Radar-Guided Polynomial Fitting for Metric Depth Estimation](radar-guided_polynomial_fitting_for_metric_depth_estimation.md)
 - [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 - [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
+- [\[ICLR 2026\] DepthLM: Metric Depth from Vision Language Models](../../ICLR2026/3d_vision/depthlm_metric_depth_from_vision_language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning-Augmented Facility Location Mechanisms for Envy Ratio
 description: >-
-  [NeurIPS 2025][AI Safety][facility location] For the **envy ratio** objective in one-dimensional facility location, this paper designs both deterministic and randomized learning-augmented mechanisms: the deterministic $\…
+  [NeurIPS 2025][AI Safety][facility location] For the **envy ratio** objective in one-dimensional facility location, this paper designs both deterministic and randomized learning-augmented mechanisms: the deterministic $\alpha$-BIM achieves an optimal consistency–robustness tradeoff, while the randomized BAM further improves the guarantees. The paper also resolves an open problem posed by Ding et al., improving the approximation ratio of prediction-free randomized mechanisms f…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "fairness"
   - "mechanism design"
 date: 2026-05-08
-content_hash: 567818b604603d4c
+content_hash: 5913f9810693b3eb
 ---
 
 # Learning-Augmented Facility Location Mechanisms for Envy Ratio
@@ -182,8 +182,8 @@ As a theoretical contribution, the core results are presented as theorems:
 - [\[AAAI 2026\] Minimizing Inequity in Facility Location Games](../../AAAI2026/ai_safety/minimizing_inequity_in_facility_location_games.md)
 - [\[NeurIPS 2025\] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)
 - [\[NeurIPS 2025\] Mitigating Disparate Impact of Differentially Private Learning through Bounded Adaptive Clipping](mitigating_disparate_impact_of_differentially_private_learning_through_bounded_a.md)
-- [\[NeurIPS 2025\] Environment Inference for Learning Generalizable Dynamical System](environment_inference_for_learning_generalizable_dynamical_system.md)
-- [\[NeurIPS 2025\] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients](dictpfl_efficient_and_private_federated_learning_on_encrypted_gradients.md)
+- [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
+- [\[NeurIPS 2025\] Causally Reliable Concept Bottleneck Models](causally_reliable_concept_bottleneck_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] Based on Green's function theory, the superposition principle is embedded into a physics-neural hybrid architecture to construct Discrete Green Networks (DGNet). It achieves SOTA accuracy using only dozens of training trajectories and demonstrates robust zero-shot generalization to unseen source terms.
+  [ICLR 2026][Physics & Scientific Computing][Neural PDE Solvers] Based on Green's function theory, the superposition principle is embedded into a physics-neural hybrid architecture to construct Discrete Green Networks (DGNet). It achieves SOTA accuracy using only dozens of training trajectories and demonstrates robust zero-shot generalization to unseen source terms.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural PDE Solvers"
+  - "Green's Function"
+  - "Graph Neural Networks"
+  - "Data-Efficient Learning"
+  - "Spatiotemporal PDEs"
 date: 2026-05-08
-content_hash: 1491df7f85e63151
+content_hash: 5afdc97aa2857381
 ---
+
 # DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs
 
 **Conference**: ICLR 2026  
@@ -155,10 +161,10 @@ Comparison of four variants on the Complex Obstacles scenario:
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Data-Efficient and Generalizable Neural Operators via Fundamental Physics Knowledge](learning_data-efficient_and_generalizable_neural_operators_via_fundamental_physi.md)
-- [\[NeurIPS 2025\] Neural Green's Functions](../../NeurIPS2025/physics/neural_greens_functions.md)
+- [\[ICLR 2026\] Generalized Spherical Neural Operators: Green's Function Formulation](generalized_spherical_neural_operators_greens_function_formulation.md)
 - [\[ICLR 2026\] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers](aqer_a_scalable_and_efficient_data_loader_for_digital_quantum_computers.md)
 - [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
-- [\[ICLR 2026\] Generalized Spherical Neural Operators: Green's Function Formulation](generalized_spherical_neural_operators_greens_function_formulation.md)
+- [\[CVPR 2025\] ATP: Adaptive Threshold Pruning for Efficient Data Encoding in Quantum Neural Networks](../../CVPR2025/physics/atp_adaptive_threshold_pruning_for_efficient_data_encoding_in_quantum_neural_net.md)
 
 </div>
 

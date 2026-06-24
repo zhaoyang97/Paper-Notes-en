@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Referring Layer Decomposition
 description: >-
-  [ICLR 2026][Image Generation][RefLayer] The authors propose the Referring Layer Decomposition (RLD) task to predict complete RGBA layers from a single RGB image based on flexible user prompts (spatial, textual, or hybrid). They also construct the RefLade dataset with 1.11 million samples and an automated evaluation protocol.
+  [ICLR 2026][Image Generation][Layer Decomposition] The authors propose the Referring Layer Decomposition (RLD) task to predict complete RGBA layers from a single RGB image based on flexible user prompts (spatial, textual, or hybrid). They also construct the RefLade dataset with 1.11 million samples and an automated evaluation protocol.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - RefLayer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Layer Decomposition"
+  - "RGBA Layers"
+  - "Multimodal Referring Input"
+  - "Data Engine"
+  - "RefLayer"
 date: 2026-05-08
-content_hash: b84ab6a3f2a8928c
+content_hash: d8abed2b0a6e2b09
 ---
+
 # Referring Layer Decomposition
 
 **Conference**: ICLR 2026  
@@ -143,8 +148,8 @@ The HPA score shows a strong correlation with human ELO rankings, whereas indivi
 
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](../../CVPR2026/image_generation/from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
 - [\[CVPR 2026\] Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](../../CVPR2026/image_generation/qwen-image-layered_towards_inherent_editability_via_layer_decomposition.md)
-- [\[CVPR 2025\] Generative Image Layer Decomposition with Visual Effects](../../CVPR2025/image_generation/generative_image_layer_decomposition_with_visual_effects.md)
 - [\[CVPR 2026\] Illustrator's Depth: Monocular Layer Index Prediction for Image Decomposition](../../CVPR2026/image_generation/illustrators_depth_monocular_layer_index_prediction_for_image_decomposition.md)
+- [\[CVPR 2025\] Generative Image Layer Decomposition with Visual Effects](../../CVPR2025/image_generation/generative_image_layer_decomposition_with_visual_effects.md)
 - [\[ICLR 2026\] Long-Text-to-Image Generation via Compositional Prompt Decomposition](long-text-to-image_generation_via_compositional_prompt_decomposition.md)
 
 </div>

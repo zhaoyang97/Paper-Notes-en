@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation
 description: >-
-  [NeurIPS 2025][LLM Evaluation][hierarchical statistical model] This paper formalizes LLM benchmark evaluation as a hierarchical statistical model…
+  [NeurIPS 2025][LLM Evaluation][hierarchical statistical model] This paper formalizes LLM benchmark evaluation as a hierarchical statistical model, theoretically demonstrates that multiple stochastic generations ($k>1$) reduce the variance of benchmark score estimates, and introduces a prompt-level difficulty metric $\mathbb{P}(\text{correct})$ along with data maps for benchmark quality control.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -13,7 +13,7 @@ tags:
   - "label error detection"
   - "data maps"
 date: 2026-05-08
-content_hash: 62578c16ac3d1ca1
+content_hash: 5367a80c53335c18
 ---
 
 # Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Reliably Detecting Model Failures in Deployment Without Labels
 description: >-
-  [NeurIPS 2025][Model Monitoring / Distribution Shift Detection / Trustworthy AI][Post-deployment degradation monitoring] This paper proposes D3M (Disagreement-Driven Deterioration Monitoring)…
+  [NeurIPS 2025][Model Monitoring][Post-deployment degradation monitoring] This paper proposes D3M (Disagreement-Driven Deterioration Monitoring), a three-stage model monitoring algorithm based on variational Bayesian posterior sampling, which reliably detects model performance degradation in label-free, training-data-free deployment settings while maintaining low false positive rates under non-degrading distribution shifts.
 tags:
   - "NeurIPS 2025"
-  - "Model Monitoring / Distribution Shift Detection / Trustworthy AI"
+  - "Model Monitoring"
+  - "Distribution Shift Detection"
+  - "Trustworthy AI"
   - "Post-deployment degradation monitoring"
   - "model disagreement"
   - "variational Bayes"
   - "label-free detection"
   - "clinical AI"
 date: 2026-05-08
-content_hash: d20693d6e9596a0e
+content_hash: 55d74ceb1173681e
 ---
 
 # Reliably Detecting Model Failures in Deployment Without Labels
@@ -124,10 +126,10 @@ The training stage maximizes the ELBO. The base model's mean prediction is not m
 ## Related Papers
 
 - [\[NeurIPS 2025\] Optimism Without Regularization: Constant Regret in Zero-Sum Games](optimism_without_regularization_constant_regret_in_zero-sum_games.md)
-- [\[ICML 2026\] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](../../ICML2026/learning_theory/optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
+- [\[ICLR 2026\] Practical Estimation of the Optimal Classification Error with Soft Labels and Calibration](../../ICLR2026/learning_theory/practical_estimation_of_the_optimal_classification_error_with_soft_labels_and_ca.md)
+- [\[ICLR 2026\] How to Square Tensor Networks and Circuits Without Squaring Them](../../ICLR2026/learning_theory/how_to_square_tensor_networks_and_circuits_without_squaring_them.md)
+- [\[ICLR 2026\] Conformal Prediction with Corrupted Labels: Uncertain Imputation and Robust Re-weighting](../../ICLR2026/learning_theory/conformal_prediction_with_corrupted_labels_uncertain_imputation_and_robust_re-we.md)
 - [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
-- [\[NeurIPS 2025\] Infrequent Exploration in Linear Bandits](infrequent_exploration_in_linear_bandits.md)
 
 </div>
 

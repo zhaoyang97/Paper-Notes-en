@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] S2D: Sparse to Dense Lifting for 3D Reconstruction with Minimal Inputs
 description: >-
-  [CVPR 2026][3D Vision][3DGS] S2D bridges "sparse point clouds" and "3D Gaussian Splatting" (3DGS) representations: it utilizes a point-cloud-guided single-step diffusion refiner to clean artifacts in novel views rendered from sparse inputs, paired with a reconstruction strategy featuring random sample dropping and weighted gradients to stabilize o
+  [CVPR 2026][3D Vision][3DGS] S2D bridges "sparse point clouds" and "3D Gaussian Splatting" (3DGS) representations: it utilizes a point-cloud-guided single-step diffusion refiner to clean artifacts in novel views rendered from sparse inputs, paired with a reconstruction strategy featuring random sample dropping and weighted gradients to stabilize optimization. This allows high-quality, 3D-consistent 3DGS reconstruction from minimal inputs (e.g., 1 image for $30^\circ$ coverage…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3DGS
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3DGS"
+  - "Sparse-view Reconstruction"
+  - "Single-step Diffusion"
+  - "Artifact Removal"
+  - "Point Cloud Guidance"
 date: 2026-05-08
-content_hash: 61478ad3d9c6716a
+content_hash: 107f65ac4af7369f
 ---
+
 # S2D: Sparse to Dense Lifting for 3D Reconstruction with Minimal Inputs
 
 **Conference**: CVPR 2026  
@@ -138,10 +143,10 @@ Note: Lane change/elevation are extrapolated trajectories (no GT), measured by F
 ## Related Papers
 
 - [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
-- [\[CVPR 2026\] 4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)
-- [\[CVPR 2026\] Minimal Constraint Relaxation for Multiview Autocalibration](minimal_constraint_relaxation_for_multiview_autocalibration.md)
+- [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
 - [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+- [\[CVPR 2026\] Minimal Constraint Relaxation for Multiview Autocalibration](minimal_constraint_relaxation_for_multiview_autocalibration.md)
+- [\[CVPR 2026\] MotionCrafter: Dense Geometry and Motion Reconstruction with a 4D VAE](motioncrafter_dense_geometry_and_motion_reconstruction_with_a_4d_vae.md)
 
 </div>
 

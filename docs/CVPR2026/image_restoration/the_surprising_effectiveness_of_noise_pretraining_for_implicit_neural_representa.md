@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations
 description: >-
-  [CVPR 2026][Image Restoration][Denoising] This paper discovers through systematic experimental analysis that pretraining INRs with unstructured noise (Uniform/Gaussian distributions) achieves a surprising ~80dB PSNR in image fitting, significantly outperforming all data-driven initialization methods. Meanwhile, noise with a spectral structure of $1/|f^\alpha|$
+  [CVPR 2026][Image Restoration][Implicit Neural Representations] This paper discovers through systematic experimental analysis that pretraining INRs with unstructured noise (Uniform/Gaussian distributions) achieves a surprising ~80dB PSNR in image fitting, significantly outperforming all data-driven initialization methods. Meanwhile, noise with a spectral structure of $1/|f^\alpha|$, matching natural images, achieves the best balance between signal fitting and denoising…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Denoising
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Implicit Neural Representations"
+  - "Noise Pretraining"
+  - "Parameter Initialization"
+  - "Signal Fitting"
+  - "Denoising"
 date: 2026-05-08
-content_hash: d8ac000c128d41ec
+content_hash: e27923010a7ac798
 ---
+
 # The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations
 
 **Conference**: CVPR 2026  
@@ -139,10 +144,10 @@ Video Fitting and Denoising (Pexels, 100k steps):
 
 ## Related Papers
 
+- [\[ICLR 2026\] SuperF: Neural Implicit Fields for Multi-Image Super-Resolution](../../ICLR2026/image_restoration/superf_neural_implicit_fields_for_multi-image_super-resolution.md)
 - [\[CVPR 2026\] PNG: Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning](diffusion-based_srgb_real_noise_generation_via_prompt-driven_noise_representatio.md)
-- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
 - [\[CVPR 2026\] Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising](convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](event-based_motion_deblurring_with_unpaired_data.md)
 - [\[CVPR 2026\] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment](towards_generalized_representations_for_low-light_understanding_when_signal_cons.md)
 
 </div>

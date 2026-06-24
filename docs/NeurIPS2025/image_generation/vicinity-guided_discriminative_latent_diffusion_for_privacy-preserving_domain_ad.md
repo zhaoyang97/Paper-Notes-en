@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation
 description: >-
-  [NeurIPS 2025][Image Generation][Latent diffusion models] This paper proposes Discriminative Vicinity Diffusion (DVD), which for the first time employs latent diffusion models for discriminative knowledge transfer. By tr…
+  [NeurIPS 2025][Image Generation][Latent diffusion models] This paper proposes Discriminative Vicinity Diffusion (DVD), which for the first time employs latent diffusion models for discriminative knowledge transfer. By training a diffusion model within the vicinity latent space of source-domain features to generate source-style cues, DVD enables domain adaptation without access to source data, surpassing state-of-the-art methods on standard SFDA benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "discriminative transfer"
   - "vicinity guidance"
 date: 2026-05-08
-content_hash: e02b892a679ad183
+content_hash: d52b790d159e3e87
 ---
 
 # Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation
@@ -157,7 +157,7 @@ $$\mathcal{L}_{\text{adapt}} = \mathcal{L}_{\text{InfoNCE}}(f_T(x_T), g_\theta(z
 - [\[NeurIPS 2025\] PixPerfect: Seamless Latent Diffusion Local Editing with Discriminative Pixel-Space Refinement](pixperfect_seamless_latent_diffusion_local_editing_with_discriminative_pixel-spa.md)
 - [\[ICCV 2025\] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](../../ICCV2025/image_generation/whats_in_a_latent_leveraging_diffusion_latent_space_for_domain_generalization.md)
 - [\[NeurIPS 2025\] ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation](obclip_oblivious_cloud-device_hybrid_image_generation_with_privacy_preservation.md)
-- [\[NeurIPS 2025\] StableGuard: Towards Unified Copyright Protection and Tamper Localization in Latent Diffusion Models](stableguard_towards_unified_copyright_protection_and_tamper_localization_in_late.md)
+- [\[CVPR 2025\] Everything to the Synthetic: Diffusion-driven Test-time Adaptation via Synthetic-Domain Alignment](../../CVPR2025/image_generation/everything_to_the_synthetic_diffusion-driven_test-time_adaptation_via_synthetic-.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Advancing Expert Specialization for Better MoE
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Mixture-of-Experts] By jointly optimizing an orthogonality loss (reducing projection overlap among experts) and a variance loss (increasing routing score diversity)…
+  [NeurIPS 2025 Oral][LLM Efficiency][Mixture-of-Experts] By jointly optimizing an orthogonality loss (reducing projection overlap among experts) and a variance loss (increasing routing score diversity), the proposed method reduces expert overlap by 45% and improves routing variance by 150% without modifying the MoE architecture, achieving an average gain of 23.79% across 11 benchmarks while fully preserving load balance.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "LLM Efficiency"
   - "Mixture-of-Experts"
   - "expert specialization"
@@ -12,7 +12,7 @@ tags:
   - "routing variance"
   - "load balancing"
 date: 2026-05-08
-content_hash: 9968c74b2870f1d1
+content_hash: bc49032c4a1acae8
 ---
 
 # Advancing Expert Specialization for Better MoE
@@ -125,11 +125,11 @@ Average gain of +23.79% across 11 benchmarks; task win rate of 92.42%.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SkyLadder: Better and Faster Pretraining via Context Window Scheduling](skyladder_better_and_faster_pretraining_via_context_window_scheduling.md)
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
+- [\[ACL 2026\] The Illusion of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](../../ACL2026/llm_efficiency/the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)
+- [\[NeurIPS 2025\] SkyLadder: Better and Faster Pretraining via Context Window Scheduling](skyladder_better_and_faster_pretraining_via_context_window_scheduling.md)
 - [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
-- [\[ACL 2026\] The Hallucination of Specialization: Revealing the "Standing Committee" in Mixture-of-Experts Models](../../ACL2026/llm_efficiency/the_illusion_of_specialization_unveiling_the_domain-invariant_34standing_committ.md)
-- [\[NeurIPS 2025\] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training](flowmoe_a_scalable_pipeline_scheduling_framework_for_distributed_mixture-of-expe.md)
+- [\[ICML 2025\] EasyInv: Toward Fast and Better DDIM Inversion](../../ICML2025/llm_efficiency/easyinv_toward_fast_and_better_ddim_inversion.md)
 
 </div>
 

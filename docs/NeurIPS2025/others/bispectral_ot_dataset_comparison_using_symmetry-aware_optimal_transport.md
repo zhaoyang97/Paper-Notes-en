@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport
 description: >-
-  [NeurIPS 2025][optimal transport] This paper proposes Bispectral Optimal Transport (BOT), which replaces the cost matrix in discrete optimal transport from raw pixel distances to bispectrum (group Fourier invariant) dist…
+  [NeurIPS 2025][optimal transport] This paper proposes Bispectral Optimal Transport (BOT), which replaces the cost matrix in discrete optimal transport from raw pixel distances to bispectrum (group Fourier invariant) distances, enabling transport plans to eliminate group-action-induced variation (e.g., rotation) while preserving signal structure. On rotation-augmented MNIST and related datasets, the class-preservation accuracy improves from 33% to 84%.
 tags:
   - "NeurIPS 2025"
   - "optimal transport"
@@ -11,7 +11,7 @@ tags:
   - "dataset comparison"
   - "Fourier transform"
 date: 2026-05-08
-content_hash: 905ec2d2879ee486
+content_hash: 8768083401be1275
 ---
 
 # Bispectral OT: Dataset Comparison using Symmetry-Aware Optimal Transport
@@ -118,10 +118,10 @@ Note: Values are class-preservation accuracy (proportion of OT matches between r
 ## Related Papers
 
 - [\[NeurIPS 2025\] Estimation of Stochastic Optimal Transport Maps](estimation_of_stochastic_optimal_transport_maps.md)
+- [\[ICML 2025\] Lightspeed Geometric Dataset Distance via Sliced Optimal Transport](../../ICML2025/others/lightspeed_geometric_dataset_distance_via_sliced_optimal_transport.md)
+- [\[ICML 2025\] Symmetry-Aware GFlowNets](../../ICML2025/others/symmetry-aware_gflownets.md)
 - [\[ICCV 2025\] LaCoOT: Layer Collapse through Optimal Transport](../../ICCV2025/others/lacoot_layer_collapse_through_optimal_transport.md)
-- [\[NeurIPS 2025\] Merlin L48 Spectrogram Dataset](merlin_l48_spectrogram_dataset.md)
-- [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[NeurIPS 2025\] MetaFind: Scene-Aware 3D Asset Retrieval for Coherent Metaverse Scene Generation](metafind_scene-aware_3d_asset_retrieval_for_coherent_metaverse_scene_generation.md)
+- [\[ICML 2025\] Hierarchical Refinement: Optimal Transport to Infinity and Beyond](../../ICML2025/others/hierarchical_refinement_optimal_transport_to_infinity_and_beyond.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper proposes MADE—a "living" multi-label text classification benchmark based on FDA medical device adverse event reports, containing 1,154 hierarchical labels and strict temporal splitting. It systematically evaluates the predictive performance and uncertainty quantification (UQ) capabilities of 20+ encoder/deco
+  [ACL 2026][NLP Understanding][Multi-label classification] This paper proposes MADE—a "living" multi-label text classification benchmark based on FDA medical device adverse event reports, containing 1,154 hierarchical labels and strict temporal splitting. It systematically evaluates the predictive performance and uncertainty quantification (UQ) capabilities of 20+ encoder/decoder models under discriminative fine-tuning, generative fine-tuning, and few-shot prompting…
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Multi-label classification"
+  - "Uncertainty quantification"
+  - "Medical devices"
+  - "Living benchmark"
+  - "Long-tail distribution"
 date: 2026-05-08
-content_hash: 5054fcb812f9e9d4
+content_hash: 738698c859ab5c34
 ---
+
 # MADE: A Living Benchmark for Multi-Label Text Classification with Uncertainty Quantification
 
 **Conference**: ACL 2026  
@@ -140,15 +146,15 @@ Discriminative fine-tuning uses hierarchical binary cross-entropy loss, summing 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] LANE: Label-Aware Noise Elimination for Fine-Grained Text Classification](../../ICLR2026/nlp_understanding/lane_label-aware_noise_elimination_for_fine-grained_text_classification.md)
 - [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
 - [\[ACL 2026\] MTSQL-R1: Towards Long-Horizon Multi-Turn Text-to-SQL via Agentic Training](mtsql-r1_towards_long-horizon_multi-turn_text-to-sql_via_agentic_training.md)
 - [\[ACL 2026\] MSMO-ABSA: Multi-Scale and Multi-Objective Optimization for Cross-Lingual Aspect-Based Sentiment Analysis](msmo-absa_multi-scale_and_multi-objective_optimization_for_cross-lingual_aspect-.md)
-- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
-- [\[ACL 2026\] HCRE: LLM-based Hierarchical Classification for Cross-Document Relation Extraction](hcre_llm-based_hierarchical_classification_for_cross-document_relation_extractio.md)
+- [\[ACL 2026\] TruthSplit: Operationalizing Conditional Validity in Arguments Through Multi-Perspective Reasoning](truthsplit_operationalizing_conditional_validity_in_arguments_through_multi-pers.md)
 
 </div>
 

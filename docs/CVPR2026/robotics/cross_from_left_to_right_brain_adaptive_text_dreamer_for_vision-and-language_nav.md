@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross from Left to Right Brain: Adaptive Text Dreamer for Vision-and-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Addressing the language-perception alignment challenge caused by "partial observability" in VLN, this paper proposes **imagining future key semantics through language (rather than images)**. It introduces ATD, a dual-branch left-right brain structure: the left-brain LLM estimates the current navigation state, while the
+  [CVPR 2026][Robotics][Vision-and-Language Navigation] Addressing the language-perception alignment challenge caused by "partial observability" in VLN, this paper proposes **imagining future key semantics through language (rather than images)**. It introduces ATD, a dual-branch left-right brain structure: the left-brain LLM estimates the current navigation state, while the right-brain LLM textualizes the imagination of the scene ahead. Irrelevant details are filtered via State…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-and-Language Navigation"
+  - "LLM Imagination"
+  - "Dual-branch Left-Right Brain"
+  - "Textual Dreamer"
+  - "State Grounded Cross-Attention"
 date: 2026-05-08
-content_hash: cb550a755f7bcae7
+content_hash: c3239b94c3662c87
 ---
+
 # Cross from Left to Right Brain: Adaptive Text Dreamer for Vision-and-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -136,15 +142,16 @@ ATD is based on InstructBLIP + Flan-T5-xl (1.5B). All fine-tuning was performed 
 - **Value**: ⭐⭐⭐⭐⭐ (Practical paradigm for deploying embodied LLMs with high efficiency and faster convergence).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-and-Language Navigation](fantasyvln_unified_multimodal_chain-of-thought_reasoning_for_vision-and-language.md)
 - [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](cross-hand_latent_representation_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
+- [\[CVPR 2026\] Towards Training-Free Scene Text Editing](towards_training-free_scene_text_editing.md)
+- [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
+- [\[CVPR 2026\] AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](at-vla_adaptive_tactile_injection_for_enhanced_feedback_reaction_in_vision-langu.md)
 
 </div>
 

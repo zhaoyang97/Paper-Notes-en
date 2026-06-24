@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Personalized Alignment] This paper formulates personalized dialogue alignment as a multi-turn Markov Decision Process and proposes the RLPA framework…
+  [NeurIPS 2025][Reinforcement Learning][Personalized Alignment] This paper formulates personalized dialogue alignment as a multi-turn Markov Decision Process and proposes the RLPA framework, enabling LLMs to dynamically infer and maintain user profiles through online interaction with simulated users, and to generate personalized responses accordingly.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "Multi-turn Dialogue"
   - "Cold Start"
 date: 2026-05-08
-content_hash: f26d31c2e01c1e6b
+content_hash: 42cadfd3789d53d2
 ---
 
 # Teaching Language Models to Evolve with Users: Dynamic Profile Modeling for Personalized Alignment
@@ -134,8 +134,8 @@ After RLPA training, the 3B model surpasses GPT-4o and Claude-3.5-Sonnet in alig
 - [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
 - [\[NeurIPS 2025\] MMaDA: Multimodal Large Diffusion Language Models](mmada_multimodal_large_diffusion_language_models.md)
+- [\[NeurIPS 2025\] The Burden of Interactive Alignment with Inconsistent Preferences](the_burden_of_interactive_alignment_with_inconsistent_preferences.md)
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
-- [\[NeurIPS 2025\] Behavior Injection: Preparing Language Models for Reinforcement Learning](behavior_injection_preparing_language_models_for_reinforcement_learning.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Variational Deep Learning via Implicit Regularization
 description: >-
-  [ICLR 2026][learning_theory][2-Wasserstein] This paper proposes Implicit Bias VI (IBVI): when training a variational distribution over weights, it **directly discards the KL regularization term** in the ELBO, relying solely on SGD's implicit bias to "select" the distribution. It rigorously proves that in overparameterized linear models, this implicit bias is equ
+  [ICLR 2026][Learning Theory][Implicit Regularization] This paper proposes Implicit Bias VI (IBVI): when training a variational distribution over weights, it **directly discards the KL regularization term** in the ELBO, relying solely on SGD's implicit bias to "select" the distribution. It rigorously proves that in overparameterized linear models, this implicit bias is equivalent to generalized variational inference regularized by the **2-Wasserstein distance** (rather than KL…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - 2-Wasserstein
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Bayesian Deep Learning"
+  - "Implicit Regularization"
+  - "SGD Implicit Bias"
+  - "Variational Inference"
+  - "2-Wasserstein"
+  - "Uncertainty Quantification"
 date: 2026-05-08
-content_hash: fdb480112fafa4ce
+content_hash: 01d08b289e6befca
 ---
+
 # Variational Deep Learning via Implicit Regularization
 
 **Conference**: ICLR 2026  
@@ -126,7 +132,6 @@ Evaluated on MNISTC / CIFAR10C / CIFAR100C / TinyImageNetC (15 corruptions, aver
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -134,7 +139,7 @@ Evaluated on MNISTC / CIFAR10C / CIFAR100C / TinyImageNetC (15 corruptions, aver
 - [\[ICLR 2026\] Diffusion Bridge Variational Inference for Deep Gaussian Processes](diffusion_bridge_variational_inference_for_deep_gaussian_processes.md)
 - [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
 - [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
-- [\[ICLR 2026\] Testing Fourier Sparsity via Implicit Sensing](testing_fourier_sparsity_via_implicit_sensing.md)
+- [\[ICLR 2026\] Implicit Regularisation in Diffusion Models: An Algorithm-Dependent Generalisation Analysis](implicit_regularisation_in_diffusion_models_an_algorithm-dependent_generalisatio.md)
 
 </div>
 

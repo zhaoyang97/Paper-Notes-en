@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing
 description: >-
-  [ICCV 2025][Image Generation][Autoregressive models] This paper proposes ISLock, the first training-free image editing framework for autoregressive (AR) visual generation models. Through Anchor Token Matching (ATM)…
+  [ICCV 2025][Image Generation][Autoregressive models] This paper proposes ISLock, the first training-free image editing framework for autoregressive (AR) visual generation models. Through Anchor Token Matching (ATM), it implicitly aligns self-attention patterns in the latent space, enabling structure-consistent text-guided image editing.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "attention mechanism"
   - "structural consistency"
 date: 2026-05-08
-content_hash: 3fecb79cab2cec3e
+content_hash: b76422cdf81ee387
 ---
 
 # Anchor Token Matching: Implicit Structure Locking for Training-free AR Image Editing
@@ -135,10 +135,10 @@ Quantitative comparison on the PIE-Bench dataset:
 ## Related Papers
 
 - [\[ICCV 2025\] LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering](larender_training-free_occlusion_control_in_image_generation_via_latent_renderin.md)
+- [\[CVPR 2025\] Stable Flow: Vital Layers for Training-Free Image Editing](../../CVPR2025/image_generation/stable_flow_vital_layers_for_training-free_image_editing.md)
 - [\[ICCV 2025\] ALE: Attribute-Leakage-free Editing for Text-based Image Editing](ale_attribute_leakage_free_editing.md)
-- [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
 - [\[ICCV 2025\] IntroStyle: Training-Free Introspective Style Attribution using Diffusion Features](introstyle_training-free_introspective_style_attribution_using_diffusion_feature.md)
-- [\[ICCV 2025\] MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion](motiondiff_training-free_zero-shot_interactive_motion_editing_via_flow-assisted_.md)
+- [\[ICCV 2025\] FlowEdit: Inversion-Free Text-Based Editing Using Pre-Trained Flow Models](flowedit_inversion-free_text-based_editing_using_pre-trained_flow_models.md)
 
 </div>
 

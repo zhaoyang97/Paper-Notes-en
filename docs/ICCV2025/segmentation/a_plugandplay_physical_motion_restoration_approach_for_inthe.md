@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions
 description: >-
-  [ICCV 2025][Segmentation][physical motion restoration] A plug-and-play two-stage physical motion restoration method is proposed: defective frames in video motion capture are first corrected by a mask-conditioned diffusio…
+  [ICCV 2025][Segmentation][physical motion restoration] A plug-and-play two-stage physical motion restoration method is proposed: defective frames in video motion capture are first corrected by a mask-conditioned diffusion model (MCM), then the corrected motion is transferred into a physically plausible form via a pretrained RL controller with test-time adaptation (PTM). This work achieves, for the first time, physically plausible enhancement of in-the-wild high-difficulty act…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "test-time adaptation"
   - "high-difficulty motions"
 date: 2026-05-08
-content_hash: b5dd2b3fff7e8137
+content_hash: 56f1d35d3d479f33
 ---
 
 # A Plug-and-Play Physical Motion Restoration Approach for In-the-Wild High-Difficulty Motions
@@ -285,10 +285,10 @@ Key differentiators: (1) this work performs restoration rather than reconstructi
 ## Related Papers
 
 - [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
-- [\[ICCV 2025\] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](know_no_better_a_data-driven_approach_for_enhancing_negation_awareness_in_clip.md)
+- [\[ECCV 2024\] OLAF: A Plug-and-Play Framework for Enhanced Multi-object Multi-part Scene Parsing](../../ECCV2024/segmentation/olaf_a_plug-and-play_framework_for_enhanced_multi-object_multi-part_scene_parsin.md)
 - [\[ICCV 2025\] What If: Understanding Motion Through Sparse Interactions](what_if_understanding_motion_through_sparse_interactions.md)
 - [\[ICCV 2025\] Temporal Rate Reduction Clustering for Human Motion Segmentation](temporal_rate_reduction_clustering_for_human_motion_segmentation.md)
-- [\[ICCV 2025\] MOVE: Motion-Guided Few-Shot Video Object Segmentation](move_motion-guided_few-shot_video_object_segmentation.md)
+- [\[ICCV 2025\] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](know_no_better_a_data-driven_approach_for_enhancing_negation_awareness_in_clip.md)
 
 </div>
 

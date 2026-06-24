@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3DGS] AsymGS leverages a key observation—that reconstruction artifacts caused by in-the-wild training data are stochastic in nature—and proposes an asymmetric dual 3DGS framework that suppresses…
+  [NeurIPS 2025 Spotlight][3D Vision][3DGS] AsymGS leverages a key observation—that reconstruction artifacts caused by in-the-wild training data are stochastic in nature—and proposes an asymmetric dual 3DGS framework that suppresses artifacts via complementary masking strategies and consistency constraints. A Dynamic EMA Proxy is introduced for efficient training, achieving significant improvements over existing methods on multiple in-the-wild benchmarks.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "3DGS"
   - "in-the-wild scene reconstruction"
@@ -12,7 +12,7 @@ tags:
   - "transient distractors"
   - "EMA proxy"
 date: 2026-05-08
-content_hash: f8173920cc08f4c5
+content_hash: 9f012b7bcd6de70d
 ---
 
 # Robust Neural Rendering in the Wild with Asymmetric Dual 3D Gaussian Splatting
@@ -143,11 +143,11 @@ $$\mathcal{L} = \mathcal{L}_{r1}^{\mathbf{M}_h} + \mathcal{L}_{r2}^{\mathbf{M}_s
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](lodge_level-of-detail_large-scale_gaussian_splatting_with_efficient_rendering.md)
+- [\[CVPR 2025\] DroneSplat: 3D Gaussian Splatting for Robust 3D Reconstruction from In-the-Wild Drone Imagery](../../CVPR2025/3d_vision/dronesplat_3d_gaussian_splatting_for_robust_3d_reconstruction_from_in-the-wild_d.md)
+- [\[CVPR 2025\] GuardSplat: Efficient and Robust Watermarking for 3D Gaussian Splatting](../../CVPR2025/3d_vision/guardsplat_efficient_and_robust_watermarking_for_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](../../ICCV2025/3d_vision/robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
-- [\[ICCV 2025\] LongSplat: Robust Unposed 3D Gaussian Splatting for Casual Long Videos](../../ICCV2025/3d_vision/longsplat_robust_unposed_3d_gaussian_splatting_for_casual_long_videos.md)
-- [\[NeurIPS 2025\] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics](mpmavatar_learning_3d_gaussian_avatars_with_accurate_and_robust_physics-based_dy.md)
-- [\[ICCV 2025\] Learning Robust Stereo Matching in the Wild with Selective Mixture-of-Experts](../../ICCV2025/3d_vision/learning_robust_stereo_matching_in_the_wild_with_selective_mixture-of-experts.md)
+- [\[CVPR 2025\] 3D-GSW: 3D Gaussian Splatting for Robust Watermarking](../../CVPR2025/3d_vision/3d-gsw_3d_gaussian_splatting_for_robust_watermarking.md)
+- [\[CVPR 2025\] DSPNet: Dual-vision Scene Perception for Robust 3D Question Answering](../../CVPR2025/3d_vision/dspnet_dual-vision_scene_perception_for_robust_3d_question_answering.md)
 
 </div>
 

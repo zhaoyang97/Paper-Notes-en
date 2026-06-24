@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SLM-MUX: Orchestrating Small Language Models for Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper finds that "discussion-based" orchestration methods are ineffective and even detrimental for Small Language Models (SLMs). Instead, it proposes SLM-MUX, a training-free orchestration framework without text interaction. Each SLM samples independently, and final answers are selected based on self-consistency c
+  [ICLR 2026][Reasoning][Small Language Models] This paper finds that "discussion-based" orchestration methods are ineffective and even detrimental for Small Language Models (SLMs). Instead, it proposes SLM-MUX, a training-free orchestration framework without text interaction. Each SLM samples independently, and final answers are selected based on self-consistency confidence. Combined with model selection search and test-time scaling strategies…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Small Language Models"
+  - "Multi-model Orchestration"
+  - "Confidence Selection"
+  - "Model Selection Search"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: abd2de65d5955d44
+content_hash: ceeba23ec3a300bd
 ---
+
 # SLM-MUX: Orchestrating Small Language Models for Reasoning
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ The same discussion methods that improve frontier LLMs by ~2% cause SLMs to drop
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICLR 2026\] Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance](following_the_navigation_enhancing_small_language_models_contextual_reasoning_wi.md)
 - [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
-- [\[ICLR 2026\] Variational Reasoning for Language Models](variational_reasoning_for_language_models.md)
+- [\[ACL 2026\] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners](../../ACL2026/llm_reasoning/rsat_structured_attribution_makes_small_language_models_faithful_table_reasoners.md)
 
 </div>
 

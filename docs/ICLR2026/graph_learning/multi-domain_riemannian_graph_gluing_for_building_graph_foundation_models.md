@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models
 description: >-
-  [ICLR 2026][Graph Learning][Graph Foundation Model] This paper reconstructs multi-domain graph pre-training from the perspective of "manifold gluing" in differential geometry: it fuses arbitrary graph datasets onto a unified and smooth Riemannian manifold. This provides the first rigorous theoretical characterization of "how knowledge is integrated and transferred acros
+  [ICLR 2026][Graph Learning][Graph Foundation Model] This paper reconstructs multi-domain graph pre-training from the perspective of "manifold gluing" in differential geometry: it fuses arbitrary graph datasets onto a unified and smooth Riemannian manifold. This provides the first rigorous theoretical characterization of "how knowledge is integrated and transferred across domains" and leads to the GRAPHGLUE framework, which features quantifiable transfer difficulty and geometr…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Graph Foundation Model
-  - Multi-domain Pre-training
-  - Riemannian Manifold
-  - Manifold Gluing
-  - Holonomy
-  - Transferability
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Foundation Model"
+  - "Multi-domain Pre-training"
+  - "Riemannian Manifold"
+  - "Manifold Gluing"
+  - "Holonomy"
+  - "Transferability"
 date: 2026-05-08
-content_hash: 87560dee07d9bd5f
+content_hash: 6f141925dd59005d
 ---
+
 # Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models
 
 **Conference**: ICLR 2026  
@@ -128,8 +129,8 @@ Cross-domain transfer (5 source, 1 target) across 6 representative domains under
 - [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](bridging_input_feature_spaces_towards_graph_foundation_models.md)
 - [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](../../ICML2026/graph_learning/are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](../../AAAI2026/graph_learning/adaptive_riemannian_graph_neural_networks.md)
+- [\[ICLR 2026\] G-Merging: Graph Models Merging for Parameter-Efficient Multi-Task Knowledge Consolidation](g-merging_graph_models_merging_for_parameter-efficient_multi-task_knowledge_cons.md)
 - [\[ICLR 2026\] FLOCK: A Knowledge Graph Foundation Model via Learning on Random Walks](flock_a_knowledge_graph_foundation_model_via_learning_on_random_walks.md)
-- [\[ICLR 2026\] Out-of-Distribution Graph Models Merging](out-of-distribution_graph_models_merging.md)
 
 </div>
 

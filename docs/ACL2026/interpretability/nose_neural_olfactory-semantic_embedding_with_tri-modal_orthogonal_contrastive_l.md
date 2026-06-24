@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning
 description: >-
-  [ACL 2026][Interpretability][Paper Note] The authors propose NOSE, a tri-modal olfactory representation learning framework. By using molecules as a hub, the framework aligns molecular structure, receptor sequences, and natural language descriptions through an orthogonal injection mechanism. Coupled with an LLM-driven weak positive sample strategy to alleviate
+  [ACL 2026][Interpretability][Olfactory representation learning] The authors propose NOSE, a tri-modal olfactory representation learning framework. By using molecules as a hub, the framework aligns molecular structure, receptor sequences, and natural language descriptions through an orthogonal injection mechanism. Coupled with an LLM-driven weak positive sample strategy to alleviate description sparsity, it achieves SOTA performance across 11 downstream tasks and demonstrates…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Olfactory representation learning"
+  - "Tri-modal alignment"
+  - "Orthogonal decoupling"
+  - "Contrastive learning"
+  - "Weak positive samples"
 date: 2026-05-08
-content_hash: 7f8c3053bb133d23
+content_hash: d4a88f6af1ec12f6
 ---
+
 # NOSE: Neural Olfactory-Semantic Embedding with Tri-Modal Orthogonal Contrastive Learning
 
 **Conference**: ACL 2026  
@@ -129,11 +135,11 @@ The total loss consists of receptor-molecule InfoNCE, description-molecule soft-
 
 ## Related Papers
 
-- [\[ICLR 2026\] Modal Logical Neural Networks for Financial AI](../../ICLR2026/interpretability/modal_logical_neural_networks_for_financial_ai.md)
 - [\[AAAI 2026\] Explainable Melanoma Diagnosis with Contrastive Learning and LLM-based Report Generation](../../AAAI2026/interpretability/explainable_melanoma_diagnosis_with_contrastive_learning_and_llm-based_report_ge.md)
 - [\[CVPR 2026\] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition](../../CVPR2026/interpretability/prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab.md)
-- [\[CVPR 2025\] Learning Visual Composition through Improved Semantic Guidance](../../CVPR2025/interpretability/learning_visual_composition_through_improved_semantic_guidance.md)
-- [\[AAAI 2026\] Adaptive Evidential Learning for Temporal-Semantic Robustness in Moment Retrieval](../../AAAI2026/interpretability/adaptive_evidential_learning_for_temporal-semantic_robustnes.md)
+- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](../../ICLR2026/interpretability/dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
+- [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](../../ICLR2026/interpretability/sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](../../ICML2026/interpretability/formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
 
 </div>
 

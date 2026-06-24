@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tighter Performance Theory of FedExProx
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper revisits the federated extrapolated proximal method FedExProx, pointing out that its original theory was surprisingly no better than naive Gradient Descent (GD) on quadratic problems. By proposing a new analysis that "proves distance convergence first and then translates it to function value convergence," th
+  [ICLR 2026][Optimization][Federated Learning] This paper revisits the federated extrapolated proximal method FedExProx, pointing out that its original theory was surprisingly no better than naive Gradient Descent (GD) on quadratic problems. By proposing a new analysis that "proves distance convergence first and then translates it to function value convergence," the authors bypass the $L_{\max}$ dependence that caused looseness. They provide the first rigorous proof that FedEx…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Extrapolation"
+  - "Proximal Operator"
+  - "Convergence Rate"
+  - "Communication Complexity"
 date: 2026-05-08
-content_hash: b4dde7ffe80d68e0
+content_hash: 9372ad9cd04b03db
 ---
+
 # Tighter Performance Theory of FedExProx
 
 **Conference**: ICLR 2026  
@@ -113,8 +119,8 @@ As $\eta$ increases, the total time vs. $\gamma$ curve exhibits a clear **U-shap
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

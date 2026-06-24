@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DVGT: Driving Visual Geometry Transformer
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] DVGT is a visual geometry Transformer designed for autonomous driving. It takes a sequence of multi-frame multi-view images without pose information as input and end-to-end directly predicts **metric-scale** global dense 3D point cloud maps relative to the first frame's ego-coordinate system along with per-frame ego-po
+  [CVPR 2026][3D Vision][Visual Geometry] DVGT is a visual geometry Transformer designed for autonomous driving. It takes a sequence of multi-frame multi-view images without pose information as input and end-to-end directly predicts **metric-scale** global dense 3D point cloud maps relative to the first frame's ego-coordinate system along with per-frame ego-poses. It requires no camera intrinsics/extrinsics and no post-hoc LiDAR-based scale alignment…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Geometry"
+  - "Dense Point Cloud Reconstruction"
+  - "Autonomous Perception"
+  - "Spatio-temporal Attention"
+  - "Ego-pose"
 date: 2026-05-08
-content_hash: 0a4cb6db917c1823
+content_hash: 7f02c3c3b6a096c0
 ---
+
 # DVGT: Driving Visual Geometry Transformer
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Ablation of coordinate normalization scale (nuScenes, linear division by 1/10/10
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
-- [\[CVPR 2026\] Efficient Equivariant Transformer for Self-Driving Agent Modeling](efficient_equivariant_transformer_for_self-driving_agent_modeling.md)
-- [\[CVPR 2026\] HybridDriveVLA: Vision-Language-Action Model with Visual CoT reasoning and ToT Evaluation for Autonomous Driving](hybriddrivevla_vision-language-action_model_with_visual_cot_reasoning.md)
-- [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
-- [\[CVPR 2026\] StreamVLO: Streaming Visual-LiDAR Odometry with Cumulative Drift Compensation](streamvlo_streaming_visual-lidar_odometry_with_cumulative_drift_compensation.md)
+- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[CVPR 2026\] OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer](omnivggt_omni-modality_driven_visual_geometry_grounded_transformer.md)
+- [\[ICLR 2026\] Streaming Visual Geometry Transformer](../../ICLR2026/3d_vision/streaming_visual_geometry_transformer.md)
+- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
+- [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](../../ICLR2026/3d_vision/quantized_visual_geometry_grounded_transformer.md)
 
 </div>
 

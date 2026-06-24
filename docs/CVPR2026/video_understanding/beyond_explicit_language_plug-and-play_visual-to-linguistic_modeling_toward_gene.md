@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the issues where vision-language tracking relies on static text and fails when text is missing, this paper proposes TIMI, a plug-and-play module. Using a "Textual Inversion Module," visual patches from templates and search regions are inversely mapped into "pseudo-descriptions" within the CLIP text embedding
+  [CVPR 2026][Video Understanding][Visual Object Tracking] Addressing the issues where vision-language tracking relies on static text and fails when text is missing, this paper proposes TIMI, a plug-and-play module. Using a "Textual Inversion Module," visual patches from templates and search regions are inversely mapped into "pseudo-descriptions" within the CLIP text embedding space. These implicit linguistic cues are then injected back into the visual backbone layer-by-layer v…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Visual Object Tracking"
+  - "Textual Inversion"
+  - "Vision-Language"
+  - "Plug-and-Play"
+  - "CLIP Semantic Injection"
 date: 2026-05-08
-content_hash: 886201e6b5b4fa7b
+content_hash: a08e07c4a82599ed
 ---
+
 # Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Replacing CLIP with BERT yields results similar to having no text backbone becau
 
 ## Related Papers
 
-- [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[CVPR 2026\] CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization](cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
 - [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
+- [\[CVPR 2026\] Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)
 
 </div>
 

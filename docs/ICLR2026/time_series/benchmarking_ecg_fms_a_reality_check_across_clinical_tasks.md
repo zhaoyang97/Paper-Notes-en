@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Benchmarking ECG FMs: A Reality Check Across Clinical Tasks
 description: >-
-  [ICLR 2026][Time Series][ECG] A comprehensive "reality check" benchmarking of eight ECG foundation models across 12 datasets and 26 clinical tasks reveals that ECG-CPC, a compact Structured State Space Model (SSM), outperforms large-scale Transformers in five out of seven task categories, proving that architectural design is more critical than mode
+  [ICLR 2026][Time Series][ECG] A comprehensive "reality check" benchmarking of eight ECG foundation models across 12 datasets and 26 clinical tasks reveals that ECG-CPC, a compact Structured State Space Model (SSM), outperforms large-scale Transformers in five out of seven task categories, proving that architectural design is more critical than model scale.
 tags:
-  - ICLR 2026
-  - Time Series
-  - ECG
+  - "ICLR 2026"
+  - "Time Series"
+  - "ECG"
+  - "Foundation Models"
+  - "Structured State Space Models"
+  - "Electrocardiogram"
+  - "Benchmarking"
 date: 2026-05-08
-content_hash: 81eb259a51eea8df
+content_hash: 2e380aff43b6087e
 ---
+
 # Benchmarking ECG FMs: A Reality Check Across Clinical Tasks
 
 **Conference**: ICLR 2026  
@@ -121,10 +126,10 @@ Key finding: ECG-JEPA learns "fast but peaks low," whereas ECG-CPC learns slight
 
 ## Related Papers
 
+- [\[ICLR 2026\] Temporal Generalization: A Reality Check](temporal_generalization_a_reality_check.md)
 - [\[ICLR 2026\] EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements](edinet-bench_evaluating_llms_on_complex_financial_tasks_using_japanese_financial.md)
 - [\[ICLR 2026\] TimeRecipe: A Time-Series Forecasting Recipe via Benchmarking Module Level Effectiveness](timerecipe_a_time-series_forecasting_recipe_via_benchmarking_module_level_effect.md)
 - [\[ICLR 2026\] Can we generate portable representations for clinical time series data using LLMs?](can_we_generate_portable_representations_for_clinical_time_series_data_using_llm.md)
-- [\[ICML 2025\] Foundation Models for Clinical Records at Health System Scale](../../ICML2025/time_series/foundation_models_for_clinical_records_at_health_system_scale.md)
 - [\[ICML 2026\] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series](../../ICML2026/time_series/position_current_benchmarking_hinders_real_progress_in_deep_learning_for_time_se.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DFlash: Block Diffusion for Flash Speculative Decoding
 description: >-
-  [ICML 2026][Image Generation][Paper Note] DFlash replaces autoregressive drafters like EAGLE-3 with a lightweight "Block Diffusion" drafter. By injecting multi-layer hidden features of the target model as KV into every layer of the draft model, it enables parallel drafting of an entire block of tokens in a single forward pass, achieving up to 6× lossless accel
+  [ICML 2026][Image Generation][Speculative Decoding] DFlash replaces autoregressive drafters like EAGLE-3 with a lightweight "Block Diffusion" drafter. By injecting multi-layer hidden features of the target model as KV into every layer of the draft model, it enables parallel drafting of an entire block of tokens in a single forward pass, achieving up to 6× lossless acceleration—approximately 2.5× faster than EAGLE-3.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Speculative Decoding"
+  - "Block Diffusion"
+  - "Draft Model"
+  - "KV Injection"
+  - "Parallel Drafting"
 date: 2026-05-08
-content_hash: 9d814a851f2d40f6
+content_hash: b5c74308393bf210
 ---
+
 # DFlash: Block Diffusion for Flash Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -135,9 +141,9 @@ Key Points: Under equal drafting budgets (EAGLE-3 tree=16 vs DFlash block=16), D
 ## Related Papers
 
 - [\[ICML 2026\] Speculative Coupled Decoding for Training-Free Lossless Acceleration of Autoregressive Visual Generation](speculative_coupled_decoding_for_training-free_lossless_acceleration_of_autoregr.md)
+- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[CVPR 2026\] Multi-Scale Local Speculative Decoding for Image Generation](../../CVPR2026/image_generation/multi-scale_local_speculative_decoding_for_image_generation.md)
 - [\[CVPR 2026\] SJD-PAC: Accelerating Speculative Jacobi Decoding via Proactive Drafting and Adaptive Continuation](../../CVPR2026/image_generation/sjd-pac_accelerating_speculative_jacobi_decoding_via_proactive_drafting_and_adap.md)
 
 </div>

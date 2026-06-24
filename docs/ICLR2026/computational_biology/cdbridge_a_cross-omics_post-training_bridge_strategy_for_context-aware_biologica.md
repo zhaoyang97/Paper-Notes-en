@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CDBridge: A Cross-omics Post-training Bridge Strategy for Context-aware Biological Modeling
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] CDBridge proposes a "post-training bridge" strategy to connect pre-trained frozen DNA and protein models without re-training. Through a two-stage alignment involving "splicing-inspired adaptive token merging + tissue-conditioned decoder," the model achieves both qualitative functional alignment (DNA→Protein) and quanti
+  [ICLR2026][Computational Biology][Central Dogma] CDBridge proposes a "post-training bridge" strategy to connect pre-trained frozen DNA and protein models without re-training. Through a two-stage alignment involving "splicing-inspired adaptive token merging + tissue-conditioned decoder," the model achieves both qualitative functional alignment (DNA→Protein) and quantitative gene expression prediction across various tissue contexts for the first time.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Central Dogma"
+  - "Cross-omics Bridging"
+  - "Post-training"
+  - "Tissue-aware Expression Prediction"
+  - "Adaptive Token Merging"
 date: 2026-05-08
-content_hash: 450e9f6892c910aa
+content_hash: 701d6c0bc8cee5fe
 ---
+
 # CDBridge: A Cross-omics Post-training Bridge Strategy for Context-aware Biological Modeling
 
 **Conference**: ICLR2026  
@@ -130,6 +136,7 @@ Regarding zero-shot generalization (Figure 4), using a leave-tissue-out protocol
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] Proposes BOTS, a unified framework for online task selection in LLM reinforcement finetuning based on Bayesian inference. By fusing explicit evidence (historical pass rates from direct evaluation) and implicit evidence (inferred difficulty of unevaluated tasks via reference model interpolation) with Thompson sampling f
+  [ICLR 2026][LLM (Other)][Reinforcement Finetuning] Proposes BOTS, a unified framework for online task selection in LLM reinforcement finetuning based on Bayesian inference. By fusing explicit evidence (historical pass rates from direct evaluation) and implicit evidence (inferred difficulty of unevaluated tasks via reference model interpolation) with Thompson sampling for exploration-exploitation balance, BOTS achieves up to 50% training acceleration on math, code…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Reinforcement Finetuning"
+  - "Online Task Selection"
+  - "Bayesian Inference"
+  - "Thompson Sampling"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: f0b8a83e0e170d06
+content_hash: cade345bf3407138
 ---
+
 # BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning
 
 **Conference**: ICLR 2026  
@@ -141,6 +147,7 @@ On the 7B model, BOTS achieved TTB(100%)=0.50 in the logic domain (50% accelerat
 - Value: ⭐⭐⭐⭐ Addresses a real bottleneck in RFT with an open-source, plug-and-play solution with minimal overhead.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

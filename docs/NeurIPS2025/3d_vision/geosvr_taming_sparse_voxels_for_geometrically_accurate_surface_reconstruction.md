@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][surface reconstruction] This paper proposes GeoSVR, an explicit surface reconstruction framework based on sparse voxels. By introducing voxel-uncertainty depth constraints and sparse voxel surfa…
+  [NeurIPS 2025 Spotlight][3D Vision][surface reconstruction] This paper proposes GeoSVR, an explicit surface reconstruction framework based on sparse voxels. By introducing voxel-uncertainty depth constraints and sparse voxel surface regularization, GeoSVR comprehensively outperforms existing 3DGS- and SDF-based methods in geometric accuracy, detail preservation, and reconstruction completeness.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "3D Vision"
   - "surface reconstruction"
   - "sparse voxels"
@@ -12,7 +12,7 @@ tags:
   - "voxel uncertainty"
   - "multi-view geometry"
 date: 2026-05-08
-content_hash: 7c9ce4e3e127712f
+content_hash: 5c2336b5274a2bea
 ---
 
 # GeoSVR: Taming Sparse Voxels for Geometrically Accurate Surface Reconstruction
@@ -146,8 +146,8 @@ Each module contributes positively; patch-wise depth yields the largest gain (+0
 ## Related Papers
 
 - [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](../../CVPR2026/3d_vision/fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+- [\[CVPR 2025\] Sparse Voxels Rasterization: Real-time High-fidelity Radiance Field Rendering](../../CVPR2025/3d_vision/sparse_voxels_rasterization_real-time_high-fidelity_radiance_field_rendering.md)
 - [\[NeurIPS 2025\] AtlasGS: Atlanta-world Guided Surface Reconstruction with Implicit Structured Gaussians](atlasgs_atlanta-world_guided_surface_reconstruction_with_implicit_structured_gau.md)
-- [\[ICLR 2026\] UrbanGS: A Scalable and Efficient Architecture for Geometrically Accurate Large-Scene Reconstruction](../../ICLR2026/3d_vision/urbangs_a_scalable_and_efficient_architecture_for_geometrically_accurate_large-s.md)
 - [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](../../AAAI2026/3d_vision/meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
 

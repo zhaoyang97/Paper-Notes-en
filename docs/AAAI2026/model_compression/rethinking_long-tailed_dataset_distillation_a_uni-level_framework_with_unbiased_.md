@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling
 description: >-
-  [AAAI 2026][Model Compression][Dataset Distillation] This paper proposes the first uni-level dataset distillation framework for long-tailed distributions. Through three core strategies — expert model debiasing…
+  [AAAI 2026 Oral][Model Compression][Dataset Distillation] This paper proposes the first uni-level dataset distillation framework for long-tailed distributions. Through three core strategies — expert model debiasing, fair BN statistics calibration, and confidence-guided initialization — the method achieves +15.6% on CIFAR-100-LT and +11.8% on Tiny-ImageNet-LT, comprehensively outperforming DAMED.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Model Compression"
   - "Dataset Distillation"
   - "Long-tailed Distribution"
@@ -12,7 +12,7 @@ tags:
   - "BN Statistics Calibration"
   - "Unbiased Recovery"
 date: 2026-05-08
-content_hash: e1b82fdf627a61d7
+content_hash: 73eec200a32be6ce
 ---
 
 # Rethinking Long-tailed Dataset Distillation: A Uni-Level Framework with Unbiased Recovery and Relabeling
@@ -179,9 +179,9 @@ Total runtime is less than 1/20 of DAMED.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation](../../NeurIPS2025/model_compression/rectifying_soft-label_entangled_bias_in_long-tailed_dataset_distillation.md)
-- [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
+- [\[CVPR 2025\] Distilling Long-tailed Datasets](../../CVPR2025/model_compression/distilling_long-tailed_datasets.md)
 - [\[ICLR 2026\] Dataset Color Quantization: A Training-Oriented Framework for Dataset-Level Compression](../../ICLR2026/model_compression/dataset_color_quantization_a_training-oriented_framework_for_dataset-level_compr.md)
-- [\[AAAI 2026\] EEG-DLite: Dataset Distillation for Efficient Large EEG Model Training](eeg-dlite_dataset_distillation_for_efficient_large_eeg_model_training.md)
+- [\[CVPR 2026\] Rethinking Dataset Distillation: Hard Truths about Soft Labels](../../CVPR2026/model_compression/rethinking_dataset_distillation_hard_truths_about_soft_labels.md)
 - [\[AAAI 2026\] Post Training Quantization for Efficient Dataset Condensation](post_training_quantization_for_efficient_dataset_condensation.md)
 
 </div>

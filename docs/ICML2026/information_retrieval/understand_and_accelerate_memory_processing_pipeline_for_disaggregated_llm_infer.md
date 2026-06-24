@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference
 description: >-
-  [ICML 2026][Information Retrieval & RAG][RAG] This paper unifies optimizations for modern long-context LLM inference—such as sparse attention, RAG, and compressed context memory—into a four-stage "Prepare Memory → Compute Relevancy → Retrieval → Apply to Inference" memory processing pipeline. It quantitatively demonstrates that this pipeline accounts for 22%-97% o
+  [ICML 2026][Information Retrieval & RAG][Long Context] This paper unifies optimizations for modern long-context LLM inference—such as sparse attention, RAG, and compressed context memory—into a four-stage "Prepare Memory → Compute Relevancy → Retrieval → Apply to Inference" memory processing pipeline. It quantitatively demonstrates that this pipeline accounts for 22%-97% of total latency and exhibits highly heterogeneous computational characteristics across stages. Based on t…
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - RAG
-  - GPU-FPGA
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Long Context"
+  - "Sparse Attention"
+  - "RAG"
+  - "Memory Processing Pipeline"
+  - "GPU-FPGA"
 date: 2026-05-08
-content_hash: ec1f18261cfb8a0c
+content_hash: 3d005974d1a8fc3d
 ---
+
 # Understand and Accelerate Memory Processing Pipeline for Large Language Model Inference
 
 **Conference**: ICML 2026  
@@ -139,11 +143,11 @@ Latency Profiling: At 1M tokens, sparse attention accounts for 22%-81% of latenc
 
 ## Related Papers
 
+- [\[ICLR 2026\] MLP Memory: A Retriever-Pretrained Memory for Large Language Models](../../ICLR2026/information_retrieval/mlp_memory_a_retriever-pretrained_memory_for_large_language_models.md)
 - [\[ICLR 2026\] TokMem: One-Token Procedural Memory for Large Language Models](../../ICLR2026/information_retrieval/tokmem_one-token_procedural_memory_for_large_language_models.md)
 - [\[ECCV 2024\] Towards Open-Ended Visual Recognition with Large Language Model](../../ECCV2024/information_retrieval/towards_open-ended_visual_recognition_with_large_language_models.md)
 - [\[ICLR 2026\] Your Language Model Secretly Contains Personality Subnetworks](../../ICLR2026/information_retrieval/your_language_model_secretly_contains_personality_subnetworks.md)
 - [\[ACL 2025\] SafeRAG: Benchmarking Security in Retrieval-Augmented Generation of Large Language Model](../../ACL2025/information_retrieval/saferag_benchmarking_security_in_retrieval-augmented_generation_of_large_languag.md)
-- [\[ICML 2026\] Understanding LoRA as Knowledge Memory: An Empirical Analysis](understanding_lora_as_knowledge_memory_an_empirical_analysis.md)
 
 </div>
 

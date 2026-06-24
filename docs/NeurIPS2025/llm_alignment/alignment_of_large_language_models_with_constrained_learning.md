@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Alignment of Large Language Models with Constrained Learning
 description: >-
-  [NeurIPS 2025][LLM Alignment][Constrained Alignment] This paper proposes CAID (Constrained Alignment via Iterative Dualization), an iterative dualization method that alternately updates the LLM policy and dual variables.…
+  [NeurIPS 2025][LLM Alignment][Constrained Alignment] This paper proposes CAID (Constrained Alignment via Iterative Dualization), an iterative dualization method that alternately updates the LLM policy and dual variables. It theoretically establishes that the dual approach can identify the optimal constrained LLM policy (up to a parametrization gap), and empirically demonstrates significant improvements in constraint satisfaction and the helpfulness–safety trade-off on the PKU…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Safe RLHF"
   - "DPO"
 date: 2026-05-08
-content_hash: 41ebcb5bc9b36453
+content_hash: f29e47a01ea31e77
 ---
 
 # Alignment of Large Language Models with Constrained Learning
@@ -136,9 +136,9 @@ Training employs the DPO loss with composite reward $r_\lambda = r + \lambda^\to
 
 - [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
 - [\[NeurIPS 2025\] Adjacent Words, Divergent Intents: Jailbreaking Large Language Models via Task Concurrency](adjacent_words_divergent_intents_jailbreaking_large_language_models_via_task_con.md)
-- [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
+- [\[ACL 2025\] Safety Alignment via Constrained Knowledge Unlearning](../../ACL2025/llm_alignment/safety_alignment_via_constrained_knowledge_unlearning.md)
 - [\[NeurIPS 2025\] LASeR: Learning to Adaptively Select Reward Models with Multi-Armed Bandits](laser_learning_to_adaptively_select_reward_models_with_multi-armed_bandits.md)
-- [\[AAAI 2026\] Exploring the Effects of Alignment on Numerical Bias in Large Language Models](../../AAAI2026/llm_alignment/exploring_the_effects_of_alignment_on_numerical_bias_in_large_language_models.md)
+- [\[NeurIPS 2025\] Jailbreak-Zero: A Path to Pareto Optimal Red Teaming for Large Language Models](jailbreak-zero_a_path_to_pareto_optimal_red_teaming_for_large_language_models.md)
 
 </div>
 

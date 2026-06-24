@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them
 description: >-
-  [ICML 2026][Video Generation][Paper Note] This paper discovers that in Image-to-Video (I2V) diffusion models, "2-step inference is physically more reliable than 50-step inference." The root cause is identified as the erosion of the phase spectrum during the denoising process. Consequently, the authors propose PhaseLock, a training-free framework that extracts
+  [ICML2026][Video Generation][Image-to-Video] This paper discovers that in Image-to-Video (I2V) diffusion models, "2-step inference is physically more reliable than 50-step inference." The root cause is identified as the erosion of the phase spectrum during the denoising process. Consequently, the authors propose PhaseLock, a training-free framework that extracts motion priors from 2-step inference and injects them into the high-fidelity denoising trajectory using Latent Delta…
 tags:
-  - ICML 2026
-  - Video Generation
+  - "ICML2026"
+  - "Video Generation"
+  - "Image-to-Video"
+  - "Physical Consistency"
+  - "Phase Erosion"
+  - "Frequency Domain Analysis"
+  - "Training-free Guidance"
 date: 2026-05-08
-content_hash: 982d2abc419a0de7
+content_hash: 43b620f07e244ec9
 ---
+
 # Physics in 2-Steps: Locking Motion Priors Before Visual Refinement Erases Them
 
 **Conference**: ICML2026  
@@ -135,6 +141,7 @@ Results on PhyGenBench (LVLM-based overall physical plausibility) also show comp
 - Value: ⭐⭐⭐⭐⭐ Training-free, model-agnostic, and near-zero overhead for significant physical consistency improvements.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

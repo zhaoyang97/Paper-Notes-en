@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Perturb Your Data: Paraphrase-Guided Training Data Watermarking
 description: >-
-  [AAAI2026][LLM Safety][Training data watermarking] This paper proposes SPECTRA — a paraphrase-sampling-based training data watermarking method. It generates paraphrases via an LLM and uses Min-K%++ scoring to select para…
+  [AAAI2026][LLM Safety][Training data watermarking] This paper proposes SPECTRA — a paraphrase-sampling-based training data watermarking method. It generates paraphrases via an LLM and uses Min-K%++ scoring to select paraphrases with scores close to the original text as watermarks. Even when watermarked data constitutes as little as 0.001% of the training corpus, the p-value gap between members and non-members consistently exceeds 9 orders of magnitude.
 tags:
   - "AAAI2026"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "paraphrasing"
   - "Min-K%++"
 date: 2026-05-08
-content_hash: cc784b795504cf52
+content_hash: 70dcb9e40c589a34
 ---
 
 # Perturb Your Data: Paraphrase-Guided Training Data Watermarking
@@ -179,11 +179,11 @@ The **proxy model** paradigm has broad applicability: using a related or similar
 
 ## Related Papers
 
+- [\[ICLR 2026\] Winter Soldier: Backdooring Language Models at Pre-training with Indirect Data Poisoning](../../ICLR2026/llm_safety/winter_soldier_backdooring_language_models_at_pre-training_with_indirect_data_po.md)
 - [\[ACL 2026\] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](../../ACL2026/llm_safety/exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)
-- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](../../NeurIPS2025/llm_safety/virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
-- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](../../ICML2026/llm_safety/dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
+- [\[ACL 2025\] Robust Data Watermarking in Language Models by Injecting Fictitious Knowledge](../../ACL2025/llm_safety/robust_data_watermarking_in_language_models_by_injecting_fictitious_knowledge.md)
 - [\[ACL 2026\] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack](../../ACL2026/llm_safety/dualguard_dual-stream_large_language_model_watermarking_defense_against_paraphra.md)
-- [\[AAAI 2026\] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments](agentsense_virtual_sensor_data_generation_using_llm_agents_i.md)
+- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](../../NeurIPS2025/llm_safety/virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
 
 </div>
 

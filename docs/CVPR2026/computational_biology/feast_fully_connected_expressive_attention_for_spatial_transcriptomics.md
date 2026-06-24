@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics
 description: >-
-  [CVPR 2026][Computational Biology][Attention] FEAST transforms the task of "predicting spatial gene expression from large H&E pathology images" from a GNN paradigm relying on predefined sparse graphs into a fully connected attention framework. It utilizes self-attention to naturally model pairwise interactions between all spots, supplemented by negative attention
+  [CVPR 2026][Computational Biology][Spatial Transcriptomics] FEAST transforms the task of "predicting spatial gene expression from large H&E pathology images" from a GNN paradigm relying on predefined sparse graphs into a fully connected attention framework. It utilizes self-attention to naturally model pairwise interactions between all spots, supplemented by negative attention to express "inhibitory relationships" and off-grid sampling to complete information in grid gaps. It…
 tags:
-  - CVPR 2026
-  - Computational Biology
-  - Attention
+  - "CVPR 2026"
+  - "Computational Biology"
+  - "Spatial Transcriptomics"
+  - "Gene Expression Prediction"
+  - "Attention Mechanism"
+  - "Fully Connected Graph"
+  - "Negative Attention"
 date: 2026-05-08
-content_hash: 92862859078f02a8
+content_hash: 34d35f673646421d
 ---
+
 # FEAST: Fully Connected Expressive Attention for Spatial Transcriptomics
 
 **Conference**: CVPR 2026  
@@ -149,11 +154,11 @@ Metrics peak at $k=32$ and decline thereafter, thus $k=32$ is chosen to balance 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
 - [\[CVPR 2026\] HyperST: Hierarchical Hyperbolic Learning for Spatial Transcriptomics Prediction](hyperst_hierarchical_hyperbolic_learning_for_spatial_transcriptomics_prediction.md)
+- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
 - [\[CVPR 2026\] Bulk RNA-seq Guided Multi-modal Detection of Anomalous Regions in Human Cancer via Spatial Transcriptomics](bulk_rna-seq_guided_multi-modal_detection_of_anomalous_regions_in_human_cancer_v.md)
-- [\[NeurIPS 2025\] Modeling Microenvironment Trajectories on Spatial Transcriptomics with NicheFlow](../../NeurIPS2025/computational_biology/modeling_microenvironment_trajectories_on_spatial_transcriptomics_with_nicheflow.md)
-- [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
+- [\[CVPR 2026\] From Spots to Pixels: Dense Spatial Gene Expression Prediction from Histology Images](from_spots_to_pixels_dense_spatial_gene_expression_prediction_from_histology_ima.md)
 
 </div>
 

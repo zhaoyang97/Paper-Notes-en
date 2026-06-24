@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EcoAlign: An Economically Rational Framework for Efficient LVLM Alignment
 description: >-
-  [CVPR 2026][Alignment & RLHF][Paper Note] EcoAlign reframes the inference-time alignment of Large Vision-Language Models (LVLMs) as an "optimal path search problem under a limited compute budget." It utilizes a Net Present Value (NPV)-like look-ahead function to score candidate actions on a dynamically constructed Graph-of-Thought, balancing safety, utility, a
+  [CVPR 2026][LLM Alignment][LVLM Alignment] EcoAlign reframes the inference-time alignment of Large Vision-Language Models (LVLMs) as an "optimal path search problem under a limited compute budget." It utilizes a Net Present Value (NPV)-like look-ahead function to score candidate actions on a dynamically constructed Graph-of-Thought, balancing safety, utility, and cost while defining path safety via the "weakest link" principle to achieve superior safety and utility at lower c…
 tags:
-  - CVPR 2026
-  - Alignment & RLHF
+  - "CVPR 2026"
+  - "LLM Alignment"
+  - "LVLM Alignment"
+  - "Inference-time Safety"
+  - "Graph-of-Thought Search"
+  - "Economic Rationality"
+  - "Weakest-link Safety"
 date: 2026-05-08
-content_hash: a0fb652fb53bdb64
+content_hash: 7d5e2375698eeafa
 ---
+
 # EcoAlign: An Economically Rational Framework for Efficient LVLM Alignment
 
 **Conference**: CVPR 2026  
@@ -149,6 +155,7 @@ Ours achieves the highest safety scores across all models and benchmarks while m
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -156,8 +163,8 @@ Ours achieves the highest safety scores across all models and benchmarks while m
 - [\[ICML 2025\] MPO: An Efficient Post-Processing Framework for Mixing Diverse Preference Alignment](../../ICML2025/llm_alignment/mpo_an_efficient_post-processing_framework_for_mixing_diverse_preference_alignme.md)
 - [\[ICLR 2026\] Learning More with Less: A Dynamic Dual-Level Down-Sampling Framework for Efficient Policy Optimization](../../ICLR2026/llm_alignment/learning_more_with_less_a_dynamic_dual-level_down-sampling_framework_for_efficie.md)
 - [\[AAAI 2026\] Differentiated Directional Intervention: A Framework for Evading LLM Safety Alignment](../../AAAI2026/llm_alignment/differentiated_directional_intervention_a_framework_for_evading_llm_safety_align.md)
-- [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](../../ICLR2026/llm_alignment/beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
-- [\[ACL 2026\] Alignment Data Map for Efficient Preference Data Selection and Diagnosis](../../ACL2026/llm_alignment/alignment_data_map_for_efficient_preference_data_selection_and_diagnosis.md)
+- [\[ICLR 2026\] The Alignment Auditor: A Bayesian Framework for Verifying and Refining LLM Objectives](../../ICLR2026/llm_alignment/the_alignment_auditor_a_bayesian_framework_for_verifying_and_refining_llm_object.md)
+- [\[ICLR 2026\] Annotation-Efficient Honesty Alignment via Confidence Elicitation and Calibration](../../ICLR2026/llm_alignment/annotation-efficient_honesty_alignment_via_confidence_elicitation_and_calibratio.md)
 
 </div>
 

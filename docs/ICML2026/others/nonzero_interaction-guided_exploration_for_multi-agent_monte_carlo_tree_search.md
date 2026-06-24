@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search
 description: >-
-  [ICML 2026][Others][MCTS] Ours compresses the multi-agent MCTS joint-action space $d^n$ into a low-dim non-linear bandit using an asinh-linked GLM surrogate. It implements the NonUCT proposal rule based on "first-order difference + second-order mixed difference" to maintain a small candidate set $\mathcal{C}(s)$ at each node. Theoretical analys
+  [ICML 2026 Spotlight][MCTS] Ours compresses the multi-agent MCTS joint-action space $d^n$ into a low-dim non-linear bandit using an asinh-linked GLM surrogate. It implements the NonUCT proposal rule based on "first-order difference + second-order mixed difference" to maintain a small candidate set $\mathcal{C}(s)$ at each node. Theoretical analysis proves a local regret of $\widetilde{O}(T^{3/4})$ (independent of $d^n$). Experimental results on MatGame, SMAC…
 tags:
-  - ICML 2026
-  - Others
-  - MCTS
-  - curvature-aware exploration
-  - asinh-GLM
+  - "ICML 2026 Spotlight"
+  - "MCTS"
+  - "joint action explosion"
+  - "second-order difference interaction"
+  - "curvature-aware exploration"
+  - "asinh-GLM"
 date: 2026-05-08
-content_hash: 7cee37b222486538
+content_hash: fde6f53586f32d5c
 ---
+
 # NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search
 
 **Conference**: ICML 2026 Spotlight  

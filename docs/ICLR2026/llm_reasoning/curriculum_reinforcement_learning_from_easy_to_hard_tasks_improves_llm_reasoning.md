@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] The paper proposes **E2H Reasoner**, which decomposes training data into four difficulty levels—"trivial, easy, medium, and hard"—and utilizes a probability scheduler (Cosine or Gaussian) to smoothly shift the sampling focus from easy to hard. This approach enables small models to master complex reasoning tasks that ar
+  [ICLR 2026][Reasoning][Curriculum Learning] The paper proposes **E2H Reasoner**, which decomposes training data into four difficulty levels—"trivial, easy, medium, and hard"—and utilizes a probability scheduler (Cosine or Gaussian) to smoothly shift the sampling focus from easy to hard. This approach enables small models to master complex reasoning tasks that are unsolvable zero-shot, while providing theoretical guarantees for CRL convergence and sample complexity.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Curriculum Learning"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Task Scheduling"
+  - "Sampling Strategy"
 date: 2026-05-08
-content_hash: d034b20c5a2c32e5
+content_hash: e58ea788fc909582
 ---
+
 # Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning
 
 **Conference**: ICLR 2026  
@@ -115,9 +119,9 @@ Comparison of scheduling strategies shows E2H-G(0.25, 0.75) reaching 32.9 on Blo
 
 ## Related Papers
 
-- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](../../ICML2026/llm_reasoning/the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
-- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
+- [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
+- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](../../ICML2026/llm_reasoning/the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 - [\[ICLR 2026\] Learning to Reason over Continuous Tokens with Reinforcement Learning (HyRea)](learning_to_reason_over_continuous_tokens_with_reinforcement_learning.md)
 - [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 

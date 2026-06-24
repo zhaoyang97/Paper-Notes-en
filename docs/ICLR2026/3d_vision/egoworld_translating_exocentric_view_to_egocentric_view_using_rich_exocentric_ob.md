@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] EgoWorld proposes an end-to-end exocentric-to-egocentric view translation framework. It extracts three complementary observations—3D point clouds, hand poses, and text descriptions—from a single exocentric image. A sparse egocentric RGB mapping is obtained via point cloud re-projection, followed by high-fidelity egocen
+  [ICLR 2026][3D Vision][View Synthesis] EgoWorld proposes an end-to-end exocentric-to-egocentric view translation framework. It extracts three complementary observations—3D point clouds, hand poses, and text descriptions—from a single exocentric image. A sparse egocentric RGB mapping is obtained via point cloud re-projection, followed by high-fidelity egocentric image reconstruction using a diffusion model in an inpainting manner. The method outperforms SOTA across multiple un…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "View Synthesis"
+  - "Exocentric-to-Egocentric"
+  - "Diffusion Models"
+  - "Hand-Object Interaction"
+  - "Point Cloud Projection"
 date: 2026-05-08
-content_hash: 4a1a80bdd9cd236c
+content_hash: e67d693e77005369
 ---
+
 # EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations
 
 **Conference**: ICLR 2026  
@@ -138,15 +143,16 @@ EgoWorld outperforms the strongest baseline CFLD (which uses ground-truth 2D lay
 - **Value**: ⭐⭐⭐⭐ High potential for AR/VR and robotics; low barrier to entry with single-GPU training.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views](../../NeurIPS2025/3d_vision/look_and_tell_a_dataset_for_multimodal_grounding_across_egocentric_and_exocentri.md)
 - [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
+- [\[ICLR 2026\] Sharp Monocular View Synthesis in Less Than a Second](sharp_monocular_view_synthesis_in_less_than_a_second.md)
 - [\[ICLR 2026\] ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation](reconviagen_towards_accurate_multi-view_3d_object_reconstruction_via_generation.md)
-- [\[ICLR 2026\] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation](aligned_novel_view_image_and_geometry_synthesis_via_cross-modal_attention_instil.md)
-- [\[ICLR 2026\] Large Depth Completion Model from Sparse Observations](large_depth_completion_model_from_sparse_observations.md)
+- [\[ICLR 2026\] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)
 
 </div>
 

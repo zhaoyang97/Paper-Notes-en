@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HUMOTO: A 4D Dataset of Mocap Human Object Interactions
 description: >-
-  [ICCV 2025][Human Understanding][HOI dataset] This paper presents HUMOTO, a high-fidelity 4D human-object interaction dataset comprising 735 sequences (7,875 seconds at 30fps)…
+  [ICCV 2025][Human Understanding][HOI dataset] This paper presents HUMOTO, a high-fidelity 4D human-object interaction dataset comprising 735 sequences (7,875 seconds at 30fps), covering 63 precisely modeled objects with 72 articulated parts. It introduces an LLM-driven scene scripting pipeline and a multi-sensor capture system, achieving significantly superior hand pose accuracy and interaction quality compared to existing datasets.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "multi-object interaction"
   - "LLM script generation"
 date: 2026-05-08
-content_hash: 962ca4df2616e8e2
+content_hash: 67df36b6c102e12f
 ---
 
 # HUMOTO: A 4D Dataset of Mocap Human Object Interactions
@@ -134,11 +134,11 @@ As a dataset paper, no training loss is involved. However, a comprehensive HOI d
 
 ## Related Papers
 
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](../../CVPR2026/human_understanding/hum4d_markerless_motion_capture.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](../../CVPR2026/human_understanding/interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
 - [\[ICCV 2025\] MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation](mdd_a_dataset_for_text-and-music_conditioned_duet_dance_generation.md)
+- [\[CVPR 2026\] HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations](../../CVPR2026/human_understanding/humaps-4d_a_multimodal_dataset_for_human_motion_analysis_with_physiological_and_.md)
 - [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
-- [\[CVPR 2026\] TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](../../CVPR2026/human_understanding/teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)
-- [\[ICCV 2025\] MixRI: Mixing Features of Reference Images for Novel Object Pose Estimation](mixri_mixing_features_of_reference_images_for_novel_object_pose_estimation.md)
+- [\[ICLR 2026\] TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions](../../ICLR2026/human_understanding/touch_text-guided_controllable_generation_of_free-form_hand-object_interactions.md)
 
 </div>
 

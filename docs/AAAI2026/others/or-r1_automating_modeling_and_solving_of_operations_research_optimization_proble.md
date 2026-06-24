@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems
 description: >-
-  [AAAI 2026][Operations Research] OR-R1 proposes a data-efficient two-stage training framework (SFT + TGRPO) that achieves an average solving accuracy of 67.7% using only 1/10 of the synthetic data required by ORLM…
+  [AAAI 2026][Operations Research] OR-R1 proposes a data-efficient two-stage training framework (SFT + TGRPO) that achieves an average solving accuracy of 67.7% using only 1/10 of the synthetic data required by ORLM, surpassing existing SOTA methods. Additionally, test-time reinforcement learning reduces the performance gap between single-sample generation (Pass@1) and multi-sample generation (Pass@8) from 13% to 7%.
 tags:
   - "AAAI 2026"
   - "Operations Research"
@@ -11,7 +11,7 @@ tags:
   - "Test-Time Adaptation"
   - "Data Efficiency"
 date: 2026-05-08
-content_hash: cdc15a768db8c070
+content_hash: 7190b5b9aa89d26c
 ---
 
 # OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems
@@ -178,10 +178,10 @@ The three reward components are complementary, and combining all three yields th
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hybrid-Balance GFlowNet for Solving Vehicle Routing Problems](../../NeurIPS2025/others/hybrid-balance_gflownet_for_solving_vehicle_routing_problems.md)
+- [\[ACL 2025\] MIR: Methodology Inspiration Retrieval for Scientific Research Problems](../../ACL2025/others/mir_methodology_inspiration_retrieval_for_scientific_research_problems.md)
 - [\[AAAI 2026\] Certified Branch-and-Bound MaxSAT Solving (Extended Version)](certified_branch-and-bound_maxsat_solving_extended_version.md)
 - [\[AAAI 2026\] More Than Irrational: Modeling Belief-Biased Agents](more_than_irrational_modeling_belief-biased_agents.md)
 - [\[AAAI 2026\] HyperSHAP: Shapley Values and Interactions for Explaining Hyperparameter Optimization](hypershap_shapley_values_and_interactions_for_explaining_hyperparameter_optimiza.md)
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
 
 </div>
 

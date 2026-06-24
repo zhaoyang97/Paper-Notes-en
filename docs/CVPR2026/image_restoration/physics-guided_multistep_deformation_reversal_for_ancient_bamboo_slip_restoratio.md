@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Physics-Guided Multistep Deformation Reversal for Ancient Bamboo Slip Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the complex non-linear deformations of excavated ancient bamboo slips caused by dehydration stress, this paper utilizes wood rheology to establish a computable "forward physical deformation engine" for generating unpaired training data. It then trains a ControlPointUNet to progressively predict **reverse dis
+  [CVPR 2026][Image Restoration][Bamboo slip restoration] To address the complex non-linear deformations of excavated ancient bamboo slips caused by dehydration stress, this paper utilizes wood rheology to establish a computable "forward physical deformation engine" for generating unpaired training data. It then trains a ControlPointUNet to progressively predict **reverse displacement fields**, "bending" the bamboo slips back to their original state step-by-step. The method sig…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Bamboo slip restoration"
+  - "physics-guided"
+  - "deformation reversal"
+  - "control point displacement field"
+  - "wood rheology"
 date: 2026-05-08
-content_hash: 6a1f2018a8232ab9
+content_hash: c6c14c4694407572
 ---
+
 # Physics-Guided Multistep Deformation Reversal for Ancient Bamboo Slip Restoration
 
 **Conference**: CVPR 2026  
@@ -142,10 +148,10 @@ Removing physical components from the engine (Synthetic Set):
 ## Related Papers
 
 - [\[ICML 2026\] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging](../../ICML2026/image_restoration/phy-cosf_physics-guided_continuous_spectral_fields_reconstruction_and_super-reso.md)
+- [\[CVPR 2026\] ReasonX: MLLM-Guided Intrinsic Image Decomposition](reasonx_mllm-guided_intrinsic_image_decomposition.md)
 - [\[CVPR 2026\] From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing](from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md)
+- [\[CVPR 2026\] Unpaired Image Deraining Using Reward-Guided Self-Reinforcement Strategy](unpaired_image_deraining_using_reward-guided_self-reinforcement_strategy.md)
 - [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
-- [\[CVPR 2026\] Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor](spatio-temporal_difference_guided_motion_deblurring_with_the_complementary_visio.md)
-- [\[CVPR 2026\] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing](multi-scale_gradient-guided_unrolling_architecture_with_adaptive_mamba_for_compr.md)
 
 </div>
 

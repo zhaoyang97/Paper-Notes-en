@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Latent Adaptation of Foundation Policies for Sim-to-Real Transfer
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper proposes Found-adapt: it first pre-trains a reusable latent-conditioned foundation policy on offline simulator trajectories, and then corrects the latent variable $z$ during deployment using a small amount of target domain data. This mitigates the dynamics sim-to-real gap in robot locomotion without retraini
+  [ICLR 2026][Robotics][sim-to-real transfer] This paper proposes Found-adapt: it first pre-trains a reusable latent-conditioned foundation policy on offline simulator trajectories, and then corrects the latent variable $z$ during deployment using a small amount of target domain data. This mitigates the dynamics sim-to-real gap in robot locomotion without retraining the policy network.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "sim-to-real transfer"
+  - "foundation policies"
+  - "offline reinforcement learning"
+  - "latent space adaptation"
+  - "robot locomotion"
 date: 2026-05-08
-content_hash: 4201a4e4b76fef78
+content_hash: 24af76d10124a1dc
 ---
+
 # Latent Adaptation of Foundation Policies for Sim-to-Real Transfer
 
 **Conference**: ICLR 2026  

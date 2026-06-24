@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Procedure: Substantive Fairness in Conformal Prediction
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper moves beyond the procedural fairness perspective of Conformal Prediction (CP) to focus on the substantive fairness of downstream decisions. It theoretically proves and experimentally validates that **equalizing prediction set size** (rather than equalizing coverage) is the procedural metric strongly correlat
+  [ICML2026][AI Safety][Conformal Prediction] This paper moves beyond the procedural fairness perspective of Conformal Prediction (CP) to focus on the substantive fairness of downstream decisions. It theoretically proves and experimentally validates that **equalizing prediction set size** (rather than equalizing coverage) is the procedural metric strongly correlated with substantive fairness. It proposes a scalable evaluation framework based on LLM-in-the-loop and a Label-Clust…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Conformal Prediction"
+  - "Substantive Fairness"
+  - "Prediction Set Size Difference"
+  - "Label Clustering"
+  - "LLM Evaluator"
 date: 2026-05-08
-content_hash: d44262ec4170bb33
+content_hash: 5e7cb9d6da1ad1e7
 ---
+
 # Beyond Procedure: Substantive Fairness in Conformal Prediction
 
 **Conference**: ICML2026  
@@ -131,10 +137,10 @@ Covers four modalities (Image/Text/Audio/Tabular) and four datasets (FACET, Bios
 ## Related Papers
 
 - [\[AAAI 2026\] Breaking the Dyadic Barrier: Rethinking Fairness in Link Prediction Beyond Demographic Parity](../../AAAI2026/ai_safety/breaking_the_dyadic_barrier_rethinking_fairness_in_link_prediction_beyond_demogr.md)
-- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
 - [\[ICML 2026\] COFT: Counterfactual-Conformal Decoding for Fair Chain-of-Thought Reasoning in Large Language Models](coft_counterfactual-conformal_decoding_for_fair_chain-of-thought_reasoning_in_la.md)
-- [\[ICLR 2026\] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching](../../ICLR2026/ai_safety/beyond_match_maximization_and_fairness_retention-optimized_two-sided_matching.md)
 - [\[ICLR 2026\] Fair Conformal Classification via Learning Representation-Based Groups](../../ICLR2026/ai_safety/fair_conformal_classification_via_learning_representation-based_groups.md)
+- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
+- [\[ICLR 2026\] Beyond Match Maximization and Fairness: Retention-Optimized Two-Sided Matching](../../ICLR2026/ai_safety/beyond_match_maximization_and_fairness_retention-optimized_two-sided_matching.md)
 
 </div>
 

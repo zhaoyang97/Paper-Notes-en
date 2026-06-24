@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] SAT-RRG utilizes a frozen LLM as a "judge" to mark semantic errors token-by-token in generated reports. It employs a pair of "push–pull" losses (depressing incorrect words and strengthening correct ones) combined with entropy-confidence self-adaptive weighting. This converts cross-entropy training into a self-correctin
+  [CVPR 2026][Medical Imaging][Radiology Report Generation] SAT-RRG utilizes a frozen LLM as a "judge" to mark semantic errors token-by-token in generated reports. It employs a pair of "push–pull" losses (depressing incorrect words and strengthening correct ones) combined with entropy-confidence self-adaptive weighting. This converts cross-entropy training into a self-correcting process, achieving new SOTA results on both linguistic and clinical metrics for MIMIC-CXR and IU-Xra…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Radiology Report Generation"
+  - "Token-Level Supervision"
+  - "Push–Pull Optimization"
+  - "LLM Weak Supervision"
+  - "Self-Adaptive Training"
 date: 2026-05-08
-content_hash: 2cc6624c32418111
+content_hash: 8b489fc1813a1c50
 ---
+
 # SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ Weighting components and $\gamma$ ablation:
 
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
+- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](../../ICLR2026/medical_imaging/rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
 - [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
-- [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
 - [\[AAAI 2026\] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization](../../AAAI2026/medical_imaging/spa_achieving_consensus_in_llm_alignment_via_self-priority_optimization.md)
 
 </div>

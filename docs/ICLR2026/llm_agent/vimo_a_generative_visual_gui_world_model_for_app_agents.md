@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ViMo: A Generative Visual GUI World Model for App Agents
 description: >-
-  [ICLR 2026][LLM Agent][App Agent] ViMo is the first "visual" GUI world model—given a current mobile screen screenshot and a user action, it directly generates the **future GUI image** after the action is executed. To solve the long-standing problem of blurry small text in pixel-level generation, it decouples the interface into "graphics" and "text" str
+  [ICLR 2026][LLM Agent][App Agent] ViMo is the first "visual" GUI world model—given a current mobile screen screenshot and a user action, it directly generates the **future GUI image** after the action is executed. To solve the long-standing problem of blurry small text in pixel-level generation, it decouples the interface into "graphics" and "text" streams for separate generation. Using a symbolic placeholder representation called STR, a diffusion model handles the graphical…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - App Agent
-  - Diffusion Model
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "App Agent"
+  - "GUI World Model"
+  - "Symbolic Text Representation"
+  - "Diffusion Model"
+  - "Long-horizon Planning"
 date: 2026-05-08
-content_hash: 0fb7212dd7209f9d
+content_hash: b15dae56d261ecb3
 ---
+
 # ViMo: A Generative Visual GUI World Model for App Agents
 
 **Conference**: ICLR 2026  
@@ -154,7 +158,7 @@ Comparison of world models (all using M3A, step acc.): No world model 46.01; Cha
 - [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 - [\[ICLR 2026\] PerfGuard: A Performance-Aware Agent for Visual Content Generation](radiometrically_consistent_gaussian_surfels_for_inverse_rendering.md)
 - [\[ICLR 2026\] Dual-Scale World Memory for LLM Agents towards Hard-Exploration Problems](dual-scale_world_memory_for_llm_agents_towards_hard-exploration_problems.md)
-- [\[ICLR 2026\] VitaBench: Benchmarking LLM Agents with Versatile Interactive Tasks in Real-world Applications](vitabench_benchmarking_llm_agents_with_versatile_interactive_tasks_in_real-world.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 
 </div>
 

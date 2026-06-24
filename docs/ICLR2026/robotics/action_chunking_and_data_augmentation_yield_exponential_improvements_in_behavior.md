@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper provides the first theoretical guarantee for two empirical techniques in imitation learning—action chunking and expert noise-injection data augmentation—using "incremental stability" from control theory. It proves they suppress the compounding error that accumulates exponentially over time in continuous cont
+  [ICLR 2026][Robotics][Imitation Learning] This paper provides the first theoretical guarantee for two empirical techniques in imitation learning—action chunking and expert noise-injection data augmentation—using "incremental stability" from control theory. It proves they suppress the compounding error that accumulates exponentially over time in continuous control behavior cloning (BC) to be "horizon-free" under various conditions.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Behavior Cloning"
+  - "Compounding Error"
+  - "Action Chunking"
+  - "Noise Injection"
+  - "Incremental Stability"
 date: 2026-05-08
-content_hash: d858e3674c3674a4
+content_hash: ac7f54b7836ca4ed
 ---
+
 # Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control
 
 **Conference**: ICLR 2026  
@@ -108,8 +115,8 @@ The goal of the experiments is to verify theoretical predictions and the asserti
 
 ## Related Papers
 
-- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](../../AAAI2026/robotics/continuous_vision-language-action_co-learning_with_semantic-.md)
 - [\[ICLR 2026\] Real-Time Robot Execution with Masked Action Chunking](real-time_robot_execution_with_masked_action_chunking.md)
+- [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](../../AAAI2026/robotics/continuous_vision-language-action_co-learning_with_semantic-.md)
 - [\[ICLR 2026\] Scalable Exploration for High-Dimensional Continuous Control via Value-Guided Flow](scalable_exploration_for_high-dimensional_continuous_control_via_value-guided_fl.md)
 - [\[ICML 2026\] Mixture of Horizons in Action Chunking](../../ICML2026/robotics/mixture_of_horizons_in_action_chunking.md)
 - [\[AAAI 2026\] Test-driven Reinforcement Learning in Continuous Control](../../AAAI2026/robotics/test-driven_reinforcement_learning_in_continuous_control.md)

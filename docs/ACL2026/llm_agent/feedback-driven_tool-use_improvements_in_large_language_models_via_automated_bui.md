@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments
 description: >-
-  [ACL 2026][LLM Agent][Reinforcement Learning] This paper proposes the FTRL framework, which constructs a stable and controllable tool-use training environment through a five-stage automated pipeline. It designs a verifiable reward mechanism combining tool call precision and task completion. When paired with preference optimization RL algorithms, it achieves an ave
+  [ACL 2026][LLM Agent][Tool invocation] This paper proposes the FTRL framework, which constructs a stable and controllable tool-use training environment through a five-stage automated pipeline. It designs a verifiable reward mechanism combining tool call precision and task completion. When paired with preference optimization RL algorithms, it achieves an average tool-use performance improvement of over 10% on 7B-14B models, even surpassing the strongest closed-source models.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Tool invocation"
+  - "Reinforcement Learning"
+  - "Automated Environment Construction"
+  - "Verifiable Reward"
+  - "LLM Training"
 date: 2026-05-08
-content_hash: b0b35468e627b2d7
+content_hash: b7a67f7e64a5bb1d
 ---
+
 # Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments
 
 **Conference**: ACL 2026
@@ -145,15 +150,14 @@ Trained using the VeRL framework with a learning rate of $1\times10^{-6}$, batch
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
-- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](../../ICLR2026/llm_agent/toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
-- [\[ACL 2025\] ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](../../ACL2025/llm_agent/toolhop_multi_hop_tool_use.md)
+- [\[ACL 2026\] Don't Adapt Small Language Models for Tools; Adapt Tool Schemas to the Models](don39t_adapt_small_language_models_for_tools_adapt_tool_schemas_to_the_models.md)
 - [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
+- [\[ACL 2025\] ToolHop: A Query-Driven Benchmark for Evaluating Large Language Models in Multi-Hop Tool Use](../../ACL2025/llm_agent/toolhop_multi_hop_tool_use.md)
+- [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
 
 </div>
 

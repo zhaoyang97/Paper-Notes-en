@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Chessformer: A Unified Architecture for Chess Modeling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] By treating the 64 board squares as tokens and adding a "Geometric Attention Bias" (GAB) dynamically generated per position to the self-attention mechanism, Chessformer utilizes a unified architecture to simultaneously push "engine strength," "human move prediction," and "interpretability"—three long-separated objectiv
+  [ICLR2026][Reinforcement Learning][Chess] By treating the 64 board squares as tokens and adding a "Geometric Attention Bias" (GAB) dynamically generated per position to the self-attention mechanism, Chessformer utilizes a unified architecture to simultaneously push "engine strength," "human move prediction," and "interpretability"—three long-separated objectives—to SOTA. The 79M-parameter MAIA-3 improves human move matching to 57.1% with less than a quarter of the size of its…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Chess"
+  - "Transformer Architecture"
+  - "Positional Encoding"
+  - "Human Behavior Modeling"
+  - "Mechanistic Interpretability"
 date: 2026-05-08
-content_hash: 116f1dd0e4756cc2
+content_hash: 1b725c1056276cbc
 ---
+
 # Chessformer: A Unified Architecture for Chess Modeling
 
 **Conference**: ICLR2026  
@@ -145,13 +151,14 @@ GAB allows the architecture to transition from a "specialist" to a "generalist."
 - Value: ⭐⭐⭐⭐⭐ Provides a reusable recipe for designing domain-aligned architectures in structured decision-making.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] RM-R1: Reward Modeling as Reasoning](rm-r1_reward_modeling_as_reasoning.md)
-- [\[ICLR 2026\] RESCHED: Rethinking Flexible Job Shop Scheduling from a Transformer-based Architecture with Simplified States](resched_rethinking_flexible_job_shop_scheduling_from_a_transformer-based_archite.md)
 - [\[ICLR 2026\] The Markovian Thinker: Architecture-Agnostic Linear Scaling of Reasoning](the_markovian_thinker_architecture-agnostic_linear_scaling_of_reasoning.md)
+- [\[ICLR 2026\] General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess](general_search_techniques_without_common_knowledge_for_imperfect-information_gam.md)
 - [\[ICLR 2026\] MergeMix: A Unified Augmentation Paradigm for Visual and Multi-Modal Understanding](mergemix_a_unified_augmentation_paradigm_for_visual_and_multi-modal_understandin.md)
 - [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](../../ICML2026/reinforcement_learning/how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
 

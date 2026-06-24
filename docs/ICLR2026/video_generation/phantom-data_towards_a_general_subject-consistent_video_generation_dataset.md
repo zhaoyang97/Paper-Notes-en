@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset
 description: >-
-  [ICLR 2026][Video Generation][copy-paste] Addressing the prevalent "copy-paste" issue in subject-to-video (S2V) generation, this paper constructs Phantom-Data, the first general cross-pair subject-consistent dataset. It contains approximately 1 million identity-consistent pairs. Through a three-stage pipeline (S2V Detection → Contextually Diverse Retrieval → P
+  [ICLR 2026][Video Generation][Subject-consistent video generation] Addressing the prevalent "copy-paste" issue in subject-to-video (S2V) generation, this paper constructs Phantom-Data, the first general cross-pair subject-consistent dataset. It contains approximately 1 million identity-consistent pairs. Through a three-stage pipeline (S2V Detection → Contextually Diverse Retrieval → Prior-Based Identity Verification), the method finds reference images in different scenarios f…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - copy-paste
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Subject-consistent video generation"
+  - "cross-pair data"
+  - "copy-paste"
+  - "identity consistency"
+  - "data pipeline"
 date: 2026-05-08
-content_hash: e15bf87b41b6f747
+content_hash: e326fe9ba81839da
 ---
+
 # Phantom-Data: Towards a General Subject-Consistent Video Generation Dataset
 
 **Conference**: ICLR 2026  
@@ -125,10 +130,10 @@ Ours achieves SOTA in text-following (Reward-TA 3.827 vs. 2.074 for in-pair) and
 ## Related Papers
 
 - [\[ICLR 2026\] BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration](bindweave_subject-consistent_video_generation_via_cross-modal_integration.md)
+- [\[ICLR 2026\] The Quest for Generalizable Motion Generation: Data, Model, and Evaluation](the_quest_for_generalizable_motion_generation_data_model_and_evaluation.md)
 - [\[ICLR 2026\] MAGREF: Masked Guidance for Any-Reference Video Generation with Subject Disentanglement](magref_masked_guidance_for_any-reference_video_generation_with_subject_disentang.md)
 - [\[ICLR 2026\] 3D Scene Prompting for Scene-Consistent Camera-Controllable Video Generation](3d_scene_prompting_for_scene-consistent_camera-controllable_video_generation.md)
 - [\[ICLR 2026\] NewtonGen: Physics-consistent and Controllable Text-to-Video Generation via Neural Newtonian Dynamics](newtongen_physics-consistent_and_controllable_text-to-video_generation_via_neura.md)
-- [\[CVPR 2026\] PoseAnything: General Pose-guided Video Generation with Part-aware Temporal Coherence](../../CVPR2026/video_generation/poseanything_general_pose-guided_video_generation_with_part-aware_temporal_coher.md)
 
 </div>
 

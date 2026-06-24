@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PEAR: Phase Entropy Aware Reward for Efficient Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper discovers that token entropy in Large Reasoning Models (LRMs) positively correlates with response length, and entropy during the "thinking phase" is significantly higher than in the "final answer phase." Based on this, PEAR is proposed—a reward mechanism that incorporates phase-aware entropy into Group Relat
+  [ICLR 2026][Reasoning][Efficient Reasoning] This paper discovers that token entropy in Large Reasoning Models (LRMs) positively correlates with response length, and entropy during the "thinking phase" is significantly higher than in the "final answer phase." Based on this, PEAR is proposed—a reward mechanism that incorporates phase-aware entropy into Group Relative Policy Optimization (GRPO). By penalizing excessive entropy in the thinking phase while maintaining adequate exp…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Efficient Reasoning"
+  - "Entropy Reward"
+  - "GRPO"
+  - "Thinking Phase"
+  - "Length Compression"
 date: 2026-05-08
-content_hash: b63ee243cc8a32e0
+content_hash: a81d9768d2f8c9e6
 ---
+
 # PEAR: Phase Entropy Aware Reward for Efficient Reasoning
 
 **Conference**: ICLR 2026  
@@ -146,7 +151,6 @@ Effect of the coefficient $\alpha$ (answer phase entropy baseline) on Qwen3-4B:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -154,7 +158,7 @@ Effect of the coefficient $\alpha$ (answer phase entropy baseline) on Qwen3-4B:
 - [\[ACL 2026\] ETR: Entropy Trend Reward for Efficient Chain-of-Thought Reasoning](../../ACL2026/llm_reasoning/etr_entropy_trend_reward_for_efficient_chain-of-thought_reasoning.md)
 - [\[ICLR 2026\] Making Slow Thinking Faster: Compressing LLM Chain-of-Thought via Step Entropy](making_slow_thinking_faster_compressing_llm_chain-of-thought_via_step_entropy.md)
 - [\[ICLR 2026\] Retrieval-of-Thought: Efficient Reasoning via Reusing Thoughts](retrieval-of-thought_efficient_reasoning_via_reusing_thoughts.md)
-- [\[ICLR 2026\] Harder Is Better: Boosting Mathematical Reasoning via Difficulty-Aware GRPO and Multi-Aspect Question Reformulation](harder_is_better_boosting_mathematical_reasoning_via_difficulty-aware_grpo_and_m.md)
+- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
 
 </div>
 

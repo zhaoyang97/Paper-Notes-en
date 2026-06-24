@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Text-Printed Image：把文本「印」成图片来弥合图文模态鸿沟
+  [Paper Note] Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To fine-tune Large Vision Language Models (LVLMs) when real images are unavailable and only text descriptions exist, this paper proposes Text-Printed Image (TPI)—rendering text descriptions directly onto a plain white canvas as image input. By forcing text through the vision encoder, TPI bridges the modality gap while
+  [CVPR 2026][Multimodal VLM][Text-centric training] To fine-tune Large Vision Language Models (LVLMs) when real images are unavailable and only text descriptions exist, this paper proposes Text-Printed Image (TPI)—rendering text descriptions directly onto a plain white canvas as image input. By forcing text through the vision encoder, TPI bridges the modality gap while preserving 100% of the text semantics. It consistently outperforms "text-only" and "diffusion-generated image…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Text-centric training"
+  - "Image-text modality gap"
+  - "Text-rendered images"
+  - "VLM fine-tuning"
+  - "Low-cost data synthesis"
 date: 2026-05-08
-content_hash: 8562d9196a6c3bea
+content_hash: f7d25ac83a50bc61
 ---
+
 # Text-Printed Image: Bridging the Image-Text Modality Gap by "Printing" Text into Images
 
 **Conference**: CVPR 2026  
@@ -144,7 +150,7 @@ TPI achieves the highest average scores among text-centric methods across all 4 
 
 - [\[CVPR 2026\] Camouflage-aware Image-Text Retrieval via Expert Collaboration](camouflage-aware_image-text_retrieval_via_expert_collaboration.md)
 - [\[CVPR 2026\] Multimodal RewardBench 2: Evaluating Omni Reward Models for Interleaved Text and Image](multimodal_rewardbench_2_evaluating_omni_reward_models_for_interleaved_text_and_.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
+- [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
 - [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
 - [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](../../ACL2026/multimodal_vlm/tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
 

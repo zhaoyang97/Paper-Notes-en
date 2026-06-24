@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VecGlypher: Unified Vector Glyph Generation with Language Models
 description: >-
-  [CVPR 2026][Image Generation][SVG] VecGlypher is proposed as the first unified language model for both text- and image-guided vector glyph generation. Through two-stage training (large-scale SVG syntax learning + expert label alignment), it directly generates editable SVG paths autoregressively without intermediate raster steps or vectorization post-pro
+  [CVPR 2026][Image Generation][Font Generation] VecGlypher is proposed as the first unified language model for both text- and image-guided vector glyph generation. Through two-stage training (large-scale SVG syntax learning + expert label alignment), it directly generates editable SVG paths autoregressively without intermediate raster steps or vectorization post-processing.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - SVG
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Font Generation"
+  - "Vector Graphics"
+  - "SVG"
+  - "Multimodal Language Models"
+  - "Typography"
 date: 2026-05-08
-content_hash: 7b6932d6d9fbc131
+content_hash: cf43c49bf0ff2dc9
 ---
+
 # VecGlypher: Unified Vector Glyph Generation with Language Models
 
 **Conference**: CVPR 2026  
@@ -133,14 +138,17 @@ The training objective is the standard next-token prediction cross-entropy loss 
 
 <div class="related-papers" markdown="1">
 
-1. **DeepVecFont-v2: Exploiting Hierarchical Graph Transformer for Typography** (CVPR 2023)
-2. **DualVector: Multi-modal Vector Font Generation** (SIGGRAPH 2024)
-3. **StarVector: Scaling SVG Generation with LLM** (arXiv 2024)
+## Related Papers
+
+- [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](unified_vector_floorplan_generation_via_markup_representation.md)
+- [\[CVPR 2026\] Rethinking Glyph Spatial Information in Font Generation](rethinking_glyph_spatial_information_in_font_generation.md)
+- [\[CVPR 2026\] UniVerse: Empower Unified Generation with Reasoning and Knowledge](universe_empower_unified_generation_with_reasoning_and_knowledge.md)
+- [\[CVPR 2026\] Unified Customized Generation by Disentangled Reward Modeling](unified_customized_generation_by_disentangled_reward_modeling.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Vector Floorplan Generation via Markup Representation](unified_vector_floorplan_generation_via_markup_representation.md)

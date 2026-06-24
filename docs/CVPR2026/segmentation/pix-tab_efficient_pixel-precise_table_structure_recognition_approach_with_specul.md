@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PIX-TAB: Efficient PIXel-Precise TABle Structure Recognition Approach with Speculative Decoding and Region-Based Image Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] PIX-TAB utilizes "Position-Aware Pixel-level (PAPP)" tokens to embed row/column pixel coordinates directly into the sequence, eliminating the need for a separate bounding box head during inference. Combined with analytical speculative decoding and a flood-fill-based Region-Based Image Segmentation (RBIS) for large tabl
+  [CVPR 2026][Segmentation][Table Structure Recognition] PIX-TAB utilizes "Position-Aware Pixel-level (PAPP)" tokens to embed row/column pixel coordinates directly into the sequence, eliminating the need for a separate bounding box head during inference. Combined with analytical speculative decoding and a flood-fill-based Region-Based Image Segmentation (RBIS) for large tables, this lightweight encoder-decoder model achieves over 3x speedup compared to full-scale versions while…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Table Structure Recognition"
+  - "pixel-level tokens"
+  - "speculative decoding"
+  - "region segmentation"
+  - "edge deployment"
 date: 2026-05-08
-content_hash: b62b37283d375a29
+content_hash: 67b738c0c2044305
 ---
+
 # PIX-TAB: Efficient PIXel-Precise TABle Structure Recognition Approach with Speculative Decoding and Region-Based Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -170,10 +176,10 @@ On the MarketingStyle subset (dense bordered tables) of SynthTabNet:
 ## Related Papers
 
 - [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2025\] 2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification](../../CVPR2025/segmentation/2dmamba_efficient_state_space_model_for_image_representation_with_applications_o.md)
+- [\[CVPR 2026\] Dual-level Adapter Boosting Prompt-free Curvilinear Structure Segmentation](dual-level_adapter_boosting_prompt-free_curvilinear_structure_segmentation.md)
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] Beyond Appearance: Camouflaged Object Detection via Geometric Structure](beyond_appearance_camouflaged_object_detection_via_geometric_structure.md)
-- [\[CVPR 2026\] Annotation-Efficient Coreset Selection for Context-dependent Segmentation](annotation-efficient_coreset_selection_for_context-dependent_segmentation.md)
-- [\[CVPR 2026\] LEMMA: Laplacian Pyramids for Efficient Marine Semantic Segmentation](lemma_laplacian_pyramids_for_efficient_marine_semantic_segmentation.md)
-- [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Important Example Mining for Reinforcement Finetuning
 description: >-
-  [CVPR 2026][LLM Reasoning][Paper Note] In each training step of RFT (GRPO/PPO, etc.), DIEM uses the "inner product between single-sample gradients and the total batch gradient" to estimate the marginal contribution of each sample to current policy improvement in real-time. It then solves a constrained optimization problem to reweight samples while maintaini
+  [CVPR 2026][Reasoning][Reinforcement Finetuning] In each training step of RFT (GRPO/PPO, etc.), DIEM uses the "inner product between single-sample gradients and the total batch gradient" to estimate the marginal contribution of each sample to current policy improvement in real-time. It then solves a constrained optimization problem to reweight samples while maintaining the gradient magnitude. With nearly zero extra overhead (+1.3% time), it improves multimodal reasoning bench…
 tags:
-  - CVPR 2026
-  - LLM Reasoning
+  - "CVPR 2026"
+  - "Reasoning"
+  - "Reinforcement Finetuning"
+  - "Data Selection"
+  - "Gradient Alignment"
+  - "Example Reweighting"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 50f223edb1d11746
+content_hash: 0961fd5958646a62
 ---
+
 # Dynamic Important Example Mining for Reinforcement Finetuning
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ MathVerse / Qwen2.5-VL-32B, full model score 58.0:
 
 ## Related Papers
 
+- [\[ICLR 2026\] A Simple "Motivation" Can Enhance Reinforcement Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/a_simple_motivation_can_enhance_reinforcement_finetuning_of_large_reasoning_mode.md)
 - [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
+- [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](../../ICLR2026/llm_reasoning/dynamic_early_exit_in_reasoning_models.md)
 - [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
-- [\[ACL 2026\] Step-GRPO: Internalizing Dynamic Early Exit for Efficient Reasoning](../../ACL2026/llm_reasoning/step-grpo_internalizing_dynamic_early_exit_for_efficient_reasoning.md)
-- [\[AAAI 2026\] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation](../../AAAI2026/llm_reasoning/intention_chain-of-thought_prompting_with_dynamic_routing_for_code_generation.md)
-- [\[ICML 2026\] Blending Supervised and Reinforcement Fine-Tuning with Prefix Sampling](../../ICML2026/llm_reasoning/blending_supervised_and_reinforcement_fine-tuning_with_prefix_sampling.md)
+- [\[ICLR 2026\] WavefrontDiffusion: Dynamic Decoding Schedule for Improved Reasoning](../../ICLR2026/llm_reasoning/wavefrontdiffusion_dynamic_decoding_schedule_for_improved_reasoning.md)
 
 </div>
 

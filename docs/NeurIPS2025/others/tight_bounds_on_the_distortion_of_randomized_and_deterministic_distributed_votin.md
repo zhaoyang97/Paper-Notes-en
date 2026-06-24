@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting
 description: >-
-  [NeurIPS 2025][metric distortion] This paper studies metric distortion in the distributed voting model. For four cost objectives ($\text{avg-avg}$, $\text{avg-max}$, $\text{max-avg}$, $\text{max-max}$)…
+  [NeurIPS 2025][metric distortion] This paper studies metric distortion in the distributed voting model. For four cost objectives ($\text{avg-avg}$, $\text{avg-max}$, $\text{max-avg}$, $\text{max-max}$), it establishes improved tight or near-tight bounds under both deterministic and randomized mechanisms, providing an almost complete characterization of distortion in this model.
 tags:
   - "NeurIPS 2025"
   - "metric distortion"
@@ -11,7 +11,7 @@ tags:
   - "randomized mechanisms"
   - "social choice"
 date: 2026-05-08
-content_hash: 47c19d6d125f0c5e
+content_hash: 7670316492b0bb67
 ---
 
 # Tight Bounds On the Distortion of Randomized and Deterministic Distributed Voting

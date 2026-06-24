@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Gated Tree Cross-Attention for Checkpoint-Compatible Syntax Injection in Decoder-Only LLMs
 description: >-
-  [ACL 2026][LLM Evaluation][GTCA] The authors attach a Gated Tree Cross-Attention side branch to frozen decoder-only LLMs (Qwen-2.5-7B, Llama-3-8B). An offline Berkeley parser pre-calculates constituency trees, which are indexed into chunk memory by height. Token hidden states retrieve residual updates from this memory via head-wise gated cross-attenti
+  [ACL 2026][LLM Evaluation][GTCA] The authors attach a Gated Tree Cross-Attention side branch to frozen decoder-only LLMs (Qwen-2.5-7B, Llama-3-8B). An offline Berkeley parser pre-calculates constituency trees, which are indexed into chunk memory by height. Token hidden states retrieve residual updates from this memory via head-wise gated cross-attention, combined with a token update mask and three-stage training to prevent interference. BLiMP accuracy improves from 78.58/79.9…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - GTCA
-  - checkpoint-compatible
-  - constituency chunk memory
-  - token update mask
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "GTCA"
+  - "syntax injection"
+  - "checkpoint-compatible"
+  - "constituency chunk memory"
+  - "token update mask"
 date: 2026-05-08
-content_hash: 12878a2ac6f1f648
+content_hash: 6d1d6d5e9f120642
 ---
+
 # Gated Tree Cross-Attention for Checkpoint-Compatible Syntax Injection in Decoder-Only LLMs
 
 **Conference**: ACL 2026  
@@ -138,9 +140,9 @@ Continued training utilizes standard language modeling loss with MCQA-friendly f
 
 - [\[ACL 2026\] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics](evaluating_legal_reasoning_traces_with_legal_issue_tree_rubrics.md)
 - [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
-- [\[ACL 2025\] CuLEmo: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding](../../ACL2025/llm_evaluation/culemo_cultural_lenses_on_emotion_-_benchmarking_llms_for_cross-cultural_emotion.md)
-- [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](../../NeurIPS2025/llm_evaluation/parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
 - [\[ICML 2026\] Who Flips? Self- and Cross-Model Counterarguments Reveal Answer Instability in LLMs](../../ICML2026/llm_evaluation/who_flips_self-_and_cross-model_counterarguments_reveal_answer_instability_in_ll.md)
+- [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](../../NeurIPS2025/llm_evaluation/parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
+- [\[ACL 2025\] CuLEmo: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding](../../ACL2025/llm_evaluation/culemo_cultural_lenses_on_emotion_-_benchmarking_llms_for_cross-cultural_emotion.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Inference Acceleration] Ours proposes RAEE, a training-free retrieval-augmented early exit framework. By retrieving exit information from semantically similar samples to dynamically determine the optimal exit layer, it not only accelerates inference but also corrects model mispredictions, achieving a win-win for both speed and performance.
+  [ICLR 2026][Information Retrieval & RAG][Early Exit] Ours proposes RAEE, a training-free retrieval-augmented early exit framework. By retrieving exit information from semantically similar samples to dynamically determine the optimal exit layer, it not only accelerates inference but also corrects model mispredictions, achieving a win-win for both speed and performance.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Early Exit"
+  - "Retrieval-Augmented"
+  - "Distribution Prediction"
+  - "Inference Acceleration"
+  - "Error Correction"
 date: 2026-05-08
-content_hash: 2d151a007a6ce8e9
+content_hash: cafc7c58cb45246b
 ---
+
 # RAEE: A Robust Retrieval-Augmented Early Exit Framework for Efficient Inference
 
 **Conference**: ICLR 2026  

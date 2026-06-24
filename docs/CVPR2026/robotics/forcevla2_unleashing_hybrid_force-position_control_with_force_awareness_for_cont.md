@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][[VLA] ForceVLA2 is proposed, the first end-to-end model within a VLA framework to unify force awareness and hybrid force-position control. By constructing cross-stage force-aware task concepts in VLMs via Force-based Prompts and adaptively fusing task semantics with real-time interactive forces through a Cross-Scale MoE, it
+  [CVPR 2026][Robotics][VLA] ForceVLA2 is proposed, the first end-to-end model within a VLA framework to unify force awareness and hybrid force-position control. By constructing cross-stage force-aware task concepts in VLMs via Force-based Prompts and adaptively fusing task semantics with real-time interactive forces through a Cross-Scale MoE, it achieves closed-loop force-position regulation. Across five contact-rich tasks, it achieves an average success rate of 66%…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - MoE
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Force Control"
+  - "Hybrid Force-Position Control"
+  - "MoE"
+  - "Contact-Rich Manipulation"
+  - "Force Awareness"
 date: 2026-05-08
-content_hash: 6b5d168c97fa749e
+content_hash: 1e80f8095786536a
 ---
+
 # ForceVLA2: Unleashing Hybrid Force-Position Control with Force Awareness for Contact-Rich Manipulation
 
 **Conference**: CVPR 2026  
@@ -151,16 +156,16 @@ The authors collected a dataset using a Flexiv Rizon 4s 7-DOF arm, a 6D force/to
 - **Value**: ⭐⭐⭐⭐⭐ (Shift in paradigm from perception to interaction for VLA deployment).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Hoi! - A Multimodal Dataset for Force-Grounded, Cross-View Articulated Manipulation](hoi_-_a_multimodal_dataset_for_force-grounded_cross-view_articulated_manipulatio.md)
+- [\[CVPR 2026\] FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction](force_transferable_visual_jailbreaking_attacks_via_feature_over_reliance_correct.md)
 - [\[CVPR 2026\] Contact-Aware Neural Dynamics](contact-aware_neural_dynamics.md)
-- [\[ICML 2025\] Geometric Contact Flows: Contactomorphisms for Dynamics and Control](../../ICML2025/robotics/geometric_contact_flows_contactomorphisms_for_dynamics_and_control.md)
 - [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
-- [\[CVPR 2026\] EgoRoC: Towards Egocentric Robotic Control via Task-Agnostic Visual Alignment](egoroc_towards_egocentric_robotic_control_via_task-agnostic_visual_alignment.md)
+- [\[CVPR 2026\] Unifying Perception and Action: A Hybrid-Modality Pipeline with Implicit Visual Chain-of-Thought for Robotic Action Generation (VITA)](unifying_perception_and_action_a_hybrid-modality_pipeline_with_implicit_visual_c.md)
 
 </div>
 

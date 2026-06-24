@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] Ours proposes CHIPS, a data selection method based on curvature-aware hybrid influence. It calculates Newton-style alignment scores in the CLIP endpoint subspace and combines them with learnability and domain relevance weights. With only 30% of the data, it matches the effect of continued pre-training (CPT) on the full
+  [CVPR 2026][Medical Imaging][CLIP Adaptation] Ours proposes CHIPS, a data selection method based on curvature-aware hybrid influence. It calculates Newton-style alignment scores in the CLIP endpoint subspace and combines them with learnability and domain relevance weights. With only 30% of the data, it matches the effect of continued pre-training (CPT) on the full dataset, achieving SOTA across 17 medical benchmarks.
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "CLIP Adaptation"
+  - "Data Selection"
+  - "Curvature-aware"
+  - "Continued Pre-training"
 date: 2026-05-08
-content_hash: d6709006a097d700
+content_hash: dbb4fd2b9d0adbdf
 ---
+
 # CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection
 
 **Conference**: CVPR 2026  

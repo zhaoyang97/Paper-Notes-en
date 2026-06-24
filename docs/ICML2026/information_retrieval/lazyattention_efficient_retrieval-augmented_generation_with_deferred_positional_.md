@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
 description: >-
-  [ICML 2026][Information Retrieval & RAG][vLLM] LazyAttention defers RoPE positional encoding from the KV cache write stage to on-the-fly execution within the attention kernel. This allows a single physical KV copy to be reused by any logical position. On skewed RAG workloads, it reduces TTFT by 1.37× and improves throughput by 1.40× compared to SOTA Block-Attention
+  [ICML 2026][Information Retrieval & RAG][KV cache reuse] LazyAttention defers RoPE positional encoding from the KV cache write stage to on-the-fly execution within the attention kernel. This allows a single physical KV copy to be reused by any logical position. On skewed RAG workloads, it reduces TTFT by 1.37× and improves throughput by 1.40× compared to SOTA Block-Attention, with negligible loss in generation quality.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - vLLM
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "KV cache reuse"
+  - "RoPE decoupling"
+  - "fused attention kernel"
+  - "position-agnostic cache"
+  - "vLLM"
 date: 2026-05-08
-content_hash: 7a1e71b23af8e736
+content_hash: deea70e26e48af70
 ---
+
 # LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding
 
 **Conference**: ICML 2026  
@@ -138,10 +143,10 @@ Single RAG request (5 × 4096-token documents + 64-token query, 3 documents hot)
 ## Related Papers
 
 - [\[ICLR 2026\] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation](../../ICLR2026/information_retrieval/bayesian_attention_mechanism_a_probabilistic_framework_for_positional_encoding_a.md)
+- [\[ICLR 2026\] HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation](../../ICLR2026/information_retrieval/hiprag_hierarchical_process_rewards_for_efficient_agentic_retrieval_augmented_ge.md)
+- [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](lare_low-attention_region_encoding_for_text-image_retrieval.md)
 - [\[ICML 2026\] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation](hierarchical_abstract_tree_for_cross-document_retrieval-augmented_generation.md)
 - [\[ICML 2026\] ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World](ml-embed_inclusive_and_efficient_embeddings_for_a_multilingual_world.md)
-- [\[ICML 2026\] Predictive Prefetching for Retrieval-Augmented Generation](predictive_prefetching_for_retrieval-augmented_generation.md)
-- [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](lare_low-attention_region_encoding_for_text-image_retrieval.md)
 
 </div>
 

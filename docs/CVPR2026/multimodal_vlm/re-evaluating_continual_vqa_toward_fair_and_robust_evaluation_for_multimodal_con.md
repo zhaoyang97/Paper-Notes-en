@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning
 description: >-
-  [CVPR 2026][Multimodal VLM][Knowledge Distillation] This paper identifies two structural flaws in existing Continual VQA benchmarks: "cross-task shared answer vocabularies" and "identical in-task train/test answer distributions," which lead to overestimating anti-forgetting capabilities. Consequently, the authors reconstruct the UCo-VQA benchmark, which enforces token-w
+  [CVPR 2026][Multimodal VLM][Continual Learning] This paper identifies two structural flaws in existing Continual VQA benchmarks: "cross-task shared answer vocabularies" and "identical in-task train/test answer distributions," which lead to overestimating anti-forgetting capabilities. Consequently, the authors reconstruct the UCo-VQA benchmark, which enforces token-wise mutually exclusive answer spaces and introduces in-task distribution shifts. Simultaneously…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "Visual Question Answering"
+  - "Benchmark Debiasing"
+  - "Knowledge Distillation"
+  - "Parameter-Efficient"
 date: 2026-05-08
-content_hash: c3331d7dfa33bbb2
+content_hash: b49e519e2c3c279a
 ---
+
 # Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning
 
 **Conference**: CVPR 2026  
@@ -126,8 +131,20 @@ Gradual addition of loss terms (on VQA v3·PS):
 - Value: ⭐⭐⭐⭐⭐ (Provides a more honest yardstick for the field.)
 
 <!-- RELATED:START -->
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)
+- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
+- [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
+- [\[CVPR 2026\] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models](pact_phase-like_transition_constraints_in_adapter-based_continual_learning_of_vi.md)
+- [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](../../NeurIPS2025/multimodal_vlm/continual_multimodal_contrastive_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Dynamic Modality Alignment in Multimodal Continual Learning](towards_dynamic_modality_alignment_in_multimodal_continual_learning.md)

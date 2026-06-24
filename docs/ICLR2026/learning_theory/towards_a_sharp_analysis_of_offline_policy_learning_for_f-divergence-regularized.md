@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the **weakest data coverage conditions** required for offline $f$-divergence regularized contextual bandits to achieve an $\widetilde{\Theta}(\epsilon^{-1})$ sample complexity under a regularized objective. For the most commonly used inverse KL regularization, a new pessimistic estimation analysis a
+  [ICLR 2026][Learning Theory][Offline policy learning] This paper provides the **weakest data coverage conditions** required for offline $f$-divergence regularized contextual bandits to achieve an $\widetilde{\Theta}(\epsilon^{-1})$ sample complexity under a regularized objective. For the most commonly used inverse KL regularization, a new pessimistic estimation analysis achieves $\widetilde{O}(\epsilon^{-1})$ under **single-policy concentrability** for the first time…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Offline Reinforcement Learning"
+  - "Contextual Bandits"
+  - "Offline policy learning"
+  - "f-divergence regularization"
+  - "sample complexity"
+  - "concentrability"
+  - "pessimism"
 date: 2026-05-08
-content_hash: b18ae174e656ebd6
+content_hash: c123578f8bec3587
 ---
+
 # Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits
 
 **Conference**: ICLR 2026  
@@ -149,9 +157,9 @@ Tested on the hard instances (two-armed bandits) constructed in the proofs of Th
 ## Related Papers
 
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 - [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
-- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 - [\[ICLR 2026\] Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis](best-of-n_through_the_smoothing_lens_kl_divergence_and_regret_analysis.md)
 
 </div>

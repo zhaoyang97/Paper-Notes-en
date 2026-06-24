@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] UniGeoRS constructs the first cross-view geo-localization (CVGL) benchmark (1154 targets, approximately 140,000 images) that unifies satellite, UAV, and ground views while mixing real and synthetic imagery. It further proposes CAME, a plug-and-play two-stage re-ranking module that utilizes Rank Distance and cross-atten
+  [CVPR 2026][Remote Sensing][Cross-View Geo-Localization] UniGeoRS constructs the first cross-view geo-localization (CVGL) benchmark (1154 targets, approximately 140,000 images) that unifies satellite, UAV, and ground views while mixing real and synthetic imagery. It further proposes CAME, a plug-and-play two-stage re-ranking module that utilizes Rank Distance and cross-attention to mine inter-platform and intra-platform relationships within candidate sets…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Cross-View Geo-Localization"
+  - "Tri-view Dataset"
+  - "Satellite-UAV-Ground"
+  - "Cross-Attention Re-ranking"
+  - "Real+Synthetic data"
 date: 2026-05-08
-content_hash: c9310cb9d2459529
+content_hash: 79b667a9bf7344cd
 ---
+
 # UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Overall AP gains are most significant in "high-altitude↔ground" directions (Dr
 
 ## Related Papers
 
+- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
 - [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
+- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 - [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
 - [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)
-- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
-- [\[AAAI 2026\] UniABG: Unified Adversarial View Bridging and Graph Correspondence for Unsupervised Cross-View Geo-Localization](../../AAAI2026/remote_sensing/uniabg_unified_adversarial_view_bridging_and_graph_correspondence_for_unsupervis.md)
 
 </div>
 

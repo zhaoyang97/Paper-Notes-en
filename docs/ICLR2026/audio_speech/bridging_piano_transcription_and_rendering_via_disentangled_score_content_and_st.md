@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bridging Piano Transcription and Rendering via Disentangled Score Content and Style
 description: >-
-  [ICLR 2026][Audio & Speech][Seq2Seq] This paper unifies the inverse tasks of Expressive Performance Rendering (EPR, score-to-performance) and Automatic Piano Transcription (APT, performance-to-score) into a single Transformer Seq2Seq framework. By disentangling "note-level score content" and "global performance style" to achieve bidirectional modeling, an
+  [ICLR 2026][Audio & Speech][Expressive Performance Rendering (EPR)] This paper unifies the inverse tasks of Expressive Performance Rendering (EPR, score-to-performance) and Automatic Piano Transcription (APT, performance-to-score) into a single Transformer Seq2Seq framework. By disentangling "note-level score content" and "global performance style" to achieve bidirectional modeling, and training an additional diffusion model to recommend appropriate styles directly from the s…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Seq2Seq
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Expressive Performance Rendering (EPR)"
+  - "Automatic Piano Transcription (APT)"
+  - "Content-Style Disentanglement"
+  - "Seq2Seq"
+  - "Diffusion Style Recommendation"
 date: 2026-05-08
-content_hash: 458b6512a268c1a1
+content_hash: 02fc74d8f201f8e5
 ---
+
 # Bridging Piano Transcription and Rendering via Disentangled Score Content and Style
 
 **Conference**: ICLR 2026  
@@ -122,9 +127,9 @@ Datasets: ASAP (967 high-quality paired sequences, 8:1:1 split) for paired train
 
 - [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](../../ACL2026/audio_speech/fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
 - [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
+- [\[ICLR 2026\] TVTSyn: Content-Synchronized Time-Varying Timbre for Streaming Voice Conversion and Anonymization](tvtsyn_content-synchronous_time-varying_timbre_for_streaming_voice_conversion_an.md)
 - [\[ACL 2026\] MSU-Bench: Musical Score Understanding Benchmark](../../ACL2026/audio_speech/musical_score_understanding_benchmark_evaluating_large_language_models39_compreh.md)
 - [\[ICLR 2026\] FlexiVoice: Enabling Flexible Style Control in Zero-Shot TTS with Natural Language Instructions](flexivoice_enabling_flexible_style_control_in_zero-shot_tts_with_natural_languag.md)
-- [\[ACL 2026\] Style Amnesia: Investigating Speaking Style Degradation and Mitigation in Multi-Turn Spoken Language Models](../../ACL2026/audio_speech/style_amnesia_investigating_speaking_style_degradation_and_mitigation_in_multi-t.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing
 description: >-
-  [3D Vision] MeshPad decomposes sketch-driven 3D mesh creation and editing into two sub-tasks—addition and deletion—based on a triangle sequence representation and Transformer autoregressive generation. It further propose…
+  [3D Vision] MeshPad decomposes sketch-driven 3D mesh creation and editing into two sub-tasks—addition and deletion—based on a triangle sequence representation and Transformer autoregressive generation. It further proposes a vertex-aligned speculative decoder achieving a 2.2× speedup, enabling interactive mesh editing within seconds.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: a4958992a134d4a8
+content_hash: d45cabfa78de0357
 ---
 
 # MeshPad: Interactive Sketch-Conditioned Artist-Reminiscent Mesh Generation and Editing

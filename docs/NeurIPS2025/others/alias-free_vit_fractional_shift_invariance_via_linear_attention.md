@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Alias-Free ViT: Fractional Shift Invariance via Linear Attention
 description: >-
-  [NeurIPS 2025][shift invariance] This paper proposes the Alias-Free Vision Transformer (AFT), which combines anti-aliasing signal processing techniques with shift-equivariant linear cross-covariance attention…
+  [NeurIPS 2025][shift invariance] This paper proposes the Alias-Free Vision Transformer (AFT), which combines anti-aliasing signal processing techniques with shift-equivariant linear cross-covariance attention, achieving near-perfect consistency (~99%) under fractional (sub-pixel) shifts for the first time, with negligible degradation in ImageNet classification accuracy.
 tags:
   - "NeurIPS 2025"
   - "shift invariance"
@@ -11,7 +11,7 @@ tags:
   - "sub-pixel shift"
   - "shift equivariance"
 date: 2026-05-08
-content_hash: 17e87b6e2585fba3
+content_hash: 17acaa5e3734a403
 ---
 
 # Alias-Free ViT: Fractional Shift Invariance via Linear Attention
@@ -127,11 +127,11 @@ Building on the XCiT architecture, the authors systematically replace every non-
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
 - [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](../../ICML2026/others/test-time_training_with_kv_binding_is_secretly_linear_attention.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
+- [\[NeurIPS 2025\] Normalization in Attention Dynamics](normalization_in_attention_dynamics.md)
 - [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
-- [\[NeurIPS 2025\] Recurrent Self-Attention Dynamics: An Energy-Agnostic Perspective from Jacobians](recurrent_self-attention_dynamics_an_energy-agnostic_perspective_from_jacobians.md)
+- [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](position_there_is_no_free_bayesian_uncertainty_quantification.md)
+- [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
 
 </div>
 

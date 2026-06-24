@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] AlignFlow utilizes Semi-Discrete Optimal Transport (SDOT) to pre-calculate a deterministic "noise distribution $\rightarrow$ full dataset" alignment mapping before training. This serves as a plug-and-play coupling for various flow generative models, achieving straighter trajectories, faster convergence, and comprehensi
+  [ICLR2026][Image Generation][Flow Generative Models] AlignFlow utilizes Semi-Discrete Optimal Transport (SDOT) to pre-calculate a deterministic "noise distribution $\rightarrow$ full dataset" alignment mapping before training. This serves as a plug-and-play coupling for various flow generative models, achieving straighter trajectories, faster convergence, and comprehensive FID reductions with less than 1% additional overhead.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Flow Generative Models"
+  - "Optimal Transport"
+  - "Semi-Discrete Optimal Transport"
+  - "Noise-Data Alignment"
+  - "Trajectory Straightening"
 date: 2026-05-08
-content_hash: 3be0779ae67ecc9a
+content_hash: 976e0d893f764ba5
 ---
+
 # AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport
 
 **Conference**: ICLR2026  
@@ -141,15 +147,15 @@ On ImageNet256 using SiT + MeanFlow for one-step generation (NFE=1), AlignFlow c
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](../../ICCV2025/image_generation/the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
 - [\[ICLR 2026\] Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport](entering_the_era_of_discrete_diffusion_models_a_benchmark_for_schrödinger_bridge.md)
 - [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](../../ICML2026/image_generation/pareto-guided_optimal_transport_for_multi-reward_alignment.md)
-- [\[ICLR 2026\] Constantly Improving Image Models Need Constantly Improving Benchmarks](constantly_improving_image_models_need_constantly_improving_benchmarks.md)
-- [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](../../NeurIPS2025/image_generation/on_the_relation_between_rectified_flows_and_optimal_transport.md)
+- [\[ICLR 2026\] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value](diagnosing_and_improving_diffusion_models_by_estimating_the_optimal_loss_value.md)
+- [\[NeurIPS 2025\] Counterfactual Identifiability via Dynamic Optimal Transport](../../NeurIPS2025/image_generation/counterfactual_identifiability_via_dynamic_optimal_transport.md)
 
 </div>
 

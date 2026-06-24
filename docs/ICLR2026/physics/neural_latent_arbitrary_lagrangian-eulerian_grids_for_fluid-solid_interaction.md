@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Neural Latent Arbitrary Lagrangian-Eulerian Grids for Fluid-Solid Interaction
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Arbitrary Lagrangian-Eulerian] Fisale integrates the classical numerical ALE (Arbitrary Lagrangian-Eulerian) grids and partitioned coupling algorithms into neural networks. It uses multi-scale "latent ALE grids" to provide a unified geometry-aware representation for fluids, solids, and coupling interfaces. By decomposing the bidirectional FSI into f
+  [ICLR 2026][Physics & Scientific Computing][Fluid-Solid Interaction (FSI)] Fisale integrates the classical numerical ALE (Arbitrary Lagrangian-Eulerian) grids and partitioned coupling algorithms into neural networks. It uses multi-scale "latent ALE grids" to provide a unified geometry-aware representation for fluids, solids, and coupling interfaces. By decomposing the bidirectional FSI into four iterative sub-steps via the Partitioned Coupling Module (PCM)—"update solid → upd…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Arbitrary Lagrangian-Eulerian
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Fluid-Solid Interaction (FSI)"
+  - "Arbitrary Lagrangian-Eulerian"
+  - "Partitioned Coupling"
+  - "Neural Operator"
+  - "Multi-scale Latent Space Grid"
 date: 2026-05-08
-content_hash: a701d9f8ff1f2b9f
+content_hash: bf629c44cf8b6eef
 ---
+
 # Neural Latent Arbitrary Lagrangian-Eulerian Grids for Fluid-Solid Interaction
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Redundant Queries in DETR-Based 3D Detection: Unnecessary and Prunable
 description: >-
-  [AAAI 2026][3D Vision][3D Object Detection] This paper proposes GPQ (Gradually Pruning Queries), a method that progressively prunes redundant object queries in DETR-based 3D detectors using classification scores. Without…
+  [AAAI 2026][3D Vision][3D Object Detection] Proposes GPQ (Gradually Pruning Queries) to progressively prune a large number of redundant object queries in DETR-based 3D detectors based on classification scores. Removing queries requires no extra learnable parameters and can be directly accomplished by fine-tuning on pre-trained checkpoints, achieving up to a 67.86% FLOPs reduction and a 65.16% inference time reduction on edge devices.
 tags:
   - "AAAI 2026"
   - "3D Vision"
@@ -12,139 +12,139 @@ tags:
   - "Model Compression"
   - "Autonomous Driving"
 date: 2026-05-08
-content_hash: 6487c121b7750821
+content_hash: c6ee84466c2c3b7a
 ---
 
 # Redundant Queries in DETR-Based 3D Detection: Unnecessary and Prunable
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2412.02054](https://arxiv.org/abs/2412.02054)  
 **Code**: To be confirmed  
-**Area**: 3D Vision / 3D Object Detection
+**Area**: 3D Vision / 3D Object Detection  
 **Keywords**: 3D Object Detection, DETR, Query Pruning, Model Compression, Autonomous Driving
 
 ## TL;DR
 
-This paper proposes GPQ (Gradually Pruning Queries), a method that progressively prunes redundant object queries in DETR-based 3D detectors using classification scores. Without introducing any additional learnable parameters, GPQ can be applied as a fine-tuning step directly on pretrained checkpoints, achieving up to 67.86% FLOPs reduction and 65.16% inference time reduction on edge devices.
+Proposes GPQ (Gradually Pruning Queries) to progressively prune a large number of redundant object queries in DETR-based 3D detectors based on classification scores. Removing queries requires no extra learnable parameters and can be directly accomplished by fine-tuning on pre-trained checkpoints, achieving up to a 67.86% FLOPs reduction and a 65.16% inference time reduction on edge devices.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-DETR-based methods are widely adopted in 3D object detection, relying on predefined object queries that interact with image features through transformer layers to produce detection results. However, these methods typically require far more queries than the actual number of targets (e.g., 900 queries), whereas scenes such as nuScenes rarely contain more than 100 objects. This results in a positive-to-negative sample ratio as high as 8:1, where a large number of queries are repeatedly assigned as negatives during Hungarian matching, causing their classification scores to be continuously suppressed.
+DETR-based methods are widely used in 3D object detection. Their core mechanism generates detection results by interacting predefined object queries with image features in transformer layers. However, these methods typically require setting a number of queries (e.g., 900) that far exceeds the actual number of target objects, such as in nuScenes where target objects usually do not exceed 100. This results in a negative-to-positive sample ratio of up to 8:1, meaning a massive amount of queries are repeatedly matched as negative samples during Hungarian matching, consistently suppressing their classification scores.
 
-### Core Observation
+### Key Observation
 
-The authors analyze the selection frequency of each query at inference time across methods including PETR, PETRv2, FocalPETR, and StreamPETR. The distribution is found to be highly skewed: a small number of queries account for the vast majority of detections, while many queries are almost never selected as final predictions — with some queries in PETR never being selected at all.
+The authors analyzed the frequency at which each query is selected as the final prediction during inference in methods like PETR, PETRv2, FocalPETR, and StreamPETR, revealing an extremely imbalanced distribution: a small subset of queries handles the vast majority of detection tasks, whereas many queries are almost never selected, and some queries in PETR are never selected at all.
 
 ### Limitations of Prior Work
 
-Conventional transformer pruning methods (e.g., attention head pruning, token pruning) cannot be directly applied to 3D object detection:
+Traditional transformer pruning methods (such as attention head pruning and token pruning) are difficult to apply directly to 3D detection:
 
-- **No prunable targets**: Attention heads in 3D detection are implemented via reshaping, so changing their count does not affect computation.
-- **Structural mismatch**: Query and key dimensions are unequal in 3D detection ($N_q \neq N_k$), making the attention matrix non-square.
-- **Scale discrepancy**: The number of tokens in 3D detection (at least 4,000) is far larger than in ViT (fewer than 200), making token pruning prohibitively expensive.
+- **Non-existent pruning targets**: Attention heads in 3D detection are implemented via reshaping, and modifying their count does not reduce the computational cost.
+- **Structural inconsistency**: In 3D detection, the query and key dimensions are unequal ($N_q \neq N_k$), making the attention matrix non-square.
+- **Token difference**: 3D detection generates significantly more tokens than ViTs (at least 4000 vs. less than 200), making the overhead of token pruning prohibitively high.
 
 ## Method
 
 ### Mechanism
 
-Each query is treated as the minimal pruning unit, with its classification score used as the pruning criterion. Queries with the lowest classification scores contribute the least and are removed first.
+Each query is treated as the minimal pruning unit, with the classification score as the pruning metric. Queries with the lowest classification scores contribute the least and are prioritized for removal.
 
-### GPQ Algorithm
+### GPQ Algorithm Pipeline
 
-1. **Load pretrained checkpoint**: Start from a trained model with a large number of queries.
-2. **Standard forward pass**: Obtain per-query classification scores after each iteration.
-3. **Periodic pruning**: Every $n$ iterations, identify queries with the lowest classification scores and permanently remove them.
-4. **Repeat until target count**: Gradually reduce the query count from $N_q$ to $N_q'$.
+1. **Load pretrained checkpoint**: Start from a trained model containing a large number of queries.
+2. **Normal forward propagation**: Obtain classification scores for each query after each iteration.
+3. **Periodic pruning**: Trigger pruning every $n$ iterations to select and permanently remove queries with the lowest classification scores.
+4. **Repeat until target number**: Gradually reduce the query count from the initial $N_q$ to $N_q'$.
 
-The entire process introduces no additional learnable parameters and requires no learnable binary masks, completing within a few epochs.
+The entire process introduces no extra learnable parameters nor requires learnable binary masks, and can be completed within a few epochs.
 
 ### Theoretical Analysis: Why Pruning Works
 
-The key property is the independence among queries. In MLP and cross-attention layers, the query matrix $Q$ appears only once; by the row-independence property of matrix multiplication ($AB \equiv \text{Concat}_{i}(A_i B)$), removing a row does not affect the results of other rows. The only coupling arises in self-attention, where $Q$ serves simultaneously as query, key, and value. The authors argue that self-attention's indirect sampling of image features has far less impact than the direct interaction in cross-attention, so removing low-contribution queries introduces minimal interference.
+The independence between queries is crucial. In MLPs and cross-attention, the query matrix $Q$ appears only once. Due to the row independence of matrix multiplication ($AB \equiv \text{Concat}_{i}(A_i B)$), deleting a row does not affect the results of other rows. The only impact comes from self-attention, where $Q$ acts as query, key, and value simultaneously. However, the authors demonstrate that the indirect sampling effect of self-attention on image features is much smaller than the direct interaction of cross-attention, and thus removing low-contribution queries introduces minimal disturbance.
 
-### Why Not Train with Fewer Queries Directly
+### Why Not Train Directly with Fewer Queries
 
-The authors visualize reference point distributions: queries pruned from 900 to 300 retain a compact, well-organized distribution (inheriting knowledge from large-scale training), whereas training from scratch with 300 queries yields a scattered distribution with weaker representational capacity. GPQ also enables flexible generation of multiple lightweight model variants from a single checkpoint.
+The authors visualized the distribution of reference points: queries pruned from 900 to 300 still maintain a clustered and organized distribution (inheriting the knowledge of large-scale training), whereas directly training with 300 queries results in a scattered distribution and weaker representation ability. GPQ also allows for flexibly generating model variants with different query counts from a single checkpoint.
 
 ## Key Experimental Results
 
 ### Experimental Setup
 
-- **Dataset**: nuScenes (23,000+ samples, 6 surround-view cameras, 10 categories)
+- **Dataset**: nuScenes (23,000+ samples, 6 multi-view cameras, 10 categories)
 - **Detectors**: DETR3D, PETR, PETRv2, FocalPETR, StreamPETR, RayDN
-- **Metrics**: mAP, NDS, error metrics (mATE/mASE/mAOE/mAVE/mAAE), FPS, GFLOPs
+- **Evaluation Metrics**: mAP, NDS, various error metrics (mATE/mASE/mAOE/mAVE/mAAE), FPS, GFLOPs
 
 ### Main Results (Table 2)
 
 | Model | Backbone | Queries | mAP | NDS | FPS |
-|-------|----------|---------|-----|-----|-----|
+|------|----------|---------|-----|-----|-----|
 | PETR | ResNet50 | 900/- | 31.74% | 0.3668 | 6.9 |
-| PETR | ResNet50 | 300/- (from scratch) | 31.19% | 0.3536 | 8.9 |
+| PETR | ResNet50 | 300/- (Scratch) | 31.19% | 0.3536 | 8.9 |
 | PETR | ResNet50 | 900→300 (GPQ) | **32.85%** | **0.3884** | 8.9 |
 | PETR | ResNet50 | 900→150 (GPQ) | 30.52% | 0.3671 | 9.3 |
 | StreamPETR | ResNet50 | 900/- | 37.83% | 0.4734 | 16.1 |
-| StreamPETR | ResNet50 | 300/- (from scratch) | 33.62% | 0.4429 | 18.5 |
+| StreamPETR | ResNet50 | 300/- (Scratch) | 33.62% | 0.4429 | 18.5 |
 | StreamPETR | ResNet50 | 900→300 (GPQ) | **39.42%** | **0.4941** | 18.7 |
 | FocalPETR | ResNet50 | 900/- | 32.44% | 0.3752 | 16.4 |
 | FocalPETR | ResNet50 | 900→300 (GPQ) | **33.17%** | **0.3925** | 19.6 |
 
-Notably, applying GPQ to prune from 900 to 300 queries in PETR, FocalPETR, and StreamPETR yields mAP that **surpasses** the baseline trained from scratch with 900 queries. PETR achieves a 1.35× speedup.
+Key findings: After pruning 900 queries to 300 via GPQ, model performances in PETR, FocalPETR, and StreamPETR even **surpass** the baseline trained from scratch with 900 queries. PETR achieves an acceleration of up to 1.35x.
 
-### Edge Deployment Results (Table 3 — Jetson Nano B01)
+### Edge Device Deployment Results (Table 3 - Jetson Nano B01)
 
-| Model | Backbone | Queries | GFLOPs | Latency (ms) | FLOPs Reduction | Latency Reduction |
-|-------|----------|---------|--------|--------------|-----------------|-------------------|
-| StreamPETR | ResNet18 | 900 | 172.08 | 1520 | — | — |
+| Model | Backbone | Queries | GFLOPs | Time (ms) | FLOPs Reduction | Time Reduction |
+|------|----------|---------|--------|----------|-----------|---------|
+| StreamPETR | ResNet18 | 900 | 172.08 | 1520 | - | - |
 | StreamPETR | ResNet18 | 900→300 | 123.90 | 916 | 28.00% | 39.74% |
 | StreamPETR | ResNet18 | 900→150 | 112.51 | 791 | 34.62% | 47.96% |
-| StreamPETR | w/o backbone | 900 | 87.78 | 1030 | — | — |
+| StreamPETR | w/o backbone | 900 | 87.78 | 1030 | - | - |
 | StreamPETR | w/o backbone | 900→150 | 28.21 | 359 | **67.86%** | **65.16%** |
 
-Acceleration is most pronounced in the pure transformer component (without backbone), confirming that GPQ precisely targets the computational bottleneck.
+After removing the backbone, the speedup of the pure transformer part is even more significant, demonstrating that GPQ operates precisely on the computational bottleneck.
 
 ## Ablation Study
 
-- **Pruning criterion** (Table 5): Pruning by highest classification score (GPQ-H) causes significant performance degradation (mAP 34.34%); pruning by matching cost (GPQ-C) achieves 38.78%; GPQ's lowest-score criterion performs best (39.42%).
-- **Gradual vs. one-shot pruning**: Removing 600 queries at once (GPQ-1) yields only 35.71% mAP, far below the gradual strategy (39.42%), validating the necessity of progressive pruning.
-- **Comparison with other methods** (Table 4): ToMe (token merging) actually slows down 3D detection due to the large overhead of computing the similarity matrix; GBC provides speedup but at the cost of detection accuracy; GPQ achieves favorable trade-offs on both dimensions.
-- **Fully converged models** (Table 6): Applying GPQ to a StreamPETR model trained for 90 epochs still outperforms a model trained from scratch with 300 queries for 90 epochs.
-- **Pruning during training** (Table 7): GPQ can be applied concurrently with training, without requiring a fully trained model as a prerequisite.
+- **Pruning Metrics** (Table 5): Pruning by highest classification score (GPQ-H) leads to a significant performance drop (34.34% mAP); pruning by matching cost (GPQ-C) achieves 38.78%, while the original GPQ pruning by lowest classification score is optimal (39.42%).
+- **Progressive vs. One-step Pruning**: Pruning 600 queries at once (GPQ-1) yields an mAP of only 35.71%, far below the progressive strategy's 39.42%, verifying the necessity of gradual pruning.
+- **Comparison with Other Methods** (Table 4): ToMe (token merging) actually slows down in 3D detection (due to the excessive overhead of similarity matrix computation), and GBC achieves speedup but drops in detection accuracy; GPQ balances both speed and accuracy.
+- **Fully Converged Model** (Table 6): Applying GPQ to StreamPETR trained for 90 epochs shows that the 300-query variant still outperforms the 300-query model trained from scratch for 90 epochs.
+- **Training-Synchronized Pruning** (Table 7): GPQ can be executed synchronously during the training process, bypassing the need for a full training phase before pruning.
 
 ## Highlights & Insights
 
-- **Minimalist yet effective**: Without introducing any learnable parameters, GPQ achieves lossless or even improved query pruning through simple score-based ranking and progressive removal.
-- **Plug-and-play**: Applicable as a fine-tuning step to pretrained checkpoints of any DETR-based detector; a single checkpoint can export multiple lightweight model variants.
-- **First systematic study of query redundancy**: The paper characterizes the highly imbalanced query selection frequency in 3D detection and addresses a previously overlooked problem.
-- **Edge-deployment friendly**: Significant practical speedups are demonstrated on the Jetson Nano platform.
+- **Simple yet Effective**: It introduces zero learnable parameters, relying solely on classification score ranking and progressive removal to achieve query pruning with no performance loss, or even minor gains.
+- **Plug-and-Play**: Acting as a fine-tuning step, it can be directly applied to pre-trained checkpoints of any DETR-based detector. Multiple lightweight variants can be flexibly exported from a single checkpoint.
+- **First to Focus on Query Redundancy**: This work systematically analyzes the imbalanced query selection frequency in 3D detection, filling a gap in this research direction.
+- **Edge Deployment Friendly**: Significant practical latency reduction is validated on Jetson Nano.
 
 ## Limitations & Future Work
 
-- Validation is limited to the nuScenes dataset; other 3D detection benchmarks such as Waymo and KITTI are not evaluated.
-- The method relies on classification scores as the pruning criterion, which may be less effective when score distributions are more uniform.
-- Spatial coverage of queries is not considered; score-only pruning may leave certain spatial regions underrepresented.
-- Edge device experiments use random dummy inputs rather than real data; actual inference speedups may be affected by I/O and other factors.
-- Generalizability to 2D detection (e.g., ConditionalDETR) is only preliminarily verified and warrants broader validation.
+- The method is only validated on the nuScenes dataset, without covering other 3D detection benchmarks like Waymo or KITTI.
+- The approach relies on classification scores as the pruning metric, which might drop in performance for scenarios where classification scores are uniformly distributed.
+- It does not consider the spatial distribution of queries—only pruning based on scores might lead to insufficient coverage in certain spatial regions.
+- Edge device experiments use random dummy inputs instead of real data; actual inference acceleration may be affected by I/O and other factors.
+- Only preliminary validation is performed on 2D detection (ConditionalDETR), and its generalizability awaits more comprehensive verification.
 
 ## Related Work & Insights
 
-- **DETR-based 3D detectors**: PETR, PETRv2, StreamPETR, FocalPETR, Far3D, DETR3D, etc., all use predefined queries to interact with image features.
-- **Transformer pruning**: Attention head pruning (Michel et al.), stochastic layer dropping (Fan et al.), sparsity in ViT (Chen et al.), joint width-depth pruning (ZipLM), token pruning (EViT), etc.
-- **Token Merging/Pruning**: ToMe (ICLR 2023) merges similar tokens but incurs excessive overhead in 3D detection due to the large token count.
-- **GBC** (ICCV 2025): Provides speedup but leads to accuracy degradation.
+- **DETR-based 3D Detectors**: PETR, PETRv2, StreamPETR, FocalPETR, Far3D, DETR3D, etc., all of which interact predefined queries with image features.
+- **Transformer Pruning Methods**: Attention head pruning (Michel et al.), layer random dropping (Fan et al.), ViT sparsity exploration (Chen et al.), joint width and depth pruning (ZipLM), token pruning (EViT), etc.
+- **Token Merging/Pruning**: ToMe (ICLR 2023) merges similar tokens but incurs excessive overhead in 3D detection due to the massive number of tokens.
+- **GBC** (ICCV 2025): Provides speedup but leads to a drop in detection accuracy.
 
 ## Rating
 
 | Dimension | Score |
-|-----------|-------|
+|------|------|
 | Novelty | ⭐⭐⭐ |
 | Theoretical Depth | ⭐⭐⭐ |
 | Experimental Thoroughness | ⭐⭐⭐⭐ |
 | Value | ⭐⭐⭐⭐⭐ |
 | Writing Quality | ⭐⭐⭐⭐ |
 
-Overall: ⭐⭐⭐⭐ — The method is minimalist yet addresses a practical pain point. Experiments cover multiple detectors and deployment scenarios, offering direct reference value for industrial deployment of DETR-based detectors. The primary novelty lies in the observation of query redundancy and its systematic empirical validation, while the technical contribution itself is relatively straightforward.
+Overall Rating: ⭐⭐⭐⭐ — The method is extremely simple yet directly targets realistic bottlenecks. The experiments cover a variety of detectors and deployment scenarios, providing direct reference value for industrial deployment of DETR-based detectors. The novelty mainly lies in the observation of "identifying and systematically verifying query redundancy", while the technique itself is relatively straightforward.
 
 <!-- RELATED:START -->
 
@@ -152,8 +152,8 @@ Overall: ⭐⭐⭐⭐ — The method is minimalist yet addresses a practical pai
 
 ## Related Papers
 
+- [\[ECCV 2024\] SEED: A Simple and Effective 3D DETR in Point Clouds](../../ECCV2024/3d_vision/seed_a_simple_and_effective_3d_detr_in_point_clouds.md)
 - [\[AAAI 2026\] MonoCLUE: Object-Aware Clustering Enhances Monocular 3D Object Detection](monoclue_object-aware_clustering_enhances_monocular_3d_object_detection.md)
-- [\[AAAI 2026\] Real-Time 3D Object Detection with Inference-Aligned Learning](real-time_3d_object_detection_with_inference-aligned_learning.md)
 - [\[AAAI 2026\] Distilling Future Temporal Knowledge with Masked Feature Reconstruction for 3D Object Detection](distilling_future_temporal_knowledge_with_masked_feature_reconstruction_for_3d_o.md)
 - [\[AAAI 2026\] Multi-Modal Assistance for Unsupervised Domain Adaptation on Point Cloud 3D Object Detection](multi-modal_assistance_for_unsupervised_domain_adaptation_on_point_cloud_3d_obje.md)
 - [\[AAAI 2026\] Griffin: Aerial-Ground Cooperative Detection and Tracking Dataset and Benchmark](griffin_aerial-ground_cooperative_detection_and_tracking_dataset_and_benchmark.md)

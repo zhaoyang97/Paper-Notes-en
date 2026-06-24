@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Inventory Optimization in Non-Stationary Environment
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes a "two-stage projection + doubling trick" algorithm for Online Inventory Optimization (OIO) under non-stationary demand. By transforming the inventory carry-over constraint into a switching cost proportional to the sell-out period, the authors reduce OIO to Smoothed Online Convex Optimization (SOCO)
+  [ICLR 2026][Learning Theory][Online Inventory Optimization] This paper proposes a "two-stage projection + doubling trick" algorithm for Online Inventory Optimization (OIO) under non-stationary demand. By transforming the inventory carry-over constraint into a switching cost proportional to the sell-out period, the authors reduce OIO to Smoothed Online Convex Optimization (SOCO). They provide the first near-optimal dynamic regret bound of $\tilde{O}(\sqrt{L_{\max}T(1+P_T)})$ a…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Convex Optimization"
+  - "Online Inventory Optimization"
+  - "Dynamic Regret"
+  - "Smoothed Online Optimization"
+  - "Switching Cost"
 date: 2026-05-08
-content_hash: 0c7d619e335228d7
+content_hash: 59cb6f5e7ecdd4b7
 ---
+
 # Online Inventory Optimization in Non-Stationary Environment
 
 **Conference**: ICLR 2026  
@@ -138,7 +144,7 @@ The table compares literature results, converting demand parameters to the $L_{\
 - [\[ICLR 2026\] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees](scalable_random_wavelet_features_efficient_non-stationary_kernel_approximation_w.md)
 - [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
 - [\[ICLR 2026\] Non-Asymptotic Analysis of (Sticky) Track-and-Stop](non-asymptotic_analysis_of_sticky_track-and-stop.md)
-- [\[ICLR 2026\] Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint](pseudo-non-linear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
+- [\[ICLR 2026\] Online Decision-Focused Learning](online_decision-focused_learning.md)
 
 </div>
 

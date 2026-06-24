@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers
 description: >-
-  [AAAI2026][Model Compression][class-incremental learning] This paper proposes Sequential Learning with Drift Compensation (SLDC), which learns latent space transformation operators (linear / weakly nonlinear) to compensa…
+  [AAAI2026][Model Compression][class-incremental learning] This paper proposes Sequential Learning with Drift Compensation (SLDC), which learns latent space transformation operators (linear / weakly nonlinear) to compensate for distribution drifts induced by sequential fine-tuning of pre-trained ViTs in class-incremental learning. Combined with knowledge distillation, the approach achieves performance close to the joint-training upper bound.
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "knowledge distillation"
   - "sequential fine-tuning"
 date: 2026-05-08
-content_hash: 099bf7afca6aa341
+content_hash: 69312bd9e4ffad17
 ---
 
 # Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers
@@ -158,7 +158,7 @@ The core advantage of SLDC lies in explicitly modeling the evolution of the feat
 - [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
 - [\[ICCV 2025\] Integrating Task-Specific and Universal Adapters for Pre-Trained Model-based Class-Incremental Learning](../../ICCV2025/model_compression/integrating_task-specific_and_universal_adapters_for_pre-trained_model-based_cla.md)
 - [\[AAAI 2026\] Distillation Dynamics: Towards Understanding Feature-Based Distillation in Vision Transformers](distillation_dynamics_towards_understanding_feature-based_di.md)
-- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](../../ICML2026/model_compression/area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
+- [\[CVPR 2026\] QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](../../CVPR2026/model_compression/qkd_quantum_gated_incremental_learning.md)
 - [\[AAAI 2026\] Put the Space of LoRA Initialization to the Extreme to Preserve Pre-trained Knowledge](put_the_space_of_lora_initialization_to_the_extreme_to_preserve_pre-trained_know.md)
 
 </div>

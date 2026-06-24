@@ -1,15 +1,19 @@
 ---
 title: >-
-  [Paper Note] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析
+  [Paper Note] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process
 description: >-
-  [ACL 2026][Hallucination Detection][Attention] This paper reveals the internal failure mechanisms of LLMs when processing linearized structured knowledge through two mechanistic indicators: Structural Shortcut Reliance (SSR) and Semantic Alignment Score (SAS). Based on these signals, a lightweight hallucination detector is constructed.
+  [ACL 2026][Hallucination Detection][Structured Knowledge] This paper reveals the internal failure mechanisms of LLMs when processing linearized structured knowledge through two mechanistic indicators: Structural Shortcut Reliance (SSR) and Semantic Alignment Score (SAS). Based on these signals, a lightweight hallucination detector is constructed.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Attention
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Structured Knowledge"
+  - "Attention Mechanism"
+  - "Feed-Forward Networks"
+  - "Knowledge Reasoning"
 date: 2026-05-08
-content_hash: 8234dce8e1852276
+content_hash: 0e041c6ebe35e199
 ---
+
 # Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process
 
 **Conference**: ACL 2026  
@@ -143,11 +147,11 @@ Advantages: No model fine-tuning required, calculated within a single forward pa
 
 ## Related Papers
 
-- [\[ACL 2026\] Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations](two_pathways_to_truthfulness_on_the_intrinsic_encoding_of_llm_hallucinations.md)
+- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
+- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](../../ICLR2026/hallucination/mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
 - [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
-- [\[ACL 2026\] MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing](multihaludet_multilingual_hallucination_detection_via_llm_hidden_state_probing.md)
-- [\[ACL 2026\] Logical Consistency as a Bridge: Improving LLM Hallucination Detection via Label Constraint Modeling between Responses and Self-Judgments](logical_consistency_as_a_bridge_improving_llm_hallucination_detection_via_label_.md)
-- [\[ACL 2025\] HalluLens: LLM Hallucination Benchmark](../../ACL2025/hallucination/hallulens_llm_hallucination_benchmark.md)
+- [\[ICLR 2026\] Critical Confabulations: Can LLMs Hallucinate for Social Good?](../../ICLR2026/hallucination/critical_confabulation_can_llms_hallucinate_for_social_good.md)
+- [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 
 </div>
 

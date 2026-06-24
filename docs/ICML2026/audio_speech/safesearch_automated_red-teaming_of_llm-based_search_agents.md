@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SafeSearch: Automated Red-Teaming of LLM-Based Search Agents
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This paper introduces SafeSearch, a fully automated, sandboxed, and scalable red-teaming framework that evaluates search agent safety by injecting a single LLM-generated unreliable webpage into real search results. Through systematic evaluation of 17 LLMs across 3 agent scaffolds using 300 test cases, the study finds a
+  [ICML 2026][Audio & Speech][Search Agents] This paper introduces SafeSearch, a fully automated, sandboxed, and scalable red-teaming framework that evaluates search agent safety by injecting a single LLM-generated unreliable webpage into real search results. Through systematic evaluation of 17 LLMs across 3 agent scaffolds using 300 test cases, the study finds a peak ASR of 90.5% and demonstrates that common reminder-based defenses are largely ineffective.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Search Agents"
+  - "Unreliable Search Results"
+  - "Red-Teaming Evaluation"
+  - "Indirect Prompt Injection"
+  - "Misinformation"
 date: 2026-05-08
-content_hash: dc83be5d54815cad
+content_hash: 0c174ee1bbfa7fbb
 ---
+
 # SafeSearch: Automated Red-Teaming of LLM-Based Search Agents
 
 **Conference**: ICML 2026  
@@ -132,15 +138,14 @@ Key Observation: When tool-calling is forced to use the full budget, it becomes 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Group Cognition Learning: Making Everything Better Through Governed Two-Stage Agents Collaboration](group_cognition_learning_making_everything_better_through_governed_two-stage_age.md)
-- [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
 - [\[ICLR 2026\] RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments](../../ICLR2026/audio_speech/redteamcua_adversarial_testing_agents.md)
-- [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](../../ACL2026/audio_speech/full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
+- [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
 - [\[ACL 2026\] LLM-MC-Affect: LLM-Based Monte Carlo Modeling of Affective Trajectories and Latent Ambiguity for Interpersonal Dynamic Insight](../../ACL2026/audio_speech/llm-mc-affect_llm-based_monte_carlo_modeling_of_affective_trajectories_and_laten.md)
+- [\[ACL 2026\] Full-Duplex-Bench-v2: A Multi-Turn Evaluation Framework for Duplex Dialogue Systems with an Automated Examiner](../../ACL2026/audio_speech/full-duplex-bench-v2_a_multi-turn_evaluation_framework_for_duplex_dialogue_syste.md)
 
 </div>
 

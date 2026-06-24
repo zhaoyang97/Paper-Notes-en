@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MMLandmarks: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] MMLandmarks constructs the first large-scale instance-level geospatial benchmark with **one-to-one correspondence for every landmark** across four modalities: ground images, aerial images, text, and GPS (18,557 landmarks in the US, with 329k ground and 197k aerial images). It demonstrates that neither existing speciali
+  [CVPR 2026][Multimodal VLM][Geospatial Understanding] MMLandmarks constructs the first large-scale instance-level geospatial benchmark with **one-to-one correspondence for every landmark** across four modalities: ground images, aerial images, text, and GPS (18,557 landmarks in the US, with 329k ground and 197k aerial images). It demonstrates that neither existing specialized models nor general foundation models solve it effectively, and provides a simple CLIP-style four-modal…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Geospatial Understanding"
+  - "Cross-View Retrieval"
+  - "Instance-Level Benchmark"
+  - "Multimodal Alignment"
+  - "Geolocalization"
 date: 2026-05-08
-content_hash: 6cbb4f8111f921e5
+content_hash: f402f47f40f8e3da
 ---
+
 # MMLandmarks: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ To prevent inflation from location names in Wikipedia first sentences, GPT-3.5 w
 
 ## Related Papers
 
+- [\[CVPR 2026\] InstAP: Instance-Aware Vision-Language Pre-Train for Spatial-Temporal Understanding](instap_instance-aware_vision-language_pre-train_for_spatial-temporal_understandi.md)
 - [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
 - [\[CVPR 2026\] Socratic-Geo: Synthetic Data Generation and Cross-Modal Geometric Reasoning via Multi-Agent Interaction](socratic-geo_synthetic_data_generation_and_cross-modal_geometric_reasoning_via_m.md)
-- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
-- [\[CVPR 2026\] SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning](salmubench_a_benchmark_for_sensitive_association-level_multimodal_unlearning.md)
-- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
+- [\[CVPR 2026\] Is your VLM Sky-Ready? A Comprehensive Spatial Intelligence Benchmark for UAV Navigation](is_your_vlm_sky-ready_a_comprehensive_spatial_intelligence_benchmark_for_uav_nav.md)
+- [\[CVPR 2026\] Imbalanced View Contribution Evaluation and Refinement for Deep Incomplete Multi-View Clustering](imbalanced_view_contribution_evaluation_and_refinement_for_deep_incomplete_multi.md)
 
 </div>
 

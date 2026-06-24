@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Incremental Sequence Classification with Temporal Consistency
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][incremental classification] This paper imports the temporal-difference (TD) learning idea from reinforcement learning into sequence classification…
+  [NeurIPS 2025 Spotlight][Reinforcement Learning][incremental classification] This paper imports the temporal-difference (TD) learning idea from reinforcement learning into sequence classification, proposing the TC-$\lambda$ loss function. By requiring the predictive distributions at adjacent time steps to satisfy a temporal consistency condition, it trains incremental sequence classifiers that outperform standard cross-entropy methods on both text classification and LLM verif…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Reinforcement Learning"
   - "incremental classification"
   - "temporal consistency"
@@ -12,7 +12,7 @@ tags:
   - "LLM verification"
   - "sequence classification"
 date: 2026-05-08
-content_hash: 496ac08fa93dffde
+content_hash: edd2a02e01d9fe2a
 ---
 
 # Incremental Sequence Classification with Temporal Consistency
@@ -166,7 +166,7 @@ Sequence classification is framed as an absorption probability estimation proble
 - [\[NeurIPS 2025\] Temporal-Difference Variational Continual Learning](temporal-difference_variational_continual_learning.md)
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
 - [\[NeurIPS 2025\] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL](oryx_a_scalable_sequence_model_for_many-agent_coordination_in_offline_marl.md)
-- [\[ICLR 2026\] When Sensors Fail: Temporal Sequence Models for Robust PPO under Sensor Drift](../../ICLR2026/reinforcement_learning/when_sensors_fail_temporal_sequence_models_for_robust_ppo_under_sensor_drift.md)
+- [\[ICLR 2026\] SafeMPO: Constrained Reinforcement Learning via Probabilistic Incremental Improvement](../../ICLR2026/reinforcement_learning/safempo_constrained_reinforcement_learning_with_probabilistic_incremental_improv.md)
 - [\[NeurIPS 2025\] Modulation of Temporal Decision-Making in a Deep Reinforcement Learning Agent under the Dual-Task Paradigm](modulation_of_temporal_decision-making_in_a_deep_reinforcement_learning_agent_un.md)
 
 </div>

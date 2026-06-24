@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity
 description: >-
-  [ICLR 2026][Multilingual & Translation][autoformalization] Ours proposes the ASSESS framework, centered on the TransTED Similarity metric. By parsing formal mathematical statements into Operator Trees (OPT) and integrating Lean proof tactic-driven semantic transformations into the standard Tree Edit Distance (TED), the method achieves SOTA performance with 70.16% accuracy and
+  [ICLR 2026][Multilingual & Machine Translation][autoformalization] Ours proposes the ASSESS framework, centered on the TransTED Similarity metric. By parsing formal mathematical statements into Operator Trees (OPT) and integrating Lean proof tactic-driven semantic transformations into the standard Tree Edit Distance (TED), the method achieves SOTA performance with 70.16% accuracy and a 0.35 Kappa score on the EPLA benchmark, while remaining reproducible using only CPU resourc…
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - autoformalization
-  - evaluation metrics
-  - tree edit distance
-  - Lean
-  - formal mathematics
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "autoformalization"
+  - "evaluation metrics"
+  - "tree edit distance"
+  - "Lean"
+  - "formal mathematics"
 date: 2026-05-08
-content_hash: 1630fecab14dc5d7
+content_hash: 3219852a55f1db48
 ---
+
 # ASSESS: A Semantic and Structural Evaluation Framework for Statement Similarity
 
 **Conference**: ICLR 2026  
@@ -143,10 +144,10 @@ The semantic transformation component is the key factor for performance gains, p
 ## Related Papers
 
 - [\[ICML 2025\] KELPS: A Framework for Verified Multi-Language Autoformalization via Semantic-Syntactic Alignment](../../ICML2025/multilingual_mt/kelps_a_framework_for_verified_multi-language_autoformalization_via_semantic-syn.md)
+- [\[ACL 2026\] Beyond Literal Mapping: Benchmarking and Improving Non-Literal Evaluation Evaluation](../../ACL2026/multilingual_mt/beyond_literal_mapping_benchmarking_and_improving_non-literal_translation_evalua.md)
 - [\[ACL 2025\] Statement-Tuning Enables Efficient Cross-lingual Generalization in Encoder-only Models](../../ACL2025/multilingual_mt/statement-tuning_enables_efficient_cross-lingual_generalization_in_encoder-only_.md)
 - [\[ACL 2026\] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax](../../ACL2026/multilingual_mt/reinforcement_learning_with_semantic_rewards_enables_low-resource_language_expan.md)
 - [\[ACL 2026\] FairQE: Multi-Agent Framework for Mitigating Gender Bias in Translation Quality Estimation](../../ACL2026/multilingual_mt/fairqe_multi-agent_framework_for_mitigating_gender_bias_in_translation_quality_e.md)
-- [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](../../ACL2026/multilingual_mt/the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
 
 </div>
 

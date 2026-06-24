@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Inverse IFEval: Can LLMs Unlearn Stubborn Training Conventions to Follow Real Instructions?
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-Judge] This paper proposes **Inverse IFEval**, an instruction-following benchmark that systematically reverses the "ideal labeling paradigm" of SFT. Using 8 categories of "counterintuitive instructions" and 1012 bilingual Chinese-English problems, it specifically measures whether LLMs can break free from the "cognitive inerti
+  [ICLR 2026][LLM Evaluation][Instruction following] This paper proposes **Inverse IFEval**, an instruction-following benchmark that systematically reverses the "ideal labeling paradigm" of SFT. Using 8 categories of "counterintuitive instructions" and 1012 bilingual Chinese-English problems, it specifically measures whether LLMs can break free from the "cognitive inertia" implanted by alignment training to execute real-world instructions that conflict with training habits.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Instruction following"
+  - "counterintuitive instructions"
+  - "cognitive inertia"
+  - "LLM-as-a-Judge"
+  - "alignment overfitting"
+  - "OOD instructions"
 date: 2026-05-08
-content_hash: 26f9617ca757e55b
+content_hash: db2ea67472c1e05d
 ---
+
 # Inverse IFEval: Can LLMs Unlearn Stubborn Training Conventions to Follow Real Instructions?
 
 **Conference**: ICLR 2026  
@@ -104,6 +110,7 @@ graph LR
 - **Value**: ⭐⭐⭐⭐⭐ — Targets a real pain point and serves as both a diagnostic tool and a lighthouse for alignment research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

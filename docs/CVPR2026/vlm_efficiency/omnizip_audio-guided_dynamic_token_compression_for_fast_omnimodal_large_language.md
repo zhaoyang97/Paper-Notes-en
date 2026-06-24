@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] OmniZip is the first **training-free** token compression framework for joint audio-video understanding in Omnimodal Large Language Models (OmniLLM). It utilizes the attention distribution of audio tokens as a prior for "information density/event boundaries" to dynamically determine video token pruning rates within each
+  [CVPR 2026][Multimodal Efficiency][Omnimodal Large Language Models] OmniZip is the first **training-free** token compression framework for joint audio-video understanding in Omnimodal Large Language Models (OmniLLM). It utilizes the attention distribution of audio tokens as a prior for "information density/event boundaries" to dynamically determine video token pruning rates within each time window. Combined with an Interleaved Spatiotemporal Compression (ISTC) module…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Omnimodal Large Language Models"
+  - "Token Compression"
+  - "Audio-guided"
+  - "Training-free Acceleration"
+  - "Audio-visual Understanding"
 date: 2026-05-08
-content_hash: bd73eaad98dab78f
+content_hash: 76ee583892c4d598
 ---
+
 # OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models
 
 **Conference**: CVPR 2026  
@@ -135,14 +141,17 @@ Efficiency comparison (WorldSense, single A6000, Tab. 3):
 
 <div class="related-papers" markdown="1">
 
-- **FastV**: "FastV: Facilitating Vitally Efficient Vision-language Model with Token Pruning" (CVPR 2024)
-- **DyCoke**: "DyCoke: Dynamic Token Compression for Efficient Video Large Language Models" (arXiv 2024)
-- **VisionZip**: "VisionZip: Longer is Better but Not Spatially" (arXiv 2024)
+## Related Papers
+
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
+- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](dynamic_token_reweighting_for_robust_vision-language_models.md)
+- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)

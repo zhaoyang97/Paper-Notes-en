@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains RLVR
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] To address the issues of policy entropy collapse and Pass@k stagnation in standard RLVR training, this paper proposes **SVS (Self-play with Variational problem Synthesis)**. In this method, the policy model uses its own correct solutions to difficult problems to "back-synthesize" a set of variant problems with the same
+  [ICLR2026][Reinforcement Learning][RLVR] To address the issues of policy entropy collapse and Pass@k stagnation in standard RLVR training, this paper proposes **SVS (Self-play with Variational problem Synthesis)**. In this method, the policy model uses its own correct solutions to difficult problems to "back-synthesize" a set of variant problems with the same answers. Solving these new problems online expands the training data and sustains policy entropy…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - Pass@k
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Self-play"
+  - "Problem Synthesis"
+  - "Policy Entropy"
+  - "Pass@k"
 date: 2026-05-08
-content_hash: 8ae38284a647fb70
+content_hash: 66eeb426ee87cef1
 ---
+
 # Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains RLVR
 
 **Conference**: ICLR2026  
@@ -130,8 +134,6 @@ Comparison of alternative augmentation strategies on Qwen2.5-32B-Instruct + DAPO
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

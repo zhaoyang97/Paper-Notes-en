@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Frame Selection for Long Video Understanding via Reinforcement Learning
 description: >-
-  [CVPR 2026][Video Understanding][Reinforcement Learning] Addressing the issue that "uniform sampling misses keyframes" in long video understanding, this paper trains a lightweight, plug-and-play query-adaptive frame selector. It first distills a semantic relevance prior from a frozen CLIP and then fine-tunes it using an improved GRPO (with hierarchical rewards at both frame
+  [CVPR 2026][Video Understanding][Keyframe Selection] Addressing the issue that "uniform sampling misses keyframes" in long video understanding, this paper trains a lightweight, plug-and-play query-adaptive frame selector. It first distills a semantic relevance prior from a frozen CLIP and then fine-tunes it using an improved GRPO (with hierarchical rewards at both frame and combination levels), directly using the downstream MLLM's accuracy as the signal. The method achieves a…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Keyframe Selection"
+  - "Long Video Understanding"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Multi-modal Large Language Model"
 date: 2026-05-08
-content_hash: 9716b7111c34e19b
+content_hash: 685296ce066b16e8
 ---
+
 # Efficient Frame Selection for Long Video Understanding via Reinforcement Learning
 
 **Conference**: CVPR 2026  
@@ -181,11 +185,11 @@ Different frame counts $K$ (LongVideoBench):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
 - [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
+- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](../../ICLR2026/video_understanding/focus_efficient_keyframe_selection_for_long_video_understanding.md)
 - [\[CVPR 2026\] DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding](divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u.md)
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 - [\[CVPR 2026\] Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)
+- [\[CVPR 2026\] VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)
 
 </div>
 

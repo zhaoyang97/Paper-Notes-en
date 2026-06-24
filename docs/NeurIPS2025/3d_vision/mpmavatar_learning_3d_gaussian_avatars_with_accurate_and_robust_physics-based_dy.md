@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics
 description: >-
-  [NeurIPS 2025][3D Vision][3D human avatar] MPMAvatar integrates a Material Point Method (MPM) physics simulator with 3D Gaussian Splatting rendering. Through an anisotropic constitutive model and a novel collision handli…
+  [NeurIPS 2025][3D Vision][3D human avatar] MPMAvatar integrates a Material Point Method (MPM) physics simulator with 3D Gaussian Splatting rendering. Through an anisotropic constitutive model and a novel collision handling algorithm for mesh-based colliders, it achieves accurate and robust physical animation of loose garments. On ActorsHQ and 4D-DRESS, it outperforms PhysAvatar across both geometry and appearance metrics, achieving a 100% simulation success rate vs. 37.6%…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian Splatting"
   - "garment dynamics"
 date: 2026-05-08
-content_hash: 8c3b28c467dff0d1
+content_hash: 59b154e4935d6fc8
 ---
 
 # MPMAvatar: Learning 3D Gaussian Avatars with Accurate and Robust Physics-Based Dynamics
@@ -127,8 +127,8 @@ Physical parameter learning minimizes per-vertex $L_2$ distance between the simu
 - [\[ICLR 2026\] Learning Physics-Grounded 4D Dynamics with Neural Gaussian Force Fields](../../ICLR2026/3d_vision/learning_physics-grounded_4d_dynamics_with_neural_gaussian_force_fields.md)
 - [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
 - [\[NeurIPS 2025\] Gaussian-Augmented Physics Simulation and System Identification with Complex Colliders](gaussian-augmented_physics_simulation_and_system_identification_with_complex_col.md)
-- [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](../../ICCV2025/3d_vision/trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
 - [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
+- [\[ICCV 2025\] TRACE: Learning 3D Gaussian Physical Dynamics from Multi-view Videos](../../ICCV2025/3d_vision/trace_learning_3d_gaussian_physical_dynamics_from_multi-view_videos.md)
 
 </div>
 

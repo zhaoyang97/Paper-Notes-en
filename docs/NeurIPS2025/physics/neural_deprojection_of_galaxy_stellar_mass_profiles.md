@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Deprojection of Galaxy Stellar Mass Profiles
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][galaxy mass distribution] A neural network approach is proposed to map Nuker galaxy profile parameters to analytically deprojectable Multi-Gaussian Expansion (MGE) component…
+  [NeurIPS 2025][Physics & Scientific Computing][galaxy mass distribution] A neural network approach is proposed to map Nuker galaxy profile parameters to analytically deprojectable Multi-Gaussian Expansion (MGE) components, enabling stellar mass modeling of galaxies without optical imaging. The method is integrated into the differentiable dynamical modeling pipeline SuperMAGE for Bayesian inference of supermassive black hole (SMBH) masses.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "conditional flow matching"
   - "astronomical data"
 date: 2026-05-08
-content_hash: 5edf19aac0a662d1
+content_hash: 79b7cadad9623715
 ---
 
 # Neural Deprojection of Galaxy Stellar Mass Profiles
@@ -136,11 +136,11 @@ Validation on galaxy NGC4697, compared against the state-of-the-art method using
 
 ## Related Papers
 
+- [\[ICML 2025\] Differentiable Stellar Atmospheres with Physics-Informed Neural Networks](../../ICML2025/physics/differentiable_stellar_atmospheres_with_physics-informed_neural_networks.md)
 - [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
-- [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
 - [\[NeurIPS 2025\] From Simulations to Surveys: Domain Adaptation for Galaxy Observations](from_simulations_to_surveys_domain_adaptation_for_galaxy_observations.md)
-- [\[NeurIPS 2025\] Multi-Modal Masked Autoencoders for Learning Image-Spectrum Associations for Galaxy Evolution and Cosmology](multi-modal_masked_autoencoders_for_learning_image-spectrum_associations_for_gal.md)
-- [\[NeurIPS 2025\] Unsupervised Discovery of High-Redshift Galaxy Populations with Variational Autoencoders](unsupervised_discovery_of_high-redshift_galaxy_populations_with_variational_auto.md)
+- [\[NeurIPS 2025\] Vision Transformers for Cosmological Fields: Application to Weak Lensing Mass Maps](vision_transformers_for_cosmological_fields_application_to_weak_lensing_mass_map.md)
+- [\[ICML 2025\] Finetuning Stellar Spectra Foundation Models with LoRA](../../ICML2025/physics/finetuning_stellar_spectra_foundation_models_with_lora.md)
 
 </div>
 

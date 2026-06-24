@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] PL-MTEB: Polish Massive Text Embedding Benchmark
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Polish NLP] PL-MTEB constructs a 30-task evaluation set for Polish text embeddings covering classification, clustering, pair classification, retrieval, and semantic similarity. It systematically evaluates 30 Polish and multilingual embedding models, showing that while large models generally lead, factors such as task type, trainin
+  [ACL2026 Findings][Information Retrieval & RAG][Polish NLP] PL-MTEB constructs a 30-task evaluation set for Polish text embeddings covering classification, clustering, pair classification, retrieval, and semantic similarity. It systematically evaluates 30 Polish and multilingual embedding models, showing that while large models generally lead, factors such as task type, training data leakage, and model scale significantly impact the conclusions.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Polish NLP
-  - Text Embedding
-  - MTEB
-  - Information Retrieval
+  - "ACL2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Polish NLP"
+  - "Text Embedding"
+  - "MTEB"
+  - "Information Retrieval"
+  - "Benchmark Evaluation"
 date: 2026-05-08
-content_hash: ba82b1d5726d271b
+content_hash: a69679529c4a8d92
 ---
+
 # PL-MTEB: Polish Massive Text Embedding Benchmark
 
 **Conference**: ACL2026 Findings  
@@ -143,7 +145,7 @@ As this is a benchmark paper, there is no traditional ablation of model modules;
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](../../ICLR2026/information_retrieval/hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
 - [\[ACL 2026\] REZE: Representation Regularization for Domain-adaptive Text Embedding Pre-finetuning](reze_representation_regularization_for_domain-adaptive_text_embedding_pre-finetu.md)
 - [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](../../ICLR2026/information_retrieval/btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
-- [\[ACL 2025\] A Text is Worth Several Tokens: Text Embedding from LLMs Secretly Aligns Well with The Key Tokens](../../ACL2025/information_retrieval/a_text_is_worth_several_tokens_text_embedding_from_llms_secretly_aligns_well_wit.md)
+- [\[ICLR 2026\] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement](../../ICLR2026/information_retrieval/let_llms_speak_embedding_languages_generative_text_embeddings_via_iterative_cont.md)
 
 </div>
 

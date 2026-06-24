@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LaVCa: LLM-assisted Visual Cortex Captioning
 description: >-
-  [ICLR 2026][Medical Imaging][LLM] The LaVCa method is proposed to generate natural language descriptions (captions) for each voxel in the human visual cortex using LLMs. Through a four-step pipeline consisting of "encoding model → optimal image selection → MLLM caption generation → LLM keyword refinement + sentence composition," it reveals voxel-level
+  [ICLR 2026][Medical Imaging][Visual cortex] The LaVCa method is proposed to generate natural language descriptions (captions) for each voxel in the human visual cortex using LLMs. Through a four-step pipeline consisting of "encoding model → optimal image selection → MLLM caption generation → LLM keyword refinement + sentence composition," it reveals voxel-level visual selectivity more accurately and diversely than existing methods like BrainSCUBA.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - LLM
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Visual cortex"
+  - "voxel selectivity"
+  - "LLM"
+  - "fMRI encoding model"
+  - "brain activity prediction"
 date: 2026-05-08
-content_hash: ec1b8dea4798ae68
+content_hash: b34d2bc9ac198fb6
 ---
+
 # LaVCa: LLM-assisted Visual Cortex Captioning
 
 **Conference**: ICLR 2026  
@@ -144,15 +149,14 @@ Intra-ROI shuffle test (validating inter-voxel diversity):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/medical_imaging/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
 - [\[ICCV 2025\] NEURONS: Emulating the Human Visual Cortex Improves Fidelity and Interpretability in fMRI-to-Video Reconstruction](../../ICCV2025/medical_imaging/neurons_emulating_the_human_visual_cortex_improves_fidelity_and_interpretability.md)
+- [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](../../NeurIPS2025/medical_imaging/meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
 - [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
-- [\[ICLR 2026\] Boosting Medical Visual Understanding From Multi-Granular Language Learning](boosting_medical_visual_understanding_from_multi-granular_language_learning.md)
 
 </div>
 

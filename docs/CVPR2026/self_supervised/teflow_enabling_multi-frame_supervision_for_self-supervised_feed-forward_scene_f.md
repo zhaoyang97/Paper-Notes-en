@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] TeFlow is proposed as the first method to introduce multi-frame supervision into self-supervised feed-forward scene flow estimation. By employing a temporal ensemble strategy to construct a motion candidate pool and aggregating temporally consistent supervision signals via consensus voting, it achieves a Three-way EPE
+  [CVPR 2026][Self-Supervised Learning][Scene flow] TeFlow is proposed as the first method to introduce multi-frame supervision into self-supervised feed-forward scene flow estimation. By employing a temporal ensemble strategy to construct a motion candidate pool and aggregating temporally consistent supervision signals via consensus voting, it achieves a Three-way EPE of 3.57 cm on Argoverse 2—comparable to the optimization-based method Floxels—while maintaining real-time infe…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Scene flow"
+  - "self-supervised"
+  - "multi-frame supervision"
+  - "temporal ensemble"
+  - "feed-forward network"
+  - "point cloud"
 date: 2026-05-08
-content_hash: f4b018eb6c1ea18c
+content_hash: f482f216ada78f6b
 ---
+
 # TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation
 
 **Conference**: CVPR 2026  
@@ -148,11 +155,11 @@ Overall Evaluation: Accurately identifies the core bottleneck of self-supervised
 
 ## Related Papers
 
-- [\[CVPR 2026\] TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)
-- [\[CVPR 2025\] AutoSSVH: Automated Frame Sampling for Self-Supervised Video Hashing](../../CVPR2025/self_supervised/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_.md)
 - [\[CVPR 2026\] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm](hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm.md)
-- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
-- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
+- [\[CVPR 2025\] AutoSSVH: Automated Frame Sampling for Self-Supervised Video Hashing](../../CVPR2025/self_supervised/autossvh_exploring_automated_frame_sampling_for_efficient_self-supervised_video_.md)
+- [\[ICLR 2026\] Rethinking Unsupervised Cross-Modal Flow Estimation: Learning from Decoupled Optimization and Consistency Constraint](../../ICLR2026/self_supervised/rethinking_unsupervised_cross-modal_flow_estimation_learning_from_decoupled_opti.md)
+- [\[ICLR 2026\] Multimodality as Supervision: Self-Supervised Specialization to the Test Environment via Multimodality](../../ICLR2026/self_supervised/multimodality_as_supervision_self-supervised_specialization_to_the_test_environm.md)
 
 </div>
 

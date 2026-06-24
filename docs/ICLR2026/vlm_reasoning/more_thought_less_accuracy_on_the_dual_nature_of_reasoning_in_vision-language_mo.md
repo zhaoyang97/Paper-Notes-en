@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM] The paper reveals the "double-edged sword" nature of multimodal reasoning—longer reasoning improves logic but weakens perceptual grounding due to "visual forgetting." It proposes VAPO (Visual-Anchored Policy Optimization), which inserts visual anchors and utilizes perceptual rewards to pull reasoning back to visual evi
+  [ICLR 2026][VLM Reasoning][VLM] The paper reveals the "double-edged sword" nature of multimodal reasoning—longer reasoning improves logic but weakens perceptual grounding due to "visual forgetting." It proposes VAPO (Visual-Anchored Policy Optimization), which inserts visual anchors and utilizes perceptual rewards to pull reasoning back to visual evidence, achieving a new SOTA with VAPO-Thinker-7B.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "VLM"
+  - "Multimodal Reasoning"
+  - "GRPO"
+  - "Visual Forgetting"
+  - "Perceptual Reward"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 9a0a8cfdb97f3bc0
+content_hash: fa2ca78d873f055d
 ---
+
 # More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ Hyperparameter Ablation: As anchor count $K$ increases from 0 (vanilla GRPO) to 
 
 ## Related Papers
 
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
 - [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](../../CVPR2026/vlm_reasoning/select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
+- [\[ICLR 2026\] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning](rex-thinker_grounded_object_referring_via_chain-of-thought_reasoning.md)
 - [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
 - [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](../../CVPR2026/vlm_reasoning/improving_vision-language_models_with_perception-centric_process_reward_models.md)
-- [\[ICLR 2026\] Beyond Classification Accuracy: Neural-MedBench and the Need for Deeper Reasoning Benchmarks](beyond_classification_accuracy_neural-medbench_and_the_need_for_deeper_reasoning.md)
-- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
 
 </div>
 

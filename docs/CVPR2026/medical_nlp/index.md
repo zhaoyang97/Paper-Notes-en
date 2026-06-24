@@ -21,7 +21,7 @@ item_total: 1
 
 **📷 CVPR2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (20)](../../ICLR2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [🧪 ICML2026 (4)](../../ICML2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (20)](../../ICLR2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [🧪 ICML2026 (4)](../../ICML2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/medical_nlp/index.md) · [🧪 ICML2025 (4)](../../ICML2025/medical_nlp/index.md)
 
 **[Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data](towards_efficient_medical_reasoning_with_minimal_fine-tuning_data.md)**
 

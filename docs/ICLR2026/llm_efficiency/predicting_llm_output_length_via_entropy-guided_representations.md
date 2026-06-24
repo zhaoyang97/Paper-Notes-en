@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Predicting LLM Output Length via Entropy-Guided Representations
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Instead of training independent auxiliary models to predict LLM output length, this paper reuses the main model's own hidden states. It employs Entropy-Guided Token Pooling (EGTP) for static prediction and Progressive Length Prediction (PLP) to handle "one-to-many" stochastic generation in scenarios like RL sampling. T
+  [ICLR 2026][LLM Efficiency][Output Length Prediction] Instead of training independent auxiliary models to predict LLM output length, this paper reuses the main model's own hidden states. It employs Entropy-Guided Token Pooling (EGTP) for static prediction and Progressive Length Prediction (PLP) to handle "one-to-many" stochastic generation in scenarios like RL sampling. The authors release ForeLen, the first length prediction benchmark containing long-sequence, CoT…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Output Length Prediction"
+  - "Inference Scheduling"
+  - "token entropy"
+  - "soft-label regression"
+  - "RL sampling"
 date: 2026-05-08
-content_hash: 4330076c82611d2b
+content_hash: e5ff6793423baf0c
 ---
+
 # Predicting LLM Output Length via Entropy-Guided Representations
 
 **Conference**: ICLR 2026  
@@ -139,15 +145,15 @@ EGTP reduced the padding ratio in long-sequence scenarios from 0.51 to 0.18 (nea
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Cartridges: Lightweight and General-Purpose Long Context Representations via Self-Study](cartridges_lightweight_and_general-purpose_long_context_representations_via_self.md)
 - [\[ICLR 2026\] LouisKV: Efficient KV Cache Retrieval for Long Input-Output Sequences](louiskv_efficient_kv_cache_retrieval_for_long_input-output_sequences.md)
-- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
-- [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
+- [\[ICLR 2026\] ProxyAttn: Guided Sparse Attention via Representative Heads](proxyattn_guided_sparse_attention_via_representative_heads.md)
 - [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
+- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
 
 </div>
 

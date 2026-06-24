@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] R2R2: Robust Representation for Intensive Experience Reuse via Redundancy Reduction in Self-Predictive Learning
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Self-Predictive Learning] R2R2 incorporates VICReg-style redundancy reduction constraints into Self-Predictive Learning (SPL) to stabilize high UTD training. A **key modification is the removal of zero-centering**—theoretically proving that zero-centering eliminates constant eigenmodes (i.e., global dynamics information) in SPL spectral decompo
+  [ICML 2026][Robotics][Self-Predictive Learning] R2R2 incorporates VICReg-style redundancy reduction constraints into Self-Predictive Learning (SPL) to stabilize high UTD training. A **key modification is the removal of zero-centering**—theoretically proving that zero-centering eliminates constant eigenmodes (i.e., global dynamics information) in SPL spectral decomposition. Experiments on TD7 with UTD=20 improved scores from 1.02 to 1.24 (+22%)…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - Self-Predictive Learning
-  - Redundancy Reduction
-  - VICReg
+  - "ICML 2026"
+  - "Robotics"
+  - "Self-Predictive Learning"
+  - "Redundancy Reduction"
+  - "VICReg"
+  - "High UTD"
+  - "Representation Collapse"
 date: 2026-05-08
-content_hash: 181deccc39b54175
+content_hash: 47e89582c8b28e87
 ---
+
 # R2R2: Robust Representation for Intensive Experience Reuse via Redundancy Reduction in Self-Predictive Learning
 
 **Conference**: ICML 2026  
@@ -141,9 +144,9 @@ $\mathcal L_{\text{R2R2}}=\mathcal L_{\text{SPL}}+\lambda_{\text{RR}}\mathcal L_
 
 - [\[ICLR 2026\] Experience-based Knowledge Correction for Robust Planning in Minecraft](../../ICLR2026/robotics/experience-based_knowledge_correction_for_robust_planning_in_minecraft.md)
 - [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
 - [\[NeurIPS 2025\] Sample-Efficient Tabular Self-Play for Offline Robust Reinforcement Learning](../../NeurIPS2025/robotics/sample-efficient_tabular_self-play_for_offline_robust_reinforcement_learning.md)
 - [\[CVPR 2026\] Dejavu: Towards Experience Feedback Learning for Embodied Intelligence](../../CVPR2026/robotics/dejavu_towards_experience_feedback_learning_for_embodied_intelligence.md)
-- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
 
 </div>
 

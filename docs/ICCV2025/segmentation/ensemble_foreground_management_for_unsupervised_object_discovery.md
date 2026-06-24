@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ensemble Foreground Management for Unsupervised Object Discovery
 description: >-
-  [ICCV 2025 (Highlight)][Segmentation][Unsupervised object discovery] This paper proposes UnionCut — a foreground union detection method based on minimum cut and ensemble learning — which provides mathematically guarantee…
+  [ICCV 2025 (Highlight)][Segmentation][Unsupervised object discovery] This paper proposes UnionCut — a foreground union detection method based on minimum cut and ensemble learning — which provides mathematically guaranteed foreground priors for unsupervised object discovery (UOD). It enables UOD algorithms to reliably determine whether discovered regions are foreground and when to stop exploration. A distilled variant, UnionSeg, is also proposed to substantially improve both e…
 tags:
   - "ICCV 2025 (Highlight)"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "minimum cut"
   - "knowledge distillation"
 date: 2026-05-08
-content_hash: 5bb86635feef9e4e
+content_hash: 381bbd50ca8e48f5
 ---
 
 # Ensemble Foreground Management for Unsupervised Object Discovery
@@ -134,10 +134,10 @@ Foreground union detection accuracy: UnionSeg IoU 65.7 vs. UnionCut 60.9 vs. FOU
 ## Related Papers
 
 - [\[ICML 2026\] Unsupervised Hierarchical Skill Discovery](../../ICML2026/segmentation/unsupervised_hierarchical_skill_discovery.md)
-- [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
+- [\[CVPR 2025\] Hierarchical Compact Clustering Attention (COCA) for Unsupervised Object-Centric Learning](../../CVPR2025/segmentation/hierarchical_compact_clustering_attention_coca_for_unsupervised_object-centric_l.md)
 - [\[ICCV 2025\] Open-World Skill Discovery from Unsegmented Demonstration Videos](open-world_skill_discovery_from_unsegmented_demonstration_videos.md)
-- [\[ICCV 2025\] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation](clot_closed_loop_optimal_transport_for_unsupervised_action_segmentation.md)
-- [\[ICCV 2025\] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation](skeleton_motion_words_for_unsupervised_skeleton-based_temporal_action_segmentati.md)
+- [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
+- [\[ICML 2025\] unMORE: Unsupervised Multi-Object Segmentation via Center-Boundary Reasoning](../../ICML2025/segmentation/unmore_unsupervised_multi-object_segmentation_via_center-boundary_reasoning.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Same Voice, Different Lab: On the Homogenization of Frontier LLM Personalities
 description: >-
-  [ACL 2026][LLM Evaluation][LLM personality] This paper uses an external ELO preference evaluation of 144 personality traits to find that nine frontier LLMs, despite originating from different laboratories, generally converge toward a "structured, systematic, and precise" assistant-like personality. Distinctions are primarily concentrated in mid-range stylistic t
+  [ACL2026][LLM Evaluation][LLM personality] This paper uses an external ELO preference evaluation of 144 personality traits to find that nine frontier LLMs, despite originating from different laboratories, generally converge toward a "structured, systematic, and precise" assistant-like personality. Distinctions are primarily concentrated in mid-range stylistic traits such as being poetic or playful.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM personality
-  - trait ELO
-  - character training
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "LLM personality"
+  - "trait ELO"
+  - "personality homogenization"
+  - "character training"
+  - "user experience"
 date: 2026-05-08
-content_hash: b1f6c8fe63f56238
+content_hash: d2b41a250bb3c9d4
 ---
+
 # Same Voice, Different Lab: On the Homogenization of Frontier LLM Personalities
 
 **Conference**: ACL2026  
@@ -133,10 +136,10 @@ While the paper lacks traditional model ablations, it includes several stratifie
 ## Related Papers
 
 - [\[ICLR 2026\] Same Content, Different Representations: A Controlled Study for Table QA](../../ICLR2026/llm_evaluation/same_content_different_representations_a_controlled_study_for_t.md)
+- [\[ICLR 2026\] Measuring LLM Novelty as the Frontier of Original and High-Quality Output](../../ICLR2026/llm_evaluation/measuring_llm_novelty_as_the_frontier_of_original_and_high-quality_output.md)
 - [\[ACL 2026\] Stability vs. Manipulability: Evaluating Robustness Under Post-Decision Interaction in LLM Judges](stability_vs_manipulability_evaluating_robustness_under_post-decision_interactio.md)
 - [\[ACL 2026\] Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference](statistically_reliable_llm-based_ranking_evaluation_via_prediction-powered_infer.md)
-- [\[ACL 2026\] 正确信念的瓦解：临床压力下 LLM 的认知韧性研究](when_correct_beliefs_collapse_epistemic_resilience_of_llms_under_clinical_pressu.md)
-- [\[ACL 2026\] Contrastive Decoding Mitigates Score Range Bias in LLM-as-a-Judge](contrastive_decoding_mitigates_score_range_bias_in_llm-as-a-judge.md)
+- [\[ACL 2026\] BadScientist: Can a Research Agent Write Convincing but Unsound Papers that Fool LLM Reviewers?](badscientist_can_a_research_agent_write_convincing_but_unsound_papers_that_fool_.md)
 
 </div>
 

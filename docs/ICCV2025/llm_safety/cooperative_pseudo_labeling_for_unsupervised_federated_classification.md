@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cooperative Pseudo Labeling for Unsupervised Federated Classification
 description: >-
-  [ICCV 2025][LLM Safety][Unsupervised Federated Learning] FedCoPL is the first work to extend unsupervised federated learning (UFL) to classification tasks. It addresses CLIP's inherent bias and label shift challenges via…
+  [ICCV 2025][LLM Safety][Unsupervised Federated Learning] FedCoPL is the first work to extend unsupervised federated learning (UFL) to classification tasks. It addresses CLIP's inherent bias and label shift challenges via a cooperative pseudo labeling strategy (global assignment ensuring class balance) and a partial prompt aggregation protocol (aggregating only visual prompts while keeping text prompts local).
 tags:
   - "ICCV 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Prompt Tuning"
   - "Label Shift"
 date: 2026-05-08
-content_hash: d6457a4a4bc03407
+content_hash: 9fd3a476060ea4ab
 ---
 
 # Cooperative Pseudo Labeling for Unsupervised Federated Classification
@@ -197,8 +197,8 @@ Aggregating only visual prompts yields the best performance, validating the hypo
 
 - [\[AAAI 2026\] Federated CLIP for Resource-Efficient Heterogeneous Medical Image Classification](../../AAAI2026/llm_safety/federated_clip_for_resource-efficient_heterogeneous_medical_image_classification.md)
 - [\[ICCV 2025\] LATTE: Collaborative Test-Time Adaptation of Vision-Language Models in Federated Learning](latte_collaborative_test-time_adaptation_of_vision-language_models_in_federated_.md)
+- [\[ACL 2025\] Unveiling and Addressing Pseudo Forgetting in Large Language Models](../../ACL2025/llm_safety/unveiling_and_addressing_pseudo_forgetting_in_large_language_models.md)
 - [\[ICCV 2025\] Geminio: Language-Guided Gradient Inversion Attacks in Federated Learning](geminio_language-guided_gradient_inversion_attacks_in_federated_learning.md)
-- [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](../../ICML2026/llm_safety/position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 - [\[ICCV 2025\] Forgetting Through Transforming: Enabling Federated Unlearning via Class-Aware Representation Transformation](forgetting_through_transforming_enabling_federated_unlearning_via_class-aware_re.md)
 
 </div>

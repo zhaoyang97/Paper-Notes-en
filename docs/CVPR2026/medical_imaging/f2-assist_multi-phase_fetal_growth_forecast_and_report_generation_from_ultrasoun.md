@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] F$^2$-Assist: Multi-Phase Fetal Growth Forecast and Report Generation from Ultrasound Examination
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] F$^2$-Assist feeds multi-organ ultrasound images and continuous biometry (HC/AC/BPD/FL) from multiple prenatal examinations into a unified multimodal LLM. By employing "Cross-Phase Organ Alignment," "History-Aware Temporal Encoding," and "Growth Parameter Adapter," it predicts the **next-phase** fetal growth parameters
+  [CVPR 2026][Medical Imaging][Fetal ultrasound] F$^2$-Assist feeds multi-organ ultrasound images and continuous biometry (HC/AC/BPD/FL) from multiple prenatal examinations into a unified multimodal LLM. By employing "Cross-Phase Organ Alignment," "History-Aware Temporal Encoding," and "Growth Parameter Adapter," it predicts the **next-phase** fetal growth parameters and generates ultrasound reports simultaneously, improving the numerical prediction R² from the previous SOTA of…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Fetal ultrasound"
+  - "longitudinal growth prediction"
+  - "report generation"
+  - "multimodal LLM"
+  - "continuous biometry"
 date: 2026-05-08
-content_hash: b53d8abf8815236b
+content_hash: 56c6109fe361478b
 ---
+
 # F$^2$-Assist: Multi-Phase Fetal Growth Forecast and Report Generation from Ultrasound Examination
 
 **Conference**: CVPR 2026  
@@ -158,9 +164,9 @@ GPA Design: "No numeric" (image only) R²=0.29; "Digit-as-Text" R²=0.47; Adapte
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fetal-Gauge: A Benchmark for Assessing Vision-Language Models in Fetal Ultrasound](../../ICLR2026/medical_imaging/fetal-gauge_a_benchmark_for_assessing_vision-language_models_in_fetal_ultrasound.md)
 - [\[CVPR 2026\] CURE: Curriculum-guided Multi-task Training for Reliable Anatomy Grounded Report Generation](cure_curriculum-guided_multi-task_training_for_reliable_anatomy_grounded_report_.md)
 - [\[CVPR 2026\] Phrase-grounded APO for Improving Chest X-ray Report Generation](phrase-grounded_apo_for_improving_chest_x-ray_report_generation.md)
-- [\[CVPR 2026\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
 - [\[CVPR 2026\] Personalized Longitudinal Medical Report Generation via Temporally-Aware Federated Adaptation](personalized_longitudinal_medical_report_generation_via_temporally-aware_federat.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper provides a more refined convergence analysis for Clipped SGD under heavy-tailed noise. By utilizing Freedman’s inequality more effectively and providing tighter clipping error bounds, the authors accelerate the known optimal high-probability convergence rates by a factor of $\mathrm{poly}(1/d_{\mathrm{eff}})
+  [ICLR 2026][Optimization][heavy-tailed noise] This paper provides a more refined convergence analysis for Clipped SGD under heavy-tailed noise. By utilizing Freedman’s inequality more effectively and providing tighter clipping error bounds, the authors accelerate the known optimal high-probability convergence rates by a factor of $\mathrm{poly}(1/d_{\mathrm{eff}})$ ($d_{\mathrm{eff}}$ is the "generalized effective dimension" defined by the authors). Furthermore…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "heavy-tailed noise"
+  - "gradient clipping"
+  - "high-probability convergence"
+  - "nonsmooth convex optimization"
+  - "effective dimension"
 date: 2026-05-08
-content_hash: 3cf56b9555675abe
+content_hash: 1d26619322070d62
 ---
+
 # Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making
 description: >-
-  [NeurIPS 2025][Model Compression][online learning] This paper proposes an Online Mixture of Experts (OMoE) framework comprising two algorithms — UCB-Successive Elimination and Online Weighted Majority Voting — with theor…
+  [NeurIPS 2025][Model Compression][online learning] This paper proposes an Online Mixture of Experts (OMoE) framework comprising two algorithms — UCB-Successive Elimination and Online Weighted Majority Voting — with theoretical no-regret guarantees, and applies them to the online dynamic aggregation of LLM experts.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "no-regret"
   - "LLM ensemble"
 date: 2026-05-08
-content_hash: b13895f39b885c30
+content_hash: f12a326280ca898f
 ---
 
 # Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making
@@ -141,7 +141,7 @@ Given $K$ experts and context $x_t$, at each round the algorithm selects a subse
 - [\[NeurIPS 2025\] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP](multi-task_vehicle_routing_solver_via_mixture_of_specialized_experts_under_state.md)
 - [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
 - [\[NeurIPS 2025\] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging](mingle_mixture_of_null-space_gated_low-rank_experts_for_test-time_continual_mode.md)
-- [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
+- [\[ACL 2025\] MoRE: A Mixture of Low-Rank Experts for Adaptive Multi-Task Learning](../../ACL2025/model_compression/more_a_mixture_of_low-rank_experts_for_adaptive_multi-task_learning.md)
 
 </div>
 

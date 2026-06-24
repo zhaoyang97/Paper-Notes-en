@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Provably Data-Driven Projection Method for Quadratic Programming
 description: >-
-  [AAAI 2026][quadratic programming] This work extends data-driven projection matrix learning from linear programming (LP) to convex quadratic programming (QP). By proposing an "unrolled active set method" to model the com…
+  [AAAI 2026][quadratic programming] This work extends data-driven projection matrix learning from linear programming (LP) to convex quadratic programming (QP). By proposing an "unrolled active set method" to model the computation of QP optimal values within the Goldberg–Jerrum (GJ) framework, it establishes a pseudo-dimension upper bound and generalization guarantees for projection matrix learning.
 tags:
   - "AAAI 2026"
   - "quadratic programming"
@@ -11,7 +11,7 @@ tags:
   - "pseudo-dimension"
   - "data-driven optimization"
 date: 2026-05-08
-content_hash: c8d0aea8e3f440b1
+content_hash: f0be15879d9dce93
 ---
 
 # Provably Data-Driven Projection Method for Quadratic Programming
@@ -234,10 +234,10 @@ This paper is a purely theoretical contribution with no experimental section. Th
 ## Related Papers
 
 - [\[AAAI 2026\] Cost-Free Neutrality for the River Method](cost-free_neutrality_for_the_river_method.md)
+- [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
 - [\[ICLR 2026\] t-SNE Exaggerates Clusters, Provably](../../ICLR2026/others/t-sne_exaggerates_clusters_provably.md)
 - [\[AAAI 2026\] TaylorPODA: A Taylor Expansion-Based Method to Improve Post-Hoc Attributions for Opaque Models](taylorpoda_a_taylor_expansion-based_method_to_improve_post-hoc_attributions_for_.md)
 - [\[AAAI 2026\] DiffMM: Efficient Method for Accurate Noisy and Sparse Trajectory Map Matching via One Step Diffusion](diffmm_efficient_method_for_accurate_noisy_and_sparse_trajectory_map_matching_vi.md)
-- [\[AAAI 2026\] Bipartite Mode Matching for Vision Training Set Search from a Hierarchical Data Server](bipartite_mode_matching_for_vision_training_set_search_from_a_hierarchical_data_.md)
 
 </div>
 

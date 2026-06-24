@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs
 description: >-
-  [ICLR 2026][Interpretability][Mixture-of-Experts] This paper proposes a lightweight **recursive decomposition** method to decompose the assignment scores given by MoE routers into contributions from "token embeddings + attention outputs of each layer + MoE outputs of each layer," and even down to individual attention heads or experts. By using score **variance** to me
+  [ICLR 2026][Interpretability][Mixture-of-Experts] This paper proposes a lightweight **recursive decomposition** method to decompose the assignment scores given by MoE routers into contributions from "token embeddings + attention outputs of each layer + MoE outputs of each layer," and even down to individual attention heads or experts. By using score **variance** to measure influence, it reveals for the first time from a cross-layer perspective that MoE routing is not a local…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Mixture-of-Experts
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Mixture-of-Experts"
+  - "Routing Mechanism"
+  - "Mechanistic Interpretability"
+  - "Cross-layer Decomposition"
+  - "Expert Entanglement"
 date: 2026-05-08
-content_hash: e108960c6b34f115
+content_hash: 7ae8070ff201bf7e
 ---
+
 # Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs
 
 **Conference**: ICLR 2026  

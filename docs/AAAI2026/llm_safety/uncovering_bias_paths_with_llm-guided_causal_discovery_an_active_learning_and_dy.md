@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach
 description: >-
-  [AAAI2026][LLM Safety][Causal Discovery] This paper proposes a hybrid causal discovery framework that integrates LLM semantic priors with statistical signals. Through an active learning strategy and a dynamic scoring mec…
+  [AAAI2026][LLM Safety][Causal Discovery] This paper proposes a hybrid causal discovery framework that integrates LLM semantic priors with statistical signals. Through an active learning strategy and a dynamic scoring mechanism, the framework prioritizes querying the most informative variable pairs, effectively recovering fairness-critical causal paths (e.g., sex→education→income) under noise and confounding conditions, substantially outperforming classical CD methods and naïv…
 tags:
   - "AAAI2026"
   - "LLM Safety"
@@ -13,7 +13,7 @@ tags:
   - "Dynamic Scoring"
   - "Bias Paths"
 date: 2026-05-08
-content_hash: 8f226f7c144c6aef
+content_hash: 7749e34566b13721
 ---
 
 # Uncovering Bias Paths with LLM-guided Causal Discovery: An Active Learning and Dynamic Scoring Approach
@@ -187,8 +187,8 @@ A Random Forest regression analysis of Bayesian optimization trials reveals that
 
 - [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 - [\[ICLR 2026\] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](../../ICLR2026/llm_safety/biasbusters_uncovering_and_mitigating_tool_selection_bias_in_large_language_mode.md)
+- [\[CVPR 2026\] Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression](../../CVPR2026/llm_safety/revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression.md)
 - [\[AAAI 2026\] Principles2Plan: LLM-Guided System for Operationalising Ethical Principles into Plans](principles2plan_llm-guided_system_for_operationalising_ethical_principles_into_p.md)
-- [\[AAAI 2026\] The Confidence Trap: Gender Bias and Predictive Certainty in LLMs](the_confidence_trap_gender_bias_and_predictive_certainty_in_llms.md)
 - [\[AAAI 2026\] PSM: Prompt Sensitivity Minimization via LLM-Guided Black-Box Optimization](psm_prompt_sensitivity_minimization_via_llm-guided_black-box_optimization.md)
 
 </div>

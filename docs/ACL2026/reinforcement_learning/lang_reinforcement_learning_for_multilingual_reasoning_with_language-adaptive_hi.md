@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance
 description: >-
-  [ACL 2026][Reinforcement Learning][GRPO] LANG bootstraps multilingual mathematical reasoning RL with same-language reasoning hints, then utilizes cosine decay and language-difficulty-based adaptive hint termination to improve non-English reasoning accuracy while maintaining language consistency.
+  [ACL2026][Reinforcement Learning][Multilingual Reasoning] LANG bootstraps multilingual mathematical reasoning RL with same-language reasoning hints, then utilizes cosine decay and language-difficulty-based adaptive hint termination to improve non-English reasoning accuracy while maintaining language consistency.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - GRPO
-  - hint-guided RL
-  - reward sparsity
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "Multilingual Reasoning"
+  - "GRPO"
+  - "hint-guided RL"
+  - "language consistency"
+  - "reward sparsity"
 date: 2026-05-08
-content_hash: 7c11b444191a0aed
+content_hash: 71aa88b08322bb22
 ---
+
 # LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance
 
 **Conference**: ACL2026  
@@ -135,11 +138,11 @@ Across four models, LANG improved MMATH by an average of 24.1% and PolyMath by 1
 
 ## Related Papers
 
-- [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](../../AAAI2026/reinforcement_learning/mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
 - [\[NeurIPS 2025\] When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners](../../NeurIPS2025/reinforcement_learning/when_less_language_is_more_language-reasoning_disentanglement_makes_llms_better_.md)
+- [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](../../AAAI2026/reinforcement_learning/mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
 - [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
+- [\[ICLR 2026\] VeriRole: Verifiable Role-Awareness through Hint-Guided Reinforcement Learning](../../ICLR2026/reinforcement_learning/verirole_verifiable_role-awareness_through_hint-guided_reinforcement_learning.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](../../AAAI2026/reinforcement_learning/vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
-- [\[ICML 2026\] Learning to Route Languages for Multilingual Policy Optimization](../../ICML2026/reinforcement_learning/learning_to_route_languages_for_multilingual_policy_optimization.md)
 
 </div>
 

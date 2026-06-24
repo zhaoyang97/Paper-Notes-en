@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper does not invent a new network but utilizes a specifically collected dataset of 53,300 millimeter-level RGB-depth pairs to fine-tune existing monocular depth models for near-field fingertip scenarios. By layering a "depth + motion" fusion velocity-gated state machine, the system reduces depth error from 12.3
+  [CVPR 2026][Human Understanding][Fingertip contact detection] This paper does not invent a new network but utilizes a specifically collected dataset of 53,300 millimeter-level RGB-depth pairs to fine-tune existing monocular depth models for near-field fingertip scenarios. By layering a "depth + motion" fusion velocity-gated state machine, the system reduces depth error from 12.3 mm to 3.84 mm (a 68% reduction) using only a standard RGB camera. It achieves a 94.4% F1-score for…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Fingertip contact detection"
+  - "Monocular depth estimation"
+  - "Domain fine-tuning"
+  - "Depth-motion fusion"
+  - "VR text entry"
 date: 2026-05-08
-content_hash: e8a04c5ad56eba3d
+content_hash: dea394465a55c3c3
 ---
+
 # Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction
 
 **Conference**: CVPR 2026  
@@ -134,7 +140,7 @@ In end-to-end typing, Ours (848×480) reached **45.6 WPM / 3.1% CER**, significa
 - [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
 - [\[CVPR 2026\] MimicTalker: A Multimodal Interactive and Memory-Enhanced Framework for Real-Time Dyadic 3D Head Generation](mimictalker_a_multimodal_interactive_and_memory-enhanced_framework_for_real-time.md)
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised Human-Object Interaction Detection](regformer_transferable_relational_grounding_for_efficient_weakly-supervised_huma.md)
+- [\[CVPR 2026\] Avatar Forcing: Real-Time Interactive Head Avatar Generation for Natural Conversation](avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa.md)
 
 </div>
 

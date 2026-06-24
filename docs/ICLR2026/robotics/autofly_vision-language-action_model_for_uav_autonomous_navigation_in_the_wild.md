@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] The paper proposes AutoFly, an end-to-end VLA model for autonomous UAV navigation in the wild. By using a pseudo-depth encoder to infer spatial information from RGB inputs and a newly constructed autonomous navigation dataset (13K+ trajectories including 1K real flights), it achieves a 3.9% higher success rate and a 2.
+  [ICLR 2026][Robotics][VLA] The paper proposes AutoFly, an end-to-end VLA model for autonomous UAV navigation in the wild. By using a pseudo-depth encoder to infer spatial information from RGB inputs and a newly constructed autonomous navigation dataset (13K+ trajectories including 1K real flights), it achieves a 3.9% higher success rate and a 2.6% lower collision rate than OpenVLA in both simulated and real environments.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - UAV navigation
-  - pseudo-depth
-  - autonomous navigation
-  - sim-to-real
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "UAV navigation"
+  - "pseudo-depth"
+  - "autonomous navigation"
+  - "sim-to-real"
 date: 2026-05-08
-content_hash: a8734bd069df00ac
+content_hash: c7ef01713bd22e08
 ---
+
 # AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild
 
 **Conference**: ICLR 2026  
@@ -121,7 +122,6 @@ The training objective is the standard cross-entropy loss of the base LLM, predi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

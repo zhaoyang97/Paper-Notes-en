@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CDFlow: Building Invertible Layers with Circulant and Diagonal Matrices
 description: >-
-  [NeurIPS 2025][Image Generation][Normalizing flows] CDFlow is proposed to construct invertible linear layers via alternating products of circulant and diagonal matrices…
+  [NeurIPS 2025][Image Generation][Normalizing flows] CDFlow is proposed to construct invertible linear layers via alternating products of circulant and diagonal matrices, reducing parameter complexity from $\mathcal{O}(n^2)$ to $\mathcal{O}(mn)$, matrix inversion complexity from $\mathcal{O}(n^3)$ to $\mathcal{O}(mn\log n)$, and log-determinant computation from $\mathcal{O}(n^3)$ to $\mathcal{O}(mn)$, outperforming comparable methods on density estimation and periodic data mod…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "fast Fourier transform"
   - "density estimation"
 date: 2026-05-08
-content_hash: 506845e91c94f19f
+content_hash: 4da4a2680a52704c
 ---
 
 # CDFlow: Building Invertible Layers with Circulant and Diagonal Matrices
@@ -159,11 +159,11 @@ The mathematical derivations are concise and elegant, simultaneously resolving b
 
 ## Related Papers
 
+- [\[ICLR 2026\] LayerSync: Self-aligning Intermediate Layers](../../ICLR2026/image_generation/layersync_self-aligning_intermediate_layers.md)
+- [\[CVPR 2025\] Stable Flow: Vital Layers for Training-Free Image Editing](../../CVPR2025/image_generation/stable_flow_vital_layers_for_training-free_image_editing.md)
+- [\[CVPR 2026\] ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion](../../CVPR2026/image_generation/shapear_generating_editable_shape_layers_via_autoregressive_diffusion.md)
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](../../CVPR2026/image_generation/leapalign_post_training_flow_matching_models_at_any_generation_step.md)
-- [\[NeurIPS 2025\] Distilled Decoding 2: One-step Sampling of Image Auto-regressive Models with Conditional Score Distillation](distilled_decoding_2_onestep_sampling_of_image_autoregressiv.md)
-- [\[NeurIPS 2025\] Linear Differential Vision Transformer: Learning Visual Contrasts via Pairwise Differentials](linear_differential_vision_transformer_learning_visual_contrasts_via_pairwise_di.md)
-- [\[NeurIPS 2025\] GSPN-2: Efficient Parallel Sequence Modeling](gspn-2_efficient_parallel_sequence_modeling.md)
-- [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
+- [\[ICML 2025\] Normalizing Flows are Capable Generative Models](../../ICML2025/image_generation/normalizing_flows_are_capable_generative_models.md)
 
 </div>
 

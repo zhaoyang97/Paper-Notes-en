@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Domain Randomization] This paper proposes Learn2Synth, a training framework that leverages hypergradients to learn optimal synthetic data augmentation parameters…
+  [ICCV 2025][Segmentation][Domain Randomization] This paper proposes Learn2Synth, a training framework that leverages hypergradients to learn optimal synthetic data augmentation parameters, enabling segmentation networks trained exclusively on synthetic data to achieve peak performance on real data. The framework simultaneously attains high in-domain accuracy and strong out-of-domain generalization, outperforming both SynthSeg and supervised learning baselines on brain MRI seg…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Brain Image Segmentation"
   - "Domain Generalization"
 date: 2026-05-08
-content_hash: 099249bbde611275
+content_hash: 29e7b4b4b84f5f15
 ---
 
 # Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation
@@ -160,9 +160,9 @@ The inferred parameters closely match the preset values, validating the effectiv
 
 - [\[ICCV 2025\] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation](clot_closed_loop_optimal_transport_for_unsupervised_action_segmentation.md)
 - [\[ICCV 2025\] Dynamic Dictionary Learning for Remote Sensing Image Segmentation](dynamic_dictionary_learning_for_remote_sensing_image_segmentation.md)
-- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
-- [\[ICCV 2025\] LEGION: Learning to Ground and Explain for Synthetic Image Detection](legion_learning_to_ground_and_explain_for_synthetic_image_detection.md)
 - [\[ICCV 2025\] UniGlyph: Unified Segmentation-Conditioned Diffusion for Precise Visual Text Synthesis](uniglyph_unified_segmentation-conditioned_diffusion_for_precise_visual_text_synt.md)
+- [\[CVPR 2025\] Comparative Evaluation of Traditional Methods and Deep Learning for Brain Glioma Imaging](../../CVPR2025/segmentation/comparative_evaluation_of_traditional_methods_and_deep_learning_for_brain_glioma.md)
+- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot Named Entity Recognition
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] DiZiNER achieves zero-shot SOTA on 14 out of 18 NER benchmarks by simulating the "pilot annotation" process from human labeling. It utilizes multiple heterogeneous LLMs as annotators and a supervisor LLM to analyze inter-model disagreements and iteratively refine task instructions, resulting in an average improvement o
+  [ACL 2026][NLP Understanding][Zero-shot NER] DiZiNER achieves zero-shot SOTA on 14 out of 18 NER benchmarks by simulating the "pilot annotation" process from human labeling. It utilizes multiple heterogeneous LLMs as annotators and a supervisor LLM to analyze inter-model disagreements and iteratively refine task instructions, resulting in an average improvement of +8.0 F1 and outperforming its supervisor (GPT-5 mini).
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "Zero-shot NER"
+  - "Disagreement-guided"
+  - "Instruction Refinement"
+  - "Pilot Annotation Simulation"
+  - "Multi-model Assembly"
 date: 2026-05-08
-content_hash: 30d1bb9c309f0ecf
+content_hash: 07a5ec8e6bdc49d6
 ---
+
 # DiZiNER: Disagreement-guided Instruction Refinement via Pilot Annotation Simulation for Zero-shot Named Entity Recognition
 
 **Conference**: ACL 2026  
@@ -137,10 +143,17 @@ Ours achieved zero-shot SOTA on 14 out of 18 benchmarks, outperforming the GPT-5
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] SAM-NER: Semantic Archetype Mediation for Zero-Shot Named Entity Recognition](sam-ner_semantic_archetype_mediation_for_zero-shot_named_entity_recognition.md)
+- [\[ACL 2026\] Refining and Reusing Annotation Guidelines for LLM Annotation](refining_and_reusing_annotation_guidelines_for_llm_annotation.md)
+- [\[ACL 2026\] Reasoning-Based Refinement of Unsupervised Text Clusters with LLMs](reasoning-based_refinement_of_unsupervised_text_clusters_with_llms.md)
+- [\[ECCV 2024\] SLIMER: Show Less, Instruct More - Enriching Prompts with Definitions and Guidelines for Zero-Shot NER](../../ECCV2024/nlp_understanding/slimer_zero_shot_ner.md)
+- [\[ACL 2026\] LLM-Guided Semantic Bootstrapping for Interpretable Text Classification with Tsetlin Machines](llm-guided_semantic_bootstrapping_for_interpretable_text_classification_with_tse.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] SAM-NER: Semantic Archetype Mediation for Zero-Shot Named Entity Recognition](sam-ner_semantic_archetype_mediation_for_zero-shot_named_entity_recognition.md)

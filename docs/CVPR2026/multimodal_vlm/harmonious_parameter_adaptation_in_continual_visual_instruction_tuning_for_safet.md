@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] To address the dual problem where safety-aligned MLLMs both forget old tasks and lose safety during Continual Visual Instruction Tuning (CVIT), this paper proposes HPA: a training-free parameter-level editing approach applied **after** each fine-tuning step. It categorizes parameters into "safety-focused" and "task-foc
+  [CVPR 2026][Multimodal VLM][Continual Visual Instruction Tuning] To address the dual problem where safety-aligned MLLMs both forget old tasks and lose safety during Continual Visual Instruction Tuning (CVIT), this paper proposes HPA: a training-free parameter-level editing approach applied **after** each fine-tuning step. It categorizes parameters into "safety-focused" and "task-focused" based on Hessian importance, utilizes an adaptive balance score to select safety paramete…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Visual Instruction Tuning"
+  - "Safety Alignment"
+  - "Catastrophic Forgetting"
+  - "Parameter-level Post-training"
+  - "Safety-Capability Trade-off"
 date: 2026-05-08
-content_hash: ecfebf5e8d6060e5
+content_hash: 00028789064e7d71
 ---
+
 # Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs
 
 **Conference**: CVPR 2026  
@@ -141,14 +147,15 @@ Effectiveness of the three components (safety focus $\bar\varepsilon$, overlap s
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
+- [\[ICLR 2026\] PCLR: Progressively Compressed LoRA for Multimodal Continual Instruction Tuning](../../ICLR2026/multimodal_vlm/pclr_progressively_compressed_lora_for_multimodal_continual_instruction_tuning.md)
 - [\[CVPR 2026\] LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning](llada-v_large_language_diffusion_models_with_visual_instruction_tuning.md)
-- [\[CVPR 2026\] Test-Time Distillation for Continual Model Adaptation](test-time_distillation_for_continual_model_adaptation.md)
 - [\[ACL 2025\] Enhancing Multimodal Continual Instruction Tuning with BranchLoRA](../../ACL2025/multimodal_vlm/branchlora_continual_instruction.md)
 
 </div>

@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] Expert Merging in Sparse Mixture of Experts with Nash Bargaining
 description: >-
-  [ICLR 2026][LLM Efficiency][Sparse MoE] The authors reinterpret "expert merging" in Sparse MoE as a cooperative-competitive game between experts. They derive the merging coefficients for each expert from first principles using the Nash Bargaining Solution (NBS) and incorporate complex momentum to accelerate cross-layer propagation. This results in NAMEx, a u
+  [ICLR 2026][LLM Efficiency][Sparse MoE] The authors reinterpret "expert merging" in Sparse MoE as a cooperative-competitive game between experts. They derive the merging coefficients for each expert from first principles using the Nash Bargaining Solution (NBS) and incorporate complex momentum to accelerate cross-layer propagation. This results in NAMEx, a unified framework that replaces the heuristic weighting used in CAMEx.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Sparse MoE
-  - Expert Merging
-  - Nash Bargaining
-  - Complex Momentum
-  - CAMEx
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Sparse MoE"
+  - "Expert Merging"
+  - "Nash Bargaining"
+  - "Game Theory"
+  - "Complex Momentum"
+  - "CAMEx"
 date: 2026-05-08
-content_hash: 48834251263219d6
+content_hash: 85448d8356290732
 ---
+
 # Expert Merging in Sparse Mixture of Experts with Nash Bargaining
 
 **Conference**: ICLR 2026  
@@ -135,7 +137,7 @@ where $\beta \in \mathbb{C}$ is the complex momentum coefficient and $\Re(\cdot)
 - [\[ICLR 2026\] Not All Models Suit Expert Offloading: On Local Routing Consistency of Mixture-of-Expert Models](not_all_models_suit_expert_offloading_on_local_routing_consistency_of_mixture-of.md)
 - [\[ICLR 2026\] DirMoE: Dirichlet-Routed Mixture of Experts](dirmoe_dirichlet-routed_mixture_of_experts.md)
 - [\[ICLR 2026\] Understanding the Mixture-of-Experts with Nadaraya-Watson Kernel](understanding_the_mixture-of-experts_with_nadaraya-watson_kernel.md)
-- [\[ACL 2026\] Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference](../../ACL2026/llm_efficiency/alloc-moe_budget-aware_expert_activation_allocation_for_efficient_mixture-of-exp.md)
+- [\[ICML 2025\] Retraining-Free Merging of Sparse MoE via Hierarchical Clustering](../../ICML2025/llm_efficiency/retraining-free_merging_of_sparse_moe_via_hierarchical_clustering.md)
 
 </div>
 

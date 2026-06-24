@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] CCVTON utilizes a unified diffusion Transformer to simultaneously learn "try-off" and "try-on" tasks. It organizes massive unlabeled real-world portraits into a "de-clothing and re-clothing" reconstruction cycle for training, thereby eliminating dependence on scarce paired data. Complemented by a two-stage garment-awar
+  [CVPR 2026][Image Generation][Virtual Try-On] CCVTON utilizes a unified diffusion Transformer to simultaneously learn "try-off" and "try-on" tasks. It organizes massive unlabeled real-world portraits into a "de-clothing and re-clothing" reconstruction cycle for training, thereby eliminating dependence on scarce paired data. Complemented by a two-stage garment-aware masking mechanism to suppress original garment leakage, it achieves SOTA performance on VITON-HD and DressCode.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Virtual Try-On"
+  - "Cycle Consistency"
+  - "Diffusion Model"
+  - "Unpaired Data"
+  - "Mask Generation"
 date: 2026-05-08
-content_hash: b6e3ed571d6ed686
+content_hash: 652583b8aa4585f8
 ---
+
 # High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning
 
 **Conference**: CVPR 2026  
@@ -145,7 +150,7 @@ Controlled variants run on VITON-HD using the Flux.1.Fill backbone (✓ indicate
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
 - [\[CVPR 2026\] Cycle-Consistent Tuning for Layered Image Decomposition](cycle-consistent_tuning_for_layered_image_decomposition.md)
 - [\[CVPR 2025\] Shining Yourself: High-Fidelity Ornaments Virtual Try-on with Diffusion Model](../../CVPR2025/image_generation/shining_yourself_high-fidelity_ornaments_virtual_try-on_with_diffusion_model.md)
-- [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
+- [\[CVPR 2026\] PG-VTON: Single-Pass Training-Free Virtual Try-On via Patch-Guided Reference Alignment](pg-vton_single-pass_training-free_virtual_try-on_via_patch-guided_reference_alig.md)
 
 </div>
 

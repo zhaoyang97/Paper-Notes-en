@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper employs the "scaling analysis" approach from statistical physics to approximate Bayesian Neural Networks (BNNs)—no longer solving exact high-dimensional nonlinear equations, but instead using pencil-and-paper level energy comparisons. It predicts what feature learning (FL) modes (Specialization, GFL, etc.) e
+  [ICLR 2026][Learning Theory][Sample Complexity] This paper employs the "scaling analysis" approach from statistical physics to approximate Bayesian Neural Networks (BNNs)—no longer solving exact high-dimensional nonlinear equations, but instead using pencil-and-paper level energy comparisons. It predicts what feature learning (FL) modes (Specialization, GFL, etc.) emerge at specific data/width scales and determines the scaling exponent of the minimum learnable sample size $P^…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Feature Learning"
+  - "Sample Complexity"
+  - "Bayesian Neural Networks"
+  - "Scaling Laws"
+  - "Large Deviation Theory"
+  - "Variational Approximation"
 date: 2026-05-08
-content_hash: ac4ce906bd998325
+content_hash: 8169cd3fed2bba0c
 ---
+
 # Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity
 
 **Conference**: ICLR 2026  
@@ -111,15 +118,15 @@ Key conclusion: Non-GP modes yield $P^*/\kappa \propto d$ in the proportional li
 - **Value**: ⭐⭐⭐⭐ A low-cost tool for first-principles scaling analysis that bridges mechanistic interpretability and theory.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime](scaling_laws_and_spectra_of_shallow_neural_networks_in_the_feature_learning_regi.md)
 - [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
-- [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
 - [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
 
 </div>

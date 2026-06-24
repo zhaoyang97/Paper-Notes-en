@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper proposes PTC-Depth, a monocular depth estimation framework combining optical flow triangulation and wheel odometry. By tracking the metric scale of depth foundation models through recursive Bayesian updates, it achieves temporally consistent metric depth prediction and demonstrates strong generalization acro
+  [CVPR 2026][Autonomous Driving][Monocular Depth Estimation] This paper proposes PTC-Depth, a monocular depth estimation framework combining optical flow triangulation and wheel odometry. By tracking the metric scale of depth foundation models through recursive Bayesian updates, it achieves temporally consistent metric depth prediction and demonstrates strong generalization across multiple datasets including KITTI, TartanAir, and thermal infrared.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Monocular Depth Estimation"
+  - "Temporal Consistency"
+  - "Bayesian Scale Fusion"
+  - "Optical Flow Triangulation"
+  - "Wheel Odometry"
 date: 2026-05-08
-content_hash: 1fad5aec656a38ea
+content_hash: 2815a5d5eb0f7207
 ---
+
 # PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency
 
 **Conference**: CVPR 2026  
@@ -155,8 +161,8 @@ Short-range (0-20m) depth estimation:
 - [\[CVPR 2026\] LA-Pose: Latent Action Pretraining Meets Pose Estimation](la-pose_latent_action_pretraining_meets_pose_estimation.md)
 - [\[CVPR 2025\] Prompting Depth Anything for 4K Resolution Accurate Metric Depth Estimation](../../CVPR2025/autonomous_driving/prompting_depth_anything_for_4k_resolution_accurate_metric_depth_estimation.md)
 - [\[CVPR 2025\] Distilling Monocular Foundation Model for Fine-grained Depth Completion](../../CVPR2025/autonomous_driving/distilling_monocular_foundation_model_for_fine-grained_depth_completion.md)
-- [\[CVPR 2026\] ELiC: Efficient LiDAR Geometry Compression via Cross-Bit-depth Feature Propagation and Bag-of-Encoders](elic_efficient_lidar_geometry_compression_via_cross-bit-depth_feature_propagatio.md)
 - [\[CVPR 2026\] EMDUL: Expanding mmWave Datasets for Human Pose Estimation with Unlabeled Data and LiDAR Datasets](expanding_mmwave_datasets_for_human_pose_estimation_with_unlabeled_data_and_lida.md)
+- [\[CVPR 2026\] ELiC: Efficient LiDAR Geometry Compression via Cross-Bit-depth Feature Propagation and Bag-of-Encoders](elic_efficient_lidar_geometry_compression_via_cross-bit-depth_feature_propagatio.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Phased One-Step Adversarial Equilibrium for Video Diffusion Models
 description: >-
-  [AAAI 2026][Video Generation][Video diffusion distillation] This paper proposes V-PAE (Video Phased Adversarial Equilibrium), a two-phase distillation framework consisting of **stability priming followed by unified adver…
+  [AAAI 2026][Video Generation][Video diffusion distillation] This paper proposes V-PAE (Video Phased Adversarial Equilibrium), a two-phase distillation framework consisting of **stability priming followed by unified adversarial equilibrium**, which compresses large-scale video diffusion models (e.g., Wan2.1-I2V-14B) to single-step generation, achieving a 100× speedup and surpassing existing acceleration methods by 5.8% in average quality on VBench-I2V.
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "image-to-video"
   - "sampling acceleration"
 date: 2026-05-08
-content_hash: ff312fa7405490e1
+content_hash: 3f91fcdd30d58f08
 ---
 
 # Phased One-Step Adversarial Equilibrium for Video Diffusion Models
@@ -133,11 +133,11 @@ Comparison of distillation methods on VBench-I2V (base model: Wan2.1-I2V-14B):
 
 ## Related Papers
 
+- [\[ICML 2025\] Diffusion Adversarial Post-Training for One-Step Video Generation](../../ICML2025/video_generation/diffusion_adversarial_post-training_for_one-step_video_generation.md)
+- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](../../ICLR2026/video_generation/towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
 - [\[ICML 2026\] AAD-1: Asymmetric Adversarial Distillation for One-Step Autoregressive Video Generation](../../ICML2026/video_generation/aad-1_asymmetric_adversarial_distillation_for_one-step_autoregressive_video_gene.md)
+- [\[ICLR 2026\] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling](../../ICLR2026/video_generation/realtime_video_frame_interpolation_using_one-step_diffusion_sampling.md)
 - [\[ICCV 2025\] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation](../../ICCV2025/video_generation/fvgen_accelerating_novel-view_synthesis_with_adversarial_video_diffusion_distill.md)
-- [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](../../ICCV2025/video_generation/adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
-- [\[CVPR 2026\] FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](../../CVPR2026/video_generation/flashmotion_fewstep_controllable_video_generation.md)
-- [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
 
 </div>
 

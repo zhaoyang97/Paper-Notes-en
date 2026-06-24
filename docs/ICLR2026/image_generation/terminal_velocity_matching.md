@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Terminal Velocity Matching
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] This paper proposes Terminal Velocity Matching (TVM), which shifts Flow Matching from "matching velocity at the trajectory start" to "matching velocity at the trajectory end." This allows a single-stage training process to directly learn the displacement mapping between any two time steps with a provable upper bound on
+  [ICLR 2026][Image Generation][Flow Matching] This paper proposes Terminal Velocity Matching (TVM), which shifts Flow Matching from "matching velocity at the trajectory start" to "matching velocity at the trajectory end." This allows a single-stage training process to directly learn the displacement mapping between any two time steps with a provable upper bound on the 2-Wasserstein distance. Combined with a semi-Lipschitz architectural modification and a Flash Attention JVP ke…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - JVP
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "Single-step generation"
+  - "Terminal velocity"
+  - "2-Wasserstein bound"
+  - "JVP"
 date: 2026-05-08
-content_hash: a3072c5c257a3982
+content_hash: 35843c522d23a8ce
 ---
+
 # Terminal Velocity Matching
 
 **Conference**: ICLR 2026  
@@ -167,8 +171,8 @@ At 1-NFE, TVM outperforms from-scratch MeanFlow/IMM/sCT at both resolutions; at 
 - [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
 - [\[ICML 2026\] Stable Velocity: A Variance Perspective on Flow Matching](../../ICML2026/image_generation/stable_velocity_a_variance_perspective_on_flow_matching.md)
 - [\[ICLR 2026\] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation](any-step_generation_via_n-th_order_recursive_consistent_velocity_field_estimatio.md)
-- [\[ICLR 2026\] Exploring the Design Space of Transition Matching](exploring_the_design_space_of_transition_matching.md)
-- [\[ICLR 2026\] Branched Schrödinger Bridge Matching](branched_schrödinger_bridge_matching.md)
+- [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
+- [\[ICLR 2026\] Source-Guided Flow Matching](source-guided_flow_matching.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation
 description: >-
-  [ICLR 2026][vlm_reasoning][CAPTCHA] Spatial CAPTCHA is proposed, a novel human-verification framework based on 3D spatial reasoning. It leverages fundamental capability differences between humans and multimodal large language models (MLLMs) in tasks such as geometric reasoning, perspective transformation, occlusion handling, and mental rotation. The best
+  [ICLR 2026][VLM Reasoning][CAPTCHA] Spatial CAPTCHA is proposed, a novel human-verification framework based on 3D spatial reasoning. It leverages fundamental capability differences between humans and multimodal large language models (MLLMs) in tasks such as geometric reasoning, perspective transformation, occlusion handling, and mental rotation. The best-performing MLLM achieved only a 31.0% Pass@1 accuracy, significantly lower than human performance.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - CAPTCHA
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "CAPTCHA"
+  - "spatial reasoning"
+  - "multimodal large models"
+  - "human-machine differentiation"
+  - "procedural generation"
 date: 2026-05-08
-content_hash: c49258f788607daf
+content_hash: c8b9a1e78b58332b
 ---
+
 # Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation
 
 **Conference**: ICLR 2026  
@@ -161,9 +166,9 @@ Capabilities requiring internal simulation of transformations (Mental Rotation, 
 ## Related Papers
 
 - [\[CVPR 2026\] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity](../../CVPR2026/vlm_reasoning/infinibench_infinite_benchmarking_for_visual_spatial_reasoning_with_customizable.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] Pursuing Minimal Sufficiency in Spatial Reasoning](pursuing_minimal_sufficiency_in_spatial_reasoning.md)
 - [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
 
 </div>

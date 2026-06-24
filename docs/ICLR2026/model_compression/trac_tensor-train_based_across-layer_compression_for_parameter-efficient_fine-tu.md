@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning
 description: >-
-  [ICLR 2026][Model Compression][LoRA] TRAC reformulates LoRA's low-rank incremental matrices $A$ and $B$ into Tensor-Train (TT) core sequences. By employing a strategy of "freezing/sharing specific cores across layers + restoring inter-layer flexibility via lightweight vector controllers," it reduces trainable parameters to an order of magnitude smaller th
+  [ICLR 2026][Model Compression][Tensor-Train Decomposition] TRAC reformulates LoRA's low-rank incremental matrices $A$ and $B$ into Tensor-Train (TT) core sequences. By employing a strategy of "freezing/sharing specific cores across layers + restoring inter-layer flexibility via lightweight vector controllers," it reduces trainable parameters to an order of magnitude smaller than LoRA (20× on LLaMA2-13B, 14× on ViT-Large) while maintaining or exceeding LoRA's performance acros…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - LoRA
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Tensor-Train Decomposition"
+  - "Across-Layer Sharing"
+  - "LoRA"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Tensor Compression"
 date: 2026-05-08
-content_hash: 3a4fb1d8f3b843c6
+content_hash: bf6494d234171d93
 ---
+
 # TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning
 
 **Conference**: ICLR 2026  

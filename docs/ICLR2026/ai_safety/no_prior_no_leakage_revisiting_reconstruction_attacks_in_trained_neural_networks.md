@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] No Prior, No Leakage: Revisiting Reconstruction Attacks in Trained Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper revisits training data reconstruction attacks based on implicit bias from a "defensive" perspective, **strictly proving that in the absence of data prior knowledge, the attack objective function possesses infinite indistinguishable global optima that can be arbitrarily far from the real training set**, there
+  [ICLR 2026][AI Safety][Reconstruction Attacks] This paper revisits training data reconstruction attacks based on implicit bias from a "defensive" perspective, **strictly proving that in the absence of data prior knowledge, the attack objective function possesses infinite indistinguishable global optima that can be arbitrarily far from the real training set**, thereby demonstrating that the "success" of such attacks fundamentally relies on external priors rather than the infor…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Reconstruction Attacks"
+  - "Privacy Leakage"
+  - "Implicit Bias"
+  - "Max-margin"
+  - "KKT Conditions"
+  - "Homogeneous ReLU Networks"
 date: 2026-05-08
-content_hash: 7638c4ff233ac8c8
+content_hash: 61dad258281a3fbd
 ---
+
 # No Prior, No Leakage: Revisiting Reconstruction Attacks in Trained Neural Networks
 
 **Conference**: ICLR 2026  
@@ -104,11 +111,11 @@ graph LR
 
 ## Related Papers
 
-- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 - [\[CVPR 2026\] PGA: Prior-free Generative Attack for Practical No-box Scenario](../../CVPR2026/ai_safety/pga_prior-free_generative_attack_for_practical_no-box_scenario.md)
+- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
 - [\[ICLR 2026\] Tug-of-War No More: Harmonizing Accuracy and Robustness in Vision-Language Models via Stability-Aware Task Vector Merging](tug-of-war_no_more_harmonizing_accuracy_and_robustness_in_vision-language_models.md)
+- [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
 
 </div>
 

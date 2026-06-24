@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cautious Weight Decay
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper proposes Cautious Weight Decay (CWD), a one-line, optimizer-agnostic modification: weight decay is applied only on coordinates where the "optimizer update direction" aligns with the "parameter sign." This preserves the original loss objective (no longer implicitly optimizing a regularized/constrained proxy o
+  [ICLR2026][Optimization][Weight decay] This paper proposes Cautious Weight Decay (CWD), a one-line, optimizer-agnostic modification: weight decay is applied only on coordinates where the "optimizer update direction" aligns with the "parameter sign." This preserves the original loss objective (no longer implicitly optimizing a regularized/constrained proxy objective) and generates sliding mode dynamics upon reaching the stationary manifold, leading towards a local Pareto-optim…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Weight decay"
+  - "optimizer"
+  - "implicit regularization"
+  - "sliding mode dynamics"
+  - "Lyapunov analysis"
 date: 2026-05-08
-content_hash: 1ce76514dfcccccf
+content_hash: e09829450bfd410e
 ---
+
 # Cautious Weight Decay
 
 **Conference**: ICLR2026  

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] A Mixed Diet Makes DINO An Omnivorous Vision Encoder
 description: >-
-  [CVPR 2026][Segmentation][DINOv2] An Omnivorous Vision Encoder is proposed, which performs cross-modal alignment distillation training (RGB/Depth/Segmentation) on top of a frozen DINOv2 via a lightweight adapter. This enables a single encoder to produce consistent embeddings for diverse visual modalities while preserving original discriminative semanti
+  [CVPR2026][Segmentation][Cross-modal alignment] An Omnivorous Vision Encoder is proposed, which performs cross-modal alignment distillation training (RGB/Depth/Segmentation) on top of a frozen DINOv2 via a lightweight adapter. This enables a single encoder to produce consistent embeddings for diverse visual modalities while preserving original discriminative semantics.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - DINOv2
+  - "CVPR2026"
+  - "Segmentation"
+  - "Cross-modal alignment"
+  - "DINOv2"
+  - "Vision Foundation Models"
+  - "modality-agnostic encoder"
+  - "parameter-efficient fine-tuning"
+  - "contrastive learning"
 date: 2026-05-08
-content_hash: c7a48dec2ebb0767
+content_hash: 80b4f1ddc5c44ef5
 ---
+
 # A Mixed Diet Makes DINO An Omnivorous Vision Encoder
 
 **Conference**: CVPR2026  
@@ -167,7 +173,7 @@ ImageNet linear classification improved from 80.4% to 83.8%, indicating that cro
 - [\[CVPR 2026\] Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation](generalizable_co-salient_object_detection_via_mixed_content-style_modulation.md)
 - [\[ICML 2026\] What Makes Synthetic Data Effective in Image Segmentation](../../ICML2026/segmentation/what_makes_synthetic_data_effective_in_image_segmentation.md)
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
+- [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
 
 </div>
 

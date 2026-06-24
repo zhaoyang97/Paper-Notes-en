@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM-CAS: Dynamic Neuron Perturbation for Real-Time Hallucination Correction
 description: >-
-  [AAAI 2026][Hallucination Detection][Dynamic neuron perturbation] LLM-CAS is the first work to formulate real-time LLM hallucination correction as a hierarchical reinforcement learning (HRL) problem. It trains an RL agen…
+  [AAAI 2026][Hallucination Detection][Dynamic neuron perturbation] LLM-CAS is the first work to formulate real-time LLM hallucination correction as a hierarchical reinforcement learning (HRL) problem. It trains an RL agent to dynamically select optimal neuron perturbation strategies at inference time — the high-level policy selects a functional network category, while the low-level policy selects perturbation type and magnitude. Combined with adaptive masking and causal tracin…
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "causal tracing"
   - "adaptive masking"
 date: 2026-05-08
-content_hash: 9441e57e8b807a2c
+content_hash: 42f19a42ef81b37c
 ---
 
 # LLM-CAS: Dynamic Neuron Perturbation for Real-Time Hallucination Correction
@@ -127,11 +127,11 @@ PPO optimizes both levels of the policy network. Mask parameters $\theta_{\text{
 
 ## Related Papers
 
-- [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](../../ACL2026/hallucination/detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
+- [\[CVPR 2025\] Octopus: Alleviating Hallucination via Dynamic Contrastive Decoding](../../CVPR2025/hallucination/octopus_alleviating_hallucination_via_dynamic_contrastive_decoding.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[ACL 2026\] MultiHaluDet: Multilingual Hallucination Detection via LLM Hidden State Probing](../../ACL2026/hallucination/multihaludet_multilingual_hallucination_detection_via_llm_hidden_state_probing.md)
-- [\[ACL 2026\] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination](../../ACL2026/hallucination/the_reasoning_trap_how_enhancing_llm_reasoning_amplifies_tool_hallucination.md)
-- [\[ACL 2026\] Two Pathways to Truthfulness: On the Intrinsic Encoding of LLM Hallucinations](../../ACL2026/hallucination/two_pathways_to_truthfulness_on_the_intrinsic_encoding_of_llm_hallucinations.md)
+- [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](../../CVPR2026/hallucination/prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
+- [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](../../ACL2026/hallucination/detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
+- [\[ACL 2025\] HalluLens: LLM Hallucination Benchmark](../../ACL2025/hallucination/hallulens_llm_hallucination_benchmark.md)
 
 </div>
 

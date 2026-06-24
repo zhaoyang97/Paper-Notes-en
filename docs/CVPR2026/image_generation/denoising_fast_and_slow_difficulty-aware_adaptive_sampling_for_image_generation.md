@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Forcing] Diffusion/flow matching models typically use a single timestep for all patches and distribute computation uniformly. This paper proposes **Patch Forcing (PF)**: assign independent noise levels to each patch during training and learn a lightweight "patch difficulty head." This allows confident (easy) regions to denoise
+  [CVPR 2026][Image Generation][Patch-level denoising] Diffusion/flow matching models typically use a single timestep for all patches and distribute computation uniformly. This paper proposes **Patch Forcing (PF)**: assign independent noise levels to each patch during training and learn a lightweight "patch difficulty head." This allows confident (easy) regions to denoise first, providing "future" context for uncertain (difficult) regions. Combined with two difficulty-aware sam…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Forcing
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Patch-level denoising"
+  - "Diffusion Forcing"
+  - "uncertainty prediction"
+  - "adaptive sampling"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: b204d98e263ab7f1
+content_hash: db158d52b21d4d84
 ---
+
 # Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation
 
 **Conference**: CVPR 2026  
@@ -144,8 +148,8 @@ With the same backbone and NFEs, PFT with Euler sampling outperforms SiT, and ad
 - [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
 - [\[CVPR 2026\] Few-Step Diffusion Sampling Through Instance-Aware Discretizations](few-step_diffusion_sampling_through_instance-aware_discretizations.md)
-- [\[CVPR 2026\] Precise Object and Effect Removal with Adaptive Target-Aware Attention](precise_object_and_effect_removal_with_adaptive_target-aware_attention.md)
 - [\[CVPR 2026\] Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)
+- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
 
 </div>
 

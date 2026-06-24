@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Diffusion Model] GeoDexGrasp utilizes a SIM(3) equivariant network with self-supervised disentangled pre-training to extract four categories of interpretable and transferable geometric representations (shape, size, pose, and interaction direction) from point clouds. It decomposes dexterous grasping into a two-stage decoupled pipeline:
+  [CVPR 2026][Robotics][Dexterous Grasping] GeoDexGrasp utilizes a SIM(3) equivariant network with self-supervised disentangled pre-training to extract four categories of interpretable and transferable geometric representations (shape, size, pose, and interaction direction) from point clouds. It decomposes dexterous grasping into a two-stage decoupled pipeline: "root rotation generation on the SO(3) manifold + finger joint diffusion generation in Euclidean space." It achieves c…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Robotics"
+  - "Dexterous Grasping"
+  - "SIM(3) Equivariance"
+  - "Geometric Representation"
+  - "Diffusion Models"
+  - "Physical Plausibility"
 date: 2026-05-08
-content_hash: ba1da5309f6d2bff
+content_hash: fa9bc7d64913a3da
 ---
+
 # GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping
 
 **Conference**: CVPR 2026  
@@ -156,10 +161,10 @@ Penetration depth dropped from the previous SOTA of 21.2mm to 13.6mm (~40% reduc
 
 ## Related Papers
 
+- [\[CVPR 2025\] DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](../../CVPR2025/robotics/dexgrasp_anything_towards_universal_robotic_dexterous_grasping_with_physics_awar.md)
 - [\[CVPR 2026\] GA-VLN: Geometry-Aware BEV Representation for Efficient Vision-Language Navigation](ga-vln_geometry-aware_bev_representation_for_efficient_vision-language_navigatio.md)
 - [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
 - [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](../../AAAI2026/robotics/towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[CVPR 2025\] DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](../../CVPR2025/robotics/dexgrasp_anything_towards_universal_robotic_dexterous_grasping_with_physics_awar.md)
 - [\[CVPR 2026\] MaskDexGrasp: Generative Masked Modeling for Part-Aware Dexterous Grasp Synthesis](maskdexgrasp_generative_masked_modeling_for_part-aware_dexterous_grasp_synthesis.md)
 
 </div>

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs
 description: >-
-  [ICLR 2026][Hallucination Detection][LoRA] LGCD utilizes SVD to decompose the FFN weight difference between the "original pretrained model vs. language-adapted model" into a set of LoRA matrices. During decoding, it dynamically triggers contrastive decoding based on token confidence to "re-inject" factual knowledge lost during the adaptation process—without req
+  [ICLR 2026][Hallucination Detection][Catastrophic Forgetting] LGCD utilizes SVD to decompose the FFN weight difference between the "original pretrained model vs. language-adapted model" into a set of LoRA matrices. During decoding, it dynamically triggers contrastive decoding based on token confidence to "re-inject" factual knowledge lost during the adaptation process—without requiring training or access to the original pre-training data.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - LoRA
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Catastrophic Forgetting"
+  - "Contrastive Decoding"
+  - "LoRA"
+  - "FFN Knowledge Memory"
+  - "Training-free"
+  - "Multilingual LLM"
 date: 2026-05-08
-content_hash: 69a8d5f911475d35
+content_hash: 0d31ff4237d6c2d4
 ---
+
 # Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs
 
 **Conference**: ICLR 2026  
@@ -123,10 +129,17 @@ Setup: 9 languages (zh, de, pt, ar, fa, ja, ko, id, sw), 12 public LAMs (mostly 
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](../../ACL2026/hallucination/detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
+- [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/hallucination/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)
+- [\[ICLR 2026\] GHOST: Hallucination-Inducing Image Generation for Multimodal LLMs](ghost_hallucination-inducing_image_generation_for_multimodal_llms.md)
+- [\[ICLR 2026\] NDAD: Negative-Direction Aware Decoding for Large Language Models via Controllable Hallucination Signal Injection](ndad_negative-direction_aware_decoding_for_large_language_models_via_controllabl.md)
+- [\[CVPR 2025\] Octopus: Alleviating Hallucination via Dynamic Contrastive Decoding](../../CVPR2025/hallucination/octopus_alleviating_hallucination_via_dynamic_contrastive_decoding.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation](../../ACL2026/hallucination/understanding_new-knowledge-induced_factual_hallucinations_in_llms_analysis_and_.md)

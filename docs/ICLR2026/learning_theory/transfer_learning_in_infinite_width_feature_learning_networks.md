@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Transfer Learning in Infinite Width Feature Learning Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Under mean-field/µP parameterization, the authors use Dynamical Mean-Field Theory (DMFT) to derive a transfer learning theory for infinite-width MLPs trained with gradient flow. They quantify the utility of pre-training as closed-form functions of source/target task alignment $\alpha_s$, data sizes $\nu_1, \nu_2$, and
+  [ICLR 2026][Learning Theory][Infinite Width Neural Networks] Under mean-field/µP parameterization, the authors use Dynamical Mean-Field Theory (DMFT) to derive a transfer learning theory for infinite-width MLPs trained with gradient flow. They quantify the utility of pre-training as closed-form functions of source/target task alignment $\alpha_s$, data sizes $\nu_1, \nu_2$, and feature learning strengths $\gamma_1, \gamma_2$, while providing a phase diagram for positive and n…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Infinite Width Networks"
+  - "Transfer Learning"
+  - "Infinite Width Neural Networks"
+  - "Feature Learning"
+  - "Dynamical Mean-Field Theory (DMFT)"
+  - "Adaptive Kernels"
 date: 2026-05-08
-content_hash: bc5765919783369e
+content_hash: 1102645a830fe0df
 ---
+
 # Transfer Learning in Infinite Width Feature Learning Networks
 
 **Conference**: ICLR 2026  

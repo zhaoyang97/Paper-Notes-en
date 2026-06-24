@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Steering Autoregressive Music Generation with Recursive Feature Machines
 description: >-
-  [ICLR 2026][Audio & Speech][MusicGen] This paper proposes MusicRFM, which utilizes Recursive Feature Machines (RFM) to extract "concept directions" corresponding to music theory concepts such as notes, chords, and scales from the hidden activations of MusicGen. During inference, these directions are directly injected into the residual stream to steer gener
+  [ICLR 2026][Audio & Speech][Controllable music generation] This paper proposes MusicRFM, which utilizes Recursive Feature Machines (RFM) to extract "concept directions" corresponding to music theory concepts such as notes, chords, and scales from the hidden activations of MusicGen. During inference, these directions are directly injected into the residual stream to steer generation in real-time—requiring no retraining or step-wise optimization. The method increases the target…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - MusicGen
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Controllable music generation"
+  - "Activation-space steering"
+  - "Recursive Feature Machines"
+  - "Concept directions"
+  - "MusicGen"
 date: 2026-05-08
-content_hash: 12470fdb3d772f23
+content_hash: 260fdf3f0bb41342
 ---
+
 # Steering Autoregressive Music Generation with Recursive Feature Machines
 
 **Conference**: ICLR 2026  

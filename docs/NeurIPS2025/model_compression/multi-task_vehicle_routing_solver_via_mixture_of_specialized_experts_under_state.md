@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP
 description: >-
-  [NeurIPS 2025][Model Compression][Vehicle Routing Problem] This paper proposes the **State-Decomposable MDP (SDMDP)** framework, which reformulates multiple VRP variants as Cartesian products of base state spaces…
+  [NeurIPS 2025][Model Compression][Vehicle Routing Problem] This paper proposes the **State-Decomposable MDP (SDMDP)** framework, which reformulates multiple VRP variants as Cartesian products of base state spaces, and introduces the **Mixture-of-Specialized-Experts Solver (MoSES)**, which leverages dedicated LoRA experts to enable latent space reuse of base policies, efficiently handling 16 VRP variants.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "Multi-Task Learning"
 date: 2026-05-08
-content_hash: 1064bf14cbe60347
+content_hash: 7c3a42c3e59c3e8b
 ---
 
 # Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP
@@ -144,10 +144,10 @@ An outstanding contribution with rigorous theory and comprehensive experiments. 
 ## Related Papers
 
 - [\[NeurIPS 2025\] MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver](mtl-kd_multi-task_learning_via_knowledge_distillation_for_generalizable_neural_v.md)
+- [\[ACL 2025\] MoRE: A Mixture of Low-Rank Experts for Adaptive Multi-Task Learning](../../ACL2025/model_compression/more_a_mixture_of_low-rank_experts_for_adaptive_multi-task_learning.md)
 - [\[ACL 2026\] SAMoRA: Semantic-Aware Mixture of LoRA Experts for Task-Adaptive Learning](../../ACL2026/model_compression/samora_semantic-aware_mixture_of_lora_experts_for_task-adaptive_learning.md)
 - [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
 - [\[NeurIPS 2025\] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging](mingle_mixture_of_null-space_gated_low-rank_experts_for_test-time_continual_mode.md)
-- [\[NeurIPS 2025\] Dense Backpropagation Improves Training for Sparse Mixture-of-Experts](dense_backpropagation_improves_training_for_sparse_mixture-of-experts.md)
 
 </div>
 

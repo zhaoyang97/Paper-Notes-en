@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper demonstrates that no single prompting strategy is universally optimal across all languages and tasks. It proposes modeling strategy selection as a learned decision problem, using a lightweight classifier to predict the optimal strategy for each instance, which significantly outperforms fixed strategies acros
+  [ACL 2026 Findings][Multilingual & Machine Translation][Multilingual LLMs] This paper demonstrates that no single prompting strategy is universally optimal across all languages and tasks. It proposes modeling strategy selection as a learned decision problem, using a lightweight classifier to predict the optimal strategy for each instance, which significantly outperforms fixed strategies across four benchmarks.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL 2026 Findings"
+  - "Multilingual & Machine Translation"
+  - "Multilingual LLMs"
+  - "Prompting Strategy Selection"
+  - "Translation Routing"
+  - "Low-Resource Languages"
+  - "Learned Classifier"
 date: 2026-05-08
-content_hash: e818492ea2f6df9e
+content_hash: 0538be1d5ef41d46
 ---
+
 # No One Fits All: From Fixed Prompting to Learned Routing in Multilingual LLMs
 
 **Conference**: ACL 2026 Findings  
@@ -125,7 +131,6 @@ The actual decision-making is performed by a lightweight classifier (using XGBoo
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -133,7 +138,7 @@ The actual decision-making is performed by a lightweight classifier (using XGBoo
 - [\[ICLR 2026\] Multilingual Routing in Mixture-of-Experts](../../ICLR2026/multilingual_mt/multilingual_routing_in_mixture-of-experts.md)
 - [\[ACL 2026\] Why Low-Resource NLP Needs More Than Cross-Lingual Transfer: Lessons Learned from Luxembourgish](why_low-resource_nlp_needs_more_than_cross-lingual_transfer_lessons_learned_from.md)
 - [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
-- [\[ACL 2026\] Location Not Found: Exposing Implicit Local and Global Biases in Multilingual LLMs](location_not_found_exposing_implicit_local_and_global_biases_in_multilingual_llm.md)
+- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
 
 </div>
 

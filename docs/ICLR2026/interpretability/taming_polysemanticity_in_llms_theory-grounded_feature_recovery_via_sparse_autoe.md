@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Taming Polysemanticity in LLMs: Theory-Grounded Feature Recovery via Sparse Autoencoders
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper revisits Sparse Autoencoder (SAE) training from the perspective of "neuron activation frequency," identifying and proving the **neuron resonance** phenomenon—where monosemantic features are reliably learned only when the neuron's activation frequency $p$ falls within a "resonance band" around the feature occ
+  [ICLR 2026][Interpretability][Sparse Autoencoders] This paper revisits Sparse Autoencoder (SAE) training from the perspective of "neuron activation frequency," identifying and proving the **neuron resonance** phenomenon—where monosemantic features are reliably learned only when the neuron's activation frequency $p$ falls within a "resonance band" around the feature occurrence frequency $f$. Based on this, the authors propose the **Group Bias Adaptation (GBA)** algorithm…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Polysemanticity"
+  - "Feature Recovery"
+  - "Neuron Resonance"
+  - "Bias Adaptation"
 date: 2026-05-08
-content_hash: a9d4b79e15761657
+content_hash: 407828ef295c6dbc
 ---
+
 # Taming Polysemanticity in LLMs: Theory-Grounded Feature Recovery via Sparse Autoencoders
 
 **Conference**: ICLR 2026  
@@ -152,7 +158,7 @@ The authors designed an imbalanced synthetic set ($n=128, d=42$; half samples $s
 - [\[ICLR 2026\] AbsTopK: Rethinking Sparse Autoencoders For Bidirectional Features](abstopk_rethinking_sparse_autoencoders_for_bidirectional_features.md)
 - [\[ICLR 2026\] Sparse Autoencoders Trained on the Same Data Learn Different Features](sparse_autoencoders_trained_on_the_same_data_learn_different_features.md)
 - [\[ICLR 2026\] On the Limits of Sparse Autoencoders: A Theoretical Framework and Reweighted Remedy](on_the_limits_of_sparse_autoencoders_a_theoretical_framework_and_reweighted_reme.md)
-- [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
+- [\[ICLR 2026\] Uncovering Conceptual Blindspots in Generative Image Models Using Sparse Autoencoders](uncovering_conceptual_blindspots_in_generative_image_models_using_sparse_autoenc.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes a novel "Segment-then-Splat" paradigm that assigns Gaussians to distinct object sets prior to 3D reconstruction…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes a novel "Segment-then-Splat" paradigm that assigns Gaussians to distinct object sets prior to 3D reconstruction, thereby eliminating geometric and semantic ambiguity and enabling unified 3D open-vocabulary segmentation for both static and dynamic scenes.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "CLIP Embeddings"
   - "Object Tracking"
 date: 2026-05-08
-content_hash: 0d2b75eecd0b259c
+content_hash: 4461ff8a220a4cad
 ---
 
 # Segment then Splat: Unified 3D Open-Vocabulary Segmentation via Gaussian Splatting
@@ -136,11 +136,11 @@ This paper contrasts with OpenGaussian (contrastive learning + K-means clusterin
 
 ## Related Papers
 
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](../../CVPR2026/3d_vision/extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
+- [\[CVPR 2025\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](../../CVPR2025/3d_vision/jopp-3d_joint_open_vocabulary_semantic_segmentation_on_point_clouds_and_panorama.md)
+- [\[CVPR 2025\] Mosaic3D: Foundation Dataset and Model for Open-Vocabulary 3D Segmentation](../../CVPR2025/3d_vision/mosaic3d_foundation_dataset_and_model_for_open-vocabulary_3d_segmentation.md)
 - [\[NeurIPS 2025\] OpenLex3D: A Tiered Evaluation Benchmark for Open-Vocabulary 3D Scene Representations](openlex3d_a_tiered_evaluation_benchmark_for_open-vocabulary_3d_scene_representat.md)
 - [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](../../CVPR2026/3d_vision/onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](../../CVPR2026/3d_vision/jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[NeurIPS 2025\] Online Segment Any 3D Thing as Instance Tracking](online_segment_any_3d_thing_as_instance_tracking.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](../../CVPR2026/3d_vision/extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
 
 </div>
 

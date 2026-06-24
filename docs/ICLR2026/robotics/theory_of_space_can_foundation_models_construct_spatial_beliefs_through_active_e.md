@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Theory of Space] The Theory of Space framework is proposed to systematically evaluate the ability of foundation models to construct and revise spatial beliefs through active exploration in both textual and visual environments. Utilizing cognitive map probing and the False Belief paradigm, the study reveals critical failure modes in cur
+  [ICLR 2026][Robotics][Theory of Space] The Theory of Space framework is proposed to systematically evaluate the ability of foundation models to construct and revise spatial beliefs through active exploration in both textual and visual environments. Utilizing cognitive map probing and the False Belief paradigm, the study reveals critical failure modes in current SOTA models, including the active-passive performance gap, exploration inefficiency, and belief inertia.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Theory of Space
-  - active exploration
-  - spatial belief
-  - cognitive map
-  - partial observability
-  - belief inertia
+  - "ICLR 2026"
+  - "Robotics"
+  - "Theory of Space"
+  - "active exploration"
+  - "spatial belief"
+  - "cognitive map"
+  - "partial observability"
+  - "belief inertia"
 date: 2026-05-08
-content_hash: 8de0b609fdbbfb10
+content_hash: 81153650b611e728
 ---
+
 # Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?
 
 **Conference**: ICLR 2026  
@@ -128,6 +129,7 @@ Following cognitive science principles (Siegel & White), the reasoning stage is 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -136,7 +138,7 @@ Following cognitive science principles (Siegel & White), the reasoning stage is 
 - [\[ICLR 2026\] Policy Contrastive Decoding for Robotic Foundation Models](policy_contrastive_decoding_for_robotic_foundation_models.md)
 - [\[ICML 2025\] SENSEI: Semantic Exploration Guided by Foundation Models to Learn Versatile World Models](../../ICML2025/robotics/sensei_semantic_exploration_guided_by_foundation_models_to_learn_versatile_world.md)
 - [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
-- [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
+- [\[ICLR 2026\] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance](align-then-steer_adapting_the_vision-language_action_models_through_unified_late.md)
 
 </div>
 

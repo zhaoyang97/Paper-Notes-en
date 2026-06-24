@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evolutionary Prediction Games
 description: >-
-  [NEURIPS2025][evolutionary game theory] This paper proposes the "Evolutionary Prediction Games" framework, applying evolutionary game theory to analyze feedback loops between prediction algorithms and user populations. I…
+  [NEURIPS2025][evolutionary game theory] This paper proposes the "Evolutionary Prediction Games" framework, applying evolutionary game theory to analyze feedback loops between prediction algorithms and user populations. It shows that ideal learners lead to competitive exclusion (survival of the fittest), whereas practical learners (with finite data, surrogate losses, or overparameterization) can instead foster stable coexistence and mutualism among groups.
 tags:
   - "NEURIPS2025"
   - "evolutionary game theory"
@@ -12,7 +12,7 @@ tags:
   - "coexistence mechanisms"
   - "fairness"
 date: 2026-05-08
-content_hash: 9fabed3cdc2a1af8
+content_hash: 12321e6d946df654
 ---
 
 # Evolutionary Prediction Games
@@ -148,11 +148,11 @@ Compared to Dean et al. (2024) on participation dynamics, this paper provides a 
 
 ## Related Papers
 
+- [\[ICML 2025\] Runtime Analysis of Evolutionary NAS for Multiclass Classification](../../ICML2025/others/runtime_analysis_of_evolutionary_nas_for_multiclass_classification.md)
 - [\[NeurIPS 2025\] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)
-- [\[NeurIPS 2025\] Tight Lower Bounds and Improved Convergence in Performative Prediction](tight_lower_bounds_and_improved_convergence_in_performative_prediction.md)
+- [\[CVPR 2025\] EVOS: Efficient Implicit Neural Training via EVOlutionary Selector](../../CVPR2025/others/evos_efficient_implicit_neural_training_via_evolutionary_selector.md)
 - [\[AAAI 2026\] Deviation Dynamics in Cardinal Hedonic Games](../../AAAI2026/others/deviation_dynamics_in_cardinal_hedonic_games.md)
-- [\[AAAI 2026\] Regular Games – an Automata-Based General Game Playing Language](../../AAAI2026/others/regular_games_--_an_automata-based_general_game_playing_language.md)
-- [\[AAAI 2026\] Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms](../../AAAI2026/others/theoretical_and_empirical_analysis_of_lehmer_codes_to_search_permutation_spaces_.md)
+- [\[ACL 2025\] Cautious Next Token Prediction](../../ACL2025/others/cautious_next_token_prediction.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper discovers that safety failures in Large Reasoning Models (LRMs) often occur when "the model identifies a risk but subsequently overturns it during further reasoning." It proposes Chain-of-Guardrail (CoG) to locate and repair dangerous reasoning segments, significantly reducing attack success rates while pres
+  [ACL2026][LLM Safety][Large Reasoning Models] This paper discovers that safety failures in Large Reasoning Models (LRMs) often occur when "the model identifies a risk but subsequently overturns it during further reasoning." It proposes Chain-of-Guardrail (CoG) to locate and repair dangerous reasoning segments, significantly reducing attack success rates while preserving mathematical and coding reasoning capabilities.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL2026"
+  - "LLM Safety"
+  - "Large Reasoning Models"
+  - "Safety Alignment"
+  - "Self-Jailbreak"
+  - "Reasoning Traces"
+  - "Selective Supervision"
 date: 2026-05-08
-content_hash: cc88f9d73d3f7ca1
+content_hash: 11565a5f3efead00
 ---
+
 # When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models
 
 **Conference**: ACL2026  
@@ -128,8 +134,21 @@ The study validated the reliability of automatic evaluation, reasoning mode main
 - Value: ⭐⭐⭐⭐⭐ High engineering value for LRM safety alignment requiring capability preservation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
+- [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](../../ICLR2026/llm_safety/advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
+- [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
+- [\[ICLR 2026\] Safety Instincts: LLMs Learn to Trust Their Internal Compass for Self-Defense](../../ICLR2026/llm_safety/safety_instincts_llms_learn_to_trust_their_internal_compass_for_self-defense.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

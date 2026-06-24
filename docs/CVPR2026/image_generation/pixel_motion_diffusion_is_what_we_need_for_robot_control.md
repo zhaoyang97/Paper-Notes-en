@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pixel Motion Diffusion Is What We Need for Robot Control
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DAWN proposes a two-stage full diffusion framework: the Motion Director generates dense pixel motion fields as an interpretable intermediate representation, and the Action Expert transforms these into executable robot action sequences. It achieves SOTA on CALVIN (Avg Len 4.00), MetaWorld (Overall 65.4%), and real-world
+  [CVPR 2026][Image Generation][Pixel motion diffusion] DAWN proposes a two-stage full diffusion framework: the Motion Director generates dense pixel motion fields as an interpretable intermediate representation, and the Action Expert transforms these into executable robot action sequences. It achieves SOTA on CALVIN (Avg Len 4.00), MetaWorld (Overall 65.4%), and real-world tasks, with model capacity and training data requirements significantly lower than competing methods.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pixel motion diffusion"
+  - "robot control"
+  - "Vision-Language-Action"
+  - "optical flow representation"
+  - "hierarchical diffusion policy"
 date: 2026-05-08
-content_hash: 3fabb6001da28954
+content_hash: 7fe22918d4ffbc97
 ---
+
 # Pixel Motion Diffusion Is What We Need for Robot Control
 
 **Conference**: CVPR 2026  
@@ -196,11 +202,11 @@ The two modules can be **trained in parallel**: the Motion Director uses RAFT op
 
 ## Related Papers
 
-- [\[CVPR 2026\] Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)
 - [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] DiP: Taming Diffusion Models in Pixel Space](dip_taming_diffusion_models_in_pixel_space.md)
-- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2026\] ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)
 - [\[CVPR 2026\] Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control](beyond_pixel_simulation_pathology_image_generation_via_diagnostic_semantic_token.md)
+- [\[CVPR 2026\] What Is It Like to Be a Noise? An Entropy-based Gaussian Noise Regularization for Diffusion Models](what_is_it_like_to_be_a_noise_an_entropy-based_gaussian_noise_regularization_for.md)
 
 </div>
 

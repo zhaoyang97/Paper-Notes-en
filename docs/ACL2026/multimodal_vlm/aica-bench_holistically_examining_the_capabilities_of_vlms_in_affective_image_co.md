@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper proposes AICA-Bench, a comprehensive benchmark covering three dimensions: Emotion Understanding (EU), Emotion Reasoning (ER), and Emotion-Guided Content Generation (EGCG). Evaluating 23 VLMs reveals two systematic flaws: intensity calibration failure and shallow descriptions. A training-free framework, GAT P
+  [ACL 2026 Findings][Multimodal VLM][Affective Analysis] This paper proposes AICA-Bench, a comprehensive benchmark covering three dimensions: Emotion Understanding (EU), Emotion Reasoning (ER), and Emotion-Guided Content Generation (EGCG). Evaluating 23 VLMs reveals two systematic flaws: intensity calibration failure and shallow descriptions. A training-free framework, GAT Prompting, is introduced to mitigate these issues.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Affective Analysis"
+  - "Vision-Language Models"
+  - "Benchmarking"
+  - "Affective Reasoning"
+  - "Prompt Engineering"
 date: 2026-05-08
-content_hash: 2da0f434bb8e2ace
+content_hash: e8fc66cd1fff9c2a
 ---
+
 # AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis
 
 **Conference**: ACL 2026 Findings  
@@ -133,9 +138,9 @@ The assessment model was fine-tuned on QwenVL2.5-7B using 10,000 Q&A pairs (gene
 
 - [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](../../CVPR2026/multimodal_vlm/vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
 - [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
-- [\[AAAI 2026\] Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection](../../AAAI2026/multimodal_vlm/multi-agent_vlms_guided_self-training_with_pnu_loss_for_low-resource_offensive_c.md)
-- [\[ACL 2025\] VLM2-Bench: A Closer Look at How Well VLMs Implicitly Link Explicit Matching Visual Cues](../../ACL2025/multimodal_vlm/vlm2-bench_a_closer_look_at_how_well_vlms_implicitly_link_explicit_matching_visu.md)
-- [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
+- [\[ICLR 2026\] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning](../../ICLR2026/multimodal_vlm/caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
+- [\[ICLR 2026\] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs](../../ICLR2026/multimodal_vlm/spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
+- [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](../../ICLR2026/multimodal_vlm/mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
 
 </div>
 

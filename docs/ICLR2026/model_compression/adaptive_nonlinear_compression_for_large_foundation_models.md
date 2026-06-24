@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Nonlinear Compression for Large Foundation Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] NLA employs piecewise linear kernels to perform "nonlinear low-rank approximation" on weight matrices, coupled with a reconstruction-free all-matrix forward algorithm and an adaptive budget scheduler that allocates compression rates based on importance. This allows low-rank compression to achieve lower information loss
+  [ICLR 2026][Model Compression][Low-rank approximation] NLA employs piecewise linear kernels to perform "nonlinear low-rank approximation" on weight matrices, coupled with a reconstruction-free all-matrix forward algorithm and an adaptive budget scheduler that allocates compression rates based on importance. This allows low-rank compression to achieve lower information loss and higher compression rates under the same parameter budget.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Low-rank approximation"
+  - "nonlinear kernel"
+  - "piecewise linear kernel"
+  - "adaptive budget allocation"
+  - "large model compression"
 date: 2026-05-08
-content_hash: 933b22c621ccbaff
+content_hash: 455459c7fa8eec49
 ---
+
 # Adaptive Nonlinear Compression for Large Foundation Models
 
 **Conference**: ICLR 2026  
@@ -127,8 +133,8 @@ Classification on ImageNet-1K with Swin-Base:
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](../../ICML2026/model_compression/end-to-end_compression_for_tabular_foundation_models.md)
 - [\[ICLR 2026\] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models](abba-adapters_efficient_and_expressive_fine-tuning_of_foundation_models.md)
 - [\[ICLR 2026\] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks](nerve_nonlinear_eigenspectrum_dynamics_in_llm_feed-forward_networks.md)
-- [\[ICLR 2026\] UniQL: Unified Quantization and Low-Rank Compression for Adaptive Edge LLMs](uniql_unified_quantization_and_low-rank_compression_for_adaptive_edge_llms.md)
 - [\[ICLR 2026\] NLI: Non-uniform Linear Interpolation Approximation of Nonlinear Operations for Efficient LLMs Inference](nli_non-uniform_linear_interpolation_approximation_of_nonlinear_operations_for_e.md)
+- [\[ICLR 2026\] Large Language Model Compression with Global Rank and Sparsity Optimization](large_language_model_compression_with_global_rank_and_sparsity_optimization.md)
 
 </div>
 

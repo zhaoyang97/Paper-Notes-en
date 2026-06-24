@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GaussRender: Learning 3D Occupancy with Gaussian Rendering
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes GaussRender, a plug-and-play differentiable Gaussian rendering module that projects predicted and ground-truth 3D occupancy onto 2D views and e…
+  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes GaussRender, a plug-and-play differentiable Gaussian rendering module that projects predicted and ground-truth 3D occupancy onto 2D views and enforces semantic and depth consistency constraints, thereby eliminating visual artifacts such as floating voxels. The approach achieves significant improvements in geometric fidelity across multiple benchmarks, with particularly pronounced gains on surface-sen…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "Differentiable Rendering"
   - "Projective Consistency"
 date: 2026-05-08
-content_hash: 1d2dd7d25acf7310
+content_hash: c91806b2e7148f97
 ---
 
 # GaussRender: Learning 3D Occupancy with Gaussian Rendering
@@ -138,8 +138,8 @@ The total loss is: $L = L_{3D} + \lambda L_{2D}$, where $L_{3D}$ is the standard
 - [\[ICCV 2025\] Occupancy Learning with Spatiotemporal Memory](occupancy_learning_with_spatiotemporal_memory.md)
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
 - [\[ICCV 2025\] CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting](ccl-lgs_contrastive_codebook_learning_for_3d_language_gaussian_splatting.md)
-- [\[ICCV 2025\] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World](sa-occ_satellite-assisted_3d_occupancy_prediction_in_real_world.md)
-- [\[ICCV 2025\] AGO: Adaptive Grounding for Open World 3D Occupancy Prediction](ago_adaptive_grounding_for_open_world_3d_occupancy_predictio.md)
+- [\[CVPR 2025\] GaussianFormer-2: Probabilistic Gaussian Superposition for Efficient 3D Occupancy Prediction](../../CVPR2025/autonomous_driving/gaussianformer-2_probabilistic_gaussian_superposition_for_efficient_3d_occupancy.md)
+- [\[CVPR 2025\] GaussianWorld: Gaussian World Model for Streaming 3D Occupancy Prediction](../../CVPR2025/autonomous_driving/gaussianworld_gaussian_world_model_for_streaming_3d_occupancy_prediction.md)
 
 </div>
 

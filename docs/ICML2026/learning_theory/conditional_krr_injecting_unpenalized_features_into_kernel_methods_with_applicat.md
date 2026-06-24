@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper proposes a Conditional Kernel Ridge Regression (Conditional KRR) framework that injects a set of unpenalized features into kernel methods. By reducing it to a standard KRR via a residual kernel, the authors prove a reduction cost of $\mathcal{O}(1/\sqrt{N})$ and verify sufficient conditions where Conditional
+  [ICML2026][Machine Learning Theory][Conditional Kernel Ridge Regression] This paper proposes a Conditional Kernel Ridge Regression (Conditional KRR) framework that injects a set of unpenalized features into kernel methods. By reducing it to a standard KRR via a residual kernel, the authors prove a reduction cost of $\mathcal{O}(1/\sqrt{N})$ and verify sufficient conditions where Conditional KRR outperforms standard KRR under both hard thresholding (top-k eigenfunctions) and s…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Machine Learning Theory"
+  - "Conditional Kernel Ridge Regression"
+  - "Conditionally Positive Definite Kernels"
+  - "Residual Kernels"
+  - "Kernel Thresholding"
+  - "Unpenalized Features"
 date: 2026-05-08
-content_hash: e8d204d86229b233
+content_hash: 137329847f52e9ff
 ---
+
 # Conditional KRR: Injecting Unpenalized Features into Kernel Methods with Applications to Kernel Thresholding
 
 **Conference**: ICML2026  
@@ -118,9 +124,9 @@ Finally, the theory is applied to two practical settings, resulting in a U-shape
 
 - [\[ICML 2026\] Sequential Kernel-based Conditional Independence Testing via Adaptive Betting](sequential_kernel-based_conditional_independence_testing_via_adaptive_betting.md)
 - [\[NeurIPS 2025\] Kernel Conditional Tests from Learning-Theoretic Bounds](../../NeurIPS2025/learning_theory/kernel_conditional_tests_from_learning-theoretic_bounds.md)
+- [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](../../ICLR2026/learning_theory/understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 - [\[ICLR 2026\] Scalable Random Wavelet Features: Efficient Non-Stationary Kernel Approximation with Convergence Guarantees](../../ICLR2026/learning_theory/scalable_random_wavelet_features_efficient_non-stationary_kernel_approximation_w.md)
-- [\[ICML 2026\] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)
-- [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
+- [\[ICLR 2026\] Subspace Kernel Learning on Tensor Sequences](../../ICLR2026/learning_theory/subspace_kernel_learning_on_tensor_sequences.md)
 
 </div>
 

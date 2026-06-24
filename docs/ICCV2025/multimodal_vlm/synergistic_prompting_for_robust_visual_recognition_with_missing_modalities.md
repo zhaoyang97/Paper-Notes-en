@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Synergistic Prompting for Robust Visual Recognition with Missing Modalities
 description: >-
-  [ICCV 2025][Multimodal VLM][missing modality] This paper proposes the Synergistic Prompting (SyP) framework, which employs a dynamic adapter to generate input-adaptive scaling factors that modulate a base prompt (dynamic…
+  [ICCV 2025][Multimodal VLM][missing modality] This paper proposes the Synergistic Prompting (SyP) framework, which employs a dynamic adapter to generate input-adaptive scaling factors that modulate a base prompt (dynamic prompt), synergizing with a static prompt that captures shared cross-modal features. SyP achieves robust visual recognition under missing-modality conditions and consistently outperforms SOTA methods such as DCP on MM-IMDb, Food101, and Hateful Memes.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "CLIP"
   - "multi-modal learning"
 date: 2026-05-08
-content_hash: 8e5c7f5066d37660
+content_hash: 804f1c0d08c3b647
 ---
 
 # Synergistic Prompting for Robust Visual Recognition with Missing Modalities
@@ -171,11 +171,11 @@ SyP surpasses SOTA DCP across all datasets, missing rates, and missing patterns,
 
 ## Related Papers
 
+- [\[ICLR 2026\] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition](../../ICLR2026/multimodal_vlm/mora_missing_modality_low-rank_adaptation_for_visual_recognition.md)
+- [\[CVPR 2025\] Recognition-Synergistic Scene Text Editing](../../CVPR2025/multimodal_vlm/recognition-synergistic_scene_text_editing.md)
 - [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](../../ICML2026/multimodal_vlm/calibrated_multimodal_representation_learning_with_missing_modalities.md)
 - [\[ICCV 2025\] Generalizable Object Re-Identification via Visual In-Context Prompting](generalizable_object_re-identification_via_visual_in-context_prompting.md)
-- [\[ICCV 2025\] MMOne: Representing Multiple Modalities in One Scene](mmone_representing_multiple_modalities_in_one_scene.md)
-- [\[CVPR 2026\] Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition](../../CVPR2026/multimodal_vlm/beyond_heuristic_prompting_a_concept-guided_bayesian_framework_for_zero-shot_ima.md)
-- [\[ICCV 2025\] A Quality-Guided Mixture of Score-Fusion Experts Framework for Human Recognition](a_qualityguided_mixture_of_scorefusion_experts_framework_for.md)
+- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](../../CVPR2026/multimodal_vlm/beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
 
 </div>
 

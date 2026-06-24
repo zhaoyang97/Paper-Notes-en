@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] The Glove2Hand framework translates egocentric videos of users wearing sensing gloves into realistic bare-hand videos while preserving tactile and IMU signals. By constructing HandSense, the first multi-modal hand-object interaction dataset, it significantly improves downstream performance for bare-hand contact estimat
+  [CVPR 2026][3D Vision][Hand-Object Interaction] The Glove2Hand framework translates egocentric videos of users wearing sensing gloves into realistic bare-hand videos while preserving tactile and IMU signals. By constructing HandSense, the first multi-modal hand-object interaction dataset, it significantly improves downstream performance for bare-hand contact estimation and occluded hand tracking.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "Sensing Gloves"
+  - "Video Translation"
+  - "3D Gaussian Hand Model"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 826843904754d612
+content_hash: fcd64a78ea177ec9
 ---
+
 # Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves
 
 **Conference**: CVPR 2026  
@@ -143,10 +148,10 @@ The 3D Gaussian hand model is trained via image reconstruction loss through diff
 ## Related Papers
 
 - [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
+- [\[AAAI 2026\] STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification](../../AAAI2026/3d_vision/stmi_segmentation-guided_token_modulation_with_cross-modal_hypergraph_interactio.md)
+- [\[CVPR 2026\] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions](arthoi_taming_foundation_models_for_monocular_4d_reconstruction_of_hand-articula.md)
+- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
 - [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration](fast3dcache_training-free_3d_geometry_synthesis_acceleration.md)
-- [\[CVPR 2026\] Iris: Integrating Language into Diffusion-based Monocular Depth Estimation](iris_integrating_language_into_diffusion-based_monocular_depth_estimation.md)
-- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
 
 </div>
 

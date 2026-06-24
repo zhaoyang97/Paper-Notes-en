@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Dynamic Scenes in Egocentric 4D Point Clouds
 description: >-
-  [AAAI 2026][Autonomous Driving][Egocentric View] This work introduces EgoDynamic4D — the first egocentric QA benchmark targeting highly dynamic 4D scenes (927K QA pairs…
+  [AAAI 2026][Autonomous Driving][Egocentric View] This work introduces EgoDynamic4D — the first egocentric QA benchmark targeting highly dynamic 4D scenes (927K QA pairs, 12 task types) — and proposes an end-to-end spatiotemporal reasoning framework that compresses large-scale 4D scenes into LLM-processable token sequences via instance-aware feature encoding, temporal encoding, camera encoding, and adaptive downsampling.
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Dynamic Scene QA"
   - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 143e271a75417e84
+content_hash: b0ab79171d228e8f
 ---
 
 # Understanding Dynamic Scenes in Egocentric 4D Point Clouds
@@ -223,11 +223,11 @@ $M$ learnable query tokens attend to $T$ camera poses via cross-attention, produ
 
 ## Related Papers
 
+- [\[CVPR 2026\] DGGT: Feedforward 4D Reconstruction of Dynamic Driving Scenes using Unposed Images](../../CVPR2026/autonomous_driving/dggt_feedforward_4d_reconstruction_of_dynamic_driving_scenes_using_unposed_image.md)
 - [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
 - [\[CVPR 2026\] BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds](../../CVPR2026/autonomous_driving/buildanypoint_3d_building_structured_abstraction_from_diverse_point_clouds.md)
 - [\[AAAI 2026\] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)
-- [\[AAAI 2026\] STRIDE-QA: Visual Question Answering Dataset for Spatiotemporal Reasoning in Urban Driving Scenes](stride-qa_visual_question_answering_dataset_for_spatiotemporal_reasoning_in_urba.md)
-- [\[ICCV 2025\] Robust 3D Object Detection using Probabilistic Point Clouds from Single-Photon LiDARs](../../ICCV2025/autonomous_driving/robust_3d_object_detection_using_probabilistic_point_clouds_from_single-photon_l.md)
+- [\[ECCV 2024\] SFPNet: Sparse Focal Point Network for Semantic Segmentation on General LiDAR Point Clouds](../../ECCV2024/autonomous_driving/sfpnet_sparse_focal_point_network_for_semantic_segmentation_on_general_lidar_poi.md)
 
 </div>
 

@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] Logit-KL Flow Matching：用采样-混合推理做非自回归文本生成
+  [Paper Note] Logit-KL Flow Matching: Non-Autoregressive Text Generation with Sampling-Mixing Inference
 description: >-
-  [ICLR 2026][Text Generation][Non-Autoregressive Generation] Ours uses "linear interpolation in logit space" (equivalent to the KL geodesic on the simplex) as the path for discrete flow matching. It proves that maximizing conditional likelihood exactly recovers the velocity field and introduces a "denoise-and-renoise" iterative sampler and hybrid inference scheme, significantly
+  [ICLR 2026][Text Generation][Non-Autoregressive Generation] Ours uses "linear interpolation in logit space" (equivalent to the KL geodesic on the simplex) as the path for discrete flow matching. It proves that maximizing conditional likelihood exactly recovers the velocity field and introduces a "denoise-and-renoise" iterative sampler and hybrid inference scheme, significantly reducing perplexity and improving BLEU for non-autoregressive text/code generation.
 tags:
-  - ICLR 2026
-  - Text Generation
-  - Non-Autoregressive Generation
-  - Conditional Flow Matching
-  - KL Geodesic
-  - Logit Interpolation
-  - Iterative Sampling
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Non-Autoregressive Generation"
+  - "Conditional Flow Matching"
+  - "KL Geodesic"
+  - "Logit Interpolation"
+  - "Iterative Sampling"
 date: 2026-05-08
-content_hash: 4ddcf89652a9afb0
+content_hash: 80e2ce43a0cff5eb
 ---
+
 # Logit-KL Flow Matching: Non-Autoregressive Text Generation with Sampling-Mixing Inference
 
 **Conference**: ICLR 2026  
@@ -129,10 +130,10 @@ Hybrid is optimal for multi-answer instruction tasks; sampling is optimal for de
 ## Related Papers
 
 - [\[ICLR 2026\] p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding](p-less_sampling_a_robust_hyperparameter-free_approach_for_llm_decoding.md)
+- [\[ACL 2025\] Balancing Diversity and Risk in LLM Sampling: How to Select Your Method and Parameter for Open-Ended Text Generation](../../ACL2025/nlp_generation/balancing_diversity_and_risk_in_llm_sampling_how_to_select_your_method_and_param.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
+- [\[ICML 2026\] Score-Repellent Monte Carlo: Toward Efficient Non-Markovian Sampler with Constant Memory in General State Spaces](../../ICML2026/nlp_generation/score-repellent_monte_carlo_toward_efficient_non-markovian_sampler_with_constant.md)
 - [\[ICLR 2026\] Diverse Text Decoding via Iterative Reweighting](diverse_text_decoding_via_iterative_reweighting.md)
-- [\[ICLR 2026\] Text Summarization via Global Structure Awareness](text_summarization_via_global_structure_awareness.md)
-- [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](../../ACL2026/nlp_generation/planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
 
 </div>
 

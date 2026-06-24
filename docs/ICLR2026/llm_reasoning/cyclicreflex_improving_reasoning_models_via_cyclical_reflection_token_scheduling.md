@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Reflection tokens in reasoning processes (e.g., "wait", "but") are treated as schedulable "resources." Drawing from the concept of cyclical learning rates in optimization, CyclicReflex is proposed as a training-free decoding strategy. By dynamically regulating the logits of reflection tokens using a triangular waveform
+  [ICLR 2026][Reasoning][Large Reasoning Models] Reflection tokens in reasoning processes (e.g., "wait", "but") are treated as schedulable "resources." Drawing from the concept of cyclical learning rates in optimization, CyclicReflex is proposed as a training-free decoding strategy. By dynamically regulating the logits of reflection tokens using a triangular waveform, it consistently improves the accuracy of 1.5B-8B models across multiple mathematical reasoning benchmarks (MATH…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Large Reasoning Models"
+  - "Reflection Token Scheduling"
+  - "Test-time Scaling"
+  - "Cyclical Learning Rate"
+  - "Decoding Strategy"
 date: 2026-05-08
-content_hash: 98b86cf846277a4e
+content_hash: 871323fd882ba366
 ---
+
 # CyclicReflex: Improving Reasoning Models via Cyclical Reflection Token Scheduling
 
 **Conference**: ICLR 2026  
@@ -139,9 +145,9 @@ This method is a pure inference-time strategy and involves no training or parame
 
 - [\[ICLR 2026\] Explain in Your Own Words: Improving Reasoning via Token-Selective Dual Knowledge Distillation](explain_in_your_own_words_improving_reasoning_via_token-selective_dual_knowledge.md)
 - [\[ICLR 2026\] Improving Reasoning for Diffusion Language Models via Group Diffusion Policy Optimization](improving_reasoning_for_diffusion_language_models_via_group_diffusion_policy_opt.md)
+- [\[ICLR 2026\] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens](selection_reflection_and_self-refinement_revisit_reasoning_tasks_via_a_causal_le.md)
 - [\[ICLR 2026\] Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling](overthinking_reduction_with_decoupled_rewards_and_curriculum_data_scheduling.md)
 - [\[ICLR 2026\] Executable Counterfactuals: Improving LLMs' Causal Reasoning Through Code](executable_counterfactuals_improving_llms_causal_reasoning_through_code.md)
-- [\[ICLR 2026\] Fixing the Broken Compass: Diagnosing and Improving Inference-Time Reward Modeling](fixing_the_broken_compass_diagnosing_and_improving_inference-time_reward_modelin.md)
 
 </div>
 

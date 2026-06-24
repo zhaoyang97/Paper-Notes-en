@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series
 description: >-
-  [ICML 2026][Time Series][Paper Note] This position paper systematically reveals the core issue of current time series forecasting benchmarks—**discrepancies in design choices** (global/local parameters, preprocessing, exogenous variables, temporal and spatial processing) are often overlooked as "implementation details," leading to unfair comparisons betwe
+  [ICML 2026][Time Series][Time series forecasting] This position paper systematically reveals the core issue of current time series forecasting benchmarks—**discrepancies in design choices** (global/local parameters, preprocessing, exogenous variables, temporal and spatial processing) are often overlooked as "implementation details," leading to unfair comparisons between papers. Through controlled experiments across 44 datasets, 7 SOTAs, and multiple reference architectures…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Time series forecasting"
+  - "benchmarking"
+  - "design dimensions"
+  - "model comparison"
+  - "evaluation methodology"
 date: 2026-05-08
-content_hash: 1d6c22b422583c76
+content_hash: abaaa83e87cc02de
 ---
+
 # Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series
 
 **Conference**: ICML 2026  
@@ -121,8 +127,8 @@ Simple reference models (e.g., MLP) achieve performance comparable to most SOTA 
 - [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](../../NeurIPS2025/time_series/selective_learning_for_deep_time_series_forecasting.md)
 - [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](../../NeurIPS2025/time_series/syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
+- [\[ICLR 2026\] Benchmarking ECG FMs: A Reality Check Across Clinical Tasks](../../ICLR2026/time_series/benchmarking_ecg_fms_a_reality_check_across_clinical_tasks.md)
 - [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](../../AAAI2026/time_series/counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
-- [\[ICML 2026\] Generalizing Multi-scale Time-Series Modeling with a Single Operator](generalizing_multi-scale_time-series_modeling_with_a_single_operator.md)
 
 </div>
 

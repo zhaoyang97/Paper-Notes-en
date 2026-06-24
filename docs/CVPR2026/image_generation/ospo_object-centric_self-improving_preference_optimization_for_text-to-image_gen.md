@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] OSPO enables a unified Multimodal Large Language Model (Unified MLLM) to self-generate preference image pairs that share global semantics but differ in object details. By utilizing object masks derived from attention to weight the SimPO loss, it significantly enhances fine-grained object-level alignment and suppresses
+  [CVPR 2026][Image Generation][Text-to-Image] OSPO enables a unified Multimodal Large Language Model (Unified MLLM) to self-generate preference image pairs that share global semantics but differ in object details. By utilizing object masks derived from attention to weight the SimPO loss, it significantly enhances fine-grained object-level alignment and suppresses object hallucinations in T2I generation without relying on external data or models.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Self-Improving Preference Optimization"
+  - "Object-level Alignment"
+  - "MLLM"
+  - "Object Hallucination"
 date: 2026-05-08
-content_hash: 1af6f198ea1c3635
+content_hash: 502e6da8ab7546b7
 ---
+
 # OSPO: Object-Centric Self-Improving Preference Optimization for Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ Ablation of data construction (Effect of Densification, Filtering, and Selection
 ## Related Papers
 
 - [\[CVPR 2026\] SOLACE: Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards](solace_self_confidence_rewards_t2i.md)
-- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
-- [\[CVPR 2026\] Curriculum Group Policy Optimization: Adaptive Sampling for Unleashing the Potential of Text-to-Image Generation](curriculum_group_policy_optimization_adaptive_sampling_for_unleashing_the_potent.md)
+- [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 
 </div>
 

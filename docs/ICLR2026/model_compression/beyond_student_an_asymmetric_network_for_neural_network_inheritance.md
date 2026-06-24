@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Beyond Student: An Asymmetric Network for Neural Network Inheritance
 description: >-
-  [ICLR 2026][Model Compression][Neural Network Inheritance] Instead of training a small-capacity student network to approximate a teacher, this work directly performs asymmetric low-rank decomposition on teacher weights, inherits principal component knowledge via SVD initialization, and reconstructs a "wide and deep" yet lightweight "Inherited Network" with an MoE-style "one di
+  [ICLR 2026][Model Compression][Neural Network Inheritance] Instead of training a small-capacity student network to approximate a teacher, this work directly performs asymmetric low-rank decomposition on teacher weights, inherits principal component knowledge via SVD initialization, and reconstructs a "wide and deep" yet lightweight "Inherited Network" with an MoE-style "one dimension-reduction + multiple dimension-expansion experts" structure. It achieves faster convergence a…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Neural Network Inheritance
-  - Mixture-of-Experts
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Neural Network Inheritance"
+  - "SVD Initialization"
+  - "Low-Rank Decomposition"
+  - "Mixture-of-Experts"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: afa156032f766e14
+content_hash: e6d52c3eaea18e9d
 ---
+
 # Beyond Student: An Asymmetric Network for Neural Network Inheritance
 
 **Conference**: ICLR 2026  
@@ -133,9 +136,9 @@ In multi-modal scenarios, InherNet generally outperforms CLIP-KD distilled stude
 
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
 - [\[ICLR 2026\] The Lattice Geometry of Neural Network Quantization -- A Short Equivalence Proof of GPTQ and Babai's Algorithm](the_lattice_geometry_of_neural_network_quantization_--_a_short_equivalence_proof.md)
+- [\[ICLR 2026\] SAFA-SNN: Sparse-aware Fast Adaptive Spiking Neural Network for On-device Few-Shot Class-Incremental Learning](safa-snn_sparsity-aware_on-device_few-shot_class-incremental_learning_with_fast-.md)
 - [\[NeurIPS 2025\] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills](../../NeurIPS2025/model_compression/on_the_creation_of_narrow_ai_hierarchy_and_nonlocality_of_neural_network_skills.md)
 - [\[CVPR 2026\] Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](../../CVPR2026/model_compression/decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)
-- [\[AAAI 2026\] Renormalization Group Guided Tensor Network Structure Search](../../AAAI2026/model_compression/renormalization_group_guided_tensor_network_structure_search.md)
 
 </div>
 

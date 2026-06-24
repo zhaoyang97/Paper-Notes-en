@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Discrete Variational Autoencoding via Policy Search
 description: >-
-  [ICLR 2026][Image Generation][ELBO] The training of discrete VAE encoders is reformulated as a KL-regularized policy search problem. By using natural gradients of a non-parametric target distribution to update the parametric encoder through weighted maximum likelihood, this approach completely bypasses Gumbel-Softmax, straight-through estimators, and bac
+  [ICLR 2026][Image Generation][Discrete VAE] The training of discrete VAE encoders is reformulated as a KL-regularized policy search problem. By using natural gradients of a non-parametric target distribution to update the parametric encoder through weighted maximum likelihood, this approach completely bypasses Gumbel-Softmax, straight-through estimators, and backpropagation through sampling paths. This allows autoregressive discrete encoders to train stably on high-dimensiona…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - ELBO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete VAE"
+  - "Policy Search"
+  - "ELBO"
+  - "Autoregressive Encoder"
+  - "Trust Region"
+  - "Effective Sample Size"
+  - "ImageNet Reconstruction"
 date: 2026-05-08
-content_hash: ba6ae25139792536
+content_hash: 28201beb9ecc3f05
 ---
+
 # Discrete Variational Autoencoding via Policy Search
 
 **Conference**: ICLR 2026  

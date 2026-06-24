@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Visual Code Mobile World Models
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The authors reformulate mobile GUI world modeling into a new paradigm where "VLMs generate renderable web code." They propose an automated data synthesis pipeline that rewrites policy trajectories into (image state, action) $\rightarrow$ (reasoning chain, next-state code) training samples. The resulting gWorld-8B/32B m
+  [ICML 2026][Image Generation][Mobile GUI World Model] The authors reformulate mobile GUI world modeling into a new paradigm where "VLMs generate renderable web code." They propose an automated data synthesis pipeline that rewrites policy trajectories into (image state, action) $\rightarrow$ (reasoning chain, next-state code) training samples. The resulting gWorld-8B/32B models achieve SOTA across six in/out-of-distribution benchmarks, improving baseline instruction accuracy b…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Mobile GUI World Model"
+  - "Renderable Code Generation"
+  - "VLM Post-training"
+  - "Cross-modal Re-labeling"
+  - "Look-ahead Reasoning"
 date: 2026-05-08
-content_hash: eaee074888161f84
+content_hash: a38110d4619a44d0
 ---
+
 # Generative Visual Code Mobile World Models
 
 **Conference**: ICML 2026  
@@ -118,14 +124,15 @@ gWorld-8B outperforms models over 50x its size (Llama 4 402B) in IAcc. and reduc
 - **Value**: ⭐⭐⭐⭐⭐ Open-source weights and benchmarks provide significant community value.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
 - [\[CVPR 2026\] Evaluating Generative Models via One-Dimensional Code Distributions](../../CVPR2026/image_generation/evaluating_generative_models_via_one-dimensional_code_distributions.md)
-- [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
 - [\[CVPR 2026\] A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](../../CVPR2026/image_generation/a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete.md)
+- [\[ICML 2026\] Compression as Adaptation: Implicit Visual Representation with Diffusion Foundation Models](compression_as_adaptation_implicit_visual_representation_with_diffusion_foundati.md)
 - [\[ICML 2026\] Conf-Gen: Conformal Uncertainty Quantification for Generative Models](conf-gen_conformal_uncertainty_quantification_for_generative_models.md)
 
 </div>

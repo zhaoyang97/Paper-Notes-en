@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments
 description: >-
-  [ICML 2026][Reinforcement Learning][World Models] FloWM maintains structured dynamic memory in latent space by leveraging **time-parameterized symmetries** (flow equivariance). This solves the problem of objects "disappearing" after moving out of bounds in partially observed environments, achieving long-horizon prediction accuracy far exceeding diffusion and recurrent
+  [ICML 2026][Reinforcement Learning][World Models] FloWM maintains structured dynamic memory in latent space by leveraging **time-parameterized symmetries** (flow equivariance). This solves the problem of objects "disappearing" after moving out of bounds in partially observed environments, achieving long-horizon prediction accuracy far exceeding diffusion and recurrent baselines (SSIM 0.9525 vs. DFoT 0.8885 in 3D Block World 210-step prediction).
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "World Models"
+  - "Partially Observable"
+  - "Flow-Equivariant"
+  - "Structured Memory"
+  - "Dynamic Environment Prediction"
 date: 2026-05-08
-content_hash: a15e0a0537e603be
+content_hash: 6270e56ddc711f1f
 ---
+
 # Flow-Equivariant World Models: Memory for Partially Observed Dynamic Environments
 
 **Conference**: ICML 2026  
@@ -140,15 +145,15 @@ For 210-step predictions (3x training length), FloWM achieves an SSIM of 0.9525,
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Composition of Memory Experts for Diffusion World Models](../../ICLR2026/reinforcement_learning/composition_of_memory_experts_for_diffusion_world_models.md)
 - [\[ICML 2025\] PIGDreamer: Privileged Information Guided World Models for Safe Partially Observable RL](../../ICML2025/reinforcement_learning/pigdreamer_privileged_information_guided_world_models_for_safe_partially_observa.md)
 - [\[ICML 2026\] Parameter-free Dynamic Regret: Time-varying Movement Costs, Delayed Feedback, and Memory](parameter-free_dynamic_regret_time-varying_movement_costs_delayed_feedback_and_m.md)
-- [\[CVPR 2026\] GeoWorld: Geometric World Models](../../CVPR2026/reinforcement_learning/geoworld_geometric_world_models.md)
-- [\[CVPR 2026\] DreamSAC: Learning Hamiltonian World Models via Symmetry Exploration](../../CVPR2026/reinforcement_learning/dreamsac_learning_hamiltonian_world_models_via_symmetry_exploration.md)
-- [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
+- [\[ICLR 2026\] One Life to Learn: Inferring Symbolic World Models for Stochastic Environments from Unguided Exploration](../../ICLR2026/reinforcement_learning/one_life_to_learn_inferring_symbolic_world_models_for_stochastic_environments_fr.md)
+- [\[ICML 2026\] Reverse Flow Matching: A Unified Framework for Online Reinforcement Learning with Diffusion and Flow Policies](reverse_flow_matching_a_unified_framework_for_online_reinforcement_learning_with.md)
 
 </div>
 

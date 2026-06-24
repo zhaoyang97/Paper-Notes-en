@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper introduces the concept of "Audio 4D Intelligence" (physical reasoning of sound source dynamics in 1D time + 3D space) and constructs the STAR-Bench benchmark. Using a dual pipeline of procedural synthesis and four-stage human annotation, 2,353 questions were generated to specifically test fine-grained audito
+  [ICLR 2026][Audio & Speech][Audio 4D Intelligence] This paper introduces the concept of "Audio 4D Intelligence" (physical reasoning of sound source dynamics in 1D time + 3D space) and constructs the STAR-Bench benchmark. Using a dual pipeline of procedural synthesis and four-stage human annotation, 2,353 questions were generated to specifically test fine-grained auditory cues that are "difficult to describe in text." Evaluation of 19 large audio models reveals that even the s…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Audio 4D Intelligence"
+  - "Spatio-Temporal Reasoning"
+  - "Auditory Perception Benchmark"
+  - "Binaural Spatial Reasoning"
+  - "LALM Evaluation"
 date: 2026-05-08
-content_hash: 82241dc4dbd4e2cd
+content_hash: 1c22e9b62d343a2c
 ---
+
 # STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence
 
 **Conference**: ICLR 2026  
@@ -116,15 +122,16 @@ Conclusions: ① **The benchmark is challenging**: even Gemini 2.5 Pro (~50%) la
 - Value: ⭐⭐⭐⭐⭐ Reveals systemic shortcomings in fine-grained perception and spatial reasoning in current large audio models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Unmute the Patch Tokens: Rethinking Probing in Multi-Label Audio Classification](unmute_the_patch_tokens_rethinking_probing_in_multi-label_audio_classification.md)
+- [\[ICLR 2026\] Incentivizing Consistent, Effective and Scalable Reasoning Capability in Audio LLMs via Reasoning Process Rewards](incentivizing_consistent_effective_and_scalable_reasoning_capability_in_audio_ll.md)
 - [\[ICLR 2026\] UALM: Unified Audio Language Model for Understanding, Generation and Reasoning](ualm_unified_audio_language_model_for_understanding_generation_and_reasoning.md)
 - [\[ICLR 2026\] Query-Guided Spatial-Temporal-Frequency Interaction for Music Audio-Visual Question Answering](query-guided_spatial-temporal-frequency_interaction_for_music_audio-visual_quest.md)
 - [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
-- [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](../../ICML2026/audio_speech/probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 
 </div>
 

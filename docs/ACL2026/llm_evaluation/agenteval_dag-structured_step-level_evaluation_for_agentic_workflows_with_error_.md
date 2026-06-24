@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking
 description: >-
-  [ACL 2026][LLM Evaluation][agent evaluation] AgentEval models agent execution traces as "Evaluation DAGs," using GPT-4o as a judge to score nodes across five types and trace root causes through a greedy parent strategy. Combined with 21 failure categories and CI/CD integration, it achieved a 2.17× improvement in failure detection recall (0.41→0.89) over end-to-en
+  [ACL 2026][LLM Evaluation][agent evaluation] AgentEval models agent execution traces as "Evaluation DAGs," using GPT-4o as a judge to score nodes across five types and trace root causes through a greedy parent strategy. Combined with 21 failure categories and CI/CD integration, it achieved a 2.17× improvement in failure detection recall (0.41→0.89) over end-to-end evaluation on 450 production traces. It reached human consistency of $\kappa=0.84$…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - agent evaluation
-  - DAG
-  - LLM-as-judge
-  - root cause analysis
-  - regression detection
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "agent evaluation"
+  - "DAG"
+  - "LLM-as-judge"
+  - "root cause analysis"
+  - "regression detection"
 date: 2026-05-08
-content_hash: 9d359c62f8213efa
+content_hash: e5521d8d5e2ee168
 ---
+
 # AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking
 
 **Conference**: ACL 2026  
@@ -128,16 +129,16 @@ The impact of four components on performance:
 - Value: ⭐⭐⭐⭐⭐ (Addresses a major bottleneck in agent productization).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
-- [\[ACL 2026\] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms](multifiletest_a_multi-file-level_llm_unit_test_generation_benchmark_and_impact_o.md)
-- [\[ICML 2026\] Beyond Trajectory-Level Attribution: Graph-Based Credit Assignment for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/beyond_trajectory-level_attribution_graph-based_credit_assignment_for_agentic_re.md)
-- [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
 - [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](../../ICLR2026/llm_evaluation/talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
+- [\[ACL 2026\] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms](multifiletest_a_multi-file-level_llm_unit_test_generation_benchmark_and_impact_o.md)
+- [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
+- [\[ICLR 2026\] PRISM-Physics: Causal DAG-Based Process Evaluation for Physics Reasoning](../../ICLR2026/llm_evaluation/prism-physics_causal_dag-based_process_evaluation_for_physics_reasoning.md)
+- [\[ACL 2026\] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows](finch_benchmarking_finance_amp_accounting_across_spreadsheet-centric_enterprise_.md)
 
 </div>
 

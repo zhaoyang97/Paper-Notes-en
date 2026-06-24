@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Not All Animals Are Equal: Metaphorical Framing through Source Domains and Semantic Frames
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes ConceptFrameMet, the first computational framework combining FrameNet semantic frames and Conceptual Metaphor Theory (CMT) source domains. Using a RoBERTa-based multi-task model, it detects metaphors and predicts their semantic frames and source domains. Combined with log-likelihood ratio (LLR) stat
+  [ACL 2026 Findings][LLM (Other)][Metaphor Detection] This paper proposes ConceptFrameMet, the first computational framework combining FrameNet semantic frames and Conceptual Metaphor Theory (CMT) source domains. Using a RoBERTa-based multi-task model, it detects metaphors and predicts their semantic frames and source domains. Combined with log-likelihood ratio (LLR) statistics to identify salient metaphorical patterns in discourse, the study reveals that liberals and conserva…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Metaphor Detection"
+  - "Conceptual Metaphor Theory"
+  - "Semantic Frames"
+  - "Discourse Analysis"
+  - "Media Framing"
 date: 2026-05-08
-content_hash: 69f9cd92bb7c6e27
+content_hash: 6fd7981e45ed3146
 ---
+
 # Not All Animals Are Equal: Metaphorical Framing through Source Domains and Semantic Frames
 
 **Conference**: ACL 2026 Findings  

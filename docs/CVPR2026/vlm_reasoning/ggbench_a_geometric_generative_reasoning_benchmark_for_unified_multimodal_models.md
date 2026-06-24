@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][GeoGebra] GGBench introduces a "geometric generative reasoning" benchmark for Unified Multimodal Models (UMMs): 1,411 geometric construction problems, each strictly aligned with "natural language steps + executable GeoGebra code + rendered images." Combined with a four-stage evaluation protocol, experiments reveal that "end-to-e
+  [CVPR 2026][VLM Reasoning][Geometric generative reasoning] GGBench introduces a "geometric generative reasoning" benchmark for Unified Multimodal Models (UMMs): 1,411 geometric construction problems, each strictly aligned with "natural language steps + executable GeoGebra code + rendered images." Combined with a four-stage evaluation protocol, experiments reveal that "end-to-end image generation" UMMs significantly lag behind "code-then-render" LLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GeoGebra
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Geometric generative reasoning"
+  - "unified multimodal models"
+  - "GeoGebra"
+  - "tri-modal alignment"
+  - "verifiable evaluation"
 date: 2026-05-08
-content_hash: 922c0646e7b283a2
+content_hash: c0142a4026d0671d
 ---
+
 # GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -117,16 +122,16 @@ Thirteen models were evaluated. Core conclusion: **End-to-end UMMs significantly
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
-- [\[CVPR 2026\] Geoint-R1: Formalizing Multimodal Geometric Reasoning with Dynamic Auxiliary Constructions](geoint-r1_formalizing_multimodal_geometric_reasoning_with_dynamic_auxiliary_cons.md)
 - [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
-- [\[CVPR 2026\] UNICBench: UNIfied Counting Benchmark for MLLM](unicbench_unified_counting_benchmark_for_mllm.md)
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
+- [\[CVPR 2026\] Geoint-R1: Formalizing Multimodal Geometric Reasoning with Dynamic Auxiliary Constructions](geoint-r1_formalizing_multimodal_geometric_reasoning_with_dynamic_auxiliary_cons.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[CVPR 2026\] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling](unit_unified_multimodal_chain-of-thought_test-time_scaling.md)
+- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
 
 </div>
 

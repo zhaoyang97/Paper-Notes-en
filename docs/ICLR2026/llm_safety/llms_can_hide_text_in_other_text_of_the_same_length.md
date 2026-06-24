@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LLMs Can Hide Text in Other Text of the Same Length
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] A paper proposing "same-length steganography" using LLM token rankings: any piece of meaningful text is encoded into another style-controllable, naturally-reading dummy text of the exact same length. Anyone holding the secret key can precisely reconstruct the original message. This demonstrates the "complete decoupling
+  [ICLR 2026][LLM Safety][Steganography] A paper proposing "same-length steganography" using LLM token rankings: any piece of meaningful text is encoded into another style-controllable, naturally-reading dummy text of the exact same length. Anyone holding the secret key can precisely reconstruct the original message. This demonstrates the "complete decoupling of text from author intent," sounding an alarm for AI safety.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Steganography"
+  - "generative steganography"
+  - "same-length hiding"
+  - "LLM alignment"
+  - "deniability"
+  - "AI safety"
 date: 2026-05-08
-content_hash: 7f09609ee1764376
+content_hash: a9d2f89c617276ac
 ---
+
 # LLMs Can Hide Text in Other Text of the Same Length
 
 **Conference**: ICLR 2026  
@@ -114,8 +121,8 @@ flowchart LR
 - [\[ICLR 2026\] Secret-Protected Evolution for Differentially Private Synthetic Text Generation](secret-protected_evolution_for_differentially_private_synthetic_text_generation.md)
 - [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
 - [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
-- [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
 - [\[ACL 2026\] Subject-level Inference for Realistic Text Anonymization Evaluation](../../ACL2026/llm_safety/subject-level_inference_for_realistic_text_anonymization_evaluation.md)
+- [\[ICLR 2026\] Strategic Dishonesty Can Undermine AI Safety Evaluations of Frontier LLMs](strategic_dishonesty_can_undermine_ai_safety_evaluations_of_frontier_llms.md)
 
 </div>
 

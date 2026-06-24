@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Differentially Private 2D Human Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][DP-SGD] The first unified differential privacy framework for 2D human pose estimation: it combines two denoising mechanisms, "Gradient Subspace Projection" and "Feature-level Differential Privacy (adding noise only to private features of the raw image)," into Feature-Projective DP. Under formal privacy guarantees, it significa
+  [CVPR 2026][Human Understanding][Differential Privacy] The first unified differential privacy framework for 2D human pose estimation: it combines two denoising mechanisms, "Gradient Subspace Projection" and "Feature-level Differential Privacy (adding noise only to private features of the raw image)," into Feature-Projective DP. Under formal privacy guarantees, it significantly narrows the accuracy gap with non-private models (achieving 82.61% PCKh@0.5 on MPII at $\varepsilon=…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - DP-SGD
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Differential Privacy"
+  - "2D Human Pose Estimation"
+  - "DP-SGD"
+  - "Subspace Projection"
+  - "Feature-level Privacy"
 date: 2026-05-08
-content_hash: afc72eb1060046e9
+content_hash: 3719e74680f2a49f
 ---
+
 # Differentially Private 2D Human Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -133,11 +138,11 @@ Notably, under $C=1.0$ (strong noise), vanilla DP-SGD drops to 12.53%, while Fea
 
 ## Related Papers
 
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)
-- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
 - [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)
+- [\[CVPR 2026\] FMPose3D: monocular 3D pose estimation via flow matching](fmpose3d_monocular_3d_pose_estimation_via_flow_matching.md)
+- [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](../../NeurIPS2025/human_understanding/pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
+- [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior
 description: >-
-  [NeurIPS 2025][Model Compression][video-understanding] This paper proposes DyToK, a training-free dynamic video token compression method that leverages query-conditioned keyframe priors inherent in the deep attention lay…
+  [NeurIPS 2025][Model Compression][video-understanding] This paper proposes DyToK, a training-free dynamic video token compression method that leverages query-conditioned keyframe priors inherent in the deep attention layers of VLLMs to adaptively allocate token budgets across frames, achieving plug-and-play optimal efficiency–accuracy trade-offs.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "efficiency"
   - "keyframe-selection"
 date: 2026-05-08
-content_hash: 1c2730decfe4eb93
+content_hash: 325ca3e6798bff09
 ---
 
 # Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior
@@ -137,10 +137,10 @@ Methods such as AKS employ pretrained VLMs to perform binary frame selection bef
 
 ## Related Papers
 
+- [\[ACL 2025\] LLMSR@XLLM25: Less is More: Enhancing Structured Multi-Agent Reasoning via Quality-Guided Distillation](../../ACL2025/model_compression/llmsrxllm25_less_is_more_enhancing_structured_multi-agent_reasoning_via_quality-.md)
 - [\[NeurIPS 2025\] KINDLE: Knowledge-Guided Distillation for Prior-Free Gene Regulatory Network Inference](kindle_knowledge-guided_distillation_for_prior-free_gene_regulatory_network_infe.md)
+- [\[CVPR 2025\] Less is More: Efficient Model Merging with Binary Task Switch](../../CVPR2025/model_compression/less_is_more_efficient_model_merging_with_binary_task_switch.md)
 - [\[ICLR 2026\] Cut Less, Fold More: Model Compression through the Lens of Projection Geometry](../../ICLR2026/model_compression/cut_less_fold_more_model_compression_through_the_lens_of_projection_geometry.md)
-- [\[NeurIPS 2025\] Vision-centric Token Compression in Large Language Model](vision-centric_token_compression_in_large_language_model.md)
-- [\[NeurIPS 2025\] DP-LLM: Runtime Model Adaptation with Dynamic Layer-wise Precision Assignment](dp-llm_runtime_model_adaptation_with_dynamic_layer-wise_precision_assignment.md)
 - [\[ACL 2026\] Quantize What Counts: More for Keys, Less for Values](../../ACL2026/model_compression/quantize_what_counts_more_for_keys_less_for_values.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy
 description: >-
-  [ICCV 2025][Segmentation][referring image segmentation] This paper proposes DeRIS, a framework that decouples referring image segmentation into two branches — perception and cognition — and introduces a Loopback Synergy…
+  [ICCV 2025][Segmentation][referring image segmentation] This paper proposes DeRIS, a framework that decouples referring image segmentation into two branches — perception and cognition — and introduces a Loopback Synergy mechanism to iteratively enhance cross-branch interaction. A non-referent sample conversion augmentation strategy is also introduced. DeRIS achieves state-of-the-art performance on RefCOCO/+/g and gRefCOCO benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "non-referent"
   - "GRES"
 date: 2026-05-08
-content_hash: 2fb6aa1c4d8a7417
+content_hash: 95aa6cd3a0309584
 ---
 
 # DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy
@@ -137,8 +137,8 @@ NSC Augmentation Effect:
 - [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
 - [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](../../NeurIPS2025/segmentation/safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
 - [\[ICCV 2025\] TinyViM: Frequency Decoupling for Tiny Hybrid Vision Mamba](tinyvim_frequency_decoupling_for_tiny_hybrid_vision_mamba.md)
-- [\[ICCV 2025\] TopoTTA: Topology-Enhanced Test-Time Adaptation for Tubular Structure Segmentation](topotta_topology-enhanced_test-time_adaptation_for_tubular_structure_segmentatio.md)
-- [\[ICLR 2026\] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](../../ICLR2026/segmentation/amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)
+- [\[ECCV 2024\] ReMamber: Referring Image Segmentation with Mamba Twister](../../ECCV2024/segmentation/remamber_referring_image_segmentation_with_mamba_twister.md)
+- [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
 
 </div>
 

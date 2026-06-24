@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal
 description: >-
-  [ICML 2026][Time Series][Kolmogorov-Smirnov] DistMatch proposes a recursive binning method based on **KS statistics**—by grouping residuals into approximately exchangeable leaf nodes, it **discards weight reassignment**, providing effective conformal prediction intervals under distribution shift. It achieves the smallest interval widths across five datasets while
+  [ICML 2026][Time Series][Sequential Conformal Prediction] DistMatch proposes a recursive binning method based on **KS statistics**—by grouping residuals into approximately exchangeable leaf nodes, it **discards weight reassignment**, providing effective conformal prediction intervals under distribution shift. It achieves the smallest interval widths across five datasets while maintaining valid coverage.
 tags:
-  - ICML 2026
-  - Time Series
-  - Kolmogorov-Smirnov
+  - "ICML 2026"
+  - "Time Series"
+  - "Sequential Conformal Prediction"
+  - "Distribution Shift"
+  - "Kolmogorov-Smirnov"
+  - "Adaptive Binning"
 date: 2026-05-08
-content_hash: 267429c92b9c603b
+content_hash: 1259b071c2d9f6d1
 ---
+
 # DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal
 
 **Conference**: ICML 2026  
@@ -134,9 +138,9 @@ DistMatch achieves the smallest interval width across all five datasets while ma
 
 ## Related Papers
 
-- [\[ICML 2026\] Adaptive Time Series Reasoning via Segment Selection](adaptive_time_series_reasoning_via_segment_selection.md)
 - [\[ICML 2026\] Doubly Outlier-Robust Online Infinite Hidden Markov Model](doubly_outlier-robust_online_infinite_hidden_markov_model.md)
 - [\[ICML 2026\] Divide and Contrast: Learning Robust Temporal Features Without Augmentation](divide_and_contrast_learning_robust_temporal_features_without_augmentation.md)
+- [\[ICML 2026\] Adaptive Time Series Reasoning via Segment Selection](adaptive_time_series_reasoning_via_segment_selection.md)
 - [\[NeurIPS 2025\] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series](../../NeurIPS2025/time_series/maestro_adaptive_sparse_attention_and_robust_learning_for_multimodal_dynamic_tim.md)
 - [\[ICML 2026\] Spatiotemporal Imputation with Graph-Informed Flow Matching](spatiotemporal_imputation_with_graph-informed_flow_matching.md)
 

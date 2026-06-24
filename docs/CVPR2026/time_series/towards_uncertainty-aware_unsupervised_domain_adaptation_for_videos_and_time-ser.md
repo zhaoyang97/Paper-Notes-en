@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport
 description: >-
-  [CVPR 2026][Time Series][Paper Note] This paper proposes Causal-OT, which embeds inter-channel Granger causality graphs into the Optimal Transport (OT) cost matrix for cross-domain alignment. It simultaneously employs entropy-based uncertainty filtering for pseudo-labels to ensure that time-series and video domain adaptation preserves temporal-causal stru
+  [CVPR 2026][Time Series][Unsupervised Domain Adaptation] This paper proposes Causal-OT, which embeds inter-channel Granger causality graphs into the Optimal Transport (OT) cost matrix for cross-domain alignment. It simultaneously employs entropy-based uncertainty filtering for pseudo-labels to ensure that time-series and video domain adaptation preserves temporal-causal structures without being biased by overconfident pseudo-labels. It achieves an average accuracy improvement…
 tags:
-  - CVPR 2026
-  - Time Series
+  - "CVPR 2026"
+  - "Time Series"
+  - "Unsupervised Domain Adaptation"
+  - "Optimal Transport"
+  - "Granger Causality"
+  - "Pseudo-labeling"
+  - "Uncertainty Calibration"
 date: 2026-05-08
-content_hash: 9bc2fc2e9525a820
+content_hash: bc497c0541dae9d7
 ---
+
 # Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport
 
 **Conference**: CVPR 2026  
@@ -154,15 +160,16 @@ Compared to TransPL, UCIHAR improved by +4.97%. Video tasks exceeded TransferAtt
 - Value: ⭐⭐⭐⭐ Significant for time-series and sensor-based UDA where calibration and causal consistency are critical.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2025\] TransPL: VQ-Code Transition Matrices for Pseudo-Labeling of Time Series Unsupervised Domain Adaptation](../../ICML2025/time_series/transpl_vq-code_transition_matrices_for_pseudo-labeling_of_time_series_unsupervi.md)
+- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](../../ICLR2026/time_series/cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 - [\[CVPR 2026\] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval](sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-.md)
+- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](../../ICLR2026/time_series/everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
 - [\[AAAI 2026\] Optimal Look-back Horizon for Time Series Forecasting in Federated Learning](../../AAAI2026/time_series/optimal_look-back_horizon_for_time_series_forecasting_in_federated_learning.md)
-- [\[AAAI 2026\] Interpreting Fedspeak with Confidence: A LLM-Based Uncertainty-Aware Framework Guided by Monetary Policy Transmission Paths](../../AAAI2026/time_series/interpreting_fedspeak_with_confidence_a_llm-based_uncertainty-aware_framework_gu.md)
-- [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](../../AAAI2026/time_series/probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
 
 </div>
 

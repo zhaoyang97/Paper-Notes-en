@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] A continuous semantic field is constructed on the 3D Gaussian Splatting representation. This method utilizes the Dirichlet Process to automatically discover new classes, compresses semantic features using gradient low-rank constraints, and organizes fragmented candidates into "unseen classes" via graph contrastive loss
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] A continuous semantic field is constructed on the 3D Gaussian Splatting representation. This method utilizes the Dirichlet Process to automatically discover new classes, compresses semantic features using gradient low-rank constraints, and organizes fragmented candidates into "unseen classes" via graph contrastive loss. This enables robust open-vocabulary 3D segmentation guided by natural language prompts…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Language-Guided Segmentation"
+  - "Open-Vocabulary"
+  - "Dirichlet Process"
+  - "Low-Rank Gradient"
 date: 2026-05-08
-content_hash: 3a94fe866238bc34
+content_hash: 0f498c55c7faf6e0
 ---
+
 # LangRef3DGS: Natural Language-Guided 3D Referential Segmentation from Partial Observations via 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -121,11 +127,11 @@ By randomly removing 20% of RGB-D frames to simulate partial observations, the r
 
 ## Related Papers
 
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
-- [\[CVPR 2026\] Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[CVPR 2026\] RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations](rng_a_unified_transformer_for_complete_3d_modeling_from_partial_observations.md)
+- [\[CVPR 2026\] NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation](ng_gs_nerf_guided_3d_gaussian_splatting_segmentation.md)
+- [\[CVPR 2026\] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting](pointgs_semantic-consistent_unsupervised_3d_point_cloud_segmentation_with_3d_gau.md)
+- [\[CVPR 2026\] ReLaGS: Relational Language Gaussian Splatting](relags_relational_language_gaussian_splatting.md)
+- [\[CVPR 2026\] Write Where It Matters: Policy-Guided Watermarks for 3D Gaussian Splatting](write_where_it_matters_policy-guided_watermarks_for_3d_gaussian_splatting.md)
 
 </div>
 

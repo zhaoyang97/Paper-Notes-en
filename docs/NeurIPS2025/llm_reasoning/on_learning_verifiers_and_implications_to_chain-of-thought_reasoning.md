@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] On Learning Verifiers and Implications to Chain-of-Thought Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][verifier] This paper proposes a formal PAC learning framework for Chain-of-Thought verifiers, defining three progressively stronger verification objectives (Simple → Trustable → γ-Trustable)…
+  [NeurIPS 2025][Reasoning][verifier] This paper proposes a formal PAC learning framework for Chain-of-Thought verifiers, defining three progressively stronger verification objectives (Simple → Trustable → γ-Trustable). It proves that when each problem admits only a bounded number of correct proofs, the sample complexity is $O(\log|H|)$; however, when the number of correct proofs is unbounded, the sample complexity inevitably grows to $\Theta(|H|)$…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "verifier"
   - "chain-of-thought"
   - "PAC learning"
@@ -13,7 +13,7 @@ tags:
   - "trustable verification"
   - "computational complexity gap"
 date: 2026-05-08
-content_hash: 2ed7ce70ccc0cd61
+content_hash: 6a7279d7d884c31d
 ---
 
 # On Learning Verifiers and Implications to Chain-of-Thought Reasoning
@@ -148,7 +148,7 @@ This is a purely theoretical paper with no experiments. Core theoretical results
 - [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
 - [\[NeurIPS 2025\] SafePath: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment](safepath_preventing_harmful_reasoning_in_chain-of-thought_via_early_alignment.md)
 - [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
-- [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](../../ICML2026/llm_reasoning/clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
+- [\[ICLR 2026\] Reinforcing General Reasoning without Verifiers](../../ICLR2026/llm_reasoning/reinforcing_general_reasoning_without_verifiers.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper systematically deconstructs the gains and losses of "Distilled Pretraining (DPT)" under the modern LLM paradigm. It finds that distillation significantly enhances test-time scaling (pass@k diversity) but simultaneously impairs in-context learning (weakening induction heads). Using a bigram sandbox, the autho
+  [ICLR2026][LLM Pretraining][Distilled Pretraining] This paper systematically deconstructs the gains and losses of "Distilled Pretraining (DPT)" under the modern LLM paradigm. It finds that distillation significantly enhances test-time scaling (pass@k diversity) but simultaneously impairs in-context learning (weakening induction heads). Using a bigram sandbox, the authors prove that these opposing effects stem from the same mechanism: distillation only benefits high-entropy di…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Distilled Pretraining"
+  - "Test-Time Scaling"
+  - "In-Context Learning"
+  - "Induction Heads"
+  - "Bigram Sandbox"
 date: 2026-05-08
-content_hash: 44a5ee5466ee7bea
+content_hash: f216ca761d9e3943
 ---
+
 # Distilled Pretraining: A modern lens of Data, In-Context Learning and Test-Time Scaling
 
 **Conference**: ICLR2026  
@@ -116,14 +122,15 @@ The core objective is Hinton-style soft-label distillation. Weight $\alpha$ cont
 - Value: ⭐⭐⭐⭐⭐ Provides direct practical insights for teams pretraining small models via distillation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] TNT: Improving Chunkwise Training for Test-Time Memorization](tnt_improving_chunkwise_training_for_test-time_memorization.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
-- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICCV 2025\] ETA: Energy-based Test-time Adaptation for Depth Completion](../../ICCV2025/llm_pretraining/eta_energy-based_test-time_adaptation_for_depth_completion.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
 - [\[ICLR 2026\] Reformulation for Pretraining Data Augmentation](reformulation_for_pretraining_data_augmentation.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes CIA (Communication Inference Attack), which, under a strict black-box setting where only the final output is observable, induces multi-agent systems to expose intermediate agent reasoning through adversarial queries. By combining global bias disentanglement with LLM weak supervision to model semanti
+  [ACL 2026][Multi-Agent][Communication Topology Inference] This paper proposes CIA (Communication Inference Attack), which, under a strict black-box setting where only the final output is observable, induces multi-agent systems to expose intermediate agent reasoning through adversarial queries. By combining global bias disentanglement with LLM weak supervision to model semantic correlations, it successfully reconstructs the MAS communication topology…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026"
+  - "Multi-Agent"
+  - "Communication Topology Inference"
+  - "Black-box Attack"
+  - "Global Bias Disentanglement"
+  - "LLM Weak Supervision"
+  - "Privacy Risk"
 date: 2026-05-08
-content_hash: b6dc7d3f8e95551d
+content_hash: e756f0658f6ceac7
 ---
+
 # CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems
 
 **Conference**: ACL 2026  
@@ -142,15 +148,14 @@ Detailed recovery metrics: Recall 0.87–0.96, ROUGE-L 0.87–0.95.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](../../AAAI2026/multi_agent/assemble_your_crew_automatic_multi-agent_communication_topol.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[ACL 2026\] To Trust or Not to Trust: Attention-Based Trust Management for LLM Multi-Agent Systems](to_trust_or_not_to_trust_attention-based_trust_management_for_llm_multi-agent_sy.md)
-- [\[ACL 2026\] SILO-BENCH: A Scalable Environment for Evaluating Distributed Coordination in Multi-Agent LLM Systems](silo-bench_a_scalable_environment_for_evaluating_distributed_coordination_in_mul.md)
-- [\[ACL 2026\] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing](masfactory_a_graph-centric_framework_for_orchestrating_llm-based_multi-agent_sys.md)
+- [\[ACL 2026\] Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems](seeing_the_whole_elephant_a_benchmark_for_failure_attribution_in_llm-based_multi.md)
 
 </div>
 

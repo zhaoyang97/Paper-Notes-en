@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Infrequent Exploration in Linear Bandits
 description: >-
-  [NeurIPS 2025][Other][linear bandits] This paper proposes the INFEX framework, which executes a baseline algorithm (e.g., LinUCB/LinTS) at designated exploration steps according to a given schedule and selects arms greed…
+  [NeurIPS 2025][Other][linear bandits] This paper proposes the INFEX framework, which executes a baseline algorithm (e.g., LinUCB/LinTS) at designated exploration steps according to a given schedule and selects arms greedily at all other time steps. It is proven that as long as the number of exploration steps exceeds $\omega(\log T)$, INFEX achieves the same poly-logarithmic regret as full-time exploration while substantially reducing computational overhead (80%–99% of time st…
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -12,7 +12,7 @@ tags:
   - "regret bound"
   - "exploration-exploitation"
 date: 2026-05-08
-content_hash: 4080149117547e3d
+content_hash: 8f97477ba21c4cc4
 ---
 
 # Infrequent Exploration in Linear Bandits
@@ -134,11 +134,11 @@ where only the last term depends on $T$, and it is consistent with the instance-
 
 ## Related Papers
 
+- [\[ICML 2025\] Heavy-Tailed Linear Bandits: Huber Regression with One-Pass Update](../../ICML2025/learning_theory/heavy-tailed_linear_bandits_huber_regression_with_one-pass_update.md)
 - [\[ICML 2026\] A Perturbation Approach to Unconstrained Linear Bandits](../../ICML2026/learning_theory/a_perturbation_approach_to_unconstrained_linear_bandits.md)
-- [\[NeurIPS 2025\] Transfer Learning for Benign Overfitting in High-Dimensional Linear Regression](transfer_learning_for_benign_overfitting_in_high-dimensional_linear_regression.md)
-- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
-- [\[ICLR 2026\] Lipschitz Bandits with Stochastic Delayed Feedback](../../ICLR2026/learning_theory/lipschitz_bandits_with_stochastic_delayed_feedback.md)
-- [\[NeurIPS 2025\] Efficient Kernelized Learning in Polyhedral Games Beyond Full-Information: From Colonel Blotto to Congestion Games](efficient_kernelized_learning_in_polyhedral_games_beyond_full-information_from_c.md)
+- [\[ICML 2026\] Bandit Social Learning with Exploration Episodes](../../ICML2026/learning_theory/bandit_social_learning_with_exploration_episodes.md)
+- [\[ICML 2025\] Near Optimal Best Arm Identification for Clustered Bandits](../../ICML2025/learning_theory/near_optimal_best_arm_identification_for_clustered_bandits.md)
+- [\[ICLR 2026\] Combinatorial Rising Bandits](../../ICLR2026/learning_theory/combinatorial_rising_bandits.md)
 
 </div>
 

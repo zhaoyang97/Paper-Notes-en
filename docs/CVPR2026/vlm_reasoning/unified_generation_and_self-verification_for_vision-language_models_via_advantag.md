@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] ADPO employs a reinforcement learning objective to enable the **same VLM to both generate answers and provide self-verification scores**. By using a "preference verification reward" to address class imbalance and "advantage decoupled optimization" to prevent reward hacking, this single-model best-of-N selection outperf
+  [CVPR 2026][VLM Reasoning][Test-time scaling] ADPO employs a reinforcement learning objective to enable the **same VLM to both generate answers and provide self-verification scores**. By using a "preference verification reward" to address class imbalance and "advantage decoupled optimization" to prevent reward hacking, this single-model best-of-N selection outperforms traditional dual-model "generator + verifier" setups across mathematics, visual grounding…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
-  - best-of-N
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Test-time scaling"
+  - "self-verification"
+  - "preference optimization"
+  - "GRPO"
+  - "best-of-N"
 date: 2026-05-08
-content_hash: d4b182d58813313b
+content_hash: e62cd43614cd6eee
 ---
+
 # Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization
 
 **Conference**: CVPR 2026  
@@ -126,15 +130,16 @@ Compared to **dual-model "Generator + Verifier"** (e.g., MM-Verifier), ADPO uses
 - Value: ⭐⭐⭐⭐ (Practical utility for deploying best-of-N in real-world VLM systems.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
 - [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
-- [\[ICLR 2026\] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs](../../ICLR2026/multimodal_vlm/uni-dpo_a_unified_paradigm_for_dynamic_preference_optimization_of_llms.md)
-- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
-- [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[CVPR 2026\] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models](all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vision-language_model.md)
+- [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
 
 </div>
 

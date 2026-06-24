@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs
 description: >-
-  [CVPR 2026][3D Vision][Neural ODE] Node-RF tightly couples Neural ODEs with NeRF, using continuous-time differential equations to drive the temporal evolution of implicit scene representations. It achieves long-range extrapolation and cross-trajectory generalization far beyond the training interval, significantly outperforming baselines like D-NeRF and
+  [CVPR 2026][3D Vision][Neural ODE] Node-RF tightly couples Neural ODEs with NeRF, using continuous-time differential equations to drive the temporal evolution of implicit scene representations. It achieves long-range extrapolation and cross-trajectory generalization far beyond the training interval, significantly outperforming baselines like D-NeRF and 4D-GS on datasets such as Bouncing Balls, Pendulum, and Oscillating Ball.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Neural ODE
-  - NeRF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Neural ODE"
+  - "NeRF"
+  - "Dynamic Scene"
+  - "Spatio-temporal Extrapolation"
+  - "Trajectory Generalization"
 date: 2026-05-08
-content_hash: 2268f5244869a201
+content_hash: 94f3918b43a95dad
 ---
+
 # Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs
 
 **Conference**: CVPR 2026  
@@ -202,10 +206,10 @@ Ours shows a dominant lead in generalization tasks. D-NeRF(c) (conditional versi
 ## Related Papers
 
 - [\[CVPR 2026\] ParticleGS: Learning Neural Gaussian Particle Dynamics from Videos for Prior-free Physical Motion Extrapolation](particlegs_learning_neural_gaussian_particle_dynamics_from_videos_for_prior-free.md)
-- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
 - [\[CVPR 2026\] Evidential Neural Radiance Fields](evidential_neural_radiance_fields.md)
-- [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
-- [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
+- [\[CVPR 2026\] Optical Flow Matching: Reframing Optical Flow as Continuous Transport Dynamics](optical_flow_matching_reframing_optical_flow_as_continuous_transport_dynamics.md)
+- [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
+- [\[CVPR 2026\] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation](catalyst4d_highfidelity_3dto4d_scene_editing_via_d.md)
 
 </div>
 

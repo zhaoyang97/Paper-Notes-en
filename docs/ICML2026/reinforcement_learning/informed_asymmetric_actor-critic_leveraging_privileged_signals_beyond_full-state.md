@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Informed Asymmetric Actor-Critic: Leveraging Privileged Signals Beyond Full-State Access
 description: >-
-  [ICML 2026][Reinforcement Learning][POMDP] This paper relaxes the "asymmetric actor-critic" requirement from "the critic must observe the full environment state" to "the critic can observe any state-dependent privileged signals." It proves that any such signals yield unbiased policy gradients and proposes two informativeness tests to identify the most useful si
+  [ICML2026][Reinforcement Learning][Asymmetric actor-critic] This paper relaxes the "asymmetric actor-critic" requirement from "the critic must observe the full environment state" to "the critic can observe any state-dependent privileged signals." It proves that any such signals yield unbiased policy gradients and proposes two informativeness tests to identify the most useful signals. Experiments demonstrate that carefully selected partial privileged signals can match or even…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - POMDP
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Asymmetric actor-critic"
+  - "privileged information"
+  - "POMDP"
+  - "unbiased policy gradient"
+  - "informativeness criteria"
 date: 2026-05-08
-content_hash: 13c6a000898220eb
+content_hash: 0cc6bd71aa8414a3
 ---
+
 # Informed Asymmetric Actor-Critic: Leveraging Privileged Signals Beyond Full-State Access
 
 **Conference**: ICML2026  
@@ -135,11 +140,11 @@ On a synthetic informed POMDP ($|\mathcal{S}|=20$, $|\mathcal{A}|=4$, states con
 
 ## Related Papers
 
+- [\[ICLR 2026\] Chunking the Critic: A Transformer-based Soft Actor-Critic with N-Step Returns](../../ICLR2026/reinforcement_learning/chunking_the_critic_a_transformer-based_soft_actor-critic_with_n-step_returns.md)
 - [\[AAAI 2026\] Risk-Sensitive Exponential Actor Critic](../../AAAI2026/reinforcement_learning/risk-sensitive_exponential_actor_critic.md)
 - [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](../../ICLR2026/reinforcement_learning/flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICML 2025\] Enhancing Decision-Making of Large Language Models via Actor-Critic](../../ICML2025/reinforcement_learning/enhancing_decision-making_of_large_language_models_via_actor-critic.md)
-- [\[NeurIPS 2025\] Global Convergence for Average Reward Constrained MDPs with Primal-Dual Actor-Critic](../../NeurIPS2025/reinforcement_learning/global_convergence_for_average_reward_constrained_mdps_with_primal-dual_actor_cr.md)
-- [\[ICML 2026\] Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning](hista_and_numca_estimate_state_value_effectively_for_llm_reinforcement_learning.md)
+- [\[ICLR 2026\] Simplicial Embeddings Improve Sample Efficiency in Actor-Critic Agents](../../ICLR2026/reinforcement_learning/simplicial_embeddings_improve_sample_efficiency_in_actorcritic_agents.md)
+- [\[ICLR 2026\] Neural+Symbolic Approaches for Interpretable Actor-Critic Reinforcement Learning](../../ICLR2026/reinforcement_learning/neuralsymbolic_approaches_for_interpretable_actor-critic_reinforcement_learning.md)
 
 </div>
 

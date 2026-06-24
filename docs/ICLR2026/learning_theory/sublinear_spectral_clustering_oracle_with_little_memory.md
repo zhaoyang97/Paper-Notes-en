@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sublinear Spectral Clustering Oracle with Little Memory
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper designs the first "small-memory" sublinear spectral clustering oracle for clusterable graphs. By using a new subroutine that estimates random walk collision probabilities in batches, it reduces the space required to construct the data structure from the previous $\Omega(\sqrt{n})$ to potentially below $n^{0.
+  [ICLR 2026][Learning Theory][Spectral Clustering Oracle] This paper designs the first "small-memory" sublinear spectral clustering oracle for clusterable graphs. By using a new subroutine that estimates random walk collision probabilities in batches, it reduces the space required to construct the data structure from the previous $\Omega(\sqrt{n})$ to potentially below $n^{0.01}$. This achieves a space-time trade-off curve of $S \cdot T = \tilde{O}(n)$ and proves that this cur…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Sublinear Algorithms"
+  - "Spectral Clustering Oracle"
+  - "Space-Time Trade-off"
+  - "Random Walk"
+  - "Collision Probability"
 date: 2026-05-08
-content_hash: f58ee34e8d0634f0
+content_hash: 8a91c46d8e537367
 ---
+
 # Sublinear Spectral Clustering Oracle with Little Memory
 
 **Conference**: ICLR 2026  
@@ -140,11 +146,11 @@ Ours achieves 0.98+ accuracy at approximately $1\times$ space. Prior methods **f
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dynamical properties of dense associative memory](dynamical_properties_of_dense_associative_memory.md)
 - [\[ICLR 2026\] Oracle-Efficient Hybrid Online Learning with Constrained Adversaries](oracle-efficient_hybrid_learning_with_constrained_adversaries.md)
+- [\[ICLR 2026\] Dynamical properties of dense associative memory](dynamical_properties_of_dense_associative_memory.md)
 - [\[ICLR 2026\] On the Spectral Differences Between NTK and CNTK and Their Implications for Point Cloud Recognition](on_the_spectral_differences_between_ntk_and_cntk_and_their_implications_for_poin.md)
+- [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
 - [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
-- [\[ICLR 2026\] A Biologically Plausible Dense Associative Memory with Exponential Capacity](a_biologically_plausible_dense_associative_memory_with_exponential_capacity.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Learning Graph Foundation Models on Riemannian Graph-of-Graphs
 description: >-
-  [ICML 2026][Self-Supervised Learning][Graph Foundation Model] R-GFM treats subgraphs of "different hop counts" as nodes in a higher-level Graph-of-Graphs (GoG), using a dynamic MoE router to assign each GoG to the Riemannian manifold (Hyperbolic / Euclidean / Spherical) that best matches its curvature. It simultaneously addresses two inherent flaws in existing graph foundation mo
+  [ICML 2026][Self-Supervised Learning][Graph Foundation Model] R-GFM treats subgraphs of "different hop counts" as nodes in a higher-level Graph-of-Graphs (GoG), using a dynamic MoE router to assign each GoG to the Riemannian manifold (Hyperbolic / Euclidean / Spherical) that best matches its curvature. It simultaneously addresses two inherent flaws in existing graph foundation models—fixed receptive fields and single Euclidean embeddings—achieving up to a 49% relative improve…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
-  - Graph Foundation Model
-  - Graph-of-Graphs
-  - Riemannian MoE
-  - adaptive-hop
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Graph Foundation Model"
+  - "Graph-of-Graphs"
+  - "Riemannian MoE"
+  - "adaptive-hop"
+  - "Domain Generalization"
 date: 2026-05-08
-content_hash: e45d5e99ed96272c
+content_hash: 42146b8506d6fc09
 ---
+
 # Learning Graph Foundation Models on Riemannian Graph-of-Graphs
 
 **Conference**: ICML 2026  
@@ -133,8 +135,8 @@ Consistent SOTA performance across 18 real-world graphs; relative improvements r
 - [\[ICML 2026\] FLAG: Foundation Model Representation with Latent Diffusion Alignment via Graph for Spatial Gene Expression Prediction](flag_foundation_model_representation_with_latent_diffusion_alignment_via_graph_f.md)
 - [\[ICML 2025\] Griffin: Towards a Graph-Centric Relational Database Foundation Model](../../ICML2025/self_supervised/griffin_towards_a_graph-centric_relational_database_foundation_model.md)
 - [\[AAAI 2026\] Explanation-Preserving Augmentation for Semi-Supervised Graph Representation Learning](../../AAAI2026/self_supervised/explanation-preserving_augmentation_for_semi-supervised_graph_representation_lea.md)
+- [\[ICML 2026\] Riemannian Metric Matching for Scalable Geometric Modeling of Distributions](riemannian_metric_matching_for_scalable_geometric_modeling_of_distributions.md)
 - [\[ICML 2026\] NumLeak: Public Numeric Benchmarks as Latent Labels in Foundation Models](numleak_public_numeric_benchmarks_as_latent_labels_in_foundation_models.md)
-- [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](../../AAAI2026/self_supervised/hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Streaming Sliced Optimal Transport
 description: >-
-  [ICML 2026][3D Vision][Streaming OT] Stream-SW is the first algorithm capable of estimating Sliced Wasserstein (SW) distance on a "sample stream": it utilizes KLL/quantile sketches on each 1D projection to maintain an approximate quantile function, transforming the closed-form 1D Wasserstein integral into a streamable estimator. The space complexity is on
+  [ICML 2026][3D Vision][Streaming OT] Stream-SW is the first algorithm capable of estimating Sliced Wasserstein (SW) distance on a "sample stream": it utilizes KLL/quantile sketches on each 1D projection to maintain an approximate quantile function, transforming the closed-form 1D Wasserstein integral into a streamable estimator. The space complexity is only logarithmic relative to the number of samples, bringing SOT to "one-look-and-discard" scenarios such as IoT and edge dev…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Streaming OT
-  - Quantile Sketch
-  - Stream-SW
+  - "ICML 2026"
+  - "3D Vision"
+  - "Streaming OT"
+  - "Quantile Sketch"
+  - "Stream-SW"
+  - "Single-pass"
+  - "Low Memory"
 date: 2026-05-08
-content_hash: 2e9281016a7c2d7f
+content_hash: 6d5b95c3dd4b1d54
 ---
+
 # Streaming Sliced Optimal Transport
 
 **Conference**: ICML 2026  
@@ -131,6 +134,7 @@ This work presents a pure algorithmic estimator; no training is involved. All "p
 - Value: ⭐⭐⭐⭐ High drop-in value for streaming, IoT, and online distribution comparison.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

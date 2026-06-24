@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flatten Graphs as Sequences: Transformers are Scalable Graph Generators
 description: >-
-  [NeurIPS 2025][Image Generation][graph generation] This paper proposes AutoGraph, which losslessly flattens graphs into token sequences via Segmented Eulerian Neighborhood Trails (SENT)…
+  [NeurIPS 2025][Image Generation][graph generation] This paper proposes AutoGraph, which losslessly flattens graphs into token sequences via Segmented Eulerian Neighborhood Trails (SENT), enabling direct modeling with a decoder-only Transformer. AutoGraph achieves graph generation speeds ~100× faster than diffusion models while reaching state-of-the-art performance on both synthetic and molecular benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "language model"
   - "scalability"
 date: 2026-05-08
-content_hash: a954763e56bac504
+content_hash: ef6c02a653ed81f7
 ---
 
 # Flatten Graphs as Sequences: Transformers are Scalable Graph Generators
@@ -177,10 +177,10 @@ AutoGraph achieves state-of-the-art or competitive performance on the QM9 and MO
 ## Related Papers
 
 - [\[ICML 2026\] Scalable GANs with Transformers](../../ICML2026/image_generation/scalable_gans_with_transformers.md)
-- [\[NeurIPS 2025\] Scaling Diffusion Transformers Efficiently via μP](scaling_diffusion_transformers_efficiently_via_μp.md)
-- [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
-- [\[NeurIPS 2025\] Graph Distance as Surprise: Free Energy Minimization in Knowledge Graph Reasoning](graph_distance_as_surprise_free_energy_minimization_in_knowledge_graph_reasoning.md)
 - [\[ICCV 2025\] Video Motion Graphs](../../ICCV2025/image_generation/video_motion_graphs.md)
+- [\[NeurIPS 2025\] Graph Distance as Surprise: Free Energy Minimization in Knowledge Graph Reasoning](graph_distance_as_surprise_free_energy_minimization_in_knowledge_graph_reasoning.md)
+- [\[NeurIPS 2025\] Exploring Variational Graph Autoencoders for Distribution Grid Data Generation](exploring_variational_graph_autoencoders_for_distribution_grid_data_generation.md)
+- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
 
 </div>
 

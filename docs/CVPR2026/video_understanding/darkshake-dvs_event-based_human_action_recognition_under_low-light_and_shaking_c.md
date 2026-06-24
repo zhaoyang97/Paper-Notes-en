@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions
 description: >-
-  [CVPR 2026][Video Understanding][Swin Transformer] Aiming at the realistic but long-neglected action recognition scenario of "low-light + handheld 6-DoF shaking," this paper first utilizes an Adaptive IMU Motion Compensation (AIMC) driven by angular velocity to correct event stream distortions caused by shaking. Subsequently, Iterative Greedy Sampling (IGS) is employed
+  [CVPR 2026][Video Understanding][Event-based camera] Aiming at the realistic but long-neglected action recognition scenario of "low-light + handheld 6-DoF shaking," this paper first utilizes an Adaptive IMU Motion Compensation (AIMC) driven by angular velocity to correct event stream distortions caused by shaking. Subsequently, Iterative Greedy Sampling (IGS) is employed to select the most informative keyframes, followed by a four-stage Hybrid Spatio-Temporal Swin Transformer…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Swin Transformer
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event-based camera"
+  - "action recognition"
+  - "IMU motion compensation"
+  - "keyframe sampling"
+  - "Swin Transformer"
 date: 2026-05-08
-content_hash: 868b647db8ccc5a3
+content_hash: e3d3e9065cf57d5b
 ---
+
 # DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ Compensation efficiency comparison (single-thread AMD EPYC 7B12): Ours completes
 
 ## Related Papers
 
-- [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
 - [\[CVPR 2026\] DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition](darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti.md)
+- [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
 - [\[CVPR 2026\] SMV-EAR: Bring Spatiotemporal Multi-View Representation Learning into Efficient Event-Based Action Recognition](smv-ear_bring_spatiotemporal_multi-view_representation_learning_into_efficient_e.md)
 - [\[CVPR 2026\] EgoXtreme: A Dataset for Robust Object Pose Estimation in Egocentric Views under Extreme Conditions](egoxtreme_a_dataset_for_robust_object_pose_estimation_in_egocentric_views_under_.md)
-- [\[CVPR 2026\] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](sdtrack_a_baseline_for_event-based_tracking_via_spiking_neural_networks.md)
+- [\[CVPR 2026\] VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition](videonet_a_large-scale_dataset_for_domain-specific_action_recognition.md)
 
 </div>
 

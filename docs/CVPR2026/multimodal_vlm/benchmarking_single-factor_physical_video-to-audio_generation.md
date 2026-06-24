@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Single-Factor Physical Video-to-Audio Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces FlatSounds—a benchmark that audits the **physical reasoning capabilities** of video-to-audio (V2A) models using "single-factor counterfactual intervention + single-video pattern testing." It reveals that current SOTA models actually "copy" physics and semantics from text captions rather than learn
+  [CVPR 2026][Multimodal VLM][Video-to-audio generation] This paper introduces FlatSounds—a benchmark that audits the **physical reasoning capabilities** of video-to-audio (V2A) models using "single-factor counterfactual intervention + single-video pattern testing." It reveals that current SOTA models actually "copy" physics and semantics from text captions rather than learning them from pixels, and stronger captions lead to poorer temporal alignment.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video-to-audio generation"
+  - "Physical correctness"
+  - "Counterfactual evaluation"
+  - "Temporal alignment"
+  - "Acoustic metrics"
 date: 2026-05-08
-content_hash: 1f6d347eb483cd3b
+content_hash: d1e9fb721469183a
 ---
+
 # Benchmarking Single-Factor Physical Video-to-Audio Generation
 
 **Conference**: CVPR 2026  
@@ -147,10 +153,10 @@ The three physical/alignment metrics proposed in this paper achieve a correlatio
 
 ## Related Papers
 
-- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
 - [\[CVPR 2026\] WEAVE: Unleashing and Benchmarking the In-context Interleaved Comprehension and Generation](weave_unleashing_and_benchmarking_the_in-context_interleaved_comprehension_and_g.md)
-- [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
+- [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](phycritic_multimodal_critic_models_for_physical_ai.md)
+- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](egoavu_egocentric_audio-visual_understanding.md)
+- [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
 - [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
 
 </div>

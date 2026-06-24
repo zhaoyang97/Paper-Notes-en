@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields
 description: >-
-  [NeurIPS 2025][Remote Sensing][Divergence-free neural networks] This paper proposes a divergence-free neural network (dfNN) that architecturally enforces exact mass conservation (divergence identically zero) via the symp…
+  [NeurIPS 2025][Remote Sensing][Divergence-free neural networks] This paper proposes a divergence-free neural network (dfNN) that architecturally enforces exact mass conservation (divergence identically zero) via the symplectic gradient of a stream function, and combines it with a directional guidance learning strategy. The approach significantly outperforms soft-constraint PINNs and unconstrained NNs on ice flux interpolation over Antarctica's Byrd Glacier.
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "mass conservation"
   - "vector field interpolation"
 date: 2026-05-08
-content_hash: 2eff8388bccc6e2a
+content_hash: b8715167ac6ef71e
 ---
 
 # Mass Conservation on Rails – Rethinking Physics-Informed Learning of Ice Flow Vector Fields
@@ -127,11 +127,11 @@ The AdamW optimizer (with weight decay) is used. Experiments are conducted over 
 
 ## Related Papers
 
+- [\[ICML 2025\] Causal Foundation Models: Disentangling Physics from Instrument Properties](../../ICML2025/remote_sensing/causal_foundation_models_disentangling_physics_from_instrument_properties.md)
+- [\[ICML 2026\] The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench](../../ICML2026/remote_sensing/the_perception-physics_paradox_probing_scientific_alignment_with_tc-bench.md)
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
 - [\[NeurIPS 2025\] OrbitZoo: Real Orbital Systems Challenges for Reinforcement Learning](orbitzoo_real_orbital_systems_challenges_for_reinforcement_learning.md)
-- [\[ICML 2026\] The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench](../../ICML2026/remote_sensing/the_perception-physics_paradox_probing_scientific_alignment_with_tc-bench.md)
 - [\[CVPR 2026\] GeoFlow: Real-Time Fine-Grained Cross-View Geolocalization via Iterative Flow Prediction](../../CVPR2026/remote_sensing/geoflow_real-time_fine-grained_cross-view_geolocalization.md)
-- [\[NeurIPS 2025\] ChA-MAEViT: Unifying Channel-Aware Masked Autoencoders and Multi-Channel Vision Transformers for Improved Cross-Channel Learning](chamaevit_unifying_channelaware_masked_autoencoders_and_mult.md)
 
 </div>
 

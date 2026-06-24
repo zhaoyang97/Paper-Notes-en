@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation
 description: >-
-  [AAAI 2026][Segmentation][Cross-domain few-shot segmentation] This paper proposes the HSL framework, which addresses the **segmentation granularity gap** between source and target domains in cross-domain few-shot segment…
+  [AAAI 2026][Segmentation][Cross-domain few-shot segmentation] This paper proposes the HSL framework, which addresses the **segmentation granularity gap** between source and target domains in cross-domain few-shot segmentation (CD-FSS) via three modules — Dual Style Randomization (DSR), Hierarchical Semantic Mining (HSM), and Prototype Confidence-modulated Thresholding (PCMT) — achieving state-of-the-art performance across four target-domain datasets.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "superpixel"
   - "prototype confidence"
 date: 2026-05-08
-content_hash: bffe429f7d69b43d
+content_hash: 30f64ed7e6d3cc00
 ---
 
 # Bridging Granularity Gaps: Hierarchical Semantic Learning for Cross-Domain Few-Shot Segmentation
@@ -169,11 +169,11 @@ Ablation over thresholding strategies (ViT-base, 1-shot):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](../../NeurIPS2025/segmentation/towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[AAAI 2026\] Otter: Mitigating Background Distractions of Wide-Angle Few-Shot Action Recognition with Enhanced RWKV](otter_mitigating_background_distractions_of_wide-angle_few-shot_action_recogniti.md)
-- [\[AAAI 2026\] InfoCLIP: Bridging Vision-Language Pretraining and Open-Vocabulary Semantic Segmentation via Information-Theoretic Alignment Transfer](infoclip_bridging_vision-language_pretraining_and_open-vocab.md)
-- [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
-- [\[ICCV 2025\] Object-level Correlation for Few-Shot Segmentation](../../ICCV2025/segmentation/object-level_correlation_for_few-shot_segmentation.md)
+- [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](../../CVPR2026/segmentation/cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
+- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](../../CVPR2026/segmentation/selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
+- [\[ICML 2025\] Adapter Naturally Serves as Decoupler for Cross-Domain Few-Shot Semantic Segmentation](../../ICML2025/segmentation/adapter_naturally_serves_as_decoupler_for_cross-domain_few-shot_semantic_segment.md)
+- [\[ICML 2025\] Self-Disentanglement and Re-Composition for Cross-Domain Few-Shot Segmentation](../../ICML2025/segmentation/self-disentanglement_and_re-composition_for_cross-domain_few-shot_segmentation.md)
+- [\[CVPR 2025\] Dual-Agent Optimization framework for Cross-Domain Few-Shot Segmentation](../../CVPR2025/segmentation/dual-agent_optimization_framework_for_cross-domain_few-shot_segmentation.md)
 
 </div>
 

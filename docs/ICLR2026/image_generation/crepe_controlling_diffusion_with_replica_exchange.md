@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] CREPE: Controlling Diffusion with Replica Exchange
 description: >-
-  [ICLR 2026][Image Generation][replica exchange] The paper proposes CREPE, an inference-time control method for diffusion models based on Replica Exchange (Parallel Tempering). As a computational dual to SMC, it operates in parallel across the denoising step dimension and serially across the sample dimension. It offers high sample diversity, supports online refinemen
+  [ICLR 2026][Image Generation][replica exchange] The paper proposes CREPE, an inference-time control method for diffusion models based on Replica Exchange (Parallel Tempering). As a computational dual to SMC, it operates in parallel across the denoising step dimension and serially across the sample dimension. It offers high sample diversity, supports online refinement, and handles various tasks including temperature annealing, reward tilting, model composition…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - replica exchange
-  - parallel tempering
-  - inference-time control
-  - SMC alternative
-  - reward tilting
-  - CFG debiasing
+  - "ICLR 2026"
+  - "Image Generation"
+  - "replica exchange"
+  - "parallel tempering"
+  - "inference-time control"
+  - "SMC alternative"
+  - "reward tilting"
+  - "CFG debiasing"
 date: 2026-05-08
-content_hash: ac34d467521cab31
+content_hash: adad1ddd1a321b7b
 ---
+
 # CREPE: Controlling Diffusion with Replica Exchange
 
 **Conference**: ICLR 2026  
@@ -142,7 +143,7 @@ Unlike SMC, which is a one-off process, CREPE is an infinitely runnable MCMC cha
 - [\[ECCV 2024\] Controlling the World by Sleight of Hand](../../ECCV2024/image_generation/controlling_the_world_by_sleight_of_hand.md)
 - [\[ECCV 2024\] StyleTokenizer: Defining Image Style by a Single Instance for Controlling Diffusion Models](../../ECCV2024/image_generation/styletokenizer_defining_image_style_by_a_single_instance_for_controlling_diffusi.md)
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[ICLR 2026\] WILD-Diffusion：一种受 WDRO 启发的有限数据扩散模型训练方法](wild-diffusion_a_wdro_inspired_training_method_for_diffusion_models_under_limite.md)
+- [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
 
 </div>
 

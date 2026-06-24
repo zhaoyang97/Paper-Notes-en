@@ -1,19 +1,20 @@
 ---
 title: >-
-  [Paper Note] DiaBlo: Diagonal Blocks Are Sufficient For Finetuning
+  [Paper Note] Batched matmul for DiaBlo forward pass
 description: >-
-  [ICLR 2026][Code Intelligence][PEFT] DiaBlo is proposed—a parameter-efficient fine-tuning method that replaces low-rank decomposition with diagonal block updates. By partitioning the weight matrix into $N \times N$ blocks and training only the diagonal blocks $\mathbf{D}_1, \ldots, \mathbf{D}_N$, it completely bypasses the non-convex optimization, initial
+  [ICLR2026][Code Intelligence][PEFT] DiaBlo is proposed—a parameter-efficient fine-tuning method that replaces low-rank decomposition with diagonal block updates. By partitioning the weight matrix into $N \times N$ blocks and training only the diagonal blocks $\mathbf{D}_1, \ldots, \mathbf{D}_N$, it completely bypasses the non-convex optimization, initialization sensitivity, and gradient instability issues caused by the $\mathbf{AB}$ product in LoRA. It converges with zero ini…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - PEFT
-  - diagonal blocks
-  - LoRA alternative
-  - LLM fine-tuning
-  - parameter efficiency
+  - "ICLR2026"
+  - "Code Intelligence"
+  - "PEFT"
+  - "diagonal blocks"
+  - "LoRA alternative"
+  - "LLM fine-tuning"
+  - "parameter efficiency"
 date: 2026-05-08
-content_hash: d43bc664158f507d
+content_hash: 931a841571489f8b
 ---
+
 # DiaBlo: Diagonal Blocks Are Sufficient For Finetuning
 
 **Conference**: ICLR2026  
@@ -165,11 +166,11 @@ In a linear least-squares setting, the optimal solution for DiaBlo is the same a
 
 ## Related Papers
 
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[ICLR 2026\] ATGen: Adversarial Reinforcement Learning for Test Case Generation](atgen_adversarial_reinforcement_learning_for_test_case_generation.md)
 - [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
 - [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[ICLR 2026\] BOAD: Discovering Hierarchical Software Engineering Agents via Bandit Optimization](boad_discovering_hierarchical_software_engineering_agents_via_bandit_optimizatio.md)
-- [\[ICLR 2026\] AetherCode: Evaluating LLMs' Ability to Win In Premier Programming Competitions](aethercode_evaluating_llms_ability_to_win_in_premier_programming_competitions.md)
 
 </div>
 

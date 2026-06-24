@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The MAGICIAN framework is proposed, which utilizes a pre-trained occupancy network to generate "Imagined Gaussians" for efficient surface coverage gain estimation. Combined with beam search, it achieves long-term trajectory planning in active mapping, reaching SOTA status in both indoor and outdoor scenes with over a 1
+  [CVPR 2026][3D Vision][Active Mapping] The MAGICIAN framework is proposed, which utilizes a pre-trained occupancy network to generate "Imagined Gaussians" for efficient surface coverage gain estimation. Combined with beam search, it achieves long-term trajectory planning in active mapping, reaching SOTA status in both indoor and outdoor scenes with over a 10% increase in coverage.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Active Mapping"
+  - "Long-Term Planning"
+  - "3D Gaussian Splatting"
+  - "Scene Reconstruction"
+  - "View Selection"
 date: 2026-05-08
-content_hash: af034eccee545515
+content_hash: d812f540833011b8
 ---
+
 # MAGICIAN: Efficient Long-Term Planning with Imagined Gaussians for Active Mapping
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ The occupancy network is pre-trained using standard occupancy prediction loss an
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
-- [\[CVPR 2026\] GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
+- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
+- [\[CVPR 2026\] Paparazzo: Active Mapping of Moving 3D Objects](paparazzo_active_mapping_of_moving_3d_objects.md)
+- [\[CVPR 2025\] ActiveGAMER: Active GAussian Mapping through Efficient Rendering](../../CVPR2025/3d_vision/activegamer_active_gaussian_mapping_through_efficient_rendering.md)
+- [\[CVPR 2026\] Gaussian Mapping for Evolving Scenes](gaussian_mapping_for_evolving_scenes.md)
+- [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation
 description: >-
-  [NeurIPS 2025][Multimodal VLM][GUI Navigation] This paper proposes GUI-Rise, a framework that jointly designs three subtasks—structured reasoning (progress estimation + decision reasoning), action prediction…
+  [NeurIPS 2025][VLM Reasoning][GUI Navigation] This paper proposes GUI-Rise, a framework that jointly designs three subtasks—structured reasoning (progress estimation + decision reasoning), action prediction, and history summarization—combined with GRPO reinforcement learning and a history summarization reward, to significantly improve the cross-domain generalization of GUI navigation agents.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "GUI Navigation"
   - "Structured Reasoning"
   - "History Summarization"
   - "GRPO"
   - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: a9145f36ab07fe99
+content_hash: a277e4d16d1cc3c2
 ---
 
 # GUI-Rise: Structured Reasoning and History Summarization for GUI Navigation
@@ -141,11 +141,11 @@ GUI-Rise executes a cycle of three subtasks at each interaction step: (1) **Stru
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/multimodal_vlm/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](../../ICML2026/vlm_reasoning/learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
 - [\[NeurIPS 2025\] iFinder: Structured Zero-Shot VLM Grounding for Dash-Cam Video Reasoning](ifinder_structured_zero-shot_vision-based_llm_grounding_for_dash-cam_video_reaso.md)
+- [\[ACL 2026\] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](../../ACL2026/vlm_reasoning/what39s_missing_in_screen-to-action_towards_a_ui-in-the-loop_paradigm_for_multim.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[ICCV 2025\] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining](../../ICCV2025/multimodal_vlm/iris_breaking_gui_complexity_with_adaptive_focus_and_self-refining.md)
-- [\[ACL 2026\] What's Missing in Screen-to-Action? Towards a UI-in-the-Loop Paradigm for Multimodal GUI Reasoning](../../ACL2026/multimodal_vlm/what39s_missing_in_screen-to-action_towards_a_ui-in-the-loop_paradigm_for_multim.md)
+- [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](../../CVPR2026/vlm_reasoning/see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HARDTESTGEN: A High-Quality RL Verifier Generation Pipeline for LLM Algorithmic Coding
 description: >-
-  [ICLR 2026][Code Intelligence][RLVR] Addressing algorithmic coding, the HARDTESTGEN pipeline is proposed—synthesizing "generator programs" via LLMs instead of direct test generation. Combined with multi-oracle consensus filtering, it creates HARDTESTS (26.6k problems), a high-quality dataset with 11% higher precision, proving that verifier quality directl
+  [ICLR 2026][Code Intelligence][test case synthesis] Addressing algorithmic coding, the HARDTESTGEN pipeline is proposed—synthesizing "generator programs" via LLMs instead of direct test generation. Combined with multi-oracle consensus filtering, it creates HARDTESTS (26.6k problems), a high-quality dataset with 11% higher precision, proving that verifier quality directly determines the effectiveness of rejection sampling and RL post-training.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - RLVR
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "test case synthesis"
+  - "code verifier"
+  - "RLVR"
+  - "competitive programming"
+  - "post-training"
 date: 2026-05-08
-content_hash: b21365d7668f5d1d
+content_hash: a4e32d27fa4e7a85
 ---
+
 # HARDTESTGEN: A High-Quality RL Verifier Generation Pipeline for LLM Algorithmic Coding
 
 **Conference**: ICLR 2026  
@@ -128,11 +133,11 @@ Adding RPGen/SPGen/HackGen improves precision by 0.2%–40%, with recall drops s
 
 ## Related Papers
 
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 - [\[ICLR 2026\] KV Cache Transform Coding for Compact Storage in LLM Inference](kv_cache_transform_coding_for_compact_storage_in_llm_inference.md)
 - [\[ACL 2026\] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions](../../ACL2026/code_intelligence/qaq_bidirectional_semantic_coherence_for_selecting_high-quality_synthetic_code_i.md)
 - [\[ACL 2026\] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels](../../ACL2026/code_intelligence/cubridge_an_llm-based_framework_for_understanding_and_reconstructing_high-perfor.md)
 - [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](viscoder2_building_multi-language_visualization_coding_agents.md)
-- [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](../../ACL2026/code_intelligence/scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation
 description: >-
-  [ICML 2026][Video Generation][Diffusion Model] This paper identifies that KV cache quantization in chunked autoregressive video diffusion models causes a **systematic shift in attention weights** ("Quantized Keys Steal Attention"). By deriving a per-score correction term based on Jensen's Inequality, it restores video quality near BF16 levels (VBench 78.02 vs 78.27
+  [ICML 2026][Video Generation][KV Cache Quantization] This paper identifies that KV cache quantization in chunked autoregressive video diffusion models causes a **systematic shift in attention weights** ("Quantized Keys Steal Attention"). By deriving a per-score correction term based on Jensen's Inequality, it restores video quality near BF16 levels (VBench 78.02 vs 78.27) under aggressive INT2 quantization, saving 50% memory.
 tags:
-  - ICML 2026
-  - Video Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Video Generation"
+  - "KV Cache Quantization"
+  - "Attention Bias"
+  - "Diffusion Models"
+  - "Jensen's Inequality"
 date: 2026-05-08
-content_hash: 2a479214c24aa97c
+content_hash: 95475cf48bd7fa0f
 ---
+
 # Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation
 
 **Conference**: ICML 2026  
@@ -135,8 +139,8 @@ With correction, INT2 almost fully restores BF16 quality; the correction is orth
 
 - [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
 - [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](../../CVPR2026/video_generation/accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
-- [\[CVPR 2025\] When to Lock Attention: Training-Free KV Control in Video Diffusion](../../CVPR2025/video_generation/when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
+- [\[CVPR 2025\] When to Lock Attention: Training-Free KV Control in Video Diffusion](../../CVPR2025/video_generation/when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
 - [\[ICML 2026\] Attention Sparsity is Input-Stable: Training-Free Sparse Attention for Video Generation via Offline Sparsity Profiling and Online QK Co-Clustering](attention_sparsity_is_input-stable_training-free_sparse_attention_for_video_gene.md)
 
 </div>

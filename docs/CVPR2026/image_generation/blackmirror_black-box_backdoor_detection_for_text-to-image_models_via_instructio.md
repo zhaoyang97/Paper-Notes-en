@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation
 description: >-
-  [CVPR 2026][Image Generation][Vision-Language Model] The BlackMirror framework is proposed, which employs a two-stage process consisting of fine-grained instruction-response semantic deviation detection (MirrorMatch) and cross-prompt stability verification (MirrorVerify). It achieves universal detection of multiple backdoor attacks on T2I models under black-box condition
+  [CVPR2026][Image Generation][Backdoor Detection] The BlackMirror framework is proposed, which employs a two-stage process consisting of fine-grained instruction-response semantic deviation detection (MirrorMatch) and cross-prompt stability verification (MirrorVerify). It achieves universal detection of multiple backdoor attacks on T2I models under black-box conditions, reaching an average F1 score of 89.46%, significantly outperforming the existing black-box method UFID.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Vision-Language Model
+  - "CVPR2026"
+  - "Image Generation"
+  - "Backdoor Detection"
+  - "Text-to-Image Models"
+  - "Black-box Detection"
+  - "Vision-Language Models"
+  - "Model Security"
 date: 2026-05-08
-content_hash: fe8a383ec85b8447
+content_hash: 8acf57303bd45802
 ---
+
 # BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation
 
 **Conference**: CVPR2026  
@@ -156,8 +161,8 @@ Without MirrorVerify, the FPR for almost all attacks spikes to 100%, proving tha
 - [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
 - [\[CVPR 2026\] Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models](black-box_membership_inference_attacks_on_the_pre-training_data_of_image-generat.md)
 - [\[CVPR 2025\] Where's the Liability in the Generative Era? Recovery-Based Black-Box Detection of AI-Generated Content](../../CVPR2025/image_generation/wheres_the_liability_in_the_generative_era_recovery-based_black-box_detection_of.md)
-- [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](autodebias_automated_framework_for_debiasing_text-to-image_models.md)
 - [\[ICML 2026\] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization](../../ICML2026/image_generation/support-proximity_augmented_diffusion_estimation_for_offline_black-box_optimizat.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](../../ICLR2026/image_generation/generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
 
 </div>
 

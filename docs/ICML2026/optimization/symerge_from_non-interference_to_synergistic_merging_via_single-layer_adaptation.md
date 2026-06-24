@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SyMerge: From Non-Interference to Synergistic Merging via Single-Layer Adaptation
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper redefines the objective of "model merging" from "avoiding task interference" to "promoting task synergy." It proposes SyMerge: jointly optimizing only one task-specific layer per task and the layer-wise merging coefficients of the encoder, while employing fine-tuned expert models as soft-label teachers to pr
+  [ICML 2026][Optimization][Model Merging] This paper redefines the objective of "model merging" from "avoiding task interference" to "promoting task synergy." It proposes SyMerge: jointly optimizing only one task-specific layer per task and the layer-wise merging coefficients of the encoder, while employing fine-tuned expert models as soft-label teachers to prevent test-time drift caused by entropy minimization. This approach elevates merged models to performance levels near s…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Model Merging"
+  - "Task Synergy"
+  - "Test-Time Adaptation"
+  - "Single-Layer Adaptation"
+  - "Expert Self-Labeling"
 date: 2026-05-08
-content_hash: 402a80ca5b073f01
+content_hash: 63c1d19dc3a7b6dc
 ---
+
 # SyMerge: From Non-Interference to Synergistic Merging via Single-Layer Adaptation
 
 **Conference**: ICML 2026  
@@ -125,11 +131,11 @@ In the ViT-B/32 20-task setting, SyMerge is only 1.8 points away from the single
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Surprising Effectiveness of a Single Global Merging in Decentralized Learning](../../ICLR2026/optimization/on_the_surprising_effectiveness_of_a_single_global_merging_in_decentralized_lear.md)
 - [\[CVPR 2026\] ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation](../../CVPR2026/optimization/ace-merging_data-free_model_merging_with_adaptive_covariance_estimation.md)
+- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
 - [\[NeurIPS 2025\] Quantitative Convergence of Trained Single Layer Neural Networks to Gaussian Processes](../../NeurIPS2025/optimization/quantitative_convergence_of_trained_single_layer_neural_networks_to_gaussian_pro.md)
 - [\[CVPR 2026\] Model Merging in the Essential Subspace](../../CVPR2026/optimization/model_merging_in_the_essential_subspace.md)
-- [\[ICML 2026\] Bayesian Gated Non-Negative Contrastive Learning](bayesian_gated_non-negative_contrastive_learning.md)
-- [\[ICML 2026\] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization](safeguarded_stochastic_polyak_step_sizes_for_non-smooth_optimization_robust_perf.md)
 
 </div>
 

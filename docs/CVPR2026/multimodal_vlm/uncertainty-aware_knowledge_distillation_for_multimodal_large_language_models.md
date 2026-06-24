@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Knowledge Distillation] Proposes Beta-KD, an uncertainty-aware knowledge distillation framework from a Bayesian perspective. By modeling teacher supervision as a Gibbs prior and deriving a closed-form solution via Laplace approximation, it automatically adjusts the balance between data and teacher signals, consistently improving distillation
+  [CVPR2026][Multimodal VLM][Knowledge Distillation] Proposes Beta-KD, an uncertainty-aware knowledge distillation framework from a Bayesian perspective. By modeling teacher supervision as a Gibbs prior and deriving a closed-form solution via Laplace approximation, it automatically adjusts the balance between data and teacher signals, consistently improving distillation performance on multimodal VQA benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Knowledge Distillation
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "Knowledge Distillation"
+  - "Uncertainty Weighting"
+  - "Bayesian Inference"
+  - "Gibbs Prior"
+  - "Multi-task Balancing"
 date: 2026-05-08
-content_hash: 2c519e50c31b671e
+content_hash: a5e682a5c596b541
 ---
+
 # Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models
 
 **Conference**: CVPR2026  
@@ -114,10 +119,10 @@ During training, the visual encoder and tokenizer are frozen, and only the langu
 ## Related Papers
 
 - [\[CVPR 2026\] Direction-aware 3D Large Multimodal Models](direction-aware_3d_large_multimodal_models.md)
-- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
-- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
-- [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
+- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
 - [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Beyond Missing Modalities: Hypergraph Guided Diffusion for Uncertainty-Aware Multimodal Emotion Recognition](beyond_missing_modalities_hypergraph_conditioned_diffusion_for_uncertainty-aware.md)
+- [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
 
 </div>
 

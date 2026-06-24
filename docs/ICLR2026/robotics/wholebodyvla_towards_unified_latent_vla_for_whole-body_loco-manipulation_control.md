@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][loco-manipulation] WholeBodyVLA enables bipedal humanoid robots to perform end-to-end "move-and-manipulate" tasks in large spaces for the first time. By utilizing two separately trained Latent Action Models (LAMs) to learn locomotion and manipulation priors from massive "action-unlabeled" egocentric human videos, combined with a discrete
+  [ICLR 2026][Robotics][Humanoid Robot] WholeBodyVLA enables bipedal humanoid robots to perform end-to-end "move-and-manipulate" tasks in large spaces for the first time. By utilizing two separately trained Latent Action Models (LAMs) to learn locomotion and manipulation priors from massive "action-unlabeled" egocentric human videos, combined with a discrete-command RL low-level controller tailored for loco-manipulation, it achieves a 21.3% higher average success rate than prev…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - loco-manipulation
-  - VLA
+  - "ICLR 2026"
+  - "Robotics"
+  - "Humanoid Robot"
+  - "loco-manipulation"
+  - "Latent Action Model"
+  - "VLA"
+  - "Whole-body control"
 date: 2026-05-08
-content_hash: 0e813bb4f3a8a9b4
+content_hash: d71774f85d2d68d2
 ---
+
 # WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control
 
 **Conference**: ICLR 2026  
@@ -141,9 +145,9 @@ Ours outperforms the strongest baseline (Modular 64.0%) by approximately 14 perc
 
 - [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
 - [\[ICLR 2026\] Hierarchical Value-Decomposed Offline Reinforcement Learning for Whole-Body Control](hierarchical_value-decomposed_offline_reinforcement_learning_for_whole-body_cont.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 - [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
 - [\[ICLR 2026\] From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance](from_language_to_locomotion_retargeting-free_humanoid_control_via_motion_latent_.md)
-- [\[ICLR 2026\] Interleave-VLA: Enhancing Robot Manipulation with Image-Text Interleaved Instructions](interleave-vla_enhancing_robot_manipulation_with_image-text_interleaved_instruct.md)
 
 </div>
 

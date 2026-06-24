@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models
 description: >-
-  [CVPR 2026][Video Understanding][Video LLM] UFVideo is the first Video LLM to unify global, pixel-level, and temporal-level video understanding capabilities. Through a vision-language guided alignment strategy and a SAM2 mask decoder, it simultaneously supports video QA, object referring, video segmentation, and temporal grounding within a single model. Furtherm
+  [CVPR 2026][Video Understanding][Unified Video Understanding] UFVideo is the first Video LLM to unify global, pixel-level, and temporal-level video understanding capabilities. Through a vision-language guided alignment strategy and a SAM2 mask decoder, it simultaneously supports video QA, object referring, video segmentation, and temporal grounding within a single model. Furthermore, the multi-granularity cooperative understanding benchmark, UFVideo-Bench, is introduced.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Video LLM
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Unified Video Understanding"
+  - "Multi-granularity Collaboration"
+  - "Pixel-level Segmentation"
+  - "Temporal Grounding"
+  - "Video LLM"
 date: 2026-05-08
-content_hash: da1222b16ba13279
+content_hash: c8dcedc715f4fb66
 ---
+
 # UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models
 
 **Conference**: CVPR 2026  
@@ -149,8 +154,8 @@ The total loss is $\mathcal{L} = \gamma \cdot \mathcal{L}_{text} + \mathcal{L}_{
 
 ## Related Papers
 
+- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
 - [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
-- [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)
 - [\[CVPR 2026\] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding](frame2freq_spectral_adapters_for_fine-grained_video_understanding.md)
 - [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)
 - [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](univbench_towards_unified_evaluation_for_video_foundation_models.md)

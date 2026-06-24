@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-Judge] ProfBench utilizes 7,000+ "response-rubric" pairs authored by experts (Physics/Chemistry PhDs and Finance/Consulting MBAs) to establish a cross-domain rubric benchmark requiring professional knowledge for both answering and judging. Accompanied by a debiased, cost-effective LLM-Judge—which is 2-3 orders of magnitude ch
+  [ICLR 2026][LLM Evaluation][rubric evaluation] ProfBench utilizes 7,000+ "response-rubric" pairs authored by experts (Physics/Chemistry PhDs and Finance/Consulting MBAs) to establish a cross-domain rubric benchmark requiring professional knowledge for both answering and judging. Accompanied by a debiased, cost-effective LLM-Judge—which is 2-3 orders of magnitude cheaper—the study finds that even GPT-5-high achieves an overall score of only 65.9%.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "rubric evaluation"
+  - "professional domains"
+  - "LLM-as-Judge"
+  - "self-enhancement bias"
+  - "report generation"
 date: 2026-05-08
-content_hash: 381e690fb94ad71d
+content_hash: 54ac78ca3b63f844
 ---
+
 # ProfBench: Multi-Domain Rubrics requiring Professional Knowledge to Answer and Judge
 
 **Conference**: ICLR 2026  
@@ -128,7 +133,7 @@ GPT-5-high leads at 65.9%, demonstrating that ProfBench is significantly harder 
 
 - [\[ICLR 2026\] ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents](researchrubrics_a_benchmark_of_prompts_and_rubrics_for_evaluating_deep_research_.md)
 - [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](../../ACL2026/llm_evaluation/diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
-- [\[ICML 2026\] InnoEval: On Research Idea Evaluation as a Knowledge-Grounded, Multi-Perspective Reasoning Problem](../../ICML2026/llm_evaluation/innoeval_on_research_idea_evaluation_as_a_knowledge-grounded_multi-perspective_r.md)
+- [\[ICLR 2026\] EARTHSE: A Benchmark for Earth Science Knowledge Exploration](earthse_a_benchmark_evaluating_earth_scientific_exploration_capability_for_large.md)
 - [\[ICLR 2026\] Rethinking LLM-as-a-Judge: Representation-as-a-Judge with Small Language Models via Semantic Capacity Asymmetry](rethinking_llm-as-a-judge_representation-as-a-judge_with_small_language_models_v.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](../../ACL2026/llm_evaluation/multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 

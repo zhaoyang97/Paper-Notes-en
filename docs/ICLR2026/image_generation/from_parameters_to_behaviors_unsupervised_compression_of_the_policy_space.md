@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Parameters to Behaviors: Unsupervised Compression of the Policy Space
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Proposes unsupervised compression of the policy space based on the manifold hypothesis—training an autoencoder with behavior reconstruction loss (rather than parameter reconstruction loss) to compress the high-dimensional policy parameter space $\Theta \subseteq \mathbb{R}^P$ into a low-dimensional latent behavior spac
+  [ICLR 2026][Image Generation][Policy space compression] Proposes unsupervised compression of the policy space based on the manifold hypothesis—training an autoencoder with behavior reconstruction loss (rather than parameter reconstruction loss) to compress the high-dimensional policy parameter space $\Theta \subseteq \mathbb{R}^P$ into a low-dimensional latent behavior space $\mathcal{Z} \subseteq \mathbb{R}^k$ (up to a 121801:1 compression ratio). Validated on environments s…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Policy space compression"
+  - "behavior manifold"
+  - "autoencoder"
+  - "latent space optimization"
+  - "unsupervised pre-training"
 date: 2026-05-08
-content_hash: 1210b64f522897cb
+content_hash: 5bc18b0b772937ed
 ---
+
 # From Parameters to Behaviors: Unsupervised Compression of the Policy Space
 
 **Conference**: ICLR 2026  

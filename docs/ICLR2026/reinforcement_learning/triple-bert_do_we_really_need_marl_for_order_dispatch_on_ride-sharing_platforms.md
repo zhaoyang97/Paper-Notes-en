@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] Triple-BERT：在网约车派单上我们真的需要 MARL 吗？
+  [Paper Note] Triple-BERT: Do We Really Need MARL for Ride-hailing Dispatching?
 description: >-
-  [ICLR 2026][Reinforcement Learning][BERT] Addressing real-time ride-hailing dispatching—a task that is "essentially centralized but has long been hard-solved as a multi-agent problem"—this paper replaces mainstream MARL with a centralized single-agent reinforcement learning (SARL) framework, Triple-BERT (a variant of TD3 + action decomposition + BERT network +
+  [ICLR 2026][Reinforcement Learning][Ride-hailing Dispatching] Addressing real-time ride-hailing dispatching—a task that is "essentially centralized but has long been hard-solved as a multi-agent problem"—this paper replaces mainstream MARL with a centralized single-agent reinforcement learning (SARL) framework, Triple-BERT (a variant of TD3 + action decomposition + BERT network + two-stage training). It achieves an overall improvement of approximately 11.95% over state-of-the…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - BERT
-  - TD3
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Ride-hailing Dispatching"
+  - "Single-Agent Reinforcement Learning"
+  - "Action Decomposition"
+  - "BERT"
+  - "TD3"
 date: 2026-05-08
-content_hash: 4f47bf10aeec0098
+content_hash: ece6f43a52c97043
 ---
+
 # Triple-BERT: Do We Really Need MARL for Ride-hailing Dispatching?
 
 **Conference**: ICLR 2026  
@@ -142,15 +146,16 @@ Triple-BERT primarily improves the service rate from 0.80 to 0.88 by optimizing 
 - Value: ⭐⭐⭐⭐⭐ High practical utility for large-scale assignment RL problems like food delivery or resource allocation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Who Matters Matters: Agent-Specific Conservative Offline MARL](who_matters_matters_agent-specific_conservative_offline_marl.md)
-- [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](../../AAAI2026/reinforcement_learning/partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
-- [\[NeurIPS 2025\] Oryx: a Scalable Sequence Model for Many-Agent Coordination in Offline MARL](../../NeurIPS2025/reinforcement_learning/oryx_a_scalable_sequence_model_for_many-agent_coordination_in_offline_marl.md)
-- [\[ICLR 2026\] Solving General-Utility Markov Decision Processes in the Single-Trial Regime with Online Planning](solving_general-utility_markov_decision_processes_in_the_single-trial_regime_wit.md)
-- [\[ICLR 2026\] RLP: Reinforcement as a Pretraining Objective](rlp_reinforcement_as_a_pretraining_objective.md)
+- [\[ICLR 2026\] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs](do_not_let_low-probability_tokens_over-dominate_in_rl_for_llms.md)
+- [\[ICLR 2026\] Breaking Barriers: Do Reinforcement Post Training Gains Transfer To Unseen Domains?](breaking_barriers_do_reinforcement_post_training_gains_transfer_to_unseen_domain.md)
+- [\[ICLR 2026\] Does “Do Differentiable Simulators Give Better Policy Gradients?” Give Better Policy Gradients?](does_do_differentiable_simulators_give_better_policy_gradients_give_better_polic.md)
+- [\[ICML 2026\] What Does Reinforcement Learning for Visual Tool Use Really Learn?](../../ICML2026/reinforcement_learning/what_does_vision_tool-use_reinforcement_learning_really_learn_disentangling_tool.md)
 
 </div>
 

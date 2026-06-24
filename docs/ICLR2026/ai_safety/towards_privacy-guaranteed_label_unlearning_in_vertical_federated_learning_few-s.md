@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure
 description: >-
-  [ICLR 2026][AI Safety][few-shot] Addressing the unique dilemma in Vertical Federated Learning (VFL) where "labels are both input and privacy," this paper proposes the first VFL label unlearning method. It utilizes a small set of public data with manifold mixup to synthesize embeddings, followed by gradient ascent on active/passive parties to erase tar
+  [ICLR 2026][AI Safety][Vertical Federated Learning] Addressing the unique dilemma in Vertical Federated Learning (VFL) where "labels are both input and privacy," this paper proposes the first VFL label unlearning method. It utilizes a small set of public data with manifold mixup to synthesize embeddings, followed by gradient ascent on active/passive parties to erase target labels and gradient descent to recover performance on the remaining set. The entire process completes in…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - few-shot
-  - manifold mixup
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Vertical Federated Learning"
+  - "Label Unlearning"
+  - "Few-shot"
+  - "Manifold Mixup"
+  - "Gradient Ascent"
 date: 2026-05-08
-content_hash: ba3a1216d6f47302
+content_hash: c8508dbf56d62a3b
 ---
+
 # Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure
 
 **Conference**: ICLR 2026  
@@ -142,10 +146,10 @@ ResNet18 on CIFAR-10 single-label unlearning (Figure 3):
 ## Related Papers
 
 - [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
+- [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
 - [\[ICLR 2026\] FaLW: A Forgetting-aware Loss Reweighting for Long-tailed Unlearning](falw_a_forgetting-aware_loss_reweighting_for_long-tailed_unlearning.md)
+- [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
 - [\[ICLR 2026\] Learnability and Privacy Vulnerability are Entangled in a Few Critical Weights](learnability_and_privacy_vulnerability_are_entangled_in_a_few_critical_weights.md)
-- [\[ICLR 2026\] The Gaussian-Head OFL Family: One-Shot Federated Learning from Client Global Statistics](the_gaussian-head_ofl_family_one-shot_federated_learning_from_client_global_stat.md)
-- [\[ICLR 2026\] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models](rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md)
 
 </div>
 

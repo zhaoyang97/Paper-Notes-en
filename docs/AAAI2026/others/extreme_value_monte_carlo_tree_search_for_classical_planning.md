@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Extreme Value Monte Carlo Tree Search for Classical Planning
 description: >-
-  [AAAI 2026][MCTS] This paper applies Peaks-Over-Threshold Extreme Value Theory (POT EVT) to provide a statistical foundation for Full Bellman Backup in MCTS for classical planning. It proposes the UCB1-Uniform bandit alg…
+  [AAAI 2026][MCTS] This paper applies Peaks-Over-Threshold Extreme Value Theory (POT EVT) to provide a statistical foundation for Full Bellman Backup in MCTS for classical planning. It proposes the UCB1-Uniform bandit algorithm, which uses MLE under a uniform distribution (a special case of the Generalized Pareto distribution) to guide action selection, outperforming GBFS by 67.8 instances and Softmin-Type(h) by 33.2 instances under a $10^4$ node budget on Pyperplan.
 tags:
   - "AAAI 2026"
   - "MCTS"
@@ -13,7 +13,7 @@ tags:
   - "Heuristic Search"
   - "Full Bellman Backup"
 date: 2026-05-08
-content_hash: f38b00d8dd7da129
+content_hash: bf7f9f087d867058
 ---
 
 # Extreme Value Monte Carlo Tree Search for Classical Planning
@@ -145,8 +145,8 @@ The number of problems solved is comparable (subject to C++ implementation diffe
 - [\[AAAI 2026\] Bilevel MCTS for Amortized O(1) Node Selection in Classical Planning](bilevel_mcts_for_amortized_o1_node_selection_in_classical_planning.md)
 - [\[ICML 2026\] NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search](../../ICML2026/others/nonzero_interaction-guided_exploration_for_multi-agent_monte_carlo_tree_search.md)
 - [\[ICML 2026\] Markov Chain Monte Carlo without Evaluating the Target: An Auxiliary Variable Approach](../../ICML2026/others/markov_chain_monte_carlo_without_evaluating_the_target_an_auxiliary_variable_app.md)
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](../../ICLR2026/others/compositional_diffusion_long_horizon_planning.md)
 - [\[AAAI 2026\] Forest vs Tree: The (N, K) Trade-off in Reproducible ML Evaluation](forest_vs_tree_the_n_k_trade-off_in_reproducible_ml_evaluation.md)
+- [\[ICML 2026\] Structure-Induced Information for Rerooting Levin Tree Search](../../ICML2026/others/structure-induced_information_for_rerooting_levin_tree_search.md)
 
 </div>
 

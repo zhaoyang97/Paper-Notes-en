@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders
 description: >-
-  [ICLR 2026][Recommender Systems][HSTU] VISTA decouples the target attention of candidates over ultra-long user histories into a two-stage process: first, compressing million-length histories into hundreds of summary tokens to be cached; second, performing lightweight attention only on these cached tokens downstream. This keeps training and inference costs c
+  [ICLR 2026][Recommender Systems][Lifelong User Sequences] VISTA decouples the target attention of candidates over ultra-long user histories into a two-stage process: first, compressing million-length histories into hundreds of summary tokens to be cached; second, performing lightweight attention only on these cached tokens downstream. This keeps training and inference costs constant and has been deployed on Meta’s recommendation platform serving billions of users.
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - HSTU
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Lifelong User Sequences"
+  - "Sequence Summarization"
+  - "Linear Attention"
+  - "Embedding Caching"
+  - "HSTU"
 date: 2026-05-08
-content_hash: 2a0ea353c12fc0a9
+content_hash: b2b21edcd4623610
 ---
+
 # Massive Memorization with Hundreds of Trillions of Parameters for Sequential Transducer Generative Recommenders
 
 **Conference**: ICLR 2026  

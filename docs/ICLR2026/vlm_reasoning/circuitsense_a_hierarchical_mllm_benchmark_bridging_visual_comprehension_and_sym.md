@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CircuitSense: A Hierarchical MLLM Benchmark Bridging Visual Comprehension and Symbolic Reasoning in Engineering Design Process
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] CircuitSense establishes the first MLLM benchmark organized by engineering abstraction levels, emphasizing the derivation of symbolic equations from circuit schematics. Using 8,006 problems (human-curated + synthetically generated), it systematically evaluates 8 MLLMs, revealing a fundamental gap where closed-source mo
+  [ICLR2026][VLM Reasoning][Circuit Understanding] CircuitSense establishes the first MLLM benchmark organized by engineering abstraction levels, emphasizing the derivation of symbolic equations from circuit schematics. Using 8,006 problems (human-curated + synthetically generated), it systematically evaluates 8 MLLMs, revealing a fundamental gap where closed-source models exceed 85% in perception tasks but plummet below 19% in symbolic derivation.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR2026"
+  - "VLM Reasoning"
+  - "Circuit Understanding"
+  - "Visual-to-Symbolic Reasoning"
+  - "MLLM Evaluation"
+  - "Hierarchical Benchmark"
+  - "Synthetic Data Generation"
 date: 2026-05-08
-content_hash: b4e97ecfa4f34b2f
+content_hash: 0ea6eca3d66f7b66
 ---
+
 # CircuitSense: A Hierarchical MLLM Benchmark Bridging Visual Comprehension and Symbolic Reasoning in Engineering Design Process
 
 **Conference**: ICLR2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VQ-Transplant: Efficient VQ-Module Integration for Pre-trained Visual Tokenizers
 description: >-
-  [ICLR 2026][vlm_efficiency][MMD-VQ] VQ-Transplant freezes the encoder-decoder of a pre-trained visual tokenizer and only replaces and adapts the VQ module with lightweight adjustments. This allows new quantization algorithms to be integrated into strong tokenizers like VAR with a training cost of approximately 22 hours. Using MMD-VQ, it achieves an r-FID
+  [ICLR2026][Multimodal Efficiency][Visual Tokenizer] VQ-Transplant freezes the encoder-decoder of a pre-trained visual tokenizer and only replaces and adapts the VQ module with lightweight adjustments. This allows new quantization algorithms to be integrated into strong tokenizers like VAR with a training cost of approximately 22 hours. Using MMD-VQ, it achieves an r-FID of 0.81 on ImageNet-1K, surpassing the 0.92 r-FID of the original VAR tokenizer.
 tags:
-  - ICLR 2026
-  - vlm_efficiency
-  - MMD-VQ
+  - "ICLR2026"
+  - "Multimodal Efficiency"
+  - "Visual Tokenizer"
+  - "Vector Quantization"
+  - "VQ Module Replacement"
+  - "MMD-VQ"
+  - "Efficient Training"
 date: 2026-05-08
-content_hash: e36bbf9926963595
+content_hash: b4b33ca8dde8ade5
 ---
+
 # VQ-Transplant: Efficient VQ-Module Integration for Pre-trained Visual Tokenizers
 
 **Conference**: ICLR2026  
@@ -173,11 +178,11 @@ Synthetic non-Gaussian experiments explain why the authors proposed MMD-VQ. On s
 
 ## Related Papers
 
-- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](../../CVPR2026/vlm_efficiency/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
 - [\[ICML 2025\] MMInference: Accelerating Pre-filling for Long-Context VLMs via Modality-Aware Permutation Sparse Attention](../../ICML2025/vlm_efficiency/mminference_accelerating_pre-filling_for_long-context_vlms_via_modality-aware_pe.md)
+- [\[CVPR 2026\] AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition](../../CVPR2026/vlm_efficiency/adaptvision_efficient_vision-language_models_via_adaptive_visual_acquisition.md)
 - [\[CVPR 2026\] FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection](../../CVPR2026/vlm_efficiency/focusui_efficient_ui_grounding_via_position-preserving_visual_token_selection.md)
-- [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
-- [\[ICML 2025\] SparseVLM: Visual Token Sparsification for Efficient Vision-Language Model Inference](../../ICML2025/vlm_efficiency/sparsevlm_visual_token_sparsification_for_efficient_vision-language_model_infere.md)
+- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](../../NeurIPS2025/vlm_efficiency/hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
+- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/vlm_efficiency/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
 
 </div>
 

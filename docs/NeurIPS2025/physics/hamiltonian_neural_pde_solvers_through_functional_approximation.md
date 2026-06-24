@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hamiltonian Neural PDE Solvers through Functional Approximation
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Hamiltonian mechanics] Grounded in the Riesz representation theorem, this work approximates infinite-dimensional Hamiltonian functionals via learnable integral kernel functi…
+  [NeurIPS 2025][Physics & Scientific Computing][Hamiltonian mechanics] Grounded in the Riesz representation theorem, this work approximates infinite-dimensional Hamiltonian functionals via learnable integral kernel functionals (IKF). Functional derivatives are obtained through automatic differentiation, yielding an energy-conserving neural PDE solver (HNS) that demonstrates superior stability and generalization on 1D/2D PDEs.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "neural fields"
   - "energy conservation"
 date: 2026-05-08
-content_hash: 62e92d2e11146c98
+content_hash: 6a1211a47a038745
 ---
 
 # Hamiltonian Neural PDE Solvers through Functional Approximation
@@ -176,9 +176,9 @@ HNS achieves a substantial lead in OOD generalization on Pulse initial condition
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
 - [\[NeurIPS 2025\] INC: An Indirect Neural Corrector for Auto-Regressive Hybrid PDE Solvers](inc_an_indirect_neural_corrector_for_auto-regressive_hybrid_pde_solvers.md)
 - [\[NeurIPS 2025\] Enforcing Governing Equation Constraints in Neural PDE Solvers via Training-free Projections](enforcing_governing_equation_constraints_in_neural_pde_solvers_via_training-free.md)
+- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
 - [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](towards_universal_neural_operators_through_multiphysics_pretraining.md)
 - [\[NeurIPS 2025\] DeltaPhi: Physical States Residual Learning for Neural Operators in Data-Limited PDE Solving](deltaphi_physical_states_residual_learning_for_neural_operators_in_data-limited_.md)
 

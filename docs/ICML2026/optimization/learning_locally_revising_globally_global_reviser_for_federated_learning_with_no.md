@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper observes a "delayed memory" phenomenon in the global model of FL regarding noisy labels (memory rate $\le 30\%$ on CIFAR-10, significantly lower than centralized training). Based on this, FedGR is proposed: using server-side GMM to jointly sieve samples and estimate per-client noise ratios based on aggregate
+  [ICML 2026][Optimization][Federated Learning] This paper observes a "delayed memory" phenomenon in the global model of FL regarding noisy labels (memory rate $\le 30\%$ on CIFAR-10, significantly lower than centralized training). Based on this, FedGR is proposed: using server-side GMM to jointly sieve samples and estimate per-client noise ratios based on aggregated loss proxies, periodically "revising" local EMA teachers with global parameters for distillation…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Federated Learning"
+  - "Label Noise"
+  - "EMA Distillation"
+  - "GMM Sample Sieving"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: a709024ef692412f
+content_hash: e509b4ebf93c5c23
 ---
+
 # Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ On the CIFAR-10 Avg column: FedGR reaches 91.07, while the second best, FL-Divid
 
 ## Related Papers
 
-- [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](../../AAAI2026/optimization/data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
+- [\[ICLR 2026\] Enhancing Learning with Noisy Labels via Rockafellian Relaxation](../../ICLR2026/optimization/enhancing_learning_with_noisy_labels_via_rockafellian_relaxation.md)
 - [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
-- [\[ICLR 2026\] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments](../../ICLR2026/optimization/feddag_clustered_federated_learning_via_global_data_and_gradient_integration_for.md)
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](../../ICLR2026/optimization/incentives_in_federated_learning_with_heterogeneous_agents.md)
-- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](../../ICLR2026/optimization/deepafl_deep_analytic_federated_learning.md)
+- [\[AAAI 2026\] Data Heterogeneity and Forgotten Labels in Split Federated Learning](../../AAAI2026/optimization/data_heterogeneity_and_forgotten_labels_in_split_federated_learning.md)
+- [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
+- [\[ICML 2026\] Depth over Fidelity in Fixed-Budget Noisy Evolution Strategies](depth_over_fidelity_in_fixed-budget_noisy_evolution_strategies.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences
 description: >-
-  [ICLR 2026][Recommender Systems][DPO] Items clicked by users are not necessarily truly liked—this paper proposes "Coherent Preference" (CP) to supplement traditional "Revealed Preference" (RP), and designs a conflict-aware DPO variant, C-APO. It amplifies the influence when RP and CP are consistent and suppresses it when they conflict, thereby simultaneous
+  [ICLR 2026][Recommender Systems][LLM Recommendation] Items clicked by users are not necessarily truly liked—this paper proposes "Coherent Preference" (CP) to supplement traditional "Revealed Preference" (RP), and designs a conflict-aware DPO variant, C-APO. It amplifies the influence when RP and CP are consistent and suppresses it when they conflict, thereby simultaneously improving recommendation accuracy and the persuasiveness of rationales.
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - DPO
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "LLM Recommendation"
+  - "Preference Alignment"
+  - "DPO"
+  - "Explainable Recommendation"
+  - "Revealed Preference"
+  - "Coherent Preference"
 date: 2026-05-08
-content_hash: caa81c514b703e04
+content_hash: d676f59339d81f44
 ---
+
 # More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences
 
 **Conference**: ICLR 2026  
@@ -143,7 +149,7 @@ After switching the backbone to Qwen-2-7B-Instruct, C-APO still achieves HR@5 +1
 - [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](../../AAAI2026/recommender/preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 - [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](reinforced_latent_reasoning_for_llm-based_recommendation.md)
 - [\[ICLR 2026\] In Agents We Trust, but Who Do Agents Trust? Latent Source Preferences Steer LLM Generations](in_agents_we_trust_but_who_do_agents_trust_latent_source_preferences_steer_llm_g.md)
-- [\[ICLR 2026\] Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization](beyond_markovian_drifts_action-biased_geometric_walks_with_memory_for_personaliz.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Eliciting Numerical Predictive Distributions of LLMs Without Auto-Regression
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] By training lightweight "Magnitude-Factorised Probes" on the hidden states of the final layers of an LLM, the mean, median, and quantiles of the LLM's numerical prediction distribution can be directly recovered without auto-regressive sampling. This approach achieves an inference efficiency equivalent to 20-25 samples
+  [ICLR 2026][LLM (Other)][LLM Probing] By training lightweight "Magnitude-Factorised Probes" on the hidden states of the final layers of an LLM, the mean, median, and quantiles of the LLM's numerical prediction distribution can be directly recovered without auto-regressive sampling. This approach achieves an inference efficiency equivalent to 20-25 samples with well-calibrated confidence intervals.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "LLM Probing"
+  - "Uncertainty Quantization"
+  - "Numerical Prediction"
+  - "Auto-regression Alternative"
+  - "Time Series Forecasting"
 date: 2026-05-08
-content_hash: 06fe097d86d7f330
+content_hash: f1ca54c0343e2ad6
 ---
+
 # Eliciting Numerical Predictive Distributions of LLMs Without Auto-Regression
 
 **Conference**: ICLR 2026  

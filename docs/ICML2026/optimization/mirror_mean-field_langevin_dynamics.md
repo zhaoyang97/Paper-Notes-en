@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mirror Mean-Field Langevin Dynamics
 description: >-
-  [ICML 2026][Optimization & Theory][mean-field Langevin] This paper merges mean-field Langevin dynamics (MFLD) with mirror Langevin dynamics (MLD) to create "Mirror Mean-Field Langevin Dynamics" (MMFLD). It provides the first global convergence algorithm for minimizing the entropy-regularized functional $\mathcal{L}(\mu)=F(\mu)+\lambda\,\mathrm{Ent}(\mu)$ on a convex constra
+  [ICML2026][Optimization][mean-field Langevin] This paper merges mean-field Langevin dynamics (MFLD) with mirror Langevin dynamics (MLD) to create "Mirror Mean-Field Langevin Dynamics" (MMFLD). It provides the first global convergence algorithm for minimizing the entropy-regularized functional $\mathcal{L}(\mu)=F(\mu)+\lambda\,\mathrm{Ent}(\mu)$ on a convex constrained domain $X\subseteq\mathbb{R}^d$. In continuous time, it proves $e^{-2C_{\mathrm{LSI}}\lambda t}$ linear conve…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - mean-field Langevin
+  - "ICML2026"
+  - "Optimization"
+  - "mean-field Langevin"
+  - "mirror descent"
+  - "constrained sampling"
+  - "propagation of chaos"
+  - "logarithmic Sobolev inequality"
 date: 2026-05-08
-content_hash: 550d95e730d3b529
+content_hash: f8b813b9a3411f43
 ---
+
 # Mirror Mean-Field Langevin Dynamics
 
 **Conference**: ICML2026  
@@ -111,13 +116,13 @@ Experiments consist of qualitative sanity checks on low-dimensional synthetic do
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] High-dimensional Mean-Field Games by Particle-based Flow Matching](../../ICLR2026/optimization/high-dimensional_mean-field_games_by_particle-based_flow_matching.md)
 - [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](mirror_descent_under_generalized_smoothness.md)
 - [\[ICML 2026\] Muon in Associative Memory Learning: Training Dynamics and Scaling Laws](muon_in_associative_memory_learning_training_dynamics_and_scaling_laws.md)
-- [\[ICML 2025\] Learning Mixtures of Experts with EM: A Mirror Descent Perspective](../../ICML2025/optimization/learning_mixtures_of_experts_with_em_a_mirror_descent_perspective.md)
 - [\[ICML 2026\] Ubiquity of Emergent Hebbian Dynamics in Regularized Learning](ubiquity_of_emergent_hebbian_dynamics_in_regularized_learning.md)
 - [\[ICML 2026\] Bregman meets Lévy: Stochastic Mirror Descent with Heavy-Tailed Noise in Continuous and Discrete Time](bregman_meets_lévy_stochastic_mirror_descent_with_heavy-tailed_noise_in_continuo.md)
 

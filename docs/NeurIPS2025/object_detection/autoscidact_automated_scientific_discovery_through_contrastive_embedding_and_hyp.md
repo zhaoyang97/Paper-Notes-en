@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing
 description: >-
-  [NeurIPS 2025][Object Detection][contrastive learning] This work proposes the AutoSciDACT pipeline, which first employs supervised contrastive learning to compress high-dimensional scientific data into a 4-dimensional em…
+  [NeurIPS 2025][Object Detection][contrastive learning] This work proposes the AutoSciDACT pipeline, which first employs supervised contrastive learning to compress high-dimensional scientific data into a 4-dimensional embedding space, then applies NPLM (New Physics Learning Machine) likelihood-ratio testing to statistically quantify distributional deviations in the embedding space. The pipeline achieves $\geq 3\sigma$ discovery at signal injection ratios of $\leq 1\%$ across…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "novelty detection"
   - "scientific discovery"
 date: 2026-05-08
-content_hash: e7828377387e3a1e
+content_hash: 49636534f7468226
 ---
 
 # AutoSciDACT: Automated Scientific Discovery through Contrastive Embedding and Hypothesis Testing
@@ -152,9 +152,9 @@ $$\mathcal{L}_{\text{NPLM}} = \sum_{(x,y)} \left[ w_R (1-y) \log(1+e^{f_w}) + y 
 
 - [\[NeurIPS 2025\] Automated Detection of Visual Attribute Reliance with a Self-Reflective Agent](automated_detection_of_visual_attribute_reliance_with_a_self-reflective_agent.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](../../CVPR2026/object_detection/noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
+- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
+- [\[CVPR 2025\] AnomalyNCD: Towards Novel Anomaly Class Discovery in Industrial Scenarios](../../CVPR2025/object_detection/anomalyncd_towards_novel_anomaly_class_discovery_in_industrial_scenarios.md)
 - [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](../../ICCV2025/object_detection/automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
-- [\[AAAI 2026\] MovSemCL: Movement-Semantics Contrastive Learning for Trajectory Similarity (Extension)](../../AAAI2026/object_detection/movsemcl_movement-semantics_contrastive_learning_for_trajectory_similarity_exten.md)
-- [\[ICML 2026\] Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection](../../ICML2026/object_detection/testing_the_test_score-direction_instability_in_class-split_anomaly_detection.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ThinkGen: Generalized Thinking for Visual Generation
 description: >-
-  [CVPR 2026][Image Generation][MLLM] ThinkGen explicitly integrates the MLLM `<think>` Chain-of-Thought (CoT) into image generation. It utilizes a decoupled "MLLM thinking + DiT rendering" architecture and SepGRPO training that alternately reinforces the MLLM and DiT. This enables the model to **automatically** trigger CoT reasoning across various scenari
+  [CVPR 2026][Image Generation][Chain-of-Thought Generation] ThinkGen explicitly integrates the MLLM `<think>` Chain-of-Thought (CoT) into image generation. It utilizes a decoupled "MLLM thinking + DiT rendering" architecture and SepGRPO training that alternately reinforces the MLLM and DiT. This enables the model to **automatically** trigger CoT reasoning across various scenarios such as text-to-image, text rendering, image editing, and reasoning-based generation…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - MLLM
-  - GRPO
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Chain-of-Thought Generation"
+  - "MLLM"
+  - "Diffusion Transformer"
+  - "GRPO"
+  - "Unified Generation Framework"
 date: 2026-05-08
-content_hash: 122aff8d13d395f1
+content_hash: e0511b5f672ceb60
 ---
+
 # ThinkGen: Generalized Thinking for Visual Generation
 
 **Conference**: CVPR 2026  
@@ -157,8 +161,8 @@ Most notable are the reasoning tasks: WISE jumps from 0.55 to 0.76 (+21%), and R
 - [\[CVPR 2026\] Thinking-while-Generating: Interleaving Textual Reasoning throughout Visual Generation](thinking-while-generating_interleaving_textual_reasoning_throughout_visual_gener.md)
 - [\[CVPR 2026\] Seeing What Matters: Visual Preference Policy Optimization for Visual Generation](seeing_what_matters_visual_preference_policy_optimization_for_visual_generation.md)
 - [\[CVPR 2026\] ProcessMaker: A Generalized Process Visualization Framework with Adaptive Sequence Steps on Diffusion Transformers](processmaker_a_generalized_process_visualization_framework_with_adaptive_sequenc.md)
-- [\[CVPR 2026\] DPAR: Dynamic Patchification for Efficient Autoregressive Visual Generation](dpar_dynamic_patchification_for_efficient_autoregressive_visual_generation.md)
 - [\[CVPR 2026\] POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation](poca_pareto-optimal_curriculum_alignment_for_visual_text_generation.md)
+- [\[CVPR 2026\] Learning What to Trust: Bayesian Prior-Guided Optimization for Visual Generation](learning_what_to_trust_bayesian_prior-guided_optimization_for_visual_generation.md)
 
 </div>
 

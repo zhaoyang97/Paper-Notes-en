@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] Photon is a multimodal large model that directly processes full 3D medical volume data (CT/MRI). It utilizes "Instruction-conditioned Token Scheduling (ITS)" to adaptively determine the number of visual tokens to retain for each question, and "Surrogate Gradient Propagation (SGP)" to ensure discrete token dropping rema
+  [ICLR 2026][Multimodal Efficiency][3D Medical MLLM] Photon is a multimodal large model that directly processes full 3D medical volume data (CT/MRI). It utilizes "Instruction-conditioned Token Scheduling (ITS)" to adaptively determine the number of visual tokens to retain for each question, and "Surrogate Gradient Propagation (SGP)" to ensure discrete token dropping remains differentiable during training. This approach achieves SOTA accuracy on medical VQA while providing appr…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR 2026"
+  - "Multimodal Efficiency"
+  - "3D Medical MLLM"
+  - "Visual Token Pruning"
+  - "Variable-length Tokens"
+  - "Instruction-aware"
+  - "Surrogate Gradients"
 date: 2026-05-08
-content_hash: 5d2ba1bca12a4a86
+content_hash: 5d62166fda25f077
 ---
+
 # Photon: Speedup Volume Understanding with Efficient Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -140,10 +146,10 @@ Fixed-ratio pruning hardly improved performance (not instruction-aware and not d
 ## Related Papers
 
 - [\[ICLR 2026\] PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)
-- [\[ICLR 2026\] iLLaVA: An Image is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](illava_an_image_is_worth_fewer_than_13_input_tokens_in_large_multimodal_models.md)
+- [\[ICLR 2026\] Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective](task-related_token_compression_in_multimodal_large_language_models_from_an_expla.md)
+- [\[ICLR 2026\] iLLaVA: An Image Is Worth Fewer Than 1/3 Input Tokens in Large Multimodal Models](illava_an_image_is_worth_fewer_than_13_input_tokens_in_large_multimodal_models.md)
 - [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
 - [\[ICLR 2026\] ST-SimDiff: Balancing Spatiotemporal Similarity and Difference for Efficient Video Understanding with MLLMs](st-simdiff_balancing_spatiotemporal_similarity_and_difference_for_efficient_vide.md)
-- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](../../CVPR2026/vlm_efficiency/masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
 
 </div>
 

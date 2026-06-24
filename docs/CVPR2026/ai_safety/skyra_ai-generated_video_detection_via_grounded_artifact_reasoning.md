@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning
 description: >-
-  [CVPR 2026][AI Safety][Reinforcement Learning] Skyra transforms AI-generated video detection from black-box binary classification into interpretable artifact reasoning. It utilizes a cold-start SFT phase on the manually annotated ViF-CoT-4K dataset to teach MLLMs to spatio-temporally locate and explain artifacts. This is followed by GRPO reinforcement learning with
+  [CVPR 2026][AI Safety][AIGC Video Detection] Skyra transforms AI-generated video detection from black-box binary classification into interpretable artifact reasoning. It utilizes a cold-start SFT phase on the manually annotated ViF-CoT-4K dataset to teach MLLMs to spatio-temporally locate and explain artifacts. This is followed by GRPO reinforcement learning with asymmetric rewards to encourage active artifact discovery, achieving a 26.73% absolute accuracy improvement over t…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "AI Safety"
+  - "AIGC Video Detection"
+  - "Artifact Reasoning"
+  - "MLLM"
+  - "Reinforcement Learning"
+  - "Interpretable Forensics"
 date: 2026-05-08
-content_hash: e11198b8c13f5cee
+content_hash: dee4968d8750eb9b
 ---
+
 # Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning
 
 **Conference**: CVPR 2026  
@@ -132,9 +137,9 @@ Skyra-RL outperforms the best binary detector (DeMamba) by 26.73% in accuracy an
 
 - [\[CVPR 2026\] VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation](vmd-fact_a_new_video_dataset_and_mllm-based_method_for_detecting_realistic_ai-ge.md)
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
 - [\[ICLR 2026\] Watermark-based Detection and Attribution of AI-Generated Content](../../ICLR2026/ai_safety/watermark-based_attribution_of_ai-generated_content.md)
+- [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
 
 </div>
 

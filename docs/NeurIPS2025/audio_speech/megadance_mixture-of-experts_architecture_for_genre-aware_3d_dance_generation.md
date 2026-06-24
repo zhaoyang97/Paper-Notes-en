@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation
 description: >-
-  [NeurIPS 2025][Audio & Speech][Music-driven dance generation] This paper proposes MEGADance, the first music-driven 3D dance generation method based on a Mixture-of-Experts (MoE) architecture. It decouples choreographic…
+  [NeurIPS 2025][Audio & Speech][Music-driven dance generation] This paper proposes MEGADance, the first music-driven 3D dance generation method based on a Mixture-of-Experts (MoE) architecture. It decouples choreographic consistency into "dance universality" (Universal Expert) and "style specificity" (Specialized Expert), combined with FSQ quantization and a Mamba-Transformer hybrid backbone, achieving state-of-the-art dance quality and strong style controllability.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Finite Scalar Quantization (FSQ)"
   - "style-controllable"
 date: 2026-05-08
-content_hash: c8f02702fdeaa92e
+content_hash: 8d935671e94254cd
 ---
 
 # MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation
@@ -180,10 +180,10 @@ HFDQ stage ablation:
 ## Related Papers
 
 - [\[NeurIPS 2025\] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition](mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition.md)
-- [\[ICCV 2025\] Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation](../../ICCV2025/audio_speech/align_your_rhythm_generating_highly_aligned_dance_poses_with_gating-enhanced_rhy.md)
+- [\[ECCV 2024\] Beat-It: Beat-Synchronized Multi-Condition 3D Dance Generation](../../ECCV2024/audio_speech/beat-it_beat-synchronized_multi-condition_3d_dance_generation.md)
 - [\[NeurIPS 2025\] Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers](physics_of_language_models_part_41_architecture_design_and_the_magic_of_canon_la.md)
-- [\[AAAI 2026\] TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment](../../AAAI2026/audio_speech/text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
-- [\[NeurIPS 2025\] Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization](unifying_symbolic_music_arrangement_track-aware_reconstruction_and_structured_to.md)
+- [\[ICCV 2025\] Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation](../../ICCV2025/audio_speech/align_your_rhythm_generating_highly_aligned_dance_poses_with_gating-enhanced_rhy.md)
+- [\[CVPR 2025\] Enhancing Dance-to-Music Generation via Negative Conditioning Latent Diffusion Model](../../CVPR2025/audio_speech/enhancing_dance-to-music_generation_via_negative_conditioning_latent_diffusion_m.md)
 
 </div>
 

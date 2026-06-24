@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] IGPO treats each turn of agent-environment interaction as a process of "approximating the ground truth." It uses the increment in the model's own confidence regarding the ground truth as a turn-level dense reward. This approach mitigates the advantage collapse issue caused by sparse outcome rewards in multi-turn RL wit
+  [ICLR 2026][Reinforcement Learning][Information Gain] IGPO treats each turn of agent-environment interaction as a process of "approximating the ground truth." It uses the increment in the model's own confidence regarding the ground truth as a turn-level dense reward. This approach mitigates the advantage collapse issue caused by sparse outcome rewards in multi-turn RL without requiring external reward models or Monte Carlo estimation.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
-  - credit assignment
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Information Gain"
+  - "Process Rewards"
+  - "GRPO"
+  - "Multi-Turn Search Agents"
+  - "Dense Rewards"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: 0add2934126b5ad6
+content_hash: 5f63d771d2f5abd4
 ---
+
 # Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents
 
 **Conference**: ICLR 2026  
@@ -115,8 +120,8 @@ IGPO achieves an average of 60.2, surpassing the strongest baseline DeepResearch
 
 ## Related Papers
 
-- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](group_verification-based_policy_optimization_for_interactive_coding_agents.md)
 - [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
+- [\[ICLR 2026\] Group Verification-based Policy Optimization for Interactive Coding Agents](group_verification-based_policy_optimization_for_interactive_coding_agents.md)
 - [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
 - [\[ICLR 2026\] Kevin: Multi-Turn RL for Generating CUDA Kernels](kevin_multi-turn_rl_for_generating_cuda_kernels.md)
 - [\[ICLR 2026\] Multi-Agent Guided Policy Optimization](multi-agent_guided_policy_optimization.md)

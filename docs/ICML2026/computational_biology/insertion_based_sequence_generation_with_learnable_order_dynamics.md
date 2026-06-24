@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Insertion Based Sequence Generation with Learnable Order Dynamics
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper proposes LoFlexMDM—a generation model that replaces the **fixed generation order** of the two-step insertion-based masked diffusion model ("mask insertion + unmasking") with **learnable, sample-dependent order dynamics**. By generalizing discrete flow matching to variable-length sequences, parameterizing lea
+  [ICML2026][Computational Biology][Masked Diffusion Models] This paper proposes LoFlexMDM—a generation model that replaces the **fixed generation order** of the two-step insertion-based masked diffusion model ("mask insertion + unmasking") with **learnable, sample-dependent order dynamics**. By generalizing discrete flow matching to variable-length sequences, parameterizing learnable insertion/unmasking times with Kumaraswamy CDFs, and jointly training the generator and target…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML2026"
+  - "Computational Biology"
+  - "Masked Diffusion Models"
+  - "Discrete Flow Matching"
+  - "Insertion-based Generation"
+  - "Learnable Generation Order"
+  - "Molecule Generation"
 date: 2026-05-08
-content_hash: 0c4b5049578d16a7
+content_hash: 1cd1ccf192bd0142
 ---
+
 # Insertion Based Sequence Generation with Learnable Order Dynamics
 
 **Conference**: ICML2026  
@@ -150,9 +156,9 @@ Quality is 69.3 for LoFlexMDM vs 62.0 for FlexMDM. The abstract reports a maximu
 
 - [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](dnachunker_learnable_tokenization_for_dna_language_models.md)
 - [\[ICML 2026\] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation](lineageflow_flow_matching_for_high-fidelity_family-aware_protein_sequence_genera.md)
-- [\[CVPR 2026\] MMCP-GEN: A Modality-Extensible Diffusion Language Model for Conditional Protein Sequence Generation](../../CVPR2026/computational_biology/mmcp-gen_a_modality-extensible_diffusion_language_model_for_conditional_protein_.md)
-- [\[NeurIPS 2025\] CrossNovo: Bidirectional Representations Augmented Autoregressive Biological Sequence Generation](../../NeurIPS2025/computational_biology/bidirectional_representations_augmented_autoregressive_biological_sequence_gener.md)
-- [\[CVPR 2026\] Predicting Spatial Transcriptomics from Histology Images via High-Order Multi-Cell Interaction Modeling](../../CVPR2026/computational_biology/predicting_spatial_transcriptomics_from_histology_images_via_high-order_multi-ce.md)
+- [\[ICML 2026\] Neural Estimation of Pairwise Mutual Information in Masked Discrete Sequence Models](neural_estimation_of_pairwise_mutual_information_in_masked_discrete_sequence_mod.md)
+- [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](../../ICLR2026/computational_biology/protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
+- [\[ICLR 2026\] Riemannian High-Order Pooling for Brain Foundation Models](../../ICLR2026/computational_biology/riemannian_high-order_pooling_for_brain_foundation_models.md)
 
 </div>
 

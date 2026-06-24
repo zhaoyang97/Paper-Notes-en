@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Offline Reinforcement Learning via Peer-Influenced Constraint
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper proposes Peer-Influenced Constraint (PIC): instead of treating only the action associated with the current state in the dataset as a conservative constraint, it borrows candidate actions from similar "peer states" and uses a critic to select superior in-distribution actions to guide the actor. Furthermore, i
+  [ICLR2026][Reinforcement Learning][Offline Reinforcement Learning] This paper proposes Peer-Influenced Constraint (PIC): instead of treating only the action associated with the current state in the dataset as a conservative constraint, it borrows candidate actions from similar "peer states" and uses a critic to select superior in-distribution actions to guide the actor. Furthermore, it combines this with a small-scale ensemble critic to form EPIC…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Behavior Constraint"
+  - "Peer State"
+  - "Uncertainty Estimation"
+  - "Ensemble Critic"
 date: 2026-05-08
-content_hash: dc737a817415aac7
+content_hash: 4423aba24ea83eba
 ---
+
 # Efficient Offline Reinforcement Learning via Peer-Influenced Constraint
 
 **Conference**: ICLR2026  
@@ -146,11 +152,11 @@ Specifically, in Gym-MuJoCo, EPIC reaches 112.3 on hopper-medium-expert and 117.
 
 ## Related Papers
 
+- [\[ICLR 2026\] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration](opride_efficient_offline_preference-based_reinforcement_learning_via_in-dataset_.md)
 - [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation](adm-v2_pursuing_full-horizon_roll-out_in_dynamics_models_for_offline_policy_lear.md)
 - [\[ICLR 2026\] Chain-of-Context Learning: Dynamic Constraint Understanding for Multi-Task VRPs](chain-of-context_learning_dynamic_constraint_understanding_for_multi-task_vrps.md)
+- [\[ICLR 2026\] ADM-v2: Pursuing Full-Horizon Roll-out in Dynamics Models for Offline Policy Learning and Evaluation](adm-v2_pursuing_full-horizon_roll-out_in_dynamics_models_for_offline_policy_lear.md)
 - [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](../../ICML2026/reinforcement_learning/safe_reinforcement_learning_with_preference-based_constraint_inference.md)
-- [\[ICLR 2026\] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching](sample_efficient_offline_rl_via_t-symmetry_enforced_latent_state-stitching.md)
 
 </div>
 

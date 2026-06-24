@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Bringing Stability to Diffusion: Decomposing and Reducing Variance of Training Masked Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][dLLM] This paper provides the first **systematic decomposition** of the training variance in Masked Diffusion Models (MDM) into three terms: "mask pattern noise + mask rate noise + data noise." Based on this, six variance reduction methods are designed, centered on P-POTS (Pareto-Optimal $t$-Sampler) and MIRROR (Complementar
+  [ICLR 2026][Image Generation][Masked Diffusion Models] This paper provides the first **systematic decomposition** of the training variance in Masked Diffusion Models (MDM) into three terms: "mask pattern noise + mask rate noise + data noise." Based on this, six variance reduction methods are designed, centered on P-POTS (Pareto-Optimal $t$-Sampler) and MIRROR (Complementary Mask Inverse Sampling). These methods improve MDM accuracy on complex reasoning by 7–8% and reduce run-…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - dLLM
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Masked Diffusion Models"
+  - "Variance Decomposition"
+  - "Importance Sampling"
+  - "Inverse Sampling"
+  - "Training Stability"
+  - "dLLM"
 date: 2026-05-08
-content_hash: 22b113a876ded174
+content_hash: b57667dbe7f59508
 ---
+
 # Bringing Stability to Diffusion: Decomposing and Reducing Variance of Training Masked Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -100,15 +106,14 @@ flowchart TD
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] What Exactly Does Guidance Do in Masked Discrete Diffusion Models](what_exactly_does_guidance_do_in_masked_discrete_diffusion_models.md)
 - [\[ICLR 2026\] Any-Order Flexible Length Masked Diffusion](any-order_flexible_length_masked_diffusion.md)
+- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](../../ICML2026/image_generation/unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
 - [\[ICLR 2026\] Quantization-Aware Diffusion Models for Maximum Likelihood Training](quantization-aware_diffusion_models_for_maximum_likelihood_training.md)
 - [\[ICCV 2025\] SliderSpace: Decomposing the Visual Capabilities of Diffusion Models](../../ICCV2025/image_generation/sliderspace_decomposing_the_visual_capabilities_of_diffusion_models.md)
-- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
 
 </div>
 

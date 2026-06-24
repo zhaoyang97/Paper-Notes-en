@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding
 description: >-
-  [AAAI 2026][LLM Pretraining][Game Theory] This paper proposes the Embedding CFR algorithm, which maps information sets in imperfect-information games to a continuous low-dimensional embedding space (rather than discrete…
+  [AAAI 2026][LLM Pretraining][Game Theory] This paper proposes the Embedding CFR algorithm, which maps information sets in imperfect-information games to a continuous low-dimensional embedding space (rather than discrete clusters), achieving faster exploitability convergence and higher-quality strategy solving under the same space budget.
 tags:
   - "AAAI 2026"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Embedding Space"
   - "Poker AI"
 date: 2026-05-08
-content_hash: 46bdef9ea641617f
+content_hash: e4654934f66e8c81
 ---
 
 # No-Regret Strategy Solving in Imperfect-Information Games via Pre-Trained Embedding
@@ -133,9 +133,9 @@ HandEbdNet is trained using hand strength (win-rate distributions) as the superv
 
 - [\[AAAI 2026\] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer](prefixgpt_prefix_adder_optimization_by_a_generative_pre-trained_transformer.md)
 - [\[AAAI 2026\] Beyond Cosine Similarity: Magnitude-Aware CLIP for No-Reference Image Quality Assessment](beyond_cosine_similarity_magnitude-aware_clip_for_no-reference_image_quality_ass.md)
+- [\[CVPR 2026\] Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization](../../CVPR2026/llm_pretraining/unlocking_pre-trained_weights_parameter_inheritance_for_zero-shot_initialization.md)
 - [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](../../ICCV2025/llm_pretraining/dataset_ownership_verification_for_pre-trained_masked_models.md)
-- [\[ACL 2026\] SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](../../ACL2026/llm_pretraining/script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](../../NeurIPS2025/llm_pretraining/scaling_embedding_layers_in_language_models.md)
+- [\[ICLR 2026\] Selective Rotary Position Embedding](../../ICLR2026/llm_pretraining/selective_rotary_position_embedding.md)
 
 </div>
 

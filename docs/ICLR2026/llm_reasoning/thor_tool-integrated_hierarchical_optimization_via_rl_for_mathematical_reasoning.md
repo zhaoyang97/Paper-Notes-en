@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][tool-integrated reasoning] The THOR framework is proposed, which systematically addresses three major challenges in tool-integrated mathematical reasoning—data construction, fine-grained optimization, and reasoning enhancement—through three core components: the TIRGen data construction pipeline, hierarchical reinforcement learning (joint episode
+  [ICLR 2026][Reasoning][tool-integrated reasoning] The THOR framework is proposed, which systematically addresses three major challenges in tool-integrated mathematical reasoning—data construction, fine-grained optimization, and reasoning enhancement—through three core components: the TIRGen data construction pipeline, hierarchical reinforcement learning (joint episode-level and step-level optimization), and a self-correction reasoning mechanism. It achieves SOTA performance a…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - tool-integrated reasoning
-  - hierarchical RL
-  - GRPO
-  - code generation
-  - self-correction
-  - mathematical reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "tool-integrated reasoning"
+  - "hierarchical RL"
+  - "GRPO"
+  - "code generation"
+  - "self-correction"
+  - "mathematical reasoning"
 date: 2026-05-08
-content_hash: 51bf74e84591fe14
+content_hash: f67ca6ef5a8e9feb
 ---
+
 # THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning
 
 **Conference**: ICLR 2026  
@@ -163,8 +164,8 @@ THOR is an end-to-end framework for enhancing tool-integrated mathematical reaso
 - [\[ICLR 2026\] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning](toward_effective_tool-integrated_reasoning_via_self-evolved_preference_learning.md)
 - [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
 - [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](../../CVPR2026/llm_reasoning/scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
+- [\[ICLR 2026\] AgentMath: Empowering Mathematical Reasoning for Large Language Models via Tool-Augmented Agent](agentmath_empowering_mathematical_reasoning_for_large_language_models_via_tool-a.md)
 - [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
-- [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
 
 </div>
 

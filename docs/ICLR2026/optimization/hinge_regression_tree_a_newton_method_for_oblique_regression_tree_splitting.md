@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This work rewrites the splitting of each node in an oblique regression tree as a nonlinear least squares problem of "taking the max/min envelope of two linear predictors." It proves that alternating fitting is exactly equivalent to the **damped Newton (Gauss-Newton) method** under a fixed partition. By using iterative
+  [ICLR 2026][Optimization][oblique decision trees] This work rewrites the splitting of each node in an oblique regression tree as a nonlinear least squares problem of "taking the max/min envelope of two linear predictors." It proves that alternating fitting is exactly equivalent to the **damped Newton (Gauss-Newton) method** under a fixed partition. By using iterative updates with backtracking line search, the authors obtain compact oblique regression trees that are both fast…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "oblique decision trees"
+  - "regression tree"
+  - "Newton's method"
+  - "Gauss-Newton"
+  - "hinge function"
+  - "piecewise linear"
+  - "universal approximation"
 date: 2026-05-08
-content_hash: 6a97ab635ea14ce8
+content_hash: 15444a843cd88834
 ---
+
 # Hinge Regression Tree: A Newton Method for Oblique Regression Tree Splitting
 
 **Conference**: ICLR 2026  
@@ -125,9 +133,9 @@ HRT, as a **single oblique tree**, outperforms single-tree baselines like differ
 
 - [\[ICLR 2026\] Towards Better Branching Policies: Leveraging the Sequential Nature of Branch-and-Bound Tree](towards_better_branching_policies_leveraging_the_sequential_nature_of_branch-and.md)
 - [\[ICLR 2026\] Birch SGD: A Tree Graph Framework for Local and Asynchronous SGD Methods](birch_sgd_a_tree_graph_framework_for_local_and_asynchronous_sgd_methods.md)
+- [\[ICLR 2026\] Improved ℓp Regression via Iteratively Reweighted Least Squares](improved_ell_p_regression_via_iteratively_reweighted_least_squares.md)
 - [\[ICLR 2026\] Non-Asymptotic Analysis of Efficiency in Conformalized Regression](non-asymptotic_analysis_of_efficiency_in_conformalized_regression.md)
 - [\[ICLR 2026\] Distributionally Robust Linear Regression with Block Lewis Weights](distributionally_robust_linear_regression_with_block_lewis_weights.md)
-- [\[ICLR 2026\] Newton Method Revisited: Global Convergence Rates up to $O(1/k^3)$ for Stepsize Schedules and Linesearch Procedures](newton_method_revisited_global_convergence_rates_up_to_o1k3_for_stepsize_schedul.md)
 
 </div>
 

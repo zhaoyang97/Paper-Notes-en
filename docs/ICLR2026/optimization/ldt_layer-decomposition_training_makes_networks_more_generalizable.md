@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LDT: Layer-Decomposition Training Makes Networks More Generalizable
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] LDT decomposes network layers into stable and unstable layers based on gradient variance. It employs dual-branch cross-freezing and dynamic EMA updates to sever gradient interference from unstable layers to stable layers, thereby enhancing cross-domain generalization in super-resolution, classification, semantic segmen
+  [ICLR 2026][Optimization][Layer-Decomposition Training] LDT decomposes network layers into stable and unstable layers based on gradient variance. It employs dual-branch cross-freezing and dynamic EMA updates to sever gradient interference from unstable layers to stable layers, thereby enhancing cross-domain generalization in super-resolution, classification, semantic segmentation, and NLP domain generalization tasks.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Layer-Decomposition Training"
+  - "Domain Generalization"
+  - "Gradient Variance"
+  - "Parameter Stability"
+  - "Dynamic Parameter Update"
 date: 2026-05-08
-content_hash: 657c3f445bcec071
+content_hash: b833ebb2b58743e8
 ---
+
 # LDT: Layer-Decomposition Training Makes Networks More Generalizable
 
 **Conference**: ICLR 2026  

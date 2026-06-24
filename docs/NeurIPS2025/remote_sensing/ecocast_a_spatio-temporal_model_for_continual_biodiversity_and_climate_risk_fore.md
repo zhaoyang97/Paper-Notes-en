@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting
 description: >-
-  [NeurIPS 2025][Remote Sensing][Biodiversity Forecasting] This paper proposes EcoCast, a Transformer-based spatio-temporal sequence model that integrates satellite remote sensing (Sentinel-2), climate reanalysis (ERA5)…
+  [NeurIPS 2025][Remote Sensing][Biodiversity Forecasting] This paper proposes EcoCast, a Transformer-based spatio-temporal sequence model that integrates satellite remote sensing (Sentinel-2), climate reanalysis (ERA5), and citizen science observations (GBIF). The model predicts next-month species occurrence probabilities from 12-month environmental feature sequences. On a five-species African bird distribution prediction task, the macro-average F1 score improves from 0.31 (Ra…
 tags:
   - "NeurIPS 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "Continual Learning"
   - "EWC"
 date: 2026-05-08
-content_hash: a6d111cfd3c2c90f
+content_hash: 5930dd0978e61b52
 ---
 
 # EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting
@@ -134,10 +134,10 @@ F1 improves by +34 percentage points; PR-AUC improves by +43 percentage points.
 ## Related Papers
 
 - [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](../../AAAI2026/remote_sensing/spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
-- [\[NeurIPS 2025\] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)
-- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
-- [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](../../ICCV2025/remote_sensing/towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
+- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
+- [\[NeurIPS 2025\] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)
+- [\[ICML 2025\] High-Resolution Live Fuel Moisture Content (LFMC) Maps for Wildfire Risk from Multimodal Earth Observation Data](../../ICML2025/remote_sensing/high-resolution_live_fuel_moisture_content_lfmc_maps_for_wildfire_risk_from_mult.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference
 description: >-
-  [CVPR 2026][Human Understanding][Labanotation] This work proposes the LabanLite symbolic motion representation and the LaMoGen framework, enabling LLMs to autonomously compose motion sequences through interpretable Laban symbolic reasoning for the first time, surpassing traditional text-motion joint embedding methods in temporal precision and controllability.
+  [CVPR 2026][Human Understanding][Text-driven motion generation] This work proposes the LabanLite symbolic motion representation and the LaMoGen framework, enabling LLMs to autonomously compose motion sequences through interpretable Laban symbolic reasoning for the first time, surpassing traditional text-motion joint embedding methods in temporal precision and controllability.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Labanotation
-  - LLM Agent
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-driven motion generation"
+  - "Labanotation"
+  - "Symbolic inference"
+  - "LLM Agent"
+  - "Interpretable motion synthesis"
 date: 2026-05-08
-content_hash: e2f412cd1b77f5d2
+content_hash: 335df1030cad459b
 ---
+
 # LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference
 
 **Conference**: CVPR 2026  
@@ -178,9 +182,9 @@ Throughout the chain, symbols remain human-readable: if the LLM errs in the step
 
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
 - [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](../../AAAI2026/human_understanding/soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
-- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
 - [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
 - [\[ECCV 2024\] CoMo: Controllable Motion Generation Through Language Guided Pose Code Editing](../../ECCV2024/human_understanding/como_controllable_motion_generation_through_language_guided_pose_code_editing.md)
+- [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
 
 </div>
 

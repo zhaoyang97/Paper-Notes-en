@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Answer Only as Precisely as Justified: Calibrated Claim-Level Specificity Control for Agentic Systems
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper models the issue of "stating details without sufficient evidence" in agentic systems as a claim-level over-commitment problem. It proposes calibrated CSS: a calibrated selection for each atomic claim among precise expression, coarse-grained backoff, and omission. In LongFact full-scale experiments, it improv
+  [ICML 2026][LLM Agent][claim-level fact-checking] This paper models the issue of "stating details without sufficient evidence" in agentic systems as a claim-level over-commitment problem. It proposes calibrated CSS: a calibrated selection for each atomic claim among precise expression, coarse-grained backoff, and omission. In LongFact full-scale experiments, it improves OAU from 0.8460 (without post-processing) to 0.9130 while retaining a specificity of 0.9381.
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML 2026"
+  - "LLM Agent"
+  - "claim-level fact-checking"
+  - "specificity control"
+  - "calibrated selection"
+  - "over-commitment"
+  - "long-form factuality"
 date: 2026-05-08
-content_hash: 590f6efd284f9309
+content_hash: aff48f3b2fea6184
 ---
+
 # Answer Only as Precisely as Justified: Calibrated Claim-Level Specificity Control for Agentic Systems
 
 **Conference**: ICML 2026  
@@ -143,10 +149,10 @@ The key ablation in the paper compares fixed-threshold CSS with calibrated CSS, 
 ## Related Papers
 
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
-- [\[ICML 2026\] OTora: A Unified Red Teaming Framework for Reasoning-Level Denial-of-Service in LLM Agents](otora_a_unified_red_teaming_framework_for_reasoning-level_denial-of-service_in_l.md)
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](../../ICLR2026/llm_agent/coda_agentic_systems_for_collaborative_data_visualization.md)
 - [\[ICLR 2026\] AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?](../../ICLR2026/llm_agent/agentracer_who_is_inducing_failure_in_the_llm_agentic_systems.md)
-- [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](../../ACL2026/llm_agent/rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
-- [\[AAAI 2026\] With Great Capabilities Come Great Responsibilities: Introducing the Agentic Risk & Capability Framework for Governing Agentic AI Systems](../../AAAI2026/llm_agent/with_great_capabilities_come_great_responsibilities_introducing_the_agentic_risk.md)
+- [\[ICML 2026\] OTora: A Unified Red Teaming Framework for Reasoning-Level Denial-of-Service in LLM Agents](otora_a_unified_red_teaming_framework_for_reasoning-level_denial-of-service_in_l.md)
+- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](../../ICLR2026/llm_agent/evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
 
 </div>
 

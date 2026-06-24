@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SoccerMaster: A Vision Foundation Model for Soccer Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] SoccerMaster utilizes a shared spatio-temporal ViT encoder and five lightweight task heads to integrate four categories of "spatial perception + semantic reasoning" tasks—player detection/identification, pitch registration, event classification, and vision-language alignment—into a single supervised multi-task pre-trai
+  [CVPR2026][Video Understanding][Soccer Understanding] SoccerMaster utilizes a shared spatio-temporal ViT encoder and five lightweight task heads to integrate four categories of "spatial perception + semantic reasoning" tasks—player detection/identification, pitch registration, event classification, and vision-language alignment—into a single supervised multi-task pre-training stage. Supported by an automated annotation pipeline, SoccerFactory…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Soccer Understanding"
+  - "Vision Foundation Models"
+  - "Multi-task Pre-training"
+  - "Spatio-temporal Attention"
+  - "Automated Data Annotation"
 date: 2026-05-08
-content_hash: 08b03c534b9361a1
+content_hash: bb688fad51bef4a4
 ---
+
 # SoccerMaster: A Vision Foundation Model for Soccer Understanding
 
 **Conference**: CVPR2026  
@@ -150,10 +156,10 @@ Adding automated annotations significantly improves spatial tasks (+4.3 AP@50, +
 
 ## Related Papers
 
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
 - [\[CVPR 2025\] Towards Universal Soccer Video Understanding](../../CVPR2025/video_understanding/towards_universal_soccer_video_understanding.md)
 - [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](univbench_towards_unified_evaluation_for_video_foundation_models.md)
 - [\[CVPR 2025\] LLAVIDAL: A Large Language Vision Model for Daily Activities of Living](../../CVPR2025/video_understanding/llavidal_a_large_language_vision_model_for_daily_activities_of_living.md)
-- [\[CVPR 2026\] Towards Data-Efficient Video Pre-training with Frozen Image Foundation Models](towards_data-efficient_video_pre-training_with_frozen_image_foundation_models.md)
 - [\[CVPR 2025\] MambaVLT: Time-Evolving Multimodal State Space Model for Vision-Language Tracking](../../CVPR2025/video_understanding/mambavlt_time-evolving_multimodal_state_space_model_for_vision-language_tracking.md)
 
 </div>

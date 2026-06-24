@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment
 description: >-
-  [NeurIPS 2025][geospatial ABM] This paper proposes an Agent-Based Model (ABM) that integrates geospatial climate hazard data with evolutionary learning mechanisms. Using a simplified economic network comprising a three-t…
+  [NeurIPS 2025][geospatial ABM] This paper proposes an Agent-Based Model (ABM) that integrates geospatial climate hazard data with evolutionary learning mechanisms. Using a simplified economic network comprising a three-tier commodity–manufacturing–retail supply chain, the model simulates economic responses from 2025 to 2100 under RCP8.5 flood projections. Results demonstrate that evolutionary adaptation enables firms to maintain significantly higher levels of production…
 tags:
   - "NeurIPS 2025"
   - "geospatial ABM"
@@ -12,7 +12,7 @@ tags:
   - "RCP8.5"
   - "flood damage functions"
 date: 2026-05-08
-content_hash: c1a1918ada30f1cb
+content_hash: 71663aed1988d460
 ---
 
 # Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment
@@ -165,7 +165,7 @@ Each firm maintains **5 evolvable parameters**:
 - [\[NeurIPS 2025\] Evolutionary Prediction Games](evolutionary_prediction_games.md)
 - [\[AAAI 2026\] EvoEmpirBench: Dynamic Spatial Reasoning with Agent-ExpVer](../../AAAI2026/others/evoempirbench_dynamic_spatial_reasoning_with_agent-expver.md)
 - [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](../../ICLR2026/others/building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](radar_benchmarking_language_models_on_imperfect_tabular_data.md)
+- [\[ACL 2025\] Theoretical Guarantees for Minimum Bayes Risk Decoding](../../ACL2025/others/theoretical_guarantees_for_minimum_bayes_risk_decoding.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper redefines associative memory retrieval from "being sufficiently close to a stored pattern" to "finding the source memory most likely to have generated the current query." By constructing an adaptive Hopfield network (A-Hop) with a learnable similarity footprint, it significantly outperforms fixed-similarity
+  [ICLR2026][Learning Theory][Adaptive Similarity] This paper redefines associative memory retrieval from "being sufficiently close to a stored pattern" to "finding the source memory most likely to have generated the current query." By constructing an adaptive Hopfield network (A-Hop) with a learnable similarity footprint, it significantly outperforms fixed-similarity Hopfield variants on tasks involving mixed noise, occlusion, bias, and multi-class classification.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Associative Memory"
+  - "Hopfield Networks"
+  - "Adaptive Similarity"
+  - "Variant Distribution"
+  - "Correct Retrieval"
 date: 2026-05-08
-content_hash: 5f511e677f02a26b
+content_hash: b2c372c8ec81bc9b
 ---
+
 # Adaptive Hopfield Network: Rethinking Similarities in Associative Memory
 
 **Conference**: ICLR2026  
@@ -138,6 +144,7 @@ Ablations verify the importance of the footprint structure. Comparing configurat
 - Value: ⭐⭐⭐⭐⭐ (Significant implications for learnable/interpretable similarity).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

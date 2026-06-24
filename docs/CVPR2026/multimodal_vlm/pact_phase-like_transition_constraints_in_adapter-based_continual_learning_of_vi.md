@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][PAC-Bayes] Addressing the limitation where orthogonal constraints isolate task adapters and suppress cross-task knowledge sharing, the authors derive "Phase-Like Transition Constraints (PACT)" from PAC-Bayes theory for the **post-convergence phase**. This allows adapters to **smoothly transition rather than hard-threshold** betwe
+  [CVPR 2026][Multimodal VLM][Continual Learning] Addressing the limitation where orthogonal constraints isolate task adapters and suppress cross-task knowledge sharing, the authors derive "Phase-Like Transition Constraints (PACT)" from PAC-Bayes theory for the **post-convergence phase**. This allows adapters to **smoothly transition rather than hard-threshold** between "frozen" (preserving history) and "melting" (adapting to new tasks) states…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - PAC-Bayes
-  - adapter
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "PAC-Bayes"
+  - "adapter"
+  - "Stability-Plasticity Trade-off"
+  - "Phase Transition Constraints"
 date: 2026-05-08
-content_hash: c9652d4acafe62e1
+content_hash: 96a9735b72e633bd
 ---
+
 # PACT: Phase-Like Transition Constraints in Adapter-Based Continual Learning of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -125,15 +129,16 @@ On Few-Shot MTIL (FS-MTIL), PACT is optimal under both 5-shot and 16-shot protoc
 - **vs. Other PEFT-CL (MoE-Adapters / DIKI / IAP / AFA / TRGE, etc.)**: Many of these focus on converging and then fixing individual adapters. PACT’s key differentiator is "reshaping after convergence"—using phase-like constraints to induce structural coupling across tasks, leading to consistent gains in Transfer/Avg/Last with fewer parameters.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Enhancing Continual Learning of Vision-Language Models via Dynamic Prefix Weighting](enhancing_continual_learning_of_vision-language_models_via_dynamic_prefix_weight.md)
+- [\[CVPR 2026\] Learning from Itself: Mining Internal Knowledge from Vision Language Models for Continual Learning](learning_from_itself_mining_internal_knowledge_from_vision_language_models_for_c.md)
 - [\[CVPR 2026\] On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models](on_tokens_dilemma_dynamic_moe_with_drift-aware_token_assignment_for_continual_le.md)
 - [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
 - [\[CVPR 2026\] Re-evaluating Continual VQA: Toward Fair and Robust Evaluation for Multimodal Continual Learning](re-evaluating_continual_vqa_toward_fair_and_robust_evaluation_for_multimodal_con.md)
-- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
 
 </div>
 

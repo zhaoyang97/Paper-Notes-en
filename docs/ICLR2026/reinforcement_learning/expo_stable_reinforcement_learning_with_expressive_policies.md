@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] EXPO: Stable Reinforcement Learning with Expressive Policies
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline-to-Online] EXPO bypasses the instability of backpropagating value gradients through diffusion/flow-matching chains by combining "imitation learning for the base expressive policy + lightweight Gaussian editing for Q-value maximization + on-the-fly selection of the highest-value action," achieving a 2-3x improvement in online RL f
+  [ICLR 2026][Reinforcement Learning][expressive policies] EXPO bypasses the instability of backpropagating value gradients through diffusion/flow-matching chains by combining "imitation learning for the base expressive policy + lightweight Gaussian editing for Q-value maximization + on-the-fly selection of the highest-value action," achieving a 2-3x improvement in online RL fine-tuning sample efficiency.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline-to-Online
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "expressive policies"
+  - "diffusion policy"
+  - "online RL fine-tuning"
+  - "Offline-to-Online"
+  - "value maximization"
+  - "action editing"
 date: 2026-05-08
-content_hash: 38e015a3d7625d21
+content_hash: 88c56f62e9af1bf0
 ---
+
 # EXPO: Stable Reinforcement Learning with Expressive Policies
 
 **Conference**: ICLR 2026  
@@ -121,11 +127,11 @@ Key Comparison: RLPD is fast but slow to explore optimal policies; IDQL is hinde
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning](fine-tuning_behavioral_cloning_policies_with_preferencebased_reinforcement_learn.md)
 - [\[ICLR 2026\] GEPO: Group Expectation Policy Optimization for Stable Heterogeneous Reinforcement Learning](gepo_group_expectation_policy_optimization_for_stable_heterogeneous_reinforcemen.md)
 - [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
 - [\[ICLR 2026\] Use the Online Network If You Can: Towards Fast and Stable Reinforcement Learning](use_the_online_network_if_you_can_towards_fast_and_stable_reinforcement_learning.md)
 - [\[ICML 2026\] Fast and Highly Expressive Policy Learning for Offline Reinforcement Learning via Bootstrapped Flow Q-Learning](../../ICML2026/reinforcement_learning/fast_and_highly_expressive_policy_learning_for_offline_reinforcement_learning_vi.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](../../ICML2026/reinforcement_learning/offline_reinforcement_learning_with_generative_trajectory_policies.md)
 
 </div>
 

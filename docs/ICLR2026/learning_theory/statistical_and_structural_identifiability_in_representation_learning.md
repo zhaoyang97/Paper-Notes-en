@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Statistical and Structural Identifiability in Representation Learning
 description: >-
-  [ICLR 2026][learning_theory][ICA] This paper decomposes "representation stability" into two independent concepts: statistical identifiability (consistent representations across multiple retraining sessions) and structural identifiability (representations aligned to true generative factors). It proposes a "near-identifiability" definition with error tol
+  [ICLR 2026][Representation Learning Theory][Representation Learning] This paper decomposes "representation stability" into two independent concepts: statistical identifiability (consistent representations across multiple retraining sessions) and structural identifiability (representations aligned to true generative factors). It proposes a "near-identifiability" definition with error tolerance $\epsilon$ and proves statistical $\epsilon$-near-identifiability for a class of mod…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - ICA
+  - "ICLR 2026"
+  - "Representation Learning Theory"
+  - "Identifiability"
+  - "Representation Learning"
+  - "ICA"
+  - "Disentanglement"
+  - "Near-Isometry"
 date: 2026-05-08
-content_hash: e4213a5acf6ffd3b
+content_hash: d9d34e06fc1d24ae
 ---
+
 # Statistical and Structural Identifiability in Representation Learning
 
 **Conference**: ICLR 2026  
@@ -148,10 +153,10 @@ For example, on the EIF3H gene, AUROC improved from Base 0.682 → PCA 0.724 →
 ## Related Papers
 
 - [\[ICLR 2026\] Memory-Statistics Tradeoff in Continual Learning with Structural Regularization](memory-statistics_tradeoff_in_continual_learning_with_structural_regularization.md)
+- [\[ICLR 2026\] Identifiability Challenges in Sparse Linear Ordinary Differential Equations](identifiability_challenges_in_sparse_linear_ordinary_differential_equations.md)
 - [\[ICLR 2026\] Learning Correlated Reward Models: Statistical Barriers and Opportunities](learning_correlated_reward_models_statistical_barriers_and_opportunities.md)
+- [\[ICLR 2026\] Sample Complexity and Representation Ability of Test-time Scaling Paradigms](sample_complexity_and_representation_ability_of_test-time_scaling_paradigms.md)
 - [\[ICLR 2026\] SEINT: An Efficient SE(p)-Invariant Transport Metric Driven by Polar Transport Discrepancy-based Representation](an_efficient_sep-invariant_transport_metric_driven_by_polar_transport_discrepanc.md)
-- [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
-- [\[ICLR 2026\] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers](a_statistical_learning_perspective_on_semi-dual_adversarial_neural_optimal_trans.md)
 
 </div>
 

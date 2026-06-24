@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment
 description: >-
-  [AAAI 2026][Human Understanding][Text-to-Motion Generation] This paper proposes ReAlign (Reward-guided sampling Alignment), which employs a step-aware reward model and a reward-guided sampling strategy to dynamically ste…
+  [AAAI 2026][Human Understanding][Text-to-Motion Generation] This paper proposes ReAlign (Reward-guided sampling Alignment), which employs a step-aware reward model and a reward-guided sampling strategy to dynamically steer sampling trajectories toward distributions with high text-motion alignment during diffusion inference, significantly improving the generation quality of various motion generation methods without fine-tuning any diffusion model. Using MLD as a baseline…
 tags:
   - "AAAI 2026"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Text-Motion Alignment"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: d4d379a4bad428fd
+content_hash: eef5a63d384028cf
 ---
 
 # ReAlign: Text-to-Motion Generation via Step-Aware Reward-Guided Alignment
@@ -214,11 +214,11 @@ The reward gradient guides samples simultaneously toward high-density and high-a
 
 ## Related Papers
 
+- [\[ICLR 2026\] EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation](../../ICLR2026/human_understanding/easytune_efficient_step-aware_fine-tuning_for_diffusion-based_motion_generation.md)
 - [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](../../CVPR2026/human_understanding/molingo_motion-language_alignment_for_text-to-motion_generation.md)
+- [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](../../CVPR2026/human_understanding/multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
+- [\[ICLR 2026\] Motion-Aligned Word Embeddings for Text-to-Motion Generation](../../ICLR2026/human_understanding/motion-aligned_word_embeddings_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](../../CVPR2026/human_understanding/next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[AAAI 2026\] SOSControl: Enhancing Human Motion Generation through Saliency-Aware Symbolic Orientation and Timing Control](soscontrol_enhancing_human_motion_generation_through_saliency-aware_symbolic_ori.md)
-- [\[ICLR 2026\] Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis](../../ICLR2026/human_understanding/event-t2m_event-level_conditioning_for_complex_text-to-motion_synthesis.md)
-- [\[AAAI 2026\] KineST: A Kinematics-guided Spatiotemporal State Space Model for Human Motion Tracking from Sparse Signals](kinest_a_kinematics-guided_spatiotemporal_state_space_model_for_human_motion_tra.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction
 description: >-
-  [ICML 2026][Audio & Speech][RLHF] Addressing the lack of unified evaluation for modern music generation models that simultaneously process "text + lyrics + reference audio," this paper establishes a complete ecosystem: 110k pseudo-labeled CMI-Pref-Pseudo, 4,027 human-labeled CMI-Pref, a unified CMI-RewardBench, and a family of ~30M parameter reward mod
+  [ICML2026][Audio & Speech][Music Reward Model] Addressing the lack of unified evaluation for modern music generation models that simultaneously process "text + lyrics + reference audio," this paper establishes a complete ecosystem: 110k pseudo-labeled CMI-Pref-Pseudo, 4,027 human-labeled CMI-Pref, a unified CMI-RewardBench, and a family of ~30M parameter reward models (CMI-RM) capable of handling all modality combinations in a single architecture. The authors demonstrate high…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - RLHF
+  - "ICML2026"
+  - "Audio & Speech"
+  - "Music Reward Model"
+  - "Compositional Multimodal Instruction"
+  - "Preference Dataset"
+  - "Inference-time Scaling"
+  - "RLHF"
 date: 2026-05-08
-content_hash: 22fb553d22511610
+content_hash: ab75306ffc7f8b99
 ---
+
 # CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction
 
 **Conference**: ICML2026  
@@ -141,9 +146,9 @@ Key conclusion: Frontier MLLMs like Gemini-2.5-Pro struggle to exceed **80%** hu
 
 - [\[ACL 2026\] S2S-Arena: Evaluating Paralinguistic Instruction Following in Speech-to-Speech Models](../../ACL2026/audio_speech/s2s-arena_evaluating_paralinguistic_instruction_following_in_speech-to-speech_mo.md)
 - [\[ICML 2026\] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition](towards_understanding_modality_interaction_in_multimodal_language_models_via_par.md)
+- [\[ICLR 2026\] Music Flamingo: Scaling Music Understanding in Audio Language Models](../../ICLR2026/audio_speech/music_flamingo_scaling_music_understanding_in_audio_language_models.md)
+- [\[ICML 2026\] Probing Token Spaces under Generator Shift in AI-Generated Music Detection](probing_token_spaces_under_generator_shift_in_ai-generated_music_detection.md)
 - [\[ICLR 2026\] EchoMind: An Interrelated Multi-level Benchmark for Evaluating Empathetic Speech Language Models](../../ICLR2026/audio_speech/echomind_an_interrelated_multi-level_benchmark_for_evaluating_empathetic_speech_.md)
-- [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
-- [\[ACL 2026\] Music Audio-Visual Question Answering Requires Specialized Multimodal Designs](../../ACL2026/audio_speech/music_audio-visual_question_answering_requires_specialized_multimodal_designs.md)
 
 </div>
 

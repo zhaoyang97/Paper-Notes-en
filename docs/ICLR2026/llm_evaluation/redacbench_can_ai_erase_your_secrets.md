@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RedacBench: Can AI Erase Your Secrets?
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] This paper proposes RedacBench—a comprehensive benchmark for evaluating Large Language Model (LLM) text redaction capabilities using "policy conditioning + proposition-level annotation." Utilizing 514 human-written texts, 187 safety policies, and 8,053 annotated propositions, the benchmark quantifies both the "Security
+  [ICLR 2026][LLM Evaluation][Text redaction] This paper proposes RedacBench—a comprehensive benchmark for evaluating Large Language Model (LLM) text redaction capabilities using "policy conditioning + proposition-level annotation." Utilizing 514 human-written texts, 187 safety policies, and 8,053 annotated propositions, the benchmark quantifies both the "Security" of erasing sensitive information and the "Utility" of preserving non-sensitive information. Systematic evaluation…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Text redaction"
+  - "proposition-level evaluation"
+  - "security-utility tradeoff"
+  - "policy conditioning"
+  - "privacy benchmark"
 date: 2026-05-08
-content_hash: 18f133e27724c0f1
+content_hash: 15d4f2cc546f405e
 ---
+
 # RedacBench: Can AI Erase Your Secrets?
 
 **Conference**: ICLR 2026  
@@ -145,7 +151,7 @@ Evaluated across 11 models of varying scales/configurations using three methods 
 - [\[ICLR 2026\] PACEbench: A Framework for Evaluating Practical AI Cyber-Exploitation Capabilities](pacebench_a_framework_for_evaluating_practical_ai_cyber-exploitation_capabilitie.md)
 - [\[ICLR 2026\] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation](holistic_agent_leaderboard_the_missing_infrastructure_for_ai_agent_evaluation.md)
 - [\[ICLR 2026\] Rethinking LLM Evaluation: Can We Evaluate LLMs with 200× Less Data?](rethinking_llm_evaluation_can_we_evaluate_llms_with_200_less_data.md)
-- [\[ICLR 2026\] Can You Hear Me Now? A Benchmark for Long-Range Graph Propagation and Beyond](can_you_hear_me_now_a_benchmark_for_long-range_graph_propagation_and_beyond.md)
+- [\[ICLR 2026\] SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems](sysmobench_evaluating_ai_on_formally_specifying_complex_real-world_systems.md)
 
 </div>
 

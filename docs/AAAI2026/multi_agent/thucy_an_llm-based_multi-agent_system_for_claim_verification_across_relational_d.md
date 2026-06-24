@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent System] This paper presents Thucy, the first multi-agent claim verification system supporting cross-database and cross-table reasoning. Led by a Verifier agent…
+  [AAAI 2026][Multi-Agent][Multi-Agent System] This paper presents Thucy, the first multi-agent claim verification system supporting cross-database and cross-table reasoning. Led by a Verifier agent, it coordinates three specialized agents (Data/Schema/SQL Expert) with zero prior knowledge of the data sources, enabling autonomous discovery, reasoning, and SQL evidence generation. Thucy surpasses the previous SOTA by 5.6 percentage points on TabFact (94.3%).
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "SQL Evidence Generation"
   - "Cross-Database Reasoning"
 date: 2026-05-08
-content_hash: 673d967c83a7646d
+content_hash: 4c77f69767f5e5f5
 ---
 
 # Thucy: An LLM-based Multi-Agent System for Claim Verification across Relational Databases
@@ -143,9 +143,9 @@ The system is well-designed—the combination of source-agnostic operation, cros
 
 - [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
 - [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
-- [\[NeurIPS 2025\] MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting](../../NeurIPS2025/multi_agent/masfin_a_multi-agent_system_for_decomposed_financial_reasoning_and_forecasting.md)
+- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
+- [\[ICLR 2026\] CoAct-1: Computer-using Multi-agent System with Coding Actions](../../ICLR2026/multi_agent/coact-1_computer-using_multi-agent_system_with_coding_actions.md)
 
 </div>
 

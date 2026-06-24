@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts
 description: >-
-  [ICLR 2026][Interpretability][Visual Prompt Tuning] Proposed IVPT (Interpretable Visual Prompt Tuning), which links abstract visual prompts to human-understandable semantic regions through cross-layer class-agnostic concept prototypes. While maintaining the advantages of parameter-efficient fine-tuning, it realizes visual prompt interpretability for the first time, simu
+  [ICLR 2026][Interpretability][Visual Prompt Tuning] Proposed IVPT (Interpretable Visual Prompt Tuning), which links abstract visual prompts to human-understandable semantic regions through cross-layer class-agnostic concept prototypes. While maintaining the advantages of parameter-efficient fine-tuning, it realizes visual prompt interpretability for the first time, simultaneously improving explanation consistency (+8.4%) and accuracy on fine-grained classification benchmarks…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Visual Prompt Tuning
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Visual Prompt Tuning"
+  - "Concept Prototypes"
+  - "Cross-layer Fusion"
+  - "Fine-grained Classification"
 date: 2026-05-08
-content_hash: 271a289644bde5a9
+content_hash: 43c3c1f95efb6828
 ---
+
 # Exploring Interpretability for Visual Prompt Tuning with Cross-layer Concepts
 
 **Conference**: ICLR 2026  
@@ -142,8 +146,8 @@ IVPT is optimal across all three dimensions (interpretability + accuracy).
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
-- [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](concepts_information_bottleneck_models.md)
+- [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
 - [\[ACL 2026\] Evian: Towards Explainable Visual Instruction-tuning Data Auditing](../../ACL2026/interpretability/evian_towards_explainable_visual_instruction-tuning_data_auditing.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
 

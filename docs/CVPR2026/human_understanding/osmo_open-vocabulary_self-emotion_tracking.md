@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OSMO: Open-vocabulary Self-eMOtion Tracking
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This paper proposes a new task, "First-person Self-emotion Tracking"—inferring the wearer's evolving emotions over time from the multimodal streams of smart glasses (speech, visual environment, dialogue text, and eye movements). It introduces the OSMO dataset (110 hours, the first and largest first-person emotion datas
+  [CVPR 2026][Human Understanding][Self-emotion Tracking] This paper proposes a new task, "First-person Self-emotion Tracking"—inferring the wearer's evolving emotions over time from the multimodal streams of smart glasses (speech, visual environment, dialogue text, and eye movements). It introduces the OSMO dataset (110 hours, the first and largest first-person emotion dataset with per-subject timelines), the OSMO benchmark (5 tasks), and the OSIRIS model (the first LMM to joi…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Self-emotion Tracking"
+  - "Smart Glasses"
+  - "First-person"
+  - "Open-vocabulary Emotion"
+  - "Multimodal Large Multimodal Model (LMM)"
 date: 2026-05-08
-content_hash: 7a7bee86a9ee44da
+content_hash: bfa8573cf1877e9f
 ---
+
 # OSMO: Open-vocabulary Self-eMOtion Tracking
 
 **Conference**: CVPR 2026  
@@ -136,14 +142,13 @@ Modality removal ablations (Performance change): w/o Dialogue **-11.8 (Most crit
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Open the Motion Door: Atomic Motion Decomposition and Recomposition for Open-Vocabulary Motion Generation](open_the_motion_door_atomic_motion_decomposition_and_recomposition_for_open-voca.md)
 - [\[CVPR 2026\] Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection](learning_to_diversify_and_focus_a_reinforcement_framework_for_open-vocabulary_ho.md)
-- [\[CVPR 2026\] Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)
 - [\[CVPR 2026\] LAMP: Localization Aware Multi-camera People Tracking in Metric 3D World](lamp_localization_aware_multi-camera_people_tracking_in_metric_3d_world.md)
+- [\[CVPR 2026\] Action Motifs: Self-Supervised Hierarchical Representation of Human Body Movements](action_motifs_self-supervised_hierarchical_representation_of_human_body_movement.md)
 - [\[CVPR 2026\] OpenT2M: No-frill Motion Generation with Open-source, Large-scale, High-quality Data](opent2m_no-frill_motion_generation_with_open-source_large-scale_high-quality_dat.md)
 
 </div>

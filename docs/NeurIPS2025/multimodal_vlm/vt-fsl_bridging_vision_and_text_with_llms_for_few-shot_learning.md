@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Few-shot learning] This paper proposes VT-FSL, a framework that leverages Cross-modal Iterative Prompting (CIP) to jointly exploit class names and support images for driving LLMs to generat…
+  [NeurIPS 2025][Multimodal VLM][Few-shot learning] This paper proposes VT-FSL, a framework that leverages Cross-modal Iterative Prompting (CIP) to jointly exploit class names and support images for driving LLMs to generate accurate, visually grounded textual descriptions and zero-shot synthesize semantically consistent images. Combined with Kernelized Volume Contrastive Learning (CGA) for global nonlinear cross-modal alignment, VT-FSL achieves an average classification accurac…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "visual synthesis"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 50a62319d73a0edd
+content_hash: 4593b8fc55b676f9
 ---
 
 # VT-FSL: Bridging Vision and Text with LLMs for Few-Shot Learning
@@ -165,10 +165,10 @@ VT-FSL achieves the fastest training, fastest inference, and highest accuracy, a
 ## Related Papers
 
 - [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
-- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
-- [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
-- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](../../CVPR2026/multimodal_vlm/mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
-- [\[NeurIPS 2025\] CyIN: Cyclic Informative Latent Space for Bridging Complete and Incomplete Multimodal Learning](cyin_cyclic_informative_latent_space_for_bridging_complete_and_incomplete_multim.md)
+- [\[ICLR 2026\] Exploring Cross-Modal Flows for Few-Shot Learning](../../ICLR2026/multimodal_vlm/exploring_cross-modal_flows_for_few-shot_learning.md)
+- [\[CVPR 2026\] Training-Only Heterogeneous Image-Patch-Text Graph Supervision for Advancing Few-Shot Learning Adapters](../../CVPR2026/multimodal_vlm/training-only_heterogeneous_image-patch-text_graph_supervision_for_advancing_few.md)
+- [\[CVPR 2025\] UNEM: UNrolled Generalized EM for Transductive Few-Shot Learning](../../CVPR2025/multimodal_vlm/unem_unrolled_generalized_em_for_transductive_few-shot_learning.md)
+- [\[CVPR 2025\] Generalized Few-Shot 3D Point Cloud Segmentation with Vision-Language Model](../../CVPR2025/multimodal_vlm/generalized_few-shot_3d_point_cloud_segmentation_with_vision-language_model.md)
 
 </div>
 

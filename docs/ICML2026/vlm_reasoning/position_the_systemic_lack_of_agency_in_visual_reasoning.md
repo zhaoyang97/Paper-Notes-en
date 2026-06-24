@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: The Systemic Lack of Agency in Visual Reasoning
 description: >-
-  [ICML 2026][vlm_reasoning][Paper Note] This position paper argues that current VLMs exhibit a systemic "lack of visual agency"—they can perceive details when explicitly directed but fail to autonomously search for implicit visual cues that are unmentioned in the prompt yet essential for problem-solving. Through a formal framework, a four-quadrant taxonomy,
+  [ICML 2026][VLM Reasoning][Visual Agency] This position paper argues that current VLMs exhibit a systemic "lack of visual agency"—they can perceive details when explicitly directed but fail to autonomously search for implicit visual cues that are unmentioned in the prompt yet essential for problem-solving. Through a formal framework, a four-quadrant taxonomy, and the specially constructed V-IRD benchmark, the authors demonstrate that even the strongest closed-source models fa…
 tags:
-  - ICML 2026
-  - vlm_reasoning
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Visual Agency"
+  - "Implicit Reasoning"
+  - "Position Paper"
+  - "V-IRD Benchmark"
+  - "Attention Tunneling"
 date: 2026-05-08
-content_hash: 492bad53e2b4f093
+content_hash: fe3d974fd4a4941c
 ---
+
 # Position: The Systemic Lack of Agency in Visual Reasoning
 
 **Conference**: ICML 2026  
@@ -132,15 +138,15 @@ A "catastrophic collapse" occurs in spatial geometry—most models fail to achie
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](../../ACL2026/vlm_reasoning/position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
 - [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[ICML 2026\] Imagination Helps Visual Reasoning, But Not Yet in Latent Space](imagination_helps_visual_reasoning_but_not_yet_in_latent_space.md)
-- [\[ICML 2026\] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)
-- [\[CVPR 2026\] Latent Implicit Visual Reasoning](../../CVPR2026/vlm_reasoning/latent_implicit_visual_reasoning.md)
+- [\[ICML 2026\] CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning](look_on_demand_a_cognitive_scheduling_framework_for_visual_evidence_acquisition_.md)
+- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
+- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
 
 </div>
 

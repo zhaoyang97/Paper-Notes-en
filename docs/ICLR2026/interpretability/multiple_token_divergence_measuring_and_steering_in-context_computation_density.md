@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Multiple Token Divergence: Measuring and Steering In-Context Computation Density
 description: >-
-  [ICLR 2026][Interpretability][in-context computation] This paper proposes **Multiple Token Divergence (MTD)**—a training-free metric that measures the "computational effort" of a language model at each step via the KL divergence between the full model's output distribution and a shallow auxiliary prediction head's distribution. Based on this, a decoding method called **Di
+  [ICLR 2026][Interpretability][in-context computation] This paper proposes **Multiple Token Divergence (MTD)**—a training-free metric that measures the "computational effort" of a language model at each step via the KL divergence between the full model's output distribution and a shallow auxiliary prediction head's distribution. Based on this, a decoding method called **Divergence Steering** is derived to regulate the "computation density" of generated text.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - in-context computation
-  - multiple token prediction
-  - KL divergence
-  - reasoning complexity
-  - decoding steering
+  - "ICLR 2026"
+  - "Interpretability"
+  - "in-context computation"
+  - "multiple token prediction"
+  - "KL divergence"
+  - "reasoning complexity"
+  - "decoding steering"
 date: 2026-05-08
-content_hash: 6b87eab32e315cdd
+content_hash: ff37a64609c45de6
 ---
+
 # Multiple Token Divergence: Measuring and Steering In-Context Computation Density
 
 **Conference**: ICLR 2026  
@@ -121,7 +122,6 @@ This work builds directly on PHi (Herrmann et al., 2025) and neural history comp
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

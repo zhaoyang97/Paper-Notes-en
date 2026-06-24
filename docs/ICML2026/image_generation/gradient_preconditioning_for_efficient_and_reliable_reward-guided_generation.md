@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gradient Preconditioning for Efficient and Reliable Reward-Guided Generation
 description: >-
-  [ICML 2026][Image Generation][reward-guided generation] By projecting the reward gradient onto a "white Gaussian noise feasible set" characterized by block-wise $\ell_1/\ell_2$ norms in the DFT domain, the authors make test-time latent optimization for one-step generation models both fast and stable: reaching SOTA MPGR's Aesthetic Score on FLUX in only 30% of the wall-clock
+  [ICML 2026][Image Generation][reward-guided generation] By projecting the reward gradient onto a "white Gaussian noise feasible set" characterized by block-wise $\ell_1/\ell_2$ norms in the DFT domain, the authors make test-time latent optimization for one-step generation models both fast and stable: reaching SOTA MPGR's Aesthetic Score on FLUX in only 30% of the wall-clock time and completely avoiding reward hacking.
 tags:
-  - ICML 2026
-  - Image Generation
-  - reward-guided generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "reward-guided generation"
+  - "one-step generation models"
+  - "white Gaussian noise constraint"
+  - "gradient preconditioning"
+  - "spectral domain projection"
 date: 2026-05-08
-content_hash: 69cf6a02000d8650
+content_hash: b2b5df4ff0ac86fd
 ---
+
 # Gradient Preconditioning for Efficient and Reliable Reward-Guided Generation
 
 **Conference**: ICML 2026  
@@ -134,11 +139,11 @@ Diversity ablation (1,125 images under Aesthetic optimization): IS = 21.10 / Ven
 
 ## Related Papers
 
+- [\[ICLR 2026\] Value Matching: Scalable and Gradient-Free Reward-Guided Flow Adaptation](../../ICLR2026/image_generation/value_matching_scalable_and_gradient-free_reward-guided_flow_adaptation.md)
 - [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](pareto-guided_optimal_transport_for_multi-reward_alignment.md)
 - [\[CVPR 2026\] EgoFlow: Gradient-Guided Flow Matching for Egocentric 6DoF Object Motion Generation](../../CVPR2026/image_generation/egoflow_gradient-guided_flow_matching_for_egocentric_6dof_object_motion_generati.md)
-- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](../../CVPR2026/image_generation/identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[ICML 2026\] Divide and Conquer: Reliable Multi-View Evidential Learning for Deepfake Detection](divide_and_conquer_reliable_multi-view_evidential_learning_for_deepfake_detectio.md)
-- [\[ICML 2026\] DGS-Net: Distillation-Guided Gradient Surgery for CLIP Fine-Tuning in AI-Generated Image Detection](dgs-net_distillation-guided_gradient_surgery_for_clip_fine-tuning_in_ai-generate.md)
+- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](../../CVPR2026/image_generation/identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 
 </div>
 

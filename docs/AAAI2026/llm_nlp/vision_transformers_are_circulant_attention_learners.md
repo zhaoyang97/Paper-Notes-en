@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Vision Transformers are Circulant Attention Learners
 description: >-
-  [AAAI 2026][LLM/NLP][Vision Transformer] This paper discovers that self-attention matrices in ViTs inherently learn Block Circulant with Circulant Blocks (BCCB) patterns, and proposes Circulant Attention…
+  [AAAI 2026][LLM (Other)][Vision Transformer] This paper discovers that self-attention matrices in ViTs inherently learn Block Circulant with Circulant Blocks (BCCB) patterns, and proposes Circulant Attention, which achieves $O(N\log N)$ complexity via 2D FFT, yielding consistent improvements on ImageNet classification, COCO detection, and ADE20K segmentation.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Vision Transformer"
   - "Circulant Attention"
   - "BCCB"
   - "FFT"
   - "Efficient Attention"
 date: 2026-05-08
-content_hash: cfa07d82157e0163
+content_hash: a8402dfa9eab0a57
 ---
 
 # Vision Transformers are Circulant Attention Learners
@@ -139,7 +139,7 @@ Standard self-attention is replaced by BCCB-based Circulant Attention, which can
 - [\[ACL 2026\] Characterizing the Expressivity of Local Attention in Transformers](../../ACL2026/llm_nlp/characterizing_the_expressivity_of_local_attention_in_transformers.md)
 - [\[NeurIPS 2025\] CAT: Circular-Convolutional Attention for Sub-Quadratic Transformers](../../NeurIPS2025/llm_nlp/cat_circular-convolutional_attention_for_sub-quadratic_transformers.md)
 - [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](../../NeurIPS2025/llm_nlp/strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
-- [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](../../ICLR2026/llm_nlp/spectral_attention_steering_for_prompt_highlighting.md)
+- [\[CVPR 2025\] Building Vision Models upon Heat Conduction](../../CVPR2025/llm_nlp/building_vision_models_upon_heat_conduction.md)
 
 </div>
 

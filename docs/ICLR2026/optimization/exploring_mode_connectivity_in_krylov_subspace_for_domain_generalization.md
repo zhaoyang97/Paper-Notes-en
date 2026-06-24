@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Exploring Mode Connectivity in Krylov Subspace for Domain Generalization
 description: >-
-  [ICLR 2026][Optimization & Theory][mode connectivity] This paper moves beyond the mainstream approach of "finding flat minima" and instead exploits the **global geometric property of the loss surface—mode connectivity**. It proposes the Billiard Optimization Algorithm (BOA), which simulates billiard dynamics within a low-dimensional Krylov subspace to "walk" from a standa
+  [ICLR 2026][Optimization][mode connectivity] This paper moves beyond the mainstream approach of "finding flat minima" and instead exploits the **global geometric property of the loss surface—mode connectivity**. It proposes the Billiard Optimization Algorithm (BOA), which simulates billiard dynamics within a low-dimensional Krylov subspace to "walk" from a standard minimum along low-loss tunnels to a solution with stronger generalization, outperforming sharpness-aware methods…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - mode connectivity
-  - Krylov subspace
-  - domain generalization
-  - loss landscape
-  - sharpness-aware minimization
-  - billiard dynamics
+  - "ICLR 2026"
+  - "Optimization"
+  - "mode connectivity"
+  - "Krylov subspace"
+  - "domain generalization"
+  - "loss landscape"
+  - "sharpness-aware minimization"
+  - "billiard dynamics"
 date: 2026-05-08
-content_hash: cc6ccb0a532a42b5
+content_hash: 8d51b7ead37cee93
 ---
+
 # Exploring Mode Connectivity in Krylov Subspace for Domain Generalization
 
 **Conference**: ICLR 2026  
@@ -135,9 +136,9 @@ This indicates that given the correct initial direction, walking along low-loss 
 
 - [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
 - [\[ICML 2025\] Understanding Mode Connectivity via Parameter Space Symmetry](../../ICML2025/optimization/understanding_mode_connectivity_via_parameter_space_symmetry.md)
+- [\[CVPR 2026\] HFedATM: Hierarchical Federated Domain Generalization via Optimal Transport and Regularized Mean Aggregation](../../CVPR2026/optimization/hfedatm_hierarchical_federated_domain_generalization_via_optimal_transport_and_r.md)
 - [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
 - [\[ICLR 2026\] Trion: FFT-based Dynamic Subspace Selection for Low-Rank Adaptive Optimization of LLMs](trion_fft-based_dynamic_subspace_selection_for_low-rank_adaptive_optimization_of.md)
-- [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
 
 </div>
 

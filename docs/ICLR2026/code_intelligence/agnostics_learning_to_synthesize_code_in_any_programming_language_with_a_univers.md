@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment
 description: >-
-  [ICLR 2026][Code Intelligence][GRPO] By using "standard program input/output behavior" as the unified scoring criterion, a language-agnostic code execution sandbox and GRPO training framework are developed. This enables RL post-training for any low-resource programming language with only 4-5 lines of YAML configuration, elevating the performance of Qwen-3
+  [ICLR 2026][Code Intelligence][Code Generation] By using "standard program input/output behavior" as the unified scoring criterion, a language-agnostic code execution sandbox and GRPO training framework are developed. This enables RL post-training for any low-resource programming language with only 4-5 lines of YAML configuration, elevating the performance of Qwen-3 4B on Lua, Julia, R, OCaml, and Fortran to levels comparable with 16B–70B models.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - GRPO
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Code Generation"
+  - "Low-resource Languages"
+  - "Reinforcement Learning with Verifiable Rewards (RLVR)"
+  - "GRPO"
+  - "Language-agnostic Verifier"
 date: 2026-05-08
-content_hash: 9a2fd389b022ce2f
+content_hash: 4f8c5f14a42ffe5d
 ---
+
 # Agnostics: Learning to Synthesize Code in Any Programming Language with a Universal Reinforcement Learning Environment
 
 **Conference**: ICLR 2026  
@@ -130,7 +135,7 @@ Although trained only on standard I/O competitive programming problems, the mode
 - [\[ICLR 2026\] Critique-Coder: Enhancing Coder Models by Critique Reinforcement Learning](critique-coder_enhancing_coder_models_by_critique_reinforcement_learning.md)
 - [\[ICLR 2026\] ATGen: Adversarial Reinforcement Learning for Test Case Generation](atgen_adversarial_reinforcement_learning_for_test_case_generation.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
-- [\[ICLR 2026\] Learning to Reason without External Rewards](learning_to_reason_without_external_rewards.md)
+- [\[ICLR 2026\] TikZilla: Scaling Text-to-TikZ with High-Quality Data and Reinforcement Learning](tikzilla_scaling_text-to-tikz_with_high-quality_data_and_reinforcement_learning.md)
 
 </div>
 

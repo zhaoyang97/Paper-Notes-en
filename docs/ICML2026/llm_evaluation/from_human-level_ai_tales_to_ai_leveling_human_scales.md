@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Human-Level AI Tales to AI Leveling Human Scales
 description: >-
-  [ICML 2026][LLM Evaluation][AI evaluation] This paper employs LLMs as population extrapolators to calibrate 18 capability dimensions on a logarithmic scale $L=-\log_B p_W$ according to "world population accuracy." It reveals that the Volume and Attention dimensions have a true base $B \gg 10$, while the Comprehension dimension has $B \approx 1$, uncovering a se
+  [ICML 2026][LLM Evaluation][AI evaluation] This paper employs LLMs as population extrapolators to calibrate 18 capability dimensions on a logarithmic scale $L=-\log_B p_W$ according to "world population accuracy." It reveals that the Volume and Attention dimensions have a true base $B \gg 10$, while the Comprehension dimension has $B \approx 1$, uncovering a severe misalignment in current comparisons between AI and humans.
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - AI evaluation
-  - psychometrics
-  - ADeLe
-  - world population calibration
-  - LLM as annotator
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "AI evaluation"
+  - "psychometrics"
+  - "ADeLe"
+  - "world population calibration"
+  - "LLM as annotator"
 date: 2026-05-08
-content_hash: d4b48923b506b9b6
+content_hash: bff5da60654164dd
 ---
+
 # From Human-Level AI Tales to AI Leveling Human Scales
 
 **Conference**: ICML 2026  
@@ -135,8 +136,8 @@ On TIMSS, MAE rose to $0.12$-$0.16$ and Pearson dropped to $0.5$-$0.7$, reflecti
 
 - [\[ACL 2025\] ChatBench: From Static Benchmarks to Human-AI Evaluation](../../ACL2025/llm_evaluation/chatbench_from_static_benchmarks_to_human-ai_evaluation.md)
 - [\[ACL 2025\] CulturalBench: A Robust, Diverse, and Challenging Cultural Benchmark by Human-AI CulturalTeaming](../../ACL2025/llm_evaluation/culturalbench_a_robust_diverse_and_challenging_cultural_benchmark_by_human-ai_cu.md)
-- [\[ICML 2026\] When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation](when_ai_benchmarks_plateau_a_systematic_study_of_benchmark_saturation.md)
 - [\[ICLR 2026\] AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation](../../ICLR2026/llm_evaluation/airqa_a_comprehensive_qa_dataset_for_ai_research_with_instance-level_evaluation.md)
+- [\[ICML 2026\] When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation](when_ai_benchmarks_plateau_a_systematic_study_of_benchmark_saturation.md)
 - [\[ACL 2026\] HoWToBench: Holistic Evaluation for LLM's Capability in Human-level Writing using Tree of Writing](../../ACL2026/llm_evaluation/howtobench_holistic_evaluation_for_llms_capability_in_human-level_writing_using_.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Aiming at training oscillations caused by the "source supervision gradient vs. target consistency gradient" conflict in synthetic $\to$ real domain pose estimation, HamiPose performs orthogonal decomposition of target gradients by keypoints, uses confidence gating to allow only non-conflicting components, and applies a
+  [CVPR 2026][Human Understanding][Pose Estimation] Aiming at training oscillations caused by the "source supervision gradient vs. target consistency gradient" conflict in synthetic $\to$ real domain pose estimation, HamiPose performs orthogonal decomposition of target gradients by keypoints, uses confidence gating to allow only non-conflicting components, and applies a Hamiltonian optimizer with a symplectic integrator to add "controlled momentum" for suppressing high-frequenc…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Pose Estimation"
+  - "Unsupervised Domain Adaptation"
+  - "Gradient Conflict"
+  - "Hamiltonian Optimization"
+  - "Symplectic Integration"
 date: 2026-05-08
-content_hash: be9486bb75ba316d
+content_hash: ff3f87fa69538e2e
 ---
+
 # HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Each of the three components contributes roughly +1.5~2 points. The unified metr
 
 ## Related Papers
 
+- [\[CVPR 2026\] Through the Frequency Lens: Cross-Domain Generalisable Gaze Estimation with Adaptive Modulation](through_the_frequency_lens_cross-domain_generalisable_gaze_estimation_with_adapt.md)
 - [\[CVPR 2026\] GazeShift: Unsupervised Gaze Estimation and Dataset for VR](gazeshift_unsupervised_gaze_estimation_and_dataset_for_vr.md)
 - [\[CVPR 2026\] Render-to-Adapt: Unsupervised Personal Adaptation for Gaze Estimation](render-to-adapt_unsupervised_personal_adaptation_for_gaze_estimation.md)
 - [\[ICLR 2026\] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics](../../ICLR2026/human_understanding/cross-domain_policy_optimization_via_bellman_consistency_and_hybrid_critics.md)
-- [\[CVPR 2026\] See Through the Noise: Improving Domain Generalization in Gaze Estimation](see_through_the_noise_improving_domain_generalization_in_gaze_estimation.md)
-- [\[CVPR 2026\] COG: Confidence-aware Optimal Geometric Correspondence for Unsupervised Single-reference Novel Object Pose Estimation](cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re.md)
+- [\[ICLR 2026\] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation](../../ICLR2026/human_understanding/pose_prior_learner_unsupervised_categorical_prior_learning_for_pose_estimation.md)
 
 </div>
 

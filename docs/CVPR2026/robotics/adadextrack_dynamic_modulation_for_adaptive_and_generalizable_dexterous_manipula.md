@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][sim-to-real] AdaDexTrack redefines the "Language Command → Dexterous Hand-Object Interaction" pipeline as **modulated tracking**. A distilled general tracker acts as the "skill carrier," while an RL-trained modulator is integrated into the feedback loop. This modulator performs real-time correction through three interfaces—referenc
+  [CVPR 2026][Robotics][Dexterous Manipulation] AdaDexTrack redefines the "Language Command → Dexterous Hand-Object Interaction" pipeline as **modulated tracking**. A distilled general tracker acts as the "skill carrier," while an RL-trained modulator is integrated into the feedback loop. This modulator performs real-time correction through three interfaces—reference trajectory, object latent variables, and position targets—enabling the stable execution of noisy text-generated…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "CVPR 2026"
+  - "Robotics"
+  - "Dexterous Manipulation"
+  - "Hand-Object Interaction Tracking"
+  - "Language Guidance"
+  - "In-loop Modulation"
+  - "Sim-to-real"
 date: 2026-05-08
-content_hash: 44f798b6185134fc
+content_hash: 90cba5ff99751915
 ---
+
 # AdaDexTrack: Dynamic Modulation for Adaptive and Generalizable Dexterous Manipulation Tracking
 
 **Conference**: CVPR 2026  
@@ -145,15 +150,15 @@ In real-world tests (XArm6 + LEAP Hand), adding the modulator nearly doubled the
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[AAAI 2026\] Dexterous Manipulation Transfer via Progressive Kinematic-Dynamic Alignment](../../AAAI2026/robotics/dexterous_manipulation_transfer_via_progressive_kinematic-dynamic_alignment.md)
-- [\[CVPR 2026\] Dexterous World Models](dexterous_world_models.md)
 - [\[CVPR 2026\] Structural Action Transformer for 3D Dexterous Manipulation](structural_action_transformer_for_3d_dexterous_manipulation.md)
+- [\[CVPR 2026\] Dexterous World Models](dexterous_world_models.md)
 - [\[CVPR 2026\] AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Affordance Correspondence](affordgen_generating_diverse_demonstrations_for_generalizable_object_manipulatio.md)
-- [\[CVPR 2026\] UAST: Unified Active Search and Tracking for Arbitrary Targets with UAVs](uast_unified_active_search_and_tracking_for_arbitrary_targets_with_uavs.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 
 </div>
 

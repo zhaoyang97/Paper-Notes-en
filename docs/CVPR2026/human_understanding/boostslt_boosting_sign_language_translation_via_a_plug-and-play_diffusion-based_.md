@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BoostSLT: Boosting Sign Language Translation via a Plug-and-Play Diffusion-Based Semantic Enhancer
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Language Model] BoostSLT introduces a plug-and-play module that wraps any sign language translation model. It segments long videos into semantic segments based on motion energy, translates segments independently, and reconstructs fragmented translations into coherent long sentences using a Diffusion Language Model. Without relying on
+  [CVPR 2026][Human Understanding][Sign Language Translation] BoostSLT introduces a plug-and-play module that wraps any sign language translation model. It segments long videos into semantic segments based on motion energy, translates segments independently, and reconstructs fragmented translations into coherent long sentences using a Diffusion Language Model. Without relying on gloss annotations, it significantly improves BLEU and ROUGE for long-sentence and document-level tra…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Language Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Sign Language Translation"
+  - "Diffusion Language Models"
+  - "Unsupervised Temporal Segmentation"
+  - "Plug-and-Play"
+  - "Long Sentence Translation"
 date: 2026-05-08
-content_hash: d4e03dd62f0404ca
+content_hash: 6a32671d044be7cf
 ---
+
 # BoostSLT: Boosting Sign Language Translation via a Plug-and-Play Diffusion-Based Semantic Enhancer
 
 **Conference**: CVPR 2026  
@@ -140,7 +145,7 @@ Breakdown on PHOENIX-2014T (comparing EAT-Seg vs. Random Seg; DSR vs. GPT/LLaMA)
 - [\[CVPR 2026\] Focal–General Diffusion Model with Semantic Consistent Guidance for Sign Language Production](focal-general_diffusion_model_with_semantic_consistent_guidance_for_sign_languag.md)
 - [\[CVPR 2026\] SignPR: A Progressive Vector-Quantized Diffusion Framework for Sign Language Production](signpr_a_progressive_vector-quantized_diffusion_framework_for_sign_language_prod.md)
 - [\[CVPR 2025\] Lost in Translation, Found in Context: Sign Language Translation with Contextual Cues](../../CVPR2025/human_understanding/lost_in_translation_found_in_context_sign_language_translation_with_contextual_c.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
+- [\[ECCV 2024\] A Simple Baseline for Spoken Language to Sign Language Translation with 3D Avatars](../../ECCV2024/human_understanding/a_simple_baseline_for_spoken_language_to_sign_language_trans.md)
 
 </div>
 

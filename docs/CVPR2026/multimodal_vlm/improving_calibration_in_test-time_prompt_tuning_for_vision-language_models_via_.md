@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] This paper discovers that the essence of "adding regularization to TPT to improve calibration" is pushing the prompt towards the flat minima of the loss surface. Consequently, it proposes FPP—a data-free prompt pretraining framework that positions the initial prompt directly in a flat region. By only replacing the init
+  [CVPR 2026][Multimodal VLM][CLIP] This paper discovers that the essence of "adding regularization to TPT to improve calibration" is pushing the prompt towards the flat minima of the loss surface. Consequently, it proposes FPP—a data-free prompt pretraining framework that positions the initial prompt directly in a flat region. By only replacing the initialization without modifying any TPT procedures, it simultaneously achieves SOTA results in both accuracy and calibration (ECE…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "CLIP"
+  - "Test-time Prompt Tuning (TPT)"
+  - "Model Calibration"
+  - "Flat Minima"
+  - "Data-free Pretraining"
 date: 2026-05-08
-content_hash: 81ec907f3896a409
+content_hash: b6fb92133c49ff3a
 ---
+
 # Improving Calibration in Test-Time Prompt Tuning for Vision-Language Models via Data-Free Flatness-Aware Prompt Pretraining
 
 **Conference**: CVPR 2026  
@@ -149,10 +154,10 @@ Contribution of components (Fine-grained classification, TPT framework):
 ## Related Papers
 
 - [\[CVPR 2026\] SoC: Semantic Orthogonal Calibration for Test-Time Prompt Tuning](soc_semantic_orthogonal_calibration_for_test-time_prompt_tuning.md)
+- [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
 - [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[CVPR 2026\] Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](dual-modality_anchor-guided_filtering_for_test-time_prompt_tuning.md)
-- [\[CVPR 2026\] Controllable Federated Prompt Learning at Test Time](controllable_federated_prompt_learning_at_test_time.md)
+- [\[ICLR 2026\] A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](../../ICLR2026/multimodal_vlm/a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)
 
 </div>
 

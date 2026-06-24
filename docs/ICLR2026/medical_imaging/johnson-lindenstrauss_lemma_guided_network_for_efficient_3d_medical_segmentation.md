@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation
 description: >-
-  [ICLR 2026][Medical Imaging][PET/CT] VeloxSeg utilizes a trio of "Paired Window Attention + JL Lemma-constrained lightweight convolution + Gram matrix-based texture knowledge distillation" to simultaneously achieve high accuracy (Dice +26%) and efficiency (11× GPU throughput, 48× CPU, 1/20 VRAM usage) in 3D medical segmentation, resolving the "efficiency/
+  [ICLR 2026][Medical Imaging][3D Medical Segmentation] VeloxSeg utilizes a trio of "Paired Window Attention + JL Lemma-constrained lightweight convolution + Gram matrix-based texture knowledge distillation" to simultaneously achieve high accuracy (Dice +26%) and efficiency (11× GPU throughput, 48× CPU, 1/20 VRAM usage) in 3D medical segmentation, resolving the "efficiency/robustness" trade-off in lightweight models.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - PET/CT
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "3D Medical Segmentation"
+  - "Lightweight"
+  - "Johnson-Lindenstrauss Lemma"
+  - "Window Attention"
+  - "Knowledge Transfer"
+  - "PET/CT"
 date: 2026-05-08
-content_hash: 5008798f38fe423e
+content_hash: e36804f9560e0c3a
 ---
+
 # Johnson-Lindenstrauss Lemma Guided Network for Efficient 3D Medical Segmentation
 
 **Conference**: ICLR 2026  
@@ -121,6 +127,7 @@ Experiments were conducted on four public datasets: AutoPET-II, Hecktor2022 (PET
 - **Value**: ⭐⭐⭐⭐ Significant efficiency gains with improved accuracy provide direct clinical utility (CPU-capable, low VRAM).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -128,8 +135,8 @@ Experiments were conducted on four public datasets: AutoPET-II, Hecktor2022 (PET
 - [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](../../CVPR2026/medical_imaging/pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
 - [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](../../CVPR2026/medical_imaging/virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
 - [\[AAAI 2026\] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation](../../AAAI2026/medical_imaging/funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se.md)
+- [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)
 - [\[CVPR 2026\] Learning Generalizable 3D Medical Image Representations from Mask-Guided Self-Supervision](../../CVPR2026/medical_imaging/learning_generalizable_3d_medical_image_representations_from_mask-guided_self-su.md)
-- [\[ICLR 2026\] Cross-Timestep: 3D Diffusion Model with Trans-temporal Memory LSTM and Adaptive Priori Decoding Strategy for Medical Segmentation](cross-timestep_3d_diffusion_model_with_trans-temporal_memory_lstm_and_adaptive_p.md)
 
 </div>
 

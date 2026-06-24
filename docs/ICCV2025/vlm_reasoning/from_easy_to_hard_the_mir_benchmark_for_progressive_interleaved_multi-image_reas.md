@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning
 description: >-
-  [ICCV 2025][Multimodal VLM][multi-image reasoning] This paper proposes the MIR benchmark, comprising 22,257 multi-image interleaved reasoning QA pairs with five-stage reasoning steps…
+  [ICCV 2025][VLM Reasoning][multi-image reasoning] This paper proposes the MIR benchmark, comprising 22,257 multi-image interleaved reasoning QA pairs with five-stage reasoning steps, and introduces a progressive curriculum learning strategy that trains MLLMs from easy to hard samples to improve multi-image interleaved reasoning capability.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "multi-image reasoning"
   - "interleaved data"
   - "benchmark"
   - "curriculum learning"
   - "MLLM"
 date: 2026-05-08
-content_hash: 2a6049b7ecb6fc4d
+content_hash: 1d828271cb53240d
 ---
 
 # From Easy to Hard: The MIR Benchmark for Progressive Interleaved Multi-Image Reasoning
@@ -132,10 +132,10 @@ Qwen2-VL performance across stages on MIR:
 ## Related Papers
 
 - [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
-- [\[ICCV 2025\] MC-Bench: A Benchmark for Multi-Context Visual Grounding in the Era of MLLMs](mc-bench_a_benchmark_for_multi-context_visual_grounding_in_the_era_of_mllms.md)
-- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
-- [\[NeurIPS 2025\] Efficient Multi-modal Large Language Models via Progressive Consistency Distillation](../../NeurIPS2025/multimodal_vlm/efficient_multi-modal_large_language_models_via_progressive_consistency_distilla.md)
-- [\[CVPR 2026\] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training](../../CVPR2026/multimodal_vlm/wan-weaver_interleaved_multi-modal_generation_via_decoupled_training.md)
+- [\[ACL 2025\] FinMME: Benchmark Dataset for Financial Multi-Modal Reasoning Evaluation](../../ACL2025/vlm_reasoning/finmme_benchmark_dataset_for_financial_multi-modal_reasoning_evaluation.md)
+- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](../../CVPR2026/vlm_reasoning/rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
+- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/vlm_reasoning/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
+- [\[ACL 2025\] Progressive Multimodal Reasoning via Active Retrieval](../../ACL2025/vlm_reasoning/progressive_multimodal_reasoning_via_active_retrieval.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multimodal Fact-Level Attribution for Verifiable Reasoning
 description: >-
-  [ICML 2026][Audio & Speech][MURGAT-SCORE] MURGAT is the first benchmark to evaluate the ability of MLLMs to provide "precise modality + timestamp citations at a factual granularity" in multimodal reasoning outputs. It employs a three-step evaluation protocol (Verifiable Claim Identification → Atomic Fact Decomposition → Attribution Quality) and an automated ev
+  [ICML 2026][Audio & Speech][Multimodal Attribution] MURGAT is the first benchmark to evaluate the ability of MLLMs to provide "precise modality + timestamp citations at a factual granularity" in multimodal reasoning outputs. It employs a three-step evaluation protocol (Verifiable Claim Identification → Atomic Fact Decomposition → Attribution Quality) and an automated evaluator, MURGAT-SCORE, which achieves high human alignment (Pearson 0.84). The study reveals that strong mod…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - MURGAT-SCORE
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Multimodal Attribution"
+  - "Citation Quality Evaluation"
+  - "Atomic Fact Decomposition"
+  - "MURGAT-SCORE"
+  - "Reasoning-Citation Decoupling"
 date: 2026-05-08
-content_hash: 286ac36692fc62ed
+content_hash: f0d08e6df5dbe370
 ---
+
 # Multimodal Fact-Level Attribution for Verifiable Reasoning
 
 **Conference**: ICML 2026  
@@ -128,9 +133,9 @@ Evaluations on WorldSense + Video-MMMU across various strong MLLMs.
 
 - [\[AAAI 2026\] PSA-MF: Personality-Sentiment Aligned Multi-Level Fusion for Multimodal Sentiment Analysis](../../AAAI2026/audio_speech/psa-mf_personality-sentiment_aligned_multi-level_fusion_for_multimodal_sentiment.md)
 - [\[ACL 2026\] When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms](../../ACL2026/audio_speech/when_misinformation_speaks_and_converses_rethinking_fact-checking_in_audio_platf.md)
+- [\[ICLR 2026\] Beyond Instance-Level Alignment: Dual-Level Optimal Transport for Audio-Text Retrieval](../../ICLR2026/audio_speech/beyond_instance-level_alignment_dual-level_optimal_transport_for_audio-text_retr.md)
 - [\[ICML 2026\] JAEGER: Joint 3D Audio-Visual Grounding and Reasoning in Simulated Physical Environments](jaeger_joint_3d_audio-visual_grounding_and_reasoning_in_simulated_physical_envir.md)
-- [\[NeurIPS 2025\] ThinkSound: Chain-of-Thought Reasoning in Multimodal Large Language Models for Audio Generation and Editing](../../NeurIPS2025/audio_speech/thinksound_chain-of-thought_reasoning_in_multimodal_large_language_models_for_au.md)
-- [\[ICML 2026\] The Silent Thought: Modeling Internal Cognition in Full-Duplex Spoken Dialogue Models via Latent Reasoning](the_silent_thought_modeling_internal_cognition_in_full-duplex_spoken_dialogue_mo.md)
+- [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](multimodal_fusion_via_self-consistent_task-gradient_fields.md)
 
 </div>
 

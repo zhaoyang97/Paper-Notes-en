@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper proposes RebuttalAgent, which treats academic rebuttal as "strategic gaming under asymmetric information" rather than simple technical debate. By modeling reviewers' psychological states using Theory of Mind (ToM), it generates evidence-based responses through a three-stage "ToM→Strategy→Response" (TSR) fram
+  [ICLR2026][LLM Agent][Academic rebuttal] This paper proposes RebuttalAgent, which treats academic rebuttal as "strategic gaming under asymmetric information" rather than simple technical debate. By modeling reviewers' psychological states using Theory of Mind (ToM), it generates evidence-based responses through a three-stage "ToM→Strategy→Response" (TSR) framework. Trained with SFT + self-rewarding RL, it achieves an average improvement of 18.3% over base models…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Academic rebuttal"
+  - "Theory of Mind (ToM)"
+  - "Strategic persuasion"
+  - "Self-rewarding RL"
+  - "Reward model"
 date: 2026-05-08
-content_hash: 29143439e29f1a9b
+content_hash: 52a1e24967bb558c
 ---
+
 # Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind
 
 **Conference**: ICLR2026  

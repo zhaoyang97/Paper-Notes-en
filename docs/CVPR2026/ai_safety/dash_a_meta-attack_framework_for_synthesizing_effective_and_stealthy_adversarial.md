@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] DASH treats a set of off-the-shelf $\ell_p$ norm attacks (PGD, CW, various FGSM variants, etc.) as components, "softly combining" their adversarial examples using learnable softmax weights and refining them through multi-stage chaining. It learns these weights end-to-end via a meta-loss that simultaneously optimizes at
+  [CVPR 2026][AI Safety][Adversarial Attacks] DASH treats a set of off-the-shelf $\ell_p$ norm attacks (PGD, CW, various FGSM variants, etc.) as components, "softly combining" their adversarial examples using learnable softmax weights and refining them through multi-stage chaining. It learns these weights end-to-end via a meta-loss that simultaneously optimizes attack success rate and SSIM perceptual similarity. On adversarially trained robust models…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Adversarial Attacks"
+  - "Perceptual Alignment"
+  - "Differentiable Meta-Attack"
+  - "Soft-Attention Composition"
+  - "Multi-Stage Chaining"
 date: 2026-05-08
-content_hash: 30b795dd84d6ef15
+content_hash: 1356ae0e953235ad
 ---
+
 # DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples
 
 **Conference**: CVPR 2026  
@@ -146,9 +152,9 @@ Role of learnable weights (Fig 3/4): Replacing weights with uniform random sampl
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Stealthy and Effective Backdoor Attacks on Lane Detection: A Naturalistic Data Poisoning Approach](towards_stealthy_and_effective_backdoor_attacks_on_lane_detection_a_naturalistic.md)
-- [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
-- [\[CVPR 2025\] MOS-Attack: A Scalable Multi-Objective Adversarial Attack Framework](../../CVPR2025/ai_safety/mos-attack_a_scalable_multi-objective_adversarial_attack_framework.md)
 - [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
+- [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
+- [\[AAAI 2026\] Towards Effective, Stealthy, and Persistent Backdoor Attacks Targeting Graph Foundation Models](../../AAAI2026/ai_safety/towards_effective_stealthy_and_persistent_backdoor_attacks_targeting_graph_found.md)
 - [\[CVPR 2026\] CamPI: Physical Adversarial Examples through Camera Power Signal Injection](campi_physical_adversarial_examples_through_camera_power_signal_injection.md)
 
 </div>

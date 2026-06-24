@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion
 description: >-
-  [ICCV 2025][Image Generation][human-object interaction reconstruction] ScoreHOI employs a score-based diffusion model as an optimizer, integrating DDIM inversion–forward sampling with physical constraints (contact…
+  [ICCV 2025][Image Generation][human-object interaction reconstruction] ScoreHOI employs a score-based diffusion model as an optimizer, integrating DDIM inversion–forward sampling with physical constraints (contact, penetration, ground contact) to guide the denoising process. Combined with a contact-driven iterative refinement strategy, it achieves physically plausible 3D reconstruction of human-object interactions from monocular images, improving contact F-Score by 9% on BEHA…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "physical constraints"
   - "contact prediction"
 date: 2026-05-08
-content_hash: fd7d76c44afddae9
+content_hash: b45bb46d46a0313e
 ---
 
 # ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion
@@ -159,8 +159,8 @@ On BEHAVE, ScoreHOI achieves a contact F-Score of 0.609, representing approximat
 - [\[CVPR 2026\] ViHOI: Human-Object Interaction Synthesis with Visual Priors](../../CVPR2026/image_generation/vihoi_human-object_interaction_synthesis_with_visual_priors.md)
 - [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
 - [\[ICCV 2025\] HPSv3: Towards Wide-Spectrum Human Preference Score](hpsv3_towards_wide-spectrum_human_preference_score.md)
-- [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
-- [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
+- [\[CVPR 2025\] HOI-IDiff: An Image-like Diffusion Method for Human-Object Interaction Detection](../../CVPR2025/image_generation/an_image-like_diffusion_method_for_human-object_interaction_detection.md)
+- [\[CVPR 2026\] OneHOI: Unifying Human-Object Interaction Generation and Editing](../../CVPR2026/image_generation/onehoi_unifying_human-object_interaction_generation_and_editing.md)
 
 </div>
 

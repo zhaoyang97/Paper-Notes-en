@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation
 description: >-
-  [ICLR 2026][Segmentation][video reasoning segmentation] This work reconfigures video reasoning segmentation into a video QA task, extracting localization cues directly from the MLLM attention rollout. It purifies noisy attention maps into clean object masks through "Contrastive Background Removal" and "Video-Frame Complementarity" fusion. Finally, attention-guided SAM2 gene
+  [ICLR 2026][Segmentation][video reasoning segmentation] This work reconfigures video reasoning segmentation into a video QA task, extracting localization cues directly from the MLLM attention rollout. It purifies noisy attention maps into clean object masks through "Contrastive Background Removal" and "Video-Frame Complementarity" fusion. Finally, attention-guided SAM2 generates fine-grained masks. The entire process is training-free and achieves performance comparable to sup…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - video reasoning segmentation
-  - MLLM
-  - attention rollout
-  - training-free
-  - SAM2
-  - referring VOS
+  - "ICLR 2026"
+  - "Segmentation"
+  - "video reasoning segmentation"
+  - "MLLM"
+  - "attention rollout"
+  - "training-free"
+  - "SAM2"
+  - "referring VOS"
 date: 2026-05-08
-content_hash: ce97fa57ae865983
+content_hash: e3b0e27c0d206c83
 ---
+
 # Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation
 
 **Conference**: ICLR 2026  
@@ -147,11 +148,11 @@ DecAF outperforms VISA/VideoLISA on Ref-DAVIS by 5.8/6.4 J&F. On ReasonVOS, it s
 
 ## Related Papers
 
-- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](../../CVPR2026/segmentation/live_interactive_training_for_video_segmentation.md)
 - [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](../../CVPR2026/segmentation/reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
-- [\[ICCV 2025\] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree](../../ICCV2025/segmentation/sam2long_enhancing_sam_2_for_long_video_segmentation_with_a.md)
-- [\[ICLR 2026\] SAM-Veteran: An MLLM-based Human-like SAM Agent for Reasoning Segmentation](sam-veteran_an_mllm-based_human-like_sam_agent_for_reasoning_segmentation.md)
+- [\[CVPR 2025\] ResCLIP: Residual Attention for Training-free Dense Vision-language Inference](../../CVPR2025/segmentation/resclip_residual_attention_for_training-free_dense_vision-language_inference.md)
 - [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](../../CVPR2026/segmentation/insid3_training-free_in-context_segmentation_with_dinov3.md)
+- [\[CVPR 2026\] Live Interactive Training for Video Segmentation](../../CVPR2026/segmentation/live_interactive_training_for_video_segmentation.md)
+- [\[ICCV 2025\] SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree](../../ICCV2025/segmentation/sam2long_enhancing_sam_2_for_long_video_segmentation_with_a.md)
 
 </div>
 

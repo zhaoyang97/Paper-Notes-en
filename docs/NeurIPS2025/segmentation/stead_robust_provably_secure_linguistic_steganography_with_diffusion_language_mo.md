@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STEAD: Robust Provably Secure Linguistic Steganography with Diffusion Language Model
 description: >-
-  [NeurIPS 2025][Segmentation][linguistic steganography] This paper proposes STEAD, the first provably secure and robust linguistic steganography method based on diffusion language models (DLMs). It exploits the parallel d…
+  [NeurIPS 2025][Segmentation][linguistic steganography] This paper proposes STEAD, the first provably secure and robust linguistic steganography method based on diffusion language models (DLMs). It exploits the parallel denoising property of DLMs to identify "robust positions" for message embedding, and combines repetitive error-correcting codes with a neighborhood search strategy to resist token-level substitution, insertion, and deletion attacks.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "robustness"
   - "error-correcting codes"
 date: 2026-05-08
-content_hash: e56bcb1c320b424e
+content_hash: 7e263146cdbdfbb9
 ---
 
 # STEAD: Robust Provably Secure Linguistic Steganography with Diffusion Language Model
@@ -123,10 +123,10 @@ The ablation confirms the indispensable contribution of each component: RPE+ECC 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Fast and Fluent Diffusion Language Models via Convolutional Decoding and Rejective Fine-tuning](fast_and_fluent_diffusion_language_models_via_convolutional_decoding_and_rejecti.md)
-- [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](../../ICCV2025/segmentation/advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
 - [\[NeurIPS 2025\] Robust Ego-Exo Correspondence with Long-Term Memory](robust_ego-exo_correspondence_with_long-term_memory.md)
+- [\[ICCV 2025\] Advancing Visual Large Language Model for Multi-granular Versatile Perception](../../ICCV2025/segmentation/advancing_visual_large_language_model_for_multi-granular_versatile_perception.md)
+- [\[ICLR 2026\] TRACE: Your Diffusion Model is Secretly an Instance Edge Detector](../../ICLR2026/segmentation/trace_your_diffusion_model_is_secretly_an_instance_edge_detector.md)
 - [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
-- [\[NeurIPS 2025\] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention](robust_egocentric_referring_video_object_segmentation_via_dual-modal_causal_inte.md)
 
 </div>
 

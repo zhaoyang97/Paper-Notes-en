@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Algorithmic Guarantees for Distilling Supervised and Offline RL Datasets
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first set of provable algorithmic guarantees for dataset distillation **without training models**. For linear regression, it proves that convex loss matching using $\tilde O(d^2)$ randomly sampled regressors yields a synthetic dataset that maintains nearly identical MSE for any bounded linear mo
+  [ICLR2026][Learning Theory][Sample Complexity] This paper provides the first set of provable algorithmic guarantees for dataset distillation **without training models**. For linear regression, it proves that convex loss matching using $\tilde O(d^2)$ randomly sampled regressors yields a synthetic dataset that maintains nearly identical MSE for any bounded linear model, complemented by a matching $\Omega(d^2)$ lower bound. The method is further extended to offline RL through B…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Dataset Distillation"
+  - "Offline Reinforcement Learning"
+  - "Sample Complexity"
+  - "Loss Matching"
+  - "Bellman Loss"
+  - "Anti-concentration Inequalities"
 date: 2026-05-08
-content_hash: 4e5d3aa27470f678
+content_hash: 4ea573e36267529b
 ---
+
 # Algorithmic Guarantees for Distilling Supervised and Offline RL Datasets
 
 **Conference**: ICLR2026  
@@ -115,10 +122,20 @@ There is no "training loss" in the traditional sense; only the synthetic dataset
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
+- [\[ICML 2026\] Formalizing Learning from Language Feedback with Provable Guarantees](../../ICML2026/learning_theory/formalizing_learning_from_language_feedback_with_provable_guarantees.md)
+- [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)

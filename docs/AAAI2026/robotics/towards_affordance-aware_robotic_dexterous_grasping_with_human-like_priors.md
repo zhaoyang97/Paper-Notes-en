@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors
 description: >-
-  [AAAI 2026][Robotics][Dexterous Grasping] This paper proposes AffordDex, a two-stage framework: the first stage pre-trains human hand motion priors (natural motion trajectories) via imitation learning…
+  [AAAI 2026][Robotics][Dexterous Grasping] This paper proposes AffordDex, a two-stage framework: the first stage pre-trains human hand motion priors (natural motion trajectories) via imitation learning; the second stage refines the policy through reinforcement learning using a residual module and VLM-guided Negative Affordance Annotation (NAA), achieving dexterous robotic grasping that is both human-like in naturalness and functionally correct (e.g.…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Negative Affordance Segmentation"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: aa6be460be9b7bca
+content_hash: 87ede558cf9b409e
 ---
 
 # Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors
@@ -194,11 +194,11 @@ The HTI and NAA modules can be plugged into other RL-based methods as drop-in en
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Human-Like Robot Handwriting via Contour-Aware Generation](../../CVPR2026/robotics/towards_human-like_robot_handwriting_via_contour-aware_generation.md)
+- [\[CVPR 2026\] GeoDexGrasp: Geometry-aware Generation for Data-efficient and Physics-plausible Dexterous Grasping](../../CVPR2026/robotics/geodexgrasp_geometry-aware_generation_for_data-efficient_and_physics-plausible_d.md)
+- [\[ICLR 2026\] DemoGrasp: Universal Dexterous Grasping from a Single Demonstration](../../ICLR2026/robotics/demograsp_universal_dexterous_grasping_from_a_single_demonstration.md)
+- [\[CVPR 2025\] DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness](../../CVPR2025/robotics/dexgrasp_anything_towards_universal_robotic_dexterous_grasping_with_physics_awar.md)
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](../../ICLR2026/robotics/d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/robotics/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[AAAI 2026\] GRIM: Task-Oriented Grasping with Conditioning on Generative Examples](grim_task-oriented_grasping_with_conditioning_on_generative_examples.md)
-- [\[AAAI 2026\] RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms](rlslm_a_hybrid_reinforcement_learning_framework_aligning_rule-based_social_locom.md)
-- [\[CVPR 2026\] Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation](../../CVPR2026/robotics/learning_to_see_and_act_task-aware_virtual_view_exploration_for_robotic_manipula.md)
 
 </div>
 

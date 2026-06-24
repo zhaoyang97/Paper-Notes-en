@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference
 description: >-
-  [ICML 2026][Medical NLP][Paper Note] ExtraCare utilizes a "dictionary metric-induced orthogonal decomposition" to decouple Electronic Health Record (EHR) patient representations into "cross-domain invariant label information" and "domain-specific covariate residuals." It surpasses existing domain adaptation baselines on two real-world EHR datasets while m
+  [ICML2026][Medical LLM][EHR Prediction] ExtraCare utilizes a "dictionary metric-induced orthogonal decomposition" to decouple Electronic Health Record (EHR) patient representations into "cross-domain invariant label information" and "domain-specific covariate residuals." It surpasses existing domain adaptation baselines on two real-world EHR datasets while mapping each latent variable back to specific ICD medical concepts via sparse dimension ablation. This informs clinicians…
 tags:
-  - ICML 2026
-  - Medical NLP
+  - "ICML2026"
+  - "Medical LLM"
+  - "EHR Prediction"
+  - "Domain Adaptation"
+  - "Sparse Autoencoders"
+  - "Orthogonal Decomposition"
+  - "Concept Attribution"
 date: 2026-05-08
-content_hash: a8615e27f81c8e52
+content_hash: 1a2966aea8463fc1
 ---
+
 # Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference
 
 **Conference**: ICML2026  
@@ -149,10 +155,10 @@ ExtraCare leads across both distribution shifts and tasks, closely approaching t
 ## Related Papers
 
 - [\[ACL 2026\] Language Reconstruction with Brain Predictive Coding from fMRI Data](../../ACL2026/medical_nlp/language_reconstruction_with_brain_predictive_coding_from_fmri_data.md)
-- [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](../../ACL2026/medical_nlp/text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
-- [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](../../AAAI2026/medical_nlp/mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
-- [\[ICLR 2026\] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](../../ICLR2026/medical_nlp/simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)
 - [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](../../ICLR2026/medical_nlp/can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
+- [\[ACL 2026\] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](../../ACL2026/medical_nlp/can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)
+- [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](../../ACL2026/medical_nlp/text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
+- [\[ICLR 2026\] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](../../ICLR2026/medical_nlp/simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)
 
 </div>
 

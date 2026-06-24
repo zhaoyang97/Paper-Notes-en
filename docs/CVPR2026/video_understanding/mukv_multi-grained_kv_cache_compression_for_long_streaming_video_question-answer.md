@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] MuKV simultaneously stores the historical KV cache of long streaming videos at patch, frame, and segment granularities. It employs "self-attention + frequency" dual-signal pruning to compress redundancy and utilizes "semi-hierarchical retrieval" for online recall. This approach significantly improves long streaming Vid
+  [CVPR 2026][Video Understanding][Streaming VideoQA] MuKV simultaneously stores the historical KV cache of long streaming videos at patch, frame, and segment granularities. It employs "self-attention + frequency" dual-signal pruning to compress redundancy and utilizes "semi-hierarchical retrieval" for online recall. This approach significantly improves long streaming VideoQA accuracy without increasing memory footprint or online latency.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming VideoQA"
+  - "KV Cache Compression"
+  - "Multi-Grained Representation"
+  - "Frequency Domain Signal"
+  - "Hierarchical Retrieval"
 date: 2026-05-08
-content_hash: 16769b9d5072f4e6
+content_hash: b8a7a94b8e1bc0f9
 ---
+
 # MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering
 
 **Conference**: CVPR 2026  
@@ -148,9 +154,9 @@ MuKV consistently outperforms ReKV with **fewer inference tokens (8.3K vs 12.5K)
 
 ## Related Papers
 
-- [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
 - [\[NeurIPS 2025\] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](../../NeurIPS2025/video_understanding/infinipot-v_memory-constrained_kv_cache_compression_for_streaming_video_understa.md)
-- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/video_understanding/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
+- [\[CVPR 2026\] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering](herbench_a_benchmark_for_multi-evidence_integration_in_video_question_answering.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 - [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
 - [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
 

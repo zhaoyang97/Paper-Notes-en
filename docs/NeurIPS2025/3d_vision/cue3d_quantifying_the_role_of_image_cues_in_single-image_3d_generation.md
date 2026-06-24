@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation
 description: >-
-  [NeurIPS 2025][3D Vision][Single-image 3D generation] Cue3D is the first model-agnostic framework for quantifying the importance of image cues in single-image 3D generation. By systematically perturbing six visual cues—i…
+  [NeurIPS 2025 Highlight][3D Vision][Single-image 3D generation] Cue3D is the first model-agnostic framework for quantifying the importance of image cues in single-image 3D generation. By systematically perturbing six visual cues—illumination, texture, silhouette, perspective, edges, and local continuity—across seven methods spanning three paradigms (regression-based, multi-view, and native 3D generation), it reveals key insights: shape meaningfulness rather than texture gover…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Highlight"
   - "3D Vision"
   - "Single-image 3D generation"
   - "visual cues"
@@ -12,7 +12,7 @@ tags:
   - "illumination"
   - "texture"
 date: 2026-05-08
-content_hash: 18a059cc6153a545
+content_hash: cfc060e7153b4f7e
 ---
 
 # Cue3D: Quantifying the Role of Image Cues in Single-Image 3D Generation
@@ -145,11 +145,11 @@ Illumination–texture disentanglement experiment (change in CD×1000 on GSO; la
 
 ## Related Papers
 
+- [\[CVPR 2025\] Symmetry Strikes Back: From Single-Image Symmetry Detection to 3D Generation](../../CVPR2025/3d_vision/symmetry_strikes_back_from_single-image_symmetry_detection_to_3d_generation.md)
+- [\[CVPR 2025\] WonderWorld: Interactive 3D Scene Generation from a Single Image](../../CVPR2025/3d_vision/wonderworld_interactive_3d_scene_generation_from_a_single_image.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 - [\[ICCV 2025\] WonderPlay: Dynamic 3D Scene Generation from a Single Image and Actions](../../ICCV2025/3d_vision/wonderplay_dynamic_3d_scene_generation_from_a_single_image_and_actions.md)
-- [\[ICCV 2025\] Sat2City: 3D City Generation from A Single Satellite Image with Cascaded Latent Diffusion](../../ICCV2025/3d_vision/sat2city_3d_city_generation_from_a_single_satellite_image_with_cascaded_latent_d.md)
-- [\[ICCV 2025\] A Recipe for Generating 3D Worlds from a Single Image](../../ICCV2025/3d_vision/a_recipe_for_generating_3d_worlds_from_a_single_image.md)
-- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
+- [\[ECCV 2024\] Compress3D: a Compressed Latent Space for 3D Generation from a Single Image](../../ECCV2024/3d_vision/compress3d_a_compressed_latent_space_for_3d_generation_from_a_single_image.md)
 
 </div>
 

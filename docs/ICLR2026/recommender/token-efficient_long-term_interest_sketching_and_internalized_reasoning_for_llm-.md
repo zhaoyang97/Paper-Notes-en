@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation
 description: >-
-  [ICLR 2026][Recommender Systems][GRPO] This paper proposes SIREN, which uses "long-term interest sketches" to compress hundreds of user histories into a short sequence of "liked/disliked semantic topics" for LLMs. It employs a "two-stage training" process: first, learning explicit CoT reasoning via RL, and second, internalizing this reasoning into model par
+  [ICLR 2026][Recommender Systems][LLM Recommendation] This paper proposes SIREN, which uses "long-term interest sketches" to compress hundreds of user histories into a short sequence of "liked/disliked semantic topics" for LLMs. It employs a "two-stage training" process: first, learning explicit CoT reasoning via RL, and second, internalizing this reasoning into model parameters through hidden state alignment. This maintains CoT-level accuracy under answer-only decoding…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - GRPO
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "LLM Recommendation"
+  - "Rating Prediction"
+  - "Long-term Interest Compression"
+  - "Internalized Reasoning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 1eb12a660a49044b
+content_hash: 88bbcc23cd6de996
 ---
+
 # Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation
 
 **Conference**: ICLR 2026  
@@ -151,11 +156,11 @@ LoRA target modules (Table 4): Among KV, all-linear, QKV, QV, and FFN, KV achiev
 
 ## Related Papers
 
-- [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
 - [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](reinforced_latent_reasoning_for_llm-based_recommendation.md)
+- [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
 - [\[ACL 2026\] From Recall to Forgetting: Benchmarking Long-Term Memory for Personalized Agents](../../ACL2026/recommender/from_recall_to_forgetting_benchmarking_long-term_memory_for_personalized_agents.md)
+- [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
 - [\[AAAI 2026\] Length-Adaptive Interest Network for Balancing Long and Short Sequence Modeling in CTR Prediction](../../AAAI2026/recommender/length-adaptive_interest_network_for_balancing_long_and_short_sequence_modeling_.md)
-- [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlowSearcher: Synthesizing Memory-Guided Agentic Workflows for Web Information Seeking
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] FlowSearcher reformulates web information seeking from "ReAct-style linear tool chains" to "memory-guided agentic workflow synthesis." By decomposing queries into sub-goals and synthesizing typed workflow DAGs for each, while injecting structured experience across node/graph/task levels into orchestration and execution
+  [ICLR 2026][LLM Agent][Workflow Synthesis] FlowSearcher reformulates web information seeking from "ReAct-style linear tool chains" to "memory-guided agentic workflow synthesis." By decomposing queries into sub-goals and synthesizing typed workflow DAGs for each, while injecting structured experience across node/graph/task levels into orchestration and execution, it matches or exceeds RL-trained agents on GAIA, BrowseComp, and GPQA without any supervised fine-tuning or RLHF.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Workflow Synthesis"
+  - "Hierarchical Memory"
+  - "Experience Reuse"
+  - "Deep Research Agent"
+  - "Web Information Seeking"
 date: 2026-05-08
-content_hash: ee05fa66700b4503
+content_hash: d0a1c2a1e40b9e54
 ---
+
 # FlowSearcher: Synthesizing Memory-Guided Agentic Workflows for Web Information Seeking
 
 **Conference**: ICLR 2026  
@@ -155,8 +161,8 @@ On QwQ-32B, FlowSearcher outperforms WebDancer by +4.8 on GAIA and +4.2 on Brows
 - [\[ICLR 2026\] GPS: Graph-guided Proactive Information Seeking in Large Language Models](gps_graph-guided_proactive_information_seeking_in_large_language_models.md)
 - [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
 - [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](an_information_theoretic_perspective_on_agentic_system_design.md)
+- [\[ICLR 2026\] ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows](scienceboard_evaluating_multimodal_autonomous_agents_in_realistic_scientific_wor.md)
 - [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)
-- [\[ICLR 2026\] Type-Compliant Adaptation Cascades: Adapting Programmatic LM Workflows to Data](type-compliant_adaptation_cascades.md)
 
 </div>
 

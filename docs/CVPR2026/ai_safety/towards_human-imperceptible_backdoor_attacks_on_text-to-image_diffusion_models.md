@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][AI Safety][clean-label] This paper proposes the first **clean-label backdoor attack** for text-to-image (T2I) diffusion models. By injecting nearly invisible perturbations into the image latent space and composite semantic triggers ("synonym replacement + sentence restructuring") into the text, the poisoned image-text pairs appear semanticall
+  [CVPR 2026][AI Safety][Backdoor attacks] This paper proposes the first **clean-label backdoor attack** for text-to-image (T2I) diffusion models. By injecting nearly invisible perturbations into the image latent space and composite semantic triggers ("synonym replacement + sentence restructuring") into the text, the poisoned image-text pairs appear semantically consistent and normal to both humans and automated auditing tools. However, the attack is activated during inference…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - clean-label
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Backdoor attacks"
+  - "clean-label"
+  - "text-to-image diffusion"
+  - "bimodal poisoning"
+  - "composite triggers"
 date: 2026-05-08
-content_hash: d5a34cc734771639
+content_hash: c2c4eecebfffe104
 ---
+
 # Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -155,11 +160,11 @@ While ASR is slightly lower than dirty-label methods, **UCR drops from 100 to 0*
 
 ## Related Papers
 
-- [\[CVPR 2026\] Eliminate Distance Differences Induced by Backdoor Attacks: Layer-Selective Training and Clipping to Mask Backdoor Models](eliminate_distance_differences_induced_by_backdoor_attacks_layer-selective_train.md)
+- [\[ICLR 2026\] STEDiff: Unveiling Spatio-Temporal Redundancy in Backdoor Attacks on Text-to-Image Diffusion Models](../../ICLR2026/ai_safety/stediff_revealing_the_spatial_and_temporal_redundancy_of_backdoor_attacks_in_tex.md)
 - [\[CVPR 2026\] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models](genbreak_red_teaming_text-to-image_generation_using_large_language_models.md)
 - [\[CVPR 2026\] JANUS: A Lightweight Framework for Jailbreaking Text-to-Image Models via Distribution Optimization](janus_a_lightweight_framework_for_jailbreaking_text-to-image_models_via_distribu.md)
-- [\[CVPR 2026\] Unleashing Stealthy Backdoor Pandemic by Infecting a Single Diffusion Model](unleashing_stealthy_backdoor_pandemic_by_infecting_a_single_diffusion_model.md)
 - [\[CVPR 2026\] When LoRA Betrays: Backdooring Text-to-Image Models by Masquerading as Benign Adapters](when_lora_betrays_backdooring_text-to-image_models_by_masquerading_as_benign_ada.md)
+- [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
 
 </div>
 

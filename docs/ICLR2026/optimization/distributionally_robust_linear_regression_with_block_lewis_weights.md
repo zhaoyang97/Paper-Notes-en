@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Distributionally Robust Linear Regression with Block Lewis Weights
 description: >-
-  [ICLR 2026][Optimization & Theory][Block Lewis Weights] This paper designs a second-order algorithm for "Empirical Group Distributionally Robust Least Squares" (i.e., min-max group regression) with an iterative complexity of only $\tilde{O}(\min\{\mathrm{rank}(A),m\}^{1/3}\varepsilon^{-2/3})$. The key is using **block Lewis weights** to construct an optimal approximating el
+  [ICLR 2026][Optimization][Group Distributionally Robust Optimization] This paper designs a second-order algorithm for "Empirical Group Distributionally Robust Least Squares" (i.e., min-max group regression) with an iterative complexity of only $\tilde{O}(\min\{\mathrm{rank}(A),m\}^{1/3}\varepsilon^{-2/3})$. The key is using **block Lewis weights** to construct an optimal approximating ellipsoidal geometry, coupled with an accelerated proximal method…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Block Lewis Weights
+  - "ICLR 2026"
+  - "Optimization"
+  - "Group Distributionally Robust Optimization"
+  - "Min-max Regression"
+  - "Block Lewis Weights"
+  - "Accelerated Proximal Method"
+  - "Quasi-self-concordance"
+  - "$\\ell_\\infty/\\ell_p$ Regression"
 date: 2026-05-08
-content_hash: 03e450dfbecf1067
+content_hash: 39024b14913e2716
 ---
+
 # Distributionally Robust Linear Regression with Block Lewis Weights
 
 **Conference**: ICLR 2026  
@@ -120,10 +126,17 @@ Experiments use a synthetic "heterogeneous group regression" setup ($d=10$, $100
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Distributionally Robust Optimization via Generative Ambiguity Modeling](distributionally_robust_optimization_via_generative_ambiguity_modeling.md)
+- [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
+- [\[ICLR 2026\] Scaling Laws of SignSGD in Linear Regression: When Does It Outperform SGD?](scaling_laws_of_signsgd_in_linear_regression_when_does_it_outperform_sgd.md)
+- [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](../../NeurIPS2025/optimization/robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
+- [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Distributionally Robust Optimization via Generative Ambiguity Modeling](distributionally_robust_optimization_via_generative_ambiguity_modeling.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Model Calibration through Spectral Entropy Regularization in Medical Image Segmentation
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] This paper reframes the over-confidence calibration problem in medical image segmentation from a frequency domain perspective. It posits that low-frequency dominated spectral bias and confidence saturation (which suppresses total spectral energy in confidence maps) jointly lead to boundary uncertainty distortion. The a
+  [ICLR2026][Medical Imaging][Medical image segmentation] This paper reframes the over-confidence calibration problem in medical image segmentation from a frequency domain perspective. It posits that low-frequency dominated spectral bias and confidence saturation (which suppresses total spectral energy in confidence maps) jointly lead to boundary uncertainty distortion. The authors introduce spectral entropy regularization with cross-batch power spectrum smoothing during traini…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "Medical image segmentation"
+  - "model calibration"
+  - "spectral entropy regularization"
+  - "uncertainty estimation"
+  - "frequency domain analysis"
 date: 2026-05-08
-content_hash: 0c7021571183fd30
+content_hash: 408e8b731b2d5c27
 ---
+
 # Rethinking Model Calibration through Spectral Entropy Regularization in Medical Image Segmentation
 
 **Conference**: ICLR2026  
@@ -130,10 +136,20 @@ Ablations on BraTS2020 and FLARE2021:
 - **Value**: ⭐⭐⭐⭐⭐ Highly practical for trustworthy medical segmentation.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)
+- [\[AAAI 2026\] Refine and Align: Confidence Calibration through Multi-Agent Interaction in VQA](../../AAAI2026/medical_imaging/refine_and_align_confidence_calibration_through_multi-agent_interaction_in_vqa.md)
+- [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](../../CVPR2026/medical_imaging/geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)
+- [\[CVPR 2026\] TANGO: Learning Distribution-wise Foundation Prior Consistency and Instance-wise Style Calibration for Medical Image Generalization](../../CVPR2026/medical_imaging/tango_learning_distribution-wise_foundation_prior_consistency_and_instance-wise_.md)
+- [\[CVPR 2026\] Learning Diffeomorphism for Medical Image Registration with Time-Embedded Architectures Using Semigroup Regularization](../../CVPR2026/medical_imaging/learning_diffeomorphism_for_medical_image_registration_with_time-embedded_archit.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] K-Prism: A Knowledge-Guided and Prompt Integrated Universal Medical Image Segmentation Model](k-prism_a_knowledge-guided_and_prompt_integrated_universal_medical_image_segment.md)

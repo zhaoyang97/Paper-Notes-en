@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives
 description: >-
-  [AAAI 2026][Reinforcement Learning][POMDP] This paper proves that limit-sure analysis for revealing POMDPs under parity objectives is equivalent to almost-sure analysis (EXPTIME-complete)…
+  [AAAI 2026][Reinforcement Learning][POMDP] This paper proves that limit-sure analysis for revealing POMDPs under parity objectives is equivalent to almost-sure analysis (EXPTIME-complete), and that quantitative analysis can also be completed within EXPTIME, thereby resolving two important open problems for this subclass.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Computational Complexity"
   - "Quantitative Analysis"
 date: 2026-05-08
-content_hash: 77c816b53da5841b
+content_hash: 6ae5754bbd0b6c0e
 ---
 
 # Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives
@@ -206,10 +206,10 @@ This is a purely theoretical work; the "experiments" are proofs of complexity re
 ## Related Papers
 
 - [\[AAAI 2026\] A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs](a_course_correction_in_steerability_evaluation_revealing_mis.md)
+- [\[ICLR 2026\] Polychromic Objectives for Reinforcement Learning](../../ICLR2026/reinforcement_learning/polychromic_objectives_for_reinforcement_learning.md)
+- [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](../../ICLR2026/reinforcement_learning/rl_for_reasoning_by_adaptively_revealing_rationales.md)
 - [\[NeurIPS 2025\] Scalable Policy-Based RL Algorithms for POMDPs](../../NeurIPS2025/reinforcement_learning/scalable_policy-based_rl_algorithms_for_pomdps.md)
-- [\[AAAI 2026\] Know your Trajectory -- Trustworthy Reinforcement Learning Deployment through Importance-Based Trajectory Analysis](know_your_trajectory_--_trustworthy_reinforcement_learning_deployment_through_im.md)
-- [\[NeurIPS 2025\] Sequential Monte Carlo for Policy Optimization in Continuous POMDPs](../../NeurIPS2025/reinforcement_learning/sequential_monte_carlo_for_policy_optimization_in_continuous_pomdps.md)
-- [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](../../ICML2026/reinforcement_learning/the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
+- [\[ICLR 2026\] Probing in the Dark: State Entropy Maximization for POMDPs](../../ICLR2026/reinforcement_learning/probing_in_the_dark_state_entropy_maximization_for_pomdps.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] CaST-Bench introduces a new task—"Causal Chain-Grounded Spatio-Temporal Video Question Answering"—where models must not only provide correct answers but also ground them in a causal evidence chain consisting of time segments and bounding boxes. Through a human-machine collaborative pipeline, a high-quality dataset of 1
+  [CVPR 2026][VLM Reasoning][Causal Chain] CaST-Bench introduces a new task—"Causal Chain-Grounded Spatio-Temporal Video Question Answering"—where models must not only provide correct answers but also ground them in a causal evidence chain consisting of time segments and bounding boxes. Through a human-machine collaborative pipeline, a high-quality dataset of 1,015 videos and 2,066 questions was constructed. Evaluation metrics were designed to assess both answer accuracy and ev…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Causal Chain"
+  - "Spatio-Temporal Grounding"
+  - "Video Question Answering"
+  - "VLM Evaluation"
+  - "Faithfulness"
 date: 2026-05-08
-content_hash: 82652e11ce9926f5
+content_hash: d864b38701d77b70
 ---
+
 # CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering
 
 **Conference**: CVPR 2026  
@@ -129,14 +135,17 @@ The best closed-source model (Gemini-2.5-Pro) reached only 50.34%, far below the
 
 <div class="related-papers" markdown="1">
 
-- **NExT-GQA**: Temporal grounding for causal/temporal video QA.
-- **Video-Holmes**: Analyzing video reasoning via visual grounding.
-- **SA-V**: The source dataset used for fine-grained instance tracking.
+## Related Papers
+
+- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
+- [\[CVPR 2026\] ChartR: Evaluating Reasoning Accuracy and Robustness in Chart Question Answering](chartr_evaluating_reasoning_accuracy_and_robustness_in_chart_question_answering.md)
+- [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
+- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)

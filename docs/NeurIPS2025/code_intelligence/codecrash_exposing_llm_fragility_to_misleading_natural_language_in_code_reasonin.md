@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning
 description: >-
-  [NeurIPS 2025][Code Intelligence][LLM robustness] This paper proposes CodeCrash, a stress-testing framework that systematically evaluates the code reasoning robustness of 17 LLMs through functionally equivalent structura…
+  [NeurIPS 2025][Code Intelligence][LLM robustness] This paper proposes CodeCrash, a stress-testing framework that systematically evaluates the code reasoning robustness of 17 LLMs through functionally equivalent structural perturbations and misleading natural language injections (comments, print statements, and hints). The framework reveals an average performance drop of 23.2% across models, with CoT recovering only to 13.8%, and is the first to identify the "Reasoning Collaps…
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "reasoning collapse"
   - "benchmark"
 date: 2026-05-08
-content_hash: 2d2b0cfe444b08d1
+content_hash: 36e3180df37f4582
 ---
 
 # CodeCrash: Exposing LLM Fragility to Misleading Natural Language in Code Reasoning
@@ -150,11 +150,11 @@ LRMs are nearly unaffected by PSC-ALL and MCC/MPS, but token consumption under M
 
 ## Related Papers
 
-- [\[ACL 2026\] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation](../../ACL2026/code_intelligence/storycoder_narrative_reformulation_for_structured_reasoning_in_llm_code_generati.md)
+- [\[ICLR 2026\] The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning](../../ICLR2026/code_intelligence/the_natural_geometry_of_code_hyperbolic_representation_learning_for_program_reas.md)
 - [\[NeurIPS 2025\] Once Upon an Input: Reasoning via Per-Instance Program Synthesis](once_upon_an_input_reasoning_via_per-instance_program_synthesis.md)
+- [\[ACL 2026\] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation](../../ACL2026/code_intelligence/storycoder_narrative_reformulation_for_structured_reasoning_in_llm_code_generati.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
-- [\[NeurIPS 2025\] Table2LaTeX-RL: High-Fidelity LaTeX Code Generation from Table Images via Reinforced Multimodal Language Models](table2latex-rl_high-fidelity_latex_code_generation_from_table_images_via_reinfor.md)
-- [\[NeurIPS 2025\] Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](co-evolving_llm_coder_and_unit_tester_via_reinforcement_learning.md)
+- [\[NeurIPS 2025\] Preserving LLM Capabilities through Calibration Data Curation: From Analysis to Optimization](preserving_llm_capabilities_through_calibration_data_curation_from_analysis_to_o.md)
 
 </div>
 

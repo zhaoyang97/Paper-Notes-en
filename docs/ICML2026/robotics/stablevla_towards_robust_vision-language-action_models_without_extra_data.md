@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] Addressing the collapse of VLA models under visual perturbations, the authors identify the MLP projector between the vision encoder and the LLM as the primary source of vulnerability. By replacing it with a "Channel-wise Information Bottleneck Adapter (IB-Adapter)" with fewer than 10M parameters, the 0.5B StableVLA ach
+  [ICML 2026][Robotics][VLA] Addressing the collapse of VLA models under visual perturbations, the authors identify the MLP projector between the vision encoder and the LLM as the primary source of vulnerability. By replacing it with a "Channel-wise Information Bottleneck Adapter (IB-Adapter)" with fewer than 10M parameters, the 0.5B StableVLA achieves an average performance gain of approximately 35% under severe LIBERO perturbations without any additional training data or augm…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "Visual Robustness"
+  - "Information Bottleneck"
+  - "Channel Attention"
+  - "Zero Data Augmentation"
 date: 2026-05-08
-content_hash: 1f25d64c4505c138
+content_hash: 34ab5898bf740105
 ---
+
 # StableVLA: Towards Robust Vision-Language-Action Models without Extra Data
 
 **Conference**: ICML 2026  
@@ -126,15 +131,16 @@ Success rate drop ($\Delta$) under real-world perturbations relative to clean pe
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 - [\[ICML 2026\] Seeing Realism from Simulation: Efficient Video Transfer for Vision-Language-Action Data Augmentation](seeing_realism_from_simulation_efficient_video_transfer_for_vision-language-acti.md)
+- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 - [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
+- [\[ICLR 2026\] VLM4VLA: Revisiting Vision-Language-Models in Vision-Language-Action Models](../../ICLR2026/robotics/vlm4vla_revisiting_vision-language-models_in_vision-language-action_models.md)
 
 </div>
 

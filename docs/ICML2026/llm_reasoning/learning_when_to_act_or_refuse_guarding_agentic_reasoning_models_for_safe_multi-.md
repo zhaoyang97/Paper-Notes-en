@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] MOSAIC transforms "safety decision-making" from an implicit byproduct of reasoning into an explicit first-class action within a plan-check-act/refuse loop (featuring `<safety_thoughts>` and `refusal_tool`). It utilizes pairwise trajectory preferences analyzed by an LLM judge combined with GRPO training. On Qwen2.5-7B,
+  [ICML 2026][Reasoning][Agent Safety] MOSAIC transforms "safety decision-making" from an implicit byproduct of reasoning into an explicit first-class action within a plan-check-act/refuse loop (featuring `<safety_thoughts>` and `refusal_tool`). It utilizes pairwise trajectory preferences analyzed by an LLM judge combined with GRPO training. On Qwen2.5-7B, Qwen3-4B-Thinking, and Phi-4, it achieves a 50% reduction in harmful behaviors in zero-shot OOD scenarios…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "Agent Safety"
+  - "Tool Use"
+  - "Explicit Safety Checks"
+  - "Pairwise Preference RL"
+  - "GRPO"
 date: 2026-05-08
-content_hash: f6a13a9a0cac4978
+content_hash: b754373848b2461f
 ---
+
 # MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use
 
 **Conference**: ICML 2026  
@@ -154,11 +159,11 @@ Average rejection rate increased by over 20%, showing particular effectiveness a
 
 ## Related Papers
 
-- [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
-- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
 - [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](../../CVPR2026/llm_reasoning/scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
-- [\[ICML 2026\] The Deterministic Horizon: When Extended Reasoning Fails and Tool Delegation Becomes Necessary](the_deterministic_horizon_when_extended_reasoning_fails_and_tool_delegation_beco.md)
-- [\[ICML 2026\] ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution](foresightkv_optimizing_kv_cache_eviction_for_reasoning_models_by_learning_long-t.md)
+- [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
+- [\[ICLR 2026\] Agentic Reinforcement Learning with Implicit Step Rewards](../../ICLR2026/llm_reasoning/agentic_reinforcement_learning_with_implicit_step_rewards.md)
+- [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
+- [\[ICLR 2026\] TUMIX: Multi-Agent Test-Time Scaling with Tool-Use Mixture](../../ICLR2026/llm_reasoning/tumix_multi-agent_test-time_scaling_with_tool-use_mixture.md)
 
 </div>
 

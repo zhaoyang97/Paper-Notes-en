@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN] This work models power networks as graph structures (buses as nodes, transmission lines as edges) and investigates four GNN architectures — GCN, GAT, SAGEConv…
+  [NeurIPS 2025][Graph Learning][GNN] This work models power networks as graph structures (buses as nodes, transmission lines as edges) and investigates four GNN architectures — GCN, GAT, SAGEConv, and GraphConv — for predicting AC power flow solutions (voltage magnitudes and phase angles). Experiments on IEEE 14/30/57/118-bus test systems demonstrate that GNNs can efficiently substitute traditional Newton-Raphson solvers.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Graph Convolution"
   - "Optimal Power Flow"
 date: 2026-05-08
-content_hash: fed495c1148118b7
+content_hash: a7c429432ee41495
 ---
 
 # Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids
@@ -168,7 +168,7 @@ All models achieve NRMSE below 0.05 and $R^2$ scores close to 1.
 
 - [\[NeurIPS 2025\] The Underappreciated Power of Vision Models for Graph Structural Understanding](the_underappreciated_power_of_vision_models_for_graph_structural_understanding.md)
 - [\[NeurIPS 2025\] BLISS: Bandit Layer Importance Sampling Strategy for Efficient Training of Graph Neural Networks](bliss_bandit_layer_importance_sampling_strategy_for_efficient_training_of_graph_.md)
-- [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](../../ICLR2026/graph_learning/on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
+- [\[ICLR 2026\] On The Expressive Power of GNN Derivatives](../../ICLR2026/graph_learning/on_the_expressive_power_of_gnn_derivatives.md)
 - [\[NeurIPS 2025\] Graph Neural Networks for Interferometer Simulations](graph_neural_networks_for_interferometer_simulations.md)
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
 

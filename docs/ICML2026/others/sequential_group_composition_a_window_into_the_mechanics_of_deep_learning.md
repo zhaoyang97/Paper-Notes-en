@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Sequential Group Composition: A Window into the Mechanics of Deep Learning
 description: >-
-  [ICML 2026][Others][Alternating Gradient Flow] The authors use the unified task of "calculating the cumulative product of a sequence of group elements" as a microscope. Using Fourier analysis on groups and the AGF framework, they prove that two-layer networks learn irreducible representations (irreps) sequentially according to their Fourier energy. They further cha
+  [ICML 2026][Group composition] The authors use the unified task of "calculating the cumulative product of a sequence of group elements" as a microscope. Using Fourier analysis on groups and the AGF framework, they prove that two-layer networks learn irreducible representations (irreps) sequentially according to their Fourier energy. They further characterize the expressivity gap across sequence length $k$, showing requirements of $2^k$ width for two-layer networks…
 tags:
-  - ICML 2026
-  - Others
-  - Alternating Gradient Flow
+  - "ICML 2026"
+  - "Group composition"
+  - "Irreducible representations"
+  - "Fourier analysis on groups"
+  - "Alternating Gradient Flow"
+  - "Architecture expressivity"
 date: 2026-05-08
-content_hash: a34f050dbcca03bc
+content_hash: ed744467e88773a2
 ---
+
 # Sequential Group Composition: A Window into the Mechanics of Deep Learning
 
 **Conference**: ICML 2026  
@@ -126,8 +130,8 @@ Regression loss $\mathcal L(\Theta)=\tfrac{1}{2|G|^k}\sum_{\mathbf g\in G^k}\|x_
 - [\[ICML 2026\] Possibilistic Predictive Uncertainty for Deep Learning](possibilistic_predictive_uncertainty_for_deep_learning.md)
 - [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](../../AAAI2026/others/from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
 - [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
-- [\[ICLR 2026\] CHLU: The Causal Hamiltonian Learning Unit as a Symplectic Primitive for Deep Learning](../../ICLR2026/others/chlu_the_causal_hamiltonian_learning_unit_as_a_symplectic_primitive_for_deep_lea.md)
 - [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](../../CVPR2026/others/towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
+- [\[CVPR 2025\] Potential Field Based Deep Metric Learning](../../CVPR2025/others/potential_field_based_deep_metric_learning.md)
 
 </div>
 

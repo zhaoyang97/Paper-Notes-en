@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoPP: Towards Automated Product Poster Generation and Optimization
 description: >-
-  [AAAI2026][Recommender Systems][product poster generation] This paper proposes AutoPP, the first pipeline to unify automated product poster generation with CTR-feedback-driven optimization in a single framework. It emplo…
+  [AAAI2026][Recommender Systems][product poster generation] This paper proposes AutoPP, the first pipeline to unify automated product poster generation with CTR-feedback-driven optimization in a single framework. It employs a unified design module to jointly design background, text, and layout; an element rendering module for efficient and controllable poster generation; and Isolated DPO (IDPO) to achieve element-level click-through rate optimization.
 tags:
   - "AAAI2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "DPO"
   - "multimodal generation"
 date: 2026-05-08
-content_hash: 86a9007ae24b2c1c
+content_hash: 89232ea7ae3791e5
 ---
 
 # AutoPP: Towards Automated Product Poster Generation and Optimization
@@ -161,8 +161,8 @@ AutoPP consists of two major components: a **generator** and an **optimizer**.
 - [\[AAAI 2026\] SlideTailor: Personalized Presentation Slide Generation for Scientific Papers](slidetailor_personalized_presentation_slide_generation_for_scientific_papers.md)
 - [\[ICLR 2026\] GoalRank: Group-Relative Optimization for a Large Ranking Model](../../ICLR2026/recommender/goalrank_group-relative_optimization_for_a_large_ranking_model.md)
 - [\[AAAI 2026\] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models](inference-aware_prompt_optimization_for_aligning_black-box_large_language_models.md)
-- [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](../../ACL2026/recommender/personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
 - [\[ACL 2026\] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation](../../ACL2026/recommender/clusterrag_cluster-based_collaborative_filtering_for_personalized_retrieval-augm.md)
+- [\[ACL 2026\] Personalizing LLMs with Binary Feedback: A Preference-Corrected Optimization Framework](../../ACL2026/recommender/personalizing_llms_with_binary_feedback_a_preference-corrected_optimization_fram.md)
 
 </div>
 

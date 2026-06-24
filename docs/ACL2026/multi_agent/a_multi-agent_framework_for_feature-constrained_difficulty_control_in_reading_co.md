@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes MAFIG, a framework that leverages multi-agent collaboration, feature-level evaluators, and iterative revision to generate multiple-choice reading comprehension questions. Compared to single-turn prompting, it significantly improves the satisfaction rate of constraints such as vocabulary, passage len
+  [ACL2026][Multi-Agent][Multi-agent generation] This paper proposes MAFIG, a framework that leverages multi-agent collaboration, feature-level evaluators, and iterative revision to generate multiple-choice reading comprehension questions. Compared to single-turn prompting, it significantly improves the satisfaction rate of constraints such as vocabulary, passage length, sentence length, reasoning complexity, factuality, and option neutrality, while providing a more stable mono…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL2026"
+  - "Multi-Agent"
+  - "Multi-agent generation"
+  - "Reading comprehension item generation"
+  - "Difficulty control"
+  - "Constraint satisfaction"
+  - "LLM evaluator"
 date: 2026-05-08
-content_hash: 66a904a9dec7ab7c
+content_hash: 5e99370bf8e2b7b8
 ---
+
 # A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation
 
 **Conference**: ACL2026  
@@ -149,15 +155,16 @@ Ablations show that Planner Instructions, Reworder Messages, and Creativity Enha
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
+- [\[ICLR 2026\] Breaking and Fixing Defenses Against Control Flow Hijacking in Multi-Agent Systems](../../ICLR2026/multi_agent/breaking_and_fixing_defenses_against_control_flow_hijacking_in_multi-agent_syste.md)
+- [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](../../ICML2026/multi_agent/voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
 - [\[AAAI 2026\] FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](../../AAAI2026/multi_agent/finrpt_dataset_evaluation_system_and_llm-based_multi-agent_framework_for_equity_.md)
-- [\[ACL 2026\] EvoSci: A Bio-Inspired Multi-Agent Framework for the Evolution of Scientific Discovery](evosci_a_bio-inspired_multi-agent_framework_for_the_evolution_of_scientific_disc.md)
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents
 description: >-
-  [ICML 2026][LLM Agent][Test-Time Compute] The paper reframes "RL for black-box LLM Agents" as "sampling from the posterior of an optimal policy." By employing Sequential Monte Carlo (SMC) with a lightweight value function to guide frozen black-box models during test time, the authors achieve RL-style optimization without accessing any parameters. This approach
+  [ICML2026][LLM Agent][Black-box Agent] The paper reframes "RL for black-box LLM Agents" as "sampling from the posterior of an optimal policy." By employing Sequential Monte Carlo (SMC) with a lightweight value function to guide frozen black-box models during test time, the authors achieve RL-style optimization without accessing any parameters. This approach outperforms prompting baselines on three AgentGym environments and surpasses GRPO (which requires full parameter access)…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Test-Time Compute
+  - "ICML2026"
+  - "LLM Agent"
+  - "Black-box Agent"
+  - "Sequential Monte Carlo"
+  - "Control-as-Inference"
+  - "Value Function"
+  - "Test-time Compute"
 date: 2026-05-08
-content_hash: a8c49ecc986e2464
+content_hash: 52e1445d4a5d51da
 ---
+
 # Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents
 
 **Conference**: ICML2026  
@@ -140,8 +145,8 @@ Comparison with GRPO (requiring full parameter access) as an oracle, and a value
 - [\[ICML 2026\] Constitutional Black-Box Monitoring for Scheming in LLM Agents](constitutional_black-box_monitoring_for_scheming_in_llm_agents.md)
 - [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
 - [\[ICML 2025\] KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search](../../ICML2025/llm_agent/kbqa-o1_agentic_knowledge_base_question_answering_with_monte_carlo_tree_search.md)
+- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](../../ICLR2026/llm_agent/mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
 - [\[ICML 2026\] On Information Self-Locking in Reinforcement Learning for Active Reasoning of LLM Agents](on_information_self-locking_in_reinforcement_learning_for_active_reasoning_of_ll.md)
-- [\[ICLR 2026\] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning](../../ICLR2026/llm_agent/tooltree_efficient_llm_agent_tool_planning_via_dual-feedback_monte_carlo_tree_se.md)
 
 </div>
 

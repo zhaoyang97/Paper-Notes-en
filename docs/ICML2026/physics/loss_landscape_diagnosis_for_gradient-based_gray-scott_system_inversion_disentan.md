@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Loss Landscape Diagnosis for Gradient-Based Gray-Scott System Inversion: Disentangling the Roles of PINN Components
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] The authors employ a minimalist approach—directly backpropagating steady-state losses through unrolled Gray-Scott simulations to invert PDE parameters without any surrogate models or neural networks—finding that optimization fails completely. By directly visualizing the loss landscape, they locate the pathology (**plat
+  [ICML 2026][Physics & Scientific Computing][Physics-Informed Neural Networks] The authors employ a minimalist approach—directly backpropagating steady-state losses through unrolled Gray-Scott simulations to invert PDE parameters without any surrogate models or neural networks—finding that optimization fails completely. By directly visualizing the loss landscape, they locate the pathology (**plateaus and cliffs, with cliffs precisely aligned with bifurcation boundaries**). Rei…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Physics-Informed Neural Networks"
+  - "Reaction-Diffusion"
+  - "Inverse Problems"
+  - "Loss Landscape"
+  - "Bifurcation"
+  - "Gradient Optimization"
 date: 2026-05-08
-content_hash: aeb0e8aa5ef9b16a
+content_hash: 646a7c07d5353da0
 ---
+
 # Loss Landscape Diagnosis for Gradient-Based Gray-Scott System Inversion: Disentangling the Roles of PINN Components
 
 **Conference**: ICML 2026  
@@ -123,9 +130,9 @@ The geometries are highly similar: the uniform and pattern regions are always se
 
 - [\[ICLR 2026\] Stretching Beyond the Obvious: A Gradient-Free Framework to Unveil the Hidden Landscape of Visual Invariance](../../ICLR2026/physics/stretching_beyond_the_obvious_a_gradient-free_framework_to_unveil_the_hidden_lan.md)
 - [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
-- [\[ICLR 2026\] MOSIV: Multi-Object System Identification from Videos](../../ICLR2026/physics/mosiv_multi-object_system_identification_from_videos.md)
-- [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
-- [\[ICML 2026\] From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints](from_geometry_to_dynamics_learning_overdamped_langevin_dynamics_from_sparse_obse.md)
+- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](../../ICLR2026/physics/fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
+- [\[ICLR 2026\] Geometric Autoencoder Priors for Bayesian Inversion: Learn First Observe Later](../../ICLR2026/physics/geometric_autoencoder_priors_for_bayesian_inversion_learn_first_observe_later.md)
+- [\[ICML 2026\] Unveiling Multi-Regime Patterns in SciML: Diverse Failure Modes and Domain-Specific Optimization](unveiling_multi-regime_patterns_in_sciml_distinct_failure_modes_and_regime-speci.md)
 
 </div>
 

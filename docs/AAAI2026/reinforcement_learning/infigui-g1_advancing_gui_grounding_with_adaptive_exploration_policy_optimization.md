@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization
 description: >-
-  [AAAI 2026][Reinforcement Learning][GUI Grounding] To address the exploration bottleneck in semantic alignment for GUI grounding, this paper proposes the Adaptive Exploration Policy Optimization (AEPO) framework. AEPO en…
+  [AAAI 2026 Oral][Reinforcement Learning][GUI Grounding] To address the exploration bottleneck in semantic alignment for GUI grounding, this paper proposes the Adaptive Exploration Policy Optimization (AEPO) framework. AEPO enforces broad exploration via a multi-answer generation strategy, dynamically guides learning through an adaptive exploration reward function, and ensures exploration quality via a collinearity penalty mechanism, significantly improving multimodal large la…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Reinforcement Learning"
   - "GUI Grounding"
   - "Multimodal Large Language Models"
@@ -12,7 +12,7 @@ tags:
   - "Policy Optimization"
   - "Multi-Answer Generation"
 date: 2026-05-08
-content_hash: 2b9540356becf94b
+content_hash: abd59bba7794655b
 ---
 
 # InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization
@@ -180,10 +180,10 @@ Key insights:
 ## Related Papers
 
 - [\[AAAI 2026\] Start Small, Think Big: Curriculum-based Relative Policy Optimization for Visual Grounding](start_small_think_big_curriculum-based_relative_policy_optimization_for_visual_g.md)
-- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
-- [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
+- [\[ICLR 2026\] SHAPO: Sharpness-Aware Policy Optimization for Safe Exploration](../../ICLR2026/reinforcement_learning/shapo_sharpness-aware_policy_optimization_for_safe_exploration.md)
+- [\[ICLR 2026\] TRAPO: Trust-Region Adaptive Policy Optimization](../../ICLR2026/reinforcement_learning/trust-region_adaptive_policy_optimization.md)
 - [\[ACL 2026\] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks](../../ACL2026/reinforcement_learning/navimaster_learning_a_unified_policy_for_gui_and_embodied_navigation_tasks.md)
-- [\[AAAI 2026\] Reasoning with Exploration: An Entropy Perspective](reasoning_with_exploration_an_entropy_perspective.md)
+- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](../../ACL2026/reinforcement_learning/dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
 
 </div>
 

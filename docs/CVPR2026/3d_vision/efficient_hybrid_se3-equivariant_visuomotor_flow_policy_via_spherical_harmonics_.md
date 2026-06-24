@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics
 description: >-
-  [CVPR 2026][3D Vision][SE(3) Equivariance] Ours proposes E3Flow, the first equivariant flow matching policy framework based on spherical harmonics representation. By dynamically fusing visual information from point cloud and image modalities through a Feature Enhancement Module (FEM) and combining it with rectified flow for efficient equivariant action generati
+  [CVPR 2026][3D Vision][SE(3) Equivariance] Ours proposes E3Flow, the first equivariant flow matching policy framework based on spherical harmonics representation. By dynamically fusing visual information from point cloud and image modalities through a Feature Enhancement Module (FEM) and combining it with rectified flow for efficient equivariant action generation, E3Flow achieves an average success rate 3.12% higher than the strongest baseline SDP across 8 MimicGen tasks…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SE(3) Equivariance
-  - Spherical Harmonics
-  - Rectified Flow
-  - Robot Policy Learning
-  - Multi-Modal Fusion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "SE(3) Equivariance"
+  - "Spherical Harmonics"
+  - "Rectified Flow"
+  - "Robot Policy Learning"
+  - "Multi-Modal Fusion"
 date: 2026-05-08
-content_hash: 3436b2010e9e4c5b
+content_hash: f2c9a623db2d3ac3
 ---
+
 # Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics
 
 **Conference**: CVPR 2026  
@@ -164,11 +165,11 @@ Note: Using DDIM to accelerate SDP leads to a 6.13% drop in success rate, wherea
 
 ## Related Papers
 
+- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
+- [\[ICML 2025\] SE(3)-Equivariant Diffusion Policy in Spherical Fourier Space](../../ICML2025/3d_vision/se3-equivariant_diffusion_policy_in_spherical_fourier_space.md)
 - [\[CVPR 2026\] ECKConv: Learning Coordinate-based Convolutional Kernels for Continuous SE(3) Equivariant Point Cloud Analysis](learning_coordinate-based_convolutional_kernels_for_continuous_se3_equivariant_a.md)
 - [\[CVPR 2026\] MeshFlow: Efficient Artistic Mesh Generation via MeshVAE and Flow-based Diffusion Transformer](meshflow_efficient_artistic_mesh_generation_via_meshvae_and_flow-based_diffusion.md)
-- [\[CVPR 2026\] DropAnSH-GS: Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting](dropping_anchor_and_spherical_harmonics_for_sparse-view_gaussian_splatting.md)
-- [\[CVPR 2026\] From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection](from_pairs_to_sequences_track-aware_policy_gradients_for_keypoint_detection.md)
-- [\[ICCV 2025\] Spatial-Temporal Aware Visuomotor Diffusion Policy Learning](../../ICCV2025/3d_vision/spatial-temporal_aware_visuomotor_diffusion_policy_learning.md)
+- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
 
 </div>
 

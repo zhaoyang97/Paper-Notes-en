@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] VisuLogic：评测多模态大模型视觉推理能力的基准
+  [Paper Note] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] VisuLogic constructs a 1,000-question, human-verified, pure visual logic reasoning benchmark across six categories. It deliberately blocks "language shortcuts" where images are converted to text for reasoning. Results show most top Multimodal Large Models (MLLMs) achieve an accuracy under 30% (barely above the 25% rand
+  [ICLR 2026][VLM Reasoning][Visual Reasoning] VisuLogic constructs a 1,000-question, human-verified, pure visual logic reasoning benchmark across six categories. It deliberately blocks "language shortcuts" where images are converted to text for reasoning. Results show most top Multimodal Large Models (MLLMs) achieve an accuracy under 30% (barely above the 25% random baseline and far below the human 51.4%). A supplementary training set and a reinforcement learning baseline are…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Reasoning"
+  - "Evaluation Benchmark"
+  - "Multimodal Large Model"
+  - "Language Shortcut"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 0c4eb7c5dc50cf2e
+content_hash: a7d1175146ab1ad5
 ---
+
 # VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models
 
 **Conference**: ICLR 2026  
@@ -116,15 +121,15 @@ The primary value of this work lies in decoupling "visual reasoning" from "image
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Play to Generalize: Learning to Reason Through Game Play](play_to_generalize_learning_to_reason_through_game_play.md)
-- [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
-- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
-- [\[ICLR 2026\] MedVR: Annotation-Free Medical Visual Reasoning via Agentic Reinforcement Learning](medvr_annotation-free_medical_visual_reasoning_via_agentic_reinforcement_learnin.md)
-- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
+- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/vlm_reasoning/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
+- [\[ICLR 2026\] Unfolding Spatial Cognition: Evaluating Multimodal Models on Visual Simulations](unfolding_spatial_cognition_evaluating_multimodal_models_on_visual_simulations.md)
+- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
+- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 
 </div>
 

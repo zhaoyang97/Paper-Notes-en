@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LightsOut: Diffusion-based Outpainting for Enhanced Lens Flare Removal
 description: >-
-  [ICCV 2025][Autonomous Driving][Lens Flare Removal] This paper proposes LightsOut, a diffusion-based image outpainting framework that enhances existing single-image flare removal (SIFR) methods by predicting and reconstr…
+  [ICCV 2025][Autonomous Driving][Lens Flare Removal] This paper proposes LightsOut, a diffusion-based image outpainting framework that enhances existing single-image flare removal (SIFR) methods by predicting and reconstructing out-of-frame light sources. It serves as a plug-and-play preprocessing module that improves arbitrary SIFR models without requiring additional training.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "LoRA Fine-tuning"
   - "Plug-and-Play"
 date: 2026-05-08
-content_hash: 51fe9f94fd4cfdb0
+content_hash: 07097db47a565361
 ---
 
 # LightsOut: Diffusion-based Outpainting for Enhanced Lens Flare Removal
@@ -161,9 +161,9 @@ Component contribution ablation (SD-Inpainting → Ours):
 
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
 - [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
-- [\[NeurIPS 2025\] Neurosymbolic Diffusion Models](../../NeurIPS2025/autonomous_driving/neurosymbolic_diffusion_models.md)
+- [\[AAAI 2026\] Global-Lens Transformers: Adaptive Token Mixing for Dynamic Link Prediction](../../AAAI2026/autonomous_driving/global-lens_transformers_adaptive_token_mixing_for_dynamic_link_prediction.md)
+- [\[ICCV 2025\] DiST-4D: Disentangled Spatiotemporal Diffusion with Metric Depth for 4D Driving Scene Generation](dist-4d_disentangled_spatiotemporal_diffusion_with_metric_depth_for_4d_driving_s.md)
 - [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
-- [\[ICCV 2025\] Decoupled Diffusion Sparks Adaptive Scene Generation](decoupled_diffusion_sparks_adaptive_scene_generation.md)
 
 </div>
 

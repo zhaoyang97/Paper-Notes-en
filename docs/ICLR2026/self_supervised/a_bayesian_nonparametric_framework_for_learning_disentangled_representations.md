@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] A Bayesian Nonparametric Framework for Learning Disentangled Representations
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper replaces the common isotropic Gaussian prior in VAEs with a **Bayesian nonparametric hierarchical mixture prior**. While preserving provable identifiability, it allows the number of mixture components for each generative factor to grow adaptively with the data, learning modular and compact disentangled repre
+  [ICLR 2026][Self-Supervised Learning][Disentangled representations] This paper replaces the common isotropic Gaussian prior in VAEs with a **Bayesian nonparametric hierarchical mixture prior**. While preserving provable identifiability, it allows the number of mixture components for each generative factor to grow adaptively with the data, learning modular and compact disentangled representations without any additional regularization terms.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Disentangled representations"
+  - "identifiability"
+  - "Dirichlet process"
+  - "hierarchical mixture prior"
+  - "structured variational inference"
+  - "amortized inference"
 date: 2026-05-08
-content_hash: ee4b39c3e00a9c5f
+content_hash: 7764fb41405be31f
 ---
+
 # A Bayesian Nonparametric Framework for Learning Disentangled Representations
 
 **Conference**: ICLR 2026  
@@ -116,10 +123,10 @@ This supports infinite components while only optimizing $T$ sets of parameters. 
 ## Related Papers
 
 - [\[ICLR 2026\] Mechanistic Independence: A Principle for Identifiable Disentangled Representations](mechanistic_independence_a_principle_for_identifiable_disentangled_representatio.md)
-- [\[ICLR 2026\] Disentangled representation learning through unsupervised symmetry group discovery](disentangled_representation_learning_through_unsupervised_symmetry_group_discove.md)
+- [\[ICLR 2026\] Detect, Decide, Unlearn: A Transfer-Aware Framework for Continual Learning](detect_decide_unlearn_a_transfer-aware_framework_for_continual_learning.md)
+- [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](../../CVPR2026/self_supervised/learning_by_analogy_a_causal_framework_for_compositional_generalization.md)
 - [\[ICLR 2026\] Midway Network: Learning Representations for Recognition and Motion from Latent Dynamics](midway_network_learning_representations_for_recognition_and_motion_from_latent_d.md)
 - [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
-- [\[ICLR 2026\] OrthoRF: Exploring Orthogonality in Object-Centric Representations](orthorf_exploring_orthogonality_in_object-centric_representations.md)
 
 </div>
 

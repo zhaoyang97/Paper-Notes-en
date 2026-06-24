@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment
 description: >-
-  [Multimodal VLM] This paper identifies three forms of cross-modal misalignment (causal, semantic, and spatial) in text-guided visual token importance estimation within LVLMs…
+  [Multimodal Efficiency] This paper identifies three forms of cross-modal misalignment (causal, semantic, and spatial) in text-guided visual token importance estimation within LVLMs, and proposes VisionDrop—a training-free progressive token pruning framework that relies exclusively on visual self-attention. The framework performs multi-stage compression across both the visual encoder and LLM decoder, retaining over 91% of original performance while keeping only 5.6% of tokens.
 tags:
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
 date: 2026-05-08
-content_hash: 1bc4855b73f87907
+content_hash: 794443112c82ae02
 ---
 
 # Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment
@@ -131,11 +131,11 @@ VisionDrop achieves a 6.0× FLOPs reduction on LLaVA-NeXT while retaining 95.71%
 
 ## Related Papers
 
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
+- [\[ACL 2025\] MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference](../../ACL2025/vlm_efficiency/madakv_adaptive_modality-perception_kv_cache_eviction_for_efficient_multimodal_l.md)
+- [\[ICCV 2025\] MaTVLM: Hybrid Mamba-Transformer for Efficient Vision-Language Modeling](../../ICCV2025/vlm_efficiency/matvlm_hybrid_mamba-transformer_for_efficient_vision-language_modeling.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](../../CVPR2026/vlm_efficiency/rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[ICML 2026\] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](../../ICML2026/vlm_efficiency/on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)
+- [\[ICLR 2026\] IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](../../ICLR2026/vlm_efficiency/ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)
 
 </div>
 

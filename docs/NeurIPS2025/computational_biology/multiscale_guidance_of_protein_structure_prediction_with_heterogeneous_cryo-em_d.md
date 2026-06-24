@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data
 description: >-
-  [NeurIPS 2025][Computational Biology][protein structure prediction] CryoBoltz leverages cryo-EM density maps to guide the sampling trajectory of a pretrained diffusion-based structure prediction model (Boltz-1) via a mul…
+  [NeurIPS 2025][Computational Biology][protein structure prediction] CryoBoltz leverages cryo-EM density maps to guide the sampling trajectory of a pretrained diffusion-based structure prediction model (Boltz-1) via a multiscale guidance mechanism (global → local), generating multi-conformational atomic models consistent with experimental data without any retraining.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "conformational diversity"
   - "Boltz-1"
 date: 2026-05-08
-content_hash: 763d47dde60dd727
+content_hash: 0e897466b9abbaf1
 ---
 
 # Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data
@@ -135,11 +135,11 @@ CryoBoltz **requires no training whatsoever** and operates entirely as an infere
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
+- [\[CVPR 2026\] CryoKRAQEN: Kernel-Regularized Annealing for Quantized Embedding Networks in Cryo-EM Heterogeneous Reconstruction](../../CVPR2026/computational_biology/cryokraqen_kernel-regularized_annealing_for_quantized_embedding_networks_in_cryo.md)
 - [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
+- [\[NeurIPS 2025\] Quantifying the Role of OpenFold Components in Protein Structure Prediction](quantifying_the_role_of_openfold_components_in_protein_structure_prediction.md)
 - [\[ICCV 2025\] CryoFastAR: Fast Cryo-EM Ab initio Reconstruction Made Easy](../../ICCV2025/computational_biology/cryofastar_fast_cryoem_ab_initio_reconstruction_made_easy.md)
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
 
 </div>
 

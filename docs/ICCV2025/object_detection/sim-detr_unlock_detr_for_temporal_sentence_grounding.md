@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sim-DETR: Unlock DETR for Temporal Sentence Grounding
 description: >-
-  [ICCV 2025][Object Detection][Temporal sentence grounding] This paper systematically analyzes the root causes of anomalous behavior in DETR-based temporal sentence grounding (TSG) — inter-query conflict and intra-query g…
+  [ICCV 2025][Object Detection][Temporal sentence grounding] This paper systematically analyzes the root causes of anomalous behavior in DETR-based temporal sentence grounding (TSG) — inter-query conflict and intra-query global-local contradiction — and proposes two simple decoder modifications (Query Grouping & Ranking + Global-Local Bridging) to form Sim-DETR, unlocking the full potential of DETR for TSG.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "self-attention adjustment"
   - "global-local bridging"
 date: 2026-05-08
-content_hash: cc1b7e1db3d45d64
+content_hash: 8c38a09eec9a96fd
 ---
 
 # Sim-DETR: Unlock DETR for Temporal Sentence Grounding
@@ -180,11 +180,11 @@ Conflict metric ablation:
 
 ## Related Papers
 
+- [\[ECCV 2024\] BAM-DETR: Boundary-Aligned Moment Detection Transformer for Temporal Sentence Grounding in Videos](../../ECCV2024/object_detection/bam-detr_boundary-aligned_moment_detection_transformer_for_temporal_sentence_gro.md)
 - [\[ICCV 2025\] EvRT-DETR: Latent Space Adaptation of Image Detectors for Event-based Vision](evrt-detr_latent_space_adaptation_of_image_detectors_for_event-based_vision.md)
-- [\[CVPR 2026\] PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](../../CVPR2026/object_detection/paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)
-- [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](../../CVPR2026/object_detection/ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
-- [\[AAAI 2026\] TubeRMC: Tube-conditioned Reconstruction with Mutual Constraints for Weakly-supervised Spatio-Temporal Video Grounding](../../AAAI2026/object_detection/tubermc_tube-conditioned_reconstruction_with_mutual_constraints_for_weakly-super.md)
-- [\[ICCV 2025\] The Devil is in the Spurious Correlations: Boosting Moment Retrieval with Dynamic Learning](the_devil_is_in_the_spurious_correlations_boosting_moment_retrieval_with_dynamic.md)
+- [\[CVPR 2025\] MI-DETR: An Object Detection Model with Multi-time Inquiries Mechanism](../../CVPR2025/object_detection/mi-detr_an_object_detection_model_with_multi-time_inquiries_mechanism.md)
+- [\[ICLR 2026\] DeCo-DETR: Decoupled Cognition DETR for efficient Open-Vocabulary Object Detection](../../ICLR2026/object_detection/deco-detr_decoupled_cognition_detr_for_efficient_open-vocabulary_object_detectio.md)
+- [\[CVPR 2025\] Mr. DETR++: Instructive Multi-Route Training for Detection Transformers with MoE](../../CVPR2025/object_detection/mr_detr_instructive_multi-route_training_for_detection_transformers.md)
 
 </div>
 

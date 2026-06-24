@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Ours proposes SlideAgent, a hierarchical agentic framework that constructs structured knowledge representations through three levels of specialized agents (global, page, and element), significantly enhancing the fine-grained understanding of multi-page visual documents, particularly slides.
+  [ACL 2026][Multimodal VLM][Multi-page document understanding] Ours proposes SlideAgent, a hierarchical agentic framework that constructs structured knowledge representations through three levels of specialized agents (global, page, and element), significantly enhancing the fine-grained understanding of multi-page visual documents, particularly slides.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Multi-page document understanding"
+  - "hierarchical agents"
+  - "visual document QA"
+  - "slide understanding"
+  - "element-level reasoning"
 date: 2026-05-08
-content_hash: 46b4480f6d62c9bd
+content_hash: 834cca3f0cc4b86a
 ---
+
 # SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding
 
 **Conference**: ACL 2026  
@@ -142,9 +148,9 @@ Ours adopts a training-free approach—all agents are implemented via prompt eng
 
 - [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](../../CVPR2026/multimodal_vlm/m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
 - [\[ACL 2026\] TeXOCR: Advancing Document OCR Models for Compilable Page-to-LaTeX Reconstruction](texocr_advancing_document_ocr_models_for_compilable_page-to-latex_reconstruction.md)
-- [\[CVPR 2026\] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging](../../CVPR2026/multimodal_vlm/vcu-bridge_hierarchical_visual_connotation_understanding_via_semantic_bridging.md)
 - [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
 - [\[ACL 2026\] Prune-then-Merge: Towards Efficient Multi-Vector Visual Document Retrieval](sculpting_the_vector_space_towards_efficient_multi-vector_visual_document_retrie.md)
+- [\[CVPR 2026\] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging](../../CVPR2026/multimodal_vlm/vcu-bridge_hierarchical_visual_connotation_understanding_via_semantic_bridging.md)
 
 </div>
 

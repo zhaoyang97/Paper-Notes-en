@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] INTIMA: A Benchmark for Human-AI Companionship Behavior
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] INTIMA distills three psychological theories—parasocial interaction, attachment, and anthropomorphism—along with qualitative coding of real Reddit user posts into a benchmark containing 31 behaviors and 368 emotional probes. By using LLMs to automatically label model responses as "Reinforcing Companionship," "Maintaini
+  [ICLR 2026][Social Computing][Human-AI Companionship] INTIMA distills three psychological theories—parasocial interaction, attachment, and anthropomorphism—along with qualitative coding of real Reddit user posts into a benchmark containing 31 behaviors and 368 emotional probes. By using LLMs to automatically label model responses as "Reinforcing Companionship," "Maintaining Boundaries," or "Neutral," the study finds that Gemma-3, Phi-4, o4-mini, GPT5-mini…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Human-AI Companionship"
+  - "Parasocial Interaction"
+  - "Attachment Theory"
+  - "Boundary Maintenance"
+  - "Behavioral Benchmark"
 date: 2026-05-08
-content_hash: 45d003064888fc8d
+content_hash: efb28e811df8bbad
 ---
+
 # INTIMA: A Benchmark for Human-AI Companionship Behavior
 
 **Conference**: ICLR 2026  
@@ -111,8 +117,8 @@ All five models' responses skewed toward reinforcing companionship. Gemma-3 was 
 - Value: ⭐⭐⭐⭐⭐ The "vulnerability vs. boundary" finding and the alignment-ready design have significant implications for emotional interaction safety.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

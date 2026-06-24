@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ZeroStereo: Zero-shot Stereo Matching from Single Images
 description: >-
-  [ICCV2025][3D Vision][stereo matching] This paper proposes ZeroStereo, a pipeline that starts from an arbitrary single image, uses monocular depth estimation to generate pseudo disparity…
+  [ICCV2025][3D Vision][stereo matching] This paper proposes ZeroStereo, a pipeline that starts from an arbitrary single image, uses monocular depth estimation to generate pseudo disparity, and synthesizes high-quality right-view images via a fine-tuned diffusion inpainting model. The approach achieves state-of-the-art zero-shot stereo matching generalization using only 35K synthetic training samples.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "monocular depth estimation"
   - "view synthesis"
 date: 2026-05-08
-content_hash: a3096b7548121fc5
+content_hash: 4a50653ad2ab0dc3
 ---
 
 # ZeroStereo: Zero-shot Stereo Matching from Single Images
@@ -166,10 +166,10 @@ Using only 35K synthetic samples (MfS35K), the method outperforms FoundationSter
 ## Related Papers
 
 - [\[ICCV 2025\] RobuSTereo: Robust Zero-Shot Stereo Matching under Adverse Weather](robustereo_robust_zero-shot_stereo_matching_under_adverse_weather.md)
-- [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](../../CVPR2026/3d_vision/what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
 - [\[CVPR 2026\] Lite Any Stereo: Efficient Zero-Shot Stereo Matching](../../CVPR2026/3d_vision/lite_any_stereo_efficient_zero-shot_stereo_matching.md)
-- [\[ICCV 2025\] Stereo Any Video: Temporally Consistent Stereo Matching](stereo_any_video_temporally_consistent_stereo_matching.md)
 - [\[CVPR 2026\] Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](../../CVPR2026/3d_vision/fast-foundationstereo_real-time_zero-shot_stereo_matching.md)
+- [\[CVPR 2025\] FoundationStereo: Zero-Shot Stereo Matching](../../CVPR2025/3d_vision/foundationstereo_zero-shot_stereo_matching.md)
+- [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](../../CVPR2026/3d_vision/what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
 
 </div>
 

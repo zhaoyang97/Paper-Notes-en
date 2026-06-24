@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expert-Teacher-Student Collaborative Learning for Domain Adaptive Object Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] To address the complementarity dilemma in domain adaptive object detection (DAOD)—where Visual Foundation Model (VFM) knowledge is too broad and teacher model knowledge is too narrow—this paper proposes the Expert-Teacher-Student (ETS) framework. By treating VFM as a "free lunch" expert model to generate offline pseudo
+  [CVPR 2026][Object Detection][Domain Adaptive Object Detection] To address the complementarity dilemma in domain adaptive object detection (DAOD)—where Visual Foundation Model (VFM) knowledge is too broad and teacher model knowledge is too narrow—this paper proposes the Expert-Teacher-Student (ETS) framework. By treating VFM as a "free lunch" expert model to generate offline pseudo-labels and prototypes, and employing a dual-layer mechanism of ETCT (Label-level Collaborative…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Domain Adaptive Object Detection"
+  - "Teacher-Student Framework"
+  - "Visual Foundation Models"
+  - "Pseudo-labeling"
+  - "Prototype Alignment"
 date: 2026-05-08
-content_hash: a094305f055ed6db
+content_hash: af667c6fa177ad98
 ---
+
 # Expert-Teacher-Student Collaborative Learning for Domain Adaptive Object Detection
 
 **Conference**: CVPR 2026  
@@ -131,16 +137,16 @@ Component ablation (C→B):
 - Value: ⭐⭐⭐⭐ High utility for DAOD with resource constraints.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection](da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d.md)
 - [\[CVPR 2025\] Large Self-Supervised Models Bridge the Gap in Domain Adaptive Object Detection](../../CVPR2025/object_detection/large_self-supervised_models_bridge_the_gap_in_domain_adaptive_object_detection.md)
 - [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)
-- [\[CVPR 2026\] Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization](bridge_basis-driven_causal_inference_marries_vfms_for_domain_generalization.md)
+- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
+- [\[CVPR 2026\] From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking](from_detection_to_association_learning_discriminative_object_embeddings_for_mult.md)
 
 </div>
 

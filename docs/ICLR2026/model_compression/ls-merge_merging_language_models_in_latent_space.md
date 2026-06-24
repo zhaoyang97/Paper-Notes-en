@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] LS-Merge: Merging Language Models in Latent Space
 description: >-
-  [ICLR 2026][Model Compression][model merging] LS-Merge encodes LLM weight tensors into a smooth latent space, performs interpolation in the latent space, and decodes them back into weights. This supports "single-model self-merging" and "heterogeneous merging across architectures (different widths/depths/model families)," which are either impossible or fragile in t
+  [ICLR 2026][Model Compression][model merging] LS-Merge encodes LLM weight tensors into a smooth latent space, performs interpolation in the latent space, and decodes them back into weights. This supports "single-model self-merging" and "heterogeneous merging across architectures (different widths/depths/model families)," which are either impossible or fragile in traditional weight-space merging.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - model merging
-  - latent space
-  - weight-space VAE
-  - heterogeneous merging
-  - optimal transport
+  - "ICLR 2026"
+  - "Model Compression"
+  - "model merging"
+  - "latent space"
+  - "weight-space VAE"
+  - "heterogeneous merging"
+  - "optimal transport"
 date: 2026-05-08
-content_hash: 0c943be4817659d0
+content_hash: a6130473b9906c46
 ---
+
 # LS-Merge: Merging Language Models in Latent Space
 
 **Conference**: ICLR 2026  
@@ -135,15 +136,16 @@ flowchart LR
 - Value: ⭐⭐⭐⭐ Provides an architecture-agnostic recipe for model enhancement and integration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
-- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](../../ICML2026/model_compression/ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
-- [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](../../ACL2026/model_compression/enabling_agents_to_communicate_entirely_in_latent_space.md)
-- [\[ICLR 2026\] The Curious Case of In-Training Compression of State Space Models](the_curious_case_of_in-training_compression_of_state_space_models.md)
 - [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
+- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/model_compression/model_merging_scaling_laws_in_large_language_models.md)
+- [\[ACL 2026\] Enabling Agents to Communicate Entirely in Latent Space](../../ACL2026/model_compression/enabling_agents_to_communicate_entirely_in_latent_space.md)
+- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](../../ICML2026/model_compression/ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
 
 </div>
 

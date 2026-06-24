@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks
 description: >-
-  [ACL 2026][LLM Safety][implicit jailbreak] Addressing "joint-modal implicit attacks" where images and text are safe individually but harmful when combined, this work proposes ImpForge, an RL-based red-teaming framework to automatically generate such samples using three rewards (safety, semantic, and overlap). These data are used for LoRA SFT to develop the Cros
+  [ACL 2026][LLM Safety][implicit jailbreak] Addressing "joint-modal implicit attacks" where images and text are safe individually but harmful when combined, this work proposes ImpForge, an RL-based red-teaming framework to automatically generate such samples using three rewards (safety, semantic, and overlap). These data are used for LoRA SFT to develop the CrossGuard model, reducing the SIUO implicit attack ASR from 48.9% (GPT-4o) to 5.4%, while achieving an average ASR of on…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - implicit jailbreak
-  - joint-modal attack
-  - red-teaming
-  - guardrail
-  - LoRA SFT
-  - ImpForge
+  - "ACL 2026"
+  - "LLM Safety"
+  - "implicit jailbreak"
+  - "joint-modal attack"
+  - "red-teaming"
+  - "guardrail"
+  - "LoRA SFT"
+  - "ImpForge"
 date: 2026-05-08
-content_hash: 997a0db8f5626f1c
+content_hash: 0f5a79b5cec8e716
 ---
+
 # CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks
 
 **Conference**: ACL 2026  
@@ -157,6 +158,7 @@ Ablation based on data composition and reward modules (derived from §5.4/5.5):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

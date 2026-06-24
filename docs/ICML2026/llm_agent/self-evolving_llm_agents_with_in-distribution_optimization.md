@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-evolving LLM agents with in-distribution Optimization
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] Q-Evolve enables LLM agents to learn an "in-distribution critic" on a fixed hybrid offline dataset. It automatically assigns process rewards to each step using advantage estimation and updates via a behavior-proximal policy optimization. The entire process remains within the data distribution, achieving stable self-evo
+  [ICML2026][LLM Agent][Self-evolving agents] Q-Evolve enables LLM agents to learn an "in-distribution critic" on a fixed hybrid offline dataset. It automatically assigns process rewards to each step using advantage estimation and updates via a behavior-proximal policy optimization. The entire process remains within the data distribution, achieving stable self-evolution on AlfWorld, WebShop, and ScienceWorld with significantly fewer environment interactions.
 tags:
-  - ICML 2026
-  - LLM Agent
+  - "ICML2026"
+  - "LLM Agent"
+  - "Self-evolving agents"
+  - "Process reward"
+  - "Implicit Q-learning"
+  - "Credit assignment"
+  - "In-distribution optimization"
 date: 2026-05-08
-content_hash: ac6ac9e1f582882d
+content_hash: 6417bed5b3c6d612
 ---
+
 # Self-evolving LLM agents with in-distribution Optimization
 
 **Conference**: ICML2026  
@@ -136,11 +142,11 @@ Q-Evolve achieved the highest average score of 79.4, outperforming the runner-up
 
 ## Related Papers
 
-- [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](../../ICLR2026/llm_agent/reveal_self-evolving_code_agents_via_reliable_self-verification.md)
+- [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
 - [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 - [\[CVPR 2026\] JarvisEvo: Towards a Self-Evolving Photo Editing Agent with Synergistic Editor-Evaluator Optimization](../../CVPR2026/llm_agent/jarvisevo_towards_a_self-evolving_photo_editing_agent_with_synergistic_editor-ev.md)
-- [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](../../ICLR2026/llm_agent/your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
 
 </div>
 

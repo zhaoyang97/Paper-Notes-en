@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper systematically investigates the Lipschitz continuity of three common set aggregation functions (sum, mean, max) and attention mechanisms under three multiset distance functions, derives Lipschitz upper bounds for set neural networks, and analyzes perturbation stability and generalization under distribution s
+  [ICLR 2026][Lipschitz Continuity] This paper systematically investigates the Lipschitz continuity of three common set aggregation functions (sum, mean, max) and attention mechanisms under three multiset distance functions, derives Lipschitz upper bounds for set neural networks, and analyzes perturbation stability and generalization under distribution shifts.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Lipschitz Continuity"
+  - "Set Aggregation Functions"
+  - "Multiset"
+  - "Robustness"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 6c6f040f8445e64a
+content_hash: 41b9e873fafdd0a5
 ---
+
 # On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets
 
 **Conference**: ICLR 2026  
@@ -120,7 +125,7 @@ where $L$ is the network's Lipschitz constant and $W_1$ is the Wasserstein dista
 - [\[ICLR 2026\] Beyond Uniformity: Regularizing Implicit Neural Representations through a Lipschitz Lens](beyond_uniformity_regularizing_implicit_neural_representations_through_a_lipschi.md)
 - [\[ICLR 2026\] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks](a_brain-inspired_gating_mechanism_unlocks_robust_computation_in_spiking_neural_n.md)
 - [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
-- [\[ICLR 2026\] Online Pseudo-Zeroth-Order Training of Neuromorphic Spiking Neural Networks](online_pseudo-zeroth-order_training_of_neuromorphic_spiking_neural_networks.md)
+- [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
 
 </div>
 

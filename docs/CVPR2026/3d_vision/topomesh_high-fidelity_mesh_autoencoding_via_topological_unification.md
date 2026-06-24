@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification
 description: >-
-  [CVPR 2026][3D Vision][3D VAE] TopoMesh is proposed to unify Ground Truth (GT) and predicted meshes under the Dual Marching Cubes (DMC) topological framework. This enables explicit vertex- and face-level correspondence for the first time, supporting direct mesh-level supervision (topology, vertex positions, face normals). The F1-Sharp metric improve
+  [CVPR 2026][3D Vision][3D VAE] TopoMesh is proposed to unify Ground Truth (GT) and predicted meshes under the Dual Marching Cubes (DMC) topological framework. This enables explicit vertex- and face-level correspondence for the first time, supporting direct mesh-level supervision (topology, vertex positions, face normals). The F1-Sharp metric improves by 5.9-7.1% over previous SOTA, demonstrating significant advantages in sharp feature preservation.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D VAE
-  - Dual Marching Cubes
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D VAE"
+  - "Mesh Autoencoding"
+  - "Topological Unification"
+  - "Dual Marching Cubes"
+  - "Sharp Feature Preservation"
 date: 2026-05-08
-content_hash: 829a48716ca1f6d7
+content_hash: 7aa03057d2e215c7
 ---
+
 # TopoMesh: High-Fidelity Mesh Autoencoding via Topological Unification
 
 **Conference**: CVPR 2026  
@@ -177,11 +181,11 @@ Direct mesh-level supervision shows an absolute advantage over rendering supervi
 
 ## Related Papers
 
+- [\[CVPR 2026\] FACE: A Face-based Autoregressive Representation for High-Fidelity and Efficient Mesh Generation](face_a_face-based_autoregressive_representation_for_high-fidelity_and_efficient_.md)
 - [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
 - [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](lattice_democratize_high-fidelity_3d_generation_at_scale.md)
 - [\[CVPR 2026\] High-Fidelity Mobile Avatars with Pruned Local Blendshapes](high-fidelity_mobile_avatars_with_pruned_local_blendshapes.md)
-- [\[CVPR 2026\] Depth Peeling for High-Fidelity Gaussian-Enhanced Surfel Rendering](depth_peeling_for_high-fidelity_gaussian-enhanced_surfel_rendering.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
 
 </div>
 

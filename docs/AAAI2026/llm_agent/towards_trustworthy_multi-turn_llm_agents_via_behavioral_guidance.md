@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance
 description: >-
-  [AAAI 2026][LLM Agent][multi-turn interaction] This paper proposes a task completion framework in which a Task Profiler, a Reasoning Module…
+  [AAAI 2026][LLM Agent][multi-turn interaction] This paper proposes a task completion framework in which a Task Profiler, a Reasoning Module, and a Generation Module co-evolve to enable verifiable and reliable behavioral guidance for LLM agents in multi-turn interactive environments.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "reasoning module"
   - "generation module"
 date: 2026-05-08
-content_hash: 371ea5a9449f747a
+content_hash: 8a549421d06b3712
 ---
 
 # Towards Trustworthy Multi-Turn LLM Agents via Behavioral Guidance
@@ -142,10 +142,10 @@ vs. **Constitutional AI**: requires full model retraining to embed behavioral co
 ## Related Papers
 
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](reflection-driven_control_for_trustworthy_code_agents.md)
-- [\[NeurIPS 2025\] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning](../../NeurIPS2025/llm_agent/t1_a_tool-oriented_conversational_dataset_for_multi-turn_agentic_planning.md)
-- [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](../../ACL2026/llm_agent/dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
-- [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](../../ACL2026/llm_agent/implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
-- [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](../../ACL2026/llm_agent/towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
+- [\[ICLR 2026\] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions](../../ICLR2026/llm_agent/evaluating_memory_in_llm_agents_via_incremental_multi-turn_interactions.md)
+- [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](../../ICLR2026/llm_agent/agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
+- [\[ICLR 2026\] ToolACE-MT: Non-Autoregressive Generation for Agentic Multi-Turn Interaction](../../ICLR2026/llm_agent/toolace-mt_non-autoregressive_generation_for_agentic_multi-turn_interaction.md)
+- [\[ICLR 2026\] FaSTA*: Fast-Slow Toolpath Agent with Subroutine Mining for Efficient Multi-turn Image Editing](../../ICLR2026/llm_agent/fasta_fast-slow_toolpath_agent_with_subroutine_mining_for_efficient_multi-turn_i.md)
 
 </div>
 

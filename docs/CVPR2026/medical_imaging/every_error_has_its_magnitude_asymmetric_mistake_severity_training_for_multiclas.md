@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning
 description: >-
-  [CVPR 2026][Medical Imaging][Multiple Instance Learning] Ours proposes the PAMS (Priority-Aware Mistake Severity) method, which significantly reduces the risk of severe misdiagnosis in multiclass MIL WSI diagnosis through Asymmetric Mistake Severity Cross-Entropy loss (MSCE), Semantic Feature Remix (SFR), and Asymmetric Mikel's Wheel metrics.
+  [CVPR2026][Medical Imaging][Multiple Instance Learning] Ours proposes the PAMS (Priority-Aware Mistake Severity) method, which significantly reduces the risk of severe misdiagnosis in multiclass MIL WSI diagnosis through Asymmetric Mistake Severity Cross-Entropy loss (MSCE), Semantic Feature Remix (SFR), and Asymmetric Mikel's Wheel metrics.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Multiple Instance Learning
-  - Mistake Severity
-  - Whole Slide Image
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Multiple Instance Learning"
+  - "Mistake Severity"
+  - "Whole Slide Image"
+  - "Asymmetric Misclassification"
+  - "Hierarchical Classification"
+  - "Pathological Diagnosis"
 date: 2026-05-08
-content_hash: d13db9cfb2e58ad0
+content_hash: 5c821e483e82bddf
 ---
+
 # Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning
 
 **Conference**: CVPR2026  
@@ -147,11 +151,11 @@ This verifies the generalization ability of MSCE in the natural image domain.
 
 ## Related Papers
 
-- [\[ICML 2025\] Do Multiple Instance Learning Models Transfer?](../../ICML2025/medical_imaging/do_multiple_instance_learning_models_transfer.md)
 - [\[CVPR 2026\] Contrastive Cross-Bag Augmentation for Multiple Instance Learning-based Whole Slide Image Classification](contrastive_cross-bag_augmentation_for_multiple_instance_learning-based_whole_sl.md)
-- [\[CVPR 2025\] MIL-PF: Multiple Instance Learning on Precomputed Features for Mammography Classification](../../CVPR2025/medical_imaging/mil-pf_multiple_instance_learning_on_precomputed_features_for_mammography_classi.md)
+- [\[ICML 2025\] Do Multiple Instance Learning Models Transfer?](../../ICML2025/medical_imaging/do_multiple_instance_learning_models_transfer.md)
+- [\[ICLR 2026\] ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging](../../ICLR2026/medical_imaging/asmil_attention-stabilized_multiple_instance_learning_for_whole-slide_imaging.md)
 - [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
-- [\[CVPR 2026\] Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)
+- [\[ICLR 2026\] Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning](../../ICLR2026/medical_imaging/mixture_of_mini_experts_overcoming_the_linear_layer_bottleneck_in_multiple_insta.md)
 
 </div>
 

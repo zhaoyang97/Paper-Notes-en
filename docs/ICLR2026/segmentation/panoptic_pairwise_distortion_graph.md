@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Panoptic Pairwise Distortion Graph
 description: >-
-  [ICLR 2026][Segmentation][MLLM] This paper generalizes scene graphs from "intra-image" to "inter-image" by proposing the **Distortion Graph (DG)**—a structured representation using regions as atomic nodes. It introduces PANDASET (a region-level distortion dataset of 500k image pairs), PANDABENCH (a benchmark with three difficulty levels), and PANDA (
+  [ICLR 2026][Segmentation][Distortion Graph] This paper generalizes scene graphs from "intra-image" to "inter-image" by proposing the **Distortion Graph (DG)**—a structured representation using regions as atomic nodes. It introduces PANDASET (a region-level distortion dataset of 500k image pairs), PANDABENCH (a benchmark with three difficulty levels), and PANDA (a DETR-style lightweight architecture). Experiments demonstrate that frontier MLLMs perform near random chance in re…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - MLLM
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Distortion Graph"
+  - "Region-level Evaluation"
+  - "Pairwise Comparison"
+  - "Panoptic Segmentation"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 5125b9cbca2d348d
+content_hash: 60ebdd4ce6b1151c
 ---
+
 # Panoptic Pairwise Distortion Graph
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,20 @@ PANDA achieves the best results across all tasks. Large MLLMs like DepictQA (7B)
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime](../../CVPR2026/segmentation/dsflash_panoptic_scene_graph_realtime.md)
+- [\[CVPR 2025\] Learning 4D Panoptic Scene Graph Generation from Rich 2D Visual Scene](../../CVPR2025/segmentation/learning_4d_panoptic_scene_graph_generation_from_rich_2d_visual_scene.md)
+- [\[ECCV 2024\] OpenPSG: Open-set Panoptic Scene Graph Generation via Large Multimodal Models](../../ECCV2024/segmentation/openpsg_open-set_panoptic_scene_graph_generation_via_large_multimodal_models.md)
+- [\[ICML 2026\] Functional Attention: From Pairwise Affinities to Functional Correspondences](../../ICML2026/segmentation/functional_attention_from_pairwise_affinities_to_functional_correspondences.md)
+- [\[ICCV 2025\] SPADE: Spatial-Aware Denoising Network for Open-vocabulary Panoptic Scene Graph Generation](../../ICCV2025/segmentation/spade_spatial-aware_denoising_network_for_open-vocabulary_panoptic_scene_graph_g.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime](../../CVPR2026/segmentation/dsflash_panoptic_scene_graph_realtime.md)

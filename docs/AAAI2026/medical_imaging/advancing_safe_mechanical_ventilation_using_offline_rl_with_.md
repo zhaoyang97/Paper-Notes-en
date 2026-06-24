@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards
 description: >-
-  [AAAI 2026][Medical Imaging][Offline reinforcement learning] This paper addresses the problem of optimizing mechanical ventilation (MV) settings in the ICU via offline RL. A hybrid action space approach (HybridIQL/Hybrid…
+  [AAAI 2026][Medical Imaging][Offline reinforcement learning] This paper addresses the problem of optimizing mechanical ventilation (MV) settings in the ICU via offline RL. A hybrid action space approach (HybridIQL/HybridEDAC) is proposed to avoid distributional shift caused by conventional discretization. Clinically aligned reward functions are introduced based on ventilator-free days (VFD) and physiological safety ranges, with multi-objective optimization used to select the…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "clinical reward design"
   - "ICU decision support"
 date: 2026-05-08
-content_hash: cd2c6cb1b02e25b0
+content_hash: 4abe8910d478d7e5
 ---
 
 # Advancing Safe Mechanical Ventilation Using Offline RL With Hybrid Actions and Clinically Aligned Rewards
@@ -125,11 +125,11 @@ The hybrid action space RL adaptation methodology is transferable to other medic
 
 ## Related Papers
 
-- [\[ICML 2026\] Seizure-Semiology-Suite (S³): A Clinically Multimodal Dataset, Benchmark, and Models for Seizure Semiology Understanding](../../ICML2026/medical_imaging/seizure-semiology-suite_s3_a_clinically_multimodal_dataset_benchmark_and_models_.md)
+- [\[CVPR 2026\] Clinically-Grounded Counterfactual Reasoning for Medical Video Diagnosis](../../CVPR2026/medical_imaging/clinically-grounded_counterfactual_reasoning_for_medical_video_diagnosis.md)
+- [\[CVPR 2026\] fMRI-LM: Towards a Universal Foundation Model for Language-Aligned fMRI Understanding](../../CVPR2026/medical_imaging/fmri-lm_towards_a_universal_foundation_model_for_language-aligned_fmri_understan.md)
+- [\[CVPR 2026\] Virtual Immunohistochemistry Staining with Dual-Aligned Multi-Task Feature Guidance](../../CVPR2026/medical_imaging/virtual_immunohistochemistry_staining_with_dual-aligned_multi-task_feature_guida.md)
+- [\[CVPR 2026\] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark](../../CVPR2026/medical_imaging/surgcot_advancing_spatiotemporal_reasoning_in_surgical_videos_through_a_chain-of.md)
 - [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](../../CVPR2026/medical_imaging/chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
-- [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](../../NeurIPS2025/medical_imaging/generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
-- [\[AAAI 2026\] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)
-- [\[AAAI 2026\] Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs](training-free_policy_violation_detection_via_activation-space_whitening_in_llms.md)
 
 </div>
 

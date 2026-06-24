@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] CodeGenGuard: A Watermark for Code Generation Models
 description: >-
-  [ICLR 2026][LLM Safety][LoRA] CodeGenGuard utilizes "Semantic Preserving Transformation (SPT)" as a watermark pattern, combined with optimized token triggers, dual LoRA shadow training, and auxiliary semantic prompts to embed an ownership watermark in **open-parameter** code generation models that is robust to fine-tuning/distillation while maintai
+  [ICLR 2026][LLM Safety][Code Generation Models] CodeGenGuard utilizes "Semantic Preserving Transformation (SPT)" as a watermark pattern, combined with optimized token triggers, dual LoRA shadow training, and auxiliary semantic prompts to embed an ownership watermark in **open-parameter** code generation models that is robust to fine-tuning/distillation while maintaining code generation quality.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Code Generation Models"
+  - "Model Watermarking"
+  - "Semantic Preserving Transformation (SPT)"
+  - "Backdoor Watermarking"
+  - "Model Extraction Attack"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 0d37f5eda724d2f5
+content_hash: 3a01fe41402572f3
 ---
+
 # CodeGenGuard: A Watermark for Code Generation Models
 
 **Conference**: ICLR 2026  
@@ -132,9 +138,9 @@ Attackers extract a substitute model using KL alignment of logits. After extract
 
 - [\[ICLR 2026\] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language](all_code_no_thought_language_models_struggle_to_reason_in_ciphered_language.md)
 - [\[ACL 2026\] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](../../ACL2026/llm_safety/context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)
-- [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)
 - [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
-- [\[ICLR 2026\] Analyzing and Evaluating Unbiased Language Model Watermark](analyzing_and_evaluating_unbiased_language_model_watermark.md)
+- [\[ICLR 2026\] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models](improving_the_trade-off_between_watermark_strength_and_speculative_sampling_effi.md)
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
 
 </div>
 

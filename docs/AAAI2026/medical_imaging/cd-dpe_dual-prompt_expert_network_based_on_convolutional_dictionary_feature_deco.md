@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution
 description: >-
-  [AAAI 2026][Medical Imaging][Multi-contrast MRI super-resolution] This paper proposes CD-DPE, a network that employs an iterative Convolutional Dictionary Feature Decoupling Module (CD-FDM) to disentangle multi-contrast…
+  [AAAI 2026][Medical Imaging][Multi-contrast MRI super-resolution] This paper proposes CD-DPE, a network that employs an iterative Convolutional Dictionary Feature Decoupling Module (CD-FDM) to disentangle multi-contrast MRI features into cross-contrast shared and modality-specific components, followed by a Dual-Prompt Feature Fusion Expert Module (DP-FFEM) for adaptive fusion and reconstruction. CD-DPE surpasses existing state-of-the-art methods on multiple public benchmarks.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "dual-prompt"
   - "expert network"
 date: 2026-05-08
-content_hash: 42c54971b21c5bb1
+content_hash: 044918425ad2529d
 ---
 
 # CD-DPE: Dual-Prompt Expert Network Based on Convolutional Dictionary Feature Decoupling for Multi-Contrast MRI Super-Resolution
@@ -189,11 +189,11 @@ CD-DPE achieves a 4.8% PSNR gain and 11.6% SSIM gain on the unseen dataset, demo
 
 ## Related Papers
 
+- [\[CVPR 2026\] Adaptive Anisotropic Gaussian Splatting for Multi-contrast MRI Arbitrary-Scale Super-Resolution with Anatomy Guidance](../../CVPR2026/medical_imaging/adaptive_anisotropic_gaussian_splatting_for_multi-contrast_mri_arbitrary-scale_s.md)
 - [\[AAAI 2026\] PINGS-X: Physics-Informed Normalized Gaussian Splatting with Axes Alignment for Efficient Super-Resolution of 4D Flow MRI](pings-x_physics-informed_normalized_gaussian_splatting_with_axes_alignment_for_e.md)
 - [\[AAAI 2026\] DW-DGAT: Dynamically Weighted Dual Graph Attention Network for Neurodegenerative Disease Diagnosis](dw-dgat_dynamically_weighted_dual_graph_attention_network_for_neurodegenerative_.md)
-- [\[AAAI 2026\] DeepGB-TB: A Risk-Balanced Cross-Attention Gradient-Boosted Convolutional Network for Rapid, Interpretable Tuberculosis Screening](deepgb-tb_a_risk-balanced_cross-attention_gradient-boosted_convolutional_network.md)
-- [\[CVPR 2026\] MRI Contrast Enhancement Kinetics World Model](../../CVPR2026/medical_imaging/mri_contrast_enhancement_kinetics_world_model.md)
 - [\[AAAI 2026\] NutriScreener: Retrieval-Augmented Multi-Pose Graph Attention Network for Malnourishment Screening](nutriscreener_retrieval-augmented_multi-pose_graph_attention_network_for_malnour.md)
+- [\[AAAI 2026\] MAPI-GNN: Multi-Activation Plane Interaction Graph Neural Network for Multimodal Medical Diagnosis](mapi-gnn_multi-activation_plane_interaction_graph_neural_network_for_multimodal_.md)
 
 </div>
 

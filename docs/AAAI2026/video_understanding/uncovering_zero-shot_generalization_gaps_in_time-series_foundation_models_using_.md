@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos
 description: >-
-  [AAAI 2026][Video Understanding][Time-Series Foundation Models] This paper proposes a pipeline for extracting time-series data from real-world videos via optical flow, constructs the REAL-V-TSFM dataset (6,130 sequences)…
+  [AAAI 2026][Video Understanding][Time-Series Foundation Models] This paper proposes a pipeline for extracting time-series data from real-world videos via optical flow, constructs the REAL-V-TSFM dataset (6,130 sequences), and reveals significant zero-shot generalization gaps in current time-series foundation models (TSFMs) such as Chronos and TimesFM when confronted with real physical dynamics.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Video Data"
   - "Benchmark"
 date: 2026-05-08
-content_hash: e73e725339b95319
+content_hash: 21cdf5a10c68a683
 ---
 
 # Uncovering Zero-Shot Generalization Gaps in Time-Series Foundation Models Using Real-World Videos
@@ -168,9 +168,9 @@ A track is considered valid if $e_{fb}(\mathbf{p}_0) < \epsilon$.
 
 - [\[CVPR 2026\] No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection](../../CVPR2026/video_understanding/no_need_for_real_anomaly_mllm_empowered_zero-shot_video_anomaly_detection.md)
 - [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
-- [\[ICML 2026\] ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions](../../ICML2026/video_understanding/proact-vl_a_proactive_videollm_for_real-time_ai_companions.md)
+- [\[ICLR 2026\] RIVER: A Real-Time Interaction Benchmark for Video LLMs](../../ICLR2026/video_understanding/river_a_real-time_interaction_benchmark_for_video_llms.md)
+- [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](../../CVPR2026/video_understanding/univbench_towards_unified_evaluation_for_video_foundation_models.md)
 - [\[CVPR 2026\] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling](../../CVPR2026/video_understanding/realworld_point_tracking_with_verifierguided_pseud.md)
-- [\[AAAI 2026\] Learning Time in Static Classifiers](learning_time_in_static_classifiers.md)
 
 </div>
 

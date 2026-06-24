@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Inference-Time Reward Hacking in Large Language Models
 description: >-
-  [NeurIPS 2025][Recommender Systems][reward hacking] This paper mathematically proves that inference-time alignment methods (e.g., BoN) inevitably exhibit reward hacking (true reward first increases then decreases) when o…
+  [NeurIPS 2025 Spotlight][Recommender Systems][reward hacking] This paper mathematically proves that inference-time alignment methods (e.g., BoN) inevitably exhibit reward hacking (true reward first increases then decreases) when optimizing a proxy reward. It proposes Best-of-Poisson (BoP) sampling to approximate the optimal KL-reward trade-off distribution, and designs the HedgeTune algorithm to locate the optimal inference-time parameter via one-dimensional root-finding…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Recommender Systems"
   - "reward hacking"
   - "inference-time alignment"
@@ -12,7 +12,7 @@ tags:
   - "winner's curse"
   - "hedging"
 date: 2026-05-08
-content_hash: 94bf686d4a12604c
+content_hash: b817353bde760ba6
 ---
 
 # Inference-Time Reward Hacking in Large Language Models
@@ -142,11 +142,11 @@ Key finding: Smaller proxy RM training data or higher label noise leads to a low
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
 - [\[AAAI 2026\] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models](../../AAAI2026/recommender/inference-aware_prompt_optimization_for_aligning_black-box_large_language_models.md)
+- [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
+- [\[ACL 2025\] KERL: Knowledge-Enhanced Personalized Recipe Recommendation using Large Language Models](../../ACL2025/recommender/kerl_knowledge-enhanced_personalized_recipe_recommendation_using_large_language_.md)
+- [\[ICML 2025\] PARM: Multi-Objective Test-Time Alignment via Preference-Aware Autoregressive Reward Model](../../ICML2025/recommender/parm_multi-objective_test-time_alignment_via_preference-aware_autoregressive_rew.md)
 - [\[NeurIPS 2025\] Measuring What Matters: Construct Validity in Large Language Model Benchmarks](measuring_what_matters_construct_validity_in_large_language_model_benchmarks.md)
-- [\[NeurIPS 2025\] MMPB: It's Time for Multi-Modal Personalization](mmpb_its_time_for_multi-modal_personalization.md)
-- [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](../../ICLR2026/recommender/from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
 
 </div>
 

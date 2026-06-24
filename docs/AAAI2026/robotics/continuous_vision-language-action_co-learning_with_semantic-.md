@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning
 description: >-
-  [AAAI 2026][Robotics][Behavioral Cloning] This paper proposes the CCoL framework, which addresses both physical discontinuity in action sequences and semantic-physical misalignment in Behavioral Cloning through NeuralODE…
+  [AAAI 2026][Robotics][Behavioral Cloning] This paper proposes the CCoL framework, which addresses both physical discontinuity in action sequences and semantic-physical misalignment in Behavioral Cloning through NeuralODE-driven Multimodal Continuous Co-learning (MCC) and bidirectional cross-attention-based Cross-modal Semantic-Physical Alignment (CSA). CCoL achieves an average relative improvement of 8.0% across three simulation platforms, with up to 19.2% on the bimanual ins…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Multimodal Continuous Co-Learning"
   - "Language-Conditioned Manipulation"
 date: 2026-05-08
-content_hash: 6e41ea90336cd108
+content_hash: 60ce817d9e4888e4
 ---
 
 # Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning
@@ -177,11 +177,11 @@ Inference speed: **0.015s (±0.003s)** per action sequence, approximately **67Hz
 
 ## Related Papers
 
+- [\[CVPR 2026\] Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](../../CVPR2026/robotics/evo-1_lightweight_vision-language-action_model_with_preserved_semantic_alignment.md)
 - [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](../../ICML2026/robotics/from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
+- [\[ICLR 2026\] Action Chunking and Exploratory Data Collection Yield Exponential Improvements in Behavior Cloning for Continuous Control](../../ICLR2026/robotics/action_chunking_and_data_augmentation_yield_exponential_improvements_in_behavior.md)
 - [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](../../CVPR2026/robotics/semantic_audio-visual_navigation_in_continuous_environments.md)
-- [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](../../NeurIPS2025/robotics/safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
-- [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](../../ICML2026/robotics/neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
+- [\[AAAI 2026\] Test-driven Reinforcement Learning in Continuous Control](test-driven_reinforcement_learning_in_continuous_control.md)
 
 </div>
 

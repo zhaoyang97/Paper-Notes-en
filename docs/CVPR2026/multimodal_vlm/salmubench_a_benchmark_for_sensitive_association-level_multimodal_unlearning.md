@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning
 description: >-
-  [CVPR 2026][Multimodal VLM][machine unlearning] The authors propose SALMUBench—the first benchmark for association-level machine unlearning in CLIP-like models. It consists of a $60\text{K}$ synthetic dataset of person-sensitive attribute pairs, a pair of Compromised/Clean models trained from scratch, and a structured holdout evaluation protocol. The study systemati
+  [CVPR2026][Multimodal VLM][machine unlearning] The authors propose SALMUBench—the first benchmark for association-level machine unlearning in CLIP-like models. It consists of a $60\text{K}$ synthetic dataset of person-sensitive attribute pairs, a pair of Compromised/Clean models trained from scratch, and a structured holdout evaluation protocol. The study systematically reveals three failure modes in existing unlearning methods: catastrophic collapse…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - machine unlearning
-  - CLIP
-  - benchmark
+  - "CVPR2026"
+  - "Multimodal VLM"
+  - "machine unlearning"
+  - "CLIP"
+  - "privacy protection"
+  - "association-level unlearning"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 2ffee1a81a10190e
+content_hash: 8159b9e14775785b
 ---
+
 # SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning
 
 **Conference**: CVPR2026  
@@ -129,15 +132,16 @@ To address the blind spot of "forget/retain" splits, the paper divides the 774 s
 - Value: ⭐⭐⭐⭐⭐ Establishes a new standard for multimodal machine unlearning with open-source data, models, and code.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
 - [\[CVPR 2026\] MMLandmarks: a Cross-View Instance-Level Benchmark for Geo-Spatial Understanding](mmlandmarks_a_cross-view_instance-level_benchmark_for_geo-spatial_understanding.md)
 - [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
-- [\[CVPR 2026\] Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](empowering_semanticsensitive_underwater_image_enha.md)
+- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
 - [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
 
 </div>
 

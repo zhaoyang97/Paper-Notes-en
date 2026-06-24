@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization
 description: >-
-  [ICML 2026][Video Generation][Autoregressive Video Diffusion] QVG is a training-free KV-cache quantization framework for autoregressive video diffusion. By employing semantic-aware clustering for token smoothing and progressive residual multi-stage compression, it reduces KV memory footprint to 1/7 of the original on LongCat-Video/HY-WorldPlay/Self-Forcing with <4% end-to-end lat
+  [ICML 2026][Video Generation][Autoregressive Video Diffusion] QVG is a training-free KV-cache quantization framework for autoregressive video diffusion. By employing semantic-aware clustering for token smoothing and progressive residual multi-stage compression, it reduces KV memory footprint to 1/7 of the original on LongCat-Video/HY-WorldPlay/Self-Forcing with <4% end-to-end latency overhead. At 2-bit, its quality significantly outperforms LLM quantization baselines like KIV…
 tags:
-  - ICML 2026
-  - Video Generation
-  - Autoregressive Video Diffusion
-  - KV-Cache
-  - 2-bit Quantization
-  - Residual Quantization
+  - "ICML 2026"
+  - "Video Generation"
+  - "Autoregressive Video Diffusion"
+  - "KV-Cache"
+  - "2-bit Quantization"
+  - "Spatial-Temporal Redundancy"
+  - "Residual Quantization"
 date: 2026-05-08
-content_hash: fd015e0d6960082b
+content_hash: c5c95f82f63951a0
 ---
+
 # Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization
 
 **Conference**: ICML 2026  
@@ -138,11 +140,11 @@ Key and Value cache quantization errors were reduced by ~6.9× and ~2.6×, respe
 
 ## Related Papers
 
+- [\[ICLR 2026\] FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge](../../ICLR2026/video_generation/fastcar_cache_attentive_replay_for_fast_auto-regressive_video_generation_on_the_.md)
 - [\[ICML 2026\] Quantized Keys Steal Attention: Bias Correction for KV-Cache Compression in Video Generation](quantized_keys_steal_attention_bias_correction_for_kv-cache_compression_in_video.md)
 - [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 - [\[ICML 2026\] LocoT2V-Bench: Benchmarking Long-form and Complex Text-to-Video Generation](locot2v-bench_benchmarking_long-form_and_complex_text-to-video_generation.md)
 - [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
-- [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](../../ICLR2026/video_generation/quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
 
 </div>
 

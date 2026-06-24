@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Verbal-R3: Verbal Reranker as the Missing Bridge between Retrieval and Reasoning
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Verbal Annotation] Verbal-R3 upgrades the traditional reranker from a module that "only provides relevance scores" to a bridging module that "provides scores and generates explanatory Verbal Annotations." This module is then used to train and guide RAG reasoners, simultaneously improving answer accuracy and test-time scaling efficiency i
+  [ACL2026][Information Retrieval & RAG][Retrieval-Augmented Generation] Verbal-R3 upgrades the traditional reranker from a module that "only provides relevance scores" to a bridging module that "provides scores and generates explanatory Verbal Annotations." This module is then used to train and guide RAG reasoners, simultaneously improving answer accuracy and test-time scaling efficiency in multi-hop question answering.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Verbal Annotation
-  - Reinforcement Learning
+  - "ACL2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Reranking"
+  - "Verbal Annotation"
+  - "Reinforcement Learning"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: c57909d897567efe
+content_hash: 9fc1c2c454c7b3de
 ---
+
 # Verbal-R3: Verbal Reranker as the Missing Bridge between Retrieval and Reasoning
 
 **Conference**: ACL2026  
@@ -146,11 +150,11 @@ Experiments cover 7 QA benchmarks: single-hop NQ, TriviaQA, PopQA, and multi-hop
 
 ## Related Papers
 
-- [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](../../ICLR2026/information_retrieval/embedding-based_context-aware_reranker.md)
 - [\[ICLR 2026\] Beyond Sequential Reranking: Reranker-Guided Search Improves Reasoning Intensive Retrieval](../../ICLR2026/information_retrieval/beyond_sequential_reranking_reranker-guided_search_improves_reasoning_intensive_.md)
-- [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
+- [\[ICLR 2026\] Embedding-Based Context-Aware Reranker](../../ICLR2026/information_retrieval/embedding-based_context-aware_reranker.md)
 - [\[ACL 2026\] A Survey of Reasoning-Intensive Retrieval: Progress and Challenges](a_survey_of_reasoning-intensive_retrieval_progress_and_challenges.md)
-- [\[ACL 2025\] Gumbel Reranking: Differentiable End-to-End Reranker Optimization](../../ACL2025/information_retrieval/gumbel_reranking.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](../../ICLR2026/information_retrieval/retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
+- [\[ACL 2026\] ChatR1: Reinforcement Learning for Conversational Reasoning and Retrieval Augmented Question Answering](chatr1_reinforcement_learning_for_conversational_reasoning_and_retrieval_augment.md)
 
 </div>
 

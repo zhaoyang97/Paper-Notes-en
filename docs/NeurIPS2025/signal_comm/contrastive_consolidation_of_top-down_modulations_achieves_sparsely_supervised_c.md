@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning
 description: >-
-  [NeurIPS 2025][Signal & Communication][continual learning] This paper proposes Task-Modulated Contrastive Learning (TMCL), inspired by top-down modulations in the neocortex. TMCL integrates sparse label information (as f…
+  [NeurIPS 2025][Signal & Communication][continual learning] This paper proposes Task-Modulated Contrastive Learning (TMCL), inspired by top-down modulations in the neocortex. TMCL integrates sparse label information (as few as 1% labels) via affine modulation during continual learning, then consolidates the modulation information into feedforward weights through contrastive learning, surpassing both unsupervised and supervised baselines on class-incremental and transfer learni…
 tags:
   - "NeurIPS 2025"
   - "Signal & Communication"
@@ -13,7 +13,7 @@ tags:
   - "sparse supervision"
   - "predictive coding"
 date: 2026-05-08
-content_hash: 1f9f1947a4133f8b
+content_hash: 853ed00b51016b4c
 ---
 
 # Contrastive Consolidation of Top-Down Modulations Achieves Sparsely Supervised Continual Learning
@@ -128,8 +128,8 @@ The elegance of this training strategy lies in the complete separation of "knowl
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
 - [\[ICML 2026\] Meta-learning Structure-Preserving Dynamics](../../ICML2026/signal_comm/meta-learning_structure-preserving_dynamics.md)
+- [\[ICML 2025\] Large Language Model (LLM)-enabled In-context Learning for Wireless Network Optimization](../../ICML2025/signal_comm/large_language_model_llm-enabled_in-context_learning_for_wireless_network_optimi.md)
 - [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](../../AAAI2026/signal_comm/task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
-- [\[NeurIPS 2025\] Memory-Integrated Reconfigurable Adapters: A Unified Framework for Settings with Multiple Tasks](memory-integrated_reconfigurable_adapters_a_unified_framework_for_settings_with_.md)
 
 </div>
 

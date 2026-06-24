@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Sample Selection Bias Precipitates Model Collapse
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper demonstrates that in low-resource and data-island scenarios, data selection—widely regarded as a "remedy" for model collapse—actually accelerates it. Since each verifier only observes a biased local slice of the target manifold, they prioritize samples matching local references and prune globally relevant ta
+  [ICML 2026][Learning Theory][Data Selection Bias] This paper demonstrates that in low-resource and data-island scenarios, data selection—widely regarded as a "remedy" for model collapse—actually accelerates it. Since each verifier only observes a biased local slice of the target manifold, they prioritize samples matching local references and prune globally relevant tail modes, theoretically collapsing variance to point masses at a power-law rate. The authors propose construct…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Model Collapse"
+  - "Data Selection Bias"
+  - "Data Islands"
+  - "Wasserstein Geometry"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: bbbacb830270b7c8
+content_hash: b3c7e0babd045d42
 ---
+
 # When Sample Selection Bias Precipitates Model Collapse
 
 **Conference**: ICML 2026  
@@ -111,15 +117,15 @@ Experiments using DDPM on CIFAR-10 / STL-10 / CelebA under the Accumulate-Subsam
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](../../ICLR2026/learning_theory/escaping_model_collapse_via_synthetic_data_verification_near-term_improvements_a.md)
+- [\[ICLR 2026\] When Bias Meets Trainability: Connecting Theories of Initialization](../../ICLR2026/learning_theory/when_bias_meets_trainability_connecting_theories_of_initialization.md)
+- [\[ICLR 2026\] Preventing Model Collapse Under Overparametrization: Optimal Mixing Ratios for Interpolation Learning and Ridge Regression](../../ICLR2026/learning_theory/preventing_model_collapse_under_overparametrization_optimal_mixing_ratios_for_in.md)
+- [\[ICLR 2026\] Optimizing Data Augmentation through Bayesian Model Selection](../../ICLR2026/learning_theory/optimizing_data_augmentation_through_bayesian_model_selection.md)
 - [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](active_learning_with_low-rank_structure_for_data_selection.md)
-- [\[NeurIPS 2025\] Sample-Adaptivity Tradeoff in On-Demand Sampling](../../NeurIPS2025/learning_theory/sample-adaptivity_tradeoff_in_on-demand_sampling.md)
-- [\[ICML 2026\] Correcting Split Selection in Online Decision Trees via Anytime-Valid Inference](correcting_split_selection_in_online_decision_trees_via_anytime-valid_inference.md)
-- [\[ICML 2026\] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)
-- [\[ICML 2026\] Cutting LLM Evaluation Costs with SySRs: A Bandit Algorithm that Provably Exploits Model Similarity](cutting_llm_evaluation_costs_with_sysrs_a_bandit_algorithm_that_provably_exploit.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting
 description: >-
-  [NeurIPS 2025][Image Generation][Text-guided image inpainting] NTN-Diff is a frequency-aware diffusion model that decomposes the global semantic consistency problem into per-band consistency tasks over mid-frequency and…
+  [NeurIPS 2025][Image Generation][Text-guided image inpainting] NTN-Diff is a frequency-aware diffusion model that decomposes the global semantic consistency problem into per-band consistency tasks over mid-frequency and low-frequency components. By adopting a "null-text–text–null-text" three-stage denoising strategy, the method simultaneously addresses two longstanding challenges in text-guided image inpainting: preserving unmasked regions and maintaining semantic consistency…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "semantic consistency"
 date: 2026-05-08
-content_hash: f572c84fb04b6245
+content_hash: 2729782ce5368285
 ---
 
 # One Stone with Two Birds: A Null-Text-Null Frequency-Aware Diffusion Models for Text-Guided Image Inpainting
@@ -145,9 +145,9 @@ The extraction thresholds for both low- and mid-frequency bands are linked to th
 
 - [\[NeurIPS 2025\] NPN: Non-Linear Projections of the Null-Space for Imaging Inverse Problems](npn_non-linear_projections_of_the_null-space_for_imaging_inverse_problems.md)
 - [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
+- [\[CVPR 2026\] Test-Time Alignment of Text-to-Image Diffusion Models via Null-Text Embedding Optimisation](../../CVPR2026/image_generation/test-time_alignment_of_text-to-image_diffusion_models_via_null-text_embedding_op.md)
 - [\[NeurIPS 2025\] DEFT: Decompositional Efficient Fine-Tuning for Text-to-Image Models](deft_decompositional_efficient_finetuning_for_texttoimage_mo.md)
-- [\[NeurIPS 2025\] Seg4Diff: Unveiling Open-Vocabulary Segmentation in Text-to-Image Diffusion Transformers](seg4diff_unveiling_open-vocabulary_segmentation_in_text-to-image_diffusion_trans.md)
+- [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
 
 </div>
 

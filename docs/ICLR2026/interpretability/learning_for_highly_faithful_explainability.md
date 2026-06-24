@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning for Highly Faithful Explainability
 description: >-
-  [ICLR 2026][Interpretability][Learning to Explain] This paper proposes DeepFaith: a self-supervised objective derived from ten faithfulness metrics that makes no assumptions about the target model or task. It aggregates multiple prior explanation methods into high-quality supervision signals through "deduplication + faithfulness filtering" and employs dynamic weighting
+  [ICLR 2026][Interpretability][Learning to Explain] This paper proposes DeepFaith: a self-supervised objective derived from ten faithfulness metrics that makes no assumptions about the target model or task. It aggregates multiple prior explanation methods into high-quality supervision signals through "deduplication + faithfulness filtering" and employs dynamic weighting for joint optimization. This trains an amortized explainer capable of generating more faithful explanations…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Learning to Explain
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Learning to Explain"
+  - "Amortized Explainer"
+  - "Faithfulness"
+  - "Self-supervised"
+  - "Dynamic Joint Optimization"
 date: 2026-05-08
-content_hash: d8677a89d0336b6a
+content_hash: cbf8c2aec32ab627
 ---
+
 # Learning for Highly Faithful Explainability
 
 **Conference**: ICLR 2026  
@@ -130,7 +135,7 @@ DeepFaith builds upon the Learning to Explain line (FastSHAP, VerT, L2X, CXPlain
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
 - [\[ACL 2026\] Interpreto: An Explainability Library for Transformers](../../ACL2026/interpretability/interpreto_an_explainability_library_for_transformers.md)
 - [\[ICLR 2026\] Temporal Geometry of Deep Networks: Hyperbolic Representations of Training Dynamics for Intrinsic Explainability](temporal_geometry_of_deep_networks_hyperbolic_representations_of_training_dynami.md)
-- [\[ICLR 2026\] Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment](towards_cognitively-faithful_decision-making_models_to_improve_ai_alignment.md)
+- [\[ICLR 2026\] EnsembleSHAP: Faithful and Certifiably Robust Attribution for Random Subspace Method](ensembleshap_faithful_and_certifiably_robust_attribution_for_random_subspace_met.md)
 
 </div>
 

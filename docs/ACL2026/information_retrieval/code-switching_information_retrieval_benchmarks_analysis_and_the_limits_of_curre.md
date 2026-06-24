@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] This paper presents the first systematic evaluation of the impact of "code-switched queries" on modern IR systems. The authors propose the manually annotated CSR-L benchmark and an LLM-generated 11-task CS-MTEB suite. They find that even strong 8B multilingual models suffer a drop of 4–13 points in nDCG@10 under query-
+  [ACL 2026][Information Retrieval & RAG][Code-switching] This paper presents the first systematic evaluation of the impact of "code-switched queries" on modern IR systems. The authors propose the manually annotated CSR-L benchmark and an LLM-generated 11-task CS-MTEB suite. They find that even strong 8B multilingual models suffer a drop of 4–13 points in nDCG@10 under query-side code-switching, with rerankers plummeting from 60 to 25. Lexicon-based vocabulary expansion is show…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Code-switching"
+  - "Multilingual Retrieval"
+  - "MTEB Benchmark"
+  - "Vocabulary Expansion"
+  - "Embedding Space"
 date: 2026-05-08
-content_hash: 73990193b6160c79
+content_hash: 705dfa4df9d08e73
 ---
+
 # Code-Switching Information Retrieval: Benchmarks, Analysis, and the Limits of Current Retrievers
 
 **Conference**: ACL 2026  
@@ -129,11 +135,11 @@ On CS-MTEB (e5-large-v2), cross-lingual drops were high: CN −15.21, JP −12.7
 
 ## Related Papers
 
-- [\[ACL 2026\] MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks](mtr-suite_a_framework_for_evaluating_and_synthesizing_conversational_retrieval_b.md)
 - [\[ACL 2025\] CoIR: A Comprehensive Benchmark for Code Information Retrieval Models](../../ACL2025/information_retrieval/coir_a_comprehensive_benchmark_for_code_information_retrieval_models.md)
+- [\[ACL 2026\] MTR-Suite: A Framework for Evaluating and Synthesizing Conversational Retrieval Benchmarks](mtr-suite_a_framework_for_evaluating_and_synthesizing_conversational_retrieval_b.md)
 - [\[ACL 2026\] CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs](codepromptzip_code-specific_prompt_compression_for_retrieval-augmented_generatio.md)
+- [\[ICLR 2026\] Frustratingly Simple Retrieval Improves Challenging, Reasoning-Intensive Benchmarks](../../ICLR2026/information_retrieval/frustratingly_simple_retrieval_improves_challenging_reasoning-intensive_benchmar.md)
 - [\[ACL 2026\] UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](unite_uncertainty-based_iterative_document_sampling_for_domain_adaptation_in_inf.md)
-- [\[ICML 2026\] Understanding LoRA as Knowledge Memory: An Empirical Analysis](../../ICML2026/information_retrieval/understanding_lora_as_knowledge_memory_an_empirical_analysis.md)
 
 </div>
 

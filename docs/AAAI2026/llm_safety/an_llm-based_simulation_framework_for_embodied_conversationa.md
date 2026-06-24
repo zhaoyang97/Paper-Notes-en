@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling
 description: >-
-  [AAAI 2026][LLM Safety][Embodied Conversational Agents] This paper proposes the ECAs framework, which grounds psychological counseling simulation in established theories such as Cognitive Behavioral Therapy (CBT). By lev…
+  [AAAI 2026][LLM Safety][Embodied Conversational Agents] This paper proposes the ECAs framework, which grounds psychological counseling simulation in established theories such as Cognitive Behavioral Therapy (CBT). By leveraging LLMs to expand real counseling cases into embodied cognitive memory spaces, the framework simulates the complete cognitive processes of clients in counseling sessions and generates high-fidelity dialogue data. ECAs significantly outperforms baselines i…
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM Data Synthesis"
   - "Memory-Driven Dialogue"
 date: 2026-05-08
-content_hash: 41afc4c76964c224
+content_hash: cff3cb73ebfe20c5
 ---
 
 # An LLM-Based Simulation Framework for Embodied Conversational Agents in Psychological Counseling
@@ -115,11 +115,11 @@ The paradigm of systematically translating a psychological theory (CBT) into an 
 
 ## Related Papers
 
-- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](../../ICLR2026/llm_safety/beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
-- [\[ACL 2026\] RISK: A Framework for GUI Agents in E-commerce Risk Management](../../ACL2026/llm_safety/risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)
+- [\[ICLR 2026\] Searching for Privacy Risks in LLM Agents via Simulation](../../ICLR2026/llm_safety/searching_for_privacy_risks_in_llm_agents_via_simulation.md)
 - [\[AAAI 2026\] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments](agentsense_virtual_sensor_data_generation_using_llm_agents_i.md)
 - [\[AAAI 2026\] SafeNlidb: A Privacy-Preserving Safety Alignment Framework for LLM-based Natural Language Database Interfaces](safenlidb_a_privacy-preserving_safety_alignment_framework_for_llm-based_natural_.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](../../ACL2026/llm_safety/ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
+- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](../../ICLR2026/llm_safety/beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
+- [\[ACL 2026\] RISK: A Framework for GUI Agents in E-commerce Risk Management](../../ACL2026/llm_safety/risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)
 
 </div>
 

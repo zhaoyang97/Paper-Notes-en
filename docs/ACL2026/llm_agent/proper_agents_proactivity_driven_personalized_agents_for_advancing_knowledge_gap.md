@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] ProPer models proactive agents as the problem of "discovering and calibrating unspoken task dimensions." Through a Dimension Generating Agent, a post-hoc reranker, and a Response Generating Agent, it selectively fills knowledge gaps, significantly improving response quality and win rates across medical, coding, and sho
+  [ACL 2026][LLM Agent][Proactive assistant] ProPer models proactive agents as the problem of "discovering and calibrating unspoken task dimensions." Through a Dimension Generating Agent, a post-hoc reranker, and a Response Generating Agent, it selectively fills knowledge gaps, significantly improving response quality and win rates across medical, coding, and shopping recommendation tasks.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Proactive assistant"
+  - "Knowledge gap"
+  - "Dimensional modeling"
+  - "Personalized Agent"
+  - "Calibrated proactivity"
 date: 2026-05-08
-content_hash: 367d82a431c98ba9
+content_hash: 9b577246079c9d2e
 ---
+
 # ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation
 
 **Conference**: ACL 2026  
@@ -146,7 +152,7 @@ Evaluation covers three domains: Medical (MD), Code-Contests, and PWAB. GPT-5 se
 - [\[AAAI 2026\] PerTouch: VLM-Driven Agent for Personalized and Semantic Image Retouching](../../AAAI2026/llm_agent/pertouch_vlm-driven_agent_for_personalized_and_semantic_image_retouching.md)
 - [\[ICML 2026\] Scaling, Benchmarking, and Reasoning of Vision-Language Agents for Mobile GUI Navigation](../../ICML2026/llm_agent/scaling_benchmarking_and_reasoning_of_vision-language_agents_for_mobile_gui_navi.md)
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](../../ICLR2026/llm_agent/fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
-- [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
+- [\[ICLR 2026\] PRISM: Festina Lente Proactivity—Risk-Sensitive, Uncertainty-Aware Deliberation for Proactive Agents](../../ICLR2026/llm_agent/prism_festina_lente_proactivityrisk-sensitive_uncertainty-aware_deliberation_for.md)
 
 </div>
 

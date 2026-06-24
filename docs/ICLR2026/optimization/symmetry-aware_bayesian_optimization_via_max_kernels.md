@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Symmetry-Aware Bayesian Optimization via Max Kernels
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] When the black-box objective function is invariant under the action of a group $G$, this paper departs from the mainstream approach of "averaging" over group orbits to obtain an invariant kernel. Instead, it adopts the "maximum alignment" similarity $k_{\max}$ between orbits and recovers a valid (Positive Semi-Definite
+  [ICLR 2026][Optimization][Bayesian Optimization] When the black-box objective function is invariant under the action of a group $G$, this paper departs from the mainstream approach of "averaging" over group orbits to obtain an invariant kernel. Instead, it adopts the "maximum alignment" similarity $k_{\max}$ between orbits and recovers a valid (Positive Semi-Definite) GP kernel $k_+^{(D)}$ via eigenvalue clipping and Nyström extension. This significantly reduces cumulative re…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "Invariant Kernels"
+  - "Group Symmetry"
+  - "Max-alignment Kernels"
+  - "PSD Projection"
 date: 2026-05-08
-content_hash: 08ea26f69ece09f6
+content_hash: 6af966c35efb04f0
 ---
+
 # Symmetry-Aware Bayesian Optimization via Max Kernels
 
 **Conference**: ICLR 2026  
@@ -135,15 +141,16 @@ Ours ($k_+^{(D)}$) achieves the best results across **all** tasks, with improvem
 - Value: ⭐⭐⭐⭐ A practical, drop-in replacement for symmetry-aware BO.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
 - [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
+- [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
+- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
 - [\[ICLR 2026\] Globally Aware Optimization with Resurgence](globally_aware_optimization_with_resurgence.md)
-- [\[ICLR 2026\] Combinatorial Bandit Bayesian Optimization for Tensor Outputs](combinatorial_bandit_bayesian_optimization_for_tensor_outputs.md)
-- [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](../../CVPR2026/optimization/dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
 
 </div>
 

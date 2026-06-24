@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Staining and Locking Computer Vision Models without Retraining
 description: >-
-  [ICCV 2025][AI Safety][model watermarking] This paper proposes novel algorithms for *staining* (watermark embedding) and *locking* (usage protection) of pretrained vision models without any retraining or fine-tuning. Theâ€¦
+  [ICCV 2025][AI Safety][model watermarking] This paper proposes novel algorithms for *staining* (watermark embedding) and *locking* (usage protection) of pretrained vision models without any retraining or fine-tuning. The approach directly modifies a small number of weights to implant highly selective detector neurons, provides theoretically computable false positive rate guarantees, and is validated on image classification and object detection models.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "training-free"
   - "computer vision"
 date: 2026-05-08
-content_hash: ccc1ff22136d5798
+content_hash: 837833f08f4ad5bf
 ---
 
 # Staining and Locking Computer Vision Models without Retraining
@@ -138,11 +138,11 @@ No false positives were observed across all staining experiments (0/50 samples Ã
 
 ## Related Papers
 
-- [\[CVPR 2026\] A Unified Perspective on Adversarial Membership Manipulation in Vision Models](../../CVPR2026/ai_safety/a_unified_perspective_on_adversarial_membership_manipulation_in_vision_models.md)
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](../../ICLR2026/ai_safety/benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
+- [\[ICML 2025\] Retraining with Predicted Hard Labels Provably Increases Model Accuracy](../../ICML2025/ai_safety/retraining_with_predicted_hard_labels_provably_increases_model_accuracy.md)
 - [\[ICCV 2025\] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers](semantic_alignment_and_reinforcement_for_data-free_quantization_of_vision_transf.md)
-- [\[ICCV 2025\] A Framework for Double-Blind Federated Adaptation of Foundation Models](a_framework_for_doubleblind_federated_adaptation_of_foundati.md)
-- [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
-- [\[CVPR 2026\] When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models](../../CVPR2026/ai_safety/when_robots_obey_the_patch_universal_transferable_patch_attacks_on_vision-langua.md)
+- [\[ICML 2025\] A Certified Unlearning Approach without Access to Source Data](../../ICML2025/ai_safety/a_certified_unlearning_approach_without_access_to_source_data.md)
+- [\[CVPR 2026\] Unlearning without Forgetting: Securely Removing Targeted Concepts from Large-Scale Vision-Language Open-Vocabulary Detectors](../../CVPR2026/ai_safety/unlearning_without_forgetting_securely_removing_targeted_concepts_from_large-sca.md)
 
 </div>
 

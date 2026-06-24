@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Multilingual benchmark] PolyMath introduces a mathematical reasoning benchmark spanning 18 languages, 4 difficulty levels, and 500 problems…
+  [NeurIPS 2025][Reasoning][Multilingual benchmark] PolyMath introduces a mathematical reasoning benchmark spanning 18 languages, 4 difficulty levels, and 500 problems, revealing that: (1) reasoning performance varies by up to 10 points across languages; (2) reasoning models exhibit low input–output language consistency, which may affect performance; and (3) thinking length varies substantially across languages — offering new perspectives for multilingual reasoning research.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Multilingual benchmark"
   - "difficulty stratification"
   - "reasoning transfer"
   - "language consistency"
   - "thinking length"
 date: 2026-05-08
-content_hash: a0cf7b8ee0952c8f
+content_hash: e61dc84edbaa4b0a
 ---
 
 # Note 8: PolyMath — Evaluating Mathematical Reasoning in a Multilingual Context
@@ -132,7 +132,7 @@ where $w_i\in\{1, 1.5, 2.5, 4\}$ according to difficulty level, preventing easy 
 - [\[NeurIPS 2025\] Note 1: Is CoT a Hallucination? A Data Distribution Perspective](is_chain-of-thought_reasoning_of_llms_a_mirage_a_data_distribution_lens.md)
 - [\[NeurIPS 2025\] Note 7: Value-Guided Search - Efficient Chain-of-Thought Reasoning](polymath_evaluating_mathematical_reasoning_in_multilingual_contexts.md)
 - [\[NeurIPS 2025\] Note 4: WebThinker — Empowering Reasoning Models with Deep Research Capabilities](webthinker_empowering_large_reasoning_models_with_deep_research_capability.md)
-- [\[NeurIPS 2025\] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)
+- [\[NeurIPS 2025\] RealMath: A Continuous Benchmark for Evaluating Language Models on Research-Level Mathematics](realmath_a_continuous_benchmark_for_evaluating_language_models_on_research-level.md)
 
 </div>
 

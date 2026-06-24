@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps
 description: >-
-  [ICCV 2025][3D Vision][3DGS SLAM] This paper proposes S3PO-GS, a monocular RGB-only outdoor SLAM system that anchors pose estimation to 3DGS-rendered pointmaps for scale self-consistency…
+  [ICCV 2025][3D Vision][3DGS SLAM] This paper proposes S3PO-GS, a monocular RGB-only outdoor SLAM system that anchors pose estimation to 3DGS-rendered pointmaps for scale self-consistency, and employs a patch-based dynamic mapping mechanism, achieving high-accuracy localization without cumulative scale drift and high-fidelity novel view synthesis.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Pointmap"
   - "Outdoor Scenes"
 date: 2026-05-08
-content_hash: e50d0ccb3fca43ae
+content_hash: 9372fd3e0fb8dbbc
 ---
 
 # Outdoor Monocular SLAM with Global Scale-Consistent 3D Gaussian Pointmaps
@@ -155,11 +155,11 @@ Convergence iteration ablation (Waymo 405841 scene, ATE):
 
 ## Related Papers
 
+- [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](../../CVPR2026/3d_vision/sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
+- [\[CVPR 2025\] WildGS-SLAM: Monocular Gaussian Splatting SLAM in Dynamic Environments](../../CVPR2025/3d_vision/wildgs-slam_monocular_gaussian_splatting_slam_in_dynamic_environments.md)
 - [\[ICCV 2025\] Benchmarking Egocentric Visual-Inertial SLAM at City Scale](benchmarking_egocentric_visualinertial_slam_at_city_scale.md)
 - [\[ICCV 2025\] 4D Gaussian Splatting SLAM](4d_gaussian_splatting_slam.md)
 - [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
-- [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
-- [\[ICCV 2025\] Trace3D: Consistent Segmentation Lifting via Gaussian Instance Tracing](trace3d_consistent_segmentation_lifting_via_gaussian_instance_tracing.md)
 
 </div>
 

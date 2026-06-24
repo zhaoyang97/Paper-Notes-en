@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RTCFake: Speech Deepfake Detection in Real-Time Communication
 description: >-
-  [ACL 2026][Audio & Speech][EER] RTCFake constructs a ~600-hour speech deepfake detection dataset targeting real-world Real-Time Communication (RTC) platforms and proposes Phoneme-guided Consistency Learning (PCL). This method reduces the average EER of XLSR+AASIST from 7.33% (mixed training) to 5.81% across offline, online, cross-platform, and unseen
+  [ACL2026][Audio & Speech][Audio Deepfake Detection] RTCFake constructs a ~600-hour speech deepfake detection dataset targeting real-world Real-Time Communication (RTC) platforms and proposes Phoneme-guided Consistency Learning (PCL). This method reduces the average EER of XLSR+AASIST from 7.33% (mixed training) to 5.81% across offline, online, cross-platform, and unseen noise scenarios.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - EER
+  - "ACL2026"
+  - "Audio & Speech"
+  - "Audio Deepfake Detection"
+  - "Real-Time Communication"
+  - "Cross-platform Generalization"
+  - "Phoneme Consistency"
+  - "EER"
 date: 2026-05-08
-content_hash: 63fcd8d123de0257
+content_hash: 5bec2a0de60ef749
 ---
+
 # RTCFake: Speech Deepfake Detection in Real-Time Communication
 
 **Conference**: ACL2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spectrally Regularized Latent Flow Matching for Turbulence Generation
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] Replaces the common MSE-based compression VAE in latent flow matching for turbulence generation with a "partition-weighted log-spectral" objective. This specifically resolves the systematic underestimation of dissipation range magnitudes—improving spectral power retention from 25% to 94% during reconstruction and from
+  [ICML 2026][Physics & Scientific Computing][Turbulence Generation] Replaces the common MSE-based compression VAE in latent flow matching for turbulence generation with a "partition-weighted log-spectral" objective. This specifically resolves the systematic underestimation of dissipation range magnitudes—improving spectral power retention from 25% to 94% during reconstruction and from 20% to 79% during unconditional generation, breaking the quality ceiling of MSE latent spaces…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Turbulence Generation"
+  - "Latent Flow Matching"
+  - "Spectral Regularization"
+  - "VAE"
+  - "Dissipation Range"
 date: 2026-05-08
-content_hash: 5d6a80c1a2a830b0
+content_hash: 0be0ac458f6fc20c
 ---
+
 # Spectrally Regularized Latent Flow Matching for Turbulence Generation
 
 **Conference**: ICML 2026  
@@ -141,11 +147,11 @@ Spectral gains from Stage 1 translate fully to Stage 2: generation retention in 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Physics-Constrained Fine-Tuning of Flow-Matching Models for Generation and Inverse Problems](../../ICLR2026/physics/physics-constrained_fine-tuning_of_flow-matching_models_for_generation_and_inver.md)
+- [\[ICLR 2026\] Physics vs Distributions: Pareto Optimal Flow Matching with Physics Constraints](../../ICLR2026/physics/physics_vs_distributions_pareto_optimal_flow_matching_with_physics_constraints.md)
 - [\[ICML 2026\] Quantum latent distributions in deep generative models](quantum_latent_distributions_in_deep_generative_models.md)
-- [\[ICML 2026\] PINNfluence: Interpreting PINNs Through Influence Functions](pinnfluence_interpreting_pinns_through_influence_functions.md)
-- [\[ICML 2026\] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields](ballast_bayesian_active_learning_with_look-ahead_amendment_for_sea-drifter_traje.md)
-- [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](speculative_sampling_for_faster_molecular_dynamics.md)
-- [\[ICML 2026\] REX: A Family of Reversible Exponential Stochastic Runge-Kutta Solvers](rex_a_family_of_reversible_exponential_stochastic_runge-kutta_solvers.md)
+- [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](../../NeurIPS2025/physics/physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
+- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](../../NeurIPS2025/physics/high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
 
 </div>
 

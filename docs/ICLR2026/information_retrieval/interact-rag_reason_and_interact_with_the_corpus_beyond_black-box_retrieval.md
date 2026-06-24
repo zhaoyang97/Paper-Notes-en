@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Interact-RAG: Reason and Interact with the Corpus, Beyond Black-Box Retrieval
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Agentic RAG] Addressing the limitation where existing agentic RAG treats retrieval as a "black-box query" and agents can only repeatedly rephrase queries, this paper proposes Interact-RAG. By introducing a "Corpus Interaction Engine," the retrieval process is decomposed into fine-grained action primitives: multi-faceted retrieval,
+  [ICLR 2026][Information Retrieval & RAG][Agentic RAG] Addressing the limitation where existing agentic RAG treats retrieval as a "black-box query" and agents can only repeatedly rephrase queries, this paper proposes Interact-RAG. By introducing a "Corpus Interaction Engine," the retrieval process is decomposed into fine-grained action primitives: multi-faceted retrieval, entity anchoring, and context shaping. This is coupled with a "Plan-Reason-Execute" workflow for trajector…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Agentic RAG
-  - SFT+RL
-  - GRPO
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Agentic RAG"
+  - "Corpus Interaction"
+  - "Fine-grained Retrieval"
+  - "SFT+RL"
+  - "GRPO"
 date: 2026-05-08
-content_hash: d252d415fa7a5e3d
+content_hash: 722545ecf5d5534b
 ---
+
 # Interact-RAG: Reason and Interact with the Corpus, Beyond Black-Box Retrieval
 
 **Conference**: ICLR 2026  
@@ -165,7 +168,7 @@ Interaction Primitives Ablation (EM):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

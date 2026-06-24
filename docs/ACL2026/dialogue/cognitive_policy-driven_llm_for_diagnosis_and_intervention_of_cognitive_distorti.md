@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] The CoPoLLM framework is proposed, which constructs the first Emotional Support Conversation (ESC) dataset with cognitive distortion labels, CogBiasESC. By combining a Cognitive Policy Reinforcement Learning (CPRL) engine and Dual-Stream Condition Optimization (DSCO), the LLM can diagnose 8 types of cognitive distortio
+  [ACL 2026][Dialogue Systems][Emotional Support Conversation] The CoPoLLM framework is proposed, which constructs the first Emotional Support Conversation (ESC) dataset with cognitive distortion labels, CogBiasESC. By combining a Cognitive Policy Reinforcement Learning (CPRL) engine and Dual-Stream Condition Optimization (DSCO), the LLM can diagnose 8 types of cognitive distortions and generate policy-aware intervention responses, consistently outperforming 15 SOTA baselines.
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Emotional Support Conversation"
+  - "Cognitive Distortion"
+  - "Cognitive Behavioral Therapy"
+  - "Reinforcement Learning Policy"
+  - "Safety Intervention"
 date: 2026-05-08
-content_hash: 0e8f3a4aab9845ee
+content_hash: a5daeb76fe9072ed
 ---
+
 # Cognitive Policy-Driven LLM for Diagnosis and Intervention of Cognitive Distortions in Emotional Support Conversation
 
 **Conference**: ACL 2026  

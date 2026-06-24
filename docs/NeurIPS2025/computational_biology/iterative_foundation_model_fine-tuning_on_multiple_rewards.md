@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Iterative Foundation Model Fine-Tuning on Multiple Rewards
 description: >-
-  [NeurIPS 2025][Computational Biology][Multi-objective fine-tuning] This paper proposes IterativeRS (Iterative Rewarded Soups), which alternates between independent fine-tuning of per-objective expert policies and policy…
+  [NeurIPS 2025][Computational Biology][Multi-objective fine-tuning] This paper proposes IterativeRS (Iterative Rewarded Soups), which alternates between independent fine-tuning of per-objective expert policies and policy merging. The method unifies reward combination and expert merging approaches, outperforming MORLHF and Rewarded Soups on small molecule design, DNA sequence generation, and text summarization tasks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "iterative merging"
   - "Rewarded Soups"
 date: 2026-05-08
-content_hash: acbc590b88e0fb5b
+content_hash: 9ccacbcce9ebfb0f
 ---
 
 # Iterative Foundation Model Fine-Tuning on Multiple Rewards
@@ -162,10 +162,10 @@ The effect of $m$ on performance reveals a consistent pattern:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
-- [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
+- [\[ICLR 2026\] Iterative Distillation for Reward-Guided Fine-Tuning of Diffusion Models in Biomolecular Design](../../ICLR2026/computational_biology/iterative_distillation_for_reward-guided_fine-tuning_of_diffusion_models_in_biom.md)
 - [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](../../ICLR2026/computational_biology/thompson_sampling_via_fine-tuning_of_llms.md)
+- [\[NeurIPS 2025\] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model](janusdna_a_powerful_bi-directional_hybrid_dna_foundation_model.md)
 - [\[NeurIPS 2025\] Evaluating Multiple Models Using Labeled and Unlabeled Data](evaluating_multiple_models_using_labeled_and_unlabeled_data.md)
-- [\[NeurIPS 2025\] Self Iterative Label Refinement via Robust Unlabeled Learning](self_iterative_label_refinement_via_robust_unlabeled_learning.md)
 
 </div>
 

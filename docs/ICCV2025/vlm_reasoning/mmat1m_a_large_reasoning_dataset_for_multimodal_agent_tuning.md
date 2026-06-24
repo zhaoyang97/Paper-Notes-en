@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning
 description: >-
-  [ICCV 2025][Multimodal VLM][multimodal agent tuning] This paper introduces MMAT-1M, the first million-scale multimodal agent tuning dataset…
+  [ICCV 2025][VLM Reasoning][multimodal agent tuning] This paper introduces MMAT-1M, the first million-scale multimodal agent tuning dataset, constructed via a four-stage data engine (Foundation → Rationale → Reflection → Integration). It endows MLLMs with CoT reasoning, tool invocation, and self-reflection capabilities, achieving an average improvement of 2.7% on InternVL2.5-8B and 8.8% on RAG tasks.
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "multimodal agent tuning"
   - "chain-of-thought"
   - "reflection"
   - "tool usage"
   - "reasoning dataset"
 date: 2026-05-08
-content_hash: d35edf810cd5d3da
+content_hash: 43fe7928b840917b
 ---
 
 # MMAT-1M: A Large Reasoning Dataset for Multimodal Agent Tuning
@@ -137,11 +137,11 @@ RAG benchmark (Dyn-VQA, F1-Recall):
 
 ## Related Papers
 
+- [\[ACL 2025\] MAmmoTH-VL: Eliciting Multimodal Reasoning with Instruction Tuning at Scale](../../ACL2025/vlm_reasoning/mammoth_vl_multimodal_reasoning.md)
 - [\[ICCV 2025\] ToolVQA: A Dataset for Multi-step Reasoning VQA with External Tools](toolvqa_a_dataset_for_multistep_reasoning_vqa_with_external.md)
-- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
-- [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
-- [\[NeurIPS 2025\] SmartWilds: Multimodal Wildlife Monitoring Dataset](../../NeurIPS2025/multimodal_vlm/smartwilds_multimodal_wildlife_monitoring_dataset.md)
-- [\[ICCV 2025\] FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models](fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models.md)
+- [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
+- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](../../CVPR2026/vlm_reasoning/rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
+- [\[ICLR 2026\] Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks](../../ICLR2026/vlm_reasoning/agent-x_evaluating_deep_multimodal_reasoning_in_vision-centric_agentic_tasks.md)
 
 </div>
 

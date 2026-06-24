@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] The authors construct QualityPajama, a suite of 23 datasets with different quality interventions, and train 2000+ models to systematically measure how "filtering / deduplication / LLM rewriting" reshapes all five parameters of neural scaling laws. They find that data interventions simultaneously change both scaling coe
+  [ICLR 2026][LLM Pretraining][Neural Scaling Laws] The authors construct QualityPajama, a suite of 23 datasets with different quality interventions, and train 2000+ models to systematically measure how "filtering / deduplication / LLM rewriting" reshapes all five parameters of neural scaling laws. They find that data interventions simultaneously change both scaling coefficients and exponents (unlike architectural changes which mainly affect coefficients)…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Neural Scaling Laws"
+  - "Data Quality Intervention"
+  - "Compute-Optimal"
+  - "Deduplication"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: b2e8474f2c2f238e
+content_hash: 73a06ba32ae48b43
 ---
+
 # How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study
 
 **Conference**: ICLR 2026  

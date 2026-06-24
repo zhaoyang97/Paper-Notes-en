@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Residual Injection for Full-Spectrum Forensic Signal Perception in Multimodal Large Language Models
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] This paper discovers that directly fine-tuning MLLMs to learn low-level artifacts left by generators damages their early-formed semantic representations (catastrophic forgetting). To address this, the authors propose Deep-VRM, which freezes the early and middle layers to preserve semantics while utilizing a LoRA-based
+  [ICML 2026][AIGC Detection][AI-Generated Image Detection] This paper discovers that directly fine-tuning MLLMs to learn low-level artifacts left by generators damages their early-formed semantic representations (catastrophic forgetting). To address this, the authors propose Deep-VRM, which freezes the early and middle layers to preserve semantics while utilizing a LoRA-based bypass to "residually inject" artifact features into the deep layers of the LLM. This allows a single…
 tags:
-  - ICML 2026
-  - AIGC Detection
+  - "ICML 2026"
+  - "AIGC Detection"
+  - "AI-Generated Image Detection"
+  - "Multimodal Large Language Models"
+  - "Residual Injection"
+  - "Catastrophic Forgetting"
+  - "Layer-wise Analysis"
 date: 2026-05-08
-content_hash: a500944e112ecb57
+content_hash: 60a20f27d94b08fe
 ---
+
 # Deep Residual Injection for Full-Spectrum Forensic Signal Perception in Multimodal Large Language Models
 
 **Conference**: ICML 2026  
@@ -127,8 +133,8 @@ On 8 generator subsets of GenImage, Deep-VRM significantly leads the previous be
 - [\[ICML 2026\] Generating Robust Portfolios of Optimization Models using Large Language Models](generating_robust_portfolios_of_optimization_models_using_large_language_models.md)
 - [\[ICML 2026\] ForensicConcept: Transferable Forensic Concepts for AIGI Detection](forensicconcept_transferable_forensic_concepts_for_aigi_detection.md)
 - [\[ICML 2026\] CORE: Conflict-Oriented Reasoning for General Multimodal Manipulation Detection](core_conflict-oriented_reasoning_for_general_multimodal_manipulation_detection.md)
-- [\[CVPR 2026\] Inconsistency-aware Multimodal Schrodinger Bridge for Deepfake Localization](../../CVPR2026/aigc_detection/inconsistency-aware_multimodal_schrodinger_bridge_for_deepfake_localization.md)
-- [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](../../ACL2026/aigc_detection/aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
+- [\[ICML 2026\] Dissect and Prune: Enhancing Robustness in AI-Generated Image Detection](dissect_and_prune_enhancing_robustness_in_ai-generated_image_detection.md)
+- [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 
 </div>
 

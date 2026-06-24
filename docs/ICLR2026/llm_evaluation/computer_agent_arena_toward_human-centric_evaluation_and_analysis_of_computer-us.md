@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents
 description: >-
-  [ICLR 2026][LLM Evaluation][Bradley-Terry] The "human blind voting + Elo ranking" paradigm from Chatbot Arena is ported to Computer-Use Agents (CUA): two anonymous CUAs execute user-provided tasks in parallel within real cloud desktop environments. Users provide pairwise preference votes on execution trajectories, revealing ranking flips and behavioral-level er
+  [ICLR 2026][LLM Evaluation][Computer-Use Agent] The "human blind voting + Elo ranking" paradigm from Chatbot Arena is ported to Computer-Use Agents (CUA): two anonymous CUAs execute user-provided tasks in parallel within real cloud desktop environments. Users provide pairwise preference votes on execution trajectories, revealing ranking flips and behavioral-level errors that static benchmarks (e.g., OSWorld) fail to detect.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Bradley-Terry
-  - OSWorld
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Computer-Use Agent"
+  - "Human Preference Evaluation"
+  - "Elo Leaderboard"
+  - "Bradley-Terry"
+  - "Error Analysis"
+  - "OSWorld"
 date: 2026-05-08
-content_hash: 3dd611ea296b89eb
+content_hash: 8aa517f80d0f8136
 ---
+
 # Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents
 
 **Conference**: ICLR 2026  

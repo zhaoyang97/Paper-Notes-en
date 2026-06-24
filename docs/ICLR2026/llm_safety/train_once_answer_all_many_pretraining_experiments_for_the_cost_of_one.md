@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Train Once, Answer All: Many Pretraining Experiments for the Cost of One
 description: >-
-  [ICLR 2026][LLM Safety][Pretraining Experiments] This paper proposes a methodological framework to conduct multiple independent experiments simultaneously within a single LLM pretraining run. By training a 2.7B parameter model (210B tokens) with 10 concurrent experiments, the authors successfully replicated findings from five previous works and conducted three new ex
+  [ICLR 2026][LLM Safety][Pretraining Experiments] This paper proposes a methodological framework to conduct multiple independent experiments simultaneously within a single LLM pretraining run. By training a 2.7B parameter model (210B tokens) with 10 concurrent experiments, the authors successfully replicated findings from five previous works and conducted three new experiments. They also introduced Continual Pretraining Dependence Testing (CPDT) to verify the independence betw…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Pretraining Experiments
-  - LLM
-  - Experiment Independence
-  - Continual Pretraining
-  - Data Contamination
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Pretraining Experiments"
+  - "LLM"
+  - "Experiment Independence"
+  - "Continual Pretraining"
+  - "Data Contamination"
 date: 2026-05-08
-content_hash: ae981b74d92dcd12
+content_hash: 04a09a6a608de18d
 ---
+
 # Train Once, Answer All: Many Pretraining Experiments for the Cost of One
 
 **Conference**: ICLR 2026  
@@ -159,8 +160,8 @@ Impact on Training Dynamics:
 - [\[CVPR 2025\] Towards All-in-One Medical Image Re-Identification](../../CVPR2025/llm_safety/towards_all-in-one_medical_image_re-identification.md)
 - [\[ICLR 2026\] Attention Smoothing Is All You Need For Unlearning](attention_smoothing_is_all_you_need_for_unlearning.md)
 - [\[ICLR 2026\] When Priors Backfire: On the Vulnerability of Unlearnable Examples to Pretraining](when_priors_backfire_on_the_vulnerability_of_unlearnable_examples_to_pretraining.md)
-- [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 - [\[ICLR 2026\] All Code, No Thought: Language Models Struggle to Reason in Ciphered Language](all_code_no_thought_language_models_struggle_to_reason_in_ciphered_language.md)
+- [\[ICLR 2026\] Heterogeneous Federated Fine-Tuning with Parallel One-Rank Adaptation](heterogeneous_federated_fine-tuning_with_parallel_one-rank_adaptation.md)
 
 </div>
 

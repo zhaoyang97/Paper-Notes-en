@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI
 description: >-
-  [ACL 2026][Dialogue Systems][Property Graph] The proposed system constructs long-term conversational memory using a trio of "domain-agnostic ontology-supported property graphs + append-only event storage + ReAct multi-tool retrieval agents." By never overwriting during construction and resolving temporal conflicts only at retrieval, it achieves 88.88% on LOCOMO (
+  [ACL 2026][Dialogue Systems][Property Graph] The proposed system constructs long-term conversational memory using a trio of "domain-agnostic ontology-supported property graphs + append-only event storage + ReAct multi-tool retrieval agents." By never overwriting during construction and resolving temporal conflicts only at retrieval, it achieves 88.88% on LOCOMO (3.5% higher than MIRIX) and 86.2% on LongMemEval (13.7% higher than the strongest RAG baseline).
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Property Graph
-  - Append-Only Storage
-  - Temporal Reasoning
-  - ReAct Agent
-  - GraphSQL
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Property Graph"
+  - "Append-Only Storage"
+  - "Temporal Reasoning"
+  - "ReAct Agent"
+  - "GraphSQL"
 date: 2026-05-08
-content_hash: 2a328adb71cf62ea
+content_hash: 6c2dc02953984654
 ---
+
 # APEX-MEM: Agentic Semi-Structured Memory with Temporal Reasoning for Long-Term Conversational AI
 
 **Conference**: ACL 2026  

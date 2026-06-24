@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CARD: Towards Conditional Design of Multi-agent Topological Structures
 description: >-
-  [ICLR 2026][Code Intelligence][Paper Note] CARD proposes a conditional graph generation framework (Conditional Agentic Graph Designer) that utilizes a conditional variational graph encoder and environment-aware optimization to adaptively design multi-agent communication topologies based on dynamic environmental signals—such as model capabilities, tool availabil
+  [ICLR 2026][Code Intelligence][Multi-agent communication topology] CARD proposes a conditional graph generation framework (Conditional Agentic Graph Designer) that utilizes a conditional variational graph encoder and environment-aware optimization to adaptively design multi-agent communication topologies based on dynamic environmental signals—such as model capabilities, tool availability, and knowledge source changes—consistently outperforming static and prompt-based baseline…
 tags:
-  - ICLR 2026
-  - Code Intelligence
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Multi-agent communication topology"
+  - "conditional graph generation"
+  - "graph neural networks"
+  - "dynamic environmental signals"
+  - "agent collaboration"
 date: 2026-05-08
-content_hash: 5e3425890ad6130b
+content_hash: 1702719747a2f72e
 ---
+
 # CARD: Towards Conditional Design of Multi-agent Topological Structures
 
 **Conference**: ICLR 2026  
@@ -137,7 +143,7 @@ CARD achieved the highest average scores across all benchmarks and secured the t
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
+- [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
 - [\[ICLR 2026\] WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning](webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md)
 - [\[ICML 2026\] How can we assess human-agent interactions? Case studies in software agent design](../../ICML2026/code_intelligence/how_can_we_assess_human-agent_interactions_case_studies_in_software_agent_design.md)
 - [\[ICLR 2026\] LLM-Guided Evolutionary Program Synthesis for Quasi-Monte Carlo Design](llm-guided_evolutionary_program_synthesis_for_quasi-monte_carlo_design.md)

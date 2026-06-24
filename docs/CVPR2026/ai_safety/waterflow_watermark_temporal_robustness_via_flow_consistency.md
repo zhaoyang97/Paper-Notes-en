@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WaTeRFlow: Watermark Temporal Robustness via Flow Consistency
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] WaTeRFlow enables high-accuracy watermark decoding from video frames even after an image undergoes "Image-to-Video (I2V)" translation. This is achieved via a FUSE module that integrates an image editing proxy, a fast video diffusion proxy, and optical flow alignment into the encoder-decoder training loop. Combined with
+  [CVPR 2026][AI Safety][Image Watermarking] WaTeRFlow enables high-accuracy watermark decoding from video frames even after an image undergoes "Image-to-Video (I2V)" translation. This is achieved via a FUSE module that integrates an image editing proxy, a fast video diffusion proxy, and optical flow alignment into the encoder-decoder training loop. Combined with temporal consistency and semantic preservation losses, it improves the average bit accuracy on SVD-XT from VINE's 73…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Image Watermarking"
+  - "Image-to-Video (I2V)"
+  - "Optical Flow Consistency"
+  - "Provenance Verification"
+  - "Temporal Robustness"
 date: 2026-05-08
-content_hash: ea4b44609ec64440
+content_hash: 01a755d1c880c8e7
 ---
+
 # WaTeRFlow: Watermark Temporal Robustness via Flow Consistency
 
 **Conference**: CVPR 2026  
@@ -169,7 +175,7 @@ WaTeRFlow outperforms VINE by ~11 percentage points under pure I2V and maintains
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
 - [\[CVPR 2026\] AdvFM: Lookahead Flow-Matching Velocity-Field Attacks for Imperceptible and Transferable Adversarial Examples](advfm_lookahead_flow-matching_velocity-field_attacks_for_imperceptible_and_trans.md)
 - [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
-- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
+- [\[CVPR 2026\] SafeRoPE: Risk-specific Head-wise Embedding Rotation for Safe Generation in Rectified Flow Transformers](saferope_risk-specific_head-wise_embedding_rotation_for_safe_generation_in_recti.md)
 
 </div>
 

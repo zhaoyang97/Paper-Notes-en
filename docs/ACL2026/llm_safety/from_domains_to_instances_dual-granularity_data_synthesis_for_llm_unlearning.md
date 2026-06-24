@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper formally defines domain-level and instance-level granularities for LLM unlearning and proposes the BiForget framework. BiForget utilizes the target model itself (rather than external strong models) to generate high-quality unlearning datasets through two stages: seed-guided synthesis and adversarial probing.
+  [ACL 2026 Findings][LLM Safety][Machine Unlearning] This paper formally defines domain-level and instance-level granularities for LLM unlearning and proposes the BiForget framework. BiForget utilizes the target model itself (rather than external strong models) to generate high-quality unlearning datasets through two stages: seed-guided synthesis and adversarial probing. In the Harry Potter domain, it improves relevance by ~20 and diversity by ~0.05 while halving the data volu…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Unlearning Data Synthesis"
+  - "Domain-level Unlearning"
+  - "Instance-level Unlearning"
+  - "Adversarial Probing"
 date: 2026-05-08
-content_hash: fa845425c1ea3b51
+content_hash: 9fcfc8d8ceab4d6b
 ---
+
 # From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning
 
 **Conference**: ACL 2026 Findings  
@@ -145,11 +151,11 @@ BiForget is a data synthesis framework and does not involve model training direc
 
 ## Related Papers
 
+- [\[ICLR 2026\] Dual-Space Smoothness for Robust and Balanced LLM Unlearning](../../ICLR2026/llm_safety/dual-space_smoothness_for_robust_and_balanced_llm_unlearning.md)
 - [\[ACL 2026\] Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)
 - [\[ICLR 2026\] ExpGuard: LLM Content Moderation in Specialized Domains](../../ICLR2026/llm_safety/expguard_llm_content_moderation_in_specialized_domains.md)
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](../../ICLR2026/llm_safety/waterdrum_watermark-based_data-centric_unlearning_metric.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
-- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](../../ICLR2026/llm_safety/revisiting_the_past_data_unlearning_with_model_state_history.md)
-- [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](../../NeurIPS2025/llm_safety/unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
 
 </div>
 

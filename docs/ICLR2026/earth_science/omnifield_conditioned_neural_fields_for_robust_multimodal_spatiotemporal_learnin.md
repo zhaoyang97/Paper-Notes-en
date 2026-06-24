@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning
 description: >-
-  [ICLR 2026][Earth Science][Paper Note] OmniField models "scientific observation data" (climate, air pollution) as a **continuous neural field conditioned on available modalities**. Utilizing Multimodal Crosstalk (MCT) blocks and Iterative Cross-Modal Refinement (ICMR), it aligns heterogeneous signals before decoding. This unified framework supports reconstr
+  [ICLR 2026][Earth Science][Conditioned Neural Fields] OmniField models "scientific observation data" (climate, air pollution) as a **continuous neural field conditioned on available modalities**. Utilizing Multimodal Crosstalk (MCT) blocks and Iterative Cross-Modal Refinement (ICMR), it aligns heterogeneous signals before decoding. This unified framework supports reconstruction, interpolation, and prediction without gridding or interpolation preprocessing…
 tags:
-  - ICLR 2026
-  - Earth Science
+  - "ICLR 2026"
+  - "Earth Science"
+  - "Conditioned Neural Fields"
+  - "Multimodal Fusion"
+  - "Spatiotemporal Prediction"
+  - "Sensor Sparsity"
+  - "Noise Robustness"
 date: 2026-05-08
-content_hash: e758e78548a7c1ec
+content_hash: a97582feebf493f9
 ---
+
 # OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning
 
 **Conference**: ICLR 2026  
@@ -147,10 +153,10 @@ Component-wise ablation on ClimSim-LHW (relative error in parentheses, closer to
 ## Related Papers
 
 - [\[ICLR 2026\] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours](rainpro-8_an_efficient_deep_learning_model_to_estimate_rainfall_probabilities_ov.md)
+- [\[ICLR 2026\] Uncovering the Mechanism of Continuous Representation Full Waveform Inversion: A Wave-based Neural Tangent Kernel Framework](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
 - [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
 - [\[ICLR 2026\] The Seismic Wavefield Common Task Framework](the_seismic_wavefield_common_task_framework.md)
-- [\[ICLR 2026\] TianQuan-S2S：通过引入气候态构建次季节-季节全球天气预报模型](tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
-- [\[ICLR 2026\] 揭示连续表示全波形反演的机制：一个基于波的神经正切核框架](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
 
 </div>
 

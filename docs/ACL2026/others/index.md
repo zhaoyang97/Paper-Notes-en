@@ -25,7 +25,7 @@ item_total: 4
 
 **💬 ACL2026** · **4** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (116)](../../ICLR2026/others/index.md) · [🧪 ICML2026 (70)](../../ICML2026/others/index.md) · [🤖 AAAI2026 (117)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (33)](../../ICCV2025/others/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (105)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (116)](../../ICLR2026/others/index.md) · [🧪 ICML2026 (70)](../../ICML2026/others/index.md) · [🤖 AAAI2026 (117)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (121)](../../NeurIPS2025/others/index.md) · [📹 ICCV2025 (33)](../../ICCV2025/others/index.md)
 
 **[Automated Knowledge Component Generation and Interpretable Knowledge Tracing in Coding Problems](automated_knowledge_component_generation_for_interpretable_knowledge_tracing_in_.md)**
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Relightable Holoported Characters: Capturing and Relighting Dynamic Human Performance from Sparse Views
 description: >-
-  [CVPR 2026][Human Understanding][Light Stage] RHC utilizes a transformer network, RelightNet, to perform cross-attention between "physics-inspired features (geometry/albedo/shading/view)" and environment lighting to implicitly solve the rendering equation in a **single forward pass**. It enables photo-realistic, free-viewpoint relighting of dynamic full-body chara
+  [CVPR 2026][3D Vision][Full-body Relighting] RHC utilizes a transformer network, RelightNet, to perform cross-attention between "physics-inspired features (geometry/albedo/shading/view)" and environment lighting to implicitly solve the rendering equation in a **single forward pass**. It enables photo-realistic, free-viewpoint relighting of dynamic full-body characters with unseen motions from just 4 flat-lit cameras—avoiding slow OLAT-based acquisition and achieving significa…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Light Stage
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Full-body Relighting"
+  - "Sparse Views"
+  - "3D Gaussian"
+  - "Rendering Equation"
+  - "Light Stage"
 date: 2026-05-08
-content_hash: 4e83fd67f59fa7c4
+content_hash: e4203f50adb5d8bf
 ---
+
 # Relightable Holoported Characters: Capturing and Relighting Dynamic Human Performance from Sparse Views
 
 **Conference**: CVPR 2026  
@@ -127,16 +132,16 @@ RHC leads across almost all subjects and metrics. Note that inverse rendering me
 - Value: ⭐⭐⭐⭐⭐ The first method to achieve sparse-view, unseen-motion, single-pass full-body relighting.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ECCV 2024\] 3DFG-PIFu: 3D Feature Grids for Human Digitization from Sparse Views](../../ECCV2024/human_understanding/3dfg-pifu_3d_feature_grids_for_human_digitization_from_sparse_views.md)
-- [\[CVPR 2026\] FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition](fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio.md)
-- [\[CVPR 2026\] FisherPoser: Human Motion Estimation from Sparse Observations with Hierarchical Region-Wise Fisher-Matrix Uncertainty Modeling](fisherposer_human_motion_estimation_from_sparse_observations_with_hierarchical_r.md)
-- [\[CVPR 2026\] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)
-- [\[CVPR 2026\] Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)
+- [\[CVPR 2026\] PhysHO: Physics-Based Dynamic 3D Gaussian Human and Object from Monocular Video](physho_physics-based_dynamic_3d_gaussian_human_and_object_from_monocular_video.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
+- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](../../NeurIPS2025/3d_vision/rogr_relightable_3d_objects_using_generative_relighting.md)
+- [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
+- [\[CVPR 2026\] LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)
 
 </div>
 

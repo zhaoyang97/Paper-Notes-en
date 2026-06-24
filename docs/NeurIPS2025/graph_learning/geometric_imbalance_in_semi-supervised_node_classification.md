@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Geometric Imbalance in Semi-Supervised Node Classification
 description: >-
-  [NeurIPS 2025][Graph Learning][geometric imbalance] This work formally introduces the concept of "geometric imbalance" in semi-supervised node classification for the first time—showing that message passing on class-imbal…
+  [NeurIPS 2025][Graph Learning][geometric imbalance] This work formally introduces the concept of "geometric imbalance" in semi-supervised node classification for the first time—showing that message passing on class-imbalanced graphs causes minority-class nodes to exhibit geometric ambiguity in Riemannian manifold embedding spaces—and proposes the UNREAL framework to systematically address this issue via three modules: dual-path pseudo-label alignment, node reordering…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -13,7 +13,7 @@ tags:
   - "GNN"
   - "Riemannian manifold"
 date: 2026-05-08
-content_hash: 906fa23e39cb51a6
+content_hash: 25affcf6d31c79e4
 ---
 
 # Geometric Imbalance in Semi-Supervised Node Classification
@@ -150,11 +150,11 @@ Using Cora + GCN (ρ=10) as example:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](../../ICLR2026/graph_learning/forest-based_graph_learning_for_semi-supervised_node_classification.md)
 - [\[NeurIPS 2025\] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning](uncertain_knowledge_graph_completion_via_semi-supervised_confidence_distribution.md)
-- [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](../../AAAI2026/graph_learning/posterior_label_smoothing_for_node_classification.md)
-- [\[AAAI 2026\] Beyond Fixed Depth: Adaptive Graph Neural Networks for Node Classification Under Varying Homophily](../../AAAI2026/graph_learning/beyond_fixed_depth_adaptive_graph_neural_networks_for_node_classification_under_.md)
 - [\[NeurIPS 2025\] Solar-GECO: Perovskite Solar Cell Property Prediction with Geometric-Aware Co-Attention](solar-geco_perovskite_solar_cell_property_prediction_with_geometric-aware_co-att.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
+- [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
 
 </div>
 

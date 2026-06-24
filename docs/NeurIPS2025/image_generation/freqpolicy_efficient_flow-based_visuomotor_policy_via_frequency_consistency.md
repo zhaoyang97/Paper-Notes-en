@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency
 description: >-
-  [NeurIPS 2025][Image Generation][flow matching] This work is the first to introduce frequency-domain consistency constraints into flow-based visuomotor policies. By projecting action chunk velocity fields into the freque…
+  [NeurIPS 2025][Image Generation][flow matching] This work is the first to introduce frequency-domain consistency constraints into flow-based visuomotor policies. By projecting action chunk velocity fields into the frequency domain via DCT and imposing an adaptive frequency component loss, it achieves high-quality one-step action generation at 93.5 Hz, outperforming existing one-step generation methods on both simulation and real-robot tasks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "frequency consistency"
   - "robotic manipulation"
 date: 2026-05-08
-content_hash: 117c01251d654f4b
+content_hash: 4900bac87131ff83
 ---
 
 # FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Overfitting in Adaptive Robust Optimization
 description: >-
-  [NeurIPS 2025 (Workshop: MLxOR)][Adaptive Robust Optimization] This paper establishes an analogy between policy fragility in Adaptive Robust Optimization (ARO) and overfitting in machine learning: adaptive policies perfo…
+  [NeurIPS 2025 (Workshop: MLxOR)][Adaptive Robust Optimization] This paper establishes an analogy between policy fragility in Adaptive Robust Optimization (ARO) and overfitting in machine learning: adaptive policies perform well within the uncertainty set but may fail outside it. The paper proposes constraint-specific uncertainty set sizing as a "regularization" mechanism to balance robustness and adaptability.
 tags:
   - "NeurIPS 2025 (Workshop: MLxOR)"
   - "Adaptive Robust Optimization"
@@ -11,7 +11,7 @@ tags:
   - "Uncertainty Set"
   - "Affine Decision Rules"
 date: 2026-05-08
-content_hash: fe158df255023ca8
+content_hash: 89b0ce9f26f27641
 ---
 
 # Overfitting in Adaptive Robust Optimization
@@ -164,11 +164,11 @@ Under Gaussian assumptions, the probabilistic bound is tighter, permitting great
 
 ## Related Papers
 
-- [\[ICML 2026\] Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate](../../ICML2026/others/theoretical_analysis_of_sparse_optimization_with_reparameterization_weight_decay.md)
+- [\[ACL 2025\] How to Mitigate Overfitting in Weak-to-Strong Generalization?](../../ACL2025/others/how_to_mitigate_overfitting_in_weak-to-strong_generalization.md)
+- [\[ICLR 2026\] Robust Equation Structure Learning with Adaptive Refinement (RESTART)](../../ICLR2026/others/robust_equation_structure_learning_with_adaptive_refinement.md)
 - [\[NeurIPS 2025\] Distributionally Robust Feature Selection](distributionally_robust_feature_selection.md)
+- [\[ICML 2026\] Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate](../../ICML2026/others/theoretical_analysis_of_sparse_optimization_with_reparameterization_weight_decay.md)
 - [\[NeurIPS 2025\] Robust Sampling for Active Statistical Inference](robust_sampling_for_active_statistical_inference.md)
-- [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
-- [\[NeurIPS 2025\] MutualVPR: A Mutual Learning Framework for Resolving Supervision Inconsistencies via Adaptive Clustering](mutualvpr_a_mutual_learning_framework_for_resolving_supervision_inconsistencies_.md)
 
 </div>
 

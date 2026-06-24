@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Revisiting Multimodal Positional Encoding in Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][RoPE] This paper systematically deconstructs the two pillars of multimodal RoPE—"position design" and "frequency allocation"—distilling three criteria: position consistency, full-spectrum utilization, and preserving text priors. Based on these, the authors propose the architecture-free spatial-reset position design along wit
+  [ICLR 2026][Multimodal VLM][Multimodal Positional Encoding] This paper systematically deconstructs the two pillars of multimodal RoPE—"position design" and "frequency allocation"—distilling three criteria: position consistency, full-spectrum utilization, and preserving text priors. Based on these, the authors propose the architecture-free spatial-reset position design along with two frequency allocation variants, MHRoPE and MRoPE-I, which consistently outperform existing RoPE…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - RoPE
-  - MRoPE
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Positional Encoding"
+  - "RoPE"
+  - "MRoPE"
+  - "Frequency Allocation"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: f2805d497c54d247
+content_hash: 3d4d64a72790f9c6
 ---
+
 # Revisiting Multimodal Positional Encoding in Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -136,9 +140,9 @@ Frequency allocation ablation (fixed design to spatial-reset, Table 5): Interlea
 
 - [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](../../CVPR2026/multimodal_vlm/modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
 - [\[ICML 2026\] Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models](../../ICML2026/multimodal_vlm/circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan.md)
-- [\[CVPR 2025\] FastVLM: Efficient Vision Encoding for Vision Language Models](../../CVPR2025/multimodal_vlm/fastvlm_efficient_vision_encoding_for_vision_language_models.md)
-- [\[ECCV 2024\] BRAVE: Broadening the Visual Encoding of Vision-Language Models](../../ECCV2024/multimodal_vlm/brave_broadening_the_visual_encoding_of_vision-language_models.md)
-- [\[ICLR 2026\] Pay Less Attention to Function Words for Free Robustness of Vision-Language Models](pay_less_attention_to_function_words_for_free_robustness_of_vision-language_mode.md)
+- [\[ICLR 2026\] Revisiting Confidence Calibration for Misclassification Detection in VLMs](revisiting_confidence_calibration_for_misclassification_detection_in_vlms.md)
+- [\[ICLR 2026\] Post-hoc Probabilistic Vision-Language Models](post-hoc_probabilistic_vision-language_models.md)
+- [\[ICLR 2026\] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models](seeing_through_deception_uncovering_misleading_creator_intent_in_multimodal_news.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding
 description: >-
-  [ACL 2026][Code Intelligence][Lost-in-the-Middle] This paper proposes a distinction between lexical recall (verbatim retrieval of code) and semantic recall (understanding code execution semantics). It finds that frontier LLMs achieve near-perfect lexical recall in long contexts but suffer from severe degradation in semantic recall. The introduced SemTrace benchmark re
+  [ACL 2026][Code Intelligence][Semantic Recall] This paper proposes a distinction between lexical recall (verbatim retrieval of code) and semantic recall (understanding code execution semantics). It finds that frontier LLMs achieve near-perfect lexical recall in long contexts but suffer from severe degradation in semantic recall. The introduced SemTrace benchmark reveals that existing evaluations significantly underestimate the extent of semantic understanding failures.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Lost-in-the-Middle
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Semantic Recall"
+  - "Lexical Recall"
+  - "Long Context"
+  - "Code Understanding"
+  - "Lost-in-the-Middle"
 date: 2026-05-08
-content_hash: a511a03bf0e01cdc
+content_hash: 5c9b9bacbe367da5
 ---
+
 # Sense and Sensitivity: Examining the Influence of Semantic Recall on Long Context Code Understanding
 
 **Conference**: ACL 2026  
@@ -112,9 +117,9 @@ To clearly observe the distinct effects of position on both recall types, target
 
 - [\[ACL 2025\] LongCodeU: Benchmarking Long-Context Language Models on Long Code Understanding](../../ACL2025/code_intelligence/benchmarking_long-context_language_models_on_long_code_understanding.md)
 - [\[ACL 2026\] DeepGuard: Secure Code Generation via Multi-Layer Semantic Aggregation](deepguard_secure_code_generation_via_multi-layer_semantic_aggregation.md)
-- [\[ICLR 2026\] The Limits of Long-Context Reasoning in Automated Bug Fixing](../../ICLR2026/code_intelligence/the_limits_of_long-context_reasoning_in_automated_bug_fixing.md)
 - [\[ACL 2026\] CuBridge: An LLM-Based Framework for Understanding and Reconstructing High-Performance Attention Kernels](cubridge_an_llm-based_framework_for_understanding_and_reconstructing_high-perfor.md)
-- [\[ACL 2026\] QAQ: Bidirectional Semantic Coherence for Selecting High-Quality Synthetic Code Instructions](qaq_bidirectional_semantic_coherence_for_selecting_high-quality_synthetic_code_i.md)
+- [\[ACL 2026\] RepoShapley: Shapley-Enhanced Context Filtering for Repository-Level Code Completion](reposhapley_shapley-enhanced_context_filtering_for_repository-level_code_complet.md)
+- [\[ACL 2026\] CreativeBench: Benchmarking and Enhancing Machine Creativity via Self-Evolving Challenges](creativebench_benchmarking_and_enhancing_machine_creativity_via_self-evolving_ch.md)
 
 </div>
 

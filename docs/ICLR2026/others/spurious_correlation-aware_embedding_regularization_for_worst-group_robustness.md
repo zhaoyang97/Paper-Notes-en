@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness
 description: >-
-  [ICLR 2026][Others][GroupDRO] SCER provides the first theoretical decomposition of "worst-group error = classifier dependence on spurious directions − dependence on core directions." Based on this, a regularization term is added directly in the embedding space to suppress the alignment of classifier weights with "spurious directions" and enhance al
+  [ICLR 2026][Spurious correlation] SCER provides the first theoretical decomposition of "worst-group error = classifier dependence on spurious directions − dependence on core directions." Based on this, a regularization term is added directly in the embedding space to suppress the alignment of classifier weights with "spurious directions" and enhance alignment with "core directions," achieving SOTA worst-group accuracy across six benchmarks: Waterbirds, CelebA, MetaShift…
 tags:
-  - ICLR 2026
-  - Others
-  - GroupDRO
+  - "ICLR 2026"
+  - "Spurious correlation"
+  - "Worst-group accuracy"
+  - "Embedding regularization"
+  - "Subpopulation shift"
+  - "GroupDRO"
 date: 2026-05-08
-content_hash: 63b1b39342aa32ae
+content_hash: 25d34dbdb345881a
 ---
+
 # Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness
 
 **Conference**: ICLR 2026  
@@ -150,7 +154,7 @@ SCER takes first place in worst-group accuracy across all six benchmarks while m
 - [\[ICLR 2026\] Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations](regulating_internal_alignment_flows_for_robust_learning_under_spurious_correlati.md)
 - [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
 - [\[AAAI 2026\] DECOR: Deep Embedding Clustering with Orientation Robustness](../../AAAI2026/others/decor_deep_embedding_clustering_with_orientation_robustness.md)
-- [\[ICLR 2026\] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction](a_scalable_inter-edge_correlation_modeling_in_copulagnn_for_link_sign_prediction.md)
+- [\[ICLR 2026\] A Single Architecture for Representing Invariance Under Any Space Group](a_single_architecture_for_representing_invariance_under_any_space_group.md)
 
 </div>
 

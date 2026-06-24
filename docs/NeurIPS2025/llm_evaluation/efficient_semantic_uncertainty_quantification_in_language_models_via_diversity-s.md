@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling
 description: >-
-  [NeurIPS 2025][LLM Evaluation][semantic uncertainty] This paper proposes a diversity-steered sampling framework that injects NLI-based semantic similarity penalties during decoding to encourage semantically diverse gener…
+  [NeurIPS 2025][LLM Evaluation][semantic uncertainty] This paper proposes a diversity-steered sampling framework that injects NLI-based semantic similarity penalties during decoding to encourage semantically diverse generation, and corrects distributional bias via importance weighting with control variates to reduce variance. The method accurately estimates semantic entropy (aleatoric uncertainty) and mutual information (epistemic uncertainty) of LLMs using as few as 16 sample…
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "NLI"
   - "language models"
 date: 2026-05-08
-content_hash: 9c732a7486a0a6e5
+content_hash: ffc2740a6f3b2aaf
 ---
 
 # Efficient Semantic Uncertainty Quantification in Language Models via Diversity-Steered Sampling
@@ -139,11 +139,11 @@ AUROC for semantic entropy estimation with $N=16$ samples on 4 QA benchmarks (co
 
 ## Related Papers
 
+- [\[ACL 2025\] Benchmarking Uncertainty Quantification Methods for Large Language Models with LM-Polygraph](../../ACL2025/llm_evaluation/benchmarking_uncertainty_quantification_methods_for_large_language_models_with_l.md)
 - [\[NeurIPS 2025\] AdaSTaR: Adaptive Data Sampling for Training Self-Taught Reasoners](adastar_adaptive_data_sampling_for_training_self-taught_reasoners.md)
+- [\[ICLR 2026\] Complementing Self-Consistency with Cross-Model Disagreement for Uncertainty Quantification](../../ICLR2026/llm_evaluation/complementing_self-consistency_with_cross-model_disagreement_for_uncertainty_qua.md)
 - [\[NeurIPS 2025\] HybridNorm: Towards Stable and Efficient Transformer Training via Hybrid Normalization](hybridnorm_towards_stable_and_efficient_transformer_training_via_hybrid_normaliz.md)
 - [\[NeurIPS 2025\] On the Entropy Calibration of Language Models](on_the_entropy_calibration_of_language_models.md)
-- [\[ICML 2026\] DEI: Diversity in Evolutionary Inference for Quality-Diversity Search](../../ICML2026/llm_evaluation/dei_diversity_in_evolutionary_inference_for_quality-diversity_search.md)
-- [\[ACL 2026\] Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models](../../ACL2026/llm_evaluation/revisiting_a_pain_in_the_neck_a_semantic_reasoning_benchmark_for_language_models.md)
 
 </div>
 

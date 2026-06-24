@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Multi-Image Understanding through Delimiter Token Scaling
 description: >-
-  [ICLR 2026][Multimodal VLM][Attention] By scaling the hidden states of image delimiter tokens in vision-language models, the ability to isolate information between images is enhanced. This achieves performance gains across multi-image (Mantis/MuirBench/MIRB/QBench2) and multi-document/multi-table (TQABench/MultiNews/WCEP-10) benchmarks without any additiona
+  [ICLR 2026][Multimodal VLM][Multi-image understanding] By scaling the hidden states of image delimiter tokens in vision-language models, the ability to isolate information between images is enhanced. This achieves performance gains across multi-image (Mantis/MuirBench/MIRB/QBench2) and multi-document/multi-table (TQABench/MultiNews/WCEP-10) benchmarks without any additional training or inference costs.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Attention
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multi-image understanding"
+  - "Large Vision-Language Models"
+  - "Delimiter tokens"
+  - "Cross-image information leakage"
+  - "Attention mechanism"
 date: 2026-05-08
-content_hash: 993fe8aa7306eb23
+content_hash: 00ff8c0570acd6c0
 ---
+
 # Enhancing Multi-Image Understanding through Delimiter Token Scaling
 
 **Conference**: ICLR 2026  
@@ -124,8 +129,8 @@ Additionally, the method's effectiveness was verified on text-only tasks requiri
 
 ## Related Papers
 
-- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
 - [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
+- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
 - [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
 - [\[ICLR 2026\] MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence](mmsi-bench_a_benchmark_for_multi-image_spatial_intelligence.md)
 - [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)

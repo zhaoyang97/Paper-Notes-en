@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] GUDA reformulates "group-wise training data attribution" as a counterfactual question: "How much would the model's log-likelihood for a given sample drop if a specific group were absent during training?" It uses machine unlearning to "erase a group" from the full model to approximate the counterfactual model obtained v
+  [ICML 2026][Image Generation][Training Data Attribution] GUDA reformulates "group-wise training data attribution" as a counterfactual question: "How much would the model's log-likelihood for a given sample drop if a specific group were absent during training?" It uses machine unlearning to "erase a group" from the full model to approximate the counterfactual model obtained via Leave-One-Group-Out (LOGO) retraining. Using the difference in ELBO as the attribution score…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Training Data Attribution"
+  - "Counterfactual"
+  - "Group-wise Attribution"
+  - "Machine Unlearning"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 9e94aabc2892a59d
+content_hash: 7eba0e61e8926c4d
 ---
+
 # GUDA: Counterfactual Group-wise Training Data Attribution for Diffusion Models via Unlearning
 
 **Conference**: ICML 2026  
@@ -155,9 +160,9 @@ UnlearnCanvas (Stable Diffusion 1.5, 60 styles training, 16 styles Eval, 320 que
 
 - [\[NeurIPS 2025\] Large-Scale Training Data Attribution for Music Generative Models via Unlearning](../../NeurIPS2025/image_generation/large-scale_training_data_attribution_for_music_generative_models_via_unlearning.md)
 - [\[ICML 2026\] Barriers to Counterfactual Credit Attribution for Autoregressive Models](barriers_to_counterfactual_credit_attribution_for_autoregressive_models.md)
-- [\[ICML 2026\] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models](stage-wise_distortion-perception_traversal_in_zero-shot_inverse_problems_with_di.md)
+- [\[ICML 2026\] UnHype: CLIP-Guided Hypernetworks for Dynamic LoRA Unlearning](unhype_clip-guided_hypernetworks_for_dynamic_lora_unlearning.md)
 - [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
-- [\[ICML 2026\] Localizing Memorized Regions in Diffusion Models via Coordinate-Wise Curvature Differences](localizing_memorized_regions_in_diffusion_models_via_coordinate-wise_curvature_d.md)
+- [\[ICML 2026\] Forgetting in Diffusion Models: A Unified Framework via KL Divergence and Likelihood Constraints](unlearning_in_diffusion_models_a_unified_framework_with_kl_divergence_and_likeli.md)
 
 </div>
 

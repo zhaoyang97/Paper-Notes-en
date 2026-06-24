@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] MobileRL introduces an online agentic RL framework for mobile GUI agents using "two-stage reasoning SFT warm-up + Adaptive GRPO (AdaGRPO)". By combining positive sample replay, failure curriculum filtering, and shortest path rewards, the framework stabilizes multi-step training under sparse rewards. It achieves state-o
+  [ICLR 2026][LLM Agent][GUI Agent] MobileRL introduces an online agentic RL framework for mobile GUI agents using "two-stage reasoning SFT warm-up + Adaptive GRPO (AdaGRPO)". By combining positive sample replay, failure curriculum filtering, and shortest path rewards, the framework stabilizes multi-step training under sparse rewards. It achieves state-of-the-art (SOTA) results, with a 9B model reaching a 80.2% success rate on AndroidWorld and 53.6% on AndroidLab.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Agentic RL
-  - GRPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Agentic RL"
+  - "GRPO"
+  - "Difficulty Adaptation"
+  - "Experience Replay"
+  - "Curriculum Filtering"
+  - "Reward Reshaping"
 date: 2026-05-08
-content_hash: f74cfd57e7534cca
+content_hash: c0715a8a1a4dde52
 ---
+
 # MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents
 
 **Conference**: ICLR 2026  
@@ -149,15 +154,14 @@ MobileRL-9B improves the previous SOTA from 64.2% / 41.2% to 80.2% / 53.6%. Mobi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
 - [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
-- [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](../../CVPR2026/llm_agent/cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
-- [\[ICLR 2026\] Language Agents for Hypothesis-driven Clinical Decision Making with Reinforcement Learning](language_agents_for_hypothesis-driven_clinical_decision_making_with_reinforcemen.md)
 - [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
-- [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
+- [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](../../CVPR2026/llm_agent/cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 
 </div>
 

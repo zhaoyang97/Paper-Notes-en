@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Active Continual Learning with Metaplastic Binary Bayesian Neural Networks
 description: >-
-  [ICML 2026][AI Safety][Paper Note] BiMU designs bounded-memory and uncertainty-aware metaplastic updates for binary Bayesian neural networks to prevent Bernoulli posterior saturation in long-range non-stationary streams. It utilizes Monte Carlo disagreement for buffer-free one-pass active querying, significantly reducing label requirements and backpropa
+  [ICML2026][AI Safety][Binary Bayesian Neural Networks] BiMU designs bounded-memory and uncertainty-aware metaplastic updates for binary Bayesian neural networks to prevent Bernoulli posterior saturation in long-range non-stationary streams. It utilizes Monte Carlo disagreement for buffer-free one-pass active querying, significantly reducing label requirements and backpropagation updates.
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Binary Bayesian Neural Networks"
+  - "Continual Learning"
+  - "Active Learning"
+  - "Posterior Uncertainty"
+  - "Edge AI"
 date: 2026-05-08
-content_hash: f037e14257f3f8c0
+content_hash: 127192b67ed56fcf
 ---
+
 # Active Continual Learning with Metaplastic Binary Bayesian Neural Networks
 
 **Conference**: ICML2026  
@@ -155,10 +161,10 @@ Memory window and activation ablations explain the stability-plasticity mechanis
 ## Related Papers
 
 - [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
+- [\[ICML 2026\] Understanding Generalization and Forgetting in In-Context Continual Learning](understanding_generalization_and_forgetting_in_in-context_continual_learning.md)
 - [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
 - [\[CVPR 2026\] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance](../../CVPR2026/ai_safety/federated_active_learning_extreme_noniid.md)
-- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
+- [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](../../CVPR2026/ai_safety/φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
 
 </div>
 

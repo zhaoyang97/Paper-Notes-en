@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction
 description: >-
-  [AAAI 2026][Multi-Agent][Zero-shot Learning] This paper proposes a "Propose-Evaluate-Revise" multi-agent collaboration framework (comprising a generator agent and an evaluator agent) to address zero-shot document-level e…
+  [AAAI 2026][Multi-Agent][Zero-shot Learning] This paper proposes a "Propose-Evaluate-Revise" multi-agent collaboration framework (comprising a generator agent and an evaluator agent) to address zero-shot document-level event argument extraction (ZS-DEAE). The generator agent synthesizes training data for unseen event types, while the evaluator agent provides log-likelihood-based quality scores to guide reinforcement learning for iterative optimization…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "Synthetic Data"
 date: 2026-05-08
-content_hash: 0d56fdfbb5341e23
+content_hash: f24ed5b737c0b18e
 ---
 
 # Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction
@@ -215,11 +215,11 @@ $$\nabla_{\mathcal{E}} \mathbb{E}[\alpha] = \mathbb{E}[\alpha_i \nabla_{\mathcal
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](../../ICLR2026/multi_agent/learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
+- [\[CVPR 2026\] AgentDet: A Shared-Blackboard Multi-Agent Framework for Zero-/Few-Shot Object Detection](../../CVPR2026/multi_agent/agentdet_a_shared-blackboard_multi-agent_framework_for_zero-few-shot_object_dete.md)
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
-- [\[NeurIPS 2025\] MAS-ZERO: Designing Multi-Agent Systems with Zero Supervision](../../NeurIPS2025/multi_agent/maszero_designing_multiagent_systems_with_zero_supervision.md)
-- [\[AAAI 2026\] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment.md)
-- [\[AAAI 2026\] MAMA-Memeia! Multi-Aspect Multi-Agent Collaboration for Depressive Symptoms Identification in Memes](mama-memeia_multi-aspect_multi-agent_collaboration_for_depressive_symptoms_ident.md)
-- [\[ICML 2026\] OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration](../../ICML2026/multi_agent/omac_a_holistic_optimization_framework_for_llm-based_multi-agent_collaboration.md)
+- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
+- [\[ICML 2025\] Cross-environment Cooperation Enables Zero-shot Multi-agent Coordination](../../ICML2025/multi_agent/cross-environment_cooperation_enables_zero-shot_multi-agent_coordination.md)
 
 </div>
 

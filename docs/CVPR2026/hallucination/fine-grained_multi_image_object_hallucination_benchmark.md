@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fine-Grained Multi-Image Object Hallucination Benchmark
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] MIOH is the first fine-grained object hallucination diagnostic benchmark designed for **multi-image scenarios**. It creates a matrix of "4 object tasks × 3 multi-image reasoning modes" resulting in 26 question types, further overlaid with three controllable adversarial pressures: "number of images / perceptual difficul
+  [CVPR 2026][Hallucination Detection][Object Hallucination] MIOH is the first fine-grained object hallucination diagnostic benchmark designed for **multi-image scenarios**. It creates a matrix of "4 object tasks × 3 multi-image reasoning modes" resulting in 26 question types, further overlaid with three controllable adversarial pressures: "number of images / perceptual difficulty / contextual bias." Evaluations of 29 models reveal that even GPT-5 and Gemini-2.5-Pro achieve ove…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Object Hallucination"
+  - "Multi-image Reasoning"
+  - "Evaluation Benchmark"
+  - "Adversarial Pressure"
+  - "MLLM Diagnosis"
 date: 2026-05-08
-content_hash: c842077a6cfce985
+content_hash: abe446a8215dc903
 ---
+
 # Fine-Grained Multi-Image Object Hallucination Benchmark
 
 **Conference**: CVPR 2026  
@@ -138,11 +144,11 @@ Regarding adversarial pressure, **NI (Number of Images) causes the most severe p
 
 ## Related Papers
 
+- [\[ICLR 2026\] FREAK: A Fine-grained Hallucination Evaluation Benchmark for Advanced MLLMs](../../ICLR2026/hallucination/freak_a_fine-grained_hallucination_evaluation_benchmark_for_advanced_mllms.md)
 - [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
 - [\[CVPR 2026\] FINER: MLLMs Hallucinate under Fine-grained Negative Queries](finer_mllms_hallucinate_under_fine-grained_negative_queries.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
 - [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
-- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 
 </div>
 

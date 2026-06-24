@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On a Geometry of Interbrain Networks
 description: >-
-  [NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)][Discrete curvature] This opinion piece proposes introducing discrete graph curvature (Forman-Ricci and Ollivier-Ricci curvature) into interbrain n…
+  [NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)][Discrete curvature] This opinion piece proposes introducing discrete graph curvature (Forman-Ricci and Ollivier-Ricci curvature) into interbrain network analysis within hyperscanning research. It leverages the entropy of curvature distributions to detect network phase transitions and uses curvature values to infer interbrain information routing strategies, moving beyond the descriptive limitations of co…
 tags:
   - "NeurIPS 2025 (Symmetry and Geometry in Neural Representations Workshop)"
   - "Discrete curvature"
@@ -11,7 +11,7 @@ tags:
   - "hyperscanning"
   - "interbrain synchrony"
 date: 2026-05-08
-content_hash: d6e721d4503a757c
+content_hash: a838679e3925c81b
 ---
 
 # On a Geometry of Interbrain Networks
@@ -134,7 +134,7 @@ The paper uses simulations of small-world networks (Watts-Strogatz model) to ill
 - [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
 - [\[NeurIPS 2025\] The Geometry of Cortical Computation: Manifold Disentanglement and Predictive Dynamics in VCNet](the_geometry_of_cortical_computation_manifold_disentanglement_and_predictive_dyn.md)
 - [\[NeurIPS 2025\] On Universality Classes of Equivariant Networks](on_universality_classes_of_equivariant_networks.md)
-- [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
+- [\[ICML 2025\] Feature Learning beyond the Lazy-Rich Dichotomy: Insights from Representational Geometry](../../ICML2025/others/feature_learning_beyond_the_lazy-rich_dichotomy_insights_from_representational_g.md)
 
 </div>
 

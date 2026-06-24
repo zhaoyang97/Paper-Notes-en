@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes
 description: >-
-  [ICML 2026][Computational Biology][Flow Matching] This paper proposes Flow Sampling, which inverts the flow matching/diffusion model paradigm from "data-driven" to "noise-driven"—constructing a denoising diffusion drift conditioned on source noise samples. By using a detached model to sample $X_1$ on the interpolant and utilizing the energy gradient of $X_1$ as the re
+  [ICML 2026 Spotlight][Computational Biology][Diffusion Sampling] This paper proposes Flow Sampling, which inverts the flow matching/diffusion model paradigm from "data-driven" to "noise-driven"—constructing a denoising diffusion drift conditioned on source noise samples. By using a detached model to sample $X_1$ on the interpolant and utilizing the energy gradient of $X_1$ as the regression target, it learns an efficient diffusion sampler under data-free conditions and natura…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - Flow Matching
+  - "ICML 2026 Spotlight"
+  - "Computational Biology"
+  - "Diffusion Sampling"
+  - "Flow Matching"
+  - "Amortized Sampling"
+  - "Riemannian Manifolds"
+  - "Molecular Conformation"
 date: 2026-05-08
-content_hash: 8414fd5803ac833a
+content_hash: 59a07d138f86bad4
 ---
+
 # Flow Sampling: Learning to Sample from Unnormalized Densities via Denoising Conditional Processes
 
 **Conference**: ICML 2026 Spotlight  
@@ -133,9 +138,9 @@ Synthetic energy benchmarks (DW-4/LJ-13/LJ-55) + Peptides (Ala2/Ala4) + Large-sc
 
 - [\[ICML 2026\] Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models](temporal_score_rescaling_for_temperature_sampling_in_diffusion_and_flow_models.md)
 - [\[ICML 2026\] Transformed Latent Variable Multi-Output Gaussian Processes](transformed_latent_variable_multi-output_gaussian_processes.md)
+- [\[ICLR 2026\] Meta-Learning Theory-Informed Inductive Biases using Deep Kernel Gaussian Processes](../../ICLR2026/computational_biology/meta-learning_theory-informed_inductive_biases_using_deep_kernel_gaussian_proces.md)
+- [\[ICML 2026\] CoSiNE: Conditional Site-Independent Neural Evolution Model for Antibody Sequences](conditionally_site-independent_neural_evolution_of_antibody_sequences.md)
 - [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](../../ICLR2026/computational_biology/thompson_sampling_via_fine-tuning_of_llms.md)
-- [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
-- [\[ICML 2026\] LineageFlow: Flow Matching for High-Fidelity Family-Aware Protein Sequence Generation](lineageflow_flow_matching_for_high-fidelity_family-aware_protein_sequence_genera.md)
 
 </div>
 

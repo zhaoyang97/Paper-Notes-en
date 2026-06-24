@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation
 description: >-
-  [ICCV 2025][Model Compression][Multi-task learning] This paper proposes SAMO, a lightweight sharpness-aware multi-task optimization method that mitigates task gradient conflicts via joint global-local perturbation…
+  [ICCV 2025][Model Compression][Multi-task learning] This paper proposes SAMO, a lightweight sharpness-aware multi-task optimization method that mitigates task gradient conflicts via joint global-local perturbation, while substantially reducing computational overhead through zeroth-order gradient approximation and layer-wise normalization.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "zeroth-order gradient estimation"
   - "layer-wise normalization"
 date: 2026-05-08
-content_hash: e1a566a6f75839c8
+content_hash: 191629a2a50413fa
 ---
 
 # SAMO: A Lightweight Sharpness-Aware Approach for Multi-Task Optimization with Joint Global-Local Perturbation
@@ -146,11 +146,11 @@ For hyperparameters: the perturbation radius $\rho$ is searched over $\{0.01, 0.
 
 ## Related Papers
 
-- [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
+- [\[CVPR 2025\] JamMa: Ultra-lightweight Local Feature Matching with Joint Mamba](../../CVPR2025/model_compression/jamma_ultra-lightweight_local_feature_matching_with_joint_mamba.md)
+- [\[ICML 2025\] Joker: Joint Optimization Framework for Lightweight Kernel Machines](../../ICML2025/model_compression/joker_joint_optimization_framework_for_lightweight_kernel_machines.md)
+- [\[ACL 2025\] DAC: A Dynamic Attention-aware Approach for Task-Agnostic Prompt Compression](../../ACL2025/model_compression/dac_prompt_compression.md)
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
-- [\[CVPR 2026\] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning](../../CVPR2026/model_compression/frequency_switching_mechanism_for_parameter-ecient_multi-task_learning.md)
-- [\[ICCV 2025\] Soft Separation and Distillation: Toward Global Uniformity in Federated Unsupervised Learning](soft_separation_and_distillation_toward_global_uniformity_in_federated_unsupervi.md)
-- [\[NeurIPS 2025\] MTL-KD: Multi-Task Learning Via Knowledge Distillation for Generalizable Neural Vehicle Routing Solver](../../NeurIPS2025/model_compression/mtl-kd_multi-task_learning_via_knowledge_distillation_for_generalizable_neural_v.md)
+- [\[CVPR 2025\] TADFormer: Task-Adaptive Dynamic Transformer for Efficient Multi-Task Learning](../../CVPR2025/model_compression/tadformer_task-adaptive_dynamic_transformer_for_efficient_multi-task_learning.md)
 
 </div>
 

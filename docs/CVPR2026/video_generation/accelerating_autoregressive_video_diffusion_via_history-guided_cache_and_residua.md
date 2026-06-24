@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction
 description: >-
-  [CVPR 2026][Video Generation][Error Accumulation] To address the critical issue in Autoregressive Video Diffusion Models (ARDMs) where "cache approximation errors accumulate and amplify over time" during segment-by-segment generation, this paper proposes the training-free ARCache. It uses History-Guided Cache to schedule caching based on changes in history tokens (sup
+  [CVPR 2026][Video Generation][Autoregressive Video Diffusion] To address the critical issue in Autoregressive Video Diffusion Models (ARDMs) where "cache approximation errors accumulate and amplify over time" during segment-by-segment generation, this paper proposes the training-free ARCache. It uses History-Guided Cache to schedule caching based on changes in history tokens (suppressing intra-segment errors) and Enhanced Residual Correction to calibrate subsequent segments u…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Error Accumulation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Autoregressive Video Diffusion"
+  - "Feature Caching"
+  - "Error Accumulation"
+  - "Training-free Acceleration"
+  - "Residual Correction"
 date: 2026-05-08
-content_hash: e311a659ab75a123
+content_hash: da2b290083b01130
 ---
+
 # Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ Evaluated on three representative ARDMs (FramePack-F1 for I2V, SkyReels-V2 for T
 
 ## Related Papers
 
+- [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
 - [\[AAAI 2026\] FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion](../../AAAI2026/video_generation/filmweaver_weaving_consistent_multi-shot_videos_with_cache-guided_autoregressive.md)
 - [\[CVPR 2026\] RFDM: Residual Flow Diffusion Models for Video Editing](rfdm_residual_flow_diffusion_models_for_video_editing.md)
 - [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](disca_accelerating_video_diffusion_transformers_wi.md)
-- [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
-- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](../../ICML2026/video_generation/light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
+- [\[ICLR 2026\] Improving Autoregressive Video Modeling with History Understanding](../../ICLR2026/video_generation/improving_autoregressive_video_modeling_with_history_understanding.md)
 
 </div>
 

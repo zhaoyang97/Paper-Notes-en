@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] STALL is proposed as a training-free, zero-shot generated video detector. By jointly modeling per-frame spatial likelihoods and inter-frame temporal likelihoods in a whitened embedding space, it achieves robust detection across various generative models using only real-video calibration.
+  [CVPR 2026][Image Generation][Zero-shot detection] STALL is proposed as a training-free, zero-shot generated video detector. By jointly modeling per-frame spatial likelihoods and inter-frame temporal likelihoods in a whitened embedding space, it achieves robust detection across various generative models using only real-video calibration.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Zero-shot detection"
+  - "generated video detection"
+  - "likelihood estimation"
+  - "whitening transform"
+  - "spatial-temporal modeling"
 date: 2026-05-08
-content_hash: cfe1faefc72594eb
+content_hash: 50c155e23d69afb4
 ---
+
 # Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods
 
 **Conference**: CVPR 2026  
@@ -144,7 +150,7 @@ Image encoders (even lightweight ones like MobileNet) perform excellently. Video
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -152,7 +158,7 @@ Image encoders (even lightweight ones like MobileNet) perform excellently. Video
 - [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
 - [\[CVPR 2025\] A Bias-Free Training Paradigm for More General AI-generated Image Detection](../../CVPR2025/image_generation/a_bias-free_training_paradigm_for_more_general_ai-generated_image_detection.md)
-- [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
+- [\[CVPR 2026\] Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)
 
 </div>
 

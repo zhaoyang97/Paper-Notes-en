@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners
 description: >-
-  [ACL 2026][LLM Reasoning][GRPO] RSAT utilizes "SFT in structured citation format + GRPO with NLI faithfulness as the core reward" to train 1B-8B small language models. This approach enables table QA to not only provide answers but also bind each reasoning step to specific table cells, increasing average faithfulness from 0.224 in SFT to 0.826.
+  [ACL2026][Reasoning][Table Reasoning] RSAT utilizes "SFT in structured citation format + GRPO with NLI faithfulness as the core reward" to train 1B-8B small language models. This approach enables table QA to not only provide answers but also bind each reasoning step to specific table cells, increasing average faithfulness from 0.224 in SFT to 0.826.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - GRPO
+  - "ACL2026"
+  - "Reasoning"
+  - "Table Reasoning"
+  - "Cell-level Citation"
+  - "GRPO"
+  - "Faithfulness"
+  - "Small Language Models"
 date: 2026-05-08
-content_hash: c1af68f76f7341df
+content_hash: cd082beba1657806
 ---
+
 # RSAT: Structured Attribution Makes Small Language Models Faithful Table Reasoners
 
 **Conference**: ACL2026  
@@ -150,10 +155,10 @@ The contributions of the training stages are also compelling. SFT brings an aver
 ## Related Papers
 
 - [\[AAAI 2026\] SAPO: Self-Adaptive Process Optimization Makes Small Reasoners Stronger](../../AAAI2026/llm_reasoning/sapo_self-adaptive_process_optimization_makes_small_reasoners_stronger.md)
+- [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](../../ICLR2026/llm_reasoning/slm-mux_orchestrating_small_language_models_for_reasoning.md)
+- [\[ICLR 2026\] Thinking-Free Policy Initialization Makes Distilled Reasoning Models More Effective and Efficient Reasoners](../../ICLR2026/llm_reasoning/thinking-free_policy_initialization_makes_distilled_reasoning_models_more_effect.md)
 - [\[ICML 2026\] DenseSteer: Steering Small Language Models towards Dense Math Reasoning](../../ICML2026/llm_reasoning/densesteer_steering_small_language_models_towards_dense_math_reasoning.md)
 - [\[ACL 2026\] LegalDrill: Diagnosis-Driven Synthesis for Legal Reasoning in Small Language Models](legaldrill_diagnosis-driven_synthesis_for_legal_reasoning_in_small_language_mode.md)
-- [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
-- [\[ACL 2026\] Large Reasoning Models Are (Not Yet) Multilingual Latent Reasoners](large_reasoning_models_are_not_yet_multilingual_latent_reasoners.md)
 
 </div>
 

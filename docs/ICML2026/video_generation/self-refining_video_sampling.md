@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Self-Refining Video Sampling
 description: >-
-  [ICML 2026][Video Generation][Flow Matching] The pretrained flow matching video generator is reinterpreted as a "denoising autoencoder." During inference, a Predict-and-Perturb inner loop iteratively corrects latent deviations within the same noise level. An uncertainty mask derived from model self-consistency is applied to refine only dynamic regions. This appro
+  [ICML 2026][Video Generation][Video Diffusion] The pretrained flow matching video generator is reinterpreted as a "denoising autoencoder." During inference, a Predict-and-Perturb inner loop iteratively corrects latent deviations within the same noise level. An uncertainty mask derived from model self-consistency is applied to refine only dynamic regions. This approach significantly enhances motion coherence and physical plausibility without any external verifier or additional…
 tags:
-  - ICML 2026
-  - Video Generation
-  - Flow Matching
+  - "ICML 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Flow Matching"
+  - "Self-Refining Sampling"
+  - "Denoising Autoencoder"
+  - "Physical Consistency"
 date: 2026-05-08
-content_hash: e537e8009bdcea22
+content_hash: 3a90eb38a86b5fea
 ---
+
 # Self-Refining Video Sampling
 
 **Conference**: ICML 2026  
@@ -146,15 +151,16 @@ Physical Alignment: On PhyWorldBench, the PC score improved from 29.3 to **40.0*
 - Value: ⭐⭐⭐⭐⭐ Training-free, plug-and-play, and efficient. It offers significant improvements for current flow matching video generators.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling](../../ICLR2026/video_generation/realtime_video_frame_interpolation_using_one-step_diffusion_sampling.md)
 - [\[CVPR 2025\] Spatiotemporal Skip Guidance for Enhanced Video Diffusion Sampling](../../CVPR2025/video_generation/spatiotemporal_skip_guidance_for_enhanced_video_diffusion_sampling.md)
+- [\[ICLR 2026\] Towards One-Step Causal Video Generation via Adversarial Self-Distillation](../../ICLR2026/video_generation/towards_one-step_causal_video_generation_via_adversarial_self-distillation.md)
 - [\[CVPR 2026\] VISTA: A Test-Time Self-Improving Video Generation Agent](../../CVPR2026/video_generation/vista_a_test-time_self-improving_video_generation_agent.md)
-- [\[ACL 2026\] Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](../../ACL2026/video_generation/self-correcting_text-to-video_generation_with_misalignment_detection_and_localiz.md)
-- [\[CVPR 2026\] From Static to Dynamic: Exploring Self-supervised Image-to-Video Representation Transfer Learning](../../CVPR2026/video_generation/from_static_to_dynamic_exploring_self-supervised_image-to-video_representation_t.md)
-- [\[CVPR 2026\] Infinity-RoPE: Action-Controllable Infinite Video Generation Emerges From Autoregressive Self-Rollout](../../CVPR2026/video_generation/infinity-rope_action-controllable_infinite_video_generation_emerges_from_autoreg.md)
+- [\[ICLR 2026\] Self-Forcing++: Towards Minute-Scale High-Quality Video Generation](../../ICLR2026/video_generation/self-forcing_towards_minute-scale_high-quality_video_generation.md)
 
 </div>
 

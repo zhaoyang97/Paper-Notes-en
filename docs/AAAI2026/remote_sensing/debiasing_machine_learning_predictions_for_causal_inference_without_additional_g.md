@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data
 description: >-
-  [AAAI 2026][Remote Sensing][Prediction debiasing] To address the attenuation of causal treatment effects caused by regression-to-the-mean in ML-based satellite poverty predictions…
+  [AAAI 2026][Remote Sensing][Prediction debiasing] To address the attenuation of causal treatment effects caused by regression-to-the-mean in ML-based satellite poverty predictions, this paper proposes two post-processing correction methods that require no additional labeled data — Linear Calibration Correction (LCC) and Tweedie local unshrinking — enabling a single prediction map to be reused across multiple downstream causal studies (the "One Map…
 tags:
   - "AAAI 2026"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "satellite poverty index"
   - "attenuation bias"
 date: 2026-05-08
-content_hash: a10e35e3ab073729
+content_hash: f30488c49eb0db07
 ---
 
 # Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data
@@ -130,11 +130,11 @@ Treatment effect estimation performance on simulated data:
 
 ## Related Papers
 
+- [\[ECCV 2024\] Adapting Fine-Grained Cross-View Localization to Areas without Fine Ground Truth](../../ECCV2024/remote_sensing/adapting_fine-grained_cross-view_localization_to_areas_without_fine_ground_truth.md)
 - [\[AAAI 2026\] Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India](machine_learning_for_sustainable_rice_production_region-scale_monitoring_of_wate.md)
+- [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](../../CVPR2026/remote_sensing/geosane_learning_geospatial_representations_from_models_not_data.md)
 - [\[NeurIPS 2025\] Connecting the Dots: A Machine Learning Dataset for Ionospheric Prediction](../../NeurIPS2025/remote_sensing/connecting_the_dots_a_machine_learning_ready_dataset_for_ionospheric_forecasting.md)
 - [\[AAAI 2026\] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD](spatio-temporal_context_learning_with_temporal_difference_convolution_for_moving.md)
-- [\[ICCV 2025\] AstroLoc: Robust Space to Ground Image Localizer](../../ICCV2025/remote_sensing/astroloc_robust_space_to_ground_image_localizer.md)
-- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 
 </div>
 

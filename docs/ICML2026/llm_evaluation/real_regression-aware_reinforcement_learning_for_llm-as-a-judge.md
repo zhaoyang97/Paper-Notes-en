@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"
+  [Paper Note] REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"
 description: >-
-  [ICML 2026][LLM Evaluation][LLM-as-a-Judge] Addressing the inherent flaw of binary 0/1 rewards in RL for LLM-as-a-Judge which ignores ordinal structures, the authors integrate RAFT's "expected value prediction + squared error" into the RL objective. Since the reward explicitly depends on policy parameters, a Generalized Policy Gradient is employed—decomposing cl
+  [ICML 2026][LLM Evaluation][LLM-as-a-Judge] Addressing the inherent flaw of binary 0/1 rewards in RL for LLM-as-a-Judge which ignores ordinal structures, the authors integrate RAFT's "expected value prediction + squared error" into the RL objective. Since the reward explicitly depends on policy parameters, a Generalized Policy Gradient is employed—decomposing cleanly into a "CoT Exploration term" and a "Prediction Refinement term." Across 8B–32B base models…
 tags:
-  - ICML 2026
-  - LLM Evaluation
-  - LLM-as-a-Judge
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "LLM-as-a-Judge"
+  - "Regression-Aware Reward"
+  - "Generalized Policy Gradient"
+  - "Policy-Dependent Reward"
+  - "Correlation Optimization"
 date: 2026-05-08
-content_hash: 24cce3a136a6e562
+content_hash: ec3c0653a9ca8ff0
 ---
+
 # REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"
 
 **Conference**: ICML 2026  
@@ -153,11 +158,11 @@ Note that on the in-domain FB Bench, REAL is only on par with or 0.5 points lowe
 
 ## Related Papers
 
+- [\[ICML 2026\] On Cost-Effective LLM-as-a-Judge Improvement Techniques](on_cost-effective_llm-as-a-judge_improvement_techniques.md)
 - [\[ICML 2026\] Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](reasoning_is_not_free_robust_adaptive_cost-efficient_routing_for_llm-as-a-judge.md)
 - [\[ICML 2026\] On Effectiveness and Efficiency of Agentic Tool-calling and RL Training](on_effectiveness_and_efficiency_of_agentic_tool-calling_and_rl_training.md)
-- [\[ICLR 2026\] Preference Leakage: A Contamination Problem in LLM-as-a-judge](../../ICLR2026/llm_evaluation/preference_leakage_a_contamination_problem_in_llm-as-a-judge.md)
+- [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](../../ACL2026/llm_evaluation/aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
 - [\[ICML 2026\] Toward Training Superintelligent Software Agents through Self-Play SWE-RL](toward_training_superintelligent_software_agents_through_self-play_swe-rl.md)
-- [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](../../ICLR2026/llm_evaluation/biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
 
 </div>
 

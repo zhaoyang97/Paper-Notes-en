@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Riesz Neural Operator for Solving Partial Differential Equations
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] RNO introduces the Riesz transform into neural operators, utilizing directional derivative channels in the frequency domain to compensate for the inability of FNO/LNO to model local non-stationary details. It simultaneously improves accuracy, robustness, and efficiency across various PDEs, Navier-Stokes, and ERA5 weath
+  [ICLR 2026][Physics & Scientific Computing][Riesz Transform] RNO introduces the Riesz transform into neural operators, utilizing directional derivative channels in the frequency domain to compensate for the inability of FNO/LNO to model local non-stationary details. It simultaneously improves accuracy, robustness, and efficiency across various PDEs, Navier-Stokes, and ERA5 weather data.
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Riesz Transform"
+  - "Neural Operator"
+  - "PDE Solving"
+  - "Local Derivative"
+  - "Spectral Modeling"
 date: 2026-05-08
-content_hash: ff6bc698c1ee8bf4
+content_hash: 7969d0a410e13435
 ---
+
 # Riesz Neural Operator for Solving Partial Differential Equations
 
 **Conference**: ICLR 2026  
@@ -145,16 +151,16 @@ Analysis focused on global/local branches, number of directions, efficiency, and
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
 - [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
-- [\[ICML 2025\] Closed-form Symbolic Solutions: A New Perspective on Solving Partial Differential Equations](../../ICML2025/physics/closed-form_solutions_a_new_perspective_on_solving_differential_equations.md)
-- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](kano_kolmogorov-arnold_neural_operator.md)
+- [\[ICLR 2026\] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving](operator_learning_with_domain_decomposition_for_geometry_generalization_in_pde_s.md)
+- [\[ICLR 2026\] $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids](boldsymbolpartialinfty-grid_a_neural_differential_equation_solver_with_different.md)
 
 </div>
 

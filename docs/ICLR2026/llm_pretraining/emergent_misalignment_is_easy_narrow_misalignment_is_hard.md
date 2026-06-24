@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Emergent Misalignment is Easy, Narrow Misalignment is Hard
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] The study finds that fine-tuning on narrow-domain harmful data leads to broad-spectrum "emergent misalignment" (EM) because a "general misalignment" solution is a simpler and more efficient point in the parameter space—possessing a smaller parameter norm and greater stability against noise.
+  [ICLR 2026][LLM Pretraining][Emergent Misalignment] The study finds that fine-tuning on narrow-domain harmful data leads to broad-spectrum "emergent misalignment" (EM) because a "general misalignment" solution is a simpler and more efficient point in the parameter space—possessing a smaller parameter norm and greater stability against noise.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Emergent Misalignment"
+  - "Fine-tuning Safety"
+  - "Narrow-domain Attacks"
+  - "KL Divergence Regularization"
+  - "Model Organisms"
 date: 2026-05-08
-content_hash: 3106309a6d0438fb
+content_hash: 9d1f471edf152c51
 ---
+
 # Emergent Misalignment is Easy, Narrow Misalignment is Hard
 
 **Conference**: ICLR 2026  
@@ -126,10 +132,10 @@ While the first two metrics explain why general solutions are efficient and stab
 ## Related Papers
 
 - [\[ACL 2025\] Emergent Abilities of Large Language Models under Continued Pretraining for Language Adaptation](../../ACL2025/llm_pretraining/emergent_abilities_continued_pt.md)
+- [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
 - [\[ICLR 2026\] Identifying and Evaluating Inactive Heads in Pretrained LLMs](identifying_and_evaluating_inactive_heads_in_pretrained_llms.md)
-- [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
-- [\[ICLR 2026\] Pretraining with Hierarchical Memories: Separating Long-Tail and Common Knowledge](pretraining_with_hierarchical_memories_separating_long-tail_and_common_knowledge.md)
+- [\[ICLR 2026\] Should We Still Pretrain Encoders with Masked Language Modeling?](should_we_still_pretrain_encoders_with_masked_language_modeling.md)
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 
 </div>
 

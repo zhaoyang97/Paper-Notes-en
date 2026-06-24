@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] More Than Irrational: Modeling Belief-Biased Agents
 description: >-
-  [AAAI 2026][Computational Rationality] This paper proposes a computational rationality (CR) user model framework that interprets seemingly "irrational" human behavior as optimal decision-making under limited memory (beli…
+  [AAAI 2026][Computational Rationality] This paper proposes a computational rationality (CR) user model framework that interprets seemingly "irrational" human behavior as optimal decision-making under limited memory (belief bias). A nested particle filter (NPF) is used to online-infer the user's latent memory bound parameter $\theta$ and biased belief state $\tilde{b}$. The posterior mean (PM) error is reduced by 90% within 45 steps, and adaptive AI assistant policies are demo…
 tags:
   - "AAAI 2026"
   - "Computational Rationality"
@@ -11,7 +11,7 @@ tags:
   - "Belief Bias"
   - "Adaptive Assistance"
 date: 2026-05-08
-content_hash: 45f701279a86b867
+content_hash: fdfd8c5efb3a24df
 ---
 
 # More Than Irrational: Modeling Belief-Biased Agents
@@ -130,9 +130,9 @@ Behavioral validity of the CR model (T-maze task):
 
 - [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
 - [\[ICML 2026\] Return-to-Go is More Than a Number: Q-Guided Alignment for Return-Conditioned Supervised Learning](../../ICML2026/others/return-to-go_is_more_than_a_number_q-guided_alignment_for_return-conditioned_sup.md)
+- [\[ACL 2025\] Are Any-to-Any Models More Consistent Across Modality Transfers Than Specialists?](../../ACL2025/others/are_any-to-any_models_more_consistent_across_modality_transfers_than_specialists.md)
+- [\[CVPR 2026\] More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](../../CVPR2026/others/more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)
 - [\[AAAI 2026\] OR-R1: Automating Modeling and Solving of Operations Research Optimization Problems](or-r1_automating_modeling_and_solving_of_operations_research_optimization_proble.md)
-- [\[AAAI 2026\] Symbolic Planning and Multi-Agent Path Finding in Extremely Dense Environments with Unassigned Agents](symbolic_planning_and_multi-agent_path_finding_in_extremely_dense_environments_w.md)
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
 
 </div>
 

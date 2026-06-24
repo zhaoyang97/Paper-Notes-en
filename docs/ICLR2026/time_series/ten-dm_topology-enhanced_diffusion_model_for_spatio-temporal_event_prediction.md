@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction
 description: >-
-  [ICLR 2026][Time Series][Diffusion Model] TEN-DM transforms spatio-temporal point processes (STPP) simultaneously into multi-semantic event graphs and multi-scale temporal sequence images. It utilizes graph representations, zigzag topological features, and temporal query attention to jointly condition the diffusion denoising process, enabling more accurate pre
+  [ICLR 2026][Time Series][Spatio-temporal point processes] TEN-DM transforms spatio-temporal point processes (STPP) simultaneously into multi-semantic event graphs and multi-scale temporal sequence images. It utilizes graph representations, zigzag topological features, and temporal query attention to jointly condition the diffusion denoising process, enabling more accurate prediction of the time intervals and spatial locations of future events.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Diffusion Model
-  - zigzag persistence
+  - "ICLR 2026"
+  - "Time Series"
+  - "Spatio-temporal point processes"
+  - "Diffusion models"
+  - "zigzag persistence"
+  - "Graph neural networks"
+  - "Event prediction"
 date: 2026-05-08
-content_hash: 38bf8c836d5d2ac8
+content_hash: 1e55c186fd49ee29
 ---
+
 # TEN-DM: Topology-Enhanced Diffusion Model for Spatio-Temporal Event Prediction
 
 **Conference**: ICLR 2026  

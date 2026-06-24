@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces
 description: >-
-  [ICML 2026][Others][Tensor Core] For Extreme Multi-label Classification (XMC) with millions of labels, HASTE replaces "per-label independent fan-in sampling" with "semantically grouped shared fan-in." Combined with a small dense head for high-frequency labels, this allows sparse training to achieve wall-clock gains matching its theoretical FLOPs on GP
+  [ICML 2026][Extreme Multi-label Classification] For Extreme Multi-label Classification (XMC) with millions of labels, HASTE replaces "per-label independent fan-in sampling" with "semantically grouped shared fan-in." Combined with a small dense head for high-frequency labels, this allows sparse training to achieve wall-clock gains matching its theoretical FLOPs on GPUs—reaching up to $4.4\times$ forward and $25\times$ backward speedups over existing sparse baselines while almo…
 tags:
-  - ICML 2026
-  - Others
-  - Tensor Core
+  - "ICML 2026"
+  - "Extreme Multi-label Classification"
+  - "Fixed fan-in Sparsity"
+  - "Group Sharing"
+  - "Tensor Core"
+  - "Long-tail Head-Tail Splitting"
 date: 2026-05-08
-content_hash: a75e067501aa64dd
+content_hash: 1bf9f31aea010226
 ---
+
 # HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces
 
 **Conference**: ICML 2026  
@@ -130,6 +134,7 @@ HASTE **consistently outperforms Spartex** with 1.5–2.5$\times$ less VRAM. Epo
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

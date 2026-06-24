@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Destructive Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes SEAM, an alignment-stage defense method that transforms LLMs into "self-destructive models" by forcing the gradient directions of benign and harmful tasks to be opposite. Normal tasks function as usual, but any attempt at harmful fine-tuning causes significant degradation or complete collapse, placi
+  [ICLR 2026][LLM Safety][Harmful Fine-tuning Attacks] This paper proposes SEAM, an alignment-stage defense method that transforms LLMs into "self-destructive models" by forcing the gradient directions of benign and harmful tasks to be opposite. Normal tasks function as usual, but any attempt at harmful fine-tuning causes significant degradation or complete collapse, placing attackers in a dilemma where "weak attacks fail to break through, while strong attacks trigger model sel…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Harmful Fine-tuning Attacks"
+  - "Self-destructive Models"
+  - "Gradient Coupling"
+  - "Alignment Enhancement"
+  - "Hessian-free Estimation"
 date: 2026-05-08
-content_hash: 301c8c26d1a934ff
+content_hash: 92d5fa5a7062ac00
 ---
+
 # Self-Destructive Language Models
 
 **Conference**: ICLR 2026  

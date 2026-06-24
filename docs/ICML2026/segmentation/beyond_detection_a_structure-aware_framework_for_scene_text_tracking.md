@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Detection: A Structure-Aware Framework for Scene Text Tracking
 description: >-
-  [ICML 2026][Segmentation][Paper Note] The authors propose SymTrack, a detection-free dual-branch scene text tracking framework. It addresses feature bottlenecks caused by perspective distortion through Predictive Token Rectification (PTR), eliminates high visual ambiguity among text instances using Cross-Expert Calibration (CEC), and stabilizes fine-graine
+  [ICML2026][Segmentation][Scene Text Tracking] The authors propose SymTrack, a detection-free dual-branch scene text tracking framework. It addresses feature bottlenecks caused by perspective distortion through Predictive Token Rectification (PTR), eliminates high visual ambiguity among text instances using Cross-Expert Calibration (CEC), and stabilizes fine-grained localization with an Adaptive Inference Engine (AIE). It significantly surpasses SOTA on three benchmarks (up to…
 tags:
-  - ICML 2026
-  - Segmentation
+  - "ICML2026"
+  - "Segmentation"
+  - "Scene Text Tracking"
+  - "Visual Object Tracking"
+  - "Dual-branch architecture"
+  - "Text feature calibration"
+  - "Adaptive inference"
 date: 2026-05-08
-content_hash: 68be91dc7e976702
+content_hash: eeda5eae47f99ec5
 ---
+
 # Beyond Detection: A Structure-Aware Framework for Scene Text Tracking
 
 **Conference**: ICML2026  

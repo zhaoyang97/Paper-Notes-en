@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] TimeSearch-R reformulates "temporal search" in long videos as a multi-turn reasoning process where text reasoning and video retrieval are interleaved. It utilizes GRPO with "Completeness Self-Verification" (GRPO-CSV) for reinforcement learning, enabling the model to autonomously learn which frames to inspect and when s
+  [ICLR 2026][VLM Reasoning][Temporal Search] TimeSearch-R reformulates "temporal search" in long videos as a multi-turn reasoning process where text reasoning and video retrieval are interleaved. It utilizes GRPO with "Completeness Self-Verification" (GRPO-CSV) for reinforcement learning, enabling the model to autonomously learn which frames to inspect and when search is sufficient. It consistently outperforms hand-crafted search workflows and pure text-based reasoning models…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Temporal Search"
+  - "Long Video Understanding"
+  - "Reinforcement Learning"
+  - "Self-Verification"
+  - "Interleaved Text-Video Reasoning"
 date: 2026-05-08
-content_hash: 1d261eed48af58e8
+content_hash: d32b14303bf4b785
 ---
+
 # TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -153,10 +158,10 @@ Ablation of GRPO-CSV components (Comp.=Completeness, Cons.=Consistency, Acc.=Acc
 
 ## Related Papers
 
-- [\[ICLR 2026\] ARES: Multimodal Adaptive Reasoning via Difficulty-Aware Token-Level Entropy Shaping](ares_multimodal_adaptive_reasoning_via_difficulty-aware_token-level_entropy_shap.md)
-- [\[ICLR 2026\] Synergizing Understanding and Generation with Interleaved Analyzing-Drafting Thinking](synergizing_understanding_and_generation_with_interleaved_analyzing-drafting_thi.md)
-- [\[ICLR 2026\] Play to Generalize: Learning to Reason Through Game Play](play_to_generalize_learning_to_reason_through_game_play.md)
 - [\[ICLR 2026\] VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning](videozoomer_reinforcement-learned_temporal_focusing_for_long_video_reasoning.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](../../CVPR2026/vlm_reasoning/revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](../../CVPR2026/vlm_reasoning/thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
+- [\[CVPR 2026\] VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](../../CVPR2026/vlm_reasoning/videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)
 - [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 
 </div>

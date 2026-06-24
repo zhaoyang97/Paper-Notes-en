@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] HierUQ addresses hierarchical classification of degraded (blurred/occluded/noisy/low-resolution) images by providing reliable confidence levels via Hierarchical Uncertainty Quantification (HUQ) based on label smoothing and proper scoring rules. It utilizes Confidence-Aware Path Adjustment (CAPA) to automatically fallba
+  [CVPR 2026][Uncertainty Quantification] HierUQ addresses hierarchical classification of degraded (blurred/occluded/noisy/low-resolution) images by providing reliable confidence levels via Hierarchical Uncertainty Quantification (HUQ) based on label smoothing and proper scoring rules. It utilizes Confidence-Aware Path Adjustment (CAPA) to automatically fallback from fine-grained to coarser levels when uncertain, and employs Self-paced Multi-Layer Joint Optimization (MLJO) to c…
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Uncertainty Quantification"
+  - "Hierarchical Classification"
+  - "Confidence Fallback"
+  - "Self-paced Learning"
+  - "Multi-objective Optimization"
 date: 2026-05-08
-content_hash: 2f2b166e878808aa
+content_hash: 0c11dda9cc476ae4
 ---
+
 # HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification
 
 **Conference**: CVPR 2026  
@@ -128,15 +133,15 @@ Effects of individual modules (Hie.=HUQ, Gra.=Granularity, Fal.=Fallback) on HRS
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
-- [\[ICML 2026\] Courtroom Analogy: New Perspective on Uncertainty-Aware Classification](../../ICML2026/interpretability/courtroom_analogy_new_perspective_on_uncertainty-aware_classification.md)
-- [\[ICML 2026\] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification](../../ICML2026/interpretability/minimax_learning_of_interpretable_factored_stochastic_policies_from_conjoint_dat.md)
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
-- [\[CVPR 2026\] Making the Classification Explanation Faithful to the Confidence Score](making_the_classification_explanation_faithful_to_the_confidence_score.md)
+- [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
+- [\[NeurIPS 2025\] Position: There Is No Free Bayesian Uncertainty Quantification](../../NeurIPS2025/others/position_there_is_no_free_bayesian_uncertainty_quantification.md)
+- [\[CVPR 2026\] ALLNet: Multi-task Dense Prediction for Degraded Images](allnet_multi-task_dense_prediction_for_degraded_images.md)
+- [\[AAAI 2026\] CAE: Hierarchical Semantic Alignment for Image Clustering](../../AAAI2026/others/hierarchical_semantic_alignment_for_image_clustering.md)
+- [\[ICLR 2026\] Adaptive Conformal Guidance for Learning under Uncertainty](../../ICLR2026/others/adaptive_conformal_guidance_for_learning_under_uncertainty.md)
 
 </div>
 

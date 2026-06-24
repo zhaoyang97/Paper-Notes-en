@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] ReconViaGen integrates strong reconstruction priors (VGGT) as multi-view perceptual conditions into a diffusion-based 3D generator (TRELLIS). During inference, it employs rendering-aligned velocity compensation to constrain the denoising trajectory. This approach maintains the capability to "complete unobserved parts"
+  [ICLR 2026][3D Vision][Multi-view reconstruction] ReconViaGen integrates strong reconstruction priors (VGGT) as multi-view perceptual conditions into a diffusion-based 3D generator (TRELLIS). During inference, it employs rendering-aligned velocity compensation to constrain the denoising trajectory. This approach maintains the capability to "complete unobserved parts" while ensuring global structure and local details are highly consistent with input views…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Multi-view reconstruction"
+  - "3D generative prior"
+  - "Diffusion models"
+  - "Reconstruction prior"
+  - "Pose-agnostic"
 date: 2026-05-08
-content_hash: 045725ab0119de48
+content_hash: 979d4c21b0192f7f
 ---
+
 # ReconViaGen: Towards Accurate Multi-view 3D Object Reconstruction via Generation
 
 **Conference**: ICLR 2026  
@@ -159,7 +164,7 @@ Ours leads across all metrics and outperforms both TRELLIS and VGGT, validating 
 - [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](../../CVPR2026/3d_vision/multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
 - [\[ICLR 2026\] D²GS: Depth-and-Density Guided Gaussian Splatting for Stable and Accurate Sparse-View Reconstruction](d2gs_depth-and-density_guided_gaussian_splatting_for_stable_and_accurate_sparse-.md)
 - [\[ICLR 2026\] Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation](ctrlshift_high-quality_geometry-aware_object_manipulation_in_visual_generation.md)
-- [\[ICLR 2026\] Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator](text-to-3d_by_stitching_a_multi-view_reconstruction_network_to_a_video_generator.md)
+- [\[ICLR 2026\] TINKER: Diffusion's Gift to 3D--Multi-View Consistent Editing From Sparse Inputs without Per-Scene Optimization](tinker_diffusions_gift_to_3d--multi-view_consistent_editing_from_sparse_inputs_w.md)
 
 </div>
 

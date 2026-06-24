@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Syncphony: 用扩散 Transformer 实现音画同步的音频到视频生成
+  [Paper Note] Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Syncphony inserts audio cross-attention into a pre-trained DiT video backbone, utilizing a "Motion-aware Loss" to strengthen supervision in high-motion regions and "Audio Sync Guidance" to amplify audio influence during sampling. It generates 380×640, 24fps videos precisely synchronized with audio and proposes CycleSyn
+  [ICLR 2026][Video Generation][Audio-to-Video Generation] Syncphony inserts audio cross-attention into a pre-trained DiT video backbone, utilizing a "Motion-aware Loss" to strengthen supervision in high-motion regions and "Audio Sync Guidance" to amplify audio influence during sampling. It generates 380×640, 24fps videos precisely synchronized with audio and proposes CycleSync, a synchronization metric based on back-inferring audio from video.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Audio-to-Video Generation"
+  - "Audio-Visual Synchronization"
+  - "Diffusion Transformer"
+  - "Motion-aware Loss"
+  - "Sampling Guidance"
 date: 2026-05-08
-content_hash: db6a1b8232226a36
+content_hash: 0a84e5baca48af8a
 ---
+
 # Syncphony: Audio-to-Video Generation with Synchronized Visual Dynamics using Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -140,14 +146,15 @@ Syncphony leads in synchronization accuracy while maintaining lower FID/FVD. Int
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
-- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
-- [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
-- [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
+- [\[ICLR 2026\] UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers](ultravico_breaking_extrapolation_limits_in_video_diffusion_transformers.md)
+- [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
+- [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](../../CVPR2026/video_generation/phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
+- [\[ICLR 2026\] JavisDiT++: Unified Modeling and Optimization for Joint Audio-Video Generation](javisdit_unified_modeling_and_optimization_for_joint_audio-video_generation.md)
 - [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
 
 </div>

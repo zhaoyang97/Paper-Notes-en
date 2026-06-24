@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CompetitorFormer: Mitigating Query Conflicts for 3D Instance Segmentation via Competitive Strategy
 description: >-
-  [CVPR 2026][Segmentation][ScanNet] To address the persistent issue of "multiple queries competing for the same object leading to mask fragmentation" in Transformer-based 3D instance segmentation, this paper introduces a Query Competition Layer. This layer explicitly calculates the "competitive landscape" (identifying the strongest spatial overlap and do
+  [CVPR 2026][3D Vision][3D instance segmentation] To address the persistent issue of "multiple queries competing for the same object leading to mask fragmentation" in Transformer-based 3D instance segmentation, this paper introduces a Query Competition Layer. This layer explicitly calculates the "competitive landscape" (identifying the strongest spatial overlap and dominant/subordinate roles) for each query before each decoding stage. Combined with modified self-attention and…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - ScanNet
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D instance segmentation"
+  - "Transformer decoder"
+  - "query conflict"
+  - "competitive modeling"
+  - "ScanNet"
 date: 2026-05-08
-content_hash: 53271a4861779332
+content_hash: 75efddb9cf9750b0
 ---
+
 # CompetitorFormer: Mitigating Query Conflicts for 3D Instance Segmentation via Competitive Strategy
 
 **Conference**: CVPR 2026  
@@ -161,15 +166,14 @@ QCL provides the largest standalone gain (+0.6). The full configuration yields 6
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
+- [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
 - [\[CVPR 2026\] MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)
-- [\[CVPR 2026\] Mitigating Objectness Bias and Region-to-Text Misalignment for Open-Vocabulary Panoptic Segmentation](mitigating_objectness_bias_and_region-to-text_misalignment_for_open-vocabulary_p.md)
-- [\[CVPR 2026\] High-Precision Dichotomous Image Segmentation via Depth Integrity-Prior and Fine-Grained Patch Strategy](high-precision_dichotomous_image_segmentation_via_depth_integrity-prior_and_fine.md)
-- [\[ECCV 2024\] Part2Object: Hierarchical Unsupervised 3D Instance Segmentation](../../ECCV2024/segmentation/part2object_hierarchical_unsupervised_3d_instance_segmentation.md)
+- [\[AAAI 2026\] UniC-Lift: Unified 3D Instance Segmentation via Contrastive Learning](../../AAAI2026/3d_vision/unic-lift_unified_3d_instance_segmentation_via_contrastive_learning.md)
+- [\[CVPR 2026\] EvObj: Learning Evolving Object-centric Representations for 3D Instance Segmentation without Scene Supervision](evobj_learning_evolving_object-centric_representations_for_3d_instance_segmentat.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba
 description: >-
-  [ICLR 2026][Model Compression][Mamba] Memba is proposed as a parameter-efficient fine-tuning method inspired by biological neuron membrane potentials. By introducing Leaky Integrate Membrane (LIM) neurons into the Mamba gating branch to achieve temporal adaptation, combined with LoRA placement optimization and cross-layer membrane transmission, it outperfo
+  [ICLR 2026][Model Compression][Mamba] Memba is proposed as a parameter-efficient fine-tuning method inspired by biological neuron membrane potentials. By introducing Leaky Integrate Membrane (LIM) neurons into the Mamba gating branch to achieve temporal adaptation, combined with LoRA placement optimization and cross-layer membrane transmission, it outperforms existing Mamba PEFT methods on language and vision tasks with minimal parameters.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mamba
-  - PEFT
-  - State Space Model
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Mamba"
+  - "PEFT"
+  - "Membrane Potential"
+  - "Leaky Integrate"
+  - "State Space Models"
 date: 2026-05-08
-content_hash: 6fac2bbe451b1fbe
+content_hash: b04be5d7bcbb8c1f
 ---
+
 # Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba
 
 **Conference**: ICLR 2026  

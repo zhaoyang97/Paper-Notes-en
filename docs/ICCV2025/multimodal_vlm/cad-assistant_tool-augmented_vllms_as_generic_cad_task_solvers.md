@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CAD-Assistant: Tool-Augmented VLLMs as Generic CAD Task Solvers
 description: >-
-  [ICCV 2025][Multimodal VLM][CAD Agent] This paper proposes CAD-Assistant, the first tool-augmented vision-language model framework for generic CAD tasks. By integrating a CAD-specific toolset (sketch parameterizer…
+  [ICCV 2025][Multimodal VLM][CAD Agent] This paper proposes CAD-Assistant, the first tool-augmented vision-language model framework for generic CAD tasks. By integrating a CAD-specific toolset (sketch parameterizer, rendering module, constraint checker, etc.) and the FreeCAD Python API, it surpasses supervised task-specific methods in a zero-shot setting.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Geometric Reasoning"
   - "FreeCAD"
 date: 2026-05-08
-content_hash: ce7332c9f99ab8fc
+content_hash: 68a17f2dcb562ba3
 ---
 
 # CAD-Assistant: Tool-Augmented VLLMs as Generic CAD Task Solvers
@@ -148,11 +148,11 @@ CAD-Assistant is a **training-free** framework requiring no fine-tuning or optim
 
 ## Related Papers
 
-- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
+- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](../../CVPR2026/multimodal_vlm/cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
+- [\[ICLR 2026\] CAD-Tokenizer: Towards Text-Based CAD Prototyping via Modality-Specific Tokenization](../../ICLR2026/multimodal_vlm/cad-tokenizer_towards_text-based_cad_prototyping_via_modality-specific_tokenizat.md)
+- [\[CVPR 2025\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2025/multimodal_vlm/sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
 - [\[ICCV 2025\] Dynamic Group Detection using VLM-augmented Temporal Groupness Graph](dynamic_group_detection_using_vlm-augmented_temporal_groupness_graph.md)
-- [\[CVPR 2026\] SldprtNet: A Large-Scale Multimodal Dataset for CAD Generation in Language-Driven 3D Design](../../CVPR2026/multimodal_vlm/sldprtnet_a_large-scale_multimodal_dataset_for_cad_generation_in_language-driven.md)
-- [\[ICLR 2026\] Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models](../../ICLR2026/multimodal_vlm/error_notebook-guided_training-free_part_retrieval_in_3d_cad_assemblies_via_visi.md)
-- [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
+- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
 
 </div>
 

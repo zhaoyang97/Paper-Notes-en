@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Enhancing Hands in 3D Whole-Body Pose Estimation with Conditional Hands Modulator
 description: >-
-  [CVPR 2026][3D Vision][SMPL-X] Ours proposes the Hand4Whole++ modular framework, which injects features from a pre-trained hand estimator into a frozen whole-body estimator via a lightweight CHAM module. This achieves precise wrist orientation prediction and transfers fine finger joints and hand shapes from a hand model using differentiable rigid al
+  [CVPR 2026][3D Vision][Whole-Body Pose Estimation] Ours proposes the Hand4Whole++ modular framework, which injects features from a pre-trained hand estimator into a frozen whole-body estimator via a lightweight CHAM module. This achieves precise wrist orientation prediction and transfers fine finger joints and hand shapes from a hand model using differentiable rigid alignment.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SMPL-X
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Whole-Body Pose Estimation"
+  - "Hand Pose"
+  - "SMPL-X"
+  - "Feature Modulation"
+  - "Modular Framework"
 date: 2026-05-08
-content_hash: e6e86f3184780863
+content_hash: 010c24e068089201
 ---
+
 # Enhancing Hands in 3D Whole-Body Pose Estimation with Conditional Hands Modulator
 
 **Conference**: CVPR 2026  
@@ -167,11 +172,11 @@ Training data includes InterHand2.6M, ReInterHand, ARCTIC, and AGORA. 4 epochs, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
-- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
-- [\[CVPR 2026\] Globally Optimal Pose from Orthographic Silhouettes](globally_optimal_pose_from_orthographic_silhouettes.md)
+- [\[CVPR 2025\] Hearing Hands: Generating Sounds from Physical Interactions in 3D Scenes](../../CVPR2025/3d_vision/hearing_hands_generating_sounds_from_physical_interactions_in_3d_scenes.md)
+- [\[ECCV 2024\] 3D Reconstruction of Objects in Hands without Real World 3D Supervision](../../ECCV2024/3d_vision/3d_reconstruction_of_objects_in_hands_without_real_world_3d.md)
+- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
+- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
+- [\[ICCV 2025\] RapVerse: Coherent Vocals and Whole-Body Motion Generation from Text](../../ICCV2025/3d_vision/rapverse_coherent_vocals_and_whole-body_motion_generation_from_text.md)
 
 </div>
 

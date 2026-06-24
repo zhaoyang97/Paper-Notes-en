@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation
 description: >-
-  [NeurIPS 2025][Model Compression][Knowledge Distillation] PPG-Distill proposes a knowledge distillation framework tailored for PPG signals. By combining prediction-level, feature-level…
+  [NeurIPS 2025][Model Compression][Knowledge Distillation] PPG-Distill proposes a knowledge distillation framework tailored for PPG signals. By combining prediction-level, feature-level, and patch-level (morphology + rhythm) distillation, it transfers knowledge from large PPG foundation models to lightweight student models, achieving up to 21.8% performance improvement alongside 7× inference speedup and 19× memory compression.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Waveform Morphology Distillation"
   - "Rhythm Distillation"
 date: 2026-05-08
-content_hash: 034c7b9331a13dbd
+content_hash: 7b5959516844469a
 ---
 
 # PPG-Distill: Efficient Photoplethysmography Signals Analysis via Foundation Model Distillation
@@ -202,7 +202,7 @@ The key insight of this paper is that **domain-specific signal properties should
 - [\[NeurIPS 2025\] ORPO-Distill: Mixed-Policy Preference Optimization for Cross-Architecture LLM Distillation](orpo-distill_mixed-policy_preference_optimization_for_cross-architecture_llm_dis.md)
 - [\[NeurIPS 2025\] Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement](towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta.md)
 - [\[ACL 2026\] BaseCal: Unsupervised Confidence Calibration via Base Model Signals](../../ACL2026/model_compression/basecal_unsupervised_confidence_calibration_via_base_model_signals.md)
-- [\[NeurIPS 2025\] A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone](a_token_is_worth_over_1000_tokens_efficient_knowledge_distillation_through_low-r.md)
+- [\[NeurIPS 2025\] Revisiting Semi-Supervised Learning in the Era of Foundation Models](revisiting_semi-supervised_learning_in_the_era_of_foundation_models.md)
 - [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
 
 </div>

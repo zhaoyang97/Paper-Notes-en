@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Diffusion Language Model] Starting from the iterative inference structure of Diffusion Large Language Models (dLLMs), this paper reveals that jailbreak vulnerabilities stem from two mechanisms: "intra-step greedy remask bias" and "inter-step denoising path dependence." Based on these insights, the authors propose DiffuGuard: a training-free, pl
+  [ICLR2026][LLM Safety][Diffusion Language Models] Starting from the iterative inference structure of Diffusion Large Language Models (dLLMs), this paper reveals that jailbreak vulnerabilities stem from two mechanisms: "intra-step greedy remask bias" and "inter-step denoising path dependence." Based on these insights, the authors propose DiffuGuard: a training-free, plug-and-play framework (Stochastic Annealing Remasking + Block-level Audit and Repair). It reduces the average…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Diffusion Language Model
+  - "ICLR2026"
+  - "LLM Safety"
+  - "Diffusion Language Models"
+  - "Jailbreak Attacks"
+  - "Inference-time Defense"
+  - "Remasking Strategy"
+  - "Denoising-path Dependence"
 date: 2026-05-08
-content_hash: 089d2339d2b0bbf9
+content_hash: 055f09205984693b
 ---
+
 # DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models
 
 **Conference**: ICLR2026  
@@ -146,7 +151,6 @@ Overall, DiffuGuard alone reduces average ASR from 47.9% to 27.8% ($20.1\%\downa
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The view encoder for open-set 3D object retrieval (open-set 3DOR) is switched from CLIP to self-supervised DINO. A lightweight "chunked aggregation" adapter (CAM) is employed to integrate local multi-view relationships, while a Virtual Feature Synthesis (VFS) module utilizes CLIP text-visual alignment to generate unsee
+  [CVPR 2026][3D Vision][Open-set 3D Object Retrieval] The view encoder for open-set 3D object retrieval (open-set 3DOR) is switched from CLIP to self-supervised DINO. A lightweight "chunked aggregation" adapter (CAM) is employed to integrate local multi-view relationships, while a Virtual Feature Synthesis (VFS) module utilizes CLIP text-visual alignment to generate unseen class virtual features for regularization. Using only uni-modal visual features…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-set 3D Object Retrieval"
+  - "DINO Self-supervision"
+  - "Multi-view Aggregation"
+  - "CLIP Semantic Transfer"
+  - "Virtual Feature Regularization"
 date: 2026-05-08
-content_hash: f61006f9ebda7338
+content_hash: 40df5a5232eb08e2
 ---
+
 # DINO Eats CLIP: Adapting Beyond Knowns for Open-set 3D Object Retrieval
 
 **Conference**: CVPR 2026  
@@ -128,11 +134,11 @@ Ablation on OS-MN40-core (DINOv2 ViT-B/14):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
-- [\[CVPR 2026\] LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[ICCV 2025\] Describe, Adapt and Combine: Empowering CLIP Encoders for Open-set 3D Object Retrieval](../../ICCV2025/3d_vision/describe_adapt_and_combine_empowering_clip_encoders_for_open-set_3d_object_retri.md)
+- [\[CVPR 2026\] Beyond Reassembly: Fractured Object Recovery with Missing Parts](beyond_reassembly_fractured_object_recovery_with_missing_parts.md)
+- [\[CVPR 2026\] SceneMaker: Open-set 3D Scene Generation with Decoupled De-occlusion and Pose Estimation Model](scenemaker_open-set_3d_scene_generation_with_decoupled_de-occlusion_and_pose_est.md)
+- [\[CVPR 2026\] BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction](bea-gs_beyond_radiance_supervision_in_3dgs_for_precise_object_extraction.md)
+- [\[AAAI 2026\] CLIPPan: Adapting CLIP as A Supervisor for Unsupervised Pansharpening](../../AAAI2026/3d_vision/clippan_adapting_clip_as_a_supervisor_for_unsupervised_pansharpening.md)
 
 </div>
 

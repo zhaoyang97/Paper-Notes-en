@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ID-Sim: An Identity-Focused Similarity Metric
 description: >-
-  [CVPR 2026][Others][DINOv3] This paper introduces ID-Sim—a feed-forward perceptual metric specifically designed to measure "identity consistency." It mimics human "selective sensitivity" (insensitive to contextual changes like background/pose/lighting, but highly sensitive to subtle identity changes). By training LoRA and dual-head MLPs on a froz
+  [CVPR 2026][Model Compression][Perceptual Metric] This paper introduces ID-Sim—a feed-forward perceptual metric specifically designed to measure "identity consistency." It mimics human "selective sensitivity" (insensitive to contextual changes like background/pose/lighting, but highly sensitive to subtle identity changes). By training LoRA and dual-head MLPs on a frozen DINOv3 ViT-L using real and synthetic edited data, combined with a dual objective of global CLS contrastive…
 tags:
-  - CVPR 2026
-  - Others
-  - DINOv3
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Perceptual Metric"
+  - "Identity Similarity"
+  - "Selective Sensitivity"
+  - "Contrastive Learning"
+  - "DINOv3"
 date: 2026-05-08
-content_hash: 9c82054d62c719dc
+content_hash: 0a08b537dcfba369
 ---
+
 # ID-Sim: An Identity-Focused Similarity Metric
 
 **Conference**: CVPR 2026  
@@ -163,11 +168,11 @@ CLS supervision alone provides a ~13% relative gain over DINOv3; adding explicit
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
-- [\[CVPR 2026\] Convolutional Neural Networks Driven by Content Similarity](convolutional_neural_networks_driven_by_content_similarity.md)
-- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
-- [\[CVPR 2026\] Dual-Band Thermal Videography: Separating Time-Varying Reflection and Emission Near Ambient Conditions](dual_band_thermal_videography_separating_time-varying_reflection_and_emission_ne.md)
-- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
+- [\[ICCV 2025\] Dataset Distillation via the Wasserstein Metric](../../ICCV2025/model_compression/dataset_distillation_via_the_wasserstein_metric.md)
+- [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](../../ICLR2026/model_compression/sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
+- [\[ICLR 2026\] KLAS: Using Similarity to Stitch Neural Networks for Improved Accuracy-Efficiency Tradeoffs](../../ICLR2026/model_compression/klas_using_similarity_to_stitch_neural_networks_for_improved_accuracy-efficiency.md)
+- [\[ECCV 2024\] Simple Unsupervised Knowledge Distillation With Space Similarity](../../ECCV2024/model_compression/simple_unsupervised_knowledge_distillation_with_space_similarity.md)
+- [\[ICLR 2026\] STAR: Similarity-guided Teacher-Assisted Refinement for Super-Tiny Function Calling Models](../../ICLR2026/model_compression/star_similarity-guided_teacher-assisted_refinement_for_super-tiny_function_calli.md)
 
 </div>
 

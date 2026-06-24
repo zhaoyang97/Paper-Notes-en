@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis
 description: >-
-  [ICLR 2026][Medical Imaging][Q-former] This paper proposes a "modality-anchored interaction" framework that combines uni-modal foundation models from four domains—sMRI, fMRI, clinical text, and genetics—for Alzheimer's disease diagnosis. By rotating each modality as an anchor and freezing most of its parameters, a modality-aware Q-former selectively project
+  [ICLR 2026][Medical Imaging][Alzheimer's Disease Diagnosis] This paper proposes a "modality-anchored interaction" framework that combines uni-modal foundation models from four domains—sMRI, fMRI, clinical text, and genetics—for Alzheimer's disease diagnosis. By rotating each modality as an anchor and freezing most of its parameters, a modality-aware Q-former selectively projects features from auxiliary modalities into the anchor's feature space. This achieves deep cross-modal…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Q-former
-  - LoRA
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Alzheimer's Disease Diagnosis"
+  - "Multi-modal Fusion"
+  - "Foundation Model Adaptation"
+  - "Q-former"
+  - "Modality-Anchored Interaction"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 42a64f515a0a9112
+content_hash: a61194a4080fc8cd
 ---
+
 # Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis
 
 **Conference**: ICLR 2026  
@@ -115,10 +120,10 @@ Improvements are more significant in modality-incomplete settings (closer to cli
 ## Related Papers
 
 - [\[CVPR 2026\] EMAD: Evidence-Centric Grounded Multimodal Diagnosis for Alzheimer's Disease](../../CVPR2026/medical_imaging/emad_evidence-centric_grounded_multimodal_diagnosis_for_alzheimers_disease.md)
-- [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](../../AAAI2026/medical_imaging/pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
 - [\[ICLR 2026\] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation](bridging_radiology_and_pathology_foundation_models_via_concept-based_multimodal_.md)
+- [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](../../AAAI2026/medical_imaging/pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
 - [\[ICLR 2026\] Histopathology-Genomics Multi-modal Structural Representation Learning for Data-Efficient Precision Oncology](histopathology-genomics_multi-modal_structural_representation_learning_for_data-.md)
-- [\[ICLR 2026\] CARE: Towards Clinical Accountability in Multi-Modal Medical Reasoning with an Evidence-Grounded Agentic Framework](care_towards_clinical_accountability_in_multi-modal_medical_reasoning_with_an_ev.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
 
 </div>
 

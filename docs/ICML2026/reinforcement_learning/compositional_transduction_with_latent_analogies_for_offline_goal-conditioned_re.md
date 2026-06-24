@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] This paper proposes CTA (Compositional Transduction with latent Analogies), which decomposes goal-reaching tasks into two independent factors: "task-intrinsic analogies" and "task-extrinsic contexts." By utilizing temporal distance difference fields as analogy representations and combining them with bilinear transducti
+  [ICML2026][Reinforcement Learning][Offline goal-conditioned reinforcement learning] This paper proposes CTA (Compositional Transduction with latent Analogies), which decomposes goal-reaching tasks into two independent factors: "task-intrinsic analogies" and "task-extrinsic contexts." By utilizing temporal distance difference fields as analogy representations and combining them with bilinear transduction, the method achieves extrapolation to unseen analogy-context combinations…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "Offline goal-conditioned reinforcement learning"
+  - "compositional generalization"
+  - "analogy transduction"
+  - "temporal distance difference field"
+  - "bilinear transduction"
 date: 2026-05-08
-content_hash: 8bfd8db2b9753231
+content_hash: 9a77ce21bd49fe09
 ---
+
 # Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning
 
 **Conference**: ICML2026  
@@ -129,11 +135,11 @@ Evaluating direct success rates after intentionally removing specific analogy-co
 
 ## Related Papers
 
-- [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
 - [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
+- [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
 - [\[CVPR 2026\] MangoBench: A Benchmark for Multi-Agent Goal-Conditioned Offline Reinforcement Learning](../../CVPR2026/reinforcement_learning/mangobench_a_benchmark_for_multi-agent_goal-conditioned_offline_reinforcement_le.md)
-- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
-- [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](../../AAAI2026/reinforcement_learning/first-order_representation_languages_for_goal-conditioned_rl.md)
+- [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](../../ICLR2026/reinforcement_learning/occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
+- [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](../../ICLR2026/reinforcement_learning/scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
 
 </div>
 

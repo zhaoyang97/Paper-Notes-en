@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the poor generalization of biomedical VLMs on "unseen classes within the same dataset," BiomedCCPL employs a VGAP module to dynamically generate image-conditional prompts from multi-scale adaptive visual prototypes and an SCD module to decouple prompts into causal and non-causal pathways via front-door adjus
+  [CVPR 2026][Multimodal VLM][Prompt Learning] Addressing the poor generalization of biomedical VLMs on "unseen classes within the same dataset," BiomedCCPL employs a VGAP module to dynamically generate image-conditional prompts from multi-scale adaptive visual prototypes and an SCD module to decouple prompts into causal and non-causal pathways via front-door adjustment for deconfounding. On 11 datasets across 9 modalities, the average HM for Base-to-Novel tasks is improved fro…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Prompt Learning"
+  - "Causal Inference"
+  - "Biomedical VLM"
+  - "Unseen Class Generalization"
+  - "Front-door Adjustment"
 date: 2026-05-08
-content_hash: e781d998b005d031
+content_hash: 772b00b29d70be02
 ---
+
 # BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ Ablation of components (SAR / VGAP / SCD, 11-dataset average; Few-shot column de
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] STAR: Test-Time Adaptation Can Enhance Universal Prompt Learning for Vision-Language Models](star_test-time_adaptation_can_enhance_universal_prompt_learning_for_vision-langu.md)
-- [\[CVPR 2026\] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models](evolving_prompt_adaptation_for_vision-language_models.md)
 - [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
+- [\[ICML 2025\] Learning Invariant Causal Mechanism from Vision-Language Models](../../ICML2025/multimodal_vlm/learning_invariant_causal_mechanism_from_vision-language_models.md)
 - [\[CVPR 2026\] ReBaPL: Repulsive Bayesian Prompt Learning](rebapl_repulsive_bayesian_prompt_learning.md)
+- [\[CVPR 2026\] Towards Calibrating Prompt Tuning of Vision-Language Models](towards_calibrating_prompt_tuning_of_vision-language_models.md)
 
 </div>
 

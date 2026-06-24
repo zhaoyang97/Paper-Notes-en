@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][GRPO] Addressing the issue where the uncomputable log-likelihood of masked diffusion language models (dLLMs) leads to biased RL policy gradients, this paper proposes Sandwiched Policy Gradient (SPG). It maximizes the Evidence Lower Bound (ELBO) for samples with positive advantages and minimizes a newly derived computable Evi
+  [ICLR 2026][Reinforcement Learning][Masked Diffusion Language Models] Addressing the issue where the uncomputable log-likelihood of masked diffusion language models (dLLMs) leads to biased RL policy gradients, this paper proposes Sandwiched Policy Gradient (SPG). It maximizes the Evidence Lower Bound (ELBO) for samples with positive advantages and minimizes a newly derived computable Evidence Upper Bound (EUBO) for samples with negative advantages…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Masked Diffusion Language Models"
+  - "Policy Gradient"
+  - "Evidence Upper Bound"
+  - "GRPO"
+  - "Block Masking"
 date: 2026-05-08
-content_hash: 772923af845b1835
+content_hash: 6bc7a9dd14390bc7
 ---
+
 # SPG: Sandwiched Policy Gradient for Masked Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -164,8 +169,8 @@ Ablation of masking strategy (Average Accuracy):
 - [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)
 - [\[ICLR 2026\] Revolutionizing Reinforcement Learning Framework for Diffusion Large Language Models](revolutionizing_reinforcement_learning_framework_for_diffusion_large_language_mo.md)
 - [\[ICLR 2026\] Reevaluating Policy Gradient Methods for Imperfect-Information Games](reevaluating_policy_gradient_methods_for_imperfect-information_games.md)
-- [\[ICML 2026\] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation](../../ICML2026/reinforcement_learning/d2_improving_reasoning_in_diffusion_language_models_via_trajectory_likelihood_es.md)
 - [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](../../ICML2026/reinforcement_learning/learning_unmasking_policies_for_diffusion_language_models.md)
+- [\[ICLR 2026\] ResT: Reshaping Token-Level Policy Gradients for Tool-Use Large Language Models](rest_reshaping_token-level_policy_gradients_for_tool-use_large_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Composite Optimization with Error Feedback: the Dual Averaging Approach
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] To address the long-standing gap where "Error Feedback (EF) fails in composite optimization with non-smooth regularization/constraints," this paper reshapes the summation structure of iterations using **Dual Averaging (DA)**. By combining it with the recent EControl error feedback mechanism, it provides the first conve
+  [ICLR 2026][Optimization][Error Feedback] To address the long-standing gap where "Error Feedback (EF) fails in composite optimization with non-smooth regularization/constraints," this paper reshapes the summation structure of iterations using **Dual Averaging (DA)**. By combining it with the recent EControl error feedback mechanism, it provides the first convergence rate for composite convex optimization that **perfectly matches** the rate of non-composite cases.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Error Feedback"
+  - "Composite Optimization"
+  - "Dual Averaging"
+  - "Communication Compression"
+  - "Virtual Iteration"
 date: 2026-05-08
-content_hash: 45a1b46075960533
+content_hash: a9596baa186ebcd0
 ---
+
 # Composite Optimization with Error Feedback: the Dual Averaging Approach
 
 **Conference**: ICLR 2026  

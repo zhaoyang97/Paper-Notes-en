@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MARS: A Malignity-Aware Backdoor Defense in Federated Learning
 description: >-
-  [NeurIPS 2025][AI Safety][backdoor attack defense] This paper proposes MARS, a defense method that quantifies the malignity of local models by computing per-neuron Backdoor Energy (BE)…
+  [NeurIPS 2025][AI Safety][backdoor attack defense] This paper proposes MARS, a defense method that quantifies the malignity of local models by computing per-neuron Backdoor Energy (BE), and leverages Wasserstein distance-based clustering to effectively identify backdoor models in federated learning.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "backdoor energy"
   - "clustering-based detection"
 date: 2026-05-08
-content_hash: 239e29e537d2717b
+content_hash: 45ad9f2bf87d7769
 ---
 
 # MARS: A Malignity-Aware Backdoor Defense in Federated Learning
@@ -123,10 +123,10 @@ MARS consists of three steps: (1) computing the Backdoor Energy (BE) for each ne
 ## Related Papers
 
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](../../ICCV2025/ai_safety/find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
-- [\[ICCV 2025\] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing](../../ICCV2025/ai_safety/client2vec_improving_federated_learning_by_distribution_shifts_aware_client_inde.md)
+- [\[CVPR 2025\] Infighting in the Dark: Multi-Label Backdoor Attack in Federated Learning](../../CVPR2025/ai_safety/infighting_in_the_dark_multi-label_backdoor_attack_in_federated_learning.md)
+- [\[CVPR 2025\] Detecting Backdoor Attacks in Federated Learning via Direction Alignment Inspection](../../CVPR2025/ai_safety/detecting_backdoor_attacks_in_federated_learning_via_direction_alignment_inspect.md)
 - [\[NeurIPS 2025\] DictPFL: Efficient and Private Federated Learning on Encrypted Gradients](dictpfl_efficient_and_private_federated_learning_on_encrypted_gradients.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](../../CVPR2026/ai_safety/feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
+- [\[ICCV 2025\] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing](../../ICCV2025/ai_safety/client2vec_improving_federated_learning_by_distribution_shifts_aware_client_inde.md)
 
 </div>
 

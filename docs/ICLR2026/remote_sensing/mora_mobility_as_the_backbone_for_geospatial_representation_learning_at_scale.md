@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MoRA: Mobility as the Backbone for Geospatial Representation Learning at Scale
 description: >-
-  [ICLR 2026][Remote Sensing][GNN] MoRA treats human mobility graphs as the "structural backbone" for multimodal fusion. Using CLIP-style asymmetric contrastive learning, it aligns POIs, satellite imagery, and demographics with a billion-edge mobility graph. It outperforms SOTA by an average of 12.9% across 9 socioeconomic downstream tasks using 128-dim
+  [ICLR 2026][Remote Sensing][Human mobility graph] MoRA treats human mobility graphs as the "structural backbone" for multimodal fusion. Using CLIP-style asymmetric contrastive learning, it aligns POIs, satellite imagery, and demographics with a billion-edge mobility graph. It outperforms SOTA by an average of 12.9% across 9 socioeconomic downstream tasks using 128-dimensional representations and provides the first empirical evidence of scaling laws in geospatial representatio…
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - GNN
+  - "ICLR 2026"
+  - "Remote Sensing"
+  - "Human mobility graph"
+  - "geospatial representation"
+  - "multimodal contrastive learning"
+  - "spatial tokenization"
+  - "GNN"
+  - "scaling laws"
 date: 2026-05-08
-content_hash: 46ffdf556b73a11f
+content_hash: 8a1a9fd5e4ac51f0
 ---
+
 # MoRA: Mobility as the Backbone for Geospatial Representation Learning at Scale
 
 **Conference**: ICLR 2026  
@@ -127,6 +133,7 @@ Removing **demographics (Demo)** caused the largest drop, while POI and Imagery 
 - **Value**: ⭐⭐⭐⭐ — High practical value for Socioeconomic GeoAI with compact, high-performance representations.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

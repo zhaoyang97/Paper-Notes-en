@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VLSU: Mapping the Limits of Joint Multimodal Understanding for AI Safety
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] The authors construct VLSU—a multimodal safety benchmark containing 8,187 real image-text pairs, covering 15 harm categories and 17 safety combination patterns. The study systematically reveals a fundamental defect in mainstream VLMs: while maintaining 90%+ accuracy in unimodal safety scenarios, performance plummets to
+  [ICLR 2026][Multimodal VLM][Multimodal Safety] The authors construct VLSU—a multimodal safety benchmark containing 8,187 real image-text pairs, covering 15 harm categories and 17 safety combination patterns. The study systematically reveals a fundamental defect in mainstream VLMs: while maintaining 90%+ accuracy in unimodal safety scenarios, performance plummets to 20–55% in "jointly harmful" scenarios where individual modalities are safe but their combination requires cross-…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Safety"
+  - "Joint Understanding"
+  - "Safety Benchmark"
+  - "borderline severity"
+  - "Compositional Reasoning"
 date: 2026-05-08
-content_hash: 3784cada42f62d6b
+content_hash: cf9bbb86a354c110
 ---
+
 # VLSU: Mapping the Limits of Joint Multimodal Understanding for AI Safety
 
 **Conference**: ICLR 2026  

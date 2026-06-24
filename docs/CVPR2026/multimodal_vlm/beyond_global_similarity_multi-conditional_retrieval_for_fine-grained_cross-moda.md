@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper introduces the MCMR benchmark—a fine-grained cross-modal product retrieval dataset that requires "simultaneous satisfaction of multiple complementary conditions across both image and text" for a match. It systematically evaluates mainstream MLLM retrievers and MLLM-as-Rerankers, finding that while current re
+  [CVPR 2026][Multimodal VLM][Multi-conditional Retrieval] This paper introduces the MCMR benchmark—a fine-grained cross-modal product retrieval dataset that requires "simultaneous satisfaction of multiple complementary conditions across both image and text" for a match. It systematically evaluates mainstream MLLM retrievers and MLLM-as-Rerankers, finding that while current retrievers excel at coarse-grained recall, they struggle with multi-conditional reranking. Explicit pair-…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multi-conditional Retrieval"
+  - "Cross-modal Alignment"
+  - "MLLM Retrieval"
+  - "Dual-evidence Constraints"
+  - "Pointwise Reranking"
 date: 2026-05-08
-content_hash: a1da4568dd624ce5
+content_hash: 3356680bb323ce11
 ---
+
 # Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding
 
 **Conference**: CVPR 2026  
@@ -129,15 +135,16 @@ Observation: Retrievers have low R@1 (18–27%) but high R@100 (73–79%), indic
 - Value: ⭐⭐⭐⭐ (Provides a much-needed testbed for constraint-aware retrieval).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ArtiMuse: Fine-Grained Image Aesthetics Assessment with Joint Scoring and Expert-Level Understanding](artimuse_fine-grained_image_aesthetics_assessment_with_joint_scoring_and_expert-.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[ACL 2025\] Tuna: Comprehensive Fine-grained Temporal Understanding Evaluation on Dense Dynamic Videos](../../ACL2025/others/tuna_temporal_understanding.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
-- [\[CVPR 2026\] ID-Sim: An Identity-Focused Similarity Metric](id-sim_an_identity-focused_similarity_metric.md)
+- [\[CVPR 2026\] POGA: Paraphrased and Oppositional Graph Alignment for Fine-Grained Cross-Modal Retrieval](poga_paraphrased_and_oppositional_graph_alignment_for_fine-grained_cross-modal_r.md)
+- [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[CVPR 2026\] Language-driven Fine-grained Retrieval](language-driven_fine-grained_retrieval.md)
+- [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
+- [\[CVPR 2026\] Quota-Calibrated Fine-Grained Alignment with Context-Aware Marginals for Text-based Person Retrieval](quota-calibrated_fine-grained_alignment_with_context-aware_marginals_for_text-ba.md)
 
 </div>
 

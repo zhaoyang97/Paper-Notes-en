@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Energy-Structured Low-Rank Adaptation for Continual Learning
 description: >-
-  [ICML 2026][Model Compression][continual learning] E2-LoRA moves away from orthogonal constraints in parameter or input feature spaces, focusing instead on "task-induced output feature drift" $\Delta \mathbf{Y}_t = \Delta \mathbf{W}_t \mathbf{X}_t$. By performing SVD on this drift, LoRA parameters are rearranged onto energy-concentrated and rank-ordered bases. This all
+  [ICML 2026][Model Compression][continual learning] E2-LoRA moves away from orthogonal constraints in parameter or input feature spaces, focusing instead on "task-induced output feature drift" $\Delta \mathbf{Y}_t = \Delta \mathbf{W}_t \mathbf{X}_t$. By performing SVD on this drift, LoRA parameters are rearranged onto energy-concentrated and rank-ordered bases. This allows discarding low-energy ranks to reclaim capacity for new tasks, which, combined with an adaptive rank allo…
 tags:
-  - ICML 2026
-  - Model Compression
-  - continual learning
-  - LoRA
+  - "ICML 2026"
+  - "Model Compression"
+  - "continual learning"
+  - "LoRA"
+  - "orthogonal subspace"
+  - "energy concentration"
+  - "dynamic rank allocation"
 date: 2026-05-08
-content_hash: bbedbdaa111bb98a
+content_hash: 7cf70bc0080b32ce
 ---
+
 # Energy-Structured Low-Rank Adaptation for Continual Learning
 
 **Conference**: ICML 2026  
@@ -133,11 +137,11 @@ Using ViT-B/16-IN21K as the backbone, class-incremental CL was performed on Imag
 
 ## Related Papers
 
-- [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
-- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](../../NeurIPS2025/model_compression/gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[ACL 2026\] Not All Directions Matter: Towards Structured and Task-Aware Low-Rank Model Adaptation](../../ACL2026/model_compression/not_all_directions_matter_towards_structured_and_task-aware_low-rank_model_adapt.md)
-- [\[CVPR 2025\] CL-LoRA: Continual Low-Rank Adaptation for Rehearsal-Free Class-Incremental Learning](../../CVPR2025/model_compression/cl-lora_continual_low-rank_adaptation_for_rehearsal-free_class-incremental_learn.md)
+- [\[ICML 2026\] ScaLoRA: Optimally Scaled Low-Rank Adaptation for Efficient High-Rank Fine-Tuning](scalora_optimally_scaled_low-rank_adaptation_for_efficient_high-rank_fine-tuning.md)
+- [\[ICCV 2025\] PLAN: Proactive Low-Rank Allocation for Continual Learning](../../ICCV2025/model_compression/plan_proactive_low-rank_allocation_for_continual_learning.md)
+- [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
+- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](../../ICLR2026/model_compression/revisiting_weight_regularization_for_low-rank_continual_learning.md)
 
 </div>
 

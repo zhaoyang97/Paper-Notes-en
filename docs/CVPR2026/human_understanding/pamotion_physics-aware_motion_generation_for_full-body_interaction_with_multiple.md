@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects
 description: >-
-  [CVPR 2026][Human Understanding][Diffusion Model] PAMotion utilizes the physical intuition that "object acceleration exposes the contact state" to design a soft physics-aware interaction loss. Combined with a coarse-to-fine two-stage conditional diffusion, it ensures text-driven full-body multi-object interaction motions are semantically aligned while eliminating issu
+  [CVPR 2026][Human Understanding][Human-Object Interaction] PAMotion utilizes the physical intuition that "object acceleration exposes the contact state" to design a soft physics-aware interaction loss. Combined with a coarse-to-fine two-stage conditional diffusion, it ensures text-driven full-body multi-object interaction motions are semantically aligned while eliminating issues like hand interpenetration and floating objects, achieving SOTA on HIMO and ParaHome.
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human-Object Interaction"
+  - "Motion Generation"
+  - "Diffusion Models"
+  - "Physics-Aware"
+  - "Full-Body Interaction"
 date: 2026-05-08
-content_hash: 20ad302c307eeef0
+content_hash: 0b145a160dd438dd
 ---
+
 # PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,15 @@ Removing the physics loss $\mathcal{L}_{phy}$ results in consistent performance 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 - [\[CVPR 2026\] SAM 3D Body: Robust Full-Body Human Mesh Recovery](sam_3d_body_robust_full-body_human_mesh_recovery.md)
+- [\[CVPR 2026\] Decoupled Generative Modeling for Human-Object Interaction Synthesis](decoupled_generative_modeling_for_human-object_interaction_synthesis.md)
 - [\[CVPR 2026\] HandX: Scaling Bimanual Motion and Interaction Generation](handx_scaling_bimanual_motion_and_interaction_generation.md)
-- [\[CVPR 2026\] InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs](interagent_physics-based_multi-agent_command_execution_via_diffusion_on_interaction_graphs.md)
-- [\[CVPR 2026\] ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)
-- [\[CVPR 2026\] SyncMos: Scalable Motion Synchronisation for Multi-Agent Scene Interaction](syncmos_scalable_motion_synchronisation_for_multi-agent_scene_interaction.md)
 
 </div>
 

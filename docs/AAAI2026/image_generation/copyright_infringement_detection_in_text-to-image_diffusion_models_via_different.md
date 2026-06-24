@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Copyright Infringement Detection in Text-to-Image Diffusion Models via Differential Privacy
 description: >-
-  [AAAI2026][Image Generation][copyright infringement detection] This paper formalizes copyright infringement from the perspective of Differential Privacy (DP)…
+  [AAAI2026 Oral][Image Generation][copyright infringement detection] This paper formalizes copyright infringement from the perspective of Differential Privacy (DP), and proposes the D-Plus-Minus (DPM) framework. By fine-tuning diffusion models in two opposing directions—"learning" and "unlearning"—DPM measures conditional sensitivity differences to perform post-hoc detection of copyright infringement in text-to-image models.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Image Generation"
   - "copyright infringement detection"
   - "differential privacy"
@@ -12,7 +12,7 @@ tags:
   - "machine unlearning"
   - "text-to-image generation"
 date: 2026-05-08
-content_hash: a176ff205a746e01
+content_hash: 2c36bb6ef961a4a4
 ---
 
 # Copyright Infringement Detection in Text-to-Image Diffusion Models via Differential Privacy
@@ -157,10 +157,10 @@ The intersection of **differential privacy and copyright protection** offers an 
 ## Related Papers
 
 - [\[CVPR 2026\] CTCal: Rethinking Text-to-Image Diffusion Models via Cross-Timestep Self-Calibration](../../CVPR2026/image_generation/ctcal_rethinking_text-to-image_diffusion_models_via_cross-timestep_self-calibrat.md)
+- [\[ICML 2026\] Content-Style Identification via Differential Independence](../../ICML2026/image_generation/content-style_identification_via_differential_independence.md)
 - [\[CVPR 2026\] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation](../../CVPR2026/image_generation/blackmirror_black-box_backdoor_detection_for_text-to-image_models_via_instructio.md)
+- [\[NeurIPS 2025\] Blameless Users in a Clean Room: Defining Copyright Protection for Generative Models](../../NeurIPS2025/image_generation/blameless_users_in_a_clean_room_defining_copyright_protection_for_generative_mod.md)
 - [\[CVPR 2026\] TINA: Text-Free Inversion Attack for Unlearned Text-to-Image Diffusion Models](../../CVPR2026/image_generation/tina_text-free_inversion_attack_for_unlearned_text-to-image_diffusion_models.md)
-- [\[ICCV 2025\] CoMPaSS: Enhancing Spatial Understanding in Text-to-Image Diffusion Models](../../ICCV2025/image_generation/compass_enhancing_spatial_understanding_in_text-to-image_diffusion_models.md)
-- [\[ICLR 2026\] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective](../../ICLR2026/image_generation/continual_unlearning_for_text-to-image_diffusion_models_a_regularization_perspec.md)
 
 </div>
 

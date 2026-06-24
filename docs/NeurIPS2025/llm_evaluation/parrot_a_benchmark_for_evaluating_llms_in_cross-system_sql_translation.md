@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation
 description: >-
-  [NeurIPS 2025][LLM Evaluation][SQL translation] This paper presents PARROT, a practical and realistic benchmark for cross-system SQL translation (SQL-to-SQL), comprising 598 core translation pairs (expanded to 28…
+  [NeurIPS 2025][LLM Evaluation][SQL translation] This paper presents PARROT, a practical and realistic benchmark for cross-system SQL translation (SQL-to-SQL), comprising 598 core translation pairs (expanded to 28,003 pairs) sourced from 38 open-source benchmarks and real-world business scenarios, covering 22 production-grade database systems. The benchmark reveals that the strongest current LLMs achieve an average accuracy below 38.53%.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -11,7 +11,7 @@ tags:
   - "SQL dialects"
   - "benchmark"
 date: 2026-05-08
-content_hash: 2c8a7bcbffdaa7c7
+content_hash: 2c32303501ed90f5
 ---
 
 # PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation
@@ -154,10 +154,10 @@ The research topic is well-chosen—SQL-to-SQL is a severely neglected yet pract
 ## Related Papers
 
 - [\[NeurIPS 2025\] On Evaluating LLM Alignment by Evaluating LLMs as Judges](on_evaluating_llm_alignment_by_evaluating_llms_as_judges.md)
-- [\[ACL 2026\] RoleConflictBench: A Benchmark of Role Conflict Scenarios for Evaluating LLMs' Contextual Sensitivity](../../ACL2026/llm_evaluation/roleconflictbench_a_benchmark_of_role_conflict_scenarios_for_evaluating_llms39_c.md)
+- [\[ACL 2025\] SwiLTra-Bench: The Swiss Legal Translation Benchmark](../../ACL2025/llm_evaluation/swiltra-bench_the_swiss_legal_translation_benchmark.md)
+- [\[ACL 2025\] CuLEmo: Cultural Lenses on Emotion - Benchmarking LLMs for Cross-Cultural Emotion Understanding](../../ACL2025/llm_evaluation/culemo_cultural_lenses_on_emotion_-_benchmarking_llms_for_cross-cultural_emotion.md)
 - [\[AAAI 2026\] MCTS-SQL: Light-Weight LLMs can Master the Text-to-SQL through Monte Carlo Tree Search](../../AAAI2026/llm_evaluation/mcts-sql_light-weight_llms_can_master_the_text-to-sql_through_monte_carlo_tree_s.md)
-- [\[NeurIPS 2025\] LTD-Bench: Evaluating Large Language Models by Letting Them Draw](ltd-bench_evaluating_large_language_models_by_letting_them_draw.md)
-- [\[NeurIPS 2025\] EvaLearn: Quantifying the Learning Capability and Efficiency of LLMs via Sequential Problem Solving](evalearn_quantifying_the_learning_capability_and_efficiency_of_llms_via_sequenti.md)
+- [\[ACL 2025\] JuStRank: Benchmarking LLM Judges for System Ranking](../../ACL2025/llm_evaluation/justrank_llm_judge_system_ranking.md)
 
 </div>
 

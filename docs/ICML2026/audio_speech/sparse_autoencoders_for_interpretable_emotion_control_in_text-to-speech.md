@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech
 description: >-
-  [ICML 2026][Audio & Speech][Interpretability] The authors train a Top-k Sparse Autoencoder (SAE) on the residual stream of the semantic backbone of an LLM-based TTS (IndexTTS2). By using "sentence-level activation rate differences," they identify a small set of sparse latent features strongly correlated with target emotions. During inference, they perform bidirect
+  [ICML 2026][Audio & Speech][Sparse Autoencoders] The authors train a Top-k Sparse Autoencoder (SAE) on the residual stream of the semantic backbone of an LLM-based TTS (IndexTTS2). By using "sentence-level activation rate differences," they identify a small set of sparse latent features strongly correlated with target emotions. During inference, they perform bidirectional emotion induction and suppression by intervening only on these features without modifying backbone parame…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - Interpretability
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Sparse Autoencoders"
+  - "Emotion-controllable TTS"
+  - "Activation Steering"
+  - "Semantic Backbone"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: d4b45872319264d8
+content_hash: b06b8fa5593442d0
 ---
+
 # Sparse Autoencoders for Interpretable Emotion Control in Text-to-Speech
 
 **Conference**: ICML 2026  
@@ -129,15 +134,14 @@ In blind tests with 20 raters (0–5 scale): SAE-Emotion is significantly superi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] From Black Box to Biomarker: Sparse Autoencoders for Interpreting Speech Models of Parkinson's Disease](../../NeurIPS2025/audio_speech/from_black_box_to_biomarker_sparse_autoencoders_for_interpreting_speech_models_o.md)
-- [\[ICML 2026\] Position: Towards Responsible Evaluation for Text-to-Speech](position_towards_responsible_evaluation_for_text-to-speech.md)
 - [\[ICLR 2026\] Scaling Speech Tokenizers with Diffusion Autoencoders](../../ICLR2026/audio_speech/scaling_speech_tokenizers_with_diffusion_autoencoders.md)
-- [\[ACL 2026\] FC-TTS: Style and Timbre Control in Zero-Shot Text-to-Speech with Disentangled Speech Representations](../../ACL2026/audio_speech/fc-tts_style_and_timbre_control_in_zero-shot_text-to-speech_with_disentangled_sp.md)
+- [\[ICML 2026\] Position: Towards Responsible Evaluation for Text-to-Speech](position_towards_responsible_evaluation_for_text-to-speech.md)
 - [\[ICML 2026\] Sparse Tokens Suffice: Jailbreaking Audio Language Models via Token-Aware Gradient Optimization](sparse_tokens_suffice_jailbreaking_audio_language_models_via_token-aware_gradien.md)
+- [\[ICLR 2026\] Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition](../../ICLR2026/audio_speech/learnable_fractional_superlets_with_a_spectro-temporal_emotion_encoder_for_speec.md)
 
 </div>
 

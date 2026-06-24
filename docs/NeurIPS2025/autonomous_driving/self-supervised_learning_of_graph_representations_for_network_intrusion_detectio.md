@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Supervised Learning of Graph Representations for Network Intrusion Detection
 description: >-
-  [NeurIPS 2025][Autonomous Driving][network intrusion detection] This paper proposes GraphIDS, a self-supervised intrusion detection model that unifies graph representation learning and anomaly detection via a masked auto…
+  [NeurIPS 2025][Autonomous Driving][network intrusion detection] This paper proposes GraphIDS, a self-supervised intrusion detection model that unifies graph representation learning and anomaly detection via a masked autoencoder, achieving a PR-AUC of 99.98% and macro F1 of 99.61% on multiple NetFlow benchmarks, surpassing baselines by 5–25 percentage points.
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "masked autoencoder"
   - "anomaly detection"
 date: 2026-05-08
-content_hash: b40e6efc689906d1
+content_hash: ebb4cc2f31ff5755
 ---
 
 # Self-Supervised Learning of Graph Representations for Network Intrusion Detection
@@ -130,9 +130,9 @@ GraphIDS proceeds in three steps: (1) constructing local communication graphs fr
 
 - [\[AAAI 2026\] Dual-branch Spatial-Temporal Self-supervised Representation for Enhanced Road Network Learning](../../AAAI2026/autonomous_driving/dual-branch_spatial-temporal_self-supervised_representation_for_enhanced_road_ne.md)
 - [\[NeurIPS 2025\] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning](how_different_from_the_past_spatio-temporal_time_series_forecasting_with_self-su.md)
+- [\[CVPR 2025\] PSA-SSL: Pose and Size-aware Self-Supervised Learning on LiDAR Point Clouds](../../CVPR2025/autonomous_driving/psa-ssl_pose_and_size-aware_self-supervised_learning_on_lidar_point_clouds.md)
 - [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
-- [\[ICCV 2025\] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions](../../ICCV2025/autonomous_driving/seqgrowgraph_learning_lane_topology_as_a_chain_of_graph_expansions.md)
-- [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](../../ICCV2025/autonomous_driving/ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
+- [\[CVPR 2025\] VoteFlow: Enforcing Local Rigidity in Self-Supervised Scene Flow](../../CVPR2025/autonomous_driving/voteflow_enforcing_local_rigidity_in_self-supervised_scene_flow.md)
 
 </div>
 

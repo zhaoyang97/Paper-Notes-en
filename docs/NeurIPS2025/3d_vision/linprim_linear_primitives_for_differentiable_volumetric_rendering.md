@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LinPrim: Linear Primitives for Differentiable Volumetric Rendering
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes LinPrim, which replaces 3D Gaussian kernels with linear primitives (octahedra and tetrahedra) as the scene representation for novel view synthesis. Thro…
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper proposes LinPrim, which replaces 3D Gaussian kernels with linear primitives (octahedra and tetrahedra) as the scene representation for novel view synthesis. Through a differentiable rasterization pipeline, LinPrim enables end-to-end optimization and achieves reconstruction quality comparable to 3DGS on real-world datasets using fewer primitives, while maintaining real-time rendering capability.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Polyhedral Primitives"
   - "3D Gaussian Splatting"
 date: 2026-05-08
-content_hash: df0219c13729eceb
+content_hash: 9bf7b23183225478
 ---
 
 # LinPrim: Linear Primitives for Differentiable Volumetric Rendering
@@ -147,10 +147,10 @@ The standard 3DGS loss is used: $\mathcal{L} = (1-\lambda)\mathcal{L}_1 + \lambd
 
 ## Related Papers
 
-- [\[CVPR 2026\] UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes](../../CVPR2026/3d_vision/utrice_unifying_primitives_in_differentiable_ray_tracing_and_rasterization_via_t.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](../../CVPR2026/3d_vision/meshsplatting_differentiable_rendering_with_opaque_meshes.md)
+- [\[CVPR 2026\] Voxify3D: Pixel Art Meets Volumetric Rendering](../../CVPR2026/3d_vision/voxify3d_pixel_art_meets_volumetric_rendering.md)
 - [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](../../CVPR2026/3d_vision/d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
-- [\[NeurIPS 2025\] UMAMI: Unifying Masked Autoregressive Models and Deterministic Rendering for View Synthesis](umami_unifying_masked_autoregressive_models_and_deterministic_rendering_for_view.md)
-- [\[NeurIPS 2025\] DynaRend: Learning 3D Dynamics via Masked Future Rendering for Robotic Manipulation](dynarend_learning_3d_dynamics_via_masked_future_rendering_for_robotic_manipulati.md)
+- [\[CVPR 2025\] 3D Convex Splatting: Radiance Field Rendering with 3D Smooth Convexes](../../CVPR2025/3d_vision/3d_convex_splatting_radiance_field_rendering_with_3d_smooth_convexes.md)
 - [\[CVPR 2026\] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering](../../CVPR2026/3d_vision/hermite_radial_basis_function_for_surface_reconstruction_via_differentiable_rend.md)
 
 </div>

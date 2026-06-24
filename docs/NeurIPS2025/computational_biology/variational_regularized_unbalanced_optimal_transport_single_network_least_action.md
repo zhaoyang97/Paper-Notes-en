@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action
 description: >-
-  [NeurIPS 2025][Computational Biology][Regularized unbalanced optimal transport] This paper proposes Var-RUOT, which incorporates the necessary optimality conditions of the Regularized Unbalanced Optimal Transport (RUOT)…
+  [NeurIPS 2025][Computational Biology][Regularized unbalanced optimal transport] This paper proposes Var-RUOT, which incorporates the necessary optimality conditions of the Regularized Unbalanced Optimal Transport (RUOT) problem into the parameterization and loss design, enabling the solution of RUOT by learning a single scalar field. The approach yields solutions with lower action and improves training stability, while also analyzing the effect of growth penalty functions on…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "single scalar field"
   - "single-cell trajectory inference"
 date: 2026-05-08
-content_hash: e21aefe9aa0442c9
+content_hash: 3bc4abc4e4a3110c
 ---
 
 # Variational Regularized Unbalanced Optimal Transport: Single Network, Least Action
@@ -141,11 +141,11 @@ The joint objective $L = L_\text{Recon} + \gamma_\text{HJB} \cdot L_\text{HJB} +
 
 ## Related Papers
 
-- [\[AAAI 2026\] CellStream: Dynamical Optimal Transport Informed Embeddings for Reconstructing Cellular Trajectories from Snapshots Data](../../AAAI2026/computational_biology/cellstream_dynamical_optimal_transport_informed_embeddings_for_reconstructing_ce.md)
+- [\[ICLR 2026\] WFR-FM: Simulation-Free Dynamic Unbalanced Optimal Transport](../../ICLR2026/computational_biology/wfr-fm_simulation-free_dynamic_unbalanced_optimal_transport.md)
+- [\[ICLR 2026\] Optimal Transport Unlocks End-to-End Learning for Single-Molecule Localization](../../ICLR2026/computational_biology/optimal_transport_unlocks_end-to-end_learning_for_single-molecule_localization.md)
 - [\[NeurIPS 2025\] Flow Density Control: Generative Optimization Beyond Entropy-Regularized Fine-Tuning](flow_density_control_generative_optimization_beyond_entropy-regularized_fine-tun.md)
 - [\[NeurIPS 2025\] PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation](prescribe_predicting_single-cell_responses_with_bayesian_estimation.md)
-- [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
-- [\[NeurIPS 2025\] scMRDR: A Scalable and Flexible Framework for Unpaired Single-Cell Multi-Omics Data Integration](scmrdr_a_scalable_and_flexible_framework_for_unpaired_single-cell_multi-omics_da.md)
+- [\[ICLR 2026\] Fast and Interpretable Protein Substructure Alignment via Optimal Transport](../../ICLR2026/computational_biology/fast_and_interpretable_protein_substructure_alignment_via_optimal_transport.md)
 
 </div>
 

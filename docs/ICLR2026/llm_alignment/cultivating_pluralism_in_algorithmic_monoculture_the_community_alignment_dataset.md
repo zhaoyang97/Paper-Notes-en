@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cultivating Pluralism In Algorithmic Monoculture: The Community Alignment Dataset
 description: >-
-  [ICLR 2026][Alignment & RLHF][Paper Note] Based on representative human surveys of 15,000 individuals across 5 countries, the authors demonstrate that 21 SOTA LLM responses align with only 41% of human preferences ("algorithmic monoculture"). Existing preference datasets fail to learn this diversity because candidate responses are too homogeneous. To address t
+  [ICLR2026][LLM Alignment][Algorithmic Monoculture] Based on representative human surveys of 15,000 individuals across 5 countries, the authors demonstrate that 21 SOTA LLM responses align with only 41% of human preferences ("algorithmic monoculture"). Existing preference datasets fail to learn this diversity because candidate responses are too homogeneous. To address this, "Negative Correlation (NC) sampling" is proposed—using a single prompt to generate four **deliberately d…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Algorithmic Monoculture"
+  - "Pluralistic Alignment"
+  - "Negative Correlation Sampling"
+  - "Preference Datasets"
+  - "Global Values"
 date: 2026-05-08
-content_hash: a0ec00aab33d0173
+content_hash: f8fdaf7d8d386953
 ---
+
 # Cultivating Pluralism In Algorithmic Monoculture: The Community Alignment Dataset
 
 **Conference**: ICLR2026  

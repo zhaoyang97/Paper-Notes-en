@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging
 description: >-
-  [ICML 2026][Image Restoration][CASSI] Ours designs a train-render two-stage, wavelength-arbitrary queryable deep unfolding framework for Coded Aperture Snapshot Compressive Imaging (CASSI). By embedding a Continuous Spectral Field (CoSF) prior module—comprising a Fourier-Mamba-driven triple-branch cross-domain feature mixer, random frequency encoding, and
+  [ICML 2026][Image Restoration][CASSI] Ours designs a train-render two-stage, wavelength-arbitrary queryable deep unfolding framework for Coded Aperture Snapshot Compressive Imaging (CASSI). By embedding a Continuous Spectral Field (CoSF) prior module—comprising a Fourier-Mamba-driven triple-branch cross-domain feature mixer, random frequency encoding, and a spectral synthesis head—within each unfolding stage, the model can be trained on discrete wavelengths and synthesize hyp…
 tags:
-  - ICML 2026
-  - Image Restoration
-  - CASSI
+  - "ICML 2026"
+  - "Image Restoration"
+  - "CASSI"
+  - "Hyperspectral Reconstruction"
+  - "Deep Unfolding Network"
+  - "Implicit Neural Representation"
+  - "Continuous Spectral Super-Resolution"
 date: 2026-05-08
-content_hash: 441a7f209801fde6
+content_hash: a1c3f2cf920fda54
 ---
+
 # Phy-CoSF: Physics-Guided Continuous Spectral Fields Reconstruction and Super-Resolution for Snapshot Compressive Imaging
 
 **Conference**: ICML 2026  
@@ -132,6 +137,7 @@ Phy-CoSF achieves a SAM of 1.14 (nearly halving the error of the best baseline L
 - Value: ⭐⭐⭐⭐ Introduces "on-demand wavelength query" to HSI, beneficial for remote sensing and medical imaging.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -139,8 +145,8 @@ Phy-CoSF achieves a SAM of 1.14 (nearly halving the error of the best baseline L
 - [\[CVPR 2026\] DetectSCI: Toward Object-Guided ROI Reconstruction for High-Resolution Video Snapshot Compressive Imaging](../../CVPR2026/image_restoration/detectsci_toward_object-guided_roi_reconstruction_for_high-resolution_video_snap.md)
 - [\[CVPR 2026\] LRDUN: A Low-Rank Deep Unfolding Network for Efficient Spectral Compressive Imaging](../../CVPR2026/image_restoration/lrdun_a_low-rank_deep_unfolding_network_for_efficient_spectral_compressive_imagi.md)
 - [\[CVPR 2026\] SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging](../../CVPR2026/image_restoration/sgde_self-supervised_geometry_degradation_estimation_framework_for_coded_apertur.md)
+- [\[ICLR 2026\] Continuous Space-Time Video Super-Resolution with 3D Fourier Fields](../../ICLR2026/image_restoration/continuous_space-time_video_super-resolution_with_3d_fourier_fields.md)
 - [\[ICML 2026\] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner](coevolutionary_continuous_discrete_diffusion_make_your_diffusion_language_model_.md)
-- [\[CVPR 2026\] Multi-Scale Gradient-Guided Unrolling Architecture with Adaptive Mamba for Compressive Sensing](../../CVPR2026/image_restoration/multi-scale_gradient-guided_unrolling_architecture_with_adaptive_mamba_for_compr.md)
 
 </div>
 

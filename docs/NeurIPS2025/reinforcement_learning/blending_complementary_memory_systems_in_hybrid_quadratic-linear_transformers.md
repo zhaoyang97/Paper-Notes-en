@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][hybrid memory] This paper proposes Hybrid Quadratic-Linear Transformers (HQLT), which integrate KV-memory (softmax attention: precise retrieval but quadratic complexity) and FW-memo…
+  [NeurIPS 2025][Reinforcement Learning][hybrid memory] This paper proposes Hybrid Quadratic-Linear Transformers (HQLT), which integrate KV-memory (softmax attention: precise retrieval but quadratic complexity) and FW-memory (DeltaNet/linear attention: linear complexity but coarse retrieval) as complementary memory systems. Three hybrid strategies are compared (Delayed-Streaming, Delayed-Chunk, and Synchronous), and the Synchronous variant is shown to be optimal across language…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -13,7 +13,7 @@ tags:
   - "linear transformer"
   - "complementary learning systems"
 date: 2026-05-08
-content_hash: 2794aeac66d65250
+content_hash: 40954a8725d50b36
 ---
 
 # Blending Complementary Memory Systems in Hybrid Quadratic-Linear Transformers
@@ -152,8 +152,8 @@ At each time step, HQLT receives input $\mathbf{x}_t$ and simultaneously maintai
 - [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
 - [\[NeurIPS 2025\] Emergent World Beliefs: Exploring Transformers in Stochastic Games](emergent_world_beliefs_exploring_transformers_in_stochastic_games.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Learning Memory-Enhanced Improvement Heuristics for Flexible Job Shop Scheduling](learning_memory-enhanced_improvement_heuristics_for_flexible_job_shop_scheduling.md)
 - [\[NeurIPS 2025\] Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches](exploration_with_foundation_models_capabilities_limitations_and_hybrid_approache.md)
+- [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
 
 </div>
 

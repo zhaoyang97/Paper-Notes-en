@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions
 description: >-
-  [NeurIPS 2025][LLM Safety][LLM fairness] Through a persona-based evaluation framework, this paper finds that ChatGPT-4o and Bio-Medical-Llama-3-8B are systematically influenced by clinically irrelevant sociodemographic a…
+  [NeurIPS 2025][LLM Safety][LLM fairness] Through a persona-based evaluation framework, this paper finds that ChatGPT-4o and Bio-Medical-Llama-3-8B are systematically influenced by clinically irrelevant sociodemographic attributes (education, insurance, housing, etc.) in adverse drug event prediction, exhibiting both explicit and implicit bias patterns.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "sociodemographic bias"
   - "persona bias"
 date: 2026-05-08
-content_hash: 3b3342ca5411b6aa
+content_hash: d478831627e77ab9
 ---
 
 # Robust or Suggestible? Exploring Non-Clinical Induction in LLM Drug-Safety Decisions
@@ -143,8 +143,8 @@ This paper presents an evaluation framework and involves no model training. The 
 - [\[NeurIPS 2025\] Evaluating the Promise and Pitfalls of LLMs in Hiring Decisions](evaluating_the_promise_and_pitfalls_of_llms_in_hiring_decisions.md)
 - [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](../../ACL2026/llm_safety/robust_multimodal_safety_via_conditional_decoding.md)
+- [\[ICML 2025\] Robust Multi-bit Text Watermark with LLM-based Paraphrasers](../../ICML2025/llm_safety/robust_multi-bit_text_watermark_with_llm-based_paraphrasers.md)
 - [\[NeurIPS 2025\] ReliabilityRAG: Effective and Provably Robust Defense for RAG-based Web-Search](reliabilityrag_effective_and_provably_robust_defense_for_rag-based_web-search.md)
-- [\[NeurIPS 2025\] ALMGuard: Safety Shortcuts and Where to Find Them as Guardrails for Audio-Language Models](almguard_safety_shortcuts_and_where_to_find_them_as_guardrails_for_audio-languag.md)
 
 </div>
 

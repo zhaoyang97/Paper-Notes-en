@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Impact of Scaling Training Data on Adversarial Robustness
 description: >-
-  [NeurIPS 2025][Robotics][Adversarial Robustness] A systematic evaluation of 36 state-of-the-art vision models under 6 categories of black-box attacks reveals that attack success rate (ASR) decreases logarithmically with…
+  [NeurIPS 2025][Robotics][Adversarial Robustness] A systematic evaluation of 36 state-of-the-art vision models under 6 categories of black-box attacks reveals that attack success rate (ASR) decreases logarithmically with training data volume and model scale; however, **data quality and model scale are more critical than data volume alone**.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Data Quality"
   - "Vision Models"
 date: 2026-05-08
-content_hash: 8282124c5b57af13
+content_hash: 5327d82ea5bf3d92
 ---
 
 # The Impact of Scaling Training Data on Adversarial Robustness
@@ -149,10 +149,10 @@ The large-scale systematic evaluation provides highly valuable quantitative insi
 ## Related Papers
 
 - [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
-- [\[NeurIPS 2025\] AutoToM: Scaling Model-based Mental Inference via Automated Agent Modeling](autotom_scaling_model-based_mental_inference_via_automated_agent_modeling.md)
-- [\[ICLR 2026\] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](../../ICLR2026/robotics/d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
+- [\[ICLR 2026\] SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning](../../ICLR2026/robotics/simplevla-rl_scaling_vla_training_via_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
+- [\[ICLR 2026\] D2E: Scaling Vision-Action Pretraining on Desktop Data for Transfer to Embodied AI](../../ICLR2026/robotics/d2e_scaling_vision-action_pretraining_on_desktop_data_for_transfer_to_embodied_a.md)
+- [\[NeurIPS 2025\] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts](zero-shot_context_generalization_in_reinforcement_learning_from_few_training_con.md)
 
 </div>
 

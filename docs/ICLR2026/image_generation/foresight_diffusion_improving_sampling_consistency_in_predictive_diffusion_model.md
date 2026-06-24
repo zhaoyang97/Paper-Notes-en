@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing the issue that diffusion models applied to predictive learning suffer from high variance between samples and poor alignment with ground truth trajectories, ForeDiff decouples "condition understanding" from "target denoising" into two independent streams. It utilizes a pre-trained deterministic predictor to e
+  [ICLR 2026][Image Generation][Predictive Diffusion] Addressing the issue that diffusion models applied to predictive learning suffer from high variance between samples and poor alignment with ground truth trajectories, ForeDiff decouples "condition understanding" from "target denoising" into two independent streams. It utilizes a pre-trained deterministic predictor to extract representations for guiding generation, simultaneously improving prediction accuracy and sampling con…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Predictive Diffusion"
+  - "Sampling Consistency"
+  - "Condition Decoupling"
+  - "Deterministic Predictor"
+  - "Video Prediction"
 date: 2026-05-08
-content_hash: a87c353d3df9f151
+content_hash: f7e86fc1e340deee
 ---
+
 # Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models
 
 **Conference**: ICLR 2026  

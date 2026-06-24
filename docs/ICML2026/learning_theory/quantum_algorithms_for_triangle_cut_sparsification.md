@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Quantum Algorithms for Triangle Cut Sparsification
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This work designs quantum algorithms for "triangle cut sparsification": it first provides the first provably accelerated quantum triangle listing algorithm (integrating heavy-light vertex partitioning, quantum walk, and Grover search, taking the best of the three). It then embeds this into the motif sparsification fram
+  [ICML2026][Learning Theory][Triangle cut sparsification] This work designs quantum algorithms for "triangle cut sparsification": it first provides the first provably accelerated quantum triangle listing algorithm (integrating heavy-light vertex partitioning, quantum walk, and Grover search, taking the best of the three). It then embeds this into the motif sparsification framework of Kapralov et al. and applies quantum acceleration to post-processing sampling. This allows the…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML2026"
+  - "Learning Theory"
+  - "Quantum Algorithms"
+  - "Graph Sparsification"
+  - "Triangle cut sparsification"
+  - "triangle listing"
+  - "quantum walk"
+  - "Grover search"
+  - "motif sparsification"
 date: 2026-05-08
-content_hash: a74cb184bc96bb50
+content_hash: 9942b84f067a34ed
 ---
+
 # Quantum Algorithms for Triangle Cut Sparsification
 
 **Conference**: ICML2026  
@@ -136,10 +144,10 @@ As a theoretical paper, the "results" are time complexity bounds and lower bound
 ## Related Papers
 
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
-- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
+- [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](../../ICLR2026/learning_theory/quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
+- [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](../../ICLR2026/learning_theory/how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
 - [\[ICML 2026\] Online Learning with Recency: Algorithms for Sliding-window Streaming Multi-armed Bandits](online_learning_with_recency_algorithms_for_sliding-window_streaming_multi-armed.md)
-- [\[ICLR 2026\] Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures](../../ICLR2026/learning_theory/transformers_as_unsupervised_learning_algorithms_a_study_on_gaussian_mixtures.md)
-- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](../../ICLR2026/learning_theory/better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
+- [\[ICML 2026\] Matroid Algorithms Under Size-Sensitive Independence Oracles](matroid_algorithms_under_size-sensitive_independence_oracles.md)
 
 </div>
 

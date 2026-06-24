@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] For the super-resolution task involving "low-resolution hyperspectral image (LR HSI) + one unregistered high-resolution reference image," this paper utilizes spectral unmixing to decouple spatial and spectral information. This allows the network to focus solely on enhancing the unmixed abundance maps (rather than perfo
+  [CVPR 2026][Image Restoration][Hyperspectral Super-Resolution] For the super-resolution task involving "low-resolution hyperspectral image (LR HSI) + one unregistered high-resolution reference image," this paper utilizes spectral unmixing to decouple spatial and spectral information. This allows the network to focus solely on enhancing the unmixed abundance maps (rather than performing direct spatial-spectral coupled fusion, which is susceptible to misalignment interference).…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Hyperspectral Super-Resolution"
+  - "Unregistered Fusion"
+  - "Spectral Unmixing"
+  - "Deformable Aggregation"
+  - "Cross-Attention"
 date: 2026-05-08
-content_hash: 08fe982f7dec713e
+content_hash: 2784c3429751b122
 ---
+
 # Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning
 
 **Conference**: CVPR 2026  
@@ -170,11 +176,11 @@ CFDA Comparison (REAL, $\times 4$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
 - [\[CVPR 2026\] RegionFuse: Region-Adaptive Pixel Distribution Learning for Infrared and Visible Image Fusion](regionfuse_region-adaptive_pixel_distribution_learning_for_infrared_and_visible_.md)
+- [\[NeurIPS 2025\] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark](../../NeurIPS2025/image_restoration/enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
 - [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
 - [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
-- [\[CVPR 2026\] Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)
 
 </div>
 

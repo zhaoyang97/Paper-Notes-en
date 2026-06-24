@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery
 description: >-
-  [NeurIPS 2025][LLM/NLP][Hypothesis Generation] This work formalizes fine-grained scientific hypothesis generation as a combinatorial optimization problem and proposes Hierarchical Heuristic Search (HHS)—using LLM pairwis…
+  [NeurIPS 2025][LLM (Other)][Hypothesis Generation] This work formalizes fine-grained scientific hypothesis generation as a combinatorial optimization problem and proposes Hierarchical Heuristic Search (HHS)—using LLM pairwise comparisons as gradient signals to navigate the hypothesis space, with hierarchical abstraction smoothing the reward landscape to reduce local optima entrapment. On an expert-annotated benchmark of 51 post-2024 chemistry papers…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Hypothesis Generation"
   - "Hierarchical Search"
   - "Chemistry"
   - "LLM Reasoning"
   - "Combinatorial Optimization"
 date: 2026-05-08
-content_hash: 3e122de7cd676e20
+content_hash: 927b5f7a36608b8d
 ---
 
 # MOOSE-Chem2: Exploring LLM Limits in Fine-Grained Scientific Hypothesis Discovery
@@ -174,10 +174,10 @@ HHS sequentially searches for details across 4 hierarchical levels. Within each 
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise](autodiscovery_open-ended_scientific_discovery_via_bayesian_surprise.md)
+- [\[ACL 2025\] BehaviorBox: Automated Discovery of Fine-Grained Performance Differences Between Language Models](../../ACL2025/llm_nlp/behaviorbox_automated_discovery_of_fine-grained_performance_differences_between_.md)
+- [\[ACL 2025\] ChartLens: Fine-Grained Visual Attribution in Charts](../../ACL2025/llm_nlp/chartlens_fine-grained_visual_attribution_in_charts.md)
 - [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
 - [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
-- [\[ICLR 2026\] Fine-Grained Activation Steering: Steering Less, Achieving More](../../ICLR2026/llm_nlp/fine-grained_activation_steering_steering_less_achieving_more.md)
-- [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
 
 </div>
 

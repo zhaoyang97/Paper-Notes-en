@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Learning Collective Variables from BioEmu with Time-Lagged Generation
 description: >-
-  [ICLR 2026][Computational Biology][BioEmu] The frozen protein generation foundation model BioEmu is re-purposed as a "time-lagged generator" — by providing it the current conformation $x_t$ and forcing it to generate the conformation $x_{t+\tau}$ after time $\tau$, a lightweight encoder is trained to automatically learn a 1D CV that encodes only slow degrees of
+  [ICLR 2026][Computational Biology][Collective Variables (CV)] The frozen protein generation foundation model BioEmu is re-purposed as a "time-lagged generator" — by providing it the current conformation $x_t$ and forcing it to generate the conformation $x_{t+\tau}$ after time $\tau$, a lightweight encoder is trained to automatically learn a 1D CV that encodes only slow degrees of freedom. These CVs can be directly applied to enhanced sampling methods such as OPES and Steered…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - BioEmu
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Collective Variables (CV)"
+  - "Enhanced Sampling"
+  - "BioEmu"
+  - "Time-Lagged Generation"
+  - "Protein Folding"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: cc768ccfd8b19792
+content_hash: d66574a2cd4660a9
 ---
+
 # Learning Collective Variables from BioEmu with Time-Lagged Generation
 
 **Conference**: ICLR 2026  
@@ -151,16 +156,16 @@ The full design (Time-Lag ✓ + Frozen ✓) is optimal. Removing the time-lag in
 - **Value**: ⭐⭐⭐⭐  
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Enhancing Diffusion-Based Sampling with Molecular Collective Variables](enhancing_diffusion-based_sampling_with_molecular_collective_variables.md)
-- [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
 - [\[ICLR 2026\] DCFold: Efficient Protein Structure Generation with Single Forward Pass](dcfold_efficient_protein_structure_generation_with_single_forward_pass.md)
 - [\[ICLR 2026\] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models](driftlite_lightweight_drift_control_for_inference-time_scaling_of_diffusion_mode.md)
 - [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
+- [\[ICLR 2026\] Test-Time Adaptation without Source Data for Out-of-Domain Bioactivity Prediction](test-time_adaptation_without_source_data_for_out-of-domain_bioactivity_predictio.md)
 
 </div>
 

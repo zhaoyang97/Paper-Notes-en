@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras
 description: >-
-  [ICCV 2025][Human Understanding][Under-display camera] This paper presents UDC-VIT, the first real-world video dataset for under-display cameras (UDC), comprising 647 video clips with 116…
+  [ICCV 2025][Human Understanding][Under-display camera] This paper presents UDC-VIT, the first real-world video dataset for under-display cameras (UDC), comprising 647 video clips with 116,460 frames in total. A carefully designed dual-camera beam-splitter acquisition system achieves precise spatiotemporal alignment. With face recognition as the primary application scenario, the dataset reveals the inadequacy of synthetic datasets in simulating real-world UDC degradation.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "face recognition"
   - "video restoration"
 date: 2026-05-08
-content_hash: 8dcea759d349eee9
+content_hash: 9d4cf0bbf038ca2f
 ---
 
 # UDC-VIT: A Real-World Video Dataset for Under-Display Cameras
@@ -157,11 +157,11 @@ Alignment quality (PCK comparison):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Remote Photoplethysmography in Real-World and Extreme Lighting Scenarios](../../CVPR2025/human_understanding/remote_photoplethysmography_in_real-world_and_extreme_lighting_scenarios.md)
 - [\[ICCV 2025\] MagShield: Towards Better Robustness in Sparse Inertial Motion Capture Under Magnetic Disturbances](magshield_towards_better_robustness_in_sparse_inertial_motion_capture_under_magn.md)
-- [\[NeurIPS 2025\] BEDLAM2.0: Synthetic Humans and Cameras in Motion](../../NeurIPS2025/human_understanding/bedlam20_synthetic_humans_and_cameras_in_motion.md)
+- [\[ECCV 2024\] WorldPose: A World Cup Dataset for Global 3D Human Pose Estimation](../../ECCV2024/human_understanding/worldpose_a_world_cup_dataset_for_global_3d_human_pose_estimation.md)
 - [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
-- [\[ICCV 2025\] MDD: A Dataset for Text-and-Music Conditioned Duet Dance Generation](mdd_a_dataset_for_text-and-music_conditioned_duet_dance_generation.md)
-- [\[ICCV 2025\] Controllable and Expressive One-Shot Video Head Swapping](controllable_and_expressive_one-shot_video_head_swapping.md)
+- [\[NeurIPS 2025\] BEDLAM2.0: Synthetic Humans and Cameras in Motion](../../NeurIPS2025/human_understanding/bedlam20_synthetic_humans_and_cameras_in_motion.md)
 
 </div>
 

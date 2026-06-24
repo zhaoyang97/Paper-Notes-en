@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][DiT] Mantis decouples "future frame prediction" from the VLA backbone—using a set of latent action queries and an independent Diffusion Transformer (DiT) head to generate future frames. This allows the backbone to output only compact inter-frame dynamics as action supervision signals, preserving the benefits of visual fores
+  [CVPR 2026][Robotics][Vision-Language-Action model] Mantis decouples "future frame prediction" from the VLA backbone—using a set of latent action queries and an independent Diffusion Transformer (DiT) head to generate future frames. This allows the backbone to output only compact inter-frame dynamics as action supervision signals, preserving the benefits of visual foresight while maintaining backbone capacity for language understanding and reasoning. It achieves a 96.7% succe…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - DiT
+  - "CVPR 2026"
+  - "Robotics"
+  - "Vision-Language-Action model"
+  - "visual foresight"
+  - "latent actions"
+  - "DiT"
+  - "progressive training"
 date: 2026-05-08
-content_hash: 38e21d934dad895b
+content_hash: 05c0d6e7f4a17959
 ---
+
 # Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight
 
 **Conference**: CVPR 2026  
@@ -127,15 +132,16 @@ Mantis achieved the best performance in three out of four suites, with an averag
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
+- [\[ICML 2026\] Test-Time Training for Visual Foresight Vision-Language-Action Models](../../ICML2026/robotics/test-time_training_for_visual_foresight_vision-language-action_models.md)
 - [\[CVPR 2026\] ForeAct: Steering Your VLA with Efficient Visual Foresight Planning](foreact_steering_your_vla_with_efficient_visual_foresight_planning.md)
-- [\[CVPR 2026\] Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](evo-1_lightweight_vision-language-action_model_with_preserved_semantic_alignment.md)
+- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
 - [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
-- [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
+- [\[CVPR 2026\] Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](evo-1_lightweight_vision-language-action_model_with_preserved_semantic_alignment.md)
 
 </div>
 

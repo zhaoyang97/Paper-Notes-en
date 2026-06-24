@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EntropyLong: Effective Long-Context Training via Predictive Uncertainty
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] EntropyLong utilizes the model's own predictive entropy to locate "information gaps," retrieves distant context, and **empirically tests whether it reduces entropy at those positions**. By retaining only dependencies that bring genuine information gain to concatenate 128K training samples, it constructs "verified" long
+  [ICLR 2026][LLM Efficiency][Long-context training] EntropyLong utilizes the model's own predictive entropy to locate "information gaps," retrieves distant context, and **empirically tests whether it reduces entropy at those positions**. By retaining only dependencies that bring genuine information gain to concatenate 128K training samples, it constructs "verified" long-range dependencies, significantly outperforming heuristic data construction methods on RULER and LongBench-v…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Long-context training"
+  - "predictive entropy"
+  - "information gain"
+  - "data construction"
+  - "model-in-the-loop verification"
 date: 2026-05-08
-content_hash: b4fc66395e5e0401
+content_hash: cd148076c6c7d49e
 ---
+
 # EntropyLong: Effective Long-Context Training via Predictive Uncertainty
 
 **Conference**: ICLR 2026  
@@ -125,8 +131,8 @@ The base model is Meta-Llama-3-8B, with the RoPE base modified to 200,000,000 to
 - [\[ICML 2025\] NExtLong: Toward Effective Long-Context Training without Long Documents](../../ICML2025/llm_efficiency/nextlong_toward_effective_long-context_training_without_long_documents.md)
 - [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
 - [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
+- [\[ICLR 2026\] Revisiting Long-context Modeling from Context Denoising Perspective](revisiting_long-context_modeling_from_context_denoising_perspective.md)
 - [\[ICLR 2026\] Wide-In, Narrow-Out: Revokable Decoding for Efficient and Effective DLLMs](wide-in_narrow-out_revokable_decoding_for_efficient_and_effective_dllms.md)
-- [\[ICLR 2026\] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism](long-context_attention_benchmark_from_kernel_efficiency_to_distributed_context_p.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Splat Regression Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes Splat Regression Models—a class of function approximators that represent output as a weighted mixture of "heterogeneous, anisotropic bump functions (splats)," optimized via Wasserstein-Fisher-Rao gradient flow in measure space. The framework incorporates the popular 3D Gaussian Splatting as a specia
+  [ICLR 2026][Learning Theory][Gaussian Splatting] This paper proposes Splat Regression Models—a class of function approximators that represent output as a weighted mixture of "heterogeneous, anisotropic bump functions (splats)," optimized via Wasserstein-Fisher-Rao gradient flow in measure space. The framework incorporates the popular 3D Gaussian Splatting as a special case and outperforms KAN/MLP by $10\sim100\times$ in terms of error across low-dimensional approximation…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Function Approximation"
+  - "Gaussian Splatting"
+  - "Wasserstein-Fisher-Rao Gradient Flow"
+  - "Physics-Informed Modeling"
+  - "Non-parametric Regression"
 date: 2026-05-08
-content_hash: a2e69bae4928356e
+content_hash: 94016142a9fa214e
 ---
+
 # Splat Regression Models
 
 **Conference**: ICLR 2026  
@@ -143,9 +149,9 @@ Overall, the paper claims Splat models outperform KAN and MLP by $10\sim100\time
 
 - [\[ICLR 2026\] On Coreset for LASSO Regression Problem with Sensitivity Sampling](on_coreset_for_lasso_regression_problem_with_sensitivity_sampling.md)
 - [\[ICLR 2026\] Learning under Quantization for High-Dimensional Linear Regression](learning_under_quantization_for_high-dimensional_linear_regression.md)
+- [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
 - [\[ICLR 2026\] Polynomial Convergence of Riemannian Diffusion Models](polynomial_convergence_of_riemannian_diffusion_models.md)
 - [\[ICLR 2026\] On the Interpolation Effect of Score Smoothing in Diffusion Models](on_the_interpolation_effect_of_score_smoothing_in_diffusion_models.md)
-- [\[ICLR 2026\] Theory of Scaling Laws for In-Context Regression: Depth, Width, Context and Time](theory_of_scaling_laws_for_in-context_regression_depth_width_context_and_time.md)
 
 </div>
 

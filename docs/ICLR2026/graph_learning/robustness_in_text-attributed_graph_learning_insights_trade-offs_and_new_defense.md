@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robustness in Text-Attributed Graph Learning: Insights, Trade-offs, and New Defenses
 description: >-
-  [ICLR 2026][Graph Learning][GraphLLM] This paper provides the first horizontal comparison of classic GNNs, Robust GNNs (RGNNs), and GraphLLMs within a unified adversarial robustness evaluation framework for Text-Attributed Graphs (TAGs). It reveals a "text-structure trade-off"—where models can defend against either text or structural attacks but rarely bot
+  [ICLR 2026][Graph Learning][Text-Attributed Graph] This paper provides the first horizontal comparison of classic GNNs, Robust GNNs (RGNNs), and GraphLLMs within a unified adversarial robustness evaluation framework for Text-Attributed Graphs (TAGs). It reveals a "text-structure trade-off"—where models can defend against either text or structural attacks but rarely both—and proposes SFT-auto, a defense framework that leverages LLM reasoning to integrate "attack detection + re…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GraphLLM
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Text-Attributed Graph"
+  - "Adversarial Robustness"
+  - "GraphLLM"
+  - "Text-Structure Trade-off"
+  - "Attack Detection"
 date: 2026-05-08
-content_hash: 88811d09d9322371
+content_hash: 1e62d3a7de95657c
 ---
+
 # Robustness in Text-Attributed Graph Learning: Insights, Trade-offs, and New Defenses
 
 **Conference**: ICLR 2026  
@@ -139,9 +144,9 @@ Quantitative evidence of the trade-off (CiteSeer text poisoning): SFT-neighbor a
 
 - [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
 - [\[ICLR 2026\] On the Trade-off Between Expressivity and Privacy in Graph Representation Learning](on_the_trade-off_between_expressivity_and_privacy_in_graph_representation_learni.md)
-- [\[AAAI 2026\] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs](../../AAAI2026/graph_learning/gcl-ot_graph_contrastive_learning_with_optimal_transport_for_heterophilic_text-a.md)
 - [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
-- [\[ICML 2026\] ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs](../../ICML2026/graph_learning/eralign_energy-based_representation_alignment_of_gnns_and_llms_on_text-attribute.md)
+- [\[AAAI 2026\] GCL-OT: Graph Contrastive Learning with Optimal Transport for Heterophilic Text-Attributed Graphs](../../AAAI2026/graph_learning/gcl-ot_graph_contrastive_learning_with_optimal_transport_for_heterophilic_text-a.md)
+- [\[NeurIPS 2025\] Unifying Text Semantics and Graph Structures for Temporal Text-attributed Graphs with LLMs](../../NeurIPS2025/graph_learning/unifying_text_semantics_and_graph_structures_for_temporal_text-attributed_graphs.md)
 
 </div>
 

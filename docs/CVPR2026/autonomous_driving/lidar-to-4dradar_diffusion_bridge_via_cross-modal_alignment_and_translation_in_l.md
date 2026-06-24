@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space
 description: >-
-  [CVPR 2026][Autonomous Driving][LiDAR-to-Radar] L2RLDB is the first to translate sparse 3D LiDAR into complete 4D radar tensors including the Doppler dimension. It employs a "Key Voxel-Aware VAE" to compress high-dimensional noisy radar into a low-dimensional latent space, aligns LiDAR latent codes via patch-level contrastive learning, and completes cross-modal tran
+  [CVPR 2026][Autonomous Driving][4D mmWave Radar] L2RLDB is the first to translate sparse 3D LiDAR into complete 4D radar tensors including the Doppler dimension. It employs a "Key Voxel-Aware VAE" to compress high-dimensional noisy radar into a low-dimensional latent space, aligns LiDAR latent codes via patch-level contrastive learning, and completes cross-modal translation using a Brownian diffusion bridge in the aligned latent space. The synthesized radar significantly impr…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - LiDAR-to-Radar
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D mmWave Radar"
+  - "LiDAR-to-Radar"
+  - "Diffusion Bridge"
+  - "Latent Space Alignment"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: 6589ae00e47249e8
+content_hash: 92c05a007f4aee6b
 ---
+
 # LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space
 
 **Conference**: CVPR 2026  
@@ -145,8 +150,8 @@ Downstream 3D detection results (K-Radar, AP@0.3/0.5, BEV/3D):
 
 - [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
 - [\[CVPR 2026\] x2-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
+- [\[ICLR 2026\] AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection](../../ICLR2026/autonomous_driving/asyncbev_cross-modal_flow_alignment_in_asynchronous_3d_object_detection.md)
 - [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)
-- [\[ICLR 2026\] x²-Fusion: Cross-Modality and Cross-Dimension Flow Estimation in Event Edge Space](../../ICLR2026/autonomous_driving/x2-fusion_cross-modality_and_cross-dimension_flow_estimation_in_event_edge_space.md)
 - [\[CVPR 2026\] L3DR: 3D-aware LiDAR Diffusion and Rectification](l3dr_3d-aware_lidar_diffusion_and_rectification.md)
 
 </div>

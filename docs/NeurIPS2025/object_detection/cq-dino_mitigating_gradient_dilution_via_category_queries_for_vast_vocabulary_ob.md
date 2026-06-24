@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection
 description: >-
-  [NeurIPS 2025][Object Detection][Large-vocabulary detection] To address positive gradient dilution and hard-negative gradient dilution in large-vocabulary (>10K category) object detection…
+  [NeurIPS 2025][Object Detection][Large-vocabulary detection] To address positive gradient dilution and hard-negative gradient dilution in large-vocabulary (>10K category) object detection, this paper proposes CQ-DINO: replacing the classification head with learnable category queries and using image-guided Top-K category selection to reduce the negative space by 100×. CQ-DINO surpasses the previous SOTA by 2.1% AP on V3Det (13,204 categories) while remaining competitive on COC…
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "V3Det"
   - "DINO"
 date: 2026-05-08
-content_hash: bb8a776cd49e3f38
+content_hash: 66a7acea59ed019b
 ---
 
 # CQ-DINO: Mitigating Gradient Dilution via Category Queries for Vast Vocabulary Object Detection
@@ -154,11 +154,11 @@ Built upon the Grounding DINO architecture. Category encoding: learnable categor
 
 ## Related Papers
 
+- [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](../../ICCV2025/object_detection/dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](../../CVPR2026/object_detection/noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
 - [\[NeurIPS 2025\] DitHub: A Modular Framework for Incremental Open-Vocabulary Object Detection](dithub_a_modular_framework_for_incremental_openvocabulary_ob.md)
-- [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](../../ICCV2025/object_detection/dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
 - [\[ICCV 2025\] Uncertainty-Aware Gradient Stabilization for Small Object Detection](../../ICCV2025/object_detection/uncertainty-aware_gradient_stabilization_for_small_object_detection.md)
-- [\[NeurIPS 2025\] ReCon: Region-Controllable Data Augmentation with Rectification and Alignment for Object Detection](recon_region-controllable_data_augmentation_with_rectification_and_alignment_for.md)
+- [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](../../CVPR2026/object_detection/sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
 
 </div>
 

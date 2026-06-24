@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations
 description: >-
-  [ICCV2025][Autonomous Driving][Monocular 3D Detection] This paper proposes the first monocular 3D object detection method that requires no human annotations of any kind (neither 2D nor 3D). A novel Local Object Motion Mo…
+  [ICCV2025][Autonomous Driving][Monocular 3D Detection] This paper proposes the first monocular 3D object detection method that requires no human annotations of any kind (neither 2D nor 3D). A novel Local Object Motion Model (LOMM) is introduced to disentangle inter-frame motion sources, enabling auto-labeling at a speed ~700× faster than prior work. A Canonical Object Space (COS) is further proposed to enable multi-dataset training across heterogeneous camera configurations.
 tags:
   - "ICCV2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Pseudo-LiDAR"
   - "Annotation-Free"
 date: 2026-05-08
-content_hash: 8512860eab73339e
+content_hash: a2cb79e6184dc8b9
 ---
 
 # MonoSOWA: Scalable Monocular 3D Object Detector Without Human Annotations
@@ -189,10 +189,10 @@ LOMM is the key factor driving performance gains; SCC further improves by ~3.3 A
 ## Related Papers
 
 - [\[ICCV 2025\] Adaptive Dual Uncertainty Optimization: Boosting Monocular 3D Object Detection under Test-Time Shifts](adaptive_dual_uncertainty_optimization_boosting_monocular_3d_object_detection_un.md)
+- [\[ECCV 2024\] Monocular Occupancy Prediction for Scalable Indoor Scenes](../../ECCV2024/autonomous_driving/monocular_occupancy_prediction_for_scalable_indoor_scenes.md)
+- [\[ECCV 2024\] MonoWAD: Weather-Adaptive Diffusion Model for Robust Monocular 3D Object Detection](../../ECCV2024/autonomous_driving/monowad_weather-adaptive_diffusion_model_for_robust_monocular_3d_object_detectio.md)
 - [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
 - [\[ICCV 2025\] Robust 3D Object Detection using Probabilistic Point Clouds from Single-Photon LiDARs](robust_3d_object_detection_using_probabilistic_point_clouds_from_single-photon_l.md)
-- [\[NeurIPS 2025\] LabelAny3D: Label Any Object 3D in the Wild](../../NeurIPS2025/autonomous_driving/labelany3d_label_any_object_3d_in_the_wild.md)
-- [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
 
 </div>
 

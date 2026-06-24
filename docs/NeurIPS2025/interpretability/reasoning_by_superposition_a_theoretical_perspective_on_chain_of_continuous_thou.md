@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought
 description: >-
-  [NeurIPS 2025][Interpretability][continuous chain of thought] This paper theoretically demonstrates the expressive advantage of continuous chain-of-thought (Coconut) on directed graph reachability: a two-layer Transforme…
+  [NeurIPS 2025][Interpretability][continuous chain of thought] This paper theoretically demonstrates the expressive advantage of continuous chain-of-thought (Coconut) on directed graph reachability: a two-layer Transformer using $D$ continuous thought steps suffices to solve graph reachability with diameter $D$, whereas discrete CoT requires $O(n^2)$ steps. The core mechanism is that continuous thought vectors encode multiple search frontiers simultaneously in a "superposition…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Transformer expressiveness"
   - "Coconut"
 date: 2026-05-08
-content_hash: 6e7592559c651113
+content_hash: cbcd718147c5e0e4
 ---
 
 # Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought
@@ -128,8 +128,8 @@ The model indeed concentrates attention on reachable edges, with an additional p
 - [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](../../ICLR2026/interpretability/emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
 - [\[NeurIPS 2025\] Simulating Society Requires Simulating Thought](simulating_society_requires_simulating_thought.md)
 - [\[NeurIPS 2025\] Superposition Yields Robust Neural Scaling](superposition_yields_robust_neural_scaling.md)
-- [\[NeurIPS 2025\] ARECHO: Autoregressive Evaluation via Chain-Based Hypothesis Optimization for Speech Multi-Metric Estimation](arecho_autoregressive_evaluation_via_chain-based_hypothesis_optimization_for_spe.md)
 - [\[NeurIPS 2025\] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement](far_from_the_shallow_brain-predictive_reasoning_embedding_through_residual_disen.md)
+- [\[NeurIPS 2025\] LLM World Models Are Mental: Output Layer Evidence of Brittle World Model Use in LLM Mechanical Reasoning](llm_world_models_are_mental_output_layer_evidence_of_brittle_world_model_use_in_.md)
 
 </div>
 

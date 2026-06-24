@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SPDMark: Selective Parameter Displacement for Robust Video Watermarking
 description: >-
-  [CVPR 2026][Image Generation][LoRA] SPDMark proposes an in-model video watermarking framework based on Selective Parameter Displacement (SPD). By learning a dictionary of low-rank base shifts in the decoder and combining them based on a watermark key, it achieves per-frame embedding, imperceptibility, high robustness, and low computational overhead, whil
+  [CVPR 2026][Image Generation][Video Watermarking] SPDMark proposes an in-model video watermarking framework based on Selective Parameter Displacement (SPD). By learning a dictionary of low-rank base shifts in the decoder and combining them based on a watermark key, it achieves per-frame embedding, imperceptibility, high robustness, and low computational overhead, while supporting temporal tampering detection and localization.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - LoRA
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Watermarking"
+  - "Parameter Displacement"
+  - "LoRA"
+  - "Diffusion Models"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 99aa6d1f2a5ad9a4
+content_hash: 8f6e60915260e2e1
 ---
+
 # SPDMark: Selective Parameter Displacement for Robust Video Watermarking
 
 **Conference**: CVPR 2026  
@@ -140,15 +144,15 @@ The objective optimizes for both imperceptibility and message recovery: $\min_{\
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Robust Content Watermarking Against Removal and Forgery Attacks](towards_robust_content_watermarking_against_removal_and_forgery_attacks.md)
 - [\[CVPR 2026\] Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing](rel-zero_harnessing_patch-pair_invariance_for_robust_zero-watermarking_against_a.md)
-- [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
+- [\[ICLR 2026\] FARI: Robust One-Step Inversion for Watermarking in Diffusion Models](../../ICLR2026/image_generation/fari_robust_one-step_inversion_for_watermarking_in_diffusion_models.md)
 - [\[ECCV 2024\] Robust-Wide: Robust Watermarking against Instruction-driven Image Editing](../../ECCV2024/image_generation/robust-wide_robust_watermarking_against_instruction-driven_image_editing.md)
 - [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](spotedit_selective_region_editing_in_diffusion_transformers.md)
+- [\[CVPR 2026\] SIGMA: Selective-Interleaved Generation with Multi-Attribute Tokens](sigma_selective-interleaved_generation_with_multi-attribute_tokens.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction
 description: >-
-  [NeurIPS 2025][Audio & Speech][music generation] This paper proposes MGE-LDM, the first model to simultaneously achieve music mixture generation, partial generation (source completion)…
+  [NeurIPS 2025][Audio & Speech][music generation] This paper proposes MGE-LDM, the first model to simultaneously achieve music mixture generation, partial generation (source completion), and text-driven arbitrary source extraction within a unified latent diffusion framework. It jointly models mixture–submixture–source triplets and leverages diffusion inpainting to handle each task.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "multi-track modeling"
   - "CLAP"
 date: 2026-05-08
-content_hash: 92c00fe18f1ff533
+content_hash: 1b44178c1ad64b8a
 ---
 
 # MGE-LDM: Joint Latent Diffusion for Simultaneous Music Generation and Source Extraction
@@ -125,10 +125,10 @@ A $v$-objective is adopted with a cosine noise schedule. GroupNorm (3 groups cor
 ## Related Papers
 
 - [\[ICCV 2025\] Latent Swap Joint Diffusion for 2D Long-Form Latent Generation](../../ICCV2025/audio_speech/latent_swap_joint_diffusion_for_2d_long-form_latent_generation.md)
+- [\[CVPR 2025\] Enhancing Dance-to-Music Generation via Negative Conditioning Latent Diffusion Model](../../CVPR2025/audio_speech/enhancing_dance-to-music_generation_via_negative_conditioning_latent_diffusion_m.md)
 - [\[NeurIPS 2025\] BNMusic: Blending Environmental Noises into Personalized Music](bnmusic_blending_environmental_noises_into_personalized_music.md)
-- [\[NeurIPS 2025\] Latent Space Factorization in LoRA](latent_space_factorization_in_lora.md)
-- [\[NeurIPS 2025\] Multi-head Temporal Latent Attention](multi-head_temporal_latent_attention.md)
 - [\[NeurIPS 2025\] Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments](target_speaker_extraction_through_comparing_noisy_positive_and_negative_audio_en.md)
+- [\[NeurIPS 2025\] Latent Space Factorization in LoRA](latent_space_factorization_in_lora.md)
 
 </div>
 

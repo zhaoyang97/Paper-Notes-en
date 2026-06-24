@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation
 description: >-
-  [ICML 2026][Video Generation][Identification-First CoT] VAnim models open-domain text-to-SVG animation as "sparse state updates on a persistent DOM tree" + "Identification-First motion planning" + "GRPO rendering-aware reinforcement learning." This approach compresses sequence lengths by $9.86\times$ while maintaining topological consistency, significantly outperforming GPT
+  [ICML 2026][Video Generation][SVG Animation] VAnim models open-domain text-to-SVG animation as "sparse state updates on a persistent DOM tree" + "Identification-First motion planning" + "GRPO rendering-aware reinforcement learning." This approach compresses sequence lengths by $9.86\times$ while maintaining topological consistency, significantly outperforming GPT-5.2, Gemini 3 Pro, and LiveSketch.
 tags:
-  - ICML 2026
-  - Video Generation
-  - Identification-First CoT
-  - GRPO
+  - "ICML 2026"
+  - "Video Generation"
+  - "SVG Animation"
+  - "Sparse State Update"
+  - "Identification-First CoT"
+  - "GRPO"
+  - "Rendering-Aware RL"
 date: 2026-05-08
-content_hash: 2586995d8ad589ec
+content_hash: b8ebc5d2273ed099
 ---
+
 # VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation
 
 **Conference**: ICML 2026  
@@ -132,6 +136,7 @@ VAnim-GRPO achieves the highest semantic alignment and 100% execution rate. Whil
 - **Value**: ⭐⭐⭐⭐ Open-sourced data and framework are highly valuable for UI/Web automation and design tools.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,7 +145,7 @@ VAnim-GRPO achieves the highest semantic alignment and 100% execution rate. Whil
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](../../CVPR2026/video_generation/lottiegpt_vector_animation_generation.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
 - [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
-- [\[ICML 2026\] OLAF-World: Orienting Latent Actions for Video World Modeling](olaf-world_orienting_latent_actions_for_video_world_modeling.md)
+- [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
 
 </div>
 

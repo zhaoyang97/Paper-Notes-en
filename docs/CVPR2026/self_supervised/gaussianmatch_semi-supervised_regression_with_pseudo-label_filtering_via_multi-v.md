@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing the challenge in semi-supervised regression (SSR) where continuous outputs lack confidence scores and low-quality pseudo-labels contaminate training, GaussianMatch utilizes the **Gaussian consistency** of predictions from multiple weakly-augmented views of the same sample as a proxy for pseudo-label reliabil
+  [CVPR 2026][Self-Supervised Learning][Semi-supervised regression] Addressing the challenge in semi-supervised regression (SSR) where continuous outputs lack confidence scores and low-quality pseudo-labels contaminate training, GaussianMatch utilizes the **Gaussian consistency** of predictions from multiple weakly-augmented views of the same sample as a proxy for pseudo-label reliability. It retains only those samples where all views fall within a confidence interval and emplo…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Semi-supervised regression"
+  - "pseudo-label filtering"
+  - "multi-view consistency"
+  - "Gaussian similarity"
+  - "curriculum learning"
 date: 2026-05-08
-content_hash: 44dcab577da4ad9f
+content_hash: f2a43104bf63837f
 ---
+
 # GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency
 
 **Conference**: CVPR 2026  
@@ -143,8 +149,8 @@ UTKFace 250 labels, focusing on MAE$\downarrow$:
 
 - [\[CVPR 2026\] PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)
 - [\[CVPR 2026\] Measure The Feature Universe: Topology-based Pseudo Labeling and Gravity Consistency for Source-Free Domain Adaptation](measure_the_feature_universe_topology-based_pseudo_labeling_and_gravity_consiste.md)
-- [\[CVPR 2026\] MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)
-- [\[CVPR 2026\] GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization](geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization.md)
+- [\[ICLR 2026\] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation](../../ICLR2026/self_supervised/incomplete_multi-view_multi-label_classification_via_shared_codebook_and_fused-t.md)
+- [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](../../ICLR2026/self_supervised/relationship_alignment_for_view-aware_multi-view_clustering.md)
 - [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
 
 </div>

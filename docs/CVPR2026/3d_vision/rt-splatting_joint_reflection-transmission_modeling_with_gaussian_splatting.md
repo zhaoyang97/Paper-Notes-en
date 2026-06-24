@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RT-Splatting: Joint Reflection-Transmission Modeling with Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] RT-Splatting decouples the "geometric occupancy" and "optical opacity" of each Gaussian primitive into two independent attributes. This allows a single set of Gaussians to serve as both a reflective surface (performing deferred shading for high-frequency specular effects) and a transmissive volume (performing forward i
+  [CVPR 2026][3D Vision][Gaussian Splatting] RT-Splatting decouples the "geometric occupancy" and "optical opacity" of each Gaussian primitive into two independent attributes. This allows a single set of Gaussians to serve as both a reflective surface (performing deferred shading for high-frequency specular effects) and a transmissive volume (performing forward integration for clear backgrounds). A "specular-aware gradient gating" mechanism is utilized to suppress floaters caus…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Semi-transparent surfaces"
+  - "Reflection-transmission decomposition"
+  - "Deferred Shading"
+  - "Gradient Gating"
 date: 2026-05-08
-content_hash: abdea9489c8ec5e8
+content_hash: e10a6e6aba2139a2
 ---
+
 # RT-Splatting: Joint Reflection-Transmission Modeling with Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -151,15 +157,15 @@ Component-wise ablation on transparent regions (Tab.3, degradation relative to F
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] PolarGuide-GSDR: 3D Gaussian Splatting Driven by Polarization Priors and Deferred Reflection for Real-World Reflective Scenes](polarguide-gsdr_3d_gaussian_splatting_driven_by_polarization_priors_and_deferred.md)
+- [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
+- [\[CVPR 2026\] CUPID: Generative 3D Reconstruction via Joint Object and Pose Modeling](cupid_generative_3d_reconstruction_via_joint_object_and_pose_modeling.md)
 - [\[CVPR 2026\] DirectFisheye-GS: Enabling Native Fisheye Input in Gaussian Splatting with Cross-View Joint Optimization](directfisheye-gs_enabling_native_fisheye_input_in_gaussian_splatting_with_cross-.md)
 - [\[CVPR 2026\] Part$^{2}$GS: Part-aware Modeling of Articulated Objects using 3D Gaussian Splatting](part2gs_part-aware_modeling_of_articulated_objects_using_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] eRetinexGS: Retinex Modeling for Low-Light Scene Enhancement via Event Streams and 3D Gaussian Splatting](eretinexgs_retinex_modeling_for_low-light_scene_enhancement_via_event_streams_an.md)
-- [\[CVPR 2026\] TagSplat: Topology-Aware Gaussian Splatting for Dynamic Mesh Modeling and Tracking](tagsplat_topology-aware_gaussian_splatting_for_dynamic_mesh_modeling_and_trackin.md)
-- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
 
 </div>
 

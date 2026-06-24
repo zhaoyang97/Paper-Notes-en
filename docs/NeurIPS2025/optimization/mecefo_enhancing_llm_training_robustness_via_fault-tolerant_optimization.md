@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MeCeFO: Enhancing LLM Training Robustness via Fault-Tolerant Optimization
 description: >-
-  [NeurIPS 2025][Optimization][fault-tolerant training] MeCeFO proposes a fault-tolerant optimization algorithm for LLM training that minimizes overhead during node failures through three techniques—skip-connections…
+  [NeurIPS 2025][Optimization][fault-tolerant training] MeCeFO proposes a fault-tolerant optimization algorithm for LLM training that minimizes overhead during node failures through three techniques—skip-connections, selective activation recomputation, and low-rank gradient approximation—achieving only a 4.18% throughput drop under high-frequency failure conditions.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "low-rank gradient approximation"
   - "activation recomputation"
 date: 2026-05-08
-content_hash: 7941bcd96092ad22
+content_hash: 8b9b995808463ef4
 ---
 
 # MeCeFO: Enhancing LLM Training Robustness via Fault-Tolerant Optimization
@@ -139,8 +139,8 @@ The key gradient error assumption (Assumption 3) requires that the relative erro
 - [\[ICML 2026\] Enhancing LLM Training via Spectral Clipping](../../ICML2026/optimization/enhancing_llm_training_via_spectral_clipping.md)
 - [\[NeurIPS 2025\] Robust LLM Alignment via Distributionally Robust Direct Preference Optimization](robust_llm_alignment_via_distributionally_robust_direct_preference_optimization.md)
 - [\[NeurIPS 2025\] DartQuant: Efficient Rotational Distribution Calibration for LLM Quantization](dartquant_efficient_rotational_distribution_calibration_for_llm_quantization.md)
+- [\[ICML 2025\] Enhancing Parallelism in Decentralized Stochastic Convex Optimization](../../ICML2025/optimization/enhancing_parallelism_in_decentralized_stochastic_convex_optimization.md)
 - [\[NeurIPS 2025\] Training Robust Graph Neural Networks by Modeling Noise Dependencies](training_robust_graph_neural_networks_by_modeling_noise_dependencies.md)
-- [\[NeurIPS 2025\] Covariances for Free: Exploiting Mean Distributions for Training-free Federated Learning](covariances_for_free_exploiting_mean_distributions_for_training-free_federated_l.md)
 
 </div>
 

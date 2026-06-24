@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective
 description: >-
-  [ICLR 2026][Reinforcement Learning][ELBO] Addressing the fundamental contradiction where diffusion large language models (dLLMs) generate non-autoregressively and lack token-level conditional probabilities (rendering GRPO directly inapplicable), this paper proposes ESPO. By treating "generating the entire sequence" as an atomic action and using ELBO as a compu
+  [ICLR 2026][Reinforcement Learning][Diffusion LLM] Addressing the fundamental contradiction where diffusion large language models (dLLMs) generate non-autoregressively and lack token-level conditional probabilities (rendering GRPO directly inapplicable), this paper proposes ESPO. By treating "generating the entire sequence" as an atomic action and using ELBO as a computable proxy for sequence log-likelihood, combined with length-normalized importance ratios and a k2 KL estima…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - ELBO
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Diffusion LLM"
+  - "Sequence-level RL"
+  - "ELBO"
+  - "GRPO"
+  - "KL Estimation"
 date: 2026-05-08
-content_hash: b74693da8a803efc
+content_hash: d4710fd37d30e517
 ---
+
 # Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective
 
 **Conference**: ICLR 2026  
@@ -138,11 +142,11 @@ Ablations on Sudoku validate the three core designs:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Do Not Let Low-Probability Tokens Over-Dominate in RL for LLMs](do_not_let_low-probability_tokens_over-dominate_in_rl_for_llms.md)
 - [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
-- [\[ICLR 2026\] From f(x) and g(x) to f(g(x)): LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
+- [\[ICLR 2026\] From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
 - [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
-- [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
-- [\[ICLR 2026\] Principled Fast and Meta Knowledge Learners for Continual Reinforcement Learning](principled_fast_and_meta_knowledge_learners_for_continual_reinforcement_learning.md)
+- [\[ICLR 2026\] SSVPO: Toward Effective Step-level Credit Assignment for Language Model RL Training](ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
 
 </div>
 

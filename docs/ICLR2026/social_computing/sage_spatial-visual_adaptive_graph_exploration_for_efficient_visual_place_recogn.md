@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition
 description: >-
-  [ICLR 2026][Social Computing][Visual Place Recognition] Ours proposes SAGE, a unified VPR training framework: it introduces a lightweight Soft Probing module to enhance local feature discriminativity, reconstructs an online affinity graph merging geographical distance and visual similarity every epoch, and focuses on the hardest samples through greedy weighted clique expans
+  [ICLR 2026][Social Computing][Visual Place Recognition] Ours proposes SAGE, a unified VPR training framework: it introduces a lightweight Soft Probing module to enhance local feature discriminativity, reconstructs an online affinity graph merging geographical distance and visual similarity every epoch, and focuses on the hardest samples through greedy weighted clique expansion. By freezing the DINOv2 backbone and training only 1.96M parameters…
 tags:
-  - ICLR 2026
-  - Social Computing
-  - Visual Place Recognition
-  - DINOv2
-  - Graph-based Sampling
-  - Hard Sample Mining
-  - parameter-efficient fine-tuning
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Visual Place Recognition"
+  - "DINOv2"
+  - "Graph-based Sampling"
+  - "Hard Sample Mining"
+  - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: b2204893014a4eb2
+content_hash: 41ca82a6b0c3c0c1
 ---
+
 # SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition
 
 **Conference**: ICLR 2026  

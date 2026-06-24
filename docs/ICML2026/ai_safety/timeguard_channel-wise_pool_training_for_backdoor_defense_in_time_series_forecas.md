@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting
 description: >-
-  [ICML 2026][AI Safety][Paper Note] TimeGuard reconstructs backdoor defense in multivariate time series forecasting (TSF) from "window-level discarding" to "channel-wise + time-step" reliable pool training. It initializes a high-purity pool using the intersection of Reverse Consistency (RCF) and Neighborhood Diversity (NDF), then progressively expands it
+  [ICML 2026][AI Safety][Time Series Forecasting] TimeGuard reconstructs backdoor defense in multivariate time series forecasting (TSF) from "window-level discarding" to "channel-wise + time-step" reliable pool training. It initializes a high-purity pool using the intersection of Reverse Consistency (RCF) and Neighborhood Diversity (NDF), then progressively expands it using Distance-Regularized Loss Selection (DRLS). Without relying on any clean data…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Time Series Forecasting"
+  - "Backdoor Attack"
+  - "Training-phase Defense"
+  - "Channel-wise Training"
+  - "Trustworthy Machine Learning"
 date: 2026-05-08
-content_hash: 5482e76349d365a9
+content_hash: 0d07c4bf6b335b68
 ---
+
 # TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting
 
 **Conference**: ICML 2026  

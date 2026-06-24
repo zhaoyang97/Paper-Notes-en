@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization
 description: >-
-  [ICML 2026][Optimization & Theory][Stochastic Polyak step size] SPSsafe extends Stochastic Polyak Step Size (SPS) to non-smooth stochastic optimization without requiring interpolation assumptions or knowledge of optimal values. Combined with momentum (IMA = SHB equivalent form), it maintains rigorous convergence guarantees. It is more robust than existing adaptive methods (AdaGrad,
+  [ICML 2026][Optimization][Stochastic Polyak step size] SPSsafe extends Stochastic Polyak Step Size (SPS) to non-smooth stochastic optimization without requiring interpolation assumptions or knowledge of optimal values. Combined with momentum (IMA = SHB equivalent form), it maintains rigorous convergence guarantees. It is more robust than existing adaptive methods (AdaGrad, Adam, DecSPS, etc.) for DNN training and avoids gradient norm collapse (anti-gradient vanishing).
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - Stochastic Polyak step size
+  - "ICML 2026"
+  - "Optimization"
+  - "Stochastic Polyak step size"
+  - "Non-smooth optimization"
+  - "Stochastic subgradient"
+  - "Momentum"
+  - "Robust training"
 date: 2026-05-08
-content_hash: 1239d6062a2b0fe2
+content_hash: 98c8ca6df48670d7
 ---
+
 # SPSsafe: Safeguarded Stochastic Polyak Step Sizes for Non-smooth Optimization
 
 **Conference**: ICML 2026  
@@ -139,9 +144,9 @@ SPSsafe avoids gradient norm collapse in late stages, suggesting the model remai
 
 ## Related Papers
 
+- [\[ICML 2026\] Flatland: The Adventures of Gradient Descent with Large Step Sizes](flatland_the_adventures_of_gradient_descent_with_large_step_sizes.md)
 - [\[ICML 2026\] Adaptive Sharpness-Aware Minimization with a Polyak-type Step size: A Theory-Grounded Scheduler](adaptive_sharpness-aware_minimization_with_a_polyak-type_step_size_a_theory-grou.md)
 - [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](../../NeurIPS2025/optimization/stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
-- [\[ICML 2026\] Flatland: The Adventures of Gradient Descent with Large Step Sizes](flatland_the_adventures_of_gradient_descent_with_large_step_sizes.md)
 - [\[ICLR 2026\] Faster Gradient Methods for Highly-Smooth Stochastic Bilevel Optimization](../../ICLR2026/optimization/faster_gradient_methods_for_highly-smooth_stochastic_bilevel_optimization.md)
 - [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
 

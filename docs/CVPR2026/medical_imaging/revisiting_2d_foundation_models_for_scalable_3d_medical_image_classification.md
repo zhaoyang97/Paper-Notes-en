@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] By adding lightweight task plugins of only ~1M parameters (LoRA adaptation + permutation-invariant slice attention aggregation) to a frozen 2D Foundation Model (FM), a single framework achieves SOTA performance across 12 diverse 3D medical classification tasks (including 1st place in the VLM3D challenge). The study sys
+  [CVPR 2026][Medical Imaging][3D Medical Classification] By adding lightweight task plugins of only ~1M parameters (LoRA adaptation + permutation-invariant slice attention aggregation) to a frozen 2D Foundation Model (FM), a single framework achieves SOTA performance across 12 diverse 3D medical classification tasks (including 1st place in the VLM3D challenge). The study systematically reveals counter-intuitive conclusions, such as "2D methods outperform 3D architectures in 3D…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "3D Medical Classification"
+  - "2D Foundation Models"
+  - "LoRA Adaptation"
+  - "Slice Attention Aggregation"
+  - "Scalability"
 date: 2026-05-08
-content_hash: f1d5c24a165e1d30
+content_hash: e4ffe69dbfb65cab
 ---
+
 # Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification
 
 **Conference**: CVPR 2026  
@@ -131,9 +137,9 @@ AnyMC3D outperforms all baselines with 10–40× fewer trainable parameters than
 
 - [\[ICML 2025\] Raptor: Scalable Train-Free Embeddings for 3D Medical Volumes Leveraging Pretrained 2D Foundation Models](../../ICML2025/medical_imaging/raptor_scalable_train-free_embeddings_for_3d_medical_volumes_leveraging_pretrain.md)
 - [\[CVPR 2026\] Delving Aleatoric Uncertainty in Medical Image Segmentation via Vision Foundation Models](delving_aleatoric_uncertainty_in_medical_image_segmentation_via_vision_foundatio.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
 - [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
-- [\[CVPR 2026\] Attention Consistent Longitudinal Medical Visual Question Answering Guided by Vision Foundation Models](attention_consistent_longitudinal_medical_visual_question_answering_guided_by_vi.md)
+- [\[ICLR 2026\] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity](../../ICLR2026/medical_imaging/improving_2d_diffusion_models_for_3d_medical_imaging_with_inter-slice_consistent.md)
+- [\[CVPR 2026\] NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization](neuroseg_meets_dinov3_transferring_2d_self-supervised_visual_priors_to_3d_neuron.md)
 
 </div>
 

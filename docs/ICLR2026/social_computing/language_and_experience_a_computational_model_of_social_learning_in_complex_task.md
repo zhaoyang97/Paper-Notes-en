@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Language and Experience: A Computational Model of Social Learning in Complex Tasks
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] The authors unify "learning from experience" (theory-based RL, performing Bayesian inference on executable programmable world models) and "learning from others' words" (treating pre-trained LLMs as "speaker models" to convert natural language advice into Bayesian evidence) into a single inference framework. Tested on 1
+  [ICLR 2026][Social Computing][Social learning] The authors unify "learning from experience" (theory-based RL, performing Bayesian inference on executable programmable world models) and "learning from others' words" (treating pre-trained LLMs as "speaker models" to convert natural language advice into Bayesian evidence) into a single inference framework. Tested on 10 video games, the model demonstrates that linguistic guidance helps both humans and models learn faster with few…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Social learning"
+  - "Bayesian inference"
+  - "Programmable world models"
+  - "Theory of Mind"
+  - "Cultural transmission"
 date: 2026-05-08
-content_hash: b5377038700d9845
+content_hash: 4e737f604829535f
 ---
+
 # Language and Experience: A Computational Model of Social Learning in Complex Tasks
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents
 description: >-
-  [NeurIPS 2025][Code Intelligence][SWE-bench] A fully automated pipeline is developed to continuously mine real-world software engineering interaction tasks from GitHub, producing the SWE-rebench dataset of 21…
+  [NeurIPS 2025][Code Intelligence][SWE-bench] A fully automated pipeline is developed to continuously mine real-world software engineering interaction tasks from GitHub, producing the SWE-rebench dataset of 21,000+ executable Python tasks and a decontaminated benchmark. The work reveals that several models exhibit contamination-inflated performance on SWE-bench Verified (e.g., DeepSeek-V3: 39.7% on SWE-bench vs. 21.3% on SWE-rebench).
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "agent evaluation"
   - "software engineering"
 date: 2026-05-08
-content_hash: 36756c30b2167974
+content_hash: a14a0ad82398f388
 ---
 
 # SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents
@@ -153,11 +153,11 @@ This work primarily concerns a dataset and evaluation pipeline; it does not invo
 
 ## Related Papers
 
-- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
+- [\[ICML 2025\] Training Software Engineering Agents and Verifiers with SWE-Gym](../../ICML2025/code_intelligence/training_software_engineering_agents_and_verifiers_with_swe-gym.md)
 - [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](../../ICML2026/code_intelligence/swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
-- [\[ACL 2026\] EET: Experience-Driven Early Termination for Cost-Efficient Software Engineering Agents](../../ACL2026/code_intelligence/eet_experience-driven_early_termination_for_cost-efficient_software_engineering_.md)
-- [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](automated_multi-agent_workflows_for_rtl_design.md)
-- [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
+- [\[ICLR 2026\] Ambig-SWE: Interactive Agents to Overcome Underspecificity in Software Engineering](../../ICLR2026/code_intelligence/ambig-swe_interactive_agents_to_overcome_underspecificity_in_software_engineerin.md)
+- [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
+- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](../../ICLR2026/code_intelligence/swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 
 </div>
 

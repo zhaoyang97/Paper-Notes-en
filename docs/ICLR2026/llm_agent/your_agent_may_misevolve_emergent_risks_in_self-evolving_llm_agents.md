@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper systematically introduces and investigates the concept of "Misevolution"—the phenomenon where self-evolving LLM Agents deviate from intended directions during autonomous improvement. This leads to emerging risks such as safety alignment degradation and vulnerability introduction across four evolutionary path
+  [ICLR 2026][LLM Agent][Self-evolving Agent] This paper systematically introduces and investigates the concept of "Misevolution"—the phenomenon where self-evolving LLM Agents deviate from intended directions during autonomous improvement. This leads to emerging risks such as safety alignment degradation and vulnerability introduction across four evolutionary paths: model, memory, tool, and workflow. Even top-tier LLMs like Gemini-2.5-Pro are susceptible to these risks.
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Self-evolving Agent"
+  - "Misevolution"
+  - "AI Safety"
+  - "Safety Alignment Degradation"
 date: 2026-05-08
-content_hash: d22bef910cc9e2ab
+content_hash: 4c5636aece8ad651
 ---
+
 # Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ To increase speed, Agents merge steps or delete redundant operations. Since opti
 
 ## Related Papers
 
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
+- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
 - [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 - [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
-- [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
-- [\[ICLR 2026\] When AI Agents Collude Online: Financial Fraud Risks by Collaborative LLM Agents on Social Platforms](when_ai_agents_collude_online_financial_fraud_risks_by_collaborative_llm_agents_.md)
-- [\[ICLR 2026\] AlphaAgentEvo: Evolution-Oriented Alpha Mining via Self-Evolving Agentic Reinforcement Learning](alphaagentevo_evolution-oriented_alpha_mining_via_self-evolving_agentic_reinforc.md)
+- [\[ICML 2026\] Towards Feedback-to-Plan Decisions for Self-Evolving LLM Agents in CUDA Kernel Generation](../../ICML2026/llm_agent/towards_feedback-to-plan_decisions_for_self-evolving_llm_agents_in_cuda_kernel_g.md)
 
 </div>
 

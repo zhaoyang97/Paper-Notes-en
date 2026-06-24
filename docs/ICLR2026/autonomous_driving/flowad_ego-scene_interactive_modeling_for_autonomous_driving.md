@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FlowAD: Ego-Scene Interactive Modeling for Autonomous Driving
 description: >-
-  [ICLR 2026][Autonomous Driving][scene flow] FlowAD models the "feedback of ego-motion on future observations" as relative **scene flow**. By utilizing ego-guided scene partitioning and spatio-temporal flow prediction to learn these interaction dynamics in latent space, it achieves consistent performance gains in perception, end-to-end planning, and VLM analysis.
+  [ICLR 2026][Autonomous Driving][ego-scene interaction] FlowAD models the "feedback of ego-motion on future observations" as relative **scene flow**. By utilizing ego-guided scene partitioning and spatio-temporal flow prediction to learn these interaction dynamics in latent space, it achieves consistent performance gains in perception, end-to-end planning, and VLM analysis. It also introduces the FCP metric to specifically measure the speed of scene understanding.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - scene flow
-  - World Models
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "ego-scene interaction"
+  - "scene flow"
+  - "world models"
+  - "end-to-end planning"
+  - "closed-loop evaluation"
 date: 2026-05-08
-content_hash: 7aa7bf4b29189760
+content_hash: d5a47c365d3b025c
 ---
+
 # FlowAD: Ego-Scene Interactive Modeling for Autonomous Driving
 
 **Conference**: ICLR 2026  
@@ -128,7 +132,7 @@ On the closed-loop Bench2Drive, FlowAD's average scores across multiple capabili
 - [\[NeurIPS 2025\] Flow Matching-Based Autonomous Driving Planning with Advanced Interactive Behavior Modeling](../../NeurIPS2025/autonomous_driving/flow_matching-based_autonomous_driving_planning_with_advanced_interactive_behavi.md)
 - [\[ICLR 2026\] Astra: General Interactive World Model with Autoregressive Denoising](astra_general_interactive_world_model_with_autoregressive_denoising.md)
 - [\[ICLR 2026\] WorldSplat: Gaussian-Centric Feed-Forward 4D Scene Generation for Autonomous Driving](worldsplat_gaussian-centric_feed-forward_4d_scene_generation_for_autonomous_driv.md)
-- [\[ICCV 2025\] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](../../ICCV2025/autonomous_driving/drivex_omni_scene_modeling_for_learning_generalizable_world_knowledge_in_autonom.md)
+- [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
 
 </div>
 

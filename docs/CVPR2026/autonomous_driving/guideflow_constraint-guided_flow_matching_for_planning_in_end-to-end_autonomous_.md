@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Flow Matching] GuideFlow employs "Flow Matching + Energy-Based Models" for end-to-end driving planning, directly embedding safety and physical hard constraints into the generation process via three mechanisms: Constrained Velocity Field (CVF), Constrained Flow states (CF), and Refining the Flow by EBM (RFE). This approach mitigates m
+  [CVPR 2026][Autonomous Driving][End-to-end driving planning] GuideFlow employs "Flow Matching + Energy-Based Models" for end-to-end driving planning, directly embedding safety and physical hard constraints into the generation process via three mechanisms: Constrained Velocity Field (CVF), Constrained Flow states (CF), and Refining the Flow by EBM (RFE). This approach mitigates multi-modal mode collapse in imitation learning and eliminates the need for post-optimization in gen…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Flow Matching
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "End-to-end driving planning"
+  - "Flow matching"
+  - "Constrained generation"
+  - "Energy-based models"
+  - "Mode collapse"
 date: 2026-05-08
-content_hash: 776b806fe7b1eb80
+content_hash: 202e72fd0b7f5c42
 ---
+
 # GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,20 @@ Constraint Modules (NavSim Navhard, EPDMS):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
+- [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems](scaling-aware_data_selection_for_end-to-end_autonomous_driving_systems.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)

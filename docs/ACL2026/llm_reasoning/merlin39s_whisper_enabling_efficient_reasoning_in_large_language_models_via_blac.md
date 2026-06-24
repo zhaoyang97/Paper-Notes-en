@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting
 description: >-
-  [ACL 2026][LLM Reasoning][persuasive prompting] Whisper models the problem of "reducing thinking without sacrificing accuracy" in Large Reasoning Models (LRMs) as black-box persuasive prompting. By automatically generating and iteratively filtering prompt suffixes through multiple perspectives, it significantly reduces output tokens on Qwen3, DeepSeek-R1-Distill, an
+  [ACL2026][Reasoning][Reasoning compression] Whisper models the problem of "reducing thinking without sacrificing accuracy" in Large Reasoning Models (LRMs) as black-box persuasive prompting. By automatically generating and iteratively filtering prompt suffixes through multiple perspectives, it significantly reduces output tokens on Qwen3, DeepSeek-R1-Distill, and Claude/Gemini APIs while maintaining reasoning accuracy.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - persuasive prompting
-  - overthinking
+  - "ACL2026"
+  - "Reasoning"
+  - "Reasoning compression"
+  - "black-box prompting"
+  - "persuasive prompting"
+  - "overthinking"
+  - "LRM efficiency"
 date: 2026-05-08
-content_hash: 8d9af63a0a2c2ac5
+content_hash: 5fca9790575c28a3
 ---
+
 # Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting
 
 **Conference**: ACL2026  
@@ -136,8 +140,8 @@ Whisper does not train the target LRM. The objective is a bi-objective selection
 - [\[ICML 2026\] Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models](../../ICML2026/llm_reasoning/inducing_overthink_hierarchical_genetic_algorithm-based_dos_attack_on_black-box_.md)
 - [\[ACL 2026\] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models](reprobe_efficient_test-time_scaling_of_multi-step_reasoning_by_probing_internal_.md)
 - [\[ICML 2026\] Diagnosing Multi-step Reasoning Failures in Black-box LLMs via Stepwise Confidence Attribution](../../ICML2026/llm_reasoning/diagnosing_multi-step_reasoning_failures_in_black-box_llms_via_stepwise_confiden.md)
+- [\[ACL 2026\] DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](drp_distilled_reasoning_pruning_with_skill-aware_step_decomposition_for_efficien.md)
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
-- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 
 </div>
 

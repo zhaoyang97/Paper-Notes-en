@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Advantage Collapse in Group Relative Policy Optimization: Diagnosis and Mitigation
 description: >-
-  [ICML 2026][Model Compression][GRPO] This paper identifies that GRPO loses gradient signals under binary verifiable rewards when intra-group rewards are identical. It proposes the ACR metric for real-time diagnosis of this "advantage collapse" and introduces AVSPO to inject virtual reward samples, restoring intra-group variance. This approach consistently
+  [ICML 2026][Model Compression][GRPO] This paper identifies that GRPO loses gradient signals under binary verifiable rewards when intra-group rewards are identical. It proposes the ACR metric for real-time diagnosis of this "advantage collapse" and introduces AVSPO to inject virtual reward samples, restoring intra-group variance. This approach consistently improves performance by 4-6 percentage points across various Qwen2.5 mathematical reasoning models.
 tags:
-  - ICML 2026
-  - Model Compression
-  - GRPO
-  - RLVR
+  - "ICML 2026"
+  - "Model Compression"
+  - "GRPO"
+  - "RLVR"
+  - "Advantage Collapse"
+  - "Training Diagnosis"
+  - "Virtual Samples"
 date: 2026-05-08
-content_hash: e1fdc1f70336c728
+content_hash: b5fd7b64c8619430
 ---
+
 # Advantage Collapse in Group Relative Policy Optimization: Diagnosis and Mitigation
 
 **Conference**: ICML 2026  
@@ -139,8 +143,8 @@ Mechanism isolation experiments are also revealing. Repairing only all-wrong gro
 
 ## Related Papers
 
-- [\[AAAI 2026\] MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](../../AAAI2026/model_compression/metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
+- [\[AAAI 2026\] MetaGDPO: Alleviating Catastrophic Forgetting with Metacognitive Knowledge through Group Direct Preference Optimization](../../AAAI2026/model_compression/metagdpo_alleviating_catastrophic_forgetting_with_metacognitive_knowledge_throug.md)
 - [\[ICML 2026\] Active Tabular Augmentation via Policy-Guided Diffusion Inpainting](active_tabular_augmentation_via_policy-guided_diffusion_inpainting.md)
 - [\[ICLR 2026\] Rethinking Continual Learning with Progressive Neural Collapse](../../ICLR2026/model_compression/rethinking_continual_learning_with_progressive_neural_collapse.md)
 - [\[ICML 2025\] ConfPO: Exploiting Policy Model Confidence for Critical Token Selection in Preference Optimization](../../ICML2025/model_compression/confpo_exploiting_policy_model_confidence_for_critical_token_selection_in_prefer.md)

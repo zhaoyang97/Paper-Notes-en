@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks
 description: >-
-  [NeurIPS 2025][LLM Safety][verbal confidence] This paper presents the first systematic study on the robustness of LLM verbal confidence under adversarial attacks. It proposes a Verbal Confidence Attack (VCA) framework co…
+  [NeurIPS 2025][LLM Safety][verbal confidence] This paper presents the first systematic study on the robustness of LLM verbal confidence under adversarial attacks. It proposes a Verbal Confidence Attack (VCA) framework comprising perturbation-based and jailbreak-based attacks, demonstrating that such attacks can reduce confidence scores by up to 30%, cause answer-flip rates of up to 100%, and that existing defense strategies are largely ineffective.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "confidence calibration"
   - "jailbreak attacks"
 date: 2026-05-08
-content_hash: c3c787adededf41e
+content_hash: 3fc4745afb8f8751
 ---
 
 # On the Robustness of Verbal Confidence of LLMs in Adversarial Attacks
@@ -137,11 +137,11 @@ System prompts and few-shot examples are more susceptible to attack than user qu
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs](bits_leaked_per_query_information-theoretic_bounds_on_adversarial_attacks_agains.md)
 - [\[NeurIPS 2025\] Zero-Shot Robustness of Vision Language Models Via Confidence-Aware Weighting](zero-shot_robustness_of_vision_language_models_via_confidence-aware_weighting.md)
+- [\[ACL 2025\] TIP of the Iceberg: Task-in-Prompt Adversarial Attacks on LLMs](../../ACL2025/llm_safety/tip_iceberg_adversarial_attacks.md)
 - [\[NeurIPS 2025\] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs](mixat_combining_continuous_and_discrete_adversarial_training_for_llms.md)
-- [\[NeurIPS 2025\] Trans-EnV: A Framework for Evaluating the Linguistic Robustness of LLMs Against English Varieties](trans-env_a_framework_for_evaluating_the_linguistic_robustness_of_llms_against_e.md)
-- [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](../../ACL2026/llm_safety/evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
+- [\[NeurIPS 2025\] Bits Leaked per Query: Information-Theoretic Bounds on Adversarial Attacks Against LLMs](bits_leaked_per_query_information-theoretic_bounds_on_adversarial_attacks_agains.md)
+- [\[ACL 2025\] Bias in the Mirror: Are LLMs' Opinions Robust to Their Own Adversarial Attacks](../../ACL2025/llm_safety/bias_in_the_mirror_are_llms_opinions_robust_to_their_own_adversarial_attacks.md)
 
 </div>
 

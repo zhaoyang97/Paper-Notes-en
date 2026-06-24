@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks
 description: >-
-  [ICLR 2026][LLM Evaluation][win rate] GDPval is a benchmark proposed by OpenAI for "real economic value digital knowledge work": covering 9 industries with the largest contributions to US GDP, 44 occupations, and 1,320 real tasks constructed by professionals with 14 years of experience. Using "model vs. human expert blind win rate" as the core metric, the
+  [ICLR 2026][LLM Evaluation][Economic value tasks] GDPval is a benchmark proposed by OpenAI for "real economic value digital knowledge work": covering 9 industries with the largest contributions to US GDP, 44 occupations, and 1,320 real tasks constructed by professionals with 14 years of experience. Using "model vs. human expert blind win rate" as the core metric, the study finds that the delivery quality of frontier models is linearly approaching industry experts year by year…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - win rate
-  - O*NET
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Economic value tasks"
+  - "knowledge work"
+  - "human expert comparison"
+  - "win rate"
+  - "O*NET"
+  - "multimodal deliverable"
+  - "automated evaluator"
 date: 2026-05-08
-content_hash: 6a1878e1af45eb85
+content_hash: eaedc7d8a2d5b0a2
 ---
+
 # GDPval: Evaluating AI Model Performance on Real-World Economically Valuable Tasks
 
 **Conference**: ICLR 2026  
@@ -103,15 +109,15 @@ Evaluation included GPT-4o, o4-mini, o3, GPT-5, Claude Opus 4.1, Gemini 2.5 Pro,
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] SysMoBench: Evaluating AI on Formally Specifying Complex Real-World Systems](sysmobench_evaluating_ai_on_formally_specifying_complex_real-world_systems.md)
 - [\[ICLR 2026\] CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale](cybergym_evaluating_ai_agents_real-world_cybersecurity_capabilities_at_scale.md)
 - [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](../../ACL2026/llm_evaluation/beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
 - [\[ICLR 2026\] Pitfalls in Evaluating Language Model Forecasters](pitfalls_in_evaluating_language_model_forecasters.md)
 - [\[ICLR 2026\] PACEbench: A Framework for Evaluating Practical AI Cyber-Exploitation Capabilities](pacebench_a_framework_for_evaluating_practical_ai_cyber-exploitation_capabilitie.md)
-- [\[ICLR 2026\] MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline](mle-smith_scaling_mle_tasks_with_automated_multi-agent_pipeline.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Disentangling Hyperedges through the Lens of Category Theory
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][hypergraph] This work is the first to analyze hyperedge disentanglement through the lens of category theory. By deriving a naturality condition…
+  [NeurIPS 2025][Self-Supervised Learning][hypergraph] This work is the first to analyze hyperedge disentanglement through the lens of category theory. By deriving a naturality condition, it establishes a "factor representation consistency" criterion (aggregation-then-disentanglement vs. disentanglement-then-aggregation should yield consistent results), and proposes Natural-HNN, which comprehensively outperforms 14 baselines across 6 cancer subtype classification datasets (BRCA…
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -13,7 +13,7 @@ tags:
   - "genetic pathway"
   - "cancer subtype classification"
 date: 2026-05-08
-content_hash: 321385ea549d32a9
+content_hash: 63f1a7283e68252c
 ---
 
 # Disentangling Hyperedges through the Lens of Category Theory
@@ -147,11 +147,11 @@ Top-15 pathways are selected via SHAP values, clustered using CliXO, and evaluat
 
 ## Related Papers
 
+- [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](../../CVPR2026/self_supervised/seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
+- [\[ICLR 2026\] Disentangling the Factors of Convergence between Brains and DINOv3](../../ICLR2026/self_supervised/disentangling_the_factors_of_convergence_between_brains_and_dinov3.md)
 - [\[NeurIPS 2025\] SEAL: Semantic-Aware Hierarchical Learning for Generalized Category Discovery](seal_semantic-aware_hierarchical_learning_for_generalized_category_discovery.md)
-- [\[ICCV 2025\] A Hidden Stumbling Block in Generalized Category Discovery: Distracted Attention](../../ICCV2025/self_supervised/a_hidden_stumbling_block_in_generalized_category_discovery_d.md)
-- [\[CVPR 2026\] OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](../../CVPR2026/self_supervised/omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)
-- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](../../ICML2026/self_supervised/partco_part-level_correspondence_priors_enhance_category_discovery.md)
-- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
+- [\[CVPR 2025\] Hyperbolic Category Discovery](../../CVPR2025/self_supervised/hyperbolic_category_discovery.md)
 
 </div>
 

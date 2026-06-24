@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing
 description: >-
-  [ICCV 2025][Image Generation][MM-DiT] This paper systematically analyzes the attention mechanism of Multimodal Diffusion Transformers (MM-DiT)…
+  [ICCV 2025][Image Generation][MM-DiT] This paper systematically analyzes the attention mechanism of Multimodal Diffusion Transformers (MM-DiT), decomposing the attention matrix into four functional sub-blocks (I2I/T2I/I2T/T2T). Based on this analysis, it proposes an efficient prompt-based image editing method that operates by replacing image input projections ($\mathbf{q}_i, \mathbf{k}_i$), and is applicable to multiple MM-DiT variants including the SD3 series and Flux.1.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Stable Diffusion 3"
   - "Flux.1"
 date: 2026-05-08
-content_hash: d6b4a864944f24b8
+content_hash: 660df547baac78b6
 ---
 
 # Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing
@@ -143,9 +143,9 @@ Evaluated on 60 PARTI prompts (30 simple edits + 30 complex edits), compared aga
 
 - [\[ICCV 2025\] Rethinking Cross-Modal Interaction in Multimodal Diffusion Transformers](rethinking_cross-modal_interaction_in_multimodal_diffusion_transformers.md)
 - [\[ICCV 2025\] UniVG: A Generalist Diffusion Model for Unified Image Generation and Editing](univg_a_generalist_diffusion_model_for_unified_image_generation_and_editing.md)
+- [\[CVPR 2026\] ReasonEdit: Towards Reasoning-Enhanced Image Editing Models](../../CVPR2026/image_generation/reasonedit_towards_reasoning-enhanced_image_editing_models.md)
 - [\[ICML 2026\] Diagnosing and Correcting Concept Omission in Multimodal Diffusion Transformers](../../ICML2026/image_generation/diagnosing_and_correcting_concept_omission_in_multimodal_diffusion_transformers.md)
-- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
-- [\[ICCV 2025\] PLA: Prompt Learning Attack against Text-to-Image Generative Models](pla_prompt_learning_attack_against_text-to-image_generative_models.md)
+- [\[CVPR 2025\] Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection](../../CVPR2025/image_generation/mitigating_memorization_in_text-to-image_diffusion_via_region-aware_prompt_augme.md)
 
 </div>
 

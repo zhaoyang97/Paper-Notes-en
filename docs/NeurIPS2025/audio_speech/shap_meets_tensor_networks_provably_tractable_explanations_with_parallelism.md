@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SHAP Meets Tensor Networks: Provably Tractable Explanations with Parallelism
 description: >-
-  [NeurIPS 2025][Audio & Speech][SHAP] This paper presents the first provably exact SHAP computation framework for Tensor Networks (TNs)…
+  [NeurIPS 2025][Audio & Speech][SHAP] This paper presents the first provably exact SHAP computation framework for Tensor Networks (TNs), proves that SHAP under the Tensor Train (TT) structure is parallelizable in polylogarithmic time (NC² complexity), and reveals via reductions that **width rather than depth** is the fundamental bottleneck for SHAP computation in binarized neural networks.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -14,7 +14,7 @@ tags:
   - "Binarized Neural Networks"
   - "Parameterized Complexity"
 date: 2026-05-08
-content_hash: 18232ff99930b34f
+content_hash: 72ddb9bd0384d7b9
 ---
 
 # SHAP Meets Tensor Networks: Provably Tractable Explanations with Parallelism
@@ -126,10 +126,10 @@ These works explore SHAP complexity under knowledge compilation formalisms such 
 ## Related Papers
 
 - [\[ICLR 2026\] Toward Complex-Valued Neural Networks for Waveform Generation](../../ICLR2026/audio_speech/toward_complex-valued_neural_networks_for_waveform_generation.md)
+- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation Networks](../../ICLR2026/audio_speech/knowing_when_to_quit_probabilistic_early_exits_for_speech_separation_networks.md)
 - [\[ACL 2026\] Indic-CodecFake meets SATYAM: Towards Detecting Neural Audio Codec Synthesized Speech Deepfakes in Indic Languages](../../ACL2026/audio_speech/indic-codecfake_meets_satyam_towards_detecting_neural_audio_codec_synthesized_sp.md)
 - [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
 - [\[NeurIPS 2025\] Target Speaker Extraction Through Comparing Noisy Positive and Negative Audio Enrollments](target_speaker_extraction_through_comparing_noisy_positive_and_negative_audio_en.md)
-- [\[NeurIPS 2025\] VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction](vita-15_towards_gpt-4o_level_real-time_vision_and_speech_interaction.md)
 
 </div>
 

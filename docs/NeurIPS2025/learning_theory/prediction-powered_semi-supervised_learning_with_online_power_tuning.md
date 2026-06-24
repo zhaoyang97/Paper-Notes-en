@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Prediction-Powered Semi-Supervised Learning with Online Power Tuning
 description: >-
-  [NeurIPS 2025][Semi-Supervised Learning / Statistical Inference][Semi-supervised learning] This paper extends the Prediction-Powered Inference (PPI) framework to the training phase of semi-supervised learning. It propose…
+  [NeurIPS 2025][Semi-Supervised Learning][prediction-powered inference] This paper extends the Prediction-Powered Inference (PPI) framework to the training phase of semi-supervised learning. It proposes an unbiased gradient estimator and designs an online AdaGrad algorithm to dynamically tune the interpolation parameter $\lambda$ between pseudo-labels and true labels, achieving convergence rates matching the optimal fixed $\lambda$ while maintaining unbiasedness.
 tags:
   - "NeurIPS 2025"
-  - "Semi-Supervised Learning / Statistical Inference"
-  - "Semi-supervised learning"
+  - "Semi-Supervised Learning"
+  - "Statistical Inference"
   - "prediction-powered inference"
   - "online learning"
   - "pseudo-label debiasing"
   - "AdaGrad"
 date: 2026-05-08
-content_hash: bc6b7eeebfe46197
+content_hash: 3ca85a7971ad2cfe
 ---
 
 # Prediction-Powered Semi-Supervised Learning with Online Power Tuning
@@ -128,10 +128,10 @@ Model parameters $w$ are updated with an AdaGrad step: $w_{t+1} = w_t - \eta_t g
 ## Related Papers
 
 - [\[NeurIPS 2025\] Keep It on a Leash: Controllable Pseudo-label Generation Towards Realistic Long-Tailed Semi-Supervised Learning](keep_it_on_a_leash_controllable_pseudo-label_generation_towards_realistic_long-t.md)
+- [\[ICLR 2026\] Multiple-Prediction-Powered Inference](../../ICLR2026/learning_theory/multiple-prediction-powered_inference.md)
+- [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](../../ICLR2026/learning_theory/online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
-- [\[NeurIPS 2025\] Learning-Augmented Online Bipartite Fractional Matching](learning-augmented_online_bipartite_fractional_matching.md)
 - [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](../../ICML2026/learning_theory/semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
-- [\[NeurIPS 2025\] Conformal Online Learning of Deep Koopman Linear Embeddings](conformal_online_learning_of_deep_koopman_linear_embeddings.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] StableToken: A Noise-Robust Semantic Speech Tokenizer for Resilient SpeechLLMs
 description: >-
-  [ICLR 2026][Audio & Speech][SpeechLLM] Addressing the fragility of semantic speech tokenizers where bit-level noise causes dramatic token sequence jumps, StableToken introduces the Voting-LFQ architecture with "multi-branch quantization + differentiable bit-level majority voting" alongside "noise-aware consensus training." This reduces the Unit Edit Distanc
+  [ICLR 2026][Audio & Speech][Semantic speech tokenizer] Addressing the fragility of semantic speech tokenizers where bit-level noise causes dramatic token sequence jumps, StableToken introduces the Voting-LFQ architecture with "multi-branch quantization + differentiable bit-level majority voting" alongside "noise-aware consensus training." This reduces the Unit Edit Distance under noise from 26.17% to 10.17% (a 60%+ relative reduction) and significantly boosts the robustness o…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - SpeechLLM
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Semantic speech tokenizer"
+  - "noise robustness"
+  - "bit-level voting"
+  - "consensus training"
+  - "SpeechLLM"
 date: 2026-05-08
-content_hash: 741fddc1652ac757
+content_hash: d19259b074d76dac
 ---
+
 # StableToken: A Noise-Robust Semantic Speech Tokenizer for Resilient SpeechLLMs
 
 **Conference**: ICLR 2026  
@@ -151,13 +156,20 @@ Sequential ablation (UED% averaged over noises, WER on LibriSpeech-Other):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- S3 Tokenizer: Supervised Speech Segments for Semantic Tokenization
-- CosyVoice 2: Scalable Streaming Text-to-Speech with Robust Semantic Tokens
-- LFQ: Language-model-friendly Quantization
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](../../ICML2026/audio_speech/focus_then_listen_an_empirical_study_of_plug-and-play_audio_enhancer_for_noise-r.md)
+- [\[ICLR 2026\] CTC-DRO: Robust Optimization for Reducing Language Disparities in Speech Recognition](ctc-dro_robust_optimization_for_reducing_language_disparities_in_speech_recognit.md)
+- [\[ICLR 2026\] Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition](pay_attention_to_ctc_fast_and_robust_pseudo-labelling_for_unified_speech_recogni.md)
+- [\[ICLR 2026\] Improving Black-Box Generative Attacks via Generator Semantic Consistency](improving_black-box_generative_attacks_via_generator_semantic_consistency.md)
+- [\[ICLR 2026\] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis](hierarchical_semantic-acoustic_modeling_via_semi-discrete_residual_representatio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Pay Attention to CTC: Fast and Robust Pseudo-Labelling for Unified Speech Recognition](pay_attention_to_ctc_fast_and_robust_pseudo-labelling_for_unified_speech_recogni.md)

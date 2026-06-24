@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Omni-3DEdit: Generalized Versatile 3D Editing in One-Pass
 description: >-
-  [CVPR 2026][3D Vision][LoRA] Omni-3DEdit shifts instructional 3D editing from "iterative optimization on explicit 3D representations" to a **single forward pass in multi-view latent space**. Using OmniNet, a network based on the pre-trained multi-view generation model SEVA, it simultaneously supports object removal, addition, and appearance editin
+  [CVPR 2026][3D Vision][3D Editing] Omni-3DEdit shifts instructional 3D editing from "iterative optimization on explicit 3D representations" to a **single forward pass in multi-view latent space**. Using OmniNet, a network based on the pre-trained multi-view generation model SEVA, it simultaneously supports object removal, addition, and appearance editing. Equipped with a data synthesis pipeline to address paired data scarcity, it reduces the time for a single edit from dozens…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - LoRA
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Editing"
+  - "Multi-view Generation"
+  - "LoRA"
+  - "Data Synthesis"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 5f521c05dd0adeb8
+content_hash: 2c397cc3f3a5ca36
 ---
+
 # Omni-3DEdit: Generalized Versatile 3D Editing in One-Pass
 
 **Conference**: CVPR 2026  
@@ -153,9 +157,9 @@ Architecture Ablation (Qualitative comparison, Fig.7): Feature-space concatenati
 
 - [\[CVPR 2026\] Towards Generalized Multimodal Homography Estimation](towards_generalized_multimodal_homography_estimation.md)
 - [\[CVPR 2026\] Revisiting 3D Reconstruction Kernels as Low-Pass Filters](revisiting_3d_reconstruction_kernels_as_low-pass_filters.md)
+- [\[CVPR 2026\] AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows](anchorflow_training-free_3d_editing_via_latent_anchor-aligned_flows.md)
 - [\[CVPR 2026\] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow](easy3e_feed-forward_3d_asset_editing_via_rectified_voxel_flow.md)
 - [\[CVPR 2025\] Fast3R: Towards 3D Reconstruction of 1000+ Images in One Forward Pass](../../CVPR2025/3d_vision/fast3r_towards_3d_reconstruction_of_1000_images_in_one_forward_pass.md)
-- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
 
 </div>
 

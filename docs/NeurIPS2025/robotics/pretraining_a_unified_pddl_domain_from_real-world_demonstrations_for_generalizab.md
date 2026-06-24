@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning
 description: >-
-  [NeurIPS 2025][Robotics][PDDL] UniDomain pretrains a unified PDDL planning domain—comprising 3,137 operators and 2,875 predicates—from 12…
+  [NeurIPS 2025][Robotics][PDDL] UniDomain pretrains a unified PDDL planning domain—comprising 3,137 operators and 2,875 predicates—from 12,393 real-world robotic manipulation videos. Through hierarchical fusion to construct a meta-domain, it achieves zero-shot cross-task symbolic planning, outperforming the strongest baseline by 58% in success rate and 160% in plan optimality.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "knowledge distillation"
   - "large-scale demonstration learning"
 date: 2026-05-08
-content_hash: c44fb0965e7a3c4a
+content_hash: b50e35ca15448ed8
 ---
 
 # UniDomain: Pretraining a Unified PDDL Domain from Real-World Demonstrations for Generalizable Task Planning
@@ -141,8 +141,8 @@ UniDomain elegantly transfers the pretraining–post-training–inference paradi
 
 - [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
 - [\[NeurIPS 2025\] Provable Ordering and Continuity in Vision-Language Pretraining for Generalizable Embodied Agents](provable_ordering_and_continuity_in_vision-language_pretraining_for_generalizabl.md)
-- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
+- [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
 - [\[ICCV 2025\] Bridging Domain Generalization to Multimodal Domain Generalization via Unified Representations](../../ICCV2025/robotics/bridging_domain_generalization_to_multimodal_domain_generalization_via_unified_r.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors reconceptualize LoRA merging from "arithmetic in parameter space" to "routing internal signals within a unified subspace." By concatenating LoRAs along the rank dimension and inserting a router $R=\mathbf{Q}\mathbf{G}^{-1}$ constructed via second-order statistics (de-correlation + directional guidance), the
+  [ICML 2026][Model Compression][LoRA Merging] The authors reconceptualize LoRA merging from "arithmetic in parameter space" to "routing internal signals within a unified subspace." By concatenating LoRAs along the rank dimension and inserting a router $R=\mathbf{Q}\mathbf{G}^{-1}$ constructed via second-order statistics (de-correlation + directional guidance), they achieve a solution theoretically equivalent to the Ordinary Least Squares (OLS) optimum. This method is training-…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "LoRA Merging"
+  - "Training-free"
+  - "Signal Routing"
+  - "Subspace"
+  - "Least Squares"
 date: 2026-05-08
-content_hash: 6e47a904524cfed9
+content_hash: 00a3606f9dd7d407
 ---
+
 # SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models
 
 **Conference**: ICML 2026  
@@ -137,8 +143,8 @@ In multi-concept synthesis (generating multiple subjects in one image), SSR achi
 
 - [\[CVPR 2026\] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy](../../CVPR2026/model_compression/preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire.md)
 - [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
+- [\[ICLR 2026\] LS-Merge: Merging Language Models in Latent Space](../../ICLR2026/model_compression/ls-merge_merging_language_models_in_latent_space.md)
 - [\[CVPR 2026\] ManifoldGD: Training-Free Hierarchical Manifold Guidance for Diffusion-Based Dataset Distillation](../../CVPR2026/model_compression/manifoldgd_training-free_hierarchical_manifold_guidance_for_diffusion-based_data.md)
-- [\[ACL 2026\] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](../../ACL2026/model_compression/improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)
 - [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
 
 </div>

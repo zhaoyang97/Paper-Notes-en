@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding
 description: >-
-  [NeurIPS 2025][Social Computing][vision backbone] Inspired by the depth-first search (DFS) algorithm, DeepTraverse is a visual backbone network that achieves highly competitive image classification performance with very…
+  [NeurIPS 2025][Social Computing][vision backbone] Inspired by the depth-first search (DFS) algorithm, DeepTraverse is a visual backbone network that achieves highly competitive image classification performance with very few parameters, through a parameter-sharing recursive exploration module and an adaptive channel recalibration module.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "channel recalibration"
   - "parameter efficiency"
 date: 2026-05-08
-content_hash: 69f5b88b63561f4a
+content_hash: b24585a99ab69fae
 ---
 
 # DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding
@@ -139,9 +139,9 @@ The Wide variant surpasses WideResNet by 1.39 points using only 39% of its param
 
 - [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
 - [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
-- [\[ICLR 2026\] SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition](../../ICLR2026/social_computing/sage_spatial-visual_adaptive_graph_exploration_for_efficient_visual_place_recogn.md)
+- [\[CVPR 2025\] As Language Models Scale, Low-order Linear Depth Dynamics Emerge](../../CVPR2025/social_computing/as_language_models_scale_low-order_linear_depth_dynamics_emerge.md)
 - [\[ACL 2026\] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](../../ACL2026/social_computing/veritas_the_first_dynamic_benchmark_for_multimodal_automated_fact-checking.md)
-- [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](../../ICCV2025/social_computing/learning_visual_proxy_for_compositional_zero-shot_learning.md)
+- [\[ACL 2025\] Exploring Gender Bias in Large Language Models: An In-depth Dive into the German Language](../../ACL2025/social_computing/exploring_gender_bias_in_large_language_models_an_in-depth_dive_into_the_german_.md)
 
 </div>
 

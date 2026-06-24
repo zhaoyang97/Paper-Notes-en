@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Web-Shepherd: Advancing PRMs for Reinforcing Web Agents
 description: >-
-  [NeurIPS 2025][LLM Agent][process reward model] This paper proposes Web-Shepherd, the first process reward model (PRM) specifically designed for web navigation. By decomposing task objectives into evaluable sub-goals via…
+  [NeurIPS 2025 Spotlight][LLM Agent][process reward model] This paper proposes Web-Shepherd, the first process reward model (PRM) specifically designed for web navigation. By decomposing task objectives into evaluable sub-goals via checklists, 3B/8B models achieve trajectory accuracy far surpassing GPT-4o (85% vs. 10%) at only 1/10 of the cost, making reinforcement learning and inference-time search for web agents practically feasible.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Agent"
   - "process reward model"
   - "Web Agent"
@@ -12,7 +12,7 @@ tags:
   - "Step-level Reward"
   - "web navigation"
 date: 2026-05-08
-content_hash: 47d488a39f4fffe1
+content_hash: 4d282ee171264f84
 ---
 
 # Web-Shepherd: Advancing PRMs for Reinforcing Web Agents
@@ -125,11 +125,11 @@ The 8B model achieves 85% trajectory accuracy, vastly outperforming GPT-4o's 10%
 
 ## Related Papers
 
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
+- [\[ACL 2025\] Explorer: Scaling Exploration-Driven Web Trajectory Synthesis for Multimodal Web Agents](../../ACL2025/llm_agent/explorer_scaling_exploration-driven_web_trajectory_synthesis_for_multimodal_web_.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ACL 2025\] Browsing Like Human: A Multimodal Web Agent with Experiential Fast-and-Slow Thinking](../../ACL2025/llm_agent/browsing_like_human_a_multimodal_web_agent_with_experiential_fast-and-slow_think.md)
+- [\[ICLR 2026\] WALT: Web Agents that Learn Tools](../../ICLR2026/llm_agent/walt_web_agents_that_learn_tools.md)
 - [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
-- [\[ACL 2026\] SynthAgent: Adapting Web Agents with Synthetic Supervision](../../ACL2026/llm_agent/synthagent_adapting_web_agents_with_synthetic_supervision.md)
-- [\[ACL 2026\] ExpSeek: Self-Triggered Experience Seeking for Web Agents](../../ACL2026/llm_agent/expseek_self-triggered_experience_seeking_for_web_agents.md)
-- [\[ACL 2026\] WebClipper: Efficient Evolution of Web Agents with Graph-based Trajectory Pruning](../../ACL2026/llm_agent/webclipper_efficient_evolution_of_web_agents_with_graph-based_trajectory_pruning.md)
 
 </div>
 

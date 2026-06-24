@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] The authors propose BUSSARD, the first learning-based method for scene-specific anomalous relationship detection. It utilizes pre-trained language model embeddings for scene graph triplets, dimensionality reduction via an autoencoder, and likelihood estimation through normalizing flows. It achieves an AUROC improvement
+  [CVPR2026][Object Detection][Scene Graph Anomaly Detection] The authors propose BUSSARD, the first learning-based method for scene-specific anomalous relationship detection. It utilizes pre-trained language model embeddings for scene graph triplets, dimensionality reduction via an autoencoder, and likelihood estimation through normalizing flows. It achieves an AUROC improvement of approximately 10% on the SARD dataset and exhibits robustness to synonym variations.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR2026"
+  - "Object Detection"
+  - "Scene Graph Anomaly Detection"
+  - "Normalizing Flows"
+  - "Semantic Embedding"
+  - "Relationship Anomaly"
+  - "Multi-modal"
 date: 2026-05-08
-content_hash: 6d0ac122e927e522
+content_hash: e9483bf8e96742f4
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection
 
@@ -125,10 +131,10 @@ Latent vectors near the Gaussian center yield high likelihoods and low anomaly s
 
 ## Related Papers
 
+- [\[ICLR 2026\] APT: Towards Universal Scene Graph Generation via Plug-in Adaptive Prompt Tuning](../../ICLR2026/object_detection/apt_towards_universal_scene_graph_generation_via_plug-in_adaptive_prompt_tuning.md)
 - [\[CVPR 2026\] RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation](rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo.md)
 - [\[CVPR 2026\] Prompt-Free Universal Region Proposal Network](prompt-free_universal_region_proposal_network.md)
 - [\[CVPR 2026\] Object-Generalized Re-Identification: A Step Towards Universal Instance Perception](object-generalized_re-identification_a_step_towards_universal_instance_perceptio.md)
-- [\[NeurIPS 2025\] Multimodal Generative Flows for LHC Jets](../../NeurIPS2025/object_detection/multimodal_generative_flows_for_lhc_jets.md)
 - [\[CVPR 2026\] UniSpector: Towards Universal Open-set Defect Recognition via Spectral-Contrastive Visual Prompting](unispector_towards_universal_open-set_defect_recognition_via_spectral-contrastiv.md)
 
 </div>

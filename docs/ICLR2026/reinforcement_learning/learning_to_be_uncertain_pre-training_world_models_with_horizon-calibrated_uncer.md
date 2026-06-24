@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Learning to Be Uncertain: Pre-training World Models with Horizon-Calibrated Uncertainty
+  [Paper Note] Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] Addressing the issue where world models are "forced to predict a single deterministic future" during action-free video pre-training, this paper proposes HAUWM. It utilizes an ensemble of dynamics heads with variable horizon prediction and explicitly compels prediction variance to grow monotonically with the prediction
+  [ICLR 2026][Reinforcement Learning][World models] Addressing the issue where world models are "forced to predict a single deterministic future" during action-free video pre-training, this paper proposes HAUWM. It utilizes an ensemble of dynamics heads with variable horizon prediction and explicitly compels prediction variance to grow monotonically with the prediction horizon via a Horizon-Calibrated Uncertainty (HCU) loss. This allows the model to learn a latent space with "t…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "World models"
+  - "action-free video pre-training"
+  - "uncertainty calibration"
+  - "ensemble models"
+  - "model-based reinforcement learning"
 date: 2026-05-08
-content_hash: 7613b2cdc6c5c4e0
+content_hash: 4b6240b8efc378c2
 ---
+
 # Learning to Be Uncertainty: Pre-training World Models with Horizon-Calibrated Uncertainty
 
 **Conference**: ICLR 2026  
@@ -120,11 +125,11 @@ This paper sits at the intersection of RSSM/Dreamer latent dynamics models (PlaN
 
 ## Related Papers
 
-- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
-- [\[ICLR 2026\] Learning Massively Multitask World Models for Continuous Control](learning_massively_multitask_world_models_for_continuous_control.md)
-- [\[ICLR 2026\] Context and Diversity Matter: The Emergence of In-Context Learning in World Models](context_and_diversity_matter_the_emergence_of_in-context_learning_in_world_model.md)
-- [\[ICLR 2026\] Unsupervised Learning of Efficient Exploration: Pre-training Adaptive Policies via Self-Imposed Goals](unsupervised_learning_of_efficient_exploration_pre-training_adaptive_policies_vi.md)
+- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
+- [\[ICLR 2026\] R2-Dreamer: Redundancy-Reduced World Models without Decoders or Augmentation](r2-dreamer_redundancy-reduced_world_models_without_decoders_or_augmentation.md)
+- [\[ICLR 2026\] EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning](eubrl_epistemic_uncertainty_directed_bayesian_reinforcement_learning.md)
+- [\[ICLR 2026\] Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty](beyond_binary_rewards_training_lms_to_reason_about_their_uncertainty.md)
 
 </div>
 

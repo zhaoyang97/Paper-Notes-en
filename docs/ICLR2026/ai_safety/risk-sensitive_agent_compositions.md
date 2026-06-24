@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Risk-Sensitive Agent Compositions
 description: >-
-  [ICLR 2026][AI Safety][VaR] This work formalizes agent workflows as Directed Acyclic Graphs (Agent Graph), modeling safety/fairness/privacy requirements using a max loss function. It proposes the BucketedVaR algorithm, which utilizes union bounds and dynamic programming to find the optimal agent composition minimizing VaR/CVaR in polynomial time,
+  [ICLR 2026][AI Safety][Risk-sensitive] This work formalizes agent workflows as Directed Acyclic Graphs (Agent Graph), modeling safety/fairness/privacy requirements using a max loss function. It proposes the BucketedVaR algorithm, which utilizes union bounds and dynamic programming to find the optimal agent composition minimizing VaR/CVaR in polynomial time, proven to be asymptotically near-optimal under the independent loss assumption.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - VaR
-  - CVaR
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Risk-sensitive"
+  - "Agent Composition"
+  - "VaR"
+  - "CVaR"
+  - "Dynamic Programming"
 date: 2026-05-08
-content_hash: bc36e05444769985
+content_hash: 7e54b574121fa4d3
 ---
+
 # Risk-Sensitive Agent Compositions
 
 **Conference**: ICLR 2026  
@@ -168,10 +172,10 @@ Compared to automated workflow generation (e.g., **AFlow**), this work focuses o
 ## Related Papers
 
 - [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](mitigating_privacy_risk_via_forget_set-free_unlearning.md)
 - [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
 - [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](../../ICML2026/ai_safety/watermarking_llm_agent_trajectories.md)
-- [\[CVPR 2026\] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition](../../CVPR2026/ai_safety/reinforcement-guided_synthetic_data_generation_for_privacy-sensitive_identity_re.md)
-- [\[ICML 2026\] Exploring Systems-Thinking Approaches to Loss of Control Risk](../../ICML2026/ai_safety/exploring_systems-thinking_approaches_to_loss_of_control_risk.md)
+- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](../../ICML2026/ai_safety/bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
 
 </div>
 

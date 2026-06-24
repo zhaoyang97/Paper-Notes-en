@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation
 description: >-
-  [ICLR 2026][Code Intelligence][ZeroRepo] This paper proposes the Repository Planning Graph (RPG), which encodes both "what features to build (proposal)" and "how to implement them (implementation)" into an explicit graph (nodes represent capabilities/files/functions, edges represent data flow and hierarchy). Based on this, the ZeroRepo framework is built, uti
+  [ICLR 2026][Code Intelligence][Repository-level code generation] This paper proposes the Repository Planning Graph (RPG), which encodes both "what features to build (proposal)" and "how to implement them (implementation)" into an explicit graph (nodes represent capabilities/files/functions, edges represent data flow and hierarchy). Based on this, the ZeroRepo framework is built, utilizing a three-stage process: "proposal-level mapping → implementation-level mapping → graph-gu…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - ZeroRepo
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "Repository-level code generation"
+  - "planning graph"
+  - "structured planning"
+  - "ZeroRepo"
+  - "test-driven development"
 date: 2026-05-08
-content_hash: 60d5a50d82f80149
+content_hash: a60f2d266bf3147e
 ---
+
 # RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation
 
 **Conference**: ICLR 2026  
@@ -149,10 +154,10 @@ Removing RPG guidance leads to a significant increase in localization steps. Gra
 
 ## Related Papers
 
+- [\[ICML 2026\] UniRTL: Unified Code and Graph for Robust RTL Representation Learning](../../ICML2026/code_intelligence/unirtl_unifying_code_and_graph_for_robust_rtl_representation_learning.md)
 - [\[ICLR 2026\] Gistify: Codebase-Level Understanding via Runtime Execution](gistify_codebase-level_understanding_via_runtime_execution.md)
 - [\[ICLR 2026\] Evolving Graph Structured Programs for Circuit Generation with Large Language Models](evolving_graph_structured_programs_for_circuit_generation_with_large_language_mo.md)
 - [\[ICLR 2026\] Improving Code Localization with Repository Memory](improving_code_localization_with_repository_memory.md)
-- [\[ACL 2026\] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward](../../ACL2026/code_intelligence/omnidiagram_advancing_unified_diagram_code_generation_via_visual_interrogation_r.md)
 - [\[ICLR 2026\] From Large to Small: Transferring CUDA Optimization Expertise via Reasoning Graph](from_large_to_small_transferring_cuda_optimization_expertise_via_reasoning_graph.md)
 
 </div>

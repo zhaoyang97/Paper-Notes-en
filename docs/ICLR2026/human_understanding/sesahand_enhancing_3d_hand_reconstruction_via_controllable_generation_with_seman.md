@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SesaHand: Enhancing 3D Hand Reconstruction via Controllable Generation with Semantic and Structural Alignment
 description: >-
-  [ICLR 2026][Human Understanding][Chain-of-Thought] SesaHand employs a controllable diffusion framework with a dual-pronged "semantic + structural alignment" approach to synthesize realistic hand images with 3D mesh labels. The semantic branch uses Chain-of-Thought (CoT) to refine "human behavior semantics" from VLM descriptions, removing irrelevant details, while the s
+  [ICLR 2026][Human Understanding][3D Hand Reconstruction] SesaHand employs a controllable diffusion framework with a dual-pronged "semantic + structural alignment" approach to synthesize realistic hand images with 3D mesh labels. The semantic branch uses Chain-of-Thought (CoT) to refine "human behavior semantics" from VLM descriptions, removing irrelevant details, while the structural branch uses hierarchical self-attention fusion for hand-body alignment and a bias term for ef…
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "3D Hand Reconstruction"
+  - "Controllable Image Generation"
+  - "Chain-of-Thought"
+  - "Self-Attention Structure"
+  - "Synthetic Data"
 date: 2026-05-08
-content_hash: a21328c9f9890386
+content_hash: ad03b36841217981
 ---
+
 # SesaHand: Enhancing 3D Hand Reconstruction via Controllable Generation with Semantic and Structural Alignment
 
 **Conference**: ICLR 2026  
@@ -147,11 +152,11 @@ Each module provides cumulative gains: SE reduces FID from 21.04 to 19.83, SF al
 
 ## Related Papers
 
+- [\[ICLR 2026\] TOUCH: Text-guided Controllable Generation of Free-Form Hand-Object Interactions](touch_text-guided_controllable_generation_of_free-form_hand-object_interactions.md)
 - [\[CVPR 2025\] WiLoR: End-to-end 3D Hand Localization and Reconstruction in-the-wild](../../CVPR2025/human_understanding/wilor_end-to-end_3d_hand_localization_and_reconstruction_in-the-wild.md)
 - [\[ICLR 2026\] Motion-R1: Enhancing Motion Generation with Decomposed Chain-of-Thought and RL Binding](motion-r1_enhancing_motion_generation_with_decomposed_chain-of-thought_and_rl_bi.md)
 - [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](../../CVPR2026/human_understanding/opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
 - [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](../../CVPR2026/human_understanding/view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
-- [\[ICLR 2026\] Disentangled Hierarchical VAE for 3D Human-Human Interaction Generation](disentangled_hierarchical_vae_for_3d_human-human_interaction_generation.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Moving away from parameter-heavy or computationally intensive adaptive compressors, LEGACY utilizes two cost-free signals—"layer size" and "training stage"—to equip any compressor (Top-k, QSGD, PowerSGD, etc.) with a lightweight dynamic scheduler, significantly improving accuracy under the same communication volume.
+  [ICLR 2026][Optimization][gradient compression] Moving away from parameter-heavy or computationally intensive adaptive compressors, LEGACY utilizes two cost-free signals—"layer size" and "training stage"—to equip any compressor (Top-k, QSGD, PowerSGD, etc.) with a lightweight dynamic scheduler, significantly improving accuracy under the same communication volume.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "gradient compression"
+  - "communication bottleneck"
+  - "Top-k sparsification"
+  - "dynamic scheduler"
+  - "distributed training"
+  - "federated learning"
 date: 2026-05-08
-content_hash: 0eb884745eb28829
+content_hash: eef79fcccf6e8049
 ---
+
 # LEGACY: A Lightweight Dynamic Gradient Compression Strategy for Distributed Deep Learning
 
 **Conference**: ICLR 2026  
@@ -116,8 +123,8 @@ The authors substantiate empirical intuition through convergence analysis of com
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
 - [\[ICLR 2026\] Enhancing Communication Compression via Discrepancy-aware Calibration for Federated Learning](enhancing_communication_compression_via_discrepancy-aware_calibration_for_federa.md)
 - [\[CVPR 2026\] Dynamic Momentum Recalibration in Online Gradient Learning](../../CVPR2026/optimization/dynamic_momentum_recalibration_in_online_gradient_learning.md)
+- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
 - [\[ICLR 2026\] Proving the Limited Scalability of Centralized Distributed Optimization via a New Lower Bound Construction](proving_the_limited_scalability_of_centralized_distributed_optimization_via_a_ne.md)
-- [\[ICLR 2026\] Towards Dynamic Interleaving Optimizers](towards_dynamic_interleaving_optimizers.md)
 
 </div>
 

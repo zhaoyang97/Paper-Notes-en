@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] UniFlow: A Unified Pixel Flow Tokenizer for Visual Understanding and Generation
 description: >-
-  [ICLR 2026][Model Compression][flow matching] A universal unified tokenizer, UniFlow, is proposed. It preserves semantic understanding through hierarchical adaptive self-distillation and achieves high-fidelity reconstruction using a lightweight patch-wise pixel flow decoder. It achieves a win-win in understanding and generation across 13 benchmarks; the 7B UniFlow
+  [Model Compression] A universal unified tokenizer, UniFlow, is proposed. It preserves semantic understanding through hierarchical adaptive self-distillation and achieves high-fidelity reconstruction using a lightweight patch-wise pixel flow decoder. It achieves a win-win in understanding and generation across 13 benchmarks; the 7B UniFlow-XL outperforms the 14B TokenFlow-XL by 6.05% using 40% less data.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - flow matching
+  - "Model Compression"
 date: 2026-05-08
-content_hash: 352f9587683ae7a2
+content_hash: 9ad8ba46f690fc98
 ---
+
 # UniFlow: A Unified Pixel Flow Tokenizer for Visual Understanding and Generation
 
 ## Metadata

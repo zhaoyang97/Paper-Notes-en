@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs
 description: >-
-  [AAAI 2026][Image Generation][knowledge conflict] This paper proposes TruthfulRAG, a framework that, for the first time, leverages knowledge graphs (KGs) to resolve conflicts between retrieved knowledge and LLM parametri…
+  [AAAI 2026][Image Generation][knowledge conflict] This paper proposes TruthfulRAG, a framework that, for the first time, leverages knowledge graphs (KGs) to resolve conflicts between retrieved knowledge and LLM parametric knowledge at the factual level in RAG systems. The framework improves generation accuracy and trustworthiness through triple extraction, query-aware graph retrieval, and an entropy-based conflict filtering mechanism.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "factual-level reasoning"
   - "entropy filtering"
 date: 2026-05-08
-content_hash: 742ec1c9c167a9d9
+content_hash: 9183bcd7dbfae352
 ---
 
 # TruthfulRAG: Resolving Factual-level Conflicts in Retrieval-Augmented Generation with Knowledge Graphs
@@ -129,9 +129,9 @@ Results with Mistral-7B are even more pronounced, achieving an average ACC of 81
 
 - [\[AAAI 2026\] Improved Masked Image Generation with Knowledge-Augmented Token Representations](improved_masked_image_generation_with_knowledge-augmented_token_representations.md)
 - [\[NeurIPS 2025\] Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?](../../NeurIPS2025/image_generation/can_knowledge-graph-based_retrieval_augmented_generation_really_retrieve_what_yo.md)
+- [\[ECCV 2024\] GarmentAligner: Text-to-Garment Generation via Retrieval-augmented Multi-level Corrections](../../ECCV2024/image_generation/garmentaligner_text-to-garment_generation_via_retrieval-augmented_multi-level_co.md)
+- [\[CVPR 2026\] ImageRAGTurbo: Towards One-step Text-to-Image Generation with Retrieval-Augmented Diffusion Models](../../CVPR2026/image_generation/imageragturbo_towards_one-step_text-to-image_generation_with_retrieval-augmented.md)
 - [\[CVPR 2026\] When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance](../../CVPR2026/image_generation/when_safety_collides_resolving_multi-category_harmful_conflicts_in_text-to-image.md)
-- [\[AAAI 2026\] Laytrol: Preserving Pretrained Knowledge in Layout Control for Multimodal Diffusion Transformers](laytrol_preserving_pretrained_knowledge_in_layout_control_fo.md)
-- [\[AAAI 2026\] Hyperbolic Hierarchical Alignment Reasoning Network for Text-3D Retrieval](hyperbolic_hierarchical_alignment_reasoning_network_for_text-3d_retrieval.md)
 
 </div>
 

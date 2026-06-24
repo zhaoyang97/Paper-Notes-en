@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Process Reward Model] ReasonFlux-PRM identifies that existing PRMs fail to effectively evaluate the intermediate thinking trajectories of reasoning models…
+  [NeurIPS 2025][Reasoning][Process Reward Model] ReasonFlux-PRM identifies that existing PRMs fail to effectively evaluate the intermediate thinking trajectories of reasoning models, and proposes a trajectory-aware PRM that fuses step-level alignment, quality, and coherence scores with a trajectory-level template-guided reward. The approach consistently outperforms strong baselines including Qwen2.5-Math-PRM-72B across three settings: offline data selection (SFT +12.1%)…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Process Reward Model"
   - "Trajectory-Aware"
   - "Data Selection"
   - "Reinforcement Learning"
   - "Test-Time Scaling"
 date: 2026-05-08
-content_hash: 7a7ce8a3646abec5
+content_hash: d6aabbbf258671bf
 ---
 
 # ReasonFlux-PRM: Trajectory-Aware PRMs for Long Chain-of-Thought Reasoning in LLMs
@@ -136,10 +136,10 @@ Given trajectory–response data $(s, a)$ (where $s$ is the thinking trajectory 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Let Me Think! A Long Chain-of-Thought Can Be Worth Exponentially Many Short Ones](let_me_think_a_long_chainofthought_can_be_worth_exponentiall.md)
+- [\[ACL 2025\] DRT: Deep Reasoning Translation via Long Chain-of-Thought](../../ACL2025/llm_reasoning/drt_deep_reasoning_translation_via_long_chain-of-thought.md)
 - [\[NeurIPS 2025\] Trajectory Bellman Residual Minimization: A Simple Value-Based Method for LLM Reasoning](trajectory_bellman_residual_minimization_a_simple_value-based_method_for_llm_rea.md)
-- [\[NeurIPS 2025\] Latent Chain-of-Thought for Visual Reasoning](latent_chain-of-thought_for_visual_reasoning.md)
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
-- [\[NeurIPS 2025\] On Learning Verifiers and Implications to Chain-of-Thought Reasoning](on_learning_verifiers_and_implications_to_chain-of-thought_reasoning.md)
+- [\[ACL 2025\] TRACT: Regression-Aware Fine-tuning Meets Chain-of-Thought Reasoning](../../ACL2025/llm_reasoning/tract_regression_cot.md)
 
 </div>
 

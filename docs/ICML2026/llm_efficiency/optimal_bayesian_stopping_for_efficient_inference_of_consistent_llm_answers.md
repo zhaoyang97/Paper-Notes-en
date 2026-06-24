@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] This paper models the "Self-Consistency (multiple sampling for majority vote)" problem as a Bayesian optimal stopping problem with prior information. It proposes an $L$-aggregated posterior approximation that tracks only three types of counts: "top-1 frequency, top-2 frequency, and others." The authors theoretically pr
+  [ICML 2026][LLM Efficiency][Adaptive Sampling] This paper models the "Self-Consistency (multiple sampling for majority vote)" problem as a Bayesian optimal stopping problem with prior information. It proposes an $L$-aggregated posterior approximation that tracks only three types of counts: "top-1 frequency, top-2 frequency, and others." The authors theoretically prove that $L=3$ achieves the same asymptotically optimal stopping time as the exact posterior as $\delta \to 0$. E…
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Adaptive Sampling"
+  - "Self-Consistency"
+  - "Bayesian Stopping"
+  - "Sequential Hypothesis Testing"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 3febe14229ea9cf6
+content_hash: a741cb19971312c0
 ---
+
 # Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers
 
 **Conference**: ICML 2026  
@@ -132,15 +138,15 @@ Under uncertain priors, it still saves ~22% calls compared to ASC with equivalen
 - Value: ⭐⭐⭐⭐ Practical 30-80% savings for SC deployments; code is available.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 - [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](training-inference_consistent_segmented_execution_for_long-context_llms.md)
-- [\[ICML 2026\] DOT-MoE: 用可微 optimal transport 把 dense LLM 转成 MoE](dot-moe_differentiable_optimal_transport_for_moefication.md)
+- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 - [\[ICML 2026\] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving](theoretically_optimal_attentionffn_ratios_in_disaggregated_llm_serving.md)
+- [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
 - [\[ICML 2026\] Ekka: Automated Diagnosis of Silent Errors in LLM Inference](ekka_automated_diagnosis_of_silent_errors_in_llm_inference.md)
 
 </div>

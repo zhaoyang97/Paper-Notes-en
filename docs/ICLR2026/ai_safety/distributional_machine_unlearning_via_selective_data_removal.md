@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Distributional Machine Unlearning via Selective Data Removal
 description: >-
-  [ICLR 2026][AI Safety][distributional unlearning] This work formalizes "forgetting an unwanted sub-distribution" as an information-theoretic problem. It proves that removing a small set of high-impact samples furthest from the retained distribution yields a quadratic improvement in sample efficiency in low-divergence scenarios, reducing data deletion by 15–82% compare
+  [ICLR 2026][AI Safety][distributional unlearning] This work formalizes "forgetting an unwanted sub-distribution" as an information-theoretic problem. It proves that removing a small set of high-impact samples furthest from the retained distribution yields a quadratic improvement in sample efficiency in low-divergence scenarios, reducing data deletion by 15–82% compared to "full deletion" in empirical tests.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - distributional unlearning
-  - selective data removal
-  - KL divergence
-  - Pareto frontier
-  - sample efficiency
+  - "ICLR 2026"
+  - "AI Safety"
+  - "distributional unlearning"
+  - "selective data removal"
+  - "KL divergence"
+  - "Pareto frontier"
+  - "sample efficiency"
 date: 2026-05-08
-content_hash: fa46cfbc7f1d01e4
+content_hash: e77051883499bbcb
 ---
+
 # Distributional Machine Unlearning via Selective Data Removal
 
 **Conference**: ICLR 2026  
@@ -125,8 +126,8 @@ The fourth root vs. the square root is precisely where the "quadratic savings" c
 - [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
 - [\[ICLR 2026\] Label Smoothing Improves Machine Unlearning](label_smoothing_improves_machine_unlearning.md)
 - [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
-- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 - [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
+- [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 
 </div>
 

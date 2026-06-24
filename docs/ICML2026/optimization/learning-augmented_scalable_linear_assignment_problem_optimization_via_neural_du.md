@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts
 description: >-
-  [ICML 2026][Optimization & Theory][LAPJV] Training a lightweight network to predict the dual variables $\hat{u}$ of the Linear Assignment Problem (LAP) and constructing feasible duals $\hat{v}$ via the Min-Trick provides a warm-start for the LAPJV exact solver. This approach accelerates end-to-end solving of $N=16{,}384$ scale instances by over $2\times$ while
+  [ICML 2026][Optimization][Linear Assignment] Training a lightweight network to predict the dual variables $\hat{u}$ of the Linear Assignment Problem (LAP) and constructing feasible duals $\hat{v}$ via the Min-Trick provides a warm-start for the LAPJV exact solver. This approach accelerates end-to-end solving of $N=16{,}384$ scale instances by over $2\times$ while maintaining optimality.
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - LAPJV
+  - "ICML 2026"
+  - "Optimization"
+  - "Linear Assignment"
+  - "Dual Variables"
+  - "Warm-start"
+  - "LAPJV"
+  - "Row-independent Network"
 date: 2026-05-08
-content_hash: 2b1f3faa5b17c2c2
+content_hash: 4ebb7286923da56b
 ---
+
 # Learning-Augmented Scalable Linear Assignment Problem Optimization via Neural Dual Warm-Starts
 
 **Conference**: ICML 2026  
@@ -129,10 +134,10 @@ The model uses supervised training with ground truth duals $u^\ast$ from LAPJV. 
 ## Related Papers
 
 - [\[ICLR 2026\] Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise](../../ICLR2026/optimization/dual_optimistic_ascent_pi_control_is_the_augmented_lagrangian_method_in_disguise.md)
-- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
 - [\[ICML 2026\] Dynamics and Representation Structure of Local Approximations to Gradient-Based Learning in Linear Recurrent Neural Networks](dynamics_and_representation_structure_of_local_approximations_to_gradient-based_.md)
+- [\[ICML 2026\] RMNP: Row-Momentum Normalized Preconditioning for Scalable Matrix-Based Optimization](rmnp_row-momentum_normalized_preconditioning_for_scalable_matrix-based_optimizat.md)
 - [\[ICML 2026\] Balancing Learning Rates Across Layers: Exact Two-Step Dynamics and Optimal Scaling in Linear Neural Networks](balancing_learning_rates_across_layers_exact_two-step_dynamics_and_optimal_scali.md)
-- [\[ICML 2026\] Neural QAOA$^2$: Differentiable Joint Graph Partitioning and Parameter Initialization for Quantum Combinatorial Optimization](neural_qaoa2_differentiable_joint_graph_partitioning_and_parameter_initializatio.md)
+- [\[ICML 2026\] On the Expressive Power of GNNs to Solve Linear SDPs](on_the_expressive_power_of_gnns_to_solve_linear_sdps.md)
 
 </div>
 

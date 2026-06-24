@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity
 description: >-
-  [ICCV 2025][Segmentation][Explainability] This paper proposes LeGrad, a layer-wise explainability method designed specifically for ViTs. It computes the gradient of the activation with respect to the attention map at eac…
+  [ICCV 2025][Segmentation][Explainability] This paper proposes LeGrad, a layer-wise explainability method designed specifically for ViTs. It computes the gradient of the activation with respect to the attention map at each layer as the explanation signal, aggregates these signals across layers to produce high-quality spatial saliency maps, and demonstrates superior spatial fidelity in segmentation, perturbation, and open-vocabulary settings.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Open-Vocabulary Segmentation"
   - "CLIP"
 date: 2026-05-08
-content_hash: 79bd815531650552
+content_hash: b79f66179e32b3c8
 ---
 
 # LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity
@@ -142,10 +142,10 @@ LeGrad is a **training-free** post-hoc explainability method and involves no los
 ## Related Papers
 
 - [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](../../NeurIPS2025/segmentation/vision_transformers_with_self-distilled_registers.md)
-- [\[CVPR 2026\] MPM: Mutual Pair Merging for Efficient Vision Transformers](../../CVPR2026/segmentation/mpm_mutual_pair_merging_for_efficient_vision_transformers.md)
+- [\[CVPR 2025\] DA-VPT: Semantic-Guided Visual Prompt Tuning for Vision Transformers](../../CVPR2025/segmentation/da-vpt_semantic-guided_visual_prompt_tuning_for_vision_transformers.md)
 - [\[ICLR 2026\] Revisiting \[CLS\] and Patch Token Interaction in Vision Transformers](../../ICLR2026/segmentation/revisiting_cls_and_patch_token_interaction_in_vision_transformers.md)
+- [\[ICCV 2025\] Enhancing Transformers Through Conditioned Embedded Tokens](enhancing_transformers_through_conditioned_embedded_tokens.md)
 - [\[ICCV 2025\] PartField: Learning 3D Feature Fields for Part Segmentation and Beyond](partfield_learning_3d_feature_fields_for_part_segmentation_and_beyond.md)
-- [\[ICLR 2026\] Thicker and Quicker: A Jumbo Token for Fast Plain Vision Transformers](../../ICLR2026/segmentation/thicker_and_quicker_a_jumbo_token_for_fast_plain_vision_transformers.md)
 
 </div>
 

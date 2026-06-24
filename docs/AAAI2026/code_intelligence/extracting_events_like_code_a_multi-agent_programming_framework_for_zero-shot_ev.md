@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction
 description: >-
-  [AAAI 2026][Code Intelligence][Zero-Shot Event Extraction] This paper proposes Agent-Event-Coder (AEC), which reformulates zero-shot event extraction as a software engineering workflow. Four specialized agents (Retrieval…
+  [AAAI 2026 Oral][Code Intelligence][Zero-Shot Event Extraction] This paper proposes Agent-Event-Coder (AEC), which reformulates zero-shot event extraction as a software engineering workflow. Four specialized agents (Retrieval→Planning→Coding→Verification) collaborate to perform extraction, while event schemas are encoded as executable Python classes to enable compiler-style deterministic validation and dual-loop iterative correction. AEC comprehensively outperforms zero-shot…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Code Intelligence"
   - "Zero-Shot Event Extraction"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Python Class Template"
   - "Dual-Loop Refinement"
 date: 2026-05-08
-content_hash: cb31968a2a87c340
+content_hash: 7c7994ad9c28896e
 ---
 
 # Extracting Events Like Code: A Multi-Agent Programming Framework for Zero-Shot Event Extraction
@@ -160,8 +160,8 @@ AEC redefines ZSEE as a "collaborative, verifiable code generation" process. The
 
 - [\[ICCV 2025\] TikZero: Zero-Shot Text-Guided Graphics Program Synthesis](../../ICCV2025/code_intelligence/tikzero_zero-shot_text-guided_graphics_program_synthesis.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
+- [\[ICLR 2026\] Multi-LCB: Extending LiveCodeBench to Multiple Programming Languages](../../ICLR2026/code_intelligence/multi-lcb_extending_livecodebench_to_multiple_programming_languages.md)
 - [\[ICLR 2026\] CARD: Towards Conditional Design of Multi-agent Topological Structures](../../ICLR2026/code_intelligence/card_towards_conditional_design_of_multi-agent_topological_structures.md)
-- [\[AAAI 2026\] EquaCode: A Multi-Strategy Jailbreak Approach for Large Language Models via Equation Solving and Code Completion](equacode_a_multi-strategy_jailbreak_approach_for_large_language_models_via_equat.md)
 - [\[NeurIPS 2025\] A Stochastic Differential Equation Framework for Multi-Objective LLM Interactions](../../NeurIPS2025/code_intelligence/a_stochastic_differential_equation_framework_for_multi-objective_llm_interaction.md)
 
 </div>

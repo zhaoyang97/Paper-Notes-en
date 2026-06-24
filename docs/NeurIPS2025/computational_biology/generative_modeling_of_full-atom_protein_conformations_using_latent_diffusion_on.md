@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings
 description: >-
-  [NeurIPS 2025][Computational Biology][protein conformation generation] This work proposes **LD-FPG**, a framework that encodes full-atom MD trajectories into a low-dimensional latent space via Chebyshev graph neural netw…
+  [NeurIPS 2025][Computational Biology][protein conformation generation] This work proposes **LD-FPG**, a framework that encodes full-atom MD trajectories into a low-dimensional latent space via Chebyshev graph neural networks and applies DDPM in that space to generate novel conformational ensembles. To the authors' knowledge, this is the first approach to generate protein conformations that includes all heavy atoms of the side chains.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "full-atom modeling"
   - "GPCR"
 date: 2026-05-08
-content_hash: e26a9e392036b162
+content_hash: 7d4d0eb011066278
 ---
 
 # Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings
@@ -145,9 +145,9 @@ This work addresses an important gap in full-atom protein conformation generatio
 
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
 - [\[NeurIPS 2025\] Diffusion Generative Modeling on Lie Group Representations](diffusion_generative_modeling_on_lie_group_representations.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
 - [\[NeurIPS 2025\] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning](generative_distribution_embeddings_lifting_autoencoders_to_the_space_of_distribu.md)
-- [\[NeurIPS 2025\] Graph Diffusion that can Insert and Delete](graph_diffusion_that_can_insert_and_delete.md)
+- [\[ICML 2025\] Geometric Generative Modeling with Noise-Conditioned Graph Networks](../../ICML2025/computational_biology/geometric_generative_modeling_with_noise-conditioned_graph_networks.md)
+- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
 
 </div>
 

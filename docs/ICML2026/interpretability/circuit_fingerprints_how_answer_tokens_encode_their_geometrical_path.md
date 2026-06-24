@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper proposes the "Circuit Fingerprint" hypothesis—feeding a standalone answer token into a Transformer leaves a directional signature in the latent space that corresponds exactly to the circuit path required to generate that answer. Based on this, it achieves circuit discovery through pure geometric alignment (w
+  [ICML 2026][Interpretability][Circuit Discovery] This paper proposes the "Circuit Fingerprint" hypothesis—feeding a standalone answer token into a Transformer leaves a directional signature in the latent space that corresponds exactly to the circuit path required to generate that answer. Based on this, it achieves circuit discovery through pure geometric alignment (without gradients or intervention). It further demonstrates that the same set of directions can perform activati…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Circuit Discovery"
+  - "Activation Steering"
+  - "Geometric Alignment"
+  - "Answer Token Fingerprints"
+  - "Shapley Decomposition"
 date: 2026-05-08
-content_hash: e8ba9b6c7f840794
+content_hash: c64f11606a211265
 ---
+
 # Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path
 
 **Conference**: ICML 2026  
@@ -131,10 +137,10 @@ Steering for positive emotions (joy) maintains or improves factual accuracy. How
 ## Related Papers
 
 - [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
-- [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](../../ICLR2026/interpretability/how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
+- [\[ICLR 2026\] From Tokens to Thoughts: How LLMs and Humans Trade Compression for Meaning](../../ICLR2026/interpretability/from_tokens_to_thoughts_how_llms_and_humans_trade_compression_for_meaning.md)
+- [\[ICML 2026\] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs](latentlens_revealing_highly_interpretable_visual_tokens_in_llms.md)
 - [\[ICML 2026\] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs](all_circuits_lead_to_rome_rethinking_functional_anisotropy_in_circuit_and_sheaf_.md)
-- [\[ICML 2026\] How Language Models Process Negation](how_language_models_process_negation.md)
-- [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
+- [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
 
 </div>
 

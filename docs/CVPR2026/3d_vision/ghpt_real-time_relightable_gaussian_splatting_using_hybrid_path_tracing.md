@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] GHPT utilizes a "Gaussian-splatted G-buffer and hardware-accelerated ray tracing on an underlying mesh" hybrid path tracing paradigm, coupled with a three-stage inverse rendering pipeline (reconstructing geometry, decomposing materials and environment light, and finally performing factorized inverse path tracing on Gau
+  [CVPR 2026][3D Vision][Relightable Gaussian Splatting] GHPT utilizes a "Gaussian-splatted G-buffer and hardware-accelerated ray tracing on an underlying mesh" hybrid path tracing paradigm, coupled with a three-stage inverse rendering pipeline (reconstructing geometry, decomposing materials and environment light, and finally performing factorized inverse path tracing on Gaussians). This approach marks the first time a 3DGS model has achieved high-quality relighting and real-ti…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Relightable Gaussian Splatting"
+  - "Hybrid Path Tracing"
+  - "Inverse Rendering"
+  - "G-buffer Deferred Shading"
+  - "Real-Time Global Illumination"
 date: 2026-05-08
-content_hash: abd7c0fcc37a674d
+content_hash: d22b62c93b9b18d5
 ---
+
 # GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing
 
 **Conference**: CVPR 2026  
@@ -151,11 +157,11 @@ Relighting PSNR results:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
-- [\[CVPR 2026\] CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Eulerian Gaussian Splatting using Hashed Probability Pyramids](eulerian_gaussian_splatting_using_hashed_probability_pyramids.md)
-- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
+- [\[CVPR 2026\] SketchFaceGS: Real-Time Sketch-Driven Face Editing and Generation with Gaussian Splatting](sketchfacegs_real-time_sketch-driven_face_editing_and_generation_with_gaussian_s.md)
+- [\[CVPR 2026\] Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices](seele_a_unified_acceleration_framework_for_real-time_gaussian_splatting_on_mobil.md)
+- [\[CVPR 2026\] Stochastic Ray Tracing for the Reconstruction of 3D Gaussian Splatting](stochastic_ray_tracing_for_the_reconstruction_of_3d_gaussian_splatting.md)
+- [\[ICCV 2025\] Radiant Foam: Real-Time Differentiable Ray Tracing](../../ICCV2025/3d_vision/radiant_foam_real-time_differentiable_ray_tracing.md)
+- [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
 
 </div>
 

@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] HSG-12M: A Large-Scale Benchmark of Spatial Multigraphs from the Energy Spectra of Non-Hermitian Crystals
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][spatial multigraph] This paper "draws" the energy spectra of non-Hermitian crystals as graphs, proposing the automated pipeline Poly2Graph to map 1D crystalline Hamiltonians to spectral graphs on the complex energy plane. Based on this, HSG-12M is constructed: the first large-scale "spatial multigraph" benchmark (11.6M static + 5.1M dynam
+  [ICLR 2026][Physics & Scientific Computing][spatial multigraph] This paper "draws" the energy spectra of non-Hermitian crystals as graphs, proposing the automated pipeline Poly2Graph to map 1D crystalline Hamiltonians to spectral graphs on the complex energy plane. Based on this, HSG-12M is constructed: the first large-scale "spatial multigraph" benchmark (11.6M static + 5.1M dynamic graphs across 1401 classes), exposing new challenges for existing GNNs in learning from multi…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - spatial multigraph
-  - non-Hermitian physics
-  - Hamiltonian spectral graph
-  - graph benchmark
-  - GNN
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "spatial multigraph"
+  - "non-Hermitian physics"
+  - "Hamiltonian spectral graph"
+  - "graph benchmark"
+  - "GNN"
+  - "condensed matter physics"
 date: 2026-05-08
-content_hash: e19035b92fc57036
+content_hash: ee22b2dce0af70fa
 ---
+
 # HSG-12M: A Large-Scale Benchmark of Spatial Multigraphs from the Energy Spectra of Non-Hermitian Crystals
 
 **Conference**: ICLR 2026  
@@ -123,11 +125,11 @@ Learnable parameters were aligned and a fixed training budget was used (max epoc
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Escorted Protocols For Multistate Free-Energy Estimation](learning_escorted_protocols_for_multistate_free-energy_estimation.md)
 - [\[ICLR 2026\] RealPDEBench: A Benchmark for Complex Physical Systems with Real-World Data](realpdebench_a_benchmark_for_complex_physical_systems_with_real-world_data.md)
 - [\[ICML 2025\] Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems](../../ICML2025/physics/erwin_a_tree-based_hierarchical_transformer_for_large-scale_physical_systems.md)
 - [\[ICML 2025\] Rethink the Role of Deep Learning towards Large-scale Quantum Systems](../../ICML2025/physics/rethink_the_role_of_deep_learning_towards_large-scale_quantum_systems.md)
 - [\[ICLR 2026\] PINFDiT: Energy-Based Physics-Informed Diffusion Transformers for General-purpose Time Series Tasks](pinfdit_energy-based_physics-informed_diffusion_transformers_for_general-purpose.md)
-- [\[NeurIPS 2025\] TITAN: A Trajectory-Informed Technique for Adaptive Parameter Freezing in Large-Scale VQE](../../NeurIPS2025/physics/titan_a_trajectory-informed_technique_for_adaptive_parameter_freezing_in_large-s.md)
 
 </div>
 

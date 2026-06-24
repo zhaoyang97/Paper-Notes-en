@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Navigating Simply, Aligning Deeply: Winning Solutions for Mouse vs. AI 2025
 description: >-
-  [NeurIPS 2025][Model Compression][Visual Robustness] In the NeurIPS 2025 Mouse vs. AI competition, this paper presents the counterintuitive finding that a lightweight two-layer CNN substantially outperforms deep networks…
+  [NeurIPS 2025][Model Compression][Visual Robustness] In the NeurIPS 2025 Mouse vs. AI competition, this paper presents the counterintuitive finding that a lightweight two-layer CNN substantially outperforms deep networks on visual robustness tasks, while demonstrating that a deeper ResNet architecture is more advantageous for neural alignment, revealing a fundamental tension between behavioral robustness and biological plausibility.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Gated Linear Units"
   - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: dffbb95d487fb6fd
+content_hash: ef838735715b8761
 ---
 
 # Navigating Simply, Aligning Deeply: Winning Solutions for Mouse vs. AI 2025
@@ -122,11 +122,11 @@ The Track 2 findings are consistent with the hierarchical organization of the vi
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
 - [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
 - [\[NeurIPS 2025\] On the Creation of Narrow AI: Hierarchy and Nonlocality of Neural Network Skills](on_the_creation_of_narrow_ai_hierarchy_and_nonlocality_of_neural_network_skills.md)
 - [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](../../ACL2026/model_compression/sssd_simply-scalable_speculative_decoding.md)
-- [\[ICLR 2026\] Textual Equilibrium Propagation for Deep Compound AI Systems](../../ICLR2026/model_compression/textual_equilibrium_propagation_for_deep_compound_ai_systems.md)
+- [\[NeurIPS 2025\] When Worse is Better: Navigating the Compression-Generation Trade-off in Visual Tokenization](when_worse_is_better_navigating_the_compression-generation_tradeoff_in_visual_to.md)
+- [\[ACL 2025\] Beyond Logits: Aligning Feature Dynamics for Effective Knowledge Distillation](../../ACL2025/model_compression/beyond_logits_aligning_feature_dynamics_for_effective_knowledge_distillation.md)
 
 </div>
 

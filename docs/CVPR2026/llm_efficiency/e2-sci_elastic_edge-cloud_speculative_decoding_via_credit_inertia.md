@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] E$^2$-SCI: Elastic Edge-Cloud Speculative Decoding via Credit Inertia
 description: >-
-  [CVPR 2026][LLM Efficiency][Paper Note] This paper identifies strong temporal consistency in token acceptance rates across adjacent windows in edge-cloud speculative decoding (termed "Credit Inertia"). Based on this, it dynamically adjusts verification thresholds using historical acceptance rates. Combined with an Asynchronous Pipeline (PLC) that parallelize
+  [CVPR 2026][LLM Efficiency][Speculative Decoding] This paper identifies strong temporal consistency in token acceptance rates across adjacent windows in edge-cloud speculative decoding (termed "Credit Inertia"). Based on this, it dynamically adjusts verification thresholds using historical acceptance rates. Combined with an Asynchronous Pipeline (PLC) that parallelizes draft generation and cloud verification, it achieves 9.4+ tokens/s on DeepSeek-R1-Distill-Qwen (1.5B/32B)…
 tags:
-  - CVPR 2026
-  - LLM Efficiency
+  - "CVPR 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Edge-Cloud Collaboration"
+  - "Adaptive Threshold"
+  - "Credit Inertia"
+  - "Asynchronous Pipeline"
 date: 2026-05-08
-content_hash: 504c9d59c18fd4b1
+content_hash: 4fe6a0872ddeff09
 ---
+
 # E$^2$-SCI: Elastic Edge-Cloud Speculative Decoding via Credit Inertia
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ Integration experiments (Table 3) show E2-SCI improves accuracy slightly when co
 
 ## Related Papers
 
-- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](../../ICLR2026/llm_efficiency/speculative_speculative_decoding.md)
 - [\[ICML 2025\] DSSD: Efficient Edge-Device LLM Deployment and Collaborative Inference via Distributed Split Speculative Decoding](../../ICML2025/llm_efficiency/dssd_efficient_edge-device_llm_deployment_and_collaborative_inference_via_distri.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](../../ICML2026/llm_efficiency/minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
-- [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
+- [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
+- [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
 
 </div>
 

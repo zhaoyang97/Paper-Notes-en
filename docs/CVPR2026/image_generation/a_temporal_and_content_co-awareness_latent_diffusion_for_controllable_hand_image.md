@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Temporal and Content Co-Awareness Latent Diffusion for Controllable Hand Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the limitation where pose/appearance control signals are injected with fixed intensity across all denoising steps in controllable hand generation, this paper proposes TCCA. It utilizes a set of learnable queries to align heterogeneous features—noisy latents, 3D pose, and appearance—into a unified space to **
+  [CVPR 2026][Image Generation][Controllable Hand Image Generation] Addressing the limitation where pose/appearance control signals are injected with fixed intensity across all denoising steps in controllable hand generation, this paper proposes TCCA. It utilizes a set of learnable queries to align heterogeneous features—noisy latents, 3D pose, and appearance—into a unified space to **dynamically adjust** injection intensity **step-by-step**. Complementing this is a pose-invari…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Controllable Hand Image Generation"
+  - "Latent Diffusion"
+  - "Adaptive Modulation"
+  - "Pose-Appearance Decoupling"
+  - "SVD Orthogonal Decomposition"
 date: 2026-05-08
-content_hash: 60bfa624ebb4aaf4
+content_hash: 15547200f9bb1274
 ---
+
 # A Temporal and Content Co-Awareness Latent Diffusion for Controllable Hand Image Generation
 
 **Conference**: CVPR 2026  
@@ -138,10 +144,20 @@ Ablation of PIAE and TCCA components:
 - Value: ⭐⭐⭐⭐ Highly transferable strategy for other controllable diffusion tasks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
+- [\[CVPR 2026\] Latent Diffusion Inversion Requires Understanding the Latent Space](latent_diffusion_inversion_requires_understanding_the_latent_space.md)
+- [\[CVPR 2026\] MoCoDiff: A Controllable Autoregressive Diffusion Model for Expressive Motion Generation](mocodiff_a_controllable_autoregressive_diffusion_model_for_expressive_motion_gen.md)
+- [\[CVPR 2026\] UniGenDet: A Unified Generative-Discriminative Framework for Co-evolutionary Generation and Detection](unigendet_a_unified_generative-discriminative_framework_for_co-evolutionary_imag.md)
+- [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)

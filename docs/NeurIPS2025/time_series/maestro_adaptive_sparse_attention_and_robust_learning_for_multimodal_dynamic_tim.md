@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series
 description: >-
-  [NeurIPS 2025][Time Series][Multimodal time series] This paper proposes MAESTRO, a framework that addresses modality heterogeneity and arbitrary missingness in multimodal time series via symbolic tokenization…
+  [NeurIPS 2025 Spotlight][Time Series][Multimodal time series] This paper proposes MAESTRO, a framework that addresses modality heterogeneity and arbitrary missingness in multimodal time series via symbolic tokenization, adaptive attention budgeting, sparse cross-modal attention, and dynamic MoE routing, substantially outperforming baselines under both complete and missing modality scenarios.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Time Series"
   - "Multimodal time series"
   - "sparse attention"
@@ -12,7 +12,7 @@ tags:
   - "missing modality"
   - "sensor fusion"
 date: 2026-05-08
-content_hash: 78163c9ecfb643d1
+content_hash: 30ab0450eabbd53c
 ---
 
 # MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series
@@ -118,11 +118,11 @@ The standard cross-entropy loss $\mathcal{L}_{CE}$ is used. Progressive modality
 
 ## Related Papers
 
+- [\[ICML 2025\] Learning Soft Sparse Shapes for Efficient Time-Series Classification](../../ICML2025/time_series/learning_soft_sparse_shapes_for_efficient_time-series_classification.md)
 - [\[NeurIPS 2025\] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models](structured_sparse_transition_matrices_to_enable_state_tracking_in_state-space_mo.md)
 - [\[ICML 2026\] DistMatch: Adaptive Binning via Distribution Matching for Robust Sequential Conformal](../../ICML2026/time_series/distmatch_adaptive_binning_via_distribution_matching_for_robust_sequential_confo.md)
-- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
-- [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
-- [\[NeurIPS 2025\] Selective Learning for Deep Time Series Forecasting](selective_learning_for_deep_time_series_forecasting.md)
+- [\[ICLR 2026\] Enhancing Sparse Event Detection in Healthcare Time-Series via Adaptive Gate of Context–Detail Interaction](../../ICLR2026/time_series/enhancing_sparse_event_detection_in_healthcare_time-series_via_adaptive_gate_of_.md)
+- [\[ICLR 2026\] GARLIC: Graph Attention-based Relational Learning of Multivariate Time Series in Intensive Care](../../ICLR2026/time_series/garlic_graph_attention-based_relational_learning_of_multivariate_time_series_in_.md)
 
 </div>
 

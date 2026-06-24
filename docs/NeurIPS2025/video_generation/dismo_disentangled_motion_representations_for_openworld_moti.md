@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DisMo: Disentangled Motion Representations for Open-World Motion Transfer
 description: >-
-  [NeurIPS 2025][Video Generation][motion disentanglement] DisMo learns abstract motion representations that are agnostic to appearance, pose…
+  [NeurIPS 2025][Video Generation][motion disentanglement] DisMo learns abstract motion representations that are agnostic to appearance, pose, and category from raw videos via a dual-stream architecture (motion extractor + frame generator) and an image-space reconstruction objective. It enables open-world motion transfer across categories and viewpoints, and significantly outperforms video representation models such as V-JEPA on zero-shot action classification.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "abstract motion representation"
   - "action classification"
 date: 2026-05-08
-content_hash: 8a01b4c70eb316f3
+content_hash: 1e3f1741b12bb1fc
 ---
 
 # DisMo: Disentangled Motion Representations for Open-World Motion Transfer
@@ -147,11 +147,11 @@ The random baseline for five-class classification is 20%. DisMo's identity accur
 
 ## Related Papers
 
+- [\[CVPR 2025\] ConMo: Controllable Motion Disentanglement and Recomposition for Zero-Shot Motion Transfer](../../CVPR2025/video_generation/conmo_controllable_motion_disentanglement_and_recomposition_for_zero-shot_motion.md)
 - [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](../../ICCV2025/video_generation/disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
+- [\[CVPR 2025\] DiTFlow: Video Motion Transfer with Diffusion Transformers](../../CVPR2025/video_generation/video_motion_transfer_with_diffusion_transformers.md)
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](../../ICCV2025/video_generation/efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[ICCV 2025\] Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer](../../ICCV2025/video_generation/decouple_and_track_benchmarking_and_improving_video_diffusion_transformers_for_m.md)
-- [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](../../CVPR2026/video_generation/let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
 
 </div>
 

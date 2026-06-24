@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ForceForget: Reinforcement Concept Removal for Enhancing Safety in Text-to-Image Models
 description: >-
-  [ICML 2026][Image Generation][Concept Erasure] This work reformulates "erasing unsafe concepts" as a reinforcement learning reward optimization problem. It fine-tunes a diffusion model using a Concept Erasure Reward (CER)—composed of a safety reward and an alignment reward—paired with a "Safety Adapter" that modifies only a few tail text tokens. This approach thoro
+  [ICML 2026][Image Generation][Concept Erasure] This work reformulates "erasing unsafe concepts" as a reinforcement learning reward optimization problem. It fine-tunes a diffusion model using a Concept Erasure Reward (CER)—composed of a safety reward and an alignment reward—paired with a "Safety Adapter" that modifies only a few tail text tokens. This approach thoroughly removes pornographic content while maximizing the preservation of benign semantics (especially person-relat…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Concept Erasure
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Text-to-Image Safety"
+  - "Reinforcement Learning"
+  - "Cross-Attention Adapter"
+  - "NSFW Defense"
 date: 2026-05-08
-content_hash: ed27092a5b857d18
+content_hash: 6bee6a83b09344d2
 ---
+
 # ForceForget: Reinforcement Concept Removal for Enhancing Safety in Text-to-Image Models
 
 **Conference**: ICML 2026  
@@ -141,7 +145,7 @@ Erasure is the most thorough (38 detections, far lower than the original 810 and
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

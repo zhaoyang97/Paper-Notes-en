@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map
 description: >-
-  [CVPR 2026][Multimodal VLM][VLN] LASAR equips an embodied agent with a "dual memory" system—frame-by-frame episodic memory plus a queryable latent cognitive map. A contrastive objective, ST-CRL, is used to "sculpt" the map into a high-level spatial representation capable of encoding topological, distance, and directional relationships, resulting in a
+  [CVPR 2026][Multimodal VLM][Embodied Navigation] LASAR equips an embodied agent with a "dual memory" system—frame-by-frame episodic memory plus a queryable latent cognitive map. A contrastive objective, ST-CRL, is used to "sculpt" the map into a high-level spatial representation capable of encoding topological, distance, and directional relationships, resulting in a 2%–3.5% performance gain in both navigation (VLN-CE) and zero-shot spatial reasoning (VSI-Bench).
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLN
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Embodied Navigation"
+  - "Cognitive Map"
+  - "Spatio-temporal Reasoning"
+  - "Contrastive Learning"
+  - "VLN"
 date: 2026-05-08
-content_hash: 5b227277b61827ed
+content_hash: 35aa2812a85bd2d2
 ---
+
 # LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Furthermore, the increment from ST-CRL is isolated by comparing LASAR (IL, imita
 
 ## Related Papers
 
-- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
 - [\[CVPR 2026\] VideoFusion: A Spatio-Temporal Collaborative Network for Multi-modal Video Fusion](videofusion_a_spatio-temporal_collaborative_network_for_multi-modal_video_fusion.md)
 - [\[CVPR 2026\] Flat-Pack Bench: Evaluating Spatio-Temporal Understanding in Large Vision-Language Models through Furniture Assembly](flat-pack_bench_evaluating_spatio-temporal_understanding_in_large_vision-languag.md)
-- [\[CVPR 2026\] Reasoning Palette: Modulating Reasoning via Latent Contextualization for Controllable Exploration for (V)LMs](reasoning_palette_modulating_reasoning_via_latent_contextualization_for_controll.md)
-- [\[CVPR 2026\] EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy](egoprox_evaluating_mllms_on_egocentric_3d_proximity_reasoning_across_a_cognitive.md)
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
+- [\[CVPR 2026\] SMAP: Semantic Route Planning with Map-Grounded Multimodal Alignment](smap_semantic_route_planning_with_map-grounded_multimodal_alignment.md)
+- [\[CVPR 2026\] Geometrically-Constrained Agent for Spatial Reasoning](geometrically-constrained_agent_for_spatial_reasoning.md)
 
 </div>
 

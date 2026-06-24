@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations
 description: >-
-  [ICML 2026][Hallucination Detection][latent space attack] REALISTA constructs an "input-dependent editing direction dictionary" in the LLM latent space, transforming adversarial prompt optimization into a continuous problem under simplex constraints. This approach maintains the semantic equivalence and coherence of discrete methods like SECA while offering the search flexibil
+  [ICML 2026][Hallucination Detection][Hallucination induction] REALISTA constructs an "input-dependent editing direction dictionary" in the LLM latent space, transforming adversarial prompt optimization into a continuous problem under simplex constraints. This approach maintains the semantic equivalence and coherence of discrete methods like SECA while offering the search flexibility of continuous methods like LARGO, successfully inducing hallucinations in the free-form output…
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - latent space attack
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "Hallucination induction"
+  - "latent space attack"
+  - "semantic preservation"
+  - "simplex constraint"
+  - "concept editing"
 date: 2026-05-08
-content_hash: ddd0310f967cd001
+content_hash: 1d5372b7233040dc
 ---
+
 # REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations
 
 **Conference**: ICML 2026  

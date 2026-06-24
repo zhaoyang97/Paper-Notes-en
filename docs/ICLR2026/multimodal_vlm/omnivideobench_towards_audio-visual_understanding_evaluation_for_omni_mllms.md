@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] OmniVideoBench is a high-quality benchmark specifically designed to evaluate "audio-visual collaborative reasoning." Using 628 real-world videos (up to 30 minutes), the authors constructed 1,000 multiple-choice questions with atomic-level reasoning chain annotations through human question generation, dual-model filteri
+  [ICLR 2026][Multimodal VLM][Audio-visual understanding] OmniVideoBench is a high-quality benchmark specifically designed to evaluate "audio-visual collaborative reasoning." Using 628 real-world videos (up to 30 minutes), the authors constructed 1,000 multiple-choice questions with atomic-level reasoning chain annotations through human question generation, dual-model filtering, and manual refinement. Results indicate that even the strongest Gemini-3.0-Pro achieves only 61.8% a…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Audio-visual understanding"
+  - "Benchmark"
+  - "Omni-modal MLLM"
+  - "Reasoning chain annotation"
+  - "Long video"
 date: 2026-05-08
-content_hash: d1a0d6b7d58f9be0
+content_hash: c3c8576edb867e4a
 ---
+
 # OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs
 
 **Conference**: ICLR 2026  
@@ -126,6 +132,7 @@ The evaluation includes closed-source (Gemini-3.0/2.5/2.0) and open-source (Qwen
 - **Value**: ⭐⭐⭐⭐⭐ Reveals the significant gap in true audio-visual reasoning (especially for music and long contexts) for current Omni MLLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -134,7 +141,7 @@ The evaluation includes closed-source (Gemini-3.0/2.5/2.0) and open-source (Qwen
 - [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](../../CVPR2026/multimodal_vlm/egoavu_egocentric_audio-visual_understanding.md)
 - [\[ICLR 2026\] Customizing Visual Emotion Evaluation for MLLMs: An Open-vocabulary, Multifaceted, and Scalable Approach](customizing_visual_emotion_evaluation_for_mllms_an_open-vocabulary_multifaceted_.md)
 - [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
-- [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
+- [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
 
 </div>
 

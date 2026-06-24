@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!
 description: >-
-  [ICCV 2025][Image Generation][Neural Plagiarism] This paper exposes the threat of "neural plagiarism"—diffusion models can readily replicate copyright-protected images (including watermarked ones). It proposes a universa…
+  [ICCV 2025][Image Generation][Neural Plagiarism] This paper exposes the threat of "neural plagiarism"—diffusion models can readily replicate copyright-protected images (including watermarked ones). It proposes a universal attack framework based on "anchors and shims," searching for perturbations in the cross-attention mechanism to achieve coarse-to-fine semantic modification, bypassing copyright protections ranging from visible trademarks to invisible watermarks.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Watermark Removal"
   - "Attention Perturbation"
 date: 2026-05-08
-content_hash: 6849e398136ced67
+content_hash: a9300a0f83830226
 ---
 
 # Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!
@@ -164,10 +164,10 @@ Input: Copyrighted image x^w
 ## Related Papers
 
 - [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
+- [\[CVPR 2025\] PhysicsGen: Can Generative Models Learn from Images to Predict Complex Physical Relations?](../../CVPR2025/image_generation/physicsgen_can_generative_models_learn_from_images_to_predict_complex_physical_r.md)
 - [\[ICCV 2025\] ReFlex: Text-Guided Editing of Real Images in Rectified Flow via Mid-Step Feature Extraction and Attention Adaptation](reflex_text-guided_editing_of_real_images_in_rectified_flow_via_mid-step_feature.md)
 - [\[NeurIPS 2025\] Neural Entropy](../../NeurIPS2025/image_generation/neural_entropy.md)
 - [\[CVPR 2026\] Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models](../../CVPR2026/image_generation/attention_may_i_have_your_decision_localizing_generative_choices_in_diffusion_mo.md)
-- [\[ICCV 2025\] EDiT: Efficient Diffusion Transformers with Linear Compressed Attention](edit_efficient_diffusion_transformers_with_linear_compressed_attention.md)
 
 </div>
 

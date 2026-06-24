@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] One-shot Conditional Sampling: MMD meets Nearest Neighbors
 description: >-
-  [ICML 2026][Image Restoration][MMD] CGMMD utilizes $k$-nearest neighbor graphs to estimate the "Expected Conditional MMD (ECMMD)" as a directly minimizable non-adversarial objective. It trains a conditional generator capable of sampling from $P_{Y\mid X}$ in a single forward pass and provides non-asymptotic error bounds alongside proofs of distributional
+  [ICML 2026][Image Restoration][Conditional Sampling] CGMMD utilizes $k$-nearest neighbor graphs to estimate the "Expected Conditional MMD (ECMMD)" as a directly minimizable non-adversarial objective. It trains a conditional generator capable of sampling from $P_{Y\mid X}$ in a single forward pass and provides non-asymptotic error bounds alongside proofs of distributional convergence.
 tags:
-  - ICML 2026
-  - Image Restoration
-  - MMD
+  - "ICML 2026"
+  - "Image Restoration"
+  - "Conditional Sampling"
+  - "MMD"
+  - "Nearest Neighbor Estimation"
+  - "One-shot Generation"
+  - "Kernel Mean Embedding"
 date: 2026-05-08
-content_hash: a7b393ac81090ae8
+content_hash: 60e20172eab23cae
 ---
+
 # One-shot Conditional Sampling: MMD meets Nearest Neighbors
 
 **Conference**: ICML 2026  
@@ -116,8 +121,8 @@ The core loss is $\hat{\mathcal{L}}(g) = \frac{1}{n k_n}\sum_i \sum_{j\in N_G(i)
 - [\[CVPR 2026\] AceTone: Bridging Words and Colors for Conditional Image Grading](../../CVPR2026/image_restoration/acetone_bridging_words_and_colors_for_conditional_image_grading.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 - [\[ICLR 2026\] A Statistical Benchmark for Diffusion-Posterior-Sampling Algorithms](../../ICLR2026/image_restoration/a_statistical_benchmark_for_diffusion-posterior-sampling_algorithms.md)
-- [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](../../CVPR2026/image_restoration/zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
 - [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](../../ICLR2026/image_restoration/adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
+- [\[ICLR 2026\] KernelFusion: Zero-Shot Blind Super-Resolution via Patch Diffusion](../../ICLR2026/image_restoration/kernelfusion_zero-shot_blind_super-resolution_via_patch_diffusion.md)
 
 </div>
 

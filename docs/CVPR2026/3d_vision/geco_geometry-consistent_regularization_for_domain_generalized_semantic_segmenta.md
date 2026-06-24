@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the issue where adapting Visual Foundation Models (VFMs) via PEFT for Domain Generalized Semantic Segmentation (DGSS) leads to overfitting on the source domain and destruction of pre-trained geometric structures, GeCo proposes **Curvature-Guided Perturbation** (adjusting perturbation intensity/direction base
+  [CVPR 2026][3D Vision][Domain Generalized Semantic Segmentation] Addressing the issue where adapting Visual Foundation Models (VFMs) via PEFT for Domain Generalized Semantic Segmentation (DGSS) leads to overfitting on the source domain and destruction of pre-trained geometric structures, GeCo proposes **Curvature-Guided Perturbation** (adjusting perturbation intensity/direction based on local manifold complexity per token) and **Geodesic Regularization** (constraining predict…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Domain Generalized Semantic Segmentation"
+  - "Visual Foundation Models"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Curvature-Guided Perturbation"
+  - "Geodesic Regularization"
 date: 2026-05-08
-content_hash: 9f024a7f4c39328b
+content_hash: 4c42794e0d571cee
 ---
+
 # GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,16 @@ Component analysis (Average mIoU; CGP=Curvature-Guided Perturbation, GBR=Geodesi
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[AAAI 2026\] Do We Need Perfect Data? Leveraging Noise for Domain Generalized Segmentation](../../AAAI2026/segmentation/do_we_need_perfect_data_leveraging_noise_for_domain_generalized_segmentation.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[AAAI 2026\] Causal-Tune: Mining Causal Factors from Vision Foundation Models for Domain Generalized Semantic Segmentation](../../AAAI2026/segmentation/causal-tune_mining_causal_factors_from_vision_foundation_mod.md)
-- [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](phrase-instance_alignment_for_generalized_referring_segmentation.md)
-- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
+- [\[CVPR 2026\] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting](pointgs_semantic-consistent_unsupervised_3d_point_cloud_segmentation_with_3d_gau.md)
+- [\[CVPR 2026\] Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation](rewis3d_reconstruction_improves_weaklysupervised_s.md)
+- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
+- [\[AAAI 2026\] Domain Generalized Stereo Matching with Uncertainty-guided Data Augmentation](../../AAAI2026/3d_vision/domain_generalized_stereo_matching_with_uncertainty-guided_data_augmentation.md)
+- [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Smooth Calibration Error: Uniform Convergence and Functional Gradient Analysis
 description: >-
-  [ICLR 2026][learning_theory][smooth CE] This paper establishes a **finite-sample** theory for smooth calibration error (smooth CE). It first proves that the population smooth CE can be controlled by "training smooth CE + generalization gap" via uniform convergence. It then demonstrates that the training smooth CE is upper-bounded by the **functional gradient
+  [ICLR 2026][Learning Theory][Calibration error] This paper establishes a **finite-sample** theory for smooth calibration error (smooth CE). It first proves that the population smooth CE can be controlled by "training smooth CE + generalization gap" via uniform convergence. It then demonstrates that the training smooth CE is upper-bounded by the **functional gradient norm** of the loss. Consequently, it provides the first provable guarantees for "calibration + accuracy" for gr…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - smooth CE
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Probability Calibration"
+  - "Calibration error"
+  - "smooth CE"
+  - "uniform convergence"
+  - "functional gradient"
+  - "gradient boosting"
 date: 2026-05-08
-content_hash: cc1fc98788a6ffe0
+content_hash: c8a515129ae9b27f
 ---
+
 # Smooth Calibration Error: Uniform Convergence and Functional Gradient Analysis
 
 **Conference**: ICLR 2026  

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Learning to Adapt: In-Context Learning Beyond Stationarity
 description: >-
-  [ICLR 2026][learning_theory][in-context learning] This paper provides the first theoretical characterization of In-Context Learning (ICL) under **non-stationary (time-varying) regression**. It proves that Gated Linear Attention (GLA) implements a "learnable recency bias" through a forgetting factor $\lambda$. When regression weights drift according to a first-order au
+  [ICLR 2026][learning_theory][in-context learning] This paper provides the first theoretical characterization of In-Context Learning (ICL) under **non-stationary (time-varying) regression**. It proves that Gated Linear Attention (GLA) implements a "learnable recency bias" through a forgetting factor $\lambda$. When regression weights drift according to a first-order autoregressive process, both training and test errors are strictly lower than standard linear attention…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - in-context learning
-  - gated linear attention
-  - non-stationarity
-  - recency bias
-  - gradient flow
-  - linear regression
+  - "ICLR 2026"
+  - "learning_theory"
+  - "in-context learning"
+  - "gated linear attention"
+  - "non-stationarity"
+  - "recency bias"
+  - "gradient flow"
+  - "linear regression"
 date: 2026-05-08
-content_hash: f6d9e8fd3aab792e
+content_hash: e3300e563cde74cb
 ---
+
 # Learning to Adapt: In-Context Learning Beyond Stationarity
 
 **Conference**: ICLR 2026  
@@ -117,15 +118,16 @@ The key observation: when $\lambda = 1$, the weights degenerate to a uniform acc
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
-- [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
-- [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
-- [\[ICLR 2026\] Understanding In-Context Learning on Structured Manifolds: Bridging Attention to Kernel Methods](understanding_in-context_learning_on_structured_manifolds_bridging_attention_to_.md)
 - [\[ICLR 2026\] Towards a Theoretical Understanding of In-Context Learning: Stability and Non-i.i.d. Generalisation](towards_a_theoretical_understanding_of_in-context_learning_stability_and_non-iid.md)
+- [\[ICLR 2026\] On learning linear dynamical systems in context with attention layers](on_learning_linear_dynamical_systems_in_context_with_attention_layers.md)
+- [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
+- [\[ICLR 2026\] Quantum Machine Learning Advantages Beyond Hardness of Evaluation](quantum_machine_learning_advantages_beyond_hardness_of_evaluation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models
 description: >-
-  [NeurIPS 2025][Image Generation][Diffusion Models] Under a Mixture of Low-Rank Gaussians (MoLRG) data model, this paper theoretically proves that the unimodal dynamics of representation quality across noise levels arise…
+  [NeurIPS 2025][Image Generation][Diffusion Models] Under a Mixture of Low-Rank Gaussians (MoLRG) data model, this paper theoretically proves that the unimodal dynamics of representation quality across noise levels arise from a trade-off between denoising strength and class discriminability, and empirically demonstrates that the emergence of unimodal dynamics serves as a reliable indicator of model generalization.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Low-Rank Gaussian Mixture"
   - "Generalization-Memorization"
 date: 2026-05-08
-content_hash: aba84b8c22c32358
+content_hash: 1d3cb80edef45b63
 ---
 
 # Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Models
@@ -148,8 +148,8 @@ Physical intuition behind unimodality:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
-- [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
 - [\[NeurIPS 2025\] Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models](cross-fluctuation_phase_transitions_reveal_sampling_dynamics_in_diffusion_models.md)
+- [\[NeurIPS 2025\] Preconditioned Langevin Dynamics with Score-Based Generative Models for Infinite-Dimensional Linear Bayesian Inverse Problems](preconditioned_langevin_dynamics_with_score-based_generative_models_for_infinite.md)
 - [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 - [\[NeurIPS 2025\] PID-controlled Langevin Dynamics for Faster Sampling of Generative Models](pid-controlled_langevin_dynamics_for_faster_sampling_of_generative_models.md)
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks
 description: >-
-  [ICLR 2026][Causal Inference][FFT] Addressing causal graph recovery for networked dynamical systems, this paper theoretically proves that frequency-domain Wiener filtering is faster than the time-domain ($O(L^2/\log N)$ speedup via FFT). It discovers that **phase information** unique to complex estimations in the frequency domain can directly reveal ske
+  [ICLR 2026][Causal Inference][Causal Structure Recovery] Addressing causal graph recovery for networked dynamical systems, this paper theoretically proves that frequency-domain Wiener filtering is faster than the time-domain ($O(L^2/\log N)$ speedup via FFT). It discovers that **phase information** unique to complex estimations in the frequency domain can directly reveal skeletons and colliders across a large class of networks, leading to the proposed "Wiener-Phase" algorithm…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - FFT
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Structure Recovery"
+  - "Wiener Filtering"
+  - "Frequency Domain"
+  - "Markov Equivalence Graph"
+  - "Phase Information"
+  - "FFT"
 date: 2026-05-08
-content_hash: 8121f11ed96e7146
+content_hash: 32350a648fba47b5
 ---
+
 # Frequency-Domain Better than Time-Domain for Causal Structure Recovery in Dynamical Systems on Networks
 
 **Conference**: ICLR 2026  
@@ -115,10 +121,17 @@ Synthetic data was generated using VAR models starting from 6 nodes. FFT-WPC ach
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)
+- [\[ICLR 2026\] Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks](causal_structure_learning_in_hawkes_processes_with_complex_latent_confounder_net.md)
+- [\[NeurIPS 2025\] Domain-Adapted Granger Causality for Real-Time Cross-Slice Attack Attribution in 6G Networks](../../NeurIPS2025/causal_inference/domain-adapted_granger_causality_for_real-time_cross-slice_attack_attribution_in.md)
+- [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](causal_score_conditioning_for_multi-resolution_latent_systems.md)
+- [\[ICLR 2026\] Stochastic Neural Networks for Causal Inference with Missing Confounders](stochastic_neural_networks_for_causal_inference_with_missing_confounders.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] CaDyT: Causal Structure Learning for Dynamical Systems with Theoretical Score Analysis](../../AAAI2026/causal_inference/causal_structure_learning_for_dynamical_systems_with_theoretical_score_analysis.md)

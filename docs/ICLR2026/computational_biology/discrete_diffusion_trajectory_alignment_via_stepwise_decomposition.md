@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Discrete Diffusion Trajectory Alignment via Stepwise Decomposition
 description: >-
-  [ICLR 2026][Computational Biology][discrete diffusion] Ours proposes SDPO (Stepwise Decomposition Preference Optimization), which decomposes the trajectory alignment problem of discrete diffusion models into stepwise posterior alignment sub-problems. This avoids the difficulty of backpropagating gradients through the entire denoising chain and significantly outperforms exi
+  [ICLR2026][Computational Biology][discrete diffusion] Ours proposes SDPO (Stepwise Decomposition Preference Optimization), which decomposes the trajectory alignment problem of discrete diffusion models into stepwise posterior alignment sub-problems. This avoids the difficulty of backpropagating gradients through the entire denoising chain and significantly outperforms existing methods in DNA sequence design, protein inverse folding, and language modeling.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - discrete diffusion
-  - preference optimization
-  - RLHF
-  - trajectory alignment
-  - stepwise decomposition
+  - "ICLR2026"
+  - "Computational Biology"
+  - "discrete diffusion"
+  - "preference optimization"
+  - "RLHF"
+  - "trajectory alignment"
+  - "stepwise decomposition"
 date: 2026-05-08
-content_hash: 50068ffdc57a80d0
+content_hash: 879ceacd9a568b39
 ---
+
 # Discrete Diffusion Trajectory Alignment via Stepwise Decomposition
 
 **Conference**: ICLR2026  
@@ -175,7 +176,7 @@ Average time per training step: DRAKES 6.02s, diffu-GRPO 1.51s, **Ours only 0.77
 - [\[ICLR 2026\] Ultra-Fast Language Generation via Discrete Diffusion Divergence Instruct](ultra-fast_language_generation_via_discrete_diffusion_divergence_instruct.md)
 - [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
 - [\[NeurIPS 2025\] Constrained Discrete Diffusion](../../NeurIPS2025/computational_biology/constrained_discrete_diffusion.md)
-- [\[ICLR 2026\] Adaptive Data-Knowledge Alignment in Genetic Perturbation Prediction](adaptive_data-knowledge_alignment_in_genetic_perturbation_prediction.md)
+- [\[ICLR 2026\] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning](moleditrl_structure-preserving_molecular_editing_via_discrete_diffusion_and_rein.md)
 
 </div>
 

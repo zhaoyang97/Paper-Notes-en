@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Quantum Architecture Search] This work proposes TensorRL-QAS, a framework that warm-starts reinforcement learning-based quantum architecture search (RL-QAS) using tensor networks (M…
+  [NeurIPS 2025][Reinforcement Learning][Quantum Architecture Search] This work proposes TensorRL-QAS, a framework that warm-starts reinforcement learning-based quantum architecture search (RL-QAS) using tensor networks (MPS/DMRG), achieving up to 10× reduction in circuit depth and CNOT gate count, and up to 98% acceleration in training time, thereby effectively addressing the scalability bottleneck of RL-QAS on large-scale quantum systems.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "DMRG"
   - "Variational Quantum Algorithms"
 date: 2026-05-08
-content_hash: 3ec1578d8000b3ac
+content_hash: 3b2f4ebf28d16fdb
 ---
 
 # TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search
@@ -122,11 +122,11 @@ TensorRL-QAS consists of three stages:
 
 ## Related Papers
 
+- [\[ICML 2025\] Benchmarking Quantum Reinforcement Learning](../../ICML2025/reinforcement_learning/benchmarking_quantum_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Note 5: ReSearch — Learning to Reason with Search](research_learning_to_reason_with_search_for_llms_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] A Theory of Multi-Agent Generative Flow Networks](a_theory_of_multi-agent_generative_flow_networks.md)
-- [\[NeurIPS 2025\] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning](deepdiver_adaptive_search_intensity_scaling_via_open-web_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Meta-World+: An Improved, Standardized, RL Benchmark](meta-world_an_improved_standardized_rl_benchmark.md)
-- [\[NeurIPS 2025\] Decoder-Hybrid-Decoder Architecture for Efficient Reasoning with Long Generation](decoderhybriddecoder_architecture_for_efficient_reasoning_wi.md)
+- [\[NeurIPS 2025\] A Theory of Multi-Agent Generative Flow Networks](a_theory_of_multi-agent_generative_flow_networks.md)
+- [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
 
 </div>
 

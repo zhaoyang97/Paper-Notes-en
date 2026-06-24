@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity
 description: >-
-  [ICCV 2025][Neural surface reconstruction] This paper proposes HiNeuS, a unified neural surface reconstruction framework that simultaneously addresses three core challenges—reflective ambiguity, low-texture degradation…
+  [ICCV 2025][3D Vision][Neural surface reconstruction] This paper proposes HiNeuS, a unified neural surface reconstruction framework that simultaneously addresses three core challenges—reflective ambiguity, low-texture degradation, and detail preservation—through three innovations: SDF-guided visibility verification, planar conformal regularization, and rendering-prioritized Eikonal relaxation.
 tags:
   - "ICCV 2025"
+  - "3D Vision"
   - "Neural surface reconstruction"
   - "SDF"
   - "reflection handling"
   - "low-texture regions"
   - "Eikonal constraint"
 date: 2026-05-08
-content_hash: 74630da5023f1e5d
+content_hash: 971e42b63585aff6
 ---
 
 # HiNeuS: High-fidelity Neural Surface Mitigating Low-texture and Reflective Ambiguity
@@ -154,10 +155,10 @@ Gain of 2.32 dB over 3DGS and 7.56 dB over NeuS.
 ## Related Papers
 
 - [\[ICCV 2025\] SVG-Head: Hybrid Surface-Volumetric Gaussians for High-Fidelity Head Reconstruction and Real-Time Editing](svg-head_hybrid_surface-volumetric_gaussians_for_high-fidelity_head_reconstructi.md)
+- [\[CVPR 2025\] Towards High-fidelity 3D Talking Avatar with Personalized Dynamic Texture](../../CVPR2025/3d_vision/towards_high-fidelity_3d_talking_avatar_with_personalized_dynamic_texture.md)
+- [\[CVPR 2025\] ProbeSDF: Light Field Probes for Neural Surface Reconstruction](../../CVPR2025/3d_vision/probesdf_light_field_probes_for_neural_surface_reconstruction.md)
 - [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](../../CVPR2026/3d_vision/3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 - [\[ICCV 2025\] GazeGaussian: High-Fidelity Gaze Redirection with 3D Gaussian Splatting](gazegaussian_high-fidelity_gaze_redirection_with_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] Hi3DGen: High-fidelity 3D Geometry Generation from Images via Normal Bridging](hi3dgen_high-fidelity_3d_geometry_generation_from_images_via_normal_bridging.md)
-- [\[ICCV 2025\] Gaussian Variation Field Diffusion for High-fidelity Video-to-4D Synthesis](gaussian_variation_field_diffusion_for_high-fidelity_video-to-4d_synthesis.md)
 
 </div>
 

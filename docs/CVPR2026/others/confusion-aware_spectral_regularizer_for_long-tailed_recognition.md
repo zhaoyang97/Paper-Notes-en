@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Confusion-Aware Spectral Regularizer for Long-Tailed Recognition
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper demonstrates that "worst-class error" in long-tailed scenarios is tightly upper-bounded by the spectral norm of the frequency-weighted confusion matrix. Consequently, it proposes CAR, a regularizer that directly minimizes this spectral norm using a differentiable confusion matrix proxy and an EMA estimator.
+  [CVPR 2026][Long-Tailed Recognition] This paper demonstrates that "worst-class error" in long-tailed scenarios is tightly upper-bounded by the spectral norm of the frequency-weighted confusion matrix. Consequently, it proposes CAR, a regularizer that directly minimizes this spectral norm using a differentiable confusion matrix proxy and an EMA estimator. CAR improves worst-class accuracy by 6%~10% and overall accuracy by 2.4%~4.8% over previous SOTA on benchmarks like ImageNe…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Long-Tailed Recognition"
+  - "Worst-class Generalization"
+  - "Confusion Matrix Spectral Norm"
+  - "PAC-Bayes Upper Bound"
+  - "Differentiable Regularizer"
 date: 2026-05-08
-content_hash: 7bc8309e3f697284
+content_hash: b94d37b333d40556
 ---
+
 # Confusion-Aware Spectral Regularizer for Long-Tailed Recognition
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ Both components—frequency weighting ($\Lambda$) and the EMA estimator—contri
 
 ## Related Papers
 
-- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
-- [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
+- [\[CVPR 2026\] Why Not Hyperparameter-Friendly Optimisation? A Monotonic Adaptive Norm Rescaling Approach For Long-Tailed Recognition](why_not_hyperparameter-friendly_optimisation_a_monotonic_adaptive_norm_rescaling.md)
+- [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](dream_document_recognition_with_explicit_adaptive_memory.md)
+- [\[CVPR 2026\] Spectral Conformal Risk Control: Distribution-Free Tail Guarantees via Bayesian Quadrature](spectral_conformal_risk_control_distribution-free_tail_guarantees_via_bayesian_q.md)
+- [\[NeurIPS 2025\] Structure-Aware Spectral Sparsification via Uniform Edge Sampling](../../NeurIPS2025/others/structure-aware_spectral_sparsification_via_uniform_edge_sampling.md)
 - [\[CVPR 2025\] TAET: Two-Stage Adversarial Equalization Training on Long-Tailed Distributions](../../CVPR2025/others/taet_two-stage_adversarial_equalization_training_on_long-tailed_distributions.md)
-- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
-- [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
 
 </div>
 

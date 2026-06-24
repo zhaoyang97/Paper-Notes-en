@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] UnityVideo integrates three types of tasks (text-to-video, controllable generation, modality estimation) and five auxiliary modalities (depth, optical flow, DensePose, skeleton, segmentation) into a single 10B Diffusion Transformer. By unifying tasks via dynamic noise scheduling and modalities via a Modality-Aware AdaL
+  [CVPR 2026][Video Generation][Unified Multi-Modal] UnityVideo integrates three types of tasks (text-to-video, controllable generation, modality estimation) and five auxiliary modalities (depth, optical flow, DensePose, skeleton, segmentation) into a single 10B Diffusion Transformer. By unifying tasks via dynamic noise scheduling and modalities via a Modality-Aware AdaLN table and In-Context Learner, the model achieves faster convergence and significant zero-shot generalizatio…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Unified Multi-Modal"
+  - "Multi-Task Joint Training"
+  - "World Awareness"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: dbf2420a3a2735a4
+content_hash: b0adef71a1929282
 ---
+
 # UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,15 @@ UnityVideo outperforms or matches specialized SOTAs across generation, control, 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
 - [\[CVPR 2026\] CineBrain: A Large-Scale Multi-Modal Audiovisual Brain Dataset for Brain-Conditioned Video Generation](cinebrain_a_large-scale_multi-modal_audiovisual_brain_dataset_for_brain-conditio.md)
-- [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
-- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
+- [\[CVPR 2026\] UniAVGen: Unified Audio and Video Generation with Asymmetric Cross-Modal Interactions](uniavgen_unified_audio_and_video_generation_with_asymmetric_cross-modal_interact.md)
 - [\[CVPR 2026\] VGA-Bench: A Unified Benchmark and Multi-Model Framework for Video Aesthetics and Generation Quality Evaluation](vga-bench_a_unified_benchmark_and_multi-model_framework_for_video_aesthetics_and.md)
+- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
+- [\[CVPR 2026\] Open-world Hand-Object Interaction Video Generation Based on Structure and Contact-aware Representation](open-world_hand-object_interaction_video_generation_based_on_structure_and_conta.md)
 
 </div>
 

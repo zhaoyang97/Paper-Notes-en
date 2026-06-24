@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Low-Rank Residual Diffusion Models
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] LRDM identifies that in "near-domain image restoration" (tasks where source and target domains are already highly similar, such as deraining, deblurring, or deshadowing), degradation residuals are inherently low-rank. Consequently, it constrains the forward diffusion process within a low-rank residual subspace while ma
+  [CVPR 2026][Image Generation][Residual Diffusion] LRDM identifies that in "near-domain image restoration" (tasks where source and target domains are already highly similar, such as deraining, deblurring, or deshadowing), degradation residuals are inherently low-rank. Consequently, it constrains the forward diffusion process within a low-rank residual subspace while maintaining the reverse process as full-rank. By adaptively adjusting the rank across time steps…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Residual Diffusion"
+  - "Low-Rank Subspace"
+  - "Image Deraining"
+  - "Asymmetric Diffusion"
+  - "Adaptive Rank"
 date: 2026-05-08
-content_hash: 5f814d778e2b6cb5
+content_hash: 0023bc3cc1353461
 ---
+
 # Low-Rank Residual Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -116,11 +122,11 @@ Polynomial Order Ablation (PD): On Raindrop, $p=2$ achieved the best 33.09/0.967
 
 ## Related Papers
 
-- [\[CVPR 2026\] Gaussian Splatting-based Low-Rank Tensor Representation for Multi-Dimensional Image Recovery](gaussian_splatting-based_low-rank_tensor_representation_for_multi-dimensional_im.md)
+- [\[CVPR 2026\] Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation](decoupled_residual_denoising_diffusion_models_for_unified_and_data_efficient_ima.md)
+- [\[ICML 2025\] IntLoRA: Integral Low-rank Adaptation of Quantized Diffusion Models](../../ICML2025/image_generation/intlora_integral_low-rank_adaptation_of_quantized_diffusion_models.md)
 - [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
-- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
-- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
+- [\[CVPR 2026\] Forecast the Principal, Stabilize the Residual: Subspace-Aware Feature Caching for Diffusion Transformers](forecast_the_principal_stabilize_the_residual_subspace-aware_feature_caching_for.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM-as-Judge] ROVER proposes a reciprocal cross-modal reasoning benchmark for unified multimodal models, utilizing 1,312 tasks and 1,876 images to simultaneously examine whether "linguistic reasoning can constrain image generation" and whether "visual intermediate results can assist verbal reasoning." The study finds that current mo
+  [ICLR 2026][VLM Reasoning][Cross-modal reasoning] ROVER proposes a reciprocal cross-modal reasoning benchmark for unified multimodal models, utilizing 1,312 tasks and 1,876 images to simultaneously examine whether "linguistic reasoning can constrain image generation" and whether "visual intermediate results can assist verbal reasoning." The study finds that current models show gains in concrete physical visual reasoning but still significantly fail in the visualization of abs…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM-as-Judge
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Cross-modal reasoning"
+  - "Unified Multimodal Models"
+  - "Image generation evaluation"
+  - "Visual intermediate reasoning"
+  - "VLM-as-Judge"
 date: 2026-05-08
-content_hash: b0541edd82c5a604
+content_hash: d0f8c6eab55cd016
 ---
+
 # ROVER: Benchmarking Reciprocal Cross-Modal Reasoning for Omnimodal Generation
 
 **Conference**: ICLR 2026  
@@ -156,11 +161,11 @@ The paper lacks traditional training ablations as it is a benchmark; instead, it
 
 ## Related Papers
 
-- [\[ICLR 2026\] MMReD: A Cross-Modal Benchmark for Dense Context Reasoning](mmred_a_cross-modal_benchmark_for_dense_context_reasoning.md)
 - [\[ICLR 2026\] Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory](evaluating_cross-modal_reasoning_ability_and_problem_characteristics_with_multim.md)
-- [\[ICLR 2026\] Synergizing Understanding and Generation with Interleaved Analyzing-Drafting Thinking](synergizing_understanding_and_generation_with_interleaved_analyzing-drafting_thi.md)
-- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](../../CVPR2026/vlm_reasoning/cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
 - [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](../../CVPR2026/vlm_reasoning/crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)
+- [\[ACL 2025\] FCMR: Robust Evaluation of Financial Cross-Modal Multi-Hop Reasoning](../../ACL2025/vlm_reasoning/fcmr_robust_evaluation_of_financial_cross-modal_multi-hop_reasoning.md)
+- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](../../CVPR2026/vlm_reasoning/cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
+- [\[ICLR 2026\] Synergizing Understanding and Generation with Interleaved Analyzing-Drafting Thinking](synergizing_understanding_and_generation_with_interleaved_analyzing-drafting_thi.md)
 
 </div>
 

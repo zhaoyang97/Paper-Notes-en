@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Distilling Balanced Knowledge from a Biased Teacher
 description: >-
-  [CVPR 2026][Model Compression][Knowledge Distillation] To address the issue of teacher models skewing toward head classes in knowledge distillation under long-tail distributions, this paper decomposes the traditional KL divergence loss into cross-group and within-group components. By rebalancing the cross-group loss to calibrate group-level predictions and reweighting the
+  [CVPR 2026][Model Compression][Knowledge Distillation] To address the issue of teacher models skewing toward head classes in knowledge distillation under long-tail distributions, this paper decomposes the traditional KL divergence loss into cross-group and within-group components. By rebalancing the cross-group loss to calibrate group-level predictions and reweighting the within-group loss to ensure equal contributions, the proposed method outperforms existing techniques on C…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Long-tail Distribution"
+  - "KL Divergence Decomposition"
+  - "Class Imbalance"
 date: 2026-05-08
-content_hash: 0c8dc11fe31675b1
+content_hash: 605eab0b27657326
 ---
+
 # Distilling Balanced Knowledge from a Biased Teacher
 
 **Conference**: CVPR 2026  
@@ -137,15 +141,14 @@ The within-group term's issue lies in the weighting coefficient: each group's KL
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)
 - [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
-- [\[CVPR 2026\] How to Choose Your Teacher for Fine Grained Image Recognition](how_to_choose_your_teacher_for_fine_grained_image_recognition.md)
+- [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](../../ICLR2026/model_compression/in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 - [\[AAAI 2026\] Distilling Cross-Modal Knowledge via Feature Disentanglement](../../AAAI2026/model_compression/distilling_cross-modal_knowledge_via_feature_disentanglement.md)
-- [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](../../ICCV2025/model_compression/a_good_teacher_adapts_their_knowledge_for_distillation.md)
+- [\[ICLR 2026\] Exploring Knowledge Purification in Multi-Teacher Knowledge Distillation for LLMs](../../ICLR2026/model_compression/exploring_knowledge_purification_in_multi-teacher_knowledge_distillation_for_llm.md)
 
 </div>
 

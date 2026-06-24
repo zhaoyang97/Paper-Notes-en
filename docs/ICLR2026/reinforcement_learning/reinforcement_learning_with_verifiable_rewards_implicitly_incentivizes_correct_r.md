@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the debate over whether RLVR truly improves reasoning capabilities or merely enhances sampling efficiency, this paper proposes a new metric, CoT-Pass@K (requiring both correct answers and correct reasoning). Using a theoretical framework for GRPO, it proves that as long as the base model possesses a "logic p
+  [ICLR 2026][Reinforcement Learning][RLVR] Addressing the debate over whether RLVR truly improves reasoning capabilities or merely enhances sampling efficiency, this paper proposes a new metric, CoT-Pass@K (requiring both correct answers and correct reasoning). Using a theoretical framework for GRPO, it proves that as long as the base model possesses a "logic prior" where correct CoT more likely leads to correct answers, binary rewards based solely on answer correctness will *…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
-  - Pass@K
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "GRPO"
+  - "Chain-of-Thought"
+  - "Pass@K"
+  - "Reasoning Capability Boundary"
 date: 2026-05-08
-content_hash: be8540325e5c4b74
+content_hash: 06c6f01786d71629
 ---
+
 # Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs
 
 **Conference**: ICLR 2026  

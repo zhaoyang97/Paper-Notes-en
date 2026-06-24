@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Make Your Training Flexible: Towards Deployment-Efficient Video Models
 description: >-
-  [ICCV 2025][LLM Pretraining][Flexible Training] This paper proposes Flux — a data augmentation tool that enables flexible video model training through flexible sampling grids and group-dynamic token selection…
+  [ICCV 2025][LLM Pretraining][Flexible Training] This paper proposes Flux — a data augmentation tool that enables flexible video model training through flexible sampling grids and group-dynamic token selection, allowing a single model to operate efficiently across varying computational budgets. The paper further introduces a Token Optimization test-time paradigm that matches previous SOTA performance using only 1/4 of the tokens, saving approximately 90% of computation.
 tags:
   - "ICCV 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "Deployment Efficiency"
   - "Data Augmentation"
 date: 2026-05-08
-content_hash: bfa5f5f406e54ef5
+content_hash: 1c65ec4fd1d5f49a
 ---
 
 # Make Your Training Flexible: Towards Deployment-Efficient Video Models
@@ -153,10 +153,10 @@ As illustrated in Figs. 2–3, Flux comprises three levels of design: (1) **Flex
 ## Related Papers
 
 - [\[NeurIPS 2025\] Vocabulary Customization for Efficient Domain-Specific LLM Deployment](../../NeurIPS2025/llm_pretraining/vocabulary_customization_for_efficient_domain-specific_llm_deployment.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](../../ICLR2026/llm_pretraining/scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
-- [\[NeurIPS 2025\] Efficient Pre-Training of LLMs via Topology-Aware Communication Alignment on More Than 9600 GPUs](../../NeurIPS2025/llm_pretraining/efficient_pre-training_of_llms_via_topology-aware_communication_alignment_on_mor.md)
-- [\[ICCV 2025\] SynCity: Training-Free Generation of 3D Worlds](syncity_training-free_generation_of_3d_worlds.md)
-- [\[ICCV 2025\] Dataset Ownership Verification for Pre-trained Masked Models](dataset_ownership_verification_for_pre-trained_masked_models.md)
+- [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
+- [\[ACL 2025\] AsyncLM: Efficient and Adaptive Async Pre-training of Language Models](../../ACL2025/llm_pretraining/asynclm_efficient_and_adaptive_async_pre-training_of_language_models.md)
+- [\[ICML 2025\] Scaling Inference-Efficient Language Models](../../ICML2025/llm_pretraining/scaling_inference-efficient_language_models.md)
+- [\[ICML 2025\] Chameleon: A Flexible Data-mixing Framework for Language Model Pretraining and Finetuning](../../ICML2025/llm_pretraining/chameleon_a_flexible_data-mixing_framework_for_language_model_pretraining_and_fi.md)
 
 </div>
 

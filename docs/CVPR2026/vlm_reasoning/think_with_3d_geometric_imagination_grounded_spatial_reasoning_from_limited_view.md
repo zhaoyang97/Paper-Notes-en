@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] 3DThinker enables VLMs to directly generate a sequence of "3D latent tokens" within the reasoning chain and align them with the geometric features of the 3D foundation model VGGT. Without requiring any 3D priors as input or relying on dense annotations, it performs spatial reasoning by "imagining 3D scenes" from limite
+  [CVPR 2026][VLM Reasoning][Spatial reasoning] 3DThinker enables VLMs to directly generate a sequence of "3D latent tokens" within the reasoning chain and align them with the geometric features of the 3D foundation model VGGT. Without requiring any 3D priors as input or relying on dense annotations, it performs spatial reasoning by "imagining 3D scenes" from limited 2D views. It consistently outperforms strong baselines across 8 spatial understanding benchmarks…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Spatial reasoning"
+  - "3D mental representation"
+  - "VGGT distillation"
+  - "latent space reasoning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: efbadbfedf3f8c5a
+content_hash: eeacd21c5f0233ef
 ---
+
 # Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views
 
 **Conference**: CVPR 2026  
@@ -130,15 +135,16 @@ Across 6 spatial benchmarks (VSI/SP/CV/SPAR/ViewSpatial/MMSI), 3DThinker outperf
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
+- [\[ICLR 2026\] MindCube: Spatial Mental Modeling from Limited Views](../../ICLR2026/vlm_reasoning/mindcube_spatial_mental_modeling_from_limited_views.md)
 - [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
-- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](grounded_3d-aware_spatial_vision-language_modeling.md)
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/multimodal_vlm/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 - [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
+- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/vlm_reasoning/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
 
 </div>
 

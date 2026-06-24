@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Diffusion Generative Modeling on Lie Group Representations
 description: >-
-  [NeurIPS 2025][Computational Biology][Lie group representations] This paper proposes a novel theoretical framework for constructing diffusion processes on the **representation space** of Lie groups (rather than on the Li…
+  [NeurIPS 2025 Spotlight][Computational Biology][Lie group representations] This paper proposes a novel theoretical framework for constructing diffusion processes on the **representation space** of Lie groups (rather than on the Lie groups themselves). By mapping the curved dynamics of non-Abelian Lie groups into Euclidean space via generalized score matching, the framework enables simulation-free training of Lie group diffusion models, and demonstrates that standard score mat…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "Lie group representations"
   - "generalized score matching"
@@ -12,7 +12,7 @@ tags:
   - "molecular conformation generation"
   - "manifold diffusion"
 date: 2026-05-08
-content_hash: a28b1106b9c8dc29
+content_hash: d29dc35ec221ee6a
 ---
 
 # Diffusion Generative Modeling on Lie Group Representations
@@ -190,8 +190,8 @@ $$\mathbb{E}_t\left\{w(t)\mathbb{E}_{\mathbf{x}(0)}\mathbb{E}_{\mathbf{x}(t)}\le
 
 - [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
 - [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
+- [\[ICML 2025\] Geometric Generative Modeling with Noise-Conditioned Graph Networks](../../ICML2025/computational_biology/geometric_generative_modeling_with_noise-conditioned_graph_networks.md)
 - [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
-- [\[NeurIPS 2025\] Learning Repetition-Invariant Representations for Polymer Informatics](learning_repetition-invariant_representations_for_polymer_informatics.md)
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 
 </div>

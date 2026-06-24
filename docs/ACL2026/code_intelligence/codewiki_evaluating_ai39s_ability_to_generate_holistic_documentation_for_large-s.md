@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] Ours proposes CodeWiki, an open-source framework based on hierarchical decomposition and recursive multi-agent processing for automatic repository-level code documentation generation. It also constructs the CodeWikiBench benchmark, where it surpasses the closed-source system DeepWiki (64.06%) with a quality score of 68
+  [ACL 2026][Code Intelligence][Code Documentation Generation] Ours proposes CodeWiki, an open-source framework based on hierarchical decomposition and recursive multi-agent processing for automatic repository-level code documentation generation. It also constructs the CodeWikiBench benchmark, where it surpasses the closed-source system DeepWiki (64.06%) with a quality score of 68.79% across seven programming languages.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code Documentation Generation"
+  - "Repository-level Understanding"
+  - "Multi-agent Systems"
+  - "Hierarchical Decomposition"
+  - "Code Benchmark"
 date: 2026-05-08
-content_hash: dd6cc76f4932c242
+content_hash: 9254b7399fa9f723
 ---
+
 # CodeWiki: Evaluating AI's Ability to Generate Holistic Documentation for Large-Scale Codebases
 
 **Conference**: ACL 2026  
@@ -129,10 +135,10 @@ Traditional n-gram metrics fail to capture the multi-dimensional quality of repo
 ## Related Papers
 
 - [\[ICLR 2026\] AetherCode: Evaluating LLMs' Ability to Win In Premier Programming Competitions](../../ICLR2026/code_intelligence/aethercode_evaluating_llms_ability_to_win_in_premier_programming_competitions.md)
-- [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
 - [\[ACL 2026\] SecureVibeBench: Evaluating Secure Coding Capabilities of Code Agents with Realistic Vulnerability Scenarios](securevibebench_evaluating_secure_coding_capabilities_of_code_agents_with_realis.md)
+- [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
+- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](../../ICML2026/code_intelligence/swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
 - [\[ACL 2026\] River-LLM: Large Language Model Seamless Exit Based on KV Share](river-llm_large_language_model_seamless_exit_based_on_kv_share.md)
-- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 
 </div>
 

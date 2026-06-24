@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM] The SpatialStack framework is proposed to inject multi-layer geometric features from a multi-view geometry encoder (VGGT) layer-by-layer into different layers of an LLM decoder (rather than fusing only the last layer). Through hierarchical alignment—shallow layers for fine-grained spatial perception and deep layers for
+  [CVPR2026][VLM Reasoning][3D Spatial Reasoning] The SpatialStack framework is proposed to inject multi-layer geometric features from a multi-view geometry encoder (VGGT) layer-by-layer into different layers of an LLM decoder (rather than fusing only the last layer). Through hierarchical alignment—shallow layers for fine-grained spatial perception and deep layers for high-level semantic reasoning—it achieves open-source SOTA on multiple 3D spatial reasoning benchmarks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM
-  - VGGT
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "3D Spatial Reasoning"
+  - "Geometry-Language Fusion"
+  - "Hierarchical Feature Fusion"
+  - "VLM"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 3f175061bb48b633
+content_hash: 1b783ddacf7d90bf
 ---
+
 # SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning
 
 **Conference**: CVPR2026  
@@ -148,16 +152,16 @@ During training, both the vision encoder and the VGGT geometry encoder are froze
 - Value: ⭐⭐⭐⭐ Establishes a new paradigm for vision-language-geometry fusion with broad implications for multimodal design.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](../../ICLR2026/vlm_reasoning/metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
 - [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
-- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](grounded_3d-aware_spatial_vision-language_modeling.md)
+- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](../../ICML2026/vlm_reasoning/revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
 - [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
-- [\[ICML 2026\] ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](../../ICML2026/multimodal_vlm/revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)
 
 </div>
 

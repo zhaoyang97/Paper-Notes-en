@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work proposes GAR-SSL, a training-free sound source localization (SSL) framework that remodels the task as a three-stage "Generate-Analyze-Refine" metacognitive reasoning process. By directly leveraging the intrinsic reasoning capabilities of Multimodal Large Language Models (MLLMs) for audio-visual localization,
+  [CVPR 2026][VLM Reasoning][Sound source localization] This work proposes GAR-SSL, a training-free sound source localization (SSL) framework that remodels the task as a three-stage "Generate-Analyze-Refine" metacognitive reasoning process. By directly leveraging the intrinsic reasoning capabilities of Multimodal Large Language Models (MLLMs) for audio-visual localization, it achieves performance comparable to or superior to trained methods on single-source and multi-source ben…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Sound source localization"
+  - "Multimodal Large Language Model"
+  - "Training-free"
+  - "Meta-reasoning"
+  - "Audio-visual consistency"
 date: 2026-05-08
-content_hash: 44a3036794938de8
+content_hash: eb93e2b1fbb434c8
 ---
+
 # Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ The proposed method is training-free and implemented via prompt engineering of t
 
 ## Related Papers
 
+- [\[CVPR 2026\] DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models](deepscan_a_training-free_framework_for_visually_grounded_reasoning_in_large_visi.md)
 - [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
-- [\[CVPR 2026\] Vision-Language Model Guided Source-Free Domain Adaptation via Optimal Transport](vision-language_model_guided_source-free_domain_adaptation_via_optimal_transport.md)
-- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/multimodal_vlm/filter_correlate_compress_training-free_token_reduction_for_.md)
-- [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
-- [\[CVPR 2026\] EgoSound: Benchmarking Sound Understanding in Egocentric Videos](egosound_benchmarking_sound_understanding_in_egocentric_videos.md)
+- [\[CVPR 2026\] Seeing What Matters: A Training-Free Self-Guided Framework for Multimodal Detail Perception and Reasoning](seeing_what_matters_a_training-free_self-guided_framework_for_multimodal_detail_.md)
+- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
+- [\[CVPR 2026\] From Exploration to Exploitation: A Two-Stage Entropy RLVR Approach for Noise-Tolerant MLLM Training](from_exploration_to_exploitation_a_two-stage_entropy_rlvr_approach_for_noise-tol.md)
 
 </div>
 

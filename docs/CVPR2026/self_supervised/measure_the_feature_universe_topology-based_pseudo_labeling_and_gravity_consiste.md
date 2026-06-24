@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Measure The Feature Universe: Topology-based Pseudo Labeling and Gravity Consistency for Source-Free Domain Adaptation
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing Source-Free Domain Adaptation (SFDA), this paper models the target feature space as a "feature universe" with virtual feature padding. It propagates reliable pseudo-labels along a cosine k-NN graph via feature traversal and proposes "Gravity Consistency" regularization—using the similarity between weak and s
+  [CVPR 2026][Self-Supervised Learning][Source-Free Domain Adaptation] Addressing Source-Free Domain Adaptation (SFDA), this paper models the target feature space as a "feature universe" with virtual feature padding. It propagates reliable pseudo-labels along a cosine k-NN graph via feature traversal and proposes "Gravity Consistency" regularization—using the similarity between weak and strong augmented features to modulate the strength of logit consistency. This approach consi…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Source-Free Domain Adaptation"
+  - "Pseudo Labeling"
+  - "Manifold Topology"
+  - "Consistency Regularization"
+  - "Feature Traversal"
 date: 2026-05-08
-content_hash: cbba8537fa14d67c
+content_hash: 521cd69598c7154a
 ---
+
 # Measure The Feature Universe: Topology-based Pseudo Labeling and Gravity Consistency for Source-Free Domain Adaptation
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Ablations on Office-Home using SHOT as the baseline:
 
 ## Related Papers
 
-- [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
 - [\[CVPR 2026\] MemFlow: A Lightweight Forward Memorizing Framework for Quick Domain Adaptive Feature Mapping](memflow_a_lightweight_forward_memorizing_framework_for_quick_domain_adaptive_fea.md)
-- [\[CVPR 2026\] Weight Space Representation Learning via Neural Field Adaptation](weight_space_representation_learning_via_neural_field_adaptation.md)
+- [\[CVPR 2026\] GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency](gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v.md)
+- [\[ICLR 2026\] PAS: Estimating the Target Accuracy Before Domain Adaptation](../../ICLR2026/self_supervised/pas_estimating_the_target_accuracy_before_domain_adaptation.md)
+- [\[ICLR 2026\] Architecture-Agnostic Test-Time Adaptation via Backprop-Free Embedding Alignment](../../ICLR2026/self_supervised/architecture-agnostic_test-time_adaptation_via_backprop-free_embedding_alignment.md)
 - [\[CVPR 2026\] Free-Grained Hierarchical Visual Recognition](free-grained_hierarchical_visual_recognition.md)
-- [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
 
 </div>
 

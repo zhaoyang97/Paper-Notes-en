@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Entropy Rectifying Guidance for Diffusion and Flow Models
 description: >-
-  [NeurIPS 2025][Image Generation][diffusion models] This paper proposes Entropy Rectifying Guidance (ERG), which manipulates the Hopfield energy landscape of attention layers (via temperature scaling and step-size adjustm…
+  [NeurIPS 2025][Image Generation][diffusion models] This paper proposes Entropy Rectifying Guidance (ERG), which manipulates the Hopfield energy landscape of attention layers (via temperature scaling and step-size adjustment) to obtain a weak prediction signal as a substitute for the unconditional prediction in conventional CFG, simultaneously improving quality, diversity, and consistency in text-to-image, class-conditional, and unconditional generation.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "classifier-free guidance"
   - "flow matching"
 date: 2026-05-08
-content_hash: 6b27460116c17dc7
+content_hash: 4299ba76dd4300d0
 ---
 
 # Entropy Rectifying Guidance for Diffusion and Flow Models
@@ -160,8 +160,8 @@ ERG is a purely inference-time method requiring no training modifications or add
 ## Related Papers
 
 - [\[NeurIPS 2025\] Neural Entropy](neural_entropy.md)
-- [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] EVODiff: Entropy-aware Variance Optimized Diffusion Inference](evodiff_entropy-aware_variance_optimized_diffusion_inference.md)
+- [\[NeurIPS 2025\] Token Perturbation Guidance for Diffusion Models](token_perturbation_guidance_for_diffusion_models.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
 - [\[NeurIPS 2025\] Where and How to Perturb: On the Design of Perturbation Guidance in Diffusion and Flow Models](where_and_how_to_perturb_on_the_design_of_perturbation_guidance_in_diffusion_and.md)
 

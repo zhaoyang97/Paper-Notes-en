@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SemVideo: Reconstructs What You Watch from Brain Activity via Hierarchical Semantic Guidance
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] SemVideo first employs a Multi-modal Large Language Model (MLLM) to decompose video stimuli into three semantic levels: "anchor description, motion narrative, and holistic summary." It then decodes these semantics hierarchically from fMRI signals and reconstructs motion latents via tri-path attention. Finally, a text-t
+  [CVPR 2026][Video Generation][fMRI video reconstruction] SemVideo first employs a Multi-modal Large Language Model (MLLM) to decompose video stimuli into three semantic levels: "anchor description, motion narrative, and holistic summary." It then decodes these semantics hierarchically from fMRI signals and reconstructs motion latents via tri-path attention. Finally, a text-to-video diffusion model generates the video guided by these hierarchical semantics…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "fMRI video reconstruction"
+  - "brain activity decoding"
+  - "hierarchical semantic guidance"
+  - "text-to-video diffusion"
+  - "cross-subject decoding"
 date: 2026-05-08
-content_hash: 21f2cb72007e4754
+content_hash: 0503119f939c341a
 ---
+
 # SemVideo: Reconstructs What You Watch from Brain Activity via Hierarchical Semantic Guidance
 
 **Conference**: CVPR 2026  
@@ -129,7 +135,7 @@ SemVideo achieves SOTA on 8 out of 10 metrics: Semantic-level 2-way-V (0.865) an
 - [\[CVPR 2026\] CineBrain: A Large-Scale Multi-Modal Audiovisual Brain Dataset for Brain-Conditioned Video Generation](cinebrain_a_large-scale_multi-modal_audiovisual_brain_dataset_for_brain-conditio.md)
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
 - [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](../../ICML2026/video_generation/itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
-- [\[CVPR 2026\] YOSE: You Only Select Essential Tokens for Efficient DiT-based Video Object Removal](yose_you_only_select_essential_tokens_for_efficient_dit-based_video_object_remov.md)
+- [\[CVPR 2026\] SynMotion: Semantic-Visual Adaptation for Motion Customized Video Generation](synmotion_semantic-visual_adaptation_for_motion_customized_video_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Failure Modes for Deep Learning-Based Online Mapping: How to Measure and Address Them
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper systematically defines and quantifies two failure modes of deep learning-based online mapping models—localization overfitting and geometric overfitting. It proposes a performance metric based on Fréchet distance and a training set sparsification strategy based on Minimum Spanning Tree (MST). Validation on nu
+  [CVPR 2026][Autonomous Driving][Online Mapping] This paper systematically defines and quantifies two failure modes of deep learning-based online mapping models—localization overfitting and geometric overfitting. It proposes a performance metric based on Fréchet distance and a training set sparsification strategy based on Minimum Spanning Tree (MST). Validation on nuScenes and Argoverse 2 demonstrates that geometrically diverse and balanced training sets improve model generali…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Online Mapping"
+  - "Overfitting Analysis"
+  - "Generalization Evaluation"
+  - "Dataset Bias"
+  - "Map Geometric Diversity"
 date: 2026-05-08
-content_hash: 599c7d4f32d65b17
+content_hash: 9e1e920c61f3b39e
 ---
+
 # Failure Modes for Deep Learning-Based Online Mapping: How to Measure and Address Them
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ This paper does not propose new training losses. The analysis utilizes public co
 
 ## Related Papers
 
-- [\[AAAI 2026\] PriorDrive: Enhancing Online HD Mapping with Unified Vector Priors](../../AAAI2026/autonomous_driving/priordrive_enhancing_online_hd_mapping_with_unified_vector_p.md)
 - [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](mapgclr_geospatial_contrastive_learning_of_represe.md)
 - [\[ECCV 2024\] Accelerating Online Mapping and Behavior Prediction via Direct BEV Feature Attention](../../ECCV2024/autonomous_driving/accelerating_online_mapping_and_behavior_prediction_via_dire.md)
 - [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
+- [\[NeurIPS 2025\] How Different from the Past? Spatio-Temporal Time Series Forecasting with Self-Supervised Deviation Learning](../../NeurIPS2025/autonomous_driving/how_different_from_the_past_spatio-temporal_time_series_forecasting_with_self-su.md)
+- [\[CVPR 2026\] ReMoT: Reinforcement Learning with Motion Contrast Triplets](remot_reinforcement_learning_with_motion_contrast_triplets.md)
 
 </div>
 

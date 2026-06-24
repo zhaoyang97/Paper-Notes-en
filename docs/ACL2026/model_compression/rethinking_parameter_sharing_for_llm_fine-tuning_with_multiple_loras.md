@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Parameter Sharing for LLM Fine-Tuning with Multiple LoRAs
 description: >-
-  [ACL 2026][Model Compression][LoRA] This paper overturns the common assumption that "multiple LoRAs should share the A matrix" by demonstrating that the similarity of A primarily stems from identical initialization rather than shared knowledge. It proposes ALoRA and Fed-ALoRA, which share the B matrix, achieving a balance between performance, fairness, a
+  [ACL2026 Findings][Model Compression][LoRA] This paper overturns the common assumption that "multiple LoRAs should share the A matrix" by demonstrating that the similarity of A primarily stems from identical initialization rather than shared knowledge. It proposes ALoRA and Fed-ALoRA, which share the B matrix, achieving a balance between performance, fairness, and communication efficiency in multi-task and federated fine-tuning scenarios.
 tags:
-  - ACL 2026
-  - Model Compression
-  - LoRA
+  - "ACL2026 Findings"
+  - "Model Compression"
+  - "LoRA"
+  - "Parameter Sharing"
+  - "Multi-task Fine-Tuning"
+  - "Federated Learning"
+  - "Communication Compression"
 date: 2026-05-08
-content_hash: 3b7f8d80a5dff2b6
+content_hash: ccf795a847990ef8
 ---
+
 # Rethinking Parameter Sharing for LLM Fine-Tuning with Multiple LoRAs
 
 **Conference**: ACL2026 Findings  
@@ -157,15 +162,13 @@ Federated fine-tuning experiments demonstrate the communication advantage of Fed
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
+- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](../../ICLR2026/model_compression/pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
 - [\[ICML 2026\] Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter](../../ICML2026/model_compression/compress_then_merge_from_multiple_loras_into_one_low-rank_adapter.md)
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](../../ICLR2026/model_compression/trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
 - [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
 - [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
-- [\[CVPR 2026\] S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain](../../CVPR2026/model_compression/s2ft_parameter-efficient_fine-tuning_in_sparse_spectrum_domain.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
 
 </div>
 

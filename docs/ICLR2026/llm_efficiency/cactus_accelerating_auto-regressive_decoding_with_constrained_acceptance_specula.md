@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper reformulates speculative sampling as a constrained optimization problem—"maximizing acceptance rate under controlled divergence constraints"—and proposes Cactus. By reading only one probability value of a candidate token and adding a "bonus" determined by $q$ and a divergence budget $\delta$, it significantl
+  [ICLR 2026][LLM Efficiency][Speculative sampling] This paper reformulates speculative sampling as a constrained optimization problem—"maximizing acceptance rate under controlled divergence constraints"—and proposes Cactus. By reading only one probability value of a candidate token and adding a "bonus" determined by $q$ and a divergence budget $\delta$, it significantly improves acceptance rate and throughput while keeping the deviation from the verifier distribution controlla…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Speculative sampling"
+  - "constrained optimization"
+  - "KL divergence"
+  - "acceptance rate"
+  - "lossless decoding"
+  - "LLM inference"
 date: 2026-05-08
-content_hash: 0363e662981ef181
+content_hash: 6dbe4694a1275f15
 ---
+
 # Cactus: Accelerating Auto-Regressive Decoding with Constrained Acceptance Speculative Sampling
 
 **Conference**: ICLR 2026  
@@ -124,11 +131,11 @@ Cactus achieves the highest acceptance rates across all benchmarks while maintai
 
 ## Related Papers
 
-- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
+- [\[ICLR 2026\] NI Sampling: Accelerating Discrete Diffusion Sampling by Token Order Optimization](ni_sampling_accelerating_discrete_diffusion_sampling_by_token_order_optimization.md)
 - [\[ICLR 2026\] Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization](global_resolution_optimal_multi-draft_speculative_sampling_via_convex_optimizati.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
+- [\[ICLR 2026\] Accelerating Diffusion Large Language Models with SlowFast Sampling: The Three Golden Principles](accelerating_diffusion_large_language_models_with_slowfast_sampling_the_three_go.md)
 - [\[ICLR 2026\] CONCUR: A Framework for Continual Constrained and Unconstrained Routing](concur_a_framework_for_continual_constrained_and_unconstrained_routing.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
-- [\[ICLR 2026\] Not-a-Bandit: Provably No-Regret Drafter Selection in Speculative Decoding for LLMs](not-a-bandit_provably_no-regret_drafter_selection_in_speculative_decoding_for_ll.md)
 
 </div>
 

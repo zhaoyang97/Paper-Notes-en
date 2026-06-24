@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Boomerang Distillation Enables Zero-Shot Model Size Interpolation
 description: >-
-  [ICLR 2026][Model Compression][Knowledge Distillation] The "Boomerang Distillation" paradigm is proposed: by training only a single small student model and progressively "patching" the teacher's transformer layers back into the student, a whole family of intermediate-sized models can be constructed with zero training cost. Their performance smoothly interpolates between th
+  [ICLR2026][Model Compression][Knowledge Distillation] The "Boomerang Distillation" paradigm is proposed: by training only a single small student model and progressively "patching" the teacher's transformer layers back into the student, a whole family of intermediate-sized models can be constructed with zero training cost. Their performance smoothly interpolates between the student and teacher, matching or even exceeding same-sized models distilled individually.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Knowledge Distillation
+  - "ICLR2026"
+  - "Model Compression"
+  - "Knowledge Distillation"
+  - "Zero-Shot Interpolation"
+  - "Layer Pruning"
+  - "Model Families"
 date: 2026-05-08
-content_hash: a3261d2f87aeeb51
+content_hash: 26bddc390104ac97
 ---
+
 # Boomerang Distillation Enables Zero-Shot Model Size Interpolation
 
 **Conference**: ICLR2026  

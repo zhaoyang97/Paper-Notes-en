@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Adversarial Quantification via Conflict-Aware Evidential Deep Learning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] Addressing the issue where Evidential Deep Learning (EDL) makes "confident mistakes" under adversarial perturbations, this paper proposes C-EDL, a post-hoc method requiring no retraining. C-EDL generates multiple label-preserving transformed views for each input, quantifies the "conflict" between these views in the evi
+  [ICLR 2026][AI Safety][Evidential Deep Learning] Addressing the issue where Evidential Deep Learning (EDL) makes "confident mistakes" under adversarial perturbations, this paper proposes C-EDL, a post-hoc method requiring no retraining. C-EDL generates multiple label-preserving transformed views for each input, quantifies the "conflict" between these views in the evidence space, and decays the evidence accordingly to amplify uncertainty. This reduces OOD data coverage by up t…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Evidential Deep Learning"
+  - "Uncertainty Quantification"
+  - "Conflict-Aware"
+  - "OOD Detection"
+  - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: 199bee3f63a2792c
+content_hash: cecbffda01080b20
 ---
+
 # Robust Adversarial Quantification via Conflict-Aware Evidential Deep Learning
 
 **Conference**: ICLR 2026  
@@ -159,11 +165,11 @@ The authors designed EDL++ (transformation aggregation only, without conflict ad
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 - [\[AAAI 2026\] Credal Ensemble Distillation for Uncertainty Quantification](../../AAAI2026/ai_safety/credal_ensemble_distillation_for_uncertainty_quantification.md)
 - [\[ICLR 2026\] On Optimal Hyperparameters for Differentially Private Deep Transfer Learning](on_optimal_hyperparameters_for_differentially_private_deep_transfer_learning.md)
-- [\[ICLR 2026\] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text](pe-sgd_differentially_private_deep_learning_via_evolution_of_gradient_subspace_f.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
 - [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
+- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
 
 </div>
 

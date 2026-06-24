@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes the Representational Contrastive Scoring (RCS) framework, which achieves SOTA jailbreak detection performance under rigorous cross-attack evaluation protocols. By analyzing the geometric structure of internal intermediate layer representations in LVLMs, RCS utilizes lightweight projection and contra
+  [ACL 2026][LLM Safety][Jailbreak Detection] This paper proposes the Representational Contrastive Scoring (RCS) framework, which achieves SOTA jailbreak detection performance under rigorous cross-attack evaluation protocols. By analyzing the geometric structure of internal intermediate layer representations in LVLMs, RCS utilizes lightweight projection and contrastive scoring to distinguish malicious intent from benign distribution shifts.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Jailbreak Detection"
+  - "Representational Contrastive Scoring"
+  - "Large Vision Language Models"
+  - "OOD Detection"
+  - "Safety Alignment"
 date: 2026-05-08
-content_hash: 8979119933af8676
+content_hash: 7f2b39fb298ceeeb
 ---
+
 # Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring
 
 **Conference**: ACL 2026  
@@ -141,8 +147,8 @@ The training objective for the projection network is $\mathcal{L} = \alpha \math
 
 - [\[ACL 2026\] GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)
 - [\[ACL 2026\] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](seeing_no_evil_blinding_large_vision-language_models_to_safety_instructions_via_.md)
-- [\[ICML 2025\] Unlocking the Capabilities of Large Vision-Language Models for Generalizable and Explainable Deepfake Detection](../../ICML2025/llm_safety/unlocking_the_capabilities_of_large_vision-language_models_for_generalizable_and.md)
-- [\[ACL 2026\] When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)
+- [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](../../ICLR2026/llm_safety/rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
+- [\[ICLR 2026\] From "Sure" to "Sorry": Detecting Jailbreak in Large Vision Language Model via JailNeurons](../../ICLR2026/llm_safety/from_sure_to_sorry_detecting_jailbreak_in_large_vision_language_model_via_jailne.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
 
 </div>

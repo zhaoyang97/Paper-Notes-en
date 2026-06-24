@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Independence Test for Linear Non-Gaussian Data and Applications in Causal Discovery
 description: >-
-  [ICLR 2026][Causal Inference][LiNGAM] This paper proves that in linear non-Gaussian mixture models, constant conditional mean and constant conditional variance are sufficient to imply independence. Based on this, a kernel independence test named LiNGIC is proposed, which is simultaneously sensitive to first- and second-order conditional moments. LiNGIC dem
+  [ICLR2026][Causal Inference][Linear Non-Gaussian Models] This paper proves that in linear non-Gaussian mixture models, constant conditional mean and constant conditional variance are sufficient to imply independence. Based on this, a kernel independence test named LiNGIC is proposed, which is simultaneously sensitive to first- and second-order conditional moments. LiNGIC demonstrates higher statistical power than general tests like HSIC in synthetic data and Direct-LiNGAM cau…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - LiNGAM
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Linear Non-Gaussian Models"
+  - "Independence Test"
+  - "LiNGAM"
+  - "Conditional Moments"
+  - "Kernel Methods"
 date: 2026-05-08
-content_hash: 2b7c2312365e1655
+content_hash: 4c521d6f1015d51e
 ---
+
 # Independence Test for Linear Non-Gaussian Data and Applications in Causal Discovery
 
 **Conference**: ICLR2026  
@@ -143,14 +148,17 @@ The paper does not feature "module removal" ablations typical of deep learning p
 
 <div class="related-papers" markdown="1">
 
-- **Direct-LiNGAM**: Shimizu et al., 2011. (Foundation for the application)
-- **HSIC**: Gretton et al., 2005. (The primary baseline and technical inspiration)
-- **GIN**: Xie et al., 2020. (Potential application scenario for latent variables)
+## Related Papers
+
+- [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)
+- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
+- [\[ICML 2025\] Estimating Causal Effects in Gaussian Linear SCMs with Finite Data](../../ICML2025/causal_inference/estimating_causal_effects_in_gaussian_linear_scms_with_finite_data.md)
+- [\[ICLR 2026\] Causal Discovery via Quantile Partial Effect](causal_discovery_via_quantile_partial_effect.md)
+- [\[ICLR 2026\] Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach](causal_discovery_in_the_wild_a_voting-theoretic_ensemble_approach.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Ensemble Conditional Independence Test Framework for Causal Discovery](efficient_ensemble_conditional_independence_test_framework_for_causal_discovery.md)

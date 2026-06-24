@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization
 description: >-
-  [CVPR 2026][Pretraining][ViT] PITH utilizes a Graph HyperNetwork to dynamically generate "projection matrices" that map internal weights of large pre-trained models directly onto target ViTs of arbitrary sizes for initialization. This enables the initialized networks to be used immediately without training—achieving a zero-shot accuracy of 53.35% f
+  [CVPR 2026][LLM Pretraining][Graph HyperNetworks] PITH utilizes a Graph HyperNetwork to dynamically generate "projection matrices" that map internal weights of large pre-trained models directly onto target ViTs of arbitrary sizes for initialization. This enables the initialized networks to be used immediately without training—achieving a zero-shot accuracy of 53.35% for ViT-Base on ImageNet-1K, which is 6.54% higher than the previous SOTA (TAL).
 tags:
-  - CVPR 2026
-  - Pretraining
-  - ViT
+  - "CVPR 2026"
+  - "LLM Pretraining"
+  - "Graph HyperNetworks"
+  - "Parameter Inheritance"
+  - "Zero-Shot Initialization"
+  - "Parameter Projection"
+  - "ViT"
 date: 2026-05-08
-content_hash: 85adcfd890848747
+content_hash: 835fdeb6d9caa59d
 ---
+
 # Unlocking Pre-trained Weights: Parameter Inheritance for Zero-Shot Initialization
 
 **Conference**: CVPR 2026  
@@ -151,11 +156,11 @@ Low-cost variant (Sharing MLPs between projection/prediction paths):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Conditioned Initialization for Attention](../../ICLR2026/llm_pretraining/conditioned_initialization_for_attention.md)
 - [\[AAAI 2026\] GranAlign: Granularity-Aware Alignment Framework for Zero-Shot Video Moment Retrieval](../../AAAI2026/llm_pretraining/granalign_granularity-aware_alignment_framework_for_zero-shot_video_moment_retri.md)
 - [\[ECCV 2024\] Prompting Language-Informed Distribution for Compositional Zero-Shot Learning](../../ECCV2024/llm_pretraining/prompting_language-informed_distribution_for_compositional_zero-shot_learning.md)
 - [\[NeurIPS 2025\] ZEUS: Zero-shot Embeddings for Unsupervised Separation of Tabular Data](../../NeurIPS2025/llm_pretraining/zeus_zero-shot_embeddings_for_unsupervised_separation_of_tabular_data.md)
 - [\[AAAI 2026\] PrefixGPT: Prefix Adder Optimization by a Generative Pre-trained Transformer](../../AAAI2026/llm_pretraining/prefixgpt_prefix_adder_optimization_by_a_generative_pre-trained_transformer.md)
-- [\[ACL 2025\] AutoDS: Autonomous Data Selection with Zero-shot Generative Classifiers for Mathematical Texts](../../ACL2025/llm_pretraining/autonomous_data_selection_with_zero-shot_generative_classifiers_for_mathematical.md)
 
 </div>
 

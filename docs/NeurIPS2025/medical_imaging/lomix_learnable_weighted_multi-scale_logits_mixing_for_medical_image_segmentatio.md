@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation
 description: >-
-  [NeurIPS 2025][Medical Imaging][Multi-scale fusion] LoMix introduces a Combinatorial Mutation Module (CMM) that generates "mutant" logits from multi-scale outputs via four fusion operators (addition / multiplication / co…
+  [NeurIPS 2025][Medical Imaging][Multi-scale fusion] LoMix introduces a Combinatorial Mutation Module (CMM) that generates "mutant" logits from multi-scale outputs via four fusion operators (addition / multiplication / concatenation / attention-weighted fusion) across all subset combinations, paired with NAS-style Softplus learnable weights for automatic contribution balancing. On Synapse 8-organ segmentation, Dice improves from 80.9% to 85.1% (+4.2%)…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "NAS"
   - "U-Net"
 date: 2026-05-08
-content_hash: 32b8e9f303681af9
+content_hash: 28e3f32916e12b94
 ---
 
 # LoMix: Learnable Weighted Multi-Scale Logits Mixing for Medical Image Segmentation
@@ -131,10 +131,10 @@ A U-shaped network with $L$ decoder layers produces logits $P_i$ at each layer �
 ## Related Papers
 
 - [\[NeurIPS 2025\] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation](physiowave_a_multi-scale_wavelet-transformer_for_physiological_signal_representa.md)
+- [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](../../CVPR2026/medical_imaging/pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 - [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
 - [\[NeurIPS 2025\] STARC-9: A Large-scale Dataset for Multi-Class Tissue Classification for CRC Histopathology](starc-9_a_large-scale_dataset_for_multi-class_tissue_classification_for_crc_hist.md)
 - [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
-- [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
 
 </div>
 

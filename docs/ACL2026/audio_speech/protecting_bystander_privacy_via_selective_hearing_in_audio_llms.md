@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Protecting Bystander Privacy via Selective Hearing in Audio LLMs
 description: >-
-  [ACL 2026][Audio & Speech][Paper Note] This paper proposes the first bystander privacy benchmark, SH-Bench, and a Bystander Privacy Fine-Tuning (BPFT) method to evaluate and enhance the capability of audio LLMs to focus solely on the primary speaker and refuse to leak bystander information in multi-speaker environments. After BPFT, the SE metric improves by
+  [ACL 2026][Audio & Speech][Bystander Privacy] This paper proposes the first bystander privacy benchmark, SH-Bench, and a Bystander Privacy Fine-Tuning (BPFT) method to evaluate and enhance the capability of audio LLMs to focus solely on the primary speaker and refuse to leak bystander information in multi-speaker environments. After BPFT, the SE metric improves by 16% compared to Gemini 2.5 Pro.
 tags:
-  - ACL 2026
-  - Audio & Speech
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Bystander Privacy"
+  - "Selective Hearing"
+  - "Audio LLM"
+  - "Multi-speaker"
+  - "Privacy-preserving Fine-tuning"
 date: 2026-05-08
-content_hash: 02e09c3d2c0cacf2
+content_hash: e5efad4cc5d59177
 ---
+
 # Protecting Bystander Privacy via Selective Hearing in Audio LLMs
 
 **Conference**: ACL 2026  
@@ -129,9 +135,9 @@ BPFT uses standard SFT loss, fine-tuning only the LLM backbone (LoRA rank 32) an
 
 - [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](privacy-preserving_prosody_representation_learning.md)
 - [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
+- [\[ICML 2026\] Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox](../../ICML2026/audio_speech/do_audio_llms_listen_or_read_analyzing_and_mitigating_paralinguistic_failures_wi.md)
 - [\[ACL 2026\] Mind the Pause: Disfluency-Aware Objective Tuning for Multilingual Speech Correction with LLMs](mind_the_pause_disfluency-aware_objective_tuning_for_multilingual_speech_correct.md)
-- [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](../../ICML2026/audio_speech/probing_cross-modal_information_hubs_in_audio-visual_llms.md)
-- [\[ICLR 2026\] VowelPrompt: Hearing Speech Emotions from Text via Vowel-level Prosodic Augmentation](../../ICLR2026/audio_speech/vowelprompt_hearing_speech_emotions_from_text_via_vowel-level_prosodic_augmentat.md)
 
 </div>
 

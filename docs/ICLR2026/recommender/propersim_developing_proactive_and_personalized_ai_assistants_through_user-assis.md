@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation
 description: >-
-  [ICLR 2026][Recommender Systems][proactive agent] This work proposes ProPerSim, a simulation framework that constructs 32 user personas based on the Big Five personality traits within the Smallville household environment. AI assistants perform proactive recommendation decisions every 2.5 minutes. Through DPO preference learning over a 14-day simulation, user satisfact
+  [ICLR 2026][Recommender Systems][proactive agent] This work proposes ProPerSim, a simulation framework that constructs 32 user personas based on the Big Five personality traits within the Smallville household environment. AI assistants perform proactive recommendation decisions every 2.5 minutes. Through DPO preference learning over a 14-day simulation, user satisfaction improved from 2.2/4 to 3.3/4, validating for the first time the feasibility of unifying proactivity and pe…
 tags:
-  - ICLR 2026
-  - Recommender Systems
-  - proactive agent
-  - personalization
-  - user simulation
-  - DPO
-  - Big Five personality
-  - generative agents
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "proactive agent"
+  - "personalization"
+  - "user simulation"
+  - "DPO"
+  - "Big Five personality"
+  - "generative agents"
 date: 2026-05-08
-content_hash: c4f8f24571019ddb
+content_hash: 9919c1d976338312
 ---
+
 # ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation
 
 **Conference**: ICLR 2026  
@@ -135,6 +136,7 @@ Base Model: LLaMA 3.3 70B (4-bit quantization), LoRA fine-tuned. DPO training: 2
 - Value: ⭐⭐⭐⭐ Provides a valuable simulation platform and baseline for personal assistant research.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -142,8 +144,8 @@ Base Model: LLaMA 3.3 70B (4-bit quantization), LoRA fine-tuned. DPO training: 2
 - [\[ACL 2026\] Learning to Retrieve User History and Generate User Profiles for Personalized Persuasiveness Prediction](../../ACL2026/recommender/learning_to_retrieve_user_history_and_generate_user_profiles_for_personalized_pe.md)
 - [\[ICLR 2026\] Low-pass Personalized Subgraph Federated Recommendation](low-pass_personalized_subgraph_federated_recommendation.md)
 - [\[ICLR 2026\] More Than What Was Chosen: LLM-based Explainable Recommendation Beyond Noisy User Preferences](more_than_what_was_chosen_llm-based_explainable_recommendation_beyond_noisy_user.md)
+- [\[ICLR 2026\] Supporting High-Stakes Decision Making Through Interactive Preference Elicitation in the Latent Space](supporting_high-stakes_decision_making_through_interactive_preference_elicitatio.md)
 - [\[ICLR 2026\] iFusion: Integrating Dynamic Interest Streams via Diffusion Model for Click-Through Rate Prediction](ifusion_integrating_dynamic_interest_streams_via_diffusion_model_for_click-throu.md)
-- [\[ICLR 2026\] Beyond Markovian Drifts: Action-Biased Geometric Walks with Memory for Personalized Summarization](beyond_markovian_drifts_action-biased_geometric_walks_with_memory_for_personaliz.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Computational Hardness of Reinforcement Learning with Partial $q^\pi$-Realizability
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][computational complexity] This paper introduces the notion of "partial $q^\pi$-realizability" and proves that learning a near-optimal policy under this setting is NP-hard when using…
+  [NeurIPS 2025][Reinforcement Learning][computational complexity] This paper introduces the notion of "partial $q^\pi$-realizability" and proves that learning a near-optimal policy under this setting is NP-hard when using a greedy policy class, and requires exponential time under the rETH assumption when using a softmax policy class. These results bridge the theoretical gap between $q^*$-realizability and $q^\pi$-realizability.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "realizability"
   - "NP-hard"
 date: 2026-05-08
-content_hash: eb374d2429ff8e14
+content_hash: 205461b3bcaff75d
 ---
 
 # Computational Hardness of Reinforcement Learning with Partial $q^\pi$-Realizability
@@ -151,11 +151,11 @@ This paper makes theoretical contributions. The main theorems are:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](../../AAAI2026/reinforcement_learning/partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
+- [\[ICLR 2026\] Frozen Policy Iteration: Computationally Efficient RL under Linear $Q^{\pi}$ Realizability for Deterministic Dynamics](../../ICLR2026/reinforcement_learning/frozen_policy_iteration_computationally_efficient_rl_under_linear_qpi_realizabil.md)
+- [\[ICLR 2026\] Robustness in the Face of Partial Identifiability in Reward Learning](../../ICLR2026/reinforcement_learning/robustness_in_the_face_of_partial_identifiability_in_reward_learning.md)
 - [\[NeurIPS 2025\] Hybrid Latent Reasoning via Reinforcement Learning](hybrid_latent_reasoning_via_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Adaptive Neighborhood-Constrained Q Learning for Offline Reinforcement Learning](adaptive_neighborhoodconstrained_q_learning_for_offline_rein.md)
-- [\[NeurIPS 2025\] Learning to Clean: Reinforcement Learning for Noisy Label Correction](learning_to_clean_reinforcement_learning_for_noisy_label_correction.md)
 - [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](reinforcement_learning_teachers_of_test_time_scaling.md)
+- [\[NeurIPS 2025\] Learning to Clean: Reinforcement Learning for Noisy Label Correction](learning_to_clean_reinforcement_learning_for_noisy_label_correction.md)
 
 </div>
 

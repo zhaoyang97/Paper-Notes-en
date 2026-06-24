@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Capturing Visual Environment Structure Correlates with Control Performance
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] The authors propose using "regressing the simulator's full state (geometry/object structure/physical properties) from images" as a lightweight proxy task. They demonstrate that this probing accuracy is highly correlated with downstream robot policy success rates, enabling efficient selection of visual backbones without
+  [ICLR 2026][Robotics][Visual Representation] The authors propose using "regressing the simulator's full state (geometry/object structure/physical properties) from images" as a lightweight proxy task. They demonstrate that this probing accuracy is highly correlated with downstream robot policy success rates, enabling efficient selection of visual backbones without running expensive policy rollouts.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Visual Representation"
+  - "Robotic Manipulation"
+  - "State Prediction"
+  - "Proxy Metric"
+  - "Sim-to-Real"
+  - "World State Modeling"
 date: 2026-05-08
-content_hash: e738313f089a7fe2
+content_hash: f4fdc02ff1bfef25
 ---
+
 # Capturing Visual Environment Structure Correlates with Control Performance
 
 **Conference**: ICLR 2026  

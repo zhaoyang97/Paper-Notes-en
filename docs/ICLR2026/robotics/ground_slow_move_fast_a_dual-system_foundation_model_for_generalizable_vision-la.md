@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Vision-Language Navigation] DualVLN (InternVLA-N1) decouples vision-language navigation into a "Slow System" (7B VLM) for pixel goal grounding and a "Fast System" (lightweight diffusion policy) for continuous trajectory generation. Operating asynchronously, the two systems achieve new SOTA results on VLN-CE / VLN-PE and enable real-world dynamic
+  [ICLR 2026][Robotics][Vision-Language Navigation] DualVLN (InternVLA-N1) decouples vision-language navigation into a "Slow System" (7B VLM) for pixel goal grounding and a "Fast System" (lightweight diffusion policy) for continuous trajectory generation. Operating asynchronously, the two systems achieve new SOTA results on VLN-CE / VLN-PE and enable real-world dynamic obstacle avoidance.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Vision-Language Navigation
-  - Dual-System
-  - Diffusion Policy
-  - Pixel Goal
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language Navigation"
+  - "Dual-System"
+  - "Diffusion Policy"
+  - "Pixel Goal"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: ace054ba81c67157
+content_hash: 2929178a63a014f4
 ---
+
 # Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation
 
 **Conference**: ICLR 2026  
@@ -136,9 +137,9 @@ Local Planner Comparison (Table 4, VLN-PE flash controller, R2R Val-Unseen):
 
 - [\[ICLR 2026\] SpikePingpong: Spike Vision-based Fast-Slow Pingpong Robot System](spikepingpong_spike_vision-based_fast-slow_pingpong_robot_system.md)
 - [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
-- [\[ICLR 2026\] Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](genie_envisioner_a_unified_world_foundation_platform_for_robotic_manipulation.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](../../CVPR2026/robotics/towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
-- [\[ICLR 2026\] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation](janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio.md)
+- [\[ICLR 2026\] Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance](align-then-steer_adapting_the_vision-language_action_models_through_unified_late.md)
+- [\[ICLR 2026\] Uncertainty-Aware Gaussian Map for Vision-Language Navigation](uncertainty-aware_gaussian_map_for_vision-language_navigation.md)
 
 </div>
 

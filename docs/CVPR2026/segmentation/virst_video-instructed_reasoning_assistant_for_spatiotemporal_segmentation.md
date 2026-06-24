@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation
 description: >-
-  [CVPR 2026][Segmentation][RVOS] VIRST proposes an end-to-end framework that unifies global video reasoning and pixel-level mask prediction within a single Vision-Language Model (VLM). By incorporating Spatio-Temporal Fusion (STF) and a Temporal Dynamic Anchor Updater (TDAU), it achieves spatio-temporally consistent video segmentation. VIRST reaches 7
+  [CVPR 2026][Segmentation][Video Object Segmentation] VIRST proposes an end-to-end framework that unifies global video reasoning and pixel-level mask prediction within a single Vision-Language Model (VLM). By incorporating Spatio-Temporal Fusion (STF) and a Temporal Dynamic Anchor Updater (TDAU), it achieves spatio-temporally consistent video segmentation. VIRST reaches 70.8 J&F on ReVOS (+7.5 over SOTA) and 62.9 on MeViS (+9.2), while maintaining an inference speed of 5.1 FPS…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - RVOS
-  - Vision-Language Model
-  - Dynamic Anchor
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Video Object Segmentation"
+  - "RVOS"
+  - "Vision-Language Models"
+  - "Spatio-temporal Fusion"
+  - "Dynamic Anchors"
+  - "Reasoning Segmentation"
 date: 2026-05-08
-content_hash: ef68992edc03d68e
+content_hash: 87cd08522ec713d3
 ---
+
 # VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation
 
 **Conference**: CVPR 2026  
@@ -137,11 +141,11 @@ The total loss is defined as $L_{total} = \lambda_{bce} L_{bce} + \lambda_{dice}
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
-- [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](fast_reasoning_segmentation_for_images_and_videos.md)
-- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
-- [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
+- [\[ECCV 2024\] VISA: Reasoning Video Object Segmentation via Large Language Models](../../ECCV2024/segmentation/visa_reasoning_video_object_segmentation_via_large_language_models.md)
+- [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](../../ICCV2025/segmentation/online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
+- [\[ICLR 2026\] Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation](../../ICLR2026/segmentation/decomposed_attention_fusion_in_mllms_for_training-free_video_reasoning_segmentat.md)
 - [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
+- [\[ICCV 2025\] VEGGIE: Instructional Editing and Reasoning Video Concepts with Grounded Generation](../../ICCV2025/segmentation/veggie_instructional_editing_and_reasoning_video_concepts_with_grounded_generati.md)
 
 </div>
 

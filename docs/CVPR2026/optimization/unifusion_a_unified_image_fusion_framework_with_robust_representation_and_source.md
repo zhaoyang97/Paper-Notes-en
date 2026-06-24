@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation
 description: >-
-  [CVPR 2026][Optimization & Theory][unified image fusion] The authors propose UniFusion, a unified image fusion framework that leverages DINOv3 self-supervised semantic priors to construct a cross-modal shared feature space. It preserves source image information via a reconstruction alignment mechanism and decouples reconstruction and fusion objectives using a bilevel optimiz
+  [CVPR2026][Optimization][unified image fusion] The authors propose UniFusion, a unified image fusion framework that leverages DINOv3 self-supervised semantic priors to construct a cross-modal shared feature space. It preserves source image information via a reconstruction alignment mechanism and decouples reconstruction and fusion objectives using a bilevel optimization strategy, achieving SOTA performance across tasks such as infrared-visible, multi-exposure, multi-focus…
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - unified image fusion
-  - DINOv3
-  - bilevel optimization
-  - reconstruction alignment
-  - cross-task generalization
+  - "CVPR2026"
+  - "Optimization"
+  - "unified image fusion"
+  - "DINOv3"
+  - "bilevel optimization"
+  - "reconstruction alignment"
+  - "cross-task generalization"
 date: 2026-05-08
-content_hash: 0b3c292057e685b2
+content_hash: 91b6f5cc82681918
 ---
+
 # UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation
 
 **Conference**: CVPR2026  
@@ -140,14 +141,17 @@ The inner (lower-level) loop rapidly updates Adapter and reconstruction paramete
 
 <div class="related-papers" markdown="1">
 
-- **SwinFusion**: Cross-domain Long-range Learning for General Image Fusion (CVPR 2022)
-- **CDDFuse**: Correlation-Driven Dual-Branch Feature Decomposition for Multi-Modality Image Fusion (CVPR 2023)
-- **TC-MoA**: Task-Conditioned Mixture of Adapters for Generalizable Image Fusion (ECCV 2024)
+## Related Papers
+
+- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](../../ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
+- [\[ICML 2026\] Selecting Samples on Graphs: A Unified Dataset Pruning Framework for Lossless Training Acceleration](../../ICML2026/optimization/selecting_samples_on_graphs_a_unified_dataset_pruning_framework_for_lossless_tra.md)
+- [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](../../ICML2026/optimization/urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
+- [\[CVPR 2026\] Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing](beyond_single_solution_multi-hypothesis_collaborative_deep_unfolding_network_for.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)

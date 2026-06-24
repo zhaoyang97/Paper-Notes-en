@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MeepleLM: A Virtual Playtester Simulating Diverse Subjective Experiences
 description: >-
-  [ACL 2026][Model Compression][board game] The authors develop a "virtual playtester" for board game designers. By providing official rulebooks and five distinct player personas to a fine-tuned Qwen3-8B (MeepleLM), the system performs three-step reasoning via the Mechanics→Dynamics→Aesthetics (MDA) framework to generate ratings and reviews. Across 207 games, Me
+  [ACL 2026][Model Compression][Virtual Playtesting] The authors develop a "virtual playtester" for board game designers. By providing official rulebooks and five distinct player personas to a fine-tuned Qwen3-8B (MeepleLM), the system performs three-step reasoning via the Mechanics→Dynamics→Aesthetics (MDA) framework to generate ratings and reviews. Across 207 games, MeepleLM outperforms GPT-5.1 and Gemini3-Pro in community distribution alignment (Wasserstein 0.22 vs. GPT-5.1'…
 tags:
-  - ACL 2026
-  - Model Compression
-  - board game
-  - persona-conditional fine-tuning
+  - "ACL 2026"
+  - "Model Compression"
+  - "Virtual Playtesting"
+  - "MDA Reasoning"
+  - "Persona Simulation"
+  - "board game"
+  - "persona-conditional fine-tuning"
 date: 2026-05-08
-content_hash: b72a95f8257f79b8
+content_hash: 72ff0b404260d83e
 ---
+
 # MeepleLM: A Virtual Playtester Simulating Diverse Subjective Experiences
 
 **Conference**: ACL 2026  
@@ -135,15 +139,16 @@ The most critical comparison is the **Wasserstein distance (0.22 vs. GPT-5.1's 0
 - Value: ⭐⭐⭐⭐☆ Directly applicable to board game design and transferable to HCI/UX evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding](../../ICML2026/model_compression/speed-bench_a_unified_and_diverse_benchmark_for_speculative_decoding.md)
+- [\[ICLR 2026\] Inheriting Generalizable Knowledge from LLMs to Diverse Vertical Tasks](../../ICLR2026/model_compression/inheriting_generalizable_knowledge_from_llms_to_diverse_vertical_tasks.md)
 - [\[ACL 2026\] UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text](ukp_psycontrol_at_semeval-2026_task_2_modeling_valence_and_arousal_dynamics_from.md)
 - [\[ACL 2026\] A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification](a_bertology_view_of_llm_orchestrations_token-_and_layer-selective_probes_for_eff.md)
 - [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
 
 </div>
 

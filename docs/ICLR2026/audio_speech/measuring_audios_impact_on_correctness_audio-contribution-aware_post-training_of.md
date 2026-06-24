@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models
 description: >-
-  [ICLR 2026][Audio & Speech][Large Audio Language Models] This paper reveals the prevalent "zero audio-contribution" phenomenon in Large Audio Language Models (LALMs)—where models answer correctly even when the audio is replaced with silence. It proposes a data filtering method based on "audio contribution" and a two-stage post-training paradigm (Weak-to-Strong / Mixed-to-Str
+  [ICLR 2026][Audio & Speech][Large Audio Language Models] This paper reveals the prevalent "zero audio-contribution" phenomenon in Large Audio Language Models (LALMs)—where models answer correctly even when the audio is replaced with silence. It proposes a data filtering method based on "audio contribution" and a two-stage post-training paradigm (Weak-to-Strong / Mixed-to-Strong). Combined with the 570k-sample AudioMCQ dataset, it achieves SOTA results on four major audio unde…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Large Audio Language Models
-  - Post-Training
-  - Audio-Contribution
-  - GRPO
-  - SFT-to-RL
-  - AudioMCQ
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Large Audio Language Models"
+  - "Post-Training"
+  - "Audio-Contribution"
+  - "GRPO"
+  - "SFT-to-RL"
+  - "AudioMCQ"
 date: 2026-05-08
-content_hash: 5cfa01e543907d46
+content_hash: e596d74b0b5d0927
 ---
+
 # Measuring Audio's Impact on Correctness: Audio-Contribution-Aware Post-Training of Large Audio Language Models
 
 **Conference**: ICLR 2026  
@@ -137,7 +138,6 @@ This paper extends R1-AQA and Omni-R1's introduction of GRPO to audio QA, and in
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

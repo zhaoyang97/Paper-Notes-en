@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm
 description: >-
-  [ICML 2026][LLM Efficiency][SiameseNorm] To address the structural conflict where Pre-Norm and Post-Norm cannot coexist within a single-stream architecture, the authors propose SiameseNorm, a dual-stream residual architecture. It maintains an unnormalized stream as an identity gradient highway (Pre-Norm) and a normalized stream for main-path representation co
+  [ICML 2026][LLM Efficiency][SiameseNorm] To address the structural conflict where Pre-Norm and Post-Norm cannot coexist within a single-stream architecture, the authors propose SiameseNorm, a dual-stream residual architecture. It maintains an unnormalized stream as an identity gradient highway (Pre-Norm) and a normalized stream for main-path representation control (Post-Norm). By coupling these two streams via shared residual blocks, SiameseNorm consistently outperforms Pre-N…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - SiameseNorm
-  - Pre-Norm
-  - Post-Norm
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "SiameseNorm"
+  - "Pre-Norm"
+  - "Post-Norm"
+  - "Dual-stream Residual"
+  - "Training Stability"
 date: 2026-05-08
-content_hash: ba07962aa7044b98
+content_hash: c480b960fee0b85c
 ---
+
 # SiameseNorm: Breaking the Barrier to Reconciling Pre/Post-Norm
 
 **Conference**: ICML 2026  
@@ -155,11 +158,11 @@ Pre-Norm starts to degrade significantly at 33 layers, while SiameseNorm achieve
 
 ## Related Papers
 
-- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
 - [\[ICML 2026\] A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction](a_risk_decomposition_framework_for_pre-hoc_fine-tuning_prediction.md)
+- [\[ICML 2026\] Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts](beyond_sunk_costs_boosting_llm_pre-training_efficiency_via_orthogonal_growth_of_.md)
+- [\[ICLR 2026\] Revisiting Parameter Server in LLM Post-Training](../../ICLR2026/llm_efficiency/revisiting_parameter_server_in_llm_post-training.md)
 - [\[ACL 2026\] Breaking Block Boundaries: Anchor-based History-stable Decoding for Diffusion Large Language Models](../../ACL2026/llm_efficiency/breaking_block_boundaries_anchor-based_history-stable_decoding_for_diffusion_lar.md)
-- [\[NeurIPS 2025\] Jet-Nemotron: Efficient Language Model with Post Neural Architecture Search](../../NeurIPS2025/llm_efficiency/jet-nemotron_efficient_language_model_with_post_neural_architecture_search.md)
-- [\[ICML 2026\] Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing](efficient_training-free_multi-token_prediction_via_embedding-space_probing.md)
+- [\[ICLR 2026\] Out of the Memory Barrier: A Highly Memory-Efficient Training System for LLMs with Million-Token Contexts](../../ICLR2026/llm_efficiency/out_of_the_memory_barrier_a_highly_memory-efficient_training_system_for_llms_wit.md)
 
 </div>
 

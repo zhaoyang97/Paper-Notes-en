@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search
 description: >-
-  [ICML 2026][AI Safety][Diffusion Model] This paper proposes BGPS (Bias-Guided Prompt Search), which utilizes a lightweight attribute classifier trained on internal activations of a diffusion model to guide the beam search decoding of an LLM. It automatically generates prompts that are naturally readable yet steer generated images significantly toward specifi
+  [ICML2026][AI Safety][Text-to-Image Bias] This paper proposes BGPS (Bias-Guided Prompt Search), which utilizes a lightweight attribute classifier trained on internal activations of a diffusion model to guide the beam search decoding of an LLM. It automatically generates prompts that are naturally readable yet steer generated images significantly toward specific genders/ethnicities, exposing hidden biases in text-to-image models (including debiased ones) that are difficult for…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Diffusion Model
+  - "ICML2026"
+  - "AI Safety"
+  - "Text-to-Image Bias"
+  - "Automated Prompt Search"
+  - "Gradient-free Decoding"
+  - "Fairness Auditing"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 1dd3cc4c41c43325
+content_hash: fce8c8b5fd50808e
 ---
+
 # Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search
 
 **Conference**: ICML2026  
@@ -121,6 +126,7 @@ Key Comparison: While PEZ achieves high attribute frequencies, its PPL is extrem
 - Value: ⭐⭐⭐⭐⭐ Provides a practical, interpretable tool for auditing TTI bias in real-world scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

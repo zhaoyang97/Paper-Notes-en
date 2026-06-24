@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Particle Transformer] Quiver feeds categorical inputs into an additional Variational Quantum Circuit (VQC) to extract the Quantum Fisher Information Matrix (QFIM) as a "quantum geometric view." It then injects this into classical backbones using cross-attention (for Transformers) or residual gating (for GNNs), achieving consistent improveme
+  [ICML 2026][Physics & Scientific Computing][Variational Quantum Circuit (VQC)] Quiver feeds categorical inputs into an additional Variational Quantum Circuit (VQC) to extract the Quantum Fisher Information Matrix (QFIM) as a "quantum geometric view." It then injects this into classical backbones using cross-attention (for Transformers) or residual gating (for GNNs), achieving consistent improvements across distinct physical tasks: JetClass top quark tagging and QM9 HOMO-LUMO…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - Particle Transformer
-  - DimeNet++
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Variational Quantum Circuit (VQC)"
+  - "Quantum Fisher Information Matrix (QFIM)"
+  - "Multimodal Representation"
+  - "Particle Transformer"
+  - "DimeNet++"
 date: 2026-05-08
-content_hash: 200fc433ff664e01
+content_hash: 8df4364ce0a745f8
 ---
+
 # Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models
 
 **Conference**: ICML 2026  
@@ -129,10 +133,10 @@ With only a 0.27% parameter increase, a paired $t$-test across 10 seeds yields $
 ## Related Papers
 
 - [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
-- [\[ICML 2026\] TriForces: Augmenting Atomistic GNNs for Transferable Representations](triforces_augmenting_atomistic_gnns_for_transferable_representations.md)
 - [\[ICML 2026\] Quantum latent distributions in deep generative models](quantum_latent_distributions_in_deep_generative_models.md)
+- [\[ICML 2026\] TriForces: Augmenting Atomistic GNNs for Transferable Representations](triforces_augmenting_atomistic_gnns_for_transferable_representations.md)
+- [\[ICLR 2026\] Iterative Training of Physics-Informed Neural Networks with Fourier-enhanced Features](../../ICLR2026/physics/iterative_training_of_physics-informed_neural_networks_with_fourier-enhanced_fea.md)
 - [\[ICML 2025\] L2D: Large Language Models to Diffusion Finetuning](../../ICML2025/physics/large_language_models_to_diffusion_finetuning.md)
-- [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
 
 </div>
 

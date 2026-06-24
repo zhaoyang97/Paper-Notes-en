@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VDFE: Difference-Aware 3D Scene Editing with Non-Intrusive Video Diffusion Priors for Multi-View Consistency and Efficiency
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] VDFE decomposes text-driven 3D scene editing into three steps: performing multi-view consistent flow editing via video diffusion priors, accurately localizing editing regions through flow differences, and selectively updating only the Gaussians in those regions. This achieves precise and efficient controllable editing
+  [CVPR 2026][3D Vision][Text-driven 3D editing] VDFE decomposes text-driven 3D scene editing into three steps: performing multi-view consistent flow editing via video diffusion priors, accurately localizing editing regions through flow differences, and selectively updating only the Gaussians in those regions. This achieves precise and efficient controllable editing of 3D Gaussian Splatting (3DGS) scenes without intrusive modifications to pre-trained video diffusion models.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Text-driven 3D editing"
+  - "3D Gaussian Splatting"
+  - "Video diffusion priors"
+  - "Optimal control"
+  - "Multi-view consistency"
 date: 2026-05-08
-content_hash: 9d03840887b0f4e5
+content_hash: 0a86b8e08fe1974e
 ---
+
 # VDFE: Difference-Aware 3D Scene Editing with Non-Intrusive Video Diffusion Priors for Multi-View Consistency and Efficiency
 
 **Conference**: CVPR 2026  
@@ -114,10 +120,10 @@ On editing benchmarks such as FIVE, evaluating with CLIP-sim (semantic similarit
 ## Related Papers
 
 - [\[CVPR 2026\] Unsupervised Monocular 3D Keypoint Discovery from Multi-View Diffusion Priors](unsupervised_monocular_3d_keypoint_discovery_from_multi-view_diffusion_priors.md)
+- [\[CVPR 2026\] AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)
 - [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
 - [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
+- [\[CVPR 2026\] ObjectMorpher: 3D-Aware Image Editing via Deformable 3DGS](objectmorpher_3d-aware_image_editing_via_deformable_3dgs.md)
 
 </div>
 

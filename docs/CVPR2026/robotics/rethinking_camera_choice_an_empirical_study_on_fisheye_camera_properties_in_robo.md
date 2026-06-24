@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Generalizability] This work presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. It addresses three core questions regarding spatial localization, scene generalization, and hardware generalization, revealing the advantages and limitations of wide
+  [CVPR 2026][Robotics][Fisheye Camera] This work presents the first systematic empirical study on the properties of wrist-mounted fisheye cameras in imitation learning for robotic manipulation. It addresses three core questions regarding spatial localization, scene generalization, and hardware generalization, revealing the advantages and limitations of wide field-of-view (FoV). Furthermore, it proposes Random Scale Augmentation (RSA) to mitigate the scale overfitting issue dur…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Generalizability
+  - "CVPR 2026"
+  - "Robotics"
+  - "Fisheye Camera"
+  - "Robotic Manipulation"
+  - "Imitation Learning"
+  - "Field of View (FoV)"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 6381584009921105
+content_hash: 0fc2bcdabf6fd6c1
 ---
+
 # Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation
 
 **Conference**: CVPR 2026  
@@ -154,6 +159,7 @@ The baseline fails almost completely (0.003) on the wide lens, while RSA recover
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -162,7 +168,7 @@ The baseline fails almost completely (0.003) on the wide lens, while RSA recover
 - [\[CVPR 2026\] Rethinking Intermediate Representation for VLM-based Robot Manipulation](rethinking_intermediate_representation_for_vlm-based_robot_manipulation.md)
 - [\[CVPR 2026\] INSIGHT Bench: Towards Grounded IN-SItu Guidance for Robotic Manipulation](insight_bench_towards_grounded_in-situ_guidance_for_robotic_manipulation.md)
 - [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
-- [\[CVPR 2026\] PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)
+- [\[CVPR 2026\] Rethinking Visual Rearrangement from A Diffusion Perspective](rethinking_visual_rearrangement_from_a_diffusion_perspective.md)
 
 </div>
 

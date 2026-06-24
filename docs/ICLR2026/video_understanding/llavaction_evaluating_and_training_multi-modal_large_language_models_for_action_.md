@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding
 description: >-
-  [ICLR 2026][Video Understanding][MLLM] This paper reconstructs EPIC-KITCHENS-100 into a benchmark that rigorously tests fine-grained action discrimination (EPIC-KITCHENS-100-MQA) by using "expert action recognition models to select hard distractors." It proposes LLaVAction—which strengthens visual information utilization via action tokens and a two-stage st
+  [ICLR 2026][Video Understanding][MLLM] This paper reconstructs EPIC-KITCHENS-100 into a benchmark that rigorously tests fine-grained action discrimination (EPIC-KITCHENS-100-MQA) by using "expert action recognition models to select hard distractors." It proposes LLaVAction—which strengthens visual information utilization via action tokens and a two-stage structured output—enabling general video MLLMs to outperform GPT-4o by 21 points in egocentric action recognition and achie…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - MLLM
-  - EPIC-KITCHENS-100
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "MLLM"
+  - "Action Understanding"
+  - "EPIC-KITCHENS-100"
+  - "Hard Negative Mining"
+  - "Action Token"
+  - "First-person Video"
 date: 2026-05-08
-content_hash: ac31f6e8a1f390c5
+content_hash: 2007544d31d7a270
 ---
+
 # LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding
 
 **Conference**: ICLR 2026  
@@ -146,10 +151,10 @@ All models drop sharply under hard distractors, confirming that the fine-grained
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond Static Vision: Scene Dynamic Field Unlocks Intuitive Physics Understanding in Multi-modal Large Language Models](beyond_static_vision_scene_dynamic_field_unlocks_intuitive_physics_understanding.md)
-- [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
 - [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](../../ICCV2025/video_understanding/4dbench_benchmarking_multimodal_large_language_models_for_4d.md)
+- [\[ICLR 2026\] FlashVID: Efficient Video Large Language Models via Training-free Tree-Based Spatiotemporal Token Merging](flashvid_efficient_video_large_language_models_via_training-free_tree-based_spat.md)
 - [\[ICML 2026\] OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](../../ICML2026/video_understanding/omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)
-- [\[ICLR 2026\] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](invert4tvg_a_temporal_video_grounding_framework_with_inversion_tasks_preserving_.md)
+- [\[ICLR 2026\] V2P-Bench: Evaluating Video-Language Understanding with Visual Prompts for Better Human-Model Interaction](v2p-bench_evaluating_video-language_understanding_with_visual_prompts_for_better.md)
 
 </div>
 

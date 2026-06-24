@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment
 description: >-
-  [ICLR 2026][Time Series][Paper Note] Ours proposes the TSRating framework, which utilizes LLMs to perform pairwise quality comparisons of time series (TS) data blocks across four dimensions: trend, frequency, amplitude, and pattern. These comparisons are converted into scalar quality scores using the Bradley-Terry model. A TSRater model (comprising a MOME
+  [Time Series] Ours proposes the TSRating framework, which utilizes LLMs to perform pairwise quality comparisons of time series (TS) data blocks across four dimensions: trend, frequency, amplitude, and pattern. These comparisons are converted into scalar quality scores using the Bradley-Terry model. A TSRater model (comprising a MOMENT encoder and an MLP) is then trained via MAML meta-learning across 22 subsets in 9 domains, achieving efficient and unified cross-domain TS data…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "Time Series"
 date: 2026-05-08
-content_hash: 0ace2a8cc71c0a8e
+content_hash: 8edd8fadff29aff0
 ---
+
 # Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment
 
 ## TL;DR
@@ -166,8 +166,8 @@ Qurating pioneered LLM-as-judge for text. Ours extends this to TS by designing d
 - [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](scits_scientific_time_series_understanding_and_generation_with_llms.md)
 - [\[AAAI 2026\] Finding Time Series Anomalies using Granular-ball Vector Data Description](../../AAAI2026/time_series/finding_time_series_anomalies_using_granular-ball_vector_data_description.md)
 - [\[ICLR 2026\] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning](swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi.md)
+- [\[ICLR 2026\] Structure Learning from Time-Series Data with Lag-Agnostic Structural Prior](structure_learning_from_time-series_data_with_lag-agnostic_structural_prior.md)
 - [\[ICLR 2026\] MMPD: Diverse Time Series Forecasting via Multi-Mode Patch Diffusion Loss](mmpd_diverse_time_series_forecasting_via_multi-mode_patch_diffusion_loss.md)
-- [\[ICLR 2026\] AutoDA-Timeseries: Automated Data Augmentation for Time Series](autoda-timeseries_automated_data_augmentation_for_time_series.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reward Redistribution via Gaussian Process Likelihood Estimation
 description: >-
-  [AAAI 2026][Sparse Reward] This paper proposes GP-LRR, a reward redistribution framework based on Gaussian process likelihood estimation. It explicitly models correlations among state-action pairs via kernel functions…
+  [AAAI 2026][Sparse Reward] This paper proposes GP-LRR, a reward redistribution framework based on Gaussian process likelihood estimation. It explicitly models correlations among state-action pairs via kernel functions, and learns a step-wise reward function by maximizing the marginal likelihood of trajectory returns using a leave-one-out strategy. Theoretical analysis demonstrates that conventional MSE-based methods are a degenerate special case of GP-LRR. Experiments on MuJo…
 tags:
   - "AAAI 2026"
   - "Sparse Reward"
@@ -11,7 +11,7 @@ tags:
   - "Likelihood Estimation"
   - "Credit Assignment"
 date: 2026-05-08
-content_hash: ba86f25036843a4e
+content_hash: 225e2cb6fa6a6be4
 ---
 
 # Reward Redistribution via Gaussian Process Likelihood Estimation
@@ -198,11 +198,11 @@ No universally optimal initialization exists — HalfCheetah favors large values
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](../../NeurIPS2025/others/gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
 - [\[AAAI 2026\] Expressive Temporal Specifications for Reward Monitoring](expressive_temporal_specifications_for_reward_monitoring.md)
+- [\[NeurIPS 2025\] Gaussian Process Upper Confidence Bound Achieves Nearly-Optimal Regret in Noise-Free Gaussian Process Bandits](../../NeurIPS2025/others/gaussian_process_upper_confidence_bound_achieves_nearly-optimal_regret_in_noise-.md)
 - [\[ICML 2026\] Position: Age Estimation Models Do Not Process Biometric Data](../../ICML2026/others/position_age_estimation_models_do_not_process_biometric_data.md)
 - [\[AAAI 2026\] Private Frequency Estimation via Residue Number Systems](private_frequency_estimation_via_residue_number_systems.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](scalable_vision-guided_crop_yield_estimation.md)
+- [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
 
 </div>
 

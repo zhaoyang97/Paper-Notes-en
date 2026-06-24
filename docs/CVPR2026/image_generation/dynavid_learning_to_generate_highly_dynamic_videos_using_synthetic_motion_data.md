@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic video) to train video diffusion models. Through a two-stage framework consisting of a Motion Generator and a Motion-guided Video Generator, it achieves realistic video synthesis of highly dynamic motions and precise
+  [CVPR 2026][Image Generation][Video Diffusion Models] DynaVid proposes utilizing synthetic optical flow rendered via computer graphics (rather than synthetic video) to train video diffusion models. Through a two-stage framework consisting of a Motion Generator and a Motion-guided Video Generator, it achieves realistic video synthesis of highly dynamic motions and precise camera control.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Video Diffusion Models"
+  - "Synthetic Motion Data"
+  - "Optical Flow"
+  - "Dynamic Motion Generation"
+  - "Camera Control"
 date: 2026-05-08
-content_hash: 3009a9662861542d
+content_hash: a3e70324dfc420c4
 ---
+
 # DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Having a clean motion signal is not enough; the training strategy must ensure th
 
 ## Related Papers
 
+- [\[ICLR 2026\] CineTrans: Learning to Generate Videos with Cinematic Transitions via Masked Diffusion Models](../../ICLR2026/image_generation/cinetrans_learning_to_generate_videos_with_cinematic_transitions_via_masked_diff.md)
 - [\[CVPR 2026\] iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation](imontage_unified_versatile_highly_dynamic_many-to-many_image_generation.md)
 - [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)
 - [\[CVPR 2026\] Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training](beyond_the_golden_data_resolving_the_motion-vision_quality_dilemma_via_timestep_.md)
 - [\[CVPR 2026\] Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained Classification](beyond_objects_contextual_synthetic_data_generation_for_fine-grained_classificat.md)
-- [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
 
 </div>
 

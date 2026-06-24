@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective
 description: >-
-  [ICCV 2025][Model Compression][Mixed-Precision Quantization] This paper proposes MixA-Q, a mixed-precision activation quantization framework that repurposes window-level activation sparsity (originally used for pruning)…
+  [ICCV 2025][Model Compression][Mixed-Precision Quantization] This paper proposes MixA-Q, a mixed-precision activation quantization framework that repurposes window-level activation sparsity (originally used for pruning) as a dimension for quantization — assigning lower bit-widths to less important windows rather than skipping their computation entirely. The method achieves lossless 1.35× speedup under PTQ and lossless 1.25× speedup under QAT on COCO object detection…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Swin Transformer"
   - "Efficient Inference"
 date: 2026-05-08
-content_hash: 8044fe4658f292b6
+content_hash: 2fa0496786ef9ef0
 ---
 
 # MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective
@@ -163,11 +163,11 @@ MixA-Q replaces the standard Swin Block in the Swin Transformer with a **Two-Bra
 
 ## Related Papers
 
-- [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](../../ICML2026/model_compression/gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
-- [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](../../NeurIPS2025/model_compression/duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
-- [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
+- [\[ICLR 2026\] STaMP: Sequence Transformation and Mixed Precision for Low-Precision Activation Quantization](../../ICLR2026/model_compression/stamp_sequence_transformation_and_mixed_precision_for_low-precision_activation_q.md)
+- [\[CVPR 2025\] L-SWAG: Layer-Sample Wise Activation with Gradients for Zero-Shot NAS on Vision Transformers](../../CVPR2025/model_compression/l_swag_zero_shot_nas_vision_transformers.md)
 - [\[ICCV 2025\] EA-ViT: Efficient Adaptation for Elastic Vision Transformer](ea-vit_efficient_adaptation_for_elastic_vision_transformer.md)
+- [\[CVPR 2025\] FIMA-Q: Post-Training Quantization for Vision Transformers by Fisher Information Matrix Approximation](../../CVPR2025/model_compression/fima-q_post-training_quantization_for_vision_transformers_by_fisher_information_.md)
+- [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
 
 </div>
 

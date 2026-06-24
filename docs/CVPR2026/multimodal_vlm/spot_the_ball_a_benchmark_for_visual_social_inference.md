@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spot The Ball: A Benchmark for Visual Social Inference
 description: >-
-  [CVPR 2026][Multimodal VLM][VLM benchmark] This paper introduces the SPOT THE BALL benchmark: humans and VLMs are tasked with inferring the location of a ball from sports images where it has been erased. The study finds that while humans rely on social cues like player gaze and pose—achieving 2–3x the accuracy of models—four leading VLMs only utilize superficia
+  [CVPR 2026][Multimodal VLM][Visual Social Inference] This paper introduces the SPOT THE BALL benchmark: humans and VLMs are tasked with inferring the location of a ball from sports images where it has been erased. The study finds that while humans rely on social cues like player gaze and pose—achieving 2–3x the accuracy of models—four leading VLMs only utilize superficial spatial heuristics like "guessing the center" or "near players," exposing systematic deficiencies in curr…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - VLM benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Social Inference"
+  - "VLM benchmark"
+  - "Theory of Mind"
+  - "Gaze/Pose Cues"
+  - "Human-AI Gap"
 date: 2026-05-08
-content_hash: a4b09295c6f74749
+content_hash: 76887f3ebfe334ea
 ---
+
 # Spot The Ball: A Benchmark for Visual Social Inference
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ Human entropy (~0.855) is consistently higher than models (0.698–0.808), sugge
 
 ## Related Papers
 
-- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
+- [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
+- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
 - [\[ACL 2025\] Multimodal Coreference Resolution for Chinese Social Media Dialogues: Dataset and Benchmark Approach](../../ACL2025/multimodal_vlm/multimodal_coreference_resolution_for_chinese_social_media_dialogues_dataset_and.md)
-- [\[CVPR 2026\] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)
 - [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
-- [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
+- [\[CVPR 2026\] FAVE: A Structured Benchmark for Fine-Grained Audio-Visual Temporal Evaluation in Multimodal LLMs](fave_a_structured_benchmark_for_fine-grained_audio-visual_temporal_evaluation_in.md)
 
 </div>
 

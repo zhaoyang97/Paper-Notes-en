@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper reformulates the exact Wasserstein barycenter as an unconstrained concave dual problem and performs gradient ascent directly in the $\dot H^1$ Sobolev geometry. This approach eliminates expensive $c$-concavity projections while providing a global $O(T^{-1/2})$ convergence guarantee, matching the order of cla
+  [ICLR 2026][Optimization][Wasserstein Barycenter] This paper reformulates the exact Wasserstein barycenter as an unconstrained concave dual problem and performs gradient ascent directly in the $\dot H^1$ Sobolev geometry. This approach eliminates expensive $c$-concavity projections while providing a global $O(T^{-1/2})$ convergence guarantee, matching the order of classical non-smooth convex optimization.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Wasserstein Barycenter"
+  - "Sobolev Gradient Ascent"
+  - "Unconstrained Dual"
+  - "Exact Optimal Transport"
+  - "Convergence Analysis"
 date: 2026-05-08
-content_hash: c0a9abbacc08c120
+content_hash: 5930f90432d4eab9
 ---
+
 # Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis
 
 **Conference**: ICLR 2026  
@@ -219,10 +225,6 @@ The paper analyzes two types of step sizes. If the total iteration count $T$ is 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
-
-<!-- RELATED:END INDEX:8 -->
 
 ## Related Papers
 

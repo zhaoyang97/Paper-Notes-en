@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] This work reveals the "Feature-Inversion Trap" of MGT detectors in personalized scenarios—where features distinguishing human-written text (HWT) and machine-generated text (MGT) in general domains invert in personalized domains, causing detector performance to collapse or even flip. The authors propose the StyloCheck f
+  [ACL 2026 Oral][AIGC Detection][Machine-Generated Text Detection] This work reveals the "Feature-Inversion Trap" of MGT detectors in personalized scenarios—where features distinguishing human-written text (HWT) and machine-generated text (MGT) in general domains invert in personalized domains, causing detector performance to collapse or even flip. The authors propose the StyloCheck framework to predict cross-domain performance changes by quantifying the detector's reliance on…
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL 2026 Oral"
+  - "AIGC Detection"
+  - "Machine-Generated Text Detection"
+  - "Personalized Text"
+  - "Feature Inversion"
+  - "Style Transfer"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 5ffbe7cab4cb06e6
+content_hash: ba0e9bc081809df4
 ---
+
 # When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection
 
 **Conference**: ACL 2026 Oral  
@@ -136,7 +142,7 @@ The core StyloCheck method is a diagnostic framework rather than a training meth
 - [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](../../ICML2026/aigc_detection/feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
 - [\[ACL 2025\] Iron Sharpens Iron: Defending Against Attacks in Machine-Generated Text Detection with Adversarial Training](../../ACL2025/aigc_detection/greater_adversarial_mgt_detection.md)
-- [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
+- [\[ACL 2026\] Authorship Attribution in Multilingual Machine-Generated Texts](authorship_attribution_in_multilingual_machine-generated_texts.md)
 
 </div>
 

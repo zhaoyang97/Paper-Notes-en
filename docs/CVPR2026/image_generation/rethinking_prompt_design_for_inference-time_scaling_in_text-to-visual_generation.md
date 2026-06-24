@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation
 description: >-
-  [CVPR 2026][Image Generation][text-to-visual] This paper introduces PRIS: In text-to-image/video inference-time scaling, instead of simply increasing computation for "sampling more images," it utilizes a fine-grained verifier (EFC) to identify "common failure elements" recurring across multiple samples. It then redesigns the prompt for regeneration, allowing the p
+  [CVPR 2026][Image Generation][text-to-visual] This paper introduces PRIS: In text-to-image/video inference-time scaling, instead of simply increasing computation for "sampling more images," it utilizes a fine-grained verifier (EFC) to identify "common failure elements" recurring across multiple samples. It then redesigns the prompt for regeneration, allowing the prompt and visual quality to scale together with computation. This achieves a $+7\%$ gain on GenAI-Bench and a $+15…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - text-to-visual
-  - inference-time scaling
-  - prompt redesign
-  - MLLM verifier
-  - text-to-video
+  - "CVPR 2026"
+  - "Image Generation"
+  - "text-to-visual"
+  - "inference-time scaling"
+  - "prompt redesign"
+  - "MLLM verifier"
+  - "text-to-video"
 date: 2026-05-08
-content_hash: 373785c13d7fd9e5
+content_hash: cbc967e2fdce6990
 ---
+
 # Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation
 
 **Conference**: CVPR 2026  
@@ -134,11 +135,11 @@ For T2V on VBench 2.0 (Wan2.1-1.3B/14B), PRIS shows significant gains in tempora
 
 ## Related Papers
 
+- [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](../../ICLR2026/image_generation/compositional_visual_planning_via_inference-time_diffusion_scaling.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](../../ICLR2026/image_generation/inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](../../ICLR2026/image_generation/inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[CVPR 2026\] Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)
-- [\[CVPR 2026\] Tiny Inference-Time Scaling with Latent Verifiers](tiny_inference-time_scaling_with_latent_verifiers.md)
-- [\[CVPR 2026\] From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)
-- [\[ICML 2025\] Performance Plateaus in Inference-Time Scaling for Text-to-Image Diffusion Without External Models](../../ICML2025/image_generation/performance_plateaus_in_inference-time_scaling_for_text-to-image_diffusion_witho.md)
-- [\[CVPR 2026\] Rethinking UMM Visual Generation: Masked Modeling for Efficient Image-Only Pre-training](rethinking_umm_visual_generation_masked_modeling_for_efficient_image-only_pre-tr.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](../../ICLR2026/image_generation/scaling_group_inference_for_diverse_and_high-quality_generation.md)
 
 </div>
 

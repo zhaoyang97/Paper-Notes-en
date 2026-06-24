@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] UrbanGS：面向几何精确的大规模城市高斯泼溅的高效可扩展架构
+  [Paper Note] UrbanGS: Efficient and Scalable Architecture for Geometrically Accurate Large-Scale Urban Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] UrbanGS extends 3DGS to city-level scenes using a quartet of "depth-consistent D-Normal dual-supervised regularization + geometry-aware confidence weighting + spatially adaptive Gaussian pruning + unified partitioning." It surpasses methods like CityGaussian-v2 and VCR-GauS in rendering quality, geometric accuracy, and
+  [ICLR 2026][3D Vision][Gaussian Splatting] UrbanGS extends 3DGS to city-level scenes using a quartet of "depth-consistent D-Normal dual-supervised regularization + geometry-aware confidence weighting + spatially adaptive Gaussian pruning + unified partitioning." It surpasses methods like CityGaussian-v2 and VCR-GauS in rendering quality, geometric accuracy, and memory efficiency, while remaining runnable on a single A5000 without memory overflow.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Large-scale scene reconstruction"
+  - "Urban reconstruction"
+  - "Depth-normal regularization"
+  - "Adaptive pruning"
 date: 2026-05-08
-content_hash: c172e5cc6ce8dffa
+content_hash: 5343a9144df55617
 ---
+
 # UrbanGS: Efficient and Scalable Architecture for Geometrically Accurate Large-Scale Urban Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -176,11 +182,11 @@ Geometric Regularization Ablation (Modern Building):
 
 ## Related Papers
 
-- [\[ICLR 2026\] EgoNight: Towards Egocentric Vision Understanding at Night with a Challenging Benchmark](egonight_towards_egocentric_vision_understanding_at_night_with_a_challenging_ben.md)
+- [\[CVPR 2026\] MetroGS: Efficient and Stable Reconstruction of Geometrically Accurate High-Fidelity Large-Scale Scenes](../../CVPR2026/3d_vision/metrogs_efficient_and_stable_reconstruction_of_geometrically_accurate_high-fidel.md)
 - [\[ICLR 2026\] Signal Structure-Aware Gaussian Splatting for Large-Scale Scene Reconstruction](signal_structure-aware_gaussian_splatting_for_large-scale_scene_reconstruction.md)
-- [\[ICLR 2026\] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting](fracture-gs_dynamic_fracture_simulation_with_physics-integrated_gaussian_splatti.md)
-- [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
-- [\[ICLR 2026\] ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion](resplat_degradation-agnostic_feed-forward_gaussian_splatting_via_self-guided_res.md)
+- [\[NeurIPS 2025\] LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](../../NeurIPS2025/3d_vision/lodge_level-of-detail_large-scale_gaussian_splatting_with_efficient_rendering.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior](g4splat_geometry-guided_gaussian_splatting_with_generative_prior.md)
 
 </div>
 

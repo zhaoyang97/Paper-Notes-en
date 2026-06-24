@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spectral Guidance for Flexible and Efficient Control of Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Self-Supervised Learning] This paper proposes Spectral Guidance: by self-supervising the learning of the left singular functions of the conditional expectation operator in the diffusion process, arbitrary guidance signals (labels / CLIP / masks) are projected onto a set of spectral bases aligned with diffusion dynamics. This bypasses denoiser b
+  [ICML 2026][Image Generation][Spectral Guidance] This paper proposes Spectral Guidance: by self-supervising the learning of the left singular functions of the conditional expectation operator in the diffusion process, arbitrary guidance signals (labels / CLIP / masks) are projected onto a set of spectral bases aligned with diffusion dynamics. This bypasses denoiser backpropagation, achieving a 37 percentage point accuracy improvement over the strongest training-free baseline…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Image Generation"
+  - "Spectral Guidance"
+  - "Training-free Guidance"
+  - "Conditional Expectation Operator"
+  - "Singular Value Decomposition"
+  - "Self-supervised Learning"
 date: 2026-05-08
-content_hash: bc44f3c5782a1794
+content_hash: d2cf9a5d3c551f98
 ---
+
 # Spectral Guidance for Flexible and Efficient Control of Diffusion Models
 
 **Conference**: ICML 2026  
@@ -150,11 +155,11 @@ Efficiency Contrast (CelebA-HQ, DDIM 100 steps, batch=1):
 
 ## Related Papers
 
-- [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
 - [\[ICML 2026\] Caracal: Causal Architecture via Spectral Mixing](caracal_causal_architecture_via_spectral_mixing.md)
+- [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
 - [\[AAAI 2026\] RelaCtrl: Relevance-Guided Efficient Control for Diffusion Transformers](../../AAAI2026/image_generation/relactrl_relevance-guided_efficient_control_for_diffusion_transformers.md)
+- [\[ICLR 2026\] Efficient Zero-shot Inpainting with Decoupled Diffusion Guidance](../../ICLR2026/image_generation/efficient_zero-shot_inpainting_with_decoupled_diffusion_guidance.md)
 - [\[CVPR 2026\] SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models](../../CVPR2026/image_generation/seacache_spectral-evolution-aware_cache_for_accelerating_diffusion_models.md)
-- [\[ICML 2026\] GuidedBridge: Training-freely Improving Bridge Models with Prior Guidance](guidedbridge_training-freely_improving_bridge_models_with_prior_guidance.md)
 
 </div>
 

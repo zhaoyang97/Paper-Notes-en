@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging
 description: >-
-  [NeurIPS 2025][Medical Imaging][Continual learning] This paper proposes an exemplar-free continual learning framework that combines class-conditional DDPM diffusion replay with Elastic Weight Consolidation (EWC)…
+  [NeurIPS 2025][Medical Imaging][Continual learning] This paper proposes an exemplar-free continual learning framework that combines class-conditional DDPM diffusion replay with Elastic Weight Consolidation (EWC), achieving an AUROC of 0.851 on MedMNIST v2 (8 tasks across 2D/3D) and CheXpert, reducing forgetting by over 30% compared to DER++, approaching the joint training upper bound (0.869), while requiring no storage of original patient data.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "privacy preservation"
   - "catastrophic forgetting"
 date: 2026-05-08
-content_hash: c043352593ea57f8
+content_hash: e09d624c47ec1eba
 ---
 
 # EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging
@@ -153,11 +153,11 @@ $$\bar{F} \leq \alpha \cdot D_{\text{KL}}(p_j \| \hat{p}_j) + \beta \sum_i F_i(\
 
 ## Related Papers
 
+- [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](../../CVPR2026/medical_imaging/forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
 - [\[NeurIPS 2025\] DIsoN: Decentralized Isolation Networks for Out-of-Distribution Detection in Medical Imaging](dison_decentralized_isolation_networks_for_out-of-distribution_detection_in_medi.md)
 - [\[NeurIPS 2025\] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology](semantic_and_visual_crop-guided_diffusion_models_for_heterogeneous_tissue_synthe.md)
 - [\[AAAI 2026\] Learning with Preserving for Continual Multitask Learning](../../AAAI2026/medical_imaging/learning_with_preserving_for_continual_multitask_learning.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning via Flow-Guided Neural Operator on Time-Series Data](self-supervised_learning_via_flow-guided_neural_operator_on_time-series_data.md)
 
 </div>
 

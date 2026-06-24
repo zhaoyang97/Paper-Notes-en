@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs
 description: >-
-  [NeurIPS 2025][Medical Imaging][State Space Models] DyG-Mamba introduces continuous state space models (SSMs) into dynamic graph learning. It proposes a temporal span-aware continuous SSM that models irregular time inter…
+  [NeurIPS 2025][Medical Imaging][State Space Models] DyG-Mamba introduces continuous state space models (SSMs) into dynamic graph learning. It proposes a temporal span-aware continuous SSM that models irregular time intervals via an exponential decay function inspired by the Ebbinghaus forgetting curve, combined with input-dependent parameters constrained by spectral norm for Lipschitz robustness. The method achieves an average rank of 2.42 across 12 dynamic graph benchmarks (…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Mamba"
   - "Link Prediction"
 date: 2026-05-08
-content_hash: 6875858122d6cc9d
+content_hash: 7f1a697c11f0e21a
 ---
 
 # DyG-Mamba: Continuous State Space Modeling on Dynamic Graphs
@@ -131,11 +131,11 @@ A key property is that all parameters carry theoretical guarantees — negative 
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
 - [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
 - [\[NeurIPS 2025\] GeoDynamics: A Geometric State-Space Neural Network for Understanding Brain Dynamics on Riemannian Manifolds](geodynamics_a_geometric_state-space_neural_network_for_understanding_brain_dynam.md)
-- [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
-- [\[NeurIPS 2025\] Modeling X-ray Photon Pile-up with a Normalizing Flow](modeling_x-ray_photon_pile-up_with_a_normalizing_flow.md)
-- [\[NeurIPS 2025\] Few-Shot Learning from Gigapixel Images via Hierarchical Vision-Language Alignment and Modeling](few-shot_learning_from_gigapixel_images_via_hierarchical_vision-language_alignme.md)
+- [\[ICLR 2026\] ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks](../../ICLR2026/medical_imaging/odebrain_continuous-time_eeg_graph_for_modeling_dynamic_brain_networks.md)
+- [\[NeurIPS 2025\] EvoBrain: Dynamic Multi-Channel EEG Graph Modeling for Time-Evolving Brain Networks](evobrain_dynamic_multi-channel_eeg_graph_modeling_for_time-evolving_brain_networ.md)
 
 </div>
 

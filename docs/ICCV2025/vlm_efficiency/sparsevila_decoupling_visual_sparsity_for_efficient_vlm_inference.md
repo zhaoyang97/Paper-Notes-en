@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference
 description: >-
-  [ICCV 2025][Multimodal VLM][VLM] This paper proposes SparseVILA—the first VLM inference acceleration framework that decouples visual sparsity between the prefill and decode stages: query-agnostic redundant token pruning…
+  [ICCV 2025][Multimodal Efficiency][VLM] This paper proposes SparseVILA—the first VLM inference acceleration framework that decouples visual sparsity between the prefill and decode stages: query-agnostic redundant token pruning during prefill, and query-aware relevant token retrieval during decode. The approach achieves up to 4.0× prefill speedup, 2.5× decode throughput improvement, and 2.6× end-to-end acceleration, while maintaining accuracy in multi-turn conversation setting…
 tags:
   - "ICCV 2025"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "VLM"
   - "Token Pruning"
   - "KV-Cache"
@@ -13,7 +13,7 @@ tags:
   - "Multi-turn Conversation"
   - "Prefill-Decode"
 date: 2026-05-08
-content_hash: e5df2b0fc1c23cf2
+content_hash: 152f2ab59bb7d059
 ---
 
 # SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference
@@ -181,11 +181,11 @@ Retrieved tokens in SparseVILA exhibit two distinct roles:
 
 ## Related Papers
 
-- [\[ICCV 2025\] SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs](sparsemm_head_sparsity_emerges_from_visual_concept_responses_in_mllms.md)
-- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](../../CVPR2026/multimodal_vlm/vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
-- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](../../NeurIPS2025/multimodal_vlm/hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
-- [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](../../CVPR2026/multimodal_vlm/duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
-- [\[ICCV 2025\] Scaling Inference-Time Search with Vision Value Model for Improved Visual Comprehension](scaling_inferencetime_search_with_vision_value_model_for_imp.md)
+- [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](../../CVPR2026/vlm_efficiency/segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
+- [\[ICCV 2025\] Dynamic-VLM: Simple Dynamic Visual Token Compression for VideoLLM](dynamic-vlm_simple_dynamic_visual_token_compression_for_videollm.md)
+- [\[CVPR 2026\] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm](../../CVPR2026/vlm_efficiency/vlm-pruner_buffering_for_spatial_sparsity_in_an_efficient_vlm_centrifugal_token_.md)
+- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](../../NeurIPS2025/vlm_efficiency/hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
+- [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](../../CVPR2026/vlm_efficiency/duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
 
 </div>
 

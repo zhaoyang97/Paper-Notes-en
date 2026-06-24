@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Interpreting Style Representations via Style-Eliciting Prompts
 description: >-
-  [ACL 2026][Interpretability][synthetic supervision] This paper decodes difficult-to-interpret text style vectors into style-eliciting prompts that can directly drive LLM writing. Using "controllability" as an interpretability criterion, the method outperforms baselines that rely on direct LLM descriptions of target styles in tasks involving style recovery, synthetic tex
+  [ACL2026 Findings][Interpretability][Style Representation] This paper decodes difficult-to-interpret text style vectors into style-eliciting prompts that can directly drive LLM writing. Using "controllability" as an interpretability criterion, the method outperforms baselines that rely on direct LLM descriptions of target styles in tasks involving style recovery, synthetic text style control, and human text style imitation.
 tags:
-  - ACL 2026
-  - Interpretability
-  - synthetic supervision
+  - "ACL2026 Findings"
+  - "Interpretability"
+  - "Style Representation"
+  - "Style Prompts"
+  - "Interpretable Representation"
+  - "Text Style Control"
+  - "Synthetic Supervision"
 date: 2026-05-08
-content_hash: 2b2ea22dd103df51
+content_hash: ac4a0562bef6586c
 ---
+
 # Interpreting Style Representations via Style-Eliciting Prompts
 
 **Conference**: ACL2026 Findings  

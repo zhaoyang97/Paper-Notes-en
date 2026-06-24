@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus
 description: >-
-  [CVPR 2026][Others][Paper Note] Starting from the physical mechanism of event generation, the paper refutes the traditional assumption that "event rate is highest at the sharpest focus." It proves that the true focus corresponds to a **valley (local minimum) between two peaks** on the event rate curve. Based on this, the ESVA framework is proposed, w
+  [CVPR 2026][3D Vision][Event Camera] Starting from the physical mechanism of event generation, the paper refutes the traditional assumption that "event rate is highest at the sharpest focus." It proves that the true focus corresponds to a **valley (local minimum) between two peaks** on the event rate curve. Based on this, the ESVA framework is proposed, which requires no image reconstruction or supervision, reducing autofocus error to SOTA on multiple synthetic and real datas…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Event Camera"
+  - "Autofocus"
+  - "Bimodal-Valley Structure"
+  - "Event Rate Curve"
+  - "Neuromorphic Vision"
 date: 2026-05-08
-content_hash: f0334f0687c52a1f
+content_hash: 20fd01a7a0415a99
 ---
+
 # Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ Note: ELP error on EAD is very high (475.87 µm); the closest competitor is OLE'
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unsupervised 3D Motion Estimation Using Event Camera](unsupervised_3d_motion_estimation_using_event_camera.md)
+- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
 - [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
+- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
 - [\[CVPR 2026\] Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)
-- [\[CVPR 2026\] Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios](adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het.md)
-- [\[CVPR 2025\] Event Ellipsometer: Event-based Mueller-Matrix Video Imaging](../../CVPR2025/others/event_ellipsometer_event-based_mueller-matrix_video_imaging.md)
-- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
 
 </div>
 

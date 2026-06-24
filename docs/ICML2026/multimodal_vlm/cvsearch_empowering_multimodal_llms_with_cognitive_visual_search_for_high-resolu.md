@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] CVSearch proposes a training-free "Assess-then-Search" cognitive framework: a rapid localization is first performed using a visual expert (SAM 3); if the expert fails, a semantic-guided adaptive patching and bottom-up search are triggered as a fallback. It achieves SOTA in both accuracy and efficiency on high-resolutio
+  [ICML2026][Multimodal VLM][High-resolution perception] CVSearch proposes a training-free "Assess-then-Search" cognitive framework: a rapid localization is first performed using a visual expert (SAM 3); if the expert fails, a semantic-guided adaptive patching and bottom-up search are triggered as a fallback. It achieves SOTA in both accuracy and efficiency on high-resolution benchmarks such as V*Bench and HR-Bench.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML2026"
+  - "Multimodal VLM"
+  - "High-resolution perception"
+  - "visual search"
+  - "training-free framework"
+  - "semantic adaptive patching"
+  - "bottom-up search"
 date: 2026-05-08
-content_hash: e74befd13d939460
+content_hash: 71f977325647f236
 ---
+
 # CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception
 
 **Conference**: ICML2026  
@@ -141,9 +147,9 @@ Applying CVSearch to 7B-class models allows them to outperform 32B models and GP
 ## Related Papers
 
 - [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](../../CVPR2026/multimodal_vlm/sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
+- [\[ICLR 2026\] InSight-o3: Empowering Multimodal Foundation Models with Generalized Visual Search](../../ICLR2026/multimodal_vlm/insight-o3_empowering_multimodal_foundation_models_with_generalized_visual_searc.md)
 - [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
-- [\[ICLR 2026\] GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?](../../ICLR2026/multimodal_vlm/glyph-sr_can_we_achieve_both_high-quality_image_super-resolution_and_high-fideli.md)
-- [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](../../ICCV2025/multimodal_vlm/hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
+- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](../../ICLR2026/multimodal_vlm/ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 - [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
 
 </div>

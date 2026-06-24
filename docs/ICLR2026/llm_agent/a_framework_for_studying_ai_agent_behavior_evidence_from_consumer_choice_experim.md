@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] A Framework for Studying AI Agent Behavior: Evidence from Consumer Choice Experiments
 description: >-
-  [ICLR 2026][LLM Agent][nudge] The authors propose **ABXLAB**, a real-time "man-in-the-middle" framework that intercepts and rewrites webpage content to transform any shopping site into a controlled behavioral experiment. By systematically measuring choice biases in 17 mainstream LLM agents under cues like price, rating, display order, and psycholog
+  [ICLR 2026][LLM Agent][Agent decision making] The authors propose **ABXLAB**, a real-time "man-in-the-middle" framework that intercepts and rewrites webpage content to transform any shopping site into a controlled behavioral experiment. By systematically measuring choice biases in 17 mainstream LLM agents under cues like price, rating, display order, and psychological nudges, they find that agents are more manipulable than humans, with bias magnitudes reaching 3–10 times thos…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - nudge
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent decision making"
+  - "consumer choice"
+  - "behavioral bias"
+  - "nudge"
+  - "man-in-the-middle framework"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 597f3441bc2a3974
+content_hash: ba30c2b72b495b16
 ---
+
 # A Framework for Studying AI Agent Behavior: Evidence from Consumer Choice Experiments
 
 **Conference**: ICLR 2026  
@@ -122,9 +127,9 @@ To benchmark agent bias, 30 subjects from Prolific performed 50 decisions each u
 
 - [\[ICLR 2026\] EXP-Bench: Can AI Conduct AI Research Experiments?](exp-bench_can_ai_conduct_ai_research_experiments.md)
 - [\[ICLR 2026\] OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety](openagentsafety_a_comprehensive_framework_for_evaluating_real-world_ai_agent_saf.md)
+- [\[ICLR 2026\] SciNav: A General Agent Framework for Scientific Coding Tasks](scinav_a_general_agent_framework_for_scientific_coding_tasks.md)
 - [\[ICLR 2026\] MedAgent-Pro: Towards Evidence-based Multi-modal Medical Diagnosis via Reasoning Agentic Workflow](medagent-pro_towards_evidence-based_multi-modal_medical_diagnosis_via_reasoning_.md)
 - [\[ICLR 2026\] WebWeaver: Structuring Web-Scale Evidence with Dynamic Outlines for Open-Ended Deep Research](webweaver_structuring_web-scale_evidence_with_dynamic_outlines_for_open-ended_de.md)
-- [\[ICLR 2026\] Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration](collaborative_gym_a_framework_for_enabling_and_evaluating_human-agent_collaborat.md)
 
 </div>
 

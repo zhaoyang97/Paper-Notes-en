@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vision-Language Asymmetry in Bistable Image Captioning
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper uses Wittgensteinian "duck-rabbit" style bistable images as probes. After characterizing three behavioral regimes of LLaVA across 3320 generations, a TopK Sparse Autoencoder (SAE) is trained on the CLIP layer it consumes. The study finds that 72% of bistable stimuli activate **feature pools for both interpre
+  [ICML 2026][Interpretability][Bistable images] This paper uses Wittgensteinian "duck-rabbit" style bistable images as probes. After characterizing three behavioral regimes of LLaVA across 3320 generations, a TopK Sparse Autoencoder (SAE) is trained on the CLIP layer it consumes. The study finds that 72% of bistable stimuli activate **feature pools for both interpretations simultaneously** in the vision tower (superposition). However, causal steering can only flip "default-dom…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Bistable images"
+  - "Vision-language asymmetry"
+  - "Sparse Autoencoders"
+  - "Causal intervention"
+  - "Seeing and Seeing-as"
 date: 2026-05-08
-content_hash: 846b9ac5cb0969e8
+content_hash: ccef274a1af83bfe
 ---
+
 # Vision-Language Asymmetry in Bistable Image Captioning
 
 **Conference**: ICML 2026  
@@ -129,10 +135,10 @@ Vision-side superposition is the modal regime (Phase 3, 69 stimuli with availabl
 ## Related Papers
 
 - [\[ACL 2025\] EXPERT: An Explainable Image Captioning Evaluation Metric with Structured Explanations](../../ACL2025/interpretability/expert_an_explainable_image_captioning_evaluation_metric_with_structured_explana.md)
-- [\[ICML 2026\] Textual Supervision Enhances Geospatial Representations in Vision-Language Models](textual_supervision_enhances_geospatial_representations_in_vision-language_model.md)
 - [\[ICLR 2026\] Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings](../../ICLR2026/interpretability/cross-modal_redundancy_and_the_geometry_of_vision-language_embeddings.md)
-- [\[NeurIPS 2025\] Efficient Vision-Language Reasoning via Adaptive Token Pruning](../../NeurIPS2025/interpretability/efficient_vision-language_reasoning_via_adaptive_token_pruning.md)
-- [\[ACL 2026\] Learning What Matters: Dynamic Dimension Selection and Aggregation for Interpretable Vision-Language Reward Modeling](../../ACL2026/interpretability/learning_what_matters_dynamic_dimension_selection_and_aggregation_for_interpreta.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[ICML 2026\] Textual Supervision Enhances Geospatial Representations in Vision-Language Models](textual_supervision_enhances_geospatial_representations_in_vision-language_model.md)
+- [\[ICLR 2026\] Inducing Dyslexia in Vision Language Models](../../ICLR2026/interpretability/inducing_dyslexia_in_vision_language_models.md)
 
 </div>
 

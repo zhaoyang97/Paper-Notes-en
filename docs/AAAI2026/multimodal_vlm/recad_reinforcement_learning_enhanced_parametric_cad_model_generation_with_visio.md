@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models
 description: >-
-  [Multimodal VLM] This paper proposes the ReCAD framework, which rewrites CAD scripts as parametric code for SFT, then applies GRPO-based reinforcement learning with a hierarchical primitive curriculum learning strategy…
+  [Multimodal VLM] This paper proposes the ReCAD framework, which rewrites CAD scripts as parametric code for SFT, then applies GRPO-based reinforcement learning with a hierarchical primitive curriculum learning strategy, enabling VLMs to generate high-precision, editable parametric CAD models from text or image inputs. The approach substantially outperforms existing methods in both in-distribution and out-of-distribution settings.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: 77165a08505ab0ae
+content_hash: d8c0747501f2ab8e
 ---
 
 # ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models
@@ -191,11 +191,11 @@ Mean CD drops from 73.47 to 29.61 (in-distribution) and from 272.06 to 80.23 (OO
 
 ## Related Papers
 
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
 - [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
 - [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[ACL 2025\] Can Vision Language Models Understand Mimed Actions?](../../ACL2025/multimodal_vlm/can_vision_language_models_understand_mimed_actions.md)
+- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
 
 </div>
 

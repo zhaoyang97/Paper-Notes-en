@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Riemannian Variational Flow Matching for Material and Protein Design
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes Riemannian Gaussian Variational Flow Matching (RG-VFM), which extends "endpoint prediction" Variational Flow Matching (VFM) to curved manifolds using the Riemannian Gaussian distribution. Using Jacobi fields, it is proved that RG-VFM naturally incorporates a curvature-related penalty compared to vel
+  [ICLR 2026][Computational Biology][Variational Flow Matching] This paper proposes Riemannian Gaussian Variational Flow Matching (RG-VFM), which extends "endpoint prediction" Variational Flow Matching (VFM) to curved manifolds using the Riemannian Gaussian distribution. Using Jacobi fields, it is proved that RG-VFM naturally incorporates a curvature-related penalty compared to velocity-predicting Riemannian Flow Matching (RFM), providing a stronger supervision signal. RG-VFM c…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Variational Flow Matching"
+  - "Riemannian Manifolds"
+  - "Endpoint Prediction"
+  - "Jacobi Fields"
+  - "Material and Protein Generation"
 date: 2026-05-08
-content_hash: 64fdd7b92605121c
+content_hash: 3925704eebba9cb5
 ---
+
 # Riemannian Variational Flow Matching for Material and Protein Design
 
 **Conference**: ICLR 2026  

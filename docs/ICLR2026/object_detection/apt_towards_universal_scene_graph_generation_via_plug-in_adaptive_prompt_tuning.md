@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] APT: Towards Universal Scene Graph Generation via Plug-in Adaptive Prompt Tuning
 description: >-
-  [ICLR 2026][Object Detection][Scene Graph Generation] APT replaces the long-standing "frozen word vector semantic prior" in Scene Graph Generation (SGG) with a set of lightweight learnable prompts. It dynamically modulates static semantic features into representations dependent on visual context. As a plug-and-play module, it can be integrated into any one-stage, two-stag
+  [ICLR 2026][Object Detection][Scene Graph Generation] APT replaces the long-standing "frozen word vector semantic prior" in Scene Graph Generation (SGG) with a set of lightweight learnable prompts. It dynamically modulates static semantic features into representations dependent on visual context. As a plug-and-play module, it can be integrated into any one-stage, two-stage, or open-vocabulary SGG framework, achieving comprehensive performance gains with <0.5M parameters and s…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Scene Graph Generation
-  - Prompt Tuning
-  - Open-Vocabulary
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Scene Graph Generation"
+  - "Prompt Tuning"
+  - "Semantic Representation"
+  - "Open-Vocabulary"
+  - "Plug-in Module"
 date: 2026-05-08
-content_hash: a204b7f90f4446b7
+content_hash: d1e6b1c34cedb352
 ---
+
 # APT: Towards Universal Scene Graph Generation via Plug-in Adaptive Prompt Tuning
 
 **Conference**: ICLR 2026  

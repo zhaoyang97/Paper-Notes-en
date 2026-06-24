@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Partially Observable RL] Two structured temporal priors—Memory-Length Prior and Gaussian Distributional Prior—are embedded into the self-attention mechanism of a Transformer world m…
+  [NeurIPS 2025][Reinforcement Learning][Partially Observable RL] Two structured temporal priors—Memory-Length Prior and Gaussian Distributional Prior—are embedded into the self-attention mechanism of a Transformer world model. Under partially observable RL settings, Gaussian Attention achieves a 77% relative improvement in human-normalized score over UniZero on the Atari 100k benchmark with negligible computational overhead.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian Attention"
   - "Sample Efficiency"
 date: 2026-05-08
-content_hash: 460dc34232da7e9f
+content_hash: 1ce7cf05991d77d1
 ---
 
 # Learning to Focus: Prioritizing Informative Histories with Structured Attention Mechanisms in Partially Observable Reinforcement Learning
@@ -137,10 +137,10 @@ Representative per-game score comparison:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structured Reinforcement Learning for Combinatorial Decision-Making](structured_reinforcement_learning_for_combinatorial_decision-making.md)
+- [\[ICML 2025\] PIGDreamer: Privileged Information Guided World Models for Safe Partially Observable RL](../../ICML2025/reinforcement_learning/pigdreamer_privileged_information_guided_world_models_for_safe_partially_observa.md)
+- [\[ICLR 2026\] PAMDP: Interact to Persona Alignment via a Partially Observable Markov Decision Process](../../ICLR2026/reinforcement_learning/pamdp_interact_to_persona_alignment_via_a_partially_observable_markov_decision_p.md)
 - [\[NeurIPS 2025\] Bandit and Delayed Feedback in Online Structured Prediction](bandit_and_delayed_feedback_in_online_structured_prediction.md)
-- [\[NeurIPS 2025\] Prompt Tuning Decision Transformers with Structured and Scalable Bandits](prompt_tuning_decision_transformers_with_structured_and_scalable_bandits.md)
-- [\[ACL 2026\] Glance-or-Gaze: Incentivizing LMMs to Adaptively Focus Search via Reinforcement Learning](../../ACL2026/reinforcement_learning/glance-or-gaze_incentivizing_lmms_to_adaptively_focus_search_via_reinforcement_l.md)
-- [\[ICML 2026\] Learning in Structured Stackelberg Games](../../ICML2026/reinforcement_learning/learning_in_structured_stackelberg_games.md)
+- [\[ACL 2025\] Learning to Generate Structured Output with Schema Reinforcement Learning](../../ACL2025/reinforcement_learning/learning_to_generate_structured_output_with_schema_reinforcement_learning.md)
 
 </div>
 

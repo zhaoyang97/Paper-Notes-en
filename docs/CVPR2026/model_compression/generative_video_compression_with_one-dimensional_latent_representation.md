@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generative Video Compression with One-Dimensional Latent Representation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Ours proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, it achieves over 60% bitrate savings in perceptual quality metrics.
+  [CVPR 2026][Model Compression][Video compression] Ours proposes GVC1D, which for the first time replaces the 2D grid latent representation in video compression with a compact 1D token sequence. Combined with a 1D memory module for modeling long-term temporal context, it achieves over 60% bitrate savings in perceptual quality metrics.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Video compression"
+  - "1D latent representation"
+  - "generative codec"
+  - "long-term memory"
+  - "Token compression"
 date: 2026-05-08
-content_hash: c8fa45267f37c62e
+content_hash: ed18a9320c301891
 ---
+
 # Generative Video Compression with One-Dimensional Latent Representation
 
 **Conference**: CVPR 2026  
@@ -135,11 +141,11 @@ Token size ablation: $32 \times 16$ (count $\times$ channel) is the optimal conf
 
 ## Related Papers
 
+- [\[ICCV 2025\] DLF: Extreme Image Compression with Dual-generative Latent Fusion](../../ICCV2025/model_compression/dlf_extreme_image_compression_with_dual-generative_latent_fusion.md)
 - [\[CVPR 2026\] CADC: Content Adaptive Diffusion-Based Generative Image Compression](cadc_content_adaptive_diffusion-based_generative_image_compression.md)
 - [\[CVPR 2026\] Ultra-Fast Neural Video Compression](ultra-fast_neural_video_compression.md)
-- [\[ICCV 2025\] DLF: Extreme Image Compression with Dual-generative Latent Fusion](../../ICCV2025/model_compression/dlf_extreme_image_compression_with_dual-generative_latent_fusion.md)
-- [\[CVPR 2026\] ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)
-- [\[CVPR 2026\] Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](differentiable_vector_quantization_for_rate-distortion_optimization_of_generativ.md)
+- [\[CVPR 2026\] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)
+- [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](unicomp_rethinking_video_compression_through_informational_uniqueness.md)
 
 </div>
 

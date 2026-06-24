@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Improving and Accelerating Offline RL in Large Discrete Action Spaces with Structured Policy Initialization
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] SPIN decouples "learning action structure" from "learning control"—first utilizing a BERT-like masked self-supervised objective to pre-train an Action Structure Model (ASM) that characterizes the low-dimensional manifold of valid joint actions, then freezing this representation to train a lightweight policy head. This
+  [ICLR 2026][Reinforcement Learning][Offline RL] SPIN decouples "learning action structure" from "learning control"—first utilizing a BERT-like masked self-supervised objective to pre-train an Action Structure Model (ASM) that characterizes the low-dimensional manifold of valid joint actions, then freezing this representation to train a lightweight policy head. This approach improves average returns by up to 39% and accelerates convergence by up to 12.8x in offline RL across e…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Combinatorial Action Spaces"
+  - "Structured Policy"
+  - "Representation Pre-training"
+  - "Masked Self-supervision"
+  - "Transformer Policy"
 date: 2026-05-08
-content_hash: a6b081ca2b0205c1
+content_hash: 838ff16fde33fc42
 ---
+
 # Improving and Accelerating Offline RL in Large Discrete Action Spaces with Structured Policy Initialization
 
 **Conference**: ICLR 2026  
@@ -134,11 +141,11 @@ As the action space grows from $3^{38}$ to $30^{38}$, SPIN's lead **increases wi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation](accelerating_diffusion_planners_in_offline_rl_via_reward-aware_consistency_traje.md)
-- [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](../../ICML2026/reinforcement_learning/moment_matching_q-learning.md)
 - [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
-- [\[ICLR 2026\] Geometry of Uncertainty: Learning Metric Spaces for Multimodal State Estimation in RL](geometry_of_uncertainty_learning_metric_spaces_for_multimodal_state_estimation_i.md)
-- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
 
 </div>
 

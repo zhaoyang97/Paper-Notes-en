@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] This paper introduces AMemGym, the first on-policy interactive evaluation benchmark for long-horizon conversation memory. By utilizing structured data sampling (User Persona → State Evolution → Personalized QA), it drives LLMs to simulate users in role-play scenarios. The study reveals ranking bias issues in traditiona
+  [ICLR 2026][Information Retrieval & RAG][Conversation Memory Evaluation] This paper introduces AMemGym, the first on-policy interactive evaluation benchmark for long-horizon conversation memory. By utilizing structured data sampling (User Persona → State Evolution → Personalized QA), it drives LLMs to simulate users in role-play scenarios. The study reveals ranking bias issues in traditional off-policy evaluations and systematically diagnoses the "write/read/utilization" thre…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Conversation Memory Evaluation"
+  - "On-policy Evaluation"
+  - "User State Tracking"
+  - "Memory Diagnosis"
+  - "Simulated Users"
 date: 2026-05-08
-content_hash: e7c7d31c637a2d95
+content_hash: e6ebbe00e7634cb0
 ---
+
 # AMemGym: Interactive Memory Benchmarking for Assistants in Long-Horizon Conversations
 
 **Conference**: ICLR 2026  
@@ -131,7 +137,6 @@ While the upper bound for all models is $>0.8$, performance drops sharply as int
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

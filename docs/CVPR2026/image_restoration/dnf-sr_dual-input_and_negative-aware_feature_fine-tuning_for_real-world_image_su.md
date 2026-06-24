@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] DNF-SR feeds "noisy LR + original LR" dual-paths into an image editing diffusion model (Flux-Kontext) for one-step super-resolution at an intermediate timestep. It further employs Negative-aware Feature Fine-Tuning (NF²T), which moves preference optimization from the latent space to the image/feature space, achieving s
+  [CVPR 2026][Image Restoration][One-step Diffusion SR] DNF-SR feeds "noisy LR + original LR" dual-paths into an image editing diffusion model (Flux-Kontext) for one-step super-resolution at an intermediate timestep. It further employs Negative-aware Feature Fine-Tuning (NF²T), which moves preference optimization from the latent space to the image/feature space, achieving state-of-the-art results in no-reference metrics across four real-world SR benchmarks.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "One-step Diffusion SR"
+  - "Dual-input"
+  - "Image Editing Model"
+  - "Preference Alignment"
+  - "Negative-aware Fine-tuning"
 date: 2026-05-08
-content_hash: 4331e5b3604a2b4a
+content_hash: 9582ba98e2f767e2
 ---
+
 # DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution
 
 **Conference**: CVPR 2026  
@@ -157,8 +163,8 @@ DNF-SR leads across all no-reference metrics. Notably, QALIGN and VQ-R1—**metr
 - [\[CVPR 2026\] Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)
 - [\[CVPR 2026\] FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution](finpercep_rm_a_fine_grained_reward_model_and_co_evolutionary_curriculum_for_rl_ba.md)
 - [\[CVPR 2026\] IAFMNet: Information-Aware Feature Modulation for Efficient Super-Resolution](iafmnet_information-aware_feature_modulation_for_efficient_super-resolution.md)
-- [\[CVPR 2026\] One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)
-- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
+- [\[ICLR 2026\] Exploring Real-Time Super-Resolution: Benchmarking and Fine-Tuning for Streaming Content](../../ICLR2026/image_restoration/exploring_real-time_super-resolution_benchmarking_and_fine-tuning_for_streaming_.md)
+- [\[CVPR 2026\] GDPO-SR: Group Direct Preference Optimization for One-Step Generative Image Super-Resolution](gdpo-sr_group_direct_preference_optimization_for_one-step_generative_image_super.md)
 
 </div>
 

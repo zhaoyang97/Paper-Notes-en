@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers
 description: >-
-  [ICML 2026][Interpretability][induction head] The authors disassemble the training data requirements and attention circuits of multimodal in-context learning (ICL) using a controllable two-layer Transformer and synthetic GMM data. They identify a "primary-secondary modality asymmetry": after pre-training on a high-diversity primary modality, the secondary modality
+  [ICML 2026 Spotlight][Interpretability][Multimodal ICL] The authors disassemble the training data requirements and attention circuits of multimodal in-context learning (ICL) using a controllable two-layer Transformer and synthetic GMM data. They identify a "primary-secondary modality asymmetry": after pre-training on a high-diversity primary modality, the secondary modality requires significantly lower data complexity to unlock multimodal ICL. Through head knockout experiment…
 tags:
-  - ICML 2026
-  - Interpretability
-  - induction head
-  - RoPE
+  - "ICML 2026 Spotlight"
+  - "Interpretability"
+  - "Multimodal ICL"
+  - "induction head"
+  - "RoPE"
+  - "modality asymmetry"
+  - "circuit dynamics"
 date: 2026-05-08
-content_hash: 4e4afe77dcfceeed
+content_hash: a3d5980e9d4c8dca
 ---
+
 # Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers
 
 **Conference**: ICML 2026 Spotlight  
@@ -119,11 +123,11 @@ Scaling effects: On six VL-ICL subtasks, Qwen2.5-VL improved by +2.3% from 3B to
 
 ## Related Papers
 
+- [\[ICLR 2026\] Comparing the learning dynamics of in-context learning and fine-tuning in language models](../../ICLR2026/interpretability/comparing_the_learning_dynamics_of_in-context_learning_and_fine-tuning_in_langua.md)
+- [\[ICLR 2026\] Dissecting Representation Misalignment in Contrastive Learning via Influence Function](../../ICLR2026/interpretability/dissecting_representation_misalignment_in_contrastive_learning_via_influence_fun.md)
 - [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](../../ICLR2026/interpretability/block_recurrent_dynamics_in_vision_transformers.md)
 - [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
-- [\[ICLR 2026\] Implicit Statistical Inference in Transformers: Approximating Likelihood-Ratio Tests In-Context](../../ICLR2026/interpretability/implicit_statistical_inference_in_transformers_approximating_likelihood-ratio_te.md)
-- [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
+- [\[ICLR 2026\] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders](../../ICLR2026/interpretability/learning_multimodal_dictionary_decompositions_with_group-sparse_autoencoders.md)
 
 </div>
 

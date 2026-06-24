@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] A frozen VLM is utilized as a "teacher" to reformulate low-rank compression in unsupervised fine-grained clustering as a top-k selection task. Combined with perturbed instance contrast and cluster centroid orthogonal constraints, these elements are integrated into a Dirichlet Process Variational Inference framework. Th
+  [CVPR 2026][Self-Supervised Learning][Fine-grained Clustering] A frozen VLM is utilized as a "teacher" to reformulate low-rank compression in unsupervised fine-grained clustering as a top-k selection task. Combined with perturbed instance contrast and cluster centroid orthogonal constraints, these elements are integrated into a Dirichlet Process Variational Inference framework. This approach simultaneously learns representations and automatically infers the number of clusters…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Fine-grained Clustering"
+  - "Low-Rank Guidance"
+  - "VLM Teacher"
+  - "Orthogonal Constraint"
+  - "Dirichlet Process"
 date: 2026-05-08
-content_hash: ff4e92c53dd8860c
+content_hash: cff94d13226975be
 ---
+
 # Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model
 
 **Conference**: CVPR 2026  
@@ -131,10 +137,10 @@ Decomposition of components on Oxford Flower (Baseline = DPMM + standard instanc
 ## Related Papers
 
 - [\[CVPR 2026\] DGS: Dual Gradient and Semantic-Shift Guided Low-Rank Adaptation for Class Incremental Learning](dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm.md)
+- [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](../../ICLR2026/self_supervised/mini-cluster_guided_long-tailed_deep_clustering.md)
 - [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](../../ICLR2026/self_supervised/part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
 - [\[CVPR 2026\] From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
-- [\[CVPR 2026\] Quantized Residuals to Continuous Prompts for Few-Shot Class Incremental Learning in Vision-Language Models](quantized_residuals_to_continuous_prompts_for_few-shot_class_incremental_learning.md)
 
 </div>
 

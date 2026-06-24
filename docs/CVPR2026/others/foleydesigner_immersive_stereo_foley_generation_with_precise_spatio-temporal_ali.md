@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] FoleyDesigner: Immersive Stereo Foley Generation with Precise Spatio-Temporal Alignment for Film Clips
 description: >-
-  [CVPR 2026][Audio & Speech][Multi-Agent] FoleyDesigner mimics the workflow of professional Foley artists by decomposing silent film clips into layered sound events. It uses "depth + azimuth" spatio-temporal clues extracted from visual tracking to drive a DiT diffusion model for frame-level aligned stereo generation. Finally, a multi-agent system handles post-
+  [CVPR 2026][Stereo Foley] FoleyDesigner mimics the workflow of professional Foley artists by decomposing silent film clips into layered sound events. It uses "depth + azimuth" spatio-temporal clues extracted from visual tracking to drive a DiT diffusion model for frame-level aligned stereo generation. Finally, a multi-agent system handles post-mixing and upmixing to 5.1 surround sound, outperforming existing baselines in spatio-temporal alignment and cinematic Foley quality.
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - Multi-Agent
-  - Tree-of-Thought
+  - "CVPR 2026"
+  - "Stereo Foley"
+  - "Spatio-Temporal Alignment"
+  - "Diffusion Transformer"
+  - "Multi-Agent"
+  - "Tree-of-Thought"
 date: 2026-05-08
-content_hash: b0b9907fad55cda7
+content_hash: 54050a5c0f59b21b
 ---
+
 # FoleyDesigner: Immersive Stereo Foley Generation with Precise Spatio-Temporal Alignment for Film Clips
 
 **Conference**: CVPR 2026  
@@ -151,15 +154,15 @@ Adding Spatio-Temporal Clues (STC) reduced GCC by 21.3% and CRW by 38.8%, provin
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
-- [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
-- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
-- [\[AAAI 2026\] A Text-Routed Sparse Mixture-of-Experts Model with Explanation and Temporal Alignment for Multi-Modal Sentiment Analysis](../../AAAI2026/audio_speech/text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
-- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
+- [\[ACL 2025\] A Spatio-Temporal Point Process for Fine-Grained Modeling of Reading Behavior](../../ACL2025/others/a_spatio-temporal_point_process_for_fine-grained_modeling_of_reading_behavior.md)
+- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
+- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
+- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
 
 </div>
 

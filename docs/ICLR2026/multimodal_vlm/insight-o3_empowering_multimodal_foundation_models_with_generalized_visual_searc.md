@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] InSight-o3: Empowering Multimodal Foundation Models with Generalized Visual Search
 description: >-
-  [ICLR 2026][Multimodal VLM][Multi-Agent] InSight-o3 introduces O3-BENCH to evaluate the capability of models to find details while reasoning within high-information-density images. It utilizes a two-agent framework comprising a vReasoner and a vSearcher to train generalized visual search as a plug-and-play component, significantly enhancing multimodal foundat
+  [ICLR2026][Multimodal VLM][Visual search] InSight-o3 introduces O3-BENCH to evaluate the capability of models to find details while reasoning within high-information-density images. It utilizes a two-agent framework comprising a vReasoner and a vSearcher to train generalized visual search as a plug-and-play component, significantly enhancing multimodal foundation models such as GPT-5-mini and Gemini-2.5-Flash.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Multi-Agent
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Visual search"
+  - "multimodal reasoning"
+  - "high-resolution images"
+  - "multi-agent"
+  - "reinforcement learning"
 date: 2026-05-08
-content_hash: 308b07b71d05499b
+content_hash: e4849a66db4f426d
 ---
+
 # InSight-o3: Empowering Multimodal Foundation Models with Generalized Visual Search
 
 **Conference**: ICLR2026  

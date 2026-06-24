@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Guiding a Diffusion Transformer with the Internal Dynamics of Itself
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes Internal Guidance (IG), which adds auxiliary supervision losses to the intermediate layers of a Diffusion Transformer to produce weaker generative outputs. During sampling, it extrapolates the difference between intermediate and deep layer outputs to achieve guidance effects similar to Autoguidance
+  [CVPR 2026][Image Generation][Internal Guidance] This paper proposes Internal Guidance (IG), which adds auxiliary supervision losses to the intermediate layers of a Diffusion Transformer to produce weaker generative outputs. During sampling, it extrapolates the difference between intermediate and deep layer outputs to achieve guidance effects similar to Autoguidance without extra sampling steps or external model training. On ImageNet 256×256…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Internal Guidance"
+  - "intermediate layer supervision"
+  - "Diffusion Transformer"
+  - "sampling guidance"
+  - "training acceleration"
 date: 2026-05-08
-content_hash: 73be212b60cc5199
+content_hash: 869acfed9764b662
 ---
+
 # Guiding a Diffusion Transformer with the Internal Dynamics of Itself
 
 **Conference**: CVPR 2026  
@@ -152,8 +158,8 @@ IG and CFG guide different dimensions and can thus be stacked. CFG is class-depe
 
 ## Related Papers
 
-- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
 - [\[CVPR 2026\] Guiding Token-Sparse Diffusion Models](guiding_token-sparse_diffusion_models.md)
+- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
 - [\[CVPR 2026\] Guiding a Diffusion Model by Swapping Its Tokens](guiding_a_diffusion_model_by_swapping_its_tokens.md)
 - [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
 - [\[CVPR 2026\] GeoRK2: Geometry-Guided Runge-Kutta Integration for Diffusion Transformer Acceleration](geork2_geometry-guided_runge-kutta_integration_for_diffusion_transformer_acceler.md)

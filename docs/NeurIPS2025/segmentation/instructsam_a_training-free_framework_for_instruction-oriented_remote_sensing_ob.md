@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition
 description: >-
-  [NeurIPS 2025][Segmentation][Remote sensing] This paper introduces a new task — Instruction-oriented Counting, Detection, and Segmentation (InstructCDS) — along with the EarthInstruct remote sensing benchmark covering th…
+  [NeurIPS 2025][Segmentation][Remote sensing] This paper introduces a new task — Instruction-oriented Counting, Detection, and Segmentation (InstructCDS) — along with the EarthInstruct remote sensing benchmark covering three settings (open-vocabulary, open-ended, and open-subcategory). It proposes InstructSAM, a training-free framework that uses an LVLM to parse instructions and predict counts, SAM2 to generate mask proposals, and CLIP to compute similarities. A Binary Integer…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -14,7 +14,7 @@ tags:
   - "object counting"
   - "open-vocabulary detection/segmentation"
 date: 2026-05-08
-content_hash: 49f2ae6e8c20e7df
+content_hash: d0869494a1b1f0de
 ---
 
 # InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition
@@ -160,10 +160,10 @@ InstructSAM achieves a large margin on the "sports venues" (S) subcategory, whil
 ## Related Papers
 
 - [\[AAAI 2026\] RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images](../../AAAI2026/segmentation/rsvg-zeroov_exploring_a_training-free_framework_for_zero-shot_open-vocabulary_vi.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](../../CVPR2026/segmentation/reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[ACL 2025\] InstructPart: Task-Oriented Part Segmentation with Instruction Reasoning](../../ACL2025/segmentation/instructpart_task-oriented_part_segmentation_with_instruction_reasoning.md)
 - [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
-- [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](../../CVPR2026/segmentation/task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
-- [\[ICCV 2025\] E-SAM: Training-Free Segment Every Entity Model](../../ICCV2025/segmentation/e-sam_training-free_segment_every_entity_model.md)
-- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2025\] ROS-SAM: High-Quality Interactive Segmentation for Remote Sensing Moving Object](../../CVPR2025/segmentation/ros-sam_high-quality_interactive_segmentation_for_remote_sensing_moving_object.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas
 description: >-
-  [NeurIPS 2025][LLM Safety][Synthetic Personas] This paper presents DeepPersona, a two-stage taxonomy-guided synthetic persona generation engine. Stage 1 mines a human attribute taxonomy with 8…
+  [NeurIPS 2025][LLM Safety][Synthetic Personas] This paper presents DeepPersona, a two-stage taxonomy-guided synthetic persona generation engine. Stage 1 mines a human attribute taxonomy with 8,000+ nodes from real user–ChatGPT conversations; Stage 2 generates narratively coherent personas averaging 200+ structured attributes via progressive attribute sampling. The approach achieves an 11.6% improvement in personalized QA accuracy and a 31.7% reduction in social survey simulat…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Social Simulation"
   - "Attribute Taxonomy"
 date: 2026-05-08
-content_hash: 14ca72a9d58eac12
+content_hash: 2b322583097c545f
 ---
 
 # DeepPersona: A Generative Engine for Scaling Deep Synthetic Personas
@@ -136,11 +136,11 @@ DeepPersona is a generation framework rather than a trained model. GPT-4.1 and G
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
 - [\[NeurIPS 2025\] Unlearning as Ablation: Toward a Falsifiable Benchmark for Generative Scientific Discovery](unlearning_as_ablation_toward_a_falsifiable_benchmark_for_generative_scientific_.md)
 - [\[CVPR 2026\] Designing to Forget: Deep Semi-parametric Models for Unlearning](../../CVPR2026/llm_safety/designing_to_forget_deep_semi-parametric_models_for_unlearning.md)
-- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](../../ACL2026/llm_safety/differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
-- [\[ICML 2026\] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why](../../ICML2026/llm_safety/deep_sequence_models_tend_to_memorize_geometrically_it_is_unclear_why.md)
+- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
+- [\[ICLR 2026\] ASGuard: Activation-Scaling Guard to Mitigate Targeted Jailbreaking Attack](../../ICLR2026/llm_safety/asguard_activation-scaling_guard_to_mitigate_targeted_jailbreaking_attack.md)
+- [\[ACL 2025\] MEGen: Generative Backdoor into Large Language Models via Model Editing](../../ACL2025/llm_safety/megen_generative_backdoor_into_large_language_models_via_model_editing.md)
 
 </div>
 

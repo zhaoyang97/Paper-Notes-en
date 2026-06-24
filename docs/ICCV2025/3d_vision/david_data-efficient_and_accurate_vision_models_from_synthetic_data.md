@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DAViD: Data-efficient and Accurate Vision Models from Synthetic Data
 description: >-
-  [ICCV 2025][3D Vision][synthetic data] This work demonstrates that high-fidelity **procedural synthetic data** suffices to train human-centric dense prediction models that match the accuracy of foundation models such as…
+  [ICCV 2025][3D Vision][synthetic data] This work demonstrates that high-fidelity **procedural synthetic data** suffices to train human-centric dense prediction models that match the accuracy of foundation models such as Sapiens-2B, requiring only **300K synthetic images**, **0.3B parameters**, and less than 1/16 the training cost of comparable approaches, while achieving state-of-the-art or near-SOTA performance on depth estimation, surface normal estimation…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "DPT"
   - "high-fidelity annotation"
 date: 2026-05-08
-content_hash: 871217221c03d575
+content_hash: 88d548b293f6d7df
 ---
 
 # DAViD: Data-efficient and Accurate Vision Models from Synthetic Data
@@ -177,8 +177,8 @@ Key findings:
 - [\[ICCV 2025\] Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data](bootstrap3d_improving_multi-view_diffusion_model_with_synthetic_data.md)
 - [\[ICCV 2025\] Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](seeing_and_seeing_through_the_glass_real_and_synthetic_data_for_multi-layer_dept.md)
 - [\[ICCV 2025\] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting](towards_scalable_spatial_intelligence_via_2d-to-3d_data_lifting.md)
-- [\[ICCV 2025\] ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads](vit-split_unleashing_the_power_of_vision_foundation_models_via_efficient_splitti.md)
 - [\[ICCV 2025\] Adversarial Exploitation of Data Diversity Improves Visual Localization](adversarial_exploitation_of_data_diversity_improves_visual_localization.md)
+- [\[ICCV 2025\] ViT-Split: Unleashing the Power of Vision Foundation Models via Efficient Splitting Heads](vit-split_unleashing_the_power_of_vision_foundation_models_via_efficient_splitti.md)
 
 </div>
 

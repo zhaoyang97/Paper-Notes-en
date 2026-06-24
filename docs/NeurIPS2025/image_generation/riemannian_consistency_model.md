@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Riemannian Consistency Model
 description: >-
-  [NeurIPS 2025][Image Generation][Consistency Model] This work is the first to extend Consistency Models (CM) to Riemannian manifolds. By leveraging exponential map parameterization and covariant derivatives…
+  [NeurIPS 2025][Image Generation][Consistency Model] This work is the first to extend Consistency Models (CM) to Riemannian manifolds. By leveraging exponential map parameterization and covariant derivatives, it derives both discrete- and continuous-time RCM objectives, enabling high-quality few-step generation on non-Euclidean geometries such as spheres, flat tori, and SO(3).
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Few-Step Generation"
   - "Covariant Derivative"
 date: 2026-05-08
-content_hash: b0f8c486c333b898
+content_hash: e921a8226db9b33f
 ---
 
 # Riemannian Consistency Model
@@ -129,11 +129,11 @@ Fréchet distance on high-dimensional tori (scalability with dimension):
 
 ## Related Papers
 
+- [\[CVPR 2025\] See Further When Clear: Curriculum Consistency Model](../../CVPR2025/image_generation/see_further_when_clear_curriculum_consistency_model.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](../../ICLR2026/image_generation/generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
 - [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
 - [\[NeurIPS 2025\] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency](freqpolicy_efficient_flow-based_visuomotor_policy_via_frequency_consistency.md)
-- [\[NeurIPS 2025\] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency](scenedecorator_towards_scene-oriented_story_generation_with_scene_planning_and_s.md)
-- [\[NeurIPS 2025\] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model](pairwise_optimal_transports_for_training_all-to-all_flow-based_condition_transfe.md)
-- [\[NeurIPS 2025\] BADiff: Bandwidth Adaptive Diffusion Model](badiff_bandwidth_adaptive_diffusion_model.md)
+- [\[ICML 2026\] Riemannian MeanFlow for One-Step Generation on Manifolds](../../ICML2026/image_generation/riemannian_meanflow_for_one-step_generation_on_manifolds.md)
 
 </div>
 

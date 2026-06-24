@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD
 description: >-
-  [AAAI 2026][Remote Sensing][Infrared small target detection] This paper proposes TDCNet, which unifies temporal difference and 3D convolution into a single Temporal Difference Convolution (TDC). Through re-parameterizati…
+  [AAAI 2026][Remote Sensing][Infrared small target detection] This paper proposes TDCNet, which unifies temporal difference and 3D convolution into a single Temporal Difference Convolution (TDC). Through re-parameterization, TDC introduces zero additional inference overhead. Combined with TDC-guided spatio-temporal attention (TDCSTA), TDCNet achieves an F1 of 97.12% (AP50 93.83%) on the newly constructed IRSTD-UAV dataset, which contains 15,106 frames of real infrared UAV imag…
 tags:
   - "AAAI 2026"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "spatio-temporal attention"
   - "UAV"
 date: 2026-05-08
-content_hash: 78982ccbccfc9890
+content_hash: 224e5bd056cfcbfe
 ---
 
 # TDCNet: Spatio-Temporal Context Learning with Temporal Difference Convolution for Moving IRSTD
@@ -120,10 +120,10 @@ Detection loss (YOLOv8-style). Adam optimizer, lr=0.001. Input: 5 consecutive fr
 ## Related Papers
 
 - [\[NeurIPS 2025\] EcoCast: A Spatio-Temporal Model for Continual Biodiversity and Climate Risk Forecasting](../../NeurIPS2025/remote_sensing/ecocast_a_spatio-temporal_model_for_continual_biodiversity_and_climate_risk_fore.md)
+- [\[CVPR 2026\] TESSERA: Temporal Embeddings of Surface Spectra for Earth Representation and Analysis](../../CVPR2026/remote_sensing/tessera_temporal_embeddings_of_surface_spectra_for_earth_representation_and_anal.md)
+- [\[CVPR 2026\] Sparsely Timing the Change: A Spiking Temporal Framework for Remote Sensing Interpretation](../../CVPR2026/remote_sensing/sparsely_timing_the_change_a_spiking_temporal_framework_for_remote_sensing_inter.md)
 - [\[ICLR 2026\] TAMMs: Change Understanding and Forecasting in Satellite Image Time Series with Temporal-Aware Multimodal Models](../../ICLR2026/remote_sensing/tamms_change_understanding_and_forecasting_in_satellite_image_time_series_with_t.md)
 - [\[NeurIPS 2025\] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](../../NeurIPS2025/remote_sensing/cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)
-- [\[AAAI 2026\] Debiasing Machine Learning Predictions for Causal Inference Without Additional Ground Truth Data](debiasing_machine_learning_predictions_for_causal_inference_without_additional_g.md)
-- [\[AAAI 2026\] Machine Learning for Sustainable Rice Production: Region-Scale Monitoring of Water-Saving Practices in Punjab, India](machine_learning_for_sustainable_rice_production_region-scale_monitoring_of_wate.md)
 
 </div>
 

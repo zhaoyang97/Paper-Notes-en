@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation
 description: >-
-  [ACL 2026][Medical NLP][Knowledge Distillation] This paper proposes the CARE framework and the FAITH-M benchmark dataset. By integrating local dialogue context encoding with contrastive exemplar retrieval and Knowledge Distillation Chain-of-Thought (KD-CoT), it performs fine-grained ordinal assessment of AI-generated psychotherapy dialogues across six therapeutic pr
+  [ACL 2026][Medical LLM][Mental health conversation assessment] This paper proposes the CARE framework and the FAITH-M benchmark dataset. By integrating local dialogue context encoding with contrastive exemplar retrieval and Knowledge Distillation Chain-of-Thought (KD-CoT), it performs fine-grained ordinal assessment of AI-generated psychotherapy dialogues across six therapeutic principles. The framework achieves a weighted F1 of 63.34, representing a 64.26% Gain over the stro…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Knowledge Distillation
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Mental health conversation assessment"
+  - "therapeutic principle alignment"
+  - "ordinal classification"
+  - "knowledge distillation"
+  - "chain-of-thought"
 date: 2026-05-08
-content_hash: a42eb4ab6f4c0ba3
+content_hash: 0a0b44191338b588
 ---
+
 # Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation
 
 **Conference**: ACL 2026  
@@ -139,7 +144,7 @@ The aforementioned hybrid ordinal loss is used with $\alpha = \beta = 0.5$. To e
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
 - [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 - [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](../../AAAI2026/medical_nlp/voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
-- [\[ACL 2026\] PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](../../ICLR2026/medical_nlp/counselbench_llm_mental_health_qa.md)
 
 </div>
 

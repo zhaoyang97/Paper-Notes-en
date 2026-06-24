@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dejavu: Towards Experience Feedback Learning for Embodied Intelligence
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] An Experience Feedback Network (EFN) is attached to a **frozen VLA policy**. It retrieves semantically similar historical trajectories from an "experience bank" that grows continuously during deployment. Using reinforcement learning, it predicts a **residual correction** added to the original action. This allows robots
+  [CVPR 2026][Robotics][VLA] An Experience Feedback Network (EFN) is attached to a **frozen VLA policy**. It retrieves semantically similar historical trajectories from an "experience bank" that grows continuously during deployment. Using reinforcement learning, it predicts a **residual correction** added to the original action. This allows robots to improve through "accumulating and invoking memory" without updating any backbone weights. Success rates for LIBERO long tasks inc…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Soft Actor-Critic
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Experience Replay Retrieval"
+  - "Residual Policy"
+  - "Post-deployment Learning"
+  - "Soft Actor-Critic"
 date: 2026-05-08
-content_hash: 79ed76e64d0e2abb
+content_hash: 7073d0509d2c430b
 ---
+
 # Dejavu: Towards Experience Feedback Learning for Embodied Intelligence
 
 **Conference**: CVPR 2026  
@@ -170,7 +174,7 @@ there is a strong but frozen base model.
 - [\[ICML 2026\] Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](../../ICML2026/robotics/plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)
 - [\[CVPR 2026\] Test-Time Perturbation Tuning with Delayed Feedback for Vision-Language-Action Models](test-time_perturbation_tuning_with_delayed_feedback_for_vision-language-action_m.md)
 - [\[CVPR 2026\] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation](trajrag_retrieving_geometric-semantic_experience_for_zero-shot_object_navigation.md)
-- [\[CVPR 2026\] OctoNav: Towards Generalist Embodied Navigation](octonav_towards_generalist_embodied_navigation.md)
+- [\[AAAI 2026\] Towards Reinforcement Learning from Neural Feedback: Mapping fNIRS Signals to Agent Performance](../../AAAI2026/robotics/towards_reinforcement_learning_from_neural_feedback_mapping_.md)
 
 </div>
 

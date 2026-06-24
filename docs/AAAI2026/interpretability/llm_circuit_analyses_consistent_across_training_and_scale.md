@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LLM Circuit Analyses Are Consistent Across Training and Scale
 description: >-
-  [AAAI 2026][Interpretability][Mechanistic Interpretability] This paper presents the first systematic tracking of internal circuits in decoder-only LLMs across 300 billion tokens of training and model scales ranging from…
+  [AAAI 2026][Interpretability][Mechanistic Interpretability] This paper presents the first systematic tracking of internal circuits in decoder-only LLMs across 300 billion tokens of training and model scales ranging from 70M to 2.8B parameters. It finds that while specific attention heads may be replaced over the course of training, the underlying algorithms remain stable and consistent across scales, suggesting that circuit analyses conducted on smaller models generalize to l…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Model Scale"
   - "Attention Heads"
 date: 2026-05-08
-content_hash: 74342cfa2daa0b5b
+content_hash: 8fd4891eb533c0ef
 ---
 
 # LLM Circuit Analyses Are Consistent Across Training and Scale
@@ -124,11 +124,11 @@ These tasks are sufficiently simple to be tractable for small models and have be
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning is Forgetting: LLM Training As Lossy Compression](../../ICLR2026/interpretability/learning_is_forgetting_llm_training_as_lossy_compression.md)
+- [\[ICLR 2026\] Latent Planning Emerges with Scale](../../ICLR2026/interpretability/latent_planning_emerges_with_scale.md)
 - [\[AAAI 2026\] Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT](attention_gathers_mlps_compose_a_causal_analysis_of_an_action-outcome_circuit_in.md)
-- [\[NeurIPS 2025\] Sloth: Scaling Laws for LLM Skills to Predict Multi-Benchmark Performance Across Families](../../NeurIPS2025/interpretability/sloth_scaling_laws_for_llm_skills_to_predict_multi-benchmark_performance_across_.md)
-- [\[ICLR 2026\] Evolution of Concepts in Language Model Pre-Training](../../ICLR2026/interpretability/evolution_of_concepts_in_language_model_pre-training.md)
+- [\[ICLR 2026\] Tracking Equivalent Mechanistic Interpretations Across Neural Networks](../../ICLR2026/interpretability/tracking_equivalent_mechanistic_interpretations_across_neural_networks.md)
 - [\[ACL 2026\] Aligning What LLMs Do and Say: Towards Self-Consistent Explanations](../../ACL2026/interpretability/aligning_what_llms_do_and_say_towards_self-consistent_explanations.md)
-- [\[AAAI 2026\] Hypothesis Generation via LLM-Automated Language Bias for ILP](hypothesis_generation_via_llm-automated_language_bias_for_ilp.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ConSensus: Multi-Agent Collaboration for Multimodal Sensing
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] ConSensus is a training-free multi-agent sensor fusion framework that assigns specialized agents to independently interpret different sensing modalities. By utilizing semantic fusion, statistical consensus, and hybrid arbitration, it achieves an average 7.1% accuracy improvement over single-agent methods across five mu
+  [ACL2026 Findings][Multi-Agent][Multi-agent collaboration] ConSensus is a training-free multi-agent sensor fusion framework that assigns specialized agents to independently interpret different sensing modalities. By utilizing semantic fusion, statistical consensus, and hybrid arbitration, it achieves an average 7.1% accuracy improvement over single-agent methods across five multimodal sensing benchmarks, while reducing fusion token costs to approximately 1/12.7 of multi-round…
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL2026 Findings"
+  - "Multi-Agent"
+  - "Multi-agent collaboration"
+  - "Multimodal sensing"
+  - "Sensor fusion"
+  - "Statistical consensus"
+  - "Semantic fusion"
 date: 2026-05-08
-content_hash: e07b7b1c1801a49a
+content_hash: 19b07588219dce35
 ---
+
 # ConSensus: Multi-Agent Collaboration for Multimodal Sensing
 
 **Conference**: ACL2026 Findings  
@@ -139,9 +145,17 @@ ConSensus improves accuracy by an average of 7.1 percentage points over Single-A
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](../../ICLR2026/multi_agent/mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
+- [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
+- [\[AAAI 2026\] LLandMark: A Multi-Agent Framework for Landmark-Aware Multimodal Interactive Video Retrieval](../../AAAI2026/multi_agent/llandmark_a_multi-agent_framework_for_landmark-aware_multimodal_interactive_vide.md)
+- [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
+- [\[ACL 2026\] Scaling External Knowledge Input Beyond Context Windows of LLMs via Multi-Agent Collaboration](scaling_external_knowledge_input_beyond_context_windows_of_llms_via_multi-agent_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](../../ICLR2026/multi_agent/mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)

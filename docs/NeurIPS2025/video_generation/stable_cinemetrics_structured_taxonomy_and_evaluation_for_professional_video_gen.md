@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stable Cinemetrics: Structured Taxonomy and Evaluation for Professional Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][video generation evaluation] This paper proposes SCINE (Stable Cinemetrics), the first structured evaluation framework targeting professional video production. It defines a hierarchical t…
+  [NeurIPS 2025][Video Generation][video generation evaluation] This paper proposes SCINE (Stable Cinemetrics), the first structured evaluation framework targeting professional video production. It defines a hierarchical taxonomy with 76 fine-grained cinematic control nodes, accompanied by large-scale professional annotation (80+ film practitioners, 20K+ videos, 248K annotations), revealing significant deficiencies of current state-of-the-art T2V models in professional cinemati…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "human evaluation"
   - "VLM evaluator"
 date: 2026-05-08
-content_hash: 8eb77f1e383dcdcf
+content_hash: 5ca946fd860735c7
 ---
 
 # Stable Cinemetrics: Structured Taxonomy and Evaluation for Professional Video Generation
@@ -156,11 +156,11 @@ SCINE consists of three components:
 
 ## Related Papers
 
+- [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](../../CVPR2026/video_generation/vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
+- [\[CVPR 2026\] Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner](../../CVPR2026/video_generation/video_generation_with_stable_transparency_via_shiftable_rgb-a_distribution_learn.md)
 - [\[ICCV 2025\] WorldScore: A Unified Evaluation Benchmark for World Generation](../../ICCV2025/video_generation/worldscore_a_unified_evaluation_benchmark_for_world_generation.md)
-- [\[ICCV 2025\] ETVA: Evaluation of Text-to-Video Alignment via Fine-Grained Question Generation and Answering](../../ICCV2025/video_generation/etva_evaluation_of_text-to-video_alignment_via_fine-grained_question_generation_.md)
-- [\[ICML 2026\] T2AV-Compass: Towards Unified Evaluation for Text-to-Audio-Video Generation](../../ICML2026/video_generation/t2av-compass_towards_unified_evaluation_for_text-to-audio-video_generation.md)
-- [\[CVPR 2026\] VGA-Bench: A Unified Benchmark for Video Aesthetics and Generation Quality Evaluation](../../CVPR2026/video_generation/vga_bench_unified_benchmark_for_video_aesthetics_and_generation_quality.md)
-- [\[CVPR 2026\] SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](../../CVPR2026/video_generation/slvmeval_synthetic_meta_evaluation_benchmark_for_text-to-long_video_generation.md)
+- [\[CVPR 2026\] SVBench: Evaluation of Video Generation Models on Social Reasoning](../../CVPR2026/video_generation/svbench_evaluation_of_video_generation_models_on_social_reasoning.md)
+- [\[ICLR 2026\] Stable Video Infinity: Achieving Infinite-Length Video Generation via "Error Recycling"](../../ICLR2026/video_generation/stable_video_infinity_infinite-length_video_generation_with_error_recycling.md)
 
 </div>
 

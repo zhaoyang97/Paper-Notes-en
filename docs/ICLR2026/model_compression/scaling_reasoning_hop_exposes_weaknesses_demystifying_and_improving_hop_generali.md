@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Chain-of-Thought] This work systematically reveals the internal mechanism behind Large Language Model (LLM) failures in reasoning hop generalization—specifically, the competition between attention heads driving correct versus erroneous reasoning trajectories. The authors propose TCR (Test-time Correction of Reasoning), which dynamically
+  [ICLR 2026][Model Compression][reasoning hop generalization] This work systematically reveals the internal mechanism behind Large Language Model (LLM) failures in reasoning hop generalization—specifically, the competition between attention heads driving correct versus erroneous reasoning trajectories. The authors propose TCR (Test-time Correction of Reasoning), which dynamically identifies and deactivates erroneous processing heads (ep heads) during inference…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "Model Compression"
+  - "reasoning hop generalization"
+  - "Chain-of-Thought"
+  - "attention head competition mechanism"
+  - "erroneous processing heads"
+  - "test-time intervention"
 date: 2026-05-08
-content_hash: e4099fdc4c4110f3
+content_hash: d95c2b9cb352bdb8
 ---
+
 # Scaling Reasoning Hop Exposes Weaknesses: Demystifying and Improving Hop Generalization in Large Language Models
 
 **Conference**: ICLR 2026  

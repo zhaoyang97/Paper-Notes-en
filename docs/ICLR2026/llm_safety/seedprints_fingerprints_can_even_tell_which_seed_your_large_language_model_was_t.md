@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeedPrints: Fingerprints Can Even Tell Which Seed Your Large Language Model Was Trained From
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes SeedPrints, which utilizes the "preference bias" left by random initialization seeds in the model's output dimensions—still statistically detectable after training—as an intrinsic LLM fingerprint. It moves fingerprinting from a "post-hoc feature after training" to an "innate trait present at birth."
+  [ICLR 2026][LLM Safety][Model Fingerprinting] This paper proposes SeedPrints, which utilizes the "preference bias" left by random initialization seeds in the model's output dimensions—still statistically detectable after training—as an intrinsic LLM fingerprint. It moves fingerprinting from a "post-hoc feature after training" to an "innate trait present at birth." This enables lineage verification using a p-value across the entire lifecycle, from early pre-training to fine-tu…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Model Fingerprinting"
+  - "Initialization Bias"
+  - "Lineage Verification"
+  - "Hypothesis Testing"
+  - "Large-scale Pre-training"
 date: 2026-05-08
-content_hash: 6b5cd9bae065525d
+content_hash: 4928cde5bfae3227
 ---
+
 # SeedPrints: Fingerprints Can Even Tell Which Seed Your Large Language Model Was Trained From
 
 **Conference**: ICLR 2026  

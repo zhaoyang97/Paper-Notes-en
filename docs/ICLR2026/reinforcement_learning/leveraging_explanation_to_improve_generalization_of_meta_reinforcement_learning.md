@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][Interpretability] Adopts a strategy analogous to "humans reviewing the most relevant previous problems after making mistakes": first use example-based explanations to identify "critical training tasks" most relevant to poorly adapted tasks, then use conditional mutual information (CMI) to guide the meta-strategy to "pay more attention"
+  [ICLR 2026][Reinforcement Learning][meta reinforcement learning] Adopts a strategy analogous to "humans reviewing the most relevant previous problems after making mistakes": first use example-based explanations to identify "critical training tasks" most relevant to poorly adapted tasks, then use conditional mutual information (CMI) to guide the meta-strategy to "pay more attention" to these tasks. By learning an optimal mixup augmentation distribution to encode more critical…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Interpretability
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "meta reinforcement learning"
+  - "generalization"
+  - "explainability"
+  - "example-based explanation"
+  - "conditional mutual information"
+  - "mixup data augmentation"
+  - "bilevel optimization"
 date: 2026-05-08
-content_hash: 852383e942678831
+content_hash: da4e9ab9483fe843
 ---
+
 # Leveraging Explanation to Improve Generalization of Meta Reinforcement Learning
 
 **Conference**: ICLR 2026  

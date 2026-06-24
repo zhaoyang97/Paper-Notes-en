@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models
 description: >-
-  [CVPR 2026][AI Safety][Reinforcement Learning] GenBreak fine-tunes an open-source LLM into a "red teaming agent": starting with a cold-start via SFT on two custom datasets, followed by GRPO reinforcement learning with six-way multi-objective rewards. This allows the agent to automatically generate adversarial prompts that bypass T2I safety filters, induce high-toxi
+  [CVPR 2026][AI Safety][Red teaming] GenBreak fine-tunes an open-source LLM into a "red teaming agent": starting with a cold-start via SFT on two custom datasets, followed by GRPO reinforcement learning with six-way multi-objective rewards. This allows the agent to automatically generate adversarial prompts that bypass T2I safety filters, induce high-toxicity images, and maintain semantic fluency and diversity. It achieves a 70% nudity bypass rate on commercial APIs like Leona…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Reinforcement Learning
-  - GRPO
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Red teaming"
+  - "Text-to-image (T2I) safety"
+  - "Adversarial prompt"
+  - "Reinforcement learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 253d6a00396789a4
+content_hash: 83aa5d4dbac3b954
 ---
+
 # GenBreak: Red Teaming Text-to-Image Generation Using Large Language Models
 
 **Conference**: CVPR 2026  
@@ -147,16 +151,16 @@ In the highly regulated Nudity category, GenBreak achieves bypass rates of 70% /
 - Value: ⭐⭐⭐⭐ Reveals significant vulnerabilities in commercial T2I filters via single-attempt bypasses; provides a potent tool for red teaming.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
 - [\[CVPR 2026\] Red-teaming Retrieval-Augmented Diffusion Models via Poisoning Knowledge Bases](red-teaming_retrieval-augmented_diffusion_models_via_poisoning_knowledge_bases.md)
-- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
-- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Hidden Dangers of Compositional Generation: Diagnosing Semantic Safety Failures in Text-to-Image Models](hidden_dangers_of_compositional_generation_diagnosing_semantic_safety_failures_i.md)
 - [\[CVPR 2026\] Towards Human-Imperceptible Backdoor Attacks on Text-to-Image Diffusion Models](towards_human-imperceptible_backdoor_attacks_on_text-to-image_diffusion_models.md)
+- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)
 
 </div>
 

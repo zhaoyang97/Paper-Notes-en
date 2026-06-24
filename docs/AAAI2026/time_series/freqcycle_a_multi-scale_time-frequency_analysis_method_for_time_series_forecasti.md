@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Time series forecasting] This paper proposes the FreqCycle framework, which explicitly learns shared periodic patterns via the FECF module…
+  [AAAI 2026][Time Series][Time series forecasting] This paper proposes the FreqCycle framework, which explicitly learns shared periodic patterns via the FECF module, enhances mid-to-high frequency energy contributions via the SFPL module, and extends to MFreqCycle for handling coupled multi-periodicity. The framework achieves an optimal balance of SOTA performance and efficiency across 7 benchmarks.
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -12,7 +12,7 @@ tags:
   - "mid-to-high frequency enhancement"
   - "multi-scale decomposition"
 date: 2026-05-08
-content_hash: a1de66ea46856d14
+content_hash: 35cd4725302bdea7
 ---
 
 # FreqCycle: A Multi-Scale Time-Frequency Analysis Method for Time Series Forecasting
@@ -192,9 +192,9 @@ MFreqCycle achieves substantial performance gains with long lookback windows (ET
 
 - [\[AAAI 2026\] M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting](m2fmoe_multi-resolution_multi-view_frequency_mixture-of-experts_for_extreme-adap.md)
 - [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
+- [\[ICLR 2026\] Multi-Scale Hypergraph Meets LLMs: Aligning Large Language Models for Time Series Analysis](../../ICLR2026/time_series/multi-scale_hypergraph_meets_llms_aligning_large_language_models_for_time_series.md)
 - [\[ICML 2026\] Generalizing Multi-scale Time-Series Modeling with a Single Operator](../../ICML2026/time_series/generalizing_multi-scale_time-series_modeling_with_a_single_operator.md)
-- [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](../../ICLR2026/time_series/learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
-- [\[AAAI 2026\] A Theoretical Analysis of Detecting Large Model-Generated Time Series](a_theoretical_analysis_of_detecting_large_model-generated_time_series.md)
+- [\[AAAI 2026\] Counterfactual Explainable AI (XAI) Method for Deep Learning-Based Multivariate Time Series Classification](counterfactual_explainable_ai_xai_method_for_deep_learning-based_multivariate_ti.md)
 
 </div>
 

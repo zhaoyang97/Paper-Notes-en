@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework
 description: >-
-  [AAAI 2026][Multimodal VLM][Extreme Multi-label Classification] This paper investigates the effective utilization of decoder-based LLMs for Extreme Multi-label Classification (XMC)…
+  [AAAI 2026][Multimodal VLM][Extreme Multi-label Classification] This paper investigates the effective utilization of decoder-based LLMs for Extreme Multi-label Classification (XMC), proposing a dual-decoder learning strategy and the ViXML multimodal framework. By employing structured prompt templates to adapt LLM embeddings and efficiently integrating visual metadata, the method substantially outperforms state-of-the-art approaches on four public benchmarks (up to +8.21% P@1…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Siamese Learning"
   - "Dual-Decoder"
 date: 2026-05-08
-content_hash: c68a4f68ef276809
+content_hash: dd4a21ebd379680b
 ---
 
 # Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework
@@ -136,11 +136,11 @@ Key finding: ViXML with 66M DistilBERT + image surpasses text-only billion-param
 
 ## Related Papers
 
-- [\[AAAI 2026\] RMAdapter: Reconstruction-based Multi-Modal Adapter for Vision-Language Models (Oral)](rmadapter_reconstructionbased_multimodal_adapter_for_visionlanguage.md)
+- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](../../CVPR2026/multimodal_vlm/multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
+- [\[CVPR 2026\] M3DocDep: Multi-modal, Multi-page, Multi-document Dependency Chunking with Large Vision-Language Models](../../CVPR2026/multimodal_vlm/m3docdep_multi-modal_multi-page_multi-document_dependency_chunking_with_large_vi.md)
 - [\[AAAI 2026\] ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation](imagebinddc_compressing_multi-modal_data_with_imagebind-based_condensation.md)
 - [\[AAAI 2026\] The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations](the_triangle_of_similarity_a_multi-faceted_framework_for_comparing_neural_networ.md)
-- [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](../../ICLR2026/multimodal_vlm/multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
 
 </div>
 

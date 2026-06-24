@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Distributional Autoencoders Know the Score
 description: >-
-  [NeurIPS 2025][Interpretability][Autoencoders] This paper establishes rigorous theoretical guarantees for the Distributional Principal Autoencoder (DPA): it derives a closed-form relationship between the level-set geomet…
+  [NeurIPS 2025][Interpretability][Autoencoders] This paper establishes rigorous theoretical guarantees for the Distributional Principal Autoencoder (DPA): it derives a closed-form relationship between the level-set geometry of the optimal encoder and the score function of the data distribution, and proves that latent components beyond the manifold dimensionality are conditionally independent of the data—thereby unifying distributional learning and intrinsic dimension discovery…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Manifold Learning"
   - "Intrinsic Dimensionality"
 date: 2026-05-08
-content_hash: 85bf65ae6f3255e0
+content_hash: bbb76c7389f960d1
 ---
 
 # Distributional Autoencoders Know the Score
@@ -139,10 +139,10 @@ The joint optimization objective is $\sum_{k=0}^{p} \omega_k [L_k[e,d]]$, where 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](base_models_know_how_to_reason_thinking_models_learn_when.md)
-- [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
 - [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
-- [\[ICML 2026\] Sparse Autoencoders are Topic Models](../../ICML2026/interpretability/sparse_autoencoders_are_topic_models.md)
-- [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
+- [\[CVPR 2026\] Making the Classification Explanation Faithful to the Confidence Score](../../CVPR2026/interpretability/making_the_classification_explanation_faithful_to_the_confidence_score.md)
+- [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
+- [\[ICLR 2026\] What Do Large Language Models Know About Opinions?](../../ICLR2026/interpretability/what_do_large_language_models_know_about_opinions.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper proposes SessionIntentBench, a multi-task benchmark for evaluating the capability of L(V)LMs to understand cross-step intention drift in e-commerce shopping sessions. It comprises four progressive sub-tasks (intention purchase likelihood estimation, attribute regularization, intention verification contrast,
+  [ACL 2026 Findings][LLM Evaluation][Shopping Intention] This paper proposes SessionIntentBench, a multi-task benchmark for evaluating the capability of L(V)LMs to understand cross-step intention drift in e-commerce shopping sessions. It comprises four progressive sub-tasks (intention purchase likelihood estimation, attribute regularization, intention verification contrast, and intention evolution modeling), featuring 1.9 million intention items and 1.13 million intention traj…
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026 Findings"
+  - "LLM Evaluation"
+  - "Shopping Intention"
+  - "Session Modeling"
+  - "E-commerce Recommendation"
+  - "Intention Drift"
+  - "Large Language Model Evaluation"
 date: 2026-05-08
-content_hash: 8437bacf80f35d9d
+content_hash: 2ac168539bed7a5f
 ---
+
 # SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark
 
 **Conference**: ACL 2026 Findings  
@@ -146,7 +152,7 @@ The benchmark primarily utilizes zero-shot and few-shot prompting without specif
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
 - [\[ACL 2026\] Multi-Task Reinforcement Learning for Enhanced Multimodal LLM-as-a-Judge](multi-task_reinforcement_learning_for_enhanced_multimodal_llm-as-a-judge.md)
 - [\[ACL 2026\] Modeling Multi-Dimensional Cognitive States in Large Language Models under Cognitive Crowding](modeling_multi-dimensional_cognitive_states_in_large_language_models_under_cogni.md)
-- [\[ACL 2026\] ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition](researchbench_benchmarking_llms_in_scientific_discovery_via_inspiration-based_ta.md)
+- [\[ICLR 2026\] CatalystBench: A Comprehensive Multi-Task Benchmark for Advancing Language Models in Catalysis Science](../../ICLR2026/llm_evaluation/catalystbench_a_comprehensive_multi-task_benchmark_for_advancing_language_models.md)
 
 </div>
 

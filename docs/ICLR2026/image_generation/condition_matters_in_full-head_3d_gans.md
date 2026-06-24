@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Condition Matters in Full-head 3D GANs
 description: >-
-  [ICLR 2026][Image Generation][3D-aware GAN] This work identifies that view conditioning in full-head 3D GANs causes severe directional bias (where generation quality at conditioned views far exceeds others). It proposes replacing camera views with view-invariant semantic features (frontal CLIP features) as conditions, paired with the BalanceHead360 dataset conta
+  [ICLR2026][Image Generation][3D-aware GAN] This work identifies that view conditioning in full-head 3D GANs causes severe directional bias (where generation quality at conditioned views far exceeds others). It proposes replacing camera views with view-invariant semantic features (frontal CLIP features) as conditions, paired with the BalanceHead360 dataset containing 11.2 million 360° balanced images synthesized via Flux.1 Kontext. This achieves high-fidelity…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - 3D-aware GAN
-  - full-head generation
-  - semantic conditioning
-  - view conditioning
-  - synthetic data
+  - "ICLR2026"
+  - "Image Generation"
+  - "3D-aware GAN"
+  - "full-head generation"
+  - "semantic conditioning"
+  - "view conditioning"
+  - "synthetic data"
 date: 2026-05-08
-content_hash: b3d384ff89b4c35d
+content_hash: a84ad75df496eaaf
 ---
+
 # Condition Matters in Full-head 3D GANs
 
 **Conference**: ICLR2026  
@@ -133,9 +134,9 @@ The framework is built on HyPlaneHead (StyleGAN2 backbone + hybrid plane represe
 
 - [\[ICML 2026\] Scalable GANs with Transformers](../../ICML2026/image_generation/scalable_gans_with_transformers.md)
 - [\[ICLR 2026\] BideDPO: Conditional Image Generation with Simultaneous Text and Condition Alignment](bidedpo_conditional_image_generation_with_simultaneous_text_and_condition_alignm.md)
-- [\[ICLR 2026\] Factuality Matters: When Image Generation and Editing Meet Structured Visuals](factuality_matters_when_image_generation_and_editing_meet_structured_visuals.md)
-- [\[ECCV 2024\] Distilling Diffusion Models into Conditional GANs](../../ECCV2024/image_generation/distilling_diffusion_models_into_conditional_gans.md)
 - [\[ICLR 2026\] PI-Light: Physics-Inspired Diffusion for Full-Image Relighting](pi-light_physics-inspired_diffusion_for_full-image_relighting.md)
+- [\[ICLR 2026\] Factuality Matters: When Image Generation and Editing Meet Structured Visuals](factuality_matters_when_image_generation_and_editing_meet_structured_visuals.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 
 </div>
 

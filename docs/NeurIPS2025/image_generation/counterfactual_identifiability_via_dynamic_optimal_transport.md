@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Counterfactual Identifiability via Dynamic Optimal Transport
 description: >-
-  [NeurIPS 2025][Image Generation][counterfactual identification] This paper leverages dynamic optimal transport (dynamic OT) theory to resolve—for the first time—the counterfactual identifiability problem in high-dimensio…
+  [NeurIPS 2025][Image Generation][counterfactual identification] This paper leverages dynamic optimal transport (dynamic OT) theory to resolve—for the first time—the counterfactual identifiability problem in high-dimensional multivariate Markovian SCMs. It proves that the OT flow mechanism yields a unique monotone order-preserving counterfactual transport map, and extends the results to non-Markovian settings (IV/BC/FC criteria).
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "structural causal model"
   - "monotone transport map"
 date: 2026-05-08
-content_hash: 8eac62108fe3dea9
+content_hash: a24284c69fa71c6d
 ---
 
 # Counterfactual Identifiability via Dynamic Optimal Transport
@@ -145,9 +145,9 @@ Counterfactual inference follows the abduction–action–prediction pipeline:
 
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](on_the_relation_between_rectified_flows_and_optimal_transport.md)
 - [\[ICCV 2025\] The Curse of Conditions: Analyzing and Improving Optimal Transport for Conditional Flow-Based Generation](../../ICCV2025/image_generation/the_curse_of_conditions_analyzing_and_improving_optimal_transport_for_conditiona.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/image_generation/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
 - [\[NeurIPS 2025\] Pairwise Optimal Transports for Training All-to-All Flow-Based Condition Transfer Model](pairwise_optimal_transports_for_training_all-to-all_flow-based_condition_transfe.md)
 - [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](../../ICML2026/image_generation/pareto-guided_optimal_transport_for_multi-reward_alignment.md)
+- [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](../../ICLR2026/image_generation/alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GAS: Improving Discretization of Diffusion ODEs via Generalized Adversarial Solver
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This paper proposes the **Generalized Adversarial Solver (GAS)**: it adopts a "Generalized Solver" parameterization—learning additive corrections on theoretical solver coefficients and incorporating all historical points into a linear multi-step signature—and couples it with adversarial loss. GAS systematically reduces
+  [ICLR 2026][Image Generation][Diffusion ODE Solver] This paper proposes the **Generalized Adversarial Solver (GAS)**: it adopts a "Generalized Solver" parameterization—learning additive corrections on theoretical solver coefficients and incorporating all historical points into a linear multi-step signature—and couples it with adversarial loss. GAS systematically reduces the FID of diffusion models below that of existing solver distillation methods in 4–10 step few-step sampli…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion ODE Solver"
+  - "Solver Distillation"
+  - "Timestep Learning"
+  - "Adversarial Training"
+  - "Few-step Sampling"
 date: 2026-05-08
-content_hash: 7369582a0ff6d8d7
+content_hash: 36fd5e906bb273f1
 ---
+
 # GAS: Improving Discretization of Diffusion ODEs via Generalized Adversarial Solver
 
 **Conference**: ICLR 2026  
@@ -119,8 +125,8 @@ GAS consistently outperforms prior methods across all datasets and NFEs, with pa
 - [\[ICLR 2026\] Dual-Solver: A Generalized ODE Solver for Diffusion Models with Dual Prediction](dual-solver_a_generalized_ode_solver_for_diffusion_models_with_dual_prediction.md)
 - [\[ICLR 2026\] Scalable Energy-Based Models via Adversarial Training: Unifying Discrimination and Generation](scalable_energy-based_models_via_adversarial_training_unifying_discrimination_an.md)
 - [\[ICML 2026\] Mitigating the Contractivity Trap in Diffusion ODEs via Stein Stabilization](../../ICML2026/image_generation/mitigating_the_contractivity_trap_in_diffusion_odes_via_stein_stabilization.md)
+- [\[ICLR 2026\] Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models](foresight_diffusion_improving_sampling_consistency_in_predictive_diffusion_model.md)
 - [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
-- [\[ICLR 2026\] Steer Away From Mode Collisions: Improving Composition In Diffusion Models](steer_away_from_mode_collisions_improving_composition_in_diffusion_models.md)
 
 </div>
 

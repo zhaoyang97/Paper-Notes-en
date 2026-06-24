@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] A Diffusion Model to Shrink Proteins While Maintaining Their Function
 description: >-
-  [ICLR 2026][Computational Biology][ESM2] The authors propose SCISOR, a discrete diffusion model that learns only to "delete characters." It uses a pure birth process (random insertion) for forward noising and trains a denoiser to plan reverse deletions. This shrinks long protein sequences into shorter ones that are both "natural" and functional, achieving SOT
+  [ICLR 2026][Computational Biology][Protein Engineering] The authors propose SCISOR, a discrete diffusion model that learns only to "delete characters." It uses a pure birth process (random insertion) for forward noising and trains a denoiser to plan reverse deletions. This shrinks long protein sequences into shorter ones that are both "natural" and functional, achieving SOTA on ProteinGym deletion effect prediction.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - ESM2
-  - ProteinGym
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Engineering"
+  - "Discrete Diffusion"
+  - "Sequence Deletion"
+  - "Evolutionary Sequence Modeling"
+  - "ESM2"
+  - "ProteinGym"
 date: 2026-05-08
-content_hash: a8f87c81961930de
+content_hash: 64b106a57f0128cf
 ---
+
 # A Diffusion Model to Shrink Proteins While Maintaining Their Function
 
 **Conference**: ICLR 2026  

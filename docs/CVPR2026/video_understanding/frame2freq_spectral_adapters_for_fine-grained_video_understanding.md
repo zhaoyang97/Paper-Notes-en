@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Vision Foundation Model] Frame2Freq is proposed as the first family of PEFT adapters for temporal modeling in the frequency domain. By using FFT to transform frozen VFM patch embeddings into the spectral space and learning band-level filtering, it outperforms full fine-tuning models on five fine-grained action recognition benchmarks with <10%
+  [CVPR2026][Video Understanding][Spectral Adapters] Frame2Freq is proposed as the first family of PEFT adapters for temporal modeling in the frequency domain. By using FFT to transform frozen VFM patch embeddings into the spectral space and learning band-level filtering, it outperforms full fine-tuning models on five fine-grained action recognition benchmarks with <10% trainable parameters.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Vision Foundation Model
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Spectral Adapters"
+  - "Parameter-Efficient Fine-Tuning (PEFT)"
+  - "Image-to-Video Transfer"
+  - "Fine-grained Action Recognition"
+  - "Fast Fourier Transform"
+  - "Vision Foundation Model"
 date: 2026-05-08
-content_hash: 9a70282eb6b707f3
+content_hash: c564077adf607b3e
 ---
+
 # Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding
 
 **Conference**: CVPR2026  
@@ -140,11 +146,12 @@ Improvements are particularly significant on symmetric action pairs: +10.5% on t
 - Value: ⭐⭐⭐⭐⭐ — Opens a spectral route for VFM video adaptation with immediate utility for fine-grained recognition.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)
+- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)
 - [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
 - [\[CVPR 2026\] Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)

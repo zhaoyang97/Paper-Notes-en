@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Geometry of Decision Making in Language Models
 description: >-
-  [NeurIPS 2025][Model Compression][Intrinsic Dimension] By measuring the **Intrinsic Dimension (ID)** of hidden representations across layers in 28 open-source Transformer models at scale…
+  [NeurIPS 2025][Model Compression][Intrinsic Dimension] By measuring the **Intrinsic Dimension (ID)** of hidden representations across layers in 28 open-source Transformer models at scale, this paper reveals a consistent "low–high–low" pattern: early layers operate on low-dimensional manifolds, middle layers expand the representational space, and later layers re-compress into low-dimensional representations aligned with decision-making.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Multiple-Choice QA"
   - "Transformer"
 date: 2026-05-08
-content_hash: c6f6995cae9ae609
+content_hash: 22544a1147b64b65
 ---
 
 # Geometry of Decision Making in Language Models
@@ -168,10 +168,10 @@ The high agreement across estimators validates the robustness of the conclusions
 ## Related Papers
 
 - [\[NeurIPS 2025\] Online Mixture of Experts: No-Regret Learning for Optimal Collective Decision-Making](online_mixture_of_experts_no-regret_learning_for_optimal_collective_decision-mak.md)
-- [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
 - [\[NeurIPS 2025\] Optimizing Distributional Geometry Alignment with Optimal Transport for Generative Dataset Distillation](optimizing_distributional_geometry_alignment_with_optimal_transport_for_generati.md)
+- [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
 - [\[NeurIPS 2025\] PermLLM: Learnable Channel Permutation for N:M Sparse Large Language Models](permllm_learnable_channel_permutation_for_nm_sparse_large_language_models.md)
-- [\[NeurIPS 2025\] The Structure of Relation Decoding Linear Operators in Large Language Models](the_structure_of_relation_decoding_linear_operators_in_large_language_models.md)
+- [\[NeurIPS 2025\] LayerIF: Estimating Layer Quality for Large Language Models using Influence Functions](layerif_estimating_layer_quality_for_large_language_models_using_influence_funct.md)
 
 </div>
 

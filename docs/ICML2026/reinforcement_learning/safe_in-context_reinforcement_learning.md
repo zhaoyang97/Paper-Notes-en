@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Safe In-Context Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][In-context RL] This paper introduces safety constraints to in-context reinforcement learning (ICRL) for the first time, proposing SCARED. During pre-training, it utilizes an **exact-penalty Lagrangian with a single multiplier and a hinge function** to enable a Transformer policy to adapt to CMDPs at test-time **without any parameter
+  [ICML 2026][Reinforcement Learning][Safe RL] This paper introduces safety constraints to in-context reinforcement learning (ICRL) for the first time, proposing SCARED. During pre-training, it utilizes an **exact-penalty Lagrangian with a single multiplier and a hinge function** to enable a Transformer policy to adapt to CMDPs at test-time **without any parameter updates**. By conditioning on cost-to-go context, the policy achieves monotonically increasing rewards and decreasi…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - In-context RL
-  - CMDP
-  - exact penalty
-  - cost-to-go
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Safe RL"
+  - "In-context RL"
+  - "CMDP"
+  - "exact penalty"
+  - "cost-to-go"
 date: 2026-05-08
-content_hash: 3f3dcb367da1effb
+content_hash: a99201a742a90c1b
 ---
+
 # Safe In-Context Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -141,10 +143,10 @@ Previous DarkRoom OOD setups often used "grid interpolation," which fails to pro
 ## Related Papers
 
 - [\[ICML 2026\] Safe Reinforcement Learning with Preference-Based Constraint Inference](safe_reinforcement_learning_with_preference-based_constraint_inference.md)
+- [\[ICML 2026\] CSPO: Constraint-Sensitive Policy Optimization for Safe Reinforcement Learning](cspo_constraint-sensitive_policy_optimization_for_safe_reinforcement_learning.md)
+- [\[ICLR 2026\] Scalable In-Context Q-Learning](../../ICLR2026/reinforcement_learning/scalable_in-context_q-learning.md)
 - [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](../../ICLR2026/reinforcement_learning/longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
 - [\[ICML 2026\] Safety Generalization Under Distribution Shift in Safe Reinforcement Learning: A Diabetes Testbed](safety_generalization_under_distribution_shift_in_safe_reinforcement_learning_a_.md)
-- [\[NeurIPS 2025\] Towards Provable Emergence of In-Context Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/towards_provable_emergence_of_in-context_reinforcement_learning.md)
-- [\[ICLR 2026\] Scalable In-Context Q-Learning](../../ICLR2026/reinforcement_learning/scalable_in-context_q-learning.md)
 
 </div>
 

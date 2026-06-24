@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The SPARROW framework is proposed to integrate temporal consistency supervision via **Target-Specific Tracking Features (TSF)** and stabilize first-frame initialization using **dual-prompt ([BOX]+[SEG]) coarse-to-fine decoding**. Designed as a plug-and-play module for existing video MLLMs, it achieves consistent improv
+  [CVPR 2026][Multimodal VLM][Video pixel-level grounding] The SPARROW framework is proposed to integrate temporal consistency supervision via **Target-Specific Tracking Features (TSF)** and stabilize first-frame initialization using **dual-prompt ([BOX]+[SEG]) coarse-to-fine decoding**. Designed as a plug-and-play module for existing video MLLMs, it achieves consistent improvements across six benchmarks and three tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video pixel-level grounding"
+  - "Referring Video Object Segmentation"
+  - "Temporal consistency"
+  - "Dual-prompt decoding"
+  - "Multimodal Large Language Models"
 date: 2026-05-08
-content_hash: 8b94206420beb2d4
+content_hash: 86e85aa9a3bd9237
 ---
+
 # SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
 
 **Conference**: CVPR 2026  
@@ -167,11 +173,11 @@ Based on Ref-DAVIS17 (val) + VideoGLaMM baseline.
 
 ## Related Papers
 
-- [\[CVPR 2026\] LFPC: Learning to Focus and Precise Cropping for MLLMs](lfpc_learning_to_focus_and_precise_cropping_for_mllms.md)
+- [\[CVPR 2026\] Linking Perception, Confidence and Accuracy in MLLMs](linking_perception_confidence_and_accuracy_in_mllms.md)
 - [\[CVPR 2026\] Video-Only ToM: Enhancing Theory of Mind in Multimodal Large Language Models](video-only_tom_enhancing_theory_of_mind_in_multimodal_large_language_models.md)
 - [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
-- [\[CVPR 2026\] TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation](terrascope_pixel-grounded_visual_reasoning_for_earth_observation.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
+- [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
+- [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
 
 </div>
 

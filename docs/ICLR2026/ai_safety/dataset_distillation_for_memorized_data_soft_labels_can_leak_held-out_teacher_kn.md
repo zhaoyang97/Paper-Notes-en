@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Dataset Distillation for Memorized Data: Soft Labels can Leak Held-Out Teacher Knowledge
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper systematically demonstrates that in dataset distillation, by training a student only on a teacher's **soft labels**, the student can achieve accuracy far exceeding random chance on "memorized data" that it has never seen and cannot infer through generalization. This represents both an efficient pathway for t
+  [ICLR 2026][AI Safety][Soft Label Distillation] This paper systematically demonstrates that in dataset distillation, by training a student only on a teacher's **soft labels**, the student can achieve accuracy far exceeding random chance on "memorized data" that it has never seen and cannot infer through generalization. This represents both an efficient pathway for transferring memorized knowledge and a hidden privacy leakage channel, precisely regulated by sample complexity a…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Soft Label Distillation"
+  - "Memorization Leakage"
+  - "Privacy Risk"
+  - "Teacher Function Recovery"
+  - "Identifiability Threshold"
+  - "Temperature"
 date: 2026-05-08
-content_hash: 8256ab83bf68b8f2
+content_hash: c5ddea8d501c3214
 ---
+
 # Dataset Distillation for Memorized Data: Soft Labels can Leak Held-Out Teacher Knowledge
 
 **Conference**: ICLR 2026  
@@ -115,7 +122,6 @@ Note: $\mathrm{acc}^S_{train}$ remains 100% across all $\rho, \tau$.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

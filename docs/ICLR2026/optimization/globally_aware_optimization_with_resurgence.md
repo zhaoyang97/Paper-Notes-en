@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Globally Aware Optimization with Resurgence
 description: >-
-  [ICLR 2026][Optimization & Theory][resurgence theory] This paper introduces **resurgence theory** from mathematical physics into neural network optimization: it first calculates the divergent asymptotic series of the parameter space partition function $Z(g)=\int e^{-L(\theta)/g}\,d\theta$, then utilizes the Borel transform to map the singularities of this series to the va
+  [ICLR 2026][Optimization][Non-convex optimization] This paper introduces **resurgence theory** from mathematical physics into neural network optimization: it first calculates the divergent asymptotic series of the parameter space partition function $Z(g)=\int e^{-L(\theta)/g}\,d\theta$, then utilizes the Borel transform to map the singularities of this series to the values of the loss function at all critical points. This provides "target loss values" as **global information*…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - resurgence theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Non-convex optimization"
+  - "resurgence theory"
+  - "Borel transform"
+  - "partition function"
+  - "learning rate adaptation"
+  - "global information"
 date: 2026-05-08
-content_hash: dea8f1b55b776bf6
+content_hash: 89b5c726a1bf5e6f
 ---
+
 # Globally Aware Optimization with Resurgence
 
 **Conference**: ICLR 2026  

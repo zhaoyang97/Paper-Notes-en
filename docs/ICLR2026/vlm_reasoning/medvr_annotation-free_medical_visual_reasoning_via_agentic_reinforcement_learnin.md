@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] MedVR: Annotation-Free Medical Visual Reasoning via Agentic Reinforcement Learning
 description: >-
-  [ICLR 2026][vlm_reasoning][Reinforcement Learning] MedVR trains medical VLMs as agents capable of "zooming in" to examine images. It utilizes Entropy-guided Visual Relocation (EVR) to identify moments for re-examining images and Consensus-guided Credit Assignment (CCA) to automatically generate pseudo-labels for visual grounding from multiple successful trajectories. *
+  [ICLR 2026][VLM Reasoning][Medical VLM] MedVR trains medical VLMs as agents capable of "zooming in" to examine images. It utilizes Entropy-guided Visual Relocation (EVR) to identify moments for re-examining images and Consensus-guided Credit Assignment (CCA) to automatically generate pseudo-labels for visual grounding from multiple successful trajectories. **Without requiring any manual annotation for intermediate steps**, it achieves SOTA performance on 6 medical VQA benchma…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Medical VLM"
+  - "Visual Reasoning"
+  - "Tool Calling"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Annotation-Free Supervision"
+  - "Entropy-Guided Exploration"
 date: 2026-05-08
-content_hash: 389c134b4157dc2b
+content_hash: 8d1cd0f0c4420630
 ---
+
 # MedVR: Annotation-Free Medical Visual Reasoning via Agentic Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -123,7 +129,7 @@ Stepwise addition of the three core components (starting from a text RL baseline
 - [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
 - [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
 - [\[ICLR 2026\] Agentic Jigsaw Interaction Learning for Enhancing Visual Perception and Reasoning in Vision-Language Models](agentic_jigsaw_interaction_learning_for_enhancing_visual_perception_and_reasonin.md)
-- [\[ICLR 2026\] Medical Thinking with Multiple Images](medical_thinking_with_multiple_images.md)
+- [\[ICML 2026\] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning](../../ICML2026/vlm_reasoning/ivgr_internalizing_visually_grounded_reasoning_for_mllms_with_reinforcement_lear.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HPSv3: Towards Wide-Spectrum Human Preference Score
 description: >-
-  [ICCV 2025][Image Generation][Human preference score] HPSv3 constructs the first wide-spectrum human preference dataset HPDv3 (1.08M image-text pairs, 1.17M annotated pairs)…
+  [ICCV 2025][Image Generation][Human preference score] HPSv3 constructs the first wide-spectrum human preference dataset HPDv3 (1.08M image-text pairs, 1.17M annotated pairs), trains a preference model using a VLM backbone (Qwen2-VL) with an uncertainty-aware ranking loss, and proposes a Chain-of-Human-Preference (CoHP) iterative generation method, significantly improving the accuracy and coverage of image generation evaluation.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "VLM"
   - "image generation evaluation metric"
 date: 2026-05-08
-content_hash: 4ad675c75b67ac65
+content_hash: 775c092935186cd4
 ---
 
 # HPSv3: Towards Wide-Spectrum Human Preference Score
@@ -154,9 +154,9 @@ HPSv3 is trained using a negative log-likelihood loss for uncertainty-aware rank
 
 - [\[ICCV 2025\] InfiniDreamer: Arbitrarily Long Human Motion Generation via Segment Score Distillation](infinidreamer_arbitrarily_long_human_motion_generation_via_segment_score_distill.md)
 - [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
-- [\[ICCV 2025\] CompleteMe: Reference-based Human Image Completion](completeme_reference-based_human_image_completion.md)
+- [\[CVPR 2025\] Boost Your Human Image Generation Model via Direct Preference Optimization](../../CVPR2025/image_generation/boost_your_human_image_generation_model_via_direct_preference_optimization.md)
 - [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](balanced_image_stylization_with_style_matching_score.md)
-- [\[ICCV 2025\] A Unified Framework for Motion Reasoning and Generation in Human Interaction](a_unified_framework_for_motion_reasoning_and_generation_in_human_interaction.md)
+- [\[ECCV 2024\] Stable Preference: Redefining Training Paradigm of Human Preference Model for Text-to-Image Synthesis](../../ECCV2024/image_generation/stable_preference_redefining_training_paradigm_of_human_preference_model_for_tex.md)
 
 </div>
 

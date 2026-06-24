@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CPEP: Contrastive Pose-EMG Pre-training Enhances Gesture Generalization on EMG Signals
 description: >-
-  [NeurIPS 2025][Human Understanding][EMG signals] This paper proposes the CPEP framework, which employs contrastive learning to align low-quality EMG signal representations with high-quality hand pose representations…
+  [NeurIPS 2025][Human Understanding][EMG signals] This paper proposes the CPEP framework, which employs contrastive learning to align low-quality EMG signal representations with high-quality hand pose representations, endowing the EMG encoder with pose-awareness. CPEP is the first to achieve zero-shot recognition of unseen gestures from EMG signals, yielding a 21% improvement on in-distribution gesture classification and a 72% improvement on unseen gesture classification.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -13,7 +13,7 @@ tags:
   - "zero-shot classification"
   - "cross-modal alignment"
 date: 2026-05-08
-content_hash: 491466e959f5eddc
+content_hash: da3b518dadd97329
 ---
 
 # CPEP: Contrastive Pose-EMG Pre-training Enhances Gesture Generalization on EMG Signals
@@ -126,11 +126,11 @@ Three-stage training pipeline: EMG/Pose-MAE pre-training for 100 epochs each →
 
 ## Related Papers
 
+- [\[ICLR 2026\] EMBridge: Enhancing Gesture Generalization from EMG Signals Through Cross-modal Representation Learning](../../ICLR2026/human_understanding/embridge_enhancing_gesture_generalization_from_emg_signals_through_cross-modal_r.md)
 - [\[AAAI 2026\] New Synthetic Goldmine: Hand Joint Angle-Driven EMG Data Generation Framework for Micro-Gesture Recognition](../../AAAI2026/human_understanding/new_synthetic_goldmine_hand_joint_angle-driven_emg_data_generation_framework_for.md)
-- [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](../../ICCV2025/human_understanding/openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
 - [\[NeurIPS 2025\] PandaPose: 3D Human Pose Lifting from a Single Image via Propagating 2D Pose Prior to 3D Anchor Space](pandapose_3d_human_pose_lifting_from_a_single_image_via_propagating_2d_pose_prio.md)
 - [\[NeurIPS 2025\] RAPTR: Radar-Based 3D Pose Estimation Using Transformer](raptr_radar-based_3d_pose_estimation_using_transformer.md)
-- [\[NeurIPS 2025\] Cycle-Sync: Robust Global Camera Pose Estimation through Enhanced Cycle-Consistent Synchronization](cycle-sync_robust_global_camera_pose_estimation_through_enhanced_cycle-consisten.md)
+- [\[CVPR 2025\] PoseBH: Prototypical Multi-Dataset Training Beyond Human Pose Estimation](../../CVPR2025/human_understanding/posebh_prototypical_multi-dataset_training_beyond_human_pose_estimation.md)
 
 </div>
 

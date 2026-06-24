@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Emulating Self-Attention with Convolution for Efficient Image Super-Resolution
 description: >-
-  [ICCV 2025][Image Restoration][Image Super-Resolution] Motivated by the observation that features and attention maps across adjacent self-attention layers exhibit high inter-layer similarity (89%/87%)…
+  [ICCV 2025][Image Restoration][Image Super-Resolution] Motivated by the observation that features and attention maps across adjacent self-attention layers exhibit high inter-layer similarity (89%/87%), this paper proposes ConvAttn — a module composed of a shared large-kernel convolution and a dynamic convolution kernel — to replace the majority of self-attention layers. Flash Attention is introduced into lightweight SR for the first time, extending the window size to $32 \tim…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Flash Attention"
   - "Lightweight Network"
 date: 2026-05-08
-content_hash: 90c61e848cbda3f1
+content_hash: 2cdb2d651d4e7026
 ---
 
 # Emulating Self-Attention with Convolution for Efficient Image Super-Resolution
@@ -165,11 +165,11 @@ ESC surpasses ATD-light by 0.1 dB PSNR on Urban100 ×4 while being **8.7× faste
 
 ## Related Papers
 
+- [\[ICLR 2026\] LinearSR: Unlocking Linear Attention for Stable and Efficient Image Super-Resolution](../../ICLR2026/image_restoration/linearsr_unlocking_linear_attention_for_stable_and_efficient_image_super-resolut.md)
 - [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](../../NeurIPS2025/image_restoration/spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
 - [\[ICCV 2025\] Outlier-Aware Post-Training Quantization for Image Super-Resolution](outlier-aware_post-training_quantization_for_image_super-resolution.md)
 - [\[ICCV 2025\] Efficient Concertormer for Image Deblurring and Beyond](efficient_concertormer_for_image_deblurring_and_beyond.md)
 - [\[ICCV 2025\] IM-LUT: Interpolation Mixing Look-Up Tables for Image Super-Resolution](im-lut_interpolation_mixing_look-up_tables_for_image_super-resolution.md)
-- [\[ICCV 2025\] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising](self-calibrated_variance-stabilizing_transformations_for_real-world_image_denois.md)
 
 </div>
 

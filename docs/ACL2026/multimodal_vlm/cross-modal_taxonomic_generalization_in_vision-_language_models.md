@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cross-Modal Taxonomic Generalization in (Vision-) Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] This paper systematically investigates whether language models in VLMs can generalize taxonomic knowledge (hypernym relations) learned from text to visual inputs. It finds that even without hypernym labels during training, pretrained LMs recognize hypernym categories in images, provided there is visual coherence among
+  [ACL 2026][Multimodal VLM][Cross-modal generalization] This paper systematically investigates whether language models in VLMs can generalize taxonomic knowledge (hypernym relations) learned from text to visual inputs. It finds that even without hypernym labels during training, pretrained LMs recognize hypernym categories in images, provided there is visual coherence among category members.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL 2026"
+  - "Multimodal VLM"
+  - "Cross-modal generalization"
+  - "taxonomic knowledge"
+  - "hypernyms"
+  - "vision-language models"
+  - "visual coherence"
 date: 2026-05-08
-content_hash: d3603e814c9da6e7
+content_hash: dd600739baa2e994
 ---
+
 # Cross-Modal Taxonomic Generalization in (Vision-) Language Models
 
 **Conference**: ACL 2026  
@@ -113,8 +118,8 @@ The training objective is standard next-word prediction, calculating loss only o
 - [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
 - [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
 - [\[ICML 2025\] Vision-Language Models Create Cross-Modal Task Representations](../../ICML2025/multimodal_vlm/vision-language_models_create_cross-modal_task_representations.md)
-- [\[ACL 2026\] Topology-Aware Layer Pruning for Large Vision-Language Models](topology-aware_layer_pruning_for_large_vision-language_models.md)
-- [\[ICML 2026\] VEENA: Interpreting and Enhancing Emotional Circuits in Large Vision-Language Models via Cross-Modal Information Flow](../../ICML2026/multimodal_vlm/interpreting_and_enhancing_emotional_circuits_in_large_vision-language_models_vi.md)
+- [\[ACL 2026\] Cross-Modal Masked Compositional Concept Modeling for Enhancing Visio-Linguistic Compositionality](cross-modal_masked_compositional_concept_modeling_for_enhancing_visio-linguistic.md)
+- [\[ICLR 2026\] XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models](../../ICLR2026/multimodal_vlm/xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md)
 
 </div>
 

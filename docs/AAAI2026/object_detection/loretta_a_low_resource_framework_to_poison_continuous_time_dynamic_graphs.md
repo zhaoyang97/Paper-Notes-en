@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs
 description: >-
-  [AAAI 2026][Object Detection][Temporal Graph Neural Networks] This paper proposes LoReTTA, a two-stage adversarial poisoning attack framework that requires no surrogate model. It first sparsifies high-influence edges via…
+  [AAAI 2026][Object Detection][Temporal Graph Neural Networks] This paper proposes LoReTTA, a two-stage adversarial poisoning attack framework that requires no surrogate model. It first sparsifies high-influence edges via 16 temporal importance metrics, then replaces them with adversarial edges using a degree-preserving negative sampling algorithm. Across 4 datasets × 4 TGNN models, LoReTTA achieves an average performance degradation of 29.47%…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -13,7 +13,7 @@ tags:
   - "Graph Sparsification"
   - "Temporal PageRank"
 date: 2026-05-08
-content_hash: 4b20b698a2d44755
+content_hash: e450638943e879b1
 ---
 
 # LoReTTA: A Low Resource Framework To Poison Continuous Time Dynamic Graphs
@@ -150,11 +150,11 @@ No loss function is involved — LoReTTA is a purely heuristic method with no gr
 
 ## Related Papers
 
-- [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](../../CVPR2026/object_detection/cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
+- [\[ICLR 2026\] Self-Guided Low Light Object Detection Framework](../../ICLR2026/object_detection/self-guided_low_light_object_detection_framework.md)
 - [\[AAAI 2026\] RcAE: Recursive Reconstruction Framework for Unsupervised Industrial Anomaly Detection](rcae_recursive_reconstruction_framework_for_unsupervised_industrial_anomaly_dete.md)
-- [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](../../ICCV2025/object_detection/dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
-- [\[AAAI 2026\] When Trackers Date Fish: A Benchmark and Framework for Underwater Multiple Fish Tracking](when_trackers_date_fish_a_benchmark_and_framework_for_underwater_multiple_fish_t.md)
 - [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](yolo-iod_towards_real_time_incremental_object_detection.md)
+- [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](../../CVPR2026/object_detection/cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
+- [\[AAAI 2026\] Correcting False Alarms from Unseen: Adapting Graph Anomaly Detectors at Test Time](correcting_false_alarms_from_unseen_adapting_graph_anomaly_detectors_at_test_tim.md)
 
 </div>
 

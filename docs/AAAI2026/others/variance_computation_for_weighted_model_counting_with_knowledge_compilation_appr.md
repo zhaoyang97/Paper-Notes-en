@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Variance Computation for Weighted Model Counting with Knowledge Compilation Approach
 description: >-
-  [AAAI 2026][Weighted Model Counting] This paper treats the weights in weighted model counting (WMC) as random variables with associated variances…
+  [AAAI 2026][Weighted Model Counting] This paper treats the weights in weighted model counting (WMC) as random variables with associated variances, and proposes a polynomial-time algorithm for computing WMC variance on structured d-DNNF representations. It further proves intractability of this problem on structured DNNF, d-DNNF, and FBDD (unless P=NP), and applies the framework to quantify parameter uncertainty in Bayesian network inference.
 tags:
   - "AAAI 2026"
   - "Weighted Model Counting"
@@ -11,7 +11,7 @@ tags:
   - "Bayesian Networks"
   - "Structured d-DNNF"
 date: 2026-05-08
-content_hash: 179cf015b9ef4bbd
+content_hash: c6d750cadd6d36f3
 ---
 
 # Variance Computation for Weighted Model Counting with Knowledge Compilation Approach
@@ -158,9 +158,9 @@ The variance of $\Pr(\text{Chl\_a}=0)$ is computed, and the variance of each par
 
 - [\[AAAI 2026\] Tractable Weighted First-Order Model Counting with Bounded Treewidth Binary Evidence](tractable_weighted_first-order_model_counting_with_bounded_treewidth_binary_evid.md)
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
-- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
+- [\[CVPR 2025\] Uncertainty Weighted Gradients for Model Calibration](../../CVPR2025/others/uncertainty_weighted_gradients_for_model_calibration.md)
 - [\[AAAI 2026\] Structural Approach to Guiding a Present-Biased Agent](structural_approach_to_guiding_a_present-biased_agent.md)
-- [\[AAAI 2026\] Data Complexity of Querying Description Logic Knowledge Bases under Cost-Based Semantics](data_complexity_of_querying_description_logic_knowledge_bases_under_cost-based_s.md)
+- [\[AAAI 2026\] LeanRAG: Knowledge-Graph-Based Generation with Semantic Aggregation and Hierarchical Retrieval](leanrag_knowledge-graph-based_generation_with_semantic_aggregation_and_hierarchi.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs
 description: >-
-  [ICLR 2026][Multi-Agent][Reinforcement Learning] GraphPlanner upgrades multi-model LLM routing from "selecting a single model" to "generating a multi-agent workflow." It utilizes a heterogeneous graph memory network, GARNet, to simultaneously encode the current workflow and historical interactions, while jointly optimizing task performance and computational overhead
+  [ICLR 2026][Multi-Agent][LLM Routing] GraphPlanner upgrades multi-model LLM routing from "selecting a single model" to "generating a multi-agent workflow." It utilizes a heterogeneous graph memory network, GARNet, to simultaneously encode the current workflow and historical interactions, while jointly optimizing task performance and computational overhead using PPO. It achieves up to a 9.3% accuracy improvement across 14 tasks while reducing GPU training overhead from $186 \t…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "LLM Routing"
+  - "Multi-Agent Collaboration"
+  - "Heterogeneous Graph Memory"
+  - "Reinforcement Learning"
+  - "Workflow Generation"
 date: 2026-05-08
-content_hash: 5c1f70f314ba41d5
+content_hash: d5d798116a0abd12
 ---
+
 # GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs
 
 **Conference**: ICLR 2026  
@@ -139,11 +144,11 @@ In Phase 2, GraphPlanner's average accuracy is **+9.3%** higher than the stronge
 
 ## Related Papers
 
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 - [\[ACL 2026\] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data](../../ACL2026/multi_agent/memory-augmented_llm-based_multi-agent_system_for_automated_feature_generation_o.md)
 - [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
 - [\[ICLR 2026\] Multi-Agent Debate with Memory Masking (MAD-M²)](multi-agent_debate_with_memory_masking.md)
 - [\[ICLR 2026\] WideSearch: Benchmarking Agentic Broad Info-Seeking](widesearch_benchmarking_agentic_broad_info-seeking.md)
-- [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
 
 </div>
 

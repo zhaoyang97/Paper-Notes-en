@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward
 description: >-
-  [AAAI 2026][Robotics][action chunking] AC3 proposes an actor-critic framework that directly learns continuous action sequences (action chunks)…
+  [AAAI 2026 Oral][Robotics][action chunking] AC3 proposes an actor-critic framework that directly learns continuous action sequences (action chunks), stabilizing long-horizon robotic manipulation under sparse rewards via an asymmetric actor update rule—updating the actor only from successful trajectories—and self-supervised anchor-based intrinsic rewards. The method achieves superior success rates over existing approaches across 25 tasks on BiGym and RLBench.
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Robotics"
   - "action chunking"
   - "actor-critic"
@@ -12,7 +12,7 @@ tags:
   - "long-horizon manipulation"
   - "self-supervised reward shaping"
 date: 2026-05-08
-content_hash: af2b654bd1703a5d
+content_hash: a13787accea60f1a
 ---
 
 # Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward
@@ -111,10 +111,10 @@ The **asymmetric update** concept may have broad applicability to other sparse-r
 
 ## Related Papers
 
+- [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](../../ICLR2026/robotics/sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
 - [\[AAAI 2026\] ManiLong-Shot: Interaction-Aware One-Shot Imitation Learning for Long-Horizon Manipulation](manilong-shot_interaction-aware_one-shot_imitation_learning_for_long-horizon_man.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/robotics/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[NeurIPS 2025\] RoboCerebra: A Large-scale Benchmark for Long-horizon Robotic Manipulation Evaluation](../../NeurIPS2025/robotics/robocerebra_a_large-scale_benchmark_for_long-horizon_robotic_manipulation_evalua.md)
 - [\[ICLR 2026\] Emergence of Spatial Representation in an Actor-Critic Agent with Hippocampus-Inspired Sequence Generator](../../ICLR2026/robotics/emergence_of_spatial_representation_in_an_actor-critic_agent_with_hippocampus-in.md)
+- [\[CVPR 2026\] General Process Reward Modeling for Robotic Reinforcement Learning](../../CVPR2026/robotics/general_process_reward_modeling_for_robotic_reinforcement_learning.md)
 - [\[AAAI 2026\] Test-driven Reinforcement Learning in Continuous Control](test-driven_reinforcement_learning_in_continuous_control.md)
 
 </div>

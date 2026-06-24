@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Benchmarking Testing in Automated Theorem Proving
 description: >-
-  [ACL 2026][Code Intelligence][Lean 4] Drawing inspiration from the concept of "integration testing" in software engineering, the semantic correctness of a generated theorem is determined by whether "all successor theorems depending on it still compile." This work constructs T2, a Lean 4 benchmark with 2206 problems, revealing a significant gap where mainst
+  [ACL 2026][Code Intelligence][Automated Theorem Proving] Drawing inspiration from the concept of "integration testing" in software engineering, the semantic correctness of a generated theorem is determined by whether "all successor theorems depending on it still compile." This work constructs T2, a Lean 4 benchmark with 2206 problems, revealing a significant gap where mainstream LLMs achieve a 80%+ compilation rate but a semantic accuracy of only ~39%.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Lean 4
-  - Cut Elimination
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Automated Theorem Proving"
+  - "Lean 4"
+  - "Semantic Correctness"
+  - "Integration Testing"
+  - "Cut Elimination"
 date: 2026-05-08
-content_hash: 4db541ff2a1e3cfa
+content_hash: e39665358caec3a5
 ---
+
 # Benchmarking Testing in Automated Theorem Proving
 
 **Conference**: ACL 2026  
@@ -115,10 +119,10 @@ NL proof and successor theorem (ST) **must be provided together** for stable per
 ## Related Papers
 
 - [\[ACL 2026\] Discover and Prove: An Open-source Agentic Framework for Hard Mode Automated Theorem Proving in Lean 4](discover_and_prove_an_open-source_agentic_framework_for_hard_mode_automated_theo.md)
+- [\[ACL 2026\] CreativeBench: Benchmarking and Enhancing Machine Creativity via Self-Evolving Challenges](creativebench_benchmarking_and_enhancing_machine_creativity_via_self-evolving_ch.md)
 - [\[ACL 2026\] SOCIA-EVO: Automated Simulator Construction via Dual-Anchored Bi-Level Optimization](socia-evo_automated_simulator_construction_via_dual-anchored_bi-level_optimizati.md)
 - [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
-- [\[ICLR 2026\] InnoGym: Benchmarking the Innovation Potential of AI Agents](../../ICLR2026/code_intelligence/innogym_benchmarking_the_innovation_potential_of_ai_agents.md)
-- [\[ICML 2026\] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding](../../ICML2026/code_intelligence/centaureval_benchmarking_human-in-the-loop_value_in_agentic_coding.md)
+- [\[ICLR 2026\] VERINA: Benchmarking Verifiable Code Generation](../../ICLR2026/code_intelligence/verina_benchmarking_verifiable_code_generation.md)
 
 </div>
 

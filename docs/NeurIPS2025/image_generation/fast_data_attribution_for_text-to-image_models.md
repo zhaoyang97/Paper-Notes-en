@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fast Data Attribution for Text-to-Image Models
 description: >-
-  [NeurIPS 2025][Image Generation][Data Attribution] This work distills the accurate but computationally expensive Attribution by Unlearning (AbU) method into a lightweight feature embedding space. By training via learning…
+  [NeurIPS 2025][Image Generation][Data Attribution] This work distills the accurate but computationally expensive Attribution by Unlearning (AbU) method into a lightweight feature embedding space. By training via learning-to-rank, simple cosine similarity retrieval approximates the costly attribution ranking, enabling millisecond-level data attribution at the scale of Stable Diffusion + LAION-400M for the first time.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Feature Distillation"
   - "Efficient Retrieval"
 date: 2026-05-08
-content_hash: 3366ad0907ac8ba9
+content_hash: 820b638d01dd0628
 ---
 
 # Fast Data Attribution for Text-to-Image Models

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Revealing Multimodal Causality with Large Language Models
 description: >-
-  [NeurIPS 2025][Causal Inference][Multimodal causal discovery] This paper proposes MLLM-CD, the first framework for causal discovery from multimodal unstructured data (text + images). It identifies causal variables via co…
+  [NeurIPS 2025][Causal Inference][Multimodal causal discovery] This paper proposes MLLM-CD, the first framework for causal discovery from multimodal unstructured data (text + images). It identifies causal variables via contrastive factor discovery, infers causal structure through statistical methods, and resolves structural ambiguity via iterative multimodal counterfactual reasoning.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "counterfactual reasoning"
   - "unstructured data"
 date: 2026-05-08
-content_hash: d58dc448219ce33e
+content_hash: e06a08bc16f6cbd3
 ---
 
 # Revealing Multimodal Causality with Large Language Models
@@ -126,10 +126,10 @@ No model training is involved. The framework uses four MLLMs: GPT-4o, Gemini 2.0
 ## Related Papers
 
 - [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
+- [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
+- [\[ACL 2025\] Counterfactual-Consistency Prompting for Relative Temporal Understanding in Large Language Models](../../ACL2025/causal_inference/counterfactual-consistency_prompting_for_relative_temporal_understanding_in_larg.md)
 - [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](../../ACL2026/causal_inference/evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
 - [\[NeurIPS 2025\] From Black-box to Causal-box: Towards Building More Interpretable Models](from_black-box_to_causal-box_towards_building_more_interpretable_models.md)
-- [\[NeurIPS 2025\] Causality-Induced Positional Encoding for Transformer-Based Representation Learning of Non-Sequential Features](causality-induced_positional_encoding_for_transformer-based_representation_learn.md)
-- [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
 
 </div>
 

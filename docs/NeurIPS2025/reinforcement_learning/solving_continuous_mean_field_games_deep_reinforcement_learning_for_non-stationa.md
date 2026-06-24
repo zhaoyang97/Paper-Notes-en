@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Mean Field Games] This paper proposes the DEDA-FP algorithm, which for the first time simultaneously learns Nash equilibrium policies and population distributions in non-stationary…
+  [NeurIPS 2025][Reinforcement Learning][Mean Field Games] This paper proposes the DEDA-FP algorithm, which for the first time simultaneously learns Nash equilibrium policies and population distributions in non-stationary mean field games (MFGs) with continuous state/action spaces. By combining deep RL for best response computation, supervised learning for mean policy representation, and conditional Normalizing Flow for modeling time-varying population distributions…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Normalizing Flow"
   - "Nash Equilibrium"
 date: 2026-05-08
-content_hash: 015559bc4cee358f
+content_hash: 67ef66f7a5d63c75
 ---
 
 # Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics
@@ -155,8 +155,8 @@ $$e_k^{\text{true}} < C_0 e_0^{\text{cnf}} + \frac{1}{k}\sum_{i=1}^{k-1}\left[(i
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
 - [\[NeurIPS 2025\] Non-convex Entropic Mean-Field Optimization via Best Response Flow](non-convex_entropic_mean-field_optimization_via_best_response_flow.md)
+- [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
 - [\[NeurIPS 2025\] Solving Neural Min-Max Games: The Role of Architecture, Initialization & Dynamics](solving_neural_min-max_games_the_role_of_architecture_initialization_dynamics.md)
-- [\[NeurIPS 2025\] Forecasting in Offline Reinforcement Learning for Non-stationary Environments](forecasting_in_offline_reinforcement_learning_for_non-stationary_environments.md)
 
 </div>
 

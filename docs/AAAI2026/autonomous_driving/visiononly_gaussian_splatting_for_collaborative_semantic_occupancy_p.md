@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction
 description: >-
-  [AAAI 2026][Autonomous Driving][Collaborative Perception] This paper proposes the first vision-only semantic occupancy prediction framework that uses sparse 3D semantic Gaussian primitives as the communication medium for…
+  [AAAI 2026 Oral][Autonomous Driving][Collaborative Perception] This paper proposes the first vision-only semantic occupancy prediction framework that uses sparse 3D semantic Gaussian primitives as the communication medium for collaborative perception. Through ROI cropping, rigid transformation of Gaussians, and a neighborhood fusion module to suppress noise and redundancy, the method achieves +8.42 mIoU over the single-agent baseline and +3.28 mIoU over the baseline collabora…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Autonomous Driving"
   - "Collaborative Perception"
   - "3D Gaussian Splatting"
@@ -12,7 +12,7 @@ tags:
   - "V2X Communication"
   - "Vision-Only"
 date: 2026-05-08
-content_hash: b9426352e1a2c906
+content_hash: fa7c23b12aec7bfe
 ---
 
 # Vision-Only Gaussian Splatting for Collaborative Semantic Occupancy Prediction
@@ -122,10 +122,10 @@ Standard semantic occupancy loss (CE + Lovász loss), single-stage end-to-end tr
 ## Related Papers
 
 - [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](../../ICCV2025/autonomous_driving/gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
-- [\[CVPR 2026\] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots](../../CVPR2026/autonomous_driving/panoramic_multimodal_semantic_occupancy_prediction.md)
+- [\[ECCV 2024\] GaussianFormer: Scene as Gaussians for Vision-Based 3D Semantic Occupancy Prediction](../../ECCV2024/autonomous_driving/gaussianformer_scene_as_gaussians_for_vision-based_3d_semantic_occupancy_predict.md)
 - [\[ICCV 2025\] Semantic Causality-Aware Vision-Based 3D Occupancy Prediction](../../ICCV2025/autonomous_driving/semantic_causality-aware_vision-based_3d_occupancy_prediction.md)
-- [\[AAAI 2026\] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
-- [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](../../CVPR2026/autonomous_driving/generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
+- [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](../../CVPR2026/autonomous_driving/parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
+- [\[CVPR 2025\] OccMamba: Semantic Occupancy Prediction with State Space Models](../../CVPR2025/autonomous_driving/occmamba_semantic_occupancy_prediction_with_state_space_models.md)
 
 </div>
 

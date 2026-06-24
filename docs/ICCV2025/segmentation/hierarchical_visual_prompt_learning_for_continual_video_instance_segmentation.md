@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Continual Learning] This paper introduces Continual Video Instance Segmentation (CVIS) as a new problem formulation, and proposes the Hierarchical Visual Prompt Learning (HVPL) model…
+  [ICCV 2025][Segmentation][Continual Learning] This paper introduces Continual Video Instance Segmentation (CVIS) as a new problem formulation, and proposes the Hierarchical Visual Prompt Learning (HVPL) model, which mitigates catastrophic forgetting of old categories via forgetting compensation mechanisms at both frame-level and video-level.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Orthogonal Gradient Correction"
 date: 2026-05-08
-content_hash: 7204ef023ead2fed
+content_hash: 22b3a20222475c55
 ---
 
 # Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation
@@ -145,10 +145,10 @@ HVPL adopts a pre-trained Mask2Former as the frame-level detector (with frozen p
 ## Related Papers
 
 - [\[ICCV 2025\] CAVIS: Context-Aware Video Instance Segmentation](cavis_context-aware_video_instance_segmentation.md)
-- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
+- [\[CVPR 2025\] Audio-Visual Instance Segmentation](../../CVPR2025/segmentation/audio-visual_instance_segmentation.md)
 - [\[ICCV 2025\] Implicit Counterfactual Learning for Audio-Visual Segmentation](implicit_counterfactual_learning_for_audio-visual_segmentation.md)
+- [\[ICCV 2025\] HiMTok: Learning Hierarchical Mask Tokens for Image Segmentation with Large Multimodal Model](himtok_learning_hierarchical_mask_tokens_for_image_segmentation_with_large_multi.md)
 - [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
-- [\[ICCV 2025\] Region-based Cluster Discrimination for Visual Representation Learning](region-based_cluster_discrimination_for_visual_representation_learning.md)
 
 </div>
 

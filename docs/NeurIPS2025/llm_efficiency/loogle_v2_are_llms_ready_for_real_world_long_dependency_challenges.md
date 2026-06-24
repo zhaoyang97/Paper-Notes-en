@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LooGLE v2: Are LLMs Ready for Real World Long Dependency Challenges?
 description: >-
-  [NeurIPS 2025 (Datasets and Benchmarks Track)][LLM Efficiency][long dependency] LooGLE v2 is a long-dependency reasoning benchmark spanning four real-world domains—legal, financial, gaming…
+  [NeurIPS 2025 (Datasets and Benchmarks Track)][LLM Efficiency][long dependency] LooGLE v2 is a long-dependency reasoning benchmark spanning four real-world domains—legal, financial, gaming, and code—with context lengths ranging from 16K to 2M tokens. It comprises 10 domain-specific task types and 1,934 QA instances. Evaluation of 10 LLMs reveals that the strongest model, GPT-4.1, achieves only 59.2%, exposing fundamental deficiencies of current LLMs in real-world long-depende…
 tags:
   - "NeurIPS 2025 (Datasets and Benchmarks Track)"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "scalable annotation"
   - "long-context reasoning"
 date: 2026-05-08
-content_hash: 77c2030c85dd74c8
+content_hash: 6e285ae40d016526
 ---
 
 # LooGLE v2: Are LLMs Ready for Real World Long Dependency Challenges?
@@ -192,11 +192,11 @@ As a NeurIPS D&B Track paper, LooGLE v2 demonstrates considerable engineering de
 
 ## Related Papers
 
+- [\[ACL 2025\] LADM: Long-context Training Data Selection with Attention-based Dependency Measurement for LLMs](../../ACL2025/llm_efficiency/ladm_long_context_data.md)
+- [\[ICLR 2026\] Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs](../../ICLR2026/llm_efficiency/beyond_real_imaginary_extension_of_rotary_position_embeddings_for_long-context_l.md)
+- [\[ACL 2025\] LongBench v2: Towards Deeper Understanding and Reasoning on Realistic Long-context Multitasks](../../ACL2025/llm_efficiency/longbench_v2_towards_deeper_understanding_and_reasoning_on_realistic_long-contex.md)
 - [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
-- [\[ICML 2026\] Training-Inference Consistent Segmented Execution for Long-Context LLMs](../../ICML2026/llm_efficiency/training-inference_consistent_segmented_execution_for_long-context_llms.md)
-- [\[NeurIPS 2025\] Silent Tokens, Loud Effects: Padding in LLMs](silent_tokens_loud_effects_padding_in_llms.md)
-- [\[NeurIPS 2025\] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context](technical_debt_in_in-context_learning_diminishing_efficiency_in_long_context.md)
-- [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
+- [\[ICML 2025\] Long-Short Alignment for Effective Long-Context Modeling in LLMs](../../ICML2025/llm_efficiency/long-short_alignment_for_effective_long-context_modeling_in_llms.md)
 
 </div>
 

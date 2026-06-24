@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mixture-of-Experts based Feature Decoupling for Open Vocabulary Scene Graph Generation
 description: >-
-  [CVPR 2026][Graph Learning][Paper Note] Addressing the issues of "relying solely on off-the-shelf VLM features, lacking discriminative attributes, and semantic isolation between objects and relations" in Open Vocabulary Scene Graph Generation (OVSGG), this paper proposes MoE-FD. It adaptively decouples object/relation features into sub-attributes like shape,
+  [CVPR 2026][Graph Learning][Open-Vocabulary Scene Graph] Addressing the issues of "relying solely on off-the-shelf VLM features, lacking discriminative attributes, and semantic isolation between objects and relations" in Open Vocabulary Scene Graph Generation (OVSGG), this paper proposes MoE-FD. It adaptively decouples object/relation features into sub-attributes like shape, texture, and space using a Mixture-of-Experts (MoE) module, followed by iterative cross-attention for…
 tags:
-  - CVPR 2026
-  - Graph Learning
+  - "CVPR 2026"
+  - "Graph Learning"
+  - "Open-Vocabulary Scene Graph"
+  - "Mixture-of-Experts"
+  - "Feature Decoupling"
+  - "Cross-Attention"
+  - "Vision-Semantic Alignment"
 date: 2026-05-08
-content_hash: 1509a249604fb651
+content_hash: 64253a3a7665642f
 ---
+
 # Mixture-of-Experts based Feature Decoupling for Open Vocabulary Scene Graph Generation
 
 **Conference**: CVPR 2026  
@@ -124,10 +130,10 @@ FD(Obj) = Object Feature Decoupling, FD(Rel) = Relation Feature Decoupling, IFR 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation](../../NeurIPS2025/graph_learning/interaction-centric_knowledge_infusion_and_transfer_for_open-vocabulary_scene_gr.md)
-- [\[CVPR 2026\] WSGG: Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](wsgg_spatiotemporal_world_scene_graph.md)
 - [\[CVPR 2026\] Robo-SGG: Exploiting Layout-Oriented Normalization and Restitution Can Improve Robust Scene Graph Generation](robo-sgg_exploiting_layout-oriented_normalization_and_restitution_can_improve_ro.md)
-- [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](../../NeurIPS2025/graph_learning/moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
-- [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](../../AAAI2026/graph_learning/self-adaptive_graph_mixture_of_models.md)
+- [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](../../ICLR2026/graph_learning/diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
+- [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](../../ICLR2026/graph_learning/adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
+- [\[CVPR 2025\] Universal Scene Graph Generation](../../CVPR2025/graph_learning/universal_scene_graph_generation.md)
 
 </div>
 

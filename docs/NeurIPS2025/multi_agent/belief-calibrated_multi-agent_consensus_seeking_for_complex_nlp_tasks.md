@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks
 description: >-
-  [NeurIPS 2025][Multi-Agent][Multi-agent systems] This paper proposes the Belief-Calibrated Consensus Seeking (BCCS) framework, which incorporates three modules—belief-calibrated consensus judgment…
+  [NeurIPS 2025][Multi-Agent][Multi-agent systems] This paper proposes the Belief-Calibrated Consensus Seeking (BCCS) framework, which incorporates three modules—belief-calibrated consensus judgment, conflict-aware collaborator assignment, and leader selection—to enable multi-agent systems to reach more stable consensus on complex NLP tasks, yielding improvements of 2.23% and 3.95% on difficult subsets of MATH and MMLU, respectively.
 tags:
   - "NeurIPS 2025"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "collaborative reasoning"
   - "LLM collaboration"
 date: 2026-05-08
-content_hash: 42ae34a8654181d7
+content_hash: 4b7c5b20348a6514
 ---
 
 # Belief-Calibrated Multi-Agent Consensus Seeking for Complex NLP Tasks
@@ -142,11 +142,11 @@ BCCS outperforms the strongest baseline (CMD) by 1.67% on MATH and PARSE by 2.00
 
 ## Related Papers
 
+- [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
 - [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
 - [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](../../ACL2026/multi_agent/consensus_multi-agent_collaboration_for_multimodal_sensing.md)
-- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](../../ACL2026/multi_agent/roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
-- [\[ICLR 2026\] UIS-Digger: Towards Comprehensive Research Agent Systems for Real-world Unindexed Information Seeking](../../ICLR2026/multi_agent/uis-digger_towards_comprehensive_research_agent_systems_for_real-world_unindexed.md)
-- [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
+- [\[ICML 2025\] From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium](../../ICML2025/multi_agent/from_debate_to_equilibrium_belief-driven_multi-agent_llm_reasoning_via_bayesian_.md)
+- [\[ICLR 2026\] WideSearch: Benchmarking Agentic Broad Info-Seeking](../../ICLR2026/multi_agent/widesearch_benchmarking_agentic_broad_info-seeking.md)
 
 </div>
 

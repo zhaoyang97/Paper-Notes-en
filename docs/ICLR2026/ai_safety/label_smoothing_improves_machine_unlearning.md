@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Label Smoothing Improves Machine Unlearning
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper integrates "Negative Label Smoothing" into Gradient Ascent-based machine unlearning, proposing a plug-and-play method named UGradSL. By performing gradient ascent with negative smoothed labels on the forget set and gradient descent on the retain set, Ours significantly closes the performance gap with the "Re
+  [ICLR 2026][AI Safety][Machine Unlearning] This paper integrates "Negative Label Smoothing" into Gradient Ascent-based machine unlearning, proposing a plug-and-play method named UGradSL. By performing gradient ascent with negative smoothed labels on the forget set and gradient descent on the retain set, Ours significantly closes the performance gap with the "Retrained Model" with almost zero additional computational overhead, while providing theoretical proof of improved labe…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Machine Unlearning"
+  - "Label Smoothing"
+  - "Gradient Ascent"
+  - "Negative Label Smoothing"
+  - "Local Differential Privacy"
 date: 2026-05-08
-content_hash: eeb531b2d02d6c09
+content_hash: 29c9a0ac97883412
 ---
+
 # Label Smoothing Improves Machine Unlearning
 
 **Conference**: ICLR 2026  
@@ -118,10 +124,10 @@ Switching the baseline from GA (20.64) to UGradSL (6.95) or FT to UGradSL+ (3.75
 ## Related Papers
 
 - [\[ICLR 2026\] Decoupling the Class Label and the Target Concept in Machine Unlearning](decoupling_the_class_label_and_the_target_concept_in_machine_unlearning.md)
+- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
+- [\[ICLR 2026\] Remaining-data-free Machine Unlearning by Suppressing Sample Contribution](remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md)
 - [\[ICLR 2026\] ReTrace: Reinforcement Learning-Guided Reconstruction Attacks on Machine Unlearning](retrace_reinforcement_learning-guided_reconstruction_attacks_on_machine_unlearni.md)
 - [\[ICLR 2026\] Towards Privacy-Guaranteed Label Unlearning in Vertical Federated Learning: Few-Shot Forgetting without Disclosure](towards_privacy-guaranteed_label_unlearning_in_vertical_federated_learning_few-s.md)
-- [\[ICLR 2026\] Machine Unlearning under Retain–Forget Entanglement](machine_unlearning_under_retainforget_entanglement.md)
-- [\[ICLR 2026\] Distributional Machine Unlearning via Selective Data Removal](distributional_machine_unlearning_via_selective_data_removal.md)
 
 </div>
 

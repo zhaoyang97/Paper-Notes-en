@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Simulation to Rules: A Dual-VLM Framework for Formal Visual Planning
 description: >-
-  [ICLR 2026][Multimodal VLM][PDDL] VLMFP utilizes a SimVLM, proficient in visual-spatial understanding and action simulation, to supervise a GenVLM adept at PDDL generation. It automatically converts visual planning tasks from images into PDDL problem/domain files solvable by formal planners, significantly outperforming direct VLM planning and feedback-
+  [ICLR 2026][Multimodal VLM][Dual-VLM] VLMFP utilizes a SimVLM, proficient in visual-spatial understanding and action simulation, to supervise a GenVLM adept at PDDL generation. It automatically converts visual planning tasks from images into PDDL problem/domain files solvable by formal planners, significantly outperforming direct VLM planning and feedback-free PDDL generation baselines in grid-world and 3D tasks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - PDDL
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Dual-VLM"
+  - "Visual Planning"
+  - "PDDL"
+  - "Action Simulation"
+  - "Symbolic Planning"
 date: 2026-05-08
-content_hash: be8a3fca6397b614
+content_hash: 73c708b4b0d28634
 ---
+
 # Simulation to Rules: A Dual-VLM Framework for Formal Visual Planning
 
 **Conference**: ICLR 2026  
@@ -154,8 +159,8 @@ Ablation experiments removing pre-screening, feedback, and updates:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

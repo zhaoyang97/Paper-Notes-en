@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection
 description: >-
-  [AAAI2026][Signal & Communication][Multimodal Domain Generalization] This paper proposes a Gradient Modulation Projection (GMP) strategy that addresses inter-modality optimization imbalance and inter-task gradient confli…
+  [AAAI2026 Oral][Signal & Communication][Multimodal Domain Generalization] This paper proposes a Gradient Modulation Projection (GMP) strategy that addresses inter-modality optimization imbalance and inter-task gradient conflicts in multimodal domain generalization (MMDG) through two components: Inter-modality Gradient Decoupled Modulation (IGDM) and Conflict-Adaptive Gradient Projection (CAGP), achieving state-of-the-art performance on multiple benchmarks.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Signal & Communication"
   - "Multimodal Domain Generalization"
   - "Gradient Modulation"
   - "Gradient Projection"
   - "Optimization Imbalance"
 date: 2026-05-08
-content_hash: 436f19c6d297ead6
+content_hash: 15a7c0fe9e84a33c
 ---
 
 # Balancing Multimodal Domain Generalization via Gradient Modulation and Projection
@@ -159,9 +159,9 @@ The application of **multi-objective optimization perspectives to multimodal lea
 
 - [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
 - [\[AAAI 2026\] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes](task_aware_modulation_using_representation_learning_for_upsaling_of_terrestrial_.md)
-- [\[CVPR 2026\] ChartNet: A Million-Scale, High-Quality Multimodal Dataset for Robust Chart Understanding](../../CVPR2026/signal_comm/chartnet_a_million-scale_high-quality_multimodal_dataset_for_robust_chart_unders.md)
+- [\[ICML 2025\] Fourier Position Embedding: Enhancing Attention's Periodic Extension for Length Generalization](../../ICML2025/signal_comm/fourier_position_embedding_enhancing_attentions_periodic_extension_for_length_ge.md)
 - [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](../../CVPR2026/signal_comm/clay_conditional_visual_similarity.md)
-- [\[AAAI 2026\] Text-Guided Channel Perturbation and Pretrained Knowledge Integration for Unified Multi-Modality Image Fusion](text-guided_channel_perturbation_and_pretrained_knowledge_integration_for_unifie.md)
+- [\[CVPR 2025\] ABC-Former: Auxiliary Bimodal Cross-domain Transformer with Interactive Channel Attention](../../CVPR2025/signal_comm/abc-former_auxiliary_bimodal_cross-domain_transformer_with_interactive_channel_a.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Vinedresser3D: Agentic Text-guided 3D Editing
 description: >-
-  [CVPR 2026][Image Generation][Trellis] Vinedresser3D is proposed as a 3D editing agent centered on Multimodal Large Language Models (MLLMs). It eliminates the need for user-provided 3D masks by automatically parsing editing intent, locating editing regions, and generating multimodal guidance. By executing inversion-based in-painting in the latent space of a
+  [CVPR 2026][Image Generation][3D Editing] Vinedresser3D is proposed as a 3D editing agent centered on Multimodal Large Language Models (MLLMs). It eliminates the need for user-provided 3D masks by automatically parsing editing intent, locating editing regions, and generating multimodal guidance. By executing inversion-based in-painting in the latent space of a native 3D generative model (Trellis), high-quality text-guided editing of 3D assets is achieved.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Trellis
+  - "CVPR 2026"
+  - "Image Generation"
+  - "3D Editing"
+  - "Text-guided"
+  - "Agent"
+  - "Trellis"
+  - "Flow Model Inversion"
 date: 2026-05-08
-content_hash: 26deb314782f5569
+content_hash: 041ab22f378ebb71
 ---
+
 # Vinedresser3D: Agentic Text-guided 3D Editing
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Utilizing an MLLM agent for 3D editing is a compelling direction. The design is 
 
 ## Related Papers
 
-- [\[CVPR 2026\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)
 - [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_texttoimage_generation.md)
 - [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](octot2i_a_self-evolving_agentic_text-to-image_router.md)
 - [\[CVPR 2026\] BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation](bimotion_b-spline_motion_for_text-guided_dynamic_3d_character_generation.md)
+- [\[CVPR 2025\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](../../CVPR2025/image_generation/interedit_navigating_text-guided_multi-human_3d_motion_editing.md)
 - [\[CVPR 2026\] Pico-Banana-400K: A Large-Scale Dataset for Text-Guided Image Editing](pico-banana-400k_a_large-scale_dataset_for_text-guided_image_editing.md)
 
 </div>

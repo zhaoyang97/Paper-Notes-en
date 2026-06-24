@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TellWhisper: Tell Whisper Who Speaks When
 description: >-
-  [ACL 2026][Audio & Speech][Whisper] This paper proposes TellWhisper, which achieves joint modeling of "who spoke what and when" by designing Time-Speaker Aware Rotary Positional Embedding (TS-RoPE) to unify speaker identity and temporal information within the self-attention of the speech encoder. Coupled with a Hyperbolic space Speaker Diarization model
+  [ACL 2026][Audio & Speech][Multi-speaker Speech Recognition] This paper proposes TellWhisper, which achieves joint modeling of "who spoke what and when" by designing Time-Speaker Aware Rotary Positional Embedding (TS-RoPE) to unify speaker identity and temporal information within the self-attention of the speech encoder. Coupled with a Hyperbolic space Speaker Diarization model (Hyper-SD), it achieves state-of-the-art performance in multi-speaker ASR tasks.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Whisper
+  - "ACL 2026"
+  - "Audio & Speech"
+  - "Multi-speaker Speech Recognition"
+  - "Speaker Diarization"
+  - "Rotary Positional Embedding"
+  - "Hyperbolic Space Classification"
+  - "Whisper"
 date: 2026-05-08
-content_hash: 074ecaeb2c134d0c
+content_hash: 6df2bcfd19e4da4c
 ---
+
 # TellWhisper: Tell Whisper Who Speaks When
 
 **Conference**: ACL 2026  
@@ -138,10 +143,10 @@ A two-stage fine-tuning approach is adopted: first pre-fine-tuning on single-spe
 ## Related Papers
 
 - [\[ACL 2026\] When Misinformation Speaks and Converses: Rethinking Fact-Checking in Audio Platforms](when_misinformation_speaks_and_converses_rethinking_fact-checking_in_audio_platf.md)
-- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation](../../ICLR2026/audio_speech/knowing_when_to_quit_probabilistic_early_exits_for_speech_separation.md)
+- [\[ACL 2026\] From Isolation to Entanglement: When Do Interpretability Methods Identify and Disentangle Known Concepts?](from_isolation_to_entanglement_when_do_interpretability_methods_identify_and_dis.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
+- [\[ICLR 2026\] Knowing When to Quit: Probabilistic Early Exits for Speech Separation Networks](../../ICLR2026/audio_speech/knowing_when_to_quit_probabilistic_early_exits_for_speech_separation_networks.md)
 - [\[ICLR 2026\] When and Where to Reset Matters for Long-Term Test-Time Adaptation](../../ICLR2026/audio_speech/when_and_where_to_reset_matters_for_long-term_test-time_adaptation.md)
-- [\[ICLR 2026\] When Style Breaks Safety: Defending LLMs Against Superficial Style Alignment](../../ICLR2026/audio_speech/when_style_breaks_safety_defending_llms_against_superficial_style_alignment.md)
-- [\[ACL 2025\] Who Can Withstand Chat-Audio Attacks? An Evaluation Benchmark for Large Audio-Language Models](../../ACL2025/audio_speech/who_can_withstand_chat-audio_attacks_an_evaluation_benchmark_for_large_audio-lan.md)
 
 </div>
 

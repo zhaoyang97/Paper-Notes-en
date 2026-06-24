@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Addressing the "overconfidence and calibration failure" of DETR-style 3D detectors under distribution shifts (e.g., rain or snow), this paper utilizes Normalizing Flows to estimate the feature density of object queries. This density signal is injected into post-hoc calibrators like Temperature Scaling, Platt Scaling, a
+  [CVPR 2026][3D Vision][3D Object Detection] Addressing the "overconfidence and calibration failure" of DETR-style 3D detectors under distribution shifts (e.g., rain or snow), this paper utilizes Normalizing Flows to estimate the feature density of object queries. This density signal is injected into post-hoc calibrators like Temperature Scaling, Platt Scaling, and Isotonic Regression, allowing calibration intensity to adaptively adjust based on "how far the query is from the…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Object Detection"
+  - "Post-hoc Calibration"
+  - "Distribution Shift"
+  - "Feature Density"
+  - "Normalizing Flows"
 date: 2026-05-08
-content_hash: 4cf551539d3f6e3c
+content_hash: a9fe7cc543eb7e83
 ---
+
 # Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift
 
 **Conference**: CVPR 2026  
@@ -165,11 +171,11 @@ Under shift, standard post-hoc methods nearly revert to uncalibrated levels, whe
 
 ## Related Papers
 
-- [\[CVPR 2026\] Neural Distribution Prior for LiDAR Out-of-Distribution Detection](neural_distribution_prior_for_lidar_ood_detection.md)
-- [\[CVPR 2026\] Look Before You Fuse: 2D-Guided Cross-Modal Alignment for Robust 3D Detection](look_before_you_fuse_2d-guided_cross-modal_alignment_for_robust_3d_detection.md)
-- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
-- [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
+- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
+- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
 
 </div>
 

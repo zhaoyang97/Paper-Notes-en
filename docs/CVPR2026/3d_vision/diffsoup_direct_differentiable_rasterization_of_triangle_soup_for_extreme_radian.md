@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffSoup: Direct Differentiable Rasterization of Triangle Soup for Extreme Radiance Field Simplification
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] DiffSoup represents radiance fields as an unstructured triangle soup (fewer than 20,000 primitives) with neural textures and binary opacity. It introduces a "stochastic opacity mask" to make opaque triangle rasterization directly differentiable, enabling real-time rendering on laptops and mobile devices using standard
+  [CVPR 2026][3D Vision][Radiance field simplification] DiffSoup represents radiance fields as an unstructured triangle soup (fewer than 20,000 primitives) with neural textures and binary opacity. It introduces a "stochastic opacity mask" to make opaque triangle rasterization directly differentiable, enabling real-time rendering on laptops and mobile devices using standard depth-testing pipelines with quality exceeding 3DGS or triangle splatting under equivalent budgets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Radiance field simplification"
+  - "Differentiable rasterization"
+  - "Triangle soup"
+  - "Stochastic opacity mask"
+  - "Cross-platform rendering"
 date: 2026-05-08
-content_hash: a4e9f15dbb286109
+content_hash: c7cd06d867aa6491
 ---
+
 # DiffSoup: Direct Differentiable Rasterization of Triangle Soup for Extreme Radiance Field Simplification
 
 **Conference**: CVPR 2026  
@@ -162,11 +168,11 @@ Hardware-accelerated opaque rasterization is ~10x faster than CUDA-based 3DGS by
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] GLINT: Modeling Scene-Scale Transparency via Gaussian Radiance Transport](glint_modeling_scene-scale_transparency_via_gaussian_radiance_transport.md)
-- [\[CVPR 2026\] Consistent Instance Field for Dynamic Scene Understanding](consistent_instance_field_for_dynamic_scene_understanding.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] Hermite Radial Basis Function for Surface Reconstruction via Differentiable Rendering](hermite_radial_basis_function_for_surface_reconstruction_via_differentiable_rend.md)
+- [\[CVPR 2025\] Sparse Voxels Rasterization: Real-time High-fidelity Radiance Field Rendering](../../CVPR2025/3d_vision/sparse_voxels_rasterization_real-time_high-fidelity_radiance_field_rendering.md)
+- [\[CVPR 2026\] PPISP: Physically-Plausible Compensation and Control of Photometric Variations in Radiance Field Reconstruction](ppisp_physically-plausible_compensation_and_control_of_photometric_variations_in.md)
+- [\[ECCV 2024\] Mesh2NeRF: Direct Mesh Supervision for Neural Radiance Field Representation and Generation](../../ECCV2024/3d_vision/mesh2nerf_direct_mesh_supervision_for_neural_radiance_field_representation_and_g.md)
+- [\[CVPR 2026\] Emergent Extreme-View Geometry in 3D Foundation Models](emergent_extreme-view_geometry_in_3d_foundation_models.md)
+- [\[CVPR 2026\] MeshSplatting: Differentiable Rendering with Opaque Meshes](meshsplatting_differentiable_rendering_with_opaque_meshes.md)
 
 </div>
 

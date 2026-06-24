@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Budget-Constrained Step-Level Diffusion Caching
 description: >-
-  [ICML 2026][Image Generation][Paper Note] BudCache transforms step-level caching for diffusion models from "passively triggered by thresholds with input-dependent latency" into "fixing a compute budget $B$ first, then searching for the optimal caching strategy offline." Using a hybrid of Simulated Annealing and Hill Climbing, it produces a static caching mask
+  [ICML 2026][Image Generation][Step-level caching] BudCache transforms step-level caching for diffusion models from "passively triggered by thresholds with input-dependent latency" into "fixing a compute budget $B$ first, then searching for the optimal caching strategy offline." Using a hybrid of Simulated Annealing and Hill Climbing, it produces a static caching mask in minutes. For tight budgets, it employs teacher-student distillation to realign the schedule…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Step-level caching"
+  - "Budget-constrained"
+  - "Combinatorial optimization"
+  - "Simulated annealing"
+  - "Schedule alignment"
 date: 2026-05-08
-content_hash: 686acdc279ce6123
+content_hash: 475d5f4a6b43dde8
 ---
+
 # Budget-Constrained Step-Level Diffusion Caching
 
 **Conference**: ICML 2026  
@@ -140,15 +146,16 @@ The main highlight is performance at the same acceleration ratio—a key selling
 - Value: ⭐⭐⭐⭐⭐ High deployment value: training-free, plug-and-play, and strictly controllable latency.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] DirectEdit: Step-Level Accurate Inversion for Flow-Based Image Editing](directedit_step-level_accurate_inversion_for_flow-based_image_editing.md)
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](../../CVPR2026/image_generation/resca_residual_caching_for_diffusion_transformers_acceleration.md)
-- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](../../NeurIPS2025/image_generation/diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
 - [\[CVPR 2025\] Stretching Each Dollar: Diffusion Training from Scratch on a Micro-Budget](../../CVPR2025/image_generation/stretching_each_dollar_diffusion_training_from_scratch_on_a_micro-budget.md)
-- [\[ICLR 2026\] Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model](../../ICLR2026/image_generation/evolutionary_caching_to_accelerate_your_off-the-shelf_diffusion_model.md)
+- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](../../NeurIPS2025/image_generation/diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
+- [\[ICLR 2026\] Projected Coupled Diffusion for Test-Time Constrained Joint Generation](../../ICLR2026/image_generation/projected_coupled_diffusion_for_test-time_constrained_joint_generation.md)
 
 </div>
 

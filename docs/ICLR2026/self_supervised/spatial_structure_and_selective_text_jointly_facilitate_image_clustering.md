@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial Structure and Selective Text Jointly Facilitate Image Clustering
 description: >-
-  [ICLR 2026][Self-Supervised Learning][CLIP] SATC constructions a graph for each image using GAT to extract spatial structure features between patches, compensating for the missing local structure in CLIP. It employs a selector based on "textual compactness $\tau$" to automatically decide whether to introduce text features for a given dataset. Finally, it achieve
+  [ICLR 2026][Self-Supervised Learning][Image Clustering] SATC constructions a graph for each image using GAT to extract spatial structure features between patches, compensating for the missing local structure in CLIP. It employs a selector based on "textual compactness $\tau$" to automatically decide whether to introduce text features for a given dataset. Finally, it achieves clustering through mutual distillation across vision, spatial, and textual modalities…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - CLIP
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Image Clustering"
+  - "CLIP"
+  - "Graph Attention Network"
+  - "Textual Feature Selection"
+  - "Mutual Distillation"
 date: 2026-05-08
-content_hash: 82609e8acb4562c9
+content_hash: e3517ca221159933
 ---
+
 # Spatial Structure and Selective Text Jointly Facilitate Image Clustering
 
 **Conference**: ICLR 2026  
@@ -144,11 +149,11 @@ Text Selector Ablation (Table 2, 18 datasets): The selector's Use/No-Text decisi
 
 ## Related Papers
 
-- [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
-- [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](relationship_alignment_for_view-aware_multi-view_clustering.md)
 - [\[CVPR 2026\] Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](../../CVPR2026/self_supervised/text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)
 - [\[ICLR 2026\] HiMAE: Hierarchical Masked Autoencoders Discover Resolution-Specific Structure in Wearable Time Series](himae_hierarchical_masked_autoencoders_discover_resolution-specific_structure_in.md)
-- [\[ICCV 2025\] A Token-level Text Image Foundation Model for Document Understanding (TokenFD/TokenVL)](../../ICCV2025/self_supervised/a_tokenlevel_text_image_foundation_model_for_document_unders.md)
+- [\[ICLR 2026\] Uncover Underlying Correspondence for Robust Multi-view Clustering](uncover_underlying_correspondence_for_robust_multi-view_clustering.md)
+- [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
+- [\[ICLR 2026\] Relationship Alignment for View-aware Multi-view Clustering](relationship_alignment_for_view-aware_multi-view_clustering.md)
 
 </div>
 

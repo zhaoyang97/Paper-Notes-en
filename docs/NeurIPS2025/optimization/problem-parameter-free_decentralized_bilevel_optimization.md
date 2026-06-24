@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Problem-Parameter-Free Decentralized Bilevel Optimization
 description: >-
-  [NeurIPS 2025][Optimization][Decentralized optimization] This paper proposes AdaSDBO, a fully parameter-free decentralized bilevel optimization algorithm that requires no prior knowledge of problem parameters. By employi…
+  [NeurIPS 2025][Optimization][Decentralized optimization] This paper proposes AdaSDBO, a fully parameter-free decentralized bilevel optimization algorithm that requires no prior knowledge of problem parameters. By employing adaptive step sizes based on cumulative gradient norms, it achieves a convergence rate of $\tilde{O}(1/\sqrt{T})$.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "adaptive step size"
   - "single-loop"
 date: 2026-05-08
-content_hash: 583cb735c9c45a9a
+content_hash: 228eaeea6f4735d3
 ---
 
 # Problem-Parameter-Free Decentralized Bilevel Optimization
@@ -156,7 +156,7 @@ Robustness under different step size initializations (MNIST hyper-cleaning):
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](learning_theory_for_kernel_bilevel_optimization.md)
 - [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
 - [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
-- [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
+- [\[ICLR 2026\] Sign-SGD via Parameter-Free Optimization](../../ICLR2026/optimization/sign-sgd_via_parameter-free_optimization.md)
 
 </div>
 

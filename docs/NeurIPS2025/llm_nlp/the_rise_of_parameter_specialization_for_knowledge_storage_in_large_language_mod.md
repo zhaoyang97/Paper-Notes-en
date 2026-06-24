@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] The Rise of Parameter Specialization for Knowledge Storage in Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][Parameter Specialization] This paper systematically analyzes 20 open-source LLMs and finds that stronger models exhibit higher degrees of parameter specialization in MLP value vectors — i.e.…
+  [NeurIPS 2025][LLM (Other)][Parameter Specialization] This paper systematically analyzes 20 open-source LLMs and finds that stronger models exhibit higher degrees of parameter specialization in MLP value vectors — i.e., semantically similar knowledge tends to be concentrated in a small subset of parameter vectors. Causal experiments further confirm a causal relationship between this specialization degree and model performance on knowledge tasks.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Parameter Specialization"
   - "Knowledge Storage"
   - "MLP Interpretability"
   - "Knowledge Superposition"
   - "Large Language Models"
 date: 2026-05-08
-content_hash: 42f3f4a4a1f0336d
+content_hash: 27fea2ec0027f85f
 ---
 
 # The Rise of Parameter Specialization for Knowledge Storage in Large Language Models
@@ -153,11 +153,11 @@ FT-PV outperforms all baselines across every metric: highest knowledge accuracy,
 
 ## Related Papers
 
+- [\[ACL 2025\] Knowledge Boundary of Large Language Models: A Survey](../../ACL2025/llm_nlp/knowledge_boundary_survey.md)
+- [\[ACL 2025\] Acquisition and Application of Novel Knowledge in Large Language Models](../../ACL2025/llm_nlp/acquisition_and_application_of_novel_knowledge_in_large_language_models.md)
 - [\[NeurIPS 2025\] GeoCAD: Local Geometry-Controllable CAD Generation with Large Language Models](geocad_local_geometry-controllable_cad_generation_with_large_language_models.md)
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
-- [\[AAAI 2026\] LoKI: Low-damage Knowledge Implanting of Large Language Models](../../AAAI2026/llm_nlp/loki_low-damage_knowledge_implanting_of_large_language_models.md)
 - [\[NeurIPS 2025\] Scaling Up Active Testing to Large Language Models](scaling_up_active_testing_to_large_language_models.md)
-- [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
+- [\[ACL 2025\] Dynamic Knowledge Integration for Evidence-Driven Counter-Argument Generation with Large Language Models](../../ACL2025/llm_nlp/dynamic_knowledge_integration_for_evidence-driven_counter-argument_generation_wi.md)
 
 </div>
 

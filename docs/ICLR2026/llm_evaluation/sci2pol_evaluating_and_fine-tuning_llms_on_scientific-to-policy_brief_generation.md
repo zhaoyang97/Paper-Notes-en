@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] Sci2Pol：评测与微调 LLM 的「科学→政策简报」生成能力
+  [Paper Note] Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities
 description: >-
-  [ICLR 2026][LLM Evaluation][LLM-as-a-judge] This paper introduces **Sci2Pol-Bench**, the first benchmark for the "generating policy briefs from scientific papers" task (decomposing the five-stage writing process into 18 tasks), and **Sci2Pol-Corpus**, a training corpus (filtering 639 high-quality "paper-brief" pairs from 5.6 million policy documents). The author
+  [ICLR 2026][LLM Evaluation][Policy brief generation] This paper introduces **Sci2Pol-Bench**, the first benchmark for the "generating policy briefs from scientific papers" task (decomposing the five-stage writing process into 18 tasks), and **Sci2Pol-Corpus**, a training corpus (filtering 639 high-quality "paper-brief" pairs from 5.6 million policy documents). The authors point out that BERTScore/ROUGE cannot measure the quality of briefs and instead use an LLM evaluation met…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - LLM-as-a-judge
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Policy brief generation"
+  - "Evaluation benchmark"
+  - "Training corpus"
+  - "LLM-as-a-judge"
+  - "Supervised fine-tuning"
 date: 2026-05-08
-content_hash: 8b2e67f837debc08
+content_hash: 68778ac9161aaa61
 ---
+
 # Sci2Pol: Evaluating and Fine-tuning LLMs' "Science-to-Policy Brief" Generation Capabilities
 
 **Conference**: ICLR 2026  
@@ -148,9 +153,17 @@ Even the strongest Grok-3-beta only scored 77.01, far from perfect, suggesting s
 
 <div class="related-papers" markdown="1">
 
-</div>
-<!-- RELATED:END -->
+## Related Papers
 
+- [\[ICLR 2026\] DARE-bench: Evaluating Modeling and Instruction Fidelity of LLMs in Data Science](dare-bench_evaluating_modeling_and_instruction_fidelity_of_llms_in_data_science.md)
+- [\[ICLR 2026\] PACEbench: A Framework for Evaluating Practical AI Cyber-Exploitation Capabilities](pacebench_a_framework_for_evaluating_practical_ai_cyber-exploitation_capabilitie.md)
+- [\[ICCV 2025\] On the Robustness Tradeoff in Fine-Tuning](../../ICCV2025/llm_evaluation/on_the_robustness_tradeoff_in_fine-tuning.md)
+- [\[ICLR 2026\] EARTHSE: A Benchmark for Earth Science Knowledge Exploration](earthse_a_benchmark_evaluating_earth_scientific_exploration_capability_for_large.md)
+- [\[ICML 2026\] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum](../../ICML2026/llm_evaluation/beyond_log_likelihood_probability-based_objectives_for_supervised_fine-tuning_ac.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)

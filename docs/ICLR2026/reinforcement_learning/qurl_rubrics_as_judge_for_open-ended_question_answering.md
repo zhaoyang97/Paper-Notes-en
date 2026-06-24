@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][RLVR] QuRL transforms the challenge of "lacking gold standard answers" in open-ended QA into a task of automatically mining case-wise rubrics from web articles to serve as verifiable rewards. Using the GRPO training strategy, it improves Qwen2.5-7B by an average of +17.0 points compared to the SFT baseline.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Open-Ended QA"
+  - "Rubrics"
+  - "GRPO"
+  - "Reward Modeling"
 date: 2026-05-08
-content_hash: 009df9569854d12d
+content_hash: dd7bf9c994cf92bc
 ---
+
 # QuRL: Rubrics As Judge For Open-Ended Question Answering
 
 **Conference**: ICLR 2026  

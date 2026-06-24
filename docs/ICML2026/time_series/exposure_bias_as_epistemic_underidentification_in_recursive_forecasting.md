@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Exposure Bias as Epistemic Underidentification in Recursive Forecasting
 description: >-
-  [ICML 2026][Time Series][Paper Note] This paper provides a theoretical reinterpretation of "exposure bias" in recursive multi-step forecasting: it is not merely a **distribution shift** between training (teacher forcing) and deployment (self-feeding rollouts). Under partial observability or state truncation, it becomes a problem of **epistemic underidenti
+  [ICML2026 (EIML@ICML 2026 Workshop)][Time Series][Exposure Bias] This paper provides a theoretical reinterpretation of "exposure bias" in recursive multi-step forecasting: it is not merely a **distribution shift** between training (teacher forcing) and deployment (self-feeding rollouts). Under partial observability or state truncation, it becomes a problem of **epistemic underidentification**. One-step supervision identifies model behavior only on the observed context…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML2026 (EIML@ICML 2026 Workshop)"
+  - "Time Series"
+  - "Exposure Bias"
+  - "Recursive Forecasting"
+  - "Epistemic Underidentification"
+  - "Induced States"
+  - "Provenance Information"
 date: 2026-05-08
-content_hash: 1709f3c56876edf1
+content_hash: b78b63e7c1a16d1f
 ---
+
 # Exposure Bias as Epistemic Underidentification in Recursive Forecasting
 
 **Conference**: ICML2026 (EIML@ICML 2026 Workshop)  

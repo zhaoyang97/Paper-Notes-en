@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model
 description: >-
-  [CVPR 2026][Medical Imaging][source-free domain adaptation] Tell2Adapt is a unified framework that leverages the generalized knowledge of a Vision Foundation Model (BiomedParse) to achieve source-free unsupervised domain adaptation for medical image segmentation across 10 domain transfer directions and 22 anatomical targets. It generates high-quality pseudo labels through Conte
+  [CVPR 2026][Medical Imaging][source-free domain adaptation] Tell2Adapt is a unified framework that leverages the generalized knowledge of a Vision Foundation Model (BiomedParse) to achieve source-free unsupervised domain adaptation for medical image segmentation across 10 domain transfer directions and 22 anatomical targets. It generates high-quality pseudo labels through Context-Aware Prompt Regularization (CAPR) and removes anatomically implausible predictions via Visual Pl…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - source-free domain adaptation
-  - vision foundation model
-  - medical image segmentation
-  - pseudo label
-  - prompt regularization
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "source-free domain adaptation"
+  - "vision foundation model"
+  - "medical image segmentation"
+  - "pseudo label"
+  - "prompt regularization"
 date: 2026-05-08
-content_hash: cf5656f88b26f655
+content_hash: e498165c2de7750d
 ---
+
 # Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model
 
 **Conference**: CVPR 2026  
@@ -158,10 +159,10 @@ Ablation analysis indicates:
 ## Related Papers
 
 - [\[CVPR 2026\] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation](shape_structure-aware_hierarchical_unsupervised_domain_adaptation_with_plausibil.md)
+- [\[CVPR 2026\] Mind the Discriminability Trap in Source-Free Cross-domain Few-shot Learning](mind_the_discriminability_trap_in_source-free_cross-domain_few-shot_learning.md)
 - [\[CVPR 2026\] Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning](reclaiming_lost_text_layers_for_source-free_cross-domain_few-shot_learning.md)
 - [\[CVPR 2026\] Uni-Hema: Unified Model for Digital Hematopathology](uni-hema_unified_model_for_digital_hematopathology.md)
-- [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
-- [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
+- [\[CVPR 2026\] Keep It Frozen: Domain-Routed Conditional Residual Modulation for Multi-Domain Vision Transformers](keep_it_frozen_domain-routed_conditional_residual_modulation_for_multi-domain_vi.md)
 
 </div>
 

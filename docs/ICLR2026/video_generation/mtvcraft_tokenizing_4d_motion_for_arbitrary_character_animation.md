@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation
 description: >-
-  [ICLR 2026][Video Generation][SMPL] MTVCraft quantizes 3D joint coordinate sequences (4D motion) from driving videos directly into discrete tokens. Combined with a motion-aware DiT featuring 4D positional encoding, it bypasses the pixel-alignment constraints of traditional 2D rendered pose maps, achieving high-quality pose-guided animation for arbitrary
+  [ICLR 2026][Video Generation][4D motion tokens] MTVCraft quantizes 3D joint coordinate sequences (4D motion) from driving videos directly into discrete tokens. Combined with a motion-aware DiT featuring 4D positional encoding, it bypasses the pixel-alignment constraints of traditional 2D rendered pose maps, achieving high-quality pose-guided animation for arbitrary characters (including non-human objects).
 tags:
-  - ICLR 2026
-  - Video Generation
-  - SMPL
-  - VQVAE
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Video Generation"
+  - "4D motion tokens"
+  - "SMPL"
+  - "VQVAE"
+  - "Diffusion Transformer"
+  - "motion attention"
+  - "zero-shot generalization"
 date: 2026-05-08
-content_hash: 35421c93090304be
+content_hash: 58a87258dbfaa7f0
 ---
+
 # MTVCraft: Tokenizing 4D Motion for Arbitrary Character Animation
 
 **Conference**: ICLR 2026  
@@ -141,7 +145,7 @@ The 6B version already outperforms the previously strongest UniAnimate-DiT in FI
 - [\[CVPR 2026\] LottieGPT: Tokenizing Vector Animation for Autoregressive Generation](../../CVPR2026/video_generation/lottiegpt_vector_animation_generation.md)
 - [\[ICLR 2026\] Arbitrary Generative Video Interpolation](arbitrary_generative_video_interpolation.md)
 - [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](../../CVPR2026/video_generation/one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
-- [\[ICLR 2026\] FastVMT: Eliminating Redundancy in Video Motion Transfer](fastvmt_eliminating_redundancy_in_video_motion_transfer.md)
+- [\[ICLR 2026\] Animating the Uncaptured: Humanoid Mesh Animation with Video Diffusion Models](animating_the_uncaptured_humanoid_mesh_animation_with_video_diffusion_models.md)
 
 </div>
 

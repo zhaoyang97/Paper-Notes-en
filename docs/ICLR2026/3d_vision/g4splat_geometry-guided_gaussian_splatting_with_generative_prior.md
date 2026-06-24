@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior
 description: >-
-  [ICLR 2026][3D Vision][Gaussian Splatting] G4Splat argues that "accurate geometry is the prerequisite for effectively utilizing generative priors." It first derives scale-accurate plane-aware depth using the planar structures ubiquitous in man-made scenes, then integrates this geometry throughout the entire workflow—including visibility estimation, novel view s
+  [ICLR 2026][3D Vision][Gaussian Splatting] G4Splat argues that "accurate geometry is the prerequisite for effectively utilizing generative priors." It first derives scale-accurate plane-aware depth using the planar structures ubiquitous in man-made scenes, then integrates this geometry throughout the entire workflow—including visibility estimation, novel view selection, and video diffusion inpainting—to achieve high-quality sparse-view scene reconstruction with superior geome…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Sparse-view reconstruction"
+  - "Generative prior"
+  - "Planar geometry"
+  - "Video diffusion inpainting"
 date: 2026-05-08
-content_hash: b7445b84d5102c58
+content_hash: 6bf894dff911e74b
 ---
+
 # G4Splat: Geometry-Guided Gaussian Splatting with Generative Prior
 
 **Conference**: ICLR 2026  
@@ -121,8 +126,8 @@ Across Replica, ScanNet++, DeepBlending, and Mip-NeRF 360, geometry (CD/F-Score/
 - [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](../../CVPR2026/3d_vision/gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
 - [\[ICLR 2026\] Generative Human Geometry Distribution](generative_human_geometry_distribution.md)
 - [\[CVPR 2026\] P2GS: Physical Prior-guided Gaussian Splatting for Photometrically Consistent Urban Reconstruction](../../CVPR2026/3d_vision/p2gs_physical_prior-guided_gaussian_splatting_for_photometrically_consistent_urb.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] From Tokens to Nodes: Semantic-Guided Motion Control for Dynamic 3D Gaussian Splatting](from_tokens_to_nodes_semantic-guided_motion_control_for_dynamic_3d_gaussian_spla.md)
-- [\[ICLR 2026\] ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion](resplat_degradation-agnostic_feed-forward_gaussian_splatting_via_self-guided_res.md)
 
 </div>
 

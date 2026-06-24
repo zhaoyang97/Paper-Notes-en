@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] SMP (Skill Mixture-of-Experts Policy) decomposes action generation of diffusion policies into a set of **state-adaptive orthogonal skill bases**. By using slowly-varying "sticky" gating to activate only a few experts relevant to the current stage, it achieves reusable and transferable multi-task bimanual manipulation a
+  [ICLR2026][Robotics][Diffusion Policy] SMP (Skill Mixture-of-Experts Policy) decomposes action generation of diffusion policies into a set of **state-adaptive orthogonal skill bases**. By using slowly-varying "sticky" gating to activate only a few experts relevant to the current stage, it achieves reusable and transferable multi-task bimanual manipulation at a medium model scale. It reduces inference active parameters to approximately 30% of its own total (about 7% of RDT) wh…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Diffusion Policy"
+  - "Mixture-of-Experts"
+  - "Skill Abstraction"
+  - "Bimanual Manipulation"
+  - "Orthogonal Basis"
 date: 2026-05-08
-content_hash: 03a52148da6f31a7
+content_hash: 807e2b6338c33620
 ---
+
 # Abstracting Robot Manipulation Skills via Mixture-of-Experts Diffusion Policies
 
 **Conference**: ICLR2026  
@@ -166,10 +172,10 @@ Skill Recombination (Frozen experts and basis, fine-tune only the router with 10
 ## Related Papers
 
 - [\[ICLR 2026\] Contractive Diffusion Policies](contractive_diffusion_policies.md)
+- [\[ICLR 2026\] Demystifying Robot Diffusion Policies: Action Memorization and a Simple Lookup Table Alternative](demystifying_robot_diffusion_policies_action_memorization_and_a_simple_lookup_ta.md)
 - [\[ICLR 2026\] M³E: Continual Vision-and-Language Navigation via Mixture of Macro and Micro Experts](m3e_continual_vision-and-language_navigation_via_mixture_of_macro_and_micro_expe.md)
 - [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
 - [\[ICML 2026\] From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation](../../ICML2026/robotics/from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_.md)
-- [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](../../ICML2026/robotics/online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
 
 </div>
 

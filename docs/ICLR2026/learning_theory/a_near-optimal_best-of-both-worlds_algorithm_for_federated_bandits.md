@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] A Near-Optimal Best-of-Both-Worlds Algorithm for Federated Bandits
 description: >-
-  [ICLR 2026][learning_theory][Best-of-Both-Worlds] This paper proposes FEDFTRL—the first algorithm in federated multi-armed bandits to simultaneously achieve near-optimal individual regret bounds for both stochastic and adversarial environments. The core approach involves reinterpreting the "information delay induced by decentralized communication" as "delayed feedback
+  [ICLR2026][Online Learning Theory][Federated Bandits] This paper proposes FEDFTRL—the first algorithm in federated multi-armed bandits to simultaneously achieve near-optimal individual regret bounds for both stochastic and adversarial environments. The core approach involves reinterpreting the "information delay induced by decentralized communication" as "delayed feedback bandits," and utilizing FTRL with a hybrid regularizer paired with a truncated loss estimator and a bias-…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Best-of-Both-Worlds
-  - FTRL
+  - "ICLR2026"
+  - "Online Learning Theory"
+  - "Multi-Armed Bandits"
+  - "Federated Bandits"
+  - "Best-of-Both-Worlds"
+  - "FTRL"
+  - "Delayed Feedback"
+  - "Regret Bound"
 date: 2026-05-08
-content_hash: 08e1f0ed1964db3d
+content_hash: 546c82187f52b3c7
 ---
+
 # A Near-Optimal Best-of-Both-Worlds Algorithm for Federated Bandits
 
 **Conference**: ICLR2026  
@@ -146,11 +151,11 @@ Experiments were conducted on synthetic and real-world (MovieLens) datasets acro
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
 - [\[ICLR 2026\] Near Optimal Robust Federated Learning Against Data Poisoning Attack](near_optimal_robust_federated_learning_against_data_poisoning_attack.md)
 - [\[ICML 2025\] Near Optimal Best Arm Identification for Clustered Bandits](../../ICML2025/learning_theory/near_optimal_best_arm_identification_for_clustered_bandits.md)
+- [\[ICLR 2026\] Combinatorial Rising Bandits](combinatorial_rising_bandits.md)
 - [\[ICLR 2026\] Ads that Stick: Near-Optimal Ad Optimization through Psychological Behavior Models](ads_that_stick_near-optimal_ad_optimization_through_psychological_behavior_model.md)
-- [\[ICLR 2026\] Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis](best-of-n_through_the_smoothing_lens_kl_divergence_and_regret_analysis.md)
-- [\[ICLR 2026\] Best-of-Majority: Minimax-Optimal Strategy for Pass@k Inference Scaling](best-of-majority_minimax-optimal_strategy_for_passk_inference_scaling.md)
 
 </div>
 

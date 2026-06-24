@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] Ours proposes KVSmooth, a training-free plug-and-play method that performs smoothing on KV-Cache via adaptive Exponential Moving Average (EMA) guided by attention row entropy. It effectively suppresses semantic drift and hallucination generation triggered by sink tokens during the decoding process of Multi-modal Large
+  [CVPR2026][Hallucination Detection][Multi-modal Hallucination Mitigation] Ours proposes KVSmooth, a training-free plug-and-play method that performs smoothing on KV-Cache via adaptive Exponential Moving Average (EMA) guided by attention row entropy. It effectively suppresses semantic drift and hallucination generation triggered by sink tokens during the decoding process of Multi-modal Large Language Models (MLLMs). On LLaVA-1.5, it reduces CHAIR_S from 41.8 to 18.2 (a 56% red…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR2026"
+  - "Hallucination Detection"
+  - "Multi-modal Hallucination Mitigation"
+  - "KV-Cache Smoothing"
+  - "Attention Entropy"
+  - "Exponential Moving Average"
+  - "Training-free Inference"
 date: 2026-05-08
-content_hash: ccbf14a14f6fdba2
+content_hash: 1e2bb2372139d807
 ---
+
 # KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing
 
 **Conference**: CVPR2026  
@@ -140,11 +146,11 @@ On LLaVA-1.5, CHAIR_SR was reduced from 45.3% to 16.7% (63.1% reduction). Senten
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement](../../ICLR2026/hallucination/mitigating_hallucination_in_vision-language_model_with_depth_and_spatial-aware_k.md)
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 - [\[CVPR 2026\] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models](causallens_sensitivity-guided_multi-head_causal_intervention_for_hallucination_m.md)
 - [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
-- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
-- [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](../../AAAI2026/hallucination/inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 
 </div>
 

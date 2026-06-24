@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper revisits the LoRA merging problem from the perspectives of subspace coverage and directional anisotropy. It proposes the TARA-Merging framework, which preserves LoRA directions and performs direction-level reweighting using a preference-weighted cross-entropy pseudo-loss, consistently outperforming existing
+  [CVPR 2026][Model Compression][LoRA Merging] This paper revisits the LoRA merging problem from the perspectives of subspace coverage and directional anisotropy. It proposes the TARA-Merging framework, which preserves LoRA directions and performs direction-level reweighting using a preference-weighted cross-entropy pseudo-loss, consistently outperforming existing merging methods across 8 vision and 6 NLI benchmarks.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "LoRA Merging"
+  - "subspace coverage"
+  - "anisotropy"
+  - "multi-objective optimization"
+  - "model merging"
 date: 2026-05-08
-content_hash: f759d847e9b3fb66
+content_hash: 1bb53a895164eabc
 ---
+
 markdown
 
 # Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy
@@ -148,10 +154,10 @@ where anchor $z_i$ is the entropy loss using only task $i$'s individual adapter.
 ## Related Papers
 
 - [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](bridging_domains_through_subspace-aware_model_merging.md)
-- [\[ACL 2026\] Evolutionary Negative Module Pruning for Better LoRA Merging](../../ACL2026/model_compression/evolutionary_negative_module_pruning_for_better_lora_merging.md)
+- [\[ICML 2026\] SSR-Merge: Subspace Signal Routing for Training-Free LoRA Merging in Diffusion Models](../../ICML2026/model_compression/ssr-merge_subspace_signal_routing_for_training-free_lora_merging_in_diffusion_mo.md)
 - [\[ICLR 2026\] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity](../../ICLR2026/model_compression/null-space_filtering_for_data-free_continual_model_merging_preserving_stability_.md)
-- [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
-- [\[ICML 2026\] FRISM: Fine-Grained Reasoning Injection via Subspace-Level Model Merging for Vision–Language Models](../../ICML2026/model_compression/frism_fine-grained_reasoning_injection_via_subspace-level_model_merging_for_visi.md)
+- [\[ACL 2026\] Evolutionary Negative Module Pruning for Better LoRA Merging](../../ACL2026/model_compression/evolutionary_negative_module_pruning_for_better_lora_merging.md)
+- [\[ACL 2025\] Unraveling LoRA Interference: Orthogonal Subspaces for Robust Model Merging](../../ACL2025/model_compression/osrm_lora_merging_orthogonal.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Foundation Models] This paper systematically evaluates foundation models (LLMs) as zero-shot world models (FWM) and direct decision-making agents (FA) in text-based gridworlds…
+  [NeurIPS 2025][Reinforcement Learning][Foundation Models] This paper systematically evaluates foundation models (LLMs) as zero-shot world models (FWM) and direct decision-making agents (FA) in text-based gridworlds, revealing complementary advantages of the two strategies in deterministic and stochastic environments.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Large Language Models"
   - "Sample Efficiency"
 date: 2026-05-08
-content_hash: d80d4f170962f7de
+content_hash: 7ccd7f33aa5c6190
 ---
 
 # Foundation Models as World Models: A Foundational Study in Text-Based GridWorlds
@@ -168,8 +168,8 @@ $5 \times 5$ grid, $|\mathcal{S}| \cdot |\mathcal{A}| = 25 \times 4 = 100$ trans
 
 - [\[NeurIPS 2025\] Exploration with Foundation Models: Capabilities, Limitations, and Hybrid Approaches](exploration_with_foundation_models_capabilities_limitations_and_hybrid_approache.md)
 - [\[NeurIPS 2025\] Dynamics-Aligned Latent Imagination in Contextual World Models for Zero-Shot Generalization](dynamics-aligned_latent_imagination_in_contextual_world_models_for_zero-shot_gen.md)
+- [\[ICLR 2026\] From Observations to Events: Event-Aware World Models for Reinforcement Learning](../../ICLR2026/reinforcement_learning/from_observations_to_events_event-aware_world_models_for_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Checklists Are Better Than Reward Models For Aligning Language Models](checklists_are_better_than_reward_models_for_aligning_langua.md)
-- [\[CVPR 2026\] GeoWorld: Geometric World Models](../../CVPR2026/reinforcement_learning/geoworld_geometric_world_models.md)
 - [\[ICLR 2026\] Optimistic Task Inference for Behavior Foundation Models](../../ICLR2026/reinforcement_learning/optimistic_task_inference_behavior_models.md)
 
 </div>

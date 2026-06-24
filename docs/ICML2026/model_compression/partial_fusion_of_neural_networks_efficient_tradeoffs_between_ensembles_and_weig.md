@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation
 description: >-
-  [ICML 2026][Model Compression][Paper Note] The authors propose **Partial Fusion**: a method using partial optimal transport (partial OT) to merge only the "most similar" neurons between two networks while allowing the remaining neurons to exist independently. This creates a smooth, monotonic, and tunable accuracy–parameter curve between "weight aggregation (1×
+  [ICML 2026][Model Compression][Model Fusion] The authors propose **Partial Fusion**: a method using partial optimal transport (partial OT) to merge only the "most similar" neurons between two networks while allowing the remaining neurons to exist independently. This creates a smooth, monotonic, and tunable accuracy–parameter curve between "weight aggregation (1× parameters)" and "full ensemble (2× parameters)". Furthermore, it is unified under a "generalized pruning of ensemb…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Model Fusion"
+  - "Ensembles"
+  - "Partial Optimal Transport"
+  - "Generalized Pruning"
+  - "Neuron Similarity"
 date: 2026-05-08
-content_hash: 236a57f2995d3272
+content_hash: e6388fc73cca9fe6
 ---
+
 # Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation
 
 **Conference**: ICML 2026  
@@ -134,11 +140,11 @@ Comparative performance of partial fusion and generalized pruning methods on MLP
 
 ## Related Papers
 
+- [\[ICLR 2026\] KLAS: Using Similarity to Stitch Neural Networks for Improved Accuracy-Efficiency Tradeoffs](../../ICLR2026/model_compression/klas_using_similarity_to_stitch_neural_networks_for_improved_accuracy-efficiency.md)
 - [\[ICML 2026\] SURGE: Surrogate Gradient Adaptation in Binary Neural Networks](surge_surrogate_gradient_adaptation_in_binary_neural_networks.md)
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
-- [\[AAAI 2026\] Explore and Establish Synergistic Effects between Weight Pruning and Coreset Selection](../../AAAI2026/model_compression/explore_and_establish_synergistic_effects_between_weight_pruning_and_coreset_sel.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](../../ICLR2026/model_compression/adaptive_width_neural_networks.md)
-- [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](../../NeurIPS2025/model_compression/synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
+- [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
+- [\[ICML 2026\] AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning](area_attribute_extraction_and_aggregation_for_clip-based_class-incremental_learn.md)
 
 </div>
 

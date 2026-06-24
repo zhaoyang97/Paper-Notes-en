@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] The authors re-stratify annotators into "cultural zones/quadrants" based on the Inglehart-Welzel cultural map. Using multilevel modeling across 8 safety datasets, they demonstrate that cultural zones significantlly explain variance in safety ratings even after controlling for demographics (age/sex/ethnicity) ($p<0.05$
+  [ICML 2026][LLM Alignment][Pluralistic Alignment] The authors re-stratify annotators into "cultural zones/quadrants" based on the Inglehart-Welzel cultural map. Using multilevel modeling across 8 safety datasets, they demonstrate that cultural zones significantlly explain variance in safety ratings even after controlling for demographics (age/sex/ethnicity) ($p<0.05$ in 6/8 datasets). They propose a Bayesian "cultural sensitivity score" quantifying that approximately 10% of s…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Pluralistic Alignment"
+  - "Cultural Values"
+  - "Safety Labeling"
+  - "Annotator Disagreement"
+  - "Multilevel Modeling"
 date: 2026-05-08
-content_hash: 59f94711654a0bf7
+content_hash: c304ca2f173c6b9e
 ---
+
 # Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment
 
 **Conference**: ICML 2026  
@@ -146,11 +152,11 @@ Conclusion: In 6/8 datasets, adding cultural zones significantly improves model 
 
 ## Related Papers
 
+- [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
 - [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
-- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 - [\[ACL 2026\] CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters](../../ACL2026/llm_alignment/cuma_aligning_llms_with_sparse_cultural_values_via_demographic-aware_mixture_of_.md)
-- [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
 - [\[ICML 2026\] Korean Culture into LLM Alignment: Toward Cultural Coherence](korean_culture_into_llm_alignment_toward_cultural_coherence.md)
+- [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 
 </div>
 

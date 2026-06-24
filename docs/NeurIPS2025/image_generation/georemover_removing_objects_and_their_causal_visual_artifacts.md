@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] GeoRemover: Removing Objects and Their Causal Visual Artifacts
 description: >-
-  [NeurIPS2025][Image Generation][Object Removal] GeoRemover is a geometry-aware two-stage framework that decouples object removal into geometric removal (depth domain) and appearance rendering (RGB domain). By modifying t…
+  [NeurIPS2025 Spotlight][Image Generation][Object Removal] GeoRemover is a geometry-aware two-stage framework that decouples object removal into geometric removal (depth domain) and appearance rendering (RGB domain). By modifying the scene's geometric representation, it implicitly eliminates causal visual artifacts—such as shadows and reflections—left by the removed object.
 tags:
-  - "NeurIPS2025"
+  - "NeurIPS2025 Spotlight"
   - "Image Generation"
   - "Object Removal"
   - "Causal Visual Artifacts"
@@ -13,7 +13,7 @@ tags:
   - "Diffusion Models"
   - "DPO"
 date: 2026-05-08
-content_hash: 581b090ffea52a32
+content_hash: 74409577ef54f3b8
 ---
 
 # GeoRemover: Removing Objects and Their Causal Visual Artifacts
@@ -184,11 +184,11 @@ The following broader insights are also noted:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] DeCaFlow: A Deconfounding Causal Generative Model](decaflow_a_deconfounding_causal_generative_model.md)
+- [\[CVPR 2025\] Temporal Score Analysis for Understanding and Correcting Diffusion Artifacts](../../CVPR2025/image_generation/temporal_score_analysis_for_understanding_and_correcting_diffusion_artifacts.md)
 - [\[NeurIPS 2025\] Coupling Generative Modeling and an Autoencoder with the Causal Bridge](coupling_generative_modeling_and_an_autoencoder_with_the_causal_bridge.md)
 - [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](non-markovian_discrete_diffusion_with_causal_language_models.md)
-- [\[NeurIPS 2025\] V-CECE: Visual Counterfactual Explanations via Conceptual Edits](v-cece_visual_counterfactual_explanations_via_conceptual_edits.md)
-- [\[ICML 2026\] Caracal: Causal Architecture via Spectral Mixing](../../ICML2026/image_generation/caracal_causal_architecture_via_spectral_mixing.md)
-- [\[ICML 2026\] OmniAID: Decoupling Semantic and Artifacts for Universal AI-Generated Image Detection in the Wild](../../ICML2026/image_generation/omniaid_decoupling_semantic_and_artifacts_for_universal_ai-generated_image_detec.md)
+- [\[CVPR 2025\] Make It Count: Text-to-Image Generation with an Accurate Number of Objects](../../CVPR2025/image_generation/make_it_count_text-to-image_generation_with_an_accurate_number_of_objects.md)
 
 </div>
 

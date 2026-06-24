@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Interpretable Visual Decoding with Attention to Brain Representations
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] NeuroAdapter is proposed to segment fMRI signals into independent tokens by brain region and directly condition Stable Diffusion via cross-attention. By bypassing traditional CLIP/DINO intermediate embedding spaces, it achieves high-level semantic metrics superior to or on par with existing methods on datasets like NSD
+  [ICLR 2026][Medical Imaging][fMRI visual decoding] NeuroAdapter is proposed to segment fMRI signals into independent tokens by brain region and directly condition Stable Diffusion via cross-attention. By bypassing traditional CLIP/DINO intermediate embedding spaces, it achieves high-level semantic metrics superior to or on par with existing methods on datasets like NSD. Furthermore, the IBBI bi-directional interpretability framework is introduced…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI visual decoding"
+  - "end-to-end brain-to-image reconstruction"
+  - "cross-attention conditioning"
+  - "bi-directional interpretability"
+  - "brain region tokens"
 date: 2026-05-08
-content_hash: c57c3212d7fb9ad7
+content_hash: a0f1751398122fea
 ---
+
 # Towards Interpretable Visual Decoding with Attention to Brain Representations
 
 **Conference**: ICLR 2026  
@@ -148,11 +154,11 @@ Key ablations on NSD Subject 1 (direction of change relative to baseline):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[ICLR 2026\] A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding](a_cognitive_process-inspired_architecture_for_subject-agnostic_brain_visual_deco.md)
-- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](../../NeurIPS2025/medical_imaging/more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[CVPR 2026\] Decoding 3D Perception via BrainSSD: Synergistic Fusion of EEG Representations from Static and Dynamic Visual Streams](../../CVPR2026/medical_imaging/decoding_3d_perception_via_brainssd_synergistic_fusion_of_eeg_representations_fr.md)
+- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
 
 </div>
 

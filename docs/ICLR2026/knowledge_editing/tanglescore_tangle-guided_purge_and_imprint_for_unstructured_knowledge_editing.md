@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] TangleScore: Tangle-Guided Purge and Imprint for Unstructured Knowledge Editing
 description: >-
-  [ICLR 2026][Knowledge Editing][Generalizability] This paper proposes **TangleScore**, an intrinsic difficulty metric determined solely by the "model + knowledge sample" independent of specific editing algorithms, to measure how "hard" a piece of knowledge is to modify. Based on this, it designs **PIPE** (a two-stage editing framework that purges old knowledge before
+  [ICLR 2026][Knowledge Editing][Unstructured Knowledge] This paper proposes **TangleScore**, an intrinsic difficulty metric determined solely by the "model + knowledge sample" independent of specific editing algorithms, to measure how "hard" a piece of knowledge is to modify. Based on this, it designs **PIPE** (a two-stage editing framework that purges old knowledge before imprinting new knowledge), improving generalization performance by an average of 6.49% across four LLMs o…
 tags:
-  - ICLR 2026
-  - Knowledge Editing
-  - Generalizability
+  - "ICLR 2026"
+  - "Knowledge Editing"
+  - "Unstructured Knowledge"
+  - "Editing Difficulty Quantization"
+  - "Knowledge Unlearning"
+  - "Generalization"
 date: 2026-05-08
-content_hash: f36157a35b612076
+content_hash: ee15718ab7df6322
 ---
+
 # TangleScore: Tangle-Guided Purge and Imprint for Unstructured Knowledge Editing
 
 **Conference**: ICLR 2026  

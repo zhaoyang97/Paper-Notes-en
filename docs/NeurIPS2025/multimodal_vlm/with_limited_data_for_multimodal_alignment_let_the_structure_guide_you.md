@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Multimodal alignment] This paper proposes STRUCTURE regularization and a representation-similarity-based layer selection strategy that achieves high-quality cross-modal alignment between fr…
+  [NeurIPS 2025][Multimodal VLM][Multimodal alignment] This paper proposes STRUCTURE regularization and a representation-similarity-based layer selection strategy that achieves high-quality cross-modal alignment between frozen unimodal foundation models using only tens of thousands of paired samples (less than 1% of conventional data requirements), yielding average improvements of 51.6% and 91.8% across 24 zero-shot classification and retrieval benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "frozen-encoder alignment"
   - "layer selection"
 date: 2026-05-08
-content_hash: c3a03ee2392ff650
+content_hash: 6a12428923b544a5
 ---
 
 # STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You
@@ -129,10 +129,10 @@ Both pre-trained encoders are frozen, and lightweight alignment functions (linea
 ## Related Papers
 
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
-- [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
 - [\[ACL 2026\] STELLA: A Multimodal LLM for Protein Functional Annotation via Unified Sequence-Structure Encoding](../../ACL2026/multimodal_vlm/stella_a_multimodal_llm_for_protein_functional_annotation_via_unified_sequence-s.md)
+- [\[NeurIPS 2025\] Aligning by Misaligning: Boundary-aware Curriculum Learning for Multimodal Alignment](aligning_by_misaligning_boundaryaware_curriculum_learning_fo.md)
+- [\[ECCV 2024\] AdaShield: Safeguarding Multimodal Large Language Models from Structure-based Attack via Adaptive Shield Prompting](../../ECCV2024/multimodal_vlm/adashield_safeguarding_multimodal_large_language_models_from_structure-based_att.md)
 - [\[ICCV 2025\] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis](../../ICCV2025/multimodal_vlm/oasis_one_image_is_all_you_need_for_multimodal_instruction_data_synthesis.md)
-- [\[NeurIPS 2025\] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning](midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le.md)
 
 </div>
 

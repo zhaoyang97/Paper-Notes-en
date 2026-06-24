@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Revisit What You See: Revealing Visual Semantics in Vision Tokens to Guide LVLM Decoding
 description: >-
-  [ACL 2026][Multimodal VLM][Vision-Language Model] ReVisiT discovers that visual tokens in LVLMs already encode interpretable object semantics. By utilizing contextually constrained vocabularies, visual token selection, and logit fusion, it enhances visual grounding and reduces hallucinations without retraining or additional forward passes.
+  [ACL2026 Oral][Multimodal VLM][Large Vision-Language Models] ReVisiT discovers that visual tokens in LVLMs already encode interpretable object semantics. By utilizing contextually constrained vocabularies, visual token selection, and logit fusion, it enhances visual grounding and reduces hallucinations without retraining or additional forward passes.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ACL2026 Oral"
+  - "Multimodal VLM"
+  - "Large Vision-Language Models"
+  - "Hallucination Mitigation"
+  - "Decoding Strategy"
+  - "Vision tokens"
+  - "Training-free method"
 date: 2026-05-08
-content_hash: b40898ab154b904c
+content_hash: 2131ca648580f506
 ---
+
 # Revisit What You See: Revealing Visual Semantics in Vision Tokens to Guide LVLM Decoding
 
 **Conference**: ACL2026 Oral  
@@ -127,15 +132,14 @@ Analyzed on Qwen2.5-VL (CHAIR) regarding selection criteria, vocabulary constrai
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] "I See What You Did There": Can Large Vision-Language Models Understand Multimodal Puns?](i_see_what_you_did_there_can_large_vision-language_models_understand_multimodal_.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
 - [\[ACL 2025\] I See What You Mean: Co-Speech Gestures for Reference Resolution in Multimodal Dialogue](../../ACL2025/multimodal_vlm/i_see_what_you_mean_co-speech_gestures_for_reference_resolution_in_multimodal_di.md)
+- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](../../CVPR2026/multimodal_vlm/aif_adaptive_information_flow_vlm.md)
 - [\[ICLR 2026\] Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](../../ICLR2026/multimodal_vlm/revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)
-- [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
+- [\[NeurIPS 2025\] STRUCTURE: With Limited Data for Multimodal Alignment, Let the Structure Guide You](../../NeurIPS2025/multimodal_vlm/with_limited_data_for_multimodal_alignment_let_the_structure_guide_you.md)
 
 </div>
 

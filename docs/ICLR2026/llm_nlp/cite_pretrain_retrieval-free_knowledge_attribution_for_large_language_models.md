@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] By utilizing "Active Indexing" during the continued pretraining phase to bidirectionally bind facts to document identifiers, LLMs can provide verifiable citations while answering in a closed-book setting without any external retrieval, improving citation precision by up to 30.2%.
+  [ICLR 2026][LLM (Other)][Internal Citation] By utilizing "Active Indexing" during the continued pretraining phase to bidirectionally bind facts to document identifiers, LLMs can provide verifiable citations while answering in a closed-book setting without any external retrieval, improving citation precision by up to 30.2%.
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Internal Citation"
+  - "Knowledge Attribution"
+  - "Continued Pretraining"
+  - "Active Indexing"
+  - "Data Augmentation"
+  - "Retrieval-Free"
 date: 2026-05-08
-content_hash: c3a4212f39cfd6d5
+content_hash: c021222114779d15
 ---
+
 # Cite Pretrain: Retrieval-Free Knowledge Attribution for Large Language Models
 
 **Conference**: ICLR 2026  

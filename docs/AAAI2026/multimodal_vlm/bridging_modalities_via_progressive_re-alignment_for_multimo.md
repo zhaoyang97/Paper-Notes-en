@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal test-time adaptation] This paper proposes BriMPR, a framework that decomposes multimodal test-time adaptation (MMTTA) into multiple unimodal feature alignment subproblems via a divi…
+  [AAAI 2026 Oral][Multimodal VLM][Multimodal test-time adaptation] This paper proposes BriMPR, a framework that decomposes multimodal test-time adaptation (MMTTA) into multiple unimodal feature alignment subproblems via a divide-and-conquer strategy. It first calibrates the global feature distribution of each modality through prompt tuning to achieve initial cross-modal semantic alignment, then refines the alignment via cross-modal masked embedding recombination and instance-l…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multimodal VLM"
   - "Multimodal test-time adaptation"
   - "cross-modal alignment"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "distribution calibration"
 date: 2026-05-08
-content_hash: 6318370c15a7b5dc
+content_hash: e46208935f79e926
 ---
 
 # Bridging Modalities via Progressive Re-alignment for Multimodal Test-Time Adaptation (BriMPR)
@@ -184,10 +184,10 @@ Under the VGGSound-C bimodal corruption setting, BriMPR achieves a substantial l
 ## Related Papers
 
 - [\[AAAI 2026\] Panda: Test-Time Adaptation with Negative Data Augmentation](panda_test-time_adaptation_with_negative_data_augmentation.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] Condensed Test-Time Adaptation of VLMs for Action Recognition](../../CVPR2026/multimodal_vlm/condensed_test-time_adaptation_of_vlms_for_action_recognition.md)
 - [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](../../CVPR2026/multimodal_vlm/decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
-- [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)
-- [\[ICML 2026\] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs](../../ICML2026/multimodal_vlm/slq_bridging_modalities_via_shared_latent_queries_for_retrieval_with_frozen_mllm.md)
-- [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
+- [\[ICLR 2026\] Long-tailed Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/long-tailed_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Heavy Labels Out! Dataset Distillation with Label Space Lightening
 description: >-
-  [ICCV 2025][Model Compression][dataset distillation] This paper proposes the HeLlO framework, which constructs a lightweight image-label projector using a CLIP pretrained model and LoRA-like low-rank knowledge transfer…
+  [ICCV 2025][Model Compression][dataset distillation] This paper proposes the HeLlO framework, which constructs a lightweight image-label projector using a CLIP pretrained model and LoRA-like low-rank knowledge transfer, reducing soft label storage in dataset distillation to 0.003% of the original while maintaining or surpassing SOTA performance.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LoRA"
   - "label space lightening"
 date: 2026-05-08
-content_hash: 6179d56aeaf1bde0
+content_hash: b2c608c793d764de
 ---
 
 # Heavy Labels Out! Dataset Distillation with Label Space Lightening
@@ -162,9 +162,9 @@ Incremental component ablation (IN-1K, IPC=10):
 
 - [\[NeurIPS 2025\] Rectifying Soft-Label Entangled Bias in Long-Tailed Dataset Distillation](../../NeurIPS2025/model_compression/rectifying_soft-label_entangled_bias_in_long-tailed_dataset_distillation.md)
 - [\[ICCV 2025\] Dataset Distillation via the Wasserstein Metric](dataset_distillation_via_the_wasserstein_metric.md)
-- [\[NeurIPS 2025\] Hyperbolic Dataset Distillation](../../NeurIPS2025/model_compression/hyperbolic_dataset_distillation.md)
-- [\[ICML 2026\] Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift](../../ICML2026/model_compression/hard_labels_in_rethinking_the_role_of_hard_labels_in_mitigating_local_semantic_d.md)
-- [\[ICCV 2025\] Gradient Short-Circuit: Efficient Out-of-Distribution Detection via Feature Intervention](gradient_short-circuit_efficient_out-of-distribution_detection_via_feature_inter.md)
+- [\[CVPR 2026\] Beyond Soft Label: Dataset Distillation via Orthogonal Gradient Matching](../../CVPR2026/model_compression/beyond_soft_label_dataset_distillation_via_orthogonal_gradient_matching.md)
+- [\[CVPR 2026\] Rethinking Dataset Distillation: Hard Truths about Soft Labels](../../CVPR2026/model_compression/rethinking_dataset_distillation_hard_truths_about_soft_labels.md)
+- [\[CVPR 2025\] Enhancing Dataset Distillation via Non-Critical Region Refinement](../../CVPR2025/model_compression/enhancing_dataset_distillation_via_non-critical_region_refinement.md)
 
 </div>
 

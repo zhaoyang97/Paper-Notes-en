@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems
 description: >-
-  [AAAI 2026][AI Safety][Membership Inference Attack] This paper proposes a Reference Recommendation-based Membership Inference Attack (MIA), designing a relative membership metric $\rho(u) = d(v_t, v_h) / d(v_t…
+  [AAAI 2026][AI Safety][Membership Inference Attack] A reference recommendation-based Membership Inference Attack (MIA) is proposed, introducing a relative membership metric $\rho(u) = d(v_t, v_h) / d(v_t, v_r)$. By leveraging the personalized features of hybrid-based recommender systems to obtain reference recommendations, this work achieves the first effective attack against hybrid-based recommender systems, achieving an attack success rate of up to 93.4% with a computation…
 tags:
   - "AAAI 2026"
   - "AI Safety"
@@ -10,121 +10,121 @@ tags:
   - "Hybrid-based Recommender Systems"
   - "Reference Recommendation"
   - "Relative Membership Metric"
-  - "Privacy Attack"
+  - "Privacy Attacks"
 date: 2026-05-08
-content_hash: 2a7777ae305151c1
+content_hash: 68133bf2feaee0cf
 ---
 
 # Reference Recommendation based Membership Inference Attack against Hybrid-based Recommender Systems
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2512.09442](https://arxiv.org/abs/2512.09442)  
-**Code**: None (implementation code provided in the appendix)  
-**Area**: AI Security
-**Keywords**: Membership Inference Attack, Hybrid-based Recommender Systems, Reference Recommendation, Relative Membership Metric, Privacy Attack
+**Code**: None (implementation code is provided in the appendix)  
+**Area**: AI Security  
+**Keywords**: Membership Inference Attack, Hybrid-based Recommender Systems, Reference Recommendation, Relative Membership Metric, Privacy Attacks
 
 ## TL;DR
 
-This paper proposes a Reference Recommendation-based Membership Inference Attack (MIA), designing a relative membership metric $\rho(u) = d(v_t, v_h) / d(v_t, v_r)$ that exploits the personalization capability of hybrid-based recommender systems to obtain reference recommendations. It is the first method to effectively attack hybrid-based recommender systems, achieving an attack success rate of up to 93.4% with a computational cost of only 10 seconds.
+A reference recommendation-based Membership Inference Attack (MIA) is proposed, introducing a relative membership metric $\rho(u) = d(v_t, v_h) / d(v_t, v_r)$. By leveraging the personalized features of hybrid-based recommender systems to obtain reference recommendations, this work achieves the first effective attack against hybrid-based recommender systems, achieving an attack success rate of up to 93.4% with a computation cost of only 10 seconds.
 
 ## Background & Motivation
 
-### Privacy Risks in Recommender Systems
+### Privacy Risks of Recommender Systems
 
-Recommender systems are widely deployed in e-commerce, social media, and other domains, suggesting items or connections based on user preferences and interaction histories. However, these interaction histories often contain privacy-sensitive information. Membership Inference Attacks (MIA) aim to determine whether a specific user's data was used to train the target recommender system; a successful attack constitutes a violation of privacy regulations such as GDPR and CCPA.
+Recommender systems are widely deployed in e-commerce, social media, and other fields, recommending items or friends based on user preferences and interaction histories. However, these interaction histories often contain privacy-sensitive information. Membership Inference Attacks (MIAs) aim to determine whether a specific user's data was used to train the target recommender system, the success of which directly violates privacy regulations such as GDPR and CCPA.
 
 ### Limitations of Prior Work
 
-Existing MIA methods (e.g., ST-MIA, DL-MIA) suffer from two critical issues:
+Existing MIA methods (such as ST-MIA, DL-MIA) face two key limitations:
 
-**Unrealistic assumptions**: They assume that all users with interaction histories are members and that new users without interactions are non-members. In practice, existing users may also be non-members (e.g., users who opted out of data collection or joined the platform outside the training window).
+**Unrealistic assumptions**: They assume that all users with interaction histories are members, while new users with no interactions are non-members. In reality, existing users can also be non-members (e.g., they opted out of data collection or joined the platform outside the training window).
 
-**Applicability limited to hybrid-component recommender systems**: Existing attacks exploit behavioral differences between two distinct algorithms—collaborative filtering for members and popularity-based recommendations for non-members. When confronted with **hybrid-based recommender systems (Hybrid-based RS)**—where a single algorithm simultaneously leverages interaction histories and user attributes to serve all users—existing attacks fail entirely, with success rates approaching random guessing (50%).
+**Only applicable to hybrid-component recommender systems**: Existing attacks exploit the behavioral discrepancy between two different algorithms—collaborative filtering for members versus popularity-based recommendation for non-members. When facing a **hybrid-based recommender system (Hybrid-based RS)**—where a single algorithm utilizes both interaction histories and user attributes to serve all users simultaneously—existing attacks fail completely (with accuracy close to the 50% random guess level).
 
-### Core Research Question
+### Core Problem
 
 **How does personalization in hybrid-based recommender systems affect MIA?** This is a non-trivial question:
-- On one hand, stronger personalization may imply greater privacy exposure.
-- On the other hand, hybrid-based recommender systems mitigate cold-start and overfitting issues, theoretically strengthening defenses against MIA.
+- On one hand, stronger personalization might imply more privacy exposure.
+- On the other hand, hybrid-based recommender systems alleviate cold-start and overfitting problems, which theoretically should enhance defense against MIA.
 
-Prior efficient shadow-free attack methods (chi2024shadow) are also inapplicable in this setting, since new users no longer receive uniform popularity-based recommendations but instead receive attribute-based personalized recommendations.
+Previous highly efficient shadow-free attack methods (such as chi2024shadow) are also inapplicable to this scenario—as new users no longer receive uniform popularity-based recommendations, but instead receive personalized recommendations based on their attributes.
 
 ## Method
 
 ### Overall Architecture
 
-The attack proceeds in three steps:
-1. Query the recommender system using the target user's interaction history and attributes to obtain the **target recommendation** $\mathcal{Y}_{u\_target}$.
+The attack workflow consists of three steps:
+1. Query the recommender system using the target user's interaction history + attributes to obtain the **target recommendation** $\mathcal{Y}_{u\_target}$.
 2. Query the recommender system using only the target user's attributes to obtain the **reference recommendation** $\mathcal{Y}_{u\_ref}$.
-3. Infer membership status by comparing the target recommendation, reference recommendation, and interaction history via the **relative membership metric** $\rho(u)$.
+3. Infer the membership status by comparing the target recommendation, reference recommendation, and historical interactions through the **relative membership metric** $\rho(u)$.
 
 ### Key Designs
 
 #### 1. **Reference Recommendation Acquisition**
 
-Core insight: The unique capability of hybrid-based recommender systems—generating personalized recommendations based solely on user attributes, even without interaction histories—is exploited by the attacker. By querying the system with only attributes $\Phi_u$, a reference baseline unaffected by training information is obtained.
+**Key Insight**: The unique capability of hybrid-based recommender systems is that they can generate personalized recommendations based on user attributes even without interaction histories. The attacker cleverly exploits this feature: querying the system using only the attributes $\Phi_u$ to obtain a reference baseline that is "uninfluenced by training information".
 
 $$\mathcal{Y}_{u\_ref} = [y_{r_1}, \cdots, y_{r_n}]$$
 
-Design Motivation: The reference recommendation represents "what the recommender system would suggest if this user's data had not been used for training." Comparing it against the actual recommendation amplifies the behavioral difference between members and non-members.
+**Design Motivation**: The reference recommendation represents "what the recommender system would provide if this user's data were not used for training". Comparing it with the target recommendation amplifies the discrepancy between members and non-members.
 
 #### 2. **Relative Membership Metric**
 
 $$\rho(u) = \frac{\|v_t - v_h\|_2}{\|v_t - v_r\|_2}$$
 
-where $v_t$, $v_h$, and $v_r$ denote the feature vectors of the target recommendation, interaction history, and reference recommendation, respectively (computed as the mean of item embeddings).
+Where $v_t$, $v_h$, and $v_r$ are the feature vectors of the target recommendation, historical interactions, and reference recommendation, respectively (calculated by taking the average of the item embeddings).
 
-**Decision rule**: $\rho(u) < 1$ indicates membership; otherwise, non-membership.
+**Decision Rule**: If $\rho(u) < 1$, the user is inferred as a member; otherwise, as a non-member.
 
-**Intuition**: If the target recommendation is closer to the interaction history than to the reference recommendation, the interaction history likely participated in model training.
+**Intuition**: If the target recommendation is closer to the historical interactions (rather than the reference recommendation), it indicates that the historical interactions were likely involved in model training.
 
-#### 3. **Mathematical Advantages of the Metric**
+#### 3. **Mathematical Advantage Analysis of the Metric**
 
-Let $x = d(v_t, v_h)/M$ be a normalized variable; the metric is equivalent to $f(x) = x/(1-x)$, whereas existing linear metrics are equivalent to $g(x) = cx$.
+Let $x = d(v_t, v_h)/M$ be a normalized variable; the proposed metric is equivalent to the function $f(x) = x/(1-x)$, whereas existing linear metrics are equivalent to $g(x) = cx$.
 
-- $f'(x) = 1/(1-x)^2 > 0$, $f''(x) = 2/(1-x)^3 > 0$: the metric variation between members and non-members is **nonlinearly increasing**.
-- For non-members (larger $x$), the metric changes more dramatically, amplifying the gap between members and non-members.
-- The linear metric $g'(x) = c$ has a constant rate of change, providing insufficient discriminative power near the decision boundary.
+- $f'(x) = 1/(1-x)^2 > 0$ and $f''(x) = 2/(1-x)^3 > 0$: The metric values exhibit a **non-linearly increasing** variation between members and non-members.
+- For non-members (where $x$ is larger), the metric changes progressively more rapidly, thereby magnifying the gap between members and non-members.
+- The rate of change for the linear metric $g'(x) = c$ is constant, yielding insufficient discriminative power for samples near the boundary.
 
-**Connection to a special case**: The prior efficient shadow-free method can be viewed as a special case of the proposed metric, where the reference recommendation $v_r$ is a constant determined by item popularity rather than being user-specific.
+**Connection to Special Cases**: Previous highly efficient shadow-free methods can be viewed as a special case of the proposed metric—where the reference recommendation $v_r$ is a constant determined by item popularity and does not vary across users. In contrast, $v_r$ in this work is personalized.
 
 #### 4. **Feature Vector Construction**
 
-Item feature embeddings are extracted from publicly crawlable datasets:
+Extract item feature embeddings from publicly crawlable datasets:
 
 $$\hat{C}^{p \times q} = H \cdot W^T$$
 
-The user–item interaction matrix is factorized via matrix decomposition, where each row $w_i$ of $W$ is the latent feature vector of item $i$. Feature vectors are computed as the mean of item embeddings in the respective lists:
+The user-item interaction matrix is decomposed via matrix factorization, where each row $w_i$ of $W$ represents the latent feature vector of the $i$-th item. The feature vectors are computed as the average of the item embeddings in the list:
 
 $$v_h = \frac{1}{m}\sum_{i=1}^{m} w_{h_i}, \quad v_t = \frac{1}{n}\sum_{i=1}^{n} w_{y_{t_i}}, \quad v_r = \frac{1}{n}\sum_{i=1}^{n} w_{y_{r_i}}$$
 
 ### Loss & Training
 
-The proposed method **requires no training**—no shadow models, no attack classifier training. It simply computes a metric value and compares it against the threshold of 1, with a time complexity of only $O(l)$ (where $l$ is the length of the feature vector).
+The proposed method **requires no training**—it eliminates the need for shadow models or training an attack classifier. It only requires computing a single metric value and comparing it to the threshold of 1, resulting in a time complexity of only $O(l)$ (where $l$ is the length of the feature vector).
 
 ## Key Experimental Results
 
 ### Main Results
 
-Target recommender systems: DropoutNet and Heater
-Target datasets: MovieLens-1M (ML-1M) and MovieLens-100K (ML-100K)
+Target recommender systems: DropoutNet and Heater  
+Target datasets: MovieLens-1M (ML-1M) and MovieLens-100K (ML-100K)  
 Shadow dataset (for baselines): ACM RecSys 2017 Challenge
 
 **Attack Success Rate (ASR)**:
 
 | Target RS | Target Dataset | Ours | ST-MIA | DL-MIA |
-|-----------|---------------|------|--------|--------|
+|--------|-----------|---------|--------|--------|
 | DropoutNet | ML-1M | **0.9340** | 0.4995 | 0.5139 |
 | DropoutNet | ML-100K | **0.9098** | 0.5079 | 0.5011 |
 | Heater | ML-1M | **0.8376** | 0.5536 | 0.4995 |
 | Heater | ML-100K | **0.7519** | 0.4920 | 0.5000 |
 
-Baseline methods achieve ASR ≈ 0.5, nearly equivalent to random guessing, demonstrating that existing methods completely fail against hybrid-based recommender systems.
+The ASR of baseline methods is approximately 0.5, which is almost equivalent to random guessing, demonstrating that existing methods fail completely on hybrid-based recommender systems.
 
-**TPR@1%FPR** (high-reliability metric):
+**TPR@1%FPR** (High-reliability metric):
 
 | Target RS | Target Dataset | Ours | ST-MIA | DL-MIA |
-|-----------|---------------|------|--------|--------|
+|--------|-----------|---------|--------|--------|
 | DropoutNet | ML-1M | **99.84%** | 24.61% | 21.15% |
 | DropoutNet | ML-100K | **68.88%** | 21.26% | 11.82% |
 | Heater | ML-1M | **97.83%** | 25.05% | 24.02% |
@@ -135,56 +135,56 @@ Baseline methods achieve ASR ≈ 0.5, nearly equivalent to random guessing, demo
 **Computational Efficiency Comparison**:
 
 | Method | Average Computation Time | Relative Speed |
-|--------|------------------------|----------------|
+|------|-------------|---------|
 | Ours | **10.4 seconds** | 1× |
 | ST-MIA | 973.3 seconds | 93.6× slower |
 | DL-MIA | 38,550 seconds | 3706.7× slower |
 
-**Effect of Recommendation Count $n$**: As $n$ increases from 10 to 100, ASR remains stable with a slight improvement (e.g., (Dro., 100K) increases from < 0.9 to > 0.9).
+**Impact of Recommendation Size $n$**: As $n$ increases from 10 to 100, the ASR remains stable and slightly improves (e.g., (Dro., 100K) increases from < 0.9 to > 0.9).
 
-**Effect of Feature Vector Length $l$**: As $l$ varies from 10 to 100, ASR shows no significant change, indicating that the method is insensitive to this parameter.
+**Impact of Feature Vector Length $l$**: As $l$ varies from 10 to 100, there is no significant change in ASR, indicating that the method is insensitive to this parameter.
 
 **Differential Privacy Defense Evaluation**:
 
 | Setting (Dro., 100K) | ε=0.1 | ε=0.5 | ε=1.0 | No DP |
-|----------------------|-------|-------|-------|------|
+|-------------------|-------|-------|-------|------|
 | ASR | 0.5101 | 0.7837 | 0.7996 | 0.9098 |
 
-Differential privacy provides some degree of privacy protection (ASR approaches 0.5 at $\epsilon = 0.1$), yet the proposed attack remains effective under moderate privacy budgets.
+DP provides a certain level of privacy protection (ASR approaches 0.5 under $\epsilon = 0.1$), but the proposed attack remains effective under a moderate privacy budget.
 
 ### Key Findings
 
-1. **First effective attack against hybrid-based recommender systems**: Existing shadow training-based methods completely fail on hybrid-based recommender systems (ASR ≈ 0.5).
-2. **Extremely high efficiency**: No shadow model training required; 10.4 seconds vs. 38,550 seconds—approximately 3,700× faster.
-3. **Strong reliability**: TPR@1%FPR reaches 99.84% on DropoutNet + ML-1M.
-4. **Distribution visualization**: The metric value distributions of members and non-members are clearly separated, with the threshold boundary $\rho = 1$ almost perfectly partitioning the two classes.
+1. **First effective attack against hybrid-based recommender systems**: Existing shadow training-based methods fail completely on hybrid-based recommender systems (ASR $\approx$ 0.5).
+2. **Extremely high efficiency**: Eliminates shadow model training, taking 10.4 seconds versus 38,550 seconds, which is over 3,700 times faster.
+3. **High reliability**: Reaches a TPR@1%FPR of 99.84% on DropoutNet + ML-1M.
+4. **Distribution Visualization**: The metric value distributions of members and non-members are clearly separated, and the threshold boundary of $\rho = 1$ partitions the two classes almost perfectly.
 
 ## Highlights & Insights
 
-1. **Exploiting system capabilities to attack the system**: The attack elegantly leverages the hybrid-based recommender system's ability to generate recommendations from attributes alone—the very capability designed to eliminate cold-start becomes its privacy vulnerability.
-2. **Elegance of the metric design**: The nonlinear form $x/(1-x)$ is naturally suited for binary classification, requires no user-specified threshold (always 1), and is insensitive to absolute values.
-3. **Training-free paradigm**: Unlike methods requiring shadow model training and attack classifier training, the proposed approach requires only two black-box queries and simple arithmetic operations.
-4. **Theoretical and empirical consistency**: Functional analysis and distribution visualization jointly validate the effectiveness of the metric from multiple perspectives.
+1. **Exploiting system features to attack the system**: Cleverly leveraging the capability of hybrid-based recommender systems to "recommend based solely on attributes" as an attacking tool—the model's capability to mitigate cold-start issues turns out to be its privacy vulnerability.
+2. **Elegant metric design**: The non-linear form of $x/(1-x)$ is naturally suited for binary classification without requiring user-specified thresholds (it is constantly set to 1) and is insensitive to absolute values.
+3. **Training-free paradigm**: Unlike methods requiring shadow-model training and attack classifier training, the proposed method only requires two black-box queries and simple arithmetic operations.
+4. **Unified theory and empirical evidence**: The effectiveness of the metric is comprehensively validated from mathematical function analysis to distribution visualization.
 
 ## Limitations & Future Work
 
-1. **Exclusive use of Euclidean distance**: Alternative distance metrics (Jaccard, KL divergence, etc.) are left for future exploration.
-2. **Limited dataset scale**: Validation is performed only on the MovieLens series.
-3. **Fixed threshold at 1**: Although theoretically justified, a flexible threshold may further improve performance.
-4. **Limited defense analysis**: Only differential privacy is evaluated; other defense mechanisms are not considered.
+1. **Use of Euclidean distance only**: Other distance metrics (such as Jaccard similarity, KL divergence) are left for future exploration.
+2. **Limited dataset scale**: The evaluation is only conducted on the MovieLens datasets.
+3. **Fixed threshold of 1**: Although theoretically sound, a flexible threshold might further enhance performance.
+4. **Limited defense analysis**: Only differential privacy is evaluated, while other defense mechanisms are not considered.
 
 ## Related Work & Insights
 
-- **ST-MIA** (the first MIA for recommender systems) and **DL-MIA** (improved via debiased learning) both rely on shadow training pipelines, which are computationally expensive and ineffective against hybrid-based recommender systems.
-- The shadow-free method of **chi2024shadow** is a special case of the proposed metric (with a constant reference recommendation), which inspired the personalized reference recommendation approach in this work.
-- Implication for privacy research: The stronger the personalization capability of a recommender system, the greater the potential privacy risk—utility and privacy remain fundamentally at odds.
+- **ST-MIA** (the first recommender system MIA) and **DL-MIA** (an improvement via de-biased learning) are both based on shadow training pipelines, making them computationally expensive and ineffective on hybrid-based recommender systems.
+- The shadow-free method of **chi2024shadow** can be viewed as a special case of the proposed metric (where the reference recommendation is a constant), which inspired the idea of personalized reference recommendations in this work.
+- Insights for privacy research: The stronger the personalization capability of a recommender system, the greater its potential privacy risk—representing a trade-off where one cannot have both.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First attack targeting hybrid-based recommender systems; the reference recommendation idea is highly inventive.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — 2 RS × 2 datasets, with parameter analysis and defense evaluation.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematical analysis is rigorous, though some notation is slightly redundant.
-- Value: ⭐⭐⭐⭐ — Reveals an important privacy vulnerability with significant warning implications for recommender system security.
+- Novelty: ⭐⭐⭐⭐⭐ — First attack against hybrid-based recommender systems, featuring an ingenious reference recommendation design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Evaluated on 2 Recommender Systems $\times$ 2 datasets, including parameter analysis and defense evaluation.
+- Writing Quality: ⭐⭐⭐⭐ — Rigorous mathematical analysis, though some notations appear slightly redundant.
+- Value: ⭐⭐⭐⭐ — Reveals critical privacy vulnerabilities, serving as an alert for recommender system security.
 
 <!-- RELATED:START -->
 
@@ -193,10 +193,10 @@ Differential privacy provides some degree of privacy protection (ASR approaches 
 ## Related Papers
 
 - [\[AAAI 2026\] Privacy Auditing of Multi-Domain Graph Pre-Trained Model under Membership Inference Attack](privacy_auditing_of_multi-domain_graph_pre-trained_model_under_membership_infere.md)
+- [\[ACL 2025\] Crafting Privacy-Preserving Adversarial Examples: A Defense Against Membership Inference](../../ACL2025/ai_safety/crafting_privacy-preserving_adversarial_examples_a_defense_against_membership_inf.md)
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](../../ICCV2025/ai_safety/find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
+- [\[ICLR 2026\] Curation Leaks: Membership Inference Attacks against Data Curation for Machine Learning](../../ICLR2026/ai_safety/curation_leaks_membership_inference_attacks_against_data_curation_for_machine_le.md)
 - [\[AAAI 2026\] InfoDecom: Decomposing Information for Defending Against Privacy Leakage in Split Inference](infodecom_decomposing_information_for_defending_against_privacy_leakage_in_split.md)
-- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](../../ICML2026/ai_safety/how_does_bayesian_sampling_help_membership_inference_attacks.md)
-- [\[AAAI 2026\] Plug-and-Play Parameter-Efficient Tuning of Embeddings for Federated Recommendation](plug-and-play_parameter-efficient_tuning_of_embeddings_for_federated_recommendat.md)
 
 </div>
 

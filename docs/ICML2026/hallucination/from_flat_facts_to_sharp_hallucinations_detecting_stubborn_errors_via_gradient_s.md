@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Flat Facts to Sharp Hallucinations: Detecting Stubborn Errors via Gradient Sensitivity
 description: >-
-  [ICML 2026][Hallucination Detection][stubborn hallucination] Ours shifts LLM hallucination detection from "analyzing output probabilities" to "analyzing loss landscape curvature"—measuring perturbations in gradient direction and magnitude by adding Gaussian noise to embeddings. Serving as a cheap proxy for the Hessian spectral radius, this method outperforms baselines like Entro
+  [ICML 2026][Hallucination Detection][stubborn hallucination] Ours shifts LLM hallucination detection from "analyzing output probabilities" to "analyzing loss landscape curvature"—measuring perturbations in gradient direction and magnitude by adding Gaussian noise to embeddings. Serving as a cheap proxy for the Hessian spectral radius, this method outperforms baselines like Entropy, Semantic Entropy, and EigenScore in AUROC across 12 model-dataset combinations.
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - stubborn hallucination
-  - loss landscape
-  - Hessian
-  - gradient sensitivity
-  - embedding perturbation
+  - "ICML 2026"
+  - "Hallucination Detection"
+  - "stubborn hallucination"
+  - "loss landscape"
+  - "Hessian"
+  - "gradient sensitivity"
+  - "embedding perturbation"
 date: 2026-05-08
-content_hash: bfc68411f2325aea
+content_hash: d4d825024f0c3302
 ---
+
 # From Flat Facts to Sharp Hallucinations: Detecting Stubborn Errors via Gradient Sensitivity
 
 **Conference**: ICML 2026  
@@ -144,9 +145,9 @@ Stubborn subset (High-consistency samples where entropy-based methods fail):
 
 - [\[CVPR 2026\] Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](../../CVPR2026/hallucination/mitigating_multimodal_hallucinations_via_gradient-based_self-reflection.md)
 - [\[ACL 2026\] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps](../../ACL2026/hallucination/detecting_hallucinations_in_speechllms_at_inference_time_using_attention_maps.md)
+- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
 - [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](../../ACL2026/hallucination/finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](../../ACL2026/hallucination/tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
-- [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/hallucination/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
 
 </div>
 

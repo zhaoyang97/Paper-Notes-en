@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] U2Flow is the first recurrent unsupervised framework for joint estimation of optical flow and pixel-wise uncertainty. By leveraging decoupled uncertainty learning based on augmentation consistency and uncertainty-guided bidirectional flow fusion, it achieves unsupervised SOTA on KITTI and Sintel.
+  [CVPR 2026 Oral][Video Understanding][Optical Flow Estimation] U2Flow is the first recurrent unsupervised framework for joint estimation of optical flow and pixel-wise uncertainty. By leveraging decoupled uncertainty learning based on augmentation consistency and uncertainty-guided bidirectional flow fusion, it achieves unsupervised SOTA on KITTI and Sintel.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026 Oral"
+  - "Video Understanding"
+  - "Optical Flow Estimation"
+  - "Uncertainty Estimation"
+  - "Unsupervised Learning"
+  - "Recurrent Networks"
+  - "Augmentation Consistency"
 date: 2026-05-08
-content_hash: 2670184f0a59801e
+content_hash: 79b8d41df0de9f3f
 ---
+
 # U2Flow: Uncertainty-Aware Unsupervised Optical Flow Estimation
 
 **Conference**: CVPR 2026 Oral  
@@ -131,9 +137,9 @@ Total Loss = Photometric Loss (census + SSIM + L1) + Edge-Aware Smoothness Loss 
 
 ## Related Papers
 
+- [\[CVPR 2026\] FlowFM: Advancing Dark Optical Flow Estimation with Flow Matching](flowfm_advancing_dark_optical_flow_estimation_with_flow_matching.md)
 - [\[ICCV 2025\] Unsupervised Joint Learning of Optical Flow and Intensity with Event Cameras](../../ICCV2025/video_understanding/unsupervised_joint_learning_of_optical_flow_and_intensity_with_event_cameras.md)
 - [\[CVPR 2026\] Efficient All-Pairs Correlation Volume Sampling for Optical Flow Estimation](efficient_all-pairs_correlation_volume_sampling_for_optical_flow_estimation.md)
-- [\[CVPR 2025\] DPFlow: Adaptive Optical Flow Estimation with a Dual-Pyramid Framework](../../CVPR2025/video_understanding/dpflow_adaptive_optical_flow_estimation_with_a_dual-pyramid_framework.md)
 - [\[CVPR 2026\] From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation](from_contrast_to_consistency_rethinking_event-based_continuous-time_optical_flow.md)
 - [\[CVPR 2026\] Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration](enhancing_accuracy_of_uncertainty_estimation_in_appearance-based_gaze_tracking_w.md)
 

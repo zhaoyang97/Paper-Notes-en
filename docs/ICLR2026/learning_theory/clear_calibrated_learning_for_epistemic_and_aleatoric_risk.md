@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] CLEAR: Calibrated Learning for Epistemic and Aleatoric Risk
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] CLEAR proposes a dual-parameter calibration framework that combines aleatoric and epistemic uncertainty in regression prediction intervals according to data-adaptive proportions. This approach significantly narrows intervals and improves conditional coverage while maintaining nominal coverage levels.
+  [ICLR2026][Learning Theory][Calibrated Learning] CLEAR proposes a dual-parameter calibration framework that combines aleatoric and epistemic uncertainty in regression prediction intervals according to data-adaptive proportions. This approach significantly narrows intervals and improves conditional coverage while maintaining nominal coverage levels.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Uncertainty Calibration"
+  - "Calibrated Learning"
+  - "Prediction Intervals"
+  - "Epistemic Uncertainty"
+  - "Aleatoric Uncertainty"
+  - "Conditional Coverage"
 date: 2026-05-08
-content_hash: 379f205e52d32d7d
+content_hash: 9ee541246626cfc0
 ---
+
 # CLEAR: Calibrated Learning for Epistemic and Aleatoric Risk
 
 **Conference**: ICLR2026  

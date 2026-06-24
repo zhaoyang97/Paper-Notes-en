@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LEAP: Local ECT-Based Learnable Positional Encodings for Graphs
 description: >-
-  [ICLR 2026][Graph Learning][Euler Characteristic Transform] LEAP transforms the "Local Euler Characteristic Transform" (ℓ-ECT) into an end-to-end trainable local structural positional encoding: it computes a differentiable ECT matrix for the m-hop neighborhood of each node, which is then compressed into low-dimensional vectors via learnable projections to be integrated into GNN
+  [ICLR 2026][Graph Learning][Positional Encoding] LEAP transforms the "Local Euler Characteristic Transform" (ℓ-ECT) into an end-to-end trainable local structural positional encoding: it computes a differentiable ECT matrix for the m-hop neighborhood of each node, which is then compressed into low-dimensional vectors via learnable projections to be integrated into GNNs. This approach simultaneously encodes geometric and topological information with a complexity on the same ord…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Euler Characteristic Transform
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Positional Encoding"
+  - "Euler Characteristic Transform"
+  - "Topological Data Analysis"
+  - "Graph Neural Networks"
+  - "Differentiable Topology"
 date: 2026-05-08
-content_hash: 4a8540e8c2c3540a
+content_hash: 44bf3ddc16abddeb
 ---
+
 # LEAP: Local ECT-Based Learnable Positional Encodings for Graphs
 
 **Conference**: ICLR 2026  
@@ -124,9 +129,9 @@ On all datasets, the best "architecture-PE" combinations **utilize LEAP with lea
 ## Related Papers
 
 - [\[ICML 2026\] Understanding Truncated Positional Encodings for Graph Neural Networks](../../ICML2026/graph_learning/understanding_truncated_positional_encodings_for_graph_neural_networks.md)
-- [\[ICML 2025\] Positional Encoding meets Persistent Homology on Graphs](../../ICML2025/graph_learning/positional_encoding_meets_persistent_homology_on_graphs.md)
 - [\[ICML 2025\] L-STEP: Learnable Spatial-Temporal Positional Encoding for Link Prediction](../../ICML2025/graph_learning/learnable_spatial-temporal_positional_encoding_for_link_prediction.md)
 - [\[ICML 2025\] Diss-l-ECT: Dissecting Graph Data with Local Euler Characteristic Transforms](../../ICML2025/graph_learning/diss-l-ect_dissecting_graph_data_with_local_euler_characteristic_transforms.md)
+- [\[ICML 2025\] Positional Encoding meets Persistent Homology on Graphs](../../ICML2025/graph_learning/positional_encoding_meets_persistent_homology_on_graphs.md)
 - [\[ICLR 2026\] Towards Improved Sentence Representations using Token Graphs](towards_improved_sentence_representations_using_token_graphs.md)
 
 </div>

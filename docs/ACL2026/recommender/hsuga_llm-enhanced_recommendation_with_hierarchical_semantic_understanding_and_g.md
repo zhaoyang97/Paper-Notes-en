@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment
 description: >-
-  [ACL 2026][Recommender Systems][Paper Note] HSUGA decouples and enhances the two core stages of LLM-enhanced sequential recommendation. It adopts the HSU module, which uses "staged processing + four atomic edits (Add/Delete/Update/Retain)," to stabilize semantic extraction from long sequences. It also introduces GAA self-distillation alignment, which groups user
+  [ACL 2026 Findings][Recommender Systems][Sequential Recommendation] HSUGA decouples and enhances the two core stages of LLM-enhanced sequential recommendation. It adopts the HSU module, which uses "staged processing + four atomic edits (Add/Delete/Update/Retain)," to stabilize semantic extraction from long sequences. It also introduces GAA self-distillation alignment, which groups users by activity (top 20% active / 80% long-tail) to address under-supervision for long-tail us…
 tags:
-  - ACL 2026
-  - Recommender Systems
+  - "ACL 2026 Findings"
+  - "Recommender Systems"
+  - "Sequential Recommendation"
+  - "LLM Semantic Embedding"
+  - "Staged Preference Evolution"
+  - "Edit Operations"
+  - "Grouped Self-Distillation"
 date: 2026-05-08
-content_hash: 88cad5247fa6f6ae
+content_hash: a108404f8af9c6a1
 ---
+
 # HSUGA: LLM-Enhanced Recommendation with Hierarchical Semantic Understanding and Group-Aware Alignment
 
 **Conference**: ACL 2026 Findings  
@@ -140,10 +146,20 @@ HSUGA achieves SOTA across three datasets and three backbones, with the most sig
 - Value: ⭐⭐⭐⭐ The plugin paradigm and significant tail item improvements (+30-46%) offer high practical value for industry.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
+- [\[ACL 2025\] GRAM: Generative Recommendation via Semantic-aware Multi-granular Late Fusion](../../ACL2025/recommender/gram_generative_recommendation.md)
+- [\[AAAI 2026\] Align³GR: Unified Multi-Level Alignment for LLM-based Generative Recommendation](../../AAAI2026/recommender/align3gr_unified_multi-level_alignment_for_llm-based_generat.md)
+- [\[AAAI 2026\] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation](../../AAAI2026/recommender/wavelet_enhanced_adaptive_frequency_filter_for_sequential_re.md)
+- [\[ACL 2026\] Intent-Driven Semantic ID Generation for Grounded Conversational News Recommendation](intent-driven_semantic_id_generation_for_grounded_conversational_news_recommenda.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)

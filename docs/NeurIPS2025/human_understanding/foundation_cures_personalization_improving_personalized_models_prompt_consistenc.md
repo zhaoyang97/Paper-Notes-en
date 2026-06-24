@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Foundation Cures Personalization: Improving Personalized Models' Prompt Consistency via Hidden Foundation Knowledge
 description: >-
-  [NeurIPS 2025][Human Understanding][Face Personalization] FreeCure reveals that identity embeddings in face personalization models suppress but do not destroy the prompt control capability of the foundation model. Based…
+  [NeurIPS 2025][Human Understanding][Face Personalization] FreeCure reveals that identity embeddings in face personalization models suppress but do not destroy the prompt control capability of the foundation model. Based on this insight, the paper proposes a training-free framework that injects attribute information from the foundation model into the personalized generation process via Foundation-Aware Self-Attention (FASA). The method substantially improves prompt consistency…
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free"
   - "Self-Attention"
 date: 2026-05-08
-content_hash: c9de68b66fc816a6
+content_hash: d94a308498167774
 ---
 
 # Foundation Cures Personalization: Improving Personalized Models' Prompt Consistency via Hidden Foundation Knowledge
@@ -127,11 +127,11 @@ In FLUX's full-attention DiT, the FASA mask is applied only to the interaction b
 
 ## Related Papers
 
+- [\[ICLR 2026\] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision](../../ICLR2026/human_understanding/sapiens2.md)
+- [\[ECCV 2024\] FoundPose: Unseen Object Pose Estimation with Foundation Features](../../ECCV2024/human_understanding/foundpose_unseen_object_pose_estimation_with_foundation_features.md)
 - [\[NeurIPS 2025\] K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning](k-decore_facilitating_knowledge_transfer_in_continual_structured_knowledge_reaso.md)
-- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](../../CVPR2026/human_understanding/unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
+- [\[CVPR 2025\] FSFM: A Generalizable Face Security Foundation Model via Self-Supervised Facial Representation Learning](../../CVPR2025/human_understanding/fsfm_a_generalizable_face_security_foundation_model_via_self-supervised_facial_r.md)
 - [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
-- [\[ICCV 2025\] One-Shot Knowledge Transfer for Scalable Person Re-Identification](../../ICCV2025/human_understanding/one-shot_knowledge_transfer_for_scalable_person_re-identification.md)
-- [\[AAAI 2026\] Generating Attribute-Aware Human Motions from Textual Prompt](../../AAAI2026/human_understanding/generating_attribute-aware_human_motions_from_textual_prompt.md)
 
 </div>
 

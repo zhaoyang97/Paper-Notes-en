@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Smooth Regularization for Efficient Video Recognition
 description: >-
-  [NeurIPS 2025][Model Compression][Video Recognition] This paper proposes a Gaussian Random Walk (GRW)-based smooth regularization technique that imposes temporal smoothness constraints (penalizing high-acceleration chang…
+  [NeurIPS 2025][Model Compression][Video Recognition] This paper proposes a Gaussian Random Walk (GRW)-based smooth regularization technique that imposes temporal smoothness constraints (penalizing high-acceleration changes) on intermediate-layer embeddings of video recognition models, achieving 3.8%–6.4% accuracy improvements on lightweight models and establishing a new state of the art on Kinetics-600 under corresponding FLOP constraints.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Lightweight Models"
   - "Temporal Inductive Bias"
 date: 2026-05-08
-content_hash: f3e1451a89f3a05c
+content_hash: 39a1f81a2c19e870
 ---
 
 # Smooth Regularization for Efficient Video Recognition
@@ -132,10 +132,10 @@ This work is closely related to slow feature analysis, frame-ordering self-super
 ## Related Papers
 
 - [\[NeurIPS 2025\] Recurrent Attention-based Token Selection for Efficient Streaming Video-LLMs](recurrent_attention-based_token_selection_for_efficient_streaming_video-llms.md)
-- [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
 - [\[NeurIPS 2025\] Hankel Singular Value Regularization for Highly Compressible State Space Models](hankel_singular_value_regularization_for_highly_compressible_state_space_models.md)
+- [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
+- [\[NeurIPS 2025\] Eyes Wide Open: Ego Proactive Video-LLM for Streaming Video](eyes_wide_open_ego_proactive_videollm_for_streaming_video.md)
 - [\[AAAI 2026\] Towards Test-time Efficient Visual Place Recognition via Asymmetric Query Processing](../../AAAI2026/model_compression/towards_test-time_efficient_visual_place_recognition_via_asymmetric_query_proces.md)
-- [\[NeurIPS 2025\] AI-Generated Video Detection via Perceptual Straightening](ai-generated_video_detection_via_perceptual_straightening.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning
 description: >-
-  [AAAI 2026][Reinforcement Learning][LTLfMT] This paper proposes a novel reward specification framework based on Linear Temporal Logic over finite traces modulo theories (LTLfMT)…
+  [AAAI 2026][Reinforcement Learning][LTLfMT] This paper proposes a novel reward specification framework based on Linear Temporal Logic over finite traces modulo theories (LTLfMT), replacing manually coded labeling functions with first-order logic formulas. Combined with CRM and HER to address the inherent sparse reward problem in logic-based specifications, the framework achieves significant improvements on continuous control tasks.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Hindsight Experience Replay"
   - "sparse reward"
 date: 2026-05-08
-content_hash: 6e46a55045529a8a
+content_hash: 1f3604062e9f535f
 ---
 
 # Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning
@@ -186,7 +186,7 @@ Logic-based specifications naturally produce sparse rewards. Two techniques are 
 ## Related Papers
 
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](first-order_representation_languages_for_goal-conditioned_rl.md)
-- [\[AAAI 2026\] DeepProofLog: Efficient Proving in Deep Stochastic Logic Programs](deepprooflog_efficient_proving_in_deep_stochastic_logic_programs.md)
+- [\[ICLR 2026\] Accelerated Learning with Linear Temporal Logic using Differentiable Simulation](../../ICLR2026/reinforcement_learning/accelerated_learning_with_linear_temporal_logic_using_differentiable_simulation.md)
 - [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
 - [\[ICML 2026\] FAB: A First-Order AB-based Gradient Algorithm for Distributed Bilevel Optimization over Time-Varying Directed Graphs](../../ICML2026/reinforcement_learning/fab_a_first-order_ab-based_gradient_algorithm_for_distributed_bilevel_optimizati.md)
 - [\[AAAI 2026\] ReGal: A First Look at PPO-based Legal AI for Judgment Prediction and Summarization in India](regal_a_first_look_at_ppo-based_legal_ai_for_judgment_prediction_and_summarizati.md)

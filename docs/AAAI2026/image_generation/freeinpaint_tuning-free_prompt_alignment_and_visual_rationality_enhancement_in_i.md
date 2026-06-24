@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting
 description: >-
-  [AAAI 2026][Image Generation][Image Inpainting] This paper proposes FreeInpaint, a plug-and-play, training-free method that optimizes the initial noise to steer attention toward the inpainting region (PriNo)…
+  [AAAI 2026][Image Generation][Image Inpainting] This paper proposes FreeInpaint, a plug-and-play, training-free method that optimizes the initial noise to steer attention toward the inpainting region (PriNo), and during denoising decomposes the conditional distribution into three guidance terms — text alignment, visual rationality, and human preference (DeGu) — simultaneously improving prompt alignment and visual rationality in image inpainting.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Initial Noise Optimization"
   - "Prompt Alignment"
 date: 2026-05-08
-content_hash: c39a209344c73e22
+content_hash: 811e8cdacda8e428
 ---
 
 # FreeInpaint: Tuning-free Prompt Alignment and Visual Rationality Enhancement in Image Inpainting
@@ -174,9 +174,9 @@ FreeInpaint **requires no training whatsoever**. The PriNo stage uses an SGD opt
 
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
 - [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](../../CVPR2026/image_generation/from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
+- [\[CVPR 2025\] MTADiffusion: Mask Text Alignment Diffusion Model for Object Inpainting](../../CVPR2025/image_generation/mtadiffusion_mask_text_alignment_diffusion_model_for_object_inpainting.md)
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](../../ICLR2026/image_generation/stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
 - [\[AAAI 2026\] MACS: Multi-source Audio-to-Image Generation with Contextual Significance and Semantic Alignment](macs_multi-source_audio-to-image_generation_with_contextual_significance_and_sem.md)
-- [\[AAAI 2026\] Rethinking Flow and Diffusion Bridge Models for Speech Enhancement](rethinking_flow_and_diffusion_bridge_models_for_speech_enhancement.md)
 
 </div>
 

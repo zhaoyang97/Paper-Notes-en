@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PSK@EEUCA 2026: Fine-Tuning Large Language Models with Synthetic Data Augmentation for Multi-Class Toxicity Detection in Gaming Chat
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This system paper for the EEUCA 2026 gaming chat toxicity identification task utilizes Llama 3.1 8B + LoRA + 5% strictly filtered minority-class synthetic paraphrased data, achieving a macro-F1 of 0.6234 across six classes and revealing the "validation trap" where high validation scores fail to transfer to the test set
+  [ACL2026][Social Computing][Game chat moderation] This system paper for the EEUCA 2026 gaming chat toxicity identification task utilizes Llama 3.1 8B + LoRA + 5% strictly filtered minority-class synthetic paraphrased data, achieving a macro-F1 of 0.6234 across six classes and revealing the "validation trap" where high validation scores fail to transfer to the test set.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL2026"
+  - "Social Computing"
+  - "Game chat moderation"
+  - "toxicity classification"
+  - "synthetic data augmentation"
+  - "LoRA fine-tuning"
+  - "class imbalance"
 date: 2026-05-08
-content_hash: 04025779baa675cf
+content_hash: 068d33edc900ed45
 ---
+
 # PSK@EEUCA 2026: Fine-Tuning Large Language Models with Synthetic Data Augmentation for Multi-Class Toxicity Detection in Gaming Chat
 
 **Conference**: ACL2026  
@@ -132,15 +138,15 @@ The final model employs Llama 3.1 8B with 4-bit NF4 quantization, LoRA rank=16, 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models](smarter_a_data-efficient_framework_to_improve_toxicity_detection_with_explanatio.md)
 - [\[ACL 2026\] BITS Pilani at SemEval-2026 Task 9: Structured Supervised Fine-Tuning with DPO Refinement for Polarization Detection](bits_pilani_at_semeval-2026_task_9_structured_supervised_fine-tuning_with_dpo_re.md)
 - [\[ACL 2026\] Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning](prompt-level_distillation_a_non-parametric_alternative_to_model_fine-tuning_for_.md)
+- [\[ACL 2026\] YEZE at SemEval-2026 Task 9: Detecting Multilingual, Multicultural and Multievent Online Polarization via Heterogeneous Ensembling](yeze_at_semeval-2026_task_9_detecting_multilingual_multicultural_and_multievent_.md)
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
-- [\[ACL 2026\] RV-HATE: Reinforced Multi-Module Voting for Implicit Hate Speech Detection](rv-hate_reinforced_multi-module_voting_for_implicit_hate_speech_detection.md)
 
 </div>
 

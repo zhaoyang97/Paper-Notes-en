@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Exploring Systems-Thinking Approaches to Loss of Control Risk
 description: >-
-  [ICML 2026][AI Safety][STPA] This is a position/analysis paper: the authors argue that "Loss of Control (LoC)" in frontier AI should not be evaluated solely at the model level but treated as a control problem within a sociotechnical system. They adapt three mature systems safety methods from industries like aviation and nuclear power (STECA, STPA,
+  [ICML2026][AI Safety][Loss of Control (LoC)] This is a position/analysis paper: the authors argue that "Loss of Control (LoC)" in frontier AI should not be evaluated solely at the model level but treated as a control problem within a sociotechnical system. They adapt three mature systems safety methods from industries like aviation and nuclear power (STECA, STPA, FRAM) to the general scenario of "internal deployment of coding agents in frontier labs." These methods reveal gov…
 tags:
-  - ICML 2026
-  - AI Safety
-  - STPA
-  - FRAM
-  - STECA
+  - "ICML2026"
+  - "AI Safety"
+  - "Loss of Control (LoC)"
+  - "Systems Safety"
+  - "STPA"
+  - "FRAM"
+  - "STECA"
+  - "Frontier AI Internal Deployment"
 date: 2026-05-08
-content_hash: c617a06688df99f2
+content_hash: 6ffd47132a50bb1e
 ---
+
 # Exploring Systems-Thinking Approaches to Loss of Control Risk
 
 **Conference**: ICML2026  
@@ -126,11 +130,11 @@ While STPA asks "which control actions might be unsafe," FRAM asks "can daily op
 
 ## Related Papers
 
+- [\[ICML 2026\] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model](anchored_decoding_provably_reducing_copyright_risk_for_any_language_model.md)
 - [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](../../NeurIPS2025/ai_safety/its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
 - [\[ICLR 2026\] Risk-Sensitive Agent Compositions](../../ICLR2026/ai_safety/risk-sensitive_agent_compositions.md)
 - [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
-- [\[ICML 2026\] Anchored Decoding: Provably Reducing Copyright Risk for Any Language Model](anchored_decoding_provably_reducing_copyright_risk_for_any_language_model.md)
-- [\[ICML 2026\] ACTG-ARL: Differentially Private Conditional Text Generation with RL-Boosted Control](actg-arl_differentially_private_conditional_text_generation_with_rl-boosted_cont.md)
+- [\[ICLR 2026\] FaLW: A Forgetting-aware Loss Reweighting for Long-tailed Unlearning](../../ICLR2026/ai_safety/falw_a_forgetting-aware_loss_reweighting_for_long-tailed_unlearning.md)
 
 </div>
 

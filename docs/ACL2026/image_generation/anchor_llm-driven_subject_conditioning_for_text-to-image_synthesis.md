@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis
 description: >-
-  [ACL 2026][Image Generation][Text-to-Image] This paper proposes the ANCHOR dataset, featuring 70K+ abstract captions from 5 news outlets to expose T2I model failures in multi-subject, contextual reasoning, and fine-grained grounding. It introduces SAFE, which utilizes LLMs to extract key subjects and reinforces subject representations at the embedding layer to e
+  [ACL2026][Image Generation][Text-to-Image] This paper proposes the ANCHOR dataset, featuring 70K+ abstract captions from 5 news outlets to expose T2I model failures in multi-subject, contextual reasoning, and fine-grained grounding. It introduces SAFE, which utilizes LLMs to extract key subjects and reinforces subject representations at the embedding layer to enhance image-text consistency.
 tags:
-  - ACL 2026
-  - Image Generation
-  - Text-to-Image
-  - SAFE
+  - "ACL2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Subject Conditioning"
+  - "News Image-Text"
+  - "Abstract caption"
+  - "SAFE"
 date: 2026-05-08
-content_hash: a1863a0fe8df8ff4
+content_hash: 808049132f6c128d
 ---
+
 # ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis
 
 **Conference**: ACL2026  
@@ -117,11 +121,11 @@ The cache does not include the main text, so there are no verifiable ablation ta
 
 ## Related Papers
 
+- [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](../../ICCV2025/image_generation/autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
 - [\[CVPR 2026\] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation](../../CVPR2026/image_generation/disentangling_to_re-couple_resolving_the_similarity-controllability_paradox_in_s.md)
 - [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](../../CVPR2026/image_generation/flowfixer_towards_detail-preserving_subject-driven_generation.md)
-- [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](../../ICCV2025/image_generation/autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
 - [\[CVPR 2025\] FilmComposer: LLM-Driven Music Production for Silent Film Clips](../../CVPR2025/image_generation/filmcomposer_llm-driven_music_production_for_silent_film_clips.md)
-- [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](../../CVPR2026/image_generation/proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
+- [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](../../ICLR2026/image_generation/rethinking_global_text_conditioning_in_diffusion_transformers.md)
 
 </div>
 

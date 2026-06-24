@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cache-to-Cache: Direct Semantic Communication Between Large Language Models
 description: >-
-  [ICLR 2026][Multi-Agent][Inference Acceleration] Instead of collaborating through natural language "conversations," multiple large language models use a lightweight neural network to directly project and fuse the KV-Cache of a Sharer model into a Receiver model. This bypasses token-by-token text generation, preserving deep semantics that text might lose, while reduci
+  [ICLR2026][Multi-Agent][Multi-LLM systems] Instead of collaborating through natural language "conversations," multiple large language models use a lightweight neural network to directly project and fuse the KV-Cache of a Sharer model into a Receiver model. This bypasses token-by-token text generation, preserving deep semantics that text might lose, while reducing average latency by 2.5× and improving accuracy by approximately 3–5% compared to pure text-based collaboration.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Inference Acceleration
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-LLM systems"
+  - "KV-Cache fusion"
+  - "semantic communication"
+  - "model collaboration"
+  - "inference acceleration"
 date: 2026-05-08
-content_hash: f11c995421246161
+content_hash: 30764d7dd308640d
 ---
+
 # Cache-to-Cache: Direct Semantic Communication Between Large Language Models
 
 **Conference**: ICLR2026  

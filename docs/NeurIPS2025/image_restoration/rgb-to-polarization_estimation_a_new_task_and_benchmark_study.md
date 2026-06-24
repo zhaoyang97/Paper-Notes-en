@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RGB-to-Polarization Estimation: A New Task and Benchmark Study
 description: >-
-  [NeurIPS 2025][Image Restoration][polarization estimation] This paper formally defines the novel task of estimating polarization components (S₁/S₂/S₃) from standard RGB images…
+  [NeurIPS 2025][Image Restoration][polarization estimation] This paper formally defines the novel task of estimating polarization components (S₁/S₂/S₃) from standard RGB images, establishes the first systematic benchmark encompassing both restoration-based and generative methods, and finds that pretrained MAE achieves the best overall pixel-level accuracy (PSNR 24.74). Restoration-based methods consistently outperform diffusion-based generative methods…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 3585d367d350bfbe
+content_hash: 6e2d5caa50e1876c
 ---
 
 # RGB-to-Polarization Estimation: A New Task and Benchmark Study
@@ -139,10 +139,10 @@ Cross-dataset generalization (models trained on the Jeon dataset):
 ## Related Papers
 
 - [\[NeurIPS 2025\] GC4NC: A Benchmark Framework for Graph Condensation on Node Classification with New Insights](gc4nc_a_benchmark_framework_for_graph_condensation_on_node_classification_with_n.md)
+- [\[CVPR 2025\] PolarFree: Polarization-based Reflection-Free Imaging](../../CVPR2025/image_restoration/polarfree_polarization-based_reflection-free_imaging.md)
 - [\[NeurIPS 2025\] MAP Estimation with Denoisers: Convergence Rates and Guarantees](map_estimation_with_denoisers_convergence_rates_and_guarantees.md)
 - [\[NeurIPS 2025\] Enhancing Infrared Vision: Progressive Prompt Fusion Network and Benchmark](enhancing_infrared_vision_progressive_prompt_fusion_network_and_benchmark.md)
 - [\[NeurIPS 2025\] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration](modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_.md)
-- [\[ICCV 2025\] Benchmarking Burst Super-Resolution for Polarization Images: Noise Dataset and Analysis](../../ICCV2025/image_restoration/benchmarking_burst_super-resolution_for_polarization_images_noise_dataset_and_an.md)
 
 </div>
 

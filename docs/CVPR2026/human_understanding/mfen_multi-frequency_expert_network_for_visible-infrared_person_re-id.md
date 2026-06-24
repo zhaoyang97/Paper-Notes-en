@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] To address the challenge in visible-infrared person re-identification where "illumination differences span across multiple frequency bands and the optimal band varies by sample," MFEN utilizes a Mixture-of-Experts (MoE) structure with multiple frequency band experts and a gating mechanism to adaptively fuse frequency d
+  [CVPR 2026][Human Understanding][Visible-Infrared ReID] To address the challenge in visible-infrared person re-identification where "illumination differences span across multiple frequency bands and the optimal band varies by sample," MFEN utilizes a Mixture-of-Experts (MoE) structure with multiple frequency band experts and a gating mechanism to adaptively fuse frequency domain cues per sample. Complemented by image-level Random Frequency Augmentation (RFA) and optimization-…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Visible-Infrared ReID"
+  - "Frequency Domain Learning"
+  - "Mixture-of-Experts"
+  - "Data Augmentation"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: cd775f9b702e9f36
+content_hash: e8852ffa883e78cd
 ---
+
 # MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Analytic Bijections for Smooth and Interpretable Normalizing Flows
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper constructs three families of "globally smooth ($C^\infty$), defined on the entire $\mathbb{R}$, and analytically invertible in closed-form" scalar bijections. These serve as plug-and-play replacements for splines or affine transforms in coupling flows and enable a directly parameterized **radial flow** that
+  [ICML2026][Interpretability][Normalizing Flows] This paper constructs three families of "globally smooth ($C^\infty$), defined on the entire $\mathbb{R}$, and analytically invertible in closed-form" scalar bijections. These serve as plug-and-play replacements for splines or affine transforms in coupling flows and enable a directly parameterized **radial flow** that transforms the radius while preserving angular directions. The latter is highly stable to train…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Normalizing Flows"
+  - "Analytic Bijections"
+  - "Closed-form Inversion"
+  - "Radial Flows"
+  - "Lattice Field Theory"
 date: 2026-05-08
-content_hash: 192d2cdf5a985981
+content_hash: 17e5b6eff4434980
 ---
+
 # Analytic Bijections for Smooth and Interpretable Normalizing Flows
 
 **Conference**: ICML2026  
@@ -138,15 +144,16 @@ On UCI benchmarks (RQ-NSF(C) coupling), the **spline+** (sinh conjugation follow
 - Value: ⭐⭐⭐⭐ (Highly useful for scientific computing and interpretable ML).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Partial Information Decomposition via Normalizing Flows in Latent Gaussian Distributions](../../NeurIPS2025/interpretability/partial_information_decomposition_via_normalizing_flows_in_latent_gaussian_distr.md)
-- [\[ICML 2026\] Learn from A Rationalist: Distilling Intermediate Interpretable Rationales](learn_from_a_rationalist_distilling_intermediate_interpretable_rationales.md)
 - [\[ICML 2026\] Discovering Interpretable Algorithms by Decompiling Transformers to RASP](discovering_interpretable_algorithms_by_decompiling_transformers_to_rasp.md)
 - [\[ICML 2026\] CB-SLICE: Concept-Based Interpretable Error Slice Discovery](cb-slice_concept-based_interpretable_error_slice_discovery.md)
-- [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
+- [\[ICML 2026\] Learn from A Rationalist: Distilling Intermediate Interpretable Rationales](learn_from_a_rationalist_distilling_intermediate_interpretable_rationales.md)
+- [\[ICML 2026\] LatentLens: Revealing Highly Interpretable Visual Tokens in LLMs](latentlens_revealing_highly_interpretable_visual_tokens_in_llms.md)
 
 </div>
 

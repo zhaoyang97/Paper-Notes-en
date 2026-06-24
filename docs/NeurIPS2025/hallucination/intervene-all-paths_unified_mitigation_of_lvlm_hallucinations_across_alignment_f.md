@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Intervene-All-Paths: Unified Mitigation of LVLM Hallucinations across Alignment Formats
 description: >-
-  [NeurIPS 2025][Hallucination Detection][hallucination] This paper proposes AllPath, a multi-path hallucination intervention framework grounded in the Transformer causal architecture. It is the first to demonstrate that h…
+  [NeurIPS 2025][Hallucination Detection][hallucination] This paper proposes AllPath, a multi-path hallucination intervention framework grounded in the Transformer causal architecture. It is the first to demonstrate that hallucinations in LVLMs do not stem from a single causal path but from the interaction of three paths — image-to-input-text, image-to-output-text, and text-to-text — and that models adaptively rely on different paths depending on the question-answer alignment f…
 tags:
   - "NeurIPS 2025"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "multi-path framework"
   - "training-free"
 date: 2026-05-08
-content_hash: f9d5ecd1d3b2404a
+content_hash: 019c768c94512e3c
 ---
 
 # Intervene-All-Paths: Unified Mitigation of LVLM Hallucinations across Alignment Formats
@@ -144,11 +144,11 @@ AllPath proceeds in three steps: (1) identify text-to-text (T2T) and image-to-te
 
 ## Related Papers
 
-- [\[ICLR 2026\] SHIELD: Suppressing Hallucinations In LVLM Encoders via Bias and Vulnerability Defense](../../ICLR2026/hallucination/shield_suppressing_hallucinations_in_lvlm_encoders_via_bias_and_vulnerability_de.md)
-- [\[CVPR 2026\] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](../../CVPR2026/hallucination/fighting_hallucinations_with_counterfactuals_diffusion-guided_perturbations_for_.md)
-- [\[CVPR 2026\] Reallocating Attention Across Layers to Reduce Multimodal Hallucination](../../CVPR2026/hallucination/reallocating_attention_across_layers_to_reduce_multimodal_hallucination.md)
-- [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](../../CVPR2026/hallucination/beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
+- [\[CVPR 2025\] Antidote: A Unified Framework for Mitigating LVLM Hallucinations in Counterfactual Presupposition and Object Perception](../../CVPR2025/hallucination/antidote_a_unified_framework_for_mitigating_lvlm_hallucinations_in_counterfactua.md)
+- [\[ACL 2025\] On-Policy Self-Alignment with Fine-grained Knowledge Feedback for Hallucination Mitigation](../../ACL2025/hallucination/on-policy_self-alignment_with_fine-grained_knowledge_feedback_for_hallucination_.md)
+- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](../../CVPR2026/hallucination/cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
 - [\[NeurIPS 2025\] GLSim: Detecting Object Hallucinations in LVLMs via Global-Local Similarity](glsim_detecting_object_hallucinations_in_lvlms_via_globalloc.md)
+- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
 
 </div>
 

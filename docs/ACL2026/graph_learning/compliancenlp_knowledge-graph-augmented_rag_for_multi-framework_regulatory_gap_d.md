@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] ComplianceNLP is an end-to-end financial regulatory compliance system that constructs a knowledge graph from 12,847 SEC / MiFID II / Basel III regulations to enhance RAG retrieval. Combined with LEGAL-BERT-based multi-task obligation extraction and threshold-scored gap analysis, it outperforms GPT-4o+RAG by 3.5 points
+  [ACL 2026][Graph Learning][Regulatory Compliance] ComplianceNLP is an end-to-end financial regulatory compliance system that constructs a knowledge graph from 12,847 SEC / MiFID II / Basel III regulations to enhance RAG retrieval. Combined with LEGAL-BERT-based multi-task obligation extraction and threshold-scored gap analysis, it outperforms GPT-4o+RAG by 3.5 points on RegObligation / GapBench with an 87.7 F1. It achieves $2.8\times$ inference acceleration via domain-specifi…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026"
+  - "Graph Learning"
+  - "Regulatory Compliance"
+  - "Knowledge-Graph-Augmented RAG"
+  - "Multi-task Obligation Extraction"
+  - "Medusa Speculative Decoding"
+  - "Production Deployment"
 date: 2026-05-08
-content_hash: ae493dc7d1a47428
+content_hash: 5a9365547e6dc3ad
 ---
+
 # ComplianceNLP: Knowledge-Graph-Augmented RAG for Multi-Framework Regulatory Gap Detection
 
 **Conference**: ACL 2026  
@@ -143,8 +149,8 @@ ComplianceNLP improves over GPT-4o+RAG by +2.7 NER / +2.2 Deontic / **+3.5 Gap F
 
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](../../CVPR2026/graph_learning/m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
 - [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
-- [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](../../ICML2026/graph_learning/dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
 - [\[ACL 2026\] LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning](legalgraphrag_multi-agent_graph_retrieval-augmented_generation_for_reliable_lega.md)
+- [\[ICML 2026\] DTKG: Dual-Track Knowledge Graph-Verified Reasoning Framework for Multi-Hop QA](../../ICML2026/graph_learning/dtkg_dual-track_knowledge_graph-verified_reasoning_framework_for_multi-hop_qa.md)
 - [\[ACL 2026\] Collaboration of Fusion and Independence: Hypercomplex-driven Robust Multi-Modal Knowledge Graph Completion](collaboration_of_fusion_and_independence_hypercomplex-driven_robust_multi-modal_.md)
 
 </div>

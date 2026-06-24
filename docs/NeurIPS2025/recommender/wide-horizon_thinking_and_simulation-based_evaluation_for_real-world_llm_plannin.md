@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM planning] This paper proposes MAoP (Multiple Aspects of Planning), a framework that endows LLMs with "wide-horizon thinking" by having a strategist perform multi-aspect pre-plannin…
+  [NeurIPS 2025 Spotlight][Recommender Systems][LLM planning] This paper proposes MAoP (Multiple Aspects of Planning), a framework that endows LLMs with "wide-horizon thinking" by having a strategist perform multi-aspect pre-planning and routing into a coherent blueprint, enabling the planner to conduct in-depth per-aspect analysis in parallel. Coupled with the Travel-Sim causal simulation benchmark, MAoP substantially outperforms CoT and decomposition-based methods on travel p…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Recommender Systems"
   - "LLM planning"
   - "travel planning"
@@ -12,7 +12,7 @@ tags:
   - "simulation evaluation"
   - "multifaceted constraints"
 date: 2026-05-08
-content_hash: 99f4cb0836d16be5
+content_hash: 05a140ef39195dc4
 ---
 
 # Wide-Horizon Thinking and Simulation-Based Evaluation for Real-World LLM Planning with Multifaceted Constraints
@@ -137,10 +137,10 @@ MAoP decomposes planning into two stages: Pre-Planning and Aspect-Aware Planning
 ## Related Papers
 
 - [\[ACL 2026\] HORIZON: A Benchmark for in-the-wild User Behaviour Modeling](../../ACL2026/recommender/horizon_a_benchmark_for_in-the-wild_user_behaviour_modeling.md)
-- [\[NeurIPS 2025\] Validating LLM-as-a-Judge Systems under Rating Indeterminacy](validating_llm-as-a-judge_systems_under_rating_indeterminacy.md)
 - [\[ICLR 2026\] From Evaluation to Defense: Advancing Safety in Video Large Language Models](../../ICLR2026/recommender/from_evaluation_to_defense_advancing_safety_in_video_large_language_models.md)
+- [\[ICLR 2026\] ProPerSim: Developing Proactive and Personalized AI Assistants through User-Assistant Simulation](../../ICLR2026/recommender/propersim_developing_proactive_and_personalized_ai_assistants_through_user-assis.md)
 - [\[NeurIPS 2025\] Transformer Copilot: Learning from The Mistake Log in LLM Fine-tuning](transformer_copilot_learning_from_the_mistake_log_in_llm_fine-tuning.md)
-- [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
+- [\[ICLR 2026\] Off-Policy Evaluation for Ranking Policies under Deterministic Logging Policies](../../ICLR2026/recommender/off-policy_evaluation_for_ranking_policies_under_deterministic_logging_policies.md)
 
 </div>
 

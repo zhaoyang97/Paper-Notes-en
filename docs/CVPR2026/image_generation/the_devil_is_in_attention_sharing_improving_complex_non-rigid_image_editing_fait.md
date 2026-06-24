@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Devil is in Attention Sharing: Improving Complex Non-rigid Image Editing Faithfulness via Attention Synergy
 description: >-
-  [CVPR 2026][Image Generation][RoPE] Addressing the "attention collapse" problem in training-free non-rigid image editing, this paper proposes SynPS: it first quantifies the editing degree per step via the ratio of image similarity to text similarity, and then **dynamically scales the relative distance of RoPE in attention sharing**. This adaptively balan
+  [CVPR 2026][Image Generation][Non-rigid Image Editing] Addressing the "attention collapse" problem in training-free non-rigid image editing, this paper proposes SynPS: it first quantifies the editing degree per step via the ratio of image similarity to text similarity, and then **dynamically scales the relative distance of RoPE in attention sharing**. This adaptively balances "preserving source structure" and "following target semantics," achieving a new SOTA in MLLM scores o…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - RoPE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Non-rigid Image Editing"
+  - "Attention Sharing"
+  - "Positional Encoding"
+  - "RoPE"
+  - "Training-free Editing"
 date: 2026-05-08
-content_hash: 9bbf0e6d02fbc543
+content_hash: d11eb4075cdc8b7f
 ---
+
 # The Devil is in Attention Sharing: Improving Complex Non-rigid Image Editing Faithfulness via Attention Synergy
 
 **Conference**: CVPR 2026  
@@ -127,13 +132,20 @@ Evaluated on PIE-Bench ChangePose and a self-built Non-Rigid Editing Benchmark (
 - Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and achieves SOTA for non-rigid DiT editing.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- [FreeControl: Training-Free Spatial Control of Any Text-to-Image Diffusion Model](https://arxiv.org/abs/2312.07543)
-- [FLUX.1: Flow-based Text-to-Image Generation](https://blackforestlabs.ai/)
-- [DeltaEdit: Exploring Text-free Training for Image-to-Image Translation](https://arxiv.org/abs/2303.14925)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)
+- [\[CVPR 2026\] NEAF: Natural Image Editing with Attention Fusion for Generalizable Test-time Optimization in Text-Guided Image Editing](neaf_natural_image_editing_with_attention_fusion_for_generalizable_test-time_opt.md)
+- [\[CVPR 2026\] Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)
+- [\[CVPR 2026\] FlowDC: Flow-Based Decoupling-Decay for Complex Image Editing](flowdc_flow-based_decoupling-decay_for_complex_image_editing.md)
+- [\[CVPR 2026\] CompBench: Benchmarking Complex Instruction-guided Image Editing](compbench_benchmarking_complex_instruction-guided_image_editing.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)

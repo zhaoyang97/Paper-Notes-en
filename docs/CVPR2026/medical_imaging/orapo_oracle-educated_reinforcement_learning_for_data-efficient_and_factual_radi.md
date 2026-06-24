@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation
 description: >-
-  [CVPR 2026][Medical Imaging][GRPO] Ours proposes OraPO (Oracle-educated GRPO), which injects lightweight DPO supervision to transform failed rollouts into preference pairs when GRPO exploration fails. Combined with FactScore rewards, it achieves SOTA on CheXpert Plus and MIMIC-CXR (F1=0.341/0.357) using only 1K samples and a 3B model, reducing training
+  [CVPR2026][Medical Imaging][Radiology Report Generation] Ours proposes OraPO (Oracle-educated GRPO), which injects lightweight DPO supervision to transform failed rollouts into preference pairs when GRPO exploration fails. Combined with FactScore rewards, it achieves SOTA on CheXpert Plus and MIMIC-CXR (F1=0.341/0.357) using only 1K samples and a 3B model, reducing training data by 2-3 orders of magnitude compared to Prev. SOTA.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - GRPO
-  - DPO
-  - Reinforcement Learning
+  - "CVPR2026"
+  - "Medical Imaging"
+  - "Radiology Report Generation"
+  - "GRPO"
+  - "DPO"
+  - "Reinforcement Learning"
+  - "Data Efficiency"
+  - "Clinical Fact Scoring"
 date: 2026-05-08
-content_hash: b45a7f447b5a7563
+content_hash: 94235ee26e6cb05a
 ---
+
 # OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation
 
 **Conference**: CVPR2026  
@@ -162,10 +166,10 @@ When ZRR is high, DPO dominates (oracle education to stabilize gradients); when 
 ## Related Papers
 
 - [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
+- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](../../ICLR2026/medical_imaging/rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
 - [\[CVPR 2026\] TIM: Temporal Decoupling with Iterative Mutual-Refinement Model for Longitudinal Radiology Report Generation](tim_temporal_decoupling_with_iterative_mutual-refinement_model_for_longitudinal_.md)
 - [\[CVPR 2026\] SAT-RRG: LLM-Guided Self-Adaptive Training for Radiology Report Generation with Token-Level Push–Pull Optimization](sat-rrg_llm-guided_self-adaptive_training_for_radiology_report_generation_with_t.md)
-- [\[CVPR 2025\] Enhanced Contrastive Learning with Multi-view Longitudinal Data for Chest X-ray Report Generation](../../CVPR2025/medical_imaging/enhanced_contrastive_learning_with_multi-view_longitudinal_data_for_chest_x-ray_.md)
-- [\[CVPR 2026\] MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation](medclipseg_probabilistic_vision-language_adaptation_for_data-efficient_and_gener.md)
+- [\[ICML 2026\] CAME-Grad: The Double Dilemma in Multi-Task Radiology Report Generation — A Gradient Dynamics Analysis and Solution](../../ICML2026/medical_imaging/the_double_dilemma_in_multi-task_radiology_report_generation_a_gradient_dynamics.md)
 
 </div>
 

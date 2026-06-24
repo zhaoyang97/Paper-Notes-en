@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Persona-Pruner: Sculpting Lightweight Models for Role-Playing
 description: >-
-  [ICML 2026][Model Compression][Paper Note] Instead of equipping every character with a full general-purpose large model, this work uses only a text-based persona description to synthesize persona-specific calibration data. It then learns a binary mask on the intermediate dimensions of FFNs to "sculpt" the sub-network responsible for the character's identity fro
+  [ICML 2026][Model Compression][Structured Pruning] Instead of equipping every character with a full general-purpose large model, this work uses only a text-based persona description to synthesize persona-specific calibration data. It then learns a binary mask on the intermediate dimensions of FFNs to "sculpt" the sub-network responsible for the character's identity from the base model. Under 50% sparsity, it recovers up to 93.8% of the performance loss in role-playing scores…
 tags:
-  - ICML 2026
-  - Model Compression
+  - "ICML 2026"
+  - "Model Compression"
+  - "Structured Pruning"
+  - "Role-playing"
+  - "FFN Sub-network"
+  - "Differentiable Mask"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: ad437ed0f1c487a9
+content_hash: 7abf5b27c912a278
 ---
+
 # Persona-Pruner: Sculpting Lightweight Models for Role-Playing
 
 **Conference**: ICML 2026  
@@ -128,10 +134,10 @@ At 3B / 25% without recovery, the dense model scores 83.35, while the baseline L
 ## Related Papers
 
 - [\[ICML 2026\] Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift](hard_labels_in_rethinking_the_role_of_hard_labels_in_mitigating_local_semantic_d.md)
+- [\[ICLR 2026\] Sculpting Subspaces: Constrained Full Fine-Tuning in LLMs for Continual Learning](../../ICLR2026/model_compression/sculpting_subspaces_constrained_full_fine-tuning_in_llms_for_continual_learning.md)
 - [\[ICML 2025\] WildChat-50m: A Deep Dive Into the Role of Synthetic Data in Post-Training](../../ICML2025/model_compression/wildchat-50m_a_deep_dive_into_the_role_of_synthetic_data_in_post-training.md)
+- [\[ICML 2026\] Turning Stale Gradients into Stable Gradients: Coherent Coordinate Descent with Implicit Landscape Smoothing for Lightweight Zeroth-Order Optimization](turning_stale_gradients_into_stable_gradients_coherent_coordinate_descent_with_i.md)
 - [\[ICLR 2026\] LightMem: Lightweight and Efficient Memory-Augmented Generation](../../ICLR2026/model_compression/lightmem_lightweight_and_efficient_memory-augmented_generation.md)
-- [\[AAAI 2026\] Lightweight Optimal-Transport Harmonization on Edge Devices](../../AAAI2026/model_compression/lightweight_optimal-transport_harmonization_on_edge_devices.md)
-- [\[ACL 2026\] ArcLight: A Lightweight LLM Inference Architecture for Many-Core CPUs](../../ACL2026/model_compression/arclight_a_lightweight_llm_inference_architecture_for_many-core_cpus.md)
 
 </div>
 

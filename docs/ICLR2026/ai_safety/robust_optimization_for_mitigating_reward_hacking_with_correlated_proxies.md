@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Optimization for Mitigating Reward Hacking with Correlated Proxies
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper models reward hacking as a max-min robust policy optimization problem that "performs well against the worst-case among all possible true rewards maintaining a correlation $r$ with the proxy reward." It proposes two algorithms, a universal Max-Min and a feature-based Linear Max-Min, significantly improving wo
+  [ICLR 2026][AI Safety][Reward Hacking] This paper models reward hacking as a max-min robust policy optimization problem that "performs well against the worst-case among all possible true rewards maintaining a correlation $r$ with the proxy reward." It proposes two algorithms, a universal Max-Min and a feature-based Linear Max-Min, significantly improving worst-case returns and stability across environments including Traffic, Pandemic, Glucose, Tomato, and RLHF.
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Reward Hacking"
+  - "Correlated Proxy Rewards"
+  - "Robust Optimization"
+  - "Distribution Shift"
+  - "Interpretable Rewards"
 date: 2026-05-08
-content_hash: 689579c893a78a5f
+content_hash: 7bcf858ad8937859
 ---
+
 # Robust Optimization for Mitigating Reward Hacking with Correlated Proxies
 
 **Conference**: ICLR 2026  
@@ -153,6 +159,7 @@ Max-Min significantly outperforms ORPO in worst-case scenarios, recovering from 
 - Value: ⭐⭐⭐⭐⭐ Highly relevant for AI safety and RLHF, providing both optimization objectives and auditing tools.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the challenge where generative medical multimodal large models lose discriminative power by encoding clinical attributes like "mild/severe DR" into nearly identical text tokens, this paper proposes **Attribute Tokens (AttTok)**. By assigning a dedicated special token to each clinical concept and implementing
+  [ICLR 2026][Multimodal VLM][Medical GPTv] Addressing the challenge where generative medical multimodal large models lose discriminative power by encoding clinical attributes like "mild/severe DR" into nearly identical text tokens, this paper proposes **Attribute Tokens (AttTok)**. By assigning a dedicated special token to each clinical concept and implementing a multimodal embedding book, Attribute-centric Cross-attention (ACC) adapter, and Attribute-centric Matching (ACM) lo…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Medical GPTv"
+  - "attribute tokens"
+  - "discriminative representation"
+  - "cross-modal alignment"
+  - "instruction tuning"
 date: 2026-05-08
-content_hash: c62712ca1c438855
+content_hash: 5852380dead6c222
 ---
+
 # AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding
 
 **Conference**: ICLR 2026  

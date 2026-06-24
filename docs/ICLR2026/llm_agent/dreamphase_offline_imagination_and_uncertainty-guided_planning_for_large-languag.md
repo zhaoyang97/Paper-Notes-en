@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] DreamPhase enables a **frozen policy LLM** to move beyond trial-and-error in real environments. Instead, it utilizes a learned latent world model to "dream" internally—simulating $M$ multi-step future trajectories. Each trajectory is scored based on "Value minus Uncertainty" and passed through a safety gate. The select
+  [ICLR2026][LLM Agent][LLM Agents] DreamPhase enables a **frozen policy LLM** to move beyond trial-and-error in real environments. Instead, it utilizes a learned latent world model to "dream" internally—simulating $M$ multi-step future trajectories. Each trajectory is scored based on "Value minus Uncertainty" and passed through a safety gate. The selected branch is distilled into a natural language reflection and injected back into the prompt. This reduces real API calls per t…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "LLM Agents"
+  - "Latent World Models"
+  - "Imaginative Planning"
+  - "Uncertainty Gating"
+  - "Language Reflection"
 date: 2026-05-08
-content_hash: 0ae04974fb86afed
+content_hash: e814cfca78cd17c7
 ---
+
 # DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents
 
 **Conference**: ICLR2026  
@@ -131,8 +137,8 @@ Real interaction is cut to 1/4 and latency to 1/3, while the success rate actual
 - Value: ⭐⭐⭐⭐⭐  
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

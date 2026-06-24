@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval
 description: >-
-  [ICCV 2025][Multimodal VLM][Text-video retrieval] This paper identifies the *candidate prior bias* problem in MLLM-based retrieval systems — where candidate likelihood estimation tends to favor candidates with high prior…
+  [ICCV 2025][Multimodal VLM][Text-video retrieval] This paper identifies the *candidate prior bias* problem in MLLM-based retrieval systems — where candidate likelihood estimation tends to favor candidates with high prior probability rather than those that are semantically most relevant — and proposes BLiM (Bidirectional Likelihood Estimation) and CPN (Candidate Prior Normalization) to address this issue, achieving an average R@1 gain of 6.4 across four text-video retrieval be…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "candidate prior bias"
   - "score calibration"
 date: 2026-05-08
-content_hash: 04c1f900cc3f7a3e
+content_hash: 94e4740380d7ca4f
 ---
 
 # Bidirectional Likelihood Estimation with Multi-Modal Large Language Models for Text-Video Retrieval
@@ -134,10 +134,10 @@ Zero-shot BLiM− (without CPN) on DiDeMo already achieves 69.8 T2V R@1, surpass
 ## Related Papers
 
 - [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
-- [\[ICCV 2025\] FOLDER: Accelerating Multi-modal Large Language Models with Enhanced Performance](folder_accelerating_multi-modal_large_language_models_with_enhanced_performance.md)
 - [\[ICCV 2025\] CapeLLM: Support-Free Category-Agnostic Pose Estimation with Multimodal Large Language Models](capellm_support-free_category-agnostic_pose_estimation_with_multimodal_large_lan.md)
+- [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](../../CVPR2026/multimodal_vlm/gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
 - [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
-- [\[CVPR 2026\] EagleNet: Energy-Aware Fine-Grained Relationship Learning Network for Text-Video Retrieval](../../CVPR2026/multimodal_vlm/eaglenet_energy-aware_fine-grained_relationship_learning_network_for_text-video_.md)
+- [\[ICCV 2025\] MultiVerse: A Multi-Turn Conversation Benchmark for Evaluating Large Vision and Language Models](multiverse_a_multi-turn_conversation_benchmark_for_evaluating_large_vision_and_l.md)
 
 </div>
 

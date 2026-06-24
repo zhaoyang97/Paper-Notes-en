@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Factorized Context Aggregation for Robust Cancer Risk Estimation via Soft Re-Ranked Retrieval and Hierarchical Anchors
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] This paper addresses the clinical scenario where multimodal data (e.g., genomics, pathology reports) is available during training, but only Whole Slide Images (WSI) are available during inference. It proposes using WSI as an anchor to retrieve multimodal features of similar patients from a memory bank with soft re-rank
+  [CVPR 2026][Medical Imaging][Cancer Risk Prediction] This paper addresses the clinical scenario where multimodal data (e.g., genomics, pathology reports) is available during training, but only Whole Slide Images (WSI) are available during inference. It proposes using WSI as an anchor to retrieve multimodal features of similar patients from a memory bank with soft re-ranking, followed by factorized cross-attention to reconstruct proxy representations of missing modalities into…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Cancer Risk Prediction"
+  - "Missing Modalities"
+  - "Soft Re-ranked Retrieval"
+  - "Factorized Context Aggregation"
+  - "Teacher-Student Distillation"
 date: 2026-05-08
-content_hash: 1b6089e93d16a7d7
+content_hash: 11b6b67570d1f761
 ---
+
 # Factorized Context Aggregation for Robust Cancer Risk Estimation via Soft Re-Ranked Retrieval and Hierarchical Anchors
 
 **Conference**: CVPR 2026  
@@ -127,16 +133,16 @@ Incremental module addition (Overall Avg. C-index):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions](../../ICML2026/medical_imaging/auditing_sybil_explaining_deep_lung_cancer_risk_prediction_through_generative_in.md)
+- [\[ICLR 2026\] WavePolyp: Video Polyp Segmentation via Hierarchical Wavelet-based Feature Aggregation and Inter-frame Divergence Perception](../../ICLR2026/medical_imaging/wavepolyp_video_polyp_segmentation_via_hierarchical_wavelet-based_feature_aggreg.md)
 - [\[NeurIPS 2025\] Mamba Goes HoME: Hierarchical Soft Mixture-of-Experts for 3D Medical Image Segmentation](../../NeurIPS2025/medical_imaging/mamba_goes_home_hierarchical_soft_mixture-of-experts_for_3d_medical_image_segmen.md)
 - [\[CVPR 2026\] Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance](better_than_average_spatially-aware_aggregation_of_segmentation_uncertainty_impr.md)
 - [\[CVPR 2026\] Real2Sim2Real: RetinalDepth-64K for Depth Estimation in Posterior Segment Ophthalmic Surgery](real2sim2real_retinaldepth-64k_for_depth_estimation_in_posterior_segment_ophthal.md)
-- [\[CVPR 2026\] FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning](fedvg_gradient-guided_aggregation_for_enhanced_federated_learning.md)
 
 </div>
 

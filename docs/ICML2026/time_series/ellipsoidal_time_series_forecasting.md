@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Ellipsoidal Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][SPD Jacobian] Fern reformulates long-term time series forecasting (LTSF) as "optimal transport from a fixed Gaussian source to a data-dependent ellipsoid." By leveraging Brenier’s Theorem, it restricts the search space to the Symmetric Positive Definite (SPD) Jacobian class. Utilizing low-rank spectral decomposition via Householder
+  [ICML 2026][Time Series][Long-term Forecasting] Fern reformulates long-term time series forecasting (LTSF) as "optimal transport from a fixed Gaussian source to a data-dependent ellipsoid." By leveraging Brenier’s Theorem, it restricts the search space to the Symmetric Positive Definite (SPD) Jacobian class. Utilizing low-rank spectral decomposition via Householder reflections, it reduces computational complexity from $O(n^3)$ to $O(Rn)$ and achieves up to a 790× stability im…
 tags:
-  - ICML 2026
-  - Time Series
-  - SPD Jacobian
+  - "ICML 2026"
+  - "Time Series"
+  - "Long-term Forecasting"
+  - "SPD Jacobian"
+  - "Brenier’s Theorem"
+  - "Ellipsoidal Transport"
+  - "Non-stationary Robustness"
 date: 2026-05-08
-content_hash: 04667f3e71b85f3b
+content_hash: ed3c1ae230ee4cf5
 ---
+
 # Ellipsoidal Time Series Forecasting
 
 **Conference**: ICML 2026  

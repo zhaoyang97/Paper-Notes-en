@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Diffusion Bridge Variational Inference for Deep Gaussian Processes
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Aiming at posterior inference for inducing variables in Deep Gaussian Processes (DGP), this paper transforms the "reverse diffusion from a fixed Gaussian prior" in DDVI (Denoising Diffusion Variational Inference) into a "diffusion bridge starting from a learnable, data-dependent initial distribution." By leveraging the
+  [ICLR 2026][Probabilistic Methods][Diffusion Bridge] Aiming at posterior inference for inducing variables in Deep Gaussian Processes (DGP), this paper transforms the "reverse diffusion from a fixed Gaussian prior" in DDVI (Denoising Diffusion Variational Inference) into a "diffusion bridge starting from a learnable, data-dependent initial distribution." By leveraging the Doob h-transform while maintaining the Girsanov-ELBO mathematical framework…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Probabilistic Methods"
+  - "Variational Inference"
+  - "Deep Gaussian Processes"
+  - "Diffusion Bridge"
+  - "Doob h-transform"
+  - "Amortized Inference"
 date: 2026-05-08
-content_hash: 5eab8849602a95e7
+content_hash: 8e6d8e493d8b1ded
 ---
+
 # Diffusion Bridge Variational Inference for Deep Gaussian Processes
 
 **Conference**: ICLR 2026  
@@ -135,10 +141,20 @@ When $\mu_\theta(x) \equiv 0$, DBVI reduces to DDVI. The performance gain of DBV
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Robust Generalized Schrödinger Bridge via Sparse Variational Gaussian Processes](robust_generalized_schrodinger_bridge_via_sparse_variational_gaussian_processes.md)
+- [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)
+- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
+- [\[ICLR 2026\] A Unification of Discrete, Gaussian, and Simplicial Diffusion](a_unification_of_discrete_gaussian_and_simplicial_diffusion.md)
+- [\[ICLR 2026\] Revisiting Nonstationary Kernel Design for Multi-Output Gaussian Processes](revisiting_nonstationary_kernel_design_for_multi-output_gaussian_processes.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Variational Inference for Cyclic Learning](variational_inference_for_cyclic_learning.md)

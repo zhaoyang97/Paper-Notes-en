@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] StoryAlign：为故事生成评测并训练奖励模型
+  [Paper Note] StoryAlign: Evaluating and Training Reward Models for Story Generation
 description: >-
-  [ICLR 2026][Alignment & RLHF][Best-of-N] This paper demonstrates that existing reward models struggle to identify human-preferred stories (even the strongest GPT-4o achieves only 66.3% accuracy). Consequently, the authors construct the first story preference evaluation benchmark, STORYRMB (1133 human-verified instances), and train a specialized reward model,
+  [ICLR 2026][LLM Alignment][Reward Model] This paper demonstrates that existing reward models struggle to identify human-preferred stories (even the strongest GPT-4o achieves only 66.3% accuracy). Consequently, the authors construct the first story preference evaluation benchmark, STORYRMB (1133 human-verified instances), and train a specialized reward model, STORYREWARD, using approximately 100,000 automatically constructed preference pairs. At an 8B scale…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - Best-of-N
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Story Generation"
+  - "Human Preference"
+  - "Preference Data Construction"
+  - "Best-of-N"
 date: 2026-05-08
-content_hash: f370750b6c1a3cab
+content_hash: 62850a6cacc5a3ce
 ---
+
 # StoryAlign: Evaluating and Training Reward Models for Story Generation
 
 **Conference**: ICLR 2026  
@@ -132,11 +137,11 @@ STORYREWARD-QWEN raises the SoTA from 66.3% to 75.0%, with substantial gains in 
 
 ## Related Papers
 
-- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
-- [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
-- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
-- [\[ICLR 2026\] Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](skywork-reward-v2_scaling_preference_data_curation_via_human-ai_synergy.md)
+- [\[ICLR 2026\] Evaluating and Improving Cultural Awareness of Reward Models for LLM Alignment](evaluating_and_improving_cultural_awareness_of_reward_models_for_llm_alignment.md)
+- [\[ACL 2025\] Cheems: A Practical Guidance for Building and Evaluating Chinese Reward Models from Scratch](../../ACL2025/llm_alignment/cheems_chinese_reward_models.md)
 - [\[ICLR 2026\] Reward Models Inherit Value Biases from Pretraining](reward_models_inherit_value_biases_from_pretraining.md)
+- [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
+- [\[AAAI 2026\] GRAM-R²: Self-Training Generative Foundation Reward Models for Reward Reasoning](../../AAAI2026/llm_alignment/gram-r2_self-training_generative_foundation_reward_models_for_reward_reasoning.md)
 
 </div>
 

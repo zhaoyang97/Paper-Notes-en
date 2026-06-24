@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing Conversations: Communication Context Identification in Egocentric Video
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This paper proposes "Communication Context Identification (CCI)," a new task aimed at determining whether individuals in an egocentric video belong to the wearer's conversation group. The authors release a 68.9-hour multi-person, multi-conversation dataset and design CoCoNet—a lightweight model utilizing only structure
+  [CVPR 2026][Video Understanding][Egocentric Video] This paper proposes "Communication Context Identification (CCI)," a new task aimed at determining whether individuals in an egocentric video belong to the wearer's conversation group. The authors release a 68.9-hour multi-person, multi-conversation dataset and design CoCoNet—a lightweight model utilizing only structured facial features with joint temporal-relational reasoning—achieving a 96% balanced accuracy on CCI.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Egocentric Video"
+  - "Social Scene Understanding"
+  - "Communication Context Identification"
+  - "Temporal-Relational Modeling"
+  - "Hearing Augmentation"
 date: 2026-05-08
-content_hash: d66905019e56ddff
+content_hash: 7f8060ca633a7552
 ---
+
 # Seeing Conversations: Communication Context Identification in Egocentric Video
 
 **Conference**: CVPR 2026  
@@ -119,16 +125,16 @@ CoCoNet achieves **96% bAcc** overall. Performance on unseen participants (97%) 
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Seeing Motion Through Polarity for Event-based Action Recognition](seeing_motion_through_polarity_for_event-based_action_recognition.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
-- [\[CVPR 2026\] Image Guides Images: Consistent Video Amodal Completion with Rectified In-Context Exemplar Guidance](image_guides_images_consistent_video_amodal_completion_with_rectified_in-context.md)
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
+- [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
 - [\[CVPR 2026\] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)
-- [\[CVPR 2026\] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)
 
 </div>
 

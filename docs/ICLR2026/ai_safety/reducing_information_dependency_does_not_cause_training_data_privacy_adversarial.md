@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper overturns the mainstream hypothesis that "reducing information dependency between training data and models prevents reconstruction attacks" through three counter-intuitive experiments. It demonstrates that privacy under Model Inversion Attacks (MIA) actually stems from "adverserially non-robust features." Ba
+  [ICLR 2026][AI Safety][Model Inversion Attack] This paper overturns the mainstream hypothesis that "reducing information dependency between training data and models prevents reconstruction attacks" through three counter-intuitive experiments. It demonstrates that privacy under Model Inversion Attacks (MIA) actually stems from "adverserially non-robust features." Based on this, it proposes Anti-Adversarial Training (AT-AT), reducing the reconstruction rate of ResNet-152 from 8…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Model Inversion Attack"
+  - "Training Data Reconstruction"
+  - "Information Dependency"
+  - "Non-robust Features"
+  - "Adversarial Robustness"
 date: 2026-05-08
-content_hash: 29decf5e54d132f1
+content_hash: 21be2921bf1a9205
 ---
+
 # Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.
 
 **Conference**: ICLR 2026  
@@ -124,11 +130,11 @@ The study focused on white-box face recognition: datasets FaceScrub / CelebA; at
 
 ## Related Papers
 
+- [\[ICLR 2026\] When Flatness Does (Not) Guarantee Adversarial Robustness](when_flatness_does_not_guarantee_adversarial_robustness.md)
 - [\[ICLR 2026\] Why Do Unlearnable Examples Work: A Novel Perspective of Mutual Information](why_do_unlearnable_examples_work_a_novel_perspective_of_mutual_information.md)
-- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](../../CVPR2026/ai_safety/towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
-- [\[CVPR 2026\] ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers](../../CVPR2026/ai_safety/remoe_region-mixture_experts_for_adversarially-robust_vision_transformers.md)
 - [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
-- [\[ICLR 2026\] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs](discrete_latent_features_ablate_adversarial_attack_a_robust_prompt_tuning_framew.md)
+- [\[CVPR 2026\] ReMoE: Region-Mixture Experts for Adversarially-Robust Vision Transformers](../../CVPR2026/ai_safety/remoe_region-mixture_experts_for_adversarially-robust_vision_transformers.md)
+- [\[CVPR 2026\] Towards Robust Vision Transformers: Path Dependency Analysis and a Simple Two-Stage Adversarial Training](../../CVPR2026/ai_safety/towards_robust_vision_transformers_path_dependency_analysis_and_a_simple_two-sta.md)
 
 </div>
 

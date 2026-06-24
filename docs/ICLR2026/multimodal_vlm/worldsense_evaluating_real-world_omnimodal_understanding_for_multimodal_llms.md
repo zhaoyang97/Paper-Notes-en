@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] WorldSense is the first real-world omnimodal video understanding benchmark that **mandates audio-visual synergy**. It comprises 1,662 synchronized audio-visual segments and 3,172 multiple-choice questions, each designed such that "it cannot be answered correctly if either audio or video is removed." Results show that e
+  [ICLR 2026][Multimodal VLM][Omnimodal understanding] WorldSense is the first real-world omnimodal video understanding benchmark that **mandates audio-visual synergy**. It comprises 1,662 synchronized audio-visual segments and 3,172 multiple-choice questions, each designed such that "it cannot be answered correctly if either audio or video is removed." Results show that even the strongest Gemini 2.5 Pro achieves only 65.1% accuracy, while most open-source omnimodal models perf…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Omnimodal understanding"
+  - "audio-visual synergy"
+  - "video QA benchmark"
+  - "MLLM evaluation"
+  - "real-world scenarios"
 date: 2026-05-08
-content_hash: bf67a6476b2ab663
+content_hash: 1b83cb229041ff6e
 ---
+
 # WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs
 
 **Conference**: ICLR 2026  
@@ -133,7 +139,6 @@ Key observations: (i) Even the strongest Gemini 2.5 Pro only achieves 65.1%, far
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

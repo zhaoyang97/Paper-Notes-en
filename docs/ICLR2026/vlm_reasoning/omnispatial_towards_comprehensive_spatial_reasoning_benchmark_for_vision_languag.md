@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] OmniSpatial is the first comprehensive spatial reasoning benchmark built on cognitive psychology. It systematically covers 4 dimensions and 50 subcategories (Dynamic Reasoning, Complex Spatial Logic, Spatial Interaction, and Perspective Transformation) with 8.4K human-annotated QA pairs. Results show that the o3 model
+  [ICLR 2026][VLM Reasoning][Spatial Reasoning] OmniSpatial is the first comprehensive spatial reasoning benchmark built on cognitive psychology. It systematically covers 4 dimensions and 50 subcategories (Dynamic Reasoning, Complex Spatial Logic, Spatial Interaction, and Perspective Transformation) with 8.4K human-annotated QA pairs. Results show that the o3 model achieves only 56.33% compared to a human score of 92.63%→ revealing that complex spatial reasoning remains a core…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Spatial Reasoning"
+  - "VLM Benchmark"
+  - "Cognitive Psychology"
+  - "Dynamic Reasoning"
+  - "Perspective Transformation"
 date: 2026-05-08
-content_hash: 65b277d1e53e3125
+content_hash: 3224e08dd1a6a4a4
 ---
+
 # OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models
 
 **Conference**: ICLR 2026  
@@ -121,11 +127,11 @@ Overall Assessment: The first comprehensive spatial reasoning benchmark based on
 
 ## Related Papers
 
-- [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
 - [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
+- [\[ICLR 2026\] InternSpatial: A Comprehensive Dataset for Spatial Reasoning in Vision-Language Models](internspatial_a_comprehensive_dataset_for_spatial_reasoning_in_vision-language_m.md)
+- [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
+- [\[ICLR 2026\] SpatialLadder: Building Spatial Reasoning Capabilities for Vision-Language Models via Progressive Training](spatialladder_progressive_training_for_spatial_reasoning_in_vision-language_mode.md)
 - [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
-- [\[CVPR 2025\] ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models](../../CVPR2025/vlm_reasoning/espire_a_diagnostic_benchmark_for_embodied_spatial_reasoning_of_vision-language_.md)
 
 </div>
 

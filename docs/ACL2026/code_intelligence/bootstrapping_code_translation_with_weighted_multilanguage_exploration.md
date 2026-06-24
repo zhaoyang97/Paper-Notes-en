@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bootstrapping Code Translation with Weighted Multilanguage Exploration
 description: >-
-  [ACL 2026][Code Intelligence][RLVR] BootTrans proposes a bootstrapping multilingual code translation method that leverages test cases from a single hub language (Python) as cross-language verification oracles. Combined with a dual-pool architecture for experience collection to expand training data and a language-aware weighting mechanism to prioritize di
+  [ACL 2026][Code Intelligence][Code Translation] BootTrans proposes a bootstrapping multilingual code translation method that leverages test cases from a single hub language (Python) as cross-language verification oracles. Combined with a dual-pool architecture for experience collection to expand training data and a language-aware weighting mechanism to prioritize difficult translation directions, it significantly outperforms baselines on HumanEval-X and TransCoder-Test.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - RLVR
+  - "ACL 2026"
+  - "Code Intelligence"
+  - "Code Translation"
+  - "Bootstrapping Exploration"
+  - "Language-aware Weighting"
+  - "RLVR"
+  - "Multilingual Optimization"
 date: 2026-05-08
-content_hash: 3c9a4cecb4a4c2aa
+content_hash: d7622400ec8b53a6
 ---
+
 # Bootstrapping Code Translation with Weighted Multilanguage Exploration
 
 **Conference**: ACL 2026  
@@ -144,11 +149,11 @@ The BootTrans 1.7B model surpassed Qwen3-32B on HumanEval-X (74.70 vs 67.99), de
 
 ## Related Papers
 
-- [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
-- [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](../../ICML2026/code_intelligence/matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
 - [\[ICML 2025\] Function-to-Style Guidance of LLMs for Code Translation](../../ICML2025/code_intelligence/function-to-style_guidance_of_llms_for_code_translation.md)
 - [\[ICML 2026\] Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation](../../ICML2026/code_intelligence/bridging_functional_correctness_and_runtime_efficiency_gaps_in_llm-based_code_tr.md)
-- [\[ACL 2025\] ExploraCoder: Advancing Code Generation for Multiple Unseen APIs via Planning and Chained Exploration](../../ACL2025/code_intelligence/exploracoder_advancing_code_generation_for_multiple_unseen_apis_via_planning_and.md)
+- [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](../../ICML2026/code_intelligence/matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
+- [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
+- [\[ICLR 2026\] RefineStat: Efficient Exploration for Probabilistic Program Synthesis](../../ICLR2026/code_intelligence/refinestat_efficient_exploration_for_probabilistic_program_synthesis.md)
 
 </div>
 

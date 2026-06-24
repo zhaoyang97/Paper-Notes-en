@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment
 description: >-
-  [ICCV 2025][Image Generation][Reward Model] This paper identifies a "scoring paradox" in CLIP/BLIP-based reward models when evaluating high-quality images — detail-rich…
+  [ICCV 2025][Image Generation][Reward Model] This paper identifies a "scoring paradox" in CLIP/BLIP-based reward models when evaluating high-quality images — detail-rich, high-fidelity images are paradoxically assigned lower scores. The authors propose two new metrics: ICT Score (Image-Contained-Text, measuring the degree to which an image encodes the textual information) and HP Score (a purely image-modal human preference score). Training on the Pick-High dataset yields over…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Human Preference"
   - "Diffusion Model Optimization"
 date: 2026-05-08
-content_hash: 06ff5b6e04bac7e6
+content_hash: f4910f963ad90700
 ---
 
 # Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment

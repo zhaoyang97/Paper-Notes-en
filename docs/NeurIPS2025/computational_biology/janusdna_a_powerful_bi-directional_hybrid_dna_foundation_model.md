@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model
 description: >-
-  [NeurIPS 2025][Computational Biology][DNA foundation model] JanusDNA is proposed as the first bidirectional DNA foundation model, combining a Mamba-Attention-MoE hybrid architecture with the Janus Modeling pretraining pa…
+  [NeurIPS 2025][Computational Biology][DNA foundation model] JanusDNA is proposed as the first bidirectional DNA foundation model, combining a Mamba-Attention-MoE hybrid architecture with the Janus Modeling pretraining paradigm to achieve bidirectional understanding at the training efficiency of autoregressive methods, attaining state-of-the-art performance across multiple genomic benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "Mixture-of-Experts"
   - "genomics"
 date: 2026-05-08
-content_hash: 3044f7e3a92a7056
+content_hash: 8b26e4b3a0b383b4
 ---
 
 # JanusDNA: A Powerful Bi-directional Hybrid DNA Foundation Model
@@ -171,10 +171,10 @@ JanusDNA comprises three core components: (1) **Janus Modeling**—an efficient 
 
 ## Related Papers
 
+- [\[ICML 2025\] SPACE: Your Genomic Profile Predictor is a Powerful DNA Foundation Model](../../ICML2025/computational_biology/space_your_genomic_profile_predictor_is_a_powerful_dna_foundation_model.md)
 - [\[NeurIPS 2025\] Iterative Foundation Model Fine-Tuning on Multiple Rewards](iterative_foundation_model_fine-tuning_on_multiple_rewards.md)
+- [\[ICML 2025\] SToFM: a Multi-scale Foundation Model for Spatial Transcriptomics](../../ICML2025/computational_biology/stofm_a_multi-scale_foundation_model_for_spatial_transcriptomics.md)
 - [\[NeurIPS 2025\] Uncertainty-Guided Model Selection for Tabular Foundation Models in Biomolecule Efficacy Prediction](uncertainty-guided_model_selection_for_tabular_foundation_models_in_biomolecule_.md)
-- [\[AAAI 2026\] TrinityDNA: A Bio-Inspired Foundational Model for Efficient Long-Sequence DNA Modeling](../../AAAI2026/computational_biology/trinitydna_a_bio-inspired_foundational_model_for_efficient_long-sequence_dna_mod.md)
-- [\[ICLR 2026\] Zatom-1: A Multimodal Flow Foundation Model for 3D Molecules and Materials](../../ICLR2026/computational_biology/zatom-1_a_multimodal_flow_foundation_model_for_3d_molecules_and_materials.md)
 - [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
 
 </div>

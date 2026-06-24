@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper proposes the d2 reinforcement learning framework for masked diffusion language models (masked DLM). The core contribution is the introduction of two "trajectory likelihood estimators": d2-AnyOrder, which provides exact single-forward estimates for any-order models, and d2-StepMerge, which provides adjustable
+  [ICML 2026][Reinforcement Learning][Masked Diffusion Language Model] This paper proposes the d2 reinforcement learning framework for masked diffusion language models (masked DLM). The core contribution is the introduction of two "trajectory likelihood estimators": d2-AnyOrder, which provides exact single-forward estimates for any-order models, and d2-StepMerge, which provides adjustable-precision approximations for standard MDMs. This framework enables the correct implementat…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Masked Diffusion Language Model"
+  - "GRPO"
+  - "Trajectory Likelihood Estimation"
+  - "any-order decoding"
+  - "Post-training"
 date: 2026-05-08
-content_hash: ecc1a18f8764a4d9
+content_hash: 48c428edfd8c00df
 ---
+
 # d2: Improving Reasoning in Diffusion Language Models via Trajectory Likelihood Estimation
 
 **Conference**: ICML 2026  
@@ -124,8 +129,8 @@ The +66.7pp gain in Sudoku represents a qualitative shift, indicating that while
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
 - [\[ICML 2026\] Break the Block: Dynamic-size Reasoning Blocks for Diffusion Large Language Models via Monotonic Entropy Descent with Reinforcement Learning](break_the_block_dynamic-size_reasoning_blocks_for_diffusion_large_language_model.md)
+- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
 - [\[ICML 2026\] The Shape of Reasoning: Topological Analysis of Reasoning Traces in Large Language Models](the_shape_of_reasoning_topological_analysis_of_reasoning_traces_in_large_languag.md)
 - [\[NeurIPS 2025\] Reinforcing the Diffusion Chain of Lateral Thought with Diffusion Language Models](../../NeurIPS2025/reinforcement_learning/reinforcing_the_diffusion_chain_of_lateral_thought_with_diffusion_language_model.md)
 - [\[ACL 2026\] d-TreeRPO: Towards More Reliable Policy Optimization for Diffusion Language Models](../../ACL2026/reinforcement_learning/d-treerpo_towards_more_reliable_policy_optimization_for_diffusion_language_model.md)

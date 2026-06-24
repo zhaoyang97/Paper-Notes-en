@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] Focusing on closed-source text-to-image diffusion models, this paper proposes **SD-MIA**: instead of traditional methods that add noise to images and check denoising capabilities, it **perturbs text instructions** and monitors the stability of reconstructed images to determine whether an image was in the **pre-training
+  [CVPR 2026][Image Generation][Membership Inference Attack] Focusing on closed-source text-to-image diffusion models, this paper proposes **SD-MIA**: instead of traditional methods that add noise to images and check denoising capabilities, it **perturbs text instructions** and monitors the stability of reconstructed images to determine whether an image was in the **pre-training data**. Under pure black-box constraints (text-in, image-out only)…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Membership Inference Attack"
+  - "Pre-training Data Auditing"
+  - "Cross-modal Perturbation"
+  - "Black-box Attack"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 0a6e34ed260548d0
+content_hash: e987ddc13be65f5b
 ---
+
 # Black-box Membership Inference Attacks on the Pre-training Data of Image-generation Models
 
 **Conference**: CVPR 2026  
@@ -139,7 +144,7 @@ Ours leads across the board, even outperforming the strongest gray-box DRC by up
 - [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
 - [\[CVPR 2026\] Rethinking UMM Visual Generation: Masked Modeling for Efficient Image-Only Pre-training](rethinking_umm_visual_generation_masked_modeling_for_efficient_image-only_pre-tr.md)
 - [\[CVPR 2026\] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation](blackmirror_black-box_backdoor_detection_for_text-to-image_models_via_instructio.md)
-- [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
+- [\[NeurIPS 2025\] Transferable Black-Box One-Shot Forging of Watermarks via Image Preference Models](../../NeurIPS2025/image_generation/transferable_black-box_one-shot_forging_of_watermarks_via_image_preference_model.md)
 
 </div>
 

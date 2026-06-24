@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation
 description: >-
-  [ICCV 2025][Robotics][bimanual manipulation] This paper proposes AnyBimanual, a plug-and-play framework that transfers pretrained unimanual manipulation policies to general bimanual manipulation scenarios via a Skill Man…
+  [ICCV 2025][Robotics][bimanual manipulation] This paper proposes AnyBimanual, a plug-and-play framework that transfers pretrained unimanual manipulation policies to general bimanual manipulation scenarios via a Skill Manager and a Visual Aligner, achieving significant multi-task generalization with only a small number of bimanual demonstrations.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "visual alignment"
   - "behavior cloning"
 date: 2026-05-08
-content_hash: 9c8bf63b4f13fbe8
+content_hash: 293f6c57613ee163
 ---
 
 # AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation
@@ -145,11 +145,11 @@ Overall average success rate: AnyBimanual (32.00%) vs. PerAct2 (14.67%), a gain 
 
 ## Related Papers
 
+- [\[CVPR 2025\] MoManipVLA: Transferring Vision-Language-Action Models for General Mobile Manipulation](../../CVPR2025/robotics/momanipvla_transferring_vision-language-action_models_for_general_mobile_manipul.md)
+- [\[CVPR 2026\] EnergyAction: Unimanual to Bimanual Composition with Energy-Based Models](../../CVPR2026/robotics/energyaction_unimanual_to_bimanual_composition_with_energy-based_models.md)
+- [\[CVPR 2025\] ManipTrans: Efficient Dexterous Bimanual Manipulation Transfer via Residual Learning](../../CVPR2025/robotics/maniptrans_efficient_dexterous_bimanual_manipulation_transfer_via_residual_learn.md)
+- [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](imanip_skill-incremental_learning_for_robotic_manipulation.md)
 - [\[ICLR 2026\] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](../../ICLR2026/robotics/vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)
-- [\[ICLR 2026\] TwinVLA: Data-Efficient Bimanual Manipulation with Twin Single-Arm Vision-Language-Action Models](../../ICLR2026/robotics/twinvla_data-efficient_bimanual_manipulation_with_twin_single-arm_vision-languag.md)
-- [\[CVPR 2026\] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](../../CVPR2026/robotics/bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)
-- [\[ICLR 2026\] MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation](../../ICLR2026/robotics/momagen_generating_demonstrations_under_soft_and_hard_constraints_for_multi-step.md)
-- [\[NeurIPS 2025\] Generalizable Domain Adaptation for Sim-and-Real Policy Co-Training](../../NeurIPS2025/robotics/generalizable_domain_adaptation_for_sim-and-real_policy_co-training.md)
 
 </div>
 

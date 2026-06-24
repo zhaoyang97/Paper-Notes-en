@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural Optimal Transport Meets Multivariate Conformal Prediction
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The authors utilize **Neural Optimal Transport** to learn a continuous, cyclically monotone "vector quantile function" (transporting a reference distribution to a conditional distribution), then use the induced **multivariate rank** as a conformal score to construct multivariate prediction regions that possess finite-s
+  [ICLR 2026][Optimization][Vector Quantile Regression] The authors utilize **Neural Optimal Transport** to learn a continuous, cyclically monotone "vector quantile function" (transporting a reference distribution to a conditional distribution), then use the induced **multivariate rank** as a conformal score to construct multivariate prediction regions that possess finite-sample coverage guarantees and adapt to the geometric shape of the conditional distribution.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Vector Quantile Regression"
+  - "Neural Optimal Transport"
+  - "Multivariate Conformal Prediction"
+  - "Input Convex Neural Networks"
+  - "Amortized Optimization"
 date: 2026-05-08
-content_hash: 93aa130633075041
+content_hash: 1ac8af0fa0896b7e
 ---
+
 # Neural Optimal Transport Meets Multivariate Conformal Prediction
 
 **Conference**: ICLR 2026  
@@ -112,10 +118,17 @@ flowchart LR
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport](neural_hamilton--jacobi_characteristic_flows_for_optimal_transport.md)
+- [\[ICLR 2026\] Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport](hyperparameter_trajectory_inference_with_conditional_lagrangian_optimal_transpor.md)
+- [\[ICLR 2026\] HOTA: Hamiltonian Framework for Optimal Transport Advection](hota_hamiltonian_framework_for_optimal_transport_advection.md)
+- [\[ICLR 2026\] Elastic Optimal Transport: Theory, Application, and Empirical Evaluation](elastic_optimal_transport_theory_application_and_empirical_evaluation.md)
+- [\[ICLR 2026\] Sobolev Gradient Ascent for Optimal Transport: Barycenter Optimization and Convergence Analysis](sobolev_gradient_ascent_for_optimal_transport_barycenter_optimization_and_conver.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Neural Hamilton–Jacobi Characteristic Flows for Optimal Transport](neural_hamilton--jacobi_characteristic_flows_for_optimal_transport.md)

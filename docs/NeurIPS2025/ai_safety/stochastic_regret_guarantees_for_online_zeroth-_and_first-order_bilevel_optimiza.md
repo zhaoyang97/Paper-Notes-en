@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization
 description: >-
-  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper proposes a novel search direction and proves that first-order and zeroth-order online bilevel optimization algorithms built upon it achieve sublinear stochastic…
+  [NeurIPS 2025][AI Safety][Bilevel Optimization] This paper proposes a novel search direction and proves that first-order and zeroth-order online bilevel optimization algorithms built upon it achieve sublinear stochastic bilevel regret guarantees without requiring window smoothing, while improving efficiency through reduced oracle dependence, parallel updates, and zeroth-order Hessian/Jacobian estimation.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Stochastic Regret"
   - "Hypergradient Estimation"
 date: 2026-05-08
-content_hash: 7053696707f0555f
+content_hash: 391fbdc4be15f451
 ---
 
 # Stochastic Regret Guarantees for Online Zeroth- and First-Order Bilevel Optimization
@@ -158,10 +158,10 @@ By parallelizing inner-loop solving with outer-loop updates, the proposed method
 ## Related Papers
 
 - [\[NeurIPS 2025\] Differentially Private Bilevel Optimization: Efficient Algorithms with Near-Optimal Rates](differentially_private_bilevel_optimization_efficient_algorithms_with_near-optim.md)
+- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](../../ICML2026/ai_safety/privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
 - [\[NeurIPS 2025\] Fairness-Regularized Online Optimization with Switching Costs](fairness-regularized_online_optimization_with_switching_costs.md)
 - [\[NeurIPS 2025\] Dual-Flow: Transferable Multi-Target, Instance-Agnostic Attacks via In-the-wild Cascading Flow Optimization](dual-flow_transferable_multi-target_instance-agnostic_attacks_via_in-the-wild_ca.md)
-- [\[ICML 2026\] Flatness-Aware Stochastic Gradient Langevin Dynamics](../../ICML2026/ai_safety/flatness-aware_stochastic_gradient_langevin_dynamics.md)
-- [\[ICML 2026\] Regret-Based Federated Causal Discovery with Unknown Interventions](../../ICML2026/ai_safety/regret-based_federated_causal_discovery_with_unknown_interventions.md)
+- [\[ICML 2025\] Connecting Thompson Sampling and UCB: Towards More Efficient Trade-offs Between Privacy and Regret](../../ICML2025/ai_safety/connecting_thompson_sampling_and_ucb_towards_more_efficient_trade-offs_between_p.md)
 
 </div>
 

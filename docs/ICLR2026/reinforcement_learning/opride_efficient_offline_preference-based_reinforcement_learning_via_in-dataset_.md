@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] OPRIDE：通过数据集内探索实现高效的离线偏好强化学习
+  [Paper Note] OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] OPRIDE addresses the high cost of human feedback in Offline Preference Reinforcement Learning (PbRL) by proposing **Difference-of-Value-Differences** to select the most informative preference queries and **Variance-driven Discount Scheduling** to suppress over-optimization of learned rewards. It significantly outperfor
+  [ICLR 2026][Reinforcement Learning][Preference Reinforcement Learning] OPRIDE addresses the high cost of human feedback in Offline Preference Reinforcement Learning (PbRL) by proposing **Difference-of-Value-Differences** to select the most informative preference queries and **Variance-driven Discount Scheduling** to suppress over-optimization of learned rewards. It significantly outperforms previous SOTA on Meta-World and AntMaze using only approximately 10 preference queries…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Preference Reinforcement Learning"
+  - "Offline RL"
+  - "Query Efficiency"
+  - "Exploration"
+  - "Discount Scheduling"
 date: 2026-05-08
-content_hash: b2a9ae1fba073763
+content_hash: 3283b12d47e4f3ba
 ---
+
 # OPRIDE: Efficient Offline Preference Reinforcement Learning via In-Dataset Exploration
 
 **Conference**: ICLR 2026  
@@ -137,11 +143,11 @@ Removing either module causes significant performance drops. Notably, swapping I
 
 ## Related Papers
 
-- [\[ICLR 2026\] Toward Conservative Planning from Human-AI Preferences in Reinforcement Learning](toward_conservative_planning_from_human-ai_preferences_in_reinforcement_learning.md)
-- [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
-- [\[ICLR 2026\] Flow Actor-Critic for Offline Reinforcement Learning (FAC)](flow_actor-critic_for_offline_reinforcement_learning.md)
-- [\[ICLR 2026\] Offline Reinforcement Learning with Adaptive Feature Fusion](offline_reinforcement_learning_with_adaptive_feature_fusion.md)
-- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
+- [\[ICLR 2026\] Preference-based Policy Optimization from Sparse-reward Offline Dataset](preference-based_policy_optimization_from_sparse-reward_offline_dataset.md)
+- [\[ICLR 2026\] Offline Preference-based Value Optimization](offline_preference-based_value_optimization.md)
+- [\[ICLR 2026\] Fine-tuning Behavioral Cloning Policies with Preference-Based Reinforcement Learning](fine-tuning_behavioral_cloning_policies_with_preferencebased_reinforcement_learn.md)
+- [\[ICLR 2026\] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching](sample_efficient_offline_rl_via_t-symmetry_enforced_latent_state-stitching.md)
+- [\[ICLR 2026\] Policy Likelihood-based Query Sampling and Critic-Exploited Reset for Efficient Preference-based Reinforcement Learning](policy_likelihood-based_query_sampling_and_critic-exploited_reset_for_efficient_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment
 description: >-
-  [ICML 2026][LLM Reasoning][Monte Carlo] ETS samples directly from the **closed-form optimal solution** of the KL-regularized RLHF objective, formulating it as "reference policy $\times$ conditional expectation of exponential reward (energy term)." By using Monte Carlo + Self-Normalized Importance Sampling to approximate this energy term at test time, it achi
+  [ICML 2026][Reasoning][KL-regularized RL closed-form solution] ETS samples directly from the **closed-form optimal solution** of the KL-regularized RLHF objective, formulating it as "reference policy $\times$ conditional expectation of exponential reward (energy term)." By using Monte Carlo + Self-Normalized Importance Sampling to approximate this energy term at test time, it achieves or exceeds the performance of policies post-trained with RL **without any training**. It mai…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Monte Carlo
+  - "ICML 2026"
+  - "Reasoning"
+  - "KL-regularized RL closed-form solution"
+  - "energy reweighting"
+  - "Monte Carlo"
+  - "importance sampling"
+  - "ARM/DLM general purpose"
 date: 2026-05-08
-content_hash: 3e54a3da7478b614
+content_hash: 6781caa54b5e511d
 ---
+
 # ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment
 
 **Conference**: ICML 2026  
@@ -123,15 +128,16 @@ Pass@1 results for MATH500, GSM8K, HumanEval, and GPQA-Diamond. ARM models used:
 - **Value**: ⭐⭐⭐⭐⭐ (Provides a viable path for "test-time alignment," potentially bypassing entire RLHF pipelines)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
 - [\[ICLR 2026\] Understanding the Role of Training Data in Test-Time Scaling](../../ICLR2026/llm_reasoning/understanding_the_role_of_training_data_in_test-time_scaling.md)
+- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
+- [\[ICLR 2026\] C-Voting: Confidence-Based Test-Time Voting without Explicit Energy Functions](../../ICLR2026/llm_reasoning/c-voting_confidence-based_test-time_voting_without_explicit_energy_functions.md)
+- [\[ICML 2026\] UniScale: Adaptive Unified Inference Scaling through Online Joint Optimization of Model Routing and Test-Time Scaling](uniscale_adaptive_unified_inference_scaling_via_online_joint_optimization_of_mod.md)
 - [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
-- [\[ICML 2026\] Less Diverse, Less Safe: The Indirect But Pervasive Risk of Test-Time Scaling in Large Language Models](less_diverse_less_safe_the_indirect_but_pervasive_risk_of_test-time_scaling_in_l.md)
-- [\[ICML 2026\] Lookahead Sample Reward Guidance for Test-Time Scaling of Diffusion Models](lookahead_sample_reward_guidance_for_test-time_scaling_of_diffusion_models.md)
 
 </div>
 

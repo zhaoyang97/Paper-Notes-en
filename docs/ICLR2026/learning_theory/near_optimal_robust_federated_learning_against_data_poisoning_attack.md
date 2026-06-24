@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Near Optimal Robust Federated Learning Against Data Poisoning Attack
 description: >-
-  [ICLR 2026][learning_theory][H-divergence] Addressing the "low data per worker, high number of workers" data poisoning scenario in Federated Learning, this paper first provides the minimax lower bound of attack loss and then designs a two-stage mechanism involving "training a discriminator to assign reliability weights" to workers. This ensures that the upper b
+  [ICLR 2026][Learning Theory][Data Poisoning] Addressing the "low data per worker, high number of workers" data poisoning scenario in Federated Learning, this paper first provides the minimax lower bound of attack loss and then designs a two-stage mechanism involving "training a discriminator to assign reliability weights" to workers. This ensures that the upper bound **asymptotically matches the lower bound** as $m\to\infty$, and the attack loss depends only on the task's VC…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - H-divergence
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Robust Federated Learning"
+  - "Data Poisoning"
+  - "Federated Learning"
+  - "Minimax Lower Bound"
+  - "Robustness"
+  - "H-divergence"
+  - "VC dimension"
 date: 2026-05-08
-content_hash: a1e9f7c1daecbda3
+content_hash: 42ee0a227592cdb3
 ---
+
 # Near Optimal Robust Federated Learning Against Data Poisoning Attack
 
 **Conference**: ICLR 2026  
@@ -108,8 +115,8 @@ Evaluation was conducted on MNIST / CIFAR-10 with flip-label and backdoor attack
 - **Value**: ⭐⭐⭐⭐ Provides significant theoretical and algorithmic support for a "cheaper" defense against data poisoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -117,7 +124,7 @@ Evaluation was conducted on MNIST / CIFAR-10 with flip-label and backdoor attack
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
 - [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](noise_tolerance_of_distributionally_robust_learning.md)
 - [\[ICLR 2026\] Robust Amortized Bayesian Inference with Self-Consistency Losses on Unlabeled Data](robust_amortized_bayesian_inference_with_self-consistency_losses_on_unlabeled_da.md)
-- [\[ICLR 2026\] Ads that Stick: Near-Optimal Ad Optimization through Psychological Behavior Models](ads_that_stick_near-optimal_ad_optimization_through_psychological_behavior_model.md)
+- [\[ICLR 2026\] Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence](escaping_model_collapse_via_synthetic_data_verification_near-term_improvements_a.md)
 
 </div>
 

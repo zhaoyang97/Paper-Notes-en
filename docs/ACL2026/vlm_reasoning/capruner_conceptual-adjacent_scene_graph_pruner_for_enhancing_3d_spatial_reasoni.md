@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models
 description: >-
-  [ACL 2026][vlm_reasoning][3D-VL] To address the conflict where feeding complete 3D scene graphs to LLMs leads to token explosion while existing distance-based KNN pruning often removes task-critical relations, this paper proposes CAPruner. It integrates "query semantic relevance" and "spatial proximity" into a lightweight MLP (only 1219 parameters) to
+  [ACL 2026][VLM Reasoning][Scene Graph Pruning] To address the conflict where feeding complete 3D scene graphs to LLMs leads to token explosion while existing distance-based KNN pruning often removes task-critical relations, this paper proposes CAPruner. It integrates "query semantic relevance" and "spatial proximity" into a lightweight MLP (only 1219 parameters) to score the importance of each edge. The model is trained via weak supervision by "aggregating edge weights into n…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - 3D-VL
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Scene Graph Pruning"
+  - "3D-VL"
+  - "Spatial Reasoning"
+  - "Fuzzy Semantic Matching"
+  - "Node-level Supervision"
 date: 2026-05-08
-content_hash: 64a5f492f6de99db
+content_hash: 85c1b62add21d8cd
 ---
+
 # CAPruner: Conceptual-Adjacent Scene Graph Pruner for Enhancing 3D Spatial Reasoning of Large Language Models
 
 **Conference**: ACL 2026  
@@ -147,8 +152,8 @@ The pruning strategy alone provides a stable gain of approximately 1.5–2.1 poi
 
 - [\[AAAI 2026\] Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting](../../AAAI2026/vlm_reasoning/graph-of-mark_promote_spatial_reasoning_in_multimodal_langua.md)
 - [\[ICML 2026\] 3D-RFT: Reinforcement Fine-Tuning for Video-based 3D Scene Understanding](../../ICML2026/vlm_reasoning/3d-rft_reinforcement_fine-tuning_for_video-based_3d_scene_understanding.md)
-- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](../../CVPR2026/vlm_reasoning/beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
 - [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
+- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](../../CVPR2026/vlm_reasoning/beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
 - [\[CVPR 2026\] InfiniBench: Infinite Benchmarking for Visual Spatial Reasoning with Customizable Scene Complexity](../../CVPR2026/vlm_reasoning/infinibench_infinite_benchmarking_for_visual_spatial_reasoning_with_customizable.md)
 
 </div>

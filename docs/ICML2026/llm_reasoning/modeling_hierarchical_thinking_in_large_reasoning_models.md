@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Modeling Hierarchical Thinking in Large Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][Chain-of-Thought] The authors abstract the long CoT of Large Reasoning Models (LRMs) into a 6-state Finite State Machine (FSM). By constructing a Transition Advantage Matrix based on the probability difference between "success vs. failure" states and using Q-Value iteration to derive a long-horizon planning strategy, they perform sparse
+  [ICML2026 Oral][Reasoning][Finite State Machines] The authors abstract the long CoT of Large Reasoning Models (LRMs) into a 6-state Finite State Machine (FSM). By constructing a Transition Advantage Matrix based on the probability difference between "success vs. failure" states and using Q-Value iteration to derive a long-horizon planning strategy, they perform sparse orthogonal activation steering only at sentence boundaries. This approach improves accuracy on difficult prob…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Chain-of-Thought
+  - "ICML2026 Oral"
+  - "Reasoning"
+  - "Finite State Machines"
+  - "Chain-of-Thought"
+  - "Activation Steering"
+  - "Q-Value Planning"
+  - "Reasoning Interpretability"
 date: 2026-05-08
-content_hash: dea234898cb50a3b
+content_hash: c2ebd9c449db51c2
 ---
+
 # Modeling Hierarchical Thinking in Large Reasoning Models
 
 **Conference**: ICML2026 Oral  
@@ -154,11 +159,11 @@ Notably, on MATH-500 with GPT-L, Q-Value improves accuracy from 79.0% to 83.2% w
 
 ## Related Papers
 
+- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](../../ICLR2026/llm_reasoning/on_the_thinking-language_modeling_gap_in_large_language_models.md)
 - [\[ICML 2026\] Inducing Overthink: Hierarchical Genetic Algorithm-based DoS Attack on Black-Box Large Language Reasoning Models](inducing_overthink_hierarchical_genetic_algorithm-based_dos_attack_on_black-box_.md)
+- [\[ICLR 2026\] TSLM: Tree-Structured Language Modeling for Divergent Thinking](../../ICLR2026/llm_reasoning/tslm_tree-structured_language_modeling_for_divergent_thinking.md)
 - [\[ICML 2026\] Are Large Reasoning Models Interruptible?](are_large_reasoning_models_interruptible.md)
-- [\[NeurIPS 2025\] Controlling Thinking Speed in Reasoning Models](../../NeurIPS2025/llm_reasoning/controlling_thinking_speed_in_reasoning_models.md)
 - [\[ICML 2026\] Reasoning Structure of Large Language Models](reasoning_structure_of_large_language_models.md)
-- [\[ICML 2026\] When to Re-Plan: Subgoal Persistence in Hierarchical Latent Reasoning](when_to_re-plan_subgoal_persistence_in_hierarchical_latent_reasoning.md)
 
 </div>
 

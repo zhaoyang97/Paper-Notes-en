@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] The ExoPredicator framework is proposed to jointly learn symbolic state abstractions and causal processes (comprising endogenous actions and exogenous mechanisms). By combining Variational Bayesian Inference with LLM proposals, it learns causal world models with stochastic delays from a minimal number of trajectories,
+  [ICLR 2026][Robotics][Abstract World Models] The ExoPredicator framework is proposed to jointly learn symbolic state abstractions and causal processes (comprising endogenous actions and exogenous mechanisms). By combining Variational Bayesian Inference with LLM proposals, it learns causal world models with stochastic delays from a minimal number of trajectories, enabling rapid generalized planning across five tabletop robotic environments.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Abstract World Models"
+  - "Exogenous Causal Processes"
+  - "Temporal Planning"
+  - "Predicate Invention"
+  - "Variational Inference"
+  - "LLM-guided"
 date: 2026-05-08
-content_hash: b16f9c2cd6dcf78d
+content_hash: 2b7681d8d2cc9ccd
 ---
+
 # ExoPredicator: Learning Abstract Models of Dynamic Worlds for Robot Planning
 
 **Conference**: ICLR 2026  
@@ -136,7 +143,7 @@ Exogenous processes often persist for multiple steps while the abstract state re
 - [\[ICLR 2026\] SLAP: Shortcut Learning for Abstract Planning](slap_shortcut_learning_for_abstract_planning.md)
 - [\[ICLR 2026\] VER: Vision Expert Transformer for Robot Learning via Foundation Distillation and Dynamic Routing](ver_vision_expert_transformer_for_robot_learning_via_foundation_distillation_and.md)
 - [\[ICLR 2026\] AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception](anytouch_2_general_optical_tactile_representation_learning_for_dynamic_tactile_p.md)
-- [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](empowering_multi-robot_cooperation_via_sequential_world_models.md)
+- [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
 - [\[ICLR 2026\] RoboPARA: Dual-Arm Robot Planning with Parallel Allocation and Recomposition Across Tasks](robopara_dual-arm_robot_planning_with_parallel_allocation_and_recomposition_acro.md)
 
 </div>

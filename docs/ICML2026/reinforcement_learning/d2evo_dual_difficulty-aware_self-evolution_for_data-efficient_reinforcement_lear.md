@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] In each RL iteration, D$^2$Evo estimates difficulty using the current Solver, selects medium-difficulty real samples as anchors, and trains a Questioner to synthesize new problems of equivalent difficulty around these anchors. Consequently, it outperforms the GRPO baseline (trained on 19K real samples) in both mathemat
+  [ICML 2026][Reinforcement Learning][GRPO] In each RL iteration, D$^2$Evo estimates difficulty using the current Solver, selects medium-difficulty real samples as anchors, and trains a Questioner to synthesize new problems of equivalent difficulty around these anchors. Consequently, it outperforms the GRPO baseline (trained on 19K real samples) in both mathematics and general reasoning using < 2K real math problems.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "difficulty-aware"
+  - "self-evolution"
+  - "question generation"
+  - "data-efficient RL"
 date: 2026-05-08
-content_hash: 1bad830626f2a96a
+content_hash: 7be191102091a4e0
 ---
+
 # D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -155,9 +160,9 @@ Despite training only on math data, D$^2$Evo also improves general reasoning (Av
 
 - [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
 - [\[ACL 2026\] Easy Samples Are All You Need: Self-Evolving LLMs via Data-Efficient Reinforcement Learning](../../ACL2026/reinforcement_learning/easy_samples_are_all_you_need_self-evolving_llms_via_data-efficient_reinforcemen.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
 - [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](../../AAAI2026/reinforcement_learning/stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
-- [\[ICML 2026\] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning](cpmobius_iterative_coach-player_reasoning_for_data-free_reinforcement_learning.md)
-- [\[ICML 2026\] InftyThink+: Effective and Efficient Infinite-Horizon Reasoning via Reinforcement Learning](inftythink_effective_and_efficient_infinite-horizon_reasoning_via_reinforcement_.md)
+- [\[ICLR 2026\] DuPO: Enabling Reliable Self-Verification via Dual Preference Optimization](../../ICLR2026/reinforcement_learning/dupo_enabling_reliable_self-verification_via_dual_preference_optimization.md)
 
 </div>
 

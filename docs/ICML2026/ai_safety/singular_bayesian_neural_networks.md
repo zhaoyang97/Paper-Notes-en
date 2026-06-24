@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Singular Bayesian Neural Networks
 description: >-
-  [ICML 2026][AI Safety][PAC-Bayes] This paper parameterizes the weight matrix directly as $W=AB^\top$ instead of applying mean-field distributions to $W$ itself, thereby inducing a **low-rank posterior singular with respect to the Lebesgue measure**. This reduces parameter complexity from $O(mn)$ to $O(r(m+n))$ and PAC-Bayes complexity from $\sqrt{mn}$
+  [ICML 2026][AI Safety][Low-rank decomposition] This paper parameterizes the weight matrix directly as $W=AB^\top$ instead of applying mean-field distributions to $W$ itself, thereby inducing a **low-rank posterior singular with respect to the Lebesgue measure**. This reduces parameter complexity from $O(mn)$ to $O(r(m+n))$ and PAC-Bayes complexity from $\sqrt{mn}$ to $\sqrt{r(m+n)}$. Across MLP, LSTM, and Transformer architectures, it achieves OOD detection performance surpas…
 tags:
-  - ICML 2026
-  - AI Safety
-  - PAC-Bayes
+  - "ICML 2026"
+  - "AI Safety"
+  - "Low-rank decomposition"
+  - "singular posterior"
+  - "PAC-Bayes"
+  - "OOD detection"
+  - "mean-field variational inference"
 date: 2026-05-08
-content_hash: 474a2ab270c337d1
+content_hash: 7b3451a171e80572
 ---
+
 # Singular Bayesian Neural Networks
 
 **Conference**: ICML 2026  
@@ -125,10 +130,10 @@ The authors compared Deterministic, Deep Ensemble (5), Full-Rank BBB, Low-Rank (
 ## Related Papers
 
 - [\[ICML 2026\] Active Continual Learning with Metaplastic Binary Bayesian Neural Networks](active_continual_learning_with_metaplastic_binary_bayesian_neural_networks.md)
+- [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](../../ICLR2026/ai_safety/robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
 - [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
 - [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
 
 </div>
 

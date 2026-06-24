@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards
 description: >-
-  [ICML 2026][Alignment & RLHF][RLVR] This paper theoretically demonstrates that the objectives of "improving accuracy" and "reducing calibration error" in RLVR (e.g., GRPO) training have negatively correlated gradient directions under the Fisher metric and are irreconcilable. It proposes DCPO: allowing the model to explicitly output a verbalized confidenc
+  [ICML 2026][LLM Alignment][RLVR] This paper theoretically demonstrates that the objectives of "improving accuracy" and "reducing calibration error" in RLVR (e.g., GRPO) training have negatively correlated gradient directions under the Fisher metric and are irreconcilable. It proposes DCPO: allowing the model to explicitly output a verbalized confidence segment after the reasoning trajectory, assigning independent rewards / advantages / masked gradients to reasoning tokens and…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - RLVR
-  - GRPO
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "RLVR"
+  - "Confidence Calibration"
+  - "Gradient Conflict"
+  - "Decoupled Optimization"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 763d22caf3c0a801
+content_hash: 3aebe66ef97f91f4
 ---
+
 # Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards
 
 **Conference**: ICML 2026  
@@ -140,8 +144,8 @@ Key comparison: DCPO's accuracy is on par with or higher than GRPO (60.8 vs 57.4
 - [\[ICML 2026\] Simultaneous Multi-objective Alignment Across Verifiable and Non-verifiable Rewards](simultaneous_multi-objective_alignment_across_verifiable_and_non-verifiable_rewa.md)
 - [\[ICLR 2026\] Annotation-Efficient Honesty Alignment via Confidence Elicitation and Calibration](../../ICLR2026/llm_alignment/annotation-efficient_honesty_alignment_via_confidence_elicitation_and_calibratio.md)
 - [\[ACL 2026\] Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data](../../ACL2026/llm_alignment/too_correct_to_learn_reinforcement_learning_on_saturated_reasoning_data.md)
-- [\[AAAI 2026\] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF](../../AAAI2026/llm_alignment/decorl_decoupling_reasoning_chains_via_parallel_sub-step_gen.md)
 - [\[ICML 2026\] TruthRL: Incentivizing Truthful LLMs via Reinforcement Learning](truthrl_incentivizing_truthful_llms_via_reinforcement_learning.md)
+- [\[AAAI 2026\] DeCoRL: Decoupling Reasoning Chains via Parallel Sub-Step Generation and Cascaded Reinforcement for Interpretable and Scalable RLHF](../../AAAI2026/llm_alignment/decorl_decoupling_reasoning_chains_via_parallel_sub-step_gen.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Visual Query Localization in the 3D World
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work extends "Visual Query Localization (VQL)" from 2D video to the 3D world. The authors construct **3DVQL**, the first 3D multimodal VQL benchmark (2002 sequences, 170k frames, 6.4K response tracks, 38 categories, Point Cloud+RGB+Depth modalities, per-frame 9DoF box annotations). Furthermore, they propose **LaF*
+  [CVPR 2026][3D Vision][Visual Query Localization] This work extends "Visual Query Localization (VQL)" from 2D video to the 3D world. The authors construct **3DVQL**, the first 3D multimodal VQL benchmark (2002 sequences, 170k frames, 6.4K response tracks, 38 categories, Point Cloud+RGB+Depth modalities, per-frame 9DoF box annotations). Furthermore, they propose **LaF**, a method that lifts 2D features into 3D voxels along the viewing frustum and performs point cloud-image fus…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Visual Query Localization"
+  - "3D Multimodal"
+  - "Point Cloud-Image Fusion"
+  - "9DoF Localization"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: cc4c9a008ffa3270
+content_hash: 4a320377af580735
 ---
+
 # Towards Visual Query Localization in the 3D World
 
 **Conference**: CVPR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] POYO-CAP treats "statistical regularity" (measured by skewness and kurtosis) as an explicit data filtering criterion. It performs masked reconstruction pretraining starting with the most "predictable" neurons (e.g., inhibitory interneurons) and then transfers to noisy neurons for downstream decoding. This transforms ne
+  [ICLR2026][Computational Biology][Calcium Imaging] POYO-CAP treats "statistical regularity" (measured by skewness and kurtosis) as an explicit data filtering criterion. It performs masked reconstruction pretraining starting with the most "predictable" neurons (e.g., inhibitory interneurons) and then transfers to noisy neurons for downstream decoding. This transforms neural heterogeneity in calcium imaging from a bottleneck into a scalable learning advantage—achieving a movie…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Calcium Imaging"
+  - "Neural Decoding"
+  - "Cell Type"
+  - "Self-Supervised Pretraining"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: d765561e173a0d63
+content_hash: 490fa3eb7928aa4c
 ---
+
 # Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining
 
 **Conference**: ICLR2026  
@@ -132,11 +138,11 @@ Ours achieves a ~12–13% relative improvement over training from scratch. The e
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rigidity-Aware Geometric Pretraining for Protein Design and Conformational Ensembles](rigidity-aware_geometric_pretraining_for_protein_design_and_conformational_ensem.md)
 - [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](continuous_multinomial_logistic_regression_for_neural_decoding.md)
 - [\[ICLR 2026\] Pretraining with Re-parametrized Self-Attention: Unlocking Generalization in SNN-Based Neural Decoding Across Time, Brains, and Tasks](pretraining_with_re-parametrized_self-attention_unlocking_generalizationin_snn-b.md)
 - [\[AAAI 2026\] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models](../../AAAI2026/computational_biology/apo2mol_3d_molecule_generation_via_dynamic_pocket-aware_diff.md)
 - [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](../../AAAI2026/computational_biology/mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
-- [\[NeurIPS 2025\] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs](../../NeurIPS2025/computational_biology/meicoder_decoding_visual_stimuli_from_neural_activity_by_leveraging_most_excitin.md)
 
 </div>
 

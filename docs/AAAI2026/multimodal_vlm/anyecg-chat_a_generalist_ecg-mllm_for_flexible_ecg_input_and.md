@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][ECG-MLLM] This work constructs the anyECG dataset (covering three tasks: report generation, waveform localization…
+  [AAAI 2026][Multimodal VLM][ECG-MLLM] This work constructs the anyECG dataset (covering three tasks: report generation, waveform localization, and multi-ECG comparison) and proposes the anyECG-chat model. Through a dynamic ECG input mechanism supporting variable-length, few-lead, and multi-ECG inputs, and a three-stage curriculum learning strategy, anyECG-chat comprehensively outperforms existing ECG-MLLMs in OOD generalization for report generation…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "dynamic input"
   - "curriculum learning"
 date: 2026-05-08
-content_hash: 5881630d640b54e8
+content_hash: ca317ae40cf45553
 ---
 
 # anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding
@@ -128,8 +128,8 @@ The dynamic input mechanism is generalizable to MLLMs for other biosignals (e.g.
 - [\[ICML 2026\] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation](../../ICML2026/multimodal_vlm/ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio.md)
 - [\[NeurIPS 2025\] GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images](../../NeurIPS2025/multimodal_vlm/gem_empowering_mllm_for_grounded_ecg_understanding_with_time_series_and_images.md)
 - [\[AAAI 2026\] Exo2Ego: Exocentric Knowledge Guided MLLM for Egocentric Video Understanding](exo2ego_exocentric_knowledge_guided_mllm_for_egocentric_vide.md)
-- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
 - [\[AAAI 2026\] UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment](unifit_towards_universal_virtual_try-on_with_mllm-guided_semantic_alignment.md)
+- [\[AAAI 2026\] Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)
 
 </div>
 

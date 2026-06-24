@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts
 description: >-
-  [AAAI 2026][Segmentation][slum detection] This paper proposes GRAM (Generalized Region-Aware Mixture-of-Experts), a two-stage test-time adaptation framework. In the first stage…
+  [AAAI 2026][Segmentation][slum detection] This paper proposes GRAM (Generalized Region-Aware Mixture-of-Experts), a two-stage test-time adaptation framework. In the first stage, a MoE architecture is used to train region-specialized experts on million-scale satellite imagery from 12 cities. In the second stage, reliable pseudo-labels are selected via cross-region prediction consistency for self-training, enabling generalization of slum segmentation to unseen African cities.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "test-time adaptation"
   - "domain generalization"
 date: 2026-05-08
-content_hash: 79b6d0669f84c44b
+content_hash: 33fe00c6d14c48d3
 ---
 
 # Generalizable Slum Detection from Satellite Imagery with Mixture-of-Experts
@@ -173,11 +173,11 @@ Key findings: $\mathcal{L}_{MI}$ is the most critical component (removing it cau
 
 ## Related Papers
 
+- [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](../../CVPR2026/segmentation/promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
 - [\[ICCV 2025\] Harnessing Massive Satellite Imagery with Efficient Masked Image Modeling](../../ICCV2025/segmentation/harnessing_massive_satellite_imagery_with_efficient_masked_image_modeling.md)
-- [\[AAAI 2026\] SAM-DAQ: Segment Anything Model with Depth-guided Adaptive Queries for RGB-D Video Salient Object Detection](sam-daq_segment_anything_model_with_depth-guided_adaptive_queries_for_rgb-d_vide.md)
-- [\[AAAI 2026\] From Attribution to Action: Jointly ALIGNing Predictions and Explanations](from_attribution_to_action_jointly_aligning_predictions_and_explanations.md)
-- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
-- [\[ICML 2026\] Beyond Detection: A Structure-Aware Framework for Scene Text Tracking](../../ICML2026/segmentation/beyond_detection_a_structure-aware_framework_for_scene_text_tracking.md)
+- [\[CVPR 2026\] Generalizable Co-Salient Object Detection via Mixed Content-Style Modulation](../../CVPR2026/segmentation/generalizable_co-salient_object_detection_via_mixed_content-style_modulation.md)
+- [\[ICML 2025\] Alberta Wells Dataset: Pinpointing Oil and Gas Wells from Satellite Imagery](../../ICML2025/segmentation/alberta_wells_dataset_pinpointing_oil_and_gas_wells_from_satellite_imagery.md)
+- [\[CVPR 2025\] Towards Generalizable Scene Change Detection](../../CVPR2025/segmentation/towards_generalizable_scene_change_detection.md)
 
 </div>
 

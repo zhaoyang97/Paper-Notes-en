@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Gumbel Distillation for Parallel Text Generation
 description: >-
-  [ICLR 2026][LLM Efficiency][Gumbel-Max] This work uses the Gumbel-Max trick to externalize the "sampling randomness" of an autoregressive teacher into a deterministic Gumbel noise "blueprint." This allows parallel student models to learn a simple supervised "noise $\rightarrow$ text" mapping, thereby reducing the dimensionality of the difficult joint distrib
+  [ICLR 2026][LLM Efficiency][Parallel Decoding] This work uses the Gumbel-Max trick to externalize the "sampling randomness" of an autoregressive teacher into a deterministic Gumbel noise "blueprint." This allows parallel student models to learn a simple supervised "noise $\rightarrow$ text" mapping, thereby reducing the dimensionality of the difficult joint distribution modeling problem into a straightforward regression and significantly closing the quality gap between parall…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Gumbel-Max
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Parallel Decoding"
+  - "Masked Diffusion Language Models"
+  - "Multi-token Prediction"
+  - "Gumbel-Max"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: 41b2b640d04a3648
+content_hash: fed900cacc773a32
 ---
+
 # Gumbel Distillation for Parallel Text Generation
 
 **Conference**: ICLR 2026  
@@ -126,15 +130,15 @@ MDLM on LM1B, comparing classic distillation and noise types.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
+- [\[ICLR 2026\] dParallel: Learnable Parallel Decoding for dLLMs](dparallel_learnable_parallel_decoding_for_dllms.md)
 - [\[ICLR 2026\] FutureFill: Fast Generation from Convolutional Sequence Models](futurefill_fast_generation_from_convolutional_sequence_models.md)
 - [\[ICLR 2026\] Retrospective Sparse Attention for Efficient Long-Context Generation](retrospective_sparse_attention_for_efficient_long-context_generation.md)
 - [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
-- [\[ICLR 2026\] LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation](loragen_structure-aware_weight_space_learning_for_lora_generation.md)
 
 </div>
 

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] On Regret Bounds of Thompson Sampling for Bayesian Optimization
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper systematically completes the regret analysis of Gaussian Process Thompson Sampling (GP-TS) in the Bayesian setting: it first constructs a counter-example proving that GP-TS can only achieve polynomial dependence on the failure probability $\delta$ (cannot reach $\log(1/\delta)$), then provides a second-momen
+  [ICML 2026][Learning Theory][Gaussian Process] This paper systematically completes the regret analysis of Gaussian Process Thompson Sampling (GP-TS) in the Bayesian setting: it first constructs a counter-example proving that GP-TS can only achieve polynomial dependence on the failure probability $\delta$ (cannot reach $\log(1/\delta)$), then provides a second-moment upper bound for cumulative regret that tightens the $\delta$ dependence by $1/\sqrt{\delta}$ times…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Bayesian Optimization"
+  - "Multi-Armed Bandits"
+  - "Gaussian Process"
+  - "Thompson Sampling"
+  - "Cumulative Regret"
+  - "Lenient Regret"
+  - "Information Gain"
 date: 2026-05-08
-content_hash: 2149af3a6d4391ef
+content_hash: 9ec2f322bbd674ac
 ---
+
 # On Regret Bounds of Thompson Sampling for Bayesian Optimization
 
 **Conference**: ICML 2026  
@@ -119,11 +127,11 @@ As this is a pure theory paper, there are no numerical experiments. The followin
 
 ## Related Papers
 
+- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](../../ICLR2026/learning_theory/variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](../../ICLR2026/learning_theory/queue_length_regret_bounds_for_contextual_queueing_bandits.md)
+- [\[ICLR 2026\] Discounted Online Convex Optimization: Uniform Regret Across a Continuous Interval](../../ICLR2026/learning_theory/discounted_online_convex_optimization_uniform_regret_across_a_continuous_interva.md)
+- [\[ICLR 2026\] Poisson Midpoint Method for Log-Concave Sampling: Beyond the Strong Error Lower Bounds](../../ICLR2026/learning_theory/poisson_midpoint_method_for_log_concave_sampling_beyond_the_strong_error_lower_b.md)
 - [\[ICML 2026\] Learning Credal Ensembles via Distributionally Robust Optimization](learning_credal_ensembles_via_distributionally_robust_optimization.md)
-- [\[ICLR 2026\] Alternating Diffusion for Proximal Sampling with Zeroth Order Queries](../../ICLR2026/learning_theory/alternating_diffusion_for_proximal_sampling_with_zeroth_order_queries.md)
-- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
-- [\[NeurIPS 2025\] Sample-Adaptivity Tradeoff in On-Demand Sampling](../../NeurIPS2025/learning_theory/sample-adaptivity_tradeoff_in_on-demand_sampling.md)
-- [\[ICLR 2026\] Better Bounds for the Distributed Experts Problem](../../ICLR2026/learning_theory/better_bounds_for_the_distributed_experts_problem.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Massive Editing for Large Language Models Based on Dynamic Weight Generation
 description: >-
-  [ICLR 2026][LLM (Other)][Knowledge Editing] MeG attaches a "dynamic weight neuron" to the LLM, using a diffusion model to generate the neuron's weights conditioned on the knowledge query. This allows massive knowledge editing (1024–10k entries) while adding only a single neuron—simultaneously expanding knowledge capacity and locking interference to the original
+  [ICLR 2026][LLM (Other)][Knowledge Editing] MeG attaches a "dynamic weight neuron" to the LLM, using a diffusion model to generate the neuron's weights conditioned on the knowledge query. This allows massive knowledge editing (1024–10k entries) while adding only a single neuron—simultaneously expanding knowledge capacity and locking interference to the original model as a constant, thereby significantly outperforming existing weight-modification methods on Locality metrics.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - Knowledge Editing
-  - Massive Editing
-  - Dynamic Weight Generation
-  - Diffusion Transformer
-  - Locality
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Knowledge Editing"
+  - "Massive Editing"
+  - "Dynamic Weight Generation"
+  - "Diffusion Transformer"
+  - "Locality"
 date: 2026-05-08
-content_hash: 2b43ef288d250f73
+content_hash: ac655c860d3e1dde
 ---
+
 # Massive Editing for Large Language Models Based on Dynamic Weight Generation
 
 **Conference**: ICLR 2026  
@@ -123,6 +124,7 @@ After 10,000 edits, MeG shows almost no performance drop (and even slight gains)
 - Value: ⭐⭐⭐⭐ — Significant leads in Locality and preservation of general abilities make this highly meaningful for practical batch KE.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

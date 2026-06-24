@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Intention-Conditioned Flow Occupancy Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] InFOM is proposed to construct an intention-conditioned occupancy model using flow matching. By inferring latent intentions from data via variational inference, it enables RL pre-training on unlabeled data. It achieves a $1.8\times$ median return gain and a $36\%$ success rate improvement across 36 state-based and 4 vi
+  [Image Generation] InFOM is proposed to construct an intention-conditioned occupancy model using flow matching. By inferring latent intentions from data via variational inference, it enables RL pre-training on unlabeled data. It achieves a $1.8\times$ median return gain and a $36\%$ success rate improvement across 36 state-based and 4 visual tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "Image Generation"
 date: 2026-05-08
-content_hash: 4923b852ef79a3b8
+content_hash: f08eb75999063d17
 ---
+
 # Intention-Conditioned Flow Occupancy Models
 
 ## TL;DR
@@ -140,8 +140,8 @@ Compared against 8 baseline methods on 36 state-based tasks and 4 visual tasks:
 
 - [\[ICCV 2025\] SCFlow: Implicitly Learning Style and Content Disentanglement with Flow Models](../../ICCV2025/image_generation/scflow_implicitly_learning_style_and_content_disentanglement_with_flow_models.md)
 - [\[ICCV 2025\] MAVFlow: Preserving Paralinguistic Elements with Conditional Flow Matching for Zero-Shot AV2AV Multilingual Translation](../../ICCV2025/image_generation/mavflow_preserving_paralinguistic_elements_with_conditional_flow_matching_for_ze.md)
-- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 - [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
+- [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
 - [\[NeurIPS 2025\] Emergence and Evolution of Interpretable Concepts in Diffusion Models](../../NeurIPS2025/image_generation/emergence_and_evolution_of_interpretable_concepts_in_diffusi.md)
 
 </div>

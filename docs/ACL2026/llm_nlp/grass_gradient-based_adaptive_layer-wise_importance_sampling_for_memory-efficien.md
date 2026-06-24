@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] Ours proposes the GRASS framework, which utilizes Mean Gradient Norm (MGN) as a task-aware and training-phase-aware metric for layer importance. It adaptively samples and updates subsets of model layers for fine-tuning, combined with a layer-wise optimizer state offloading mechanism. This approach achieves an average a
+  [ACL 2026 Findings][LLM (Other)][Layer sampling] Ours proposes the GRASS framework, which utilizes Mean Gradient Norm (MGN) as a task-aware and training-phase-aware metric for layer importance. It adaptively samples and updates subsets of model layers for fine-tuning, combined with a layer-wise optimizer state offloading mechanism. This approach achieves an average accuracy improvement of up to 4.38 points while reducing memory usage by up to 19.97%.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "Layer sampling"
+  - "Gradient importance"
+  - "Memory-efficient fine-tuning"
+  - "Optimizer state offloading"
+  - "Adaptive training"
 date: 2026-05-08
-content_hash: b74a6531d61f1bbd
+content_hash: 008bc59fd7fb0308
 ---
+
 # GRASS: Gradient-based Adaptive Layer-wise Importance Sampling for Memory-Efficient LLM Fine-tuning
 
 **Conference**: ACL 2026 Findings  
@@ -140,7 +146,7 @@ Accuracy comparison on arithmetic reasoning tasks (Average across six benchmarks
 - [\[ACL 2025\] A Semantic-Aware Layer-Freezing Approach to Computation-Efficient Fine-Tuning of Language Models](../../ACL2025/llm_nlp/a_semantic-aware_layer-freezing_approach_to_computation-efficient_fine-tuning_of.md)
 - [\[ACL 2025\] GORP: Continual Gradient Low-Rank Projection Fine-Tuning for LLMs](../../ACL2025/llm_nlp/gorp_continual_gradient_projection.md)
 - [\[ACL 2025\] Efficient Ensemble for Fine-tuning Language Models on Multiple Datasets](../../ACL2025/llm_nlp/efficient_ensemble_for_fine-tuning_language_models_on_multiple_datasets.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](../../NeurIPS2025/llm_nlp/synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
+- [\[ICLR 2026\] COSMOS: A Hybrid Adaptive Optimizer for Efficient Training of Large Language Models](../../ICLR2026/llm_nlp/cosmos_a_hybrid_adaptive_optimizer_for_efficient_training_of_large_language_mode.md)
 
 </div>
 

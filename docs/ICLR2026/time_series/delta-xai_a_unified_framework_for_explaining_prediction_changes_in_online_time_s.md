@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring
 description: >-
-  [ICLR 2026][Time Series][XAI] A unified Delta-XAI framework is proposed to adapt 14 existing XAI methods to the scenario of explaining prediction changes in online time series via a wrapper function. Furthermore, the SWING (Shifted Window Integrated Gradients) method is introduced, which utilizes past observations to construct integration paths for
+  [ICLR 2026][Time Series][XAI] A unified Delta-XAI framework is proposed to adapt 14 existing XAI methods to the scenario of explaining prediction changes in online time series via a wrapper function. Furthermore, the SWING (Shifted Window Integrated Gradients) method is introduced, which utilizes past observations to construct integration paths for capturing temporal dependencies, consistently outperforming existing methods across multiple evaluation metrics.
 tags:
-  - ICLR 2026
-  - Time Series
-  - XAI
-  - Integrated Gradients
+  - "ICLR 2026"
+  - "Time Series"
+  - "XAI"
+  - "Online Monitoring"
+  - "Feature Attribution"
+  - "Integrated Gradients"
 date: 2026-05-08
-content_hash: 6eaca743d25290a0
+content_hash: 0cfa18c0c8d9cf24
 ---
+
 # Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring
 
 **Conference**: ICLR 2026  

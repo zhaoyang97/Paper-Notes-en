@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection
 description: >-
-  [CVPR 2026][Autonomous Driving][BEV] RaGS models the scene as a continuous 3D Gaussian field. It initializes Gaussians using monocular foreground cues, iteratively absorbs radar geometry and image semantics to "move" Gaussians towards foreground objects, and finally renders multi-layer BEV features for detection. It achieves SOTA on three 4D radar-camera
+  [CVPR 2026][3D Vision][4D mmWave Radar] RaGS models the scene as a continuous 3D Gaussian field. It initializes Gaussians using monocular foreground cues, iteratively absorbs radar geometry and image semantics to "move" Gaussians towards foreground objects, and finally renders multi-layer BEV features for detection. It achieves SOTA on three 4D radar-camera benchmarks: VoD, TJ4DRadSet, and OmniHD-Scenes.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - BEV
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D mmWave Radar"
+  - "Camera Fusion"
+  - "3D Gaussian Splatting"
+  - "3D Object Detection"
+  - "BEV"
 date: 2026-05-08
-content_hash: 4759b644ecf2356a
+content_hash: 47fcef32a7cdabc0
 ---
+
 # RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -120,11 +125,11 @@ On VoD, compared to the strong BEV baseline LXL, Ours improves mAPEAA / mAPDC by
 
 ## Related Papers
 
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
-- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
-- [\[ICCV 2025\] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection](../../ICCV2025/autonomous_driving/cvfusion_cross-view_fusion_of_4d_radar_and_camera_for_3d_object_detection.md)
-- [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
-- [\[CVPR 2026\] ReManNet: A Riemannian Manifold Network for Monocular 3D Lane Detection](remannet_a_riemannian_manifold_network_for_monocular_3d_lane_detection.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
+- [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
+- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
 
 </div>
 

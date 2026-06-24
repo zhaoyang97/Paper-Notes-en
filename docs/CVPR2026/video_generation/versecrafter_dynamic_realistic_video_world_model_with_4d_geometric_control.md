@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] This paper proposes VerseCrafter, a video world model based on a 4D geometric control representation (static background point cloud + per-object 3D Gaussian trajectories). By injecting 4D control signals into a frozen Wan2.1-14B video diffusion model via a lightweight GeoAdapter, it achieves precise and decoupled contr
+  [CVPR 2026][Video Generation][Video World Model] This paper proposes VerseCrafter, a video world model based on a 4D geometric control representation (static background point cloud + per-object 3D Gaussian trajectories). By injecting 4D control signals into a frozen Wan2.1-14B video diffusion model via a lightweight GeoAdapter, it achieves precise and decoupled control over camera and multi-object motions. Additionally, a large-scale real-world dataset, VerseControl4D…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video World Model"
+  - "4D Geometric Control"
+  - "3D Gaussian Trajectory"
+  - "Camera and Object Motion"
+  - "Video Diffusion Model"
 date: 2026-05-08
-content_hash: 9e66462d80392c61
+content_hash: 962429b1a54bddc8
 ---
+
 # VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control
 
 **Conference**: CVPR 2026  
@@ -140,8 +146,8 @@ As 4D control data is scarce, an automated pipeline extracts it from real videos
 ## Related Papers
 
 - [\[CVPR 2026\] ProPhy: Progressive Physical Alignment for Dynamic World Simulation](prophy_progressive_physical_alignment_for_dynamic_world_simulation.md)
-- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 - [\[AAAI 2026\] 3D4D: An Interactive Editable 4D World Model via 3D Video Generation](../../AAAI2026/video_generation/3d4d_an_interactive_editable_4d_world_model_via_3d_video_generation.md)
+- [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
 - [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](physical_object_understanding_with_a_physically_controllable_world_model.md)
 - [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](yume15_a_text-controlled_interactive_world_generation_model.md)
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeepScientist: Advancing Frontier-Pushing Scientific Findings Progressively
 description: >-
-  [ICLR 2026][LLM Agent][Findings Memory] DeepScientist models "automated scientific discovery" as a goal-oriented Bayesian optimization problem. Using a continuously accumulating Findings Memory, it iteratively "hypothesizes—implements/verifies—analyzes/generalizes" over a month-level timescale. After consuming over 20,000 GPU hours, generating approximately
+  [ICLR2026][LLM Agent][Automated Research] DeepScientist models "automated scientific discovery" as a goal-oriented Bayesian optimization problem. Using a continuously accumulating Findings Memory, it iteratively "hypothesizes—implements/verifies—analyzes/generalizes" over a month-level timescale. After consuming over 20,000 GPU hours, generating approximately 5,000 ideas, and verifying about 1,100 of them, it surpassed human 2025 SOTA on three frontier AI tasks by 183.7%…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Findings Memory
-  - AI Scientist
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Automated Research"
+  - "Goal-Oriented Discovery"
+  - "Bayesian Optimization"
+  - "Findings Memory"
+  - "AI Scientist"
 date: 2026-05-08
-content_hash: 449456f63885babf
+content_hash: 96ec63e53a20fc19
 ---
+
 # DeepScientist: Advancing Frontier-Pushing Scientific Findings Progressively
 
 **Conference**: ICLR2026  
@@ -127,11 +131,11 @@ The discovered methods include: **A2P** (Abduction-Action-Prediction) for counte
 
 ## Related Papers
 
+- [\[ICLR 2026\] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](search_self-play_pushing_the_frontier_of_agent_capability_without_supervision.md)
 - [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)
 - [\[ICLR 2026\] Pushing Test-Time Scaling Limits of Deep Search with Asymmetric Verification](pushing_test-time_scaling_limits_of_deep_search_with_asymmetric_verification.md)
 - [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
-- [\[ICLR 2026\] AutoFigure: Generating and Refining Publication-Ready Scientific Illustrations](autofigure_generating_and_refining_publication-ready_scientific_illustrations.md)
-- [\[ICLR 2026\] SR-Scientist: Scientific Equation Discovery With Agentic AI](sr-scientist_scientific_equation_discovery_with_agentic_ai.md)
+- [\[ICLR 2026\] SciNav: A General Agent Framework for Scientific Coding Tasks](scinav_a_general_agent_framework_for_scientific_coding_tasks.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head
 description: >-
-  [ICLR 2026][LLM Efficiency][Linear Attention] This paper identifies "Global Context Collapse" as the root cause of performance degradation in linear attention—where all queries share a fixed $d \times d$ global KV summary, capping the attention matrix rank at $d$. The authors propose Multi-Head Linear Attention (MHLA), which partitions the sequence along the token
+  [ICLR 2026][LLM Efficiency][Linear Attention] This paper identifies "Global Context Collapse" as the root cause of performance degradation in linear attention—where all queries share a fixed $d \times d$ global KV summary, capping the attention matrix rank at $d$. The authors propose Multi-Head Linear Attention (MHLA), which partitions the sequence along the token dimension and utilizes a learnable coefficient matrix for query-conditioned mixing of local summaries. This appro…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Linear Attention
-  - Token-Level Multi-Head
-  - Global Context Collapse
-  - Rank
-  - Linear Complexity
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Token-Level Multi-Head"
+  - "Global Context Collapse"
+  - "Rank"
+  - "Linear Complexity"
 date: 2026-05-08
-content_hash: 85a124e90a885843
+content_hash: b49eb6954180c6d9
 ---
+
 # MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head
 
 **Conference**: ICLR 2026  
@@ -156,11 +157,11 @@ The number of heads is not "the more the better": $M=16$ (satisfying $M^2 \le N$
 
 ## Related Papers
 
-- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
 - [\[ICLR 2026\] Log-Linear Attention](log-linear_attention.md)
-- [\[ICML 2025\] MoH: Multi-Head Attention as Mixture-of-Head Attention](../../ICML2025/llm_efficiency/moh_multi-head_attention_as_mixture-of-head_attention.md)
-- [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
 - [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
+- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
+- [\[ICML 2025\] MoH: Multi-Head Attention as Mixture-of-Head Attention](../../ICML2025/llm_efficiency/moh_multi-head_attention_as_mixture-of-head_attention.md)
+- [\[ICLR 2026\] FlexLinearAttention: Compiling a Unified Abstraction into Scalable Kernels for Linear Attention](flexlinearattention_compiling_a_unified_abstraction_into_scalable_kernels_for_li.md)
 
 </div>
 

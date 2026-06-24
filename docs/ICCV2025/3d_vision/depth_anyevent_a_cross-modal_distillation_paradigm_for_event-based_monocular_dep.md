@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation
 description: >-
-  [3D Vision] This paper proposes a cross-modal distillation paradigm that leverages a vision foundation model (VFM) from the image domain (Depth Anything v2) to generate pseudo-labels for training event-based depth estima…
+  [3D Vision] This paper proposes a cross-modal distillation paradigm that leverages a vision foundation model (VFM) from the image domain (Depth Anything v2) to generate pseudo-labels for training event-based depth estimation networks. It further introduces a VFM-based recurrent architecture, DepthAnyEvent-R, achieving state-of-the-art performance in event-based monocular depth estimation without requiring costly depth annotations.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: 23ce695089900ad4
+content_hash: 8ccc5b65d1d548e7
 ---
 
 # Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation
@@ -144,11 +144,11 @@ The method is concise and elegant, with thorough experiments and clearly articul
 
 ## Related Papers
 
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
 - [\[ICCV 2025\] JointDiT: Enhancing RGB-Depth Joint Modeling with Diffusion Transformers](jointdit_enhancing_rgb-depth_joint_modeling_with_diffusion_transformers.md)
 - [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
 - [\[ICCV 2025\] HORT: Monocular Hand-held Objects Reconstruction with Transformers](hort_monocular_hand-held_objects_reconstruction_with_transformers.md)
-- [\[ICCV 2025\] Diving into the Fusion of Monocular Priors for Generalized Stereo Matching](diving_into_the_fusion_of_monocular_priors_for_generalized_stereo_matching.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAM-NER: Semantic Archetype Mediation for Zero-Shot Named Entity Recognition
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] SAM-NER utilizes a three-stage mediation framework consisting of "Entity Discovery → 14 Universal Semantic Archetypes → Target Type Definition Calibration" to alleviate schema drift in zero-shot NER, achieving an average micro-F1 of 66.3 on CrossNER, surpassing several strong baselines.
+  [ACL2026 Findings][NLP Understanding][Zero-Shot NER] SAM-NER utilizes a three-stage mediation framework consisting of "Entity Discovery → 14 Universal Semantic Archetypes → Target Type Definition Calibration" to alleviate schema drift in zero-shot NER, achieving an average micro-F1 of 66.3 on CrossNER, surpassing several strong baselines.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL2026 Findings"
+  - "NLP Understanding"
+  - "Zero-Shot NER"
+  - "Semantic Archetypes"
+  - "Cross-Domain Transfer"
+  - "Definition Calibration"
+  - "Entity Discovery"
 date: 2026-05-08
-content_hash: 02849cd00285195b
+content_hash: 817dd5da1d6c008d
 ---
+
 # SAM-NER: Semantic Archetype Mediation for Zero-Shot Named Entity Recognition
 
 **Conference**: ACL2026 Findings  

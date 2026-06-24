@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Skill Path: Unveiling Language Skills from Circuit Graphs
 description: >-
-  [AAAI2026][Graph Learning][Mechanistic Interpretability] This paper proposes the concept of Skill Path and a three-step framework (Decomposition–Pruning–Causal Mediation) to extract linear paths corresponding to specific…
+  [AAAI2026 Oral][Graph Learning][Mechanistic Interpretability] This paper proposes the concept of Skill Path and a three-step framework (Decomposition–Pruning–Causal Mediation) to extract linear paths corresponding to specific language skills from circuit graphs, and quantitatively validates two core conjectures: Stratification and Inclusiveness of skills.
 tags:
-  - "AAAI2026"
+  - "AAAI2026 Oral"
   - "Graph Learning"
   - "Mechanistic Interpretability"
   - "Circuit Discovery"
@@ -12,7 +12,7 @@ tags:
   - "Causal Mediation"
   - "Language Models"
 date: 2026-05-08
-content_hash: 709a938a8331016c
+content_hash: 993a078c7b6d041a
 ---
 
 # Skill Path: Unveiling Language Skills from Circuit Graphs
@@ -174,10 +174,10 @@ Key distinction from works such as IOI circuit analysis: existing methods discov
 ## Related Papers
 
 - [\[AAAI 2026\] Enhancing Logical Expressiveness in GNNs via Path-Neighbor Aggregation](enhancing_logical_expressiveness_in_graph_neural_networks_via_path-neighbor_aggr.md)
-- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](../../NeurIPS2025/graph_learning/deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
+- [\[ICLR 2026\] Topology Matters in RTL Circuit Representation Learning](../../ICLR2026/graph_learning/topology_matters_in_rtl_circuit_representation_learning.md)
 - [\[AAAI 2026\] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training](mug_meta-path-aware_universal_heterogeneous_graph_pre-training.md)
-- [\[CVPR 2026\] R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII](../../CVPR2026/graph_learning/r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii.md)
-- [\[NeurIPS 2025\] Dynamic Bundling with Large Language Models for Zero-Shot Inference on Text-Attributed Graphs](../../NeurIPS2025/graph_learning/dynamic_bundling_with_large_language_models_for_zero-shot_inference_on_text-attr.md)
+- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](../../ICLR2026/graph_learning/global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
+- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](../../NeurIPS2025/graph_learning/deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
 
 </div>
 

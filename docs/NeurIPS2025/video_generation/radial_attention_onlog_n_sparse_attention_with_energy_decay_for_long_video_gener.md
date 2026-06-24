@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][Sparse Attention] Radial Attention identifies a "spatiotemporal energy decay" phenomenon in video diffusion models…
+  [NeurIPS 2025][Video Generation][Sparse Attention] Radial Attention identifies a "spatiotemporal energy decay" phenomenon in video diffusion models, wherein attention scores decay exponentially with spatiotemporal distance. Based on this finding, the authors design a static sparse attention mask with O(n log n) complexity, achieving up to 3.7× inference speedup on models such as HunyuanVideo and Wan2.1, and enabling 4× longer video generation via LoRA fine-tuning.
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "Long Video Generation"
   - "LoRA Fine-tuning"
 date: 2026-05-08
-content_hash: 8353051df865a2b5
+content_hash: 4bdd8de70d0532e8
 ---
 
 # Radial Attention: O(n log n) Sparse Attention with Energy Decay for Long Video Generation
@@ -154,9 +154,9 @@ Radial Attention is a static sparse attention mechanism that replaces dense atte
 
 - [\[NeurIPS 2025\] VORTA: Efficient Video Diffusion via Routing Sparse Attention](vorta_efficient_video_diffusion_via_routing_sparse_attention.md)
 - [\[NeurIPS 2025\] VSA: Faster Video Diffusion with Trainable Sparse Attention](vsa_faster_video_diffusion_with_trainable_sparse_attention.md)
-- [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
+- [\[ICLR 2026\] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation](../../ICLR2026/video_generation/moga_mixture-of-groups_attention_for_end-to-end_long_video_generation.md)
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
+- [\[ICML 2026\] DFSAttn: Dynamic Fine-Grained Sparse Attention for Efficient Video Generation](../../ICML2026/video_generation/dfsattn_dynamic_fine-grained_sparse_attention_for_efficient_video_generation.md)
 
 </div>
 

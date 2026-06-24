@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search
 description: >-
-  [AAAI 2026][Robotics][Task Discovery] This paper formalizes the **Human-Centric Open-Future Task Discovery (HOTD)** problem—identifying tasks that reduce human burden across multiple possible futures in scenarios where h…
+  [AAAI 2026][Robotics][Task Discovery] This paper formalizes the **Human-Centric Open-Future Task Discovery (HOTD)** problem—identifying tasks that reduce human burden across multiple possible futures in scenarios where human intentions are concurrent and dynamically evolving. The authors construct the HOTD-Bench benchmark (2K+ real-world videos) and propose **CMAST** (Collaborative Multi-Agent Search Tree), which substantially outperforms existing LMM baselines via a multi-ag…
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Search Tree"
   - "Embodied AI"
 date: 2026-05-08
-content_hash: d75a6a6eb62ea53b
+content_hash: 4ab1d39b86cedb21
 ---
 
 # Human-Centric Open-Future Task Discovery: Formulation, Benchmark, and Scalable Tree-Based Search
@@ -202,10 +202,10 @@ Regardless of the underlying LMM, the CMAST framework consistently delivers at l
 ## Related Papers
 
 - [\[AAAI 2026\] 10 Open Challenges Steering the Future of Vision-Language-Action Models](10_open_challenges_steering_the_future_of_vision-language-ac.md)
-- [\[AAAI 2026\] Object-Centric Latent Action Learning](object-centric_latent_action_learning.md)
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](../../CVPR2026/robotics/igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)
-- [\[NeurIPS 2025\] COOPERA: Continual Open-Ended Human-Robot Assistance](../../NeurIPS2025/robotics/coopera_continual_open_ended_human_robot_assistance.md)
-- [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](theory_of_mind_for_explainable_human-robot_interaction.md)
+- [\[AAAI 2026\] Object-Centric Latent Action Learning](object-centric_latent_action_learning.md)
+- [\[NeurIPS 2025\] Periodic Skill Discovery](../../NeurIPS2025/robotics/periodic_skill_discovery.md)
+- [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Addressing the issue where "unconditional cross-modal mapping" in RGB-3D multimodal anomaly detection misidentifies diverse normal variations (e.g., different colors for the same geometry) as anomalies, CPMAD dynamically extracts "consensus prototypes" (cross-modal consistent, anomaly-free subspaces) and "supplementary
+  [CVPR 2026][Object Detection][Multimodal Anomaly Detection] Addressing the issue where "unconditional cross-modal mapping" in RGB-3D multimodal anomaly detection misidentifies diverse normal variations (e.g., different colors for the same geometry) as anomalies, CPMAD dynamically extracts "consensus prototypes" (cross-modal consistent, anomaly-free subspaces) and "supplementary prototypes" (capturing modality-specific cues ignored by consensus). These complementary prototypes…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Multimodal Anomaly Detection"
+  - "Cross-modal mapping"
+  - "Prototype learning"
+  - "Residual attention"
+  - "Efficient inference"
 date: 2026-05-08
-content_hash: 6b1856d241619f26
+content_hash: 43513b32e134d7d9
 ---
+
 # Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -172,11 +178,11 @@ Compared to the most efficient previous method, CPMAD-S achieves 5.05× speedup,
 
 ## Related Papers
 
-- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
-- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
 - [\[CVPR 2026\] Towards an Incremental Unified Multimodal Anomaly Detection: Augmenting Multimodal Denoising From an Information Bottleneck Perspective](towards_an_incremental_unified_multimodal_anomaly_detection_augmenting_multimoda.md)
-- [\[CVPR 2026\] Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)
 - [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
+- [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
+- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](mmrad_multimodal_anomaly_detection.md)
+- [\[CVPR 2026\] CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)
 
 </div>
 

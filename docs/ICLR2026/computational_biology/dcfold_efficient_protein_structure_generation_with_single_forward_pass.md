@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DCFold: Efficient Protein Structure Generation with Single Forward Pass
 description: >-
-  [ICLR 2026][Computational Biology][AlphaFold3] DCFold simultaneously distills the two major iterative bottlenecks of AlphaFold3 (multi-step diffusion and Pairformer recycling) using "dual consistency." Combined with a Temporal Geodesic Matching (TGM) scheduler designed for variable-length protein sequences, it achieves AlphaFold3-level structure prediction accuracy
+  [ICLR 2026][Computational Biology][Protein Folding] DCFold simultaneously distills the two major iterative bottlenecks of AlphaFold3 (multi-step diffusion and Pairformer recycling) using "dual consistency." Combined with a Temporal Geodesic Matching (TGM) scheduler designed for variable-length protein sequences, it achieves AlphaFold3-level structure prediction accuracy in a single forward pass, providing approximately 15× inference acceleration (average 133s → 9s).
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - AlphaFold3
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Folding"
+  - "AlphaFold3"
+  - "Consistency Models"
+  - "Single-step Generation"
+  - "Diffusion Distillation"
 date: 2026-05-08
-content_hash: 081c5ff19f70dbe6
+content_hash: 1011b2937d838b84
 ---
+
 # DCFold: Efficient Protein Structure Generation with Single Forward Pass
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ The effectiveness of TGM was compared against various general consistency models
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Prediction of Large Protein Complexes via Subunit-Guided Hierarchical Refinement](efficient_prediction_of_large_protein_complexes_via_subunit-guided_hierarchical_.md)
 - [\[ICLR 2026\] GAGA: Gaussianity-Aware Gaussian Approximation for Efficient 3D Molecular Generation](gaga_gaussianity-aware_gaussian_approximation_for_efficient_3d_molecular_generat.md)
 - [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
 - [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
 - [\[ICLR 2026\] Convex Efficient Coding](convex_efficient_coding.md)
-- [\[ICLR 2026\] ProteinAE: Protein Diffusion Autoencoders for Structure Encoding](proteinae_protein_diffusion_autoencoders_for_structure_encoding.md)
 
 </div>
 

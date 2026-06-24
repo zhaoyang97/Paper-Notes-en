@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis
 description: >-
-  [ACL 2026][LLM Reasoning][Legislator-Executor] This paper proposes MathAgent, a hierarchical data synthesis framework based on the adversarial evolution of constraint graphs. It reformulates data synthesis from a text generation task into an unsupervised optimization problem of constraint graphs. The framework evolves question skeletons through a Legislator tri-age
+  [ACL 2026 Findings][Reasoning][Mathematical Reasoning] This paper proposes MathAgent, a hierarchical data synthesis framework based on the adversarial evolution of constraint graphs. It reformulates data synthesis from a text generation task into an unsupervised optimization problem of constraint graphs. The framework evolves question skeletons through a Legislator tri-agent system, which are then instantiated into natural language by an Executor. With only 1K synthesized sam…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - Legislator-Executor
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Mathematical Reasoning"
+  - "Data Synthesis"
+  - "Constraint Graphs"
+  - "Adversarial Evolution"
+  - "Legislator-Executor"
 date: 2026-05-08
-content_hash: c1e1341f80b6d8f5
+content_hash: 1aef41653fe56273
 ---
+
 # MathAgent: Adversarial Evolution of Constraint Graphs for Mathematical Reasoning Data Synthesis
 
 **Conference**: ACL 2026 Findings  
@@ -132,10 +137,17 @@ Synthetic data is used for fine-tuning the target model using standard SFT. Duri
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](efficient_prm_training_data_synthesis_via_formal_verification.md)
+- [\[ACL 2026\] Self-Reinforcing Controllable Synthesis of Rare Relational Data via Bayesian Calibration](self-reinforcing_controllable_synthesis_of_rare_relational_data_via_bayesian_cal.md)
+- [\[ICLR 2026\] DESIGNER: Design-Logic-Guided Multidisciplinary Data Synthesis for LLM Reasoning](../../ICLR2026/llm_reasoning/designer_design-logic-guided_multidisciplinary_data_synthesis_for_llm_reasoning.md)
+- [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](../../ICML2026/llm_reasoning/an_information-theoretic_criterion_for_efficient_data_synthesis.md)
+- [\[ICLR 2026\] Generative Adversarial Reasoner: Enhancing LLM Reasoning with Adversarial Reinforcement Learning](../../ICLR2026/llm_reasoning/generative_adversarial_reasoner_enhancing_llm_reasoning_with_adversarial_reinfor.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Efficient PRM Training Data Synthesis via Formal Verification](efficient_prm_training_data_synthesis_via_formal_verification.md)

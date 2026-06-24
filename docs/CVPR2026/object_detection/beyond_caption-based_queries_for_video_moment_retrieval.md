@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Caption-Based Queries for Video Moment Retrieval
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This work reveals a significant gap between caption-based queries and real user search queries in VMR. It proposes three search query benchmarks and alleviates the decoder query collapse in DETR by removing self-attention and introducing Query Dropout, achieving up to a 21.83% mAPm improvement on multi-moment search qu
+  [CVPR 2026][Object Detection][Video Moment Retrieval] This work reveals a significant gap between caption-based queries and real user search queries in VMR. It proposes three search query benchmarks and alleviates the decoder query collapse in DETR by removing self-attention and introducing Query Dropout, achieving up to a 21.83% mAPm improvement on multi-moment search queries.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Video Moment Retrieval"
+  - "Search Query Generalization"
+  - "DETR Decoder Query Collapse"
+  - "Multi-moment Retrieval"
+  - "Query Under-specification"
 date: 2026-05-08
-content_hash: 69eaca98d4aefa68
+content_hash: 5f490e1a0eeaec54
 ---
+
 # Beyond Caption-Based Queries for Video Moment Retrieval
 
 **Conference**: CVPR 2026  

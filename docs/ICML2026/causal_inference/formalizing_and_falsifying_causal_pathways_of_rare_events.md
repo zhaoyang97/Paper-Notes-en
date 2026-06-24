@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Formalizing and Falsifying Causal Pathways of Rare Events
 description: >-
-  [ICML 2026][Causal Inference][Paper Note] This paper formalizes "verbal causal explanations" of rare events as **causal pathways**—subgraphs composed of binarized events. By defining a **pathway explanation score** to quantify the explanatory power of "root causes + mediation pathways" relative to the target event, the authors establish a falsifiable evaluatio
+  [ICML 2026][Causal Inference][Causal Pathways] This paper formalizes "verbal causal explanations" of rare events as **causal pathways**—subgraphs composed of binarized events. By defining a **pathway explanation score** to quantify the explanatory power of "root causes + mediation pathways" relative to the target event, the authors establish a falsifiable evaluation framework for causal explanations.
 tags:
-  - ICML 2026
-  - Causal Inference
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Causal Pathways"
+  - "Rare Events"
+  - "Explanation Score"
+  - "Causal Abstraction"
+  - "Falsifiability"
 date: 2026-05-08
-content_hash: efc925da39d40c96
+content_hash: 3b1676c9a35e02a4
 ---
+
 # Formalizing and Falsifying Causal Pathways of Rare Events
 
 **Conference**: ICML 2026  
@@ -130,9 +136,9 @@ For $R=\{A\}$, the pathway explanation score $\mathcal{E}^K_{R\to t} = 1 - \frac
 
 - [\[ICML 2026\] Controllable Generative Sandbox for Causal Inference](controllable_generative_sandbox_for_causal_inference.md)
 - [\[ICML 2026\] Evaluating Bivariate Causal Statements Based on Mutual Compatibility](evaluating_bivariate_causal_statements_based_on_mutual_compatibility.md)
-- [\[ICML 2026\] Towards a Holistic Understanding of Selection Bias for Causal Effect Identification](towards_a_holistic_understanding_of_selection_bias_for_causal_effect_identificat.md)
 - [\[ICML 2026\] Causal Modeling of Selection in Evolution](causal_modeling_of_selection_in_evolution.md)
-- [\[ICML 2026\] Tailoring Strictly Proper Scoring Rules for Downstream Tasks: An Application to Causal Inference](tailoring_strictly_proper_scoring_rules_for_downstream_tasks_an_application_to_c.md)
+- [\[ICML 2026\] Towards a Holistic Understanding of Selection Bias for Causal Effect Identification](towards_a_holistic_understanding_of_selection_bias_for_causal_effect_identificat.md)
+- [\[ICLR 2026\] Topological Causal Effects](../../ICLR2026/causal_inference/topological_causal_effects.md)
 
 </div>
 

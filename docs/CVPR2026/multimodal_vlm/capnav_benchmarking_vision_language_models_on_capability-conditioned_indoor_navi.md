@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] CapNav proposes a "capability-conditioned navigation" benchmark: given an indoor tour video, a navigation graph, an agent profile with physical/operational capabilities, and a "go from A to B" task, VLMs must determine if and how the agent can navigate the space. Experiments on 13 mainstream VLMs show that navigation p
+  [CVPR 2026][Multimodal VLM][Capability-conditioned navigation] CapNav proposes a "capability-conditioned navigation" benchmark: given an indoor tour video, a navigation graph, an agent profile with physical/operational capabilities, and a "go from A to B" task, VLMs must determine if and how the agent can navigate the space. Experiments on 13 mainstream VLMs show that navigation performance drops significantly once mobility constraints (e.g., inability to climb stairs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Capability-conditioned navigation"
+  - "VLM evaluation"
+  - "Indoor navigation"
+  - "Traversability"
+  - "Embodied spatial reasoning"
 date: 2026-05-08
-content_hash: 0d730daf504fee3c
+content_hash: 92df2e650bc776b7
 ---
+
 # CapNav: Benchmarking Vision Language Models on Capability-conditioned Indoor Navigation
 
 **Conference**: CVPR 2026  
@@ -145,8 +151,8 @@ The humanoid robot is the most difficult embodiment due to its dual constraints 
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
 - [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
 - [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
-- [\[CVPR 2026\] SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)
-- [\[CVPR 2026\] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs](from_indoor_to_open_world_revealing_the_spatial_reasoning_gap_in_mllms.md)
+- [\[CVPR 2026\] Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification](differences_that_matter_auditing_models_for_capability_gap_discovery_and_rectifi.md)
+- [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Capturing Individual Human Preferences with Reward Features
 description: >-
-  [NeurIPS 2025][LLM Alignment][Reward modeling] This paper proposes the Reward Feature Model (RFM), which learns shared reward features $\phi_\theta(x…
+  [NeurIPS 2025][LLM Alignment][Reward modeling] This paper proposes the Reward Feature Model (RFM), which learns shared reward features $\phi_\theta(x,y)$ such that each user obtains a personalized reward $r_h = \langle \phi_\theta, \mathbf{w}_h \rangle$ via a linear weight vector $\mathbf{w}_h$. The work provides the first PAC generalization bound for multi-annotator preference learning, proving that increasing the number of annotators $m$ is more effective than increasing pe…
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "multi-annotator learning"
   - "fast adaptation"
 date: 2026-05-08
-content_hash: 6d57b8ed9d9d08c8
+content_hash: c4ae3cf58685ac78
 ---
 
 # Capturing Individual Human Preferences with Reward Features
@@ -132,8 +132,8 @@ RFM decomposes the reward function as $r_{\theta, \mathbf{w}_h}(x,y) = \langle \
 - [\[NeurIPS 2025\] Strategyproof Reinforcement Learning from Human Feedback](strategyproof_reinforcement_learning_from_human_feedback.md)
 - [\[AAAI 2026\] When Human Preferences Flip: An Instance-Dependent Robust Loss for RLHF](../../AAAI2026/llm_alignment/when_human_preferences_flip_an_instance-dependent_robust_loss_for_rlhf.md)
 - [\[ICLR 2026\] Learning Ordinal Probabilistic Reward from Preferences (OPRM)](../../ICLR2026/llm_alignment/learning_ordinal_probabilistic_reward_from_preferences.md)
-- [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
-- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
+- [\[ICML 2026\] Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences](../../ICML2026/llm_alignment/large_language_models_should_learn_personalized_rather_than_aggregated_human_pre.md)
+- [\[NeurIPS 2025\] Can DPO Learn Diverse Human Values? A Theoretical Scaling Law](can_dpo_learn_diverse_human_values_a_theoretical_scaling_law.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Modeling Neural Activity with Conditionally Linear Dynamical Systems
 description: >-
-  [NeurIPS 2025][Linear Dynamical Systems] This paper proposes Conditionally Linear Dynamical Systems (CLDS), where Gaussian process priors allow the parameters of a linear dynamical system to vary nonlinearly as a functio…
+  [NeurIPS 2025][Linear Dynamical Systems] This paper proposes Conditionally Linear Dynamical Systems (CLDS), where Gaussian process priors allow the parameters of a linear dynamical system to vary nonlinearly as a function of observed experimental covariates, preserving the interpretability and efficient inference of linear models while capturing the nonlinear dynamics prevalent in neural circuits.
 tags:
   - "NeurIPS 2025"
   - "Linear Dynamical Systems"
@@ -11,7 +11,7 @@ tags:
   - "Bayesian Inference"
   - "Ring Attractor"
 date: 2026-05-08
-content_hash: 2d4143b5c94c9082
+content_hash: b450f42000fd6f7e
 ---
 
 # Modeling Neural Activity with Conditionally Linear Dynamical Systems
@@ -125,11 +125,11 @@ The objective function is the posterior log-probability under MAP estimation. Th
 
 ## Related Papers
 
+- [\[ICML 2025\] Position: Solve Layerwise Linear Models First to Understand Neural Dynamical Phenomena](../../ICML2025/others/position_solve_layerwise_linear_models_first_to_understand_neural_dynamical_phen.md)
 - [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
 - [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
 - [\[NeurIPS 2025\] Model Context Protocol for Vision Systems: Audit, Security, and Protocol Extensions](model_context_protocol_for_vision_systems_audit_security_and_protocol_extensions.md)
-- [\[NeurIPS 2025\] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases](rdb2g-bench_a_comprehensive_benchmark_for_automatic_graph_modeling_of_relational.md)
+- [\[NeurIPS 2025\] Alias-Free ViT: Fractional Shift Invariance via Linear Attention](alias-free_vit_fractional_shift_invariance_via_linear_attention.md)
 
 </div>
 

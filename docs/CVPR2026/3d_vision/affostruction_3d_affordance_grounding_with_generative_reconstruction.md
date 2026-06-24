@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Affostruction: 3D Affordance Grounding with Generative Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] Ours proposes Affostruction, which completes object geometry (including unobserved regions) via generative reconstruction with sparse voxel fusion, and models the multimodal distribution of affordance using Flow Matching. It achieves functional region localization on the complete 3D shape, with reconstruction IoU impro
+  [CVPR 2026][3D Vision][3D Affordance] Ours proposes Affostruction, which completes object geometry (including unobserved regions) via generative reconstruction with sparse voxel fusion, and models the multimodal distribution of affordance using Flow Matching. It achieves functional region localization on the complete 3D shape, with reconstruction IoU improved by 54.8% and affordance aIoU by 40.4%.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Affordance"
+  - "Generative Reconstruction"
+  - "Sparse Voxel Fusion"
+  - "Flow Matching"
+  - "Active View Selection"
 date: 2026-05-08
-content_hash: d362bada6d51ff3d
+content_hash: 3dc8727691c0bad4
 ---
+
 # Affostruction: 3D Affordance Grounding with Generative Reconstruction
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ The reconstruction stage employs the Conditional Flow Matching (CFM) loss of Rec
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAMMER: Harnessing MLLMs via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllms_via_cross-modal_integration_for_intention-driven_3d_affo.md)
+- [\[CVPR 2026\] CUPID: Generative 3D Reconstruction via Joint Object and Pose Modeling](cupid_generative_3d_reconstruction_via_joint_object_and_pose_modeling.md)
+- [\[CVPR 2026\] EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)
+- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
 - [\[CVPR 2026\] AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers](affordmatcher_affordance_learning_in_3d_scenes_from_visual_signifiers.md)
-- [\[CVPR 2026\] Human Geometry Distribution for 3D Animation Generation](human_geometry_distribution_for_3d_animation_generation.md)
-- [\[CVPR 2026\] Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow](easy3e_feed-forward_3d_asset_editing_via_rectified_voxel_flow.md)
-- [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
+- [\[CVPR 2026\] Scene Grounding In the Wild](scene_grounding_in_the_wild.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Semi-supervised learning] This paper proposes TRiCo, a framework that reformulates semi-supervised learning as a three-player Stackelberg game among a teacher…
+  [NeurIPS 2025][Reinforcement Learning][Semi-supervised learning] This paper proposes TRiCo, a framework that reformulates semi-supervised learning as a three-player Stackelberg game among a teacher, two student classifiers, and an adversarial generator. It replaces confidence-based thresholding with mutual information for pseudo-label selection and employs a meta-learning teacher to adaptively regulate training dynamics, achieving state-of-the-art performance under low-label…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "meta-learning"
   - "adversarial perturbation"
 date: 2026-05-08
-content_hash: c53dfc4395c8c9a9
+content_hash: 8a71462a712adcf5
 ---
 
 # TRiCo: Triadic Game-Theoretic Co-Training for Robust Semi-Supervised Learning
@@ -146,8 +146,8 @@ TRiCo achieves 88.3% on ImageNet with 25% labels, approaching the performance of
 - [\[NeurIPS 2025\] Multi-Objective Reinforcement Learning with Max-Min Criterion: A Game-Theoretic Approach](multi-objective_reinforcement_learning_with_max-min_criterion_a_game-theoretic_a.md)
 - [\[NeurIPS 2025\] RoiRL: Efficient, Self-Supervised Reasoning with Offline Iterative Reinforcement Learning](roirl_efficient_self-supervised_reasoning_with_offline_iterative_reinforcement_l.md)
 - [\[ICML 2026\] Game of Thought: Robust Information Seeking with Large Language Models Using Game Theory](../../ICML2026/reinforcement_learning/game_of_thought_robust_information_seeking_with_large_language_models_using_game.md)
-- [\[ICLR 2026\] Toward a Dynamic Stackelberg Game-Theoretic Framework for Agent-Based Conversational AI Defense Against LLM Jailbreaking](../../ICLR2026/reinforcement_learning/toward_a_dynamic_stackelberg_game-theoretic_framework_for_agent-based_conversat.md)
-- [\[NeurIPS 2025\] Confounding Robust Deep Reinforcement Learning: A Causal Approach](confounding_robust_deep_reinforcement_learning_a_causal_approach.md)
+- [\[ACL 2025\] MAPoRL: Multi-Agent Post-Co-Training for Collaborative Large Language Models with Reinforcement Learning](../../ACL2025/reinforcement_learning/maporl_multi-agent_post-co-training_for_collaborative_large_language_models_with.md)
+- [\[NeurIPS 2025\] Mixing Expert Knowledge: Bring Human Thoughts Back to the Game of Go](mixing_expert_knowledge_bring_human_thoughts_back_to_the_game_of_go.md)
 
 </div>
 

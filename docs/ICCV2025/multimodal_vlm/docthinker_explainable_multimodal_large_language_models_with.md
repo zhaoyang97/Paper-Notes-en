@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding
 description: >-
-  [ICCV 2025][Multimodal VLM][rule-based RL] This paper proposes DocThinker, the first framework to apply GRPO (Group Relative Policy Optimization) reinforcement learning to document understanding. By training MLLMs with a…
+  [ICCV 2025][Multimodal VLM][rule-based RL] This paper proposes DocThinker, the first framework to apply GRPO (Group Relative Policy Optimization) reinforcement learning to document understanding. By training MLLMs with a four-objective rule-based reward (format, answer accuracy, RoI IoU, and question rephrasing quality), DocThinker enables models to autonomously generate interpretable reasoning processes. Using only 4K training samples, it improves Qwen2.5-VL-7B on DocVQA fro…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "interpretability"
   - "chain-of-thought"
 date: 2026-05-08
-content_hash: ca50bb0a1d590807
+content_hash: b675650cd39a3a45
 ---
 
 # DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding
@@ -140,10 +140,10 @@ Visual Grounding (TextREC):
 ## Related Papers
 
 - [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](aigi-holmes_towards_explainable_and_generalizable_ai-generated_image_detection_v.md)
-- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](../../NeurIPS2025/multimodal_vlm/think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
+- [\[CVPR 2025\] DocoPilot: Improving Multimodal Models for Document-Level Understanding](../../CVPR2025/multimodal_vlm/docopilot_improving_multimodal_models_for_document-level_understanding.md)
 - [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
-- [\[CVPR 2026\] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/emo-r3_reflective_reinforcement_learning_for_emotional_reasoning_in_multimodal_l.md)
 - [\[ICCV 2025\] SimpleVQA: Multimodal Factuality Evaluation for Multimodal Large Language Models](simplevqa_multimodal_factuality_evaluation_for_multimodal_large_language_models.md)
+- [\[ICCV 2025\] DOGR: Towards Versatile Visual Document Grounding and Referring](dogr_towards_versatile_visual_document_grounding_and_referring.md)
 
 </div>
 

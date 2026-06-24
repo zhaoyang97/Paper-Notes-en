@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Alignment Between Supervised and Self-Supervised Contrastive Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][NSCL] This paper theoretically proves that under shared randomness, self-supervised contrastive learning (CL) and a supervised surrogate—"Negative-only Supervised Contrastive Learning" (NSCL)—maintain a high level of alignment in the **representation similarity space** throughout training (with high-probability lower bounds
+  [ICLR 2026][Self-Supervised Learning][Contrastive Learning] This paper theoretically proves that under shared randomness, self-supervised contrastive learning (CL) and a supervised surrogate—"Negative-only Supervised Contrastive Learning" (NSCL)—maintain a high level of alignment in the **representation similarity space** throughout training (with high-probability lower bounds for CKA/RSA), even while their **parameters** might diverge exponentially. This establishes NSCL as…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - NSCL
-  - CKA/RSA
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Contrastive Learning"
+  - "Self-supervised"
+  - "NSCL"
+  - "Representation Alignment"
+  - "CKA/RSA"
 date: 2026-05-08
-content_hash: d1505c1f0ac3c1b1
+content_hash: 08764bb227e4a80a
 ---
+
 # On the Alignment Between Supervised and Self-Supervised Contrastive Learning
 
 **Conference**: ICLR 2026  
@@ -136,8 +140,8 @@ The most compelling alignment data: after 1000 epochs on Tiny-ImageNet, the **CK
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](../../NeurIPS2025/self_supervised/self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[ICLR 2026\] Dual Perspectives on Non-Contrastive Self-Supervised Learning](dual_perspectives_on_non-contrastive_self-supervised_learning.md)
+- [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](../../NeurIPS2025/self_supervised/self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
 - [\[ICLR 2026\] Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data](understanding_the_robustness_of_distributed_self-supervised_learning_frameworks_.md)
 - [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
 - [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)

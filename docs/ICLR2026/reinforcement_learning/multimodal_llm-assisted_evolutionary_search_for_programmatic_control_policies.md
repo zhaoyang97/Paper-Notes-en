@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies
 description: >-
-  [ICLR 2026][Reinforcement Learning][programmatic policy] MLES treats Multimodal Large Language Models (MLLMs) as "strategy programmers capable of watching replays." Combined with evolutionary search, it directly generates readable programmatic control policies. By using execution screens (Behavioral Evidence) to diagnose failure modes and perform targeted code modifications,
+  [ICLR 2026][Reinforcement Learning][programmatic policy] MLES treats Multimodal Large Language Models (MLLMs) as "strategy programmers capable of watching replays." Combined with evolutionary search, it directly generates readable programmatic control policies. By using execution screens (Behavioral Evidence) to diagnose failure modes and perform targeted code modifications, it achieves performance comparable to PPO on Lunar Lander and Car Racing while remaining fully transpa…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - programmatic policy
-  - multimodal LLM
-  - evolutionary search
-  - interpretable RL
-  - behavioral evidence
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "programmatic policy"
+  - "multimodal LLM"
+  - "evolutionary search"
+  - "interpretable RL"
+  - "behavioral evidence"
 date: 2026-05-08
-content_hash: 8dc416b82d1cf371
+content_hash: dd1e1e4eaea9440f
 ---
+
 # Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies
 
 **Conference**: ICLR 2026  
@@ -121,6 +122,7 @@ Removing multimodal modification operators (M1_M/M2_M) caused the largest drops,
 - **Value**: ⭐⭐⭐⭐ — Provides a compelling paradigm for transparent control policies with significant implications for safety-critical RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -128,8 +130,8 @@ Removing multimodal modification operators (M1_M/M2_M) caused the largest drops,
 - [\[ICLR 2026\] Regret-Guided Search Control for Efficient Learning in AlphaZero](regret-guided_search_control_for_efficient_learning_in_alphazero.md)
 - [\[ICLR 2026\] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies](goldenstart_q-guided_priors_and_entropy_control_for_distilling_flow_policies.md)
 - [\[ICLR 2026\] Refining Hybrid Genetic Search for CVRP via Reinforcement Learning-Finetuned LLM](refining_hybrid_genetic_search_for_cvrp_via_reinforcement_learning-finetuned_llm.md)
-- [\[ICLR 2026\] MARS-Sep: Multimodal-Aligned Reinforced Sound Separation](mars-sep_multimodal-aligned_reinforced_sound_separation.md)
 - [\[ICLR 2026\] Helix: Evolutionary Reinforcement Learning for Open-Ended Scientific Problem Solving](helix_evolutionary_reinforcement_learning_for_open-ended_scientific_problem_solv.md)
+- [\[AAAI 2026\] DiffOP: Reinforcement Learning of Optimization-Based Control Policies via Implicit Policy Gradients](../../AAAI2026/reinforcement_learning/diffop_reinforcement_learning_of_optimization-based_control_policies_via_implici.md)
 
 </div>
 

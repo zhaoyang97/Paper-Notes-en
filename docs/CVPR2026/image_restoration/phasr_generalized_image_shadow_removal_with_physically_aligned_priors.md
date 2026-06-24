@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] The PhaSR framework is proposed to achieve generalized shadow removal—ranging from single-source direct shadows to multi-source ambient light scenes—through dual-level physical prior alignment. This includes global-level PAN, which performs parameter-free Retinex decomposition to suppress color bias, and local-level GS
+  [CVPR 2026][Image Restoration][Shadow Removal] The PhaSR framework is proposed to achieve generalized shadow removal—ranging from single-source direct shadows to multi-source ambient light scenes—through dual-level physical prior alignment. This includes global-level PAN, which performs parameter-free Retinex decomposition to suppress color bias, and local-level GSRA, which utilizes differential attention to align DepthAnything geometric priors with DINO-v2 semantic embedding…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Shadow Removal"
+  - "Retinex Decomposition"
+  - "Differential Attention"
+  - "Geometric-Semantic Prior Alignment"
+  - "Ambient Light Normalization"
 date: 2026-05-08
-content_hash: 4390555334f37ef7
+content_hash: cdb19abf388a5949
 ---
+
 # PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ Note: The largest gains are observed on the most challenging WSRD+ and Ambient6K
 ## Related Papers
 
 - [\[CVPR 2025\] Detail-Preserving Latent Diffusion for Stable Shadow Removal](../../CVPR2025/image_restoration/detail-preserving_latent_diffusion_for_stable_shadow_removal.md)
+- [\[CVPR 2026\] Physically-Grounded Turbulence Mitigation with Frame-Shared Degradation Parameters](physically-grounded_turbulence_mitigation_with_frame-shared_degradation_paramete.md)
 - [\[CVPR 2026\] Disentangled Textual Priors for Diffusion-based Image Super-Resolution](disentangled_textual_priors_for_diffusion-based_image_super-resolution.md)
-- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
+- [\[CVPR 2026\] Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)
 - [\[CVPR 2025\] SoftShadow: Leveraging Soft Masks for Penumbra-Aware Shadow Removal](../../CVPR2025/image_restoration/softshadow_leveraging_soft_masks_for_penumbra-aware_shadow_removal.md)
-- [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 
 </div>
 

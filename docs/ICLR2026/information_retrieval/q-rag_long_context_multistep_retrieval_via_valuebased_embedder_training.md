@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][RAG] Q-RAG models multi-step retrieval as an MDP, using value-based reinforcement learning to fine-tune only the embedder (leaving the LLM frozen). This allows the retrieval agent to step-by-step pick supporting facts directly within the latent space of chunk embeddings. It achieves SOTA on long-context benchmarks like Babi
+  [ICLR2026][Information Retrieval & RAG][Multi-step Retrieval] Q-RAG models multi-step retrieval as an MDP, using value-based reinforcement learning to fine-tune only the embedder (leaving the LLM frozen). This allows the retrieval agent to step-by-step pick supporting facts directly within the latent space of chunk embeddings. It achieves SOTA on long-context benchmarks like BabiLong and RULER (up to 10 million tokens) and can be trained using a single A100.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - RAG
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Multi-step Retrieval"
+  - "RAG"
+  - "Reinforcement Learning"
+  - "Embedder Fine-tuning"
+  - "Long Context"
 date: 2026-05-08
-content_hash: 4acb4ce4313777b3
+content_hash: 79842866980800b7
 ---
+
 # Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training
 
 **Conference**: ICLR2026  
@@ -148,10 +152,20 @@ On BabiLong-QA3 (requires ≥3 facts + temporal reasoning), reporting Fact Retri
 - Value: ⭐⭐⭐⭐⭐ Extremely practical due to single-GPU training and compatibility with any LLM.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] DeepRAG: Thinking to Retrieve Step by Step for Large Language Models](deeprag_thinking_to_retrieve_step_by_step_for_large_language_models.md)
+- [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](../../ICML2026/information_retrieval/hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
+- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
+- [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
+- [\[ACL 2025\] Hierarchical Document Refinement for Long-context Retrieval-augmented Generation](../../ACL2025/information_retrieval/hierarchical_document_refinement_for_long-context_retrieval-augmented_generation.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)

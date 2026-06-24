@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Does Higher Interpretability Imply Better Utility? A Pairwise Analysis on Sparse Autoencoders
 description: >-
-  [ICLR 2026][Interpretability][Sparse Autoencoder] The authors trained 90 SAEs for systematic comparison and found only a weak positive correlation between "more interpretable features" and "better steering utility" ($\tau_b \approx 0.30$). They proposed the **$\Delta$Token Confidence** feature selection criterion, which improves steering scores by 52.52%. On the selec
+  [ICLR 2026][Interpretability][Sparse Autoencoder] The authors trained 90 SAEs for systematic comparison and found only a weak positive correlation between "more interpretable features" and "better steering utility" ($\tau_b \approx 0.30$). They proposed the **$\Delta$Token Confidence** feature selection criterion, which improves steering scores by 52.52%. On the selected high-efficiency features, the correlation between interpretability and steering utility completely disappe…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Sparse Autoencoder
-  - LLM Steering
-  - Interpretability-Utility Gap
-  - Feature Selection
-  - Kendall's τ
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Sparse Autoencoder"
+  - "LLM Steering"
+  - "Interpretability-Utility Gap"
+  - "Feature Selection"
+  - "Kendall's $\\tau$"
 date: 2026-05-08
-content_hash: e63b8b089f9ece86
+content_hash: 7889dfd7373d1331
 ---
+
 # Does Higher Interpretability Imply Better Utility? A Pairwise Analysis on Sparse Autoencoders
 
 **Conference**: ICLR 2026  

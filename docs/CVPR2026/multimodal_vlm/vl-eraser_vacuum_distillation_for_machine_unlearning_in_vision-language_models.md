@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models
 description: >-
-  [CVPR 2026][LLM Safety][Vision-Language Model] VL-Eraser points out that traditional "reverse-training" unlearning in VLMs primarily destroys cross-modal alignment rather than truly removing knowledge. It reformulates unlearning as a two-stage "distillation-then-deletion" process: first, distilling the targeted knowledge into a set of LoRAs under "vacuum space" con
+  [CVPR 2026][Multimodal VLM][Machine Unlearning] VL-Eraser points out that traditional "reverse-training" unlearning in VLMs primarily destroys cross-modal alignment rather than truly removing knowledge. It reformulates unlearning as a two-stage "distillation-then-deletion" process: first, distilling the targeted knowledge into a set of LoRAs under "vacuum space" constraints, and then subtracting these LoRAs from the original model to achieve cleaner deletion while preserving…
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Vision-Language Model
-  - Knowledge Distillation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Machine Unlearning"
+  - "Vision-Language Models"
+  - "Cross-modal Alignment"
+  - "LoRA"
+  - "Knowledge Distillation"
 date: 2026-05-08
-content_hash: e2dd5e13dc106ef1
+content_hash: ceebb34d90bcfcd9
 ---
+
 # VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -132,11 +136,11 @@ LLaVA-1.5-7B, 5% Forget, Visual-QA:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SineProject: Machine Unlearning for Stable Vision–Language Alignment](sineproject_machine_unlearning_for_stable_vision_language_alignment.md)
-- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)
 - [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
-- [\[NeurIPS 2025\] Distillation Robustifies Unlearning](../../NeurIPS2025/llm_safety/distillation_robustifies_unlearning.md)
+- [\[CVPR 2026\] VL-RouterBench: A Benchmark for Vision-Language Model Routing](vl-routerbench_a_benchmark_for_vision-language_model_routing.md)
 - [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
+- [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
+- [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)
 
 </div>
 

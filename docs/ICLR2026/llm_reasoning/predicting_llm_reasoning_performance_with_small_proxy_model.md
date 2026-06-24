@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Predicting LLM Reasoning Performance with Small Proxy Model
 description: >-
-  [ICLR 2026][LLM Reasoning][scaling law] The paper proposes rBridge, which utilizes reasoning traces from frontier models as gold labels and performs token-level task-aligned weighted NLL. This enables small models ($\le$1B) to effectively predict the reasoning performance of large models (13B-32B), achieving over 100$\times$ computational savings in dataset
+  [ICLR 2026][Reasoning][scaling law] The paper proposes rBridge, which utilizes reasoning traces from frontier models as gold labels and performs token-level task-aligned weighted NLL. This enables small models ($\le$1B) to effectively predict the reasoning performance of large models (13B-32B), achieving over 100$\times$ computational savings in dataset ranking tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - scaling law
-  - proxy model
-  - reasoning
-  - pre-training data selection
-  - negative log-likelihood
+  - "ICLR 2026"
+  - "Reasoning"
+  - "scaling law"
+  - "proxy model"
+  - "pre-training data selection"
+  - "negative log-likelihood"
 date: 2026-05-08
-content_hash: 4ccfc9ec1ceeb071
+content_hash: a5f22d09290a20a7
 ---
+
 # Predicting LLM Reasoning Performance with Small Proxy Model
 
 **Conference**: ICLR 2026  
@@ -146,10 +146,10 @@ rBridge does not train new models. It directly uses intermediate checkpoints of 
 ## Related Papers
 
 - [\[ICLR 2026\] Latent-Guided Reasoning: Empowering Small LLMs with Large-Model Thinking](latent-guided_reasoning_empowering_small_llms_with_large-model_thinking.md)
+- [\[ICLR 2026\] The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models](the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
 - [\[ICLR 2026\] Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance](following_the_navigation_enhancing_small_language_models_contextual_reasoning_wi.md)
 - [\[ICLR 2026\] SLM-MUX: Orchestrating Small Language Models for Reasoning](slm-mux_orchestrating_small_language_models_for_reasoning.md)
 - [\[ICLR 2026\] Why is Your Language Model a Poor Implicit Reward Model?](why_is_your_language_model_a_poor_implicit_reward_model.md)
-- [\[ICML 2026\] The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning](../../ICML2026/llm_reasoning/the_quality-utility_paradox_why_high-reward_data_impairs_small_model_mathematica.md)
 
 </div>
 

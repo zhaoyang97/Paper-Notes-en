@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases
 description: >-
-  [NeurIPS 2025][relational databases] This paper proposes RDB2G-Bench — the first benchmark framework for evaluating relational-database-to-graph modeling methods, comprising 5 real-world RDBs, 12 prediction tasks…
+  [NeurIPS 2025][relational databases] This paper proposes RDB2G-Bench — the first benchmark framework for evaluating relational-database-to-graph modeling methods, comprising 5 real-world RDBs, 12 prediction tasks, approximately 50,000 precomputed graph model–performance pairs, and a systematic comparison of 10 automatic graph modeling approaches.
 tags:
   - "NeurIPS 2025"
   - "relational databases"
@@ -11,7 +11,7 @@ tags:
   - "graph neural networks"
   - "automatic modeling"
 date: 2026-05-08
-content_hash: 21790e3b8be9504c
+content_hash: cfaee2d84846176f
 ---
 
 # RDB2G-Bench: A Comprehensive Benchmark for Automatic Graph Modeling of Relational Databases
@@ -179,11 +179,11 @@ GNNs used are Heterogeneous GraphSAGE (for classification/regression tasks) and 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] FACE: Faithful Automatic Concept Extraction](face_faithful_automatic_concept_extraction.md)
+- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark For Physical AI](../../CVPR2026/others/pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 - [\[NeurIPS 2025\] InFlux: A Benchmark for Self-Calibration of Dynamic Intrinsics of Video Cameras](influx_a_benchmark_for_self-calibration_of_dynamic_intrinsics_of_video_cameras.md)
-- [\[ICML 2026\] iWorld-Bench: A Benchmark for Interactive World Models with a Unified Action Generation Framework](../../ICML2026/others/iworld-bench_a_benchmark_for_interactive_world_models_with_a_unified_action_gene.md)
+- [\[NeurIPS 2025\] FACE: Faithful Automatic Concept Extraction](face_faithful_automatic_concept_extraction.md)
 - [\[NeurIPS 2025\] On Topological Descriptors for Graph Products](on_topological_descriptors_for_graph_products.md)
-- [\[NeurIPS 2025\] Graph Alignment via Birkhoff Relaxation](graph_alignment_via_birkhoff_relaxation.md)
+- [\[ICLR 2026\] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning](../../ICLR2026/others/pu-bench_a_unified_benchmark_for_rigorous_and_reproducible_pu_learning.md)
 
 </div>
 

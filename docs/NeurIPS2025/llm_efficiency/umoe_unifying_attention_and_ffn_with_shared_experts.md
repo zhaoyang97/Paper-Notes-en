@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] UMoE: Unifying Attention and FFN with Shared Experts
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Unified MoE Architecture] By reformulating the multi-head attention mechanism, this work reveals that attention shares the same "two-layer matrix multiplication" structure as FFN layers. Ba…
+  [NeurIPS 2025 Spotlight][LLM Efficiency][Unified MoE Architecture] By reformulating the multi-head attention mechanism, this work reveals that attention shares the same "two-layer matrix multiplication" structure as FFN layers. Based on this insight, UMoE is proposed as a unified architecture that employs identically designed experts for both attention and FFN layers with parameter sharing, outperforming existing FFN-MoE and Attention-MoE baselines on both Base (134M) and Lar…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Efficiency"
   - "Unified MoE Architecture"
   - "Pre-Mixing Attention"
@@ -12,7 +12,7 @@ tags:
   - "Attention-FFN Fusion"
   - "Parameter Efficiency"
 date: 2026-05-08
-content_hash: 8ba5ead2c6c8f0a7
+content_hash: 2c8c0246270cc181
 ---
 
 # UMoE: Unifying Attention and FFN with Shared Experts
@@ -147,9 +147,9 @@ On the Large model (1.1B dense → 3.6B MoE): UMoE achieves PPL 15.95 vs. FFN-Mo
 
 - [\[ICML 2026\] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving](../../ICML2026/llm_efficiency/theoretically_optimal_attentionffn_ratios_in_disaggregated_llm_serving.md)
 - [\[NeurIPS 2025\] Let the Experts Speak: Improving Survival Prediction & Calibration via Mixture-of-Experts Heads](let_the_experts_speak_improving_survival_prediction_calibration_via_mixture-of-e.md)
-- [\[NeurIPS 2025\] Scale-invariant Attention](scale-invariant_attention.md)
-- [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](tensor_product_attention_is_all_you_need.md)
 - [\[NeurIPS 2025\] On the Expressive Power of Mixture-of-Experts for Structured Complex Tasks](on_the_expressive_power_of_mixture-of-experts_for_structured_complex_tasks.md)
+- [\[NeurIPS 2025\] Tensor Product Attention Is All You Need](tensor_product_attention_is_all_you_need.md)
+- [\[ICLR 2026\] TyphoonMLA: A Mixed Naive-Absorb MLA Kernel For Shared Prefix](../../ICLR2026/llm_efficiency/typhoonmla_a_mixed_naive-absorb_mla_kernel_for_shared_prefix.md)
 
 </div>
 

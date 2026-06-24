@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UCS: Estimating Unseen Coverage for Improved In-Context Learning
 description: >-
-  [ACL 2026][LLM (Other)][In-Context Learning] This paper proposes UCS (Unseen Coverage Selection), a training-free subset-level coverage prior based on the Smoothed Good-Turing estimator. By estimating the number of unobserved potential clusters in the candidate exemplar set, it regularizes existing ICL exemplar selection methods, improving accuracy by 2-6% on int
+  [ACL 2026 Findings][LLM (Other)][In-Context Learning] This paper proposes UCS (Unseen Coverage Selection), a training-free subset-level coverage prior based on the Smoothed Good-Turing estimator. By estimating the number of unobserved potential clusters in the candidate exemplar set, it regularizes existing ICL exemplar selection methods, improving accuracy by 2-6% on intent classification and reasoning tasks.
 tags:
-  - ACL 2026
-  - LLM (Other)
-  - In-Context Learning
+  - "ACL 2026 Findings"
+  - "LLM (Other)"
+  - "In-Context Learning"
+  - "Exemplar Selection"
+  - "Coverage Estimation"
+  - "Good-Turing Estimation"
+  - "Clustering"
 date: 2026-05-08
-content_hash: d0facd47e5d78df5
+content_hash: 04b05deaac1550a4
 ---
+
 # UCS: Estimating Unseen Coverage for Improved In-Context Learning
 
 **Conference**: ACL 2026 Findings  
@@ -145,10 +150,10 @@ UCS is entirely training-free. Offline preprocessing (embedding and clustering) 
 ## Related Papers
 
 - [\[ACL 2026\] DeCoVec: Building Decoding Space based Task Vector for Large Language Models via In-Context Learning](decovec_building_decoding_space_based_task_vector_for_large_language_models_via_.md)
+- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
 - [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 - [\[ACL 2025\] Beyond Output Matching: Bidirectional Alignment for Enhanced In-Context Learning](../../ACL2025/llm_nlp/beyond_output_matching_bidirectional_alignment_for_enhanced_in-context_learning.md)
 - [\[ACL 2025\] Exploring Explanations Improves the Robustness of In-Context Learning](../../ACL2025/llm_nlp/exploring_explanations_improves_the_robustness_of_in-context_learning.md)
-- [\[ICLR 2026\] In-Context Algebra](../../ICLR2026/llm_nlp/in-context_algebra.md)
 
 </div>
 

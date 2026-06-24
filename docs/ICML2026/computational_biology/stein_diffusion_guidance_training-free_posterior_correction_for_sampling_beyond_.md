@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] SDG unifies the "training-free diffusion guidance" and "Stochastic Optimal Control (SOC) posterior sampling" paradigms. By deriving the variational upper bound of the guidance term via SOC, it is revealed that existing Tweedie-based methods omit a crucial KL regularization term. Consequently, the authors design a "back
+  [ICML 2026][Computational Biology][Diffusion Guidance] SDG unifies the "training-free diffusion guidance" and "Stochastic Optimal Control (SOC) posterior sampling" paradigms. By deriving the variational upper bound of the guidance term via SOC, it is revealed that existing Tweedie-based methods omit a crucial KL regularization term. Consequently, the authors design a "back-and-forth" correction mechanism using Stein Variational Gradient Descent (SVGD): first performing a Twee…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Diffusion Guidance"
+  - "Stochastic Optimal Control (SOC)"
+  - "Stein Variational Inference"
+  - "Tweedie's Formula"
+  - "Low-Density Sampling"
 date: 2026-05-08
-content_hash: 4390863cb758b53c
+content_hash: d43bf6cfa7c81605
 ---
+
 # Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions
 
 **Conference**: ICML 2026  
@@ -159,9 +165,9 @@ SDG is completely training-free: the score model $\mathbf{s}_\theta$ and reward 
 
 - [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
 - [\[ICML 2026\] On the Collapse of Generative Paths: A Criterion and Correction for Diffusion Steering](on_the_collapse_of_generative_paths_a_criterion_and_correction_for_diffusion_ste.md)
-- [\[ICML 2026\] TD3B: Transition-Directed Discrete Diffusion for Allosteric Binder Generation](td3b_transition-directed_discrete_diffusion_for_allosteric_binder_generation.md)
-- [\[ICML 2026\] CountsDiff: A Diffusion Model on the Natural Numbers for Generation and Imputation of Count-Based Data](countsdiff_a_diffusion_model_on_the_natural_numbers_for_generation_and_imputatio.md)
-- [\[ICML 2026\] Viral Proteins Reveal Geometry of Protein Language Models](viral_proteins_reveal_geometry_of_protein_language_models.md)
+- [\[NeurIPS 2025\] Split Gibbs Discrete Diffusion Posterior Sampling](../../NeurIPS2025/computational_biology/split_gibbs_discrete_diffusion_posterior_sampling.md)
+- [\[ICML 2026\] Temporal Score Rescaling for Temperature Sampling in Diffusion and Flow Models](temporal_score_rescaling_for_temperature_sampling_in_diffusion_and_flow_models.md)
+- [\[ICML 2026\] From Holo Pockets to Electron Density: GPT-style Drug Design with Density](from_holo_pockets_to_electron_density_gpt-style_drug_design_with_density.md)
 
 </div>
 

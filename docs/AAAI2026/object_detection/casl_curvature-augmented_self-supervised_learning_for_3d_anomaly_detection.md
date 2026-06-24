@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection
 description: >-
-  [AAAI2026][Object Detection][3D anomaly detection] This work identifies point cloud curvature as a powerful cue for anomaly detection and proposes CASL…
+  [AAAI2026][Object Detection][3D anomaly detection] This work identifies point cloud curvature as a powerful cue for anomaly detection and proposes CASL, a curvature-augmented self-supervised learning framework. By guiding coordinate reconstruction with multi-scale curvature prompts, CASL learns generalizable 3D representations without any anomaly-detection-specific mechanisms, achieving a 5.6% O-AUROC improvement over the previous state of the art on Real3D-AD.
 tags:
   - "AAAI2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "point cloud"
   - "U-Net"
 date: 2026-05-08
-content_hash: 5750ba6f413f039f
+content_hash: aa7568ed392890ce
 ---
 
 # CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection
@@ -145,11 +145,11 @@ The idea of using curvature as a geometric prior to guide reconstruction can be 
 
 ## Related Papers
 
+- [\[ECCV 2024\] Self-supervised Feature Adaptation for 3D Industrial Anomaly Detection](../../ECCV2024/object_detection/self-supervised_feature_adaptation_for_3d_industrial_anomaly_detection.md)
 - [\[CVPR 2026\] GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning](../../CVPR2026/object_detection/gs-clip_zero-shot_3d_anomaly_detection_by_geometry-aware_prompt_and_synergistic_.md)
-- [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](../../NeurIPS2025/object_detection/semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
 - [\[CVPR 2026\] A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection](../../CVPR2026/object_detection/a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio.md)
-- [\[ICML 2026\] Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](../../ICML2026/object_detection/mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)
-- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](../../CVPR2026/object_detection/back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
+- [\[NeurIPS 2025\] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning](../../NeurIPS2025/object_detection/semi-supervised_graph_anomaly_detection_via_robust_homophily_learning.md)
+- [\[ICML 2025\] Self-Organizing Visual Prototypes for Non-Parametric Representation Learning](../../ICML2025/object_detection/self-organizing_visual_prototypes_for_non-parametric_representation_learning.md)
 
 </div>
 

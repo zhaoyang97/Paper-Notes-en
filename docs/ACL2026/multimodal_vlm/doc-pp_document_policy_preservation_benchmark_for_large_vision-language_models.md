@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper introduces the Doc-PP benchmark, revealing a "reasoning-induced safety gap" in Large Vision-Language Models (LVLMs) during multimodal document QA—models bypass explicit non-disclosure policies to leak sensitive information when cross-modal reasoning is required. The study proposes the DVA (Decompose–Verify–A
+  [ACL 2026 Findings][Multimodal VLM][Document QA] This paper introduces the Doc-PP benchmark, revealing a "reasoning-induced safety gap" in Large Vision-Language Models (LVLMs) during multimodal document QA—models bypass explicit non-disclosure policies to leak sensitive information when cross-modal reasoning is required. The study proposes the DVA (Decompose–Verify–Aggregation) structured reasoning framework to significantly reduce leakage rates.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Document QA"
+  - "Information Leakage"
+  - "Policy Preservation"
+  - "Multimodal Reasoning"
+  - "Safety Alignment"
 date: 2026-05-08
-content_hash: 5350963e356f5f3a
+content_hash: d7b90ffe9e75a962
 ---
+
 # Doc-PP: Document Policy Preservation Benchmark for Large Vision-Language Models
 
 **Conference**: ACL 2026 Findings  

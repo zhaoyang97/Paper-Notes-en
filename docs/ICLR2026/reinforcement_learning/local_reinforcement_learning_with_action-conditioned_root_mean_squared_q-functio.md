@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions
 description: >-
-  [ICLR 2026][Reinforcement Learning][Forward-Forward] Inspired by the "goodness function" of the Forward-Forward algorithm, this paper proposes **ARQ (Action-conditioned Root mean squared Q-functions)**—reading the scalar Q-value directly as the "root mean square after subtracting the mean (i.e., standard deviation)" of the hidden vector output from each cell in local RL.
+  [ICLR 2026][Reinforcement Learning][Backpropagation-free learning] Inspired by the "goodness function" of the Forward-Forward algorithm, this paper proposes **ARQ (Action-conditioned Root mean squared Q-functions)**—reading the scalar Q-value directly as the "root mean square after subtracting the mean (i.e., standard deviation)" of the hidden vector output from each cell in local RL. By conditioning the model on the action via one-hot concatenation at the input…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Forward-Forward
-  - Q-learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Backpropagation-free learning"
+  - "Forward-Forward"
+  - "Local RL"
+  - "Q-learning"
+  - "Action-conditioning"
+  - "Temporal Difference"
 date: 2026-05-08
-content_hash: 0f899a3e9ea753fe
+content_hash: 8e8decb8c76bf26c
 ---
+
 # Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions
 
 **Conference**: ICLR 2026  
@@ -123,8 +128,8 @@ Comparison of goodness nonlinearity choices (MinAtar, mean ± 95% CI). RMS outpe
 - [\[ICLR 2026\] Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation](mean_flow_policy_with_instantaneous_velocity_constraint_for_one-step_action_gene.md)
 - [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
 - [\[ICLR 2026\] XQC: Well-Conditioned Optimization Accelerates Deep Reinforcement Learning](xqc_well-conditioned_optimization_accelerates_deep_reinforcement_learning.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 - [\[ICLR 2026\] Occupancy Reward Shaping: Improving Credit Assignment for Offline Goal-Conditioned Reinforcement Learning](occupancy_reward_shaping_improving_credit_assignment_for_offline_goal-conditione.md)
-- [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events
 description: >-
-  [CVPR 2026][Interpretability][Paper Note] This paper proposes CoE, a training-free multimodal summarization framework. By constructing a Hierarchical Event Graph (HEG) to guide chain-of-event reasoning, it surpasses SOTA video CoT baselines on 8 datasets, achieving an average improvement of +3.04 ROUGE, +9.51 CIDEr, and +1.88 BERTScore.
+  [CVPR 2026][Interpretability][Multimodal Summarization] This paper proposes CoE, a training-free multimodal summarization framework. By constructing a Hierarchical Event Graph (HEG) to guide chain-of-event reasoning, it surpasses SOTA video CoT baselines on 8 datasets, achieving an average improvement of +3.04 ROUGE, +9.51 CIDEr, and +1.88 BERTScore.
 tags:
-  - CVPR 2026
-  - Interpretability
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Multimodal Summarization"
+  - "Training-free"
+  - "Chain-of-Event Reasoning"
+  - "Hierarchical Event Graph"
+  - "Cross-domain Generalization"
 date: 2026-05-08
-content_hash: 8e7c81d7062b13db
+content_hash: 19ca2a246b275f7f
 ---
+
 # Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ This is a training-free framework and does not require a loss function. The proc
 ## Related Papers
 
 - [\[ICLR 2026\] Emergence of Superposition: Unveiling the Training Dynamics of Chain of Continuous Thought](../../ICLR2026/interpretability/emergence_of_superposition_unveiling_the_training_dynamics_of_chain_of_continuou.md)
-- [\[CVPR 2026\] Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)
-- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
 - [\[NeurIPS 2025\] Curvature Tuning: Provable Training-free Model Steering From a Single Parameter](../../NeurIPS2025/interpretability/curvature_tuning_provable_training-free_model_steering_from_a_single_parameter.md)
 - [\[CVPR 2026\] HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation](humorchain_theory-guided_multi-stage_reasoning_for_interpretable_multimodal_humo.md)
+- [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](../../ACL2026/interpretability/mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
+- [\[ICLR 2026\] Learning Multimodal Dictionary Decompositions with Group-Sparse Autoencoders](../../ICLR2026/interpretability/learning_multimodal_dictionary_decompositions_with_group-sparse_autoencoders.md)
 
 </div>
 

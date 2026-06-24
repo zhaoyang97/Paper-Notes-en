@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Mathesis: Towards Formal Theorem Proving from Natural Languages
 description: >-
-  [ICLR 2026][LLM Reasoning][autoformalization] Mathesis systematically bridges the gap from "natural language math problems → formal statements → machine-verifiable proofs" for the first time. The core is an autoformalizer trained using online reinforcement learning (GRPO + Hierarchical Preference Optimization), complemented by the LeanScorer evaluation framework f
+  [ICLR 2026][Reasoning][autoformalization] Mathesis systematically bridges the gap from "natural language math problems → formal statements → machine-verifiable proofs" for the first time. The core is an autoformalizer trained using online reinforcement learning (GRPO + Hierarchical Preference Optimization), complemented by the LeanScorer evaluation framework for continuous semantic scoring and the challenging Gaokao-Formal benchmark.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - autoformalization
-  - formal theorem proving
-  - reinforcement learning
-  - GRPO
-  - semantic evaluation
-  - Lean 4
+  - "ICLR 2026"
+  - "Reasoning"
+  - "autoformalization"
+  - "formal theorem proving"
+  - "reinforcement learning"
+  - "GRPO"
+  - "semantic evaluation"
+  - "Lean 4"
 date: 2026-05-08
-content_hash: 8194620d5d4dcb42
+content_hash: f7156dd0b97da1bb
 ---
+
 # Mathesis: Towards Formal Theorem Proving from Natural Languages
 
 **Conference**: ICLR 2026  
@@ -141,8 +142,8 @@ Replacing the autoformalizer with Mathesis-HPO improved Goedel, Kimina, and Deep
 - [\[ICLR 2026\] Process-Verified Reinforcement Learning for Theorem Proving via Lean](process-verified_reinforcement_learning_for_theorem_proving_via_lean.md)
 - [\[ICLR 2026\] Neural Theorem Proving for Verification Conditions: A Real-World Benchmark](neural_theorem_proving_for_verification_conditions_a_real-world_benchmark.md)
 - [\[ICLR 2026\] EvolProver: Advancing Automated Theorem Proving by Evolving Formalized Problems via Symmetry and Difficulty](evolprover_advancing_automated_theorem_proving_by_evolving_formalized_problems_v.md)
-- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
 - [\[ICLR 2026\] Hilbert: Recursively Building Formal Proofs with Informal Reasoning](hilbert_recursively_building_formal_proofs_with_informal_reasoning.md)
+- [\[ICLR 2026\] Long Chain-of-Thought Reasoning Across Languages](long_chain-of-thought_reasoning_across_languages.md)
 
 </div>
 

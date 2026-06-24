@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Reinforcement Learning for Reachability: Guaranteeing Asymptotic Optimality
 description: >-
-  [ICML 2026][Reinforcement Learning][Bounded Value Iteration] This paper addresses the problem of learning reachability specifications on unknown MDPs by proposing a direct learning algorithm that refines PAC parameters in stages. It proves the existence of a finite stage $K_{\mathsf{opt}}$ with probability 1, after which only the optimal policy is output. This stage is explicitl
+  [ICML 2026][Reinforcement Learning][Reachability Specifications] This paper addresses the problem of learning reachability specifications on unknown MDPs by proposing a direct learning algorithm that refines PAC parameters in stages. It proves the existence of a finite stage $K_{\mathsf{opt}}$ with probability 1, after which only the optimal policy is output. This stage is explicitly characterized using internal MDP parameters, and empirical results on quantitative verificati…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Bounded Value Iteration
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Reachability Specifications"
+  - "PAC Learning"
+  - "Asymptotic Optimality"
+  - "Bounded Value Iteration"
 date: 2026-05-08
-content_hash: f5bced893f5375d9
+content_hash: 025ea6ecf7cb3a9f
 ---
+
 # Reinforcement Learning for Reachability: Guaranteeing Asymptotic Optimality
 
 **Conference**: ICML 2026  
@@ -151,11 +155,11 @@ The implementation is public on GitHub, tested on 9 standard MDPs from the Quant
 
 ## Related Papers
 
-- [\[ICML 2026\] Distributional Inverse Reinforcement Learning](distributional_inverse_reinforcement_learning.md)
-- [\[ICML 2026\] The Surprising Difficulty of Search in Model-Based Reinforcement Learning](the_surprising_difficulty_of_search_in_model-based_reinforcement_learning.md)
-- [\[ICML 2026\] Dr. Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research](dr_tulu_reinforcement_learning_with_evolving_rubrics_for_deep_research.md)
-- [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
-- [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
+- [\[NeurIPS 2025\] On the Global Optimality of Policy Gradient Methods in General Utility Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/on_the_global_optimality_of_policy_gradient_methods_in_general_utility_reinforce.md)
+- [\[ICLR 2026\] On the Tension Between Optimality and Adversarial Robustness in Policy Optimization](../../ICLR2026/reinforcement_learning/on_the_tension_between_optimality_and_adversarial_robustness_in_policy_optimizat.md)
+- [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](../../NeurIPS2025/reinforcement_learning/learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
+- [\[ICML 2025\] Action-Dependent Optimality-Preserving Reward Shaping (ADOPS)](../../ICML2025/reinforcement_learning/action-dependent_optimality-preserving_reward_shaping.md)
+- [\[NeurIPS 2025\] Greedy Algorithm for Structured Bandits: A Sharp Characterization of Asymptotic Success / Failure](../../NeurIPS2025/reinforcement_learning/greedy_algorithm_for_structured_bandits_a_sharp_characterization_of_asymptotic_s.md)
 
 </div>
 

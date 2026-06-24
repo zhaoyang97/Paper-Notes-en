@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][real-to-sim-to-real] This paper proposes D-REX, a differentiable real-to-sim-to-real engine based on Gaussian representation. It performs end-to-end object mass identification through visual observations and robot control signals, and utilizes the identified mass for force-aware dexterous grasping policy learning, effectively narrowing the
+  [ICLR 2026][Robotics][real-to-sim-to-real] This paper proposes D-REX, a differentiable real-to-sim-to-real engine based on Gaussian representation. It performs end-to-end object mass identification through visual observations and robot control signals, and utilizes the identified mass for force-aware dexterous grasping policy learning, effectively narrowing the sim-to-real gap.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - real-to-sim-to-real
+  - "ICLR 2026"
+  - "Robotics"
+  - "real-to-sim-to-real"
+  - "differentiable physics simulation"
+  - "system identification"
+  - "dexterous grasping"
+  - "Gaussian representation"
 date: 2026-05-08
-content_hash: 2525ae67fce5b832
+content_hash: acd56fbc89cdab95
 ---
+
 # D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping
 
 **Conference**: ICLR 2026  
@@ -153,11 +158,11 @@ Cross-evaluation demonstrates that the policy achieves optimal performance only 
 
 ## Related Papers
 
+- [\[ICLR 2026\] RobotArena ∞: Scalable Robot Benchmarking via Real-to-Sim Translation](robotarena_infty_scalable_robot_benchmarking_via_real-to-sim_translation.md)
+- [\[ICLR 2026\] Latent Adaptation of Foundation Policies for Sim-to-Real Transfer](latent_adaptation_of_foundation_policies_for_sim-to-real_transfer.md)
 - [\[CVPR 2026\] RoboWheel: A Data Engine from Real-World Human Demonstrations for Cross-Embodiment Robotic Learning](../../CVPR2026/robotics/robowheel_a_data_engine_from_real-world_human_demonstrations_for_cross-embodimen.md)
 - [\[CVPR 2026\] VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation](../../CVPR2026/robotics/viral_visual_sim-to-real_at_scale_for_humanoid_loco-manipulation.md)
 - [\[ICLR 2026\] DemoGrasp: Universal Dexterous Grasping from a Single Demonstration](demograsp_universal_dexterous_grasping_from_a_single_demonstration.md)
-- [\[CVPR 2026\] Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer](../../CVPR2026/robotics/opening_the_sim-to-real_door_for_humanoid_pixel-to-action_policy_transfer.md)
-- [\[ICLR 2026\] RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization](rrnco_towards_real-world_routing_with_neural_combinatorial_optimization.md)
 
 </div>
 

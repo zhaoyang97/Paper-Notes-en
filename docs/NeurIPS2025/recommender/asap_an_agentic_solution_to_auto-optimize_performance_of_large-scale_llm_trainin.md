@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ASAP: An Agentic Solution to Auto-Optimize Performance of Large-Scale LLM Training
 description: >-
-  [NeurIPS 2025][Recommender Systems][Multi-agent systems] ASAP is a multi-agent system (Coordinator + Analyzer + Proposal) that automatically diagnoses bottleneck types (compute/memory/communication) in large-scale LLM di…
+  [NeurIPS 2025][Recommender Systems][Multi-agent systems] ASAP is a multi-agent system (Coordinator + Analyzer + Proposal) that automatically diagnoses bottleneck types (compute/memory/communication) in large-scale LLM distributed training and proposes sharding configurations. Across 3 experimental scenarios, it matches human expert solutions and achieves up to 2.58× throughput improvement.
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "bottleneck analysis"
   - "Roofline model"
 date: 2026-05-08
-content_hash: 3ab31d439c33e59a
+content_hash: 3d8074eb8cd134fc
 ---
 
 # ASAP: An Agentic Solution to Auto-Optimize Performance of Large-Scale LLM Training
@@ -134,9 +134,9 @@ No training involved — purely LLM inference with tool invocation.
 
 - [\[NeurIPS 2025\] Balancing Performance and Costs in Best Arm Identification](balancing_performance_and_costs_in_best_arm_identification.md)
 - [\[NeurIPS 2025\] Estimating Hitting Times Locally At Scale](estimating_hitting_times_locally_at_scale.md)
-- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
+- [\[ICLR 2026\] Adaptive Regularization for Large-Scale Sparse Feature Embedding Models](../../ICLR2026/recommender/adaptive_regularization_for_large-scale_sparse_feature_embedding_models.md)
+- [\[ICLR 2026\] Rank-GRPO: Training LLM-based Conversational Recommender Systems with Reinforcement Learning](../../ICLR2026/recommender/rank-grpo_training_llm-based_conversational_recommender_systems_with_reinforceme.md)
 - [\[AAAI 2026\] TraveLLaMA: A Multimodal Travel Assistant with Large-Scale Dataset and Structured Reasoning](../../AAAI2026/recommender/travellama_a_multimodal_travel_assistant_with_large-scale_dataset_and_structured.md)
-- [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
 
 </div>
 

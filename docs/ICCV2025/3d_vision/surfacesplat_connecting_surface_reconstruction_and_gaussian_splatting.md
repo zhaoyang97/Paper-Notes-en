@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting
 description: >-
-  [ICCV 2025][3D Vision][Surface Reconstruction] SurfaceSplat proposes a hybrid framework that establishes bidirectional connections between SDF (Signed Distance Function) and 3D Gaussian Splatting (3DGS): the SDF provides…
+  [ICCV 2025][3D Vision][Surface Reconstruction] SurfaceSplat proposes a hybrid framework that establishes bidirectional connections between SDF (Signed Distance Function) and 3D Gaussian Splatting (3DGS): the SDF provides coarse geometry to enhance 3DGS rendering quality, while novel-view images rendered by 3DGS are in turn used to refine SDF surface reconstruction accuracy. The method achieves state-of-the-art performance on both surface reconstruction and novel view synthesi…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Sparse-View"
   - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 0f0e7a4ba6991f89
+content_hash: 4e33c84f203ec760
 ---
 
 # SurfaceSplat: Connecting Surface Reconstruction and Gaussian Splatting
@@ -145,11 +145,11 @@ Results on the MobileBrick dataset:
 
 ## Related Papers
 
+- [\[CVPR 2025\] DepthSplat: Connecting Gaussian Splatting and Depth](../../CVPR2025/3d_vision/depthsplat_connecting_gaussian_splatting_and_depth.md)
 - [\[AAAI 2026\] SparseSurf: Sparse-View 3D Gaussian Splatting for Surface Reconstruction](../../AAAI2026/3d_vision/sparsesurf_sparse-view_3d_gaussian_splatting_for_surface_reconstruction.md)
-- [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
 - [\[ICCV 2025\] 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting](7dgs_unified_spatial-temporal-angular_gaussian_splatting.md)
-- [\[AAAI 2026\] MeshSplat: Generalizable Sparse-View Surface Reconstruction via Gaussian Splatting](../../AAAI2026/3d_vision/meshsplat_generalizable_sparse-view_surface_reconstruction_via_gaussian_splattin.md)
-- [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
+- [\[ICCV 2025\] MuGS: Multi-Baseline Generalizable Gaussian Splatting Reconstruction](mugs_multi-baseline_generalizable_gaussian_splatting_reconstruction.md)
+- [\[ICCV 2025\] RayletDF: Raylet Distance Fields for Generalizable 3D Surface Reconstruction from Point Clouds or Gaussians](rayletdf_raylet_distance_fields_for_generalizable_3d_surface_reconstruction_from.md)
 
 </div>
 

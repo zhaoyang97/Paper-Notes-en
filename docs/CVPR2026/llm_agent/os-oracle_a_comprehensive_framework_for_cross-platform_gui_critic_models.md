@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models
 description: >-
-  [CVPR 2026][LLM Agent][GUI Agent] Addressing the lack of reliable step-by-step error detectors for "screen-based" GUI agents, OS-Oracle introduces a data pipeline that automatically synthesizes four types of typical error actions from positive trajectories. This generates 310,000 critic samples used to train a 7B critic model through two-stage SFT and
+  [CVPR 2026][LLM Agent][GUI Agent] Addressing the lack of reliable step-by-step error detectors for "screen-based" GUI agents, OS-Oracle introduces a data pipeline that automatically synthesizes four types of typical error actions from positive trajectories. This generates 310,000 critic samples used to train a 7B critic model through two-stage SFT and Consistency-Preserving GRPO (CP-GRPO). The work also provides OS-Critic Bench, the first human-annotated critic benchmark cove…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - GUI Agent
-  - Critic Model
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "GUI Agent"
+  - "Critic Model"
+  - "Hard Negative Synthesis"
+  - "GRPO"
+  - "Cross-platform Benchmark"
 date: 2026-05-08
-content_hash: d7ae961bc2fee4cc
+content_hash: 40bfeccb5516d903
 ---
+
 # OS-Oracle: A Comprehensive Framework for Cross-Platform GUI Critic Models
 
 **Conference**: CVPR 2026  
@@ -147,9 +150,9 @@ OS-Oracle-7B achieved the highest overall accuracy (68.02) among open-source mod
 
 - [\[CVPR 2026\] MMBench-GUI: A Unified Hierarchical Evaluation Framework for Multi-Platform GUI Agents](mmbench-gui_a_unified_hierarchical_evaluation_framework_for_multi-platform_gui_a.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
+- [\[ICLR 2026\] ScaleCUA: Scaling Open-Source Computer Use Agents with Cross-Platform Data](../../ICLR2026/llm_agent/scalecua_scaling_open-source_computer_use_agents_with_cross-platform_data.md)
 - [\[CVPR 2026\] Towards GUI Agents: Vision-Language Diffusion Models for GUI Grounding](towards_gui_agents_vision-language_diffusion_models_for_gui_grounding.md)
 - [\[CVPR 2026\] CGL: Advancing Continual GUI Learning via Reinforcement Fine-Tuning](cgl_advancing_continual_gui_learning_via_reinforcement_fine-tuning.md)
-- [\[CVPR 2026\] ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands](showui-p_flow-based_generative_models_as_gui_dexterous_hands.md)
 
 </div>
 

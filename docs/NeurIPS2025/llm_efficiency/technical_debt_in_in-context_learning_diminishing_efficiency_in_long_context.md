@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context
 description: >-
-  [NeurIPS 2025][LLM Efficiency][In-context learning] Drawing on the methodology of optimization software benchmarking, this work precisely quantifies the sample efficiency of ICL relative to the Bayes-optimal estimator vi…
+  [NeurIPS 2025][LLM Efficiency][In-context learning] Drawing on the methodology of optimization software benchmarking, this work precisely quantifies the sample efficiency of ICL relative to the Bayes-optimal estimator via performance ratios. A clear dichotomy is identified: in the few-shot regime (≤15 demonstrations), efficiency is near-optimal (only ~10% overhead), whereas in the many-shot regime (>40 demonstrations) it degrades sharply (>45% overhead). Information-theoretic…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "technical debt"
   - "long-context efficiency"
 date: 2026-05-08
-content_hash: 02003c4e2fa4c39a
+content_hash: cd89d3c8e66a2663
 ---
 
 # Technical Debt in In-Context Learning: Diminishing Efficiency in Long Context
@@ -118,11 +118,11 @@ The Transformer uses a GPT-2 architecture and is trained with the objective $\ma
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
+- [\[ACL 2025\] On Many-Shot In-Context Learning for Long-Context Evaluation](../../ACL2025/llm_efficiency/on_many-shot_in-context_learning_for_long-context_evaluation.md)
+- [\[ICLR 2026\] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism](../../ICLR2026/llm_efficiency/long-context_attention_benchmark_from_kernel_efficiency_to_distributed_context_p.md)
 - [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
-- [\[NeurIPS 2025\] SkyLadder: Better and Faster Pretraining via Context Window Scheduling](skyladder_better_and_faster_pretraining_via_context_window_scheduling.md)
-- [\[NeurIPS 2025\] L-MTP: Leap Multi-Token Prediction Beyond Adjacent Context for Large Language Models](l-mtp_leap_multi-token_prediction_beyond_adjacent_context_for_large_language_mod.md)
-- [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
+- [\[NeurIPS 2025\] Long-Context Modeling with Dynamic Hierarchical Sparse Attention for On-Device LLMs](long-context_modeling_with_dynamic_hierarchical_sparse_attention_for_on-device_l.md)
+- [\[ACL 2025\] Ref-Long: Benchmarking the Long-Context Referencing Capability of Long-Context Language Models](../../ACL2025/llm_efficiency/ref-long_benchmarking_the_long-context_referencing_capability_of_long-context_la.md)
 
 </div>
 

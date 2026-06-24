@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Value Induction Reshapes LLM Behaviour
 description: >-
-  [ACL 2026][Alignment & RLHF][DPO] This paper performs DPO fine-tuning on 8 open-source LLMs (Llama 3 series) across 15 values using value-annotated preference data subsets. It reveals systematic crosstalk between values: inducing one value simultaneously strengthens or suppresses other related/opposing values. While positive values enhance safety, all
+  [ACL 2026 Findings][LLM Alignment][Value Induction] This paper performs DPO fine-tuning on 8 open-source LLMs (Llama 3 series) across 15 values using value-annotated preference data subsets. It reveals systematic crosstalk between values: inducing one value simultaneously strengthens or suppresses other related/opposing values. While positive values enhance safety, all value inductions increase "anthropomorphism," making outputs more likely to be perceived as sycophantic.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - DPO
-  - anthropomorphism
+  - "ACL 2026 Findings"
+  - "LLM Alignment"
+  - "Value Induction"
+  - "DPO"
+  - "Sycophancy"
+  - "Anthropomorphism"
+  - "Correlated Values"
 date: 2026-05-08
-content_hash: e487d783f81302d8
+content_hash: a0c83a6786a1c4a1
 ---
+
 # How Value Induction Reshapes LLM Behaviour
 
 **Conference**: ACL 2026 Findings  
@@ -139,10 +143,10 @@ Value induction uses both DPO and system prompts. Validation on 100 samples acro
 ## Related Papers
 
 - [\[ICLR 2026\] Why DPO is a Misspecified Estimator and How to Fix It](../../ICLR2026/llm_alignment/why_dpo_is_misspecified_estimator.md)
-- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](../../ICML2026/llm_alignment/toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
 - [\[ICLR 2026\] BIRD: Behavior Induction via Representation-structure Distillation](../../ICLR2026/llm_alignment/bird_behavior_induction_via_representation-structure_distillation.md)
-- [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
-- [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](../../ICML2026/llm_alignment/picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
+- [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](../../ICLR2026/llm_alignment/pretrain_value_not_reward_decoupled_value_policy_optimization.md)
+- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](../../ICML2026/llm_alignment/toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
+- [\[ICLR 2026\] Reward Models Inherit Value Biases from Pretraining](../../ICLR2026/llm_alignment/reward_models_inherit_value_biases_from_pretraining.md)
 
 </div>
 

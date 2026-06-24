@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] DeFI decomposes robot policy learning into two independent modules—"predicting future frames" and "inferring latent actions." These are pretrained separately on large-scale human and robot videos and then coupled for end-to-end fine-tuning. This allows massive action-less videos to be utilized for VLA, achieving SOTA r
+  [ICLR2026][Robotics][VLA] DeFI decomposes robot policy learning into two independent modules—"predicting future frames" and "inferring latent actions." These are pretrained separately on large-scale human and robot videos and then coupled for end-to-end fine-tuning. This allows massive action-less videos to be utilized for VLA, achieving SOTA results on CALVIN ABC-D (Avg. length 4.51), SimplerEnv-Fractal (51.2%), and real-world robots (81.3%).
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICLR2026"
+  - "Robotics"
+  - "VLA"
+  - "Forward Dynamics"
+  - "Inverse Dynamics"
+  - "Action-less Video"
+  - "Disentangled Pretraining"
 date: 2026-05-08
-content_hash: ac804d54e0ed4e13
+content_hash: c1a03614a24c7f07
 ---
+
 # Disentangled Robot Learning via Separate Forward and Inverse Dynamics Pretraining
 
 **Conference**: ICLR2026  

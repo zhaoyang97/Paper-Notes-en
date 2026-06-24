@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Low-Rank Test-Time Training for Pre-Trained Point Cloud Models
 description: >-
-  [CVPR 2026][3D Vision][LoRA] This paper proposes LoTT-PC, a lightweight test-time training framework for pre-trained point cloud models. By replacing full-parameter fine-tuning with LoRA-style Low-Rank Modulation Units and substituting reconstruction auxiliary heads with decoder-free "Masked Feature Alignment," it outperforms the SOTA by approxima
+  [CVPR 2026][3D Vision][Test-Time Training] This paper proposes LoTT-PC, a lightweight test-time training framework for pre-trained point cloud models. By replacing full-parameter fine-tuning with LoRA-style Low-Rank Modulation Units and substituting reconstruction auxiliary heads with decoder-free "Masked Feature Alignment," it outperforms the SOTA by approximately 2.7% on average across three point cloud corruption benchmarks using single-step online updates.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - LoRA
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Test-Time Training"
+  - "Point Cloud Classification"
+  - "LoRA"
+  - "Masked Feature Alignment"
+  - "Out-of-Distribution Robustness"
 date: 2026-05-08
-content_hash: 7b3f19b8260eb593
+content_hash: f02d307ab6e5a12c
 ---
+
 # Low-Rank Test-Time Training for Pre-Trained Point Cloud Models
 
 **Conference**: CVPR 2026  
@@ -128,11 +133,11 @@ Decomposing components on ScanObjectNN-C (SO = Source Only, Online = Test-Time T
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D sans 3D Scans: Scalable Pre-training from Video-Generated Point Clouds](3d_sans_3d_scans_scalable_pre-training_from_video-generated_point_clouds.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning](adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning.md)
+- [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
+- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
+- [\[CVPR 2026\] Scal3R: Scalable Test-Time Training for Large-Scale 3D Reconstruction](scal3r_scalable_test-time_training_for_large-scale_3d_reconstruction.md)
+- [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
+- [\[CVPR 2025\] PointLoRA: Low-Rank Adaptation with Token Selection for Point Cloud Learning](../../CVPR2025/3d_vision/pointlora_low-rank_adaptation_with_token_selection_for_point_cloud_learning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] REFLEX binds verdict prediction and explanation generation in fact-checking by constructing internal steering vectors from self-disagreement samples between the backbone and fine-tuned models. Without relying on search APIs or closed-source teacher models, it improves the verdict Macro-F1 and produces shorter, more con
+  [ACL2026][AIGC Detection][Explainable Fact-Checking] REFLEX binds verdict prediction and explanation generation in fact-checking by constructing internal steering vectors from self-disagreement samples between the backbone and fine-tuned models. Without relying on search APIs or closed-source teacher models, it improves the verdict Macro-F1 and produces shorter, more consistent, and less misleading explanations.
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL2026"
+  - "AIGC Detection"
+  - "Explainable Fact-Checking"
+  - "Activation Steering"
+  - "Hallucination Suppression"
+  - "Verdict-Anchored Explanation"
+  - "Self-Refinement"
 date: 2026-05-08
-content_hash: 85a0a2e3d6e0996d
+content_hash: c06f893c7298c199
 ---
+
 # REFLEX: Self-Refining Explainable Fact-Checking via Verdict-Anchored Style Control
 
 **Conference**: ACL2026  
@@ -141,10 +147,20 @@ The authors conducted multi-level ablations: cross-backbone, cross-dataset trans
 - Value: ⭐⭐⭐⭐⭐ Directly applicable to explainable fact-checking, content moderation, and activation control.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] LLM Self-Recognition: Steering and Retrieving Activation Signatures](../../ICML2026/aigc_detection/llm_self-recognition_steering_and_retrieving_activation_signatures.md)
+- [\[ACL 2026\] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)
+- [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
+- [\[ICLR 2026\] Calibrating Verbalized Confidence with Self-Generated Distractors](../../ICLR2026/aigc_detection/calibrating_verbalized_confidence_with_self-generated_distractors.md)
+- [\[CVPR 2026\] Investigating Self-Supervised Representations for Audio-Visual Deepfake Detection](../../CVPR2026/aigc_detection/investigating_self-supervised_representations_for_audio-visual_deepfake_detectio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] mdok-style at SemEval-2026 Task 10: Finetuning LLMs for Conspiracy Detection](mdok-style_at_semeval-2026_task_10_finetuning_llms_for_conspiracy_detection.md)

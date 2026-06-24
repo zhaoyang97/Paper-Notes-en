@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Boltzmann Generator] This paper proposes REGFLOW, which replaces the classic Maximum Likelihood Estimation (MLE) training typically used for Normalizing Flows (NF) with a simple $\ell_2$ regression objective. By allowing the NF to directly fit noise-data pairs from "known invertible mappings" provided by reflow (pre-trained CNF) or Optimal
+  [ICLR 2026][Physics & Scientific Computing][Normalizing Flows] This paper proposes REGFLOW, which replaces the classic Maximum Likelihood Estimation (MLE) training typically used for Normalizing Flows (NF) with a simple $\ell_2$ regression objective. By allowing the NF to directly fit noise-data pairs from "known invertible mappings" provided by reflow (pre-trained CNF) or Optimal Transport, REGFLOW bypasses the numerical instability and Jacobian overhead of MLE. For molecula…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Boltzmann Generator
-  - reflow
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Normalizing Flows"
+  - "Regression-based Training"
+  - "Boltzmann Generator"
+  - "Optimal Transport"
+  - "reflow"
 date: 2026-05-08
-content_hash: 08f5ce89ccbc4169
+content_hash: 3d150a24139b4aa0
 ---
+
 # Efficient Regression-based Training of Normalizing Flows for Boltzmann Generators
 
 **Conference**: ICLR 2026  
@@ -156,10 +160,10 @@ In terms of inference efficiency (ALDP, 200k points likelihood): NSF dropped fro
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Boltzmann Generators via Constrained Mass Transport](learning_boltzmann_generators_via_constrained_mass_transport.md)
-- [\[ICLR 2026\] AQER: A Scalable and Efficient Data Loader for Digital Quantum Computers](aqer_a_scalable_and_efficient_data_loader_for_digital_quantum_computers.md)
-- [\[ICLR 2026\] DGNet: Discrete Green Networks for Data-Efficient Learning of Spatiotemporal PDEs](dgnet_discrete_green_networks_for_data-efficient_learning_of_spatiotemporal_pdes.md)
-- [\[ICLR 2026\] Overtone: Cyclic Patch Modulation for Clean, Efficient, and Flexible Physics Emulators](overtone_cyclic_patch_modulation_for_clean_efficient_and_flexible_physics_emulat.md)
-- [\[ICLR 2026\] Fast training of accurate physics-informed neural networks without gradient descent](fast_training_of_accurate_physics-informed_neural_networks_without_gradient_desc.md)
+- [\[NeurIPS 2025\] From Images to Physics: Probabilistic Inference of Galaxy Parameters and Emission Lines via VAE & Normalizing Flows](../../NeurIPS2025/physics/from_images_to_physics_probabilistic_inference_of_galaxy_parameters_and_emission.md)
+- [\[ICLR 2026\] GenSR: Symbolic Regression based on Equation Generative Space](gensr_symbolic_regression_based_on_equation_generative_space.md)
+- [\[ICLR 2026\] Deep Learning for Subspace Regression](deep_learning_for_subspace_regression.md)
+- [\[ICLR 2026\] MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials](matris_toward_reliable_and_efficient_pretrained_machine_learning_interatomic_pot.md)
 
 </div>
 

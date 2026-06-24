@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] The authors propose SEMA-RAG, a self-evolving multi-agent Retrival-Augmented Generation framework. By simulating phased clinical reasoning via three specialized agents (Interpreter, Explorer, Arbiter), it outperforms the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
+  [ACL 2026 Findings][Medical LLM][Medical QA] The authors propose SEMA-RAG, a self-evolving multi-agent Retrival-Augmented Generation framework. By simulating phased clinical reasoning via three specialized agents (Interpreter, Explorer, Arbiter), it outperforms the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Medical QA"
+  - "Multi-agent RAG"
+  - "Self-evolving retrieval"
+  - "Evidence chain construction"
+  - "Clinical reasoning"
 date: 2026-05-08
-content_hash: 997d964c04164ace
+content_hash: 6da84d566ef97cfd
 ---
+
 # SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -134,9 +140,9 @@ For a question with implicit nosocomial infection clues: The I-Agent first parse
 
 - [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
 - [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
+- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
 - [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
 - [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
-- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
 
 </div>
 

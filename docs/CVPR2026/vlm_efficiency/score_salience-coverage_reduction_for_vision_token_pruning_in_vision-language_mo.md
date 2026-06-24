@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] SCoRe reformulates LVLM vision token pruning from a two-stage heuristic—"attention-based Top-k followed by post-hoc diversity"—into a unified "representativeness optimization problem." It proves this problem is equivalent to the classical weighted k-Center problem and adopts a composite score encoding both salience and
+  [CVPR 2026][Multimodal Efficiency][Vision token pruning] SCoRe reformulates LVLM vision token pruning from a two-stage heuristic—"attention-based Top-k followed by post-hoc diversity"—into a unified "representativeness optimization problem." It proves this problem is equivalent to the classical weighted k-Center problem and adopts a composite score encoding both salience and coverage for greedy selection. Being training-free and plug-and-play…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Vision token pruning"
+  - "weighted k-Center"
+  - "Salience-Coverage"
+  - "training-free"
+  - "LVLM inference acceleration"
 date: 2026-05-08
-content_hash: e0f65115ae6c4a71
+content_hash: 0b9d29c7bb11dc31
 ---
+
 # SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -133,15 +139,16 @@ Testing the necessity of both objectives by taking $\alpha$ to extremes:
 - Value: ⭐⭐⭐⭐⭐ Practical for LVLM deployment due to being training-free and FlashAttention compatible.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
-- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
-- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
 - [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
-- [\[CVPR 2026\] Collaborative Multi-Mode Pruning for Vision-Language Models](collaborative_multi-mode_pruning_for_vision-language_models.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
+- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/vlm_efficiency/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
 
 </div>
 

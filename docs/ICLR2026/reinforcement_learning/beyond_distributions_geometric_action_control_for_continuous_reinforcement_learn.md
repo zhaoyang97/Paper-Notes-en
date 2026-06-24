@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][SAC] Addressing the geometric distortion caused by the "unbounded support + tanh squashing" of Gaussian policies in bounded action spaces, this paper proposes GAC (Geometric Action Control). It decomposes action generation into a "unit direction vector on a sphere + a learnable concentration scalar," replacing probabilistic
+  [ICLR2026][Reinforcement Learning][Continuous control] Addressing the geometric distortion caused by the "unbounded support + tanh squashing" of Gaussian policies in bounded action spaces, this paper proposes GAC (Geometric Action Control). It decomposes action generation into a "unit direction vector on a sphere + a learnable concentration scalar," replacing probabilistic sampling with spherical interpolation. This reduces parameter count from $2d$ to $d+1$ and sampling comp…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SAC
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Continuous control"
+  - "geometric action generation"
+  - "spherical policy"
+  - "distribution-free policy"
+  - "SAC"
 date: 2026-05-08
-content_hash: 8758856778197b0b
+content_hash: a5950f079e851587
 ---
+
 # Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -152,7 +157,7 @@ Ablations on radius $r$ and components in HalfCheetah-v4 (mean of 5 seeds):
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
 - [\[NeurIPS 2025\] Actor-Free Continuous Control via Structurally Maximizable Q-Functions](../../NeurIPS2025/reinforcement_learning/actorfree_continuous_control_via_structurally_maximizable_qf.md)
 - [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](../../ICML2026/reinforcement_learning/debiased_model-based_representations_for_sample-efficient_continuous_control.md)
-- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](geometric-mean_policy_optimization.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting
 description: >-
-  [AAAI 2026][Time Series][Extreme event forecasting] This paper proposes M2FMoE, a framework that models both regular and extreme temporal patterns via frequency-domain Mixture-of-Experts from dual Fourier and wavelet per…
+  [AAAI 2026][Time Series][Extreme event forecasting] This paper proposes M2FMoE, a framework that models both regular and extreme temporal patterns via frequency-domain Mixture-of-Experts from dual Fourier and wavelet perspectives. It incorporates a cross-view shared frequency-band splitter to align semantic correspondence across domains, multi-resolution adaptive fusion to capture multi-scale information, and temporal gated integration to combine short- and long-term features…
 tags:
   - "AAAI 2026"
   - "Time Series"
@@ -14,7 +14,7 @@ tags:
   - "multi-resolution fusion"
   - "hydrological forecasting"
 date: 2026-05-08
-content_hash: 702e9e03c1bdbb59
+content_hash: dad3999eaa5f3f21
 ---
 
 # M2FMoE: Multi-Resolution Multi-View Frequency Mixture-of-Experts for Extreme-Adaptive Time Series Forecasting
@@ -166,7 +166,7 @@ $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{pred}} + \lambda \mathcal{L}_{
 - [\[ICCV 2025\] VA-MoE: Variables-Adaptive Mixture of Experts for Incremental Weather Forecasting](../../ICCV2025/time_series/va-moe_variables-adaptive_mixture_of_experts_for_incremental_weather_forecasting.md)
 - [\[AAAI 2026\] Coherent Multi-Agent Trajectory Forecasting in Team Sports with CausalTraj](coherent_multi-agent_trajectory_forecasting_in_team_sports_with_causaltraj.md)
 - [\[AAAI 2026\] Towards Non-Stationary Time Series Forecasting with Temporal Stabilization and Frequency Differencing](towards_non-stationary_time_series_forecasting_with_temporal_stabilization_and_f.md)
-- [\[ICML 2026\] Dynamic-TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series](../../ICML2026/time_series/dynamic_tmoe_a_drift-aware_dynamic_mixture_of_experts_framework_for_non-stationa.md)
+- [\[ICLR 2026\] Improving Extreme Wind Prediction with Frequency-Informed Learning](../../ICLR2026/time_series/improving_extreme_wind_prediction_with_frequency-informed_learning.md)
 
 </div>
 

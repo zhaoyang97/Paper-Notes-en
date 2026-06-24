@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation
 description: >-
-  [ICCV 2025][Segmentation][Unsupervised Action Segmentation] This paper proposes Closed Loop Optimal Transport (CLOT), a framework that jointly solves three OT problems through a three-level cyclic feature learning pipeli…
+  [ICCV 2025][Segmentation][Unsupervised Action Segmentation] This paper proposes Closed Loop Optimal Transport (CLOT), a framework that jointly solves three OT problems through a three-level cyclic feature learning pipeline (frame embeddings → segment embeddings → cross-attention refined frame embeddings), establishing an explicit feedback loop between frame-level and segment-level representations to substantially improve boundary detection and clustering quality in unsupervis…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Encoder-Decoder"
   - "Sliced Wasserstein Distance"
 date: 2026-05-08
-content_hash: b3982c62a4d8e7a7
+content_hash: 6a51f1a7a96a359f
 ---
 
 # CLOT: Closed Loop Optimal Transport for Unsupervised Action Segmentation
@@ -131,8 +131,8 @@ The OT formulation is unbalanced, integrating two sub-problems, KOT and GW: $\mi
 - [\[ICCV 2025\] Skeleton Motion Words for Unsupervised Skeleton-Based Temporal Action Segmentation](skeleton_motion_words_for_unsupervised_skeleton-based_temporal_action_segmentati.md)
 - [\[ICCV 2025\] Joint Self-Supervised Video Alignment and Action Segmentation](joint_self-supervised_video_alignment_and_action_segmentation.md)
 - [\[ICCV 2025\] Learn2Synth: Learning Optimal Data Synthesis Using Hypergradients for Brain Image Segmentation](learn2synth_learning_optimal_data_synthesis_using_hypergradients_for_brain_image.md)
+- [\[CVPR 2025\] Condensing Action Segmentation Datasets via Generative Network Inversion](../../CVPR2025/segmentation/condensing_action_segmentation_datasets_via_generative_network_inversion.md)
 - [\[ICCV 2025\] Beyond Single Images: Retrieval Self-Augmented Unsupervised Camouflaged Object Detection](beyond_single_images_retrieval_self-augmented_unsupervised_camouflaged_object_de.md)
-- [\[ICCV 2025\] Ensemble Foreground Management for Unsupervised Object Discovery](ensemble_foreground_management_for_unsupervised_object_discovery.md)
 
 </div>
 

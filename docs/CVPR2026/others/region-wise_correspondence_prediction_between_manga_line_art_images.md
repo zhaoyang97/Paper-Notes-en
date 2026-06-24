@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Region-Wise Correspondence Prediction between Manga Line Art Images
 description: >-
-  [CVPR 2026][Others][Transformer] This paper introduces the task of "directly predicting region-level correspondences from unlabeled raw manga line art pairs." It employs a combined ViT + Multiplex Transformer to jointly learn intra-image structural grouping and cross-image similarity. Combined with edge-aware post-processing to transform patch similar
+  [CVPR 2026][Manga Line Art] This paper introduces the task of "directly predicting region-level correspondences from unlabeled raw manga line art pairs." It employs a combined ViT + Multiplex Transformer to jointly learn intra-image structural grouping and cross-image similarity. Combined with edge-aware post-processing to transform patch similarities into pixel-level region segmentation and matching, the method achieves 78.4–84.4% region-level accuracy on hand-drawn style li…
 tags:
-  - CVPR 2026
-  - Others
-  - Transformer
+  - "CVPR 2026"
+  - "Manga Line Art"
+  - "Region Correspondence"
+  - "Transformer"
+  - "Patch Similarity"
+  - "Edge-Aware Segmentation"
 date: 2026-05-08
-content_hash: 9b33f17d2ca062ea
+content_hash: 743970ee62f3bce5
 ---
+
 # Region-Wise Correspondence Prediction between Manga Line Art Images
 
 **Conference**: CVPR 2026  
@@ -152,10 +156,10 @@ Ours achieves a Cluster Ratio (CR) near 1 (1.41–1.70), indicating balanced seg
 ## Related Papers
 
 - [\[CVPR 2026\] ALLNet: Multi-task Dense Prediction for Degraded Images](allnet_multi-task_dense_prediction_for_degraded_images.md)
-- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
 - [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
 - [\[CVPR 2026\] A Difference-in-Difference Approach to Detecting AI-Generated Images](a_difference-in-difference_approach_to_detecting_ai-generated_images.md)
-- [\[CVPR 2026\] When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence](when_lines_meet_textures_spatial-frequency_aligned_diffusion_features_for_cross-.md)
+- [\[CVPR 2026\] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)
+- [\[CVPR 2026\] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images](a_debiased_reconstruction-based_framework_for_training-free_detection_of_ai-gene.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] PICACO formalizes the challenge of "making an LLM adhere to multiple or even conflicting human values within a single prompt" as maximizing the "conditional Total Correlation (TC) between value sets and responses." Without updating model parameters, it automatically searches for a meta-instruction through an EM-like tw
+  [ICML 2026][LLM Alignment][Pluralistic Value Alignment] PICACO formalizes the challenge of "making an LLM adhere to multiple or even conflicting human values within a single prompt" as maximizing the "conditional Total Correlation (TC) between value sets and responses." Without updating model parameters, it automatically searches for a meta-instruction through an EM-like two-step iteration of "response enhancement + instruction refinement." PICACO outperforms strong baselines…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Pluralistic Value Alignment"
+  - "In-Context Alignment (ICA)"
+  - "Total Correlation (TC)"
+  - "Meta-instruction Optimization"
+  - "Black-box Optimization"
 date: 2026-05-08
-content_hash: 970498f30c2a56f7
+content_hash: 22f270759e18d3b2
 ---
+
 # PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization
 
 **Conference**: ICML 2026  
@@ -149,7 +155,7 @@ Evaluated on 5 value compositions (Helpfulness-4, Harmlessness-4, HH Balance-8, 
 - [\[ICML 2026\] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment](quantifying_the_salience_of_geo-cultural_values_for_pluralistic_safety_alignment.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
 - [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
-- [\[ICML 2026\] The Realignment Problem: When Right becomes Wrong in LLMs](the_realignment_problem_when_right_becomes_wrong_in_llms.md)
+- [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](../../ICLR2026/llm_alignment/pretrain_value_not_reward_decoupled_value_policy_optimization.md)
 
 </div>
 

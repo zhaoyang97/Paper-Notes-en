@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Conformalized Hierarchical Calibration for Uncertainty-Aware Adaptive Hashing
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] To address the persistent issues of pseudo-label noise and blind domain alignment in Unsupervised Domain Adaptive Hashing (UDAH), COLA introduces a "conformal hierarchical calibration" framework. It quantifies sample reliability at the semantic level using the size of conformal prediction sets and predicts the stabilit
+  [ICLR2026][Information Retrieval & RAG][Deep Hashing] To address the persistent issues of pseudo-label noise and blind domain alignment in Unsupervised Domain Adaptive Hashing (UDAH), COLA introduces a "conformal hierarchical calibration" framework. It quantifies sample reliability at the semantic level using the size of conformal prediction sets and predicts the stability of each hash bit at the representation level. By upgrading uncertainty from heuristic thresholds to cont…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Deep Hashing"
+  - "Unsupervised Domain Adaptation"
+  - "Conformal Prediction"
+  - "Uncertainty Quantification"
+  - "Approximate Nearest Neighbor Search"
 date: 2026-05-08
-content_hash: 9d97b2d2cae9311c
+content_hash: 3fe9e599cd76a1bb
 ---
+
 # Conformalized Hierarchical Calibration for Uncertainty-Aware Adaptive Hashing
 
 **Conference**: ICLR2026  
@@ -140,11 +146,11 @@ On Digits (MNIST↔USPS), mAP increased from COUPLE's 68.53 to **70.40**, with m
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] AcuRank: Uncertainty-Aware Adaptive Computation for Listwise Reranking](../../NeurIPS2025/information_retrieval/acurank_uncertainty-aware_adaptive_computation_for_listwise_reranking.md)
+- [\[NeurIPS 2025\] AcuRank: Uncertainty-Aware Adaptive Computation for Reranking](../../NeurIPS2025/information_retrieval/acurank_uncertainty-aware_adaptive_computation_for_listwise_reranking.md)
 - [\[ICLR 2026\] Hierarchical Encoding Tree with Modality Mixup for Cross-modal Hashing](hierarchical_encoding_tree_with_modality_mixup_for_cross-modal_hashing.md)
 - [\[ICLR 2026\] Query-Level Uncertainty in Large Language Models](query-level_uncertainty_in_large_language_models.md)
+- [\[ICLR 2026\] Uncertainty-driven Embedding Convolution](uncertainty-driven_embedding_convolution.md)
 - [\[ICLR 2026\] Hierarchical Concept-based Interpretable Models](hierarchical_concept-based_interpretable_models.md)
-- [\[ICLR 2026\] Deep Global-sense Hard-negative Discriminative Generation Hashing for Cross-modal Retrieval](deep_global-sense_hard-negative_discriminative_generation_hashing_for_cross-moda.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models
 description: >-
-  [AAAI 2026][Multimodal VLM][CLIP fine-tuning] This paper proposes DiVE, a method that constrains the "difference vectors" between pre-trained and fine-tuned model embeddings to be equal across samples…
+  [AAAI 2026][Multimodal VLM][CLIP fine-tuning] This paper proposes DiVE, a method that constrains the "difference vectors" between pre-trained and fine-tuned model embeddings to be equal across samples, thereby preserving the geometric structure of the embedding space during CLIP fine-tuning. DiVE achieves comprehensive improvements over existing methods across in-distribution (ID), out-of-distribution (OOD), and zero-shot metrics (averaging 8+ points gain on zero-shot tasks).
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "out-of-distribution generalization"
   - "zero-shot performance"
 date: 2026-05-08
-content_hash: bc2f3cecf5b62cbb
+content_hash: 8476f997bbfc8ae5
 ---
 
 # Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models
@@ -178,11 +178,11 @@ DiVE's average zero-shot performance surpasses ARF by **8.1 percentage points**,
 
 ## Related Papers
 
-- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](../../ICML2026/multimodal_vlm/self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
+- [\[CVPR 2026\] TANGO: Text-Anchored Guided Optimization for Robust Fine-tuning Vision-Language Models under Label Noise](../../CVPR2026/multimodal_vlm/tango_text-anchored_guided_optimization_for_robust_fine-tuning_vision-language_m.md)
+- [\[ICLR 2026\] MergeTune: Continued Fine-Tuning of Vision-Language Models](../../ICLR2026/multimodal_vlm/mergetune_continued_fine-tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](../../CVPR2026/multimodal_vlm/trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
+- [\[ICML 2026\] Self-Captioning Multimodal Interaction Tuning: Amplifying Exploitable Redundancies for Robust Vision Language Models](../../ICML2026/multimodal_vlm/self-captioning_multimodal_interaction_tuning_amplifying_exploitable_redundancie.md)
 - [\[ICML 2026\] Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models](../../ICML2026/multimodal_vlm/layer-specific_fine-tuning_for_improved_negation_handling_in_medical_vision-lang.md)
-- [\[ICLR 2026\] Directional Embedding Smoothing for Robust Vision Language Models](../../ICLR2026/multimodal_vlm/directional_embedding_smoothing_for_robust_vision_language_models.md)
-- [\[CVPR 2026\] Dynamic Token Reweighting for Robust Vision-Language Models](../../CVPR2026/multimodal_vlm/dynamic_token_reweighting_for_robust_vision-language_models.md)
 
 </div>
 

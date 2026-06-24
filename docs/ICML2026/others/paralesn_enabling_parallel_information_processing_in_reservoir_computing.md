@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ParalESN: Enabling Parallel Information Processing in Reservoir Computing
 description: >-
-  [ICML 2026][Others][Paper Note] ParalESN injects LRU-style complex diagonal linear recurrences into the "untrained reservoir" of Echo State Networks, allowing traditional RC to achieve temporal parallelization and scale to $10^5$ dimensions while strictly maintaining the Echo State Property and universal approximation properties of fading memory filt
+  [ICML2026][Echo State Network] ParalESN injects LRU-style complex diagonal linear recurrences into the "untrained reservoir" of Echo State Networks, allowing traditional RC to achieve temporal parallelization and scale to $10^5$ dimensions while strictly maintaining the Echo State Property and universal approximation properties of fading memory filters.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Echo State Network"
+  - "Linear Recurrence"
+  - "Parallel Scan"
+  - "Diagonal Complex Matrix"
+  - "Fading Memory"
 date: 2026-05-08
-content_hash: 14ba096389d19356
+content_hash: 29ffb9268719fe5b
 ---
+
 # ParalESN: Enabling Parallel Information Processing in Reservoir Computing
 
 **Conference**: ICML2026  
@@ -125,6 +130,7 @@ Only the readout layer is trained. For classification, the final state $y = f_{r
 - Value: ⭐⭐⭐⭐ (Provides a scalable path for RC in the modern deep learning landscape)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

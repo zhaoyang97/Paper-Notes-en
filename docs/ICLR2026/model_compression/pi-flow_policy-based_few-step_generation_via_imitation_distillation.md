@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation
 description: >-
-  [ICLR 2026][Model Compression][DiT] Proposes π-Flow, which modifies the output layer of a student flow model to predict a "policy." This policy performs precise ODE integration through dynamic flow velocities across multiple sub-steps within a single network evaluation. By employing an imitation distillation method to match teacher velocities on the stud
+  [ICLR 2026][Model Compression][Flow matching model distillation] Proposes π-Flow, which modifies the output layer of a student flow model to predict a "policy." This policy performs precise ODE integration through dynamic flow velocities across multiple sub-steps within a single network evaluation. By employing an imitation distillation method to match teacher velocities on the student's own trajectories, it achieves stable and scalable few-step generation while avoiding the…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - DiT
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Flow matching model distillation"
+  - "few-step generation"
+  - "policy learning"
+  - "imitation distillation"
+  - "DiT"
 date: 2026-05-08
-content_hash: 551f81e9eb8d1b1e
+content_hash: d14cb21ef34957b6
 ---
+
 # π-Flow: Policy-Based Few-Step Generation via Imitation Distillation
 
 **Conference**: ICLR 2026  

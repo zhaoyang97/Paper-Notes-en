@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution
 description: >-
-  [AAAI 2026][Image Generation][Image Super-Resolution] This paper introduces the sparse Mixture-of-Experts (MoE) paradigm into real-world image super-resolution…
+  [AAAI 2026][Image Generation][Image Super-Resolution] This paper introduces the sparse Mixture-of-Experts (MoE) paradigm into real-world image super-resolution, proposing a Mixture-of-Ranks (MoR) architecture that treats each LoRA rank as an independent expert. Combined with a CLIP-driven degradation estimation module and a degradation-aware load balancing loss, the method achieves one-step high-fidelity super-resolution reconstruction.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Degradation-Aware"
   - "One-Step Diffusion"
 date: 2026-05-08
-content_hash: d0643fd887e9d2bd
+content_hash: 22b9dced8792c296
 ---
 
 # Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution
@@ -206,8 +206,8 @@ Key observations:
 - [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
 - [\[AAAI 2026\] Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution](continuous_degradation_modeling_via_latent_flow_matching_for_real-world_super-re.md)
 - [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](../../NeurIPS2025/image_generation/dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
-- [\[CVPR 2026\] OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution](../../CVPR2026/image_generation/oars_process-aware_online_alignment_for_generative_real-world_image_super-resolu.md)
-- [\[AAAI 2026\] GEWDiff: Geometric Enhanced Wavelet-based Diffusion Model for Hyperspectral Image Super-resolution](gewdiff_geometric_enhanced_wavelet-based_diffusion_model_for_hyperspectral_image.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](../../CVPR2026/image_generation/bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
+- [\[ECCV 2024\] AdaDiffSR: Adaptive Region-Aware Dynamic Acceleration Diffusion Model for Real-World Image Super-Resolution](../../ECCV2024/image_generation/adadiffsr_adaptive_region-aware_dynamic_acceleration_diffusion_model_for_real-wo.md)
 
 </div>
 

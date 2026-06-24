@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization
 description: >-
-  [CVPR 2026][Audio & Speech][Paper Note] GEM-TFL is proposed to bridge the gap between weak and full supervision through a two-stage classification-regression framework. It incorporates three modules: EM-based decomposition of binary labels into multi-dimensional latent attributes, training-free Temporal Consistency Refinement, and Graph-diffusion Proposal Re
+  [CVPR 2026][Audio & Speech][Temporal Forgery Localization] GEM-TFL is proposed to bridge the gap between weak and full supervision through a two-stage classification-regression framework. It incorporates three modules: EM-based decomposition of binary labels into multi-dimensional latent attributes, training-free Temporal Consistency Refinement, and Graph-diffusion Proposal Refinement, achieving a 4-8% average mAP improvement in weakly supervised temporal forgery localization…
 tags:
-  - CVPR 2026
-  - Audio & Speech
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Temporal Forgery Localization"
+  - "Weak Supervision"
+  - "EM Algorithm"
+  - "Graph Diffusion"
+  - "Temporal Consistency"
 date: 2026-05-08
-content_hash: c1a74c7f74bced2c
+content_hash: 7b7f813361ccb9f5
 ---
+
 # GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization
 
 **Conference**: CVPR 2026  
@@ -144,8 +150,8 @@ where $\mathcal{L}_{main}$ is the fitting term for regression predictions $\hat{
 - [\[AAAI 2026\] DeformTrace: A Deformable State Space Model with Relay Tokens for Temporal Forgery Localization](../../AAAI2026/audio_speech/deformtrace_a_deformable_state_space_model_with_relay_tokens_for_temporal_forger.md)
 - [\[CVPR 2026\] Unlocking Strong Supervision: A Data-Centric Study of General-Purpose Audio Pre-Training Methods](unlocking_strong_supervision_a_data-centric_study_of_general-purpose_audio_pre-t.md)
 - [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+- [\[ICLR 2026\] Bridging Piano Transcription and Rendering via Disentangled Score Content and Style](../../ICLR2026/audio_speech/bridging_piano_transcription_and_rendering_via_disentangled_score_content_and_st.md)
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/audio_speech/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
-- [\[ICML 2026\] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models](../../ICML2026/audio_speech/moshirag_asynchronous_knowledge_retrieval_for_full-duplex_speech_language_models.md)
 
 </div>
 

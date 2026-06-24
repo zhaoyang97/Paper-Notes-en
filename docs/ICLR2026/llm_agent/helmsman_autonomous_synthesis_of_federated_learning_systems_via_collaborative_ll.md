@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][human-in-the-loop] Helmsman utilizes a team of specialized LLM agents to automatically synthesize a runnable and simulation-verified Federated Learning (FL) codebase from high-level natural language requirements, such as "deploying a data-heterogeneous object detection system on 15 mobile devices."
+  [ICLR 2026][LLM Agent][Multi-agent collaboration] Helmsman utilizes a team of specialized LLM agents to automatically synthesize a runnable and simulation-verified Federated Learning (FL) codebase from high-level natural language requirements, such as "deploying a data-heterogeneous object detection system on 15 mobile devices."
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - human-in-the-loop
-  - AgentFL-Bench
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-agent collaboration"
+  - "Federated Learning"
+  - "Automated System Synthesis"
+  - "Code Generation"
+  - "human-in-the-loop"
+  - "AgentFL-Bench"
 date: 2026-05-08
-content_hash: 215e7a87cc1b60e5
+content_hash: 3c70cab72282be53
 ---
+
 # Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents
 
 **Conference**: ICLR 2026  
@@ -126,15 +131,14 @@ Ablation of six configurations (Claude-Sonnet-4.5) across 7 representative tasks
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](coda_agentic_systems_for_collaborative_data_visualization.md)
 - [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](scaling_agent_learning_via_experience_synthesis.md)
 - [\[ACL 2026\] FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems](../../ACL2026/llm_agent/fedgui_benchmarking_federated_gui_agents_across_heterogeneous_platforms_devices_.md)
-- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
 - [\[ICLR 2026\] Expanding the Capability Frontier of LLM Agents with ZPD-Guided Data Synthesis](expanding_the_capability_frontier_of_llm_agents_with_zpd-guided_data_synthesis.md)
-- [\[ICLR 2026\] CoMind: Towards Community-Driven Agents for Machine Learning Engineering](comind_towards_community-driven_agents_for_machine_learning_engineering.md)
+- [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
 
 </div>
 

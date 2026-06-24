@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hankel Singular Value Regularization for Highly Compressible State Space Models
 description: >-
-  [NeurIPS 2025][Model Compression][SSM compression] By regularizing the **Hankel singular value nuclear norm** of SSM layers during training to encourage rapid decay…
+  [NeurIPS 2025][Model Compression][SSM compression] By regularizing the **Hankel singular value nuclear norm** of SSM layers during training to encourage rapid decay, the trained model can be compressed to **10%** of its original order via balanced truncation with negligible accuracy loss. A block-diagonal rotation matrix parameterization reduces Gramian computation from $\mathcal{O}(n^3)$ to $\mathcal{O}(n^2)$.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "regularization"
   - "Long Range Arena"
 date: 2026-05-08
-content_hash: c5d5f1aca7055d94
+content_hash: 82fab7f4e70cb1a8
 ---
 
 # Hankel Singular Value Regularization for Highly Compressible State Space Models
@@ -135,11 +135,11 @@ Using the property $\mathbf{A}(\mathbf{x}, \boldsymbol{\beta}) \mathbf{A}(\mathb
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Curious Case of In-Training Compression of State Space Models](../../ICLR2026/model_compression/the_curious_case_of_in-training_compression_of_state_space_models.md)
+- [\[ACL 2025\] State-offset Tuning: State-based Parameter-Efficient Fine-Tuning for State Space Models](../../ACL2025/model_compression/state_offset_tuning_ssm_peft.md)
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](../../ICML2026/model_compression/quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
+- [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
 - [\[NeurIPS 2025\] Smooth Regularization for Efficient Video Recognition](smooth_regularization_for_efficient_video_recognition.md)
-- [\[NeurIPS 2025\] Multi-Task Vehicle Routing Solver via Mixture of Specialized Experts under State-Decomposable MDP](multi-task_vehicle_routing_solver_via_mixture_of_specialized_experts_under_state.md)
-- [\[NeurIPS 2025\] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression](qsvd_efficient_low-rank_approximation_for_unified_query-key-value_weight_compres.md)
-- [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 
 </div>
 

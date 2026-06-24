@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion
 description: >-
-  [ACL 2026][Dialogue Systems][Multi-Agent] MA$^2$P decomposes complex persuasive dialogue into a closed loop of "Meta-strategy selection - Task-level multi-agent persuasion - Post-hoc knowledge update". Without training the base LLM, it transforms the persuadee's beliefs, desires, and concerns into specific strategic actions, significantly improving the persuas
+  [ACL2026 Findings][Dialogue Systems][Complex persuasion] MA$^2$P decomposes complex persuasive dialogue into a closed loop of "Meta-strategy selection - Task-level multi-agent persuasion - Post-hoc knowledge update". Without training the base LLM, it transforms the persuadee's beliefs, desires, and concerns into specific strategic actions, significantly improving the persuasion success rate of various LLMs on CToMPersu.
 tags:
-  - ACL 2026
-  - Dialogue Systems
-  - Multi-Agent
+  - "ACL2026 Findings"
+  - "Dialogue Systems"
+  - "Complex persuasion"
+  - "Metacognition"
+  - "Multi-agent"
+  - "Theory of Mind modeling"
+  - "Strategy knowledge base"
 date: 2026-05-08
-content_hash: 15a057d839eb6f07
+content_hash: 2a5be88551b03864
 ---
+
 # MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion
 
 **Conference**: ACL2026 Findings  

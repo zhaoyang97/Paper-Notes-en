@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] DynBridge proposes "interaction dynamics" as a latent representation to end-to-end couple "imagining the future (trajectory generation)" and "control decision-making (action prediction)". This allows the robot to learn not just "where" the environment changes but also "how" actions cause these changes. It outperforms m
+  [CVPR 2026][Robotics][Robot Manipulation] DynBridge proposes "interaction dynamics" as a latent representation to end-to-end couple "imagining the future (trajectory generation)" and "control decision-making (action prediction)". This allows the robot to learn not just "where" the environment changes but also "how" actions cause these changes. It outperforms methods like ATM and GraphMimic on simulation and real-world benchmarks (LIBERO / Meta-World) without requiring pre-tra…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot Manipulation"
+  - "Interaction Dynamics"
+  - "Imitation Learning"
+  - "Trajectory Generation"
+  - "Action Prediction"
 date: 2026-05-08
-content_hash: 66c81f7212dc686c
+content_hash: 3a1d892682a956fd
 ---
+
 # DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation
 
 **Conference**: CVPR 2026  
@@ -138,15 +144,16 @@ Gains are most significant in LIBERO-Long (0.71 vs GraphMimic 0.56) and LIBERO-9
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] DAWN: Pixel Motion Diffusion is What We Need for Robot Control](dawn_pixel_motion_diffusion_robot_control.md)
-- [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
-- [\[ICCV 2025\] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos](../../ICCV2025/robotics/moto_latent_motion_token_as_the_bridging_language_for_learning_robot_manipulatio.md)
-- [\[CVPR 2026\] Contact-Aware Neural Dynamics](contact-aware_neural_dynamics.md)
 - [\[CVPR 2026\] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)
+- [\[CVPR 2026\] Contact-Aware Neural Dynamics](contact-aware_neural_dynamics.md)
+- [\[ICCV 2025\] Moto: Latent Motion Token as the Bridging Language for Learning Robot Manipulation from Videos](../../ICCV2025/robotics/moto_latent_motion_token_as_the_bridging_language_for_learning_robot_manipulatio.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
+- [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
 
 </div>
 

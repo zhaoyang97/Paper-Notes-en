@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Guiding a Diffusion Model by Swapping Its Tokens
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper introduces Self-Swap Guidance (SSG), a condition-independent sampling guidance method for diffusion models. By selectively swapping the most semantically dissimilar token pairs within the model's intermediate representation space to construct a perturbed version, SSG generates high-fidelity images stably acr
+  [CVPR 2026 Oral][Image Generation][Sampling Guidance] This paper introduces Self-Swap Guidance (SSG), a condition-independent sampling guidance method for diffusion models. By selectively swapping the most semantically dissimilar token pairs within the model's intermediate representation space to construct a perturbed version, SSG generates high-fidelity images stably across a wider range of guidance scales than methods like SAG/PAG/SEG, achieving state-of-the-art FID in both…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026 Oral"
+  - "Image Generation"
+  - "Sampling Guidance"
+  - "Unconditional Guidance"
+  - "Token Swapping"
+  - "Self-perturbation"
+  - "Image Fidelity"
 date: 2026-05-08
-content_hash: 0a45cffcbbffd412
+content_hash: 624ec988850141a5
 ---
+
 # Guiding a Diffusion Model by Swapping Its Tokens
 
 **Conference**: CVPR 2026 Oral  
@@ -146,9 +152,9 @@ SSG is a pure inference-time method requiring no training. It is implemented via
 
 - [\[CVPR 2026\] Guiding a Diffusion Transformer with the Internal Dynamics of Itself](guiding_a_diffusion_transformer_with_the_internal_dynamics_of_itself.md)
 - [\[CVPR 2026\] Guiding Token-Sparse Diffusion Models](guiding_token-sparse_diffusion_models.md)
-- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
 - [\[CVPR 2026\] Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
-- [\[CVPR 2026\] APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)
+- [\[CVPR 2026\] Guiding Diffusion Models with Semantically Degraded Conditions](guiding_diffusion_models_with_semantically_degraded_conditions.md)
+- [\[CVPR 2026\] High-Fidelity Diffusion Face Swapping with ID-Constrained Facial Conditioning](high-fidelity_diffusion_face_swapping_with_id-constrained_facial_conditioning.md)
 
 </div>
 

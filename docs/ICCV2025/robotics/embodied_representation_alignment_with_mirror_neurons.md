@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Embodied Representation Alignment with Mirror Neurons
 description: >-
-  [ICCV 2025][Robotics][mirror neurons] Inspired by mirror neurons, this paper aligns the intermediate representations of action understanding (observing others' behavior) and embodied execution (autonomously performing ac…
+  [ICCV 2025][Robotics][mirror neurons] Inspired by mirror neurons, this paper aligns the intermediate representations of action understanding (observing others' behavior) and embodied execution (autonomously performing actions) into a shared latent space via contrastive learning. The work reveals a spontaneous alignment phenomenon between the two model families that correlates with task success rate, and demonstrates that explicit alignment yields improvements on action recogn…
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "action understanding"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 96f49414d86cb0f5
+content_hash: e71759fe8af35657
 ---
 
 # Embodied Representation Alignment with Mirror Neurons
@@ -126,11 +126,11 @@ The framework jointly trains an action understanding model $\mathcal{U}$ (ViCLIP
 
 ## Related Papers
 
-- [\[ICCV 2025\] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment](evolvinggrasp_evolutionary_grasp_generation_via_efficient_preference_alignment.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](../../ICLR2026/robotics/spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICCV 2025\] Rep-MTL: Unleashing the Power of Representation-Level Task Saliency for Multi-Task Learning](rep-mtl_unleashing_the_power_of_representation-level_task_saliency_for_multi-tas.md)
+- [\[ICCV 2025\] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment](evolvinggrasp_evolutionary_grasp_generation_via_efficient_preference_alignment.md)
+- [\[CVPR 2025\] LaDA: Language-Grounded Decoupled Action Representation for Robotic Manipulation](../../CVPR2025/robotics/language-grounded_decoupled_action_representation_for_robotic_manipulation.md)
 - [\[ICCV 2025\] TesserAct: Learning 4D Embodied World Models](learning_4d_embodied_world_models.md)
-- [\[NeurIPS 2025\] RDD: Retrieval-Based Demonstration Decomposer for Planner Alignment in Long-Horizon Tasks](../../NeurIPS2025/robotics/rdd_retrieval-based_demonstration_decomposer_for_planner_alignment_in_long-horiz.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](../../NeurIPS2025/robotics/safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
 
 </div>
 

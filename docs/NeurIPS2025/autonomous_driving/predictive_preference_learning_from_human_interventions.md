@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Predictive Preference Learning from Human Interventions
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Interactive Imitation Learning] PPL leverages a trajectory prediction model to anticipate the agent's future states and "bootstraps" each human intervention signal across the predicted…
+  [NeurIPS 2025 Spotlight][Autonomous Driving][Interactive Imitation Learning] PPL leverages a trajectory prediction model to anticipate the agent's future states and "bootstraps" each human intervention signal across the predicted future horizon to construct contrastive preference data. Combined with a dual-loss training strategy of behavior cloning and preference optimization, PPL substantially reduces the number of required human interventions and demonstration data.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Autonomous Driving"
   - "Interactive Imitation Learning"
   - "Preference Learning"
@@ -12,7 +12,7 @@ tags:
   - "Trajectory Prediction"
   - "DPO"
 date: 2026-05-08
-content_hash: eecda7ee91ddb47e
+content_hash: 35d685c7102b5355
 ---
 
 # Predictive Preference Learning from Human Interventions
@@ -138,11 +138,11 @@ PPL achieves the highest success rate (76%) with the least human data (2.9K), co
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Towards Predicting Any Human Trajectory in Context](towards_predicting_any_human_trajectory_in_context.md)
+- [\[CVPR 2025\] Certified Human Trajectory Prediction](../../CVPR2025/autonomous_driving/certified_human_trajectory_prediction.md)
+- [\[ECCV 2024\] Progressive Pretext Task Learning for Human Trajectory Prediction](../../ECCV2024/autonomous_driving/progressive_pretext_task_learning_for_human_trajectory_prediction.md)
 - [\[NeurIPS 2025\] Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective](towards_physics-informed_spatial_intelligence_with_human_priors_an_autonomous_dr.md)
+- [\[NeurIPS 2025\] Towards Predicting Any Human Trajectory in Context](towards_predicting_any_human_trajectory_in_context.md)
 - [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](../../CVPR2026/autonomous_driving/towards_balanced_multi-modal_learning_in_3d_human_pose_estimation.md)
-- [\[ICCV 2025\] DCHM: Depth-Consistent Human Modeling for Multiview Detection](../../ICCV2025/autonomous_driving/dchm_depth-consistent_human_modeling_for_multiview_detection.md)
-- [\[NeurIPS 2025\] Self-Supervised Learning of Graph Representations for Network Intrusion Detection](self-supervised_learning_of_graph_representations_for_network_intrusion_detectio.md)
 
 </div>
 

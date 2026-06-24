@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance
 description: >-
-  [CVPR 2026][Hallucination Detection][Vision-Language Model] Residual Decoding (ResDec) is proposed—a training-free, plug-and-play decoding strategy that discovers the semantic anchoring stage by analyzing U-shaped JSD patterns in historical token logit distributions. It effectively suppresses language prior hallucinations in LVLMs by aggregating logits from this stage as residu
+  [CVPR2026][Hallucination Detection][Hallucination mitigation] Residual Decoding (ResDec) is proposed—a training-free, plug-and-play decoding strategy that discovers the semantic anchoring stage by analyzing U-shaped JSD patterns in historical token logit distributions. It effectively suppresses language prior hallucinations in LVLMs by aggregating logits from this stage as residual guidance for current decoding, incurring nearly zero additional inference overhead.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - Vision-Language Model
+  - "CVPR2026"
+  - "Hallucination Detection"
+  - "Hallucination mitigation"
+  - "decoding strategy"
+  - "vision-language models"
+  - "residual guidance"
+  - "training-free"
 date: 2026-05-08
-content_hash: e79ddb7cc641c92b
+content_hash: 582b652d3ca416f1
 ---
+
 # Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance
 
 **Conference**: CVPR2026  
@@ -165,9 +170,9 @@ where $\alpha=0.5$. Simultaneously, a truncation constraint $\mathcal{V}_{\text{
 
 - [\[ICML 2026\] Adaptive Residual-Update Steering for Low-Overhead Hallucination Mitigation in Large Vision Language Models](../../ICML2026/hallucination/adaptive_residual-update_steering_for_low-overhead_hallucination_mitigation_in_l.md)
 - [\[CVPR 2026\] Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding](thinking_in_uncertainty_mitigating_hallucinations_in_mlrms_with_latent_entropy-a.md)
-- [\[ACL 2026\] Mitigating Hallucinations in Large Vision-Language Models without Performance Degradation](../../ACL2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_without_performance_de.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 
 </div>
 

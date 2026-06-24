@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] ARGOS facilitates bidirectional information exchange between LLMs and SAT solvers: the solver outputs "confirmed true literals" (the backbone), which the LLM uses to hypothesize missing commonsense clauses. These candidates are then filtered by scorers and fed back into the solver. This iterative completion of logic pr
+  [ICLR 2026][Reasoning][Abductive reasoning] ARGOS facilitates bidirectional information exchange between LLMs and SAT solvers: the solver outputs "confirmed true literals" (the backbone), which the LLM uses to hypothesize missing commonsense clauses. These candidates are then filtered by scorers and fed back into the solver. This iterative completion of logic problems lacking explicitly stated commonsense premises outperforms pure neural or symbolic methods by up to 13% acros…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Abductive reasoning"
+  - "Commonsense reasoning"
+  - "Neuro-symbolic"
+  - "SAT solver"
+  - "Self-consistency"
 date: 2026-05-08
-content_hash: 54bdd673e2e77efe
+content_hash: a6f73715bcbcba23
 ---
+
 # A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic
 
 **Conference**: ICLR 2026  
@@ -135,15 +141,15 @@ Impact of core components (FOLIO, Llama3-8B):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
 - [\[ICLR 2026\] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks](vericot_neuro-symbolic_chain-of-thought_validation_via_logical_consistency_check.md)
 - [\[ACL 2025\] Commonsense Abductive Reasoning using Knowledge from Multiple Sources](../../ACL2025/llm_reasoning/commonsense_abductive_reasoning_using_knowledge_from_multiple_sources.md)
-- [\[AAAI 2026\] NeSTR: A Neuro-Symbolic Abductive Framework for Temporal Reasoning in Large Language Models](../../AAAI2026/llm_reasoning/nestr_a_neuro-symbolic_abductive_framework_for_temporal_reasoning_in_large_langu.md)
+- [\[ACL 2026\] Accurate Legal Reasoning at Scale: Neuro-Symbolic Offloading and Structural Auditability for Robust Legal Adjudication](../../ACL2026/llm_reasoning/accurate_legal_reasoning_at_scale_neuro-symbolic_offloading_and_structural_audit.md)
 - [\[ICLR 2026\] ProofFlow: A Dependency Graph Approach to Faithful Proof Autoformalization](proofflow_a_dependency_graph_approach_to_faithful_proof_autoformalization.md)
-- [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
 
 </div>
 

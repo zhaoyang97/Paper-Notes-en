@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model
 description: >-
-  [LLM/NLP] This paper proposes STEM, a framework that identifies "Significant Transition Samples" (STS) across models of the same architecture but varying scales to construct a lightweight evaluation subset…
+  [LLM (Other)] This paper proposes STEM, a framework that identifies "Significant Transition Samples" (STS) across models of the same architecture but varying scales to construct a lightweight evaluation subset, enabling efficient relative capability localization of unknown LLMs. STEM achieves 100% localization accuracy with only 100 samples, substantially outperforming random sampling and Bayesian methods.
 tags:
-  - "LLM/NLP"
+  - "LLM (Other)"
 date: 2026-05-08
-content_hash: 56c69a5ae72909fc
+content_hash: 410e4c54339a4687
 ---
 
 # STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model
@@ -142,10 +142,10 @@ GPQA has the highest anomaly rate—nearly two-thirds of its samples fail the mo
 ## Related Papers
 
 - [\[AAAI 2026\] Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts](soft_filtering_guiding_zero-shot_composed_image_retrieval_with_prescriptive_and_.md)
-- [\[ICML 2026\] Stop Automating Peer Review Without Rigorous Evaluation](../../ICML2026/llm_nlp/stop_automating_peer_review_without_rigorous_evaluation.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ACL 2026\] SteerEval: How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities](../../ACL2026/llm_nlp/how_controllable_are_large_language_models_a_unified_evaluation_across_behaviora.md)
-- [\[ACL 2026\] Can AI Be a Good Peer Reviewer? A Survey of Peer Review Process, Evaluation, and the Future](../../ACL2026/llm_nlp/can_ai_be_a_good_peer_reviewer_a_survey_of_peer_review_process_evaluation_and_th.md)
+- [\[ACL 2025\] Culture is Not Trivia: Sociocultural Theory for Cultural NLP](../../ACL2025/llm_nlp/culture_is_not_trivia_sociocultural_theory_for_cultural_nlp.md)
+- [\[ACL 2025\] Revisiting Common Assumptions about Arabic Dialects in NLP](../../ACL2025/llm_nlp/arabic_dialects_assumptions_revisited.md)
+- [\[ACL 2025\] PlanGenLLMs: A Modern Survey of LLM Planning Capabilities](../../ACL2025/llm_nlp/plangenllms_planning_survey.md)
+- [\[ACL 2025\] Classifying Unreliable Narrators with Large Language Models](../../ACL2025/llm_nlp/classifying_unreliable_narrators.md)
 
 </div>
 

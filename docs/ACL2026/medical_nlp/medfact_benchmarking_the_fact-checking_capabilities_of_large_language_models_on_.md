@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] MedFact establishes an expert-annotated fact-checking benchmark covering real-world Chinese medical texts. Testing 20 LLMs proves that while current models can easily judge "whether an error exists," they struggle to precisely locate errors. RAG is beneficial, whereas multi-agent systems and reasoning-time scaling tend
+  [ACL2026][Medical LLM][Chinese Medical Text] MedFact establishes an expert-annotated fact-checking benchmark covering real-world Chinese medical texts. Testing 20 LLMs proves that while current models can easily judge "whether an error exists," they struggle to precisely locate errors. RAG is beneficial, whereas multi-agent systems and reasoning-time scaling tend to amplify "over-criticism."
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL2026"
+  - "Medical LLM"
+  - "Chinese Medical Text"
+  - "Fact-Checking"
+  - "Error Localization"
+  - "Medical LLM Evaluation"
+  - "Over-criticism"
 date: 2026-05-08
-content_hash: 1c2e9e367683e492
+content_hash: c8094388fe6a2bc7
 ---
+
 # MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts
 
 **Conference**: ACL2026  
@@ -163,9 +169,9 @@ This paper does not train new models; the core is the benchmark construction and
 
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
 - [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
 - [\[ACL 2026\] RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)
-- [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork
 description: >-
-  [CVPR 2026][Optimization & Theory][Paper Note] HyperNAS treats "weight generation via hypernetwork" as an auxiliary task alongside the NAS performance predictor. Both tasks share a GCN encoder, coupled with an adaptive multi-task loss using a preference coefficient. This enables the model to learn architecture representations with better generalization even with mi
+  [CVPR 2026][Neural Architecture Search] HyperNAS treats "weight generation via hypernetwork" as an auxiliary task alongside the NAS performance predictor. Both tasks share a GCN encoder, coupled with an adaptive multi-task loss using a preference coefficient. This enables the model to learn architecture representations with better generalization even with minimal labeled samples—achieving 97.60% top-1 on CIFAR-10 using at least 5x fewer samples.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
+  - "CVPR 2026"
+  - "Neural Architecture Search"
+  - "Performance Predictor"
+  - "Hypernetwork"
+  - "Multi-Task Learning"
+  - "Few-shot"
 date: 2026-05-08
-content_hash: 60c7d390777aeb22
+content_hash: 1cd09152b6d2de59
 ---
+
 # HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork
 
 **Conference**: CVPR 2026  
@@ -131,11 +136,11 @@ Search experiments (DARTS space CIFAR-10 → ImageNet; ViT space ImageNet) show 
 
 ## Related Papers
 
+- [\[ICCV 2025\] Loss Functions for Predictor-based Neural Architecture Search](../../ICCV2025/others/loss_functions_for_predictor-based_neural_architecture_search.md)
 - [\[CVPR 2026\] InTrain: Intrinsic Trainability for Zero-Cost Neural Architecture Search](intrain_intrinsic_trainability_for_zero-cost_neural_architecture_search.md)
-- [\[CVPR 2026\] Enhancing Visual Representation with Textual Semantics: Textual Semantics-Powered Prototypes for Heterogeneous Federated Learning](enhancing_visual_representation_with_textual_semantics_textual_semantics_powered_p.md)
-- [\[CVPR 2026\] The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers](the_power_of_decaying_steps_enhancing_attack_stability_and_transferability_for_s.md)
-- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
-- [\[ICML 2026\] Enhancing LLM Training via Spectral Clipping](../../ICML2026/optimization/enhancing_llm_training_via_spectral_clipping.md)
+- [\[CVPR 2026\] Progressive Neural Architecture Generation](progressive_neural_architecture_generation.md)
+- [\[CVPR 2026\] BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep](brepvgae_variational_graph_autoencoder_with_unified_latent_representation_for_b-.md)
+- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](../../ICLR2026/others/deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
 
 </div>
 

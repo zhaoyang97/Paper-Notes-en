@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProPhy: Progressive Physical Alignment for Dynamic World Simulation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] ProPhy attaches a "physical branch" to video diffusion models, utilizing a two-stage Mixture of Physical Experts (video-level semantic experts + token-level refinement experts) to progressively inject physical priors from text into specific spatial regions. By distilling fine-grained alignment targets from VLM attentio
+  [CVPR 2026][Video Generation][Physics-aware video generation] ProPhy attaches a "physical branch" to video diffusion models, utilizing a two-stage Mixture of Physical Experts (video-level semantic experts + token-level refinement experts) to progressively inject physical priors from text into specific spatial regions. By distilling fine-grained alignment targets from VLM attention maps, it ensures generated videos adhere better to physical laws in complex dynamic scenes such…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Physics-aware video generation"
+  - "World simulator"
+  - "Mixture of Physical Experts"
+  - "Token-level alignment"
+  - "VLM distillation"
 date: 2026-05-08
-content_hash: 258af1114f9852bb
+content_hash: a529e803dc273d47
 ---
+
 # ProPhy: Progressive Physical Alignment for Dynamic World Simulation
 
 **Conference**: CVPR 2026  
@@ -154,10 +160,10 @@ Using Wan2.1-1.3B as the baseline to validate components progressively (VideoPhy
 ## Related Papers
 
 - [\[CVPR 2026\] Physical Object Understanding with a Physically Controllable World Model](physical_object_understanding_with_a_physically_controllable_world_model.md)
-- [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[CVPR 2026\] VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control](versecrafter_dynamic_realistic_video_world_model_with_4d_geometric_control.md)
+- [\[CVPR 2026\] Inference-time Physics Alignment of Video Generative Models with Latent World Models](inference-time_physics_alignment_of_video_generative_models_with_latent_world_mo.md)
 - [\[CVPR 2026\] Physical Simulator In-the-Loop Video Generation](physical_simulator_in-the-loop_video_generation.md)
-- [\[CVPR 2026\] HVG-3D: Bridging Real and Simulation Domains for 3D-Conditional Hand-Object Interaction Video Synthesis](hvg-3d_bridging_real_and_simulation_domains_for_3d-conditional_hand-object_inter.md)
+- [\[CVPR 2026\] Efficient Training for Human Video Generation with Entropy-Guided Prioritized Progressive Learning](efficient_training_for_human_video_generation_with_entropy-guided_prioritized_pr.md)
 
 </div>
 

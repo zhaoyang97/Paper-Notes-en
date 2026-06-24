@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MM-HELIX: Boosting Multimodal Long-Chain Reflective Reasoning with Holistic Platform and Adaptive Hybrid Policy Optimization
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] This paper introduces MM-HELIX, an integrated "Evaluation-Data-Training" platform. It features a benchmark of 42 multimodal puzzles requiring iterative trial-and-error generated programmatically, a SERG pipeline that synthesizes 100k high-quality reflective CoT samples, and a single-stage AHPO algorithm that dynamicall
+  [ICLR 2026][VLM Reasoning][MLLM] This paper introduces MM-HELIX, an integrated "Evaluation-Data-Training" platform. It features a benchmark of 42 multimodal puzzles requiring iterative trial-and-error generated programmatically, a SERG pipeline that synthesizes 100k high-quality reflective CoT samples, and a single-stage AHPO algorithm that dynamically fuses offline expert supervision with online RL exploration. This approach boosts Qwen2.5-VL-7B by +18.6% on MM-HELIX and +5.…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
-  - Benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "MLLM"
+  - "Long-Chain Reflective Reasoning"
+  - "Benchmark"
+  - "Data Synthesis"
+  - "Offline-Online Hybrid RL"
 date: 2026-05-08
-content_hash: 186fa9443fe67255
+content_hash: 539cc824f2c6905f
 ---
+
 # MM-HELIX: Boosting Multimodal Long-Chain Reflective Reasoning with Holistic Platform and Adaptive Hybrid Policy Optimization
 
 **Conference**: ICLR 2026  

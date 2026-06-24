@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper proposes Any-Subset Speculative Decoding (ASSD), enabling Any-Subset Autoregressive Models (AS-ARM) to utilize the same network as both a fast drafter and a joint density oracle. Through rejection sampling, it achieves multiple token generation in parallel while **guaranteeing lossless sampling from the true
+  [ICLR 2026][LLM Efficiency][Any-subset autoregressive models] This paper proposes Any-Subset Speculative Decoding (ASSD), enabling Any-Subset Autoregressive Models (AS-ARM) to utilize the same network as both a fast drafter and a joint density oracle. Through rejection sampling, it achieves multiple token generation in parallel while **guaranteeing lossless sampling from the true joint distribution**, theoretically proving that the number of neural network calls never exceeds…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Any-subset autoregressive models"
+  - "speculative decoding"
+  - "parallel sampling"
+  - "lossless acceleration"
+  - "infilling generation"
 date: 2026-05-08
-content_hash: 4a4770d014550022
+content_hash: ce2e5eb8cb0ba8b0
 ---
+
 # Self-Speculative Decoding Accelerates Lossless Inference in Any-Order and Any-Subset Autoregressive Models
 
 **Conference**: ICLR 2026  
@@ -136,10 +142,10 @@ Infilling benchmark (HumanEval single-line code completion pass@1 and ROCStories
 ## Related Papers
 
 - [\[ICLR 2026\] Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding](overcoming_joint_intractability_with_lossless_hierarchical_speculative_decoding.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](speculative_speculative_decoding.md)
 - [\[CVPR 2026\] ParallelVLM: Lossless Video-LLM Acceleration with Visual Alignment Aware Parallel Speculative Decoding](../../CVPR2026/llm_efficiency/parallelvlm_lossless_video-llm_acceleration_with_visual_alignment_aware_parallel.md)
+- [\[ACL 2025\] CLaSp: In-Context Layer Skip for Self-Speculative Decoding](../../ACL2025/llm_efficiency/clasp_self_speculative_decoding.md)
 - [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
-- [\[ICLR 2026\] Inference-Cost-Aware Dynamic Tree Construction for Efficient Inference in Large Language Models](inference-cost-aware_dynamic_tree_construction_for_efficient_inference_in_large_.md)
-- [\[ICLR 2026\] SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism](specbranch_speculative_decoding_via_hybrid_drafting_and_rollback-aware_branch_pa.md)
 
 </div>
 

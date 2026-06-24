@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] UniRTL: 统一代码与图实现鲁棒 RTL 表示学习
+  [Paper Note] UniRTL: Unified Code and Graph for Robust RTL Representation Learning
 description: >-
-  [ICML 2026][Code Intelligence][CDFG] This paper proposes UniRTL—a multimodal unified representation learning framework that jointly learns from RTL code and Control-Data Flow Graphs (CDFG). By employing a graph-aware tokenizer and a hierarchical training strategy, it significantly outperforms existing methods in hardware performance prediction and code re
+  [ICML 2026][Code Intelligence][RTL Representation Learning] This paper proposes UniRTL—a multimodal unified representation learning framework that jointly learns from RTL code and Control-Data Flow Graphs (CDFG). By employing a graph-aware tokenizer and a hierarchical training strategy, it significantly outperforms existing methods in hardware performance prediction and code retrieval tasks.
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - CDFG
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "RTL Representation Learning"
+  - "Multimodal Pre-training"
+  - "CDFG"
+  - "Performance Prediction"
+  - "Code Retrieval"
 date: 2026-05-08
-content_hash: ee35b43040aa86fc
+content_hash: 61253835742d86ef
 ---
+
 # UniRTL: Unified Code and Graph for Robust RTL Representation Learning
 
 **Conference**: ICML 2026  
@@ -119,11 +124,11 @@ There are 132k text-code pairs but only 38.8k graph pairs. Immediate graph fusio
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
-- [\[ICML 2026\] Entropy-informed Decoding: Adaptive Information-Driven Branching](entropy-informed_decoding_adaptive_information-driven_branching.md)
-- [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
-- [\[ICML 2026\] Locally Coherent Parallel Decoding in Diffusion Language Models](locally_coherent_parallel_decoding_in_diffusion_language_models.md)
-- [\[ICML 2026\] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench](he-snr_uncovering_latent_logic_via_entropy_for_guiding_mid-training_on_swe-bench.md)
+- [\[ICLR 2026\] RPG: A Repository Planning Graph for Unified and Scalable Codebase Generation](../../ICLR2026/code_intelligence/rpg_a_repository_planning_graph_for_unified_and_scalable_codebase_generation.md)
+- [\[ICLR 2026\] The Natural Geometry of Code: Hyperbolic Representation Learning for Program Reasoning](../../ICLR2026/code_intelligence/the_natural_geometry_of_code_hyperbolic_representation_learning_for_program_reas.md)
+- [\[ICLR 2026\] ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code](../../ICLR2026/code_intelligence/shieldedcode_learning_robust_representations_for_virtual_machine_protected_code.md)
+- [\[ICML 2025\] Robust Learning of Diverse Code Edits (NextCoder)](../../ICML2025/code_intelligence/robust_learning_of_diverse_code_edits.md)
+- [\[ACL 2026\] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward](../../ACL2026/code_intelligence/omnidiagram_advancing_unified_diagram_code_generation_via_visual_interrogation_r.md)
 
 </div>
 

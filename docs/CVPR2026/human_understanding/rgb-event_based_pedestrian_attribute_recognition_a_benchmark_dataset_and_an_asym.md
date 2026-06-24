@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RGB-Event based Pedestrian Attribute Recognition: A Benchmark Dataset and An Asymmetric RWKV Fusion Framework
 description: >-
-  [CVPR 2026][Human Understanding][RWKV] This paper introduces the first RGB-Event multimodal pedestrian attribute recognition task and constructs EventPAR, the first large-scale dataset containing 100,000 paired RGB-Event frames with 6 types of emotional attributes. An asymmetric RWKV fusion framework (dual-stream RWKV encoding + OTN-RWKV event token filteri
+  [CVPR 2026][Human Understanding][Pedestrian Attribute Recognition] This paper introduces the first RGB-Event multimodal pedestrian attribute recognition task and constructs EventPAR, the first large-scale dataset containing 100,000 paired RGB-Event frames with 6 types of emotional attributes. An asymmetric RWKV fusion framework (dual-stream RWKV encoding + OTN-RWKV event token filtering and bidirectional cross-fusion) is proposed, achieving SOTA performance across three datas…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - RWKV
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Pedestrian Attribute Recognition"
+  - "RGB-Event Multimodal"
+  - "RWKV"
+  - "Emotional Attributes"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: d3cba268cf762313
+content_hash: 598c043671e42e74
 ---
+
 # RGB-Event based Pedestrian Attribute Recognition: A Benchmark Dataset and An Asymmetric RWKV Fusion Framework
 
 **Conference**: CVPR 2026  
@@ -143,11 +148,11 @@ Cross-dataset performance (MARS-Attribute / DukeMTMC-VID-Attribute, RWKV-B backb
 
 ## Related Papers
 
-- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
 - [\[CVPR 2026\] EventGait: Towards Robust Gait Recognition with Event Streams](eventgait_towards_robust_gait_recognition_with_event_streams.md)
 - [\[ECCV 2024\] Event-based Head Pose Estimation: Benchmark and Method](../../ECCV2024/human_understanding/event-based_head_pose_estimation_benchmark_and_method.md)
-- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
 - [\[CVPR 2026\] OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)
+- [\[CVPR 2026\] MS^2Gait: A Multi-Scale Spatio-Temporal Fusion Network for LiDAR-based Gait Recognition](ms2gait_a_multi-scale_spatio-temporal_fusion_network_for_lidar-based_gait_recogn.md)
+- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
 
 </div>
 

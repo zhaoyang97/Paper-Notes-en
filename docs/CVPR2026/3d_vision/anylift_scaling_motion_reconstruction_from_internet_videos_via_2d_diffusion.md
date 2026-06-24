@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] AnyLift introduces a two-stage framework—synthesizing multi-view 2D motion data followed by training a camera-conditioned multi-view 2D diffusion model—to lift 2D keypoints from monocular dynamic-camera internet videos into 3D human motion and Human-Object Interaction (HOI) in world coordinates. Without any 3D supervis
+  [CVPR 2026][3D Vision][Motion Reconstruction] AnyLift introduces a two-stage framework—synthesizing multi-view 2D motion data followed by training a camera-conditioned multi-view 2D diffusion model—to lift 2D keypoints from monocular dynamic-camera internet videos into 3D human motion and Human-Object Interaction (HOI) in world coordinates. Without any 3D supervision, it reconstructs rare actions (e.g., gymnastics, martial arts) seldom found in MoCap datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Motion Reconstruction"
+  - "Human-Object Interaction (HOI)"
+  - "2D Diffusion Prior"
+  - "Dynamic Camera"
+  - "Multi-view Synthesis"
 date: 2026-05-08
-content_hash: 328c06328b6160f4
+content_hash: bfaf6d6a5cad24f4
 ---
+
 # AnyLift: Scaling Motion Reconstruction from Internet Videos via 2D Diffusion
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ Object metrics improve drastically (Table O-MPJPE reduced to ~1/10 vs. VisTracke
 
 ## Related Papers
 
+- [\[CVPR 2026\] Long-Tail Internet Photo Reconstruction](long-tail_internet_photo_reconstruction.md)
+- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
+- [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
-- [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] DiffusionHarmonizer: Bridging Neural Reconstruction and Photorealistic Simulation with Online Diffusion Enhancer](diffusionharmonizer_bridging_neural_reconstruction_and_photorealistic_simulation.md)
+- [\[CVPR 2026\] PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)
 
 </div>
 

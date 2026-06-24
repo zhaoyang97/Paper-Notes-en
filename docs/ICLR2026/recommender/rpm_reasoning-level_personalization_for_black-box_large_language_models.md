@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RPM: Reasoning-Level Personalization for Black-Box Large Language Models
 description: >-
-  [ICLR 2026][Recommender Systems][Paper Note] RPM upgrades black-box LLM personalization from "aligning final responses" to "aligning underlying reasoning processes." It automatically extracts a structured user model of "features → factors → statistics" from raw user history, constructs personalized reasoning paths for each history entry, and feeds these reasoning
+  [ICLR 2026][Recommender Systems][Black-box LLM personalization] RPM upgrades black-box LLM personalization from "aligning final responses" to "aligning underlying reasoning processes." It automatically extracts a structured user model of "features → factors → statistics" from raw user history, constructs personalized reasoning paths for each history entry, and feeds these reasoning examples to the model via feature-based retrieval. This enables the LLM to reason following the…
 tags:
-  - ICLR 2026
-  - Recommender Systems
+  - "ICLR 2026"
+  - "Recommender Systems"
+  - "Black-box LLM personalization"
+  - "reasoning-level personalization"
+  - "user behavior modeling"
+  - "features and factors"
+  - "reasoning path retrieval"
 date: 2026-05-08
-content_hash: 0ddc8a84c7787fcc
+content_hash: d0fe9a2ba9ff3f89
 ---
+
 # RPM: Reasoning-Level Personalization for Black-Box Large Language Models
 
 **Conference**: ICLR 2026  
@@ -137,7 +143,7 @@ Incremental contribution of components (Table 2):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Cognitive models can reveal interpretable value trade-offs in language models
 description: >-
-  [ICLR 2026][Alignment & RLHF][RSA] This paper employs the Rational Speech Act (RSA) cognitive model of "polite speech" as a probe to fit weights for three utilities (informational, social, and presentational) in a truth-versus-face-saving dilemma task. It translates "invisible low-level decisions" such as inference budget, system prompts, and RLHF train
+  [ICLR2026][LLM Alignment][Cognitive Models] This paper employs the Rational Speech Act (RSA) cognitive model of "polite speech" as a probe to fit weights for three utilities (informational, social, and presentational) in a truth-versus-face-saving dilemma task. It translates "invisible low-level decisions" such as inference budget, system prompts, and RLHF training dynamics into a set of interpretable parameters representing value trade-offs.
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RSA
-  - RLHF
-  - Interpretability
-  - sycophancy
+  - "ICLR2026"
+  - "LLM Alignment"
+  - "Cognitive Models"
+  - "RSA"
+  - "Value Trade-offs"
+  - "RLHF"
+  - "Interpretability"
+  - "Sycophancy"
 date: 2026-05-08
-content_hash: 70c665abc7774fcb
+content_hash: 461ce9ab437a6a65
 ---
+
 # Cognitive models can reveal interpretable value trade-offs in language models
 
 **Conference**: ICLR2026  
@@ -120,15 +123,14 @@ The closed-source suite covers Anthropic, Google, and OpenAI models across three
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Group-Normalized Implicit Value Optimization for Language Models](group-normalized_implicit_value_optimization_for_language_models.md)
 - [\[ICLR 2026\] Reward Models Inherit Value Biases from Pretraining](reward_models_inherit_value_biases_from_pretraining.md)
 - [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
 - [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](../../ICML2026/llm_alignment/valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
 - [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](../../ACL2026/llm_alignment/maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
-- [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](pretrain_value_not_reward_decoupled_value_policy_optimization.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PhysGaia constructs a physics-aware benchmark dataset containing 17 scenes, covering multi-body interactions of various materials such as liquids, gases, fabrics, and rheological substances. It provides ground truth for 3D particle trajectories and physical parameters (e.g., viscosity), and proposes two new metrics, Tr
+  [CVPR 2026][3D Vision][Physics-aware benchmark] PhysGaia constructs a physics-aware benchmark dataset containing 17 scenes, covering multi-body interactions of various materials such as liquids, gases, fabrics, and rheological substances. It provides ground truth for 3D particle trajectories and physical parameters (e.g., viscosity), and proposes two new metrics, Trajectory Distance (TD) and AUOP, to quantify the physical realism of 4DGS methods…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Physics-aware benchmark"
+  - "Dynamic novel view synthesis"
+  - "Multi-body interaction"
+  - "4D Gaussian Splatting"
+  - "Physical parameter evaluation"
 date: 2026-05-08
-content_hash: 445c8d79f2f265af
+content_hash: d6e2ce679dab9b9b
 ---
+
 # PhysGaia: A Physics-Aware Benchmark with Multi-Body Interactions for Dynamic Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -126,11 +132,11 @@ PhysGaia is a benchmark dataset rather than a specific model and does not involv
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D Gaussian Splatting for Efficient Retrospective Dynamic Scene Novel View Synthesis with a Standardized Benchmark](3d_gaussian_splatting_for_efficient_retrospective_dynamic_scene_novel_view_synth.md)
+- [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](../../ICLR2026/3d_vision/dynamic_novel_view_synthesis_in_high_dynamic_range.md)
+- [\[CVPR 2026\] Charge: A Comprehensive Novel View Synthesis Benchmark and Dataset to Bind Them All](charge_a_comprehensive_novel_view_synthesis_benchmark_and_dataset_to_bind_them_a.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
 - [\[CVPR 2026\] RF4D: Neural Radar Fields for Novel View Synthesis in Outdoor Dynamic Scenes](rf4dneural_radar_fields_for_novel_view_synthesis_in_outdoor_dynamic_scenes.md)
 - [\[CVPR 2026\] MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second](movies_motion-aware_4d_dynamic_view_synthesis_in_one_second.md)
-- [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](../../ICLR2026/3d_vision/dynamic_novel_view_synthesis_in_high_dynamic_range.md)
 
 </div>
 

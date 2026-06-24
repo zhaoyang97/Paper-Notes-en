@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems
 description: >-
-  [ICML 2026][Others][steganography] This is a position/taxonomy paper: it categorizes centuries of human anti-collusion experience (sanctions, leniency and whistleblowing, monitoring/auditing, market design, and governance) into five categories based on the lifecycle. These are mapped to implementable interventions for multi-agent AI systems (reward pena
+  [ICML 2026][Multi-agent collusion] This is a position/taxonomy paper: it categorizes centuries of human anti-collusion experience (sanctions, leniency and whistleblowing, monitoring/auditing, market design, and governance) into five categories based on the lifecycle. These are mapped to implementable interventions for multi-agent AI systems (reward penalty, whistleblower agent, telemetry-first overseer, interaction protocol design, shutdown mechanisms, etc.)…
 tags:
-  - ICML 2026
-  - Others
-  - steganography
+  - "ICML 2026"
+  - "Multi-agent collusion"
+  - "anti-collusion mechanisms"
+  - "AI safety"
+  - "governance"
+  - "steganography"
 date: 2026-05-08
-content_hash: b8f0d9f204b28dfb
+content_hash: e5fc6b1c3ad18842
 ---
+
 # Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems
 
 **Conference**: ICML 2026  

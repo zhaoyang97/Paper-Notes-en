@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Musculoskeletal simulation of limb movement biomechanics in Drosophila melanogaster
 description: >-
-  [ICLR 2026][Computational Biology][Drosophila] Constructs the first anatomically and physiologically accurate 3D musculoskeletal model for the Drosophila leg (OpenSim + MuJoCo dual engines). It bridges motor neuron activity with joint movement using Hill-type muscles, infers muscle synergies from real behavioral data, and demonstrates that passive joint properties
+  [ICLR 2026][Computational Biology][Drosophila] Constructs the first anatomically and physiologically accurate 3D musculoskeletal model for the Drosophila leg (OpenSim + MuJoCo dual engines). It bridges motor neuron activity with joint movement using Hill-type muscles, infers muscle synergies from real behavioral data, and demonstrates that passive joint properties (stiffness/damping) accelerate the learning of muscle-driven control.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Drosophila
-  - OpenSim
-  - MuJoCo
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Drosophila"
+  - "Musculoskeletal model"
+  - "Hill-type muscle"
+  - "OpenSim"
+  - "MuJoCo"
+  - "Imitation learning"
+  - "Muscle synergy"
 date: 2026-05-08
-content_hash: d91347662862da56
+content_hash: 59817c9e505dba2d
 ---
+
 # Musculoskeletal simulation of limb movement biomechanics in Drosophila melanogaster
 
 **Conference**: ICLR 2026  

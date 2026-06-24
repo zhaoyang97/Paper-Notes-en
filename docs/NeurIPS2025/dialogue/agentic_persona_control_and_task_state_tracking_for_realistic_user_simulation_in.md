@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Agentic Persona Control and Task State Tracking for Realistic User Simulation
 description: >-
-  [NeurIPS 2025 (Workshop on SEA)][Dialogue Systems][Multi-agent framework] A three-agent collaborative framework for realistic user simulation is proposed, comprising a User Agent (coordination)…
+  [NeurIPS 2025 (Workshop on SEA)][Dialogue Systems][Multi-agent framework] A three-agent collaborative framework for realistic user simulation is proposed, comprising a User Agent (coordination), a State Tracking Agent (structured task state), and a Message Attributes Generation Agent (behavior attribute control conditioned on persona and state). On a restaurant ordering scenario, the framework achieves a 102.6% improvement in composite realism score (CRRS)…
 tags:
   - "NeurIPS 2025 (Workshop on SEA)"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "state tracking"
   - "restaurant ordering"
 date: 2026-05-08
-content_hash: 62f1709e13be07b1
+content_hash: d76343d0e5d97ba4
 ---
 
 # Agentic Persona Control and Task State Tracking for Realistic User Simulation
@@ -127,8 +127,8 @@ No training is required — the system is a ready-to-use agent built on GPT-4o (
 - [\[ACL 2026\] ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking](../../ACL2026/dialogue/reactod_bounded_neuro-symbolic_agentic_nlu_for_zero-shot_dialogue_state_tracking.md)
 - [\[ACL 2026\] SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](../../ACL2026/dialogue/spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)
 - [\[NeurIPS 2025\] KL Penalty Control via Perturbation for Direct Preference Optimization](kl_penalty_control_via_perturbation_for_direct_preference_optimization.md)
+- [\[ACL 2025\] Exploring Persona Sentiment Sensitivity in Personalized Dialogue Generation](../../ACL2025/dialogue/persona_sentiment_dialogue.md)
 - [\[NeurIPS 2025\] AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs](aclora_almost_trainingfree_access_controlaware_multimodal_ll.md)
-- [\[ICLR 2026\] Non-Collaborative User Simulators for Tool Agents](../../ICLR2026/dialogue/non-collaborative_user_simulators_for_tool_agents.md)
 
 </div>
 

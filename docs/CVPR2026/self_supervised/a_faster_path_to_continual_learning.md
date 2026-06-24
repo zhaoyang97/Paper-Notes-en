@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Faster Path to Continual Learning
 description: >-
-  [CVPR 2026][Others][C-Flat] To address the issue of the C-Flat optimizer being too slow due to calculating three additional gradients per step, this paper identifies "direction-invariant" components within the first-order flatness gradients. These components are cached and reused in subsequent steps to skip redundant perturbation gradient calcula
+  [CVPR 2026][Self-Supervised Learning][Continual Learning] To address the issue of the C-Flat optimizer being too slow due to calculating three additional gradients per step, this paper identifies "direction-invariant" components within the first-order flatness gradients. These components are cached and reused in subsequent steps to skip redundant perturbation gradient calculations. Combined with a linear scheduler that gradually increases the skip interval as tasks progress a…
 tags:
-  - CVPR 2026
-  - Others
-  - C-Flat
-  - Sharpness-Aware Minimization
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Learning"
+  - "C-Flat"
+  - "Sharpness-Aware Minimization"
+  - "Direction-Invariant Gradient"
+  - "Adaptive Triggering"
 date: 2026-05-08
-content_hash: 4b5274af02e7ae0c
+content_hash: 41084da71e42d886
 ---
+
 # A Faster Path to Continual Learning
 
 **Conference**: CVPR 2026  
@@ -146,10 +150,10 @@ MEMO on ResNet-18 saw a Last accuracy gain of **+3.05%** and +2.28% on ResNet-34
 ## Related Papers
 
 - [\[CVPR 2026\] Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)
+- [\[CVPR 2026\] Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)
 - [\[CVPR 2026\] Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)
 - [\[CVPR 2026\] Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis](subspace_alignment_for_clip-based_continual_learning_via_canonical_correlation_a.md)
-- [\[CVPR 2026\] Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)
-- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
+- [\[CVPR 2026\] CHEEM: Continual Learning by Reuse, New, Adapt and Skip -- A Hierarchical Exploration-Exploitation Approach](cheem_continual_learning_by_reuse_new_adapt_and_skip_--_a_hierarchical_explorati.md)
 
 </div>
 

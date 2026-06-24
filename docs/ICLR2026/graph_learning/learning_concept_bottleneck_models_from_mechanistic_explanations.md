@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Learning Concept Bottleneck Models from Mechanistic Explanations
 description: >-
-  [ICLR 2026][Graph Learning][Concept Bottleneck Model] This paper proposes Mechanistic CBM (M-CBM), which extracts concepts from the features learned by the black-box model itself using Sparse Autoencoders (SAEs). These concepts are then named and labeled by a Multimodal LLM to construct an interpretable Concept Bottleneck Model. M-CBM significantly outperforms existing CB
+  [ICLR2026][Graph Learning][Concept Bottleneck Model] This paper proposes Mechanistic CBM (M-CBM), which extracts concepts from the features learned by the black-box model itself using Sparse Autoencoders (SAEs). These concepts are then named and labeled by a Multimodal LLM to construct an interpretable Concept Bottleneck Model. M-CBM significantly outperforms existing CBM methods while effectively controlling information leakage.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Concept Bottleneck Model
-  - Sparse Autoencoder
-  - mechanistic interpretability
-  - Explainable AI
-  - Multimodal LLM
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Concept Bottleneck Model"
+  - "Sparse Autoencoder"
+  - "mechanistic interpretability"
+  - "Explainable AI"
+  - "Multimodal LLM"
 date: 2026-05-08
-content_hash: be5447818a2e3cef
+content_hash: 982d5602776f2e9f
 ---
+
 # Learning Concept Bottleneck Models from Mechanistic Explanations
 
 **Conference**: ICLR2026  
@@ -143,10 +144,10 @@ DN-CBM is the closest predecessor, also utilizing SAEs, but is limited to the CL
 
 ## Related Papers
 
+- [\[ICLR 2026\] GNN Explanations that do not Explain and How to find Them](gnn_explanations_that_do_not_explain_and_how_to_find_them.md)
 - [\[ICML 2026\] Graph-GRPO: Training Graph Flow Models with Reinforcement Learning](../../ICML2026/graph_learning/graph-grpo_training_graph_flow_models_with_reinforcement_learning.md)
-- [\[ACL 2025\] GraphNarrator: Generating Textual Explanations for Graph Neural Networks](../../ACL2025/graph_learning/graphnarrator.md)
 - [\[ICLR 2026\] CheckMate! Watermarking Graph Diffusion Models in Polynomial Time](checkmate_watermarking_graph_diffusion_models_in_polynomial_time.md)
-- [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](../../NeurIPS2025/graph_learning/sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
+- [\[ACL 2025\] GraphNarrator: Generating Textual Explanations for Graph Neural Networks](../../ACL2025/graph_learning/graphnarrator.md)
 - [\[ICLR 2026\] Out-of-Distribution Graph Models Merging](out-of-distribution_graph_models_merging.md)
 
 </div>

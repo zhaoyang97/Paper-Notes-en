@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynamicVL: Benchmarking MLLMs for Dynamic City Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Remote sensing imagery] This paper proposes DVL-Suite, a framework comprising the DVL-Bench evaluation benchmark and the DVL-Instruct instruction-tuning dataset…
+  [NeurIPS 2025][Multimodal VLM][Remote sensing imagery] This paper proposes DVL-Suite, a framework comprising the DVL-Bench evaluation benchmark and the DVL-Instruct instruction-tuning dataset, covering 42 U.S. cities and 14,871 high-resolution multi-temporal remote sensing images. It systematically evaluates 18 MLLMs on long-term urban dynamic understanding and introduces DVLChat as a baseline model.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "vision-language benchmark"
   - "change detection"
 date: 2026-05-08
-content_hash: c0e5432f6374989d
+content_hash: f2145582b329f3df
 ---
 
 # DynamicVL: Benchmarking MLLMs for Dynamic City Understanding
@@ -154,11 +154,11 @@ The underlying MLLM is Qwen2.5-VL, though the architecture is MLLM-agnostic.
 
 ## Related Papers
 
+- [\[ACL 2025\] PunchBench: Benchmarking MLLMs in Multimodal Punchline Comprehension](../../ACL2025/multimodal_vlm/punchbench_mllm_punchline.md)
 - [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
-- [\[NeurIPS 2025\] RTV-Bench: Benchmarking MLLM Continuous Perception, Understanding and Reasoning through Real-Time Video](rtv_bench_benchmarking_mllm_continuous_perception_through_realtime_video.md)
+- [\[ICLR 2026\] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective](../../ICLR2026/multimodal_vlm/urbanfeela_comprehensive_benchmark_for_temporal_and_perceptual_understanding_of_.md)
 - [\[ACL 2026\] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language](../../ACL2026/multimodal_vlm/cnsl-bench_benchmarking_the_sign_language_understanding_capabilities_of_mllms_on.md)
 - [\[ICCV 2025\] Spatial Preference Rewarding for MLLMs Spatial Understanding](../../ICCV2025/multimodal_vlm/spatial_preference_rewarding_for_mllms_spatial_understanding.md)
-- [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](../../ICML2026/multimodal_vlm/benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
 
 </div>
 

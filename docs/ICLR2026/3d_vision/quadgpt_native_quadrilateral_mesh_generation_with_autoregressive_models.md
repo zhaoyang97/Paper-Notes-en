@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models
 description: >-
-  [ICLR 2026][3D Vision][quad mesh generation] Proposes QuadGPT—the first end-to-end autoregressive framework for generating native quad meshes. By utilizing a unified mixed-topology tokenization (padding triangles into 4-vertex blocks), an Hourglass Transformer architecture, and truncated DPO (tDPO) fine-tuning based on topological rewards, it surpasses existing t
+  [ICLR 2026][3D Vision][quad mesh generation] Proposes QuadGPT—the first end-to-end autoregressive framework for generating native quad meshes. By utilizing a unified mixed-topology tokenization (padding triangles into 4-vertex blocks), an Hourglass Transformer architecture, and truncated DPO (tDPO) fine-tuning based on topological rewards, it surpasses existing triangle-to-quad conversion pipelines and cross-field-guided methods in Chamfer Distance, Hausdorff Distance…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - quad mesh generation
-  - autoregressive model
-  - mixed topology
-  - tDPO
-  - Hourglass Transformer
+  - "ICLR 2026"
+  - "3D Vision"
+  - "quad mesh generation"
+  - "autoregressive model"
+  - "mixed topology"
+  - "tDPO"
+  - "Hourglass Transformer"
 date: 2026-05-08
-content_hash: dbf1ccfd8a11b6c6
+content_hash: 4439d1c9edc76843
 ---
+
 # QuadGPT: Native Quadrilateral Mesh Generation with Autoregressive Models
 
 **Conference**: ICLR 2026  
@@ -150,10 +151,10 @@ QuadGPT leads across all metrics: CD is over 46% lower than the best baseline on
 ## Related Papers
 
 - [\[CVPR 2026\] PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction](../../CVPR2026/3d_vision/pixarmesh_autoregressive_mesh-native_single-view_scene_reconstruction.md)
-- [\[ICLR 2026\] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)
 - [\[AAAI 2026\] Learning Conjugate Direction Fields for Planar Quadrilateral Mesh Generation](../../AAAI2026/3d_vision/learning_conjugate_direction_fields_for_planar_quadrilateral_mesh_generation.md)
-- [\[CVPR 2025\] TreeMeshGPT: Artistic Mesh Generation with Autoregressive Tree Sequencing](../../CVPR2025/3d_vision/treemeshgpt_artistic_mesh_generation_with_autoregressive_tree_sequencing.md)
+- [\[ICLR 2026\] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)
 - [\[CVPR 2026\] Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation](../../CVPR2026/3d_vision/mesh-pro_asynchronous_advantage-guided_ranking_preference_optimization_for_artis.md)
+- [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](../../NeurIPS2025/3d_vision/armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
 
 </div>
 

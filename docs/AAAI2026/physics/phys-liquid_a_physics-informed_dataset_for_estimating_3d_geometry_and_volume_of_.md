@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][physics-informed dataset] This work introduces the Phys-Liquid dataset (97,200 physics-simulated images with 3D meshes)…
+  [AAAI 2026][Physics & Scientific Computing][physics-informed dataset] This work introduces the Phys-Liquid dataset (97,200 physics-simulated images with 3D meshes), which models dynamic deformation of liquids inside transparent containers based on the Navier-Stokes equations, and proposes a four-stage reconstruction pipeline (segmentation → multi-view mask generation → 3D reconstruction → scaling) to achieve high-accuracy liquid geometry and volume estimation in both simulate…
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "liquid simulation"
   - "deformable objects"
 date: 2026-05-08
-content_hash: 14c05c33f70f3f08
+content_hash: c68a3118b2457428
 ---
 
 # Phys-Liquid: A Physics-Informed Dataset for Estimating 3D Geometry and Volume of Transparent Deformable Liquids
@@ -175,10 +175,10 @@ Training exclusively on simulated data yields reasonable accuracy on real-world 
 ## Related Papers
 
 - [\[ICML 2026\] EqGINO: Equivariant Geometry-Informed Fourier Neural Operators for 3D PDEs](../../ICML2026/physics/eqgino_equivariant_geometry-informed_fourier_neural_operators_for_3d_pdes.md)
-- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
 - [\[AAAI 2026\] Fast 3D Surrogate Modeling for Data Center Thermal Management](fast_3d_surrogate_modeling_for_data_center_thermal_management.md)
-- [\[ICLR 2026\] Astral: Training Physics-Informed Neural Networks with Error Majorants](../../ICLR2026/physics/astral_training_physics-informed_neural_networks_with_error_majorants.md)
-- [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
+- [\[AAAI 2026\] PIMRL: Physics-Informed Multi-Scale Recurrent Learning for Burst-Sampled Spatiotemporal Dynamics](pimrl_physics-informed_multi-scale_recurrent_learning_for_burst-sampled_spatiote.md)
+- [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](../../ICLR2026/physics/from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
+- [\[ICLR 2026\] Uncertainty-Aware Diagnostics for Physics-Informed Machine Learning](../../ICLR2026/physics/uncertainty-aware_diagnostics_for_physics-informed_machine_learning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TempoControl: Temporal Attention Guidance for Text-to-Video Models
 description: >-
-  [CVPR 2026][Video Generation][Text-to-Video] TempoControl performs gradient optimization on cross-attention maps during the denoising process of T2V diffusion models. By using a "Correlation + Magnitude + Entropy" loss to align the temporal attention of specific keywords with user-provided masks, it achieves fine-grained temporal control (e.g., "making an object
+  [CVPR 2026][Video Generation][Text-to-Video] TempoControl performs gradient optimization on cross-attention maps during the denoising process of T2V diffusion models. By using a "Correlation + Magnitude + Entropy" loss to align the temporal attention of specific keywords with user-provided masks, it achieves fine-grained temporal control (e.g., "making an object appear at a specific second") without re-training or annotated data.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Text-to-Video
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Text-to-Video"
+  - "Temporal Control"
+  - "Cross-Attention"
+  - "Inference-time Optimization"
+  - "Training-free"
 date: 2026-05-08
-content_hash: c765ffe475ada4b7
+content_hash: 6027917f936ff208
 ---
+
 # TempoControl: Temporal Attention Guidance for Text-to-Video Models
 
 **Conference**: CVPR 2026  
@@ -146,10 +151,17 @@ Breakdown of the three losses on the single-object benchmark (C=Pearson Correlat
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
+- [\[CVPR 2026\] When Numbers Speak: Aligning Textual Numerals and Visual Instances in Text-to-Video Diffusion Models](when_numbers_speak_aligning_textual_numerals_and_visual_instances_in_text-to-vid.md)
+- [\[ICLR 2026\] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation](../../ICLR2026/video_generation/ts-attn_temporal-wise_separable_attention_for_multi-event_video_generation.md)
+- [\[CVPR 2026\] Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](improving_motion_in_image-to-video_models_via_adaptive_low-pass_guidance.md)
+- [\[CVPR 2026\] TGT: Text-Grounded Trajectories for Locally Controlled Video Generation](tgt_text-grounded_trajectories_for_locally_controlled_video_generation.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)

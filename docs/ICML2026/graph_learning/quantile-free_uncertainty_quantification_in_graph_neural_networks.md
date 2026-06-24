@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Quantile-Free Uncertainty Quantification in Graph Neural Networks
 description: >-
-  [ICML 2026][Graph Learning][GNN] QpiGNN proposes a GNN node-level prediction interval framework that requires "no quantile input and no post-processing." By employing a dual-head GNN (one head for mean prediction and one for half-width) paired with a label-level joint loss that directly optimizes "coverage + interval width," it achieves a 22% increase
+  [ICML 2026][Graph Learning][GNN] QpiGNN proposes a GNN node-level prediction interval framework that requires "no quantile input and no post-processing." By employing a dual-head GNN (one head for mean prediction and one for half-width) paired with a label-level joint loss that directly optimizes "coverage + interval width," it achieves a 22% increase in average coverage and a 50% reduction in interval width across 19 synthetic and real-world datasets.
 tags:
-  - ICML 2026
-  - Graph Learning
-  - GNN
-  - Prediction Interval
-  - Quantile Regression
-  - Label-only Loss
+  - "ICML 2026"
+  - "Graph Learning"
+  - "GNN"
+  - "Prediction Interval"
+  - "Quantile Regression"
+  - "Dual-head Architecture"
+  - "Label-only Loss"
 date: 2026-05-08
-content_hash: ed95a2d6d1eaea95
+content_hash: ecd5468f8b66e8c0
 ---
+
 # Quantile-Free Uncertainty Quantification in Graph Neural Networks
 
 **Conference**: ICML 2026  
@@ -146,10 +148,10 @@ On average, QpiGNN achieved 22% higher coverage and 50% narrower widths than all
 ## Related Papers
 
 - [\[ICML 2026\] GILT: An LLM-Free, Tuning-Free Graph Foundational Model for In-Context Learning](gilt_an_llm-free_tuning-free_graph_foundational_model_for_in-context_learning.md)
+- [\[ICML 2026\] Understanding Truncated Positional Encodings for Graph Neural Networks](understanding_truncated_positional_encodings_for_graph_neural_networks.md)
+- [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](../../ICLR2026/graph_learning/learning_from_historical_activations_in_graph_neural_networks.md)
 - [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](../../ICLR2026/graph_learning/are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
 - [\[CVPR 2026\] Adaptive Learned Image Compression with Graph Neural Networks](../../CVPR2026/graph_learning/adaptive_learned_image_compression_with_graph_neural_networks.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
 
 </div>
 

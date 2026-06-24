@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoTool: Efficient Tool Selection for Large Language Model Agents
 description: >-
-  [AAAI 2026][LLM Agent][tool selection] This paper proposes AutoTool, a graph-based tool selection framework that exploits *tool usage inertia* to construct a Tool Inertia Graph (TIG). By leveraging statistical structure…
+  [AAAI 2026][LLM Agent][tool selection] This paper proposes AutoTool, a graph-based tool selection framework that exploits *tool usage inertia* to construct a Tool Inertia Graph (TIG). By leveraging statistical structure, AutoTool bypasses redundant LLM inference for tool selection and parameter filling, reducing inference overhead by up to 30% while maintaining task completion rates.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "graph-based planning"
   - "inference cost reduction"
 date: 2026-05-08
-content_hash: d9bbf70cb1edd2d1
+content_hash: bc79bcca4b03e020
 ---
 
 # AutoTool: Efficient Tool Selection for Large Language Model Agents
@@ -134,11 +134,11 @@ A strictly prioritized, LLM-free parameter filling strategy:
 
 ## Related Papers
 
-- [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/llm_agent/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](../../ICLR2026/llm_agent/gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[ACL 2026\] Meta-Tool: Efficient Few-Shot Tool Adaptation for Small Language Models](../../ACL2026/llm_agent/meta-tool_efficient_few-shot_tool_adaptation_for_small_language_models.md)
 - [\[AAAI 2026\] Time, Identity and Consciousness in Language Model Agents](time_identity_and_consciousness_in_language_model_agents.md)
-- [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](../../ICLR2026/llm_agent/toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
-- [\[NeurIPS 2025\] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning](../../NeurIPS2025/llm_agent/zero-shot_large_language_model_agents_for_fully_automated_radiotherapy_treatment.md)
+- [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/llm_agent/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
+- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](../../ICLR2026/llm_agent/dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 
 </div>
 

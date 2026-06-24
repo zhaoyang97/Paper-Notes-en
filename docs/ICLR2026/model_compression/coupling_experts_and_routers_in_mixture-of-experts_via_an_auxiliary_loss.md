@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss
 description: >-
-  [ICLR 2026][Model Compression][Mixture-of-Experts] Proposes Expert-Router Coupling (ERC) Loss, a lightweight auxiliary loss function that achieves tight coupling between router decisions and expert capabilities by treating router parameters as proxy tokens for cluster centers and constraining expert activation norms on them, significantly improving MoE-LLM performance
+  [ICLR 2026 Oral][Model Compression][Mixture-of-Experts] Proposes Expert-Router Coupling (ERC) Loss, a lightweight auxiliary loss function that achieves tight coupling between router decisions and expert capabilities by treating router parameters as proxy tokens for cluster centers and constraining expert activation norms on them, significantly improving MoE-LLM performance with only $n^2$ activation computations.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Mixture-of-Experts
+  - "ICLR 2026 Oral"
+  - "Model Compression"
+  - "Mixture-of-Experts"
+  - "Router-Expert Coupling"
+  - "Auxiliary Loss"
+  - "Expert Specialization"
+  - "Large Language Models"
 date: 2026-05-08
-content_hash: d56d067f406fcd7e
+content_hash: a531a28d41629330
 ---
+
 # Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss
 
 **Conference**: ICLR 2026 Oral  
@@ -151,10 +156,10 @@ AoE was infeasible to train at the 15B scale due to excessive costs.
 ## Related Papers
 
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
+- [\[CVPR 2026\] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling](../../CVPR2026/model_compression/enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling.md)
 - [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
 - [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
-- [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](../../ICML2026/model_compression/dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
 
 </div>
 

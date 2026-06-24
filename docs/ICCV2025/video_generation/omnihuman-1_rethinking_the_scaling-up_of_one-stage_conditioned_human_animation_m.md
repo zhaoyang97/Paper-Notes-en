@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models
 description: >-
-  [ICCV 2025][Video Generation][human animation] This paper proposes OmniHuman, a multi-condition human animation generation framework based on Diffusion Transformer. Through an omni-conditions training strategy that mixes…
+  [ICCV 2025][Video Generation][human animation] This paper proposes OmniHuman, a multi-condition human animation generation framework based on Diffusion Transformer. Through an omni-conditions training strategy that mixes motion-related conditions including text, audio, and pose, the framework enables effective data scaling. It is the first single model to support audio-driven human video generation with arbitrary body proportions and aspect ratios…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "omni-conditions training"
   - "data scaling"
 date: 2026-05-08
-content_hash: d06261000fa3875a
+content_hash: 2550b927db3d04d7
 ---
 
 # OmniHuman-1: Rethinking the Scaling-Up of One-Stage Conditioned Human Animation Models
@@ -152,8 +152,8 @@ Introducing pose before audio (IPA) significantly degrades final performance; ma
 - [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
 - [\[ICCV 2025\] VACE: All-in-One Video Creation and Editing](vace_all-in-one_video_creation_and_editing.md)
+- [\[CVPR 2026\] One-to-All Animation: Alignment-Free Character Animation and Image Pose Transfer](../../CVPR2026/video_generation/one-to-all_animation_alignment-free_character_animation_and_image_pose_transfer.md)
 - [\[CVPR 2026\] Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision](../../CVPR2026/video_generation/vanast_virtual_try-on_with_human_image_animation_via_synthetic_triplet_supervisi.md)
-- [\[ICCV 2025\] X-Dancer: Expressive Music to Human Dance Video Generation](x-dancer_expressive_music_to_human_dance_video_generation.md)
 
 </div>
 

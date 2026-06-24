@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TangoFlux: 用流匹配与 CLAP 排序偏好优化实现超快且忠实的文本到音频生成
+  [Paper Note] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization
 description: >-
-  [ICLR 2026][Audio & Speech][CLAP] TangoFlux utilizes a 515M parameter rectified flow matching model to generate 30-second 44.1kHz audio in just 3.7 seconds on an A40. It proposes CRPO—using CLAP as a proxy reward to generate self-improving preference pairs online—enabling this compact model to achieve SOTA across objective and subjective text-to-audio
+  [ICLR 2026][Audio & Speech][Text-to-Audio] TangoFlux utilizes a 515M parameter rectified flow matching model to generate 30-second 44.1kHz audio in just 3.7 seconds on an A40. It proposes CRPO—using CLAP as a proxy reward to generate self-improving preference pairs online—enabling this compact model to achieve SOTA across objective and subjective text-to-audio metrics.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - CLAP
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Text-to-Audio"
+  - "Rectified Flow Matching"
+  - "Preference Optimization"
+  - "CLAP"
+  - "Online Self-Iterative Alignment"
 date: 2026-05-08
-content_hash: b41c517486096205
+content_hash: bd302830fafdf39d
 ---
+
 # TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -141,15 +146,16 @@ CRPO vs. Static Preference Datasets (aligned starting from TangoFlux-base):
 - Value: ⭐⭐⭐⭐⭐ SOTA performance in a fast, open-source model; CRPO framework provides a blueprint for other generative alignment tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
+- [\[CVPR 2026\] Hear What You See: Video-to-Audio Generation with Diffusion Transformer and Semantic-Temporal Alignment-Ranked Direct Preference Optimization](../../CVPR2026/audio_speech/hear_what_you_see_video-to-audio_generation_with_diffusion_transformer_and_seman.md)
+- [\[ICLR 2026\] Flow2GAN: Hybrid Flow Matching and GAN with Multi-Resolution Network for Few-step High-Fidelity Audio Generation](flow2gan_hybrid_flow_matching_and_gan_with_multi-resolution_network_for_few-step.md)
 - [\[ICLR 2026\] SupCLAP: Controlling Optimization Trajectory Drift in Audio-Text Contrastive Learning with Support Vector Regularization](supclap_controlling_optimization_trajectory_drift_in_audio-text_contrastive_lear.md)
-- [\[ICLR 2026\] UniSS: Unified Expressive Speech-to-Speech Translation with Your Voice](uniss_unified_expressive_speech-to-speech_translation_with_your_voice.md)
-- [\[ICLR 2026\] VibeVoice: Expressive Podcast Generation with Next-Token Diffusion](vibevoice_expressive_podcast_generation_with_next-token_diffusion.md)
-- [\[ICLR 2026\] TripleSumm: Adaptive Triple-Modality Fusion for Video Summarization](triplesumm_adaptive_triple-modality_fusion_for_video_summarization.md)
+- [\[ACL 2026\] ZipVoice-Dialog: Non-Autoregressive Spoken Dialogue Generation with Flow Matching](../../ACL2026/audio_speech/zipvoice-dialog_non-autoregressive_spoken_dialogue_generation_with_flow_matching.md)
 
 </div>
 

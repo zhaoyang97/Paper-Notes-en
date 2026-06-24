@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] A Clustered Federated Learning (CFL) framework named FedDAG is proposed. It integrates data and gradient signals to compute weighted class-wise similarities for more accurate client clustering and utilizes a dual-encoder architecture for cross-cluster feature transfer, consistently outperforming existing baselines unde
+  [ICLR 2026][Optimization][Clustered Federated Learning] A Clustered Federated Learning (CFL) framework named FedDAG is proposed. It integrates data and gradient signals to compute weighted class-wise similarities for more accurate client clustering and utilizes a dual-encoder architecture for cross-cluster feature transfer, consistently outperforming existing baselines under various heterogeneity settings.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Clustered Federated Learning"
+  - "data heterogeneity"
+  - "dual-encoder architecture"
+  - "cross-cluster knowledge sharing"
+  - "adaptive clustering"
 date: 2026-05-08
-content_hash: b1fa69435838b7dc
+content_hash: ddec4a1dbf8ea1b2
 ---
+
 # FedDAG: Clustered Federated Learning via Global Data and Gradient Integration for Heterogeneous Environments
 
 **Conference**: ICLR 2026  
@@ -120,15 +126,15 @@ To avoid redundant feature learning, the main encoder is initialized with the pa
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
+- [\[ICLR 2026\] Unified Analyses for Hierarchical Federated Learning: Topology Selection under Data Heterogeneity](unified_analyses_for_hierarchical_federated_learning_topology_selection_under_da.md)
+- [\[ICLR 2026\] On the Surprising Effectiveness of a Single Global Merging in Decentralized Learning](on_the_surprising_effectiveness_of_a_single_global_merging_in_decentralized_lear.md)
 - [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
-- [\[ICLR 2026\] MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion](masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu.md)
-- [\[ICML 2026\] Adaptive Estimation and Inference in Semi-parametric Heterogeneous Clustered Multitask Learning via Neyman Orthogonality](../../ICML2026/optimization/adaptive_estimation_and_inference_in_semi-parametric_heterogeneous_clustered_mul.md)
 
 </div>
 

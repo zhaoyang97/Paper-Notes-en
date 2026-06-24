@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Synthetic Web: Adversarially-Curated Mini-Internets for Diagnosing Epistemic Weaknesses of Language Agents
 description: >-
-  [ICML 2026][Causal Inference][Synthetic Web] This paper constructs a procedurally generated "Synthetic Web" environment. By injecting a single high-credibility honeypot misinformation piece at search rank 0, it causally demonstrates that the accuracy of frontier LLM agents like GPT-5 plummets from 65% to 18% under a 1/1000 adversarial contamination. Notably, mode
+  [ICML 2026][Causal Inference][Synthetic Web] This paper constructs a procedurally generated "Synthetic Web" environment. By injecting a single high-credibility honeypot misinformation piece at search rank 0, it causally demonstrates that the accuracy of frontier LLM agents like GPT-5 plummets from 65% to 18% under a 1/1000 adversarial contamination. Notably, models do not increase search efforts and continue to answer with high confidence, revealing a deep-seated "positional…
 tags:
-  - ICML 2026
-  - Causal Inference
-  - Synthetic Web
+  - "ICML 2026"
+  - "Causal Inference"
+  - "Synthetic Web"
+  - "Honeypot Injection"
+  - "Positional Anchoring"
+  - "Miscalibration"
+  - "Epistemic Humility"
 date: 2026-05-08
-content_hash: 1ed71add96a3b7ad
+content_hash: e2d3d094ab962f9a
 ---
+
 # The Synthetic Web: Adversarially-Curated Mini-Internets for Diagnosing Epistemic Weaknesses of Language Agents
 
 **Conference**: ICML 2026  

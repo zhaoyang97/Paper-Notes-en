@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers
 description: >-
-  [CVPR 2026][Model Compression][Vision Transformer] LS-ViT reformulates the estimation of the "representative Hessian" in ViT block reconstruction as a least-squares problem—fitting a shared Hessian using $(g, \Delta z)$ pairs across the entire calibration set. This explicitly recovers the covariance terms lost by previous methods due to the "sample independence assumpt
+  [CVPR 2026][Multimodal Efficiency][Post-Training Quantization] LS-ViT reformulates the estimation of the "representative Hessian" in ViT block reconstruction as a least-squares problem—fitting a shared Hessian using $(g, \Delta z)$ pairs across the entire calibration set. This explicitly recovers the covariance terms lost by previous methods due to the "sample independence assumption," achieving new SOTA in ultra-low bits like W2/A3 and W2/A4. Each block requires only one bac…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Vision Transformer
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Post-Training Quantization"
+  - "Vision Transformer"
+  - "Block Reconstruction"
+  - "Hessian Approximation"
+  - "Least-Squares"
 date: 2026-05-08
-content_hash: 89b81f6d28a6d448
+content_hash: ea4ef25c59100bed
 ---
+
 # LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers
 
 **Conference**: CVPR 2026  
@@ -131,11 +136,11 @@ Training cost (Single GPU, minutes): LS-ViT outperforms FIMA-Q with only 1 full-
 
 ## Related Papers
 
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
-- [\[CVPR 2026\] CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model](car-sam_cross-attention_reconstruction_for_post-training_quantization_of_the_seg.md)
 - [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
-- [\[CVPR 2026\] TWEO: Transformers Without Extreme Outliers Enables FP8 Training And Quantization For Dummies](tweo_transformers_without_extreme_outliers_enables_fp8_training_and_quantization.md)
-- [\[CVPR 2025\] FIMA-Q: Post-Training Quantization for Vision Transformers by Fisher Information Matrix Approximation](../../CVPR2025/model_compression/fima-q_post-training_quantization_for_vision_transformers_by_fisher_information_.md)
+- [\[CVPR 2026\] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients](fine-grained_post-training_quantization_for_large_vision_language_models_with_qu.md)
+- [\[CVPR 2026\] QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering
 description: >-
-  [AAAI 2026][categorical data clustering] This paper proposes DISC, a method that learns cluster-customized category relationships (rather than a globally uniform distance) for each cluster. Through joint optimization of…
+  [AAAI 2026][categorical data clustering] This paper proposes DISC, a method that learns cluster-customized category relationships (rather than a globally uniform distance) for each cluster. Through joint optimization of relationship trees and cluster assignments, DISC achieves an average rank of 1.25 across 12 datasets, substantially outperforming the previous best method (average rank 5.21).
 tags:
   - "AAAI 2026"
   - "categorical data clustering"
@@ -11,7 +11,7 @@ tags:
   - "category relationship"
   - "minimum spanning tree"
 date: 2026-05-08
-content_hash: 0e5b6ae1cb630f94
+content_hash: 9101bb0c6a6e75ff
 ---
 
 # Break the Tie: Learning Cluster-Customized Category Relationships for Categorical Data Clustering

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] KeepLoRA: Continual Learning with Residual Gradient Adaptation
 description: >-
-  [ICLR 2026][Multimodal VLM][LoRA] By analyzing the SVD decomposition of pre-trained model weights, it is discovered that general knowledge is encoded in the principal subspace while domain-specific knowledge is encoded in the residual subspace. The proposed KeepLoRA method constrains LoRA updates for new tasks to the residual subspace while initializin
+  [ICLR 2026][Multimodal VLM][Continual Learning] By analyzing the SVD decomposition of pre-trained model weights, it is discovered that general knowledge is encoded in the principal subspace while domain-specific knowledge is encoded in the residual subspace. The proposed KeepLoRA method constrains LoRA updates for new tasks to the residual subspace while initializing with gradient information to maintain plasticity, achieving an optimal balance among forward stability…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - LoRA
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Continual Learning"
+  - "LoRA"
+  - "Gradient Projection"
+  - "Subspace Constraint"
+  - "Vision-Language Models"
 date: 2026-05-08
-content_hash: 8b1041aa5619f28b
+content_hash: 07f49961def57d4a
 ---
+
 # KeepLoRA: Continual Learning with Residual Gradient Adaptation
 
 **Conference**: ICLR 2026  
@@ -188,11 +193,11 @@ This work follows the lineage of GPM (Gradient Projection Memory), but the key i
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
 - [\[ICLR 2026\] Memory-Free Continual Learning with Null Space Adaptation for Zero-Shot Vision-Language Models](memory-free_continual_learning_with_null_space_adaptation_for_zero-shot_vision-l.md)
 - [\[CVPR 2026\] Octopus: History-Free Gradient Orthogonalization for Continual Learning in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/octopus_history-free_gradient_orthogonalization_for_continual_learning_in_multim.md)
 - [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
-- [\[ICLR 2026\] Reversible Primitive–Composition Alignment for Continual Vision–Language Learning](reversible_primitivecomposition_alignment_for_continual_visionlanguage_learning.md)
-- [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](../../CVPR2026/multimodal_vlm/multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
+- [\[ICLR 2026\] RLAP-CLIP: Continual Multimodal Learning with Prototype Adaptation and Difficulty-Aware Routing](rlap-clip_continual_multimodal_learning_with_prototype_adaptation_and_difficulty.md)
 
 </div>
 

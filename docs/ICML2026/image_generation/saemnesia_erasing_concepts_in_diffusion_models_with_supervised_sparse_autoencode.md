@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders
 description: >-
-  [ICML 2026][Image Generation][Concept Erasure] By incorporating a supervised "concept-latent" assignment loss during the Sparse Autoencoder (SAE) training phase, this work enforces each target concept to concentrate into a single neuron (feature centralization). This reduces concept erasure in diffusion models from a two-dimensional hyperparameter search of "search
+  [ICML 2026][Image Generation][Concept Erasure] By incorporating a supervised "concept-latent" assignment loss during the Sparse Autoencoder (SAE) training phase, this work enforces each target concept to concentrate into a single neuron (feature centralization). This reduces concept erasure in diffusion models from a two-dimensional hyperparameter search of "searching multiple neurons + tuning intensity" to "tuning a single multiplier." On UnlearnCanvas…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model
+  - "ICML 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Sparse Autoencoders"
+  - "Supervised Training"
+  - "Feature Centralization"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 3251c3fade2f8f03
+content_hash: 2de4592fb5082e79
 ---
+
 # SAEmnesia: Erasing Concepts in Diffusion Models with Supervised Sparse Autoencoders
 
 **Conference**: ICML 2026  
@@ -143,9 +147,9 @@ Compared to the SAE SOTA SAeUron: UA +7.49, IRA +5.82, CRA +14.34, Avg **+9.22**
 
 - [\[CVPR 2026\] Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](../../CVPR2026/image_generation/interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)
 - [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](../../CVPR2026/image_generation/erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
-- [\[ICML 2026\] Skipping the Zeros in Diffusion Models for Sparse Data Generation](skipping_the_zeros_in_diffusion_models_for_sparse_data_generation.md)
+- [\[ICML 2026\] Evaluating the Representation Space of Diffusion Models via Self-Supervised Principles](evaluating_the_representation_space_of_diffusion_models_via_self-supervised_prin.md)
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](../../NeurIPS2025/image_generation/when_are_concepts_erased_from_diffusion_models.md)
-- [\[NeurIPS 2025\] Learning Interpretable Features in Audio Latent Spaces via Sparse Autoencoders](../../NeurIPS2025/image_generation/learning_interpretable_features_in_audio_latent_spaces_via_sparse_autoencoders.md)
+- [\[ICML 2026\] Skipping the Zeros in Diffusion Models for Sparse Data Generation](skipping_the_zeros_in_diffusion_models_for_sparse_data_generation.md)
 
 </div>
 

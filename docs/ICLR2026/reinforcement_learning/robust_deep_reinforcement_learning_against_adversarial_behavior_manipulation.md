@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] This paper investigates a new type of threat in RL—behavior-targeted attacks (where an adversary guides the victim to execute a specific target policy by tampering with observations). It proposes the BIA attack method, which does not require white-box access, and the TDRT defense method based on time discounting. TDRT
+  [ICLR 2026][Reinforcement Learning][Behavior-targeted attack] This paper investigates a new type of threat in RL—behavior-targeted attacks (where an adversary guides the victim to execute a specific target policy by tampering with observations). It proposes the BIA attack method, which does not require white-box access, and the TDRT defense method based on time discounting. TDRT maintains robustness against attacks while achieving 28.2% higher original task performance than e…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Behavior-targeted attack"
+  - "Adversarial robustness"
+  - "Imitation learning attack"
+  - "Time-discounted defense"
+  - "Policy smoothing"
 date: 2026-05-08
-content_hash: f0769ef3ee1e1825
+content_hash: 517538c029b388af
 ---
+
 # Robust Deep Reinforcement Learning against Adversarial Behavior Manipulation
 
 **Conference**: ICLR 2026  
@@ -148,11 +154,11 @@ Defense performance (Best Attack Reward ↓ = More Robust):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bayesian Robust Cooperative Multi-Agent Reinforcement Learning Against Unknown Adversaries](bayesian_robust_cooperative_multi-agent_reinforcement_learning_against_unknown_a.md)
 - [\[ICLR 2026\] Dual-Robust Cross-Domain Offline Reinforcement Learning Against Dynamics Shifts](dual-robust_cross-domain_offline_reinforcement_learning_against_dynamics_shifts.md)
 - [\[ICLR 2026\] Minimax Optimal Adversarial Reinforcement Learning](minimax_optimal_adversarial_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Robust Adversarial Reinforcement Learning in Stochastic Games via Sequence Modeling](../../NeurIPS2025/reinforcement_learning/robust_adversarial_reinforcement_learning_in_stochastic_games_via_sequence_model.md)
 - [\[ICLR 2026\] Learning to Generate Unit Test via Adversarial Reinforcement Learning](learning_to_generate_unit_test_via_adversarial_reinforcement_learning.md)
-- [\[ICLR 2026\] Understanding and Improving Hyperbolic Deep Reinforcement Learning](understanding_and_improving_hyperbolic_deep_reinforcement_learning.md)
 
 </div>
 

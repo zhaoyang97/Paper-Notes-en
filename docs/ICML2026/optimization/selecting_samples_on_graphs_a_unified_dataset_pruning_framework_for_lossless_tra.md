@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Selecting Samples on Graphs: A Unified Dataset Pruning Framework for Lossless Training Acceleration
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] Dataset pruning is reformulated as a "Maximum Weight Clique Problem" on a weighted graph, where node weights represent the intrinsic value of samples and edge weights represent redundancy/diversity relationships. Under mild conditions, this unified objective is proven to be submodular, allowing for a greedy solution wi
+  [ICML2026][Optimization][Dataset Pruning] Dataset pruning is reformulated as a "Maximum Weight Clique Problem" on a weighted graph, where node weights represent the intrinsic value of samples and edge weights represent redundancy/diversity relationships. Under mild conditions, this unified objective is proven to be submodular, allowing for a greedy solution with approximation guarantees. This approach reduces training time by over 40% on ImageNet-1k with ResNet-50 without sac…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Dataset Pruning"
+  - "Maximum Weight Clique"
+  - "Submodular Optimization"
+  - "Greedy Algorithm"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: 64bb74041e436426
+content_hash: 6a022eca0af2fbc5
 ---
+
 # Selecting Samples on Graphs: A Unified Dataset Pruning Framework for Lossless Training Acceleration
 
 **Conference**: ICML2026  
@@ -138,10 +144,10 @@ On CIFAR-10 with a 30% pruning ratio, UGIES achieves 95.9%, outperforming full t
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
-- [\[CVPR 2026\] UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation](../../CVPR2026/optimization/unifusion_a_unified_image_fusion_framework_with_robust_representation_and_source.md)
+- [\[ICLR 2026\] SGD with Adaptive Preconditioning: Unified Analysis and Momentum Acceleration](../../ICLR2026/optimization/sgd_with_adaptive_preconditioning_unified_analysis_and_momentum_acceleration.md)
 - [\[ICML 2026\] A General Framework for Dynamic Consistent Submodular Maximization](a_general_framework_for_dynamic_consistent_submodular_maximization.md)
-- [\[ICML 2026\] Enhancing LLM Training via Spectral Clipping](enhancing_llm_training_via_spectral_clipping.md)
-- [\[CVPR 2025\] Automatic Joint Structured Pruning and Quantization for Efficient Neural Network Training and Compression](../../CVPR2025/optimization/automatic_joint_structured_pruning_and_quantization_for_efficient_neural_network.md)
+- [\[CVPR 2026\] UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation](../../CVPR2026/optimization/unifusion_a_unified_image_fusion_framework_with_robust_representation_and_source.md)
+- [\[ICML 2026\] URS: Unified Neural Routing Solver](urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
 
 </div>
 

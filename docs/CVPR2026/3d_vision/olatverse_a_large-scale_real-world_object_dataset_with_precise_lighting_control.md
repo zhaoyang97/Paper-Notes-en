@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] OLATverse utilizes a lightstage with 35 cameras and 331 controllable light sources to capture 765 real-world objects in a one-light-at-a-time (OLAT) manner. The resulting large-scale dataset contains approximately 9 million images with precise single-light control, accompanied by camera parameters, object masks, photom
+  [CVPR 2026][3D Vision] OLATverse utilizes a lightstage with 35 cameras and 331 controllable light sources to capture 765 real-world objects in a one-light-at-a-time (OLAT) manner. The resulting large-scale dataset contains approximately 9 million images with precise single-light control, accompanied by camera parameters, object masks, photometric normals, and diffuse albedo. It provides the first real-world benchmark for inverse rendering, novel view synthesis…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
 date: 2026-05-08
-content_hash: f8c614a754a19afc
+content_hash: f1abc3c81ca1a11a
 ---
+
 # OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control
 
 **Conference**: CVPR 2026  
@@ -150,11 +151,11 @@ OLATverse covers 13+ material categories and 18.5% of LVIS categories, with obje
 
 ## Related Papers
 
+- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
+- [\[CVPR 2026\] ICTPolarReal: A Polarized Reflection and Material Dataset of Real World Objects](ictpolarreal_a_polarized_reflection_and_material_dataset_of_real_world_objects.md)
 - [\[CVPR 2026\] Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)
-- [\[CVPR 2026\] Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)
-- [\[CVPR 2026\] Learning 3D Shape Fidelity Metric from Real-world Distortions](learning_3d_shape_fidelity_metric_from_real-world_distortions.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
+- [\[CVPR 2026\] SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations](scenescribe-1m_a_large-scale_video_dataset_with_comprehensive_geometric_and_sema.md)
+- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 
 </div>
 

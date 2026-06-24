@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration
 description: >-
-  [AAAI 2026][Multimodal VLM][Visual token compression] This paper proposes FiCoCo, a three-stage framework (Filter–Correlate–Compress) that identifies redundant tokens via integrated vision-aware and semantic-aware redund…
+  [AAAI 2026][Multimodal Efficiency][Visual token compression] This paper proposes FiCoCo, a three-stage framework (Filter–Correlate–Compress) that identifies redundant tokens via integrated vision-aware and semantic-aware redundancy metrics, adaptively recycles information from discarded tokens via inter-token correlation, and achieves training-free MLLM acceleration. On LLaVA-NeXT, FiCoCo achieves a 14.7× FLOPs reduction while retaining 93.6% of performance…
 tags:
   - "AAAI 2026"
-  - "Multimodal VLM"
+  - "Multimodal Efficiency"
   - "Visual token compression"
   - "MLLM acceleration"
   - "training-free"
   - "information recycling"
   - "redundancy metric"
 date: 2026-05-08
-content_hash: e48dc223f08eb2ef
+content_hash: d1d85c72a4b8b893
 ---
 
 # Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration
@@ -104,11 +104,11 @@ The "attention-in as redundancy" perspective generalizes to ViT pruning and vide
 
 ## Related Papers
 
-- [\[ICML 2026\] RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency](../../ICML2026/multimodal_vlm/improving_visual_token_reduction_via_rectifying_distortions_for_efficient_multim.md)
+- [\[ICLR 2026\] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration](../../ICLR2026/vlm_efficiency/visiontrim_unified_vision_token_compression_for_training-free_mllm_acceleration.md)
+- [\[ICLR 2026\] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding](../../ICLR2026/vlm_efficiency/enhancing_visual_token_representations_for_video_large_language_models_via_train.md)
 - [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
-- [\[CVPR 2026\] Generate, Analyze, and Refine: Training-Free Sound Source Localization via MLLM Meta-Reasoning](../../CVPR2026/multimodal_vlm/generate_analyze_and_refine_training-free_sound_source_localization_via_mllm_met.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
-- [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](../../CVPR2026/multimodal_vlm/duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
+- [\[ACL 2026\] From Inheritance to Saturation: Disentangling the Evolution of Visual Redundancy for Architecture-Aware MLLM Inference Acceleration](../../ACL2026/vlm_efficiency/from_inheritance_to_saturation_disentangling_the_evolution_of_visual_redundancy_.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](../../CVPR2026/vlm_efficiency/zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning
 description: >-
-  [CVPR 2026][3D Vision][visual geometry] Ours introduces a "Factored Flow" prediction module that predicts optical flow using the geometric latents of the source view and the pose latents of the target view. This enables unlabeled videos to serve as supervision for 3D geometry learning, achieving SOTA performance across 8 benchmarks in both static and dynamic
+  [CVPR2026][3D Vision][visual geometry] Ours introduces a "Factored Flow" prediction module that predicts optical flow using the geometric latents of the source view and the pose latents of the target view. This enables unlabeled videos to serve as supervision for 3D geometry learning, achieving SOTA performance across 8 benchmarks in both static and dynamic scenes.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - visual geometry
-  - factored flow
-  - 3D reconstruction
-  - unlabeled video
-  - correspondence learning
-  - dynamic scenes
+  - "CVPR2026"
+  - "3D Vision"
+  - "visual geometry"
+  - "factored flow"
+  - "3D reconstruction"
+  - "unlabeled video"
+  - "correspondence learning"
+  - "dynamic scenes"
 date: 2026-05-08
-content_hash: 7f2f8a5e50f091af
+content_hash: f66b75dd9bb28516
 ---
+
 # Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning
 
 **Conference**: CVPR2026  
@@ -161,10 +162,10 @@ Gains from dynamic data transferred to static scenes, with MSE on 7-Scenes dropp
 ## Related Papers
 
 - [\[CVPR 2026\] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention](flashvggt_efficient_and_scalable_visual_geometry_transformers_with_compressed_descr.md)
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[ICLR 2026\] $\pi^3$: Permutation-Equivariant Visual Geometry Learning](../../ICLR2026/3d_vision/pi3_permutation-equivariant_visual_geometry_learning.md)
 - [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
-- [\[CVPR 2026\] Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 
 </div>
 

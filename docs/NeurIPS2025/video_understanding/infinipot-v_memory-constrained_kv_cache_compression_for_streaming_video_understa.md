@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding
 description: >-
-  [NeurIPS 2025][Video Understanding][KV Cache Compression] This paper proposes InfiniPot-V, the first training-free and query-agnostic streaming video understanding framework. It achieves online KV cache compression via t…
+  [NeurIPS 2025][Video Understanding][KV Cache Compression] This paper proposes InfiniPot-V, the first training-free and query-agnostic streaming video understanding framework. It achieves online KV cache compression via two complementary metrics — Temporal-axis Redundancy (TaR) and Value-Norm (VaN) — enabling streaming video understanding of arbitrary length under a fixed memory budget.
 tags:
   - "NeurIPS 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Redundancy"
   - "Edge Deployment"
 date: 2026-05-08
-content_hash: 43f1940ff76075fb
+content_hash: 544171937bba5657
 ---
 
 # InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding
@@ -184,7 +184,7 @@ The two metrics are complementary: TaR excels at removing background redundancy,
 
 ## Related Papers
 
-- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](../../ACL2026/video_understanding/hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](../../CVPR2026/video_understanding/mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
 - [\[NeurIPS 2025\] VideoLucy: Deep Memory Backtracking for Long Video Understanding](videolucy_deep_memory_backtracking_for_long_video_understanding.md)
 - [\[NeurIPS 2025\] LiveStar: Live Streaming Assistant for Real-World Online Video Understanding](livestar_live_streaming_assistant_for_real-world_online_video_understanding.md)
 - [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](../../CVPR2026/video_understanding/streamingtom_streaming_token_compression_for_efficient_video_understanding.md)

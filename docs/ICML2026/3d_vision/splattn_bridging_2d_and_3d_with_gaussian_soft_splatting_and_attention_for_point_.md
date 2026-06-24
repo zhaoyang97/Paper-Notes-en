@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SplAttN: Bridging 2D and 3D with Gaussian Soft Splatting and Attention for Point Cloud Completion
 description: >-
-  [ICML 2026][3D Vision][KITTI counter-factual] This paper points out that "hard projection" in multi-modal point cloud completion, which directly maps 3D points onto a 2D grid, causes the support set to have zero Lebesgue measure and truncates gradients via Dirac delta functions (termed Cross-Modal Entropy Collapse). By replacing hard projection with continuous den
+  [ICML 2026 Spotlight][3D Vision][Point Cloud Completion] This paper points out that "hard projection" in multi-modal point cloud completion, which directly maps 3D points onto a 2D grid, causes the support set to have zero Lebesgue measure and truncates gradients via Dirac delta functions (termed Cross-Modal Entropy Collapse). By replacing hard projection with continuous density estimation via differentiable Gaussian Soft Splatting, combined with a hybrid encoder (EdgeConv fo…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - KITTI counter-factual
+  - "ICML 2026 Spotlight"
+  - "3D Vision"
+  - "Point Cloud Completion"
+  - "Differentiable Gaussian Splatting"
+  - "Cross-Modal Entropy Collapse"
+  - "Multi-modal Learning Theory"
+  - "KITTI counter-factual"
 date: 2026-05-08
-content_hash: 4e71c815b9f03141
+content_hash: 4ee6528d3f0a9e24
 ---
+
 # SplAttN: Bridging 2D and 3D with Gaussian Soft Splatting and Attention for Point Cloud Completion
 
 **Conference**: ICML 2026 Spotlight  
@@ -148,9 +153,9 @@ Weighted Arc-CD is used: $\mathcal{L}_{\mathrm{warc}}(X, Y; \lambda) = \lambda \
 
 - [\[AAAI 2026\] Rethinking Multimodal Point Cloud Completion: A Completion-by-Correction Perspective](../../AAAI2026/3d_vision/rethinking_multimodal_point_cloud_completion_a_completion-by-correction_perspect.md)
 - [\[AAAI 2026\] DAPointMamba: Domain Adaptive Point Mamba for Point Cloud Completion](../../AAAI2026/3d_vision/dapointmamba_domain_adaptive_point_mamba_for_point_cloud_completion.md)
+- [\[AAAI 2026\] DANCE: Density-Agnostic and Class-Aware Network for Point Cloud Completion](../../AAAI2026/3d_vision/dance_density-agnostic_and_class-aware_network_for_point_cloud_completion.md)
 - [\[CVPR 2026\] Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](../../CVPR2026/3d_vision/hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)
 - [\[AAAI 2026\] Simba: Towards High-Fidelity and Geometrically-Consistent Point Cloud Completion via Transformation Diffusion](../../AAAI2026/3d_vision/simba_towards_high-fidelity_and_geometrically-consistent_point_cloud_completion_.md)
-- [\[ICCV 2025\] Revisiting Point Cloud Completion: Are We Ready For The Real-World?](../../ICCV2025/3d_vision/revisiting_point_cloud_completion_are_we_ready_for_the_real-world.md)
 
 </div>
 

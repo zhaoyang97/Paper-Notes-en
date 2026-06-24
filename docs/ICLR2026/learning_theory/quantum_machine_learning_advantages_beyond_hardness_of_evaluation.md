@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Quantum Machine Learning Advantages Beyond Hardness of Evaluation
 description: >-
-  [ICLR 2026][learning_theory][BQP] This paper provides the first proof that for data labeled by quantum functions ($\mathsf{BQP}$-complete), classical algorithms cannot even "identify" the labeling function itself, even without the requirement to "evaluate" new samples, unless $\mathsf{BQP}$ falls into the lower levels of the polynomial hierarchy (a col
+  [ICLR 2026][Learning Theory][PAC Learning] This paper provides the first proof that for data labeled by quantum functions ($\mathsf{BQP}$-complete), classical algorithms cannot even "identify" the labeling function itself, even without the requirement to "evaluate" new samples, unless $\mathsf{BQP}$ falls into the lower levels of the polynomial hierarchy (a collapse widely believed to be false). This shifts the quantum machine learning advantage from "hardness of evaluation"…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - BQP
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Quantum Machine Learning"
+  - "Computational Complexity"
+  - "PAC Learning"
+  - "Learning Separations"
+  - "BQP"
+  - "Polynomial Hierarchy"
 date: 2026-05-08
-content_hash: a704fa0d816dea81
+content_hash: e009e3854bd9762a
 ---
+
 # Quantum Machine Learning Advantages Beyond Hardness of Evaluation
 
 **Conference**: ICLR 2026  
@@ -121,15 +127,16 @@ Hamiltonian learning is known to be **classically solvable**. This implies that 
 - Value: ⭐⭐⭐⭐⭐ Shifts the perspective of QML advantage from evaluation to the learning process itself.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
-- [\[ICLR 2026\] Learning to Adapt: In-Context Learning Beyond Stationarity](learning_to_adapt_in-context_learning_beyond_stationarity.md)
-- [\[ICLR 2026\] The Lie of the Average: How Class Incremental Learning Evaluation Deceives You?](the_lie_of_the_average_how_class_incremental_learning_evaluation_deceives_you.md)
-- [\[ICLR 2026\] Subquadratic Algorithms and Hardness for Attention with Any Temperature](subquadratic_algorithms_and_hardness_for_attention_with_any_temperature.md)
 - [\[ICLR 2026\] Parameterized Hardness of Zonotope Containment and Neural Network Verification](parameterized_hardness_of_zonotope_containment_and_neural_network_verification.md)
+- [\[ICLR 2026\] The Lie of the Average: How Class Incremental Learning Evaluation Deceives You?](the_lie_of_the_average_how_class_incremental_learning_evaluation_deceives_you.md)
+- [\[ICLR 2026\] Learning to Adapt: In-Context Learning Beyond Stationarity](learning_to_adapt_in-context_learning_beyond_stationarity.md)
+- [\[ICLR 2026\] Subquadratic Algorithms and Hardness for Attention with Any Temperature](subquadratic_algorithms_and_hardness_for_attention_with_any_temperature.md)
 
 </div>
 

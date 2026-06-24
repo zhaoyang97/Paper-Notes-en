@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the coexistence of redundancy and noise in text/audio/visual features for multimodal intent recognition, SeD-UD proposes an Influence-Driven Adaptive Bottleneck (IDAB) that dynamically adjusts the bottleneck dimension per sample. It hierarchically decouples the process into two steps: parallel unimodal de-re
+  [CVPR 2026][Multimodal VLM][Multimodal Intent Recognition] Addressing the coexistence of redundancy and noise in text/audio/visual features for multimodal intent recognition, SeD-UD proposes an Influence-Driven Adaptive Bottleneck (IDAB) that dynamically adjusts the bottleneck dimension per sample. It hierarchically decouples the process into two steps: parallel unimodal de-redundancy followed by unified denoising after fusion, outperforming existing SOTA on MIntRec, MELD-DA…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Intent Recognition"
+  - "Information Bottleneck"
+  - "Adaptive Compression"
+  - "De-redundancy and Denoising Decoupling"
+  - "Feature Purification"
 date: 2026-05-08
-content_hash: a285d8d3dec3b608
+content_hash: 9f033e56ba4c0117
 ---
+
 # SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition
 
 **Conference**: CVPR 2026  
@@ -146,16 +152,16 @@ Dynamic dimensioning provides a greater gain than importance ranking alone.
 - Value: ⭐⭐⭐⭐ (Generalizable logic for multimodal feature purification)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
 - [\[ICML 2025\] Learning Optimal Multimodal Information Bottleneck Representations](../../ICML2025/multimodal_vlm/learning_optimal_multimodal_information_bottleneck_representations.md)
 - [\[ACL 2026\] From Verbatim to Gist: Distilling Pyramidal Multimodal Memory via Semantic Information Bottleneck](../../ACL2026/multimodal_vlm/from_verbatim_to_gist_distilling_pyramidal_multimodal_memory_via_semantic_inform.md)
-- [\[AAAI 2026\] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](../../AAAI2026/multimodal_vlm/conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)
-- [\[CVPR 2026\] MODIX: Training-Free Multimodal Information-Driven Positional Index Scaling for VLMs](modix_positional_index_scaling.md)
-- [\[ACL 2026\] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry](../../ACL2026/multimodal_vlm/thinking_like_a_botanist_challenging_multimodal_language_models_with_intent-driv.md)
+- [\[ICLR 2026\] Calibrated Information Bottleneck for Trusted Multi-modal Clustering](../../ICLR2026/multimodal_vlm/calibrated_information_bottleneck_for_trusted_multi-modal_clustering.md)
+- [\[CVPR 2026\] MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models](modix_a_training-free_multimodal_information-driven_positional_index_scaling_for.md)
 
 </div>
 

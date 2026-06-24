@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning-Augmented Online Bipartite Fractional Matching
 description: >-
-  [NeurIPS 2025][Other][online bipartite matching] This paper proposes two learning-augmented algorithms (LAB and PAW) for online bipartite fractional matching. Given a potentially inaccurate advice matching…
+  [NeurIPS 2025][Other][online bipartite matching] This paper proposes two learning-augmented algorithms (LAB and PAW) for online bipartite fractional matching. Given a potentially inaccurate advice matching, both algorithms Pareto-dominate the naïve CoinFlip strategy across the entire robustness spectrum for the first time.
 tags:
   - "NeurIPS 2025"
   - "Other"
@@ -12,7 +12,7 @@ tags:
   - "robustness-consistency trade-off"
   - "fractional matching"
 date: 2026-05-08
-content_hash: 03f60a5acc7e477a
+content_hash: 023186ce65b5ebec
 ---
 
 # Learning-Augmented Online Bipartite Fractional Matching
@@ -129,9 +129,9 @@ This paper builds on the learning-augmented algorithms framework (Lykouris & Vas
 
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](../../ICML2026/learning_theory/parsimonious_learning-augmented_online_metric_matching.md)
 - [\[NeurIPS 2025\] Computable Universal Online Learning](computable_universal_online_learning.md)
+- [\[ICML 2025\] Near-Optimal Consistency-Robustness Trade-Offs for Learning-Augmented Online Knapsack Problems](../../ICML2025/learning_theory/near-optimal_consistency-robustness_trade-offs_for_learning-augmented_online_kna.md)
 - [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
-- [\[NeurIPS 2025\] Non-Clairvoyant Scheduling with Progress Bars](non-clairvoyant_scheduling_with_progress_bars.md)
+- [\[ICML 2025\] Learning-Augmented Algorithms for MTS with Bandit Access to Multiple Predictors](../../ICML2025/learning_theory/learning-augmented_algorithms_for_mts_with_bandit_access_to_multiple_predictors.md)
 
 </div>
 

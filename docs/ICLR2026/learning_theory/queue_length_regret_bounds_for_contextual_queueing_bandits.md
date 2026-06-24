@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Queue Length Regret Bounds for Contextual Queueing Bandits
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes the "Contextual Queueing Bandits" framework—scheduling tasks with heterogeneous contextual features while learning unknown service rates online. By employing a "policy-switching queue + coupling" argument, it decomposes queue length regret and proves that the algorithm CQB-ε achieves a decaying regr
+  [ICLR 2026][Learning Theory][Contextual Queueing Bandits] This paper proposes the "Contextual Queueing Bandits" framework—scheduling tasks with heterogeneous contextual features while learning unknown service rates online. By employing a "policy-switching queue + coupling" argument, it decomposes queue length regret and proves that the algorithm CQB-ε achieves a decaying regret of $\tilde{O}(T^{-1/4})$ under stochastic contexts, while CQB-Opt achieves polylogarithmic regret o…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Queueing Bandits"
+  - "Contextual Queueing Bandits"
+  - "Queue Length Regret"
+  - "Policy-Switching Queues"
+  - "Coupling Argument"
+  - "Logistic Bandits"
 date: 2026-05-08
-content_hash: 557540d8a5108066
+content_hash: fd586342ce11b513
 ---
+
 # Queue Length Regret Bounds for Contextual Queueing Bandits
 
 **Conference**: ICLR 2026  
@@ -135,8 +143,8 @@ Both proposed algorithms converge toward the optimal queue length after a certai
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
 - [\[ICLR 2026\] Quantitative Bounds for Length Generalization in Transformers](quantitative_bounds_for_length_generalization_in_transformers.md)
 - [\[ICLR 2026\] Diversified Multinomial Logit Contextual Bandits](diversified_multinomial_logit_contextual_bandits.md)
-- [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
-- [\[ICLR 2026\] Semi-Parametric Contextual Pricing with General Smoothness](semi-parametric_contextual_pricing_with_general_smoothness.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
+- [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 
 </div>
 

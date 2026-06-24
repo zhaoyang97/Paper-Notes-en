@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][CLIP] PEARL proposes a two-step inference method based on Procrustes alignment and text-aware Laplacian propagation. Without introducing additional training or auxiliary backbones, it achieves a new SOTA in training-free open-vocabulary semantic segmentation by correcting the key-query geometric mismatch in the final self-at
+  [CVPR 2026][Segmentation][Open-Vocabulary Semantic Segmentation] PEARL proposes a two-step inference method based on Procrustes alignment and text-aware Laplacian propagation. Without introducing additional training or auxiliary backbones, it achieves a new SOTA in training-free open-vocabulary semantic segmentation by correcting the key-query geometric mismatch in the final self-attention layer of CLIP and utilizing text semantics to guide label propagation.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-Vocabulary Semantic Segmentation"
+  - "Training-free"
+  - "Procrustes Alignment"
+  - "Laplacian Propagation"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 43ec1f21c2ecdb13
+content_hash: 2296893437e49b7b
 ---
+
 # PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -162,10 +167,10 @@ Effect of TLP as a plug-and-play module for other methods:
 ## Related Papers
 
 - [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
-- [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
-- [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
 - [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
+- [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](../../ICCV2025/segmentation/training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

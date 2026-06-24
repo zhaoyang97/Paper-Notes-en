@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ECHO: Toward Contextual Seq2Seq Paradigms in Large EEG Models
 description: >-
-  [ICLR 2026][Time Series][decoder-centric] ECHO shifts Electroencephalogram (EEG) modeling from the "encoder-centric representation + lightweight classification head" paradigm to a "decoder-centric sequence-to-sequence generation" approach. By utilizing a series of support samples as in-context examples, a unified model can automatically identify task types and
+  [ICLR2026][Time Series][Large EEG Models] ECHO shifts Electroencephalogram (EEG) modeling from the "encoder-centric representation + lightweight classification head" paradigm to a "decoder-centric sequence-to-sequence generation" approach. By utilizing a series of support samples as in-context examples, a unified model can automatically identify task types and predict labels without fine-tuning, outperforming task-specific Large EEG Models in multi-task settings.
 tags:
-  - ICLR 2026
-  - Time Series
-  - decoder-centric
-  - seq2seq
-  - in-context learning
+  - "ICLR2026"
+  - "Time Series"
+  - "Large EEG Models"
+  - "decoder-centric"
+  - "seq2seq"
+  - "in-context learning"
+  - "multi-task generalization"
 date: 2026-05-08
-content_hash: aa3d21e45811eadf
+content_hash: 337f3375ce4c384f
 ---
+
 # ECHO: Toward Contextual Seq2Seq Paradigms in Large EEG Models
 
 **Conference**: ICLR2026  
@@ -139,6 +142,7 @@ Overall, cognitive tasks saw an average increase in Balanced Accuracy of +0.0602
 - **Value**: ⭐⭐⭐⭐⭐ Opens a new paradigm for releasing the generalization potential of Large EEG Models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] FUSER transforms "multiview point cloud registration" from the traditional two-stage "pairwise matching + pose graph synchronization" pipeline into a single feed-forward inference. All scans are processed together in a compact latent space for joint reasoning, directly regressing global poses for each scan, followed by
+  [CVPR 2026][3D Vision][Multiview Registration] FUSER transforms "multiview point cloud registration" from the traditional two-stage "pairwise matching + pose graph synchronization" pipeline into a single feed-forward inference. All scans are processed together in a compact latent space for joint reasoning, directly regressing global poses for each scan, followed by refinement using FUSER-DF, a diffusion model in the joint SE(3)$^N$ space. It significantly outperforms existing…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multiview Registration"
+  - "Feed-forward Transformer"
+  - "Pose Synchronization"
+  - "SE(3) Diffusion"
+  - "2D Prior Transfer"
 date: 2026-05-08
-content_hash: 8a02c7b5b7a1cea5
+content_hash: 96549e671b079486
 ---
+
 # FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement
 
 **Conference**: CVPR 2026  
@@ -132,6 +138,7 @@ FUSER reduces processing time to sub-second levels, while two-stage methods take
 - Value: ⭐⭐⭐⭐⭐ Significant accuracy gains and a massive reduction in runtime make this highly practical for 3D reconstruction and robotics.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -139,8 +146,8 @@ FUSER reduces processing time to sub-second levels, while two-stage methods take
 - [\[CVPR 2026\] MVInverse: Feed-forward Multiview Inverse Rendering in Seconds](mvinverse_feed-forward_multiview_inverse_rendering_in_seconds.md)
 - [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
 - [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
 - [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LRIM: a Physics-Based Benchmark for Provably Evaluating Long-Range Capabilities in Graph Learning
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] The authors construct a **provable and controllable** long-range graph learning benchmark using the well-studied long-range Ising model from statistical physics (consisting of 10 datasets, 256 to 65k nodes). The task involves predicting the energy change $\Delta E$ for each spin flip, where the ground truth mathematica
+  [ICLR 2026][Graph Learning][Long-range dependency] The authors construct a **provable and controllable** long-range graph learning benchmark using the well-studied long-range Ising model from statistical physics (consisting of 10 datasets, 256 to 65k nodes). The task involves predicting the energy change $\Delta E$ for each spin flip, where the ground truth mathematically necessitates interactions with distant nodes, providing a reliable metric for evaluating long-range model…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Long-range dependency"
+  - "Ising model"
+  - "Graph Neural Networks"
+  - "Graph Transformer"
+  - "Message Passing"
+  - "Provable benchmark"
 date: 2026-05-08
-content_hash: 0d6ad00709b478f9
+content_hash: 338f4bbf2ba58428
 ---
+
 # LRIM: a Physics-Based Benchmark for Provably Evaluating Long-Range Capabilities in Graph Learning
 
 **Conference**: ICLR 2026  
@@ -116,8 +123,8 @@ Accuracy drops as system size increases. MPNNs saturate quickly, while vanilla g
 
 - [\[ICLR 2026\] Towards Quantifying Long-Range Interactions in Graph Machine Learning: A Large Graph Dataset and a Measurement](towards_quantifying_long-range_interactions_in_graph_machine_learning_a_large_gr.md)
 - [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
-- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
 - [\[ICLR 2026\] GDGB: A Benchmark for Generative Dynamic Text-Attributed Graph Learning](gdgb_a_benchmark_for_generative_dynamic_text-attributed_graph_learning.md)
+- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks](../../NeurIPS2025/graph_learning/sketch-augmented_features_improve_learning_long-range_dependencies_in_graph_neur.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][Event camera] EF-3DGS is the first work to introduce event cameras into free-trajectory scene reconstruction. It employs an Event Generation Model (EGM) to reconstruct latent inter-frame images…
+  [NeurIPS 2025][3D Vision][Event camera] EF-3DGS is the first work to introduce event cameras into free-trajectory scene reconstruction. It employs an Event Generation Model (EGM) to reconstruct latent inter-frame images for continuous supervision, Contrast Maximization (CMax) combined with a Linear Event Generation Model (LEGM) to extract motion information for pose calibration, and a photometric BA + Fixed-GS strategy to resolve color inconsistency. The method achieves a 3 d…
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "pose estimation"
   - "novel view synthesis"
 date: 2026-05-08
-content_hash: ea4dba27297bf7a2
+content_hash: 121facb8b1213f35
 ---
 
 # EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting
@@ -132,11 +132,11 @@ EF-3DGS's application of the CMax framework within 3DGS can be extended to other
 
 ## Related Papers
 
+- [\[CVPR 2025\] IncEventGS: Pose-Free Gaussian Splatting from a Single Event Camera](../../CVPR2025/3d_vision/inceventgs_pose-free_gaussian_splatting_from_a_single_event_camera.md)
 - [\[ICCV 2025\] EvaGaussians: Event Stream Assisted Gaussian Splatting from Blurry Images](../../ICCV2025/3d_vision/evagaussians_event_stream_assisted_gaussian_splatting_from_blurry_images.md)
-- [\[NeurIPS 2025\] ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS](zpressor_bottleneck-aware_compression_for_scalable_feed-forward_3dgs.md)
-- [\[ICCV 2025\] RobustSplat: Decoupling Densification and Dynamics for Transient-Free 3DGS](../../ICCV2025/3d_vision/robustsplat_decoupling_densification_and_dynamics_for_transient-free_3dgs.md)
-- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
-- [\[NeurIPS 2025\] Quantifying and Alleviating Co-Adaptation in Sparse-View 3D Gaussian Splatting](quantifying_and_alleviating_co-adaptation_in_sparse-view_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](../../CVPR2026/3d_vision/e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
+- [\[CVPR 2025\] DiET-GS: Diffusion Prior and Event Stream-Assisted Motion Deblurring 3D Gaussian Splatting](../../CVPR2025/3d_vision/diet-gs_diffusion_prior_and_event_stream-assisted_motion_deblurring_3d_gaussian_.md)
+- [\[CVPR 2025\] SelfSplat: Pose-Free and 3D Prior-Free Generalizable 3D Gaussian Splatting](../../CVPR2025/3d_vision/selfsplat_pose-free_and_3d_prior-free_generalizable_3d_gaussian_splatting.md)
 
 </div>
 

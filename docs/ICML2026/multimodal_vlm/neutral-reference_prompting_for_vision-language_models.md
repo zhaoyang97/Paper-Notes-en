@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neutral-Reference Prompting for Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper re-attributes the Base-New Trade-off (BNT) in VLM efficient transfer to "unremoved asymmetric category preferences from pre-training in novel classes." It proposes NeRP: using a semantically neutral text prompt and the "training image mean" as reference inputs to estimate zero-parameter prior shifts for each
+  [ICML 2026][Multimodal VLM][Base-Novel Trade-off] This paper re-attributes the Base-New Trade-off (BNT) in VLM efficient transfer to "unremoved asymmetric category preferences from pre-training in novel classes." It proposes NeRP: using a semantically neutral text prompt and the "training image mean" as reference inputs to estimate zero-parameter prior shifts for each category on a trained VLM. A Bayesian-style proxy score is then used to perform local flips between confused…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Base-Novel Trade-off"
+  - "Asymmetric Confusion"
+  - "Neutral Reference Prompt"
+  - "Bayesian Prior"
+  - "Plug-and-play Bias Correction"
 date: 2026-05-08
-content_hash: 1853efba6cc3b526
+content_hash: 84cd0ac5e72fe2c4
 ---
+
 # Neutral-Reference Prompting for Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -130,15 +136,16 @@ When combined with any baseline, NeRP improves Novel accuracy on almost all data
 - Value: ⭐⭐⭐⭐⭐ Zero training parameters, low inference overhead, and compatibility with any prompt tuning method offer high industrial deployment value.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ECCV 2024\] Attention Prompting on Image for Large Vision-Language Models](../../ECCV2024/multimodal_vlm/attention_prompting_on_image_for_large_visionlanguage_models.md)
-- [\[ICML 2026\] Vision Language Models 无法推理物理变换](vision_language_models_cannot_reason_about_physical_transformation.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
-- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](../../CVPR2026/multimodal_vlm/p-flow_prompting_visual_effects_generation.md)
+- [\[ICML 2026\] Unveiling Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
 - [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
+- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
 
 </div>
 

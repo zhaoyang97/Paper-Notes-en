@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] The authors propose SABA, a reasoning framework based on the "perceive then act" paradigm. It explicitly constructs and audits knowledge states before making final decisions by utilizing Information Fusion (IF) to integrate narratives into verified baseline states and Query-driven Structured Reasoning (QSR) to recursiv
+  [ACL 2026][Reasoning][Self-Awareness Reasoning] The authors propose SABA, a reasoning framework based on the "perceive then act" paradigm. It explicitly constructs and audits knowledge states before making final decisions by utilizing Information Fusion (IF) to integrate narratives into verified baseline states and Query-driven Structured Reasoning (QSR) to recursively identify and resolve missing premises. SABA achieves peak performance across detective reasoning and general…
 tags:
-  - ACL 2026
-  - LLM Reasoning
+  - "ACL 2026"
+  - "Reasoning"
+  - "Self-Awareness Reasoning"
+  - "Non-interactive Narrative Reasoning"
+  - "Structured State Management"
+  - "Information Fusion"
+  - "Logical Inertia"
 date: 2026-05-08
-content_hash: 3c7befc4c99944ee
+content_hash: 0335235f75180096
 ---
+
 # Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness
 
 **Conference**: ACL 2026  
@@ -137,11 +143,11 @@ SABA is a pure prompting framework requiring no training. It uses DeepSeek-V3 an
 
 ## Related Papers
 
-- [\[ICLR 2026\] The Reasoning Trap — Logical Reasoning as a Mechanistic Pathway to Situational Awareness](../../ICLR2026/llm_reasoning/the_reasoning_trap_--_logical_reasoning_as_a_mechanistic_pathway_to_situational_.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](../../ICML2026/llm_reasoning/verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
-- [\[ACL 2026\] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](logical_phase_transitions_understanding_collapse_in_llm_logical_reasoning.md)
 - [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](../../ICML2026/llm_reasoning/hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
-- [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
+- [\[ICLR 2026\] SkillFactory: Self-Distillation for Learning Cognitive Behaviors](../../ICLR2026/llm_reasoning/skillfactory_self-distillation_for_learning_cognitive_behaviors.md)
+- [\[ACL 2026\] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](logical_phase_transitions_understanding_collapse_in_llm_logical_reasoning.md)
+- [\[NeurIPS 2025\] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](../../NeurIPS2025/llm_reasoning/the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)
 
 </div>
 

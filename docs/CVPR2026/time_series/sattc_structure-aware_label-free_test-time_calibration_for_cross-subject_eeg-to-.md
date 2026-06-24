@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval
 description: >-
-  [CVPR 2026][Time Series][Paper Note] SATTC is proposed as a label-free test-time calibration head. By employing a Product-of-Experts (PoE) fusion of a geometric expert (subject-adaptive whitening + adaptive CSLS) and a structural expert (mutual nearest neighbors + bidirectional top-k ranking + category popularity), it operates directly on the similarity m
+  [CVPR 2026][Time Series][EEG decoding] SATTC is proposed as a label-free test-time calibration head. By employing a Product-of-Experts (PoE) fusion of a geometric expert (subject-adaptive whitening + adaptive CSLS) and a structural expert (mutual nearest neighbors + bidirectional top-k ranking + category popularity), it operates directly on the similarity matrix of frozen EEG and image encoders. This approach significantly enhances Top-1 accuracy and alleviates the hubness ef…
 tags:
-  - CVPR 2026
-  - Time Series
+  - "CVPR 2026"
+  - "Time Series"
+  - "EEG decoding"
+  - "Cross-subject retrieval"
+  - "Label-free calibration"
+  - "hubness mitigation"
+  - "Similarity matrix"
 date: 2026-05-08
-content_hash: e0150ff37a5dd5da
+content_hash: 9225377e6de8d1fa
 ---
+
 # SATTC: Structure-Aware Label-Free Test-Time Calibration for Cross-Subject EEG-to-Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -144,9 +150,9 @@ Plug-and-play generalization across encoders (SATTC as a general calibration lay
 
 - [\[AAAI 2026\] Task-Aware Retrieval Augmentation for Dynamic Recommendation](../../AAAI2026/time_series/task-aware_retrieval_augmentation_for_dynamic_recommendation.md)
 - [\[NeurIPS 2025\] Learning with Calibration: Exploring Test-Time Computing of Spatio-Temporal Forecasting](../../NeurIPS2025/time_series/learning_with_calibration_exploring_test-time_computing_of_spatio-temporal_forec.md)
+- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](../../ICLR2026/time_series/cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
 - [\[ICLR 2026\] Free Energy Mixer](../../ICLR2026/time_series/free_energy_mixer.md)
 - [\[CVPR 2026\] Towards Uncertainty-aware Unsupervised Domain Adaptation for Videos and Time-Series with Causal Optimal Transport](towards_uncertainty-aware_unsupervised_domain_adaptation_for_videos_and_time-ser.md)
-- [\[ACL 2026\] Test of Time: Rethinking Temporal Signal of Benchmark Contamination](../../ACL2026/time_series/test_of_time_rethinking_temporal_signal_of_benchmark_contamination.md)
 
 </div>
 

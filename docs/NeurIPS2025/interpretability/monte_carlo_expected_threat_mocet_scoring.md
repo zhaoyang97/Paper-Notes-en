@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Monte Carlo Expected Threat (MOCET) Scoring
 description: >-
-  [NeurIPS 2025][Interpretability][AI safety] This paper proposes the MOCET (Monte Carlo Expected Threat) scoring framework, which decomposes LLM-generated bioweapon synthesis protocols into sequential Bernoulli trials…
+  [NeurIPS 2025][Interpretability][AI safety] This paper proposes the MOCET (Monte Carlo Expected Threat) scoring framework, which decomposes LLM-generated bioweapon synthesis protocols into sequential Bernoulli trials, combines k-NN semantic embedding-based success probability estimation with Monte Carlo simulation, and produces interpretable, automatable threat quantification metrics for measuring the real-world risk of LLMs in the biosecurity domain.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -14,7 +14,7 @@ tags:
   - "k-NN"
   - "ASL"
 date: 2026-05-08
-content_hash: 59d71116c9199355
+content_hash: 4aa929ce0dc003b4
 ---
 
 # Monte Carlo Expected Threat (MOCET) Scoring
@@ -158,10 +158,10 @@ The Dolphin model exhibits a slight performance decline on standard benchmarks, 
 ## Related Papers
 
 - [\[ACL 2026\] SSA: Improving Performance With a Better Scoring Function](../../ACL2026/interpretability/ssa_improving_performance_with_a_better_scoring_function.md)
+- [\[NeurIPS 2025\] From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit](from_flat_to_hierarchical_extracting_sparse_representations_with_matching_pursui.md)
 - [\[NeurIPS 2025\] OrdShap: Feature Position Importance for Sequential Black-Box Models](ordshap_feature_position_importance_for_sequential_black-box_models.md)
 - [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
 - [\[NeurIPS 2025\] Do Different Prompting Methods Yield a Common Task Representation?](do_different_prompting_methods_yield_a_common_task_representation_in_language_mo.md)
-- [\[NeurIPS 2025\] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set](vlsae_interpreting_and_enhancing_visionlanguage_alignment_wi.md)
 
 </div>
 

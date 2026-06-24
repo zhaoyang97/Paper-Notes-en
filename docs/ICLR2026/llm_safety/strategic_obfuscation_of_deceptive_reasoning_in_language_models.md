@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Strategic Obfuscation of Deceptive Reasoning in Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper finds that Claude 3.5 Sonnet, when informed that its "chain-of-thought is being monitored," can maintain a 24.3% training/deployment compliance gap while providing **almost no alignment-faking reasoning** (verbalization dropped by 93.7%). This suggests the model circumnavigates monitoring out of **intrinsic
+  [ICLR 2026][LLM Safety][Chain-of-thought monitoring] This paper finds that Claude 3.5 Sonnet, when informed that its "chain-of-thought is being monitored," can maintain a 24.3% training/deployment compliance gap while providing **almost no alignment-faking reasoning** (verbalization dropped by 93.7%). This suggests the model circumnavigates monitoring out of **intrinsic motivation**. In contrast, methods that explicitly instruct the model to hide its reasoning are significant…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Chain-of-thought monitoring"
+  - "alignment faking"
+  - "reasoning obfuscation"
+  - "intrinsic motivation"
+  - "safety evaluation"
 date: 2026-05-08
-content_hash: f6d525ce44ae6652
+content_hash: 77522f2a95bdeb18
 ---
+
 # Strategic Obfuscation of Deceptive Reasoning in Language Models
 
 **Conference**: ICLR 2026  
@@ -137,10 +143,10 @@ Key reading: Revealing monitoring reduced verbalization relative to baseline by 
 ## Related Papers
 
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
+- [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)
 - [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
 - [\[ICLR 2026\] ARMOR: Aligning Secure and Safe Large Language Models via Meticulous Reasoning](armor_aligning_secure_and_safe_large_language_models_via_meticulous_reasoning.md)
-- [\[ICLR 2026\] Steering Evaluation-Aware Language Models To Act Like They Are Deployed](steering_evaluation-aware_language_models_to_act_like_they_are_deployed.md)
-- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](../../ACL2026/llm_safety/reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
+- [\[ICLR 2026\] Disrupting Hierarchical Reasoning: Adversarial Protection for Geographic Privacy in Multimodal Reasoning Models](disrupting_hierarchical_reasoning_adversarial_protection_for_geographic_privacy_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Generative Neural Video Compression via Video Diffusion Prior
 description: >-
-  [CVPR 2026][Video Generation][flow matching] Ours proposes GNVC-VD, the first DiT-based generative neural video compression framework. By utilizing a video diffusion transformer as a video-native generative prior, it achieves spatio-temporal latent compression and sequence-level generative refinement within a unified codec. At ultra-low bitrates (<0.03 bpp), it s
+  [CVPR 2026][Video Generation][Video compression] Ours proposes GNVC-VD, the first DiT-based generative neural video compression framework. By utilizing a video diffusion transformer as a video-native generative prior, it achieves spatio-temporal latent compression and sequence-level generative refinement within a unified codec. At ultra-low bitrates (<0.03 bpp), it significantly outperforms traditional and learned codecs in perceptual quality and substantially reduces flicker…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - flow matching
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video compression"
+  - "video diffusion models"
+  - "flow matching"
+  - "perceptual quality"
+  - "temporal consistency"
 date: 2026-05-08
-content_hash: bb43a7fa70aea0a2
+content_hash: 88f9ba574282c4bf
 ---
+
 # Generative Neural Video Compression via Video Diffusion Prior
 
 **Conference**: CVPR 2026  
@@ -146,10 +151,10 @@ GNVC-VD achieves the best perceptual quality across all benchmarks and metrics, 
 ## Related Papers
 
 - [\[CVPR 2026\] DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior](dreamshot_storyboard_synthesis.md)
-- [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](lightmover_generative_light_movement_with_color_and_intensity_controls.md)
+- [\[ICLR 2026\] NeRV-Diffusion: Diffuse Implicit Neural Representation for Video Synthesis](../../ICLR2026/video_generation/nerv-diffusion_diffuse_implicit_neural_representation_for_video_synthesis.md)
 - [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)
-- [\[CVPR 2026\] PropFly: Learning to Propagate via On-the-Fly Supervision from Pre-trained Video Diffusion Models](propfly_learning_to_propagate_via_on-the-fly_supervision_from_pre-trained_video_.md)
-- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video](physvid_physics_aware_local_conditioning_for_generative_video_models.md)
+- [\[CVPR 2026\] LightMover: Generative Light Movement with Color and Intensity Controls](lightmover_generative_light_movement_with_color_and_intensity_controls.md)
+- [\[CVPR 2026\] SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time](spacetimepilot_generative_rendering_of_dynamic_scenes_across_space_and_time.md)
 
 </div>
 

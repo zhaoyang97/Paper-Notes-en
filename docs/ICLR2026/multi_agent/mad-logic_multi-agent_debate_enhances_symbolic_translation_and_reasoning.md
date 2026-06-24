@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MAD-Logic: Multi-Agent Debate Enhances Symbolic Translation and Reasoning
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] The proposed method enables multiple agents to translate a single logic problem into three symbolic languages (LP/FOL/SAT), followed by a multi-round debate between the "Solver group" and the "Natural Language group" with majority voting. Use of sparse communication based on confidence and information gain prunes redun
+  [ICLR 2026][Multi-Agent][Logical Reasoning] The proposed method enables multiple agents to translate a single logic problem into three symbolic languages (LP/FOL/SAT), followed by a multi-round debate between the "Solver group" and the "Natural Language group" with majority voting. Use of sparse communication based on confidence and information gain prunes redundant interactions, achieving superior reasoning strength and robustness in logical QA while reducing token expenditu…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Logical Reasoning"
+  - "Symbolic Translation"
+  - "Multi-Agent Debate"
+  - "Sparse Communication"
+  - "Majority Voting"
 date: 2026-05-08
-content_hash: 77286cb22b4c9617
+content_hash: 96c41687c87c2da0
 ---
+
 # MAD-Logic: Multi-Agent Debate Enhances Symbolic Translation and Reasoning
 
 **Conference**: ICLR 2026  
@@ -129,15 +135,14 @@ Removing the SL reasoning debate caused the steepest decline, identifying the so
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-Agent Debate with Memory Masking (MAD-M²)](multi-agent_debate_with_memory_masking.md)
+- [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
 - [\[ICLR 2026\] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning](from_what_to_why_a_multi-agent_system_for_evidence-based_chemical_reaction_condi.md)
 - [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](../../ACL2026/multi_agent/when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
 
 </div>
 

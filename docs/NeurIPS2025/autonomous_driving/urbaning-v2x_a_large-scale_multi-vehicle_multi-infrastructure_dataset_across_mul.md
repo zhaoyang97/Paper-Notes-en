@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception
 description: >-
-  [NeurIPS 2025][Autonomous Driving][Vehicle-to-Everything] UrbanIng-V2X is the first real-world cooperative perception dataset spanning multiple vehicles, multiple infrastructure sensors…
+  [NeurIPS 2025][Autonomous Driving][Vehicle-to-Everything] UrbanIng-V2X is the first real-world cooperative perception dataset spanning multiple vehicles, multiple infrastructure sensors, and multiple urban intersections. It provides 712K annotated instances across 13 categories in 34 scenes, and through a cross-intersection evaluation strategy (SIS) quantitatively reveals a substantial generalization gap of 14 mAP exhibited by existing cooperative perception methods on unseen…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Multiple Intersections"
   - "3D Object Detection"
 date: 2026-05-08
-content_hash: c9c8cd9d62a80886
+content_hash: 36a742832ab11989
 ---
 
 # UrbanIng-V2X: A Large-Scale Multi-Vehicle Multi-Infrastructure Dataset Across Multiple Intersections for Cooperative Perception
@@ -143,10 +143,10 @@ All baseline experiments use a PointPillars backbone and evaluate No Fusion, Ear
 ## Related Papers
 
 - [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
+- [\[CVPR 2026\] V2U4Real: A Real-world Large-scale Dataset for Vehicle-to-UAV Cooperative Perception](../../CVPR2026/autonomous_driving/v2u4real_a_real-world_large-scale_dataset_for_vehicle-to-uav_cooperative_percept.md)
+- [\[ECCV 2024\] H-V2X: A Large Scale Highway Dataset for BEV Perception](../../ECCV2024/autonomous_driving/h-v2x_a_large_scale_highway_dataset_for_bev_perception.md)
 - [\[NeurIPS 2025\] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability](x-scene_large-scale_driving_scene_generation_with_high_fidelity_and_flexible_con.md)
 - [\[NeurIPS 2025\] L2RSI: Cross-View LiDAR-Based Place Recognition for Large-Scale Urban Scenes via Remote Sensing Imagery](l2rsi_cross-view_lidar-based_place_recognition_for_large-scale_urban_scenes_via_.md)
-- [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](../../ICCV2025/autonomous_driving/uavscenes_a_multi-modal_dataset_for_uavs.md)
-- [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
 
 </div>
 

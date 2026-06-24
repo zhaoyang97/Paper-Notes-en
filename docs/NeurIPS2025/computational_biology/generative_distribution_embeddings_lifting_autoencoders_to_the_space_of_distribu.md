@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning
 description: >-
-  [NeurIPS 2025][Computational Biology][distribution embeddings] This paper proposes Generative Distribution Embeddings (GDE), which lifts autoencoders to the space of distributions — the encoder operates on sets of sample…
+  [NeurIPS 2025][Computational Biology][distribution embeddings] This paper proposes Generative Distribution Embeddings (GDE), which lifts autoencoders to the space of distributions — the encoder operates on sets of samples while the decoder is replaced by a conditional generative model — thereby learning distribution-level representations. The framework is validated on 6 computational biology tasks.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -11,7 +11,7 @@ tags:
   - "Wasserstein space"
   - "multiscale representation"
 date: 2026-05-08
-content_hash: d864879d061fec8a
+content_hash: dbd616580eacf98d
 ---
 
 # Generative Distribution Embeddings: Lifting Autoencoders to the Space of Distributions for Multiscale Representation Learning
@@ -187,9 +187,9 @@ The GDE embedding space recovers a smooth gradient of expression quantiles, and 
 
 - [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
 - [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
+- [\[ICLR 2026\] Learning Brain Representation with Hierarchical Visual Embeddings](../../ICLR2026/computational_biology/learning_brain_representation_with_hierarchical_visual_embeddings.md)
+- [\[NeurIPS 2025\] Multiscale Guidance of Protein Structure Prediction with Heterogeneous Cryo-EM Data](multiscale_guidance_of_protein_structure_prediction_with_heterogeneous_cryo-em_d.md)
 - [\[NeurIPS 2025\] Manipulating 3D Molecules in a Fixed-Dimensional E(3)-Equivariant Latent Space](manipulating_3d_molecules_in_a_fixed-dimensional_e3-equivariant_latent_space.md)
-- [\[NeurIPS 2025\] BarcodeMamba+: Advancing State-Space Models for Fungal Biodiversity Research](barcodemamba_advancing_state-space_models_for_fungal_biodiversity_research.md)
-- [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
 
 </div>
 

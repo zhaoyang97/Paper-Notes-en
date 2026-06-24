@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes 3DGraphLLM, which encodes semantic inter-object relationships in 3D scenes as learnable graph representations and feeds them into an LLM. The method sign…
+  [ICCV 2025][3D Vision][3D scene understanding] This paper proposes 3DGraphLLM, which encodes semantic inter-object relationships in 3D scenes as learnable graph representations and feeds them into an LLM. The method significantly outperforms baselines that ignore semantic relations across multiple 3D vision-language tasks — including object grounding, scene captioning, and visual question answering — while achieving 5× faster inference than LVLM-based approaches.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "vision-language tasks"
   - "semantic relations"
 date: 2026-05-08
-content_hash: 7f88667a32ee6e35
+content_hash: 5ce06b0fd4150b06
 ---
 
 # 3DGraphLLM: Combining Semantic Graphs and Large Language Models for 3D Scene Understanding
@@ -128,8 +128,8 @@ The paper's starting point is to explicitly encode semantic relations from 3D sc
 ## Related Papers
 
 - [\[ICCV 2025\] Open-Vocabulary Octree-Graph for 3D Scene Understanding](open-vocabulary_octree-graph_for_3d_scene_understanding.md)
+- [\[CVPR 2025\] Empowering Large Language Models with 3D Situation Awareness](../../CVPR2025/3d_vision/empowering_large_language_models_with_3d_situation_awareness.md)
 - [\[ICCV 2025\] HIS-GPT: Towards 3D Human-In-Scene Multimodal Understanding](his-gpt_towards_3d_human-in-scene_multimodal_understanding.md)
-- [\[ICCV 2025\] Global-Aware Monocular Semantic Scene Completion with State Space Models](global-aware_monocular_semantic_scene_completion_with_state_space_models.md)
 - [\[ICCV 2025\] Articulate3D: Holistic Understanding of 3D Scenes as Universal Scene Description](articulate3d_holistic_understanding_of_3d_scenes_as_universal_scene_description.md)
 - [\[ICCV 2025\] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail](excap3d_expressive_3d_scene_understanding_via_object_captioning_with_varying_det.md)
 

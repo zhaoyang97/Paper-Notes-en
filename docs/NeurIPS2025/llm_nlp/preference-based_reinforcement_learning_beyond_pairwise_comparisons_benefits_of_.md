@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options
 description: >-
-  [NeurIPS 2025][LLM/NLP][Preference-based Reinforcement Learning] This paper proposes the M-AUPO algorithm for preference-based reinforcement learning…
+  [NeurIPS 2025][LLM (Other)][Preference-based Reinforcement Learning] This paper proposes the M-AUPO algorithm for preference-based reinforcement learning, leveraging the Plackett-Luce ranking model to handle multi-option comparison feedback, and provides the first theoretical proof that larger subset sizes directly improve sample efficiency.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Preference-based Reinforcement Learning"
   - "Plackett-Luce Model"
   - "Ranking Feedback"
   - "Sample Efficiency"
   - "Multi-option Comparison"
 date: 2026-05-08
-content_hash: eaea7794b7959845
+content_hash: ebc87d19bda0bb5d
 ---
 
 # Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options
@@ -146,11 +146,11 @@ Comparison of exploration strategies (cumulative regret, T=5000, K=8):
 
 ## Related Papers
 
-- [\[ACL 2026\] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards](../../ACL2026/llm_nlp/generative_floor_plan_design_with_llms_via_reinforcement_learning_with_verifiabl.md)
+- [\[ACL 2025\] Wait, that's not an option: LLMs Robustness with Incorrect Multiple-Choice Options](../../ACL2025/llm_nlp/llm_robustness_incorrect_mcq.md)
+- [\[ACL 2025\] Knockout LLM Assessment: Using Large Language Models for Evaluations through Iterative Pairwise Comparisons](../../ACL2025/llm_nlp/knockout_llm_assessment_using_large_language_models_for_evaluations_through_iter.md)
+- [\[ACL 2025\] Beyond Output Matching: Bidirectional Alignment for Enhanced In-Context Learning](../../ACL2025/llm_nlp/beyond_output_matching_bidirectional_alignment_for_enhanced_in-context_learning.md)
 - [\[NeurIPS 2025\] System Prompt Optimization with Meta-Learning](system_prompt_optimization_with_meta-learning.md)
-- [\[ICML 2026\] T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning](../../ICML2026/llm_nlp/t2po_uncertainty-guided_exploration_control_for_stable_multi-turn_agentic_reinfo.md)
-- [\[NeurIPS 2025\] C²Prompt: Class-aware Client Knowledge Interaction for Federated Continual Learning](c2prompt_class-aware_client_knowledge_interaction_for_federated_continual_learni.md)
-- [\[NeurIPS 2025\] In-Context Learning of Linear Dynamical Systems with Transformers: Approximation Bounds and Depth-Separation](in-context_learning_of_linear_dynamical_systems_with_transformers_approximation_.md)
+- [\[ACL 2026\] Generative Floor Plan Design with LLMs via Reinforcement Learning with Verifiable Rewards](../../ACL2026/llm_nlp/generative_floor_plan_design_with_llms_via_reinforcement_learning_with_verifiabl.md)
 
 </div>
 

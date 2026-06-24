@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] On the Wings of Imagination: Conflicting Script-based Multi-role Framework for Humor Caption Generation
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] Ours proposes the HOMER framework, which constructs a three-role LLM collaboration mechanism (Conflicting Script Extractor + Hierarchical Imaginator + Caption Generator) based on the GTVH humor theory. By explicitly modeling script opposition, multi-perspective association chains, and joke database retrieval to constru
+  [ICLR 2026][Information Retrieval & RAG][Humor generation] Ours proposes the HOMER framework, which constructs a three-role LLM collaboration mechanism (Conflicting Script Extractor + Hierarchical Imaginator + Caption Generator) based on the GTVH humor theory. By explicitly modeling script opposition, multi-perspective association chains, and joke database retrieval to construct an imagination tree, the creative space is expanded. HOMER achieves an average improvement of ~7%…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Humor generation"
+  - "GTVH theory"
+  - "Script opposition"
+  - "Imagination tree"
+  - "LLM collaboration"
+  - "Multi-role framework"
 date: 2026-05-08
-content_hash: c1762695a9fe8074
+content_hash: f624e8691c0927d3
 ---
+
 # On the Wings of Imagination: Conflicting Script-based Multi-role Framework for Humor Caption Generation
 
 **Conference**: ICLR 2026  
@@ -142,14 +149,15 @@ HumorousAI relies on LLM inherent capability. HOMER's advantage lies in the imag
 | Writing Quality | ⭐⭐⭐⭐ | Clear structure; well-motivated theory; vivid case studies. |
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
 - [\[ICLR 2026\] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation](gro-rag_gradient-aware_re-rank_optimization_for_multi-source_retrieval-augmented.md)
-- [\[ICML 2025\] FedRAG: A Framework for Fine-Tuning Retrieval-Augmented Generation Systems](../../ICML2025/information_retrieval/fedrag_a_framework_for_fine-tuning_retrieval-augmented_generation_systems.md)
 - [\[ICLR 2026\] ZeroGR: A Generalizable and Scalable Framework for Zero-Shot Generative Retrieval](zerogr_a_generalizable_and_scalable_framework_for_zero-shot_generative_retrieval.md)
+- [\[ICML 2025\] FedRAG: A Framework for Fine-Tuning Retrieval-Augmented Generation Systems](../../ICML2025/information_retrieval/fedrag_a_framework_for_fine-tuning_retrieval-augmented_generation_systems.md)
 - [\[ACL 2025\] FlexRAG: A Flexible and Comprehensive Framework for Retrieval-Augmented Generation](../../ACL2025/information_retrieval/flexrag_a_flexible_and_comprehensive_framework_for_retrieval-augmented_generatio.md)
 
 </div>

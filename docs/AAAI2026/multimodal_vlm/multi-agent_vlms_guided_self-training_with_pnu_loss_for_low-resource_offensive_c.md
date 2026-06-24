@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection
 description: >-
-  [AAAI 2026][Multimodal VLM][Self-training] This paper proposes a multi-agent vision-language model (MA-VLMs) guided self-training framework combined with a novel PNU loss function…
+  [AAAI 2026][Multimodal VLM][Self-training] This paper proposes a multi-agent vision-language model (MA-VLMs) guided self-training framework combined with a novel PNU loss function, achieving high-quality offensive content detection under low-resource settings (as few as 50 labeled samples), with performance approaching that of large-scale models.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "PNU loss"
   - "Offensive content detection"
 date: 2026-05-08
-content_hash: ed019047c872797b
+content_hash: 83b608b1a39018da
 ---
 
 # Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection
@@ -163,11 +163,11 @@ The parameter $\gamma \in [-1,1]$ controls the strength of PU/NU learning: $\gam
 
 ## Related Papers
 
-- [\[ICLR 2026\] Contamination Detection for VLMs using Multi-Modal Semantic Perturbation](../../ICLR2026/multimodal_vlm/contamination_detection_for_vlms_using_multi-modal_semantic_perturbation.md)
+- [\[ICLR 2026\] Thinking as Society: Multi-Social-Agent Self-Distillation for Multimodal Misinformation Detection](../../ICLR2026/multimodal_vlm/thinking_as_society_multi-social-agent_self-distillation_for_multimodal_misinfor.md)
+- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](../../ICLR2026/multimodal_vlm/psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
+- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play](../../ICLR2026/multimodal_vlm/vision-zero_scalable_vlm_self-evolution_via_multi-agent_self-play.md)
 - [\[CVPR 2026\] VS-Bench: Evaluating VLMs for Strategic Abilities in Multi-Agent Environments](../../CVPR2026/multimodal_vlm/vs_bench_evaluating_vlms_for_strategic_abilities_in_multi_agent_environments.md)
-- [\[AAAI 2026\] Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning.md)
-- [\[CVPR 2026\] Rethinking VLMs for Image Forgery Detection and Localization](../../CVPR2026/multimodal_vlm/rethinking_vlms_for_image_forgery_detection_and_localization.md)
-- [\[ACL 2026\] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis](../../ACL2026/multimodal_vlm/aica-bench_holistically_examining_the_capabilities_of_vlms_in_affective_image_co.md)
+- [\[CVPR 2026\] Hierarchical Attacks for Multi-Modal Multi-Agent Reasoning](../../CVPR2026/multimodal_vlm/hierarchical_attacks_for_multi-modal_multi-agent_reasoning.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences
 description: >-
-  [CVPR 2026][Autonomous Driving][Diffusion Model] Ours proposes U4D, the first uncertainty-aware 4D LiDAR world modeling framework. It adopts a "hard-to-easy" two-stage diffusion generation strategy, first reconstructing high-uncertainty regions and then conditionally completing the entire scene. A MoST module is designed to adaptively fuse spatio-temporal features to
+  [CVPR 2026][Autonomous Driving][LiDAR Generation] Ours proposes U4D, the first uncertainty-aware 4D LiDAR world modeling framework. It adopts a "hard-to-easy" two-stage diffusion generation strategy, first reconstructing high-uncertainty regions and then conditionally completing the entire scene. A MoST module is designed to adaptively fuse spatio-temporal features to ensure temporal consistency.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Generation"
+  - "Uncertainty Modeling"
+  - "Diffusion Models"
+  - "4D World Model"
+  - "Spatio-Temporal Consistency"
 date: 2026-05-08
-content_hash: 99fe0716d2f998aa
+content_hash: 5632c6652ec07cdc
 ---
+
 # U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences
 
 **Conference**: CVPR 2026  
@@ -188,10 +193,10 @@ flowchart TD
 ## Related Papers
 
 - [\[AAAI 2026\] LiDARCrafter: Dynamic 4D World Modeling from LiDAR Sequences](../../AAAI2026/autonomous_driving/lidarcrafter_dynamic_4d_world_modeling_from_lidar_sequences.md)
-- [\[CVPR 2026\] GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)
+- [\[CVPR 2026\] GenieDrive: Towards Physics-Aware Driving World Model with 4D Occupancy Guided Video Generation](geniedrive_towards_physics-aware_driving_world_model_with_4d_occupancy_guided_vi.md)
 - [\[CVPR 2026\] FoSS: Modeling Long-Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier–State Space Integration](foss_modeling_long_range_dependencies_and_multimodal_uncertainty_in_trajectory_p.md)
+- [\[CVPR 2026\] Bezier Degradation Modeling for LiDAR-based Human Motion Capture](bezier_degradation_modeling_for_lidar-based_human_motion_capture.md)
 - [\[CVPR 2026\] Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors](points-to-3d_structure-aware_3d_generation_with_point_cloud_priors.md)
-- [\[CVPR 2026\] L3DR: 3D-aware LiDAR Diffusion and Rectification](l3dr_3d-aware_lidar_diffusion_and_rectification.md)
 
 </div>
 

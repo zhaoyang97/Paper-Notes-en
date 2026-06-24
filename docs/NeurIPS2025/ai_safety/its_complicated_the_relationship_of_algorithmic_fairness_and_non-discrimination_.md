@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act
 description: >-
-  [NeurIPS 2025][AI Safety][EU AI Act] This paper systematically analyzes the complex relationship between the non-discrimination provisions for high-risk AI systems in the EU AI Act (AIA) and the field of algorithmic fair…
+  [NeurIPS 2025][AI Safety][EU AI Act] This paper systematically analyzes the complex relationship between the non-discrimination provisions for high-risk AI systems in the EU AI Act (AIA) and the field of algorithmic fairness in machine learning. It reveals critical gaps in the legal text concerning input-side bias detection, the absence of output-side protections, and standardization challenges, providing a foundational framework for interdisciplinary collaboration between co…
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Anti-Discrimination Law"
   - "Standardization"
 date: 2026-05-08
-content_hash: f7cb249d01830954
+content_hash: f48f7df4fb872ee5
 ---
 
 # It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act
@@ -125,9 +125,9 @@ The paper employs legal text analysis, beginning with a scan of the full AIA for
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering](unifying_proportional_fairness_in_centroid_and_non-centroid_clustering.md)
-- [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
-- [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
+- [\[ICML 2026\] Exploring Systems-Thinking Approaches to Loss of Control Risk](../../ICML2026/ai_safety/exploring_systems-thinking_approaches_to_loss_of_control_risk.md)
+- [\[NeurIPS 2025\] Understanding Challenges to the Interpretation of Disaggregated Evaluations of AI](understanding_challenges_to_the_interpretation_of_disaggregated_evaluations_of_a.md)
 - [\[NeurIPS 2025\] Keep It Real: Challenges in Attacking Compression-Based Adversarial Purification](keep_it_real_challenges_in_attacking_compression-based_adversarial_purification.md)
 
 </div>

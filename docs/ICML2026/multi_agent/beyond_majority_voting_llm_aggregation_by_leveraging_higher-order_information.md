@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Majority Voting: LLM Aggregation by Leveraging Higher-Order Information
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] This paper proposes two algorithms for aggregating LLM responses by leveraging higher-order information—Optimal Weight (OW) based on first-order accuracy information and Inverse Surprising Popularity (ISP) based on second-order correlation information. These methods are provably superior to Majority Voting (MV) under l
+  [ICML 2026][Multi-Agent][LLM aggregation] This paper proposes two algorithms for aggregating LLM responses by leveraging higher-order information—Optimal Weight (OW) based on first-order accuracy information and Inverse Surprising Popularity (ISP) based on second-order correlation information. These methods are provably superior to Majority Voting (MV) under label-free conditions and demonstrate consistent improvements on UltraFeedback, MMLU, and healthcare datasets.
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML 2026"
+  - "Multi-Agent"
+  - "LLM aggregation"
+  - "multi-agent reasoning"
+  - "information aggregation"
+  - "Bayesian optimality"
+  - "unsupervised labeling"
 date: 2026-05-08
-content_hash: d237b0406a9ee43d
+content_hash: 77e7f1f21dce4ca2
 ---
+
 # Beyond Majority Voting: LLM Aggregation by Leveraging Higher-Order Information
 
 **Conference**: ICML 2026  
@@ -124,9 +130,9 @@ ISP works label-free but only utilizes second-order information. The Bayesian op
 ## Related Papers
 
 - [\[ICML 2026\] Systematic Failures in Collective Reasoning under Distributed Information in Multi-Agent LLMs](systematic_failures_in_collective_reasoning_under_distributed_information_in_mul.md)
+- [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
 - [\[NeurIPS 2025\] Adaptive Coopetition: Leveraging Coarse Verifier Signals for Resilient Multi-Agent LLM Reasoning](../../NeurIPS2025/multi_agent/adaptive_coopetition_leveraging_coarse_verifier_signals_for_resilient_multi-agen.md)
 - [\[ACL 2025\] Voting or Consensus? Decision-Making in Multi-Agent Debate](../../ACL2025/multi_agent/voting_or_consensus_decision-making_in_multi-agent_debate.md)
-- [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
 
 </div>

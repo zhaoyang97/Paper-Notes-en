@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization
 description: >-
-  [ICML 2026][LLM Agent][GRPO] ParetoPO explicitly formulates the alignment of tool-integrated agents as a multi-objective RL problem (accuracy vs. tool-use efficiency). It employs a two-stage training process—global exploration via hypervolume-guided dynamic scalarization followed by local refinement via Pareto dominance ranking for advantage calcu
+  [ICML2026][LLM Agent][Tool-integrated Agent] ParetoPO explicitly formulates the alignment of tool-integrated agents as a multi-objective RL problem (accuracy vs. tool-use efficiency). It employs a two-stage training process—global exploration via hypervolume-guided dynamic scalarization followed by local refinement via Pareto dominance ranking for advantage calculation—achieving higher accuracy with fewer tool calls in mathematical reasoning and multi-hop QA.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - GRPO
+  - "ICML2026"
+  - "LLM Agent"
+  - "Tool-integrated Agent"
+  - "Multi-objective RL"
+  - "Pareto dominance"
+  - "Hypervolume"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 0624a8c0d9775b3a
+content_hash: fef5e56f81c6a694
 ---
+
 # Towards Pareto-Optimal Tool-Integrated Agents with Pareto Ranking Policy Optimization
 
 **Conference**: ICML2026  
@@ -131,11 +136,20 @@ ParetoPO improves MATH500 accuracy from 77.8 to 80.0 while reducing tool calls f
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)
+- [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](../../ACL2026/llm_agent/bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
+- [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](../../NeurIPS2025/llm_agent/groupingroup_policy_optimization_for_llm_agent_training.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](self-evolving_llm_agents_with_in-distribution_optimization.md)
+- [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ACL 2026\] SEARL: Joint Optimization of Policy and Tool Graph Memory for Self-Evolving Agents](../../ACL2026/llm_agent/searl_joint_optimization_of_policy_and_tool_graph_memory_for_self-evolving_agent.md)

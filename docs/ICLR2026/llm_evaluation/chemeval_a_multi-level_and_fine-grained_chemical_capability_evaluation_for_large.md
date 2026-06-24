@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] ChemEval decomposes LLM chemical capabilities into a four-level hierarchy (Concept → Literature → Molecule → Reasoning), spanning 13 dimensions and 62 tasks (including text and multimodal). Using 3,160 expert-curated questions for fine-grained diagnosis, it reveals that general-purpose models excel at literature compre
+  [ICLR 2026][LLM Evaluation][Chemistry Evaluation] ChemEval decomposes LLM chemical capabilities into a four-level hierarchy (Concept → Literature → Molecule → Reasoning), spanning 13 dimensions and 62 tasks (including text and multimodal). Using 3,160 expert-curated questions for fine-grained diagnosis, it reveals that general-purpose models excel at literature comprehension but struggle with deep chemical reasoning, while chemical-specific models understand terminology but a…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Chemistry Evaluation"
+  - "Hierarchical Benchmark"
+  - "Domain LLM"
+  - "Multimodal Chemistry"
+  - "Fine-grained Diagnosis"
 date: 2026-05-08
-content_hash: 75a1dc037a0147c7
+content_hash: 1ec1977d613a8adc
 ---
+
 # ChemEval: A Multi-level and Fine-grained Chemical Capability Evaluation for Large Language Models
 
 **Conference**: ICLR 2026  

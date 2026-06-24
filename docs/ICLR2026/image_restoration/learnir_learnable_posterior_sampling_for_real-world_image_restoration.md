@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LearnIR: Learnable Posterior Sampling for Real-World Image Restoration
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] LearnIR utilizes a lightweight network to directly learn the "gradient correction term distribution" in diffusion posterior sampling, bypassing the limitation of traditional DPS that requires a known forward degradation operator $A$. Combined with a VAE-free Dynamic Resolution Module (DRM), it achieves end-to-end, high
+  [ICLR 2026][Image Restoration][Real-world Image Restoration] LearnIR utilizes a lightweight network to directly learn the "gradient correction term distribution" in diffusion posterior sampling, bypassing the limitation of traditional DPS that requires a known forward degradation operator $A$. Combined with a VAE-free Dynamic Resolution Module (DRM), it achieves end-to-end, high-fidelity image restoration for real-world degradation tasks like dehazing and deshadowing.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Real-world Image Restoration"
+  - "Diffusion Posterior Sampling"
+  - "Residual Diffusion"
+  - "Dehazing"
+  - "Deshadowing"
+  - "Dynamic Resolution"
 date: 2026-05-08
-content_hash: 852a37027014a990
+content_hash: bb95d867fa4f9b30
 ---
+
 # LearnIR: Learnable Posterior Sampling for Real-World Image Restoration
 
 **Conference**: ICLR 2026  

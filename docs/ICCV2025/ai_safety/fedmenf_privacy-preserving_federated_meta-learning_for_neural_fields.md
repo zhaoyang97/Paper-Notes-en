@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields
 description: >-
-  [ICCV 2025][AI Safety][Federated Learning] This paper is the first to study federated meta-learning for Neural Fields (NFs) under private data settings. It reveals the severe privacy leakage mechanisms of existing federa…
+  [ICCV 2025][AI Safety][Federated Learning] This paper is the first to study federated meta-learning for Neural Fields (NFs) under private data settings. It reveals the severe privacy leakage mechanisms of existing federated meta-learning methods on neural field tasks, and proposes FedMeNF, which regularizes private information in local meta-gradients via a privacy-preserving loss function, effectively protecting client data privacy while retaining fast adaptation capability.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Privacy Preservation"
   - "Implicit Neural Representations"
 date: 2026-05-08
-content_hash: 4defb57754474185
+content_hash: 2bf30437769b6358
 ---
 
 # FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields
@@ -153,9 +153,9 @@ $\Delta = \text{PSNR} - \text{PSNR}_p$; higher values indicate better reconstruc
 
 - [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 - [\[ICCV 2025\] FedVLA: Federated Vision-Language-Action Learning with Dual Gating Mixture-of-Experts for Robotic Manipulation](fedvla_federated_vision-language-action_learning_with_dual_gating_mixture-of-exp.md)
+- [\[ICLR 2026\] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models](../../ICLR2026/ai_safety/rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md)
 - [\[ICCV 2025\] Client2Vec: Improving Federated Learning by Distribution Shifts Aware Client Indexing](client2vec_improving_federated_learning_by_distribution_shifts_aware_client_inde.md)
-- [\[NeurIPS 2025\] Mitigating Privacy-Utility Trade-off in Decentralized Federated Learning via f-Differential Privacy](../../NeurIPS2025/ai_safety/mitigating_privacy-utility_trade-off_in_decentralized_federated_learning_via_f-d.md)
-- [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](../../ICML2026/ai_safety/metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
+- [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](../../CVPR2026/ai_safety/meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 
 </div>
 

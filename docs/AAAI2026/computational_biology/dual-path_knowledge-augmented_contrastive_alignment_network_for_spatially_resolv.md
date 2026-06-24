@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics
 description: >-
-  [AAAI 2026][Computational Biology][Spatial Transcriptomics] This paper proposes DKAN, a Dual-path Knowledge-Augmented contrastive Alignment Network that integrates semantic information from external gene databases as a c…
+  [AAAI 2026 Oral][Computational Biology][Spatial Transcriptomics] This paper proposes DKAN, a Dual-path Knowledge-Augmented contrastive Alignment Network that integrates semantic information from external gene databases as a cross-modal coordinator. Combined with a unified one-stage contrastive learning paradigm and an adaptive weighting mechanism, DKAN predicts spatially resolved gene expression from H&E-stained whole slide images (WSI), achieving state-of-the-art performance…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Computational Biology"
   - "Spatial Transcriptomics"
   - "Gene Expression Prediction"
@@ -13,7 +13,7 @@ tags:
   - "Knowledge Augmentation"
   - "Pathology Images"
 date: 2026-05-08
-content_hash: d7702a12a0b37acc
+content_hash: 364f139c2d9bfd2a
 ---
 
 # Dual-Path Knowledge-Augmented Contrastive Alignment Network for Spatially Resolved Transcriptomics
@@ -177,10 +177,10 @@ where the distillation loss for each intermediate prediction is: $\mathcal{L}_d 
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-Slice Knowledge Transfer via Masked Multi-Modal Heterogeneous Graph Contrastive Learning for Spatial Gene Expression Inference](../../CVPR2026/computational_biology/cross-slice_knowledge_transfer_via_masked_multi-modal_heterogeneous_graph_contra.md)
-- [\[ICML 2026\] SIGMA: Structure-Invariant Generative Molecular Alignment for Chemical Language Models via Autoregressive Contrastive Learning](../../ICML2026/computational_biology/sigma_structure-invariant_generative_molecular_alignment_for_chemical_language_m.md)
-- [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
+- [\[ICML 2025\] Global Context-aware Representation Learning for Spatially Resolved Transcriptomics](../../ICML2025/computational_biology/global_context-aware_representation_learning_for_spatially_resolved_transcriptom.md)
+- [\[CVPR 2026\] Multi-View Hierarchical Alignment Learning for Spatial Transcriptomics](../../CVPR2026/computational_biology/multi-view_hierarchical_alignment_learning_for_spatial_transcriptomics.md)
 - [\[ICLR 2026\] Fusing Pixels and Genes: Spatially-Aware Learning in Computational Pathology](../../ICLR2026/computational_biology/fusing_pixels_and_genes_spatially-aware_learning_in_computational_pathology.md)
-- [\[AAAI 2026\] Gene Incremental Learning for Single-Cell Transcriptomics](gene_incremental_learning_for_single-cell_transcriptomics.md)
+- [\[AAAI 2026\] HiFusion: Hierarchical Intra-Spot Alignment and Regional Context Fusion for Spatial Gene Expression Prediction from Histopathology](hifusion_hierarchical_intra-spot_alignment_and_regional_context_fusion_for_spati.md)
 
 </div>
 

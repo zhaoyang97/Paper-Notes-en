@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Interactive Episodic Memory with User Feedback
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Addressing the challenge of "localizing the moment that answers a query in long egocentric videos" (EM-NLQ), which currently only provides one-shot results without error correction, this paper proposes the interactive EM-QnF task, a synthetic feedback data generation recipe requiring no human annotation, and the plug-a
+  [CVPR 2026][Multimodal VLM][Episodic Memory] Addressing the challenge of "localizing the moment that answers a query in long egocentric videos" (EM-NLQ), which currently only provides one-shot results without error correction, this paper proposes the interactive EM-QnF task, a synthetic feedback data generation recipe requiring no human annotation, and the plug-and-play feedback alignment module FALM. FALM assigns "alignment scores" to each video segment and re-weights the or…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Episodic Memory"
+  - "Natural Language Query Localization"
+  - "User Feedback"
+  - "Interactive Retrieval"
+  - "Plug-and-play Module"
 date: 2026-05-08
-content_hash: 75428b8db87b5462
+content_hash: 8932cb4c49dfeac7
 ---
+
 # Interactive Episodic Memory with User Feedback
 
 **Conference**: CVPR 2026  
@@ -137,10 +143,18 @@ Ablation on the Ego4D-QnF subset containing all three FALM cues (using GroundNLQ
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] IWR-Bench: Can LVLMs Reconstruct Interactive Webpage from a User Interaction Video?](../../ICLR2026/multimodal_vlm/iwr-bench_can_lvlms_reconstruct_interactive_webpage_from_a_user_interaction_vide.md)
+- [\[CVPR 2026\] WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs](weavetime_streaming_video_llm_memory.md)
+- [\[CVPR 2026\] From Failure to Feedback: Group Revision Unlocks Hard Cases in Object-Level Grounding](from_failure_to_feedback_group_revision_unlocks_hard_cases_in_object-level_groun.md)
+- [\[ACL 2025\] Sightation Counts: Leveraging Sighted User Feedback in Building a BLV-aligned Dataset of Diagram Descriptions](../../ACL2025/multimodal_vlm/sightation_counts_leveraging_sighted_user_feedback_in_building_a_blv-aligned_dat.md)
+- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)

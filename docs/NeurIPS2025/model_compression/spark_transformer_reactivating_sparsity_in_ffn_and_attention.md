@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spark Transformer: Reactivating Sparsity in FFN and Attention
 description: >-
-  [NeurIPS 2025][Model Compression][activation sparsity] This paper proposes the Spark Transformer architecture, which simultaneously achieves high-level activation sparsity in both FFN and attention mechanisms (only 8% of…
+  [NeurIPS 2025][Model Compression][activation sparsity] This paper proposes the Spark Transformer architecture, which simultaneously achieves high-level activation sparsity in both FFN and attention mechanisms (only 8% of neurons activated in FFN; each token attends to at most 256 tokens) via a Statistical Top-k operator. The approach achieves a 2.5× FLOPs reduction and up to 1.79× inference speedup while maintaining quality comparable to Gemma-2.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "FFN sparsity"
   - "attention sparsity"
 date: 2026-05-08
-content_hash: a2a8adf64be243b3
+content_hash: 510899616956b4aa
 ---
 
 # Spark Transformer: Reactivating Sparsity in FFN and Attention
@@ -145,9 +145,9 @@ The training data and procedure are identical to those of Gemma-2 2B (2T tokens 
 
 - [\[NeurIPS 2025\] Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning](twilight_adaptive_attention_sparsity_with_hierarchical_top-p_pruning.md)
 - [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
+- [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](specattn_speculating_sparse_attention.md)
 - [\[NeurIPS 2025\] Understanding Differential Transformer Unchains Pretrained Self-Attentions](understanding_differential_transformer_unchains_pretrained_self-attentions.md)
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
-- [\[NeurIPS 2025\] SpecAttn: Speculating Sparse Attention](specattn_speculating_sparse_attention.md)
 
 </div>
 

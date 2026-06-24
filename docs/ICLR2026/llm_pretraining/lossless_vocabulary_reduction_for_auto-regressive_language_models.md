@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Lossless Vocabulary Reduction for Auto-Regressive Language Models
 description: >-
-  [ICLR 2026][Pretraining][Vocabulary Reduction] Proposes the theoretical framework of **Lossless Vocabulary Reduction (LVR)**. By utilizing nested tokenization, any auto-regressive language model is precisely converted into an equivalent model using an arbitrary sub-vocabulary. Based on the **Maximal Common Vocabulary (MCV)**, the method achieves efficient ensemble
+  [ICLR 2026][LLM Pretraining][Vocabulary Reduction] Proposes the theoretical framework of **Lossless Vocabulary Reduction (LVR)**. By utilizing nested tokenization, any auto-regressive language model is precisely converted into an equivalent model using an arbitrary sub-vocabulary. Based on the **Maximal Common Vocabulary (MCV)**, the method achieves efficient ensemble of language models with different tokenization schemes, validating effectiveness across tasks like GSM8K…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - Vocabulary Reduction
-  - Auto-Regressive LM
-  - Tokenization
-  - Model Ensemble
-  - Maximal Common Vocabulary
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Vocabulary Reduction"
+  - "Auto-Regressive LM"
+  - "Tokenization"
+  - "Model Ensemble"
+  - "Maximal Common Vocabulary"
 date: 2026-05-08
-content_hash: 1e8a8d12ad266132
+content_hash: 34c1acadb69bd481
 ---
+
 # Lossless Vocabulary Reduction for Auto-Regressive Language Models
 
 **Conference**: ICLR 2026  
@@ -158,13 +159,17 @@ Impact of hyperparameter $K$ on K-LVR approximation accuracy (Qwen2.5-3B):
 
 <div class="related-papers" markdown="1">
 
-[1] Sennrich et al., "Neural Machine Translation of Rare Words with Subword Units", ACL 2016.
-[2] Kudo & Richardson, "SentencePiece: A simple and language independent subword tokenizer and detokenizer for Neural Text Generation", EMNLP 2018.
+## Related Papers
+
+- [\[ACL 2025\] Large Vocabulary Size Improves Large Language Models](../../ACL2025/llm_pretraining/large_vocabulary_size_improves_large_language_models.md)
+- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
+- [\[ICLR 2026\] Steering Language Models with Weight Arithmetic](steering_language_models_with_weight_arithmetic.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2025\] Large Vocabulary Size Improves Large Language Models](../../ACL2025/llm_pretraining/large_vocabulary_size_improves_large_language_models.md)

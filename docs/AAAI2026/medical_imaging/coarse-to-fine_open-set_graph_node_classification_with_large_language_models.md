@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models
 description: >-
-  [AAAI2026][Medical Imaging][open-set classification] This paper proposes the Coarse-to-Fine Classification (CFC) framework, which leverages the zero-shot reasoning capability of LLMs to supply semantically grounded OOD s…
+  [AAAI2026][Medical Imaging][open-set classification] This paper proposes the Coarse-to-Fine Classification (CFC) framework, which leverages the zero-shot reasoning capability of LLMs to supply semantically grounded OOD samples and a potential OOD label space for open-set graph node classification, enabling the model not only to detect OOD nodes but also to classify them into specific unknown categories.
 tags:
   - "AAAI2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "large language models"
   - "node classification"
 date: 2026-05-08
-content_hash: b79ef9b1794f93c8
+content_hash: 33b893784523e542
 ---
 
 # Coarse-to-Fine Open-Set Graph Node Classification with Large Language Models
@@ -141,9 +141,9 @@ The key distinction of CFC lies in its use of LLMs to obtain semantically ground
 
 - [\[AAAI 2026\] G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Efficient Fine-Tuning](g2lfrom_giga-scale_to_cancer-specific_large-scale_pathology_foundation_models_vi.md)
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
-- [\[CVPR 2026\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](../../CVPR2026/medical_imaging/unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
-- [\[AAAI 2026\] Do Large Language Models Think Like the Brain? Sentence-Level Evidences from Layer-Wise Embeddings and fMRI](do_large_language_models_think_like_the_brain_sentence-level_evidences_from_laye.md)
 - [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
+- [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](../../ICLR2026/medical_imaging/u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
+- [\[ICLR 2026\] CerebraGloss: Instruction-Tuning a Large Vision-Language Model for Fine-Grained Clinical EEG Interpretation](../../ICLR2026/medical_imaging/cerebragloss_instruction-tuning_a_large_vision-language_model_for_fine-grained_c.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unified All-Atom Molecule Generation with Neural Fields
 description: >-
-  [NeurIPS 2025][Computational Biology][Neural fields] This paper proposes FuncBind, a framework that represents molecules as continuous atomic density functions via neural fields…
+  [NeurIPS 2025][Computational Biology][Neural fields] This paper proposes FuncBind, a framework that represents molecules as continuous atomic density functions via neural fields, constructing a unified conditional generative model capable of target-conditioned generation across three drug modalities: small molecules, macrocyclic peptides, and antibody CDR loops.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "structure-based drug design"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 2cee232ba156b539
+content_hash: b31254532d259292
 ---
 
 # Unified All-Atom Molecule Generation with Neural Fields
@@ -147,10 +147,10 @@ A key architectural decision is to forgo SE(3) equivariance constraints in favor
 ## Related Papers
 
 - [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
+- [\[ICML 2025\] Geometric Representation Condition Improves Equivariant Molecule Generation](../../ICML2025/computational_biology/geometric_representation_condition_improves_equivariant_molecule_generation.md)
 - [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
-- [\[ICLR 2026\] Unified Biomolecular Trajectory Generation via Pretrained Variational Bridge](../../ICLR2026/computational_biology/unified_biomolecular_trajectory_generation_via_pretrained_variational_bridge.md)
-- [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
-- [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
+- [\[ICLR 2026\] Towards All-atom Foundation Models for Biomolecular Binding Affinity Prediction](../../ICLR2026/computational_biology/towards_all-atom_foundation_models_for_biomolecular_binding_affinity_prediction.md)
+- [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](../../ICLR2026/computational_biology/biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
 
 </div>
 

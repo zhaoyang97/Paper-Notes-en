@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Emergent Discrete Controller Modules for Symbolic Planning in Transformers
 description: >-
-  [ICLR 2026][Interpretability][Gumbel-Softmax] By embedding a discrete controller selected via Gumbel-Softmax within Transformer blocks, the model explicitly executes program primitives such as `ASSIGN/ADD/COMPARE/BRANCH` while maintaining register states. This achieves provable control flow expressivity, robust length extrapolation, and human-readable execution tr
+  [ICLR 2026][Interpretability][Symbolic Planning] By embedding a discrete controller selected via Gumbel-Softmax within Transformer blocks, the model explicitly executes program primitives such as `ASSIGN/ADD/COMPARE/BRANCH` while maintaining register states. This achieves provable control flow expressivity, robust length extrapolation, and human-readable execution traces at a cost of only approximately 5–7% FLOPs.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Gumbel-Softmax
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Symbolic Planning"
+  - "Discrete Controller"
+  - "Gumbel-Softmax"
+  - "Length Extrapolation"
+  - "Control Flow"
+  - "Program State"
 date: 2026-05-08
-content_hash: ab150913de4938d7
+content_hash: 3fce1952579bb6f6
 ---
+
 # Emergent Discrete Controller Modules for Symbolic Planning in Transformers
 
 **Conference**: ICLR 2026  

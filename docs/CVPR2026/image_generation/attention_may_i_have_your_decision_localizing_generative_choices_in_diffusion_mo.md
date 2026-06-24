@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model Interpretability] This paper discovers through linear probing that **implicit decisions** in diffusion models (e.g., defaulting to generating a male when gender is unspecified) are primarily controlled by self-attention layers rather than cross-attention layers. Based on this, the ICM method is proposed, achieving SOTA debiasing effects
+  [CVPR 2026][Image Generation][Diffusion Model Interpretability] This paper discovers through linear probing that **implicit decisions** in diffusion models (e.g., defaulting to generating a male when gender is unspecified) are primarily controlled by self-attention layers rather than cross-attention layers. Based on this, the ICM method is proposed, achieving SOTA debiasing effects by intervening only on a few key self-attention layers while minimizing image quality degradati…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model Interpretability
-  - Self-Attention
-  - Debiasing
-  - Linear Probing
-  - Implicit Decision
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Model Interpretability"
+  - "Self-Attention"
+  - "Debiasing"
+  - "Linear Probing"
+  - "Implicit Decision"
 date: 2026-05-08
-content_hash: 95a87b40800d2a8b
+content_hash: 5f4fcd76b667f3a9
 ---
+
 # Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -141,11 +142,11 @@ Lightweight fine-tuning is also possible: applying LoRA only to selected self-at
 
 ## Related Papers
 
-- [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](../../ICCV2025/image_generation/attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
 - [\[CVPR 2026\] Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)
-- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](your_latent_mask_is_wrong_pixel-equivalent_latent_compositing_for_diffusion_mode.md)
-- [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](../../AAAI2026/image_generation/melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
+- [\[ICCV 2025\] Attention to Neural Plagiarism: Diffusion Models Can Plagiarize Your Copyrighted Images!](../../ICCV2025/image_generation/attention_to_neural_plagiarism_diffusion_models_can_plagiarize_your_copyrighted_.md)
+- [\[CVPR 2026\] Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers](gated_condition_injection_without_multimodal_attention_towards_controllable_line.md)
+- [\[ICML 2026\] Localizing Memorized Regions in Diffusion Models via Coordinate-Wise Curvature Differences](../../ICML2026/image_generation/localizing_memorized_regions_in_diffusion_models_via_coordinate-wise_curvature_d.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Nautilus: A Large Multimodal Model for Underwater Scene Understanding
 description: >-
-  [NeurIPS 2025][Multimodal VLM][underwater scene understanding] This paper presents Nautilus, the first large multimodal model supporting eight underwater scene understanding tasks. It introduces a physics-prior-driven Vi…
+  [NeurIPS 2025][Multimodal VLM][underwater scene understanding] This paper presents Nautilus, the first large multimodal model supporting eight underwater scene understanding tasks. It introduces a physics-prior-driven Visual Feature Enhancement (VFE) module that explicitly rectifies underwater image degradation in feature space, improving the robustness of LMMs in underwater environments.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "underwater imaging model"
   - "instruction tuning"
 date: 2026-05-08
-content_hash: c634c53085af9f6e
+content_hash: 64c491ccc09be39f
 ---
 
 # Nautilus: A Large Multimodal Model for Underwater Scene Understanding
@@ -138,10 +138,10 @@ Ablation results with incremental module addition (Qwen2.5-VL baseline):
 ## Related Papers
 
 - [\[NeurIPS 2025\] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model](seetrek_training-free_spatial_prompting_for_multimodal_large_language_model.md)
-- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
+- [\[CVPR 2026\] RE-VLM: Event-Augmented Vision-Language Model for Scene Understanding](../../CVPR2026/multimodal_vlm/re-vlm_event-augmented_vision-language_model_for_scene_understanding.md)
 - [\[NeurIPS 2025\] Towards Comprehensive Scene Understanding: Integrating First and Third-Person Views for LVLMs](towards_comprehensive_scene_understanding_integrating_first_and_third-person_vie.md)
 - [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
-- [\[CVPR 2026\] ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding](../../CVPR2026/multimodal_vlm/remora_multimodal_large_language_model_based_on_refined_motion_representation_fo.md)
+- [\[CVPR 2025\] Embodied Scene Understanding for Vision Language Models via MetaVQA](../../CVPR2025/multimodal_vlm/embodied_scene_understanding_for_vision_language_models_via_metavqa.md)
 
 </div>
 

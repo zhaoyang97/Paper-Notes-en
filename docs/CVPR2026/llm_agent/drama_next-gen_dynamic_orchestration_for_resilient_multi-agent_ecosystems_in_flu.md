@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DRAMA: Next-Gen Dynamic Orchestration for Resilient Multi-Agent Ecosystems in Flux
 description: >-
-  [CVPR 2026][LLM Agent][Paper Note] DRAMA uniformly abstracts agents and tasks in embodied multi-agent systems as "resource entities," utilizing an affinity matrix and a modified Hungarian algorithm for event-triggered dynamic scheduling. Complemented by a "Trust Chain" for decentralized fault takeover, the framework ensures uninterrupted task completion
+  [CVPR 2026][LLM Agent][Embodied Multi-Agent] DRAMA uniformly abstracts agents and tasks in embodied multi-agent systems as "resource entities," utilizing an affinity matrix and a modified Hungarian algorithm for event-triggered dynamic scheduling. Complemented by a "Trust Chain" for decentralized fault takeover, the framework ensures uninterrupted task completion during agent dropout, addition, or recovery. In VirtualHome-Social, it achieves fewer average steps…
 tags:
-  - CVPR 2026
-  - LLM Agent
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Embodied Multi-Agent"
+  - "Dynamic Orchestration"
+  - "Fault-tolerant Takeover"
+  - "Hungarian Algorithm"
+  - "Collective Spatial Intelligence"
 date: 2026-05-08
-content_hash: 4bf2da62c09de20a
+content_hash: c95444db4fd79abb
 ---
+
 # DRAMA: Next-Gen Dynamic Orchestration for Resilient Multi-Agent Ecosystems in Flux
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,15 @@ DRAMA is the **only** framework capable of reliably handling agent dropout and r
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Towards Scalable Lightweight GUI Agents via Multi-role Orchestration](../../ACL2026/llm_agent/towards_scalable_lightweight_gui_agents_via_multi-role_orchestration.md)
-- [\[CVPR 2026\] WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)
-- [\[CVPR 2026\] Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code](nerfify_multiagent_nerf_paper_to_code.md)
+- [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
+- [\[CVPR 2026\] Symphony: A Cognitively-Inspired Multi-Agent System for Long-Video Understanding](symphony_a_cognitively-inspired_multi-agent_system_for_long-video_understanding.md)
+- [\[CVPR 2026\] Agent4FaceForgery: Multi-Agent LLM Framework for Realistic Face Forgery Detection](agent4faceforgery_multi-agent_llm_framework_for_realistic_face_forgery_detection.md)
 - [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](../../ACL2026/llm_agent/dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
-- [\[CVPR 2026\] Think, Then Verify: A Hypothesis-Verification Multi-Agent Framework for Long Video Understanding](think_then_verify_a_hypothesis-verification_multi-agent_framework_for_long_video.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness
 description: >-
-  [ICCV 2025][3D Vision][3D scene understanding] Ross3D introduces 3D-aware visual reconstruction pretraining tasks—cross-view reconstruction and global BEV reconstruction—into the training pipeline of 2D large multimodal…
+  [ICCV 2025][3D Vision][3D scene understanding] Ross3D introduces 3D-aware visual reconstruction pretraining tasks—cross-view reconstruction and global BEV reconstruction—into the training pipeline of 2D large multimodal models (LMMs). Without modifying the input representation, it significantly improves 3D scene understanding through output-level supervision signals, achieving state-of-the-art performance on five benchmarks: SQA3D, ScanQA, Scan2Cap, ScanRefer…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "cross-view reconstruction"
   - "bird's-eye-view reconstruction"
 date: 2026-05-08
-content_hash: 9c0a93c221c1005a
+content_hash: f9b269ac0c0274ba
 ---
 
 # Ross3D: Reconstructive Visual Instruction Tuning with 3D-Awareness
@@ -145,11 +145,11 @@ Training details: fine-tuned from LLaVA-Video-7B using AdamW optimizer, global b
 
 ## Related Papers
 
-- [\[CVPR 2026\] OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness](../../CVPR2026/3d_vision/openvo_open-world_visual_odometry_with_temporal_dynamics_awareness.md)
-- [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](../../NeurIPS2025/3d_vision/on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
+- [\[CVPR 2025\] RoomTour3D: Geometry-Aware Video-Instruction Tuning for Embodied Navigation](../../CVPR2025/3d_vision/roomtour3d_geometry-aware_video-instruction_tuning_for_embodied_navigation.md)
 - [\[ICCV 2025\] LLaVA-3D: A Simple yet Effective Pathway to Empowering LMMs with 3D Capabilities](llava-3d_a_simple_yet_effective_pathway_to_empowering_lmms_with_3d_capabilities.md)
+- [\[CVPR 2025\] Empowering Large Language Models with 3D Situation Awareness](../../CVPR2025/3d_vision/empowering_large_language_models_with_3d_situation_awareness.md)
+- [\[NeurIPS 2025\] On Geometry-Enhanced Parameter-Efficient Fine-Tuning for 3D Scene Segmentation](../../NeurIPS2025/3d_vision/on_geometry-enhanced_parameter-efficient_fine-tuning_for_3d_scene_segmentation.md)
 - [\[ICCV 2025\] GeoProg3D: Compositional Visual Reasoning for City-Scale 3D Language Fields](geoprog3d_compositional_visual_reasoning_for_city-scale_3d_language_fields.md)
-- [\[ICCV 2025\] 4D Visual Pre-training for Robot Learning](4d_visual_pretraining_for_robot_learning.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms
 description: >-
-  [AAAI 2026][LLM Safety][Multilingual Evaluation] This paper introduces the CompositeHarm benchmark, which systematically investigates the vulnerability of LLM safety alignment in cross-lingual settings by translating adv…
+  [AAAI 2026][LLM Safety][Multilingual Evaluation] This paper introduces the CompositeHarm benchmark, which systematically investigates the vulnerability of LLM safety alignment in cross-lingual settings by translating adversarial syntactic attacks (AttaQ) and contextualized harms (MMSafetyBench) into five Indic languages. The study finds that adversarial syntactic attacks achieve dramatically higher attack success rates in Indic languages.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -11,7 +11,7 @@ tags:
   - "Cross-Lingual Transfer"
   - "Indic Languages"
 date: 2026-05-08
-content_hash: 1eec0eab89b4532e
+content_hash: 8bbf7fb45b03396c
 ---
 
 # Lost in Translation? A Comparative Study on the Cross-Lingual Transfer of Composite Harms
@@ -167,11 +167,11 @@ Analysis of the insufficiency of binary metrics (the "gray zone"):
 
 ## Related Papers
 
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](../../ICML2026/llm_safety/multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
-- [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
 - [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
-- [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](../../ICLR2026/llm_safety/reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
+- [\[ICLR 2026\] DiffuGuard: How Intrinsic Safety is Lost and Found in Diffusion Large Language Models](../../ICLR2026/llm_safety/diffuguard_how_intrinsic_safety_is_lost_and_found_in_diffusion_large_language_mo.md)
 - [\[ACL 2026\] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants](../../ACL2026/llm_safety/xoxo_stealthy_cross-origin_context_poisoning_attacks_against_ai_coding_assistant.md)
+- [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
+- [\[ICML 2025\] X-Transfer Attacks: Towards Super Transferable Adversarial Attacks on CLIP](../../ICML2025/llm_safety/x-transfer_attacks_towards_super_transferable_adversarial_attacks_on_clip.md)
 
 </div>
 

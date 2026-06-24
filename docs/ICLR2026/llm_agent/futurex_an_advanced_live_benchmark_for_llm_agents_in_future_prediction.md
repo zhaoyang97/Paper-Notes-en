@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] FutureX constructs a **live dynamic benchmark** for "future prediction" tasks. Through a fully automated pipeline, it daily collects upcoming events from 195 high-quality websites, tasks 25 LLMs/agents to make predictions on the event start date, and automatically crawls real results for scoring once revealed. This fun
+  [ICLR 2026][LLM Agent][Future Prediction] FutureX constructs a **live dynamic benchmark** for "future prediction" tasks. Through a fully automated pipeline, it daily collects upcoming events from 195 high-quality websites, tasks 25 LLMs/agents to make predictions on the event start date, and automatically crawls real results for scoring once revealed. This fundamentally eliminates data contamination and reveals that even the strongest model, Grok-4…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Future Prediction"
+  - "Dynamic Benchmark"
+  - "Data Contamination"
+  - "Difficulty Stratification"
 date: 2026-05-08
-content_hash: b41ab05099992ef5
+content_hash: a4bbbf1aae3a9e14
 ---
+
 # FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction
 
 **Conference**: ICLR 2026  
@@ -123,7 +128,7 @@ The authors evaluated **25 models** (including base LLMs, SmolAgent-DR, AgentOrc
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

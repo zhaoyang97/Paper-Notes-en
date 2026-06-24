@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data
 description: >-
-  [ICCV 2025][Model Compression][LoRA extraction] StolenLoRA is the first work to formulate model extraction attacks targeting LoRA-adapted models. It leverages LLM-driven Stable Diffusion to synthesize high-quality traini…
+  [ICCV 2025][Model Compression][LoRA extraction] StolenLoRA is the first work to formulate model extraction attacks targeting LoRA-adapted models. It leverages LLM-driven Stable Diffusion to synthesize high-quality training data, eliminating the need to search real datasets, and designs a Disagreement-based Semi-supervised Learning (DSL) strategy that maximizes information gain through selective querying. With only 10k queries, StolenLoRA achieves an attack success rate (ASR)…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -14,7 +14,7 @@ tags:
   - "disagreement-based semi-supervised learning"
   - "LLM-driven prompting"
 date: 2026-05-08
-content_hash: 107fca8b18a21fee
+content_hash: 75da88346c4d47a5
 ---
 
 # StolenLoRA: Exploring LoRA Extraction Attacks via Synthetic Data
@@ -181,11 +181,11 @@ When only one-hot predictions are available (no probability distributions), Stol
 
 ## Related Papers
 
+- [\[ICML 2025\] WildChat-50m: A Deep Dive Into the Role of Synthetic Data in Post-Training](../../ICML2025/model_compression/wildchat-50m_a_deep_dive_into_the_role_of_synthetic_data_in_post-training.md)
+- [\[ICLR 2026\] Asymmetric Synthetic Data Update for Domain Incremental Dataset Distillation](../../ICLR2026/model_compression/asymmetric_synthetic_data_update_for_domain_incremental_dataset_distillation.md)
 - [\[NeurIPS 2025\] Toward Efficient Inference Attacks: Shadow Model Sharing via Mixture-of-Experts](../../NeurIPS2025/model_compression/toward_efficient_inference_attacks_shadow_model_sharing_via_mixture-of-experts.md)
-- [\[NeurIPS 2025\] FirstAidQA: A Synthetic Dataset for First Aid and Emergency Response in Low-Connectivity Settings](../../NeurIPS2025/model_compression/firstaidqa_a_synthetic_dataset_for_first_aid_and_emergency_response_in_low-conne.md)
 - [\[ICCV 2025\] OuroMamba: A Data-Free Quantization Framework for Vision Mamba](ouromamba_a_data-free_quantization_framework_for_vision_mamba.md)
-- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](../../ICML2026/model_compression/fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
-- [\[ICCV 2025\] Partial Forward Blocking: A Novel Data Pruning Paradigm for Lossless Training Acceleration](partial_forward_blocking_a_novel_data_pruning_paradigm_for_lossless_training_acc.md)
+- [\[ICML 2025\] Predictive Data Selection: The Data That Predicts Is the Data That Teaches](../../ICML2025/model_compression/predictive_data_selection_the_data_that_predicts_is_the_data_that_teaches.md)
 
 </div>
 

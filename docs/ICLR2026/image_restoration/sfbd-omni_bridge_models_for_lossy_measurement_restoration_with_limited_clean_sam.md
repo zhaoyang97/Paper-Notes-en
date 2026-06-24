@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SFBD-OMNI: Bridge Models for Lossy Measurement Restoration with Limited Clean Samples
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] When only massive corrupted measurements and almost no clean samples are available, this work reformulates the task of "restoring the true distribution from a corrupted one" as a **one-sided entropic Optimal Transport (OT)** problem. By using bridge models for alternating minimization, the proposed SFBD-OMNI framework
+  [ICLR 2026][Image Restoration][Distribution Restoration] When only massive corrupted measurements and almost no clean samples are available, this work reformulates the task of "restoring the true distribution from a corrupted one" as a **one-sided entropic Optimal Transport (OT)** problem. By using bridge models for alternating minimization, the proposed SFBD-OMNI framework handles arbitrary black-box corruptions (masking, grayscale, blurring…
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Distribution Restoration"
+  - "Bridge Models"
+  - "Entropic Optimal Transport"
+  - "Identifiability"
+  - "Weakly Supervised Generation"
 date: 2026-05-08
-content_hash: fbc41964012214de
+content_hash: c212dc4e9f3e7010
 ---
+
 # SFBD-OMNI: Bridge Models for Lossy Measurement Restoration with Limited Clean Samples
 
 **Conference**: ICLR 2026  

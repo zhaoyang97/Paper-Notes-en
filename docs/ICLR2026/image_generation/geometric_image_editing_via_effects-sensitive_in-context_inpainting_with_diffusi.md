@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Geometric Image Editing via Effects-Sensitive In-Context Inpainting with Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][In-Context Inpainting] GeoEdit utilizes 3D reconstruction-driven geometric transformations + DiT-based in-context inpainting, coupled with a soft-biased Effects-Sensitive Attention specifically for lighting and shadows. This enables object translation, rotation, and scaling that are both geometrically precise and physically realistic.
+  [ICLR 2026][Image Generation][Geometric Image Editing] GeoEdit utilizes 3D reconstruction-driven geometric transformations + DiT-based in-context inpainting, coupled with a soft-biased Effects-Sensitive Attention specifically for lighting and shadows. This enables object translation, rotation, and scaling that are both geometrically precise and physically realistic.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - In-Context Inpainting
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Geometric Image Editing"
+  - "In-Context Inpainting"
+  - "Diffusion Transformer"
+  - "Lighting Effects"
+  - "Attention Modulation"
 date: 2026-05-08
-content_hash: be65eb3d8d1b9e50
+content_hash: 66cb103712d9e79a
 ---
+
 # Geometric Image Editing via Effects-Sensitive In-Context Inpainting with Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -131,10 +135,10 @@ Ablation of attention modulation and data composition (2D-edits):
 ## Related Papers
 
 - [\[ICLR 2026\] ChronoEdit: Towards Temporal Reasoning for In-Context Image Editing and World Simulation](chronoedit_towards_temporal_reasoning_for_in-context_image_editing_and_world_sim.md)
-- [\[ICLR 2026\] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](follow-your-preference_towards_preference-aligned_image_inpainting.md)
 - [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
-- [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
 - [\[CVPR 2026\] SpotEdit: Selective Region Editing in Diffusion Transformers](../../CVPR2026/image_generation/spotedit_selective_region_editing_in_diffusion_transformers.md)
+- [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 
 </div>
 

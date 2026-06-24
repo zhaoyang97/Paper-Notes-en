@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SEA-Flow3D: Simplified, Efficient, and Accurate Scene Flow via Spatial Vector Sampling and Multi-scale Refinement
 description: >-
-  [CVPR 2026][3D Vision][RGB-D] SEA-Flow3D integrates a "3D directional vector between matching point pairs" (Spatial Vector Sampling) into the correlation sampling of a RAFT-style dense scene flow framework. This allows the iterative optimizer to continuously perceive depth and geometric directions beyond 2D correlation. Combined with a lightweight
+  [CVPR 2026][3D Vision][Scene Flow] SEA-Flow3D integrates a "3D directional vector between matching point pairs" (Spatial Vector Sampling) into the correlation sampling of a RAFT-style dense scene flow framework. This allows the iterative optimizer to continuously perceive depth and geometric directions beyond 2D correlation. Combined with a lightweight ConvNeXtV2 RNN optimizer and a coarse-to-fine multi-scale structure, it sets new accuracy records on KITTI (SF-all 3.55) and…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - RGB-D
-  - RAFT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Scene Flow"
+  - "RGB-D"
+  - "Spatial Vector Sampling"
+  - "Multi-scale Iterative Optimization"
+  - "RAFT"
 date: 2026-05-08
-content_hash: 135d1b5a84564ea3
+content_hash: bd358b4e3cb80842
 ---
+
 # SEA-Flow3D: Simplified, Efficient, and Accurate Scene Flow via Spatial Vector Sampling and Multi-scale Refinement
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ Ablation starting from a simplified MS-RAFT baseline (A) to the full model (E); 
 
 ## Related Papers
 
+- [\[CVPR 2026\] MetroGS: Efficient and Stable Reconstruction of Geometrically Accurate High-Fidelity Large-Scale Scenes](metrogs_efficient_and_stable_reconstruction_of_geometrically_accurate_high-fidel.md)
 - [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
-- [\[ICLR 2026\] UrbanGS: A Scalable and Efficient Architecture for Geometrically Accurate Large-Scene Reconstruction](../../ICLR2026/3d_vision/urbangs_a_scalable_and_efficient_architecture_for_geometrically_accurate_large-s.md)
-- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
 - [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
-- [\[CVPR 2026\] A Survey of Spatial Memory Representations for Efficient Robot Navigation](a_survey_of_spatial_memory_representations_for_efficient_robot_navigation.md)
+- [\[CVPR 2026\] SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)
+- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
 
 </div>
 

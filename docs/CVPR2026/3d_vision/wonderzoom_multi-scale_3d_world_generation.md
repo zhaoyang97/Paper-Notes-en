@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] WonderZoom: Multi-Scale 3D World Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Starting from a single image, WonderZoom allows users to interactively "zoom in" on any area of a 3D scene, autoregressively synthesizing finer-scale content that did not exist previously (ranging from vast landscapes to microscopic details like a ladybug on a petal). Using an incrementally updatable scale-adaptive Gau
+  [CVPR 2026][3D Vision][Multi-scale 3D generation] Starting from a single image, WonderZoom allows users to interactively "zoom in" on any area of a 3D scene, autoregressively synthesizing finer-scale content that did not exist previously (ranging from vast landscapes to microscopic details like a ladybug on a petal). Using an incrementally updatable scale-adaptive Gaussian Splatting representation combined with a progressive detail synthesizer…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Multi-scale 3D generation"
+  - "Gaussian Splatting"
+  - "world generation"
+  - "progressive synthesis"
+  - "real-time rendering"
 date: 2026-05-08
-content_hash: 83842823ee9e7483
+content_hash: d06b43a060762296
 ---
+
 # WonderZoom: Multi-Scale 3D World Generation
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,14 @@ WonderZoom leads in text alignment, image quality, and aesthetic metrics. It is 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
 - [\[CVPR 2026\] OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)
 - [\[CVPR 2026\] Extend3D: Town-Scale 3D Generation](extend3d_town-scale_3d_generation.md)
 - [\[CVPR 2026\] RayNova: Scale-Temporal Autoregressive World Modeling in Ray Space](raynova_scale-temporal_autoregressive_world_modeling_in_ray_space.md)
-- [\[CVPR 2026\] Multi-view Consistent 3D Gaussian Head Avatars 'without' Multi-view Generation](multi-view_consistent_3d_gaussian_head_avatars_without_multi-view_generation.md)
-- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
+- [\[CVPR 2026\] LATTICE: Democratize High-Fidelity 3D Generation at Scale](lattice_democratize_high-fidelity_3d_generation_at_scale.md)
 
 </div>
 

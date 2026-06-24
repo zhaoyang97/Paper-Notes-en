@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] CADD assigns an additional "continuous latent variable" track to each `[MASK]` position in discrete masked diffusion—masked tokens no longer collapse into an uninformative absorbing state but instead carry a continuous vector that is gradually noisy yet retains semantic information. During denoising, this vector acts a
+  [ICLR2026][Image Generation][Discrete Diffusion] CADD assigns an additional "continuous latent variable" track to each `[MASK]` position in discrete masked diffusion—masked tokens no longer collapse into an uninformative absorbing state but instead carry a continuous vector that is gradually noisy yet retains semantic information. During denoising, this vector acts as a "soft prompt" to guide discrete prediction, achieving consistent improvements over pure masked diffusion ba…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "Masked Diffusion"
+  - "Continuous Latent Variables"
+  - "Categorical Generation"
+  - "Mode Covering-Mode Seeking"
 date: 2026-05-08
-content_hash: ea9ccad2118bd2c1
+content_hash: 4c47e8d961624b9c
 ---
+
 # Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling
 
 **Conference**: ICLR2026  
@@ -138,15 +144,16 @@ In code generation, CADD is the strongest diffusion LLM and even outperforms the
 - Value: ⭐⭐⭐⭐⭐ Extremely low implementation cost to improve existing MDMs with consistent gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Strictly Constrained Generative Modeling via Split Augmented Langevin Sampling](strictly_constrained_generative_modeling_via_split_augmented_langevin_sampling.md)
 - [\[ICLR 2026\] Beyond Text-to-Image: Liberating Generation with a Unified Discrete Diffusion Model](beyond_text-to-image_liberating_generation_with_a_unified_discrete_diffusion_mod.md)
 - [\[ICLR 2026\] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling](variational_autoencoding_discrete_diffusion_with_enhanced_dimensional_correlatio.md)
 - [\[ICLR 2026\] Partition Generative Modeling: Masked Modeling Without Masks](partition_generative_modeling_masked_modeling_without_masks.md)
 - [\[CVPR 2026\] Advancing Image Classification with Discrete Diffusion Classification Modeling](../../CVPR2026/image_generation/advancing_image_classification_with_discrete_diffusion_classification_modeling.md)
-- [\[ICLR 2026\] Consolidating Reinforcement Learning for Multimodal Discrete Diffusion Models](consolidating_reinforcement_learning_for_multimodal_discrete_diffusion_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepPrune: Parallel Scaling without Inter-Trace Redundancy
 description: >-
-  [ACL 2026][Model Compression][Paper Note] This paper proposes DeepPrune, which trains a specialized judge model to predict answer equivalence from partial reasoning traces. By combining this with an online greedy clustering algorithm to dynamically prune redundant parallel CoT paths, it reduces token consumption by 65.73%-88.50% while maintaining competitive a
+  [ACL 2026 Findings][Model Compression][Parallel Inference] This paper proposes DeepPrune, which trains a specialized judge model to predict answer equivalence from partial reasoning traces. By combining this with an online greedy clustering algorithm to dynamically prune redundant parallel CoT paths, it reduces token consumption by 65.73%-88.50% while maintaining competitive accuracy (within 3 percentage points).
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Parallel Inference"
+  - "CoT Pruning"
+  - "Inference Redundancy"
+  - "Answer Equivalence Prediction"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 6ff808b61e19da06
+content_hash: 2a28b7742f152ed1
 ---
+
 # DeepPrune: Parallel Scaling without Inter-Trace Redundancy
 
 **Conference**: ACL 2026 Findings  

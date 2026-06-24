@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] ForeSight equips VLMs with a set of low-level visual tools (Canny / Zoom / Color) and a mask-based visual reflection mechanism. Using GRPO reinforcement learning, a 7B model autonomously decides "when to invoke tools and whether to overturn draft answers" during reasoning. On the self-built Odd-One-Out saliency localiz
+  [CVPR 2026][VLM Reasoning][Visual Language Model] ForeSight equips VLMs with a set of low-level visual tools (Canny / Zoom / Color) and a mask-based visual reflection mechanism. Using GRPO reinforcement learning, a 7B model autonomously decides "when to invoke tools and whether to overturn draft answers" during reasoning. On the self-built Odd-One-Out saliency localization benchmark CG-SalBench, it improves IoU from 32.56% to 62.24%, approaching the performance of 72B models.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Language Model"
+  - "Reinforcement Learning"
+  - "Multimodal Chain-of-Thought"
+  - "Low-level Visual Tools"
+  - "Visual Reflection"
 date: 2026-05-08
-content_hash: b92edea34a21766f
+content_hash: 63741a3e880474c4
 ---
+
 # See Further, Think Deeper: Advancing VLM's Reasoning Ability with Low-level Visual Cues and Reflection
 
 **Conference**: CVPR 2026  
@@ -162,15 +166,14 @@ ForeSight also demonstrates gains on RefCOCO benchmarks and MME:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning](see_less_see_right_bi-directional_perceptual_shaping_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
+- [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/vlm_reasoning/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
 - [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
-- [\[ICML 2026\] What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](../../ICML2026/multimodal_vlm/what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)
-- [\[CVPR 2026\] Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs](dont_show_pixels_show_cues_unlocking_visual_tool_reasoning_in_language_models_vi.md)
+- [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
+- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
 
 </div>
 

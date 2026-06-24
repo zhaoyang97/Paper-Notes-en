@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics
 description: >-
-  [ICML 2026][Physics & Scientific Computing][LoRA] The authors formulate the Transformer self-attention as a mean-field particle system of interacting tokens and treat LoRA as a low-rank perturbation. They prove that forgetting is associated with two phase transition curves—"perturbation magnitude" and "network depth"—and provide a long-term stability condition control
+  [ICML 2026][Physics & Scientific Computing][LoRA] The authors formulate the Transformer self-attention as a mean-field particle system of interacting tokens and treat LoRA as a low-rank perturbation. They prove that forgetting is associated with two phase transition curves—"perturbation magnitude" and "network depth"—and provide a long-term stability condition controlled by the eigenvalue gap of $V$.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - LoRA
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "LoRA"
+  - "Catastrophic Forgetting"
+  - "Mean-Field Attention"
+  - "Phase Transition"
+  - "Spectral Stability"
 date: 2026-05-08
-content_hash: 1f0941f063a7c860
+content_hash: 950401af6680505f
 ---
+
 # Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics
 
 **Conference**: ICML 2026  
@@ -124,9 +129,9 @@ This paper does not introduce new losses or training algorithms. All formulas ar
 
 - [\[AAAI 2026\] Catastrophic Forgetting in Kolmogorov-Arnold Networks](../../AAAI2026/physics/catastrophic_forgetting_in_kolmogorov-arnold_networks.md)
 - [\[ICML 2026\] Mesh Field Theory: Port–Hamiltonian Formulation of Mesh-Based Physics](mesh_field_theory_port-hamiltonian_formulation_of_mesh-based_physics.md)
-- [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
 - [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
-- [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](speculative_sampling_for_faster_molecular_dynamics.md)
+- [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
+- [\[ICML 2026\] From Geometry to Dynamics: Learning Overdamped Langevin Dynamics from Sparse Observations with Geometric Constraints](from_geometry_to_dynamics_learning_overdamped_langevin_dynamics_from_sparse_obse.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Learning Adaptive Parallel Execution for Efficient Code Localization
 description: >-
-  [ACL 2026][Code Intelligence][GRPO] FuseSearch models parallel tool calling in code localization as a joint quality-efficiency optimization problem. By using SFT+RL, the model learns to adaptively adjust search width according to task stages, achieving high F1 scores and significantly lower time/token costs on SWE-bench Verified using a compact model.
+  [ACL2026 Findings][Code Intelligence][Code Localization] FuseSearch models parallel tool calling in code localization as a joint quality-efficiency optimization problem. By using SFT+RL, the model learns to adaptively adjust search width according to task stages, achieving high F1 scores and significantly lower time/token costs on SWE-bench Verified using a compact model.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - GRPO
-  - SWE-bench Verified
+  - "ACL2026 Findings"
+  - "Code Intelligence"
+  - "Code Localization"
+  - "Parallel Tool Calling"
+  - "GRPO"
+  - "Tool Efficiency"
+  - "SWE-bench Verified"
 date: 2026-05-08
-content_hash: ab6ffc9a5237e08a
+content_hash: 598afc55c4ba5605
 ---
+
 # Learning Adaptive Parallel Execution for Efficient Code Localization
 
 **Conference**: ACL2026 Findings  
@@ -141,8 +145,8 @@ Evaluation uses SWE-bench Verified, excluding samples where patches introduce ne
 - [\[ACL 2026\] To Diff or Not to Diff? Structure-Aware and Adaptive Output Formats for Efficient LLM-based Code Editing](to_diff_or_not_to_diff_structure-aware_and_adaptive_output_formats_for_efficient.md)
 - [\[ICLR 2026\] Improving Code Localization with Repository Memory](../../ICLR2026/code_intelligence/improving_code_localization_with_repository_memory.md)
 - [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
-- [\[ACL 2026\] PaT: Planning-after-Trial for Efficient Test-Time Code Generation](pat_planning-after-trial_for_efficient_test-time_code_generation.md)
-- [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
+- [\[ICLR 2026\] SweRank: Software Issue Localization via Code Ranking](../../ICLR2026/code_intelligence/swerank_software_issue_localization_with_code_ranking.md)
+- [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
 
 </div>
 

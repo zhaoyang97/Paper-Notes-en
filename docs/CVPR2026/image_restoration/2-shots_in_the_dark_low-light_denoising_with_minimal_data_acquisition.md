@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] This paper proposes a "two-shots are enough" sensor noise synthesis method—requiring only one noise image and one dark frame per ISO. It synthesizes signal-independent noise as a texture using random phase sampling in the Fourier domain, complemented by iterative histogram matching to correct marginal distributions. Th
+  [CVPR 2026][Image Restoration][Low-light denoising] This paper proposes a "two-shots are enough" sensor noise synthesis method—requiring only one noise image and one dark frame per ISO. It synthesizes signal-independent noise as a texture using random phase sampling in the Fourier domain, complemented by iterative histogram matching to correct marginal distributions. This allows for the generation of infinitely diverse training pairs without large-scale paired datasets…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light denoising"
+  - "sensor noise synthesis"
+  - "Fourier spectral sampling"
+  - "random phase"
+  - "dark frames"
 date: 2026-05-08
-content_hash: c93993b6ad2b5909
+content_hash: c1320b8bc3b86148
 ---
+
 # 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition
 
 **Conference**: CVPR 2026  
@@ -130,15 +136,16 @@ Ablation of ICC and IHM (SID, PSNR/SSIM):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
 - [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
 - [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
 - [\[CVPR 2026\] UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation](udapose_unsupervised_domain_adaptation_for_low_light_human_pose_estimation.md)
-- [\[CVPR 2026\] VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)
+- [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
+- [\[CVPR 2026\] Towards Generalized Representations for Low-Light Understanding: When Signal Constancy Meets Semantic Enrichment](towards_generalized_representations_for_low-light_understanding_when_signal_cons.md)
 
 </div>
 

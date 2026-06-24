@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] FoV-Net is proposed as the first rotation-invariant framework for CAD B-rep learning that simultaneously captures local surface geometry and global structural context. It achieves robust classification and segmentation under arbitrary $\mathbf{SO}(3)$ rotations through Local Reference Frame UV grids (LRF UV) and Field-
+  [CVPR 2026][Segmentation][CAD B-rep learning] FoV-Net is proposed as the first rotation-invariant framework for CAD B-rep learning that simultaneously captures local surface geometry and global structural context. It achieves robust classification and segmentation under arbitrary $\mathbf{SO}(3)$ rotations through Local Reference Frame UV grids (LRF UV) and Field-of-View (FoV) ray casting descriptors.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "CAD B-rep learning"
+  - "rotation invariance"
+  - "ray casting"
+  - "graph attention networks"
+  - "3D segmentation"
 date: 2026-05-08
-content_hash: f1babb6309f206e3
+content_hash: 7d6aed88088135db
 ---
+
 # FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting
 
 **Conference**: CVPR 2026  

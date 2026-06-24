@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Does the Data Processing Inequality Reflect Practice? On the Utility of Low-Level Tasks
 description: >-
-  [ICLR 2026][learning_theory][Denoising] This paper employs an analytically tractable Gaussian Mixture Model (GMM) binary classification framework to prove that, despite the Data Processing Inequality (DPI) stating "preprocessing does not increase information," for practical classifiers with **finite training samples**, there exists a dimensionality reduction
+  [ICLR 2026][Learning Theory][Data Processing Inequality] This paper employs an analytically tractable Gaussian Mixture Model (GMM) binary classification framework to prove that, despite the Data Processing Inequality (DPI) stating "preprocessing does not increase information," for practical classifiers with **finite training samples**, there exists a dimensionality reduction preprocessing that strictly reduces classification error rate. It further characterizes how SNR…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Denoising
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Classification Theory"
+  - "Data Processing Inequality"
+  - "Low-Level Processing"
+  - "Bayesian Classifier"
+  - "Gaussian Mixture Model"
+  - "Dimensionality Reduction"
+  - "Denoising"
+  - "Self-Supervised Encoding"
 date: 2026-05-08
-content_hash: 27e521eae60db335
+content_hash: ffde888e3f85ad46
 ---
+
 # Does the Data Processing Inequality Reflect Practice? On the Utility of Low-Level Tasks
 
 **Conference**: ICLR 2026  
@@ -116,16 +124,16 @@ On clean CIFAR-10, the classifier achieves 90% accuracy. Denoising models traine
 - **Value**: ⭐⭐⭐⭐ Provides a clean theoretical defense for the common "low-level then high-level" pipeline and offers insights into why representation learning and denoising work.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Robustness of Probabilistic Models to Low-Quality Data: A Multi-Perspective Analysis](robustness_of_probabilistic_models_to_low-quality_data_a_multi-perspective_analy.md)
 - [\[ICLR 2026\] Learning Admissible Heuristics for A*: Theory and Practice](learning_admissible_heuristics_for_a_theory_and_practice.md)
 - [\[ICML 2026\] Active Learning with Low-Rank Structure for Data Selection](../../ICML2026/learning_theory/active_learning_with_low-rank_structure_for_data_selection.md)
-- [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 - [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
+- [\[ICLR 2026\] The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens](the_softmax_bottleneck_does_not_limit_the_probabilities_of_the_most_likely_token.md)
 
 </div>
 

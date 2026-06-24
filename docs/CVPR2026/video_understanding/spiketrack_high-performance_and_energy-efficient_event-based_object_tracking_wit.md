@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network
 description: >-
-  [CVPR 2026][Video Understanding][Spiking Transformer] SpikeTrack utilizes a **pure spike-driven** Spiking Transformer for event-based single object tracking. By employing a "Multi-Search-Single-Template (MSST)" training paradigm, it feeds the inherent temporal continuity of tracking into the membrane potential accumulation of the SNN. Furthermore, "Dynamic Integer LIF (DI
+  [CVPR 2026][Video Understanding][Event Camera] SpikeTrack utilizes a **pure spike-driven** Spiking Transformer for event-based single object tracking. By employing a "Multi-Search-Single-Template (MSST)" training paradigm, it feeds the inherent temporal continuity of tracking into the membrane potential accumulation of the SNN. Furthermore, "Dynamic Integer LIF (DI-LIF)" neurons adaptively adjust the spike firing upper limit based on input sparsity. It achieves SOTA accuracy…
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - Spiking Transformer
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Event Camera"
+  - "Single Object Tracking"
+  - "Spiking Neural Network"
+  - "Spiking Transformer"
+  - "Energy Efficiency"
 date: 2026-05-08
-content_hash: ead7c771f24177f3
+content_hash: f89b58629e072ee5
 ---
+
 # SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network
 
 **Conference**: CVPR 2026  
@@ -140,8 +145,8 @@ On VisEvent, Ours outperforms the second-best method by 1.6% in SR and 1.8% in P
 - [\[CVPR 2026\] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](sdtrack_a_baseline_for_event-based_tracking_via_spiking_neural_networks.md)
 - [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
 - [\[CVPR 2026\] Event6D: Event-based Novel Object 6D Pose Tracking](event6d_event-based_novel_object_6d_pose_tracking.md)
+- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
 - [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
-- [\[CVPR 2026\] DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions](darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c.md)
 
 </div>
 

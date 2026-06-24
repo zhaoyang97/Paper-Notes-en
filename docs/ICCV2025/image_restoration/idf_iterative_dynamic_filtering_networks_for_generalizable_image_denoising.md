@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising
 description: >-
-  [ICCV 2025][Image Restoration][Image Denoising] This paper proposes Iterative Dynamic Filtering Networks (IDF), which achieves strong out-of-distribution (OOD) denoising performance using only ~0.04M parameters. By combi…
+  [ICCV 2025][Image Restoration][Image Denoising] This paper proposes Iterative Dynamic Filtering Networks (IDF), which achieves strong out-of-distribution (OOD) denoising performance using only ~0.04M parameters. By combining per-pixel dynamic kernel prediction with an adaptive iterative refinement strategy, IDF generalizes to diverse unseen noise types (Gaussian, Poisson, salt-and-pepper, Monte Carlo rendering, and real noise) while trained exclusively on single-level Gaussia…
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Iterative Refinement"
   - "Lightweight Model"
 date: 2026-05-08
-content_hash: c7dc4ba4fdf81cbe
+content_hash: f3cb7b84a32e9194
 ---
 
 # IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising
@@ -162,11 +162,11 @@ IDF adopts an iterative denoising scheme: a noisy input image $\mathbf{I}_{Noisy
 
 ## Related Papers
 
+- [\[ACL 2025\] DiffuseDef: Improved Robustness to Adversarial Attacks via Iterative Denoising](../../ACL2025/image_restoration/diffusedef_adversarial_defense.md)
 - [\[ICCV 2025\] Self-Calibrated Variance-Stabilizing Transformations for Real-World Image Denoising](self-calibrated_variance-stabilizing_transformations_for_real-world_image_denois.md)
-- [\[ICCV 2025\] Blind2Sound: Self-Supervised Image Denoising without Residual Noise](blind2sound_self-supervised_image_denoising_without_residual_noise.md)
-- [\[AAAI 2026\] SD-PSFNet: Sequential and Dynamic Point Spread Function Network for Image Deraining](../../AAAI2026/image_restoration/sd-psfnet_sequential_and_dynamic_point_spread_function_netwo.md)
-- [\[NeurIPS 2025\] Spiking Meets Attention: Efficient Remote Sensing Image Super-Resolution with Attention Spiking Neural Networks](../../NeurIPS2025/image_restoration/spiking_meets_attention_efficient_remote_sensing_image_super-resolution_with_att.md)
+- [\[ICLR 2026\] Divergence-Free Neural Networks with Application to Image Denoising](../../ICLR2026/image_restoration/divergence-free_neural_networks_with_application_to_image_denoising.md)
 - [\[ICCV 2025\] AFUNet: Cross-Iterative Alignment-Fusion Synergy for HDR Reconstruction via Deep Unfolding Paradigm](afunet_crossiterative_alignmentfusion_synergy_for_hdr_recons.md)
+- [\[CVPR 2025\] Iterative Predictor-Critic Code Decoding for Real-World Image Dehazing](../../CVPR2025/image_restoration/iterative_predictor-critic_code_decoding_for_real-world_image_dehazing.md)
 
 </div>
 

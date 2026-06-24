@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PAC-Bayesian Reinforcement Learning Trains Generalizable Policies
 description: >-
-  [ICML 2026][Reinforcement Learning][Soft Actor-Critic] This paper provides the first PAC-Bayesian RL generalization bound that **explicitly depends on the mixing time of the Markov chain** and scales only linearly with the long horizon $1/(1-\gamma)$. By embedding this bound as an "alive" training objective within SAC, the authors derive the PB-SAC algorithm—delivering non
+  [ICML2026][Reinforcement Learning][PAC-Bayes bounds] This paper provides the first PAC-Bayesian RL generalization bound that **explicitly depends on the mixing time of the Markov chain** and scales only linearly with the long horizon $1/(1-\gamma)$. By embedding this bound as an "alive" training objective within SAC, the authors derive the PB-SAC algorithm—delivering non-vacuous deployment certificates and competitive performance on MuJoCo continuous control tasks simultaneou…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Soft Actor-Critic
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "PAC-Bayes bounds"
+  - "mixing time"
+  - "Soft Actor-Critic"
+  - "deployment certificates"
+  - "posterior-guided exploration"
 date: 2026-05-08
-content_hash: 174feed59152a273
+content_hash: 4dac49546377b923
 ---
+
 # PAC-Bayesian Reinforcement Learning Trains Generalizable Policies
 
 **Conference**: ICML2026  
@@ -140,11 +145,20 @@ Key finding: PB-SAC performs similarly to SAC in dense-reward tasks (no "perform
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)
+- [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
+- [\[ICLR 2026\] EUBRL: Epistemic Uncertainty Directed Bayesian Reinforcement Learning](../../ICLR2026/reinforcement_learning/eubrl_epistemic_uncertainty_directed_bayesian_reinforcement_learning.md)
+- [\[ICLR 2026\] EXPO: Stable Reinforcement Learning with Expressive Policies](../../ICLR2026/reinforcement_learning/expo_stable_reinforcement_learning_with_expressive_policies.md)
+- [\[ICML 2026\] Learning Unmasking Policies for Diffusion Language Models](learning_unmasking_policies_for_diffusion_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Offline Reinforcement Learning with Generative Trajectory Policies](offline_reinforcement_learning_with_generative_trajectory_policies.md)

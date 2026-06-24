@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] The Intricate Dance of Prompt Complexity, Quality, Diversity, and Consistency in T2I Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper systematically investigates the impact of text prompt complexity on three critical dimensions of T2I model synthetic data: quality, diversity, and consistency. It proposes a new evaluation framework and discovers that prompt expansion, as an inference-time intervention, optimally balances diversity and aesth
+  [ICLR 2026][Image Generation][T2I Models] This paper systematically investigates the impact of text prompt complexity on three critical dimensions of T2I model synthetic data: quality, diversity, and consistency. It proposes a new evaluation framework and discovers that prompt expansion, as an inference-time intervention, optimally balances diversity and aesthetic quality.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "T2I Models"
+  - "Prompt Complexity"
+  - "Synthetic Data"
+  - "Diversity"
+  - "Consistency"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 9e3168c98a2508dc
+content_hash: ffc6d3c6d5811988
 ---
+
 # The Intricate Dance of Prompt Complexity, Quality, Diversity, and Consistency in T2I Models
 
 **Conference**: ICLR 2026  
@@ -140,11 +146,11 @@ Comparison of inference-time intervention methods:
 
 ## Related Papers
 
-- [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
 - [\[ICLR 2026\] GeoDiv: Framework for Measuring Geographical Diversity in Text-to-Image Models](geodiv_framework_for_measuring_geographical_diversity_in_text-to-image_models.md)
-- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
-- [\[ICML 2026\] MIRO: 多奖励条件预训练同时提升 T2I 质量与效率](../../ICML2026/image_generation/miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
+- [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
+- [\[ICML 2026\] MIRO: Multi-Reward Conditioned Pretraining for Simultaneously Improving T2I Quality and Efficiency](../../ICML2026/image_generation/miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
 - [\[ICLR 2026\] Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions](temporal_concept_dynamics_in_diffusion_models_via_prompt-conditioned_interventio.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
 
 </div>
 

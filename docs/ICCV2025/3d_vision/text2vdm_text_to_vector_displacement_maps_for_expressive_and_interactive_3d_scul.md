@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting
 description: >-
-  [ICCV 2025][3D Vision][VDM brush generation] Text2VDM is proposed as the first framework for generating VDM sculpting brushes from text. It addresses the semantic entanglement problem in sub-object structure generation v…
+  [ICCV 2025][3D Vision][VDM brush generation] Text2VDM is proposed as the first framework for generating VDM sculpting brushes from text. It addresses the semantic entanglement problem in sub-object structure generation via Sobolev-preconditioned mesh deformation and a semantically enhanced SDS loss.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "mesh deformation"
   - "3D modeling"
 date: 2026-05-08
-content_hash: 81291bc95b68b90d
+content_hash: 8e0764ad868a4438
 ---
 
 # Text2VDM: Text to Vector Displacement Maps for Expressive and Interactive 3D Sculpting
@@ -130,11 +130,11 @@ Key advantage: the semantically focused embeddings produced by Compel are **time
 
 ## Related Papers
 
+- [\[CVPR 2025\] GenVDM: Generating Vector Displacement Maps From a Single Image](../../CVPR2025/3d_vision/genvdm_generating_vector_displacement_maps_from_a_single_image.md)
+- [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
+- [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
 - [\[ICCV 2025\] ExCap3D: Expressive 3D Scene Understanding via Object Captioning with Varying Detail](excap3d_expressive_3d_scene_understanding_via_object_captioning_with_varying_det.md)
 - [\[ICCV 2025\] WonderTurbo: Generating Interactive 3D World in 0.72 Seconds](wonderturbo_generating_interactive_3d_world_in_072_seconds.md)
-- [\[ICCV 2025\] Dynamic Point Maps: A Versatile Representation for Dynamic 3D Reconstruction](dynamic_point_maps_a_versatile_representation_for_dynamic_3d_reconstruction.md)
-- [\[ICCV 2025\] Learning 3D Scene Analogies with Neural Contextual Scene Maps](learning_3d_scene_analogies_with_neural_contextual_scene_maps.md)
-- [\[ICCV 2025\] Easy3D: A Simple Yet Effective Method for 3D Interactive Segmentation](easy3d_a_simple_yet_effective_method_for_3d_interactive_segmentation.md)
 
 </div>
 

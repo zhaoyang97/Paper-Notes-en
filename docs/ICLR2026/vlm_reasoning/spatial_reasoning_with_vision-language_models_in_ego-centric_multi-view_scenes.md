@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes
 description: >-
-  [ICLR 2026][vlm_reasoning][VLM benchmark] Addressing ego-centric multi-view scenarios (e.g., autonomous driving/robotics) where cameras simultaneously cover front, rear, left, and right views, this paper establishes the first outdoor 3D spatial reasoning benchmark, Ego3D-Bench (8.6K QA). It proposes **Ego3D-VLM**, a **training-free, plug-and-play** framework t
+  [ICLR 2026][VLM Reasoning][Ego-centric Multi-view] Addressing ego-centric multi-view scenarios (e.g., autonomous driving/robotics) where cameras simultaneously cover front, rear, left, and right views, this paper establishes the first outdoor 3D spatial reasoning benchmark, Ego3D-Bench (8.6K QA). It proposes **Ego3D-VLM**, a **training-free, plug-and-play** framework that localizes queried objects in 3D global coordinates to generate a compact "textual cognitive map." Feeding…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - VLM benchmark
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Ego-centric Multi-view"
+  - "3D Spatial Reasoning"
+  - "Cognitive Map"
+  - "Training-free"
+  - "VLM benchmark"
 date: 2026-05-08
-content_hash: c5b29ff96c11831a
+content_hash: 7f282ed5c2c8faf3
 ---
+
 # Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes
 
 **Conference**: ICLR 2026  
@@ -136,8 +141,21 @@ Incremental components added to InternVL3-8B:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
+- [\[ICLR 2026\] MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning](mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

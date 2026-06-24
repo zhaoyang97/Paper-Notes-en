@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Mesh Field Theory: Port–Hamiltonian Formulation of Mesh-Based Physics
 description: >-
-  [ICML 2026][Physics & Scientific Computing][port-Hamiltonian] Starting from four physical principles—"Locality + Permutation Equivariance + Orientation Covariance + Energy Conservation/Dissipation Inequality"—it is proven that any mesh physics dynamics satisfying these axioms can be locally reduced to a port-Hamiltonian form at the Jacobian level. In this formulation, the conserv
+  [ICML 2026][Physics & Scientific Computing][Mesh Physics] Starting from four physical principles—"Locality + Permutation Equivariance + Orientation Covariance + Energy Conservation/Dissipation Inequality"—it is proven that any mesh physics dynamics satisfying these axioms can be locally reduced to a port-Hamiltonian form at the Jacobian level. In this formulation, the conservative interconnection structure $J$ is fixed by the mesh topology (signed incidence matrix $D_k$)…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
-  - port-Hamiltonian
-  - MeshGraphNet
+  - "ICML 2026"
+  - "Physics & Scientific Computing"
+  - "Mesh Physics"
+  - "port-Hamiltonian"
+  - "Topology–Metric Separation"
+  - "Energy Conservation"
+  - "MeshGraphNet"
 date: 2026-05-08
-content_hash: 68883fb081a67f50
+content_hash: 9f9a4efdf3402abd
 ---
+
 # Mesh Field Theory: Port–Hamiltonian Formulation of Mesh-Based Physics
 
 **Conference**: ICML 2026  
@@ -140,8 +144,21 @@ Physical consistency diagnostics show MeshFT-Net ranks first across wave speed e
 - Value: ⭐⭐⭐⭐ Provides a theorem-driven design paradigm for the learned simulator community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICML 2026\] Understanding Catastrophic Forgetting In LoRA via Mean-Field Attention Dynamics](understanding_catastrophic_forgetting_in_lora_via_mean-field_attention_dynamics.md)
+- [\[NeurIPS 2025\] High-order Equivariant Flow Matching for Density Functional Theory Hamiltonian Prediction](../../NeurIPS2025/physics/high-order_equivariant_flow_matching_for_density_functional_theory_hamiltonian_p.md)
+- [\[ICLR 2026\] Generalized Spherical Neural Operators: Green's Function Formulation](../../ICLR2026/physics/generalized_spherical_neural_operators_greens_function_formulation.md)
+- [\[ICLR 2026\] Towards a Transferable Acceleration Method for Density Functional Theory](../../ICLR2026/physics/towards_a_transferable_acceleration_method_for_density_functional_theory.md)
+- [\[NeurIPS 2025\] Hamiltonian Neural PDE Solvers through Functional Approximation](../../NeurIPS2025/physics/hamiltonian_neural_pde_solvers_through_functional_approximation.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

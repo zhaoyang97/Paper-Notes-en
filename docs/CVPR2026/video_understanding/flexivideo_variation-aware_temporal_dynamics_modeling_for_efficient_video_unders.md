@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlexiVideo: Variation-Aware Temporal Dynamics Modeling for Efficient Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] FlexiVideo replaces the fixed multi-frame encoding window with a mechanism that first segments video into "internally stable" scene clips based on frame differencing. It then employs a shared 3D convolutional kernel with dynamic temporal window adjustment for scene-level encoding. This approach reduces visual tokens by
+  [CVPR 2026][Video Understanding][Video MLLM] FlexiVideo replaces the fixed multi-frame encoding window with a mechanism that first segments video into "internally stable" scene clips based on frame differencing. It then employs a shared 3D convolutional kernel with dynamic temporal window adjustment for scene-level encoding. This approach reduces visual tokens by 43.5% while consistently outperforming Qwen2.5-VL-3B across six video benchmarks.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video MLLM"
+  - "Temporal Dynamics Modeling"
+  - "Efficient Encoding"
+  - "Visual Confusion"
+  - "Adaptive Segmentation"
 date: 2026-05-08
-content_hash: 6546582b24282aa3
+content_hash: 1c95d84e6a9c23c5
 ---
+
 # FlexiVideo: Variation-Aware Temporal Dynamics Modeling for Efficient Video Understanding
 
 **Conference**: CVPR 2026  
@@ -141,11 +147,11 @@ Fixed vs. Dynamic Encoding (MotionBench @8fps, MLVU @576 frames, identical initi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
+- [\[CVPR 2026\] Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos](dynamics_language-based_representation_for_inferring_rigid-body_dynamics_from_vi.md)
+- [\[CVPR 2026\] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)
 - [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
 - [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](../../AAAI2026/video_understanding/explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
-- [\[CVPR 2026\] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](cluster-wise_spatio-temporal_masking_for_efficient_video-language_pretraining.md)
-- [\[CVPR 2026\] GIFT: Global Irreplaceability Frame Targeting for Efficient Video Understanding](gift_global_irreplaceability_frame_targeting_for_efficient_video_understanding.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 
 </div>
 

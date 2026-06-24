@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring
 description: >-
-  [ICLR 2026][Anomaly Detection][Paper Note] The authors propose W1-ACAS: a post-hoc, tuning-free adaptive conformal anomaly detection framework. It maps prediction errors from pre-trained Time Series Foundation Models (TSFMs) into anomaly scores directly interpretable as false positive rates (p-values) and learns weights online by minimizing the Wasserstein dist
+  [ICLR 2026][Anomaly Detection][Time Series Foundation Models] The authors propose W1-ACAS: a post-hoc, tuning-free adaptive conformal anomaly detection framework. It maps prediction errors from pre-trained Time Series Foundation Models (TSFMs) into anomaly scores directly interpretable as false positive rates (p-values) and learns weights online by minimizing the Wasserstein distance to maintain stable false positive control under non-stationary data.
 tags:
-  - ICLR 2026
-  - Anomaly Detection
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Time Series Foundation Models"
+  - "Conformal Prediction"
+  - "Adaptive Anomaly Detection"
+  - "Signal Monitoring"
+  - "False Positive Rate Control"
 date: 2026-05-08
-content_hash: 279abdb4e5f745e8
+content_hash: fcbd71c503d0b8d1
 ---
+
 # Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring
 
 **Conference**: ICLR 2026  
@@ -121,7 +127,7 @@ flowchart LR
 - [\[ICLR 2026\] Foundation Visual Encoders Are Secretly Few-Shot Anomaly Detectors](foundation_visual_encoders_are_secretly_few-shot_anomaly_detectors.md)
 - [\[ICLR 2026\] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval](mrad_zero-shot_anomaly_detection_with_memory-driven_retrieval.md)
 - [\[ICLR 2026\] ReTabAD: A Benchmark for Restoring Semantic Context in Tabular Anomaly Detection](retabad_a_benchmark_for_restoring_semantic_context_in_tabular_anomaly_detection.md)
-- [\[ICLR 2026\] UniOD: A Universal Model for Outlier Detection across Diverse Domains](uniod_a_universal_model_for_outlier_detection_across_diverse_domains.md)
+- [\[ICLR 2026\] PIRN: Prototypical-based Intra-modal Reconstruction with Normality Communication for Multi-modal Anomaly Detection.](pirn_prototypical-based_intra-modal_reconstruction_with_normality_communication_.md)
 
 </div>
 

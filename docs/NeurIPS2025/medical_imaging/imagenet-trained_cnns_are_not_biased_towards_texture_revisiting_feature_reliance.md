@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression
 description: >-
-  [NeurIPS 2025][Medical Imaging][texture bias] By proposing a systematic feature suppression framework—rather than cue-conflict experiments—this work re-evaluates the feature reliance of CNNs…
+  [NeurIPS 2025 Oral][Medical Imaging][texture bias] By proposing a systematic feature suppression framework—rather than cue-conflict experiments—this work re-evaluates the feature reliance of CNNs, finding that CNNs are not inherently texture-biased but instead rely primarily on local shape features; moreover, feature reliance patterns differ substantially across domains (CV/MI/RS).
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Medical Imaging"
   - "texture bias"
   - "feature reliance"
@@ -12,7 +12,7 @@ tags:
   - "feature suppression"
   - "domain-specific analysis"
 date: 2026-05-08
-content_hash: da5f6a292875ddea
+content_hash: 2f5d1272dbb156af
 ---
 
 # ImageNet-trained CNNs are not biased towards texture: Revisiting feature reliance through controlled suppression
@@ -143,10 +143,10 @@ The same framework is applied across three domains (CV/MI/RS) using a fixed ResN
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting End-to-End Learning with Slide-level Supervision in Computational Pathology](revisiting_end-to-end_learning_with_slide-level_supervision_in_computational_pat.md)
-- [\[NeurIPS 2025\] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback](doctor_approved_generating_medically_accurate_skin_disease_images_through_ai-exp.md)
-- [\[NeurIPS 2025\] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling](dynamic_causal_discovery_in_alzheimers_disease_through_latent_pseudotime_modelli.md)
 - [\[ICCV 2025\] Alleviating Textual Reliance in Medical Language-guided Segmentation via Prototype-driven Semantic Approximation](../../ICCV2025/medical_imaging/alleviating_textual_reliance_in_medical_language-guided_segmentation_via_prototy.md)
-- [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
+- [\[CVPR 2025\] Revisiting MAE Pre-Training for 3D Medical Image Segmentation](../../CVPR2025/medical_imaging/revisiting_mae_pre-training_for_3d_medical_image_segmentation.md)
+- [\[NeurIPS 2025\] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling](dynamic_causal_discovery_in_alzheimers_disease_through_latent_pseudotime_modelli.md)
+- [\[ICML 2025\] Enhancing Statistical Validity and Power in Hybrid Controlled Trials: A Randomization Inference Approach with Conformal Selective Borrowing](../../ICML2025/medical_imaging/enhancing_statistical_validity_and_power_in_hybrid_controlled_trials_a_randomiza.md)
 
 </div>
 

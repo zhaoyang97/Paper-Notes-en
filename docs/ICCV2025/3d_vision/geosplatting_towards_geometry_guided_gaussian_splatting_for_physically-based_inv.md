@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering
 description: >-
-  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes GeoSplatting, which differentiably generates surface-aligned Gaussians from an optimizable explicit mesh to provide accurate geometric guidance for 3DGS…
+  [ICCV 2025][3D Vision][Inverse Rendering] This paper proposes GeoSplatting, which differentiably generates surface-aligned Gaussians from an optimizable explicit mesh to provide accurate geometric guidance for 3DGS, achieving state-of-the-art inverse rendering performance (material–lighting decomposition) with training times of only 10–15 minutes.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Environment Lighting"
   - "Mesh-Guided"
 date: 2026-05-08
-content_hash: 402a4aa02aaf0365
+content_hash: 91fc5e37d4a0b6d9
 ---
 
 # GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering
@@ -153,10 +153,10 @@ Owing to geometry guidance, additional regularization terms such as dist loss or
 
 ## Related Papers
 
+- [\[CVPR 2025\] SVG-IR: Spatially-Varying Gaussian Splatting for Inverse Rendering](../../CVPR2025/3d_vision/svg-ir_spatially-varying_gaussian_splatting_for_inverse_rendering.md)
+- [\[CVPR 2026\] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors](../../CVPR2026/3d_vision/ir-hgp_physically-aware_gaussian_inverse_rendering_for_high-illumination_scenes_.md)
 - [\[CVPR 2026\] SGS-Intrinsic: Semantic-Invariant Gaussian Splatting for Sparse-View Indoor Inverse Rendering](../../CVPR2026/3d_vision/sgs-intrinsic_semantic-invariant_gaussian_splatting_for_sparse-view_indoor_invers.md)
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
-- [\[ICLR 2026\] RadioGS: Radiometrically Consistent Gaussian Surfels for Inverse Rendering](../../ICLR2026/3d_vision/radiogs_radiometric_gaussian_surfels.md)
-- [\[ICCV 2025\] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions](stealthattack_robust_3d_gaussian_splatting_poisoning_via_density-guided_illusion.md)
 - [\[ICCV 2025\] Gaussian Splatting with Discretized SDF for Relightable Assets](gaussian_splatting_with_discretized_sdf_for_relightable_assets.md)
 
 </div>

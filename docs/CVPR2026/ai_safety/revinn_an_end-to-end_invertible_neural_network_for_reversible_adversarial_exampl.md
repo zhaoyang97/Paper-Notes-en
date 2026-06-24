@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RevINN: An End-to-End Invertible Neural Network for Reversible Adversarial Examples Generation
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] RevINN utilizes an Invertible Neural Network (INN) to "exchange/perturb" the image's own high- and low-frequency discriminative information in the wavelet domain, generating Reversible Adversarial Examples (RAEs) in a single step. This approach both misleads unauthorized models and allows authorized users to recover th
+  [CVPR 2026][AI Safety][Reversible Adversarial Examples] RevINN utilizes an Invertible Neural Network (INN) to "exchange/perturb" the image's own high- and low-frequency discriminative information in the wavelet domain, generating Reversible Adversarial Examples (RAEs) in a single step. This approach both misleads unauthorized models and allows authorized users to recover the original image near-losslessly, completely bypassing the degradation in image quality and attack effec…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Reversible Adversarial Examples"
+  - "Invertible Neural Networks"
+  - "Wavelet Domain Attacks"
+  - "Frequency Modulation"
+  - "Image IP Protection"
 date: 2026-05-08
-content_hash: aa97bf0a14dab0d0
+content_hash: 4798961d841aa5d0
 ---
+
 # RevINN: An End-to-End Invertible Neural Network for Reversible Adversarial Examples Generation
 
 **Conference**: CVPR 2026  
@@ -148,15 +154,20 @@ RevINN's RAE average PSNR reaches 46.39dB (6dB higher than the second best), wit
 - Value: ⭐⭐⭐⭐ High engineering value for image IP protection; one step closer to practical anti-crawling deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-- **RAEncoder**: Adversarial Examples for Self-Supervised Learning, 2023.
-- **RAE-RDH**: Reversible Adversarial Examples via Reversible Data Hiding, 2021.
-- **W-RAE**: Wavelet-based Reversible Adversarial Examples, 2024.
+## Related Papers
+
+- [\[CVPR 2026\] Bias at the End of the Score](bias_at_the_end_of_the_score.md)
+- [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)
+- [\[CVPR 2026\] DASH: A Meta-Attack Framework for Synthesizing Effective and Stealthy Adversarial Examples](dash_a_meta-attack_framework_for_synthesizing_effective_and_stealthy_adversarial.md)
+- [\[CVPR 2026\] CamPI: Physical Adversarial Examples through Camera Power Signal Injection](campi_physical_adversarial_examples_through_camera_power_signal_injection.md)
+- [\[CVPR 2026\] AdvFM: Lookahead Flow-Matching Velocity-Field Attacks for Imperceptible and Transferable Adversarial Examples](advfm_lookahead_flow-matching_velocity-field_attacks_for_imperceptible_and_trans.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Verifying Neural Network Robustness with Dual Perturbations](verifying_neural_network_robustness_with_dual_perturbations.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RF-DETR: Neural Architecture Search for Real-Time Detection Transformers
 description: >-
-  [ICLR 2026][Object Detection][DETR] RF-DETR utilizes DINOv2 internet-scale pre-training combined with end-to-end weight-sharing NAS to train a "supernet." This approach allows a single training session to export an entire accuracy-latency Pareto curve via grid search without retraining. It is the first real-time detector to exceed 60 AP on COCO and outpe
+  [ICLR 2026][Object Detection][Real-Time Detection] RF-DETR utilizes DINOv2 internet-scale pre-training combined with end-to-end weight-sharing NAS to train a "supernet." This approach allows a single training session to export an entire accuracy-latency Pareto curve via grid search without retraining. It is the first real-time detector to exceed 60 AP on COCO and outperforms GroundingDINO on the real-world dataset RF100-VL with a 20x speedup.
 tags:
-  - ICLR 2026
-  - Object Detection
-  - DETR
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Real-Time Detection"
+  - "DETR"
+  - "Neural Architecture Search"
+  - "Weight-Sharing"
+  - "Accuracy-Latency Trade-off"
 date: 2026-05-08
-content_hash: 9bc176f6b7e49e79
+content_hash: 3cd488bfe83e200c
 ---
+
 # RF-DETR: Neural Architecture Search for Real-Time Detection Transformers
 
 **Conference**: ICLR 2026  

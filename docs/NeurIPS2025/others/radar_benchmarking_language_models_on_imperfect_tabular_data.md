@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Radar: Benchmarking Language Models on Imperfect Tabular Data
 description: >-
-  [NeurIPS 2025][tabular reasoning] This paper introduces the Radar benchmark, which systematically evaluates language models' data-aware reasoning on imperfect tabular data by injecting five categories of data artifacts (…
+  [NeurIPS 2025][tabular reasoning] This paper introduces the Radar benchmark, which systematically evaluates language models' data-aware reasoning on imperfect tabular data by injecting five categories of data artifacts (missing values, bad values, outliers, formatting inconsistencies, and logical inconsistencies) into real-world tables. The benchmark reveals that even frontier models suffer substantial performance degradation upon the introduction of data artifacts.
 tags:
   - "NeurIPS 2025"
   - "tabular reasoning"
@@ -11,7 +11,7 @@ tags:
   - "language model benchmarking"
   - "robustness evaluation"
 date: 2026-05-08
-content_hash: 4730009a9cd0212e
+content_hash: 896678e3869ad849
 ---
 
 # Radar: Benchmarking Language Models on Imperfect Tabular Data
@@ -133,11 +133,11 @@ Under the Code Agent setting, o4-mini achieves 100% exact match on clean tables,
 
 ## Related Papers
 
+- [\[ACL 2025\] Generating Synthetic Relational Tabular Data via Structural Causal Models](../../ACL2025/others/generating_synthetic_relational_tabular_data_via_structural_causal_models.md)
+- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](../../ICML2026/others/gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
 - [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](../../ICLR2026/others/tabstruct_measuring_structural_fidelity_of_tabular_data.md)
-- [\[ICML 2026\] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features](../../ICML2026/others/cascaded_flow_matching_for_heterogeneous_tabular_data_with_mixed-type_features.md)
+- [\[ICML 2025\] Provably Improving Generalization of Few-Shot Models with Synthetic Data](../../ICML2025/others/provably_improving_generalization_of_few-shot_models_with_synthetic_data.md)
 - [\[NeurIPS 2025\] Brain-Like Processing Pathways Form in Models With Heterogeneous Experts](brain-like_processing_pathways_form_in_models_with_heterogeneous_experts.md)
-- [\[NeurIPS 2025\] Deep Continuous-Time State-Space Models for Marked Event Sequences](deep_continuous-time_state-space_models_for_marked_event_sequences.md)
-- [\[NeurIPS 2025\] Evolutionary Learning in Spatial Agent-Based Models for Physical Climate Risk Assessment](evolutionary_learning_in_spatial_agent-based_models_for_physical_climate_risk_as.md)
 
 </div>
 

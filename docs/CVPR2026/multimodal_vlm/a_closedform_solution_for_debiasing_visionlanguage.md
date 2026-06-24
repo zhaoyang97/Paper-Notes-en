@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] A closed-form solution for VLM debiasing is proposed, achieving Pareto optimal fairness and bounded utility loss through orthogonal decomposition of the attribute subspace in the cross-modal embedding space and Chebyshev scalarization. It is training-free and label-free, uniformly covering zero-shot classification, tex
+  [CVPR 2026][Multimodal VLM][VLM Debiasing] A closed-form solution for VLM debiasing is proposed, achieving Pareto optimal fairness and bounded utility loss through orthogonal decomposition of the attribute subspace in the cross-modal embedding space and Chebyshev scalarization. It is training-free and label-free, uniformly covering zero-shot classification, text-to-image retrieval, and text-to-image generation tasks.
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "VLM Debiasing"
+  - "Closed-form Solution"
+  - "Pareto Optimal Fairness"
+  - "Training-free & Label-free"
+  - "Cross-modal Embedding Space"
 date: 2026-05-08
-content_hash: 37ca373314f01ccc
+content_hash: c75b403d4ca376e0
 ---
+
 # A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks
 
 **Conference**: CVPR 2026  
@@ -161,10 +167,10 @@ The method is entirely training-free, utilizing a pure inference-time closed-for
 ## Related Papers
 
 - [\[CVPR 2026\] Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)
-- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
-- [\[CVPR 2026\] Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)
-- [\[CVPR 2026\] Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)
-- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
+- [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
+- [\[ACL 2025\] Vision-Language Models Struggle to Align Entities across Modalities](../../ACL2025/multimodal_vlm/vision-language_models_struggle_to_align_entities_across_modalities.md)
+- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
+- [\[ACL 2025\] Performance Gap in Entity Knowledge Extraction Across Modalities in Vision Language Models](../../ACL2025/multimodal_vlm/performance_gap_in_entity_knowledge_extraction_across_modalities_in_vision_langu.md)
 
 </div>
 

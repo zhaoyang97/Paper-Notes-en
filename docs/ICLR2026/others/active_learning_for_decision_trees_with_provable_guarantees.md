@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Active Learning for Decision Trees with Provable Guarantees
 description: >-
-  [ICLR 2026][Others][Paper Note] Provides the first theoretical guarantees for active learning of decision trees: (1) Conducts the first analysis of the disagreement coefficient for decision trees and derives an $O(\ln^{OPT}(n))$ upper bound; (2) Proposes the first binary active learning algorithm achieving a $(1+\epsilon)$ multiplicative error guaran
+  [ICLR 2026][Active Learning] Provides the first theoretical guarantees for active learning of decision trees: (1) Conducts the first analysis of the disagreement coefficient for decision trees and derives an $O(\ln^{OPT}(n))$ upper bound; (2) Proposes the first binary active learning algorithm achieving a $(1+\epsilon)$ multiplicative error guarantee; combining these results achieves polylogarithmic label complexity relative to the dataset size.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Active Learning"
+  - "Decision Trees"
+  - "Label Complexity"
+  - "Disagreement Coefficient"
+  - "Multiplicative Error"
 date: 2026-05-08
-content_hash: 698597b877c03778
+content_hash: 8d78e1f66eee0b69
 ---
+
 # Active Learning for Decision Trees with Provable Guarantees
 
 **Conference**: ICLR 2026  
@@ -109,7 +114,7 @@ This work is a purely theoretical contribution; no experimental results are prov
 - [\[ICLR 2026\] From Fields to Random Trees](from_fields_to_random_trees.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](../../AAAI2026/others/from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
-- [\[ICML 2026\] Decision Tree Learning on Product Spaces](../../ICML2026/others/decision_tree_learning_on_product_spaces.md)
+- [\[ICLR 2026\] Exposing Mixture and Annotating Confusion for Active Universal Test-Time Adaptation](exposing_mixture_and_annotating_confusion_for_active_universal_test-time_adaptat.md)
 
 </div>
 

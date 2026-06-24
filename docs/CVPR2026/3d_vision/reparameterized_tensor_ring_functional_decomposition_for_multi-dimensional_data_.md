@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes RepTRFD: a method that addresses the spectral bias issue of INR-parameterized Tensor Ring (TR) factors by reparameterizing them into a "learnable latent tensor $\times$ fixed basis" form, consistently outperforming SOTA in tasks like image inpainting, denoising, super-resolution, and point cloud recovery.
+  [CVPR2026][3D Vision][Tensor Ring Decomposition] Ours proposes RepTRFD: a method that addresses the spectral bias issue of INR-parameterized Tensor Ring (TR) factors by reparameterizing them into a "learnable latent tensor $\times$ fixed basis" form, consistently outperforming SOTA in tasks like image inpainting, denoising, super-resolution, and point cloud recovery.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR2026"
+  - "3D Vision"
+  - "Tensor Ring Decomposition"
+  - "Implicit Neural Representation"
+  - "Reparameterization"
+  - "Image Inpainting"
+  - "Point Cloud Recovery"
+  - "Frequency Analysis"
 date: 2026-05-08
-content_hash: f813f4a88f9be3c7
+content_hash: be51b85b7677b2ba
 ---
+
 # Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
 
 **Conference**: CVPR2026  
@@ -137,16 +144,16 @@ A general framework combining data fidelity and optional regularization is used:
 *   Value: ⭐⭐⭐⭐ — Provides a new TR format and reparameterization paradigm for tensor functional representation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Bayesian Tensor Decomposition with Diffusion Model Prior](../../ICML2026/image_generation/bayesian_tensor_decomposition_with_diffusion_model_prior.md)
-- [\[CVPR 2026\] From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition](from_inpainting_to_layer_decomposition_repurposing_generative_inpainting_models_.md)
-- [\[CVPR 2026\] Functional Mean Flow in Hilbert Space](functional_mean_flow_in_hilbert_space.md)
-- [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
-- [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](../../ICCV2025/image_generation/transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
+- [\[CVPR 2026\] QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition](quadsync_quadrifocal_tensor_synchronization_via_tucker_decomposition.md)
+- [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
+- [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
+- [\[CVPR 2026\] Learning Convex Decomposition via Feature Fields](learning_convex_decomposition_via_feature_fields.md)
+- [\[CVPR 2026\] FunREC: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos](funrec_reconstructing_functional_3d_scenes_from_egocentric_interaction_videos.md)
 
 </div>
 

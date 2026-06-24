@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Vision-centric Token Compression in Large Language Model
 description: >-
-  [NeurIPS 2025][Model Compression][token compression] Vist proposes a vision-centric slow-fast dual-path token compression framework that renders distant long-context text as images and compresses them with a lightweight…
+  [NeurIPS 2025 Spotlight][Model Compression][token compression] Vist proposes a vision-centric slow-fast dual-path token compression framework that renders distant long-context text as images and compresses them with a lightweight vision encoder, coupled with a Probability-guided Visual Enhancement (PVE) training objective. Across 11 ICL benchmarks, it achieves comparable accuracy with 2.3× fewer tokens, reducing FLOPs by 16% and memory by 50%.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "token compression"
   - "vision encoder"
@@ -12,7 +12,7 @@ tags:
   - "in-context learning"
   - "frequency-based masking"
 date: 2026-05-08
-content_hash: f52ca6d5f78c45d0
+content_hash: 70fa6064d39cf342
 ---
 
 # Vision-centric Token Compression in Large Language Model
@@ -134,11 +134,11 @@ Vist (Vision-centric Token Compression) adopts a slow-fast dual-path design:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models](vqtoken_neural_discrete_token_representation_learning_for_extreme_token_reductio.md)
 - [\[ICCV 2025\] B-VLLM: A Vision Large Language Model with Balanced Spatio-Temporal Tokens](../../ICCV2025/model_compression/b-vllm_a_vision_large_language_model_with_balanced_spatio-temporal_tokens.md)
-- [\[NeurIPS 2025\] Less is More but Where: Dynamic Token Compression via LLM-Guided Keyframe Prior](less_is_more_but_where_dynamic_token_compression_via_llm-guided_keyframe_prior.md)
-- [\[NeurIPS 2025\] Correlation Dimension of Auto-Regressive Large Language Models](correlation_dimension_of_auto-regressive_large_language_models.md)
-- [\[NeurIPS 2025\] Restoring Pruned Large Language Models via Lost Component Compensation](restoring_pruned_large_language_models_via_lost_component_compensation.md)
+- [\[ICML 2025\] RADIO: Rate-Distortion Optimization for Large Language Model Compression](../../ICML2025/model_compression/radio_rate-distortion_optimization_for_large_language_model_compression.md)
+- [\[NeurIPS 2025\] VQToken: Neural Discrete Token Representation Learning for Extreme Token Reduction in Video Large Language Models](vqtoken_neural_discrete_token_representation_learning_for_extreme_token_reductio.md)
+- [\[ACL 2025\] Quantification of Large Language Model Distillation](../../ACL2025/model_compression/quantification_of_large_language_model_distillation.md)
+- [\[CVPR 2025\] DyCoke: Dynamic Compression of Tokens for Fast Video Large Language Models](../../CVPR2025/model_compression/dycoke_dynamic_compression_of_tokens_for_fast_video_large_language_models.md)
 
 </div>
 

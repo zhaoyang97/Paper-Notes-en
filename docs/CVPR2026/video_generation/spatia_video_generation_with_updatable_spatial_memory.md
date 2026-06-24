@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatia: Video Generation with Updatable Spatial Memory
 description: >-
-  [CVPR 2026][Video Generation][ControlNet] Spatia equips video generation models with an "updatable spatial memory" by explicitly maintaining the scene as a 3D point cloud. After generating each video segment, the point cloud is updated using visual SLAM, and the point cloud is then projected back to constrain the next stage of generation. This allows the model
+  [CVPR 2026][Video Generation][Long-term video generation] Spatia equips video generation models with an "updatable spatial memory" by explicitly maintaining the scene as a 3D point cloud. After generating each video segment, the point cloud is updated using visual SLAM, and the point cloud is then projected back to constrain the next stage of generation. This allows the model to "remember" visited locations over long sequences while enabling clean separation of static scenes…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - ControlNet
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Long-term video generation"
+  - "spatial memory"
+  - "scene point cloud"
+  - "camera control"
+  - "ControlNet"
 date: 2026-05-08
-content_hash: 4f4b8b3f7953d034
+content_hash: c5aaf91c5bd1aeaf
 ---
+
 # Spatia: Video Generation with Updatable Spatial Memory
 
 **Conference**: CVPR 2026  
@@ -150,15 +155,15 @@ Long-term stability—performance as a function of segment count:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
 - [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
 - [\[CVPR 2026\] Captain Safari: A World Engine with Pose-Aligned 3D Memory](captain_safari_a_world_engine_with_pose-aligned_3d_memory.md)
+- [\[CVPR 2026\] Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)
 - [\[ICML 2026\] iTryOn: Mastering Interactive Video Virtual Try-On with Spatial-Semantic Guidance](../../ICML2026/video_generation/itryon_mastering_interactive_video_virtual_try-on_with_spatial-semantic_guidance.md)
-- [\[CVPR 2025\] MIMO: Controllable Character Video Synthesis with Spatial Decomposed Modeling](../../CVPR2025/video_generation/mimo_controllable_character_video_synthesis_with_spatial_decomposed_modeling.md)
 
 </div>
 

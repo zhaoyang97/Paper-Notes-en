@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking Multimodal LLM Safety via Video-Driven Prompting
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper reveals that the video modality is more susceptible to jailbreaking than the image modality. It proposes SPTV: weaving harmful typographic images into a video that is "proximal to safe data in representation space and sufficiently diverse across frames" via bipartite graph matching. SPTV achieves SOTA jailbr
+  [CVPR 2026][Multimodal VLM][MLLM Jailbreaking] This paper reveals that the video modality is more susceptible to jailbreaking than the image modality. It proposes SPTV: weaving harmful typographic images into a video that is "proximal to safe data in representation space and sufficiently diverse across frames" via bipartite graph matching. SPTV achieves SOTA jailbreak success rates (average 36.4%) across 16 safety policies and 5 open/closed-source MLLMs…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM Jailbreaking"
+  - "Video Modality"
+  - "Typographic Attack"
+  - "Bipartite Graph Matching"
+  - "AI Safety"
 date: 2026-05-08
-content_hash: d4a09723402c1352
+content_hash: c3f07d4aabbea4f3
 ---
+
 # Breaking Multimodal LLM Safety via Video-Driven Prompting
 
 **Conference**: CVPR 2026  
@@ -131,16 +137,16 @@ Image-centric FSD fails to stop SPTV (dropping only to 35.6%), while VSP effecti
 - Value: ⭐⭐⭐⭐⭐ Identifies a significant security blind spot in video MLLMs and provides a practical defense.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](../../ICLR2026/multimodal_vlm/reasoning-driven_multimodal_llm_for_domain_generalization.md)
 - [\[CVPR 2026\] Gravitation-Driven Semantic Alignment for Text Video Retrieval](gravitation-driven_semantic_alignment_for_text_video_retrieval.md)
+- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](../../ACL2026/multimodal_vlm/vill-e_video_llm_embeddings_for_retrieval.md)
 - [\[CVPR 2026\] Breaking the Illusion: When Positive Meets Negative in Multimodal Decoding](breaking_the_illusion_when_positive_meets_negative_in_multimodal_decoding.md)
 - [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
-- [\[CVPR 2026\] Breaking the Regional Perception Bottleneck of Multimodal Large Language Models via External Reasoning Framework](breaking_the_regional_perception_bottleneck_of_multimodal_large_language_models_.md)
+- [\[NeurIPS 2025\] Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs](../../NeurIPS2025/multimodal_vlm/video-safetybench_a_benchmark_for_safety_evaluation_of_video_lvlms.md)
 
 </div>
 

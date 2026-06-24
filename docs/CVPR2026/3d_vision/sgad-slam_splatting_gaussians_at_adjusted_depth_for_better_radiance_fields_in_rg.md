@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM
 description: >-
-  [CVPR 2026][3D Vision][3DGS] The authors propose SGAD-SLAM, which utilizes a pixel-aligned simplified Gaussian representation and allows Gaussians to adjust depth offsets along the ray to improve rendering quality and scalability. A GICP tracking strategy based on geometric similarity is introduced to accelerate camera pose estimation, outperformi
+  [CVPR 2026][3D Vision][3DGS] The authors propose SGAD-SLAM, which utilizes a pixel-aligned simplified Gaussian representation and allows Gaussians to adjust depth offsets along the ray to improve rendering quality and scalability. A GICP tracking strategy based on geometric similarity is introduced to accelerate camera pose estimation, outperforming state-of-the-art methods on Replica, TUM, ScanNet, and ScanNet++.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3DGS
-  - RGBD SLAM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3DGS"
+  - "RGBD SLAM"
+  - "Pixel-aligned Gaussians"
+  - "Depth Offset"
+  - "Generalized ICP"
 date: 2026-05-08
-content_hash: e819954984bdb2ef
+content_hash: 378b79373514770a
 ---
+
 # SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM
 
 **Conference**: CVPR 2026  

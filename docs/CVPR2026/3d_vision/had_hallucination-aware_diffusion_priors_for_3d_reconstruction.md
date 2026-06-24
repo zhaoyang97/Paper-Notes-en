@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the issue where diffusion priors improve image quality but generate non-existent content (hallucination) in sparse-view 3D reconstruction, HAD utilizes a pre-trained feed-forward NVS network (LVSM) as a multi-view encoder paired with a lightweight branch to predict pixel-wise "hallucination score maps." Duri
+  [CVPR2026][3D Vision][Sparse-view Reconstruction] Addressing the issue where diffusion priors improve image quality but generate non-existent content (hallucination) in sparse-view 3D reconstruction, HAD utilizes a pre-trained feed-forward NVS network (LVSM) as a multi-view encoder paired with a lightweight branch to predict pixel-wise "hallucination score maps." During 3DGS training, high-score (unreliable) pixels are masked, and multi-sampling fusion is employed to further…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR2026"
+  - "3D Vision"
+  - "Sparse-view Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Diffusion Priors"
+  - "Hallucination Suppression"
+  - "Novel View Synthesis"
 date: 2026-05-08
-content_hash: 42890cd2d6107ed0
+content_hash: 95514f180cd06a18
 ---
+
 # HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction
 
 **Conference**: CVPR2026  
@@ -147,9 +153,9 @@ Hallucination Scorer comparison (MAE↓): retrained Difix3D 0.058 / Ours w/o pre
 
 - [\[CVPR 2026\] Generative Diffusion Priors for 3D Mapping of the Dark Universe](generative_diffusion_priors_for_3d_mapping_of_the_dark_universe.md)
 - [\[CVPR 2026\] GeoDiff4D: Geometry-Aware Diffusion for 4D Head Avatar Reconstruction](geodiff4d_geometry-aware_diffusion_for_4d_head_avatar_reconstruction.md)
-- [\[CVPR 2026\] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement](dehallu3d_hallucination-mitigated_3d_generation_from_a_single_image_via_cyclic_v.md)
-- [\[CVPR 2026\] AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
+- [\[CVPR 2026\] VDFE: Difference-Aware 3D Scene Editing with Non-Intrusive Video Diffusion Priors for Multi-View Consistency and Efficiency](vdfe_difference-aware_3d_scene_editing_with_non-intrusive_video_diffusion_priors.md)
+- [\[AAAI 2026\] Debiasing Diffusion Priors via 3D Attention for Consistent Gaussian Splatting](../../AAAI2026/3d_vision/debiasing_diffusion_priors_via_3d_attention_for_consistent_gaussian_splatting.md)
+- [\[CVPR 2026\] Scene Reconstruction as Mapping Priors for 3D Detection](scene_reconstruction_as_mapping_priors_for_3d_detection.md)
 
 </div>
 

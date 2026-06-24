@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight
 description: >-
-  [CVPR 2026][Object Detection][Vision-Language Model] LocateAnything3D reformulates monocular multi-object 3D detection as a next-token prediction task for VLMs—first by having the decoder output 2D boxes as a "visual Chain-of-Sight," and then by solving 3D boxes following a curriculum of near-to-far and center→size→rotation. Without any specialized 3D heads, it increases
+  [CVPR 2026][3D Vision][Monocular 3D Detection] LocateAnything3D reformulates monocular multi-object 3D detection as a next-token prediction task for VLMs—first by having the decoder output 2D boxes as a "visual Chain-of-Sight," and then by solving 3D boxes following a curriculum of near-to-far and center→size→rotation. Without any specialized 3D heads, it increases the $AP_{3D}$ on Omni3D from 24.92 to 38.90.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Vision-Language Model
-  - Chain-of-Sight
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular 3D Detection"
+  - "Vision-Language Models"
+  - "Chain-of-Sight"
+  - "Autoregressive Decoding"
+  - "Open-vocabulary"
 date: 2026-05-08
-content_hash: ba6aa8ca3bc38bad
+content_hash: 0e24a15feddc5f65
 ---
+
 # LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight
 
 **Conference**: CVPR 2026  
@@ -152,11 +156,11 @@ Ablation of the three-layer design on Omni3D OUT ($AP_{out3D}$):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mining Instance-Centric Vision-Language Contexts for Human-Object Interaction Detection](mining_instance-centric_vision-language_contexts_for_human-object_interaction_de.md)
-- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
-- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)
-- [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
+- [\[CVPR 2026\] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
+- [\[CVPR 2026\] AREA3D: Active Reconstruction Agent with Unified Feed-Forward 3D Perception and Vision-Language Guidance](area3d_active_reconstruction_agent_with_unified_feed-forward_3d_perception_and_v.md)
+- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](zero-shot_depth_completion_with_vision-language_model.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
 
 </div>
 

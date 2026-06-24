@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Best-of-∞: Asymptotic Performance of Test-Time LLM Ensembling
 description: >-
-  [ICLR 2026][LLM (Other)][best-of-N] This paper frames majority voting as repeated sampling from a model's answer distribution, investigating the limit accuracy as the number of samples $N\to\infty$ (termed best-of-∞). It utilizes Bayes factors for adaptive stopping to approximate this limit within finite budgets and formalizes the "optimal weights for en
+  [ICLR2026][LLM (Other)][best-of-N] This paper frames majority voting as repeated sampling from a model's answer distribution, investigating the limit accuracy as the number of samples $N\to\infty$ (termed best-of-∞). It utilizes Bayes factors for adaptive stopping to approximate this limit within finite budgets and formalizes the "optimal weights for ensembling multiple LLMs" as a Mixed-Integer Linear Programming (MILP) problem, demonstrating that ensembling consistently outp…
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - best-of-N
+  - "ICLR2026"
+  - "LLM (Other)"
+  - "best-of-N"
+  - "majority voting"
+  - "adaptive sampling"
+  - "Bayes factor"
+  - "mixed-integer linear programming"
 date: 2026-05-08
-content_hash: 459fe4856eb29fcb
+content_hash: f827784d0d0de5df
 ---
+
 # Best-of-∞: Asymptotic Performance of Test-Time LLM Ensembling
 
 **Conference**: ICLR2026  
@@ -138,10 +143,20 @@ Majority voting outperforms Reward Models and LLM-as-a-judge under the same Bo5 
 - Value: ⭐⭐⭐⭐ Provides a theoretically grounded and practical framework for test-time compute allocation and ensembling.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2025\] BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](../../ICML2025/llm_nlp/best-route_adaptive_llm_routing_with_test-time_optimal_compute.md)
+- [\[ICML 2026\] Rethinking LLM Ensembling from the Perspective of Mixture Models](../../ICML2026/llm_nlp/rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)
+- [\[CVPR 2025\] Test-Time Visual In-Context Tuning](../../CVPR2025/llm_nlp/test-time_visual_in-context_tuning.md)
+- [\[ACL 2025\] TestNUC: Enhancing Test-Time Computing Approaches and Scaling through Neighboring Unlabeled Data Consistency](../../ACL2025/llm_nlp/testnuc_enhancing_test-time_computing_approaches_and_scaling_through_neighboring.md)
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2025\] BEST-Route: Adaptive LLM Routing with Test-Time Optimal Compute](../../ICML2025/llm_nlp/best-route_adaptive_llm_routing_with_test-time_optimal_compute.md)

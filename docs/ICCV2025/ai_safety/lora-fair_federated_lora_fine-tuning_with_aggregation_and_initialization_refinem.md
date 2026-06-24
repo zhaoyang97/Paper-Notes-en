@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement
 description: >-
-  [ICCV 2025][AI Safety][federated learning] This paper proposes LoRA-FAIR, which introduces a server-side residual correction term $\Delta\mathbf{B}$ to simultaneously address two fundamental challenges in federated LoRA…
+  [ICCV 2025][AI Safety][federated learning] This paper proposes LoRA-FAIR, which introduces a server-side residual correction term $\Delta\mathbf{B}$ to simultaneously address two fundamental challenges in federated LoRA fine-tuning — server-side aggregation bias and client-side initialization staleness — consistently outperforming existing federated fine-tuning methods on ViT and MLP-Mixer without incurring additional communication overhead.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "aggregation bias"
   - "foundation models"
 date: 2026-05-08
-content_hash: ca571ed75d3aaa1b
+content_hash: c3fad4ecd411d2a0
 ---
 
 # LoRA-FAIR: Federated LoRA Fine-Tuning with Aggregation and Initialization Refinement
@@ -127,11 +127,11 @@ Each training round proceeds as follows: clients perform local LoRA training →
 
 ## Related Papers
 
-- [\[AAAI 2026\] Fine-Grained DINO Tuning with Dual Supervision for Face Forgery Detection](../../AAAI2026/ai_safety/fine-grained_dino_tuning_with_dual_supervision_for_face_forgery_detection.md)
-- [\[ICML 2026\] PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA](../../ICML2026/ai_safety/prism_gauge-invariant_tangent-space_differentially_private_lora.md)
-- [\[ICLR 2026\] Co-LoRA: Collaborative Model Personalization on Heterogeneous Multi-Modal Clients](../../ICLR2026/ai_safety/co-lora_collaborative_model_personalization_on_heterogeneous_multi-modal_clients.md)
-- [\[AAAI 2026\] Plug-and-Play Parameter-Efficient Tuning of Embeddings for Federated Recommendation](../../AAAI2026/ai_safety/plug-and-play_parameter-efficient_tuning_of_embeddings_for_federated_recommendat.md)
+- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](../../ICML2026/ai_safety/fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
+- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](../../ICML2026/ai_safety/decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ICLR 2026\] Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models](../../ICLR2026/ai_safety/rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md)
 - [\[ICCV 2025\] FedMeNF: Privacy-Preserving Federated Meta-Learning for Neural Fields](fedmenf_privacy-preserving_federated_meta-learning_for_neural_fields.md)
+- [\[ICCV 2025\] Find a Scapegoat: Poisoning Membership Inference Attack and Defense to Federated Learning](find_a_scapegoat_poisoning_membership_inference_attack_and_defense_to_federated_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] To address the lack of object-level annotation data in Dense Video Object Captioning (DVOC), this paper employs a VLM (Gemini 2.0 Flash) to automatically generate object-level captions for videos with drawn bounding boxes. By augmenting LVIS/LV-VIS into the first DVOC training sets (LVISCap / LV-VISCap) containing (mas
+  [CVPR 2026][Video Understanding][Dense Video Object Captioning] To address the lack of object-level annotation data in Dense Video Object Captioning (DVOC), this paper employs a VLM (Gemini 2.0 Flash) to automatically generate object-level captions for videos with drawn bounding boxes. By augmenting LVIS/LV-VIS into the first DVOC training sets (LVISCap / LV-VISCap) containing (mask, box, category, caption) quadruplets, the authors train CaptionFormer—the first end-to-end mod…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Dense Video Object Captioning"
+  - "Video Instance Segmentation"
+  - "Multi-Object Tracking"
+  - "VLM Synthetic Data"
+  - "End-to-End"
 date: 2026-05-08
-content_hash: 6b5f4642706798aa
+content_hash: eee69cc6042c6a89
 ---
+
 # CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ On VLN, CapA increased by 5.2; on BenSMOT, CIDEr increased by 14.7 (39.9 vs DVOC
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
-- [\[CVPR 2026\] Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning](follow_the_saliency_supervised_saliency_for_retrieval-augmented_dense_video_capt.md)
-- [\[ECCV 2024\] VP-SAM: Taming Segment Anything Model for Video Polyp Segmentation via Disentanglement and Spatio-Temporal Side Network](../../ECCV2024/segmentation/vp-sam_taming_segment_anything_model_for_video_polyp_segmentation_via_disentangl.md)
-- [\[CVPR 2026\] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)
-- [\[AAAI 2026\] Tracking and Segmenting Anything in Any Modality](../../AAAI2026/segmentation/tracking_and_segmenting_anything_in_any_modality.md)
+- [\[CVPR 2026\] TGTrack: Temporal Generative Learning for Unified Single Object Tracking](tgtrack_temporal_generative_learning_for_unified_single_object_tracking.md)
+- [\[CVPR 2026\] Spatio-Temporal Conditional Denoising Transformer for Modality-Missing RGBT Tracking](spatio-temporal_conditional_denoising_transformer_for_modality-missing_rgbt_trac.md)
+- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
+- [\[CVPR 2026\] Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining](cluster-wise_spatio-temporal_masking_for_efficient_video-language_pretraining.md)
+- [\[CVPR 2026\] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)
 
 </div>
 

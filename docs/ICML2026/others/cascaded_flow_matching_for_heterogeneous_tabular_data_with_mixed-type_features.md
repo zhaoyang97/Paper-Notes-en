@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features
 description: >-
-  [ICML 2026][Others][Flow matching] TabCascade decomposes tabular rows into two cascaded segments: "low-resolution (categorical + discretized version of numerical)" and "high-resolution (continuous numerical)". It first learns the low-resolution joint distribution using CDTD and then generates numerical details using flow matching guided by the low-resol
+  [ICML 2026][Flow matching] TabCascade decomposes tabular rows into two cascaded segments: "low-resolution (categorical + discretized version of numerical)" and "high-resolution (continuous numerical)". It first learns the low-resolution joint distribution using CDTD and then generates numerical details using flow matching guided by the low-resolution information. Transport costs are tightened through data-dependent coupling and learnable non-linear time schedules. It natively…
 tags:
-  - ICML 2026
-  - Others
-  - Flow matching
+  - "ICML 2026"
+  - "Flow matching"
+  - "Cascaded diffusion"
+  - "Tabular data"
+  - "Mixed-type features"
+  - "Missing value generation"
 date: 2026-05-08
-content_hash: b77743c39e51c8d0
+content_hash: 18055beb59b83f80
 ---
+
 # Cascaded Flow Matching for Heterogeneous Tabular Data with Mixed-Type Features
 
 **Conference**: ICML 2026  
@@ -147,11 +151,11 @@ Motivational experiments (from Figure 2):
 
 ## Related Papers
 
+- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
 - [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](../../ICLR2026/others/tabstruct_measuring_structural_fidelity_of_tabular_data.md)
 - [\[ICML 2025\] Score Matching with Missing Data](../../ICML2025/others/score_matching_with_missing_data.md)
-- [\[ICML 2026\] GOTabPFN: From Feature Ordering to Compact Tokenization for Tabular Foundation Models on High-Dimensional Data](gotabpfn_from_feature_ordering_to_compact_tokenization_for_tabular_foundation_mo.md)
+- [\[ICML 2026\] TabSwift: An Efficient Tabular Foundation Model with Row-Wise Attention](tabswift_an_efficient_tabular_foundation_model_with_row-wise_attention.md)
 - [\[AAAI 2026\] Cash Flow Underwriting with Bank Transaction Data: Advancing MSME Financial Inclusion in Malaysia](../../AAAI2026/others/cash_flow_underwriting_with_bank_transaction_data_advancing_msme_financial_inclu.md)
-- [\[NeurIPS 2025\] Radar: Benchmarking Language Models on Imperfect Tabular Data](../../NeurIPS2025/others/radar_benchmarking_language_models_on_imperfect_tabular_data.md)
 
 </div>
 

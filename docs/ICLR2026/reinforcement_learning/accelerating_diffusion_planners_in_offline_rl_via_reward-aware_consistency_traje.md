@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] RACTD integrates reward optimization objectives directly into the consistency trajectory distillation process. Using a pretrained diffusion teacher planner and an independently trained noise-free reward model, it distills a **single-step sampling** student planner. It outperforms the previous SOTA by 9.7% on average in
+  [ICLR2026][Reinforcement Learning][Offline RL] RACTD integrates reward optimization objectives directly into the consistency trajectory distillation process. Using a pretrained diffusion teacher planner and an independently trained noise-free reward model, it distills a **single-step sampling** student planner. It outperforms the previous SOTA by 9.7% on average in D4RL while being up to 142 times faster in inference than the diffusion teacher.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Diffusion Planner"
+  - "Consistency Trajectory Distillation"
+  - "Reward Guidance"
+  - "One-step sampling"
 date: 2026-05-08
-content_hash: b0d3cb5527f6e06c
+content_hash: 72762d088cdc592b
 ---
+
 # Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation
 
 **Conference**: ICLR2026  
@@ -147,11 +153,11 @@ Inference speed (hopper-medium-replay, V100): RACTD student takes 0.015s (NFE=1,
 
 ## Related Papers
 
-- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](../../ICML2026/reinforcement_learning/darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
-- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
+- [\[ICML 2026\] MoMa QL: Accelerating Diffusion/Flow Matching Policies for Offline and Offline-to-Online RL via Moment Matching](../../ICML2026/reinforcement_learning/moment_matching_q-learning.md)
 - [\[ICLR 2026\] Improving and Accelerating Offline RL in Large Discrete Action Spaces with Structured Policy Initialization](improving_and_accelerating_offline_rl_in_large_discrete_action_spaces_with_struc.md)
-- [\[ICLR 2026\] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning](beyond_penalization_diffusion-based_out-of-distribution_detection_and_selective_.md)
-- [\[ICLR 2026\] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL](deas_detached_value_learning_with_action_sequence_for_scalable_offline_rl.md)
+- [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](../../ICML2026/reinforcement_learning/darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
+- [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
+- [\[ICLR 2026\] Ada-Diffuser: Latent-Aware Adaptive Diffusion for Decision-Making](ada-diffuser_latent-aware_adaptive_diffusion_for_decision-making.md)
 
 </div>
 

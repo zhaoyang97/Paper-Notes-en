@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AVGGT: Rethinking Global Attention for Accelerating VGGT
 description: >-
-  [CVPR 2026][Others][Paper Note] Through a layer-wise dissection of the actual role of global attention in VGGT/π³ (early layers being ineffective, middle layers performing cross-view alignment, and final layers doing fine-tuning), a training-free two-step acceleration scheme is proposed. It replaces early global layers with intra-frame attention and
+  [CVPR 2026][3D Vision][VGGT acceleration] Through a layer-wise dissection of the actual role of global attention in VGGT/π³ (early layers being ineffective, middle layers performing cross-view alignment, and final layers doing fine-tuning), a training-free two-step acceleration scheme is proposed. It replaces early global layers with intra-frame attention and applies grid subsampling to K/V for the remaining global layers, achieving an 8–10× inference speedup for 800-frame in…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "3D Vision"
+  - "VGGT acceleration"
+  - "Global Attention"
+  - "K/V subsampling"
+  - "multi-view 3D reconstruction"
+  - "training-free"
 date: 2026-05-08
-content_hash: 022ffcf16c52ef1e
+content_hash: 5e5a11ca47e81342
 ---
+
 # AVGGT: Rethinking Global Attention for Accelerating VGGT
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ FastVGGT/FasterVGGT are even slower than the original model on short sequences (
 
 ## Related Papers
 
-- [\[CVPR 2026\] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)
-- [\[CVPR 2026\] Global Underwater Geolocation from Time-Lapse Polarization Imagery](global_underwater_geolocation_from_time-lapse_polarization_imagery.md)
-- [\[CVPR 2026\] OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance](ontoaug_rethinking_generative_data_augmentation_via_ontology_guidance.md)
-- [\[CVPR 2026\] Beyond Global Similarity: Multi-Conditional Retrieval for Fine-Grained Cross-Modal Understanding](beyond_global_similarity_multi-conditional_retrieval_for_fine-grained_cross-moda.md)
-- [\[CVPR 2026\] MUFASA: A Multi-Layer Framework for Slot Attention](mufasa_a_multi-layer_framework_for_slot_attention.md)
+- [\[CVPR 2026\] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers](block-sparse_global_attention_for_efficient_multi-view_geometry_transformers.md)
+- [\[CVPR 2026\] VGGT-$\Omega$](vggt-ω.md)
+- [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
+- [\[AAAI 2026\] Enhancing Rotation-Invariant 3D Learning with Global Pose Awareness and Attention Mechanisms](../../AAAI2026/3d_vision/enhancing_rotation-invariant_3d_learning_with_global_pose_awareness_and_attentio.md)
+- [\[CVPR 2026\] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields](turbo-gs_accelerating_3d_gaussian_fitting_for_high-quality_radiance_fields.md)
 
 </div>
 

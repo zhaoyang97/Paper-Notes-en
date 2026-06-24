@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][minimum spanning tree] This paper proposes T-REGS — a self-supervised learning regularization framework based on maximizing the length of the minimum spanning tree (MST). The auth…
+  [NeurIPS 2025][Self-Supervised Learning][minimum spanning tree] This paper proposes T-REGS — a self-supervised learning regularization framework based on maximizing the length of the minimum spanning tree (MST). The authors theoretically prove that the method simultaneously prevents dimensional collapse and promotes uniform distribution of representations on compact Riemannian manifolds, with empirical validation on standard JE-SSL benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -11,7 +11,7 @@ tags:
   - "uniformity"
   - "regularization"
 date: 2026-05-08
-content_hash: ffe541629a474db7
+content_hash: f1481b289b257334
 ---
 
 # T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning

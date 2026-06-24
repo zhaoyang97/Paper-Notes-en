@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Table Understanding] TableDART is proposed, which dynamically selects the optimal processing path (Text-only / Image-only / Fusion) for each query-table pair via an MLP gating network with only 2.59M parameters. By reusing frozen unimodal expert models and introducing an LLM Agent for cross-modal fusion, it outperforms the strongest MLLM b
+  [ICLR 2026][Multimodal VLM][Table Understanding] TableDART is proposed, which dynamically selects the optimal processing path (Text-only / Image-only / Fusion) for each query-table pair via an MLP gating network with only 2.59M parameters. By reusing frozen unimodal expert models and introducing an LLM Agent for cross-modal fusion, it outperforms the strongest MLLM baseline, HIPPO, by an average of 4.02% across 7 table understanding benchmarks while reducing latency by 24.5%.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Table Understanding
-  - Dynamic Routing
-  - Multi-modal Fusion
-  - Gating Network
-  - LLM Agent
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Table Understanding"
+  - "Dynamic Routing"
+  - "Multi-modal Fusion"
+  - "Gating Network"
+  - "LLM Agent"
 date: 2026-05-08
-content_hash: b8b7aa8b7ff67917
+content_hash: a343fdc92d862da8
 ---
+
 # TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding
 
 **Conference**: ICLR 2026  
@@ -150,15 +151,16 @@ Dynamic routing outperforms non-adaptive fusion on TABMWP (+3.07) and HiTab (+1.
 - Value: ⭐⭐⭐⭐ Provides a training-efficient multimodal fusion paradigm with broad applicability for table understanding and multi-expert systems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
 - [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
 - [\[CVPR 2026\] Multi-modal Test-time Adaptation via Adaptive Probabilistic Gaussian Calibration](../../CVPR2026/multimodal_vlm/multi-modal_test-time_adaptation_via_adaptive_probabilistic_gaussian_calibration.md)
 - [\[ICML 2026\] Task-Aware Structured Memory for Dynamic Multi-modal In-Context Learning](../../ICML2026/multimodal_vlm/task-aware_structured_memory_for_dynamic_multi-modal_in-context_learning.md)
-- [\[CVPR 2026\] Multi-SpatialMLLM: Multi-Frame Spatial Understanding with Multi-Modal Large Language Models](../../CVPR2026/multimodal_vlm/multi-spatialmllm_multi-frame_spatial_understanding_with_multi-modal_large_langu.md)
-- [\[ICLR 2026\] OmniVinci: Enhancing Architecture and Data for Omni-Modal Understanding LLM](omnivinci_enhancing_architecture_and_data_for_omni-modal_understanding_llm.md)
+- [\[AAAI 2026\] TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing](../../AAAI2026/multimodal_vlm/tabflash_efficient_table_understanding_with_progressive_question_conditioning_an.md)
 
 </div>
 

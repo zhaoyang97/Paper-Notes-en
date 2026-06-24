@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Arcadia: Toward a Full-Lifecycle Framework for Embodied Lifelong Learning
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Arcadia redefines embodied learning from "single-stage optimization" to a "full-lifecycle problem," utilizing a tightly coupled real→sim→real loop to string together autonomous exploration, generative scene reconstruction, shared navigation/manipulation backbones, and deployment feedback into a self-improving system. I
+  [CVPR 2026][Robotics][Embodied Lifelong Learning] Arcadia redefines embodied learning from "single-stage optimization" to a "full-lifecycle problem," utilizing a tightly coupled real→sim→real loop to string together autonomous exploration, generative scene reconstruction, shared navigation/manipulation backbones, and deployment feedback into a self-improving system. It achieves average improvements of 7.07% and 11.08% on navigation and manipulation benchmarks respectively…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Embodied Lifelong Learning"
+  - "real-to-sim-to-real closed loop"
+  - "generative scene reconstruction"
+  - "shared multimodal backbone"
+  - "deployment feedback"
 date: 2026-05-08
-content_hash: ecd3aa83702ff761
+content_hash: 56e8aa4ab81a1cec
 ---
+
 # Arcadia: Toward a Full-Lifecycle Framework for Embodied Lifelong Learning
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ Replacing the four modules with sub-optimal alternatives one by one to see the d
 
 ## Related Papers
 
+- [\[ICLR 2026\] Lifelong Embodied Navigation Learning](../../ICLR2026/robotics/lifelong_embodied_navigation_learning.md)
 - [\[CVPR 2026\] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment](lifelong_imitation_learning_multimodal_latent_rep.md)
-- [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](../../NeurIPS2025/robotics/mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
 - [\[CVPR 2026\] Dejavu: Towards Experience Feedback Learning for Embodied Intelligence](dejavu_towards_experience_feedback_learning_for_embodied_intelligence.md)
 - [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
-- [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
+- [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](../../NeurIPS2025/robotics/mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
 
 </div>
 

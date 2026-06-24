@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Riemannian High-Order Pooling for Brain Foundation Models
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] To address the issue of EEG foundation models typically relying on a single CLS token and discarding spatio-temporal second-order statistics, this paper proposes RHOP, a plug-and-play Riemannian High-Order Pooling head. Each token is encoded as a scale-invariant quotient Gaussian and embedded into the SPD manifold, the
+  [ICLR 2026][Computational Biology][EEG Foundation Models] To address the issue of EEG foundation models typically relying on a single CLS token and discarding spatio-temporal second-order statistics, this paper proposes RHOP, a plug-and-play Riemannian High-Order Pooling head. Each token is encoded as a scale-invariant quotient Gaussian and embedded into the SPD manifold, then aggregated across tokens using Riemannian Gaussians (Fréchet mean + tangent space covariance). Final…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "EEG Foundation Models"
+  - "SPD Manifold"
+  - "Quotient Gaussian Embedding"
+  - "Riemannian Gaussian"
+  - "Global Covariance Pooling"
 date: 2026-05-08
-content_hash: f9c5f1d7b830208a
+content_hash: d9099aae6c19e35d
 ---
+
 # Riemannian High-Order Pooling for Brain Foundation Models
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Next-Scale Autoregressive Models for Text-to-Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] MoScale proposes a next-scale autoregressive motion generation framework that replaces traditional next-token prediction. By employing coarse-to-fine hierarchical causal generation to capture global semantic structures, and introducing cross-scale hierarchical refinement alongside intra-scale temporal refinement, it ac
+  [CVPR 2026][Human Understanding][Text-to-motion generation] MoScale proposes a next-scale autoregressive motion generation framework that replaces traditional next-token prediction. By employing coarse-to-fine hierarchical causal generation to capture global semantic structures, and introducing cross-scale hierarchical refinement alongside intra-scale temporal refinement, it achieves SOTA results on HumanML3D and KIT-ML (Top-1 0.540, FID 0.046).
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-to-motion generation"
+  - "autoregressive models"
+  - "multi-scale prediction"
+  - "hierarchical generation"
+  - "motion synthesis"
 date: 2026-05-08
-content_hash: 572a9c735cd85820
+content_hash: ee82c84744d6ec53
 ---
+
 # Next-Scale Autoregressive Models for Text-to-Motion Generation
 
 **Conference**: CVPR 2026  
@@ -158,11 +164,11 @@ Text Complexity Analysis (Top-3):
 
 ## Related Papers
 
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
 - [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 - [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
 - [\[CVPR 2026\] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models](towards_decompositional_human_motion_generation_with_energy-based_diffusion_mode.md)
-- [\[CVPR 2026\] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation](molingo_motion-language_alignment_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] To address the "exploration dilemma" in Reinforcement Learning with Verifiable Rewards (RLVR), where pre-trained LLMs only strengthen existing sparse solutions leading to stagnant or declining diversity (pass@k), this paper constructs a risk-seeking objective using exponential utility that smoothly interpolates between
+  [ICLR 2026][Reinforcement Learning][Risk-sensitive RL] To address the "exploration dilemma" in Reinforcement Learning with Verifiable Rewards (RLVR), where pre-trained LLMs only strengthen existing sparse solutions leading to stagnant or declining diversity (pass@k), this paper constructs a risk-seeking objective using exponential utility that smoothly interpolates between "mean reward" and "max reward." This derives the RS-GRPO algorithm, which requires only modifying the ad…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - pass@k
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Risk-sensitive RL"
+  - "RLVR"
+  - "Exploration Dilemma"
+  - "pass@k"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 0d0c4469cdcac5f7
+content_hash: 05a8d5b010dc6580
 ---
+
 # Risk-Sensitive Reinforcement Learning for Alleviating Exploration Dilemmas in Large Language Models
 
 **Conference**: ICLR 2026  
@@ -144,8 +147,8 @@ Training dynamics analysis for $\beta\in\{0,2,4,8\}$ on Qwen2.5-Math ($\beta=0$ 
 - [\[ICLR 2026\] CDE: Curiosity-Driven Exploration for Efficient Reinforcement Learning in Large Language Models](cde_curiosity-driven_exploration_for_efficient_reinforcement_learning_in_large_l.md)
 - [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
+- [\[AAAI 2026\] Risk-Sensitive Exponential Actor Critic](../../AAAI2026/reinforcement_learning/risk-sensitive_exponential_actor_critic.md)
 - [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
-- [\[ICLR 2026\] Toward Efficient Exploration by Large Language Model Agents](toward_efficient_exploration_by_large_language_model_agents.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bi-Level Optimization for Self-Supervised AI-Generated Face Detection
 description: >-
-  [ICCV 2025][Human Understanding][AI-generated face detection] This paper proposes BLADES, a method that employs bi-level optimization to explicitly align self-supervised pretraining with the AI-generated face detection o…
+  [ICCV 2025][Human Understanding][AI-generated face detection] This paper proposes BLADES, a method that employs bi-level optimization to explicitly align self-supervised pretraining with the AI-generated face detection objective. The inner loop optimizes a visual encoder on pretext tasks including EXIF classification/ranking and face manipulation detection, while the outer loop optimizes task weights to improve performance on a proxy detection task…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "EXIF metadata"
   - "anomaly detection"
 date: 2026-05-08
-content_hash: 9ba8efc36f276d23
+content_hash: ec059c6096ad3ff8
 ---
 
 # Bi-Level Optimization for Self-Supervised AI-Generated Face Detection
@@ -139,11 +139,11 @@ The system consists of two stages: (1) bi-level optimization-driven self-supervi
 
 ## Related Papers
 
+- [\[ECCV 2024\] VideoClusterNet: Self-Supervised and Adaptive Face Clustering for Videos](../../ECCV2024/human_understanding/videoclusternet_self-supervised_and_adaptive_face_clustering_for_videos.md)
 - [\[ICCV 2025\] LVFace: Progressive Cluster Optimization for Large Vision Models in Face Recognition](lvface_progressive_cluster_optimization_for_large_vision_models_in_face_recognit.md)
-- [\[CVPR 2026\] RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised HOI Detection](../../CVPR2026/human_understanding/regformer_transferable_relational_grounding_for_weakly-supervised_hoi_detection.md)
-- [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
+- [\[CVPR 2025\] FSFM: A Generalizable Face Security Foundation Model via Self-Supervised Facial Representation Learning](../../CVPR2025/human_understanding/fsfm_a_generalizable_face_security_foundation_model_via_self-supervised_facial_r.md)
+- [\[ECCV 2024\] Pose-Aware Self-Supervised Learning with Viewpoint Trajectory Regularization](../../ECCV2024/human_understanding/pose-aware_self-supervised_learning_with_viewpoint_trajectory_regularization.md)
 - [\[ICCV 2025\] Weakly Supervised Visible-Infrared Person Re-Identification via Heterogeneous Expert Collaborative Consistency Learning](weakly_supervised_visible-infrared_person_re-identification_via_heterogeneous_ex.md)
-- [\[NeurIPS 2025\] DevFD: Developmental Face Forgery Detection by Learning Shared and Orthogonal LoRA Subspaces](../../NeurIPS2025/human_understanding/devfd_developmental_face_forgery_detection_by_learning_shared_and_orthogonal_lor.md)
 
 </div>
 

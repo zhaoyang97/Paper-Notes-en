@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Random Search Neural Networks for Efficient and Expressive Graph Learning
 description: >-
-  [NeurIPS 2025][Computational Biology][Graph Neural Networks] This paper proposes Random Search Neural Networks (RSNN), which replace random walks with randomized depth-first search (DFS) for graph structure sampling. On…
+  [NeurIPS 2025][Computational Biology][Graph Neural Networks] This paper proposes Random Search Neural Networks (RSNN), which replace random walks with randomized depth-first search (DFS) for graph structure sampling. On sparse graphs, RSNN achieves complete edge coverage with only $O(\log|V|)$ searches. Paired with a universal sequence model, RSNN attains universal approximation capability, and consistently outperforms RWNN on molecular and protein benchmarks using up to 16×…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "Universal Approximation"
   - "Isomorphism Invariance"
 date: 2026-05-08
-content_hash: 8aac53c872573730
+content_hash: 463c719ab55e6394
 ---
 
 # Random Search Neural Networks for Efficient and Expressive Graph Learning
@@ -151,11 +151,11 @@ RSNN achieves AUC improvements exceeding 10 percentage points at $m=1$ on large-
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[CVPR 2026\] Hyperbolic Busemann Neural Networks](../../CVPR2026/computational_biology/hyperbolic_busemann_neural_networks.md)
 - [\[NeurIPS 2025\] Autoencoding Random Forests](autoencoding_random_forests.md)
-- [\[NeurIPS 2025\] Generative Modeling of Full-Atom Protein Conformations using Latent Diffusion on Graph Embeddings](generative_modeling_of_full-atom_protein_conformations_using_latent_diffusion_on.md)
-- [\[NeurIPS 2025\] Graph Diffusion that can Insert and Delete](graph_diffusion_that_can_insert_and_delete.md)
+- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
+- [\[ICML 2026\] Supervised Graph Contrastive Learning for Gene Regulatory Networks](../../ICML2026/computational_biology/supervised_graph_contrastive_learning_for_gene_regulatory_networks.md)
+- [\[CVPR 2026\] Hyperbolic Busemann Neural Networks](../../CVPR2026/computational_biology/hyperbolic_busemann_neural_networks.md)
+- [\[ICML 2025\] Geometric Generative Modeling with Noise-Conditioned Graph Networks](../../ICML2025/computational_biology/geometric_generative_modeling_with_noise-conditioned_graph_networks.md)
 
 </div>
 

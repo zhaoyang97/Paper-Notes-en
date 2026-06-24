@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge
 description: >-
-  [ICLR 2026][Video Generation][Temporal Attention Score] Addressing the phenomenon where the decoding phase of auto-regressive (AR) video generation is dominated by MLP modules and adjacent frames exhibit highly similar MLP outputs, FastCar utilizes the "Temporal Attention Score (TAS)" to determine when to directly reuse cached MLP outputs from the previous frame to skip com
+  [ICLR 2026][Video Generation][Auto-regressive Video Generation] Addressing the phenomenon where the decoding phase of auto-regressive (AR) video generation is dominated by MLP modules and adjacent frames exhibit highly similar MLP outputs, FastCar utilizes the "Temporal Attention Score (TAS)" to determine when to directly reuse cached MLP outputs from the previous frame to skip computations. Accompanied by an FPGA accelerator with dynamic resource scheduling…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Temporal Attention Score
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Auto-regressive Video Generation"
+  - "MLP Reuse"
+  - "Temporal Redundancy"
+  - "Temporal Attention Score"
+  - "FPGA Accelerator"
+  - "Edge Inference"
 date: 2026-05-08
-content_hash: d5fa4a7d1efe28e3
+content_hash: d268e8b7e853052a
 ---
+
 # FastCar: Cache Attentive Replay for Fast Auto-Regressive Video Generation on the Edge
 
 **Conference**: ICLR 2026  
@@ -126,8 +132,8 @@ FastCar is orthogonally complementary to sparse attention: the combination resto
 - [\[ICML 2026\] Quant VideoGen: Auto-Regressive Long Video Generation via 2-Bit KV-Cache Quantization](../../ICML2026/video_generation/quant_videogen_auto-regressive_long_video_generation_via_2-bit_kv-cache_quantiza.md)
 - [\[CVPR 2026\] Towards Holistic Modeling for Video Frame Interpolation with Auto-regressive Diffusion Transformers](../../CVPR2026/video_generation/towards_holistic_modeling_for_video_frame_interpolation_with_auto-regressive_dif.md)
 - [\[NeurIPS 2025\] MagCache: Fast Video Generation with Magnitude-Aware Cache](../../NeurIPS2025/video_generation/magcache_fast_video_generation_with_magnitudeaware_cache.md)
-- [\[ICLR 2026\] Flow Caching for Autoregressive Video Generation](flow_caching_for_autoregressive_video_generation.md)
-- [\[ICLR 2026\] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation](moga_mixture-of-groups_attention_for_end-to-end_long_video_generation.md)
+- [\[CVPR 2026\] Transition Matching Distillation for Fast Video Generation](../../CVPR2026/video_generation/transition_matching_distillation_for_fast_video_generation.md)
+- [\[CVPR 2026\] SURF: Signature-Retained Fast Video Generation](../../CVPR2026/video_generation/surf_signature-retained_fast_video_generation.md)
 
 </div>
 

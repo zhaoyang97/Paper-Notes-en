@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Think before Recommendation: Autonomous Reasoning-enhanced Recommender
 description: >-
-  [NeurIPS 2025][Recommender Systems][LLM] This paper proposes RecZero (a pure RL paradigm) and RecOne (a hybrid SFT+RL paradigm), abandoning conventional teacher-student distillation. Both approaches leverage GRPO-based r…
+  [NeurIPS 2025][Recommender Systems][LLM] This paper proposes RecZero (a pure RL paradigm) and RecOne (a hybrid SFT+RL paradigm), abandoning conventional teacher-student distillation. Both approaches leverage GRPO-based reinforcement learning to train a single LLM to autonomously develop reasoning capabilities for rating prediction. A structured "Think-before-Recommendation" template guides step-by-step reasoning (user analysis → item analysis → matching → rating)…
 tags:
   - "NeurIPS 2025"
   - "Recommender Systems"
@@ -13,7 +13,7 @@ tags:
   - "Rating Prediction"
   - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: cf9657eae0cc85a8
+content_hash: cd020e3e3a5b2e86
 ---
 
 # Think before Recommendation: Autonomous Reasoning-enhanced Recommender
@@ -140,10 +140,10 @@ RecZero follows a pure RL paradigm: given user history and a target item, the LL
 ## Related Papers
 
 - [\[NeurIPS 2025\] R²ec: Towards Large Recommender Models with Reasoning](r2ec_towards_large_recommender_models_with_reasoning.md)
+- [\[ICLR 2026\] Reinforced Latent Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/reinforced_latent_reasoning_for_llm-based_recommendation.md)
 - [\[NeurIPS 2025\] Who You Are Matters: Bridging Topics and Social Roles via LLM-Enhanced Logical Recommendation](who_you_are_matters_bridging_topics_and_social_roles_via_llm-enhanced_logical_re.md)
 - [\[NeurIPS 2025\] Radial Neighborhood Smoothing Recommender System](radial_neighborhood_smoothing_recommender_system.md)
-- [\[AAAI 2026\] Wavelet Enhanced Adaptive Frequency Filter for Sequential Recommendation](../../AAAI2026/recommender/wavelet_enhanced_adaptive_frequency_filter_for_sequential_re.md)
-- [\[ACL 2026\] HARPO: Hierarchical Agentic Reasoning for User-Aligned Conversational Recommendation](../../ACL2026/recommender/harpo_hierarchical_agentic_reasoning_for_user-aligned_conversational_recommendat.md)
+- [\[ICLR 2026\] Token-Efficient Long-Term Interest Sketching and Internalized Reasoning for LLM-based Recommendation](../../ICLR2026/recommender/token-efficient_long-term_interest_sketching_and_internalized_reasoning_for_llm-.md)
 
 </div>
 

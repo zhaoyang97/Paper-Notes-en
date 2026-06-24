@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DexVLG: Dexterous Vision-Language-Grasp Model at Scale
 description: >-
-  [ICCV 2025][Robotics][Dexterous grasping] This paper presents DexVLG — the first large-scale vision-language-dexterous-grasp model. It introduces DexGraspNet 3.0…
+  [ICCV 2025][Robotics][Dexterous grasping] This paper presents DexVLG — the first large-scale vision-language-dexterous-grasp model. It introduces DexGraspNet 3.0, a dataset comprising 174K objects and 170M grasp poses with part-level semantic annotations. By combining a VLM encoder with a Flow Matching pose prediction head, DexVLG achieves over 76% zero-shot execution success in simulation and demonstrates semantically aligned dexterous grasping in the real world.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "semantic part grasping"
   - "large-scale dataset"
 date: 2026-05-08
-content_hash: 88637b9d65838028
+content_hash: c23f8cd49e766c2e
 ---
 
 # DexVLG: Dexterous Vision-Language-Grasp Model at Scale
@@ -149,11 +149,11 @@ DexVLG maintains a 79.1% Wrap grasp success rate on unseen objects and 76.3% zer
 
 ## Related Papers
 
+- [\[CVPR 2026\] DextER: Language-driven Dexterous Grasp Generation with Embodied Reasoning](../../CVPR2026/robotics/dexter_language-driven_dexterous_grasp_generation_with_embodied_reasoning.md)
 - [\[ICCV 2025\] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment](evolvinggrasp_evolutionary_grasp_generation_via_efficient_preference_alignment.md)
 - [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
+- [\[CVPR 2026\] MaskDexGrasp: Generative Masked Modeling for Part-Aware Dexterous Grasp Synthesis](../../CVPR2026/robotics/maskdexgrasp_generative_masked_modeling_for_part-aware_dexterous_grasp_synthesis.md)
 - [\[ICCV 2025\] CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games](combatvla_an_efficient_vision-language-action_model_for_combat_tasks_in_3d_actio.md)
-- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
-- [\[NeurIPS 2025\] SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning](../../NeurIPS2025/robotics/safevla_towards_safety_alignment_of_vision-language-action_model_via_constrained.md)
 
 </div>
 

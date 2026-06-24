@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structured Reasoning for LLMs: A Unified Framework for Efficiency and Explainability
 description: >-
-  [ICLR 2026][LLM Reasoning][GRPO] This paper explicitly decomposes the LLM reasoning process into labeled "steps" and models them as a directed graph. By extending GRPO with two structure-aware algorithms—"MaxFlow Reward" and "Longest Common Subsequence (LCS) Reward"—it enables DeepSeek-R1-Distill-Qwen-1.5B/7B to achieve more concise, stable, and expla
+  [ICLR 2026][Reasoning][Structured Reasoning] This paper explicitly decomposes the LLM reasoning process into labeled "steps" and models them as a directed graph. By extending GRPO with two structure-aware algorithms—"MaxFlow Reward" and "Longest Common Subsequence (LCS) Reward"—it enables DeepSeek-R1-Distill-Qwen-1.5B/7B to achieve more concise, stable, and explainable reasoning within shorter contexts, surpassing tuned baselines such as GRPO.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Structured Reasoning"
+  - "Reasoning Graph"
+  - "MaxFlow Reward"
+  - "LCS Reward"
+  - "GRPO"
 date: 2026-05-08
-content_hash: d084f9c1927b8a3c
+content_hash: 3f93879b1c57d4be
 ---
+
 # Structured Reasoning for LLMs: A Unified Framework for Efficiency and Explainability
 
 **Conference**: ICLR 2026  
@@ -146,10 +151,10 @@ Shuffling the step order causes the alignment to plummet from ~71% to ~28%, with
 ## Related Papers
 
 - [\[ICLR 2026\] Unleashing Scientific Reasoning for Bio-Experimental Protocol Generation via Structured Component-based Reward Mechanism](unleashing_scientific_reasoning_for_bio-experimental_protocol_generation_via_str.md)
-- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
-- [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
 - [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](../../ICML2026/llm_reasoning/floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
-- [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
+- [\[ICLR 2026\] A State-Transition Framework for Efficient LLM Reasoning](a_state-transition_framework_for_efficient_llm_reasoning.md)
+- [\[ICLR 2026\] Lean4PHYS: Comprehensive Reasoning Framework for College-level Physics in Lean4](lean4physics_comprehensive_reasoning_framework_for_college-level_physics_in_lean.md)
+- [\[ICLR 2026\] Enhancing Language Model Reasoning with Structured Multi-Level Modeling](enhancing_language_model_reasoning_with_structured_multi-level_modeling.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration
 description: >-
-  [ICLR 2026][Multi-Agent][Mixture-of-Agents] GoA models multi-LLM collaboration as a dynamic directed graph—first selecting a small set of the most relevant agents as nodes using model cards, then constructing edges based on mutual scores for bidirectional message passing, and finally aggregating via graph pooling. Using only 3 agents, it outperforms baselines li
+  [ICLR 2026][Multi-Agent][Multi-Agent LLMs] GoA models multi-LLM collaboration as a dynamic directed graph—first selecting a small set of the most relevant agents as nodes using model cards, then constructing edges based on mutual scores for bidirectional message passing, and finally aggregating via graph pooling. Using only 3 agents, it outperforms baselines like Mixture-of-Agents that utilize a full set of 6 agents.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - Mixture-of-Agents
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-Agent LLMs"
+  - "Graph Structure"
+  - "Message Passing"
+  - "Mixture-of-Agents"
+  - "Test-time Reasoning"
+  - "Agent Selection"
 date: 2026-05-08
-content_hash: d618758187ac445e
+content_hash: 9e5870762916b0a4
 ---
+
 # Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration
 
 **Conference**: ICLR 2026  

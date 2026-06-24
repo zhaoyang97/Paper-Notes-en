@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization
 description: >-
-  [ICML 2026][Image Generation][Paper Note] SPADE replaces traditional regression surrogates with a conditional diffusion model to model $p(y\mid\boldsymbol{x})$. By incorporating "mean/ranking calibration" and "kNN support regularization (mean shrinkage + variance expansion)," it implicitly injects data priors into the surrogate, enabling offline black-box opti
+  [ICML 2026][Image Generation][Offline BBO] SPADE replaces traditional regression surrogates with a conditional diffusion model to model $p(y\mid\boldsymbol{x})$. By incorporating "mean/ranking calibration" and "kNN support regularization (mean shrinkage + variance expansion)," it implicitly injects data priors into the surrogate, enabling offline black-box optimization to consistently achieve SOTA performance on Design-Bench and LLM data mixture tasks.
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Offline BBO"
+  - "Conditional Diffusion Surrogate"
+  - "kNN Support Regularization"
+  - "LCB Acquisition Function"
 date: 2026-05-08
-content_hash: f4763bf28fbd46b8
+content_hash: fbff636b5fdfa087
 ---
+
 # Support-Proximity Augmented Diffusion Estimation for Offline Black-Box Optimization
 
 **Conference**: ICML 2026  
@@ -132,8 +137,8 @@ SPADE ranks first in both mean rank and median rank across these tasks, represen
 - [\[ICML 2026\] Offline Preference Optimization for Rectified Flow with Noise-Tracked Pairs](offline_preference_optimization_for_rectified_flow_with_noise-tracked_pairs.md)
 - [\[ICML 2025\] PPO-MI: Efficient Black-Box Model Inversion via Proximal Policy Optimization](../../ICML2025/image_generation/ppo-mi_efficient_black-box_model_inversion_via_proximal_policy_optimization.md)
 - [\[CVPR 2026\] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models](../../CVPR2026/image_generation/csf_black-box_fingerprinting_via_compositional_semantics_for_text-to-image_model.md)
+- [\[ICLR 2026\] Generative Modeling from Black-Box Corruptions via Self-Consistent Stochastic Interpolants](../../ICLR2026/image_generation/generative_modeling_from_black-box_corruptions_via_self-consistent_stochastic_in.md)
 - [\[ICLR 2026\] Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization](../../ICLR2026/image_generation/pareto-conditioned_diffusion_models_for_offline_multi-objective_optimization.md)
-- [\[ICML 2026\] Offline Multi-agent Reinforcement Learning via Sequential Score Decomposition](offline_multi-agent_reinforcement_learning_via_sequential_score_decomposition.md)
 
 </div>
 

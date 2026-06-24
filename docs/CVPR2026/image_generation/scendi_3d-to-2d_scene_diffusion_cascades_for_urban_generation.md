@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ScenDi: 3D-to-2D Scene Diffusion Cascades for Urban Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] ScenDi decomposes urban scene generation into a "3D coarse generation → 2D refinement" cascaded diffusion process. It first employs a 3D Latent Diffusion Model to generate a 3D Gaussian scene with coarse appearance (ensuring camera controllability) and then utilizes a video diffusion model to refine details and synthes
+  [CVPR 2026][Image Generation][Urban Scene Generation] ScenDi decomposes urban scene generation into a "3D coarse generation → 2D refinement" cascaded diffusion process. It first employs a 3D Latent Diffusion Model to generate a 3D Gaussian scene with coarse appearance (ensuring camera controllability) and then utilizes a video diffusion model to refine details and synthesize distant backgrounds on the rendered frames, achieving both high-fidelity quality and precise camera tr…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Urban Scene Generation"
+  - "3D Gaussian Splatting"
+  - "Cascaded Diffusion"
+  - "Video Diffusion"
+  - "Camera Controllability"
 date: 2026-05-08
-content_hash: 5e632186bd2d4cf4
+content_hash: eca828a9157241b4
 ---
+
 # ScenDi: 3D-to-2D Scene Diffusion Cascades for Urban Generation
 
 **Conference**: CVPR 2026  
@@ -124,14 +130,17 @@ The WAN variant leads the 3D generation category significantly (FID 22.9 / Met3R
 
 <div class="related-papers" markdown="1">
 
-- **[UrbanGen]** UrbanGen: Synthesizing Ultra-Realistic Outdoor Scenes with a View-Consistent Diffusion Model (2024)
-- **[Gen3C]** Gen3C: Geometric Consistency for Camera-Controllable Video Generation (2024)
-- **[GaussianCity]** GaussianCity: Generative 3D City Synthesis with Gaussian Splatting (2024)
+## Related Papers
+
+- [\[CVPR 2025\] Lifting Motion to the 3D World via 2D Diffusion](../../CVPR2025/image_generation/lifting_motion_to_the_3d_world_via_2d_diffusion.md)
+- [\[CVPR 2026\] StyleTextGen: Style-Conditioned Multilingual Scene Text Generation](styletextgen_style-conditioned_multilingual_scene_text_generation.md)
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[CVPR 2026\] 3D Space as a Scratchpad for Editable Text-to-Image Generation](3d_space_as_a_scratchpad_for_editable_text-to-image_generation.md)
+- [\[CVPR 2025\] Move-in-2D: 2D-Conditioned Human Motion Generation](../../CVPR2025/image_generation/move-in-2d_2d-conditioned_human_motion_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2025\] Lifting Motion to the 3D World via 2D Diffusion](../../CVPR2025/image_generation/lifting_motion_to_the_3d_world_via_2d_diffusion.md)

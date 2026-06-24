@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MagicFuse: Single Image Fusion for Visual and Semantic Reinforcement
 description: >-
-  [CVPR 2026][Image Generation][Segmentation] Addressing the pain point that real-world scenarios often possess visible cameras but lack infrared cameras, this paper proposes the "Single Image Fusion (SIF)" paradigm. Two diffusion streams are utilized to **reinforce intra-spectral knowledge** and **generate infrared knowledge** from a single low-quality visible im
+  [CVPR 2026][Image Generation][Single Image Fusion] Addressing the pain point that real-world scenarios often possess visible cameras but lack infrared cameras, this paper proposes the "Single Image Fusion (SIF)" paradigm. Two diffusion streams are utilized to **reinforce intra-spectral knowledge** and **generate infrared knowledge** from a single low-quality visible image. These are fused at the noise level to obtain "MagImg," which balances human perception and downstream se…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Segmentation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Single Image Fusion"
+  - "Infrared-Visible Fusion"
+  - "Latent Diffusion Models"
+  - "Cross-spectral Knowledge Generation"
+  - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: f59ff52a32181cc4
+content_hash: c5f07663b413c17e
 ---
+
 # MagicFuse: Single Image Fusion for Visual and Semantic Reinforcement
 
 **Conference**: CVPR 2026  
@@ -147,10 +152,10 @@ Ablation of key components (Visual Table 6 / Semantic Table 7):
 ## Related Papers
 
 - [\[CVPR 2026\] Fusion in Your Way: Aligning Image Fusion with Heterogeneous Demands via Direct Preference Optimization](fusion_in_your_way_aligning_image_fusion_with_heterogeneous_demands_via_direct_p.md)
-- [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
 - [\[CVPR 2026\] SplitFlux: Learning to Decouple Content and Style from a Single Image](splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)
 - [\[CVPR 2026\] Learning Latent Proxies for Controllable Single-Image Relighting](learning_latent_proxies_for_controllable_single-image_relighting.md)
 - [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
+- [\[CVPR 2026\] Leveraging Verifier-Based Reinforcement Learning in Image Editing](leveraging_verifier-based_reinforcement_learning_in_image_editing.md)
 
 </div>
 

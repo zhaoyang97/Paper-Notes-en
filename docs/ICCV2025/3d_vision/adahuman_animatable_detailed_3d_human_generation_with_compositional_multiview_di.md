@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion
 description: >-
-  [ICCV 2025][3D Vision][3D human reconstruction] AdaHuman is proposed as a framework that generates high-fidelity, animatable 3D human avatars from a single image via a pose-conditioned 3D joint diffusion model and a comp…
+  [ICCV 2025][3D Vision][3D human reconstruction] AdaHuman is proposed as a framework that generates high-fidelity, animatable 3D human avatars from a single image via a pose-conditioned 3D joint diffusion model and a compositional 3DGS refinement module.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "pose-conditioned generation"
   - "animatable avatar"
 date: 2026-05-08
-content_hash: b4f47d215c6d23b1
+content_hash: 5769ee21d6045237
 ---
 
 # AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion
@@ -136,11 +136,11 @@ In a user study, AdaHuman achieves preference rates of 88.3%, 99.2%, 79.7%, and 
 
 ## Related Papers
 
-- [\[ICCV 2025\] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation](fiffdepth_feed-forward_transformation_of_diffusion-based_generators_for_detailed.md)
 - [\[ICCV 2025\] REPARO: Compositional 3D Assets Generation with Differentiable 3D Layout Alignment](reparo_compositional_3d_assets_generation_with_differentiable_3d_layout_alignmen.md)
-- [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
+- [\[ICCV 2025\] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation](fiffdepth_feed-forward_transformation_of_diffusion-based_generators_for_detailed.md)
+- [\[CVPR 2026\] FlexAvatar: Flexible Large Reconstruction Model for Animatable Gaussian Head Avatars with Detailed Deformation](../../CVPR2026/3d_vision/flexavatar_flexible_large_reconstruction_model_for_animatable_gaussian_head_avat.md)
 - [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
-- [\[ICCV 2025\] Baking Gaussian Splatting into Diffusion Denoiser for Fast and Scalable Single-stage Image-to-3D Generation and Reconstruction](baking_gaussian_splatting_into_diffusion_denoiser_for_fast_and_scalable_single-s.md)
+- [\[ICCV 2025\] PHD: Personalized 3D Human Body Fitting with Point Diffusion](phd_personalized_3d_human_body_fitting_with_point_diffusion.md)
 
 </div>
 

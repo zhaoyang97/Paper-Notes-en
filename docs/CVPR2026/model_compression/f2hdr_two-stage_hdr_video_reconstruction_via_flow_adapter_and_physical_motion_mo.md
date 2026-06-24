@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] The authors propose F²HDR, a two-stage HDR video reconstruction framework. It employs a Flow Adapter to adapt general pre-trained optical flow to alternating exposure scenarios for robust alignment. It utilizes physical motion modeling to extract continuous motion masks from optical flow, guiding artifact removal in th
+  [CVPR 2026][Model Compression][HDR video reconstruction] The authors propose F²HDR, a two-stage HDR video reconstruction framework. It employs a Flow Adapter to adapt general pre-trained optical flow to alternating exposure scenarios for robust alignment. It utilizes physical motion modeling to extract continuous motion masks from optical flow, guiding artifact removal in the second stage. It achieves SOTA performance on real HDR video benchmarks.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Model Compression"
+  - "HDR video reconstruction"
+  - "Flow Adapter"
+  - "physical motion modeling"
+  - "alternating exposure"
+  - "two-stage reconstruction"
 date: 2026-05-08
-content_hash: c5dcd838ee2a459a
+content_hash: f33bbab311023ba2
 ---
+
 # F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling
 
 **Conference**: CVPR 2026  
@@ -181,11 +187,11 @@ With the motion mask, the second stage modulates aligned features. For each fram
 
 ## Related Papers
 
-- [\[CVPR 2026\] LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)
-- [\[CVPR 2026\] HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter](hfr_and_hdr_video_from_multi-attenuated_spikes_using_a_rapidly_rotating_spokend_.md)
-- [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
-- [\[ECCV 2024\] Intrinsic Single-Image HDR Reconstruction](../../ECCV2024/image_restoration/intrinsic_single-image_hdr_reconstruction.md)
-- [\[CVPR 2026\] AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)
+- [\[ICLR 2026\] S2R-HDR: A Large-Scale Rendered Dataset for HDR Fusion](../../ICLR2026/model_compression/s2r-hdr_a_large-scale_rendered_dataset_for_hdr_fusion.md)
+- [\[CVPR 2026\] PRISM: Video Dataset Condensation with Progressive Refinement and Insertion for Sparse Motion](prism_video_dataset_condensation_with_progressive_refinement_and_insertion_for_s.md)
+- [\[ACL 2026\] Two-Stage Regularization-Based Structured Pruning for LLMs](../../ACL2026/model_compression/two-stage_regularization-based_structured_pruning_for_llms.md)
+- [\[CVPR 2026\] High Resolution Neural Video Coding with Bi-directional Confidence-Guided Reference Information Modeling](high_resolution_neural_video_coding_with_bi-directional_confidence-guided_refere.md)
+- [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
 
 </div>
 

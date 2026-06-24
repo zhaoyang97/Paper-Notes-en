@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting
 description: >-
-  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes DC4GS, an adaptive density control method based on Directional Consistency (DC)…
+  [NeurIPS 2025][3D Vision][3D Gaussian Splatting] This paper proposes DC4GS, an adaptive density control method based on Directional Consistency (DC), which improves primitive splitting decisions and split position selection in 3DGS by exploiting the angular coherence of positional gradients. DC4GS reduces the number of primitives by up to 30% while improving reconstruction quality.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Primitive Splitting"
   - "Scene Reconstruction"
 date: 2026-05-08
-content_hash: b9f249346e76789d
+content_hash: 671b262e1f0d1c24
 ---
 
 # DC4GS: Directional Consistency-Driven Adaptive Density Control for 3D Gaussian Splatting
@@ -172,11 +172,11 @@ Both components contribute independently: DC-based split decisions primarily red
 
 ## Related Papers
 
-- [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](../../CVPR2026/3d_vision/stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
-- [\[ICCV 2025\] StealthAttack: Robust 3D Gaussian Splatting Poisoning via Density-Guided Illusions](../../ICCV2025/3d_vision/stealthattack_robust_3d_gaussian_splatting_poisoning_via_density-guided_illusion.md)
+- [\[CVPR 2025\] Steepest Descent Density Control for Compact 3D Gaussian Splatting](../../CVPR2025/3d_vision/steepest_descent_density_control_for_compact_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] Gradient-Direction-Aware Density Control for 3D Gaussian Splatting](../../ICLR2026/3d_vision/gradient-direction-aware_density_control_for_3d_gaussian_splatting.md)
+- [\[ECCV 2024\] Pixel-GS: Density Control with Pixel-aware Gradient for 3D Gaussian Splatting](../../ECCV2024/3d_vision/pixel-gs_density_control_with_pixel-aware_gradient_for_3d_gaussian_splatting.md)
 - [\[NeurIPS 2025\] Metropolis-Hastings Sampling for 3D Gaussian Reconstruction](metropolis-hastings_sampling_for_3d_gaussian_reconstruction.md)
-- [\[NeurIPS 2025\] IBGS: Image-Based Gaussian Splatting](ibgs_image-based_gaussian_splatting.md)
-- [\[NeurIPS 2025\] EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](ef-3dgs_event-aided_free-trajectory_3d_gaussian_splatting.md)
+- [\[CVPR 2026\] STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction](../../CVPR2026/3d_vision/stavatar_soft_binding_and_temporal_density_control_for_monocular_3d_head_avatars.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Holo Pockets to Electron Density: GPT-style Drug Design with Density
 description: >-
-  [ICML 2026][Computational Biology][structure-based drug design] This paper replaces the condition for structure-based drug design from a "rigid empty pocket" to a "low-resolution electron cloud of the filler (containing ligand and solvent)." It proposes EDMolGPT, the first decoder-only autoregressive model in this domain, which achieves a bioactive recovery of 41% across 101 DUD-E
+  [ICML 2026][Computational Biology][structure-based drug design] This paper replaces the condition for structure-based drug design from a "rigid empty pocket" to a "low-resolution electron cloud of the filler (containing ligand and solvent)." It proposes EDMolGPT, the first decoder-only autoregressive model in this domain, which achieves a bioactive recovery of 41% across 101 DUD-E targets, significantly outperforming previous electron density (ED)-based methods.
 tags:
-  - ICML 2026
-  - Computational Biology
-  - structure-based drug design
-  - electron density
-  - autoregressive
-  - FSMILES
-  - GPT
+  - "ICML 2026"
+  - "Computational Biology"
+  - "structure-based drug design"
+  - "electron density"
+  - "autoregressive"
+  - "FSMILES"
+  - "GPT"
 date: 2026-05-08
-content_hash: a1f347756288e938
+content_hash: 7d076632fe66f06e
 ---
+
 # From Holo Pockets to Electron Density: GPT-style Drug Design with Density
 
 **Conference**: ICML 2026  
@@ -139,8 +140,8 @@ On the ExpED subset (92 targets with experimental density): Min-in-place was $-5
 - [\[NeurIPS 2025\] EDBench: Large-Scale Electron Density Data for Molecular Modeling](../../NeurIPS2025/computational_biology/edbench_large-scale_electron_density_data_for_molecular_modeling.md)
 - [\[ICML 2026\] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)
 - [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
-- [\[ICML 2026\] Site4Drug: Predicting Drug-Binding Target Sites with an AI Agent](site4drug_predicting_drug-binding_target_sites_with_an_ai_agent.md)
-- [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
+- [\[ICLR 2026\] SYNC: Measuring and Advancing Synthesizability in Structure-Based Drug Design](../../ICLR2026/computational_biology/sync_measuring_and_advancing_synthesizability_in_structure-based_drug_design.md)
+- [\[ICLR 2026\] CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models](../../ICLR2026/computational_biology/cryolvm_self-supervised_learning_from_cryo-em_density_maps_with_large_vision_mod.md)
 
 </div>
 

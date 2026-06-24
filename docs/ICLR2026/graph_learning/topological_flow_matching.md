@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Topological Flow Matching
 description: >-
-  [ICLR 2026][Graph Learning][Flow Matching] By reinterpreting flow matching as a "degenerate Schrödinger bridge in the zero-noise limit" and augmenting its reference process with a heat diffusion drift derived from the Hodge Laplacian, the authors propose Topological Flow Matching (TFM). TFM is a topology-aware generative framework that retains simulation-free t
+  [ICLR 2026][Graph Learning][Flow Matching] By reinterpreting flow matching as a "degenerate Schrödinger bridge in the zero-noise limit" and augmenting its reference process with a heat diffusion drift derived from the Hodge Laplacian, the authors propose Topological Flow Matching (TFM). TFM is a topology-aware generative framework that retains simulation-free training objectives and deterministic sampling paths, serving as a plug-and-play replacement for standard flow matchin…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Flow Matching
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Flow Matching"
+  - "Schrödinger Bridge"
+  - "Hodge Laplacian"
+  - "Topological Signals"
+  - "Simplicial Complexes"
 date: 2026-05-08
-content_hash: acf946dc307b9928
+content_hash: 2cc3cae94d33d34c
 ---
+
 # Topological Flow Matching
 
 **Conference**: ICLR 2026  
@@ -129,10 +134,17 @@ Images were treated as signals on a $32\times32\times3$ grid to test if topologi
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Bures-Wasserstein Flow Matching for Graph Generation](bures-wasserstein_flow_matching_for_graph_generation.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
+- [\[ICLR 2026\] Differentiable Lifting for Topological Neural Networks](differentiable_lifting_for_topological_neural_networks.md)
+- [\[ICLR 2026\] FlowSymm: Physics–Aware, Symmetry–Preserving Graph Attention for Network Flow Completion](flowsymm_physicsaware_symmetrypreserving_graph_attention_for_network_flow_comple.md)
+- [\[ICML 2026\] Graph-GRPO: Training Graph Flow Models with Reinforcement Learning](../../ICML2026/graph_learning/graph-grpo_training_graph_flow_models_with_reinforcement_learning.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Bures-Wasserstein Flow Matching for Graph Generation](bures-wasserstein_flow_matching_for_graph_generation.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparse Spectral LoRA: Routed Experts for Medical VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][LoRA-MoE] Ours proposes MedQwen, which partitions SVD spectral segments of pre-trained weights into non-overlapping experts and utilizes a top-k router to select spectral priors based on inputs. Accompanied by theoretically grounded residual compensation and scaling rules, it aligns the training dynamics of low-rank MoE with ful
+  [CVPR 2026][Multimodal VLM][Medical VLM] Ours proposes MedQwen, which partitions SVD spectral segments of pre-trained weights into non-overlapping experts and utilizes a top-k router to select spectral priors based on inputs. Accompanied by theoretically grounded residual compensation and scaling rules, it aligns the training dynamics of low-rank MoE with full-rank full-parameter fine-tuning. MedQwen approaches the performance of full fine-tuning across 23 medical datasets (w…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LoRA-MoE
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Medical VLM"
+  - "LoRA-MoE"
+  - "SVD Spectral Initialization"
+  - "Scaling Factor"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 643a6d416eb29122
+content_hash: eecff350a2d02759
 ---
+
 # Sparse Spectral LoRA: Routed Experts for Medical VLMs
 
 **Conference**: CVPR 2026  
@@ -164,7 +169,7 @@ Ablation of SVD Initialization and MoE Scaling (MS) (O=spectral segments, P=prin
 - [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
 - [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
 - [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
-- [\[CVPR 2026\] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning](similarity-as-evidence_calibrating_overconfident_vlms_for_interpretable_and_labe.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
 
 </div>
 

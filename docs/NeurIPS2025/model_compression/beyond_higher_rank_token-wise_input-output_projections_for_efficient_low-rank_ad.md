@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation
 description: >-
-  [NeurIPS 2025][Model Compression][LoRA] TopLoRA analyzes the expressive capacity of LoRA from an input-output projection perspective…
+  [NeurIPS 2025][Model Compression][LoRA] TopLoRA analyzes the expressive capacity of LoRA from an input-output projection perspective, identifying that all tokens sharing a single projection matrix constitutes a critical bottleneck. It proposes dynamically adjusting LoRA weights via a learnable token-wise diagonal matrix $\Sigma_X$ (i.e., $\Delta W_X = B\Sigma_X A$), achieving fine-grained adaptation without increasing rank, and consistently outperforming LoRA by 2–3% across t…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "Input-Output Projection"
   - "PEFT"
 date: 2026-05-08
-content_hash: fef616351e67d1b6
+content_hash: f1edc00790f1ae18
 ---
 
 # Beyond Higher Rank: Token-wise Input-Output Projections for Efficient Low-Rank Adaptation
@@ -132,9 +132,9 @@ Standard LoRA: $Y = (W + BA)X$. TopLoRA: $Y = (W + B\Sigma_X A)X$, where $\Sigma
 
 - [\[NeurIPS 2025\] GoRA: Gradient-Driven Adaptive Low Rank Adaptation](gora_gradient-driven_adaptive_low_rank_adaptation.md)
 - [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
+- [\[ACL 2025\] CoLA: Collaborative Low-Rank Adaptation](../../ACL2025/model_compression/cola_collaborative_low-rank_adaptation.md)
 - [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
 - [\[NeurIPS 2025\] Gated Integration of Low-Rank Adaptation for Continual Learning of Large Language Models](gated_integration_of_low-rank_adaptation_for_continual_learning_of_large_languag.md)
-- [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 
 </div>
 

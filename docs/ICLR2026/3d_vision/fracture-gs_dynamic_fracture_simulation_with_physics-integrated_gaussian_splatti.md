@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Fracture-GS unifies an "enhanced Collision-MPM" and a "fracture-aware 3D Gaussian continuum representation" into a pipeline from multi-view images to rendering. It specifically handles brittle fractures under extreme mechanical collisions. By using momentum-conserving interface forces to eliminate non-physical adhesion
+  [ICLR 2026][3D Vision][Gaussian Splatting] Fracture-GS unifies an "enhanced Collision-MPM" and a "fracture-aware 3D Gaussian continuum representation" into a pipeline from multi-view images to rendering. It specifically handles brittle fractures under extreme mechanical collisions. By using momentum-conserving interface forces to eliminate non-physical adhesion and MVEE Gaussian reconstruction to fill rendering holes at fracture interfaces, it significantly exceeds PhysGaussi…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Material Point Method"
+  - "Dynamic Fracture"
+  - "Collision Simulation"
+  - "Physical Rendering"
 date: 2026-05-08
-content_hash: 257217b3ca0dd4ac
+content_hash: c1a711acb0ec80b4
 ---
+
 # Fracture-GS: Dynamic Fracture Simulation with Physics-Integrated Gaussian Splatting
 
 **Conference**: ICLR 2026  
@@ -135,11 +141,11 @@ Fracture-GS leads in all four metrics: PSNR +3.9, LPIPS reduced from 0.43 to 0.2
 
 ## Related Papers
 
+- [\[ICLR 2026\] FieryGS: In-the-Wild Fire Synthesis with Physics-Integrated Gaussian Splatting](fierygs_in-the-wild_fire_synthesis_with_physics-integrated_gaussian_splatting.md)
 - [\[ICLR 2026\] MoE-GS: Mixture of Experts for Dynamic Gaussian Splatting](moe-gs_mixture_of_experts_for_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](../../CVPR2026/3d_vision/disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 - [\[ICLR 2026\] ODE-GS: Latent ODEs for Dynamic Scene Extrapolation with 3D Gaussian Splatting](ode-gs_latent_odes_for_dynamic_scene_extrapolation_with_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] Frequency-Aware Dynamic Gaussian Splatting](frequency-aware_dynamic_gaussian_splatting.md)
-- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[ICLR 2026\] ETGS: Explicit Thermodynamics Gaussian Splatting for Dynamic Thermal Reconstruction](etgs_explicit_thermodynamics_gaussian_splatting_for_dynamic_thermal_reconstructi.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](../../CVPR2026/3d_vision/disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
 
 </div>
 

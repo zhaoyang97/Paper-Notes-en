@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment
 description: >-
-  [ICLR 2026][Others][Paper Note] PlanetAlign is proposed as a PyTorch-based network alignment benchmark library that integrates 18 datasets across 6 domains, 14 methods covering three major categories (consistency, embedding, and Optimal Transport), and standardized evaluation workflows. Through large-scale systematic experiments, it reveals the compr
+  [ICLR 2026][Network Alignment] PlanetAlign is proposed as a PyTorch-based network alignment benchmark library that integrates 18 datasets across 6 domains, 14 methods covering three major categories (consistency, embedding, and Optimal Transport), and standardized evaluation workflows. Through large-scale systematic experiments, it reveals the comprehensive lead of OT-based methods (PARROT/JOENA) in effectiveness and the differentiated performance of various methods in scalab…
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Network Alignment"
+  - "Benchmark Library"
+  - "Graph Matching"
+  - "Optimal Transport"
+  - "Evaluation Framework"
 date: 2026-05-08
-content_hash: 267ef73778a4784f
+content_hash: 6c09dd243cb1f9e9
 ---
+
 # PlanetAlign: A Comprehensive Python Library for Benchmarking Network Alignment
 
 **Conference**: ICLR 2026  

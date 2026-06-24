@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality
 description: >-
-  [ICLR 2026][Multilingual & Translation][scaling laws] This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes the effective data volume into three terms: target language, transfer languages, and other languages, while introducing a data repetition saturation function. Validated across 774 multilingual training experiments (10M–8B parameters, 400+ l
+  [ICLR 2026][Multilingual & Machine Translation][scaling laws] This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes the effective data volume into three terms: target language, transfer languages, and other languages, while introducing a data repetition saturation function. Validated across 774 multilingual training experiments (10M–8B parameters, 400+ languages), ATLAS significantly outperforms existing scaling laws (multilingual $R^2$ improved from…
 tags:
-  - ICLR 2026
-  - Multilingual & Translation
-  - scaling laws
-  - multilingual
-  - cross-lingual transfer
-  - curse of multilinguality
-  - pretraining vs finetuning
+  - "ICLR 2026"
+  - "Multilingual & Machine Translation"
+  - "scaling laws"
+  - "multilingual"
+  - "cross-lingual transfer"
+  - "curse of multilinguality"
+  - "pretraining vs finetuning"
 date: 2026-05-08
-content_hash: c1a0a28c1c338e08
+content_hash: 932ba94cafaf8e29
 ---
+
 # ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality
 
 **Conference**: ICLR 2026  

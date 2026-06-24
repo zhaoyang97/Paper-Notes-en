@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bulk-Calibrated Credal Ambiguity Sets: Fast, Tractable Decision Making under Out-of-Sample Contamination
 description: >-
-  [ICML 2026][Optimization & Theory][credal set] To address the long-standing issue where placing a "Huber (linear-vacuous) contamination set" in an unbounded space causes the worst-case risk to become $+\infty$ and the DRO objective to fail, this paper proposes **bulk-calibrated credal ambiguity sets**. By learning a high-probability "bulk set" $\Xi_0$ from data, re
+  [ICML2026][Optimization][Distributionally Robust Optimization] To address the long-standing issue where placing a "Huber (linear-vacuous) contamination set" in an unbounded space causes the worst-case risk to become $+\infty$ and the DRO objective to fail, this paper proposes **bulk-calibrated credal ambiguity sets**. By learning a high-probability "bulk set" $\Xi_0$ from data, restricting the contamination budget solely within $\Xi_0$, and using moment conditions to separate…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - credal set
+  - "ICML2026"
+  - "Optimization"
+  - "Distributionally Robust Optimization"
+  - "Huber Contamination"
+  - "Imprecise Probabilities"
+  - "credal set"
+  - "Decision Robustness"
 date: 2026-05-08
-content_hash: d0224aed4bef35bd
+content_hash: cdd8cfcfba4946bc
 ---
+
 # Bulk-Calibrated Credal Ambiguity Sets: Fast, Tractable Decision Making under Out-of-Sample Contamination
 
 **Conference**: ICML2026  
@@ -142,15 +147,14 @@ Three experiments using **Bayesian, frequentist, and empirical** central distrib
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICML 2026\] Probing Neural TSP Representations for Prescriptive Decision Support](probing_neural_tsp_representations_for_prescriptive_decision_support.md)
-- [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](α-pfn_fast_entropy_search_via_in-context_learning.md)
-- [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](../../NeurIPS2025/optimization/second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
+- [\[ICLR 2026\] Gen-DFL: Decision-Focused Generative Learning for Robust Decision Making](../../ICLR2026/optimization/gen-dfl_decision-focused_generative_learning_for_robust_decision_making.md)
 - [\[ICML 2026\] ePC: Fast and Deep Predictive Coding in Digital Simulation](epc_fast_and_deep_predictive_coding_in_digital_simulation.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
+- [\[ICLR 2026\] Distributionally Robust Optimization via Generative Ambiguity Modeling](../../ICLR2026/optimization/distributionally_robust_optimization_via_generative_ambiguity_modeling.md)
+- [\[ICML 2026\] Probing Neural TSP Representations for Prescriptive Decision Support](probing_neural_tsp_representations_for_prescriptive_decision_support.md)
+- [\[ICML 2026\] Full-Batch Gradient Descent Outperforms One-Pass SGD: Sample Complexity Separation in Single-Index Learning](full-batch_gradient_descent_outperforms_one-pass_sgd_sample_complexity_separatio.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
 description: >-
-  [ICCV 2025][Multimodal VLM][jailbreak attack] This paper proposes IDEATOR, the first black-box jailbreak framework that uses a VLM to red-team other VLMs. A weakly safety-aligned VLM (MiniGPT-4) serves as the attacker…
+  [ICCV 2025][Multimodal VLM][jailbreak attack] This paper proposes IDEATOR, the first black-box jailbreak framework that uses a VLM to red-team other VLMs. A weakly safety-aligned VLM (MiniGPT-4) serves as the attacker, generating semantically rich image–text jailbreak pairs in conjunction with Stable Diffusion. A breadth-depth exploration strategy iteratively refines attacks, achieving a 94% attack success rate (ASR) on MiniGPT-4 with an average of 5.34 queries…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multimodal attack"
   - "safety benchmark"
 date: 2026-05-08
-content_hash: 8e18bbcd233d3973
+content_hash: 7ff7bc5fb9392fb9
 ---
 
 # IDEATOR: Jailbreaking and Benchmarking Large Vision-Language Models Using Themselves
@@ -154,10 +154,10 @@ The attacker VLM $\mathcal{M}_\mathcal{A}$ (MiniGPT-4) receives a jailbreak goal
 ## Related Papers
 
 - [\[ICCV 2025\] Jailbreaking Multimodal Large Language Models via Shuffle Inconsistency](jailbreaking_multimodal_large_language_models_via_shuffle_inconsistency.md)
+- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](../../ICML2026/multimodal_vlm/jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[CVPR 2025\] Can Large Vision-Language Models Correct Semantic Grounding Errors By Themselves?](../../CVPR2025/multimodal_vlm/can_large_vision-language_models_correct_semantic_grounding_errors_by_themselves.md)
 - [\[ICCV 2025\] GEOBench-VLM: Benchmarking Vision-Language Models for Geospatial Tasks](geobench-vlm_benchmarking_vision-language_models_for_geospatial_tasks.md)
-- [\[ICCV 2025\] Growing a Twig to Accelerate Large Vision-Language Models](growing_a_twig_to_accelerate_large_vision-language_models.md)
-- [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](../../NeurIPS2025/multimodal_vlm/choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
-- [\[NeurIPS 2025\] JailBound: Jailbreaking Internal Safety Boundaries of Vision-Language Models](../../NeurIPS2025/multimodal_vlm/jailbound_jailbreaking_internal_safety_boundaries_of_vision-language_models.md)
+- [\[CVPR 2025\] Distraction is All You Need for Multimodal Large Language Model Jailbreaking](../../CVPR2025/multimodal_vlm/distraction_is_all_you_need_for_multimodal_large_language_model_jailbreaking.md)
 
 </div>
 

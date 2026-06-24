@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] PatchDNA adapts the "patching" mechanism of the Byte Latent Transformer from NLP to DNA. It uses evolutionary conservation scores (PhyloP) instead of a fixed vocabulary to determine variable-length patch boundaries and supports "re-patching" post-training. This allows models with an order of magnitude fewer parameters
+  [ICLR 2026][Computational Biology][DNA Language Models] PatchDNA adapts the "patching" mechanism of the Byte Latent Transformer from NLP to DNA. It uses evolutionary conservation scores (PhyloP) instead of a fixed vocabulary to determine variable-length patch boundaries and supports "re-patching" post-training. This allows models with an order of magnitude fewer parameters to outperform existing SOTA on multiple genomic benchmarks and adjust slicing strategies by downstream t…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "DNA Language Models"
+  - "dynamic patching"
+  - "evolutionary conservation"
+  - "re-patching"
+  - "long-sequence modeling"
 date: 2026-05-08
-content_hash: fb6d4142b2af8ca0
+content_hash: db398924aca3347e
 ---
+
 # PatchDNA: A Flexible and Biologically-Informed Alternative to Tokenization for DNA
 
 **Conference**: ICLR 2026  
@@ -146,9 +152,9 @@ Cell-type specific re-patching further validates flexibility: In CAGE prediction
 ## Related Papers
 
 - [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
+- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 - [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
 - [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
 - [\[ICLR 2026\] BioBO: Biology-informed Bayesian Optimization for Perturbation Design](biobo_biology-informed_bayesian_optimization_for_perturbation_design.md)
 
 </div>

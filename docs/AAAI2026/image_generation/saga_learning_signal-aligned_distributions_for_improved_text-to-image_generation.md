@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation
 description: >-
-  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes SAGA, a training-free method that learns prompt-aligned Gaussian distributions to improve semantic alignment in text-to-image generation models. Support…
+  [AAAI 2026][Image Generation][Diffusion Models] This paper proposes SAGA, a training-free method that learns prompt-aligned Gaussian distributions to improve semantic alignment in text-to-image generation models. Supporting both text and spatial conditioning, SAGA achieves substantial alignment gains on SD 1.4 and SD 3 (TIAM-3 improves from 8.4% to 50.7%).
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free Method"
   - "Flow Matching"
 date: 2026-05-08
-content_hash: 5025c53a93de930e
+content_hash: f56d7b8ace484b47
 ---
 
 # SAGA: Learning Signal-Aligned Distributions for Improved Text-to-Image Generation
@@ -133,9 +133,9 @@ No training is required; SAGA is applied directly to pretrained SD 1.4 and SD 3.
 
 - [\[AAAI 2026\] Improved Masked Image Generation with Knowledge-Augmented Token Representations](improved_masked_image_generation_with_knowledge-augmented_token_representations.md)
 - [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](../../ICML2026/image_generation/diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
-- [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
-- [\[ICLR 2026\] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)](../../ICLR2026/image_generation/improved_object-centric_diffusion_learning_with_registers_and_contrastive_alignm.md)
-- [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](infinite-story_a_training-free_consistent_text-to-image_gene.md)
+- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](../../CVPR2026/image_generation/flow_matching_for_multimodal_distributions.md)
+- [\[CVPR 2025\] GPS as a Control Signal for Image Generation](../../CVPR2025/image_generation/gps_as_a_control_signal_for_image_generation.md)
+- [\[CVPR 2026\] OmniGen2: Towards Instruction-Aligned Multimodal Generation](../../CVPR2026/image_generation/omnigen2_towards_instruction-aligned_multimodal_generation.md)
 
 </div>
 

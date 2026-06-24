@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions
 description: >-
-  [CVPR 2026][3D Vision][Hand-Object Interaction] ArtHOI introduces the first complete pipeline for reconstructing 4D interactions between hands and articulated objects (e.g., scissors, eyeglasses, laptops) from monocular RGB videos. By utilizing Adaptive Sampling Refinement (ASR) to optimize object metric scale and pose, alongside an MLLM-guided hand-object alignment
+  [CVPR 2026][3D Vision][Hand-Object Interaction] ArtHOI introduces the first complete pipeline for reconstructing 4D interactions between hands and articulated objects (e.g., scissors, eyeglasses, laptops) from monocular RGB videos. By utilizing Adaptive Sampling Refinement (ASR) to optimize object metric scale and pose, alongside an MLLM-guided hand-object alignment method, it outperforms the RSRD baseline—which requires pre-scanned object geometry—across multiple datasets.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Hand-Object Interaction
-  - Articulated Object
-  - 4D Reconstruction
-  - Foundation Models
-  - MLLM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Hand-Object Interaction"
+  - "Articulated Object"
+  - "4D Reconstruction"
+  - "Foundation Models"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 27557056810a8155
+content_hash: e6a621d5efcb9f00
 ---
+
 # ArtHOI: Taming Foundation Models for Monocular 4D Reconstruction of Hand-Articulated-Object Interactions
 
 **Conference**: CVPR 2026  
@@ -151,8 +152,8 @@ Where $\mathbb{C}$ is the set of contact frames/fingers, $\mathbb{T}_i$ are fing
 - [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
 - [\[ICML 2026\] PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions](../../ICML2026/3d_vision/physhandi_physics-based_reconstruction_of_hand-deformable_object_interactions.md)
 - [\[CVPR 2026\] ForeHOI: Feed-forward 3D Object Reconstruction from Daily Hand-Object Interaction Videos](forehoi_feed-forward_3d_object_reconstruction_from_daily_hand-object_interaction.md)
-- [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] LAM: Language Articulated Object Modelers](lam_language_articulated_object_modelers.md)
+- [\[CVPR 2026\] Recovering Physically Plausible Human-Object Interactions from Monocular Videos](recovering_physically_plausible_human-object_interactions_from_monocular_videos.md)
+- [\[CVPR 2026\] 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)
 
 </div>
 

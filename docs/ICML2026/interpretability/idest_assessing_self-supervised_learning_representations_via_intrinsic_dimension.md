@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension
 description: >-
-  [ICML 2026][Interpretability][Self-Supervised Learning] This paper introduces IdEst: utilizing the Minimum Spanning Tree dimension estimator $\mathrm{dim}_{\mathrm{MST}}$ to measure the intrinsic dimension (ID) of self-supervised representations. Using this unlabeled geometric quantity as a proxy for downstream linear probe accuracy, it achieves a Spearman $\rho \approx -0.
+  [ICML2026][Interpretability][Self-Supervised Learning] This paper introduces IdEst: utilizing the Minimum Spanning Tree dimension estimator $\mathrm{dim}_{\mathrm{MST}}$ to measure the intrinsic dimension (ID) of self-supervised representations. Using this unlabeled geometric quantity as a proxy for downstream linear probe accuracy, it achieves a Spearman $\rho \approx -0.8$ across 33 SSL models and enables unlabeled hyperparameter selection.
 tags:
-  - ICML 2026
-  - Interpretability
-  - Self-Supervised Learning
+  - "ICML2026"
+  - "Interpretability"
+  - "Self-Supervised Learning"
+  - "Intrinsic Dimension"
+  - "Minimum Spanning Tree"
+  - "Representation Quality Assessment"
+  - "Unsupervised Model Selection"
 date: 2026-05-08
-content_hash: 815e74e3b9b042c7
+content_hash: fccdeea1d115c069
 ---
+
 # IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension
 
 **Conference**: ICML2026  
@@ -131,8 +136,8 @@ The negative signs are expected: **Lower ID correlates with higher downstream ac
 
 - [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
 - [\[CVPR 2025\] Probing the Mid-Level Vision Capabilities of Self-Supervised Learning](../../CVPR2025/interpretability/probing_the_mid-level_vision_capabilities_of_self-supervised_learning.md)
-- [\[ICCV 2025\] AIM: Amending Inherent Interpretability via Self-Supervised Masking](../../ICCV2025/interpretability/aim_amending_inherent_interpretability_via_self-supervised_masking.md)
 - [\[NeurIPS 2025\] Dataset Distillation for Pre-Trained Self-Supervised Vision Models](../../NeurIPS2025/interpretability/dataset_distillation_for_pre-trained_self-supervised_vision_models.md)
+- [\[CVPR 2026\] RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation](../../CVPR2026/interpretability/riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_.md)
 - [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
 
 </div>

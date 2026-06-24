@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form
 description: >-
-  [ICLR 2026][Reinforcement Learning][Multi-Agent] This work proposes the first continuous-time multi-agent RL framework that explicitly handles state constraints. By employing an epigraph form, discontinuous constraint value functions are transformed into continuous representations. Combined with an improved PINN actor-critic method, the framework achieves safe and st
+  [ICLR 2026][Reinforcement Learning][Continuous-time RL] This work proposes the first continuous-time multi-agent RL framework that explicitly handles state constraints. By employing an epigraph form, discontinuous constraint value functions are transformed into continuous representations. Combined with an improved PINN actor-critic method, the framework achieves safe and stable continuous-time multi-agent control.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Continuous-time RL"
+  - "Multi-agent"
+  - "Safety constraints"
+  - "HJB equation"
+  - "Epigraph reformulation"
 date: 2026-05-08
-content_hash: 1fcf669500fddc6a
+content_hash: 2599c6addc7d8721
 ---
+
 # Safe Continuous-time Multi-Agent Reinforcement Learning via Epigraph Form
 
 **Conference**: ICLR 2026  
@@ -146,9 +151,9 @@ The total Critic loss is a weighted sum of three terms: $\mathcal{L}_{\text{Crit
 
 - [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
 - [\[ICLR 2026\] Sample-efficient and Scalable Exploration in Continuous-Time RL](sample-efficient_and_scalable_exploration_in_continuous-time_rl.md)
+- [\[ICLR 2026\] From Ticks to Flows: Dynamics of Neural Reinforcement Learning in Continuous Environments](from_ticks_to_flows_dynamics_of_neural_reinforcement_learning_in_continuous_envi.md)
 - [\[ICLR 2026\] RLAC: Reinforcement Learning with Adversarial Critic for Free-Form Generation Tasks](rlac_reinforcement_learning_with_adversarial_critic_for_free-form_generation_tas.md)
-- [\[ICLR 2026\] When Is Diversity Rewarded in Cooperative Multi-Agent Learning?](when_is_diversity_rewarded_in_cooperative_multi-agent_learning.md)
-- [\[ICLR 2026\] Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning](potentially_optimal_joint_actions_recognition_for_cooperative_multi-agent_reinfo.md)
+- [\[ICLR 2026\] Distributionally Robust Cooperative Multi-agent Reinforcement Learning with Value Factorization](distributionally_robust_cooperative_multi-agent_reinforcement_learning_with_valu.md)
 
 </div>
 

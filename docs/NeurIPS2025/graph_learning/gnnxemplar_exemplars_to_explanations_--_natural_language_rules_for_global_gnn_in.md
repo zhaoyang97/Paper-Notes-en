@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability
 description: >-
-  [NeurIPS 2025][Graph Learning][graph neural network interpretability] This paper proposes GnnXemplar, a framework grounded in the cognitive-science Exemplar Theory. It selects representative nodes (exemplars) in the GNN…
+  [NeurIPS 2025 Oral][Graph Learning][graph neural network interpretability] This paper proposes GnnXemplar, a framework grounded in the cognitive-science Exemplar Theory. It selects representative nodes (exemplars) in the GNN embedding space and employs an LLM with iterative self-refinement to generate natural-language Boolean rules, achieving global interpretability for node-classification GNNs on large-scale graphs.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Graph Learning"
   - "graph neural network interpretability"
   - "global explanation"
@@ -12,7 +12,7 @@ tags:
   - "natural language rules"
   - "coverage maximization"
 date: 2026-05-08
-content_hash: da9e43a5543fb599
+content_hash: 6be9cda9c877da11
 ---
 
 # GnnXemplar: Exemplars to Explanations -- Natural Language Rules for Global GNN Interpretability
@@ -157,11 +157,11 @@ NA = not applicable (requires discrete attributes), NF = formula generation fail
 
 ## Related Papers
 
+- [\[ICLR 2026\] GNN Explanations that do not Explain and How to find Them](../../ICLR2026/graph_learning/gnn_explanations_that_do_not_explain_and_how_to_find_them.md)
 - [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
-- [\[NeurIPS 2025\] GraphFaaS: Serverless GNN Inference for Burst-Resilient, Real-Time Intrusion Detection](graphfaas_serverless_gnn_inference_for_burst-resilient_real-time_intrusion_detec.md)
+- [\[ICLR 2026\] Global-Recent Semantic Reasoning on Dynamic Text-Attributed Graphs with Large Language Models](../../ICLR2026/graph_learning/global-recent_semantic_reasoning_on_dynamic_text-attributed_graphs_with_large_la.md)
 - [\[NeurIPS 2025\] DuetGraph: Coarse-to-Fine Knowledge Graph Reasoning with Dual-Pathway Global-Local Fusion](duetgraph_coarse-to-fine_knowledge_graph_reasoning_with_dual-pathway_global-loca.md)
-- [\[NeurIPS 2025\] Deliberation on Priors: Trustworthy Reasoning of Large Language Models on Knowledge Graphs](deliberation_on_priors_trustworthy_reasoning_of_large_language_models_on_knowled.md)
-- [\[ICLR 2026\] Learning Concept Bottleneck Models from Mechanistic Explanations](../../ICLR2026/graph_learning/learning_concept_bottleneck_models_from_mechanistic_explanations.md)
+- [\[ACL 2025\] GraphNarrator: Generating Textual Explanations for Graph Neural Networks](../../ACL2025/graph_learning/graphnarrator.md)
 
 </div>
 

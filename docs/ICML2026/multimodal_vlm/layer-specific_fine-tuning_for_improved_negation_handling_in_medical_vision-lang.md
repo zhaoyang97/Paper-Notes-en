@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][LoRA] NAST utilizes causal tracing to calculate the Causal Trace Effect (CTE) of each layer in the CLIP text encoder for negation understanding. These CTEs are then used as layer-wise gradient scaling factors for LoRA fine-tuning, significantly enhancing the semantic sensitivity of medical VLMs in distinguishing between the
+  [ICML 2026][Multimodal VLM][Medical CLIP] NAST utilizes causal tracing to calculate the Causal Trace Effect (CTE) of each layer in the CLIP text encoder for negation understanding. These CTEs are then used as layer-wise gradient scaling factors for LoRA fine-tuning, significantly enhancing the semantic sensitivity of medical VLMs in distinguishing between the presence and absence of symptoms, and narrowing the affirmative-negative accuracy gap from 21.6% to 4.2%.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - LoRA
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Medical CLIP"
+  - "Negation Understanding"
+  - "Causal Tracing"
+  - "Layer-wise Fine-tuning"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 04a88adbba5cf8a7
+content_hash: ba422afbeabeb841
 ---
+
 # Layer-Specific Fine-Tuning for Improved Negation Handling in Medical Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -142,11 +147,11 @@ CTE weighting successfully concentrates updates on the top negation-sensitive la
 
 ## Related Papers
 
+- [\[ICLR 2026\] MergeTune: Continued Fine-Tuning of Vision-Language Models](../../ICLR2026/multimodal_vlm/mergetune_continued_fine-tuning_of_vision-language_models.md)
 - [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](../../CVPR2026/multimodal_vlm/fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
 - [\[CVPR 2025\] Vision-Language Models Do Not Understand Negation](../../CVPR2025/multimodal_vlm/vision-language_models_do_not_understand_negation.md)
 - [\[ACL 2025\] NegVQA: Can Vision Language Models Understand Negation?](../../ACL2025/multimodal_vlm/negvqa_can_vision_language_models_understand_negation.md)
 - [\[AAAI 2026\] Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models](../../AAAI2026/multimodal_vlm/difference_vector_equalization_for_robust_fine-tuning_of_vis.md)
-- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](../../CVPR2026/multimodal_vlm/trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
 
 </div>
 

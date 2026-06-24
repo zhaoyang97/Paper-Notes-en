@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents
 description: >-
-  [ACL 2026][Code Intelligence][Text-to-SQL] This paper proposes PV-SQL, an agentic Text-to-SQL framework. By integrating two complementary components—Probe (iteratively generating probing queries to discover database value formats, column semantics, and table relationships) and Verify (extracting verifiable constraints via pattern matching to build checklists)—i
+  [ACL 2026 Findings][Code Intelligence][Text-to-SQL] This paper proposes PV-SQL, an agentic Text-to-SQL framework. By integrating two complementary components—Probe (iteratively generating probing queries to discover database value formats, column semantics, and table relationships) and Verify (extracting verifiable constraints via pattern matching to build checklists)—it achieves a 5% higher Execution Accuracy and a 20.8% higher Valid Efficiency Score on the BIRD benchmark co…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Text-to-SQL
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Text-to-SQL"
+  - "Database Probing"
+  - "Rule Verification"
+  - "Semantic Constraints"
+  - "Agent Framework"
 date: 2026-05-08
-content_hash: b94d52c7b658218e
+content_hash: 56ddfbe188ed65a7
 ---
+
 # PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents
 
 **Conference**: ACL 2026 Findings  
@@ -128,10 +133,10 @@ The design is driven by error analysis: Probe enhances input with real database 
 ## Related Papers
 
 - [\[ACL 2026\] R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL](r3-sql_ranking_reward_and_resampling_for_text-to-sql.md)
+- [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](../../ICLR2026/code_intelligence/spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
 - [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
 - [\[ACL 2025\] STaR-SQL: Self-Taught Reasoner for Text-to-SQL](../../ACL2025/code_intelligence/star-sql_self-taught_reasoner_for_text-to-sql.md)
 - [\[ACL 2026\] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency](dpc_training-free_text-to-sql_candidate_selection_via_dual-paradigm_consistency.md)
-- [\[ACL 2025\] SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL](../../ACL2025/code_intelligence/share_text_to_sql_correction.md)
 
 </div>
 

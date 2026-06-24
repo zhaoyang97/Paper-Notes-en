@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs
 description: >-
-  [NeurIPS 2025][Model Compression][Dual Sparsity] This paper proposes DuoGPT, a dual-sparse framework that reinterprets activation sparsity as dynamic structured weight sparsity and combines it with unstructured weight pr…
+  [NeurIPS 2025][Model Compression][Dual Sparsity] This paper proposes DuoGPT, a dual-sparse framework that reinterprets activation sparsity as dynamic structured weight sparsity and combines it with unstructured weight pruning. By extending the OBC framework with activation-aware calibration and a dense-model output residual correction term, DuoGPT achieves significant speedup and memory savings during the LLM decoding phase without any retraining.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "OBC Framework"
   - "LLM Acceleration"
 date: 2026-05-08
-content_hash: 7b0ef7a5da2e6720
+content_hash: a9c6c8aea649fc29
 ---
 
 # DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs
@@ -123,11 +123,11 @@ At a comparable speedup ratio, DuoGPT surpasses ShortGPT, the best-performing st
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning](twilight_adaptive_attention_sparsity_with_hierarchical_top-p_pruning.md)
+- [\[ACL 2025\] CFSP: An Efficient Structured Pruning Framework for LLMs with Coarse-to-Fine Activation Information](../../ACL2025/model_compression/cfsp_an_efficient_structured_pruning_framework_for_llms_with_coarse-to-fine_acti.md)
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
 - [\[NeurIPS 2025\] Spark Transformer: Reactivating Sparsity in FFN and Attention](spark_transformer_reactivating_sparsity_in_ffn_and_attention.md)
 - [\[ICCV 2025\] MixA-Q: Revisiting Activation Sparsity for Vision Transformers from a Mixed-Precision Quantization Perspective](../../ICCV2025/model_compression/mixa-q_revisiting_activation_sparsity_for_vision_transformers_from_a_mixed-preci.md)
-- [\[NeurIPS 2025\] DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration](denoiserotator_enhance_pruning_robustness_for_llms_via_importance_concentration.md)
+- [\[ACL 2026\] CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](../../ACL2026/model_compression/improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)
 
 </div>
 

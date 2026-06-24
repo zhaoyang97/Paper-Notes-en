@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] L3DR: 3D-aware LiDAR Diffusion and Rectification
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] L3DR appends a 3D residual regression network after range-view (RV) LiDAR diffusion to compute per-point offsets that correct "depth bleeding" and "wavy surface" artifacts in back-projected 3D point clouds. By using a Welsch loss to bypass high-bias hallucination regions in training pairs, it achieves SOTA geometric re
+  [CVPR 2026][Autonomous Driving][LiDAR Point Cloud Generation] L3DR appends a 3D residual regression network after range-view (RV) LiDAR diffusion to compute per-point offsets that correct "depth bleeding" and "wavy surface" artifacts in back-projected 3D point clouds. By using a Welsch loss to bypass high-bias hallucination regions in training pairs, it achieves SOTA geometric realism on KITTI, KITTI360, nuScenes, and Waymo with minimal computational overhead.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "LiDAR Point Cloud Generation"
+  - "Range-view Diffusion"
+  - "Residual Regression"
+  - "Geometric Realism"
+  - "Welsch Loss"
 date: 2026-05-08
-content_hash: feff38063f2de9b7
+content_hash: 05e245c3df82b47f
 ---
+
 # L3DR: 3D-aware LiDAR Diffusion and Rectification
 
 **Conference**: CVPR 2026  
@@ -132,10 +138,20 @@ Ablations on backbone, loss, semantic input, and 2D vs 3D on SemanticKITTI:
 - Value: ⭐⭐⭐⭐ A practical, plug-and-play, low-overhead geometric refinement component for LiDAR synthesis.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)
+- [\[CVPR 2026\] TACO: Task-Aware Contrastive Learning for Joint LiDAR Localization and 3D Object Detection](taco_task-aware_contrastive_learning_for_joint_lidar_localization_and_3d_object_.md)
+- [\[CVPR 2026\] U4D: Uncertainty-Aware 4D World Modeling from LiDAR Sequences](u4d_uncertainty-aware_4d_world_modeling_from_lidar_sequences.md)
+- [\[CVPR 2026\] Points-to-3D: Structure-Aware 3D Generation with Point Cloud Priors](points-to-3d_structure-aware_3d_generation_with_point_cloud_priors.md)
+- [\[CVPR 2026\] LiDAR-to-4DRadar Diffusion Bridge via Cross-Modal Alignment and Translation in Latent Space](lidar-to-4dradar_diffusion_bridge_via_cross-modal_alignment_and_translation_in_l.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Structure-to-Intensity Diffusion for Adverse-Weather LiDAR Generation](structure-to-intensity_diffusion_for_adverse-weather_lidar_generation.md)

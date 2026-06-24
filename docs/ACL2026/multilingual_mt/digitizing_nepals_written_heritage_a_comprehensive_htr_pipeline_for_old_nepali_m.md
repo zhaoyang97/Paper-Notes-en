@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Digitizing Nepal's Written Heritage: A Comprehensive HTR Pipeline for Old Nepali Manuscripts
 description: >-
-  [ACL 2026][Multilingual & Translation][HTR] This is the first end-to-end **Handwritten Text Recognition (HTR)** pipeline for Old Nepali. By employing a "Synthetic Devanagari → Printed Nagari → Old Nepali Manuscripts" three-stage transfer learning curriculum, $8\times$ data augmentation with 20 techniques, byte-level BPE, and a script-aware decoder, the CER is re
+  [ACL 2026][Multilingual & Machine Translation][HTR] This is the first end-to-end **Handwritten Text Recognition (HTR)** pipeline for Old Nepali. By employing a "Synthetic Devanagari → Printed Nagari → Old Nepali Manuscripts" three-stage transfer learning curriculum, $8\times$ data augmentation with 20 techniques, byte-level BPE, and a script-aware decoder, the CER is reduced from a fine-tuned TrOCR baseline of $9.6\%$ to **$4.9\%$**. The code, models…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - HTR
-  - Devanagari
-  - TrOCR
+  - "ACL 2026"
+  - "Multilingual & Machine Translation"
+  - "HTR"
+  - "Devanagari"
+  - "Low-resource"
+  - "TrOCR"
+  - "Three-stage Transfer Learning"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: dea67e7f8025e14c
+content_hash: 4119524f7a6a1749
 ---
+
 # Digitizing Nepal's Written Heritage: A Comprehensive HTR Pipeline for Old Nepali Manuscripts
 
 **Conference**: ACL 2026  
@@ -152,10 +156,10 @@ Cumulative gain from the three-stage curriculum:
 ## Related Papers
 
 - [\[ACL 2026\] The GaoYao Benchmark: A Comprehensive Framework for Evaluating Multilingual and Multicultural Abilities of Large Language Models](the_gaoyao_benchmark_a_comprehensive_framework_for_evaluating_multilingual_and_m.md)
-- [\[ACL 2026\] Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media](cross-cultural_transfer_of_emoji_semantics_and_sentiment_in_financial_social_med.md)
+- [\[ACL 2025\] Are Rules Meant to be Broken? Understanding Multilingual Moral Reasoning as a Computational Pipeline with UniMoral](../../ACL2025/multilingual_mt/are_rules_meant_to_be_broken_understanding_multilingual_moral_reasoning_as_a_com.md)
+- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
+- [\[ACL 2026\] Efficient Low-Resource Language Adaptation via Multi-Source Dynamic Logit Fusion](efficient_low-resource_language_adaptation_via_multi-source_dynamic_logit_fusion.md)
 - [\[ACL 2026\] BhashaSutra: A Task-Centric Unified Survey of Indian NLP Datasets, Corpora, and Resources](bhashasutra_a_task-centric_unified_survey_of_indian_nlp_datasets_corpora_and_res.md)
-- [\[ACL 2026\] Prosody as Supervision: Bridging the Non-Verbal–Verbal for Multilingual Speech Emotion Recognition](prosody_as_supervision_bridging_the_non-verbal--verbal_for_multilingual_speech_e.md)
-- [\[ACL 2026\] Multilingual Language Models Encode Script Over Linguistic Structure](multilingual_language_models_encode_script_over_linguistic_structure.md)
 
 </div>
 

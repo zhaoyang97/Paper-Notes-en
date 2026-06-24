@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors
 description: >-
-  [AAAI 2026][Autonomous Driving][HD Map] This paper proposes PriorDrive, a framework that encodes multiple types of vectorized prior maps (SD maps, outdated HD maps…
+  [AAAI 2026][Autonomous Driving][HD Map] This paper proposes PriorDrive, a framework that encodes multiple types of vectorized prior maps (SD maps, outdated HD maps, historical prediction maps) into a unified representation via a Unified Vector Encoder (UVE) and Hybrid Prior Representation (HPQuery), and integrates them into various online mapping models. It achieves a +14.3 mAP improvement on nuScenes and is compatible with both query-based and non-query-based mapping archite…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Plug-and-Play"
   - "Online Mapping"
 date: 2026-05-08
-content_hash: 4581fd49e2146f11
+content_hash: c452a8a397939911
 ---
 
 # PriorDrive: Enhancing Online HD Map Construction with Unified Vector Priors
@@ -128,11 +128,11 @@ The problem is precisely formulated, the methodology is comprehensive (encoder +
 
 ## Related Papers
 
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2026/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_represe.md)
+- [\[CVPR 2026\] AMap: Distilling Future Priors for Ahead-Aware Online HD Map Construction](../../CVPR2026/autonomous_driving/amap_distilling_future_priors_for_ahead-aware_online_hd_map_construction.md)
+- [\[ICLR 2026\] Stability under Scrutiny: Benchmarking Representation Paradigms for Online HD Map Construction](../../ICLR2026/autonomous_driving/stability_under_scrutiny_benchmarking_representation_paradigms_for_online_hd_map.md)
 - [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
+- [\[CVPR 2025\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2025/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_representations_for_online_vectorized.md)
 - [\[ICCV 2025\] DAMap: Distance-aware MapNet for High Quality HD Map Construction](../../ICCV2025/autonomous_driving/damap_distance-aware_mapnet_for_high_quality_hd_map_construction.md)
-- [\[AAAI 2026\] ExpertAD: Enhancing Autonomous Driving Systems with Mixture of Experts](expertad_enhancing_autonomous_driving_systems_with_mixture_of_experts.md)
-- [\[AAAI 2026\] LiDAR-GS++: Improving LiDAR Gaussian Reconstruction via Diffusion Priors](lidar-gsimproving_lidar_gaussian_reconstruction_via_diffusion_priors.md)
 
 </div>
 

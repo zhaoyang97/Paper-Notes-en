@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] In decision-based black-box attack scenarios where only top-1 labels are available under tight query budgets, SeRI proposes a continuous pixel sensitivity definition based on the "decision boundary." By utilizing recursive region subdivision and local perturbation adjustment to estimate sensitivity weights for each pix
+  [ICLR 2026][AI Safety][Decision-based black-box attacks] In decision-based black-box attack scenarios where only top-1 labels are available under tight query budgets, SeRI proposes a continuous pixel sensitivity definition based on the "decision boundary." By utilizing recursive region subdivision and local perturbation adjustment to estimate sensitivity weights for each pixel, it serves as a plug-and-play perturbation optimizer. It further reduces $\ell_2$ perturbations of m…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Decision-based black-box attacks"
+  - "sensitive regions"
+  - "continuous sensitivity"
+  - "decision boundary"
+  - "perturbation optimization"
 date: 2026-05-08
-content_hash: c159c3a2a9e92546
+content_hash: dc7f010620560370
 ---
+
 # SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks
 
 **Conference**: ICLR 2026  
@@ -134,15 +140,17 @@ Evaluated on ImageNet (VGG19, ViT) and CIFAR-100 (Adversarially Trained WideResN
 
 <div class="related-papers" markdown="1">
 
-1. **PAR**: Patch-based Adaptive Refinement for Decision-based Attacks.
-2. **HSJA**: HopSkipJumpAttack: A Query-Efficient Decision-Based Attack.
-3. **ADBA**: Approximating Decision Boundary for Query-Efficient Attacks.
-4. **RayS**: Ray-S: A Gradient-free Hard-label Adversarial Attack.
+## Related Papers
+
+- [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
+- [\[ICLR 2026\] Traceable Black-box Watermarks for Federated Learning](traceable_black-box_watermarks_for_federated_learning.md)
+- [\[ICLR 2026\] Black-Box Privacy Attacks on Shared Representations in Multitask Learning](black-box_privacy_attacks_on_shared_representations_in_multitask_learning.md)
+- [\[AAAI 2026\] Robust Watermarking on Gradient Boosting Decision Trees](../../AAAI2026/ai_safety/robust_watermarking_on_gradient_boosting_decision_trees.md)
+- [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)

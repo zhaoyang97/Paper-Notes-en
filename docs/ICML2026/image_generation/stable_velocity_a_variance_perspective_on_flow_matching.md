@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Stable Velocity: A Variance Perspective on Flow Matching
 description: >-
-  [ICML 2026][Image Generation][flow matching] This paper re-examines flow matching from the overlooked perspective of "conditional velocity variance." It discovers that training trajectories naturally split into a high-variance zone near the prior and a low-variance zone near the data. Based on this, a unified framework, Stable Velocity, is proposed, featuring an
+  [ICML 2026][Image Generation][flow matching] This paper re-examines flow matching from the overlooked perspective of "conditional velocity variance." It discovers that training trajectories naturally split into a high-variance zone near the prior and a low-variance zone near the data. Based on this, a unified framework, Stable Velocity, is proposed, featuring an unbiased multi-sample variance reduction loss (StableVM), a VA-REPA module that enables representation alignment on…
 tags:
-  - ICML 2026
-  - Image Generation
-  - flow matching
+  - "ICML 2026"
+  - "Image Generation"
+  - "flow matching"
+  - "variance reduction"
+  - "representation alignment"
+  - "sampling acceleration"
+  - "stochastic interpolation"
 date: 2026-05-08
-content_hash: 3cae0347b4307a66
+content_hash: 43f3a21e71e18baa
 ---
+
 # Stable Velocity: A Variance Perspective on Flow Matching
 
 **Conference**: ICML 2026  
@@ -139,10 +144,10 @@ Ablation on split point $\xi$: $\xi=0.6$ is slightly better at 100k (17.38), but
 ## Related Papers
 
 - [\[ICML 2026\] A Kinetic Energy Perspective of Flow Matching](a_kinetic_energy_perspective_of_flow_matching.md)
-- [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
+- [\[ICLR 2026\] Terminal Velocity Matching](../../ICLR2026/image_generation/terminal_velocity_matching.md)
+- [\[ICLR 2026\] MeanCache: From Instantaneous to Average Velocity for Accelerating Flow Matching Inference](../../ICLR2026/image_generation/meancache_from_instantaneous_to_average_velocity_for_accelerating_flow_matching_.md)
 - [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](../../CVPR2026/image_generation/stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
-- [\[ICML 2026\] AG-REPA: Causal Layer Selection for Representation Alignment in Audio Flow Matching](ag-repa_causal_layer_selection_for_representation_alignment_in_audio_flow_matchi.md)
-- [\[ICML 2026\] Exploring and Exploiting Stability in Latent Flow Matching](exploring_and_exploiting_stability_in_latent_flow_matching.md)
+- [\[ICML 2026\] The Coupling Within: Flow Matching via Distilled Normalizing Flows](the_coupling_within_flow_matching_via_distilled_normalizing_flows.md)
 
 </div>
 

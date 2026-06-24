@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] DeMoGen reverses "text-to-motion" generation: it utilizes energy-based diffusion models to decompose a holistic motion into several semantically interpretable motion concepts (e.g., "walking in a Z-shape" + "waving left hand") without decomposition-level ground truth. These concepts can be freely recombined to generate
+  [CVPR 2026][Human Understanding][Text-to-Motion] DeMoGen reverses "text-to-motion" generation: it utilizes energy-based diffusion models to decompose a holistic motion into several semantically interpretable motion concepts (e.g., "walking in a Z-shape" + "waving left hand") without decomposition-level ground truth. These concepts can be freely recombined to generate unseen motions. It achieves improvements across text-to-motion, composition…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-to-Motion"
+  - "Energy Diffusion"
+  - "Motion Decomposition"
+  - "Concept Recomposition"
+  - "Compositional Training"
 date: 2026-05-08
-content_hash: 4e564efd467c92d5
+content_hash: b0ec6ddcb8274337
 ---
+
 # Towards Decompositional Human Motion Generation with Energy-Based Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -169,11 +175,11 @@ Evaluation of motion composition on DeCompML and data augmentation for text-to-m
 
 ## Related Papers
 
-- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
-- [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
+- [\[CVPR 2026\] Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)
+- [\[CVPR 2026\] Interact2Ar: Full-Body Human-Human Interaction Generation via Autoregressive Diffusion Models](interact2ar_full-body_human-human_interaction_generation_via_autoregressive_diff.md)
 - [\[CVPR 2026\] FloodDiffusion: Tailored Diffusion Forcing for Streaming Motion Generation](flooddiffusion_tailored_diffusion_forcing_for_streaming_motion_generation.md)
-- [\[CVPR 2026\] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)
-- [\[CVPR 2026\] LLaMo: Scaling Pretrained Language Models for Unified Motion Understanding and Generation with Continuous Autoregressive Tokens](llamo_scaling_pretrained_language_models_for_unified_motion_understanding_and_ge.md)
+- [\[CVPR 2026\] Towards Highly-Constrained Human Motion Generation with Retrieval-Guided Diffusion Noise Optimization](towards_highly-constrained_human_motion_generation_with_retrieval-guided_diffusi.md)
+- [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
 
 </div>
 

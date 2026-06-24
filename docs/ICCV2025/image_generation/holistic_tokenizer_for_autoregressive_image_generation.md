@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Holistic Tokenizer for Autoregressive Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Image Tokenizer] This paper proposes Hita, a holistic-to-local image tokenizer that captures global attributes such as texture, material, and shape via learnable global queries…
+  [ICCV 2025][Image Generation][Image Tokenizer] This paper proposes Hita, a holistic-to-local image tokenizer that captures global attributes such as texture, material, and shape via learnable global queries, and integrates dual codebooks with a causal-attention fusion module. Without modifying the AR model architecture, Hita reduces ImageNet 256×256 generation FID to 2.59, accelerates training convergence by 2.1×, and supports zero-shot style transfer and image completion.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "VQGAN"
   - "LlamaGen"
 date: 2026-05-08
-content_hash: c54497f32e8026d4
+content_hash: 815a11cca61dba3b
 ---
 
 # Holistic Tokenizer for Autoregressive Image Generation
@@ -147,9 +147,9 @@ Training time to reach FID=4.22 is reduced by **2.1×** — the global token pre
 
 - [\[ICCV 2025\] Spectral Image Tokenizer](spectral_image_tokenizer.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
-- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
 - [\[ICCV 2025\] Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling](music-aligned_holistic_3d_dance_generation_via_hierarchical_motion_modeling.md)
+- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
+- [\[CVPR 2025\] TokenFlow: Unified Image Tokenizer for Multimodal Understanding and Generation](../../CVPR2025/image_generation/tokenflow_unified_image_tokenizer_for_multimodal_understanding_and_generation.md)
 
 </div>
 

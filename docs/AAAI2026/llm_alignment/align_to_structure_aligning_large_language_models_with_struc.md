@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Align to Structure: Aligning Large Language Models with Structural Information
 description: >-
-  [AAAI 2026][LLM Alignment][Structural Alignment] This paper proposes Structural Alignment, a method that integrates linguistic discourse structure frameworks—surface-level text structure scoring and an RST-based discours…
+  [AAAI 2026][LLM Alignment][Structural Alignment] This paper proposes Structural Alignment, a method that integrates linguistic discourse structure frameworks—surface-level text structure scoring and an RST-based discourse motif classifier—into PPO reinforcement learning training, and introduces a discourse motif-based dense reward mechanism. This enables LLMs to generate more coherent, human-like long-form text, outperforming standard RLHF models on academic essay writing and…
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "Long-form Text Generation"
   - "Dense Reward"
 date: 2026-05-08
-content_hash: 735c3e74ec9982b1
+content_hash: 8c4b6178cc7fd762
 ---
 
 # Align to Structure: Aligning Large Language Models with Structural Information
@@ -125,11 +125,11 @@ In addition, a dense reward mechanism and length-penalty normalization are intro
 
 ## Related Papers
 
+- [\[ACL 2025\] SQL Injection Jailbreak: A Structural Disaster of Large Language Models](../../ACL2025/llm_alignment/sql_injection_jailbreak_a_structural_disaster_of_large_language_models.md)
 - [\[AAAI 2026\] Exploring the Effects of Alignment on Numerical Bias in Large Language Models](exploring_the_effects_of_alignment_on_numerical_bias_in_large_language_models.md)
 - [\[AAAI 2026\] BiasJailbreak: Analyzing Ethical Biases and Jailbreak Vulnerabilities in Large Language Models](biasjailbreakanalyzing_ethical_biases_and_jailbreak_vulnerabilities_in_large_lan.md)
 - [\[AAAI 2026\] Reducing the Scope of Language Models](reducing_the_scope_of_language_models.md)
-- [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
-- [\[ACL 2026\] Large Language Models Are Overconfident in Their Own Responses](../../ACL2026/llm_alignment/large_language_models_are_overconfident_in_their_own_responses.md)
+- [\[AAAI 2026\] EASE: Practical and Efficient Safety Alignment for Small Language Models](ease_practical_and_efficient_safety_alignment_for_small_language_models.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] CausalLens decomposes each attention head of the decoder into three pathways—"visual, text, and system prompt"—and identifies heads that truly attend to the image using a visual sensitivity score. By amplifying visual contributions and applying projection alignment corrections in a single forward pass within the middle
+  [CVPR 2026][Hallucination Detection][LVLM Hallucination] CausalLens decomposes each attention head of the decoder into three pathways—"visual, text, and system prompt"—and identifies heads that truly attend to the image using a visual sensitivity score. By amplifying visual contributions and applying projection alignment corrections in a single forward pass within the middle layers (L10–L20), it significantly reduces hallucinations in Large Vision-Language Models without retr…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "Causal Intervention"
+  - "Attention Head Decomposition"
+  - "Visual Sensitivity"
+  - "Training-free Decoding"
 date: 2026-05-08
-content_hash: d7854109b340336b
+content_hash: 5b1e41f9e8ac3d7b
 ---
+
 # CausalLens: Sensitivity-Guided Multi-Head Causal Intervention for Hallucination Mitigation in Large Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -161,15 +167,14 @@ Sensitivity to $\lambda$: Performance improves from $\lambda=0.05$ to $0.15$. At
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Prefill-Time Intervention for Mitigating Hallucination in Large Vision-Language Models](prefill-time_intervention_for_mitigating_hallucination_in_large_vision-language_.md)
+- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
 - [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
 - [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
-- [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](../../ICML2026/hallucination/mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
 
 </div>
 

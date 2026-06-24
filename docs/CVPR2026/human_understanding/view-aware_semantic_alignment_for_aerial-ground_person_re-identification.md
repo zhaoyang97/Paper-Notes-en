@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] To address the drastic viewpoint differences between UAVs and ground cameras in Aerial-Ground Person Re-Identification (AGPReID), this paper proposes ViSA. Instead of pursuing forced "view-invariant" alignment of shared parts, it utilizes a set of Expert-driven Token Generation Modules (ETGM) to generate adaptive seman
+  [CVPR 2026][Human Understanding][Aerial-Ground Person Re-Identification] To address the drastic viewpoint differences between UAVs and ground cameras in Aerial-Ground Person Re-Identification (AGPReID), this paper proposes ViSA. Instead of pursuing forced "view-invariant" alignment of shared parts, it utilizes a set of Expert-driven Token Generation Modules (ETGM) to generate adaptive semantic queries. These queries are then anchored to their responsive local regions using a…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Aerial-Ground Person Re-Identification"
+  - "View-aware"
+  - "Mixture of Experts"
+  - "Graph Convolution"
+  - "Feature Decoupling"
 date: 2026-05-08
-content_hash: 87e6495abdb316c0
+content_hash: 582937cec46c70b7
 ---
+
 # View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification
 
 **Conference**: CVPR 2026  
@@ -132,8 +138,8 @@ Component analysis on CARGO (%):
 
 ## Related Papers
 
-- [\[CVPR 2026\] WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification](whu-mars_a_multispectral_aerial-ground_benchmark_towards_any-scenario_person_re-.md)
 - [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
+- [\[CVPR 2026\] VRCLIP: Multimodal Canonical Correlation Alignment for CLIP-Driven Vision-Radio Person Re-Identification](vrclip_multimodal_canonical_correlation_alignment_for_clip-driven_vision-radio_p.md)
 - [\[CVPR 2026\] SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification](ssm-aware_token-efficient_vmamba_via_adaptive_patch_pruning_and_merging_for_pers.md)
 - [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)

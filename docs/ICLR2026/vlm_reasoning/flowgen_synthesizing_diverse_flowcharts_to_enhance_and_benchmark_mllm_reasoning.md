@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlowGen: Synthesizing Diverse Flowcharts to Enhance and Benchmark MLLM Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] This paper proposes FlowGen, a controllable flowchart synthesizer that utilizes seven structural parameters and four rendering backends to generate diagrams on-demand. It synthesizes massive training data to significantly enhance the flowchart parsing capabilities of open-source MLLMs (approaching closed-source models)
+  [ICLR 2026][VLM Reasoning][Flowchart Understanding] This paper proposes FlowGen, a controllable flowchart synthesizer that utilizes seven structural parameters and four rendering backends to generate diagrams on-demand. It synthesizes massive training data to significantly enhance the flowchart parsing capabilities of open-source MLLMs (approaching closed-source models) and generates a rigorous benchmark where even GPT-4o fails to achieve a 25% F1 score.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Flowchart Understanding"
+  - "Controllable Data Synthesis"
+  - "MLLM"
+  - "Structural Parsing"
+  - "Cross-Renderer Generalization"
 date: 2026-05-08
-content_hash: 5bab7bfff919f356
+content_hash: 791e398c7fef89d9
 ---
+
 # FlowGen: Synthesizing Diverse Flowcharts to Enhance and Benchmark MLLM Reasoning
 
 **Conference**: ICLR 2026  

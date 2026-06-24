@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Diffusion Duality, Chapter II: Ψ-Samplers
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Addressing the issue where Uniform State Discrete Diffusion (USDM) quality saturates rather than improves at high sampling steps, this paper proposes a family of "superposition posteriors" (Ψ-posterior) and its corresponding Ψ-sampler (Predictor-Corrector sampler). This generalizes correction methods like ReMDM to arbi
+  [ICLR 2026][LLM Pretraining][Discrete Diffusion] Addressing the issue where Uniform State Discrete Diffusion (USDM) quality saturates rather than improves at high sampling steps, this paper proposes a family of "superposition posteriors" (Ψ-posterior) and its corresponding Ψ-sampler (Predictor-Corrector sampler). This generalizes correction methods like ReMDM to arbitrary noise priors, allowing USDM text/image generation quality to scale with sampling steps. Additionally…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Discrete Diffusion"
+  - "Uniform State Diffusion"
+  - "Predictor-Corrector Sampling"
+  - "Curriculum Learning"
+  - "Language Modeling"
 date: 2026-05-08
-content_hash: 96cb9b7c41ba7f8a
+content_hash: 8f01d32701533859
 ---
+
 # The Diffusion Duality, Chapter II: Ψ-Samplers
 
 **Conference**: ICLR 2026  
@@ -140,15 +146,15 @@ Image modeling on CIFAR-10 (35M U-Net + Discrete CFG): Duo++ + Ψ-sampler compre
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
 - [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
 - [\[ICLR 2026\] Autoregressive Models Rival Diffusion Models at Any-Order Generation](autoregressive_models_rival_diffusion_models_at_any-order_generation.md)
 - [\[ICLR 2026\] Time is a Feature: Exploiting Temporal Dynamics in Diffusion Language Models](time_is_a_feature_exploiting_temporal_dynamics_in_diffusion_language_models.md)
 - [\[NeurIPS 2025\] Next Semantic Scale Prediction via Hierarchical Diffusion Language Models](../../NeurIPS2025/llm_pretraining/next_semantic_scale_prediction_via_hierarchical_diffusion_language_models.md)
-- [\[NeurIPS 2025\] A Practical Guide for Incorporating Symmetry in Diffusion Policy](../../NeurIPS2025/llm_pretraining/a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)
 
 </div>
 

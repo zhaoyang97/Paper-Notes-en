@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MoRel utilizes "Keyframe Anchors + Bidirectional Deformation + Learnable Temporal Opacity Blending" to decompose long-sequence dynamic scenes of thousands of frames into segments of anchor relays. Under bounded memory constraints, it eliminates flickering at segment boundaries caused by chunk-based training, achieving
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] MoRel utilizes "Keyframe Anchors + Bidirectional Deformation + Learnable Temporal Opacity Blending" to decompose long-sequence dynamic scenes of thousands of frames into segments of anchor relays. Under bounded memory constraints, it eliminates flickering at segment boundaries caused by chunk-based training, achieving the best temporal consistency among all comparison methods with a tOF reduction to 0.203.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Dynamic Scene Reconstruction"
+  - "Long-Range Modeling"
+  - "Temporal Consistency"
+  - "Anchor Representation"
 date: 2026-05-08
-content_hash: 17430faccf4c9660
+content_hash: 706656c7ac1270af
 ---
+
 # MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification
 
 **Conference**: CVPR 2026  
@@ -166,10 +172,10 @@ Evaluated on a 300-frame subset of SelfCapLR:
 ## Related Papers
 
 - [\[CVPR 2026\] Can Natural Image Autoencoders Compactly Tokenize fMRI Volumes for Long-Range Dynamics Modeling?](can_natural_image_autoencoders_compactly_tokenize_fmri_volumes_for_long-range_dy.md)
-- [\[CVPR 2026\] Tracking-Guided 4D Generation: Foundation-Tracker Motion Priors for 3D Model Animation](tracking-guided_4d_generation_foundation-tracker_motion_priors_for_3d_model_anim.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] PackUV: Packed Gaussian UV Maps for 4D Volumetric Video](packuv_packed_gaussian_uv_maps_for_4d_volumetric_video.md)
+- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
+- [\[CVPR 2026\] AnchorFlow: Training-Free 3D Editing via Latent Anchor-Aligned Flows](anchorflow_training-free_3d_editing_via_latent_anchor-aligned_flows.md)
+- [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
 
 </div>
 

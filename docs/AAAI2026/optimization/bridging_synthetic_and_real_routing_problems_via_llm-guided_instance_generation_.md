@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation
 description: >-
-  [AAAI 2026][Optimization][Neural Combinatorial Optimization] This paper proposes EvoReal, a framework that employs LLM-driven evolutionary search to generate synthetic VRP instances structurally aligned with real-world d…
+  [AAAI 2026][Optimization][Neural Combinatorial Optimization] This paper proposes EvoReal, a framework that employs LLM-driven evolutionary search to generate synthetic VRP instances structurally aligned with real-world distributions, and then adapts pretrained neural solvers to real benchmarks via a two-stage progressive fine-tuning strategy. EvoReal substantially outperforms existing neural solvers on TSPLib (1.05% gap) and CVRPLib (2.71% gap).
 tags:
   - "AAAI 2026"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "Progressive Fine-Tuning"
   - "Generalization"
 date: 2026-05-08
-content_hash: d76ad8588b251b89
+content_hash: 3389293e86afc0d8
 ---
 
 # Bridging Synthetic and Real Routing Problems via LLM-Guided Instance Generation and Progressive Adaptation
@@ -141,11 +141,11 @@ On CVRPLib, LEHD (ours) exhibits a gap variance of only 0.44% across scale range
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning to Segment for Vehicle Routing Problems](../../ICLR2026/optimization/learning_to_segment_for_vehicle_routing_problems.md)
 - [\[AAAI 2026\] Instance Generation for Meta-Black-Box Optimization through Latent Space Reverse Engineering](instance_generation_for_meta-black-box_optimization_through_latent_space_reverse.md)
 - [\[NeurIPS 2025\] Rethinking Neural Combinatorial Optimization for Vehicle Routing Problems with Different Constraint Tightness Degrees](../../NeurIPS2025/optimization/rethinking_neural_combinatorial_optimization_for_vehicle_routing_problems_with_d.md)
-- [\[AAAI 2026\] PEOAT: Personalization-Guided Evolutionary Question Assembly for One-Shot Adaptive Testing](peoat_personalization-guided_evolutionary_question_assembly_for_one-shot_adaptiv.md)
-- [\[AAAI 2026\] Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment](cost-minimized_label-flipping_poisoning_attack_to_llm_alignment.md)
-- [\[AAAI 2026\] Co-Layout: LLM-driven Co-optimization for Interior Layout](co-layout_llm-driven_co-optimization_for_interior_layout.md)
+- [\[ICLR 2026\] LMask: Learn to Solve Constrained Routing Problems with Lazy Masking](../../ICLR2026/optimization/lmask_learn_to_solve_constrained_routing_problems_with_lazy_masking.md)
+- [\[ICLR 2026\] Combination-of-Experts with Knowledge Sharing for Cross-Task Vehicle Routing Problems](../../ICLR2026/optimization/combination-of-experts_with_knowledge_sharing_for_cross-task_vehicle_routing_pro.md)
 
 </div>
 

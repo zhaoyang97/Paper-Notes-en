@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability
 description: >-
-  [NeurIPS 2025][Autonomous Driving][large-scale scene generation] This paper presents X-Scene, a unified large-scale driving scene generation framework that supports multi-granularity control ranging from high-level text…
+  [NeurIPS 2025][Autonomous Driving][large-scale scene generation] This paper presents X-Scene, a unified large-scale driving scene generation framework that supports multi-granularity control ranging from high-level text prompts to low-level BEV layouts. By jointly generating 3D semantic occupancy, multi-view images, and videos, and leveraging consistency-aware extrapolation for large-scale scene expansion, X-Scene comprehensively outperforms existing methods in generation qua…
 tags:
   - "NeurIPS 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "3DGS reconstruction"
   - "autonomous driving simulation"
 date: 2026-05-08
-content_hash: f8823c3356e41816
+content_hash: 58bc84fb56a51456
 ---
 
 # X-Scene: Large-Scale Driving Scene Generation with High Fidelity and Flexible Controllability
@@ -152,9 +152,9 @@ Data augmentation effect:
 ## Related Papers
 
 - [\[NeurIPS 2025\] SPIRAL: Semantic-Aware Progressive LiDAR Scene Generation and Understanding](spiral_semantic-aware_progressive_lidar_scene_generation_and_understanding.md)
+- [\[CVPR 2026\] Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals](../../CVPR2026/autonomous_driving/rascene_high-fidelity_3d_scene_imaging_with_mmwave_communication_signals.md)
 - [\[NeurIPS 2025\] CymbaDiff: Structured Spatial Diffusion for Sketch-based 3D Semantic Urban Scene Generation](cymbadiff_structured_spatial_diffusion_for_sketch-based_3d_semantic_urban_scene_.md)
 - [\[ICCV 2025\] Decoupled Diffusion Sparks Adaptive Scene Generation](../../ICCV2025/autonomous_driving/decoupled_diffusion_sparks_adaptive_scene_generation.md)
-- [\[CVPR 2026\] Rascene: High-Fidelity 3D Scene Imaging with mmWave Communication Signals](../../CVPR2026/autonomous_driving/rascene_high-fidelity_3d_scene_imaging_with_mmwave_communication_signals.md)
 - [\[ICCV 2025\] Controllable 3D Outdoor Scene Generation via Scene Graphs](../../ICCV2025/autonomous_driving/controllable_3d_outdoor_scene_generation_via_scene_graphs.md)
 
 </div>

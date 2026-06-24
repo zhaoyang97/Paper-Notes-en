@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] To address the issues of slow inference and information drowning in RAG under 10k+ word contexts, the authors synthesize multi-hop long-context training data via a "short-context seed data → Wikipedia expansion → head-tail iterative pruning" pipeline. By fine-tuning a 3B Llama-3.2 as an extractive summarizer (BRIEF-Pro
+  [ACL 2026 Findings][Information Retrieval & RAG][Long Context Compression] To address the issues of slow inference and information drowning in RAG under 10k+ word contexts, the authors synthesize multi-hop long-context training data via a "short-context seed data → Wikipedia expansion → head-tail iterative pruning" pipeline. By fine-tuning a 3B Llama-3.2 as an extractive summarizer (BRIEF-Pro), the model outperforms LongLLMLingua's 9× compression with a 32× compression rate a…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Long Context Compression"
+  - "RAG"
+  - "Multi-Hop QA"
+  - "Synthetic Data"
+  - "User-Controllable"
 date: 2026-05-08
-content_hash: 17fb31a429d22511
+content_hash: 3a34ae9120cf723f
 ---
+
 # BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -137,14 +142,17 @@ On the 70B reader, BRIEF-Pro-Auto outperforms LongLLMLingua by 4.67 points with 
 
 <div class="related-papers" markdown="1">
 
-1. **RECOMP**: Improving Retrieval-Augmented LMs with Compression and Selective Augmentation, arXiv 2023.
-2. **LongLLMLingua**: Accelerating and Optimizing Long-context LLMs via Prompt Compression, ICLR 2024.
-3. **BRIEF**: Bridging the Gap between Retriever and Reader for Context-augmented LMs, arXiv 2023.
+## Related Papers
+
+- [\[ICML 2026\] ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs](../../ICML2026/information_retrieval/pariskv_fast_and_drift-robust_kv-cache_retrieval_for_long-context_llms.md)
+- [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training](../../ICLR2026/information_retrieval/q-rag_long_context_multistep_retrieval_via_valuebased_embedder_training.md)
+- [\[AAAI 2026\] OPERA: A Reinforcement Learning--Enhanced Orchestrated Planner-Executor Architecture for Reasoning-Oriented Multi-Hop Retrieval](../../AAAI2026/information_retrieval/opera_a_reinforcement_learning--enhanced_orchestrated_planner-executor_architect.md)
+- [\[ICML 2026\] Less Is More: Elevating RAG via Performance-Driven Context Compression](../../ICML2026/information_retrieval/less_is_more_elevating_rag_via_performance-driven_context_compression.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)

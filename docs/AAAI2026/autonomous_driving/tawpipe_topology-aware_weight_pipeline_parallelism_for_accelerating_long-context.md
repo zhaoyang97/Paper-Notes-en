@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training
 description: >-
-  [AAAI 2026][Autonomous Driving][Pipeline Parallelism] This paper proposes TawPipe—a topology-aware weight pipeline parallelism framework comprising three components: group-based weight scheduling, device-bound storage…
+  [AAAI 2026][Autonomous Driving][Pipeline Parallelism] This paper proposes TawPipe—a topology-aware weight pipeline parallelism framework comprising three components: group-based weight scheduling, device-bound storage, and communication-computation overlap. By exploiting the hierarchical bandwidth characteristics of distributed clusters, TawPipe achieves throughput improvements of 11.8%/23.6%/44.1% over WeiPipe/1F1B/FSDP respectively when training LLaMA models on 24 GPUs…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Long-Context Training"
   - "LLM Training Acceleration"
 date: 2026-05-08
-content_hash: 0afaf454a5891bed
+content_hash: 551364d3fb215f13
 ---
 
 # TawPipe: Topology-Aware Weight Pipeline Parallelism for Accelerating Long-Context Large Models Training
@@ -229,9 +229,9 @@ CCO contributes the most (removing it causes a throughput drop of 7.7%–17.4%);
 
 - [\[AAAI 2026\] TimeBill: Time-Budgeted Inference for Large Language Models](timebill_time-budgeted_inference_for_large_language_models.md)
 - [\[AAAI 2026\] Walking Further: Semantic-aware Multimodal Gait Recognition Under Long-Range Conditions](walking_further_semantic-aware_multimodal_gait_recognition_under_long-range_cond.md)
+- [\[ICLR 2026\] Low-Latency Neural LiDAR Compression with 2D Context Models](../../ICLR2026/autonomous_driving/low-latency_neural_lidar_compression_with_2d_context_models.md)
 - [\[AAAI 2026\] Fine-Grained Representation for Lane Topology Reasoning](fine-grained_representation_for_lane_topology_reasoning.md)
-- [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](../../CVPR2026/autonomous_driving/dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
-- [\[AAAI 2026\] SAML: A Differentiable Semantic Meta-Learning Framework for Long-Tail Motion Prediction](differentiable_semantic_meta-learning_framework_for_long-tail_motion_forecasting.md)
+- [\[CVPR 2026\] TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation](../../CVPR2026/autonomous_driving/trafficalign_aligning_large_language_models_for_traffic_scenario_generation.md)
 
 </div>
 

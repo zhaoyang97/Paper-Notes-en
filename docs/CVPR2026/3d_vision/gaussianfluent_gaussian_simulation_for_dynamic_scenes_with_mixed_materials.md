@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] GaussianFluent supplements surface-only 3DGS by filling interiors with realistic textured Gaussians using generative models. It integrates a stabilized, parallelized Continuous Damage Material Point Method (CD-MPM) into the simulation, enabling 3DGS to realistically simulate brittle fracture, cutting, and bullet penetr
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] GaussianFluent supplements surface-only 3DGS by filling interiors with realistic textured Gaussians using generative models. It integrates a stabilized, parallelized Continuous Damage Material Point Method (CD-MPM) into the simulation, enabling 3DGS to realistically simulate brittle fracture, cutting, and bullet penetration in mixed materials at real-time speeds with exposed internal structures.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - CD-MPM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Physical Simulation"
+  - "Brittle Fracture"
+  - "CD-MPM"
+  - "Internal Texture Generation"
 date: 2026-05-08
-content_hash: 0f0caa773a7d9188
+content_hash: a89e157ea3914ca8
 ---
+
 # GaussianFluent: Gaussian Simulation for Dynamic Scenes with Mixed Materials
 
 **Conference**: CVPR 2026  
@@ -162,11 +166,11 @@ The continuous return mapping allows the algorithm to run on GPUs, reducing per-
 
 ## Related Papers
 
-- [\[CVPR 2026\] FluidGaussian: Propagating Simulation-Based Uncertainty Toward Functionally-Intelligent 3D Reconstruction](fluidgaussian_propagating_simulation-based_uncertainty_toward_functionally-intel.md)
-- [\[CVPR 2026\] FastEventDGS: Deformable Gaussian Splatting for Fast Dynamic Scenes from a Single Event Camera](fasteventdgs_deformable_gaussian_splatting_for_fast_dynamic_scenes_from_a_single.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
-- [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
-- [\[CVPR 2026\] 240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](physhead_simulation-ready_gaussian_head_avatars.md)
+- [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
+- [\[CVPR 2026\] Gaussian Mapping for Evolving Scenes](gaussian_mapping_for_evolving_scenes.md)
+- [\[CVPR 2026\] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping](space-time_forecasting_of_dynamic_scenes_with_motion-aware_gaussian_grouping.md)
 
 </div>
 

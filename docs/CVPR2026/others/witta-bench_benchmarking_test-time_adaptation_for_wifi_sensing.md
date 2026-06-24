@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing
 description: >-
-  [CVPR 2026][Others][Paper Note] WiTTA-Bench is the first benchmark to systematically evaluate "Test-Time Adaptation (TTA) for WiFi Sensing." It decomposes domain shifts in WiFi Channel State Information (CSI) into three physically-induced categories: cross-environment, cross-subject, and cross-device. Evaluating 20 representative TTA methods under On
+  [CVPR 2026][WiFi Sensing] WiTTA-Bench is the first benchmark to systematically evaluate "Test-Time Adaptation (TTA) for WiFi Sensing." It decomposes domain shifts in WiFi Channel State Information (CSI) into three physically-induced categories: cross-environment, cross-subject, and cross-device. Evaluating 20 representative TTA methods under Online TTA (OTTA) and Test-Time Domain Adaptation (TTDA) protocols, while introducing a paired cross-device dataset WiHAR-Dual…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "WiFi Sensing"
+  - "Test-Time Adaptation"
+  - "Domain Shift"
+  - "Human Activity Recognition"
+  - "Cross-Device"
 date: 2026-05-08
-content_hash: 0cb55e260c941ea5
+content_hash: 6d734a10b4efa943
 ---
+
 # WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing
 
 **Conference**: CVPR 2026  
@@ -149,10 +154,10 @@ The CE/CS/CD trends are highly consistent, confirming the findings are WiFi-spec
 ## Related Papers
 
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
-- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
-- [\[CVPR 2026\] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation](curvature-aware_zeroth-order_optimization_for_memory-efficient_test-time_adaptat.md)
-- [\[CVPR 2026\] Dance Across Shifts: Forward-Facilitation Continual Test-Time Adaptation through Dynamic Style Bridging](dance_across_shifts_forward-facilitation_continual_test-time_adaptation_through_.md)
+- [\[CVPR 2026\] Basis-Oriented Low-rank Transfer for Few-Shot and Test-Time Adaptation](basis-oriented_low-rank_transfer_for_few-shot_and_test-time_adaptation.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
+- [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](../../ICML2026/others/private_and_stable_test-time_adaptation_with_differential_privacy.md)
+- [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
 
 </div>
 

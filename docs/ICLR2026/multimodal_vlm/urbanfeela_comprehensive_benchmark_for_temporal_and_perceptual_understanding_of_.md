@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] UrbanFeel：A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective
+  [Paper Note] UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] UrbanFeel establishes a multimodal large model evaluation benchmark for urban street views. Using 11 tasks and 14.3K visual question-answering samples, it simultaneously examines static scene recognition, long-term temporal change understanding, and subjective perception consistency across dimensions like safety, aesth
+  [ICLR2026][Multimodal VLM][Urban street view understanding] UrbanFeel establishes a multimodal large model evaluation benchmark for urban street views. Using 11 tasks and 14.3K visual question-answering samples, it simultaneously examines static scene recognition, long-term temporal change understanding, and subjective perception consistency across dimensions like safety, aesthetics, wealth, and liveliness. The study finds that while current MLLMs approach human levels in sin…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Urban street view understanding"
+  - "Multimodal benchmark"
+  - "Temporal changes"
+  - "Human perception"
+  - "Subjective environmental assessment"
 date: 2026-05-08
-content_hash: c3eff4dd2f94b7ba
+content_hash: 5ca7af66840c2038
 ---
+
 # UrbanFeel: A Comprehensive Benchmark for Temporal and Perceptual Understanding of City Scenes through Human Perspective
 
 **Conference**: ICLR2026  
@@ -133,14 +139,13 @@ Authors attribute this to "over-reasoning," where models amplify temporal noise 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] HumanPCR: Probing MLLM Capabilities in Diverse Human-Centric Scenes](humanpcr_probing_mllm_capabilities_in_diverse_human-centric_scenes.md)
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](../../CVPR2026/multimodal_vlm/posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 - [\[NeurIPS 2025\] Face-Human-Bench: A Comprehensive Benchmark of Face and Human Understanding for Multi-modal Assistants](../../NeurIPS2025/multimodal_vlm/face-human-bench_a_comprehensive_benchmark_of_face_and_human_understanding_for_m.md)
 - [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
+- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](../../CVPR2026/multimodal_vlm/posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
 - [\[ICLR 2026\] Human-MME: A Holistic Evaluation Benchmark for Human-Centric Multimodal Large Language Models](human-mme_a_holistic_evaluation_benchmark_for_human-centric_multimodal_large_lan.md)
 
 </div>

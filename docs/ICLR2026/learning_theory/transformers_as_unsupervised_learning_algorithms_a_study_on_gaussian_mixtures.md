@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures
 description: >-
-  [ICLR 2026][learning_theory][Transformer] This paper uses meta-learning to train a shared transformer (TGMM) to simultaneously estimate parameters for Gaussian Mixture Models (GMM) with varying numbers of components. Experimentally, it overcomes the respective weaknesses of EM and spectral methods. Theoretically, it is the first to prove that transformers can
+  [ICLR2026][Learning Theory][Transformer] This paper uses meta-learning to train a shared transformer (TGMM) to simultaneously estimate parameters for Gaussian Mixture Models (GMM) with varying numbers of components. Experimentally, it overcomes the respective weaknesses of EM and spectral methods. Theoretically, it is the first to prove that transformers can approximate both the EM algorithm and the core of spectral methods—third-order tensor power iteration.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Transformer
-  - in-context learning
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Transformer"
+  - "Gaussian Mixture Models"
+  - "Unsupervised Learning"
+  - "EM Algorithm"
+  - "Spectral Methods"
+  - "in-context learning"
 date: 2026-05-08
-content_hash: 9f35160dcbdd6280
+content_hash: cf4b55ddcf54096b
 ---
+
 # Transformers as Unsupervised Learning Algorithms: A study on Gaussian Mixtures
 
 **Conference**: ICLR2026  
@@ -156,8 +161,8 @@ Conclusion: TGMM remains robust in scenarios where EM fails (local optima) and s
 - [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 - [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
+- [\[ICLR 2026\] An evolutionary perspective on modes of learning in Transformers](an_evolutionary_perspective_on_modes_of_learning_in_transformers.md)
 - [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](../../ICML2026/learning_theory/robustness_of_mixtures_of_experts_to_feature_noise.md)
-- [\[ICLR 2026\] Transformers Are Inherently Succinct](transformers_are_inherently_succinct.md)
 
 </div>
 

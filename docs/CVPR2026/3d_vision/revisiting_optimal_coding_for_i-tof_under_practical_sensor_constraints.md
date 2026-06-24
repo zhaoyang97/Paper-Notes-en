@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper derives the depth error of I-ToF cameras under a realistic noise model into a computable "depth variance metric." It directly integrates hardware constraints—such as peak power, bandwidth, binary waveforms, and mutually exclusive multi-taps—into the design phase. This allows for searching the optimal coding
+  [CVPR 2026][3D Vision][Indirect Time-of-Flight] This paper derives the depth error of I-ToF cameras under a realistic noise model into a computable "depth variance metric." It directly integrates hardware constraints—such as peak power, bandwidth, binary waveforms, and mutually exclusive multi-taps—into the design phase. This allows for searching the optimal coding schemes within a constrained feasible space. The two discovered schemes (for high/low SNR) consistently outperfo…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Indirect Time-of-Flight"
+  - "Coding Scheme"
+  - "Depth Variance"
+  - "Hardware Constraints"
+  - "Mutually Exclusive Multi-tap"
 date: 2026-05-08
-content_hash: 8189a05170bab5ff
+content_hash: e3962b90665f3e32
 ---
+
 # Revisiting Optimal Coding for I-ToF under Practical Sensor Constraints
 
 **Conference**: CVPR 2026  
@@ -145,6 +151,7 @@ In the motion experiment, **proposed-low uses 1/3 the integration time (5ms vs 1
 - **Value**: ⭐⭐⭐⭐ High practical value for commercial I-ToF systems aiming to reduce noise and motion blur.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -152,8 +159,8 @@ In the motion experiment, **proposed-low uses 1/3 the integration time (5ms vs 1
 - [\[CVPR 2026\] Revisiting Pose Sensitivity in Splat-based Computed Tomography under Sparse-view Reconstruction](revisiting_pose_sensitivity_in_splat-based_computed_tomography_under_sparse-view.md)
 - [\[CVPR 2026\] Globally Optimal Pose from Orthographic Silhouettes](globally_optimal_pose_from_orthographic_silhouettes.md)
 - [\[CVPR 2026\] GeoCodeBench: Benchmarking PhD-Level Coding in 3D Geometric Computer Vision](benchmarking_phd-level_coding_in_3d_geometric_computer_vision.md)
+- [\[CVPR 2026\] Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)
 - [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
-- [\[CVPR 2026\] Revisiting 3D Reconstruction Kernels as Low-Pass Filters](revisiting_3d_reconstruction_kernels_as_low-pass_filters.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Imagination Helps Visual Reasoning, But Not Yet in Latent Space
 description: >-
-  [ICML 2026][vlm_reasoning][MLLM] This paper employs causal mediation analysis to decompose "Latent Visual Reasoning (using MLLM hidden states as latent tokens for visual imagination)" into a causal chain $X\to Z\to Y$. Empirical evidence reveals that latent tokens are neither varied with inputs (Input-Latent disconnection) nor significantly impact the
+  [ICML2026][VLM Reasoning][Latent Visual Reasoning] This paper employs causal mediation analysis to decompose "Latent Visual Reasoning (using MLLM hidden states as latent tokens for visual imagination)" into a causal chain $X\to Z\to Y$. Empirical evidence reveals that latent tokens are neither varied with inputs (Input-Latent disconnection) nor significantly impact the final answer (Latent-Answer disconnection), questioning their necessity. Consequently, a simple alternative…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - MLLM
+  - "ICML2026"
+  - "VLM Reasoning"
+  - "Latent Visual Reasoning"
+  - "Causal Mediation Analysis"
+  - "Visual Imagination"
+  - "Text-space Reasoning"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 6d6051f7b86a53cc
+content_hash: 1be0ea1d578a8e3f
 ---
+
 # Imagination Helps Visual Reasoning, But Not Yet in Latent Space
 
 **Conference**: ICML2026  
@@ -131,9 +136,9 @@ Removing either component leads to significant performance drops, highlighting t
 ## Related Papers
 
 - [\[CVPR 2026\] Monet: Reasoning in Latent Visual Space Beyond Image and Language](../../CVPR2026/vlm_reasoning/monet_reasoning_in_latent_visual_space_beyond_image_and_language.md)
+- [\[ICLR 2026\] Latent Visual Reasoning](../../ICLR2026/vlm_reasoning/latent_visual_reasoning.md)
+- [\[ICLR 2026\] Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning](../../ICLR2026/vlm_reasoning/not_search_but_scan_benchmarking_mllms_on_scan-oriented_academic_paper_reasoning.md)
 - [\[CVPR 2026\] Latent Implicit Visual Reasoning](../../CVPR2026/vlm_reasoning/latent_implicit_visual_reasoning.md)
-- [\[ACL 2026\] Forest Before Trees: Latent Superposition for Efficient Visual Reasoning](../../ACL2026/vlm_reasoning/forest_before_trees_latent_superposition_for_efficient_visual_reasoning.md)
-- [\[CVPR 2026\] Machine Mental Imagery: Empower Multimodal Reasoning with Latent Visual Tokens](../../CVPR2026/vlm_reasoning/machine_mental_imagery_empower_multimodal_reasoning_with_latent_visual_tokens.md)
 - [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 
 </div>

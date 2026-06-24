@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels
 description: >-
-  [ICLR 2026][learning_theory][RKHS] UniCon reformulates contrastive learning objectives, such as CLIP and InfoNCE, into a spectral problem driven by a contrastive similarity weight matrix $S(\gamma)$. By extending this to non-linear encoders via kernel methods, it replaces prolonged SGD training with closed-form spectral updates, delivering order-of-magn
+  [ICLR 2026][Learning Theory][Kernel Methods] UniCon reformulates contrastive learning objectives, such as CLIP and InfoNCE, into a spectral problem driven by a contrastive similarity weight matrix $S(\gamma)$. By extending this to non-linear encoders via kernel methods, it replaces prolonged SGD training with closed-form spectral updates, delivering order-of-magnitude acceleration while maintaining or enhancing performance in multimodal retrieval.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - RKHS
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Contrastive Learning"
+  - "Multimodal Alignment"
+  - "Kernel Methods"
+  - "RKHS"
+  - "Spectral Decomposition"
 date: 2026-05-08
-content_hash: 557508f2050bf8bc
+content_hash: dc08839062b230f4
 ---
+
 # UniCon: Unified Framework for Efficient Contrastive Alignment via Kernels
 
 **Conference**: ICLR 2026  
@@ -147,7 +152,7 @@ The paper analyzes the method's properties through setting variations and data e
 ## Related Papers
 
 - [\[ICLR 2026\] "Noisier" Noise Contrastive Estimation is (Almost) Maximum Likelihood](noisier_noise_contrastive_estimation_is_almost_maximum_likelihood.md)
-- [\[ICLR 2026\] On the Computational Limits of AI4S-RL：A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
+- [\[ICLR 2026\] On the Computational Limits of AI4S-RL: A Unified $\varepsilon$-$N$ Analysis](on_the_computational_limits_of_ai4s-rl_a_unified_varepsilon-n_analysis.md)
 - [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
 - [\[ICLR 2026\] Enabling Fine-Tuning of Direct Feedback Alignment via Feedback-Weight Matching](enabling_fine-tuning_of_direct_feedback_alignment_via_feedback-weight_matching.md)
 - [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)

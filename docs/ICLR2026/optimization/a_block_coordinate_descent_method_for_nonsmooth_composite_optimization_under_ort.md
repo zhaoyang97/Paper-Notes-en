@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Block Coordinate Descent Method for Nonsmooth Composite Optimization under Orthogonality Constraints
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] OBCD is proposed as a block coordinate descent algorithm for solving "smooth + nonsmooth" composite optimization under orthogonality constraints (Stiefel manifold). By updating only $k\ge 2$ rows of the solution matrix and reducing the problem to a small-scale $k\times k$ orthogonal subproblem for exact solution, the m
+  [ICLR2026][Optimization][Orthogonality constraints] OBCD is proposed as a block coordinate descent algorithm for solving "smooth + nonsmooth" composite optimization under orthogonality constraints (Stiefel manifold). By updating only $k\ge 2$ rows of the solution matrix and reducing the problem to a small-scale $k\times k$ orthogonal subproblem for exact solution, the method ensures strict feasibility and low per-iteration cost. It establishes "block-$k$ stationarity…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Orthogonality constraints"
+  - "Stiefel manifold"
+  - "Block Coordinate Descent"
+  - "Nonsmooth composite optimization"
+  - "Sparse PCA"
 date: 2026-05-08
-content_hash: 0bf8628f55fcbdf5
+content_hash: 33350e292f84fb8f
 ---
+
 # A Block Coordinate Descent Method for Nonsmooth Composite Optimization under Orthogonality Constraints
 
 **Conference**: ICLR2026  
@@ -136,16 +142,16 @@ Under a harder setting ($\lambda=50$), the gap widens (e.g., MNIST: LADMM 999.98
 - Value: ⭐⭐⭐⭐ (Provides a solid new framework for exactly solvable nonsmooth optimization on Stiefel manifolds).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Clipped Gradient Methods for Nonsmooth Convex Optimization under Heavy-Tailed Noise: A Refined Analysis](clipped_gradient_methods_for_nonsmooth_convex_optimization_under_heavy-tailed_no.md)
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 - [\[ICML 2026\] Mirror Descent Under Generalized Smoothness](../../ICML2026/optimization/mirror_descent_under_generalized_smoothness.md)
 - [\[ICML 2026\] Multi-Objective Bayesian Optimization via Adaptive ε-Constraints Decomposition](../../ICML2026/optimization/multi-objective_bayesian_optimization_via_adaptive_varepsilon-constraints_decomp.md)
 - [\[ICLR 2026\] Arbitrary-Order Block SignSGD for Memory-Efficient LLM Fine-Tuning](arbitrary-order_block_signsgd_for_memory-efficient_llm_fine-tuning.md)
-- [\[ICLR 2026\] Decentralized Nonconvex Optimization under Heavy-Tailed Noise: Normalization and Optimal Convergence](decentralized_nonconvex_optimization_under_heavy-tailed_noise_normalization_and_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A General Framework for Dynamic Consistent Submodular Maximization
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper presents a general consistency framework for fully dynamic submodular maximization. In streaming environments with insertions and deletions, it provides the first constant approximation guarantees with sublinear worst-case per-step solution changes (recourse) for both cardinality and matroid constraints.
+  [ICML2026][Optimization][Submodular maximization] This paper presents a general consistency framework for fully dynamic submodular maximization. In streaming environments with insertions and deletions, it provides the first constant approximation guarantees with sublinear worst-case per-step solution changes (recourse) for both cardinality and matroid constraints.
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Submodular maximization"
+  - "dynamic algorithms"
+  - "consistency"
+  - "deletion-robust"
+  - "Matroid constraint"
 date: 2026-05-08
-content_hash: 1ceb8f1e755ff271
+content_hash: 345ec3fac05fd1cf
 ---
+
 # A General Framework for Dynamic Consistent Submodular Maximization
 
 **Conference**: ICML2026  
@@ -116,13 +122,20 @@ As a theoretical paper, these represent the analytical roles of components.
 - Value: ⭐⭐⭐⭐☆ Highly significant for stable recommendation and dynamic selection systems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Monotone Submodular Maximization with a Deletion-robust Set (ICML 2017)
-- Dynamic Submodular Maximization (STOC 2020)
-- Consistent Submodular Maximization (NeurIPS 2022)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] Differentially Private Submodular Maximization with a Knapsack Constraint](differentially_private_submodular_maximization_with_a_knapsack_constraint.md)
+- [\[ICLR 2026\] Efficient Submodular Maximization for Sums of Concave over Modular Functions](../../ICLR2026/optimization/efficient_submodular_maximization_for_sums_of_concave_over_modular_functions.md)
+- [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
+- [\[ICML 2026\] Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions](budget-feasible_mechanisms_for_submodular_welfare_maximization_in_procurement_au.md)
+- [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions](budget-feasible_mechanisms_for_submodular_welfare_maximization_in_procurement_au.md)

@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SAIDO: 基于场景感知与重要性引导动态优化的可泛化 AI 生成图像检测
+  [Paper Note] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] SAIDO frames AI-generated image detection as a replay-free continual learning framework: a Vision-Large Language Model (VLLM) routes images to scene-specific LoRA experts based on scene awareness, while a "neuron-level" importance-guided gradient projection based on Fisher information harmonizes plasticity and stabilit
+  [CVPR 2026][AI Safety][AIGI Detection] SAIDO frames AI-generated image detection as a replay-free continual learning framework: a Vision-Large Language Model (VLLM) routes images to scene-specific LoRA experts based on scene awareness, while a "neuron-level" importance-guided gradient projection based on Fisher information harmonizes plasticity and stability. This reduces the detection error rate by 44.22% in the continual learning protocol and improves open-set accuracy by 9…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "AIGI Detection"
+  - "Continual Learning"
+  - "Catastrophic Forgetting"
+  - "Gradient Projection"
+  - "LoRA Experts"
 date: 2026-05-08
-content_hash: e2d16f9088938ac1
+content_hash: 93f327d98451cefc
 ---
+
 # SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection
 
 **Conference**: CVPR 2026  
@@ -133,11 +139,11 @@ In the Open World (Protocol 2, 6 unseen generators), SAIDO achieved an average a
 
 ## Related Papers
 
-- [\[CVPR 2026\] Detect Any AI-Counterfeited Text Image](detect_any_ai-counterfeited_text_image.md)
-- [\[CVPR 2026\] SAGA: Source Attribution of Generative AI Videos](saga_source_attribution_of_generative_ai_videos.md)
+- [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
 - [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
+- [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
+- [\[CVPR 2026\] Jailbreaking Vision-Language Models via Dissonance-Guided Suffix Optimization and Image-Phrase Injection](jailbreaking_vision-language_models_via_dissonance-guided_suffix_optimization_an.md)
 - [\[CVPR 2026\] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness](detecting_compressed_ai-generated_images_via_phase_spectrum_robustness.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
 
 </div>
 

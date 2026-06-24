@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE
 description: >-
-  [AAAI 2026][LLM Efficiency][human interaction generation] This paper proposes InterMoE, a Dynamic Temporal-Selective MoE architecture for text-driven two-person 3D interaction motion generation that addresses individual…
+  [AAAI 2026][LLM Efficiency][human interaction generation] This paper proposes InterMoE, a Dynamic Temporal-Selective MoE architecture for text-driven two-person 3D interaction motion generation that addresses individual identity preservation and semantic fidelity. A Synergistic Router fuses semantic and kinematic features to guide routing, while Dynamic Temporal Selection enables each expert to adaptively select key temporal frames. The method achieves a 9% FID reduction on I…
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "3D motion synthesis"
 date: 2026-05-08
-content_hash: b30242787fdb4eb9
+content_hash: cda934e9b4a4cac7
 ---
 
 # InterMoE: Individual-Specific 3D Human Interaction Generation via Dynamic Temporal-Selective MoE
@@ -131,9 +131,9 @@ FID reduction: InterHuman −9% (5.149 → 4.677), InterX −22% (0.469 → 0.29
 
 - [\[ICML 2026\] TEAM: Temporal-Spatial Consistency Guided Expert Activation for MoE Diffusion Language Model Acceleration](../../ICML2026/llm_efficiency/team_temporal-spatial_consistency_guided_expert_activation_for_moe_diffusion_lan.md)
 - [\[ICLR 2026\] IterResearch: Rethinking Long-Horizon Agents with Interaction Scaling](../../ICLR2026/llm_efficiency/iterresearch_rethinking_long-horizon_agents_with_interaction_scaling.md)
-- [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](../../ICLR2026/llm_efficiency/dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
-- [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](../../ICML2026/llm_efficiency/oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
 - [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](../../ICML2026/llm_efficiency/proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
+- [\[ICLR 2026\] LoRAGen: Structure-Aware Weight Space Learning for LoRA Generation](../../ICLR2026/llm_efficiency/loragen_structure-aware_weight_space_learning_for_lora_generation.md)
+- [\[ICML 2026\] Dynamic Linear Attention](../../ICML2026/llm_efficiency/dynamic_linear_attention.md)
 
 </div>
 

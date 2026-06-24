@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Local Geometry Attention for Time Series Forecasting under Realistic Corruptions
 description: >-
-  [ICLR 2026][Time Series][Local Geometry Attention] By using local Gaussian Processes, the attention scoring is transformed from Euclidean dot-product to a "query-adaptive negative Mahalanobis distance." This prevents Transformers from being biased by outliers under realistic corruptions like spikes or level-shifts. Simultaneously, the first statistically grounded robus
+  [ICLR 2026][Time Series][Local Geometry Attention] By using local Gaussian Processes, the attention scoring is transformed from Euclidean dot-product to a "query-adaptive negative Mahalanobis distance." This prevents Transformers from being biased by outliers under realistic corruptions like spikes or level-shifts. Simultaneously, the first statistically grounded robustness benchmark for time series, TSRBench, is proposed.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Local Geometry Attention
-  - Gaussian Process
-  - PatchTST
+  - "ICLR 2026"
+  - "Time Series"
+  - "Local Geometry Attention"
+  - "Gaussian Process"
+  - "Mahalanobis distance"
+  - "Robustness benchmark"
+  - "PatchTST"
 date: 2026-05-08
-content_hash: a8e637e4e7033cfe
+content_hash: 7aea842544887ae5
 ---
+
 # Local Geometry Attention for Time Series Forecasting under Realistic Corruptions
 
 **Conference**: ICLR 2026  

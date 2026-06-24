@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-agent adversarial framework] This paper proposes the HPO framework, which achieves reliable AI tutoring evaluation through a three-phase pipeline (Intelligence Distillation → Adversarial De…
+  [AAAI 2026][Multi-Agent][Multi-agent adversarial framework] This paper proposes the HPO framework, which achieves reliable AI tutoring evaluation through a three-phase pipeline (Intelligence Distillation → Adversarial Debate → Synthesis and Judgment). Using only an 8B-parameter model, HPO achieves a Macro F1 of 0.845 on the MRBench middle-school mathematics dialogue dataset, surpassing GPT-4o (0.812) by 3.3%, demonstrating that interaction structure—rather than model scale—is…
 tags:
   - "AAAI 2026"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "Tutoring quality assessment"
   - "Debate protocol"
 date: 2026-05-08
-content_hash: 1b4f944af5428670
+content_hash: 7d7c665465951a56
 ---
 
 # Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring
@@ -196,10 +196,10 @@ The Lead Evaluator is fine-tuned with QLoRA (4-bit NF4 quantization, LoRA rank 1
 
 ## Related Papers
 
+- [\[ICLR 2026\] AI-for-Science Low-code Platform with Bayesian Adversarial Multi-Agent Framework](../../ICLR2026/multi_agent/ai-for-science_low-code_platform_with_bayesian_adversarial_multi-agent_framework.md)
+- [\[ICLR 2026\] From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization](../../ICLR2026/multi_agent/from_eduvisbench_to_eduvisagent_a_benchmark_and_multi-agent_framework_for_reason.md)
 - [\[ACL 2026\] MATA: Multi-Agent Framework for Reliable and Flexible Table Question Answering](../../ACL2026/multi_agent/mata_multi-agent_framework_for_reliable_and_flexible_table_question_answering.md)
 - [\[ICLR 2026\] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre](../../ICLR2026/multi_agent/hamlet_a_hierarchical_and_adaptive_multi-agent_framework_for_live_embodied_theat.md)
-- [\[ACL 2026\] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage](../../ACL2026/multi_agent/autoreproduce_automatic_ai_experiment_reproduction_with_paper_lineage.md)
-- [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](../../ACL2026/multi_agent/posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
 - [\[AAAI 2026\] ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](arcane_a_multi-agent_framework_for_interpretable_and_configurable_alignment.md)
 
 </div>

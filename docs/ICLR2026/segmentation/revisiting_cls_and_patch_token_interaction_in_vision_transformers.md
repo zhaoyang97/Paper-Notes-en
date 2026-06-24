@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Revisiting [CLS] and Patch Token Interaction in Vision Transformers
 description: >-
-  [ICLR 2026][Segmentation][Vision Transformer] This paper analyzes the interaction friction between the [CLS] global token and local patch tokens in Vision Transformers. It observes that normalization layers implicitly differentiate these two token categories. By introducing specialized processing paths in normalization layers and early QKV projections, the authors
+  [ICLR 2026][Segmentation][Vision Transformer] This paper analyzes the interaction friction between the [CLS] global token and local patch tokens in Vision Transformers. It observes that normalization layers implicitly differentiate these two token categories. By introducing specialized processing paths in normalization layers and early QKV projections, the authors achieve a segmentation performance gain of over 2 mIoU with only an 8% increase in parameters…
 tags:
-  - ICLR 2026
-  - Segmentation
-  - Vision Transformer
-  - [CLS] token
-  - patch token
+  - "ICLR 2026"
+  - "Segmentation"
+  - "Vision Transformer"
+  - "CLS] token"
+  - "patch token"
+  - "normalization layer"
+  - "dense prediction"
 date: 2026-05-08
-content_hash: 00c4b84d5c845615
+content_hash: 8358ac03f0fd2cc0
 ---
+
 # Revisiting [CLS] and Patch Token Interaction in Vision Transformers
 
 **Conference**: ICLR 2026  
@@ -134,9 +137,9 @@ Key Finding: A gain of >2 mIoU in segmentation is a substantial improvement, whi
 
 - [\[ICLR 2026\] Locality-Attending Vision Transformer](locality-attending_vision_transformer.md)
 - [\[NeurIPS 2025\] Vision Transformers with Self-Distilled Registers](../../NeurIPS2025/segmentation/vision_transformers_with_self-distilled_registers.md)
-- [\[CVPR 2025\] Revisiting Audio-Visual Segmentation with Vision-Centric Transformer](../../CVPR2025/segmentation/revisiting_audio-visual_segmentation_with_vision-centric_transformer.md)
 - [\[ICLR 2026\] Salient Object Ranking via Cyclical Perception-Viewing Interaction Modeling](salient_object_ranking_via_cyclical_perception-viewing_interaction_modeling.md)
 - [\[CVPR 2026\] The Missing Point in Vision Transformers for Universal Image Segmentation](../../CVPR2026/segmentation/the_missing_point_in_vision_transformers_for_universal_image_segmentation.md)
+- [\[ICLR 2026\] How Well Does GPT-4o Understand Vision? Evaluating Multimodal Foundation Models on Standard Computer Vision Tasks](how_well_does_gpt-4o_understand_vision_evaluating_multimodal_foundation_models_o.md)
 
 </div>
 

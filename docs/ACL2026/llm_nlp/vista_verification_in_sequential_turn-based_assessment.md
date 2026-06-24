@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VISTA: Verification In Sequential Turn-based Assessment
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] VISTA proposes a multi-turn dialogue factuality evaluation framework based on claim-level decomposition and sequential consistency tracking. It subdivides unverifiable content into four categories: subjective, contradicted, lacking evidence, and abstention, significantly outperforming FActScore and LLM-as-Judge baselin
+  [ACL 2026][LLM (Other)][Hallucination detection] VISTA proposes a multi-turn dialogue factuality evaluation framework based on claim-level decomposition and sequential consistency tracking. It subdivides unverifiable content into four categories: subjective, contradicted, lacking evidence, and abstention, significantly outperforming FActScore and LLM-as-Judge baselines across four dialogue benchmarks and eight LLMs.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Hallucination detection"
+  - "dialogue factuality"
+  - "claim-level verification"
+  - "sequential consistency tracking"
+  - "multi-turn dialogue"
 date: 2026-05-08
-content_hash: 76fb01f17917f3d8
+content_hash: ae130b16f2f48f7e
 ---
+
 # VISTA: Verification In Sequential Turn-based Assessment
 
 **Conference**: ACL 2026  
@@ -148,8 +154,8 @@ VISTA requires no training; it is a prompt-based evaluation framework that invok
 - [\[ACL 2026\] Confidence Estimation for LLMs in Multi-turn Interactions](confidence_estimation_for_llms_in_multi-turn_interactions.md)
 - [\[ACL 2026\] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment](alphacontext_an_evolutionary_tree-based_psychometric_context_generator_for_creat.md)
 - [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](../../ICML2026/llm_nlp/reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](../../ICLR2026/llm_nlp/unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
 - [\[AAAI 2026\] Quantifying Conversational Reliability of Large Language Models under Multi-Turn Interaction](../../AAAI2026/llm_nlp/quantifying_conversational_reliability_of_large_language_models_under_multi-turn.md)
+- [\[ACL 2025\] Controlling Politeness in Multi-Turn Dialogues Through Pre-Phrase Augmentation](../../ACL2025/llm_nlp/controlling_politeness_in_multi-turn_dialogues_through_pre-phrase_augmentation.md)
 
 </div>
 

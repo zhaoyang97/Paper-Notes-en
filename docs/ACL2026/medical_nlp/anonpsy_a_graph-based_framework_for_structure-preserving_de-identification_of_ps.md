@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anonpsy: A Graph-Based Framework for Structure-Preserving De-identification of Psychiatric Narratives
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] Anonpsy is proposed to redefine the de-identification of psychiatric narratives as a graph-guided semantic rewriting problem—narratives are first converted into semantic graphs, then constrained perturbations are performed on the graph to modify identity information while preserving clinical structure, followed by narr
+  [ACL 2026 Findings][Medical LLM][De-identification] Anonpsy is proposed to redefine the de-identification of psychiatric narratives as a graph-guided semantic rewriting problem—narratives are first converted into semantic graphs, then constrained perturbations are performed on the graph to modify identity information while preserving clinical structure, followed by narrative reconstruction through graph-conditional generation.
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "De-identification"
+  - "psychiatric narratives"
+  - "semantic graphs"
+  - "structure preservation"
+  - "LLM generation"
 date: 2026-05-08
-content_hash: 8eefcdc60a94d7a7
+content_hash: d847e6690171eb92
 ---
+
 # Anonpsy: A Graph-Based Framework for Structure-Preserving De-identification of Psychiatric Narratives
 
 **Conference**: ACL 2026 Findings  
@@ -116,7 +122,7 @@ No training is required; the three operators (transformation, perturbation, gene
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

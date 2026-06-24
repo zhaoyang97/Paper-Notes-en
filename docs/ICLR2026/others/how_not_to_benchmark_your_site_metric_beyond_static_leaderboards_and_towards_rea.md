@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] How NOT to benchmark your SITE metric: Beyond Static Leaderboards and Towards Realistic Evaluation
 description: >-
-  [ICLR 2026][Others][SITE] This paper empirically debunked three fundamental flaws in the standard benchmarks used in the "Source Independent Transferability Estimation (SITE)" field—unrealistic model spaces, leaderboards exploitable by static rankings, and score scales unrelated to real accuracy differences. It demonstrated that a static heuris
+  [ICLR 2026][Transferability Estimation] This paper empirically debunked three fundamental flaws in the standard benchmarks used in the "Source Independent Transferability Estimation (SITE)" field—unrealistic model spaces, leaderboards exploitable by static rankings, and score scales unrelated to real accuracy differences. It demonstrated that a static heuristic ranking, which ignores data entirely, outperforms all sophisticated SITE metrics. Consequently…
 tags:
-  - ICLR 2026
-  - Others
-  - SITE
+  - "ICLR 2026"
+  - "Transferability Estimation"
+  - "SITE"
+  - "Model Selection"
+  - "Benchmark Critique"
+  - "Weighted Kendall's Tau"
+  - "Static Ranking"
 date: 2026-05-08
-content_hash: d2e129cf7b5bcc1e
+content_hash: 11a9551c36f97f33
 ---
+
 # How NOT to benchmark your SITE metric: Beyond Static Leaderboards and Towards Realistic Evaluation
 
 **Conference**: ICLR 2026  
@@ -137,8 +142,8 @@ where $\Delta\mathrm{Acc}(X,Y;D)=\mathrm{Acc}(X,D)-\mathrm{Acc}(Y,D)$ and $\Delt
 - [\[AAAI 2026\] Think How Your Teammates Think: Active Inference Can Benefit Decentralized Execution](../../AAAI2026/others/think_how_your_teammates_think_active_inference_can_benefit_decentralized_execut.md)
 - [\[ICLR 2026\] Deterministic Bounds and Random Estimates of Metric Tensors on Neuromanifolds](deterministic_bounds_and_random_estimates_of_metric_tensors_on_neuromanifolds.md)
 - [\[ICML 2025\] Position: AI Evaluation Should Learn from How We Test Humans](../../ICML2025/others/position_ai_evaluation_should_learn_from_how_we_test_humans.md)
+- [\[ICLR 2026\] PU-Bench: A Unified Benchmark for Rigorously Reproducible PU Learning](pu-bench_a_unified_benchmark_for_rigorous_and_reproducible_pu_learning.md)
 - [\[ICLR 2026\] Beyond Uniformity: Regularizing Implicit Neural Representations through a Lipschitz Lens](beyond_uniformity_regularizing_implicit_neural_representations_through_a_lipschi.md)
-- [\[ICLR 2026\] The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?](the_hot_mess_of_ai_how_does_misalignment_scale_with_model_intelligence_and_task_.md)
 
 </div>
 

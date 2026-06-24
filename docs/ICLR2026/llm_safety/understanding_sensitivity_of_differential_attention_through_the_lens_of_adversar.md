@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness
 description: >-
-  [ICLR 2026][LLM Safety][Differential Attention] This work provides the first analysis of the Differential Attention (DA) mechanism from an adversarial robustness perspective, revealing that its subtractive structure amplifies sensitivity to adversarial perturbations through negative gradient alignment while suppressing noise. It identifies the "Fragile Principle"—DA
+  [ICLR 2026][LLM Safety][Differential Attention] This work provides the first analysis of the Differential Attention (DA) mechanism from an adversarial robustness perspective, revealing that its subtractive structure amplifies sensitivity to adversarial perturbations through negative gradient alignment while suppressing noise. It identifies the "Fragile Principle"—DA improves discriminative power on clean samples but is more fragile under adversarial attacks—and discovers dept…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Differential Attention
-  - Attention
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Differential Attention"
+  - "Adversarial Robustness"
+  - "Gradient Alignment"
+  - "Lipschitz Constant"
+  - "Attention Mechanism"
 date: 2026-05-08
-content_hash: 7c6382f1acdfd5c5
+content_hash: a2f4c73aaa3f4317
 ---
+
 # Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness
 
 **Conference**: ICLR 2026  
@@ -137,10 +141,10 @@ Note: At $\epsilon$=4/255, both converge to high ASR, and the depth robustness a
 ## Related Papers
 
 - [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
+- [\[ICLR 2026\] Time-To-Inconsistency: A Survival Analysis of Large Language Model Robustness to Adversarial Attacks](time-to-inconsistency_a_survival_analysis_of_large_language_model_robustness_to_.md)
 - [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
 - [\[ICLR 2026\] Attention Smoothing Is All You Need For Unlearning](attention_smoothing_is_all_you_need_for_unlearning.md)
-- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
-- [\[ICLR 2026\] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs](fair_in_mind_fair_in_action_a_synchronous_benchmark_for_understanding_and_genera.md)
+- [\[ACL 2026\] Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs](../../ACL2026/llm_safety/decomposed_trust_privacy_adversarial_robustness_ethics_and_fairness_in_low-rank_.md)
 
 </div>
 

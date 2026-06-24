@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies
 description: >-
-  [ICLR 2026][Multi-Agent][LLM Agent] The Multi-Agent System Search (MASS) framework is proposed, which automatically discovers high-performance multi-agent system designs through a three-stage interleaved strategy for optimizing prompts and topologies (local prompt optimization → topology search → global prompt optimization).
+  [ICLR 2026][Multi-Agent][Multi-agent systems] The Multi-Agent System Search (MASS) framework is proposed, which automatically discovers high-performance multi-agent system designs through a three-stage interleaved strategy for optimizing prompts and topologies (local prompt optimization → topology search → global prompt optimization).
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LLM Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "prompt optimization"
+  - "topology search"
+  - "LLM Agent"
+  - "automated design"
 date: 2026-05-08
-content_hash: 65b586a4558ee3e2
+content_hash: b64f9ce98c508b8f
 ---
+
 # Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies
 
 **Conference**: ICLR 2026  
@@ -150,8 +155,8 @@ Using Gemini 1.5 Flash, MASS achieved an average score of 74.30%, a 13.43 percen
 - [\[ICLR 2026\] MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design](mac-amp_a_closed-loop_multi-agent_collaboration_system_for_multi-objective_antim.md)
 - [\[ICLR 2026\] Strategic Planning and Rationalizing on Trees Make LLMs Better Debaters](strategic_planning_and_rationalizing_on_trees_make_llms_better_debaters.md)
 - [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
+- [\[ICLR 2026\] When Agents "Misremember" Collectively: Exploring the Mandela Effect in LLM-based Multi-Agent Systems](when_agents_misremember_collectively_exploring_the_mandela_effect_in_llm-based_m.md)
 - [\[ICML 2026\] Smarter Saboteurs, Better Fixers: Scaling & Security in Linear Multi-Agent Workflows](../../ICML2026/multi_agent/smarter_saboteurs_better_fixers_scaling_security_in_linear_multi-agent_workflows.md)
-- [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
 
 </div>
 

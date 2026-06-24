@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Compositional Diffusion with Guided Search for Long-Horizon Planning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][compositional diffusion] This work embeds "population-based search" directly into the diffusion denoising process. By using iterative resampling for local-to-global message passing and pruning based on likelihoods derived from DDIM inversion, it enables short-range diffusion models to compose long-horizon plans that are both locally feasible a
+  [ICLR 2026][Robotics][compositional diffusion] This work embeds "population-based search" directly into the diffusion denoising process. By using iterative resampling for local-to-global message passing and pruning based on likelihoods derived from DDIM inversion, it enables short-range diffusion models to compose long-horizon plans that are both locally feasible and globally coherent. The method generalizes across robot planning, panorama synthesis…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - compositional diffusion
-  - long-horizon planning
-  - mode averaging
-  - guided search
-  - TAMP
-  - inference-time scaling
+  - "ICLR 2026"
+  - "Robotics"
+  - "compositional diffusion"
+  - "long-horizon planning"
+  - "mode averaging"
+  - "guided search"
+  - "TAMP"
+  - "inference-time scaling"
 date: 2026-05-08
-content_hash: 059075da1198a51d
+content_hash: bc33a3e999cc9ff6
 ---
+
 # Compositional Diffusion with Guided Search for Long-Horizon Planning
 
 **Conference**: ICLR 2026  
@@ -124,15 +125,14 @@ Naive composition often "hallucinates" out-of-distribution transitions (e.g., `p
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](../../ICML2026/robotics/hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)
 - [\[ICLR 2026\] CoNavBench: Collaborative Long-Horizon Vision-Language Navigation Benchmark](conavbench_collaborative_long-horizon_vision-language_navigation_benchmark.md)
 - [\[ICLR 2026\] SARM: Stage-Aware Reward Modeling for Long Horizon Robot Manipulation](sarm_stage-aware_reward_modeling_for_long_horizon_robot_manipulation.md)
-- [\[ICLR 2026\] SLAP: Shortcut Learning for Abstract Planning](slap_shortcut_learning_for_abstract_planning.md)
-- [\[ICLR 2026\] Block-wise Adaptive Caching for Accelerating Diffusion Policy](block-wise_adaptive_caching_for_accelerating_diffusion_policy.md)
+- [\[ICML 2026\] Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning](../../ICML2026/robotics/drift_is_a_sampling_error_snr-aware_power_distributions_for_long-horizon_robotic.md)
+- [\[ICML 2025\] Closed-loop Long-horizon Robotic Planning via Equilibrium Sequence Modeling](../../ICML2025/robotics/closed-loop_long-horizon_robotic_planning_via_equilibrium_sequence_modeling.md)
 
 </div>
 

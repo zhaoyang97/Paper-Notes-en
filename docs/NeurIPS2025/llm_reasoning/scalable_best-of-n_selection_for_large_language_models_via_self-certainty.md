@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Scalable Best-of-N Selection for Large Language Models via Self-Certainty
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Best-of-N] This paper proposes Self-Certainty, a metric that quantifies model confidence via the token probability distribution of LLM outputs…
+  [NeurIPS 2025][Reasoning][Best-of-N] This paper proposes Self-Certainty, a metric that quantifies model confidence via the token probability distribution of LLM outputs, enabling scalable Best-of-N selection without any auxiliary reward model. The approach achieves performance comparable to or exceeding reward-model-based methods.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Best-of-N"
   - "self-certainty"
   - "distributional quantification"
   - "reward-model-free"
   - "inference scaling"
 date: 2026-05-08
-content_hash: 121f4aa01f045611
+content_hash: 3532307de1353131
 ---
 
 # Scalable Best-of-N Selection for Large Language Models via Self-Certainty
@@ -128,10 +128,10 @@ where $n$ is the response length, $V$ is the vocabulary size, and $p$ is the tok
 ## Related Papers
 
 - [\[NeurIPS 2025\] Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding](sampling-efficient_test-time_scaling_self-estimating_the_best-of-n_sampling_in_e.md)
+- [\[ACL 2025\] Ranked Voting based Self-Consistency of Large Language Models](../../ACL2025/llm_reasoning/ranked_voting_based_self-consistency_of_large_language_models.md)
 - [\[NeurIPS 2025\] Provable Scaling Laws for the Test-Time Compute of Large Language Models](provable_scaling_laws_for_the_testtime_compute_of_large_lang.md)
 - [\[NeurIPS 2025\] ProofSketch: Efficient Verified Reasoning for Large Language Models](proofsketch_efficient_verified_reasoning_for_large_language_models.md)
 - [\[NeurIPS 2025\] ChartMuseum: Testing Chart Visual Reasoning in Large Vision-Language Models](chartmuseum_testing_visual_reasoning_capabilities_of_large_v.md)
-- [\[NeurIPS 2025\] I-RAVEN-X: Benchmarking Generalization and Robustness of Analogical and Mathematical Reasoning in Large Language and Reasoning Models](i-raven-x_benchmarking_generalization_and_robustness_of_analogical_and_mathemati.md)
 
 </div>
 

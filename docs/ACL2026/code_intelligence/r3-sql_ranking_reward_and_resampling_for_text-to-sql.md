@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL
 description: >-
-  [ACL 2026][Code Intelligence][Text-to-SQL] R3-SQL targets generate-then-rank Text-to-SQL by grouping equivalent SQLs according to execution results and ranking them through a combination of pairwise/listwise and pointwise rewards. It further employs an LLM agent to determine if the candidate pool lacks correct SQLs for selective resampling, achieving 75.03 EX o
+  [ACL2026 Findings][Code Intelligence][Text-to-SQL] R3-SQL targets generate-then-rank Text-to-SQL by grouping equivalent SQLs according to execution results and ranking them through a combination of pairwise/listwise and pointwise rewards. It further employs an LLM agent to determine if the candidate pool lacks correct SQLs for selective resampling, achieving 75.03 EX on BIRD-dev.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Text-to-SQL
-  - agentic resampling
+  - "ACL2026 Findings"
+  - "Code Intelligence"
+  - "Text-to-SQL"
+  - "Candidate Ranking"
+  - "Execution Result Grouping"
+  - "agentic resampling"
+  - "Position Bias"
 date: 2026-05-08
-content_hash: f03c3a87ae00f14b
+content_hash: d93bcf84f6ab78ab
 ---
+
 # R$^3$-SQL: Ranking Reward and Resampling for Text-to-SQL
 
 **Conference**: ACL2026 Findings  
@@ -137,15 +141,13 @@ R3-SQL ranking training involves both a pointwise ranker and a listwise/pairwise
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ACL 2026\] PV-SQL: Synergizing Database Probing and Rule-based Verification for Text-to-SQL Agents](pv-sql_synergizing_database_probing_and_rule-based_verification_for_text-to-sql_.md)
 - [\[ACL 2026\] PExA: Parallel Exploration Agent for Complex Text-to-SQL](pexa_parallel_exploration_agent_for_complex_text-to-sql.md)
 - [\[ACL 2025\] STaR-SQL: Self-Taught Reasoner for Text-to-SQL](../../ACL2025/code_intelligence/star-sql_self-taught_reasoner_for_text-to-sql.md)
 - [\[ACL 2026\] DPC: Training-Free Text-to-SQL Candidate Selection via Dual-Paradigm Consistency](dpc_training-free_text-to-sql_candidate_selection_via_dual-paradigm_consistency.md)
-- [\[ACL 2025\] SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL](../../ACL2025/code_intelligence/share_text_to_sql_correction.md)
+- [\[ICLR 2026\] SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification](../../ICLR2026/code_intelligence/spotit_evaluating_text-to-sql_evaluation_with_formal_verification.md)
 
 </div>
 

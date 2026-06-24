@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DriveX: Driving View Synthesis on Free-form Trajectories with Generative Prior
 description: >-
-  [ICCV 2025][3D Vision][Autonomous driving simulation] DriveX is a driving view synthesis framework that progressively distills generative priors from a video diffusion model into a 3DGS representation. It designs an inpa…
+  [ICCV 2025][3D Vision][Autonomous driving simulation] DriveX is a driving view synthesis framework that progressively distills generative priors from a video diffusion model into a 3DGS representation. It designs an inpainting-based video restoration task to generate pseudo-labels for novel trajectories and iteratively refines the 3D reconstruction, enabling high-quality real-time rendering on free-form trajectories.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "generative prior distillation"
   - "inpainting restoration"
 date: 2026-05-08
-content_hash: 0949e81ab8994c30
+content_hash: 9154fff086abd091
 ---
 
 # DriveX: Driving View Synthesis on Free-form Trajectories with Generative Prior
@@ -186,10 +186,10 @@ $K=3000$ achieves a favorable balance between quality and efficiency.
 ## Related Papers
 
 - [\[ICCV 2025\] GAS: Generative Avatar Synthesis from a Single Image](gas_generative_avatar_synthesis_from_a_single_image.md)
+- [\[CVPR 2025\] Perturb-and-Revise: Flexible 3D Editing with Generative Trajectories](../../CVPR2025/3d_vision/perturb-and-revise_flexible_3d_editing_with_generative_trajectories.md)
 - [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
+- [\[CVPR 2025\] SelfSplat: Pose-Free and 3D Prior-Free Generalizable 3D Gaussian Splatting](../../CVPR2025/3d_vision/selfsplat_pose-free_and_3d_prior-free_generalizable_3d_gaussian_splatting.md)
 - [\[ICCV 2025\] SeHDR: Single-Exposure HDR Novel View Synthesis via 3D Gaussian Bracketing](sehdr_single-exposure_hdr_novel_view_synthesis_via_3d_gaussian_bracketing.md)
-- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
-- [\[ICCV 2025\] BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis](billboard_splatting_bbsplat_learnable_textured_primitives_fo.md)
 
 </div>
 

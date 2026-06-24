@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BeeRNA: Tertiary Structure-Based RNA Inverse Folding Using Artificial Bee Colony
 description: >-
-  [AAAI2026][Computational Biology][RNA inverse folding] This paper proposes BeeRNA, which applies the Artificial Bee Colony (ABC) optimization algorithm to the RNA tertiary structure inverse folding problem. Through a two…
+  [AAAI2026][Computational Biology][RNA inverse folding] This paper proposes BeeRNA, which applies the Artificial Bee Colony (ABC) optimization algorithm to the RNA tertiary structure inverse folding problem. Through a two-stage fitness evaluation combining base-pair distance pre-screening and RMSD scoring, BeeRNA outperforms deep learning methods gRNAde and RiboDiffusion on short-to-medium-length RNAs (<100 nt).
 tags:
   - "AAAI2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "bio-inspired optimization"
   - "RhoFold"
 date: 2026-05-08
-content_hash: ff2adc497d41aef5
+content_hash: 4189c55f91b254fb
 ---
 
 # BeeRNA: Tertiary Structure-Based RNA Inverse Folding Using Artificial Bee Colony
@@ -140,11 +140,11 @@ The successful transfer of the ABC algorithm from protein inverse folding to RNA
 
 ## Related Papers
 
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[ICLR 2026\] Protein Structure Tokenization via Geometric Byte Pair Encoding](../../ICLR2026/computational_biology/protein_structure_tokenization_via_geometric_byte_pair_encoding.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](../../ICLR2026/computational_biology/antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
-- [\[ICML 2026\] EvoEGF-Mol: Evolving Exponential Geodesic Flow for Structure-based Drug Design](../../ICML2026/computational_biology/evoegf-mol_evolving_exponential_geodesic_flow_for_structure-based_drug_design.md)
+- [\[ICLR 2026\] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations](../../ICLR2026/computational_biology/prism_enhancing_protein_inverse_folding_through_fine-_grained_retrieval_on_struc.md)
+- [\[ICLR 2026\] Property-Driven Protein Inverse Folding with Multi-Objective Preference Alignment](../../ICLR2026/computational_biology/property-driven_protein_inverse_folding_with_multi-objective_preference_alignmen.md)
+- [\[ICLR 2026\] A Joint Diffusion Model with Pre-Trained Priors for RNA Sequence-Structure Co-Design](../../ICLR2026/computational_biology/a_joint_diffusion_model_with_pre-trained_priors_for_rna_sequence-structure_co-de.md)
+- [\[ICLR 2026\] SimpleFold: Folding Proteins is Simpler Than You Think](../../ICLR2026/computational_biology/simplefold_folding_proteins_is_simpler_than_you_think.md)
+- [\[CVPR 2026\] TRIDENT: A Trimodal Cascade Generative Framework for Drug and RNA-Conditioned Cellular Morphology Synthesis](../../CVPR2026/computational_biology/trident_a_trimodal_cascade_generative_framework_for_drug_and_rna-conditioned_cel.md)
 
 </div>
 

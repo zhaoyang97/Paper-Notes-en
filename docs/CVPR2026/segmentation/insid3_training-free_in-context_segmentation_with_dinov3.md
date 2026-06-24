@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] INSID3: Training-Free In-Context Segmentation with DINOv3
 description: >-
-  [CVPR 2026][Segmentation][DINOv3] This paper proposes INSID3, a training-free in-context segmentation method relying solely on frozen DINOv3 features. Through a three-stage pipeline consisting of positional bias elimination, fine-grained clustering, and seed cluster aggregation, it outperforms methods relying on SAM or fine-tuning across semantic, part
+  [CVPR 2026][Segmentation][In-context segmentation] This paper proposes INSID3, a training-free in-context segmentation method relying solely on frozen DINOv3 features. Through a three-stage pipeline consisting of positional bias elimination, fine-grained clustering, and seed cluster aggregation, it outperforms methods relying on SAM or fine-tuning across semantic, part, and personalized segmentation tasks using a single self-supervised backbone…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - DINOv3
+  - "CVPR 2026"
+  - "Segmentation"
+  - "In-context segmentation"
+  - "DINOv3"
+  - "training-free"
+  - "self-supervised"
+  - "positional bias correction"
 date: 2026-05-08
-content_hash: fc02bd9b90082dde
+content_hash: 08772eb2974a0f2d
 ---
+
 # INSID3: Training-Free In-Context Segmentation with DINOv3
 
 **Conference**: CVPR 2026  
@@ -142,15 +147,14 @@ Parameter count: INSID3 uses 304M parameters vs. GF-SAM's 945M (3× reduction).
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates](b3-seg_camera-free_training-free_3dgs_segmentation_via_analytic_eig_and_beta-ber.md)
-- [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
+- [\[CVPR 2026\] Looking Beyond the Window: Global-Local Aligned CLIP for Training-free Open-Vocabulary Semantic Segmentation](looking_beyond_the_window_global-local_aligned_clip_for_training-free_open-vocab.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 
 </div>
 

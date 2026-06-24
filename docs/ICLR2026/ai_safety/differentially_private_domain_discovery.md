@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Missing Mass for Differentially Private Domain Discovery
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This paper redefines the utility of "domain discovery" in differential privacy—extracting informative high-frequency items from an unknown massive dictionary—from "the number of distinct items (cardinality)" to "the amount of mass (missing mass)." Based on this, it proves that a simple and scalable Weighted Gaussian Me
+  [ICLR2026][AI Safety][Differential Privacy] This paper redefines the utility of "domain discovery" in differential privacy—extracting informative high-frequency items from an unknown massive dictionary—from "the number of distinct items (cardinality)" to "the amount of mass (missing mass)." Based on this, it proves that a simple and scalable Weighted Gaussian Mechanism (WGM) provides near-optimal $\ell_1$ missing mass guarantees for Zipf-distributed data and distribution-free…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "Domain Discovery"
+  - "Missing Mass"
+  - "Set Union"
+  - "Top-k Selection"
 date: 2026-05-08
-content_hash: e0664a57ac270099
+content_hash: c1c1234c80032c0f
 ---
+
 # Missing Mass for Differentially Private Domain Discovery
 
 **Conference**: ICLR2026  

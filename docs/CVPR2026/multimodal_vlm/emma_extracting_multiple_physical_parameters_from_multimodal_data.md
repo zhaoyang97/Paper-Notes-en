@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EMMA: Extracting Multiple physical parameters from Multimodal Data
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] EMMA aligns video, audio, and chart modalities into a Liquid Time-Constant (LTC) network, combined with differentiable physics simulation and physics-constrained losses. It performs **unsupervised** one-shot identification of all identifiable parameters in a dynamical system—including unobservable forced inputs in vide
+  [CVPR 2026][Multimodal VLM][Inverse Modeling] EMMA aligns video, audio, and chart modalities into a Liquid Time-Constant (LTC) network, combined with differentiable physics simulation and physics-constrained losses. It performs **unsupervised** one-shot identification of all identifiable parameters in a dynamical system—including unobservable forced inputs in video, implicit dynamics terms not measurable by any modality, and calibration invariants such as coordinate origins a…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Inverse Modeling"
+  - "Multimodal"
+  - "Liquid Time-Constant Networks"
+  - "Physics-Constrained Loss"
+  - "Implicit Dynamics"
 date: 2026-05-08
-content_hash: 0762faafe9821f78
+content_hash: 706c534a60123a93
 ---
+
 # EMMA: Extracting Multiple physical parameters from Multimodal Data
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,10 @@ EMMA takes 1.4× longer but is **107×** smaller, making it suitable for edge de
 ## Related Papers
 
 - [\[CVPR 2026\] PhyCritic: Multimodal Critic Models for Physical AI](phycritic_multimodal_critic_models_for_physical_ai.md)
-- [\[CVPR 2026\] IPR-1: Interactive Physical Reasoner](ipr-1_interactive_physical_reasoner.md)
-- [\[CVPR 2026\] MVP: Multiple View Prediction Improves GUI Grounding](mvp_multiple_view_prediction_improves_gui_grounding.md)
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
 - [\[CVPR 2026\] Benchmarking Single-Factor Physical Video-to-Audio Generation](benchmarking_single-factor_physical_video-to-audio_generation.md)
+- [\[CVPR 2026\] MVP: Multiple View Prediction Improves GUI Grounding](mvp_multiple_view_prediction_improves_gui_grounding.md)
+- [\[CVPR 2026\] SOTA: Self-adaptive Optimal Transport for Zero-Shot Classification with Multiple Foundation Models](sota_self-adaptive_optimal_transport_for_zero-shot_classification_with_multiple_.md)
+- [\[CVPR 2026\] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration](multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati.md)
 
 </div>
 

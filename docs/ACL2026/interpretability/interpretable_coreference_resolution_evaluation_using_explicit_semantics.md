@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Interpretable Coreference Resolution Evaluation Using Explicit Semantics
 description: >-
-  [ACL 2026][Interpretability][CNER] This paper utilizes Concept and Named Entity Recognition (CNER) to map 29 fine-grained semantic labels onto coreference resolution outputs via a "mention + cluster-level majority voting" mechanism. This yields diagnostic Typed Mention F1 and Link F1 metrics, identifying systematic failure modes across semantic categori
+  [ACL 2026][Interpretability][Coreference Resolution] This paper utilizes Concept and Named Entity Recognition (CNER) to map 29 fine-grained semantic labels onto coreference resolution outputs via a "mention + cluster-level majority voting" mechanism. This yields diagnostic Typed Mention F1 and Link F1 metrics, identifying systematic failure modes across semantic categories. These diagnostics guide targeted data augmentation using only three synthetic documents…
 tags:
-  - ACL 2026
-  - Interpretability
-  - CNER
-  - Typed F1
+  - "ACL 2026"
+  - "Interpretability"
+  - "Coreference Resolution"
+  - "CNER"
+  - "Semantic Evaluation"
+  - "Typed F1"
+  - "Targeted Data Augmentation"
 date: 2026-05-08
-content_hash: 390bb9e1e3a3dbcf
+content_hash: d6a41b8af7538cc5
 ---
+
 # Interpretable Coreference Resolution Evaluation Using Explicit Semantics
 
 **Conference**: ACL 2026  
@@ -131,6 +135,7 @@ All models perform strongly in-domain, but the LitBank model shows significantly
 - Value: ⭐⭐⭐⭐⭐ High methodological value for the broader NLP community and direct utility for coreference resolution researchers.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -138,8 +143,8 @@ All models perform strongly in-domain, but the LitBank model shows significantly
 - [\[ICML 2026\] LLMs Lean on Priors, Not Programming Language Semantics](../../ICML2026/interpretability/llms_lean_on_priors_not_programming_language_semantics.md)
 - [\[ACL 2025\] CLEME2.0: Towards Interpretable Evaluation by Disentangling Edits for Grammatical Error Correction](../../ACL2025/interpretability/cleme2_gec_evaluation.md)
 - [\[AAAI 2026\] CrossCheck-Bench: Diagnosing Compositional Failures in Multimodal Conflict Resolution](../../AAAI2026/interpretability/crosscheck-bench_diagnosing_compositional_failures_in_multim.md)
-- [\[ACL 2026\] Constructing Interpretable Features from Compositional Neuron Groups](constructing_interpretable_features_from_compositional_neuron_groups.md)
 - [\[CVPR 2025\] Scaling Vision Pre-Training to 4K Resolution](../../CVPR2025/interpretability/scaling_vision_pre-training_to_4k_resolution.md)
+- [\[ACL 2026\] Constructing Interpretable Features from Compositional Neuron Groups](constructing_interpretable_features_from_compositional_neuron_groups.md)
 
 </div>
 

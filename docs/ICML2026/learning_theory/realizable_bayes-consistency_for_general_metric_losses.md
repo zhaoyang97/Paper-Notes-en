@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Realizable Bayes-Consistency for General Metric Losses
 description: >-
-  [ICML 2026][learning_theory][Littlestone tree] This paper provides a sharp characterization of the open problem regarding when a hypothesis class $\mathcal{H}$ admits a distribution-free strong universal Bayes-consistent learning algorithm under general (possibly unbounded) metric losses in the realizable setting. The necessary and sufficient condition is that $\ma
+  [ICML 2026][Learning Theory][Learnability] This paper provides a sharp characterization of the open problem regarding when a hypothesis class $\mathcal{H}$ admits a distribution-free strong universal Bayes-consistent learning algorithm under general (possibly unbounded) metric losses in the realizable setting. The necessary and sufficient condition is that $\mathcal{H}$ does not contain a new combinatorial obstacle called an "unbounded-gap Littlestone tree."
 tags:
-  - ICML 2026
-  - learning_theory
-  - Littlestone tree
-  - Gale-Stewart game
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Metric Losses"
+  - "Bayes Consistency"
+  - "Learnability"
+  - "Metric loss"
+  - "Littlestone tree"
+  - "Universal consistency"
+  - "Gale-Stewart game"
 date: 2026-05-08
-content_hash: 0bc505a4797586bb
+content_hash: c059e94b1fabe597
 ---
+
 # Realizable Bayes-Consistency for General Metric Losses
 
 **Conference**: ICML 2026  
@@ -134,11 +140,11 @@ Theoretical paper, no experiments. Core quantitative results are the theorems:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Amortized Bayesian Inference with Self-Consistency Losses on Unlabeled Data](../../ICLR2026/learning_theory/robust_amortized_bayesian_inference_with_self-consistency_losses_on_unlabeled_da.md)
+- [\[ICLR 2026\] On the Bayes Inconsistency of Disagreement Discrepancy Surrogates](../../ICLR2026/learning_theory/on_the_bayes_inconsistency_of_disagreement_discrepancy_surrogates.md)
 - [\[ICML 2026\] Parsimonious Learning-Augmented Online Metric Matching](parsimonious_learning-augmented_online_metric_matching.md)
 - [\[ICLR 2026\] Bi-Criteria Metric Distortion](../../ICLR2026/learning_theory/bi-criteria_metric_distortion.md)
-- [\[ICLR 2026\] Designing Rules to Pick a Rule: Aggregation by Consistency](../../ICLR2026/learning_theory/designing_rules_to_pick_a_rule_aggregation_by_consistency.md)
-- [\[ICML 2026\] Expectation Consistency Loss: Rethink Confidence Calibration under Covariate Shift](expectation_consistency_loss_rethink_confidence_calibration_under_covariate_shif.md)
-- [\[ICLR 2026\] Better Learning-Augmented Spanning Tree Algorithms via Metric Forest Completion](../../ICLR2026/learning_theory/better_learning-augmented_spanning_tree_algorithms_via_metric_forest_completion.md)
+- [\[ICLR 2026\] Semi-Parametric Contextual Pricing with General Smoothness](../../ICLR2026/learning_theory/semi-parametric_contextual_pricing_with_general_smoothness.md)
 
 </div>
 

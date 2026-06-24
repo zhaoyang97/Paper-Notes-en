@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Manual-PA: Learning 3D Part Assembly from Instruction Diagrams
 description: >-
-  [ICCV 2025][Self-Supervised Learning][3D Part Assembly] This paper proposes Manual-PA, a Transformer-based instruction-guided 3D part assembly framework that infers assembly order by aligning 3D parts with instruction st…
+  [ICCV 2025][Self-Supervised Learning][3D Part Assembly] This paper proposes Manual-PA, a Transformer-based instruction-guided 3D part assembly framework that infers assembly order by aligning 3D parts with instruction step diagrams via contrastive learning, then uses the learned order as soft guidance through positional encoding for 6DoF pose prediction, significantly outperforming existing methods on PartNet.
 tags:
   - "ICCV 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "Contrastive Learning"
   - "Permutation Learning"
 date: 2026-05-08
-content_hash: a2a4cc9bef141a76
+content_hash: c4f33301fd585cdd
 ---
 
 # Manual-PA: Learning 3D Part Assembly from Instruction Diagrams
@@ -152,10 +152,10 @@ Comparison with existing methods on Chair / Table / Storage categories, evaluate
 ## Related Papers
 
 - [\[ICCV 2025\] WIR3D: Visually-Informed and Geometry-Aware 3D Shape Abstraction](wir3d_visually-informed_and_geometry-aware_3d_shape_abstraction.md)
+- [\[ICLR 2026\] Part-level Semantic-guided Contrastive Learning for Fine-grained Visual Classification](../../ICLR2026/self_supervised/part-level_semantic-guided_contrastive_learning_for_fine-grained_visual_classifi.md)
+- [\[CVPR 2025\] Escaping Plato's Cave: Towards the Alignment of 3D and Text Latent Spaces](../../CVPR2025/self_supervised/escaping_platos_cave_towards_the_alignment_of_3d_and_text_latent_spaces.md)
 - [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](../../ICML2026/self_supervised/partco_part-level_correspondence_priors_enhance_category_discovery.md)
-- [\[CVPR 2026\] TALO: Pushing 3D Vision Foundation Models Towards Globally Consistent Online Reconstruction](../../CVPR2026/self_supervised/talo_pushing_3d_vision_foundation_models_towards_globally_consistent_online_reco.md)
-- [\[ICCV 2025\] Scaling Language-Free Visual Representation Learning](scaling_languagefree_visual_representation_learning.md)
-- [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
+- [\[CVPR 2026\] How Much 3D Do Video Foundation Models Encode?](../../CVPR2026/self_supervised/how_much_3d_do_video_foundation_models_encode.md)
 
 </div>
 

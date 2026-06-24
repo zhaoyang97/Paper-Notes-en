@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] COMI: Coarse-to-fine Context Compression via Marginal Information Gain
 description: >-
-  [ICLR 2026][Model Compression][context compression] This paper proposes COMI, a coarse-to-fine adaptive context compression framework based on Marginal Information Gain (MIG = query relevance - semantic redundancy). At a 32x compression ratio, it improves the NaturalQuestions EM score by approximately 25 points compared to the second-best method. The core contribution l
+  [ICLR2026][Model Compression][context compression] This paper proposes COMI, a coarse-to-fine adaptive context compression framework based on Marginal Information Gain (MIG = query relevance - semantic redundancy). At a 32x compression ratio, it improves the NaturalQuestions EM score by approximately 25 points compared to the second-best method. The core contribution lies in the simultaneous optimization of information relevance and diversity.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - context compression
-  - token merging
-  - long context
-  - marginal information gain
-  - RAG
+  - "ICLR2026"
+  - "Model Compression"
+  - "context compression"
+  - "token merging"
+  - "long context"
+  - "marginal information gain"
+  - "RAG"
 date: 2026-05-08
-content_hash: e3642e39c34bd06c
+content_hash: 14bd27bb5c464c42
 ---
+
 # COMI: Coarse-to-fine Context Compression via Marginal Information Gain
 
 **Conference**: ICLR2026  
@@ -136,8 +137,6 @@ The model uses an Encoder-Decoder architecture. The Encoder and LSA are fully fi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-
-</div>
 
 ## Related Papers
 

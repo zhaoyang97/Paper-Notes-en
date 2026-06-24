@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Through rigorous derivation of the attention formula, HiFICL reformulates the ICL approximation problem from "fitting a shift vector" to "directly parameterizing the source of ICL." By injecting learnable low-rank virtual key-value pairs into attention heads and performing end-to-end training, it achieves a dynamic, co
+  [CVPR 2026][Multimodal VLM][In-Context Learning] Through rigorous derivation of the attention formula, HiFICL reformulates the ICL approximation problem from "fitting a shift vector" to "directly parameterizing the source of ICL." By injecting learnable low-rank virtual key-value pairs into attention heads and performing end-to-end training, it achieves a dynamic, context-aware parameter-efficient fine-tuning method that outperforms existing ICL approximation methods and LoRA…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "In-Context Learning"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Large Multimodal Models"
+  - "Virtual Key-Value Pairs"
+  - "Low-Rank Decomposition"
 date: 2026-05-08
-content_hash: e8c29937a25384e8
+content_hash: e0f62aa6e2e79f24
 ---
+
 # HiFICL: High-Fidelity In-Context Learning for Multimodal Tasks
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Component ablation on Idefics2:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Efficient and High-Fidelity Omni Modality Retrieval](efficient_and_high-fidelity_omni_modality_retrieval.md)
-- [\[CVPR 2026\] Visual-Aware CoT: Achieving High-Fidelity Visual Consistency in Unified Models](visual-aware_cot_achieving_high-fidelity_visual_consistency_in_unified_models.md)
 - [\[CVPR 2026\] Prototype-as-Prompt: Multimodal Sentiment Prototypes Endowing Large Language Models the Capability to Perform Multimodal Sentiment Analysis](prototype-as-prompt_multimodal_sentiment_prototypes_endowing_large_language_mode.md)
-- [\[CVPR 2026\] Parallel In-context Learning for Large Vision Language Models](parallel_in-context_learning_for_large_vision_language_models.md)
-- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
+- [\[CVPR 2026\] VKG-QA: Visual Knowledge Graph-based Question Answer for Large Multimodal Models](vkg-qa_visual_knowledge_graph-based_question_answer_for_large_multimodal_models.md)
+- [\[CVPR 2026\] AG-VAS: Anchor-Guided Zero-Shot Visual Anomaly Segmentation with Large Multimodal Models](ag-vas_anchor-guided_zero-shot_visual_anomaly_segmentation_with_large_multimodal.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
+- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
 
 </div>
 

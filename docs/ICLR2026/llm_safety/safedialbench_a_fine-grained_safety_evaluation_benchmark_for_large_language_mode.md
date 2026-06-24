@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] SafeDialBench：面向大模型多轮对话与多样越狱攻击的细粒度安全评估基准
+  [Paper Note] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper introduces SafeDialBench—a safety evaluation benchmark covering 6 safety dimensions, 7 jailbreak attacks, 22 dialogue scenarios, and 4,053 bilingual (Chinese-English) multi-turn dialogues. It is accompanied by a fine-grained evaluation framework that decomposes "safety" into three capabilities: risk identifi
+  [ICLR 2026][LLM Safety][Multi-turn Dialogue Safety] This paper introduces SafeDialBench—a safety evaluation benchmark covering 6 safety dimensions, 7 jailbreak attacks, 22 dialogue scenarios, and 4,053 bilingual (Chinese-English) multi-turn dialogues. It is accompanied by a fine-grained evaluation framework that decomposes "safety" into three capabilities: risk identification, handling unsafe information, and maintaining consistency. This approach allows for a more precise ch…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Multi-turn Dialogue Safety"
+  - "Jailbreak Attack"
+  - "Safety Taxonomy"
+  - "Fine-grained Evaluation"
+  - "Bilingual Benchmark"
 date: 2026-05-08
-content_hash: 0cd89494326e5369
+content_hash: 9ace2adac5f86c2f
 ---
+
 # SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks
 
 **Conference**: ICLR 2026  
@@ -132,11 +138,11 @@ Excerpt from Table 2 (Ide/Han/Con correspond to Identification/Handling/Consiste
 
 ## Related Papers
 
-- [\[ICLR 2026\] Obfuscated Activations Bypass LLM Latent-Space Defenses](obfuscated_activations_bypass_llm_latent-space_defenses.md)
-- [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
-- [\[ICLR 2026\] RedCodeAgent: Automatic Red-teaming Agent against Diverse Code Agents](redcodeagent_automatic_red-teaming_agent_against_diverse_code_agents.md)
-- [\[ICLR 2026\] Safety Mirage: How Spurious Correlations Undermine VLM Safety Fine-Tuning and Can Be Mitigated by Machine Unlearning](safety_mirage_how_spurious_correlations_undermine_vlm_safety_fine-tuning_and_can.md)
-- [\[ICLR 2026\] JailbreakLoRA: Your Downloaded LoRA from Sharing Platforms might be Unsafe](jailbreaklora_your_downloaded_lora_from_sharing_platforms_might_be_unsafe.md)
+- [\[ICLR 2026\] SlotGCG: Exploiting the Positional Vulnerability in LLMs for Jailbreak Attacks](slotgcg_exploiting_the_positional_vulnerability_in_llms_for_jailbreak_attacks.md)
+- [\[ICLR 2026\] MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](mcp-safetybench_a_benchmark_for_safety_evaluation_of_large_language_models_with_.md)
+- [\[ICLR 2026\] PLAGUE: A Plug-and-Play Framework for Multi-Turn Jailbreaking Driven by Lifelong Learning](plague_plug-and-play_framework_for_lifelong_adaptive_generation_of_multi-turn_ja.md)
+- [\[ICLR 2026\] Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance](safety_at_one_shot_patching_fine-tuned_llms_with_a_single_instance.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 
 </div>
 

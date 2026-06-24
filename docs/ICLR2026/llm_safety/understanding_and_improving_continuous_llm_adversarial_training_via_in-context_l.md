@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper provides the first theoretical explanation for "why Continuous Adversarial Training (CAT) is effective" using In-Context Learning (ICL) theory. It proves that imposing perturbations in the embedding space reduces the upper bound of robust risk for jailbreak attacks in the token space. Consequently, it discov
+  [ICLR 2026][LLM Safety][Continuous Adversarial Training] This paper provides the first theoretical explanation for "why Continuous Adversarial Training (CAT) is effective" using In-Context Learning (ICL) theory. It proves that imposing perturbations in the embedding space reduces the upper bound of robust risk for jailbreak attacks in the token space. Consequently, it discovers that robustness is closely related to the singular values of the embedding matrix…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Continuous Adversarial Training"
+  - "Jailbreak Attacks"
+  - "In-Context Learning Theory"
+  - "Robust Generalization Bound"
+  - "Singular Values of Embedding Matrix"
 date: 2026-05-08
-content_hash: 241ff351098d5bf4
+content_hash: 45dc3e804419d3e9
 ---
+
 # Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory
 
 **Conference**: ICLR 2026  
@@ -147,8 +153,8 @@ Regarding time complexity (Table 3), ER-CAT adds only 100-200 seconds per model 
 - [\[NeurIPS 2025\] MixAT: Combining Continuous and Discrete Adversarial Training for LLMs](../../NeurIPS2025/llm_safety/mixat_combining_continuous_and_discrete_adversarial_training_for_llms.md)
 - [\[ICLR 2026\] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness](understanding_sensitivity_of_differential_attention_through_the_lens_of_adversar.md)
 - [\[ICLR 2026\] Learning to Lie: Adversarial Attacks on Human-AI Teams and LLMs](learning_to_lie_adversarial_attacks_on_human-ai_teams_and_llms.md)
-- [\[ICLR 2026\] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated](ghost_in_the_cloud_your_geo-distributed_large_language_models_training_is_easily.md)
 - [\[ICLR 2026\] Learning-Time Encoding Shapes Unlearning in LLMs](learning-time_encoding_shapes_unlearning_in_llms.md)
+- [\[ICLR 2026\] Do LLMs Forget What They Should? Evaluating In-Context Forgetting in Large Language Models](do_llms_forget_what_they_should_evaluating_in-context_forgetting_in_large_langua.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Foundation Model] This paper proposes GFM-RAG, the first graph foundation model-driven retrieval-augmented generation framework…
+  [NeurIPS 2025][Graph Learning][Graph Foundation Model] This paper proposes GFM-RAG, the first graph foundation model-driven retrieval-augmented generation framework, which performs single-pass multi-hop reasoning over knowledge graphs via a query-dependent GNN. With only 8M parameters, GFM-RAG achieves zero-shot generalization to unseen datasets and substantially outperforms state-of-the-art methods on multi-hop QA retrieval benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Multi-hop Reasoning"
   - "GNN"
 date: 2026-05-08
-content_hash: 7d0595fd887a9425
+content_hash: d8e704107a352f7d
 ---
 
 # GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation
@@ -161,10 +161,10 @@ Output: top-K relevant documents $\mathcal{D}^K$ and LLM-generated answer $a$
 
 ## Related Papers
 
+- [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
 - [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](../../ACL2026/graph_learning/stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](../../CVPR2026/graph_learning/m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
 - [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
-- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
 - [\[NeurIPS 2025\] NeuroPath: Neurobiology-Inspired Path Tracking and Reflection for Semantically Coherent Retrieval](neuropath_neurobiology-inspired_path_tracking_and_reflection_for_semantically_co.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GSOT3D: Towards Generic 3D Single Object Tracking in the Wild
 description: >-
-  [ICCV 2025][3D Vision][3D single object tracking] This paper presents GSOT3D, the largest generic 3D single object tracking benchmark to date…
+  [ICCV 2025][3D Vision][3D single object tracking] This paper presents GSOT3D, the largest generic 3D single object tracking benchmark to date, comprising 620 multimodal sequences (point cloud + RGB + depth) spanning 54 object categories. It supports three 3D tracking tasks (PC / RGB-PC / RGB-D) and introduces PROT3D, a progressive spatiotemporal tracker that achieves state-of-the-art performance via 9DoF bounding box estimation.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "benchmark dataset"
   - "9DoF"
 date: 2026-05-08
-content_hash: 9b79844e94e6c77d
+content_hash: c61828f677286290
 ---
 
 # GSOT3D: Towards Generic 3D Single Object Tracking in the Wild
@@ -166,10 +166,10 @@ All trackers suffer a 70–80% performance collapse on GSOT3D, highlighting the 
 ## Related Papers
 
 - [\[ICCV 2025\] Multi-View 3D Point Tracking](multi-view_3d_point_tracking.md)
-- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](../../CVPR2026/3d_vision/generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
+- [\[ECCV 2024\] 3D Single-Object Tracking in Point Clouds with High Temporal Variation](../../ECCV2024/3d_vision/3d_single-object_tracking_in_point_clouds_with_high_temporal_variation.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
+- [\[CVPR 2026\] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking](../../CVPR2026/3d_vision/generalizable_structure-aware_keypoint_correspondence_for_category-unified_3d_si.md)
 - [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
-- [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
 
 </div>
 

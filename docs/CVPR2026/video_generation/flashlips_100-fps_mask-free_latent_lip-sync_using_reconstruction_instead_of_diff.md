@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FlashLips: 100-FPS Mask-Free Latent Lip-Sync using Reconstruction Instead of Diffusion or GANs
 description: >-
-  [CVPR 2026][Video Generation][Flow Matching] FlashLips reformulates lip-sync as a "deterministic image editing" problem rather than a generation problem. By replacing diffusion/GANs with a single-step latent editor trained purely on reconstruction and driving it via a Flow Matching "audio-to-lip-pose" Transformer, the U-Net version achieves 109 FPS on a single H1
+  [CVPR 2026][Video Generation][Lip-sync] FlashLips reformulates lip-sync as a "deterministic image editing" problem rather than a generation problem. By replacing diffusion/GANs with a single-step latent editor trained purely on reconstruction and driving it via a Flow Matching "audio-to-lip-pose" Transformer, the U-Net version achieves 109 FPS on a single H100. Simultaneously, it outperforms larger and slower diffusion baselines in FID/FVD and lip-sync precision.
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Lip-sync"
+  - "Mask-free editing"
+  - "Latent space reconstruction"
+  - "Flow matching"
+  - "Real-time generation"
 date: 2026-05-08
-content_hash: 6cd1100595b254d4
+content_hash: 80bca9edd7d388bf
 ---
+
 # FlashLips: 100-FPS Mask-Free Latent Lip-Sync using Reconstruction Instead of Diffusion or GANs
 
 **Conference**: CVPR 2026  
@@ -165,10 +170,10 @@ The U-Net version at 109 FPS is 30x faster than KeySync and is the only high-qua
 ## Related Papers
 
 - [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
-- [\[CVPR 2026\] Latent-Compressed Variational Autoencoder for Video Diffusion Models](latent-compressed_variational_autoencoder_for_video_diffusion_models.md)
+- [\[CVPR 2026\] LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models](lavr_scene_latent_conditioned_generative_video_trajectory_re-rendering_using_lar.md)
+- [\[CVPR 2026\] Cross-Subject EEG-to-Video Reconstruction and Beyond](cross-subject_eeg-to-video_reconstruction_and_beyond.md)
 - [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
-- [\[CVPR 2026\] RecEdit-Drive: 3D Reconstruction-Guided Spatiotemporal Video Editing for Autonomous Driving Scenes](recedit-drive_3d_reconstruction-guided_spatiotemporal_video_editing_for_autonomo.md)
+- [\[AAAI 2026\] SphereDiff: Tuning-free Omnidirectional Panoramic Image and Video Generation via Spherical Latent Representation](../../AAAI2026/video_generation/spherediff_tuning-free_360_static_and_dynamic_panorama_generation_via_spherical_.md)
 
 </div>
 

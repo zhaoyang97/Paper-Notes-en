@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Agentic RAG] This study systematically compares Enhanced RAG and Agentic RAG across four dimensions—user intent processing, query rewriting, document refinement, and underlying LLM selection—using four datasets. The findings indicate that both paradigms have distinct advantages: Agentic RAG is more flexible in intent routing and qu
+  [ACL 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This study systematically compares Enhanced RAG and Agentic RAG across four dimensions—user intent processing, query rewriting, document refinement, and underlying LLM selection—using four datasets. The findings indicate that both paradigms have distinct advantages: Agentic RAG is more flexible in intent routing and query rewriting, while Enhanced RAG is more effective in document reranking. However…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Agentic RAG
-  - Enhanced RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Retrieval-Augmented Generation"
+  - "Agentic RAG"
+  - "Enhanced RAG"
+  - "Query Rewriting"
+  - "Cost Analysis"
 date: 2026-05-08
-content_hash: ee199856145518ea
+content_hash: 56f91e158dbd92c0
 ---
+
 # Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches
 
 **Conference**: ACL 2026  
@@ -143,10 +147,10 @@ This study does not involve model training. Enhanced RAG modules utilize pre-tra
 ## Related Papers
 
 - [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
-- [\[ACL 2026\] 生物医学 RAG 中检索何时无效：大规模实证研究](when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 - [\[ACL 2026\] DQA: Diagnostic Question Answering for IT Support](dqa_diagnostic_question_answering_for_it_support.md)
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 - [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
-- [\[CVPR 2026\] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](../../CVPR2026/information_retrieval/m4-rag_a_massive-scale_multilingual_multi-cultural_multimodal_rag.md)
+- [\[ACL 2026\] How Retrieved Context Shapes Internal Representations in RAG](how_retrieved_context_shapes_internal_representations_in_rag.md)
 
 </div>
 

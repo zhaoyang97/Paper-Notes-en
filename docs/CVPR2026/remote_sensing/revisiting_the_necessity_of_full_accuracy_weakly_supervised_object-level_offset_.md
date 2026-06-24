@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Revisiting the Necessity of Full Accuracy: Weakly Supervised Object-Level Offset Correction for Misaligned Building Labels
 description: >-
-  [CVPR 2026][Others][Paper Note] To address the misalignment between building footprint labels and roof positions caused by the lack of orthorectification in Google Earth images, this paper proposes the OMAF framework. It uses a differentiable self-alignment with edge and variance constraints to estimate instance-level offsets, filters these using Bay
+  [CVPR 2026][Remote Sensing][Building extraction] To address the misalignment between building footprint labels and roof positions caused by the lack of orthorectification in Google Earth images, this paper proposes the OMAF framework. It uses a differentiable self-alignment with edge and variance constraints to estimate instance-level offsets, filters these using Bayesian confidence with minimal manual priors, and distills the knowledge into an offset regression network. This…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Building extraction"
+  - "label offset correction"
+  - "weakly supervised"
+  - "instance-level offset"
+  - "domain adaptation"
 date: 2026-05-08
-content_hash: ee6529fbfaa615ff
+content_hash: adb5bfb24a1f998e
 ---
+
 # Revisiting the Necessity of Full Accuracy: Weakly Supervised Object-Level Offset Correction for Misaligned Building Labels
 
 **Conference**: CVPR 2026  
@@ -123,15 +129,16 @@ Across CNN, Transformer, and Mamba architectures, OMAF consistently improves per
 - **Value**: ⭐⭐⭐⭐ Provides a low-cost, deployable solution for large-scale remote sensing dataset construction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](../../NeurIPS2025/others/semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
-- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
-- [\[ICCV 2025\] Revisiting Image Fusion for Multi-Illuminant White-Balance Correction](../../ICCV2025/others/revisiting_image_fusion_for_multi-illuminant_white-balance_correction.md)
-- [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
+- [\[ECCV 2024\] Weakly-Supervised Camera Localization by Ground-to-Satellite Image Registration](../../ECCV2024/remote_sensing/weakly-supervised_camera_localization_by_ground-to-satellite_image_registration.md)
+- [\[ICCV 2025\] GeoDistill: Geometry-Guided Self-Distillation for Weakly Supervised Cross-View Localization](../../ICCV2025/remote_sensing/geodistill_geometry-guided_self-distillation_for_weakly_supervised_cross-view_lo.md)
+- [\[CVPR 2026\] No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors](no_labels_no_look-ahead_unsupervised_online_video_stabilization_with_classical_p.md)
+- [\[CVPR 2026\] MOGeo: Beyond One-to-One Cross-View Object Geo-localization](mogeo_beyond_one-to-one_cross-view_object_geo-localization.md)
+- [\[CVPR 2026\] APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation](apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig.md)
 
 </div>
 

@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Medical Imaging][aleatoric uncertainty] CUPID is a plug-and-play module that can be inserted into any intermediate layer of a pre-trained network without structural changes or retraining. It jointly estimates both aleatoric (data noise) and epistemic (model ignorance) uncertainties in a single forward pass.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - aleatoric uncertainty
-  - epistemic uncertainty
-  - plug-in module
-  - OOD detection
-  - misclassification detection
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "aleatoric uncertainty"
+  - "epistemic uncertainty"
+  - "plug-in module"
+  - "OOD detection"
+  - "misclassification detection"
 date: 2026-05-08
-content_hash: d0460f7b72e017ce
+content_hash: b8ea9f739af69ceb
 ---
+
 # CUPID: A Plug-in Framework for Joint Aleatoric and Epistemic Uncertainty Estimation with a Single Model
 
 **Conference**: ICLR 2026  

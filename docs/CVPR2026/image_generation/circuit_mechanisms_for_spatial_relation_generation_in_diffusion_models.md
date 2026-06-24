@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: random embedding models employ a two-stage modular circuit (relation heads + object generation heads), whereas T5 encoder models fuse relation information into object tokens for
+  [CVPR 2026][Image Generation][Diffusion Transformer] Internal circuit mechanisms for spatial relation generation in Diffusion Transformers (DiT) are revealed through mechanistic interpretability: random embedding models employ a two-stage modular circuit (relation heads + object generation heads), whereas T5 encoder models fuse relation information into object tokens for single-token decoding, with significant differences in robustness between the two mechanisms.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Spatial Relation Generation"
+  - "Mechanistic Interpretability"
+  - "Attention Circuits"
+  - "Text Encoder"
 date: 2026-05-08
-content_hash: 9bb9c41ea04d1ff5
+content_hash: 44f6d39af0ce901e
 ---
+
 # Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -124,14 +130,14 @@ Running per-sample generation to identify heads is computationally expensive. Th
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers](just-in-time_training-free_spatial_acceleration_for_diffusion_transformers.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
-- [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
+- [\[CVPR 2026\] MakeAnything: Harnessing Diffusion Transformers for Multi-Domain Procedural Sequence Generation](makeanything_harnessing_diffusion_transformers_for_multi-domain_procedural_seque.md)
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
+- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
 - [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 
 </div>

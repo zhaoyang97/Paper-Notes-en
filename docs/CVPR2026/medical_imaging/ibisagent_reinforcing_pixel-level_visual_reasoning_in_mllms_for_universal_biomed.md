@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Reinforcement Learning] Addressing the issues where existing medical MLLM segmentation relies on joint fine-tuning of implicit `<SEG>` tokens and external pixel decoders (prone to catastrophic forgetting, poor cross-domain performance, and restricted to a single forward pass), IBISAgent reformulates segmentation as a multi-step Markov Decisio
+  [CVPR 2026][Medical Imaging][Biomedical Segmentation] Addressing the issues where existing medical MLLM segmentation relies on joint fine-tuning of implicit `<SEG>` tokens and external pixel decoders (prone to catastrophic forgetting, poor cross-domain performance, and restricted to a single forward pass), IBISAgent reformulates segmentation as a multi-step Markov Decision Process (MDP) of "think $\rightarrow$ click action $\rightarrow$ call segmentation tool $\rightarrow$ ob…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Biomedical Segmentation"
+  - "MLLM Agent"
+  - "Multi-step Reasoning"
+  - "Interactive Segmentation"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 76714b9ba1b95e17
+content_hash: d123ea3d87a5867d
 ---
+
 # IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation
 
 **Conference**: CVPR 2026  
@@ -136,9 +141,9 @@ Incremental training strategy effects (In-house held-out, IoU/DSC/F1):
 
 - [\[CVPR 2026\] From Panel to Pixel: Zoom-In Vision-Language Pretraining from Biomedical Scientific Literature](from_panel_to_pixel_zoom-in_vision-language_pretraining_from_biomedical_scientif.md)
 - [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
+- [\[ICLR 2026\] Modeling the Density of Pixel-level Self-supervised Embeddings for Unsupervised Pathology Segmentation in Medical CT](../../ICLR2026/medical_imaging/modeling_the_density_of_pixel-level_self-supervised_embeddings_for_unsupervised_.md)
 - [\[CVPR 2026\] CG-Reasoner: Centroid-Guided Positional Reasoning Segmentation for Medical Imaging with a Robust Visual-Text Consistency Metric](cg-reasoner_centroid-guided_positional_reasoning_segmentation_for_medical_imagin.md)
 - [\[CVPR 2026\] BackSplit: The Importance of Sub-dividing the Background in Biomedical Lesion Segmentation](backsplit_the_importance_of_sub-dividing_the_background_in_biomedical_lesion_seg.md)
-- [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
 
 </div>
 

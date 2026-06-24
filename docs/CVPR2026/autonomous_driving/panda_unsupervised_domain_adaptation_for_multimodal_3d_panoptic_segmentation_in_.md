@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] This paper presents the first study on "Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation (mm-3DPS)." It proposes PanDA: an asymmetric multimodal dropout (AMD) strategy within a mean-teacher framework to simulate single-modal degradation on the source domain for learning domain-invariant features,
+  [CVPR 2026][Autonomous Driving][Unsupervised Domain Adaptation (UDA)] This paper presents the first study on "Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation (mm-3DPS)." It proposes PanDA: an asymmetric multimodal dropout (AMD) strategy within a mean-teacher framework to simulate single-modal degradation on the source domain for learning domain-invariant features, and a dual-expert pseudo-label refinement (DualRefine) mechanism utilizing 3D geometric su…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Unsupervised Domain Adaptation (UDA)"
+  - "Multimodal"
+  - "3D Panoptic Segmentation"
+  - "Pseudo-label Refinement"
+  - "Teacher-Student"
 date: 2026-05-08
-content_hash: 83abb478a26dd5fc
+content_hash: d0c37c1d8a1dc14a
 ---
+
 # PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -126,8 +132,8 @@ Internal ablations show that combining **Instance Dropout + Boundary Dropout + A
 - Value: ⭐⭐⭐⭐ Provides a practical UDA framework for multimodal panoptic perception.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -135,7 +141,7 @@ Internal ablations show that combining **Instance Dropout + Boundary Dropout + A
 - [\[CVPR 2026\] Open-Vocabulary Domain Generalization in Urban-Scene Segmentation](open-vocabulary_domain_generalization_in_urban-scene_segmentation.md)
 - [\[ECCV 2024\] Train Till You Drop: Towards Stable and Robust Source-free Unsupervised 3D Domain Adaptation](../../ECCV2024/autonomous_driving/train_till_you_drop_towards_stable_and_robust_source-free_unsupervised_3d_domain.md)
 - [\[CVPR 2026\] MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving](minddriver_introducing_progressive_multimodal_reasoning_for_autonomous_driving.md)
-- [\[CVPR 2026\] The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models](blind_spot_of_adaptation_quantifying_and_mitigating_forgetting_in_fine_tuned_driving_models.md)
+- [\[AAAI 2026\] DriveFlow: Rectified Flow Adaptation for Robust 3D Object Detection in Autonomous Driving](../../AAAI2026/autonomous_driving/driveflow_rectified_flow_adaptation_for_robust_3d_object_detection_in_autonomous.md)
 
 </div>
 

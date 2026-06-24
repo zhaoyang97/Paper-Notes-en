@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop
 description: >-
-  [NEURIPS2025][Image Generation][CAD editing] This paper proposes CADMorph, an iterative plan–generate–verify framework that leverages a pretrained Parameter-to-Shape (P2S) diffusion model and a Masked-Parameter-Predictio…
+  [NEURIPS2025][Image Generation][CAD editing] This paper proposes CADMorph, an iterative plan–generate–verify framework that leverages a pretrained Parameter-to-Shape (P2S) diffusion model and a Masked-Parameter-Prediction (MPP) large language model to achieve geometry-driven parametric CAD editing without requiring triplet training data.
 tags:
   - "NEURIPS2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "masked prediction"
   - "test-time scaling"
 date: 2026-05-08
-content_hash: 287721aa3855bcc2
+content_hash: 45097209c70d48a8
 ---
 
 # CADMorph: Geometry-Driven Parametric CAD Editing via a Plan-Generate-Verify Loop
@@ -145,7 +145,7 @@ Ablation studies confirm the necessity of each component: removing the priority 
 - [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](../../ICCV2025/image_generation/mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
 - [\[ICLR 2026\] Seek-CAD: A Self-Refined Generative Modeling for 3D Parametric CAD Using Local Inference via DeepSeek](../../ICLR2026/image_generation/seek-cad_a_self-refined_generative_modeling_for_3d_parametric_cad_using_local_in.md)
 - [\[NeurIPS 2025\] Diffusion-Classifier Synergy: Reward-Aligned Learning via Mutual Boosting Loop for FSCIL](diffusion-classifier_synergy_reward-aligned_learning_via_mutual_boosting_loop_fo.md)
-- [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](../../CVPR2026/image_generation/learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
+- [\[ICLR 2026\] Dragging with Geometry: From Pixels to Geometry-Guided Image Editing](../../ICLR2026/image_generation/dragging_with_geometry_from_pixels_to_geometry-guided_image_editing.md)
 - [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
 
 </div>

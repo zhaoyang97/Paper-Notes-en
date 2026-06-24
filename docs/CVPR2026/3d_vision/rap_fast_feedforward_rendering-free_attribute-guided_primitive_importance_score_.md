@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] RAP is proposed as a rendering-free, feedforward importance scoring method for Gaussian primitives. It extracts 15-dimensional features from intrinsic attributes and local neighborhood statistics, using a lightweight MLP to predict importance scores. Once trained, it generalizes to unseen scenes without additional opti
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] RAP is proposed as a rendering-free, feedforward importance scoring method for Gaussian primitives. It extracts 15-dimensional features from intrinsic attributes and local neighborhood statistics, using a lightweight MLP to predict importance scores. Once trained, it generalizes to unseen scenes without additional optimization.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Importance Evaluation"
+  - "Rendering-free Inference"
+  - "Feedforward Prediction"
+  - "Pruning"
 date: 2026-05-08
-content_hash: 2853a03729c997c3
+content_hash: cedbccf04db7840f
 ---
+
 # RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ $$\mathcal{L}_{\text{render}} = (1-\lambda_{\text{dssim}}) \mathcal{L}_1 + \lamb
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cross-Instance Gaussian Splatting Registration via Geometry-Aware Feature-Guided Alignment](cross-instance_gaussian_splatting_registration_via_geometry-aware_feature-guided.md)
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
-- [\[CVPR 2026\] Spectral Defense Against Resource-Targeting Attack in 3D Gaussian Splatting](spectral_defense_against_resource-targeting_attack_in_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)
-- [\[CVPR 2026\] GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
+- [\[CVPR 2026\] Fast SceneScript: Fast and Accurate Language-Based 3D Scene Understanding via Multi-Token Prediction](fast_scenescript_fast_and_accurate_language-based_3d_scene_understanding_via_mul.md)
+- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
+- [\[CVPR 2026\] UIKA: Fast Universal Head Avatar from Pose-Free Images](uika_fast_universal_head_avatar_from_pose-free_images.md)
+- [\[CVPR 2026\] BA-GS: Bayesian Adaptive Gaussian Splatting for SFM-Free 3D Reconstruction](ba-gs_bayesian_adaptive_gaussian_splatting_for_sfm-free_3d_reconstruction.md)
+- [\[CVPR 2026\] Plug-and-Play PDE Optimization for 3D Gaussian Splatting: Toward High-Quality Rendering and Reconstruction](plug-and-play_pde_optimization_for_3d_gaussian_splatting_toward_high-quality_ren.md)
 
 </div>
 

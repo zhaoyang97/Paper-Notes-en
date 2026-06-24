@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers
 description: >-
-  [ICLR 2026][LLM Safety][Model Context Protocol] A safety evaluation benchmark built on real-world MCP servers, utilizing a unified 20-category attack taxonomy (covering server/host/user sides) and multi-turn ReAct tasks across 5 real domains. It systematically reveals that current mainstream LLM agents are generally vulnerable in MCP environments and exhibit a "safe
+  [ICLR 2026][LLM Safety][Model Context Protocol] A safety evaluation benchmark built on real-world MCP servers, utilizing a unified 20-category attack taxonomy (covering server/host/user sides) and multi-turn ReAct tasks across 5 real domains. It systematically reveals that current mainstream LLM agents are generally vulnerable in MCP environments and exhibit a "safety-utility trade-off" where stronger capabilities often correlate with lower safety.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Model Context Protocol
-  - LLM Agent
-  - ReAct
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Model Context Protocol"
+  - "MCP Safety"
+  - "LLM Agent"
+  - "Tool Poisoning"
+  - "Safety Evaluation Benchmark"
+  - "ReAct"
 date: 2026-05-08
-content_hash: d1a4c751d0521807
+content_hash: b0ede16d8bb1c39a
 ---
+
 # MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers
 
 **Conference**: ICLR 2026  
@@ -126,9 +130,9 @@ flowchart LR
 
 - [\[ICLR 2026\] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark](measuring_physical-world_privacy_awareness_of_large_language_models_an_evaluatio.md)
 - [\[ACL 2026\] AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios](../../ACL2026/llm_safety/agentcoma_a_compositional_benchmark_mixing_commonsense_and_mathematical_reasonin.md)
+- [\[ICLR 2026\] SafeDialBench: A Fine-grained Safety Evaluation Benchmark for LLMs in Multi-turn Dialogues and Diverse Jailbreak Attacks](safedialbench_a_fine-grained_safety_evaluation_benchmark_for_large_language_mode.md)
 - [\[ICLR 2026\] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare](moving_beyond_medical_exams_a_clinician-annotated_fairness_dataset_of_real-world.md)
 - [\[ICLR 2026\] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](biasbusters_uncovering_and_mitigating_tool_selection_bias_in_large_language_mode.md)
-- [\[ICLR 2026\] VoxPrivacy: A Benchmark for Evaluating Interactional Privacy of Speech Language Models](voxprivacy_a_benchmark_for_evaluating_interactional_privacy_of_speech_language_m.md)
 
 </div>
 

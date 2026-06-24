@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] MARS: Modular Agent with Reflective Search for Automated AI Research
 description: >-
-  [ICML 2026][Code Intelligence][MLE-Bench] MARS reframes automated AI research as a problem of "searching for the optimal solution within a software repository space." Built on three pillars—**Budget-Aware MCTS**, a **modular "Design-Decompose-Implement" pipeline**, and **Comparative Reflective Memory**—it achieves SOTA among open-source frameworks on MLE-Bench
+  [ICML 2026][Code Intelligence][MLE-Bench] MARS reframes automated AI research as a problem of "searching for the optimal solution within a software repository space." Built on three pillars—**Budget-Aware MCTS**, a **modular "Design-Decompose-Implement" pipeline**, and **Comparative Reflective Memory**—it achieves SOTA among open-source frameworks on MLE-Bench with a 31.1% gold medal rate (Gemini-3-Pro-Preview) and demonstrates an "Aha! moment" with a 63% cross-branch lesson…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - MLE-Bench
-  - Budget-Aware MCTS
-  - Comparative Reflective Memory
-  - Lesson Learning
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "MLE-Bench"
+  - "Modular Agent"
+  - "Budget-Aware MCTS"
+  - "Comparative Reflective Memory"
+  - "Lesson Learning"
 date: 2026-05-08
-content_hash: 6df3a35b3bb4526d
+content_hash: ceb730613222b792
 ---
+
 # MARS: Modular Agent with Reflective Search for Automated AI Research
 
 **Conference**: ICML 2026  
@@ -139,6 +141,7 @@ MARS significantly outperforms AIDE and AIRA-dojo under controlled model compari
 - **Value**: ⭐⭐⭐⭐⭐ Sets a new SOTA for open-source MLE agents; modular and cost-aware designs are directly transferable to generic long-horizon coding tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -146,7 +149,7 @@ MARS significantly outperforms AIDE and AIRA-dojo under controlled model compari
 - [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
 - [\[ACL 2026\] MARS2: Scaling Multi-Agent Tree Search via Reinforcement Learning for Code Generation](../../ACL2026/code_intelligence/mars2_scaling_multi-agent_tree_search_via_reinforcement_learning_for_code_genera.md)
 - [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
-- [\[NeurIPS 2025\] Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
+- [\[NeurIPS 2025\] VeriMaAS: Automated Multi-Agent Workflows for RTL Design](../../NeurIPS2025/code_intelligence/automated_multi-agent_workflows_for_rtl_design.md)
 - [\[ICML 2026\] Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software](physics_is_all_you_need_a_case_study_in_physicist-supervised_ai_development_of_s.md)
 
 </div>

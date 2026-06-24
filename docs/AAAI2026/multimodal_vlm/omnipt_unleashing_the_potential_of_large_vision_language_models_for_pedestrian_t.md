@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding
 description: >-
-  [AAAI 2026][Multimodal VLM][Pedestrian tracking] This paper proposes OmniPT, a unified pedestrian tracking framework built upon large vision-language models (LVLMs). Through a four-stage RL→Mid Training→SFT→RL training s…
+  [AAAI 2026][Multimodal VLM][Pedestrian tracking] This paper proposes OmniPT, a unified pedestrian tracking framework built upon large vision-language models (LVLMs). Through a four-stage RL→Mid Training→SFT→RL training strategy, OmniPT simultaneously supports conventional MOT, language-referred tracking (RMOT/CRMOT), and semantic understanding (SMOT), achieving state-of-the-art results on multiple benchmarks—most notably a HOTA of 75.04 on BenSMOT…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "semantic understanding"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: e2a4cce56f69b9dd
+content_hash: e9e0d1cf7cb5be96
 ---
 
 # OmniPT: Unleashing the Potential of Large Vision Language Models for Pedestrian Tracking and Understanding
@@ -151,11 +151,11 @@ At inference time, iterative multi-turn dialogue enables long-term tracking: the
 
 ## Related Papers
 
-- [\[ACL 2026\] TRACE: Unleashing Spatial Reasoning in Multimodal Large Language Models via Textual Representation Guided Reasoning](../../ACL2026/multimodal_vlm/unleashing_spatial_reasoning_in_multimodal_large_language_models_via_textual_rep.md)
-- [\[AAAI 2026\] Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?](bridging_the_copyright_gap_do_large_vision-language_models_r.md)
-- [\[CVPR 2026\] Understanding Task Transfer in Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_task_transfer_in_vision-language_models.md)
-- [\[AAAI 2026\] Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](global_compression_commander_plug-and-play_inference_acceler.md)
-- [\[AAAI 2026\] SDEval: Safety Dynamic Evaluation for Multimodal Large Language Models](sdeval_safety_dynamic_evaluation_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] VisMem: Latent Vision Memory Unlocks Potential of Vision-Language Models](../../CVPR2026/multimodal_vlm/vismem_latent_vision_memory_unlocks_potential_of_vision-language_models.md)
+- [\[CVPR 2026\] MVLM: Template-Free Tracking via Vision-Language Margin Confidence and Memory-Gated Tracking](../../CVPR2026/multimodal_vlm/mvlm_template-free_tracking_via_vision-language_margin_confidence_and_memory-gat.md)
+- [\[CVPR 2026\] Unleashing the Intrinsic Visual Representation Capability of Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/unleashing_the_intrinsic_visual_representation_capability_of_multimodal_large_la.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
+- [\[ICLR 2026\] RAR: Reversing Visual Attention Re-Sinking for Unlocking Potential in Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/rar_reversing_visual_attention_re-sinking_for_unlocking_potential_in_multimodal_.md)
 
 </div>
 

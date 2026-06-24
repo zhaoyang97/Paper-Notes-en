@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Visual Jigsaw Post-Training Improves MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][RLVR] The classic "shuffle and sort" jigsaw task is integrated into the reinforcement learning post-training phase of MLLMs. Without changing the architecture, adding generation modules, or requiring any human annotation, this self-supervised verifiable reward approach significantly enhances fine-grained perception, temporal
+  [ICLR 2026][Multimodal VLM][Self-supervised post-training] The classic "shuffle and sort" jigsaw task is integrated into the reinforcement learning post-training phase of MLLMs. Without changing the architecture, adding generation modules, or requiring any human annotation, this self-supervised verifiable reward approach significantly enhances fine-grained perception, temporal understanding, and spatial reasoning across image, video, and 3D modalities.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - RLVR
-  - MLLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Self-supervised post-training"
+  - "RLVR"
+  - "Jigsaw tasks"
+  - "Visual perception"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 6f58cf03fb827143
+content_hash: 9ba7b38a3d9b925a
 ---
+
 # Visual Jigsaw Post-Training Improves MLLMs
 
 **Conference**: ICLR 2026  
@@ -140,15 +144,16 @@ The 3D Jigsaw shows the largest gain in depth-related tasks (DA-2K, +17.11) but 
 - Value: ⭐⭐⭐⭐⭐ Zero-label, architecture-agnostic, and low barrier to entry with stable gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](reconstruction_alignment_improves_unified_multimodal_models.md)
 - [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](../../ICML2026/multimodal_vlm/med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
 - [\[ICLR 2026\] Post-hoc Probabilistic Vision-Language Models](post-hoc_probabilistic_vision-language_models.md)
 - [\[AAAI 2026\] Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](../../AAAI2026/multimodal_vlm/revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)
 - [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
-- [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](../../ICML2026/multimodal_vlm/freeret_mllms_as_training-free_retrievers.md)
 
 </div>
 

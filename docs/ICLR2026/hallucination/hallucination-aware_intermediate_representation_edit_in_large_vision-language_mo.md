@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models
 description: >-
-  [ICLR 2026][Hallucination Detection][DPO] HIRE does not perform retraining or double forward passes. Instead, it executes "in-place editing" of intermediate representations in LVLMs. Using a dual encoder, it disentangles hallucination components from semantics and shifts them along a "de-hallucination direction." A lightweight Router is employed to intervene o
+  [ICLR 2026][Hallucination Detection][LVLM Hallucination] HIRE does not perform retraining or double forward passes. Instead, it executes "in-place editing" of intermediate representations in LVLMs. Using a dual encoder, it disentangles hallucination components from semantics and shifts them along a "de-hallucination direction." A lightweight Router is employed to intervene only on high-risk tokens. HIRE achieves SOTA results across three benchmarks with inference overhead clo…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - DPO
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "Representation Editing"
+  - "Contrastive Learning"
+  - "DPO"
+  - "Controllable Generation"
 date: 2026-05-08
-content_hash: 2a98ffb748a323a8
+content_hash: 558f887eee62bd22
 ---
+
 # Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models
 
 **Conference**: ICLR 2026  

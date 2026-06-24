@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models
 description: >-
-  [ACL 2026][Interpretability][Retrieval Head] RetMask utilizes retrieval heads identified via "mechanistic interpretability" as a source of contrastive signals. By using the output of an ablated model (with retrieval heads masked) as the rejected sample and the original model's output as the chosen sample for DPO training, it achieves consistent improvements acros
+  [ACL 2026 Findings][Interpretability][Retrieval Head] RetMask utilizes retrieval heads identified via "mechanistic interpretability" as a source of contrastive signals. By using the output of an ablated model (with retrieval heads masked) as the rejected sample and the original model's output as the chosen sample for DPO training, it achieves consistent improvements across 128K context lengths for Llama-3.1, Qwen3, and Olmo-3 families without requiring LLM judges or human ann…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Retrieval Head
-  - DPO
-  - Long-Context
-  - Mechanistic Interpretability
-  - Head Masking
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Retrieval Head"
+  - "DPO"
+  - "Long-Context"
+  - "Mechanistic Interpretability"
+  - "Head Masking"
 date: 2026-05-08
-content_hash: cd11d8e3efe75219
+content_hash: a925475c2093a2aa
 ---
+
 # From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -171,10 +172,10 @@ General Ability Retention: RetMask performs on par with the base model in mathem
 ## Related Papers
 
 - [\[ACL 2026\] Retrieval Heads are Dynamic](retrieval_heads_are_dynamic.md)
+- [\[ICLR 2026\] Sparse CLIP: Co-optimizing Interpretability and Performance in Contrastive Learning](../../ICLR2026/interpretability/sparse_clip_co-optimizing_interpretability_and_performance_in_contrastive_learni.md)
 - [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](../../NeurIPS2025/interpretability/a_controllable_examination_for_longcontext_language_models.md)
 - [\[ACL 2026\] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization](preference_heads_in_large_language_models_a_mechanistic_framework_for_interpreta.md)
-- [\[ACL 2026\] Towards Intrinsic Interpretability of Large Language Models: A Survey of Design Principles and Architectures](towards_intrinsic_interpretability_of_large_language_modelsa_survey_of_design_pr.md)
-- [\[ACL 2026\] Interpretability from the Ground Up](interpretability_from_the_ground_up_stakeholder-centric_design_of_automated_scor.md)
+- [\[ICLR 2026\] Mixing Mechanisms: How Language Models Retrieve Bound Entities In-Context](../../ICLR2026/interpretability/mixing_mechanisms_how_language_models_retrieve_bound_entities_in-context.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Closing the Gap Between Text and Speech Understanding in LLMs
 description: >-
-  [ICLR 2026][Audio & Speech][Paper Note] This paper deconstructs the phenomenon where "speech-adapted LLMs underperform their original text versions in language understanding" into two quantifiable causes: **forgetting** and **cross-modal misalignment**. Accordingly, it proposes SALAD—aligning the model on natural speech using cross-modal distillation, follow
+  [ICLR2026][Audio & Speech][Speech-adapted LLM] This paper deconstructs the phenomenon where "speech-adapted LLMs underperform their original text versions in language understanding" into two quantifiable causes: **forgetting** and **cross-modal misalignment**. Accordingly, it proposes SALAD—aligning the model on natural speech using cross-modal distillation, followed by active selection driven by misalignment signals to supplement a tiny fraction of synthetic speech. Using an…
 tags:
-  - ICLR 2026
-  - Audio & Speech
+  - "ICLR2026"
+  - "Audio & Speech"
+  - "Speech-adapted LLM"
+  - "cross-modal distillation"
+  - "active data selection"
+  - "catastrophic forgetting"
+  - "speech language understanding"
 date: 2026-05-08
-content_hash: 89b9c18b18df466f
+content_hash: 6b38742bf759f255
 ---
+
 # Closing the Gap Between Text and Speech Understanding in LLMs
 
 **Conference**: ICLR2026  
@@ -151,10 +157,10 @@ Regarding text capability (Table 5): SALAD-3B achieves 76.9 Avg. Text Acc. (Gap 
 ## Related Papers
 
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](../../ACL2026/audio_speech/phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
 - [\[ACL 2026\] Computational Narrative Understanding for Expressive Text-to-Speech](../../ACL2026/audio_speech/computational_narrative_understanding_for_expressive_text-to-speech.md)
 - [\[ICLR 2026\] DrVoice: Parallel Speech-Text Voice Conversation Model via Dual-Resolution Speech Representations](drvoice_parallel_speech-text_voice_conversation_model_via_dual-resolution_speech.md)
-- [\[ICLR 2026\] Latent Speech-Text Transformer](latent_speech_text_transformer.md)
-- [\[ICLR 2026\] Towards True Speech-to-Speech Models Without Text Guidance](towards_true_speech-to-speech_models_without_text_guidance.md)
+- [\[ICLR 2026\] Can Speech LLMs Think while Listening?](can_speech_llms_think_while_listening.md)
 
 </div>
 

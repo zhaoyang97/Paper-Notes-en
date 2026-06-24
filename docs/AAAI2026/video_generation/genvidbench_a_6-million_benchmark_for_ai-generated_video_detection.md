@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenVidBench: A 6-Million Benchmark for AI-Generated Video Detection
 description: >-
-  [AAAI 2026][Video Generation][AI-generated video detection] This paper introduces GenVidBench—the first large-scale AI-generated video detection dataset with 6.78 million videos…
+  [AAAI 2026][Video Generation][AI-generated video detection] This paper introduces GenVidBench—the first large-scale AI-generated video detection dataset with 6.78 million videos, featuring cross-source and cross-generator properties, covering 11 state-of-the-art video generators, and providing rich semantic annotations.
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "video forensics"
   - "deepfake detection"
 date: 2026-05-08
-content_hash: 1a8f809a50d4d759
+content_hash: 6a07f3dcf7a06820
 ---
 
 # GenVidBench: A 6-Million Benchmark for AI-Generated Video Detection
@@ -188,10 +188,10 @@ Different models exhibit substantial performance variation on specific semantic 
 ## Related Papers
 
 - [\[ICCV 2025\] D3: Training-Free AI-Generated Video Detection Using Second-Order Features](../../ICCV2025/video_generation/d3_training-free_ai-generated_video_detection_using_second-order_features.md)
+- [\[CVPR 2026\] VideoRealBench: A Chain-of-Thought Realism Evaluation Benchmark for Generated Human-Centric Videos](../../CVPR2026/video_generation/videorealbench_a_chain-of-thought_realism_evaluation_benchmark_for_generated_hum.md)
 - [\[CVPR 2026\] ActivityForensics: A Comprehensive Benchmark for Localizing Manipulated Activity in Videos](../../CVPR2026/video_generation/activityforensics_a_comprehensive_benchmark_for_localizing_manipulated_activity_.md)
 - [\[ACL 2026\] Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](../../ACL2026/video_generation/self-correcting_text-to-video_generation_with_misalignment_detection_and_localiz.md)
-- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](../../CVPR2026/video_generation/swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
-- [\[AAAI 2026\] OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding](omnivdiff_omni_controllable_video_diffusion_for_generation_and_understanding.md)
+- [\[ICLR 2026\] FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation](../../ICLR2026/video_generation/filmaster_bridging_cinematic_principles_and_generative_ai_for_automated_film_gen.md)
 
 </div>
 

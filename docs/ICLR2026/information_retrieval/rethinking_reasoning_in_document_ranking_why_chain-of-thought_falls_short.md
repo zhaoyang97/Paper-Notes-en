@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rethinking Reasoning in Document Ranking: Why Chain-of-Thought Falls Short
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Pointwise/Listwise] This paper presents the first systematic and fair controlled experiment proving that explicit Chain-of-Thought (CoT) reasoning **does not yield benefits** in LLM document reranking tasks. Regardless of pointwise or listwise approaches, SFT or RL training, direct rerankers consistently outperform reasoning-based reranke
+  [ICLR 2026][Information Retrieval & RAG][Document Reranking] This paper presents the first systematic and fair controlled experiment proving that explicit Chain-of-Thought (CoT) reasoning **does not yield benefits** in LLM document reranking tasks. Regardless of pointwise or listwise approaches, SFT or RL training, direct rerankers consistently outperform reasoning-based rerankers while requiring significantly less inference computation.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Pointwise/Listwise
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Document Reranking"
+  - "Chain-of-Thought"
+  - "Calibration"
+  - "Pointwise/Listwise"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: cf33ac6fb9f8e741
+content_hash: 522393bd861876b2
 ---
+
 # Rethinking Reasoning in Document Ranking: Why Chain-of-Thought Falls Short
 
 **Conference**: ICLR 2026  
@@ -141,11 +145,11 @@ Direct variants even outperform existing reasoning-enhanced SOTAs: On BRIGHT, Di
 
 ## Related Papers
 
-- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 - [\[ICLR 2026\] Long-Document QA with Chain-of-Structured-Thought and Fine-Tuned SLMs](long-document_qa_with_chain-of-structured-thought_and_fine-tuned_slms.md)
-- [\[ICLR 2026\] DeepRAG: Thinking to Retrieve Step by Step for Large Language Models](deeprag_thinking_to_retrieve_step_by_step_for_large_language_models.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 - [\[ICLR 2026\] Tools Are Under-Documented: Simple Document Expansion Boosts Tool Retrieval](tools_are_under-documented_simple_document_expansion_boosts_tool_retrieval.md)
 - [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
+- [\[ICLR 2026\] G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge](g-reasoner_foundation_models_for_unified_reasoning_over_graph-structured_knowled.md)
 
 </div>
 

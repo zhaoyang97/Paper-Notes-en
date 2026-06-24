@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition
 description: >-
-  [NeurIPS 2025][Audio & Speech][audio-visual speech recognition] MoME integrates sparse MoE into the Matryoshka representation learning framework for LLM-based audio-visual speech recognition. Through a shared router…
+  [NeurIPS 2025][Audio & Speech][audio-visual speech recognition] MoME integrates sparse MoE into the Matryoshka representation learning framework for LLM-based audio-visual speech recognition. Through a shared router, it enables cross-granularity knowledge transfer, supporting elastic inference at multiple compression rates under a single set of model weights, while achieving state-of-the-art performance on AVSR/ASR/VSR.
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "elastic inference"
   - "LLM"
 date: 2026-05-08
-content_hash: 03a7e9f39a233de2
+content_hash: e0a5c23559685a90
 ---
 
 # MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition
@@ -129,9 +129,9 @@ MoME outperforms all baselines across all compression rates while using 2–4× 
 
 - [\[NeurIPS 2025\] MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation](megadance_mixture-of-experts_architecture_for_genre-aware_3d_dance_generation.md)
 - [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
+- [\[ACL 2025\] MMS-LLaMA: Efficient LLM-based Audio-Visual Speech Recognition with Minimal Multimodal Speech Tokens](../../ACL2025/audio_speech/mms-llama_efficient_llm-based_audio-visual_speech_recognition_with_minimal_multi.md)
 - [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](../../ICCV2025/audio_speech/zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
-- [\[ICCV 2025\] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing](../../ICCV2025/audio_speech/mug_pseudo_labeling_augmented_audio-visual_mamba_network_for_audio-visual_video_.md)
-- [\[NeurIPS 2025\] Enabling Differentially Private Federated Learning for Speech Recognition: Benchmarks, Adaptive Optimizers and Gradient Clipping](enabling_differentially_private_federated_learning_for_speech_recognition_benchm.md)
+- [\[AAAI 2026\] A Text-Routed Sparse Mixture-of-Experts Model with Explanation and Temporal Alignment for Multi-Modal Sentiment Analysis](../../AAAI2026/audio_speech/text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
 
 </div>
 

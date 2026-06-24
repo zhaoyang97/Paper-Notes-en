@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Memory-Efficient Partitioned DNN Inference on Resource-Constrained Android Crowds
 description: >-
-  [ICML 2026][Model Compression][ONNX] This work presents the design of the "DNN Pipeline Scheduling Subsystem" within the CROWDio framework. Without modifying the model itself (no pruning, quantization, or distillation), a complete ONNX model is partitioned into layers and distributed across multiple Android devices with RAM as low as 3.3–7.4 GB for pipeli
+  [ICML 2026][Model Compression][Memory-efficient inference] This work presents the design of the "DNN Pipeline Scheduling Subsystem" within the CROWDio framework. Without modifying the model itself (no pruning, quantization, or distillation), a complete ONNX model is partitioned into layers and distributed across multiple Android devices with RAM as low as 3.3–7.4 GB for pipelined inference. By employing five mechanisms—**JIT lazy loading, single-partition residency constraint…
 tags:
-  - ICML 2026
-  - Model Compression
-  - ONNX
-  - Android
+  - "ICML 2026"
+  - "Model Compression"
+  - "Memory-efficient inference"
+  - "model partitioning"
+  - "edge ML"
+  - "ONNX"
+  - "Android"
+  - "pipeline scheduling"
 date: 2026-05-08
-content_hash: 512adb6d4c1b5b33
+content_hash: 2f619ca5ef4b3e08
 ---
+
 # Memory-Efficient Partitioned DNN Inference on Resource-Constrained Android Crowds
 
 **Conference**: ICML 2026  
@@ -132,6 +137,7 @@ Ours utilizes existing pre-trained DistilBERT-SST2 weights partitioned into thre
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,7 +146,7 @@ Ours utilizes existing pre-trained DistilBERT-SST2 weights partitioned into thre
 - [\[ICML 2025\] FloE: On-the-Fly MoE Inference on Memory-constrained GPU](../../ICML2025/model_compression/floe_on-the-fly_moe_inference_on_memory-constrained_gpu.md)
 - [\[ICML 2026\] A Queueing-Theoretic Framework for Stability Analysis of LLM Inference with KV Cache Memory Constraints](a_queueing-theoretic_framework_for_stability_analysis_of_llm_inference_with_kv_c.md)
 - [\[ICML 2026\] Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines](towards_resource-efficient_llms_end-to-end_energy_accounting_of_distillation_pip.md)
-- [\[NeurIPS 2025\] KeyDiff: Key Similarity-Based KV Cache Eviction for Long-Context LLM Inference in Resource-Constrained Environments](../../NeurIPS2025/model_compression/keydiff_key_similarity-based_kv_cache_eviction_for_long-context_llm_inference_in.md)
+- [\[ICLR 2026\] Boosted Trees on a Diet: Compact Models for Resource-Constrained Devices](../../ICLR2026/model_compression/boosted_trees_on_a_diet_compact_models_for_resource-constrained_devices.md)
 
 </div>
 

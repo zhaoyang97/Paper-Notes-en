@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unbiased Object Detection Beyond Frequency with Visually Prompted Image Synthesis
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] To address category, size, and location biases in object detection training data, this paper proposes a "Diagnosis-Synthesis" debiasing framework. It identifies truly under-represented data groups using a **Representation Score (RS)** that goes beyond frequency. It recalibrates layouts based on RS and synthesizes high-
+  [ICLR 2026][Object Detection][Detection Debiasing] To address category, size, and location biases in object detection training data, this paper proposes a "Diagnosis-Synthesis" debiasing framework. It identifies truly under-represented data groups using a **Representation Score (RS)** that goes beyond frequency. It recalibrates layouts based on RS and synthesizes high-fidelity samples using a **Visual Blueprint** (color rectangle pixel conditions) combined with **Dual Generat…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Detection Debiasing"
+  - "Layout-to-Image Synthesis"
+  - "Representation Score"
+  - "Visual Blueprint"
+  - "Generative Alignment"
 date: 2026-05-08
-content_hash: b9030f2cdfe402d2
+content_hash: 6d60164b16f011a4
 ---
+
 # Unbiased Object Detection Beyond Frequency with Visually Prompted Image Synthesis
 
 **Conference**: ICLR 2026  
@@ -155,6 +161,7 @@ Incremental Component Analysis (MS COCO, Debiasing setting):
 - Value: ⭐⭐⭐⭐⭐ High utility for long-tail detection and generative data augmentation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -163,7 +170,7 @@ Incremental Component Analysis (MS COCO, Debiasing setting):
 - [\[CVPR 2026\] DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](../../CVPR2026/object_detection/dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)
 - [\[AAAI 2026\] Beyond Boundaries: Leveraging Vision Foundation Models for Source-Free Object Detection](../../AAAI2026/object_detection/beyond_boundaries_leveraging_vision_foundation_models_for_so.md)
 - [\[AAAI 2026\] PromptMoE: Generalizable Zero-Shot Anomaly Detection via Visually-Guided Prompt Mixing of Experts](../../AAAI2026/object_detection/promptmoe_generalizable_zero-shot_anomaly_detection_via_visually-guided_prompt_m.md)
-- [\[CVPR 2026\] Beyond Prompt Degradation: Prototype-Guided Dual-Pool Prompting for Incremental Object Detection](../../CVPR2026/object_detection/beyond_prompt_degradation_prototype-guided_dual-pool_prompting_for_incremental_o.md)
+- [\[AAAI 2026\] FDP: A Frequency-Decomposition Preprocessing Pipeline for Unsupervised Anomaly Detection in Brain MRI](../../AAAI2026/object_detection/fdp_a_frequency-decomposition_preprocessing_pipeline_for_unsupervised_anomaly_de.md)
 
 </div>
 

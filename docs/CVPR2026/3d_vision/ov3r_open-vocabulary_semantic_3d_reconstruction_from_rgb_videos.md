@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos
 description: >-
-  [CVPR 2026][3D Vision][CLIP] Ov3R performs simultaneous dense 3D reconstruction and open-vocabulary 3D semantic segmentation using only RGB video streams. It consists of CLIP3R, which directly infuses CLIP semantics into a reconstruction network for geometry and object-level semantics, and a 2D-3D OVS module that fuses tri-path features (CLIP3R, D
+  [CVPR 2026][3D Vision][Open-vocabulary segmentation] Ov3R performs simultaneous dense 3D reconstruction and open-vocabulary 3D semantic segmentation using only RGB video streams. It consists of CLIP3R, which directly infuses CLIP semantics into a reconstruction network for geometry and object-level semantics, and a 2D-3D OVS module that fuses tri-path features (CLIP3R, DINO, and 3D-CLIP) to "lift" 2D semantics to 3D. It achieves SOTA performance on Replica/7Scenes reconstruct…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - CLIP
-  - Spatial AI
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Open-vocabulary segmentation"
+  - "3D reconstruction"
+  - "CLIP"
+  - "Spatial AI"
+  - "RGB video"
 date: 2026-05-08
-content_hash: 8b8c7ed1166fee29
+content_hash: 757410d98f2b7e7f
 ---
+
 # Ov3R: Open-Vocabulary Semantic 3D Reconstruction from RGB Videos
 
 **Conference**: CVPR 2026  
@@ -130,15 +134,16 @@ In segmentation, Ov3R outperforms all baselines (including offline methods) on R
 - Value: ⭐⭐⭐⭐⭐ A highly practical RGB-only, online, open-vocabulary framework for Spatial AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](ovi-map_open-vocabulary_instance-semantic_mapping.md)
 - [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding](openvoxel_training-free_grouping_and_captioning_voxels_for_open-vocabulary_3d_sc.md)
+- [\[ICLR 2026\] OVSeg3R: Learn Open-vocabulary Instance Segmentation from 2D via 3D Reconstruction](../../ICLR2026/3d_vision/ovseg3r_learn_open-vocabulary_instance_segmentation_from_2d_via_3d_reconstructio.md)
 - [\[CVPR 2026\] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting](onlinepg_online_open-vocabulary_panoptic_mapping_with_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
-- [\[CVPR 2026\] Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation](rewis3d_reconstruction_improves_weaklysupervised_s.md)
 
 </div>
 

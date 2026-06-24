@@ -4,16 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Model Compression][post-training quantization] TurboBoA proposes a backpropagation-free post-training quantization (PTQ) method for LLMs. By introducing three innovations—multi-out-channel joint quantization, preceding layer error compensation, and adaptive grid selection—it achieves a speedup of over 3x while maintaining the accuracy advantages of BoA.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - post-training quantization
-  - attention-aware
-  - backpropagation-free
-  - low-bit quantization
-  - LLM compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "post-training quantization"
+  - "attention-aware"
+  - "backpropagation-free"
+  - "low-bit quantization"
+  - "LLM compression"
 date: 2026-05-08
-content_hash: 227c46e700e4571b
+content_hash: 52b804972301ac17
 ---
+
 # TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation
 
 **Conference**: ICLR 2026  
@@ -139,10 +140,10 @@ Combined with outlier suppression techniques like QuaRot:
 ## Related Papers
 
 - [\[ICML 2025\] BoA: Attention-aware Post-training Quantization without Backpropagation](../../ICML2025/model_compression/boa_attention-aware_post-training_quantization_without_backpropagation.md)
-- [\[ICLR 2026\] CARE: Covariance-Aware and Rank-Enhanced Decomposition for Enabling Multi-Head Latent Attention](care_covariance-aware_and_rank-enhanced_decomposition_for_enabling_multi-head_la.md)
-- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
-- [\[CVPR 2026\] BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers](../../CVPR2026/model_compression/binaryattention_one-bit_qk-attention_for_vision_and_diffusion_transformers.md)
+- [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
+- [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
+- [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](compute-optimal_quantization-aware_training.md)
+- [\[ICLR 2026\] SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization](serq_saliency-aware_low-rank_error_reconstruction_for_llm_quantization.md)
 
 </div>
 

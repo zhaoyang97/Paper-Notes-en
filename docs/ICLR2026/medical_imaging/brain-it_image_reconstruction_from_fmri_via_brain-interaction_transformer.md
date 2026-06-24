@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer
 description: >-
-  [ICLR 2026][Medical Imaging][Diffusion Model] The Brain-IT framework is proposed, which utilizes a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens. It predicts localized semantic and structural image features to achieve high-fidelity reconstruction from fMRI, matching the perfor
+  [ICLR 2026][Medical Imaging][fMRI Brain Decoding] The Brain-IT framework is proposed, which utilizes a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens. It predicts localized semantic and structural image features to achieve high-fidelity reconstruction from fMRI, matching the performance of prior methods using 40 hours of data with only 1 hour of data.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "fMRI Brain Decoding"
+  - "Image Reconstruction"
+  - "Brain-Interaction Transformer"
+  - "Cross-subject Transfer"
+  - "Diffusion Models"
+  - "Deep Image Prior"
 date: 2026-05-08
-content_hash: 6882837da23a0997
+content_hash: 8a3eed55022a4504
 ---
+
 # Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ Real fMRI training pairs are scarce. Brain-IT utilizes an image-to-fMRI encoder 
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
 - [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](../../CVPR2026/medical_imaging/bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
 - [\[ICLR 2026\] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](moving_beyond_diffusion_hierarchy-to-hierarchy_autoregression_for_fmri-to-image_.md)
 - [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
-- [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
-- [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](../../CVPR2026/medical_imaging/modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
 
 </div>
 

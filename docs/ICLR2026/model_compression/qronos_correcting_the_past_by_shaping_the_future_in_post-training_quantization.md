@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Qronos: Correcting the Past by Shaping the Future... in Post-Training Quantization
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Qronos is a novel Post-Training Quantization (PTQ) rounding algorithm that executes "error correction" and "error diffusion" alternately in a column-wise and element-wise manner. It not only corrects current weight/activation quantization errors but also explicitly compensates for residual errors accumulated from previ
+  [ICLR 2026][Model Compression][Post-Training Quantization] Qronos is a novel Post-Training Quantization (PTQ) rounding algorithm that executes "error correction" and "error diffusion" alternately in a column-wise and element-wise manner. It not only corrects current weight/activation quantization errors but also explicitly compensates for residual errors accumulated from previously quantized layers. The paper proves an equivalent efficient implementation that reduces the peak…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Post-Training Quantization"
+  - "Adaptive Rounding"
+  - "Error Correction"
+  - "Error Diffusion"
+  - "LLM Quantization"
 date: 2026-05-08
-content_hash: 33e14d47ae998d70
+content_hash: f5c492b13d394be3
 ---
+
 # Qronos: Correcting the Past by Shaping the Future... in Post-Training Quantization
 
 **Conference**: ICLR 2026  
@@ -143,11 +149,11 @@ For W4A4 (including KV cache quantized to 4-bit, where KV4 is more challenging t
 
 ## Related Papers
 
-- [\[AAAI 2026\] Predicting the Future by Retrieving the Past](../../AAAI2026/model_compression/predicting_the_future_by_retrieving_the_past.md)
 - [\[ICLR 2026\] Post-Training Quantization for Video Matting](post-training_quantization_for_video_matting.md)
 - [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
 - [\[ICLR 2026\] SliderQuant: Accurate Post-Training Quantization for LLMs](sliderquant_accurate_post-training_quantization_for_llms.md)
 - [\[ICLR 2026\] Inlier-Centric Post-Training Quantization for Object Detection Models](inlier-centric_post-training_quantization_for_object_detection_models.md)
+- [\[ICLR 2026\] PTQ4ARVG: Post-Training Quantization for AutoRegressive Visual Generation Models](ptq4arvg_post-training_quantization_for_autoregressive_visual_generation_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Non-Stationary Bandit Convex Optimization: A Comprehensive Study
 description: >-
-  [NeurIPS 2025][Optimization][Bandit Convex Optimization] This paper systematically studies bandit convex optimization (BCO) in non-stationary environments, proposes two algorithms (TEWA-SE and cExO)…
+  [NeurIPS 2025][Optimization][Bandit Convex Optimization] This paper systematically studies bandit convex optimization (BCO) in non-stationary environments, proposes two algorithms (TEWA-SE and cExO), and establishes unified regret upper and lower bounds under three non-stationarity measures (number of switches $S$, total variation $\Delta$, and path length $P$), achieving minimax optimality in several settings.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Adaptive Regret"
   - "Minimax Optimality"
 date: 2026-05-08
-content_hash: 4efc89692a48c731
+content_hash: fdb403ee3da4eda2
 ---
 
 # Non-Stationary Bandit Convex Optimization: A Comprehensive Study
@@ -122,10 +122,10 @@ This paper is a purely theoretical contribution with no empirical experiments. M
 ## Related Papers
 
 - [\[NeurIPS 2025\] Stochastic Momentum Methods for Non-smooth Non-Convex Finite-Sum Coupled Compositional Optimization](stochastic_momentum_methods_for_non-smooth_non-convex_finite-sum_coupled_composi.md)
+- [\[ICML 2025\] Right Now, Wrong Then: Non-Stationary Direct Preference Optimization under Preference Drift](../../ICML2025/optimization/right_now_wrong_then_non-stationary_direct_preference_optimization_under_prefere.md)
 - [\[NeurIPS 2025\] Isotropic Noise in Stochastic and Quantum Convex Optimization](isotropic_noise_in_stochastic_and_quantum_convex_optimization.md)
+- [\[ICLR 2026\] Derandomized Online-to-Non-convex Conversion for Stochastic Weakly Convex Optimization](../../ICLR2026/optimization/derandomized_online-to-non-convex_conversion_for_stochastic_weakly_convex_optimi.md)
 - [\[NeurIPS 2025\] Beyond Õ(√T) Constraint Violation for Online Convex Optimization with Adversarial Constraints](beyond_tildeosqrtt_constraint_violation_for_online_convex_optimization_with_adve.md)
-- [\[NeurIPS 2025\] Do Neural Networks Need Gradient Descent to Generalize? A Theoretical Study](do_neural_networks_need_gradient_descent_to_generalize_a_theoretical_study.md)
-- [\[NeurIPS 2025\] Natural Gradient VI: Guarantees for Non-Conjugate Models](natural_gradient_vi_guarantees_for_non-conjugate_models.md)
 
 </div>
 

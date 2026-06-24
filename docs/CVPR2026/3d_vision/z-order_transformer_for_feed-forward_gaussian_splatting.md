@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Z-Order Transformer for Feed-Forward Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The method utilizes Z-order (Morton) space-filling curves to rearrange cluttered per-pixel Gaussians into 1D sequences that maintain spatial locality. Combined with a sparse Transformer employing "group attention + top-k attention" and Z-order pooling, it predicts high-quality 3D Gaussians in a single feed-forward pass
+  [CVPR 2026][3D Vision][Feed-Forward Gaussian Splatting] The method utilizes Z-order (Morton) space-filling curves to rearrange cluttered per-pixel Gaussians into 1D sequences that maintain spatial locality. Combined with a sparse Transformer employing "group attention + top-k attention" and Z-order pooling, it predicts high-quality 3D Gaussians in a single feed-forward pass. This reduces the number of Gaussians to 1/2–1/3 of DepthSplat/AnySplat…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-Forward Gaussian Splatting"
+  - "Z-order curve"
+  - "Sparse Attention"
+  - "Novel View Synthesis"
+  - "Gaussian Compression"
 date: 2026-05-08
-content_hash: acd8e85dcf810a7a
+content_hash: 700324eeaf57f27a
 ---
+
 # Z-Order Transformer for Feed-Forward Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -169,15 +175,15 @@ Viewpoint Selection Strategy (NA.=All, RS.=Random, ZS.=Z-order):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] SparseSplat: Towards Applicable Feed-Forward 3D Gaussian Splatting with Pixel-Unaligned Prediction](sparsesplat_towards_applicable_feed-forward_3d_gaussian_splatting_with_pixel-una.md)
 - [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
-- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] FUSER: Feed-Forward Multiview 3D Registration Transformer and SE(3)$^N$ Diffusion Refinement](fuser_feed-forward_multiview_3d_registration_transformer_and_se3n_diffusion_refi.md)
+- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
+- [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
 
 </div>
 

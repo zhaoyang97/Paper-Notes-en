@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][Large Language Models] This paper proposes an entropy-guided adaptive LLM reasoning framework that combines dynamic in-context retrieval with adaptive chain-of-thought (CoT) reasoning. On the T…
+  [AAAI 2026][Reasoning][Large Language Models] This paper proposes an entropy-guided adaptive LLM reasoning framework that combines dynamic in-context retrieval with adaptive chain-of-thought (CoT) reasoning. On the Tic-Tac-Toe benchmark, the framework improves the average game outcome of LLMs from $-11.6\%$ to $+9.5\%$ while maintaining a low number of LLM queries.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Large Language Models"
   - "Game Theory"
   - "Entropy-Guided Reasoning"
   - "Chain-of-Thought"
   - "Retrieval-Augmented Generation"
 date: 2026-05-08
-content_hash: 37a11c7b7d24ab5d
+content_hash: 45baf719199463af
 ---
 
 # LLMs for Game Theory: Entropy-Guided In-Context Learning and Adaptive CoT Reasoning
@@ -164,9 +164,9 @@ The game loop proceeds as follows: current board state → autoencoder encodes t
 
 - [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](../../ICML2026/llm_reasoning/many-shot_cot-icl_making_in-context_learning_truly_learn.md)
 - [\[ICLR 2026\] Is In-Context Learning Learning?](../../ICLR2026/llm_reasoning/is_in-context_learning_learning.md)
+- [\[ICML 2026\] SuCo: Sufficiency-guided Continuous Adaptive Reasoning](../../ICML2026/llm_reasoning/suco_sufficiency-guided_continuous_adaptive_reasoning.md)
+- [\[ACL 2025\] CoT-ICL Lab: A Synthetic Framework for Studying Chain-of-Thought Learning from In-Context Demonstrations](../../ACL2025/llm_reasoning/cot-icl_lab_a_synthetic_framework_for_studying_chain-of-thought_learning_from_in.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[ICLR 2026\] DAG-Math: Graph-of-Thought Guided Mathematical Reasoning in LLMs](../../ICLR2026/llm_reasoning/dag-math_graph-of-thought_guided_mathematical_reasoning_in_llms.md)
-- [\[ACL 2026\] Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play](../../ACL2026/llm_reasoning/stratagem_learning_transferable_reasoning_via_trajectory-modulated_game_self-pla.md)
 
 </div>
 

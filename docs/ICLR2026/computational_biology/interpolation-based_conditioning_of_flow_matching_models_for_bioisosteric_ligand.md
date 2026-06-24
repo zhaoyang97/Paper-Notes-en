@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Interpolation-Based Conditioning of Flow Matching Models for Bioisosteric Ligand Design
 description: >-
-  [ICLR 2026][Computational Biology][flow matching] Based on pre-trained E(3)-equivariant flow matching molecular generation models, this work proposes two **inference-only conditioning strategies requiring zero retraining**—Interpolate–Integrate (soft global similarity) and Replacement Guidance (hard local anchoring)—to enable 3D bioisostere design conditioned on refer
+  [ICLR 2026][Computational Biology][flow matching] Based on pre-trained E(3)-equivariant flow matching molecular generation models, this work proposes two **inference-only conditioning strategies requiring zero retraining**—Interpolate–Integrate (soft global similarity) and Replacement Guidance (hard local anchoring)—to enable 3D bioisostere design conditioned on reference ligands or fragment sets.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - flow matching
-  - SemlaFlow
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "flow matching"
+  - "training-free conditional generation"
+  - "bioisostere design"
+  - "pharmacophore"
+  - "SemlaFlow"
 date: 2026-05-08
-content_hash: 534b51c7c54fe0b4
+content_hash: d7f180ba7765eb32
 ---
+
 # Interpolation-Based Conditioning of Flow Matching Models for Bioisosteric Ligand Design
 
 **Conference**: ICLR 2026  
@@ -125,10 +129,10 @@ SARS-CoV-2 Mpro Pharmacophore Merging: Replacement Guidance achieved SA 3.61 and
 ## Related Papers
 
 - [\[ICLR 2026\] Riemannian Variational Flow Matching for Material and Protein Design](riemannian_variational_flow_matching_for_material_and_protein_design.md)
+- [\[ICLR 2026\] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](la-proteina_atomistic_protein_generation_via_partially_latent_flow_matching.md)
 - [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
 - [\[ICLR 2026\] Multi-Marginal Flow Matching with Adversarially Learnt Interpolants](multi-marginal_flow_matching_with_adversarially_learnt_interpolants.md)
-- [\[ICLR 2026\] scDFM: Distributional Flow Matching for Robust Single-Cell Perturbation Prediction](scdfm_distributional_flow_matching_model_for_robust_single-cell_perturbation_pre.md)
-- [\[ICLR 2026\] La-Proteina: Atomistic Protein Generation via Partially Latent Flow Matching](la-proteina_atomistic_protein_generation_via_partially_latent_flow_matching.md)
+- [\[NeurIPS 2025\] Energy Matching: Unifying Flow Matching and Energy-Based Models for Generative Modeling](../../NeurIPS2025/computational_biology/energy_matching_unifying_flow_matching_and_energy-based_models_for_generative_mo.md)
 
 </div>
 

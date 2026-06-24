@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unstitching the Chimera: Frame-Level Risk and Train-Free Mitigation for Video Hallucination
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] This paper characterizes a neglected type of video hallucination from the perspective of "frames" rather than "tokens"—**Chimera Hallucination**: where the model stitches together fragments that actually exist in the video but do not belong to the same event chain into a false continuous narrative. To address this, the
+  [CVPR 2026][Video Understanding][Video Hallucination] This paper characterizes a neglected type of video hallucination from the perspective of "frames" rather than "tokens"—**Chimera Hallucination**: where the model stitches together fragments that actually exist in the video but do not belong to the same event chain into a false continuous narrative. To address this, the authors propose CH-Risk, a single-forward-pass, reference-free risk metric to quantify this risk…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Hallucination"
+  - "Chimera Hallucination"
+  - "Training-free Intervention"
+  - "Attention Routing"
+  - "Risk Estimation"
 date: 2026-05-08
-content_hash: 6e7222abb1fa3bd0
+content_hash: db15e21381c93423
 ---
+
 # Unstitching the Chimera: Frame-Level Risk and Train-Free Mitigation for Video Hallucination
 
 **Conference**: CVPR 2026  
@@ -165,11 +171,11 @@ Ablation of components and sequence on LLaVA-Video-7B (Accuracy on NExT-QA / Vid
 
 ## Related Papers
 
-- [\[CVPR 2026\] ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding](elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi.md)
 - [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
-- [\[ACL 2026\] Distorted or Fabricated? A Survey on Hallucination in Video LLMs](../../ACL2026/hallucination/distorted_or_fabricated_a_survey_on_hallucination_in_video_llms.md)
-- [\[CVPR 2026\] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)
-- [\[ACL 2026\] Through the Magnifying Glass: Adaptive Perception Magnification for Hallucination-Free VLM Decoding](../../ACL2026/hallucination/through_the_magnifying_glass_adaptive_perception_magnification_for_hallucination.md)
+- [\[CVPR 2026\] One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)
+- [\[CVPR 2026\] First Frame Is the Place to Go for Video Content Customization](first_frame_is_the_place_to_go_for_video_content_customization.md)
+- [\[CVPR 2026\] CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning](clcr_cross-level_semantic_collaborative_representation_for_multimodal_learning.md)
+- [\[CVPR 2026\] SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation](sam2text_towards_prompt-free_and_multi-resolution_video_scene_text_segmentation.md)
 
 </div>
 

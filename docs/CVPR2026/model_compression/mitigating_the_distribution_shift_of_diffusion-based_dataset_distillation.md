@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mitigating The Distribution Shift of Diffusion-based Dataset Distillation
 description: >-
-  [CVPR 2026][Model Compression][Diffusion Model] This paper identifies that using diffusion models for dataset distillation suffers from two types of distribution shifts: training-stage and sampling-stage shifts. It proposes a two-stage framework: during training, L1 sparse regularization (RSM) is used to force the diffusion model to learn a compact and sparse "disti
+  [CVPR 2026][Model Compression][Dataset Distillation] This paper identifies that using diffusion models for dataset distillation suffers from two types of distribution shifts: training-stage and sampling-stage shifts. It proposes a two-stage framework: during training, L1 sparse regularization (RSM) is used to force the diffusion model to learn a compact and sparse "distillation-aware" manifold; during sampling, greedy i.i.d. generation is replaced by synchronous denoising of…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Dataset Distillation"
+  - "Diffusion Models"
+  - "Distribution Shift"
+  - "Sparse Regularization"
+  - "Determinantal Point Process"
 date: 2026-05-08
-content_hash: 8c41a67c93991d84
+content_hash: 1f4c3811aa87b559
 ---
+
 # Mitigating The Distribution Shift of Diffusion-based Dataset Distillation
 
 **Conference**: CVPR 2026  
@@ -138,9 +143,9 @@ On ImageNette / ConvNet-6 / IPC 10:
 
 - [\[CVPR 2026\] DMGD: Train-Free Dataset Distillation with Semantic-Distribution Matching in Diffusion Models](dmgd_train-free_dataset_distillation_with_semantic-distribution_matching_in_diff.md)
 - [\[CVPR 2026\] IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)
+- [\[CVPR 2026\] ManifoldGD: Training-Free Hierarchical Manifold Guidance for Diffusion-Based Dataset Distillation](manifoldgd_training-free_hierarchical_manifold_guidance_for_diffusion-based_data.md)
 - [\[CVPR 2026\] Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution](balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution.md)
 - [\[CVPR 2026\] Dataset Distillation by Influence Matching](dataset_distillation_by_influence_matching.md)
-- [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](../../AAAI2026/model_compression/tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
 
 </div>
 

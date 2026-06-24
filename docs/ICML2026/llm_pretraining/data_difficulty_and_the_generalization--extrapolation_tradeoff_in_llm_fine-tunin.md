@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning
 description: >-
-  [ICML 2026][Pretraining][PAC-Bayes] This paper systematically investigates the role of data difficulty in SFT, discovering that there is no "universally optimal difficulty." Instead, an optimal difficulty exists that **drifts toward harder samples as the data scale increases**. This is explained through a PAC-Bayes framework as a tradeoff between the "in
+  [ICML 2026][LLM Pretraining][Data Difficulty] This paper systematically investigates the role of data difficulty in SFT, discovering that there is no "universally optimal difficulty." Instead, an optimal difficulty exists that **drifts toward harder samples as the data scale increases**. This is explained through a PAC-Bayes framework as a tradeoff between the "in-distribution generalization gap" and the "extrapolation gap."
 tags:
-  - ICML 2026
-  - Pretraining
-  - PAC-Bayes
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Data Difficulty"
+  - "Supervised Fine-Tuning"
+  - "Generalization-Extrapolation Tradeoff"
+  - "PAC-Bayes"
+  - "Data Scale"
 date: 2026-05-08
-content_hash: 5b005c1766c765b4
+content_hash: 106baa00225f06c5
 ---
+
 # Data Difficulty and the Generalization--Extrapolation Tradeoff in LLM Fine-Tuning
 
 **Conference**: ICML 2026  
@@ -111,9 +116,9 @@ The paper formulates the test risk upper bound as $\mathbb{E}_{\theta\sim\pi_\ma
 
 - [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](../../ICLR2026/llm_pretraining/token-level_data_selection_for_safe_llm_fine-tuning.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](../../ICLR2026/llm_pretraining/pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
+- [\[ICLR 2026\] Task-Aware Data Selection via Proxy-Label Enhanced Distribution Matching for LLM Fine-Tuning](../../ICLR2026/llm_pretraining/task-aware_data_selection_via_proxy-label_enhanced_distribution_matching_for_llm.md)
 - [\[ICML 2026\] Tuning the Implicit Regularizer of Masked Diffusion Language Models: Enhancing Generalization via Insights from k-Parity](tuning_the_implicit_regularizer_of_masked_diffusion_language_models_enhancing_ge.md)
-- [\[ICML 2025\] DipLLM: Fine-Tuning LLM for Strategic Decision-Making in Diplomacy](../../ICML2025/llm_pretraining/dipllm_fine-tuning_llm_for_strategic_decision-making_in_diplomacy.md)
-- [\[ACL 2025\] Data Whisperer: Efficient Data Selection for Task-Specific LLM Fine-Tuning via Few-Shot In-Context Learning](../../ACL2025/llm_pretraining/data_whisperer_data_selection.md)
+- [\[ICLR 2026\] ssToken: Self-modulated and Semantic-aware Token Selection for LLM Fine-tuning](../../ICLR2026/llm_pretraining/sstoken_self-modulated_and_semantic-aware_token_selection_for_llm_fine-tuning.md)
 
 </div>
 

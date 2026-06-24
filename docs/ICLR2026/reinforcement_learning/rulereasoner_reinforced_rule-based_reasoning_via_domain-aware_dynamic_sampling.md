@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling
 description: >-
-  [ICLR 2026][Reinforcement Learning][rule-based reasoning] RuleReasoner constructs a diverse rule reasoning dataset, RuleCollection-32K, and proposes a Domain-aware Dynamic Sampling (Dads) strategy. By training 8B models under the RLVR framework, it outperforms OpenAI-o1 by 4.1% on in-domain reasoning tasks and 10.4% on out-of-domain tasks, while improving training efficiency
+  [Reinforcement Learning] RuleReasoner constructs a diverse rule reasoning dataset, RuleCollection-32K, and proposes a Domain-aware Dynamic Sampling (Dads) strategy. By training 8B models under the RLVR framework, it outperforms OpenAI-o1 by 4.1% on in-domain reasoning tasks and 10.4% on out-of-domain tasks, while improving training efficiency by ~1.4×.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - rule-based reasoning
-  - RLVR
-  - dynamic sampling
-  - GRPO
-  - domain reweighting
-  - OOD generalization
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 73d8093bbbf4ef18
+content_hash: b72648eb0d68425a
 ---
+
 # RuleReasoner: Reinforced Rule-based Reasoning via Domain-aware Dynamic Sampling
 
 - **Conference**: ICLR2026
@@ -162,7 +156,7 @@ The policy is optimized using the GRPO objective, removing the KL term and entro
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

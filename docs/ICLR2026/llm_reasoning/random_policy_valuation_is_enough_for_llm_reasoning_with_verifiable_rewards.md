@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards
 description: >-
-  [ICLR 2026][LLM Reasoning][RLVR] The authors observe that RLVR for mathematical reasoning corresponds to a simplified MDP with "deterministic transitions + tree structure + binary terminal rewards." In this structure, evaluating the Q-values of a **fixed uniform random policy** followed by softmax sampling bypasses the "evaluation-improvement" cycles
+  [ICLR 2026][Reasoning][RLVR] The authors observe that RLVR for mathematical reasoning corresponds to a simplified MDP with "deterministic transitions + tree structure + binary terminal rewards." In this structure, evaluating the Q-values of a **fixed uniform random policy** followed by softmax sampling bypasses the "evaluation-improvement" cycles and heuristic tricks of PPO/GRPO, achieving a reasoning policy that is both high-quality (pass@1 +8.2…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - RLVR
+  - "ICLR 2026"
+  - "Reasoning"
+  - "RLVR"
+  - "Random Policy Valuation"
+  - "Mean Operator"
+  - "Reasoning Diversity"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 3dfa4da765835cb5
+content_hash: 9f1875bd0d675d4d
 ---
+
 # Random Policy Valuation is Enough for LLM Reasoning with Verifiable Rewards
 
 **Conference**: ICLR 2026  
@@ -141,6 +146,7 @@ ROVER consistently outperforms the strongest baselines across all model scales (
 - Value: ⭐⭐⭐⭐⭐ Simple yet powerful; challenges the assumption that "RLVR must be complex," providing directional inspiration for post-training methodologies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

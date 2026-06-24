@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unique Lives, Shared World: Learning from Single-Life Videos
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] A geometry-aware visual encoder can be trained via self-supervision using only "a single person's lifetime of egocentric video" (effectively 38 hours). The study further discovers that models independently trained on different individuals converge to highly consistent geometric representations. These "single-life" repr
+  [CVPR 2026][Self-Supervised Learning][Single-life learning] A geometry-aware visual encoder can be trained via self-supervision using only "a single person's lifetime of egocentric video" (effectively 38 hours). The study further discovers that models independently trained on different individuals converge to highly consistent geometric representations. These "single-life" representations can transfer to downstream tasks like depth estimation…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Single-life learning"
+  - "Egocentric video"
+  - "Cross-view completion"
+  - "Geometric representation"
+  - "Representation alignment"
 date: 2026-05-08
-content_hash: c5b4dd80ef12418c
+content_hash: 9b413f78836a4739
 ---
+
 # Unique Lives, Shared World: Learning from Single-Life Videos
 
 **Conference**: CVPR 2026  
@@ -144,15 +150,16 @@ Note: Full K400 (~850h) sets the performance ceiling, but a 30h single ALD life 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)
 - [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
 - [\[CVPR 2026\] VT-Intrinsic: Physics-Based Decomposition of Reflectance and Shading using a Single Visible-Thermal Image Pair](vt-intrinsic_physics-based_decomposition_of_reflectance_and_shading_using_a_sing.md)
 - [\[CVPR 2026\] Beyond the Static World: Continual Category Discovery under Visual Drift](beyond_the_static_world_continual_category_discovery_under_visual_drift.md)
-- [\[CVPR 2025\] CheXWorld: Image World Modeling for Radiograph Representation Learning](../../CVPR2025/self_supervised/chexworld_exploring_image_world_modeling_for_radiograph_representation_learning.md)
-- [\[ICML 2025\] AdaWorld: Learning Adaptable World Models with Latent Actions](../../ICML2025/self_supervised/adaworld_learning_adaptable_world_models_with_latent_actions.md)
+- [\[ICLR 2026\] PRISM: Progressive Robust Learning for Open-World Continual Category Discovery](../../ICLR2026/self_supervised/prism_progressive_robust_learning_for_open-world_continual_category_discovery.md)
 
 </div>
 

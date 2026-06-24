@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Geometry-Aware Dataset Condensation for Diffusion Model Training
 description: >-
-  [ICML 2026][Image Generation][Paper Note] Addressing the limitation where existing dataset condensation methods are unsuitable for training diffusion models, this paper reformulates real subset selection as a **geometry-aware distribution alignment problem**. It defines the alignment target via one-sided Partial Optimal Transport (POT) combined with statistica
+  [ICML2026][Image Generation][Dataset Condensation] Addressing the limitation where existing dataset condensation methods are unsuitable for training diffusion models, this paper reformulates real subset selection as a **geometry-aware distribution alignment problem**. It defines the alignment target via one-sided Partial Optimal Transport (POT) combined with statistical regularization, and solves it through a two-stage discrete optimization (greedy + exchange). On ImageNet…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Dataset Condensation"
+  - "Real Subset Selection"
+  - "Partial Optimal Transport"
+  - "Distribution Alignment"
+  - "Diffusion Training"
 date: 2026-05-08
-content_hash: 6daf58c38a4f4c99
+content_hash: 00e5236936ffca87
 ---
+
 # Geometry-Aware Dataset Condensation for Diffusion Model Training
 
 **Conference**: ICML2026  
@@ -147,8 +153,8 @@ Stage II ablation: Improving FID from 3.82 to 3.43 (10K) and 12.87 to 11.01 (50K
 
 ## Related Papers
 
-- [\[ICML 2026\] Geometry-Aware Tabular Diffusion](geometry-aware_tabular_diffusion.md)
 - [\[CVPR 2026\] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation](../../CVPR2026/image_generation/d2c_diffusion_dataset_condensation.md)
+- [\[ICML 2026\] Geometry-Aware Tabular Diffusion](geometry-aware_tabular_diffusion.md)
 - [\[ICML 2026\] Rethinking FID Through the Geometry of the Reference Dataset](rethinking_fid_through_the_geometry_of_the_reference_dataset.md)
 - [\[CVPR 2026\] SPREAD: Spatial-Physical REasoning via geometry Aware Diffusion](../../CVPR2026/image_generation/spread_spatial-physical_reasoning_via_geometry_aware_diffusion.md)
 - [\[ICML 2026\] GASS: Geometry-Aware Spherical Sampling for Disentangled Diversity Enhancement in Text-to-Image Generation](gass_geometry-aware_spherical_sampling_for_disentangled_diversity_enhancement_in.md)

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Complexity as Advantage: A Regret-Based Perspective on Emergent Structure
 description: >-
-  [ICML 2026][Others][MDL] This paper proposes Complexity-as-Advantage (CAA): redefining "complexity" as the **regret dispersion** of a family of **resource-constrained observers** on the same process. It proves that under the log-loss + Markov framework, it is equivalent to the sum of conditional mutual information atoms (recovering excess entr
+  [ICML 2026][Complexity measures] This paper proposes Complexity-as-Advantage (CAA): redefining "complexity" as the **regret dispersion** of a family of **resource-constrained observers** on the same process. It proves that under the log-loss + Markov framework, it is equivalent to the sum of conditional mutual information atoms (recovering excess entropy); from a coding perspective, it is equivalent to the variance of excess description length (MDL). This unifies Kolmogorov c…
 tags:
-  - ICML 2026
-  - Others
-  - MDL
+  - "ICML 2026"
+  - "Complexity measures"
+  - "regret dispersion"
+  - "information theory"
+  - "logical depth"
+  - "MDL"
 date: 2026-05-08
-content_hash: 1d156fb74d9200fa
+content_hash: 1ef3573cab4e5f9c
 ---
+
 # Complexity as Advantage: A Regret-Based Perspective on Emergent Structure
 
 **Conference**: ICML 2026  

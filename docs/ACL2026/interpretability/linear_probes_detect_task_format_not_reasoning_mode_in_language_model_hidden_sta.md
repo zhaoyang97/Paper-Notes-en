@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper uses probes, residual de-confounding, trace-anchor, and causal steering experiments on Qwen3-14B to demonstrate that while linear probes appear to distinguish deductive, inductive, and abductive reasoning with 100% accuracy, they actually detect data source and task format rather than reasoning modes within
+  [ACL 2026][Interpretability][Linear Probes] This paper uses probes, residual de-confounding, trace-anchor, and causal steering experiments on Qwen3-14B to demonstrate that while linear probes appear to distinguish deductive, inductive, and abductive reasoning with 100% accuracy, they actually detect data source and task format rather than reasoning modes within hidden states.
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Linear Probes"
+  - "Format Confounding"
+  - "Representational Geometry"
+  - "Causal Steering"
+  - "Reasoning Modes"
 date: 2026-05-08
-content_hash: 00c99d58a75ae3e2
+content_hash: d922a38ab76b18b2
 ---
+
 # Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States
 
 **Conference**: ACL 2026  
@@ -140,9 +146,9 @@ The four-stage confounding analysis shows the original "reasoning mode" separati
 
 - [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](../../ICLR2026/interpretability/beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
 - [\[ICLR 2026\] Hidden Breakthroughs in Language Model Training](../../ICLR2026/interpretability/hidden_breakthroughs_in_language_model_training.md)
-- [\[ACL 2026\] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations](adaptivek_complexity-driven_sparse_autoencoders_for_interpretable_language_model.md)
-- [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
+- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](../../ICLR2026/interpretability/linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ICML 2026\] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning](../../ICML2026/interpretability/what_linear_probes_miss_multi-view_probing_for_weight-space_learning.md)
 
 </div>
 

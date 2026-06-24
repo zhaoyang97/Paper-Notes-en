@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 description: >-
-  [ACL 2026][Multimodal VLM][Multi-Agent] CogGen proposes a multi-agent recursive framework that simulates the human cognitive writing process. It implements macro-cognitive loops for global restructuring, micro-cognitive loops for parallel chapter refinement, and Abstract Visual Representation (AVR) for semantic-level text-chart synergistic planning, achievin
+  [ACL 2026 Findings][Multimodal VLM][Deep research report] CogGen proposes a multi-agent recursive framework that simulates the human cognitive writing process. It implements macro-cognitive loops for global restructuring, micro-cognitive loops for parallel chapter refinement, and Abstract Visual Representation (AVR) for semantic-level text-chart synergistic planning, achieving human expert-level performance on the OWID benchmark and surpassing Gemini Deep Research.
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "Deep research report"
+  - "recursive writing framework"
+  - "multimodal fusion"
+  - "cognitive load assessment"
+  - "multi-agent"
 date: 2026-05-08
-content_hash: 55290d024470a061
+content_hash: b7c0cc91cf0d74b6
 ---
+
 # CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation
 
 **Conference**: ACL 2026 Findings  
@@ -144,11 +149,11 @@ CogGen is a pure inference-time framework and does not involve training. It uses
 
 ## Related Papers
 
+- [\[ICLR 2026\] WebWatcher: Breaking New Frontiers of Vision-Language Deep Research Agent](../../ICLR2026/multimodal_vlm/webwatcher_breaking_new_frontiers_of_vision-language_deep_research_agent.md)
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](../../ICML2026/multimodal_vlm/weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
+- [\[ACL 2026\] A Survey of Deep Learning for Geometry Problem Solving](a_survey_of_deep_learning_for_geometry_problem_solving.md)
 - [\[AAAI 2026\] PET2Rep: Towards Vision-Language Model-Driven Automated Radiology Report Generation for Positron Emission Tomography](../../AAAI2026/multimodal_vlm/pet2rep_towards_vision-language_model-drived_automated_radiology_report_generati.md)
-- [\[ACL 2025\] MEIT: Multimodal Electrocardiogram Instruction Tuning on Large Language Models for Report Generation](../../ACL2025/multimodal_vlm/meit_multimodal_electrocardiogram_instruction_tuning_on_large_language_models_fo.md)
-- [\[ICML 2026\] Deep Pre-Alignment for VLMs](../../ICML2026/multimodal_vlm/deep_pre-alignment_for_vlms.md)
-- [\[CVPR 2026\] CAD-Refiner: A Unified Framework for CAD Generation and Iterative Editing](../../CVPR2026/multimodal_vlm/cad-refiner_a_unified_framework_for_cad_generation_and_iterative_editing.md)
+- [\[ACL 2026\] Almieyar-Oryx-BloomBench: A Bilingual Multimodal Benchmark for Cognitively Informed Evaluation of Vision-Language Models](almieyar-oryx-bloombench_a_bilingual_multimodal_benchmark_for_cognitively_inform.md)
 
 </div>
 

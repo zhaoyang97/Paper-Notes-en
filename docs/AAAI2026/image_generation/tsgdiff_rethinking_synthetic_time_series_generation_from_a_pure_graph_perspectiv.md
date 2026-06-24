@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective
 description: >-
-  [AAAI 2026][Image Generation][time series generation] This paper proposes TSGDiff, the first framework to rethink time series generation from a purely graph-based perspective. Time series are represented as dynamic graph…
+  [AAAI 2026][Image Generation][time series generation] This paper proposes TSGDiff, the first framework to rethink time series generation from a purely graph-based perspective. Time series are represented as dynamic graphs constructed from Fourier spectral features, diffusion modeling is performed in the graph latent space, and a novel Topo-FID metric is introduced to evaluate the structural fidelity of generated time series.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Fourier transform"
   - "topological fidelity"
 date: 2026-05-08
-content_hash: 13ef8c0bc80ccf5f
+content_hash: c1420ada4650ada6
 ---
 
 # TSGDiff: Rethinking Synthetic Time Series Generation from a Pure Graph Perspective
@@ -137,9 +137,9 @@ The average Discriminative score improves by 50% across 6 datasets.
 
 - [\[AAAI 2026\] SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting](simdiff_simpler_yet_better_diffusion_model_for_time_series_point_forecasting.md)
 - [\[ICLR 2026\] Conditionally Whitened Generative Models for Probabilistic Time Series Forecasting](../../ICLR2026/image_generation/conditionally_whitened_generative_models_for_probabilistic_time_series_forecasti.md)
-- [\[AAAI 2026\] LongT2IBench: A Benchmark for Evaluating Long Text-to-Image Generation with Graph-structured Annotations](longt2ibench_a_benchmark_for_evaluating_long_text-to-image_generation_with_graph.md)
-- [\[NeurIPS 2025\] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking](../../NeurIPS2025/image_generation/a_diffusion_model_for_regular_time_series_generation_from_irregular_data_with_co.md)
-- [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](rethinking_direct_preference_optimization_in_diffusion_models.md)
+- [\[CVPR 2025\] Everything to the Synthetic: Diffusion-driven Test-time Adaptation via Synthetic-Domain Alignment](../../CVPR2025/image_generation/everything_to_the_synthetic_diffusion-driven_test-time_adaptation_via_synthetic-.md)
+- [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
+- [\[ICML 2025\] BRIDGE: Bootstrapping Text to Control Time-Series Generation via Multi-Agent Iterative Optimization and Diffusion Modeling](../../ICML2025/image_generation/bridge_bootstrapping_text_to_control_time-series_generation_via_multi-agent_iter.md)
 
 </div>
 

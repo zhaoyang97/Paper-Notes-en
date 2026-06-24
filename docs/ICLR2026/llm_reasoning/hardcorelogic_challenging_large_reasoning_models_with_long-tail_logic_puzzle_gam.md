@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] HardcoreLogic: Challenging Large Reasoning Models with Long-tail Logic Puzzle Games
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] HardcoreLogic constructs a benchmark of 5,000+ atypical logic puzzles across 10 types by applying three long-tail transformations: "Increasing Complexity," "Uncommon Elements," and "Unsolvable Puzzles." It reveals that even state-of-the-art models like GPT-5 rely heavily on memorized patterns of classic problems, suffe
+  [ICLR 2026][Reasoning][Large Reasoning Models (LRM)] HardcoreLogic constructs a benchmark of 5,000+ atypical logic puzzles across 10 types by applying three long-tail transformations: "Increasing Complexity," "Uncommon Elements," and "Unsolvable Puzzles." It reveals that even state-of-the-art models like GPT-5 rely heavily on memorized patterns of classic problems, suffering significant performance drops when encountering these variants.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Large Reasoning Models (LRM)"
+  - "Logic Puzzles"
+  - "Long-tail Variants"
+  - "Reasoning Robustness"
+  - "Memorization Shortcut"
+  - "Unsolvable Puzzles"
 date: 2026-05-08
-content_hash: 6b7edd214fbcc220
+content_hash: 67153d3c3357fee0
 ---
+
 # HardcoreLogic: Challenging Large Reasoning Models with Long-tail Logic Puzzle Games
 
 **Conference**: ICLR 2026  
@@ -106,10 +113,20 @@ graph LR
 - **Value**: ⭐⭐⭐⭐ Exposes the "memorization inflation" in LRM reasoning scores and provides a diagnostic framework for future reasoning research.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)
+- [\[ICLR 2026\] Pruning Long Chain-of-Thought of Large Reasoning Models via Small-Scale Preference Optimization](pruning_long_chain-of-thought_of_large_reasoning_models_via_small-scale_preferen.md)
+- [\[ICLR 2026\] DeepMath-103K: A Large-Scale, Challenging, Decontaminated, and Verifiable Mathematical Dataset for Advancing Reasoning](deepmath-103k_a_large-scale_challenging_decontaminated_and_verifiable_mathematic.md)
+- [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
+- [\[ICLR 2026\] A Balanced Neuro-Symbolic Approach for Commonsense Abductive Logic](a_balanced_neuro-symbolic_approach_for_commonsense_abductive_logic.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] InftyThink: Breaking the Length Limits of Long-Context Reasoning in Large Language Models](inftythink_breaking_the_length_limits_of_long-context_reasoning_in_large_languag.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data
 description: >-
-  [NeurIPS 2025][Image Generation][Single-image 3D human reconstruction] GeneMAN proposes a generalizable single-image 3D human reconstruction framework that requires **no parametric body model (e.g.…
+  [NeurIPS 2025][Image Generation][Single-image 3D human reconstruction] GeneMAN proposes a generalizable single-image 3D human reconstruction framework that requires **no parametric body model (e.g., SMPL)**. By training human-specific 2D/3D diffusion prior models on large-scale multi-source human data, and combining a geometry initialization-sculpting pipeline with multi-space texture refinement, GeneMAN achieves high-fidelity 3D human reconstruction from in-the-wild images…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Score Distillation Sampling"
   - "texture refinement"
 date: 2026-05-08
-content_hash: d8ea142a51a1d762
+content_hash: 32af7d5be895a8f1
 ---
 
 # GeneMAN: Generalizable Single-Image 3D Human Reconstruction from Multi-Source Human Data
@@ -229,11 +229,11 @@ Test set: 50 samples from in-the-wild internet images and the CAPE dataset; 120 
 
 ## Related Papers
 
+- [\[CVPR 2025\] DeClotH: Decomposable 3D Cloth and Human Body Reconstruction from a Single Image](../../CVPR2025/image_generation/decloth_decomposable_3d_cloth_and_human_body_reconstruction_from_a_single_image.md)
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
+- [\[CVPR 2025\] InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](../../CVPR2025/image_generation/interedit_navigating_text-guided_multi-human_3d_motion_editing.md)
 - [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](../../ICLR2026/image_generation/direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
-- [\[NeurIPS 2025\] Dual Data Alignment Makes AI-Generated Image Detector Easier Generalizable](dual_data_alignment_makes_ai-generated_image_detector_easier_generalizable.md)
 - [\[NeurIPS 2025\] Diff-ICMH: Harmonizing Machine and Human Vision in Image Compression with Generative Prior](diff-icmh_harmonizing_machine_and_human_vision_in_image_compression_with_generat.md)
-- [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](../../ICCV2025/image_generation/scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
 
 </div>
 

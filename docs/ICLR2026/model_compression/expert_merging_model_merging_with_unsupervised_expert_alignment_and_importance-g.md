@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking
 description: >-
-  [ICLR 2026][Model Compression][Model Merging] Using 5–10 **unlabeled** calibration samples, this work learns a set of **layer-wise coefficients** to align the hidden states and logits of the merged model with domain-specific experts. It further introduces **importance-guided chunking** (Expert Merging++), outperforming both training-free and training-based merging
+  [ICLR 2026][Model Compression][Model Merging] Using 5–10 **unlabeled** calibration samples, this work learns a set of **layer-wise coefficients** to align the hidden states and logits of the merged model with domain-specific experts. It further introduces **importance-guided chunking** (Expert Merging++), outperforming both training-free and training-based merging baselines on LLMs/MLLMs, and even surpassing supervised mixture training.
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Model Merging
-  - Task Arithmetic
-  - MLLM
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Task Arithmetic"
+  - "Representation Alignment"
+  - "Logit Distillation"
+  - "Layer Importance"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 06a87ac5119a99e2
+content_hash: c907177a6f851e5d
 ---
+
 # Expert Merging: Model Merging with Unsupervised Expert Alignment and Importance-Guided Layer Chunking
 
 **Conference**: ICLR 2026  
@@ -114,11 +118,11 @@ MATH-Vision (44.74), TextVQA (81.65), and RefCOCOg (~79.00) all reached or neare
 
 ## Related Papers
 
-- [\[ICLR 2026\] DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging](distac_conditioning_task_vectors_via_distillation_for_robust_model_merging.md)
-- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
-- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](steering_moe_llms_via_expert_deactivation.md)
 - [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
 - [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
+- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
+- [\[ICLR 2026\] DisTaC: Conditioning Task Vectors via Distillation for Robust Model Merging](distac_conditioning_task_vectors_via_distillation_for_robust_model_merging.md)
+- [\[ICML 2026\] Saliency-Aware Model Merging](../../ICML2026/model_compression/saliency-aware_model_merging.md)
 
 </div>
 

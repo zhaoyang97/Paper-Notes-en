@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Modeling the Density of Pixel-level Self-supervised Embeddings for Unsupervised Pathology Segmentation in Medical CT
 description: >-
-  [ICLR 2026][Medical Imaging][UVAS] This paper proposes Screener: replacing ImageNet pre-trained features with dense self-supervised learning and replacing manual sinusoidal positional encodings with "mask-invariant" learnable conditional variables. This approach renders the density-based Unsupervised Visual Anomaly Segmentation (UVAS) framework fully se
+  [ICLR 2026][Medical Imaging][UVAS] This paper proposes Screener: replacing ImageNet pre-trained features with dense self-supervised learning and replacing manual sinusoidal positional encodings with "mask-invariant" learnable conditional variables. This approach renders the density-based Unsupervised Visual Anomaly Segmentation (UVAS) framework fully self-supervised. After training on 30,000 unlabeled CT scans, it significantly outperforms existing UVAS methods on a multi-pat…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - UVAS
-  - 3D CT
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "UVAS"
+  - "Density Estimation"
+  - "Dense Self-supervised Learning"
+  - "3D CT"
+  - "Pathology Segmentation"
+  - "Mask-invariant Condition"
 date: 2026-05-08
-content_hash: 665f9102b648de71
+content_hash: 7e16a0a15648ad77
 ---
+
 # Modeling the Density of Pixel-level Self-supervised Embeddings for Unsupervised Pathology Segmentation in Medical CT
 
 **Conference**: ICLR 2026  
@@ -117,11 +122,11 @@ Training set: NLST, AMOS, AbdomenAtlas (30,000+ unlabeled CTs); Test set: LIDC, 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Pixel-Level Residual Diffusion Transformer: Scalable 3D CT Volume Generation](pixel-level_residual_diffusion_transformer_scalable_3d_ct_volume_generation.md)
 - [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](heegnet_hyperbolic_embeddings_for_eeg.md)
-- [\[CVPR 2026\] IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation](../../CVPR2026/medical_imaging/ibisagent_reinforcing_pixel-level_visual_reasoning_in_mllms_for_universal_biomed.md)
+- [\[CVPR 2026\] SPECTRE: Scaling Self-Supervised and Cross-Modal Pretraining for Volumetric CT Transformers](../../CVPR2026/medical_imaging/scaling_self-supervised_and_cross-modal_pretraining_for_volumetric_ct_transforme.md)
 - [\[ICLR 2026\] PathChat-SegR1: Reasoning Segmentation in Pathology via SO-GRPO](pathchat-segr1_reasoning_segmentation_in_pathology_via_so-grpo.md)
-- [\[CVPR 2026\] Dual-Level Confidence based Implicit Self-Refinement for Medical Visual Question Answering](../../CVPR2026/medical_imaging/dual-level_confidence_based_implicit_self-refinement_for_medical_visual_question.md)
-- [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](../../ICCV2025/medical_imaging/boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
+- [\[CVPR 2026\] IBISAgent: Reinforcing Pixel-Level Visual Reasoning in MLLMs for Universal Biomedical Object Referring and Segmentation](../../CVPR2026/medical_imaging/ibisagent_reinforcing_pixel-level_visual_reasoning_in_mllms_for_universal_biomed.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][Coach-Player] The adversarial nature of self-play is replaced with "collaboration": a Coach generates problems, a Player solves them, and the Coach receives a reward based on "Player improvement $\times$ Player success rate." Without any external training data, Qwen2.5-Math-7B-Instruct achieves an average score increase of +4.9 and
+  [ICML 2026][Reinforcement Learning][Data-Free RL] The adversarial nature of self-play is replaced with "collaboration": a Coach generates problems, a Player solves them, and the Coach receives a reward based on "Player improvement $\times$ Player success rate." Without any external training data, Qwen2.5-Math-7B-Instruct achieves an average score increase of +4.9 and an OOD gain of +5.4 across six math benchmarks, outperforming existing unsupervised methods like RENT and R-Ze…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Coach-Player
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Data-Free RL"
+  - "Coach-Player"
+  - "Curriculum Generation"
+  - "GRPO"
+  - "Multi-agent Collaboration"
 date: 2026-05-08
-content_hash: 5659eff14f455775
+content_hash: cb36d642f6946339
 ---
+
 # CPMöbius: Iterative Coach–Player Reasoning for Data-Free Reinforcement Learning
 
 **Conference**: ICML 2026  
@@ -134,8 +138,8 @@ The most significant improvement is seen in Minerva: Qwen-1.5B improves 16.3→2
 - [\[ICML 2026\] How Reasoning Evolves from Post-Training Data: An Empirical Study Using Chess](how_reasoning_evolves_from_post-training_data_an_empirical_study_using_chess.md)
 - [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
 - [\[ICML 2026\] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games](revisiting_regularized_policy_optimization_for_stable_and_efficient_reinforcemen.md)
-- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
 - [\[CVPR 2026\] See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs](../../CVPR2026/reinforcement_learning/see_it_say_it_sorted_an_iterative_training-free_framework_for_visually-grounded_.md)
+- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
 
 </div>
 

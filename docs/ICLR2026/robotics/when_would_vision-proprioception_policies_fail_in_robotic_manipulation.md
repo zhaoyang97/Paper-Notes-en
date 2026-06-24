@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When would Vision-Proprioception Policies Fail in Robotic Manipulation?
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] This paper reveals why vision-proprioception manipulation policies fail during motion-transition phases—proprioception signals dominate optimization and suppress vision learning. It proposes the Gradient Adjustment with Phase-guidance (GAP) algorithm, which adaptively reduces proprioception gradients to restore vision
+  [ICLR 2026][Robotics][Vision-proprioception policies] This paper reveals why vision-proprioception manipulation policies fail during motion-transition phases—proprioception signals dominate optimization and suppress vision learning. It proposes the Gradient Adjustment with Phase-guidance (GAP) algorithm, which adaptively reduces proprioception gradients to restore vision modality learning, significantly enhancing policy generalization in both simulated and real-world environm…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-proprioception policies"
+  - "modality temporality"
+  - "gradient adjustment"
+  - "motion-transition phases"
+  - "robotic manipulation"
 date: 2026-05-08
-content_hash: 9e39f34d3fa36103
+content_hash: 085c3ac296965432
 ---
+
 # When would Vision-Proprioception Policies Fail in Robotic Manipulation?
 
 **Conference**: ICLR 2026  
@@ -173,10 +179,10 @@ Real-world experiments (20 rollouts):
 ## Related Papers
 
 - [\[ICLR 2026\] ManipEvalAgent: Promptable and Efficient Evaluation Framework for Robotic Manipulation Policies](manipevalagent_promptable_and_efficient_evaluation_framework_for_robotic_manipul.md)
+- [\[ICLR 2026\] Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations](robotic_manipulation_by_imitating_generated_videos_without_physical_demonstratio.md)
 - [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
+- [\[ICLR 2026\] Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation](genie_envisioner_a_unified_world_foundation_platform_for_robotic_manipulation.md)
 - [\[ICLR 2026\] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](robust_fine-tuning_of_vision-language-action_robot_policies_via_parameter_mergin.md)
-- [\[ICLR 2026\] VLBiMan: Vision-Language Anchored One-Shot Demonstration Enables Generalizable Bimanual Robotic Manipulation](vlbiman_vision-language_anchored_one-shot_demonstration_enables_generalizable_bi.md)
-- [\[ICLR 2026\] Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation](action-aware_dynamic_pruning_for_efficient_vision-language-action_manipulation.md)
 
 </div>
 

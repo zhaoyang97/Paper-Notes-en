@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation
 description: >-
-  [ICCV 2025][Reinforcement Learning][Vision-and-Language Navigation] This paper proposes NavQ, a foresighted VLN agent that employs a Q-model to predict, in a single forward pass…
+  [ICCV 2025][Reinforcement Learning][Vision-and-Language Navigation] This paper proposes NavQ, a foresighted VLN agent that employs a Q-model to predict, in a single forward pass, long-horizon future semantic aggregation features (Q-features) for each candidate action. Combined with an A*-style search strategy, NavQ achieves significant improvements on object-goal navigation benchmarks.
 tags:
   - "ICCV 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "A* Search"
   - "Self-Supervised Pretraining"
 date: 2026-05-08
-content_hash: 7453fe88071c924f
+content_hash: ac677d9ff8febbfd
 ---
 
 # NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation
@@ -151,9 +151,9 @@ $\gamma=0$ degrades to single-step world model performance; $\gamma=0.5$ achieve
 
 - [\[ICCV 2025\] Embodied Navigation with Auxiliary Task of Action Description Prediction](embodied_navigation_with_auxiliary_task_of_action_description_prediction.md)
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](../../AAAI2026/reinforcement_learning/vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
-- [\[AAAI 2026\] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision](../../AAAI2026/reinforcement_learning/stelar-vision_self-topology-aware_efficient_learning_for_aligned_reasoning_in_vi.md)
-- [\[ICML 2026\] Coupled Variational Reinforcement Learning for Language Model General Reasoning](../../ICML2026/reinforcement_learning/coupled_variational_reinforcement_learning_for_language_model_general_reasoning.md)
-- [\[AAAI 2026\] Language Model Distillation: A Temporal Difference Imitation Learning Perspective](../../AAAI2026/reinforcement_learning/language_model_distillation_a_temporal_difference_imitation_learning_perspective.md)
+- [\[ECCV 2024\] Octopus: Embodied Vision-Language Programmer from Environmental Feedback](../../ECCV2024/reinforcement_learning/octopus_embodied_vision-language_programmer_from_environmental_feedback.md)
+- [\[ICLR 2026\] Benefits and Pitfalls of Reinforcement Learning for Language Model Planning: A Theoretical Perspective](../../ICLR2026/reinforcement_learning/benefits_and_pitfalls_of_reinforcement_learning_for_language_model_planning_a_th.md)
+- [\[NeurIPS 2025\] EvoLM: In Search of Lost Language Model Training Dynamics](../../NeurIPS2025/reinforcement_learning/evolm_in_search_of_lost_language_model_training_dynamics.md)
 
 </div>
 

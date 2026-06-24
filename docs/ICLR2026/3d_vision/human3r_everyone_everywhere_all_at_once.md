@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Human3R: Everyone Everywhere All at Once
 description: >-
-  [ICLR 2026][3D Vision][CUT3R] Human3R freezes the online 4D reconstruction foundation model CUT3R and uses Visual Prompt Tuning (VPT) to insert "human prompts." This allows the model to simultaneously output multi-person SMPL-X meshes (everyone), dense scene point clouds (everywhere), and camera trajectories (all-at-once) in a single feed-forward p
+  [ICLR 2026][3D Vision][Human Mesh Recovery] Human3R freezes the online 4D reconstruction foundation model CUT3R and uses Visual Prompt Tuning (VPT) to insert "human prompts." This allows the model to simultaneously output multi-person SMPL-X meshes (everyone), dense scene point clouds (everywhere), and camera trajectories (all-at-once) in a single feed-forward pass at 15 FPS with 8 GB VRAM, reaching SOTA after training on a single GPU for just one day.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - CUT3R
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Human Mesh Recovery"
+  - "Global Human Motion Estimation"
+  - "4D Reconstruction Foundation Model"
+  - "CUT3R"
+  - "Visual Prompt Tuning"
+  - "Online Feed-forward Reconstruction"
 date: 2026-05-08
-content_hash: 2f2597aefe1b138f
+content_hash: 79e2d98f4a373bbb
 ---
+
 # Human3R: Everyone Everywhere All at Once
 
 **Conference**: ICLR 2026  

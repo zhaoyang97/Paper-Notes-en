@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation
 description: >-
-  [ICLR 2026][Reinforcement Learning][Flow Matching] ReFORM is proposed to manipulate the source distribution of a behavior-cloning (BC) flow policy by learning a reflected flow noise generator. This achieve support constraints in a **constructive manner**, avoiding OOD (Out-Of-Distribution) issues while maintaining policy expressivity without hyperparameter tuning.
+  [ICLR 2026][Reinforcement Learning][Offline RL] ReFORM is proposed to manipulate the source distribution of a behavior-cloning (BC) flow policy by learning a reflected flow noise generator. This achieve support constraints in a **constructive manner**, avoiding OOD (Out-Of-Distribution) issues while maintaining policy expressivity without hyperparameter tuning.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Flow Matching
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline RL"
+  - "Flow Matching"
+  - "Support Constraints"
+  - "Reflected Flows"
+  - "OOD Issues"
 date: 2026-05-08
-content_hash: d8655bebe0407111
+content_hash: e185909768b5e6a2
 ---
+
 # ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation
 
 **Conference**: ICLR 2026  
@@ -145,10 +150,10 @@ Support constraints are entirely guaranteed constructively by the bounded source
 ## Related Papers
 
 - [\[ICLR 2026\] Value Flows](value_flows.md)
-- [\[ICML 2026\] Counterfactual Transport Flows for Offline Conservative Trajectory Refinement](../../ICML2026/reinforcement_learning/counterfactual_transport_flows_for_offline_conservative_trajectory_refinement.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
-- [\[ICLR 2026\] Peak-Return Greedy Slicing: Subtrajectory Selection for Transformer-based Offline RL](peak-return_greedy_slicing_subtrajectory_selection_for_transformer-based_offline.md)
 - [\[ICLR 2026\] Sample Efficient Offline RL via T-Symmetry Enforced Latent State-Stitching](sample_efficient_offline_rl_via_t-symmetry_enforced_latent_state-stitching.md)
+- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper redefines the "smoothness" metric in algorithms with predictions by measuring the competitive ratio only on subsets of instances where the "prediction actually provides additional information," thereby preventing the old definition from being contaminated by uninformative instances. Under this new metric, th
+  [ICLR 2026][Theory of Learning-Augmented Algorithms][Algorithms with Predictions] This paper redefines the "smoothness" metric in algorithms with predictions by measuring the competitive ratio only on subsets of instances where the "prediction actually provides additional information," thereby preventing the old definition from being contaminated by uninformative instances. Under this new metric, the paper provides tighter lower bounds and matching algorithms for three types…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Theory of Learning-Augmented Algorithms"
+  - "Online Scheduling"
+  - "Algorithms with Predictions"
+  - "Smoothness"
+  - "Non-Clairvoyant Scheduling"
+  - "Competitive Ratio"
+  - "Adversarial Lower Bounds"
 date: 2026-05-08
-content_hash: aa6155121a925844
+content_hash: 76ed46b7fe6f75cc
 ---
+
 # On Smoothness Bounds for Non-Clairvoyant Scheduling with Predictions
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT
 description: >-
-  [AAAI2026][Interpretability][mechanistic interpretability] This work applies mechanistic interpretability to reverse-engineer the internal circuits of a Video Vision Transformer (ViViT)…
+  [AAAI2026][Interpretability][mechanistic interpretability] This work applies mechanistic interpretability to reverse-engineer the internal circuits of a Video Vision Transformer (ViViT), revealing a functional division of labor in which attention heads are responsible for "gathering evidence" and MLP modules for "composing concepts." The analysis demonstrates that the model develops semantic knowledge beyond its training objective even on simple classification tasks.
 tags:
   - "AAAI2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Circuit Analysis"
   - "Trustworthy AI"
 date: 2026-05-08
-content_hash: 454d318e7e36021f
+content_hash: 8f96fcc296736df3
 ---
 
 # Attention Gathers, MLPs Compose: A Causal Analysis of an Action-Outcome Circuit in VideoViT
@@ -142,11 +142,11 @@ The findings carry important implications for **AI safety**: even models trained
 
 ## Related Papers
 
+- [\[ICML 2026\] Where Computation Lives Inside TabPFN: Causal Localisation of Attention Head Function](../../ICML2026/interpretability/where_computation_lives_inside_tabpfn_causal_localisation_of_attention_head_func.md)
 - [\[AAAI 2026\] LLM Circuit Analyses Are Consistent Across Training and Scale](llm_circuit_analyses_consistent_across_training_and_scale.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](../../ICLR2026/interpretability/why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](../../NeurIPS2025/interpretability/causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
-- [\[NeurIPS 2025\] Learning to Focus: Causal Attention Distillation via Gradient-Guided Token Pruning](../../NeurIPS2025/interpretability/learning_to_focus_causal_attention_distillation_via_gradient-guided_token_prunin.md)
-- [\[AAAI 2026\] Attention as Binding: A Vector-Symbolic Perspective on Transformer Reasoning](attention_as_binding_a_vector-symbolic_perspective_on_transformer_reasoning.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
+- [\[CVPR 2026\] CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers](../../CVPR2026/interpretability/cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi.md)
 
 </div>
 

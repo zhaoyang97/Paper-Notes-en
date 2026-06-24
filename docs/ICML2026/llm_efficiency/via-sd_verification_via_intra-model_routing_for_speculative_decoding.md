@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VIA-SD: Verification via Intra-Model Routing for Speculative Decoding
 description: >-
-  [ICML 2026][LLM Efficiency][Inference Acceleration] Addressing the binary decision bottleneck of "either accept or recompute with the target model" in speculative decoding, VIA-SD routes a lightweight "slim-verifier" from within the full verifier to handle "medium-confidence" tokens. This forms a draft → slim-verifier → full-verifier multi-stage process, reducing reject
+  [ICML 2026][LLM Efficiency][Speculative Decoding] Addressing the binary decision bottleneck of "either accept or recompute with the target model" in speculative decoding, VIA-SD routes a lightweight "slim-verifier" from within the full verifier to handle "medium-confidence" tokens. This forms a draft → slim-verifier → full-verifier multi-stage process, reducing rejection rates by 0.10–0.22 and achieving an additional 10–20% speedup over strong speculative decoding baselines a…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - Inference Acceleration
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Speculative Decoding"
+  - "Hierarchical Verification"
+  - "Intra-Model Routing"
+  - "KL Geometry"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 8b5001673ecf1ca6
+content_hash: 2a723e6468ac7a00
 ---
+
 # VIA-SD: Verification via Intra-Model Routing for Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -139,10 +144,10 @@ VIA-SD reduces the rejection rate by 0.10–0.22 over strong baselines, improvin
 ## Related Papers
 
 - [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
 - [\[ACL 2026\] TokenTiming: A Dynamic Alignment Method for Universal Speculative Decoding Model Pairs](../../ACL2026/llm_efficiency/tokentiming_a_dynamic_alignment_method_for_universal_speculative_decoding_model_.md)
-- [\[ICML 2026\] MineDraft: A Framework for Batch Parallel Speculative Decoding](minedraft_a_framework_for_batch_parallel_speculative_decoding.md)
-- [\[ICML 2026\] Diffusion Language Model Parallel Decoding via Product-of-Experts Bridge](diffusion_language_model_parallel_decoding_via_product-of-experts_bridge.md)
+- [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](../../NeurIPS2025/llm_efficiency/3model_speculative_decoding.md)
+- [\[ICLR 2026\] Speculative Speculative Decoding](../../ICLR2026/llm_efficiency/speculative_speculative_decoding.md)
+- [\[ACL 2026\] Multi-Drafter Speculative Decoding with Alignment Feedback](../../ACL2026/llm_efficiency/multi-drafter_speculative_decoding_with_alignment_feedback.md)
 
 </div>
 

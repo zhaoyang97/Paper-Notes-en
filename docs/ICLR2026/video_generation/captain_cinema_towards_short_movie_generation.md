@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Captain Cinema: Towards Short Movie Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Captain Cinema decomposes the task of "generating a short movie" into two steps: top-down planning of a full set of keyframe storyboards, followed by bottom-up synthesis of video motion between these keyframes. It utilizes Golden Ratio Memory Compression (GoldenMem) to fit historical frames from thousands of seconds ac
+  [ICLR2026][Video Generation][Short Movie Generation] Captain Cinema decomposes the task of "generating a short movie" into two steps: top-down planning of a full set of keyframe storyboards, followed by bottom-up synthesis of video motion between these keyframes. It utilizes Golden Ratio Memory Compression (GoldenMem) to fit historical frames from thousands of seconds across dozens of shots into a fixed token budget, maintaining character and scene consistency over long seque…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Short Movie Generation"
+  - "Long Context"
+  - "Keyframe Planning"
+  - "Memory Compression"
+  - "Interleaved Conditioning"
 date: 2026-05-08
-content_hash: e7e6148e2bc30cd0
+content_hash: b3f132fd10c1fabf
 ---
+
 # Captain Cinema: Towards Short Movie Generation
 
 **Conference**: ICLR2026  
@@ -136,16 +142,16 @@ The evaluation uses VBench-2.0 for visual/temporal metrics, LCT protocols for te
 - Value: ⭐⭐⭐⭐⭐ Directly addresses consistency and context bottlenecks in long video generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Captain Safari: A World Engine with Pose-Aligned 3D Memory](../../CVPR2026/video_generation/captain_safari_a_world_engine_with_pose-aligned_3d_memory.md)
 - [\[CVPR 2025\] MovieBench: A Hierarchical Movie Level Dataset for Long Video Generation](../../CVPR2025/video_generation/moviebench_a_hierarchical_movie_level_dataset_for_long_video_generation.md)
-- [\[ICLR 2026\] EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning](editverse_unifying_image_and_video_editing_and_generation_with_in-context_learni.md)
-- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
-- [\[ICLR 2026\] DSA: Efficient Inference For Video Generation Models via Distributed Sparse Attention](dsa_efficient_inference_for_video_generation_models_via_distributed_sparse_atten.md)
+- [\[ICLR 2026\] UniVideo: Unified Understanding, Generation, and Editing for Videos](univideo_unified_understanding_generation_and_editing_for_videos.md)
+- [\[ICLR 2026\] Controllable Video Generation with Provable Disentanglement](controllable_video_generation_with_provable_disentanglement.md)
+- [\[ICLR 2026\] FilMaster: Bridging Cinematic Principles and Generative AI for Automated Film Generation](filmaster_bridging_cinematic_principles_and_generative_ai_for_automated_film_gen.md)
 
 </div>
 

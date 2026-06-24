@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting Compressed AI-Generated Images via Phase Spectrum Robustness
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the failure of AI-generated image detectors caused by JPEG compression on social networks destroying forgery traces, this paper starts from the signal processing observation that "phase spectra are more robust to compression than magnitude spectra." It proposes CPTFormer, which uses phase features to guide R
+  [CVPR 2026][AI Safety][AI-generated image detection] To address the failure of AI-generated image detectors caused by JPEG compression on social networks destroying forgery traces, this paper starts from the signal processing observation that "phase spectra are more robust to compression than magnitude spectra." It proposes CPTFormer, which uses phase features to guide RGB representations through bidirectional cross-modal fusion, followed by fine-tuning via spatial and wavele…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "AI-generated image detection"
+  - "Phase spectrum robustness"
+  - "JPEG compression"
+  - "Cross-modal interaction"
+  - "Difficulty-aware loss"
 date: 2026-05-08
-content_hash: 8e20e10aedcc0fbd
+content_hash: 4932314f6e58734c
 ---
+
 # Detecting Compressed AI-Generated Images via Phase Spectrum Robustness
 
 **Conference**: CVPR 2026  
@@ -157,11 +163,11 @@ Table 5 (2-class quality-aware GAN, cumulative components):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Enabling Supervised Learning of Generative Signatures for Generalized AI-Generated Images Detection](enabling_supervised_learning_of_generative_signatures_for_generalized_ai-generat.md)
 - [\[CVPR 2026\] VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation](vmd-fact_a_new_video_dataset_and_mllm-based_method_for_detecting_realistic_ai-ge.md)
-- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
 - [\[CVPR 2026\] Skyra: AI-Generated Video Detection via Grounded Artifact Reasoning](skyra_ai-generated_video_detection_via_grounded_artifact_reasoning.md)
 - [\[CVPR 2026\] Scaling Up AI-Generated Image Detection with Generator-Aware Prototypes](scaling_up_ai-generated_image_detection_with_generator-aware_prototypes.md)
+- [\[CVPR 2026\] SAIDO: Scene-Aware and Importance-Guided Dynamic Optimization for Generalizable AI-Generated Image Detection](saido_generalizable_detection_of_ai-generated_images_via_scene-aware_and_importa.md)
+- [\[ICLR 2026\] PluriHarms: Benchmarking the Full Spectrum of Human Judgments on AI Harm](../../ICLR2026/ai_safety/pluriharms_benchmarking_the_full_spectrum_of_human_judgments_on_ai_harm.md)
 
 </div>
 

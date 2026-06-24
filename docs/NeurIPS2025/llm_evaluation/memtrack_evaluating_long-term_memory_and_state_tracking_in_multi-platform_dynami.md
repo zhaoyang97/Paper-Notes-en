@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments
 description: >-
-  [NeurIPS 2025 (SEA Workshop)][LLM Evaluation][long-term memory] This paper proposes the MEMTRACK benchmark to evaluate LLM agents' long-term memory and state tracking capabilities in multi-platform dynamic environments (…
+  [NeurIPS 2025 (SEA Workshop)][LLM Evaluation][long-term memory] This paper proposes the MEMTRACK benchmark to evaluate LLM agents' long-term memory and state tracking capabilities in multi-platform dynamic environments (Slack/Linear/Git), revealing that even the strongest model, GPT-5, achieves only 60% accuracy.
 tags:
   - "NeurIPS 2025 (SEA Workshop)"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "benchmark"
   - "memory evaluation"
 date: 2026-05-08
-content_hash: 1daacef7dc4672c9
+content_hash: 86440e11a588e953
 ---
 
 # MEMTRACK: Evaluating Long-Term Memory and State Tracking in Multi-Platform Dynamic Agent Environments
@@ -176,11 +176,11 @@ The composite scoring is designed to prevent "garbage information + correct answ
 
 ## Related Papers
 
+- [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](../../ICLR2026/llm_evaluation/beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
 - [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](../../ICML2026/llm_evaluation/multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
+- [\[ACL 2025\] EducationQ: Evaluating LLMs' Teaching Capabilities Through Multi-Agent Dialogue Framework](../../ACL2025/llm_evaluation/educationq_evaluating_llms_teaching_capabilities_through_multi-agent_dialogue_fr.md)
 - [\[AAAI 2026\] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction](../../AAAI2026/llm_evaluation/bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore.md)
-- [\[ICML 2026\] Agent World Model: Infinity Synthetic Environments for Agentic Reinforcement Learning](../../ICML2026/llm_evaluation/agent_world_model_infinity_synthetic_environments_for_agentic_reinforcement_lear.md)
-- [\[ACL 2026\] Evaluating Memory Capability in Continuous Lifelog Scenario](../../ACL2026/llm_evaluation/evaluating_memory_capability_in_continuous_lifelog_scenario.md)
-- [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
+- [\[ACL 2025\] From Tools to Teammates: Evaluating LLMs in Multi-Session Coding Interactions](../../ACL2025/llm_evaluation/from_tools_to_teammates_evaluating_llms_in_multi-session_coding_interactions.md)
 
 </div>
 

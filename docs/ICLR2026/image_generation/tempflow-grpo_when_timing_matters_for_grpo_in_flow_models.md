@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models
 description: >-
-  [ICLR 2026][Image Generation][Flow Matching] TempFlow-GRPO identifies that "treating all denoising steps equally" in existing Flow-GRPO training is a core bottleneck. By using a triad of "process rewards via trajectory bifurcation + noise-level reweighting + seed grouping," it matches optimization intensity to the real exploration potential of each step, achievin
+  [ICLR 2026][Image Generation][Flow Matching] TempFlow-GRPO identifies that "treating all denoising steps equally" in existing Flow-GRPO training is a core bottleneck. By using a triad of "process rewards via trajectory bifurcation + noise-level reweighting + seed grouping," it matches optimization intensity to the real exploration potential of each step, achieving SOTA on GenEval and PickScore with significantly fewer steps (GenEval 0.63→0.97, ~10× training efficiency).
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Matching
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Matching"
+  - "GRPO"
+  - "Text-to-Image Alignment"
+  - "Process Reward"
+  - "Time-Aware Optimization"
 date: 2026-05-08
-content_hash: 9cb235189d221fd2
+content_hash: 526302ac1ce44f99
 ---
+
 # TempFlow-GRPO: When Timing Matters for GRPO in Flow Models
 
 **Conference**: ICLR 2026  
@@ -138,7 +142,7 @@ Bifurcation configuration (fixed group size 24): Among 2×12 / 4×6 / 6×4, more
 
 - [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
 - [\[ICLR 2026\] TreeGRPO: Tree-Advantage GRPO for Online RL Post-Training of Diffusion Models](treegrpo_tree-advantage_grpo_for_online_rl_post-training_of_diffusion_models.md)
-- [\[CVPR 2026\] Stepwise-Flow-GRPO：给流匹配模型的去噪步逐步分配信用](../../CVPR2026/image_generation/stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
+- [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](../../CVPR2026/image_generation/grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
 - [\[CVPR 2026\] Fine-Grained GRPO for Precise Preference Alignment in Flow Models](../../CVPR2026/image_generation/fine-grained_grpo_for_precise_preference_alignment_in_flow_models.md)
 - [\[ICML 2026\] LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching](../../ICML2026/image_generation/lithogrpo_fast_inverse_lithography_via_grpo_reinforced_flow_matching.md)
 

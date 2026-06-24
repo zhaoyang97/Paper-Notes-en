@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Dual Perspectives on Non-Contrastive Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][stop-gradient] This paper rigorously proves from both optimization and dynamical systems perspectives that the stop-gradient (SG) and EMA training processes commonly used in non-contrastive self-supervised learning do not minimize any well-defined objective function. However, they do avoid collapse upon convergence, and their non-tri
+  [ICLR 2026][Self-Supervised Learning][Non-contrastive self-supervised learning] This paper rigorously proves from both optimization and dynamical systems perspectives that the stop-gradient (SG) and EMA training processes commonly used in non-contrastive self-supervised learning do not minimize any well-defined objective function. However, they do avoid collapse upon convergence, and their non-trivial equilibria are asymptotically stable in the linear case.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
-  - stop-gradient
-  - EMA
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Non-contrastive self-supervised learning"
+  - "stop-gradient"
+  - "EMA"
+  - "representation collapse"
+  - "dynamical systems"
+  - "optimization theory"
 date: 2026-05-08
-content_hash: d8e06348a5dca967
+content_hash: 8a75a96c318a7f5e
 ---
+
 # Dual Perspectives on Non-Contrastive Self-Supervised Learning
 
 **Conference**: ICLR 2026  
@@ -127,8 +132,8 @@ Parameters were uniformly sampled as $\rho\in[0,3],\tau\in[-1,1],\lambda\in[0.01
 ## Related Papers
 
 - [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
-- [\[ICLR 2026\] Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data](understanding_the_robustness_of_distributed_self-supervised_learning_frameworks_.md)
 - [\[ICML 2025\] Collapse-Proof Non-Contrastive Self-Supervised Learning](../../ICML2025/self_supervised/collapse-proof_non-contrastive_self-supervised_learning.md)
+- [\[ICLR 2026\] Understanding the Robustness of Distributed Self-Supervised Learning Frameworks Against Non-IID Data](understanding_the_robustness_of_distributed_self-supervised_learning_frameworks_.md)
 - [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
 - [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
 

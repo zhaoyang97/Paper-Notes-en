@@ -4,13 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Reinforcement Learning][LLM-as-a-Judge] J1 unifies "subjective/objective judgment tasks" into a format with verifiable rewards, using GRPO online RL to train LLM judges that "think before rendering a verdict." At a 32B scale, it surpasses o3 and DeepSeek-R1-671B on multiple reward benchmarks and eliminates position bias using purely synthetic data.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - LLM-as-a-Judge
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "LLM-as-a-Judge"
+  - "Verifiable Reward RL"
+  - "GRPO"
+  - "Position Bias"
+  - "Chain-of-Thought Evaluation"
 date: 2026-05-08
-content_hash: be72df92d681a636
+content_hash: 73aafd7a915b8c85
 ---
+
 # J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning
 
 **Conference**: ICLR 2026  

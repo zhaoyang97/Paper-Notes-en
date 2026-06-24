@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Exploration of Incremental Synthetic Non-Morphed Images for Single Morphing Attack Detection
 description: >-
-  [NeurIPS 2025 (LXAI Workshop)][AI Safety][S-MAD] This paper systematically investigates the effect of incrementally introducing synthetic non-morphed face images into Single Morphing Attack Detection (S-MAD) training. Re…
+  [NeurIPS 2025 (LXAI Workshop)][AI Safety][S-MAD] This paper systematically investigates the effect of incrementally introducing synthetic non-morphed face images into Single Morphing Attack Detection (S-MAD) training. Results show that a moderate proportion of synthetic data (~75% increment) can improve cross-dataset generalization (EER reduced from 6.17% to 6.10%), while excessive use or training exclusively on synthetic data leads to severe performance degradation (EER risi…
 tags:
   - "NeurIPS 2025 (LXAI Workshop)"
   - "AI Safety"
@@ -13,7 +13,7 @@ tags:
   - "MobileNet"
   - "cross-dataset generalization"
 date: 2026-05-08
-content_hash: d0be312de86b51bb
+content_hash: 06e1c5198e8f293e
 ---
 
 # Exploration of Incremental Synthetic Non-Morphed Images for Single Morphing Attack Detection
@@ -147,11 +147,11 @@ Three experimental configurations:
 
 ## Related Papers
 
+- [\[CVPR 2025\] Stacking Brick by Brick: Aligned Feature Isolation for Incremental Face Forgery Detection](../../CVPR2025/ai_safety/stacking_brick_by_brick_aligned_feature_isolation_for_incremental_face_forgery_d.md)
 - [\[NeurIPS 2025\] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering](unifying_proportional_fairness_in_centroid_and_non-centroid_clustering.md)
+- [\[CVPR 2025\] Dynamic Integration of Task-Specific Adapters for Class Incremental Learning](../../CVPR2025/ai_safety/dynamic_integration_of_task-specific_adapters_for_class_incremental_learning.md)
 - [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
 - [\[AAAI 2026\] Diversifying Counterattacks: Orthogonal Exploration for Robust CLIP Inference](../../AAAI2026/ai_safety/diversifying_counterattacks_orthogonal_exploration_for_robust_clip_inference.md)
-- [\[NeurIPS 2025\] Taught Well, Learned Ill: Towards Distillation-Conditional Backdoor Attack](taught_well_learned_ill_towards_distillation-conditional_backdoor_attack.md)
-- [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
 
 </div>
 

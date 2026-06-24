@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes AutoRAN, the first framework to automate the hijacking of internal safety reasoning in Large Reasoning Models (LRMs). It utilizes a **weak but minimally aligned** small model to simulate the "execution reasoning" of the target LRM to generate narrative prompts. It further employs iterative refinemen
+  [ACL 2026][LLM Safety][Reasoning Hijacking] This paper proposes AutoRAN, the first framework to automate the hijacking of internal safety reasoning in Large Reasoning Models (LRMs). It utilizes a **weak but minimally aligned** small model to simulate the "execution reasoning" of the target LRM to generate narrative prompts. It further employs iterative refinement based on the Chain-of-Thought (CoT) feedback leaked during the target's refusal. AutoRAN achieves **near 100% atta…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Reasoning Hijacking"
+  - "Weak-to-Strong Attacks"
+  - "Execution Simulation"
+  - "Feedback Refinement"
+  - "LRM Safety"
 date: 2026-05-08
-content_hash: 05e2337e61e214e5
+content_hash: cd4d90ac65024977
 ---
+
 # AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models
 
 **Conference**: ACL 2026  

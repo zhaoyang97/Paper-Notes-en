@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?
 description: >-
-  [ICLR 2026][LLM Agent][Reinforcement Learning] AgenTracer employs "counterfactual replay + programmatic fault injection" to automatically annotate multi-agent failure trajectories, constructing the TracerTraj-2.5K dataset. It then trains a lightweight 8B "failure tracer" using multi-granularity reinforcement learning. On the Who&When benchmark, it localizes decisiv
+  [ICLR2026][LLM Agent][Failure Attribution] AgenTracer employs "counterfactual replay + programmatic fault injection" to automatically annotate multi-agent failure trajectories, constructing the TracerTraj-2.5K dataset. It then trains a lightweight 8B "failure tracer" using multi-granularity reinforcement learning. On the Who&When benchmark, it localizes decisive errors to specific agents and steps, outperforming giant models like Gemini-1.5-Pro and Claude-3.5-Sonnet by up to…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Failure Attribution"
+  - "Multi-Agent Systems"
+  - "Counterfactual Replay"
+  - "Fault Injection"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 812b3fde081ba3cb
+content_hash: ef2ad3a9373ea2e1
 ---
+
 # AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?
 
 **Conference**: ICLR2026  
@@ -146,15 +151,16 @@ Integrating AgenTracer-8B feedback into existing MAS (MetaGPT, MaAS, OWL) for mu
 - Value: ⭐⭐⭐⭐⭐ (High engineering value for debugging and evolving MAS).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] CoDA: Agentic Systems for Collaborative Data Visualization](coda_agentic_systems_for_collaborative_data_visualization.md)
 - [\[ICLR 2026\] EvoTest: Evolutionary Test-Time Learning for Self-Improving Agentic Systems](evotest_evolutionary_test-time_learning_for_self-improving_agentic_systems.md)
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](../../ICML2026/llm_agent/agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
 - [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](../../ACL2026/llm_agent/fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
 - [\[ICLR 2026\] Helmsman: Autonomous Synthesis of Federated Learning Systems via Collaborative LLM Agents](helmsman_autonomous_synthesis_of_federated_learning_systems_via_collaborative_ll.md)
-- [\[ICML 2026\] ReflexGrad: Within-Episode Failure Recovery in LLM Agents via Progress-Gated Dual-Process Routing](../../ICML2026/llm_agent/reflexgrad_within-episode_failure_recovery_in_llm_agents_via_progress-gated_dual.md)
 
 </div>
 

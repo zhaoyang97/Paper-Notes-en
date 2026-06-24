@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] Addressing the common parameter bloat in "attentive probing"—an increasingly popular evaluation protocol for frozen representations—this paper first unifies existing methods into a single framework. By leveraging the **mathematical equivalence** between Multi-Head Cross-Attention (MHCA) and Multi-Query Cross-Attention
+  [ICLR 2026][Interpretability][Attentive Probing] Addressing the common parameter bloat in "attentive probing"—an increasingly popular evaluation protocol for frozen representations—this paper first unifies existing methods into a single framework. By leveraging the **mathematical equivalence** between Multi-Head Cross-Attention (MHCA) and Multi-Query Cross-Attention (MQCA), it removes redundant projection matrices to propose the extremely lightweight Efficient Probing (EP). O…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Attentive Probing"
+  - "Representation Evaluation"
+  - "Multi-Query Cross-Attention"
+  - "Parameter Efficient"
+  - "Frozen Backbone"
 date: 2026-05-08
-content_hash: 45361f5ed837abcf
+content_hash: c65fa07833278fce
 ---
+
 # Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency
 
 **Conference**: ICLR 2026  
@@ -144,9 +150,9 @@ Key Observation: **Models optimizing patch local representations (rather than ex
 
 - [\[ICLR 2026\] Probing Rotary Position Embeddings through Frequency Entropy](probing_rotary_position_embeddings_through_frequency_entropy.md)
 - [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](../../ACL2026/interpretability/through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
+- [\[ICLR 2026\] Seeing but Not Believing: Probing the Disconnect Between Visual Attention and Answer Correctness in VLMs](seeing_but_not_believing_probing_the_disconnect_between_visual_attention_and_ans.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICLR 2026\] An Information-Theoretic Parameter-Free Bayesian Framework for Probing Labeled Dependency Trees from Attention Score](an_information-theoretic_parameter-free_bayesian_framework_for_probing_labeled_d.md)
-- [\[CVPR 2026\] Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations](../../CVPR2026/interpretability/selection-as-nonlinearity_bridging_attention_and_activation_via_a_joint_game-dec.md)
-- [\[ICLR 2026\] GAVEL: Towards Rule-Based Safety through Activation Monitoring](gavel_towards_rule-based_safety_through_activation_monitoring.md)
 
 </div>
 

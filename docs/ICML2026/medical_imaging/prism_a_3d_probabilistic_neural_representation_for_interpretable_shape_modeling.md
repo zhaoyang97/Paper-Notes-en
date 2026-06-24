@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PRISM: A 3D Probabilistic Neural Representation for Interpretable Shape Modeling
 description: >-
-  [ICML 2026][Medical Imaging][Paper Note] PRISM bridges implicit neural representations (INRs) with uncertainty-aware statistical shape analysis. It models the mean trajectory and spatially heterogeneous variation of anatomical structures evolving with covariates (e.g., age) using a conditional heteroscedastic Gaussian field. By deriving a closed-form Fisher i
+  [ICML 2026][Medical Imaging][Implicit Neural Representations] PRISM bridges implicit neural representations (INRs) with uncertainty-aware statistical shape analysis. It models the mean trajectory and spatially heterogeneous variation of anatomical structures evolving with covariates (e.g., age) using a conditional heteroscedastic Gaussian field. By deriving a closed-form Fisher information metric, it analytically quantifies the local uncertainty of "intrinsic developmental ti…
 tags:
-  - ICML 2026
-  - Medical Imaging
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Implicit Neural Representations"
+  - "Statistical Shape Analysis"
+  - "Fisher Information"
+  - "Heteroscedastic Gaussian Fields"
+  - "Anomaly Detection"
 date: 2026-05-08
-content_hash: 2f0b5c6f0784d87d
+content_hash: 31c0ab39e2fe1b10
 ---
+
 # PRISM: A 3D Probabilistic Neural Representation for Interpretable Shape Modeling
 
 **Conference**: ICML 2026  
@@ -141,8 +147,8 @@ OOD detection (Airway) and Fisher information term selection:
 - [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](../../NeurIPS2025/medical_imaging/synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
 - [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](../../CVPR2026/medical_imaging/modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
 - [\[CVPR 2026\] EchoPOSE: 6D Pose Estimation of Sparse Echocardiograms for Left-Ventricular 3D Shape Reconstruction](../../CVPR2026/medical_imaging/echopose_6d_pose_estimation_of_sparse_echocardiograms_for_left-ventricular_3d_sh.md)
-- [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
 - [\[ICCV 2025\] SIC: Similarity-Based Interpretable Image Classification with Neural Networks](../../ICCV2025/medical_imaging/sic_similarity-based_interpretable_image_classification_with_neural_networks.md)
+- [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
 
 </div>
 

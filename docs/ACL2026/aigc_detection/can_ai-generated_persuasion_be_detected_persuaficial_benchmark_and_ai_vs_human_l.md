@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] This paper introduces Persuaficial—a high-quality multilingual benchmark for AI-generated persuasive text covering six languages. It systematically evaluates the differences in automatic detection difficulty between LLM-generated and human-written persuasive texts, finding that subtle AI persuasion is significantly har
+  [ACL 2026][AIGC Detection][Persuasion detection] This paper introduces Persuaficial—a high-quality multilingual benchmark for AI-generated persuasive text covering six languages. It systematically evaluates the differences in automatic detection difficulty between LLM-generated and human-written persuasive texts, finding that subtle AI persuasion is significantly harder to detect than human persuasion ($F_1$ drops by approximately 20%), whereas overly intensified persuasion i…
 tags:
-  - ACL 2026
-  - AIGC Detection
+  - "ACL 2026"
+  - "AIGC Detection"
+  - "Persuasion detection"
+  - "AI-generated text"
+  - "Multilingual benchmark"
+  - "Linguistic difference analysis"
+  - "Controllable generation"
 date: 2026-05-08
-content_hash: fc89135d5a79ca87
+content_hash: fff731a9d241b47c
 ---
+
 # Can AI-Generated Persuasion Be Detected? Persuaficial Benchmark and AI vs. Human Linguistic Differences
 
 **Conference**: ACL 2026  
@@ -122,8 +128,8 @@ This study does not involve model training. Detection is conducted entirely in a
 - [\[ACL 2026\] AEGIS: A Holistic Benchmark for Evaluating Forensic Analysis of AI-Generated Academic Images](aegis_a_holistic_benchmark_for_evaluating_forensic_analysis_of_ai-generated_acad.md)
 - [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
 - [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
-- [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
-- [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
+- [\[ICLR 2026\] FakeXplain: AI-Generated Image Detection via Human-Aligned Grounded Reasoning](../../ICLR2026/aigc_detection/fakexplain_ai-generated_image_detection_via_human-aligned_grounded_reasoning.md)
+- [\[ICLR 2026\] Unveiling Perceptual Artifacts: A Fine-Grained Benchmark for Interpretable AI-Generated Image Detection](../../ICLR2026/aigc_detection/unveiling_perceptual_artifacts_a_fine-grained_benchmark_for_interpretable_ai-gen.md)
 
 </div>
 

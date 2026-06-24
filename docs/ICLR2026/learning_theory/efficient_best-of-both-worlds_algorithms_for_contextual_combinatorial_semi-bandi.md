@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits
 description: >-
-  [ICLR 2026][learning_theory][best-of-both-worlds] This paper proposes the first best-of-both-worlds (BOBW) algorithm for contextual combinatorial semi-bandits. By employing entropy-regularized FTRL with Matrix-Geometric-Resampling (MGR), the algorithm achieves $\tilde O(\sqrt T)$ regret in adversarial regimes and $\tilde O(\ln T)$ regret in corrupted stochastic regime
+  [ICLR 2026][Learning Theory][Contextual Combinatorial Semi-Bandits] This paper proposes the first best-of-both-worlds (BOBW) algorithm for contextual combinatorial semi-bandits. By employing entropy-regularized FTRL with Matrix-Geometric-Resampling (MGR), the algorithm achieves $\tilde O(\sqrt T)$ regret in adversarial regimes and $\tilde O(\ln T)$ regret in corrupted stochastic regimes simultaneously. It further accelerates the high-dimensional projection in each round into…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - best-of-both-worlds
-  - FTRL
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Bandits"
+  - "Contextual Combinatorial Semi-Bandits"
+  - "Best-of-Both-Worlds"
+  - "FTRL"
+  - "Regret Bounds"
+  - "Bregman Projection"
 date: 2026-05-08
-content_hash: 6d04732be461c0b3
+content_hash: daba92af35dd7b44
 ---
+
 # Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits
 
 **Conference**: ICLR 2026  
@@ -165,13 +171,20 @@ Traditional deep learning ablations are replaced with theoretical comparisons an
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Zimmert & Seldin (2019): An Optimal Algorithm for Stochastic and Adversarial Bandits.
-- Zierahn et al. (2023): Contextual Combinatorial Bandit with Interaction.
-- Ito (2021): A unified approach to best-of-both-worlds analysis of FTRL.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] A Near-Optimal Best-of-Both-Worlds Algorithm for Federated Bandits](a_near-optimal_best-of-both-worlds_algorithm_for_federated_bandits.md)
+- [\[ICLR 2026\] Combinatorial Rising Bandits](combinatorial_rising_bandits.md)
+- [\[ICLR 2026\] Semi-Parametric Contextual Pricing with General Smoothness](semi-parametric_contextual_pricing_with_general_smoothness.md)
+- [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
+- [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] A Near-Optimal Best-of-Both-Worlds Algorithm for Federated Bandits](a_near-optimal_best-of-both-worlds_algorithm_for_federated_bandits.md)

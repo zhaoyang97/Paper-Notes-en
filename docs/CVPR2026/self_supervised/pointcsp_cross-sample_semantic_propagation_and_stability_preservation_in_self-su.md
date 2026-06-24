@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PointCSP: Cross-Sample Semantic Propagation and Stability Preservation in Self-Supervised Point Cloud Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][State Space Model] Addressing the issue of "semantic inconsistency across scenes caused by sample-independent modeling" in scene-level point cloud self-supervision, PointCSP utilizes State Space Models to serialize samples within a batch into long sequences for **Cross-Sample Semantic Propagation (CSP)** to establish a globally consisten
+  [CVPR 2026][Self-Supervised Learning][Point cloud self-supervision] Addressing the issue of "semantic inconsistency across scenes caused by sample-independent modeling" in scene-level point cloud self-supervision, PointCSP utilizes State Space Models to serialize samples within a batch into long sequences for **Cross-Sample Semantic Propagation (CSP)** to establish a globally consistent semantic space. It then employs an asymmetric teacher-student **Stability Preservation Dis…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - State Space Model
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Point cloud self-supervision"
+  - "State Space Models"
+  - "Cross-sample propagation"
+  - "Self-distillation"
+  - "Semantic consistency"
 date: 2026-05-08
-content_hash: 50644f1e775a1489
+content_hash: a6f9fd7bf207ac16
 ---
+
 # PointCSP: Cross-Sample Semantic Propagation and Stability Preservation in Self-Supervised Point Cloud Learning
 
 **Conference**: CVPR 2026  
@@ -157,11 +162,11 @@ Universality of SPD (integrated into CamPoint):
 
 ## Related Papers
 
+- [\[CVPR 2026\] VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)
 - [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
-- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
+- [\[CVPR 2026\] DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process](ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin.md)
 - [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
 - [\[ECCV 2024\] SCPNet: Unsupervised Cross-modal Homography Estimation via Intra-modal Self-supervised Learning](../../ECCV2024/self_supervised/scpnet_unsupervised_cross-modal_homography_estimation_via_intra-modal_self-super.md)
-- [\[CVPR 2026\] Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)
 
 </div>
 

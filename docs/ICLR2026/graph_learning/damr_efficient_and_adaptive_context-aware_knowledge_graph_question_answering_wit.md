@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS
 description: >-
-  [ICLR 2026][Graph Learning][KGQA] DAMR models KGQA as a Monte Carlo Tree Search (MCTS) guided by an LLM planner. The LLM selects top-$k$ relevant relations during the expansion step to prune the search space, while path scoring is delegated to a lightweight Transformer scorer (jointly encoding questions and relation sequences via cross-attention). This
+  [ICLR2026][Graph Learning][KGQA] DAMR models KGQA as a Monte Carlo Tree Search (MCTS) guided by an LLM planner. The LLM selects top-$k$ relevant relations during the expansion step to prune the search space, while path scoring is delegated to a lightweight Transformer scorer (jointly encoding questions and relation sequences via cross-attention). This scorer is online fine-tuned using pseudo-paths generated during the search process. DAMR outperforms all SOTAs on WebQSP (Hits…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - KGQA
+  - "ICLR2026"
+  - "Graph Learning"
+  - "KGQA"
+  - "Monte Carlo Tree Search"
+  - "LLM Planner"
+  - "Path Evaluation"
+  - "Pseudo-path Self-training"
 date: 2026-05-08
-content_hash: 876f22b00de4e563
+content_hash: eb6a079d9a060477
 ---
+
 # DAMR: Efficient and Adaptive Context-Aware Knowledge Graph Question Answering with LLM-Guided MCTS
 
 **Conference**: ICLR2026  
@@ -147,16 +152,16 @@ LLM calls were reduced by over 50% and token consumption by over 75% compared to
 - Value: ⭐⭐⭐⭐ (Significantly lower deployment costs for KGQA)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
-- [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](../../NeurIPS2025/graph_learning/remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
 - [\[ICLR 2026\] CLAUSE: Agentic Neuro-Symbolic Knowledge Graph Reasoning via Dynamic Learnable Context Engineering](clause_agentic_neuro-symbolic_knowledge_graph_reasoning_via_dynamic_learnable_co.md)
+- [\[NeurIPS 2025\] ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG](../../NeurIPS2025/graph_learning/remindrag_low-cost_llm-guided_knowledge_graph_traversal_for_efficient_rag.md)
 - [\[ACL 2025\] Ontology-Guided Reverse Thinking Makes Large Language Models Stronger on Knowledge Graph Question Answering](../../ACL2025/graph_learning/ontology-guided_reverse_thinking_makes_large_language_models_stronger_on_knowled.md)
+- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
 
 </div>
 

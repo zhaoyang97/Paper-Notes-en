@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FOXES: A Framework For Operational X-ray Emission Synthesis
 description: >-
-  [NeurIPS 2025][Medical Imaging][Vision Transformer] This paper proposes FOXES, a Vision Transformer-based framework that translates multi-channel solar EUV observation images into soft X-ray (SXR) flux…
+  [NeurIPS 2025][Medical Imaging][Vision Transformer] This paper proposes FOXES, a Vision Transformer-based framework that translates multi-channel solar EUV observation images into soft X-ray (SXR) flux, achieving an overall Pearson correlation of 0.982. The framework lays the groundwork for far-side solar flare detection and the construction of more complete flare catalogs.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "Attention Maps"
   - "Flare Classification"
 date: 2026-05-08
-content_hash: 37911120326d9599
+content_hash: a7406e191e43ad5b
 ---
 
 # FOXES: A Framework For Operational X-ray Emission Synthesis
@@ -130,10 +130,10 @@ The self-attention maps of the ViT provide interpretable predictions—attention
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
-- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](../../AAAI2026/medical_imaging/a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
+- [\[ECCV 2024\] Radiative Gaussian Splatting for Efficient X-ray Novel View Synthesis](../../ECCV2024/medical_imaging/radiative_gaussian_splatting_for_efficient_x-ray_novel_view_synthesis.md)
 - [\[NeurIPS 2025\] Modeling X-ray Photon Pile-up with a Normalizing Flow](modeling_x-ray_photon_pile-up_with_a_normalizing_flow.md)
 - [\[NeurIPS 2025\] Variational Autoencoder with Normalizing Flow for X-ray Spectral Fitting](variational_autoencoder_with_normalizing_flow_for_x-ray_spectral_fitting.md)
+- [\[NeurIPS 2025\] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning](synbrain_enhancing_visual-to-fmri_synthesis_via_probabilistic_representation_lea.md)
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 
 </div>

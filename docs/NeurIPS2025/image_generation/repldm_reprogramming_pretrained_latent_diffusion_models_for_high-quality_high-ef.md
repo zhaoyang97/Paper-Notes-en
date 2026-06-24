@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RepLDM: Reprogramming Pretrained Latent Diffusion Models for High-Quality, High-Efficiency, High-Resolution Image Generation
 description: >-
-  [NeurIPS 2025 (Spotlight)][Image Generation][Latent diffusion models] This paper proposes RepLDM, a reprogramming framework that enables pretrained latent diffusion models to generate high-quality…
+  [NeurIPS 2025 (Spotlight)][Image Generation][Latent diffusion models] This paper proposes RepLDM, a reprogramming framework that enables pretrained latent diffusion models to generate high-quality, high-resolution images without retraining, via two stages: an attention guidance stage and a progressive upsampling stage, while substantially improving efficiency.
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "attention guidance"
   - "progressive upsampling"
 date: 2026-05-08
-content_hash: da2978d5c72314d8
+content_hash: a5a26b455354839f
 ---
 
 # RepLDM: Reprogramming Pretrained Latent Diffusion Models for High-Quality, High-Efficiency, High-Resolution Image Generation
@@ -149,11 +149,11 @@ Contribution of each component (512→1024):
 
 ## Related Papers
 
+- [\[CVPR 2025\] Diffusion-4K: Ultra-High-Resolution Image Synthesis with Latent Diffusion Models](../../CVPR2025/image_generation/diffusion-4k_ultra-high-resolution_image_synthesis_with_latent_diffusion_models.md)
+- [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](../../ICLR2026/image_generation/latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
 - [\[ICCV 2025\] Enhancing Reward Models for High-quality Image Generation: Beyond Text-Image Alignment](../../ICCV2025/image_generation/enhancing_reward_models_for_high-quality_image_generation_beyond_text-image_alig.md)
 - [\[NeurIPS 2025\] UltraHR-100K: Enhancing UHR Image Synthesis with A Large-Scale High-Quality Dataset](ultrahr-100k_enhancing_uhr_image_synthesis_with_a_large-scale_high-quality_datas.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](../../CVPR2026/image_generation/freqflow_frequency_aware_flow_matching.md)
-- [\[NeurIPS 2025\] Fast Solvers for Discrete Diffusion Models: Theory and Applications of High-Order Algorithms](fast_solvers_for_discrete_diffusion_models_theory_and_applications_of_high-order.md)
-- [\[CVPR 2026\] Low-Resolution Editing is All You Need for High-Resolution Editing](../../CVPR2026/image_generation/low-resolution_editing_is_all_you_need_for_high-resolution_editing.md)
+- [\[CVPR 2025\] StableAnimator: High-Quality Identity-Preserving Human Image Animation](../../CVPR2025/image_generation/stableanimator_high-quality_identity-preserving_human_image_animation.md)
 
 </div>
 

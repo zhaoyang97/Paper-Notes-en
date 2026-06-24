@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference
 description: >-
-  [ACL 2026][LLM Evaluation][PPI] PRECISE extends Prediction-Powered Inference (PPI) to ranking evaluation metrics. By combining a small number of human annotations with a large volume of LLM judgments, it corrects systemic biases in LLM systems while reducing estimation variance, achieving statistically reliable ranking system evaluation.
+  [ACL2026][LLM Evaluation][PPI] PRECISE extends Prediction-Powered Inference (PPI) to ranking evaluation metrics. By combining a small number of human annotations with a large volume of LLM judgments, it corrects systemic biases in LLM systems while reducing estimation variance, achieving statistically reliable ranking system evaluation.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - PPI
-  - LLM-as-Judge
-  - Precision@K
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "PPI"
+  - "LLM-as-Judge"
+  - "Bias Correction"
+  - "Ranking Evaluation"
+  - "Precision@K"
+  - "Semi-supervised Estimation"
 date: 2026-05-08
-content_hash: 91b0912009ff0d94
+content_hash: 6d5ef526ccc9d4d6
 ---
+
 # Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference
 
 **Conference**: ACL2026  
@@ -120,9 +124,9 @@ Evaluation of Precision@4 on the ESCI retrieval benchmark ($n=30$ gold, $N=60K$ 
 ## Related Papers
 
 - [\[ICML 2026\] Margin-Adaptive Confidence Ranking for Reliable LLM Judgement](../../ICML2026/llm_evaluation/margin-adaptive_confidence_ranking_for_reliable_llm_judgement.md)
-- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_responses.md)
+- [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](../../ICLR2026/llm_evaluation/multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
 - [\[ACL 2025\] JuStRank: Benchmarking LLM Judges for System Ranking](../../ACL2025/llm_evaluation/justrank_llm_judge_system_ranking.md)
-- [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
+- [\[ICLR 2026\] Reliable Fine-Grained Evaluation of Natural Language Math Proofs](../../ICLR2026/llm_evaluation/reliable_fine-grained_evaluation_of_natural_language_math_proofs.md)
 - [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
 
 </div>

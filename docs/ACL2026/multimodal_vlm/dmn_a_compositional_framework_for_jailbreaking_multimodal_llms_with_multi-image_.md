@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DMN: A Compositional Framework for Jailbreaking Multimodal LLMs with Multi-Image Inputs
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes DMN, a multi-image jailbreak evaluation framework that combines distributed instructions, multimodal evidence, and digit chain auxiliary tasks. It demonstrates that current MLLMs supporting multi-image inputs exhibit significant weaknesses in cross-image safety alignment and provides a multi-image-a
+  [ACL2026][Multimodal VLM][Multi-image inputs] This paper proposes DMN, a multi-image jailbreak evaluation framework that combines distributed instructions, multimodal evidence, and digit chain auxiliary tasks. It demonstrates that current MLLMs supporting multi-image inputs exhibit significant weaknesses in cross-image safety alignment and provides a multi-image-aware filter as a preliminary defense.
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026"
+  - "Multimodal VLM"
+  - "Multi-image inputs"
+  - "MLLM safety"
+  - "Jailbreak evaluation"
+  - "Multimodal defense"
+  - "Safety alignment"
 date: 2026-05-08
-content_hash: a43edae666ea6154
+content_hash: 7769694d2858b530
 ---
+
 # DMN: A Compositional Framework for Jailbreaking Multimodal LLMs with Multi-Image Inputs
 
 **Conference**: ACL2026  

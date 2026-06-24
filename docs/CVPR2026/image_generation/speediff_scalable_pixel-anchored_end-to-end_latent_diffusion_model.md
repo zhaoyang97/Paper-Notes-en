@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model
 description: >-
-  [CVPR 2026][Image Generation][VAE] SpeeDiff dismantles the two-stage pipeline in Latent Diffusion Models (LDM)—where the VAE is trained first and then frozen—by enabling joint training of the VAE and the diffusion model from scratch without stop-gradients. The key innovation is a Tweedie Pixel Reconstruction (TPR) loss that "anchors" diffusion gradients
+  [CVPR 2026][Image Generation][Latent Diffusion] SpeeDiff dismantles the two-stage pipeline in Latent Diffusion Models (LDM)—where the VAE is trained first and then frozen—by enabling joint training of the VAE and the diffusion model from scratch without stop-gradients. The key innovation is a Tweedie Pixel Reconstruction (TPR) loss that "anchors" diffusion gradients back to the pixel space, preventing latent collapse. It achieves a gFID of 1.50 (without guidance) on ImageNet…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - VAE
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion"
+  - "End-to-End Training"
+  - "VAE"
+  - "Tweedie Formula"
+  - "Representation Alignment"
 date: 2026-05-08
-content_hash: 18c53a7dc10f7b9c
+content_hash: fc6d81c9c8d86ee0
 ---
+
 # SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model
 
 **Conference**: CVPR 2026  
@@ -135,16 +140,16 @@ Incremental additions (ImageNet 256, 80 epochs, gFID↓), comparing "detached" v
 - Value: ⭐⭐⭐⭐⭐ Significant 140×/61× training acceleration and SOTA FID results.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICCV 2025\] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers](../../ICCV2025/image_generation/repa-e_unlocking_vae_for_end-to-end_tuning_of_latent_diffusion_transformers.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
 - [\[CVPR 2026\] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](your_latent_mask_is_wrong_pixel-equivalent_latent_compositing_for_diffusion_mode.md)
-- [\[CVPR 2026\] Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)
-- [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
+- [\[CVPR 2026\] VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](../../ICLR2026/image_generation/there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 
 </div>
 

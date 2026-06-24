@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization
 description: >-
-  [AAAI 2026][Segmentation][Egocentric vision] This paper proposes the EAGLE framework, inspired by avian memory consolidation mechanisms. A segmentation branch guided by an Appearance-aware Meta-learning Memory (AMM) and…
+  [AAAI 2026][Segmentation][Egocentric vision] This paper proposes the EAGLE framework, inspired by avian memory consolidation mechanisms. A segmentation branch guided by an Appearance-aware Meta-learning Memory (AMM) and a tracking branch driven by a Geometry-aware Localization Memory (GLM) operate collaboratively. Combined with VGGT, the framework achieves efficient unified 2D-3D visual query localization, attaining state-of-the-art performance on the Ego4D-VQ benchmark.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "meta-learning segmentation"
   - "unified 2D-3D"
 date: 2026-05-08
-content_hash: dc1d90cff31ce629
+content_hash: 0b3ca5fb44cafdcd
 ---
 
 # EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization
@@ -186,11 +186,11 @@ GLM ablation:
 
 ## Related Papers
 
+- [\[CVPR 2025\] A Distractor-Aware Memory for Visual Object Tracking with SAM2](../../CVPR2025/segmentation/a_distractor-aware_memory_for_visual_object_tracking_with_sam2.md)
 - [\[ICLR 2026\] Efficient-SAM2: Accelerating SAM2 with Object-Aware Visual Encoding and Memory Retrieval](../../ICLR2026/segmentation/efficient-sam2_accelerating_sam2_with_object-aware_visual_encoding_and_memory_re.md)
 - [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](../../CVPR2026/segmentation/bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
 - [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](../../CVPR2026/segmentation/from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
-- [\[ICML 2026\] UGround: Towards Unified Visual Grounding with Unrolled Transformers](../../ICML2026/segmentation/uground_towards_unified_visual_grounding_with_unrolled_transformers.md)
-- [\[AAAI 2026\] Segment and Matte Anything in a Unified Model (SAMA)](segment_and_matte_anything_in_a_unified_model.md)
+- [\[ECCV 2024\] PartSTAD: 2D-to-3D Part Segmentation Task Adaptation](../../ECCV2024/segmentation/partstad_2d-to-3d_part_segmentation_task_adaptation.md)
 
 </div>
 

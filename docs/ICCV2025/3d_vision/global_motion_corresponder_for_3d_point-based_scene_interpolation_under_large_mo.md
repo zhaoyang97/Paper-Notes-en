@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion
 description: >-
-  [ICCV 2025][3D Vision][Scene interpolation] This paper proposes the Global Motion Corresponder (GMC), which learns unary potential fields that map 3D Gaussians from two time steps into a shared canonical space…
+  [ICCV 2025][3D Vision][Scene interpolation] This paper proposes the Global Motion Corresponder (GMC), which learns unary potential fields that map 3D Gaussians from two time steps into a shared canonical space, enabling robust scene interpolation and extrapolation under large motion.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "SE(3) transformation"
   - "semantic correspondence"
 date: 2026-05-08
-content_hash: 34a603f34770bbd0
+content_hash: f216739be6f311bb
 ---
 
 # Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion
@@ -131,9 +131,9 @@ GMC supports motion extrapolation, whereas all baseline methods cannot. It can p
 
 - [\[ICCV 2025\] CoMoGaussian: Continuous Motion-Aware Gaussian Splatting from Motion-Blurred Images](comogaussian_continuous_motionaware_gaussian_splatting_from.md)
 - [\[ICCV 2025\] Estimating 2D Camera Motion with Hybrid Motion Basis](estimating_2d_camera_motion_with_hybrid_motion_basis.md)
+- [\[ICCV 2025\] SceneMI: Motion In-betweening for Modeling Human-Scene Interactions](scenemi_motion_in-betweening_for_modeling_human-scene_interaction.md)
 - [\[ICCV 2025\] Sequential Gaussian Avatars with Hierarchical Motion Context](sequential_gaussian_avatars_with_hierarchical_motion_context.md)
 - [\[ICCV 2025\] Shape of Motion: 4D Reconstruction from a Single Video](shape_of_motion_4d_reconstruction_from_a_single_video.md)
-- [\[ICCV 2025\] SceneMI: Motion In-betweening for Modeling Human-Scene Interactions](scenemi_motion_in-betweening_for_modeling_human-scene_interaction.md)
 
 </div>
 

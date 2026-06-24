@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning
 description: >-
-  [NEURIPS2025][Object Detection][AI text detection] This paper proposes DETree, a framework that constructs a Hierarchical Affinity Tree (HAT) to model the hierarchical relationships among diverse human-AI collaborative t…
+  [NEURIPS2025][Object Detection][AI text detection] This paper proposes DETree, a framework that constructs a Hierarchical Affinity Tree (HAT) to model the hierarchical relationships among diverse human-AI collaborative text generation processes, and designs a Tree-Structured Contrastive Loss (TSCL) to align the representation space. DETree achieves significant advantages in mixed-text detection and OOD generalization scenarios.
 tags:
   - "NEURIPS2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "out-of-distribution generalization"
 date: 2026-05-08
-content_hash: d5918878c2f0ecec
+content_hash: e3c468b988bd8a1a
 ---
 
 # DETree: DEtecting Human-AI Collaborative Texts via Tree-Structured Hierarchical Representation Learning
@@ -155,11 +155,11 @@ The hierarchical modeling paradigm is generalizable to other tasks requiring fin
 
 ## Related Papers
 
-- [\[CVPR 2026\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2026/object_detection/show_dont_tell_detecting_novel_objects_by_watching.md)
+- [\[CVPR 2025\] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](../../CVPR2025/object_detection/show_dont_tell_detecting_novel_objects_by_watching_human_videos.md)
 - [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
-- [\[ICLR 2026\] PAANO: Patch-Based Representation Learning for Time-Series Anomaly Detection](../../ICLR2026/object_detection/paano_patch-based_representation_learning_for_time-series_anomaly_detection.md)
+- [\[ICML 2025\] Self-Organizing Visual Prototypes for Non-Parametric Representation Learning](../../ICML2025/object_detection/self-organizing_visual_prototypes_for_non-parametric_representation_learning.md)
+- [\[CVPR 2026\] Expert-Teacher-Student Collaborative Learning for Domain Adaptive Object Detection](../../CVPR2026/object_detection/expert-teacher-student_collaborative_learning_for_domain_adaptive_object_detecti.md)
 - [\[NeurIPS 2025\] Structured Temporal Causality for Interpretable Multivariate Time Series Anomaly Detection](structured_temporal_causality_for_interpretable_multivariate_time_series_anomaly.md)
-- [\[AAAI 2026\] AquaSentinel: Next-Generation AI System Integrating Sensor Networks for Urban Underground Water Pipeline Anomaly Detection via Collaborative MoE-LLM Agent Architecture](../../AAAI2026/object_detection/aquasentinel_next-generation_ai_system_integrating_sensor_ne.md)
 
 </div>
 

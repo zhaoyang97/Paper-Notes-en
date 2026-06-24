@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] VideoReasonBench constructs a vision-centric complex reasoning benchmark centered on "visible operations + partially visible latent states." The study demonstrates that most current MLLMs remain weak in fine-grained video perception and multi-step state reasoning, while longer test-time thinking significantly benefits
+  [ICLR 2026][VLM Reasoning][Video Reasoning] VideoReasonBench constructs a vision-centric complex reasoning benchmark centered on "visible operations + partially visible latent states." The study demonstrates that most current MLLMs remain weak in fine-grained video perception and multi-step state reasoning, while longer test-time thinking significantly benefits such tasks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Video Reasoning"
+  - "MLLM Evaluation"
+  - "Long Chain-of-Thought"
+  - "Fine-grained Temporal Perception"
+  - "Vision-Centric Benchmark"
 date: 2026-05-08
-content_hash: 43e61632e9689bc2
+content_hash: 979108ac0e1d2fef
 ---
+
 # VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?
 
 **Conference**: ICLR 2026  
@@ -141,15 +147,15 @@ A diagnostic "vid2txt" experiment showed that when key state transition informat
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
 - [\[ICLR 2026\] ReWatch-R1: Boosting Complex Video Reasoning in Large Vision-Language Models through Agentic Data Synthesis](rewatch-r1_boosting_complex_video_reasoning_in_large_vision-language_models_thro.md)
 - [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/vlm_reasoning/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
+- [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
 - [\[ICLR 2026\] OCR-Reasoning Benchmark: Unveiling the True Capabilities of MLLMs in Complex Text-Rich Image Reasoning](ocr-reasoning_benchmark_unveiling_the_true_capabilities_of_mllms_in_complex_text.md)
-- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
 
 </div>
 

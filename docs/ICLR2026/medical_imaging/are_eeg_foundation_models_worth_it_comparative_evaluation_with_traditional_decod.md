@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks
 description: >-
-  [ICLR 2026][Medical Imaging][BCI] The authors conduct a systematic comparative evaluation involving 5 mainstream EEG foundation models across 7 classification and 2 regression tasks using six evaluation protocols with statistical testing. They propose ST-EEGFormer, a simple ViT baseline pre-trained on 8 million raw EEG segments via Masked Autoencoding
+  [ICLR2026][Medical Imaging][EEG Foundation Models] The authors conduct a systematic comparative evaluation involving 5 mainstream EEG foundation models across 7 classification and 2 regression tasks using six evaluation protocols with statistical testing. They propose ST-EEGFormer, a simple ViT baseline pre-trained on 8 million raw EEG segments via Masked Autoencoding (MAE). Findings indicate that foundation models hold a significant advantage only in data-abundant population…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - BCI
+  - "ICLR2026"
+  - "Medical Imaging"
+  - "EEG Foundation Models"
+  - "BCI"
+  - "Evaluation Benchmark"
+  - "Linear Probing"
+  - "Scaling Laws"
 date: 2026-05-08
-content_hash: 2a61f451a967a1d4
+content_hash: 376baf7b35d51cbf
 ---
+
 # Are EEG Foundation Models Worth It? Comparative Evaluation with Traditional Decoders in Diverse BCI Tasks
 
 **Conference**: ICLR2026  
@@ -118,9 +123,20 @@ Notably, many FT foundation models (BIOT, BENDR, LaBraM, CBraMod) showed degrade
 - Value: ⭐⭐⭐⭐⭐ (Provides a critical "reality check" and a reproducible framework for the EEG community).
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model](codebrain_bridging_decoupled_tokenizer_and_multi-scale_architecture_for_eeg_foun.md)
+- [\[ICLR 2026\] Reliable Evaluation of MRI Motion Correction: Dataset and Insights](reliable_evaluation_of_mri_motion_correction_dataset_and_insights.md)
+- [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](heegnet_hyperbolic_embeddings_for_eeg.md)
+- [\[ICLR 2026\] Bridging Radiology and Pathology Foundation Models via Concept-Based Multimodal Co-Adaptation](bridging_radiology_and_pathology_foundation_models_via_concept-based_multimodal_.md)
+- [\[NeurIPS 2025\] 3D-RAD: A Comprehensive 3D Radiology Med-VQA Dataset with Multi-Temporal Analysis and Diverse Diagnostic Tasks](../../NeurIPS2025/medical_imaging/3drad_a_comprehensive_3d_radiology_medvqa_dataset_with_multi.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model](codebrain_bridging_decoupled_tokenizer_and_multi-scale_architecture_for_eeg_foun.md)

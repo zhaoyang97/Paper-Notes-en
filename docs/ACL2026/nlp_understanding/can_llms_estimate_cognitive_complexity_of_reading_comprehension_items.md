@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can LLMs Estimate Cognitive Complexity of Reading Comprehension Items?
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] This paper constructs the ReCo reading comprehension cognitive complexity dataset and systematically evaluates whether 8 LLMs can automatically determine the required evidence scope and transformation levels for items. Results indicate that strong models approach but remain significantly lower than experts, particularl
+  [ACL2026][NLP Understanding][Reading Comprehension Difficulty] This paper constructs the ReCo reading comprehension cognitive complexity dataset and systematically evaluates whether 8 LLMs can automatically determine the required evidence scope and transformation levels for items. Results indicate that strong models approach but remain significantly lower than experts, particularly in identifying complete evidence sets and fine-grained word-order transformations.
 tags:
-  - ACL 2026
-  - NLP Understanding
+  - "ACL2026"
+  - "NLP Understanding"
+  - "Reading Comprehension Difficulty"
+  - "Cognitive Complexity"
+  - "Evidence Scope"
+  - "Transformation Levels"
+  - "Metacognitive Analysis"
 date: 2026-05-08
-content_hash: 54d24cf24ee42a6e
+content_hash: 4db72ca8e8e45a9c
 ---
+
 # Can LLMs Estimate Cognitive Complexity of Reading Comprehension Items?
 
 **Conference**: ACL2026  

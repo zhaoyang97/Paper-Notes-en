@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction
 description: >-
-  [AAAI2026][Reinforcement Learning][deep search] This paper proposes the Thinker framework, which achieves structured deep search reasoning through hierarchical thinking (breadth decomposition + depth solving) and dual re…
+  [AAAI2026][Reinforcement Learning][deep search] This paper proposes the Thinker framework, which achieves structured deep search reasoning through hierarchical thinking (breadth decomposition + depth solving) and dual representation (natural language + logical functions). Combined with knowledge boundary determination to reduce unnecessary retrieval, the model is trained via SFT and significantly outperforms RL-based deep search methods across multiple QA benchmarks.
 tags:
   - "AAAI2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "multi-turn interaction"
   - "knowledge boundary"
 date: 2026-05-08
-content_hash: b7b6e4e61f13c86b
+content_hash: 224edf4353a38b14
 ---
 
 # Thinker: Training LLMs in Hierarchical Thinking for Deep Search via Multi-Turn Interaction
@@ -125,11 +125,11 @@ Multi-turn interactive SFT is adopted (rather than RL):
 
 ## Related Papers
 
+- [\[ICLR 2026\] TIPS: Turn-Level Information-Potential Reward Shaping for Search-Augmented LLMs](../../ICLR2026/reinforcement_learning/tips_turn-level_information-potential_reward_shaping_for_search-augmented_llms.md)
 - [\[AAAI 2026\] HCPO: Hierarchical Conductor-Based Policy Optimization in Multi-Agent Reinforcement Learning](hcpo_hierarchical_conductor-based_policy_optimization_in_multi-agent_reinforceme.md)
 - [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
+- [\[ICLR 2026\] Information Gain-based Policy Optimization: A Simple and Effective Approach for Multi-Turn Search Agents](../../ICLR2026/reinforcement_learning/information_gain-based_policy_optimization_a_simple_and_effective_approach_for_m.md)
 - [\[ICLR 2026\] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking](../../ICLR2026/reinforcement_learning/abstral_augmenting_llms_reasoning_by_reinforcing_abstract_thinking.md)
-- [\[ICLR 2026\] SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning](../../ICLR2026/reinforcement_learning/spiral_self-play_on_zero-sum_games_incentivizes_reasoning_via_multi-agent_multi-.md)
-- [\[ICML 2026\] Interaction-Breaking Adversarial Learning Framework for Robust Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/interaction-breaking_adversarial_learning_framework_for_robust_multi-agent_reinf.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Prototype-based Causal Intervention for Multi-Label Image Classification
 description: >-
-  [CVPR 2026][Others][Paper Note] ProCI models the "confounding context" in multi-label classification as a set of **learnable category-level prototypes**, storing them in a dynamic memory and using an adaptive module to approximate Pearl's backdoor adjustment in the feature space. Relying **only on image-level labels**, it eliminates reliance on spuri
+  [CVPR 2026][Backdoor Adjustment] ProCI models the "confounding context" in multi-label classification as a set of **learnable category-level prototypes**, storing them in a dynamic memory and using an adaptive module to approximate Pearl's backdoor adjustment in the feature space. Relying **only on image-level labels**, it eliminates reliance on spurious co-occurrences, improving F2CIW by +5.44 points on the heavily confounded industrial dataset Sewer-ML.
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Backdoor Adjustment"
+  - "Confounder"
+  - "Learnable Prototypes"
+  - "Multi-Label Classification"
+  - "De-biasing"
 date: 2026-05-08
-content_hash: 1bb4824081aabde4
+content_hash: 4855a16c54ba0359
 ---
+
 # Prototype-based Causal Intervention for Multi-Label Image Classification
 
 **Conference**: CVPR 2026  
@@ -162,10 +167,10 @@ On Sewer-ML (F2CIW / F1Normal, %):
 ## Related Papers
 
 - [\[CVPR 2026\] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach](revisiting_f-measure_optimization_in_multi-label_classification_a_sampling-based.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
-- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
-- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
-- [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
+- [\[ECCV 2024\] COIN-Matting: Confounder Intervention for Image Matting](../../ECCV2024/others/coin-matting_confounder_intervention_for_image_matting.md)
+- [\[CVPR 2026\] HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)
 
 </div>
 

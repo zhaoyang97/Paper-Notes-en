@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning
 description: >-
-  [ICLR 2026][Others][oversmoothing] This paper systematically examines nine common myths in the field of graph machine learning regarding oversmoothing, oversquashing, homophily/heterophily, and long-range dependencies. By refuting each myth with concise counter-examples, the authors decouple "oversquashing" into two independent concepts—**computational
+  This paper systematically examines nine common myths in the field of graph machine learning regarding oversmoothing, oversquashing, homophily/heterophily, and long-range dependencies. By refuting each myth with concise counter-examples, the authors decouple "oversquashing" into two independent concepts—**computational bottleneck** and **topological bottleneck**—resolving widespread conceptual confusion in the literature.
 tags:
-  - ICLR 2026
-  - Others
-  - oversmoothing
-  - oversquashing
-  - heterophily
-  - long-range dependencies
-  - message-passing
-  - GNN
+
 date: 2026-05-08
-content_hash: fca8c9fbb710546a
+content_hash: fd7320bf7d213539
 ---
+
 # Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning
 
 - **Conference**: ICLR2026
@@ -149,7 +143,7 @@ As an analytical work, this paper does not propose new models. Counter-examples 
 - [\[ICLR 2026\] Learning Structure-Semantic Evolution Trajectories for Graph Domain Adaptation](learning_structure-semantic_evolution_trajectories_for_graph_domain_adaptation.md)
 - [\[ICLR 2026\] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation](learning_adaptive_distribution_alignment_with_neural_characteristic_function_for.md)
 - [\[CVPR 2026\] Learning Long-term Motion Embeddings for Efficient Kinematics Generation](../../CVPR2026/others/learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)
-- [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](../../CVPR2026/others/fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
+- [\[AAAI 2026\] Life, Machine Learning, and the Search for Habitability: Predicting Biosignature Fluxes for the Habitable Worlds Observatory](../../AAAI2026/others/life_machine_learning_and_the_search_for_habitability_predicting_biosignature_fl.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Error Feedback for Muon and Friends
 description: >-
-  [ICLR 2026][Optimization & Theory][Error Feedback] The paper proposes **EF21-Muon**, the first communication-efficient distributed LMO optimizer that generalizes error feedback to non-Euclidean geometry with rigorous convergence guarantees. It reduces to Muon/Scion/Gluon when compression is disabled and achieves up to 7× communication savings on NanoGPT without accurac
+  [ICLR 2026][Optimization][Distributed Optimization] The paper proposes **EF21-Muon**, the first communication-efficient distributed LMO optimizer that generalizes error feedback to non-Euclidean geometry with rigorous convergence guarantees. It reduces to Muon/Scion/Gluon when compression is disabled and achieves up to 7× communication savings on NanoGPT without accuracy loss.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Error Feedback
-  - Muon
+  - "ICLR 2026"
+  - "Optimization"
+  - "Distributed Optimization"
+  - "Communication Compression"
+  - "Error Feedback"
+  - "Muon"
+  - "Non-Euclidean LMO"
 date: 2026-05-08
-content_hash: c95c836264470154
+content_hash: cb76751f698603ed
 ---
+
 # Error Feedback for Muon and Friends
 
 **Conference**: ICLR 2026  
@@ -126,11 +130,11 @@ The theory covers two mechanisms: non-Euclidean smoothness (Theorems 3/5) and mo
 
 ## Related Papers
 
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 - [\[ICLR 2026\] MuonBP: Faster Muon via Block-Periodic Orthogonalization](muonbp_faster_muon_via_block-periodic_orthogonalization.md)
 - [\[ICLR 2026\] How Muon's Spectral Design Benefits Generalization: A Study on Imbalanced Data](how_muons_spectral_design_benefits_generalization_a_study_on_imbalanced_data.md)
-- [\[ICML 2026\] FOAM: Frequency and Operator Error-Based Adaptive Damping Method for Reducing Staleness-Oriented Error for Shampoo](../../ICML2026/optimization/foam_frequency_and_operator_error-based_adaptive_damping_method_for_reducing_sta.md)
-- [\[ICLR 2026\] Convergence of Muon with Newton-Schulz](convergence_of_muon_with_newton-schulz.md)
 - [\[ICLR 2026\] LoRA meets Riemannion: Muon Optimizer for Parametrization-independent Low-Rank Adapters](lora_meets_riemannion_muon_optimizer_for_parametrization-independent_low-rank_ad.md)
+- [\[ICLR 2026\] Online Black-Box Prompt Optimization with Regret Guarantees under Noisy Feedback](online_black-box_prompt_optimization_with_regret_guarantees_under_noisy_feedback.md)
 
 </div>
 

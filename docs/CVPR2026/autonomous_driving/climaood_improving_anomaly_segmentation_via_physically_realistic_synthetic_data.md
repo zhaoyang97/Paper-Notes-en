@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 description: >-
-  [CVPR 2026][Autonomous Driving][Diffusion Model] The authors propose the ClimaDrive data generation framework and the ClimaOoD benchmark dataset. By combining semantic-guided multi-weather scene generation with perspective-aware anomaly object placement, they construct a 10K+ training set covering 6 weather conditions and 93 anomaly categories. After training, four S
+  [CVPR 2026][Autonomous Driving][Anomaly Segmentation] The authors propose the ClimaDrive data generation framework and the ClimaOoD benchmark dataset. By combining semantic-guided multi-weather scene generation with perspective-aware anomaly object placement, they construct a 10K+ training set covering 6 weather conditions and 93 anomaly categories. After training, four SOTA methods achieved an average AP improvement of 3.25%.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - Diffusion Model
-  - ControlNet
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Anomaly Segmentation"
+  - "OoD Detection"
+  - "Synthetic Data"
+  - "Weather Augmentation"
+  - "Diffusion Models"
+  - "ControlNet"
 date: 2026-05-08
-content_hash: d7189fa7f48658a5
+content_hash: 1f5a5e8297f8253a
 ---
+
 # ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 
 **Conference**: CVPR 2026  
@@ -152,7 +157,7 @@ Improvements of four SOTA methods after training on ClimaOoD:
 
 - [\[ECCV 2024\] Reliability in Semantic Segmentation: Can We Use Synthetic Data?](../../ECCV2024/autonomous_driving/reliability_in_semantic_segmentation_can_we_use_synthetic_data.md)
 - [\[CVPR 2026\] Learning to Identify Out-of-Distribution Objects for 3D LiDAR Anomaly Segmentation](learning_to_identify_out-of-distribution_objects_for_3d_lidar_anomaly_segmentati.md)
-- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
+- [\[ICLR 2026\] Rethinking Driving World Model as Synthetic Data Generator for Perception Tasks](../../ICLR2026/autonomous_driving/rethinking_driving_world_model_as_synthetic_data_generator_for_perception_tasks.md)
 - [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](../../ICCV2025/autonomous_driving/unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
 - [\[ECCV 2024\] Random Walk on Pixel Manifolds for Anomaly Segmentation of Complex Driving Scenes](../../ECCV2024/autonomous_driving/random_walk_on_pixel_manifolds_for_anomaly_segmentation_of_complex_driving_scene.md)
 

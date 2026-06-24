@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GRPO is Secretly a Process Reward Model
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] This paper theoretically proves that GRPO + ORM is **equivalent** to a process reward RL objective with a Monte-Carlo PRM under the mild condition of "shared prefixes within a group." It reveals a hidden bug in vanilla GRPO—uneven prefix lengths cause majority tokens in high-reward trajectories to receive negative adva
+  [ICML 2026][Reasoning][GRPO] This paper theoretically proves that GRPO + ORM is **equivalent** to a process reward RL objective with a Monte-Carlo PRM under the mild condition of "shared prefixes within a group." It reveals a hidden bug in vanilla GRPO—uneven prefix lengths cause majority tokens in high-reward trajectories to receive negative advantages—and proposes $\lambda$-GRPO, which utilizes a PRM-aware normalization to consistently outperform GRPO on reasoning benchmark…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "GRPO"
+  - "Process Reward"
+  - "Advantage Normalization"
+  - "Mathematical Reasoning"
+  - "RL Training Acceleration"
 date: 2026-05-08
-content_hash: cc612ddadf3d9239
+content_hash: 1d04665d0e36db1f
 ---
+
 # GRPO is Secretly a Process Reward Model
 
 **Conference**: ICML 2026  
@@ -112,9 +117,9 @@ The fix is lightweight: maintain the original sample-level advantage but change 
 
 - [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](../../NeurIPS2025/llm_reasoning/unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
+- [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](../../ICLR2026/llm_reasoning/or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
-- [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
-- [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](../../NeurIPS2025/llm_reasoning/dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
+- [\[ICML 2026\] TRACE: Evaluating LLM CoT Reasoning Process Quality with the Toulmin Argumentation Model](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
 
 </div>
 

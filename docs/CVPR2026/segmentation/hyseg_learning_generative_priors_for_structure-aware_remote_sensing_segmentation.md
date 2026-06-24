@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation
 description: >-
-  [CVPR 2026][Remote Sensing][MeanFlow] HySeg reformulates remote sensing image semantic segmentation (RSISS) as "posterior inference constrained by generative structural priors." It first learns a structural prior encoding topological continuity and regional adjacency in label space using a MeanFlow-based MeanStruct module. This abstract prior is then proje
+  [CVPR 2026][Segmentation][Remote sensing segmentation] HySeg reformulates remote sensing image semantic segmentation (RSISS) as "posterior inference constrained by generative structural priors." It first learns a structural prior encoding topological continuity and regional adjacency in label space using a MeanFlow-based MeanStruct module. This abstract prior is then projected into topology-aware pixel-wise affinities via P2A. Finally, a DAS head performs constrained message…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - MeanFlow
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Remote sensing segmentation"
+  - "Generative priors"
+  - "MeanFlow"
+  - "Affinity propagation"
+  - "Topological consistency"
 date: 2026-05-08
-content_hash: 14ba22b4273c96d8
+content_hash: dd4a449ea83248a4
 ---
+
 # HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation
 
 **Conference**: CVPR 2026  
@@ -161,11 +166,11 @@ Hyperparameter analysis (Tab. 5, LoveDA): Learnable Gaussian bandwidth $\sigma$ 
 
 ## Related Papers
 
-- [\[CVPR 2026\] SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)
-- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
-- [\[CVPR 2026\] CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation](crossearth-gate_fisher-guided_adaptive_tuning_engine_for_efficient_adaptation_of.md)
-- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] Structure-Aware Representation Distillation for Tiny-Dense Object Segmentation](structure-aware_representation_distillation_for_tiny-dense_object_segmentation.md)
+- [\[CVPR 2026\] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](semlayer_semantic-aware_generative_segmentation_and_layer_construction_for_abstr.md)
+- [\[CVPR 2026\] F2Net: A Frequency-Fused Network for Ultra-High Resolution Remote Sensing Segmentation](f2net_a_frequency-fused_network_for_ultra-high_resolution_remote_sensing_segment.md)
+- [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
+- [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration
 description: >-
-  [ICCV 2025][Image Restoration][Multi-Head Attention] Targeting the redundancy caused by uniform subspace allocation across heads in standard Multi-Head Attention (MHA), this paper proposes HINT…
+  [ICCV 2025][Image Restoration][Multi-Head Attention] Targeting the redundancy caused by uniform subspace allocation across heads in standard Multi-Head Attention (MHA), this paper proposes HINT, which introduces Hierarchical Multi-Head Attention (HMHA) and Query-Key Cache Updating (QKCU) to enhance inter-head diversity and interaction, achieving state-of-the-art results on 12 benchmarks across 5 image restoration tasks.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "Dehazing"
   - "Desnowing"
 date: 2026-05-08
-content_hash: e3a1a2bef7c88f32
+content_hash: d8b8313f7e6997e0
 ---
 
 # Devil is in the Uniformity: Exploring Diverse Learners within Transformer for Image Restoration
@@ -167,10 +167,10 @@ HINT outperforms Retinexformer by 0.9 dB and surpasses general restoration metho
 ## Related Papers
 
 - [\[ICCV 2025\] Enhancing Image Restoration Transformer via Adaptive Translation Equivariance](enhancing_image_restoration_transformer_via_adaptive_translation_equivariance.md)
+- [\[CVPR 2025\] Complexity Experts are Task-Discriminative Learners for Any Image Restoration](../../CVPR2025/image_restoration/complexity_experts_are_task-discriminative_learners_for_any_image_restoration.md)
+- [\[ECCV 2024\] Seeing the Unseen: A Frequency Prompt Guided Transformer for Image Restoration](../../ECCV2024/image_restoration/seeing_the_unseen_a_frequency_prompt_guided_transformer_for_image_restoration.md)
+- [\[CVPR 2025\] Progressive Focused Transformer for Single Image Super-Resolution](../../CVPR2025/image_restoration/progressive_focused_transformer_for_single_image_super-resolution.md)
 - [\[ICCV 2025\] UniRes: Universal Image Restoration for Complex Degradations](unires_universal_image_restoration_for_complex_degradations.md)
-- [\[CVPR 2026\] SAT: Selective Aggregation Transformer for Image Super-Resolution](../../CVPR2026/image_restoration/sat_selective_aggregation_transformer_for_image_super_resolution.md)
-- [\[ICCV 2025\] Exploiting Diffusion Prior for Task-driven Image Restoration](exploiting_diffusion_prior_for_task-driven_image_restoration.md)
-- [\[ICCV 2025\] EAMamba: Efficient All-Around Vision State Space Model for Image Restoration](eamamba_efficient_all-around_vision_state_space_model_for_image_restoration.md)
 
 </div>
 

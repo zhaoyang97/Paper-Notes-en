@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views
 description: >-
-  [NeurIPS 2025][3D Vision][Multimodal grounding] Look and Tell introduces a multimodal dataset that synchronously captures gaze, speech…
+  [NeurIPS 2025][3D Vision][Multimodal grounding] Look and Tell introduces a multimodal dataset that synchronously captures gaze, speech, and dual-view video from 25 participants in a kitchen environment using Meta Aria smart glasses and a fixed GoPro camera. Combined with 3D scene reconstruction and a multi-level annotation pipeline, it provides the first benchmark for studying referential communication across egocentric and exocentric perspectives.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "referential communication"
   - "spatial intelligence"
 date: 2026-05-08
-content_hash: 843eff9871e317e7
+content_hash: 59684d5842e4a462
 ---
 
 # Look and Tell: A Dataset for Multimodal Grounding Across Egocentric and Exocentric Views
@@ -139,8 +139,8 @@ This is a dataset paper and does not involve model training. Quality assurance s
 - [\[NeurIPS 2025\] IndEgo: A Dataset of Industrial Scenarios and Collaborative Work for Egocentric Assistants](indego_a_dataset_of_industrial_scenarios_and_collaborative_work_for_egocentric_a.md)
 - [\[ICLR 2026\] EgoWorld: Translating Exocentric View to Egocentric View using Rich Exocentric Observations](../../ICLR2026/3d_vision/egoworld_translating_exocentric_view_to_egocentric_view_using_rich_exocentric_ob.md)
 - [\[ICCV 2025\] EgoM2P: Egocentric Multimodal Multitask Pretraining](../../ICCV2025/3d_vision/egom2p_egocentric_multimodal_multitask_pretraining.md)
-- [\[NeurIPS 2025\] From Objects to Anywhere: A Holistic Benchmark for Multi-level Visual Grounding in 3D Scenes](from_objects_to_anywhere_a_holistic_benchmark_for_multi-level_visual_grounding_i.md)
-- [\[NeurIPS 2025\] CLIPGaussian: Universal and Multimodal Style Transfer Based on Gaussian Splatting](clipgaussian_universal_and_multimodal_style_transfer_based_on_gaussian_splatting.md)
+- [\[ICLR 2026\] ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views](../../ICLR2026/3d_vision/ultra-360_unconstrained_dataset_for_large-scale_temporal_3d_reconstruction_acros.md)
+- [\[CVPR 2025\] HD-EPIC: A Highly-Detailed Egocentric Video Dataset](../../CVPR2025/3d_vision/hd-epic_a_highly-detailed_egocentric_video_dataset.md)
 
 </div>
 

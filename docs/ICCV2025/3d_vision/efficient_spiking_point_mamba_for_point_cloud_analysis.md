@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Efficient Spiking Point Mamba for Point Cloud Analysis
 description: >-
-  [3D Vision] SPM (Spiking Point Mamba) proposes the first Mamba-based 3D spiking neural network framework. Through Hierarchical Dynamic Encoding (HDE) and a Spiking Mamba Block (SMB)…
+  [3D Vision] SPM (Spiking Point Mamba) proposes the first Mamba-based 3D spiking neural network framework. Through Hierarchical Dynamic Encoding (HDE) and a Spiking Mamba Block (SMB), it achieves over 3.5× energy reduction while improving accuracy by 6–7% over the previous state-of-the-art SNN method on ScanObjectNN.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: bdb4aebf97d55380
+content_hash: edf9248e85d2c38b
 ---
 
 # Efficient Spiking Point Mamba for Point Cloud Analysis
@@ -156,9 +156,9 @@ SPM converts multiply-accumulate operations (MAC, 4.6 pJ) in ANNs into sparse ac
 
 - [\[ICCV 2025\] Egocentric Action-aware Inertial Localization in Point Clouds with Vision-Language Guidance](egocentric_action-aware_inertial_localization_in_point_clouds_with_vision-langua.md)
 - [\[ICCV 2025\] ResGS: Residual Densification of 3D Gaussian for Efficient Detail Recovery](resgs_residual_densification_of_3d_gaussian_for_efficient_detail_recovery.md)
+- [\[CVPR 2025\] DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction](../../CVPR2025/3d_vision/dualpm_dual_posed-canonical_point_maps_for_3d_shape_and_pose_reconstruction.md)
 - [\[ICCV 2025\] RI3D: Few-Shot Gaussian Splatting With Repair and Inpainting Diffusion Priors](ri3d_few-shot_gaussian_splatting_with_repair_and_inpainting_diffusion_priors.md)
 - [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
-- [\[ICCV 2025\] StrandHead: Text to Hair-Disentangled 3D Head Avatars Using Human-Centric Priors](strandhead_text_to_hair-disentangled_3d_head_avatars_using_human-centric_priors.md)
 
 </div>
 

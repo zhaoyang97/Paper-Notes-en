@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SpotEdit: Selective Region Editing in Diffusion Transformers
 description: >-
-  [CVPR 2026][Image Generation][Inference Acceleration] SpotEdit is a training-free DiT image editing framework that exploits the phenomenon where "non-edited regions converge rapidly in the early stages of denoising." It utilizes perceptual similarity to automatically identify stable tokens, removes them from DiT computation to reuse conditional image features, and combine
+  [CVPR 2026][Image Generation][Diffusion Transformer] SpotEdit is a training-free DiT image editing framework that exploits the phenomenon where "non-edited regions converge rapidly in the early stages of denoising." It utilizes perceptual similarity to automatically identify stable tokens, removes them from DiT computation to reuse conditional image features, and combines this with a time-annealed KV fusion mechanism to maintain context. It achieves a 1.7×–1.95× speedup on FL…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Instructed Image Editing"
+  - "Region Selection"
+  - "Training-free"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 220f405b4126b7af
+content_hash: 218a09fe1572112c
 ---
+
 # SpotEdit: Selective Region Editing in Diffusion Transformers
 
 **Conference**: CVPR 2026  
@@ -151,10 +156,10 @@ Ablation of Token Fusion (qualitative in Figure 6): Comparing three variants: Na
 ## Related Papers
 
 - [\[CVPR 2026\] Region-Adaptive Sampling for Diffusion Transformers](region-adaptive_sampling_for_diffusion_transformers.md)
-- [\[CVPR 2026\] EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)
+- [\[CVPR 2026\] HierEdit: Region-Aware Hierarchical Diffusion for Efficient High-Resolution Editing](hieredit_region-aware_hierarchical_diffusion_for_efficient_high-resolution_editi.md)
+- [\[CVPR 2026\] ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)
 - [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
-- [\[CVPR 2026\] MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale](mrt_masked_region_transformer_for_layered_image_generation_and_editing_at_scale.md)
-- [\[CVPR 2026\] PixelDiT: Pixel Diffusion Transformers for Image Generation](pixeldit_pixel_diffusion_transformers_for_image_generation.md)
+- [\[CVPR 2026\] Training-free Mixed-Resolution Latent Upsampling for Spatially Accelerated Diffusion Transformers](training-free_mixed-resolution_latent_upsampling_for_spatially_accelerated_diffu.md)
 
 </div>
 

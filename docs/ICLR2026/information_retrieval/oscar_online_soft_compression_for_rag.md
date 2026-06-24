@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Information Retrieval & RAG][RAG] OSCAR utilizes a lightweight compressor to perform online, query-aware compression of each retrieved document into a few embedding tokens. This achieves 2–5× end-to-end inference acceleration on 1B–24B LLMs with negligible performance degradation.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Soft Compression"
+  - "Query-aware Compression"
+  - "Sequence-level Distillation"
+  - "Reranking"
 date: 2026-05-08
-content_hash: 905e9b3921962e8b
+content_hash: 5e41696956368e3c
 ---
+
 # OSCAR: Online Soft Compression for RAG
 
 **Conference**: ICLR 2026  
@@ -144,11 +149,11 @@ Based on Mistral-7B, reporting mean LLM-eval scores across 5 QA tasks ($\Delta$ 
 
 ## Related Papers
 
+- [\[ICLR 2026\] SmartChunk Retrieval: Query-Aware Chunk Compression with Planning for Efficient Document RAG](smartchunk_retrieval_query-aware_chunk_compression_with_planning_for_efficient_d.md)
 - [\[ICML 2026\] Less Is More: Elevating RAG via Performance-Driven Context Compression](../../ICML2026/information_retrieval/less_is_more_elevating_rag_via_performance-driven_context_compression.md)
 - [\[ACL 2026\] CodePromptZip: Code-specific Prompt Compression for Retrieval-Augmented Generation in Coding Tasks with LMs](../../ACL2026/information_retrieval/codepromptzip_code-specific_prompt_compression_for_retrieval-augmented_generatio.md)
 - [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
-- [\[ACL 2025\] EXIT: Context-Aware Extractive Compression for Enhancing Retrieval-Augmented Generation](../../ACL2025/information_retrieval/exit_context-aware_extractive_compression_for_enhancing_retrieval-augmented_gene.md)
 
 </div>
 

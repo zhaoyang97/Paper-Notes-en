@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data
 description: >-
-  [ICML 2026][Social Computing][Paper Note] The study analyzes 137,000 posts from the r/ChatGPT subreddit over three years (2022-12 to 2025-11) by decomposing them into interpretable features using Sparse Autoencoders (SAE). By fitting piecewise linear changepoints to track the temporal trajectory of each feature, researchers found that "emotional usage" (therap
+  [ICML2026][Social Computing][Social Media Measurement] The study analyzes 137,000 posts from the r/ChatGPT subreddit over three years (2022-12 to 2025-11) by decomposing them into interpretable features using Sparse Autoencoders (SAE). By fitting piecewise linear changepoints to track the temporal trajectory of each feature, researchers found that "emotional usage" (therapy, emotional attachment) surged following the release of GPT-4o. Furthermore…
 tags:
-  - ICML 2026
-  - Social Computing
+  - "ICML2026"
+  - "Social Computing"
+  - "Social Media Measurement"
+  - "Sparse Autoencoders"
+  - "Time-Series Changepoint"
+  - "Online Monitoring"
+  - "anytime-valid Hypothesis Testing"
 date: 2026-05-08
-content_hash: e738426d94a4b7db
+content_hash: 4f8cc1158ee2fe32
 ---
+
 # Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data
 
 **Conference**: ICML2026  
@@ -137,7 +143,7 @@ Even features seemingly unrelated to emotion were reshaped. Within the "Asking a
 - [\[ACL 2026\] Content Fuzzing for Escaping Information Cocoons on Social Media](../../ACL2026/social_computing/content_fuzzing_for_escaping_information_cocoons_on_digital_social_media.md)
 - [\[ACL 2026\] Building Arabic NLP from the Ground Up: Twenty Years of Lessons, Failures, and Open Problems](../../ACL2026/social_computing/building_arabic_nlp_from_the_ground_up_twenty_years_of_lessons_failures_and_open.md)
 - [\[ACL 2025\] Exploring the Impact of Instruction-Tuning on LLMs' Susceptibility to Misinformation](../../ACL2025/social_computing/exploring_the_impact_of_instruction-tuning_on_llms_susceptibility_to_misinformat.md)
-- [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](../../ACL2026/social_computing/the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
+- [\[CVPR 2026\] Bridging Pixels and Words: Mask-Aware Local Semantic Fusion for Multimodal Media Verification](../../CVPR2026/social_computing/bridging_pixels_and_words_mask-aware_local_semantic_fusion_for_multimodal_media_.md)
 
 </div>
 

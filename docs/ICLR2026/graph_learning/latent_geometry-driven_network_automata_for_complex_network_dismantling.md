@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Latent Geometry-Driven Network Automata for Complex Network Dismantling
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes the LGD-NA framework, which utilizes "network cellular automata rules" based solely on local topology to approximate latent geometric distances. By using node geometric centrality as the dismantling priority, the method outperforms all existing dismantling algorithms (except the global NBC) across 1
+  [ICLR 2026][Graph Learning][Network Dismantling] This paper proposes the LGD-NA framework, which utilizes "network cellular automata rules" based solely on local topology to approximate latent geometric distances. By using node geometric centrality as the dismantling priority, the method outperforms all existing dismantling algorithms (except the global NBC) across 1,475 real-world networks. It supports GPU acceleration and can be conversely applied to enhance network robustn…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Network Dismantling"
+  - "Latent Geometry"
+  - "Network Cellular Automata"
+  - "Common Neighbors"
+  - "Robustness Engineering"
 date: 2026-05-08
-content_hash: be67cb9645e53837
+content_hash: 742908a65916fb23
 ---
+
 # Latent Geometry-Driven Network Automata for Complex Network Dismantling
 
 **Conference**: ICLR 2026  

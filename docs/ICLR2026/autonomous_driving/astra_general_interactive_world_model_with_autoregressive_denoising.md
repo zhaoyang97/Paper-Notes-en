@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Astra: General Interactive World Model with Autoregressive Denoising
 description: >-
-  [ICLR 2026][Autonomous Driving][world model] Ours proposes Astra, a general interactive world model that enables action-conditioned long-range video prediction on pre-trained video diffusion models through an autoregressive denoising framework. It introduces ACT-Adapter (action injection), noise-enhanced historical memory (alleviating visual inertia), and Mixture
+  [ICLR 2026][Autonomous Driving][world model] Ours proposes Astra, a general interactive world model that enables action-conditioned long-range video prediction on pre-trained video diffusion models through an autoregressive denoising framework. It introduces ACT-Adapter (action injection), noise-enhanced historical memory (alleviating visual inertia), and Mixture of Action Experts (unifying heterogeneous action modalities), achieving SOTA fidelity and action-following capabil…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - world model
-  - autoregressive denoising
-  - action control
-  - interactive video
-  - mixture of experts
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "world model"
+  - "autoregressive denoising"
+  - "action control"
+  - "interactive video"
+  - "mixture of experts"
 date: 2026-05-08
-content_hash: 107e1748b4eb0da9
+content_hash: ba5858d88005485f
 ---
+
 # Astra: General Interactive World Model with Autoregressive Denoising
 
 **Conference**: ICLR 2026  
@@ -131,15 +132,16 @@ Flow matching loss. Based on Wan-2.1 pre-training, trained on 8 GPUs for 30 epoc
 - Value: ⭐⭐⭐⭐⭐ (Practical framework for general interactive world models; code open-sourced)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](../../ICCV2025/autonomous_driving/epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
 - [\[ICLR 2026\] FlowAD: Ego-Scene Interactive Modeling for Autonomous Driving](flowad_ego-scene_interactive_modeling_for_autonomous_driving.md)
+- [\[ICLR 2026\] ARINBEV: Bird's-Eye View Layout Estimation with Conditional Autoregressive Model](arinbev_birds-eye_view_layout_estimation_with_conditional_autoregressive_model.md)
 - [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
 - [\[ICLR 2026\] Rethinking Driving World Model as Synthetic Data Generator for Perception Tasks](rethinking_driving_world_model_as_synthetic_data_generator_for_perception_tasks.md)
-- [\[AAAI 2026\] Difficulty-Aware Label-Guided Denoising for Monocular 3D Object Detection](../../AAAI2026/autonomous_driving/difficulty-aware_label-guided_denoising_for_monocular_3d_object_detection.md)
 
 </div>
 

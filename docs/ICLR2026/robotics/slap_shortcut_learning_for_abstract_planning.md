@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SLAP: Shortcut Learning for Abstract Planning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][TAMP] SLAP automatically learns a set of "shortcut options" (e.g., a "slap" that pushes aside an obstacle tower) using model-free RL on an abstract planning graph induced by existing TAMP skills (pick/place/move). During evaluation, the planner treats these shortcuts as new edges to search for shorter paths, reducing executi
+  [ICLR 2026][Robotics][Abstract Planning] SLAP automatically learns a set of "shortcut options" (e.g., a "slap" that pushes aside an obstacle tower) using model-free RL on an abstract planning graph induced by existing TAMP skills (pick/place/move). During evaluation, the planner treats these shortcuts as new edges to search for shorter paths, reducing execution length by over 50% in four simulated robotic environments while surpassing the success rates of both pure planning a…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - TAMP
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Robotics"
+  - "Abstract Planning"
+  - "TAMP"
+  - "Option Discovery"
+  - "Reinforcement Learning"
+  - "Long-horizon Manipulation"
 date: 2026-05-08
-content_hash: 9cf3e5135f00eec4
+content_hash: b06fe3df20dbc20f
 ---
+
 # SLAP: Shortcut Learning for Abstract Planning
 
 **Conference**: ICLR 2026  

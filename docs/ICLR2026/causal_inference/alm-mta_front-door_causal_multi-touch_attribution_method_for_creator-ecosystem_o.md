@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ALM-MTA: Front-Door Causal Multi-Touch Attribution Method for Creator-Ecosystem Optimization
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] Addressing the challenge of missing ground truth labels and systemic latent confounding in "consumption-driven production" (CDP) scenarios on short-video platforms, this paper identifies the causal uplift of each consumption touchpoint on "whether the user uploads" using the **front-door criterion + an adversarially le
+  [ICLR2026][Causal Inference][Multi-touch attribution] Addressing the challenge of missing ground truth labels and systemic latent confounding in "consumption-driven production" (CDP) scenarios on short-video platforms, this paper identifies the causal uplift of each consumption touchpoint on "whether the user uploads" using the **front-door criterion + an adversarially learned proxy mediator**. Contrastive learning is employed to ensure overlap in large action spaces. Evaluat…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR2026"
+  - "Causal Inference"
+  - "Multi-touch attribution"
+  - "front-door criterion"
+  - "adversarial mediation"
+  - "contrastive learning"
+  - "recommendation system de-confounding"
 date: 2026-05-08
-content_hash: 1b868cf9a5f43cee
+content_hash: c862bc2fab194b64
 ---
+
 # ALM-MTA: Front-Door Causal Multi-Touch Attribution Method for Creator-Ecosystem Optimization
 
 **Conference**: ICLR2026  
@@ -150,8 +156,8 @@ ALM-MTA performs best across all metrics: compared to the strongest baseline (ca
 - [\[ICLR 2026\] Debiased Front-Door Learners for Heterogeneous Effects](debiased_front-door_learners_for_heterogeneous_effects.md)
 - [\[ICLR 2026\] Causal Score Conditioning for Multi-Resolution Latent Systems](causal_score_conditioning_for_multi-resolution_latent_systems.md)
 - [\[ICLR 2026\] Counterfactual Structural Causal Bandits](counterfactual_structural_causal_bandits.md)
-- [\[ICLR 2026\] Coarse-to-Fine Learning of Dynamic Causal Structures](coarse-to-fine_learning_of_dynamic_causal_structures.md)
-- [\[ICLR 2026\] Causal Discovery in the Wild: A Voting-Theoretic Ensemble Approach](causal_discovery_in_the_wild_a_voting-theoretic_ensemble_approach.md)
+- [\[ICLR 2026\] Causal Discovery via Quantile Partial Effect](causal_discovery_via_quantile_partial_effect.md)
+- [\[ICLR 2026\] On the Identifiability of Causal Graphs with the Invariance Principle](on_the_identifiability_of_causal_graphs_with_the_invariance_principle.md)
 
 </div>
 

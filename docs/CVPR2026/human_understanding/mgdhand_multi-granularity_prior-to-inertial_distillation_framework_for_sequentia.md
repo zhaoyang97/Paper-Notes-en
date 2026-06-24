@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs
 description: >-
-  [CVPR 2026][Human Understanding][Knowledge Distillation] To address the highly ill-posed problem of directly regressing dense hand poses from sparse IMUs due to the semantic gap, MGDHand pre-trains a MANO-IMU fusion teacher to encode priors into three categories: static shape, dynamic pose, and temporal motion. It then employs multi-granularity decoupled distillation (SSD/DP
+  [CVPR 2026][Human Understanding][Sparse IMU] To address the highly ill-posed problem of directly regressing dense hand poses from sparse IMUs due to the semantic gap, MGDHand pre-trains a MANO-IMU fusion teacher to encode priors into three categories: static shape, dynamic pose, and temporal motion. It then employs multi-granularity decoupled distillation (SSD/DPD/TMD) to transfer these priors to an IMU-only student in their respective semantic domains. On the VIHand dataset…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - Knowledge Distillation
-  - MANO
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Sparse IMU"
+  - "Hand Pose Estimation"
+  - "Knowledge Distillation"
+  - "MANO"
+  - "Multi-granularity Decoupling"
 date: 2026-05-08
-content_hash: b13c9b1e1fff10fa
+content_hash: 82877712a5c9d0ba
 ---
+
 # MGDHand: Multi-Granularity Prior-to-Inertial Distillation Framework for Sequential 3D Hand Pose Estimation from Sparse IMUs
 
 **Conference**: CVPR 2026  
@@ -145,11 +149,11 @@ Comparison of different distillation methods (7-IMU):
 
 ## Related Papers
 
-- [\[CVPR 2026\] JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)
-- [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)
+- [\[CVPR 2026\] Ground Reaction Inertial Poser: Physics-based Human Motion Capture from Sparse IMUs and Insole Pressure Sensors](ground_reaction_inertial_poser_physics-based_human_motion_capture_from_sparse_im.md)
+- [\[ICLR 2026\] Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation](../../ICLR2026/human_understanding/pose_prior_learner_unsupervised_categorical_prior_learning_for_pose_estimation.md)
+- [\[ICLR 2026\] From Sparse to Dense: Spatio-Temporal Fusion for Multi-View 3D Human Pose Estimation with DenseWarper](../../ICLR2026/human_understanding/from_sparse_to_dense_spatio-temporal_fusion_for_multi-view_3d_human_pose_estimat.md)
 - [\[CVPR 2026\] Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation](sketch2colab_sketch-conditioned_multi-human_animation_via_controllable_flow_dist.md)
-- [\[CVPR 2026\] Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)
-- [\[CVPR 2026\] A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_hete.md)
+- [\[CVPR 2026\] IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)
 
 </div>
 

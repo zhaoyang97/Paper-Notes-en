@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models
 description: >-
-  [ICLR 2026][AI Safety][Diffusion Model] This paper proposes **EigenScore**: when a diffusion model trained on InD data is applied to OOD samples, the denoising posterior covariance systematically expands along principal directions. By using the **eigenvalue spectrum** (sum of top-K eigenvalues) as a distribution shift signal—estimated efficiently using Jacob
+  [ICLR 2026][AI Safety][OOD Detection] This paper proposes **EigenScore**: when a diffusion model trained on InD data is applied to OOD samples, the denoising posterior covariance systematically expands along principal directions. By using the **eigenvalue spectrum** (sum of top-K eigenvalues) as a distribution shift signal—estimated efficiently using Jacobian-free subspace iteration—the method achieves SOTA average AUROC on standard OOD benchmarks (approximately 2% higher tha…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Diffusion Model
+  - "ICLR 2026"
+  - "AI Safety"
+  - "OOD Detection"
+  - "Diffusion Models"
+  - "Posterior Covariance"
+  - "Eigenvalue Spectrum"
+  - "Denoising Uncertainty"
 date: 2026-05-08
-content_hash: cca2ffbe88b31a92
+content_hash: aeab0360dc6fdd66
 ---
+
 # EigenScore: OOD Detection using Posterior Covariance in Diffusion Models
 
 **Conference**: ICLR 2026  

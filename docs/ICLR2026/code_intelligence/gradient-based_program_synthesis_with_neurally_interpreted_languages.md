@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Gradient-Based Program Synthesis with Neurally Interpreted Languages
 description: >-
-  [ICLR 2026][Code Intelligence][Gumbel-Softmax] NLI allows an encoder-decoder architecture to end-to-end **invent its own discrete, symbol-like programming language**, accompanied by a differentiable recurrent neural executor that interprets programs token-by-token. This enables both compositional generalization akin to symbolic methods and gradient descent search i
+  [ICLR 2026][Code Intelligence][program induction] NLI allows an encoder-decoder architecture to end-to-end **invent its own discrete, symbol-like programming language**, accompanied by a differentiable recurrent neural executor that interprets programs token-by-token. This enables both compositional generalization akin to symbolic methods and gradient descent search in the program space, refining initial program guesses from the inductor at test time until the data is explain…
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - Gumbel-Softmax
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "program induction"
+  - "neural interpreter"
+  - "discrete latent space"
+  - "Gumbel-Softmax"
+  - "test-time gradient search"
+  - "compositional generalization"
 date: 2026-05-08
-content_hash: 05099d910ab88923
+content_hash: 669332bf066cb666
 ---
+
 # Gradient-Based Program Synthesis with Neurally Interpreted Languages
 
 **Conference**: ICLR 2026  

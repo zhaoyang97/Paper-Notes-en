@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking
 description: >-
-  [NeurIPS 2025][LLM Pretraining][neural collapse] Using grokking (delayed generalization) as a causal probe, this paper demonstrates that **relative flatness is a (potentially) necessary condition for generalization**…
+  [NeurIPS 2025][LLM Pretraining][neural collapse] Using grokking (delayed generalization) as a causal probe, this paper demonstrates that **relative flatness is a (potentially) necessary condition for generalization**, whereas neural collapse, despite frequently co-occurring with generalization, is not necessary — it is merely one pathway toward flatness.
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "grokking"
   - "loss landscape"
 date: 2026-05-08
-content_hash: 0b63efe128a5f90e
+content_hash: d45a162306c73d1b
 ---
 
 # Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking

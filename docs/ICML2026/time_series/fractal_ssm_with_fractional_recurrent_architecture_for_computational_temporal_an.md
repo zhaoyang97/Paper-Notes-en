@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences
 description: >-
-  [ICML 2026][Time Series][HiPPO] This paper generalizes the probability measures behind the HiPPO framework to fractional power-law measures with an adjustable singular index $\alpha$, achieving "full history retention + recency sensitivity + scale invariance" for the first time. This theory is implemented as an LTI diagonalized SSM—FRACTAL—which ties
+  [ICML 2026][Time Series][HiPPO] This paper generalizes the probability measures behind the HiPPO framework to fractional power-law measures with an adjustable singular index $\alpha$, achieving "full history retention + recency sensitivity + scale invariance" for the first time. This theory is implemented as an LTI diagonalized SSM—FRACTAL—which ties S5 with an 87.11% average score on Long Range Arena and achieves 61.85% on ListOps.
 tags:
-  - ICML 2026
-  - Time Series
-  - HiPPO
-  - State Space Model
-  - Long Range Arena
+  - "ICML 2026"
+  - "Time Series"
+  - "HiPPO"
+  - "Fractional Calculus"
+  - "State Space Models"
+  - "Long Range Dependency"
+  - "Long Range Arena"
 date: 2026-05-08
-content_hash: c8a0e3ab957adbee
+content_hash: 4ed8e9d9d05b0cf1
 ---
+
 # FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences
 
 **Conference**: ICML 2026  
@@ -136,11 +139,11 @@ No new loss functions were introduced; standard CE or BCE from LRA tasks were us
 
 ## Related Papers
 
-- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
 - [\[ICML 2026\] HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models](hippo_zoo_explicit_memory_mechanisms_for_interpretable_state_space_models.md)
+- [\[ICML 2026\] Learning Long Range Spatio-Temporal Representations over Continuous Time Dynamic Graphs with State Space Models](learning_long_range_spatio-temporal_representations_over_continuous_time_dynamic.md)
 - [\[ICML 2025\] A Generalizable Physics-Enhanced State Space Model for Long-Term Dynamics Forecasting in Complex Environments](../../ICML2025/time_series/a_generalizable_physics-enhanced_state_space_model_for_long-term_dynamics_foreca.md)
+- [\[ICLR 2026\] Long-range Modeling and Processing of Multimodal Event Sequences](../../ICLR2026/time_series/long-range_modeling_and_processing_of_multimodal_event_sequences.md)
 - [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](../../ICLR2026/time_series/weight-space_linear_recurrent_neural_networks.md)
-- [\[NeurIPS 2025\] WaLRUS: Wavelets for Long-range Representation Using SSMs](../../NeurIPS2025/time_series/walrus_wavelets_for_long-range_representation_using_ssms.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] EnvSocial-Diff: A Diffusion-Based Crowd Simulation Model with Environmental Conditioning and Individual-Group Interaction
 description: >-
-  [ICLR 2026][Autonomous Driving][Diffusion Model] Building upon the "social force + diffusion" framework of SPDiff, this work explicitly decomposes the environment into three categories of structured conditions: obstacles, Objects of Interest (OOI), and lighting. It supplements this with a graph-based "Individual-Group Interaction" (IGI) module for two-level social mo
+  [ICLR 2026][Autonomous Driving][Crowd Simulation] Building upon the "social force + diffusion" framework of SPDiff, this work explicitly decomposes the environment into three categories of structured conditions: obstacles, Objects of Interest (OOI), and lighting. It supplements this with a graph-based "Individual-Group Interaction" (IGI) module for two-level social modeling, resulting in more realistic crowd trajectory simulations in complex outdoor scenarios.
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Crowd Simulation"
+  - "Diffusion Model"
+  - "Social Force Model"
+  - "Environmental Condition"
+  - "Pedestrian Trajectory Prediction"
+  - "Graph Neural Network"
 date: 2026-05-08
-content_hash: 512755f51ad38ffc
+content_hash: 8332da60197245c7
 ---
+
 # EnvSocial-Diff: A Diffusion-Based Crowd Simulation Model with Environmental Conditioning and Individual-Group Interaction
 
 **Conference**: ICLR 2026  
@@ -122,9 +128,9 @@ Incremental addition of environmental factors (Obs/OOI/Light) and IGI similarity
 
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](../../ICCV2025/autonomous_driving/langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
 - [\[ICCV 2025\] RESCUE: Crowd Evacuation Simulation via Controlling SDM-United Characters](../../ICCV2025/autonomous_driving/rescue_crowd_evacuation_simulation_via_controlling_sdm-united_characters.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
 - [\[AAAI 2026\] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving](../../AAAI2026/autonomous_driving/diffrefiner_coarse_to_fine_trajectory_planning_via_diffusion_refinement_with_sem.md)
 - [\[AAAI 2026\] Drive As You Like: Strategy-Level Motion Planning Based on A Multi-Head Diffusion Model](../../AAAI2026/autonomous_driving/drive_as_you_like_strategy-level_motion_planning_based_on_a_multi-head_diffusion.md)
-- [\[CVPR 2025\] SceneDiffuser++: City-Scale Traffic Simulation via a Generative World Model](../../CVPR2025/autonomous_driving/scenediffuser_city-scale_traffic_simulation_via_a_generative_world_model.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay
 description: >-
-  [ICLR 2026][Optimization & Theory][Bayesian Optimization] The proposed framework, DynMeanBO, directly incorporates expert priors (distribution of the optimum $\pi(x)$) into the **mean function** of a Gaussian Process, utilizing a weight that decays over iterations to prioritize the prior early and phase it out later. This results in a prior-informed Bayesian Optimization fram
+  [ICLR 2026][Optimization][Bayesian Optimization] The proposed framework, DynMeanBO, directly incorporates expert priors (distribution of the optimum $\pi(x)$) into the **mean function** of a Gaussian Process, utilizing a weight that decays over iterations to prioritize the prior early and phase it out later. This results in a prior-informed Bayesian Optimization framework that is compatible with any acquisition function, incurs nearly zero additional overhead…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Bayesian Optimization
-  - Expert Prior
-  - Gaussian Process
-  - Mean Function
-  - Dynamic Decay
-  - Robustness
+  - "ICLR 2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "Expert Prior"
+  - "Gaussian Process"
+  - "Mean Function"
+  - "Dynamic Decay"
+  - "Robustness"
 date: 2026-05-08
-content_hash: 455c3662a0c758ee
+content_hash: 1459fa10b2c2b363
 ---
+
 # Incorporating Expert Priors into Bayesian Optimization via Dynamic Mean Decay
 
 **Conference**: ICLR 2026  
@@ -125,15 +126,15 @@ Tasks: Synthetic functions Hartmann (4D), Levy (5D), Hartmann (6D), Rosenbrock (
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Local Entropy Search over Descent Sequences for Bayesian Optimization](local_entropy_search_over_descent_sequences_for_bayesian_optimization.md)
 - [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](../../CVPR2026/optimization/dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
 - [\[ICLR 2026\] From Sorting Algorithms to Scalable Kernels: Bayesian Optimization in High-Dimensional Permutation Spaces](from_sorting_algorithms_to_scalable_kernels_bayesian_optimization_in_high-dimens.md)
-- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
 - [\[ICLR 2026\] Symmetry-Aware Bayesian Optimization via Max Kernels](symmetry-aware_bayesian_optimization_via_max_kernels.md)
+- [\[ICLR 2026\] Generative Bayesian Optimization: Generative Models as Acquisition Functions](generative_bayesian_optimization_generative_models_as_acquisition_functions.md)
 
 </div>
 

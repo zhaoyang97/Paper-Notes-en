@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IntrinsicWeather: Controllable Weather Editing in Intrinsic Space
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] Diffusion models are utilized to decompose images into intrinsic maps consisting of "weather-invariant material/geometry + weather-dependent illumination." Target weather is then re-rendered in the intrinsic space using text prompts. This approach achieves fine-grained controllable weather editing while preserving scen
+  [CVPR 2026][Autonomous Driving][Weather Editing] Diffusion models are utilized to decompose images into intrinsic maps consisting of "weather-invariant material/geometry + weather-dependent illumination." Target weather is then re-rendered in the intrinsic space using text prompts. This approach achieves fine-grained controllable weather editing while preserving scene material and geometry, outperforming SOTA in inverse rendering PSNR by over 10 dB and significantly enhancing…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Weather Editing"
+  - "Intrinsic space decomposition"
+  - "Inverse rendering"
+  - "Diffusion priors"
+  - "Autonomous driving perception"
 date: 2026-05-08
-content_hash: 9aea02760cb58a29
+content_hash: dc780d682f59a2c7
 ---
+
 Markdown
 
 # IntrinsicWeather: Controllable Weather Editing in Intrinsic Space

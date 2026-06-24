@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation
 description: >-
-  [ICML 2026][Graph Learning][Mixture-of-Students] ProMoS treats a frozen self-supervised GNN as a "normality prior teacher" and distills it into a suite of shared and sparsely activated lightweight student branches. By aligning teachers and students to a cross-graph shared semantic space via learnable prototypes, it achieves the first fully label-free, zero-shot, and
+  [ICML 2026][Graph Learning][Generalist Graph Anomaly Detection] ProMoS treats a frozen self-supervised GNN as a "normality prior teacher" and distills it into a suite of shared and sparsely activated lightweight student branches. By aligning teachers and students to a cross-graph shared semantic space via learnable prototypes, it achieves the first fully label-free, zero-shot, and cross-graph transferable generalist graph anomaly detector.
 tags:
-  - ICML 2026
-  - Graph Learning
-  - Mixture-of-Students
+  - "ICML 2026"
+  - "Graph Learning"
+  - "Generalist Graph Anomaly Detection"
+  - "Prototype Distillation"
+  - "Mixture-of-Students"
+  - "Zero-shot"
+  - "Self-supervised GNN"
 date: 2026-05-08
-content_hash: 8b747099bb213225
+content_hash: d2c49c8275c200bd
 ---
+
 # ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation
 
 **Conference**: ICML 2026  
@@ -126,10 +131,10 @@ ProMoS ranks first in AUROC on 9/11 datasets. On Weibo (highly homophilic), it r
 ## Related Papers
 
 - [\[ICML 2026\] Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach](rethinking_feature_alignment_in_generalist_graph_anomaly_detection_a_relational_.md)
+- [\[ICLR 2026\] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection](../../ICLR2026/graph_learning/dr-ggad_dual_residual_centering_for_mitigating_anomaly_nondiscriminativity_in_ge.md)
 - [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
-- [\[ICML 2026\] Quantile-Free Uncertainty Quantification in Graph Neural Networks](quantile-free_uncertainty_quantification_in_graph_neural_networks.md)
-- [\[ICML 2026\] Physics-Informed Coarsening for Multigrid Graph Neural Surrogates](physics-informed_coarsening_for_multigrid_graph_neural_surrogates.md)
-- [\[ICML 2026\] Full-Spectrum Graph Neural Network: Expressive and Scalable](full-spectrum_graph_neural_network_expressive_and_scalable.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](../../ICLR2026/graph_learning/topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
+- [\[ICLR 2026\] Dynamic Multi-sample Mixup with Gradient Exploration for Open-set Graph Anomaly Detection](../../ICLR2026/graph_learning/dynamic_multi-sample_mixup_with_gradient_exploration_for_open-set_graph_anomaly_.md)
 
 </div>
 

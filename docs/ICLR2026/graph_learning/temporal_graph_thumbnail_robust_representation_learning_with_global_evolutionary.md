@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Temporal Graph Thumbnail: Robust Representation Learning with Global Evolutionary Skeleton
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] TGT distills an entire temporal graph sequence into a static "thumbnail" (global evolutionary skeleton). It characterizes structural evolution via von Neumann graph entropy and feature evolution via the Donsker-Varadhan mutual information estimator. This thumbnail then serves as an Information Bottleneck (IB) constrain
+  [ICLR 2026][Graph Learning][Temporal graphs] TGT distills an entire temporal graph sequence into a static "thumbnail" (global evolutionary skeleton). It characterizes structural evolution via von Neumann graph entropy and feature evolution via the Donsker-Varadhan mutual information estimator. This thumbnail then serves as an Information Bottleneck (IB) constraint to guide representation learning. On Bitcoin, MathOverflow, and MOOC datasets, it significantly outperforms SOTA…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Temporal graphs"
+  - "representation robustness"
+  - "von Neumann graph entropy"
+  - "information bottleneck"
+  - "global evolution"
 date: 2026-05-08
-content_hash: 5a36c4bb0ac7d346
+content_hash: 0691a2e1d314e99a
 ---
+
 # Temporal Graph Thumbnail: Robust Representation Learning with Global Evolutionary Skeleton
 
 **Conference**: ICLR 2026  
@@ -142,9 +148,9 @@ TGT's lead over baselines increases under perturbation, confirming that the thum
 
 ## Related Papers
 
+- [\[ICLR 2026\] EvA: Evolutionary Attacks on Graphs](eva_evolutionary_attacks_on_graphs.md)
 - [\[ICLR 2026\] Topology Matters in RTL Circuit Representation Learning](topology_matters_in_rtl_circuit_representation_learning.md)
 - [\[ICLR 2026\] On the Trade-off Between Expressivity and Privacy in Graph Representation Learning](on_the_trade-off_between_expressivity_and_privacy_in_graph_representation_learni.md)
-- [\[ICLR 2026\] EvA: Evolutionary Attacks on Graphs](eva_evolutionary_attacks_on_graphs.md)
 - [\[ICLR 2026\] TGM: A Modular and Efficient Library for Machine Learning on Temporal Graphs](tgm_a_modular_and_efficient_library_for_machine_learning_on_temporal_graphs.md)
 - [\[ACL 2025\] Disentangled Multi-span Evolutionary Network against Temporal Knowledge Graph Reasoning](../../ACL2025/graph_learning/disentangled_multi-span_evolutionary_network_against_temporal_knowledge_graph_re.md)
 

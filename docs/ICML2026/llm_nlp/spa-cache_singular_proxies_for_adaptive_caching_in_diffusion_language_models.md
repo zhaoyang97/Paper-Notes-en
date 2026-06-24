@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models
 description: >-
-  [ICML 2026][LLM (Other)][Diffusion LM] SPA-Cache transforms the determination of "which tokens need updating" in Diffusion Language Models (DLMs) from the original $d=4096$ dimensional Value space via cosine similarity to a compressed $r=128$ singular subspace. By dynamically allocating update budgets across layers, it achieves a $6.4\times$ throughput incr
+  [ICML 2026][LLM (Other)][Diffusion LM] SPA-Cache transforms the determination of "which tokens need updating" in Diffusion Language Models (DLMs) from the original $d=4096$ dimensional Value space via cosine similarity to a compressed $r=128$ singular subspace. By dynamically allocating update budgets across layers, it achieves a $6.4\times$ throughput increase for LLaDA-8B on GSM8K and $8\times$ on MBPP without accuracy loss. Combined with parallel decoding…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Diffusion LM
-  - KV Cache
-  - Inference Acceleration
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Diffusion LM"
+  - "KV Cache"
+  - "Singular Value Decomposition"
+  - "Adaptive Budget"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: b1dc75525138d235
+content_hash: 6e630c8415ea8383
 ---
+
 # SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models
 
 **Conference**: ICML 2026  
@@ -144,14 +147,13 @@ Rank Scanning: $r=4096$ (Value) 178.4 → $r=512$ 172.6 → $r=256$ 176.4 → $r
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
 - [\[ICLR 2026\] Stopping Computation for Converged Tokens in Masked Diffusion-LM Decoding](../../ICLR2026/llm_nlp/stopping_computation_for_converged_tokens_in_masked_diffusion-lm_decoding.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
-- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](../../ICLR2026/llm_nlp/dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
+- [\[ICML 2026\] YAQA: End-to-End KL Minimizing Adaptive Weight Quantization for LLMs](model-preserving_adaptive_rounding.md)
+- [\[ICML 2026\] Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models](masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models.md)
 - [\[ICML 2026\] Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)
 
 </div>

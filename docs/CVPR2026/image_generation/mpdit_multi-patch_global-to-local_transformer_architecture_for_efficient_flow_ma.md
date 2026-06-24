@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] MPDiT is proposed as a multi-scale patch global-to-local Diffusion Transformer architecture. It utilizes large patches ($4 \times 4$) in the early stages to process global context with only 64 tokens, followed by upsampling to small patches ($2 \times 2$) with 256 tokens in the later stages to refine local details. Thi
+  [CVPR 2026][Image Generation][Diffusion Transformer] MPDiT is proposed as a multi-scale patch global-to-local Diffusion Transformer architecture. It utilizes large patches ($4 \times 4$) in the early stages to process global context with only 64 tokens, followed by upsampling to small patches ($2 \times 2$) with 256 tokens in the later stages to refine local details. This design reduces GFLOPs by up to 50%, with the XL model achieving an FID of 2.05 (cfg) within 240 epochs.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Transformer"
+  - "Flow Matching"
+  - "Multi-scale patch"
+  - "Efficient architecture"
 date: 2026-05-08
-content_hash: 4436441810722c5a
+content_hash: e269491647e5cf03
 ---
+
 # MPDiT: Multi-Patch Global-to-Local Transformer Architecture for Efficient Flow Matching
 
 **Conference**: CVPR 2026  
@@ -154,10 +158,10 @@ To address the limited representation of traditional sinusoidal + MLP embeddings
 ## Related Papers
 
 - [\[CVPR 2026\] DDiT: Dynamic Patch Scheduling for Efficient Diffusion Transformers](ddit_dynamic_patch_scheduling_for_efficient_diffusion_transformers.md)
+- [\[CVPR 2026\] Learning Straight Flows: Variational Flow Matching for Efficient Generation](learning_straight_flows_variational_flow_matching_for_efficient_generation.md)
+- [\[CVPR 2026\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](ditic_aligned_diffusion_transformer_for_efficient.md)
+- [\[CVPR 2026\] LogCD: Local-to-global Consistency Distillation for Few-step Image Generation](logcd_local-to-global_consistency_distillation_for_few-step_image_generation.md)
 - [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
-- [\[CVPR 2026\] Memory-Efficient Fine-Tuning Diffusion Transformers via Dynamic Patch Sampling and Block Skipping](memory-efficient_fine-tuning_diffusion_transformers_via_dynamic_patch_sampling_a.md)
-- [\[CVPR 2026\] Spatiotemporal Pyramid Flow Matching for Climate Emulation](spatiotemporal_pyramid_flow_matching_for_climate_emulation.md)
-- [\[CVPR 2026\] When Local Rules Create Global Order: Self-Organized Representation Learning for Latent Diffusion Models](when_local_rules_create_global_order_self-organized_representation_learning_for_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching
 description: >-
-  [ICML 2026][Video Generation][Inference Acceleration] WorldCache addresses the issue of non-uniform evolution of multimodal tokens (such as RGB and depth) in diffusion world models. By categorizing tokens into stable, linear, and chaotic types based on curvature and adaptively triggering full forward passes, it achieves up to 3.65x to 3.7x end-to-end acceleration on model
+  [ICML 2026][Video Generation][Diffusion World Models] WorldCache addresses the issue of non-uniform evolution of multimodal tokens (such as RGB and depth) in diffusion world models. By categorizing tokens into stable, linear, and chaotic types based on curvature and adaptively triggering full forward passes, it achieves up to 3.65x to 3.7x end-to-end acceleration on models like HunyuanVoyager and Aether, while substantially maintaining the quality of world generation and 3D r…
 tags:
-  - ICML 2026
-  - Video Generation
-  - Inference Acceleration
+  - "ICML 2026"
+  - "Video Generation"
+  - "Diffusion World Models"
+  - "Feature Caching"
+  - "Heterogeneous Tokens"
+  - "Adaptive Step Skipping"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: c5cc3c02c0babffd
+content_hash: 1f9e358a806f3e7a
 ---
+
 # WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching
 
 **Conference**: ICML 2026  
@@ -149,10 +154,10 @@ Ablations verify that token prediction must be curvature-heterogeneous and skipp
 ## Related Papers
 
 - [\[CVPR 2026\] Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep](../../CVPR2026/video_generation/accelerating_diffusion-based_video_editing_via_heterogeneous_caching_beyond_full.md)
+- [\[ICLR 2026\] BWCache: Accelerating Video Diffusion Transformers through Block-Wise Caching](../../ICLR2026/video_generation/bwcache_accelerating_video_diffusion_transformers_through_block-wise_caching.md)
 - [\[CVPR 2026\] DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching](../../CVPR2026/video_generation/disca_accelerating_video_diffusion_transformers_wi.md)
 - [\[ICML 2026\] Exploring Data-Free LoRA Transferability for Video Diffusion Models](exploring_data-free_lora_transferability_for_video_diffusion_models.md)
 - [\[ICML 2026\] Light Forcing: Accelerating Autoregressive Video Diffusion via Sparse Attention](light_forcing_accelerating_autoregressive_video_diffusion_via_sparse_attention.md)
-- [\[ICML 2026\] OLAF-World: Orienting Latent Actions for Video World Modeling](olaf-world_orienting_latent_actions_for_video_world_modeling.md)
 
 </div>
 

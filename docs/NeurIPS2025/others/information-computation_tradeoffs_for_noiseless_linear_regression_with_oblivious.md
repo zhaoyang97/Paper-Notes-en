@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination
 description: >-
-  [NeurIPS 2025][Information-computation tradeoff] For noiseless linear regression under the oblivious contamination model, this paper formally proves that any efficient Statistical Query algorithm requires VSTAT complexit…
+  [NeurIPS 2025][Information-computation tradeoff] For noiseless linear regression under the oblivious contamination model, this paper formally proves that any efficient Statistical Query algorithm requires VSTAT complexity at least $\tilde{\Omega}(d^{1/2}/\alpha^2)$, providing evidence that the quadratic dependence on $1/\alpha$ constitutes an essential computational lower bound for efficient algorithms.
 tags:
   - "NeurIPS 2025"
   - "Information-computation tradeoff"
@@ -11,7 +11,7 @@ tags:
   - "statistical query"
   - "computational lower bounds"
 date: 2026-05-08
-content_hash: 7a62149b9e3ee620
+content_hash: cdcd5f0680354588
 ---
 
 # Information-Computation Tradeoffs for Noiseless Linear Regression with Oblivious Contamination
@@ -172,7 +172,7 @@ The lower bound matches the known upper bound in the $1/\alpha$ dependence (quad
 - [\[AAAI 2026\] Online Linear Regression with Paid Stochastic Features](../../AAAI2026/others/online_linear_regression_with_paid_stochastic_features.md)
 - [\[NeurIPS 2025\] Statistical Inference for Gradient Boosting Regression](statistical_inference_for_gradient_boosting_regression.md)
 - [\[NeurIPS 2025\] Semi-Supervised Regression with Heteroscedastic Pseudo-Labels](semi-supervised_regression_with_heteroscedastic_pseudo-labels.md)
-- [\[NeurIPS 2025\] Generalized Linear Mode Connectivity for Transformers](generalized_linear_mode_connectivity_for_transformers.md)
+- [\[NeurIPS 2025\] Modeling Neural Activity with Conditionally Linear Dynamical Systems](modeling_neural_activity_with_conditionally_linear_dynamical_systems.md)
 
 </div>
 

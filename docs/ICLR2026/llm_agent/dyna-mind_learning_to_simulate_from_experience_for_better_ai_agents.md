@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dyna-Mind: Learning to Simulate from Experience for Better AI Agents
 description: >-
-  [ICLR 2026][LLM Agent][GRPO] Dyna-Mind teaches (V)LM agents to perform mental simulations of future states before acting by "compressing real environment search trees into reasoning trajectories" (RESIM). It then employs Dyna-GRPO, which feeds "ground-truth future states" back into online RL to reinforce simulation capabilities, significantly outp
+  [ICLR2026][LLM Agent][Agents] Dyna-Mind teaches (V)LM agents to perform mental simulations of future states before acting by "compressing real environment search trees into reasoning trajectories" (RESIM). It then employs Dyna-GRPO, which feeds "ground-truth future states" back into online RL to reinforce simulation capabilities, significantly outperforming GRPO/RLOO and Dyna-Think on Sokoban, ALFWorld, and AndroidWorld.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GRPO
-  - World Models
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Agents"
+  - "Mental Simulation"
+  - "Long-horizon Tasks"
+  - "GRPO"
+  - "World Models"
 date: 2026-05-08
-content_hash: aabaa5341cbe67bc
+content_hash: f577863911ab8844
 ---
+
 # Dyna-Mind: Learning to Simulate from Experience for Better AI Agents
 
 **Conference**: ICLR2026  
@@ -154,8 +158,8 @@ Simulation Score (Sim Score $\in[0,1]$, judged by Qwen3-235B by comparing "hallu
 - [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](scaling_agent_learning_via_experience_synthesis.md)
 - [\[CVPR 2026\] Learning to Select Visual Tools from Experience](../../CVPR2026/llm_agent/learning_to_select_visual_tools_from_experience.md)
 - [\[ICLR 2026\] Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind](dancing_in_chains_strategic_persuasion_in_academic_rebuttal_via_theory_of_mind.md)
+- [\[ICLR 2026\] Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents](memory-t1_reinforcement_learning_for_temporal_reasoning_in_multi-session_agents.md)
 - [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](../../ICML2026/llm_agent/skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
-- [\[ICML 2026\] Closing the Feedback Loop: From Experience Extraction to Insight Governance in Verbal Reinforcement Learning](../../ICML2026/llm_agent/closing_the_feedback_loop_from_experience_extraction_to_insight_governance_in_ve.md)
 
 </div>
 

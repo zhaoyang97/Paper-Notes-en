@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] PointThinker enables Multimodal Large Language Models (MLLM) to explicitly list multiple "key points" in an image during inference and develop independent reasoning paths around each point, thereby amplifying the diversity of parallel thinking. It employs a point-level dense reward RL method, GPPO, which assigns differ
+  [CVPR 2026][VLM Reasoning][Parallel Thinking] PointThinker enables Multimodal Large Language Models (MLLM) to explicitly list multiple "key points" in an image during inference and develop independent reasoning paths around each point, thereby amplifying the diversity of parallel thinking. It employs a point-level dense reward RL method, GPPO, which assigns different rewards to "useful points" and "ineffective points" within the same thinking chain. This method improves Qwen2…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Parallel Thinking"
+  - "Multimodal Reasoning"
+  - "Reinforcement Learning"
+  - "Dense Reward"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: b64ba61324d024cf
+content_hash: fe97b5885cec2fd9
 ---
+
 # PointThinker: Point-Incentivized Parallel Thinking for Multimodal Large Language Model
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Another comparison (Tab. 3) evaluated "Naive Parallel vs. Point-Incentivized Par
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](../../NeurIPS2025/vlm_reasoning/act_as_human_multimodal_large_language_model_data_annotation.md)
 - [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
-- [\[CVPR 2026\] Parallel In-context Learning for Large Vision Language Models](parallel_in-context_learning_for_large_vision_language_models.md)
 - [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
-- [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
+- [\[ICLR 2026\] SportR: A Benchmark for Multimodal Large Language Model Reasoning in Sports](../../ICLR2026/vlm_reasoning/sportr_a_benchmark_for_multimodal_large_language_model_reasoning_in_sports.md)
 
 </div>
 

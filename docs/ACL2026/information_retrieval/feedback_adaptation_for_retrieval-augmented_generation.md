@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Feedback Adaptation for Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG] This paper proposes "Feedback Adaptation" as a new problem setting for RAG systems—investigating how quickly and effectively corrective feedback propagates to future queries. It defines two evaluation axes: correction latency and post-feedback performance, and introduces PatchRAG as a training-free inference-time feedb
+  [ACL 2026 Findings][Information Retrieval & RAG][RAG] This paper proposes "Feedback Adaptation" as a new problem setting for RAG systems—investigating how quickly and effectively corrective feedback propagates to future queries. It defines two evaluation axes: correction latency and post-feedback performance, and introduces PatchRAG as a training-free inference-time feedback integration solution to achieve instant correction and strong generalization.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - RAG
-  - PatchRAG
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "RAG"
+  - "Feedback Adaptation"
+  - "Correction Latency"
+  - "PatchRAG"
+  - "Online Learning"
 date: 2026-05-08
-content_hash: 91509dd1f9eb72ef
+content_hash: cbee2bd9f8653677
 ---
+
 # Feedback Adaptation for Retrieval-Augmented Generation
 
 **Conference**: ACL 2026 Findings  

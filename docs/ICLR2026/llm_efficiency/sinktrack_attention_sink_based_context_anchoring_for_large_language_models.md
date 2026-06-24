@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SinkTrack: Attention Sink based Context Anchoring for Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] SinkTrack transforms the naturally stable `<BOS>` attention sink in decoder-only LLMs into a context anchor. By utilizing training-free dual-track cross-attention to inject input context into `<BOS>` during the prefill stage, it mitigates hallucinations and long-context forgetting with almost zero additional decoding o
+  [ICLR 2026][LLM Efficiency][Attention Sink] SinkTrack transforms the naturally stable `<BOS>` attention sink in decoder-only LLMs into a context anchor. By utilizing training-free dual-track cross-attention to inject input context into `<BOS>` during the prefill stage, it mitigates hallucinations and long-context forgetting with almost zero additional decoding overhead.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Attention Sink"
+  - "Context Anchoring"
+  - "Long Context Reasoning"
+  - "Inference-time Intervention"
+  - "Hallucination Mitigation"
 date: 2026-05-08
-content_hash: 221ff31acd5a5822
+content_hash: 760c69e26f9dbd7c
 ---
+
 # SinkTrack: Attention Sink based Context Anchoring for Large Language Models
 
 **Conference**: ICLR 2026  
@@ -132,14 +138,14 @@ Evaluations were conducted on four multimodal and two text datasets. Multimodal 
 - Value: ⭐⭐⭐⭐⭐ Training-free, low overhead, and plug-and-play for reliability and hallucination mitigation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] UltraLLaDA: Scaling the Context Length to 128K for Diffusion Large Language Models](ultrallada_scaling_the_context_length_to_128k_for_diffusion_large_language_model.md)
 - [\[ICLR 2026\] SparseD: Sparse Attention for Diffusion Language Models](sparsed_sparse_attention_for_diffusion_language_models.md)
-- [\[ACL 2026\] 阈值差分注意力：无 Sink、超稀疏且非分散的长上下文注意力](../../ACL2026/llm_efficiency/threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
+- [\[ACL 2026\] Threshold Differential Attention: Sink-free, Ultra-sparse, and Non-dispersive Long-context Attention](../../ACL2026/llm_efficiency/threshold_differential_attention_for_sink-free_ultra-sparse_and_non-dispersive_l.md)
 - [\[ICLR 2026\] DND: Boosting Large Language Models with Dynamic Nested Depth](dnd_boosting_large_language_models_with_dynamic_nested_depth.md)
 - [\[ICLR 2026\] KnowProxy: Adapting Large Language Models by Knowledge-guided Proxy](knowproxy_adapting_large_language_models_by_knowledge-guided_proxy.md)
 

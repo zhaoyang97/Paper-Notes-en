@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DeepFRC: An End-to-End Deep Learning Model for Functional Registration and Classification
 description: >-
-  [ICLR 2026][Time Series][Paper Note] DeepFRC integrates "curve registration (alignment)" and "curve classification" into a single end-to-end deep network for joint training. This model employs a 1D-CNN to learn diffeomorphic time warping, utilizes Fourier bases for smooth spectral embedding, and applies a class-aware contrastive loss to unify alignment an
+  [ICLR2026][Time Series][Functional data analysis] DeepFRC integrates "curve registration (alignment)" and "curve classification" into a single end-to-end deep network for joint training. This model employs a 1D-CNN to learn diffeomorphic time warping, utilizes Fourier bases for smooth spectral embedding, and applies a class-aware contrastive loss to unify alignment and classification. This work provides the first theoretical registration approximation and generalization bound…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR2026"
+  - "Time Series"
+  - "Functional data analysis"
+  - "curve registration"
+  - "diffeomorphic warping"
+  - "Fourier spectral representation"
+  - "contrastive alignment"
 date: 2026-05-08
-content_hash: 1770d2ba18faf440
+content_hash: 530415dadccbafff
 ---
+
 # DeepFRC: An End-to-End Deep Learning Model for Functional Registration and Classification
 
 **Conference**: ICLR2026  

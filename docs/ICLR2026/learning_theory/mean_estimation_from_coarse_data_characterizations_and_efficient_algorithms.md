@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Mean Estimation from Coarse Data: Characterizations and Efficient Algorithms
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] The paper resolves two open problems regarding "coarsened Gaussian mean estimation" under convex partitions—providing a geometric characterization of identifiability (unidentifiable $\Longleftrightarrow$ almost all partition sets are "slabs" in the same direction) and offering the first polynomial-time algorithm that m
+  [ICLR 2026][Learning Theory][Coarsened data] The paper resolves two open problems regarding "coarsened Gaussian mean estimation" under convex partitions—providing a geometric characterization of identifiability (unidentifiable $\Longleftrightarrow$ almost all partition sets are "slabs" in the same direction) and offering the first polynomial-time algorithm that matches the optimal sample complexity.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Statistical Estimation"
+  - "Coarsened data"
+  - "Gaussian mean estimation"
+  - "identifiability"
+  - "convex partition"
+  - "SGD"
+  - "log-likelihood"
 date: 2026-05-08
-content_hash: 58b2c2dff33d979f
+content_hash: fa2bec5fab2dfde4
 ---
+
 # Mean Estimation from Coarse Data: Characterizations and Efficient Algorithms
 
 **Conference**: ICLR 2026  
@@ -120,9 +128,9 @@ When $\alpha=\Omega(1)$ and given a warm start $D=O(1)$, this work achieves an $
 
 - [\[ICLR 2026\] Revisiting Active Sequential Prediction-Powered Mean Estimation](revisiting_active_sequential_prediction-powered_mean_estimation.md)
 - [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
 - [\[ICLR 2026\] Tight Bounds for Schrödinger Potential Estimation in Unpaired Data Translation](tight_bounds_for_schrodinger_potential_estimation_in_unpaired_data_translation.md)
 - [\[ICLR 2026\] Efficient Turing Machine Simulation with Transformers](efficient_turing_machine_simulation_with_transformers.md)
-- [\[ICLR 2026\] Information Estimation with Discrete Diffusion](information_estimation_with_discrete_diffusion.md)
 
 </div>
 

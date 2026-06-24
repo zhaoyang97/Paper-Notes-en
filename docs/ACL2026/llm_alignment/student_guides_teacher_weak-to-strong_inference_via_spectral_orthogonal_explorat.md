@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Student Guides Teacher: Weak-to-Strong Inference via Spectral Orthogonal Exploration
 description: >-
-  [ACL 2026][Alignment & RLHF][Reasoning Collapse] This paper interprets the phenomenon of LLMs repeatedly sampling along the same incorrect logic on difficult problems as low-rank collapse of hidden states. It proposes Spectral Orthogonal Exploration (SOE): using a weak student model to provide short probes orthogonal to the teacher's current dominant subspace, forcin
+  [ACL 2026][LLM Alignment][Reasoning Collapse] This paper interprets the phenomenon of LLMs repeatedly sampling along the same incorrect logic on difficult problems as low-rank collapse of hidden states. It proposes Spectral Orthogonal Exploration (SOE): using a weak student model to provide short probes orthogonal to the teacher's current dominant subspace, forcing the teacher to leap out of the original bias manifold. This improves Pass@16 on difficult subsets of AIME/MATH/O…
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - Reasoning Collapse
-  - Spectral Orthogonal Exploration
-  - Weak-to-Strong
-  - Micro-SVD
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Reasoning Collapse"
+  - "Spectral Orthogonal Exploration"
+  - "Weak-to-Strong"
+  - "Micro-SVD"
+  - "Test-time Intervention"
 date: 2026-05-08
-content_hash: 7d717a7d01f84f16
+content_hash: 01ba922e44dd6951
 ---
+
 # Student Guides Teacher: Weak-to-Strong Inference via Spectral Orthogonal Exploration
 
 **Conference**: ACL 2026  
@@ -156,10 +158,10 @@ Considering a ~12.8% runtime overhead under vLLM, SOE still outperforms self-con
 
 ## Related Papers
 
+- [\[ICLR 2026\] Weak-to-Strong Generalization with Failure Trajectories](../../ICLR2026/llm_alignment/weak-to-strong_generalization_with_failure_trajectories.md)
 - [\[AAAI 2026\] W2S-AlignTree: Weak-to-Strong Inference-Time Alignment for Large Language Models via Monte Carlo Tree Search](../../AAAI2026/llm_alignment/w2s-aligntree_weak-to-strong_inference-time_alignment_for_large_language_models_.md)
 - [\[ACL 2025\] Synergistic Weak-Strong Collaboration by Aligning Preferences](../../ACL2025/llm_alignment/synergistic_weak-strong_collaboration_by_aligning_preferences.md)
 - [\[ACL 2026\] Debiasing Reward Models via Causally Motivated Inference-Time Intervention](debiasing_reward_models_via_causally_motivated_inference-time_intervention.md)
-- [\[ICLR 2026\] General Exploratory Bonus for Optimistic Exploration in RLHF](../../ICLR2026/llm_alignment/general_exploratory_bonus_for_optimistic_exploration_in_rlhf.md)
 - [\[ACL 2026\] To Intervene or Not: Guiding Inference-time Alignment with Probabilistic Model Blending](to_intervene_or_not_guiding_inference-time_alignment_with_probabilistic_model_bl.md)
 
 </div>

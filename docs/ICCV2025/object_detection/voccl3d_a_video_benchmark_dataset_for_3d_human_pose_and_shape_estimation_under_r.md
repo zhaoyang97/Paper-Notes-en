@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions
 description: >-
-  [ICCV 2025][Object Detection][Human Pose Estimation] This paper presents VOccl3D, a large-scale synthetic video dataset (250K frames, 400 video sequences) rendered via 3DGS…
+  [ICCV 2025][Object Detection][Human Pose Estimation] This paper presents VOccl3D, a large-scale synthetic video dataset (250K frames, 400 video sequences) rendered via 3DGS, targeting 3D human pose and shape (HPS) estimation under realistic occlusion scenarios. Models fine-tuned on VOccl3D demonstrate significant performance improvements in occluded settings.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian Splatting"
   - "SMPL-X"
 date: 2026-05-08
-content_hash: 7e33883b4ad89ebc
+content_hash: 763783e456733794
 ---
 
 # VOccl3D: A Video Benchmark Dataset for 3D Human Pose and Shape Estimation under Real Occlusions
@@ -157,11 +157,11 @@ VOccl3D-B-CLIFF reduces Hard-Occlusion MPJPE by approximately **18.5 mm** compar
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] BurstDeflicker: A Benchmark Dataset for Flicker Removal in Dynamic Scenes](../../NeurIPS2025/object_detection/burstdeflicker_a_benchmark_dataset_for_flicker_removal_in_dynamic_scenes.md)
+- [\[CVPR 2025\] ProbPose: A Probabilistic Approach to 2D Human Pose Estimation](../../CVPR2025/object_detection/probpose_a_probabilistic_approach_to_2d_human_pose_estimation.md)
 - [\[ICCV 2025\] 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection](3dmood_lifting_2d_to_3d_for_monocular_openset_object_detecti.md)
 - [\[ICCV 2025\] YOLOE: Real-Time Seeing Anything](yoloe_realtime_seeing_anything.md)
-- [\[ICLR 2026\] ForestPersons: A Large-Scale Dataset for Under-Canopy Missing Person Detection](../../ICLR2026/object_detection/forestpersons_a_large-scale_dataset_for_under-canopy_missing_person_detection.md)
 - [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](large-scale_pre-training_for_grounded_video_caption_generation.md)
+- [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 
 </div>
 

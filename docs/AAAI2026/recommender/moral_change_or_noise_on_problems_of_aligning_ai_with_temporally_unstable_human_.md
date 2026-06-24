@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback
 description: >-
-  [AAAI 2026][Recommender Systems][AI Alignment] Through a longitudinal study involving 400+ participants across 3–5 sessions in the domain of kidney transplant allocation…
+  [AAAI 2026][Recommender Systems][AI Alignment] Through a longitudinal study involving 400+ participants across 3–5 sessions in the domain of kidney transplant allocation, this paper reveals significant temporal instability in human moral preferences (6–20% response change rate) and demonstrates that such instability substantially degrades the predictive performance of AI alignment models, thereby challenging the validity of current alignment approaches that assume static pref…
 tags:
   - "AAAI 2026"
   - "Recommender Systems"
@@ -12,7 +12,7 @@ tags:
   - "Temporal Dynamics"
   - "Kidney Allocation"
 date: 2026-05-08
-content_hash: ab8496401adfcc0d
+content_hash: a5f50ef4728da57d
 ---
 
 # Moral Change or Noise? On Problems of Aligning AI With Temporally Unstable Human Feedback
@@ -181,9 +181,9 @@ Key statistics:
 
 - [\[AAAI 2026\] Preference is More Than Comparisons: Rethinking Dueling Bandits with Augmented Human Feedback](preference_is_more_than_comparisons_rethinking_dueling_bandits_with_augmented_hu.md)
 - [\[NeurIPS 2025\] Position: Towards Bidirectional Human-AI Alignment](../../NeurIPS2025/recommender/position_towards_bidirectional_human-ai_alignment.md)
+- [\[ICML 2025\] RLTHF: Targeted Human Feedback for LLM Alignment](../../ICML2025/recommender/rlthf_targeted_human_feedback_for_llm_alignment.md)
 - [\[AAAI 2026\] Inference-Aware Prompt Optimization for Aligning Black-Box Large Language Models](inference-aware_prompt_optimization_for_aligning_black-box_large_language_models.md)
 - [\[NeurIPS 2025\] EMPATHIA: Multi-Faceted Human-AI Collaboration for Refugee Integration](../../NeurIPS2025/recommender/empathia_multi-faceted_human-ai_collaboration_for_refugee_integration.md)
-- [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
 
 </div>
 

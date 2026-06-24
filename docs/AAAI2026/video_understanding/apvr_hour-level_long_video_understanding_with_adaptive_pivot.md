@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval
 description: >-
-  [AAAI 2026][Video Understanding][long video understanding] This paper proposes APVR, a training-free dual-granularity visual information retrieval framework. At the frame level…
+  [AAAI 2026][Video Understanding][long video understanding] This paper proposes APVR, a training-free dual-granularity visual information retrieval framework. At the frame level, it iteratively retrieves keyframes (up to 1024) via query expansion and spatiotemporal semantic confidence scoring; at the token level, it compresses visual tokens through query-aware attention-driven selection. APVR overcomes memory limitations to process hour-long videos…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "token compression"
   - "dual-granularity retrieval"
 date: 2026-05-08
-content_hash: a69bc1106365da65
+content_hash: da20eba1d1714bca
 ---
 
 # APVR: Hour-Level Long Video Understanding with Adaptive Pivot Visual Information Retrieval
@@ -117,10 +117,10 @@ The core advantage of APVR lies in its **dual-granularity** design — joint opt
 ## Related Papers
 
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
-- [\[AAAI 2026\] MambaMia: State-Space Hierarchical Compression for Hour-Long Video Understanding in Large Multimodal Models](state-space_hierarchical_compression_with_gated_attention_an.md)
 - [\[NeurIPS 2025\] AdaVideoRAG: Omni-Contextual Adaptive Retrieval-Augmented Efficient Long Video Understanding](../../NeurIPS2025/video_understanding/adavideorag_omnicontextual_adaptive_retrievalaugmented_effic.md)
 - [\[AAAI 2026\] ReaSon: Reinforced Causal Search with Information Bottleneck for Video Understanding](reason_reinforced_causal_search_with_information_bottleneck_for_video_understand.md)
-- [\[NeurIPS 2025\] Unleashing Hour-Scale Video Training for Long Video-Language Understanding](../../NeurIPS2025/video_understanding/unleashing_hour-scale_video_training_for_long_video-language_understanding.md)
+- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](../../ICLR2026/video_understanding/a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
+- [\[CVPR 2025\] DrVideo: Document Retrieval Based Long Video Understanding](../../CVPR2025/video_understanding/drvideo_document_retrieval_based_long_video_understanding.md)
 
 </div>
 

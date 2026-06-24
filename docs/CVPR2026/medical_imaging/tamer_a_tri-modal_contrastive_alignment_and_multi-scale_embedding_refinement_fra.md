@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TAMER: A Tri-Modal Contrastive Alignment and Multi-Scale Embedding Refinement Framework for Zero-Shot ECG Diagnosis
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] TAMER treats Electrocardiogram (ECG) waveforms, STFT spectrograms, and clinical diagnostic reports as three complementary modalities for self-supervised pre-training. Through "time-frequency" global/local alignment and "report-anchored" diagnostic-level and waveform-level refinement, it achieves State-of-the-Art (SOTA)
+  [CVPR 2026][Medical Imaging][ECG diagnosis] TAMER treats Electrocardiogram (ECG) waveforms, STFT spectrograms, and clinical diagnostic reports as three complementary modalities for self-supervised pre-training. Through "time-frequency" global/local alignment and "report-anchored" diagnostic-level and waveform-level refinement, it achieves State-of-the-Art (SOTA) performance in zero-shot classification (81.2% average AUC) and cross-domain transfer (83.1%) across three public d…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "ECG diagnosis"
+  - "Zero-shot"
+  - "Tri-modal contrastive learning"
+  - "Time-frequency alignment"
+  - "Report-guided refinement"
 date: 2026-05-08
-content_hash: e198e4e9b688f577
+content_hash: 00e091086836eb85
 ---
+
 # TAMER: A Tri-Modal Contrastive Alignment and Multi-Scale Embedding Refinement Framework for Zero-Shot ECG Diagnosis
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ TAMER leads overall. A notable exception: in PTBXL-Super→CSN transfer, ST-MEM 
 ## Related Papers
 
 - [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
+- [\[ICLR 2026\] Joint Adaptation of Uni-modal Foundation Models for Multi-modal Alzheimer's Disease Diagnosis](../../ICLR2026/medical_imaging/joint_adaptation_of_uni-modal_foundation_models_for_multi-modal_alzheimers_disea.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
 - [\[ICML 2025\] From Token to Rhythm: A Multi-Scale Approach for ECG-Language Pretraining](../../ICML2025/medical_imaging/from_token_to_rhythm_a_multi-scale_approach_for_ecg-language_pretraining.md)
 - [\[AAAI 2026\] PulseMind: A Multi-Modal Medical Model for Real-World Clinical Diagnosis](../../AAAI2026/medical_imaging/pulsemind_a_multi-modal_medical_model_for_real-world_clinical_diagnosis.md)
-- [\[CVPR 2026\] A Semi-Supervised Framework for Breast Ultrasound Segmentation with Training-Free Pseudo-Label Generation and Label Refinement](a_semi-supervised_framework_for_breast_ultrasound_segmentation_with_training-fre.md)
 
 </div>
 

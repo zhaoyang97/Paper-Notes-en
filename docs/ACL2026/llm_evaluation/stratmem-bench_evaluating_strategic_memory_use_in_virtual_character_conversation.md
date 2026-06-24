@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall
 description: >-
-  [ACL 2026][LLM Evaluation][strategic memory use] StratMem-Bench categorizes memories in virtual character conversations into three types: *must*, *nice*, and *irr*. It evaluates whether models can actively incorporate beneficial memories and suppress irrelevant ones while ensuring factual requirements are met. The results reveal that current powerful LLMs remains sig
+  [ACL2026][LLM Evaluation][strategic memory use] StratMem-Bench categorizes memories in virtual character conversations into three types: *must*, *nice*, and *irr*. It evaluates whether models can actively incorporate beneficial memories and suppress irrelevant ones while ensuring factual requirements are met. The results reveal that current powerful LLMs remains significantly unstable in "supportive memory selection."
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - strategic memory use
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "strategic memory use"
+  - "virtual characters"
+  - "long-term conversation"
+  - "memory selection"
 date: 2026-05-08
-content_hash: c8d86eb8e71a365e
+content_hash: 59fa52946f24066c
 ---
+
 # StratMem-Bench: Evaluating Strategic Memory Use in Virtual Character Conversation Beyond Factual Recall
 
 **Conference**: ACL2026  
@@ -117,16 +121,16 @@ This analysis decomposes behavioral dimensions as a diagnostic tool.
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 - [\[ACL 2026\] Evaluating Memory Capability in Continuous Lifelog Scenario](evaluating_memory_capability_in_continuous_lifelog_scenario.md)
-- [\[ACL 2026\] Stress Testing Factual Consistency Metrics for Long-Document Summarization](stress_testing_factual_consistency_metrics_for_long-document_summarization.md)
-- [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](../../AAAI2026/llm_evaluation/beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
 - [\[ICLR 2026\] Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](../../ICLR2026/llm_evaluation/beyond_a_million_tokens_benchmarking_and_enhancing_long-term_memory_in_llms.md)
+- [\[AAAI 2026\] Beyond Accuracy: A Cognitive Load Framework for Mapping the Capability Boundaries of Tool-use Agents](../../AAAI2026/llm_evaluation/beyond_accuracy_a_cognitive_load_framework_for_mapping_the_c.md)
+- [\[ACL 2026\] Beyond Case Law: Evaluating Structure-Aware Retrieval and Safety in Statute-Centric Legal QA](beyond_case_law_evaluating_structure-aware_retrieval_and_safety_in_statute-centr.md)
 
 </div>
 

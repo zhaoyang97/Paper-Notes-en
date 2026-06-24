@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background
 description: >-
-  [ICML 2026][Segmentation][Paper Note] To address the challenges of "cluttered backgrounds + translucent/deformable waste + heavy existing backbones" in automated waste recycling, this paper proposes EWSegNet: a lightweight segmentation network that utilizes **spatial domain modules for local structures and frequency domain modules for global context** thro
+  [ICML 2026][Segmentation][Waste Segmentation] To address the challenges of "cluttered backgrounds + translucent/deformable waste + heavy existing backbones" in automated waste recycling, this paper proposes EWSegNet: a lightweight segmentation network that utilizes **spatial domain modules for local structures and frequency domain modules for global context** through cascaded complementarity. It further incorporates an Auxiliary Feature Enhancement Module (AFEM) using **Diffe…
 tags:
-  - ICML 2026
-  - Segmentation
+  - "ICML 2026"
+  - "Segmentation"
+  - "Waste Segmentation"
+  - "Frequency Domain Context"
+  - "Difference of Gaussians"
+  - "Boundary Enhancement"
+  - "Lightweight Segmentation"
 date: 2026-05-08
-content_hash: 5fc389dc72d6e0da
+content_hash: cb78fd9ad28e2216
 ---
+
 # Towards Effective Waste Segmentation for Automated Waste Recycling in Cluttered Background
 
 **Conference**: ICML 2026  

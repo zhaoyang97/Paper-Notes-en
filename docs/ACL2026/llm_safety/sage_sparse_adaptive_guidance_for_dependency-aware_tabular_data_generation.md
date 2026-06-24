@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SAGE: Sparse Adaptive Guidance for Dependency-Aware Tabular Data Generation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] SAGE discretizes tabular features into value-aware pseudo-features and constructs a sparse dynamic dependency graph based on mutual information to guide LLM generation, thereby enhancing downstream utility, constraint consistency, and realism of synthetic tabular data.
+  [ACL2026][LLM Safety][Tabular data generation] SAGE discretizes tabular features into value-aware pseudo-features and constructs a sparse dynamic dependency graph based on mutual information to guide LLM generation, thereby enhancing downstream utility, constraint consistency, and realism of synthetic tabular data.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL2026"
+  - "LLM Safety"
+  - "Tabular data generation"
+  - "sparse dependency"
+  - "mutual information"
+  - "dynamic guidance"
+  - "synthetic data quality"
 date: 2026-05-08
-content_hash: 39066e22c29d5123
+content_hash: fe1a46e03d0615bc
 ---
+
 # SAGE: Sparse Adaptive Guidance for Dependency-Aware Tabular Data Generation
 
 **Conference**: ACL2026  
@@ -135,11 +141,11 @@ Experiments cover six datasets: Adult Income, HELOC, Iris, Diabetes, MIC, and Ca
 
 ## Related Papers
 
-- [\[ICLR 2026\] Resource-Adaptive Federated Text Generation with Differential Privacy](../../ICLR2026/llm_safety/resource-adaptive_federated_text_generation_with_differential_privacy.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](../../ICLR2026/llm_safety/tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 - [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
-- [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
-- [\[AAAI 2026\] AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments](../../AAAI2026/llm_safety/agentsense_virtual_sensor_data_generation_using_llm_agents_i.md)
+- [\[ACL 2026\] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)
 - [\[ACL 2026\] CRISP: Persistent Concept Unlearning via Sparse Autoencoders](crisp_persistent_concept_unlearning_via_sparse_autoencoders.md)
+- [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](../../ICLR2026/llm_safety/genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
 
 </div>
 

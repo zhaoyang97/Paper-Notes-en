@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CaTok: Taming Mean Flows for One-Dimensional Causal Image Tokenization
 description: >-
-  [CVPR 2026][Image Generation][1D token] CaTok trains a diffusion autoencoder by binding "selecting 1D tokens within the time interval $[r,t]$" with the "MeanFlow average velocity field objective." This ensures that the compressed 1D visual tokens possess both causality and balance, supporting both fast one-step generation and high-fidelity multi-step reconst
+  [CVPR 2026][Image Generation][Causal image tokenizer] CaTok trains a diffusion autoencoder by binding "selecting 1D tokens within the time interval $[r,t]$" with the "MeanFlow average velocity field objective." This ensures that the compressed 1D visual tokens possess both causality and balance, supporting both fast one-step generation and high-fidelity multi-step reconstruction. It achieves 0.75 rFID / 22.53 PSNR / 0.674 SSIM on ImageNet reconstruction with fewer training ep…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - 1D token
-  - MeanFlow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Causal image tokenizer"
+  - "1D token"
+  - "MeanFlow"
+  - "Diffusion autoencoder"
+  - "Autoregressive generation"
 date: 2026-05-08
-content_hash: 17b1b64cdb54c5b1
+content_hash: e7271093fcc77d12
 ---
+
 # CaTok: Taming Mean Flows for One-Dimensional Causal Image Tokenization
 
 **Conference**: CVPR 2026  
@@ -146,15 +150,16 @@ Ablation of training components (CATOK-B-256, 80 epochs):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Improved Mean Flows: On the Challenges of Fastforward Generative Models](improved_mean_flows_on_the_challenges_of_fastforward_generative_models.md)
 - [\[CVPR 2026\] Evaluating Generative Models via One-Dimensional Code Distributions](evaluating_generative_models_via_one-dimensional_code_distributions.md)
-- [\[CVPR 2026\] EVATok: 自适应长度视频Tokenization用于高效视觉自回归生成](evatok_adaptive_length_video_tokenization_for_eff.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
+- [\[CVPR 2026\] MacTok: Robust Continuous Tokenization for Image Generation](mactok_robust_continuous_tokenization_for_image_generation.md)
 - [\[CVPR 2026\] Functional Mean Flow in Hilbert Space](functional_mean_flow_in_hilbert_space.md)
-- [\[CVPR 2026\] Spherical Leech Quantization for Visual Tokenization and Generation](spherical_leech_quantization_for_visual_tokenization_and_generation.md)
 
 </div>
 

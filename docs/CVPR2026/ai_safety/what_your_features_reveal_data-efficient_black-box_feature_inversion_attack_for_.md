@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs
 description: >-
-  [CVPR 2026][AI Safety][Split DNN] Addressing the intermediate features transmitted in Split DNNs (edge-side head, cloud-side tail), a black-box, data-efficient feature inversion framework called FIA-Flow is proposed. It first uses LFSAM to align task features with the VAE latent space, then utilizes Deterministic Flow Matching (DIFM) to pull "off-manif
+  [CVPR 2026][AI Safety][Feature Inversion Attack] Addressing the intermediate features transmitted in Split DNNs (edge-side head, cloud-side tail), a black-box, data-efficient feature inversion framework called FIA-Flow is proposed. It first uses LFSAM to align task features with the VAE latent space, then utilizes Deterministic Flow Matching (DIFM) to pull "off-manifold" latent codes back to the natural image manifold in a single step. High-fidelity original private images ar…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Split DNN
-  - Flow Matching
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Feature Inversion Attack"
+  - "Split DNN"
+  - "Black-box Attack"
+  - "Flow Matching"
+  - "Privacy Leakage"
 date: 2026-05-08
-content_hash: 2074c3b88506bb0f
+content_hash: 9d3c9a56d8c596e8
 ---
+
 # What Your Features Reveal: Data-Efficient Black-Box Feature Inversion Attack for Split DNNs
 
 **Conference**: CVPR 2026  
@@ -163,7 +167,7 @@ Even against Noise+NoPeek and DISCO mainstream defenses, FIA-Flow effectively by
 - [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
 - [\[CVPR 2026\] Shedding Light on VLN Robustness: A Black-box Framework for Indoor Lighting-based Adversarial Attack](shedding_light_on_vln_robustness_a_black-box_framework_for_indoor_lighting-based.md)
 - [\[CVPR 2026\] VCP-Attack: Visual-Contrastive Projection for Transferable Black-Box Targeted Attacks on Large Vision-Language Models](vcp-attack_visual-contrastive_projection_for_transferable_black-box_targeted_att.md)
-- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
+- [\[ICLR 2026\] Black-Box Privacy Attacks on Shared Representations in Multitask Learning](../../ICLR2026/ai_safety/black-box_privacy_attacks_on_shared_representations_in_multitask_learning.md)
 
 </div>
 

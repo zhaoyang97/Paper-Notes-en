@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Visual-RFT: Visual Reinforcement Fine-Tuning
 description: >-
-  [ICCV 2025][Object Detection][Reinforcement Fine-Tuning] Visual-RFT extends the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm from DeepSeek R1—originally applied to mathematics and code—to visual percept…
+  [ICCV 2025][Object Detection][Reinforcement Fine-Tuning] Visual-RFT extends the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm from DeepSeek R1—originally applied to mathematics and code—to visual perception tasks. It introduces task-specific verifiable reward functions, including an IoU reward for object detection and a CLS reward for classification, achieving substantial improvements over SFT on fine-grained classification, few-shot detection…
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Visual Perception"
   - "Few-Shot Learning"
 date: 2026-05-08
-content_hash: 0e108acaced23420
+content_hash: 861816a721002caf
 ---
 
 # Visual-RFT: Visual Reinforcement Fine-Tuning
@@ -132,11 +132,11 @@ Given an image and a question as input, the policy model (LVLM) generates multip
 
 ## Related Papers
 
+- [\[ICML 2025\] FG-CLIP: Fine-Grained Visual and Textual Alignment](../../ICML2025/object_detection/fg-clip_fine-grained_visual_and_textual_alignment.md)
 - [\[ICCV 2025\] Dynamic-DINO: Fine-Grained Mixture of Experts Tuning for Real-time Open-Vocabulary Object Detection](dynamicdino_finegrained_mixture_of_experts_tuning_for_realti.md)
 - [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 - [\[ICCV 2025\] VisRL: Intention-Driven Visual Perception via Reinforced Reasoning](visrl_intention-driven_visual_perception_via_reinforced_reasoning.md)
 - [\[ICCV 2025\] Visual Modality Prompt for Adapting Vision-Language Object Detectors](visual_modality_prompt_for_adapting_vision-language_object_detectors.md)
-- [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
 
 </div>
 

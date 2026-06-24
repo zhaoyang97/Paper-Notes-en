@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer
 description: >-
-  [ICLR 2026][3D Vision][KVCache] STREAM3R reformulates dense 3D reconstruction as a "frame-by-frame causal attention problem in a decoder-only Transformer." Whenever a new image arrives, it performs causal cross-attention with the cached historical frame features to regress pointmaps. This enables incremental online reconstruction using KVCache and sl
+  [ICLR 2026][3D Vision][Streaming 3D Reconstruction] STREAM3R reformulates dense 3D reconstruction as a "frame-by-frame causal attention problem in a decoder-only Transformer." Whenever a new image arrives, it performs causal cross-attention with the cached historical frame features to regress pointmaps. This enables incremental online reconstruction using KVCache and sliding window attention similar to LLMs, achieving performance superior to or comparable with existing stream…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - KVCache
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Streaming 3D Reconstruction"
+  - "Causal Transformer"
+  - "Pointmap Regression"
+  - "KVCache"
+  - "Dynamic Scenes"
 date: 2026-05-08
-content_hash: 041c0c73e2641400
+content_hash: 7e3d12e396381386
 ---
+
 # STream3R: Scalable Sequential 3D Reconstruction with Causal Transformer
 
 **Conference**: ICLR 2026  
@@ -155,8 +160,8 @@ Comparing the proposed decoder-only architecture against CUT3R’s RNN architect
 - [\[ICLR 2026\] Streaming Visual Geometry Transformer](streaming_visual_geometry_transformer.md)
 - [\[ICLR 2026\] IGGT: Instance-Grounded Geometry Transformer for Semantic 3D Reconstruction](iggt_instance-grounded_geometry_transformer_for_semantic_3d_reconstruction.md)
 - [\[ICLR 2026\] NOVA3R: Non-pixel-aligned Visual Transformer for Amodal 3D Reconstruction](nova3r_non-pixel-aligned_visual_transformer_for_amodal_3d_reconstruction.md)
+- [\[CVPR 2026\] Online3R: Online Learning for Consistent Sequential Reconstruction Based on Geometry Foundation Model](../../CVPR2026/3d_vision/online3r_online_learning_for_consistent_sequential_reconstruction_based_on_geome.md)
 - [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](../../CVPR2026/3d_vision/art_articulated_reconstruction_transformer.md)
-- [\[ICLR 2026\] AssetFormer: Modular 3D Assets Generation with Autoregressive Transformer](assetformer_modular_3d_assets_generation_with_autoregressive_transformer.md)
 
 </div>
 

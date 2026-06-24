@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Alternating Diffusion for Proximal Sampling with Zeroth Order Queries
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper replaces the "reverse denoising" step in proximal sampling—traditionally implemented via rejection sampling—with direct SDE simulation. By using a Gaussian mixture model (GMM) formed by the current particles as a surrogate distribution, it performs Monte Carlo score estimation using only function values (zer
+  [ICLR2026][Sampling Theory][Proximal Sampling] This paper replaces the "reverse denoising" step in proximal sampling—traditionally implemented via rejection sampling—with direct SDE simulation. By using a Gaussian mixture model (GMM) formed by the current particles as a surrogate distribution, it performs Monte Carlo score estimation using only function values (zeroth-order) of $f$. The result is a sampler that requires no gradients, no rejection sampling…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Sampling Theory"
+  - "Probabilistic Methods"
+  - "MCMC"
+  - "Proximal Sampling"
+  - "Zeroth-Order Queries"
+  - "Alternating Diffusion"
+  - "Gaussian Mixture"
+  - "Langevin Sampling"
 date: 2026-05-08
-content_hash: 999bab40f8d6ad18
+content_hash: 61ca312cdfd9da91
 ---
+
 # Alternating Diffusion for Proximal Sampling with Zeroth Order Queries
 
 **Conference**: ICLR2026  
@@ -127,15 +135,14 @@ A second experiment samples uniformly from a **non-convex, disconnected** domain
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Poly-attention: a general scheme for higher-order self-attention](poly-attention_a_general_scheme_for_higher-order_self-attention.md)
 - [\[ICLR 2026\] Sampling Complexity of TD and PPO in RKHS](sampling_complexity_of_td_and_ppo_in_rkhs.md)
-- [\[ICLR 2026\] Diffusion Bridge Variational Inference for Deep Gaussian Processes](diffusion_bridge_variational_inference_for_deep_gaussian_processes.md)
+- [\[ICLR 2026\] Towards Sampling Data Structures for Tensor Products in Turnstile Streams](towards_sampling_data_structures_for_tensor_products_in_turnstile_streams.md)
 - [\[ICLR 2026\] A Unification of Discrete, Gaussian, and Simplicial Diffusion](a_unification_of_discrete_gaussian_and_simplicial_diffusion.md)
-- [\[ICLR 2026\] Stable Coresets: Unleashing the Power of Uniform Sampling](stable_coresets_unleashing_the_power_of_uniform_sampling.md)
+- [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
 
 </div>
 

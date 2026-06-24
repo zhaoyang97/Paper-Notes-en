@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation
 description: >-
-  [ICCV 2025][Audio & Speech][music-driven dance generation] This paper proposes Danceba, a framework comprising three core modules — Phase-based Rhythm Extraction (PRE), Temporal Gated Causal Attention (TGCA)…
+  [ICCV 2025][Audio & Speech][music-driven dance generation] This paper proposes Danceba, a framework comprising three core modules — Phase-based Rhythm Extraction (PRE), Temporal Gated Causal Attention (TGCA), and Parallel Mamba Motion Modeling (PMMM) — to achieve music-driven dance generation with high rhythm alignment and diversity, attaining a 48.68% improvement in FIDk and a 12% improvement in BAS on the AIST++ dataset.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "Mamba"
   - "human motion generation"
 date: 2026-05-08
-content_hash: 29a48c0d865c5244
+content_hash: 178286c1a3fb266a
 ---
 
 # Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation
@@ -130,9 +130,9 @@ Danceba follows the VQ-VAE + autoregressive framework of Bailando: a pre-trained
 
 - [\[NeurIPS 2025\] MEGADance: Mixture-of-Experts Architecture for Genre-Aware 3D Dance Generation](../../NeurIPS2025/audio_speech/megadance_mixture-of-experts_architecture_for_genre-aware_3d_dance_generation.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
+- [\[ICML 2025\] OmniAudio: Generating Spatial Audio from 360-Degree Video](../../ICML2025/audio_speech/omniaudio_generating_spatial_audio_from_360-degree_video.md)
+- [\[CVPR 2025\] ImViD: Immersive Volumetric Videos for Enhanced VR Engagement](../../CVPR2025/audio_speech/imvid_immersive_volumetric_videos_for_enhanced_vr_engagement.md)
 - [\[ACL 2026\] ImmersiveTTS: Environment-Aware Text-to-Speech with Multimodal Diffusion Transformer and Domain-Specific Representation Alignment](../../ACL2026/audio_speech/immersivetts_environment-aware_text-to-speech_with_multimodal_diffusion_transfor.md)
-- [\[ACL 2026\] StressTest: Can YOUR Speech LM Handle the Stress?](../../ACL2026/audio_speech/stresstest_can_your_speech_lm_handle_the_stress.md)
-- [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
 
 </div>
 

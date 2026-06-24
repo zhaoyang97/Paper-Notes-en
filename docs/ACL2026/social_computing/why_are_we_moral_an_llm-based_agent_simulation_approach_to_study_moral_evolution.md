@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Why Are We Moral? An LLM-based Agent Simulation Approach to Study Moral Evolution
 description: >-
-  [ACL 2026][Social Computing][LLM Agent] This paper constructs a prehistoric hunter-gatherer society simulation platform using LLM agents, incorporating moral types, memory, judgment, cooperation, and reproduction into evolutionary experiments. It finds that cooperation and mutual aid generally enhance survival stability, while the cognitive cost of judging o
+  [ACL2026][Social Computing][LLM Agent] This paper constructs a prehistoric hunter-gatherer society simulation platform using LLM agents, incorporating moral types, memory, judgment, cooperation, and reproduction into evolutionary experiments. It finds that cooperation and mutual aid generally enhance survival stability, while the cognitive cost of judging others' moral types dictates which moral strategy prevails.
 tags:
-  - ACL 2026
-  - Social Computing
-  - LLM Agent
+  - "ACL2026"
+  - "Social Computing"
+  - "LLM Agent"
+  - "Moral Evolution"
+  - "Social Simulation"
+  - "Multi-agent Systems"
+  - "Cognitive Architecture"
 date: 2026-05-08
-content_hash: 94bccd27aea57754
+content_hash: b39517e999cc4135
 ---
+
 # Why Are We Moral? An LLM-based Agent Simulation Approach to Study Moral Evolution
 
 **Conference**: ACL2026  
@@ -157,10 +162,10 @@ MoRE segments show that memory, planning, and reflection all contribute to moral
 ## Related Papers
 
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
+- [\[ACL 2026\] Point of Order: Action-Aware LLM Persona Modeling for Realistic Civic Simulation](point_of_order_action-aware_llm_persona_modeling_for_realistic_civic_simulation.md)
 - [\[ACL 2026\] Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation](dynamics_of_cognitive_heterogeneity_investigating_behavioral_biases_in_multi-sta.md)
 - [\[ACL 2026\] MM-StanceDet: Retrieval-Augmented Multi-modal Multi-agent Stance Detection](mm-stancedet_retrieval-augmented_multi-modal_multi-agent_stance_detection.md)
-- [\[ACL 2026\] Point of Order: Action-Aware LLM Persona Modeling for Realistic Civic Simulation](point_of_order_action-aware_llm_persona_modeling_for_realistic_civic_simulation.md)
-- [\[ACL 2026\] Estimating the Black-box LLM Uncertainty with Distribution-Aligned Adversarial Distillation](estimating_the_black-box_llm_uncertainty_with_distribution-aligned_adversarial_d.md)
+- [\[ACL 2026\] Diagnosing LLM Arbitration Behavior over Pre-evidence Epistemic States in RAG-based Fact-Checking](diagnosing_llm_arbitration_behavior_over_pre-evidence_epistemic_states_in_rag-ba.md)
 
 </div>
 

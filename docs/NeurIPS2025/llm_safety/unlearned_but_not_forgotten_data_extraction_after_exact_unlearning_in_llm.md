@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM
 description: >-
-  [NeurIPS 2025][LLM Safety][Data extraction attack] This paper reveals that even exact unlearning (retraining from scratch to remove data influence) is susceptible to privacy leakage. By exploiting the divergence between…
+  [NeurIPS 2025][LLM Safety][Data extraction attack] This paper reveals that even exact unlearning (retraining from scratch to remove data influence) is susceptible to privacy leakage. By exploiting the divergence between model checkpoints before and after unlearning, an adversary can apply reversed model guidance with token filtering to substantially improve extraction success rates for deleted data—in some settings doubling the extraction rate.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "reversed model guidance"
   - "exact unlearning"
 date: 2026-05-08
-content_hash: 0adf1a3cfb8f23c4
+content_hash: 4a091055ec1b2219
 ---
 
 # Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM
@@ -146,9 +146,9 @@ Extraction attack results on three standard benchmarks (10% forget set):
 
 - [\[ICLR 2026\] Model Collapse Is Not a Bug but a Feature in Machine Unlearning for LLMs](../../ICLR2026/llm_safety/model_collapse_is_not_a_bug_but_a_feature_in_machine_unlearning_for_llms.md)
 - [\[NeurIPS 2025\] On Optimal Steering to Achieve Exact Fairness](on_optimal_steering_to_achieve_exact_fairness.md)
+- [\[CVPR 2025\] ForensicZip: More Tokens are Better but Not Necessary in Forensic Vision-Language Models](../../CVPR2025/llm_safety/forensiczip_more_tokens_are_better_but_not_necessary_in_forensic_vision-language.md)
 - [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](simu_selective_influence_machine_unlearning.md)
 - [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
-- [\[NeurIPS 2025\] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning](simplicity_prevails_rethinking_negative_preference_optimization_for_llm_unlearni.md)
 
 </div>
 

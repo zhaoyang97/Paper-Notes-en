@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DiSRouter: Distributed Self-Routing for LLM Selections
 description: >-
-  [ICLR 2026][LLM Efficiency][LLM Routing] DiSRouter replaces the traditional "centralized external router" with a distributed self-routing paradigm where each LLM determines whether to answer. Queries are passed through a sequence of LLM agents arranged by increasing cost; each agent decides to either provide an answer or pass the query to a more powerful mode
+  [ICLR 2026][LLM Efficiency][LLM Routing] DiSRouter replaces the traditional "centralized external router" with a distributed self-routing paradigm where each LLM determines whether to answer. Queries are passed through a sequence of LLM agents arranged by increasing cost; each agent decides to either provide an answer or pass the query to a more powerful model based on its self-awareness, achieving superior utility between performance and cost.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - LLM Routing
-  - Model Selection
-  - Self-Awareness
-  - Distributed System
-  - Cost-Performance Trade-off
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "LLM Routing"
+  - "Model Selection"
+  - "Self-Awareness"
+  - "Distributed System"
+  - "Cost-Performance Trade-off"
 date: 2026-05-08
-content_hash: 9226f2170bd00ee8
+content_hash: 201f0ff40b81910a
 ---
+
 # DiSRouter: Distributed Self-Routing for LLM Selections
 
 **Conference**: ICLR 2026  
@@ -137,8 +138,8 @@ Out-of-domain utility still leads all baselines, verifying the discriminative po
 - [\[ICLR 2026\] Universal Model Routing for Efficient LLM Inference](universal_model_routing_for_efficient_llm_inference.md)
 - [\[ICLR 2026\] Smooth Reading: Bridging the Gap of Recurrent LLM to Self-Attention LLM on Long-Context Understanding](smooth_reading_bridging_the_gap_of_recurrent_llm_to_self-attention_llm_on_long-c.md)
 - [\[ICLR 2026\] DualMap: Enabling Both Cache Affinity and Load Balancing for Distributed LLM Serving](dualmap_enabling_both_cache_affinity_and_load_balancing_for_distributed_llm_serv.md)
+- [\[ACL 2026\] Task-Aware LLM Routing with Multi-Level Task-Profile-Guided Data Synthesis for Cold-Start Scenarios](../../ACL2026/llm_efficiency/task-aware_llm_routing_with_multi-level_task-profile-guided_data_synthesis_for_c.md)
 - [\[ICLR 2026\] Long-Context Attention Benchmark: From Kernel Efficiency to Distributed Context Parallelism](long-context_attention_benchmark_from_kernel_efficiency_to_distributed_context_p.md)
-- [\[ICLR 2026\] Stacked From One: Multi-Scale Self-Injection for Context Window Extension](stacked_from_one_multi-scale_self-injection_for_context_window_extension.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Steering the Herd: A Framework for LLM-Based Control of Social Learning
 description: >-
-  [ICLR 2026][Social Computing][Paper Note] This paper formalizes "LLMs acting as information intermediaries" as a **controlled sequential social learning** model. In this framework, a planner can only regulate the precision of each individual's private signal (without falsification or selection bias), while individuals update public beliefs by observing both pr
+  [ICLR 2026][Social Computing][Social Learning] This paper formalizes "LLMs acting as information intermediaries" as a **controlled sequential social learning** model. In this framework, a planner can only regulate the precision of each individual's private signal (without falsification or selection bias), while individuals update public beliefs by observing both private signals and the actions of their predecessors. The authors prove the convexity of the altruistic planner's…
 tags:
-  - ICLR 2026
-  - Social Computing
+  - "ICLR 2026"
+  - "Social Computing"
+  - "Social Learning"
+  - "Information Intermediaries"
+  - "LLM Planner"
+  - "Information Cascades"
+  - "Bayesian Persuasion"
 date: 2026-05-08
-content_hash: f350509d79a54a6b
+content_hash: 4ff326addecbad66
 ---
+
 # Steering the Herd: A Framework for LLM-Based Control of Social Learning
 
 **Conference**: ICLR 2026  
@@ -125,11 +131,20 @@ Simulations were conducted in a "car purchase" scenario with a linear cost funct
 - Value: ⭐⭐⭐⭐⭐ Provides a rigorous analytical basis for studying the impact and regulation of LLM-based information intermediaries.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would be listed here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
+- [\[NeurIPS 2025\] Concept-Level Explainability for Auditing & Steering LLM Responses](../../NeurIPS2025/social_computing/concept-level_explainability_for_auditing_steering_llm_responses.md)
+- [\[AAAI 2026\] Bias Association Discovery Framework for Open-Ended LLM Generations](../../AAAI2026/social_computing/bias_association_discovery_framework_for_open-ended_llm_generations.md)
+- [\[ICLR 2026\] SocialHarmBench: Revealing LLM Vulnerabilities to Socially Harmful Requests](socialharmbench_revealing_llm_vulnerabilities_to_socially_harmful_requests.md)
+- [\[ICLR 2026\] GRADIEND: Feature Learning within Neural Networks Exemplified through Biases](gradiend_feature_learning_within_neural_networks_exemplified_through_biases.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] Concept-Level Explainability for Auditing & Steering LLM Responses](../../NeurIPS2025/social_computing/concept-level_explainability_for_auditing_steering_llm_responses.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Graph Pattern Machine
 description: >-
-  [NeurIPS 2025][Graph Learning][graph pre-training] This paper proposes the Generative Graph Pattern Machine (G2PM), a fully message-passing-free generative Transformer framework for graph pre-training. It tokenizes graph…
+  [NeurIPS 2025][Graph Learning][graph pre-training] This paper proposes the Generative Graph Pattern Machine (G2PM), a fully message-passing-free generative Transformer framework for graph pre-training. It tokenizes graph instances (nodes/edges/graphs) into substructure sequences via random walks and performs self-supervised pre-training under a Masked Substructure Modeling objective. G2PM comprehensively outperforms existing graph pre-training methods on node/link/graph class…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -13,7 +13,7 @@ tags:
   - "random walk"
   - "message-passing-free"
 date: 2026-05-08
-content_hash: 33390181f6977912
+content_hash: 15ffd696060f3e03
 ---
 
 # Generative Graph Pattern Machine
@@ -184,11 +184,11 @@ The paper analyzes the structural basis for MSM's effectiveness from three persp
 
 ## Related Papers
 
+- [\[ICML 2025\] Beyond Message Passing: Neural Graph Pattern Machine](../../ICML2025/graph_learning/beyond_message_passing_neural_graph_pattern_machine.md)
 - [\[NeurIPS 2025\] P-DRUM: Post-hoc Descriptor-based Residual Uncertainty Modeling for Machine Learning Potentials](p-drum_post-hoc_descriptor-based_residual_uncertainty_modeling_for_machine_learn.md)
-- [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
-- [\[ACL 2026\] GS-Quant: Granular Semantic and Generative Structural Quantization for Knowledge Graph Completion](../../ACL2026/graph_learning/gs-quant_granular_semantic_and_generative_structural_quantization_for_knowledge_.md)
-- [\[AAAI 2026\] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](../../AAAI2026/graph_learning/beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)
-- [\[ICML 2026\] Generative Representation Learning on Hyper-relational Knowledge Graphs via Masked Discrete Diffusion](../../ICML2026/graph_learning/generative_representation_learning_on_hyper-relational_knowledge_graphs_via_mask.md)
+- [\[ACL 2025\] A Generative Adaptive Replay Continual Learning Model for Temporal Knowledge Graph Reasoning](../../ACL2025/graph_learning/a_generative_adaptive_replay_continual_learning_model_for_temporal_knowledge_gra.md)
+- [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
+- [\[NeurIPS 2025\] Graph Persistence goes Spectral](graph_persistence_goes_spectral.md)
 
 </div>
 

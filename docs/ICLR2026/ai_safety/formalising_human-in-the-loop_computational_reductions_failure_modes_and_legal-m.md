@@ -2,14 +2,22 @@
 title: >-
   [Paper Note] Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal–Moral Responsibility
 description: >-
-  [ICLR 2026][AI Safety][Human-in-the-Loop] This paper utilizes the concepts of oracle machines and "reductions" from computability theory to rigorously formalize diverse Human-in-the-Loop (HITL) human oversight schemes into three categories—Trivial Monitoring, Endpoint Action, and Involved Interaction. Based on this, it establishes a failure mode classification
+  [ICLR 2026][AI Safety][Human-in-the-Loop] This paper utilizes the concepts of oracle machines and "reductions" from computability theory to rigorously formalize diverse Human-in-the-Loop (HITL) human oversight schemes into three categories—Trivial Monitoring, Endpoint Action, and Involved Interaction. Based on this, it establishes a failure mode classification system and analyzes blind spots in UK/EU laws, ultimately revealing an unavoidable "Accountability ↔ Technical Interp…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Human-in-the-Loop
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Human-in-the-Loop"
+  - "Computability Theory"
+  - "Oracle Machines"
+  - "Computational Reductions"
+  - "Failure Mode Classification"
+  - "Legal Responsibility"
+  - "GDPR"
+  - "EU AI Act"
 date: 2026-05-08
-content_hash: e07872b239330695
+content_hash: b1ac4d6b126e7215
 ---
+
 # Formalising Human-in-the-Loop: Computational Reductions, Failure Modes, and Legal–Moral Responsibility
 
 **Conference**: ICLR 2026  

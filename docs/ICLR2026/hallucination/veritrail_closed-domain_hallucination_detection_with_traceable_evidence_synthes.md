@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] VeriTrail: Closed-Domain Hallucination Detection with Traceability
 description: >-
-  [ICLR 2026][Hallucination Detection][faithfulness evaluation] VeriTrail is proposed—the first closed-domain hallucination detection method providing traceability for multi-generative-step (MGS) processes. It models the generation process as a Directed Acyclic Graph (DAG) and verifies facts layer-by-layer along paths while establishing the first MGS datasets containing all interme
+  [ICLR2026][Hallucination Detection][faithfulness evaluation] VeriTrail is proposed—the first closed-domain hallucination detection method providing traceability for multi-generative-step (MGS) processes. It models the generation process as a Directed Acyclic Graph (DAG) and verifies facts layer-by-layer along paths while establishing the first MGS datasets containing all intermediate outputs and human annotations.
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - faithfulness evaluation
-  - traceability
-  - multi-generative-step
-  - DAG
+  - "ICLR2026"
+  - "Hallucination Detection"
+  - "faithfulness evaluation"
+  - "traceability"
+  - "multi-generative-step"
+  - "DAG"
 date: 2026-05-08
-content_hash: 94b032a62715fd28
+content_hash: a8565a1f47e889df
 ---
+
 # VeriTrail: Closed-Domain Hallucination Detection with Traceability
 
 **Conference**: ICLR2026  
@@ -160,10 +161,10 @@ VeriTrail is a pioneering work that evolves closed-domain hallucination detectio
 ## Related Papers
 
 - [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
-- [\[ICLR 2026\] Neural Message-Passing on Attention Graphs for Hallucination Detection](neural_message-passing_on_attention_graphs_for_hallucination_detection.md)
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
-- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[ACL 2025\] Learning Auxiliary Tasks Improves Reference-Free Hallucination Detection in Open-Domain Long-Form Generation](../../ACL2025/hallucination/learning_auxiliary_tasks_improves_reference-free_hallucination_detection_in_open.md)
+- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
 
 </div>
 

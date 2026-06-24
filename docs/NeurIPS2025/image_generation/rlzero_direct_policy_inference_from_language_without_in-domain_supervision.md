@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RLZero: Direct Policy Inference from Language Without In-Domain Supervision
 description: >-
-  [NeurIPS 2025][Image Generation][Zero-shot policy inference] This paper proposes RLZero, a framework that converts natural language instructions into behavioral policies in target environments via an "Imagine → Project →…
+  [NeurIPS 2025][Image Generation][Zero-shot policy inference] This paper proposes RLZero, a framework that converts natural language instructions into behavioral policies in target environments via an "Imagine → Project → Imitate" pipeline. A video generation model is used to "imagine" observation sequences from language; these are then projected into the target domain; finally, an unsupervised pretrained RL agent imitates the projected sequences via a closed-form solution — a…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "unsupervised RL"
   - "cross-embodiment transfer"
 date: 2026-05-08
-content_hash: e04c8eea16a527fc
+content_hash: aa9252c887eae327
 ---
 
 # RLZero: Direct Policy Inference from Language Without In-Domain Supervision
@@ -128,11 +128,11 @@ During pretraining, the unsupervised RL objective is employed (the specific form
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Flattening Hierarchies with Policy Bootstrapping](flattening_hierarchies_with_policy_bootstrapping.md)
+- [\[ICML 2025\] Performance Plateaus in Inference-Time Scaling for Text-to-Image Diffusion Without External Models](../../ICML2025/image_generation/performance_plateaus_in_inference-time_scaling_for_text-to-image_diffusion_witho.md)
 - [\[NeurIPS 2025\] Continuous Diffusion Model for Language Modeling](continuous_diffusion_model_for_language_modeling.md)
-- [\[NeurIPS 2025\] Rethinking Direct Preference Optimization in Diffusion Models](rethinking_direct_preference_optimization_in_diffusion_models.md)
 - [\[ICML 2026\] Enhancing Membership Inference Attacks on Diffusion Models from a Frequency-Domain Perspective](../../ICML2026/image_generation/enhancing_membership_inference_attacks_on_diffusion_models_from_a_frequency-doma.md)
-- [\[ICLR 2026\] Translate Policy to Language: Flow Matching Generated Rewards for LLM Explanations](../../ICLR2026/image_generation/translate_policy_to_language_flow_matching_generated_rewards_for_llm_explanation.md)
+- [\[NeurIPS 2025\] Rethinking Direct Preference Optimization in Diffusion Models](rethinking_direct_preference_optimization_in_diffusion_models.md)
+- [\[NeurIPS 2025\] FreqPolicy: Efficient Flow-based Visuomotor Policy via Frequency Consistency](freqpolicy_efficient_flow-based_visuomotor_policy_via_frequency_consistency.md)
 
 </div>
 

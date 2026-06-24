@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MoGaF advances 4D Gaussian Splatting from "interpolation of observed frames" to physically consistent long-term scene forecasting. It accomplishes this by grouping Gaussians into object-level units labeled as rigid or non-rigid, applying typed motion constraints during optimization, and utilizing a lightweight Transfor
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] MoGaF advances 4D Gaussian Splatting from "interpolation of observed frames" to physically consistent long-term scene forecasting. It accomplishes this by grouping Gaussians into object-level units labeled as rigid or non-rigid, applying typed motion constraints during optimization, and utilizing a lightweight Transformer per group for autoregressive motion extrapolation.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Dynamic Scene Prediction"
+  - "Motion Grouping"
+  - "Long-term Extrapolation"
+  - "Rigid/Non-rigid Constraints"
 date: 2026-05-08
-content_hash: 8b84dab4c5a6d348
+content_hash: 887a57f30f625b54
 ---
+
 # Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping
 
 **Conference**: CVPR 2026  
@@ -138,8 +144,8 @@ Average results on the D-NeRF synthetic dataset (60% observation, 40% extrapolat
 
 - [\[CVPR 2026\] Efficiently Reconstructing Dynamic Scenes One D4RT at a Time](efficiently_reconstructing_dynamic_scenes_one_d4rt_at_a_time.md)
 - [\[CVPR 2026\] MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes](morgs_efficient_per-gaussian_motion_reasoning_for_streamable_dynamic_3d_scenes.md)
-- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 - [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
+- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
 - [\[CVPR 2026\] SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping](speede3dgs_speedy_deformable_3d_gaussian_splatting_with_temporal_pruning_and_mot.md)
 
 </div>

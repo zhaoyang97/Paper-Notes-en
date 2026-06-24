@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] FALCON: Few-step Accurate Likelihoods for Continuous Flows
 description: >-
-  [ICLR 2026][Image Generation][Flow Map] FALCON introduces a "cyclic reversibility" regularization to few-step flow maps, enabling both fast sampling and low-cost accurate likelihood estimation within 4–16 steps. This reduces the inference cost of continuous flow Boltzmann Generators by two orders of magnitude and outperforms current state-of-the-art discrete
+  [ICLR 2026][Image Generation][Flow Map] FALCON introduces a "cyclic reversibility" regularization to few-step flow maps, enabling both fast sampling and low-cost accurate likelihood estimation within 4–16 steps. This reduces the inference cost of continuous flow Boltzmann Generators by two orders of magnitude and outperforms current state-of-the-art discrete normalizing flows.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Flow Map
-  - Boltzmann Generator
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Flow Map"
+  - "Boltzmann Generator"
+  - "Few-step Generation"
+  - "Reversibility"
+  - "Importance Sampling"
+  - "Likelihood Estimation"
 date: 2026-05-08
-content_hash: 732ac6ea18cdcf48
+content_hash: f1162991a6c5bce7
 ---
+
 # FALCON: Few-step Accurate Likelihoods for Continuous Flows
 
 **Conference**: ICLR 2026  
@@ -134,10 +139,10 @@ where $\mathrm{sg}$ denotes a stop-gradient. Since $x_s=sx_1+(1-s)x_0$, one can 
 ## Related Papers
 
 - [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
+- [\[ICLR 2026\] DistillKac: Few-Step Image Generation via Damped Wave Equations](distillkac_few-step_image_generation_via_damped_wave_equations.md)
+- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
 - [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
 - [\[ICLR 2026\] On the Design of One-Step Diffusion via Shortcutting Flow Paths](on_the_design_of_one-step_diffusion_via_shortcutting_flow_paths.md)
-- [\[ICLR 2026\] DistillKac: Few-Step Image Generation via Damped Wave Equations](distillkac_few-step_image_generation_via_damped_wave_equations.md)
-- [\[ICLR 2026\] TwinFlow: Realizing One-step Generation on Large Models with Self-adversarial Flows](twinflow_realizing_one-step_generation_on_large_models_with_self-adversarial_flo.md)
 
 </div>
 

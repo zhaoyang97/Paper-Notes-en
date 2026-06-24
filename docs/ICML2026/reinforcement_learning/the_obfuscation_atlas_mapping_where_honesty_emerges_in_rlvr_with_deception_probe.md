@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Obfuscation Atlas: Mapping Where Honesty Emerges in RLVR with Deception Probes
 description: >-
-  [ICML 2026][Reinforcement Learning][Paper Note] Ours constructs MBPP-Honeypot, an RLVR environment that naturally induces reward hacking (hardcoding test cases). It systematically characterizes four types of strategies resulting from using "white-box deception probes as training signals": honest, blatant deception, obfuscated policy, and obfuscated activations. Ours
+  [ICML 2026 Oral][Reinforcement Learning][Deception Probes] Ours constructs MBPP-Honeypot, an RLVR environment that naturally induces reward hacking (hardcoding test cases). It systematically characterizes four types of strategies resulting from using "white-box deception probes as training signals": honest, blatant deception, obfuscated policy, and obfuscated activations. Ours demonstrates that stable convergence to an honest strategy in reward hacking scenarios is achievable…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
+  - "ICML 2026 Oral"
+  - "Reinforcement Learning"
+  - "Deception Probes"
+  - "Reward Hacking"
+  - "Representation Drift"
+  - "KL Regularization"
+  - "Obfuscation Strategy"
 date: 2026-05-08
-content_hash: 752fb4d1dec84d85
+content_hash: 33abc2b1c21feed3
 ---
+
 # The Obfuscation Atlas: Mapping Where Honesty Emerges in RLVR with Deception Probes
 
 **Conference**: ICML 2026 Oral  
@@ -124,11 +130,11 @@ Insight: Standard RLVR (even without any detector training) causes models to exp
 
 ## Related Papers
 
+- [\[ICLR 2026\] Principled RL for Diffusion LLMs Emerges from a Sequence-Level Perspective](../../ICLR2026/reinforcement_learning/principled_rl_for_diffusion_llms_emerges_from_a_sequence-level_perspective.md)
 - [\[CVPR 2026\] Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning](../../CVPR2026/reinforcement_learning/cross-modal_identity_mapping_minimizing_information_loss_in_modality_conversion_.md)
 - [\[AAAI 2026\] Where to Start Alignment? Diffusion Large Language Model May Demand a Distinct Position](../../AAAI2026/reinforcement_learning/where_to_start_alignment_diffusion_large_language_model_may_demand_a_distinct_po.md)
-- [\[ICML 2026\] Probing RLVR Training Instability through the Lens of Objective-Level Hacking](probing_rlvr_training_instability_through_the_lens_of_objective-level_hacking.md)
-- [\[AAAI 2026\] Where and What Matters: Sensitivity-Aware Task Vectors for Many-Shot Multimodal In-Context Learning](../../AAAI2026/reinforcement_learning/where_and_what_matters_sensitivity-aware_task_vectors_for_many-shot_multimodal_i.md)
-- [\[ICML 2026\] Single-Rollout Hidden-State Dynamics for Training-Free RLVR Data Selection](single-rollout_hidden-state_dynamics_for_training-free_rlvr_data_selection.md)
+- [\[ICLR 2026\] Generalization of RLVR Using Causal Reasoning as a Testbed](../../ICLR2026/reinforcement_learning/generalization_of_rlvr_using_causal_reasoning_as_a_testbed.md)
+- [\[ICLR 2026\] GRL-SNAM: Geometric Reinforcement Learning with Differential Hamiltonians for Navigation and Mapping in Unknown Environments](../../ICLR2026/reinforcement_learning/grl-snam_geometric_reinforcement_learning_with_differential_hamiltonians_for_nav.md)
 
 </div>
 

@@ -2,16 +2,17 @@
 title: >-
   [Paper Note] VideoNSA: Native Sparse Attention Scales Video Understanding
 description: >-
-  [ICLR 2026][Video Understanding][sparse attention] Ours proposes VideoNSA, which introduces Native Sparse Attention (NSA) into video-language models. Through a hybrid sparse attention mechanism with dynamic gating across three branches—compression, selection, and sliding window—it achieves 128K token video understanding using only 3.6% of the attention budget. It compr
+  [ICLR 2026][Video Understanding][sparse attention] Ours proposes VideoNSA, which introduces Native Sparse Attention (NSA) into video-language models. Through a hybrid sparse attention mechanism with dynamic gating across three branches—compression, selection, and sliding window—it achieves 128K token video understanding using only 3.6% of the attention budget. It comprehensively outperforms token compression and training-free sparse attention baselines in long video understan…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - sparse attention
-  - long context
-  - multimodal LLM
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "sparse attention"
+  - "long context"
+  - "multimodal LLM"
 date: 2026-05-08
-content_hash: a132310f0373e42b
+content_hash: 8a00a77330d31d64
 ---
+
 # VideoNSA: Native Sparse Attention Scales Video Understanding
 
 **Conference**: ICLR 2026  
@@ -158,10 +159,10 @@ XAttention is training-free sparse attention using the same configuration as Vid
 ## Related Papers
 
 - [\[CVPR 2026\] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](../../CVPR2026/video_understanding/vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)
-- [\[CVPR 2026\] Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](../../CVPR2026/video_understanding/autogaze_attend_before_attention_efficient_video.md)
-- [\[AAAI 2026\] Predicting Video Slot Attention Queries from Random Slot-Feature Pairs](../../AAAI2026/video_understanding/predicting_video_slot_attention_queries_from_random_slot-feature_pairs.md)
-- [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](../../NeurIPS2025/video_understanding/enhancing_temporal_understanding_in_videollms_through_stacke.md)
 - [\[ACL 2025\] Sparse-to-Dense: A Free Lunch for Lossless Acceleration of Video Understanding in LLMs](../../ACL2025/video_understanding/sparse-to-dense_a_free_lunch_for_lossless_acceleration_of_video_understanding_in.md)
+- [\[CVPR 2026\] Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](../../CVPR2026/video_understanding/autogaze_attend_before_attention_efficient_video.md)
+- [\[NeurIPS 2025\] Enhancing Temporal Understanding in Video-LLMs through Stacked Temporal Attention in Vision Encoders](../../NeurIPS2025/video_understanding/enhancing_temporal_understanding_in_videollms_through_stacke.md)
+- [\[ICLR 2026\] Video-KTR: Reinforcing Video Reasoning via Key Token Attribution](video-ktr_reinforcing_video_reasoning_via_key_token_attribution.md)
 
 </div>
 

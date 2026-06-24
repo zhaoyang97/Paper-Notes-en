@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Supervised Sparse Sensor Fusion for Long Range Perception
 description: >-
-  [ICCV 2025][Autonomous Driving][long-range perception] LRS4Fusion proposes a long-range LiDAR-camera fusion framework based on sparse voxel representations…
+  [ICCV 2025][Autonomous Driving][long-range perception] LRS4Fusion proposes a long-range LiDAR-camera fusion framework based on sparse voxel representations, combined with a self-supervised pretraining strategy via sparse occupancy and velocity field reconstruction, achieving state-of-the-art performance within a 250-meter perception range: a 26.6% improvement in object detection mAP and a 30.5% reduction in LiDAR prediction Chamfer Distance.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "LiDAR-camera fusion"
   - "depth estimation"
 date: 2026-05-08
-content_hash: 332f648cef0b239d
+content_hash: d8682681e5d43eba
 ---
 
 # Self-Supervised Sparse Sensor Fusion for Long Range Perception
@@ -154,10 +154,10 @@ CD improves by 61.6% on the NuScenes 1s→1s task and by 36.5% on the 1s→3s ta
 ## Related Papers
 
 - [\[ICCV 2025\] GaussianFlowOcc: Sparse and Weakly Supervised Occupancy Estimation using Gaussian Splatting and Temporal Flow](gaussianflowocc_sparse_and_weakly_supervised_occupancy_estimation_using_gaussian.md)
+- [\[CVPR 2026\] TruckDrive: Long-Range Autonomous Highway Driving Dataset](../../CVPR2026/autonomous_driving/truckdrive_long-range_autonomous_highway_driving_dataset.md)
 - [\[NeurIPS 2025\] Availability-aware Sensor Fusion via Unified Canonical Space](../../NeurIPS2025/autonomous_driving/availability-aware_sensor_fusion_via_unified_canonical_space.md)
 - [\[ICCV 2025\] AD-GS: Object-Aware B-Spline Gaussian Splatting for Self-Supervised Autonomous Driving](ad-gs_object-aware_b-spline_gaussian_splatting_for_self-supervised_autonomous_dr.md)
 - [\[NeurIPS 2025\] Layer-wise Modality Decomposition for Interpretable Multimodal Sensor Fusion](../../NeurIPS2025/autonomous_driving/layer-wise_modality_decomposition_for_interpretable_multimodal_sensor_fusion.md)
-- [\[CVPR 2026\] Le MuMo JEPA: Multi-Modal Self-Supervised Representation Learning with Learnable Fusion Tokens](../../CVPR2026/autonomous_driving/le_mumo_jepa_multi-modal_self-supervised_representation_learning_with_learnable_.md)
 
 </div>
 

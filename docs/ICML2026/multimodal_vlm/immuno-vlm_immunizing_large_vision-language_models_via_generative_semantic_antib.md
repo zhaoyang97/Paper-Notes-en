@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] This paper ports the "negative selection" principle from biological immune systems to VLMs such as CLIP. It employs an LLM to actively hallucinate a set of "look-alike but non-target" text descriptions as semantic antibodies. A lightweight adapter then pushes visual features away from these antibodies, significantly re
+  [ICML 2026][Multimodal VLM][Semantic Antibodies] This paper ports the "negative selection" principle from biological immune systems to VLMs such as CLIP. It employs an LLM to actively hallucinate a set of "look-alike but non-target" text descriptions as semantic antibodies. A lightweight adapter then pushes visual features away from these antibodies, significantly reducing "high-confidence misclassification" in open-world scenarios without retraining the backbone.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Semantic Antibodies"
+  - "Negative Selection"
+  - "vMF Prototypes"
+  - "Open-Space Risk"
+  - "Near-Distribution OOD"
 date: 2026-05-08
-content_hash: aafd4e76c2c58f52
+content_hash: d942d21df0a68cab
 ---
+
 # Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness
 
 **Conference**: ICML 2026  
@@ -126,11 +132,11 @@ All methods were evaluated using the same CLIP-ViT-B/16 backbone on ImageNet-1K 
 
 ## Related Papers
 
+- [\[ICML 2026\] VLA-Arena: An Open-Source Framework for Evaluating Vision-Language-Action Models](vla-arena_an_open-source_framework_for_benchmarking_vision-language-action_model.md)
 - [\[ICCV 2025\] On Large Multimodal Models as Open-World Image Classifiers](../../ICCV2025/multimodal_vlm/on_large_multimodal_models_as_open-world_image_classifiers.md)
 - [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
 - [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
 - [\[NeurIPS 2025\] OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Models](../../NeurIPS2025/multimodal_vlm/openhoi_open-world_hand-object_interaction_synthesis_with_multimodal_large_langu.md)
-- [\[CVPR 2026\] CountGD++: Generalized Prompting for Open-World Counting](../../CVPR2026/multimodal_vlm/countgd_generalized_prompting_for_open-world_counting.md)
 
 </div>
 

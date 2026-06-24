@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper proposes MultiBanana—the first large-scale benchmark to systematically evaluate multi-reference image generation capabilities. It comprises 3,769 evaluation samples with up to 8 reference images across 5 difficulty dimensions (cross-domain, scale, rare concepts, and multilingualism), revealing a complementar
+  [CVPR 2026][Image Generation][Multi-reference image generation] This paper proposes MultiBanana—the first large-scale benchmark to systematically evaluate multi-reference image generation capabilities. It comprises 3,769 evaluation samples with up to 8 reference images across 5 difficulty dimensions (cross-domain, scale, rare concepts, and multilingualism), revealing a complementary failure mode where closed-source models "overfit reference details" while open-source models "…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-reference image generation"
+  - "benchmarking"
+  - "cross-domain mixing"
+  - "rare concepts"
+  - "multilingual"
 date: 2026-05-08
-content_hash: e7003194457fedd0
+content_hash: 04ee2cec0f600a53
 ---
+
 # MultiBanana: A Challenging Benchmark for Multi-Reference Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -113,15 +119,13 @@ This is a pure benchmarking work and does not involve model training.
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
+- [\[CVPR 2026\] I2I-Bench: A Comprehensive Benchmark Suite for Image-to-Image Editing Models](i2i-bench_a_comprehensive_benchmark_suite_for_image-to-image_editing_models.md)
 - [\[CVPR 2026\] DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation](dynfusion_rethinking_condition_fusion_for_adaptive_multi-conditional_text-to-ima.md)
+- [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
-- [\[CVPR 2026\] PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)
-- [\[CVPR 2026\] Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences](aligning_multi-character_narrative_image_generation_with_multi-aspect_human_pref.md)
 
 </div>
 

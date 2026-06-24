@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding
 description: >-
-  [ICML 2026][Model Compression][Inference Acceleration] SPEED-Bench is a unified benchmark for Speculative Decoding (SD). By combining a *Qualitative split* (880 samples maximizing semantic diversity) and a *Throughput split* (large-batch data organized by 1k–32k input length buckets across three entropy levels) with a measurement framework interfacing with vLLM / TensorRT-
+  [ICML 2026][Model Compression][Speculative Decoding] SPEED-Bench is a unified benchmark for Speculative Decoding (SD). By combining a *Qualitative split* (880 samples maximizing semantic diversity) and a *Throughput split* (large-batch data organized by 1k–32k input length buckets across three entropy levels) with a measurement framework interfacing with vLLM / TensorRT-LLM / SGLang, it reveals the actual deployment behavior often obscured by "small data + single batch + Hugg…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Inference Acceleration
+  - "ICML 2026"
+  - "Model Compression"
+  - "Speculative Decoding"
+  - "Inference Acceleration"
+  - "Evaluation Benchmark"
+  - "Throughput-Latency"
+  - "Production Engines"
 date: 2026-05-08
-content_hash: 3c4fd749b23b7043
+content_hash: 0bf170616f694e23
 ---
+
 # SPEED-Bench: A Unified and Diverse Benchmark for Speculative Decoding
 
 **Conference**: ICML 2026  
@@ -146,7 +151,7 @@ Key findings: (a) N-Gram speedup is < 1× on most models (only 0.29× on GPT-OSS
 - [\[ICML 2026\] LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding](lk_losses_direct_acceptance_rate_optimization_for_speculative_decoding.md)
 - [\[ACL 2026\] SSSD: Simply-Scalable Speculative Decoding](../../ACL2026/model_compression/sssd_simply-scalable_speculative_decoding.md)
 - [\[AAAI 2026\] Steering Pretrained Drafters during Speculative Decoding](../../AAAI2026/model_compression/steering_pretrained_drafters_during_speculative_decoding.md)
-- [\[NeurIPS 2025\] Traversal Verification for Speculative Tree Decoding](../../NeurIPS2025/model_compression/traversal_verification_for_speculative_tree_decoding.md)
+- [\[ICML 2025\] VocabTrim: Vocabulary Pruning for Efficient Speculative Decoding in LLMs](../../ICML2025/model_compression/vocabtrim_vocabulary_pruning_for_efficient_speculative_decoding_in_llms.md)
 - [\[ICML 2025\] Gumiho: A Hybrid Architecture to Prioritize Early Tokens in Speculative Decoding](../../ICML2025/model_compression/gumiho_a_hybrid_architecture_to_prioritize_early_tokens_in_speculative_decoding.md)
 
 </div>

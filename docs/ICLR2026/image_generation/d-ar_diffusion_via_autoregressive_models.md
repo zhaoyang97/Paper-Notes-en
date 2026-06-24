@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] D-AR: Diffusion via Autoregressive Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] D-AR designs a "sequential diffusion tokenizer" to re-encode the image diffusion process into a sequence of coarse-to-fine discrete tokens. This allows an unmodified Llama decoder to generate images using standard next-token prediction while decoding corresponding diffusion denoising steps in real-time. It achieves FID
+  [ICLR 2026][Image Generation][Autoregressive visual generation] D-AR designs a "sequential diffusion tokenizer" to re-encode the image diffusion process into a sequence of coarse-to-fine discrete tokens. This allows an unmodified Llama decoder to generate images using standard next-token prediction while decoding corresponding diffusion denoising steps in real-time. It achieves FIDs of 2.09 and 2.00 on ImageNet 256×256 with 775M and 1.4B parameters, respectively.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
-  - next-token prediction
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive visual generation"
+  - "diffusion model"
+  - "sequential diffusion tokenizer"
+  - "next-token prediction"
+  - "ImageNet class-conditional generation"
 date: 2026-05-08
-content_hash: 4a320a43e8f3715c
+content_hash: 557e8a6325957664
 ---
+
 # D-AR: Diffusion via Autoregressive Models
 
 **Conference**: ICLR 2026  
@@ -148,10 +152,10 @@ In the **vanilla AR** track (strict next-token prediction), D-AR-XL (775M) outpe
 
 ## Related Papers
 
-- [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
 - [\[ACL 2026\] From AR to Diffusion: Efficiently Adapting Large Language Models with Strictly Causal and Elastic Horizons](../../ACL2026/image_generation/from_ar_to_diffusion_efficiently_adapting_large_language_models_with_strictly_ca.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](../../ICCV2025/image_generation/dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
 - [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
+- [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
 - [\[ICLR 2026\] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling](generation_then_reconstruction_accelerating_masked_autoregressive_models_via_two.md)
 
 </div>

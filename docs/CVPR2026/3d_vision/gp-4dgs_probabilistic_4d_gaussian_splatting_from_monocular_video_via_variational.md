@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The paper proposes GP-4DGS, which integrates Variational Gaussian Processes (GP) into 4D Gaussian Splatting (4DGS). By utilizing spatio-temporal composite kernels and variational inference, it achieves probabilistic motion modeling and equips 4DGS with three new capabilities: uncertainty quantification, motion extrapol
+  [CVPR 2026][3D Vision][4D Gaussian Splatting] The paper proposes GP-4DGS, which integrates Variational Gaussian Processes (GP) into 4D Gaussian Splatting (4DGS). By utilizing spatio-temporal composite kernels and variational inference, it achieves probabilistic motion modeling and equips 4DGS with three new capabilities: uncertainty quantification, motion extrapolation, and adaptive motion priors.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Gaussian Splatting"
+  - "Gaussian Processes"
+  - "Uncertainty Quantification"
+  - "Motion Extrapolation"
+  - "Dynamic Scene Reconstruction"
 date: 2026-05-08
-content_hash: 56466d68d3b696f1
+content_hash: da50337937977300
 ---
+
 # GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes
 
 **Conference**: CVPR 2026  
@@ -154,10 +160,10 @@ The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{recon}} + \la
 ## Related Papers
 
 - [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
 - [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
-- [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
-- [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
+- [\[CVPR 2026\] RetimeGS: Continuous-Time Reconstruction of 4D Gaussian Splatting](retimegs_continuous-time_reconstruction_of_4d_gaussian_splatting.md)
+- [\[CVPR 2026\] Mesh4D: 4D Mesh Reconstruction and Tracking from Monocular Video](mesh4d_4d_mesh_reconstruction_and_tracking_from_monocular_video.md)
 
 </div>
 

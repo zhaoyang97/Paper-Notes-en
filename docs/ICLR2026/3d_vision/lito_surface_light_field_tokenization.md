@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LiTo: Surface Light Field Tokenization
 description: >-
-  [ICLR 2026][3D Vision][Gaussian Splatting] LiTo is proposed to simultaneously model 3D geometry and view-dependent appearance by encoding the surface light field into a compact set of latent vectors. By using random sub-sampling of light fields from multi-view RGB-D images as input, a Perceiver IO encoder (supporting local 3D attention for 1 million tokens) cou
+  [ICLR 2026][3D Vision][Surface Light Field] LiTo is proposed to simultaneously model 3D geometry and view-dependent appearance by encoding the surface light field into a compact set of latent vectors. By using random sub-sampling of light fields from multi-view RGB-D images as input, a Perceiver IO encoder (supporting local 3D attention for 1 million tokens) coupled with a flow-matching geometry decoder and a high-order Spherical Harmonic Gaussian decoder is employed. This ac…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Gaussian Splatting
-  - flow matching
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Surface Light Field"
+  - "3D latent representation"
+  - "view-dependent appearance"
+  - "Gaussian Splatting"
+  - "flow matching"
 date: 2026-05-08
-content_hash: d5dc51e0d397a536
+content_hash: 4b573217e039671f
 ---
+
 # LiTo: Surface Light Field Tokenization
 
 **Conference**: ICLR 2026  
@@ -138,9 +142,9 @@ Since the latents already package the complete object information, generation do
 ## Related Papers
 
 - [\[CVPR 2025\] ProbeSDF: Light Field Probes for Neural Surface Reconstruction](../../CVPR2025/3d_vision/probesdf_light_field_probes_for_neural_surface_reconstruction.md)
+- [\[ICLR 2026\] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field](station2radar_query_conditioned_gaussian_splatting_for_precipitation_field.md)
 - [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
 - [\[ICLR 2026\] Light of Normals: Unified Feature Representation for Universal Photometric Stereo](light_of_normals_unified_feature_representation_for_universal_photometric_stereo.md)
-- [\[ICLR 2026\] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field](station2radar_query_conditioned_gaussian_splatting_for_precipitation_field.md)
 - [\[ICLR 2026\] WAFT: Warping-Alone Field Transforms for Optical Flow](waft_warping-alone_field_transforms_for_optical_flow.md)
 
 </div>

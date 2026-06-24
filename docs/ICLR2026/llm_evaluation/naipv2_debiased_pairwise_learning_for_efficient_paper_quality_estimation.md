@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] NAIPv2: Debiased Pairwise Learning for Efficient Paper Quality Estimation
 description: >-
-  [ICLR 2026][LLM Evaluation][Bradley-Terry] NAIPv2 reformulates "paper quality scoring" as **pairwise ranking learning within the same field and year**, augmented by an RTS signal that probabilistically fuses review scores with confidence. It learns relative superiority during training and degrades to a linear-time pointwise regressor during deployment, achievin
+  [ICLR 2026][LLM Evaluation][Paper Quality Estimation] NAIPv2 reformulates "paper quality scoring" as **pairwise ranking learning within the same field and year**, augmented by an RTS signal that probabilistically fuses review scores with confidence. It learns relative superiority during training and degrades to a linear-time pointwise regressor during deployment, achieving SOTA results on ICLR review prediction (78.2% AUC / 0.432 Spearman) while being thousands of times faste…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Bradley-Terry
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "Paper Quality Estimation"
+  - "Pairwise Learning"
+  - "Debiasing"
+  - "Bradley-Terry"
+  - "Review Confidence"
+  - "Pointwise Inference"
 date: 2026-05-08
-content_hash: 96f814454f0523c8
+content_hash: 70487de95777321d
 ---
+
 # NAIPv2: Debiased Pairwise Learning for Efficient Paper Quality Estimation
 
 **Conference**: ICLR 2026  

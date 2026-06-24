@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FaithLens: Detecting and Explaining Faithfulness Hallucination
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] This paper proposes FaithLens, an 8B parameter faithfulness hallucination detection model. It undergoes cold-start SFT using high-quality data synthesis combined with three-dimensional filtering (label correctness, explanation quality, and data diversity), followed by further optimization via rule-based reinforcement l
+  [ACL 2026 Findings][Hallucination Detection][Faithfulness Hallucination] This paper proposes FaithLens, an 8B parameter faithfulness hallucination detection model. It undergoes cold-start SFT using high-quality data synthesis combined with three-dimensional filtering (label correctness, explanation quality, and data diversity), followed by further optimization via rule-based reinforcement learning (prediction correctness reward + explanation quality reward). It surpasses GPT-…
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026 Findings"
+  - "Hallucination Detection"
+  - "Faithfulness Hallucination"
+  - "Interpretable Detection"
+  - "Rule-based Reinforcement Learning"
+  - "Data Filtering"
+  - "Cross-task Generalization"
 date: 2026-05-08
-content_hash: 60ff189d177f3f94
+content_hash: 1443262ffab46b42
 ---
+
 # FaithLens: Detecting and Explaining Faithfulness Hallucination
 
 **Conference**: ACL 2026 Findings  
@@ -143,6 +149,7 @@ The SFT stage uses standard cross-entropy loss on filtered synthetic data. The R
 - Value: ⭐⭐⭐⭐⭐ Extremely practical, achieving super-human performance with an 8B model while providing explanations.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -151,7 +158,7 @@ The SFT stage uses standard cross-entropy loss on filtered synthetic data. The R
 - [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
 - [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/hallucination/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
-- [\[ICML 2026\] From Flat Facts to Sharp Hallucinations: Detecting Stubborn Errors via Gradient Sensitivity](../../ICML2026/hallucination/from_flat_facts_to_sharp_hallucinations_detecting_stubborn_errors_via_gradient_s.md)
+- [\[ICLR 2026\] Grounding or Guessing? Visual Signals for Detecting Hallucinations in Sign Language Translation](../../ICLR2026/hallucination/grounding_or_guessing_visual_signals_for_detecting_hallucinations_in_sign_langua.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniOD: A Universal Model for Outlier Detection across Diverse Domains
 description: >-
-  [ICLR 2026][Anomaly Detection][Paper Note] UniOD trains **one** universal outlier detection model using a batch of historical labeled datasets. It first unifies tabular datasets of any dimension or semantics into "multi-scale similarity graphs + SVD features," then transforms outlier detection into node binary classification using a GIN+GT dual-path graph netwo
+  [ICLR 2026][Anomaly Detection][Universal Outlier Detection] UniOD trains **one** universal outlier detection model using a batch of historical labeled datasets. It first unifies tabular datasets of any dimension or semantics into "multi-scale similarity graphs + SVD features," then transforms outlier detection into node binary classification using a GIN+GT dual-path graph network. Once trained, the model performs **training-free and parameter-tuning-free** inference for any u…
 tags:
-  - ICLR 2026
-  - Anomaly Detection
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Universal Outlier Detection"
+  - "Similarity Graph"
+  - "SVD Feature Unification"
+  - "Node Classification"
+  - "Generalization Bound"
 date: 2026-05-08
-content_hash: 38c52210b4395497
+content_hash: d16d5530e18e6d42
 ---
+
 # UniOD: A Universal Model for Outlier Detection across Diverse Domains
 
 **Conference**: ICLR 2026  

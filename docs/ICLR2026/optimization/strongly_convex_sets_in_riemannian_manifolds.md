@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Strongly Convex Sets in Riemannian Manifolds
 description: >-
-  [ICLR 2026][Optimization & Theory][Frank-Wolfe] This paper systematically generalizes the "strong convexity of sets" from Euclidean (Hilbert) space to Riemannian manifolds for the first time. It provides three non-equivalent definitions of strongly convex sets, their implication relationships, a set of constructive identification tools (lower level sets of smooth st
+  [ICLR 2026][Optimization][Strongly convex sets] This paper systematically generalizes the "strong convexity of sets" from Euclidean (Hilbert) space to Riemannian manifolds for the first time. It provides three non-equivalent definitions of strongly convex sets, their implication relationships, a set of constructive identification tools (lower level sets of smooth strongly convex functions are strongly convex sets), and proves that the Riemannian Frank-Wolfe (RFW) algorithm ac…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Frank-Wolfe
+  - "ICLR 2026"
+  - "Optimization"
+  - "Strongly convex sets"
+  - "Riemannian manifold"
+  - "scaling inequality"
+  - "Frank-Wolfe"
+  - "linear convergence"
 date: 2026-05-08
-content_hash: 4aa7cfedaa2e039f
+content_hash: d8de646e33e77ef7
 ---
+
 # Strongly Convex Sets in Riemannian Manifolds
 
 **Conference**: ICLR 2026  

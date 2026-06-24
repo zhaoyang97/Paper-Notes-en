@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Instruct for Visual Instruction Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][visual instruction tuning] This paper proposes L2T (Learning to Instruct), which improves visual instruction tuning solely by extending the training loss to cover the instruction sequence (…
+  [NeurIPS 2025][Multimodal VLM][visual instruction tuning] This paper proposes L2T (Learning to Instruct), which improves visual instruction tuning solely by extending the training loss to cover the instruction sequence (rather than computing loss on responses only). Without additional data and with virtually zero computational overhead, L2T achieves up to 9% relative improvement across 16 multimodal benchmarks, an 18% gain on captioning tasks…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -13,7 +13,7 @@ tags:
   - "hallucination"
   - "captioning"
 date: 2026-05-08
-content_hash: 7a628e18218fd39a
+content_hash: 511e797a9d6d5c84
 ---
 
 # Learning to Instruct for Visual Instruction Tuning
@@ -134,9 +134,9 @@ Captioning yields the largest gains (up to 17.6%), as description tasks most hea
 
 - [\[NeurIPS 2025\] Visual Instruction Bottleneck Tuning](visual_instruction_bottleneck_tuning.md)
 - [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
-- [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](../../ICCV2025/multimodal_vlm/smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
+- [\[ICML 2025\] Parrot: Multilingual Visual Instruction Tuning](../../ICML2025/multimodal_vlm/parrot_multilingual_visual_instruction_tuning.md)
 - [\[ICCV 2025\] OrderChain: Towards General Instruct-Tuning for Stimulating the Ordinal Understanding Ability of MLLM](../../ICCV2025/multimodal_vlm/orderchain_towards_general_instruct-tuning_for_stimulating_the_ordinal_understan.md)
-- [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](../../ICCV2025/multimodal_vlm/dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
+- [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](../../ICCV2025/multimodal_vlm/smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
 
 </div>
 

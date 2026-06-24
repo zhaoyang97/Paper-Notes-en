@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] ADTrack treats network depth as a dynamically allocatable computational budget. By equipping a frozen dual-stream ViT-T backbone with multi-layer "anytime" prediction heads and a confidence-calibrated early-exit strategy, and employing a minimalist Holistic-Token-Guided Interaction (HTGI) module with only 37.3K paramet
+  [CVPR 2026][Model Compression][RGB-T Tracking] ADTrack treats network depth as a dynamically allocatable computational budget. By equipping a frozen dual-stream ViT-T backbone with multi-layer "anytime" prediction heads and a confidence-calibrated early-exit strategy, and employing a minimalist Holistic-Token-Guided Interaction (HTGI) module with only 37.3K parameters for low-cost cross-modal fusion, it achieves 70.2% PR / 56.3% SR on LasHeR. It runs at 148.3 FPS on GPU…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "RGB-T Tracking"
+  - "Adaptive Early-Exit"
+  - "Lightweight"
+  - "Cross-modal Fusion"
+  - "Dynamic Inference"
 date: 2026-05-08
-content_hash: 19341b09b68c4a8b
+content_hash: 1705b743fc61fded
 ---
+
 # Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing
 
 **Conference**: CVPR 2026  
@@ -148,11 +154,11 @@ Early-exit threshold $\tau$ trade-off (LasHeR):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)
-- [\[CVPR 2026\] One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)
-- [\[CVPR 2026\] Adapting Lightweight Image-based Counting Models for Video Crowd Counting](adapting_lightweight_image-based_counting_models_for_video_crowd_counting.md)
+- [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)
+- [\[CVPR 2026\] Dual-branch Distilled Transformer for Efficient Asymmetric UAV Tracking](dual-branch_distilled_transformer_for_efficient_asymmetric_uav_tracking.md)
+- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[CVPR 2026\] LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction](lidere_a_lightweight_readout_for_fast_and_data-efficient_dense_prediction.md)
-- [\[CVPR 2026\] ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)
+- [\[CVPR 2026\] SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification](saner_switchable_adapter_with_non-parametric_enhanced_routing_for_person_de-reid.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View
 description: >-
-  [ICLR 2026][Image Generation][Shortcut Model] This paper interprets the few-step generation training of shortcut diffusion as a controlled flow-matching process. It points out that the original self-consistency loss only penalizes the current step error and proposes the Cumulative Self-Consistency Loss, which accumulates future misalignments along the trajectory.
+  [ICLR2026][Image Generation][Few-step Generation] This paper interprets the few-step generation training of shortcut diffusion as a controlled flow-matching process. It points out that the original self-consistency loss only penalizes the current step error and proposes the Cumulative Self-Consistency Loss, which accumulates future misalignments along the trajectory. This significantly improves image generation quality for one to four steps with almost the same training budge…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Shortcut Model
-  - Flow Matching
+  - "ICLR2026"
+  - "Image Generation"
+  - "Few-step Generation"
+  - "Shortcut Model"
+  - "Flow Matching"
+  - "Cumulative Consistency Loss"
+  - "Optimal Control"
 date: 2026-05-08
-content_hash: bab21145ea481a74
+content_hash: 50c974fed20b71ba
 ---
+
 # Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View
 
 **Conference**: ICLR2026  
@@ -157,11 +161,11 @@ The paper analyzed future misalignment, backbone scale, bootstrap target ratio $
 
 ## Related Papers
 
-- [\[ICLR 2026\] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value](diagnosing_and_improving_diffusion_models_by_estimating_the_optimal_loss_value.md)
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
+- [\[ICLR 2026\] Diagnosing and Improving Diffusion Models by Estimating the Optimal Loss Value](diagnosing_and_improving_diffusion_models_by_estimating_the_optimal_loss_value.md)
 - [\[NeurIPS 2025\] Improved Training Technique for Shortcut Models (iSM)](../../NeurIPS2025/image_generation/improved_training_technique_for_shortcut_models.md)
 - [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
-- [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
+- [\[ICLR 2026\] CMT: Mid-Training for Efficient Learning of Consistency, Mean Flow, and Flow Map Models](cmt_mid-training_for_efficient_learning_of_consistency_mean_flow_and_flow_map_mo.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimizing ID Consistency in Multimodal Large Models: Facial Restoration via Alignment, Entanglement, and Disentanglement
 description: >-
-  [ICLR 2026][Image Restoration][Paper Note] EditedID is a training-free, plug-and-play diffusion inversion framework that restores facial identity lost during editing by multimodal large models through a three-step "Alignment-Disentanglement-Entanglement" process without any fine-tuning. It preserves edited accessories/clothing (Element IP) while achieving SOTA
+  [ICLR 2026][Image Restoration][Facial Identity Consistency] EditedID is a training-free, plug-and-play diffusion inversion framework that restores facial identity lost during editing by multimodal large models through a three-step "Alignment-Disentanglement-Entanglement" process without any fine-tuning. It preserves edited accessories/clothing (Element IP) while achieving SOTA ID consistency in both single-person and multi-person open scenarios.
 tags:
-  - ICLR 2026
-  - Image Restoration
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Facial Identity Consistency"
+  - "Diffusion Inversion"
+  - "Cross-source Feature Disentanglement"
+  - "Plug-and-play"
+  - "Training-free"
 date: 2026-05-08
-content_hash: cdfda52e00a40ab9
+content_hash: 0016f2ebcfcccba2
 ---
+
 # Optimizing ID Consistency in Multimodal Large Models: Facial Restoration via Alignment, Entanglement, and Disentanglement
 
 **Conference**: ICLR 2026  
@@ -125,7 +131,8 @@ When integrated as a plug-and-play module for large editing models, ID consisten
 - Value: ⭐⭐⭐⭐⭐ High engineering value as a plug-and-play module for any multimodal editing model.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

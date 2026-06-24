@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the missing statistical learning theory for a class of generative methods that use adversarial minimax solvers for quadratic optimal transport: it proves that the generalization error between the learned transport map and the true OT map can be decomposed into estimation error + approximation error.
+  [ICLR2026][Learning Theory][minimax solvers] This paper provides the missing statistical learning theory for a class of generative methods that use adversarial minimax solvers for quadratic optimal transport: it proves that the generalization error between the learned transport map and the true OT map can be decomposed into estimation error + approximation error. The estimation error is controlled solely by the Rademacher complexity of the network function classes…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Optimal Transport"
+  - "Generative Models"
+  - "minimax solvers"
+  - "generalization error"
+  - "Rademacher complexity"
+  - "semi-dual"
 date: 2026-05-08
-content_hash: 20ad59168ea3fe6c
+content_hash: 4c24e2ea8db77cb1
 ---
+
 # A Statistical Learning Perspective on Semi-dual Adversarial Neural Optimal Transport Solvers
 
 **Conference**: ICLR2026  
@@ -144,9 +151,9 @@ Using approximately 10 million samples to make estimation error negligible, the 
 
 - [\[ICLR 2026\] Slicing Wasserstein over Wasserstein via Functional Optimal Transport](slicing_wasserstein_over_wasserstein_via_functional_optimal_transport.md)
 - [\[ICLR 2026\] Online Conformal Prediction with Adversarial Semi-bandit Feedback via Regret Minimization](online_conformal_prediction_with_adversarial_semi-bandit_feedback_via_regret_min.md)
-- [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
 - [\[ICLR 2026\] Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality](test-time_verification_via_optimal_transport_coverage_roc_sub-optimality.md)
-- [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
+- [\[ICLR 2026\] Transformers as Measure-Theoretic Associative Memory: A Statistical Perspective and Minimax Optimality](transformers_as_measure-theoretic_associative_memory_a_statistical_perspective_a.md)
+- [\[ICLR 2026\] Bandit Learning in Matching Markets Robust to Adversarial Corruptions](bandit_learning_in_matching_markets_robust_to_adversarial_corruptions.md)
 
 </div>
 

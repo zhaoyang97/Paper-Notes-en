@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Exposure Burst Image Restoration
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] DEBIR integrates "predicting optimal exposure time for each burst frame" as a learnable module into the burst restoration pipeline for the first time. BAENet predicts the exposure time for each frame based on preview images, gain, and motion magnitude. A burst simulator differentiable with respect to exposure time conn
+  [CVPR 2026][Image Restoration][Burst Image Restoration] DEBIR integrates "predicting optimal exposure time for each burst frame" as a learnable module into the burst restoration pipeline for the first time. BAENet predicts the exposure time for each frame based on preview images, gain, and motion magnitude. A burst simulator differentiable with respect to exposure time connects it with the restoration network for end-to-end training. In low-light scenarios…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Burst Image Restoration"
+  - "Auto-exposure"
+  - "Differentiable Simulation"
+  - "Low-light Imaging"
+  - "Non-uniform Exposure"
 date: 2026-05-08
-content_hash: ec578d1c49b37e50
+content_hash: 83756107f9f97429
 ---
+
 # Dynamic Exposure Burst Image Restoration
 
 **Conference**: CVPR 2026  
@@ -184,10 +190,10 @@ Ablation of training strategies (S1 Restore pre-train / S2-1 warm-up / S2-2 BAEN
 ## Related Papers
 
 - [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
-- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
-- [\[CVPR 2026\] Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)
-- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
-- [\[CVPR 2026\] Beyond the Ground Truth: Enhanced Supervision for Image Restoration](beyond_the_ground_truth_enhanced_supervision_for_image_restoration.md)
+- [\[CVPR 2026\] Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal](it_takes_two_a_duet_of_periodicity_and_directionality_for_burst_flicker_removal.md)
+- [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
+- [\[CVPR 2026\] DVAR: Dynamic Visual Autoregressive Modeling for Image Super-Resolution](dvar_dynamic_visual_autoregressive_modeling_for_image_super-resolution.md)
+- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
 
 </div>
 

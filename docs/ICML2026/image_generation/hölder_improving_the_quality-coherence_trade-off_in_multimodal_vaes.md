@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Hölder++: Improving the Quality-Coherence Trade-off in Multimodal VAEs
 description: >-
-  [ICML 2026][Image Generation][Paper Note] Addressing the long-standing "generation quality vs. cross-modal coherence" trade-off in multimodal VAEs, this paper proposes Hölder++. It introduces the first exact implementation of symmetric Hölder pooling ($\alpha=0.5$) as a modality aggregator, combined with shared-private subspace separation and top-down hierarch
+  [ICML2026][Image Generation][Multimodal VAE] Addressing the long-standing "generation quality vs. cross-modal coherence" trade-off in multimodal VAEs, this paper proposes Hölder++. It introduces the first exact implementation of symmetric Hölder pooling ($\alpha=0.5$) as a modality aggregator, combined with shared-private subspace separation and top-down hierarchical inference. These architectural improvements push the quality-coherence Pareto frontier to SOTA across four ben…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML2026"
+  - "Image Generation"
+  - "Multimodal VAE"
+  - "Hölder Pooling"
+  - "Shared-Private Representation"
+  - "Hierarchical Inference"
+  - "Quality-Coherence Trade-off"
 date: 2026-05-08
-content_hash: 185f0ebf3ff3eb27
+content_hash: 99c135354a0c171c
 ---
+
 # Hölder++: Improving the Quality-Coherence Trade-off in Multimodal VAEs
 
 **Conference**: ICML2026  
@@ -141,11 +147,11 @@ Regarding representation classification on MNIST-SVHN, Hölder+ achieves 0.966 a
 
 ## Related Papers
 
-- [\[CVPR 2025\] Conditional Balance: Improving Multi-Conditioning Trade-Offs in Image Generation](../../CVPR2025/image_generation/conditional_balance_improving_multi-conditioning_trade-offs_in_image_generation.md)
+- [\[ICLR 2026\] Carré du champ Flow Matching: Improving the Quality-Generalisation Trade-off in Generative Models via Geometry-Aware Noise](../../ICLR2026/image_generation/carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
+- [\[ICML 2026\] MIRO: Multi-Reward Conditioned Pretraining for Simultaneously Improving T2I Quality and Efficiency](miro_multi-reward_conditioned_pretraining_improves_t2i_quality_and_efficiency.md)
 - [\[ICML 2026\] Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces](discrete_diffusion_samplers_and_bridges_off-policy_algorithms_and_applications_i.md)
 - [\[ICML 2026\] $f$-Trajectory Balance: A Loss Family for Tuning GFlowNets, Generative Models, and LLMs with Off- and On-Policy Data](f-trajectory_balance_a_loss_family_for_tuning_gflownets_generative_models_and_ll.md)
-- [\[ICLR 2026\] Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model](../../ICLR2026/image_generation/evolutionary_caching_to_accelerate_your_off-the-shelf_diffusion_model.md)
-- [\[ICML 2026\] GuidedBridge: Training-freely Improving Bridge Models with Prior Guidance](guidedbridge_training-freely_improving_bridge_models_with_prior_guidance.md)
+- [\[CVPR 2025\] Conditional Balance: Improving Multi-Conditioning Trade-Offs in Image Generation](../../CVPR2025/image_generation/conditional_balance_improving_multi-conditioning_trade-offs_in_image_generation.md)
 
 </div>
 

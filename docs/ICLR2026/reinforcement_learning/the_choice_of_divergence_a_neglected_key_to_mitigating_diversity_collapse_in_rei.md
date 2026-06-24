@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper identifies that the commonly used reverse-KL (mode-seeking) regularization in RLVR is the primary cause of Pass@k diversity collapse and catastrophic forgetting. It proposes using mass-covering f-divergences (forward-KL / JS) as a "review mechanism," combined with dataset partitioning and generator-based imp
+  [ICLR 2026][Reinforcement Learning][RLVR] This paper identifies that the commonly used reverse-KL (mode-seeking) regularization in RLVR is the primary cause of Pass@k diversity collapse and catastrophic forgetting. It proposes using mass-covering f-divergences (forward-KL / JS) as a "review mechanism," combined with dataset partitioning and generator-based implementations, to simultaneously improve Pass@1 and Pass@k while preserving cross-domain capabilities in mathematics an…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - Pass@k
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Diversity Collapse"
+  - "f-divergence"
+  - "Pass@k"
+  - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: f5337bfdb8d1f740
+content_hash: 8da5a3cf5c67fcd0
 ---
+
 # The Choice of Divergence: A Neglected Key to Mitigating Diversity Collapse in Reinforcement Learning with Verifiable Reward
 
 **Conference**: ICLR 2026  
@@ -152,8 +156,8 @@ DPH-F/JS show almost no degradation, outperforming DAPO by an average of 8.35% /
 - [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
 - [\[ICLR 2026\] From Verifiable Dot to Reward Chain: Harnessing Verifiable Reference-based Rewards for RL of Open-ended Generation](from_verifiable_dot_to_reward_chain_harnessing_verifiable_reference-based_reward.md)
 - [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
+- [\[ICLR 2026\] RiskPO: Risk-based Policy Optimization with Verifiable Reward for LLM Post-Training](riskpo_risk-based_policy_optimization_with_verifiable_reward_for_llm_post-traini.md)
 - [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
-- [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](routing_cascades_and_user_choice_for_llms.md)
 
 </div>
 

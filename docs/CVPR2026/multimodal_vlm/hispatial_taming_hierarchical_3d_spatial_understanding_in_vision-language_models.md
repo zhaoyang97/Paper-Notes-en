@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] HiSpatial proposes decomposing 3D spatial intelligence into four cognitive hierarchies (geometric perception → object attributes → object relations → abstract reasoning). It constructs an automated data pipeline processing ~5 million images, 45 million objects, and 2 billion QA pairs, and designs an RGB-D VLM using met
+  [CVPR 2026][Multimodal VLM][3D spatial understanding] HiSpatial proposes decomposing 3D spatial intelligence into four cognitive hierarchies (geometric perception → object attributes → object relations → abstract reasoning). It constructs an automated data pipeline processing ~5 million images, 45 million objects, and 2 billion QA pairs, and designs an RGB-D VLM using metric-scale point cloud maps as auxiliary input. With only 3B parameters, it surpasses GPT-5 and Gemini-2.5-…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D spatial understanding"
+  - "Vision-Language Models"
+  - "hierarchical task design"
+  - "point cloud maps"
+  - "spatial reasoning"
 date: 2026-05-08
-content_hash: d19bb2ecdce8af01
+content_hash: a4b4885c0b88d262
 ---
+
 # HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -176,9 +181,9 @@ Impact of auxiliary 3D input:
 
 - [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
-- [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
 - [\[CVPR 2025\] RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics](../../CVPR2025/multimodal_vlm/robospatial_teaching_spatial_understanding_to_2d_and_3d_vision-language_models_f.md)
-- [\[CVPR 2026\] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning](g2vlm_geometry_grounded_vision_language_model_with_unified_3d_reconstruction_and.md)
+- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](grounded_3d-aware_spatial_vision-language_modeling.md)
+- [\[ICCV 2025\] MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs](../../ICCV2025/multimodal_vlm/mm-spatial_exploring_3d_spatial_understanding_in_multimodal_llms.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data
 description: >-
-  [ICLR 2026][Interpretability][AGOP] xRFM embeds the AGOP-based Recursive Feature Machine into a supervised binary partition tree. This enables the model to learn local relevant features across different data subgroups while reducing training complexity to approximately $O(n\log n)$ and inference complexity to $O(\log n)$, achieving high competitiveness o
+  [ICLR2026][Interpretability][Tabular data] xRFM embeds the AGOP-based Recursive Feature Machine into a supervised binary partition tree. This enables the model to learn local relevant features across different data subgroups while reducing training complexity to approximately $O(n\log n)$ and inference complexity to $O(\log n)$, achieving high competitiveness on TALENT regression, TabArena-Lite, and large-scale meta-test tabular benchmarks.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - AGOP
+  - "ICLR2026"
+  - "Interpretability"
+  - "Tabular data"
+  - "feature learning"
+  - "kernel methods"
+  - "AGOP"
 date: 2026-05-08
-content_hash: 6d623ec4712594f7
+content_hash: 03b6db2ffc50cf28
 ---
+
 # xRFM: Accurate, scalable, and interpretable feature learning models for tabular data
 
 **Conference**: ICLR2026  

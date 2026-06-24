@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting
 description: >-
-  [ICML 2026][Time Series][Paper Note] This paper argues that Time Series Foundation Models (TSFMs) exhibit a phenomenon of "good average metrics but failure at critical moments" in traffic speed forecasting. By employing regime-stratified evaluation based on traffic states, the authors expose catastrophic failures masked by aggregate metrics and propose BM
+  [ICML2026][Time Series][Time Series Foundation Models] This paper argues that Time Series Foundation Models (TSFMs) exhibit a phenomenon of "good average metrics but failure at critical moments" in traffic speed forecasting. By employing regime-stratified evaluation based on traffic states, the authors expose catastrophic failures masked by aggregate metrics and propose BMA (Bimodal Mixture Augmentation), a post-processing method that requires no retraining…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Probabilistic Forecasting"
+  - "Regime Switching"
+  - "Benchmarking"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 244d5ab7ad0f152a
+content_hash: 4d8252fbc6120c4d
 ---
+
 # Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting
 
 **Conference**: ICML2026  
@@ -123,10 +129,10 @@ The table below shows transition regime empirical coverage (%) at $h{=}12$ for a
 ## Related Papers
 
 - [\[ICML 2026\] It's TIME: Towards the Next Generation of Time Series Forecasting Benchmarks](its_time_towards_the_next_generation_of_time_series_forecasting_benchmarks.md)
-- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
-- [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](../../AAAI2026/time_series/probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](../../ICLR2026/time_series/unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
 - [\[ICML 2026\] Mix, Don't Pick: Why Synthetic Corpus Composition Matters for Time Series Foundation Model Pretraining](mix_dont_pick_why_synthetic_corpus_composition_matters_for_time_series_foundatio.md)
-- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](../../ICLR2026/time_series/adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
+- [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](../../AAAI2026/time_series/probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
+- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
 
 </div>
 

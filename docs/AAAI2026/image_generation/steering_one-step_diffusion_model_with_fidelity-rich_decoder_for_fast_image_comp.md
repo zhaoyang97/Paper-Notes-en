@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Steering One-Step Diffusion Model with Fidelity-Rich Decoder for Fast Image Compression
 description: >-
-  [AAAI 2026][Image Generation][Image Compression] This paper proposes SODEC, a one-step diffusion-based image compression model that injects the prior of a high-fidelity VAE decoder into the diffusion generation process v…
+  [AAAI 2026][Image Generation][Image Compression] This paper proposes SODEC, a one-step diffusion-based image compression model that injects the prior of a high-fidelity VAE decoder into the diffusion generation process via a Fidelity Guidance Module (FGM). Combined with a rate annealing training strategy, SODEC achieves high-quality compression at extremely low bitrates, with decoding speed more than 20× faster than multi-step diffusion methods…
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Fidelity Guidance"
   - "Rate Annealing"
 date: 2026-05-08
-content_hash: 6c821bc59eeca94c
+content_hash: ae8e8a4bc823e963
 ---
 
 # Steering One-Step Diffusion Model with Fidelity-Rich Decoder for Fast Image Compression
@@ -250,8 +250,8 @@ Alignment loss ablation:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Realism Control One-step Diffusion for Real-World Image Super-Resolution](realism_control_one-step_diffusion_for_real-world_image_super-resolution.md)
 - [\[ICCV 2025\] Compression-Aware One-Step Diffusion Model for JPEG Artifact Removal](../../ICCV2025/image_generation/compression-aware_one-step_diffusion_model_for_jpeg_artifact_removal.md)
+- [\[CVPR 2026\] Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](../../CVPR2026/image_generation/bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)
 - [\[AAAI 2026\] Hierarchical Schedule Optimization for Fast and Robust Diffusion Model Sampling](hierarchical_schedule_optimization_for_fast_and_robust_diffusion_model_sampling.md)
 - [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](../../CVPR2026/image_generation/pixelrush_ultrafast_trainingfree_highresolution_im.md)
 - [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)

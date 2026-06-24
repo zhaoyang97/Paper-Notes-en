@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Cross-modal retrieval] This paper proposes MAPLE, a framework that leverages the inherent modality alignment capabilities of off-the-shelf MLLMs to automatically construct preference data…
+  [NeurIPS 2025][Multimodal VLM][Cross-modal retrieval] This paper proposes MAPLE, a framework that leverages the inherent modality alignment capabilities of off-the-shelf MLLMs to automatically construct preference data, and introduces a Relative Preference Alignment (RPA) loss to guide cross-modal representation learning, achieving significant improvements on fine-grained retrieval tasks.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "modality gap"
   - "MLLM"
 date: 2026-05-08
-content_hash: 2659df2ee09511a0
+content_hash: f9184d788fb6b6fa
 ---
 
 # Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment
@@ -162,9 +162,9 @@ Improvements on fine-grained retrieval are particularly pronounced: Winoground T
 
 - [\[ICCV 2025\] Instruction-Oriented Preference Alignment for Enhancing Multi-Modal Comprehension Capability of MLLMs](../../ICCV2025/multimodal_vlm/instruction-oriented_preference_alignment_for_enhancing_multi-modal_comprehensio.md)
 - [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
-- [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
-- [\[ICCV 2025\] Causal Disentanglement and Cross-Modal Alignment for Enhanced Few-Shot Learning](../../ICCV2025/multimodal_vlm/causal_disentanglement_and_cross-modal_alignment_for_enhanced_few-shot_learning.md)
+- [\[ICML 2025\] Vision-Language Models Create Cross-Modal Task Representations](../../ICML2025/multimodal_vlm/vision-language_models_create_cross-modal_task_representations.md)
 - [\[NeurIPS 2025\] Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors](learning_from_videos_for_3d_world_enhancing_mllms_with_3d_vision_geometry_priors.md)
+- [\[NeurIPS 2025\] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning](on_the_value_of_cross-modal_misalignment_in_multimodal_representation_learning.md)
 
 </div>
 

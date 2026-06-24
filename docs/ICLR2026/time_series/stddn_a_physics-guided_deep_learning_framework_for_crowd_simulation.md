@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] STDDN: 用流体连续性方程引导的人群仿真深度学习框架
+  [Paper Note] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation
 description: >-
-  [ICLR 2026][Time Series][Neural ODE] STDDN treats crowds as continuous fluid media, utilizing the fluid mechanics continuity equation as a strong physical constraint and Neural ODEs to model macroscopic density field evolution. This macro-constraint is used to inversely regularize a microscopic trajectory prediction network, simultaneously achieving state
+  [ICLR 2026][Time Series][Crowd Simulation] STDDN treats crowds as continuous fluid media, utilizing the fluid mechanics continuity equation as a strong physical constraint and Neural ODEs to model macroscopic density field evolution. This macro-constraint is used to inversely regularize a microscopic trajectory prediction network, simultaneously achieving state-of-the-art accuracy in long-term simulations across four real-world datasets while drastically reducing inference la…
 tags:
-  - ICLR 2026
-  - Time Series
-  - Neural ODE
+  - "ICLR 2026"
+  - "Time Series"
+  - "Crowd Simulation"
+  - "Continuity Equation"
+  - "Neural ODE"
+  - "Dynamic Graph Networks"
+  - "Density-Velocity Coupling"
 date: 2026-05-08
-content_hash: 49637f6c05a7ad9e
+content_hash: 733bcb4f9acb0c55
 ---
+
 # STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation
 
 **Conference**: ICLR 2026  
@@ -159,11 +164,11 @@ Accuracy generally exceeds the three baseline categories: purely physical (SFM/C
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning Koopman Representations with Controllability Guarantees](learning_koopman_representations_with_controllability_guarantees.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICLR 2026\] Random Controlled Differential Equations](random_controlled_differential_equations.md)
-- [\[ICLR 2026\] Tuning the burn-in phase in training recurrent neural networks improves their performance](tuning_the_burn-in_phase_in_training_recurrent_neural_networks_improves_their_pe.md)
-- [\[ICLR 2026\] EDINET-Bench: Evaluating LLMs on Complex Financial Tasks using Japanese Financial Statements](edinet-bench_evaluating_llms_on_complex_financial_tasks_using_japanese_financial.md)
+- [\[ICLR 2026\] DeepPrim: a Physics-Driven 3D Short-term Weather Forecaster via Primitive Equation Learning](deepprim_a_physics-driven_3d_short-term_weather_forecaster_via_primitive_equatio.md)
+- [\[ICLR 2026\] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning](towards_generalizable_pde_dynamics_forecasting_via_physics-guided_invariant_lear.md)
+- [\[ICLR 2026\] Zero-shot Forecasting by Simulation Alone](zero-shot_forecasting_by_simulation_alone.md)
+- [\[ICLR 2026\] End-to-End Probabilistic Framework for Learning with Hard Constraints](end-to-end_probabilistic_framework_for_learning_with_hard_constraints.md)
+- [\[NeurIPS 2025\] IonCast: A Deep Learning Framework for Forecasting Ionospheric Dynamics](../../NeurIPS2025/time_series/ioncast_a_deep_learning_framework_for_forecasting_ionospheric_total_electron_con.md)
 
 </div>
 

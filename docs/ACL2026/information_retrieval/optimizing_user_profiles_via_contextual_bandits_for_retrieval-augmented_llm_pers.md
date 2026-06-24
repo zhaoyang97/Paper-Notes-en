@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Optimizing User Profiles via Contextual Bandits for Retrieval-Augmented LLM Personalization
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Paper Note] The PURPLE framework is proposed, modeling the user profile construction in retrieval-augmented LLM personalization as a contextual bandit problem. It captures dependencies between records via a Plackett-Luce ranking model and directly optimizes retrieval to match generation quality using the LLM's log-likelihood of re
+  [ACL 2026][Information Retrieval & RAG][User profile optimization] The PURPLE framework is proposed, modeling the user profile construction in retrieval-augmented LLM personalization as a contextual bandit problem. It captures dependencies between records via a Plackett-Luce ranking model and directly optimizes retrieval to match generation quality using the LLM's log-likelihood of reference responses as the reward signal.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "User profile optimization"
+  - "Contextual Bandits"
+  - "RAG Personalization"
+  - "Plackett-Luce Ranking"
+  - "Policy Gradient"
 date: 2026-05-08
-content_hash: 438ca5f1dd6cebf5
+content_hash: 093e5dba3b95e4d6
 ---
+
 # Optimizing User Profiles via Contextual Bandits for Retrieval-Augmented LLM Personalization
 
 **Conference**: ACL 2026  
@@ -139,10 +145,10 @@ Removing inter-record dependency modeling (Transformer encoder) leads to the lar
 ## Related Papers
 
 - [\[ACL 2026\] AuthorityBench: Benchmarking LLM Authority Perception for Reliable Retrieval-Augmented Generation](authoritybench_benchmarking_llm_authority_perception_for_reliable_retrieval-augm.md)
-- [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
 - [\[ICLR 2026\] BrowseNet: Graph-Based Associative Memory for Contextual Information Retrieval](../../ICLR2026/information_retrieval/browsenet_graph-based_associative_memory_for_contextual_information_retrieval.md)
+- [\[ACL 2026\] MAB-DQA: Addressing Query Aspect Importance in Document Question Answering with Multi-Armed Bandits](mab-dqa_addressing_query_aspect_importance_in_document_question_answering_with_m.md)
+- [\[ICLR 2026\] Retro*: Optimizing LLMs for Reasoning-Intensive Document Retrieval](../../ICLR2026/information_retrieval/retro_optimizing_llms_for_reasoning-intensive_document_retrieval.md)
 - [\[AAAI 2026\] Exposing the Cracks: Vulnerabilities of Retrieval-Augmented LLM-Based Machine Translation](../../AAAI2026/information_retrieval/exposing_the_cracks_vulnerabilities_of_retrieval-augmented_llm-based_machine_tra.md)
-- [\[ACL 2025\] Parenting: Optimizing Knowledge Selection of Retrieval-Augmented Language Models with Parameter Decoupling and Tailored Tuning](../../ACL2025/information_retrieval/parenting_optimizing_knowledge_selection_of_retrievalaugmented.md)
 
 </div>
 

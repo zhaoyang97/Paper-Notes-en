@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reinforcement Learning with Backtracking Feedback
 description: >-
-  [NeurIPS 2025][LLM Safety][RL] This paper proposes RLBF, a reinforcement learning framework with backtracking feedback that allows agents to return to previous states and re-explore when encountering dead ends. By levera…
+  [NeurIPS 2025][LLM Safety][RL] This paper proposes RLBF, a reinforcement learning framework with backtracking feedback that allows agents to return to previous states and re-explore when encountering dead ends. By leveraging backtracking signals to improve credit assignment, RLBF significantly enhances exploration efficiency in sparse-reward environments.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "credit assignment"
   - "trajectory optimization"
 date: 2026-05-08
-content_hash: 0cef5e4d89c14f09
+content_hash: b1a4471b5e75d0bc
 ---
 
 # Reinforcement Learning with Backtracking Feedback
@@ -128,7 +128,7 @@ PPO with backtracking reward shaping. The backtracking reward is defined as: $r_
 - [\[NeurIPS 2025\] Contextual Integrity in LLMs via Reasoning and Reinforcement Learning](contextual_integrity_in_llms_via_reasoning_and_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reverse Engineering Human Preferences with Reinforcement Learning](reverse_engineering_human_preferences_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
-- [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](../../ICML2026/llm_safety/decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
+- [\[ACL 2025\] Real-time Factuality Assessment from Adversarial Feedback](../../ACL2025/llm_safety/real-time_factuality_assessment_from_adversarial_feedback.md)
 - [\[ICLR 2026\] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](../../ICLR2026/llm_safety/supervised_reinforcement_learning_from_expert_trajectories_to_step-wise_reasonin.md)
 
 </div>

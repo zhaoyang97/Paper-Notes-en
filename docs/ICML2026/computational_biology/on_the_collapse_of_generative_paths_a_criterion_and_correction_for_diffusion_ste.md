@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] On the Collapse of Generative Paths: A Criterion and Correction for Diffusion Steering
 description: >-
-  [ICML 2026][Computational Biology][Paper Note] This paper identifies **Marginal Path Collapse (MPC)**—where intermediate composite densities become non-integrable—as a silent failure in inference-time guidance that combines multiple heterogeneous diffusion/flow models via a ratio-of-densities. It proposes a necessary and sufficient **Path Existence Criterion (PEC)*
+  [ICML 2026][Computational Biology][Marginal Path Collapse] This paper identifies **Marginal Path Collapse (MPC)**—where intermediate composite densities become non-integrable—as a silent failure in inference-time guidance that combines multiple heterogeneous diffusion/flow models via a ratio-of-densities. It proposes a necessary and sufficient **Path Existence Criterion (PEC)** $C(t)>0$ to diagnose collapse and introduces **ACE**, which dynamically corrects paths by applying…
 tags:
-  - ICML 2026
-  - Computational Biology
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Marginal Path Collapse"
+  - "Path Existence Criterion"
+  - "Adaptive Exponent Correction"
+  - "Feynman–Kac Guidance"
+  - "Heterogeneous Noise Scheduling"
 date: 2026-05-08
-content_hash: fd890616c590ab92
+content_hash: f59db16d9efaee51
 ---
+
 # On the Collapse of Generative Paths: A Criterion and Correction for Diffusion Steering
 
 **Conference**: ICML 2026  
@@ -126,13 +132,14 @@ ACE maintains valid PEC across $\omega = 1.1 \to 1.4$, with docking scores impro
 - Value: ⭐⭐⭐⭐⭐ (Critical for any future heterogeneous composition projects).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
 - [\[ICML 2026\] Stein Diffusion Guidance: Training-Free Posterior Correction for Sampling Beyond High-Density Regions](stein_diffusion_guidance_training-free_posterior_correction_for_sampling_beyond_.md)
 - [\[NeurIPS 2025\] Steering Generative Models with Experimental Data for Protein Fitness Optimization](../../NeurIPS2025/computational_biology/steering_generative_models_with_experimental_data_for_protein_fitness_optimizati.md)
-- [\[ICML 2026\] Plug-and-Play Guidance for Discrete Diffusion Models via Gradient-Informed Logit Correction](plug-and-play_guidance_for_discrete_diffusion_models_via_gradient-informed_logit.md)
 - [\[ICML 2026\] Towards A Generative Protein Evolution Machine with DPLM-Evo](towards_a_generative_protein_evolution_machine_with_dplm-evo.md)
 - [\[ICML 2025\] Steering Protein Language Models](../../ICML2025/computational_biology/steering_protein_language_models.md)
 

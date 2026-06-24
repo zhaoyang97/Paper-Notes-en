@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] DADA: Dual Averaging with Distance Adaptation
 description: >-
-  [ICLR 2026][Optimization & Theory][parameter-free] DADA grafts the technique of "dynamically estimating the distance from the initial point to the optimal solution" onto the classic Dual Averaging (DA) framework. This results in a universal first-order method that requires **no problem-dependent parameters, holds for both constrained and unbounded domains, and automati
+  [ICLR 2026][Optimization][convex optimization] DADA grafts the technique of "dynamically estimating the distance from the initial point to the optimal solution" onto the classic Dual Averaging (DA) framework. This results in a universal first-order method that requires **no problem-dependent parameters, holds for both constrained and unbounded domains, and automatically adapts to six major convex function classes**. Simultaneously, it reduces the cost of misestimating the ini…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - parameter-free
-  - dual averaging
-  - universal method
+  - "ICLR 2026"
+  - "Optimization"
+  - "convex optimization"
+  - "parameter-free"
+  - "dual averaging"
+  - "distance adaptation"
+  - "universal method"
+  - "tuning-free step size"
 date: 2026-05-08
-content_hash: d77add8e8a652f5b
+content_hash: 46e05ceafd276941
 ---
+
 # DADA: Dual Averaging with Distance Adaptation
 
 **Conference**: ICLR 2026  
@@ -111,11 +115,11 @@ Test function $f(x)=\frac1p\sum_{i=1}^{d-1}|x^{(i)}-x^{(i+1)}|^p+\frac1p|x^{(d)}
 
 ## Related Papers
 
+- [\[ICLR 2026\] Composite Optimization with Error Feedback: the Dual Averaging Approach](composite_optimization_with_error_feedback_the_dual_averaging_approach.md)
 - [\[ICML 2025\] Layer-wise Quantization for Quantized Optimistic Dual Averaging](../../ICML2025/optimization/layer-wise_quantization_for_quantized_optimistic_dual_averaging.md)
 - [\[ICML 2026\] Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective](../../ICML2026/optimization/rethinking_the_flow-based_gradual_domain_adaptation_a_semi-dual_optimal_transpor.md)
-- [\[ICLR 2026\] Dual Optimistic Ascent (PI Control) is the Augmented Lagrangian Method in Disguise](dual_optimistic_ascent_pi_control_is_the_augmented_lagrangian_method_in_disguise.md)
+- [\[ICLR 2026\] Riemannian Federated Learning via Averaging Gradient Streams](riemannian_federated_learning_via_averaging_gradient_streams.md)
 - [\[ICLR 2026\] Bayesian Evidence-Driven Prototype Evolution for Federated Domain Adaptation](bayesian_evidence-driven_prototype_evolution_for_federated_domain_adaptation.md)
-- [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](../../CVPR2026/optimization/defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 
 </div>
 

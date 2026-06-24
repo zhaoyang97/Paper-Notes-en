@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] To address the long-standing issue where normal and anomalous node representations become entangled when a trained graph anomaly detector transfers to a new graph, this paper proposes a quantifiable metric, AnD (Anomaly non-Discriminativity). It further introduces Dual Residual Centering (Hyper Residual + Affinity Resi
+  [ICLR2026][Graph Learning][Generalist Graph Anomaly Detection] To address the long-standing issue where normal and anomalous node representations become entangled when a trained graph anomaly detector transfers to a new graph, this paper proposes a quantifiable metric, AnD (Anomaly non-Discriminativity). It further introduces Dual Residual Centering (Hyper Residual + Affinity Residual) to mitigate this by comparing each node to domain-invariant residual centers rather than di…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Generalist Graph Anomaly Detection"
+  - "Anomaly Non-Discriminativity"
+  - "Residual Centering"
+  - "Zero-shot Transfer"
+  - "Graph Neural Networks"
 date: 2026-05-08
-content_hash: d5b18542f4a14b42
+content_hash: 4bb68f1e5570cd37
 ---
+
 # DR-GGAD: Dual Residual Centering for Mitigating Anomaly Non‑Discriminativity in Generalist Graph Anomaly Detection
 
 **Conference**: ICLR2026  
@@ -143,12 +149,20 @@ DR-GGAD achieves the highest AUROC across all 8 target graphs. The largest gains
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- ARC: Adversarial Robust Collaborative Learning for Graph Anomaly Detection (2023)
-- UNPrompt: Universal Prompting for Graph Anomaly Detection (2024)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](../../ICML2026/graph_learning/generalist_graph_anomaly_detection_via_prototype-based_distillation.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
+- [\[ICML 2026\] Rethinking Feature Alignment in Generalist Graph Anomaly Detection: A Relational Fingerprint-based Approach](../../ICML2026/graph_learning/rethinking_feature_alignment_in_generalist_graph_anomaly_detection_a_relational_.md)
+- [\[ICLR 2026\] Dynamic Multi-sample Mixup with Gradient Exploration for Open-set Graph Anomaly Detection](dynamic_multi-sample_mixup_with_gradient_exploration_for_open-set_graph_anomaly_.md)
+- [\[ICML 2026\] Learnable Kernel Density Estimation for Graphs and Its Application to Graph-Level Anomaly Detection](../../ICML2026/graph_learning/learnable_kernel_density_estimation_for_graphs_and_its_application_to_graph-leve.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] ProMoS: Generalist Graph Anomaly Detection via Prototype-Based Distillation](../../ICML2026/graph_learning/generalist_graph_anomaly_detection_via_prototype-based_distillation.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs
 description: >-
-  [AAAI 2026 (Oral)][Graph Learning][Fractal Nodes] This paper proposes Fractal Nodes (FN) to enhance long-range message passing in MPNNs. Subgraph-level aggregation nodes are generated via METIS graph partitioning…
+  [AAAI 2026 (Oral)][Graph Learning][Fractal Nodes] This paper proposes Fractal Nodes (FN) to enhance long-range message passing in MPNNs. Subgraph-level aggregation nodes are generated via METIS graph partitioning, combined with low-pass and high-pass filters (LPF+HPF) and a learnable frequency parameter $\omega$. MLP-Mixer is adopted for cross-subgraph communication. The approach achieves $O(L(|V|+|E|))$ linear complexity while matching or surpassing Graph Transformer perform…
 tags:
   - "AAAI 2026 (Oral)"
   - "Graph Learning"
@@ -14,7 +14,7 @@ tags:
   - "MLP-Mixer"
   - "METIS"
 date: 2026-05-08
-content_hash: 2484dd4abbe87feb
+content_hash: 2917b30793e893be
 ---
 
 # Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs
@@ -134,11 +134,11 @@ The same task loss as the base MPNN is used (cross-entropy for classification, M
 
 ## Related Papers
 
+- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
 - [\[ICLR 2026\] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics](../../ICLR2026/graph_learning/improving_long-range_interactions_in_graph_neural_simulators_via_hamiltonian_dyn.md)
 - [\[NeurIPS 2025\] What Expressivity Theory Misses: Message Passing Complexity for GNNs](../../NeurIPS2025/graph_learning/what_expressivity_theory_misses_message_passing_complexity_for_gnns.md)
-- [\[NeurIPS 2025\] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks](../../NeurIPS2025/graph_learning/sketch-augmented_features_improve_learning_long-range_dependencies_in_graph_neur.md)
-- [\[ACL 2026\] From Nodes to Narratives: Explaining Graph Neural Networks with LLMs and Graph Context](../../ACL2026/graph_learning/from_nodes_to_narratives_explaining_graph_neural_networks_with_llms_and_graph_co.md)
-- [\[AAAI 2026\] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning](echoless_label-based_pre-computation_for_memory-efficient_heterogeneous_graph_le.md)
+- [\[ICML 2025\] Beyond Message Passing: Neural Graph Pattern Machine](../../ICML2025/graph_learning/beyond_message_passing_neural_graph_pattern_machine.md)
+- [\[ICLR 2026\] LRIM: a Physics-Based Benchmark for Provably Evaluating Long-Range Capabilities in Graph Learning](../../ICLR2026/graph_learning/lrim_a_physics-based_benchmark_for_provably_evaluating_long-range_capabilities_i.md)
 
 </div>
 

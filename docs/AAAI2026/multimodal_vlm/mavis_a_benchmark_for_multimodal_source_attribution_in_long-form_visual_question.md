@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][source attribution] MAVIS is the first benchmark for evaluating multimodal source attribution systems…
+  [AAAI 2026][Multimodal VLM][source attribution] MAVIS is the first benchmark for evaluating multimodal source attribution systems, comprising 157K visual QA instances with fact-level citations to multimodal documents per answer, along with automatic evaluation metrics across three dimensions: informativeness, groundedness, and fluency.
 tags:
   - "AAAI 2026"
-  - "Information Retrieval & RAG"
+  - "Multimodal VLM"
   - "source attribution"
   - "multimodal RAG"
   - "visual question answering"
@@ -119,11 +119,11 @@ MAVIS is a benchmark rather than a training methodology. Baseline models follow 
 
 ## Related Papers
 
-- [\[ICLR 2026\] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](../../ICLR2026/information_retrieval/ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)
-- [\[ICML 2026\] REAL: Resolving Knowledge Conflicts in Knowledge-Intensive Visual Question Answering via Reasoning-Pivot Alignment](../../ICML2026/information_retrieval/real_resolving_knowledge_conflicts_in_knowledge-intensive_visual_question_answer.md)
-- [\[AAAI 2026\] N2N-GQA: Noise-to-Narrative for Graph-Based Table-Text Question Answering Using LLMs](n2n-gqa_noise-to-narrative_for_graph-based_table-text_question_answering_using_l.md)
-- [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
-- [\[CVPR 2026\] CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering](../../CVPR2026/information_retrieval/cc-vqa_conflict-_and_correlation-aware_method_for_mitigating_knowledge_conflict_.md)
+- [\[AAAI 2026\] MacVQA: Adaptive Memory Allocation and Global Noise Filtering for Continual Visual Question Answering](macvqa_adaptive_memory_allocation_and_global_noise_filtering_for_continual_visua.md)
+- [\[CVPR 2026\] VQ-VA World: Towards High-Quality Visual Question-Visual Answering](../../CVPR2026/multimodal_vlm/vq-va_world_towards_high-quality_visual_question-visual_answering.md)
+- [\[CVPR 2026\] VinQA: Visual Elements Interleaved Long-form Answer Generation for Real-World Multimodal Document QA](../../CVPR2026/multimodal_vlm/vinqa_visual_elements_interleaved_long-form_answer_generation_for_real-world_mul.md)
+- [\[ACL 2025\] WikiMixQA: A Multimodal Benchmark for Question Answering over Tables and Charts](../../ACL2025/multimodal_vlm/wikimixqa_a_multimodal_benchmark_for_question_answering_over_tables_and_charts.md)
+- [\[ICLR 2026\] Human Uncertainty-Aware Data Selection and Automatic Labeling in Visual Question Answering](../../ICLR2026/multimodal_vlm/human_uncertainty-aware_data_selection_and_automatic_labeling_in_visual_question.md)
 
 </div>
 

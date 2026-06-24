@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Interpretability and Generalization Bounds for Learning Spatial Physics
 description: >-
-  [ICML 2026][Optimization & Theory][PINN] This paper employs numerical analysis tools to prove that a learned solution operator $\mathbf{W}$ for linear PDEs (e.g., 1D Poisson) converges only to the projection of the true operator $\mathbf{A}$ onto the training function space, denoted as $\mathbf{A}\mathbf{U}\mathbf{U}^\top$. Consequently, the **function space
+  [ICML 2026][Optimization][Neural Operators] This paper employs numerical analysis tools to prove that a learned solution operator $\mathbf{W}$ for linear PDEs (e.g., 1D Poisson) converges only to the projection of the true operator $\mathbf{A}$ onto the training function space, denoted as $\mathbf{A}\mathbf{U}\mathbf{U}^\top$. Consequently, the **function space itself**—rather than data volume or grid fineness—determines OOD generalization. The authors propose a mechanistic i…
 tags:
-  - ICML 2026
-  - Optimization & Theory
-  - PINN
+  - "ICML 2026"
+  - "Optimization"
+  - "Neural Operators"
+  - "Green's Functions"
+  - "Generalization Bounds"
+  - "Mechanistic Interpretability"
+  - "PINN"
 date: 2026-05-08
-content_hash: 6e06ebd3dcc907ad
+content_hash: 2d5ef428a5f00364
 ---
+
 # Interpretability and Generalization Bounds for Learning Spatial Physics
 
 **Conference**: ICML 2026  
@@ -134,8 +139,8 @@ The authors introduce a **function-space cross-evaluation** protocol: training a
 - [\[ICML 2026\] Pseudospectral Bounds for Transient Amplification in Coupled Gradient Descent](pseudospectral_bounds_for_transient_amplification_in_coupled_gradient_descent.md)
 - [\[ICML 2026\] Taming the Loss Landscape of PINNs with Noisy Feynman-Kac Supervision: Operator Preconditioning and Non-Asymptotic Error Bounds](taming_the_loss_landscape_of_pinns_with_noisy_feynman-kac_supervision_operator_p.md)
 - [\[NeurIPS 2025\] Learning at the Speed of Physics: Equilibrium Propagation on Oscillator Ising Machines](../../NeurIPS2025/optimization/learning_at_the_speed_of_physics_equilibrium_propagation_on_oscillator_ising_mac.md)
-- [\[ICML 2025\] A Generalization Result for Convergence in Learning-to-Optimize](../../ICML2025/optimization/a_generalization_result_for_convergence_in_learning-to-optimize.md)
 - [\[ICLR 2026\] High Probability Bounds for Non-Convex Stochastic Optimization with Momentum](../../ICLR2026/optimization/high_probability_bounds_for_non-convex_stochastic_optimization_with_momentum.md)
+- [\[ICML 2025\] A Generalization Result for Convergence in Learning-to-Optimize](../../ICML2025/optimization/a_generalization_result_for_convergence_in_learning-to-optimize.md)
 
 </div>
 

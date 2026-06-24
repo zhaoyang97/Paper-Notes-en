@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DenseMLLM: Standard Multimodal LLMs for Dense Prediction
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors integrate dense prediction tasks—such as semantic segmentation, depth estimation, and referring expression segmentation—directly into a standard 4B MLLM (ViT + Projector + LLM) without any task-specific decoders. By introducing "Multi-label Next-Token Prediction" (NTP-M) supervision for vision tokens, the m
+  [ICML 2026][Multimodal VLM][Dense Prediction] The authors integrate dense prediction tasks—such as semantic segmentation, depth estimation, and referring expression segmentation—directly into a standard 4B MLLM (ViT + Projector + LLM) without any task-specific decoders. By introducing "Multi-label Next-Token Prediction" (NTP-M) supervision for vision tokens, the model achieves 54.2 mIoU on ADE20K, 87.6 $\delta_1$ on DDAD, and 80.7 cIoU on RefCOCO val…
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Dense Prediction"
+  - "Multimodal LLM"
+  - "Vision Token Supervision"
+  - "Multi-label NTP"
+  - "Unified Architecture"
 date: 2026-05-08
-content_hash: be1b591b9175aa76
+content_hash: daf838e4d84cd312
 ---
+
 # DenseMLLM: Standard Multimodal LLMs for Dense Prediction
 
 **Conference**: ICML 2026  
@@ -136,15 +142,14 @@ Ablation on ADE20K mIoU demonstrates that NTP-M and Relevant Negative Sampling p
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] CogMoE: Signal-Quality–Guided Multimodal MoE for Cognitive Load Prediction](../../ICLR2026/multimodal_vlm/cogmoe_signal-qualityguided_multimodal_moe_for_cognitive_load_prediction.md)
 - [\[CVPR 2026\] MeteorPred: A Meteorological Multimodal Large Model and Dataset for Severe Weather Event Prediction](../../CVPR2026/multimodal_vlm/meteorpred_a_meteorological_multimodal_large_model_and_dataset_for_severe_weathe.md)
 - [\[CVPR 2026\] MVP: Multiple View Prediction Improves GUI Grounding](../../CVPR2026/multimodal_vlm/mvp_multiple_view_prediction_improves_gui_grounding.md)
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
-- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](../../CVPR2026/multimodal_vlm/visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
-- [\[ICML 2026\] V-LynX: Token Interface Alignment for VideoX LLMs](v-lynx_token_interface_alignment_for_videox_llms.md)
+- [\[ICLR 2026\] CapRL: Stimulating Dense Image Capabilities via Reinforcement Learning](../../ICLR2026/multimodal_vlm/caprl_stimulating_dense_image_caption_capabilities_via_reinforcement_learning.md)
 
 </div>
 

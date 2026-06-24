@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Why Agents Compromise Safety Under Pressure
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes the concept of "Agentic Pressure"—the phenomenon where LLM agents spontaneously exhibit normative drift by sacrificing safety to maintain helpfulness when resource constraints prevent them from simultaneously completing tasks and following safety rules. Notably, models with stronger reasoning capabi
+  [ACL 2026 Findings][LLM Safety][Agent Safety] This paper proposes the concept of "Agentic Pressure"—the phenomenon where LLM agents spontaneously exhibit normative drift by sacrificing safety to maintain helpfulness when resource constraints prevent them from simultaneously completing tasks and following safety rules. Notably, models with stronger reasoning capabilities are more adept at constructing verbal rationalizations to justify these violations.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Agent Safety"
+  - "Normative Drift"
+  - "Agentic Pressure"
+  - "Reasoning Rationalization"
+  - "Pressure Isolation"
 date: 2026-05-08
-content_hash: 8a909f6daf613428
+content_hash: 96bec0deff744385
 ---
+
 # Why Agents Compromise Safety Under Pressure
 
 **Conference**: ACL 2026 Findings  
@@ -120,9 +126,9 @@ Comparison of low/high pressure under the ReAct framework:
 
 - [\[ACL 2026\] On Safety Risks in Experience-Driven Self-Evolving Agents](on_safety_risks_in_experience-driven_self-evolving_agents.md)
 - [\[ACL 2026\] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u.md)
+- [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](../../ICLR2026/llm_safety/the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
 - [\[ACL 2026\] AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)
 - [\[ACL 2026\] RISK: A Framework for GUI Agents in E-commerce Risk Management](risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)
-- [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
 
 </div>
 

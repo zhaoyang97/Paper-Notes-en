@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
 description: >-
-  [CVPR 2026][Multimodal VLM][LMM-as-Judge] The authors construct Multi-Crit, the first benchmark for evaluating the multi-criteria following capabilities of multimodal Judge models. It includes criterion-level human annotations and preference conflict samples. Using three new metrics—PAcc, TOS, and CMR—they evaluate 25 LMMs, revealing that even the strongest cl
+  [CVPR 2026][Multimodal VLM][LMM-as-Judge] The authors construct Multi-Crit, the first benchmark for evaluating the multi-criteria following capabilities of multimodal Judge models. It includes criterion-level human annotations and preference conflict samples. Using three new metrics—PAcc, TOS, and CMR—they evaluate 25 LMMs, revealing that even the strongest closed-source model achieves only 32.78% multi-criteria consistency on open-ended generation tasks.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LMM-as-Judge
-  - benchmark
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "LMM-as-Judge"
+  - "multi-criteria evaluation"
+  - "benchmark"
+  - "preference conflict"
+  - "evaluation reliability"
 date: 2026-05-08
-content_hash: 95c7ae68291399e4
+content_hash: 1b69faa94346caa4
 ---
+
 # Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
 
 **Conference**: CVPR 2026  
@@ -145,10 +149,20 @@ All Qwen-based fine-tuned Judges show consistent improvements in Visual Groundin
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] GraphVLM: Benchmarking Vision Language Models for Multimodal Graph Learning](graphvlm_benchmark_vlm_graph_learning.md)
+- [\[CVPR 2026\] ARGUS: Defending Against Multimodal Indirect Prompt Injection via Steering Instruction-Following Behavior](argus_defending_against_multimodal_indirect_prompt_injection_via_steering_instru.md)
+- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
+- [\[CVPR 2026\] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments](prosoftarena_benchmarking_hierarchical_capabilities_of_multi-modal_agents_in_pro.md)
+- [\[ICCV 2025\] MM-IFEngine: Towards Multimodal Instruction Following](../../ICCV2025/multimodal_vlm/mm-ifengine_towards_multimodal_instruction_following.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] CRIT: Graph-Based Automatic Data Synthesis to Enhance Cross-Modal Multi-Hop Reasoning](crit_graph-based_automatic_data_synthesis_to_enhance_cross-modal_multi-hop_reaso.md)

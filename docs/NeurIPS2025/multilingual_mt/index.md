@@ -43,7 +43,7 @@ item_total: 11
 
 **🧠 NeurIPS2025** · **11** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (8)](../../ICLR2026/multilingual_mt/index.md) · [💬 ACL2026 (64)](../../ACL2026/multilingual_mt/index.md) · [🧪 ICML2026 (3)](../../ICML2026/multilingual_mt/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (8)](../../ICLR2026/multilingual_mt/index.md) · [💬 ACL2026 (64)](../../ACL2026/multilingual_mt/index.md) · [🧪 ICML2026 (3)](../../ICML2026/multilingual_mt/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md) · [🧪 ICML2025 (1)](../../ICML2025/multilingual_mt/index.md)
 
 🔥 **Top topics:** LLM ×3 · Translation ×2
 

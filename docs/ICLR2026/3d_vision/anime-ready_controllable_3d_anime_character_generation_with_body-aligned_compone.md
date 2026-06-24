@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anime-Ready: Controllable 3D Anime Character Generation with Body-Aligned Component-Wise Garment Modeling
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Anime-Ready normalizes text or single images into A-pose anime character images, then utilizes Anime-SMPL, a body-aligned component-wise garment DiT, and fragmented texture generation to advance 3D anime characters from "looking similar" to animation-ready assets with skeletons, swappable outfits, and expression contro
+  [ICLR 2026][3D Vision][3D Character Generation] Anime-Ready normalizes text or single images into A-pose anime character images, then utilizes Anime-SMPL, a body-aligned component-wise garment DiT, and fragmented texture generation to advance 3D anime characters from "looking similar" to animation-ready assets with skeletons, swappable outfits, and expression control.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Character Generation"
+  - "Anime Character"
+  - "Animatable Human Model"
+  - "Component-wise Garment Modeling"
+  - "Texture Generation"
 date: 2026-05-08
-content_hash: d04862fa2da97900
+content_hash: 83f6baec18e991c0
 ---
+
 # Anime-Ready: Controllable 3D Anime Character Generation with Body-Aligned Component-Wise Garment Modeling
 
 **Conference**: ICLR 2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DepthFocus: Controllable Depth Estimation for See-Through Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] DepthFocus redefines stereo depth estimation from a "passive output of the nearest surface" to a "controllable process driven by a physical reference distance $c$." Using a steerable ViT that dynamically modulates features through two modules—Conditional MoE and Direct Condition Injection—the network "peels away" trans
+  [CVPR 2026][3D Vision][Stereo Depth Estimation] DepthFocus redefines stereo depth estimation from a "passive output of the nearest surface" to a "controllable process driven by a physical reference distance $c$." Using a steerable ViT that dynamically modulates features through two modules—Conditional MoE and Direct Condition Injection—the network "peels away" transparent or reflective occlusions layer-by-layer like human eye focusing, achieving SOTA on both standard single-l…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Stereo Depth Estimation"
+  - "Controllable Depth Estimation"
+  - "Transparent/Reflective Scenes"
+  - "Multi-layer Depth"
+  - "Conditional Feature Modulation"
 date: 2026-05-08
-content_hash: f34fe135b553d283
+content_hash: 1eca6dfa1e5ddd14
 ---
+
 # DepthFocus: Controllable Depth Estimation for See-Through Scenes
 
 **Conference**: CVPR 2026  
@@ -165,11 +171,11 @@ The base model uses $C=192$ for ablations, while the large model uses $C=384$ fo
 
 ## Related Papers
 
+- [\[CVPR 2026\] Seeing Depth Through Frequency and Motion: A Progressive Training Paradigm for Monocular Depth Estimation](seeing_depth_through_frequency_and_motion_a_progressive_training_paradigm_for_mo.md)
+- [\[CVPR 2026\] PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes](pritti_primitive-based_generation_of_controllable_and_editable_3d_semantic_urban.md)
 - [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
 - [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] AIMDepth: Asymmetric Image-Event Mamba for Monocular Depth Estimation](aimdepth_asymmetric_image-event_mamba_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
+- [\[CVPR 2026\] SCE-Depth: A Spherical Compound Eye Framework for Wide FOV Depth Estimation](sce-depth_a_spherical_compound_eye_framework_for_wide_fov_depth_estimation.md)
 
 </div>
 

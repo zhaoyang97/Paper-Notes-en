@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] ATDC makes the compression order of multiple task features **image-adaptive**: it uses a lightweight proxy head to estimate task predictability and form a correlation matrix, then greedily constructs a Directed Acyclic Graph (DAG) for sequencing. Each task feature is residually encoded conditional on its "parent" tasks
+  [CVPR 2026][Model Compression][Multi-task representation compression] ATDC makes the compression order of multiple task features **image-adaptive**: it uses a lightweight proxy head to estimate task predictability and form a correlation matrix, then greedily constructs a Directed Acyclic Graph (DAG) for sequencing. Each task feature is residually encoded conditional on its "parent" tasks, achieving higher multi-task accuracy at lower bitrates on Taskonomy.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Multi-task representation compression"
+  - "Task dependency DAG"
+  - "Conditional entropy coding"
+  - "Rate-distortion optimization"
+  - "Coding for machines"
 date: 2026-05-08
-content_hash: 7957ba3193b7c307
+content_hash: 5b4886d7740074d5
 ---
+
 # Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression
 
 **Conference**: CVPR 2026  
@@ -146,10 +152,10 @@ Tests were conducted on Taskonomy (Tiny split) across six tasks: Segmentation, K
 ## Related Papers
 
 - [\[CVPR 2026\] Frequency Switching Mechanism for Parameter-Efficient Multi-Task Learning](frequency_switching_mechanism_for_parameter-ecient_multi-task_learning.md)
+- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
 - [\[CVPR 2026\] TaskIT: Memory-Efficient Fine-Tuning of Multi-LoRA LLMs via Cross-Task Importance Transfer](taskit_memory-efficient_fine-tuning_of_multi-lora_llms_via_cross-task_importance.md)
 - [\[CVPR 2025\] TADFormer: Task-Adaptive Dynamic Transformer for Efficient Multi-Task Learning](../../CVPR2025/model_compression/tadformer_task-adaptive_dynamic_transformer_for_efficient_multi-task_learning.md)
 - [\[CVPR 2026\] Understanding and Enforcing Weight Disentanglement in Task Arithmetic](understanding_and_enforcing_weight_disentanglement_in_task_arithmetic.md)
-- [\[CVPR 2026\] Generative Video Compression with One-Dimensional Latent Representation](generative_video_compression_with_one-dimensional_latent_representation.md)
 
 </div>
 

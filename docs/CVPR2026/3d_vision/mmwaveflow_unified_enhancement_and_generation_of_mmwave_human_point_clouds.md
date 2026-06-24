@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds
 description: >-
-  [CVPR 2026][3D Vision][Flow Matching] The tasks of "densifying sparse mmWave point clouds" and "generating mmWave point clouds from dense ones" are unified as a single **reversible transport** between dense and sparse distributions. By learning this transport path via flow matching, and addressing the challenges of asymmetric distributions and path crossin
+  [CVPR 2026][3D Vision][mmWave Point Clouds] The tasks of "densifying sparse mmWave point clouds" and "generating mmWave point clouds from dense ones" are unified as a single **reversible transport** between dense and sparse distributions. By learning this transport path via flow matching, and addressing the challenges of asymmetric distributions and path crossing through a cross-modal latent space alignment and an origin-aware module, a single model achieves SOTA performance…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Flow Matching
+  - "CVPR 2026"
+  - "3D Vision"
+  - "mmWave Point Clouds"
+  - "Flow Matching"
+  - "Point Cloud Enhancement"
+  - "Cross-modal Alignment"
+  - "Human Perception"
 date: 2026-05-08
-content_hash: b58d1b49cb895fc0
+content_hash: 93d102c497ed2056
 ---
+
 # mmWaveFlow: Unified Enhancement and Generation of mmWave Human Point Clouds
 
 **Conference**: CVPR 2026  
@@ -118,7 +123,6 @@ mmWaveFlow's MR=1.11 is significantly better than the runner-up Tiger (2.11), ra
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -126,7 +130,7 @@ mmWaveFlow's MR=1.11 is significantly better than the runner-up Tiger (2.11), ra
 - [\[CVPR 2026\] Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)
 - [\[CVPR 2026\] Photo3D: Advancing Photorealistic 3D Generation through Structure-Aligned Detail Enhancement](photo3d_advancing_photorealistic_3d_generation_through_structure-aligned_detail_.md)
 - [\[CVPR 2026\] Ghosts in the Point Clouds: De-glaring LiDAR in the Transient Domain](ghosts_in_the_point_clouds_de-glaring_lidar_in_the_transient_domain.md)
-- [\[CVPR 2026\] PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)
+- [\[CVPR 2026\] GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance](gaussiangrow_geometry-aware_gaussian_growing_from_3d_point_clouds_with_text_guid.md)
 
 </div>
 

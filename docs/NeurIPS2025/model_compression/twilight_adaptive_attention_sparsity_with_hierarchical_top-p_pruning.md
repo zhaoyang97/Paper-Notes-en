@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning
 description: >-
-  [NeurIPS 2025][Model Compression][Attention Sparsity] This paper proposes Twilight, which replaces fixed-budget top-k attention sparsity with a top-p (nucleus sampling) inspired approach — dynamically selecting the minim…
+  [NeurIPS 2025 Spotlight][Model Compression][Attention Sparsity] This paper proposes Twilight, which replaces fixed-budget top-k attention sparsity with a top-p (nucleus sampling) inspired approach — dynamically selecting the minimum set of tokens whose cumulative attention weights reach p%, adapting to the distribution characteristics of different attention heads. Twilight achieves up to 1.4× additional speedup over state-of-the-art sparse attention methods while maintaining…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Model Compression"
   - "Attention Sparsity"
   - "Adaptive Budget"
@@ -12,7 +12,7 @@ tags:
   - "Long-Context Acceleration"
   - "KV Cache Compression"
 date: 2026-05-08
-content_hash: 0b3f2cbfdf4ea6de
+content_hash: 8a97c405a62aec21
 ---
 
 # Twilight: Adaptive Attention Sparsity with Hierarchical Top-p Pruning
@@ -146,7 +146,7 @@ Twilight adopts a Select-then-Prune two-stage architecture: (1) **Token Selector
 - [\[NeurIPS 2025\] MUSTAFAR: Promoting Unstructured Sparsity for KV Cache Pruning in LLM Inference](mustafar_promoting_unstructured_sparsity_for_kv_cache_pruning_in_llm_inference.md)
 - [\[NeurIPS 2025\] DuoGPT: Training-free Dual Sparsity through Activation-aware Pruning in LLMs](duogpt_training-free_dual_sparsity_through_activation-aware_pruning_in_llms.md)
 - [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](../../ICLR2026/model_compression/agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
+- [\[CVPR 2026\] Content-Adaptive Hierarchical Hyperprior for Neural Video Coding](../../CVPR2026/model_compression/content-adaptive_hierarchical_hyperprior_for_neural_video_coding.md)
 
 </div>
 

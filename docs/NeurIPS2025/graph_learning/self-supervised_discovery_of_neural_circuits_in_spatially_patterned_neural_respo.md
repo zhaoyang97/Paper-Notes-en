@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Neural Networks] A GNN-based self-supervised framework is proposed that infers latent synaptic connectivity via a structure learning module while simultaneously predicting future spik…
+  [NeurIPS 2025][Graph Learning][Graph Neural Networks] A GNN-based self-supervised framework is proposed that infers latent synaptic connectivity via a structure learning module while simultaneously predicting future spiking activity via a spike prediction module. The approach substantially outperforms statistical inference baselines on both simulated ring attractor network data and real mouse head-direction cell recordings.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Continuous Attractor Networks"
   - "Synaptic Connectivity Inference"
 date: 2026-05-08
-content_hash: a8fdd9d12bf6eff2
+content_hash: 0089a703cd570479
 ---
 
 # Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks
@@ -144,11 +144,11 @@ The GNN's inference error is more than 70% lower than that of the GLM.
 
 ## Related Papers
 
+- [\[ICML 2025\] HGOT: Self-supervised Heterogeneous Graph Neural Network with Optimal Transport](../../ICML2025/graph_learning/hgot_self-supervised_heterogeneous_graph_neural_network_with_optimal_transport.md)
 - [\[NeurIPS 2025\] Sound Logical Explanations for Mean Aggregation Graph Neural Networks](sound_logical_explanations_for_mean_aggregation_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks](sketch-augmented_features_improve_learning_long-range_dependencies_in_graph_neur.md)
-- [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
 
 </div>
 

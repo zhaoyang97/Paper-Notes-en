@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Distillation Robustifies Unlearning
 description: >-
-  [NeurIPS 2025][LLM Safety][Robust Unlearning] This paper reveals the core finding that "distillation can robustify unlearning" — distilling an unlearned model into a randomly initialized student network effectively disca…
+  [NeurIPS 2025 Spotlight][LLM Safety][Robust Unlearning] This paper reveals the core finding that "distillation can robustify unlearning" — distilling an unlearned model into a randomly initialized student network effectively discards latent capabilities. Building on this insight, the paper proposes UNDO (Unlearn-Noise-Distill-on-Outputs), which applies weight perturbation to the unlearned model prior to distillation, establishing a tunable compute–robustness trade-off that ap…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "LLM Safety"
   - "Robust Unlearning"
   - "Knowledge Distillation"
@@ -13,7 +13,7 @@ tags:
   - "Relearning Attacks"
   - "WMDP"
 date: 2026-05-08
-content_hash: 1f49a7d838ce98ce
+content_hash: 048a5b89e8d2ed6a
 ---
 
 # Distillation Robustifies Unlearning
@@ -145,10 +145,10 @@ Robustness is defined as $(P_{\text{UNDO}} - P_{\text{Unlearn Only}}) / (P_{\tex
 ## Related Papers
 
 - [\[NeurIPS 2025\] Self-Refining Language Model Anonymizers via Adversarial Distillation](self-refining_language_model_anonymizers_via_adversarial_distillation.md)
-- [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](simu_selective_influence_machine_unlearning.md)
+- [\[ACL 2025\] Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?](../../ACL2025/llm_safety/llm_watermark_distillation_robustness.md)
 - [\[NeurIPS 2025\] Approximate Domain Unlearning for Vision-Language Models](approximate_domain_unlearning_for_visionlanguage_models.md)
-- [\[NeurIPS 2025\] A Reliable Cryptographic Framework for Empirical Machine Unlearning Evaluation](a_reliable_cryptographic_framework_for_empirical_machine_unl.md)
-- [\[NeurIPS 2025\] PULSE: Practical Evaluation Scenarios for Large Multimodal Model Unlearning](pulse_practical_evaluation_scenarios_for_large_multimodal_model_unlearning.md)
+- [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](simu_selective_influence_machine_unlearning.md)
+- [\[ICML 2025\] Targeted Unlearning with Single Layer Unlearning Gradient](../../ICML2025/llm_safety/targeted_unlearning_with_single_layer_unlearning_gradient.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills
 description: >-
-  [NeurIPS 2025][Human Understanding][humanoid control] This paper proposes the PBHC framework, which enables a humanoid robot (Unitree G1) to learn highly dynamic whole-body skills such as kung fu and dance through a phys…
+  [NeurIPS 2025][Human Understanding][humanoid control] This paper proposes the PBHC framework, which enables a humanoid robot (Unitree G1) to learn highly dynamic whole-body skills such as kung fu and dance through a physics-aware motion processing pipeline and a bi-level optimization scheme for adaptive tracking factors. The approach achieves substantially lower tracking errors than existing methods and is successfully deployed on real hardware.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "adaptive tracking"
   - "sim-to-real"
 date: 2026-05-08
-content_hash: d8ad4fe1f04ae4df
+content_hash: 28beb4f696dab1d7
 ---
 
 # KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills
@@ -154,11 +154,11 @@ Among 10 motion sequences subjected to filtering, 4 are rejected and 6 are accep
 
 ## Related Papers
 
-- [\[CVPR 2026\] AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](../../CVPR2026/human_understanding/assistmimic_physics_grounded_humanoid_assistance.md)
+- [\[CVPR 2026\] AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars](../../CVPR2026/human_understanding/audioavatar_personalized_audio-driven_whole-body_talking_avatars.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](../../CVPR2026/human_understanding/interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
 - [\[CVPR 2026\] CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](../../CVPR2026/human_understanding/cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)
-- [\[NeurIPS 2025\] UnCLe: Towards Scalable Dynamic Causal Discovery in Non-Linear Temporal Systems](uncle_towards_scalable_dynamic_causal_discovery_in_non-linear_temporal_systems.md)
-- [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
-- [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](learning_dense_hand_contact_estimation_from_imbalanced_data.md)
+- [\[CVPR 2026\] InterPhys: Physics-aware Human Motion Synthesis in a Dynamic Scene](../../CVPR2026/human_understanding/interphys_physics-aware_human_motion_synthesis_in_a_dynamic_scene.md)
+- [\[CVPR 2026\] PAMotion: Physics-Aware Motion Generation for Full-Body Interaction with Multiple Objects](../../CVPR2026/human_understanding/pamotion_physics-aware_motion_generation_for_full-body_interaction_with_multiple.md)
 
 </div>
 

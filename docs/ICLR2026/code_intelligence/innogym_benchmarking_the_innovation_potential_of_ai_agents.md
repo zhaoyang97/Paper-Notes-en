@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] InnoGym: Benchmarking the Innovation Potential of AI Agents
 description: >-
-  [ICLR 2026][Code Intelligence][AI agent benchmark] Proposes InnoGym, the first benchmark and framework to systematically evaluate the innovation capability of AI agents. It introduces two complementary metrics, Performance Gain and Novelty, and discovers through 18 improvable tasks that while current agents possess some innovativeness, they lack the robustness to trans
+  [ICLR 2026][Code Intelligence][AI agent benchmark] Proposes InnoGym, the first benchmark and framework to systematically evaluate the innovation capability of AI agents. It introduces two complementary metrics, Performance Gain and Novelty, and discovers through 18 improvable tasks that while current agents possess some innovativeness, they lack the robustness to transform innovation into reliable performance improvements.
 tags:
-  - ICLR 2026
-  - Code Intelligence
-  - AI agent benchmark
-  - innovation evaluation
-  - performance gain
-  - novelty
-  - improvable tasks
+  - "ICLR 2026"
+  - "Code Intelligence"
+  - "AI agent benchmark"
+  - "innovation evaluation"
+  - "performance gain"
+  - "novelty"
+  - "improvable tasks"
 date: 2026-05-08
-content_hash: 8ad3992e1a029d7b
+content_hash: 2c2ef30db5603d39
 ---
+
 # InnoGym: Benchmarking the Innovation Potential of AI Agents
 
 **Conference**: ICLR 2026  
@@ -146,11 +147,11 @@ Using the OAG task as an example: Each "task-agent-model" configuration runs for
 
 ## Related Papers
 
-- [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
+- [\[ICLR 2026\] DevOps-Gym: Benchmarking AI Agents in Software DevOps Cycle](devops-gym_benchmarking_ai_agents_in_software_devops_cycle.md)
 - [\[ICLR 2026\] VERINA: Benchmarking Verifiable Code Generation](verina_benchmarking_verifiable_code_generation.md)
 - [\[ICLR 2026\] The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution](the_matthew_effect_of_ai_programming_assistants_a_hidden_bias_in_software_evolut.md)
-- [\[NeurIPS 2025\] MLR-Bench: Evaluating AI Agents on Open-Ended Machine Learning Research](../../NeurIPS2025/code_intelligence/mlr-bench_evaluating_ai_agents_on_open-ended_machine_learning_research.md)
-- [\[ICLR 2026\] FHE-Coder: Benchmarking Secure Agentic Code Generation for Fully Homomorphic Encryption](fhe-coder_benchmarking_secure_agentic_code_generation_for_fully_homomorphic_encr.md)
+- [\[ACL 2026\] RExBench: Can coding agents autonomously implement AI research extensions?](../../ACL2026/code_intelligence/rexbench_can_coding_agents_autonomously_implement_ai_research_extensions.md)
+- [\[ICLR 2026\] VisCoder2: Building Multi-Language Visualization Coding Agents](viscoder2_building_multi-language_visualization_coding_agents.md)
 
 </div>
 

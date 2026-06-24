@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PathChat-SegR1: Reasoning Segmentation in Pathology via SO-GRPO
 description: >-
-  [ICLR 2026][Medical Imaging][GRPO] Addressing the pain point where "rare/unseen morphologies are difficult to segment" in pathology, this paper develops a pathology-specific reasoning segmentation model, PathChat-SegR1. It employs stain-invariant self-distillation to train a pathological vision encoder and utilizes SO-GRPO reinforcement learning to enab
+  [ICLR 2026][Medical Imaging][Pathological image segmentation] Addressing the pain point where "rare/unseen morphologies are difficult to segment" in pathology, this paper develops a pathology-specific reasoning segmentation model, PathChat-SegR1. It employs stain-invariant self-distillation to train a pathological vision encoder and utilizes SO-GRPO reinforcement learning to enable the VLM to autonomously decide "when to output the `<SEG>` token to trigger segmentation." It a…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - GRPO
-  - SEG token
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Pathological image segmentation"
+  - "reasoning segmentation"
+  - "GRPO"
+  - "stain-invariant"
+  - "SEG token"
 date: 2026-05-08
-content_hash: 6487058c76e1aa76
+content_hash: e359ea9ca02b2894
 ---
+
 # PathChat-SegR1: Reasoning Segmentation in Pathology via SO-GRPO
 
 **Conference**: ICLR 2026  
@@ -164,8 +168,8 @@ SO-GRPO Decomposition (PMBT):
 - Value: ⭐⭐⭐⭐⭐ Directly addresses the clinical pain point of "unseen pathology segmentation" with a comprehensive benchmark.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

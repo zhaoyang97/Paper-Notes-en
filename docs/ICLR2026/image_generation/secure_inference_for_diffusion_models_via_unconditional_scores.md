@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Secure Inference for Diffusion Models via Unconditional Scores
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] To address the slow inference of diffusion models under Secure Multi-Party Computation (MPC), this paper employs aggressive low-degree polynomial approximations to accelerate non-linear operators. It then utilizes "unconditional scores," computed without error in plaintext, to correct the conditional scores polluted by
+  [ICLR 2026][Image Generation][Secure Inference] To address the slow inference of diffusion models under Secure Multi-Party Computation (MPC), this paper employs aggressive low-degree polynomial approximations to accelerate non-linear operators. It then utilizes "unconditional scores," computed without error in plaintext, to correct the conditional scores polluted by approximation errors, significantly recovering image quality with almost no additional overhead.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Secure Inference"
+  - "Diffusion Models"
+  - "Polynomial Approximation"
+  - "Score Guidance"
+  - "Unconditional Generation"
 date: 2026-05-08
-content_hash: 67a0fee6c1d55a93
+content_hash: 6968bfc54f3a7574
 ---
+
 # Secure Inference for Diffusion Models via Unconditional Scores
 
 **Conference**: ICLR 2026  

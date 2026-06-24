@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Molmo2 is a **fully open** family of Video-Language Models (weights, data, code, and training recipes are all open, with no data distilled from closed-source VLMs). By building 9 new datasets and utilizing a three-stage training strategy, it fills the missing capability of "video grounding using points and trajectories
+  [CVPR 2026][Multimodal VLM][Video-Language Model] Molmo2 is a **fully open** family of Video-Language Models (weights, data, code, and training recipes are all open, with no data distilled from closed-source VLMs). By building 9 new datasets and utilizing a three-stage training strategy, it fills the missing capability of "video grounding using points and trajectories" even found in closed-source models. The 8B model significantly outperforms comparable open-source models in…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Video-Language Model"
+  - "Open Weights and Data"
+  - "Video Grounding"
+  - "Point Localization and Tracking"
+  - "No-distillation Data"
 date: 2026-05-08
-content_hash: b7f549f051ee8824
+content_hash: da15d407aa3cf8f7
 ---
+
 # Molmo2: Open Weights and Data for Vision-Language Models with Video Understanding and Grounding
 
 **Conference**: CVPR 2026  
@@ -150,16 +156,16 @@ Across 5 tracking benchmarks (MeViS / Ref-YT / Ref-Davis / ReasonVOS / Molmo2-Tr
 - Value: ⭐⭐⭐⭐⭐ Provides a replicable and improvable open-source foundation for video VLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2025\] Molmo and PixMo: Open Weights and Open Data for State-of-the-Art Vision-Language Models](../../CVPR2025/multimodal_vlm/molmo_and_pixmo_open_weights_and_open_data_for_state-of-the-art_vision-language_.md)
-- [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
+- [\[CVPR 2026\] From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)
 - [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
 - [\[CVPR 2026\] Enhancing Part-Level Point Grounding for Any Open-Source MLLMs](enhancing_part-level_point_grounding_for_any_open-source_mllms.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[CVPR 2026\] See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding](see_what_i_mean_aligning_vision_and_language_representations_for_video_fine-grai.md)
 
 </div>
 

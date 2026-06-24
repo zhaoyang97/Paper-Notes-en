@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Object-Generalized Re-Identification: A Step Towards Universal Instance Perception
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Proposes the Object-Generalized ReID (OG-ReID) paradigm—using a unified model to recognize the "same instance" of heterogeneous objects such as people, vehicles, animals, ships, and buildings. The MGOR framework is designed to reinterpret meta-learning as "semantic distribution regularization," outperforming existing R
+  [CVPR 2026][Object Detection][Object Re-Identification] Proposes the Object-Generalized ReID (OG-ReID) paradigm—using a unified model to recognize the "same instance" of heterogeneous objects such as people, vehicles, animals, ships, and buildings. The MGOR framework is designed to reinterpret meta-learning as "semantic distribution regularization," outperforming existing ReID methods on 100+ unseen categories without target domain adaptation.
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Object Re-Identification"
+  - "Cross-Category Generalization"
+  - "Meta-Learning"
+  - "Semantic Invariance"
+  - "Universal Instance Perception"
 date: 2026-05-08
-content_hash: 6a0bc1faf69c2349
+content_hash: 2a86afebc32ed8f8
 ---
+
 # Object-Generalized Re-Identification: A Step Towards Universal Instance Perception
 
 **Conference**: CVPR 2026  

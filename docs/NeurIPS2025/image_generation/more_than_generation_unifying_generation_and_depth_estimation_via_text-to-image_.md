@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models
 description: >-
-  [NeurIPS 2025][Image Generation][depth estimation] Merge proposes a plug-and-play framework that inserts lightweight learnable Converters before each frozen pretrained T2I diffusion block…
+  [NeurIPS 2025][Image Generation][depth estimation] Merge proposes a plug-and-play framework that inserts lightweight learnable Converters before each frozen pretrained T2I diffusion block, enabling depth estimation with only ~12% additional parameters while perfectly preserving the original image generation capability. It achieves state-of-the-art performance among unified models on multiple zero-shot depth estimation benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "unified model"
   - "generative depth estimation"
 date: 2026-05-08
-content_hash: 4b5dbc2477fa1620
+content_hash: 8427f40192f0d7d1
 ---
 
 # More Than Generation: Unifying Generation and Depth Estimation via Text-to-Image Diffusion Models
@@ -162,7 +162,7 @@ $$\mathcal{L}_{LDM} = \mathbb{E}_{\varepsilon(x), y, \epsilon \sim \mathcal{N}(0
 - [\[ICCV 2025\] Erasing More Than Intended? How Concept Erasure Degrades the Generation of Non-Target Concepts](../../ICCV2025/image_generation/erasing_more_than_intended_how_concept_erasure_degrades_the_generation_of_non-ta.md)
 - [\[ICCV 2025\] Less-to-More Generalization: Unlocking More Controllability by In-Context Generation](../../ICCV2025/image_generation/less-to-more_generalization_unlocking_more_controllability_by_in-context_generat.md)
 - [\[NeurIPS 2025\] Diffusion Adaptive Text Embedding for Text-to-Image Diffusion Models](diffusion_adaptive_text_embedding_for_texttoimage_diffusion.md)
-- [\[NeurIPS 2025\] Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation](evaluating_the_evaluators_metrics_for_compositional_text-to-image_generation.md)
+- [\[NeurIPS 2025\] Mitigating Sexual Content Generation via Embedding Distortion in Text-conditioned Diffusion Models](mitigating_sexual_content_generation_via_embedding_distortion_in_text-conditione.md)
 
 </div>
 

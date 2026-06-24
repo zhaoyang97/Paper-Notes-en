@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Instance-wise Adaptive Scheduling via Derivative-Free Meta-Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][FJSP] Addressing the issue where Deep Reinforcement Learning (DRL) scheduling models "only optimize average performance and perform sub-optimally on individual instances," this paper utilizes MAML meta-learning to train an initial model "born for fine-tuning." By replacing both inner and outer loop optimizations with derivat
+  [ICLR 2026][Reinforcement Learning][Job Shop Scheduling] Addressing the issue where Deep Reinforcement Learning (DRL) scheduling models "only optimize average performance and perform sub-optimally on individual instances," this paper utilizes MAML meta-learning to train an initial model "born for fine-tuning." By replacing both inner and outer loop optimizations with derivative-free Evolutionary Strategies (ES) and leveraging GPU parallelism, the model performs full-parameter…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - FJSP
-  - MAML
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Job Shop Scheduling"
+  - "FJSP"
+  - "Meta-Learning"
+  - "MAML"
+  - "Derivative-Free Optimization"
+  - "Evolutionary Strategies"
+  - "Instance-wise Adaptation"
 date: 2026-05-08
-content_hash: d677353832802143
+content_hash: 27364579cb389161
 ---
+
 # Instance-wise Adaptive Scheduling via Derivative-Free Meta-Learning
 
 **Conference**: ICLR 2026  

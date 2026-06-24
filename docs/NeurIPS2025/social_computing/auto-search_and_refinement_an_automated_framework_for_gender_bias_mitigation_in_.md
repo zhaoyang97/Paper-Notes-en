@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs
 description: >-
-  [NeurIPS 2025][Social Computing][gender bias mitigation] This paper proposes FaIRMaker, a framework that adopts an "auto-search + refinement" paradigm: it first employs gradient-based optimization to identify debiasing t…
+  [NeurIPS 2025][Social Computing][gender bias mitigation] This paper proposes FaIRMaker, a framework that adopts an "auto-search + refinement" paradigm: it first employs gradient-based optimization to identify debiasing trigger tokens (Fairwords), then trains a seq2seq model to transform them into human-readable instructions, effectively mitigating gender bias on both open-source and closed-source LLMs while preserving or even improving task performance.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "debiasing"
   - "LLM fairness"
 date: 2026-05-08
-content_hash: a1e02abe60e1d145
+content_hash: 9211a237ba49b25f
 ---
 
 # Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs
@@ -129,11 +129,11 @@ FaIRMaker consists of two stages: **Auto-Search** (optimize debiasing Fairwords 
 
 ## Related Papers
 
-- [\[ACL 2026\] GKnow: Measuring the Entanglement of Gender Bias and Factual Gender](../../ACL2026/social_computing/gknow_measuring_the_entanglement_of_gender_bias_and_factual_gender.md)
 - [\[NeurIPS 2025\] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation](redefining_experts_interpretable_decomposition_of_language_models_for_toxicity_m.md)
+- [\[ACL 2026\] GKnow: Measuring the Entanglement of Gender Bias and Factual Gender](../../ACL2026/social_computing/gknow_measuring_the_entanglement_of_gender_bias_and_factual_gender.md)
 - [\[NeurIPS 2025\] DeepTraverse: A Depth-First Search Inspired Network for Algorithmic Visual Understanding](deeptraverse_a_depth-first_search_inspired_network_for_algorithmic_visual_unders.md)
-- [\[ICLR 2026\] When Agents Persuade: Propaganda Generation and Mitigation in LLMs](../../ICLR2026/social_computing/when_agents_persuade_propaganda_generation_and_mitigation_in_llms.md)
-- [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](../../ACL2026/social_computing/spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
+- [\[ACL 2025\] GG-BBQ: German Gender Bias Benchmark for Question Answering](../../ACL2025/social_computing/gg-bbq_german_gender_bias_benchmark_for_question_answering.md)
+- [\[ACL 2025\] taz2024full: Analysing German Newspapers for Gender Bias and Discrimination across Decades](../../ACL2025/social_computing/taz2024full_analysing_german_newspapers_for_gender_bias_and_discrimination_acros.md)
 
 </div>
 

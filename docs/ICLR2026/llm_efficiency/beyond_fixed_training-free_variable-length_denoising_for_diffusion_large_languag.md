@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] DAEDAL utilizes the internal signal of EOS token prediction confidence in Diffusion Large Language Models (DLLMs) during denoising. Without training, it coarse-tunes the sequence length from a short uniform initial value to a task-appropriate length prior to denoising, and locally inserts masks for expansion at low-con
+  [ICLR2026][LLM Efficiency][Diffusion Large Language Models] DAEDAL utilizes the internal signal of EOS token prediction confidence in Diffusion Large Language Models (DLLMs) during denoising. Without training, it coarse-tunes the sequence length from a short uniform initial value to a task-appropriate length prior to denoising, and locally inserts masks for expansion at low-confidence regions during the denoising process. This overcomes the constraint of "manually presetting…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Diffusion Large Language Models"
+  - "Variable-Length Denoising"
+  - "Training-Free"
+  - "EOS Confidence"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 336a15595c4e46b2
+content_hash: f3bf355bac317e73
 ---
+
 # Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models
 
 **Conference**: ICLR2026  

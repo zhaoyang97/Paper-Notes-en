@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] G2VLM utilizes a "Mixture-of-Transformer-Experts (MoT)" architecture to integrate a feedforward 3D reconstruction expert and a semantic understanding expert within the same VLM. Relying on shared self-attention for mutual reinforcement, this 2B model can directly predict depth, point clouds, and camera poses like VGGT,
+  [CVPR 2026][VLM Reasoning][Geometry-grounded VLM] G2VLM utilizes a "Mixture-of-Transformer-Experts (MoT)" architecture to integrate a feedforward 3D reconstruction expert and a semantic understanding expert within the same VLM. Relying on shared self-attention for mutual reinforcement, this 2B model can directly predict depth, point clouds, and camera poses like VGGT, while outperforming GPT-4o on spatial reasoning tasks (scoring 18.5 points higher on SPAR-Bench).
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Geometry-grounded VLM"
+  - "Unified 3D Reconstruction"
+  - "Spatial Reasoning"
+  - "Mixture-of-Transformer-Experts"
+  - "Interleaved Reasoning"
 date: 2026-05-08
-content_hash: 381fc6f3dc5f8138
+content_hash: 0e533a7ca0727668
 ---
+
 # G$^2$VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ G2VLM-SR outperforms GPT-4o by **18.48 points** on SPAR-Bench. It only trails 72
 
 ## Related Papers
 
-- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 - [\[CVPR 2026\] SpatialStack: Layered Geometry-Language Fusion for 3D VLM Spatial Reasoning](spatialstack_layered_geometry-language_fusion_for_3d_vlm_spatial_reasoning.md)
-- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](grounded_3d-aware_spatial_vision-language_modeling.md)
+- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 - [\[CVPR 2026\] Beyond 3D VQAs: Injecting 3D Spatial Priors into Vision-Language Models for Enhanced Geometric Reasoning](beyond_3d_vqas_injecting_3d_spatial_priors_into_vision-language_models_for_enhan.md)
-- [\[CVPR 2026\] VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction](vlm-3r_vision-language_models_augmented_with_instruction-aligned_3d_reconstructi.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
 
 </div>
 

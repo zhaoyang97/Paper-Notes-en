@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Direction-aware 3D Large Multimodal Models
 description: >-
-  [CVPR 2026][Multimodal VLM][3D LMM] Addressing the pain point where existing 3D point cloud benchmarks ask "left/right/front/back" questions without providing the ego pose—making directional problems inherently ill-posed—this paper introduces PoseRecover to automatically retrieve camera poses from RGB-D video extrinsics for each question. It then uses Po
+  [CVPR 2026][Multimodal VLM][3D LMM] Addressing the pain point where existing 3D point cloud benchmarks ask "left/right/front/back" questions without providing the ego pose—making directional problems inherently ill-posed—this paper introduces PoseRecover to automatically retrieve camera poses from RGB-D video extrinsics for each question. It then uses PoseAlign to transform and align the point cloud directly into that pose coordinate system for off-the-shelf 3D LMMs. Through…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - 3D LMM
-  - ego pose
-  - ScanNet
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "3D LMM"
+  - "ego pose"
+  - "direction-aware"
+  - "point cloud alignment"
+  - "ScanNet"
 date: 2026-05-08
-content_hash: 230fbcc71073c34f
+content_hash: 2b5f2f96c95bda32
 ---
+
 # Direction-aware 3D Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -137,8 +140,8 @@ Comparing pose injection methods on 3D-LLAVA:
 
 ## Related Papers
 
-- [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
 - [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](grounded_3d-aware_spatial_vision-language_modeling.md)
+- [\[CVPR 2026\] Efficient Encoder-Free Fourier-based 3D Large Multimodal Model](efficient_encoder-free_fourier-based_3d_large_multimodal_model.md)
 - [\[CVPR 2026\] CoVFT: Context-aware Visual Fine-tuning for Multimodal Large Language Models](covft_context-aware_visual_fine-tuning_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
 - [\[CVPR 2026\] Uncertainty-Aware Knowledge Distillation for Multimodal Large Language Models](uncertainty-aware_knowledge_distillation_for_multimodal_large_language_models.md)

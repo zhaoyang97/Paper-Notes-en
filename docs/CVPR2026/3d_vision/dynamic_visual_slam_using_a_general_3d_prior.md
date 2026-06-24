@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dynamic Visual SLAM using a General 3D Prior
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This work tightly couples classic patch-based optical flow SLAM (DPV-SLAM) with a feed-forward 3D reconstruction foundational model ($\pi^3$): it uses motion masks predicted by the feed-forward model to filter dynamic pixels, stabilizes bundle adjustment with its depth priors, and resolves the inter-batch scale drift o
+  [CVPR 2026][3D Vision][Dynamic SLAM] This work tightly couples classic patch-based optical flow SLAM (DPV-SLAM) with a feed-forward 3D reconstruction foundational model ($\pi^3$): it uses motion masks predicted by the feed-forward model to filter dynamic pixels, stabilizes bundle adjustment with its depth priors, and resolves the inter-batch scale drift of the feed-forward model via scale alignment with the SLAM sparse point cloud. This achieves accurate poses…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic SLAM"
+  - "Feed-forward Reconstruction Model"
+  - "Moving Object Segmentation"
+  - "Monocular Pose Estimation"
+  - "Scale Alignment"
 date: 2026-05-08
-content_hash: a63ca9f4f1a16aad
+content_hash: 3c615ded84a3a4f5
 ---
+
 # Dynamic Visual SLAM using a General 3D Prior
 
 **Conference**: CVPR 2026  
@@ -161,10 +167,10 @@ Video depth estimation: Ours achieves the best results among **online** methods 
 ## Related Papers
 
 - [\[CVPR 2026\] Flow4DGS-SLAM: Optical Flow-Guided 4D Gaussian Splatting SLAM](flow4dgs-slam_optical_flow-guided_4d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers](affordmatcher_affordance_learning_in_3d_scenes_from_visual_signifiers.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
+- [\[CVPR 2026\] ODGS-SLAM: Omnidirectional Gaussian Splatting SLAM](odgs-slam_omnidirectional_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
+- [\[CVPR 2026\] Unblur-SLAM: Dense Neural SLAM for Blurry Inputs](unblur-slam_dense_neural_slam_for_blurry_inputs.md)
+- [\[CVPR 2026\] SCE-SLAM: Scale-Consistent Monocular SLAM via Scene Coordinate Embeddings](sce-slam_scale-consistent_monocular_slam_via_scene_coordinate_embeddings.md)
 
 </div>
 

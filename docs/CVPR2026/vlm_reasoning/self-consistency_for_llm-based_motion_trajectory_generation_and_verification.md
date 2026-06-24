@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain—defining shape families of motion trajectories via a hierarchy of Lie transformation groups. By clustering multiple trajectories sampled from LLMs under transformation-invariant distance metrics, it achieves unsupervised
+  [CVPR2026][VLM Reasoning][Self-consistency] Extends the self-consistency paradigm of LLMs from natural language reasoning to the visual domain—defining shape families of motion trajectories via a hierarchy of Lie transformation groups. By clustering multiple trajectories sampled from LLMs under transformation-invariant distance metrics, it achieves unsupervised improvements in trajectory generation (+4-6%) and verification (+11.8% precision) without training.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "VLM Reasoning"
+  - "Self-consistency"
+  - "motion trajectory"
+  - "geometric transformation groups"
+  - "shape families"
+  - "unsupervised verification"
 date: 2026-05-08
-content_hash: b4ef6a23826e6762
+content_hash: 46b4627036e8a09a
 ---
+
 # Self-Consistency for LLM-Based Motion Trajectory Generation and Verification
 
 **Conference**: CVPR2026  
@@ -134,10 +140,10 @@ Once the shape family $\mathcal{F}(o, W)$ is recovered, verifying whether a quer
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
-- [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/multimodal_vlm/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
-- [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/multimodal_vlm/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
-- [\[ICCV 2025\] GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography](../../ICCV2025/multimodal_vlm/gendop_auto-regressive_camera_trajectory_generation_as_a_director_of_photography.md)
-- [\[CVPR 2026\] AutoTraces: Autoregressive Trajectory Forecasting via Multimodal Large Language Models](autotraces_autoregressive_trajectory_forecasting_via_multimodal_large_language_m.md)
+- [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/vlm_reasoning/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
+- [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/vlm_reasoning/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
+- [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](../../ICLR2026/vlm_reasoning/timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
+- [\[ICLR 2026\] Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy](../../ICLR2026/vlm_reasoning/vid-llm_a_compact_video-based_3d_multimodal_llm_with_reconstructionreasoning_syn.md)
 
 </div>
 

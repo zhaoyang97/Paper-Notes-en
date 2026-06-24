@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning
 description: >-
-  [NeurIPS 2025][LLM Agent][radiotherapy treatment planning] This paper proposes a zero-shot LLM Agent-based workflow for automated radiotherapy treatment planning…
+  [NeurIPS 2025][LLM Agent][radiotherapy treatment planning] This paper proposes a zero-shot LLM Agent-based workflow for automated radiotherapy treatment planning, in which the LLM directly interacts with a commercial treatment planning system (Eclipse TPS). By iteratively extracting dose-volume histogram (DVH) metrics and objective function losses and reasoning about constraint adjustment strategies, the approach achieves dose distribution quality comparable to or better than…
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -11,7 +11,7 @@ tags:
   - "IMRT"
   - "inverse optimization"
 date: 2026-05-08
-content_hash: 7ab4b5bbe8d85013
+content_hash: 4ca1e301c8f539cb
 ---
 
 # Zero-Shot Large Language Model Agents for Fully Automated Radiotherapy Treatment Planning
@@ -149,10 +149,10 @@ The LLM Agent in this work involves no training or fine-tuning of any kind. Inte
 ## Related Papers
 
 - [\[NeurIPS 2025\] AgentTTS: Large Language Model Agent for Test-time Compute-optimal Scaling Strategy in Complex Tasks](agenttts_large_language_model_agent_for_testtime_computeopti.md)
+- [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](../../ICLR2026/llm_agent/gtool_graph_enhanced_tool_planning_with_large_language_model.md)
+- [\[ICLR 2026\] DreamPhase: Offline Imagination and Uncertainty-Guided Planning for Large-Language-Model Agents](../../ICLR2026/llm_agent/dreamphase_offline_imagination_and_uncertainty-guided_planning_for_large-languag.md)
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
 - [\[NeurIPS 2025\] Are Large Language Models Sensitive to the Motives Behind Communication?](are_large_language_models_sensitive_to_the_motives_behind_communication.md)
-- [\[AAAI 2026\] AutoTool: Efficient Tool Selection for Large Language Model Agents](../../AAAI2026/llm_agent/autotool_efficient_tool_selection_for_large_language_model_agents.md)
-- [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](../../ACL2026/llm_agent/context-value-action_architecture_for_value-driven_large_language_model_agents.md)
 
 </div>
 

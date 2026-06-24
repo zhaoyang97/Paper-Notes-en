@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] This work constructs FaceCoT, the first large-scale VQA dataset for face anti-spoofing (FAS), containing 1.08 million samples across 14 attack types with six-level Chain-of-Thought (CoT) reasoning annotations (from global description to local reasoning to final conclusion). It proposes the CoT-Enhanced Progressive Lear
+  [CVPR 2026][Human Understanding][Face Anti-Spoofing] This work constructs FaceCoT, the first large-scale VQA dataset for face anti-spoofing (FAS), containing 1.08 million samples across 14 attack types with six-level Chain-of-Thought (CoT) reasoning annotations (from global description to local reasoning to final conclusion). It proposes the CoT-Enhanced Progressive Learning (CEPL) two-stage training strategy, achieving an average AUC improvement of 4.06% and an HTER reductio…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Face Anti-Spoofing"
+  - "CoT Reasoning"
+  - "VQA Dataset"
+  - "Progressive Learning"
+  - "RL-enhanced Labeling"
 date: 2026-05-08
-content_hash: e7a2f2088c0912b0
+content_hash: c8caae265b9a94f4
 ---
+
 # FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing
 
 **Conference**: CVPR 2026  
@@ -126,8 +132,8 @@ Ours achieves peak performance across all 11 evaluation sets. Notably, on HKBU-M
 - [\[CVPR 2026\] From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)
 - [\[ICCV 2025\] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing](../../ICCV2025/human_understanding/dadm_dual_alignment_of_domain_and_modality_for_face_anti-spoofing.md)
 - [\[AAAI 2026\] PA-FAS: Towards Interpretable and Generalizable Multimodal Face Anti-Spoofing via Path-Augmented Reinforcement Learning](../../AAAI2026/human_understanding/pa-fas_towards_interpretable_and_generalizable_multimodal_face_anti-spoofing_via.md)
+- [\[CVPR 2025\] Optimal Transport-Guided Source-Free Adaptation for Face Anti-Spoofing](../../CVPR2025/human_understanding/optimal_transport-guided_source-free_adaptation_for_face_anti-spoofing.md)
 - [\[ECCV 2024\] Towards Unified Representation of Invariant-Specific Features in Missing Modality Face Anti-Spoofing](../../ECCV2024/human_understanding/towards_unified_representation_of_invariant-specific_features_in_missing_modalit.md)
-- [\[ECCV 2024\] TF-FAS: Twofold-Element Fine-Grained Semantic Guidance for Generalizable Face Anti-Spoofing](../../ECCV2024/human_understanding/tf-fas_twofold-element_fine-grained_semantic_guidance_for_generalizable_face_ant.md)
 
 </div>
 

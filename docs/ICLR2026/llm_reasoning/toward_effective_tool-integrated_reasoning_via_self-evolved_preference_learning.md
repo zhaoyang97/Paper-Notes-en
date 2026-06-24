@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning
 description: >-
-  [ICLR 2026][LLM Reasoning][DPO] The Tool-Light framework is proposed to analyze the root causes of inefficiency in Tool-Integrated Reasoning (TIR) from an information entropy perspective. By utilizing "entropy-guided sampling + two-stage self-evolved DPO," the model learns "when to call tools and when not to," simultaneously improving both accuracy a
+  [ICLR 2026][Reasoning][Tool-Integrated Reasoning] The Tool-Light framework is proposed to analyze the root causes of inefficiency in Tool-Integrated Reasoning (TIR) from an information entropy perspective. By utilizing "entropy-guided sampling + two-stage self-evolved DPO," the model learns "when to call tools and when not to," simultaneously improving both accuracy and efficiency across 10 math and knowledge-intensive tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - DPO
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Tool-Integrated Reasoning"
+  - "Information Entropy"
+  - "Preference Learning"
+  - "DPO"
+  - "Self-Evolved Sampling"
 date: 2026-05-08
-content_hash: c6089acded812d02
+content_hash: d91b87c1ca588bbf
 ---
+
 # Toward Effective Tool-Integrated Reasoning via Self-Evolved Preference Learning
 
 **Conference**: ICLR 2026  
@@ -139,10 +144,17 @@ Efficiency is defined as $\frac{1}{n}\sum_{i=1}^{n}\frac{M_i}{T_i}$ (Performance
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)
+- [\[ICLR 2026\] THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical Reasoning](thor_tool-integrated_hierarchical_optimization_via_rl_for_mathematical_reasoning.md)
+- [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](../../CVPR2026/llm_reasoning/scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
+- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
+- [\[ACL 2026\] CoAct: Co-Active LLM Preference Learning with Human-AI Synergy](../../ACL2026/llm_reasoning/coact_co-active_llm_preference_learning_with_human-ai_synergy.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] SimpleTIR: End-to-End Reinforcement Learning for Multi-Turn Tool-Integrated Reasoning](simpletir_end-to-end_reinforcement_learning_for_multi-turn_tool-integrated_reaso.md)

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] SCOPED: Score–Curvature Out-of-Distribution Proximity Evaluator for Diffusion
 description: >-
-  [ICLR 2026][AI Safety][Diffusion Model] SCOPED combines the "squared norm / Jacobian trace (curvature)" of the diffusion model score function into a single statistic $T(x)$ to determine whether a sample is in-distribution. By utilizing the Hutchinson estimator to compress curvature into a single JVP, it approximates the accuracy of the strongest diffusion-ba
+  [ICLR 2026][AI Safety][OOD Detection] SCOPED combines the "squared norm / Jacobian trace (curvature)" of the diffusion model score function into a single statistic $T(x)$ to determine whether a sample is in-distribution. By utilizing the Hutchinson estimator to compress curvature into a single JVP, it approximates the accuracy of the strongest diffusion-based OOD methods with only 1–2 forward evaluations, requiring an order of magnitude fewer model evaluations than methods re…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Diffusion Model
+  - "ICLR 2026"
+  - "AI Safety"
+  - "OOD Detection"
+  - "Diffusion Models"
+  - "Score Function"
+  - "Curvature"
+  - "Typical Set"
+  - "Information Geometry"
 date: 2026-05-08
-content_hash: 3c5d39cf7f0bb37c
+content_hash: c007bccb949956e4
 ---
+
 # SCOPED: Score–Curvature Out-of-Distribution Proximity Evaluator for Diffusion
 
 **Conference**: ICLR 2026  
@@ -142,11 +148,11 @@ SCOPED achieves an average AUROC close to MSMA/DiffPath (which require 10F–100
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
 - [\[ICLR 2026\] AP-OOD: Attention Pooling for Out-of-Distribution Detection](ap-ood_attention_pooling_for_out-of-distribution_detection.md)
-- [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
 - [\[ICLR 2026\] Dataless Weight Disentanglement in Task Arithmetic via Kronecker-Factored Approximate Curvature](dataless_weight_disentanglement_in_task_arithmetic_via_kronecker-factored_approx.md)
-- [\[ICLR 2026\] GradPCA: Leveraging NTK Alignment for Reliable Out-of-Distribution Detection](gradpca_leveraging_ntk_alignment_for_reliable_out-of-distribution_detection.md)
-- [\[CVPR 2026\] RankOOD: Class Ranking-based Out-of-Distribution Detection](../../CVPR2026/ai_safety/rankood_-_class_ranking-based_out-of-distribution_detection.md)
+- [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
+- [\[ICLR 2026\] EigenScore: OOD Detection using Posterior Covariance in Diffusion Models](eigenscore_ood_detection_using_posterior_covariance_in_diffusion_models.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models
 description: >-
-  [ACL 2026][LLM Reasoning][PRM] This paper proposes ReProbe, which uses a lightweight transformer probe with fewer than 10M parameters to read the hidden states, attention, and logits of a frozen LLM to determine the reliability of each reasoning step. It approaches or exceeds the performance of PRMs 750-810 times larger on math, planning, and QA tas
+  [ACL2026][Reasoning][Test-time scaling] This paper proposes ReProbe, which uses a lightweight transformer probe with fewer than 10M parameters to read the hidden states, attention, and logits of a frozen LLM to determine the reliability of each reasoning step. It approaches or exceeds the performance of PRMs 750-810 times larger on math, planning, and QA tasks, serving as an efficient step verifier for Best-of-N and beam search.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - PRM
-  - Chain-of-Thought
+  - "ACL2026"
+  - "Reasoning"
+  - "Test-time scaling"
+  - "process verification"
+  - "internal state probes"
+  - "PRM"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: a059ccad76bcc852
+content_hash: 010f502b31c1d57a
 ---
+
 # ReProbe: Efficient Test-Time Scaling of Multi-Step Reasoning by Probing Internal States of Large Language Models
 
 **Conference**: ACL2026  
@@ -145,10 +149,10 @@ The paper analyzes data diversity, PRM complementarity, and architecture choices
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 - [\[ACL 2026\] Parallel Test-Time Scaling for Latent Reasoning Models](parallel_test-time_scaling_for_latent_reasoning_models.md)
-- [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](../../ICLR2026/llm_reasoning/efficient_test-time_scaling_for_small_vision-language_models.md)
-- [\[ACL 2026\] Merlin's Whisper: Enabling Efficient Reasoning in Large Language Models via Black-box Persuasive Prompting](merlin39s_whisper_enabling_efficient_reasoning_in_large_language_models_via_blac.md)
+- [\[CVPR 2026\] VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models](../../CVPR2026/llm_reasoning/visref_visual_refocusing_test_time_scaling.md)
 - [\[ICML 2026\] Prism: Efficient Test-Time Scaling via Hierarchical Search and Self-Verification for Discrete Diffusion Language Models](../../ICML2026/llm_reasoning/prism_efficient_test-time_scaling_via_hierarchical_search_and_self-verification_.md)
 
 </div>

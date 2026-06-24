@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Random-Projection Ensemble Dimension Reduction
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes RPEDR—a high-dimensional regression dimension reduction framework based on random projection ensembles. It divides a large number of low-dimensional random projections into disjoint groups, retains the best projection per group based on empirical regression error, and then aggregates these selected
+  [ICLR 2026][Learning Theory][Random Projection Ensemble] This paper proposes RPEDR—a high-dimensional regression dimension reduction framework based on random projection ensembles. It divides a large number of low-dimensional random projections into disjoint groups, retains the best projection per group based on empirical regression error, and then aggregates these selected projections via SVD. Theoretically, the estimation error decreases with the number of groups $L$ at a r…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Sufficient Dimension Reduction"
+  - "Random Projection Ensemble"
+  - "Central Mean Subspace"
+  - "SVD Aggregation"
+  - "Convergence Rate"
 date: 2026-05-08
-content_hash: ee7eb0cbc8ec4764
+content_hash: 190d431db1b622c7
 ---
+
 # Random-Projection Ensemble Dimension Reduction
 
 **Conference**: ICLR 2026  

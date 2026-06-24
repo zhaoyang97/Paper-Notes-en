@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Difference-Aware Retrieval Policies for Imitation Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] DARP reparameterizes imitation learning from a global "state → action" mapping into a semi-parametric retrieval strategy: it retrieves $k$ nearest neighbors from expert data, predicts actions based on the difference vectors between each neighbor and the query state, and performs permutation-invariant aggregation. Theor
+  [ICLR2026][Robotics][Imitation Learning] DARP reparameterizes imitation learning from a global "state → action" mapping into a semi-parametric retrieval strategy: it retrieves $k$ nearest neighbors from expert data, predicts actions based on the difference vectors between each neighbor and the query state, and performs permutation-invariant aggregation. Theoretically equivalent to a parameter-free Laplacian smoothing, DARP consistently improves performance over standard Behav…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR2026"
+  - "Robotics"
+  - "Imitation Learning"
+  - "Behavior Cloning"
+  - "Retrieval-Augmented"
+  - "Manifold Regularization"
+  - "Laplacian Smoothing"
 date: 2026-05-08
-content_hash: f2b0c410a8dac1c3
+content_hash: c5e9030e5311b709
 ---
+
 # Difference-Aware Retrieval Policies for Imitation Learning
 
 **Conference**: ICLR2026  

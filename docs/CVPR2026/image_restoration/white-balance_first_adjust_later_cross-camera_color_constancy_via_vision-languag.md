@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation
 description: >-
-  [CVPR 2026][Image Restoration][Vision-Language Model] This work reformulates color constancy (light source estimation) from "direct RGB regression" into a closed-loop process of "white-balance first, then let VLM provide feedback for iterative correction." In each round, the current estimate is used to white-balance the image and convert it into a pseudo-sRGB format. A Lo
+  [CVPR 2026][Image Restoration][Color Constancy] This work reformulates color constancy (light source estimation) from "direct RGB regression" into a closed-loop process of "white-balance first, then let VLM provide feedback for iterative correction." In each round, the current estimate is used to white-balance the image and convert it into a pseudo-sRGB format. A LoRA-finetuned VLM judges whether the image remains red/green/blue-tinted, driving the rotation of the light sourc…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Color Constancy"
+  - "Auto White Balance"
+  - "Cross-camera Generalization"
+  - "Vision-Language Models"
+  - "Iterative Feedback"
 date: 2026-05-08
-content_hash: c790c49fec0fc7f4
+content_hash: 2dbf66e327db2135
 ---
+
 # White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,15 @@ Ablations on Gehler-Shi leave-one-out (Table 7).
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
 - [\[CVPR 2026\] Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)
-- [\[CVPR 2026\] VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)
 - [\[CVPR 2026\] Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)
-- [\[CVPR 2026\] Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)
+- [\[CVPR 2025\] Vision-Language Gradient Descent-driven All-in-One Deep Unfolding Networks](../../CVPR2025/image_restoration/vision-language_gradient_descent-driven_all-in-one_deep_unfolding_networks.md)
+- [\[CVPR 2026\] DeSpike: Defocus Deblurring and Image Reconstruction for Spike Camera](seeing_through_blur_tackling_defocus_in_spike-based_imaging.md)
 
 </div>
 

@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density
 description: >-
-  [ICML 2026][Time Series][Attention] OLIVIA significantly improves the pre-training of time series foundation models on heterogeneous data by introducing a Power Spectral Density (PSD)-driven coordination mechanism—comprising the Harmonizer (orthogonal second-order coordination based on Householder reflections) and HarmonicAttention (low-dimensional inter
+  [ICML 2026][Time Series][Power Spectral Density] OLIVIA significantly improves the pre-training of time series foundation models on heterogeneous data by introducing a Power Spectral Density (PSD)-driven coordination mechanism—comprising the Harmonizer (orthogonal second-order coordination based on Householder reflections) and HarmonicAttention (low-dimensional interaction via resonators)—achieving SOTA performance across TSLib Zero-shot, GIFT-Eval, and GluonTS benchmarks.
 tags:
-  - ICML 2026
-  - Time Series
-  - Attention
+  - "ICML 2026"
+  - "Time Series"
+  - "Power Spectral Density"
+  - "Time Series Foundation Models"
+  - "Domain Adaptation"
+  - "Attention Mechanism"
 date: 2026-05-08
-content_hash: c7b640150bd2fe62
+content_hash: 27fa43bd9432768c
 ---
+
 # OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density
 
 **Conference**: ICML 2026  
@@ -125,9 +129,9 @@ Standard Transformer interaction between tokens is $\mathcal{O}(L^2 P)$, which b
 
 - [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](../../NeurIPS2025/time_series/frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
 - [\[ICML 2026\] FactoryNet: A Large-Scale Dataset toward Industrial Time-Series Foundation Models](factorynet_a_large-scale_dataset_toward_industrial_time-series_foundation_models.md)
-- [\[NeurIPS 2025\] How Foundational are Foundation Models for Time Series Forecasting?](../../NeurIPS2025/time_series/how_foundational_are_foundation_models_for_time_series_forecasting.md)
-- [\[NeurIPS 2025\] SEMPO: Lightweight Foundation Models for Time Series Forecasting](../../NeurIPS2025/time_series/sempo_lightweight_foundation_models_for_time_series_forecasting.md)
-- [\[ICML 2026\] Interpretability in Deep Time Series Models Demands Semantic Alignment](interpretability_in_deep_time_series_models_demands_semantic_alignment.md)
+- [\[ICML 2026\] Mix, Don't Pick: Why Synthetic Corpus Composition Matters for Time Series Foundation Model Pretraining](mix_dont_pick_why_synthetic_corpus_composition_matters_for_time_series_foundatio.md)
+- [\[ICLR 2026\] Beyond Accuracy: Are Time Series Foundation Models Well-Calibrated?](../../ICLR2026/time_series/beyond_accuracy_are_time_series_foundation_models_well-calibrated.md)
+- [\[ICLR 2026\] Understanding the Implicit Biases of Design Choices for Time Series Foundation Models](../../ICLR2026/time_series/understanding_the_implicit_biases_of_design_choices_for_time_series_foundation_m.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models
 description: >-
-  [ACL 2026][Social Computing][DPO] SMARTER utilizes a small number of labeled samples to prompt LLMs to generate explanations for both correct and incorrect labels. It then enhances explainable toxicity detection through preference optimization and cross-model training. On three datasets, it achieves 86%-100% of the performance of full-data training usi
+  [ACL2026][Social Computing][Toxicity Detection] SMARTER utilizes a small number of labeled samples to prompt LLMs to generate explanations for both correct and incorrect labels. It then enhances explainable toxicity detection through preference optimization and cross-model training. On three datasets, it achieves 86%-100% of the performance of full-data training using only 6%-57% of the training data.
 tags:
-  - ACL 2026
-  - Social Computing
-  - DPO
+  - "ACL2026"
+  - "Social Computing"
+  - "Toxicity Detection"
+  - "Explainable Classification"
+  - "Self-augmented Training"
+  - "DPO"
+  - "Cross-model Refinement"
 date: 2026-05-08
-content_hash: 9b6c324b11a33aa5
+content_hash: d53a4d202c0361b0
 ---
+
 # SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models
 
 **Conference**: ACL2026  
@@ -154,7 +159,7 @@ Regarding explanation quality, human evaluation of 342 HateXplain samples compar
 - [\[ICML 2026\] Self-Debias: Self-correcting for Debiasing Large Language Models](../../ICML2026/social_computing/self-debias_self-correcting_for_debiasing_large_language_models.md)
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
 - [\[ACL 2026\] ToxiTrace: Gradient-Aligned Training for Explainable Chinese Toxicity Detection](toxitrace_gradient-aligned_training_for_explainable_chinese_toxicity_detection.md)
-- [\[ACL 2025\] BiasGuard: A Reasoning-Enhanced Bias Detection Tool for Large Language Models](../../ACL2025/social_computing/biasguard_a_reasoning-enhanced_bias_detection_tool_for_large_language_models.md)
+- [\[ACL 2026\] ClaimDB: A Fact Verification Benchmark over Large Structured Data](claimdb_a_fact_verification_benchmark_over_large_structured_data.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Improving Feasibility via Fast Autoencoder-Based Projections
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] Training an autoencoder to "straighten" complex (non-convex) feasible sets into a simple convex latent space (a ball) allows a single forward decoding pass to rapidly correct infeasible neural network outputs back into the feasible region. This achieves near 100% feasibility in sub-millisecond time, serving as a low-la
+  [ICLR 2026][Optimization][Constrained optimization] Training an autoencoder to "straighten" complex (non-convex) feasible sets into a simple convex latent space (a ball) allows a single forward decoding pass to rapidly correct infeasible neural network outputs back into the feasible region. This achieves near 100% feasibility in sub-millisecond time, serving as a low-latency alternative to traditional projections or solvers.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Constrained optimization"
+  - "Feasibility projection"
+  - "Amortized optimization"
+  - "Autoencoder"
+  - "Adversarial training"
+  - "Safe Reinforcement Learning"
 date: 2026-05-08
-content_hash: 27125a4ec9731d06
+content_hash: a3f1a0ead2c90990
 ---
+
 # Improving Feasibility via Fast Autoencoder-Based Projections
 
 **Conference**: ICLR 2026  
@@ -135,14 +142,14 @@ SafetyPointGoal2-v0 environment, Cost represents constraint violations (lower is
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
 - [\[ICLR 2026\] Fast Data Mixture Optimization via Gradient Descent](fast_data_mixture_optimization_via_gradient_descent.md)
 - [\[ICLR 2026\] Improving LLM-based Global Optimization with Search Space Partitioning](improving_llm-based_global_optimization_with_search_space_partitioning.md)
 - [\[ICLR 2026\] Improving Online-to-Nonconvex Conversion for Smooth Optimization via Double Optimism](improving_online-to-nonconvex_conversion_for_smooth_optimization_via_double_opti.md)
-- [\[ICLR 2026\] Cautious Optimizers: Improving Training with One Line of Code](cautious_optimizers_improving_training_with_one_line_of_code.md)
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](../../NeurIPS2025/optimization/viking_deep_variational_inference_with_stochastic_projections.md)
 
 </div>

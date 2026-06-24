@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning
 description: >-
-  [ICML 2026][AI Safety][machine unlearning] The trade-off between "forgetting vs. retaining" is formulated directly as a "per-step constrained first-order convex optimization" problem. The dot product of the retain/forget gradients, $\kappa = \bm{g_r}\cdot\bm{g_f}$, serves simultaneously as a hardness metric, a switch for update directions, and an early stopping
+  [ICML 2026][AI Safety][machine unlearning] The trade-off between "forgetting vs. retaining" is formulated directly as a "per-step constrained first-order convex optimization" problem. The dot product of the retain/forget gradients, $\kappa = \bm{g_r}\cdot\bm{g_f}$, serves simultaneously as a hardness metric, a switch for update directions, and an early stopping condition. It proves more stable than baselines such as GA, GDiff, SCRUB, and KL on CIFAR-10/ResNet-20 and Llama-2-7…
 tags:
-  - ICML 2026
-  - AI Safety
-  - machine unlearning
-  - collateral forgetting
+  - "ICML 2026"
+  - "AI Safety"
+  - "machine unlearning"
+  - "multi-objective optimization"
+  - "constrained optimization"
+  - "gradient dot product"
+  - "collateral forgetting"
 date: 2026-05-08
-content_hash: 987ebbb5e3d38dee
+content_hash: a8753022f148a0c1
 ---
+
 # How Hard Can It Be? Hardness-Aware Multi-Objective Unlearning
 
 **Conference**: ICML 2026  
@@ -130,9 +134,9 @@ CV tasks used ResNet-20 pretrained on CIFAR-10; LLM tasks used Llama-2-7B-chat f
 ## Related Papers
 
 - [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
-- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
 - [\[CVPR 2025\] MOS-Attack: A Scalable Multi-Objective Adversarial Attack Framework](../../CVPR2025/ai_safety/mos-attack_a_scalable_multi-objective_adversarial_attack_framework.md)
-- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[ICLR 2026\] How to Cure Newton for Unlearning Neural Networks? An Empirical Study from the Hessian Perspective](../../ICLR2026/ai_safety/how_to_cure_newton_for_unlearning_neural_networks_an_empirical_study_from_the_he.md)
+- [\[AAAI 2026\] Easy to Learn, Yet Hard to Forget: Towards Robust Unlearning Under Bias](../../AAAI2026/ai_safety/easy_to_learn_yet_hard_to_forget_towards_robust_unlearning_under_bias.md)
 - [\[ICML 2026\] Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models](forget_to_know_remember_to_use_context-aware_unlearning_for_large_language_model.md)
 
 </div>

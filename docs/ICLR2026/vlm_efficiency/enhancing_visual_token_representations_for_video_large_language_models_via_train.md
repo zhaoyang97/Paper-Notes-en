@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding
 description: >-
-  [ICLR 2026][vlm_efficiency][Paper Note] Addressing the issue where Video Large Language Models (Video LLMs) lose spatio-temporal information when compressing thousands of visual tokens into a limited context, this paper proposes ST-GridPool, a training-free method. It utilizes "Pyramidal Temporal Gridding" to aggregate frame tokens across different time scal
+  [ICLR2026][Multimodal Efficiency][Video Large Language Models] Addressing the issue where Video Large Language Models (Video LLMs) lose spatio-temporal information when compressing thousands of visual tokens into a limited context, this paper proposes ST-GridPool, a training-free method. It utilizes "Pyramidal Temporal Gridding" to aggregate frame tokens across different time scales, injecting multi-granularity motion information, and "Norm-based Spatial Pooling" to weighted-…
 tags:
-  - ICLR 2026
-  - vlm_efficiency
+  - "ICLR2026"
+  - "Multimodal Efficiency"
+  - "Video Large Language Models"
+  - "visual token compression"
+  - "training-free"
+  - "spatio-temporal pooling"
+  - "token norm"
 date: 2026-05-08
-content_hash: 7c5f4993e66a0a86
+content_hash: 94d3935afb7232ed
 ---
+
 # Enhancing Visual Token Representations for Video Large Language Models via Training-free Spatial-Temporal Pooling and Gridding
 
 **Conference**: ICLR2026  
@@ -131,15 +137,16 @@ Under a strict 30% budget, the method leads across all three long video benchmar
 - Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and stronger at high compression; has direct practical value for deployed Video LLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] GroundVTS: Visual Token Sampling in Multimodal Large Language Models for Video Temporal Grounding](../../CVPR2026/vlm_efficiency/groundvts_visual_token_sampling_in_multimodal_large_language_models_for_video_te.md)
-- [\[ICLR 2026\] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration](visiontrim_unified_vision_token_compression_for_training-free_mllm_acceleration.md)
-- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](../../CVPR2026/vlm_efficiency/zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
+- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/vlm_efficiency/filter_correlate_compress_training-free_token_reduction_for_.md)
 - [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](../../CVPR2026/vlm_efficiency/metom_metadata-guided_token_merging_for_efficient_video_llms.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[ICLR 2026\] Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective](task-related_token_compression_in_multimodal_large_language_models_from_an_expla.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](../../CVPR2026/vlm_efficiency/zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
 
 </div>
 

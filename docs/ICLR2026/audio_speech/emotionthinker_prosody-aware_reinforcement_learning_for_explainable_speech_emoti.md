@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning
 description: >-
-  [ICLR 2026][Audio & Speech][Reinforcement Learning] This work reframes Speech Emotion Recognition (SER) as a deep reasoning problem for the first time, utilizing a prosody-enhanced base model combined with GRPO-PTR (Progressive Trustworthy Reasoning) reinforcement learning to generate explainable emotional reasoning grounded in acoustic evidence.
+  [ICLR 2026 Oral][Audio & Speech][Speech Emotion Recognition] This work reframes Speech Emotion Recognition (SER) as a deep reasoning problem for the first time, utilizing a prosody-enhanced base model combined with GRPO-PTR (Progressive Trustworthy Reasoning) reinforcement learning to generate explainable emotional reasoning grounded in acoustic evidence.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Reinforcement Learning
-  - Chain-of-Thought
+  - "ICLR 2026 Oral"
+  - "Audio & Speech"
+  - "Speech Emotion Recognition"
+  - "Explainable Reasoning"
+  - "Reinforcement Learning"
+  - "Prosody-Aware"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: a715afed344e6660
+content_hash: fe44e7864ce9d88e
 ---
+
 # EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning
 
 **Conference**: ICLR 2026 Oral  
@@ -146,10 +150,10 @@ EmotionThinker achieves the highest emotion accuracy (68.89%) and significantly 
 ## Related Papers
 
 - [\[ACL 2026\] Privacy-preserving Prosody Representation Learning](../../ACL2026/audio_speech/privacy-preserving_prosody_representation_learning.md)
-- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
-- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 - [\[ICLR 2026\] Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition](learnable_fractional_superlets_with_a_spectro-temporal_emotion_encoder_for_speec.md)
+- [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
 - [\[ICLR 2026\] OWL: Geometry-Aware Spatial Reasoning for Audio Large Language Models](owl_geometry-aware_spatial_reasoning_for_audio_large_language_models.md)
+- [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
 
 </div>
 

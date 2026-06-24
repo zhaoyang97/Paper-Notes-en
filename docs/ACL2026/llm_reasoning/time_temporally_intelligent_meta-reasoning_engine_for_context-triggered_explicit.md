@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] TIME: Temporally Intelligent Meta-Reasoning Engine for Context-Triggered Explicit Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][TimeBench] TIME transforms explicit reasoning from a "permanently active long chain-of-thought" into a locally controlled strategy triggered by temporal and discourse cues. Through `time` tags, tick events, short `think` blocks, and a four-phase QLoRA curriculum, Qwen3 models significantly outperform thinking/no-thinking baseline
+  [ACL 2026 Findings][Reasoning][Explicit reasoning control] TIME transforms explicit reasoning from a "permanently active long chain-of-thought" into a locally controlled strategy triggered by temporal and discourse cues. Through `time` tags, tick events, short `think` blocks, and a four-phase QLoRA curriculum, Qwen3 models significantly outperform thinking/no-thinking baselines on TimeBench while compressing reasoning tokens by approximately an order of magnitude.
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - TimeBench
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "Explicit reasoning control"
+  - "Temporal context"
+  - "Meta-reasoning"
+  - "TimeBench"
+  - "QLoRA alignment"
 date: 2026-05-08
-content_hash: c7c0f22168a174d7
+content_hash: ce4dc419c1fedbb0
 ---
+
 # TIME: Temporally Intelligent Meta-Reasoning Engine for Context-Triggered Explicit Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -156,10 +161,10 @@ Phase-wise ablation for the 32B model demonstrates how capabilities and structur
 ## Related Papers
 
 - [\[ICLR 2026\] C-Voting: Confidence-Based Test-Time Voting without Explicit Energy Functions](../../ICLR2026/llm_reasoning/c-voting_confidence-based_test-time_voting_without_explicit_energy_functions.md)
+- [\[ICLR 2026\] PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning](../../ICLR2026/llm_reasoning/perk_long-context_reasoning_as_parameter-efficient_test-time_learning.md)
 - [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](../../ICML2026/llm_reasoning/verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
+- [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](../../ICLR2026/llm_reasoning/rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
 - [\[ACL 2026\] DELTA: Dynamic Layer-Aware Token Attention for Efficient Long-Context Reasoning](delta_dynamic_layer-aware_token_attention_for_efficient_long-context_reasoning.md)
-- [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](think_outside_the_policy_in-context_steered_policy_optimization.md)
-- [\[ACL 2026\] Long-Context Reasoning Through Proxy-Based Chain-of-Thought Tuning](long-context_reasoning_through_proxy-based_chain-of-thought_tuning.md)
 
 </div>
 

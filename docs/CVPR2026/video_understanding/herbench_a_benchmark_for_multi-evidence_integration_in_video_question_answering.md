@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] HERBench is a VideoQA benchmark specifically designed for multi-evidence integration, consisting of 26,806 five-choice multiple-choice questions. Each question structurally necessitates the fusion of $\ge 3$ temporally dispersed, non-overlapping visual cues. By introducing the Minimum Required Frame Set (MRFS) metric,
+  [CVPR 2026][Video Understanding][VideoQA Benchmark] HERBench is a VideoQA benchmark specifically designed for multi-evidence integration, consisting of 26,806 five-choice multiple-choice questions. Each question structurally necessitates the fusion of $\ge 3$ temporally dispersed, non-overlapping visual cues. By introducing the Minimum Required Frame Set (MRFS) metric, it identifies two critical bottlenecks in current Video-LLMs: insufficient frame retrieval and evidence fusi…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "VideoQA Benchmark"
+  - "Multi-evidence Integration"
+  - "Frame Selection"
+  - "Long Video Understanding"
+  - "Temporal Reasoning"
 date: 2026-05-08
-content_hash: 46352df57f5bc315
+content_hash: d9eedfc86884e79d
 ---
+
 # HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering
 
 **Conference**: CVPR 2026  
@@ -140,10 +146,10 @@ Evaluation of 13 SOTA Video-LLMs shows an overall accuracy of only 31-42% (rando
 ## Related Papers
 
 - [\[CVPR 2026\] MovieRecapsQA: A Multimodal Open-Ended Video Question-Answering Benchmark](movierecapsqa_a_multimodal_open-ended_video_question-answering_benchmark.md)
-- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
 - [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
 - [\[CVPR 2026\] Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering](do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
+- [\[ICLR 2026\] A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering](../../ICLR2026/video_understanding/air_enabling_adaptive_iterative_and_reasoning-based_frame_selection_for_video_qu.md)
 
 </div>
 

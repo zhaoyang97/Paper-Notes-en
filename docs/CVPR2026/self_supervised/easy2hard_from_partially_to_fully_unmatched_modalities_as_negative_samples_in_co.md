@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Easy2Hard: From Partially to Fully Unmatched Modalities as Negative Samples in Contrastive Learning
 description: >-
-  [CVPR 2026][Self-Supervised Learning][total correlation] When the number of modalities $M>2$, in-batch negative samples naturally vary in difficulty based on how many non-anchor modalities they share with the positive sample. Easy2Hard explicitly splits negative samples into "partially unmatched (easy)" and "fully unmatched (hard)" categories. It uses a sigmoid curriculum cu
+  [CVPR 2026][Self-Supervised Learning][Multimodal Contrastive Learning] When the number of modalities $M>2$, in-batch negative samples naturally vary in difficulty based on how many non-anchor modalities they share with the positive sample. Easy2Hard explicitly splits negative samples into "partially unmatched (easy)" and "fully unmatched (hard)" categories. It uses a sigmoid curriculum curve to smoothly shift the training weight from easy negatives to hard negatives as traini…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - total correlation
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Multimodal Contrastive Learning"
+  - "Negative Sample Grading"
+  - "Curriculum Learning"
+  - "Cross-modal Retrieval"
+  - "Total correlation"
 date: 2026-05-08
-content_hash: 8026ed930af7d4cc
+content_hash: 24516e3619da4924
 ---
+
 # Easy2Hard: From Partially to Fully Unmatched Modalities as Negative Samples in Contrastive Learning
 
 **Conference**: CVPR 2026  
@@ -158,16 +163,16 @@ Hyperparameter sensitivity (Channel / EH-MIMIC):
 - Value: ⭐⭐⭐⭐ High practical utility as an "add-on" for multimodal contrastive training without increasing encoder costs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning](temporal_imbalance_of_positive_and_negative_supervision_in_class-incremental_lea.md)
-- [\[CVPR 2026\] UniGeoCLIP: Unified Geospatial Contrastive Learning](unigeoclip_geospatial_contrastive.md)
 - [\[CVPR 2026\] HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm](hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm.md)
 - [\[CVPR 2026\] Learning from Semantic Dictionaries: Discriminative Codebook Contrastive Learning for Unified Visual Representation and Generation](learning_from_semantic_dictionaries_discriminative_codebook_contrastive_learning.md)
-- [\[CVPR 2026\] Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)
+- [\[ICLR 2026\] Samples Are Not Equal: A Sample Selection Approach for Deep Clustering](../../ICLR2026/self_supervised/samples_are_not_equal_a_sample_selection_approach_for_deep_clustering.md)
+- [\[CVPR 2026\] UniRefiner: Teaching Pre-trained ViTs to Self-Dispose Dross via Contrastive Register](unirefiner_teaching_pre-trained_vits_to_self-dispose_dross_via_contrastive_regis.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences
 description: >-
-  [ICLR 2026][Model Compression][Dataset] The authors build Paper Copilot—a persistent digital archive and analysis platform for peer reviews across dozens of AI/ML conferences. By collecting review data via a hybrid strategy of OpenReview API, web scraping, and community contributions, the platform archives real-time rating snapshots (including dynamics befor
+  [ICLR 2026][Model Compression][Peer Review] The authors build Paper Copilot—a persistent digital archive and analysis platform for peer reviews across dozens of AI/ML conferences. By collecting review data via a hybrid strategy of OpenReview API, web scraping, and community contributions, the platform archives real-time rating snapshots (including dynamics before and after rebuttals). It reveals a structural shift in ICLR 2025 where decision entropy decreased anomalously…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - Dataset
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Peer Review"
+  - "Rating Dynamics"
+  - "Decision Entropy"
+  - "Conference Statistics"
+  - "Dataset"
+  - "LLM Metadata Extraction"
 date: 2026-05-08
-content_hash: f12788e6a79a6245
+content_hash: 3ced1925bed9f414
 ---
+
 # Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences
 
 **Conference**: ICLR 2026  
@@ -160,8 +166,8 @@ The overall annual decision entropy is $\bar{H}_t = \sum_b w_{t,b} H_{t,b}$. His
 
 ## Related Papers
 
-- [\[ICLR 2026\] LLM DNA: Tracing Model Evolution via Functional Representations](llm_dna_tracing_model_evolution_via_functional_representations.md)
 - [\[ICLR 2026\] Evolution and compression in LLMs: On the emergence of human-aligned categorization](evolution_and_compression_in_llms_on_the_emergence_of_human-aligned_categorizati.md)
+- [\[ICLR 2026\] LLM DNA: Tracing Model Evolution via Functional Representations](llm_dna_tracing_model_evolution_via_functional_representations.md)
 - [\[ICLR 2026\] Textual Equilibrium Propagation for Deep Compound AI Systems](textual_equilibrium_propagation_for_deep_compound_ai_systems.md)
 - [\[ACL 2026\] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](../../ACL2026/model_compression/when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)
 - [\[AAAI 2026\] Group Orthogonal Low-Rank Adaptation for RGB-T Tracking](../../AAAI2026/model_compression/group_orthogonal_low-rank_adaptation_for_rgb-t_tracking.md)

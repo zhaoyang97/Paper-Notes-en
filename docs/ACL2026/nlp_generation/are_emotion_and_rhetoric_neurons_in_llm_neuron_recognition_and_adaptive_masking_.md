@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering
 description: >-
-  [ACL 2026][Text Generation][Paper Note] This paper systematically investigates the representation mechanisms and intrinsic correlations of emotion and rhetorical neurons in LLMs. By proposing a neuron recognition framework combined with multi-dimensional screening and an adaptive masking verification method, it achieves directional induction of emotion/rheto
+  [ACL 2026][Text Generation][Emotion Neurons] This paper systematically investigates the representation mechanisms and intrinsic correlations of emotion and rhetorical neurons in LLMs. By proposing a neuron recognition framework combined with multi-dimensional screening and an adaptive masking verification method, it achieves directional induction of emotion/rhetoric prediction and utilizes rhetorical neurons to assist emotion recognition.
 tags:
-  - ACL 2026
-  - Text Generation
+  - "ACL 2026"
+  - "Text Generation"
+  - "Emotion Neurons"
+  - "Rhetorical Neurons"
+  - "Adaptive Masking"
+  - "Neuron Regulation"
+  - "LLM Interpretability"
 date: 2026-05-08
-content_hash: 27291d2558246d49
+content_hash: 8aef613b09cbb00c
 ---
+
 # Are Emotion and Rhetoric Neurons in LLM? Neuron Recognition and Adaptive Masking for Emotion-Rhetoric Prediction Steering
 
 **Conference**: ACL 2026  
@@ -151,7 +157,7 @@ Accuracy changes under different masking methods ($\Delta$ACC %):
 - [\[ACL 2026\] ConlangCrafter: Constructing Languages with a Multi-Hop LLM Pipeline](conlangcrafter_constructing_languages_with_a_multi-hop_llm_pipeline.md)
 - [\[ACL 2025\] Personalized Text Generation with Contrastive Activation Steering](../../ACL2025/nlp_generation/personalized_text_generation_with_contrastive_activation_steering.md)
 - [\[ACL 2026\] Can You Make It Sound Like You? Post-Editing LLM-Generated Text for Personal Style](can_you_make_it_sound_like_you_post-editing_llm-generated_text_for_personal_styl.md)
-- [\[ACL 2025\] Balancing Diversity and Risk in LLM Sampling: How to Select Your Method and Parameter for Open-Ended Text Generation](../../ACL2025/nlp_generation/balancing_diversity_and_risk_in_llm_sampling_how_to_select_your_method_and_param.md)
+- [\[ICLR 2026\] p-less Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding](../../ICLR2026/nlp_generation/p-less_sampling_a_robust_hyperparameter-free_approach_for_llm_decoding.md)
 
 </div>
 

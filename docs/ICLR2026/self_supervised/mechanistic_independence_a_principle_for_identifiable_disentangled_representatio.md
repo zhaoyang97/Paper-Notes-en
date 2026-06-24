@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Mechanistic Independence: A Principle for Identifiable Disentangled Representations
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] This paper proposes "mechanistic independence" as a unifying principle for the identifiability of disentangled representations. It defines factors by how they **act on observations** through a generator (rather than how they are distributed), providing a family of subspace identifiability theorems that are invariant to
+  [ICLR 2026][Self-Supervised Learning][Disentangled representations] This paper proposes "mechanistic independence" as a unifying principle for the identifiability of disentangled representations. It defines factors by how they **act on observations** through a generator (rather than how they are distributed), providing a family of subspace identifiability theorems that are invariant to latent density re-weighting and hold even under nonlinear, non-invertible mixing.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Disentangled representations"
+  - "identifiability"
+  - "mechanistic independence"
+  - "nonlinear ICA"
+  - "subspace identifiability"
 date: 2026-05-08
-content_hash: 1023739ba4a2f698
+content_hash: b700b815c01eaf74
 ---
+
 # Mechanistic Independence: A Principle for Identifiable Disentangled Representations
 
 **Conference**: ICLR 2026  
@@ -110,8 +116,8 @@ Where compositional contrast is $C_{comp}(\hat g,z)=\sum_{n=1}^{d_x}\sum_{i=1}^{
 ## Related Papers
 
 - [\[ICLR 2026\] A Bayesian Nonparametric Framework for Learning Disentangled Representations](a_bayesian_nonparametric_framework_for_learning_disentangled_representations.md)
-- [\[ICLR 2026\] Disentangled representation learning through unsupervised symmetry group discovery](disentangled_representation_learning_through_unsupervised_symmetry_group_discove.md)
 - [\[ICLR 2026\] GUIDE: Gated Uncertainty-Informed Disentangled Experts for Long-tailed Recognition](guide_gated_uncertainty-informed_disentangled_experts_for_long-tailed_recognitio.md)
+- [\[ICLR 2026\] Diverse Dictionary Learning](diverse_dictionary_learning.md)
 - [\[ICLR 2026\] OrthoRF: Exploring Orthogonality in Object-Centric Representations](orthorf_exploring_orthogonality_in_object-centric_representations.md)
 - [\[ICLR 2026\] Self-Predictive Representations for Combinatorial Generalization in Behavioral Cloning](self-predictive_representations_for_combinatorial_generalization_in_behavioral_c.md)
 

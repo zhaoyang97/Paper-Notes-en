@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts
 description: >-
-  [LLM/NLP] This paper proposes SoFT, a training-free plug-and-play reranking module that leverages a multimodal LLM to extract dual textual constraints — "must include" (prescriptive) and "must avoid" (proscriptive) — fro…
+  [LLM (Other)] This paper proposes SoFT, a training-free plug-and-play reranking module that leverages a multimodal LLM to extract dual textual constraints — "must include" (prescriptive) and "must avoid" (proscriptive) — from a reference image and modification text, and applies soft-filtering reranking over candidate results in zero-shot composed image retrieval. A multi-target triplet dataset construction pipeline is also introduced to improve evaluation.
 tags:
-  - "LLM/NLP"
+  - "LLM (Other)"
 date: 2026-05-08
-content_hash: fb78fe6d23715b4a
+content_hash: 232c11f15fcca933
 ---
 
 # Soft Filtering: Guiding Zero-Shot Composed Image Retrieval with Prescriptive and Proscriptive Prompts
@@ -147,10 +147,10 @@ The joint use of both constraints yields the best performance, with reward and p
 ## Related Papers
 
 - [\[AAAI 2026\] STEM: Efficient Relative Capability Evaluation of LLMs through Structured Transitive Evaluation Model](stem_efficient_relative_capability_evaluation_of_llms_through_structured_transit.md)
-- [\[AAAI 2026\] Rectification Reimagined: A Unified Mamba Model for Image Correction and Rectangling with Prompts](rectification_reimagined_a_unified_mamba_model_for_image_cor.md)
-- [\[NeurIPS 2025\] MonarchAttention: Zero-Shot Conversion to Fast, Hardware-Aware Structured Attention](../../NeurIPS2025/llm_nlp/monarchattention_zero-shot_conversion_to_fast_hardware-aware_structured_attentio.md)
-- [\[ACL 2026\] OOD Proxy Demonstration Retrieval Scheme for Robust In-Context Learning](../../ACL2026/llm_nlp/toward_robust_in-context_learning_leveraging_out-of-distribution_proxies_for_tar.md)
-- [\[ACL 2026\] Automatic Combination of Sample Selection Strategies for Few-Shot Learning](../../ACL2026/llm_nlp/automatic_combination_of_sample_selection_strategies_for_few-shot_learning.md)
+- [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
+- [\[ACL 2025\] Culture is Not Trivia: Sociocultural Theory for Cultural NLP](../../ACL2025/llm_nlp/culture_is_not_trivia_sociocultural_theory_for_cultural_nlp.md)
+- [\[ACL 2025\] PlanGenLLMs: A Modern Survey of LLM Planning Capabilities](../../ACL2025/llm_nlp/plangenllms_planning_survey.md)
+- [\[ACL 2025\] Classifying Unreliable Narrators with Large Language Models](../../ACL2025/llm_nlp/classifying_unreliable_narrators.md)
 
 </div>
 

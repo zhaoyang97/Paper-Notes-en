@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] Multilingual Unlearning in LLMs: 转移、动力学与可逆性
+  [Paper Note] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility
 description: >-
-  [ICML 2026][AI Safety][Paper Note] This paper extends the TOFU unlearning benchmark to 5 languages to systematically study "cross-lingual unlearning transfer." It finds that unlearning strength varies with the kinship of language families/writing systems and primarily modifies late-stage language-specific decoding layers while leaving the shared semanti
+  [ICML 2026][AI Safety][LLM Unlearning] This paper extends the TOFU unlearning benchmark to 5 languages to systematically study "cross-lingual unlearning transfer." It finds that unlearning strength varies with the kinship of language families/writing systems and primarily modifies late-stage language-specific decoding layers while leaving the shared semantic space in earlier layers nearly untouched. Consequently, an inference-time steering vector can recover 50% of forgotten…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "LLM Unlearning"
+  - "Cross-lingual Transfer"
+  - "Representation Space"
+  - "Steering Vector"
+  - "Reversible Unlearning"
 date: 2026-05-08
-content_hash: 24a6b2214543e81d
+content_hash: 0e64de3aa291f75a
 ---
+
 # Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility
 
 **Conference**: ICML 2026  
@@ -142,11 +148,11 @@ The significant positive gains prove that knowledge is intact in the shared sema
 
 ## Related Papers
 
+- [\[ICML 2026\] Forgetting is Not Deletion: An Investigation of Reversibility in LLM Machine Unlearning](unlearning_isnt_deletion_investigating_reversibility_of_machine_unlearning_in_ll.md)
 - [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
+- [\[ICML 2026\] Flatness-Aware Stochastic Gradient Langevin Dynamics](flatness-aware_stochastic_gradient_langevin_dynamics.md)
 - [\[ICML 2026\] Gradient Transformer: Learning to Generate Updates for LLMs](gradient_transformer_learning_to_generate_updates_for_llms.md)
 - [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
-- [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
-- [\[ICML 2026\] Helpful to a Fault: Measuring Illicit Assistance in Multi-Turn, Multilingual LLM Agents](helpful_to_a_fault_measuring_illicit_assistance_in_multi-turn_multilingual_llm_a.md)
 
 </div>
 

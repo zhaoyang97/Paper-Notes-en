@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Attribution-Guided Decoding
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][attribution method] Ours proposes the AGD decoding strategy, which selects the token with the highest attribution score regarding a user-specified "Region of Interest" (ROI) from high-probability candidate tokens during each generation step. This transforms attribution methods from passive analysis tools into active generation steering to
+  [ICLR 2026][Information Retrieval & RAG][attribution method] Ours proposes the AGD decoding strategy, which selects the token with the highest attribution score regarding a user-specified "Region of Interest" (ROI) from high-probability candidate tokens during each generation step. This transforms attribution methods from passive analysis tools into active generation steering tools, achieving significant improvements in both instruction following and factuality tasks.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - attribution method
-  - LRP
-  - instruction following
-  - factuality
-  - entropy-gating
-  - controlled decoding
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "attribution method"
+  - "LRP"
+  - "instruction following"
+  - "factuality"
+  - "entropy-gating"
+  - "controlled decoding"
 date: 2026-05-08
-content_hash: c2e18c70be74cf39
+content_hash: b8520685202d2a84
 ---
+
 # Attribution-Guided Decoding
 
 **Conference**: ICLR 2026  

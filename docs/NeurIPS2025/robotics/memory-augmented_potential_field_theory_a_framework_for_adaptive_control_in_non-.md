@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains
 description: >-
-  [NeurIPS 2025][Robotics][potential field] This paper proposes Memory-Augmented Potential Field Theory (MAPFT), which maintains a dynamic memory module within stochastic optimal control to detect and encode topological fe…
+  [NeurIPS 2025][Robotics][potential field] This paper proposes Memory-Augmented Potential Field Theory (MAPFT), which maintains a dynamic memory module within stochastic optimal control to detect and encode topological features of the state space (local minima, low-gradient regions, etc.), and adaptively reshapes the value function landscape to enable control in non-convex environments. On tasks such as Humanoid-v4, the method achieves a 27% improvement in cumulative reward ov…
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "non-convex optimization"
   - "stochastic optimal control"
 date: 2026-05-08
-content_hash: 69a595c93b5ea902
+content_hash: 20acf0e3c91cc94a
 ---
 
 # Memory-Augmented Potential Field Theory: A Framework for Adaptive Control in Non-Convex Domains
@@ -127,11 +127,11 @@ Local optima escape rate: MA-MPPI achieves 72.3% on Humanoid-v4, compared to 29.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[AAAI 2026\] A Computable Game-Theoretic Framework for Multi-Agent Theory of Mind](../../AAAI2026/robotics/a_computable_game-theoretic_framework_for_multi-agent_theory_of_mind.md)
 - [\[NeurIPS 2025\] MindForge: Empowering Embodied Agents with Theory of Mind for Lifelong Cultural Learning](mindforge_empowering_embodied_agents_with_theory_of_mind_for_lifelong_cultural_l.md)
+- [\[CVPR 2026\] Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation](../../CVPR2026/robotics/affordance_field_intervention_enabling_vlas_to_escape_memory_traps_in_robotic_ma.md)
+- [\[ICML 2025\] Learning to Stop: Deep Learning for Mean Field Optimal Stopping](../../ICML2025/robotics/learning_to_stop_deep_learning_for_mean_field_optimal_stopping.md)
 - [\[NeurIPS 2025\] Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing](adaptive_frontier_exploration_on_graphs_with_applications_to_network-based_disea.md)
-- [\[NeurIPS 2025\] VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching](vla-cache_efficient_vision-language-action_manipulation_via_adaptive_token_cachi.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] SWE-QA: Can Language Models Answer Repository-level Code Questions?
 description: >-
-  [ACL 2026][Code Intelligence][Code QA] SWE-QA constructs a repository-level code question-answering benchmark covering 15 real-world Python repositories and 720 high-quality QA pairs. It induces question types from GitHub issues and validates answers through human experts. Experiments show that vanilla LLMs direct prompting is weak, and only RAG or tool-int
+  [ACL 2026 Findings][Code Intelligence][Repository-level Code Understanding] SWE-QA constructs a repository-level code question-answering benchmark covering 15 real-world Python repositories and 720 high-quality QA pairs. It induces question types from GitHub issues and validates answers through human experts. Experiments show that vanilla LLMs direct prompting is weak, and only RAG or tool-integrated agents like OpenHands/SWE-agent can approach the demands of real-world devel…
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Code QA
-  - RAG
-  - SWE-Bench
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Repository-level Code Understanding"
+  - "Code QA"
+  - "RAG"
+  - "Software Engineering Agent"
+  - "SWE-Bench"
 date: 2026-05-08
-content_hash: d9ca186e894007b2
+content_hash: e293ed90e9bfef72
 ---
+
 # SWE-QA: Can Language Models Answer Repository-level Code Questions?
 
 **Conference**: ACL 2026 Findings  

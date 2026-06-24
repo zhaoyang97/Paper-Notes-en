@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Log Probability Tracking of LLM APIs
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] Proposes the Logprob Tracking (LT) method, which utilizes log probabilities of single-token inputs and single-token outputs to detect minute changes in LLM APIs (e.g., single-step fine-tuning). It achieves sensitivity 2-3 orders of magnitude higher than existing methods at a 1000x lower cost.
+  [ICLR 2026][LLM Evaluation][LLM API monitoring] Proposes the Logprob Tracking (LT) method, which utilizes log probabilities of single-token inputs and single-token outputs to detect minute changes in LLM APIs (e.g., single-step fine-tuning). It achieves sensitivity 2-3 orders of magnitude higher than existing methods at a 1000x lower cost.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR 2026"
+  - "LLM Evaluation"
+  - "LLM API monitoring"
+  - "log probabilities"
+  - "model change detection"
+  - "hypothesis testing"
+  - "non-determinism"
 date: 2026-05-08
-content_hash: b15cefaad3824e8b
+content_hash: eaa14439d233f5d0
 ---
+
 # Log Probability Tracking of LLM APIs
 
 **Conference**: ICLR 2026  
@@ -159,8 +165,8 @@ LT's sensitivity to weight pruning is $2^9=512$ times higher than MET and $2^6=6
 
 - [\[ICML 2026\] Beyond Log Likelihood: Probability-Based Objectives for Supervised Fine-Tuning across the Model Capability Continuum](../../ICML2026/llm_evaluation/beyond_log_likelihood_probability-based_objectives_for_supervised_fine-tuning_ac.md)
 - [\[ICLR 2026\] DeepTRACE: Auditing Deep Research AI Systems for Tracking Reliability Across Citations and Evidence](deeptrace_auditing_deep_research_ai_systems_for_tracking_reliability_across_cita.md)
-- [\[ICLR 2026\] Sci2Pol：评测与微调 LLM 的「科学→政策简报」生成能力](sci2pol_evaluating_and_fine-tuning_llms_on_scientific-to-policy_brief_generation.md)
 - [\[ICLR 2026\] Multi-LLM Adaptive Conformal Inference for Reliable LLM Responses](multi-llm_adaptive_conformal_inference_for_reliable_llm_response.md)
+- [\[ICLR 2026\] TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them](trustjudge_inconsistencies_of_llm-as-a-judge_and_how_to_alleviate_them.md)
 - [\[ICLR 2026\] RouterArena: An Open Platform for Comprehensive Comparison of LLM Routers](routerarena_an_open_platform_for_comprehensive_comparison_of_llm_routers.md)
 
 </div>

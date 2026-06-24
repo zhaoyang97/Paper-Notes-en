@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding
 description: >-
-  [CVPR 2026][Medical Imaging][Reinforcement Learning] MedGRPO proposes two key innovations to address the training collapse issue in multi-dataset reinforcement learning for medical videos: cross-dataset reward normalization (mapping median performance across different datasets to the same reward value via a logistic function) and Medical LLM Judge (comparative scoring ac
+  [CVPR 2026][Medical Imaging][Medical video understanding] MedGRPO proposes two key innovations to address the training collapse issue in multi-dataset reinforcement learning for medical videos: cross-dataset reward normalization (mapping median performance across different datasets to the same reward value via a logistic function) and Medical LLM Judge (comparative scoring across five clinical dimensions). Based on Qwen2.5-VL-7B, it outperforms GPT-4.1 and Gemini-2.5-Flash on…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Reinforcement Learning
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Medical video understanding"
+  - "Reinforcement Learning"
+  - "Cross-dataset reward normalization"
+  - "VLM fine-tuning"
+  - "Multi-task learning"
 date: 2026-05-08
-content_hash: 8f51a8987469aaa7
+content_hash: a4730bc1842c1f1f
 ---
+
 # MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding
 
 **Conference**: CVPR 2026  

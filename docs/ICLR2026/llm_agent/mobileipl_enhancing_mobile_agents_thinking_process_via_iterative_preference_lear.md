@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MobileIPL: Enhancing Mobile Agents Thinking Process via Iterative Preference Learning
 description: >-
-  [ICLR 2026][LLM Agent][Mobile GUI Agent] To address the lack of CoaT (Chain of Action-Planning Thoughts) reasoning trajectories and the difficulty of step-level annotation for mobile GUI agents, MobileIPL uses MCTS-style iterative sampling to construct a CoaT-tree. It scores leaf nodes based on rule-based rewards and backpropagates values to intermediate thin
+  [ICLR 2026][LLM Agent][Mobile GUI Agent] To address the lack of CoaT (Chain of Action-Planning Thoughts) reasoning trajectories and the difficulty of step-level annotation for mobile GUI agents, MobileIPL uses MCTS-style iterative sampling to construct a CoaT-tree. It scores leaf nodes based on rule-based rewards and backpropagates values to intermediate thinking steps, constructing "Thinking-level" DPO pairs (T-DPO) to optimize the reasoning process. This approach outperform…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Mobile GUI Agent
-  - CoaT
-  - Thinking-level DPO
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Mobile GUI Agent"
+  - "CoaT"
+  - "Iterative Preference Learning"
+  - "Thinking-level DPO"
+  - "Rule-based Reward"
+  - "Instruction Evolution"
 date: 2026-05-08
-content_hash: 5f202ee06b91ade8
+content_hash: ba0e999b435793b2
 ---
+
 # MobileIPL: Enhancing Mobile Agents Thinking Process via Iterative Preference Learning
 
 **Conference**: ICLR 2026  
@@ -125,10 +129,20 @@ Ablation on AITZ Round 1 (MobileIPL-R1 = 65.4):
 - **Value**: ⭐⭐⭐⭐ —— Demonstrates that optimizing thinking handles resource constraints better than massive pre-training.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
+- [\[ICLR 2026\] MobileRL: Online Agentic Reinforcement Learning for Mobile GUI Agents](mobilerl_online_agentic_reinforcement_learning_for_mobile_gui_agents.md)
+- [\[ICLR 2026\] GUI-Shift: Enhancing VLM-Based GUI Agents through Self-supervised Reinforcement Learning](gui-shift_enhancing_vlm-based_gui_agents_through_self-supervised_reinforcement_l.md)
+- [\[ICML 2026\] From Player to Master: Enhancing Test-Time Learning of LLM Agents via Reinforcement Learning over Memory](../../ICML2026/llm_agent/from_player_to_master_enhancing_test-time_learning_of_llm_agents_via_reinforceme.md)
+- [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)

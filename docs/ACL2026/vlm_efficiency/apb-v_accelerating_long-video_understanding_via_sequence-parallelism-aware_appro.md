@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention
 description: >-
-  [ACL 2026][vlm_efficiency][Paper Note] APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While preserving full visual embeddings, it achieves speedups of 12.72×, 1.70×, and 1.18× compared to FlashAttn, ZigZagRing, and APB, respectively, under a 64-frame 1440p setting without si
+  [ACL2026][Multimodal Efficiency][Long-video understanding] APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While preserving full visual embeddings, it achieves speedups of 12.72×, 1.70×, and 1.18× compared to FlashAttn, ZigZagRing, and APB, respectively, under a 64-frame 1440p setting without significant performance loss.
 tags:
-  - ACL 2026
-  - vlm_efficiency
+  - "ACL2026"
+  - "Multimodal Efficiency"
+  - "Long-video understanding"
+  - "Sequence Parallelism"
+  - "Approximate Attention"
+  - "Multi-GPU Inference"
+  - "KV Compression"
 date: 2026-05-08
-content_hash: 125b7247e66d165f
+content_hash: 0b90b3a82360a407
 ---
+
 # APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention
 
 **Conference**: ACL2026  
@@ -141,11 +147,11 @@ In terms of speed, APB-V achieves 12.72×, 1.70×, and 1.18× speedups over Flas
 
 ## Related Papers
 
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 - [\[ICML 2025\] MMInference: Accelerating Pre-filling for Long-Context VLMs via Modality-Aware Permutation Sparse Attention](../../ICML2025/vlm_efficiency/mminference_accelerating_pre-filling_for_long-context_vlms_via_modality-aware_pe.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 - [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
 - [\[ACL 2025\] Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding](../../ACL2025/vlm_efficiency/sophia_efficient_long_video.md)
-- [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](../../CVPR2026/vlm_efficiency/segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
 
 </div>
 

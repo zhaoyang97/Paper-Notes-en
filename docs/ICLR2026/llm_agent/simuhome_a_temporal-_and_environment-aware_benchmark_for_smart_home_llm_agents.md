@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] SimuHome is proposed as a time-accelerated smart home simulator and a 600-episode benchmark based on the Matter protocol. It is the first to simulate the continuous impact of device operations on environmental variables and evaluate workflow scheduling capabilities. Findings indicate that workflow scheduling remains th
+  [ICLR 2026][LLM Agent][Smart Home] SimuHome is proposed as a time-accelerated smart home simulator and a 600-episode benchmark based on the Matter protocol. It is the first to simulate the continuous impact of device operations on environmental variables and evaluate workflow scheduling capabilities. Findings indicate that workflow scheduling remains the most significant challenge for current LLM agents (including GPT-5.1).
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Smart Home"
+  - "Workflow Scheduling"
+  - "Temporal Reasoning"
+  - "Interactive Simulator"
 date: 2026-05-08
-content_hash: bdb3ae42633fc3d2
+content_hash: c71cd618407ada26
 ---
+
 # SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents
 
 **Conference**: ICLR 2026  
@@ -137,10 +142,10 @@ The primary contribution is the benchmark; no new training objective is proposed
 ## Related Papers
 
 - [\[ICLR 2026\] Test-Time Adaptation for LLM Agents via Environment Interaction](test-time_adaptation_for_llm_agents_via_environment_interaction.md)
+- [\[ICLR 2026\] TRAJECT-Bench: A Trajectory-Aware Evaluation Benchmark for Agent Tool Calling](traject-bencha_trajectory-aware_benchmark_for_evaluating_agentic_tool_use.md)
+- [\[ICLR 2026\] FutureX: An Advanced Live Benchmark for LLM Agents in Future Prediction](futurex_an_advanced_live_benchmark_for_llm_agents_in_future_prediction.md)
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
 - [\[ICLR 2026\] Orak: A Foundational Benchmark for Training and Evaluating LLM Agents on Diverse Video Games](orak_a_foundational_benchmark_for_training_and_evaluating_llm_agents_on_diverse_.md)
-- [\[ACL 2025\] SMART: Self-Aware Agent for Tool Overuse Mitigation](../../ACL2025/llm_agent/smart_self-aware_agent_for_tool_overuse_mitigation.md)
-- [\[ICLR 2026\] VideoMind: A Chain-of-LoRA Agent for Temporal-Grounded Video Reasoning](videomind_a_chain-of-lora_agent_for_temporal-grounded_video_reasoning.md)
 
 </div>
 

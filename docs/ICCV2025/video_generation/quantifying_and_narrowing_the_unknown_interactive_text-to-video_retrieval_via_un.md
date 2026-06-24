@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Quantifying and Narrowing the Unknown: Interactive Text-to-Video Retrieval via Uncertainty Minimization
 description: >-
-  [ICCV 2025][Video Generation][Text-to-video retrieval] This paper proposes UMIVR, a framework that explicitly quantifies three types of uncertainty in text-to-video retrieval—textual ambiguity (semantic entropy)…
+  [ICCV 2025][Video Generation][Text-to-video retrieval] This paper proposes UMIVR, a framework that explicitly quantifies three types of uncertainty in text-to-video retrieval—textual ambiguity (semantic entropy), mapping uncertainty (JS divergence), and frame uncertainty (temporal quality frame sampling)—and adaptively generates clarification questions based on the quantified uncertainty to iteratively refine queries, achieving 69.2% R@1 on MSR-VTT-1k after 10 interaction rou…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "semantic entropy"
   - "frame quality sampling"
 date: 2026-05-08
-content_hash: 06432aa3f0633c84
+content_hash: 5ca58136a8c441e4
 ---
 
 # Quantifying and Narrowing the Unknown: Interactive Text-to-Video Retrieval via Uncertainty Minimization
@@ -119,11 +119,11 @@ Three interaction rounds suffice to surpass the non-interactive SOTA; six rounds
 
 ## Related Papers
 
+- [\[CVPR 2025\] Video-ColBERT: Contextualized Late Interaction for Text-to-Video Retrieval](../../CVPR2025/video_generation/video-colbert_contextualized_late_interaction_for_text-to-video_retrieval.md)
+- [\[ACL 2025\] Q2E: Query-to-Event Decomposition for Zero-Shot Multilingual Text-to-Video Retrieval](../../ACL2025/video_generation/q2e_query-to-event_decomposition_for_zero-shot_multilingual_text-to-video_retrie.md)
+- [\[CVPR 2025\] The Devil is in the Prompts: Retrieval-Augmented Prompt Optimization for Text-to-Video Generation](../../CVPR2025/video_generation/the_devil_is_in_the_prompts_retrieval-augmented_prompt_optimization_for_text-to-.md)
 - [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
-- [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](stiv_scalable_text_and_image_conditioned_video_generation.md)
-- [\[ICCV 2025\] BadVideo: Stealthy Backdoor Attack against Text-to-Video Generation](badvideo_stealthy_backdoor_attack_against_text-to-video_generation.md)
-- [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
-- [\[AAAI 2026\] DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation](../../AAAI2026/video_generation/dreamrunner_fine-grained_compositional_story-to-video_genera.md)
+- [\[CVPR 2026\] Yume1.5: A Text-Controlled Interactive World Generation Model](../../CVPR2026/video_generation/yume15_a_text-controlled_interactive_world_generation_model.md)
 
 </div>
 

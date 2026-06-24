@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] From Black-box to Causal-box: Towards Building More Interpretable Models
 description: >-
-  [NeurIPS 2025][Causal Inference][causal interpretability] This paper proposes a formal definition of *causal interpretability*, proves that both black-box models and concept bottleneck models fail to satisfy this propert…
+  [NeurIPS 2025][Causal Inference][causal interpretability] This paper proposes a formal definition of *causal interpretability*, proves that both black-box models and concept bottleneck models fail to satisfy this property, establishes a complete graphical criterion for identifying which model architectures can consistently answer counterfactual queries, and reveals a fundamental tradeoff between causal interpretability and predictive accuracy.
 tags:
   - "NeurIPS 2025"
   - "Causal Inference"
@@ -12,7 +12,7 @@ tags:
   - "structural causal models"
   - "interpretability-accuracy tradeoff"
 date: 2026-05-08
-content_hash: 90190c45124e03a0
+content_hash: 59fbd63ae1a69854
 ---
 
 # From Black-box to Causal-box: Towards Building More Interpretable Models
@@ -137,11 +137,11 @@ Predicting attractiveness under the counterfactual query "Would this person be m
 
 ## Related Papers
 
+- [\[ICML 2025\] E-LDA: Toward Interpretable LDA Topic Models with Strong Guarantees in Logarithmic Parallel Time](../../ICML2025/causal_inference/e-lda_toward_interpretable_lda_topic_models_with_strong_guarantees_in_logarithmi.md)
 - [\[NeurIPS 2025\] Revealing Multimodal Causality with Large Language Models](revealing_multimodal_causality_with_large_language_models.md)
 - [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
-- [\[ICML 2026\] Causal-JEPA: Learning World Models through Object-Level Latent Masking](../../ICML2026/causal_inference/causal-jepa_learning_world_models_through_object-level_latent_masking.md)
 - [\[NeurIPS 2025\] Practical do-Shapley Explanations with Estimand-Agnostic Causal Inference](practical_do-shapley_explanations_with_estimand-agnostic_causal_inference.md)
-- [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](../../ICLR2026/causal_inference/distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
+- [\[ACL 2025\] On the Reliability of Large Language Models for Causal Discovery](../../ACL2025/causal_inference/llm_causal_discovery_reliability.md)
 
 </div>
 

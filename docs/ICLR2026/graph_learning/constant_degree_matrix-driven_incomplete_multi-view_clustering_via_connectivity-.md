@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Constant Degree Matrix-Driven Incomplete Multi-View Clustering via Connectivity-Structure and Embedding Tensor Learning
 description: >-
-  [ICLR 2026][Graph Learning][ADMM] CAMEL unifies graph connectivity constraints and low-rank constraints of latent embedding tensors into a single objective. By replacing the data-dependent degree matrix in the Laplacian with a constant degree matrix $D=\beta I$, it reduces the degree matrix construction complexity from $O(n^2)$ to $O(1)$. It performs k
+  [ICLR2026][Graph Learning][Incomplete Multi-view Clustering] CAMEL unifies graph connectivity constraints and low-rank constraints of latent embedding tensors into a single objective. By replacing the data-dependent degree matrix in the Laplacian with a constant degree matrix $D=\beta I$, it reduces the degree matrix construction complexity from $O(n^2)$ to $O(1)$. It performs k-means directly on latent embeddings without SVD post-processing, achieving high speed and accuracy…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - ADMM
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Incomplete Multi-view Clustering"
+  - "Constant Degree Matrix"
+  - "Connectivity Constraint"
+  - "Embedding Tensor"
+  - "ADMM"
 date: 2026-05-08
-content_hash: cdf129975138aef5
+content_hash: 8aa4280c0ca7862a
 ---
+
 # Constant Degree Matrix-Driven Incomplete Multi-View Clustering via Connectivity-Structure and Embedding Tensor Learning
 
 **Conference**: ICLR2026  
@@ -125,8 +130,8 @@ Experiments on nine public datasets (Yale3 / MSRCV1 / Still-DB / EYaleB10 / COIL
 - Value: ⭐⭐⭐⭐ Provides an efficient and accurate paradigm for "connectivity + tensor low-rank + SVD-free" IMVC.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

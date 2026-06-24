@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Strategyproof Reinforcement Learning from Human Feedback
 description: >-
-  [NeurIPS 2025][LLM Alignment][RLHF] This paper is the first to study strategic manipulation by annotators in RLHF from a mechanism design perspective. It proves a fundamental tradeoff between strategyproofness and policy…
+  [NeurIPS 2025][LLM Alignment][RLHF] This paper is the first to study strategic manipulation by annotators in RLHF from a mechanism design perspective. It proves a fundamental tradeoff between strategyproofness and policy alignment, and proposes the Pessimistic Median of MLEs algorithm to achieve approximate strategyproofness.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "mechanism design"
   - "social welfare maximization"
 date: 2026-05-08
-content_hash: eae0503897392935
+content_hash: d9f3ffaec680b3c1
 ---
 
 # Strategyproof Reinforcement Learning from Human Feedback
@@ -160,11 +160,11 @@ $$\text{SubOpt}(\hat{\pi}) \leq const \cdot \left(\sqrt{\frac{d\log(k/\delta)}{k
 
 ## Related Papers
 
-- [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](../../ACL2026/llm_alignment/persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
+- [\[ACL 2025\] Curiosity-Driven Reinforcement Learning from Human Feedback](../../ACL2025/llm_alignment/curiosity_driven_rlhf.md)
+- [\[ICML 2025\] M³HF: Multi-agent Reinforcement Learning from Multi-phase Human Feedback of Mixed Quality](../../ICML2025/llm_alignment/m3hf_multi-agent_reinforcement_learning_from_multi-phase_human_feedback_of_mixed.md)
 - [\[NeurIPS 2025\] Reinforcement Learning Finetunes Small Subnetworks in Large Language Models](reinforcement_learning_finetunes_small_subnetworks_in_large_language_models.md)
-- [\[NeurIPS 2025\] Capturing Individual Human Preferences with Reward Features](capturing_individual_human_preferences_with_reward_features.md)
-- [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
-- [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
+- [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](../../ACL2026/llm_alignment/persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
+- [\[ACL 2025\] Understanding Impact of Human Feedback via Influence Functions](../../ACL2025/llm_alignment/influence_functions_rlhf.md)
 
 </div>
 

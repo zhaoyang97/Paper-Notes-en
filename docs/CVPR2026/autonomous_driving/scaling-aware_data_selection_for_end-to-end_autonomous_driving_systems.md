@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems
 description: >-
-  [CVPR 2026][Autonomous Driving][EPDMS] The MOSAIC framework is proposed, which achieves efficient data selection for end-to-end autonomous driving models by clustering data, fitting scaling laws for each domain relative to evaluation metrics, and iteratively selecting data cluster samples with the maximum marginal gain. This method reaches or exceeds baseli
+  [CVPR 2026][Autonomous Driving][Data Selection] The MOSAIC framework is proposed, which achieves efficient data selection for end-to-end autonomous driving models by clustering data, fitting scaling laws for each domain relative to evaluation metrics, and iteratively selecting data cluster samples with the maximum marginal gain. This method reaches or exceeds baseline performance with 80% less data.
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - EPDMS
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Data Selection"
+  - "Neural Scaling Laws"
+  - "Data Mixture Optimization"
+  - "End-to-End Autonomous Driving"
+  - "EPDMS"
 date: 2026-05-08
-content_hash: 30444d3ea27c3ac3
+content_hash: 681af4d1f329b4c4
 ---
+
 # Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems
 
 **Conference**: CVPR 2026  
@@ -171,11 +176,11 @@ EPDMS sub-metric decomposition (OpenScene, 4000 clips):
 
 ## Related Papers
 
+- [\[CVPR 2026\] E3AD: An Emotion-Aware Vision-Language-Action Model for Human-Centric End-to-End Autonomous Driving](e3ad_an_emotion-aware_vision-language-action_model_for_human-centric_end-to-end_.md)
 - [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
 - [\[CVPR 2026\] DriveMoE: Mixture-of-Experts for Vision-Language-Action Model in End-to-End Autonomous Driving](drivemoe_mixture-of-experts_for_vision-language-action_model_in_end-to-end_auton.md)
-- [\[CVPR 2026\] Reliable Policy Transfer for Safety-Aware End-to-End Driving with Deep Reinforcement Learning](reliable_policy_transfer_for_safety-aware_end-to-end_driving_with_deep_reinforce.md)
-- [\[ICCV 2025\] Unraveling the Effects of Synthetic Data on End-to-End Autonomous Driving](../../ICCV2025/autonomous_driving/unraveling_the_effects_of_synthetic_data_on_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] Percept-WAM: Perception-Enhanced World-Awareness-Action Model for Robust End-to-End Autonomous Driving](percept-wam_perception-enhanced_world-awareness-action_model_for_robust_end-to-e.md)
 
 </div>
 

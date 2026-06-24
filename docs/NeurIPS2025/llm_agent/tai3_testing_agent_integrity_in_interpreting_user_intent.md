@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAI3: Testing Agent Integrity in Interpreting User Intent
 description: >-
-  [NeurIPS 2025][LLM Agent][Agent Testing] This paper proposes TAI3, an API-centric stress-testing framework for LLM agent intent integrity. It organizes the natural language input space into a structured test grid via Sem…
+  [NeurIPS 2025][LLM Agent][Agent Testing] This paper proposes TAI3, an API-centric stress-testing framework for LLM agent intent integrity. It organizes the natural language input space into a structured test grid via Semantic Partitioning, and leverages Intent-Preserving Mutation and Strategy Memory to efficiently expose intent misinterpretation errors when agents execute user tasks.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "Stress Testing"
   - "API Calls"
 date: 2026-05-08
-content_hash: 5274bb8ca2f1c88d
+content_hash: 3aa05f798dbca79b
 ---
 
 # TAI3: Testing Agent Integrity in Interpreting User Intent
@@ -172,9 +172,9 @@ Weaker testing models (Llama-3.1-8B, Qwen3-30B-A3B) can effectively expose error
 ## Related Papers
 
 - [\[ACL 2026\] Grounding Agent Memory in Contextual Intent](../../ACL2026/llm_agent/grounding_agent_memory_in_contextual_intent.md)
+- [\[ACL 2025\] iAgent: LLM Agent as a Shield between User and Recommender Systems](../../ACL2025/llm_agent/iagent_llm_agent_as_a_shield_between_user_and_recommender_systems.md)
 - [\[NeurIPS 2025\] MAT-Agent: Adaptive Multi-Agent Training Optimization](mat-agent_adaptive_multi-agent_training_optimization.md)
-- [\[ICLR 2026\] Judge Reliability Harness: Stress Testing the Reliability of LLM Judges](../../ICLR2026/llm_agent/judge_reliability_harness_stress_testing_the_reliability_of_llm_judges.md)
-- [\[ICML 2026\] Persona2Web: Benchmarking Personalized Web Agents for Contextual Reasoning with User History](../../ICML2026/llm_agent/persona2web_benchmarking_personalized_web_agents_for_contextual_reasoning_with_u.md)
+- [\[ICLR 2026\] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use](../../ICLR2026/llm_agent/mcpmark_a_benchmark_for_stress-testing_realistic_and_comprehensive_mcp_use.md)
 - [\[NeurIPS 2025\] Group-in-Group Policy Optimization for LLM Agent Training](groupingroup_policy_optimization_for_llm_agent_training.md)
 
 </div>

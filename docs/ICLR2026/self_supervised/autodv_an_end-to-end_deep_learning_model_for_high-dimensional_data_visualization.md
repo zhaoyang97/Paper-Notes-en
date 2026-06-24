@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AutoDV: An End-to-End Deep Learning Model for High-Dimensional Data Visualization
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] AutoDV transforms traditional visualization (t-SNE / UMAP), which requires "per-dataset parameter tuning + iterative optimization," into a one-time trained, plug-and-play end-to-end model. It first converts datasets of arbitrary dimensions into multi-scale similarity graphs, then utilizes a multi-graph GNN + Graph Tran
+  [ICLR 2026][Self-Supervised Learning][High-dimensional data visualization] AutoDV transforms traditional visualization (t-SNE / UMAP), which requires "per-dataset parameter tuning + iterative optimization," into a one-time trained, plug-and-play end-to-end model. It first converts datasets of arbitrary dimensions into multi-scale similarity graphs, then utilizes a multi-graph GNN + Graph Transformer to directly output 2D/3D embeddings, trained with an affine invariant loss. I…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "High-dimensional data visualization"
+  - "dimensionality reduction"
+  - "Graph Transformer"
+  - "end-to-end"
+  - "affine invariant loss"
 date: 2026-05-08
-content_hash: 63c131ea3b51139e
+content_hash: b5dc8cc938c8c80c
 ---
+
 # AutoDV: An End-to-End Deep Learning Model for High-Dimensional Data Visualization
 
 **Conference**: ICLR 2026  
@@ -137,7 +143,7 @@ AutoDV is ~7.5x faster than t-SNE. While UMAP is fast for a single run, it requi
 - [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
 - [\[ICLR 2026\] Mini-cluster Guided Long-tailed Deep Clustering](mini-cluster_guided_long-tailed_deep_clustering.md)
 - [\[CVPR 2026\] Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model](../../CVPR2026/self_supervised/nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_.md)
-- [\[NeurIPS 2025\] TabSTAR: A Tabular Foundation Model for Tabular Data with Text Fields](../../NeurIPS2025/self_supervised/tabstar_a_tabular_foundation_model_for_tabular_data_with_text_fields.md)
+- [\[AAAI 2026\] HiLoMix: Robust High- and Low-Frequency Graph Learning Framework for Mixing Address Association](../../AAAI2026/self_supervised/hilomix_robust_high-_and_low-frequency_graph_learning_framework_for_mixing_addre.md)
 
 </div>
 

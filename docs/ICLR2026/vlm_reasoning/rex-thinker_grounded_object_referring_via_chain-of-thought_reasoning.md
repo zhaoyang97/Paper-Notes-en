@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Chain-of-Thought] Rex-Thinker reformulates grounded object referring from "direct coordinate generation" into a process where an open-vocabulary detector provides candidate boxes, followed by a multimodal large model (MLLM) performing box-by-box reasoning via a Planning-Action-Summarization framework with rejection capabilities. This ap
+  [ICLR 2026][VLM Reasoning][Referring Expression Comprehension] Rex-Thinker reformulates grounded object referring from "direct coordinate generation" into a process where an open-vocabulary detector provides candidate boxes, followed by a multimodal large model (MLLM) performing box-by-box reasoning via a Planning-Action-Summarization framework with rejection capabilities. This approach simultaneously improves grounding accuracy, explainability…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Chain-of-Thought
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Referring Expression Comprehension"
+  - "Visual Grounding"
+  - "Chain-of-Thought"
+  - "Candidate Box Retrieval"
+  - "GRPO"
 date: 2026-05-08
-content_hash: fce65a1ca0964d93
+content_hash: 62159380c2bbe091
 ---
+
 # Rex-Thinker: Grounded Object Referring via Chain-of-Thought Reasoning
 
 **Conference**: ICLR 2026  
@@ -159,11 +163,11 @@ The most notable improvement is in the **rejection** metrics. Rex-Thinker-Plain'
 
 ## Related Papers
 
-- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](../../CVPR2026/vlm_reasoning/chain-of-thought_guided_multi-modal_object_re-identification.md)
+- [\[ICLR 2026\] Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks](ref-adv_exploring_mllm_visual_reasoning_in_referring_expression_tasks.md)
 - [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
-- [\[ICLR 2026\] ThinkMorph: Emergent Properties in Multimodal Interleaved Chain-of-Thought Reasoning](thinkmorph_emergent_properties_in_multimodal_interleaved_chain-of-thought_reason.md)
 - [\[ICLR 2026\] CoPRS: Learning Positional Prior from Chain-of-Thought for Reasoning Segmentation](coprs_learning_positional_prior_from_chain-of-thought_for_reasoning_segmentation.md)
-- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](../../CVPR2026/vlm_reasoning/reinforcing_structured_chain-of-thought_for_video_understanding.md)
+- [\[ICLR 2026\] VGR: Visual Grounded Reasoning](vgr_visual_grounded_reasoning.md)
+- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](../../CVPR2026/vlm_reasoning/chain-of-thought_guided_multi-modal_object_re-identification.md)
 
 </div>
 

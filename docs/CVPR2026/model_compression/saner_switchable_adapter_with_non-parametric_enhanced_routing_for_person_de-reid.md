@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] SANER decouples the task of "selectively forgetting specific pedestrians" (De-ReID) from contradictory optimization in a single feature space into two independent low-rank adapters (forgetting / retention). It then utilizes a non-parametric test-time routing algorithm to determine the processing branch based on the sim
+  [CVPR 2026][Model Compression][Person De-Reidentification] SANER decouples the task of "selectively forgetting specific pedestrians" (De-ReID) from contradictory optimization in a single feature space into two independent low-rank adapters (forgetting / retention). It then utilizes a non-parametric test-time routing algorithm to determine the processing branch based on the similarity between queries and prototypes, effectively "forgetting" target identities with minimal impac…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Person De-Reidentification"
+  - "Machine Unlearning"
+  - "Privacy Protection"
+  - "LoRA Adapter"
+  - "Test-time Routing"
 date: 2026-05-08
-content_hash: eb8a9b0384717036
+content_hash: 872b5fc3b0f2b6b0
 ---
+
 # SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification
 
 **Conference**: CVPR 2026  
@@ -129,10 +135,20 @@ Ablation on components using MSMT17 ($M_T$=25):
 - Value: ⭐⭐⭐⭐⭐ High practical value for privacy compliance in surveillance systems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](../../ICLR2026/model_compression/steering_moe_llms_via_expert_deactivation.md)
+- [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
+- [\[CVPR 2026\] Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing](adaptive_depth_lightweight_rgb-t_tracking_with_holistic_token_routing.md)
+- [\[CVPR 2026\] F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)
+- [\[AAAI 2026\] Parametric Pareto Set Learning for Expensive Multi-Objective Optimization](../../AAAI2026/model_compression/parametric_pareto_set_learning_for_expensive_multi-objective_optimization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] DFD-HR: Generalizable Deepfake Detection via Hierarchical Routing Learning](dfd-hr_generalizable_deepfake_detection_via_hierarchical_routing_learning.md)

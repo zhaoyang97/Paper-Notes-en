@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] Introduces FALCON (From Spatial to Action), which achieves strong 3D spatial perception for VLA models by injecting rich 3D spatial tokens from a spatial foundation model into the Action Head rather than the VLM backbone. It maintains flexible modality switching from RGB-only to RGB-D and achieves SOTA in both simulati
+  [ICLR 2026][Robotics][VLA models] Introduces FALCON (From Spatial to Action), which achieves strong 3D spatial perception for VLA models by injecting rich 3D spatial tokens from a spatial foundation model into the Action Head rather than the VLM backbone. It maintains flexible modality switching from RGB-only to RGB-D and achieves SOTA in both simulation and real-world tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA models"
+  - "3D spatial understanding"
+  - "spatial foundation models"
+  - "modality transferability"
+  - "robotic manipulation"
 date: 2026-05-08
-content_hash: 1d73894c8cd82b38
+content_hash: 2d8c4a55bdd69030
 ---
+
 # From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors
 
 **Conference**: ICLR 2026  
@@ -181,11 +187,11 @@ The ESM side continues to use VGGT's multi-task spatial reconstruction supervisi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](../../CVPR2026/robotics/learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
-- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICLR 2026\] Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?](theory_of_space_can_foundation_models_construct_spatial_beliefs_through_active_e.md)
+- [\[CVPR 2026\] Learning Surgical Robotic Manipulation with 3D Spatial Priors](../../CVPR2026/robotics/learning_surgical_robotic_manipulation_with_3d_spatial_priors.md)
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
+- [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](../../ICML2026/robotics/spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
 
 </div>
 

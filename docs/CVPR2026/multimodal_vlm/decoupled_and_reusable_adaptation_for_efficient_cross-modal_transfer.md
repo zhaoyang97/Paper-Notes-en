@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer
 description: >-
-  [CVPR 2026][Multimodal VLM][LoRA] The process of "transferring RGB foundation models to non-RGB modalities such as infrared, depth, and events" is decoupled into two stages: "one-time modality knowledge learning (self-supervised training of reusable modality LoRA)" + "lightweight task knowledge learning (task prompts + Mixture of Modality Experts)". Th
+  [CVPR 2026][Multimodal VLM][Cross-modal transfer] The process of "transferring RGB foundation models to non-RGB modalities such as infrared, depth, and events" is decoupled into two stages: "one-time modality knowledge learning (self-supervised training of reusable modality LoRA)" + "lightweight task knowledge learning (task prompts + Mixture of Modality Experts)". This eliminates the need for retraining from scratch when switching tasks, achieving triple efficiency gains in…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - LoRA
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Cross-modal transfer"
+  - "Parameter-efficient transfer"
+  - "LoRA"
+  - "Self-supervised learning"
+  - "Mixture of Modality Experts (MoE)"
 date: 2026-05-08
-content_hash: 6df342845b4c6aef
+content_hash: adddcef32cf8075a
 ---
+
 # Decoupled and Reusable Adaptation for Efficient Cross-Modal Transfer
 
 **Conference**: CVPR 2026  
@@ -145,6 +149,7 @@ Ablation on MCubeS and DELIVER (mIoU%):
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -152,8 +157,8 @@ Ablation on MCubeS and DELIVER (mIoU%):
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
 - [\[CVPR 2026\] Wan-Weaver: Interleaved Multi-modal Generation via Decoupled Training](wan-weaver_interleaved_multi-modal_generation_via_decoupled_training.md)
 - [\[CVPR 2026\] CoV-Align: Efficient Fine-grained Cross-Modal Alignment with Cohesive Visual Semantics Priority](cov-align_efficient_fine-grained_cross-modal_alignment_with_cohesive_visual_sema.md)
+- [\[ICLR 2026\] DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning](../../ICLR2026/multimodal_vlm/decalign_hierarchical_cross-modal_alignment_for_decoupled_multimodal_representat.md)
 - [\[CVPR 2026\] Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation](decoupling_stability_and_plasticity_for_multi-modal_test-time_adaptation.md)
-- [\[CVPR 2026\] Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation](rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization
 description: >-
-  [AAAI 2026][Graph Learning][Graph Transformer] GT-SNT is proposed to leverage spiking neural networks (SNNs) as a graph node tokenizer. By aggregating multi-step propagated features into compact spike-count embeddings as…
+  [AAAI 2026][Graph Learning][Graph Transformer] GT-SNT is proposed to leverage spiking neural networks (SNNs) as a graph node tokenizer. By aggregating multi-step propagated features into compact spike-count embeddings as node tokens, and employing Codebook-Guided Self-Attention (CGSA) to capture global context in linear time, GT-SNT achieves competitive performance on 9 node classification benchmarks while delivering up to 130× inference speedup.
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Linear Complexity"
   - "Large-Scale Graphs"
 date: 2026-05-08
-content_hash: bbfa345a56a83483
+content_hash: ac81c65014790827
 ---
 
 # GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization
@@ -160,8 +160,8 @@ GT-SNT consists of four modules:
 - [\[AAAI 2026\] NTSFormer: A Self-Teaching Graph Transformer for Multimodal Isolated Cold-Start Node Classification](ntsformer_a_self-teaching_graph_transformer_for_multimodal_isolated_cold-start_n.md)
 - [\[AAAI 2026\] Spiking Heterogeneous Graph Attention Networks](spiking_heterogeneous_graph_attention_networks.md)
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
-- [\[ACL 2026\] Evaluating LLMs on Large-Scale Graph Property Estimation via Random Walks](../../ACL2026/graph_learning/evaluating_llms_on_large-scale_graph_property_estimation_via_random_walks.md)
 - [\[AAAI 2026\] MoToRec: Sparse-Regularized Multimodal Tokenization for Cold-Start Recommendation](motorec_sparse-regularized_multimodal_tokenization_for_cold-start_recommendation.md)
+- [\[ICLR 2026\] Relational Graph Transformer](../../ICLR2026/graph_learning/relational_graph_transformer.md)
 
 </div>
 

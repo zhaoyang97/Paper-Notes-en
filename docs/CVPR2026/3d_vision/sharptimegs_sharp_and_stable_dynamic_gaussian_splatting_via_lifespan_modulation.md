@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SharpTimeGS assigns a learnable "lifespan" parameter to each 4D Gaussian primitive, transforming temporal visibility from Gaussian decay to a "flat-top" profile and modulating motion magnitude. This ensures that long-lived static points experience minimal drift while short-lived dynamic points retain full motion. Combi
+  [CVPR 2026][3D Vision][Dynamic Gaussian Splatting] SharpTimeGS assigns a learnable "lifespan" parameter to each 4D Gaussian primitive, transforming temporal visibility from Gaussian decay to a "flat-top" profile and modulating motion magnitude. This ensures that long-lived static points experience minimal drift while short-lived dynamic points retain full motion. Combined with lifespan-velocity-aware densification and velocity-aware initialization…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Dynamic Gaussian Splatting"
+  - "4D Reconstruction"
+  - "Lifespan Modeling"
+  - "Novel View Synthesis"
+  - "Static-Dynamic Balance"
 date: 2026-05-08
-content_hash: 9a8cd9edd57388f6
+content_hash: e47ec0be5d67338a
 ---
+
 # SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,16 @@ Ablation on the "Partial" SelfCap dataset:
 - Value: ⭐⭐⭐⭐ 4K@100FPS real-time performance with SOTA quality; highly practical for dynamic NVS.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Learning Explicit Continuous Motion Representation for Dynamic Gaussian Splatting from Monocular Videos](learning_explicit_continuous_motion_representation_for_dynamic_gaussian_splattin.md)
+- [\[ICLR 2026\] Uncertainty Matters in Dynamic Gaussian Splatting for Monocular 4D Reconstruction](../../ICLR2026/3d_vision/uncertainty_matters_in_dynamic_gaussian_splatting_for_monocular_4d_reconstructio.md)
+- [\[CVPR 2026\] Disco-GS: Gaussian Splatting in Dynamic Color Lighting](disco-gs_gaussian_splatting_in_dynamic_color_lighting.md)
+- [\[ICLR 2026\] Frequency-Aware Dynamic Gaussian Splatting](../../ICLR2026/3d_vision/frequency-aware_dynamic_gaussian_splatting.md)
 - [\[CVPR 2026\] $L^{2}DGS$: Low-Light Dynamic Gaussian Splatting](l2dgs_low-light_dynamic_gaussian_splatting.md)
-- [\[CVPR 2026\] MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting](motionscale_reconstructing_appearance_geometry_and_motion_of_dynamic_scenes_with.md)
-- [\[CVPR 2026\] MSCD-GS: Motion-Separated Cooperative Deblurring Dynamic Reconstruction via Gaussian Splatting](mscd-gs_motion-separated_cooperative_deblurring_dynamic_reconstruction_via_gauss.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
 
 </div>
 

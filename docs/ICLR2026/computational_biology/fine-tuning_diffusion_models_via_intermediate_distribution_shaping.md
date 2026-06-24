@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fine-Tuning Diffusion Models via Intermediate Distribution Shaping
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper unifies rejection sampling fine-tuning methods into the GRAFT framework and proves that it implicitly performs KL-regularized reward maximization. Consequently, it proposes P-GRAFT to perform distribution shaping at intermediate denoising steps (achieving a better bias-variance trade-off) and Inverse Noise C
+  [ICLR 2026][Computational Biology][Diffusion Model Fine-tuning] This paper unifies rejection sampling fine-tuning methods into the GRAFT framework and proves that it implicitly performs KL-regularized reward maximization. Consequently, it proposes P-GRAFT to perform distribution shaping at intermediate denoising steps (achieving a better bias-variance trade-off) and Inverse Noise Correction to improve flow model quality without rewards, achieving an 8.81% VQAScore improvement…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Diffusion Model Fine-tuning"
+  - "Rejection Sampling"
+  - "KL Regularization"
+  - "Intermediate Distribution"
+  - "Inverse Noise Correction"
 date: 2026-05-08
-content_hash: e50fafe51cbe894c
+content_hash: 8bad0f330c4d2767
 ---
+
 # Fine-Tuning Diffusion Models via Intermediate Distribution Shaping
 
 **Conference**: ICLR 2026  

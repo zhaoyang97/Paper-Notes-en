@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space
 description: >-
-  [Image Generation] This paper proposes MotionStreamer, which integrates a continuous causal latent space with a diffusion head into an autoregressive framework for text-conditioned streaming human motion generation…
+  [Image Generation] This paper proposes MotionStreamer, which integrates a continuous causal latent space with a diffusion head into an autoregressive framework for text-conditioned streaming human motion generation, supporting online multi-turn generation and dynamic motion composition.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 2a909cfec6ccac1b
+content_hash: 51cf2d103d68abf9
 ---
 
 # MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space
@@ -149,9 +149,9 @@ Key finding: the AE achieves the best reconstruction quality but the worst gener
 
 - [\[ICCV 2025\] Less is More: Improving Motion Diffusion Models with Sparse Keyframes](less_is_more_improving_motion_diffusion_models_with_sparse_keyframes.md)
 - [\[ICCV 2025\] EmotiCrafter: Text-to-Emotional-Image Generation based on Valence-Arousal Model](emoticrafter_text-to-emotional-image_generation_based_on_valence-arousal_model.md)
-- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
 - [\[ICCV 2025\] MamTiff-CAD: Multi-Scale Latent Diffusion with Mamba+ for Complex Parametric Sequence](mamtiff-cad_multi-scale_latent_diffusion_with_mamba_for_complex_parametric_seque.md)
-- [\[ICCV 2025\] FreeMorph: Tuning-Free Generalized Image Morphing with Diffusion Model](freemorph_tuning-free_generalized_image_morphing_with_diffusion_model.md)
+- [\[ICCV 2025\] Timestep-Aware Diffusion Model for Extreme Image Rescaling](timestep-aware_diffusion_model_for_extreme_image_rescaling.md)
+- [\[CVPR 2025\] Dynamic Motion Blending for Versatile Motion Editing (MotionReFit)](../../CVPR2025/image_generation/dynamic_motion_blending_for_versatile_motion_editing.md)
 
 </div>
 

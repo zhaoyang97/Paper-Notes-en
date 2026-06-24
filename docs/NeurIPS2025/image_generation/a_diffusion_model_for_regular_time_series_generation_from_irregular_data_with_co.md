@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking
 description: >-
-  [NeurIPS 2025][Image Generation][irregular time series] This paper proposes a two-stage framework for generating regular time series from irregularly sampled data: (1) a TST autoencoder completes missing values to constr…
+  [NeurIPS 2025][Image Generation][irregular time series] This paper proposes a two-stage framework for generating regular time series from irregularly sampled data: (1) a TST autoencoder completes missing values to construct a "natural neighborhood," and (2) a masking strategy applied during visual diffusion model training computes loss only on observed pixels, avoiding over-reliance on completed values. The approach achieves an average 70% improvement in discriminative score…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "masking"
   - "ImagenTime"
 date: 2026-05-08
-content_hash: 1427eb72e6c86416
+content_hash: 8bf19c39ab18a13b
 ---
 
 # A Diffusion Model for Regular Time Series Generation from Irregular Data with Completion and Masking
@@ -145,11 +145,11 @@ Average speedup of **6.5×**, with greater advantage on longer sequences (6× sp
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising](tidmad_time_series_dataset_for_discovering_dark_matter_with_ai_denoising.md)
 - [\[NeurIPS 2025\] A Data-Driven Prism: Multi-View Source Separation with Diffusion Model Priors](a_data-driven_prism_multi-view_source_separation_with_diffusion_model_priors.md)
 - [\[NeurIPS 2025\] CaMiT: A Time-Aware Car Model Dataset for Classification and Generation](camit_a_time-aware_car_model_dataset_for_classification_and_generation.md)
+- [\[NeurIPS 2025\] TIDMAD: Time Series Dataset for Discovering Dark Matter with AI Denoising](tidmad_time_series_dataset_for_discovering_dark_matter_with_ai_denoising.md)
+- [\[ICML 2025\] LSCD: Lomb-Scargle Conditioned Diffusion for Time Series Imputation](../../ICML2025/image_generation/lscd_lomb-scargle_conditioned_diffusion_for_time_series_imputation.md)
 - [\[NeurIPS 2025\] Beyond Masked and Unmasked: Discrete Diffusion Models via Partial Masking](beyond_masked_and_unmasked_discrete_diffusion_models_via_par.md)
-- [\[AAAI 2026\] SimDiff: Simpler Yet Better Diffusion Model for Time Series Point Forecasting](../../AAAI2026/image_generation/simdiff_simpler_yet_better_diffusion_model_for_time_series_point_forecasting.md)
 
 </div>
 

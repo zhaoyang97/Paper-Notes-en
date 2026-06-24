@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unifying Proportional Fairness in Centroid and Non-Centroid Clustering
 description: >-
-  [NeurIPS 2025][AI Safety][fair clustering] This paper unifies the study of proportional fairness in centroid and non-centroid clustering under a single "semi-centroid clustering" framework…
+  [NeurIPS 2025][AI Safety][fair clustering] This paper unifies the study of proportional fairness in centroid and non-centroid clustering under a single "semi-centroid clustering" framework, establishes an impossibility theorem showing the two cannot be simultaneously achieved, and designs novel algorithms that attain constant-factor core guarantees under dual metric loss.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "semi-centroid clustering"
   - "approximation algorithms"
 date: 2026-05-08
-content_hash: 95c7dee36d921791
+content_hash: d8431a10e055c0b7
 ---
 
 # Unifying Proportional Fairness in Centroid and Non-Centroid Clustering
@@ -139,11 +139,11 @@ Two structured loss function families are studied:
 
 ## Related Papers
 
+- [\[ICML 2025\] Accelerating Spectral Clustering under Fairness Constraints](../../ICML2025/ai_safety/accelerating_spectral_clustering_under_fairness_constraints.md)
 - [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
 - [\[NeurIPS 2025\] Unifying Re-Identification, Attribute Inference, and Data Reconstruction Risks in Differential Privacy](unifying_re-identification_attribute_inference_and_data_reconstruction_risks_in_.md)
 - [\[NeurIPS 2025\] OmniFC: Rethinking Federated Clustering via Lossless and Secure Distance Reconstruction](omnifc_rethinking_federated_clustering_via_lossless_and_secure_distance_reconstr.md)
-- [\[AAAI 2026\] Fair Model-Based Clustering](../../AAAI2026/ai_safety/fair_model-based_clustering.md)
-- [\[NeurIPS 2025\] Influence Functions for Edge Edits in Non-Convex Graph Neural Networks](influence_functions_for_edge_edits_in_non-convex_graph_neural_networks.md)
+- [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
 
 </div>
 

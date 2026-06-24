@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling
 description: >-
-  [CVPR 2026][Multimodal VLM][Vision-Language Model] UNI-OOD employs two identical pairs of CLIP image-text encoders to model the "target object" and "background" respectively. By leveraging four types of cross-context attention (intra-image, inter-image, inter-text, and image-text alignment), it decouples fine-grained object evidence from spurious background association
+  [CVPR 2026][Multimodal VLM][OOD Detection] UNI-OOD employs two identical pairs of CLIP image-text encoders to model the "target object" and "background" respectively. By leveraging four types of cross-context attention (intra-image, inter-image, inter-text, and image-text alignment), it decouples fine-grained object evidence from spurious background associations. This approach marks the first single model to achieve SOTA performance simultaneously in both object-level and ima…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Vision-Language Model
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "OOD Detection"
+  - "Vision-Language Models"
+  - "CLIP"
+  - "Cross-Context Attention"
+  - "Object-level Detection"
 date: 2026-05-08
-content_hash: 98e6c007c88743bf
+content_hash: d36073066020d2e5
 ---
+
 # UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling
 
 **Conference**: CVPR 2026  
@@ -162,11 +166,11 @@ Representative results from BDD-100k→OpenImages (10-shot, AUROC↑ / FPR95↓)
 
 ## Related Papers
 
-- [\[CVPR 2026\] Modeling Cross-vision Synergy for Unified Large Vision Model](modeling_cross-vision_synergy_for_unified_large_vision_model.md)
-- [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
 - [\[CVPR 2026\] TTL: Test-time Textual Learning for OOD Detection with Pretrained Vision-Language Models](ttl_test-time_textual_learning_for_ood_detection_with_pretrained_vision-language.md)
-- [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
 - [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
+- [\[AAAI 2026\] Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models](../../AAAI2026/multimodal_vlm/cross-modal_proxy_evolving_for_ood_detection_with_vision-lan.md)
+- [\[CVPR 2026\] Boosting Vision-Language Models Towards Cross-Domain Incremental Object Detection](boosting_vision-language_models_towards_cross-domain_incremental_object_detectio.md)
+- [\[CVPR 2026\] Modeling Cross-vision Synergy for Unified Large Vision Model](modeling_cross-vision_synergy_for_unified_large_vision_model.md)
 
 </div>
 

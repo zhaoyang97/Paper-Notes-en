@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes FlexHook, a novel two-stage Referring-by-Tracking framework that redefines feature construction through a sampling-based Conditioning Hook (C-Hook) and replaces CLIP cosine similarity matching with a Pairwise Correspondence Decoder (PCD), making a two-stage method fully surpass current state-of-the-art (S
+  [CVPR 2026][Video Understanding][Referring Multi-Object Tracking] Ours proposes FlexHook, a novel two-stage Referring-by-Tracking framework that redefines feature construction through a sampling-based Conditioning Hook (C-Hook) and replaces CLIP cosine similarity matching with a Pairwise Correspondence Decoder (PCD), making a two-stage method fully surpass current state-of-the-art (SOTA) one-stage methods for the first time.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Referring Multi-Object Tracking"
+  - "Two-Stage RBT"
+  - "Sampling-based Feature Construction"
+  - "Pairwise Correspondence Decoding"
+  - "Language Conditioning Enhancement"
 date: 2026-05-08
-content_hash: a97dd775ad3e275a
+content_hash: 422886439ed2979c
 ---
+
 # FlexHook: Rethinking Two-Stage Referring-by-Tracking in RMOT
 
 **Conference**: CVPR 2026  
@@ -139,10 +145,10 @@ FlexHook is the first two-stage method to comprehensively outperform one-stage S
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking Occlusion Modeling for UAV Tracking](rethinking_occlusion_modeling_for_uav_tracking.md)
-- [\[CVPR 2026\] STORM: End-to-End Referring Multi-Object Tracking in Videos](storm_referring_multi_object_tracking.md)
+- [\[CVPR 2026\] Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)
+- [\[CVPR 2026\] InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)
+- [\[CVPR 2026\] Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)
 - [\[CVPR 2026\] From Contrast to Consistency: Rethinking Event-based Continuous-Time Optical Flow Estimation](from_contrast_to_consistency_rethinking_event-based_continuous-time_optical_flow.md)
-- [\[ECCV 2024\] Referring Atomic Video Action Recognition](../../ECCV2024/video_understanding/referring_atomic_video_action_recognition.md)
-- [\[NeurIPS 2025\] Two Causally Related Needles in a Video Haystack](../../NeurIPS2025/video_understanding/two_causally_related_needles_in_a_video_haystack.md)
 
 </div>
 

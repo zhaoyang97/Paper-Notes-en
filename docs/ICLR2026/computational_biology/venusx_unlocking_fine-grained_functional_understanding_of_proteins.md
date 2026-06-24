@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VenusX: Unlocking Fine-Grained Functional Understanding of Proteins
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] VenusX is the first large-scale benchmark for **fine-grained functional understanding within proteins**. It organizes residue-level annotations (active sites, binding sites, conserved sites, motifs, domains, and epitopes) into three tasks: residue-level binary classification, segment-level multi-classification, and pai
+  [ICLR 2026][Computational Biology][Protein functional understanding] VenusX is the first large-scale benchmark for **fine-grained functional understanding within proteins**. It organizes residue-level annotations (active sites, binding sites, conserved sites, motifs, domains, and epitopes) into three tasks: residue-level binary classification, segment-level multi-classification, and pairwise functional similarity scoring (totaling 56 datasets and 878k samples). By evaluating…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein functional understanding"
+  - "fine-grained benchmark"
+  - "residue-level prediction"
+  - "cross-family generalization"
+  - "representation learning"
 date: 2026-05-08
-content_hash: a13c402857f8376b
+content_hash: 16bf0b5e3a66b44d
 ---
+
 # VenusX: Unlocking Fine-Grained Functional Understanding of Proteins
 
 **Conference**: ICLR 2026  
@@ -129,10 +135,20 @@ Pairwise Similarity (AUC%): Foldseek reaches 99.0 on Evo_P50; BLAST lags behind 
 - Value: ⭐⭐⭐⭐⭐ High long-term value for the protein representation learning community by exposing the gap between global and local performance.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Lost in Tokenization: Context as the Key to Unlocking Biomolecular Understanding in Scientific LLMs](lost_in_tokenization_context_as_the_key_to_unlocking_biomolecular_understanding_.md)
+- [\[ICLR 2026\] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations](prism_enhancing_protein_inverse_folding_through_fine-_grained_retrieval_on_struc.md)
+- [\[ICLR 2026\] Towards Understanding the Shape of Representations in Protein Language Models](towards_understanding_the_shape_of_representations_in_protein_language_models.md)
+- [\[ICLR 2026\] SimpleFold: Folding Proteins is Simpler Than You Think](simplefold_folding_proteins_is_simpler_than_you_think.md)
+- [\[ICLR 2026\] The Human Brain as a Dynamic Mixture of Expert Models in Video Understanding](the_human_brain_as_a_dynamic_mixture_of_expert_models_in_video_understanding.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Lost in Tokenization: Context as the Key to Unlocking Biomolecular Understanding in Scientific LLMs](lost_in_tokenization_context_as_the_key_to_unlocking_biomolecular_understanding_.md)

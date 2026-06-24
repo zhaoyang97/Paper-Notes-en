@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation
 description: >-
-  [AAAI 2026][Multi-Agent][Multi-Agent Topology Design] This paper proposes ARG-Designer, which reformulates multi-agent system topology design as a conditional autoregressive graph generation task. Rather than pruning fro…
+  [AAAI 2026 Oral][Multi-Agent][Multi-Agent Topology Design] This paper proposes ARG-Designer, which reformulates multi-agent system topology design as a conditional autoregressive graph generation task. Rather than pruning from template graphs, the model incrementally generates agent nodes and communication edges from scratch. ARG-Designer achieves state-of-the-art performance across 6 benchmarks (average 92.78%), reduces token consumption by approximately 50% compared to G-De…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Multi-Agent"
   - "Multi-Agent Topology Design"
   - "Autoregressive Graph Generation"
@@ -12,7 +12,7 @@ tags:
   - "Curriculum Learning"
   - "Scalable Agents"
 date: 2026-05-08
-content_hash: a189082e252ac9b2
+content_hash: 86d028a97b1858d3
 ---
 
 # Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation
@@ -129,9 +129,9 @@ Accuracy comparison across 6 benchmarks (GPT-4o as the underlying LLM):
 
 - [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
 - [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](../../ACL2026/multi_agent/cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
 - [\[ICML 2026\] RADAR: Redundancy-Aware Diffusion for Multi-Agent Communication Structure Generation](../../ICML2026/multi_agent/radar_redundancy-aware_diffusion_for_multi-agent_communication_structure_generat.md)
-- [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
+- [\[ICLR 2026\] Graph-of-Agents: A Graph-based Framework for Multi-Agent LLM Collaboration](../../ICLR2026/multi_agent/graph-of-agents_a_graph-based_framework_for_multi-agent_llm_collaboration.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

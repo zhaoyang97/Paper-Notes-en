@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Trace Anything: Representing Any Video in 4D via Trajectory Fields
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] Trace Anything represents every pixel in a video as a continuous 3D trajectory and directly predicts the trajectory field of the entire video through a single feed-forward inference. This achieves efficient 4D dynamic scene representation without requiring depth, optical flow, 2D trackers, or per-scene optimization.
+  [ICLR2026][3D Vision][4D video representation] Trace Anything represents every pixel in a video as a continuous 3D trajectory and directly predicts the trajectory field of the entire video through a single feed-forward inference. This achieves efficient 4D dynamic scene representation without requiring depth, optical flow, 2D trackers, or per-scene optimization.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "4D video representation"
+  - "trajectory fields"
+  - "dynamic scene reconstruction"
+  - "3D point tracking"
+  - "feed-forward geometric models"
 date: 2026-05-08
-content_hash: fe045a2076379055
+content_hash: a9d13227e28448e7
 ---
+
 # Trace Anything: Representing Any Video in 4D via Trajectory Fields
 
 **Conference**: ICLR2026  
@@ -157,6 +163,7 @@ In the video setting, Trace Anything reduces EPEmix from 0.270 (POMATO*) to 0.23
 - **Value**: ⭐⭐⭐⭐⭐ High. Moves dynamic video geometry from a "cascaded pipeline" to a "queryable representation," providing direct value for 4D reconstruction, tracking, and robotic manipulation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

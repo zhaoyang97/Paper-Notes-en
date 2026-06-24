@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cambrian-S: Towards Spatial Supersensing in Video
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] This paper proposes "spatial supersensing," a paradigm shift from passive task-driven sensing to active world modeling. It first proves via the VSI-SUPER benchmark that brute-force context expansion (including Gemini-2.5 and the self-trained Cambrian-S) fails completely on spatial recall and counting tasks in arbitrari
+  [ICLR2026][Video Understanding][Spatial Supersensing] This paper proposes "spatial supersensing," a paradigm shift from passive task-driven sensing to active world modeling. It first proves via the VSI-SUPER benchmark that brute-force context expansion (including Gemini-2.5 and the self-trained Cambrian-S) fails completely on spatial recall and counting tasks in arbitrarily long videos. It then introduces a self-supervised "Latent Frame Prediction" head that uses prediction e…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR2026"
+  - "Video Understanding"
+  - "Spatial Supersensing"
+  - "Video MLLM"
+  - "Predictive Sensing"
+  - "Surprise Signal"
+  - "Streaming Memory"
 date: 2026-05-08
-content_hash: f57d1779a2bb2c3d
+content_hash: d2f2f6f856692c2f
 ---
+
 # Cambrian-S: Towards Spatial Supersensing in Video
 
 **Conference**: ICLR2026  
@@ -134,11 +140,11 @@ The collapse of vanilla Cambrian-S (no new paradigm) on VSI-SUPER proves scaling
 
 ## Related Papers
 
+- [\[ICLR 2026\] TAPTRv3: Spatial and Temporal Context Foster Robust Tracking of Any Point in Long Video](taptrv3_spatial_and_temporal_context_foster_robust_tracking_of_any_point_in_long.md)
 - [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](../../CVPR2026/video_understanding/t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
+- [\[ICLR 2026\] Divid: Disentangled Spatial-Temporal Modeling within LLMs for Temporally Grounded Video Understanding](divid_disentangled_spatial-temporal_modeling_within_llms_for_temporally_grounded.md)
 - [\[CVPR 2025\] STOP: Integrated Spatial-Temporal Dynamic Prompting for Video Understanding](../../CVPR2025/video_understanding/stop_integrated_spatial-temporal_dynamic_prompting_for_video_understanding.md)
 - [\[CVPR 2025\] VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM](../../CVPR2025/video_understanding/videorefer_suite_advancing_spatial-temporal_object_understanding_with_video_llm.md)
-- [\[CVPR 2026\] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](../../CVPR2026/video_understanding/lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)
-- [\[ICLR 2026\] A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity](a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md)
 
 </div>
 

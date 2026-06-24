@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Good Teacher Adapts Their Knowledge for Distillation
 description: >-
-  [ICCV 2025][Model Compression][Knowledge distillation] This paper identifies the root cause of the teacher–student capacity gap in knowledge distillation as **intra-class distribution mismatch in the output distributions…
+  [ICCV 2025][Model Compression][Knowledge distillation] This paper identifies the root cause of the teacher–student capacity gap in knowledge distillation as **intra-class distribution mismatch in the output distributions**, and proposes AID (Adapted Intra-class Distribution), a method that fine-tunes the teacher model prior to distillation to align its intra-class distribution with the student's learning capacity, achieving state-of-the-art performance across diverse architec…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "teacher adaptation"
   - "distribution alignment"
 date: 2026-05-08
-content_hash: d0cf8280c804e94c
+content_hash: 0e9a57dc96b940c6
 ---
 
 # A Good Teacher Adapts Their Knowledge for Distillation
@@ -59,8 +59,8 @@ The overall pipeline is: **Pre-trained teacher → AID fine-tuning → Distillat
 
 1. **Mathematical Decomposition of the KD Loss**:
    The authors decompose the standard KD loss (KL divergence between teacher and student output distributions) into two orthogonal components:
-   - **Inter-class similarity**: Measures whether teacher and student agree on the predicted ranking across classes, i.e., the class-level probability allocation pattern.
-   - **Intra-class distribution**: Measures whether the distribution of probability mass within the same class (particularly among non-target classes) matches between teacher and student.
+    - **Inter-class similarity**: Measures whether teacher and student agree on the predicted ranking across classes, i.e., the class-level probability allocation pattern.
+    - **Intra-class distribution**: Measures whether the distribution of probability mass within the same class (particularly among non-target classes) matches between teacher and student.
 
    This decomposition reveals a key insight: **inter-class similarity is generally easier to learn (since high-probability classes are few), whereas intra-class distribution mismatch is the primary contributor to the capacity gap problem**. A large teacher's intra-class distribution may be highly "peaked" or exhibit complex patterns that a small student cannot fit.
 
@@ -68,17 +68,17 @@ The overall pipeline is: **Pre-trained teacher → AID fine-tuning → Distillat
    Based on this analysis, AID's core idea is: rather than forcing the student to fit the teacher's complex distribution, the teacher should proactively simplify its intra-class distribution to match the student's learning capacity.
 
    Concretely, the teacher model is fine-tuned before distillation to:
-   - Preserve the teacher's classification accuracy (without degrading knowledge quality).
-   - Optimize the teacher's intra-class distribution to be closer to a form the student can effectively learn.
-   - Reference the student's structural characteristics (capacity information) to determine the target distribution for adaptation.
+    - Preserve the teacher's classification accuracy (without degrading knowledge quality).
+    - Optimize the teacher's intra-class distribution to be closer to a form the student can effectively learn.
+    - Reference the student's structural characteristics (capacity information) to determine the target distribution for adaptation.
 
    This paradigm of "teacher adapts to student first" contrasts interestingly with the traditional KD paradigm of "student strives to learn from teacher" — a good teacher should adjust their pedagogical approach to the student's level.
 
 3. **Distribution Alignment Strategy**:
    When fine-tuning the teacher with AID, the objective is not to weaken the teacher but to render its output distribution more "student-friendly" while maintaining correctness. This may involve:
-   - Smoothing the probability distribution over non-target classes.
-   - Reducing noisy signals within the intra-class distribution.
-   - Preserving critical inter-class ranking and similarity information.
+    - Smoothing the probability distribution over non-target classes.
+    - Reducing noisy signals within the intra-class distribution.
+    - Preserving critical inter-class ranking and similarity information.
 
 ### Loss & Training
 - **AID fine-tuning phase**: The teacher network is optimized under a constraint preserving original classification performance, with an additional objective targeting intra-class distribution adaptation.
@@ -150,10 +150,10 @@ The "teacher adaptation" idea underlying AID may also be valuable in other disti
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity](../../NeurIPS2025/model_compression/single-teacher_view_augmentation_boosting_knowledge_distillation_via_angular_div.md)
+- [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](../../ICLR2026/model_compression/in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
+- [\[CVPR 2025\] What Makes a Good Dataset for Knowledge Distillation?](../../CVPR2025/model_compression/what_makes_a_good_dataset_for_knowledge_distillation.md)
 - [\[ICCV 2025\] Knowledge Distillation with Refined Logits](knowledge_distillation_with_refined_logits.md)
 - [\[ICCV 2025\] EA-KD: Entropy-based Adaptive Knowledge Distillation](ea-kd_entropy-based_adaptive_knowledge_distillation.md)
-- [\[CVPR 2026\] Distilling Balanced Knowledge from a Biased Teacher](../../CVPR2026/model_compression/distilling_balanced_knowledge_from_a_biased_teacher.md)
 - [\[ICCV 2025\] Local Dense Logit Relations for Enhanced Knowledge Distillation](local_dense_logit_relations_for_enhanced_knowledge_distillation.md)
 
 </div>

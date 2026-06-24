@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] When Machine Learning Gets Personal: Evaluating Prediction and Explanation
 description: >-
-  [ICLR 2026][Interpretability][Benefit of Personalization] This paper proposes a unified framework to quantify the impact of model personalization on prediction accuracy and explanation quality. It proves that the two can be decoupled (prediction remains unchanged while explanation improves or degrades) and derives finite-sample lower bounds for hypothesis testing error probab
+  [ICLR 2026][Interpretability][Personalized models] This paper proposes a unified framework to quantify the impact of model personalization on prediction accuracy and explanation quality. It proves that the two can be decoupled (prediction remains unchanged while explanation improves or degrades) and derives finite-sample lower bounds for hypothesis testing error probabilities based on dataset statistics, revealing that personalization effects are statistically untestable in m…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Benefit of Personalization
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Personalized models"
+  - "Benefit of Personalization"
+  - "Hypothesis testing"
+  - "Finite-sample lower bounds"
+  - "Sufficiency"
+  - "Incompleteness"
 date: 2026-05-08
-content_hash: ed43b1cf709b1dca
+content_hash: 63142a9ba5f67eb2
 ---
+
 # When Machine Learning Gets Personal: Evaluating Prediction and Explanation
 
 **Conference**: ICLR 2026  
@@ -120,15 +126,15 @@ Classification individual BoP is categorical $\{-1, 0, 1\}$, leading to identica
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Towards Understanding Subliminal Learning: When and How Hidden Biases Transfer](towards_understanding_subliminal_learning_when_and_how_hidden_biases_transfer.md)
 - [\[ICML 2026\] Position: Ideas Should be the Center of Machine Learning Research](../../ICML2026/interpretability/position_ideas_should_be_the_center_of_machine_learning_research.md)
 - [\[ICLR 2026\] FAME: Formal Abstract Minimal Explanation for Neural Networks](fame_formal_abstract_minimal_explanation_for_neural_networks.md)
-- [\[ICML 2025\] Rethinking Explainable Machine Learning as Applied Statistics](../../ICML2025/interpretability/rethinking_explainable_machine_learning_as_applied_statistics.md)
 - [\[ICLR 2026\] Evaluating SAE Interpretability Without Generating Explanations](evaluating_sae_interpretability_without_generating_explanations.md)
+- [\[ICML 2025\] Rethinking Explainable Machine Learning as Applied Statistics](../../ICML2025/interpretability/rethinking_explainable_machine_learning_as_applied_statistics.md)
 
 </div>
 

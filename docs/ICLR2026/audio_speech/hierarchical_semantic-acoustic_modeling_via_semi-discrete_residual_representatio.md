@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis
 description: >-
-  [ICLR 2026][Audio & Speech][zero-shot TTS] VoxCPM employs a **differentiable FSQ semi-discrete bottleneck** to naturally decouple "semantic-prosody planning" from "fine-grained acoustic rendering" within a single end-to-end model. TSLM generates a stable semantic skeleton, RALM compensates for acoustic residuals, and LocDiT predicts high-fidelity speech latents
+  [ICLR 2026][Audio & Speech][zero-shot TTS] VoxCPM employs a **differentiable FSQ semi-discrete bottleneck** to naturally decouple "semantic-prosody planning" from "fine-grained acoustic rendering" within a single end-to-end model. TSLM generates a stable semantic skeleton, RALM compensates for acoustic residuals, and LocDiT predicts high-fidelity speech latents. Trained on 1 million hours of data, the 0.5B model achieves SOTA performance for open-source zero-shot TTS and oper…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - zero-shot TTS
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "zero-shot TTS"
+  - "end-to-end speech synthesis"
+  - "FSQ semi-discrete bottleneck"
+  - "residual acoustic modeling"
+  - "hierarchical semantic-acoustic modeling"
+  - "local diffusion decoding"
 date: 2026-05-08
-content_hash: 47cf86c4c9609195
+content_hash: 2a50c80719fe1ca1
 ---
+
 # Hierarchical Semantic-Acoustic Modeling via Semi-Discrete Residual Representations for Expressive End-to-End Speech Synthesis
 
 **Conference**: ICLR 2026  

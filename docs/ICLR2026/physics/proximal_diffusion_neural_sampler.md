@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Proximal Diffusion Neural Sampler
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper proposes PDNS (Proximal Diffusion Neural Sampler), which models "sampling from unnormalized target distributions" as a stochastic optimal control problem in path measure space. It utilizes the **Proximal Point Method** to decompose a one-shot global optimization into a sequence of sub-problems with KL proxim
+  [ICLR 2026][Physics & Scientific Computing][Boltzmann Sampling] This paper proposes PDNS (Proximal Diffusion Neural Sampler), which models "sampling from unnormalized target distributions" as a stochastic optimal control problem in path measure space. It utilizes the **Proximal Point Method** to decompose a one-shot global optimization into a sequence of sub-problems with KL proximity constraints. This allows the sampler to gradually approach the target along a geometric inte…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Boltzmann Sampling"
+  - "Stochastic Optimal Control"
+  - "Proximal Point Method"
+  - "Mode Collapse"
+  - "Path Measure"
 date: 2026-05-08
-content_hash: 07088e6e7544eb7d
+content_hash: 3e4b6fdd78e3b857
 ---
+
 # Proximal Diffusion Neural Sampler
 
 **Conference**: ICLR 2026  
@@ -147,7 +153,7 @@ Furthermore, on the Alanine Dipeptide molecule (60D internal coordinates), the 1
 - [\[ICML 2026\] Generative Neural Operators Through Diffusion Last Layer](../../ICML2026/physics/generative_neural_operators_through_diffusion_last_layer.md)
 - [\[CVPR 2025\] DiffFNO: Diffusion Fourier Neural Operator](../../CVPR2025/physics/difffno_diffusion_fourier_neural_operator.md)
 - [\[ICLR 2026\] OXtal: An All-Atom Diffusion Model for Organic Crystal Structure Prediction](oxtal_an_all-atom_diffusion_model_for_organic_crystal_structure_prediction.md)
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](../../CVPR2026/physics/spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
+- [\[ICLR 2026\] PINFDiT: Energy-Based Physics-Informed Diffusion Transformers for General-purpose Time Series Tasks](pinfdit_energy-based_physics-informed_diffusion_transformers_for_general-purpose.md)
 
 </div>
 

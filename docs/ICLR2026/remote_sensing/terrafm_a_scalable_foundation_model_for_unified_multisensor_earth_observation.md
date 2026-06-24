@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] TerraFM: A Scalable Foundation Model for Unified Multisensor Earth Observation
 description: >-
-  [ICLR 2026][Remote Sensing][Sentinel-1/2] TerraFM is designed for multisensor Earth observation data, treating Sentinel-1 SAR and Sentinel-2 optical imagery as natural augmented views of the same location. Through modality-specific patch embedding, per-position cross-attention fusion, and dual-centering DINO training for long-tail land cover, it achieves stron
+  [ICLR2026][Remote Sensing][Remote Sensing Foundation Models] TerraFM is designed for multisensor Earth observation data, treating Sentinel-1 SAR and Sentinel-2 optical imagery as natural augmented views of the same location. Through modality-specific patch embedding, per-position cross-attention fusion, and dual-centering DINO training for long-tail land cover, it achieves strong generalization on classification and segmentation tasks in GEO-Bench and Copernicus-Bench.
 tags:
-  - ICLR 2026
-  - Remote Sensing
-  - Sentinel-1/2
-  - Self-Supervised Learning
-  - Segmentation
+  - "ICLR2026"
+  - "Remote Sensing"
+  - "Remote Sensing Foundation Models"
+  - "Multisensor Fusion"
+  - "Sentinel-1/2"
+  - "Self-supervised Learning"
+  - "Semantic Segmentation"
 date: 2026-05-08
-content_hash: 4461d4280c6ad627
+content_hash: 5e1a8dfea9e23bc0
 ---
+
 # TerraFM: A Scalable Foundation Model for Unified Multisensor Earth Observation
 
 **Conference**: ICLR2026  
@@ -174,10 +177,10 @@ The ablation logic is clear: while standard self-supervision learns basic repres
 ## Related Papers
 
 - [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](../../ICCV2025/remote_sensing/towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
-- [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
 - [\[ICLR 2026\] Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents](earth-agent_unlocking_the_full_landscape_of_earth_observation_with_agents.md)
-- [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](../../ICCV2025/remote_sensing/rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
+- [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
 - [\[CVPR 2026\] RAMEN: Resolution-Adjustable Multimodal Encoder for Earth Observation](../../CVPR2026/remote_sensing/ramen_resolution-adjustable_multimodal_encoder_for_earth_observation.md)
+- [\[CVPR 2026\] OlmoEarth: Stable Latent Image Modeling for Multimodal Earth Observation](../../CVPR2026/remote_sensing/olmoearth_stable_latent_image_modeling_for_multimodal_earth_observation.md)
 
 </div>
 

@@ -2,13 +2,21 @@
 title: >-
   [Paper Note] Ads that Stick: Near-Optimal Ad Optimization through Psychological Behavior Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper incorporates three psychological effects—"mere exposure," "hedonic adaptation," and "operant conditioning"—into a continuous-time ad reward model. It demonstrates that when the number of ads is fixed, the optimal schedule is determined solely by the decay loss of "operant conditioning." The authors provide a
+  [ICLR2026][Learning Theory][Ad Scheduling] This paper incorporates three psychological effects—"mere exposure," "hedonic adaptation," and "operant conditioning"—into a continuous-time ad reward model. It demonstrates that when the number of ads is fixed, the optimal schedule is determined solely by the decay loss of "operant conditioning." The authors provide a quasi-linear time, near-optimal scheduling algorithm with exponentially small error…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Online Optimization"
+  - "Computational Advertising"
+  - "Ad Scheduling"
+  - "Psychological Behavior Models"
+  - "Near-Optimal Algorithms"
+  - "Convex Optimization"
+  - "Operant Conditioning"
 date: 2026-05-08
-content_hash: 12c54534620431ea
+content_hash: 611fc72fa5cf2ac7
 ---
+
 # Ads that Stick: Near-Optimal Ad Optimization through Psychological Behavior Models
 
 **Conference**: ICLR2026  
@@ -148,7 +156,7 @@ The core conclusion: no single fixed heuristic is optimal across all $\delta$. U
 - [\[ICLR 2026\] Near Optimal Robust Federated Learning Against Data Poisoning Attack](near_optimal_robust_federated_learning_against_data_poisoning_attack.md)
 - [\[ICLR 2026\] Near-Optimal Sample Complexity Bounds for Constrained Average-Reward MDPs](near-optimal_sample_complexity_bounds_for_constrained_average-reward_mdps.md)
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
-- [\[ICLR 2026\] Best-of-N through the Smoothing Lens: KL Divergence and Regret Analysis](best-of-n_through_the_smoothing_lens_kl_divergence_and_regret_analysis.md)
+- [\[ICLR 2026\] Online Inventory Optimization in Non-Stationary Environment](online_inventory_optimization_in_non-stationary_environment.md)
 
 </div>
 

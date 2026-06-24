@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components
 description: >-
-  [ICLR 2026][Others][Paper Note] The proposed FedGEM algorithm constructs uncertainty sets after local EM steps on clients, allowing the server to detect cluster overlaps via set intersections and infer the global cluster count. This marks the first federated clustering approach that operates without a predefined number of clusters while providing pro
+  [ICLR 2026][Federated Clustering] The proposed FedGEM algorithm constructs uncertainty sets after local EM steps on clients, allowing the server to detect cluster overlaps via set intersections and infer the global cluster count. This marks the first federated clustering approach that operates without a predefined number of clusters while providing probabilistic convergence guarantees.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Federated Clustering"
+  - "Generalized EM Algorithm"
+  - "Mixture Models"
+  - "Unknown Cluster Number"
+  - "Uncertainty Sets"
 date: 2026-05-08
-content_hash: 179bd4eb931cbaa4
+content_hash: 73bb293cc34f451d
 ---
+
 # A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components
 
 **Conference**: ICLR 2026  

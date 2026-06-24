@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Platonic Universe: Do Foundation Models See the Same Sky?
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Platonic Representation Hypothesis] This paper validates the Platonic Representation Hypothesis (PRH) in an astronomical setting. Using JWST, HSC, Legacy Survey…
+  [NeurIPS 2025][Physics & Scientific Computing][Platonic Representation Hypothesis] This paper validates the Platonic Representation Hypothesis (PRH) in an astronomical setting. Using JWST, HSC, Legacy Survey, and DESI spectroscopic data, it measures representation alignment across six foundation models (ViT/ConvNeXt/DINOv2/IJEPA/AstroPT/Specformer) and finds that both intra-modal and cross-modal MKNN scores consistently increase with model scale ($p = 3.31 \times 10^{-5}$)…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "representation alignment"
   - "cross-modal convergence"
 date: 2026-05-08
-content_hash: 3fd2fd4e64860029
+content_hash: c99b357ebc394353
 ---
 
 # The Platonic Universe: Do Foundation Models See the Same Sky?
@@ -122,11 +122,11 @@ This paper validates the Platonic Representation Hypothesis (PRH) in an astronom
 
 ## Related Papers
 
+- [\[ICML 2025\] Finetuning Stellar Spectra Foundation Models with LoRA](../../ICML2025/physics/finetuning_stellar_spectra_foundation_models_with_lora.md)
 - [\[NeurIPS 2025\] FAIR Universe HiggsML Uncertainty Dataset and Competition](fair_universe_higgsml_uncertainty_dataset_and_competition.md)
+- [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](../../ICML2026/physics/foundation_inference_models_for_ordinary_differential_equations.md)
 - [\[NeurIPS 2025\] Physics-Constrained Flow Matching: Sampling Generative Models with Hard Constraints](physics-constrained_flow_matching_sampling_generative_models_with_hard_constrain.md)
-- [\[NeurIPS 2025\] Physics-Guided Machine Learning for Uncertainty Quantification in Turbulence Models](physics-guided_machine_learning_for_uncertainty_quantification_in_turbulence_mod.md)
-- [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
-- [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](../../ICML2026/physics/quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
+- [\[ICLR 2026\] Robust and Interpretable Adaptation of Equivariant Materials Foundation Models via Sparsity-promoting Fine-tuning](../../ICLR2026/physics/robust_and_interpretable_adaptation_of_equivariant_materials_foundation_models_v.md)
 
 </div>
 

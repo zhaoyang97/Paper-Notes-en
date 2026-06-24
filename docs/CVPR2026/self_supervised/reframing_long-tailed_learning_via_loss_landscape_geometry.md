@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reframing Long-Tailed Learning via Loss Landscape Geometry
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] This paper revisits the head-tail seesaw dilemma in long-tailed learning from the perspective of loss landscape geometry. It reveals that the root cause of tail class degradation is optimization convergence to sharp regions far from the tail-class optima. A dual-module framework comprising Grouped Knowledge Preservatio
+  [CVPR 2026][Self-Supervised Learning][Long-tailed learning] This paper revisits the head-tail seesaw dilemma in long-tailed learning from the perspective of loss landscape geometry. It reveals that the root cause of tail class degradation is optimization convergence to sharp regions far from the tail-class optima. A dual-module framework comprising Grouped Knowledge Preservation (GKP) and Grouped Sharpness Awareness (GSA), inspired by continual learning…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Long-tailed learning"
+  - "loss landscape"
+  - "tail class degradation"
+  - "continual learning"
+  - "sharpness-aware minimization"
 date: 2026-05-08
-content_hash: 98b13eb40b014a84
+content_hash: 6cd8ec7b9626fef0
 ---
+
 # Reframing Long-Tailed Learning via Loss Landscape Geometry
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ This yields a group-specific direction free of head-dominant components. A group
 
 ## Related Papers
 
+- [\[CVPR 2026\] Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)
 - [\[CVPR 2026\] Trust-calibrated Collaborative Learning for Long-Tailed Visual Recognition](trust-calibrated_collaborative_learning_for_long-tailed_visual_recognition.md)
+- [\[CVPR 2026\] AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)
 - [\[CVPR 2026\] CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning](cue_concept-aware_multi-label_expansion_to_mitigate_concept_confusion_in_long-ta.md)
-- [\[AAAI 2026\] BCE3S: Binary Cross-Entropy Based Tripartite Synergistic Learning for Long-tailed Recognition](../../AAAI2026/self_supervised/bce3s_binary_cross-entropy_based_tripartite_synergistic_learning_for_long-tailed.md)
-- [\[NeurIPS 2025\] Long-Tailed Recognition via Information-Preservable Two-Stage Learning](../../NeurIPS2025/self_supervised/long-tailed_recognition_via_information-preservable_two-stage_learning.md)
-- [\[CVPR 2026\] Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)
+- [\[ICLR 2026\] Learning Dynamics of Logits Debiasing for Long-Tailed Semi-Supervised Learning](../../ICLR2026/self_supervised/learning_dynamics_of_logits_debiasing_for_long-tailed_semi-supervised_learning.md)
 
 </div>
 

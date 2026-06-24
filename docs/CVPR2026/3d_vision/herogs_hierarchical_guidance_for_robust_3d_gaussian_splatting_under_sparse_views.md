@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] HeroGS decomposes the overfitting problem of 3DGS under sparse views into three levels of hierarchical constraints: image-level (pseudo-dense supervision via frame interpolation), feature-level (adaptive Gaussian addition/deletion based on edges and tiling), and parameter-level (synergistic pruning of geometrically inc
+  [CVPR 2026][3D Vision][Sparse View Reconstruction] HeroGS decomposes the overfitting problem of 3DGS under sparse views into three levels of hierarchical constraints: image-level (pseudo-dense supervision via frame interpolation), feature-level (adaptive Gaussian addition/deletion based on edges and tiling), and parameter-level (synergistic pruning of geometrically inconsistent Gaussians across multiple fields). It comprehensively outperforms SOTAs like FSGS and DropGaussian…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Sparse View Reconstruction"
+  - "3D Gaussian Splatting"
+  - "Frame Interpolation Pseudo-labels"
+  - "Adaptive Densification"
+  - "Geometric Consistency Pruning"
 date: 2026-05-08
-content_hash: 95816d1e5682075d
+content_hash: 93792b10a672b6ad
 ---
+
 # HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views
 
 **Conference**: CVPR 2026  
@@ -139,15 +145,16 @@ Incremental addition of levels (LLFF, PSNR):
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] GIFSplat: Generative Prior-Guided Iterative Feed-Forward 3D Gaussian Splatting from Sparse Views](gifsplat_generative_prior-guided_iterative_feed-forward_3d_gaussian_splatting_fr.md)
+- [\[CVPR 2026\] GaussianZoom: Progressive Zoom-in Generative 3D Gaussian Splatting with Geometric and Semantic Guidance](gaussianzoom_progressive_zoom-in_generative_3d_gaussian_splatting_with_geometric.md)
+- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
 - [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
-- [\[CVPR 2026\] AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)
-- [\[CVPR 2026\] ULF-Loc: Unbiased Landmark Feature for Robust Visual Localization with 3D Gaussian Splatting](ulf-loc_unbiased_landmark_feature_for_robust_visual_localization_with_3d_gaussia.md)
-- [\[CVPR 2026\] TextFM: Robust Semi-dense Feature Matching with Language Guidance](textfm_robust_semi-dense_feature_matching_with_language_guidance.md)
-- [\[CVPR 2026\] Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)
+- [\[CVPR 2026\] DualSplat: Robust 3D Gaussian Splatting via Pseudo-Mask Bootstrapping from Reconstruction Failures](dualsplat_robust_3d_gaussian_splatting_via_pseudo-mask_bootstrapping_from_recons.md)
 
 </div>
 

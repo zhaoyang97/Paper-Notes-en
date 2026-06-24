@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs
 description: >-
-  [AAAI 2026][Reinforcement Learning][steerability evaluation] This paper proposes a multi-dimensional objective-space framework for evaluating LLM steerability…
+  [AAAI 2026][Reinforcement Learning][steerability evaluation] This paper proposes a multi-dimensional objective-space framework for evaluating LLM steerability, decomposing steering error into miscalibration and side effects (orthogonality). Experiments on text rewriting reveal that even the strongest LLMs produce severe side effects; prompt engineering proves ineffective, best-of-N sampling is prohibitively costly, and RL fine-tuning yields improvements but does not fully res…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "RL fine-tuning"
   - "text rewriting"
 date: 2026-05-08
-content_hash: cb5515d72734388d
+content_hash: b1da60a060de7c1a
 ---
 
 # A Course Correction in Steerability Evaluation: Revealing Miscalibration and Side Effects in LLMs
@@ -105,10 +105,10 @@ Additional key findings:
 ## Related Papers
 
 - [\[AAAI 2026\] Revealing POMDPs: Qualitative and Quantitative Analysis for Parity Objectives](revealing_pomdps_qualitative_and_quantitative_analysis_for_parity_objectives.md)
-- [\[AAAI 2026\] Does Self-Evaluation Enable Wireheading in Language Models?](does_self-evaluation_enable_wireheading_in_language_models.md)
+- [\[ICLR 2026\] RL for Reasoning by Adaptively Revealing Rationales](../../ICLR2026/reinforcement_learning/rl_for_reasoning_by_adaptively_revealing_rationales.md)
 - [\[ICLR 2026\] Nearly-Optimal Bandit Learning in Stackelberg Games with Side Information](../../ICLR2026/reinforcement_learning/nearly-optimal_bandit_learning_in_stackelberg_games_with_side_information.md)
+- [\[AAAI 2026\] Does Self-Evaluation Enable Wireheading in Language Models?](does_self-evaluation_enable_wireheading_in_language_models.md)
 - [\[AAAI 2026\] A Multi-Agent Conversational Bandit Approach to Online Evaluation and Selection of User-Aligned LLM Responses](a_multi-agent_conversational_bandit_approach_to_online_evaluation_and_selection_.md)
-- [\[ICML 2026\] ORLoopBench: Solver-in-the-Loop Benchmarks for Self-Correction and Behavioral Rationality in Operations Research](../../ICML2026/reinforcement_learning/orloopbench_solver-in-the-loop_benchmarks_for_self-correction_and_behavioral_rat.md)
 
 </div>
 

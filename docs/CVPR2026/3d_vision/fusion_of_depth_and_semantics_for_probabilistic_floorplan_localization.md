@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Fusion of Depth and Semantics for Probabilistic Floorplan Localization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper reformulates the ray-matching task of "estimating camera pose on a 2D floorplan from a single RGB image" into a **probabilistic framework**: it couples depth and semantic ray predictions on shared representations, weights each depth ray using distribution-based confidence, and performs soft semantic matching
+  [CVPR 2026][3D Vision][Floorplan Localization] This paper reformulates the ray-matching task of "estimating camera pose on a 2D floorplan from a single RGB image" into a **probabilistic framework**: it couples depth and semantic ray predictions on shared representations, weights each depth ray using distribution-based confidence, and performs soft semantic matching via JSD. This approach simultaneously suppresses environmental, geometric, and semantic ambiguities in indoor sc…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Floorplan Localization"
+  - "Indoor Localization"
+  - "Ray Matching"
+  - "Depth-Semantic Fusion"
+  - "Probabilistic Matching"
 date: 2026-05-08
-content_hash: 69f61ad57343536d
+content_hash: 1361a053e3f20508
 ---
+
 # Fusion of Depth and Semantics for Probabilistic Floorplan Localization
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ S3D (full), 1m·30° Recall (%). FPA=Floorplan-Aware, confidence=Distributed Con
 
 ## Related Papers
 
-- [\[CVPR 2026\] Depth Any Panoramas: A Foundation Model for Panoramic Depth Estimation](depth_any_panoramas_a_foundation_model_for_panoramic_depth_estimation.md)
-- [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[CVPR 2026\] KASALv2: Fully Automatic 3D Rotational Symmetry Classification and Axis Localization](kasalv2_fully_automatic_3d_rotational_symmetry_classification_and_axis_localizat.md)
-- [\[CVPR 2026\] Intrinsic Image Fusion for Multi-View 3D Material Reconstruction](intrinsic_image_fusion_for_multi-view_3d_material_reconstruction.md)
-- [\[CVPR 2026\] ARES: Unifying Asymmetric RGB-Event Stereo for Probabilistic Scene Flow Estimation](ares_unifying_asymmetric_rgb-event_stereo_for_probabilistic_scene_flow_estimatio.md)
+- [\[ICLR 2026\] UnLoc: Leveraging Depth Uncertainties for Floorplan Localization](../../ICLR2026/3d_vision/unloc_leveraging_depth_uncertainties_for_floorplan_localization.md)
+- [\[CVPR 2026\] C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)
+- [\[CVPR 2026\] LoST: Level of Semantics Tokenization for 3D Shapes](lost_level_of_semantics_tokenization_for_3d_shapes.md)
+- [\[CVPR 2026\] Towards Visual Query Localization in the 3D World](towards_visual_query_localization_in_the_3d_world.md)
+- [\[CVPR 2026\] UniPixie: Unified and Probabilistic 3D Physics Learning via Flow Matching](unipixie_unified_and_probabilistic_3d_physics_learning_via_flow_matching.md)
 
 </div>
 

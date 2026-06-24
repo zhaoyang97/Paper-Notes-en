@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Transcending the "accuracy-only" perspective, this paper proposes an analysis framework to quantify reasoning processes at both **trajectory-level** and **step-level (reasoning graph)** granularities. By systematically comparing the distinct shaping effects of RL and SFT on reasoning LLMs, it concludes that RL "squeeze
+  [ICLR 2026][Reinforcement Learning][RLVR] Transcending the "accuracy-only" perspective, this paper proposes an analysis framework to quantify reasoning processes at both **trajectory-level** and **step-level (reasoning graph)** granularities. By systematically comparing the distinct shaping effects of RL and SFT on reasoning LLMs, it concludes that RL "squeezes" while SFT "expands" the reasoning space, providing a mechanistic explanation for why the "SFT followed by RL" two-s…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "SFT Distillation"
+  - "Reasoning Path"
+  - "Reasoning Graph"
+  - "Two-stage Training"
 date: 2026-05-08
-content_hash: 8575ea5776633110
+content_hash: 3a5f44c5c165bc65
 ---
+
 # RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs
 
 **Conference**: ICLR 2026  
@@ -122,8 +127,8 @@ Findings: Whether starting from Base or SFT, RL significantly reduces incorrect 
 - Value: ⭐⭐⭐⭐⭐ Provides mechanistic interpretation for two-stage training and points toward practical directions like step-level RL.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -131,7 +136,7 @@ Findings: Whether starting from Base or SFT, RL significantly reduces incorrect 
 - [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
 - [\[ICLR 2026\] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation](questa_expanding_reasoning_capacity_in_llms_via_question_augmentation.md)
 - [\[ACL 2026\] Bridging SFT and RL: Dynamic Policy Optimization for Robust Reasoning](../../ACL2026/reinforcement_learning/bridging_sft_and_rl_dynamic_policy_optimization_for_robust_reasoning.md)
-- [\[ICLR 2026\] From f(x) and g(x) to f(g(x)): LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
+- [\[ICLR 2026\] From $f(x)$ and $g(x)$ to $f(g(x))$: LLMs Learn New Skills in RL by Composing Old Ones](from_fx_and_gx_to_fgx_llms_learn_new_skills_in_rl_by_composing_old_ones.md)
 
 </div>
 

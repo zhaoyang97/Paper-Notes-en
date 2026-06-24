@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection
 description: >-
-  [ICCV 2025][3D Vision][multimodal anomaly detection] G2SF reinterprets memory-bank-based anomaly scores as isotropic Euclidean distances in a local feature space…
+  [ICCV 2025][3D Vision][multimodal anomaly detection] G2SF reinterprets memory-bank-based anomaly scores as isotropic Euclidean distances in a local feature space, and progressively evolves them into an anisotropic unified fusion metric by learning direction-aware scaling factors via a Local Scale Prediction Network (LSPN), achieving state-of-the-art performance on multimodal industrial anomaly detection.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "industrial inspection"
   - "point cloud–RGB fusion"
 date: 2026-05-08
-content_hash: 67d5545ce5ecc4c9
+content_hash: 8ee5b34a20ce08e2
 ---
 
 # G2SF: Geometry-Guided Score Fusion for Multimodal Industrial Anomaly Detection
@@ -136,10 +136,10 @@ Ablation of geometric reasoning (score aggregation) comparing mean, max, and min
 ## Related Papers
 
 - [\[ICCV 2025\] SiM3D: Single-Instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark](sim3d_single-instance_multiview_multimodal_and_multisetup_3d_anomaly_detection_b.md)
+- [\[CVPR 2026\] Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](../../CVPR2026/3d_vision/geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)
 - [\[ICCV 2025\] Stable Score Distillation](stable_score_distillation.md)
 - [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
-- [\[ICCV 2025\] Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](bridging_3d_anomaly_localization_and_repair_via_high-qualit.md)
-- [\[ICCV 2025\] Advancing Text-to-3D Generation with Linearized Lookahead Variational Score Distillation](advancing_text-to-3d_generation_with_linearized_lookahead_variational_score_dist.md)
+- [\[CVPR 2026\] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](../../CVPR2026/3d_vision/hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)
 
 </div>
 

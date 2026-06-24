@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RLVR-World: Training World Models with Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Image Generation][World Models] This paper proposes the RLVR-World framework, extending the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm to world model training. By directly optimizing ta…
+  [NeurIPS 2025][Image Generation][World Models] This paper proposes the RLVR-World framework, extending the Reinforcement Learning with Verifiable Rewards (RLVR) paradigm to world model training. By directly optimizing target metrics (e.g., prediction accuracy, perceptual quality) as verifiable rewards, the framework achieves significant improvements on both language and video world models.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Video Prediction"
   - "Autoregressive Generation"
 date: 2026-05-08
-content_hash: df78a2c7c4d82024
+content_hash: 3cc2765720338e77
 ---
 
 # RLVR-World: Training World Models with Reinforcement Learning
@@ -55,11 +55,11 @@ RLVR-World unifies world models across different modalities under an autoregress
 1. **Unified Sequence Modeling**: Regardless of modality — text, video, or sensor data — inputs are converted into token sequences via modality-specific tokenization. Language uses BPE; images/videos use a discrete visual tokenizer (iVideoGPT's compressed tokenizer); low-dimensional continuous values use uniform binning. This unification enables RLVR to generalize across modalities.
 
 2. **Prediction Metrics as Verifiable Rewards**: Given input $q(s,a)$, the model generates a set of samples $\{o_i\}_{i=1}^G$, decodes predicted states $\hat{s}_i'$, and computes rewards by comparing against ground truth $s'$:
-   $$R_i = \text{sign}(D) \cdot D(\hat{s}_i', s')$$
+    $R_i = \text{sign}(D) \cdot D(\hat{s}_i', s')$
    where $\text{sign}(D) = -1$ for lower-is-better metrics (e.g., MSE, LPIPS) and $\text{sign}(D) = 1$ otherwise. The key advantage of this design is that rewards are fully verifiable and require no human annotation.
 
 3. **GRPO Optimization**: Group Relative Policy Optimization (GRPO) is adopted, eliminating the need for a separate value function. Given question $q$, a group of responses $\{o_i\}_{i=1}^G$ is sampled, and within-group normalized advantages are computed:
-   $$\hat{A}_{i,t} = \frac{R_i - \text{mean}(\{R_i\}_{i=1}^G)}{\text{std}(\{R_i\}_{i=1}^G)}$$
+    $\hat{A}_{i,t} = \frac{R_i - \text{mean}(\{R_i\}_{i=1}^G)}{\text{std}(\{R_i\}_{i=1}^G)}$
    Policy updates are performed with a clipped objective and KL divergence penalty.
 
 ### Loss & Training
@@ -142,9 +142,9 @@ RLVR-World unifies world models across different modalities under an autoregress
 
 - [\[NeurIPS 2025\] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation](coreinforcement_learning_for_unified_multimodal_understandin.md)
 - [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
-- [\[NeurIPS 2025\] DOVE: Efficient One-Step Diffusion Model for Real-World Video Super-Resolution](dove_efficient_one-step_diffusion_model_for_real-world_video_super-resolution.md)
-- [\[NeurIPS 2025\] Composite Flow Matching for Reinforcement Learning with Shifted-Dynamics Data](composite_flow_matching_for_reinforcement_learning_with_shifted-dynamics_data.md)
-- [\[ICCV 2025\] Aether: Geometric-Aware Unified World Modeling](../../ICCV2025/image_generation/aether_geometric-aware_unified_world_modeling.md)
+- [\[ECCV 2024\] Controlling the World by Sleight of Hand](../../ECCV2024/image_generation/controlling_the_world_by_sleight_of_hand.md)
+- [\[CVPR 2025\] MirrorVerse: Pushing Diffusion Models to Realistically Reflect the World](../../CVPR2025/image_generation/mirrorverse_pushing_diffusion_models_to_realistically_reflect_the_world.md)
+- [\[CVPR 2025\] UniReal: Universal Image Generation and Editing via Learning Real-world Dynamics](../../CVPR2025/image_generation/unireal_universal_image_generation_and_editing_via_learning_real-world_dynamics.md)
 
 </div>
 

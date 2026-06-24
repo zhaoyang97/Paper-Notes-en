@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Forest-Based Graph Learning for Semi-Supervised Node Classification
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This work reinterprets message passing on graphs as "transmission across multiple spanning trees (forests)." By using homophily-guided sampling to select high-quality trees and a linear-time tree aggregator, the method achieves a global receptive field with $O(n+m)$ complexity, outperforming both deep GNNs and Graph Tr
+  [ICLR 2026][Graph Learning][Spanning trees] This work reinterprets message passing on graphs as "transmission across multiple spanning trees (forests)." By using homophily-guided sampling to select high-quality trees and a linear-time tree aggregator, the method achieves a global receptive field with $O(n+m)$ complexity, outperforming both deep GNNs and Graph Transformers in semi-supervised node classification.
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Spanning trees"
+  - "Forest"
+  - "Long-range info propagation"
+  - "Homophily"
+  - "Linear complexity"
+  - "Graph Transformer"
 date: 2026-05-08
-content_hash: c35f90e0af56f20a
+content_hash: 71550b22e35b4e10
 ---
+
 # Forest-Based Graph Learning for Semi-Supervised Node Classification
 
 **Conference**: ICLR 2026  

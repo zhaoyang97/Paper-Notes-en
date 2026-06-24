@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-judge] The authors turn the research lens on the NLP community itself: using a "reportability codebook" of 20 standards, they perform a large-scale audit of 9100+ *CL papers from 2023–2025 (284 fully manually annotated + 1800+ LLM-assisted). They demonstrate that human evaluation, revered as the "gold standard," suffers from
+  [ACL 2026][LLM Evaluation][Human Evaluation] The authors turn the research lens on the NLP community itself: using a "reportability codebook" of 20 standards, they perform a large-scale audit of 9100+ *CL papers from 2023–2025 (284 fully manually annotated + 1800+ LLM-assisted). They demonstrate that human evaluation, revered as the "gold standard," suffers from widespread underreporting—more than half of the papers report $\le 7$ out of 20 items…
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-judge
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Human Evaluation"
+  - "Reproducibility"
+  - "Reporting Standards"
+  - "Long-form Text Generation"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: 2cb0ec7175ab9f3d
+content_hash: fdf5e3f660600bc2
 ---
+
 # Illusions of the Gold Standard: A Large-scale Analysis of Human Evaluation Protocols for Long-form Text Generation
 
 **Conference**: ACL 2026  
@@ -126,11 +131,11 @@ GPT-4o-mini labeled the remaining papers. Inputs included the abstract, introduc
 
 ## Related Papers
 
+- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
+- [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](../../ICLR2026/llm_evaluation/lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
 - [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 - [\[ACL 2026\] Minos: A Multimodal Evaluation Model for Bidirectional Generation Between Image and Text](minos_a_multimodal_evaluation_model_for_bidirectional_generation_between_image_a.md)
-- [\[ACL 2026\] Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models](attribution_citation_and_quotation_a_survey_of_evidence-based_text_generation_wi.md)
-- [\[ACL 2025\] Atomic Calibration of LLMs in Long-Form Generations](../../ACL2025/llm_evaluation/atomic_calibration_of_llms_in_long-form_generations.md)
-- [\[ACL 2025\] Pap2Pat: Benchmarking Outline-Guided Long-Text Patent Generation with Patent-Paper Pairs](../../ACL2025/llm_evaluation/pap2pat_benchmarking_outline-guided_long-text_patent_generation_with_patent-pape.md)
+- [\[ICLR 2026\] ExpertLongBench: Benchmarking Language Models on Expert-Level Long-Form Generation Tasks with Structured Checklists](../../ICLR2026/llm_evaluation/expertlongbench_benchmarking_language_models_on_expert-level_long-form_generatio.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Self-Improving Error Diagnosis in Multi-Agent Systems
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] Ours proposes the ErrorProbe framework, which achieves self-improving semantic fault attribution in multi-agent systems through MAST taxonomy-driven structured decomposition, symptom-driven backward tracing, and a verified memory mechanism, significantly outperforming baselines in step-level error localization.
+  [ACL 2026 Findings][Multi-Agent][Multi-agent fault attribution] Ours proposes the ErrorProbe framework, which achieves self-improving semantic fault attribution in multi-agent systems through MAST taxonomy-driven structured decomposition, symptom-driven backward tracing, and a verified memory mechanism, significantly outperforming baselines in step-level error localization.
 tags:
-  - ACL 2026
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Multi-Agent"
+  - "Multi-agent fault attribution"
+  - "Error localization"
+  - "Self-improving diagnosis"
+  - "Verified memory"
+  - "Backward tracing"
 date: 2026-05-08
-content_hash: bb331e09264429a5
+content_hash: bd9ba3303b4be95f
 ---
+
 # Towards Self-Improving Error Diagnosis in Multi-Agent Systems
 
 **Conference**: ACL 2026 Findings  
@@ -145,11 +151,11 @@ thereby achieving self-improvement. Memory retrieval utilizes a combination of s
 
 ## Related Papers
 
+- [\[ICLR 2026\] MAS²: Self-Generative, Self-Configuring, Self-Rectifying Multi-Agent Systems](../../ICLR2026/multi_agent/mas2_self-generative_self-configuring_self-rectifying_multi-agent_systems.md)
+- [\[ICLR 2026\] Aegis: Automated Error Generation and Attribution for Multi-Agent Systems](../../ICLR2026/multi_agent/aegis_automated_error_generation_and_attribution_for_multi-agent_systems.md)
 - [\[ICLR 2026\] Stochastic Self-Organization in Multi-Agent Systems](../../ICLR2026/multi_agent/stochastic_self-organization_in_multi-agent_systems.md)
 - [\[ACL 2026\] AgenticEval: Toward Agentic and Self-Evolving Safety Evaluation of Large Language Models](agenticeval_toward_agentic_and_self-evolving_safety_evaluation_of_large_language.md)
 - [\[AAAI 2026\] Conversational Learning Diagnosis via Reasoning Multi-Turn Interactive Learning](../../AAAI2026/multi_agent/conversational_learning_diagnosis_via_reasoning_multi-turn_interactive_learning.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](../../AAAI2026/multi_agent/lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
-- [\[ICML 2026\] MAS-Orchestra: Understanding and Improving Multi-Agent Reasoning Through Holistic Orchestration and Controlled Benchmarks](../../ICML2026/multi_agent/mas-orchestra_understanding_and_improving_multi-agent_reasoning_through_holistic.md)
 
 </div>
 

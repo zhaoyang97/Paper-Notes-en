@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Width Neural Networks
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The AWN framework is proposed to automatically learn unbounded layer widths (number of neurons) during training via variational inference. By applying a soft ordering to neurons using a monotonically decreasing importance function, it enables width adaptation to task difficulty and supports zero-cost post-training trun
+  [ICLR 2026][Model Compression][Adaptive width] The AWN framework is proposed to automatically learn unbounded layer widths (number of neurons) during training via variational inference. By applying a soft ordering to neurons using a monotonically decreasing importance function, it enables width adaptation to task difficulty and supports zero-cost post-training truncation compression.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Adaptive width"
+  - "variational inference"
+  - "neuron importance ordering"
+  - "network compression"
+  - "hyperparameter learning"
 date: 2026-05-08
-content_hash: 55c11d24bc27b9e0
+content_hash: 32850afa589d8251
 ---
+
 # Adaptive Width Neural Networks
 
 **Conference**: ICLR 2026  
@@ -140,10 +146,10 @@ Comprehensive testing across tabular, image, text, sequence, and graph data:
 ## Related Papers
 
 - [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
+- [\[ICLR 2026\] Robust Training of Neural Networks at Arbitrary Precision and Sparsity](robust_training_of_neural_networks_at_arbitrary_precision_and_sparsity.md)
 - [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
 - [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
 - [\[ICLR 2026\] KLAS: Using Similarity to Stitch Neural Networks for Improved Accuracy-Efficiency Tradeoffs](klas_using_similarity_to_stitch_neural_networks_for_improved_accuracy-efficiency.md)
-- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 
 </div>
 

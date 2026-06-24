@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EMBGuard: Constructing Hazard-Aware Guardrails for Safe Planning in Embodied Agents
 description: >-
-  [ICML 2026][Robotics & Embodied AI][MLLM] EmbGuard decouples "physical safety judgment for embodied agents" from the policy into an independent, lightweight guardrail model. It takes (observation image, candidate action) as input and outputs (risk binary, risk category, hazard explanation). With only 2B/4B parameters, it matches the performance of GPT-5.1/Gemi
+  [ICML 2026][Robotics][Embodied agent] EmbGuard decouples "physical safety judgment for embodied agents" from the policy into an independent, lightweight guardrail model. It takes (observation image, candidate action) as input and outputs (risk binary, risk category, hazard explanation). With only 2B/4B parameters, it matches the performance of GPT-5.1/Gemini-2.5-Pro while significantly suppressing the "over-conservative false positive" issues prevalent in baseline models.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - MLLM
+  - "ICML 2026"
+  - "Robotics"
+  - "Embodied agent"
+  - "Safety guardrail"
+  - "Action-conditioned risk"
+  - "Synthetic data"
+  - "MLLM"
 date: 2026-05-08
-content_hash: 74fa4f4bbdc8e582
+content_hash: a80ee0d981adf04f
 ---
+
 # EMBGuard: Constructing Hazard-Aware Guardrails for Safe Planning in Embodied Agents
 
 **Conference**: ICML 2026  
@@ -148,11 +153,11 @@ Inference latency: EmbGuard-2B 0.535s/sample, EmbGuard-4B 0.719s/sample (on a si
 
 ## Related Papers
 
+- [\[ICML 2026\] Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents](functional_cache_grafting_robust_and_rapid_code-policy_synthesis_for_embodied_ag.md)
 - [\[ICLR 2026\] REI-Bench: Can Embodied Agents Understand Vague Human Instructions in Task Planning?](../../ICLR2026/robotics/rei-bench_can_embodied_agents_understand_vague_human_instructions_in_task_planni.md)
 - [\[ICML 2026\] Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning](drift_is_a_sampling_error_snr-aware_power_distributions_for_long-horizon_robotic.md)
 - [\[ICML 2026\] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models](embodied_task_planning_via_graph-informed_action_generation_with_large_language_.md)
-- [\[CVPR 2026\] AGENTSAFE: Benchmarking the Safety of Embodied Agents on Hazardous Instructions](../../CVPR2026/robotics/agentsafe_benchmarking_the_safety_of_embodied_agents_on_hazardous_instructions.md)
-- [\[ICLR 2026\] OmniEVA: Embodied Versatile Planner via Task-Adaptive 3D-Grounded and Embodiment-aware Reasoning](../../ICLR2026/robotics/omnieva_embodied_versatile_planner_via_task-adaptive_3d-grounded_and_embodiment-.md)
+- [\[ICLR 2026\] Planning with an Embodied Learnable Memory](../../ICLR2026/robotics/planning_with_an_embodied_learnable_memory.md)
 
 </div>
 

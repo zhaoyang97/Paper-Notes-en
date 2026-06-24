@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] CSF treats text-to-image (T2I) models as "semantic category generators." It samples repeatedly using a batch of **compositional semantic prompts** that are extremely rare in fine-tuning data (e.g., "a dangerous urban nocturnal animal") to extract the model's category distribution for ambiguous prompts as a fingerprint.
+  [CVPR 2026][Image Generation][Text-to-Image] CSF treats text-to-image (T2I) models as "semantic category generators." It samples repeatedly using a batch of **compositional semantic prompts** that are extremely rare in fine-tuning data (e.g., "a dangerous urban nocturnal animal") to extract the model's category distribution for ambiguous prompts as a fingerprint. Using Wasserstein distance and Bayesian attribution, it identifies the protected base family of a suspect model ac…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Model Lineage"
+  - "Black-box Fingerprinting"
+  - "Compositional Semantics"
+  - "Bayesian Attribution"
 date: 2026-05-08
-content_hash: ffa31a3e0cb96e6a
+content_hash: c629c696c08893b8
 ---
+
 # CSF: Black-box Fingerprinting via Compositional Semantics for Text-to-Image Models
 
 **Conference**: CVPR 2026  
@@ -142,7 +148,7 @@ Even the hardest cases (SD3-Reality-Mix with full retraining altering semantic p
 - [\[CVPR 2026\] BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation](blackmirror_black-box_backdoor_detection_for_text-to-image_models_via_instructio.md)
 - [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)
 - [\[CVPR 2026\] Synthetic Curriculum Reinforces Compositional Text-to-Image Generation](synthetic_curriculum_reinforces_compositional_text-to-image_generation.md)
-- [\[CVPR 2026\] Compositional Text-to-Image Generation Via Region-aware Bimodal Direct Preference Optimization](compositional_text-to-image_generation_via_region-aware_bimodal_direct_preferenc.md)
+- [\[CVPR 2026\] Selectively Extracting and Injecting Visual Attributes into Text-to-Image Models](selectively_extracting_and_injecting_visual_attributes_into_text-to-image_models.md)
 
 </div>
 

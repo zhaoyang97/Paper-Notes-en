@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Overcoming Copyright Barriers in Corpus Distribution Through Non-Reversible Hashing
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes **novelshare**: it transforms tokens of copyrighted text into truncated, non-reversible hashes and publishes only the hash sequences along with the researcher's own annotations. This allows users who legally possess the original text to re-align the annotations under slight version differences, achi
+  [ACL2026][LLM (Other)][Non-reversible hashing] This paper proposes **novelshare**: it transforms tokens of copyrighted text into truncated, non-reversible hashes and publishes only the hash sequences along with the researcher's own annotations. This allows users who legally possess the original text to re-align the annotations under slight version differences, achieving a token alignment accuracy of 98.7% to 99.79% on close-edition novels.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL2026"
+  - "LLM (Other)"
+  - "Non-reversible hashing"
+  - "Copyrighted text"
+  - "Corpus distribution"
+  - "Sequence alignment"
+  - "Annotation sharing"
 date: 2026-05-08
-content_hash: 467187d3e8b6239f
+content_hash: e3a0a7fc07736b38
 ---
+
 # Overcoming Copyright Barriers in Corpus Distribution Through Non-Reversible Hashing
 
 **Conference**: ACL2026  
@@ -132,8 +138,8 @@ The ablation focuses on hash lengths and the effectiveness of recovery strategie
 - **Value**: ⭐⭐⭐⭐⭐ High utility for literary NLP and reproducible research on copyrighted data.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Embedding Alignment in Code Generation for Audio
 description: >-
-  [NeurIPS 2025][Code Intelligence][code generation] A dual-MLP + InfoNCE contrastive learning framework is proposed to align code embeddings (distilroberta-base) and audio embeddings (wav2vec2) into a shared space…
+  [NeurIPS 2025][Code Intelligence][code generation] A dual-MLP + InfoNCE contrastive learning framework is proposed to align code embeddings (distilroberta-base) and audio embeddings (wav2vec2) into a shared space, enabling LLM-based code generation pipelines to infer musical similarity directly from code without compilation or execution. CKA improves from 0.090 to 0.590.
 tags:
   - "NeurIPS 2025"
   - "Code Intelligence"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal alignment"
   - "live-coding"
 date: 2026-05-08
-content_hash: 2ac13abfbad20fbe
+content_hash: ed48ece81255b35c
 ---
 
 # Embedding Alignment in Code Generation for Audio
@@ -139,9 +139,9 @@ Both metrics achieve a **6× or greater improvement**.
 
 - [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](../../ACL2026/code_intelligence/coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[NeurIPS 2025\] Text-to-Code Generation for Modular Building Layouts in Building Information Modeling](text-to-code_generation_for_modular_building_layouts_in_building_information_mod.md)
-- [\[NeurIPS 2025\] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements](maintaincoder_maintainable_code_generation_under_dynamic_requirements.md)
-- [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
 - [\[ACL 2026\] SciCoQA: Quality Assurance for Scientific Paper–Code Alignment](../../ACL2026/code_intelligence/scicoqa_quality_assurance_for_scientific_paper--code_alignment.md)
+- [\[NeurIPS 2025\] QiMeng-SALV: Signal-Aware Learning for Verilog Code Generation](qimeng-salv_signal-aware_learning_for_verilog_code_generation.md)
+- [\[NeurIPS 2025\] MaintainCoder: Maintainable Code Generation Under Dynamic Requirements](maintaincoder_maintainable_code_generation_under_dynamic_requirements.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][MLLM] PaDT treats the patch features of the query image itself as "decodable tokens" (Visual Reference Tokens, VRTs) and inserts them into the autoregressive output of the MLLM. This allows the MLLM to represent detected objects using the image patches themselves rather than textual coordinates. A lightweight decoder then co
+  [ICLR 2026][Multimodal VLM][MLLM] PaDT treats the patch features of the query image itself as "decodable tokens" (Visual Reference Tokens, VRTs) and inserts them into the autoregressive output of the MLLM. This allows the MLLM to represent detected objects using the image patches themselves rather than textual coordinates. A lightweight decoder then converts these VRTs into boxes, masks, and scores. This approach achieves SOTA across four task categories: detection…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - MLLM
-  - Object Detection
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "MLLM"
+  - "Visual Reference Token"
+  - "Unified Vision Tasks"
+  - "Object Detection"
+  - "Referring Expression Segmentation"
 date: 2026-05-08
-content_hash: 003f35835a444aed
+content_hash: 318c2e6619bbad89
 ---
+
 # Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs
 
 **Conference**: ICLR 2026  
@@ -146,10 +150,10 @@ Breakdown on the 3B model (REC / RES using RefCOCO val).
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
-- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
 - [\[ICLR 2026\] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models](internsvg_towards_unified_svg_tasks_with_multimodal_large_language_models.md)
+- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
 - [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
-- [\[CVPR 2026\] Token Warping Helps MLLMs Look from Nearby Viewpoints](../../CVPR2026/multimodal_vlm/token_warping_helps_mllms_look_from_nearby_viewpoints.md)
+- [\[ICLR 2026\] EventFlash: Towards Efficient MLLMs for Event-Based Vision](eventflash_towards_efficient_mllms_for_event-based_vision.md)
 
 </div>
 

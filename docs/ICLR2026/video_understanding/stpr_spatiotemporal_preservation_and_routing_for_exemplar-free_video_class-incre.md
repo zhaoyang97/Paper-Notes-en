@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] StPR：面向无样本回放视频类增量学习的时空保持与路由
+  [Paper Note] StPR: Space-Time Preserving and Routing for Exemplar-Free Video Class-Incremental Learning
 description: >-
-  [ICLR 2026][Video Understanding][Paper Note] StPR explicitly decomposes video features into two branches: "inter-frame shared semantics" and "temporal dynamics." It utilizes Frame-Shared Semantic Distillation (FSSD) to lock important semantic channels to prevent forgetting and a Temporal Decomposition-based Mixture of Experts (TD-MoE) to weight task-specific expe
+  [ICLR 2026][Video Understanding][Video Class-Incremental Learning] StPR explicitly decomposes video features into two branches: "inter-frame shared semantics" and "temporal dynamics." It utilizes Frame-Shared Semantic Distillation (FSSD) to lock important semantic channels to prevent forgetting and a Temporal Decomposition-based Mixture of Experts (TD-MoE) to weight task-specific experts during inference based on temporal dynamics. Without storing any old exemplars…
 tags:
-  - ICLR 2026
-  - Video Understanding
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Video Class-Incremental Learning"
+  - "Catastrophic Forgetting"
+  - "Exemplar-Free"
+  - "Temporal Decomposition"
+  - "Mixture of Experts"
 date: 2026-05-08
-content_hash: 455c6ed2f34ff57f
+content_hash: 3bfb491d53f928fe
 ---
+
 # StPR: Space-Time Preserving and Routing for Exemplar-Free Video Class-Incremental Learning
 
 **Conference**: ICLR 2026  
@@ -153,11 +159,11 @@ Three components: adapter tuning ($A_b$), FSSD, and TD-MoE.
 
 ## Related Papers
 
-- [\[ICLR 2026\] VideoNSA: Native Sparse Attention Scales Video Understanding](videonsa_native_sparse_attention_scales_video_understanding.md)
-- [\[ICLR 2026\] Let's Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding](lets_split_up_zero-shot_classifier_edits_for_fine-grained_video_understanding.md)
-- [\[ICLR 2026\] FOCUS: Efficient Keyframe Selection for Long Video Understanding](focus_efficient_keyframe_selection_for_long_video_understanding.md)
-- [\[ICLR 2026\] Go Beyond Earth: Understanding Human Actions and Scenes in Microgravity Environments](go_beyond_earth_understanding_human_actions_and_scenes_in_microgravity_environme.md)
-- [\[ICLR 2026\] VUDG: A Dataset for Video Understanding Domain Generalization](vudg_a_dataset_for_video_understanding_domain_generalization.md)
+- [\[AAAI 2026\] Learning Time in Static Classifiers](../../AAAI2026/video_understanding/learning_time_in_static_classifiers.md)
+- [\[ICLR 2026\] Invert4TVG: A Temporal Video Grounding Framework with Inversion Tasks Preserving Action Understanding Ability](invert4tvg_a_temporal_video_grounding_framework_with_inversion_tasks_preserving_.md)
+- [\[CVPR 2025\] MambaVLT: Time-Evolving Multimodal State Space Model for Vision-Language Tracking](../../CVPR2025/video_understanding/mambavlt_time-evolving_multimodal_state_space_model_for_vision-language_tracking.md)
+- [\[ICLR 2026\] HiTeA: Hierarchical Temporal Alignment for Training-Free Long-Video Temporal Grounding](hitea_hierarchical_temporal_alignment_for_training-free_long-video_temporal_grou.md)
+- [\[ICLR 2026\] From Vicious to Virtuous Cycles: Synergistic Representation Learning for Unsupervised Video Object-Centric Learning](from_vicious_to_virtuous_cycles_synergistic_representation_learning_for_unsuperv.md)
 
 </div>
 

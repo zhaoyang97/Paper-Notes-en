@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Low-Pass Filtering Improves Behavioral Alignment of Vision Models
 description: >-
-  [ICLR 2026][Interpretability][model-vs-human] The authors discovered that the highly human-like visual behavior of Imagen-like models, previously attributed to "generative objectives," actually stems primarily from an inconspicuous downsampling operation (equivalent to low-pass filtering). By simply applying Gaussian blur to input images at **test time**, standard
+  [ICLR 2026][Interpretability][Behavioral Alignment] The authors discovered that the highly human-like visual behavior of Imagen-like models, previously attributed to "generative objectives," actually stems primarily from an inconspicuous downsampling operation (equivalent to low-pass filtering). By simply applying Gaussian blur to input images at **test time**, standard discriminative CLIP models can achieve new SOTAs on the model-vs-human benchmark…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - model-vs-human
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Behavioral Alignment"
+  - "Low-Pass Filtering"
+  - "Error Consistency"
+  - "Shape Bias"
+  - "Contrast Sensitivity Function (CSF)"
+  - "model-vs-human"
 date: 2026-05-08
-content_hash: 5881ce41a118ab86
+content_hash: e7fea0126789e7bb
 ---
+
 # Low-Pass Filtering Improves Behavioral Alignment of Vision Models
 
 **Conference**: ICLR 2026  
@@ -130,7 +136,7 @@ The authors reveal a structural contradiction within MvH: OOD accuracy and error
 - [\[ICLR 2026\] Inducing Dyslexia in Vision Language Models](inducing_dyslexia_in_vision_language_models.md)
 - [\[ICLR 2026\] MICLIP: Learning to Interpret Representation in Vision Models](miclip_learning_to_interpret_representation_in_vision_models.md)
 - [\[ICLR 2026\] Towards Cognitively-Faithful Decision-Making Models to Improve AI Alignment](towards_cognitively-faithful_decision-making_models_to_improve_ai_alignment.md)
-- [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 
 </div>
 

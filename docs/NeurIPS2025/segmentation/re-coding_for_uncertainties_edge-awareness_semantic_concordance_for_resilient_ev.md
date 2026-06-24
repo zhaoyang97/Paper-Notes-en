@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Event-RGB Fusion] This paper proposes the Edge-awareness Semantic Concordance (ESC) framework, which leverages semantic edges as an intermediate bridge between heterogeneous Event and RGB mod…
+  [NeurIPS 2025][Segmentation][Event-RGB Fusion] This paper proposes the Edge-awareness Semantic Concordance (ESC) framework, which leverages semantic edges as an intermediate bridge between heterogeneous Event and RGB modalities. Through discrete latent space modeling via an edge dictionary, ESC achieves cross-modal feature alignment and uncertainty optimization, surpassing the state of the art by 2.55% mIoU under extreme conditions.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Uncertainty Optimization"
   - "Extreme Conditions"
 date: 2026-05-08
-content_hash: 45297b774b470a83
+content_hash: 420badc2d974af58
 ---
 
 # Re-coding for Uncertainties: Edge-awareness Semantic Concordance for Resilient Event-RGB Segmentation
@@ -133,9 +133,9 @@ $L_{total} = L_{seg} + L_{edge} + L_{dict}$, where $L_{edge} = -\sum q(\mathcal{
 
 - [\[NeurIPS 2025\] SRSR: Enhancing Semantic Accuracy in Real-World Image Super-Resolution with Spatially Re-Focused Text-Conditioning](srsr_enhancing_semantic_accuracy_in_real-world_image_super-resolution_with_spati.md)
 - [\[ICCV 2025\] Online Generic Event Boundary Detection](../../ICCV2025/segmentation/online_generic_event_boundary_detection.md)
-- [\[CVPR 2026\] GeomPrompt: Geometric Prompt Learning for RGB-D Semantic Segmentation Under Missing and Degraded Depth](../../CVPR2026/segmentation/geomprompt_rgbd_segmentation.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Domain Bridging via Image Degradation in Semantic Segmentation](towards_unsupervised_domain_bridging_via_image_degradation_in_semantic_segmentat.md)
-- [\[ICCV 2025\] Know "No" Better: A Data-Driven Approach for Enhancing Negation Awareness in CLIP](../../ICCV2025/segmentation/know_no_better_a_data-driven_approach_for_enhancing_negation_awareness_in_clip.md)
+- [\[ECCV 2024\] EAFormer: Scene Text Segmentation with Edge-Aware Transformers](../../ECCV2024/segmentation/eaformer_scene_text_segmentation_with_edge-aware_transformers.md)
+- [\[ICML 2025\] Self-Disentanglement and Re-Composition for Cross-Domain Few-Shot Segmentation](../../ICML2025/segmentation/self-disentanglement_and_re-composition_for_cross-domain_few-shot_segmentation.md)
+- [\[ECCV 2024\] Un-EVIMO: Unsupervised Event-based Independent Motion Segmentation](../../ECCV2024/segmentation/un-evimo_unsupervised_event-based_independent_motion_segmentation.md)
 
 </div>
 

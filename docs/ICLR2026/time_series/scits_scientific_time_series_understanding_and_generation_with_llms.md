@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] SciTS: Scientific Time Series Understanding and Generation with LLMs
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The authors propose the SciTS benchmark, covering 43 tasks and 54K+ instances across 12 scientific fields (with lengths from $10^0$ to $10^7$ and frequencies up to 10MHz). Systematic evaluation of 17 models reveals that general LLMs generalize better than specialized time series models, though text/image encodings have
+  [Time Series] The authors propose the SciTS benchmark, covering 43 tasks and 54K+ instances across 12 scientific fields (with lengths from $10^0$ to $10^7$ and frequencies up to 10MHz). Systematic evaluation of 17 models reveals that general LLMs generalize better than specialized time series models, though text/image encodings have limitations. Accordingly, the TimeOmni framework is designed using Multi-Patch Experts, a routing mechanism…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "Time Series"
 date: 2026-05-08
-content_hash: f259889dc92fdc66
+content_hash: b2d4797cdcdc5c31
 ---
+
 # SciTS: Scientific Time Series Understanding and Generation with LLMs
 
 ## TL;DR

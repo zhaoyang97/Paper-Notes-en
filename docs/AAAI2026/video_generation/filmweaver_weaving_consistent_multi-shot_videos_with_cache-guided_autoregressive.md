@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion
 description: >-
-  [AAAI 2026][Video Generation][Multi-shot video generation] FilmWeaver is proposed as a framework that guides autoregressive diffusion models via a dual-level cache (Shot Cache + Temporal Cache)…
+  [AAAI 2026][Video Generation][Multi-shot video generation] FilmWeaver is proposed as a framework that guides autoregressive diffusion models via a dual-level cache (Shot Cache + Temporal Cache), enabling multi-shot video generation of arbitrary length with cross-shot consistency.
 tags:
   - "AAAI 2026"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "consistency"
   - "long video generation"
 date: 2026-05-08
-content_hash: c9264cb18f0b5462
+content_hash: 0ffe5688c0525467
 ---
 
 # FilmWeaver: Weaving Consistent Multi-Shot Videos with Cache-Guided Autoregressive Diffusion
@@ -159,11 +159,11 @@ FilmWeaver achieves state-of-the-art performance on consistency and character-te
 
 ## Related Papers
 
+- [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](../../CVPR2026/video_generation/accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
 - [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](../../ICML2026/video_generation/enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
-- [\[CVPR 2026\] Rethinking Position Embedding as a Context Controller for Multi-Reference and Multi-Shot Video Generation](../../CVPR2026/video_generation/rethinking_position_embedding_as_a_context_controller_for_multi-reference_and_mu.md)
-- [\[CVPR 2026\] StoryTailor: A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives](../../CVPR2026/video_generation/storytailora_zero-shot_pipeline_for_action-rich_multi-subject_visual_narratives.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](../../CVPR2026/video_generation/moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
-- [\[ICML 2026\] WIND: Weather Inverse Diffusion for Zero-Shot Atmospheric Modeling](../../ICML2026/video_generation/wind_weather_inverse_diffusion_for_zero-shot_atmospheric_modeling.md)
+- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](../../CVPR2026/video_generation/multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
+- [\[CVPR 2026\] STAGE: Storyboard-Anchored Generation for Cinematic Multi-shot Narrative](../../CVPR2026/video_generation/stage_storyboard-anchored_generation_for_cinematic_multi-shot_narrative.md)
+- [\[CVPR 2026\] OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory](../../CVPR2026/video_generation/onestory_coherent_multi-shot_video_generation_with_adaptive_memory.md)
 
 </div>
 

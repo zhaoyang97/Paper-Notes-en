@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Real-World Point Tracking with Verifier-Guided Pseudo-Labeling
 description: >-
-  [CVPR 2026][Video Understanding][point tracking] A learnable Verifier meta-model is proposed, trained on synthetic data to "judge tracker prediction reliability" and transferred to the real world. By evaluating predictions from 6 pre-trained teachers frame-by-frame to select the most reliable pseudo-labels, the Track-On-R model achieves comprehensive SOTA across 4 re
+  [CVPR 2026][Video Understanding][point tracking] A learnable Verifier meta-model is proposed, trained on synthetic data to "judge tracker prediction reliability" and transferred to the real world. By evaluating predictions from 6 pre-trained teachers frame-by-frame to select the most reliable pseudo-labels, the Track-On-R model achieves comprehensive SOTA across 4 real-world benchmarks using only ~5K real videos for fine-tuning.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - point tracking
-  - pseudo-labeling
-  - verifier
-  - multi-teacher ensemble
-  - sim-to-real adaptation
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "point tracking"
+  - "pseudo-labeling"
+  - "verifier"
+  - "multi-teacher ensemble"
+  - "sim-to-real adaptation"
 date: 2026-05-08
-content_hash: 2eaf3f4f8561a19b
+content_hash: 628e97ecad8f06fb
 ---
+
 # Real-World Point Tracking with Verifier-Guided Pseudo-Labeling
 
 **Conference**: CVPR 2026  
@@ -152,16 +153,16 @@ Real-world point tracking benchmark comparison:
 - Value: ⭐⭐⭐⭐⭐ High data efficiency and a generalizable approach provide significant insights for self-training and pseudo-labeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Generative Point Tracking and Forecasting](generative_point_tracking_and_forecasting.md)
 - [\[CVPR 2026\] OmniGround: A Comprehensive Spatio-Temporal Grounding Benchmark for Real-World Complex Scenarios](omniground_a_comprehensive_spatio-temporal_grounding_benchmark_for_real-world_co.md)
 - [\[CVPR 2026\] MV-TAP: Tracking Any Point in Multi-View Videos](mv-tap_tracking_any_point_in_multi-view_videos.md)
 - [\[NeurIPS 2025\] Lattice Boltzmann Model for Learning Real-World Pixel Dynamicity](../../NeurIPS2025/video_understanding/lattice_boltzmann_model_for_learning_real-world_pixel_dynamicity.md)
 - [\[CVPR 2026\] TAPFormer: Robust Arbitrary Point Tracking via Transient Asynchronous Fusion of Frames and Events](ttapformer_robust_arbitrary_point_tracking_via_transient_asynchronous_fusion_of_.md)
-- [\[CVPR 2026\] MER-Tracker: Towards High-Speed 3D Point Tracking via Multi-View Event-RGB Hybrid Cameras](mer-tracker_towards_high-speed_3d_point_tracking_via_multi-view_event-rgb_hybrid.md)
 
 </div>
 

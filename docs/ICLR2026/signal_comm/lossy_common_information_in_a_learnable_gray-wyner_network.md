@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Lossy Common Information in a Learnable Gray-Wyner Network
 description: >-
-  [ICLR 2026][Signal & Communications][Gray-Wyner Network] The authors implement the classic information-theoretic Gray-Wyner Network as a learnable three-channel codec, utilizing a $\beta$-parameterized objective to decouple "common" and "private" information between two vision tasks while enabling an adjustable tradeoff between "transmit rate" and "receive rate."
+  [ICLR 2026][Signal & Communication][Gray-Wyner Network] The authors implement the classic information-theoretic Gray-Wyner Network as a learnable three-channel codec, utilizing a $\beta$-parameterized objective to decouple "common" and "private" information between two vision tasks while enabling an adjustable tradeoff between "transmit rate" and "receive rate."
 tags:
-  - ICLR 2026
-  - Signal & Communications
-  - Gray-Wyner Network
-  - transmit-receive tradeoff
+  - "ICLR 2026"
+  - "Signal & Communication"
+  - "Gray-Wyner Network"
+  - "Lossy Common Information"
+  - "transmit-receive tradeoff"
+  - "multi-task coding"
+  - "learnable entropy models"
 date: 2026-05-08
-content_hash: a437b6733b778d59
+content_hash: 1acca3ff67fbbe0c
 ---
+
 # Lossy Common Information in a Learnable Gray-Wyner Network
 
 **Conference**: ICLR 2026  
@@ -126,7 +130,7 @@ to encourage alignment. In practice, $\gamma$ is fixed at 1, and the common chan
 - [\[ECCV 2024\] QueryCDR: Query-based Controllable Distortion Rectification Network for Fisheye Images](../../ECCV2024/signal_comm/querycdr_query-based_controllable_distortion_rectification_network_for_fisheye_i.md)
 - [\[ICML 2025\] Large Language Model (LLM)-enabled In-context Learning for Wireless Network Optimization](../../ICML2025/signal_comm/large_language_model_llm-enabled_in-context_learning_for_wireless_network_optimi.md)
 - [\[ICLR 2026\] Mamba-3: Improved Sequence Modeling using State Space Principles](mamba-3_improved_sequence_modeling_using_state_space_principles.md)
-- [\[ICLR 2026\] Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametric Invertible Transformation](advancing_spatiotemporal_representations_in_spiking_neural_networks_via_parametr.md)
+- [\[ICLR 2026\] Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametic Invertible Transformation](advancing_spatiotemporal_representations_in_spiking_neural_networks_via_parametr.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] DexMove: Learning Tactile-Guided Non-Prehensile Manipulation with Dexterous Hands
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] DexMove adopts a hybrid data paradigm combining "large-scale simulation trajectories + a small amount of human tactile demonstrations" to train a flow matching policy. This allows a multi-fingered dexterous hand to push and rotate tabletop objects through wrist-finger coordination and tactile closed-loop control (non-p
+  [ICLR 2026][Robotics][Non-prehensile manipulation] DexMove adopts a hybrid data paradigm combining "large-scale simulation trajectories + a small amount of human tactile demonstrations" to train a flow matching policy. This allows a multi-fingered dexterous hand to push and rotate tabletop objects through wrist-finger coordination and tactile closed-loop control (non-prehensile relocation). On a real robot, it achieves an average success rate of 77.8% across 6 object categori…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Non-prehensile manipulation"
+  - "dexterous hands"
+  - "visuo-tactile sensors"
+  - "flow matching policy"
+  - "wrist-finger coordination"
+  - "hybrid sim+human data"
 date: 2026-05-08
-content_hash: 3ef8f8fa590a1428
+content_hash: 1fa55dbd5fd96bc3
 ---
+
 # DexMove: Learning Tactile-Guided Non-Prehensile Manipulation with Dexterous Hands
 
 **Conference**: ICLR 2026  
@@ -123,9 +130,9 @@ DexMove completes tasks in less than half the time of gripper baselines (nearly 
 
 - [\[ICLR 2026\] RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation](rfs_reinforcement_learning_with_residual_flow_steering_for_dexterous_manipulatio.md)
 - [\[ICLR 2026\] AnyTouch 2: General Optical Tactile Representation Learning For Dynamic Tactile Perception](anytouch_2_general_optical_tactile_representation_learning_for_dynamic_tactile_p.md)
+- [\[ICLR 2026\] House Of Dextra : Cross-Embodied Co-Design for Dexterous Hands](house_of_dextra_cross-embodied_co-design_for_dexterous_hands.md)
 - [\[ICLR 2026\] TaCo: A Benchmark for Lossless and Lossy Codecs of Heterogeneous Tactile Data](taco_a_benchmark_for_lossless_and_lossy_codecs_of_heterogeneous_tactile_data.md)
 - [\[ICLR 2026\] D-REX: Differentiable Real-to-Sim-to-Real Engine for Learning Dexterous Grasping](d-rex_differentiable_real-to-sim-to-real_engine_for_learning_dexterous_grasping.md)
-- [\[ICLR 2026\] Compositional Diffusion with Guided Search for Long-Horizon Planning](compositional_diffusion_with_guided_search_for_long-horizon_planning.md)
 
 </div>
 

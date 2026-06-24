@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation
 description: >-
-  [ACL 2026][Hallucination Detection][Attention] This paper systematically analyzes factual hallucinations caused by learning new knowledge during the SFT phase using a controlled synthetic dataset, Biography-Reasoning. It discovers that the fundamental mechanism of hallucination is the weakened attention of the model towards key entities and proposes KnownPatch—inje
+  [ACL 2026 Findings][Hallucination Detection][Factual hallucination] This paper systematically analyzes factual hallucinations caused by learning new knowledge during the SFT phase using a controlled synthetic dataset, Biography-Reasoning. It discovers that the fundamental mechanism of hallucination is the weakened attention of the model towards key entities and proposes KnownPatch—injecting a small amount of known knowledge at the end of training to restore attention patterns…
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Attention
-  - SFT
-  - KnownPatch
+  - "ACL 2026 Findings"
+  - "Hallucination Detection"
+  - "Factual hallucination"
+  - "new knowledge acquisition"
+  - "attention mechanism"
+  - "SFT"
+  - "KnownPatch"
 date: 2026-05-08
-content_hash: 72417826a48dc6fe
+content_hash: 2027dff2bb6f42bb
 ---
+
 # Understanding New-Knowledge-Induced Factual Hallucinations in LLMs: Analysis and Interpretation
 
 **Conference**: ACL 2026 Findings  
@@ -138,11 +141,11 @@ Standard SFT uses cross-entropy loss. KnownPatch injects known knowledge samples
 
 ## Related Papers
 
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
+- [\[ICLR 2026\] Leveraging Pretrained Knowledge at Inference Time: LoRA-Gated Contrastive Decoding for Multilingual Factual Language Generation in Adapted LLMs](../../ICLR2026/hallucination/leveraging_pretrained_knowledge_at_inference_time_lora-gated_contrastive_decodin.md)
 - [\[ACL 2026\] Rethinking Evaluation for LLM Hallucination Detection: A Desiderata, A New RAG-based Benchmark, New Insights](rethinking_evaluation_for_llm_hallucination_detection_a_desiderata_a_new_rag-bas.md)
-- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 - [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
-- [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](../../CVPR2026/hallucination/understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
-- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
+- [\[ACL 2026\] Mechanisms of Prompt-Induced Hallucination in Vision–Language Models](mechanisms_of_prompt-induced_hallucination_in_vision-language_models.md)
 
 </div>
 

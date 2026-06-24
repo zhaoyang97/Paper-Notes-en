@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RePoseD: Efficient Relative Pose Estimation with Known Depth Information
 description: >-
-  [ICCV 2025][3D Vision][Relative pose estimation] This paper proposes a set of efficient minimal solvers for relative pose estimation that jointly estimate the scale and affine parameters of monocular depth estimation (MD…
+  [ICCV 2025][3D Vision][Relative pose estimation] This paper proposes a set of efficient minimal solvers for relative pose estimation that jointly estimate the scale and affine parameters of monocular depth estimation (MDE) alongside the relative pose. The proposed solvers outperform state-of-the-art depth-aware solvers across three camera configurations (calibrated / shared focal length / unknown individual focal lengths), and large-scale experiments provide a definitive answ…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "RANSAC"
   - "multi-view geometry"
 date: 2026-05-08
-content_hash: cae6b3df32db045c
+content_hash: 1caafcf2aee214bc
 ---
 
 # RePoseD: Efficient Relative Pose Estimation with Known Depth Information
@@ -140,9 +140,9 @@ The paper employs LO-RANSAC (via PoseLib) with Sampson error for scoring and loc
 ## Related Papers
 
 - [\[ICCV 2025\] Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](single-scanline_relative_pose_estimation_for_rolling_shutter_cameras.md)
-- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
+- [\[CVPR 2025\] Relative Pose Estimation through Affine Corrections of Monocular Depth Priors](../../CVPR2025/3d_vision/relative_pose_estimation_through_affine_corrections_of_monocular_depth_priors.md)
 - [\[ICCV 2025\] FiffDepth: Feed-forward Transformation of Diffusion-Based Generators for Detailed Depth Estimation](fiffdepth_feed-forward_transformation_of_diffusion-based_generators_for_detailed.md)
-- [\[ICCV 2025\] Depth AnyEvent: A Cross-Modal Distillation Paradigm for Event-Based Monocular Depth Estimation](depth_anyevent_a_cross-modal_distillation_paradigm_for_event-based_monocular_dep.md)
+- [\[ICCV 2025\] Amodal Depth Anything: Amodal Depth Estimation in the Wild](amodal_depth_anything_amodal_depth_estimation_in_the_wild.md)
 - [\[ICCV 2025\] BoxDreamer: Dreaming Box Corners for Generalizable Object Pose Estimation](boxdreamer_dreaming_box_corners_for_generalizable_object_pose_estimation.md)
 
 </div>

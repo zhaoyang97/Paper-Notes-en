@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] Proposes HECRL, a hierarchical entity-centric offline goal-conditioned RL framework. By combining a value-based GCRL agent with a factored subgoal diffusion model, it achieves a 150%+ success rate improvement in multi-entity long-horizon tasks.
+  [ICLR 2026][Image Generation][Hierarchical Reinforcement Learning] Proposes HECRL, a hierarchical entity-centric offline goal-conditioned RL framework. By combining a value-based GCRL agent with a factored subgoal diffusion model, it achieves a 150%+ success rate improvement in multi-entity long-horizon tasks.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Hierarchical Reinforcement Learning"
+  - "Goal-conditioned RL"
+  - "Diffusion Models"
+  - "Entity-centric"
+  - "Subgoal Generation"
 date: 2026-05-08
-content_hash: 0761b57ddbbbe590
+content_hash: e7026730d0a0882e
 ---
+
 # Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion
 
 **Conference**: ICLR 2026  
@@ -116,8 +121,8 @@ The diffuser only learns the distribution of behaviors in the data and does not 
 
 ## Related Papers
 
-- [\[ICLR 2026\] HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation](hierloc_hyperbolic_entity_embeddings_for_hierarchical_visual_geolocation.md)
 - [\[ICML 2025\] Hierarchical Reinforcement Learning with Uncertainty-Guided Diffusional Subgoals](../../ICML2025/image_generation/hierarchical_reinforcement_learning_with_uncertainty-guided_diffusional_subgoals.md)
+- [\[ICLR 2026\] HierLoc: Hyperbolic Entity Embeddings for Hierarchical Visual Geolocation](hierloc_hyperbolic_entity_embeddings_for_hierarchical_visual_geolocation.md)
 - [\[ICLR 2026\] RIDER: 3D RNA Inverse Design with Reinforcement Learning-Guided Diffusion](rider_3d_rna_inverse_design_with_reinforcement_learning-guided_diffusion.md)
 - [\[ICLR 2026\] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)](improved_object-centric_diffusion_learning_with_registers_and_contrastive_alignm.md)
 - [\[CVPR 2026\] HiCoGen: Hierarchical Compositional Text-to-Image Generation in Diffusion Models via Reinforcement Learning](../../CVPR2026/image_generation/hicogen_hierarchical_compositional_text-to-image_generation_in_diffusion_models_.md)

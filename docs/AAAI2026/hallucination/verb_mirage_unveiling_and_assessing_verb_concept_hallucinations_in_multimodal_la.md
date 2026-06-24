@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models
 description: >-
-  [AAAI 2026][Hallucination Detection][verb hallucination] This paper presents the first systematic study of verb concept hallucinations in multimodal large language models (MLLMs), constructs a multi-dimensional benchmark…
+  [AAAI 2026][Hallucination Detection][verb hallucination] This paper presents the first systematic study of verb concept hallucinations in multimodal large language models (MLLMs), constructs a multi-dimensional benchmark, demonstrates that existing hallucination mitigation methods are ineffective against verb hallucinations, and proposes a fine-tuning baseline enriched with verb knowledge that significantly alleviates verb hallucinations.
 tags:
   - "AAAI 2026"
   - "Hallucination Detection"
@@ -12,7 +12,7 @@ tags:
   - "action understanding"
   - "fine-grained evaluation"
 date: 2026-05-08
-content_hash: 814fef455f3f8bbb
+content_hash: d88e29ee14a36956
 ---
 
 # Verb Mirage: Unveiling and Assessing Verb Concept Hallucinations in Multimodal Large Language Models
@@ -174,11 +174,11 @@ The baseline mitigation method fine-tunes LLaVA V1.5 with LoRA using 60K instruc
 
 ## Related Papers
 
+- [\[ICLR 2026\] EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models](../../ICLR2026/hallucination/emotionhallucer_evaluating_emotion_hallucinations_in_multimodal_large_language_m.md)
+- [\[CVPR 2025\] ODE: Open-Set Evaluation of Hallucinations in Multimodal Large Language Models](../../CVPR2025/hallucination/ode_open-set_evaluation_of_hallucinations_in_multimodal_large_language_models.md)
 - [\[AAAI 2026\] Beyond Hallucinations: A Composite Score for Measuring Reliability in Open-Source Large Language Models](beyond_hallucinations_a_composite_score_for_measuring_reliability_in_open-source.md)
-- [\[AAAI 2026\] Hallucinate Less by Thinking More: Aspect-Based Causal Abstention for Large Language Models](hallucinate_less_by_thinking_more_aspect-based_causal_absten.md)
+- [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](../../CVPR2026/hallucination/mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 - [\[NeurIPS 2025\] Seeing is Believing? Mitigating OCR Hallucinations in Multimodal Large Language Models](../../NeurIPS2025/hallucination/seeing_is_believing_mitigating_ocr_hallucinations_in_multimodal_large_language_m.md)
-- [\[ICML 2026\] Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models](../../ICML2026/hallucination/instruction_lens_score_your_instruction_contributes_a_powerful_object_hallucinat.md)
-- [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
 
 </div>
 

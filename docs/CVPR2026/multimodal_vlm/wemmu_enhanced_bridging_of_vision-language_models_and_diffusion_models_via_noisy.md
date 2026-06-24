@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens
 description: >-
-  [CVPR 2026][Multimodal VLM][Image Editing] WeMMU bridges a frozen VLM (Qwen2.5-VL) and a trainable diffusion model (Sana) using a set of "noisy query tokens" resampled from $\mathcal{N}(0,I)$ at each step, alongside an external VAE linear branch to recover fine-grained details. This design resolves the "task generalization collapse" observed when fixed learnabl
+  [CVPR 2026][Multimodal VLM][Noisy query tokens] WeMMU bridges a frozen VLM (Qwen2.5-VL) and a trainable diffusion model (Sana) using a set of "noisy query tokens" resampled from $\mathcal{N}(0,I)$ at each step, alongside an external VAE linear branch to recover fine-grained details. This design resolves the "task generalization collapse" observed when fixed learnable queries migrate to new tasks, enabling efficient and sustainable learning for unified multimodal generation an…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Image Editing
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Noisy query tokens"
+  - "VLM-diffusion bridging"
+  - "continual learning"
+  - "image editing"
+  - "task generalization collapse"
 date: 2026-05-08
-content_hash: b15b702cb3616317
+content_hash: 1111d5c7c105cf6d
 ---
+
 # WeMMU: Enhanced Bridging of Vision-Language Models and Diffusion Models via Noisy Query Tokens
 
 **Conference**: CVPR 2026  
@@ -145,10 +150,10 @@ Stage 4 confirms that after learning complex multi-image editing, the model does
 
 ## Related Papers
 
-- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
 - [\[CVPR 2026\] Grounding Everything in Tokens for Multimodal Large Language Models](grounding_everything_in_tokens_for_multimodal_large_language_models.md)
 - [\[CVPR 2026\] Diffusion Guided Chain-of-Vision for Large Autoregressive Vision Models](diffusion_guided_chain-of-vision_for_large_autoregressive_vision_models.md)
 - [\[CVPR 2026\] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens](cubic_discrete_diffusion_discrete_visual_generation_on_high-dimensional_represen.md)
+- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
 - [\[CVPR 2026\] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models](sparse-lavida_sparse_multimodal_discrete_diffusion_language_models.md)
 
 </div>

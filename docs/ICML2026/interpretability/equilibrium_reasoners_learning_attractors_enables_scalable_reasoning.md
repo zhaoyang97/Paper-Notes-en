@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning
 description: >-
-  [ICML 2026][Interpretability][Sudoku-Extreme] This paper reinterprets models performing reasoning via iterative latent variable updates as learned attractor dynamical systems. It proposes Equilibrium Reasoners (EqR), which use two lightweight training interventions—Random Initialization (RI) and Path Noise Injection (NI)—to shape the attractor landscape. Combined
+  [ICML 2026][Interpretability][Fixed-point dynamical systems] This paper reinterprets models performing reasoning via iterative latent variable updates as learned attractor dynamical systems. It proposes Equilibrium Reasoners (EqR), which use two lightweight training interventions—Random Initialization (RI) and Path Noise Injection (NI)—to shape the attractor landscape. Combined with a "Depth (iteration steps $D$) + Breadth (random restarts $B$)" test-time scaling strategy and…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Sudoku-Extreme
+  - "ICML 2026"
+  - "Interpretability"
+  - "Fixed-point dynamical systems"
+  - "Attractors"
+  - "Weight-sharing iteration"
+  - "Depth-Breadth scaling"
+  - "Sudoku-Extreme"
 date: 2026-05-08
-content_hash: 53c4ff5a9afd99ac
+content_hash: 463f4de02efeaa50
 ---
+
 # Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning
 
 **Conference**: ICML 2026  
@@ -145,15 +150,14 @@ Landscape shaping interventions (based on the last row above, $D{=}16,B{=}1$):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
-- [\[ICLR 2026\] SEED-SET: Scalable Evolving Experimental Design for System-level Ethical Testing](../../ICLR2026/interpretability/seed-set_scalable_evolving_experimental_design_for_system-level_ethical_testing.md)
-- [\[ICML 2026\] Learning Coherent Representations: A Topological Approach to Interpretability](learning_coherent_representations_a_topological_approach_to_interpretability.md)
-- [\[ICML 2026\] Interpretable Self-Supervised Learning via Representer Landmarks and Nyström Approximation](interpretable_self-supervised_learning_via_representer_landmarks_and_nyström_app.md)
-- [\[ICML 2026\] Position: Ideas Should be the Center of Machine Learning Research](position_ideas_should_be_the_center_of_machine_learning_research.md)
+- [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](../../ICLR2026/interpretability/mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
+- [\[ICLR 2026\] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data](../../ICLR2026/interpretability/xrfm_accurate_scalable_and_interpretable_feature_learning_models_for_tabular_dat.md)
+- [\[ICML 2026\] Formal Concept Lattices are Good Semantic Scaffolds for Concept-Based Learning](formal_concept_lattices_are_good_semantic_scaffolds_for_concept-based_learning.md)
+- [\[ICLR 2026\] LLMs are Single-threaded Reasoners: Demystifying the Working Mechanism of Soft Thinking](../../ICLR2026/interpretability/llms_are_single-threaded_reasoners_demystifying_the_working_mechanism_of_soft_th.md)
 
 </div>
 

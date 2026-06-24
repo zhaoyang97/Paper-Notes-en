@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] By replacing the global self-attention in VGGT with descriptor-based cross-attention, the inference time for 1,000 images is reduced to 9.3% of VGGT while maintaining competitive reconstruction accuracy and scalability to sequences of 3,000+ images.
+  [CVPR 2026][3D Vision][3D Reconstruction] By replacing the global self-attention in VGGT with descriptor-based cross-attention, the inference time for 1,000 images is reduced to 9.3% of VGGT while maintaining competitive reconstruction accuracy and scalability to sequences of 3,000+ images.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Reconstruction"
+  - "Efficient Transformer"
+  - "Descriptor Attention"
+  - "Online Inference"
+  - "Multi-view Geometry"
 date: 2026-05-08
-content_hash: c58c24893d39c939
+content_hash: f175c36f7664949e
 ---
+
 # FlashVGGT: Efficient and Scalable Visual Geometry Transformers with Compressed Descriptor Attention
 
 **Conference**: CVPR 2026  
@@ -134,11 +140,11 @@ A two-stage curriculum training is adopted: Phase 1 involves training on 2–24 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
-- [\[CVPR 2026\] MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry](merg3r_a_divide-and-conquer_approach_to_large-scale_neural_visual_geometry.md)
-- [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
+- [\[CVPR 2026\] Block-Sparse Global Attention for Efficient Multi-View Geometry Transformers](block-sparse_global_attention_for_efficient_multi-view_geometry_transformers.md)
+- [\[CVPR 2026\] Emergent Outlier View Rejection in Visual Geometry Grounded Transformers](emergent_outlier_view_rejection_in_visual_geometry_grounded_transformers.md)
+- [\[CVPR 2026\] Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning](flow3r_factored_flow_prediction_for_scalable_visual_geometry_learning.md)
+- [\[CVPR 2026\] Sculpt4D: Generating 4D Shapes via Sparse-Attention Diffusion Transformers](sculpt4d_generating_4d_shapes_via_sparse-attention_diffusion_transformers.md)
+- [\[CVPR 2026\] KV-Tracker: Real-Time Pose Tracking with Transformers](kv-tracker_real-time_pose_tracking_with_transformers.md)
 
 </div>
 

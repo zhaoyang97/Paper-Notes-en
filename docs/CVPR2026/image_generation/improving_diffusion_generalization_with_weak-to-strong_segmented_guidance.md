@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance
 description: >-
-  [CVPR 2026][Image Generation][CFG] This paper unifies guidance methods in diffusion sampling under a "weak-to-strong (W2S)" perspective, categorizing them into "Condition-Dependent Guidance (CDG, e.g., CFG)" and "Condition-Agnostic Guidance (CAG, e.g., AG/SLG)". By characterizing their respective effective intervals through synthetic experiments, the au
+  [CVPR 2026][Image Generation][Diffusion Guidance] This paper unifies guidance methods in diffusion sampling under a "weak-to-strong (W2S)" perspective, categorizing them into "Condition-Dependent Guidance (CDG, e.g., CFG)" and "Condition-Agnostic Guidance (CAG, e.g., AG/SLG)". By characterizing their respective effective intervals through synthetic experiments, the authors propose **SGG (Segmented Guidance)**, which switches between the two guidance types based on noise level…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - CFG
-  - AutoGuidance
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Guidance"
+  - "Weak-to-Strong"
+  - "CFG"
+  - "AutoGuidance"
+  - "Segmented Guidance"
 date: 2026-05-08
-content_hash: 134a4dc830badeed
+content_hash: e9f95fe4fc1b51cd
 ---
+
 # Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance
 
 **Conference**: CVPR 2026  
@@ -112,10 +116,20 @@ Migrating W2S into the training objective allows single-forward inference (NFE/s
 - Value: ⭐⭐⭐⭐ (SGG is a practical guidance trick; W2S training is valuable for low-NFE deployment.)
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Weak-to-Strong Diffusion with Reflection](../../ICLR2026/image_generation/weak-to-strong_diffusion_with_reflection.md)
+- [\[CVPR 2026\] Generative Modeling of Weights: Generalization or Memorization?](generative_modeling_of_weights_generalization_or_memorization.md)
+- [\[ICML 2026\] Weak Diffusion Priors Can Still Achieve Strong Inverse-Problem Performance](../../ICML2026/image_generation/weak_diffusion_priors_can_still_achieve_strong_inverse-problem_performance.md)
+- [\[CVPR 2026\] Smoothing the Score Function to Enhance Generalization in Diffusion Models](smoothing_the_score_function_to_enhance_generalization_in_diffusion_models.md)
+- [\[CVPR 2026\] Meta-CoT: Enhancing Granularity and Generalization in Image Editing](meta-cot_enhancing_granularity_and_generalization_in_image_editing.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Weak Diffusion Priors Can Still Achieve Strong Inverse-Problem Performance](../../ICML2026/image_generation/weak_diffusion_priors_can_still_achieve_strong_inverse-problem_performance.md)

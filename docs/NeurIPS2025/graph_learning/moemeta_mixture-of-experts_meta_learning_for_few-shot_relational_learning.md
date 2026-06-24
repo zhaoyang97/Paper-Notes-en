@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning
 description: >-
-  [NeurIPS 2025][Graph Learning][Knowledge Graphs] This paper proposes MoEMeta, a framework that employs a Mixture-of-Experts model to learn globally shared relational prototypes for cross-task generalization…
+  [NeurIPS 2025][Graph Learning][Knowledge Graphs] This paper proposes MoEMeta, a framework that employs a Mixture-of-Experts model to learn globally shared relational prototypes for cross-task generalization, combined with a task-customized projection adaptation mechanism to capture local context, achieving state-of-the-art performance on three KG benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Mixture of Experts"
   - "Task Adaptation"
 date: 2026-05-08
-content_hash: 73312d89cc20e283
+content_hash: 2983331826f611ea
 ---
 
 # MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning
@@ -160,9 +160,9 @@ $$\mathcal{L}(\mathcal{S}_r) = \sum_{(h_i,r,t_i) \in \mathcal{S}_r} \max\{0, \te
 
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
 - [\[NeurIPS 2025\] Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs](mixture_of_scope_experts_at_test_generalizing_deeper_graph_neural_networks_with_.md)
+- [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](../../ICLR2026/graph_learning/diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
 - [\[ICLR 2026\] Relatron: Automating Relational Machine Learning over Relational Databases](../../ICLR2026/graph_learning/relatron_automating_relational_machine_learning_over_relational_databases.md)
-- [\[NeurIPS 2025\] Principled Data Augmentation for Learning to Solve Quadratic Programming Problems](principled_data_augmentation_for_learning_to_solve_quadratic_programming_problem.md)
-- [\[NeurIPS 2025\] Elastic Weight Consolidation for Knowledge Graph Continual Learning: An Empirical Evaluation](elastic_weight_consolidation_for_knowledge_graph_continual_learning_an_empirical.md)
+- [\[ICLR 2026\] A Graph Meta-Network for Learning on Kolmogorov–Arnold Networks](../../ICLR2026/graph_learning/a_graph_meta-network_for_learning_on_kolmogorovarnold_networks.md)
 
 </div>
 

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] BEDLAM2.0: Synthetic Humans and Cameras in Motion
 description: >-
-  [NeurIPS 2025][Human Understanding][synthetic data] BEDLAM2.0 is a comprehensive upgrade over BEDLAM, introducing diverse camera motions (synthetic translation/tracking/orbit + handheld/head-mounted capture)…
+  [NeurIPS 2025 Oral][Human Understanding][synthetic data] BEDLAM2.0 is a comprehensive upgrade over BEDLAM, introducing diverse camera motions (synthetic translation/tracking/orbit + handheld/head-mounted capture), broader body shape coverage (BMI 18–41), strand-based hair, shoes, size-graded clothing, and more 3D environments. The resulting dataset comprises 27K+ sequences and 8M+ frames; models trained exclusively on this synthetic data surpass the state of the art in world-…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Human Understanding"
   - "synthetic data"
   - "SMPL-X"
@@ -13,7 +13,7 @@ tags:
   - "world coordinates"
   - "BEDLAM"
 date: 2026-05-08
-content_hash: fe2c0dc16f324e0c
+content_hash: 9cf141aa72de1516
 ---
 
 # BEDLAM2.0: Synthetic Humans and Cameras in Motion
@@ -139,11 +139,11 @@ Sample from the AMASS motion library (4,643 motions) → retarget motions to div
 
 ## Related Papers
 
+- [\[CVPR 2025\] Homogeneous Dynamics Space for Heterogeneous Humans](../../CVPR2025/human_understanding/homogeneous_dynamics_space_for_heterogeneous_humans.md)
 - [\[ICCV 2025\] SynFER: Towards Boosting Facial Expression Recognition with Synthetic Data](../../ICCV2025/human_understanding/synfer_towards_boosting_facial_expression_recognition_with_synthetic_data.md)
 - [\[ICCV 2025\] UDC-VIT: A Real-World Video Dataset for Under-Display Cameras](../../ICCV2025/human_understanding/udc-vit_a_real-world_video_dataset_for_under-display_cameras.md)
-- [\[NeurIPS 2025\] VimoRAG: Video-based Retrieval-augmented 3D Motion Generation for Motion Language Models](vimorag_video-based_retrieval-augmented_3d_motion_generation_for_motion_language.md)
-- [\[CVPR 2026\] IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](../../CVPR2026/human_understanding/idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)
-- [\[NeurIPS 2025\] MOSPA: Human Motion Generation Driven by Spatial Audio](mospa_human_motion_generation_driven_by_spatial_audio.md)
+- [\[CVPR 2025\] Analyzing the Synthetic-to-Real Domain Gap in 3D Hand Pose Estimation](../../CVPR2025/human_understanding/analyzing_the_synthetic-to-real_domain_gap_in_3d_hand_pose_estimation.md)
+- [\[ECCV 2024\] ReLoo: Reconstructing Humans Dressed in Loose Garments from Monocular Video in the Wild](../../ECCV2024/human_understanding/reloo_reconstructing_humans_dressed_in_loose_garments_from_monocular_video_in_th.md)
 
 </div>
 

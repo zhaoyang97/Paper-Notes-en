@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning
 description: >-
-  [ACL 2026][Information Retrieval & RAG][Reinforcement Learning] ConvAgent is proposed to train conversational search agents to alternate between search and reasoning in multi-turn interactions by decomposing RL rewards into three complementary components: outcome reward, information gain reward, and mixed-initiative behavior reward.
+  [ACL 2026 Findings][Information Retrieval & RAG][Conversational search] ConvAgent is proposed to train conversational search agents to alternate between search and reasoning in multi-turn interactions by decomposing RL rewards into three complementary components: outcome reward, information gain reward, and mixed-initiative behavior reward.
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - Reinforcement Learning
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "Conversational search"
+  - "Reinforcement Learning"
+  - "Contextual reasoning"
+  - "Mixed-initiative behavior"
+  - "Information gain reward"
 date: 2026-05-08
-content_hash: a3b3990f5e60b52e
+content_hash: 64f0e847cbab6bca
 ---
+
 # Agentic Conversational Search with Contextualized Reasoning via Reinforcement Learning
 
 **Conference**: ACL 2026 Findings  

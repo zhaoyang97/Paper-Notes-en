@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Diffusion Model] LaDiR utilizes a VAE to compress each reasoning step into a "block" of continuous thought tokens, then applies block-level latent diffusion (flow matching) to iteratively denoise and refine these tokens. This allows LLMs to perform iterative correction and parallel diverse exploration at a semantic level, consistently
+  [ICLR 2026][Reasoning][Latent Space Reasoning] LaDiR utilizes a VAE to compress each reasoning step into a "block" of continuous thought tokens, then applies block-level latent diffusion (flow matching) to iteratively denoise and refine these tokens. This allows LLMs to perform iterative correction and parallel diverse exploration at a semantic level, consistently outperforming autoregressive, discrete diffusion, and latent reasoning baselines across math, code…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Diffusion Model
-  - Flow Matching
-  - VAE
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Latent Space Reasoning"
+  - "Diffusion Models"
+  - "Flow Matching"
+  - "VAE"
+  - "Thought Tokens"
+  - "Diversity Guidance"
+  - "Test-time Compute"
 date: 2026-05-08
-content_hash: 9ceb1fbddf2172c4
+content_hash: 5916f57da1ecec7b
 ---
+
 # LaDiR: Latent Diffusion Enhances LLMs for Text Reasoning
 
 **Conference**: ICLR 2026  

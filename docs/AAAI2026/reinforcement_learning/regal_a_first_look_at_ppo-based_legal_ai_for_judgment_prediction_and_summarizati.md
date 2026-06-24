@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ReGal: A First Look at PPO-based Legal AI for Judgment Prediction and Summarization in India
 description: >-
-  [AAAI 2026][Reinforcement Learning][Legal AI] This paper presents the first application of PPO-based reinforcement learning (RLAIF) to Indian legal judgment prediction and summarization tasks. Although performance does n…
+  [AAAI 2026][Reinforcement Learning][Legal AI] This paper presents the first application of PPO-based reinforcement learning (RLAIF) to Indian legal judgment prediction and summarization tasks. Although performance does not surpass SFT or commercial models, this position paper reveals fundamental challenges and future directions for RL in legal NLP.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Judgment Prediction"
   - "Legal Document Summarization"
 date: 2026-05-08
-content_hash: e3c8ac36ac46db9e
+content_hash: dc70661d740706c7
 ---
 
 # ReGal: A First Look at PPO-based Legal AI for Judgment Prediction and Summarization in India
@@ -193,10 +193,10 @@ Key parameter interpretations:
 ## Related Papers
 
 - [\[AAAI 2026\] First-Order Representation Languages for Goal-Conditioned RL](first-order_representation_languages_for_goal-conditioned_rl.md)
-- [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
 - [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
-- [\[CVPR 2026\] Anticipatory Planning for Multimodal AI Agents](../../CVPR2026/reinforcement_learning/anticipatory_planning_for_multimodal_ai_agents.md)
-- [\[ICLR 2026\] When Sensors Fail: Temporal Sequence Models for Robust PPO under Sensor Drift](../../ICLR2026/reinforcement_learning/when_sensors_fail_temporal_sequence_models_for_robust_ppo_under_sensor_drift.md)
+- [\[AAAI 2026\] Distilling Deep Reinforcement Learning into Interpretable Fuzzy Rules: An Explainable AI Framework](distilling_deep_reinforcement_learning_into_interpretable_fuzzy_rules_an_explain.md)
+- [\[ICLR 2026\] Look-ahead Reasoning with a Learned Model in Imperfect Information Games](../../ICLR2026/reinforcement_learning/look-ahead_reasoning_with_a_learned_model_in_imperfect_information_games.md)
+- [\[ICLR 2026\] Escaping Policy Contraction: Contraction-Aware PPO (CaPPO) for Stable Language Model Fine-Tuning](../../ICLR2026/reinforcement_learning/escaping_policy_contraction_contraction-aware_ppo_cappo_for_stable_language_mode.md)
 
 </div>
 

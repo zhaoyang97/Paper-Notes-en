@@ -2,17 +2,18 @@
 title: >-
   [Paper Note] The Structural Complexity of Matrix-Vector Multiplication
 description: >-
-  [NeurIPS 2025][Theoretical Computer Science / Algorithm Complexity][matrix-vector multiplication] This paper proves that for Boolean matrices $\mathbf{M} \in \{0,1\}^{m \times n}$ with corrupted VC-dimension $d$…
+  [NeurIPS 2025][Theoretical Computer Science][matrix-vector multiplication] This paper proves that for Boolean matrices $\mathbf{M} \in \{0,1\}^{m \times n}$ with corrupted VC-dimension $d$, matrix-vector multiplication can be performed in $\widetilde{O}(nm^{1-1/d}+m)$ time. This is the first truly sub-quadratic upper bound for structured matrices, refuting the applicability of the OMv conjecture on structured inputs, and yields the first high-accuracy sub-quadratic algorithms…
 tags:
   - "NeurIPS 2025"
-  - "Theoretical Computer Science / Algorithm Complexity"
+  - "Theoretical Computer Science"
+  - "Algorithm Complexity"
   - "matrix-vector multiplication"
   - "VC dimension"
   - "structured matrices"
   - "dynamic algorithms"
   - "minimum spanning tree"
 date: 2026-05-08
-content_hash: 9c5caffa6e722e9e
+content_hash: 0f62c6ff94185787
 ---
 
 # The Structural Complexity of Matrix-Vector Multiplication
@@ -129,10 +130,10 @@ This is a purely theoretical paper with no experimental section. The core theore
 ## Related Papers
 
 - [\[NeurIPS 2025\] The Parameterized Complexity of Computing the VC-Dimension](the_parameterized_complexity_of_computing_the_vc-dimension.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
-- [\[NeurIPS 2025\] How Many Domains Suffice for Domain Generalization? A Tight Characterization via the Domain Shattering Dimension](how_many_domains_suffice_for_domain_generalization_a_tight_characterization_via_.md)
-- [\[NeurIPS 2025\] On Agnostic PAC Learning in the Small Error Regime](on_agnostic_pac_learning_in_the_small_error_regime.md)
-- [\[NeurIPS 2025\] A High-Dimensional Statistical Method for Optimizing Transfer Quantities in Multi-Source Transfer Learning](a_highdimensional_statistical_method_for_optimizing_transfer.md)
+- [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](../../ICLR2026/learning_theory/minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
+- [\[ICLR 2026\] Statistical and Structural Identifiability in Representation Learning](../../ICLR2026/learning_theory/statistical_and_structural_identifiability_in_representation_learning.md)
+- [\[ICLR 2026\] On the Benefits of Weight Normalization for Overparameterized Matrix Sensing](../../ICLR2026/learning_theory/on_the_benefits_of_weight_normalization_for_overparameterized_matrix_sensing.md)
+- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](../../ICLR2026/learning_theory/gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
 
 </div>
 

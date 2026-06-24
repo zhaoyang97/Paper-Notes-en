@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] When AI Agents Collude Online: Financial Fraud Risks by Collaborative LLM Agents on Social Platforms
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] The authors developed MAFF-Bench, a multi-agent simulation benchmark capable of simulating the full life cycle of financial fraud on social platforms. It proves that LLM agents not only execute fraud instructions with almost no refusal but also, once allowed to collude privately, the collective fraud success rate far e
+  [ICLR 2026][LLM Agent][Multi-agent society] The authors developed MAFF-Bench, a multi-agent simulation benchmark capable of simulating the full life cycle of financial fraud on social platforms. It proves that LLM agents not only execute fraud instructions with almost no refusal but also, once allowed to collude privately, the collective fraud success rate far exceeds the sum of individual capabilities ($R_{pop}$ jumps from 17% to 41%). The study systematically evaluates the…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Multi-agent society"
+  - "financial fraud"
+  - "collusion"
+  - "social platform simulation"
+  - "safety alignment"
 date: 2026-05-08
-content_hash: c7a42c5e7da59bdd
+content_hash: eeff93eb97372337
 ---
+
 # When AI Agents Collude Online: Financial Fraud Risks by Collaborative LLM Agents on Social Platforms
 
 **Conference**: ICLR 2026  
@@ -135,7 +141,6 @@ Evaluation of 16 mainstream LLMs as malicious models in a 110-agent environment 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

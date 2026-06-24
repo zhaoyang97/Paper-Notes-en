@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification
 description: >-
-  [CVPR 2026][Human Understanding][CLIP] PAD treats the frozen CLIP text encoder as a cross-domain invariant "semantic anchor." By employing an **asymmetric vision-text distillation**—weak text-side distillation to ensure semantic stability and strong vision-side EMA distillation to maintain plasticity—it simultaneously suppresses catastrophic forgetting and
+  [CVPR 2026][Human Understanding][Lifelong Person Re-identification] PAD treats the frozen CLIP text encoder as a cross-domain invariant "semantic anchor." By employing an **asymmetric vision-text distillation**—weak text-side distillation to ensure semantic stability and strong vision-side EMA distillation to maintain plasticity—it simultaneously suppresses catastrophic forgetting and semantic drift in exemplar-free lifelong person Re-ID. It achieves an average mAP of 70.7 on…
 tags:
-  - CVPR 2026
-  - Human Understanding
-  - CLIP
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Lifelong Person Re-identification"
+  - "Exemplar-free"
+  - "Vision-Text Distillation"
+  - "Prompt Learning"
+  - "CLIP"
 date: 2026-05-08
-content_hash: 7cff8b1b4042da22
+content_hash: c01d75be51f57899
 ---
+
 # Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification
 
 **Conference**: CVPR 2026  
@@ -157,9 +162,9 @@ Impact of components starting from a full-finetuning CLIP-ReID baseline (Seen av
 
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 - [\[CVPR 2026\] Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification](dynamic_magic_unleashing_restricted_knowledge_for_lifelong_person_re-identificat.md)
+- [\[CVPR 2026\] VRCLIP: Multimodal Canonical Correlation Alignment for CLIP-Driven Vision-Radio Person Re-Identification](vrclip_multimodal_canonical_correlation_alignment_for_clip-driven_vision-radio_p.md)
 - [\[CVPR 2026\] COPE: Consistent Occlusion and Prompt Enhancement Network for Occluded Person Re-identification](cope_consistent_occlusion_and_prompt_enhancement_network_for_occluded_person_re-.md)
 - [\[CVPR 2026\] Composite-Attribute Person Re-Identification via Pose-Guided Disentanglement](composite-attribute_person_re-identification_via_pose-guided_disentanglement.md)
-- [\[CVPR 2026\] View-Aware Semantic Alignment for Aerial-Ground Person Re-Identification](view-aware_semantic_alignment_for_aerial-ground_person_re-identification.md)
 
 </div>
 

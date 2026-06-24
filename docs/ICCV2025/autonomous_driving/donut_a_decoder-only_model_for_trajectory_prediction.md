@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DONUT: A Decoder-Only Model for Trajectory Prediction
 description: >-
-  [ICCV 2025][Autonomous Driving][trajectory prediction] DONUT draws inspiration from the decoder-only architecture of LLMs and proposes a unified autoregressive model for processing both historical and future trajectories…
+  [ICCV 2025][Autonomous Driving][trajectory prediction] DONUT draws inspiration from the decoder-only architecture of LLMs and proposes a unified autoregressive model for processing both historical and future trajectories, coupled with an *overprediction* strategy to improve anticipation of the distant future. It achieves state-of-the-art performance on the Argoverse 2 benchmark.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "autoregressive model"
   - "motion prediction"
 date: 2026-05-08
-content_hash: 9c85ae8be65789a1
+content_hash: d1bb0332148231b4
 ---
 
 # DONUT: A Decoder-Only Model for Trajectory Prediction
@@ -139,11 +139,11 @@ DONUT achieves state-of-the-art among non-ensemble methods on the primary metric
 
 ## Related Papers
 
-- [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
 - [\[ICCV 2025\] Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics](foresight_in_motion_reinforcing_trajectory_prediction_with_reward_heuristics.md)
+- [\[ICCV 2025\] Generative Active Learning for Long-tail Trajectory Prediction via Controllable Diffusion Model](generative_active_learning_for_long-tail_trajectory_prediction_via_controllable_.md)
+- [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](../../CVPR2026/autonomous_driving/w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[ICCV 2025\] GS-Occ3D: Scaling Vision-only Occupancy Reconstruction with Gaussian Splatting](gs-occ3d_scaling_vision-only_occupancy_reconstruction_with_gaussian_splatting.md)
-- [\[ICCV 2025\] SRefiner: Soft-Braid Attention for Multi-Agent Trajectory Refinement](srefiner_soft-braid_attention_for_multi-agent_trajectory_refinement.md)
+- [\[CVPR 2025\] Tra-MoE: Learning Trajectory Prediction Model from Multiple Domains for Adaptive Policy Conditioning](../../CVPR2025/autonomous_driving/tra-moe_learning_trajectory_prediction_model_from_multiple_domains_for_adaptive_.md)
 
 </div>
 

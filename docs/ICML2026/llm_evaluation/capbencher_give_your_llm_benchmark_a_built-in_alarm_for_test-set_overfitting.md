@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] CapBencher injects randomness into each problem (generating multiple logically correct answers and randomly selecting one as the gold label) to cap the Bayes accuracy of a benchmark at a controllable level (e.g., 50%). This enables black-box statistical detection of data contamination in publicly released benchmarks—an
+  [ICML 2026][LLM Evaluation][LLM Benchmarking] CapBencher injects randomness into each problem (generating multiple logically correct answers and randomly selecting one as the gold label) to cap the Bayes accuracy of a benchmark at a controllable level (e.g., 50%). This enables black-box statistical detection of data contamination in publicly released benchmarks—any model with an accuracy significantly exceeding the Bayes upper bound is flagged as contaminated.
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "LLM Benchmarking"
+  - "Data Contamination Detection"
+  - "Bayes Accuracy"
+  - "Test-set Overfitting"
+  - "Leaderboard Defense"
 date: 2026-05-08
-content_hash: 94297f98be2c8d67
+content_hash: d118f43604934fca
 ---
+
 # CapBencher: Give Your LLM Benchmark a Built-in Alarm for Test-Set Overfitting
 
 **Conference**: ICML 2026  
@@ -133,11 +139,11 @@ Experiments using continued pre-training for contamination were conducted across
 
 ## Related Papers
 
+- [\[ICLR 2026\] CMT-Benchmark: A Benchmark for Condensed Matter Theory Built by Expert Researchers](../../ICLR2026/llm_evaluation/cmt-benchmark_a_benchmark_for_condensed_matter_theory_built_by_expert_researcher.md)
 - [\[AAAI 2026\] LLM-as-a-Judge for Scalable Test Coverage Evaluation](../../AAAI2026/llm_evaluation/llm-as-a-judge_for_scalable_test_coverage_evaluation_accuracy_operational_reliab.md)
 - [\[ACL 2026\] MultiFileTest: A Multi-File-Level LLM Unit Test Generation Benchmark and Impact of Error Fixing Mechanisms](../../ACL2026/llm_evaluation/multifiletest_a_multi-file-level_llm_unit_test_generation_benchmark_and_impact_o.md)
 - [\[NeurIPS 2025\] Your Pre-trained LLM is Secretly an Unsupervised Confidence Calibrator](../../NeurIPS2025/llm_evaluation/your_pre-trained_llm_is_secretly_an_unsupervised_confidence_calibrator.md)
-- [\[ACL 2026\] How Hypocritical Is Your LLM Judge? Listener–Speaker Asymmetries in the Pragmatic Competence of Large Language Models](../../ACL2026/llm_evaluation/how_hypocritical_is_your_llm_judge_listener-speaker_asymmetries_in_the_pragmatic.md)
-- [\[ICML 2026\] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"](real_regression-aware_reinforcement_learning_for_llm-as-a-judge.md)
+- [\[ICLR 2026\] RedacBench: Can AI Erase Your Secrets?](../../ICLR2026/llm_evaluation/redacbench_can_ai_erase_your_secrets.md)
 
 </div>
 

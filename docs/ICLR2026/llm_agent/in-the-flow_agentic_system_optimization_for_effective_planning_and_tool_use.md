@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] In-the-Flow Agentic System Optimization for Effective Planning and Tool Use
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] This paper proposes AGENTFLOW—a trainable agentic system where four modules (planner, executor, verifier, and generator) collaborate via a shared memory. Using the accompanying Flow-GRPO algorithm, the planner is optimized online within a "live flow" of multi-turn interactions. A 7B backbone achieves a 4–15 point gain
+  [ICLR 2026][LLM Agent][Agentic Systems] This paper proposes AGENTFLOW—a trainable agentic system where four modules (planner, executor, verifier, and generator) collaborate via a shared memory. Using the accompanying Flow-GRPO algorithm, the planner is optimized online within a "live flow" of multi-turn interactions. A 7B backbone achieves a 4–15 point gain across 10 benchmarks, outperforming GPT-4o (~200B).
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agentic Systems"
+  - "Tool Use"
+  - "Multi-turn Reinforcement Learning"
+  - "Online Optimization"
+  - "Credit Assignment"
 date: 2026-05-08
-content_hash: a132732ca4457966
+content_hash: 1442323794d51b26
 ---
+
 # In-the-Flow Agentic System Optimization for Effective Planning and Tool Use
 
 **Conference**: ICLR 2026  
@@ -140,10 +146,10 @@ Compared to ~200B models, AGENTFLOW (7B) outperforms GPT-4o across all categorie
 ## Related Papers
 
 - [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
+- [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
 - [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](benchmarking_llm_tool-use_in_the_wild.md)
 - [\[ICLR 2026\] TusoAI: Agentic Optimization for Scientific Methods](tusoai_agentic_optimization_for_scientific_methods.md)
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
-- [\[ICLR 2026\] An Information Theoretic Perspective on Agentic System Design](an_information_theoretic_perspective_on_agentic_system_design.md)
 
 </div>
 

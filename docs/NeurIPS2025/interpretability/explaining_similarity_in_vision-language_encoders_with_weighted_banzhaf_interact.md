@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions
 description: >-
-  [NeurIPS 2025][Interpretability][CLIP interpretability] FIxLIP proposes a game-theoretic framework based on weighted Banzhaf interaction indices that unifies the decomposition of similarity predictions in vision-language…
+  [NeurIPS 2025][Interpretability][CLIP interpretability] FIxLIP proposes a game-theoretic framework based on weighted Banzhaf interaction indices that unifies the decomposition of similarity predictions in vision-language encoders (e.g., CLIP, SigLIP-2) into first-order token attributions and second-order cross-modal/intra-modal interactions, surpassing existing first-order attribution methods in both efficiency and faithfulness.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal interaction"
   - "saliency map"
 date: 2026-05-08
-content_hash: 4c37a6aefc2d0d46
+content_hash: c1a69b7c732d4d50
 ---
 
 # Explaining Similarity in Vision-Language Encoders with Weighted Banzhaf Interactions
@@ -153,8 +153,8 @@ On SigLIP-2 ViT-B/32, compared to first-order attribution methods (~1 second), F
 - [\[NeurIPS 2025\] VL-SAE: Interpreting and Enhancing Vision-Language Alignment with a Unified Concept Set](vlsae_interpreting_and_enhancing_visionlanguage_alignment_wi.md)
 - [\[NeurIPS 2025\] Efficient Vision-Language Reasoning via Adaptive Token Pruning](efficient_vision-language_reasoning_via_adaptive_token_pruning.md)
 - [\[NeurIPS 2025\] FaCT: Faithful Concept Traces for Explaining Neural Network Decisions](fact_faithful_concept_traces_for_explaining_neural_network_decisions.md)
-- [\[NeurIPS 2025\] Dataset Distillation for Pre-Trained Self-Supervised Vision Models](dataset_distillation_for_pre-trained_self-supervised_vision_models.md)
 - [\[ICLR 2026\] Conjuring Semantic Similarity](../../ICLR2026/interpretability/conjuring_semantic_similarity.md)
+- [\[ICLR 2026\] Rethinking Layer Relevance in Large Language Models Beyond Cosine Similarity](../../ICLR2026/interpretability/rethinking_layer_relevance_in_large_language_models_beyond_cosine_similarity.md)
 
 </div>
 

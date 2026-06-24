@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Omni-AD: A Large-scale and Versatile Benchmark for Industrial Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Omni-AD is an Industrial Anomaly Detection (IAD) benchmark collected from real production lines, covering 150 categories across 16 industries with approximately 35,000 pixel-level annotated images; it supports both traditional unsupervised IAD evaluation and, for the first time, introduces three progressive subtasks—"d
+  [CVPR 2026][Object Detection][Industrial Anomaly Detection] Omni-AD is an Industrial Anomaly Detection (IAD) benchmark collected from real production lines, covering 150 categories across 16 industries with approximately 35,000 pixel-level annotated images; it supports both traditional unsupervised IAD evaluation and, for the first time, introduces three progressive subtasks—"discrimination-classification-localization"—for Multimodal Large Language Models (MLLMs). Experiments…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Industrial Anomaly Detection"
+  - "Large-scale Benchmark"
+  - "MLLM Evaluation"
+  - "Visual Question Answering"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: d4c6f7a2dcf4d52f
+content_hash: e7627223874f73c3
 ---
+
 # Omni-AD: A Large-scale and Versatile Benchmark for Industrial Anomaly Detection
 
 **Conference**: CVPR 2026  

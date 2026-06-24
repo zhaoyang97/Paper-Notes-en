@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation
 description: >-
-  [ICLR 2026][LLM Evaluation][Paper Note] AirQA is a human-annotated AI research QA dataset (13,956 papers, 1,246 questions) covering four question types (single/multi-doc/retrieval/comprehensive) and five element types (text/table/image/formula/metadata). It introduces instance-level objective evaluation using 19 "customized per question" Python functions and
+  [ICLR2026][LLM Evaluation][Research QA] AirQA is a human-annotated AI research QA dataset (13,956 papers, 1,246 questions) covering four question types (single/multi-doc/retrieval/comprehensive) and five element types (text/table/image/formula/metadata). It introduces instance-level objective evaluation using 19 "customized per question" Python functions and proposes a three-agent framework, EXTRACTOR, to automatically synthesize QA pairs and interaction trajectories…
 tags:
-  - ICLR 2026
-  - LLM Evaluation
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "Research QA"
+  - "Instance-Level Evaluation"
+  - "Multimodality"
+  - "Multi-task"
+  - "Tool-use Agent"
+  - "Trajectory Synthesis"
 date: 2026-05-08
-content_hash: 8b259ba2c1c18dc3
+content_hash: 4184b23736deacd8
 ---
+
 # AirQA: A Comprehensive QA Dataset for AI Research with Instance-Level Evaluation
 
 **Conference**: ICLR2026  
@@ -152,8 +159,8 @@ Sliding windows provide the primary score boost, while failure cleaning specific
 - [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
 - [\[ICML 2026\] From Human-Level AI Tales to AI Leveling Human Scales](../../ICML2026/llm_evaluation/from_human-level_ai_tales_to_ai_leveling_human_scales.md)
 - [\[ICLR 2026\] DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents](deepresearch_bench_a_comprehensive_benchmark_for_deep_research_agents.md)
-- [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
 - [\[ICLR 2026\] DeepTRACE: Auditing Deep Research AI Systems for Tracking Reliability Across Citations and Evidence](deeptrace_auditing_deep_research_ai_systems_for_tracking_reliability_across_cita.md)
+- [\[ICLR 2026\] LFQA-E: Carefully Benchmarking Long-form QA Evaluation](lfqa-e_carefully_benchmarking_long-form_qa_evaluation.md)
 
 </div>
 

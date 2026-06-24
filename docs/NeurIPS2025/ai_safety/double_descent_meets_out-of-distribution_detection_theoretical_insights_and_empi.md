@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis
 description: >-
-  [NeurIPS 2025][AI Safety][double descent] This paper is the first to reveal a double descent phenomenon in post-hoc OOD detection—OOD detection performance exhibits a valley near the interpolation threshold as model widt…
+  [NeurIPS 2025][AI Safety][double descent] This paper is the first to reveal a double descent phenomenon in post-hoc OOD detection—OOD detection performance exhibits a valley near the interpolation threshold as model width increases, then recovers—provides a theoretical explanation via random matrix theory, and proposes an NC1 criterion based on Neural Collapse to identify the optimal model complexity regime.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "random matrix theory"
   - "Neural Collapse"
 date: 2026-05-08
-content_hash: ea9c06bbaa6efe51
+content_hash: b0d8b54c7c163076
 ---
 
 # Double Descent Meets Out-of-Distribution Detection: Theoretical Insights and Empirical Analysis
@@ -130,10 +130,10 @@ The paper is structured into theoretical and empirical components. Theoretically
 ## Related Papers
 
 - [\[NeurIPS 2025\] Revisiting Logit Distributions for Reliable Out-of-Distribution Detection](revisiting_logit_distributions_for_reliable_out-of-distribution_detection.md)
-- [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
+- [\[CVPR 2026\] Sparsity as a Key: Unlocking New Insights from Latent Structures for Out-of-Distribution Detection](../../CVPR2026/ai_safety/sparsity_as_a_key_unlocking_new_insights_from_latent_structures_for_out-of-distr.md)
 - [\[NeurIPS 2025\] Harnessing Feature Resonance under Arbitrary Target Alignment for Out-of-Distribution Node Detection](harnessing_feature_resonance_under_arbitrary_target_alignment_for_out-of-distrib.md)
+- [\[NeurIPS 2025\] Redundancy-Aware Test-Time Graph Out-of-Distribution Detection](redundancy-aware_test-time_graph_out-of-distribution_detection.md)
 - [\[NeurIPS 2025\] SPROD: Spurious-Aware Prototype Refinement for Reliable Out-of-Distribution Detection](spurious-aware_prototype_refinement_for_reliable_out-of-distribution_detection.md)
-- [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](../../CVPR2026/ai_safety/enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
 
 </div>
 

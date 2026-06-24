@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs
 description: >-
-  [NeurIPS 2025][Dialogue Systems][Access Control] AC-LoRA is an end-to-end system that trains independent LoRA adapters for datasets with different permission levels. At inference time…
+  [NeurIPS 2025][Dialogue Systems][Access Control] AC-LoRA is an end-to-end system that trains independent LoRA adapters for datasets with different permission levels. At inference time, it dynamically retrieves and training-freely merges multiple LoRA outputs based on cosine similarity and user permissions, achieving strong information isolation while matching or surpassing SOTA LoRA mixture methods in response quality.
 tags:
   - "NeurIPS 2025"
   - "Dialogue Systems"
@@ -12,7 +12,7 @@ tags:
   - "Enterprise LLM"
   - "Multi-Modal"
 date: 2026-05-08
-content_hash: 6dd9134abea2e62b
+content_hash: 8fbfc5312b8474a5
 ---
 
 # AC-LoRA: (Almost) Training-Free Access Control-Aware Multi-Modal LLMs
@@ -131,9 +131,9 @@ Evaluated on RepLiQA (enterprise knowledge QA) and FlanV2 datasets.
 
 - [\[NeurIPS 2025\] KL Penalty Control via Perturbation for Direct Preference Optimization](kl_penalty_control_via_perturbation_for_direct_preference_optimization.md)
 - [\[ACL 2026\] ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](../../ACL2026/dialogue/ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)
+- [\[ACL 2026\] Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation](../../ACL2026/dialogue/codebook-injected_dialogue_segmentation_for_multi-utterance_constructs_annotatio.md)
 - [\[NeurIPS 2025\] Agentic Persona Control and Task State Tracking for Realistic User Simulation](agentic_persona_control_and_task_state_tracking_for_realistic_user_simulation_in.md)
 - [\[ICML 2026\] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents](../../ICML2026/dialogue/from_self-evolving_synthetic_data_to_verifiable-reward_rl_post-training_multi-tu.md)
-- [\[ACL 2026\] Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation](../../ACL2026/dialogue/codebook-injected_dialogue_segmentation_for_multi-utterance_constructs_annotatio.md)
 
 </div>
 

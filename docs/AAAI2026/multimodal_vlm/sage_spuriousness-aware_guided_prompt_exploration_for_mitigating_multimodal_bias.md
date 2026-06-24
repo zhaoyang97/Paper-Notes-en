@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias
 description: >-
-  [AAAI 2026][Multimodal VLM][Spurious correlations] This paper proposes SAGE, a training-free prompt selection method that requires no fine-tuning or external annotations. By computing inter-class separation scores for pr…
+  [AAAI 2026][Multimodal VLM][Spurious correlations] This paper proposes SAGE, a training-free prompt selection method that requires no fine-tuning or external annotations. By computing inter-class separation scores for prompt templates, SAGE mitigates multimodal spurious bias in CLIP models, consistently improving Worst Group Accuracy (WGA) and Harmonic Mean (HM) across four benchmarks and five backbone models.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "prompt selection"
   - "robustness"
 date: 2026-05-08
-content_hash: fbd860bdfdaf0ad5
+content_hash: 531df07b98afbdcb
 ---
 
 # SAGE: Spuriousness-Aware Guided Prompt Exploration for Mitigating Multimodal Bias
@@ -153,11 +153,11 @@ Key finding: **Full ensemble ($K$=80) performs worst**, as aggregating numerous 
 
 ## Related Papers
 
+- [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
 - [\[ICML 2026\] Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](../../ICML2026/multimodal_vlm/mitigating_perceptual_judgment_bias_in_multimodal_llm-as-a-judge_via_perceptual_.md)
-- [\[ICLR 2026\] Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](../../ICLR2026/multimodal_vlm/lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)
-- [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
-- [\[AAAI 2026\] BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models](biprompt_bilateral_prompt_optimization_for_visual_and_textual_debiasing_in_visio.md)
-- [\[CVPR 2026\] CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment](../../CVPR2026/multimodal_vlm/capt_confusion-aware_prompt_tuning_for_reducing_vision-language_misalignment.md)
+- [\[ICLR 2026\] PSP: Prompt-Guided Self-Training Sampling Policy for Active Prompt Learning](../../ICLR2026/multimodal_vlm/psp_prompt-guided_self-training_sampling_policy_for_active_prompt_learning.md)
+- [\[ICML 2025\] Understanding and Mitigating Miscalibration in Prompt Tuning for Vision-Language Models](../../ICML2025/multimodal_vlm/understanding_and_mitigating_miscalibration_in_prompt_tuning_for_vision-language.md)
+- [\[CVPR 2026\] LOREAL: Mitigating Low-Resolution Challenges in Vision-Language Models with Attribute-driven Prompt Self-Distillation](../../CVPR2026/multimodal_vlm/loreal_mitigating_low-resolution_challenges_in_vision-language_models_with_attri.md)
 
 </div>
 

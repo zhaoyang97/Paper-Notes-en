@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal Belief
 description: >-
-  [AAAI 2026][LLM Alignment][uncertainty estimation] This paper proposes EAGLE, a method that estimates uncertainty by aggregating logits from multiple intermediate hidden layers of an LLM and computing the expectation of…
+  [AAAI 2026][LLM Alignment][uncertainty estimation] This paper proposes EAGLE, a method that estimates uncertainty by aggregating logits from multiple intermediate hidden layers of an LLM and computing the expectation of the resulting confidence distribution. EAGLE requires no additional trainable parameters and reduces ECE from 12.6% to 3.2% while improving AUROC from 59.0% to 61.6% across multiple datasets and models.
 tags:
   - "AAAI 2026"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "EAGLE"
   - "hidden layers"
 date: 2026-05-08
-content_hash: 1384b0078a8a0844
+content_hash: a80fd1ed7111047a
 ---
 
 # Enhancing Uncertainty Estimation in LLMs with Expectation of Aggregated Internal Belief
@@ -134,11 +134,11 @@ The EAGLE (**E**xpectation of **AG**gregated internaL b**E**lief) pipeline proce
 
 ## Related Papers
 
+- [\[ICLR 2026\] Enhancing Trustworthiness of Fine-Tuned LLMs via Regularized Subset Selection](../../ICLR2026/llm_alignment/enhancing_trustworthiness_of_fine-tuned_llms_via_regularized_subset_selection.md)
 - [\[NeurIPS 2025\] LLM Safety Alignment is Divergence Estimation in Disguise](../../NeurIPS2025/llm_alignment/llm_safety_alignment_is_divergence_estimation_in_disguise.md)
+- [\[ICML 2026\] Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences](../../ICML2026/llm_alignment/large_language_models_should_learn_personalized_rather_than_aggregated_human_pre.md)
 - [\[ACL 2026\] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization](../../ACL2026/llm_alignment/maestro_meta-learning_adaptive_estimation_of_scalarization_trade-offs_for_reward.md)
-- [\[NeurIPS 2025\] Multi-Environment POMDPs: Discrete Model Uncertainty Under Partial Observability](../../NeurIPS2025/llm_alignment/multi-environment_pomdps_discrete_model_uncertainty_under_partial_observability.md)
-- [\[ACL 2026\] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback](../../ACL2026/llm_alignment/wildfeedback_aligning_llms_with_in-situ_user_interactions_and_feedback.md)
-- [\[ICML 2026\] The Realignment Problem: When Right becomes Wrong in LLMs](../../ICML2026/llm_alignment/the_realignment_problem_when_right_becomes_wrong_in_llms.md)
+- [\[ACL 2025\] LoGU: Long-form Generation with Uncertainty Expressions](../../ACL2025/llm_alignment/logu_longform_gen_uncertainty.md)
 
 </div>
 

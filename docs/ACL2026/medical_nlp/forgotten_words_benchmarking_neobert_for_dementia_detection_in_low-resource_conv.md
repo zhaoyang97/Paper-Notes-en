@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Forgotten Words: Benchmarking NeoBERT for Dementia Detection in Low-Resource Conversational Filipino and English Speech
 description: >-
-  [ACL 2026][Medical NLP][Filipino-English] This paper evaluates TF-IDF, BERT, NeoBERT, XLM-R, and RoBERTa-Tagalog using 4,000 parallel English-Filipino DementiaBank dialogue transcripts. It finds that cross-lingual robustness in dementia detection primarily stems from language coverage during training rather than modern encoder architectures.
+  [ACL2026][Medical LLM][Dementia Detection] This paper evaluates TF-IDF, BERT, NeoBERT, XLM-R, and RoBERTa-Tagalog using 4,000 parallel English-Filipino DementiaBank dialogue transcripts. It finds that cross-lingual robustness in dementia detection primarily stems from language coverage during training rather than modern encoder architectures.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Filipino-English
-  - NeoBERT
+  - "ACL2026"
+  - "Medical LLM"
+  - "Dementia Detection"
+  - "Filipino-English"
+  - "NeoBERT"
+  - "Cross-lingual Transfer"
+  - "Bilingual Fine-tuning"
 date: 2026-05-08
-content_hash: 3f6e702b0e51534c
+content_hash: 2b649ec2a64b65c3
 ---
+
 # Forgotten Words: Benchmarking NeoBERT for Dementia Detection in Low-Resource Conversational Filipino and English Speech
 
 **Conference**: ACL2026  
@@ -115,15 +119,13 @@ Hyperparameters were selected via grid search, including learning rates of $5e^{
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ACL 2026\] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings](rads_reinforcement_learning-based_sample_selection_improves_transfer_learning_in.md)
 - [\[ACL 2026\] Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)
 - [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
-- [\[ICML 2026\] MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings](../../ICML2026/medical_nlp/medcase-structured_a_text-to-fhir_dataset_for_benchmarking_diagnostic_reasoning_.md)
+- [\[ICLR 2026\] From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents](../../ICLR2026/medical_nlp/from_conversation_to_query_execution_benchmarking_user_and_tool_interactions_for.md)
 
 </div>
 

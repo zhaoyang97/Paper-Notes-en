@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Spectral Conditioning of Attention Improves Transformer Performance
 description: >-
-  [NeurIPS 2025][LLM/NLP][Transformer] This paper theoretically establishes that the condition number of the attention layer Jacobian in Transformers is governed by the condition numbers of the Query/Key/Value matrices…
+  [NeurIPS 2025][LLM (Other)][Transformer] This paper theoretically establishes that the condition number of the attention layer Jacobian in Transformers is governed by the condition numbers of the Query/Key/Value matrices, and proposes Spectral Conditioned Attention — a plug-and-play module that reduces the condition number by adding fixed correction terms to the Q/K/V matrices, consistently improving performance across image classification, object detection, and NLP tasks.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "Transformer"
   - "attention mechanism"
   - "condition number"
   - "spectral conditioning"
   - "Jacobian"
 date: 2026-05-08
-content_hash: e8db126773842a2e
+content_hash: d332b8d489162600
 ---
 
 # Spectral Conditioning of Attention Improves Transformer Performance
@@ -172,10 +172,10 @@ $$\mathbf{SpecA}(X) = \text{softmax}(X(W_Q + C_Q)(W_K + C_K)^T X^T) X(W_V + C_V)
 ## Related Papers
 
 - [\[ICLR 2026\] Spectral Attention Steering for Prompt Highlighting](../../ICLR2026/llm_nlp/spectral_attention_steering_for_prompt_highlighting.md)
+- [\[CVPR 2025\] Spiking Transformer with Spatial-Temporal Attention](../../CVPR2025/llm_nlp/spiking_transformer_with_spatial-temporal_attention.md)
 - [\[NeurIPS 2025\] Strassen Attention, Split VC Dimension and Compositionality in Transformers](strassen_attention_split_vc_dimension_and_compositionality_in_transformers.md)
-- [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
-- [\[NeurIPS 2025\] Characterizing the Expressivity of Fixed-Precision Transformer Language Models](characterizing_the_expressivity_of_fixed-precision_transformer_language_models.md)
-- [\[NeurIPS 2025\] On the Role of Hidden States of Modern Hopfield Network in Transformer](on_the_role_of_hidden_states_of_modern_hopfield_network_in_transformer.md)
+- [\[CVPR 2025\] Spiking Transformer: Introducing Accurate Addition-Only Spiking Self-Attention for Transformer](../../CVPR2025/llm_nlp/spiking_transformer_introducing_accurate_addition-only_spiking_self-attention_fo.md)
+- [\[ICML 2025\] LASER: Attention with Exponential Transformation](../../ICML2025/llm_nlp/laser_attention_with_exponential_transformation.md)
 
 </div>
 

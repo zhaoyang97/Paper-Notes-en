@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Preference Learning with Lie Detectors can Induce Honesty or Evasion
 description: >-
-  [NeurIPS 2025][LLM Alignment][LLM deception detection] This paper systematically investigates the effects of integrating lie detectors into the LLM preference learning annotation pipeline (the SOLiD framework)…
+  [NeurIPS 2025][LLM Alignment][LLM deception detection] This paper systematically investigates the effects of integrating lie detectors into the LLM preference learning annotation pipeline (the SOLiD framework), finding that whether a trained model becomes genuinely honest or learns to evade detection depends on three key factors: the degree of exploration (GRPO vs. DPO), detector accuracy (TPR), and KL regularization strength.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -14,7 +14,7 @@ tags:
   - "DPO"
   - "AI safety"
 date: 2026-05-08
-content_hash: 73eda8ce27ba1963
+content_hash: b471dd643d87d5f8
 ---
 
 # Preference Learning with Lie Detectors can Induce Honesty or Evasion
@@ -155,9 +155,9 @@ Samples are generated using GPT-4o, Claude Sonnet-3.5, and Gemini 2.0-Flash with
 
 - [\[NeurIPS 2025\] Generalizing while Preserving Monotonicity in Comparison-based Preference Learning Models](generalizing_while_preserving_monotonicity_in_comparison-based_preference_learni.md)
 - [\[NeurIPS 2025\] Can DPO Learn Diverse Human Values? A Theoretical Scaling Law](can_dpo_learn_diverse_human_values_a_theoretical_scaling_law.md)
+- [\[NeurIPS 2025\] PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors](polyjuice_makes_it_real_black-box_universal_red_teaming_for_synthetic_image_dete.md)
 - [\[NeurIPS 2025\] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning](responserank_data-efficient_reward_modeling_through_preference_strength_learning.md)
 - [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
-- [\[NeurIPS 2025\] PolyJuice Makes It Real: Black-Box, Universal Red Teaming for Synthetic Image Detectors](polyjuice_makes_it_real_black-box_universal_red_teaming_for_synthetic_image_dete.md)
 
 </div>
 

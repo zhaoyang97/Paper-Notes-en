@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation
 description: >-
-  [ICLR 2026][Time Series][Paper Note] T1 is proposed as a CNN-Transformer hybrid architecture. Its core innovation is Channel-Head Binding (CHead Attention): a shared Depthwise Conv extracts $C$ types of temporal features (trend, periodicity, abrupt changes, etc.) for each variable, followed by a one-to-one binding of each CNN channel with an attention hea
+  [ICLR 2026][Time Series][Time-series Imputation] T1 is proposed as a CNN-Transformer hybrid architecture. Its core innovation is Channel-Head Binding (CHead Attention): a shared Depthwise Conv extracts $C$ types of temporal features (trend, periodicity, abrupt changes, etc.) for each variable, followed by a one-to-one binding of each CNN channel with an attention head. This ensures that cross-variable information transfer occurs independently at the feature level. When missin…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Time-series Imputation"
+  - "CNN-Transformer Hybrid"
+  - "Channel-Head Binding"
+  - "Selective Information Passing"
+  - "Missing Pattern Generalization"
 date: 2026-05-08
-content_hash: 5ec979cec9d52275
+content_hash: 0d03c37770f51dd7
 ---
+
 # T1: One-to-One Channel-Head Binding for Multivariate Time-Series Imputation
 
 **Conference**: ICLR 2026  
@@ -181,8 +187,8 @@ Key Findings: (1) Removing cross-variable modeling causes a 56% performance drop
 ## Related Papers
 
 - [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
-- [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
 - [\[ICLR 2026\] Time-Gated Multi-Scale Flow Matching for Time-Series Imputation](time-gated_multi-scale_flow_matching_for_time-series_imputation.md)
+- [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
 - [\[NeurIPS 2025\] Channel Matters: Estimating Channel Influence for Multivariate Time Series](../../NeurIPS2025/time_series/channel_matters_estimating_channel_influence_for_multivariate_time_series.md)
 - [\[ICLR 2026\] Routing Channel-Patch Dependencies in Time Series Forecasting with Graph Spectral Decomposition](routing_channel-patch_dependencies_in_time_series_forecasting_with_graph_spectra.md)
 

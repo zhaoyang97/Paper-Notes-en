@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Filling the Gap: Is Commonsense Knowledge Generation useful for Natural Language Inference?
 description: >-
-  [ACL 2026][NLP Understanding][NLI] The paper proposes a method where LLMs generate natural language "commonsense axioms" to bridge premises and hypotheses. A "factuality judge" filters unreliable axioms, and high-quality ones are injected back into the NLI prompt. Consequently, Llama-3.1-70B and gpt-oss-120b achieve accuracy gains of 1.99-6.88% on SNLI/
+  [ACL 2026][NLP Understanding][NLI] The paper proposes a method where LLMs generate natural language "commonsense axioms" to bridge premises and hypotheses. A "factuality judge" filters unreliable axioms, and high-quality ones are injected back into the NLI prompt. Consequently, Llama-3.1-70B and gpt-oss-120b achieve accuracy gains of 1.99-6.88% on SNLI/ANLI and significantly mitigate the "Neutral" safety bias.
 tags:
-  - ACL 2026
-  - NLP Understanding
-  - NLI
-  - Commonsense Axiom
-  - SNLI
-  - ANLI
+  - "ACL 2026"
+  - "NLP Understanding"
+  - "NLI"
+  - "Commonsense Axiom"
+  - "SNLI"
+  - "ANLI"
+  - "Selective Knowledge Injection"
 date: 2026-05-08
-content_hash: 0490d3366722d9b6
+content_hash: 5846b233e3342653
 ---
+
 # Filling the Gap: Is Commonsense Knowledge Generation useful for Natural Language Inference?
 
 **Conference**: ACL 2026  

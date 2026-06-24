@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Selective Contrastive Learning For Gloss Free Sign Language Translation
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper discovers that random in-batch negative samples in sign language translation often serve as unreliable or semantically conflicting supervision signals. Consequently, it utilizes similarity trajectories from a reference model to filter more informative negative samples and improves gloss-free sign language tr
+  [ACL2026][Multilingual & Machine Translation][Gloss-Free Sign Language Translation] This paper discovers that random in-batch negative samples in sign language translation often serve as unreliable or semantically conflicting supervision signals. Consequently, it utilizes similarity trajectories from a reference model to filter more informative negative samples and improves gloss-free sign language translation quality through a curriculum-based contrastive learning approach f…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Gloss-Free Sign Language Translation"
+  - "Selective Contrastive Learning"
+  - "Negative Sample Selection"
+  - "Curriculum Learning"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: 06ef1753f310513b
+content_hash: 6cc8167d7c5c973d
 ---
+
 # Selective Contrastive Learning For Gloss Free Sign Language Translation
 
 **Conference**: ACL2026  
@@ -155,7 +161,7 @@ The gain of SCL-SLT is most significant on CSL-Daily, where BLEU-4 reaches 23.25
 - [\[ACL 2026\] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning](clewr_curriculum_learning_with_restarts_for_machine_translation_preference_learn.md)
 - [\[ACL 2026\] NeoAMT: Neologism-Aware Agentic Machine Translation with Reinforcement Learning](neoamt_neologism-aware_agentic_machine_translation_with_reinforcement_learning.md)
 - [\[ACL 2026\] Structure-Guided Entity Resolution: Fine-Tuning LLMs for Robust Name Matching in Complex Linguistic Contexts](structure-guided_entity_resolution_fine-tuning_llms_for_robust_name_matching_in_.md)
-- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
+- [\[ACL 2026\] Reinforcement Learning with Semantic Rewards Enables Low-Resource Language Expansion without Alignment Tax](reinforcement_learning_with_semantic_rewards_enables_low-resource_language_expan.md)
 
 </div>
 

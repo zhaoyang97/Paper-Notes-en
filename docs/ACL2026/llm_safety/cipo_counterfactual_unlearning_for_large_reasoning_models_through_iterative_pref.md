@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization
 description: >-
-  [ACL 2026][LLM Safety][Chain-of-Thought] Addressing the unlearning challenge in Large Reasoning Models (LRMs)—the need to simultaneously remove sensitive knowledge from both Chain-of-Thought (CoT) and final answers—the CiPO framework is proposed. By enabling models to generate logically valid counterfactual reasoning trajectories and guiding model preferences
+  [ACL 2026][LLM Safety][Reasoning Model Unlearning] Addressing the unlearning challenge in Large Reasoning Models (LRMs)—the need to simultaneously remove sensitive knowledge from both Chain-of-Thought (CoT) and final answers—the CiPO framework is proposed. By enabling models to generate logically valid counterfactual reasoning trajectories and guiding model preferences towards these paths via iterative preference optimization, it achieves effective unlearning while maintainin…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Chain-of-Thought
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Reasoning Model Unlearning"
+  - "Counterfactual Reasoning"
+  - "Preference Optimization"
+  - "Chain of Thought"
+  - "Privacy Protection"
 date: 2026-05-08
-content_hash: 9afc2b27cce0662d
+content_hash: df428900d8a9594a
 ---
+
 # CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization
 
 **Conference**: ACL 2026  
@@ -126,15 +131,15 @@ The training objective is a DPO-style preference optimization loss, coupled with
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](../../ICLR2026/llm_safety/adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
 - [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
+- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](../../ICLR2026/llm_safety/explainable_llm_unlearning_through_reasoning.md)
 - [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
 - [\[ACL 2026\] Reasoning Structure Matters for Safety Alignment of Reasoning Models](reasoning_structure_matters_for_safety_alignment_of_reasoning_models.md)
-- [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
-- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](../../ICLR2026/llm_safety/adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
 
 </div>
 

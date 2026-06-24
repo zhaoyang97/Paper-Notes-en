@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks
 description: >-
-  [AAAI 2026][Medical Imaging][LLM selection] This paper proposes Sequential Bandits, an online learning method based on neural contextual multi-armed bandits…
+  [AAAI 2026][Medical Imaging][LLM selection] This paper proposes Sequential Bandits, an online learning method based on neural contextual multi-armed bandits, for selecting the optimal LLM for each subtask in a task pipeline (e.g., "summarization → diagnosis"). The method jointly optimizes accuracy and cost, and outperforms existing bandit baselines on two pipeline task benchmarks: medical diagnosis prediction and telecommunications QA.
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -13,7 +13,7 @@ tags:
   - "medical diagnosis prediction"
   - "cost-awareness"
 date: 2026-05-08
-content_hash: 222ed1d6a1517102
+content_hash: a946248526569cb4
 ---
 
 # Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks
@@ -156,10 +156,10 @@ $$u_{i,j} = f_{i,j}(p_i, d_j) + \left\|\frac{\mathbf{g}_{i,j}(\mathbf{x}_t(a_{i,
 ## Related Papers
 
 - [\[AAAI 2026\] SPA: Achieving Consensus in LLM Alignment via Self-Priority Optimization](spa_achieving_consensus_in_llm_alignment_via_self-priority_optimization.md)
+- [\[ICLR 2026\] The Mind's Transformer: Computational Neuroanatomy of LLM-Brain Alignment](../../ICLR2026/medical_imaging/the_minds_transformer_computational_neuroanatomy_of_llm-brain_alignment.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](../../ICLR2026/medical_imaging/stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[ICLR 2026\] LaVCa: LLM-assisted Visual Cortex Captioning](../../ICLR2026/medical_imaging/lavca_llm-assisted_visual_cortex_captioning.md)
 - [\[AAAI 2026\] Intervention Efficiency and Perturbation Validation Framework: Capacity-Aware and Robust Clinical Model Selection under the Rashomon Effect](intervention_efficiency_and_perturbation_validation_framework_capacity-aware_and.md)
-- [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
-- [\[ICLR 2026\] Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification](../../ICLR2026/medical_imaging/inference-time_dynamic_modality_selection_for_incomplete_multimodal_classificati.md)
 
 </div>
 

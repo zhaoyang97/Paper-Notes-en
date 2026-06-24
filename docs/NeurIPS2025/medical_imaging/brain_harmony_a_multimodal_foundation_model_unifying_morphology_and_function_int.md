@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens
 description: >-
-  [NeurIPS 2025][Medical Imaging][brain imaging foundation model] The first multimodal brain foundation model that unifies structural morphology (T1 sMRI) and functional dynamics (fMRI)…
+  [NeurIPS 2025][Medical Imaging][brain imaging foundation model] The first multimodal brain foundation model that unifies structural morphology (T1 sMRI) and functional dynamics (fMRI), compressing high-dimensional neuroimaging data into compact 1D token representations via Geometric Harmonics Pre-alignment and Temporally Adaptive Patch Embedding (TAPE). The model consistently outperforms prior methods on neurodevelopmental/neurodegenerative disease diagnosis and cognitive pre…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "sMRI"
   - "1D token"
 date: 2026-05-08
-content_hash: 3254f7dfd5b303b6
+content_hash: 67fc2b1831981a95
 ---
 
 # Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens
@@ -154,10 +154,10 @@ $$\mathcal{L}_{\text{fusion}} = \|\mathcal{D}_S(\tilde{\mathbf{H}}) - \mathbf{Z}
 ## Related Papers
 
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
-- [\[ICLR 2026\] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model](../../ICLR2026/medical_imaging/brain-semantoks_learning_semantic_tokens_of_brain_dynamics_with_a_self-distilled.md)
 - [\[NeurIPS 2025\] NeurIPT: Foundation Model for Neural Interfaces](neuript_foundation_model_for_neural_interfaces.md)
 - [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[NeurIPS 2025\] QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training](qoq-med_building_multimodal_clinical_foundation_models_with_domain-aware_grpo_tr.md)
+- [\[ICLR 2026\] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders](../../ICLR2026/medical_imaging/a_brain_graph_foundation_model_pre-training_and_prompt-tuning_across_broad_atlas.md)
+- [\[NeurIPS 2025\] Multimodal Bayesian Network for Robust Assessment of Casualties in Autonomous Triage](multimodal_bayesian_network_for_robust_assessment_of_casualties_in_autonomous_tr.md)
 
 </div>
 

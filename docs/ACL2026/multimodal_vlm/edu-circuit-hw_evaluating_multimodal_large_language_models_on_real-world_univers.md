@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions
 description: >-
-  [ACL 2026][Multimodal VLM][auto-grading] The authors release the EDU-CIRCUIT-HW dataset containing 1,334 real-world handwritten university circuit homework samples and propose an "upstream recognition + downstream grading" dual-layer evaluation protocol. They find that even the strongest MLLMs (GPT-5.1 / Gemini-3-Preview) have recognition errors in 37–85% of
+  [ACL 2026 Findings][Multimodal VLM][STEM Handwritten Understanding] The authors release the EDU-CIRCUIT-HW dataset containing 1,334 real-world handwritten university circuit homework samples and propose an "upstream recognition + downstream grading" dual-layer evaluation protocol. They find that even the strongest MLLMs (GPT-5.1 / Gemini-3-Preview) have recognition errors in 37–85% of samples, but only 7–20% propagate to grading. A regrading module using LLM-judge error patte…
 tags:
-  - ACL 2026
-  - Multimodal VLM
-  - auto-grading
-  - human-in-the-loop
+  - "ACL 2026 Findings"
+  - "Multimodal VLM"
+  - "STEM Handwritten Understanding"
+  - "MLLM Evaluation"
+  - "auto-grading"
+  - "recognition error propagation"
+  - "human-in-the-loop"
 date: 2026-05-08
-content_hash: c0d9cdb8abf7e0cc
+content_hash: b249fcf671f1c0f1
 ---
+
 # EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions
 
 **Conference**: ACL 2026 Findings  
@@ -157,11 +161,11 @@ Key points: With ≤ 5% human backup, Point agreement improved from ~70% to 76%,
 
 ## Related Papers
 
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](../../ICLR2026/multimodal_vlm/worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
 - [\[ACL 2026\] GuideDog: A Real-World Egocentric Multimodal Dataset for Blind and Low-Vision Accessibility-Aware Guidance](guidedog_a_real-world_egocentric_multimodal_dataset_for_blind_and_low-vision_acc.md)
 - [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
-- [\[NeurIPS 2025\] Adapting Vision-Language Models for Evaluating World Models](../../NeurIPS2025/multimodal_vlm/adapting_visionlanguage_models_for_evaluating_world_models.md)
+- [\[ACL 2026\] Jailbreaking Multimodal Large Language Models using Multi-Clip Video](jailbreaking_multimodal_large_language_models_using_multi-clip_video.md)
 - [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](../../ICML2026/multimodal_vlm/timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
-- [\[CVPR 2026\] MMSD3.0: A Multi-Image Benchmark for Real-World Multimodal Sarcasm Detection](../../CVPR2026/multimodal_vlm/mmsd30_a_multi-image_benchmark_for_real-world_multimodal_sarcasm_detection.md)
 
 </div>
 

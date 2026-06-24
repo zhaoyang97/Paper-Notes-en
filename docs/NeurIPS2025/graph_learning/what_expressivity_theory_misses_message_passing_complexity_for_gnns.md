@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] What Expressivity Theory Misses: Message Passing Complexity for GNNs
 description: >-
-  [NeurIPS 2025][Graph Learning][message passing complexity] This paper critiques the binary expressivity theory of GNNs for its inability to explain practical performance differences, and proposes MPC—a continuous…
+  [NeurIPS 2025 Spotlight][Graph Learning][message passing complexity] This paper critiques the binary expressivity theory of GNNs for its inability to explain practical performance differences, and proposes MPC—a continuous, task-specific complexity measure grounded in probabilistic lossyWL—achieving a Spearman correlation of -1 with accuracy (versus ρ = 0 for classical WLC), and successfully explaining why GCN with virtual nodes outperforms higher-expressivity higher-order mo…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Graph Learning"
   - "message passing complexity"
   - "lossyWL"
@@ -12,7 +12,7 @@ tags:
   - "over-squashing"
   - "continuous metric"
 date: 2026-05-08
-content_hash: 3b3e2294b4e49bff
+content_hash: 67e277de2fac3ed7
 ---
 
 # What Expressivity Theory Misses: Message Passing Complexity for GNNs
@@ -133,11 +133,11 @@ lossyWL is a probabilistic variant of standard WL in which each message $m_{u \t
 
 ## Related Papers
 
+- [\[ICML 2025\] Beyond Message Passing: Neural Graph Pattern Machine](../../ICML2025/graph_learning/beyond_message_passing_neural_graph_pattern_machine.md)
+- [\[ICML 2025\] Open Your Eyes: Vision Enhances Message Passing Neural Networks in Link Prediction](../../ICML2025/graph_learning/open_your_eyes_vision_enhances_message_passing_neural_networks_in_link_predictio.md)
 - [\[AAAI 2026\] Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs](../../AAAI2026/graph_learning/are_graph_transformers_necessary_efficient_long-range_messag.md)
-- [\[NeurIPS 2025\] Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs](mixture_of_scope_experts_at_test_generalizing_deeper_graph_neural_networks_with_.md)
-- [\[NeurIPS 2025\] Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective](making_classic_gnns_strong_baselines_across_varying_homophily_a_smoothness-gener.md)
-- [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
-- [\[NeurIPS 2025\] Graph Persistence goes Spectral](graph_persistence_goes_spectral.md)
+- [\[ICML 2025\] GlycanAA: Modeling All-Atom Glycan Structures via Hierarchical Message Passing and Multi-Scale Pre-training](../../ICML2025/graph_learning/modeling_all-atom_glycan_structures_via_hierarchical_message_passing_and_multi-s.md)
+- [\[ICLR 2026\] Graph Representational Learning: When Does More Expressivity Hurt Generalization?](../../ICLR2026/graph_learning/graph_representational_learning_when_does_more_expressivity_hurt_generalization.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference
 description: >-
-  [NeurIPS 2025][Optimization][Entity Alignment] This paper proposes NeuSymEA, a neuro-symbolic reasoning framework based on a variational EM algorithm that unifies symbolic rule reasoning and neural network embeddings wit…
+  [NeurIPS 2025][Optimization][Entity Alignment] This paper proposes NeuSymEA, a neuro-symbolic reasoning framework based on a variational EM algorithm that unifies symbolic rule reasoning and neural network embeddings within a Markov Random Field for entity alignment, achieving significant performance gains and low-resource robustness on DBP15K.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Graph"
   - "Markov Random Field"
 date: 2026-05-08
-content_hash: f1f094977a1b19d3
+content_hash: 24672475002e5da5
 ---
 
 # NeuSymEA: Neuro-symbolic Entity Alignment via Variational Inference
@@ -129,7 +129,7 @@ With only 1% seed alignments, NeuSymEA-L achieves a Hit@1 of 0.632, substantiall
 - [\[NeurIPS 2025\] VIKING: Deep Variational Inference with Stochastic Projections](viking_deep_variational_inference_with_stochastic_projections.md)
 - [\[NeurIPS 2025\] VERA: Variational Inference Framework for Jailbreaking Large Language Models](vera_variational_inference_framework_for_jailbreaking_large_language_models.md)
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
-- [\[NeurIPS 2025\] Doubly Robust Alignment for Large Language Models](doubly_robust_alignment_for_large_language_models.md)
+- [\[ICML 2025\] Revisiting Unbiased Implicit Variational Inference](../../ICML2025/optimization/revisiting_unbiased_implicit_variational_inference.md)
 
 </div>
 

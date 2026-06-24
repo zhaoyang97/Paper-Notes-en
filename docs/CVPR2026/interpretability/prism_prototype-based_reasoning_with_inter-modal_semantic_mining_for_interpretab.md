@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition
 description: >-
-  [CVPR 2026][Interpretability][CLIP] PRISM augments traditional vision-only prototype networks (ProtoPNet series) with linguistic supervision. It utilizes CLIP and the Information Bottleneck principle to generate "text-conditioned attribution maps" as soft labels, implicitly anchoring visual prototypes to semantically meaningful image regions. By incorpor
+  [CVPR 2026][Interpretability][Prototype Networks] PRISM augments traditional vision-only prototype networks (ProtoPNet series) with linguistic supervision. It utilizes CLIP and the Information Bottleneck principle to generate "text-conditioned attribution maps" as soft labels, implicitly anchoring visual prototypes to semantically meaningful image regions. By incorporating an entropy-based spatial compactness constraint to ensure non-overlapping prototypes…
 tags:
-  - CVPR 2026
-  - Interpretability
-  - CLIP
+  - "CVPR 2026"
+  - "Interpretability"
+  - "Prototype Networks"
+  - "Interpretable Image Recognition"
+  - "Information Bottleneck"
+  - "CLIP"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: bdc323e4f4b6fb9e
+content_hash: b2f2569d9ef13db5
 ---
+
 # PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition
 
 **Conference**: CVPR 2026  
@@ -138,10 +143,10 @@ The paper uses Consistency (CON.) and Stability (STA.) scores from EvalProtoPNet
 
 ## Related Papers
 
-- [\[CVPR 2026\] Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency](learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess.md)
-- [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
 - [\[CVPR 2026\] Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared](missing_no_more_dictionary-guided_cross-modal_image_fusion_under_missing_infrare.md)
-- [\[CVPR 2026\] On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)
+- [\[ICML 2026\] Prototype Transformer: Towards Language Model Architectures Interpretable by Design](../../ICML2026/interpretability/prototype_transformer_towards_language_model_architectures_interpretable_by_desi.md)
+- [\[CVPR 2025\] Interpretable Image Classification via Non-parametric Part Prototype Learning](../../CVPR2025/interpretability/interpretable_image_classification_via_non-parametric_part_prototype_learning.md)
+- [\[CVPR 2026\] Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)
 - [\[CVPR 2026\] HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation](humorchain_theory-guided_multi-stage_reasoning_for_interpretable_multimodal_humo.md)
 
 </div>

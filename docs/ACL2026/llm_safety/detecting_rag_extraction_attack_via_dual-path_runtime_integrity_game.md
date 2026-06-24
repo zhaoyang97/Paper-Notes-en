@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] CanaryRAG is proposed as a runtime defense mechanism for RAG systems inspired by stack canaries in software security. By injecting non-semantic canary tokens into retrieved chunks and designing a dual-path integrity game (the target path should not leak the canary while the Oracle path should elicit it), the system det
+  [ACL 2026][LLM Safety][RAG Security] CanaryRAG is proposed as a runtime defense mechanism for RAG systems inspired by stack canaries in software security. By injecting non-semantic canary tokens into retrieved chunks and designing a dual-path integrity game (the target path should not leak the canary while the Oracle path should elicit it), the system detects knowledge base extraction attacks in real-time without compromising task performance or inference latency.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "RAG Security"
+  - "Knowledge Base Leakage"
+  - "Canary Detection"
+  - "Runtime Defense"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 169b9849a51d83a0
+content_hash: 171914cc11a621c4
 ---
+
 # Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game
 
 **Conference**: ACL 2026  
@@ -128,10 +134,10 @@ Assume an enterprise knowledge base contains a private clause, and the retrieved
 
 ## Related Papers
 
+- [\[ICLR 2026\] Silent Leaks: Implicit Knowledge Extraction Attack on RAG Systems through Benign Queries](../../ICLR2026/llm_safety/silent_leaks_implicit_knowledge_extraction_attack_on_rag_systems.md)
+- [\[ICLR 2026\] Pisces: Cryptography-based Private Retrieval-Augmented Generation with Dual-Path Retrieval](../../ICLR2026/llm_safety/pisces_cryptography-based_private_retrieval-augmented_generation_with_dual-path_.md)
 - [\[ACL 2026\] DualGuard: Dual-stream Large Language Model Watermarking Defense against Paraphrase and Spoofing Attack](dualguard_dual-stream_large_language_model_watermarking_defense_against_paraphra.md)
 - [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
-- [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
-- [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
 - [\[ACL 2026\] Gap-K%: Measuring Top-1 Prediction Gap for Detecting Pretraining Data](gap-k_measuring_top-1_prediction_gap_for_detecting_pretraining_data.md)
 
 </div>

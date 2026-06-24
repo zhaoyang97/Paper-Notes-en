@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zero-Shot 3D Question Answering via Hierarchical View-to-Token Transportation
 description: >-
-  [ICML 2026][3D Vision][Token Compression] KeyVT decomposes the process of feeding multi-view images sampled from 3D point clouds into 2D VLMs for 3D QA into a two-level hierarchical workflow: "key view selection" followed by "key token selection." At the view level, it uses camera geometry to partition the scene into spatially continuous sub-scenes and allocat
+  [ICML2026][3D Vision][3D QA] KeyVT decomposes the process of feeding multi-view images sampled from 3D point clouds into 2D VLMs for 3D QA into a two-level hierarchical workflow: "key view selection" followed by "key token selection." At the view level, it uses camera geometry to partition the scene into spatially continuous sub-scenes and allocates token budgets based on relevance. At the token level, it employs Optimal Transport (OT) to eliminate cross-view redundancy. This…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - Token Compression
+  - "ICML2026"
+  - "3D Vision"
+  - "3D QA"
+  - "Zero-shot"
+  - "Key view selection"
+  - "Optimal Transport"
+  - "Token compression"
 date: 2026-05-08
-content_hash: 6e67653ed57f5256
+content_hash: edfd3e9cbf14da20
 ---
+
 # Zero-Shot 3D Question Answering via Hierarchical View-to-Token Transportation
 
 **Conference**: ICML2026  
@@ -143,11 +148,11 @@ A separate view-selection-only comparison (Table 3) shows KeyV (37.7) outperform
 
 ## Related Papers
 
-- [\[ICML 2026\] HOI-PAGE: Zero-Shot Human-Object Interaction Generation with Part Affordance Guidance](hoi-page_zero-shot_human-object_interaction_generation_with_part_affordance_guid.md)
+- [\[CVPR 2025\] DSPNet: Dual-vision Scene Perception for Robust 3D Question Answering](../../CVPR2025/3d_vision/dspnet_dual-vision_scene_perception_for_robust_3d_question_answering.md)
+- [\[CVPR 2026\] Zero-Shot Depth Completion with Vision-Language Model](../../CVPR2026/3d_vision/zero-shot_depth_completion_with_vision-language_model.md)
+- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](../../CVPR2026/3d_vision/las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
+- [\[ICLR 2026\] pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning](../../ICLR2026/3d_vision/pyspatial_generating_3d_visual_programs_for_zero-shot_spatial_reasoning.md)
 - [\[ICML 2026\] DynaTok: Token-Based 4D Reconstruction from Partial Point Clouds](dynatok_token-based_4d_reconstruction_from_partial_point_clouds.md)
-- [\[ICML 2026\] RelaxFlow: Text-Driven Amodal 3D Generation](relaxflow_text-driven_amodal_3d_generation.md)
-- [\[ICML 2026\] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction](trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t.md)
-- [\[ICML 2026\] EPS3D: End-to-End Feed-Forward 3D Panoptic Segmentation](eps3d_end-to-end_feed-forward_3d_panoptic_segmentation.md)
 
 </div>
 

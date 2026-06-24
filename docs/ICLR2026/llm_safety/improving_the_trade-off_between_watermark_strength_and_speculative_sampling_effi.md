@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes its Pareto trade-off curve with speculative sampling efficiency. It further achieves simultaneous maximum watermark strength and optimal sampling efficiency by pseudo-randomizing the acceptance decisions.
+  [ICLR 2026][LLM Safety][LLM Watermarking] This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes its Pareto trade-off curve with speculative sampling efficiency. It further achieves simultaneous maximum watermark strength and optimal sampling efficiency by pseudo-randomizing the acceptance decisions.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Watermarking"
+  - "Speculative Sampling"
+  - "Watermark Strength"
+  - "Sampling Efficiency"
+  - "Pareto Frontier"
+  - "Pseudo-random Acceptance"
 date: 2026-05-08
-content_hash: 4dcc7a3b28c964bc
+content_hash: d473205f4c2b415c
 ---
+
 # Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models
 
 **Conference**: ICLR 2026  
@@ -120,10 +127,10 @@ Experiments verify that Gumbel-max and SynthID (m=∞) reach the same maximum wa
 ## Related Papers
 
 - [\[ICLR 2026\] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](managerbench_evaluating_the_safety-pragmatism_trade-off_in_autonomous_llms.md)
-- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[ACL 2025\] From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models](../../ACL2025/llm_safety/from_tradeoff_to_synergy_a_versatile.md)
-- [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](codegenguard_a_watermark_for_code_generation_models.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
 - [\[ACL 2026\] LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment](../../ACL2026/llm_safety/llm-va_resolving_the_jailbreak-overrefusal_trade-off_via_vector_alignment.md)
+- [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](codegenguard_a_watermark_for_code_generation_models.md)
 
 </div>
 

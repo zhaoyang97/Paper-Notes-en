@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models
 description: >-
-  [NeurIPS 2025][Time Series] This paper proposes PD-SSM, a structured sparse parameterization for the state transition matrix of state-space models (SSMs). The core idea is to factorize the transition matrix as a product…
+  [NeurIPS 2025 Spotlight][Time Series] This paper proposes PD-SSM, a structured sparse parameterization for the state transition matrix of state-space models (SSMs). The core idea is to factorize the transition matrix as a product of a column-wise one-hot matrix P and a complex diagonal matrix D (i.e., $A = PD$), achieving expressiveness equivalent to unstructured (dense) SSMs while retaining computational efficiency comparable to diagonal SSMs at $\Theta(LN)$. A single layer…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Time Series"
 date: 2026-05-08
-content_hash: 104b59f2e448da16
+content_hash: 83d357ce5d1365d0
 ---
 
 # Structured Sparse Transition Matrices to Enable State Tracking in State-Space Models
@@ -133,11 +133,11 @@ Since the gradient of hardmax is almost everywhere zero, a straight-through esti
 
 ## Related Papers
 
+- [\[ICLR 2026\] Learning Linear State-Space Models with Sparse System Matrices](../../ICLR2026/time_series/learning_linear_state-space_models_with_sparse_system_matrices.md)
+- [\[ICLR 2026\] ConvT3: Structured State Kernels for Convolutional State Space Models](../../ICLR2026/time_series/convt3_structured_state_kernels_for_convolutional_state_space_models.md)
 - [\[NeurIPS 2025\] RiverMamba: A State Space Model for Global River Discharge and Flood Forecasting](rivermamba_a_state_space_model_for_global_river_discharge_and_flood_forecasting.md)
-- [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
-- [\[NeurIPS 2025\] Less is More: Unlocking Specialization of Time Series Foundation Models via Structured Pruning](less_is_more_unlocking_specialization_of_time_series_foundation_models_via_struc.md)
-- [\[ICML 2026\] HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models](../../ICML2026/time_series/hippo_zoo_explicit_memory_mechanisms_for_interpretable_state_space_models.md)
 - [\[NeurIPS 2025\] MAESTRO: Adaptive Sparse Attention and Robust Learning for Multimodal Dynamic Time Series](maestro_adaptive_sparse_attention_and_robust_learning_for_multimodal_dynamic_tim.md)
+- [\[NeurIPS 2025\] Parallelization of Non-linear State-Space Models: Scaling Up Liquid-Resistance Liquid-Capacitance Networks for Efficient Sequence Modeling](parallelization_of_non-linear_state-space_models_scaling_up_liquid-resistance_li.md)
 
 </div>
 

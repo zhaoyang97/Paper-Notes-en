@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes the Global Temporal Retriever (GTR), a lightweight plug-and-play module. By maintaining adaptive global periodic embeddings and retrieving aligned global periodic information using absolute time indices, it enables any forecasting model to bypass look-back window limitations and effectively capture global
+  [ICLR 2026][Model Compression][Time Series Forecasting] Ours proposes the Global Temporal Retriever (GTR), a lightweight plug-and-play module. By maintaining adaptive global periodic embeddings and retrieving aligned global periodic information using absolute time indices, it enables any forecasting model to bypass look-back window limitations and effectively capture global periodic patterns far exceeding the input length.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Time Series Forecasting"
+  - "Global Periodicity"
+  - "Retrieval Augmentation"
+  - "Plug-and-play Module"
+  - "2D Convolution"
 date: 2026-05-08
-content_hash: 22d1124680e93a59
+content_hash: 6d622c16ee18793f
 ---
+
 # Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval
 
 **Conference**: ICLR 2026  
@@ -150,8 +156,8 @@ As a plug-and-play module, GTR consistently brings improvements across different
 
 ## Related Papers
 
-- [\[ICML 2025\] LightGTS: A Lightweight General Time Series Forecasting Model](../../ICML2025/model_compression/lightgts_a_lightweight_general_time_series_forecasting_model.md)
 - [\[AAAI 2026\] XLinear: A Lightweight and Accurate MLP-Based Model for Long-Term Time Series Forecasting with Exogenous Inputs](../../AAAI2026/model_compression/xlinear_a_lightweight_and_accurate_mlp-based_model_for_long-term_time_series_for.md)
+- [\[ICML 2025\] LightGTS: A Lightweight General Time Series Forecasting Model](../../ICML2025/model_compression/lightgts_a_lightweight_general_time_series_forecasting_model.md)
 - [\[ICLR 2026\] Lookup multivariate Kolmogorov-Arnold Networks](lookup_multivariate_kolmogorov-arnold_networks.md)
 - [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
 - [\[ICLR 2026\] Large Language Model Compression with Global Rank and Sparsity Optimization](large_language_model_compression_with_global_rank_and_sparsity_optimization.md)

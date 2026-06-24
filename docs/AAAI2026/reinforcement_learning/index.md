@@ -82,7 +82,7 @@ item_total: 58
 
 **🤖 AAAI2026** · **58** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (23)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (400)](../../ICLR2026/reinforcement_learning/index.md) · [💬 ACL2026 (46)](../../ACL2026/reinforcement_learning/index.md) · [🧪 ICML2026 (110)](../../ICML2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (25)](../../CVPR2026/reinforcement_learning/index.md) · [🔬 ICLR2026 (400)](../../ICLR2026/reinforcement_learning/index.md) · [💬 ACL2026 (46)](../../ACL2026/reinforcement_learning/index.md) · [🧪 ICML2026 (110)](../../ICML2026/reinforcement_learning/index.md) · [🧠 NeurIPS2025 (143)](../../NeurIPS2025/reinforcement_learning/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/reinforcement_learning/index.md)
 
 🔥 **Top topics:** Reinforcement Learning ×16 · Agents ×9 · Reasoning ×8 · LLM ×4 · Adversarial Robustness ×4
 

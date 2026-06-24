@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Finding Distributed Object-Centric Properties in Self-Supervised Transformers
 description: >-
-  [CVPR 2026][Self-Supervised Learning][DINO] The paper provides a systematic analysis of "where object information is hidden" within self-supervised ViTs like DINO. It finds that such information is distributed across all layers and encoded simultaneously in Query, Key, and Value patch similarities (rather than only in the last layer's [CLS] or key features). Bas
+  [CVPR 2026][Multimodal VLM][Self-Supervised ViT] The paper provides a systematic analysis of "where object information is hidden" within self-supervised ViTs like DINO. It finds that such information is distributed across all layers and encoded simultaneously in Query, Key, and Value patch similarities (rather than only in the last layer's [CLS] or key features). Based on this, the authors propose a training-free method, **Object-DINO**, which identifies "object heads" via cr…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - DINO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Self-Supervised ViT"
+  - "DINO"
+  - "Attention Head Analysis"
+  - "Unsupervised Object Discovery"
+  - "MLLM Hallucination Mitigation"
 date: 2026-05-08
-content_hash: 86234469a0119907
+content_hash: 912c47576206b5af
 ---
+
 # Finding Distributed Object-Centric Properties in Self-Supervised Transformers
 
 **Conference**: CVPR 2026  
@@ -160,11 +165,11 @@ Dual-branch decoding achieves top Precision and F1 across three MLLMs:
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)
-- [\[ICML 2025\] ReSA: Clustering Properties of Self-Supervised Learning](../../ICML2025/self_supervised/clustering_properties_of_self-supervised_learning.md)
-- [\[CVPR 2026\] Vision Transformers Need More Than Registers](vision_transformers_need_more_than_registers.md)
-- [\[CVPR 2026\] Progressive Mask Distillation for Self-supervised Video Representation](progressive_mask_distillation_for_self-supervised_video_representation.md)
-- [\[CVPR 2026\] A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)
+- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
+- [\[ICML 2026\] SOLAR: Self-supervised Joint Learning for Symmetric Multimodal Retrieval](../../ICML2026/multimodal_vlm/solar_self-supervised_joint_learning_for_symmetric_multimodal_retrieval.md)
+- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
+- [\[CVPR 2025\] Self-Supervised Spatial Correspondence Across Modalities](../../CVPR2025/multimodal_vlm/self-supervised_spatial_correspondence_across_modalities.md)
+- [\[CVPR 2026\] Visual Grounding for Object Questions](visual_grounding_for_object_questions.md)
 
 </div>
 

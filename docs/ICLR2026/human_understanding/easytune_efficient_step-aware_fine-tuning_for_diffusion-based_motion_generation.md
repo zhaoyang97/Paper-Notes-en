@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation
 description: >-
-  [ICLR 2026][Human Understanding][Paper Note] EasyTune transforms the fine-tuning paradigm for diffusion models from "calculating reward gradients after the full denoising trajectory" to **independently optimizing at each denoising step**. This breaks the recursive gradient dependency between steps, reducing VRAM usage from $O(T)$ to $O(1)$ and enabling denser opt
+  [ICLR2026][Human Understanding][Text-to-motion generation] EasyTune transforms the fine-tuning paradigm for diffusion models from "calculating reward gradients after the full denoising trajectory" to **independently optimizing at each denoising step**. This breaks the recursive gradient dependency between steps, reducing VRAM usage from $O(T)$ to $O(1)$ and enabling denser optimization. Combined with a Self-refined Preference Learning (SPL) module that converts retrieval mode…
 tags:
-  - ICLR 2026
-  - Human Understanding
+  - "ICLR2026"
+  - "Human Understanding"
+  - "Text-to-motion generation"
+  - "differentiable rewards"
+  - "step-aware fine-tuning"
+  - "preference learning"
+  - "memory optimization"
 date: 2026-05-08
-content_hash: d1acd2bccd1b846c
+content_hash: c6adf09a1278bb2e
 ---
+
 # EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation
 
 **Conference**: ICLR2026  

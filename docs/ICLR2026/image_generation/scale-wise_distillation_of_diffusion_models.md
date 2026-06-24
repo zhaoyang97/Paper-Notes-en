@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scale-wise Distillation of Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][MMD] SwD proposes a "distillation by scale" framework that transforms any pretrained diffusion model into a few-step generator. It progressively increases the resolution at each sampling step—running initial steps at low resolution and only reaching full resolution at the end. This reduces single-step computation by half wi
+  [ICLR 2026][Image Generation][Diffusion Distillation] SwD proposes a "distillation by scale" framework that transforms any pretrained diffusion model into a few-step generator. It progressively increases the resolution at each sampling step—running initial steps at low resolution and only reaching full resolution at the end. This reduces single-step computation by half without increasing total steps. Additionally, a patch-level distillation loss based on MMD is introduced…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - MMD
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Diffusion Distillation"
+  - "Scale-progressive Generation"
+  - "few-step sampling"
+  - "MMD"
+  - "T2I/T2V"
 date: 2026-05-08
-content_hash: 1578c5bf8605dd3e
+content_hash: ade1df335ec0b34d
 ---
+
 # Scale-wise Distillation of Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -149,8 +154,8 @@ SwD is **72×** faster than the teacher with higher quality; ~2.3× faster than 
 - [\[ICLR 2026\] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency](large_scale_diffusion_distillation_via_score-regularized_continuous-time_consist.md)
 - [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
 - [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
+- [\[ICLR 2026\] RealUID: Supervising the Distillation of All Matching Models with Real Data (Without GAN)](universal_inverse_distillation_for_matching_models_with_real-data_supervision_no.md)
 - [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
-- [\[CVPR 2026\] Scale Space Diffusion：把尺度空间塞进扩散过程](../../CVPR2026/image_generation/scale_space_diffusion.md)
 
 </div>
 

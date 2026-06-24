@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability
 description: >-
-  [ACL 2026][LLM Safety][Watermarking] STELA uses "linguistic indeterminacy" $\lambda(c_t)$ estimated from POS n-grams as a modulation signal for watermark strength. It weakens the watermark at positions with high syntactic constraints (preserving quality) and strengthens it at syntactically free positions (improving detectability). Similar to KGW, STELA re
+  [ACL 2026][LLM Safety][Watermarking] STELA uses "linguistic indeterminacy" $\lambda(c_t)$ estimated from POS n-grams as a modulation signal for watermark strength. It weakens the watermark at positions with high syntactic constraints (preserving quality) and strengthens it at syntactically free positions (improving detectability). Similar to KGW, STELA remains publicly verifiable using only a POS tagger, without requiring access to model logits.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Watermarking
-  - POS n-gram
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Watermarking"
+  - "POS n-gram"
+  - "Linguistic Indeterminacy"
+  - "Publicly Verifiable"
+  - "Cross-lingual"
 date: 2026-05-08
-content_hash: 2c17aa76807bd84a
+content_hash: d993fdf8e9777a29
 ---
+
 # STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability
 
 **Conference**: ACL 2026  

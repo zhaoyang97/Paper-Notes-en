@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][lifelong imitation learning] A lifelong imitation learning framework is proposed that stores and replays compact representations in the feature space of frozen encoders via Multimodal Latent Replay (MLR). It introduces the Incremental Feature Adjustment (IFA) mechanism with angular distance constraints to maintain inter-task separability, achievin
+  [CVPR 2026][Robotics][lifelong imitation learning] A lifelong imitation learning framework is proposed that stores and replays compact representations in the feature space of frozen encoders via Multimodal Latent Replay (MLR). It introduces the Incremental Feature Adjustment (IFA) mechanism with angular distance constraints to maintain inter-task separability, achieving a 10-17 point AUC improvement and up to 65% reduction in forgetting on the LIBERO benchmark.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - lifelong imitation learning
-  - multimodal latent replay
-  - incremental feature adjustment
-  - catastrophic forgetting
-  - LIBERO
+  - "CVPR 2026"
+  - "Robotics"
+  - "lifelong imitation learning"
+  - "multimodal latent replay"
+  - "incremental feature adjustment"
+  - "catastrophic forgetting"
+  - "LIBERO"
 date: 2026-05-08
-content_hash: 75ef1fc9623397de
+content_hash: 5f522586b1d8057c
 ---
+
 # Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment
 
 **Conference**: CVPR 2026  
@@ -138,11 +139,11 @@ The total objective is $\mathcal{L} = \mathcal{L}_{BC} + \lambda_{IFA} \mathcal{
 
 ## Related Papers
 
+- [\[ICLR 2026\] Lifelong Embodied Navigation Learning](../../ICLR2026/robotics/lifelong_embodied_navigation_learning.md)
 - [\[CVPR 2026\] Arcadia: Toward a Full-Lifecycle Framework for Embodied Lifelong Learning](arcadia_toward_a_full-lifecycle_framework_for_embodied_lifelong_learning.md)
+- [\[CVPR 2026\] NIL: No-data Imitation Learning](nil_no-data_imitation_learning.md)
+- [\[ICCV 2025\] iManip: Skill-Incremental Learning for Robotic Manipulation](../../ICCV2025/robotics/imanip_skill-incremental_learning_for_robotic_manipulation.md)
 - [\[CVPR 2026\] Learning to Act Robustly with View-Invariant Latent Actions](learning_to_act_robustly_with_view-invariant_latent_actions.md)
-- [\[CVPR 2026\] CoMo: Learning Continuous Latent Motion from Internet Videos for Scalable Robot Learning](como_learning_continuous_latent_motion_from_internet_videos_for_scalable_robot_l.md)
-- [\[CVPR 2026\] Learning a Unified Latent Action Space from Videos with Action-centric Cycle Consistency](learning_a_unified_latent_action_space_from_videos_with_action-centric_cycle_con.md)
-- [\[CVPR 2026\] AGiLe: Learning Robust Long-Horizon Manipulation via Affordance-Grounded Bidirectional Latent Planning](agile_learning_robust_long-horizon_manipulation_via_affordance-grounded_bidirect.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors propose the **threat snapshots** framework—isolating the exact moment an LLM vulnerability manifests within an AI agent's execution flow. Using 190,000 crowdsourced adversarial attacks to build the **b3 benchmark**, they rank the backbone security of 34 mainstream LLMs. They unearth counter-intuitive findin
+  [ICLR2026][LLM Safety][agent security] The authors propose the **threat snapshots** framework—isolating the exact moment an LLM vulnerability manifests within an AI agent's execution flow. Using 190,000 crowdsourced adversarial attacks to build the **b3 benchmark**, they rank the backbone security of 34 mainstream LLMs. They unearth counter-intuitive findings, such as "reasoning capabilities enhance security, while model size is unrelated to security."
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR2026"
+  - "LLM Safety"
+  - "agent security"
+  - "backbone LLM"
+  - "threat snapshot"
+  - "adversarial attack"
+  - "security benchmark"
 date: 2026-05-08
-content_hash: 15e6ec008a20a385
+content_hash: 761a4345047fc0b6
 ---
+
 # Breaking Agent Backbones: Evaluating the Security of Backbone LLMs in AI Agents
 
 **Conference**: ICLR2026  

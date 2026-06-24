@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Auto-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][auto-vocabulary segmentation] This paper introduces Auto-Vocabulary Semantic Segmentation (AVS), a new task in which the AutoSeg framework autonomously discovers target categories from images an…
+  [ICCV 2025][Segmentation][auto-vocabulary segmentation] This paper introduces Auto-Vocabulary Semantic Segmentation (AVS), a new task in which the AutoSeg framework autonomously discovers target categories from images and performs segmentation without any human-specified vocabulary. AutoSeg achieves 87.1 mIoU on PASCAL VOC, far surpassing the only comparable method ZeroSeg (20.1), and even outperforming several open-vocabulary methods that require explicit category specificat…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "zero-shot"
   - "LLM evaluator"
 date: 2026-05-08
-content_hash: 08841a9ab9920a36
+content_hash: 1a24e1235022a901
 ---
 
 # Auto-Vocabulary Semantic Segmentation
@@ -148,7 +148,7 @@ Comparison with OVS methods (which receive ground-truth category names as input)
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation](stepping_out_of_similar_semantic_space_for_open-vocabulary_segmentation.md)
 - [\[ICCV 2025\] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation](understanding_personal_concept_in_open-vocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation](corrclip_reconstructing_patch_correlations_in_clip_for_openv.md)
+- [\[CVPR 2025\] Exploring Simple Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/exploring_simple_open-vocabulary_semantic_segmentation.md)
 
 </div>
 

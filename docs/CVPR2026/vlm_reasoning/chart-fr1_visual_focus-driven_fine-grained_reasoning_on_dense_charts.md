@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts
 description: >-
-  [CVPR 2026][Multimodal VLM][Reinforcement Learning] Targeting "High Information Density (HID) charts" with dense subplots and numerous legend annotations, Chart-FR1 explicitly anchors reasoning steps to OCR text and local bounding boxes using a `<focus>` tag (Focus-CoT). By employing Focus-GRPO with "Information Efficiency Reward + Adaptive KL Penalty" for reinforcement
+  [CVPR 2026][VLM Reasoning][Chart Reasoning] Targeting "High Information Density (HID) charts" with dense subplots and numerous legend annotations, Chart-FR1 explicitly anchors reasoning steps to OCR text and local bounding boxes using a `<focus>` tag (Focus-CoT). By employing Focus-GRPO with "Information Efficiency Reward + Adaptive KL Penalty" for reinforcement learning, it improves Qwen2.5-VL-7B by an average of 6.1% across five chart benchmarks, surpassing GPT-4o.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Reinforcement Learning
-  - GRPO
-  - Chain-of-Thought
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Chart Reasoning"
+  - "Visual Focus"
+  - "Reinforcement Learning"
+  - "GRPO"
+  - "Chain-of-Thought"
 date: 2026-05-08
-content_hash: 8a28b28c9c0b98d8
+content_hash: 1c8ae7925377bdeb
 ---
+
 # Chart-FR1: Visual Focus-Driven Fine-Grained Reasoning on Dense Charts
 
 **Conference**: CVPR 2026  
@@ -148,11 +151,11 @@ Ablation of two-stage framework and focus clues (Table 6):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SketchVL: Policy Optimization via Fine-Grained Credit Assignment for Chart Understanding and More](sketchvl_policy_optimization_via_fine-grained_credit_assignment_for_chart_unders.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
 - [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
-- [\[CVPR 2026\] OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models](oddgridbench_exposing_the_lack_of_fine-grained_visual_discrepancy_sensitivity_in.md)
-- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
+- [\[CVPR 2026\] Thinking Beyond Labels: Vocabulary-Free Fine-Grained Recognition using Reasoning-Augmented LMMs](thinking_beyond_labels_vocabulary-free_fine-grained_recognition_using_reasoning-.md)
+- [\[CVPR 2026\] HandVQA: Diagnosing and Improving Fine-Grained Spatial Reasoning about Hands in Vision-Language Models](handvqa_diagnosing_and_improving_fine-grained_spatial_reasoning_about_hands_in_v.md)
+- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](../../ICLR2026/vlm_reasoning/visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 
 </div>
 

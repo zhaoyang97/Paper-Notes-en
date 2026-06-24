@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] ViTSP: 用视觉语言模型引导求解大规模旅行商问题
+  [Paper Note] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models
 description: >-
-  [ICLR 2026][Optimization & Theory][Vision-Language Model] ViTSP visualizes large-scale TSP instances as images and feeds them into a pre-trained VLM, allowing the VLM to "see" and box promising small regions as subproblems. These are then iteratively solved by an exact solver (Concorde) to improve the global solution. On real-world TSPLIB instances with 1k–88k nodes, it achie
+  [ICLR 2026][Optimization][Traveling Salesman Problem] ViTSP visualizes large-scale TSP instances as images and feeds them into a pre-trained VLM, allowing the VLM to "see" and box promising small regions as subproblems. These are then iteratively solved by an exact solver (Concorde) to improve the global solution. On real-world TSPLIB instances with 1k–88k nodes, it achieves an average optimality gap of only 0.24%, surpassing LKH-3 and various learning-based solvers without a…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Optimization"
+  - "Traveling Salesman Problem"
+  - "Vision-Language Models"
+  - "Problem Decomposition"
+  - "Exact Solvers"
+  - "Asynchronous Orchestration"
 date: 2026-05-08
-content_hash: 8add59a6718499d4
+content_hash: 45ff2d7d4e2e3038
 ---
+
 # ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -140,11 +145,11 @@ Compared to LKH-3 on an instance-by-instance basis, ViTSP further reduced the ga
 
 ## Related Papers
 
-- [\[ICLR 2026\] The Potential of Second-Order Optimization for LLMs: A Study with Full Gauss-Newton](the_potential_of_second-order_optimization_for_llms_a_study_with_full_gauss-newt.md)
-- [\[ICLR 2026\] High-Probability Bounds for the Last Iterate of Clipped SGD](high-probability_bounds_for_the_last_iterate_of_clipped_sgd.md)
-- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
-- [\[ICLR 2026\] Shuffling the Data, Stretching the Step-Size: Sharper Bias in Constant Step-Size SGD](shuffling_the_data_extrapolating_the_step_sharper_bias_in_constant_step-size_sgd.md)
-- [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)
+- [\[AAAI 2026\] GHOST: Solving the Traveling Salesman Problem on Graphs of Convex Sets](../../AAAI2026/optimization/ghost_solving_the_traveling_salesman_problem_on_graphs_of_convex_sets.md)
+- [\[ICLR 2026\] FZOO: Fast Zeroth-Order Optimizer for Fine-Tuning Large Language Models towards Adam-Scale Speed](fzoo_fast_zeroth-order_optimizer_for_finetuning_large_language_models_towards_ad.md)
+- [\[ICLR 2026\] Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations](solving_the_2-norm_k-hyperplane_clustering_problem_via_multi-norm_formulations.md)
+- [\[ICLR 2026\] Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models](bi-lora_efficient_sharpness-aware_minimization_for_fine-tuning_large-scale_model.md)
+- [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
 
 </div>
 

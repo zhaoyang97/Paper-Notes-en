@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OrdShap: Feature Position Importance for Sequential Black-Box Models
 description: >-
-  [NeurIPS 2025][Interpretability][Shapley Value] This paper proposes OrdShap, a feature attribution method for sequential models that, for the first time…
+  [NeurIPS 2025][Interpretability][Shapley Value] This paper proposes OrdShap, a feature attribution method for sequential models that, for the first time, decouples **Value Importance (VI)** from **Position Importance (PI)** for each feature, providing theoretical guarantees grounded in the Sanchez-Bergantiños game-theoretic value.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -11,7 +11,7 @@ tags:
   - "Sequential Models"
   - "Sanchez-Bergantiños Value"
 date: 2026-05-08
-content_hash: df69a5f8023cbbca
+content_hash: 6edffcab6c76c122
 ---
 
 # OrdShap: Feature Position Importance for Sequential Black-Box Models
@@ -135,8 +135,8 @@ OrdShap is a post-hoc explanation method and does not involve model training. Th
 ## Related Papers
 
 - [\[ACL 2026\] Revitalizing Black-Box Interpretability: Actionable Interpretability for LLMs via Proxy Models](../../ACL2026/interpretability/revitalizing_black-box_interpretability_actionable_interpretability_for_llms_via.md)
+- [\[ICLR 2026\] Flow-Disentangled Feature Importance](../../ICLR2026/interpretability/flow-disentangled_feature_importance.md)
 - [\[NeurIPS 2025\] TangledFeatures: Robust Feature Selection in Highly Correlated Spaces](tangledfeatures_robust_feature_selection_in_highly_correlated_spaces.md)
-- [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
 - [\[NeurIPS 2025\] Base Models Know How to Reason, Thinking Models Learn When](base_models_know_how_to_reason_thinking_models_learn_when.md)
 - [\[NeurIPS 2025\] Table as a Modality for Large Language Models](table_as_a_modality_for_large_language_models.md)
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] CONSIGN: Conformal Segmentation Informed by Spatial Groupings via Decomposition
 description: >-
-  [ICLR 2026][Medical Imaging][Conformal Prediction] CONSIGN utilizes SVD to extract spatially correlated "principal uncertainty directions" from multiple samples of segmentation models, constructing a space-aware conformal prediction set that can vary jointly. This reduces the prediction set volume by several orders of magnitude compared to pixel-wise methods while main
+  [ICLR 2026][Medical Imaging][Conformal Prediction] CONSIGN utilizes SVD to extract spatially correlated "principal uncertainty directions" from multiple samples of segmentation models, constructing a space-aware conformal prediction set that can vary jointly. This reduces the prediction set volume by several orders of magnitude compared to pixel-wise methods while maintaining statistical coverage guarantees.
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Conformal Prediction
-  - Conformal Risk Control
-  - Image Segmentation
-  - Uncertainty Quantification
-  - SVD/PCA
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Conformal Prediction"
+  - "Conformal Risk Control"
+  - "Image Segmentation"
+  - "Uncertainty Quantification"
+  - "SVD/PCA"
 date: 2026-05-08
-content_hash: 31a6b35d789e0c09
+content_hash: f1dd2634890010fd
 ---
+
 # CONSIGN: Conformal Segmentation Informed by Spatial Groupings via Decomposition
 
 **Conference**: ICLR 2026  
@@ -121,11 +122,11 @@ Each $c$ falling within the coefficient box yields a complete, spatially coordin
 
 ## Related Papers
 
-- [\[ICLR 2026\] HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation](hfsti-net_hierarchical_frequency-spatial-temporal_interactions_for_video_polyp_s.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
+- [\[ICLR 2026\] HFSTI-Net: Hierarchical Frequency-spatial-temporal Interactions for Video Polyp Segmentation](hfsti-net_hierarchical_frequency-spatial-temporal_interactions_for_video_polyp_s.md)
+- [\[AAAI 2026\] Provably Minimum-Length Conformal Prediction Sets for Ordinal Classification](../../AAAI2026/medical_imaging/provably_minimum-length_conformal_prediction_sets_for_ordinal_classification.md)
 - [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](../../CVPR2026/medical_imaging/pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 - [\[AAAI 2026\] Unsupervised Motion-Compensated Decomposition for Cardiac MRI Reconstruction via Neural Representation](../../AAAI2026/medical_imaging/unsupervised_motion-compensated_decomposition_for_cardiac_mri_reconstruction_via.md)
-- [\[AAAI 2026\] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation](../../AAAI2026/medical_imaging/decoding_with_structured_awareness_integrating_directional_frequency-spatial_and.md)
 
 </div>
 

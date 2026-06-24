@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Nonparametric Teaching of Attention Learners
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Attention] This paper proposes AtteNT, which reinterprets the training process of attention learners (Transformer/ViT) from the perspective of nonparametric teaching theory. By analytically deriving the importance-adaptive role of attention in parameter gradients, the authors prove that dynamic ANTK converges to the importance-ad
+  [ICLR 2026][Robotics][Nonparametric Teaching] This paper proposes AtteNT, which reinterprets the training process of attention learners (Transformer/ViT) from the perspective of nonparametric teaching theory. By analytically deriving the importance-adaptive role of attention in parameter gradients, the authors prove that dynamic ANTK converges to the importance-adaptive canonical kernel in functional gradients, bridging the gap between parameter and functional spaces. A greed…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Attention
+  - "ICLR 2026"
+  - "Robotics"
+  - "Nonparametric Teaching"
+  - "Attention Mechanism"
+  - "Functional Gradient"
+  - "Training Acceleration"
+  - "Kernel Methods"
 date: 2026-05-08
-content_hash: 62f298f5a6398ca6
+content_hash: d814970343116493
 ---
+
 # Nonparametric Teaching of Attention Learners
 
 **Conference**: ICLR 2026  
@@ -133,9 +138,9 @@ The Soft strategy (Gumbel-Top-k sampling) provides the best balance. Random sele
 
 - [\[NeurIPS 2025\] Knolling Bot: Teaching Robots the Human Notion of Tidiness](../../NeurIPS2025/robotics/knolling_bot_teaching_robots_the_human_notion_of_tidiness.md)
 - [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](../../CVPR2026/robotics/ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
-- [\[ECCV 2024\] AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation](../../ECCV2024/robotics/aff-ttention_affordances_and_attention_models_for_short-term_object_interaction_.md)
 - [\[AAAI 2026\] TTF-VLA: Temporal Token Fusion via Pixel-Attention Integration for Vision-Language-Action Models](../../AAAI2026/robotics/ttf-vla_temporal_token_fusion_via_pixel-attention_integratio.md)
 - [\[NeurIPS 2025\] Beyond Parallelism: Synergistic Computational Graph Effects in Multi-Head Attention](../../NeurIPS2025/robotics/beyond_parallelism_synergistic_computational_graph_effects_in_multi-head_attenti.md)
+- [\[ECCV 2024\] AFF-ttention! Affordances and Attention models for Short-Term Object Interaction Anticipation](../../ECCV2024/robotics/aff-ttention_affordances_and_attention_models_for_short-term_object_interaction_.md)
 
 </div>
 

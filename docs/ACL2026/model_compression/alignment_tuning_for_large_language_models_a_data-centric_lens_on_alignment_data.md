@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines
 description: >-
-  [ACL 2026][Model Compression][RLHF] This paper reinterprets LLM alignment tuning as a dynamic data pipeline design problem: what the model ultimately learns depends not only on optimization algorithms like PPO, DPO, or GRPO, but also on how candidate responses are generated, how preferences are evaluated, and how preference signals are instantiated as tr
+  [ACL 2026 Findings][Model Compression][Alignment Tuning] This paper reinterprets LLM alignment tuning as a dynamic data pipeline design problem: what the model ultimately learns depends not only on optimization algorithms like PPO, DPO, or GRPO, but also on how candidate responses are generated, how preferences are evaluated, and how preference signals are instantiated as training objectives.
 tags:
-  - ACL 2026
-  - Model Compression
-  - RLHF
-  - DPO
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Alignment Tuning"
+  - "Preference Data"
+  - "RLHF"
+  - "DPO"
+  - "Data-centric AI"
 date: 2026-05-08
-content_hash: 82b9e3670b9a260a
+content_hash: 40b2f8353926974a
 ---
+
 # Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines
 
 **Conference**: ACL 2026 Findings  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RNED: Rotary Number Encoding and Decoding for Medical VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][score-matching] To address the inherent weakness of medical VLMs in "numerical prediction," this paper proposes RNED: the encoding side follows the RoPE paradigm by using a "value-dependent rotary matrix" to rotate a scalar into a dedicated `[NUM]` token (norm-preserving, order-preserving, wide range), while the decoding side employs
+  [CVPR 2026][Multimodal VLM][Medical VLM] To address the inherent weakness of medical VLMs in "numerical prediction," this paper proposes RNED: the encoding side follows the RoPE paradigm by using a "value-dependent rotary matrix" to rotate a scalar into a dedicated `[NUM]` token (norm-preserving, order-preserving, wide range), while the decoding side employs score-matching to retrieve continuous values from hidden states. It consistently outperforms existing VLM baselines on…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - score-matching
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Medical VLM"
+  - "Numerical Encoding"
+  - "Rotary Encoding"
+  - "Score-Matching"
+  - "Quantitative Prediction"
 date: 2026-05-08
-content_hash: b5f14fc09f8ff8f6
+content_hash: 90109890a76cea8d
 ---
+
 # RNED: Rotary Number Encoding and Decoding for Medical VLMs
 
 **Conference**: CVPR 2026  
@@ -152,10 +157,10 @@ Comparison of Encoding/Decoding strategies:
 ## Related Papers
 
 - [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](sparse_spectral_lora_routed_experts_for_medical_vlms.md)
+- [\[CVPR 2026\] Reliable Clustering Number Estimation for Contrastive Multi-View Clustering](reliable_clustering_number_estimation_for_contrastive_multi-view_clustering.md)
 - [\[CVPR 2026\] Medic-AD: Towards Medical Vision-Language Model's Clinical Intelligence](medic-ad_towards_medical_vision-language_models_clinical_intelligence.md)
-- [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
 - [\[CVPR 2026\] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning](similarity-as-evidence_calibrating_overconfident_vlms_for_interpretable_and_labe.md)
-- [\[CVPR 2026\] PAS: A Training-Free Stabilizer for Temporal Encoding in Video LLMs](pas_a_training-free_stabilizer_for_temporal_encoding_in_video_llms.md)
+- [\[CVPR 2026\] ORION: ORthonormal Text Encoding for Universal VLM Adaptation](orion_orthonormal_text_encoding_for_universal_vlm_adaptation.md)
 
 </div>
 

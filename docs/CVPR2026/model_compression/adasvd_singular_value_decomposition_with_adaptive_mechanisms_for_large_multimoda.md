@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AdaSVD: Singular Value Decomposition with Adaptive Mechanisms for Large Multimodal Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] AdaSVD utilizes "alternating least squares to compensate for truncated singular matrices" and "adaptive compression rate allocation based on layer importance." These mechanisms significantly reduce accuracy loss in SVD-based Large Multimodal Models (LMMs) under high compression rates (60%+), consistently outperforming
+  [CVPR 2026][Model Compression][SVD compression] AdaSVD utilizes "alternating least squares to compensate for truncated singular matrices" and "adaptive compression rate allocation based on layer importance." These mechanisms significantly reduce accuracy loss in SVD-based Large Multimodal Models (LMMs) under high compression rates (60%+), consistently outperforming SVD-LLM across LLaMA2, OPT, Mistral, and Vicuna.
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "SVD compression"
+  - "low-rank decomposition"
+  - "truncation error compensation"
+  - "adaptive compression rate"
+  - "large multimodal models"
 date: 2026-05-08
-content_hash: 0a697965c32d587b
+content_hash: 9501ae9a2d7322cf
 ---
+
 # AdaSVD: Singular Value Decomposition with Adaptive Mechanisms for Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -163,10 +169,10 @@ LLaMA2-7B, WikiText-2 Perplexity↓:
 ## Related Papers
 
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](../../ICML2026/model_compression/quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
-- [\[CVPR 2026\] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)
+- [\[ICLR 2026\] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis](../../ICLR2026/model_compression/sumra_parameter_efficient_fine-tuning_with_singular_value_decomposition_and_summ.md)
 - [\[NeurIPS 2025\] Hankel Singular Value Regularization for Highly Compressible State Space Models](../../NeurIPS2025/model_compression/hankel_singular_value_regularization_for_highly_compressible_state_space_models.md)
-- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] Distributed Image Compression with Multimodal Side Information at Extremely Low Bitrates](distributed_image_compression_with_multimodal_side_information_at_extremely_low_.md)
+- [\[ICLR 2026\] DTP: Delta-Guided Two Stage Pruning for Mamba-based Multimodal Large Language Models](../../ICLR2026/model_compression/dtp_delta-guided_two_stage_pruning_for_mamba-based_multimodal_large_language_mod.md)
 
 </div>
 

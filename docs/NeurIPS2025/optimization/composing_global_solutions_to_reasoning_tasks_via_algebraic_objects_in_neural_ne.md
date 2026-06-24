@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Composing Global Solutions to Reasoning Tasks via Algebraic Objects in Neural Nets
 description: >-
-  [NeurIPS 2025][Optimization][Algebraic structure] This paper proposes the CoGS framework, demonstrating that the weight space of two-layer quadratic-activation networks on Abelian group multiplication reasoning tasks adm…
+  [NeurIPS 2025][Optimization][Algebraic structure] This paper proposes the CoGS framework, demonstrating that the weight space of two-layer quadratic-activation networks on Abelian group multiplication reasoning tasks admits a semiring algebraic structure. The Sum Potentials in the loss function are ring homomorphisms, enabling global optimal solutions to be algebraically composed from partial solutions—each satisfying only a subset of loss constraints—via ring addition and mu…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "weight-space semiring"
   - "global optimal solution construction"
 date: 2026-05-08
-content_hash: adbb8292590bca1d
+content_hash: 66595001524a6e1a
 ---
 
 # Composing Global Solutions to Reasoning Tasks via Algebraic Objects in Neural Nets
@@ -130,10 +130,10 @@ The core idea of CoGS is to avoid solving the highly nonlinear global optimizati
 ## Related Papers
 
 - [\[NeurIPS 2025\] DynaAct: Large Language Model Reasoning with Dynamic Action Spaces](dynaact_large_language_model_reasoning_with_dynamic_action_spaces.md)
+- [\[ACL 2025\] AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment](../../ACL2025/optimization/ambik_dataset_of_ambiguous_tasks_in_kitchen_environment.md)
 - [\[NeurIPS 2025\] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees](verbalized_algorithms.md)
 - [\[NeurIPS 2025\] Multi-head Transformers Provably Learn Symbolic Multi-step Reasoning via Gradient Descent](multi-head_transformers_provably_learn_symbolic_multi-step_reasoning_via_gradien.md)
-- [\[NeurIPS 2025\] OrthoGrad Improves Neural Calibration](orthograd_improves_neural_calibration.md)
-- [\[NeurIPS 2025\] Probing Neural Combinatorial Optimization Models](probing_neural_combinatorial_optimization_models.md)
+- [\[ICML 2025\] Global Convergence and Rich Feature Learning in $L$-Layer Infinite-Width Neural Networks under $\mu$P Parametrization](../../ICML2025/optimization/global_convergence_and_rich_feature_learning_in_l-layer_infinite-width_neural_ne.md)
 
 </div>
 

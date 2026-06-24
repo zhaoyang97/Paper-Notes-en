@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] BuildAnyPoint is proposed to achieve unified reconstruction from diverse point cloud distributions (airborne LiDAR, SfM, sparse noisy points) to structured 3D building meshes using a **Loosely-coupled Cascaded Diffusion Transformer (Loca-DiT)**. The framework first restores the underlying point cloud distribution throu
+  [CVPR 2026][Autonomous Driving][Building Abstraction Reconstruction] BuildAnyPoint is proposed to achieve unified reconstruction from diverse point cloud distributions (airborne LiDAR, SfM, sparse noisy points) to structured 3D building meshes using a **Loosely-coupled Cascaded Diffusion Transformer (Loca-DiT)**. The framework first restores the underlying point cloud distribution through hierarchical latent diffusion and subsequently generates compact polygonal meshes via an…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Building Abstraction Reconstruction"
+  - "Point Cloud Completion"
+  - "Latent Diffusion"
+  - "Autoregressive Mesh Generation"
+  - "Cascaded Generation Framework"
 date: 2026-05-08
-content_hash: 1c31d078a5531141
+content_hash: 7258ac7266a2d903
 ---
+
 # BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds
 
 **Conference**: CVPR 2026  
@@ -163,7 +169,7 @@ Crucially, the generator in step 4 never sees the original noisy sparse points $
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

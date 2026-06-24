@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] UniPercept: A Unified Diffusion Model for Generalizable Visual Perception
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] UniPercept transforms a DiT diffusion model into a universal visual perception framework using a "shared foundation + lightweight adapters." The foundation learns general perception priors through joint training on 7 tasks (depth, normals, albedo, segmentation, etc.). New tasks can be efficiently adapted by training a
+  [CVPR 2026][Image Generation][Diffusion Models] UniPercept transforms a DiT diffusion model into a universal visual perception framework using a "shared foundation + lightweight adapters." The foundation learns general perception priors through joint training on 7 tasks (depth, normals, albedo, segmentation, etc.). New tasks can be efficiently adapted by training a small adapter (<1% parameters) with only 1,000 samples. Across 14 tasks, it mostly outperforms unified generativ…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
-  - Rectified Flow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Diffusion Models"
+  - "Visual Perception"
+  - "Foundation-Adapter"
+  - "Parameter-Efficient Fine-Tuning"
+  - "Rectified Flow"
 date: 2026-05-08
-content_hash: a8174f4613cc2dd3
+content_hash: fc81021713bc3ca2
 ---
+
 # UniPercept: A Unified Diffusion Model for Generalizable Visual Perception
 
 **Conference**: CVPR 2026  
@@ -137,11 +141,11 @@ In terms of data efficiency, new tasks approach full-training performance with o
 
 ## Related Papers
 
-- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](../../ICML2026/image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[ICLR 2026\] Reconciling Visual Perception and Generation in Diffusion Models](../../ICLR2026/image_generation/reconciling_visual_perception_and_generation_in_diffusion_models.md)
 - [\[CVPR 2026\] Visual Diffusion Models are Geometric Solvers](visual_diffusion_models_are_geometric_solvers.md)
-- [\[CVPR 2026\] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction](parauni_enhance_generation_in_unified_multimodal_model_with_reinforcement-driven.md)
-- [\[CVPR 2026\] Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception](enhancing_image_aesthetics_with_dualconditioned_di.md)
-- [\[CVPR 2025\] Traversing Distortion-Perception Tradeoff Using a Single Score-Based Generative Model](../../CVPR2025/image_generation/traversing_distortion-perception_tradeoff_using_a_single_score-based_generative_.md)
+- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](../../ICML2026/image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
+- [\[CVPR 2026\] RegionRoute: Regional Style Transfer with Diffusion Model](regionroute_regional_style_transfer_with_diffusion_model.md)
 
 </div>
 

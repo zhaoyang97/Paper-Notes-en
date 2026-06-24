@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding
 description: >-
-  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes TimeExpert — the first MoE-based Video-LLM framework that routes timestamps, saliency scores…
+  [ICCV 2025][Video Understanding][Video Temporal Grounding] This paper proposes TimeExpert — the first MoE-based Video-LLM framework that routes timestamps, saliency scores, and text descriptions to specialized experts via **task-aware dynamic gating** and **token-adaptive routing**, complemented by task-dependent auxiliary losses. TimeExpert achieves state-of-the-art performance across three VTG task categories: Dense Video Captioning, Moment Retrieval…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -13,7 +13,7 @@ tags:
   - "Dense Video Captioning"
   - "Moment Retrieval"
 date: 2026-05-08
-content_hash: 6d01f7e528a488a5
+content_hash: 840c9ca5075f8499
 ---
 
 # TimeExpert: An Expert-Guided Video LLM for Video Temporal Grounding
@@ -183,11 +183,11 @@ CIDEr +3.5, F1 +1.7, R@1₀.₅ +2.4.
 
 ## Related Papers
 
+- [\[CVPR 2025\] Seq2Time: Sequential Knowledge Transfer for Video LLM Temporal Grounding](../../CVPR2025/video_understanding/seq2time_sequential_knowledge_transfer_for_video_llm_temporal_grounding.md)
 - [\[ICCV 2025\] Moment Quantization for Video Temporal Grounding](moment_quantization_for_video_temporal_grounding.md)
 - [\[ICCV 2025\] VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning](vtimecot_thinking_by_drawing_for_video_temporal_grounding_and_reasoning.md)
 - [\[ICCV 2025\] Sparse-Dense Side-Tuner for Efficient Video Temporal Grounding](sparse-dense_side-tuner_for_efficient_video_temporal_grounding.md)
 - [\[ICCV 2025\] Hierarchical Event Memory for Accurate and Low-latency Online Video Temporal Grounding](hierarchical_event_memory_for_accurate_and_low-latency_online_video_temporal_gro.md)
-- [\[CVPR 2026\] CVA: Context-aware Video-text Alignment for Video Temporal Grounding](../../CVPR2026/video_understanding/cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)
 
 </div>
 

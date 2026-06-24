@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Robust Equation Structure Learning with Adaptive Refinement (RESTART)
 description: >-
-  [ICLR 2026][Others][LLM] RESTART fully integrates the scientific discovery closed loop of "Hypothesis—Experiment—Analysis" into symbolic regression. It employs a Transformer to provide a strong initial equation, explicitly models "unexplained" components of the current equation as boosting-style "exploration functions" for short-term targeted
+  [ICLR 2026][Symbolic Regression] RESTART fully integrates the scientific discovery closed loop of "Hypothesis—Experiment—Analysis" into symbolic regression. It employs a Transformer to provide a strong initial equation, explicitly models "unexplained" components of the current equation as boosting-style "exploration functions" for short-term targeted feedback, and distills successful refinements into a reusable code-based structure library for long-term knowledge. This approa…
 tags:
-  - ICLR 2026
-  - Others
-  - LLM
+  - "ICLR 2026"
+  - "Symbolic Regression"
+  - "Equation Discovery"
+  - "Boosting Residuals"
+  - "Structure Library"
+  - "LLM"
 date: 2026-05-08
-content_hash: 62b12fd8941b22f4
+content_hash: e842f2f1fbf75df3
 ---
+
 # Robust Equation Structure Learning with Adaptive Refinement (RESTART)
 
 **Conference**: ICLR 2026  
@@ -135,6 +139,7 @@ On BPG12 (ID/OOD):
 - Value: ⭐⭐⭐⭐ Provides a reusable paradigm for LLM-driven iterative search beyond just equations.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

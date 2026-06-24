@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] AI Engram: In Search of Memory Traces in Artificial Intelligence
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The authors translate four classic criteria of "engrams" (memory traces) from neuroscience (specificity, reactivation, sufficiency, necessity) into algebraic constraints in parameter space. This leads to a **closed-form estimator calculated in a single forward pass** using input statistics. It "carves out" the causal s
+  [ICML2026][Interpretability][Memory Traces] The authors translate four classic criteria of "engrams" (memory traces) from neuroscience (specificity, reactivation, sufficiency, necessity) into algebraic constraints in parameter space. This leads to a **closed-form estimator calculated in a single forward pass** using input statistics. It "carves out" the causal sub-components of a concept within network weights, allowing arbitrary knowledge to be injected or erased via simple…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML2026"
+  - "Interpretability"
+  - "Memory Traces"
+  - "Neuroscience Constraints"
+  - "Closed-form Solution"
+  - "Fisher Information Geometry"
+  - "Compositional Unlearning"
 date: 2026-05-08
-content_hash: 89fede3c8a569491
+content_hash: 9efa15f9ecb7ed52
 ---
+
 # AI Engram: In Search of Memory Traces in Artificial Intelligence
 
 **Conference**: ICML2026  
@@ -145,14 +151,17 @@ LLM validation (Llama-3.2-1B + TOFU unlearning benchmark):
 
 <div class="related-papers" markdown="1">
 
-- **ROME**: Locating and Editing Factual Associations in GPT, 2022.
-- **MEMIT**: Mass-Editing Memory in Transformer, 2023.
-- **Task Arithmetic**: Editing Models with Task Arithmetic, 2023.
+## Related Papers
+
+- [\[ICML 2026\] Grokking: From Abstraction to Intelligence](grokking_from_abstraction_to_intelligence.md)
+- [\[ICML 2026\] Position: Stop Anthropomorphizing Intermediate Tokens as Reasoning/Thinking Traces!](position_stop_anthropomorphizing_intermediate_tokens_as_reasoningthinking_traces.md)
+- [\[ICML 2026\] Adaptive Querying with AI Persona Priors](adaptive_querying_with_ai_persona_priors.md)
+- [\[ICLR 2026\] Feature Segregation by Signed Weights in Artificial Vision Systems and Biological Models](../../ICLR2026/interpretability/feature_segregation_by_signed_weights_in_artificial_vision_systems_and_biologica.md)
+- [\[AAAI 2026\] ToC: Tree-of-Claims Search with Multi-Agent Language Models](../../AAAI2026/interpretability/toc_tree-of-claims_search_with_multi-agent_language_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Grokking: From Abstraction to Intelligence](grokking_from_abstraction_to_intelligence.md)

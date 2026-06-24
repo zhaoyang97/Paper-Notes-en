@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] This paper uses a rigorous set of ablations to uncover which training factors truly determine performance in feed-forward multi-frame visual geometry estimation (represented by VGGT). It discovers that commonly used learnable confidence losses and spatial gradient losses actually hinder performance, and local region al
+  [CVPR 2026][3D Vision][Feed-forward visual geometry estimation] This paper uses a rigorous set of ablations to uncover which training factors truly determine performance in feed-forward multi-frame visual geometry estimation (represented by VGGT). It discovers that commonly used learnable confidence losses and spatial gradient losses actually hinder performance, and local region alignment causes accuracy drops. Based on these findings, it proposes a consistency loss combined…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward visual geometry estimation"
+  - "point cloud reconstruction"
+  - "video depth"
+  - "camera pose"
+  - "ablation study"
 date: 2026-05-08
-content_hash: 7cb0a022081e735b
+content_hash: 76fc2dfb29516ed7
 ---
+
 # Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation
 
 **Conference**: CVPR 2026  
@@ -173,11 +179,11 @@ At 1036² resolution, CARVE adds only 25M params over VGGT but runs at 6× the F
 
 ## Related Papers
 
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
+- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
+- [\[CVPR 2026\] Homaloidal parametrization for detecting critical two-view configurations](homaloidal_parametrization_for_detecting_critical_two-view_configurations.md)
 - [\[CVPR 2026\] MoRE: 3D Visual Geometry Reconstruction Meets Mixture-of-Experts](more_3d_visual_geometry_reconstruction_meets_mixture-of-experts.md)
 - [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2026\] Homaloidal parametrization for detecting critical two-view configurations](homaloidal_parametrization_for_detecting_critical_two-view_configurations.md)
-- [\[CVPR 2026\] Geometry-Guided 3D Visual Token Pruning for Video-Language Models](geometry-guided_3d_visual_token_pruning_for_video-language_models.md)
-- [\[CVPR 2026\] LongStream: Long-Sequence Streaming Autoregressive Visual Geometry](longstream_long-sequence_streaming_autoregressive_visual_geometry.md)
 
 </div>
 

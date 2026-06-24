@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Context parroting: A simple but tough-to-beat baseline for foundation models in scientific machine learning
 description: >-
-  [ICLR 2026][Time Series][in-context scaling law] The authors propose a minimalist baseline called "context parroting"—which simply identifies the most similar segment in historical trajectories and copies the subsequent evolution as the prediction. On zero-shot forecasting of low-dimensional chaos, turbulence, coupled oscillators, and ECG signals, this method **outpe
+  [ICLR2026][Time Series][Context Parroting] The authors propose a minimalist baseline called "context parroting"—which simply identifies the most similar segment in historical trajectories and copies the subsequent evolution as the prediction. On zero-shot forecasting of low-dimensional chaos, turbulence, coupled oscillators, and ECG signals, this method **outperforms leading foundation models like Chronos, TimesFM, Time-MoE, Moirai, and DynaMix in both accuracy and long-term…
 tags:
-  - ICLR 2026
-  - Time Series
-  - in-context scaling law
+  - "ICLR2026"
+  - "Time Series"
+  - "Context Parroting"
+  - "Zero-shot Forecasting"
+  - "Chaotic Dynamical Systems"
+  - "Time-series Foundation Models"
+  - "In-context Scaling Law"
 date: 2026-05-08
-content_hash: f83c41c10f1ba613
+content_hash: 3b87ad983845e101
 ---
+
 # Context parroting: A simple but tough-to-beat baseline for foundation models in scientific machine learning
 
 **Conference**: ICLR2026  
@@ -123,10 +128,10 @@ Validated on 4 high-dimensional systems (Turbulence, ECG, Circuits, Kuramoto osc
 ## Related Papers
 
 - [\[NeurIPS 2025\] In-Context Learning of Stochastic Differential Equations with Foundation Inference Models](../../NeurIPS2025/time_series/in-context_learning_of_stochastic_differential_equations_with_foundation_inferen.md)
-- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
-- [\[ICLR 2026\] CoRA: Boosting Time Series Foundation Models for Multivariate Forecasting through Correlation-aware Adapter](cora_boosting_time_series_foundation_models_for_multivariate_forecasting_through.md)
 - [\[ICLR 2026\] SciTS: Scientific Time Series Understanding and Generation with LLMs](scits_scientific_time_series_understanding_and_generation_with_llms.md)
 - [\[ICLR 2026\] FeDaL: Federated Dataset Learning for General Time Series Foundation Models](fedal_federated_dataset_learning_for_general_time_series_foundation_models.md)
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
+- [\[ICLR 2026\] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model](brain-semantoks_learning_semantic_tokens_of_brain_dynamics_with_a_self-distilled.md)
 
 </div>
 

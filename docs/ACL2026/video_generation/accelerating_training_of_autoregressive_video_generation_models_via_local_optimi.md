@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity
 description: >-
-  [ACL 2026][Video Generation][Paper Note] The authors propose the Local Optimization + Representation Continuity (ReCo) training strategy. By optimizing within local windows and constraining smooth transitions of hidden states, they achieve a 2x acceleration in training autoregressive video generation models without sacrificing generation quality.
+  [ACL 2026 Findings][Video Generation][Autoregressive video generation] The authors propose the Local Optimization + Representation Continuity (ReCo) training strategy. By optimizing within local windows and constraining smooth transitions of hidden states, they achieve a 2x acceleration in training autoregressive video generation models without sacrificing generation quality.
 tags:
-  - ACL 2026
-  - Video Generation
+  - "ACL 2026 Findings"
+  - "Video Generation"
+  - "Autoregressive video generation"
+  - "training acceleration"
+  - "local optimization"
+  - "representation continuity"
+  - "Lipschitz continuity"
 date: 2026-05-08
-content_hash: 3ee673aa2cb6b465
+content_hash: ddb98078a271d297
 ---
+
 # Accelerating Training of Autoregressive Video Generation Models via Local Optimization with Representation Continuity
 
 **Conference**: ACL 2026 Findings  
@@ -133,7 +139,7 @@ Training Speed: ReCo is approximately 2x faster than the Baseline.
 - [\[CVPR 2026\] Accelerating Autoregressive Video Diffusion via History-Guided Cache and Residual Correction](../../CVPR2026/video_generation/accelerating_autoregressive_video_diffusion_via_history-guided_cache_and_residua.md)
 - [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
 - [\[ICCV 2025\] VPO: Aligning Text-to-Video Generation Models with Prompt Optimization](../../ICCV2025/video_generation/vpo_aligning_text-to-video_generation_models_with_prompt_optimization.md)
-- [\[ICML 2026\] WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching](../../ICML2026/video_generation/worldcache_accelerating_world_models_for_free_via_heterogeneous_token_caching.md)
+- [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](../../ICLR2026/video_generation/moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier
 description: >-
-  [ICML 2026][Pretraining][TOMATO-Star] MOOSE-Star decomposes the problem of "training an LLM to directly generate scientific hypotheses"—originally an $\mathcal{O}(N^k)$ combinatorial search—into two sequential subtasks: "Inspiration Retrieval + Hypothesis Synthesis." By integrating hierarchical tree retrieval, bounded composition, and motivation planning,
+  [ICML 2026][LLM Pretraining][Hypothesis Generation] MOOSE-Star decomposes the problem of "training an LLM to directly generate scientific hypotheses"—originally an $\mathcal{O}(N^k)$ combinatorial search—into two sequential subtasks: "Inspiration Retrieval + Hypothesis Synthesis." By integrating hierarchical tree retrieval, bounded composition, and motivation planning, it reduces optimal complexity from exponential to $\mathcal{O}(\log N)$ and releases the TOMATO-Star dataset…
 tags:
-  - ICML 2026
-  - Pretraining
-  - TOMATO-Star
+  - "ICML 2026"
+  - "LLM Pretraining"
+  - "Hypothesis Generation"
+  - "Inspiration Retrieval"
+  - "Hierarchical Search"
+  - "Tractable Training"
+  - "TOMATO-Star"
 date: 2026-05-08
-content_hash: 579789116dbf4949
+content_hash: 9be4c87da2511c34
 ---
+
 # MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier
 
 **Conference**: ICML 2026  
@@ -131,6 +136,7 @@ Both IR and HC tasks utilize Rejection Sampling Fine-Tuning (RFT) with CoT super
 - Value: ⭐⭐⭐⭐⭐ Establishes a definitive baseline for the "LLM-for-discovery" field with open-sourced framework, dataset, and code.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

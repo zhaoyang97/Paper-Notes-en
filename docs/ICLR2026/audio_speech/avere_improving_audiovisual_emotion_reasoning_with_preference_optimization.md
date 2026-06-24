@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization
 description: >-
-  [ICLR 2026][Audio & Speech][DPO] Addressing the issues of spurious associations and hallucinations in multimodal large language models (MLLMs) during emotion reasoning, this work proposes the EmoReAlM evaluation benchmark and the AVEm-DPO preference optimization method. By constructing targeted preference pairs and text prior regularization, it achiev
+  [ICLR 2026][Audio & Speech][Multimodal emotion understanding] Addressing the issues of spurious associations and hallucinations in multimodal large language models (MLLMs) during emotion reasoning, this work proposes the EmoReAlM evaluation benchmark and the AVEm-DPO preference optimization method. By constructing targeted preference pairs and text prior regularization, it achieves a zero-shot relative performance gain of 6-19% on DFEW, RAVDESS, and EMER.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - DPO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Multimodal emotion understanding"
+  - "preference optimization"
+  - "DPO"
+  - "hallucination mitigation"
+  - "audiovisual reasoning"
 date: 2026-05-08
-content_hash: 32662fbf14e33ca0
+content_hash: 8814d2e3182cf9bf
 ---
+
 # AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization
 
 **Conference**: ICLR 2026  
@@ -129,11 +134,11 @@ The final objective combines the components: $L_{AVEm\text{-}DPO}=L^{y}_{DPO\tex
 
 ## Related Papers
 
+- [\[ICLR 2026\] TangoFlux: Super-Fast and Faithful Text-to-Audio Generation with Flow Matching and CLAP-Ranked Preference Optimization](tangoflux_super_fast_and_faithful_text_to_audio_generation_with_flow_matching_an.md)
 - [\[ICLR 2026\] EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning](emotionthinker_prosody-aware_reinforcement_learning_for_explainable_speech_emoti.md)
-- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
 - [\[ICLR 2026\] Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition](learnable_fractional_superlets_with_a_spectro-temporal_emotion_encoder_for_speec.md)
+- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
-- [\[ICLR 2026\] Improving Black-Box Generative Attacks via Generator Semantic Consistency](improving_black-box_generative_attacks_via_generator_semantic_consistency.md)
 
 </div>
 

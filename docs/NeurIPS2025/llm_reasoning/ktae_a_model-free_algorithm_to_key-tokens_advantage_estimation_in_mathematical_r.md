@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][token-level advantage estimation] KTAE proposes a model-free token-level advantage estimation algorithm that quantifies the statistical association between each token and correct reasoning o…
+  [NeurIPS 2025][Reasoning][token-level advantage estimation] KTAE proposes a model-free token-level advantage estimation algorithm that quantifies the statistical association between each token and correct reasoning outcomes via Fisher's exact test and information gain. The resulting fine-grained token importance is superimposed on the rollout-level advantage of GRPO/DAPO, achieving superior performance on five mathematical reasoning benchmarks while significantly reducing gen…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "token-level advantage estimation"
   - "GRPO"
   - "DAPO"
   - "mathematical reasoning"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: b91f629d414ec851
+content_hash: 10b13ef7c2cca7cf
 ---
 
 # KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning
@@ -156,10 +156,10 @@ Without any length-penalty reward, KTAE significantly reduces generation length 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
+- [\[ICLR 2026\] Conditional Advantage Estimation for Reinforcement Learning in Large Reasoning Models](../../ICLR2026/llm_reasoning/conditional_advantage_estimation_for_reinforcement_learning_in_large_reasoning_m.md)
 - [\[ACL 2026\] SHAPE: Stage-aware Hierarchical Advantage via Potential Estimation for LLM Reasoning](../../ACL2026/llm_reasoning/shape_stage-aware_hierarchical_advantage_via_potential_estimation_for_llm_reason.md)
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
-- [\[NeurIPS 2025\] ARM: Adaptive Reasoning Model](arm_adaptive_reasoning_model.md)
-- [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
+- [\[ICLR 2026\] Quantile Advantage Estimation: Stabilizing RLVR for LLM Reasoning](../../ICLR2026/llm_reasoning/quantile_advantage_estimation_stabilizing_rlvr_for_llm_reasoning.md)
 
 </div>
 

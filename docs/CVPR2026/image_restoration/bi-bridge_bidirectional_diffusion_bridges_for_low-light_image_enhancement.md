@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement
 description: >-
-  [CVPR 2026][Image Restoration][DDBM] This work integrates "low-light to normal-light" enhancement and "normal-light to low-light" degradation into a **single symmetric diffusion bridge**. By training a shared U-Net with a bidirectional consistency constraint as implicit regularization, the model significantly outperforms existing SOTA in fidelity (PSNR/LP
+  [CVPR 2026][Image Restoration][Low-light enhancement] This work integrates "low-light to normal-light" enhancement and "normal-light to low-light" degradation into a **single symmetric diffusion bridge**. By training a shared U-Net with a bidirectional consistency constraint as implicit regularization, the model significantly outperforms existing SOTA in fidelity (PSNR/LPIPS).
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - DDBM
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Low-light enhancement"
+  - "Diffusion bridge"
+  - "Bidirectional consistency"
+  - "DDBM"
+  - "Content fidelity"
 date: 2026-05-08
-content_hash: 4bd76a0990e186b8
+content_hash: 3b55554a13a7b769
 ---
+
 # Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement
 
 **Conference**: CVPR 2026  
@@ -152,8 +157,8 @@ Comparing the full model with three variants (Baseline DDBM, w/o Bi-directional,
 - [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
 - [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 - [\[CVPR 2026\] Multinex: Lightweight Low-light Image Enhancement via Multi-prior Retinex](multinex_lightweight_low-light_image_enhancement_via_multi-prior_retinex.md)
-- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
 - [\[CVPR 2026\] Event-Illumination Collaborative Low-light Image Enhancement with a High-resolution Real-world Dataset](event-illumination_collaborative_low-light_image_enhancement_with_a_high-resolut.md)
+- [\[ICML 2026\] Structured Diffusion Bridges: Inductive Bias for Denoising Diffusion Bridges](../../ICML2026/image_restoration/structured_diffusion_bridges_inductive_bias_for_denoising_diffusion_bridges.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPROUT: Supervise Less, See More — Training-free Nuclear Instance Segmentation with Prototype-Guided Prompting
 description: >-
-  [ICML 2026][Segmentation][Paper Note] SPROUT is the first fully training-free, zero-annotation framework for pathological nuclei segmentation. It utilizes H&E staining priors to self-construct high-confidence foreground/background regions on each slide → extracts prototypes → performs feature-prototype soft alignment via Partial Optimal Transport (POT) → o
+  [ICML 2026][Segmentation][Nuclei Segmentation] SPROUT is the first fully training-free, zero-annotation framework for pathological nuclei segmentation. It utilizes H&E staining priors to self-construct high-confidence foreground/background regions on each slide → extracts prototypes → performs feature-prototype soft alignment via Partial Optimal Transport (POT) → outputs positive/negative point prompts for SAM. On benchmarks like MoNuSeg, its AJI is 8.2% higher than training-…
 tags:
-  - ICML 2026
-  - Segmentation
+  - "ICML 2026"
+  - "Segmentation"
+  - "Nuclei Segmentation"
+  - "SAM Prompting"
+  - "H&E Staining Prior"
+  - "Partial Optimal Transport"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 44dc8f4bb465aea3
+content_hash: 1580aa14d8a682cc
 ---
+
 # SPROUT: Supervise Less, See More — Training-free Nuclear Instance Segmentation with Prototype-Guided Prompting
 
 **Conference**: ICML 2026  
@@ -164,9 +170,9 @@ The self-reference strategy contributes the most (+14.4 AJI), proving that the s
 
 ## Related Papers
 
-- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](../../CVPR2026/segmentation/insid3_training-free_in-context_segmentation_with_dinov3.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](../../CVPR2026/segmentation/the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
-- [\[ECCV 2024\] VISAGE: Video Instance Segmentation with Appearance-Guided Enhancement](../../ECCV2024/segmentation/visage_video_instance_segmentation_with_appearance-guided_enhancement.md)
+- [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](../../CVPR2026/segmentation/insid3_training-free_in-context_segmentation_with_dinov3.md)
+- [\[ICLR 2026\] Decomposed Attention Fusion in MLLMs for Training-free Video Reasoning Segmentation](../../ICLR2026/segmentation/decomposed_attention_fusion_in_mllms_for_training-free_video_reasoning_segmentat.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
 

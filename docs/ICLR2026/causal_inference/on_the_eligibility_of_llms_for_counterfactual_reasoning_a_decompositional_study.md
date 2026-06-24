@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study
 description: >-
-  [ICLR 2026][Causal Inference][counterfactual reasoning] This paper proposes a decompositional evaluation framework based on Structural Causal Models (SCM), splitting LLM counterfactual reasoning into four stages (causal variable identification → causal graph construction → intervention identification → outcome reasoning). It systematically diagnoses ability bottlenecks acro
+  [ICLR2026][Causal Inference][counterfactual reasoning] This paper proposes a decompositional evaluation framework based on Structural Causal Models (SCM), splitting LLM counterfactual reasoning into four stages (causal variable identification → causal graph construction → intervention identification → outcome reasoning). It systematically diagnoses ability bottlenecks across 11 multimodal datasets and suggests tool augmentation and advanced elicitation strategies to improve p…
 tags:
-  - ICLR 2026
-  - Causal Inference
-  - counterfactual reasoning
-  - structural causal model
-  - LLM evaluation
-  - decompositional analysis
-  - tool-augmented learning
+  - "ICLR2026"
+  - "Causal Inference"
+  - "counterfactual reasoning"
+  - "structural causal model"
+  - "LLM evaluation"
+  - "decompositional analysis"
+  - "tool-augmented learning"
 date: 2026-05-08
-content_hash: d28a0debb81efee3
+content_hash: dce7a886bfc23733
 ---
+
 # On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study
 
 **Conference**: ICLR2026  
@@ -147,10 +148,10 @@ The core difference is that while prior work focused on end-to-end assessment, t
 ## Related Papers
 
 - [\[ICLR 2026\] LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding](llms_struggle_to_balance_reasoning_and_world_knowledge_in_causal_narrative_under.md)
-- [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](../../ACL2026/causal_inference/parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
 - [\[ACL 2025\] CoA-Reasoning: Explorations on Counterfactual Analysis in Physical Reasoning of LVLMs](../../ACL2025/causal_inference/coa-reasoning_explorations_on_counterfactual_analysis_in_physical_reasoning_of_l.md)
+- [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](../../NeurIPS2025/causal_inference/counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
+- [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](../../ACL2026/causal_inference/parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
 - [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](../../ACL2026/causal_inference/evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
-- [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
 
 </div>
 

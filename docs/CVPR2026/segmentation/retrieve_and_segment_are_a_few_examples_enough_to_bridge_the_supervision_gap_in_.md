@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Retrieve and Segment: Are a Few Examples Enough to Bridge the Supervision Gap in Open-Vocabulary Segmentation?
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the gap where Open-Vocabulary Segmentation (OVS) lags behind fully-supervised models, this paper proposes RNS, a retrieval-augmented test-time adapter that complements text prompts with "a few pixel-annotated support images." By training a per-image lightweight linear classifier using "learned per-image fusi
+  [CVPR 2026][Segmentation][Open-vocabulary segmentation] Addressing the gap where Open-Vocabulary Segmentation (OVS) lags behind fully-supervised models, this paper proposes RNS, a retrieval-augmented test-time adapter that complements text prompts with "a few pixel-annotated support images." By training a per-image lightweight linear classifier using "learned per-image fusion" of retrieved visual and text support features, RNS narrows the zero-shot to fully-supervised gap to…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary segmentation"
+  - "retrieval augmentation"
+  - "test-time adaptation"
+  - "few-shot"
+  - "modality fusion"
 date: 2026-05-08
-content_hash: d49d2b1e4deafa92
+content_hash: 44b165c19242eadf
 ---
+
 # Retrieve and Segment: Are a Few Examples Enough to Bridge the Supervision Gap in Open-Vocabulary Segmentation?
 
 **Conference**: CVPR 2026  
@@ -153,11 +159,11 @@ RNS (B=20) raises the zero-shot score from 27.9 up to 61.9 (+34), narrowing the 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Semantic Alignment in Hyperbolic Space for Open-Vocabulary Semantic Segmentation](semantic_alignment_in_hyperbolic_space_for_open-vocabulary_semantic_segmentation.md)
+- [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 - [\[CVPR 2026\] S2C2Seg: Semantic-Spatial Consistency and Category Optimization for Open-Vocabulary Segmentation](s2c2seg_semantic-spatial_consistency_and_category_optimization_for_open-vocabula.md)
+- [\[CVPR 2026\] SPAR: Single-Pass Any-Resolution ViT for Open-Vocabulary Segmentation](spar_single-pass_any-resolution_vit_for_open-vocabulary_segmentation.md)
 - [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
-- [\[CVPR 2026\] Conversational Image Segmentation: Grounding Abstract Concepts with Scalable Supervision](conversational_image_segmentation_grounding_abstract_concepts_with_scalable_supe.md)
+- [\[CVPR 2026\] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation](pca-seg_revisiting_cost_aggregation_for_openvocabulary_semantic_and_part_segmentat.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] Proposes the Incremental Cell Enumeration (ICE) algorithm, the first standalone algorithm with a formal proof that can exactly solve the global optimum of the 0-1 loss linear classification problem in $O(N^{D+1})$ time, with extensions to polynomial hypersurface classification.
+  [ICLR 2026][0-1 loss] Proposes the Incremental Cell Enumeration (ICE) algorithm, the first standalone algorithm with a formal proof that can exactly solve the global optimum of the 0-1 loss linear classification problem in $O(N^{D+1})$ time, with extensions to polynomial hypersurface classification.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "0-1 loss"
+  - "Linear classification"
+  - "Exact algorithm"
+  - "Hyperplane arrangement"
+  - "Combinatorial optimization"
 date: 2026-05-08
-content_hash: 85623bcf8b7c31d6
+content_hash: d98df92374613202
 ---
+
 # An Efficient, Provably Optimal Algorithm for the 0-1 Loss Linear Classification Problem
 
 **Conference**: ICLR 2026  

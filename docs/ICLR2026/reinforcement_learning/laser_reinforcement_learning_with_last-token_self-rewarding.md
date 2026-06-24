@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LaSeR: Reinforcement Learning with Last-Token Self-Rewarding
 description: >-
-  [ICLR 2026][Reinforcement Learning][[RLVR] LaSeR compresses the LLM's judgment of its answer correctness into the log-prob of a special token following the last answer token. By aligning this last-token self-rewarding score to verifier rewards using an MSE auxiliary loss, it simultaneously enhances RLVR reasoning capabilities and test-time self-verification wit
+  [ICLR 2026][Reinforcement Learning][RLVR] LaSeR compresses the LLM's judgment of its answer correctness into the log-prob of a special token following the last answer token. By aligning this last-token self-rewarding score to verifier rewards using an MSE auxiliary loss, it simultaneously enhances RLVR reasoning capabilities and test-time self-verification with minimal additional inference cost.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - [RLVR
-  - GRPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Self-rewarding"
+  - "Self-verification"
+  - "GRPO"
+  - "Test-time scaling"
 date: 2026-05-08
-content_hash: 9b2633669c10d772
+content_hash: 49a00589ac5376f1
 ---
+
 # LaSeR: Reinforcement Learning with Last-Token Self-Rewarding
 
 **Conference**: ICLR 2026  
@@ -142,11 +146,20 @@ Notably, Open-Reasoner-Zero-7B-LaSeR achieves an F1 of 77.6, which is comparable
 - Value: ⭐⭐⭐⭐⭐ Highly practical for RLVR post-training and test-time scaling in reasoning-heavy domains.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)
+- [\[ICLR 2026\] Token Hidden Reward: Steering Exploration-Exploitation in Group Relative Deep Reinforcement Learning](token_hidden_reward_steering_exploration-exploitation_in_group_relative_deep_rei.md)
+- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
+- [\[ICLR 2026\] Shop-R1: Rewarding LLMs to Simulate Human Behavior in Online Shopping via Reinforcement Learning](shop-r1_rewarding_llms_to_simulate_human_behavior_in_online_shopping_via_reinfor.md)
+- [\[ICML 2026\] LASER: Learning Active Sensing for Continuum Field Reconstruction](../../ICML2026/reinforcement_learning/laser_learning_active_sensing_for_continuum_field_reconstruction.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Spotlight on Token Perception for Multimodal Reinforcement Learning](spotlight_on_token_perception_for_multimodal_reinforcement_learning.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MaxMark: High-Capacity Diffusion-Native Watermarking via Robust and Invertible Latent Embedding
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] MaxMark embeds watermarks into the "most reliable sign bits" of latent noise and utilizes an Invertible Neural Network (INN) to map the watermarked latent back to a standard Gaussian distribution. This achieves a "high-capacity + high-robustness + high-fidelity" latent-space watermark for latent diffusion models, impro
+  [CVPR 2026][AI Safety][Diffusion Model Watermarking] MaxMark embeds watermarks into the "most reliable sign bits" of latent noise and utilizes an Invertible Neural Network (INN) to map the watermarked latent back to a standard Gaussian distribution. This achieves a "high-capacity + high-robustness + high-fidelity" latent-space watermark for latent diffusion models, improving extraction accuracy by approximately 46% compared to the strongest baseline at a full capacity of 16…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Diffusion Model Watermarking"
+  - "High-Capacity Watermarking"
+  - "Invertible Neural Network"
+  - "Sign Bit Embedding"
+  - "Error Correction Code"
 date: 2026-05-08
-content_hash: d96baba4fa1efec7
+content_hash: ca221b7dad763448
 ---
+
 # MaxMark: High-Capacity Diffusion-Native Watermarking via Robust and Invertible Latent Embedding
 
 **Conference**: CVPR 2026  
@@ -144,9 +150,9 @@ It can be observed that baselines almost entirely collapse to random levels at h
 
 - [\[CVPR 2026\] Forensic-Friendly Image Manipulation via Controllable Latent Diffusion](forensic-friendly_image_manipulation_via_controllable_latent_diffusion.md)
 - [\[CVPR 2026\] RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces](recovermark_robust_watermarking_for_localization_and_recovery_of_manipulated_fac.md)
-- [\[CVPR 2026\] RevINN: An End-to-End Invertible Neural Network for Reversible Adversarial Examples Generation](revinn_an_end-to-end_invertible_neural_network_for_reversible_adversarial_exampl.md)
 - [\[CVPR 2026\] Meta-FC: Meta-Learning with Feature Consistency for Robust and Generalizable Watermarking](meta-fc_meta-learning_with_feature_consistency_for_robust_and_generalizable_wate.md)
 - [\[CVPR 2026\] ClusterMark: Towards Robust Watermarking for Autoregressive Image Generators with Visual Token Clustering](clustermark_towards_robust_watermarking_for_autoregressive_image_generators_with.md)
+- [\[AAAI 2026\] RegionMarker: A Region-Triggered Semantic Watermarking Framework for Embedding-as-a-Service](../../AAAI2026/ai_safety/regionmarker_a_region-triggered_semantic_watermarking_framework_for_embedding-as.md)
 
 </div>
 

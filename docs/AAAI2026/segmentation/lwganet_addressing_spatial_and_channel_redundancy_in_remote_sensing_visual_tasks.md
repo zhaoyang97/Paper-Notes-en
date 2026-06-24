@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention
 description: >-
-  [AAAI 2026][Segmentation][lightweight backbone] To address spatial redundancy (large homogeneous backgrounds) and channel redundancy (inefficient single feature space under extreme scale variation) in remote sensing imag…
+  [AAAI 2026 Oral][Segmentation][lightweight backbone] To address spatial redundancy (large homogeneous backgrounds) and channel redundancy (inefficient single feature space under extreme scale variation) in remote sensing imagery, LWGANet is proposed as a lightweight backbone that achieves efficient multi-scale feature representation via Top-K sparse global feature interaction (TGFI) and heterogeneous grouped attention (LWGA) modules, achieving SOTA across 4 remote sensing tas…
 tags:
-  - "AAAI 2026"
+  - "AAAI 2026 Oral"
   - "Segmentation"
   - "lightweight backbone"
   - "remote sensing"
@@ -12,7 +12,7 @@ tags:
   - "spatial redundancy"
   - "channel redundancy"
 date: 2026-05-08
-content_hash: 122d4f2ba936b924
+content_hash: cf2204fcaf124056
 ---
 
 # LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention
@@ -113,10 +113,10 @@ Compared to homogeneous lightweight models such as MobileNetV2, LWGANet signific
 ## Related Papers
 
 - [\[AAAI 2026\] S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing](s5_scalable_semi-supervised_semantic_segmentation_in_remote_sensing.md)
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](../../CVPR2026/segmentation/reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[AAAI 2026\] RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images](rsvg-zeroov_exploring_a_training-free_framework_for_zero-shot_open-vocabulary_vi.md)
 - [\[AAAI 2026\] RS2-SAM2: Customized SAM2 for Referring Remote Sensing Image Segmentation](rs2-sam2_customized_sam2_for_referring_remote_sensing_image_segmentation.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](../../CVPR2026/segmentation/sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
-- [\[AAAI 2026\] SSR: Semantic and Spatial Rectification for CLIP-based Weakly Supervised Segmentation](ssr_semantic_and_spatial_rectification_for_clip-based_weakly_supervised_segmenta.md)
+- [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](../../CVPR2026/segmentation/test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 
 </div>
 

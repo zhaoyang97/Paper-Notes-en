@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Watermarking LLM Agent Trajectories (ACTHOOK)
 description: >-
-  [ICML 2026][AI Safety][hook action] ACTHOOK transplants the "software hook" concept into agent trajectories by inserting an extra action triggered by a secret key at action boundaries as a watermark. LLMs trained on such data execute the hook with significantly higher frequency when presented with the secret key, supporting copyright detection via black-
+  [ICML 2026][AI Safety][trajectory dataset watermarking] ACTHOOK transplants the "software hook" concept into agent trajectories by inserting an extra action triggered by a secret key at action boundaries as a watermark. LLMs trained on such data execute the hook with significantly higher frequency when presented with the secret key, supporting copyright detection via black-box queries with an average AUC of 94.3 while maintaining downstream task performance.
 tags:
-  - ICML 2026
-  - AI Safety
-  - hook action
+  - "ICML 2026"
+  - "AI Safety"
+  - "trajectory dataset watermarking"
+  - "hook action"
+  - "black-box detection"
+  - "behavior-level watermarking"
 date: 2026-05-08
-content_hash: 9a779701f62b6a6b
+content_hash: e5d9707cd3f34179
 ---
+
 # Watermarking LLM Agent Trajectories (ACTHOOK)
 
 **Conference**: ICML 2026  
@@ -137,15 +141,16 @@ Evaluated on MATH (1000 samples), SimpleQA (2000 samples), and SWE-Smith (2000 s
 - Value: ⭐⭐⭐⭐ Directly addresses the pain points of trajectory dataset publishers with a black-box feasible solution.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
+- [\[ICML 2026\] REFLECTOR: Internalizing "Self-Reflection during Generation" into Trajectories to Resist Indirect Jailbreaking](reflector_internalizing_step-wise_reflection_against_indirect_jailbreak.md)
+- [\[ICLR 2026\] Risk-Sensitive Agent Compositions](../../ICLR2026/ai_safety/risk-sensitive_agent_compositions.md)
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
 - [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)
-- [\[ICML 2026\] dgMARK: Decoding-Guided Watermarking for Diffusion Language Models](dgmark_decoding-guided_watermarking_for_diffusion_language_models.md)
-- [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
 
 </div>
 

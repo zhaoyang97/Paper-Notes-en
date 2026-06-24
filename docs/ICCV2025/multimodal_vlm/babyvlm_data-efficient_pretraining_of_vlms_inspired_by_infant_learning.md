@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning
 description: >-
-  [ICCV 2025][Multimodal VLM][data-efficient pretraining] Inspired by the efficient learning capabilities of human infants, this paper proposes the BabyVLM framework…
+  [ICCV 2025][Multimodal VLM][data-efficient pretraining] Inspired by the efficient learning capabilities of human infants, this paper proposes the BabyVLM framework, which includes a synthetic training dataset (converting general-purpose data into child-directed formats) and multiple developmentally aligned evaluation benchmarks. The framework enables data-efficient pretraining of compact VLMs, achieving performance that surpasses models trained solely on SAYCam or generic dat…
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "developmental psychology"
   - "synthetic data"
 date: 2026-05-08
-content_hash: 3b67f857d7329518
+content_hash: 2afcfacc7dfa6874
 ---
 
 # BabyVLM: Data-Efficient Pretraining of VLMs Inspired by Infant Learning
@@ -133,10 +133,10 @@ BabyLLaVA follows the standard LLaVA training procedure on the curated developme
 ## Related Papers
 
 - [\[NeurIPS 2025\] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining](../../NeurIPS2025/multimodal_vlm/adalrs_lossguided_adaptive_learning_rate_search_for_efficien.md)
+- [\[ICCV 2025\] Training-free Generation of Temporally Consistent Rewards from VLMs](training-free_generation_of_temporally_consistent_rewards_from_vlms.md)
 - [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
 - [\[CVPR 2026\] Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning](../../CVPR2026/multimodal_vlm/similarity-as-evidence_calibrating_overconfident_vlms_for_interpretable_and_labe.md)
 - [\[ACL 2026\] Learning More from Less: Exploiting Counterfactuals for Data-Efficient Chart Understanding](../../ACL2026/multimodal_vlm/learning_more_from_less_exploiting_counterfactuals_for_data-efficient_chart_unde.md)
-- [\[NeurIPS 2025\] Learning Shared Representations from Unpaired Data](../../NeurIPS2025/multimodal_vlm/learning_shared_representations_from_unpaired_data.md)
 
 </div>
 

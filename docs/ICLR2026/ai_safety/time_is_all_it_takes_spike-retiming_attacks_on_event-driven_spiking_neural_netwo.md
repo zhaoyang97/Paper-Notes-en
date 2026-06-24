@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] The authors propose the Spike-Retiming Attack—a temporal attack method that alters spike timestamps without adding or deleting spikes. By formalizing a unified three-norm budget ($\mathcal{B}_\infty$ local jitter, $\mathcal{B}_1$ total delay, and $\mathcal{B}_0$ manipulation count) under a capacity-1 constraint, and ut
+  [ICLR 2026][AI Safety][Spiking Neural Networks] The authors propose the Spike-Retiming Attack—a temporal attack method that alters spike timestamps without adding or deleting spikes. By formalizing a unified three-norm budget ($\mathcal{B}_\infty$ local jitter, $\mathcal{B}_1$ total delay, and $\mathcal{B}_0$ manipulation count) under a capacity-1 constraint, and utilizing Projected-in-the-Loop (PIL) optimization to decouple strict forward projections from soft backward diffe…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Spiking Neural Networks"
+  - "Adversarial Attacks"
+  - "Spike Retiming"
+  - "Event-driven"
+  - "Temporal Robustness"
+  - "LIF Neuron"
 date: 2026-05-08
-content_hash: b4b61848023cd2d5
+content_hash: c213dacc1adc10eb
 ---
+
 # Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks
 
 **Conference**: ICLR 2026  
@@ -163,8 +170,8 @@ PIL is the most significant contributor (Binary $\mathcal{B}_1$: 98.5%→84.3%),
 **Overall Recommendation**: ⭐⭐⭐⭐⭐ — A pioneering work that systematically evaluates the temporal robustness of SNNs. The threat model is rigorously formalized, and experiments are comprehensive across 3 datasets, 4 models, 3 norms, and 2 grid types. The PIL optimization framework effectively bridges discrete feasibility and gradient optimization, exposing fundamental temporal vulnerabilities in event-driven SNNs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -172,7 +179,7 @@ PIL is the most significant contributor (Binary $\mathcal{B}_1$: 98.5%→84.3%),
 - [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
 - [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](../../AAAI2026/ai_safety/mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
 - [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
-- [\[ICLR 2026\] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)
+- [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](../../ICML2026/ai_safety/frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
 
 </div>
 

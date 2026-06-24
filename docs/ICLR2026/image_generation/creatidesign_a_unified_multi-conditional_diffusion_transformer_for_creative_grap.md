@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] By adding only 4.1% parameters to FLUX.1-dev, CreatiDesign unifies three types of heterogeneous conditions ("subject images + semantic layouts (descriptions + boxes) + global prompts") into a single token sequence. These are interacted with via multi-modal attention, while a set of attention masks ensures each conditio
+  [ICLR2026][Image Generation][Multi-conditional Controllable Generation] By adding only 4.1% parameters to FLUX.1-dev, CreatiDesign unifies three types of heterogeneous conditions ("subject images + semantic layouts (descriptions + boxes) + global prompts") into a single token sequence. These are interacted with via multi-modal attention, while a set of attention masks ensures each condition precisely controls its specific canvas area without semantic leakage. Complemented by…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Multi-conditional Controllable Generation"
+  - "Diffusion Transformer"
+  - "Graphic Design"
+  - "Attention Mask"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: 7b29bbc3064068f5
+content_hash: 3db65fe1085eb688
 ---
+
 # CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design
 
 **Conference**: ICLR2026  
@@ -140,7 +146,7 @@ Expert models excel only in their specific dimensions (e.g., FLUX.1-Fill has goo
 
 - [\[ICCV 2025\] UniCombine: Unified Multi-Conditional Combination with Diffusion Transformer](../../ICCV2025/image_generation/unicombine_unified_multi-conditional_combination_with_diffusion_transformer.md)
 - [\[CVPR 2026\] PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow](../../CVPR2026/image_generation/psdesigner_automated_graphic_design_with_a_human-like_creative_workflow.md)
-- [\[ICLR 2026\] ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation](contextgen_contextual_layout_anchoring_for_identity-consistent_multi-instance_ge.md)
+- [\[ICLR 2026\] GenCompositor: Generative Video Compositing with Diffusion Transformer](gencompositor_generative_video_compositing_with_diffusion_transformer.md)
 - [\[CVPR 2025\] From Elements to Design: A Layered Approach for Automatic Graphic Design Composition](../../CVPR2025/image_generation/from_elements_to_design_a_layered_approach_for_automatic_graphic_design_composit.md)
 - [\[ICLR 2026\] CineTrans: Learning to Generate Videos with Cinematic Transitions via Masked Diffusion Models](cinetrans_learning_to_generate_videos_with_cinematic_transitions_via_masked_diff.md)
 

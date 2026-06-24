@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Geometry of Robustness: Optimizing Loss Landscape Curvature and Feature Manifold Alignment for Robust Finetuning of Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][CLIP] This paper attributes the root cause of the "ID accuracy / OOD generalization / Adversarial robustness" trilemma in VLM robust finetuning to sharp anisotropic minima in parameter space and deformed feature manifolds under perturbation. It proposes the GRACE framework: utilizing layer-wise adaptive low-rank adversarial
+  [CVPR 2026][Multimodal VLM][Robust Finetuning] This paper attributes the root cause of the "ID accuracy / OOD generalization / Adversarial robustness" trilemma in VLM robust finetuning to sharp anisotropic minima in parameter space and deformed feature manifolds under perturbation. It proposes the GRACE framework: utilizing layer-wise adaptive low-rank adversarial weight perturbation to flatten the loss curvature, combined with Gram volume alignment loss to stabilize the feat…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - CLIP
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Robust Finetuning"
+  - "CLIP"
+  - "Loss Curvature"
+  - "Adversarial Robustness"
+  - "Feature Manifold Alignment"
 date: 2026-05-08
 content_hash: 8fdf6d70a17b2262
 ---
+
 # The Geometry of Robustness: Optimizing Loss Landscape Curvature and Feature Manifold Alignment for Robust Finetuning of Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -155,10 +160,10 @@ Using the same LoRA foundation, GRACE still achieves the best overall performanc
 ## Related Papers
 
 - [\[CVPR 2026\] Is the Modality Gap a Bug or a Feature? A Robustness Perspective](is_the_modality_gap_a_bug_or_a_feature_a_robustness_perspective.md)
+- [\[CVPR 2026\] AGFT: Alignment-Guided Fine-Tuning for Zero-Shot Adversarial Robustness of Vision-Language Models](agft_alignment-guided_fine-tuning_for_zero-shot_adversarial_robustness_of_vision.md)
+- [\[CVPR 2026\] PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models](pointalign_feature-level_alignment_regularization_for_3d_vision-language_models.md)
+- [\[ICLR 2026\] Prompt-Robust Vision-Language Models via Meta-Finetuning](../../ICLR2026/multimodal_vlm/prompt-robust_vision-language_models_via_meta-finetuning.md)
 - [\[CVPR 2026\] TANGO: Text-Anchored Guided Optimization for Robust Fine-tuning Vision-Language Models under Label Noise](tango_text-anchored_guided_optimization_for_robust_fine-tuning_vision-language_m.md)
-- [\[CVPR 2026\] GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting](gaussianvision_vision-language_alignment_from_compressed_image_representations_u.md)
-- [\[CVPR 2026\] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception](synclip_synonym-coherent_language-image_pretraining_for_robust_open-vocabulary_d.md)
-- [\[CVPR 2026\] Continual Learning with Vision-Language Models via Semantic-Geometry Preservation](continual_learning_with_vision-language_models_via_semantic-geometry_preservatio.md)
 
 </div>
 

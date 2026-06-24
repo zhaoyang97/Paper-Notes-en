@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][sim-to-real] BFM-Zero employs online off-policy unsupervised RL (Forward-Backward CPR) to encode actions, goals, and rewards into a shared latent space. It trains a "promptable" humanoid whole-body control generalist policy, achieving zero-shot motion tracking, goal reaching, and reward optimization on the real Unitree G1 without r
+  [ICLR2026][Robotics][Behavioral Foundation Model] BFM-Zero employs online off-policy unsupervised RL (Forward-Backward CPR) to encode actions, goals, and rewards into a shared latent space. It trains a "promptable" humanoid whole-body control generalist policy, achieving zero-shot motion tracking, goal reaching, and reward optimization on the real Unitree G1 without retraining, while supporting fast few-shot adaptation.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - sim-to-real
+  - "ICLR2026"
+  - "Robotics"
+  - "Behavioral Foundation Model"
+  - "Humanoid Robot"
+  - "Forward-Backward Representation"
+  - "Unsupervised RL"
+  - "sim-to-real"
 date: 2026-05-08
-content_hash: c5be2aec5b8f1f2b
+content_hash: 9df5b38a5221df3e
 ---
+
 # BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning
 
 **Conference**: ICLR2026  
@@ -146,9 +151,9 @@ The deployable BFM-Zero (with DR) compared to the idealized BFM-Zero-priv shows 
 ## Related Papers
 
 - [\[ICML 2026\] From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](../../ICML2026/robotics/from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)
-- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](../../CVPR2026/robotics/humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
-- [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
+- [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](../../AAAI2026/robotics/coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
 - [\[ICLR 2026\] From Seeing to Experiencing: Scaling Navigation Foundation Models with Reinforcement Learning](from_seeing_to_experiencing_scaling_navigation_foundation_models_with_reinforcem.md)
+- [\[ICLR 2026\] Embodied Navigation Foundation Model](embodied_navigation_foundation_model.md)
 - [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
 
 </div>

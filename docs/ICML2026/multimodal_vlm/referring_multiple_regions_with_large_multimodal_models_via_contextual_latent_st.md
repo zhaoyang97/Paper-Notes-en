@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering
 description: >-
-  [ICML 2026][Multimodal VLM][latent steering] CSteer proposes a training-free latent steering method that constructs "contextual vectors" based on the hidden activation differences between incorrect and correct referring responses. These vectors are injected into early query layers and mid-to-late decoding layers, enabling general LMMs (e.g., Qwen3-VL, InternVL-3.
+  [ICML 2026][Multimodal VLM][Multi-region referring] CSteer proposes a training-free latent steering method that constructs "contextual vectors" based on the hidden activation differences between incorrect and correct referring responses. These vectors are injected into early query layers and mid-to-late decoding layers, enabling general LMMs (e.g., Qwen3-VL, InternVL-3.5) to outperform specialized fine-tuned region LMMs on multi-region visual referring tasks.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - latent steering
-  - training-free
-  - contextual vector
-  - LMM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Multi-region referring"
+  - "latent steering"
+  - "training-free"
+  - "contextual vector"
+  - "LMM"
 date: 2026-05-08
-content_hash: 1f0d1c67c3b6521a
+content_hash: 1e28081922c4d91d
 ---
+
 # Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering
 
 **Conference**: ICML 2026  
@@ -142,10 +144,10 @@ CSteer involves no training loss. The primary step is SVD-free mean difference: 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Investigating Redundancy in Multimodal Large Language Models with Multiple Vision Encoders](../../ICLR2026/multimodal_vlm/investigating_redundancy_in_multimodal_large_language_models_with_multiple_visio.md)
 - [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](../../NeurIPS2025/multimodal_vlm/test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
 - [\[CVPR 2026\] ORIC: Benchmarking Object Recognition under Contextual Incongruity in Large Vision-Language Models](../../CVPR2026/multimodal_vlm/oric_benchmarking_object_recognition_under_contextual_incongruity_in_large_visio.md)
 - [\[ICML 2026\] SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs](slq_bridging_modalities_via_shared_latent_queries_for_retrieval_with_frozen_mllm.md)
-- [\[CVPR 2026\] EMMA: Extracting Multiple physical parameters from Multimodal Data](../../CVPR2026/multimodal_vlm/emma_extracting_multiple_physical_parameters_from_multimodal_data.md)
 - [\[ICML 2026\] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](debate_with_images_detecting_deceptive_behaviors_in_multimodal_large_language_mo.md)
 
 </div>

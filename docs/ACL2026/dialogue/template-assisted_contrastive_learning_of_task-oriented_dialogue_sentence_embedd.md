@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings
 description: >-
-  [ACL 2026][Dialogue Systems][Paper Note] The TaDSE framework is proposed to utilize existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data augmentation, paired contrastive training, and semantic compression inference—it significantly improves the quality of task-oriented dialogue sentence embeddings in unsupe
+  [ACL 2026][Dialogue Systems][Dialogue sentence embeddings] The TaDSE framework is proposed to utilize existing template information in dialogues as auxiliary anchors. Through three stages—template-aware data augmentation, paired contrastive training, and semantic compression inference—it significantly improves the quality of task-oriented dialogue sentence embeddings in unsupervised settings, outperforming previous SOTA and even surpassing supervised commercial embedding mode…
 tags:
-  - ACL 2026
-  - Dialogue Systems
+  - "ACL 2026"
+  - "Dialogue Systems"
+  - "Dialogue sentence embeddings"
+  - "contrastive learning"
+  - "template augmentation"
+  - "intent classification"
+  - "unsupervised representation learning"
 date: 2026-05-08
-content_hash: 66f76cdc71250846
+content_hash: 06e007cd7a0f180c
 ---
+
 # Template-assisted Contrastive Learning of Task-oriented Dialogue Sentence Embeddings
 
 **Conference**: ACL 2026  
@@ -150,7 +156,7 @@ Comparison with supervised commercial embeddings (TaDSE is unsupervised, with on
 - [\[ACL 2026\] Codebook-Injected Dialogue Segmentation for Multi-Utterance Constructs Annotation: LLM-Assisted and Gold-Label-Free Evaluation](codebook-injected_dialogue_segmentation_for_multi-utterance_constructs_annotatio.md)
 - [\[ACL 2026\] Preference Learning Unlocks LLMs' Psycho-Counseling Skills](preference_learning_unlocks_llms_psycho-counseling_skills.md)
 - [\[ACL 2026\] Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)
-- [\[ACL 2025\] Know Your Mistakes: Towards Preventing Overreliance on Task-Oriented Conversational AI Through Accountability Modeling](../../ACL2025/dialogue/know_your_mistakes_towards_preventing_overreliance_on_task-oriented_conversation.md)
+- [\[ICLR 2026\] DRIFT: Learning from Abundant User Dissatisfaction in Real-World Preference Learning](../../ICLR2026/dialogue/drift_learning_from_abundant_user_dissatisfaction_in_real-world_preference_learn.md)
 
 </div>
 

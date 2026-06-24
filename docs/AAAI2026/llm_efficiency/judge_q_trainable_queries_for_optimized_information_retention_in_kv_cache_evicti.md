@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction
 description: >-
-  [AAAI 2026][LLM Efficiency][KV Cache Pruning] This paper proposes Judge Q, which introduces trainable soft tokens into the model vocabulary and trains their attention patterns to align with those of actual decoding token…
+  [AAAI 2026][LLM Efficiency][KV Cache Pruning] This paper proposes Judge Q, which introduces trainable soft tokens into the model vocabulary and trains their attention patterns to align with those of actual decoding tokens, enabling them to replace local-window queries for evaluating KV cache importance during the prefill stage. This approach better preserves global information, achieving ~1-point improvement on LongBench and 3+ points on RULER.
 tags:
   - "AAAI 2026"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Long-context Inference"
   - "Global Information Retention"
 date: 2026-05-08
-content_hash: fae13b71972e4a50
+content_hash: 0749b083bc36ef24
 ---
 
 # Judge Q: Trainable Queries for Optimized Information Retention in KV Cache Eviction
@@ -151,11 +151,11 @@ Text continuation tasks (DeepSeek-R1-Distill-Llama-8B):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Cache What Lasts: Token Retention for Memory-Bounded KV Cache in LLMs](../../ICLR2026/llm_efficiency/cache_what_lasts_token_retention_for_memory-bounded_kv_cache_in_llms.md)
 - [\[ICML 2026\] CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective](../../ICML2026/llm_efficiency/criticalkv_optimizing_kv_cache_eviction_from_an_output_perturbation_perspective.md)
-- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](../../ICML2026/llm_efficiency/obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
-- [\[ACL 2026\] Speculative Verification: Exploiting Information Gain to Refine Speculative Decoding](../../ACL2026/llm_efficiency/speculative_verification_exploiting_information_gain_to_refine_speculative_decod.md)
-- [\[ICML 2026\] Scout: Active Information Foraging for Long-Text Understanding with Decoupled Epistemic States](../../ICML2026/llm_efficiency/scout_active_information_foraging_for_long-text_understanding_with_decoupled_epi.md)
-- [\[AAAI 2026\] Harnessing the Unseen: The Hidden Influence of Intrinsic Knowledge in Long-Context Language Models](harnessing_the_unseen_the_hidden_influence_of_intrinsic_knowledge_in_long-contex.md)
+- [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](../../ICLR2026/llm_efficiency/defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
+- [\[ICLR 2026\] ReST-KV: Robust KV Cache Eviction with Layer-wise Output Reconstruction and Spatial-Temporal Smoothing](../../ICLR2026/llm_efficiency/rest-kv_robust_kv_cache_eviction_with_layer-wise_output_reconstruction_and_spati.md)
+- [\[ICLR 2026\] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference](../../ICLR2026/llm_efficiency/freekv_boosting_kv_cache_retrieval_for_efficient_llm_inference.md)
 
 </div>
 

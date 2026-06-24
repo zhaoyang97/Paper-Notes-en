@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes SeCon-RAG, a two-stage defense framework. The first stage employs clustering combined with semantic graph filtering to remove poisoned documents…
+  [NeurIPS 2025][Information Retrieval & RAG][RAG] This paper proposes SeCon-RAG, a two-stage defense framework. The first stage employs clustering combined with semantic graph filtering to remove poisoned documents, while the second stage performs conflict-aware filtering at inference time. SeCon-RAG comprehensively outperforms existing RAG defense methods across 5 LLMs and 3 QA datasets, maintaining high accuracy and near-zero attack success rates even under 100% poisoning ra…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "conflict-aware reasoning"
   - "entity-intent-relation"
 date: 2026-05-08
-content_hash: ea7028db2d2a7dc2
+content_hash: 7ffd7f81b3dcea4b
 ---
 
 # SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG
@@ -135,9 +135,9 @@ Evaluation is conducted on HotpotQA, NQ, and MS-MARCO across 5 LLMs (Mistral-12B
 
 - [\[NeurIPS 2025\] HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG](hifi-rag_hierarchical_content_filtering_and_two-pass_generation_for_open-domain_.md)
 - [\[ICML 2026\] Ranking-Free RAG: Replacing Re-Ranking with Selection in RAG for Sensitive Domains](../../ICML2026/information_retrieval/ranking_free_rag_replacing_re-ranking_with_selection_in_rag_for_sensitive_domain.md)
+- [\[ICML 2025\] Don't Lag, RAG: Training-Free Adversarial Detection Using RAG](../../ICML2025/information_retrieval/dont_lag_rag_training-free_adversarial_detection_using_rag.md)
 - [\[NeurIPS 2025\] Retrieval is Not Enough: Enhancing RAG Reasoning through Test-Time Critique and Optimization](retrieval_is_not_enough_enhancing_rag_reasoning_through_test-time_critique_and_o.md)
-- [\[NeurIPS 2025\] RMIT-ADM+S at the MMU-RAG NeurIPS 2025 Competition](rmit-adms_at_the_mmu-rag_neurips_2025_competition.md)
-- [\[NeurIPS 2025\] Reliable Decision Making via Calibration Oriented Retrieval Augmented Generation](reliable_decision_making_via_calibration_oriented_retrieval_augmented_generation.md)
+- [\[ACL 2025\] MAIN-RAG: Multi-Agent Filtering Retrieval-Augmented Generation](../../ACL2025/information_retrieval/main-rag_multi-agent_filtering_retrieval-augmented_generation.md)
 
 </div>
 

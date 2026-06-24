@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] TS-Attn proposes a training-free temporal-wise separable cross-attention mechanism that redistributes attention between motion regions and event-specific words during the early denoising stage of pre-trained video generation models, simultaneously improving multi-event completion, temporal order, and video consistency
+  [ICLR2026][Video Generation][Multi-Event Video Generation] TS-Attn proposes a training-free temporal-wise separable cross-attention mechanism that redistributes attention between motion regions and event-specific words during the early denoising stage of pre-trained video generation models, simultaneously improving multi-event completion, temporal order, and video consistency within a single complex prompt inference.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Multi-Event Video Generation"
+  - "Temporal Alignment"
+  - "Cross-Attention"
+  - "Training-Free Control"
+  - "Text-to-Video"
 date: 2026-05-08
-content_hash: bf1374fb2da59883
+content_hash: 6a6543c066e460ec
 ---
+
 # TS-Attn: Temporal-wise Separable Attention for Multi-Event Video Generation
 
 **Conference**: ICLR2026  

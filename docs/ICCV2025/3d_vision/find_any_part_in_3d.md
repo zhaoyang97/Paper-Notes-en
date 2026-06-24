@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Find Any Part in 3D
 description: >-
-  [ICCV 2025][3D Vision][3D part segmentation] This paper proposes Find3D, an automated 3D data annotation engine driven by 2D foundation models (SAM + Gemini) that generates 2.1 million part annotations. The resulting mod…
+  [ICCV 2025][3D Vision][3D part segmentation] This paper proposes Find3D, an automated 3D data annotation engine driven by 2D foundation models (SAM + Gemini) that generates 2.1 million part annotations. The resulting model is the first to simultaneously achieve open-world, cross-category, part-level, and feed-forward inference capabilities in 3D segmentation, yielding a 260% zero-shot mIoU improvement and inference speeds 6–300× faster than existing methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "contrastive learning"
   - "zero-shot generalization"
 date: 2026-05-08
-content_hash: 2bd1d7f18cd1181d
+content_hash: c3c64a12b9c2b9f1
 ---
 
 # Find Any Part in 3D
@@ -161,8 +161,8 @@ An excellent piece of work. The data engine design philosophy carries broad insp
 - [\[ICCV 2025\] From One to More: Contextual Part Latents for 3D Generation](from_one_to_more_contextual_part_latents_for_3d_generation.md)
 - [\[ICCV 2025\] SAS: Segment Any 3D Scene with Integrated 2D Priors](sas_segment_any_3d_scene_with_integrated_2d_priors.md)
 - [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
+- [\[CVPR 2025\] Depth Any Camera: Zero-Shot Metric Depth Estimation from Any Camera](../../CVPR2025/3d_vision/depth_any_camera_zero-shot_metric_depth_estimation_from_any_camera.md)
 - [\[ICCV 2025\] AnyI2V: Animating Any Conditional Image with Motion Control](anyi2v_animating_any_conditional_image_with_motion_control.md)
-- [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
 
 </div>
 

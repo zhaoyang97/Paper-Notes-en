@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LINR-PCGC: Lossless Implicit Neural Representations for Point Cloud Geometry Compression
 description: >-
-  [ICCV 2025][3D Vision][Lossless point cloud compression] LINR-PCGC proposes the first implicit neural representation (INR)-based method for lossless point cloud geometry compression. By designing a lightweight multi-scal…
+  [ICCV 2025][3D Vision][Lossless point cloud compression] LINR-PCGC proposes the first implicit neural representation (INR)-based method for lossless point cloud geometry compression. By designing a lightweight multi-scale SparseConv network with Scale Context Extraction (SCE) and Child Node Prediction (CNP) modules, combined with a GoP-level shared decoder and initialization strategy, the method achieves a 21.21% bitrate reduction over G-PCC TMC13v23 and a 21.95% reduction ov…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "GoP coding"
   - "model compression"
 date: 2026-05-08
-content_hash: 6ff258693e9c83c0
+content_hash: 413901b89cc414b0
 ---
 
 # LINR-PCGC: Lossless Implicit Neural Representations for Point Cloud Geometry Compression
@@ -192,10 +192,10 @@ AQ&MC reduces bpp by 8.1%; SCE provides an additional 3.1% reduction.
 ## Related Papers
 
 - [\[ICCV 2025\] Neural Compression for 3D Geometry Sets](neural_compression_for_3d_geometry_sets.md)
-- [\[ICCV 2025\] SL2A-INR: Single-Layer Learnable Activation for Implicit Neural Representation](sl2a-inr_single-layer_learnable_activation_for_implicit_neural_representation.md)
-- [\[ICCV 2025\] Efficient Spiking Point Mamba for Point Cloud Analysis](efficient_spiking_point_mamba_for_point_cloud_analysis.md)
-- [\[ICCV 2025\] UPP: Unified Point-Level Prompting for Robust Point Cloud Analysis](upp_unified_point-level_prompting_for_robust_point_cloud_analysis.md)
-- [\[ICCV 2025\] TurboReg: TurboClique for Robust and Efficient Point Cloud Registration](turboreg_turboclique_for_robust_and_efficient_point_cloud_registration.md)
+- [\[CVPR 2025\] End-to-End Implicit Neural Representations for Classification](../../CVPR2025/3d_vision/end-to-end_implicit_neural_representations_for_classification.md)
+- [\[CVPR 2025\] SiNR: Sparsity Driven Compressed Implicit Neural Representations](../../CVPR2025/3d_vision/sinr_sparsity_driven_compressed_implicit_neural_representations.md)
+- [\[ICLR 2026\] Neural Compression of 3D Meshes using Sparse Implicit Representation](../../ICLR2026/3d_vision/neural_compression_of_3d_meshes_using_sparse_implicit_representation.md)
+- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](../../CVPR2026/3d_vision/content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
 
 </div>
 

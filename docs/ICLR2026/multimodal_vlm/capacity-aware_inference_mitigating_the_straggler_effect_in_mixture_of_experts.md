@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts
 description: >-
-  [ICLR 2026][Multimodal VLM][Mixture of Experts] To address the Straggler Effect during MoE inference caused by uneven token distribution (where the expert with the heaviest load determines overall latency), this paper proposes Capacity-Aware Token Drop (discarding lower-scoring tokens from overloaded experts) and Expanded Drop (rerouting overflow tokens to local low
+  [ICLR2026][Multimodal VLM][Mixture of Experts] To address the Straggler Effect during MoE inference caused by uneven token distribution (where the expert with the heaviest load determines overall latency), this paper proposes Capacity-Aware Token Drop (discarding lower-scoring tokens from overloaded experts) and Expanded Drop (rerouting overflow tokens to local low-load experts), achieving a 1.85× speedup and a 0.2% performance improvement on Mixtral-8×7B.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Mixture of Experts
-  - reasoning efficiency
-  - straggler effect
-  - token drop
-  - expert parallelism
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Mixture of Experts"
+  - "reasoning efficiency"
+  - "straggler effect"
+  - "token drop"
+  - "expert parallelism"
 date: 2026-05-08
-content_hash: d886b9525a1623d9
+content_hash: 8ddedd722443de8a
 ---
+
 # Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts
 
 **Conference**: ICLR2026  
@@ -142,11 +143,11 @@ This method is a pure inference-time technique and **requires no retraining**. I
 
 ## Related Papers
 
+- [\[ICLR 2026\] CLIP-FMoE: Scalable CLIP via Fused Mixture-of-Experts with Enforced Specialization](clip-fmoe_scalable_clip_via_fused_mixture-of-experts_with_enforced_specializatio.md)
 - [\[ICLR 2026\] Massively Multimodal Foundation Models: A Framework for Capturing Interactions with Specialized Mixture-of-Experts](massively_multimodal_foundation_models_a_framework_for_capturing_interactions_wi.md)
+- [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](../../AAAI2026/multimodal_vlm/mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
 - [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](../../ICML2026/multimodal_vlm/toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
 - [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](../../ICML2026/multimodal_vlm/same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
-- [\[ICLR 2026\] Procedural Mistake Detection via Action Effect Modeling](procedural_mistake_detection_via_action_effect_modeling.md)
-- [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](../../AAAI2026/multimodal_vlm/mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
 
 </div>
 

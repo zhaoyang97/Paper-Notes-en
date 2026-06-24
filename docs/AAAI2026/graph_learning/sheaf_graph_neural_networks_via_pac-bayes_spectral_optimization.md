@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization
 description: >-
-  [AAAI 2026][Graph Learning][Sheaf Neural Networks] This paper proposes SGPC (Sheaf GNNs with PAC-Bayes Calibration), which integrates Wasserstein optimal transport for learning sheaf restriction maps…
+  [AAAI 2026][Graph Learning][Sheaf Neural Networks] This paper proposes SGPC (Sheaf GNNs with PAC-Bayes Calibration), which integrates Wasserstein optimal transport for learning sheaf restriction maps, variance-reduced diffusion with an adaptive frequency mixing layer, and PAC-Bayes spectral regularization. SGPC consistently outperforms existing GNN and sheaf methods on both homophilic and heterophilic graph node classification benchmarks while providing theoretical generaliza…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -13,7 +13,7 @@ tags:
   - "Optimal Transport"
   - "Semi-supervised Node Classification"
 date: 2026-05-08
-content_hash: 54736f2764f26490
+content_hash: 51c1929277df7754
 ---
 
 # Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization
@@ -120,8 +120,8 @@ NSD employs static or parameterized sheaf structures but lacks spectral control 
 - [\[ICLR 2026\] Cooperative Sheaf Neural Networks](../../ICLR2026/graph_learning/cooperative_sheaf_neural_networks.md)
 - [\[ICML 2026\] Polynomial Neural Sheaf Diffusion: A Spectral Filtering Approach on Cellular Sheaves](../../ICML2026/graph_learning/polynomial_neural_sheaf_diffusion_a_spectral_filtering_approach_on_cellular_shea.md)
 - [\[AAAI 2026\] Adaptive Riemannian Graph Neural Networks](adaptive_riemannian_graph_neural_networks.md)
-- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](../../ICML2026/graph_learning/l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
 - [\[ICML 2026\] Deep Neural Sheaf Diffusion](../../ICML2026/graph_learning/deep_neural_sheaf_diffusion.md)
+- [\[ICML 2026\] L2G-Net: Local to Global Spectral Graph Neural Networks via Cauchy Factorizations](../../ICML2026/graph_learning/l2g-net_local_to_global_spectral_graph_neural_networks_via_cauchy_factorizations.md)
 
 </div>
 

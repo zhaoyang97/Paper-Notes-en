@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning
 description: >-
-  [ACL 2026][LLM Safety][PAN2014] The authors extend fine-grained cross-sample memorization metrics for centralized LLMs (Zeng 2024 + PAN2014 plagiarism detector) to Federated Learning (FL). They propose a client-pair metric $\text{MR}_{j \to k}$ and derive intra-client and inter-client memorization ratios. The study finds that FL **does not** effectiv
+  [ACL 2026][LLM Safety][Federated Learning] The authors extend fine-grained cross-sample memorization metrics for centralized LLMs (Zeng 2024 + PAN2014 plagiarism detector) to Federated Learning (FL). They propose a client-pair metric $\text{MR}_{j \to k}$ and derive intra-client and inter-client memorization ratios. The study finds that FL **does not** effectively prevent training data memorization—while intra-client memorization is higher than inter-client…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - PAN2014
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Federated Learning"
+  - "Training Data Memorization"
+  - "Privacy Leakage"
+  - "Cross-Client Leakage"
+  - "PAN2014"
 date: 2026-05-08
-content_hash: 21164d15671672fa
+content_hash: 4e4e9ffa9ba60003
 ---
+
 # Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning
 
 **Conference**: ACL 2026  
@@ -159,9 +164,9 @@ The work uses standard FL algorithms: FedAvg (McMahan 2017) and FedProx (Li 2020
 ## Related Papers
 
 - [\[ACL 2026\] Revisiting Non-Verbatim Memorization in Large Language Models: The Role of Entity Surface Forms](revisiting_non-verbatim_memorization_in_large_language_models_the_role_of_entity.md)
-- [\[ACL 2025\] Exploring Forgetting in Large Language Model Pre-Training](../../ACL2025/llm_safety/exploring_forgetting_in_large_language_model_pre-training.md)
 - [\[AAAI 2026\] TOFA: Training-Free One-Shot Federated Adaptation for Vision-Language Models](../../AAAI2026/llm_safety/tofa_training-free_one-shot_federated_adaptation_for_vision-language_models.md)
 - [\[ACL 2026\] Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)
+- [\[ACL 2025\] Exploring Forgetting in Large Language Model Pre-Training](../../ACL2025/llm_safety/exploring_forgetting_in_large_language_model_pre-training.md)
 - [\[ACL 2025\] Private Memorization Editing: Turning Memorization into a Defense to Strengthen Data Privacy in Large Language Models](../../ACL2025/llm_safety/private_memorization_editing_turning_memorization_into_a_defense_to_strengthen_d.md)
 
 </div>

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training
 description: >-
-  [NeurIPS 2025][LLM Efficiency][Pipeline Scheduling] FlowMoE proposes a unified pipeline scheduling framework that integrates MHA computation, gating, expert computation…
+  [NeurIPS 2025][LLM Efficiency][Pipeline Scheduling] FlowMoE proposes a unified pipeline scheduling framework that integrates MHA computation, gating, expert computation, and A2A communication into a single pipeline. A priority-driven all-reduce tensor chunking mechanism maximizes communication–computation overlap, achieving 1.13×–1.82× speedup, 10–39% energy reduction, and 7–32% memory savings across multiple real-world MoE models.
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "Bayesian Optimization"
   - "Expert Parallelism"
 date: 2026-05-08
-content_hash: 2a06d25c174fbae0
+content_hash: d16c6b41313ff0be
 ---
 
 # FlowMoE: A Scalable Pipeline Scheduling Framework for Distributed MoE Training
@@ -140,11 +140,11 @@ FlowMoE is implemented on PyTorch + Tutel. Tutel is a deeply PyTorch-integrated 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures](mozart_modularized_and_efficient_moe_training_on_35d_wafer-scale_chiplet_archite.md)
 - [\[ICML 2026\] Variational Routing: A Scalable Bayesian Framework for Calibrated MoE Transformers](../../ICML2026/llm_efficiency/variational_routing_a_scalable_bayesian_framework_for_calibrated_mixture-of-expe.md)
+- [\[NeurIPS 2025\] Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures](mozart_modularized_and_efficient_moe_training_on_35d_wafer-scale_chiplet_archite.md)
 - [\[NeurIPS 2025\] SkyLadder: Better and Faster Pretraining via Context Window Scheduling](skyladder_better_and_faster_pretraining_via_context_window_scheduling.md)
 - [\[NeurIPS 2025\] A Unified Framework for Establishing the Universal Approximation of Transformer-Type Architectures](a_unified_framework_for_establishing_the_universal_approxima.md)
-- [\[NeurIPS 2025\] Advancing Expert Specialization for Better MoE](advancing_expert_specialization_for_better_moe.md)
+- [\[ICLR 2026\] Semantic Parallelism: Redefining Efficient MoE Inference via Model-Data Co-Scheduling](../../ICLR2026/llm_efficiency/semantic_parallelism_redefining_efficient_moe_inference_via_model-data_co-schedu.md)
 
 </div>
 

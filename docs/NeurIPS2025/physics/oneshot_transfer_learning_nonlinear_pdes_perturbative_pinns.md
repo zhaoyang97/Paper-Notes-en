@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][PINNs] By combining perturbation theory with PINNs, this work decomposes nonlinear PDEs into a sequence of linear subproblems. After learning the latent space of the linear…
+  [NeurIPS 2025][Physics & Scientific Computing][PINNs] By combining perturbation theory with PINNs, this work decomposes nonlinear PDEs into a sequence of linear subproblems. After learning the latent space of the linear operator via a Multi-Head PINN, transfer to new PDE instances is achieved through a closed-form solution within 0.2 seconds, attaining errors on the order of $10^{-3}$.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "partial differential equations"
   - "closed-form solution"
 date: 2026-05-08
-content_hash: 79cc281c661c7bf6
+content_hash: ad049a59a5b08820
 ---
 
 # One-Shot Transfer Learning for Nonlinear PDEs with Perturbative PINNs
@@ -114,10 +114,10 @@ The physics-informed losses for individual heads are summed with weighting: $\ma
 ## Related Papers
 
 - [\[NeurIPS 2025\] Transfer Learning Beyond the Standard Model](transfer_learning_beyond_the_standard_model.md)
+- [\[ICML 2025\] Maximal Update Parametrization and Zero-Shot Hyperparameter Transfer for Fourier Neural Operators](../../ICML2025/physics/maximal_update_parametrization_and_zero-shot_hyperparameter_transfer_for_fourier.md)
 - [\[NeurIPS 2025\] Integration Matters for Learning PDEs with Backward SDEs](integration_matters_for_learning_pdes_with_backward_sdes.md)
 - [\[NeurIPS 2025\] A Variational Manifold Embedding Framework for Nonlinear Dimensionality Reduction](a_variational_manifold_embedding_framework_for_nonlinear_dimensionality_reductio.md)
 - [\[NeurIPS 2025\] Neural Emulator Superiority: When Machine Learning for PDEs Surpasses its Training Data](neural_emulator_superiority_when_machine_learning_for_pdes_surpasses_its_trainin.md)
-- [\[NeurIPS 2025\] Scaling Laws and Pathologies of Single-Layer PINNs: Network Width and PDE Nonlinearity](scaling_laws_and_pathologies_of_single-layer_pinns_network_width_and_pde_nonline.md)
 
 </div>
 

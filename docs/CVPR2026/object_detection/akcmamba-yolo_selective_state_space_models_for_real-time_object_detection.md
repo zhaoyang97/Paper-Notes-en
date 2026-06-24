@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection
 description: >-
-  [CVPR 2026][Object Detection][YOLO] This paper integrates Selective State Space Models (Mamba/SSM) and adaptive kernel convolutions into YOLOv8. By replacing the C2f blocks in the backbone and neck with 3CAKCMamba and 4CAKCMamba modules, it compensates for the "short-range" limitation of standard convolutions while maintaining linear complexity and real-
+  [CVPR 2026][Object Detection][YOLO] This paper integrates Selective State Space Models (Mamba/SSM) and adaptive kernel convolutions into YOLOv8. By replacing the C2f blocks in the backbone and neck with 3CAKCMamba and 4CAKCMamba modules, it compensates for the "short-range" limitation of standard convolutions while maintaining linear complexity and real-time speed. On COCO2017, the model achieves 46.3% mAP with 14.9G FLOPs (a 1.4% mAP improvement with 47.9% fewer FLOPs compar…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - YOLO
-  - State Space Model
-  - Mamba
+  - "CVPR 2026"
+  - "Object Detection"
+  - "YOLO"
+  - "State Space Models"
+  - "Mamba"
+  - "Adaptive Kernel Convolution"
+  - "Multi-scale Feature Fusion"
 date: 2026-05-08
-content_hash: 30478311acaa4ce7
+content_hash: 813705af6be3b31a
 ---
+
 # AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection
 
 **Conference**: CVPR 2026  
@@ -143,7 +146,6 @@ Comparison of attention mechanisms (Railway, replacing YOLOv8 baseline):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Natural Gradient VI: Guarantees for Non-Conjugate Models
 description: >-
-  [NeurIPS 2025][Optimization][natural gradient] Under mean-field parameterization, this paper establishes three key theoretical results for natural gradient variational inference (NGVI) in non-conjugate models: a relative…
+  [NeurIPS 2025][Optimization][natural gradient] Under mean-field parameterization, this paper establishes three key theoretical results for natural gradient variational inference (NGVI) in non-conjugate models: a relative smoothness condition on the variational loss, a global convergence-to-stationary-point guarantee for a modified NGVI with non-Euclidean projections, and, under additional structural assumptions, hidden convexity and fast global convergence guarantees.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "relative smoothness"
   - "convergence guarantees"
 date: 2026-05-08
-content_hash: be0bbe51e21053a9
+content_hash: 4bad521012ceb30f
 ---
 
 # Natural Gradient VI: Guarantees for Non-Conjugate Models
@@ -199,9 +199,9 @@ $$D_\phi(\lambda^*, \lambda_t) \leq (1 - \mu\eta)^t \cdot D_\phi(\lambda^*, \lam
 
 - [\[NeurIPS 2025\] Natural Gradient Descent for Improving Variational Inference Based Classification of Radio Galaxies](natural_gradient_descent_for_improving_variational_inference_based_classificatio.md)
 - [\[NeurIPS 2025\] Learning Sparse Approximate Inverse Preconditioners for Conjugate Gradient Solvers on GPUs](learning_sparse_approximate_inverse_preconditioners_for_conjugate_gradient_solve.md)
+- [\[ICML 2025\] Subspace Optimization for Large Language Models with Convergence Guarantees](../../ICML2025/optimization/subspace_optimization_for_large_language_models_with_convergence_guarantees.md)
+- [\[ICML 2025\] Emergence in Non-Neural Models: Grokking Modular Arithmetic via Average Gradient Outer Product](../../ICML2025/optimization/emergence_in_non-neural_models_grokking_modular_arithmetic_via_average_gradient_.md)
 - [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
-- [\[NeurIPS 2025\] Verbalized Algorithms: Zero-shot Classical Algorithmic Reasoning for Correctness and Runtime Guarantees](verbalized_algorithms.md)
-- [\[NeurIPS 2025\] Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful](small_batch_size_training_for_language_models_when_vanilla_sgd_works_and_why_gra.md)
 
 </div>
 

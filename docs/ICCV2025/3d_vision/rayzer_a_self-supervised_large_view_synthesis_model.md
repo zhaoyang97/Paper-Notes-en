@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RayZer: A Self-supervised Large View Synthesis Model
 description: >-
-  [ICCV 2025][3D Vision][Self-supervised Learning] This paper proposes RayZer, a self-supervised multi-view 3D vision model that requires no 3D supervision (no camera poses…
+  [ICCV 2025][3D Vision][Self-supervised Learning] This paper proposes RayZer, a self-supervised multi-view 3D vision model that requires no 3D supervision (no camera poses, no scene geometry annotations). By decoupling images into camera parameters and scene representations, RayZer performs 3D-aware image autoencoding and achieves performance on novel view synthesis that matches or surpasses oracle methods relying on pose annotations.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Plücker Rays"
   - "Transformer"
 date: 2026-05-08
-content_hash: db3efddfe7ee50ae
+content_hash: be2b70047c72f20d
 ---
 
 # RayZer: A Self-supervised Large View Synthesis Model
@@ -66,7 +66,7 @@ A key information-flow control for self-supervised training: the input images ar
     - The physical relationship among camera, pixels, and scene.
 
    Ray maps are tokenized via a linear layer and fused with image tokens: $\mathbf{x}_\mathcal{A} = \text{MLP}_{fuse}([\mathbf{f}_\mathcal{A}, \mathbf{r}_\mathcal{A}])$.
-   - **Key Detail**: The original image tokens $\mathbf{f}$ are used instead of the camera estimator outputs $\mathbf{f}^*$, preventing information leakage from $\mathcal{I}_\mathcal{B}$.
+    - **Key Detail**: The original image tokens $\mathbf{f}$ are used instead of the camera estimator outputs $\mathbf{f}^*$, preventing information leakage from $\mathcal{I}_\mathcal{B}$.
 
 3. **Latent Set Scene Representation and Full-Transformer Rendering**:
 
@@ -150,11 +150,11 @@ where $\lambda = 0.2$ is the perceptual loss weight. Training uses a learning ra
 
 ## Related Papers
 
+- [\[CVPR 2025\] SpatialDreamer: Self-supervised Stereo Video Synthesis from Monocular Input](../../CVPR2025/3d_vision/spatialdreamer_self-supervised_stereo_video_synthesis_from_monocular_input.md)
 - [\[ICCV 2025\] S3E: Self-Supervised State Estimation for Radar-Inertial System](s3e_self-supervised_state_estimation_for_radar-inertial_system.md)
+- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](../../CVPR2026/3d_vision/from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
 - [\[ICCV 2025\] StruMamba3D: Exploring Structural Mamba for Self-supervised Point Cloud Representation Learning](strumamba3d_exploring_structural_mamba_for_self-supervised_point_cloud_represent.md)
-- [\[CVPR 2026\] E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](../../CVPR2026/3d_vision/e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)
-- [\[ICCV 2025\] Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis](self-ensembling_gaussian_splatting_for_few-shot_novel_view_synthesis.md)
-- [\[ICLR 2026\] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention](../../ICLR2026/3d_vision/efficient-lvsm_faster_cheaper_and_better_large_view_synthesis_model_via_decouple.md)
+- [\[CVPR 2026\] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments](../../CVPR2026/3d_vision/wildrayzer_self-supervised_large_view_synthesis_in_dynamic_environments.md)
 
 </div>
 

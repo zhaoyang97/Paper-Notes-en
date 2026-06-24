@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards
 description: >-
-  [ICML 2026][Reinforcement Learning][RLVR] The authors utilize "whether ground-level street views and satellite images can be localized to the same coordinates" as a verifiable indirect reward. Using GRPO, they perform two-stage post-training (CoT scaffolding + RL self-exploring) on Qwen2.5-VL-7B. This allows the model to learn general reasoning capabilities fr
+  [ICML 2026][Reinforcement Learning][Indirect Rewards] The authors utilize "whether ground-level street views and satellite images can be localized to the same coordinates" as a verifiable indirect reward. Using GRPO, they perform two-stage post-training (CoT scaffolding + RL self-exploring) on Qwen2.5-VL-7B. This allows the model to learn general reasoning capabilities from GPS metadata alone, which generalizes zero-shot to 25+ geospatial tasks.
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Indirect Rewards"
+  - "RLVR"
+  - "Cross-View Pairing"
+  - "Geospatial Reasoning"
+  - "Zero-Shot Generalization"
 date: 2026-05-08
-content_hash: d81e8931a17c6a3f
+content_hash: 6ee8a4625aa5a15d
 ---
+
 # Unlocking Zero-Shot Geospatial Reasoning via Indirect Rewards
 
 **Conference**: ICML 2026  
@@ -129,11 +134,11 @@ Stage 1 uses standard SFT cross-entropy + filtering after Fact-Check. Stage 2 us
 
 ## Related Papers
 
-- [\[ICML 2025\] Zero-Shot Generalization of Vision-Based RL Without Data Augmentation](../../ICML2025/reinforcement_learning/zero-shot_generalization_of_vision-based_rl_without_data_augmentation.md)
 - [\[ICLR 2026\] Balancing the Experts: Unlocking LoRA-MoE for GRPO via Mechanism-Aware Rewards](../../ICLR2026/reinforcement_learning/balancing_the_experts_unlocking_lora-moe_for_grpo_via_mechanism-aware_rewards.md)
+- [\[ICLR 2026\] Zero-Shot Adaptation of Behavioral Foundation Models to Unseen Dynamics](../../ICLR2026/reinforcement_learning/zero-shot_adaptation_of_behavioral_foundation_models_to_unseen_dynamics.md)
+- [\[ICLR 2026\] R-Zero: Self-Evolving Reasoning LLM from Zero Data](../../ICLR2026/reinforcement_learning/r-zero_self-evolving_reasoning_llm_from_zero_data.md)
+- [\[ICML 2025\] Zero-Shot Generalization of Vision-Based RL Without Data Augmentation](../../ICML2025/reinforcement_learning/zero-shot_generalization_of_vision-based_rl_without_data_augmentation.md)
 - [\[ICML 2026\] MindZero: Learning Online Mental Reasoning with Zero Annotations](mindzero_learning_online_mental_reasoning_with_zero_annotations.md)
-- [\[CVPR 2026\] Incentivizing Generative Zero-Shot Learning via Outcome-Reward Reinforcement Learning with Visual Cues](../../CVPR2026/reinforcement_learning/incentivizing_generative_zero-shot_learning_via_outcome-reward_reinforcement_lea.md)
-- [\[NeurIPS 2025\] Reasoning Gym: Reasoning Environments for Reinforcement Learning with Verifiable Rewards](../../NeurIPS2025/reinforcement_learning/reasoning_gym_reasoning_environments_for_reinforcement_learning_with_verifiable_.md)
 
 </div>
 

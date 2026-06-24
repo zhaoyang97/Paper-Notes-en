@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification
 description: >-
-  [CVPR 2026][Others][Paper Note] This paper proposes HypDFS, which shifts defect feature synthesis from Euclidean space to **hyperbolic space**. By modeling defect distributions with sparse hyperbolic prototypes, sampling synthetic features, and employing a residual adapter with hierarchical defect contrastive losses, HypDFS leverages the inherent "tr
+  [CVPR 2026][Hyperbolic Space] This paper proposes HypDFS, which shifts defect feature synthesis from Euclidean space to **hyperbolic space**. By modeling defect distributions with sparse hyperbolic prototypes, sampling synthetic features, and employing a residual adapter with hierarchical defect contrastive losses, HypDFS leverages the inherent "tree-like hierarchy" of industrial defects. It significantly outperforms Euclidean baselines on MVTec-FS and MTD few-shot benchmarks…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Hyperbolic Space"
+  - "Defect Feature Synthesis"
+  - "Few-Shot Classification"
+  - "Prototype Modeling"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 88c7df8fadf36136
+content_hash: bfbcea5f0d8739b7
 ---
+
 # Hyperbolic Defect Feature Synthesis for Few-Shot Defect Classification
 
 **Conference**: CVPR 2026  
@@ -124,11 +129,11 @@ Datasets: MVTec-FS (few-shot version of MVTec-AD, 14 products, 46 defects, 1228 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)
 - [\[CVPR 2026\] Language Does Matter for Cross-Domain Few-Shot Visual Feature Enhancement](language_does_matter_for_cross-domain_few-shot_visual_feature_enhancement.md)
 - [\[CVPR 2026\] Data-Centric Meta-Learning for Robust Few-Shot Generalization](data-centric_meta-learning_for_robust_few-shot_generalization.md)
 - [\[CVPR 2026\] NAF: Zero-Shot Feature Upsampling via Neighborhood Attention Filtering](naf_zero-shot_feature_upsampling_via_neighborhood_attention_filtering.md)
 - [\[ECCV 2024\] An Incremental Unified Framework for Small Defect Inspection](../../ECCV2024/others/an_incremental_unified_framework_for_small_defect_inspection.md)
-- [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
 
 </div>
 

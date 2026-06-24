@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DrivePI: Spatial-aware 4D MLLM for Unified Autonomous Driving Understanding, Perception, Prediction and Planning
 description: >-
-  [CVPR 2026][Autonomous Driving][4D MLLM] DrivePI utilizes a Qwen2.5 backbone of only 0.5B parameters to integrate LiDAR point clouds, multi-view images, and language instructions into a single MLLM. Through four specialized heads, it simultaneously outputs scene descriptions, 3D occupancy, occupancy flow, and planned trajectories. This allows the VLA model to
+  [CVPR 2026][Autonomous Driving][4D MLLM] DrivePI utilizes a Qwen2.5 backbone of only 0.5B parameters to integrate LiDAR point clouds, multi-view images, and language instructions into a single MLLM. Through four specialized heads, it simultaneously outputs scene descriptions, 3D occupancy, occupancy flow, and planned trajectories. This allows the VLA model to possess language interaction capabilities while recovering the fine-grained spatial perception typical of VA models. E…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - 4D MLLM
-  - VLA
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "4D MLLM"
+  - "End-to-end driving"
+  - "3D occupancy"
+  - "occupancy flow"
+  - "VLA"
 date: 2026-05-08
-content_hash: 2685bbe8e945ab7d
+content_hash: 0bb1fed54e31abda
 ---
+
 # DrivePI: Spatial-aware 4D MLLM for Unified Autonomous Driving Understanding, Perception, Prediction and Planning
 
 **Conference**: CVPR 2026  
@@ -160,11 +164,11 @@ Data Scaling (Table 6, Qwen2.5-3B text head only): Expanding occupancy QA from 2
 
 ## Related Papers
 
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](spatial_retrieval_augmented_autonomous_driving.md)
 - [\[CVPR 2026\] Unifying Language-Action Understanding and Generation for Autonomous Driving](unifying_language-action_understanding_and_generation_for_autonomous_driving.md)
 - [\[CVPR 2026\] SpaceDrive: Infusing Spatial Awareness into VLM-based Autonomous Driving](spacedrive_infusing_spatial_awareness_into_vlm-based_autonomous_driving.md)
 - [\[CVPR 2026\] GaussianDWM: 3D Gaussian Driving World Model for Unified Scene Understanding and Multi-Modal Generation](gaussiandwm_3d_gaussian_driving_world_model_for_unified_scene_understanding_and_.md)
-- [\[AAAI 2026\] RadarMP: Motion Perception for 4D mmWave Radar in Autonomous Driving](../../AAAI2026/autonomous_driving/radarmp_motion_perception_for_4d_mmwave_radar_in_autonomous_driving.md)
-- [\[CVPR 2026\] CogDriver: Integrating Cognitive Inertia for Temporally Coherent Planning in Autonomous Driving](cogdriver_integrating_cognitive_inertia_for_temporally_coherent_planning_in_auto.md)
+- [\[ICLR 2026\] $AutoDrive\text{-}P^3$: Unified Chain of Perception-Prediction-Planning Thought via Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/autodrivetext-p3_unified_chain_of_perceptionpredictionplanning_thought_via_reinf.md)
 
 </div>
 

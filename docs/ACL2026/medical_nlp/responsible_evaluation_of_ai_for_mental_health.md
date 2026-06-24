@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Responsible Evaluation of AI for Mental Health
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy (assessment/intervention/informati
+  [ACL 2026][Medical LLM][Mental Health AI] Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy (assessment/intervention/information synthesis $\times$ validity/reliability/implementation/maintenance) that integrates clinical psychometrics and impl…
 tags:
-  - ACL 2026
-  - Medical NLP
+  - "ACL 2026"
+  - "Medical LLM"
+  - "Mental Health AI"
+  - "Evaluation Framework"
+  - "Clinical Validity"
+  - "Responsible AI"
+  - "Taxonomy"
 date: 2026-05-08
-content_hash: f7573a90f95fd418
+content_hash: 0293905828f2b981
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # Responsible Evaluation of AI for Mental Health
 
@@ -122,8 +128,8 @@ Not applicable (Position paper/Review). Annotation methodology: Two annotators (
 - [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 - [\[ACL 2026\] Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](../../ICLR2026/medical_nlp/counselbench_llm_mental_health_qa.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
-- [\[ACL 2026\] "Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery](34excuse_me_may_i_say_something34_colabscience_a_proactive_ai_assistant_for_biom.md)
 
 </div>
 

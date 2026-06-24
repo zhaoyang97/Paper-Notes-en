@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Breaking and Fixing Defenses Against Control Flow Hijacking in Multi-Agent Systems
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] This paper first demonstrates that existing "alignment-check" defenses (e.g., LlamaFirewall) can be bypassed by meticulously rewritten Control Flow Hijacking (CFH) attacks. It then proposes CONTROLVALVE—a coordination-layer defense inspired by program Control Flow Integrity (CFI). During the task planning phase, it gen
+  [ICLR 2026][Multi-Agent][Control Flow Hijacking] This paper first demonstrates that existing "alignment-check" defenses (e.g., LlamaFirewall) can be bypassed by meticulously rewritten Control Flow Hijacking (CFH) attacks. It then proposes CONTROLVALVE—a coordination-layer defense inspired by program Control Flow Integrity (CFI). During the task planning phase, it generates an "allowed agent call graph + per-edge context rules." During execution…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Control Flow Hijacking"
+  - "Indirect Prompt Injection"
+  - "Control Flow Integrity"
+  - "Orchestration Layer Defense"
 date: 2026-05-08
-content_hash: 2d0d124d3ff30606
+content_hash: a095cb4154a228f9
 ---
+
 # Breaking and Fixing Defenses Against Control Flow Hijacking in Multi-Agent Systems
 
 **Conference**: ICLR 2026  

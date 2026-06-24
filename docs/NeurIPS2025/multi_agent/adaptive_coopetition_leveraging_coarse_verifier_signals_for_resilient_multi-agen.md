@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Coopetition: Leveraging Coarse Verifier Signals for Resilient Multi-Agent LLM Reasoning
 description: >-
-  [NeurIPS 2025 (Mathematical Reasoning and AI Workshop)][Multi-Agent][multi-agent collaboration] This paper proposes the Adaptive Coopetition (AdCo) framework, which employs a UCB multi-armed bandit strategy with coarse-g…
+  [NeurIPS 2025 (Mathematical Reasoning and AI Workshop)][Multi-Agent][multi-agent collaboration] This paper proposes the Adaptive Coopetition (AdCo) framework, which employs a UCB multi-armed bandit strategy with coarse-grained verifier signals to enable multiple LLM agents to adaptively switch between cooperative and competitive modes during inference, achieving a 20% relative improvement on mathematical reasoning benchmarks.
 tags:
   - "NeurIPS 2025 (Mathematical Reasoning and AI Workshop)"
   - "Multi-Agent"
@@ -12,7 +12,7 @@ tags:
   - "coopetition mechanism"
   - "inference-time computation"
 date: 2026-05-08
-content_hash: 5b3e474c1763eebf
+content_hash: aa05f11553c6f5c1
 ---
 
 # Adaptive Coopetition: Leveraging Coarse Verifier Signals for Resilient Multi-Agent LLM Reasoning
@@ -167,11 +167,11 @@ Effect of varying agent count:
 
 ## Related Papers
 
-- [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](../../AAAI2026/multi_agent/adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
 - [\[ICML 2026\] Beyond Majority Voting: LLM Aggregation by Leveraging Higher-Order Information](../../ICML2026/multi_agent/beyond_majority_voting_llm_aggregation_by_leveraging_higher-order_information.md)
+- [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](../../AAAI2026/multi_agent/adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
+- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[NeurIPS 2025\] MASFIN: A Multi-Agent System for Decomposed Financial Reasoning and Forecasting](masfin_a_multi-agent_system_for_decomposed_financial_reasoning_and_forecasting.md)
-- [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
+- [\[ICML 2025\] From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium](../../ICML2025/multi_agent/from_debate_to_equilibrium_belief-driven_multi-agent_llm_reasoning_via_bayesian_.md)
 
 </div>
 

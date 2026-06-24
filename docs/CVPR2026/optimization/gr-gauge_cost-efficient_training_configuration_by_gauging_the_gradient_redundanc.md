@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] GR-Gauge: Cost-efficient Training Configuration By Gauging the Gradient Redundancy
 description: >-
-  [CVPR 2026][Optimization & Theory][batch size] Training is modeled as a "gradient voting process in both time and sample dimensions." The authors propose gradient redundancy metrics $GR_T$ and $GR_S$ as a universal "health gauge" across models. This gauge guides hyperparameter search, early stopping, and state reuse for learning rate and batch size, reducing the to
+  [CVPR 2026][Optimization][Hyperparameter Optimization] Training is modeled as a "gradient voting process in both time and sample dimensions." The authors propose gradient redundancy metrics $GR_T$ and $GR_S$ as a universal "health gauge" across models. This gauge guides hyperparameter search, early stopping, and state reuse for learning rate and batch size, reducing the total time to reach target accuracy by up to 80%+ without requiring expensive validation sets.
 tags:
-  - CVPR 2026
-  - Optimization & Theory
-  - batch size
+  - "CVPR 2026"
+  - "Optimization"
+  - "Hyperparameter Optimization"
+  - "Gradient Redundancy"
+  - "Learning Rate"
+  - "Batch Size"
+  - "Training-as-a-Service"
 date: 2026-05-08
-content_hash: 7921ebfccc928d19
+content_hash: f7be686ce1df78be
 ---
+
 # GR-Gauge: Cost-efficient Training Configuration By Gauging the Gradient Redundancy
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,20 @@ Relative time increase to reach target when components are removed:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning](../../NeurIPS2025/optimization/cost-sensitive_freeze-thaw_bayesian_optimization_for_efficient_hyperparameter_tu.md)
+- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
+- [\[ICLR 2026\] NeuCLIP: Efficient Large-Scale CLIP Training with Neural Normalizer Optimization](../../ICLR2026/optimization/neuclip_efficient_large-scale_clip_training_with_neural_normalizer_optimization.md)
+- [\[ICLR 2026\] CurES: From Gradient Analysis to Efficient Curriculum Learning for Reasoning LLMs](../../ICLR2026/optimization/cures_from_gradient_analysis_to_efficient_curriculum_learning_for_reasoning_llms.md)
+- [\[AAAI 2026\] Cost-Minimized Label-Flipping Poisoning Attack to LLM Alignment](../../AAAI2026/optimization/cost-minimized_label-flipping_poisoning_attack_to_llm_alignment.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] InTrain: Intrinsic Trainability for Zero-Cost Neural Architecture Search](intrain_intrinsic_trainability_for_zero-cost_neural_architecture_search.md)

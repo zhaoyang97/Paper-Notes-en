@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Ensembling Sparse Autoencoders
 description: >-
-  [ICML 2026][Interpretability][Bagging] A single Sparse Autoencoder (SAE) only captures a limited subset of features in the activation space. This paper adapts bagging and boosting from supervised learning to SAEs, demonstrating that "ensembling multiple SAE reconstructions" is mathematically equivalent to "concatenating their feature dictionaries." Using na
+  [ICML2026][Interpretability][Sparse Autoencoders] A single Sparse Autoencoder (SAE) only captures a limited subset of features in the activation space. This paper adapts bagging and boosting from supervised learning to SAEs, demonstrating that "ensembling multiple SAE reconstructions" is mathematically equivalent to "concatenating their feature dictionaries." Using naive bagging and boosting implementations, the authors simultaneously improve reconstruction quality…
 tags:
-  - ICML 2026
-  - Interpretability
-  - Bagging
-  - Boosting
+  - "ICML2026"
+  - "Interpretability"
+  - "Sparse Autoencoders"
+  - "Ensemble Learning"
+  - "Bagging"
+  - "Boosting"
+  - "Feature Interpretability"
 date: 2026-05-08
-content_hash: 25cc9e73be422466
+content_hash: fadd337bd9fe759c
 ---
+
 # Ensembling Sparse Autoencoders
 
 **Conference**: ICML2026  
@@ -147,10 +151,10 @@ The AutoInterp scores for ensemble SAEs are at least as high as Expanded SAEs de
 ## Related Papers
 
 - [\[ICML 2026\] Sparse Autoencoders are Topic Models](sparse_autoencoders_are_topic_models.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
 - [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
-- [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](../../ICLR2026/interpretability/temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
 
 </div>
 

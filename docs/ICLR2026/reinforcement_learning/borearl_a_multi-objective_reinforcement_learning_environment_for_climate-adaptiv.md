@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] BoreaRL is the first multi-objective reinforcement learning (MORL) environment for climate-adaptive boreal forest management. Using a physical simulator coupling energy-carbon-water fluxes, it poses the conflicting goals of "maximizing carbon sequestration vs. protecting permafrost" to MORL agents. The study reveals a
+  [ICLR2026][Reinforcement Learning][Multi-objective reinforcement learning] BoreaRL is the first multi-objective reinforcement learning (MORL) environment for climate-adaptive boreal forest management. Using a physical simulator coupling energy-carbon-water fluxes, it poses the conflicting goals of "maximizing carbon sequestration vs. protecting permafrost" to MORL agents. The study reveals a severe asymmetry in learning difficulty—the carbon goal is easily mastered while the…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Multi-objective reinforcement learning"
+  - "Boreal forest management"
+  - "Permafrost protection"
+  - "Carbon sequestration"
+  - "Physical simulation environment"
 date: 2026-05-08
-content_hash: 47526d543a046dc8
+content_hash: 7e01340afb7beb13
 ---
+
 # BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management
 
 **Conference**: ICLR2026  
@@ -129,8 +135,8 @@ All forms are difficult to optimize, confirming the permafrost goal's inherent c
 ## Related Papers
 
 - [\[ICLR 2026\] A Reward-Free Viewpoint on Multi-Objective Reinforcement Learning](a_reward-free_viewpoint_on_multi-objective_reinforcement_learning.md)
-- [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](../../AAAI2026/reinforcement_learning/mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[ICLR 2026\] AMPED: Adaptive Multi-objective Projection for balancing Exploration and skill Diversification](amped_adaptive_multi-objective_projection_for_balancing_exploration_and_skill_di.md)
+- [\[AAAI 2026\] MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](../../AAAI2026/reinforcement_learning/mars_a_meta-adaptive_reinforcement_learning_framework_for_risk-aware_multi-agent.md)
 - [\[ICLR 2026\] Dual-Objective Reinforcement Learning with Novel Hamilton-Jacobi-Bellman Formulations](dual-objective_reinforcement_learning_with_novel_hamilton-jacobi-bellman_formula.md)
 - [\[ICLR 2026\] Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning](adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning.md)
 

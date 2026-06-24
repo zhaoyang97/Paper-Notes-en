@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Rethinking Causal Mask Attention for Vision-Language Inference
 description: >-
-  [ICLR 2026][Multimodal VLM][future-aware mask] This paper re-evaluates the rationality of decoder-only VLMs inheriting the causal mask from LLMs. It finds that allowing visual tokens to "see" future visual/textual context during the prefill stage improves performance in multi-image, visual relationship, and text-dense QA tasks. The authors propose a lightweight fut
+  [ICLR2026][Multimodal VLM][Causal attention] This paper re-evaluates the rationality of decoder-only VLMs inheriting the causal mask from LLMs. It finds that allowing visual tokens to "see" future visual/textual context during the prefill stage improves performance in multi-image, visual relationship, and text-dense QA tasks. The authors propose a lightweight future-aware attention that compresses future attention into prefix positions, retaining most benefits while maintaini…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - future-aware mask
-  - Inference Acceleration
+  - "ICLR2026"
+  - "Multimodal VLM"
+  - "Causal attention"
+  - "VLM inference"
+  - "Visual token"
+  - "future-aware mask"
+  - "Inference acceleration"
 date: 2026-05-08
-content_hash: 601139c17b436dbc
+content_hash: 7cdc5989bf43d89b
 ---
+
 # Rethinking Causal Mask Attention for Vision-Language Inference
 
 **Conference**: ICLR2026  
@@ -140,13 +144,14 @@ Kernel pooling is found to be robust to hyperparameters (pool size 1 to 25); bot
 - Value: ⭐⭐⭐⭐☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](../../ICML2026/multimodal_vlm/seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
-- [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
 - [\[ICLR 2026\] Pay Less Attention to Function Words for Free Robustness of Vision-Language Models](pay_less_attention_to_function_words_for_free_robustness_of_vision-language_mode.md)
+- [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
 - [\[CVPR 2026\] BiomedCCPL: Causal Conditional Prompt Learning for Biomedical Vision-Language Models](../../CVPR2026/multimodal_vlm/biomedccpl_causal_conditional_prompt_learning_for_biomedical_vision-language_mod.md)
 - [\[ACL 2026\] From Heads to Neurons: Causal Attribution and Steering in Multi-Task Vision-Language Models](../../ACL2026/multimodal_vlm/from_heads_to_neurons_causal_attribution_and_steering_in_multi-task_vision-langu.md)
 

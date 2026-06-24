@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Visual Instruction Bottleneck Tuning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Information Bottleneck] This paper is the first to apply the Information Bottleneck (IB) principle to end-to-end instruction tuning of multimodal large language models. It proposes Visual I…
+  [NeurIPS 2025][Multimodal VLM][Information Bottleneck] This paper is the first to apply the Information Bottleneck (IB) principle to end-to-end instruction tuning of multimodal large language models. It proposes Visual Instruction Bottleneck Tuning (Vittle), which inserts a lightweight bottleneck layer inside the LLM to learn minimally sufficient representations. Vittle consistently improves robustness across 30 distribution shift scenarios without sacrificing performance on…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Instruction Tuning"
   - "Representation Learning"
 date: 2026-05-08
-content_hash: 6b048e661653bcbc
+content_hash: 1cc231cb1e6e97b3
 ---
 
 # Visual Instruction Bottleneck Tuning
@@ -166,9 +166,9 @@ Vittle reduces the JSD between clean and perturbed samples from 0.068 to 0.047 (
 
 - [\[NeurIPS 2025\] Learning to Instruct for Visual Instruction Tuning](learning_to_instruct_for_visual_instruction_tuning.md)
 - [\[NeurIPS 2025\] CoIDO: Efficient Data Selection for Visual Instruction Tuning via Coupled Importance-Diversity Optimization](coido_efficient_data_selection_for_visual_instruction_tuning_via_coupled_importa.md)
+- [\[ICML 2025\] Parrot: Multilingual Visual Instruction Tuning](../../ICML2025/multimodal_vlm/parrot_multilingual_visual_instruction_tuning.md)
 - [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](../../ICCV2025/multimodal_vlm/metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
-- [\[NeurIPS 2025\] To Think or Not To Think: A Study of Explicit Thinking in Rule-Based Visual Reinforcement Fine-Tuning](think_or_not_think_a_study_of_explicit_thinking_in_rule-based_visual_reinforceme.md)
-- [\[ICCV 2025\] SMoLoRA: Exploring and Defying Dual Catastrophic Forgetting in Continual Visual Instruction Tuning](../../ICCV2025/multimodal_vlm/smolora_exploring_and_defying_dual_catastrophic_forgetting_in_continual_visual_i.md)
+- [\[ACL 2025\] Enhancing Multimodal Continual Instruction Tuning with BranchLoRA](../../ACL2025/multimodal_vlm/branchlora_continual_instruction.md)
 
 </div>
 

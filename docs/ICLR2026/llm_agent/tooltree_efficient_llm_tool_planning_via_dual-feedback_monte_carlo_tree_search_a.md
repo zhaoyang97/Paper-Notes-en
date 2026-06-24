@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] ToolTree models multi-tool calling for LLM agents as a Monte Carlo Tree Search (MCTS), utilizing "pre-execution pre-evaluation + post-execution empirical evaluation" LLM scoring signals to simultaneously guide selection and pruning. Under fixed compute budgets, it enables agents to possess both foresight and the abilit
+  [ICLR 2026][LLM Agent][Tool Planning] ToolTree models multi-tool calling for LLM agents as a Monte Carlo Tree Search (MCTS), utilizing "pre-execution pre-evaluation + post-execution empirical evaluation" LLM scoring signals to simultaneously guide selection and pruning. Under fixed compute budgets, it enables agents to possess both foresight and the ability to backtrack based on real feedback, achieving approximately 10% higher accuracy than SOTA search paradigms across four…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Tool Planning"
+  - "Monte Carlo Tree Search"
+  - "Bidirectional Pruning"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 96ce34def38b6789
+content_hash: dc5bfd1424ac1f7c
 ---
+
 # ToolTree: Efficient LLM Agent Tool Planning via Dual-Feedback Monte Carlo Tree Search and Bidirectional Pruning
 
 **Conference**: ICLR 2026  
@@ -145,15 +150,14 @@ On GTA + GPT-4o, decoupling the dual-evaluation and bidirectional pruning (Table
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Tree Search for LLM Agent Reinforcement Learning](tree_search_for_llm_agent_reinforcement_learning.md)
 - [\[ICML 2025\] KBQA-o1: Agentic Knowledge Base Question Answering with Monte Carlo Tree Search](../../ICML2025/llm_agent/kbqa-o1_agentic_knowledge_base_question_answering_with_monte_carlo_tree_search.md)
 - [\[ICLR 2026\] GTool: Graph Enhanced Tool Planning with Large Language Model](gtool_graph_enhanced_tool_planning_with_large_language_model.md)
 - [\[AAAI 2026\] Prune4Web: DOM Tree Pruning Programming for Web Agent](../../AAAI2026/llm_agent/prune4web_dom_tree_pruning_programming_for_web_agent.md)
 - [\[ICLR 2026\] OrchestrationBench: LLM-Driven Agentic Planning and Tool Use in Multi-Domain Scenarios](orchestrationbench_llm-driven_agentic_planning_and_tool_use_in_multi-domain_scen.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
 
 </div>
 

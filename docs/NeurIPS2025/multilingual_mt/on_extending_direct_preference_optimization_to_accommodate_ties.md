@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On Extending Direct Preference Optimization to Accommodate Ties
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][DPO] This paper replaces the Bradley-Terry preference model in DPO with the Rao-Kupper and Davidson extensions…
+  [NeurIPS 2025][Multilingual & Machine Translation][DPO] This paper replaces the Bradley-Terry preference model in DPO with the Rao-Kupper and Davidson extensions, enabling preference optimization to explicitly model "tie" data. This avoids discarding ambiguous preference pairs and yields improved regularization and performance on translation and mathematical reasoning tasks.
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -13,7 +13,7 @@ tags:
   - "Rao-Kupper"
   - "Davidson model"
 date: 2026-05-08
-content_hash: 0a7aa3d33a1a0d11
+content_hash: e799e0c3611d2dc9
 ---
 
 # On Extending Direct Preference Optimization to Accommodate Ties
@@ -137,8 +137,8 @@ Results on mathematical reasoning (GSM8K/MATH):
 - [\[ICLR 2026\] From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization](../../ICLR2026/multilingual_mt/from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap.md)
 - [\[NeurIPS 2025\] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages](helpsteer3-preference_open_human-annotated_preference_data_across_diverse_tasks_.md)
 - [\[ACL 2026\] CLewR: Curriculum Learning with Restarts for Machine Translation Preference Learning](../../ACL2026/multilingual_mt/clewr_curriculum_learning_with_restarts_for_machine_translation_preference_learn.md)
-- [\[ACL 2026\] Hierarchical Policy Optimization for Simultaneous Translation of Unbounded Speech](../../ACL2026/multilingual_mt/hierarchical_policy_optimization_for_simultaneous_translation_of_unbounded_speec.md)
-- [\[ACL 2026\] TLPO: Token-Level Policy Optimization for Mitigating Language Confusion in Large Language Models](../../ACL2026/multilingual_mt/tlpo_token-level_policy_optimization_for_mitigating_language_confusion_in_large_.md)
+- [\[ACL 2025\] Cross-Lingual Optimization for Language Transfer in Large Language Models](../../ACL2025/multilingual_mt/cross-lingual_optimization_for_language_transfer_in_large_language_models.md)
+- [\[ACL 2025\] Implicit Cross-Lingual Rewarding for Efficient Multilingual Preference Alignment](../../ACL2025/multilingual_mt/implicit_cross-lingual_rewarding_for_efficient_multilingual_preference_alignment.md)
 
 </div>
 

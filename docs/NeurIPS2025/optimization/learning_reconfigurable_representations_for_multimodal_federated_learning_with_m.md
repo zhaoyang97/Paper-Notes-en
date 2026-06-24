@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data
 description: >-
-  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes PEPSY, a framework that learns client-side embedding controls to encode data-missing patterns…
+  [NeurIPS 2025][Optimization][Federated Learning] This paper proposes PEPSY, a framework that learns client-side embedding controls to encode data-missing patterns, reconfiguring globally aggregated representations into complete-data features adapted to each client's local context, addressing both modality-missing and feature-missing scenarios in multimodal federated learning.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Reconfigurable Representations"
   - "Embedding Controls"
 date: 2026-05-08
-content_hash: cd0335e2875b382e
+content_hash: 418eb9aa19625327
 ---
 
 # Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data
@@ -153,8 +153,8 @@ PEPSY achieves the greatest performance gains under severe data incompleteness:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Streaming Federated Learning with Markovian Data](streaming_federated_learning_with_markovian_data.md)
-- [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](../../ICCV2025/optimization/federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
 - [\[NeurIPS 2025\] Efficient Federated Learning against Byzantine Attacks and Data Heterogeneity via Aggregating Normalized Gradients](efficient_federated_learning_against_byzantine_attacks_and_data_heterogeneity_vi.md)
+- [\[ICCV 2025\] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data](../../ICCV2025/optimization/federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data.md)
 - [\[NeurIPS 2025\] Multiplayer Federated Learning: Reaching Equilibrium with Less Communication](multiplayer_federated_learning_reaching_equilibrium_with_less_communication.md)
 - [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
 

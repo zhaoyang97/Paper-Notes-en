@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NeurIPT: Foundation Model for Neural Interfaces
 description: >-
-  [NeurIPS 2025][Medical Imaging][EEG foundation model] NeurIPT is an EEG foundation model for diverse brain–computer interface (BCI) applications. Through four key innovations—Amplitude-Aware Masking Pre-training (AAMP)…
+  [NeurIPS 2025][Medical Imaging][EEG foundation model] NeurIPT is an EEG foundation model for diverse brain–computer interface (BCI) applications. Through four key innovations—Amplitude-Aware Masking Pre-training (AAMP), Progressive Mixture-of-Experts (PMoE) architecture, 3D electrode spatial encoding, and Intra- and Inter-Lobe Pooling (IILP)—it achieves state-of-the-art performance across eight downstream BCI tasks.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "EEG signals"
   - "brain–computer interface"
 date: 2026-05-08
-content_hash: 9fa95a5ceabdaf07
+content_hash: d6cb8e565c7c7793
 ---
 
 # NeurIPT: Foundation Model for Neural Interfaces
@@ -151,9 +151,9 @@ NeurIPT adopts an encoder–decoder architecture built upon Crossformer's hierar
 
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
 - [\[NeurIPS 2025\] Brain Harmony: A Multimodal Foundation Model Unifying Morphology and Function into 1D Tokens](brain_harmony_a_multimodal_foundation_model_unifying_morphology_and_function_int.md)
+- [\[ICLR 2026\] MindMix: A Multimodal Foundation Model for Auditory Perception Decoding via Deep Neural-Acoustic Alignment](../../ICLR2026/medical_imaging/mindmix_a_multimodal_foundation_model_for_auditory_perception_decoding_via_deep_.md)
 - [\[NeurIPS 2025\] Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation](toward_a_vision-language_foundation_model_for_medical_data_multimodal_dataset_an.md)
-- [\[ICLR 2026\] Biologically Plausible Online Hebbian Meta-Learning: Two-Timescale Local Rules for Spiking Neural Brain Interfaces](../../ICLR2026/medical_imaging/biologically_plausible_online_hebbian_meta-learning_two-timescale_local_rules_fo.md)
-- [\[NeurIPS 2025\] Generalizable, Real-Time Neural Decoding with Hybrid State-Space Models](generalizable_real-time_neural_decoding_with_hybrid_state-space_models.md)
+- [\[ICLR 2026\] CodeBrain: Bridging Decoupled Tokenizer and Multi-Scale Architecture for EEG Foundation Model](../../ICLR2026/medical_imaging/codebrain_bridging_decoupled_tokenizer_and_multi-scale_architecture_for_eeg_foun.md)
 
 </div>
 

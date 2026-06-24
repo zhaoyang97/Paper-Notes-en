@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Spatial Understanding] This paper proposes See&Trek, a training-free and GPU-free spatial prompting framework that enhances spatial understanding in MLLMs through maximum semantic richness…
+  [NeurIPS 2025][Multimodal VLM][Spatial Understanding] This paper proposes See&Trek, a training-free and GPU-free spatial prompting framework that enhances spatial understanding in MLLMs through maximum semantic richness sampling and motion reconstruction, achieving up to 3.5% improvement on VSI-Bench.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Visual Odometry"
   - "Training-Free"
 date: 2026-05-08
-content_hash: c79b5147d1d7388e
+content_hash: e211bfc15dc07e22
 ---
 
 # See&Trek: Training-Free Spatial Prompting for Multimodal Large Language Model
@@ -123,10 +123,10 @@ Completely training-free. Only CPU-level computation is required for ORB matchin
 ## Related Papers
 
 - [\[NeurIPS 2025\] Training-free Online Video Step Grounding](training-free_online_video_step_grounding.md)
-- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
 - [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](../../ICCV2025/multimodal_vlm/exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
 - [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
-- [\[NeurIPS 2025\] To See or To Read: User Behavior Reasoning in Multimodal LLMs](to_see_or_to_read_user_behavior_reasoning_in_multimodal_llms.md)
+- [\[ACL 2025\] Can Multimodal Large Language Models Understand Spatial Relations?](../../ACL2025/multimodal_vlm/spatialmqa_mllm_spatial_relations.md)
+- [\[CVPR 2026\] ROSE: Rotate Your Large Language Model to See](../../CVPR2026/multimodal_vlm/rose_rotate_your_large_language_model_to_see.md)
 
 </div>
 

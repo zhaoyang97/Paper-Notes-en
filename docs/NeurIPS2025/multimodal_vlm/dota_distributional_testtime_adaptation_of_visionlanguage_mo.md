@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] DOTA proposes shifting test-time adaptation from a "caching sample instances" paradigm to a "continuously estimating test data distributions" paradigm. By combining on…
+  [NeurIPS 2025][Multimodal VLM][Test-time adaptation] DOTA proposes shifting test-time adaptation from a "caching sample instances" paradigm to a "continuously estimating test data distributions" paradigm. By combining online Gaussian discriminant analysis with zero-shot prediction probabilities to estimate per-class distributions, DOTA achieves gradient-free, forgetting-resistant, and efficient test-time adaptation, surpassing all baselines in average accuracy across 10 cross…
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian discriminant analysis"
   - "zero-shot classification"
 date: 2026-05-08
-content_hash: 8aa8244796df1cd2
+content_hash: b2a1fe3abb9061a6
 ---
 
 # DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models
@@ -123,9 +123,9 @@ DOTA processes test samples in a streaming fashion. For each new sample, it firs
 
 - [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
 - [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
+- [\[CVPR 2025\] Realistic Test-Time Adaptation of Vision-Language Models](../../CVPR2025/multimodal_vlm/realistic_test-time_adaptation_of_vision-language_models.md)
 - [\[NeurIPS 2025\] TOMCAT: Test-time Comprehensive Knowledge Accumulation for Compositional Zero-Shot Learning](tomcat_test-time_comprehensive_knowledge_accumulation_for_compositional_zero-sho.md)
-- [\[NeurIPS 2025\] Test-Time Spectrum-Aware Latent Steering for Zero-Shot Generalization in Vision-Language Models](test-time_spectrum-aware_latent_steering_for_zero-shot_generalization_in_vision-.md)
-- [\[ICCV 2025\] Is Less More? Exploring Token Condensation as Training-free Test-time Adaptation](../../ICCV2025/multimodal_vlm/is_less_more_exploring_token_condensation_as_training-free_test-time_adaptation.md)
+- [\[ICLR 2026\] Flatness-Guided Test-Time Adaptation for Vision-Language Models](../../ICLR2026/multimodal_vlm/flatness_guided_test-time_adaptation_for_vision-language_models.md)
 
 </div>
 

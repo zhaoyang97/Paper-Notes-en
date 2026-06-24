@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] IV-Bench is the first benchmark for "Image-Grounded Video Perception and Reasoning"—using an **externally sourced** reference image as visual context to query video content. With 966 videos, 2,560 image-text queries, and 13 task categories, it reveals that the strongest MLLMs achieve only 28.9% accuracy (compared to 88
+  [ICLR 2026][VLM Reasoning][Image-Grounded Video Understanding] IV-Bench is the first benchmark for "Image-Grounded Video Perception and Reasoning"—using an **externally sourced** reference image as visual context to query video content. With 966 videos, 2,560 image-text queries, and 13 task categories, it reveals that the strongest MLLMs achieve only 28.9% accuracy (compared to 88.8% for humans), exposing the fragility of current models' ability to understand videos via visua…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Image-Grounded Video Understanding"
+  - "Multimodal Benchmark"
+  - "Video Perception"
+  - "Video Reasoning"
+  - "MLLM Evaluation"
 date: 2026-05-08
-content_hash: 4240f31e218da6ae
+content_hash: c745f7821f8e925b
 ---
+
 # IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs
 
 **Conference**: ICLR 2026  
@@ -115,10 +121,10 @@ Note: With an average of 9 options, the random baseline is approximately 11.11%.
 ## Related Papers
 
 - [\[ICLR 2026\] MMR-V: What's Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos](mmr-v_whats_left_unsaid_a_benchmark_for_multimodal_deep_reasoning_in_videos.md)
-- [\[ICLR 2026\] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning](gir-bench_versatile_benchmark_for_generating_images_with_reasoning.md)
 - [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/vlm_reasoning/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
+- [\[ICLR 2026\] GIR-Bench: Versatile Benchmark for Generating Images with Reasoning](gir-bench_versatile_benchmark_for_generating_images_with_reasoning.md)
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
 - [\[ICLR 2026\] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](expvid_a_benchmark_for_experiment_video_understanding_reasoning.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](../../CVPR2026/vlm_reasoning/cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
 
 </div>
 

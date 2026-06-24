@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] End-to-End Language-Action Model for Humanoid Whole Body Control
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Flow Matching] SENTINEL is the first fully end-to-end "language → humanoid low-level action" model. It generates a large-scale language-action dataset by using a pre-trained whole-body controller to track human motions with text annotations in simulation. It then employs a flow matching action expert to map language instructions and
+  [CVPR 2026][Robotics][Humanoid Whole Body Control] SENTINEL is the first fully end-to-end "language → humanoid low-level action" model. It generates a large-scale language-action dataset by using a pre-trained whole-body controller to track human motions with text annotations in simulation. It then employs a flow matching action expert to map language instructions and proprioception directly to 29-dimensional joint targets, with a residual reinforcement learning head to corre…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Humanoid Whole Body Control"
+  - "Language-Action Model"
+  - "Flow Matching"
+  - "Residual Reinforcement Learning"
+  - "End-to-End"
 date: 2026-05-08
-content_hash: 7b6253ef1afba197
+content_hash: 5d5801b7efdfa255
 ---
+
 # End-to-End Language-Action Model for Humanoid Whole Body Control
 
 **Conference**: CVPR 2026  
@@ -150,11 +155,11 @@ Model scaling (Table 4): Shrinking from 600M → 200M → 60M caused R@1 to drop
 
 ## Related Papers
 
-- [\[CVPR 2026\] LEAD: Minimizing Learner-Expert Asymmetry in End-to-End Driving](lead_minimizing_learner-expert_asymmetry_in_end-to-end_driving.md)
-- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 - [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
+- [\[ICLR 2026\] HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion](../../ICLR2026/robotics/hwc-loco_a_hierarchical_whole-body_control_approach_to_robust_humanoid_locomotio.md)
+- [\[ICLR 2026\] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras](../../ICLR2026/robotics/raven_end-to-end_equivariant_robot_learning_with_rgb_cameras.md)
 - [\[CVPR 2026\] Scalable Trajectory Generation for Whole-Body Mobile Manipulation](scalable_trajectory_generation_for_whole-body_mobile_manipulation.md)
-- [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](../../NeurIPS2025/robotics/autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
 
 </div>
 

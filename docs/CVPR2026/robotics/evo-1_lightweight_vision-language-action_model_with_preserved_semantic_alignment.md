@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Evo-1 utilizes a native multimodal VLM with only 0.77B parameters as the backbone, paired with a pure cross-attention flow-matching diffusion action expert and a "freeze-then-fine-tune" two-stage training strategy. Without any robot data pre-training, it achieves SOTA on Meta-World, RoboTwin, and LIBERO by preserving t
+  [CVPR 2026][Robotics][Lightweight VLA] Evo-1 utilizes a native multimodal VLM with only 0.77B parameters as the backbone, paired with a pure cross-attention flow-matching diffusion action expert and a "freeze-then-fine-tune" two-stage training strategy. Without any robot data pre-training, it achieves SOTA on Meta-World, RoboTwin, and LIBERO by preserving the VLM's semantic space, reaching a 78% success rate in real-world tests with 16.4 Hz inference and only 2.3 GB VRAM.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Lightweight VLA"
+  - "Semantic Alignment Preservation"
+  - "Flow-matching Diffusion"
+  - "Cross-attention DiT"
+  - "Two-stage Training"
 date: 2026-05-08
-content_hash: 14e41d211aa060e1
+content_hash: 92ed1ff9a7d93042
 ---
+
 # Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment
 
 **Conference**: CVPR 2026  
@@ -150,10 +156,10 @@ Evo-1 outperforms $\pi_0$ in VRAM, frequency, and success rate with approximatel
 ## Related Papers
 
 - [\[AAAI 2026\] Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning](../../AAAI2026/robotics/continuous_vision-language-action_co-learning_with_semantic-.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](../../ICLR2026/robotics/spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 - [\[CVPR 2026\] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent](mergevla_cross-skill_model_merging_toward_a_generalist_vision-language-action_ag.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
+- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] Turbo-GS reduces the 3DGS fitting time for 4K scenes from hours to approximately 10 minutes (e.g., 13 minutes for 4K bicycle, 3× faster than Taming 3DGS and 14× faster than 3DGS) through a trifecta of "dilated rendering computing sparse sub-pixel pairs + power-law convergence-aware Gaussian budget scheduling + color gr
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Turbo-GS reduces the 3DGS fitting time for 4K scenes from hours to approximately 10 minutes (e.g., 13 minutes for 4K bicycle, 3× faster than Taming 3DGS and 14× faster than 3DGS) through a trifecta of "dilated rendering computing sparse sub-pixel pairs + power-law convergence-aware Gaussian budget scheduling + color gradient-assisted densification," while maintaining or even improving rendering quality (especially LPIPS).
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "High-Resolution"
+  - "Dilated Rendering"
+  - "Densification"
+  - "Training Acceleration"
 date: 2026-05-08
-content_hash: 3201b42bbab7b1ac
+content_hash: 37adeeea8c911184
 ---
+
 # Turbo-GS: Accelerating 3D Gaussian Fitting for High-Resolution Radiance Fields
 
 **Conference**: CVPR 2026  
@@ -141,14 +146,17 @@ MipNeRF-360 (9 scenes), cumulative modules added (DR=Dilated Rendering, CA=Conve
 
 <div class="related-papers" markdown="1">
 
-- **Scaffold-GS**: Structured 3D Gaussians for View-Consistent Rendering.
-- **Taming 3DGS**: High-Quality Rendering with Optimized Backpropagation.
-- **Speedy-Splat**: Sensitive Pruning for Efficient Gaussian Splatting.
+## Related Papers
+
+- [\[CVPR 2026\] Evidential Neural Radiance Fields](evidential_neural_radiance_fields.md)
+- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+- [\[CVPR 2026\] Faster-GS: Analyzing and Improving Gaussian Splatting Optimization](faster-gs_analyzing_and_improving_gaussian_splatting_optimization.md)
+- [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
+- [\[CVPR 2026\] BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction](bea-gs_beyond_radiance_supervision_in_3dgs_for_precise_object_extraction.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Evidential Neural Radiance Fields](evidential_neural_radiance_fields.md)

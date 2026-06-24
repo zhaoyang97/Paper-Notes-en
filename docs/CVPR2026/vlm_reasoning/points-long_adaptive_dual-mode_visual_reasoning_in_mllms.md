@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] POINTS-Long equips a pre-trained Multimodal Large Language Model (MLLM) with a "Standby Mode": using a small set of learnable tokens, the entire visual sequence is distilled to 1/40–1/10 of its length. This maintains 97.7%–99.7% of the original accuracy for long video understanding while preserving the high-fidelity "F
+  [CVPR 2026][VLM Reasoning][Visual token compression] POINTS-Long equips a pre-trained Multimodal Large Language Model (MLLM) with a "Standby Mode": using a small set of learnable tokens, the entire visual sequence is distilled to 1/40–1/10 of its length. This maintains 97.7%–99.7% of the original accuracy for long video understanding while preserving the high-fidelity "Focus Mode" of the original model. By leveraging a detachable KV Cache, it supports ultra-long streaming vid…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual token compression"
+  - "long video understanding"
+  - "dual-mode reasoning"
+  - "detachable KV Cache"
+  - "streaming video"
 date: 2026-05-08
-content_hash: 9993e761b1ac78d9
+content_hash: adf8a2901ede6122
 ---
+
 # POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs
 
 **Conference**: CVPR 2026  
@@ -135,16 +141,16 @@ Efficiency (H20 + SGLang): For 256 frames, LLM prefill latency dropped from 8.95
 - Value: ⭐⭐⭐⭐⭐ Highly attractive to industry due to significant gains in memory and throughput for long-video deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Mixture-of-Visual-Thoughts: Exploring Context-Adaptive Reasoning Mode Selection for General Visual Reasoning](../../ICLR2026/vlm_reasoning/mixture-of-visual-thoughts_exploring_context-adaptive_reasoning_mode_selection_f.md)
 - [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
-- [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
-- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
-- [\[CVPR 2026\] REVISOR: Beyond Textual Reflection, Towards Multimodal Introspective Reasoning in Long-Form Video Understanding](revisor_beyond_textual_reflection_towards_multimodal_introspective_reasoning_in_.md)
-- [\[CVPR 2026\] Scaling the Long Video Understanding of Multimodal Large Language Models via Visual Memory Mechanism](scaling_the_long_video_understanding_of_multimodal_large_language_models_via_vis.md)
+- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/vlm_reasoning/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
+- [\[CVPR 2026\] Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)
 
 </div>
 

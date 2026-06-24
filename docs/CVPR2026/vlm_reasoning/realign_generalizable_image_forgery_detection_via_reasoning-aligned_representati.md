@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation
 description: >-
-  [CVPR 2026][AIGC Detection][GRPO] ReAlign first trains a multimodal large language model (MLLM), AIGI-R1, that can "reason" using GRPO. It then uses the generated reasoning text as a "bridge" to distill the reasoning text space into a lightweight CLIP detector via contrastive learning. This allows the small model to inherit both the cross-domain genera
+  [CVPR 2026][VLM Reasoning][AIGI Forgery Detection] ReAlign first trains a multimodal large language model (MLLM), AIGI-R1, that can "reason" using GRPO. It then uses the generated reasoning text as a "bridge" to distill the reasoning text space into a lightweight CLIP detector via contrastive learning. This allows the small model to inherit both the cross-domain generalization and semantic error sensitivity of the large model, while requiring only the image encoder during inf…
 tags:
-  - CVPR 2026
-  - AIGC Detection
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "AIGI Forgery Detection"
+  - "Reasoning Text Representation"
+  - "GRPO"
+  - "Contrastive Alignment"
+  - "CLIP Distillation"
 date: 2026-05-08
-content_hash: f348a4cb0a1523e7
+content_hash: bcaf6d9a68d38b6c
 ---
+
 # ReAlign: Generalizable Image Forgery Detection via Reasoning-Aligned Representation
 
 **Conference**: CVPR 2026  
@@ -152,11 +157,11 @@ UltraSynth-10k is a challenging new benchmark (10k images) covering advanced clo
 
 ## Related Papers
 
-- [\[CVPR 2026\] PPM-CLIP: Probabilistic Prompt Modeling for Generalizable AI-Generated Image Detection](ppm-clip_probabilistic_prompt_modeling_for_generalizable_ai-generated_image_dete.md)
-- [\[CVPR 2026\] Learning Forgery-Aware Lip Representations Without Forgery Priors](learning_forgery-aware_lip_representations_without_forgery_priors.md)
-- [\[CVPR 2026\] Quality-Aware Calibration for AI-Generated Image Detection in the Wild](quality-aware_calibration_for_ai-generated_image_detection_in_the_wild.md)
-- [\[CVPR 2026\] Locate-Then-Examine: Grounded Region Reasoning Improves Detection of AI-Generated Images](locate-then-examine_grounded_region_reasoning_improves_detection_of_ai-generated.md)
-- [\[CVPR 2026\] FRAME: Forensic Routing and Adaptive Multi-path Evidence Fusion for Image Manipulation Detection](frame_forensic_routing_and_adaptive_multi-path_evidence_fusion_for_image_manipul.md)
+- [\[CVPR 2026\] Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)
+- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
+- [\[CVPR 2026\] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs](beyond_perceptual_shortcuts_causal-inspired_debiasing_optimization_for_generaliz.md)
+- [\[CVPR 2026\] VisionLeaf: Entropy-Guided Leaf-First Reasoning for Efficient and Accurate Think-with-Image](visionleaf_entropy-guided_leaf-first_reasoning_for_efficient_and_accurate_think-.md)
+- [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](../../ICLR2026/vlm_reasoning/reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
 
 </div>
 

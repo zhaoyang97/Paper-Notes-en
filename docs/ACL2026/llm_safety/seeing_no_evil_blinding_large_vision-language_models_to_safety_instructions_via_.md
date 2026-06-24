@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] The authors propose Attention-Guided Visual Jailbreaking, which bypasses rather than directly attacks safety alignment mechanisms by suppressing model attention to safety instructions and anchoring it to adversarial image features. This method achieves a 94.4% attack success rate on Qwen-VL while reducing gradient conf
+  [ACL 2026][LLM Safety][Visual Jailbreaking Attack] The authors propose Attention-Guided Visual Jailbreaking, which bypasses rather than directly attacks safety alignment mechanisms by suppressing model attention to safety instructions and anchoring it to adversarial image features. This method achieves a 94.4% attack success rate on Qwen-VL while reducing gradient conflict by 45%.
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Visual Jailbreaking Attack"
+  - "Attention Manipulation"
+  - "Safety Alignment"
+  - "Gradient Conflict"
+  - "Large Vision-Language Models"
 date: 2026-05-08
-content_hash: f706dbdfba269a73
+content_hash: 8747eec19a82a78a
 ---
+
 # Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking
 
 **Conference**: ACL 2026  
@@ -135,8 +141,8 @@ The total loss is a weighted combination of three terms: $\mathcal{L}_{\text{tot
 - [\[ACL 2026\] AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)
 - [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
 - [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
-- [\[ACL 2026\] Preventing Safety Drift in Large Language Models via Coupled Weight and Activation Constraints](preventing_safety_drift_in_large_language_models_via_coupled_weight_and_activati.md)
-- [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
+- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](../../ICLR2026/llm_safety/adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
+- [\[ICLR 2026\] Transferable and Stealthy Adversarial Attacks on Large Vision-Language Models](../../ICLR2026/llm_safety/transferable_and_stealthy_adversarial_attacks_on_large_vision-language_models.md)
 
 </div>
 

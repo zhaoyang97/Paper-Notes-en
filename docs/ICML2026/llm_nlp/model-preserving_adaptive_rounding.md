@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] YAQA: 端到端 KL 最小化的 LLM 自适应权重量化
+  [Paper Note] YAQA: End-to-End KL Minimizing Adaptive Weight Quantization for LLMs
 description: >-
-  [ICML 2026][LLM (Other)][Quantization] YAQA shifts the proxy objective of LLM weight quantization from "layer-wise activation error" to "end-to-end model output KL divergence." Using a Hessian sketch via Kronecker decomposition, it provides the first end-to-end error bound. It reduces KL divergence by approximately 30% compared to GPTQ/LDLQ, even outperform
+  [ICML 2026][LLM (Other)][Quantization] YAQA shifts the proxy objective of LLM weight quantization from "layer-wise activation error" to "end-to-end model output KL divergence." Using a Hessian sketch via Kronecker decomposition, it provides the first end-to-end error bound. It reduces KL divergence by approximately 30% compared to GPTQ/LDLQ, even outperforming Quantization-Aware Training (QAT) in accuracy, while maintaining the same inference speed.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - Quantization
+  - "ICML 2026"
+  - "LLM (Other)"
+  - "Quantization"
+  - "Adaptive Rounding"
+  - "End-to-end KL"
+  - "Hessian Sketching"
+  - "Kronecker Decomposition"
 date: 2026-05-08
-content_hash: f818da777dedca90
+content_hash: dff60eb42a66b248
 ---
+
 # YAQA: End-to-End KL Minimizing Adaptive Weight Quantization for LLMs
 
 **Conference**: ICML 2026  
@@ -143,14 +148,17 @@ YAQA is a pure PTQ method with no explicit training loss; quantized weights are 
 
 <div class="related-papers" markdown="1">
 
-- **GPTQ**: Accurate Post-Training Quantization for Generative Pre-trained Transformers (ICLR 2023)
-- **QuIP#**: QuIP with Lattice Codebooks (arXiv 2024)
-- **GuidedQuant**: Towards High-precision Post-training Quantization via Output-guided Rounding (arXiv 2024)
+## Related Papers
+
+- [\[ICLR 2026\] d²Cache: Accelerating Diffusion-Based LLMs via Dual Adaptive Caching](../../ICLR2026/llm_nlp/d2cache_accelerating_diffusion-based_llms_via_dual_adaptive_caching.md)
+- [\[ICLR 2026\] Massive Editing for Large Language Models Based on Dynamic Weight Generation](../../ICLR2026/llm_nlp/massive_editing_for_large_language_models_based_on_dynamic_weight_generation.md)
+- [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
+- [\[NeurIPS 2025\] Adaptive Kernel Design for Bayesian Optimization Is a Piece of CAKE with LLMs](../../NeurIPS2025/llm_nlp/adaptive_kernel_design_for_bayesian_optimization_is_a_piece_of_cake_with_llms.md)
+- [\[AAAI 2026\] LILAD: Learning In-context Lyapunov-stable Adaptive Dynamics Models](../../AAAI2026/llm_nlp/lilad_learning_in-context_lyapunov-stable_adaptive_dynamics_models.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICML 2026\] Universal Reasoner: 冻结 LLM 的可组合即插即用推理器](universal_reasoner_a_single_composable_plug-and-play_reasoner_for_frozen_llms.md)

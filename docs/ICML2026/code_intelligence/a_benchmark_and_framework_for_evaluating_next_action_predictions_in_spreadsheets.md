@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Benchmark and Framework for Evaluating Next Action Predictions in Spreadsheets
 description: >-
-  [ICML 2026][Code Intelligence][benchmark] Addressing the gap where spreadsheets lack next-action prediction similar to code completion, this paper constructs NAPE, the first spreadsheet action prediction benchmark (52 human-verified creation trajectories with 11,907 low-level actions). It proposes an **online evaluation** framework: after each action, the syst
+  [ICML2026][Code Intelligence][Spreadsheet completion] Addressing the gap where spreadsheets lack next-action prediction similar to code completion, this paper constructs NAPE, the first spreadsheet action prediction benchmark (52 human-verified creation trajectories with 11,907 low-level actions). It proposes an **online evaluation** framework: after each action, the system provides predictions, simulates user acceptance/rejection, and dynamically rewrites remaining ground tr…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - benchmark
+  - "ICML2026"
+  - "Code Intelligence"
+  - "Spreadsheet completion"
+  - "Action prediction"
+  - "Online evaluation"
+  - "User behavior modeling"
+  - "Benchmark"
 date: 2026-05-08
-content_hash: 98eb8c904fd1427d
+content_hash: 2591248291870058
 ---
+
 # A Benchmark and Framework for Evaluating Next Action Predictions in Spreadsheets
 
 **Conference**: ICML2026  
@@ -137,15 +142,15 @@ Parameter ablation (single-action repredict, GPT-5, greedy, ∗ denotes default)
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](../../ACL2026/code_intelligence/logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
 - [\[ACL 2025\] TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs](../../ACL2025/code_intelligence/texpert_a_multi-level_benchmark_for_evaluating_latex_code_generation_by_llms.md)
 - [\[ACL 2025\] FEA-Bench: A Benchmark for Evaluating Repository-Level Code Generation for Feature Implementation](../../ACL2025/code_intelligence/feabench_repo_code_gen.md)
+- [\[ACL 2026\] LogicEval: A Systematic Framework for Evaluating Automated Repair Techniques for Logical Vulnerabilities in Real-World Software](../../ACL2026/code_intelligence/logiceval_a_systematic_framework_for_evaluating_automated_repair_techniques_for_.md)
+- [\[ACL 2025\] SHARE: An SLM-based Hierarchical Action CorREction Assistant for Text-to-SQL](../../ACL2025/code_intelligence/share_text_to_sql_correction.md)
 - [\[ACL 2025\] DynaCode: A Dynamic Complexity-Aware Code Benchmark for Evaluating Large Language Models in Code Generation](../../ACL2025/code_intelligence/dynacode_a_dynamic_complexity-aware_code_benchmark_for_evaluating_large_language.md)
-- [\[ICML 2026\] AlgoVeri: An Aligned Benchmark for Verified Code Generation on Classical Algorithms](algoveri_an_aligned_benchmark_for_verified_code_generation_on_classical_algorith.md)
 
 </div>
 

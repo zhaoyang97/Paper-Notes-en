@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations
 description: >-
-  [NeurIPS 2025][LLM Evaluation][Power Flow] PFΔ is the first power flow benchmark dataset to simultaneously encompass load, generation dispatch, and topology variations. It comprises 859…
+  [NeurIPS 2025][LLM Evaluation][Power Flow] PFΔ is the first power flow benchmark dataset to simultaneously encompass load, generation dispatch, and topology variations. It comprises 859,800 solved instances across six grid scales, includes close-to-infeasible extreme operating conditions, and introduces a standardized evaluation task suite for systematically assessing ML methods under diverse operating conditions.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "Topology Perturbation"
   - "Power Grid Simulation"
 date: 2026-05-08
-content_hash: f4e8f5b5bf436606
+content_hash: e49806e7ba63e0c8
 ---
 
 # PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations
@@ -158,11 +158,11 @@ Data efficiency experiments (Task 2.1–2.3, 18k/36k/54k samples):
 
 ## Related Papers
 
+- [\[ACL 2025\] StructFlowBench: A Structured Flow Benchmark for Multi-turn Instruction Following](../../ACL2025/llm_evaluation/structflowbench_a_structured_flow_benchmark_for_multi-turn_instruction_following.md)
 - [\[NeurIPS 2025\] Leveraging Robust Optimization for LLM Alignment under Distribution Shifts](leveraging_robust_optimization_for_llm_alignment_under_distribution_shifts.md)
-- [\[ICLR 2026\] AnesSuite: A Comprehensive Benchmark and Dataset Suite for Anesthesiology Reasoning](../../ICLR2026/llm_evaluation/anessuite_a_comprehensive_benchmark_and_dataset_suite_for_anesthesiology_reasoni.md)
 - [\[NeurIPS 2025\] CodeAssistBench (CAB): Dataset & Benchmarking for Multi-turn Chat-Based Code Assistance](codeassistbench_cab_dataset_benchmarking_for_multi-turn_chat-based_code_assistan.md)
+- [\[ACL 2025\] NorEval: A Norwegian Language Understanding and Generation Evaluation Benchmark](../../ACL2025/llm_evaluation/noreval_a_norwegian_language_understanding_and_generation_evaluation_benchmark.md)
 - [\[NeurIPS 2025\] OptiTree: Hierarchical Thoughts Generation with Tree Search for LLM Optimization Modeling](optitree_hierarchical_thoughts_generation_with_tree_search_for_llm_optimization_.md)
-- [\[ICCV 2025\] A Real-world Display Inverse Rendering Dataset](../../ICCV2025/llm_evaluation/a_real-world_display_inverse_rendering_dataset.md)
 
 </div>
 

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models
 description: >-
-  [NeurIPS2025][LLM/NLP][diffusion language model] This paper establishes a complete convergence theory for masked diffusion language models from an information-theoretic perspective: it proves that the sampling error in K…
+  [NeurIPS2025][LLM (Other)][diffusion language model] This paper establishes a complete convergence theory for masked diffusion language models from an information-theoretic perspective: it proves that the sampling error in KL divergence decays at an $O(1/T)$ rate and scales linearly with inter-token mutual information, provides a matching lower bound to establish tightness, and theoretically demonstrates that diffusion models can generate high-quality samples in $T < L$ steps…
 tags:
   - "NeurIPS2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "diffusion language model"
   - "convergence guarantee"
   - "mutual information"
   - "sampling acceleration"
   - "KL divergence"
 date: 2026-05-08
-content_hash: a0e095518293a0ac
+content_hash: 21f659acf24f310c
 ---
 
 # Breaking AR's Sampling Bottleneck: Provable Acceleration via Diffusion Language Models
@@ -126,11 +126,11 @@ This is a purely theoretical work with no experimental data. The core conclusion
 
 ## Related Papers
 
-- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](../../ICLR2026/llm_nlp/dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
-- [\[ACL 2026\] Unlocking the Potential of Diffusion Language Models through Template Infilling](../../ACL2026/llm_nlp/unlocking_the_potential_of_diffusion_language_models_through_template_infilling.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](../../ICLR2026/llm_nlp/toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ACL 2025\] Segment-Level Diffusion: A Framework for Controllable Long-Form Generation with Diffusion Language Models](../../ACL2025/llm_nlp/segment_level_diffusion.md)
+- [\[ACL 2025\] EdiText: Controllable Coarse-to-Fine Text Editing with Diffusion Language Models](../../ACL2025/llm_nlp/editext_diffusion_text_editing.md)
 - [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
-- [\[ICML 2026\] SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models](../../ICML2026/llm_nlp/spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models.md)
+- [\[ACL 2025\] DiffLM: Controllable Synthetic Data Generation via Diffusion Language Models](../../ACL2025/llm_nlp/difflm_controllable_synthetic_data_generation_via_diffusion_language_models.md)
+- [\[ACL 2025\] TESS 2: A Large-Scale Generalist Diffusion Language Model](../../ACL2025/llm_nlp/tess_2_a_large-scale_generalist_diffusion_language_model.md)
 
 </div>
 

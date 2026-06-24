@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] InternData-A1 utilizes a fully decoupled and autonomous simulation synthesis pipeline to generate 630,000 trajectories (7,433 hours) of high-fidelity robotic manipulation data. It demonstrates for the first time that a VLA model pre-trained solely on "purely synthetic data" can match the performance of the official $\p
+  [CVPR 2026][Robotics][VLA Pre-training] InternData-A1 utilizes a fully decoupled and autonomous simulation synthesis pipeline to generate 630,000 trajectories (7,433 hours) of high-fidelity robotic manipulation data. It demonstrates for the first time that a VLA model pre-trained solely on "purely synthetic data" can match the performance of the official $\pi 0$ pre-trained on the closed-source real-world $\pi\text{-dataset}$ across 49 simulation and 9 real-world tasks.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA Pre-training"
+  - "Synthetic Data"
+  - "Sim-to-Real"
+  - "Robotic Manipulation"
+  - "Data Scaling"
 date: 2026-05-08
-content_hash: 92f4bcef9dc2486f
+content_hash: 1fef6331f669ba36
 ---
+
 # InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy
 
 **Conference**: CVPR 2026  
@@ -123,14 +129,17 @@ RoboCasa trailed by only 10% in simulation but collapsed in the real world—Int
 
 <div class="related-papers" markdown="1">
 
-1. **Pi0: We Really Don’t Need More Robots?** (Physical Intelligence, 2024) - Basis for the $\pi 0$ architecture comparison.
-2. **RoboCasa: Large-Scale Simulation of Tasks into Real-World Environments** (2024) - Key simulation dataset comparison.
-3. **Open X-Embodiment: Robotic Learning at Scale** (2023) - Reference for large-scale real-world robotic data.
+## Related Papers
+
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
+- [\[CVPR 2026\] RealAppliance: Let High-fidelity Appliance Assets Controllable and Workable as Aligned Real Manuals](realappiance_let_high-fidelity_appliance_assets_controllable_and_workable_as_ali.md)
+- [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)
+- [\[AAAI 2026\] Realistic Synthetic Household Data Generation at Scale](../../AAAI2026/robotics/realistic_synthetic_household_data_generation_at_scale.md)
+- [\[CVPR 2026\] FM-Steer: Enhance Generalist Policies with Value-Guided Cascaded Denoising](fm-steer_enhance_generalist_policies_with_value-guided_cascaded_denoising.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Video2Robo: 3DGS-based Synthetic Data from One Video Enables Scalable Robot Learning](video2robo_3dgs-based_synthetic_data_from_one_video_enables_scalable_robot_learn.md)

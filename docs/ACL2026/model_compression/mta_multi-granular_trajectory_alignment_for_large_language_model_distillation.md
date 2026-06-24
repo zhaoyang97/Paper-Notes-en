@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation
 description: >-
-  [ACL 2026][Model Compression][Paper Note] MTA advances LLM distillation from "aligning specific static layers" to "aligning representation evolution trajectories based on network depth": lower layers align word-level information, while higher layers align phrase-level relationship geometry. As a plug-in, it consistently improves the ROUGE-L performance of FDD,
+  [ACL2026][Model Compression][Large Language Model Distillation] MTA advances LLM distillation from "aligning specific static layers" to "aligning representation evolution trajectories based on network depth": lower layers align word-level information, while higher layers align phrase-level relationship geometry. As a plug-in, it consistently improves the ROUGE-L performance of FDD, DistiLLM, and DistiLLM-2 on instruction-following tasks.
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL2026"
+  - "Model Compression"
+  - "Large Language Model Distillation"
+  - "Trajectory Alignment"
+  - "Hierarchical Semantics"
+  - "Structural Distillation"
+  - "Hidden State Alignment"
 date: 2026-05-08
-content_hash: f1b1e56a00f21bc7
+content_hash: fb7fa95c7e1b203b
 ---
+
 # MTA: Multi-Granular Trajectory Alignment for Large Language Model Distillation
 
 **Conference**: ACL2026  
@@ -152,7 +158,6 @@ Ablations on GPT-2 1.5B → 120M validate DSA, Hid, multi-granularity strategy, 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

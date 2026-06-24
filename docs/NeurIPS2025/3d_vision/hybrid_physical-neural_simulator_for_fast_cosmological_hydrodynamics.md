@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics
 description: >-
-  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a hybrid physical-neural cosmological simulator that handles gravitational dynamics via a differentiable particle-mesh (PM) method and parameterizes…
+  [NeurIPS 2025][3D Vision][cosmological simulation] This paper proposes a hybrid physical-neural cosmological simulator that handles gravitational dynamics via a differentiable particle-mesh (PM) method and parameterizes the effective gas pressure field using a physics-constrained neural network. The model requires only a single reference simulation for training and outperforms the EGD baseline at both the field level and the statistics level.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "differentiable simulation"
   - "gas dynamics"
 date: 2026-05-08
-content_hash: 6f8ac344dca9df7a
+content_hash: 8a5c08d9a6c490eb
 ---
 
 # Hybrid Physical-Neural Simulator for Fast Cosmological Hydrodynamics
@@ -131,10 +131,10 @@ The proposed method is on par with EGD in terms of power spectrum (Fourier mode 
 ## Related Papers
 
 - [\[NeurIPS 2025\] BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading](becominglit_relightable_gaussian_avatars_with_hybrid_neural_shading.md)
-- [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](physx-3d_physical-grounded_3d_asset_generation.md)
 - [\[NeurIPS 2025\] HyRF: Hybrid Radiance Fields for Memory-efficient and High-quality Novel View Synthesis](hyrf_hybrid_radiance_fields_for_memory-efficient_and_high-quality_novel_view_syn.md)
-- [\[NeurIPS 2025\] Learning Neural Exposure Fields for View Synthesis](learning_neural_exposure_fields_for_view_synthesis.md)
+- [\[NeurIPS 2025\] PhysX-3D: Physical-Grounded 3D Asset Generation](physx-3d_physical-grounded_3d_asset_generation.md)
 - [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](../../ICCV2025/3d_vision/gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
+- [\[NeurIPS 2025\] Learning Neural Exposure Fields for View Synthesis](learning_neural_exposure_fields_for_view_synthesis.md)
 
 </div>
 

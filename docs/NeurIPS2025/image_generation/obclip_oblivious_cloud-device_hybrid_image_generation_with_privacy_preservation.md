@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation
 description: >-
-  [NeurIPS 2025][Image Generation][Privacy preservation] ObCLIP is proposed as an oblivious cloud-device hybrid image generation scheme. It expands a user prompt into a set of candidate prompts that differ only in sensitiv…
+  [NeurIPS 2025][Image Generation][Privacy preservation] ObCLIP is proposed as an oblivious cloud-device hybrid image generation scheme. It expands a user prompt into a set of candidate prompts that differ only in sensitive attributes (e.g., gender, race), performs early denoising steps on all candidates in the cloud without revealing the true prompt, and allows the client to select the correct intermediate latent and complete the remaining denoising locally. Temporal and batch…
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "attention caching"
   - "diffusion models"
 date: 2026-05-08
-content_hash: 6a25d5cec625e8cc
+content_hash: b4512032483537c5
 ---
 
 # ObCLIP: Oblivious Cloud-Device Hybrid Image Generation with Privacy Preservation
@@ -148,8 +148,8 @@ Three key hyperparameters govern the efficiency–quality trade-off:
 - [\[NeurIPS 2025\] LLM Meets Diffusion: A Hybrid Framework for Crystal Material Generation](llm_meets_diffusion_a_hybrid_framework_for_crystal_material_generation.md)
 - [\[NeurIPS 2025\] Vicinity-Guided Discriminative Latent Diffusion for Privacy-Preserving Domain Adaptation](vicinity-guided_discriminative_latent_diffusion_for_privacy-preserving_domain_ad.md)
 - [\[NeurIPS 2025\] Perturb a Model, Not an Image: Towards Robust Privacy Protection via Anti-Personalized Diffusion Models](perturb_a_model_not_an_image_towards_robust_privacy_protection_via_anti-personal.md)
-- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](../../ICCV2025/image_generation/dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
 - [\[ICCV 2025\] Adaptive Routing of Text-to-Image Generation Requests Between Large Cloud Models and Small Edge Models](../../ICCV2025/image_generation/adaptive_routing_of_text-to-image_generation_requests_between_large_cloud_model_.md)
+- [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](../../ICCV2025/image_generation/dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing
 description: >-
-  [NeurIPS 2025][LLM Safety][data sharing incentives] This paper proposes an incentive mechanism based on the Cramér–von Mises (CvM) two-sample test statistic. Under both Bayesian and prior-free settings…
+  [NeurIPS 2025][LLM Safety][data sharing incentives] This paper proposes an incentive mechanism based on the Cramér–von Mises (CvM) two-sample test statistic. Under both Bayesian and prior-free settings, the mechanism provably makes truthful data submission a (approximate) Nash equilibrium, while encouraging participants to contribute more genuine data—without relying on strong distributional assumptions (e.g., Gaussian or Bernoulli).
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "two-sample test"
   - "defense against data fabrication"
 date: 2026-05-08
-content_hash: 7d92859c15456c80
+content_hash: acc84b12ecb4c3b7
 ---
 
 # A Cramér–von Mises Approach to Incentivizing Truthful Data Sharing
@@ -133,10 +133,10 @@ The combination of **mechanism design and deep learning features** is particular
 ## Related Papers
 
 - [\[AAAI 2026\] Designing Truthful Mechanisms for Asymptotic Fair Division](../../AAAI2026/llm_safety/designing_truthful_mechanisms_for_asymptotic_fair_division.md)
-- [\[NeurIPS 2025\] Virus Infection Attack on LLMs: Your Poisoning Can Spread "VIA" Synthetic Data](virus_infection_attack_on_llms_your_poisoning_can_spread_via_synthetic_data.md)
+- [\[ICLR 2026\] JailbreakLoRA: Your Downloaded LoRA from Sharing Platforms might be Unsafe](../../ICLR2026/llm_safety/jailbreaklora_your_downloaded_lora_from_sharing_platforms_might_be_unsafe.md)
 - [\[NeurIPS 2025\] Unlearned but Not Forgotten: Data Extraction after Exact Unlearning in LLM](unlearned_but_not_forgotten_data_extraction_after_exact_unlearning_in_llm.md)
+- [\[ACL 2025\] Towards Context-Robust LLMs: A Gated Representation Fine-tuning Approach](../../ACL2025/llm_safety/towards_context-robust_llms_a_gated_representation_fine-tuning_approach.md)
 - [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
-- [\[NeurIPS 2025\] Collective Narrative Grounding: Community-Coordinated Data Contributions to Improve Local AI Systems](collective_narrative_grounding_community-coordinated_data_contributions_to_impro.md)
 
 </div>
 

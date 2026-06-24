@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Note 5: ReSearch — Learning to Reason with Search
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Reasoning-search integration] ReSearch embeds search operations as first-class primitives within reasoning chains and leverages GRPO reinforcement learning to automatically learn wh…
+  [NeurIPS 2025][Reinforcement Learning][Reasoning-search integration] ReSearch embeds search operations as first-class primitives within reasoning chains and leverages GRPO reinforcement learning to automatically learn when and how to search—without any supervision on intermediate reasoning steps—achieving an average relative improvement of 15.81% over baselines on multi-hop QA benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "multi-step retrieval augmentation"
   - "unsupervised reasoning"
 date: 2026-05-08
-content_hash: bcc881751bb47b4c
+content_hash: 50f70fda0b112df5
 ---
 
 # Note 5: ReSearch — Learning to Reason with Search
@@ -117,8 +117,8 @@ $$r = \begin{cases} \text{F1}(a_{pred}, a_{gt}) & \text{if F1}>0\\ 0.1 & \text{i
 - [\[NeurIPS 2025\] Training Language Models to Reason Efficiently](training_language_models_to_reason_efficiently.md)
 - [\[ICLR 2026\] ExGRPO: Learning to Reason from Experience](../../ICLR2026/reinforcement_learning/exgrpo_learning_to_reason_from_experience.md)
 - [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
-- [\[NeurIPS 2025\] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning](deepdiver_adaptive_search_intensity_scaling_via_open-web_reinforcement_learning.md)
 - [\[NeurIPS 2025\] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search](tensorrl-qas_reinforcement_learning_with_tensor_networks_for_improved_quantum_ar.md)
+- [\[ICLR 2026\] Learning to Reason Efficiently with Discounted Reinforcement Learning](../../ICLR2026/reinforcement_learning/learning_to_reason_efficiently_with_discounted_reinforcement_learning.md)
 
 </div>
 

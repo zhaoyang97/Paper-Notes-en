@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer
 description: >-
-  [ICCV 2025][Image Generation][Autoregressive image generation] This paper proposes DC-AR, a masked autoregressive text-to-image generation framework built upon a Deep Compression Hybrid Tokenizer (DC-HT…
+  [ICCV 2025][Image Generation][Autoregressive image generation] This paper proposes DC-AR, a masked autoregressive text-to-image generation framework built upon a Deep Compression Hybrid Tokenizer (DC-HT, 32× spatial compression). Through a hybrid pipeline of discrete token generation for structure followed by residual token refinement, DC-AR achieves state-of-the-art gFID of 5.49 on MJHQ-30K while delivering 1.5–7.9× higher throughput than diffusion models.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "deep compression"
   - "text-to-image"
 date: 2026-05-08
-content_hash: 20fa19269dc0f3a4
+content_hash: add8885c83a66f91
 ---
 
 # DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer
@@ -176,8 +176,8 @@ Tokenizer reconstruction quality (ImageNet 256², 64 tokens):
 - [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](holistic_tokenizer_for_autoregressive_image_generation.md)
 - [\[ICCV 2025\] Spectral Image Tokenizer](spectral_image_tokenizer.md)
 - [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](grouped_speculative_decoding_for_autoregressive_image_generation.md)
-- [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
 - [\[ICCV 2025\] Efficient Autoregressive Shape Generation via Octree-Based Adaptive Tokenization](efficient_autoregressive_shape_generation_via_octree-based_adaptive_tokenization.md)
+- [\[ICCV 2025\] LazyMAR: Accelerating Masked Autoregressive Models via Feature Caching](lazymar_accelerating_masked_autoregressive_models_via_feature_caching.md)
 
 </div>
 

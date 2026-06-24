@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Relieving the Over-Aggregating Effect in Graph Transformers
 description: >-
-  [NeurIPS 2025][Graph Learning][Over-Aggregating] This paper identifies the *over-aggregating* phenomenon in Graph Transformers—wherein a large number of nodes are aggregated with near-uniform attention scores…
+  [NeurIPS 2025][Graph Learning][Over-Aggregating] This paper identifies the *over-aggregating* phenomenon in Graph Transformers—wherein a large number of nodes are aggregated with near-uniform attention scores, diluting critical information—and proposes Wideformer, which alleviates this issue via divided aggregation and guided attention. As a plug-and-play module, Wideformer consistently improves backbone model performance across 13 datasets.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Wideformer"
   - "Linear Attention"
 date: 2026-05-08
-content_hash: 66cc6ca81d5ef53d
+content_hash: 3861a961d7e566cb
 ---
 
 # Relieving the Over-Aggregating Effect in Graph Transformers
@@ -131,9 +131,9 @@ Output: Enhanced representation for each target node
 
 - [\[NeurIPS 2025\] Unifying and Enhancing Graph Transformers via a Hierarchical Mask Framework](unifying_and_enhancing_graph_transformers_via_a_hierarchical_mask_framework.md)
 - [\[NeurIPS 2025\] From Sequence to Structure: Uncovering Substructure Reasoning in Transformers](from_sequence_to_structure_uncovering_substructure_reasoning_in_transformers.md)
+- [\[ICML 2025\] GrokFormer: Graph Fourier Kolmogorov-Arnold Transformers](../../ICML2025/graph_learning/grokformer_graph_fourier_kolmogorov-arnold_transformers.md)
 - [\[ICLR 2026\] Graph Tokenization for Bridging Graphs and Transformers](../../ICLR2026/graph_learning/graph_tokenization_for_bridging_graphs_and_transformers.md)
-- [\[ICML 2026\] What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA](../../ICML2026/graph_learning/what_structural_inductive_bias_helps_transformers_reason_over_knowledge_graphs_a.md)
-- [\[AAAI 2026\] Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs](../../AAAI2026/graph_learning/are_graph_transformers_necessary_efficient_long-range_messag.md)
+- [\[ACL 2025\] Fast-and-Frugal Text-Graph Transformers are Effective Link Predictors](../../ACL2025/graph_learning/fast-and-frugal_text-graph_transformers_are_effective_link_predictors.md)
 
 </div>
 

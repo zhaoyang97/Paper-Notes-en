@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning
 description: >-
-  [NeurIPS 2025][Medical Imaging][visual-to-fMRI synthesis] This paper proposes SynBrain, a framework that models fMRI responses as visual-semantic-conditioned probability distributions via BrainVAE…
+  [NeurIPS 2025][Medical Imaging][visual-to-fMRI synthesis] This paper proposes SynBrain, a framework that models fMRI responses as visual-semantic-conditioned probability distributions via BrainVAE, and employs an S2N Mapper for one-step semantic-to-neural-space mapping. SynBrain substantially outperforms MindSimulator on visual-to-fMRI synthesis (65% reduction in MSE, 96% improvement in Pearson correlation), and the synthesized fMRI signals effectively enhance few-shot cross-…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "brain encoding"
   - "few-shot adaptation"
 date: 2026-05-08
-content_hash: 3bf406f2b3a682aa
+content_hash: be64104304a9a431
 ---
 
 # SynBrain: Enhancing Visual-to-fMRI Synthesis via Probabilistic Representation Learning
@@ -59,15 +59,15 @@ SynBrain follows a two-stage training plus inference pipeline:
    **Architectural innovation**: The authors observe that MLP-based VAEs (MLP-VAE) suffer from training instability (diverging MSE) due to the lack of spatial inductive bias in MLPs. BrainVAE integrates **convolutional layers** (for local voxel feature extraction) and **attention layers** (for capturing long-range inter-voxel dependencies), yielding a smoother latent space. Experiments confirm that BrainVAE substantially outperforms MLP-AE and MLP-VAE in both convergence speed and semantic expressiveness.
 
    Training objective:
-   $$\mathcal{L}_{\text{BrainVAE}} = \mathcal{L}_{\text{MSE}} + \lambda_{\text{KL}} \mathcal{L}_{\text{KL}} + \lambda_{\text{CLIP}} \mathcal{L}_{\text{CLIP}}$$
+    $\mathcal{L}_{\text{BrainVAE}} = \mathcal{L}_{\text{MSE}} + \lambda_{\text{KL}} \mathcal{L}_{\text{KL}} + \lambda_{\text{CLIP}} \mathcal{L}_{\text{CLIP}}$
 
-   - $\mathcal{L}_{\text{MSE}} = \|D(z) - y_{\text{fMRI}}\|_2^2$: voxel-level reconstruction fidelity
-   - $\mathcal{L}_{\text{KL}} = D_{KL}(q(z|y_{\text{fMRI}}) \| \mathcal{N}(0,I))$: latent space regularization, $\lambda_{\text{KL}}=0.001$
-   - $\mathcal{L}_{\text{CLIP}} = \text{SoftCLIP}(z, z_{\text{CLIP}})$: semantic alignment contrastive loss, $\lambda_{\text{CLIP}}=1000$
+    - $\mathcal{L}_{\text{MSE}} = \|D(z) - y_{\text{fMRI}}\|_2^2$: voxel-level reconstruction fidelity
+    - $\mathcal{L}_{\text{KL}} = D_{KL}(q(z|y_{\text{fMRI}}) \| \mathcal{N}(0,I))$: latent space regularization, $\lambda_{\text{KL}}=0.001$
+    - $\mathcal{L}_{\text{CLIP}} = \text{SoftCLIP}(z, z_{\text{CLIP}})$: semantic alignment contrastive loss, $\lambda_{\text{CLIP}}=1000$
 
 2. **S2N Mapper (Semantic-to-Neural Mapper)**: A lightweight Transformer module consisting of stacked multi-head self-attention layers and feed-forward networks. It implements a nonlinear transformation $f_{\text{S2N}}: \mathbb{R}^{m \times d} \rightarrow \mathbb{R}^{m \times d}$, directly mapping CLIP visual embeddings into the BrainVAE latent space. The training objective is an MSE loss:
 
-   $$\mathcal{L}_{\text{S2N}} = \text{MSE}(f_{\text{S2N}}(z_{\text{CLIP}}), z)$$
+    $\mathcal{L}_{\text{S2N}} = \text{MSE}(f_{\text{S2N}}(z_{\text{CLIP}}), z)$
 
    Compared to the diffusion-based alignment used in MindSimulator, the S2N Mapper achieves **one-step mapping**, eliminating the need for iterative denoising and avoiding the train-inference distribution mismatch.
 
@@ -155,7 +155,7 @@ Adding just one hour of synthesized data yields a 3.9% improvement in CLIP simil
 - [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
 - [\[NeurIPS 2025\] Semantic and Visual Crop-Guided Diffusion Models for Heterogeneous Tissue Synthesis in Histopathology](semantic_and_visual_crop-guided_diffusion_models_for_heterogeneous_tissue_synthe.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
-- [\[ICML 2026\] SEMIR: Semantic Minor-Induced Representation Learning on Graphs for Visual Segmentation](../../ICML2026/medical_imaging/semir_semantic_minor-induced_representation_learning_on_graphs_for_visual_segmen.md)
+- [\[ICLR 2026\] Stochastic Optimal Control for Continuous-Time fMRI Representation Learning](../../ICLR2026/medical_imaging/stochastic_optimal_control_for_continuous-time_fmri_representation_learning.md)
 - [\[NeurIPS 2025\] Meta-Learning an In-Context Transformer Model of Human Higher Visual Cortex](meta-learning_an_in-context_transformer_model_of_human_higher_visual_cortex.md)
 
 </div>

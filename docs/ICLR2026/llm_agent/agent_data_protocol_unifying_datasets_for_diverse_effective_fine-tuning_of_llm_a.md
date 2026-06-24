@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][Agent Data Protocol] The authors propose ADP, a lightweight "agent data interlingua" that unifies 13 heterogeneous agent training sets into a consistent Trajectory/Action/Observation pattern. These are then distributed to various agent frameworks for SFT, achieving an average gain of ~20% over base models and reaching or approaching SOTA o
+  [ICLR 2026][LLM Agent][Agent Data Protocol] The authors propose ADP, a lightweight "agent data interlingua" that unifies 13 heterogeneous agent training sets into a consistent Trajectory/Action/Observation pattern. These are then distributed to various agent frameworks for SFT, achieving an average gain of ~20% over base models and reaching or approaching SOTA on coding, browsing, and tool-use tasks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Agent Data Protocol
-  - SWE-Bench
-  - WebArena
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Agent Data Protocol"
+  - "Agent Fine-tuning"
+  - "Unified Data Representation"
+  - "Cross-task Transfer"
+  - "SWE-bench"
+  - "WebArena"
 date: 2026-05-08
-content_hash: 42c7b7b1fbc6ab3e
+content_hash: 7f1f69345c9528d2
 ---
+
 # Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents
 
 **Conference**: ICLR 2026  

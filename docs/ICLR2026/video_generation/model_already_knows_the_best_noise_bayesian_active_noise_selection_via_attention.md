@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Model Already Knows the Best Noise: Bayesian Active Noise Selection via Attention in Video Diffusion Model
 description: >-
-  [ICLR 2026][Video Generation][BALD] This paper proposes the ANSE framework and its core scoring function, BANSA, which migrates "Bayesian Active Learning by Disagreement (BALD)" from classification tasks to the **attention space** of diffusion models. By measuring the entropy divergence of attention maps under multiple random perturbations, the method qu
+  [ICLR 2026][Video Generation][Video Diffusion] This paper proposes the ANSE framework and its core scoring function, BANSA, which migrates "Bayesian Active Learning by Disagreement (BALD)" from classification tasks to the **attention space** of diffusion models. By measuring the entropy divergence of attention maps under multiple random perturbations, the method quantifies the model's "certainty" regarding a specific initial noise seed. This allows for the selection of superi…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - BALD
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion"
+  - "Noise Selection"
+  - "Bayesian Active Learning"
+  - "Attention Uncertainty"
+  - "BALD"
+  - "Inference-time Scaling"
 date: 2026-05-08
-content_hash: df1c828ff04f05ca
+content_hash: 2c25e9197e1cf5bb
 ---
+
 # Model Already Knows the Best Noise: Bayesian Active Noise Selection via Attention in Video Diffusion Model
 
 **Conference**: ICLR 2026  
@@ -123,7 +129,7 @@ Reverse selection (picking seeds with the **highest** BANSA) dropped Quality fro
 - [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
 - [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
 - [\[ECCV 2024\] Videoshop: Localized Semantic Video Editing with Noise-Extrapolated Diffusion Inversion](../../ECCV2024/video_generation/videoshop_localized_semantic_video_editing_with_noise-extrapolated_diffusion_inv.md)
-- [\[ICLR 2026\] Any-to-Bokeh: Arbitrary-Subject Video Refocusing with Video Diffusion Model](any-to-bokeh_arbitrary-subject_video_refocusing_with_video_diffusion_model.md)
+- [\[ICLR 2026\] The Quest for Generalizable Motion Generation: Data, Model, and Evaluation](the_quest_for_generalizable_motion_generation_data_model_and_evaluation.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs
 description: >-
-  [ICLR 2026][AI Safety][CLIP] DEFEAT discovers that "discretizing CLIP's image latent features" naturally weakens adversarial perturbations. Consequently, it inserts a VQ-VAE-based PerturbShield module into a prompt tuning framework to reconstruct grid features, followed by logits fusion to balance robustness and clean accuracy. On 15 datasets, the
+  [ICLR2026][AI Safety][Adversarial Robustness] DEFEAT discovers that "discretizing CLIP's image latent features" naturally weakens adversarial perturbations. Consequently, it inserts a VQ-VAE-based PerturbShield module into a prompt tuning framework to reconstruct grid features, followed by logits fusion to balance robustness and clean accuracy. On 15 datasets, the harmonic mean of robustness and accuracy for adversarial few-shot classification is improved by an average of 13.…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - CLIP
-  - VQ-VAE
-  - Prompt Tuning
+  - "ICLR2026"
+  - "AI Safety"
+  - "Adversarial Robustness"
+  - "CLIP"
+  - "VQ-VAE"
+  - "Discrete Representation"
+  - "Prompt Tuning"
 date: 2026-05-08
-content_hash: 504dced286133c7f
+content_hash: f41e1d8ecaa80c5f
 ---
+
 # Discrete Latent Features Ablate Adversarial Attack: A Robust Prompt Tuning Framework for VLMs
 
 **Conference**: ICLR2026  
@@ -143,10 +146,10 @@ Adversarial domain generalization ($\epsilon=4/255$) shows that robustness trans
 ## Related Papers
 
 - [\[ICLR 2026\] Identifying Robust Neural Pathways: Few-Shot Adversarial Mask Tuning for Vision-Language Models](identifying_robust_neural_pathways_few-shot_adversarial_mask_tuning_for_vision-l.md)
-- [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](../../CVPR2026/ai_safety/v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
-- [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
-- [\[CVPR 2025\] MOS-Attack: A Scalable Multi-Objective Adversarial Attack Framework](../../CVPR2025/ai_safety/mos-attack_a_scalable_multi-objective_adversarial_attack_framework.md)
 - [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](robust_spiking_neural_networks_against_adversarial_attacks.md)
+- [\[CVPR 2026\] V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](../../CVPR2026/ai_safety/v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)
+- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/ai_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
+- [\[ICLR 2026\] Concept-based Adversarial Attack: a Probabilistic Perspective](concept-based_adversarial_attack_a_probabilistic_perspective.md)
 
 </div>
 

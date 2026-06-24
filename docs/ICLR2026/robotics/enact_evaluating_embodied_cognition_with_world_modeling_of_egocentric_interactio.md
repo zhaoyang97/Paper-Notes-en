@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ENACT: Evaluating Embodied Cognition with World Modeling of Egocentric Interaction
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][World Models] ENACT formalizes embodied cognition evaluation as world-modeling VQA based on first-person interaction—revealing significant gaps and anthropomorphic biases in current top-tier VLMs compared to humans through forward/inverse sequence reshuffling tasks.
+  [ICLR 2026][Robotics][embodied cognition] ENACT formalizes embodied cognition evaluation as world-modeling VQA based on first-person interaction—revealing significant gaps and anthropomorphic biases in current top-tier VLMs compared to humans through forward/inverse sequence reshuffling tasks.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - World Models
-  - POMDP
+  - "ICLR 2026"
+  - "Robotics"
+  - "embodied cognition"
+  - "world model"
+  - "VLM evaluation"
+  - "egocentric perception"
+  - "POMDP"
 date: 2026-05-08
-content_hash: de3087bb6ea48090
+content_hash: ebc3d6acc8878645
 ---
+
 # ENACT: Evaluating Embodied Cognition with World Modeling of Egocentric Interaction
 
 **Conference**: ICLR 2026  
@@ -142,10 +146,10 @@ By converting predicted permutations into corresponding action sequences and per
 ## Related Papers
 
 - [\[ICLR 2026\] World-In-World: World Models in a Closed-Loop World](world-in-world_world_models_in_a_closed-loop_world.md)
+- [\[ICLR 2026\] Ctrl-World: A Controllable Generative World Model for Robot Manipulation](ctrl-world_a_controllable_generative_world_model_for_robot_manipulation.md)
 - [\[ICLR 2026\] Test-Time Mixture of World Models for Embodied Agents in Dynamic Environments](test-time_mixture_of_world_models_for_embodied_agents_in_dynamic_environments.md)
+- [\[CVPR 2025\] SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with 3D Autonomous Characters](../../CVPR2025/robotics/solami_social_vision-language-action_modeling_for_immersive_interaction_with_3d_.md)
 - [\[CVPR 2026\] TraceGen: World Modeling in 3D Trace Space Enables Learning from Cross-Embodiment Videos](../../CVPR2026/robotics/tracegen_world_modeling_in_3d_trace_space_enables_learning_from_cross-embodiment.md)
-- [\[ICLR 2026\] WorldGym: World Model as an Environment for Policy Evaluation](worldgym_world_model_as_an_environment_for_policy_evaluation.md)
-- [\[ICLR 2026\] Empowering Multi-Robot Cooperation via Sequential World Models](empowering_multi-robot_cooperation_via_sequential_world_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RadGPT: Constructing 3D Image-Text Tumor Datasets
 description: >-
-  [ICCV 2025][Medical Imaging][CT report generation] This paper proposes RadGPT — an anatomy-aware vision-language AI pipeline that converts radiologist-revised tumor segmentation masks into structured reports via determin…
+  [ICCV 2025][Medical Imaging][CT report generation] This paper proposes RadGPT — an anatomy-aware vision-language AI pipeline that converts radiologist-revised tumor segmentation masks into structured reports via deterministic algorithms, then adapts them into narrative-style reports using an LLM. This pipeline is used to construct AbdomenAtlas 3.0, the first large-scale public abdominal CT image-text tumor dataset (9,262 CT scans with per-voxel annotations and reports). The w…
 tags:
   - "ICCV 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "abdominal CT"
   - "structured report"
 date: 2026-05-08
-content_hash: 63c7211edd5e59d7
+content_hash: 2e0f4dd225e9e5a2
 ---
 
 # RadGPT: Constructing 3D Image-Text Tumor Datasets
@@ -143,10 +143,10 @@ Internal validation on the AbdomenAtlas 3.0 test split and external validation o
 ## Related Papers
 
 - [\[ICCV 2025\] MultiverSeg: Scalable Interactive Segmentation of Biomedical Imaging Datasets with In-Context Guidance](multiverseg_scalable_interactive_segmentation_of_biomedical_imaging_datasets_wit.md)
+- [\[CVPR 2026\] VoxTell: Free-Text Promptable Universal 3D Medical Image Segmentation](../../CVPR2026/medical_imaging/voxtell_free-text_promptable_universal_3d_medical_image_segmentation.md)
 - [\[ICCV 2025\] Scaling Tumor Segmentation: Best Lessons from Real and Synthetic Data](scaling_tumor_segmentation_best_lessons_from_real_and_synthetic_data.md)
 - [\[ICCV 2025\] UKBOB: One Billion MRI Labeled Masks for Generalizable 3D Medical Image Segmentation](ukbob_one_billion_mri_labeled_masks_for_generalizable_3d_medical_image_segmentat.md)
 - [\[ICCV 2025\] M-Net: MRI Brain Tumor Sequential Segmentation Network via Mesh-Cast](m-net_mri_brain_tumor_sequential_segmentation_network_via_mesh-cast.md)
-- [\[ICCV 2025\] An OpenMind for 3D Medical Vision Self-supervised Learning](an_openmind_for_3d_medical_vision_selfsupervised_learning.md)
 
 </div>
 

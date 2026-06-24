@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO
 description: >-
-  [CVPR 2026][Video Generation][GRPO] This work upgrades "Next-Event Prediction" from text to video: a VLM first reasons what should happen next, followed by a video diffusion model (VDM) to visualize it. It proposes **Joint-GRPO**, a two-stage reinforcement learning framework that synthesizes independent reasoning and generation models using a shared rewa
+  [CVPR 2026][Video Generation][Video Next-Event Prediction] This work upgrades "Next-Event Prediction" from text to video: a VLM first reasons what should happen next, followed by a video diffusion model (VDM) to visualize it. It proposes **Joint-GRPO**, a two-stage reinforcement learning framework that synthesizes independent reasoning and generation models using a shared reward, achieving SOTA results in both text prediction and video generation on procedural and predictive…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - GRPO
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Next-Event Prediction"
+  - "GRPO"
+  - "VLM-VDM Alignment"
+  - "Multi-model Collaboration"
 date: 2026-05-08
-content_hash: c21a51b4c65c7fba
+content_hash: a8bad15d2c129957
 ---
+
 # Video-as-Answer: Predict and Generate Next Video Event with Joint-GRPO
 
 **Conference**: CVPR 2026  
@@ -155,8 +159,8 @@ Joint-GRPO significantly improves over SFT, raising ROUGE-L from 0.2812 to 0.363
 - [\[CVPR 2026\] TempoMaster: Efficient Long Video Generation via Next-Frame-Rate Prediction](tempomaster_efficient_long_video_generation_via_next-frame-rate_prediction.md)
 - [\[CVPR 2026\] Chain of Event-Centric Causal Thought for Physically Plausible Video Generation](chain_of_event-centric_causal_thought_for_physically_plausible_video_generation.md)
 - [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
+- [\[ICLR 2026\] Video-GPT via Next Clip Diffusion](../../ICLR2026/video_generation/video-gpt_via_next_clip_diffusion.md)
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
-- [\[CVPR 2026\] Phantom: Physics-Infused Video Generation via Joint Modeling of Visual and Latent Physical Dynamics](phantom_physics-infused_video_generation_via_joint_modeling_of_visual_and_latent.md)
 
 </div>
 

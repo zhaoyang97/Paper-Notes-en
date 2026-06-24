@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] Q-Daps estimates LLM question-answering difficulty by generating multiple candidate answers and calculating the Shannon entropy of the plausibility distribution after debiasing for popularity. It systematically outperforms readability, retrieval complexity, prompt-based scoring, and uncertainty baselines on TriviaQA, N
+  [ACL2026][LLM Evaluation][Question Difficulty] Q-Daps estimates LLM question-answering difficulty by generating multiple candidate answers and calculating the Shannon entropy of the plausibility distribution after debiasing for popularity. It systematically outperforms readability, retrieval complexity, prompt-based scoring, and uncertainty baselines on TriviaQA, NQ, MuSiQue, and QASC.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL2026"
+  - "LLM Evaluation"
+  - "Question Difficulty"
+  - "Answer Plausibility"
+  - "Entropy"
+  - "Popularity Bias"
+  - "Hallucination Risk"
 date: 2026-05-08
-content_hash: a96d1443358a7d88
+content_hash: c5cdeb79e176ce7e
 ---
+
 # Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring
 
 **Conference**: ACL2026  
@@ -139,7 +145,7 @@ Q-Daps is an evaluation and scoring method and does not involve training the tar
 
 ## Related Papers
 
-- [\[ICLR 2026\] RankLLM: Weighted Ranking of LLMs by Quantifying Question Difficulty](../../ICLR2026/llm_evaluation/rankllm_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
+- [\[ICLR 2026\] EIP: Weighted Ranking of LLMs by Quantifying Question Difficulty](../../ICLR2026/llm_evaluation/eip_weighted_ranking_of_llms_by_quantifying_question_difficulty.md)
 - [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
 - [\[ACL 2026\] Zero-shot Large Language Models for Automatic Readability Assessment](zero-shot_large_language_models_for_automatic_readability_assessment.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)

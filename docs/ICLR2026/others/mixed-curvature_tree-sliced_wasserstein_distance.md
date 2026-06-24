@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Mixed-Curvature Tree-Sliced Wasserstein Distance
 description: >-
-  [ICLR 2026][Others][Tree-Sliced Wasserstein] The authors extend the Tree-Sliced Wasserstein framework to Mixed-Curvature Spaces (MCS), which are formed by the Cartesian product of Euclidean, spherical, and hyperbolic components. By utilizing "geodesic trees growing across subspaces" as the projection domain, they derive MCTSW—a distribution distance that preserve
+  [ICLR 2026][Mixed-Curvature Spaces] The authors extend the Tree-Sliced Wasserstein framework to Mixed-Curvature Spaces (MCS), which are formed by the Cartesian product of Euclidean, spherical, and hyperbolic components. By utilizing "geodesic trees growing across subspaces" as the projection domain, they derive MCTSW—a distribution distance that preserves geometric and topological structures while providing a closed-form solution and remaining parallelizable.
 tags:
-  - ICLR 2026
-  - Others
-  - Tree-Sliced Wasserstein
+  - "ICLR 2026"
+  - "Mixed-Curvature Spaces"
+  - "Tree-Sliced Wasserstein"
+  - "Radon Transform"
+  - "Optimal Transport"
+  - "Geodesics"
 date: 2026-05-08
-content_hash: 4a379ef72bdd8cb0
+content_hash: f4720d61b8403e7d
 ---
+
 # Mixed-Curvature Tree-Sliced Wasserstein Distance
 
 **Conference**: ICLR 2026  

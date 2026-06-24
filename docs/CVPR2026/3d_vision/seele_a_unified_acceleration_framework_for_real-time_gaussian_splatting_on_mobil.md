@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] SEELE is a mobile-oriented 3DGS rendering acceleration framework that reduces the number of rendered Gaussians through "view-dependent scene representation + online filtering + asynchronous prefetching" and concentrates computing power on a few Gaussians that truly affect pixels via "contribution-aware rasterization."
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] SEELE is a mobile-oriented 3DGS rendering acceleration framework that reduces the number of rendered Gaussians through "view-dependent scene representation + online filtering + asynchronous prefetching" and concentrates computing power on a few Gaussians that truly affect pixels via "contribution-aware rasterization." It is plug-and-play across four mainstream 3DGS algorithms, achieving up to 6.3× speedup and 39.1% runtime model r…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "real-time rendering"
+  - "mobile acceleration"
+  - "rasterization optimization"
+  - "GPU parallelism"
 date: 2026-05-08
-content_hash: 5b7f8468321db3b3
+content_hash: 8aacad7935d6f828
 ---
+
 # Seele: A Unified Acceleration Framework for Real-Time Gaussian Splatting on Mobile Devices
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ Effective across hardware, including low-power Orin NX and workstation A6000. **
 
 ## Related Papers
 
-- [\[CVPR 2025\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](../../CVPR2025/3d_vision/mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](../../ICLR2026/3d_vision/mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
+- [\[CVPR 2026\] SketchFaceGS: Real-Time Sketch-Driven Face Editing and Generation with Gaussian Splatting](sketchfacegs_real-time_sketch-driven_face_editing_and_generation_with_gaussian_s.md)
 - [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
+- [\[CVPR 2026\] MLLMSplat: A 2D MLLM-Powered Framework for 3D Gaussian Splatting Understanding, Generation, and Editing](mllmsplat_a_2d_mllm-powered_framework_for_3d_gaussian_splatting_understanding_ge.md)
 - [\[CVPR 2026\] Changes in Real Time: Online Scene Change Detection with Multi-View Fusion](changes_in_real_time_online_scene_change_detection_with_multi-view_fusion.md)
-- [\[CVPR 2026\] GHPT: Real-Time Relightable Gaussian Splatting using Hybrid Path Tracing](ghpt_real-time_relightable_gaussian_splatting_using_hybrid_path_tracing.md)
-- [\[CVPR 2026\] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images](uni3r_unified_3d_reconstruction_and_semantic_understanding_via_generalizable_gau.md)
 
 </div>
 

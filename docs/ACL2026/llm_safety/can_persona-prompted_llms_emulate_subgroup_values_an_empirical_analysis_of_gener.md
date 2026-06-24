@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment
 description: >-
-  [ACL 2026][LLM Safety][WVS] Ours uses a subset of the Singapore World Values Survey as a case study to construct 20,877 (question, subgroup) samples, verifying whether LLMs can simulate fine-grained demographic subgroup value preferences. Results show GPT-4.1 zero-shot achieves only 57.4% accuracy; simple SFT yields an average 17.4% gain on OOD s
+  [ACL 2026][LLM Safety][cultural alignment] Ours uses a subset of the Singapore World Values Survey as a case study to construct 20,877 (question, subgroup) samples, verifying whether LLMs can simulate fine-grained demographic subgroup value preferences. Results show GPT-4.1 zero-shot achieves only 57.4% accuracy; simple SFT yields an average 17.4% gain on OOD subgroups, but subgroup gaps widen from an NMAE perspective, with models showing persistent preferences for young/male…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - WVS
+  - "ACL 2026"
+  - "LLM Safety"
+  - "cultural alignment"
+  - "subgroup"
+  - "persona emulation"
+  - "fairness"
+  - "WVS"
 date: 2026-05-08
-content_hash: 0a137631bc2c8d03
+content_hash: 8c6301645cb6d81a
 ---
+
 # Can Persona-Prompted LLMs Emulate Subgroup Values? An Empirical Analysis of Generalisability and Fairness in Cultural Alignment
 
 **Conference**: ACL 2026  
@@ -151,7 +156,7 @@ Comparison of 7 open-source and 4 closed-source models on the OOD split (selecte
 - [\[ACL 2026\] CAP: Controllable Alignment Prompting for Unlearning in LLMs](cap_controllable_alignment_prompting_for_unlearning_in_llms.md)
 - [\[ACL 2026\] Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs](decomposed_trust_privacy_adversarial_robustness_ethics_and_fairness_in_low-rank_.md)
 - [\[ACL 2026\] How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)
-- [\[AAAI 2026\] Can Editing LLMs Inject Harm?](../../AAAI2026/llm_safety/can_editing_llms_inject_harm.md)
+- [\[ACL 2026\] Reasoning Hijacking: The Fragility of Reasoning Alignment in Large Language Models](reasoning_hijacking_the_fragility_of_reasoning_alignment_in_large_language_model.md)
 
 </div>
 

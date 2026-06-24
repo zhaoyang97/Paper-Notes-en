@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CTC-DRO: Robust Optimization for Reducing Language Disparities in Speech Recognition
 description: >-
-  [ICLR 2026][Audio & Speech][CTC] Addressing the issue of massive performance disparities among languages in multilingual speech recognition, this paper identifies that group DRO fails on CTC loss (due to CTC loss variance with audio length and acoustic characteristics, making it incomparable across groups). The authors propose CTC-DRO: using "duration
+  [ICLR 2026][Audio & Speech][Multilingual ASR] Addressing the issue of massive performance disparities among languages in multilingual speech recognition, this paper identifies that group DRO fails on CTC loss (due to CTC loss variance with audio length and acoustic characteristics, making it incomparable across groups). The authors propose CTC-DRO: using "duration-matched batch sampling" to flatten loss disparities caused by length, and "smooth weighted updates" to prevent we…
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - CTC
-  - group DRO
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Multilingual ASR"
+  - "CTC"
+  - "group DRO"
+  - "worst-group robustness"
+  - "smooth weighting"
 date: 2026-05-08
-content_hash: 0ec32dec14d0aae1
+content_hash: 4b0c10261ade1d99
 ---
+
 # CTC-DRO: Robust Optimization for Reducing Language Disparities in Speech Recognition
 
 **Conference**: ICLR 2026  
@@ -135,7 +139,6 @@ The largest improvement occurred in the imbalanced set 2 for XLS-R: worst-case C
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
@@ -143,7 +146,7 @@ The largest improvement occurred in the imbalanced set 2 for XLS-R: worst-case C
 - [\[ICLR 2026\] StableToken: A Noise-Robust Semantic Speech Tokenizer for Resilient SpeechLLMs](stabletoken_a_noise-robust_semantic_speech_tokenizer_for_resilient_speechllms.md)
 - [\[ICLR 2026\] AVERE: Improving Audiovisual Emotion Reasoning with Preference Optimization](avere_improving_audiovisual_emotion_reasoning_with_preference_optimization.md)
 - [\[ICLR 2026\] Learnable Fractional Superlets with a Spectro-Temporal Emotion Encoder for Speech Emotion Recognition](learnable_fractional_superlets_with_a_spectro-temporal_emotion_encoder_for_speec.md)
-- [\[ICLR 2026\] SupCLAP: Controlling Optimization Trajectory Drift in Audio-Text Contrastive Learning with Support Vector Regularization](supclap_controlling_optimization_trajectory_drift_in_audio-text_contrastive_lear.md)
+- [\[ICLR 2026\] Data-Centric Lessons To Improve Speech-Language Pretraining](data-centric_lessons_to_improve_speech-language_pretraining.md)
 
 </div>
 

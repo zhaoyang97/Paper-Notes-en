@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Wide-In, Narrow-Out: Revokable Decoding for Efficient and Effective DLLMs
 description: >-
-  [ICLR 2026][LLM Efficiency][draft-and-verify] Addressing the "quality-speed dilemma" in Diffusion Large Language Models (DLLMs) where parallel decoding inevitably leads to performance degradation, this paper proposes WINO, a training-free decoding algorithm. By employing a parallel draft-and-verify mechanism—consisting of a low-threshold "aggressive drafting (Wide
+  [ICLR 2026][LLM Efficiency][Diffusion Large Language Models] Addressing the "quality-speed dilemma" in Diffusion Large Language Models (DLLMs) where parallel decoding inevitably leads to performance degradation, this paper proposes WINO, a training-free decoding algorithm. By employing a parallel draft-and-verify mechanism—consisting of a low-threshold "aggressive drafting (Wide-In)" and a high-threshold "strict verification and re-masking of suspicious tokens (Narrow-Out)"—e…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - draft-and-verify
-  - Inference Acceleration
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Diffusion Large Language Models"
+  - "Parallel Decoding"
+  - "Revokable Decoding"
+  - "Draft-and-verify"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 3297bc622d155807
+content_hash: a6e46ac9ff7067ee
 ---
+
 # Wide-In, Narrow-Out: Revokable Decoding for Efficient and Effective DLLMs
 
 **Conference**: ICLR 2026  
@@ -158,10 +162,10 @@ Necessity of the Verification module and attention mask (GSM8K / MMMU-val):
 ## Related Papers
 
 - [\[ICLR 2026\] dParallel: Learnable Parallel Decoding for dLLMs](dparallel_learnable_parallel_decoding_for_dllms.md)
+- [\[ICLR 2026\] Hierarchy Decoding: A Training-free Parallel Decoding Strategy for Diffusion Large Language Models](hierarchy_decoding_a_training-free_parallel_decoding_strategy_for_diffusion_larg.md)
 - [\[ICLR 2026\] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference](libra_effective_yet_efficient_load_balancing_for_large-scale_moe_inference.md)
-- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
-- [\[ICLR 2026\] EntropyLong: Effective Long-Context Training via Predictive Uncertainty](entropylong_effective_long-context_training_via_predictive_uncertainty.md)
-- [\[ICML 2026\] FOCUS: DLLMs Know How to Tame Their Compute Bound](../../ICML2026/llm_efficiency/focus_dllms_know_how_to_tame_their_compute_bound.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
+- [\[ICLR 2026\] Out of the Memory Barrier: A Highly Memory-Efficient Training System for LLMs with Million-Token Contexts](out_of_the_memory_barrier_a_highly_memory-efficient_training_system_for_llms_wit.md)
 
 </div>
 

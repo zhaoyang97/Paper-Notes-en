@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpaceDrive: Infusing Spatial Awareness into VLM-based Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Paper Note] SpaceDrive replaces the conventional practice in VLM-based end-to-end driving—generating coordinates digit-by-digit as text—with a unified 3D Position Encoding (PE). The same sine-cosine PE is superimposed on visual tokens, used to replace coordinate tokens in text, and used to encode ego-states. Finally, a regressive
+  [CVPR 2026][Autonomous Driving][VLM End-to-End Driving] SpaceDrive replaces the conventional practice in VLM-based end-to-end driving—generating coordinates digit-by-digit as text—with a unified 3D Position Encoding (PE). The same sine-cosine PE is superimposed on visual tokens, used to replace coordinate tokens in text, and used to encode ego-states. Finally, a regressive PE decoder outputs trajectory coordinates directly. It achieves SOTA among VLM methods in nuScenes open-…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "VLM End-to-End Driving"
+  - "3D Position Encoding"
+  - "Spatial Awareness"
+  - "Trajectory Regression"
+  - "Closed-loop Planning"
 date: 2026-05-08
-content_hash: 51fa5cf271a49ca9
+content_hash: eec28f03a26d7289
 ---
+
 # SpaceDrive: Infusing Spatial Awareness into VLM-based Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Encoder/Decoder and Normalization ablation:
 
 ## Related Papers
 
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](spatial_retrieval_augmented_autonomous_driving.md)
+- [\[CVPR 2026\] Percept-WAM: Perception-Enhanced World-Awareness-Action Model for Robust End-to-End Autonomous Driving](percept-wam_perception-enhanced_world-awareness-action_model_for_robust_end-to-e.md)
 - [\[CVPR 2026\] DrivePI: Spatial-aware 4D MLLM for Unified Autonomous Driving Understanding, Perception, Prediction and Planning](drivepi_spatial-aware_4d_mllm_for_unified_autonomous_driving_understanding_perce.md)
-- [\[CVPR 2026\] RaUF: Learning the Spatial Uncertainty Field of Radar](rauf_learning_the_spatial_uncertainty_field_of_radar.md)
+- [\[ICLR 2026\] DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking](../../ICLR2026/autonomous_driving/driveagent-r1_advancing_vlm-based_autonomous_driving_with_active_perception_and_.md)
 - [\[ICCV 2025\] CoDa-4DGS: Dynamic Gaussian Splatting with Context and Deformation Awareness for Autonomous Driving](../../ICCV2025/autonomous_driving/coda-4dgs_dynamic_gaussian_splatting_with_context_and_deformation_awareness_for_.md)
-- [\[CVPR 2026\] Multi-Stage VLM Pipeline for Zero-Shot Traffic Accident Understanding](multi-stage_vlm_pipeline_for_zero-shot_traffic_accident_understanding.md)
-- [\[NeurIPS 2025\] Towards Physics-Informed Spatial Intelligence with Human Priors: An Autonomous Driving Perspective](../../NeurIPS2025/autonomous_driving/towards_physics-informed_spatial_intelligence_with_human_priors_an_autonomous_dr.md)
 
 </div>
 

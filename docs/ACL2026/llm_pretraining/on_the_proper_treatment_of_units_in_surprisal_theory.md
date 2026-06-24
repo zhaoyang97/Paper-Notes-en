@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On the Proper Treatment of Units in Surprisal Theory
 description: >-
-  [ACL 2026][Pretraining][GPT-2] This paper points out that the choice of the "next unit" in surprisal theory has historically been implicitly determined by pre-trained language model tokenizers. It proposes a finite-state transduction framework that explicitly decouples model tokens, linguistic units, and experimental Regions of Interest (ROI), demon
+  [ACL2026][LLM Pretraining][Surprisal theory] This paper points out that the choice of the "next unit" in surprisal theory has historically been implicitly determined by pre-trained language model tokenizers. It proposes a finite-state transduction framework that explicitly decouples model tokens, linguistic units, and experimental Regions of Interest (ROI), demonstrating on MECO eye-tracking data that different unit inventories fundamentally alter how surprisal predicts readi…
 tags:
-  - ACL 2026
-  - Pretraining
-  - GPT-2
+  - "ACL2026"
+  - "LLM Pretraining"
+  - "Surprisal theory"
+  - "unit inventory"
+  - "finite-state transduction"
+  - "eye-tracking reading time"
+  - "GPT-2"
 date: 2026-05-08
-content_hash: eb7f1c228c177664
+content_hash: efd724897a206175
 ---
+
 # On the Proper Treatment of Units in Surprisal Theory
 
 **Conference**: ACL2026  

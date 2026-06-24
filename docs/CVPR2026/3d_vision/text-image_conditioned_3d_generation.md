@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Text–Image Conditioned 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][3D Generation] This paper observes that image and text conditions provide complementary information in 3D generation—images provide precise appearance but are limited by viewpoint, while text provides global semantics but lacks visual detail. It proposes TIGON, a minimalist dual-branch DiT baseline that achieves native 3D generation
+  [CVPR 2026][3D Vision][Joint Text-Image Conditioning] This paper observes that image and text conditions provide complementary information in 3D generation—images provide precise appearance but are limited by viewpoint, while text provides global semantics but lacks visual detail. It proposes TIGON, a minimalist dual-branch DiT baseline that achieves native 3D generation under joint text-image conditioning through zero-initialized cross-modal bridges (early fusion) and step-w…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Generation
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Joint Text-Image Conditioning"
+  - "3D Generation"
+  - "Dual-branch DiT"
+  - "Cross-modal Fusion"
+  - "Rectified Flow"
 date: 2026-05-08
-content_hash: a0b832c195aff4de
+content_hash: 1fef7f18080309b9
 ---
+
 # Text–Image Conditioned 3D Generation
 
 **Conference**: CVPR 2026  
@@ -145,7 +150,7 @@ When image and text conditions explicitly conflict, TIGON tends to follow the im
 - [\[CVPR 2026\] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation](perpetualwonder_long-horizon_action-conditioned_4d_scene_generation.md)
 - [\[CVPR 2026\] Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation](are_we_ready_for_rl_in_text-to-3d_generation_a_progressive_investigation.md)
 - [\[CVPR 2026\] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation](multimodal_semantic_bias_mitigation_for_diverse_text-to-3d_generation.md)
-- [\[CVPR 2026\] ViLearn: Accelerating Training Convergence of Image-to-3D Generation via Visibility Learning](vilearn_accelerating_training_convergence_of_image-to-3d_generation_via_visibili.md)
+- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
 - [\[CVPR 2026\] HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)
 
 </div>

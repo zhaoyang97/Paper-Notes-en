@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability
 description: >-
-  [ICLR 2026][Interpretability][GPT-2] By layer-wise fine-tuning, all LayerNorm layers in the GPT-2 family (up to the 1.5B parameter GPT-2 XL) are replaced with pure linear transformations. The validation loss increases by only $+0.03 \sim 0.1$ cross-entropy, proving that LN is non-essential during inference. Removing LN reduces Direct Logit Attribution err
+  [ICLR 2026][Interpretability][LayerNorm removal] By layer-wise fine-tuning, all LayerNorm layers in the GPT-2 family (up to the 1.5B parameter GPT-2 XL) are replaced with pure linear transformations. The validation loss increases by only $+0.03 \sim 0.1$ cross-entropy, proving that LN is non-essential during inference. Removing LN reduces Direct Logit Attribution error from 50% to 0%, enabling precise mechanistic interpretability analysis.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - GPT-2
-  - Direct Logit Attribution
+  - "ICLR 2026"
+  - "Interpretability"
+  - "LayerNorm removal"
+  - "Mechanistic Interpretability"
+  - "GPT-2"
+  - "Direct Logit Attribution"
+  - "Confidence Neurons"
 date: 2026-05-08
-content_hash: 56533ed4cef9553c
+content_hash: 95082b196ef2f926
 ---
+
 # Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability
 
 **Conference**: ICLR 2026  
@@ -139,11 +143,11 @@ Evaluated using cross-entropy on OpenWebText validation, The Pile, and The Pile-
 
 ## Related Papers
 
+- [\[ICLR 2026\] Structural Inference: Interpreting Small Language Models with Susceptibilities](structural_inference_interpreting_small_language_models_with_susceptibilities.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 - [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
-- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
-- [\[ICLR 2026\] Priors in Time: Missing Inductive Biases for Language Model Interpretability](priors_in_time_missing_inductive_biases_for_language_model_interpretability.md)
 - [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](../../NeurIPS2025/interpretability/nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
+- [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
 
 </div>
 

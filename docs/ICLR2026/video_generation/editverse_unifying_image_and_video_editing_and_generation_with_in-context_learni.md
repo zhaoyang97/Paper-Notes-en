@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning
 description: >-
-  [ICLR 2026][Video Generation][Video Editing] EditVerse unifies text, images, and videos into a single interleaved token sequence. By employing full self-attention for in-context learning, a single 2B model supports both generation and editing across image and video domains. A self-constructed 232K video editing data pipeline transfers editing knowledge from the i
+  [ICLR2026][Video Generation][Unified framework] EditVerse unifies text, images, and videos into a single interleaved token sequence. By employing full self-attention for in-context learning, a single 2B model supports both generation and editing across image and video domains. A self-constructed 232K video editing data pipeline transfers editing knowledge from the image domain to the data-scarce video domain. Experimental results on the EditVerseBench show that this method ou…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Video Editing
-  - Flow Matching
+  - "ICLR2026"
+  - "Video Generation"
+  - "Unified framework"
+  - "In-context learning"
+  - "Full self-attention"
+  - "Video editing"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 727a62bf01e295ee
+content_hash: 60db96d22e5e87fb
 ---
+
 # EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning
 
 **Conference**: ICLR2026  
@@ -152,11 +156,11 @@ EditVerse leads all open-source methods. Compared to Runway Aleph, while generat
 
 ## Related Papers
 
+- [\[ICLR 2026\] Unified In-Context Video Editing](unified_in-context_video_editing.md)
 - [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
+- [\[ICLR 2026\] Pixel-Perfect Puppetry: Precision-Guided Enhancement for Face Image and Video Editing](pixel-perfect_puppetry_precision-guided_enhancement_for_face_image_and_video_edi.md)
+- [\[ICLR 2026\] UniVideo: Unified Understanding, Generation, and Editing for Videos](univideo_unified_understanding_generation_and_editing_for_videos.md)
 - [\[CVPR 2026\] EffectMaker: Unifying Reasoning and Generation for Customized Visual Effect Creation](../../CVPR2026/video_generation/effectmaker_unifying_reasoning_and_generation_for_customized_visual_effect_creat.md)
-- [\[CVPR 2025\] Pathways on the Image Manifold: Image Editing via Video Generation](../../CVPR2025/video_generation/pathways_on_the_image_manifold_image_editing_via_video_generation.md)
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
-- [\[ICLR 2026\] Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine-tuning.md)
 
 </div>
 

@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] WideSearch: Benchmarking Agentic Broad Info-Seeking
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] WideSearch introduces the first benchmark specifically designed to evaluate "wide-scale info-seeking." Given a query and a table schema, the agent must populate the entire table. The benchmark includes 200 Chinese and English human-annotated tasks with five-stage quality control. Results show that the success rate of o
+  [ICLR 2026][Multi-Agent][Search Agent] WideSearch introduces the first benchmark specifically designed to evaluate "wide-scale info-seeking." Given a query and a table schema, the agent must populate the entire table. The benchmark includes 200 Chinese and English human-annotated tasks with five-stage quality control. Results show that the success rate of over 10 mainstream search agents remains near 0%, with the best performing at only 7%, while human cross-validation approa…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Search Agent"
+  - "Broad Information Retrieval"
+  - "Automatic Evaluation"
+  - "Table Filling"
 date: 2026-05-08
-content_hash: eec3c1ab9322b2ac
+content_hash: c2164e8ae070edf8
 ---
+
 # WideSearch: Benchmarking Agentic Broad Info-Seeking
 
 **Conference**: ICLR 2026  

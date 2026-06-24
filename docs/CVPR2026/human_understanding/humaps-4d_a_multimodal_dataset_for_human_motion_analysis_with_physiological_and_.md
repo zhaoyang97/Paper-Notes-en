@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] HUMAPS-4D is a large-scale human motion dataset that synchronizes optical motion capture, multi-view RGB, IMU, instrumented pressure insoles, surface electromyography (sEMG), anthropometry, and three-layer semantic annotations under a unified protocol (32 participants × 30 actions × 10 repetitions × 14 hours = 5.76 mil
+  [CVPR 2026][Human Understanding][Human Motion Analysis] HUMAPS-4D is a large-scale human motion dataset that synchronizes optical motion capture, multi-view RGB, IMU, instrumented pressure insoles, surface electromyography (sEMG), anthropometry, and three-layer semantic annotations under a unified protocol (32 participants × 30 actions × 10 repetitions × 14 hours = 5.76 million frames). Its goal is to establish a rigorous benchmark for inferring full-body 3D poses/actions fro…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Human Motion Analysis"
+  - "Plantar Pressure"
+  - "Wearable Sensing"
+  - "Privacy Protection"
+  - "Multimodal Dataset"
 date: 2026-05-08
-content_hash: c392886a53043d2f
+content_hash: 78080e0ab7996f18
 ---
+
 # HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations
 
 **Conference**: CVPR 2026  
@@ -126,11 +132,11 @@ Action recognition (LOSO, Accuracy↑) shows that the insole-only modality (82.7
 
 ## Related Papers
 
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](hum4d_markerless_motion_capture.md)
 - [\[CVPR 2026\] RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation](romo_a_large-scale_richly_organized_dataset_and_semantic_taxonomy_for_human_moti.md)
 - [\[CVPR 2026\] M4Human: A Large-Scale Multimodal mmWave Radar Benchmark for Human Mesh Reconstruction](m4human_a_large-scale_multimodal_mmwave_radar_benchmark_for_human_mesh_reconstru.md)
 - [\[ICCV 2025\] HUMOTO: A 4D Dataset of Mocap Human Object Interactions](../../ICCV2025/human_understanding/humoto_a_4d_dataset_of_mocap_human_object_interactions.md)
 - [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
+- [\[CVPR 2026\] FusionAgent: A Multimodal Agent with Dynamic Model Selection for Human Recognition](fusionagent_a_multimodal_agent_with_dynamic_model_selection_for_human_recognitio.md)
 
 </div>
 

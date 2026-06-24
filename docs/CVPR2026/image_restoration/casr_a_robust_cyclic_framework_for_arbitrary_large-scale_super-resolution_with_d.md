@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] CASR decomposes "arbitrarily large-scale super-resolution (SR)" into a sequence of small-scale upsampling cycles that "always fall within the training distribution." Using a single model iteratively with two specific modules—the Superpixel Structure Alignment Module (SSAM) to suppress distribution drift during cycles,
+  [CVPR 2026][Image Restoration][Arbitrary-Scale SR] CASR decomposes "arbitrarily large-scale super-resolution (SR)" into a sequence of small-scale upsampling cycles that "always fall within the training distribution." Using a single model iteratively with two specific modules—the Superpixel Structure Alignment Module (SSAM) to suppress distribution drift during cycles, and the Self-Similarity Aware Refinement Module (SARM) to ensure texture consistency in patch-based reconstru…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Arbitrary-Scale SR"
+  - "Cyclic Upsampling"
+  - "Distribution Shift"
+  - "Superpixel Alignment"
+  - "Self-Similarity"
 date: 2026-05-08
-content_hash: d66a91bb2eb33de8
+content_hash: 6cf46f30708ece52
 ---
+
 # CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,20 @@ Component effectiveness at $\times 18$ magnification:
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Related papers would go here -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[CVPR 2026\] Next-Scale Prediction: A Self-Supervised Approach for Real-World Image Denoising](next-scale_prediction_a_self-supervised_approach_for_real-world_image_denoising.md)
+- [\[CVPR 2026\] Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)
+- [\[CVPR 2026\] SGDE: Self-supervised Geometry Degradation Estimation Framework for Coded Aperture Compressive Spectral Imaging](sgde_self-supervised_geometry_degradation_estimation_framework_for_coded_apertur.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)

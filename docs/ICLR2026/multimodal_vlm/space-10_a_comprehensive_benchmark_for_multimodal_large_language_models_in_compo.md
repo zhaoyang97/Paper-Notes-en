@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] SpaCE-10 constructs a benchmark for compositional spatial intelligence in MLLMs by decomposing spatial capabilities in real indoor scenes into 10 atomic capabilities, which are then recomposed into 8 categories of QA tasks. Utilizing 811 real-world scenes and 5k+ high-quality QA pairs, it reveals significant weaknesses
+  [ICLR 2026][Multimodal VLM][Compositional Spatial Intelligence] SpaCE-10 constructs a benchmark for compositional spatial intelligence in MLLMs by decomposing spatial capabilities in real indoor scenes into 10 atomic capabilities, which are then recomposed into 8 categories of QA tasks. Utilizing 811 real-world scenes and 5k+ high-quality QA pairs, it reveals significant weaknesses in current models regarding multi-view integration, counting, inverse reasoning…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Compositional Spatial Intelligence"
+  - "Multimodal Large Language Model Evaluation"
+  - "Spatial Reasoning"
+  - "3D Scene Understanding"
+  - "Multi-view Fusion"
 date: 2026-05-08
-content_hash: edfc7757ae95a843
+content_hash: c5372b6282e78663
 ---
+
 # SpaCE-10: A Comprehensive Benchmark for Multimodal Large Language Models in Compositional Spatial Intelligence
 
 **Conference**: ICLR 2026  
@@ -133,8 +139,8 @@ The data confirms that models struggle significantly when multiple foundational 
 - **Value**: ⭐⭐⭐⭐⭐ Highly valuable for identifying the "compositional" bottlenecks in MLLM spatial intelligence.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

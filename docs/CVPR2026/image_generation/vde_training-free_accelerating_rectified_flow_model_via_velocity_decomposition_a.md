@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] To address slow sampling in Rectified Flow (RF) models, this paper proposes VDE: decomposing the predicted velocity at each step into parallel and orthogonal components relative to the current input. By leveraging the observation that "scalar coefficients are approximately linear over time and orthogonal directions rem
+  [CVPR 2026][Image Generation][Rectified Flow] To address slow sampling in Rectified Flow (RF) models, this paper proposes VDE: decomposing the predicted velocity at each step into parallel and orthogonal components relative to the current input. By leveraging the observation that "scalar coefficients are approximately linear over time and orthogonal directions remain nearly constant in the short term," the method uses linear extrapolation and direction reuse to estimate veloc…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Rectified Flow"
+  - "Training-Free Acceleration"
+  - "Velocity Decomposition"
+  - "Cache Mismatch"
+  - "Input-Adaptive Estimation"
 date: 2026-05-08
-content_hash: e0c8612653a4048d
+content_hash: 9a523b340bbfcd8b
 ---
+
 # VDE: Training-Free Accelerating Rectified Flow Model via Velocity Decomposition and Estimation
 
 **Conference**: CVPR 2026  
@@ -152,15 +158,16 @@ Table 3: Effect of replacing components with ground truth in FLUX.1.
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
-- [\[CVPR 2026\] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation](d2c_diffusion_dataset_condensation.md)
-- [\[CVPR 2026\] Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)
+- [\[CVPR 2026\] Delta Rectified Flow Sampling for Text-to-Image Editing](delta_rectified_flow_sampling_for_text-to-image_editing.md)
+- [\[CVPR 2026\] CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion](careflow_cyclic_adaptive_rectified_flow_for_multimodal_fusion.md)
 - [\[ICLR 2026\] Free Lunch for Stabilizing Rectified Flow Inversion](../../ICLR2026/image_generation/free_lunch_for_stabilizing_rectified_flow_inversion.md)
-- [\[CVPR 2026\] RecTok: Reconstruction Distillation along Rectified Flow](rectok_reconstruction_distillation_along_rectified_flow.md)
+- [\[CVPR 2026\] D2C: Accelerating Diffusion Model Training under Minimal Budgets via Condensation](d2c_diffusion_dataset_condensation.md)
 
 </div>
 

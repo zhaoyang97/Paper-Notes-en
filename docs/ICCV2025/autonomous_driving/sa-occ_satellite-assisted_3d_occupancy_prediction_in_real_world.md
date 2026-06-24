@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World
 description: >-
-  [ICCV 2025][Autonomous Driving][3D occupancy prediction] SA-Occ is proposed as the first method to leverage satellite imagery to assist onboard cameras in 3D occupancy prediction. Three modules—Dynamic-Decoupling Fusion…
+  [ICCV 2025][Autonomous Driving][3D occupancy prediction] SA-Occ is proposed as the first method to leverage satellite imagery to assist onboard cameras in 3D occupancy prediction. Three modules—Dynamic-Decoupling Fusion, 3D Projection Guidance, and Uniform Sampling Alignment—address cross-view perception challenges, achieving 39.05% mIoU (+6.97%) on Occ3D-nuScenes with only 6.93 ms additional latency.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "cross-view fusion"
   - "multi-sensor fusion"
 date: 2026-05-08
-content_hash: dfc114ba26df1baf
+content_hash: 27632b421920b29c
 ---
 
 # SA-Occ: Satellite-Assisted 3D Occupancy Prediction in Real World

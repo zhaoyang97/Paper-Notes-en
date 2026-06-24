@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?
 description: >-
-  [AAAI 2026][Model Compression][Binary Neural Networks] This paper proposes BD-Net, which for the first time successfully integrates depth-wise convolution (DWConv) into binary neural networks (BNNs) by introducing 1.58-b…
+  [AAAI 2026][Model Compression][Binary Neural Networks] This paper proposes BD-Net, which for the first time successfully integrates depth-wise convolution (DWConv) into binary neural networks (BNNs) by introducing 1.58-bit convolution and pre-BN residual connections. BD-Net achieves a new state of the art in the BNN domain on ImageNet with an extremely low computational cost of 33M OPs, with accuracy improvements of up to 9.3 percentage points across multiple datasets.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -11,7 +11,7 @@ tags:
   - "Low-bit Quantization"
   - "Lightweight Networks"
 date: 2026-05-08
-content_hash: 90001113899c1f0f
+content_hash: 32aa3580a4589f95
 ---
 
 # BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?
@@ -133,11 +133,11 @@ BD-Net establishes a new BNN state of the art on ImageNet with only 33M OPs, and
 
 ## Related Papers
 
+- [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](../../ICLR2026/model_compression/bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
 - [\[ICML 2026\] SURGE: Surrogate Gradient Adaptation in Binary Neural Networks](../../ICML2026/model_compression/surge_surrogate_gradient_adaptation_in_binary_neural_networks.md)
+- [\[ICLR 2026\] Zeros Can Be Informative: Masked Binary U-Net for Image Segmentation on Tensor Cores](../../ICLR2026/model_compression/zeros_can_be_informative_masked_binary_u-net_for_image_segmentation_on_tensor_co.md)
+- [\[ICML 2025\] An Efficient Matrix Multiplication Algorithm for Accelerating Inference in Binary and Ternary Neural Networks](../../ICML2025/model_compression/an_efficient_matrix_multiplication_algorithm_for_accelerating_inference_in_binar.md)
 - [\[ICLR 2026\] Adaptive Width Neural Networks](../../ICLR2026/model_compression/adaptive_width_neural_networks.md)
-- [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](../../ICLR2026/model_compression/a_recovery_guarantee_for_sparse_neural_networks.md)
-- [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
-- [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](../../ICLR2026/model_compression/fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
 
 </div>
 

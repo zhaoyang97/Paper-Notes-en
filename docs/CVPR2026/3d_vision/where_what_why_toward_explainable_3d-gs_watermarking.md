@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Where, What, Why: Toward Explainable 3D-GS Watermarking
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] Ours proposes a representation-native 3D-GS watermarking framework that selects carriers via Trio-Experts (**where**), controls gradients using a Channel-wise Group Mask (**what**), and achieves auditable attribution through decoupled fine-tuning (**why**). It surpasses Prev. SOTA in both rendering quality (PSNR +0.83
+  [CVPR2026][3D Vision][3D Gaussian Splatting] Ours proposes a representation-native 3D-GS watermarking framework that selects carriers via Trio-Experts (**where**), controls gradients using a Channel-wise Group Mask (**what**), and achieves auditable attribution through decoupled fine-tuning (**why**). It surpasses Prev. SOTA in both rendering quality (PSNR +0.83 dB) and bit accuracy (+1.24%).
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Interpretability
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Digital Watermarking"
+  - "Copyright Protection"
+  - "Explainability"
+  - "Robust Embedding"
 date: 2026-05-08
-content_hash: 8fac1305784cc360
+content_hash: f0260ca4f956ba8c
 ---
+
 # Where, What, Why: Toward Explainable 3D-GS Watermarking
 
 **Conference**: CVPR2026  
@@ -157,11 +161,11 @@ SBAG, Group Mask, and Decoupled Finetuning are all critical. Removing all compon
 
 ## Related Papers
 
+- [\[CVPR 2026\] Write Where It Matters: Policy-Guided Watermarks for 3D Gaussian Splatting](write_where_it_matters_policy-guided_watermarks_for_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Robust3DGSW: Toward Robust Watermarking for Quantization-Aware 3D Gaussian Splatting](robust3dgsw_toward_robust_watermarking_for_quantization-aware_3d_gaussian_splatt.md)
+- [\[AAAI 2026\] Can Protective Watermarking Safeguard the Copyright of 3D Gaussian Splatting?](../../AAAI2026/3d_vision/can_protective_watermarking_safeguard_the_copyright_of_3d_gaussian_splatting.md)
 - [\[CVPR 2026\] Mark4D: Temporally-Consistent Watermarking for 4D Gaussian Splatting](mark4d_temporally-consistent_watermarking_for_4d_gaussian_splatting.md)
 - [\[CVPR 2026\] What Makes Good Synthetic Training Data for Zero-Shot Stereo Matching?](what_makes_good_synthetic_training_data_for_zero-shot_stereo_matching.md)
-- [\[AAAI 2026\] Can Protective Watermarking Safeguard the Copyright of 3D Gaussian Splatting?](../../AAAI2026/3d_vision/can_protective_watermarking_safeguard_the_copyright_of_3d_gaussian_splatting.md)
-- [\[CVPR 2026\] GAI-GS：用几何代数注意力把光线-物体交互注入 3DGS 的无线信道预测框架](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)
 
 </div>
 

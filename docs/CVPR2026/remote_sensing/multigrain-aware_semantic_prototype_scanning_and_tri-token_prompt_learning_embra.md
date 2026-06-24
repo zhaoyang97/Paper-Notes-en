@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multigrain-aware Semantic Prototype Scanning and Tri-Token Prompt Learning Embraced High-Order RWKV for Pan-Sharpening
 description: >-
-  [CVPR 2026][Remote Sensing][Vision RWKV] Addressing the pan-sharpening task, this paper replaces the "semantic-agnostic fixed raster scanning" of Vision RWKV with a semantic prototype scanning driven by Locality Sensitive Hashing (LSH) clustering. Combined with a "Global + Prototype + Register" tri-token prompt mechanism and an invertible Q-shift high-frequen
+  [CVPR 2026][Remote Sensing][Pan-sharpening] Addressing the pan-sharpening task, this paper replaces the "semantic-agnostic fixed raster scanning" of Vision RWKV with a semantic prototype scanning driven by Locality Sensitive Hashing (LSH) clustering. Combined with a "Global + Prototype + Register" tri-token prompt mechanism and an invertible Q-shift high-frequency enhancement, it achieves new SOTA results across PSNR, SSIM, SAM, and ERGAS on three datasets: WorldView and GaoF…
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Vision RWKV
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Pan-sharpening"
+  - "Vision RWKV"
+  - "Semantic Prototype Scanning"
+  - "Prompt Learning"
+  - "Invertible Neural Network"
 date: 2026-05-08
-content_hash: 8cc26f1b9daf4e81
+content_hash: 2c5e924c476f333e
 ---
+
 # Multigrain-aware Semantic Prototype Scanning and Tri-Token Prompt Learning Embraced High-Order RWKV for Pan-Sharpening
 
 **Conference**: CVPR 2026  
@@ -125,15 +130,16 @@ The paper validates the effectiveness of the three core components: Semantic Pro
 - Value: ⭐⭐⭐⭐ Provides a reusable semantic paradigm for linear attention backbones in remote sensing fusion.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
 - [\[ICCV 2025\] Pan-Crafter: Learning Modality-Consistent Alignment for Pan-Sharpening](../../ICCV2025/remote_sensing/pan-crafter_learning_modality-consistent_alignment_for_pan-sharpening.md)
-- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
+- [\[CVPR 2026\] PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction](phenoyieldnet_learning_crop-aware_phenological_responses_for_multi-crop_yield_pr.md)
 - [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
+- [\[CVPR 2026\] Prompt-Free Unknown Label Generation for Open World Detection in Remote Sensing](prompt-free_unknown_label_generation_for_open_world_detection_in_remote_sensing.md)
+- [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
 
 </div>
 

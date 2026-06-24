@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] TraceDet: Hallucination Detection from the Decoding Trace of Diffusion Large Language Models
 description: >-
-  [ICLR 2026][Hallucination Detection][AUROC] Focusing on hallucination signals exposed during the multi-step denoising process of Diffusion Large Language Models (D-LLMs), this paper models the denoising trace as an "action trajectory." It utilizes the Information Bottleneck principle to automatically select sub-trajectories that are most informative regarding ha
+  [ICLR 2026][Hallucination Detection][Diffusion LLM] Focusing on hallucination signals exposed during the multi-step denoising process of Diffusion Large Language Models (D-LLMs), this paper models the denoising trace as an "action trajectory." It utilizes the Information Bottleneck principle to automatically select sub-trajectories that are most informative regarding hallucinations to train a classifier, improving the hallucination detection AUROC by an average of 15.2% acros…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - AUROC
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Diffusion LLM"
+  - "Denoising Trace"
+  - "Information Bottleneck"
+  - "AUROC"
 date: 2026-05-08
-content_hash: 5df06d86a7ef8157
+content_hash: a2c430a3a911a7f8
 ---
+
 # TraceDet: Hallucination Detection from the Decoding Trace of Diffusion Large Language Models
 
 **Conference**: ICLR 2026  
@@ -125,6 +129,7 @@ TraceDet achieved the highest AUROC in all settings: 8.8% higher than the strong
 - Value: ⭐⭐⭐⭐ Provides a practical, low-overhead hallucination detector for D-LLMs with significant performance gains.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

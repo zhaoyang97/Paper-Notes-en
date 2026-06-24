@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffA: Large Language Diffusion Models Can Listen and Understand
 description: >-
-  [AAAI 2026][Audio & Speech][Diffusion Language Models] This paper proposes DIFFA — the first large audio-language model built upon a diffusion language model — which combines a frozen LLaDA-8B backbone with a lightweight…
+  [AAAI 2026][Audio & Speech][Diffusion Language Models] Proposed DIFFA, the first Large Audio-Language Model based on a diffusion language model. By using a frozen LLaDA-8B backbone, a lightweight dual-adapter architecture, and a two-stage training pipeline, it achieves performance competitive with autoregressive baselines on MMSU, MMAU, and VoiceBench using only 960 hours of ASR data and 127 hours of synthetic instruction data.
 tags:
   - "AAAI 2026"
   - "Audio & Speech"
@@ -12,44 +12,44 @@ tags:
   - "LLaDA"
   - "Parameter-Efficient Adaptation"
 date: 2026-05-08
-content_hash: e067edae0aed4afc
+content_hash: 8862d1ec7d78bfb1
 ---
 
 # DiffA: Large Language Diffusion Models Can Listen and Understand
 
-**Conference**: AAAI 2026
+**Conference**: AAAI 2026  
 **arXiv**: [2507.18452](https://arxiv.org/abs/2507.18452)  
 **Code**: [GitHub](https://github.com/NKU-HLT/DIFFA)  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: Diffusion Language Models, Audio Understanding, Large Audio-Language Models, LLaDA, Parameter-Efficient Adaptation
 
 ## TL;DR
 
-This paper proposes DIFFA — the first large audio-language model built upon a diffusion language model — which combines a frozen LLaDA-8B backbone with a lightweight dual-adapter architecture and a two-stage training pipeline. Using only 960 hours of ASR data and 127 hours of synthetic instruction data, DIFFA achieves competitive performance against autoregressive baselines on MMSU, MMAU, and VoiceBench.
+Proposed DIFFA, the first Large Audio-Language Model based on a diffusion language model. By using a frozen LLaDA-8B backbone, a lightweight dual-adapter architecture, and a two-stage training pipeline, it achieves performance competitive with autoregressive baselines on MMSU, MMAU, and VoiceBench using only 960 hours of ASR data and 127 hours of synthetic instruction data.
 
 ## Background & Motivation
 
-Large audio-language models (LALMs) have advanced rapidly in recent years; however, existing approaches almost exclusively rely on autoregressive (AR) decoding:
+Large Audio-Language Models (LALMs) have developed rapidly in recent years, but existing methods are almost entirely based on the Autoregressive (AR) decoding paradigm:
 
-**Encoder + LLM paradigm** (e.g., Qwen2-Audio, SALMONN): projects speech encoder outputs into the LLM input space via adapters.
+**Encoder + LLM Paradigm** (e.g., Qwen2-Audio, SALMONN): Projects the speech encoder output into the LLM input space via adapters.
 
-**Speech tokenization paradigm** (e.g., SpeechGPT, Moshi): discretizes audio into tokens and trains the LLM directly on them.
+**Speech Tokenization Paradigm** (e.g., SpeechGPT, Moshi): Discretizes audio into tokens and directly trains them using an LLM.
 
-Both paradigms depend on AR decoding, which suffers from inherent drawbacks: exposure bias, slow generation speed, lack of bidirectional context modeling, and limited flexibility for partial conditional inference.
+Both paradigms rely on AR decoding, which exhibits inherent drawbacks: exposure bias, slow generation speed, lack of bidirectional contextual modeling, and limited flexibility for partial conditional inference.
 
-Diffusion language models (e.g., LLaDA) have demonstrated capabilities comparable to AR models in the text domain and have been extended to vision-language tasks (LLaDA-V). Yet the audio modality remains completely unexplored in diffusion language models. Given audio's unique acoustic variability, complex temporal structure, and rich paralinguistic information, whether it is amenable to diffusion-based modeling remains an open question.
+Diffusion language models (such as LLaDA) have demonstrated capabilities comparable to AR models in the text domain and have been extended to vision-language tasks (LLaDA-V). However, the audio modality remains entirely unexplored within diffusion language models. Given the unique acoustic variability, complex temporal structure, and rich paralinguistic information of audio, whether it is suitable for diffusion modeling remains an open question.
 
 ## Method
 
 ### Overall Architecture
 
-DIFFA adopts a modular and parameter-efficient design:
+DIFFA adopts a modular and efficient design:
 
-- **Speech Encoder**: frozen Whisper-Small (88.2M parameters)
+- **Speech Encoder**: Frozen Whisper-Small (88.2M parameters)
 - **Dual Adapters**: Semantic Adapter (14.4M) + Acoustic Adapter (22.3M)
-- **Language Backbone**: frozen LLaDA-8B-Instruct (8.1B parameters)
+- **Language Backbone**: Frozen LLaDA-8B-Instruct (8.1B parameters)
 
-Both the encoder and the language model are frozen throughout training; only the two lightweight adapters are optimized, yielding approximately 36.7M trainable parameters (< 0.5% of total).
+The encoder and language model remain frozen throughout training. Only the two lightweight adapters are trained, with total trained parameters of approximately 36.7M (< 0.5%).
 
 ### Key Designs
 
@@ -58,138 +58,138 @@ Both the encoder and the language model are frozen throughout training; only the
 **Semantic Adapter**:
 - 2-layer convolutional network (4× downsampling) + 2-layer linear projection
 - Compresses Whisper's 50 Hz output to 12.5 Hz
-- Extracts high-level semantic features from the encoder's final output
+- Extracts high-level semantic features from the final output of the encoder
 
 **Acoustic Adapter**:
 - 2-layer Q-Former structure with 64 trainable query vectors
-- Extracts low-level acoustic features (pitch, emotion, speaking rate, and other paralinguistic cues) from **intermediate encoder states**
+- Extracts low-level acoustic features (pitch, emotion, speech rate, and other paralinguistic information) from the **intermediate layer states** of the encoder
 
-The final audio representation is the concatenation of both adapter outputs, prepended to the LLM input as prefix tokens.
+The final audio representation is a concatenation of the outputs from both adapters, which is appended to the LLM input as prefix tokens.
 
-#### 2. Diffusion Decoding with LLaDA
+#### 2. LLaDA-Based Diffusion Decoding
 
-LLaDA defines a forward masking process in which each token is replaced by a special mask token $\text{M}$ with probability $t$. The mask predictor $p_\theta(x_0|x_t)$ is trained to recover masked tokens:
+LLaDA defines a forward masking process: each token is replaced with a special mask token $\text{M}$ with probability $t$. The mask predictor $p_\theta(x_0|x_t)$ is trained to recover the masked tokens:
 
 $$\mathcal{L}(\theta) = -\mathbb{E}_{t,x_0,x_t}\left[\frac{1}{t}\sum_{i=1}^{L} \mathbf{1}[x_t^i = \text{M}] \log p_\theta(x_0^i|x_t)\right]$$
 
-Upon incorporating the audio condition, the objective becomes:
+After incorporating audio conditioning, the objective function becomes:
 
 $$L_a = -\mathbb{E}_{t,a_0,p_0,r_0,r_t}\left[\frac{1}{t}\sum_{i=1}^{L'} \mathbf{1}[r_t^i = \text{M}] \log p_\theta(r_0^i \mid a_0, p_0, r_t)\right]$$
 
-During training, audio and prompt tokens remain unmasked; the masking-prediction procedure is applied solely to response tokens.
+During training, the audio and prompt tokens remain unmasked, and the mask-and-predict operation is performed only on the response tokens.
 
 #### 3. Data Construction
 
-Inspired by the DESTA series, synthetic instruction data is generated by prompting an LLM with:
-- Audio transcription text + acoustic attributes (gender, accent, emotion, duration, and 10 other annotated properties)
+Inspired by the DESTA series, synthetic instruction data is generated by prompting LLMs:
+- Inputs: Audio transcripts + acoustic attributes (10 annotated attributes including gender, accent, emotion, duration, etc.)
 - Prompt: "What can you hear from the audio?"
-- The LLM's responses serve as supervision signals
+- The response generated by the LLM serves as the supervision signal.
 
-Additionally, a **self-distillation rewriting** strategy is introduced: Qwen3-8B first generates initial descriptions, which are then rewritten by LLaDA to align with its internal data distribution.
+In addition, **self-distillation rewriting** is introduced: initial descriptions are first generated using Qwen3-8B and then rewritten by LLaDA to align with its internal data distribution.
 
 ### Loss & Training
 
 **Two-Stage Training**:
 
-**Stage 1 — Semantic Alignment**:
+**Stage 1—Semantic Alignment**:
 - Data: LibriSpeech 960 hours
-- Objective: ASR task; trains the semantic adapter to align the speech encoder with the language model
+- Objective: ASR task, training the semantic adapter to align the speech encoder with the language model
 - Only the semantic adapter is trained
 
-**Stage 2 — Modality Alignment**:
+**Stage 2—Modality Alignment**:
 - Data: 127 hours of synthetic instruction data (VCTK, Accentdb, IEMOCAP, dailytalk, VoxCeleb1)
-- Objective: audio description task; trains both adapters jointly
-- Both the semantic adapter and the acoustic adapter are updated
+- Objective: Audio captioning task, training the dual adapters
+- Both the semantic adapter and acoustic adapter are trained simultaneously
 
-Inference employs a **semi-autoregressive strategy**: tokens are generated left-to-right in blocks, with parallel token prediction within each block and re-masking applied to low-confidence positions.
+Inference adopts a **semi-autoregressive strategy**: generation is performed block-by-block from left to right, predicting tokens within blocks in parallel and re-masking low-confidence positions.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Table 2: MMSU Benchmark (Spoken Language Understanding, 5,000 samples)**
+**Table 2: MMSU Benchmark (Speech Language Understanding, 5000 samples)**
 
 | Model | Perception | Reasoning | Overall |
-|-------|-----------|-----------|---------|
+|------|------|------|------|
 | Gemini-1.5-Pro | 46.10 | 76.16 | 60.68 |
 | Qwen2.5-Omni | 42.50 | 79.83 | 60.57 |
 | Qwen2-Audio-Instruct | 39.02 | 68.90 | 53.27 |
 | **DIFFA** | **40.28** | **72.92** | **56.04** |
 
-**Table 3: MMAU Benchmark (Audio Reasoning, 3 domains, 27 skills)**
+**Table 3: MMAU Benchmark (Audio Reasoning, 3 Domains, 27 Skills)**
 
 | Model | Sound | Music | Speech | Avg |
-|-------|-------|-------|--------|-----|
+|------|-------|-------|--------|-----|
 | GPT-4o mini Audio | 50.75 | 39.22 | 69.07 | 53.01 |
 | Qwen2-Audio-Instruct | 67.27 | 56.29 | 55.26 | 59.61 |
 | **DIFFA** | **46.25** | **43.41** | **59.46** | **49.71** |
 
-**Table 4: VoiceBench (Spoken QA)**
+**Table 4: VoiceBench (Speech QA)**
 
 | Model | SD-QA | OBQA | IFEval | AdvBench | Overall |
-|-------|-------|------|--------|----------|---------|
+|------|-------|------|--------|----------|---------|
 | Qwen2-Audio | 35.72 | 49.45 | 26.33 | 96.73 | 55.34 |
 | DiVA | 57.06 | 25.49 | 39.16 | 98.27 | 55.70 |
 | **DIFFA** | **34.45** | **35.60** | **26.56** | **76.54** | **48.22** |
 
-DIFFA surpasses Qwen2-Audio-Instruct by nearly 3 points on MMSU, with particularly strong performance in semantic reasoning (81.53%).
+DIFFA outperforms Qwen2-Audio-Instruct by nearly 3 points on MMSU, with semantic reasoning being particularly outstanding (81.53%).
 
 ### Ablation Study
 
-**Table 5: Architecture and Adapter Design Ablation**
+**Table 5: Ablation on Architecture and Adapter Design**
 
 | LLM Backbone | Adapter | MMAU | MMSU |
-|-------------|---------|------|------|
+|----------|--------|------|------|
 | LLaMA 3.1 (AR) | Dual | 28.40 | 38.40 |
 | LLaDA (Diffusion) | Single | 47.70 | 52.88 |
 | **LLaDA (Diffusion)** | **Dual** | **49.71** | **56.04** |
 
-**Table 6: Instruction Data Source Ablation**
+**Table 6: Ablation on Instruction Data Sources**
 
 | Data Source | MMAU | MMSU | VoiceBench | Avg |
-|-------------|------|------|------------|-----|
+|--------|------|------|------------|-----|
 | LLaMA 3 | 51.71 | 54.72 | 37.17 | 47.86 |
 | Qwen3 | 49.71 | 56.04 | 48.22 | 51.32 |
 | rewrite-Qwen3 | 50.41 | 56.43 | 46.60 | 51.15 |
 
 ### Key Findings
 
-1. **Diffusion vs. Autoregressive**: Replacing the AR backbone (LLaMA 3.1) with a diffusion backbone (LLaDA) yields a +23.3-point gain on MMAU (28.4→51.7) and +16.3 points on MMSU, demonstrating a clear advantage of diffusion language models for audio understanding.
-2. **Dual Adapter > Single Adapter**: The acoustic adapter contributes gains of +2.01 (MMAU) and +3.16 (MMSU), confirming the importance of low-level acoustic features.
-3. **Exceptional Data Efficiency**: Only 127 hours of synthetic data and 960 hours of ASR data are used, compared to Qwen2-Audio's 510,000 hours of training data.
-4. DIFFA achieves the strongest semantic reasoning performance (81.53%), while phonetic and paralinguistic perception remain comparatively weaker.
-5. Instruction data generated by LLaDA outperforms that generated by LLaMA-3, suggesting that the inductive bias of diffusion models may yield better-aligned supervision signals.
+1. **Diffusion vs. Autoregression**: Replacing the AR backbone (LLaMA 3.1) with the diffusion backbone (LLaDA) yields a 23.3-point gain on MMAU (28.4 $\rightarrow$ 51.7) and a 16.3-point gain on MMSU, demonstrating the clear superiority of diffusion language models for audio understanding.
+2. **Dual-Adapter > Single-Adapter**: The acoustic adapter brings gains of +2.01 (MMAU) and +3.16 (MMSU), proving the importance of low-level acoustic features.
+3. **High Data Efficiency**: High competitive performance is achieved with only 127 hours of synthetic data + 960 hours of ASR data, compared to the 510,000 hours of training data used by Qwen2-Audio.
+4. DIFFA performs best on semantic reasoning tasks (81.53%), while its phonological and paralinguistic perception is relatively weaker.
+5. Instruction data generated with LLaDA outperforms that generated with LLaMA-3, suggesting that the inductive biases of diffusion models might produce more aligned supervision signals.
 
 ## Highlights & Insights
 
-1. **First Diffusion-Based LALM**: Opens a new research direction in audio understanding, demonstrating that diffusion language models are applicable not only to text and vision but also to audio.
-2. **Extreme Data Efficiency**: Achieves competitive performance using less than 1/400 of Qwen2-Audio's training data, requiring only 72 A800 GPU hours.
-3. **Elegant Freezing Strategy**: Freezing both the encoder and the language model while training only 36.7M adapter parameters (< 0.5%) effectively prevents catastrophic forgetting.
-4. **Dual-Adapter Design**: The semantic and acoustic pathways are complementary, capturing high-level semantics and low-level paralinguistic information respectively.
+1. **First Diffusion-Based LALM**: Opens up a new direction in audio understanding, proving that diffusion language models are highly viable not only for text and vision but also for audio.
+2. **Extreme Data Efficiency**: Competes effectively while using less than 1/400 of the training data compared to Qwen2-Audio, requiring only 72 A800 GPU hours.
+3. **Elegant Freezing Strategy**: Freezing both the encoder and the language backbone while training only 36.7M adapter parameters (< 0.5%) effectively avoids catastrophic forgetting.
+4. **Dual-Adapter Design**: The separate semantic and acoustic pathways complement each other, capturing high-level semantics and low-level paralinguistic information respectively.
 
 ## Limitations & Future Work
 
-1. **Limited Training Data**: The modest data scale (960 + 127 hours) may constrain generalization to challenging scenarios such as low-resource accents and noisy environments.
-2. **Insufficient Paralinguistic Perception**: Scores on phonetic and paralinguistic tasks are noticeably lower than those on semantic reasoning, indicating a need for more acoustic training data.
-3. **Inference Latency**: Diffusion decoding requires multiple iterative steps, which may result in higher inference latency compared to AR models in practice.
-4. **Absence of Speech Generation**: The current system supports understanding only, not generation, limiting its functionality relative to full-duplex dialogue systems such as Moshi.
-5. Training data could be extended to cover additional audio types, including music and environmental sounds.
+1. **Limited Training Data**: The 960 + 127 hours of data may restrict generalization performance in complex scenarios such as low-resource accents and noisy environments.
+2. **Insufficient Paralinguistic Perception**: Performance on phonological and paralinguistic tasks is significantly lower than on semantic reasoning, indicating a need for more acoustic training data.
+3. **Inference Latency**: Diffusion decoding requires multi-step iterations, meaning the actual inference latency could be higher than that of AR models.
+4. **Lack of Speech Generation Capability**: Currently designed solely for understanding rather than generation, which limits its functionality compared to full-duplex conversational systems (e.g., Moshi).
+5. Potential for extending training data to cover a wider range of audio types (e.g., music and environmental sounds).
 
 ## Related Work & Insights
 
-- **LLaDA**: The foundational diffusion language model, demonstrating that masked diffusion can replace autoregressive generation.
-- **LLaDA-V**: Extends diffusion LLMs to vision-language tasks; this work further extends the paradigm to audio.
-- **DESTA-2**: Provides a construction paradigm for synthetic instruction data, though it relies on a cascaded design (Whisper transcription followed by generation); this work achieves an end-to-end approach.
-- **Qwen2-Audio**: The primary competitor; strong in performance but requires enormous data (510,000 hours).
-- Insight: The modality extension paradigm of diffusion LLMs — frozen backbone + lightweight adapters — may serve as a general-purpose recipe for multimodal scaling.
+- **LLaDA**: The foundation for diffusion language models, proving that a masked diffusion process can replace autoregression.
+- **LLaDA-V**: Extends diffusion LLMs to vision-language tasks, which this work further extends into the audio domain.
+- **DESTA-2**: A construction paradigm for synthetic instruction data, but utilizing a cascaded design (Whisper transcription followed by LLM generation). This work implements an end-to-end paradigm.
+- **Qwen2-Audio**: A primary competitor with robust performance, though it demands immense volumes of training data (510,000 hours).
+- **Inspiration**: The modality expansion paradigm of diffusion LLMs—employing a frozen backbone and lightweight adapters—could emerge as a general solution for multimodal scaling.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (first diffusion-based audio-language model)
-- Technical Depth: ⭐⭐⭐⭐ (dual-adapter and two-stage training design are well-motivated)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (3 benchmarks + comprehensive ablations)
-- Value: ⭐⭐⭐⭐ (highly data-efficient; favorable for low-resource settings)
-- Overall: 8.5/10
+- Novelty: ⭐⭐⭐⭐⭐ (First diffusion-based audio-language model)
+- Technical Depth: ⭐⭐⭐⭐ (Well-designed dual-adapter + two-stage training)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Evaluated on 3 benchmarks + comprehensive ablation)
+- Value: ⭐⭐⭐⭐ (Extremely high data efficiency, beneficial for low-resource scenarios)
+- Overall Score: 8.5/10
 
 <!-- RELATED:START -->
 
@@ -198,10 +198,10 @@ DIFFA surpasses Qwen2-Audio-Instruct by nearly 3 points on MMSU, with particular
 ## Related Papers
 
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](../../ACL2026/audio_speech/speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
+- [\[ACL 2025\] Who Can Withstand Chat-Audio Attacks? An Evaluation Benchmark for Large Audio-Language Models](../../ACL2025/audio_speech/who_can_withstand_chat-audio_attacks_an_evaluation_benchmark_for_large_audio-lan.md)
 - [\[AAAI 2026\] AHAMask: Reliable Task Specification for Large Audio Language Models without Instructions](ahamask_reliable_task_specification_for_large_audio_language.md)
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
-- [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
-- [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](../../ACL2026/audio_speech/temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
+- [\[ICML 2026\] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](../../ICML2026/audio_speech/focus_then_listen_an_empirical_study_of_plug-and-play_audio_enhancer_for_noise-r.md)
 
 </div>
 

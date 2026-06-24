@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RoboMD: Uncovering Robot Vulnerabilities through Semantic Potential Fields
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] A standalone deep RL "diagnostic policy" $\pi_{MD}$ is trained to search a continuous vision-language embedding space learned from limited success/failure data. By treating this space as a "potential field" that drifts toward failure regions and away from success regions, the framework predicts where a robot manipulati
+  [ICLR 2026][Robotics][Failure Diagnosis] A standalone deep RL "diagnostic policy" $\pi_{MD}$ is trained to search a continuous vision-language embedding space learned from limited success/failure data. By treating this space as a "potential field" that drifts toward failure regions and away from success regions, the framework predicts where a robot manipulation policy $\pi_R$ will fail under environmental changes without extensive real-world trials—uncovering up to 23% more u…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Failure Diagnosis"
+  - "Policy Robustness"
+  - "Vision-Language Embedding"
+  - "Potential Fields"
+  - "Deep Reinforcement Learning"
 date: 2026-05-08
-content_hash: 16a222d2e26480ed
+content_hash: 5bf8ea9ab46298cf
 ---
+
 # RoboMD: Uncovering Robot Vulnerabilities through Semantic Potential Fields
 
 **Conference**: ICLR 2026  
@@ -145,9 +151,9 @@ VLM accuracy was generally below 60%, indicating that they do not interact itera
 
 - [\[ICML 2026\] Dual Advantage Fields](../../ICML2026/robotics/dual_advantage_fields.md)
 - [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](../../CVPR2026/robotics/dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
 - [\[CVPR 2026\] AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots](../../CVPR2026/robotics/atomicvla_unlocking_the_potential_of_atomic_skill_learning_in_robots.md)
 - [\[ICLR 2026\] Embodied Agents Meet Personalization: Investigating Challenges and Solutions Through the Lens of Memory Utilization](embodied_agents_meet_personalization_investigating_challenges_and_solutions_thro.md)
-- [\[ICLR 2026\] Theory of Space: Can Foundation Models Construct Spatial Beliefs through Active Exploration?](theory_of_space_can_foundation_models_construct_spatial_beliefs_through_active_e.md)
 
 </div>
 

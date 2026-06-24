@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge
 description: >-
-  [ACL 2026][Multilingual & Translation][activation steering] This SemEval system paper utilizes the FLORES parallel corpus to extract language directions and injects language steering vectors into the residual stream of multilingual LLMs during inference. The system achieved an official MCQ accuracy of 86.96% (7th out of 17 teams), though post-hoc analysis indicates that gains a
+  [ACL2026][Multilingual & Machine Translation][activation steering] This SemEval system paper utilizes the FLORES parallel corpus to extract language directions and injects language steering vectors into the residual stream of multilingual LLMs during inference. The system achieved an official MCQ accuracy of 86.96% (7th out of 17 teams), though post-hoc analysis indicates that gains are highly sensitive to layers, prompts, models, and locales.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
-  - activation steering
-  - cultural awareness
-  - FLORES
-  - BLEnD
-  - SemEval
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "activation steering"
+  - "cultural awareness"
+  - "FLORES"
+  - "BLEnD"
+  - "SemEval"
 date: 2026-05-08
-content_hash: 2fdc57b7d085c81b
+content_hash: 0d20910cb4e10974
 ---
+
 # DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge
 
 **Conference**: ACL2026  
@@ -141,7 +142,7 @@ The system has no training loss as it does not update model parameters. The deve
 
 - [\[ACL 2026\] Lingo_Research_Group at SemEval-2026 Task 9: Evaluating Prompt Variants for Polarization Detection](lingo_research_group_at_semeval-2026_task_9_evaluating_prompt_variants_for_polar.md)
 - [\[ACL 2026\] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection](multilingual_steering_by_design_multilingual_sparse_autoencoders_and_principled_.md)
-- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
+- [\[AAAI 2026\] Mitigating Content Effects on Reasoning in Language Models through Fine-Grained Activation Steering](../../AAAI2026/multilingual_mt/mitigating_content_effects_on_reasoning_in_language_models_through_fine-grained_.md)
 - [\[ACL 2025\] Cross-Lingual Transfer of Cultural Knowledge: An Asymmetric Phenomenon](../../ACL2025/multilingual_mt/cross-lingual_transfer_of_cultural_knowledge_an_asymmetric_phenomenon.md)
 - [\[ACL 2026\] Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality](language_on_demand_knowledge_at_core_composing_llms_with_encoder-decoder_transla.md)
 

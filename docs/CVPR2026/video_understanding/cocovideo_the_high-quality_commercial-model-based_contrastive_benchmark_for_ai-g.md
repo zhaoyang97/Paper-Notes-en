@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoCoVideo: The High-Quality Commercial-Model-Based Contrastive Benchmark for AI-Generated Video Detection
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the issue where existing AIGC video detection datasets rely on low-quality open-source models and fail to generalize to high-fidelity commercial models, this research constructs the CoCoVideo-26K benchmark covering 13 commercial models with 26,000 "semantically aligned real-fake paired" segments. It proposes
+  [CVPR 2026][Video Understanding][AIGC Video Detection] Addressing the issue where existing AIGC video detection datasets rely on low-quality open-source models and fail to generalize to high-fidelity commercial models, this research constructs the CoCoVideo-26K benchmark covering 13 commercial models with 26,000 "semantically aligned real-fake paired" segments. It proposes the CoCoDetect framework, which captures texture-level differences using dual-head contrastive training…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "AIGC Video Detection"
+  - "Commercial Generative Models"
+  - "Contrastive Learning"
+  - "Paired Real-Fake Data"
+  - "Confidence-Gated MLLM"
 date: 2026-05-08
-content_hash: afb5fa3e3e27a207
+content_hash: d8c5d36e7662ff18
 ---
+
 # CoCoVideo: The High-Quality Commercial-Model-Based Contrastive Benchmark for AI-Generated Video Detection
 
 **Conference**: CVPR 2026  
@@ -124,10 +130,20 @@ Total loss $\mathcal{L}_{\text{total}}=\alpha\mathcal{L}_{\text{conf}}+(1-\alpha
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](your_one-stop_solution_for_ai-generated_video_detection.md)
+- [\[CVPR 2026\] MDS-VQA: Model-Informed Data Selection for Video Quality Assessment](mds-vqa_model-informed_data_selection_for_video_quality_assessment.md)
+- [\[CVPR 2026\] FPS-Bench: A Benchmark for High Frame-Rate Video Understanding](fps-bench_a_benchmark_for_high_frame-rate_video_understanding.md)
+- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
+- [\[CVPR 2026\] Seeing Beyond 8bits: Subjective and Objective Quality Assessment of HDR-UGC Videos](seeing_beyond_8bits_subjective_and_objective_quality_assessment_of_hdr-ugc_video.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Your One-Stop Solution for AI-Generated Video Detection](your_one-stop_solution_for_ai-generated_video_detection.md)

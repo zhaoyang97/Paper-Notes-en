@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Foundation Inference Models for Ordinary Differential Equations
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] FIM-ODE amortizes the process of "inferring ordinary differential equation vector fields from noisy trajectories" into pre-training. Using an 8M-parameter Transformer neural operator pre-trained solely on low-degree polynomial ODE priors, it performs zero-shot vector field prediction in a single forward pass. It matche
+  [ICML2026][Physics & Scientific Computing][ODE Inference] FIM-ODE amortizes the process of "inferring ordinary differential equation vector fields from noisy trajectories" into pre-training. Using an 8M-parameter Transformer neural operator pre-trained solely on low-degree polynomial ODE priors, it performs zero-shot vector field prediction in a single forward pass. It matches or exceeds the symbolic regression baseline ODEFormer on ODEBench with approximately 1/10 the parame…
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML2026"
+  - "Physics & Scientific Computing"
+  - "ODE Inference"
+  - "Foundation Inference Models"
+  - "Neural Operators"
+  - "Zero-shot"
+  - "Vector Fields"
 date: 2026-05-08
-content_hash: c436c8dfd4288488
+content_hash: 1ced395017b490e4
 ---
+
 # Foundation Inference Models for Ordinary Differential Equations
 
 **Conference**: ICML2026  
@@ -123,15 +129,14 @@ The authors performed qualitative dynamics analysis on three systems by minimizi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
-- [\[ICML 2025\] Finetuning Stellar Spectra Foundation Models with LoRA](../../ICML2025/physics/finetuning_stellar_spectra_foundation_models_with_lora.md)
-- [\[ICML 2025\] Closed-form Symbolic Solutions: A New Perspective on Solving Partial Differential Equations](../../ICML2025/physics/closed-form_solutions_a_new_perspective_on_solving_differential_equations.md)
-- [\[ICML 2026\] Interpretable Equivariant Marks for Contrastive Cosmological Inference](interpretable_neural_marked_statistics_for_cosmological_inference.md)
-- [\[NeurIPS 2025\] The Platonic Universe: Do Foundation Models See the Same Sky?](../../NeurIPS2025/physics/the_platonic_universe_do_foundation_models_see_the_same_sky.md)
+- [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](../../ICLR2026/physics/physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
+- [\[ICLR 2026\] Disentangled Representation Learning for Parametric Partial Differential Equations](../../ICLR2026/physics/disentangled_representation_learning_for_parametric_partial_differential_equatio.md)
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](../../ICLR2026/physics/riesz_neural_operator_for_solving_partial_differential_equations.md)
+- [\[ICML 2026\] Quantum latent distributions in deep generative models](quantum_latent_distributions_in_deep_generative_models.md)
 
 </div>
 

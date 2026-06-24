@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Ours proposes a new paradigm of "Grayscale Always-on, RGB On-demand." Through ColorTrigger, color redundancy is detected online using lightweight quadratic programming on the grayscale stream. By using only 8.1% of RGB frames, it maintains 91.6% of the full-color baseline performance, enabling always-on video perceptio
+  [CVPR 2026][Video Understanding][Streaming Video Understanding] Ours proposes a new paradigm of "Grayscale Always-on, RGB On-demand." Through ColorTrigger, color redundancy is detected online using lightweight quadratic programming on the grayscale stream. By using only 8.1% of RGB frames, it maintains 91.6% of the full-color baseline performance, enabling always-on video perception for resource-constrained devices.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Streaming Video Understanding"
+  - "Edge Devices"
+  - "Grayscale-Guided Triggering"
+  - "Energy-Aware"
+  - "Dynamic Token Routing"
 date: 2026-05-08
-content_hash: ff5604c45873b237
+content_hash: 2c975a523a8a5da7
 ---
+
 # Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing
 
 **Conference**: CVPR 2026  
@@ -151,10 +157,10 @@ ColorTrigger achieves 91.6% of the full-color baseline performance (67.49/73.68)
 ## Related Papers
 
 - [\[CVPR 2026\] StreamReady: Learning What to Answer and When in Long Streaming Videos](streamready_learning_what_to_answer_and_when_in_long_streaming_videos.md)
+- [\[CVPR 2026\] Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)
+- [\[CVPR 2026\] StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)
 - [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
-- [\[CVPR 2026\] Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)
-- [\[ICCV 2025\] Online Dense Point Tracking with Streaming Memory](../../ICCV2025/video_understanding/online_dense_point_tracking_with_streaming_memory.md)
-- [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
+- [\[CVPR 2026\] AdaSpot: Spend Resolution Where It Matters for Precise Event Spotting](adaspot_spend_resolution_where_it_matters_for_precise_event_spotting.md)
 
 </div>
 

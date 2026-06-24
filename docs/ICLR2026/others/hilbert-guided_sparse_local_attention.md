@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Hilbert-Guided Sparse Local Attention
 description: >-
-  [ICLR 2026][Others][FlexAttention] Hilbert space-filling curves are utilized to reorder 2D image tokens into 1D sequences that preserve spatial proximity. This significantly increases the block sparsity ratio of local attention (improving the empty block ratio from 87.5% to 96.9%). Combined with FlexAttention, it achieves a 4x speedup for window attenti
+  [ICLR 2026][Hilbert curve] Hilbert space-filling curves are utilized to reorder 2D image tokens into 1D sequences that preserve spatial proximity. This significantly increases the block sparsity ratio of local attention (improving the empty block ratio from 87.5% to 96.9%). Combined with FlexAttention, it achieves a 4x speedup for window attention and an 18x speedup for sliding attention with minimal accuracy loss.
 tags:
-  - ICLR 2026
-  - Others
-  - FlexAttention
+  - "ICLR 2026"
+  - "Hilbert curve"
+  - "Local attention"
+  - "Block sparsity"
+  - "FlexAttention"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: 3fee164931254d51
+content_hash: 6d0b37175ecdd241
 ---
+
 # Hilbert-Guided Sparse Local Attention
 
 **Conference**: ICLR 2026  
@@ -132,10 +136,10 @@ The paper integrates these operators into two trainable models. HWT is isomorphi
 ## Related Papers
 
 - [\[ICLR 2026\] QUEST: A Robust Attention Formulation Using Query-Modulated Spherical Attention](quest_a_robust_attention_formulation_using_query-modulated_spherical_attention.md)
-- [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](neural_dynamics_self-attention_for_spiking_transformers.md)
 - [\[AAAI 2026\] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](../../AAAI2026/others/gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)
-- [\[ACL 2025\] Unique Hard Attention: A Tale of Two Sides](../../ACL2025/others/unique_hard_attention_a_tale_of_two_sides.md)
+- [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](neural_dynamics_self-attention_for_spiking_transformers.md)
 - [\[AAAI 2026\] Local Guidance for Configuration-Based Multi-Agent Pathfinding](../../AAAI2026/others/local_guidance_for_configuration-based_multi-agent_pathfinding.md)
+- [\[ICML 2025\] Improving Generalization with Flat Hilbert Bayesian Inference](../../ICML2025/others/improving_generalization_with_flat_hilbert_bayesian_inference.md)
 
 </div>
 

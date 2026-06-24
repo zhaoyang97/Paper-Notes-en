@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Vocabulary Shapes Cross-Lingual Variation of Word-Order Learnability in Language Models
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper uses the Mallows model to generate continuous word-order perturbation spectra for 10 European languages. After training small autoregressive LMs, it finds that more irregular word orders are harder to learn, but cross-lingual differences are primarily explained by vocabulary coverage, sentence length, and mo
+  [ACL2026][Multilingual & Machine Translation][Word-order learnability] This paper uses the Mallows model to generate continuous word-order perturbation spectra for 10 European languages. After training small autoregressive LMs, it finds that more irregular word orders are harder to learn, but cross-lingual differences are primarily explained by vocabulary coverage, sentence length, and morphological complexity, rather than simple free vs. fixed word-order labels.
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Word-order learnability"
+  - "multilingual modeling"
+  - "vocabulary structure"
+  - "Mallows permutation"
+  - "linguistic typology"
 date: 2026-05-08
-content_hash: f662097bcdfed681
+content_hash: a4a9925042862589
 ---
+
 # Vocabulary Shapes Cross-Lingual Variation of Word-Order Learnability in Language Models
 
 **Conference**: ACL2026  

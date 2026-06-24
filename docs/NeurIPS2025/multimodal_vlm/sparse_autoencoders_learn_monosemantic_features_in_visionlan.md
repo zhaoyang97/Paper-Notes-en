@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Sparse Autoencoders] This paper extends sparse autoencoders (SAEs) to vision-language models (e.g., CLIP)…
+  [NeurIPS 2025][Multimodal VLM][Sparse Autoencoders] This paper extends sparse autoencoders (SAEs) to vision-language models (e.g., CLIP), proposes the MonoSemanticity score (MS) to quantitatively evaluate the monosemanticity of neurons, and demonstrates that manipulating SAE neurons can directly steer multimodal large language models (e.g., LLaVA) to insert or suppress specific concepts.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Interpretability"
   - "Model Steering"
 date: 2026-05-08
-content_hash: f3ffcfe9aa496278
+content_hash: 09c3a5b2bcab6109
 ---
 
 # Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models
@@ -135,11 +135,11 @@ SAE training uses a reconstruction objective with sparsity regularization: $\mat
 
 ## Related Papers
 
+- [\[ICLR 2026\] Label-Free Mitigation of Spurious Correlations in VLMs using Sparse Autoencoders](../../ICLR2026/multimodal_vlm/label-free_mitigation_of_spurious_correlations_in_vlms_using_sparse_autoencoders.md)
 - [\[NeurIPS 2025\] In-Context Compositional Learning via Sparse Coding Transformer](in-context_compositional_learning_via_sparse_coding_transformer.md)
-- [\[ICCV 2025\] Enhancing Few-Shot Vision-Language Classification with Large Multimodal Model Features](../../ICCV2025/multimodal_vlm/enhancing_few-shot_vision-language_classification_with_large_multimodal_model_fe.md)
-- [\[ICCV 2025\] Large Multi-modal Models Can Interpret Features in Large Multi-modal Models](../../ICCV2025/multimodal_vlm/large_multi-modal_models_can_interpret_features_in_large_multi-modal_models.md)
 - [\[NeurIPS 2025\] DOTA: DistributiOnal Test-time Adaptation of Vision-Language Models](dota_distributional_testtime_adaptation_of_visionlanguage_mo.md)
 - [\[NeurIPS 2025\] VaMP: Variational Multi-Modal Prompt Learning for Vision-Language Models](vamp_variational_multi-modal_prompt_learning_for_vision-language_models.md)
+- [\[NeurIPS 2025\] The Illusion of Progress? A Critical Look at Test-Time Adaptation for Vision-Language Models](the_illusion_of_progress_a_critical_look_at_testtime_adaptat.md)
 
 </div>
 

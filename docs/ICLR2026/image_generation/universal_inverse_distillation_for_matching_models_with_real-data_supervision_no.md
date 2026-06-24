@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] RealUID：用真实数据监督蒸馏所有 Matching 模型（无需 GAN）
+  [Paper Note] RealUID: Supervising the Distillation of All Matching Models with Real Data (Without GAN)
 description: >-
-  [ICLR 2026][Image Generation][flow matching] RealUID unifies one-step distillation methods specifically designed for single frameworks (such as SiD, FGM, and IBMD) into a single min-max loss through a "linearization + inverse optimization" perspective. It designs a loss that injects real data directly into the distillation objective **without relying on GANs or e
+  [ICLR 2026][Image Generation][matching models] RealUID unifies one-step distillation methods specifically designed for single frameworks (such as SiD, FGM, and IBMD) into a single min-max loss through a "linearization + inverse optimization" perspective. It designs a loss that injects real data directly into the distillation objective **without relying on GANs or extra discriminators**. On CIFAR-10, it reduces the FID of flow distillation from 2.58 to 1.98 (unconditional) and…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - flow matching
+  - "ICLR 2026"
+  - "Image Generation"
+  - "matching models"
+  - "one-step distillation"
+  - "real data supervision"
+  - "inverse optimization"
+  - "flow matching"
 date: 2026-05-08
-content_hash: 5828a4645fa7d274
+content_hash: c794cf19e5a4d820
 ---
+
 # RealUID: Supervising the Distillation of All Matching Models with Real Data (Without GAN)
 
 **Conference**: ICLR 2026  
@@ -143,11 +148,11 @@ Grid search of $(\alpha, \beta/\alpha)$ and GAN weight comparison on CIFAR-10 (F
 
 ## Related Papers
 
+- [\[CVPR 2026\] Flow Map Distillation Without Data](../../CVPR2026/image_generation/flow_map_distillation_without_data.md)
+- [\[ICLR 2026\] SenseFlow: Scaling Distribution Matching for Flow-based Text-to-Image Distillation](senseflow_scaling_distribution_matching_for_flow-based_text-to-image_distillatio.md)
+- [\[ICLR 2026\] Joint Distillation for Fast Likelihood Evaluation and Sampling in Flow-based Models](joint_distillation_for_fast_likelihood_evaluation_and_sampling_in_flow-based_mod.md)
+- [\[ICLR 2026\] Do We Need All the Synthetic Data? Targeted Image Augmentation via Diffusion Models](do_we_need_all_the_synthetic_data_targeted_image_augmentation_via_diffusion_mode.md)
 - [\[ICLR 2026\] Delay Flow Matching](delay_flow_matching.md)
-- [\[ICLR 2026\] Flow Matching with Semidiscrete Couplings](flow_matching_with_semidiscrete_couplings.md)
-- [\[ICLR 2026\] Carré du champ Flow Matching: 用几何感知噪声改善生成模型的质量-泛化权衡](carré_du_champ_flow_matching_better_quality-generalisation_tradeoff_in_generativ.md)
-- [\[ICLR 2026\] Edit-Based Flow Matching for Temporal Point Processes](edit-based_flow_matching_for_temporal_point_processes.md)
-- [\[ICLR 2026\] Discrete Guidance Matching: Exact Guidance for Discrete Flow Matching](discrete_guidance_matching_exact_guidance_for_discrete_flow_matching.md)
 
 </div>
 

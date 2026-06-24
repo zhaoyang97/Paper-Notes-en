@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PepBenchmark: A Standardized Benchmark for Peptide Machine Learning
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] PepBenchmark integrates 35 canonical/non-canonical peptide datasets, a unified cleaning-sampling-splitting pipeline, and a leaderboard for four categories of models into a single reproducible experimental framework, revealing the true performance boundaries of PLM, fingerprint, GNN, and SMILES models across different p
+  [ICLR2026][Computational Biology][Peptide machine learning] PepBenchmark integrates 35 canonical/non-canonical peptide datasets, a unified cleaning-sampling-splitting pipeline, and a leaderboard for four categories of models into a single reproducible experimental framework, revealing the true performance boundaries of PLM, fingerprint, GNN, and SMILES models across different peptide tasks.
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR2026"
+  - "Computational Biology"
+  - "Peptide machine learning"
+  - "peptide drug discovery"
+  - "standardized benchmark"
+  - "negative sampling"
+  - "data splitting"
 date: 2026-05-08
-content_hash: af926d967eba0793
+content_hash: 5732e975c0e97107
 ---
+
 # PepBenchmark: A Standardized Benchmark for Peptide Machine Learning
 
 **Conference**: ICLR2026  
@@ -123,15 +129,16 @@ PLM and SMILES models are trained for up to 50 epochs with a learning rate of $5
 - **Value**: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification](../../NeurIPS2025/computational_biology/a_standardized_benchmark_for_multilabel_antimicrobial_peptide_classification.md)
-- [\[ICLR 2026\] CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization](capsul_a_comprehensive_human_protein_benchmark_for_subcellular_localization.md)
 - [\[ICLR 2026\] Representing Local Protein Environments with Machine Learning Force Fields](representing_local_protein_environments_with_machine_learning_force_fields.md)
 - [\[ICLR 2026\] DistMLIP: A Distributed Inference Platform for Machine Learning Interatomic Potentials](distmlip_a_distributed_inference_platform_for_machine_learning_interatomic_poten.md)
-- [\[ICLR 2026\] 3DCS: Datasets and Benchmark for Evaluating Conformational Sensitivity in Molecular Representations](3dcs_datasets_and_benchmark_for_evaluating_conformational_sensitivity_in_molecul.md)
+- [\[ICLR 2026\] CAPSUL: A Comprehensive Human Protein Benchmark for Subcellular Localization](capsul_a_comprehensive_human_protein_benchmark_for_subcellular_localization.md)
+- [\[ICLR 2026\] Learning Molecular Chirality via Chiral Determinant Kernels](learning_molecular_chirality_via_chiral_determinant_kernels.md)
 
 </div>
 

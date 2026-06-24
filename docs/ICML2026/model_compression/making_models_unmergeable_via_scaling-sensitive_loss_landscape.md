@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Making Models Unmergeable via Scaling-Sensitive Loss Landscape
 description: >-
-  [ICML 2026][Model Compression][LoRA] TRAP² embeds "unmergeability" directly into published weight updates during the fine-tuning stage. By performing adversarial optimization on the "update scaling factor $s$", the model maintains high utility at the authorized $s=1$ but degrades rapidly at $s \neq 1$ (off-nominal scaling commonly introduced by merging pi
+  [ICML2026][Model Compression][Unmergeability] TRAP² embeds "unmergeability" directly into published weight updates during the fine-tuning stage. By performing adversarial optimization on the "update scaling factor $s$", the model maintains high utility at the authorized $s=1$ but degrades rapidly at $s \neq 1$ (off-nominal scaling commonly introduced by merging pipelines). This approach avoids reliance on Transformer architectural symmetries or full weight access…
 tags:
-  - ICML 2026
-  - Model Compression
-  - LoRA
+  - "ICML2026"
+  - "Model Compression"
+  - "Unmergeability"
+  - "Model Merging Protection"
+  - "LoRA"
+  - "Loss Landscape"
+  - "Scaling-sensitive"
 date: 2026-05-08
-content_hash: 00b55bb02927c3f8
+content_hash: da764c7ed649f56c
 ---
+
 # Making Models Unmergeable via Scaling-Sensitive Loss Landscape
 
 **Conference**: ICML2026  
@@ -127,10 +132,20 @@ Across various operators and spaces, TRAP² suppresses the merged accuracy to le
 - Value: ⭐⭐⭐⭐⭐ Addresses a critical gap in open-source model governance with a cross-architecture training paradigm.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](../../ICLR2026/model_compression/landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
+- [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)
+- [\[NeurIPS 2025\] Geometry of Decision Making in Language Models](../../NeurIPS2025/model_compression/geometry_of_decision_making_in_language_models.md)
+- [\[ICML 2026\] Dispersion Loss Counteracts Embedding Condensation and Improves Generalization in Small Language Models](dispersion_loss_counteracts_embedding_condensation_and_improves_generalization_i.md)
+- [\[ACL 2026\] WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling](../../ACL2026/model_compression/wisca_a_lightweight_model_transition_method_to_improve_llm_training_via_weight_s.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](model_merging_scaling_laws_in_large_language_models.md)

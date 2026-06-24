@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] GoT-R1: Unleashing Reasoning Capability of Autoregressive Visual Generation with Reinforcement Learning
 description: >-
-  [ICLR 2026][Image Generation][Generation Chain-of-Thought] GoT-R1 transfers the success of "exploring reasoning strategies via Reinforcement Learning" (like GRPO in LLMs) to autoregressive image generation. By utilizing a dual-stage multi-dimensional reward scored by an MLLM to simultaneously supervise the "reasoning chain" and the "final image," the model significantly improv
+  [ICLR 2026][Image Generation][Autoregressive Image Generation] GoT-R1 transfers the success of "exploring reasoning strategies via Reinforcement Learning" (like GRPO in LLMs) to autoregressive image generation. By utilizing a dual-stage multi-dimensional reward scored by an MLLM to simultaneously supervise the "reasoning chain" and the "final image," the model significantly improves generation fidelity for compositional prompts involving multiple objects…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Generation Chain-of-Thought
-  - GRPO
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Autoregressive Image Generation"
+  - "Generation Chain-of-Thought"
+  - "GRPO"
+  - "MLLM Reward Model"
+  - "Compositional Generation"
+  - "Semantic-Spatial Reasoning"
 date: 2026-05-08
-content_hash: 09fc97cefba080df
+content_hash: f1867f27f760d3ca
 ---
+
 # GoT-R1: Unleashing Reasoning Capability of Autoregressive Visual Generation with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -131,8 +136,8 @@ Evaluated on Janus-Pro-1B-GoT with 1,000 GRPO steps:
 - **Value**: ⭐⭐⭐⭐ Provides a clear SOTA on compositional generation; the insights on MLLM-as-reward are highly reusable.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

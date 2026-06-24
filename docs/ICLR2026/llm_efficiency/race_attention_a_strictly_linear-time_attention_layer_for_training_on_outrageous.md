@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper replaces Softmax attention with a "sharpened angular kernel + differentiable LSH sketch (RACE)," turning attention into an operator that is **strictly linear** in both sequence length and embedding dimension. This pushes the manageable context for a single-layer attention from FlashAttention's ~4 million tok
+  [ICLR 2026][LLM Efficiency][Linear Attention] This paper replaces Softmax attention with a "sharpened angular kernel + differentiable LSH sketch (RACE)," turning attention into an operator that is **strictly linear** in both sequence length and embedding dimension. This pushes the manageable context for a single-layer attention from FlashAttention's ~4 million tokens to 12 million on GPU and 75 million on CPU, while maintaining parity or better accuracy on real-world tasks wi…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Locality Sensitive Hashing"
+  - "RACE sketch"
+  - "Long Context"
+  - "Angular Kernel"
 date: 2026-05-08
-content_hash: b189c55cb20c344d
+content_hash: 21c0af5e4f88b33c
 ---
+
 # RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts
 
 **Conference**: ICLR 2026  
@@ -132,15 +138,14 @@ On GH200 at 4M tokens, RACE takes ~0.1s while FlashAttention2 takes ~550s. Notab
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Log-Linear Attention](log-linear_attention.md)
 - [\[ICLR 2026\] Local Linear Attention: An Optimal Interpolation of Linear and Softmax Attention for Test-Time Regression](local_linear_attention_an_optimal_interpolation_of_linear_and_softmax_attention_.md)
 - [\[ICML 2026\] Dynamic Linear Attention](../../ICML2026/llm_efficiency/dynamic_linear_attention.md)
-- [\[ICLR 2026\] FlexLinearAttention: Compiling a Unified Abstraction into Scalable Kernels for Linear Attention](flexlinearattention_compiling_a_unified_abstraction_into_scalable_kernels_for_li.md)
-- [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
+- [\[ICLR 2026\] In-Place Test-Time Training](in-place_test-time_training.md)
+- [\[ICLR 2026\] MHLA: Restoring Expressivity of Linear Attention via Token-Level Multi-Head](mhla_restoring_expressivity_of_linear_attention_via_token-level_multi-head.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Gelato: Graph Edit Distance via Autoregressive Neural Combinatorial Optimization
 description: >-
-  [ICLR 2026][Graph Learning][GNN] GELATO reformulates the approximate solution of Graph Edit Distance (GED) as an autoregressive decision-making process that incrementally constructs node matches. By using a GNN equipped with matching history to iteratively select the next source-target node pair, it achieves higher exact hit rates and faster inference
+  [ICLR 2026][Graph Learning][Graph Edit Distance] GELATO reformulates the approximate solution of Graph Edit Distance (GED) as an autoregressive decision-making process that incrementally constructs node matches. By using a GNN equipped with matching history to iteratively select the next source-target node pair, it achieves higher exact hit rates and faster inference speeds across multiple GED benchmarks.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - GNN
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Graph Edit Distance"
+  - "Graph Matching"
+  - "Neural Combinatorial Optimization"
+  - "Autoregressive Decision"
+  - "GNN"
 date: 2026-05-08
-content_hash: 2cff8e79c0d45437
+content_hash: 6093c897663d311f
 ---
+
 # Gelato: Graph Edit Distance via Autoregressive Neural Combinatorial Optimization
 
 **Conference**: ICLR 2026  
@@ -164,6 +169,7 @@ Weak supervision experiments show GELATO is robust to label quality. On ZINC-16,
 - Value: ⭐⭐⭐⭐⭐ A strong reference for constructive heuristics in combinatorial graph problems.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -171,8 +177,8 @@ Weak supervision experiments show GELATO is robust to label quality. On ZINC-16,
 - [\[ICLR 2026\] $\ell_1$ Latent Distance Based Continuous-Time Graph Representation](ell_1_latent_distance_based_continuous-time_graph_representation.md)
 - [\[AAAI 2026\] Sheaf Graph Neural Networks via PAC-Bayes Spectral Optimization](../../AAAI2026/graph_learning/sheaf_graph_neural_networks_via_pac-bayes_spectral_optimization.md)
 - [\[ICLR 2026\] Learning from Historical Activations in Graph Neural Networks](learning_from_historical_activations_in_graph_neural_networks.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
-- [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
+- [\[ICLR 2026\] Neural Graduated Assignment for Maximum Common Edge Subgraphs](neural_graduated_assignment_for_maximum_common_edge_subgraphs.md)
+- [\[ICLR 2026\] Structure-Aware Graph Hypernetworks for Neural Program Synthesis](structure-aware_graph_hypernetworks_for_neural_program_synthesis.md)
 
 </div>
 

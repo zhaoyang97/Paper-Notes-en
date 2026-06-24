@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proves that a one-layer Transformer with position-only attention, when trained via gradient descent on population risk, can learn a large class of teacher models sharing a bilinear structure at a tight $\Theta(1/T)$ rate and inherits the teacher's out-of-distribution (OOD) generalization under mild second-mo
+  [ICLR 2026][Learning Theory][Gradient Descent] This paper proves that a one-layer Transformer with position-only attention, when trained via gradient descent on population risk, can learn a large class of teacher models sharing a bilinear structure at a tight $\Theta(1/T)$ rate and inherits the teacher's out-of-distribution (OOD) generalization under mild second-moment conditions.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Transformer Theory"
+  - "Provable Optimization"
+  - "Gradient Descent"
+  - "teacher-student learning"
+  - "bilinear structure"
+  - "OOD generalization"
 date: 2026-05-08
-content_hash: f1cf8ca7f810df51
+content_hash: 416225bf47775d12
 ---
+
 # Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models
 
 **Conference**: ICLR 2026  
@@ -176,9 +183,9 @@ initialized at zero. Under conditions $D\geq\Omega(\mathrm{poly}(M,K))$ and $\et
 ## Related Papers
 
 - [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
-- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
 - [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
-- [\[ICLR 2026\] Can Transformers Really Do It All? On the Compatibility of Inductive Biases Across Tasks](can_transformers_really_do_it_all_on_the_compatibility_of_inductive_biases_acros.md)
+- [\[ICLR 2026\] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent](continuum_transformers_perform_in-context_learning_by_operator_gradient_descent.md)
+- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
 - [\[ICLR 2026\] Two-Layer Convolutional Autoencoders Trained on Normal Data Provably Detect Unseen Anomalies](two-layer_convolutional_autoencoders_trained_on_normal_data_provably_detect_unse.md)
 
 </div>

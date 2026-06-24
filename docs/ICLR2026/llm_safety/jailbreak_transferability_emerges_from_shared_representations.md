@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Jailbreak Transferability Emerges from Shared Representations
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper uses large-scale empirical and causal experiments (20 open-source models × 33 jailbreak attacks) to demonstrate that the "cross-model transferability" of jailbreaks is not an accidental flaw of safety training, but a natural consequence of models **sharing representation geometry** under benign inputs—the mo
+  [LLM Safety] This paper uses large-scale empirical and causal experiments (20 open-source models × 33 jailbreak attacks) to demonstrate that the "cross-model transferability" of jailbreaks is not an accidental flaw of safety training, but a natural consequence of models **sharing representation geometry** under benign inputs—the more similar the representations, the more likely vulnerabilities are to "infect" one another.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "LLM Safety"
 date: 2026-05-08
-content_hash: b49b2ac51cb78bbc
+content_hash: b4eed52fa61940b8
 ---
+
 # Jailbreak Transferability Emerges from Shared Representations
 
 Conference: ICLR 2026  

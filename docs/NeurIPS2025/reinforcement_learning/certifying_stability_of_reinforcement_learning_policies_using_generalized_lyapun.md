@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Certifying Stability of Reinforcement Learning Policies using Generalized Lyapunov Functions
 description: >-
-  [NEURIPS2025][Reinforcement Learning][Lyapunov stability] This paper proposes a Generalized Lyapunov Function framework that combines RL value functions with neural network residual terms…
+  [NEURIPS2025][Reinforcement Learning][Lyapunov stability] This paper proposes a Generalized Lyapunov Function framework that combines RL value functions with neural network residual terms, replacing the classical strict per-step descent requirement with a multi-step weighted descent condition to certify the stability of RL policies.
 tags:
   - "NEURIPS2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "value function"
   - "region of attraction"
 date: 2026-05-08
-content_hash: 0ba7ab8b25e1b9cc
+content_hash: 38d7f61902f7d767
 ---
 
 # Certifying Stability of Reinforcement Learning Policies using Generalized Lyapunov Functions

@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs
 description: >-
-  [AAAI 2026][LLM/NLP][memorization taxonomy] CNNs trained on LLM attention weights are used to evaluate the alignment between memorization taxonomies and actual attention mechanisms. A new three-class taxonomy (Guess/Reca…
+  [AAAI 2026][LLM (Other)][memorization taxonomy] CNNs trained on LLM attention weights are used to evaluate the alignment between memorization taxonomies and actual attention mechanisms. A new three-class taxonomy (Guess/Recall/Non-Memorized) is proposed, improving the minimum F1 from 64.7% to 89.0%, while localizing that different memorization types rely on low-layer (Guess) and high-layer (Recall) attention, respectively.
 tags:
   - "AAAI 2026"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "memorization taxonomy"
   - "attention analysis"
   - "CNN classifier"
   - "LLM privacy"
   - "verbatim memorization"
 date: 2026-05-08
-content_hash: 309b164c3bd406df
+content_hash: d05df0b5bee2b0bb
 ---
 
 # Guess or Recall? Training CNNs to Classify and Localize Memorization in LLMs
@@ -131,11 +131,11 @@ Cross-entropy loss. For each taxonomy, 8 CNNs × 3 model scales × 3 epochs = 14
 
 ## Related Papers
 
+- [\[ACL 2025\] UnSeenTimeQA: Time-Sensitive Question-Answering Beyond LLMs' Memorization](../../ACL2025/llm_nlp/unseentimeqa_time-sensitive_question-answering_beyond_llms_memorization.md)
 - [\[ACL 2026\] VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs](../../ACL2026/llm_nlp/voyager_a_training_free_approach_for_generating_diverse_datasets_using_llms.md)
-- [\[NeurIPS 2025\] SubSpec: Speculate Deep and Accurate — Lossless and Training-Free Acceleration for Offloaded LLMs](../../NeurIPS2025/llm_nlp/speculate_deep_and_accurate_lossless_and_training-free_acceleration_for_offloade.md)
+- [\[ACL 2025\] Lost in Literalism: How Supervised Training Shapes Translationese in LLMs](../../ACL2025/llm_nlp/lost_in_literalism_how_supervised_training_shapes_translationese_in_llms.md)
+- [\[ICML 2025\] Regress, Don't Guess — A Regression-like Loss on Number Tokens for Language Models](../../ICML2025/llm_nlp/regress_dont_guess_--_a_regression-like_loss_on_number_tokens_for_language_model.md)
 - [\[AAAI 2026\] LoopLLM: Transferable Energy-Latency Attacks in LLMs via Repetitive Generation](loopllm_transferable_energy-latency_attacks_in_llms_via_repetitive_generation.md)
-- [\[ICLR 2026\] PT2-LLM: Post-Training Ternarization for Large Language Models](../../ICLR2026/llm_nlp/pt2-llm_post-training_ternarization_for_large_language_models.md)
-- [\[AAAI 2026\] Uncertainty Under the Curve: A Sequence-Level Entropy Area Metric for Reasoning LLMs](uncertainty_under_the_curve_a_sequence-level_entropy_area_metric_for_reasoning_l.md)
 
 </div>
 

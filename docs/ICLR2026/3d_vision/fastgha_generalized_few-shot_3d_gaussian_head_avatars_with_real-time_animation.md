@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation
 description: >-
-  [ICLR 2026][3D Vision][3D Gaussian Splatting] Ours proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar framework. It reconstructs animatable 3D Gaussian heads from 4 arbitrary expression/viewpoint images in ~1 second, supports real-time animation at 62 FPS, and achieves a PSNR of 22.5 dB on Ava-256 (surpassing Avat3r's 20.7 dB while being 7.75x faste
+  [ICLR 2026][3D Vision][3D Gaussian Splatting] Ours proposes FastGHA, a feed-forward few-shot 3D Gaussian head avatar framework. It reconstructs animatable 3D Gaussian heads from 4 arbitrary expression/viewpoint images in ~1 second, supports real-time animation at 62 FPS, and achieves a PSNR of 22.5 dB on Ava-256 (surpassing Avat3r's 20.7 dB while being 7.75x faster).
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - head avatar
-  - few-shot
-  - real-time animation
-  - feed-forward
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "head avatar"
+  - "few-shot"
+  - "real-time animation"
+  - "feed-forward"
 date: 2026-05-08
-content_hash: d02bb3d3afa0fc4d
+content_hash: b64e2bed931f9817
 ---
+
 # FastGHA: Generalized Few-Shot 3D Gaussian Head Avatars with Real-Time Animation
 
 **Conference**: ICLR 2026  
@@ -137,11 +138,11 @@ FastGHA outperforms Avat3r across all metrics: PSNR +1.8, LPIPS -0.10, CSIM +0.1
 
 ## Related Papers
 
+- [\[CVPR 2026\] RelightAnyone: A Generalized Relightable 3D Gaussian Head Model](../../CVPR2026/3d_vision/relightanyone_a_generalized_relightable_3d_gaussian_head_model.md)
 - [\[CVPR 2026\] EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](../../CVPR2026/3d_vision/emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)
 - [\[ECCV 2024\] HeadGaS: Real-Time Animatable Head Avatars via 3D Gaussian Splatting](../../ECCV2024/3d_vision/headgas_real-time_animatable_head_avatars_via_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] Mobile-GS: Real-time Gaussian Splatting for Mobile Devices](mobile-gs_real-time_gaussian_splatting_for_mobile_devices.md)
-- [\[ICLR 2026\] SMAGA: Secondary Motion-Aware 3D Clothed Gaussian Avatars from Monocular Videos](smaga_secondary_motion-aware_3d_clothed_gaussian_avatars_from_monocular_videos.md)
-- [\[CVPR 2026\] RelightAnyone: A Generalized Relightable 3D Gaussian Head Model](../../CVPR2026/3d_vision/relightanyone_a_generalized_relightable_3d_gaussian_head_model.md)
+- [\[CVPR 2026\] PhysHead: Simulation-Ready Gaussian Head Avatars](../../CVPR2026/3d_vision/physhead_simulation-ready_gaussian_head_avatars.md)
 
 </div>
 

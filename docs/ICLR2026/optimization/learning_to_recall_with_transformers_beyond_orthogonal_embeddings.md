@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Recall with Transformers Beyond Orthogonal Embeddings
 description: >-
-  [ICLR 2026][Optimization & Theory][Transformer] This work analyzes the "early stage" of empirical gradient descent for a single-layer Transformer on a token retrieval task under random (non-orthogonal) embedding conditions. It derives an explicit formula for the model's storage capacity, revealing a multiplicative dependence between the sample size $N$, embedding di
+  [ICLR 2026][Optimization][Transformer] This work analyzes the "early stage" of empirical gradient descent for a single-layer Transformer on a token retrieval task under random (non-orthogonal) embedding conditions. It derives an explicit formula for the model's storage capacity, revealing a multiplicative dependence between the sample size $N$, embedding dimension $d$, and sequence length $L$, and proves that this scaling relationship is inherent to information-theoretic lowe…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Transformer
+  - "ICLR 2026"
+  - "Optimization"
+  - "Transformer"
+  - "Memory and Retrieval"
+  - "Storage Capacity"
+  - "Non-orthogonal Embeddings"
+  - "Gradient Descent Analysis"
 date: 2026-05-08
-content_hash: 4611df08eb93d07a
+content_hash: b299521c4e69ba88
 ---
+
 # Learning to Recall with Transformers Beyond Orthogonal Embeddings
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ Numerical experiments verify the theoretical scaling relationship:
 - [\[CVPR 2025\] SCOPE: Semantic Coreset with Orthogonal Projection Embeddings for Federated Learning](../../CVPR2025/optimization/scope_semantic_coreset_with_orthogonal_projection_embeddings_for_federated_learn.md)
 - [\[ICLR 2026\] Neural Sum-of-Squares: Certifying the Nonnegativity of Polynomials with Transformers](neural_sum-of-squares_certifying_the_nonnegativity_of_polynomials_with_transform.md)
 - [\[ICLR 2026\] Markovian Transformers for Informative Language Modeling](markovian_transformers_for_informative_language_modeling.md)
-- [\[ICLR 2026\] Cutting the Skip: Training Residual-Free Transformers](cutting_the_skip_training_residual-free_transformers.md)
 - [\[ICLR 2026\] Beyond Aggregation: Guiding Clients in Heterogeneous Federated Learning](beyond_aggregation_guiding_clients_in_heterogeneous_federated_learning.md)
+- [\[AAAI 2026\] Beyond the Mean: Fisher-Orthogonal Projection for Natural Gradient Descent in Large Batch Training](../../AAAI2026/optimization/beyond_the_mean_fisher-orthogonal_projection_for_natural_gradient_descent_in_lar.md)
 
 </div>
 

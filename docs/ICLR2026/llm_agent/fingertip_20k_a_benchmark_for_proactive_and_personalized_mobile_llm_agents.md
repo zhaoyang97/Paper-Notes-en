@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents
 description: >-
-  [ICLR 2026][LLM Agent][mobile agent] FingerTip 20K collects 21,437 interaction records (including user personas, time, location, and historical intents) from 95 users in real-world daily mobile usage. It proposes two new tracks: Proactive Task Suggestion (predicting user intent) and Personalized Task Execution (adapting to action preferences). The stronge
+  [ICLR 2026][LLM Agent][mobile agent] FingerTip 20K collects 21,437 interaction records (including user personas, time, location, and historical intents) from 95 users in real-world daily mobile usage. It proposes two new tracks: Proactive Task Suggestion (predicting user intent) and Personalized Task Execution (adapting to action preferences). The strongest model, Qwen-QVQ-Max, achieves a proactive suggestion success rate of only 12.8% (vs. 30.3% for humans)…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - mobile agent
-  - proactive suggestion
-  - personalized execution
-  - GUI agent
-  - benchmark
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "mobile agent"
+  - "proactive suggestion"
+  - "personalized execution"
+  - "GUI agent"
+  - "benchmark"
 date: 2026-05-08
-content_hash: cd96d809d623abaa
+content_hash: 977ada8fc4c0f57f
 ---
+
 # FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents
 
 **Conference**: ICLR 2026  
@@ -143,10 +144,10 @@ Benchmark evaluations were conducted in a zero-shot setting. Fine-tuning experim
 ## Related Papers
 
 - [\[CVPR 2026\] ProactiveMobile: A Comprehensive Benchmark for Boosting Proactive Intelligence on Mobile Devices](../../CVPR2026/llm_agent/proactivemobile_a_comprehensive_benchmark_for_boosting_proactive_intelligence_on.md)
+- [\[ICLR 2026\] ProRe: A Proactive Reward System for GUI Agents via Reasoner–Actor Collaboration](prore_a_proactive_reward_system_for_gui_agents_via_reasoneractor_collaboration.md)
 - [\[ICLR 2026\] SMAN-Bench: A Cross-System Benchmark for Mobile Agents under Single- and Multi-path, Ambiguous, and Noisy Tasks](sman-bench_a_cross-system_benchmark_for_mobile_agents_under_single-_and_multi-pa.md)
-- [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
 - [\[CVPR 2026\] GUI-CEval: A Hierarchical and Comprehensive Chinese Benchmark for Mobile GUI Agents](../../CVPR2026/llm_agent/gui-ceval_a_hierarchical_and_comprehensive_chinese_benchmark_for_mobile_gui_agen.md)
-- [\[ICLR 2026\] A Benchmark for Deep Information Synthesis (DeepSynth)](a_benchmark_for_deep_information_synthesis.md)
+- [\[ICLR 2026\] ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents](st-webagentbench_a_benchmark_for_evaluating_safety_and_trustworthiness_in_web_ag.md)
 
 </div>
 

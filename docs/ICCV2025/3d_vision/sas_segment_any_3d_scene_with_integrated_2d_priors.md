@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAS: Segment Any 3D Scene with Integrated 2D Priors
 description: >-
-  [ICCV 2025][3D Vision][Open-vocabulary 3D segmentation] This paper proposes SAS, a framework that for the first time integrates the complementary capabilities of multiple 2D open-vocabulary models to learn better 3D repr…
+  [ICCV 2025][3D Vision][Open-vocabulary 3D segmentation] This paper proposes SAS, a framework that for the first time integrates the complementary capabilities of multiple 2D open-vocabulary models to learn better 3D representations. It aligns feature spaces across models via Model Alignment via Text, and quantifies per-category model recognition capability using diffusion-synthesized images through Annotation-Free Model Capability Construction. These components jointly guide…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "diffusion models"
   - "model capability construction"
 date: 2026-05-08
-content_hash: 4bc6ec82ea560a39
+content_hash: d729776d0d670c43
 ---
 
 # SAS: Segment Any 3D Scene with Integrated 2D Priors

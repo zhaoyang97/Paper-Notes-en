@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Interpretable Semantic Gradients in SSD: A PCA Sweep Approach and a Case Study on AI Discourse
 description: >-
-  [ACL 2026][Interpretability][Supervised Semantic Differential] This paper proposes a PCA sweep procedure for Supervised Semantic Differential (SSD)—a method that estimates semantic gradients of text embeddings using individual difference variables. The procedure jointly utilizes interpretability and stability diagnostics (rather than predictive accuracy) to select the PCA dimensio
+  [ACL 2026][Interpretability][Supervised Semantic Differential] This paper proposes a PCA sweep procedure for Supervised Semantic Differential (SSD)—a method that estimates semantic gradients of text embeddings using individual difference variables. The procedure jointly utilizes interpretability and stability diagnostics (rather than predictive accuracy) to select the PCA dimension $K$. In a case study involving 349 AI-themed essays and narcissism questionnaires…
 tags:
-  - ACL 2026
-  - Interpretability
-  - Supervised Semantic Differential
-  - PCA Sweep
+  - "ACL 2026"
+  - "Interpretability"
+  - "Supervised Semantic Differential"
+  - "PCA Sweep"
+  - "Semantic Gradients"
+  - "Narcissism"
+  - "Researcher Degrees of Freedom"
 date: 2026-05-08
-content_hash: 03a335b6a030bf07
+content_hash: 28703465c2f188b8
 ---
+
 # Interpretable Semantic Gradients in SSD: A PCA Sweep Approach and a Case Study on AI Discourse
 
 **Conference**: ACL 2026  

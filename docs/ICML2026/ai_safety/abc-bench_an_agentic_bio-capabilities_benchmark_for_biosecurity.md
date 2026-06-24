@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity
 description: >-
-  [ICML 2026][AI Safety][Paper Note] ABC-Bench transforms the question "Can AI agents actually perform molecular biology?" into three automatically scorable tasks (designing DNA fragments, evading synthesis screening, and controlling liquid-handling robots for Gibson Assembly). Experiments show that eight frontier models exceed the median scores of PhD-le
+  [ICML 2026][AI Safety][Biosecurity] ABC-Bench transforms the question "Can AI agents actually perform molecular biology?" into three automatically scorable tasks (designing DNA fragments, evading synthesis screening, and controlling liquid-handling robots for Gibson Assembly). Experiments show that eight frontier models exceed the median scores of PhD-level experts across all three tasks. Real-world wet-lab validation demonstrates that scripts written by o4-mini-high successf…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Biosecurity"
+  - "Dual-use risk"
+  - "Agent benchmark"
+  - "DNA synthesis screening"
+  - "Wet-lab validation"
 date: 2026-05-08
-content_hash: 8f8d26d419cfbe21
+content_hash: 458113980b5a6bb8
 ---
+
 # ABC-Bench: An Agentic Bio-Capabilities Benchmark for Biosecurity
 
 **Conference**: ICML 2026  
@@ -124,15 +130,16 @@ Eight frontier models were evaluated ($N=10$) against a baseline of PhD-level ex
 - Value: ⭐⭐⭐⭐⭐ Highly impactful; already adopted by major AI labs for pre-release red-teaming.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
-- [\[ICML 2026\] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs](mlubench_a_benchmark_for_lifelong_unlearning_evaluation_in_mllms.md)
 - [\[ICML 2026\] MedMosaic: A Challenging Large Scale Benchmark of Diverse Medical Audio](medmosaic_a_challenging_large_scale_benchmark_of_diverse_medical_audio.md)
 - [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
-- [\[CVPR 2026\] Fractal Camouflage: A Bio-Inspired Approach for Multi-Scale Adversarial Attacks in the Infrared Domain](../../CVPR2026/ai_safety/fractal_camouflage_a_bio-inspired_approach_for_multi-scale_adversarial_attacks_i.md)
+- [\[ICLR 2026\] Eliciting Harmful Capabilities by Fine-Tuning on Safeguarded Outputs](../../ICLR2026/ai_safety/eliciting_harmful_capabilities_by_fine-tuning_on_safeguarded_outputs.md)
+- [\[ICML 2026\] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs](mlubench_a_benchmark_for_lifelong_unlearning_evaluation_in_mllms.md)
 
 </div>
 

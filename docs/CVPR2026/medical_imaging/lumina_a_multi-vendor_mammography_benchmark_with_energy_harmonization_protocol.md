@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol
 description: >-
-  [CVPR 2026][Medical Imaging][benchmark] The authors propose the LUMINA multi-vendor Full-Field Digital Mammography (FFDM) dataset (468 patients, 1,824 images) along with an energy harmonization preprocessing method based on foreground pixel histogram matching. They systematically evaluate CNN and Transformer models across three tasks: diagnosis, BI-RADS clas
+  [CVPR 2026][Medical Imaging][Mammography] The authors propose the LUMINA multi-vendor Full-Field Digital Mammography (FFDM) dataset (468 patients, 1,824 images) along with an energy harmonization preprocessing method based on foreground pixel histogram matching. They systematically evaluate CNN and Transformer models across three tasks: diagnosis, BI-RADS classification, and density estimation.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - benchmark
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Mammography"
+  - "Multi-vendor datasets"
+  - "Energy harmonization"
+  - "Histogram matching"
+  - "benchmark"
 date: 2026-05-08
-content_hash: 711d1690ec02af64
+content_hash: 8e3a26b9a63d4a0d
 ---
+
 # LUMINA: A Multi-Vendor Mammography Benchmark with Energy Harmonization Protocol
 
 **Conference**: CVPR 2026  
@@ -144,9 +149,9 @@ The CC (Craniocaudal) and MLO (Mediolateral Oblique) views provide complementary
 
 - [\[CVPR 2026\] OmniBrainBench: A Comprehensive Multimodal Benchmark for Brain Imaging Analysis Across Multi-stage Clinical Tasks](omnibrainbench_a_comprehensive_multimodal_benchmark_for_brain_imaging_analysis_a.md)
 - [\[CVPR 2026\] Gastric-X: A Multimodal Multi-Phase Benchmark Dataset for Advancing Vision-Language Models in Gastric Cancer Analysis](gastric-x_a_multimodal_multi-phase_benchmark_dataset_for_advancing_vision-langua.md)
-- [\[CVPR 2026\] MedGEN-Bench: Contextually Entangled Benchmark for Open-Ended Multimodal Medical Generation](medgen-bench_contextually_entangled_benchmark_for_open-ended_multimodal_medical_.md)
 - [\[ECCV 2024\] Energy-induced Explicit Quantification for Multi-modality MRI Fusion](../../ECCV2024/medical_imaging/energy-induced_explicit_quantification_for_multi-modality_mri_fusion.md)
 - [\[NeurIPS 2025\] Pancakes: Consistent Multi-Protocol Image Segmentation Across Biomedical Domains](../../NeurIPS2025/medical_imaging/pancakes_consistent_multi-protocol_image_segmentation_across_biomedical_domains.md)
+- [\[CVPR 2026\] SurgCoT: Advancing Spatiotemporal Reasoning in Surgical Videos through a Chain-of-Thought Benchmark](surgcot_advancing_spatiotemporal_reasoning_in_surgical_videos_through_a_chain-of.md)
 
 </div>
 

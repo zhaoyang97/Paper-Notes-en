@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WithAnyone: Toward Controllable and ID Consistent Image Generation
 description: >-
-  [ICLR 2026][Image Generation][FLUX] To address the "copy-paste" artifact where models directly overlay reference faces onto outputs in identity-customized generation, this paper constructs MultiID-2M, a paired multi-person dataset of 500,000 images, and proposes MultiID-Bench, a benchmark capable of quantifying copy-paste. By utilizing paired training an
+  [ICLR 2026][Image Generation][Identity Customization] To address the "copy-paste" artifact where models directly overlay reference faces onto outputs in identity-customized generation, this paper constructs MultiID-2M, a paired multi-person dataset of 500,000 images, and proposes MultiID-Bench, a benchmark capable of quantifying copy-paste. By utilizing paired training and an ID contrastive loss with extended negative samples, the authors develop WithAnyone (based on FLUX). I…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - FLUX
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Identity Customization"
+  - "Copy-paste Artifacts"
+  - "Paired Dataset"
+  - "Contrastive Learning"
+  - "FLUX"
 date: 2026-05-08
-content_hash: e94fab9b22a81171
+content_hash: ee10f2f1ef45e68c
 ---
+
 # WithAnyone: Toward Controllable and ID Consistent Image Generation
 
 **Conference**: ICLR 2026  
@@ -145,7 +150,7 @@ Observation: InstantID and UMO achieve slightly higher SimGT by inflating SimRef
 - [\[CVPR 2025\] Consistent and Controllable Image Animation with Motion Diffusion Models](../../CVPR2025/image_generation/consistent_and_controllable_image_animation_with_motion_diffusion_models.md)
 - [\[ICLR 2026\] OmniText: A Training-Free Generalist for Controllable Text-Image Manipulation](omnitext_a_training-free_generalist_for_controllable_text-image_manipulation.md)
 - [\[ICLR 2026\] Any-step Generation via N-th Order Recursive Consistent Velocity Field Estimation](any-step_generation_via_n-th_order_recursive_consistent_velocity_field_estimatio.md)
-- [\[CVPR 2026\] Match-and-Fuse: Consistent Generation from Unstructured Image Sets](../../CVPR2026/image_generation/match-and-fuse_consistent_generation_from_unstructured_image_sets.md)
+- [\[ICLR 2026\] Many-for-Many: Unify the Training of Multiple Video and Image Generation and Manipulation Tasks](many-for-many_unify_the_training_of_multiple_video_and_image_generation_and_mani.md)
 
 </div>
 

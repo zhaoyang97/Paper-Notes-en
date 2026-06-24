@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Sequential Multi-Agent Dynamic Algorithm Configuration
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][Dynamic Algorithm Configuration] This paper proposes Seq-MADAC, a framework that models multi-hyperparameter dynamic configuration as a contextual sequential multi-agent MDP. By exp…
+  [NeurIPS 2025][Reinforcement Learning][Dynamic Algorithm Configuration] This paper proposes Seq-MADAC, a framework that models multi-hyperparameter dynamic configuration as a contextual sequential multi-agent MDP. By exploiting inherent inter-parameter dependencies via a Sequential Advantage Decomposition Network (SADN), it outperforms existing MARL methods on multi-objective optimization algorithm configuration.
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "Advantage Decomposition"
   - "Hyperparameter Optimization"
 date: 2026-05-08
-content_hash: e8034efbb876d71d
+content_hash: 86473fb8a4cbc681
 ---
 
 # Sequential Multi-Agent Dynamic Algorithm Configuration
@@ -98,11 +98,11 @@ Seq-MADAC models parameter configuration as a sequential decision-making process
 
 ## Related Papers
 
+- [\[ICML 2025\] Graph-Supported Dynamic Algorithm Configuration for Multi-Objective Combinatorial Optimization](../../ICML2025/reinforcement_learning/graph-supported_dynamic_algorithm_configuration_for_multi-objective_combinatoria.md)
 - [\[NeurIPS 2025\] Extending NGU to Multi-Agent RL: A Preliminary Study](extending_ngu_to_multi-agent_rl_a_preliminary_study.md)
 - [\[NeurIPS 2025\] Robust and Diverse Multi-Agent Learning via Rational Policy Gradient](robust_and_diverse_multi-agent_learning_via_rational_policy_gradient.md)
 - [\[NeurIPS 2025\] Improving Retrieval-Augmented Generation through Multi-Agent Reinforcement Learning](improving_retrieval-augmented_generation_through_multi-agent_reinforcement_learn.md)
 - [\[NeurIPS 2025\] A Theory of Multi-Agent Generative Flow Networks](a_theory_of_multi-agent_generative_flow_networks.md)
-- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](../../ICML2026/reinforcement_learning/multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
 
 </div>
 

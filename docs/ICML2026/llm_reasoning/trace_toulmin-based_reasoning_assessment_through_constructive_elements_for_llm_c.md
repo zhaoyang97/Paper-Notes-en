@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TRACE: 用 Toulmin 论证模型评 LLM CoT 推理过程质量
+  [Paper Note] TRACE: Evaluating LLM CoT Reasoning Process Quality with the Toulmin Argumentation Model
 description: >-
-  [ICML 2026][LLM Reasoning][RL reward] TRACE is a reference-free CoT quality evaluation metric that synthesizes the Toulmin Argumentation Model (Claim/Data/Warrant/Backing/Qualifier/Rebuttal) and Flavell Metacognition (Monitoring/Evaluation) into 8 core elements. It utilizes DeBERTa for multi-label recognition of these elements in each reasoning sentence, c
+  [ICML 2026][Reasoning][CoT Evaluation] TRACE is a reference-free CoT quality evaluation metric that synthesizes the Toulmin Argumentation Model (Claim/Data/Warrant/Backing/Qualifier/Rebuttal) and Flavell Metacognition (Monitoring/Evaluation) into 8 core elements. It utilizes DeBERTa for multi-label recognition of these elements in each reasoning sentence, calculating a weighted sum of "State Validity + Transition Coherence." Across 26.3K QA pairs from 7 models…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - RL reward
+  - "ICML 2026"
+  - "Reasoning"
+  - "CoT Evaluation"
+  - "Toulmin Argumentation"
+  - "Metacognition"
+  - "Reference-free Metrics"
+  - "RL reward"
 date: 2026-05-08
-content_hash: 4f6cc71ca8467610
+content_hash: 94a090eaa24e2b32
 ---
+
 # TRACE: Evaluating LLM CoT Reasoning Process Quality with the Toulmin Argumentation Model
 
 **Conference**: ICML 2026  
@@ -157,15 +162,16 @@ Using TRACE as a reward signal (combined with accuracy) improves GSM8K performan
 - Value: ⭐⭐⭐⭐⭐ Highly practical for both diagnostic evaluation and training signal generation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning](latentchem_from_textual_cot_to_latent_thinking_in_chemical_reasoning.md)
-- [\[ICML 2026\] Many-Shot CoT-ICL: Making In-Context Learning Truly Learn](many-shot_cot-icl_making_in-context_learning_truly_learn.md)
-- [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](../../ACL2026/llm_reasoning/self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
-- [\[ACL 2025\] CoT-based Synthesizer: Enhancing LLM Performance through Answer Synthesis](../../ACL2025/llm_reasoning/cot-based_synthesizer_enhancing_llm_performance_through_answer_synthesis.md)
-- [\[ICML 2026\] R2-Router: A New Paradigm for LLM Routing with Reasoning](r2-router_a_new_paradigm_for_llm_routing_with_reasoning.md)
+- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](grpo_is_secretly_a_process_reward_model.md)
+- [\[ICML 2026\] The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning](the_quality-utility_paradox_why_high-reward_data_impairs_small_model_mathematica.md)
+- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
+- [\[ICLR 2026\] The CoT Encyclopedia: Analyzing, Predicting, and Controlling the Thinking Process of Reasoning Models](../../ICLR2026/llm_reasoning/the_cot_encyclopedia_analyzing_predicting_and_controlling_how_a_reasoning_model_.md)
+- [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](../../ICLR2026/llm_reasoning/or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 
 </div>
 

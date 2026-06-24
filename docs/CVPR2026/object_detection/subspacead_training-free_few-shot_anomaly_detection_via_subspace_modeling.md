@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling
 description: >-
-  [CVPR 2026][Object Detection][PCA] SubspaceAD demonstrates that fitting a single PCA on features from a strong vision foundation model (DINOv2-G) is sufficient to outperform all few-shot anomaly detection methods requiring training, memory banks, or prompt tuning. In a 1-shot setting, it achieves 98.0% Image-level AUROC and 97.6% Pixel-level AUROC on MV
+  [CVPR 2026][Object Detection][Few-shot Anomaly Detection] SubspaceAD demonstrates that fitting a single PCA on features from a strong vision foundation model (DINOv2-G) is sufficient to outperform all few-shot anomaly detection methods requiring training, memory banks, or prompt tuning. In a 1-shot setting, it achieves 98.0% Image-level AUROC and 97.6% Pixel-level AUROC on MVTec-AD.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - PCA
-  - DINOv2
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Few-shot Anomaly Detection"
+  - "PCA"
+  - "DINOv2"
+  - "Training-free"
+  - "Subspace Modeling"
 date: 2026-05-08
-content_hash: db396d5806e7321b
+content_hash: b16103d437e3afdc
 ---
+
 # SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling
 
 **Conference**: CVPR 2026  
@@ -156,10 +160,10 @@ In the 4-shot setting, SubspaceAD maintains a comprehensive lead (MVTec 98.4% / 
 ## Related Papers
 
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
-- [\[CVPR 2026\] Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection](defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio.md)
+- [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
+- [\[CVPR 2025\] UniVAD: A Training-free Unified Model for Few-shot Visual Anomaly Detection](../../CVPR2025/object_detection/univad_a_training-free_unified_model_for_few-shot_visual_anomaly_detection.md)
+- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
 - [\[CVPR 2026\] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)
-- [\[CVPR 2026\] VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer](visualad_language-free_zero-shot_anomaly_detection_via_vision_transformer.md)
-- [\[CVPR 2026\] Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)
 
 </div>
 

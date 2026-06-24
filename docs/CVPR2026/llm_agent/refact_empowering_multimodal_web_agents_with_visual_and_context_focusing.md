@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing
 description: >-
-  [CVPR 2026][LLM Agent][Grounding] ReFAct enables multimodal web search agents to **actively manage cross-modal contexts**: it employs Grounding tools to crop highly relevant image regions to counter "visual noise," uses Defocus/Refocus external memory operations to compress and retrieve long text on demand to counter "retrieval noise," and is fine-tune
+  [CVPR 2026][LLM Agent][Multimodal Web Agents] ReFAct enables multimodal web search agents to **actively manage cross-modal contexts**: it employs Grounding tools to crop highly relevant image regions to counter "visual noise," uses Defocus/Refocus external memory operations to compress and retrieve long text on demand to counter "retrieval noise," and is fine-tuned via GRPO reinforcement learning on a custom GroundedVQA dataset designed for high-noise scenarios. ReFAct-7B sig…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Grounding
-  - GRPO
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multimodal Web Agents"
+  - "Visual Focusing"
+  - "Grounding"
+  - "External Memory"
+  - "GRPO"
 date: 2026-05-08
-content_hash: 0587d2621b8984fd
+content_hash: ce0034cee5270f6c
 ---
+
 # ReFAct: Empowering Multimodal Web Agents with Visual and Context Focusing
 
 **Conference**: CVPR 2026  
@@ -132,15 +136,14 @@ Success rate (%) on GroundedVQA when removing components ($\Delta$ indicates dro
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
 - [\[CVPR 2026\] Learning to Select Visual Tools from Experience](learning_to_select_visual_tools_from_experience.md)
-- [\[CVPR 2026\] Experience Transfer for Multimodal LLM Agents in Minecraft Game](experience_transfer_for_multimodal_llm_agents_in_minecraft_game.md)
-- [\[ICCV 2025\] Less is More: Empowering GUI Agent with Context-Aware Simplification](../../ICCV2025/llm_agent/less_is_more_empowering_gui_agent_with_context-aware_simplification.md)
-- [\[CVPR 2026\] ORCA: Orchestrated Reasoning with Collaborative Agents for Document Visual Question Answering](orca_orchestrated_reasoning_with_collaborative_agents_for_document_visual_questi.md)
+- [\[ICLR 2026\] Sculptor: Empowering LLMs with Cognitive Agency via Active Context Management](../../ICLR2026/llm_agent/sculptor_empowering_llms_with_cognitive_agency_via_active_context_management.md)
+- [\[ICLR 2026\] Web-CogReasoner: Towards Multimodal Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_multimodal_knowledge-induced_cognitive_reasoning_for_web.md)
+- [\[ICLR 2026\] AgentFold: Long-Horizon Web Agents with Proactive Context Folding](../../ICLR2026/llm_agent/agentfold_long-horizon_web_agents_with_proactive_context_folding.md)
 
 </div>
 

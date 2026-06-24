@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Image geo-localization] This paper proposes GLOBE — an LVLM-based image geo-localization system trained via GRPO reinforcement learning. By constructing MP16-Reason…
+  [NeurIPS 2025][VLM Reasoning][Image geo-localization] This paper proposes GLOBE — an LVLM-based image geo-localization system trained via GRPO reinforcement learning. By constructing MP16-Reason, a reasoning-oriented dataset with localizability assessment, visual-clue reasoning chains, and geographic accuracy annotations, GLOBE surpasses SOTA methods trained on millions of samples as well as large-scale open-source VLMs using only 33K training examples across multiple benchma…
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Image geo-localization"
   - "visual reasoning"
   - "GRPO reinforcement learning"
   - "data distillation"
   - "interpretable reasoning"
 date: 2026-05-08
-content_hash: 6bcfcbe3f5bb7684
+content_hash: cb62fdb2bcf02942
 ---
 
 # Recognition through Reasoning: Reinforcing Image Geo-localization with Large Vision-Language Models
@@ -129,11 +129,11 @@ Training is conducted on 8×H20 GPUs with a batch size of 16 at approximately 0.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[NeurIPS 2025\] CHOICE: Benchmarking the Remote Sensing Capabilities of Large Vision-Language Models](choice_benchmarking_the_remote_sensing_capabilities_of_large_vision-language_mod.md)
-- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
 - [\[NeurIPS 2025\] MM-OPERA: Benchmarking Open-ended Association Reasoning for Large Vision-Language Models](mm-opera_benchmarking_open-ended_association_reasoning_for_large_vision-language.md)
-- [\[NeurIPS 2025\] VAGEN: Reinforcing World Model Reasoning for Multi-Turn VLM Agents](vagen_reinforcing_world_model_reasoning_for_multi-turn_vlm_agents.md)
+- [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
+- [\[ACL 2025\] VReST: Enhancing Reasoning in Large Vision-Language Models through Tree Search and Self-Reward Mechanism](../../ACL2025/vlm_reasoning/vrest_tree_search_vlm_reasoning.md)
+- [\[NeurIPS 2025\] Sherlock: Self-Correcting Reasoning in Vision-Language Models](sherlock_selfcorrecting_reasoning_in_visionlanguage_models.md)
+- [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SCoT: Teaching 3D-LLMs to Think Spatially with Million-scale CoT Annotations
 description: >-
-  [ICLR 2026][vlm_reasoning][3D-LLM] SCoT constructs a 1.1 million-scale 3D scene Chain-of-Thought dataset, categorizing tasks into three levels: perception, analysis, and planning. By constraining the reasoning chain with scene evidence markers (`<SI>`), it makes 3D-LLMs more interpretable and faithful in complex spatial analysis and planning, while also
+  [ICLR 2026][VLM Reasoning][3D-LLM] SCoT constructs a 1.1 million-scale 3D scene Chain-of-Thought dataset, categorizing tasks into three levels: perception, analysis, and planning. By constraining the reasoning chain with scene evidence markers (`<SI>`), it makes 3D-LLMs more interpretable and faithful in complex spatial analysis and planning, while also cautioning that CoT should not be overused for simple perception tasks.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - 3D-LLM
-  - Chain-of-Thought
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "3D-LLM"
+  - "Spatial Reasoning"
+  - "Chain-of-Thought"
+  - "Scene Understanding"
+  - "Embodied Planning"
 date: 2026-05-08
-content_hash: 10379e39a2f5c8b4
+content_hash: 14a72126e8fe9427
 ---
+
 # SCoT: Teaching 3D-LLMs to Think Spatially with Million-scale CoT Annotations
 
 **Conference**: ICLR 2026  
@@ -164,8 +168,8 @@ Another compelling result comes from implicit detection, where queries use funct
 - [\[CVPR 2026\] Hear you are: Teaching LLMs Spatial Reasoning with Vision and Spatial Sound](../../CVPR2026/vlm_reasoning/hear_you_are_teaching_llms_spatial_reasoning_with_vision_and_spatial_sound.md)
 - [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](../../CVPR2026/vlm_reasoning/think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
 - [\[CVPR 2026\] See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles](../../CVPR2026/vlm_reasoning/see_think_act_teaching_multimodal_agents_to_effectively_interact_with_gui_by_ide.md)
+- [\[NeurIPS 2025\] SpatialThinker: Reinforcing 3D Reasoning in Multimodal LLMs via Spatial Rewards](../../NeurIPS2025/vlm_reasoning/spatialthinker_reinforcing_3d_reasoning_in_multimodal_llms_via_spatial_rewards.md)
 - [\[ICLR 2026\] Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning](zebra-cot_a_dataset_for_interleaved_vision-language_reasoning.md)
-- [\[ICLR 2026\] Thyme: Think Beyond Images](thyme_think_beyond_images.md)
 
 </div>
 

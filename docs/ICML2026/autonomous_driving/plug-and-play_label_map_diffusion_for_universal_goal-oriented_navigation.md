@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation
 description: >-
-  [ICML 2026][Autonomous Driving][Label Map] This paper proposes PLMD: a framework that merges BEV semantic and obstacle maps into a unified Label Map. It utilizes DDPM, modulated by obstacle priors, to complete semantic and obstacle labels in unexplored regions. As a plug-and-play module, it can be integrated with any GON policy and consistently achieves new SOT
+  [ICML 2026][Autonomous Driving][Goal-Oriented Navigation] This paper proposes PLMD: a framework that merges BEV semantic and obstacle maps into a unified Label Map. It utilizes DDPM, modulated by obstacle priors, to complete semantic and obstacle labels in unexplored regions. As a plug-and-play module, it can be integrated with any GON policy and consistently achieves new SOTA results on HM3D/MP3D across three tasks: ON, IIN, and MRON.
 tags:
-  - ICML 2026
-  - Autonomous Driving
-  - Label Map
-  - DDPM
-  - HM3D
-  - MP3D
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "Goal-Oriented Navigation"
+  - "Label Map"
+  - "DDPM"
+  - "SPADE Modulation"
+  - "HM3D"
+  - "MP3D"
 date: 2026-05-08
-content_hash: 753680d66523472e
+content_hash: 9fc41239a8f757d6
 ---
+
 # Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation
 
 **Conference**: ICML 2026  
@@ -149,8 +152,8 @@ Removing the obstacle prior $\mathcal{G}_\phi$ results in a 3.85 drop in PSNR an
 - [\[AAAI 2026\] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning](../../AAAI2026/autonomous_driving/fastdrivevla_efficient_end-to-end_driving_via_plug-and-play_.md)
 - [\[ICCV 2025\] IGL-Nav: Incremental 3D Gaussian Localization for Image-goal Navigation](../../ICCV2025/autonomous_driving/igl-nav_incremental_3d_gaussian_localization_for_image-goal_navigation.md)
 - [\[ICML 2026\] Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering](mitigating_error_accumulation_in_continuous_navigation_via_memory-augmented_kalm.md)
-- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
 - [\[ICLR 2026\] SPACeR: Self-Play Anchoring with Centralized Reference Models](../../ICLR2026/autonomous_driving/spacer_self-play_anchoring_with_centralized_reference_models.md)
+- [\[NeurIPS 2025\] SDTagNet: Leveraging Text-Annotated Navigation Maps for Online HD Map Construction](../../NeurIPS2025/autonomous_driving/sdtagnet_leveraging_text-annotated_navigation_maps_for_online_hd_map_constructio.md)
 
 </div>
 

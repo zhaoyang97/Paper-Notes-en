@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models
 description: >-
-  [ICCV 2025][Multimodal VLM][Universal Adversarial Perturbation] This paper proposes C-PGC, a framework that trains a conditional perturbation generator via malicious contrastive learning to produce a pair of universal im…
+  [ICCV 2025][Multimodal VLM][Universal Adversarial Perturbation] This paper proposes C-PGC, a framework that trains a conditional perturbation generator via malicious contrastive learning to produce a pair of universal image-text adversarial perturbations (UAPs), fundamentally disrupting the multimodal alignment of VLP models and achieving strong attack performance across multiple VLP models and downstream tasks in both white-box and black-box settings.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Cross-modal Attack"
   - "Adversarial Transferability"
 date: 2026-05-08
-content_hash: bab72e4de71f5608
+content_hash: eb3b8b21ce345c91
 ---
 
 # One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models
@@ -141,11 +141,11 @@ In the white-box setting, C-PGC achieves an average ASR of nearly 90%; in the bl
 
 ## Related Papers
 
-- [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
 - [\[ICCV 2025\] Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks](safeguarding_vision-language_models_mitigating_vulnerabilities_to_gaussian_noise.md)
-- [\[ICCV 2025\] MMOne: Representing Multiple Modalities in One Scene](mmone_representing_multiple_modalities_in_one_scene.md)
-- [\[ICCV 2025\] Exploiting Vision Language Model for Training-Free 3D Point Cloud OOD Detection](exploiting_vision_language_model_for_training-free_3d_point_cloud_ood_detection_.md)
-- [\[NeurIPS 2025\] Mint: A Simple Test-Time Adaptation of Vision-Language Models against Common Corruptions](../../NeurIPS2025/multimodal_vlm/mint_a_simple_testtime_adaptation_of_visionlanguage_models_a.md)
+- [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
+- [\[CVPR 2025\] Post-pre-training for Modality Alignment in Vision-Language Foundation Models](../../CVPR2025/multimodal_vlm/post-pre-training_for_modality_alignment_in_vision-language_foundation_models.md)
+- [\[ECCV 2024\] Omniview-Tuning: Boosting Viewpoint Invariance of Vision-Language Pre-training Models](../../ECCV2024/multimodal_vlm/omniview-tuning_boosting_viewpoint_invariance_of_vision-language_pre-training_mo.md)
+- [\[CVPR 2025\] Multimodal Autoregressive Pre-training of Large Vision Encoders](../../CVPR2025/multimodal_vlm/multimodal_autoregressive_pre-training_of_large_vision_encoders.md)
 
 </div>
 

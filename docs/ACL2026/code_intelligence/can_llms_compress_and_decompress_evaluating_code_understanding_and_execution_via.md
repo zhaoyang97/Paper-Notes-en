@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] This paper proposes RoundTripCodeEval (RTCE): a code reasoning benchmark using 4 lossless compression algorithms (LZW/AE/RLE/Huffman) to construct 250 inputs × 4 subtasks = 1000 strict round-trip (encode→decode must restore bit-exact data) tasks. Results show that even QwQ-32B achieves 0% EM on Huffman encoding, a fail
+  [ACL 2026 Findings][Code Intelligence][Code reasoning] This paper proposes RoundTripCodeEval (RTCE): a code reasoning benchmark using 4 lossless compression algorithms (LZW/AE/RLE/Huffman) to construct 250 inputs × 4 subtasks = 1000 strict round-trip (encode→decode must restore bit-exact data) tasks. Results show that even QwQ-32B achieves 0% EM on Huffman encoding, a failure that cannot be addressed by SFT or self-reflection.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Code reasoning"
+  - "bidirectional execution"
+  - "compression algorithms"
+  - "self-consistency"
+  - "evaluation"
 date: 2026-05-08
-content_hash: 20ff2504525a5e78
+content_hash: 89ab55bfac6752ed
 ---
+
 # Can LLMs Compress (and Decompress)? Evaluating Code Understanding and Execution via Invertibility
 
 **Conference**: ACL 2026 Findings  
@@ -139,10 +145,10 @@ Huffman encoding remained at 0% after SFT, but decoding rose to 50%—proving th
 ## Related Papers
 
 - [\[ICLR 2026\] AetherCode: Evaluating LLMs' Ability to Win In Premier Programming Competitions](../../ICLR2026/code_intelligence/aethercode_evaluating_llms_ability_to_win_in_premier_programming_competitions.md)
+- [\[ICLR 2026\] Gistify: Codebase-Level Understanding via Runtime Execution](../../ICLR2026/code_intelligence/gistify_codebase-level_understanding_via_runtime_execution.md)
 - [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](swe-qa_can_language_models_answer_repository-level_code_questions.md)
-- [\[ACL 2025\] TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs](../../ACL2025/code_intelligence/texpert_a_multi-level_benchmark_for_evaluating_latex_code_generation_by_llms.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
-- [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
+- [\[ACL 2025\] TeXpert: A Multi-Level Benchmark for Evaluating LaTeX Code Generation by LLMs](../../ACL2025/code_intelligence/texpert_a_multi-level_benchmark_for_evaluating_latex_code_generation_by_llms.md)
 
 </div>
 

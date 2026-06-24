@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This paper proposes TrajGuard, a training-free decoding-time jailbreak defense framework. By aggregating key-layer hidden-state trajectories via a sliding window to quantify risk in real-time, it triggers a lightweight semantic judge only when risks persistently exceed a threshold. TrajGuard achieves a 95% average defe
+  [ACL 2026 Findings][LLM Safety][Jailbreak defense] This paper proposes TrajGuard, a training-free decoding-time jailbreak defense framework. By aggregating key-layer hidden-state trajectories via a sliding window to quantify risk in real-time, it triggers a lightweight semantic judge only when risks persistently exceed a threshold. TrajGuard achieves a 95% average defense rate across 12 jailbreak attacks with a detection latency of only 5.2ms/token and a false positive rate b…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026 Findings"
+  - "LLM Safety"
+  - "Jailbreak defense"
+  - "Hidden-state trajectory"
+  - "Decoding-time detection"
+  - "Real-time safety"
+  - "Training-free defense"
 date: 2026-05-08
-content_hash: 302783076ad9f139
+content_hash: 3e0c6f3cc4971838
 ---
+
 # TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense
 
 **Conference**: ACL 2026 Findings  
@@ -139,15 +145,15 @@ TrajGuard is entirely training-free. It requiring only a preprocessing step: usi
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](../../ICLR2026/llm_safety/inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
-- [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
+- [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](../../ICLR2026/llm_safety/hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
 - [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
+- [\[ACL 2026\] Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)
 - [\[ACL 2026\] Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)
-- [\[ACL 2025\] CAVGAN: Unifying Jailbreak and Defense of LLMs via Generative Adversarial Attacks](../../ACL2025/llm_safety/cavgan_unifying_jailbreak_and_defense_of_llms_via_generative_adversarial_attacks.md)
+- [\[ICLR 2026\] GraphShield: Graph-Theoretic Modeling of Network-Level Dynamics for Robust Jailbreak Detection](../../ICLR2026/llm_safety/graphshield_graph-theoretic_modeling_of_network-level_dynamics_for_robust_jailbr.md)
 
 </div>
 

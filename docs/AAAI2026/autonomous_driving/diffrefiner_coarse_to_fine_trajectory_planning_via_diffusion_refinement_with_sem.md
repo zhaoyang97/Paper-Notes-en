@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving
 description: >-
-  [AAAI2026][Autonomous Driving][end-to-end autonomous driving] This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first employs a discriminative Proposal Decoder to generate coarse trajectory propo…
+  [AAAI2026][Autonomous Driving][end-to-end autonomous driving] This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first generates coarse trajectories using a discriminative Proposal Decoder and then refines them iteratively using a diffusion model. Combined with a fine-grained semantic interaction module, it achieves SOTA performance on both NAVSIM v2 and Bench2Drive benchmarks.
 tags:
   - "AAAI2026"
   - "Autonomous Driving"
@@ -12,145 +12,150 @@ tags:
   - "coarse-to-fine"
   - "semantic interaction"
 date: 2026-05-08
-content_hash: ff4d904b58872765
+content_hash: a3841f0509118fd1
 ---
 
 # DiffRefiner: Coarse to Fine Trajectory Planning via Diffusion Refinement with Semantic Interaction for End to End Autonomous Driving
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026  
 **arXiv**: [2511.17150](https://arxiv.org/abs/2511.17150)  
 **Code**: [nullmax-vision/DiffRefiner](https://github.com/nullmax-vision/DiffRefiner)  
-**Area**: Autonomous Driving
+**Area**: Autonomous Driving  
 **Keywords**: end-to-end autonomous driving, diffusion model, trajectory planning, coarse-to-fine, semantic interaction
 
 ## TL;DR
 
-This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first employs a discriminative Proposal Decoder to generate coarse trajectory proposals, then iteratively refines them via a diffusion model, combined with a fine-grained semantic interaction module. The method achieves state-of-the-art performance on both NAVSIM v2 and Bench2Drive benchmarks.
+This paper proposes DiffRefiner, a coarse-to-fine two-stage framework that first generates coarse trajectories using a discriminative Proposal Decoder and then refines them iteratively using a diffusion model. Combined with a fine-grained semantic interaction module, it achieves SOTA performance on both NAVSIM v2 and Bench2Drive benchmarks.
 
 ## Background & Motivation
 
-End-to-end autonomous driving (E2E-AD) directly maps raw sensor inputs to trajectory planning, offering greater efficiency than traditional modular pipelines. Current trajectory prediction methods fall into three categories:
+End-to-end autonomous driving (E2E-AD) directly maps raw sensor inputs to trajectory planning, offering higher efficiency compared to traditional modular pipelines. Current trajectory forecasting methods can be categorized into three main paradigms:
 
-1. **Single-step regression methods**: Computationally efficient but unable to handle the multimodal nature of driving behaviors, prone to producing averaged suboptimal predictions at complex intersections.
-2. **Anchor-based scoring methods** (e.g., VADv2, HydraMDP++): Cast prediction as a classification problem, but scaling up the anchor set substantially increases computational complexity, making real-time deployment difficult.
-3. **Diffusion-based methods** (e.g., DiffusionDrive): Generate diverse trajectories via iterative denoising, naturally capturing multimodality, but rely on unstructured Gaussian noise or fixed anchors for initialization, lacking scene adaptability and requiring many denoising steps.
+1. **Single-shot regression methods**: These are computationally efficient but fail to handle the multi-modality of driving behaviors, often resulting in averaged, sub-optimal predictions at complex intersections.
+2. **Anchor-based classification/scoring methods** (e.g., VADv2, HydraMDP++): These formulate prediction as a classification task over predefined anchors. However, expanding the anchor set significantly increases computational complexity, making it difficult to meet real-time requirements.
+3. **Diffusion-based methods** (e.g., DiffusionDrive): These generate diverse trajectories through iterative denoising, naturally capturing multi-modality. However, their initialization relies on unstructured Gaussian noise or fixed anchors, lacking adaptivity to the scene and requiring a high number of denoising steps.
 
-Core motivation: **Can the advantages of discriminative models—fast inference and structured priors—be combined with the flexible generative capability of diffusion models?** Specifically, a discriminative method first produces coarse trajectory proposals, which are then refined by a diffusion model.
+Core Motivation: **Can the advantages of discriminative models (fast, structured priors) be combined with the flexible generation capabilities of diffusion models?** That is, first utilizing a discriminative approach to generate "coarse" trajectory proposals, and then employing a diffusion model for "fine" refinement.
 
 ## Core Problem
 
-- Existing diffusion methods start denoising from random noise or fixed anchors, whose initial distributions deviate from the feasible motion space, necessitating many denoising steps and increasing latency.
-- Trajectory prediction lacks fine-grained interaction with environmental semantics (drivable areas, obstacles), leading to collisions or lane departures.
+- Existing diffusion methods start denoising from random noise or fixed anchors. The initial distribution deviates from the feasible motion space, leading to a high number of denoising steps and increased latency.
+- There is a lack of fine-grained interaction between trajectory prediction and environmental semantics (drivable areas, obstacles), which easily leads to collisions or lane deviations.
 
 ## Method
 
 ### Overall Architecture
 
-DiffRefiner consists of three core modules:
+DiffRefiner consists of three core components:
 
-1. **BEV Perception Module**: Encodes multi-view camera inputs into BEV features, with a sparse detection head and a dense segmentation head for object detection and semantic segmentation, respectively.
-2. **Proposal Decoder (coarse stage)**: A lightweight Transformer that predicts offsets from clustered trajectory anchors to generate coarse trajectory proposals.
-3. **Diffusion Refiner (fine stage)**: A conditional diffusion model that takes coarse trajectories as initialization and generates high-quality final trajectories through iterative denoising.
+1. **BEV Perception Module**: Encodes multi-view camera inputs into BEV (Bird's-Eye-View) features, performing object detection and semantic segmentation using a sparse detection head and a dense segmentation head respectively.
+2. **Proposal Decoder (Coarse Stage)**: Based on a lightweight Transformer, it predicts offsets from clustered trajectory anchors to generate coarse trajectory proposals.
+3. **Diffusion Refiner (Fine Stage)**: A conditional diffusion model that utilizes the coarse trajectory as initialization, generating high-quality final trajectories through iterative denoising.
 
 ### Proposal Decoder
 
-- Uses 20 offline-clustered trajectory anchors as discrete motion candidates.
-- Each anchor is projected into a query vector via positional encoding and MLP.
-- Cross-attention with the Planning Token produces context-enhanced trajectory proposals.
-- This stage is essentially a discriminative method, providing strong initialization for subsequent diffusion refinement.
+- Uses 20 trajectory anchors obtained via offline clustering as discrete motion candidates.
+- Each anchor is encoded through positional encoding and projected into a query vector by an MLP.
+- Intermediary interaction with the Planning Token via cross-attention is performed to output context-enhanced trajectory proposals.
+- This stage is essentially a discriminative approach, providing a strong initialization for the subsequent diffusion refinement.
 
 ### Diffusion Refiner
 
-**Training**: A forward diffusion process adds Gaussian noise to the coarse trajectory; at a random step $t$, the noisy trajectory $\tilde{Y}$ is obtained, and the model learns the reverse denoising process.
+**Training Phase**: Performs a forward diffusion process (adding Gaussian noise) on the coarse trajectory. At a random step $t$, a noisy trajectory $\tilde{Y}$ is obtained, and the model learns the reverse denoising process.
 
-**Inference**: Starting from the coarse trajectory rather than pure noise, high-quality results are obtained with very few denoising steps (experiments show that a single step approaches optimal performance).
+**Inference Phase**: Starts with the coarse trajectory (instead of pure noise), requiring very few denoising steps to achieve high-quality results (experiments show that 1 step is close to optimal).
 
 ### Fine-Grained Semantic Interaction Module (FGSIM)
 
-This is the core innovation of the method, embedded in the denoising decoder and operating in two stages:
+This is the core innovation of the method, embedded within the denoising decoder and operating in two stages:
 
-1. **Road-aware refinement**: Trajectory features interact with BEV features and drivable-area segmentation, constraining predictions to physically traversable regions.
-2. **Interaction-aware refinement**: Dynamic agent features are introduced to model interactions among traffic participants and facilitate collision avoidance.
+1. **Road-Aware Refinement**: Trajectory features interact with BEV features and drivable area segmentation to constrain predictions within physically passable regions.
+2. **Interaction-Aware Refinement**: Integrates dynamic agent features to model interaction and collision avoidance among traffic participants.
 
-Interaction for each semantic category is realized through a three-level mechanism:
+The interaction for each semantic category is achieved via a three-level mechanism:
 
-- **Global cross-attention**: Establishes dense correspondences between trajectory features and BEV semantic regions, encoding global scene context.
-- **Local deformable attention**: Adaptively attends to critical regional semantics near trajectory endpoints, extracting local geometric structure.
-- **Gated fusion**: A learnable gating network dynamically balances global and local representations: $Q_r = Q_r^{(c)} \cdot \text{Gate} + Q_r^{(d)} \cdot (1 - \text{Gate})$
+- **Global cross-attention**: Establishes dense correspondences between trajectory features and BEV semantic regions to encode global scene context.
+- **Local deformable attention**: Adaptively focuses on critical region semantics near the trajectory endpoints to extract local geometric structures.
+- **Gated Fusion**: Dynamically balances global and local representations through a learnable gating network, formulated as $Q_r = Q_r^{(c)} \cdot \text{Gate} + Q_r^{(d)} \cdot (1 - \text{Gate})$.
 
 ### Loss & Training
 
 $$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{proposal}} + \mathcal{L}_{\text{refinement}} + \mathcal{L}_{\text{perception}}$$
 
-A two-stage training strategy is adopted: the perception network is trained independently in the first stage, followed by end-to-end joint optimization of perception and planning in the second stage. A winner-takes-all strategy selects the trajectory closest to the ground truth for loss computation.
+A two-stage training strategy is adopted: the first stage trains the perception network individually, while the second stage jointly optimizes perception and planning end-to-end. A winner-takes-all strategy is used to select the trajectory closest to the ground truth to compute the loss.
 
 ## Key Experimental Results
 
 ### NAVSIM v2 (Open-loop Evaluation)
 
 | Method | Backbone | EPDMS |
-|--------|----------|-------|
+|------|----------|-------|
 | HydraMDP++ | V2-99 | 85.1 |
 | DriveSuprim | V2-99 | 86.0 |
 | **DiffRefiner** | **V2-99** | **87.4** |
 | DiffusionDrive | ResNet34 | 84.0 |
 | **DiffRefiner** | **ResNet34** | **86.2** |
 
-DiffRefiner surpasses DriveSuprim by 3.7% with ResNet34 backbone and by 1.6% with V2-99.
+Under the ResNet34 backbone, it outperforms the prior work DriveSuprim by 3.7%, and by 1.6% under V2-99.
 
 ### Bench2Drive (Closed-loop Evaluation)
 
 | Method | DS | SR(%) |
-|--------|----|-------|
+|------|-----|-------|
 | TF++ | 84.2 | 67.3 |
 | HiPAD | 86.8 | 69.1 |
 | **DiffRefiner** | **87.1** | **71.4** |
 
-Without model ensembling, DiffRefiner improves DS by 0.3 and SR by 2.3, leading on most sub-metrics across capability categories.
+Without model ensemble, DS increases by 0.3 and SR increases by 2.3, leading in most sub-metrics of multi-capability evaluations.
 
 ### Ablation Study
 
-- **Two-stage vs. single-stage**: Adding the Refiner improves EPDMS from 85.0 to 86.2 (+1.2).
-- **Generative vs. discriminative Refiner**: The generative Refiner (86.2) outperforms the discriminative variant (78.3), validating that diffusion refinement is better suited for fine-grained adjustment.
-- **FGSIM components**: Incrementally adding Planning Token → Agent Token → BEV Modulation → Drivable Area → Traffic Participants progressively improves EPDMS from 82.4 to 85.0.
-- **Gated fusion vs. additive fusion**: Gated fusion (86.2) outperforms additive fusion (85.9), with adaptive balancing preventing information conflicts.
-- **Denoising steps**: A single denoising step achieves near-optimal performance, with an end-to-end latency of only 27ms.
+- **Two-stage vs. Single-stage**: Adding the Refiner improves EPDMS from 85.0 to 86.2 (+1.2).
+- **Generative vs. Discriminative Refiner**: The generative Refiner (86.2) outperforms the discriminative one (78.3), verifying that diffusion refinement is better suited for fine-grained adjustments.
+- **FGSIM Components**: Planning Token -> +Agent Token -> +BEV Modulation -> +Drivable Area -> +Traffic Participants consecutively increases EPDMS from 82.4 to 85.0.
+- **Gated Fusion vs. Additive Fusion**: Gated fusion (86.2) outperforms additive fusion (85.9), demonstrating that adaptive balancing avoids information conflicts.
+- **Denoising Steps**: Only 1 step is required to achieve near-optimal performance, with an end-to-end latency of only 27 ms.
 
 ## Highlights & Insights
 
-- **Hybrid coarse-to-fine paradigm**: The discriminative stage provides strong priors while the generative stage performs fine-grained optimization—an elegant design that leverages the complementary strengths of both paradigms.
-- **Sophisticated FGSIM design**: The three-level global–local–gated semantic interaction explicitly models alignment between trajectories and the environment.
-- **Minimal denoising steps**: High-quality coarse proposals reduce diffusion refinement to a single step, meeting real-time requirements (27ms).
-- **Dual-benchmark SOTA**: Achieving state-of-the-art results simultaneously on both open-loop (NAVSIM v2) and closed-loop (Bench2Drive) benchmarks validates the robustness of the approach.
+- **Coarse-to-fine hybrid paradigm**: Integrates a discriminative part providing a strong prior with a generative part performing fine-grained optimization. Their complementary advantages yield an elegant design.
+- **Exquisite FGSIM module design**: Uses global-local-gated three-level semantic interactions to explicitly model the alignment between trajectories and the environment.
+- **Minimal denoising steps**: The high-quality coarse proposals enable the diffusion model to refine in just 1 step, meeting real-time requirements (27 ms).
+- **Dual benchmark SOTA**: Sets new performance records on both open-loop (NAVSIM v2) and closed-loop (Bench2Drive) benchmarks, verifying the robustness of the proposed method.
 
 ## Limitations & Future Work
 
-- Only camera inputs are used; LiDAR is not incorporated. GaussianFusion (Camera+LiDAR) still holds advantages on certain sub-metrics in NAVSIM.
-- A notable gap remains between DiffRefiner and the rule-based PDM-Lite (DS 97.0) on Bench2Drive, indicating that learning-based methods still have room for improvement in stability.
-- The impact of the number and selection strategy of the 20 clustered anchors on performance is not thoroughly investigated.
-- Overtake (60.0) and GiveWay (50.0) capabilities remain relatively weak in closed-loop evaluation, leaving room for improvement in complex interaction scenarios.
-- Extending the framework to joint multi-agent prediction and planning has not been explored.
+- It relies solely on camera inputs without integrating LiDAR; on NAVSIM, the Camera+LiDAR-based GaussianFusion still holds advantages in some sub-metrics.
+- The gap between this method and rule-based PDM-Lite (DS 97.0) on Bench2Drive remains significant, indicating room for improvement in the stability of learning-based approaches.
+- The impact of the selection and quantity of the 20 clustered anchors on performance has not been deeply explored.
+- Performance in closed-loop evaluations for Overtake (60.0) and GiveWay (50.0) remains relatively weak, requiring improvement in complex interactive scenarios.
+- Extending the framework to multi-agent joint prediction and planning has not yet been explored.
 
 ## Related Work & Insights
 
 | Dimension | DiffusionDrive | DriveSuprim | DiffRefiner |
-|-----------|---------------|-------------|-------------|
-| Paradigm | Purely generative | Purely discriminative | Hybrid (discriminative + generative) |
-| Initialization | Anchor Gaussian mixture | Anchor classification + offset | Discriminative coarse proposals |
-| Semantic interaction | BEV spatial modulation | Implicit feature interaction | Explicit fine-grained FGSIM |
-| NAVSIM v2 (V2-99) | — | 86.0 | **87.4** |
-| Bench2Drive DS | — | — | **87.1** |
+|------|---------------|-------------|-------------|
+| Paradigm | Pure Generative | Pure Discriminative | Hybrid (Discriminative + Generative) |
+| Initialization | Anchor Gaussian Mixture | Anchor Classification + Offset | Discriminative Coarse Proposal |
+| Semantic Interaction | BEV Space Modulation | Implicit Feature Interaction | Explicit Fine-Grained FGSIM |
+| NAVSIM v2 (V2-99) | - | 86.0 | **87.4** |
+| Bench2Drive DS | - | - | **87.1** |
 
-The key distinction of DiffRefiner lies in replacing unstructured initialization with a discriminative module and explicitly incorporating semantic constraints via FGSIM.
+The core difference is that DiffRefiner replaces unstructured initialization with a discriminative module and explicitly introduces semantic constraints through FGSIM.
 
-The coarse-to-fine two-stage paradigm is generalizable to other generative planning tasks (e.g., robot motion planning, UAV path planning). The global–local gated fusion design in FGSIM can be adopted in other tasks requiring multi-scale semantic alignment. The finding that high-quality priors substantially reduce the required denoising steps has broader implications for accelerating diffusion model inference. Compared to other coarse-to-fine works such as GoalFlow and DriveTransformer, the distinctive feature of this paper is the use of diffusion rather than a deterministic Transformer in the refinement stage.
+### Insights & Connections
+
+- The "coarse-to-fine" two-stage mindset is highly generalizable and can be extended to other generative planning tasks (e.g., robotic motion planning, UAV path planning).
+- The design of global-local gated fusion in FGSIM can be applied to other tasks requiring multi-scale semantic alignment.
+- The finding that a high-quality prior significantly reduces diffusion steps provides valuable insights for accelerating diffusion model inference.
+- In contrast to other "coarse-to-fine" works like GoalFlow and DriveTransformer, the unique feature of this work lies in employing a diffusion model rather than a deterministic Transformer during the refinement stage.
 
 ## Rating
 
-- **Novelty**: 7/10 — The combination of coarse-to-fine and diffusion is not entirely new, but the FGSIM design is distinctive.
-- **Experimental Thoroughness**: 9/10 — Dual-benchmark SOTA with detailed ablations clearly attributing contributions of individual components.
-- **Writing Quality**: 8/10 — Well-structured, with clear figures and complete mathematical formulations.
-- **Value**: 8/10 — Practical methodology, strong performance, and controllable latency make it valuable both for engineering and academic research.
+- Novelty: 7/10 — The combination of coarse-to-fine and diffusion is not entirely new, but the design of FGSIM is unique.
+- Experimental Thoroughness: 9/10 — SOTA on dual benchmarks + detailed ablation studies, with clear contributions from each component.
+- Writing Quality: 8/10 — Clear structure, standardized illustrations, and complete mathematical formulations.
+- Value: 8/10 — Practical methodology, outstanding performance, and controllable latency, offering both engineering and academic value.
 
 <!-- RELATED:START -->
 
@@ -159,10 +164,10 @@ The coarse-to-fine two-stage paradigm is generalizable to other generative plann
 ## Related Papers
 
 - [\[AAAI 2026\] DriveSuprim: Towards Precise Trajectory Selection for End-to-End Planning](drivesuprim_towards_precise_trajectory_selection_for_end-to-end_planning.md)
+- [\[CVPR 2026\] ActiveAD: Planning-Oriented Active Learning for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/activead_planning-oriented_active_learning_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] ResAD: Normalized Residual Trajectory Modeling for End-to-End Autonomous Driving](../../CVPR2026/autonomous_driving/resad_normalized_residual_trajectory_modeling_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving](../../CVPR2026/autonomous_driving/wam-flow_parallel_coarse-to-fine_motion_planning_via_discrete_flow_matching_for_.md)
 - [\[AAAI 2026\] AdaptiveAD: Decoupling Scene Perception and Ego Status for End-to-End Autonomous Driving](decoupling_scene_perception_and_ego_status_a_multi-context_fusion_approach_for_e.md)
-- [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](../../NeurIPS2025/autonomous_driving/future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
-- [\[NeurIPS 2025\] DriveDPO: Policy Learning via Safety DPO For End-to-End Autonomous Driving](../../NeurIPS2025/autonomous_driving/drivedpo_policy_learning_via_safety_dpo_for_end-to-end_autonomous_driving.md)
-- [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
 
 </div>
 

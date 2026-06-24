@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Learning Explicit Single-Cell Dynamics Using ODE Representations
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] This paper proposes Cell-MNN—an encoder-decoder architecture that represents single-cell differentiation dynamics as "state-conditioned locally linear ODEs." This approach **discards expensive Optimal Transport (OT) preprocessing and multi-stage training**, achieving SOTA average performance on single-cell interpolatio
+  [ICLR 2026][Computational Biology][Single-cell trajectory inference] This paper proposes Cell-MNN—an encoder-decoder architecture that represents single-cell differentiation dynamics as "state-conditioned locally linear ODEs." This approach **discards expensive Optimal Transport (OT) preprocessing and multi-stage training**, achieving SOTA average performance on single-cell interpolation benchmarks through an end-to-end single-stage process. It simultaneously produces interpr…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Single-cell trajectory inference"
+  - "cell differentiation"
+  - "ODE representation"
+  - "local linearization"
+  - "gene regulatory networks"
+  - "mechanistic neural networks"
 date: 2026-05-08
-content_hash: b381279f891ad53c
+content_hash: fb00e2bede5c0d71
 ---
+
 # Learning Explicit Single-Cell Dynamics Using ODE Representations
 
 **Conference**: ICLR 2026  

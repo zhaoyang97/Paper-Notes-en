@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation
 description: >-
-  [Medical Imaging] GuideGen proposes a controllable framework that requires only text input. It synthesizes full-torso anatomical masks via a categorical diffusion model…
+  [Medical Imaging] GuideGen proposes a controllable framework that requires only text input. It synthesizes full-torso anatomical masks via a categorical diffusion model, and combines an anatomy-aware high-dynamic-range autoencoder with a latent feature generator to produce paired full-torso CT volumes, providing high-quality synthetic training data for downstream segmentation tasks.
 tags:
   - "Medical Imaging"
 date: 2026-05-08
-content_hash: 6a5e48401ea44f39
+content_hash: 738be86ec0458e28
 ---
 
 # GuideGen: A Text-Guided Framework for Paired Full-Torso Anatomy and CT Volume Generation
@@ -196,10 +196,10 @@ All three core components (TCSS, knowledge injection, HDR) are indispensable.
 ## Related Papers
 
 - [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
+- [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[AAAI 2026\] Small but Mighty: Dynamic Wavelet Expert-Guided Fine-Tuning of Large-Scale Models for Optical Remote Sensing Object Segmentation](small_but_mighty_dynamic_wavelet_expert-guided_fine-tuning_of_large-scale_models.md)
 - [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](../../ICLR2026/medical_imaging/seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[ICLR 2026\] COMPASS: Robust Feature Conformal Prediction for Medical Segmentation Metrics](../../ICLR2026/medical_imaging/compass_robust_feature_conformal_prediction_for_medical_segmentation_metrics.md)
-- [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](../../ICCV2025/medical_imaging/victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ConSSC lifts historical RGB frames into a unified 3D occupancy space, utilizing "Hierarchical Voxel Refinement" for geometric completion and "Temporal Semantic Aggregation" for semantic completion. Without any additional sensors, it establishes a new SOTA for camera-only semantic scene completion on SemanticKITTI and K
+  [CVPR 2026][3D Vision][Semantic Scene Completion] ConSSC lifts historical RGB frames into a unified 3D occupancy space, utilizing "Hierarchical Voxel Refinement" for geometric completion and "Temporal Semantic Aggregation" for semantic completion. Without any additional sensors, it establishes a new SOTA for camera-only semantic scene completion on SemanticKITTI and KITTI-360 (IoU 48.17 / 48.79, mIoU 19.20 / 20.85).
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Semantic Scene Completion"
+  - "Temporal Consistency"
+  - "Occupancy Prediction"
+  - "Voxel Refinement"
+  - "Camera-aware"
 date: 2026-05-08
-content_hash: 3fea7813e45e789d
+content_hash: d35bed04a021ae3b
 ---
+
 # Learning Spatial-Temporal Consistency for 3D Semantic Scene Completion
 
 **Conference**: CVPR 2026  
@@ -123,11 +129,11 @@ Ablations on SemanticKITTI validation set:
 
 ## Related Papers
 
+- [\[CVPR 2026\] TGSFormer: Scalable Temporal Gaussian Splatting for Embodied Semantic Scene Completion](tgsformer_scalable_temporal_gaussian_splatting_for_embodied_semantic_scene_compl.md)
 - [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
-- [\[CVPR 2026\] Masking Matters: Unlocking the Spatial Reasoning Capabilities of LLMs for 3D Scene-Language Understanding](masking_matters_unlocking_the_spatial_reasoning_capabilities_of_llms_for_3d_scen.md)
+- [\[CVPR 2026\] Multi-modal Frequency Decomposition Network for Semantic Scene Completion](multi-modal_frequency_decomposition_network_for_semantic_scene_completion.md)
+- [\[AAAI 2026\] Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion](../../AAAI2026/3d_vision/towards_temporal_fusion_beyond_the_field_of_view_for_camera-based_semantic_scene.md)
+- [\[CVPR 2026\] Semantic Foam: Unifying Spatial and Semantic Scene Decomposition](semantic_foam_unifying_spatial_and_semantic_scene_decomposition.md)
 
 </div>
 

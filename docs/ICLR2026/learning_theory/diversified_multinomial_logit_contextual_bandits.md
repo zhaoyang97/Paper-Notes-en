@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Diversified Multinomial Logit Contextual Bandits
 description: >-
-  [ICLR 2026][learning_theory][MNL bandit] This paper directly embeds "combinatorial diversity" into the selection probabilities of the Multinomial Logit (MNL) model. It proposes the DMNL contextual bandit model and designs OFU-DMNL, a white-box UCB algorithm that eliminates the need for a black-box optimization oracle. By constructing assortments through item-
+  [ICLR2026][Learning Theory][MNL bandit] This paper directly embeds "combinatorial diversity" into the selection probabilities of the Multinomial Logit (MNL) model. It proposes the DMNL contextual bandit model and designs OFU-DMNL, a white-box UCB algorithm that eliminates the need for a black-box optimization oracle. By constructing assortments through item-wise greedy selection with $O(NK)$ per-round overhead, the authors prove a $(1-\frac{1}{e+1})$-approximate regret bound…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - MNL bandit
-  - UCB
+  - "ICLR2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Combinatorial Bandits"
+  - "MNL bandit"
+  - "diversity"
+  - "submodular functions"
+  - "approximate regret"
+  - "UCB"
 date: 2026-05-08
-content_hash: ac6b0f5952fa85c9
+content_hash: fcd4117b1e0cf2e0
 ---
+
 # Diversified Multinomial Logit Contextual Bandits
 
 **Conference**: ICLR2026  
@@ -123,8 +129,8 @@ Core conclusion: OFU-DMNL outperforms baselines that ignore or manually tune div
 
 - [\[ICLR 2026\] Variance-Dependent Regret Lower Bounds for Contextual Bandits](variance-dependent_regret_lower_bounds_for_contextual_bandits.md)
 - [\[ICLR 2026\] Queue Length Regret Bounds for Contextual Queueing Bandits](queue_length_regret_bounds_for_contextual_queueing_bandits.md)
+- [\[ICLR 2026\] Efficient Best-of-Both-Worlds Algorithms for Contextual Combinatorial Semi-Bandits](efficient_best-of-both-worlds_algorithms_for_contextual_combinatorial_semi-bandi.md)
 - [\[ICML 2026\] Optimal Design for Multinomial Logit Model with Applications to Best Assortment Identification](../../ICML2026/learning_theory/optimal_design_for_multinomial_logit_model_with_applications_to_best_assortment_.md)
-- [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
 - [\[ICLR 2026\] Contextual Multi-Armed Bandits with Minimum Aggregated Revenue Constraints](contextual_multi-armed_bandits_with_minimum_aggregated_revenue_constraints.md)
 
 </div>

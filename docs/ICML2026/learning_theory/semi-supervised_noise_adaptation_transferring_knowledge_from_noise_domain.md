@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain
 description: >-
-  [ICML 2026][learning_theory][NDS] The authors treat a "synthetic domain generated from Gaussian noise" as a surrogate source domain in semi-supervised transfer learning. They demonstrate that such "non-semantic but discriminatively structured" noise provides a quantifiable improvement in generalization bounds for the target domain. They introduce the N
+  [ICML 2026][Transfer Learning][Semi-supervised noise adaptation] The authors treat a "synthetic domain generated from Gaussian noise" as a surrogate source domain in semi-supervised transfer learning. They demonstrate that such "non-semantic but discriminatively structured" noise provides a quantifiable improvement in generalization bounds for the target domain. They introduce the Noise Adaptation Framework (NAF) to jointly optimize risks and distribution discrepancies across…
 tags:
-  - ICML 2026
-  - learning_theory
-  - NDS
+  - "ICML 2026"
+  - "Transfer Learning"
+  - "Semi-Supervised Learning"
+  - "Semi-supervised noise adaptation"
+  - "surrogate source domain"
+  - "generalization bound"
+  - "domain alignment"
+  - "NDS"
 date: 2026-05-08
-content_hash: 9f072b8b94781017
+content_hash: ef61fd24df8babbe
 ---
+
 # Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain
 
 **Conference**: ICML 2026  
@@ -141,9 +147,9 @@ The total objective is $\mathcal L=\mathcal L_{t}+\alpha \mathcal L_{n}+\beta \m
 
 - [\[ICML 2026\] Robustness of Mixtures of Experts to Feature Noise](robustness_of_mixtures_of_experts_to_feature_noise.md)
 - [\[ICML 2026\] Efficiently Learning Drifting Halfspaces with Massart Noise](efficiently_learning_drifting_halfspaces_with_massart_noise.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
+- [\[ICLR 2026\] Noise Tolerance of Distributionally Robust Learning](../../ICLR2026/learning_theory/noise_tolerance_of_distributionally_robust_learning.md)
 - [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](../../NeurIPS2025/learning_theory/prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
-- [\[ICML 2025\] Theoretical Performance Guarantees for Partial Domain Adaptation via Partial Optimal Transport](../../ICML2025/learning_theory/theoretical_performance_guarantees_for_partial_domain_adaptation_via_partial_opt.md)
+- [\[ICLR 2026\] "Noisier" Noise Contrastive Estimation is (Almost) Maximum Likelihood](../../ICLR2026/learning_theory/noisier_noise_contrastive_estimation_is_almost_maximum_likelihood.md)
 
 </div>
 

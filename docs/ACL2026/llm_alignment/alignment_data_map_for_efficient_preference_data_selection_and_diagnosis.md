@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Alignment Data Map for Efficient Preference Data Selection and Diagnosis
 description: >-
-  [ACL 2026][Alignment & RLHF][DPO] This paper proposes the Alignment Data Map, an analytical tool that visualizes, selects, and diagnoses preference data by jointly considering response quality and variability. It achieves the alignment performance of full-set training using only 33% of the data.
+  [ACL 2026 Findings][LLM Alignment][Preference Learning] This paper proposes the Alignment Data Map, an analytical tool that visualizes, selects, and diagnoses preference data by jointly considering response quality and variability. It achieves the alignment performance of full-set training using only 33% of the data.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
-  - DPO
+  - "ACL 2026 Findings"
+  - "LLM Alignment"
+  - "Preference Learning"
+  - "Data Selection"
+  - "Alignment Data Map"
+  - "Annotation Quality Diagnosis"
+  - "DPO"
 date: 2026-05-08
-content_hash: 7de15cdd7313392d
+content_hash: 45b693f91edcfd2a
 ---
+
 # Alignment Data Map for Efficient Preference Data Selection and Diagnosis
 
 **Conference**: ACL 2026 Findings  
@@ -132,11 +137,11 @@ The alignment algorithms directly employ standard DPO and SimPO; this paper does
 
 ## Related Papers
 
+- [\[ICLR 2026\] Data Selection for LLM Alignment Using Fine-Grained Preferences](../../ICLR2026/llm_alignment/data_selection_for_llm_alignment_using_fine-grained_preferences.md)
 - [\[AAAI 2026\] Importance-Aware Data Selection for Efficient LLM Instruction Tuning](../../AAAI2026/llm_alignment/importance-aware_data_selection_for_efficient_llm_instruction_tuning.md)
+- [\[ICLR 2026\] Holdout-Loss-Based Data Selection for LLM Finetuning via In-Context Learning](../../ICLR2026/llm_alignment/holdout-loss-based_data_selection_for_llm_finetuning_via_in-context_learning.md)
+- [\[ICLR 2026\] When Data Is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets](../../ICLR2026/llm_alignment/when_data_is_the_algorithm_a_systematic_study_and_curation_of_preference_optimiz.md)
 - [\[ICLR 2026\] Towards Understanding Valuable Preference Data for Large Language Model Alignment](../../ICLR2026/llm_alignment/towards_understanding_valuable_preference_data_for_large_language_model_alignmen.md)
-- [\[ICLR 2026\] Is On-Policy Data always the Best Choice for Direct Preference Optimization-based LM Alignment?](../../ICLR2026/llm_alignment/is_on-policy_data_always_the_best_choice_for_direct_preference_optimization-base.md)
-- [\[NeurIPS 2025\] T-SHIRT: Token-Selective Hierarchical Data Selection for Instruction Tuning](../../NeurIPS2025/llm_alignment/t-shirt_token-selective_hierarchical_data_selection_for_instruction_tuning.md)
-- [\[ACL 2026\] What Makes Good Instruction-Tuning Data? An In-Context Learning Perspective](what_makes_good_instruction-tuning_data_an_in-context_learning_perspective.md)
 
 </div>
 

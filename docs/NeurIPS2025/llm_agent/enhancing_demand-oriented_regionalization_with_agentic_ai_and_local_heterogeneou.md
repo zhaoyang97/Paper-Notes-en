@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning
 description: >-
-  [NeurIPS 2025 (UrbanAI Workshop)][LLM Agent][Agentic AI] This paper proposes a planning support system based on Agentic AI, in which an LLM agent guides non-technical users through data-driven demand-oriented regionaliza…
+  [NeurIPS 2025 (UrbanAI Workshop)][LLM Agent][Agentic AI] This paper proposes a planning support system based on Agentic AI, in which an LLM agent guides non-technical users through data-driven demand-oriented regionalization. The core algorithm is RepSC-SOM (spatially constrained self-organizing map with representative initialization), supporting iterative human-AI collaborative refinement of regional delineations for disaster risk management and climate adaptation planning.
 tags:
   - "NeurIPS 2025 (UrbanAI Workshop)"
   - "LLM Agent"
@@ -13,7 +13,7 @@ tags:
   - "human-AI collaboration"
   - "disaster adaptation planning"
 date: 2026-05-08
-content_hash: 816991b3896f0ad5
+content_hash: a8d13ac5c64871c8
 ---
 
 # Enhancing Demand-Oriented Regionalization with Agentic AI and Local Heterogeneous Data for Adaptation Planning
@@ -164,8 +164,8 @@ These ablation directions are not pursued in the current paper and constitute im
 - [\[NeurIPS 2025\] T1: A Tool-Oriented Conversational Dataset for Multi-Turn Agentic Planning](t1_a_tool-oriented_conversational_dataset_for_multi-turn_agentic_planning.md)
 - [\[NeurIPS 2025\] LC-Opt: Benchmarking Reinforcement Learning and Agentic AI for End-to-End Liquid Cooling Optimization in Data Centers](lc-opt_benchmarking_reinforcement_learning_and_agentic_ai_for_end-to-end_liquid_.md)
 - [\[NeurIPS 2025\] What AI Speaks for Your Community: Polling AI Agents for Public Opinion on Data Center Projects](what_ai_speaks_for_your_community_polling_ai_agents_for_public_opinion_on_data_c.md)
-- [\[NeurIPS 2025\] Ground-Compose-Reinforce: Grounding Language in Agentic Behaviours using Limited Data](ground-compose-reinforce_grounding_language_in_agentic_behaviours_using_limited_.md)
-- [\[NeurIPS 2025\] The Lighthouse of Language: Enhancing LLM Agents via Critique-Guided Improvement](the_lighthouse_of_language_enhancing_llm_agents_via_critique-guided_improvement.md)
+- [\[ICLR 2026\] Natural Language PDDL (NL-PDDL): Open-world Goal-oriented Commonsense Regression Planning in Embodied AI](../../ICLR2026/llm_agent/natural_language_pddl_nl-pddl_for_open-world_goal-oriented_commonsense_regressio.md)
+- [\[ACL 2025\] Agentic Reasoning: A Streamlined Framework for Enhancing LLM Reasoning with Agentic Tools](../../ACL2025/llm_agent/agentic_reasoning_tools.md)
 
 </div>
 

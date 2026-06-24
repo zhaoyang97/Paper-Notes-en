@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] This paper proposes DreamPRVR, which adopts an "imagine before concentration" coarse-to-fine strategy: global semantic register tokens are generated via a truncated diffusion model under text supervision and then fused into fine-grained video representations. This effectively suppresses local noisy responses and achiev
+  [CVPR 2026][Image Generation][Partially Relevant Video Retrieval] This paper proposes DreamPRVR, which adopts an "imagine before concentration" coarse-to-fine strategy: global semantic register tokens are generated via a truncated diffusion model under text supervision and then fused into fine-grained video representations. This effectively suppresses local noisy responses and achieves SOTA on three PRVR benchmarks.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Partially Relevant Video Retrieval"
+  - "Diffusion Models"
+  - "Register Tokens"
+  - "Cross-modal Alignment"
+  - "Global Context"
 date: 2026-05-08
-content_hash: fe5ffc80ab9f5900
+content_hash: 7eda70bf424795c7
 ---
+
 # Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval
 
 **Conference**: CVPR 2026  
@@ -159,7 +164,7 @@ Total loss: $L_{total} = L_{sim} + L_{tssl} + L_{pvs} + \lambda_{dre} L_{dre}$. 
 - [\[CVPR 2026\] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)
 - [\[CVPR 2026\] Smoothing the Score Function to Enhance Generalization in Diffusion Models](smoothing_the_score_function_to_enhance_generalization_in_diffusion_models.md)
 - [\[CVPR 2026\] Align Images Before You Generate](align_images_before_you_generate.md)
-- [\[CVPR 2026\] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction](parauni_enhance_generation_in_unified_multimodal_model_with_reinforcement-driven.md)
+- [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)
 - [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](learnability-guided_diffusion_for_dataset_distillation.md)
 
 </div>

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval
 description: >-
-  [CVPR 2026][Object Detection][REC] This work treats open-vocabulary detection entirely as a "region × text" retrieval matching problem. It utilizes a non-fusion dual-tower structure, WeDetect, to achieve real-time SOTA detection. By freezing WeDetect, a general proposal generator WeDetect-Uni is derived (supporting the new task of local object retrieval
+  [CVPR 2026][Object Detection][Open-vocabulary detection] This work treats open-vocabulary detection entirely as a "region × text" retrieval matching problem. It utilizes a non-fusion dual-tower structure, WeDetect, to achieve real-time SOTA detection. By freezing WeDetect, a general proposal generator WeDetect-Uni is derived (supporting the new task of local object retrieval). Finally, WeDetect-Ref reframes REC by transforming an LLM into a classifier for parallel scoring in…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - REC
-  - CLIP
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary detection"
+  - "Dual-tower retrieval"
+  - "REC"
+  - "Proposal generation"
+  - "CLIP"
 date: 2026-05-08
-content_hash: b4e3423302ea80db
+content_hash: 88f866ae98d1408d
 ---
+
 # WeDetect: Fast Open-Vocabulary Object Detection as Retrieval
 
 **Conference**: CVPR 2026  
@@ -146,15 +150,16 @@ WeDetect-Ref 4B is the **first LMM to exceed 50 AP on COCO detection** (50.0 AP)
 - Value: ⭐⭐⭐⭐⭐ (Real-time SOTA, reusable features, open-source code for deployment).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning](consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
+- [\[CVPR 2026\] SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection](streamlined_open-vocabulary_human-object_interaction_detection.md)
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
 - [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
-- [\[CVPR 2026\] SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)
 
 </div>
 

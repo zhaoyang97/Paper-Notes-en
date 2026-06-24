@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Comparing Human and Large Language Model Interpretation of Implicit Information
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] This paper proposes the Implicit Information Extraction (IIE) task and an LLM-based three-stage extraction pipeline (Information Extraction → Reasoning Verification → Temporal Analysis). It constructs structured knowledge graphs to represent the implicit meanings of text. Through comparisons with crowdsourced human jud
+  [ACL 2026 Findings][Graph Learning][Implicit information extraction] This paper proposes the Implicit Information Extraction (IIE) task and an LLM-based three-stage extraction pipeline (Information Extraction → Reasoning Verification → Temporal Analysis). It constructs structured knowledge graphs to represent the implicit meanings of text. Through comparisons with crowdsourced human judgments, it finds that LLMs are more conservative than humans in socially rich contexts…
 tags:
-  - ACL 2026
-  - Graph Learning
+  - "ACL 2026 Findings"
+  - "Graph Learning"
+  - "Implicit information extraction"
+  - "Knowledge graphs"
+  - "Human-LLM comparison"
+  - "Reasoning verification"
+  - "Temporal analysis"
 date: 2026-05-08
-content_hash: 01c3c30a56de1eab
+content_hash: 58b1ea2508948de6
 ---
+
 # Comparing Human and Large Language Model Interpretation of Implicit Information
 
 **Conference**: ACL 2026 Findings  
@@ -143,9 +149,9 @@ The approach is entirely based on few-shot prompting and does not involve fine-t
 
 - [\[ACL 2025\] FiDeLiS: Faithful Reasoning in Large Language Model for Knowledge Graph Question Answering](../../ACL2025/graph_learning/fidelis_faithful_reasoning_in_large_language_model_for_knowledge_graph_question_.md)
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](graph-based_alternatives_to_llms_for_human_simulation.md)
-- [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
+- [\[ICLR 2026\] Knowledge Reasoning Language Model: Unifying Knowledge and Language for Inductive Knowledge Graph Reasoning](../../ICLR2026/graph_learning/knowledge_reasoning_language_model_unifying_knowledge_and_language_for_inductive.md)
 - [\[ICML 2026\] Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models](../../ICML2026/graph_learning/finding_the_minimal_parameter_budget_for_implicit_reasoning_a_data_complexity_dr.md)
-- [\[ICML 2025\] From RAG to Memory: Non-Parametric Continual Learning for Large Language Models](../../ICML2025/graph_learning/from_rag_to_memory_non-parametric_continual_learning_for_large_language_models.md)
+- [\[CVPR 2026\] Mario: Multimodal Graph Reasoning with Large Language Models](../../CVPR2026/graph_learning/mario_multimodal_graph_reasoning_with_large_language_models.md)
 
 </div>
 

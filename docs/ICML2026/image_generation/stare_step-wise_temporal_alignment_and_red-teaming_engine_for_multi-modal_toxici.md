@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] STARE: Step-wise Temporal Alignment and Red-teaming Engine for Multi-modal Toxicity Attack
 description: >-
-  [ICML 2026][Image Generation][GRPO] This paper treats the entire denoising trajectory of T2I models as the "attack surface" for VLM red-teaming. By utilizing a hierarchical RL framework (STARE) comprising a high-level prompt editor and low-level GRPO fine-tuning for rectified-flow models, the authors not only improve the attack success rate by 68% over S
+  [ICML 2026][Image Generation][Multi-modal Red-teaming] This paper treats the entire denoising trajectory of T2I models as the "attack surface" for VLM red-teaming. By utilizing a hierarchical RL framework (STARE) comprising a high-level prompt editor and low-level GRPO fine-tuning for rectified-flow models, the authors not only improve the attack success rate by 68% over SOTA but also reveal a novel phenomenon—Optimization-Induced Phase Alignment. This phenomenon shows that a…
 tags:
-  - ICML 2026
-  - Image Generation
-  - GRPO
+  - "ICML 2026"
+  - "Image Generation"
+  - "Multi-modal Red-teaming"
+  - "Diffusion Trajectory Attack"
+  - "Hierarchical RL"
+  - "GRPO"
+  - "Temporal Alignment Analysis"
 date: 2026-05-08
-content_hash: 19596ed05509e95f
+content_hash: 19ef1a5c24bd9b56
 ---
+
 # STARE: Step-wise Temporal Alignment and Red-teaming Engine for Multi-modal Toxicity Attack
 
 **Conference**: ICML 2026  
@@ -141,10 +146,10 @@ STARE achieved 30.83 Any ASR on OOD PolygloToxicityPrompts vs. ART's 22.01. Tran
 ## Related Papers
 
 - [\[ICML 2026\] Pareto-Guided Optimal Transport for Multi-Reward Alignment](pareto-guided_optimal_transport_for_multi-reward_alignment.md)
-- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 - [\[ICCV 2025\] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts](../../ICCV2025/image_generation/autoprompt_automated_red-teaming_of_text-to-image_models_via_llm-driven_adversar.md)
-- [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](omp_one-step_meanflow_policy_with_directional_alignment.md)
+- [\[ICML 2026\] Diffusion Models Are Statistically Optimal for Learning Low-Dimensional Multi-Modal Distributions](diffusion_models_are_statistically_optimal_for_learning_low-dimensional_multi-mo.md)
 - [\[ICLR 2026\] Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning](../../ICLR2026/image_generation/image_can_bring_your_memory_back_a_novel_multi-modal_guided_attack_against_image.md)
+- [\[ICML 2026\] OMP: One-step Meanflow Policy with Directional Alignment](omp_one-step_meanflow_policy_with_directional_alignment.md)
 
 </div>
 

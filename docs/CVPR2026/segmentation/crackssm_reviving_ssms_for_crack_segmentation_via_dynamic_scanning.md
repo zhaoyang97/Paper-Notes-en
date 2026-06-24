@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CrackSSM: Reviving SSMs for Crack Segmentation via Dynamic Scanning
 description: >-
-  [CVPR 2026][Segmentation][State Space Model] Addressing the slender, intermittent, and irregular nature of cracks, CrackSSM replaces the "fixed-path scanning" in Mamba-based vision models with **adaptive token reordering (dynamic scanning)** driven by crack direction intensity. This ensures that adjacent crack pixels remain adjacent in 1D sequences, restoring the
+  [CVPR 2026][Segmentation][Crack Segmentation] Addressing the slender, intermittent, and irregular nature of cracks, CrackSSM replaces the "fixed-path scanning" in Mamba-based vision models with **adaptive token reordering (dynamic scanning)** driven by crack direction intensity. This ensures that adjacent crack pixels remain adjacent in 1D sequences, restoring the causal modeling capability of S6. Combined with a wavelet high-frequency prior-guided decoder…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - State Space Model
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Crack Segmentation"
+  - "State Space Models"
+  - "Dynamic Scanning"
+  - "Adaptive Token Reordering"
+  - "Wavelet Prior"
 date: 2026-05-08
-content_hash: 185a79d44d3d107d
+content_hash: 8dd35ff0e000ba32
 ---
+
 # CrackSSM: Reviving SSMs for Crack Segmentation via Dynamic Scanning
 
 **Conference**: CVPR 2026  
@@ -165,9 +170,9 @@ Separate ablation on directional loss (Table 4) shows performance drops across a
 
 - [\[CVPR 2026\] MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention](mixercseg_an_efficient_mixer_architecture_for_crack_segmentation_via_decoupled_m.md)
 - [\[CVPR 2026\] Efficient Video Object Segmentation and Tracking with Recurrent Dynamic Submodel](efficient_video_object_segmentation_and_tracking_with_recurrent_dynamic_submodel.md)
-- [\[CVPR 2026\] LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)
 - [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
 - [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
+- [\[ICML 2026\] FlowSeg: Dynamic Semantic Guidance for LLM-Conditioned Segmentation](../../ICML2026/segmentation/flowseg_dynamic_semantic_guidance_for_llm-conditioned_segmentation.md)
 
 </div>
 

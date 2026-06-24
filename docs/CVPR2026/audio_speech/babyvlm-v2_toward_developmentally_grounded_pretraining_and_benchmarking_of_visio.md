@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models
 description: >-
-  [CVPR 2026][Audio & Speech][NIH Baby Toolbox] The BabyVLM-V2 framework is proposed, which constructs three formats of pretraining data (768K image pairs + 181K video pairs + 63K interleaved sequences) from the SAYCam longitudinal corpus from an infant's first-person perspective. It designs the DevCV Toolbox (10 developmental cognitive tasks) based on the NIH Baby
+  [CVPR 2026][Audio & Speech][Developmental cognition] The BabyVLM-V2 framework is proposed, which constructs three formats of pretraining data (768K image pairs + 181K video pairs + 63K interleaved sequences) from the SAYCam longitudinal corpus from an infant's first-person perspective. It designs the DevCV Toolbox (10 developmental cognitive tasks) based on the NIH Baby Toolbox®. A compact model trained from scratch surpasses GPT-4o on certain mathematical tasks…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - NIH Baby Toolbox
-  - DevCV Toolbox
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "Developmental cognition"
+  - "infant vision"
+  - "sample-efficient pretraining"
+  - "NIH Baby Toolbox"
+  - "DevCV Toolbox"
 date: 2026-05-08
-content_hash: 926d2e63a8d44fdb
+content_hash: 4308cb8b5f1c7f14
 ---
+
 # BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models
 
 **Conference**: CVPR 2026  
@@ -156,11 +160,11 @@ The pipeline consists of three stages: Stage 1 pretrains the vision encoder, Sta
 
 ## Related Papers
 
-- [\[CVPR 2026\] Vision-Speech Models: Teaching Speech Models to Converse about Images](vision-speech_models_teaching_speech_models_to_converse_about_images.md)
 - [\[ICCV 2025\] 2.5 Years in Class: A Multimodal Textbook for Vision-Language Pretraining](../../ICCV2025/audio_speech/25_years_in_class_a_multimodal_textbook_for_visionlanguage_p.md)
 - [\[CVPR 2026\] EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation](echofoley_event-centric_hierarchical_control_for_video_grounded_creative_sound_g.md)
-- [\[ICCV 2025\] VGGSounder: Audio-Visual Evaluations for Foundation Models](../../ICCV2025/audio_speech/vggsounder_audio-visual_evaluations_for_foundation_models.md)
-- [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](../../ICLR2026/audio_speech/paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
+- [\[ICLR 2026\] JALMBench: Benchmarking Jailbreak Vulnerabilities in Audio Language Models](../../ICLR2026/audio_speech/jalmbench_benchmarking_jailbreak_vulnerabilities_in_audio_language_models.md)
+- [\[ICLR 2026\] YuE: Scaling Open Foundation Models for Long-Form Music Generation](../../ICLR2026/audio_speech/yue_scaling_open_foundation_models_for_long-form_music_generation.md)
+- [\[ICML 2026\] Beyond Classification: A Cough Regression Benchmark for Respiratory Acoustic Foundation Models](../../ICML2026/audio_speech/beyond_classification_a_cough_regression_benchmark_for_respiratory_acoustic_foun.md)
 
 </div>
 

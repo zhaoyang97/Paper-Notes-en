@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PocketLLM: Ultimate Compression of Large Language Models via Meta Networks
 description: >-
-  [AAAI2026][Model Compression][LLM compression] PocketLLM proposes compressing LLM weight vectors in a latent space via meta networks (encoder–codebook–decoder), replacing the original weight matrices with a small decoder…
+  [AAAI2026][Model Compression][LLM compression] PocketLLM proposes compressing LLM weight vectors in a latent space via meta networks (encoder–codebook–decoder), replacing the original weight matrices with a small decoder, a compact codebook, and index arrays. The method achieves 10× compression on Llama 2-7B with negligible accuracy degradation, breaking the accuracy bottleneck of traditional quantization and pruning approaches under extreme compression ratios.
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "latent space encoding"
   - "extreme compression"
 date: 2026-05-08
-content_hash: 257b851790f59bb4
+content_hash: 3651903255278b55
 ---
 
 # PocketLLM: Ultimate Compression of Large Language Models via Meta Networks
@@ -145,9 +145,9 @@ Traditional methods perform adequately at 4 bits (~8×) but suffer sharp accurac
 
 - [\[AAAI 2026\] SkipCat: Rank-Maximized Low-Rank Compression of Large Language Models via Shared Projection and Block Skipping](skipcat_rank-maximized_low-rank_compression_of_large_language_models_via_shared_.md)
 - [\[ICLR 2026\] Distillation of Large Language Models via Concrete Score Matching](../../ICLR2026/model_compression/distillation_of_large_language_models_via_concrete_score_matching.md)
+- [\[ACL 2025\] 500xCompressor: Generalized Prompt Compression for Large Language Models](../../ACL2025/model_compression/500xcompressor_generalized_prompt_compression_for_large_language_models.md)
 - [\[AAAI 2026\] Failures to Surface Harmful Contents in Video Large Language Models](failures_to_surface_harmful_contents_in_video_large_language_models.md)
-- [\[ACL 2026\] LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](../../ACL2026/model_compression/lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)
-- [\[AAAI 2026\] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression](efficient_reasoning_for_large_reasoning_language_models_via_certainty-guided_ref.md)
+- [\[ICLR 2026\] Knowledge Distillation for Large Language Models through Residual Learning](../../ICLR2026/model_compression/knowledge_distillation_for_large_language_models_through_residual_learning.md)
 
 </div>
 

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Minimax Optimal Adversarial Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][FTRL] This paper provides the first proof that sublinear regret remains achievable in episodic MDPs where transition kernels are chosen arbitrarily by an adversary (fully adversarial). It proposes the AD-FTRL algorithm, which reduces regret to $\tilde{O}(\sqrt{(|S||A|)^K T})$, and establishes minimax optimality by constructi
+  [ICLR 2026][Reinforcement Learning][Adversarial transition kernels] This paper provides the first proof that sublinear regret remains achievable in episodic MDPs where transition kernels are chosen arbitrarily by an adversary (fully adversarial). It proposes the AD-FTRL algorithm, which reduces regret to $\tilde{O}(\sqrt{(|S||A|)^K T})$, and establishes minimax optimality by constructing a matching lower bound.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - FTRL
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Adversarial transition kernels"
+  - "history-dependent policies"
+  - "FTRL"
+  - "trajectory occupancy measures"
+  - "minimax optimal"
+  - "sublinear regret"
 date: 2026-05-08
-content_hash: e4aa9c1067d40b55
+content_hash: b9617a15647c04ef
 ---
+
 # Minimax Optimal Adversarial Reinforcement Learning
 
 **Conference**: ICLR 2026  

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Universal Properties of Activation Sparsity in Modern Large Language Models
 description: >-
-  [ICLR 2026][Interpretability][activation sparsity] This paper provides a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU). It proposes a universal top-p sparsification framework and a "critical sparsity" metric, finding that activation sparsity increases monotonically with model scale. Input sparsification is identified as the most
+  [ICLR2026][Interpretability][activation sparsity] This paper provides a systematic study of activation sparsity in modern LLMs (GLU architecture + SiLU/GELU). It proposes a universal top-p sparsification framework and a "critical sparsity" metric, finding that activation sparsity increases monotonically with model scale. Input sparsification is identified as the most practical training-free acceleration scheme, and the authors demonstrate for the first time that diffusion-bas…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - activation sparsity
-  - LLM acceleration
-  - GLU architecture
-  - critical sparsity
-  - top-p sparsification
-  - diffusion LLM
+  - "ICLR2026"
+  - "Interpretability"
+  - "activation sparsity"
+  - "LLM acceleration"
+  - "GLU architecture"
+  - "critical sparsity"
+  - "top-p sparsification"
+  - "diffusion LLM"
 date: 2026-05-08
-content_hash: 57d272cbcde07b1d
+content_hash: f9a02553b43fa5f7
 ---
+
 # Universal Properties of Activation Sparsity in Modern Large Language Models
 
 **Conference**: ICLR2026  
@@ -154,9 +155,9 @@ While average critical sparsity within a layer is stable, sparsity in individual
 
 - [\[ICLR 2026\] Spilled Energy in Large Language Models](spilled_energy_in_large_language_models.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
+- [\[ICLR 2026\] To Sink or Not to Sink: Visual Information Pathways in Large Vision-Language Models](to_sink_or_not_to_sink_visual_information_pathways_in_large_vision-language_mode.md)
 - [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](medical_interpretability_and_knowledge_maps_of_large_language_models.md)
-- [\[ICLR 2026\] What Do Large Language Models Know About Opinions?](what_do_large_language_models_know_about_opinions.md)
-- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
+- [\[ACL 2026\] Model Internal Sleuthing: Finding Lexical Identity and Inflectional Features in Modern Language Models](../../ACL2026/interpretability/model_internal_sleuthing_finding_lexical_identity_and_inflectional_features_in_m.md)
 
 </div>
 

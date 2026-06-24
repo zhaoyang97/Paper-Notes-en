@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Building upon the anchor-based framework of Scaffold-GS, this paper employs FiLM to inject "target resolution" into anchor features and introduces a "Pixel Coverage Gate" to dynamically activate Gaussians based on sampling rates, achieving aliasing-free rendering at continuous arbitrary resolutions. Simultaneously, the
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Building upon the anchor-based framework of Scaffold-GS, this paper employs FiLM to inject "target resolution" into anchor features and introduces a "Pixel Coverage Gate" to dynamically activate Gaussians based on sampling rates, achieving aliasing-free rendering at continuous arbitrary resolutions. Simultaneously, the method stores only approximately 30% of proxy anchors and utilizes a residual predictor to reconstruct the remain…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Arbitrary Resolution Rendering"
+  - "Anti-aliasing"
+  - "Anchor Compression"
+  - "FiLM Modulation"
 date: 2026-05-08
-content_hash: 653678f892102638
+content_hash: a7fec10282c8f605
 ---
+
 # 3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ The most significant gains occur at low resolutions (10%), where PSNR increases 
 
 ## Related Papers
 
+- [\[CVPR 2026\] GS²: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting](gs2_graph-based_spatial_distribution_optimization_for_compact_3d_gaussian_splatt.md)
+- [\[CVPR 2026\] Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives](prune_wisely_reconstruct_sharply_compact_3d_gaussian_splatting_via_adaptive_prun.md)
+- [\[CVPR 2026\] Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)
+- [\[CVPR 2026\] Proxy-GS: Unified Occlusion Priors for Training and Inference in Structured 3D Gaussian Splatting](proxy-gs_unified_occlusion_priors_for_training_and_inference_in_structured_3d_ga.md)
 - [\[CVPR 2026\] CGHair: Compact Gaussian Hair Reconstruction with Card Clustering](cghair_compact_gaussian_hair_reconstruction_with_card_clustering.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] IDESplat: Iterative Depth Probability Estimation for Generalizable 3D Gaussian Splatting](idesplat_iterative_depth_probability_estimation_for_generalizable_3d_gaussian_sp.md)
-- [\[CVPR 2026\] 4C4D: 4 Camera 4D Gaussian Splatting](4c4d_4_camera_4d_gaussian_splatting.md)
 
 </div>
 

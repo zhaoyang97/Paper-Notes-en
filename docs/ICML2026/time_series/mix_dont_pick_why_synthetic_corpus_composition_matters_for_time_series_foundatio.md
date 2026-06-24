@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Mix, Don't Pick: Why Synthetic Corpus Composition Matters for Time Series Foundation Model Pretraining
 description: >-
-  [ICML 2026][Time Series][Pretraining] This paper performs a systematic comparative study using 11 synthetic time series generators and 2 time series foundation models trained from scratch. It finds that generator rankings are unstable across different architectures, and the forecasting error gap between the best and worst generators can be as large as 2. R
+  [ICML 2026][Time Series][Time Series Foundation Models] This paper performs a systematic comparative study using 11 synthetic time series generators and 2 time series foundation models trained from scratch. It finds that generator rankings are unstable across different architectures, and the forecasting error gap between the best and worst generators can be as large as 2. Rather than solving the difficult selection problem, simply mixing all generators with equal weights (Mix…
 tags:
-  - ICML 2026
-  - Time Series
-  - Pretraining
+  - "ICML 2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Synthetic Data"
+  - "Corpus Composition"
+  - "Pretraining"
+  - "Zero-shot Forecasting"
 date: 2026-05-08
-content_hash: e0dc646482ae42f3
+content_hash: 4d95300601e965d7
 ---
+
 # Mix, Don't Pick: Why Synthetic Corpus Composition Matters for Time Series Foundation Model Pretraining
 
 **Conference**: ICML 2026  
@@ -126,11 +131,11 @@ Takeaway: CRPS differs by up to $2.1\times$ between generators; rankings flip be
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Synthetic Series-Symbol Data Generation for Time Series Foundation Models](../../NeurIPS2025/time_series/synthetic_series-symbol_data_generation_for_time_series_foundation_models.md)
-- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
-- [\[AAAI 2026\] ProbFM: Probabilistic Time Series Foundation Model with Uncertainty Decomposition](../../AAAI2026/time_series/probfm_probabilistic_time_series_foundation_model_with_uncertainty_decomposition.md)
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](../../ICLR2026/time_series/cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
+- [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](../../ICLR2026/time_series/adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
+- [\[ICML 2026\] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density](olivia_harmonizing_time_series_foundation_models_with_power_spectral_density.md)
+- [\[ICLR 2026\] UniCA: Unified Covariate Adaptation for Time Series Foundation Model](../../ICLR2026/time_series/unica_unified_covariate_adaptation_for_time_series_foundation_model.md)
 - [\[ICML 2026\] Do Time Series Foundation Model Benchmarks Hide Regime-Dependent Failures? Evidence from Traffic Speed Forecasting](do_time_series_foundation_model_benchmarks_hide_regime-dependent_failures_eviden.md)
-- [\[NeurIPS 2025\] Frequency Matters: When Time Series Foundation Models Fail Under Spectral Shift](../../NeurIPS2025/time_series/frequency_matters_when_time_series_foundation_models_fail_under_spectral_shift.md)
 
 </div>
 

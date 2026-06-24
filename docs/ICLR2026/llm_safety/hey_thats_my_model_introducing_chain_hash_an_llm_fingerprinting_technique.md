@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Hey, That's My Model! Introducing Chain & Hash, An LLM Fingerprinting Technique
 description: >-
-  [ICLR 2026][LLM Safety][LoRA] The paper proposes Chain & Hash: an LLM fingerprinting technique that **deterministically binds** a set of fingerprint questions to their target answers using cryptographic hashing. This allows model owners to provide non-forgeable proof of ownership under pure black-box conditions. Through random padding and meta-prom
+  [ICLR 2026][LLM Safety][LLM Fingerprinting] The paper proposes Chain & Hash: an LLM fingerprinting technique that **deterministically binds** a set of fingerprint questions to their target answers using cryptographic hashing. This allows model owners to provide non-forgeable proof of ownership under pure black-box conditions. Through random padding and meta-prompt diversification during training, the fingerprint survives fine-tuning, quantization, and style-altering prompts.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - LoRA
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "LLM Fingerprinting"
+  - "Model IP Protection"
+  - "Cryptographic Binding"
+  - "Black-box Verification"
+  - "Meta-prompt Robustness"
+  - "LoRA"
 date: 2026-05-08
-content_hash: 5e6ec529dac15ecd
+content_hash: 74d9a269c4e0c046
 ---
+
 # Hey, That's My Model! Introducing Chain & Hash, An LLM Fingerprinting Technique
 
 **Conference**: ICLR 2026  
@@ -114,7 +120,7 @@ Random questions are generally more resistant to fine-tuning than Natural questi
 - [\[AAAI 2026\] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification](../../AAAI2026/llm_safety/iseal_encrypted_fingerprinting_for_reliable_llm_ownership_verification.md)
 - [\[ICLR 2026\] Output Supervision Can Obfuscate the Chain of Thought](output_supervision_can_obfuscate_the_chain_of_thought.md)
 - [\[ICLR 2026\] Hubble: A Model Suite to Advance the Study of LLM Memorization](hubble_a_model_suite_to_advance_the_study_of_llm_memorization.md)
-- [\[ACL 2026\] Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge](../../ACL2026/llm_safety/beyond_end-to-end_dynamic_chain_optimization_for_private_llm_adaptation_on_the_e.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
 
 </div>
 

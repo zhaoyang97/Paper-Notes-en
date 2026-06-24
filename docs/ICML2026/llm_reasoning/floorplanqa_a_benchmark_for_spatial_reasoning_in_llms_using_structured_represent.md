@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations
 description: >-
-  [ICML 2026][LLM Reasoning][Paper Note] FloorplanQA systematically diagnoses the "pure symbolic spatial reasoning" capabilities of 15 cutting-edge LLMs using 2,000 JSON/XML-formatted 2D indoor layouts and 16,000 geometric problems (distance, visibility, pathing, placement, etc.). The study reveals that while models can calculate simple distances, they consis
+  [ICML 2026][Reasoning][Spatial Reasoning] FloorplanQA systematically diagnoses the "pure symbolic spatial reasoning" capabilities of 15 cutting-edge LLMs using 2,000 JSON/XML-formatted 2D indoor layouts and 16,000 geometric problems (distance, visibility, pathing, placement, etc.). The study reveals that while models can calculate simple distances, they consistently fail at set unions, planning, and constraint satisfaction. Furthermore, Python tool augmentation fixes arithmet…
 tags:
-  - ICML 2026
-  - LLM Reasoning
+  - "ICML 2026"
+  - "Reasoning"
+  - "Spatial Reasoning"
+  - "Structured Representation"
+  - "JSON Layout"
+  - "Geometric Inference"
+  - "LLM Diagnostic Benchmark"
 date: 2026-05-08
-content_hash: 49bc0d91eafce75d
+content_hash: 9b0b8fa48cf73427
 ---
+
 # FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations
 
 **Conference**: ICML 2026  
@@ -125,11 +131,11 @@ Comparison of Tool Augmentation (GPT-4.1 + Python interpreter) on HSSD:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Structured Reasoning for LLMs: A Unified Framework for Efficiency and Explainability](../../ICLR2026/llm_reasoning/structured_reasoning_for_llms_a_unified_framework_for_efficiency_and_explainabil.md)
 - [\[ICML 2026\] CoCoReviewBench: A Completeness- and Correctness-Oriented Benchmark for AI Reviewers](cocoreviewbench_a_completeness-_and_correctness-oriented_benchmark_for_ai_review.md)
+- [\[ICLR 2026\] Rethinking LLM Reasoning: From Explicit Trajectories to Latent Representations](../../ICLR2026/llm_reasoning/rethinking_llm_reasoning_from_explicit_trajectories_to_latent_representations.md)
+- [\[ICML 2026\] Calibration of Structured Ignorance Certificates for Diagnosing Unknown Unknowns in Reasoning Models](calibration_of_structured_ignorance_certificates_for_diagnosing_unknown_unknowns.md)
 - [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
-- [\[ICML 2025\] Adversarial Manipulation of Reasoning Models using Internal Representations](../../ICML2025/llm_reasoning/adversarial_manipulation_of_reasoning_models_using_internal_representations.md)
-- [\[ICML 2026\] Evaluating Relational Reasoning in LLMs with REL](evaluating_relational_reasoning_in_llms_with_rel.md)
-- [\[NeurIPS 2025\] TimE: A Multi-level Benchmark for Temporal Reasoning of LLMs in Real-World Scenarios](../../NeurIPS2025/llm_reasoning/time_a_multilevel_benchmark_for_temporal_reasoning_of_llms_i.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Benefits and Limitations of Communication in Multi-Agent Reasoning
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] This paper establishes a theoretical framework based on Transformer expressivity for multi-agent reasoning systems that "chunk long contexts, process them via multiple LLM agents, and aggregate results." It proves tight bounds on **how many agents and how much communication are needed to achieve specific parallel speed
+  [ICLR2026][Multi-Agent][Multi-agent systems] This paper establishes a theoretical framework based on Transformer expressivity for multi-agent reasoning systems that "chunk long contexts, process them via multiple LLM agents, and aggregate results." It proves tight bounds on **how many agents and how much communication are needed to achieve specific parallel speedups** across associative recall, state tracking, and k-hop reasoning. It identifies three depth–communication trade…
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Multi-agent systems"
+  - "Communication complexity"
+  - "State tracking"
+  - "k-hop reasoning"
+  - "Transformer expressivity"
 date: 2026-05-08
-content_hash: bb441b389a72b21d
+content_hash: 6d2c583a988fba28
 ---
+
 # Benefits and Limitations of Communication in Multi-Agent Reasoning
 
 **Conference**: ICLR2026  
@@ -118,14 +124,17 @@ The goal is to verify if the three theoretical regimes appear in real LLMs. The 
 
 <div class="related-papers" markdown="1">
 
-- **Chain-of-Agents: Large Language Models Tiered Reasoning**
-- **LongAgent: Scaling Language Models to 128k Context via Multi-Agent Collaboration**
-- **The Expressive Power of Transformers with Chain of Thought**
+## Related Papers
+
+- [\[ICLR 2026\] Learning Efficient and Interpretable Multi-Agent Communication](learning_efficient_and_interpretable_multi-agent_communication.md)
+- [\[ICLR 2026\] Cache-to-Cache: Direct Semantic Communication Between Large Language Models](cache-to-cache_direct_semantic_communication_between_large_language_models.md)
+- [\[AAAI 2026\] SafeSieve: From Heuristics to Experience in Progressive Pruning for LLM-based Multi-Agent Communication](../../AAAI2026/multi_agent/safesieve_from_heuristics_to_experience_in_progressive_pruning_for_llm-based_mul.md)
+- [\[ICLR 2026\] KVComm: Enabling Efficient LLM Communication through Selective KV Sharing](kvcomm_enabling_efficient_llm_communication_through_selective_kv_sharing.md)
+- [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](../../ACL2026/multi_agent/cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Efficient and Interpretable Multi-Agent Communication](learning_efficient_and_interpretable_multi-agent_communication.md)

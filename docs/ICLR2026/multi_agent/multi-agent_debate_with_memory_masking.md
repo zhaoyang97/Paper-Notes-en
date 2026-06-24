@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Multi-Agent Debate with Memory Masking (MAD-M²)
 description: >-
-  [ICLR 2026][Multi-Agent][LLM Reasoning] This paper points out that Multi-Agent Debate (MAD) can be misled by "false memories" remaining from previous rounds. It theoretically proves that MAD performance is constrained by memory quality and proposes MAD-M², which applies an "evaluate-mask" filter to the previous round's memory before each debate round, ensuri
+  [ICLR 2026][Multi-Agent][Multi-agent debate] This paper points out that Multi-Agent Debate (MAD) can be misled by "false memories" remaining from previous rounds. It theoretically proves that MAD performance is constrained by memory quality and proposes MAD-M², which applies an "evaluate-mask" filter to the previous round's memory before each debate round, ensuring agents reason only based on reliable memories.
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Multi-Agent"
+  - "Multi-agent debate"
+  - "memory masking"
+  - "test-time scaling"
+  - "LLM reasoning"
+  - "robustness"
 date: 2026-05-08
-content_hash: 179adfdb434ea892
+content_hash: 7296fa6a9c91ca15
 ---
+
 # Multi-Agent Debate with Memory Masking (MAD-M²)
 
 **Conference**: ICLR 2026  
@@ -115,10 +120,10 @@ Key takeaway: On stronger models like Math/QwQ, the objective strategy MAD-M²(O
 ## Related Papers
 
 - [\[ICLR 2026\] MAD-Logic: Multi-Agent Debate Enhances Symbolic Translation and Reasoning](mad-logic_multi-agent_debate_enhances_symbolic_translation_and_reasoning.md)
-- [\[ICLR 2026\] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](graphplanner_graph_memory-augmented_agentic_routing_for_multi-agent_llms.md)
 - [\[ICLR 2026\] Completing Missing Annotation: Multi-Agent Debate for Accurate and Scalable Relevance Assessment](completing_missing_annotation_multi-agent_debate_for_accurate_and_scalable_relev.md)
-- [\[ACL 2026\] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate](../../ACL2026/multi_agent/latent_agents_a_post-training_procedure_for_internalized_multi-agent_debate.md)
-- [\[ICML 2026\] E-mem: Multi-Agent Based Episodic Context Reconstruction for LLM Agent Memory](../../ICML2026/multi_agent/e-mem_multi-agent_based_episodic_context_reconstruction_for_llm_agent_memory.md)
+- [\[ICLR 2026\] GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](graphplanner_graph_memory-augmented_agentic_routing_for_multi-agent_llms.md)
+- [\[ACL 2025\] CortexDebate: Debating Sparsely and Equally for Multi-Agent Debate](../../ACL2025/multi_agent/cortexdebate_debating_sparsely_and_equally_for_multi-agent_debate.md)
+- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs](../../ACL2026/multi_agent/topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
 
 </div>
 

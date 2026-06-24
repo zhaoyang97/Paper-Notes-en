@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] TingIS is an end-to-end risk event discovery system deployed on a FinTech platform. Through a five-module architecture (semantic distillation, cascaded routing, event linking engine, state management, and multi-dimensional denoising), it extracts actionable risk events from massive, noisy customer complaints in real-ti
+  [ACL 2026][LLM (Other)][Risk event discovery] TingIS is an end-to-end risk event discovery system deployed on a FinTech platform. Through a five-module architecture (semantic distillation, cascaded routing, event linking engine, state management, and multi-dimensional denoising), it extracts actionable risk events from massive, noisy customer complaints in real-time, achieving a P90 alert latency of 3.5 minutes and a 95% discovery rate for high-priority incidents.
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Risk event discovery"
+  - "customer complaint mining"
+  - "incident linking"
+  - "streaming processing"
+  - "SNR optimization"
 date: 2026-05-08
-content_hash: 019a6b03c6e2af74
+content_hash: 9cb05bba84b444e2
 ---
+
 # TingIS: Real-time Risk Event Discovery from Noisy Customer Incidents at Enterprise Scale
 
 **Conference**: ACL 2026  
@@ -147,10 +153,10 @@ Relying solely on volume thresholds triggers "alert storms" during non-failure s
 ## Related Papers
 
 - [\[ACL 2025\] A Large-Scale Real-World Evaluation of an LLM-Based Virtual Teaching Assistant](../../ACL2025/llm_nlp/a_large-scale_real-world_evaluation_of_llm-based_virtual_teaching_assistant.md)
-- [\[ICLR 2026\] How Catastrophic is Your LLM? Certifying Risk in Conversation](../../ICLR2026/llm_nlp/how_catastrophic_is_your_llm_certifying_risk_in_conversation.md)
 - [\[ICML 2026\] Rare Event Analysis of Large Language Models](../../ICML2026/llm_nlp/rare_event_analysis_of_large_language_models.md)
 - [\[ICLR 2026\] Trapped by simplicity: When Transformers fail to learn from noisy features](../../ICLR2026/llm_nlp/trapped_by_simplicity_when_transformers_fail_to_learn_from_noisy_features.md)
 - [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
+- [\[AAAI 2026\] Whispering Agents: An Event-Driven Covert Communication Protocol for the Internet of Agents](../../AAAI2026/llm_nlp/whispering_agents_an_event-driven_covert_communication_protocol_for_the_internet.md)
 
 </div>
 

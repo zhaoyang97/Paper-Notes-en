@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] LLM Fingerprinting via Semantically Conditioned Watermarks
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper replaces the "fixed query-key memorization fingerprinting" with a new paradigm: "distributing statistical watermark signals within a specific semantic domain (e.g., French)." This makes model fingerprinting robust to fine-tuning, quantization, pruning, and adversarial rewriting for the first time, while rema
+  [ICLR 2026][LLM Safety][Model Fingerprinting] This paper replaces the "fixed query-key memorization fingerprinting" with a new paradigm: "distributing statistical watermark signals within a specific semantic domain (e.g., French)." This makes model fingerprinting robust to fine-tuning, quantization, pruning, and adversarial rewriting for the first time, while remaining undetectable to the deploying party in both queries and responses.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Model Fingerprinting"
+  - "LLM Watermarking"
+  - "Semantically Conditioned Watermarking"
+  - "Ownership Verification"
+  - "Robustness"
+  - "Stealthiness"
 date: 2026-05-08
-content_hash: 1f24fe92f410e2ea
+content_hash: a9ab4fd22777a7bf
 ---
+
 # LLM Fingerprinting via Semantically Conditioned Watermarks
 
 **Conference**: ICLR 2026  
@@ -143,8 +150,8 @@ Tested using GPT-4o as a discriminator to distinguish if queries/responses are f
 - [\[ICLR 2026\] Hey, That's My Model! Introducing Chain & Hash, An LLM Fingerprinting Technique](hey_thats_my_model_introducing_chain_hash_an_llm_fingerprinting_technique.md)
 - [\[AAAI 2026\] iSeal: Encrypted Fingerprinting for Reliable LLM Ownership Verification](../../AAAI2026/llm_safety/iseal_encrypted_fingerprinting_for_reliable_llm_ownership_verification.md)
 - [\[ICLR 2026\] In-Context Watermarks for Large Language Models](in-context_watermarks_for_large_language_models.md)
-- [\[ACL 2026\] Topic-Based Watermarks for Large Language Models](../../ACL2026/llm_safety/topic-based_watermarks_for_large_language_models.md)
 - [\[ACL 2025\] Can LLM Watermarks Robustly Prevent Unauthorized Knowledge Distillation?](../../ACL2025/llm_safety/llm_watermark_distillation_robustness.md)
+- [\[NeurIPS 2025\] SAEMark: Steering Personalized Multilingual LLM Watermarks with Sparse Autoencoders](../../NeurIPS2025/llm_safety/saemark_steering_personalized_multilingual_llm_watermarks_with_sparse_autoencode.md)
 
 </div>
 

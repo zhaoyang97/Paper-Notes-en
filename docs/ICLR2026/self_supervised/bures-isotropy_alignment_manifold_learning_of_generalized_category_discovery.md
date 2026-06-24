@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] BIA treats the class token representation in Generalized Category Discovery (GCD) as a manifold geometry problem requiring repair. It aligns the mini-batch class-token Gram matrix with an isotropic prior using Bures distance and achieves lightweight regularization through equivalent nuclear norm maximization. This enha
+  [ICLR 2026][Self-Supervised Learning][Generalized Category Discovery] BIA treats the class token representation in Generalized Category Discovery (GCD) as a manifold geometry problem requiring repair. It aligns the mini-batch class-token Gram matrix with an isotropic prior using Bures distance and achieves lightweight regularization through equivalent nuclear norm maximization. This enhances clustering accuracy and the stability of category number estimation without modifying…
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Generalized Category Discovery"
+  - "Bures Distance"
+  - "Isotropy"
+  - "Dimensional Collapse"
+  - "Category Number Estimation"
 date: 2026-05-08
-content_hash: ec9f740a6739d7bc
+content_hash: 0e71e7235149fede
 ---
+
 # Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery
 
 **Conference**: ICLR 2026  
@@ -158,11 +164,11 @@ The general trend is that BIA's benefit to New accuracy is usually more pronounc
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](../../NeurIPS2025/self_supervised/consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
 - [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](../../CVPR2026/self_supervised/learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
-- [\[NeurIPS 2025\] Consistent Supervised-Unsupervised Alignment for Generalized Category Discovery](../../NeurIPS2025/self_supervised/consistent_supervised-unsupervised_alignment_for_generalized_category_discovery.md)
 - [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](../../CVPR2026/self_supervised/seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
-- [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](../../CVPR2026/self_supervised/tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
+- [\[CVPR 2026\] Decouple Your Discovery and Memory in Continual Generalized Category Discovery](../../CVPR2026/self_supervised/decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)
 
 </div>
 

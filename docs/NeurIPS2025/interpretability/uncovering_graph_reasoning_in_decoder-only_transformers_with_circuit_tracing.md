@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Uncovering Graph Reasoning in Decoder-only Transformers with Circuit Tracing
 description: >-
-  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Interpretability][Graph Reasoning] This paper applies a circuit tracing framework to analyze the internal mechanisms of decoder-only Transformers on graph reasoning tasks…
+  [NeurIPS 2025 (Workshop on Efficient Reasoning)][Interpretability][Graph Reasoning] This paper applies a circuit tracing framework to analyze the internal mechanisms of decoder-only Transformers on graph reasoning tasks, uncovering two core reasoning mechanisms: token merging and structural memorization.
 tags:
   - "NeurIPS 2025 (Workshop on Efficient Reasoning)"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Token Merging"
   - "Structural Memorization"
 date: 2026-05-08
-content_hash: 2498b15ef9fdf1df
+content_hash: d49674790fef1aa7
 ---
 
 # Uncovering Graph Reasoning in Decoder-only Transformers with Circuit Tracing
@@ -155,11 +155,11 @@ where $G$ denotes the textualized representation of the input graph.
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] How Do Transformers Learn Implicit Reasoning?](how_do_transformers_learn_implicit_reasoning.md)
+- [\[ACL 2025\] Safety is Not Only About Refusal: Reasoning-Enhanced Fine-tuning for Interpretable LLM Safety](../../ACL2025/interpretability/safety_is_not_only_about_refusal_reasoning-enhanced_fine-tuning_for_interpretabl.md)
 - [\[ICML 2026\] Riemannian Generative Decoder](../../ICML2026/interpretability/riemannian_generative_decoder.md)
+- [\[ICLR 2026\] Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping](../../ICLR2026/interpretability/reforming_the_mechanism_editing_reasoning_patterns_in_llms_with_circuit_reshapin.md)
 - [\[ICML 2026\] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers](../../ICML2026/interpretability/dissecting_multimodal_in-context_learning_modality_asymmetries_and_circuit_dynam.md)
-- [\[NeurIPS 2025\] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers](nnterp_a_standardized_interface_for_mechanistic_interpretability_of_transformers.md)
-- [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
-- [\[NeurIPS 2025\] What Happens During the Loss Plateau? Understanding Abrupt Learning in Transformers](what_happens_during_the_loss_plateau_understanding_abrupt_learning_in_transforme.md)
 
 </div>
 

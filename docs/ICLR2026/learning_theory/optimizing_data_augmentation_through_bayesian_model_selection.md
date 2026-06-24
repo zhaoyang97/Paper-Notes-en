@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Optimizing Data Augmentation through Bayesian Model Selection
 description: >-
-  [ICLR 2026][learning_theory][ELBO] This paper proposes OPTIMA, which treats data augmentation (DA) parameters as model hyperparameters and reformulates the "augmentation strategy selection" as a Bayesian model selection problem. By utilizing a tractable augmented ELBO, it jointly optimizes augmentation parameters and model parameters within a single tra
+  [ICLR 2026][Learning Theory][Data Augmentation] This paper proposes OPTIMA, which treats data augmentation (DA) parameters as model hyperparameters and reformulates the "augmentation strategy selection" as a Bayesian model selection problem. By utilizing a tractable augmented ELBO, it jointly optimizes augmentation parameters and model parameters within a single training loop, eliminating the expensive cost of repeated training required by grid search or Bayesian optimization…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - ELBO
-  - PAC-Bayes
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Bayesian Methods"
+  - "Variational Inference"
+  - "Data Augmentation"
+  - "Bayesian Model Selection"
+  - "ELBO"
+  - "PAC-Bayes"
+  - "Calibration"
 date: 2026-05-08
-content_hash: 6fdb5e90e60eb427
+content_hash: 9276e489eff3cade
 ---
+
 # Optimizing Data Augmentation through Bayesian Model Selection
 
 **Conference**: ICLR 2026  
@@ -139,9 +145,9 @@ To demonstrate that it is not limited to continuous/geometric transformations, t
 
 - [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
 - [\[ICLR 2026\] Pseudo-Non-Linear Data Augmentation: A Constrained Energy Minimization Viewpoint](pseudo-non-linear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
+- [\[ICLR 2026\] Almost Bayesian: Dynamics of SGD Through Singular Learning Theory](almost_bayesian_dynamics_of_sgd_through_singular_learning_theory.md)
 - [\[ICLR 2026\] Robust Amortized Bayesian Inference with Self-Consistency Losses on Unlabeled Data](robust_amortized_bayesian_inference_with_self-consistency_losses_on_unlabeled_da.md)
 - [\[ICLR 2026\] Resurfacing the Instance-only Dependent Label Noise Model through Loss Correction](resurfacing_the_instance-only_dependent_label_noise_model_through_loss_correctio.md)
-- [\[ICLR 2026\] Reshaping Reasoning in LLMs: A Theoretical Analysis of RL Training Dynamics through Pattern Selection](reshaping_reasoning_in_llms_a_theoretical_analysis_of_rl_training_dynamics_throu.md)
 
 </div>
 

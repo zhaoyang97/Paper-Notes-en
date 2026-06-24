@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PrITTI replaces voxels with a hybrid representation of "vectorized object primitives (cuboid/ellipsoid) + rasterized ground." It first utilizes a Layout VAE to compress 3D urban semantic layouts into a structured 2D latent space, then trains a Latent Diffusion Transformer (DiT) for controllable generation. It achieves
+  [CVPR 2026][3D Vision][3D semantic scene generation] PrITTI replaces voxels with a hybrid representation of "vectorized object primitives (cuboid/ellipsoid) + rasterized ground." It first utilizes a Layout VAE to compress 3D urban semantic layouts into a structured 2D latent space, then trains a Latent Diffusion Transformer (DiT) for controllable generation. It achieves SOTA on KITTI-360 with lower memory requirements, faster inference, and superior editability…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D semantic scene generation"
+  - "primitive representation"
+  - "latent space diffusion"
+  - "editability"
+  - "autonomous driving simulation"
 date: 2026-05-08
-content_hash: cf68a5d1a682c8d1
+content_hash: 1c5f622df32d570b
 ---
+
 # PrITTI: Primitive-based Generation of Controllable and Editable 3D Semantic Urban Scenes
 
 **Conference**: CVPR 2026  
@@ -142,7 +148,7 @@ Generation is evaluated using Precision, Recall, FID, and Inception Score (IS) f
 - [\[CVPR 2026\] WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation](weathercity_urban_scene_reconstruction_with_controllable_multi-weather_transform.md)
 - [\[CVPR 2026\] DepthFocus: Controllable Depth Estimation for See-Through Scenes](depthfocus_controllable_depth_estimation_for_see-through_scenes.md)
 - [\[CVPR 2026\] VAD-GS: Visibility-Aware Densification for 3D Gaussian Splatting in Dynamic Urban Scenes](vad-gs_visibility-aware_densification_for_3d_gaussian_splatting_in_dynamic_urban.md)
-- [\[CVPR 2026\] Multimodal Semantic Bias Mitigation for Diverse Text-To-3D Generation](multimodal_semantic_bias_mitigation_for_diverse_text-to-3d_generation.md)
+- [\[CVPR 2026\] Residual Primitive Fitting of 3D Shapes with SuperFrusta](residual_primitive_fitting_of_3d_shapes_with_superfrusta.md)
 - [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
 
 </div>

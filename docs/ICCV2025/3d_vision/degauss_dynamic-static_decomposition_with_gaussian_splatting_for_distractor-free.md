@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes DeGauss, a self-supervised framework based on decoupled dynamic-static Gaussian Splatting. By combining foreground dynamic Gaussians and background static…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] This paper proposes DeGauss, a self-supervised framework based on decoupled dynamic-static Gaussian Splatting. By combining foreground dynamic Gaussians and background static Gaussians via a probabilistic composition mask, it achieves distractor-free 3D reconstruction across a broad range of scenarios, from casually captured image collections to highly dynamic egocentric videos.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "distractor-free reconstruction"
   - "self-supervised"
 date: 2026-05-08
-content_hash: e5d07d569a70b816
+content_hash: 6871538ab684bb95
 ---
 
 # DeGauss: Dynamic-Static Decomposition with Gaussian Splatting for Distractor-free 3D Reconstruction
@@ -139,8 +139,8 @@ DeGauss outperforms SpotlessSplats in LPIPS on all 6 scenes of NeRF-on-the-go. O
 - [\[ICCV 2025\] Event-boosted Deformable 3D Gaussians for Dynamic Scene Reconstruction](event-boosted_deformable_3d_gaussians_for_dynamic_scene_reconstruction.md)
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
 - [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
-- [\[ICCV 2025\] Proactive Scene Decomposition and Reconstruction](proactive_scene_decomposition_and_reconstruction.md)
 - [\[CVPR 2026\] Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](../../CVPR2026/3d_vision/dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)
+- [\[CVPR 2025\] DeSplat: Decomposed Gaussian Splatting for Distractor-Free Rendering](../../CVPR2025/3d_vision/desplat_decomposed_gaussian_splatting_for_distractor-free_rendering.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SineProject: Machine Unlearning for Stable Vision–Language Alignment
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] Addressing the issue where the Jacobian of the projector layer becomes severely ill-conditioned during machine unlearning in Multimodal Large Language Models (MLLMs), leading to vision-language alignment drift, SineProject is proposed. By applying a sine modulation ($\sin(\Delta W)$) to the projector weights, the param
+  [CVPR 2026][LLM Safety][Machine Unlearning] Addressing the issue where the Jacobian of the projector layer becomes severely ill-conditioned during machine unlearning in Multimodal Large Language Models (MLLMs), leading to vision-language alignment drift, SineProject is proposed. By applying a sine modulation ($\sin(\Delta W)$) to the projector weights, the parameter range is constrained to $[-1,1]$, reducing the Jacobian condition number by 3-4 orders of magnitude. This enabl…
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Multimodal Large Language Models"
+  - "Vision-Language Alignment"
+  - "Projector Stability"
+  - "Jacobian Condition Number"
 date: 2026-05-08
-content_hash: a0401c0c6c5a1791
+content_hash: 34d0069a8f451c2e
 ---
+
 # SineProject: Machine Unlearning for Stable Vision–Language Alignment
 
 **Conference**: CVPR 2026  
@@ -176,15 +182,14 @@ Key Conclusion: SineProject significantly leads in all deletion ratios (8-16 poi
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)
+- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
+- [\[CVPR 2026\] pH-Strips for Selective Forgetting: A Blunt but Fast Diagnostic Baseline for Machine Unlearning](ph-strips_for_selective_forgetting_a_blunt_but_fast_diagnostic_baseline_for_mach.md)
+- [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
 - [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](../../ICLR2026/llm_safety/ofmu_optimization-driven_framework_for_machine_unlearning.md)
-- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
-- [\[ICML 2026\] DualOptim+: Bridging Shared and Decoupled Optimizer States for Better Machine Unlearning in Large Language Models](../../ICML2026/llm_safety/dualoptim_bridging_shared_and_decoupled_optimizer_states_for_better_machine_unle.md)
+- [\[NeurIPS 2025\] SIMU: Selective Influence Machine Unlearning](../../NeurIPS2025/llm_safety/simu_selective_influence_machine_unlearning.md)
 
 </div>
 

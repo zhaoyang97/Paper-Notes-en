@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] ProactiveLLM enables streaming LLMs to decide "when to speak" using their own internal states (attention or prediction entropy). By leveraging masked streaming modeling and synchronous privileged self-distillation, the model learns to perceive whether the "semantics are sufficient" without relying on any external align
+  [ICML 2026][LLM Efficiency][Streaming LLM] ProactiveLLM enables streaming LLMs to decide "when to speak" using their own internal states (attention or prediction entropy). By leveraging masked streaming modeling and synchronous privileged self-distillation, the model learns to perceive whether the "semantics are sufficient" without relying on any external alignment labels, significantly compressing interaction latency while maintaining performance.
 tags:
-  - ICML 2026
-  - LLM Efficiency
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "Streaming LLM"
+  - "active interaction"
+  - "masked streaming modeling"
+  - "self-distillation"
+  - "endogenous signals"
 date: 2026-05-08
-content_hash: 147759c215e1e90f
+content_hash: 814ffc39eb0e430e
 ---
+
 # ProactiveLLM: Learning Active Interaction for Streaming Large Language Models
 
 **Conference**: ICML 2026  
@@ -148,11 +154,11 @@ While matching strong teacher baselines in translation, ProactiveLLM significant
 
 ## Related Papers
 
+- [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](ir3de_a_linear_router_for_large_language_models.md)
 - [\[ICLR 2026\] Deep Hierarchical Learning with Nested Subspace Networks for Large Language Models](../../ICLR2026/llm_efficiency/deep_hierarchical_learning_with_nested_subspace_networks_for_large_language_mode.md)
 - [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
+- [\[ICLR 2026\] Learning to Parallel: Accelerating Diffusion Large Language Models via Learnable Parallel Decoding](../../ICLR2026/llm_efficiency/learning_to_parallel_accelerating_diffusion_large_language_models_via_learnable_.md)
 - [\[ICLR 2026\] Expert Divergence Learning for MoE-based Language Models](../../ICLR2026/llm_efficiency/expert_divergence_learning_for_moe-based_language_models.md)
-- [\[ICML 2026\] IR3DE: A Linear Router for Large Language Models](ir3de_a_linear_router_for_large_language_models.md)
-- [\[ICML 2026\] Scout: Active Information Foraging for Long-Text Understanding with Decoupled Epistemic States](scout_active_information_foraging_for_long-text_understanding_with_decoupled_epi.md)
 
 </div>
 

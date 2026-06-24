@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] The Quest for Generalizable Motion Generation: Data, Model, and Evaluation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] This paper addresses "generalizable 3D human motion generation" by simultaneously augmenting data, refining the model, and redesigning evaluation. It expands the long-tail motion coverage of MoGen using open-world semantic priors from ViGen, converts these priors into usable text-to-motion capabilities via a dual-branc
+  [ICLR 2026][Video Generation][Text-to-Motion Generation] This paper addresses "generalizable 3D human motion generation" by simultaneously augmenting data, refining the model, and redesigning evaluation. It expands the long-tail motion coverage of MoGen using open-world semantic priors from ViGen, converts these priors into usable text-to-motion capabilities via a dual-branch gated DiT and a distilled version (ViMoGen-light), and validates generalization, alignment…
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Text-to-Motion Generation"
+  - "Human Motion Generation"
+  - "Video Generation Priors"
+  - "Multi-source Motion Data"
+  - "Motion Evaluation"
 date: 2026-05-08
-content_hash: 9caab16d88771c12
+content_hash: e3946678e36bce14
 ---
+
 # The Quest for Generalizable Motion Generation: Data, Model, and Evaluation
 
 **Conference**: ICLR 2026  
@@ -143,8 +149,8 @@ Data composition ablation shows that systematic multi-source inclusion yields cu
 - Value: ⭐⭐⭐⭐⭐  
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

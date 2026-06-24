@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] AttnPO: Attention-Guided Process Supervision for Efficient Reasoning
 description: >-
-  [ACL 2026][Reinforcement Learning][Attention] Ours proposes AttnPO, a low-overhead process-supervised RL framework that leverages the model's intrinsic attention signals for step-level credit assignment. By identifying Key-Focus Heads (KFH) to distinguish between redundant and critical reasoning steps, AttnPO significantly reduces reasoning length while substantia
+  [ACL 2026][Reinforcement Learning][Overthinking] Ours proposes AttnPO, a low-overhead process-supervised RL framework that leverages the model's intrinsic attention signals for step-level credit assignment. By identifying Key-Focus Heads (KFH) to distinguish between redundant and critical reasoning steps, AttnPO significantly reduces reasoning length while substantially improving accuracy.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Attention
+  - "ACL 2026"
+  - "Reinforcement Learning"
+  - "Overthinking"
+  - "Process Supervision"
+  - "Attention Mechanism"
+  - "Reasoning Efficiency"
 date: 2026-05-08
-content_hash: a7e4ceacb495d18d
+content_hash: 4db6512743bb1bdd
 ---
+
 # AttnPO: Attention-Guided Process Supervision for Efficient Reasoning
 
 **Conference**: ACL 2026  
@@ -142,7 +146,7 @@ The reward function is $r_i = \mathbb{I}[o_i \text{ correct}](1 - \alpha \cdot \
 
 ## Related Papers
 
-- [\[ICLR 2026\] Attention as a Compass: Efficient Exploration for Process-Supervised RL in Reasoning Models](../../ICLR2026/reinforcement_learning/attention_as_a_compass_efficient_exploration_for_process-supervised_rl_in_reason.md)
+- [\[ACL 2026\] Beyond Fully Random Masking: Attention-Guided Denoising and Optimization for Diffusion Language Models](beyond_fully_random_masking_attention-guided_denoising_and_optimization_for_diff.md)
 - [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](../../ICLR2026/reinforcement_learning/from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
 - [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
 - [\[ACL 2026\] Good Reasoning Makes Good Demonstrations: Implicit Reasoning Quality Supervision via In-Context Reinforcement Learning](good_reasoning_makes_good_demonstrations_implicit_reasoning_quality_supervision_.md)

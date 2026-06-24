@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking
 description: >-
-  [ICLR 2026][Autonomous Driving][Vision-Language Model] DriveAgent-R1 enables a 3B VLM to learn to "proactively invoke tools to see clearly when details are obscure" during driving planning. By implementing active perception through a visual toolkit and a hybrid thinking framework that adaptively switches between "fast text-only inference" and "slow tool-augmented inference
+  [ICLR 2026][Autonomous Driving][Vision-Language Models] DriveAgent-R1 enables a 3B VLM to learn to "proactively invoke tools to see clearly when details are obscure" during driving planning. By implementing active perception through a visual toolkit and a hybrid thinking framework that adaptively switches between "fast text-only inference" and "slow tool-augmented inference" based on scene complexity, the agent achieves performance comparable to GPT-5 and human drivers via th…
 tags:
-  - ICLR 2026
-  - Autonomous Driving
-  - Vision-Language Model
-  - GRPO
+  - "ICLR 2026"
+  - "Autonomous Driving"
+  - "Vision-Language Models"
+  - "Active Perception"
+  - "Tool-calling"
+  - "Hybrid Thinking"
+  - "GRPO"
+  - "High-level Behavior Planning"
 date: 2026-05-08
-content_hash: b7096cb121d87554
+content_hash: 7b46ba569a432237
 ---
+
 # DriveAgent-R1: Advancing VLM-based Autonomous Driving with Active Perception and Hybrid Thinking
 
 **Conference**: ICLR 2026  

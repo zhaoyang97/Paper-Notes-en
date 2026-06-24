@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Battery Fault: A Comprehensive Dataset and Benchmark for Battery Fault Diagnosis
 description: >-
-  [ICLR 2026][Time Series][LFP/NCM] This paper constructs CH-BatteryGen, the first battery system fault diagnosis dataset for electric vehicles (EVs) under real-world operating conditions. By combining "real vehicle data + mechanism-constrained generation models," it balances authenticity and scale, covering 1000 vehicles, two mainstream chemical systems
+  [ICLR 2026][Time Series][Battery Fault Diagnosis] This paper constructs CH-BatteryGen, the first battery system fault diagnosis dataset for electric vehicles (EVs) under real-world operating conditions. By combining "real vehicle data + mechanism-constrained generation models," it balances authenticity and scale, covering 1000 vehicles, two mainstream chemical systems, four fault labels, and three severity levels, accompanied by two benchmark tasks: fault classification and f…
 tags:
-  - ICLR 2026
-  - Time Series
-  - LFP/NCM
+  - "ICLR 2026"
+  - "Time Series"
+  - "Battery Fault Diagnosis"
+  - "Generative Data Augmentation"
+  - "Electric Vehicles"
+  - "LFP/NCM"
+  - "Benchmark Dataset"
 date: 2026-05-08
-content_hash: 04d53ce45b3618a5
+content_hash: ae31fa5ac2c319a3
 ---
+
 # Battery Fault: A Comprehensive Dataset and Benchmark for Battery Fault Diagnosis
 
 **Conference**: ICLR 2026  

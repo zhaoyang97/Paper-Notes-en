@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ARM: Adaptive Reasoning Model
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Adaptive Reasoning] ARM enables models to adaptively select among four reasoning formats (Direct Answer, Short CoT, Code…
+  [NeurIPS 2025 Spotlight][Reasoning][Adaptive Reasoning] ARM enables models to adaptively select among four reasoning formats (Direct Answer, Short CoT, Code, Long CoT) and introduces Ada-GRPO to address format collapse during training, achieving comparable accuracy to pure Long CoT models while reducing token usage by ~30% on average and up to ~70% on simple tasks.
 tags:
-  - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "NeurIPS 2025 Spotlight"
+  - "Reasoning"
   - "Adaptive Reasoning"
   - "Overthinking"
   - "GRPO"
   - "Reasoning Format Selection"
   - "Test-Time Compute"
 date: 2026-05-08
-content_hash: dba16b862b3f9ad9
+content_hash: be9dc691bb1a1f32
 ---
 
 # ARM: Adaptive Reasoning Model
@@ -136,11 +136,11 @@ ARM-7B vs. SFT+GRPO: accuracy drops by only 0.2% while token usage is reduced by
 
 ## Related Papers
 
+- [\[ICML 2026\] SuCo: Sufficiency-guided Continuous Adaptive Reasoning](../../ICML2026/llm_reasoning/suco_sufficiency-guided_continuous_adaptive_reasoning.md)
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
+- [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
 - [\[NeurIPS 2025\] KTAE: A Model-Free Algorithm to Key-Tokens Advantage Estimation in Mathematical Reasoning](ktae_a_model-free_algorithm_to_key-tokens_advantage_estimation_in_mathematical_r.md)
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
-- [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Re-FORC: Adaptive Reward Prediction for Efficient Chain-of-Thought Reasoning](re-forc_adaptive_reward_prediction_for_efficient_chain-of-thought_reasoning.md)
 
 </div>
 

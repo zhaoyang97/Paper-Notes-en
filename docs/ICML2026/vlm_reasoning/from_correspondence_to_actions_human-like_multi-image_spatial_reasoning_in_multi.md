@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models
 description: >-
-  [ICML 2026][vlm_reasoning][GRPO] Inspired by human spatial cognition, HATCH designs two complementary training objectives for MLLMs: aligning cross-view patch features using geometric supervision (PaStA), and using reinforcement learning to force models to generate explicit "viewpoint change actions" before answering (ActoR). Using only a 3B base mode
+  [ICML2026][VLM Reasoning][Multi-image Spatial Reasoning] Inspired by human spatial cognition, HATCH designs two complementary training objectives for MLLMs: aligning cross-view patch features using geometric supervision (PaStA), and using reinforcement learning to force models to generate explicit "viewpoint change actions" before answering (ActoR). Using only a 3B base model, it achieves multi-image spatial reasoning performance comparable to GPT-5.2.
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICML2026"
+  - "VLM Reasoning"
+  - "Multi-image Spatial Reasoning"
+  - "Cross-view Correspondence"
+  - "Viewpoint Transformation"
+  - "GRPO"
+  - "Geometric Supervision"
 date: 2026-05-08
-content_hash: d38b88df0718b9c6
+content_hash: 295ffcf88e72e239
 ---
+
 # From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models
 
 **Conference**: ICML2026  
@@ -135,15 +140,16 @@ Ablation on SPAR-Bench-MV (subscripts indicate changes relative to full HATCH):
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
 - [\[ACL 2026\] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/omibench_benchmarking_olympiad-level_multi-image_reasoning_in_large_vision-langu.md)
+- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
 - [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](../../CVPR2026/vlm_reasoning/evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[CVPR 2026\] Mimic Human Cognition, Master Multi-Image Reasoning: A Meta-Action Framework for Enhanced Visual Understanding](../../CVPR2026/vlm_reasoning/mimic_human_cognition_master_multi-image_reasoning_a_meta-action_framework_for_e.md)
-- [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](../../CVPR2026/vlm_reasoning/dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](../../CVPR2026/vlm_reasoning/star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
 
 </div>
 

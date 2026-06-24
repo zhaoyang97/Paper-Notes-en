@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression
 description: >-
-  [AAAI 2026][Model Compression][reasoning efficiency] This paper proposes CGRS (Certainty-Guided Reflection Suppression), a training-free efficient reasoning method that dynamically suppresses reflection trigger tokens (e…
+  [AAAI 2026][Model Compression][reasoning efficiency] This paper proposes CGRS (Certainty-Guided Reflection Suppression), a training-free efficient reasoning method that dynamically suppresses reflection trigger tokens (e.g., "Wait", "But") when the model exhibits high confidence, reducing token consumption of large reasoning language models by 18.5%–41.9% while maintaining reasoning accuracy.
 tags:
   - "AAAI 2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "certainty estimation"
   - "large reasoning models"
 date: 2026-05-08
-content_hash: 0cb071278c4adc59
+content_hash: 86f5085d29db1d55
 ---
 
 # Efficient Reasoning for Large Reasoning Language Models via Certainty-Guided Reflection Suppression
@@ -184,7 +184,7 @@ Systematic evaluation across 8 models × 4 benchmarks; representative results ar
 - [\[ICLR 2026\] Landscape of Thoughts: Visualizing the Reasoning Process of Large Language Models](../../ICLR2026/model_compression/landscape_of_thoughts_visualizing_the_reasoning_process_of_large_language_models.md)
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](../../ICLR2026/model_compression/efficient_reasoning_with_balanced_thinking.md)
 - [\[ACL 2026\] JudgeMeNot: Personalizing Large Language Models to Emulate Judicial Reasoning in Hebrew](../../ACL2026/model_compression/judgemenot_personalizing_large_language_models_to_emulate_judicial_reasoning_in_.md)
-- [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](../../ICLR2026/model_compression/beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
+- [\[ICML 2026\] Critique-Guided Distillation for Robust Reasoning via Refinement](../../ICML2026/model_compression/critique-guided_distillation_for_robust_reasoning_via_refinement.md)
 
 </div>
 

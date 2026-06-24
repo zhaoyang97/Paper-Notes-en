@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] SPICE identifies **gradient conflict between samples** as the primary culprit for why "greedy data selection based on Fisher information" collapses faster in practice than in theory. By using an $\varepsilon$-decomposition to quantify the "degree of deviation from ideal submodularity" into conflict statistics, a confli
+  [ICLR 2026][LLM Pretraining][Data selection] SPICE identifies **gradient conflict between samples** as the primary culprit for why "greedy data selection based on Fisher information" collapses faster in practice than in theory. By using an $\varepsilon$-decomposition to quantify the "degree of deviation from ideal submodularity" into conflict statistics, a conflict-aware greedy selector is proposed: "Information Gain − Conflict Penalty." On LLaMA2-7B / Qwen2-7B…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Data selection"
+  - "Fisher Information"
+  - "Submodularity"
+  - "Gradient conflict"
+  - "Instruction tuning"
 date: 2026-05-08
-content_hash: 8578c748f5ba15cd
+content_hash: 832027664ddfce5f
 ---
+
 # SPICE: Submodular Penalized Information–Conflict Selection for Efficient Large Language Model Training
 
 **Conference**: ICLR 2026  
@@ -146,11 +152,11 @@ Diversity Analysis (Table 3, Qwen2-7B 10%): SPICE’s NovelSum/LDD (41.3 / 22.0)
 
 ## Related Papers
 
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
 - [\[ICLR 2026\] Joint Selection for Large-Scale Pre-Training Data via Policy Gradient-based Mask Learning](joint_selection_for_large-scale_pre-training_data_via_policy_gradient-based_mask.md)
 - [\[ICLR 2026\] Train on Validation (ToV): Fast Data Selection with Applications to Fine-Tuning](train_on_validation_tov_fast_data_selection_with_applications_to_fine-tuning.md)
+- [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](deconstructing_positional_information_from_attention_logits_to_training_biases.md)
 - [\[ACL 2025\] DavIR: Data Selection via Implicit Reward for Large Language Models](../../ACL2025/llm_pretraining/davir_data_selection_via_implicit_reward_for_large_language_models.md)
-- [\[ACL 2025\] Towards Effective and Efficient Continual Pre-training of Large Language Models](../../ACL2025/llm_pretraining/towards_effective_and_efficient_continual_pre-training_of_large_language_models.md)
-- [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learned Image Compression with Hierarchical Progressive Context Modeling
 description: >-
-  [ICCV 2025][Model Compression][Learned image compression] This paper proposes a Hierarchical Progressive Context Model (HPCM) that partitions the latent representation into multi-scale sub-representations and encodes the…
+  [ICCV 2025][Model Compression][Learned image compression] This paper proposes a Hierarchical Progressive Context Model (HPCM) that partitions the latent representation into multi-scale sub-representations and encodes them sequentially from coarse to fine, combined with a cross-attention-based progressive context fusion mechanism across coding steps, enabling more efficient long-range dependency modeling and more accurate entropy parameter estimation while achieving a better t…
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "hierarchical coding"
   - "progressive fusion"
 date: 2026-05-08
-content_hash: ca54fb94b03f987e
+content_hash: 2ecfd63398013817
 ---
 
 # Learned Image Compression with Hierarchical Progressive Context Modeling
@@ -146,11 +146,11 @@ The paper follows the standard learned image compression pipeline: analysis tran
 
 ## Related Papers
 
+- [\[CVPR 2025\] LALIC: Linear Attention Modeling for Learned Image Compression](../../CVPR2025/model_compression/linear_attention_modeling_for_learned_image_compression.md)
 - [\[ICCV 2025\] Context Guided Transformer Entropy Modeling for Video Compression](context_guided_transformer_entropy_modeling_for_video_compression.md)
+- [\[CVPR 2025\] MambaIC: State Space Models for High-Performance Learned Image Compression](../../CVPR2025/model_compression/mambaic_state_space_models_for_high-performance_learned_image_compression.md)
+- [\[CVPR 2025\] Learned Image Compression with Dictionary-based Entropy Model](../../CVPR2025/model_compression/learned_image_compression_with_dictionary-based_entropy_model.md)
 - [\[NeurIPS 2025\] 4DGCPro: Efficient Hierarchical 4D Gaussian Compression for Progressive Volumetric Video Streaming](../../NeurIPS2025/model_compression/4dgcpro_efficient_hierarchical_4d_gaussian_compression_for_p.md)
-- [\[ICML 2026\] Efficient Learned Image Compression without Entropy Coding](../../ICML2026/model_compression/efficient_learned_image_compression_without_entropy_coding.md)
-- [\[AAAI 2026\] DynaQuant: Dynamic Mixed-Precision Quantization for Learned Image Compression](../../AAAI2026/model_compression/dynaquant_dynamic_mixed-precision_quantization_for_learned_i.md)
-- [\[ICCV 2025\] DLF: Extreme Image Compression with Dual-generative Latent Fusion](dlf_extreme_image_compression_with_dual-generative_latent_fusion.md)
 
 </div>
 

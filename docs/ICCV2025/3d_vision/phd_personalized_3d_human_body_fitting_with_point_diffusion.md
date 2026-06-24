@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PHD: Personalized 3D Human Body Fitting with Point Diffusion
 description: >-
-  [ICCV 2025][3D Vision][Human pose estimation] This paper proposes PHD, a personalized 3D human pose estimation paradigm that first calibrates user-specific body shape via SHAPify…
+  [ICCV 2025][3D Vision][Human pose estimation] This paper proposes PHD, a personalized 3D human pose estimation paradigm that first calibrates user-specific body shape via SHAPify, then employs a shape-conditioned point diffusion model (PointDiT) as a 3D prior, and iteratively optimizes pose parameters through Point Distillation Sampling combined with 2D keypoint constraints, achieving state-of-the-art absolute pose accuracy on the EMDB dataset.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "SMPL fitting"
   - "plug-and-play"
 date: 2026-05-08
-content_hash: 4d92083cb6aad5a4
+content_hash: c75fa361b28ce641
 ---
 
 # PHD: Personalized 3D Human Body Fitting with Point Diffusion
@@ -187,7 +187,7 @@ SHAPify leverages height and weight constraints to achieve body shape accuracy f
 - [\[ICCV 2025\] HumanOLAT: A Large-Scale Dataset for Full-Body Human Relighting and Novel-View Synthesis](humanolat_a_large-scale_dataset_for_full-body_human_relighting_and_novel-view_sy.md)
 - [\[ICCV 2025\] AdaHuman: Animatable Detailed 3D Human Generation with Compositional Multiview Diffusion](adahuman_animatable_detailed_3d_human_generation_with_compositional_multiview_di.md)
 - [\[ICCV 2025\] GUAVA: Generalizable Upper Body 3D Gaussian Avatar](guava_generalizable_upper_body_3d_gaussian_avatar.md)
-- [\[ICCV 2025\] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization](memorytalker_personalized_speech-driven_3d_facial_animation_via_audio-guided_sty.md)
+- [\[CVPR 2025\] Ctrl-D: Controllable Dynamic 3D Scene Editing with Personalized 2D Diffusion](../../CVPR2025/3d_vision/ctrl-d_controllable_dynamic_3d_scene_editing_with_personalized_2d_diffusion.md)
 
 </div>
 

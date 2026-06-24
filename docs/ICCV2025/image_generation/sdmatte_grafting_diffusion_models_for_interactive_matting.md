@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SDMatte: Grafting Diffusion Models for Interactive Matting
 description: >-
-  [ICCV 2025][Image Generation][Interactive Matting] This paper proposes SDMatte, a Stable Diffusion-based interactive matting model that converts the text interaction capability of diffusion models into visual prompt inte…
+  [ICCV 2025][Image Generation][Interactive Matting] This paper proposes SDMatte, a Stable Diffusion-based interactive matting model that converts the text interaction capability of diffusion models into visual prompt interaction capability via three key designs: visual prompt cross-attention, coordinate/opacity embeddings, and mask self-attention. SDMatte significantly outperforms SAM-based methods across multiple datasets.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Alpha Matte"
   - "Attention Mechanism"
 date: 2026-05-08
-content_hash: 1636fed3dbe50f1b
+content_hash: da5738c3f0451d57
 ---
 
 # SDMatte: Grafting Diffusion Models for Interactive Matting
@@ -141,8 +141,8 @@ where $\mathbf{M}$ is the attention mask:
 - [\[ICCV 2025\] GameFactory: Creating New Games with Generative Interactive Videos](gamefactory_creating_new_games_with_generative_interactive_videos.md)
 - [\[ICCV 2025\] StreamDiffusion: A Pipeline-level Solution for Real-time Interactive Generation](streamdiffusion_a_pipeline-level_solution_for_real-time_interactive_generation.md)
 - [\[ICCV 2025\] MotionDiff: Training-Free Zero-Shot Interactive Motion Editing via Flow-Assisted Multi-View Diffusion](motiondiff_training-free_zero-shot_interactive_motion_editing_via_flow-assisted_.md)
+- [\[ECCV 2024\] Lazy Diffusion Transformer for Interactive Image Editing](../../ECCV2024/image_generation/lazy_diffusion_transformer_for_interactive_image_editing.md)
 - [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](../../CVPR2026/image_generation/streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
-- [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] NOVA is proposed, formalizing the "Sparse Control, Dense Synthesis" paradigm for video editing for the first time: the sparse branch provides semantic guidance from multiple user-edited keyframes, while the dense branch injects motion and texture information from the original video. Combined with a degradation simulati
+  [CVPR 2026][Image Generation][Pair-free video editing] NOVA is proposed, formalizing the "Sparse Control, Dense Synthesis" paradigm for video editing for the first time: the sparse branch provides semantic guidance from multiple user-edited keyframes, while the dense branch injects motion and texture information from the original video. Combined with a degradation simulation training strategy, it enables learning without paired data, significantly outperforming existing metho…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Pair-free video editing"
+  - "dual-branch architecture"
+  - "sparse control"
+  - "degradation simulation training"
+  - "multi-keyframe"
 date: 2026-05-08
-content_hash: 96c1850c1ec9fc0e
+content_hash: acfcb1c74c787e7d
 ---
+
 # NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing
 
 **Conference**: CVPR 2026  
@@ -164,11 +170,11 @@ Consider a video of "a person walking down a street, changing their red coat to 
 
 ## Related Papers
 
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
-- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
-- [\[ICML 2026\] Lightning Unified Video Editing via In-Context Sparse Attention](../../ICML2026/video_generation/lightning_unified_video_editing_via_in-context_sparse_attention.md)
-- [\[CVPR 2026\] DreamShot: Personalized Storyboard Synthesis with Video Diffusion Prior](dreamshot_storyboard_synthesis.md)
-- [\[CVPR 2025\] Unified Dense Prediction of Video Diffusion](../../CVPR2025/video_generation/unified_dense_prediction_of_video_diffusion.md)
+- [\[CVPR 2026\] CogniEdit: Dense Gradient Flow Optimization for Fine-Grained Image Editing](cogniedit_dense_gradient_flow_optimization_for_fine-grained_image_editing.md)
+- [\[CVPR 2026\] Rel-Zero: Harnessing Patch-Pair Invariance for Robust Zero-Watermarking Against AI Editing](rel-zero_harnessing_patch-pair_invariance_for_robust_zero-watermarking_against_a.md)
+- [\[ICLR 2026\] DenseGRPO: From Sparse to Dense Reward for Flow Matching Model Alignment](../../ICLR2026/image_generation/densegrpo_from_sparse_to_dense_reward_for_flow_matching_model_alignment.md)
+- [\[ICLR 2026\] SPRINT: Sparse-Dense Residual Fusion for Efficient Diffusion Transformers](../../ICLR2026/image_generation/sprint_sparse-dense_residual_fusion_for_efficient_diffusion_transformers.md)
+- [\[CVPR 2026\] VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)
 
 </div>
 

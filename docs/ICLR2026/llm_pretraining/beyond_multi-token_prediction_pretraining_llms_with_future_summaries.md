@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries
 description: >-
-  [ICLR 2026][Pretraining][teacher forcing] This paper proposes **Future Summary Prediction (FSP)**: adding an auxiliary head to the standard next-token prediction to predict a **compact summary of a long-range future sequence** (instead of predicting future tokens one by one). Two summary construction methods are provided: a manual bag-of-words summary (FSP-BoW
+  [ICLR2026][LLM Pretraining][Pretraining objectives] This paper proposes **Future Summary Prediction (FSP)**: adding an auxiliary head to the standard next-token prediction to predict a **compact summary of a long-range future sequence** (instead of predicting future tokens one by one). Two summary construction methods are provided: a manual bag-of-words summary (FSP-BoW) and a learned summary distilled from a reverse language model (FSP-RevLM). Large-scale pretraining experim…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - teacher forcing
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Pretraining objectives"
+  - "multi-token prediction"
+  - "teacher forcing"
+  - "reverse language model"
+  - "future summaries"
 date: 2026-05-08
-content_hash: 62bc264e3eac558d
+content_hash: 41395cd8a7f14f9d
 ---
+
 # Beyond Multi-Token Prediction: Pretraining LLMs with Future Summaries
 
 **Conference**: ICLR2026  
@@ -148,10 +153,10 @@ Evaluation of different future summary strategies as auxiliary targets on 8B (se
 ## Related Papers
 
 - [\[ACL 2026\] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](../../ACL2026/llm_pretraining/toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)
-- [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
 - [\[ACL 2025\] Pre-Training Curriculum for Multi-Token Prediction in Language Models](../../ACL2025/llm_pretraining/pre-training_curriculum_for_multi-token_prediction_in_language_models.md)
+- [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
-- [\[ICML 2025\] Position: The Future of Bayesian Prediction Is Prior-Fitted](../../ICML2025/llm_pretraining/position_the_future_of_bayesian_prediction_is_prior-fitted.md)
+- [\[ICLR 2026\] Next-ToBE: Probabilistic Next Token-Bag Exploitation for Activating Anticipatory Capacity in LLMs](next-tobe_probabilistic_next_token-bag_exploitation_for_activating_anticipatory_.md)
 
 </div>
 

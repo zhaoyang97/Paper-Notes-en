@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unlocking Transfer Learning for Open-World Few-Shot Recognition
 description: >-
-  [NeurIPS 2025 (Workshop)][AI Safety][Few-shot open-set recognition] A two-stage framework is proposed that combines open-set-aware meta-learning with open-set-free transfer learning…
+  [NeurIPS 2025 (Workshop)][AI Safety][Few-shot open-set recognition] A two-stage framework is proposed that combines open-set-aware meta-learning with open-set-free transfer learning, achieving the first successful application of the transfer learning paradigm to few-shot open-set recognition (FSOSR) and reaching SOTA on miniImageNet and tieredImageNet.
 tags:
   - "NeurIPS 2025 (Workshop)"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "open world"
   - "pseudo open-set samples"
 date: 2026-05-08
-content_hash: c1c10feab5440463
+content_hash: 06f8eda1c2e1e6a0
 ---
 
 # Unlocking Transfer Learning for Open-World Few-Shot Recognition
@@ -151,10 +151,10 @@ $$\mathcal{L} = \mathcal{L}_{\text{CE}} + \lambda \mathcal{L}_{\text{open}}$$
 ## Related Papers
 
 - [\[NeurIPS 2025\] Open-Insect: Benchmarking Open-Set Recognition of Novel Species in Biodiversity Monitoring](open-insect_benchmarking_open-set_recognition_of_novel_species_in_biodiversity_m.md)
+- [\[ECCV 2024\] Operational Open-Set Recognition and PostMax Refinement](../../ECCV2024/ai_safety/operational_open-set_recognition_and_postmax_refinement.md)
 - [\[NeurIPS 2025\] Impact of Dataset Properties on Membership Inference Vulnerability of Deep Transfer Learning](impact_of_dataset_properties_on_membership_inference_vulnerability_of_deep_trans.md)
-- [\[NeurIPS 2025\] Towards Unsupervised Open-Set Graph Domain Adaptation via Dual Reprogramming](towards_unsupervised_open-set_graph_domain_adaptation_via_dual_reprogramming.md)
-- [\[ICLR 2026\] Learnability and Privacy Vulnerability are Entangled in a Few Critical Weights](../../ICLR2026/ai_safety/learnability_and_privacy_vulnerability_are_entangled_in_a_few_critical_weights.md)
-- [\[ICML 2026\] Calibrating Uncertainty for Zero-Shot Adversarial CLIP](../../ICML2026/ai_safety/calibrating_uncertainty_for_zero-shot_adversarial_clip.md)
+- [\[ICML 2025\] Adaptive Multi-prompt Contrastive Network for Few-shot Out-of-distribution Detection](../../ICML2025/ai_safety/adaptive_multi-prompt_contrastive_network_for_few-shot_out-of-distribution_detec.md)
+- [\[ACL 2025\] Multi-task Adversarial Attacks against Black-box Model with Few-shot Queries](../../ACL2025/ai_safety/multi-task_adversarial_attacks_against_black-box_model_with_few-shot_queries.md)
 
 </div>
 

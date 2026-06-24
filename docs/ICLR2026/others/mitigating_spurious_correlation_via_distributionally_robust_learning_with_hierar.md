@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets
 description: >-
-  [ICLR 2026][Others][Paper Note] A hierarchical DRO framework is proposed to capture both group proportion shifts and intra-group distributional shifts. By defining intra-group ambiguity sets using the $W_\infty$ distance in semantic space, the method achieves SOTA performance on standard benchmarks. Furthermore, it maintains strong robustness in newl
+  [ICLR 2026][Spurious Correlation] A hierarchical DRO framework is proposed to capture both group proportion shifts and intra-group distributional shifts. By defining intra-group ambiguity sets using the $W_\infty$ distance in semantic space, the method achieves SOTA performance on standard benchmarks. Furthermore, it maintains strong robustness in newly designed minority distribution shift settings where existing methods fail.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Spurious Correlation"
+  - "Distributionally Robust Optimization"
+  - "Hierarchical Ambiguity Sets"
+  - "Wasserstein Distance"
+  - "Minority Shift"
 date: 2026-05-08
-content_hash: 89ec7126dd7d45e7
+content_hash: 64454b3af0c27f74
 ---
+
 # Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets
 
 **Conference**: ICLR 2026  
@@ -126,15 +131,13 @@ The surrogate objective is a min-max problem. Algorithm 1 decomposes it into thr
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICLR 2026\] Distributionally Robust Classification for Multi-Source Unsupervised Domain Adaptation](distributionally_robust_classification_for_multi-source_unsupervised_domain_adap.md)
 - [\[ICLR 2026\] Regulating Internal Alignment Flows for Robust Learning Under Spurious Correlations](regulating_internal_alignment_flows_for_robust_learning_under_spurious_correlati.md)
 - [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
-- [\[NeurIPS 2025\] Distributionally Robust Feature Selection](../../NeurIPS2025/others/distributionally_robust_feature_selection.md)
 - [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](../../ICML2026/others/disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
+- [\[ICML 2026\] Variable Clustering via Distributionally Robust Nodewise Regression](../../ICML2026/others/variable_clustering_via_distributionally_robust_nodewise_regression.md)
 
 </div>
 

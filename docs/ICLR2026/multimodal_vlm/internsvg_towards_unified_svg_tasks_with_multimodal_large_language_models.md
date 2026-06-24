@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][SVG] InternSVG introduces a "triad" of resources—dataset SAgoge, benchmark SArena, and model InternSVG—to unify SVG understanding, editing, and generation tasks within a single MLLM. By utilizing specialized SVG tokens, subword-mean initialization, and two-stage curriculum training, it outperforms both open-source and close
+  [ICLR 2026][Multimodal VLM][SVG] InternSVG introduces a "triad" of resources—dataset SAgoge, benchmark SArena, and model InternSVG—to unify SVG understanding, editing, and generation tasks within a single MLLM. By utilizing specialized SVG tokens, subword-mean initialization, and two-stage curriculum training, it outperforms both open-source and closed-source models across self-built and existing benchmarks.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - SVG
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "SVG"
+  - "MLLM"
+  - "Unified Modeling"
+  - "Vector Graphics"
+  - "Special Tokens"
+  - "Curriculum Learning"
 date: 2026-05-08
-content_hash: 79b1b39ff0e56f13
+content_hash: be5661549c0f4eb8
 ---
+
 # InternSVG: Towards Unified SVG Tasks with Multimodal Large Language Models
 
 **Conference**: ICLR 2026  
@@ -114,15 +120,16 @@ On the Icon benchmark, InternSVG outperforms the next best model by ~8 points in
 - **Value**: ⭐⭐⭐⭐⭐ The release of the integrated data, benchmark, and model provides a unified research foundation for the structured multimodal task of SVG.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](../../CVPR2026/multimodal_vlm/duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
 - [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
+- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](../../CVPR2026/multimodal_vlm/duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
+- [\[ICLR 2026\] Benchmarking Large Vision-Language Models on Fine-Grained Image Tasks: A Comprehensive Evaluation](benchmarking_large_vision-language_models_on_fine-grained_image_tasks_a_comprehe.md)
 - [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
-- [\[ICLR 2026\] HSSBench: Benchmarking Humanities and Social Sciences Ability for Multimodal Large Language Models](hssbench_benchmarking_humanities_and_social_sciences_ability_for_multimodal_larg.md)
-- [\[CVPR 2026\] DEVA: Fine-tuning Multimodal Large Language Models for Visual Perception Tasks](../../CVPR2026/multimodal_vlm/deva_fine-tuning_multimodal_large_language_models_for_visual_perception_tasks.md)
+- [\[ICLR 2026\] Reconstruction Alignment Improves Unified Multimodal Models](reconstruction_alignment_improves_unified_multimodal_models.md)
 
 </div>
 

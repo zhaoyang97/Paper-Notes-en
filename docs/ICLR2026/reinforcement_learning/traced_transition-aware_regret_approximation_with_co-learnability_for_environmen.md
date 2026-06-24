@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] TRACED: Transition-aware Regret Approximation with Co-learnability for Environment Design
 description: >-
-  [ICLR 2026][Reinforcement Learning][Co-Learnability] TRACED improves regret approximation in Unsupervised Environment Design (UED) by incorporating transition prediction error (ATPL) alongside traditional PVL to capture dynamics model mismatch, and introduces Co-Learnability to measure transfer benefits between tasks. It outperforms all baselines at 10k updates compared
+  [ICLR 2026][Reinforcement Learning][Unsupervised Environment Design] TRACED improves regret approximation in Unsupervised Environment Design (UED) by incorporating transition prediction error (ATPL) alongside traditional PVL to capture dynamics model mismatch, and introduces Co-Learnability to measure transfer benefits between tasks. It outperforms all baselines at 10k updates compared to their 20k performance on MiniGrid and BipedalWalker.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Co-Learnability
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Unsupervised Environment Design"
+  - "Curriculum Learning"
+  - "Regret Approximation"
+  - "Transition Prediction Error"
+  - "Co-Learnability"
+  - "Zero-shot Transfer"
 date: 2026-05-08
-content_hash: c8a6a75594e0a541
+content_hash: 7cb509ec89f7d36c
 ---
+
 # TRACED: Transition-aware Regret Approximation with Co-learnability for Environment Design
 
 **Conference**: ICLR 2026  
@@ -157,10 +163,10 @@ ATPL is the primary driver, while CL provides additional gains when combined wit
 ## Related Papers
 
 - [\[ICLR 2026\] Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization](efficient_morphology-control_co-design_via_stackelberg_proximal_policy_optimizat.md)
+- [\[ICLR 2026\] Don't Just Fine-tune the Agent, Tune the Environment](dont_just_fine-tune_the_agent_tune_the_environment.md)
+- [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](../../NeurIPS2025/reinforcement_learning/scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
 - [\[ICLR 2026\] Replicable Reinforcement Learning with Linear Function Approximation](replicable_reinforcement_learning_with_linear_function_approximation.md)
 - [\[ICLR 2026\] Structured In-context Environment Scaling for Large Language Model Reasoning](structured_in-context_environment_scaling_for_large_language_model_reasoning.md)
-- [\[ICLR 2026\] BoreaRL: A Multi-Objective Reinforcement Learning Environment for Climate-Adaptive Boreal Forest Management](borearl_a_multi-objective_reinforcement_learning_environment_for_climate-adaptiv.md)
-- [\[ICLR 2026\] Online Prediction of Stochastic Sequences with High Probability Regret Bounds](online_prediction_of_stochastic_sequences_with_high_probability_regret_bounds.md)
 
 </div>
 

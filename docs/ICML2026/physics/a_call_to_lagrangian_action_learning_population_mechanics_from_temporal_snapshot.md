@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Call to Lagrangian Action: Learning Population Mechanics from Temporal Snapshots
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Paper Note] Starting from the principle of least action, this paper proposes the Wasserstein Lagrangian Mechanics (WLM) framework to learn second-order population dynamics rather than traditional first-order gradient flow dynamics. This enables capturing richer collective phenomena such as periodicity and rotation, and allows for
+  [ICML 2026 Spotlight][Physics & Scientific Computing][Population Dynamics] Starting from the principle of least action, this paper proposes the Wasserstein Lagrangian Mechanics (WLM) framework to learn second-order population dynamics rather than traditional first-order gradient flow dynamics. This enables capturing richer collective phenomena such as periodicity and rotation, and allows for interpolation and future forecasting without requiring a reference process.
 tags:
-  - ICML 2026
-  - Physics & Scientific Computing
+  - "ICML 2026 Spotlight"
+  - "Physics & Scientific Computing"
+  - "Population Dynamics"
+  - "Wasserstein Mechanics"
+  - "Principle of Least Action"
+  - "Second-order Dynamics"
+  - "Neural Potentials"
 date: 2026-05-08
-content_hash: ac41c8213017b92e
+content_hash: 5af278fd37b146e6
 ---
+
 # A Call to Lagrangian Action: Learning Population Mechanics from Temporal Snapshots
 
 **Conference**: ICML 2026 Spotlight  
@@ -139,9 +145,9 @@ For each observed time interval $t_i\to t_{i+1}$, Leapfrog advancement yields a 
 
 - [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](antic_adaptive_neural_temporal_in-situ_compressor.md)
 - [\[ICML 2026\] BALLAST: Bayesian Active Learning with Look-ahead Amendment for Sea-drifter Trajectories under Spatio-Temporal Vector Fields](ballast_bayesian_active_learning_with_look-ahead_amendment_for_sea-drifter_traje.md)
+- [\[ICLR 2026\] Neural Latent Arbitrary Lagrangian-Eulerian Grids for Fluid-Solid Interaction](../../ICLR2026/physics/neural_latent_arbitrary_lagrangian-eulerian_grids_for_fluid-solid_interaction.md)
 - [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
 - [\[ICML 2026\] Hermite-NGP: Gradient-Augmented Hash Encoding for Learning PDEs](hermite-ngp_gradient-augmented_hash_encoding_for_learning_pdes.md)
-- [\[ICML 2026\] Learning to Refine: Spectral-Decoupled Iterative Refinement Framework for Precipitation Nowcasting](learning_to_refine_spectral-decoupled_iterative_refinement_framework_for_precipi.md)
 
 </div>
 

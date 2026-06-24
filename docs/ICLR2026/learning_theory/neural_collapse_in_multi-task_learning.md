@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Neural Collapse in Multi-Task Learning
 description: >-
-  [ICLR 2026][learning_theory][Neural Collapse] This paper generalizes "Neural Collapse" (NC) theory from single-task to multi-task learning (MTL) for the first time. It characterizes the geometric structures of task-specific classifiers and features at the terminal phase of training (TPT) under both single-source and multi-source MTL settings (e.g., task-specific S
+  [ICLR 2026][learning_theory][Neural Collapse] This paper generalizes "Neural Collapse" (NC) theory from single-task to multi-task learning (MTL) for the first time. It characterizes the geometric structures of task-specific classifiers and features at the terminal phase of training (TPT) under both single-source and multi-source MTL settings (e.g., task-specific Simplex ETF, cross-task orthogonality, and shared features being the sum of task-specific features). Through rigoro…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Neural Collapse
-  - Multi-Task Learning
-  - Simplex ETF
-  - Unconstrained Feature Model
-  - Inductive Bias
-  - Feature Sharing
+  - "ICLR 2026"
+  - "learning_theory"
+  - "Neural Collapse"
+  - "Multi-Task Learning"
+  - "Simplex ETF"
+  - "Unconstrained Feature Model"
+  - "Inductive Bias"
+  - "Feature Sharing"
 date: 2026-05-08
-content_hash: 6f1ed8d031acaafd
+content_hash: 390b6576dab66bc9
 ---
+
 # Neural Collapse in Multi-Task Learning
 
 **Conference**: ICLR 2026  
@@ -126,8 +127,8 @@ Verification that NC metrics converge toward zero at TPT across 4 architectures 
 - [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
 - [\[ICML 2026\] Multi-task Linear Regression without Eigenvalue Lower Bounds: Adaptivity, Robustness and Safety](../../ICML2026/learning_theory/multi-task_linear_regression_without_eigenvalue_lower_bounds_adaptivity_robustne.md)
 - [\[ICLR 2026\] Heads Collapse, Features Stay: Why Replay Needs Big Buffers](heads_collapse_features_stay_why_replay_needs_big_buffers.md)
-- [\[ICLR 2026\] Multi-Condition Conformal Selection](multi-condition_conformal_selection.md)
 - [\[ICLR 2026\] Preventing Model Collapse Under Overparametrization: Optimal Mixing Ratios for Interpolation Learning and Ridge Regression](preventing_model_collapse_under_overparametrization_optimal_mixing_ratios_for_in.md)
+- [\[ICLR 2026\] Multi-Condition Conformal Selection](multi-condition_conformal_selection.md)
 
 </div>
 

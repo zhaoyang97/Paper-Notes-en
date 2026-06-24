@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pusa V1.0: Unlocking Temporal Control in Pretrained Video Diffusion Models via Vectorized Timestep Adaptation
 description: >-
-  [ICLR 2026][Video Generation][Paper Note] Pusa V1.0 replaces the single scalar timestep in pretrained video diffusion models with a frame-wise timestep vector. Through non-destructive Vectorized Timestep Adaptation and minimal LoRA fine-tuning, Wan-T2V gains zero-shot capabilities for image-to-video (I2V), start-end frame control, and video extension while pre
+  [ICLR2026][Video Generation][Vectorized Timestep] Pusa V1.0 replaces the single scalar timestep in pretrained video diffusion models with a frame-wise timestep vector. Through non-destructive Vectorized Timestep Adaptation and minimal LoRA fine-tuning, Wan-T2V gains zero-shot capabilities for image-to-video (I2V), start-end frame control, and video extension while preserving its text-to-video (T2V) quality, achieving performance on VBench-I2V comparable to Wan-I2V.
 tags:
-  - ICLR 2026
-  - Video Generation
+  - "ICLR2026"
+  - "Video Generation"
+  - "Vectorized Timestep"
+  - "Video Diffusion"
+  - "Image-to-Video"
+  - "Temporal Control"
+  - "LoRA Fine-tuning"
 date: 2026-05-08
-content_hash: 450c17519d80eeb6
+content_hash: 64ecf7e9aef08730
 ---
+
 # Pusa V1.0: Unlocking Temporal Control in Pretrained Video Diffusion Models via Vectorized Timestep Adaptation
 
 **Conference**: ICLR2026  
@@ -154,6 +160,7 @@ The base model ablation shows that VTA is not locked to a specific version. Diff
 - Value: ⭐⭐⭐⭐⭐ Highly relevant for low-cost adaptation of large video models, especially when preserving base capabilities is a priority.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -161,8 +168,8 @@ The base model ablation shows that VTA is not locked to a specific version. Diff
 - [\[ICCV 2025\] EfficientMT: Efficient Temporal Adaptation for Motion Transfer in Text-to-Video Diffusion Models](../../ICCV2025/video_generation/efficientmt_efficient_temporal_adaptation_for_motion_transfer_in_text-to-video_d.md)
 - [\[ICLR 2026\] TPDiff: Temporal Pyramid Video Diffusion Model](tpdiff_temporal_pyramid_video_diffusion_model.md)
 - [\[CVPR 2026\] EasyOmnimatte: Taming Pretrained Inpainting Diffusion Models for End-to-End Video Layered Decomposition](../../CVPR2026/video_generation/easyomnimatte_taming_pretrained_inpainting_diffusion_models_for_end-to-end_video.md)
+- [\[CVPR 2026\] TempoControl: Temporal Attention Guidance for Text-to-Video Models](../../CVPR2026/video_generation/tempocontrol_temporal_attention_guidance_for_text-to-video_models.md)
 - [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
-- [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
 
 </div>
 

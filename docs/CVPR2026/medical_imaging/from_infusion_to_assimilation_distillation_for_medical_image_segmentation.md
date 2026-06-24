@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] From Infusion to Assimilation Distillation for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Knowledge Distillation] Addressing the issue where existing Knowledge Distillation (KD) "simply pours knowledge in without allowing the student to digest it," leading to degraded generalization, this paper proposes a two-stage framework, IAD. It first "infuses" the semantic knowledge of a SAM teacher into a lightweight student via soft labels
+  [CVPR 2026][Medical Imaging][Knowledge Distillation] Addressing the issue where existing Knowledge Distillation (KD) "simply pours knowledge in without allowing the student to digest it," leading to degraded generalization, this paper proposes a two-stage framework, IAD. It first "infuses" the semantic knowledge of a SAM teacher into a lightweight student via soft labels and class-weighted prototype alignment, then "assimilates" the knowledge through contrastive semantic self…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Knowledge Distillation
-  - SAM
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Knowledge Distillation"
+  - "Medical Image Segmentation"
+  - "SAM"
+  - "Prototype Alignment"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: 1a465563d9b5f258
+content_hash: fc04554404e6868f
 ---
+
 # From Infusion to Assimilation Distillation for Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -141,12 +145,11 @@ Ablation of the four loss terms within KIS/KAS (Synapse, Tab. 6): Using $\mathca
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
 - [\[CVPR 2026\] PDD: Manifold-Prior Diverse Distillation for Medical Anomaly Detection](pdd_manifold-prior_diverse_distillation_for_medical_anomaly_detection.md)
+- [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
 - [\[CVPR 2026\] SegMoTE: Token-Level Mixture of Experts for Medical Image Segmentation](segmote_token-level_mixture_of_experts_for_medical_image_segmentation.md)
 - [\[CVPR 2026\] PMRNet: Physics-informed Multi-scale Refinement Network for Medical Image Segmentation](pmrnet_physics-informed_multi-scale_refinement_network_for_medical_image_segment.md)
 - [\[CVPR 2026\] GeoSemba: Reconstructing State Space Model for Cross Paradigm Representation in Medical Image Segmentation](geosemba_reconstructing_state_space_model_for_cross_paradigm_representation_in_m.md)

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] This paper proposes Point-Graph LLM (PGLLM), which organizes unlabeled support sets into a KNN graph at test time without retraining. It injects 3D captions of neighboring samples as in-context guidance into a second-stage LLM and performs score refinement via label propagation to correct noisy predictions. This approa
+  [ICLR 2026][3D Vision][3D Point Cloud LLM] This paper proposes Point-Graph LLM (PGLLM), which organizes unlabeled support sets into a KNN graph at test time without retraining. It injects 3D captions of neighboring samples as in-context guidance into a second-stage LLM and performs score refinement via label propagation to correct noisy predictions. This approach improves the accuracy and robustness of 3D recognition, OOD detection, and captioning with almost zero additional…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "3D Point Cloud LLM"
+  - "Test-Time Optimization"
+  - "In-Context Learning"
+  - "Label Propagation"
+  - "OOD Detection"
 date: 2026-05-08
-content_hash: 2a4ed8bffd1c411c
+content_hash: eae35a0135eb28bc
 ---
+
 # Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement
 
 **Conference**: ICLR 2026  
@@ -142,11 +148,11 @@ PGLLM_T improves AUROC by +4.9% and reduces FPR95 from 100 to 52.1 compared to t
 
 ## Related Papers
 
-- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](ttt3r_3d_reconstruction_as_test-time_training.md)
 - [\[ICLR 2026\] GOOD: Geometry-guided Out-of-Distribution Modeling for Open-set Test-time Adaptation in Point Cloud Semantic Segmentation](good_geometry-guided_out-of-distribution_modeling_for_open-set_test-time_adaptat.md)
+- [\[ICLR 2026\] Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance](quartet_of_diffusions_structure-aware_point_cloud_generation_through_part_and_sy.md)
+- [\[ICLR 2026\] TTT3R: 3D Reconstruction as Test-Time Training](ttt3r_3d_reconstruction_as_test-time_training.md)
 - [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](../../CVPR2026/3d_vision/tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
 - [\[CVPR 2026\] Mamba Learns in Context: Structure-Aware Domain Generalization for Multi-Task Point Cloud Understanding](../../CVPR2026/3d_vision/mamba_learns_in_context_structure-aware_domain_generalization_for_multi-task_poi.md)
-- [\[ICLR 2026\] Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation](point-focused_attention_meets_context-scan_state_space_robust_biological_visual_.md)
 
 </div>
 

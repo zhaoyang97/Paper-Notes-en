@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Spectral Image Tokenizer
 description: >-
-  [ICCV 2025][Image Generation][image tokenizer] This paper proposes the Spectral Image Tokenizer (SIT), which tokenizes images in the frequency domain after converting them via the Discrete Wavelet Transform (DWT). The re…
+  [ICCV 2025][Image Generation][image tokenizer] This paper proposes the Spectral Image Tokenizer (SIT), which tokenizes images in the frequency domain after converting them via the Discrete Wavelet Transform (DWT). The resulting token sequence is naturally arranged in a coarse-to-fine order, enabling capabilities unavailable to conventional raster-scan tokenizers, including multi-resolution reconstruction, progressive generation, text-guided super-resolution…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "multiscale"
   - "VQ-VAE"
 date: 2026-05-08
-content_hash: 14bd64b1c4a4e3f9
+content_hash: 119dde0664b635c1
 ---
 
 # Spectral Image Tokenizer
@@ -220,9 +220,9 @@ At low resolutions, AR-SIT offers substantial advantages in throughput and memor
 
 - [\[ICCV 2025\] Holistic Tokenizer for Autoregressive Image Generation](holistic_tokenizer_for_autoregressive_image_generation.md)
 - [\[ICCV 2025\] DC-AR: Efficient Masked Autoregressive Image Generation with Deep Compression Hybrid Tokenizer](dc-ar_efficient_masked_autoregressive_image_generation_with_deep_compression_hyb.md)
+- [\[CVPR 2025\] TokenFlow: Unified Image Tokenizer for Multimodal Understanding and Generation](../../CVPR2025/image_generation/tokenflow_unified_image_tokenizer_for_multimodal_understanding_and_generation.md)
 - [\[ICCV 2025\] M2SFormer: Multi-Spectral and Multi-Scale Attention with Edge-Aware Difficulty Guidance for Image Forgery Localization](m2sformer_multi-spectral_and_multi-scale_attention_with_edge-aware_difficulty_gu.md)
-- [\[ICCV 2025\] DiffuMatch: Category-Agnostic Spectral Diffusion Priors for Robust Non-rigid Shape Matching](diffumatch_category-agnostic_spectral_diffusion_priors_for_robust_non-rigid_shap.md)
-- [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
+- [\[CVPR 2025\] EvoTok: A Unified Image Tokenizer via Residual Latent Evolution for Visual Understanding and Generation](../../CVPR2025/image_generation/evotok_a_unified_image_tokenizer_via_residual_latent_evolution_for_visual_unders.md)
 
 </div>
 

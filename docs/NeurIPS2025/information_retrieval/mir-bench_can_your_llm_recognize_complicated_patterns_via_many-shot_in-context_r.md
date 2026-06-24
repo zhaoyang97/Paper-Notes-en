@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Many-Shot ICL] This paper proposes MIR-Bench, the first large-scale and diverse many-shot in-context reasoning benchmark. By automatically generating input-output pairs from pr…
+  [NeurIPS 2025][Information Retrieval & RAG][Many-Shot ICL] This paper proposes MIR-Bench, the first large-scale and diverse many-shot in-context reasoning benchmark. By automatically generating input-output pairs from programming problems, it evaluates LLMs' pattern recognition capabilities, revealing a performance saturation phenomenon caused by attention diffusion in many-shot settings, and demonstrating that transductive reasoning consistently outperforms inductive reasoni…
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "Transductive Reasoning"
   - "Long-Context Evaluation"
 date: 2026-05-08
-content_hash: dea7e512a75d704f
+content_hash: 549b1a7c95317e76
 ---
 
 # MIR-Bench: Can Your LLM Recognize Complicated Patterns via Many-Shot In-Context Reasoning?
@@ -215,11 +215,11 @@ This paper presents an evaluation benchmark rather than a training method. Evalu
 
 ## Related Papers
 
+- [\[ACL 2025\] AIR-Bench: Automated Heterogeneous Information Retrieval Benchmark](../../ACL2025/information_retrieval/air-bench_automated_heterogeneous_information_retrieval_benchmark.md)
 - [\[ICLR 2026\] Your Language Model Secretly Contains Personality Subnetworks](../../ICLR2026/information_retrieval/your_language_model_secretly_contains_personality_subnetworks.md)
+- [\[ICLR 2026\] AdaCache: Adaptive Caching and Context Augmentation for Efficient LLM Serving](../../ICLR2026/information_retrieval/adacache_adaptive_caching_and_context_augmentation_for_efficient_llm_serving.md)
+- [\[CVPR 2025\] EZSR: Event-based Zero-Shot Recognition](../../CVPR2025/information_retrieval/ezsr_event-based_zero-shot_recognition.md)
 - [\[ICML 2026\] How can embedding models bind concepts?](../../ICML2026/information_retrieval/how_can_embedding_models_bind_concepts.md)
-- [\[NeurIPS 2025\] SymRTLO: Enhancing RTL Code Optimization with LLMs and Neuron-Inspired Symbolic Reasoning](symrtlo_enhancing_rtl_code_optimization_with_llms_and_neuron-inspired_symbolic_r.md)
-- [\[CVPR 2026\] Explaining CLIP Zero-shot Predictions Through Concepts](../../CVPR2026/information_retrieval/explaining_clip_zero-shot_predictions_through_concepts.md)
-- [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
 
 </div>
 

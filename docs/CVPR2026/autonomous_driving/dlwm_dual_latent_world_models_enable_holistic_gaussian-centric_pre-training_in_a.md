@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][World Models] DLWM is proposed as a holistic Gaussian-centric pre-training paradigm for autonomous driving via dual latent world models. Stage 1 involves self-supervised learning of 3D Gaussian scene representations (rendering multi-view semantics and depth maps). Stage 2 trains dual latent world models: a Gaussian-flow-guided model
+  [CVPR 2026][Autonomous Driving][World Models] DLWM is proposed as a holistic Gaussian-centric pre-training paradigm for autonomous driving via dual latent world models. Stage 1 involves self-supervised learning of 3D Gaussian scene representations (rendering multi-view semantics and depth maps). Stage 2 trains dual latent world models: a Gaussian-flow-guided model for downstream occupancy perception/prediction (+1.02/+2.68 mIoU), and an ego-trajectory-guided model for motion…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - World Models
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "World Models"
+  - "3D Gaussian Splatting"
+  - "Self-supervised Pre-training"
+  - "Occupancy Prediction"
+  - "Motion Planning"
 date: 2026-05-08
-content_hash: 96c9d26183197bec
+content_hash: 485984101aa28095
 ---
+
 # DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving
 
 **Conference**: CVPR 2026  
@@ -121,9 +126,9 @@ Stage 1 employs self-supervised reconstruction losses for rendered semantic and 
 ## Related Papers
 
 - [\[CVPR 2025\] VisionPAD: A Vision-Centric Pre-training Paradigm for Autonomous Driving](../../CVPR2025/autonomous_driving/visionpad_a_vision-centric_pre-training_paradigm_for_autonomous_driving.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 - [\[CVPR 2026\] WorldLens: Full-Spectrum Evaluations of Driving World Models in Real World](worldlens_full-spectrum_evaluations_of_driving_world_models_in_real_world.md)
+- [\[CVPR 2026\] ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking](parkgaussian_surround-view_3d_gaussian_splatting_for_autonomous_parking.md)
+- [\[CVPR 2026\] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving](an_instance-centric_panoptic_occupancy_prediction_benchmark_for_autonomous_drivi.md)
 - [\[CVPR 2026\] MAD: Motion Appearance Decoupling for Efficient Driving World Models](mad_motion_appearance_decoupling_for_efficient_driving_world_models.md)
 
 </div>

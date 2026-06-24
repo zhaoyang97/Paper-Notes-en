@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data
 description: >-
-  [ICML 2026][Self-Supervised Learning][Paper Note] This paper proposes "local inconsistency" $S_\rho(\theta)$—the worst-case KL divergence within a parameter ball—which can be calculated using only unlabeled data. By employing it as a training regularization term, the resulting IAM optimizer performs comparably to or better than SAM/ASAM in supervised tasks and brings
+  [ICML 2026][Self-Supervised Learning][Generalization bounds] This paper proposes "local inconsistency" $S_\rho(\theta)$—the worst-case KL divergence within a parameter ball—which can be calculated using only unlabeled data. By employing it as a training regularization term, the resulting IAM optimizer performs comparably to or better than SAM/ASAM in supervised tasks and brings additional improvements in semi-supervised (FixMatch) and self-supervised (SimCLR) scenarios by lev…
 tags:
-  - ICML 2026
-  - Self-Supervised Learning
+  - "ICML 2026"
+  - "Self-Supervised Learning"
+  - "Generalization bounds"
+  - "Fisher Information Matrix"
+  - "Sharpness-aware optimization"
+  - "KL divergence regularization"
+  - "unlabeled data"
 date: 2026-05-08
-content_hash: c73a7d7740a94dbc
+content_hash: 13a9da9b57901abb
 ---
+
 # Inconsistency-Aware Minimization: Improving Generalization with Unlabeled Data
 
 **Conference**: ICML 2026  
@@ -139,9 +145,9 @@ Under the extreme scarcity of 250 labels, SAM performs slightly worse than SGD (
 
 - [\[ICML 2026\] Statistical Consistency and Generalization of Contrastive Representation Learning](statistical_consistency_and_generalization_of_contrastive_representation_learnin.md)
 - [\[ICML 2026\] A Refined Generalization Analysis for Extreme Multi-class Supervised Contrastive Representation Learning](a_refined_generalization_analysis_for_extreme_multi-class_supervised_contrastive.md)
+- [\[ICLR 2026\] Unsupervised Representation Learning - An Invariant Risk Minimization Perspective](../../ICLR2026/self_supervised/unsupervised_representation_learning_-_an_invariant_risk_minimization_perspectiv.md)
+- [\[ICML 2026\] Towards One-for-All Anomaly Detection for Tabular Data](towards_one-for-all_anomaly_detection_for_tabular_data.md)
 - [\[ICML 2026\] Data Augmentation of Contrastive Learning is Estimating Positive-incentive Noise](data_augmentation_of_contrastive_learning_is_estimating_positive-incentive_noise.md)
-- [\[CVPR 2026\] Learning by Analogy: A Causal Framework for Compositional Generalization](../../CVPR2026/self_supervised/learning_by_analogy_a_causal_framework_for_compositional_generalization.md)
-- [\[AAAI 2026\] Improving Sustainability of Adversarial Examples in Class-Incremental Learning](../../AAAI2026/self_supervised/improving_sustainability_of_adversarial_examples_in_class-incremental_learning.md)
 
 </div>
 

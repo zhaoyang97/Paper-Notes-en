@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] ChainFed is proposed as a chain-based federated fine-tuning paradigm to break the memory wall. By sequentially training and freezing adapters layer-by-layer, it enables resource-constrained edge devices to participate in LLM fine-tuning. Combining Functional-Oriented Adaptive Tuning (FOAT), Dynamic Layer Coordination T
+  [ACL 2026][LLM Safety][Federated Fine-tuning] ChainFed is proposed as a chain-based federated fine-tuning paradigm to break the memory wall. By sequentially training and freezing adapters layer-by-layer, it enables resource-constrained edge devices to participate in LLM fine-tuning. Combining Functional-Oriented Adaptive Tuning (FOAT), Dynamic Layer Coordination Tuning (DLCT), and Global-Perceptual Optimization (GPO), it achieves an average accuracy improvement of up to 46.46…
 tags:
-  - ACL 2026
-  - LLM Safety
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Federated Fine-tuning"
+  - "Edge Devices"
+  - "Memory Wall"
+  - "Chain Optimization"
+  - "Adapters"
 date: 2026-05-08
-content_hash: ca9946ebc02b1d7f
+content_hash: cc8c24c799bc50ea
 ---
+
 # Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge
 
 **Conference**: ACL 2026  
@@ -133,8 +139,8 @@ $Loss_m = Local\ Loss + \lambda \cdot Global\ Loss$, with the final stage using 
 - [\[NeurIPS 2025\] Differentially Private Federated Low Rank Adaptation Beyond Fixed-Matrix](../../NeurIPS2025/llm_safety/differentially_private_federated_low_rank_adaptation_beyond_fixed-matrix.md)
 - [\[ACL 2026\] CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation](caro_chain-of-analogy_reasoning_optimization_for_robust_content_moderation.md)
 - [\[ACL 2026\] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)
-- [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](../../NeurIPS2025/llm_safety/on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 - [\[ACL 2026\] Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)
+- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Semi-supervised Graph Anomaly Detection via Robust Homophily Learning
 description: >-
-  [NeurIPS 2025][Object Detection][graph anomaly detection] This paper proposes RHO (Robust Homophily Learning), which addresses the homophily diversity of normal nodes in semi-supervised graph anomaly detection via an ada…
+  [NeurIPS 2025][Object Detection][graph anomaly detection] This paper proposes RHO (Robust Homophily Learning), which addresses the homophily diversity of normal nodes in semi-supervised graph anomaly detection via an adaptive frequency response filter (AdaFreq) and a Graph Normality Alignment (GNA) module, outperforming existing methods on 8 real-world datasets.
 tags:
   - "NeurIPS 2025"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "semi-supervised"
   - "contrastive learning"
 date: 2026-05-08
-content_hash: 9b83ad47fcbf1097
+content_hash: 26a87dacda46e1a1
 ---
 
 # Semi-supervised Graph Anomaly Detection via Robust Homophily Learning
@@ -122,11 +122,11 @@ Total loss: $\mathcal{L}_{total} = \frac{1}{2}(\mathcal{L}_{ccr} + \mathcal{L}_{
 
 ## Related Papers
 
+- [\[CVPR 2025\] SimLTD: Simple Supervised and Semi-Supervised Long-Tailed Object Detection](../../CVPR2025/object_detection/simltd_simple_supervised_and_semi-supervised_long-tailed_object_detection.md)
+- [\[ICML 2025\] Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection](../../ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly.md)
 - [\[NeurIPS 2025\] Scalable, Explainable and Provably Robust Anomaly Detection with One-Step Flow Matching](scalable_explainable_and_provably_robust_anomaly_detection_with_one-step_flow_ma.md)
-- [\[AAAI 2026\] CASL: Curvature-Augmented Self-supervised Learning for 3D Anomaly Detection](../../AAAI2026/object_detection/casl_curvature-augmented_self-supervised_learning_for_3d_anomaly_detection.md)
+- [\[CVPR 2025\] Distribution Prototype Diffusion Learning for Open-set Supervised Anomaly Detection](../../CVPR2025/object_detection/distribution_prototype_diffusion_learning_for_open-set_supervised_anomaly_detect.md)
 - [\[NeurIPS 2025\] ADPretrain: Advancing Industrial Anomaly Detection via Anomaly Representation Pretraining](adpretrain_advancing_industrial_anomaly_detection_via_anomaly_representation_pre.md)
-- [\[ICLR 2026\] Towards Anomaly-Aware Pre-Training and Fine-Tuning for Graph Anomaly Detection](../../ICLR2026/object_detection/towards_anomaly-aware_pre-training_and_fine-tuning_for_graph_anomaly_detection.md)
-- [\[AAAI 2026\] Towards Multiple Missing Values-Resistant Unsupervised Graph Anomaly Detection](../../AAAI2026/object_detection/towards_multiple_missing_values-resistant_unsupervised_graph_anomaly_detection.md)
 
 </div>
 

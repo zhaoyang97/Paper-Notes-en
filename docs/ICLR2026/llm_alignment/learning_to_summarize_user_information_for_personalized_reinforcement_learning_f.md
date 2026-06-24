@@ -1,16 +1,21 @@
 ---
 title: >-
-  [Paper Note] Learning to Summarize User Information for Personalized RLHF（PLUS）
+  [Paper Note] Learning to Summarize User Information for Personalized RLHF (PLUS)
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] PLUS utilizes RL (PPO) to train a "user summarizer" that compresses each user's preferences, characteristics, and conversation history into a **natural language summary** $z$. This summary conditions the reward model, and both components undergo online co-adaptation. This approach improves reward model accuracy by 11–7
+  [ICLR 2026][LLM Alignment][Pluralistic alignment] PLUS utilizes RL (PPO) to train a "user summarizer" that compresses each user's preferences, characteristics, and conversation history into a **natural language summary** $z$. This summary conditions the reward model, and both components undergo online co-adaptation. This approach improves reward model accuracy by 11–77% relative to Bradley-Terry without assuming "identical preferences for all users."
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
-  - PPO
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Pluralistic alignment"
+  - "personalized reward model"
+  - "RLHF"
+  - "user summary"
+  - "PPO"
+  - "co-adaptation"
 date: 2026-05-08
-content_hash: 69cc8f46272dde7a
+content_hash: 6693edf8248327f4
 ---
+
 # Learning to Summarize User Information for Personalized RLHF (PLUS)
 
 **Conference**: ICLR 2026  

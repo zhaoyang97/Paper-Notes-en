@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation
 description: >-
-  [NeurIPS 2025][Video Generation][adversarial training] This paper proposes AAPT (Autoregressive Adversarial Post-Training), which converts a pretrained video diffusion model into an autoregressive real-time video generat…
+  [NeurIPS 2025][Video Generation][adversarial training] This paper proposes AAPT (Autoregressive Adversarial Post-Training), which converts a pretrained video diffusion model into an autoregressive real-time video generator via adversarial training. The model requires only one forward pass per frame (1NFE), employs student-forcing training to reduce error accumulation, and achieves real-time streaming generation at 736×416 resolution and 24fps on a single H100 GPU…
 tags:
   - "NeurIPS 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "one-step generation"
   - "KV cache"
 date: 2026-05-08
-content_hash: 3cce3fee8553232f
+content_hash: 41cac6ba272631a2
 ---
 
 # Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation
@@ -142,11 +142,11 @@ Three-stage training: (1) Diffusion adaptation (flow-matching loss, teacher-forc
 
 ## Related Papers
 
+- [\[ICML 2025\] Diffusion Adversarial Post-Training for One-Step Video Generation](../../ICML2025/video_generation/diffusion_adversarial_post-training_for_one-step_video_generation.md)
+- [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](../../ICLR2026/video_generation/longlive_real-time_interactive_long_video_generation.md)
 - [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](../../ICLR2026/video_generation/motionstream_real-time_video_generation_with_interactive_motion_controls.md)
+- [\[CVPR 2025\] Teller: Real-Time Streaming Audio-Driven Portrait Animation with Autoregressive Motion Generation](../../CVPR2025/video_generation/teller_real-time_streaming_audio-driven_portrait_animation_with_autoregressive_m.md)
 - [\[NeurIPS 2025\] Self Forcing: Bridging the Train-Test Gap in Autoregressive Video Diffusion](self_forcing_bridging_the_train-test_gap_in_autoregressive_video_diffusion.md)
-- [\[ICCV 2025\] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis](../../ICCV2025/video_generation/adversarial_distribution_matching_for_diffusion_distillation_towards_efficient_image_and_video_synthesis.md)
-- [\[NeurIPS 2025\] Training-Free Efficient Video Generation via Dynamic Token Carving](training-free_efficient_video_generation_via_dynamic_token_carving.md)
-- [\[ICCV 2025\] RealCam-I2V: Real-World Image-to-Video Generation with Interactive Complex Camera Control](../../ICCV2025/video_generation/realcam-i2v_real-world_image-to-video_generation_with_interactive_complex_camera.md)
 
 </div>
 

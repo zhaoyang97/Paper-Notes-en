@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Pretraining Scaling Laws for Generative Evaluations of Language Models
 description: >-
-  [ICLR 2026][Pretraining][pass@k] This paper proposes and systematically compares three sets of pretraining scaling laws for "generative evaluation" (tasks with verifiable binary rewards like math problem-solving, scored via pass@k). These laws use **pretraining compute**, **parameters + training tokens**, and **log-likelihood of gold reference solutio
+  [ICLR 2026][LLM Pretraining][Scaling Laws] This paper proposes and systematically compares three sets of pretraining scaling laws for "generative evaluation" (tasks with verifiable binary rewards like math problem-solving, scored via pass@k). These laws use **pretraining compute**, **parameters + training tokens**, and **log-likelihood of gold reference solutions** as independent variables to fit and extrapolate pass@k. It reveals that the sampling count $k$ is a new lever fo…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - pass@k
-  - Pythia
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Scaling Laws"
+  - "Generative Evaluation"
+  - "pass@k"
+  - "Compute-Optimal"
+  - "Pythia"
 date: 2026-05-08
-content_hash: c37f2fc55fe9bd9d
+content_hash: 90bc82de02279489
 ---
+
 # Pretraining Scaling Laws for Generative Evaluations of Language Models
 
 **Conference**: ICLR 2026  
@@ -132,10 +136,10 @@ Setting: 8 Pythia scales, ~5 orders of compute, GSM8K / MATH, $\tau=1.0$ samplin
 ## Related Papers
 
 - [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICLR 2026\] Scaling Behavior of Discrete Diffusion Language Models](scaling_behavior_of_discrete_diffusion_language_models.md)
+- [\[ICLR 2026\] How Text Quality Interventions Reshape Neural Scaling Laws for LLMs: Empirical Study](how_text_quality_interventions_reshape_neural_scaling_laws_for_llms_empirical_st.md)
 - [\[ICML 2026\] Explaining Data Mixing Scaling Laws](../../ICML2026/llm_pretraining/explaining_data_mixing_scaling_laws.md)
-- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](../../ICML2026/llm_pretraining/infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
-- [\[ICLR 2026\] What Scales in Cross-Entropy Scaling Law?](what_scales_in_cross-entropy_scaling_law.md)
-- [\[ICLR 2026\] Soft-Masked Diffusion Language Models](soft-masked_diffusion_language_models.md)
+- [\[ICLR 2026\] Revisiting the Scaling Properties of Downstream Metrics in Large Language Model Training](revisiting_the_scaling_properties_of_downstream_metrics_in_large_language_model_.md)
 
 </div>
 

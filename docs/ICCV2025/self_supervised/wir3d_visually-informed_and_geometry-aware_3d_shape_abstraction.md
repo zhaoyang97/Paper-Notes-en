@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] WIR3D: Visually-Informed and Geometry-Aware 3D Shape Abstraction
 description: >-
-  [Self-Supervised Learning] > WIR3D optimizes a set of 3D Bézier curve parameters under the spatial guidance of CLIP intermediate-layer activations to faithfully represent the geometric structure and visually salient feat…
+  [Self-Supervised Learning] > WIR3D optimizes a set of 3D Bézier curve parameters under the spatial guidance of CLIP intermediate-layer activations to faithfully represent the geometric structure and visually salient features (including texture) of 3D shapes from arbitrary viewpoints, achieving sparse yet semantically rich 3D shape abstraction.
 tags:
   - "Self-Supervised Learning"
 date: 2026-05-08
-content_hash: b972b5f414921e7a
+content_hash: b575bddf8a82ba3b
 ---
 
 # WIR3D: Visually-Informed and Geometry-Aware 3D Shape Abstraction
@@ -165,11 +165,11 @@ In a user study ($N=96$), WIR3D was selected as the better abstraction **88%** o
 
 ## Related Papers
 
+- [\[CVPR 2026\] Teaching DINOv3 About Partial 3D Geometry: A Self-Supervised Geometry-Aware Approach](../../CVPR2026/self_supervised/teaching_dinov3_about_partial_3d_geometry_a_self-supervised_geometry-aware_appro.md)
+- [\[CVPR 2025\] Escaping Plato's Cave: Towards the Alignment of 3D and Text Latent Spaces](../../CVPR2025/self_supervised/escaping_platos_cave_towards_the_alignment_of_3d_and_text_latent_spaces.md)
 - [\[ICCV 2025\] Manual-PA: Learning 3D Part Assembly from Instruction Diagrams](manual-pa_learning_3d_part_assembly_from_instruction_diagrams.md)
 - [\[NeurIPS 2025\] SegMASt3R: Geometry Grounded Segment Matching](../../NeurIPS2025/self_supervised/segmast3r_geometry_grounded_segment_matching.md)
-- [\[NeurIPS 2025\] STaRFormer: Semi-Supervised Task-Informed Representation Learning via Dynamic Attention-Based Regional Masking](../../NeurIPS2025/self_supervised/starformer_semi-supervised_task-informed_representation_learning_via_dynamic_att.md)
-- [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](../../ICML2026/self_supervised/the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
-- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](../../NeurIPS2025/self_supervised/soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
+- [\[CVPR 2025\] Learning to Normalize on the SPD Manifold under Bures-Wasserstein Geometry](../../CVPR2025/self_supervised/learning_to_normalize_on_the_spd_manifold_under_bures-wasserstein_geometry.md)
 
 </div>
 

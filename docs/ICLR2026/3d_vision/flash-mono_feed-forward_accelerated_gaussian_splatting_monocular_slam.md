@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Flash-Mono: Feed-Forward Accelerated Gaussian Splatting Monocular SLAM
 description: >-
-  [ICLR 2026][3D Vision][2D Gaussian Splatting] Utilizing a recurrent feed-forward model, the system directly predicts camera poses and pixel-aligned 2D Gaussian primitives for each frame. By shifting the monocular GS-SLAM paradigm from "training Gaussians from scratch" to "prediction + lightweight refinement," it achieves approximately a 10$\times$ speedup while ma
+  [ICLR 2026][3D Vision][Monocular SLAM] Utilizing a recurrent feed-forward model, the system directly predicts camera poses and pixel-aligned 2D Gaussian primitives for each frame. By shifting the monocular GS-SLAM paradigm from "training Gaussians from scratch" to "prediction + lightweight refinement," it achieves approximately a 10$\times$ speedup while maintaining SOTA rendering and tracking quality.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - 2D Gaussian Splatting
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Monocular SLAM"
+  - "2D Gaussian Splatting"
+  - "Feed-Forward Reconstruction"
+  - "Recurrent Transformer"
+  - "Loop Closure Detection"
+  - "Sim(3) Optimization"
 date: 2026-05-08
-content_hash: fd2d9b5fbdcc0e32
+content_hash: 9f4d8d9b2b5283bd
 ---
+
 # Flash-Mono: Feed-Forward Accelerated Gaussian Splatting Monocular SLAM
 
 **Conference**: ICLR 2026  
@@ -124,10 +130,10 @@ Feed-forward prediction alone provides a strong initial PSNR of 20.14, which inc
 ## Related Papers
 
 - [\[ICLR 2026\] ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion](resplat_degradation-agnostic_feed-forward_gaussian_splatting_via_self-guided_res.md)
+- [\[ICLR 2026\] ARTDECO: High-Fidelity Online 3D Reconstruction with Hierarchical Gaussian Structure + Feed-forward Priors](artdeco_toward_high-fidelity_on-the-fly_reconstruction_with_hierarchical_gaussia.md)
 - [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](../../CVPR2026/3d_vision/z-order_transformer_for_feed-forward_gaussian_splatting.md)
 - [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](../../CVPR2026/3d_vision/anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting](../../CVPR2026/3d_vision/sr3r_rethinking_super-resolution_3d_reconstruction_with_feed-forward_gaussian_sp.md)
-- [\[ICLR 2026\] Open-Set Semantic Gaussian Splatting SLAM with Expandable Representation](open-set_semantic_gaussian_splatting_slam_with_expandable_representation.md)
+- [\[CVPR 2026\] Off The Grid: Detection of Primitives for Feed-Forward 3D Gaussian Splatting](../../CVPR2026/3d_vision/off_the_grid_detection_of_primitives_for_feed-forward_3d_gaussian_splatting.md)
 
 </div>
 

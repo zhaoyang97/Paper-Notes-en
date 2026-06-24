@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Real-Time Motion-Controllable Autoregressive Video Diffusion
 description: >-
-  [ICLR 2026][Video Generation][Reinforcement Learning] This paper proposes AR-Drag—the first few-step autoregressive image-to-video (I2V) diffusion model enhanced by Reinforcement Learning. By using Self-Rollout to maintain Markovian properties, compressing ultra-long decision horizons with selective stochastic sampling, and introducing trajectory-based rewards for GRPO, i
+  [ICLR 2026][Video Generation][Autoregressive Video Diffusion] This paper proposes AR-Drag—the first few-step autoregressive image-to-video (I2V) diffusion model enhanced by Reinforcement Learning. By using Self-Rollout to maintain Markovian properties, compressing ultra-long decision horizons with selective stochastic sampling, and introducing trajectory-based rewards for GRPO, it achieves a first-frame latency of 0.44s with 1.3B parameters, outperforming existing bidirection…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Reinforcement Learning
-  - GRPO
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Autoregressive Video Diffusion"
+  - "Motion-Controllable Generation"
+  - "Real-Time Generation"
+  - "Reinforcement Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a274afa52a26b153
+content_hash: 45f2769d4c864535
 ---
+
 # Real-Time Motion-Controllable Autoregressive Video Diffusion
 
 **Conference**: ICLR 2026  
@@ -133,11 +137,11 @@ Step 1 uses an extended flow-matching objective $L_{FM}(\theta) = \mathbb{E}_{t,
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rolling Forcing: Autoregressive Long Video Diffusion in Real Time](rolling_forcing_autoregressive_long_video_diffusion_in_real_time.md)
 - [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](motionstream_real-time_video_generation_with_interactive_motion_controls.md)
 - [\[ICLR 2026\] LongLive: Real-time Interactive Long Video Generation](longlive_real-time_interactive_long_video_generation.md)
 - [\[CVPR 2025\] Teller: Real-Time Streaming Audio-Driven Portrait Animation with Autoregressive Motion Generation](../../CVPR2025/video_generation/teller_real-time_streaming_audio-driven_portrait_animation_with_autoregressive_m.md)
-- [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
-- [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](../../CVPR2026/video_generation/u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
+- [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
 
 </div>
 

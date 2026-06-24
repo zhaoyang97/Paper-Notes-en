@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law
 description: >-
-  [NeurIPS 2025][LLM Agent][LLM agent safety] This paper introduces EU-Agent-Bench, the first verifiable agent benchmark grounded in the EU legal framework. Using 600 benign user requests…
+  [NeurIPS 2025][LLM Agent][LLM agent safety] This paper introduces EU-Agent-Bench, the first verifiable agent benchmark grounded in the EU legal framework. Using 600 benign user requests, it evaluates whether LLM agents' tool calls violate EU regulations. Results show that even the best-performing model (Gemini 2.5 Flash) achieves a legality rate of only ~55%, revealing a substantial gap between current alignment techniques and legal reliability.
 tags:
   - "NeurIPS 2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "function calling"
   - "legal AI"
 date: 2026-05-08
-content_hash: 99c35a2262c52fef
+content_hash: 9b4fc91ac5ea2795
 ---
 
 # EU-Agent-Bench: Measuring Illegal Behavior of LLM Agents Under EU Law
@@ -169,10 +169,10 @@ Providing relevant EU legal provisions directly in the system prompt yields:
 ## Related Papers
 
 - [\[NeurIPS 2025\] AgentMisalignment: Measuring the Propensity for Misaligned Behaviour in LLM-Based Agents](agentmisalignment_measuring_the_propensity_for_misaligned_behaviour_in_llm-based.md)
-- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
 - [\[ICLR 2026\] NewtonBench: Benchmarking Generalizable Scientific Law Discovery in LLM Agents](../../ICLR2026/llm_agent/newtonbench_benchmarking_generalizable_scientific_law_discovery_in_llm_agents.md)
-- [\[ICML 2026\] ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation](../../ICML2026/llm_agent/excytin-bench_evaluating_llm_agents_on_cyber_threat_investigation.md)
-- [\[NeurIPS 2025\] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions](contextagent_context-aware_proactive_llm_agents_with_open-world_sensory_percepti.md)
+- [\[NeurIPS 2025\] MLRC-Bench: Can Language Agents Solve Machine Learning Research Challenges?](mlrc-bench_can_language_agents_solve_machine_learning_research_challenges.md)
+- [\[ACL 2025\] AndroidGen: Building an Android Language Agent under Data Scarcity](../../ACL2025/llm_agent/androidgen_agent_data_scarcity.md)
+- [\[ACL 2025\] Agents Under Siege: Breaking Pragmatic Multi-Agent LLM Systems with Optimized Prompt Attacks](../../ACL2025/llm_agent/agents_under_siege_breaking_pragmatic_multi-agent_llm_systems_with_optimized_pro.md)
 
 </div>
 

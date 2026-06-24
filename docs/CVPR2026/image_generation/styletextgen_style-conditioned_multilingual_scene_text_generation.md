@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] StyleTextGen: Style-Conditioned Multilingual Scene Text Generation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] StyleTextGen models "generating scene text based on the style of a reference image" as a DiT diffusion inpainting task. It utilizes a **dual-branch style encoder** (a text branch for extracting glyph textures and a vision branch for capturing global tones) to extract style embeddings decoupled from the background. By i
+  [CVPR 2026][Image Generation][Style-conditioned generation] StyleTextGen models "generating scene text based on the style of a reference image" as a DiT diffusion inpainting task. It utilizes a **dual-branch style encoder** (a text branch for extracting glyph textures and a vision branch for capturing global tones) to extract style embeddings decoupled from the background. By incorporating a **style consistency loss** calculated exclusively within text regions and an inferenc…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Style-conditioned generation"
+  - "multilingual scene text"
+  - "dual-branch style encoder"
+  - "style consistency loss"
+  - "diffusion inpainting"
 date: 2026-05-08
-content_hash: 3a4ec8c8ed251e14
+content_hash: 5118d33a2f460453
 ---
+
 # StyleTextGen: Style-Conditioned Multilingual Scene Text Generation
 
 **Conference**: CVPR 2026  
@@ -155,11 +161,11 @@ Ablation on StyleText-CE:
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 - [\[CVPR 2026\] A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete.md)
-- [\[CVPR 2026\] StyleText: A Large-Scale Dataset and Benchmark for Stylized Scene Text Inpainting](styletext_a_large-scale_dataset_and_benchmark_for_stylized_scene_text_inpainting.md)
 - [\[CVPR 2026\] ScenDi: 3D-to-2D Scene Diffusion Cascades for Urban Generation](scendi_3d-to-2d_scene_diffusion_cascades_for_urban_generation.md)
-- [\[ECCV 2024\] DCDM: Diffusion-Conditioned-Diffusion Model for Scene Text Image Super-Resolution](../../ECCV2024/image_generation/dcdm_diffusion-conditioned-diffusion_model_for_scene_text_image_super-resolution.md)
 - [\[CVPR 2026\] StyleDoctor: Towards Specialist Reward Model for Style-centric Generation Tasks](styledoctor_towards_specialist_reward_model_for_style-centric_generation_tasks.md)
+- [\[ECCV 2024\] DCDM: Diffusion-Conditioned-Diffusion Model for Scene Text Image Super-Resolution](../../ECCV2024/image_generation/dcdm_diffusion-conditioned-diffusion_model_for_scene_text_image_super-resolution.md)
 
 </div>
 

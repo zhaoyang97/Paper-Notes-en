@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper reveals the "Temporal Blindness" of LLM Agents in multi-turn interactions—their inability to adjust tool-calling decisions based on the actual time elapsed between messages—and constructs the TicToc benchmark to evaluate this issue.
+  [ACL 2026 Findings][LLM Agent][Temporal Blindness] This paper reveals the "Temporal Blindness" of LLM Agents in multi-turn interactions—their inability to adjust tool-calling decisions based on the actual time elapsed between messages—and constructs the TicToc benchmark to evaluate this issue.
 tags:
-  - ACL 2026
-  - LLM Agent
+  - "ACL 2026 Findings"
+  - "LLM Agent"
+  - "Temporal Blindness"
+  - "Tool Calling Decisions"
+  - "Human Preference Alignment"
+  - "Multi-turn Dialogue"
+  - "Time Sensitivity"
 date: 2026-05-08
-content_hash: 50f4ab874219f984
+content_hash: 6cb49442aa913322
 ---
+
 # Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception
 
 **Conference**: ACL 2026 Findings  
@@ -112,11 +118,11 @@ The evaluation metric is the Normalized Alignment Rate $NAR = \frac{1}{2}(\frac{
 
 ## Related Papers
 
+- [\[ICLR 2026\] Benchmarking LLM Tool-Use in the Wild](../../ICLR2026/llm_agent/benchmarking_llm_tool-use_in_the_wild.md)
+- [\[ICLR 2026\] Grounding Computer Use Agents on Human Demonstrations](../../ICLR2026/llm_agent/grounding_computer_use_agents_on_human_demonstrations.md)
+- [\[ICLR 2026\] Just Do It!? Computer-Use Agents Exhibit Blind Goal-Directedness](../../ICLR2026/llm_agent/just_do_it_computer-use_agents_exhibit_blind_goal-directedness.md)
 - [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](../../ICML2026/llm_agent/reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
-- [\[ACL 2026\] ToolGrad: Efficient Tool-use Dataset Generation with Textual "Gradients"](toolgrad_efficient_tool-use_dataset_generation_with_textual_gradients.md)
-- [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
 - [\[ACL 2026\] Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories](waking_up_blind_cold-start_optimization_of_supervision-free_agentic_trajectories.md)
-- [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
 
 </div>
 

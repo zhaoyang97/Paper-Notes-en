@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Parametric Knowledge is Not All You Need: Toward Honest Large Language Models via Retrieval of Pretraining Data
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] The authors argue that existing "LLM Honesty" benchmarks fail to consider what knowledge the model actually encountered during pretraining. By utilizing Pythia, whose training data is fully public, they define knowledge boundaries based on "retrievability of answers in pretraining data" to construct the more reliable T
+  [ACL 2026][Hallucination Detection][LLM Honesty] The authors argue that existing "LLM Honesty" benchmarks fail to consider what knowledge the model actually encountered during pretraining. By utilizing Pythia, whose training data is fully public, they define knowledge boundaries based on "retrievability of answers in pretraining data" to construct the more reliable TIP-TriviaQA benchmark. They further propose RETAIN, a tri-agent method that retrieves the model’s own pretraini…
 tags:
-  - ACL 2026
-  - Hallucination Detection
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "LLM Honesty"
+  - "Knowledge Boundary"
+  - "Pretraining Data Retrieval"
+  - "Refusal"
+  - "Hallucinations"
 date: 2026-05-08
-content_hash: 6134abee7b15ad72
+content_hash: 4879f077bd57536a
 ---
+
 # Parametric Knowledge is Not All You Need: Toward Honest Large Language Models via Retrieval of Pretraining Data
 
 **Conference**: ACL 2026  
@@ -124,15 +130,16 @@ RT=Retriever, AC=Answerability Classifier, RS=Responder training.
 - **Value**: ⭐⭐⭐⭐ (Provides a robust benchmark and an interpretable method for honesty).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2025\] Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering](../../ACL2025/hallucination/aligning_large_language_models_to_follow_instructions_and_hallucinate_less_via_e.md)
+- [\[ICLR 2026\] Micro-Macro Retrieval: Reducing Long-Form Hallucination in Large Language Models](../../ICLR2026/hallucination/micro-macro_retrieval_reducing_long-form_hallucination_in_large_language_models.md)
 - [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
-- [\[ACL 2025\] Retrieval Visual Contrastive Decoding to Mitigate Object Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/retrieval_visual_contrastive_decoding_to_mitigate_object_hallucinations_in_large.md)
-- [\[ACL 2025\] Alleviating Hallucinations from Knowledge Misalignment in Large Language Models via Selective Abstention Learning](../../ACL2025/hallucination/alleviating_hallucinations_from_knowledge_misalignment_in_large_language_models_.md)
 - [\[ACL 2026\] Benchmarking Deflection and Hallucination in Large Vision-Language Models](benchmarking_deflection_and_hallucination_in_large_vision-language_models.md)
+- [\[ACL 2025\] Aligning Large Language Models to Follow Instructions and Hallucinate Less via Effective Data Filtering](../../ACL2025/hallucination/aligning_large_language_models_to_follow_instructions_and_hallucinate_less_via_e.md)
+- [\[ACL 2026\] HalluAudio: A Comprehensive Benchmark for Hallucination Detection in Large Audio-Language Models](halluaudio_a_comprehensive_benchmark_for_hallucination_detection_in_large_audio-.md)
 
 </div>
 

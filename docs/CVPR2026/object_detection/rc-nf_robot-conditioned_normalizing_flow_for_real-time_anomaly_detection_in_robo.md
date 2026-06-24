@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
 description: >-
-  [CVPR 2026][Object Detection][normalizing flow] Proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object trajectories through conditional normalizing flows. It achieves <100ms real-time anomaly detection and serves as a plug-and-play monitoring module for VLA models (e.g., π₀), supporting task-level replanni
+  [CVPR2026][Object Detection][Anomaly detection] Proposes Robot-Conditioned Normalizing Flow (RC-NF), which models the joint distribution of robot states and object trajectories through conditional normalizing flows. It achieves <100ms real-time anomaly detection and serves as a plug-and-play monitoring module for VLA models (e.g., π₀), supporting task-level replanning and state-level trajectory homing.
 tags:
-  - CVPR 2026
-  - Object Detection
-  - normalizing flow
-  - VLA monitoring
+  - "CVPR2026"
+  - "Object Detection"
+  - "Anomaly detection"
+  - "normalizing flow"
+  - "VLA monitoring"
+  - "robotic manipulation"
+  - "out-of-distribution"
 date: 2026-05-08
-content_hash: d582825c544af2a4
+content_hash: 7990836ef4f19f53
 ---
+
 # RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
 
 **Conference**: CVPR2026  
@@ -170,11 +174,11 @@ Calculating an anomaly score is only the first step; practical deployment requir
 
 ## Related Papers
 
-- [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
+- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
 - [\[CVPR 2026\] BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection](bussard_normalizing_flows_for_bijective_universal_scene-specific_anomalous_relat.md)
-- [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
-- [\[CVPR 2026\] AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)
+- [\[CVPR 2026\] YOLO-ULM: Ultra-Lightweight Models for Real-Time Object Detection](yolo-ulm_ultra-lightweight_models_for_real-time_object_detection.md)
 - [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
+- [\[CVPR 2026\] YOLO-Master: MOE-Accelerated with Specialized Transformers for Enhanced Real-time Detection](yolo-master_moe-accelerated_with_specialized_transformers_for_enhanced_real-time.md)
 
 </div>
 

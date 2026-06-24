@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Autoregressive Visual Decoding from EEG Signals
 description: >-
-  [ICLR 2026][Medical Imaging][EEG-to-Image] AVDE reformulates "decoding EEG signals into images" into a **two-stage, autoregressive** lightweight pipeline: first, it aligns EEG to the CLIP image space using the pre-trained EEG foundation model LaBraM combined with contrastive learning; then, it uses "Next-Scale Prediction" from the VAR framework to generate imag
+  [ICLR 2026][Medical Imaging][EEG-to-Image] AVDE reformulates "decoding EEG signals into images" into a **two-stage, autoregressive** lightweight pipeline: first, it aligns EEG to the CLIP image space using the pre-trained EEG foundation model LaBraM combined with contrastive learning; then, it uses "Next-Scale Prediction" from the VAR framework to generate images progressively from EEG embeddings. With only 10% of the parameters, it outperforms previous SOTA models that rely…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - EEG-to-Image
-  - LaBraM
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "EEG-to-Image"
+  - "Visual Decoding"
+  - "LaBraM"
+  - "Next-Scale Prediction (VAR)"
+  - "Contrastive Learning"
+  - "BCI"
 date: 2026-05-08
-content_hash: 60324821e24e3fec
+content_hash: d75ac27ace7e187b
 ---
+
 # Autoregressive Visual Decoding from EEG Signals
 
 **Conference**: ICLR 2026  
@@ -127,9 +132,9 @@ Efficiency Comparison (Single A100, batch=1):
 
 - [\[ICLR 2026\] A Cognitive Process-Inspired Architecture for Subject-Agnostic Brain Visual Decoding](a_cognitive_process-inspired_architecture_for_subject-agnostic_brain_visual_deco.md)
 - [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
-- [\[NeurIPS 2025\] MEGState: Phoneme Decoding from Magnetoencephalography Signals](../../NeurIPS2025/medical_imaging/megstate_phoneme_decoding_from_magnetoencephalography_signals.md)
-- [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 - [\[ICLR 2026\] HEEGNet: Hyperbolic Embeddings for EEG](heegnet_hyperbolic_embeddings_for_eeg.md)
+- [\[ICLR 2026\] Seeing Through the Brain: New Insights from Decoding Visual Stimuli with fMRI](seeing_through_the_brain_new_insights_from_decoding_visual_stimuli_with_fmri.md)
+- [\[ICLR 2026\] SEED: Towards More Accurate Semantic Evaluation for Visual Brain Decoding](seed_towards_more_accurate_semantic_evaluation_for_visual_brain_decoding.md)
 
 </div>
 

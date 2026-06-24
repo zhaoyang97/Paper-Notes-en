@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Riemannian Networks over Full-Rank Correlation Matrices
 description: >-
-  [ICML 2026][Others][Paper Note] This paper systematically generalizes three fundamental layers—MLR, FC, and Conv—to five Riemannian geometries (ECM, LECM, OLM, LSM, PHCM) on the full-rank correlation matrix manifold $\mathrm{Cor}^+(n)$. It derives exact backpropagation for OLM and LSM. The constructed CorNet consistently outperforms SPDNet and Grassm
+  [ICML 2026][Correlation Matrix Manifold] This paper systematically generalizes three fundamental layers—MLR, FC, and Conv—to five Riemannian geometries (ECM, LECM, OLM, LSM, PHCM) on the full-rank correlation matrix manifold $\mathrm{Cor}^+(n)$. It derives exact backpropagation for OLM and LSM. The constructed CorNet consistently outperforms SPDNet and Grassmann networks of similar size on Radar, HDM05, FPHA, and NTU120 datasets.
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Correlation Matrix Manifold"
+  - "Riemannian Networks"
+  - "Log-Euclidean Metric"
+  - "Cholesky Decomposition"
+  - "Poincaré Ball"
 date: 2026-05-08
-content_hash: 40d7be13b07e4a1a
+content_hash: 64ff12f15ca48ce7
 ---
+
 # Riemannian Networks over Full-Rank Correlation Matrices
 
 **Conference**: ICML 2026  
@@ -124,11 +129,11 @@ Compared to the classic SPDNet, CorNets show gains of +5.15% / +17.69% / +6.58% 
 
 ## Related Papers
 
-- [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
+- [\[ICLR 2026\] Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry](../../ICLR2026/others/fast_and_stable_riemannian_metrics_on_spd_manifolds_via_cholesky_product_geometr.md)
 - [\[ICLR 2026\] Consistent Low-Rank Approximation](../../ICLR2026/others/consistent_low-rank_approximation.md)
+- [\[ICML 2026\] DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation](disco_mitigating_bias_in_deep_learning_with_conditional_distance_correlation.md)
 - [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
-- [\[AAAI 2026\] Improved Differentially Private Algorithms for Rank Aggregation](../../AAAI2026/others/improved_differentially_private_algorithms_for_rank_aggregation.md)
-- [\[CVPR 2025\] Full-DoF Egomotion Estimation for Event Cameras Using Geometric Solvers](../../CVPR2025/others/full-dof_egomotion_estimation_for_event_cameras_using_geometric_solvers.md)
+- [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](identifiable_equivariant_networks_are_layerwise_equivariant.md)
 
 </div>
 

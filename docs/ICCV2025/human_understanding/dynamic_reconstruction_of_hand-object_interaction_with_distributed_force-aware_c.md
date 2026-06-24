@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation
 description: >-
-  [ICCV 2025][Human Understanding][hand-object interaction] This paper proposes ViTaM-D, a vision-tactile fusion framework that achieves dynamic reconstruction of hand-object interaction for both rigid and deformable objec…
+  [ICCV 2025][Human Understanding][hand-object interaction] This paper proposes ViTaM-D, a vision-tactile fusion framework that achieves dynamic reconstruction of hand-object interaction for both rigid and deformable objects. The framework introduces a novel Distributed Force-aware Contact Representation (DF-Field) and a two-stage pipeline consisting of visual dynamic tracking followed by force-aware optimization. The HOT dataset is also introduced to address the evaluation gap…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "deformable objects"
   - "SDF reconstruction"
 date: 2026-05-08
-content_hash: 183f6db0bb941cf0
+content_hash: af3ed992b793bd08
 ---
 
 # Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation
@@ -168,10 +168,10 @@ Total loss: $\mathcal{L} = \lambda_f \mathcal{L}_{flow} + \lambda_S \mathcal{L}_
 
 ## Related Papers
 
+- [\[ICLR 2026\] Interaction-aware Representation Modeling With Co-Occurrence Consistency for Egocentric Hand-Object Parsing](../../ICLR2026/human_understanding/interaction-aware_representation_modeling_with_co-occurrence_consistency_for_ego.md)
 - [\[ICCV 2025\] Contact-Aware Refinement of Human Pose Pseudo-Ground Truth via Bioimpedance Sensing](contact-aware_refinement_of_human_pose_pseudo-ground_truth_via_bioimpedance_sens.md)
-- [\[CVPR 2026\] 4DSurf: High-Fidelity Dynamic Scene Surface Reconstruction](../../CVPR2026/human_understanding/textit4dsurf_high-fidelity_dynamic_scene_surface_reconstruction.md)
+- [\[CVPR 2025\] UniHOPE: A Unified Approach for Hand-Only and Hand-Object Pose Estimation](../../CVPR2025/human_understanding/unihope_a_unified_approach_for_hand-only_and_hand-object_pose_estimation.md)
 - [\[NeurIPS 2025\] Learning Dense Hand Contact Estimation from Imbalanced Data](../../NeurIPS2025/human_understanding/learning_dense_hand_contact_estimation_from_imbalanced_data.md)
-- [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](../../NeurIPS2025/human_understanding/hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
 - [\[ICCV 2025\] NGD: Neural Gradient Based Deformation for Monocular Garment Reconstruction](ngd_neural_gradient_based_deformation_for_monocular_garment_reconstruction.md)
 
 </div>

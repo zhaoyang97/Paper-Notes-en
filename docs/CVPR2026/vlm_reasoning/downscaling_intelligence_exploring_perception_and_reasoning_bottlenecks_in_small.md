@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This study systematically investigates the impact of LLM scaling on multimodal capabilities, finding that visual tasks—rather than LLM-dependent tasks—are most affected, and that perceptual degradation is as severe as reasoning degradation. The proposed Extract+Think method (Visual Extraction Tuning + Step-by-step Reas
+  [CVPR 2026][VLM Reasoning][Multimodal Model Scaling] This study systematically investigates the impact of LLM scaling on multimodal capabilities, finding that visual tasks—rather than LLM-dependent tasks—are most affected, and that perceptual degradation is as severe as reasoning degradation. The proposed Extract+Think method (Visual Extraction Tuning + Step-by-step Reasoning) enables a minimal model with 0.6B perception and 1.7B reasoning to outperform PrismCaptioner and LLa…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Multimodal Model Scaling"
+  - "Perception Bottleneck"
+  - "Reasoning Bottleneck"
+  - "Visual Extraction Tuning"
+  - "Small Models"
 date: 2026-05-08
-content_hash: 2bbb44f76f245eb6
+content_hash: 591dd6c2a289582f
 ---
+
 # Downscaling Intelligence: Exploring Perception and Reasoning Bottlenecks in Small VLMs
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ In the two-stage framework, text serves as the bridge between perception and rea
 
 ## Related Papers
 
-- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
-- [\[CVPR 2026\] Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy](nano-emox_unifying_multimodal_emotional_intelligence_from_perception_to_empathy.md)
-- [\[CVPR 2026\] Small Object, Great Challenge: A Benchmark for Small Object Visual Grounding](small_object_great_challenge_a_benchmark_for_small_object_visual_grounding.md)
-- [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](../../ICLR2026/multimodal_vlm/empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
+- [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](../../ICLR2026/vlm_reasoning/empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
+- [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
+- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
 - [\[CVPR 2026\] Act2See: Emergent Active Visual Perception for Video Reasoning](act2see_emergent_active_visual_perception_for_video_reasoning.md)
+- [\[ICLR 2026\] Compose and Fuse: Revisiting the Foundational Bottlenecks in Multimodal Reasoning](../../ICLR2026/vlm_reasoning/compose_and_fuse_revisiting_the_foundational_bottlenecks_in_multimodal_reasoning.md)
 
 </div>
 

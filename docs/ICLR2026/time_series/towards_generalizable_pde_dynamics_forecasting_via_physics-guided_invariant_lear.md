@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning
 description: >-
-  [ICLR 2026][Time Series][Paper Note] The iMOOE framework is proposed, which explicitly defines the two-level physical invariance principle of "operator invariance + compositional invariance" in PDE systems. By designing an aligned Mixture of Operator Experts (MOOE) network and a frequency-enhanced risk equality objective, the method achieves SOTA zero-sho
+  [ICLR 2026][Time Series][PDE Invariance Learning] The iMOOE framework is proposed, which explicitly defines the two-level physical invariance principle of "operator invariance + compositional invariance" in PDE systems. By designing an aligned Mixture of Operator Experts (MOOE) network and a frequency-enhanced risk equality objective, the method achieves SOTA zero-shot PDE dynamics forecasting under various OOD scenarios without requiring any test-time adaptation.
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "PDE Invariance Learning"
+  - "Zero-shot OOD Generalization"
+  - "Mixture of Operator Experts"
+  - "Frequency Enhancement"
+  - "Neural Operator"
 date: 2026-05-08
-content_hash: a52c8e2e3b697da5
+content_hash: 393c5ad5c2c826a3
 ---
+
 # Towards Generalizable PDE Dynamics Forecasting via Physics-Guided Invariant Learning
 
 **Conference**: ICLR 2026  
@@ -147,10 +153,10 @@ Average OOD Improvement: nMSE 40.21%, fRMSE 30.78%.
 ## Related Papers
 
 - [\[ICML 2025\] A Generalizable Physics-Enhanced State Space Model for Long-Term Dynamics Forecasting in Complex Environments](../../ICML2025/time_series/a_generalizable_physics-enhanced_state_space_model_for_long-term_dynamics_foreca.md)
-- [\[ICLR 2026\] Enabling Arbitrary Inference in Spatio-Temporal Dynamic Systems: A Physics-Inspired Perspective](enabling_arbitrary_inference_in_spatio-temporal_dynamic_systems_a_physics-inspir.md)
 - [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
+- [\[ICLR 2026\] DeepPrim: a Physics-Driven 3D Short-term Weather Forecaster via Primitive Equation Learning](deepprim_a_physics-driven_3d_short-term_weather_forecaster_via_primitive_equatio.md)
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
 - [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
-- [\[ICLR 2026\] Panda: A Pretrained Forecast Model for Chaotic Dynamics](panda_a_pretrained_forecast_model_for_chaotic_dynamics.md)
 
 </div>
 

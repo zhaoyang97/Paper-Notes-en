@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Ours proposes the LogicReward reward function, which utilizes the Isabelle theorem prover for step-wise logical correctness verification. By combining Autoformalization with Soft Unification to reduce natural language ambiguity, the trained 8B model outperforms GPT-4o by 11.6% and o4-mini by 2% on NLI and logical reaso
+  [ICLR2026][Reasoning][Logical Reasoning] Ours proposes the LogicReward reward function, which utilizes the Isabelle theorem prover for step-wise logical correctness verification. By combining Autoformalization with Soft Unification to reduce natural language ambiguity, the trained 8B model outperforms GPT-4o by 11.6% and o4-mini by 2% on NLI and logical reasoning tasks.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR2026"
+  - "Reasoning"
+  - "Logical Reasoning"
+  - "Theorem Prover"
+  - "Step-wise Reward"
+  - "Autoformalization"
+  - "Soft Unification"
 date: 2026-05-08
-content_hash: cb0dc5f048acd6d5
+content_hash: a056c7da4aa7e7e5
 ---
+
 # LogicReward: Incentivizing LLM Reasoning via Step-Wise Logical Supervision
 
 **Conference**: ICLR2026  
@@ -127,9 +133,9 @@ On the data side, approximately 6,000 instances were sampled from 8 NLI/logical 
 
 - [\[ACL 2026\] Logical Phase Transitions: Understanding Collapse in LLM Logical Reasoning](../../ACL2026/llm_reasoning/logical_phase_transitions_understanding_collapse_in_llm_logical_reasoning.md)
 - [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
-- [\[ICLR 2026\] ActivationReasoning: Logical Reasoning in Latent Activation Spaces](activationreasoning_logical_reasoning_in_latent_activation_spaces.md)
-- [\[ICLR 2026\] Learning to Reason via Mixture-of-Thought for Logical Reasoning](learning_to_reason_via_mixture-of-thought_for_logical_reasoning.md)
 - [\[ACL 2026\] Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding (CoRD)](../../ACL2026/llm_reasoning/distilling_long-cot_reasoning_through_collaborative_step-wise_multi-teacher_deco.md)
+- [\[ACL 2026\] Discovering a Shared Logical Subspace: Steering LLM Logical Reasoning via Alignment of Natural-Language and Symbolic Views](../../ACL2026/llm_reasoning/discovering_a_shared_logical_subspace_steering_llm_logical_reasoning_via_alignme.md)
+- [\[ICLR 2026\] LoC-Decomp: LLM Autoformalization via Logical Concept Decomposition and Iterative Feedback Correction](loc-decomp_llm_autoformalization_via_logical_concept_decomposition_and_iterative.md)
 
 </div>
 

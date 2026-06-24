@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Gradient Transformer: Learning to Generate Updates for LLMs
 description: >-
-  [ICML 2026][AI Safety][update vector] This paper proposes Grad-Transformer, which "translates" the update vector obtained by a client fine-tuning a small model (TinyLM) on private data into an update vector for a target large language model (LLM) using an encoder-decoder Transformer. This achieves weak-to-strong knowledge distillation without touching priv
+  [ICML 2026][AI Safety][update vector] This paper proposes Grad-Transformer, which "translates" the update vector obtained by a client fine-tuning a small model (TinyLM) on private data into an update vector for a target large language model (LLM) using an encoder-decoder Transformer. This achieves weak-to-strong knowledge distillation without touching private data. It achieves an average PGR of 91.88% across 6 reasoning/summarization datasets…
 tags:
-  - ICML 2026
-  - AI Safety
-  - update vector
-  - weak-to-strong distillation
-  - Grad-Transformer
-  - LoRA
-  - differential privacy
+  - "ICML 2026"
+  - "AI Safety"
+  - "update vector"
+  - "weak-to-strong distillation"
+  - "Grad-Transformer"
+  - "LoRA"
+  - "differential privacy"
 date: 2026-05-08
-content_hash: ccaada24f772c182
+content_hash: 193a4b8700696899
 ---
+
 # Gradient Transformer: Learning to Generate Updates for LLMs
 
 **Conference**: ICML 2026  
@@ -147,8 +148,8 @@ Inference switches to feeding back the previous prediction $\hat h_{T,k}^{<j}$ (
 
 ## Related Papers
 
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: 转移、动力学与可逆性](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] Efficient DP-SGD for LLMs with Randomized Clipping](efficient_dp-sgd_for_llms_with_randomized_clipping.md)
 - [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
 - [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)

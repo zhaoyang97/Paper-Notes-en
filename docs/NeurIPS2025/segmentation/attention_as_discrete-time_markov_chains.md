@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Attention (as Discrete-Time Markov) Chains
 description: >-
-  [NeurIPS 2025][Segmentation][Attention Markov Chains] This work reinterprets the softmax-normalized attention matrix as the transition probability matrix of a Discrete-Time Markov Chain (DTMC)…
+  [NeurIPS 2025][Segmentation][Attention Markov Chains] This work reinterprets the softmax-normalized attention matrix as the transition probability matrix of a Discrete-Time Markov Chain (DTMC), and proposes Multi-Bounce Attention and TokenRank (stationary distribution, analogous to PageRank) to capture indirect attention paths and global token importance. The approach achieves 94.29% mAP on ImageNet segmentation and enhances image generation quality in Self-Attention Guidance…
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Bounce Attention"
   - "Image Segmentation"
 date: 2026-05-08
-content_hash: d06e723810398b7e
+content_hash: 31fa7fc92b312963
 ---
 
 # Attention (as Discrete-Time Markov) Chains
@@ -132,9 +132,9 @@ Core insight: The softmax-normalized attention matrix naturally satisfies the Ma
 
 - [\[NeurIPS 2025\] Mechanistic Interpretability of RNNs Emulating Hidden Markov Models](mechanistic_interpretability_of_rnns_emulating_hidden_markov_models.md)
 - [\[NeurIPS 2025\] Interpreting ResNet-based CLIP via Neuron-Attention Decomposition](interpreting_resnet-based_clip_via_neuron-attention_decomposition.md)
-- [\[ICCV 2025\] Online Reasoning Video Segmentation with Just-in-Time Digital Twins](../../ICCV2025/segmentation/online_reasoning_video_segmentation_with_just-in-time_digital_twins.md)
-- [\[ICCV 2025\] Correspondence as Video: Test-Time Adaption on SAM2 for Reference Segmentation in the Wild](../../ICCV2025/segmentation/correspondence_as_video_test-time_adaption_on_sam2_for_reference_segmentation_in.md)
-- [\[ICCV 2025\] TopoTTA: Topology-Enhanced Test-Time Adaptation for Tubular Structure Segmentation](../../ICCV2025/segmentation/topotta_topology-enhanced_test-time_adaptation_for_tubular_structure_segmentatio.md)
+- [\[ICML 2025\] IT³: Idempotent Test-Time Training](../../ICML2025/segmentation/it3_idempotent_test-time_training.md)
+- [\[CVPR 2025\] Golden Cudgel Network for Real-Time Semantic Segmentation](../../CVPR2025/segmentation/golden_cudgel_network_for_real-time_semantic_segmentation.md)
+- [\[CVPR 2025\] PicoSAM3: Real-Time In-Sensor Region-of-Interest Segmentation](../../CVPR2025/segmentation/picosam3_real-time_in-sensor_region-of-interest_segmentation.md)
 
 </div>
 

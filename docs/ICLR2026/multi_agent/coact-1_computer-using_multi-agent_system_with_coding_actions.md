@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] CoAct-1: Computer-using Multi-agent System with Coding Actions
 description: >-
-  [ICLR 2026][Multi-Agent][Paper Note] CoAct-1 treats "writing and executing code" as a first-class action alongside GUI clicking. It utilizes an Orchestrator to dynamically assign subtasks to a Programmer (proficient in Python/Bash) or a GUI Operator (capable of screen interaction). This approach pushes the success rate to 60.8% on OSWorld (52.5% on Window
+  [ICLR2026][Multi-Agent][Computer-using Agent] CoAct-1 treats "writing and executing code" as a first-class action alongside GUI clicking. It utilizes an Orchestrator to dynamically assign subtasks to a Programmer (proficient in Python/Bash) or a GUI Operator (capable of screen interaction). This approach pushes the success rate to 60.8% on OSWorld (52.5% on WindowsAgentArena) while reducing the average number of steps to 10.15.
 tags:
-  - ICLR 2026
-  - Multi-Agent
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Computer-using Agent"
+  - "Coding Actions"
+  - "GUI Operations"
+  - "Task Decomposition"
 date: 2026-05-08
-content_hash: f088793f541295f2
+content_hash: 22ea868f50e69876
 ---
+
 # CoAct-1: Computer-using Multi-agent System with Coding Actions
 
 **Conference**: ICLR2026  

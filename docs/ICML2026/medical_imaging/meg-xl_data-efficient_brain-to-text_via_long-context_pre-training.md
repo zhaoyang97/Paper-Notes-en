@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training
 description: >-
-  [ICML 2026][Medical Imaging][MEG] MEG-XL utilizes a 2.5-minute (191k tokens) MEG context for masked token pre-training (5–300× longer than previous methods) and fine-tunes on a 50-word brain-to-text task. With only 1 hour of data, it achieves the decoding accuracy of SOTA supervised methods trained on 50 hours of data, significantly outperforming all e
+  [ICML 2026][Medical Imaging][Brain-to-Text] MEG-XL utilizes a 2.5-minute (191k tokens) MEG context for masked token pre-training (5–300× longer than previous methods) and fine-tunes on a 50-word brain-to-text task. With only 1 hour of data, it achieves the decoding accuracy of SOTA supervised methods trained on 50 hours of data, significantly outperforming all existing brain foundation models.
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - MEG
-  - criss-cross attention
-  - masked token prediction
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Brain-to-Text"
+  - "Long-Context Pre-Training"
+  - "MEG"
+  - "criss-cross attention"
+  - "masked token prediction"
 date: 2026-05-08
-content_hash: 2e17ae5b341f4b01
+content_hash: 717da4aa8e56f694
 ---
+
 # MEG-XL: Data-Efficient Brain-to-Text via Long-Context Pre-Training
 
 **Conference**: ICML 2026  
@@ -148,8 +151,8 @@ In low-data (13%) scenarios, MEG-XL outperforms the next best model, LaBraM, by 
 - [\[CVPR 2026\] Ultrasound-CLIP: Semantic-Aware Contrastive Pre-training for Ultrasound Image-Text Understanding](../../CVPR2026/medical_imaging/ultrasound-clip_semantic-aware_contrastive_pre-training_for_ultrasound_image-tex.md)
 - [\[CVPR 2025\] Multi-Resolution Pathology-Language Pre-training Model with Text-Guided Visual Representation](../../CVPR2025/medical_imaging/multi-resolution_pathology-language_pre-training_model_with_text-guided_visual_r.md)
 - [\[ECCV 2024\] TIP: Tabular-Image Pre-training for Multimodal Classification with Incomplete Data](../../ECCV2024/medical_imaging/tip_tabular-image_pre-training_for_multimodal_classification_with_incomplete_dat.md)
+- [\[ICLR 2026\] A Brain Graph Foundation Model: Pre-Training and Prompt-Tuning across Broad Atlases and Disorders](../../ICLR2026/medical_imaging/a_brain_graph_foundation_model_pre-training_and_prompt-tuning_across_broad_atlas.md)
 - [\[NeurIPS 2025\] BrainOmni: A Brain Foundation Model for Unified EEG and MEG Signals](../../NeurIPS2025/medical_imaging/brainomni_a_brain_foundation_model_for_unified_eeg_and_meg_signals.md)
-- [\[ICML 2025\] Context Matters: Query-aware Dynamic Long Sequence Modeling of Gigapixel Images](../../ICML2025/medical_imaging/context_matters_query-aware_dynamic_long_sequence_modeling_of_gigapixel_images.md)
 
 </div>
 

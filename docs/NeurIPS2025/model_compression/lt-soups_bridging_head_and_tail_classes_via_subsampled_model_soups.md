@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LT-Soups: Bridging Head and Tail Classes via Subsampled Model Soups
 description: >-
-  [NeurIPS 2025][Model Compression][Long-tail distribution] This paper proposes LT-Soups, a two-stage model merging framework that trains multiple models on subsampled datasets with progressively varying imbalance ratios a…
+  [NeurIPS 2025][Model Compression][Long-tail distribution] This paper proposes LT-Soups, a two-stage model merging framework that trains multiple models on subsampled datasets with progressively varying imbalance ratios and aggregates them via weight averaging, achieving balanced performance across head and tail classes over the full long-tail spectrum.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "class imbalance"
   - "parameter-efficient fine-tuning"
 date: 2026-05-08
-content_hash: 5761645a06aec098
+content_hash: 594bd187580eb77a
 ---
 
 # LT-Soups: Bridging Head and Tail Classes via Subsampled Model Soups
@@ -50,15 +50,15 @@ LT-Soups proceeds in two stages: (1) fine-tune multiple models on subsampled dat
 ### Key Designs
 
 1. **Two-Axis Imbalance Characterization**: In addition to the conventional imbalance ratio $\rho = n_K / n_1$ (ratio of the smallest to the largest class size), the paper introduces the head-to-tail ratio:
-   $$\eta = \frac{H}{T} = \frac{|\{c \mid n_c > \tau\}|}{|\{c \mid n_c \leq \tau\}|}$$
+    $\eta = \frac{H}{T} = \frac{|\{c \mid n_c > \tau\}|}{|\{c \mid n_c \leq \tau\}|}$
    By systematically varying $\rho$ and $\eta$ on CIFAR-100, the paper reveals that PEFT is superior in tail-heavy settings while full fine-tuning prevails in head-heavy ones.
 
 2. **Progressive Subsampling Strategy**: A sequence of subsets with exponentially increasing imbalance ratios is constructed:
-   $$\{D_{\rho_i} \mid \rho_i = 2^i, \; i \in \{0, 1, 2, \dots, \lceil\log_2(\rho)\rceil\}\}$$
+    $\{D_{\rho_i} \mid \rho_i = 2^i, \; i \in \{0, 1, 2, \dots, \lceil\log_2(\rho)\rceil\}\}$
    The top $N$ subsets are retained. For each subset, $M$ bootstrap replicas are trained to reduce variance, yielding $NM$ models in total.
 
 3. **Recursive Weight Interpolation**: Models are sorted in ascending order of imbalance degree and merged recursively:
-   $$\theta_n = (1 - \lambda)\theta_n + \lambda\theta_{n-1}$$
+    $\theta_n = (1 - \lambda)\theta_n + \lambda\theta_{n-1}$
    where $\lambda$ controls the degree of retention from the previous (more balanced) model. Compared to uniform averaging, this recursive strategy performs better on datasets that require substantial adaptation.
 
 4. **Classifier Retraining (CR)**: The merged backbone is frozen, and the classification head is fine-tuned on the full dataset using LA loss to recalibrate decision boundaries. While PEFT and conventional Model Soups do not benefit from CR, LT-Soups suffers from incomplete head-class information due to subsampling, and CR effectively compensates for this.
@@ -144,11 +144,11 @@ Effect of classifier retraining (CR):
 
 ## Related Papers
 
+- [\[ACL 2025\] Bone Soups: A Seek-and-Soup Model Merging Approach for Controllable Multi-Objective Generation](../../ACL2025/model_compression/bone_soups_multi_objective_gen.md)
 - [\[NeurIPS 2025\] Accurate and Efficient Low-Rank Model Merging in Core Space](accurate_and_efficient_low-rank_model_merging_in_core_space.md)
 - [\[NeurIPS 2025\] RAT: Bridging RNN Efficiency and Attention Accuracy via Chunk-based Sequence Modeling](rat_bridging_rnn_efficiency_and_attention_accuracy_via_chunk-based_sequence_mode.md)
-- [\[ICML 2026\] Don't Ignore the Tail: Decoupling top-K Probabilities for Efficient Language Model Distillation](../../ICML2026/model_compression/dont_ignore_the_tail_decoupling_top-k_probabilities_for_efficient_language_model.md)
 - [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](weight_weaving_parameter_pooling_for_data-free_model_merging.md)
-- [\[NeurIPS 2025\] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging](mingle_mixture_of_null-space_gated_low-rank_experts_for_test-time_continual_mode.md)
+- [\[CVPR 2026\] Bridging Domains through Subspace-Aware Model Merging](../../CVPR2026/model_compression/bridging_domains_through_subspace-aware_model_merging.md)
 
 </div>
 

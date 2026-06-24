@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning
 description: >-
-  [ICLR 2026][Multimodal VLM][Proactive Interaction] MMDuet2 reframes the decision of "when to speak" in streaming video as a pure text multi-turn dialogue. In each user turn, 1–2 frames are provided, and the assistant autonomously decides whether to output a response or "NO REPLY." By utilizing a multi-turn GRPO strategy with a PAUC-centered reward that eliminates the n
+  [ICLR 2026][Multimodal VLM][Proactive Interaction] MMDuet2 reframes the decision of "when to speak" in streaming video as a pure text multi-turn dialogue. In each user turn, 1–2 frames are provided, and the assistant autonomously decides whether to output a response or "NO REPLY." By utilizing a multi-turn GRPO strategy with a PAUC-centered reward that eliminates the need for precise response timestamp annotations, the model enables a 3B Video MLLM to provide fast and accurat…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Proactive Interaction
-  - Video MLLM
-  - Streaming Video
-  - Multi-turn RL
-  - GRPO
-  - PAUC Reward
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Proactive Interaction"
+  - "Video MLLM"
+  - "Streaming Video"
+  - "Multi-turn RL"
+  - "GRPO"
+  - "PAUC Reward"
 date: 2026-05-08
-content_hash: 6c68dc2764a3ff00
+content_hash: ecf0f1b2fecb695e
 ---
+
 # MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -132,8 +133,8 @@ Removing $r_{rep}$ causes a spike in repetition; removing $r_{in\_span}$ results
 
 - [\[ICLR 2026\] Enhancing Geometric Perception in VLMs via Translator-Guided Reinforcement Learning](enhancing_geometric_perception_in_vlms_via_translator-guided_reinforcement_learn.md)
 - [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](../../CVPR2026/multimodal_vlm/tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
-- [\[ICLR 2026\] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning](guirlvg_incentivize_gui_visual_grounding_via_empirical_exploration_on_reinforcem.md)
 - [\[CVPR 2026\] MuCo: Multi-turn Contrastive Learning for Multimodal Embedding Model](../../CVPR2026/multimodal_vlm/muco_multi-turn_contrastive_learning_for_multimodal_embedding_model.md)
+- [\[ICLR 2026\] GuirlVG: Incentivize GUI Visual Grounding via Empirical Exploration on Reinforcement Learning](guirlvg_incentivize_gui_visual_grounding_via_empirical_exploration_on_reinforcem.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
 
 </div>

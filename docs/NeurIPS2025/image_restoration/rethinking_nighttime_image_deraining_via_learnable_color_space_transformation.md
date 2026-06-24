@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Rethinking Nighttime Image Deraining via Learnable Color Space Transformation
 description: >-
-  [NeurIPS 2025][Image Restoration][nighttime image deraining] Motivated by the statistical finding that nighttime rain exhibits far greater contrast in the Y channel (luminance) of YCbCr than in RGB…
+  [NeurIPS 2025][Image Restoration][nighttime image deraining] Motivated by the statistical finding that nighttime rain exhibits far greater contrast in the Y channel (luminance) of YCbCr than in RGB, this work proposes a learnable Color Space Converter (CSC) that performs deraining in the Y channel, an Implicit Illumination Guidance (IIG) module that encodes non-uniform nighttime illumination, and a photorealistic dataset HQ-NightRain constructed via illumination-aware synthes…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "implicit illumination guidance"
   - "HQ-NightRain dataset"
 date: 2026-05-08
-content_hash: 4809b124a9f29a9b
+content_hash: a1a9ba9610b76a0d
 ---
 
 # Rethinking Nighttime Image Deraining via Learnable Color Space Transformation
@@ -188,11 +188,11 @@ Both stages adopt a 4-level Transformer encoder-decoder structure based on the R
 
 ## Related Papers
 
+- [\[CVPR 2025\] HVI: A New Color Space for Low-light Image Enhancement](../../CVPR2025/image_restoration/hvi_a_new_color_space_for_low-light_image_enhancement.md)
 - [\[NeurIPS 2025\] Rethinking Circuit Completeness in Language Models: AND, OR, and ADDER Gates](rethinking_circuit_completeness_in_language_models_and_or_and_adder_gates.md)
-- [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](../../ICCV2025/image_restoration/pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
 - [\[NeurIPS 2025\] Improving Diffusion-based Inverse Algorithms under Few-Step Constraint via Learnable Linear Extrapolation](improving_diffusion-based_inverse_algorithms_under_few-step_constraint_via_learn.md)
+- [\[ICCV 2025\] PRE-Mamba: A 4D State Space Model for Ultra-High-Frequent Event Camera Deraining](../../ICCV2025/image_restoration/pre-mamba_a_4d_state_space_model_for_ultra-high-frequent_event_camera_deraining.md)
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](latent_harmony_synergistic_unified_uhd_image_restoration_via_latent_space_regula.md)
-- [\[AAAI 2026\] Clear Nights Ahead: Towards Multi-Weather Nighttime Image Restoration](../../AAAI2026/image_restoration/clear_nights_ahead_towards_multi-weather_nighttime_image_res.md)
 
 </div>
 

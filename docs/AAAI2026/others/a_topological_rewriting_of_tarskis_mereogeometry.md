@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Topological Rewriting of Tarski's Mereogeometry
 description: >-
-  [AAAI 2026][Tarski Geometry] This work extends the λ-MM library within the Coq theorem prover to recast Tarski's solid geometry—grounded in Leśniewski's mereology—into a fully formalized system with a complete topologica…
+  [AAAI 2026][Tarski Geometry] This work extends the λ-MM library within the Coq theorem prover to recast Tarski's solid geometry—grounded in Leśniewski's mereology—into a fully formalized system with a complete topological structure. It proves that mereological classes correspond to regular open sets, satisfy Kuratowski's interior axioms, and exhibit the Hausdorff (T2) separation property, thereby providing a unified mereological–geometric–topological theoretical framework for…
 tags:
   - "AAAI 2026"
   - "Tarski Geometry"
@@ -12,7 +12,7 @@ tags:
   - "Regular Open Sets"
   - "Qualitative Spatial Reasoning"
 date: 2026-05-08
-content_hash: f51a342613ca2249
+content_hash: f60ede6dcd66b306
 ---
 
 # A Topological Rewriting of Tarski's Mereogeometry
@@ -131,10 +131,10 @@ All proofs are carried out in Coq 8.x, with semi-automated proofs completed via 
 ## Related Papers
 
 - [\[NeurIPS 2025\] On Topological Descriptors for Graph Products](../../NeurIPS2025/others/on_topological_descriptors_for_graph_products.md)
+- [\[ACL 2025\] Unlocking Speech Instruction Data Potential with Query Rewriting](../../ACL2025/others/unlocking_speech_instruction_data_potential_with_query_rewriting.md)
+- [\[ACL 2025\] GeNRe: A French Gender-Neutral Rewriting System Using Collective Nouns](../../ACL2025/others/genre_a_french_gender-neutral_rewriting_system_using_collective_nouns.md)
 - [\[AAAI 2026\] Axis-Aligned Document Dewarping](axis-aligned_document_dewarping.md)
 - [\[AAAI 2026\] Reward Redistribution via Gaussian Process Likelihood Estimation](reward_redistribution_via_gaussian_process_likelihood_estimation.md)
-- [\[AAAI 2026\] A New Strategy for Verifying Reach-Avoid Specifications in Neural Feedback Systems](a_new_strategy_for_verifying_reach-avoid_specifications_in_neural_feedback_syste.md)
-- [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 
 </div>
 

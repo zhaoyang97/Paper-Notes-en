@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gradient Variance Reveals Failure Modes in Flow-Based Generative Models
 description: >-
-  [NeurIPS 2025][Image Generation][Rectified Flow] By analyzing the gradient variance of the CFM loss, this paper demonstrates that Rectified Flow inevitably memorizes training pairs under deterministic interpolation rathe…
+  [NeurIPS 2025][Image Generation][Rectified Flow] By analyzing the gradient variance of the CFM loss, this paper demonstrates that Rectified Flow inevitably memorizes training pairs under deterministic interpolation rather than learning an optimal transport map, and proves that introducing stochasticity (stochastic interpolants) breaks this memorization channel and restores generalization.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -13,7 +13,7 @@ tags:
   - "Stochastic Interpolant"
   - "Conditional Flow Matching"
 date: 2026-05-08
-content_hash: 70c96bcd416c620e
+content_hash: 2dbec1a6b69212e0
 ---
 
 # Gradient Variance Reveals Failure Modes in Flow-Based Generative Models
@@ -160,11 +160,11 @@ This paper's findings carry several broader implications:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] FineGRAIN: Evaluating Failure Modes of Text-to-Image Models with Vision Language Model Judges](finegrain_evaluating_failure_modes_of_text-to-image_models_with_vision_language_.md)
 - [\[NeurIPS 2025\] Failure Prediction at Runtime for Generative Robot Policies](failure_prediction_at_runtime_for_generative_robot_policies.md)
 - [\[NeurIPS 2025\] A Gradient Flow Approach to Solving Inverse Problems with Latent Diffusion Models](a_gradient_flow_approach_to_solving_inverse_problems_with_latent_diffusion_model.md)
 - [\[NeurIPS 2025\] Value Gradient Guidance for Flow Matching Alignment](value_gradient_guidance_for_flow_matching_alignment.md)
-- [\[NeurIPS 2025\] Rectified-CFG++ for Flow Based Models](rectified-cfg_for_flow_based_models.md)
-- [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](../../CVPR2026/image_generation/editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
+- [\[CVPR 2025\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](../../CVPR2025/image_generation/editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
 
 </div>
 

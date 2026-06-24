@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Helpful to a Fault: Measuring Illicit Assistance in Multi-Turn, Multilingual LLM Agents
 description: >-
-  [ICML 2026][AI Safety][Paper Note] Ours proposes STING—an automated framework that employs four collaborative agents (Strategist / Attacker / Refusal Detector / Phase-Completion Checker) to decompose malicious intent into multiple steps, disguised under benign personas, for **multi-turn adaptive** red-teaming of tool-using Agents. It introduces a surviv
+  [ICML 2026][AI Safety][Agent Abuse] Ours proposes STING—an automated framework that employs four collaborative agents (Strategist / Attacker / Refusal Detector / Phase-Completion Checker) to decompose malicious intent into multiple steps, disguised under benign personas, for **multi-turn adaptive** red-teaming of tool-using Agents. It introduces a survival analysis toolkit that models "multi-turn jailbreaking" as a "Time-to-First-Jailbreak" random variable (discovering discov…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML 2026"
+  - "AI Safety"
+  - "Agent Abuse"
+  - "Multi-turn Red-teaming"
+  - "Multilingual Jailbreaking"
+  - "Survival Analysis"
+  - "Safety Evaluation"
 date: 2026-05-08
-content_hash: 11a0bc2dd4ceae1c
+content_hash: bcb63829c2deb1cf
 ---
+
 # Helpful to a Fault: Measuring Illicit Assistance in Multi-Turn, Multilingual LLM Agents
 
 **Conference**: ICML 2026  
@@ -144,8 +150,8 @@ Multi-turn STING relative to single-turn prompts: Qwen3-Next +107.1%, Claude Son
 
 ## Related Papers
 
-- [\[ICML 2026\] Multilingual Unlearning in LLMs: 转移、动力学与可逆性](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[ICML 2026\] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents](from_weak_cues_to_real_identities_evaluating_inference-driven_de-anonymization_i.md)
+- [\[ICML 2026\] Multilingual Unlearning in LLMs: Transfer, Dynamics, and Reversibility](multilingual_unlearning_in_llms_transfer_dynamics_and_reversibility.md)
 - [\[CVPR 2026\] DualMirage: Hunting Stealthy Multimodal LLM Agents via CAPTCHAs with Contour and Adversarial Illusions](../../CVPR2026/ai_safety/dualmirage_hunting_stealthy_multimodal_llm_agents_via_captchas_with_contour_and_.md)
 - [\[ICML 2026\] Watermarking LLM Agent Trajectories (ACTHOOK)](watermarking_llm_agent_trajectories.md)
 - [\[ICML 2026\] SemGrad: Gradients w.r.t. Semantics-Preserving Embeddings Tell LLM Uncertainty](gradients_with_respect_to_semantics_preserving_embeddings_tell_the_uncertainty_o.md)

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Dynamics Feature Representation via Policy Attention for Dynamic Path Planning in Urban Road Networks
 description: >-
-  [ICLR 2026][Reinforcement Learning][DQN/PPO] To address the dilemma in RL-based dynamic path planning where "global dynamic information is complete but expensive, while local dynamic information is efficient but misses key information," this paper proposes a hierarchical distillation approach. By using "Policy Attention to filter task-related subgraphs + n-hop ne
+  [ICLR 2026][Reinforcement Learning][Dynamic Path Planning] To address the dilemma in RL-based dynamic path planning where "global dynamic information is complete but expensive, while local dynamic information is efficient but misses key information," this paper proposes a hierarchical distillation approach. By using "Policy Attention to filter task-related subgraphs + n-hop neighborhoods to extract node-level local features," high-dimensional global dynamics are compressed in…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - DQN/PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Dynamic Path Planning"
+  - "State Representation"
+  - "Policy Attention"
+  - "n-hop Neighborhood"
+  - "Urban Road Networks"
+  - "DQN/PPO"
 date: 2026-05-08
-content_hash: 5d06d2b1c2fefd97
+content_hash: 37938927bd08385f
 ---
+
 # Learning Dynamics Feature Representation via Policy Attention for Dynamic Path Planning in Urban Road Networks
 
 **Conference**: ICLR 2026  

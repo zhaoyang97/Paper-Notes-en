@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper transforms the non-convex exact solution problem of 2-norm k-hyperplane clustering into a multi-norm mixed-integer model reinforced by 2-norm, 1-norm, and $\infty$-norm constraints. This allows spatial branch-and-bound to obtain non-zero lower bounds earlier, accelerating median solution time by up to approx
+  [ICLR 2026][Optimization][k-hyperplane clustering] This paper transforms the non-convex exact solution problem of 2-norm k-hyperplane clustering into a multi-norm mixed-integer model reinforced by 2-norm, 1-norm, and $\infty$-norm constraints. This allows spatial branch-and-bound to obtain non-zero lower bounds earlier, accelerating median solution time by up to approximately $41\times$ on LowDim/HighDim benchmarks.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "k-hyperplane clustering"
+  - "global optimization"
+  - "spatial branch-and-bound"
+  - "multi-norm relaxation"
+  - "mixed-integer programming"
 date: 2026-05-08
-content_hash: d6bd66c6bd573d11
+content_hash: 7c0fdd73d47dfa95
 ---
+
 # Solving the 2-norm k-hyperplane clustering problem via multi-norm formulations
 
 **Conference**: ICLR 2026  
@@ -178,11 +184,11 @@ Here, "ablation" compares the contribution of different norm constraints to solv
 
 ## Related Papers
 
-- [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
-- [\[ICLR 2026\] From Gradient Volume to Shapley Fairness: Towards Fair Multi-Task Learning](from_gradient_volume_to_shapley_fairness_towards_fair_multi-task_learning.md)
-- [\[ICLR 2026\] Rethinking Consistent Multi-Label Classification Under Inexact Supervision](rethinking_consistent_multi-label_classification_under_inexact_supervision.md)
-- [\[ICLR 2026\] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing](hierarchical_multi-stage_recovery_framework_for_kronecker_compressed_sensing.md)
-- [\[ICLR 2026\] Scaling Multi-Task Bayesian Optimization with Large Language Models](scaling_multi-task_bayesian_optimization_with_large_language_models.md)
+- [\[ICML 2025\] Clipping Improves Adam-Norm and AdaGrad-Norm when the Noise Is Heavy-Tailed](../../ICML2025/optimization/clipping_improves_adam-norm_and_adagrad-norm_when_the_noise_is_heavy-tailed.md)
+- [\[ICLR 2026\] ViTSP: Guiding Large-Scale Traveling Salesman Problem Solving with Vision-Language Models](vitsp_a_vision_language_models_guided_framework_for_solving_large-scale_travelin.md)
+- [\[ICLR 2026\] CogFlow: Bridging Perception and Reasoning through Knowledge Internalization for Visual Mathematical Problem Solving](cogflow_bridging_perception_and_reasoning_through_knowledge_internalization_for_.md)
+- [\[ICML 2026\] Conflicting Biases at the Edge of Stability: Norm versus Sharpness Regularization](../../ICML2026/optimization/conflicting_biases_at_the_edge_of_stability_norm_versus_sharpness_regularization.md)
+- [\[ICLR 2026\] Scalable Second-Order Riemannian Optimization for K-means Clustering](scalable_second-order_riemannian_optimization_for_k-means_clustering.md)
 
 </div>
 

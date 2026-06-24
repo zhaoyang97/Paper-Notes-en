@@ -4,16 +4,17 @@ title: >-
 description: >-
   [CVPR 2026][AI Safety][Multimodal Federated Learning] The FedAFD framework is proposed to simultaneously improve the model performance of both heterogeneous clients and the server in multimodal federated learning through a three-stage design: dual-layer adversarial alignment, granularity-aware feature fusion, and similarity-guided ensemble distillation.
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Multimodal Federated Learning
-  - Adversarial Alignment
-  - Feature Fusion
-  - knowledge distillation
-  - Model Heterogeneity
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Multimodal Federated Learning"
+  - "Adversarial Alignment"
+  - "Feature Fusion"
+  - "knowledge distillation"
+  - "Model Heterogeneity"
 date: 2026-05-08
-content_hash: 7809fe96cb455479
+content_hash: e804c98d52a3e27c
 ---
+
 # FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation
 
 **Conference**: CVPR 2026  
@@ -151,10 +152,10 @@ Non-IID setting. The advantage is even greater under the IID setting: FedAFD ach
 ## Related Papers
 
 - [\[AAAI 2026\] HealSplit: Towards Self-Healing through Adversarial Distillation in Split Federated Learning](../../AAAI2026/ai_safety/healsplit_towards_self-healing_through_adversarial_distillation_in_split_federat.md)
-- [\[AAAI 2026\] CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation](../../AAAI2026/ai_safety/core-fed_bridging_collaborative_and_representation_fairness_via_federated_embedd.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
+- [\[CVPR 2026\] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning](fedre_a_representation_entanglement_framework_for_model-heterogeneous_federated_.md)
 - [\[CVPR 2026\] DualMirage: Hunting Stealthy Multimodal LLM Agents via CAPTCHAs with Contour and Adversarial Illusions](dualmirage_hunting_stealthy_multimodal_llm_agents_via_captchas_with_contour_and_.md)
+- [\[AAAI 2026\] CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation](../../AAAI2026/ai_safety/core-fed_bridging_collaborative_and_representation_fairness_via_federated_embedd.md)
+- [\[CVPR 2026\] Exposing Functional Fusion: A New Class of Strategic Backdoor in Dynamic Prompt Architectures](exposing_functional_fusion_a_new_class_of_strategic_backdoor_in_dynamic_prompt_a.md)
 
 </div>
 

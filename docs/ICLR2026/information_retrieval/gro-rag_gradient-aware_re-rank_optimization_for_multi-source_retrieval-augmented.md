@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Paper Note] GRO-RAG proposes a completely training-free multi-source RAG framework: it first greedily selects complementary retrieval sources using a "relevance-redundancy" submodular objective, then lets a frozen LLM re-rank documents via the inner product of document representations and generation loss gradients obtained through
+  [ICLR 2026][Information Retrieval & RAG][Multi-source RAG] GRO-RAG proposes a completely training-free multi-source RAG framework: it first greedily selects complementary retrieval sources using a "relevance-redundancy" submodular objective, then lets a frozen LLM re-rank documents via the inner product of document representations and generation loss gradients obtained through a single forward-backward pass, directly aligning "what to retrieve" with "what the generation targe…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Multi-source RAG"
+  - "Gradient-aware Re-ranking"
+  - "Training-free"
+  - "Source Combination Selection"
+  - "Submodular Optimization"
+  - "Generation Loss Alignment"
 date: 2026-05-08
-content_hash: 6df87dd4e477c597
+content_hash: ee657ce42c454934
 ---
+
 # GRO-RAG: Gradient-aware Re-rank Optimization for Multi-source Retrieval-Augmented Generation
 
 **Conference**: ICLR 2026  
@@ -136,11 +143,11 @@ Removing Source Combination Selection (SCS) or Gradient Re-ranking (GR) leads to
 
 ## Related Papers
 
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
-- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
 - [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](../../ACL2026/information_retrieval/mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
+- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
 - [\[ACL 2025\] VISA: Retrieval Augmented Generation with Visual Source Attribution](../../ACL2025/information_retrieval/visa_retrieval_augmented_generation_with_visual_source_attribution.md)
-- [\[ACL 2026\] IF-GEO: Conflict-Aware Instruction Fusion for Multi-Query Generative Engine Optimization](../../ACL2026/information_retrieval/if-geo_conflict-aware_instruction_fusion_for_multi-query_generative_engine_optim.md)
+- [\[ICLR 2026\] Query-Aware Flow Diffusion for Graph-Based RAG with Retrieval Guarantees](query-aware_flow_diffusion_for_graph-based_rag_with_retrieval_guarantees.md)
+- [\[ACL 2025\] MAIN-RAG: Multi-Agent Filtering Retrieval-Augmented Generation](../../ACL2025/information_retrieval/main-rag_multi-agent_filtering_retrieval-augmented_generation.md)
 
 </div>
 

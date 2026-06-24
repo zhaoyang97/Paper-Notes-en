@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
 description: >-
-  [ICCV 2025][Video Generation][diffusion distillation] This paper proposes an Adversarial Distribution Matching (ADM) framework that replaces the predefined KL divergence in DMD with an implicit…
+  [ICCV 2025][Video Generation][diffusion distillation] This paper proposes an Adversarial Distribution Matching (ADM) framework that replaces the predefined KL divergence in DMD with an implicit, data-driven measure of distributional discrepancy. A diffusion-model-based discriminator aligns the latent predictions of real and fake score estimators along the PF-ODE. Combined with Adversarial Distillation Pre-training (ADP), the resulting DMDX pipeline surpasses DMD2 on one-step…
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "one-step generation"
   - "score distillation"
 date: 2026-05-08
-content_hash: ba00090d3da3df30
+content_hash: 5854e36d2c1879d5
 ---
 
 # Adversarial Distribution Matching for Diffusion Distillation Towards Efficient Image and Video Synthesis
@@ -117,10 +117,10 @@ DMDX achieves competitive fidelity to the 50-step baseline on one-step SDXL gene
 ## Related Papers
 
 - [\[ICCV 2025\] FVGen: Accelerating Novel-View Synthesis with Adversarial Video Diffusion Distillation](fvgen_accelerating_novel-view_synthesis_with_adversarial_video_diffusion_distill.md)
+- [\[ICML 2025\] Diffusion Adversarial Post-Training for One-Step Video Generation](../../ICML2025/video_generation/diffusion_adversarial_post-training_for_one-step_video_generation.md)
 - [\[ICCV 2025\] V.I.P.: Iterative Online Preference Distillation for Efficient Video Diffusion Models](vip_iterative_online_preference_distillation_for_efficient_video_diffusion_model.md)
+- [\[CVPR 2026\] Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation](../../CVPR2026/video_generation/reward_forcing_efficient_streaming_video_generation_with_rewarded_distribution_m.md)
 - [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
-- [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
-- [\[NeurIPS 2025\] Autoregressive Adversarial Post-Training for Real-Time Interactive Video Generation](../../NeurIPS2025/video_generation/autoregressive_adversarial_posttraining_for_realtime_interac.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG
 description: >-
-  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] By decoupling the filtering capability of a lightweight Flash model from the reasoning capability of a Pro model…
+  [NeurIPS 2025][Information Retrieval & RAG][Retrieval-Augmented Generation] By decoupling the filtering capability of a lightweight Flash model from the reasoning capability of a Pro model, the paper constructs a multi-stage pipeline (query optimization → hierarchical filtering → two-pass generation → citation verification) that achieves SOTA performance in the MMU-RAGent competition.
 tags:
   - "NeurIPS 2025"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "multi-LLM strategy"
   - "Flash-Pro cascade"
 date: 2026-05-08
-content_hash: d7d6ab1a8bee26e3
+content_hash: 0d89c8d0b26f30f1
 ---
 
 # HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG
@@ -119,10 +119,10 @@ HiFi-RAG comprises five stages: (1) Query Planning — Flash refines user querie
 ## Related Papers
 
 - [\[NeurIPS 2025\] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG](secon-rag_a_two-stage_semantic_filtering_and_conflict-free_framework_for_trustwo.md)
+- [\[ACL 2025\] MAIN-RAG: Multi-Agent Filtering Retrieval-Augmented Generation](../../ACL2025/information_retrieval/main-rag_multi-agent_filtering_retrieval-augmented_generation.md)
 - [\[NeurIPS 2025\] RMIT-ADM+S at the MMU-RAG NeurIPS 2025 Competition](rmit-adms_at_the_mmu-rag_neurips_2025_competition.md)
-- [\[ACL 2026\] Domain-Specific Data Generation Framework for RAG Adaptation](../../ACL2026/information_retrieval/domain-specific_data_generation_framework_for_rag_adaptation.md)
+- [\[NeurIPS 2025\] Enginuity: Building an Open Multi-Domain Dataset of Complex Engineering Diagrams](enginuity_building_an_open_multi-domain_dataset_of_complex_engineering_diagrams.md)
 - [\[NeurIPS 2025\] Hierarchical Retrieval: The Geometry and a Pretrain-Finetune Recipe](hierarchical_retrieval_the_geometry_and_a_pretrain-finetune_recipe.md)
-- [\[NeurIPS 2025\] Retrieval-Augmented Generation for Reliable Interpretation of Radio Regulations](retrieval-augmented_generation_for_reliable_interpretation_of_radio_regulations.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Robust Multimodal Safety via Conditional Decoding
 description: >-
-  [ACL 2026][LLM Safety][Qwen2.5-Omni] This paper proposes the CASA conditional decoding framework, which requires multimodal models to predict a safety token before generating a response. By using a safety attention mechanism to amplify malicious signals, the framework reduces the average attack success rate by over 97% across text, vision, and audio jailb
+  [ACL2026][LLM Safety][Multimodal Jailbreak Defense] This paper proposes the CASA conditional decoding framework, which requires multimodal models to predict a safety token before generating a response. By using a safety attention mechanism to amplify malicious signals, the framework reduces the average attack success rate by over 97% across text, vision, and audio jailbreak benchmarks while maintaining the multimodal capabilities for benign inputs.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - Qwen2.5-Omni
-  - CASA
+  - "ACL2026"
+  - "LLM Safety"
+  - "Multimodal Jailbreak Defense"
+  - "Conditional Decoding"
+  - "Safety Attention"
+  - "Qwen2.5-Omni"
+  - "CASA"
 date: 2026-05-08
-content_hash: e34ef5ecba60ba55
+content_hash: c8f1c788bee48b7b
 ---
+
 # Robust Multimodal Safety via Conditional Decoding
 
 **Conference**: ACL2026  
@@ -136,8 +140,8 @@ The table shows the Multimodal Jailbreak Attack Success Rate (ASR); lower values
 - [\[ACL 2026\] PARASITE: Conditional System Prompt Poisoning to Hijack LLMs](parasite_conditional_system_prompt_poisoning_to_hijack_llms.md)
 - [\[ACL 2026\] SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)
 - [\[ACL 2026\] MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)
-- [\[ACL 2026\] When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life](when_helpers_become_hazards_a_benchmark_for_analyzing_multimodal_llm-powered_saf.md)
 - [\[ACL 2026\] LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)
+- [\[ACL 2026\] When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life](when_helpers_become_hazards_a_benchmark_for_analyzing_multimodal_llm-powered_saf.md)
 
 </div>
 

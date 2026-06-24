@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Reasoning with Exploration: An Entropy Perspective
 description: >-
-  [AAAI 2026][Reinforcement Learning][Entropy] This paper analyzes the positive correlation between exploratory reasoning behaviors in LLMs (pivotal tokens, self-reflection…
+  [AAAI 2026][Reinforcement Learning][Entropy] This paper analyzes the positive correlation between exploratory reasoning behaviors in LLMs (pivotal tokens, self-reflection, rare behaviors) and high-entropy regions from an entropy perspective. It proposes a minimalist entropy-based advantage shaping method—requiring only a single line of code modification—that significantly enhances the Pass@K reasoning capability ceiling of LLMs.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "RLVR"
   - "LLM Reasoning"
 date: 2026-05-08
-content_hash: fb9f132e1cc9efb7
+content_hash: 9c677cd9f0b1fc4c
 ---
 
 # Reasoning with Exploration: An Entropy Perspective
@@ -207,9 +207,9 @@ Qwen2.5-Math-Base-7B + GRPO:
 
 - [\[ACL 2026\] HEALing Entropy Collapse: Enhancing Exploration in Few-Shot RLVR via Hybrid-Domain Entropy Dynamics Alignment](../../ACL2026/reinforcement_learning/healing_entropy_collapse_enhancing_exploration_in_few-shot_rlvr_via_hybrid-domai.md)
 - [\[ACL 2026\] Targeted Exploration via Unified Entropy Control for Reinforcement Learning](../../ACL2026/reinforcement_learning/targeted_exploration_via_unified_entropy_control_for_reinforcement_learning.md)
+- [\[ICLR 2026\] Diversity-Incentivized Exploration for Versatile Reasoning](../../ICLR2026/reinforcement_learning/diversity-incentivized_exploration_for_versatile_reasoning.md)
 - [\[ICLR 2026\] Exploration vs Exploitation: Rethinking RLVR through Clipping, Entropy, and Spurious Reward](../../ICLR2026/reinforcement_learning/exploration_vs_exploitation_rethinking_rlvr_through_clipping_entropy_and_spuriou.md)
 - [\[AAAI 2026\] Reasoning or Memorization? Unreliable Results of Reinforcement Learning Due to Data Contamination](reasoning_or_memorization_unreliable_results_of_reinforcement_learning_due_to_da.md)
-- [\[ACL 2026\] Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning](../../ACL2026/reinforcement_learning/semantic-space_exploration_and_exploitation_in_rlvr_for_llm_reasoning.md)
 
 </div>
 

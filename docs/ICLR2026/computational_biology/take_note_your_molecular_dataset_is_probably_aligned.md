@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Take Note: Your Molecular Dataset Is Probably Aligned
 description: >-
-  [ICLR 2026][Computational Biology][QM9] This paper systematically reveals and quantifies a pitfall often overlooked by machine learning newcomers in mainstream molecular datasets like QM9, QMugs, and OMol25: molecules are not randomly oriented. A simple classifier can distinguish original samples from randomly rotated ones with high accuracy, and neural netw
+  [ICLR 2026][Computational Biology][orientation bias] This paper systematically reveals and quantifies a pitfall often overlooked by machine learning newcomers in mainstream molecular datasets like QM9, QMugs, and OMol25: molecules are not randomly oriented. A simple classifier can distinguish original samples from randomly rotated ones with high accuracy, and neural networks can even predict molecular properties by "looking only at the orientation…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - QM9
-  - SO(3)
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "orientation bias"
+  - "equivariance"
+  - "data augmentation"
+  - "QM9"
+  - "SO(3)"
 date: 2026-05-08
-content_hash: 520ec43d879b4c0b
+content_hash: 709352e67629e6d3
 ---
+
 # Take Note: Your Molecular Dataset Is Probably Aligned
 
 **Conference**: ICLR 2026  
@@ -135,15 +139,15 @@ OMol25 subsets vary greatly: GEOM (5.613) and ANI-2X (4.328) are strongly aligne
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Align Your Structures: Generating Trajectories with Structure Pretraining for Molecular Dynamics](align_your_structures_generating_trajectories_with_structure_pretraining_for_mol.md)
 - [\[ICLR 2026\] SAIR: Enabling Deep Learning for Protein-Ligand Interactions with a Synthetic Structural Dataset](sair_enabling_deep_learning_for_protein-ligand_interactions_with_a_synthetic_str.md)
-- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](../../NeurIPS2025/computational_biology/fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 - [\[ICLR 2026\] A Genetic Algorithm for Navigating Synthesizable Molecular Spaces](a_genetic_algorithm_for_navigating_synthesizable_molecular_spaces.md)
+- [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](../../NeurIPS2025/computational_biology/fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
 - [\[ICLR 2026\] Graph Diffusion Transformers are In-Context Molecular Designers](graph_diffusion_transformers_are_in-context_molecular_designers.md)
-- [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
 
 </div>
 

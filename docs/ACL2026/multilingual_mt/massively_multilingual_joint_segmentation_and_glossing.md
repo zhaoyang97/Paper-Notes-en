@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Massively Multilingual Joint Segmentation and Glossing
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This work addresses the "morphological segmentation + morpheme-by-morpheme glossing" joint prediction task for endangered language documentation. The authors expanded the GlossLM corpus to 340,000 examples covering 2,077 languages to train PolyGloss, a family of ByT5-based multilingual seq2seq models. PolyGloss simulta
+  [ACL2026][Multilingual & Machine Translation][Interlinear Glossed Text (IGT)] This work addresses the "morphological segmentation + morpheme-by-morpheme glossing" joint prediction task for endangered language documentation. The authors expanded the GlossLM corpus to 340,000 examples covering 2,077 languages to train PolyGloss, a family of ByT5-based multilingual seq2seq models. PolyGloss simultaneously predicts morpheme boundaries and gloss tags from raw transcriptions…
 tags:
-  - ACL 2026
-  - Multilingual & Translation
+  - "ACL2026"
+  - "Multilingual & Machine Translation"
+  - "Interlinear Glossed Text (IGT)"
+  - "Morphological Segmentation"
+  - "Glossing"
+  - "Multilingual"
+  - "Language Documentation"
 date: 2026-05-08
-content_hash: 6e29c460c17da9c5
+content_hash: 1fceb73aff0e7342
 ---
+
 # Massively Multilingual Joint Segmentation and Glossing
 
 **Conference**: ACL2026  
@@ -137,7 +143,7 @@ Evaluations were performed on held-out test sets for 9 languages. PolyGloss was 
 - [\[ACL 2025\] M2rc-Eval: Massively Multilingual Repository-level Code Completion Evaluation](../../ACL2025/multilingual_mt/m2rc-eval_massively_multilingual_repository-level_code_completion_evaluation.md)
 - [\[ACL 2025\] CC-Tuning: A Cross-Lingual Connection Mechanism for Improving Joint Multilingual Supervised Fine-Tuning](../../ACL2025/multilingual_mt/cc-tuning_a_cross-lingual_connection_mechanism_for_improving_joint_multilingual_.md)
 - [\[ACL 2026\] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection](multilingual_steering_by_design_multilingual_sparse_autoencoders_and_principled_.md)
-- [\[ACL 2026\] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context](emcee_improving_multilingual_capability_of_llms_via_bridging_knowledge_and_reaso.md)
+- [\[ACL 2026\] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge](dfki-mlt_at_semeval-2026_task_7_steering_multilingual_models_towards_cultural_kn.md)
 
 </div>
 

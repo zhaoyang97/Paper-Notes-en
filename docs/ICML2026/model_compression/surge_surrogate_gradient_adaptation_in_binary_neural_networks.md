@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] SURGE: Surrogate Gradient Adaptation in Binary Neural Networks
 description: >-
-  [ICML 2026][Model Compression][BNN] SURGE connects a "full-precision auxiliary branch" in parallel with each binarization layer. While the forward output remains unchanged, the backward pass propagates an additional "non-STE truncated" high-order gradient from the full-precision branch. By using AGS to dynamically balance the contributions based on the g
+  [ICML 2026][Model Compression][BNN] SURGE connects a "full-precision auxiliary branch" in parallel with each binarization layer. While the forward output remains unchanged, the backward pass propagates an additional "non-STE truncated" high-order gradient from the full-precision branch. By using AGS to dynamically balance the contributions based on the gradient norm ratio, SURGE achieves 62.0% top-1 on ResNet-18/ImageNet, outperforming ReCU by 1.0% and IR-Net by 3.9%.
 tags:
-  - ICML 2026
-  - Model Compression
-  - BNN
-  - STE
+  - "ICML 2026"
+  - "Model Compression"
+  - "BNN"
+  - "STE"
+  - "Gradient Mismatch"
+  - "Dual-Path Compensation"
+  - "Adaptive Gradient Scaling"
 date: 2026-05-08
-content_hash: 40e5ce52104d1403
+content_hash: 6ee3b97db65d0cf1
 ---
+
 # SURGE: Surrogate Gradient Adaptation in Binary Neural Networks
 
 **Conference**: ICML 2026  
@@ -154,10 +158,10 @@ SURGE consistently outperforms Prev. SOTA on VOC and GLUE, maintaining OPs ident
 ## Related Papers
 
 - [\[ICLR 2026\] BEP: A Binary Error Propagation Algorithm for Binary Neural Networks Training](../../ICLR2026/model_compression/bep_a_binary_error_propagation_algorithm_for_binary_neural_networks_training.md)
-- [\[CVPR 2026\] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](../../CVPR2026/model_compression/adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)
 - [\[ICML 2026\] Partial Fusion of Neural Networks: Efficient Tradeoffs Between Ensembles and Weight Aggregation](partial_fusion_of_neural_networks_efficient_tradeoffs_between_ensembles_and_weig.md)
+- [\[CVPR 2026\] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](../../CVPR2026/model_compression/adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)
 - [\[AAAI 2026\] BD-Net: Has Depth-Wise Convolution Ever Been Applied in Binary Neural Networks?](../../AAAI2026/model_compression/bd-net_has_depth-wise_convolution_ever_been_applied_in_binary_neural_networks.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](../../ICLR2026/model_compression/adaptive_width_neural_networks.md)
+- [\[ICLR 2026\] Towards Lossless Memory-efficient Training of Spiking Neural Networks via Gradient Checkpointing and Spike Compression](../../ICLR2026/model_compression/towards_lossless_memory-efficient_training_of_spiking_neural_networks_via_gradie.md)
 
 </div>
 

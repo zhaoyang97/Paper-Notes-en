@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Transformation Reasoning for Composed Video Retrieval
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Addressing the Composed Video Retrieval task ("given a reference video + modification text, retrieve a target video"), this paper proposes MoRe, a zero-shot framework. It employs multi-objective Pareto ranking to recall a small set of high-quality candidates, then utilizes an MLLM to decompose videos into "Entity-Actio
+  [CVPR 2026][VLM Reasoning][Composed Video Retrieval] Addressing the Composed Video Retrieval task ("given a reference video + modification text, retrieve a target video"), this paper proposes MoRe, a zero-shot framework. It employs multi-objective Pareto ranking to recall a small set of high-quality candidates, then utilizes an MLLM to decompose videos into "Entity-Action-Scene" dimensions for pairwise reasoning to determine which candidate best matches the modification inten…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Composed Video Retrieval"
+  - "Multi-objective Optimization"
+  - "MLLM Reasoning"
+  - "Zero-shot Retrieval"
+  - "Entity-Action-Scene Decomposition"
 date: 2026-05-08
-content_hash: 223854cdb5460539
+content_hash: ea687a0a75d0c808
 ---
+
 # Compositional Transformation Reasoning for Composed Video Retrieval
 
 **Conference**: CVPR 2026  
@@ -127,15 +133,15 @@ Ablations based on TFR-CVR (two-stage training-free baseline):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Beyond Caption-Based Queries in Video Moment Retrieval](beyond_caption-based_queries_in_video_moment_retrieval.md)
-- [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)
-- [\[CVPR 2026\] StreamRAG: Enhancing Real-Time Video Understanding with Retrieval Augmentation](streamrag_enhancing_real-time_video_understanding_with_retrieval_augmentation.md)
-- [\[NeurIPS 2025\] VGEnt: Graph-Based Retrieval-Reasoning-Augmented Generation for Long Video Understanding](../../NeurIPS2025/video_understanding/vgent_graph-based_retrieval-reasoning-augmented_generation_for_long_video_unders.md)
-- [\[CVPR 2026\] VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)
+- [\[CVPR 2026\] STAR-R1: Multi-View Spatial TrAnsformation Reasoning by Reinforcing Multimodal LLMs](star-r1_multi-view_spatial_transformation_reasoning_by_reinforcing_multimodal_ll.md)
+- [\[CVPR 2026\] RMIR: A Benchmark Dataset for Reasoning-Intensive Multimodal Image Retrieval](rmir_a_benchmark_dataset_for_reasoning-intensive_multimodal_image_retrieval.md)
+- [\[CVPR 2026\] Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees](pop_proof_of_perception_conformal_reasoning.md)
+- [\[CVPR 2026\] R4: Retrieval-Augmented Reasoning for Vision-Language Models in 4D Spatio-Temporal Space](r4_retrieval-augmented_reasoning_for_vision-language_models_in_4d_spatio-tempora.md)
+- [\[CVPR 2026\] CogniVerse: Revolutionizing Multi-Modal Retrieval-Augmented Generation with Cognitive Reflection and Geometric Reasoning](cogniverse_revolutionizing_multi-modal_retrieval-augmented_generation_with_cogni.md)
 
 </div>
 

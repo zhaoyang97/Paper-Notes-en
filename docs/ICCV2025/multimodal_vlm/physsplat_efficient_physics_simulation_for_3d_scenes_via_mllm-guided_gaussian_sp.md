@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting
 description: >-
-  [ICCV 2025][Multimodal VLM][Physics Simulation] This paper proposes PhysSplat, the first approach to leverage multimodal large language models (MLLMs) for zero-shot estimation of physical properties of objects in 3D scen…
+  [ICCV 2025][Multimodal VLM][Physics Simulation] This paper proposes PhysSplat, the first approach to leverage multimodal large language models (MLLMs) for zero-shot estimation of physical properties of objects in 3D scenes. Combined with a physics-geometry adaptive sampling strategy, it achieves realistic physics simulation on a single GPU within 2 minutes.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Physical Property Estimation"
   - "MPM"
 date: 2026-05-08
-content_hash: b2738ca9a9d9217d
+content_hash: 5b33c101494861cd
 ---
 
 # PhysSplat: Efficient Physics Simulation for 3D Scenes via MLLM-Guided Gaussian Splatting
@@ -132,11 +132,11 @@ PhysSplat achieves best or comparable performance on the synthetic dataset as we
 
 ## Related Papers
 
+- [\[CVPR 2025\] 4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/4d_langsplat_4d_language_gaussian_splatting_via_multimodal_large_language_models.md)
+- [\[CVPR 2026\] GaussianVision: Vision-Language Alignment from Compressed Image Representations using 2D Gaussian Splatting](../../CVPR2026/multimodal_vlm/gaussianvision_vision-language_alignment_from_compressed_image_representations_u.md)
+- [\[CVPR 2025\] Efficient Motion-Aware Video MLLM](../../CVPR2025/multimodal_vlm/efficient_motion-aware_video_mllm.md)
 - [\[ICCV 2025\] Adaptive Prompt Learning via Gaussian Outlier Synthesis for Out-of-distribution Detection](adaptive_prompt_learning_via_gaussian_outlier_synthesis_for_out_of_distribution_detection.md)
-- [\[ICCV 2025\] Perspective-Aware Reasoning in Vision-Language Models via Mental Imagery Simulation](perspective-aware_reasoning_in_vision-language_models_via_mental_imagery_simulat.md)
 - [\[ICCV 2025\] Safeguarding Vision-Language Models: Mitigating Vulnerabilities to Gaussian Noise in Perturbation-based Attacks](safeguarding_vision-language_models_mitigating_vulnerabilities_to_gaussian_noise.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
-- [\[NeurIPS 2025\] In the Eye of MLLM: Benchmarking Egocentric Video Intent Understanding with Gaze-Guided Prompting](../../NeurIPS2025/multimodal_vlm/in_the_eye_of_mllm_benchmarking_egocentric_video_intent_understanding_with_gaze-.md)
 
 </div>
 

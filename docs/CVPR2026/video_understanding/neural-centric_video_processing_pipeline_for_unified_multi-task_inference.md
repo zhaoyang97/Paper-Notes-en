@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Neural-Centric Video Processing Pipeline for Unified Multi-Task Inference
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] This work encodes videos directly into Implicit Neural Representations (INR/NeRV). It utilizes Centered Kernel Alignment (CKA) to identify optimal "INR intermediate layer ↔ downstream backbone injection point" pairs and trains ultra-lightweight 1×1 convolutional Micro Adapters for feature conversion. During inference,
+  [CVPR 2026][Video Understanding][Implicit Neural Representation] This work encodes videos directly into Implicit Neural Representations (INR/NeRV). It utilizes Centered Kernel Alignment (CKA) to identify optimal "INR intermediate layer ↔ downstream backbone injection point" pairs and trains ultra-lightweight 1×1 convolutional Micro Adapters for feature conversion. During inference, it **only decodes up to the required intermediate layer**, skipping pixel reconstruction and ea…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Implicit Neural Representation"
+  - "Video Coding"
+  - "Multi-Task Inference"
+  - "Partial Decoding"
+  - "Feature Adapter"
 date: 2026-05-08
-content_hash: a6bbf9a5600c0f83
+content_hash: cb89c384e1363a67
 ---
+
 # Neural-Centric Video Processing Pipeline for Unified Multi-Task Inference
 
 **Conference**: CVPR 2026  
@@ -156,8 +162,8 @@ Comparison with machine-centric methods: NVP parameters (0.42M/0.48M) are far lo
 
 - [\[CVPR 2026\] SDTrack: A Baseline for Event-based Tracking via Spiking Neural Networks](sdtrack_a_baseline_for_event-based_tracking_via_spiking_neural_networks.md)
 - [\[CVPR 2026\] Scene-Centric Unsupervised Video Panoptic Segmentation](scene-centric_unsupervised_video_panoptic_segmentation.md)
-- [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](univbench_towards_unified_evaluation_for_video_foundation_models.md)
 - [\[CVPR 2026\] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)
+- [\[CVPR 2026\] UniVBench: Towards Unified Evaluation for Video Foundation Models](univbench_towards_unified_evaluation_for_video_foundation_models.md)
 - [\[CVPR 2025\] MLVU: Benchmarking Multi-task Long Video Understanding](../../CVPR2025/video_understanding/mlvu_benchmarking_multi-task_long_video_understanding.md)
 
 </div>

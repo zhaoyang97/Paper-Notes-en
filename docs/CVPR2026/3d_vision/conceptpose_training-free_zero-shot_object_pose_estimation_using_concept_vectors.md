@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors
 description: >-
-  [CVPR 2026][3D Vision][Vision-Language Model] ConceptPose completely transforms 6D object pose estimation into a semantic matching task: an LLM automatically generates a series of textual "concepts" for an object category, then the explainability heatmaps (GradCAM) of a VLM are used to locate each concept across two images and back-project them into 3D. This yield
+  [CVPR 2026][3D Vision][6D Pose Estimation] ConceptPose completely transforms 6D object pose estimation into a semantic matching task: an LLM automatically generates a series of textual "concepts" for an object category, then the explainability heatmaps (GradCAM) of a VLM are used to locate each concept across two images and back-project them into 3D. This yields a "concept vector" for each point. Finally, cross-view matching of these concept vectors paired with RANSAC directl…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Vision-Language Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "6D Pose Estimation"
+  - "Zero-shot"
+  - "Training-free"
+  - "Vision Language Models (VLM)"
+  - "Concept Vectors"
 date: 2026-05-08
-content_hash: 2756a90b58f3072d
+content_hash: 97a0fa0c231fcdbe
 ---
+
 # ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors
 
 **Conference**: CVPR 2026  
@@ -153,11 +158,11 @@ On four real RGB-D benchmarks—REAL275, Toyota-Light (TYOL), YCB-Video (YCB-V),
 
 ## Related Papers
 
-- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
-- [\[CVPR 2026\] LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency](las-comp_zero-shot_3d_completion_with_latent-spatial_consistency.md)
-- [\[CVPR 2026\] ComPose: A Unified Completion-Pose Framework for Robust Category-Level Object Pose Estimation](compose_a_unified_completion-pose_framework_for_robust_category-level_object_pos.md)
-- [\[CVPR 2026\] LASER: Layer-wise Scale Alignment for Training-Free Streaming 4D Reconstruction](laser_layer-wise_scale_alignment_for_training-free_streaming_4d_reconstruction.md)
+- [\[CVPR 2026\] VGGT-360: Geometry-Consistent Zero-Shot Panoramic Depth Estimation](vggt-360_geometry-consistent_zero-shot_panoramic_depth_estimation.md)
+- [\[CVPR 2026\] Zoo3D: Zero-Shot 3D Object Detection at Scene Level](zoo3d_zero-shot_3d_object_detection_at_scene_level.md)
+- [\[CVPR 2026\] Copy-Transform-Paste: Zero-Shot Object-Object Alignment Guided by Vision-Language and Geometric Constraints](copy-transform-paste_zero-shot_object-object_alignment_guided_by_vision-language.md)
+- [\[CVPR 2026\] Exploring 6D Object Pose Estimation with Deformation](exploring_6d_object_pose_estimation_with_deformation.md)
+- [\[CVPR 2026\] PoseGAM: Robust Unseen Object Pose Estimation via Geometry-Aware Multi-View Reasoning](posegam_robust_unseen_object_pose_estimation_via_geometry-aware_multi-view_reaso.md)
 
 </div>
 

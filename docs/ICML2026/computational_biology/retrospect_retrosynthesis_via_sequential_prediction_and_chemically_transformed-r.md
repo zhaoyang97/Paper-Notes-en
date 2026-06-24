@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RETROSPECT: RETROsynthesis via Sequential Prediction, and Chemically Transformed-ranking
 description: >-
-  [ICML 2026][Computational Biology][USPTO-50K] Single-step retrosynthesis is decomposed into two independent modules: "proposal" and "selection." A single ChemAlign Transformer, optimized through enhanced training, generates candidate precursors. Subsequently, LambdaMART performs Learning to Rank (LTR) on the merged and deduplicated candidate pool. On the USPTO-50K
+  [ICML2026][Computational Biology][Single-step Retrosynthesis] Single-step retrosynthesis is decomposed into two independent modules: "proposal" and "selection." A single ChemAlign Transformer, optimized through enhanced training, generates candidate precursors. Subsequently, LambdaMART performs Learning to Rank (LTR) on the merged and deduplicated candidate pool. On the USPTO-50K dataset, the single-model top-1 accuracy reaches 55.00%, increasing to 59.4% after reranking…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - USPTO-50K
+  - "ICML2026"
+  - "Computational Biology"
+  - "Single-step Retrosynthesis"
+  - "SMILES Augmentation"
+  - "Transformer Generator"
+  - "LambdaMART Reranking"
+  - "USPTO-50K"
 date: 2026-05-08
-content_hash: 45a7fba28bdb118c
+content_hash: 115d91abb2e8e805
 ---
+
 # RETROSPECT: RETROsynthesis via Sequential Prediction, and Chemically Transformed-ranking
 
 **Conference**: ICML2026  
@@ -136,8 +141,8 @@ The single-model generator (55.00% top-1) outperforms multiple baselines. After 
 - [\[ICML 2026\] Transformed Latent Variable Multi-Output Gaussian Processes](transformed_latent_variable_multi-output_gaussian_processes.md)
 - [\[ICML 2026\] Constrained Flow Optimization via Sequential Fine-Tuning for Molecular Design](constrained_flow_optimization_via_sequential_fine_tuning_for_molecular_design.md)
 - [\[ICML 2025\] Scalable Equilibrium Sampling with Sequential Boltzmann Generators](../../ICML2025/computational_biology/scalable_equilibrium_sampling_with_sequential_boltzmann_generators.md)
-- [\[ICML 2026\] Flexible Kernels for Protein Property Prediction](flexible_kernels_for_protein_property_prediction.md)
-- [\[NeurIPS 2025\] Retrosynthesis Planning via Worst-path Policy Optimisation in Tree-structured MDPs](../../NeurIPS2025/computational_biology/retrosynthesis_planning_via_worst-path_policy_optimisation_in_tree-structured_md.md)
+- [\[ICML 2026\] SPATIA: Multimodal Generation and Prediction of Spatial Cell Phenotypes](spatia_multimodal_generation_and_prediction_of_spatial_cell_phenotypes.md)
+- [\[ICML 2026\] What Makes a Representation Good for Single-Cell Perturbation Prediction?](what_makes_a_representation_good_for_single-cell_perturbation_prediction.md)
 
 </div>
 

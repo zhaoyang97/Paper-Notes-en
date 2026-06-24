@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Table as a Modality for Large Language Models
 description: >-
-  [NeurIPS 2025][Interpretability][Table Reasoning] This paper proposes TaMo, a framework that treats tables as an independent modality, encoding their structural information via a hypergraph neural network and fusing the…
+  [NeurIPS 2025][Interpretability][Table Reasoning] This paper proposes TaMo, a framework that treats tables as an independent modality, encoding their structural information via a hypergraph neural network and fusing the resulting structural embeddings with the text modality of an LLM. TaMo achieves an average improvement of 42.65% over pure-text methods across multiple table reasoning benchmarks, and approaches GPT-4 in terms of structural robustness.
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Permutation Invariance"
   - "Table QA"
 date: 2026-05-08
-content_hash: 663e8b797486e597
+content_hash: 32112cc4ed17d33f
 ---
 
 # Table as a Modality for Large Language Models
@@ -152,9 +152,9 @@ TaMo achieves an average gain of **42.65%** under the Frozen LLM setting. On Str
 
 - [\[NeurIPS 2025\] Probabilistic Token Alignment for Large Language Model Fusion](probabilistic_token_alignment_for_large_language_model_fusion.md)
 - [\[ICML 2026\] Towards Atoms of Large Language Models](../../ICML2026/interpretability/towards_atoms_of_large_language_models.md)
-- [\[NeurIPS 2025\] A Controllable Examination for Long-Context Language Models](a_controllable_examination_for_longcontext_language_models.md)
+- [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
+- [\[ICLR 2026\] Spilled Energy in Large Language Models](../../ICLR2026/interpretability/spilled_energy_in_large_language_models.md)
 - [\[NeurIPS 2025\] Emergence of Linear Truth Encodings in Language Models](emergence_of_linear_truth_encodings_in_language_models.md)
-- [\[NeurIPS 2025\] Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models](bigram_subnetworks_mapping_to_next_tokens_in_transformer_language_models.md)
 
 </div>
 

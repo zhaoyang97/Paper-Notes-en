@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation
 description: >-
-  [CVPR 2026][Others][Paper Note] For memory-constrained on-device Test-Time Adaptation (TTA), this paper utilizes **forward-only, backpropagation-free** Zeroth-Order (ZO) optimization to fine-tune a lightweight adapter. Observing that the Hessian remains low-rank and changes slowly during TTA, the authors replace isotropic random perturbations with **
+  [CVPR 2026][Multimodal Efficiency][Zeroth-Order Optimization] For memory-constrained on-device Test-Time Adaptation (TTA), this paper utilizes **forward-only, backpropagation-free** Zeroth-Order (ZO) optimization to fine-tune a lightweight adapter. Observing that the Hessian remains low-rank and changes slowly during TTA, the authors replace isotropic random perturbations with **curvature-aware anisotropic perturbations**. This significantly reduces the variance of ZO gradien…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Zeroth-Order Optimization"
+  - "Test-Time Adaptation"
+  - "Curvature-Aware"
+  - "Low-Rank Hessian"
+  - "Memory-Efficient"
 date: 2026-05-08
-content_hash: 6324999fad07fcc9
+content_hash: 4bcad65adeaa3198
 ---
+
 # Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation
 
 **Conference**: CVPR 2026  
@@ -150,15 +156,16 @@ VRAM is only 1/4 to 1/10 of BP methods. Due to the diagonal proxy and adapter, *
 - Value: ⭐⭐⭐⭐ Achieves BP-level accuracy in forward-only TTA while saving 70% memory; high potential for edge deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](neural_collapse_in_test-time_adaptation.md)
-- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
-- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
-- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
-- [\[ECCV 2024\] MemBN: Robust Test-Time Adaptation via Batch Norm with Statistics Memory](../../ECCV2024/others/membn_robust_test-time_adaptation_via_batch_norm_with_statistics_memory.md)
+- [\[CVPR 2026\] ZOO-Prune: Training-Free Token Pruning via Zeroth-Order Gradient Estimation in Vision-Language Models](zoo-prune_training-free_token_pruning_via_zeroth-order_gradient_estimation_in_vi.md)
+- [\[CVPR 2026\] Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)
+- [\[CVPR 2026\] Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](differentiable_vector_quantization_for_rate-distortion_optimization_of_generativ.md)
+- [\[CVPR 2025\] COAP: Memory-Efficient Training with Correlation-Aware Gradient Projection](../../CVPR2025/vlm_efficiency/coap_memory-efficient_training_with_correlation-aware_gradient_projection.md)
+- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
 
 </div>
 

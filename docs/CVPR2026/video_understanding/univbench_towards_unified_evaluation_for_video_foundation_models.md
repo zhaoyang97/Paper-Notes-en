@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniVBench: Towards Unified Evaluation for Video Foundation Models
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] UniVBench utilizes 200 human-crafted, copyright-free multi-shot videos and an agentic evaluation system, UniV-Eval, to evaluate video understanding, generation, editing, and the newly proposed "video reconstruction" within a single framework. It is the first to provide a unified answer to whether unified video models t
+  [CVPR 2026][Video Understanding][Unified Video Models] UniVBench utilizes 200 human-crafted, copyright-free multi-shot videos and an agentic evaluation system, UniV-Eval, to evaluate video understanding, generation, editing, and the newly proposed "video reconstruction" within a single framework. It is the first to provide a unified answer to whether unified video models truly excel in both perception and generation.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Unified Video Models"
+  - "Evaluation Benchmark"
+  - "Agentic Evaluation"
+  - "Video Reconstruction"
+  - "Multi-shot"
 date: 2026-05-08
-content_hash: bcc4fd7c4dd2dd09
+content_hash: da6167077f549c17
 ---
+
 # UniVBench: Towards Unified Evaluation for Video Foundation Models
 
 **Conference**: CVPR 2026  
@@ -141,15 +147,15 @@ UniVBench dominance relative to existing benchmarks:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Data-Efficient Video Pre-training with Frozen Image Foundation Models](towards_data-efficient_video_pre-training_with_frozen_image_foundation_models.md)
 - [\[CVPR 2026\] UFVideo: Towards Unified Fine-Grained Video Cooperative Understanding with Large Language Models](ufvideo_towards_unified_fine-grained_video_cooperative_understanding_with_large_.md)
 - [\[CVPR 2026\] Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration](enhancing_accuracy_of_uncertainty_estimation_in_appearance-based_gaze_tracking_w.md)
 - [\[CVPR 2025\] Efficient Transfer Learning for Video-language Foundation Models](../../CVPR2025/video_understanding/efficient_transfer_learning_for_video-language_foundation_models.md)
 - [\[NeurIPS 2025\] MimeQA: Towards Socially-Intelligent Nonverbal Foundation Models](../../NeurIPS2025/video_understanding/mimeqa_towards_socially-intelligent_nonverbal_foundation_models.md)
+- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
 
 </div>
 

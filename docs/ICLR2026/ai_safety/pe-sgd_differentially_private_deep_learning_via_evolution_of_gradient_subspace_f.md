@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text
 description: >-
-  [ICLR 2026][AI Safety][DP-SGD] PE-SGD combines "gradient projection + private evolving synthetic data" for differentially private fine-tuning: it uses a synthetic dataset that **evolves continuously** during training to span the gradient projection subspace and injects DP noise into the optimal projection coefficients. It significantly outperforms D
+  [ICLR 2026][AI Safety][Differential Privacy] PE-SGD combines "gradient projection + private evolving synthetic data" for differentially private fine-tuning: it uses a synthetic dataset that **evolves continuously** during training to span the gradient projection subspace and injects DP noise into the optimal projection coefficients. It significantly outperforms DP-SGD and various projection-based baselines in scenarios with extremely limited private data ($M < 500$) and tight…
 tags:
-  - ICLR 2026
-  - AI Safety
-  - DP-SGD
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Differential Privacy"
+  - "DP-SGD"
+  - "Gradient Projection"
+  - "Synthetic Data Evolution"
+  - "Long-tail Samples"
 date: 2026-05-08
-content_hash: 8936d25f65696e0c
+content_hash: ad19483d888ede01
 ---
+
 # PE-SGD: Differentially Private Deep Learning via Evolution of Gradient Subspace for Text
 
 **Conference**: ICLR 2026  

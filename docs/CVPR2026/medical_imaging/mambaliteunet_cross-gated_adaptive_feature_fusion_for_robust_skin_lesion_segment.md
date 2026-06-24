@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Vision Mamba] This work integrates Vision Mamba state-space modeling into a lightweight U-Net with only 0.494M parameters. By utilizing three specialized modules—Adaptive Multi-branch Mamba Fusion (AMF), Local-Global Feature Mixer (LGFM), and Cross-Gated Attention (CGA)—it enhances multi-scale fusion, local texture/global context in
+  [CVPR 2026][Medical Imaging][Skin lesion segmentation] This work integrates Vision Mamba state-space modeling into a lightweight U-Net with only 0.494M parameters. By utilizing three specialized modules—Adaptive Multi-branch Mamba Fusion (AMF), Local-Global Feature Mixer (LGFM), and Cross-Gated Attention (CGA)—it enhances multi-scale fusion, local texture/global context interaction, and skip-connection refinement. The model achieves an average of 87.12% IoU and 93.09% Dice ac…
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - Vision Mamba
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Skin lesion segmentation"
+  - "Vision Mamba"
+  - "Lightweight U-Net"
+  - "Cross-gated attention"
+  - "Adaptive feature fusion"
 date: 2026-05-08
-content_hash: 09f2a0c03655cd62
+content_hash: 08b7a1cce6f51c3b
 ---
+
 # MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation
 
 **Conference**: CVPR 2026  

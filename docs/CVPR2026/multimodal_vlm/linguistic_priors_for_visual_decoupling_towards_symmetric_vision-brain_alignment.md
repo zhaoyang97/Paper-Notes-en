@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Linguistic Priors for Visual Decoupling: Towards Symmetric Vision-Brain Alignment
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] Aiming at the "semantic information asymmetry" between brain signals and natural images, this work utilizes object-level text descriptions as linguistic priors to explicitly decouple foreground objects from background regions in images. This transforms asymmetric vision-brain alignment into symmetric semantic alignment
+  [CVPR 2026][Multimodal VLM][Brain-Visual Decoding] Aiming at the "semantic information asymmetry" between brain signals and natural images, this work utilizes object-level text descriptions as linguistic priors to explicitly decouple foreground objects from background regions in images. This transforms asymmetric vision-brain alignment into symmetric semantic alignment, achieving new SOTA in zero-shot brain-to-image retrieval on THINGS-EEG / THINGS-MEG.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Brain-Visual Decoding"
+  - "Vision-Brain Alignment"
+  - "Linguistic Priors"
+  - "Visual Decoupling"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: f59fc39cb5a3bc37
+content_hash: 819dce40665848e2
 ---
+
 # Linguistic Priors for Visual Decoupling: Towards Symmetric Vision-Brain Alignment
 
 **Conference**: CVPR 2026  
@@ -139,7 +145,7 @@ Sensitivity of central blur coefficient $c$ (THINGS-EEG, average):
 
 - [\[AAAI 2026\] Recursive Visual Imagination and Adaptive Linguistic Grounding for Vision Language Navigation](../../AAAI2026/multimodal_vlm/recursive_visual_imagination_and_adaptive_linguistic_grounding_for_vision_langua.md)
 - [\[AAAI 2026\] Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](../../AAAI2026/multimodal_vlm/aligning_the_true_semantics_constrained_decoupling_and_distr.md)
-- [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
+- [\[ICLR 2026\] ORION: Decoupling and Alignment for Unified Autoregressive Understanding and Generation](../../ICLR2026/multimodal_vlm/orion_decoupling_and_alignment_for_unified_autoregressive_understanding_and_gene.md)
 - [\[CVPR 2026\] β-CLIP: Text-Conditioned Contrastive Learning for Multi-Granular Vision-Language Alignment](b-clip_text-conditioned_contrastive_learning_for_multi-granular_vision-language_.md)
 - [\[CVPR 2026\] Boosting Visual Reprogramming for CLIP with Dual Granularity Alignment](boosting_visual_reprogramming_for_clip_with_dual_granularity_alignment.md)
 

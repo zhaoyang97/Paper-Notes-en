@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization
 description: >-
-  [ICCV 2025][Image Generation][Inverse problem solving] LATINO-PRO is the first work to embed Latent Consistency Models (LCMs) as generative priors within a zero-shot inverse problem solving framework…
+  [ICCV 2025][Image Generation][Inverse problem solving] LATINO-PRO is the first work to embed Latent Consistency Models (LCMs) as generative priors within a zero-shot inverse problem solving framework, achieving state-of-the-art reconstruction quality with only 8 neural function evaluations (NFEs), and further improving performance via empirical Bayes-based automatic text prompt calibration.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "prompt optimization"
   - "image reconstruction"
 date: 2026-05-08
-content_hash: ebd973d3a4af4aba
+content_hash: 257623cb17c74df1
 ---
 
 # LATINO-PRO: LAtent consisTency INverse sOlver with PRompt Optimization
@@ -139,10 +139,10 @@ LATINO-PRO surpasses methods requiring 50–1000 NFEs using only 8 NFEs.
 ## Related Papers
 
 - [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](../../ICLR2026/image_generation/lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
+- [\[CVPR 2025\] Minority-Focused Text-to-Image Generation via Prompt Optimization](../../CVPR2025/image_generation/minority-focused_text-to-image_generation_via_prompt_optimization.md)
 - [\[CVPR 2026\] Image Diffusion Preview with Consistency Solver](../../CVPR2026/image_generation/image_diffusion_preview_with_consistency_solver.md)
-- [\[ICCV 2025\] Exploring Multimodal Diffusion Transformers for Enhanced Prompt-based Image Editing](exploring_multimodal_diffusion_transformers_for_enhanced_prompt-based_image_edit.md)
-- [\[ICCV 2025\] What's in a Latent? Leveraging Diffusion Latent Space for Domain Generalization](whats_in_a_latent_leveraging_diffusion_latent_space_for_domain_generalization.md)
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
+- [\[ICCV 2025\] FlowDPS: Flow-Driven Posterior Sampling for Inverse Problems](flowdps_flow-driven_posterior_sampling_for_inverse_problems.md)
 
 </div>
 

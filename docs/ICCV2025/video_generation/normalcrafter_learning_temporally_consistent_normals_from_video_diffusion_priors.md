@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors
 description: >-
-  [ICCV 2025][Video Generation][surface normal estimation] NormalCrafter proposes a video normal estimation method built upon Stable Video Diffusion (SVD). By incorporating Semantic Feature Regularization (SFR) and a two-s…
+  [ICCV 2025][Video Generation][surface normal estimation] NormalCrafter proposes a video normal estimation method built upon Stable Video Diffusion (SVD). By incorporating Semantic Feature Regularization (SFR) and a two-stage training strategy, the method generates normal sequences with fine-grained details and temporal consistency, substantially outperforming existing per-frame methods on video benchmarks.
 tags:
   - "ICCV 2025"
   - "Video Generation"
@@ -12,7 +12,7 @@ tags:
   - "semantic feature regularization"
   - "SVD"
 date: 2026-05-08
-content_hash: bd3d3af080a443b1
+content_hash: 5aae7d95192464f8
 ---
 
 # NormalCrafter: Learning Temporally Consistent Normals from Video Diffusion Priors
@@ -150,11 +150,11 @@ SFR contributes most significantly; its removal causes a marked drop in normal q
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](../../CVPR2026/video_generation/orbital_video_3d_foundation_priors.md)
-- [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
+- [\[CVPR 2025\] Learning Temporally Consistent Video Depth from Video Diffusion Priors](../../CVPR2025/video_generation/learning_temporally_consistent_video_depth_from_video_diffusion_priors.md)
 - [\[ICCV 2025\] Multi-identity Human Image Animation with Structural Video Diffusion](multi-identity_human_image_animation_with_structural_video_diffusion.md)
-- [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
+- [\[ICCV 2025\] Disentangled World Models: Learning to Transfer Semantic Knowledge from Distracting Videos for Reinforcement Learning](disentangled_world_models_learning_to_transfer_semantic_knowledge_from_distracti.md)
 - [\[ICCV 2025\] Generating, Fast and Slow: Scalable Parallel Video Generation with Video Interface Networks](generating_fast_and_slow_scalable_parallel_video_generation_with_video_interface.md)
+- [\[ICCV 2025\] Versatile Transition Generation with Image-to-Video Diffusion](versatile_transition_generation_with_image-to-video_diffusion.md)
 
 </div>
 

@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper introduces **Rubrics as Rewards (RaR)**, treating itemized rubric checklists as reward functions for on-policy reinforcement learning. This extends RL with Verifiable Rewards (RLVR)—previously limited to "verifiable" tasks like math or code—to real-world reasoning domains like medicine and science where no s
+  [ICLR 2026][Reinforcement Learning][rubric reward] This paper introduces **Rubrics as Rewards (RaR)**, treating itemized rubric checklists as reward functions for on-policy reinforcement learning. This extends RL with Verifiable Rewards (RLVR)—previously limited to "verifiable" tasks like math or code—to real-world reasoning domains like medicine and science where no single standard answer exists. RaR achieves up to a 31% improvement over popular LLM-as-judge Likert baselines…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - GRPO
-  - on-policy RL
-  - LLM-as-judge
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "rubric reward"
+  - "RLVR"
+  - "GRPO"
+  - "on-policy RL"
+  - "LLM-as-judge"
 date: 2026-05-08
-content_hash: eb0338c9a6c28711
+content_hash: 792be0c40a76a121
 ---
+
 # Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains
 
 **Conference**: ICLR 2026  

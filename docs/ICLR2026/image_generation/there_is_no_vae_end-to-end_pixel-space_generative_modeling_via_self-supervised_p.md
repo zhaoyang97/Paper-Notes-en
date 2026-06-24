@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes EPG (End-to-end Pixel-space Generative model), a two-stage framework consisting of a "self-supervised pre-trained encoder + end-to-end fine-tuned decoder." By **completely discarding the VAE** and training diffusion and consistency models directly in pixel space, it achieves 1.58 FID (75 NFE) on Ima
+  [ICLR 2026][Image Generation][Pixel-space Generation] This paper proposes EPG (End-to-end Pixel-space Generative model), a two-stage framework consisting of a "self-supervised pre-trained encoder + end-to-end fine-tuned decoder." By **completely discarding the VAE** and training diffusion and consistency models directly in pixel space, it achieves 1.58 FID (75 NFE) on ImageNet-256. Using approximately 30% of the training compute of DiT, it outperforms DiT/SiT and…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Model
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Pixel-space Generation"
+  - "Diffusion Models"
+  - "Consistency Models"
+  - "Self-supervised Pre-training"
+  - "Representation Consistency"
 date: 2026-05-08
-content_hash: 2dff4ddeb425eddc
+content_hash: 09c360fdb1f600c5
 ---
+
 # There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training
 
 **Conference**: ICLR 2026  

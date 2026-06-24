@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLN-CE] Addressing the issue in Vision-Language Navigation (VLN) where agents "do not know which step of the instruction they have reached," Progress-Think moves away from predicting numerical completion. Instead, it enables the model to reason the "completed instruction text" from historical observations. Using an annotation-
+  [CVPR 2026][VLM Reasoning][VLN-CE] Addressing the issue in Vision-Language Navigation (VLN) where agents "do not know which step of the instruction they have reached," Progress-Think moves away from predicting numerical completion. Instead, it enables the model to reason the "completed instruction text" from historical observations. Using an annotation-free three-stage framework (Self-supervised Progress Pre-training → Progress-Guided Policy Pre-training → Progress-Policy Joi…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLN-CE
-  - GRPO
-  - VLA
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "VLN-CE"
+  - "Semantic Progress Reasoning"
+  - "Self-supervised Alignment"
+  - "GRPO"
+  - "VLA"
 date: 2026-05-08
-content_hash: a846da0f9f393da1
+content_hash: 62929fc9432d47c9
 ---
+
 # Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation
 
 **Conference**: CVPR 2026  
@@ -155,11 +158,11 @@ Component ablation (SAPP losses + PPCF reward configuration, R2R-CE):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Recurrent Reasoning with Vision-Language Models for Estimating Long-Horizon Embodied Task Progress](recurrent_reasoning_with_vision-language_models_for_estimating_long-horizon_embo.md)
-- [\[CVPR 2026\] AwareVLN: Reasoning with Self-awareness for Vision-Language Navigation](awarevln_reasoning_with_self-awareness_for_vision-language_navigation.md)
-- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
-- [\[CVPR 2026\] ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation](profocus_proactive_perception_and_focused_reasoning_in_vision-and-language_navig.md)
-- [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
+- [\[ACL 2026\] PROGRESSLM: Towards Progress Reasoning in Vision-Language Models](../../ACL2026/vlm_reasoning/progresslm_towards_progress_reasoning_in_vision-language_models.md)
+- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
+- [\[CVPR 2026\] Think Visually, Reason Textually: Vision-Language Synergy in Abstract Reasoning](think_visually_reason_textually_vision-language_synergy_in_abstract_reasoning.md)
+- [\[CVPR 2026\] Think with 3D: Geometric Imagination Grounded Spatial Reasoning from Limited Views](think_with_3d_geometric_imagination_grounded_spatial_reasoning_from_limited_view.md)
+- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](reinforcing_video_object_segmentation_to_think_before_it_segments.md)
 
 </div>
 

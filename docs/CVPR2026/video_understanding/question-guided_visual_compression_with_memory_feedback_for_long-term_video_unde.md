@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The QViC-MF framework is proposed, which achieves SOTA on multiple benchmarks including MLVU, LVBench, and VNBench using minimal visual tokens (16 per frame) through question-guided multi-frame visual compression (QMSA) and a context memory feedback mechanism.
+  [CVPR2026][Video Understanding][Long-term video understanding] The QViC-MF framework is proposed, which achieves SOTA on multiple benchmarks including MLVU, LVBench, and VNBench using minimal visual tokens (16 per frame) through question-guided multi-frame visual compression (QMSA) and a context memory feedback mechanism.
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR2026"
+  - "Video Understanding"
+  - "Long-term video understanding"
+  - "visual compression"
+  - "memory feedback"
+  - "question-guided attention"
+  - "large multimodal models"
 date: 2026-05-08
-content_hash: b6abeb7465873059
+content_hash: 82f1edc2be8c18d2
 ---
+
 # Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding
 
 **Conference**: CVPR2026  
@@ -136,10 +142,20 @@ Using only 16 tokens per frame, QViC-MF outperforms the Prev. SOTA by 6.1% on ML
 - Value: ⭐⭐⭐⭐ — Significant performance leaps at high efficiency (16 tokens/frame) are highly relevant for practical deployment.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
+- [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)
+- [\[CVPR 2026\] Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
+- [\[CVPR 2025\] BIMBA: Selective-Scan Compression for Long-Range Video Question Answering](../../CVPR2025/video_understanding/bimba_selective-scan_compression_for_long-range_video_question_answering.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] FLoC: Facility Location-Based Efficient Visual Token Compression for Long Video Understanding](../../ICLR2026/video_understanding/floc_facility_location-based_efficient_visual_token_compression_for_long_video_u.md)

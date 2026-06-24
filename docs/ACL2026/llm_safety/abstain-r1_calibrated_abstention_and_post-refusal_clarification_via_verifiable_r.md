@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL
 description: >-
-  [ACL 2026][LLM Safety][GRPO] Abstain-R1 proposes a **clarification-aware RLVR reward** to jointly optimize "explicit refusal" and "providing helpful clarifications (pointing out missing information) post-refusal" on unanswerable queries. This allows 3B models to approach or even surpass large models such as DeepSeek-R1 in refusal and clarification
+  [ACL 2026][LLM Safety][Refusal Calibration] Abstain-R1 proposes a **clarification-aware RLVR reward** to jointly optimize "explicit refusal" and "providing helpful clarifications (pointing out missing information) post-refusal" on unanswerable queries. This allows 3B models to approach or even surpass large models such as DeepSeek-R1 in refusal and clarification quality.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - GRPO
+  - "ACL 2026"
+  - "LLM Safety"
+  - "Refusal Calibration"
+  - "Post-Refusal Clarification"
+  - "Verifiable Rewards"
+  - "GRPO"
+  - "Unanswerable Queries"
 date: 2026-05-08
-content_hash: 140492fbd9f142c0
+content_hash: 339bff7aca5b368c
 ---
+
 # Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL
 
 **Conference**: ACL 2026  
@@ -132,9 +137,9 @@ During the RL phase, the standard GRPO objective is used: $G$ candidate outputs 
 
 - [\[ACL 2026\] Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)
 - [\[ACL 2026\] Please Refuse to Answer Me: Mitigating Over-Refusal in LLMs via Adaptive Contrastive Decoding](please_refuse_to_answer_me_mitigating_over-refusal_in_large_language_models_via_.md)
-- [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](../../ICLR2026/llm_safety/reinforcement_unlearning_via_group_relative_policy_optimization.md)
-- [\[ACL 2026\] PIArena: A Platform for Prompt Injection Evaluation](piarena_a_platform_for_prompt_injection_evaluation.md)
-- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
+- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](../../ICLR2026/llm_safety/robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
+- [\[ICLR 2026\] ProSafePrune: Projected Safety Pruning for Mitigating Over-Refusal in LLMs](../../ICLR2026/llm_safety/prosafeprune_projected_safety_pruning_for_mitigating_over-refusal_in_llms.md)
+- [\[ICLR 2026\] Discern Truth from Falsehood: Reducing Over-Refusal via Contrastive Refinement](../../ICLR2026/llm_safety/discern_truth_from_falsehood_reducing_over-refusal_via_contrastive_refinement.md)
 
 </div>
 

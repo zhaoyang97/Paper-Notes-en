@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Activation Steering with a Feedback Controller
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] This paper reinterprets LLM activation steering as a feedback control problem in control theory. It proves that mainstream methods such as ActAdd, DirAblate, and Mean-AcT are essentially Proportional (P) controllers and thus possess inherent steady-state errors. Consequently, it proposes using a full PID controller to
+  [ICLR2026][Interpretability][Activation Steering] This paper reinterprets LLM activation steering as a feedback control problem in control theory. It proves that mainstream methods such as ActAdd, DirAblate, and Mean-AcT are essentially Proportional (P) controllers and thus possess inherent steady-state errors. Consequently, it proposes using a full PID controller to calculate steering vectors (PID Steering), which consistently outperforms original methods in tasks like detox…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR2026"
+  - "Interpretability"
+  - "Activation Steering"
+  - "Control Theory"
+  - "PID Controller"
+  - "Steady-state Error"
+  - "Safety Alignment"
 date: 2026-05-08
-content_hash: 75587437bbac6006
+content_hash: 01c434f8e0f4d7d1
 ---
+
 # Activation Steering with a Feedback Controller
 
 **Conference**: ICLR2026  
@@ -143,8 +149,8 @@ PID ranks first in ASR with almost no loss in general benchmarks (e.g., tinyMMLU
 ## Related Papers
 
 - [\[ICML 2026\] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation](../../ICML2026/interpretability/closing_the_loop_pid_feedback_control_for_interpretable_activation_steering_in_s.md)
-- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
 - [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](../../ICML2026/interpretability/steer_like_the_llm_activation_steering_that_mimics_prompting.md)
+- [\[NeurIPS 2025\] CBMAS: Cognitive Behavioral Modeling via Activation Steering](../../NeurIPS2025/interpretability/cbmas_cognitive_behavioral_modeling_via_activation_steering.md)
 - [\[ICLR 2026\] Emergent Discrete Controller Modules for Symbolic Planning in Transformers](emergent_discrete_controller_modules_for_symbolic_planning_in_transformers.md)
 - [\[ICLR 2026\] REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering](real_reading_out_transformer_activations_for_precise_localization_in_language_mo.md)
 

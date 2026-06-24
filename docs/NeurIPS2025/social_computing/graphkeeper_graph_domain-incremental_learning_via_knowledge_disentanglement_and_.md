@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GraphKeeper: Graph Domain-Incremental Learning via Knowledge Disentanglement and Preservation
 description: >-
-  [NeurIPS 2025][Social Computing][Graph Incremental Learning] GraphKeeper is proposed to address catastrophic forgetting in **Graph Domain-Incremental Learning (Graph Domain-IL)** through three components: domain-specific…
+  [NeurIPS 2025][Social Computing][Graph Incremental Learning] GraphKeeper is proposed to address catastrophic forgetting in **Graph Domain-Incremental Learning (Graph Domain-IL)** through three components: domain-specific LoRA parameter isolation, intra/inter-domain disentanglement, and ridge regression-based deviation-free knowledge preservation. It outperforms the second-best method by 6.5%–16.6% and can be seamlessly integrated with graph foundation models.
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Disentanglement"
   - "Catastrophic Forgetting"
 date: 2026-05-08
-content_hash: 7d6beef2ea7c19dd
+content_hash: 22cb79bf8913db97
 ---
 
 # GraphKeeper: Graph Domain-Incremental Learning via Knowledge Disentanglement and Preservation
@@ -195,9 +195,9 @@ Ablation of individual modules (inferred from paper analysis):
 ## Related Papers
 
 - [\[ICCV 2025\] Learning Visual Proxy for Compositional Zero-Shot Learning](../../ICCV2025/social_computing/learning_visual_proxy_for_compositional_zero-shot_learning.md)
-- [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
+- [\[CVPR 2025\] Learning from Neighbors: Category Extrapolation for Long-Tail Learning](../../CVPR2025/social_computing/learning_from_neighbors_category_extrapolation_for_long-tail_learning.md)
 - [\[AAAI 2026\] From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks](../../AAAI2026/social_computing/from_imitation_to_discrimination_toward_a_generalized_curriculum_advantage_mecha.md)
-- [\[ICCV 2025\] Gradient Extrapolation for Debiased Representation Learning](../../ICCV2025/social_computing/gradient_extrapolation_for_debiased_representation_learning.md)
+- [\[NeurIPS 2025\] VDRP: Visual Diversity and Region-aware Prompt Learning for Zero-shot HOI Detection](visual_diversity_and_region-aware_prompt_learning_for_zero-shot_hoi_detection.md)
 - [\[ACL 2026\] Bayesian Social Deduction with Graph-Informed Language Models](../../ACL2026/social_computing/bayesian_social_deduction_with_graph-informed_language_models.md)
 
 </div>

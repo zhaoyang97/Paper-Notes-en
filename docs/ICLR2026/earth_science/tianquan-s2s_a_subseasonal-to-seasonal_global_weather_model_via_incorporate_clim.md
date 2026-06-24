@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] TianQuan-S2S：通过引入气候态构建次季节-季节全球天气预报模型
+  [Paper Note] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology
 description: >-
-  [ICLR 2026][Earth Science][ViT] TianQuan-S2S integrates "long-term climatological means" into patch embeddings via attention fusion and injects learnable Gaussian noise into each layer of a ViT. This specifically addresses the "model collapse" (increasingly blurry predictions) of data-driven models in 15–45 day subseasonal forecasting, outperforming
+  [ICLR 2026][Earth Science][Subseasonal-to-Seasonal Forecasting] TianQuan-S2S integrates "long-term climatological means" into patch embeddings via attention fusion and injects learnable Gaussian noise into each layer of a ViT. This specifically addresses the "model collapse" (increasingly blurry predictions) of data-driven models in 15–45 day subseasonal forecasting, outperforming both the numerical model ECMWF-S2S and the data-driven FuXi-S2S on the ERA5 dataset.
 tags:
-  - ICLR 2026
-  - Earth Science
-  - ViT
+  - "ICLR 2026"
+  - "Earth Science"
+  - "Subseasonal-to-Seasonal Forecasting"
+  - "Climatological Fusion"
+  - "Uncertainty Modeling"
+  - "Model Collapse"
+  - "ViT"
 date: 2026-05-08
-content_hash: de9460099c8e8662
+content_hash: 006e1a457b210bfe
 ---
+
 # TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology
 
 **Conference**: ICLR 2026  
@@ -137,11 +142,11 @@ Comparison of fusion strategies and perturbation methods (Table 4, ensemble mean
 
 ## Related Papers
 
+- [\[ICML 2026\] Scaling Laws of Global Weather Models](../../ICML2026/earth_science/scaling_laws_of_global_weather_models.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
+- [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](../../ICML2026/earth_science/sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
+- [\[CVPR 2026\] PhyOceanCast: Global Ocean Forecasting with Physics-Informed Diffusion](../../CVPR2026/earth_science/phyoceancast_global_ocean_forecasting_with_physics-informed_diffusion.md)
 - [\[ICLR 2026\] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours](rainpro-8_an_efficient_deep_learning_model_to_estimate_rainfall_probabilities_ov.md)
-- [\[ICLR 2026\] 揭示连续表示全波形反演的机制：一个基于波的神经正切核框架](unveiling_the_mechanism_of_continuous_representation_full-waveform_inversion_a_w.md)
-- [\[ICLR 2026\] The Seismic Wavefield Common Task Framework](the_seismic_wavefield_common_task_framework.md)
-- [\[ICLR 2026\] OmniField: Conditioned Neural Fields for Robust Multimodal Spatiotemporal Learning](omnifield_conditioned_neural_fields_for_robust_multimodal_spatiotemporal_learnin.md)
-- [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
 
 </div>
 

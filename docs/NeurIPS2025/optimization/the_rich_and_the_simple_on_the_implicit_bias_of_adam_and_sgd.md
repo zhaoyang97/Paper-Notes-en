@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Rich and the Simple: On the Implicit Bias of Adam and SGD
 description: >-
-  [NeurIPS 2025][Optimization][Implicit bias] This paper provides theoretical and empirical evidence that neural networks trained with SGD tend to learn simple linear features (simplicity bias)…
+  [NeurIPS 2025][Optimization][Implicit bias] This paper provides theoretical and empirical evidence that neural networks trained with SGD tend to learn simple linear features (simplicity bias), whereas Adam produces richer nonlinear features, yielding predictors closer to the Bayes-optimal classifier and better generalization under distribution shift.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "simplicity bias"
   - "feature learning"
 date: 2026-05-08
-content_hash: cfa4365504912054
+content_hash: c1f72b4d22ea4518
 ---
 
 # The Rich and the Simple: On the Implicit Bias of Adam and SGD
@@ -131,9 +131,9 @@ Adam substantially increases correlation with core features (+0.36) and reduces 
 
 - [\[NeurIPS 2025\] A Unified Stability Analysis of SAM vs SGD: Role of Data Coherence and Emergence of Simplicity Bias](a_unified_stability_analysis_of_sam_vs_sgd_role_of_data_cohe.md)
 - [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
-- [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
-- [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
 - [\[NeurIPS 2025\] In Search of Adam's Secret Sauce](in_search_of_adams_secret_sauce.md)
+- [\[NeurIPS 2025\] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels](the_implicit_bias_of_structured_state_space_models_can_be_poisoned_with_clean_la.md)
+- [\[ICLR 2026\] Implicit Bias of Per-sample Adam on Separable Data: Departure from the Full-batch Regime](../../ICLR2026/optimization/implicit_bias_of_per-sample_adam_on_separable_data_departure_from_the_full-batch.md)
 
 </div>
 

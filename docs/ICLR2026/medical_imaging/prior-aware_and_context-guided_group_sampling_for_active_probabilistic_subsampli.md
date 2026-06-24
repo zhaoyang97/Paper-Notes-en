@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Prior-aware and Context-guided Group Sampling for Active Probabilistic Subsampling
 description: >-
-  [ICLR 2026][Medical Imaging][Gumbel-top-k] Building upon Active Deep Probabilistic Subsampling (A-DPS), the proposed method first acquires a batch of samples using a fixed prior mask learned from the training set, followed by context-guided grouped active sampling using DPS-top-k. Complemented by theoretical proof that grouped sampling smoothens optimization vi
+  [ICLR 2026][Medical Imaging][Probabilistic Subsampling] Building upon Active Deep Probabilistic Subsampling (A-DPS), the proposed method first acquires a batch of samples using a fixed prior mask learned from the training set, followed by context-guided grouped active sampling using DPS-top-k. Complemented by theoretical proof that grouped sampling smoothens optimization via Lipschitz analysis, the method outperforms A-DPS and DPS across MNIST/CIFAR-10 classification…
 tags:
-  - ICLR 2026
-  - Medical Imaging
-  - Gumbel-top-k
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Probabilistic Subsampling"
+  - "Active Sampling"
+  - "MRI Acceleration"
+  - "Gumbel-top-k"
+  - "Lipschitz Smoothness"
 date: 2026-05-08
-content_hash: fdac54246923a265
+content_hash: 7c9e539418e08fdc
 ---
+
 # Prior-aware and Context-guided Group Sampling for Active Probabilistic Subsampling
 
 **Conference**: ICLR 2026  
@@ -166,11 +171,11 @@ Grid search on $(P_s, A_s)$ for fastMRI (Accel 8x, $M=26$ lines):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Anatomy-aware Representation Learning for Medical Ultrasound](anatomy-aware_representation_learning_for_medical_ultrasound.md)
-- [\[ICLR 2026\] Rethinking Radiology Report Generation: From Narrative Flow to Topic-Guided Findings](rethinking_radiology_report_generation_from_narrative_flow_to_topic-guided_findi.md)
-- [\[ICLR 2026\] Learning Self-Critiquing Mechanisms for Region-Guided Chest X-Ray Report Generation](learning_self-critiquing_mechanisms_for_region-guided_chest_x-ray_report_generat.md)
-- [\[ICLR 2026\] Accelerating Benchmarking of Functional Connectivity Modeling via Structure-aware Core-set Selection](accelerating_benchmarking_of_functional_connectivity_modeling_via_structure-awar.md)
-- [\[ICLR 2026\] DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring](disco_densely-overlapping_cell_instance_segmentation_via_adjacency-aware_collabo.md)
+- [\[CVPR 2026\] Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](../../CVPR2026/medical_imaging/active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)
+- [\[NeurIPS 2025\] Active Target Discovery under Uninformative Prior: The Power of Permanent and Transient Memory](../../NeurIPS2025/medical_imaging/active_target_discovery_under_uninformative_prior_the_power_of_permanent_and_tra.md)
+- [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](../../CVPR2026/medical_imaging/pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
+- [\[AAAI 2026\] Towards Effective and Efficient Context-aware Nucleus Detection in Histopathology Whole Slide Images](../../AAAI2026/medical_imaging/towards_effective_and_efficient_context-aware_nucleus_detection_in_histopatholog.md)
+- [\[CVPR 2026\] OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement](../../CVPR2026/medical_imaging/osa_echocardiography_video_segmentation_via_orthogonalized_state_update_and_anat.md)
 
 </div>
 

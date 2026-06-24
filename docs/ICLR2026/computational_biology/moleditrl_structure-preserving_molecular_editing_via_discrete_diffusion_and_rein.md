@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning
 description: >-
-  [ICLR 2026][Computational Biology][Reinforcement Learning] MolEditRL performs molecular editing directly on discrete molecular graphs: it employs graph-text conditional diffusion to learn target molecule reconstruction from source molecules and natural language instructions, followed by property optimization via reinforcement learning with structural constraints. This approach
+  [ICLR 2026][Computational Biology][Molecular Editing] MolEditRL performs molecular editing directly on discrete molecular graphs: it employs graph-text conditional diffusion to learn target molecule reconstruction from source molecules and natural language instructions, followed by property optimization via reinforcement learning with structural constraints. This approach simultaneously improves editing success rates, structural similarity, and chemical distribution quality u…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Molecular Editing"
+  - "Discrete Graph Diffusion"
+  - "Reinforcement Learning"
+  - "Drug Design"
+  - "Structure Preservation"
 date: 2026-05-08
-content_hash: 69e9b9571e9cbc71
+content_hash: 85045f2a188e8b79
 ---
+
 # MolEditRL: Structure-Preserving Molecular Editing via Discrete Diffusion and Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -153,13 +158,20 @@ Ours demonstrates that while sequence models (BioT5, MolGen) reach nearly 1.0 Va
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- **DrugAssist**: [https://arxiv.org/abs/2401.10334](https://arxiv.org/abs/2401.10334)
-- **MolGen**: [https://arxiv.org/abs/2303.16804](https://arxiv.org/abs/2303.16804)
-- **DDPO**: [https://arxiv.org/abs/2305.13301](https://arxiv.org/abs/2305.13301)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Discrete Compositional Generation via General Soft Operators and Robust Reinforcement Learning](discrete_compositional_generation_via_general_soft_operators_and_robust_reinforc.md)
+- [\[ICLR 2026\] Learning Flexible Forward Trajectories for Masked Molecular Diffusion](learning_flexible_forward_trajectories_for_masked_molecular_diffusion.md)
+- [\[ICLR 2026\] Controllable Sequence Editing for Biological and Clinical Trajectories](controllable_sequence_editing_for_biological_and_clinical_trajectories.md)
+- [\[NeurIPS 2025\] Uncertainty-Aware Multi-Objective Reinforcement Learning-Guided Diffusion Models for 3D De Novo Molecular Design](../../NeurIPS2025/computational_biology/uncertainty-aware_multi-objective_reinforcement_learning-guided_diffusion_models.md)
+- [\[ICLR 2026\] ProteinAE: Protein Diffusion Autoencoders for Structure Encoding](proteinae_protein_diffusion_autoencoders_for_structure_encoding.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Discrete Compositional Generation via General Soft Operators and Robust Reinforcement Learning](discrete_compositional_generation_via_general_soft_operators_and_robust_reinforc.md)

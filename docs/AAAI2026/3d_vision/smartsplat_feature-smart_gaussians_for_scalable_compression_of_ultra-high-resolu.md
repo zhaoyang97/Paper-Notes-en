@@ -2,98 +2,98 @@
 title: >-
   [Paper Note] SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images
 description: >-
-  [AAAI2026][3D Vision][2D Gaussian Splatting] This paper proposes SmartSplat, a feature-aware 2D Gaussian Splatting framework for image compression. By introducing three key strategies—gradient-color-guided variational sa…
+  [AAAI2026][3D Vision][2D Gaussian Splatting] This paper proposes SmartSplat, a feature-aware 2D Gaussian Splatting image compression framework. By adopting three coordinate strategies—gradient-color-guided variational sampling, repulsive uniform sampling, and scale-adaptive color initialization—it achieves high-quality reconstruction of 8K/16K ultra-high-resolution images under extreme compression ratios (up to 5000×) for the first time.
 tags:
   - "AAAI2026"
   - "3D Vision"
   - "2D Gaussian Splatting"
-  - "image compression"
-  - "ultra-high-resolution"
-  - "feature-guided sampling"
-  - "high compression ratio"
+  - "Image Compression"
+  - "Ultra-High-Resolution"
+  - "Feature-Guided Sampling"
+  - "High Compression Ratio"
 date: 2026-05-08
-content_hash: a80cefcb62efa47d
+content_hash: b127de3ae06e61ad
 ---
 
+<!-- 由 src/gen_stubs.py 自动生成 -->
 # SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images
 
-**Conference**: AAAI2026
+**Conference**: AAAI2026  
 **arXiv**: [2512.20377](https://arxiv.org/abs/2512.20377)  
 **Code**: [lif314/SmartSplat](https://github.com/lif314/SmartSplat)  
-**Authors**: Linfei Li, Lin Zhang, Zhong Wang, Ying Shen
-**Area**: 3D Vision
-**Keywords**: 2D Gaussian Splatting, image compression, ultra-high-resolution, feature-guided sampling, high compression ratio
+**Authors**: Linfei Li, Lin Zhang, Zhong Wang, Ying Shen  
+**Area**: 3D Vision  
+**Keywords**: 2D Gaussian Splatting, Image Compression, Ultra-High-Resolution, Feature-Guided Sampling, High Compression Ratio  
 
 ## TL;DR
 
-This paper proposes SmartSplat, a feature-aware 2D Gaussian Splatting framework for image compression. By introducing three key strategies—gradient-color-guided variational sampling, repulsion-based uniform sampling, and scale-adaptive color initialization—SmartSplat achieves, for the first time, high-quality reconstruction of 8K/16K ultra-high-resolution (UHR) images at extreme compression ratios (up to 5000×).
+This paper proposes SmartSplat, a feature-aware 2D Gaussian Splatting image compression framework. By adopting three coordinate strategies—gradient-color-guided variational sampling, repulsive uniform sampling, and scale-adaptive color initialization—it achieves high-quality reconstruction of 8K/16K ultra-high-resolution images under extreme compression ratios (up to 5000×) for the first time.
 
 ## Background & Motivation
 
-### Compression Bottleneck for Ultra-High-Resolution Images
-
-With the rapid advancement of generative AI, UHR visual content has become increasingly prevalent, with 8K and 16K images reaching tens to hundreds of megabytes. Traditional formats such as JPEG achieve at most approximately 50× compression ratios, which is far from sufficient for efficient transmission and real-time rendering. Although Implicit Neural Representations (INR) offer strong compression capabilities, they rely on fixed architectures and full-image training, incurring prohibitive computational costs, while their neural decoding leads to slow decompression that is unsuitable for real-time applications.
+### Compression Bottlenecks of Ultra-High-Resolution Images
+With the rapid development of generative AI, ultra-high-resolution (UHR) visual content has become increasingly common, with file sizes of 8K and even 16K images reaching tens to hundreds of megabytes. Traditional formats like JPEG can only achieve a compression ratio of around 50×, which falls far short of meeting the demands for efficient transmission and real-time rendering. Although Implicit Neural Representations (INR) offer powerful compression capabilities, they rely on fixed architectures and full-image training, leading to massive computational overhead. Moreover, their neural inference causes slow decoding speeds, making them unsuitable for real-time scenarios.
 
 ### Opportunities and Limitations of 2D Gaussian Splatting
+3D Gaussian Splatting (3DGS) achieves an excellent balance between rendering quality and real-time performance through explicit modeling of Gaussian primitives and a differentiable tile-based rasterization pipeline. Extending it to 2D image representations (e.g., GaussianImage, LIG, ImageGS) significantly improves training and decoding efficiency. However, existing methods either rely on a large number of Gaussian primitives to guarantee reconstruction accuracy, or only achieve limited compression ratios on low-resolution images below 2K, underperforming in UHR scenarios.
 
-3D Gaussian Splatting (3DGS) achieves an excellent balance between rendering quality and real-time performance through explicit Gaussian primitive modeling and a differentiable tile-based rasterization pipeline. Its extension to 2D image representation (e.g., GaussianImage, LIG, ImageGS) significantly improves training and decoding efficiency. However, existing methods either rely on a large number of Gaussian primitives to ensure reconstruction quality, or achieve only limited compression ratios on low-resolution images below 2K, performing poorly in UHR scenarios.
-
-### Core Challenge: Efficient Representation with Limited Gaussians
-
-Under high compression ratio constraints, the allowable number of Gaussians $N_g = \frac{3HW}{7 \cdot \mathrm{CR}}$ decreases drastically. How to simultaneously capture high-frequency structures and low-frequency textures with an extremely limited number of Gaussian primitives constitutes the core technical challenge. Existing methods frequently encounter NaN values during rasterization due to sparse distributions when the Gaussian count is constrained, causing optimization to collapse. SmartSplat is motivated to fill this gap by designing a feature-driven adaptive Gaussian distribution strategy that enables efficient image compression at arbitrary resolutions and compression ratios.
+### Key Challenge: Efficient Representation with Limited Gaussians
+Under highly constrained compression ratios, the allowable number of Gaussians $N_g = \frac{3HW}{7 \cdot \mathrm{CR}}$ decreases drastically. How to simultaneously capture the high-frequency structures and low-frequency textures of an image using extremely limited Gaussian primitives stands as a key technical challenge. Existing methods often suffer from optimization crashes due to NaN values during rasterization caused by sparse distributions when the number of Gaussians is highly constrained. The motivation behind SmartSplat is precisely to fill this gap—designing a feature-driven adaptive Gaussian distribution strategy that enables efficient image compression across arbitrary resolutions and compression ratios.
 
 ## Core Problem
 
-How to efficiently represent ultra-high-resolution images using a limited number of 2D Gaussian primitives under extreme compression ratio constraints (200×–5000×) while maintaining high reconstruction quality? The key lies in jointly optimizing the spatial positions, scales, and color initialization of Gaussians so that they adaptively cover different frequency components of the image.
+How to efficiently represent ultra-high-resolution images using limited 2D Gaussian primitives under extreme compression ratio constraints (200× to 5000×) while maintaining high-quality reconstruction? The key lies in jointly optimizing the spatial position, scale, and color initialization of Gaussians to make them adaptively cover different frequency components of the image.
 
 ## Method
 
 ### Overall Architecture
 
-SmartSplat takes an input image and initializes Gaussian primitives through a three-stage feature-aware sampling process, followed by iterative optimization via differentiable rasterization. The overall pipeline is as follows:
+SmartSplat starts with the input image, initializes the Gaussian primitives via a three-stage feature-aware sampling process, and then iteratively optimizes them through differentiable rasterization. The overall pipeline is as follows:
 
-1. **Gradient-color-guided variational sampling (VS)**: Jointly computes sampling probabilities from image gradients and color variance, densely sampling in high-frequency regions and sparsely in low-frequency regions, while initializing positions and scales.
-2. **Repulsion-based uniform sampling (US)**: Supplements uniform sampling in low-structural-complexity regions not covered by variational sampling, with repulsion radius constraints to avoid overlap.
-3. **Scale-adaptive color initialization**: Estimates the color of each primitive using Gaussian-weighted median filtering for improved robustness.
-4. **Joint optimization**: Performs end-to-end optimization of all Gaussian parameters using a composite L1 + SSIM loss.
+1. **Gradient-Color-Guided Variational Sampling (VS)**: Jointly generates sampling probability maps based on image gradients and color variance, sampling densely in high-frequency regions and sparsely in low-frequency regions, while initializing spatial positions and scales.
+2. **Repulsive Uniform Sampling (US)**: Complements variational sampling with uniform sampling in regions with low structural complexity that are not covered by VS, avoiding overlaps through a repulsion radius constraint.
+3. **Scale-Adaptive Color Initialization**: Estimates the color of each primitive based on Gaussian-weighted median filtering, enhancing robustness.
+4. **Joint Optimization**: Performs end-to-end optimization of all Gaussian parameters using a compound L1 + SSIM loss.
+
+### Key Designs
 
 ### Key Design 1: Gradient-Color-Guided Variational Sampling
 
-The image is divided into multiple tiles and processed independently. Within each tile $\mathbf{I}_{i,j}$, the gradient magnitude and color variance of each pixel are computed:
+The image is divided into multiple tiles to be processed independently. Within each tile $\mathbf{I}_{i,j}$, the pixel gradient magnitude and color variance are calculated:
 
 $$m_{i,j}(\mathbf{x}) = \frac{1}{C}\sum_{c=1}^{C}\|\nabla \mathbf{I}_{i,j,c}(\mathbf{x})\|_2, \quad v_{i,j}(\mathbf{x}) = \frac{1}{C}\sum_{c=1}^{C}\mathrm{Var}(\mathbf{I}_{i,j,c}(\mathcal{N}_\mathbf{x}))$$
 
-After normalization, the sampling weight is obtained via a weighted combination: $w_{i,j}(\mathbf{x}) = \lambda_m \cdot \tilde{m}_{i,j}(\mathbf{x}) + (1 - \lambda_m) \cdot \tilde{v}_{i,j}(\mathbf{x})$, where $\lambda_m = 0.9$. The sampling probability is $\mathbb{P}_{i,j}(\mathbf{x}) = w_{i,j}(\mathbf{x}) / \sum_\mathbf{y} w_{i,j}(\mathbf{y})$, and points are selected via multinomial sampling.
+After normalization, they are combined via a weighted sum to obtain the sampling weight $w_{i,j}(\mathbf{x}) = \lambda_m \cdot \tilde{m}_{i,j}(\mathbf{x}) + (1 - \lambda_m) \cdot \tilde{v}_{i,j}(\mathbf{x})$, where $\lambda_m = 0.9$. The sampling probability is given by $\mathbb{P}_{i,j}(\mathbf{x}) = w_{i,j}(\mathbf{x}) / \sum_\mathbf{y} w_{i,j}(\mathbf{y})$, from which points are selected using multinomial sampling.
 
-Scale initialization follows an exponential decay: $s_{i,j}(\mathbf{x}) = s_{base} \cdot \exp(-\frac{1}{2} w_{i,j}(\mathbf{x}))$, where the base scale is derived from the maximum non-overlapping coverage:
+The scale initialization employs exponential decay: $s_{i,j}(\mathbf{x}) = s_{base} \cdot \exp(-\frac{1}{2} w_{i,j}(\mathbf{x}))$, where the base scale is derived from the maximum non-overlapping coverage:
 
 $$s_{base} = \frac{1}{3}\sqrt{\frac{HW}{\pi N_g}}$$
 
-### Key Design 2: Repulsion-Based Uniform Sampling
+### Key Design 2: Repulsive Uniform Sampling
 
-To cover low-frequency regions, uniform sampling is performed on top of the variational sampling set $\mathcal{X}_{vs}$, requiring new sample points to satisfy a repulsion constraint:
+To cover low-frequency regions, uniform sampling is performed based on the variational sampling set $\mathcal{X}_{vs}$, forcing the new sample points to satisfy a repulsion constraint:
 
 $$\forall j, \quad \min_i \|\mathbf{x}_j^{us} - \mathbf{x}_i^{vs}\| \geq r_{excl}, \quad r_{excl} = \max(s_{base}, \mathrm{median}(\{s_i^{vs}\}))$$
 
-The scale of uniformly sampled points is estimated via Query-to-Reference KNN: $s_j^{us} = \sqrt{\frac{1}{K}\sum_{\mathbf{q} \in \mathcal{N}_K(\mathbf{x}_j^{us}, \mathcal{X})}\|\mathbf{x}_j^{us} - \mathbf{q}\|^2}$, with $K=3$.
+The scale of uniform sample points is estimated via Query-to-Reference KNN: $s_j^{us} = \sqrt{\frac{1}{K}\sum_{\mathbf{q} \in \mathcal{N}_K(\mathbf{x}_j^{us}, \mathcal{X})}\|\mathbf{x}_j^{us} - \mathbf{q}\|^2}$, where $K=3$.
 
-### Key Design 3: Scale-Adaptive Color Initialization
+### Key Design 3: Scale-Adaptive Color Sampling
 
-For each sample point $\mathbf{x}_i$, a neighborhood of radius $s_i$ is defined, and the color is estimated using Gaussian-weighted median filtering:
+For each sample point $\mathbf{x}_i$, a neighborhood with a radius of its scale $s_i$ is defined. The color is estimated using Gaussian-weighted median filtering:
 
 $$\mathbf{c}_i^{(d)} = \arg\min_{z \in \mathbb{R}} \sum_{\mathbf{u} \in \mathcal{N}_{\mathbf{x}_i}} w_i(\mathbf{u}) \cdot |z - \mathbf{I}^{(d)}(\mathbf{u})|$$
 
-Compared to random initialization or pixel-center estimation, the weighted median is more robust to noise and outliers.
+Compared to random initialization or pixel center estimation, the weighted median is more robust against noise and outliers.
 
-### Loss & Training
+### Optimization Objective
 
-The ratio of variational to uniform sampling is $\lambda_g = 0.7$ (70% variational, 30% uniform). The loss function is:
+The ratio of variational sampling to uniform sampling is set to $\lambda_g = 0.7$ (i.e., 70% variational, 30% uniform), with the loss function defined as:
 
 $$L = \lambda_l \|\hat{\mathbf{I}} - \mathbf{I}\|_1 + (1 - \lambda_l)(1 - \mathrm{SSIM}(\hat{\mathbf{I}}, \mathbf{I})), \quad \lambda_l = 0.9$$
 
 ## Key Experimental Results
 
-### Main Results on DIV8K (average resolution 5736×6120, average size 53.56 MB)
+### Main Results on DIV8K (Average Resolution 5736×6120, Average Size 53.56MB)
 
 | CR | 3DGS | LIG | GI (RS) | GI (Cholesky) | ImageGS | **SmartSplat** |
 |------|------|------|---------|---------------|---------|----------------|
@@ -104,9 +104,9 @@ $$L = \lambda_l \|\hat{\mathbf{I}} - \mathbf{I}\|_1 + (1 - \lambda_l)(1 - \mathr
 | 500× | 22.38/0.7874 | 17.68/0.3633 | Fail | Fail | 24.88/0.6544 | **23.82/0.8055** |
 | 1000× | 20.38/0.7068 | 12.49/0.2083 | Fail | Fail | 23.50/0.6165 | **22.66/0.7469** |
 
-Metrics are reported as PSNR (dB) / MS-SSIM. At 20×, SmartSplat outperforms the second-best method by 1.26 dB in PSNR. At 500× and 1000×, GI fails completely while SmartSplat remains stable.
+Metric format: PSNR (dB) / MS-SSIM. SmartSplat leads the runner-up method by 1.26dB in PSNR at 20×. At 500× and 1000×, GI completely fails while SmartSplat still works stably.
 
-### Results on DIV16K (average resolution 12684×15898, average size 235.52 MB)
+### Results on DIV16K (Average Resolution 12684×15898, Average Size 235.52MB)
 
 | CR | 3DGS | GI (RS) | **SmartSplat** |
 |------|------|---------|----------------|
@@ -118,62 +118,65 @@ Metrics are reported as PSNR (dB) / MS-SSIM. At 20×, SmartSplat outperforms the
 | 2000× | 25.54/0.7642 | Fail | **25.70/0.7966** |
 | 3000× | Fail | Fail | **24.72/0.7844** |
 
-SmartSplat is the only method capable of completing training at a 3000× compression ratio, achieving an average PSNR gain of approximately 5.64 dB over GI on DIV16K.
+SmartSplat is the only method capable of completing training under a 3000× compression ratio, leading GI by approximately 5.64dB in average PSNR on DIV16K.
 
-### Efficiency Comparison (10848×16320 image, CR=200)
+### Efficiency Comparison (10848×16320 Image, CR=200)
 
-| Method | Iteration Speed | Training Time (s) | Memory (GB) | FPS | PSNR |
+| Method | Iterration Speed | Training Time (s) | VRAM (GB) | FPS | PSNR |
 |------|---------|-----------|---------|-----|------|
 | 3DGS (10K) | 1.32 it/s | 7841.80 | 50.19 | 10.98 | 24.42 |
 | GI (10K) | 7.44 it/s | 1334.73 | 16.29 | 62.33 | 19.86 |
 | SmartSplat (10K) | 5.01 it/s | 2237.52 | 19.59 | 32.35 | **31.87** |
 | SmartSplat (1K) | 5.03 it/s | 336.12 | 19.38 | 33.12 | 30.52 |
 
-With only 1K iterations, SmartSplat achieves 30.52 dB, surpassing both 3DGS and GI at 10K iterations. GPU memory usage is only 39% of that required by 3DGS.
+SmartSplat requires only 1K iterations to reach 30.52dB, surpassing the results of 3DGS and GI at 10K iterations. The VRAM footprint is only 39% of 3DGS.
 
-### Ablation Study (4416×6720 image, CR=200, 10K iterations)
+### Ablation Study (4416×6720 Image, CR=200, 10K Iterations)
 
 | Configuration | PSNR (dB) | MS-SSIM |
 |------|----------|---------|
 | Full Random | 22.34 | 0.8435 |
-| +VS/US position initialization | 22.18 | 0.8270 |
-| +VS/US scale initialization | 23.12 | 0.8647 |
-| +Scale-adaptive color (full SmartSplat) | **24.38** | **0.8972** |
+| +VS/US Position Init | 22.18 | 0.8270 |
+| +VS/US Scale Init | 23.12 | 0.8647 |
+| +Scale-Adaptive Color (Full SmartSplat) | **24.38** | **0.8972** |
 
-Scale initialization contributes the most (+0.94 dB), and color initialization provides a further gain of 1.26 dB; all three components are indispensable.
+Scale initialization contributes the most (+0.94dB), and color initialization further improves performance by 1.26dB, proving that all three components are indispensable.
 
 ## Highlights & Insights
 
-- **First UHR GS compression framework**: SmartSplat is the first to extend GS-based image compression to the 8K/16K scale, supporting extreme compression ratios up to 5000×.
-- **Parameter-free scale initialization**: $s_{base}$ is derived entirely from image resolution and compression ratio, requiring no manual tuning or heuristic clamping.
-- **Three-stage joint initialization**: The coordinated initialization of position, scale, and color enables SmartSplat to surpass baseline results at 10K iterations using only 1K iterations.
-- **Robust color estimation**: Gaussian-weighted median filtering outperforms random initialization and pixel-center estimation, particularly in high-frequency texture regions.
-- **Exceptional scalability**: SmartSplat operates stably in scenarios where competing methods fail due to OOM errors or NaN values.
+- **First UHR GS Compression Framework**: Translates GS-based image compression into the 8K/16K tier for the first time, supporting extreme compression ratios up to 5000×.
+- **Hyperparameter-Free Scale Initialization**: $s_{base}$ is fully derived from image resolution and compression ratio without manual tuning or heuristic clamping.
+- **Three-Stage Joint Initialization**: The collaborative initialization strategy of position, scale, and color allows SmartSplat to outperform baselines at 10K iterations with just 1K iterations.
+- **Robust Color Estimation**: Gaussian-weighted median filtering performs significantly better than random initialization and pixel center estimation in high-frequency texture regions.
+- **Excellent Scalability**: SmartSplat operates stably even when other methods fail due to OOM or NaN errors.
 
 ## Limitations & Future Work
 
-- **Spatial distribution only**: The current framework focuses on optimizing the spatial distribution of Gaussians without addressing further compression of Gaussian attributes (color, opacity) via quantization or entropy coding, which represents an important direction for improving compression efficiency.
-- **DIV16K dataset construction**: The dataset is generated from DIV2K via super-resolution tools, which may introduce distributional discrepancies in texture details compared to natively captured 16K images.
-- **Limited evaluation scale**: Only 16 images from DIV8K and 8 images from DIV16K are evaluated, raising concerns about statistical significance.
-- **Moderate decoding speed**: The FPS of approximately 32 is substantially better than INR methods but falls short of GI's 62 FPS, leaving room for improvement in real-time applications.
-- **No comparison with neural codecs**: Comparisons with end-to-end learned image codecs (e.g., Hyperprior, ELIC) are absent.
+- **Focus on Spatial Distribution Only**: The current framework focuses on optimizing the spatial distribution of Gaussians and does not address further compression (such as quantization and encoding) of Gaussian attributes (color, opacity), which remains a key direction for boosting compression efficiency.
+- **DIV16K Dataset Construction**: The dataset is upsampled from DIV2K via super-resolution tools, which may introduce distribution discrepancies compared to genuine 16K-captured images in terms of texture details.
+- **Limited Evaluation Scale**: DIV8K includes only 16 images and DIV16K only 8 images for evaluation, which may raise questions regarding statistical significance.
+- **Moderate Decoding Speed**: The decoding speed is around 32 FPS. Although it is far superior to INR methods, it is slower than GI's 62 FPS, leaving room for further optimization in real-time applications.
+- **No Comparison with Neural Codecs**: Lacks comparisons against learning-based end-to-end image codecs (e.g., Hyperprior, ELIC).
 
 ## Related Work & Insights
 
-- **GaussianImage (GI)**: Employs two-stage optimization with vector quantization; at high compression ratios, insufficient Gaussians frequently cause NaN failures. SmartSplat avoids this through adaptive initialization and achieves a PSNR gain of 2.57 dB at the same CR.
-- **LIG**: The hierarchical Gaussian strategy prioritizes fitting accuracy over compression performance and requires a large number of Gaussian components; performance degrades sharply at high CRs.
-- **ImageGS**: Content-aware initialization combined with progressive training becomes unstable under extreme compression; ImageGS fails to run on DIV16K due to OOM.
-- **3DGS**: Direct extension to 2D yields reasonable results but suffers from slow training and high memory consumption due to identity matrix mapping (50 GB vs. SmartSplat's 20 GB).
-- **General paradigm for feature-guided initialization**: Using image gradients and color variance to guide the spatial distribution of discrete primitives is a principle generalizable to other primitive-based representations, such as point cloud compression and NeRF initialization.
-- **Explicit relationship between compression ratio and primitive count**: The formula $N_g = 3HW / (7 \cdot \mathrm{CR})$ clearly establishes the connection between compression ratio and representational capacity, providing an analytical framework for future work.
-- **Repulsion sampling**: Constraining sample point overlap via repulsion radii is analogous to Poisson Disk Sampling in computer graphics and can be applied to other scenarios requiring uniform spatial coverage.
+- **GaussianImage (GI)**: Utilizes a two-stage optimization with vector quantization but easily fails due to NaN values at high compression ratios when Gaussians are scarce. SmartSplat circumvents this issue via adaptive initialization, surpassing GI by 2.57dB in PSNR under the same CR.
+- **LIG**: Prioritizes fitting accuracy over compression performance with a hierarchical Gaussian scheme, requiring a large number of parameters; its performance drops sharply under high CR.
+- **ImageGS**: Content-aware initialization combined with progressive training is unstable under extreme compression scenarios; ImageGS completely fails due to OOM on DIV16K, whereas SmartSplat runs stably.
+- **3DGS**: Direct 2D extension is somewhat effective but leads to slow training and high VRAM usage (3DGS: 50GB vs. SmartSplat: 20GB) due to identity matrix mapping.
+
+## Insights & Connections
+
+- **General Paradigm of Feature-Guided Initialization**: Leveraging image gradients and color variance to guide the spatial distribution of discrete primitives is a paradigm that can be extended to other primitive-based tasks (e.g., point cloud compression, NeRF initialization).
+- **Explicit Relationship Between Compression Ratio and Primitive Count**: The formula $N_g = 3HW / (7 \cdot \mathrm{CR})$ clearly defines the relationship between compression ratio and representations capacity, providing an analytical framework for future work.
+- **Concept of Repulsive Sampling**: Avoiding overlapping sample points via a repulsion radius limit is conceptually similar to Poisson Disk Sampling in computer graphics, which can be adapted to other scenarios requiring uniform coverage.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Extends GS compression to the UHR regime with a well-designed three-stage initialization strategy; however, the core idea of feature-guided sampling is not entirely novel.
-- **Experimental Thoroughness**: ⭐⭐⭐ — Experimental design is comprehensive (main results + ablation + efficiency comparison), but the evaluation set is small (16 + 8 images) and comparisons with neural codecs are missing.
-- **Writing Quality**: ⭐⭐⭐⭐ — Mathematical derivations are clear, method descriptions are detailed, and figures are informative; some notation is somewhat verbose.
-- **Value**: ⭐⭐⭐⭐ — Achieves significant progress in UHR image compression, an area with strong practical demand; open-sourced code enhances reproducibility.
+- Novelty: ⭐⭐⭐⭐ — Pushes GS compression into the UHR domain. The three-stage initialization strategy is well-designed, although the core concept (feature-guided sampling) is not entirely new.
+- Experimental Thoroughness: ⭐⭐⭐ — The experimental design is complete (main results + ablations + efficiency), but the number of evaluation images is small (16+8) and it lacks comparisons with neural codecs.
+- Writing Quality: ⭐⭐⭐⭐ — Clear mathematical derivations, detailed methodology descriptions, and rich diagrams, though some notation is a bit verbose.
+- Value: ⭐⭐⭐⭐ — Makes significant progress in the highly practical direction of UHR image compression, and the open-source code enhances reproducibility.
 
 <!-- RELATED:START -->
 
@@ -181,11 +184,11 @@ Scale initialization contributes the most (+0.94 dB), and color initialization p
 
 ## Related Papers
 
+- [\[CVPR 2026\] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](../../CVPR2026/3d_vision/log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)
 - [\[AAAI 2026\] GaussianImage++: Boosted Image Representation and Compression with 2D Gaussian Splatting](gaussianimage_boosted_image_representation_and_compression_with_2d_gaussian_spla.md)
+- [\[ICLR 2026\] Hyden: A Hybrid Dual-Path Encoder for Monocular Geometry of High-resolution Images](../../ICLR2026/3d_vision/hyden_a_hybrid_dual-path_encoder_for_monocular_geometry_of_high-resolution_image.md)
+- [\[CVPR 2026\] Scalable Feature Matching via State Space Modeling and Sparse Correlation](../../CVPR2026/3d_vision/scalable_feature_matching_via_state_space_modeling_and_sparse_correlation.md)
 - [\[ICCV 2025\] One Look is Enough: Seamless Patchwise Refinement for Zero-Shot Monocular Depth Estimation on High-Resolution Images](../../ICCV2025/3d_vision/one_look_is_enough_seamless_patchwise_refinement_for_zero-shot_monocular_depth_e.md)
-- [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](../../CVPR2026/3d_vision/modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
-- [\[NeurIPS 2025\] ZPressor: Bottleneck-Aware Compression for Scalable Feed-Forward 3DGS](../../NeurIPS2025/3d_vision/zpressor_bottleneck-aware_compression_for_scalable_feed-forward_3dgs.md)
-- [\[CVPR 2026\] LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](../../CVPR2026/3d_vision/litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)
 
 </div>
 

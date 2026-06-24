@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DEAS: DEtached value learning with Action Sequence for Scalable Offline RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] DEAS treats "continuous H-step actions" as the input unit for value functions in offline RL, compressing the effective planning horizon similar to n-step TD. To avoid value overestimation caused by action space expansion, it employs IQL-style "detached value learning" (critic training is completely independent of the a
+  [ICLR2026][Reinforcement Learning][Offline Reinforcement Learning] DEAS treats "continuous H-step actions" as the input unit for value functions in offline RL, compressing the effective planning horizon similar to n-step TD. To avoid value overestimation caused by action space expansion, it employs IQL-style "detached value learning" (critic training is completely independent of the actor) + categorical distributional value estimation + dual discount factors to stabilize trai…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Action sequence"
+  - "Detached value learning"
+  - "Value overestimation"
+  - "VLA fine-tuning"
 date: 2026-05-08
-content_hash: 3931f0be5a8d9404
+content_hash: 8aaa9945902ec66a
 ---
+
 # DEAS: DEtached value learning with Action Sequence for Scalable Offline RL
 
 **Conference**: ICLR2026  
@@ -169,11 +175,11 @@ Conducted on OGBench puzzle-4x4 (success rate %):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] Learning to Reason as Action Abstractions with Scalable Mid-Training RL](learning_to_reason_as_action_abstractions_with_scalable_mid-training_rl.md)
-- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
 - [\[ICLR 2026\] Beyond Penalization: Diffusion-based Out-of-Distribution Detection and Selective Regularization in Offline Reinforcement Learning](beyond_penalization_diffusion-based_out-of-distribution_detection_and_selective_.md)
+- [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
 - [\[ICLR 2026\] Peng's Q($\lambda$) for Conservative Value Estimation in Offline Reinforcement Learning](pengs_qlambda_for_conservative_value_estimation_in_offline_reinforcement_learnin.md)
-- [\[ICLR 2026\] Accelerating Diffusion Planners in Offline RL via Reward-Aware Consistency Trajectory Distillation](accelerating_diffusion_planners_in_offline_rl_via_reward-aware_consistency_traje.md)
 
 </div>
 

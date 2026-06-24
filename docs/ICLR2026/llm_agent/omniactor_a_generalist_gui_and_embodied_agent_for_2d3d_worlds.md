@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] OmniActor: A Generalist GUI and Embodied Agent for 2D&3D Worlds
 description: >-
-  [ICLR 2026][LLM Agent][GUI Agent] Addressing the phenomenon where joint training of GUI and embodied data leads to mutual interference, this paper discovers that these two data types synergize in shallow layers but conflict in deep layers (analogous to the "cerebrum-cerebellum" division in the human brain). The authors propose Layer-heterogeneity MoE,
+  [ICLR 2026][LLM Agent][Generalist Agent] Addressing the phenomenon where joint training of GUI and embodied data leads to mutual interference, this paper discovers that these two data types synergize in shallow layers but conflict in deep layers (analogous to the "cerebrum-cerebellum" division in the human brain). The authors propose Layer-heterogeneity MoE, which shares parameters in shallow layers to exploit synergy and separates them in deep layers to avoid conflict. By un…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - GUI Agent
-  - Embodied AI
-  - MoE
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Generalist Agent"
+  - "GUI Agent"
+  - "Embodied AI"
+  - "MoE"
+  - "Parameter Conflict"
 date: 2026-05-08
-content_hash: c24eaec55993d292
+content_hash: f185642409b50035
 ---
+
 # OmniActor: A Generalist GUI and Embodied Agent for 2D&3D Worlds
 
 **Conference**: ICLR 2026  
@@ -141,11 +144,11 @@ Comparison of sharing/separation strategies (Avg is the mean of four tasks):
 
 ## Related Papers
 
+- [\[ICLR 2026\] ROGA: Scaling Generalist Agents for Office Productivity Tasks via Tool Generation](roga_scaling_generalist_agents_for_office_productivity_tasks_via_tool_generation.md)
 - [\[ICLR 2026\] GTA1: GUI Test-time Scaling Agent](gta1_gui_test-time_scaling_agent.md)
 - [\[ICLR 2026\] M²-Miner: Multi-Agent Enhanced MCTS for Mobile GUI Agent Data Mining](m2-miner_multi-agent_enhanced_mcts_for_mobile_gui_agent_data_mining.md)
 - [\[ICLR 2026\] AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents](agentsynth_scalable_task_generation_for_generalist_computer-use_agents.md)
 - [\[ICLR 2026\] LongHorizonUI: A Unified Framework for Robust Long-Horizon Task Automation of GUI Agent](longhorizonui_a_unified_framework_for_robust_long-horizon_task_automation_of_gui.md)
-- [\[ECCV 2024\] Agent3D-Zero: An Agent for Zero-shot 3D Understanding](../../ECCV2024/llm_agent/agent3d-zero_an_agent_for_zero-shot_3d_understanding.md)
 
 </div>
 

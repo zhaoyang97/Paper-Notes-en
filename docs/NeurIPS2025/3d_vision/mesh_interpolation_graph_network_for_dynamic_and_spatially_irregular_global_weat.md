@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting
 description: >-
-  [NeurIPS 2025][3D Vision][Graph Neural Networks] This paper proposes MIGN, a framework that maps irregular weather station data onto a regular HEALPix mesh via a mesh interpolation strategy for message passing…
+  [NeurIPS 2025][3D Vision][Graph Neural Networks] This paper proposes MIGN, a framework that maps irregular weather station data onto a regular HEALPix mesh via a mesh interpolation strategy for message passing, and introduces parameterized spherical harmonics positional encoding to enhance spatial generalization, achieving significant improvements over existing methods on global weather forecasting tasks.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Spherical Harmonics"
   - "Spatial Generalization"
 date: 2026-05-08
-content_hash: 7181c128c0498d12
+content_hash: 504992474a692bc5
 ---
 
 # Mesh Interpolation Graph Network for Dynamic and Spatially Irregular Global Weather Forecasting
@@ -139,10 +139,10 @@ Evaluated on the NOAA GSOD global observation dataset across 6 meteorological va
 ## Related Papers
 
 - [\[NeurIPS 2025\] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss](ugm2n_an_unsupervised_and_generalizable_mesh_movement_network_via_m-uniform_loss.md)
-- [\[ICCV 2025\] Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion](../../ICCV2025/3d_vision/global_motion_corresponder_for_3d_point-based_scene_interpolation_under_large_mo.md)
-- [\[NeurIPS 2025\] Gaze Beyond the Frame: Forecasting Egocentric 3D Visual Span](gaze_beyond_the_frame_forecasting_egocentric_3d_visual_span.md)
-- [\[ICCV 2025\] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection](../../ICCV2025/3d_vision/ca-i2p_channel-adaptive_registration_network_with_global_optimal_selection.md)
 - [\[CVPR 2026\] Global-Aware Edge Prioritization for Pose Graph Initialization](../../CVPR2026/3d_vision/global-aware_edge_prioritization_for_pose_graph_initialization.md)
+- [\[ICCV 2025\] Global Motion Corresponder for 3D Point-Based Scene Interpolation under Large Motion](../../ICCV2025/3d_vision/global_motion_corresponder_for_3d_point-based_scene_interpolation_under_large_mo.md)
+- [\[ICCV 2025\] CA-I2P: Channel-Adaptive Registration Network with Global Optimal Selection](../../ICCV2025/3d_vision/ca-i2p_channel-adaptive_registration_network_with_global_optimal_selection.md)
+- [\[CVPR 2026\] Point4Cast: Streaming Dynamic Scene Reconstruction and Forecasting](../../CVPR2026/3d_vision/point4cast_streaming_dynamic_scene_reconstruction_and_forecasting.md)
 
 </div>
 

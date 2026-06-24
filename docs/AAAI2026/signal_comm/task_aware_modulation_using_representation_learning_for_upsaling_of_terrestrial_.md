@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes
 description: >-
-  [AAAI 2026][Signal & Communication][carbon flux upscaling] This paper proposes TAM-RL, a framework that formulates terrestrial carbon flux upscaling as a zero-shot regression transfer learning problem. By combining a BiL…
+  [AAAI 2026][Signal & Communication][carbon flux upscaling] This paper proposes TAM-RL, a framework that formulates terrestrial carbon flux upscaling as a zero-shot regression transfer learning problem. By combining a BiLSTM task encoder with FiLM modulation and a knowledge-guided loss derived from the carbon balance equation, the method achieves a 9.6% reduction in GPP RMSE and a 43.8% improvement in NEE R² over FLUXCOM-X-BASE across 150+ flux tower sites.
 tags:
   - "AAAI 2026"
   - "Signal & Communication"
@@ -12,7 +12,7 @@ tags:
   - "knowledge-guided loss"
   - "zero-shot transfer"
 date: 2026-05-08
-content_hash: 5425f536659a3f26
+content_hash: 3c00a837219c9015
 ---
 
 # Task Aware Modulation Using Representation Learning for Upscaling of Terrestrial Carbon Fluxes
@@ -115,9 +115,9 @@ Inputs: MODIS satellite data (500 m) + ERA5-Land meteorological data (0.1°), da
 ## Related Papers
 
 - [\[NeurIPS 2025\] Feature-aware Modulation for Learning from Temporal Tabular Data](../../NeurIPS2025/signal_comm/feature-aware_modulation_for_learning_from_temporal_tabular_data.md)
-- [\[CVPR 2026\] FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](../../CVPR2026/signal_comm/faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)
 - [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
 - [\[ICML 2026\] Meta-learning Structure-Preserving Dynamics](../../ICML2026/signal_comm/meta-learning_structure-preserving_dynamics.md)
+- [\[ICCV 2025\] Boosting Multimodal Learning via Disentangled Gradient Learning](../../ICCV2025/signal_comm/boosting_multimodal_learning_via_disentangled_gradient_learning.md)
 - [\[CVPR 2026\] CLAY: Conditional Visual Similarity Modulation in Vision-Language Embedding Space](../../CVPR2026/signal_comm/clay_conditional_visual_similarity.md)
 
 </div>

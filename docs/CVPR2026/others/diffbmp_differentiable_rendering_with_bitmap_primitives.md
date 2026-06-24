@@ -2,19 +2,19 @@
 title: >-
   [Paper Note] DiffBMP: Differentiable Rendering with Bitmap Primitives
 description: >-
-  [CVPR 2026][Others][differentiable rendering] Ours proposes DiffBMP—the first general-purpose differentiable rendering engine for **bitmap primitives**. It implements an efficient custom CUDA parallel pipeline to enable gradient optimization of position, rotation, scaling, color, and opacity for thousands of bitmap primitives, filling the gap where 2D differentiab
+  [CVPR2026][differentiable rendering] Ours proposes DiffBMP—the first general-purpose differentiable rendering engine for **bitmap primitives**. It implements an efficient custom CUDA parallel pipeline to enable gradient optimization of position, rotation, scaling, color, and opacity for thousands of bitmap primitives, filling the gap where 2D differentiable rendering was previously restricted to vector graphics.
 tags:
-  - CVPR 2026
-  - Others
-  - differentiable rendering
-  - bitmap primitives
-  - CUDA kernel
-  - soft rasterization
-  - alpha compositing
-  - creative workflow
+  - "CVPR2026"
+  - "differentiable rendering"
+  - "bitmap primitives"
+  - "CUDA kernel"
+  - "soft rasterization"
+  - "alpha compositing"
+  - "creative workflow"
 date: 2026-05-08
-content_hash: 52f20413bcf63953
+content_hash: fc0353d91e1ff347
 ---
+
 # DiffBMP: Differentiable Rendering with Bitmap Primitives
 
 **Conference**: CVPR2026  
@@ -154,8 +154,8 @@ The combination of both techniques achieves the best PSNR across all scenarios.
 ## Related Papers
 
 - [\[CVPR 2025\] Locally Orderless Images for Optimization in Differentiable Rendering](../../CVPR2025/others/locally_orderless_images_for_optimization_in_differentiable_rendering.md)
-- [\[CVPR 2026\] Lens Component Deletion based on Differentiable Ray Tracing](lens_component_deletion_based_on_differentiable_ray_tracing.md)
 - [\[CVPR 2026\] Differentiable Stroke Planning with Dual Parameterization for Efficient and High-Fidelity Painting Creation](differentiable_stroke_planning_with_dual_parameterization_for_efficient_and_high.md)
+- [\[CVPR 2026\] NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)
 - [\[ICML 2026\] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers](../../ICML2026/others/disjunctivenet_neural_symbolic_learning_via_differentiable_convexified_optimizat.md)
 - [\[CVPR 2025\] TensoFlow: Tensorial Flow-based Sampler for Inverse Rendering](../../CVPR2025/others/tensoflow_tensorial_flow-based_sampler_for_inverse_rendering.md)
 

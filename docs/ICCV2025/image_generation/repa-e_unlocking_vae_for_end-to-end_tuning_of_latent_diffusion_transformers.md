@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers
 description: >-
-  [ICCV 2025][Image Generation][End-to-end training] This paper proposes REPA-E, which enables joint end-to-end training of VAE and latent diffusion Transformers via representation alignment (REPA) loss…
+  [ICCV 2025][Image Generation][End-to-end training] This paper proposes REPA-E, which enables joint end-to-end training of VAE and latent diffusion Transformers via representation alignment (REPA) loss, achieving 17× and 45× training speedups over REPA and vanilla training respectively, and setting a new state of the art of FID 1.12 on ImageNet 256×256.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "representation alignment"
   - "training acceleration"
 date: 2026-05-08
-content_hash: a91d50be0c87dd72
+content_hash: 2ae74c7b576ceee4
 ---
 
 # REPA-E: Unlocking VAE for End-to-End Tuning with Latent Diffusion Transformers
@@ -170,11 +170,11 @@ Cross-model scale validation (100K steps, no CFG):
 
 ## Related Papers
 
+- [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](../../CVPR2026/image_generation/speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
 - [\[ICCV 2025\] End-to-End Multi-Modal Diffusion Mamba](end-to-end_multi-modal_diffusion_mamba.md)
 - [\[NeurIPS 2025\] LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss](../../NeurIPS2025/image_generation/lineas_end-to-end_learning_of_activation_steering_with_a_distributional_loss.md)
+- [\[ICLR 2026\] There is No VAE: End-to-End Pixel-Space Generative Modeling via Self-Supervised Pre-Training](../../ICLR2026/image_generation/there_is_no_vae_end-to-end_pixel-space_generative_modeling_via_self-supervised_p.md)
 - [\[ICCV 2025\] Latent Diffusion Models with Masked AutoEncoders](latent_diffusion_models_with_masked_autoencoders.md)
-- [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](../../CVPR2026/image_generation/deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
-- [\[ICML 2026\] End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer](../../ICML2026/image_generation/end-to-end_autoregressive_image_generation_with_1d_semantic_tokenizer.md)
 
 </div>
 

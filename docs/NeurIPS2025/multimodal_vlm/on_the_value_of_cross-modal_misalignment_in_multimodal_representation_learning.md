@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Value of Cross-Modal Misalignment in Multimodal Representation Learning
 description: >-
-  [NeurIPS 2025][Multimodal VLM][multimodal contrastive learning] This paper proposes a latent variable model that formalizes cross-modal misalignment into two mechanisms—selection bias and perturbation bias—and theoretica…
+  [NeurIPS 2025][Multimodal VLM][multimodal contrastive learning] This paper proposes a latent variable model that formalizes cross-modal misalignment into two mechanisms—selection bias and perturbation bias—and theoretically proves that MMCL-learned representations precisely capture the invariant semantic subset unaffected by both biases, thereby unifying the opposing views of misalignment as harmful vs. beneficial.
 tags:
   - "NeurIPS 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "identifiability"
   - "invariant representation learning"
 date: 2026-05-08
-content_hash: 9d23a652a1d8f3bf
+content_hash: 3f9fb37a16655dcc
 ---
 
 # On the Value of Cross-Modal Misalignment in Multimodal Representation Learning
@@ -195,10 +195,10 @@ The theoretical contributions are rigorous, unifying two opposing views on cross
 ## Related Papers
 
 - [\[NeurIPS 2025\] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning](midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le.md)
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/multimodal_vlm/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[ICLR 2026\] DecAlign: Hierarchical Cross-Modal Alignment for Decoupled Multimodal Representation Learning](../../ICLR2026/multimodal_vlm/decalign_hierarchical_cross-modal_alignment_for_decoupled_multimodal_representat.md)
 - [\[NeurIPS 2025\] Structure-Aware Fusion with Progressive Injection for Multimodal Molecular Representation Learning](structure-aware_fusion_with_progressive_injection_for_multimodal_molecular_repre.md)
-- [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
 - [\[NeurIPS 2025\] Continual Multimodal Contrastive Learning](continual_multimodal_contrastive_learning.md)
+- [\[NeurIPS 2025\] Guiding Cross-Modal Representations with MLLM Priors via Preference Alignment](guiding_cross-modal_representations_with_mllm_priors_via_preference_alignment.md)
 
 </div>
 

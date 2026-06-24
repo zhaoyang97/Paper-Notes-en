@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision
 description: >-
-  [AAAI 2026][Reinforcement Learning][Topology-aware reasoning] This paper proposes STELAR-Vision, a topology-aware training framework for visual language reasoning. Via the TopoAug data generation pipeline…
+  [AAAI 2026][Reinforcement Learning][Topology-aware reasoning] This paper proposes STELAR-Vision, a topology-aware training framework for visual language reasoning. Via the TopoAug data generation pipeline, it introduces diverse reasoning topologies—Chain, Tree, and Graph—and combines SFT with RL (SimPO) post-training. The framework achieves +9.7% accuracy on in-distribution data and up to +28.4% on out-of-distribution benchmarks, while reducing output length by 18.1% through…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -11,7 +11,7 @@ tags:
   - "chain/tree/graph of thought"
   - "efficient inference"
 date: 2026-05-08
-content_hash: ffc3d28c5cafc04d
+content_hash: fc1592011e0a451e
 ---
 
 # STELAR-Vision: Self-Topology-Aware Efficient Learning for Aligned Reasoning in Vision
@@ -192,10 +192,10 @@ STELAR-Vision-Short† reduces output length by 18.1% while still outperforming 
 ## Related Papers
 
 - [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
+- [\[ICLR 2026\] Self-Aligned Reward: Towards Effective and Efficient Reasoners](../../ICLR2026/reinforcement_learning/self-aligned_reward_towards_effective_and_efficient_reasoners.md)
 - [\[ICLR 2026\] From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning](../../ICLR2026/reinforcement_learning/from_narrow_to_panoramic_vision_attention-guided_cold-start_reshapes_multimodal_.md)
-- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](../../ICML2026/reinforcement_learning/d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
 - [\[NeurIPS 2025\] Open Vision Reasoner: Transferring Linguistic Cognitive Behavior for Visual Reasoning](../../NeurIPS2025/reinforcement_learning/open_vision_reasoner_transferring_linguistic_cognitive_behavior_for_visual_reaso.md)
-- [\[ICCV 2025\] NavQ: Learning a Q-Model for Foresighted Vision-and-Language Navigation](../../ICCV2025/reinforcement_learning/navq_learning_a_q-model_for_foresighted_vision-and-language_navigation.md)
+- [\[ICML 2026\] D$^2$Evo: Dual Difficulty-Aware Self-Evolution for Data-Efficient Reinforcement Learning](../../ICML2026/reinforcement_learning/d2evo_dual_difficulty-aware_self-evolution_for_data-efficient_reinforcement_lear.md)
 
 </div>
 

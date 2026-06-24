@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] UniT transfers "test-time scaling" from language models to unified multimodal models. By using a multi-model agent pipeline to synthesize "generate→reflect→refine" multi-round Chain-of-Thought (CoT) data, it finetunes a single unified model (Bagel) to iteratively generate, verify, and correct images during inference. C
+  [CVPR 2026][VLM Reasoning][Unified Multimodal Model] UniT transfers "test-time scaling" from language models to unified multimodal models. By using a multi-model agent pipeline to synthesize "generate→reflect→refine" multi-round Chain-of-Thought (CoT) data, it finetunes a single unified model (Bagel) to iteratively generate, verify, and correct images during inference. Controlled by "budget forcing" over the number of generation rounds, UniT achieves significant improvements…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Unified Multimodal Model"
+  - "Test-time Scaling"
+  - "Multimodal Chain-of-Thought"
+  - "Iterative Refinement"
+  - "Agentic Data Synthesis"
 date: 2026-05-08
-content_hash: 744f388ae456df94
+content_hash: a4b6bc54fffe3643
 ---
+
 # UniT: Unified Multimodal Chain-of-Thought Test-time Scaling
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ Sequential scaling outperforms parallel best-of-N in all tasks and is **2.5× mo
 
 ## Related Papers
 
-- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
 - [\[CVPR 2026\] Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework](scaling_test-time_robustness_of_vision-language_models_via_self-critical_inferen.md)
-- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](chain-of-thought_guided_multi-modal_object_re-identification.md)
-- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
-- [\[CVPR 2026\] When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for Visual Chain-of-Thought](when_visualizing_is_the_first_step_to_reasoning_mira_a_benchmark_for_visual_chai.md)
+- [\[CVPR 2026\] dMLLM-TTS: Self-Verified and Efficient Test-Time Scaling for Diffusion Multi-Modal Large Language Models](dmllm-tts_self-verified_and_efficient_test-time_scaling_for_diffusion_multi-moda.md)
+- [\[CVPR 2026\] Fuel Gauge: Estimating Chain-of-Thought Length Ahead of Time in Large Multimodal Models](fuel_gauge_estimating_chain-of-thought_length_ahead_of_time_in_large_multimodal_.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] Reinforcing Structured Chain-of-Thought for Video Understanding](reinforcing_structured_chain-of-thought_for_video_understanding.md)
 
 </div>
 

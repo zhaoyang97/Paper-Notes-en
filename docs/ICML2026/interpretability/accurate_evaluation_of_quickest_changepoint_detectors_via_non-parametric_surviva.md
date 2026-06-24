@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Accurate Evaluation of Quickest Changepoint Detectors via Non-parametric Survival Analysis
 description: >-
-  [ICML 2026][Interpretability][ARL] This work reformulates the ARL/ADD evaluation in online quickest changepoint detection (QCD) as a right-censored survival analysis problem. By using Kaplan-Meier curves to estimate detection time and delay under finite and irregular sequence lengths, the proposed method provides more robust and less biased estimators c
+  [ICML2026][Interpretability][Online Changepoint Detection] This work reformulates the ARL/ADD evaluation in online quickest changepoint detection (QCD) as a right-censored survival analysis problem. By using Kaplan-Meier curves to estimate detection time and delay under finite and irregular sequence lengths, the proposed method provides more robust and less biased estimators compared to traditional methods that only count triggered samples.
 tags:
-  - ICML 2026
-  - Interpretability
-  - ARL
-  - ADD
+  - "ICML2026"
+  - "Interpretability"
+  - "Online Changepoint Detection"
+  - "Survival Analysis"
+  - "Kaplan-Meier Estimation"
+  - "ARL"
+  - "ADD"
 date: 2026-05-08
-content_hash: 846dba3bc5188587
+content_hash: 9d3ed945d960da96
 ---
+
 # Accurate Evaluation of Quickest Changepoint Detectors via Non-parametric Survival Analysis
 
 **Conference**: ICML2026  
@@ -116,10 +120,20 @@ Rather than modular ablation, the paper provides a systematic analysis of evalua
 - Value: ⭐⭐⭐⭐⭐ Highly practical for online changepoint detection and streaming monitoring, especially for finite-length real-world datasets.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2025\] Interpretable Image Classification via Non-parametric Part Prototype Learning](../../CVPR2025/interpretability/interpretable_image_classification_via_non-parametric_part_prototype_learning.md)
+- [\[AAAI 2026\] Probing Preference Representations: A Multi-Dimensional Evaluation and Analysis Method for Reward Models](../../AAAI2026/interpretability/probing_preference_representations_a_multi-dimensional_evaluation_and_analysis_m.md)
+- [\[ACL 2025\] Establishing Trustworthy LLM Evaluation via Shortcut Neuron Analysis](../../ACL2025/interpretability/shortcut_neuron_eval.md)
+- [\[ICML 2026\] A Behavioural and Representational Evaluation of Goal-Directedness in Language Model Agents](a_behavioural_and_representational_evaluation_of_goal-directedness_in_language_m.md)
+- [\[ICLR 2026\] xRFM: Accurate, scalable, and interpretable feature learning models for tabular data](../../ICLR2026/interpretability/xrfm_accurate_scalable_and_interpretable_feature_learning_models_for_tabular_dat.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2025\] Interpretable Image Classification via Non-parametric Part Prototype Learning](../../CVPR2025/interpretability/interpretable_image_classification_via_non-parametric_part_prototype_learning.md)

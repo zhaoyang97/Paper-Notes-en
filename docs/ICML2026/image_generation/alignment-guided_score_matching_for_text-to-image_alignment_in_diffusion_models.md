@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper proposes Alignment-Guided Score Matching, which utilizes a reward-free Plackett-Luce alignment reward to directly incorporate positive and negative text-image matching signals into the diffusion score matching objective. By training lightweight soft tokens, it improves T2I semantic alignment while mitigating
+  [ICML 2026][Image Generation][Text-image alignment] This paper proposes Alignment-Guided Score Matching, which utilizes a reward-free Plackett-Luce alignment reward to directly incorporate positive and negative text-image matching signals into the diffusion score matching objective. By training lightweight soft tokens, it improves T2I semantic alignment while mitigating common repetition and counting errors found in SoftREPA.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - score matching
-  - soft token
-  - Plackett-Luce
+  - "ICML 2026"
+  - "Image Generation"
+  - "Text-image alignment"
+  - "diffusion models"
+  - "score matching"
+  - "soft token"
+  - "Plackett-Luce"
 date: 2026-05-08
-content_hash: 5c3e052b36811dcb
+content_hash: 7a539f856949e0f2
 ---
+
 # Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models
 
 **Conference**: ICML 2026  

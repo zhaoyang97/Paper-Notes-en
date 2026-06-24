@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?
 description: >-
-  [AAAI 2026][Multimodal VLM][Multimodal Large Language Models] This paper identifies a critical phenomenon termed "audio-visual confusion" in MLLMs…
+  [AAAI 2026][Multimodal VLM][Multimodal Large Language Models] This paper identifies a critical phenomenon termed "audio-visual confusion" in MLLMs, wherein models are heavily dominated by visual information and fail to recognize missing audio when audio-visual inputs are asymmetric. The authors propose the AV-ConfuseBench benchmark and the RL-CoMM method — combining a stepwise reasoning reward that incorporates an external audio model as reference with answer-centered confide…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Reinforcement Learning"
   - "Collaborative Multi-Model"
 date: 2026-05-08
-content_hash: 3382559cf83c557c
+content_hash: 5f25b2cd454c17a6
 ---
 
 # When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?
@@ -218,11 +218,11 @@ Design motivation: While Step-RR optimizes the reasoning process, audio and visu
 
 ## Related Papers
 
-- [\[CVPR 2026\] When to Think and When to Look: Uncertainty-Guided Lookback](../../CVPR2026/multimodal_vlm/when_to_think_and_when_to_look_uncertainty-guided_lookback.md)
-- [\[AAAI 2026\] AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)
-- [\[NeurIPS 2025\] Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM](../../NeurIPS2025/multimodal_vlm/watch_and_listen_understanding_audio-visual-speech_moments_with_multimodal_llm.md)
-- [\[AAAI 2026\] Explore How to Inject Beneficial Noise in MLLMs](explore_how_to_inject_beneficial_noise_in_mllms.md)
-- [\[CVPR 2026\] The Coherence Trap: When MLLM-Crafted Narratives Exploit Manipulated Visual Contexts](../../CVPR2026/multimodal_vlm/the_coherence_trap_when_mllm-crafted_narratives_exploit_manipulated_visual_conte.md)
+- [\[ICLR 2026\] OmniVideoBench: Towards Audio-Visual Understanding Evaluation for Omni MLLMs](../../ICLR2026/multimodal_vlm/omnivideobench_towards_audio-visual_understanding_evaluation_for_omni_mllms.md)
+- [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](../../ICLR2026/multimodal_vlm/when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
+- [\[ICML 2026\] AVI-Bench: Toward Human-like Audio-Visual Intelligence of Omni-MLLMs](../../ICML2026/multimodal_vlm/avi-bench_toward_human-like_audio-visual_intelligence_of_omni-mllms.md)
+- [\[ICML 2026\] Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?](../../ICML2026/multimodal_vlm/robust-u1_can_mllms_self-recover_corrupted_visual_content_for_robust_understandi.md)
+- [\[CVPR 2026\] EgoAVU: Egocentric Audio-Visual Understanding](../../CVPR2026/multimodal_vlm/egoavu_egocentric_audio-visual_understanding.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment
 description: >-
-  [AAAI 2026][Video Understanding][Weakly supervised video anomaly detection] This paper proposes DSANet, which enhances the discriminability between normal and anomalous features in weakly supervised video anomaly detecti…
+  [AAAI 2026][Video Understanding][Weakly supervised video anomaly detection] This paper proposes DSANet, which enhances the discriminability between normal and anomalous features in weakly supervised video anomaly detection (WS-VAD) at two levels: coarse-grained self-guided normal pattern modeling (SG-NM) and fine-grained disentangled contrastive semantic alignment (DCSA). DSANet achieves state-of-the-art performance with 86.95% AP (+1.14%) on XD-Violence and 13.01% fine-grain…
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "contrastive alignment"
   - "CLIP"
 date: 2026-05-08
-content_hash: 80785387fda97b7c
+content_hash: 5913f346d7350439
 ---
 
 # Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment
@@ -214,9 +214,9 @@ The fine-grained improvement on UCF-Crime is particularly notable (AVG +3.39%), 
 
 - [\[AAAI 2026\] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection](refinevad_semantic-guided_feature_recalibration_for_weakly_supervised_video_anom.md)
 - [\[CVPR 2026\] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning](../../CVPR2026/video_understanding/weakly_supervised_video_anomaly_detection_with_anomaly-connected_components_and_.md)
-- [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
-- [\[CVPR 2026\] SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning](../../CVPR2026/video_understanding/sail_similarity-aware_guidance_and_inter-caption_augmentation-based_learning_for.md)
-- [\[AAAI 2026\] Explicit Temporal-Semantic Modeling for Dense Video Captioning via Context-Aware Cross-Modal Interaction](explicit_temporal-semantic_modeling_for_dense_video_captioning_via_context-aware.md)
+- [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](../../CVPR2026/video_understanding/learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
+- [\[CVPR 2026\] Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](../../CVPR2026/video_understanding/joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)
+- [\[CVPR 2026\] The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection](../../CVPR2026/video_understanding/the_road_less_seen_segment_exploration_for_weakly_supervised_video_anomaly_detec.md)
 
 </div>
 

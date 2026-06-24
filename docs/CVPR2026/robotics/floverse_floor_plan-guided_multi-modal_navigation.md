@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FloVerse: Floor Plan-Guided Multi-Modal Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] FloVerse utilizes the floor plan as a unified spatial prior and proposes a navigation task and dataset that merges three target modalities—PointNav, ObjectNav, and ImageNav—into a single model. Using a two-stage diffusion strategy called ThreeDiff (a planner with modality masking + a depth-SDF-based refiner), the metho
+  [CVPR 2026][Robotics][Floor plan prior] FloVerse utilizes the floor plan as a unified spatial prior and proposes a navigation task and dataset that merges three target modalities—PointNav, ObjectNav, and ImageNav—into a single model. Using a two-stage diffusion strategy called ThreeDiff (a planner with modality masking + a depth-SDF-based refiner), the method achieves higher success rates and path efficiency across all three modalities compared to mapless approaches or single…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Floor plan prior"
+  - "Multi-modal navigation"
+  - "Diffusion policy"
+  - "Modality masking"
+  - "Trajectory refinement"
 date: 2026-05-08
-content_hash: abaa7cea29793378
+content_hash: 365024b34d7bb204
 ---
+
 # FloVerse: Floor Plan-Guided Multi-Modal Navigation
 
 **Conference**: CVPR 2026  
@@ -131,10 +137,17 @@ Cross-modal complementarity (Tab. 3): Single-modality Point-only PointNav yields
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] AURA: Multi-modal Shared Autonomy for Urban Navigation](aura_multi-modal_shared_autonomy_for_urban_navigation.md)
+- [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
+- [\[CVPR 2026\] GeniNav: Generative Model Driven Image-Goal Navigation via Imagination-Guided Consistency Flow Matching](geninav_generative_model_driven_image-goal_navigation_via_imagination-guided_con.md)
+- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[ICLR 2026\] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations](../../ICLR2026/robotics/on_robustness_of_vision-language-action_model_against_multi-modal_perturbations.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] AURA: Multi-modal Shared Autonomy for Urban Navigation](aura_multi-modal_shared_autonomy_for_urban_navigation.md)

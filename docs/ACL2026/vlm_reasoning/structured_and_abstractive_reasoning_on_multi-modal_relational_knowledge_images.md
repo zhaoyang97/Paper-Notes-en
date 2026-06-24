@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images
 description: >-
-  [ACL 2026][vlm_reasoning][KGRPO] This paper proposes the STAR data engine and a two-stage training framework for multi-modal relational knowledge images. By utilizing STAR-64K synthetic data, Chain-of-Thought (CoT) annotations, and knowledge-aware KGRPO, it significantly enhances the capability of Multimodal Large Language Models (MLLMs) to understand
+  [ACL2026 Findings][VLM Reasoning][MMRK images] This paper proposes the STAR data engine and a two-stage training framework for multi-modal relational knowledge images. By utilizing STAR-64K synthetic data, Chain-of-Thought (CoT) annotations, and knowledge-aware KGRPO, it significantly enhances the capability of Multimodal Large Language Models (MLLMs) to understand and reason over abstract structured knowledge images.
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - KGRPO
+  - "ACL2026 Findings"
+  - "VLM Reasoning"
+  - "MMRK images"
+  - "STAR task"
+  - "Multimodal Knowledge Graph"
+  - "KGRPO"
+  - "Synthetic instruction data"
 date: 2026-05-08
-content_hash: a3b6b0e98849b7bd
+content_hash: 9da85b4c2cd43619
 ---
+
 # Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images
 
 **Conference**: ACL2026 Findings  
@@ -185,11 +190,11 @@ Another key analysis comes from the comparison of training settings: mixed multi
 
 ## Related Papers
 
-- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
 - [\[CVPR 2026\] StaR-KVQA: Structured Reasoning Traces for Implicit-Knowledge Visual Question Answering](../../CVPR2026/vlm_reasoning/star-kvqa_structured_reasoning_traces_for_implicit-knowledge_visual_question_ans.md)
-- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](../../ICML2026/vlm_reasoning/vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
-- [\[ACL 2026\] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning](decoding_scientific_experimental_images_the_spur_benchmark_for_perception_unders.md)
-- [\[ICCV 2025\] ReasonVQA: A Multi-hop Reasoning Benchmark with Structural Knowledge for Visual Question Answering](../../ICCV2025/vlm_reasoning/reasonvqa_a_multi-hop_reasoning_benchmark_with_structural_knowledge_for_visual_q.md)
+- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
+- [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](../../ICLR2026/vlm_reasoning/reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
+- [\[ICLR 2026\] SpaCE-Eval: A Benchmark for Real-World Multi-Modal Reasoning](../../ICLR2026/vlm_reasoning/space-eval_a_benchmark_for_real-world_multi-modal_reasoning.md)
+- [\[CVPR 2026\] Chain-of-Thought Guided Multi-Modal Object Re-Identification](../../CVPR2026/vlm_reasoning/chain-of-thought_guided_multi-modal_object_re-identification.md)
 
 </div>
 

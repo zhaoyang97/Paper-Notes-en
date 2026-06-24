@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy
 description: >-
-  [ICML 2026][Recommender Systems][Sampled Softmax] The authors decompose the forward prediction of LightGCN into a "sum of learnable weights of multi-hop neighbor pairs." They find that the Sampled Softmax (SSM) loss only weights based on the structural similarity of the item-side neighbors and treats all four types of neighbor pairs (UU/II/UI/IU) indiscriminately. Con
+  [ICML 2026][Recommender Systems][Graph Collaborative Filtering] The authors decompose the forward prediction of LightGCN into a "sum of learnable weights of multi-hop neighbor pairs." They find that the Sampled Softmax (SSM) loss only weights based on the structural similarity of the item-side neighbors and treats all four types of neighbor pairs (UU/II/UI/IU) indiscriminately. Consequently, they propose NT-SSM, which incorporates user-side structural similarity into the grad…
 tags:
-  - ICML 2026
-  - Recommender Systems
-  - Sampled Softmax
+  - "ICML 2026"
+  - "Recommender Systems"
+  - "Graph Collaborative Filtering"
+  - "Contrastive Learning"
+  - "Sampled Softmax"
+  - "Multi-hop Neighbors"
+  - "Type-aware"
 date: 2026-05-08
-content_hash: 97aadec5135ad0e0
+content_hash: 9883dab8aab22d4e
 ---
+
 # Rethinking Contrastive Learning for Graph Collaborative Filtering: Limitations and a Simple Remedy
 
 **Conference**: ICML 2026  
@@ -110,15 +115,15 @@ NT-BPR outperforms BPR across all datasets; the advantage of NT-SSM over SSM sho
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation](gcib_graph_contrastive_information_bottleneck_for_multi-behavior_recommendation.md)
 - [\[ACL 2026\] ClusterRAG: Cluster-Based Collaborative Filtering for Personalized Retrieval-Augmented Generation](../../ACL2026/recommender/clusterrag_cluster-based_collaborative_filtering_for_personalized_retrieval-augm.md)
-- [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](../../NeurIPS2025/recommender/face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
 - [\[NeurIPS 2025\] Semantic Retrieval Augmented Contrastive Learning for Sequential Recommendation](../../NeurIPS2025/recommender/semantic_retrieval_augmented_contrastive_learning_for_sequential_recommendation.md)
-- [\[ICLR 2026\] C2AL: Cohort-Contrastive Auxiliary Learning for Large-scale Recommendation Systems](../../ICLR2026/recommender/c2al_cohort-contrastive_auxiliary_learning_for_large-scale_recommendation_system.md)
+- [\[ICLR 2026\] On the Mechanisms of Collaborative Learning in VAE Recommenders](../../ICLR2026/recommender/on_the_mechanisms_of_collaborative_learning_in_vae_recommenders.md)
+- [\[NeurIPS 2025\] FACE: A General Framework for Mapping Collaborative Filtering Embeddings into LLM Tokens](../../NeurIPS2025/recommender/face_a_general_framework_for_mapping_collaborative_filtering_embeddings_into_llm.md)
 
 </div>
 

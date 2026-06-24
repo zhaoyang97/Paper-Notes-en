@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Spectrally Distilled Representations Aligned with Instruction-Augmented LLMs for Satellite Imagery
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] SATtxt employs a two-stage training process—"Spectral Representation Distillation + Instruction-Augmented LLM Alignment"—to inject multi-spectral (MS) priors into an **RGB-only** vision encoder and align it with frozen LLM text embeddings. By training only lightweight projectors, it outperforms multi-spectral SOTA mode
+  [CVPR 2026][Remote Sensing][Satellite Imagery] SATtxt employs a two-stage training process—"Spectral Representation Distillation + Instruction-Augmented LLM Alignment"—to inject multi-spectral (MS) priors into an **RGB-only** vision encoder and align it with frozen LLM text embeddings. By training only lightweight projectors, it outperforms multi-spectral SOTA models across zero-shot classification, retrieval, open-vocabulary segmentation, and linear probing tasks.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Satellite Imagery"
+  - "Spectral Distillation"
+  - "Vision-Language Alignment"
+  - "Instruction-Augmented LLM"
+  - "RGB Inference"
 date: 2026-05-08
-content_hash: 0773b18337bffbb9
+content_hash: 9bf1791acd62ad04
 ---
+
 # Spectrally Distilled Representations Aligned with Instruction-Augmented LLMs for Satellite Imagery
 
 **Conference**: CVPR 2026  
@@ -152,11 +158,11 @@ Component ablation (progressive additions to FT-DINOv3txt baseline):
 
 ## Related Papers
 
-- [\[ECCV 2024\] Learning Representations of Satellite Images From Metadata Supervision](../../ECCV2024/remote_sensing/learning_representations_of_satellite_images_from_metadata_supervision.md)
+- [\[CVPR 2026\] WRIVINDER: Towards Spatial Intelligence for Geo-locating Ground Images onto Satellite Imagery](wrivinder_towards_spatial_intelligence_for_geo-locating_ground_images_onto_satel.md)
 - [\[ICCV 2025\] WildSAT: Learning Satellite Image Representations from Wildlife Observations](../../ICCV2025/remote_sensing/wildsat_learning_satellite_image_representations_from_wildlife_observations.md)
 - [\[CVPR 2026\] AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)
-- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
-- [\[CVPR 2026\] GeoSANE: Learning Geospatial Representations from Models, Not Data](geosane_learning_geospatial_representations_from_models_not_data.md)
+- [\[ECCV 2024\] Learning Representations of Satellite Images From Metadata Supervision](../../ECCV2024/remote_sensing/learning_representations_of_satellite_images_from_metadata_supervision.md)
+- [\[ICLR 2026\] SatDreamer360: Multiview-Consistent Generation of Ground-Level Scenes from Satellite Imagery](../../ICLR2026/remote_sensing/satdreamer360_multiview-consistent_generation_of_ground-level_scenes_from_satell.md)
 
 </div>
 

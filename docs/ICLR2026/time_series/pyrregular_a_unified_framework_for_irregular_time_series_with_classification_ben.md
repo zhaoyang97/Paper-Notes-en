@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks
 description: >-
-  [ICLR 2026][Time Series][xarray] This paper proposes pyrregular, a unified container based on xarray and sparse COO tensors that systematically organizes three types of irregularity in time series (uneven sampling, partial observation, and raggedness). It provides the first standardized data repository for irregular time series classification (34 data
+  [ICLR 2026][Time Series][Irregular time series] This paper proposes pyrregular, a unified container based on xarray and sparse COO tensors that systematically organizes three types of irregularity in time series (uneven sampling, partial observation, and raggedness). It provides the first standardized data repository for irregular time series classification (34 datasets) and a cross-community benchmark (12 classifiers), concluding that the simple…
 tags:
-  - ICLR 2026
-  - Time Series
-  - xarray
+  - "ICLR 2026"
+  - "Time Series"
+  - "Irregular time series"
+  - "Sparse tensors"
+  - "xarray"
+  - "Classification benchmarks"
+  - "Data interoperability"
 date: 2026-05-08
-content_hash: 6a5ed8c28dd3ba36
+content_hash: 38f7494ecbc0b927
 ---
+
 # pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks
 
 **Conference**: ICLR 2026  
@@ -138,8 +143,8 @@ Using macro-F1 as the primary metric, the 12 models were ranked via Critical Dif
 - [\[ICLR 2026\] Towards Robust Real-World Multivariate Time Series Forecasting: A Unified Framework](towards_robust_real-world_multivariate_time_series_forecasting_a_unified_framewo.md)
 - [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
 - [\[ICLR 2026\] A Unified Federated Framework for Trajectory Data Preparation via LLMs](a_unified_federated_framework_for_trajectory_data_preparation_via_llms.md)
+- [\[ICLR 2026\] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows](reliable_probabilistic_forecasting_of_irregular_time_series_through_marginalizat.md)
 - [\[ICLR 2026\] TimeSeriesExamAgent: Creating Time Series Reasoning Benchmarks at Scale](timeseriesexamagent_creating_time_series_reasoning_benchmarks_at_scale.md)
-- [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
 
 </div>
 

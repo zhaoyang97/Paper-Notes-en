@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unifying Stable Optimization and Reference Regularization in RLHF (DAR)
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] The authors propose DAR (Dual-regularized Advantage Regression). They observe that in standard RLHF, reference model regularization (to prevent reward hacking) and policy stability constraints (to prevent collapse) progressively conflict, leading to an overly restricted optimization space. By defining a dual KL objecti
+  [ICLR 2026][LLM Alignment][RLHF] The authors propose DAR (Dual-regularized Advantage Regression). They observe that in standard RLHF, reference model regularization (to prevent reward hacking) and policy stability constraints (to prevent collapse) progressively conflict, leading to an overly restricted optimization space. By defining a dual KL objective that interpolates the reference policy in log-space and applying a regression transformation to eliminate policy-ratio insta…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "RLHF"
+  - "Dual KL Regularization"
+  - "Advantage Regression"
+  - "Reference Policy Interpolation"
+  - "Reward Hacking"
 date: 2026-05-08
-content_hash: eb649ece5e653f26
+content_hash: 6bd1d19a5a0aea2c
 ---
+
 # Unifying Stable Optimization and Reference Regularization in RLHF (DAR)
 
 **Conference**: ICLR 2026  
@@ -124,7 +129,7 @@ Two weights manage the optimization: $w_{\text{reg}} = (\pi_0/\pi_t)^\alpha$ is 
 
 - [\[ICLR 2026\] General Exploratory Bonus for Optimistic Exploration in RLHF](general_exploratory_bonus_for_optimistic_exploration_in_rlhf.md)
 - [\[ICLR 2026\] Semantic-aware Wasserstein Policy Regularization for Large Language Model Alignment](semantic-aware_wasserstein_policy_regularization_for_large_language_model_alignm.md)
-- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF（PLUS）](learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
+- [\[ICLR 2026\] Learning to Summarize User Information for Personalized RLHF (PLUS)](learning_to_summarize_user_information_for_personalized_reinforcement_learning_f.md)
 - [\[ACL 2025\] T-REG: Preference Optimization with Token-Level Reward Regularization](../../ACL2025/llm_alignment/t-reg_preference_optimization_with_token-level_reward_regularization.md)
 - [\[ICLR 2026\] Beyond RLHF and NLHF: Population-Proportional Alignment under an Axiomatic Framework](beyond_rlhf_and_nlhf_population-proportional_alignment_under_an_axiomatic_framew.md)
 

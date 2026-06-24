@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][mask-to-image] MatchMask utilizes only a tiny amount of labeled masks by first identifying a few key layers in the diffusion model responsible for spatial control via a "gradient probe." It then attaches a 0.7M parameter LoRA adapter to these layers for mask-to-image synthesis and employs "relative filtering" to eliminate misaligned
+  [CVPR 2026][Segmentation][Generative Data Augmentation] MatchMask utilizes only a tiny amount of labeled masks by first identifying a few key layers in the diffusion model responsible for spatial control via a "gradient probe." It then attaches a 0.7M parameter LoRA adapter to these layers for mask-to-image synthesis and employs "relative filtering" to eliminate misaligned noisy regions in the synthesized images. This significantly enhances semantic segmentation performance i…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - mask-to-image
-  - Diffusion Model
-  - LoRA
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Generative Data Augmentation"
+  - "mask-to-image"
+  - "label scarcity"
+  - "Diffusion Models"
+  - "LoRA"
 date: 2026-05-08
-content_hash: d2876563c04208fd
+content_hash: 7d2cae05576550b8
 ---
+
 # MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -170,11 +173,11 @@ MatchMask leads across all ratios with ~3 orders of magnitude fewer parameters, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] VideoMaMa: Mask-Guided Video Matting via Generative Prior](videomama_mask-guided_video_matting_via_generative_prior.md)
 - [\[CVPR 2026\] SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons](semlayer_semantic-aware_generative_segmentation_and_layer_construction_for_abstr.md)
 - [\[CVPR 2026\] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation](task-oriented_data_synthesis_and_control-rectify_sampling_for_remote_sensing_sem.md)
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
 - [\[AAAI 2026\] A²LC: Active and Automated Label Correction for Semantic Segmentation](../../AAAI2026/segmentation/a2lc_active_and_automated_label_correction_for_semantic_segm.md)
+- [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
+- [\[CVPR 2026\] GenMask: Adapting DiT for Segmentation via Direct Mask Generation](genmask_adapting_dit_for_segmentation_via_direct_mask_generation.md)
 
 </div>
 

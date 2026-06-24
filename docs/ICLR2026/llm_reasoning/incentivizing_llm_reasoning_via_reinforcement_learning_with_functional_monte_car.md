@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search
 description: >-
-  [ICLR 2026][LLM Reasoning][Reinforcement Learning] RFTT embeds a set of learnable "functional tokens" such as `<analyze>`, `<verify>`, and `<refine>` directly into the model's vocabulary. It first generates annotated SFT data using functional prompt-guided MCTS for warmup, and subsequently enables the model to directly sample functional tokens for tree search explorati
+  [ICLR 2026][Reasoning][functional tokens] RFTT embeds a set of learnable "functional tokens" such as `<analyze>`, `<verify>`, and `<refine>` directly into the model's vocabulary. It first generates annotated SFT data using functional prompt-guided MCTS for warmup, and subsequently enables the model to directly sample functional tokens for tree search exploration during the RL stage. This allows 7B/8B small models to acquire human-like multi-step reasoning without any promptin…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Reinforcement Learning
-  - learn-to-reason
+  - "ICLR 2026"
+  - "Reasoning"
+  - "functional tokens"
+  - "Monte Carlo Tree Search"
+  - "reinforcement learning"
+  - "self-improvement"
+  - "learn-to-reason"
 date: 2026-05-08
-content_hash: 92bfe10cd535c404
+content_hash: a423edf0716630b8
 ---
+
 # Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search
 
 **Conference**: ICLR 2026  
@@ -117,9 +121,9 @@ Functional token masking showed that `<verify>` (a6), `<refine>` (a7), and `<nex
 
 ## Related Papers
 
-- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 - [\[AAAI 2026\] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation](../../AAAI2026/llm_reasoning/rpm-mcts_knowledge-retrieval_as_process_reward_model_with_monte_carlo_tree_searc.md)
 - [\[ICLR 2026\] Curriculum Reinforcement Learning from Easy to Hard Tasks Improves LLM Reasoning](curriculum_reinforcement_learning_from_easy_to_hard_tasks_improves_llm_reasoning.md)
+- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 - [\[ICLR 2026\] NFT: Bridging Supervised Learning and Reinforcement Learning in Math Reasoning](nft_bridging_supervised_learning_and_reinforcement_learning_in_math_reasoning.md)
 - [\[ICLR 2026\] Emergent Hierarchical Reasoning in LLMs through Reinforcement Learning](emergent_hierarchical_reasoning_in_llms_through_reinforcement_learning.md)
 

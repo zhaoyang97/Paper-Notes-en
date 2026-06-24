@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models
 description: >-
-  [CVPR 2026][Hallucination Detection][GRPO] This paper proposes the Hallucination-as-Cue analysis framework to systematically investigate the actual mechanism of RL post-training in multimodal reasoning models through three modality-specific corruption strategies (Blank Image, Random Image, and Textual Removal). It finds that GRPO training significantly improves
+  [CVPR 2026][Hallucination Detection][Multimodal Reasoning] This paper proposes the Hallucination-as-Cue analysis framework to systematically investigate the actual mechanism of RL post-training in multimodal reasoning models through three modality-specific corruption strategies (Blank Image, Random Image, and Textual Removal). It finds that GRPO training significantly improves reasoning performance even under 100% corrupted visual input, challenging the mainstream assumption…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - GRPO
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "Multimodal Reasoning"
+  - "Reinforcement Post-Training"
+  - "Hallucination Analysis"
+  - "GRPO"
+  - "Modality Corruption"
 date: 2026-05-08
-content_hash: 031d4b6b2db87d9c
+content_hash: f72cf883a983a048
 ---
+
 # Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models
 
 **Conference**: CVPR 2026  
@@ -145,9 +150,9 @@ The three corruptions are applied within standard GRPO, with the only variable b
 
 - [\[CVPR 2026\] Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models](understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model.md)
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
-- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)
 - [\[NeurIPS 2025\] Generalization or Hallucination? Understanding Out-of-Context Reasoning in Transformers](../../NeurIPS2025/hallucination/generalization_or_hallucination_understanding_out-of-context_reasoning_in_transf.md)
-- [\[CVPR 2026\] ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding](elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi.md)
+- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](../../ICLR2026/hallucination/mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
+- [\[CVPR 2026\] Zina: Multimodal Fine-grained Hallucination Detection and Editing](zina_multimodal_fine-grained_hallucination_detection_and_editing.md)
 
 </div>
 

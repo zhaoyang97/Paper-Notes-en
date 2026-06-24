@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning Surgical Robotic Manipulation with 3D Spatial Priors
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] A feed-forward 3D geometric reconstruction model (MASt3R) is fine-tuned on a self-constructed synthetic surgical dataset to extract 3D implicit representations end-to-end from stereo endoscopic images. These representations are aligned to the robot action space using a lightweight connector, enabling real surgical robo
+  [CVPR 2026][Robotics][Surgical Robotics] A feed-forward 3D geometric reconstruction model (MASt3R) is fine-tuned on a self-constructed synthetic surgical dataset to extract 3D implicit representations end-to-end from stereo endoscopic images. These representations are aligned to the robot action space using a lightweight connector, enabling real surgical robots to achieve SOTA success rates in delicate tasks like knot tying and ex-vivo gallbladder dissection without relying o…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Surgical Robotics"
+  - "Visuomotor Policy"
+  - "Imitation Learning"
+  - "3D Geometric Priors"
+  - "Stereo Endoscopy"
 date: 2026-05-08
-content_hash: 130f6b7ca8f01165
+content_hash: 4eb15444d61157c8
 ---
+
 # Learning Surgical Robotic Manipulation with 3D Spatial Priors
 
 **Conference**: CVPR 2026  
@@ -125,10 +131,20 @@ SST leads significantly in difficult tasks **without using a wrist camera**. ACT
 - Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
+- [\[CVPR 2026\] Expanding Spatial and Temporal Context for Robotic Imitation Learning With Scene Graphs](expanding_spatial_and_temporal_context_for_robotic_imitation_learning_with_scene.md)
+- [\[ICLR 2026\] From Spatial to Actions: Grounding Vision-Language-Action Model in Spatial Foundation Priors](../../ICLR2026/robotics/from_spatial_to_actions_grounding_vision-language-action_model_in_spatial_founda.md)
+- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
+- [\[CVPR 2026\] Localizing, Structuring, and Rendering: Bridging 3D and 2D Vision-Language-Action Models for Robotic Manipulation](localizing_structuring_and_rendering_bridging_3d_and_2d_vision-language-action_m.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)

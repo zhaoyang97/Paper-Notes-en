@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] How Hard is it to Explain Preferences Using Few Boolean Attributes?
 description: >-
-  [AAAI 2026][Boolean Attribute Model] This paper systematically investigates the computational complexity of explaining preference data using the Boolean Attribute Model (BAM). It proves that the problem is NP-complete fo…
+  [AAAI 2026][Boolean Attribute Model] This paper systematically investigates the computational complexity of explaining preference data using the Boolean Attribute Model (BAM). It proves that the problem is NP-complete for $k \geq 3$ attributes and solvable in linear time for $k \leq 2$; further, it provides a complete parameterized complexity landscape with respect to the number of voters $n$, candidates $m$, and attributes $k$, and analyzes how problem hardness changes when…
 tags:
   - "AAAI 2026"
   - "Boolean Attribute Model"
@@ -11,7 +11,7 @@ tags:
   - "Preference Explanation"
   - "NP-Complete"
 date: 2026-05-08
-content_hash: 6bd8860c75a6ea40
+content_hash: c44227da309ab06a
 ---
 
 # How Hard is it to Explain Preferences Using Few Boolean Attributes?
@@ -166,8 +166,8 @@ This is a purely theoretical work with no conventional experiments. Core results
 
 - [\[AAAI 2026\] How Hard Is It to Rig a Tournament When Few Players Can Beat or Be Beaten by the Favorite?](how_hard_is_it_to_rig_a_tournament_when_few_players_can_beat_or_be_beaten_by_the.md)
 - [\[AAAI 2026\] Model Counting for Dependency Quantified Boolean Formulas](model_counting_for_dependency_quantified_boolean_formulas.md)
-- [\[AAAI 2026\] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation](how_wide_and_how_deep_mitigating_over-squashing_of_gnns_via_channel_capacity_con.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
+- [\[AAAI 2026\] How Wide and How Deep? Mitigating Over-Squashing of GNNs via Channel Capacity Constrained Estimation](how_wide_and_how_deep_mitigating_over-squashing_of_gnns_via_channel_capacity_con.md)
 - [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
 
 </div>

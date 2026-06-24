@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] The authors propose Query-Conditioned Gaussian Splatting (QCGS), the first work to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite imagery with sparse Automatic Weather Station (AWS) observations, QCGS achieves resolution-flexible precipitation field reconstruction under radar-f
+  [ICLR 2026][3D Vision][Gaussian Splatting] The authors propose Query-Conditioned Gaussian Splatting (QCGS), the first work to introduce 2D Gaussian Splatting into precipitation field generation. By fusing satellite imagery with sparse Automatic Weather Station (AWS) observations, QCGS achieves resolution-flexible precipitation field reconstruction under radar-free conditions, improving RMSE by over 50% compared to traditional gridded products.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Gaussian Splatting"
+  - "Precipitation Field Reconstruction"
+  - "Implicit Neural Representation"
+  - "Satellite-Station Fusion"
+  - "Resolution-Agnostic Rendering"
 date: 2026-05-08
-content_hash: 2f928c88d39fa7c6
+content_hash: a42fb33e7cf733bb
 ---
+
 # Station2Radar: Query-Conditioned Gaussian Splatting for Precipitation Field
 
 **Conference**: ICLR 2026  
@@ -132,9 +138,9 @@ In comparison with global operational products, QCGS also leads significantly in
 
 - [\[ICLR 2026\] Augmented Radiance Field: A General Framework for Enhanced Gaussian Splatting](augmented_radiance_field_a_general_framework_for_enhanced_gaussian_splatting.md)
 - [\[ICLR 2026\] Horseshoe Splatting: Handling Structural Sparsity for Uncertainty-Aware Gaussian-Splatting Radiance Field Rendering](horseshoe_splatting_handling_structural_sparsity_for_uncertainty-aware_gaussian-.md)
-- [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
-- [\[CVPR 2025\] Geometry Field Splatting with Gaussian Surfels](../../CVPR2025/3d_vision/geometry_field_splatting_with_gaussian_surfels.md)
 - [\[ICLR 2026\] LiTo: Surface Light Field Tokenization](lito_surface_light_field_tokenization.md)
+- [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
+- [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
 
 </div>
 

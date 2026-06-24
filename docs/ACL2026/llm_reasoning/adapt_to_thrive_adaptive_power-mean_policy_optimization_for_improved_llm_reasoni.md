@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][RLVR] This paper proposes APMPO, which unifies GRPO (arithmetic mean) and GMPO (geometric mean) objectives using a "power-mean" controlled by the current mean reward. In conjunction with an adaptive clip range based on reward stability, APMPO allows RLVR training to dynamically switch between "amplifying rare high rewards" a
+  [ACL 2026 Findings][Reasoning][RLVR] This paper proposes APMPO, which unifies GRPO (arithmetic mean) and GMPO (geometric mean) objectives using a "power-mean" controlled by the current mean reward. In conjunction with an adaptive clip range based on reward stability, APMPO allows RLVR training to dynamically switch between "amplifying rare high rewards" and "emphasizing consistency" across different stages, consistently outperforming GRPO, DAPO, and GMPO on 9 mathematical…
 tags:
-  - ACL 2026
-  - LLM Reasoning
-  - RLVR
-  - GRPO
+  - "ACL 2026 Findings"
+  - "Reasoning"
+  - "RLVR"
+  - "GRPO"
+  - "Power-Mean Objective"
+  - "Adaptive Clipping"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 69665c8348a3ba99
+content_hash: bacf35c08e24c602
 ---
+
 # Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning
 
 **Conference**: ACL 2026 Findings  
@@ -138,15 +142,16 @@ Evaluated on Qwen2.5-Math-1.5B/3B and DeepSeek-R1-Distill-Qwen-1.5B across mathe
 - Value: ⭐⭐⭐⭐ High utility as a drop-in replacement for GRPO variants.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reference-guided Policy Optimization for Molecular Optimization via LLM Reasoning](../../ICLR2026/llm_reasoning/reference-guided_policy_optimization_for_molecular_optimization_via_llm_reasonin.md)
 - [\[ACL 2026\] Think Outside the Policy: In-Context Steered Policy Optimization](think_outside_the_policy_in-context_steered_policy_optimization.md)
-- [\[ACL 2026\] Calibration-Aware Policy Optimization for Reasoning LLMs](calibration-aware_policy_optimization_for_reasoning_llms.md)
+- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](../../ICML2026/llm_reasoning/the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 - [\[ICLR 2026\] Temperature as a Meta-Policy: Adaptive Temperature in LLM Reinforcement Learning](../../ICLR2026/llm_reasoning/temperature_as_a_meta-policy_adaptive_temperature_in_llm_reinforcement_learning.md)
 - [\[ICLR 2026\] Slow-Fast Policy Optimization: Reposition-Before-Update for LLM Reasoning](../../ICLR2026/llm_reasoning/slow-fast_policy_optimization_reposition-before-update_for_llm_reasoning.md)
-- [\[ICML 2026\] The Easy, the Hard, and the Learnable: Confidence and Difficulty-Adaptive Policy Optimization for LLM Reasoning](../../ICML2026/llm_reasoning/the_easy_the_hard_and_the_learnable_confidence_and_difficulty-adaptive_policy_op.md)
 
 </div>
 

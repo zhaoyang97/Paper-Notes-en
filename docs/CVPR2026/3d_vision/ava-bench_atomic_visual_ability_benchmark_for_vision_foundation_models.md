@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models
 description: >-
-  [CVPR 2026][Multimodal VLM][benchmark] Proposes AVA-Bench, the first systematic evaluation benchmark that decouples Vision Foundation Model (VFM) capabilities into 14 Atomic Visual Abilities (AVA). Through train-test distribution alignment and isolated single-capability testing, it precisely identifies VFM strengths and weaknesses, finding that 0.5B small m
+  [CVPR 2026][3D Vision][VFM Evaluation] Proposes AVA-Bench, the first systematic evaluation benchmark that decouples Vision Foundation Model (VFM) capabilities into 14 Atomic Visual Abilities (AVA). Through train-test distribution alignment and isolated single-capability testing, it precisely identifies VFM strengths and weaknesses, finding that 0.5B small models maintain ranking consistency comparable to 7B models.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - benchmark
-  - VFM
+  - "CVPR 2026"
+  - "3D Vision"
+  - "VFM Evaluation"
+  - "Atomic Visual Ability"
+  - "benchmark"
+  - "VFM"
+  - "Multimodal Evaluation"
 date: 2026-05-08
-content_hash: 8d19caad296e9d49
+content_hash: 6c9b8094181a180f
 ---
+
 # AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models
 
 **Conference**: CVPR 2026  
@@ -168,11 +172,11 @@ Each AVA undergoes independent LLaVA-style training: stage one freezes the VFM a
 
 ## Related Papers
 
-- [\[CVPR 2026\] PAI-Bench: A Comprehensive Benchmark for Physical AI](pai-bench_a_comprehensive_benchmark_for_physical_ai.md)
-- [\[CVPR 2026\] CrossHOI-Bench: A Unified Benchmark for HOI Evaluation across Vision-Language Models and HOI-Specific Methods](crosshoi-bench_a_unified_benchmark_for_hoi_evaluation_across_vision-language_mod.md)
-- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
-- [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
+- [\[CVPR 2026\] MonoVLM: Monocular 3D Visual Grounding with Vision Language Models](monovlm_monocular_3d_visual_grounding_with_vision_language_models.md)
+- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)
+- [\[CVPR 2026\] Emergent Extreme-View Geometry in 3D Foundation Models](emergent_extreme-view_geometry_in_3d_foundation_models.md)
+- [\[ICLR 2026\] GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra](../../ICLR2026/3d_vision/giq_benchmarking_3d_geometric_reasoning_of_vision_foundation_models_with_simulat.md)
+- [\[ECCV 2024\] Sapiens: Foundation for Human Vision Models](../../ECCV2024/3d_vision/sapiens_foundation_for_human_vision_models.md)
 
 </div>
 

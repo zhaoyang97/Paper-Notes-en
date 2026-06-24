@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Scaling Linear Attention Capacity with Sparse State Expansion
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper reinterprets state updates in linear attention as "information classification." Based on this, it proposes Sparse State Expansion (SSE): using row-sparse writes and partitioned expansion to significantly increase fixed state capacity, enhancing long-context retrieval and mathematical reasoning without substa
+  [ICLR2026][LLM Efficiency][Linear Attention] This paper reinterprets state updates in linear attention as "information classification." Based on this, it proposes Sparse State Expansion (SSE): using row-sparse writes and partitioned expansion to significantly increase fixed state capacity, enhancing long-context retrieval and mathematical reasoning without substantially increasing the number of parameters.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Linear Attention"
+  - "Sparse State Expansion"
+  - "Long Context Retrieval"
+  - "Hybrid Architecture"
+  - "Small Model Inference"
 date: 2026-05-08
-content_hash: dc50b3700e5c7a20
+content_hash: 0ed732616f0325bb
 ---
+
 # Scaling Linear Attention Capacity with Sparse State Expansion
 
 **Conference**: ICLR2026  

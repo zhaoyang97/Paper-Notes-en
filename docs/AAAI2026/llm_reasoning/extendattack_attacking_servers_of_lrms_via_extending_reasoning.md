@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] ExtendAttack: Attacking Servers of LRMs via Extending Reasoning
 description: >-
-  [AAAI 2026][LLM Reasoning][LRM Security] This paper proposes ExtendAttack, a resource exhaustion attack targeting Large Reasoning Models (LRMs): by randomly converting characters in the prompt into multi-base ASCII encod…
+  [AAAI 2026][Reasoning][LRM Security] This paper proposes ExtendAttack, a resource exhaustion attack targeting Large Reasoning Models (LRMs): by randomly converting characters in the prompt into multi-base ASCII encodings, the attack forces models to perform extensive character-by-character decoding before answering, increasing o3's response length by more than 2.7× and doubling latency, while keeping answer accuracy largely intact.
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "LRM Security"
   - "Resource Exhaustion Attack"
   - "Reasoning Extension"
   - "Adversarial Attack"
   - "DDoS"
 date: 2026-05-08
-content_hash: 22a5dd498799cb62
+content_hash: 81b0ca9f3dc722f2
 ---
 
 # ExtendAttack: Attacking Servers of LRMs via Extending Reasoning
@@ -135,7 +135,7 @@ Evaluated on 4 models (o3, o3-mini, QwQ-32B, Qwen3-32B) × 4 benchmarks (AIME24/
 - [\[AAAI 2026\] Trade-offs in Large Reasoning Models: An Empirical Analysis of Deliberative and Adaptive Reasoning over Foundational Capabilities](trade-offs_in_large_reasoning_models_an_empirical_analysis_of_deliberative_and_a.md)
 - [\[AAAI 2026\] Text-to-Scene with Large Reasoning Models](text-to-scene_with_large_reasoning_models.md)
 - [\[AAAI 2026\] A Reasoning Paradigm for Named Entity Recognition](a_reasoning_paradigm_for_named_entity_recognition.md)
-- [\[AAAI 2026\] Well Begun, Half Done: Reinforcement Learning with Prefix Optimization for LLM Reasoning](well_begun_half_done_reinforcement_learning_with_prefix_optimization_for_llm_rea.md)
+- [\[AAAI 2026\] From Classification to Ranking: Enhancing LLM Reasoning for MBTI Personality Detection](from_classification_to_ranking_enhancing_llm_reasoning_capabilities_for_mbti_per.md)
 
 </div>
 

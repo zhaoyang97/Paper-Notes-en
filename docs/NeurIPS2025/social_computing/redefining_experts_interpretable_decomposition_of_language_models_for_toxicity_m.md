@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation
 description: >-
-  [NeurIPS 2025][Social Computing][toxicity mitigation] This paper proposes EigenShift, a method that performs SVD decomposition on the final output projection layer of LLMs to identify semantic directions (eigen-choices)…
+  [NeurIPS 2025][Social Computing][toxicity mitigation] This paper proposes EigenShift, a method that performs SVD decomposition on the final output projection layer of LLMs to identify semantic directions (eigen-choices) associated with toxic generation, and suppresses toxicity by selectively attenuating the corresponding singular values. On LLaMA-2, EigenShift reduces toxicity by 58% while increasing perplexity by only 3.62, achieving a favorable balance between safety and fl…
 tags:
   - "NeurIPS 2025"
   - "Social Computing"
@@ -12,7 +12,7 @@ tags:
   - "language model safety"
   - "neuron experts"
 date: 2026-05-08
-content_hash: ef2416daeb4fd8e2
+content_hash: e188bb8784761ada
 ---
 
 # Redefining Experts: Interpretable Decomposition of Language Models for Toxicity Mitigation
@@ -60,7 +60,7 @@ EigenShift consists of three stages: (1) sampling generations from the base mode
 
    SVD is applied to the final output layer weight matrix $W \in \mathbb{R}^{V \times d}$:
 
-   $$W = U \Sigma V^T, \quad B = U, \quad A = \Sigma V^T$$
+    $W = U \Sigma V^T, \quad B = U, \quad A = \Sigma V^T$
 
    Here, $V^T \in \mathbb{R}^{d \times d}$ defines an orthonormal basis for the semantic subspace of hidden states; the diagonal entries of $\Sigma$ weight each semantic direction; and $U \in \mathbb{R}^{V \times d}$ maps semantic directions to vocabulary tokens. Each column vector $v_i$ of $V$ corresponds to an "eigen-choice"—a fundamental semantic axis along which the model makes decisions during text generation.
 
@@ -70,15 +70,15 @@ EigenShift consists of three stages: (1) sampling generations from the base mode
 
    The directional influence of each eigenvector is computed over toxic and non-toxic samples:
 
-   $$\Delta_i = \mathbb{E}_{h_\Phi \sim \text{Toxic}}[v_i^T h_\Phi] - \mathbb{E}_{h_\Psi \sim \text{Non-Toxic}}[v_i^T h_\Psi]$$
+    $\Delta_i = \mathbb{E}_{h_\Phi \sim \text{Toxic}}[v_i^T h_\Phi] - \mathbb{E}_{h_\Psi \sim \text{Non-Toxic}}[v_i^T h_\Psi]$
 
    Eigenvectors are ranked by $\Delta_i$, and the top-$k$ (e.g., the 99.9th percentile) high-influence eigenvectors are selected as the toxicity-aligned direction set $\mathcal{T}$.
 
    **Intervention strategy — singular value attenuation**: Singular values in $\mathcal{T}$ are scaled by a decay factor $\alpha < 1$:
 
-   $$\sigma_i' = \alpha \cdot \sigma_i, \quad \text{for } i \in \mathcal{T}$$
+    $\sigma_i' = \alpha \cdot \sigma_i, \quad \text{for } i \in \mathcal{T}$
 
-   $$W' = U \Sigma' V^T$$
+    $W' = U \Sigma' V^T$
 
    This effectively reduces the model's amplification capacity along toxicity-related semantic directions. The setting $\alpha = 0.9$, $k = 1024$ achieves the best balance between toxicity reduction and perplexity preservation.
 
@@ -175,11 +175,11 @@ Fragility of "expert" neurons:
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
+- [\[ICLR 2026\] From Five Dimensions to Many: Large Language Models as Precise and Interpretable Psychological Profilers](../../ICLR2026/social_computing/from_five_dimensions_to_many_large_language_models_as_precise_and_interpretable_.md)
 - [\[NeurIPS 2025\] Uncovering Strategic Egoism Behaviors in Large Language Models](uncovering_strategic_egoism_behaviors_in_large_language_models.md)
 - [\[NeurIPS 2025\] DATE-LM: Benchmarking Data Attribution Evaluation for Large Language Models](date-lm_benchmarking_data_attribution_evaluation_for_large_language_models.md)
-- [\[NeurIPS 2025\] Active Slice Discovery in Large Language Models](active_slice_discovery_in_large_language_models.md)
-- [\[NeurIPS 2025\] Auto-Search and Refinement: An Automated Framework for Gender Bias Mitigation in LLMs](auto-search_and_refinement_an_automated_framework_for_gender_bias_mitigation_in_.md)
-- [\[ACL 2026\] SMARTER: A Data-efficient Framework to Improve Toxicity Detection with Explanation via Self-augmenting Large Language Models](../../ACL2026/social_computing/smarter_a_data-efficient_framework_to_improve_toxicity_detection_with_explanatio.md)
+- [\[ACL 2025\] MDiT-Bench: Evaluating the Dual-Implicit Toxicity in Large Multimodal Models](../../ACL2025/social_computing/mdit-bench_evaluating_the_dual-implicit_toxicity_in_large_multimodal_models.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming
 description: >-
-  [NeurIPS 2025][3D Vision][3D generation] This paper proposes TRIM (Trajectory Reduction and Instance Mask denoising), a post-training framework that accelerates 3D Gaussian diffusion model inference while improving gener…
+  [NeurIPS 2025][3D Vision][3D generation] This paper proposes TRIM (Trajectory Reduction and Instance Mask denoising), a post-training framework that accelerates 3D Gaussian diffusion model inference while improving generation quality through temporal trajectory pre-selection and spatial background token pruning. TRIM outperforms baselines such as DiffSplat on both T3Bench text-to-3D and GSO image-to-3D benchmarks.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "inference-time scaling"
   - "post-training optimization"
 date: 2026-05-08
-content_hash: 424ce364192b003f
+content_hash: f2060079fec1fff2
 ---
 
 # TRIM: Scalable 3D Gaussian Diffusion Inference with Temporal and Spatial Trimming
@@ -138,8 +138,8 @@ Ablation over selector architectures shows that a single-layer CNN plus two-laye
 ## Related Papers
 
 - [\[ICCV 2025\] Spatial-Temporal Aware Visuomotor Diffusion Policy Learning](../../ICCV2025/3d_vision/spatial-temporal_aware_visuomotor_diffusion_policy_learning.md)
-- [\[NeurIPS 2025\] MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference](materialrefgs_reflective_gaussian_splatting_with_multi-view_consistent_material_.md)
 - [\[ICCV 2025\] 7DGS: Unified Spatial-Temporal-Angular Gaussian Splatting](../../ICCV2025/3d_vision/7dgs_unified_spatial-temporal-angular_gaussian_splatting.md)
+- [\[NeurIPS 2025\] MaterialRefGS: Reflective Gaussian Splatting with Multi-view Consistent Material Inference](materialrefgs_reflective_gaussian_splatting_with_multi-view_consistent_material_.md)
 - [\[ICCV 2025\] Towards Scalable Spatial Intelligence via 2D-to-3D Data Lifting](../../ICCV2025/3d_vision/towards_scalable_spatial_intelligence_via_2d-to-3d_data_lifting.md)
 - [\[NeurIPS 2025\] Scaffold Diffusion: Sparse Multi-Category Voxel Structure Generation with Discrete Diffusion](scaffold_diffusion_sparse_multi-category_voxel_structure_generation_with_discret.md)
 

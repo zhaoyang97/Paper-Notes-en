@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PolySLGen: Online Multimodal Speaking-Listening Reaction Generation in Polyadic Interaction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] PolySLGen feeds past speech and motion of a multi-person group into a LoRA-fine-tuned LLM to online generate the target participant's future speech, body motion, and a "speaking state score." By unifying multi-person non-verbal signals with a Pose Fusion module and a Social Cue Encoder, it models both speaking and list
+  [CVPR 2026][Human Understanding][Multi-party interaction] PolySLGen feeds past speech and motion of a multi-person group into a LoRA-fine-tuned LLM to online generate the target participant's future speech, body motion, and a "speaking state score." By unifying multi-person non-verbal signals with a Pose Fusion module and a Social Cue Encoder, it models both speaking and listening behaviors. It significantly outperforms baselines that naively extend dyadic methods to polyadic…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Multi-party interaction"
+  - "reaction generation"
+  - "speaking-listening"
+  - "turn-taking modeling"
+  - "Multimodal LLM"
 date: 2026-05-08
-content_hash: 0dc8248d74405f2b
+content_hash: f651d71654aec421
 ---
+
 # PolySLGen: Online Multimodal Speaking-Listening Reaction Generation in Polyadic Interaction
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,20 @@ The incremental motion observation experiment showed that using only speech resu
 - Value: ⭐⭐⭐⭐ High value for embodied AI social interaction; transferable "fixed-length group representation" concept.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] UniLS: End-to-End Audio-Driven Avatars for Unified Listening and Speaking](unils_end-to-end_audio-driven_avatars_for_unified_listening_and_speaking.md)
+- [\[CVPR 2026\] ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)
+- [\[CVPR 2026\] HandX: Scaling Bimanual Motion and Interaction Generation](handx_scaling_bimanual_motion_and_interaction_generation.md)
+- [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
+- [\[CVPR 2026\] OpenDance: Multimodal Controllable 3D Dance Generation with Large-scale Internet Data](opendance_multimodal_controllable_3d_dance_generation_with_large-scale_internet_.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)

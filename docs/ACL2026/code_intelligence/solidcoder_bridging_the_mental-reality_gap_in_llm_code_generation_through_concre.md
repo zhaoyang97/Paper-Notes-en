@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 description: >-
-  [ACL 2026][Code Intelligence][Multi-Agent] SolidCoder transforms code verification from "imaginary execution" to "concrete execution" through the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions, Live Execution, Intermediate Simulation, Defensive Accumulation), achieving pass@1 performance of 95.7% on HumanEval, 77.0% on CodeContests, and 2
+  [ACL 2026 Findings][Code Intelligence][Code Generation] SolidCoder transforms code verification from "imaginary execution" to "concrete execution" through the S.O.L.I.D. architecture (Shift-left Planning, Oracle-based Assertions, Live Execution, Intermediate Simulation, Defensive Accumulation), achieving pass@1 performance of 95.7% on HumanEval, 77.0% on CodeContests, and 26.7% on APPS using GPT-4o.
 tags:
-  - ACL 2026
-  - Code Intelligence
-  - Multi-Agent
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Code Generation"
+  - "Mental Simulation"
+  - "Execution Verification"
+  - "Multi-agent"
+  - "Property Testing"
 date: 2026-05-08
-content_hash: ad7cfaf2e00aa0f6
+content_hash: 34ed6fa73d749081
 ---
+
 # SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution
 
 **Conference**: ACL 2026 Findings  
@@ -135,7 +140,7 @@ The fatal flaw of mental simulation is the lack of an oracle—without knowing t
 - [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 - [\[ACL 2026\] CodeRL+: Improving Code Generation via Reinforcement with Execution Semantics Alignment](coderl_improving_code_generation_via_reinforcement_with_execution_semantics_alig.md)
 - [\[ACL 2026\] DUET: Dual Execution for Test Output Prediction with Generated Code and Pseudocode](duet_dual_execution_for_test_output_prediction_with_generated_code_and_pseudocod.md)
-- [\[ACL 2026\] StoryCoder: Narrative Reformulation for Structured Reasoning in LLM Code Generation](storycoder_narrative_reformulation_for_structured_reasoning_in_llm_code_generati.md)
+- [\[ICML 2026\] Bridging Functional Correctness and Runtime Efficiency Gaps in LLM-Based Code Translation](../../ICML2026/code_intelligence/bridging_functional_correctness_and_runtime_efficiency_gaps_in_llm-based_code_tr.md)
 
 </div>
 

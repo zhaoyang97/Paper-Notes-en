@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Opinion Maximization in Social Networks by Modifying Internal Opinions
 description: >-
-  [NeurIPS 2025][LLM/NLP][opinion dynamics] This paper studies the optimization problem of maximizing the overall opinion in a social network by modifying the internal opinions of $k$ key nodes. Two sampling-based approxim…
+  [NeurIPS 2025][LLM (Other)][opinion dynamics] This paper studies the optimization problem of maximizing the overall opinion in a social network by modifying the internal opinions of $k$ key nodes. Two sampling-based approximation algorithms (random walk and forest sampling) and one exact asynchronous algorithm MIS are proposed. MIS provides theoretical convergence guarantees to the optimal solution and demonstrates superior efficiency and accuracy on real-world networks with…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "opinion dynamics"
   - "social networks"
   - "opinion maximization"
@@ -13,7 +13,7 @@ tags:
   - "asynchronous algorithm"
   - "structural centrality"
 date: 2026-05-08
-content_hash: d61532a605e7a4b5
+content_hash: b26129fa615cb904
 ---
 
 # Opinion Maximization in Social Networks by Modifying Internal Opinions
@@ -189,9 +189,9 @@ MIS achieves perfect precision (= 1) and near-perfect NDCG across all datasets a
 
 - [\[NeurIPS 2025\] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks](mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ.md)
 - [\[NeurIPS 2025\] msf-CNN: Patch-based Multi-Stage Fusion with Convolutional Neural Networks for TinyML](msf-cnn_patch-based_multi-stage_fusion_with_convolutional_neural_networks_for_ti.md)
-- [\[ICML 2026\] A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State](../../ICML2026/llm_nlp/a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu.md)
-- [\[ICML 2026\] Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics](../../ICML2026/llm_nlp/deep_networks_learn_to_parse_uniform-depth_context-free_languages_from_local_sta.md)
-- [\[NeurIPS 2025\] Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models](nemotron-flash_towards_latency-optimal_hybrid_small_language_models.md)
+- [\[ICML 2025\] Generative Social Choice: The Next Generation](../../ICML2025/llm_nlp/generative_social_choice_the_next_generation.md)
+- [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
+- [\[ICML 2025\] LLM Social Simulations Are a Promising Research Method](../../ICML2025/llm_nlp/llm_social_simulations_are_a_promising_research_method.md)
 
 </div>
 

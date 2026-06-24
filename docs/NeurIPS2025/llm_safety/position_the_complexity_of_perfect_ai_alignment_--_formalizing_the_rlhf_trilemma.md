@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma
 description: >-
-  [NeurIPS 2025][LLM Safety][AI alignment] This paper formalizes the recurring safety–fairness–efficiency tensions in RLHF as an "alignment trilemma": it proves that no RLHF system can simultaneously satisfy $\varepsilon$-…
+  [NeurIPS 2025][LLM Safety][AI alignment] This paper formalizes the recurring safety–fairness–efficiency tensions in RLHF as an "alignment trilemma": it proves that no RLHF system can simultaneously satisfy $\varepsilon$-representativeness (faithfully reflecting diverse values), polynomial tractability (computational feasibility), and $\delta$-robustness (resistance to adversarial attacks), thereby providing a unified complexity-theoretic explanation for pathological phenomena…
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "social choice theory"
   - "formal analysis"
 date: 2026-05-08
-content_hash: 27a3478e43bb6546
+content_hash: 11c7a4a42090041d
 ---
 
 # Position: The Complexity of Perfect AI Alignment -- Formalizing the RLHF Trilemma
@@ -153,9 +153,9 @@ No conventional ablation study. The paper explores the trade-off space by analyz
 
 - [\[NeurIPS 2025\] A Systematic Evaluation of Preference Aggregation in Federated RLHF for Pluralistic Alignment of LLMs](a_systematic_evaluation_of_preference_aggregation_in_federated_rlhf_for_pluralis.md)
 - [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](on_the_sample_complexity_of_differentially_private_policy_optimization.md)
+- [\[ICLR 2026\] Computational Barriers to Filtering for AI Alignment](../../ICLR2026/llm_safety/computational_barriers_to_filtering_for_ai_alignment.md)
 - [\[NeurIPS 2025\] Adversarial Paraphrasing: A Universal Attack for Humanizing AI-Generated Text](adversarial_paraphrasing_a_universal_attack_for_humanizing_ai-generated_text.md)
 - [\[NeurIPS 2025\] Stop DDoS Attacking the Research Community with AI-Generated Survey Papers](stop_ddos_attacking_the_research_community_with_ai-generated_survey_papers.md)
-- [\[NeurIPS 2025\] When AI Democratizes Exploitation: LLM-Assisted Strategic Manipulation of Fair Division Algorithms](when_ai_democratizes_exploitation_llm-assisted_strategic_manipulation_of_fair_di.md)
 
 </div>
 

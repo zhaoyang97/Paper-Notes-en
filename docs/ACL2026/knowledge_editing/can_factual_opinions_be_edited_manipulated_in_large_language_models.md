@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Can Factual Opinions Be Edited (Manipulated) in Large Language Models?
 description: >-
-  [ACL 2026][Knowledge Editing][ROME] This paper points out that existing knowledge editing techniques can be used to manipulate the "documented stances of public figures" (factual opinions). To address this, the authors construct the FOE benchmark with evidence and find that current methods result in "surface-level opinion changes with contradictory evide
+  [ACL 2026][Knowledge Editing][Factual Opinion Editing] This paper points out that existing knowledge editing techniques can be used to manipulate the "documented stances of public figures" (factual opinions). To address this, the authors construct the FOE benchmark with evidence and find that current methods result in "surface-level opinion changes with contradictory evidence." They propose a two-stage Self-Generated Evidence-Aligned method, enabling edited models to provide…
 tags:
-  - ACL 2026
-  - Knowledge Editing
-  - ROME
+  - "ACL 2026"
+  - "Knowledge Editing"
+  - "Factual Opinion Editing"
+  - "ROME"
+  - "Opinion-Evidence Alignment"
+  - "Misinformation Injection"
 date: 2026-05-08
-content_hash: b5aa72520a0eaab8
+content_hash: b3c41a5420fb2833
 ---
+
 # Can Factual Opinions Be Edited (Manipulated) in Large Language Models?
 
 **Conference**: ACL 2026  
@@ -127,10 +131,17 @@ Comparison on Llama3.1 (Consistency Score $0\!-\!2$, MC for accuracy %):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ACL 2026\] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)
+- [\[ACL 2026\] Aligning Language Models with Real-time Knowledge Editing](aligning_language_models_with_real-time_knowledge_editing.md)
+- [\[ACL 2025\] Neuron-Level Sequential Editing for Large Language Models](../../ACL2025/knowledge_editing/neuron-level_sequential_editing_for_large_language_models.md)
+- [\[ICML 2026\] The Labyrinth and the Thread: Rethinking Regularizations in Sequential Knowledge Editing for Large Language Models](../../ICML2026/knowledge_editing/the_labyrinth_and_the_thread_rethinking_regularizations_in_sequential_knowledge_.md)
+- [\[NeurIPS 2025\] UniEdit: A Unified Knowledge Editing Benchmark for Large Language Models](../../NeurIPS2025/knowledge_editing/uniedit_a_unified_knowledge_editing_benchmark_for_large_language_models.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] The Model Agreed, But Didn't Learn: Diagnosing Surface Compliance in Large Language Models](the_model_agreed_but_didn39t_learn_diagnosing_surface_compliance_in_large_langua.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency
 description: >-
-  [ICCV 2025][Robotics][Depth Completion] This paper proposes PacGDC, which exploits the inherent shape and position ambiguities in 2D-to-3D projection to synthesize large quantities of pseudo-geometric data—using multiple…
+  [ICCV 2025][Robotics][Depth Completion] This paper proposes PacGDC, which exploits the inherent shape and position ambiguities in 2D-to-3D projection to synthesize large quantities of pseudo-geometric data—using multiple depth foundation models as scale manipulators—thereby achieving generalizable depth completion with minimal annotation cost, attaining state-of-the-art performance in both zero-shot and few-shot settings.
 tags:
   - "ICCV 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Data Synthesis"
   - "Generalizability"
 date: 2026-05-08
-content_hash: bff0a1bfeb4f97e4
+content_hash: 33d316cb38e7e2bc
 ---
 
 # PacGDC: Label-Efficient Generalizable Depth Completion with Projection Ambiguity and Consistency
@@ -163,7 +163,7 @@ Ablation of synthesis strategies based on SPNet-Tiny (zero-shot, averaged across
 - [\[ICCV 2025\] EvolvingGrasp: Evolutionary Grasp Generation via Efficient Preference Alignment](evolvinggrasp_evolutionary_grasp_generation_via_efficient_preference_alignment.md)
 - [\[NeurIPS 2025\] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning](../../NeurIPS2025/robotics/asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_.md)
 - [\[ICCV 2025\] CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games](combatvla_an_efficient_vision-language-action_model_for_combat_tasks_in_3d_actio.md)
-- [\[ICML 2026\] STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction](../../ICML2026/robotics/step_warm-started_visuomotor_policies_with_spatiotemporal_consistency_prediction.md)
+- [\[CVPR 2026\] Global Prior Meets Local Consistency: Dual-Memory Augmented Vision-Language-Action Model for Efficient Robotic Manipulation](../../CVPR2026/robotics/global_prior_meets_local_consistency_dual-memory_augmented_vision-language-actio.md)
 
 </div>
 

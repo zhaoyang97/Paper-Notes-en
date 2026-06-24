@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Parametric curve reconstruction] This paper proposes CurveGaussian, a single-stage method that establishes a bidirectional coupling mechanism between parametric curves and edge-oriented Gaussian pr…
+  [ICCV 2025][3D Vision][Parametric curve reconstruction] This paper proposes CurveGaussian, a single-stage method that establishes a bidirectional coupling mechanism between parametric curves and edge-oriented Gaussian primitives, enabling direct end-to-end optimization of 3D parametric curves from multi-view edge maps. By eliminating the error accumulation inherent in two-stage pipelines, the method achieves comprehensive improvements over prior approaches in accuracy…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "end-to-end optimization"
   - "edge reconstruction"
 date: 2026-05-08
-content_hash: 9144d5846a6648df
+content_hash: 04fb08f16699287a
 ---
 
 # Curve-Aware Gaussian Splatting for 3D Parametric Curve Reconstruction
@@ -169,10 +169,10 @@ Ablation of key components:
 ## Related Papers
 
 - [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
+- [\[CVPR 2025\] SGCR: Spherical Gaussians for Efficient 3D Curve Reconstruction](../../CVPR2025/3d_vision/sgcr_spherical_gaussians_for_efficient_3d_curve_reconstruction.md)
 - [\[ICCV 2025\] Robust and Efficient 3D Gaussian Splatting for Urban Scene Reconstruction](robust_and_efficient_3d_gaussian_splatting_for_urban_scene_reconstruction.md)
 - [\[ICCV 2025\] CstNet: Constraint-Aware Feature Learning for Parametric Point Cloud](constraint-aware_feature_learning_for_parametric_point_cloud.md)
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
-- [\[ICCV 2025\] Lightweight Gradient-Aware Upscaling of 3D Gaussian Splatting Images](lightweight_gradient-aware_upscaling_of_3d_gaussian_splatting_images.md)
 
 </div>
 

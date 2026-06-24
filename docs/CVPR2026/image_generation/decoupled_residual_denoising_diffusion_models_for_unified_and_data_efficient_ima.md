@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] DRDD identifies that injecting Gaussian noise, beyond performing "manifold lifting," also implicitly narrows the feature distribution gap between different domains (acting as a "domain harmonizer"). Consequently, it decouples the traditional coupled diffusion into two independent stages: "noise addition for domain harm
+  [CVPR 2026][Image Generation][Image-to-Image Translation] DRDD identifies that injecting Gaussian noise, beyond performing "manifold lifting," also implicitly narrows the feature distribution gap between different domains (acting as a "domain harmonizer"). Consequently, it decouples the traditional coupled diffusion into two independent stages: "noise addition for domain harmonization" followed by "deterministic residual mapping." This ensures the core source $\to$ target map…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Image-to-Image Translation"
+  - "Residual Diffusion"
+  - "Domain Alignment"
+  - "Decoupled Diffusion"
+  - "Data Efficient"
 date: 2026-05-08
-content_hash: ff42598a8a0603cb
+content_hash: d17b872006cf9b0a
 ---
+
 # Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,10 @@ The decoupled version consistently outperforms the coupled baseline in deraining
 ## Related Papers
 
 - [\[CVPR 2026\] MERIT: Multi-domain Efficient RAW Image Translation](merit_multi-domain_efficient_raw_image_translation.md)
-- [\[CVPR 2026\] DDT: Decoupled Diffusion Transformer](ddt_decoupled_diffusion_transformer.md)
+- [\[CVPR 2026\] Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)
+- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
 - [\[CVPR 2026\] DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)
 - [\[CVPR 2026\] Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)
-- [\[CVPR 2026\] DBMSolver: A Training-free Diffusion Bridge Sampler for High-Quality Image-to-Image Translation](dbmsolver_a_training-free_diffusion_bridge_sampler_for_high-quality_image-to-ima.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] SynthRGB-T reformulates infrared $\leftrightarrow$ visible image translation as "vision-language guided denoising diffusion." It utilizes foundation models to automatically extract foreground semantic priors and injects decoupled foreground, content, and text conditions into different resolution layers of the U-Net. Th
+  [CVPR 2026][Image Generation][Infrared-Visible Translation] SynthRGB-T reformulates infrared $\leftrightarrow$ visible image translation as "vision-language guided denoising diffusion." It utilizes foundation models to automatically extract foreground semantic priors and injects decoupled foreground, content, and text conditions into different resolution layers of the U-Net. This enables a single model to perform bidirectional translation and generate diverse results based on…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Infrared-Visible Translation"
+  - "Language-Vision Guidance"
+  - "Diffusion Models"
+  - "Bidirectional Translation"
+  - "Data Synthesis"
 date: 2026-05-08
-content_hash: 403d1f88248b253c
+content_hash: a1897c860c627a1e
 ---
+
 # SynthRGB-T: Language-Vision Guided Image Translation for Diversity Synthesis
 
 **Conference**: CVPR 2026  
@@ -154,10 +159,10 @@ Ours ranks first in almost all paired and unpaired settings for both directions.
 ## Related Papers
 
 - [\[CVPR 2026\] VisionDirector: Vision-Language Guided Closed-Loop Refinement for Generative Image Synthesis](visiondirector_vision-language_guided_closed-loop_refinement_for_generative_imag.md)
-- [\[CVPR 2026\] VOSR: A Vision-Only Generative Model for Image Super-Resolution](vosr_a_vision_only_generative_model_for_image_super_resolution.md)
 - [\[CVPR 2026\] OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)
 - [\[CVPR 2026\] TherA: Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation](thera_thermal-aware_visual-language_prompting_for_controllable_rgb-to-thermal_in.md)
-- [\[CVPR 2026\] Diversity over Uniformity: Rethinking Representation in Generated Image Detection](diversity_over_uniformity_rethinking_representation_in_generated_image_detection.md)
+- [\[CVPR 2026\] Language-Free Generative Editing from One Visual Example](language-free_generative_editing_from_one_visual_example.md)
+- [\[CVPR 2026\] MERIT: Multi-domain Efficient RAW Image Translation](merit_multi-domain_efficient_raw_image_translation.md)
 
 </div>
 

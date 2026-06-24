@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This paper proposes Hive, a universal sound separation dataset constructed via single-event purification and semantically consistent mixing. Using approximately 2.4k hours of high-purity source audio, it enables AudioSep and FlowSep to approach or even exceed the performance of systems trained on million-hour datasets
+  [ICML 2026][Audio & Speech][Universal Sound Separation] This paper proposes Hive, a universal sound separation dataset constructed via single-event purification and semantically consistent mixing. Using approximately 2.4k hours of high-purity source audio, it enables AudioSep and FlowSep to approach or even exceed the performance of systems trained on million-hour datasets across multiple separation metrics.
 tags:
-  - ICML 2026
-  - Audio & Speech
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Universal Sound Separation"
+  - "Audio Dataset"
+  - "Semantically Consistent Mixing"
+  - "Data-Efficient"
+  - "Single-Event Mining"
 date: 2026-05-08
-content_hash: d000a6c2198c4962
+content_hash: 512201be86ae9d8d
 ---
+
 # A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation
 
 **Conference**: ICML 2026  
@@ -124,10 +130,20 @@ The main results for Hive are evaluated on its own test set to verify high-densi
 - Value: ⭐⭐⭐⭐⭐ Highly practical for USS and audio foundation model training, particularly for resource-constrained teams.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] AlignSep: Temporally-Aligned Video-Queried Sound Separation with Flow Matching](../../ICLR2026/audio_speech/alignsep_temporally-aligned_video-queried_sound_separation_with_flow_matching.md)
+- [\[ICLR 2026\] Physics-Informed Audio-Geometry-Grid Representation Learning for Universal Sound Source Localization](../../ICLR2026/audio_speech/physics-informed_audio-geometry-grid_representation_learning_for_universal_sound.md)
+- [\[ICML 2026\] Multimodal Fusion via Self-Consistent Task-Gradient Fields](multimodal_fusion_via_self-consistent_task-gradient_fields.md)
+- [\[ACL 2026\] Data-efficient Targeted Token-level Preference Optimization for LLM-based Text-to-Speech](../../ACL2026/audio_speech/data-efficient_targeted_token-level_preference_optimization_for_llm-based_text-t.md)
+- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](../../CVPR2026/audio_speech/how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[AAAI 2026\] USE: A Unified Model for Universal Sound Separation and Extraction](../../AAAI2026/audio_speech/use_a_unified_model_for_universal_sound_separation_and_extraction.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] Ours proposes JEPA Guidance, utilizing implicit density signals from JEPA (e.g., DINOv2) encoders to guide the sampling of diffusion models. This shifts the definition of minority samples from "low density under the generative model's prior" to "low density under a world prior," achieving more semantically meaningful r
+  [ICML2026][Image Generation][Minority sampling] Ours proposes JEPA Guidance, utilizing implicit density signals from JEPA (e.g., DINOv2) encoders to guide the sampling of diffusion models. This shifts the definition of minority samples from "low density under the generative model's prior" to "low density under a world prior," achieving more semantically meaningful rare sample generation in unconditional, class-conditional, and text-to-image scenarios.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - JEPA
+  - "ICML2026"
+  - "Image Generation"
+  - "Minority sampling"
+  - "Diffusion models"
+  - "JEPA"
+  - "World model prior"
+  - "Randomized SVD"
 date: 2026-05-08
-content_hash: 9110cbe513f7963c
+content_hash: 5d021f977909fc3a
 ---
+
 # Beyond Generative Priors: Minority Sampling with JEPA-Guided Diffusion
 
 **Conference**: ICML2026  
@@ -150,10 +154,10 @@ JEPA encoders are trained on clean images, but early-stage diffusion $\hat{x}_{0
 
 ## Related Papers
 
-- [\[ICLR 2026\] Beyond Confidence: The Rhythms of Reasoning in Generative Models](../../ICLR2026/image_generation/beyond_confidence_the_rhythms_of_reasoning_in_generative_models.md)
-- [\[CVPR 2025\] Learning Visual Generative Priors without Text](../../CVPR2025/image_generation/learning_visual_generative_priors_without_text.md)
-- [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
+- [\[ICLR 2026\] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data](../../ICLR2026/image_generation/score_distillation_beyond_acceleration_generative_modeling_from_corrupted_data.md)
 - [\[CVPR 2026\] PhyCo: Learning Controllable Physical Priors for Generative Motion](../../CVPR2026/image_generation/phyco_learning_controllable_physical_priors_for_generative_motion.md)
+- [\[ICML 2026\] Threshold-Guided Optimization for Visual Generative Models](threshold-guided_optimization_for_visual_generative_models.md)
+- [\[ICLR 2026\] HiGS: History-Guided Sampling for Plug-and-Play Enhancement of Diffusion Models](../../ICLR2026/image_generation/higs_history-guided_sampling_for_plug-and-play_enhancement_of_diffusion_models.md)
 - [\[CVPR 2026\] Efficient Weighted Sampling via Score-based Generative Models](../../CVPR2026/image_generation/efficient_weighted_sampling_via_score-based_generative_models.md)
 
 </div>

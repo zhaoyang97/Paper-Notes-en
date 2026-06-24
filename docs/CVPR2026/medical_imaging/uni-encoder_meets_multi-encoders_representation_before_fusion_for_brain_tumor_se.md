@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] UniME addresses brain tumor segmentation with missing modalities using a two-stage heterogeneous "representation before fusion" design. Phase 1 employs a single ViT Uni-Encoder for masked self-supervised pre-training to learn robust unified representations against missing data. Phase 2 integrates multiple modality-spec
+  [CVPR 2026][Medical Imaging][Brain Tumor Segmentation] UniME addresses brain tumor segmentation with missing modalities using a two-stage heterogeneous "representation before fusion" design. Phase 1 employs a single ViT Uni-Encoder for masked self-supervised pre-training to learn robust unified representations against missing data. Phase 2 integrates multiple modality-specific CNN Multi-Encoders in parallel to recover high-resolution details. On BraTS 2023/2024…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Brain Tumor Segmentation"
+  - "Missing Modality"
+  - "Masked Self-Supervision"
+  - "ViT-CNN Heterogeneity"
+  - "Representation Before Fusion"
 date: 2026-05-08
-content_hash: edbbba45d502fbc1
+content_hash: 1714966b77813ad4
 ---
+
 # Uni-Encoder Meets Multi-Encoders: Representation Before Fusion for Brain Tumor Segmentation with Missing Modalities
 
 **Conference**: CVPR 2026  
@@ -160,10 +166,10 @@ Key Hyperparameters: Uni-Encoder scale Base (83.49) is better than Small/Large. 
 ## Related Papers
 
 - [\[CVPR 2026\] Virtual Nodes Guided Dynamic Graph Neural Network for Brain Tumor Segmentation with Missing Modalities](virtual_nodes_guided_dynamic_graph_neural_network_for_brain_tumor_segmentation_w.md)
-- [\[CVPR 2026\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
+- [\[ICLR 2026\] Sequential Information Bottleneck Fusion: Towards Robust and Generalizable Multi-Modal Brain Tumor Segmentation](../../ICLR2026/medical_imaging/sequential_information_bottleneck_fusion_towards_robust_and_generalizable_multi-.md)
+- [\[CVPR 2025\] Federated Modality-specific Encoders and Partially Personalized Fusion Decoder for Multimodal Brain Tumor Segmentation](../../CVPR2025/medical_imaging/federated_modality-specific_encoders_and_partially_personalized_fusion_decoder_f.md)
 - [\[CVPR 2026\] PGR-Net: Prior-Guided ROI Reasoning Network for Brain Tumor MRI Segmentation](pgr-net_prior-guided_roi_reasoning_network_for_brain_tumor_mri_segmentation.md)
 - [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
-- [\[CVPR 2025\] Federated Modality-specific Encoders and Partially Personalized Fusion Decoder for Multimodal Brain Tumor Segmentation](../../CVPR2025/medical_imaging/federated_modality-specific_encoders_and_partially_personalized_fusion_decoder_f.md)
 
 </div>
 

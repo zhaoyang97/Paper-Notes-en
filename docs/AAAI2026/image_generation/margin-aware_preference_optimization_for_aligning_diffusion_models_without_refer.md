@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference
 description: >-
-  [AAAI 2026][Image Generation][Preference Alignment] This paper proposes MaPO (Margin-aware Preference Optimization), a reference-free preference alignment method that aligns T2I diffusion models by directly optimizing th…
+  [AAAI 2026][Image Generation][Preference Alignment] This paper proposes MaPO (Margin-aware Preference Optimization), a reference-free preference alignment method that aligns T2I diffusion models by directly optimizing the likelihood margin between preferred and dispreferred outputs under the Bradley-Terry model. MaPO outperforms DPO and task-specific methods across 5 domains, including style adaptation, safety generation, and general preference alignment.
 tags:
   - "AAAI 2026"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Reference-free"
   - "DPO"
 date: 2026-05-08
-content_hash: c7b6e96ecff9b06f
+content_hash: ba7cdb72468b54bd
 ---
 
 # Margin-aware Preference Optimization for Aligning Diffusion Models without Reference
@@ -131,11 +131,11 @@ Key finding: MaPO's advantage over DPO **grows sharply** as the degree of refere
 
 ## Related Papers
 
+- [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](../../CVPR2026/image_generation/towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
 - [\[AAAI 2026\] Rethinking Direct Preference Optimization in Diffusion Models](rethinking_direct_preference_optimization_in_diffusion_models.md)
 - [\[ICML 2026\] When Preference Labels Fall Short: Aligning Diffusion Models from Real Data](../../ICML2026/image_generation/when_preference_labels_fall_short_aligning_diffusion_models_from_real_data.md)
 - [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](multi-metric_preference_alignment_for_generative_speech_restoration.md)
-- [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](../../ICLR2026/image_generation/pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
-- [\[NeurIPS 2025\] Diffusion Model as a Noise-Aware Latent Reward Model for Step-Level Preference Optimization](../../NeurIPS2025/image_generation/diffusion_model_as_a_noiseaware_latent_reward_model_for_step.md)
+- [\[CVPR 2025\] Calibrated Multi-Preference Optimization for Aligning Diffusion Models](../../CVPR2025/image_generation/calibrated_multi-preference_optimization_for_aligning_diffusion_models.md)
 
 </div>
 

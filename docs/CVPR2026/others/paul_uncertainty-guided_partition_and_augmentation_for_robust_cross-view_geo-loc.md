@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Addressing the "semi-positive" alignment noise caused by GPS drift in UAV-satellite cross-view localization, PAUL utilizes a Gaussian Mixture Model (GMM) to softly partition clean/noisy pairs, employs Evidential Deep Learning (EDL) for uncertainty-guided region mask augmentation, and uses dual-network co-training to ab
+  [CVPR 2026][Noisy Correspondence] Addressing the "semi-positive" alignment noise caused by GPS drift in UAV-satellite cross-view localization, PAUL utilizes a Gaussian Mixture Model (GMM) to softly partition clean/noisy pairs, employs Evidential Deep Learning (EDL) for uncertainty-guided region mask augmentation, and uses dual-network co-training to absorb effective signals from noisy samples, consistently outperforming existing noisy correspondence methods under various nois…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Noisy Correspondence"
+  - "Cross-View Geo-Localization"
+  - "Evidential Deep Learning"
+  - "Uncertainty"
+  - "Co-training"
 date: 2026-05-08
-content_hash: dd20a17b2abb9a94
+content_hash: 0048590007d41937
 ---
+
 # PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ GTA-UAV cross-area, 30% noise ratio (R@1 / AP, %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)
-- [\[CVPR 2026\] SinGeo: Unlock Single Model's Potential for Robust Cross-View Geo-Localization](singeo_unlock_single_models_potential_for_robust_cross-view_geo-localization.md)
-- [\[CVPR 2026\] Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)
-- [\[CVPR 2026\] RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)
-- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
+- [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
+- [\[CVPR 2026\] Evidential Deep Partial Label Learning to Quantify Disambiguation Uncertainty](evidential_deep_partial_label_learning_to_quantify_disambiguation_uncertainty.md)
+- [\[CVPR 2026\] Region-Wise Correspondence Prediction between Manga Line Art Images](region-wise_correspondence_prediction_between_manga_line_art_images.md)
+- [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
 
 </div>
 

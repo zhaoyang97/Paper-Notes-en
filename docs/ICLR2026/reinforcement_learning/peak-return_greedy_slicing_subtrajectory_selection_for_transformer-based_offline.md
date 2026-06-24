@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Peak-Return Greedy Slicing: Subtrajectory Selection for Transformer-based Offline RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Decision Transformer] PRGS introduces a pre-processing step for Transformer-based offline RL that "picks high-quality fragments at the timestep level." It utilizes an MMD return estimator to calculate optimistic future return distributions for each state-action pair, greedily slices trajectories into "peak-return subtrajectories" for traini
+  [ICLR 2026][Reinforcement Learning][Offline Reinforcement Learning] PRGS introduces a pre-processing step for Transformer-based offline RL that "picks high-quality fragments at the timestep level." It utilizes an MMD return estimator to calculate optimistic future return distributions for each state-action pair, greedily slices trajectories into "peak-return subtrajectories" for training, and adaptively truncates history during evaluation. This approach achieves an average im…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Decision Transformer
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Reinforcement Learning"
+  - "Decision Transformer"
+  - "Subtrajectory Selection"
+  - "Stitching Capability"
+  - "MMD Return Estimation"
 date: 2026-05-08
-content_hash: e685acf942f6b81d
+content_hash: 0e7f2002942bb0d4
 ---
+
 # Peak-Return Greedy Slicing: Subtrajectory Selection for Transformer-based Offline RL
 
 **Conference**: ICLR 2026  
@@ -126,10 +131,10 @@ The most significant gains were observed in Maze2D, which requires stitching and
 ## Related Papers
 
 - [\[ICLR 2026\] Recurrent Action Transformer with Memory](recurrent_action_transformer_with_memory.md)
+- [\[ICLR 2026\] Imitation Learning as Return Distribution Matching](imitation_learning_as_return_distribution_matching.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
+- [\[ICLR 2026\] One-Step Flow Q-Learning: Addressing the Diffusion Policy Bottleneck in Offline RL](one-step_flow_q-learning_addressing_the_diffusion_policy_bottleneck_in_offline_r.md)
 - [\[ICLR 2026\] The State of Reinforcement Finetuning for Transformer-based Agents](the_state_of_reinforcement_finetuning_for_transformer-based_agents.md)
-- [\[ICLR 2026\] ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation](reform_reflected_flows_for_on-support_offline_rl_via_noise_manipulation.md)
-- [\[ICLR 2026\] Less is More: Clustered Cross-Covariance Control for Offline RL](less_is_more_clustered_cross-covariance_control_for_offline_rl.md)
-- [\[ICLR 2026\] STAIRS-Former: Spatio-Temporal Attention with Interleaved Recursive Structure Transformer for Offline Multi-Task Multi-Agent Reinforcement Learning](stairs-former_spatio-temporal_attention_with_interleaved_recursive_structure_tra.md)
 
 </div>
 

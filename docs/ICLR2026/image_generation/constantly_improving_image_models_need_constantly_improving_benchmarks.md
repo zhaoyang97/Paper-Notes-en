@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Constantly Improving Image Models Need Constantly Improving Benchmarks
 description: >-
-  [ICLR 2026][Image Generation][VLM-as-judge] This paper proposes the ECHO framework, which automatically distills real user discussions from social media (creative prompts + qualitative feedback) into structured benchmarks. By extracting over 31,000 in-the-wild prompts regarding GPT-4o Image Gen, it uncovers new tasks not covered by existing benchmarks, increases
+  [ICLR2026][Image Generation][Image generation evaluation] This paper proposes the ECHO framework, which automatically distills real user discussions from social media (creative prompts + qualitative feedback) into structured benchmarks. By extracting over 31,000 in-the-wild prompts regarding GPT-4o Image Gen, it uncovers new tasks not covered by existing benchmarks, increases the performance gap between SOTA and other models by 3.2x, and converts community complaints into qua…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - VLM-as-judge
-  - GPT-4o Image Gen
+  - "ICLR2026"
+  - "Image Generation"
+  - "Image generation evaluation"
+  - "benchmark construction"
+  - "social media crowdsourcing"
+  - "VLM-as-judge"
+  - "GPT-4o Image Gen"
 date: 2026-05-08
-content_hash: 6cb71ca1103826ce
+content_hash: 4ec7ca6260ae01d2
 ---
+
 # Constantly Improving Image Models Need Constantly Improving Benchmarks
 
 **Conference**: ICLR2026  
@@ -138,9 +142,9 @@ On the in-the-wild subset using an ensemble of three judges, both image-to-image
 
 - [\[ICLR 2026\] AlphaFlow: Understanding and Improving MeanFlow Models](alphaflow_understanding_and_improving_meanflow_models.md)
 - [\[ICLR 2026\] AlignFlow: Improving Flow-based Generative Models with Semi-Discrete Optimal Transport](alignflow_improving_flow-based_generative_models_with_semi-discrete_optimal_tran.md)
+- [\[ICLR 2026\] Soft-Di\[M\]O: Improving One-Step Discrete Image Generation with Soft Embeddings](soft-dimo_improving_one-step_discrete_image_generation_with_soft_embeddings.md)
 - [\[ICLR 2026\] Steer Away From Mode Collisions: Improving Composition In Diffusion Models](steer_away_from_mode_collisions_improving_composition_in_diffusion_models.md)
-- [\[ICLR 2026\] Self-Improving Loops for Visual Robotic Planning](self-improving_loops_for_visual_robotic_planning.md)
-- [\[ICLR 2026\] Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation](improving_diffusion_models_for_class-imbalanced_training_data_via_capacity_manip.md)
+- [\[ICLR 2026\] Foresight Diffusion: Improving Sampling Consistency in Predictive Diffusion Models](foresight_diffusion_improving_sampling_consistency_in_predictive_diffusion_model.md)
 
 </div>
 

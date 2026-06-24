@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][MTEB] GIRCSE allows LLMs to autoregressively generate a sequence of "soft tokens" at inference time to iteratively refine sentence embeddings, supervised by step-wise contrastive losses. This marks the first effective utilization of LLM generative capabilities for embedding tasks, surprisingly unlocking "test-time scaling" w
+  [ICLR 2026][Information Retrieval & RAG][Text embeddings] GIRCSE allows LLMs to autoregressively generate a sequence of "soft tokens" at inference time to iteratively refine sentence embeddings, supervised by step-wise contrastive losses. This marks the first effective utilization of LLM generative capabilities for embedding tasks, surprisingly unlocking "test-time scaling" where generating more tokens leads to higher vector quality.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - MTEB
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Text embeddings"
+  - "generative embeddings"
+  - "contrastive learning"
+  - "soft tokens"
+  - "test-time scaling"
+  - "MTEB"
 date: 2026-05-08
-content_hash: f5c8945edf2b597f
+content_hash: f27417aed4759ce5
 ---
+
 # Let LLMs Speak Embedding Languages: Generative Text Embeddings via Iterative Contrastive Refinement
 
 **Conference**: ICLR 2026  
@@ -121,9 +127,9 @@ Starting from a Causal-EOS baseline, simply introducing generative embedding boo
 
 - [\[ICLR 2026\] Think Then Embed: Generative Context Improves Multimodal Embedding](think_then_embed_generative_context_improves_multimodal_embedding.md)
 - [\[ICLR 2026\] HUME: Measuring the Human-Model Performance Gap in Text Embedding Tasks](hume_measuring_the_human-model_performance_gap_in_text_embedding_tasks.md)
-- [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
 - [\[ACL 2026\] Why Mean Pooling Works: Quantifying Second-Order Collapse in Text Embeddings](../../ACL2026/information_retrieval/why_mean_pooling_works_quantifying_second-order_collapse_in_text_embeddings.md)
-- [\[ACL 2026\] SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation](../../ACL2026/information_retrieval/skmteb_slovak_massive_text_embedding_benchmark_and_model_adaptation.md)
+- [\[ICLR 2026\] BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs](btzsc_a_benchmark_for_zero-shot_text_classification_across_cross-encoders_embedd.md)
+- [\[ICLR 2026\] Supervised Fine-Tuning or Contrastive Learning? Towards Better Multimodal LLM Reranking](supervised_fine-tuning_or_contrastive_learning_towards_better_multimodal_llm_rer.md)
 
 </div>
 

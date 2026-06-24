@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Vision-Language Model] This paper introduces DECEPTIONDECODED: a large-scale multimodal news benchmark anchored in credible news contexts that explicitly models misleading creator intent. Using 12,000 image-text samples, it diagnoses VLM vulnerabilities to content that is "surface-consistent but intentionally misleading" and demonstrates tha
+  [ICLR 2026][Multimodal VLM][Multimodal Misinformation Detection] This paper introduces DECEPTIONDECODED: a large-scale multimodal news benchmark anchored in credible news contexts that explicitly models misleading creator intent. Using 12,000 image-text samples, it diagnoses VLM vulnerabilities to content that is "surface-consistent but intentionally misleading" and demonstrates that fine-tuning on such data improves general multimodal misinformation detection.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - Vision-Language Model
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Misinformation Detection"
+  - "Creator Intent"
+  - "Vision-Language Models"
+  - "News Credibility"
+  - "Synthetic Benchmark"
 date: 2026-05-08
-content_hash: c101364a919b75b2
+content_hash: 4f96d2b66a7ab525
 ---
+
 # Seeing Through Deception: Uncovering Misleading Creator Intent in Multimodal News with Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -149,15 +154,16 @@ The study analyzes VLM vulnerabilities via input modalities, prompt styles, and 
 - Value: ⭐⭐⭐⭐⭐ Direct value for multimodal fact-checking and VLM safety evaluation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination](../../ICML2026/multimodal_vlm/are_vlms_seeing_or_just_saying_uncovering_the_illusion_of_visual_re-examination.md)
+- [\[ICLR 2026\] Revisiting Multimodal Positional Encoding in Vision-Language Models](revisiting_multimodal_positional_encoding_in_visionlanguage_models.md)
 - [\[ACL 2026\] When Seeing Overrides Knowing: Disentangling Knowledge Conflicts in Vision-Language Models](../../ACL2026/multimodal_vlm/when_seeing_overrides_knowing_disentangling_knowledge_conflicts_in_vision-langua.md)
 - [\[AAAI 2026\] Seeing Justice Clearly: Handwritten Legal Document Translation with OCR and Vision-Language Models](../../AAAI2026/multimodal_vlm/seeing_justice_clearly_handwritten_legal_document_translation_with_ocr_and_visio.md)
 - [\[ICLR 2026\] Post-hoc Probabilistic Vision-Language Models](post-hoc_probabilistic_vision-language_models.md)
-- [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](../../CVPR2026/multimodal_vlm/seeing_through_touch_tactile_localization.md)
 
 </div>
 

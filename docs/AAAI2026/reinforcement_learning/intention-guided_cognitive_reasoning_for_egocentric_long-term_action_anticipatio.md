@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation
 description: >-
-  [AAAI 2026][Reinforcement Learning][Long-term action anticipation] This paper proposes INSIGHT, a two-stage unified framework for egocentric long-term action anticipation (LTA). Stage one enhances action representations…
+  [AAAI 2026][Reinforcement Learning][Long-term action anticipation] This paper proposes INSIGHT, a two-stage unified framework for egocentric long-term action anticipation (LTA). Stage one enhances action representations via hand-object interaction (HOI) region feature extraction and verb-noun co-occurrence matrices; stage two introduces a GRPO-based reinforcement learning cognitive reasoning module that simulates a structured "perceive → reason → answer" cognitive process for…
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "cognitive reasoning"
   - "GRPO"
 date: 2026-05-08
-content_hash: 531cae39c687afcc
+content_hash: bf68bd9013f265fa
 ---
 
 # Intention-Guided Cognitive Reasoning for Egocentric Long-Term Action Anticipation
@@ -198,9 +198,9 @@ where $R_{task} = \omega_3 S_{acc} + \omega_4 S_{int} + \omega_5 S_{lang} + \ome
 
 - [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
 - [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
-- [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](efficient_multiagent_planning_via_shared_action_suggestions.md)
 - [\[ICLR 2026\] LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts](../../ICLR2026/reinforcement_learning/loongrl_rl_for_reasoning_long_contexts.md)
-- [\[AAAI 2026\] Partial Action Replacement: Tackling Distribution Shift in Offline MARL](partial_action_replacement_tackling_distribution_shift_in_offline_marl.md)
+- [\[AAAI 2026\] Vision-Language Reasoning for Geolocalization: A Reinforcement Learning Approach](vision-language_reasoning_for_geolocalization_a_reinforcement_learning_approach.md)
+- [\[AAAI 2026\] Efficient Multiagent Planning via Shared Action Suggestions](efficient_multiagent_planning_via_shared_action_suggestions.md)
 
 </div>
 

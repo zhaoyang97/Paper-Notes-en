@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL
 description: >-
-  [ICLR 2026][Reinforcement Learning][Offline Safe RL] GAS enhances generative model-driven Offline Safe RL with trajectory stitching capabilities through objective functions, transition-level data augmentation/relabeling, and data reshaping. It automatically calibrates user-specified (potentially unreliable) reward-cost targets into the optimal reachable targets within th
+  [ICLR 2026][Reinforcement Learning][Offline Safe RL] GAS enhances generative model-driven Offline Safe RL with trajectory stitching capabilities through objective functions, transition-level data augmentation/relabeling, and data reshaping. It automatically calibrates user-specified (potentially unreliable) reward-cost targets into the optimal reachable targets within the dataset that satisfy constraints, achieving higher safety under tight constraints and higher rewards unde…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - Offline Safe RL
-  - Expectile Regression
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Offline Safe RL"
+  - "Generative Models"
+  - "Trajectory Stitching"
+  - "Objective Function"
+  - "Expectile Regression"
+  - "Reward-Cost Trade-off"
 date: 2026-05-08
-content_hash: 557cbe7e31e0dc67
+content_hash: f7774728995f43b7
 ---
+
 # GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL
 
 **Conference**: ICLR 2026  
@@ -105,15 +110,15 @@ GAS sits at the intersection of generative offline RL and safety constraints. In
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search](enhancing_generative_auto-bidding_with_offline_reward_evaluation_and_policy_sear.md)
+- [\[ICLR 2026\] Scalable Offline Model-Based RL with Action Chunks](scalable_offline_model-based_rl_with_action_chunks.md)
 - [\[ICLR 2026\] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling](p-genrm_personalized_generative_reward_model_with_test-time_user-based_scaling.md)
 - [\[ICLR 2026\] ROMI: Model-based Offline RL via Robust Value-Aware Model Learning with Implicitly Differentiable Adaptive Weighting](model-based_offline_rl_via_robust_value-aware_model_learning_with_implicitly_dif.md)
-- [\[ICLR 2026\] R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](r1-reward_training_multimodal_reward_model_through_stable_reinforcement_learning.md)
-- [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
+- [\[ICLR 2026\] Koopman-Assisted Trajectory Synthesis: A Data Augmentation Framework for Offline Imitation Learning](koopman-assisted_trajectory_synthesis_a_data_augmentation_framework_for_offline_.md)
 
 </div>
 

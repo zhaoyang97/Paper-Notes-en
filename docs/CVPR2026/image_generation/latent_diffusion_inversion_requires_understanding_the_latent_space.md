@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Latent Diffusion Inversion Requires Understanding the Latent Space
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] This paper identifies that memorization in Latent Diffusion Models (LDM) is **spatially non-uniform** within the latent space—samples or dimensions where the VAE decoder's pullback metric exhibits larger local distortion are memorized more strongly. Accordingly, a filtering method is proposed that ranks dimensions and
+  [CVPR 2026][Image Generation][Latent Diffusion] This paper identifies that memorization in Latent Diffusion Models (LDM) is **spatially non-uniform** within the latent space—samples or dimensions where the VAE decoder's pullback metric exhibits larger local distortion are memorized more strongly. Accordingly, a filtering method is proposed that ranks dimensions and masks "low-memorization" ones based solely on VAE geometry. This approach consistently improves AUROC by 1–4% an…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Latent Diffusion"
+  - "Membership Inference Attack"
+  - "Memorization"
+  - "Riemannian Geometry"
+  - "VAE Decoder"
 date: 2026-05-08
-content_hash: 28a8dfb73dec9011
+content_hash: 9f3cc07503cc809f
 ---
+
 # Latent Diffusion Inversion Requires Understanding the Latent Space
 
 **Conference**: CVPR 2026  
@@ -145,10 +151,10 @@ Relationship between distortion and frequency (Table 3, Pearson $r$): On CIFAR-1
 ## Related Papers
 
 - [\[CVPR 2026\] Unified Latent Space for Understanding and Generation via Semantic Auto-encoder](unified_latent_space_for_understanding_and_generation_via_semantic_auto-encoder.md)
+- [\[CVPR 2026\] SpeeDiff: Scalable Pixel-Anchored End-to-End Latent Diffusion Model](speediff_scalable_pixel-anchored_end-to-end_latent_diffusion_model.md)
 - [\[CVPR 2026\] Your Latent Mask is Wrong: Pixel-Equivalent Latent Compositing for Diffusion Models](your_latent_mask_is_wrong_pixel-equivalent_latent_compositing_for_diffusion_mode.md)
-- [\[CVPR 2026\] CAST: Context-Aware Dynamic Latent Space Transformation for Interactive Text-to-Image Retrieval](cast_context-aware_dynamic_latent_space_transformation_for_interactive_text-to-i.md)
-- [\[CVPR 2025\] Latent Space Imaging](../../CVPR2025/image_generation/latent_space_imaging.md)
-- [\[CVPR 2025\] Probability Density Geodesics in Image Diffusion Latent Space](../../CVPR2025/image_generation/probability_density_geodesics_in_image_diffusion_latent_space.md)
+- [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
+- [\[CVPR 2026\] A Temporal and Content Co-Awareness Latent Diffusion for Controllable Hand Image Generation](a_temporal_and_content_co-awareness_latent_diffusion_for_controllable_hand_image.md)
 
 </div>
 

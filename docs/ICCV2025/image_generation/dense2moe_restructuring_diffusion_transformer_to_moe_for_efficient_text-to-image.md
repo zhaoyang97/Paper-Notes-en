@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Models] Dense2MoE is the first paradigm for converting dense Diffusion Transformers (DiT) into sparse MoE structures. By replacing FFN layers with MoE layers and grouping Transform…
+  [ICCV 2025][Image Generation][Diffusion Models] Dense2MoE is the first paradigm for converting dense Diffusion Transformers (DiT) into sparse MoE structures. By replacing FFN layers with MoE layers and grouping Transformer blocks into Mixture of Blocks (MoB), combined with a multi-stage distillation pipeline, it compresses FLUX.1's 12B parameters to 5.2B activated parameters while preserving original performance, comprehensively outperforming pruning-based methods.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Knowledge Distillation"
   - "FLUX"
 date: 2026-05-08
-content_hash: 8569266c0aa34cb6
+content_hash: 4aa119b05088af0a
 ---
 
 # Dense2MoE: Restructuring Diffusion Transformer to MoE for Efficient Text-to-Image Generation
@@ -149,9 +149,9 @@ MoB's advantage becomes more pronounced at high compression ratios—the Lite me
 
 - [\[ICCV 2025\] DICE: Staleness-Centric Optimizations for Parallel Diffusion MoE Inference](dice_staleness-centric_optimizations_for_parallel_diffusion_moe_inference.md)
 - [\[ICCV 2025\] LiT: Delving into a Simple Linear Diffusion Transformer for Image Generation](lit_delving_into_a_simple_linear_diffusion_transformer_for_image_generation.md)
+- [\[CVPR 2025\] DiT-IC: Aligned Diffusion Transformer for Efficient Image Compression](../../CVPR2025/image_generation/dit-ic_aligned_diffusion_transformer_for_efficient_image_compression.md)
+- [\[CVPR 2025\] Exploring Sparse MoE in GANs for Text-conditioned Image Synthesis](../../CVPR2025/image_generation/exploring_sparse_moe_in_gans_for_text-conditioned_image_synthesis.md)
 - [\[NeurIPS 2025\] SparseDiT: Token Sparsification for Efficient Diffusion Transformer](../../NeurIPS2025/image_generation/sparsedit_token_sparsification_for_efficient_diffusion_transformer.md)
-- [\[ICCV 2025\] Fair Generation without Unfair Distortions: Debiasing Text-to-Image Generation with Entanglement-Free Attention](fair_generation_without_unfair_distortions_debiasing_text-to-image_generation_wi.md)
-- [\[ICCV 2025\] Addressing Text Embedding Leakage in Diffusion-Based Image Editing](addressing_text_embedding_leakage_in_diffusion-based_image_editing.md)
 
 </div>
 

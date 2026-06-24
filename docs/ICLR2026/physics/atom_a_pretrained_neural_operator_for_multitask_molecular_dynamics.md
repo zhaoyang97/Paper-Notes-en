@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Transformer] ATOM reformulates molecular dynamics (MD) prediction as "learning a trajectory operator." It utilizes a quasi-equivariant Transformer neural operator to parallelly decode future atomic coordinates across multiple timestamps. Combined with a self-constructed multi-molecule MD dataset, TG80, for multi-task pretraining, i
+  [ICLR2026][Physics & Scientific Computing][Molecular Dynamics] ATOM reformulates molecular dynamics (MD) prediction as "learning a trajectory operator." It utilizes a quasi-equivariant Transformer neural operator to parallelly decode future atomic coordinates across multiple timestamps. Combined with a self-constructed multi-molecule MD dataset, TG80, for multi-task pretraining, it achieves zero-shot generalization to unseen molecules and unseen time horizons for the first ti…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Transformer
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Molecular Dynamics"
+  - "Neural Operator"
+  - "Quasi-equivariant"
+  - "Transformer"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 4e06aee45775de98
+content_hash: 450ca5e8961b85ec
 ---
+
 # ATOM: A Pretrained Neural Operator for Multitask Molecular Dynamics
 
 **Conference**: ICLR2026  
@@ -147,16 +152,20 @@ ATOM reduces S2S MSE by 14.96% and S2T MSE by 8.3% on average across MD17.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
-1. **EGNO**: Equivariant Graph Neural Operator for Molecular Dynamics (NeurIPS 2023)
-2. **MACE**: Higher-order Equivariant Message Passing Neural Networks for Fast and Accurate Force Fields (NeurIPS 2022)
-3. **OFormer**: Overcoming the Discretization Bottleneck of Neural Operators (ICLR 2023)
-4. **NequIP**: E(3)-equivariant Graph Neural Networks for Data-efficient and Accurate Interatomic Potentials (Nature Communications 2022)
+## Related Papers
+
+- [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](../../ICML2026/physics/speculative_sampling_for_faster_molecular_dynamics.md)
+- [\[ICML 2026\] Teaching Molecular Dynamics to a Non-Autoregressive Ionic Transport Predictor](../../ICML2026/physics/teaching_molecular_dynamics_to_a_non-autoregressive_ionic_transport_predictor.md)
+- [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
+- [\[NeurIPS 2025\] FlashMD: Long-Stride, Universal Prediction of Molecular Dynamics](../../NeurIPS2025/physics/flashmd_long-stride_universal_prediction_of_molecular_dynamics.md)
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
 
 </div>
-<!-- RELATED:END -->
 
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICML 2026\] Speculative Sampling for Faster Molecular Dynamics](../../ICML2026/physics/speculative_sampling_for_faster_molecular_dynamics.md)

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BANZ-FS: BANZSL Fingerspelling Dataset
 description: >-
-  [ICLR 2026][Human Understanding][BANZSL] This paper constructs BANZ-FS, the first large-scale dataset for **two-handed fingerspelling** in BANZSL (British, Australian, and New Zealand Sign Language). It aggregates over 35K multi-level aligned fingerspelling instances from broadcast news, laboratory recordings, and web vlogs, and systematically benchmarks SOTA
+  [ICLR 2026][Human Understanding][Fingerspelling recognition] This paper constructs BANZ-FS, the first large-scale dataset for **two-handed fingerspelling** in BANZSL (British, Australian, and New Zealand Sign Language). It aggregates over 35K multi-level aligned fingerspelling instances from broadcast news, laboratory recordings, and web vlogs, and systematically benchmarks SOTA models across detection, isolated recognition, and contextual recognition tasks.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - BANZSL
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "Fingerspelling recognition"
+  - "BANZSL"
+  - "Two-handed fingerspelling"
+  - "Sign language translation"
+  - "Temporal detection"
 date: 2026-05-08
-content_hash: e95cf79e9156c9c9
+content_hash: 6f31ced8a99357f9
 ---
+
 # BANZ-FS: BANZSL Fingerspelling Dataset
 
 **Conference**: ICLR 2026  

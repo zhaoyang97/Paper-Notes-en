@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Textured 3D Regenerative Morphing with 3D Diffusion Prior
 description: >-
-  [ICCV 2025][3D Vision][3D Morphing] This paper proposes a regenerative 3D morphing method based on a 3D diffusion prior. By performing interpolation at three levels — initial noise, model parameters…
+  [ICCV 2025][3D Vision][3D Morphing] This paper proposes a regenerative 3D morphing method based on a 3D diffusion prior. By performing interpolation at three levels — initial noise, model parameters, and conditioning features — and combining three strategies (Attention Fusion, Token Reordering, and Low-Frequency Enhancement), it is the first to achieve smooth and semantically plausible morphing sequences for textured 3D objects across categories.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Attention Fusion"
   - "Frequency-Domain Enhancement"
 date: 2026-05-08
-content_hash: 6b83b5b73a859d4c
+content_hash: 06012c4987536da2
 ---
 
 # Textured 3D Regenerative Morphing with 3D Diffusion Prior
@@ -54,9 +54,9 @@ The method builds on Gaussian Anything as the 3D diffusion prior, a two-stage na
 1. **Three-Level Basic Interpolation**:
 
    Interpolation between source and target is performed with weights $(1-\alpha)$ and $\alpha$ at three levels:
-   - **Initial noise interpolation**: The input noise of the source and target is obtained via diffusion inversion; spherical linear interpolation (SLERP) is applied to generate intermediate noise $[\mathbf{z}_T^\alpha, \mathbf{z}_G^\alpha]$ to preserve Gaussian noise properties.
-   - **Model parameter interpolation**: LoRA fine-tuning is performed separately for the source and target; the two sets of LoRA parameters are linearly interpolated to obtain morphing models $\epsilon_G^\alpha$ and $\epsilon_T^\alpha$.
-   - **Conditioning feature interpolation**: Text prompts for the source and target are encoded via a CLIP encoder as $\mathbf{c}^{src}$ and $\mathbf{c}^{tgt}$, and linearly interpolated to obtain $\mathbf{c}^\alpha$.
+    - **Initial noise interpolation**: The input noise of the source and target is obtained via diffusion inversion; spherical linear interpolation (SLERP) is applied to generate intermediate noise $[\mathbf{z}_T^\alpha, \mathbf{z}_G^\alpha]$ to preserve Gaussian noise properties.
+    - **Model parameter interpolation**: LoRA fine-tuning is performed separately for the source and target; the two sets of LoRA parameters are linearly interpolated to obtain morphing models $\epsilon_G^\alpha$ and $\epsilon_T^\alpha$.
+    - **Conditioning feature interpolation**: Text prompts for the source and target are encoded via a CLIP encoder as $\mathbf{c}^{src}$ and $\mathbf{c}^{tgt}$, and linearly interpolated to obtain $\mathbf{c}^\alpha$.
 
    However, basic interpolation suffers from two issues: abrupt transitions (due to mapping variability from nonlinear multi-step denoising) and artifacts (from misalignment between the conditioning space and the diffusion space).
 
@@ -162,11 +162,11 @@ The proposed method leads across all metrics: FID is reduced to 6.36 (vs. 95.49 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Interp3D: Correspondence-aware Interpolation for Generative Textured 3D Morphing](../../ICLR2026/3d_vision/interp3d_correspondence-aware_interpolation_for_generative_textured_3d_morphing.md)
 - [\[ICCV 2025\] Bridging Diffusion Models and 3D Representations: A 3D Consistent Super-Resolution Framework](bridging_diffusion_models_and_3d_representations_a_3d_consistent_super-resolutio.md)
-- [\[ICCV 2025\] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars](haircup_hair_compositional_universal_prior_for_3d_gaussian_avatars.md)
-- [\[ICCV 2025\] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction](moga_3d_generative_avatar_prior_for_monocular_gaussian_avatar_reconstruction.md)
 - [\[ICCV 2025\] Learning 3D Object Spatial Relationships from Pre-trained 2D Diffusion Models](learning_3d_object_spatial_relationships_from_pre-trained_2d_diffusion_models.md)
-- [\[ICCV 2025\] BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis](billboard_splatting_bbsplat_learnable_textured_primitives_fo.md)
+- [\[ICCV 2025\] A Lesson in Splats: Teacher-Guided Diffusion for 3D Gaussian Splats Generation with 2D Supervision](a_lesson_in_splats_teacher-guided_diffusion_for_3d_gaussian_splats_generation_wi.md)
+- [\[ICCV 2025\] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars](haircup_hair_compositional_universal_prior_for_3d_gaussian_avatars.md)
 
 </div>
 

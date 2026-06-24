@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Edit2Perceive: Image Editing Diffusion Models Are Strong Dense Perceivers
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The authors discover that "Image-scale Editing (I2I) diffusion models" are inherently deterministic image-to-image mappings, making them better suited for dense perception than the commonly used "Text-to-Image (T2I)" models. They perform full-parameter fine-tuning on the FLUX.1 Kontext editor to create a unified depth/
+  [CVPR 2026][3D Vision][Monocular Depth Estimation] The authors discover that "Image-scale Editing (I2I) diffusion models" are inherently deterministic image-to-image mappings, making them better suited for dense perception than the commonly used "Text-to-Image (T2I)" models. They perform full-parameter fine-tuning on the FLUX.1 Kontext editor to create a unified depth/normal/matting perceiver. By incorporating a pixel-space consistency loss and a theoretically optimal square-…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular Depth Estimation"
+  - "Surface Normal Estimation"
+  - "Interactive Matting"
+  - "Image-to-Image Diffusion"
+  - "Flow Matching Single-step Inference"
 date: 2026-05-08
-content_hash: 5d5a0aa6565356f6
+content_hash: 765f8855fd017cc2
 ---
+
 # Edit2Perceive: Image Editing Diffusion Models Are Strong Dense Perceivers
 
 **Conference**: CVPR 2026  
@@ -125,11 +131,11 @@ For normal estimation, the average rank was 1.4. For interactive matting, it ran
 
 ## Related Papers
 
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] Dense Metric Depth Completion from Sparse Direct Time-of-Flight Sensors](dense_metric_depth_completion_from_sparse_direct_time-of-flight_sensors.md)
-- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
-- [\[CVPR 2026\] GenMatter: Perceiving Physical Objects with Generative Matter Models](genmatter_perceiving_physical_objects_with_generative_matter_models.md)
-- [\[CVPR 2026\] I-Scene: 3D Instance Models are Implicit Generalizable Spatial Learners](i-scene_3d_instance_models_are_implicit_generalizable_spatial_learners.md)
+- [\[CVPR 2026\] ObjectMorpher: 3D-Aware Image Editing via Deformable 3DGS](objectmorpher_3d-aware_image_editing_via_deformable_3dgs.md)
+- [\[CVPR 2026\] PercHead: Perceptual Head Model for Single-Image 3D Head Reconstruction & Editing](perchead_perceptual_head_model_for_single-image_3d_head_reconstruction_editing.md)
+- [\[CVPR 2026\] FE2E: From Editor to Dense Geometry Estimator](from_editor_to_dense_geometry_estimator.md)
+- [\[CVPR 2025\] Kiss3DGen: Repurposing Image Diffusion Models for 3D Asset Generation](../../CVPR2025/3d_vision/kiss3dgen_repurposing_image_diffusion_models_for_3d_asset_generation.md)
+- [\[CVPR 2026\] VDFE: Difference-Aware 3D Scene Editing with Non-Intrusive Video Diffusion Priors for Multi-View Consistency and Efficiency](vdfe_difference-aware_3d_scene_editing_with_non-intrusive_video_diffusion_priors.md)
 
 </div>
 

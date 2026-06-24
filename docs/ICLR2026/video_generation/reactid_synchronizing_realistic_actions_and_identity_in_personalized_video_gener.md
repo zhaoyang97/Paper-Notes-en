@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReactID: Synchronizing Realistic Actions and Identity in Personalized Video Generation
 description: >-
-  [ICLR 2026][Video Generation][RoPE] ReactID employs a three-pronged approach—high-precision data construction, difficulty-aware curriculum learning, and timeline-structured conditioning (incorporating subject-aware cross-attention and time-adaptive RoPE)—to simultaneously enhance subject identity consistency and action realism in personalized video gener
+  [ICLR 2026][Video Generation][Personalized Video Generation] ReactID employs a three-pronged approach—high-precision data construction, difficulty-aware curriculum learning, and timeline-structured conditioning (incorporating subject-aware cross-attention and time-adaptive RoPE)—to simultaneously enhance subject identity consistency and action realism in personalized video generation, mitigating the long-standing trade-off between the two.
 tags:
-  - ICLR 2026
-  - Video Generation
-  - RoPE
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Personalized Video Generation"
+  - "Identity Preservation"
+  - "Timeline Conditioning"
+  - "Curriculum Learning"
+  - "RoPE"
 date: 2026-05-08
-content_hash: ab7e31caa8ef3c76
+content_hash: db99eaeea4e3951c
 ---
+
 # ReactID: Synchronizing Realistic Actions and Identity in Personalized Video Generation
 
 **Conference**: ICLR 2026  
@@ -128,10 +133,17 @@ Regarding subject-aware cross-attention, a "Uniform" label strategy outperformed
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] Lynx: Towards High-Fidelity Personalized Video Generation](../../CVPR2026/video_generation/lynx_towards_high-fidelity_personalized_video_generation.md)
+- [\[ICLR 2026\] LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation](lumosx_relate_any_identities_with_their_attributes_for_personalized_video_genera.md)
+- [\[ICLR 2026\] AUHead: Realistic Emotional Talking Head Generation via Action Units Control](auhead_realistic_emotional_talking_head_generation_via_action_units_control.md)
+- [\[CVPR 2026\] Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation](../../CVPR2026/video_generation/stand-in_a_lightweight_and_plug-and-play_identity_control_for_video_generation.md)
+- [\[ICLR 2026\] DanceTogether: Generating Interactive Multi-Person Video without Identity Drifting](dancetogether_generating_interactive_multi-person_video_without_identity_driftin.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Lynx: Towards High-Fidelity Personalized Video Generation](../../CVPR2026/video_generation/lynx_towards_high-fidelity_personalized_video_generation.md)

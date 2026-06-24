@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Comparing AI Agents to Cybersecurity Professionals in Real-World Penetration Testing
 description: >-
-  [ICLR 2026][AI Safety][Paper Note] This study presents the first controlled evaluation comparing AI agents and human cybersecurity experts within the same **real-world production network** (a university environment with approximately 8,000 hosts). The researchers simultaneously deployed 10 professional penetration testers, 6 existing agent scaffolds, an
+  [ICLR2026][AI Safety][Penetration Testing] This study presents the first controlled evaluation comparing AI agents and human cybersecurity experts within the same **real-world production network** (a university environment with approximately 8,000 hosts). The researchers simultaneously deployed 10 professional penetration testers, 6 existing agent scaffolds, and a self-developed multi-agent framework, ARTEMIS. ARTEMIS ranked second overall, identifying 9 valid vulnerabilities…
 tags:
-  - ICLR 2026
-  - AI Safety
+  - "ICLR2026"
+  - "AI Safety"
+  - "Penetration Testing"
+  - "AI Agent Evaluation"
+  - "Multi-agent Scaffolding"
+  - "Offensive Security"
+  - "Dangerous Capabilities"
 date: 2026-05-08
-content_hash: 44e4570f89e85a28
+content_hash: 0d0b061aa14a05be
 ---
+
 # Comparing AI Agents to Cybersecurity Professionals in Real-World Penetration Testing
 
 **Conference**: ICLR2026  

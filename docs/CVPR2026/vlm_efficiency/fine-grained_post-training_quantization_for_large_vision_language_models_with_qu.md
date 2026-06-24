@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients
 description: >-
-  [CVPR 2026][Multimodal VLM][Model Acceleration] This paper proposes Quantization-aware Integrated Gradients (QIG), advancing the sensitivity analysis of LVLM quantization from the modality level to the token level. By utilizing axiomatic attribution principles, it precisely quantifies the contribution of each token to the quantization error. This approach significan
+  [CVPR 2026][Multimodal Efficiency][Post-training quantization] This paper proposes Quantization-aware Integrated Gradients (QIG), advancing the sensitivity analysis of LVLM quantization from the modality level to the token level. By utilizing axiomatic attribution principles, it precisely quantifies the contribution of each token to the quantization error. This approach significantly improves the accuracy of quantized models under W4A8 and W3A16 settings with almost no additi…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Model Acceleration
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Post-training quantization"
+  - "LVLM compression"
+  - "token-level sensitivity"
+  - "integrated gradients"
+  - "model acceleration"
 date: 2026-05-08
-content_hash: 1830b1e754a79231
+content_hash: 52b0dbebfcfef891
 ---
+
 # Fine-Grained Post-Training Quantization for Large Vision Language Models with Quantization-Aware Integrated Gradients
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,11 @@ The search process automatically prioritizes accurate reconstruction for more se
 
 ## Related Papers
 
+- [\[CVPR 2026\] VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)
 - [\[CVPR 2026\] MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models](masquant_modality-aware_smoothing_quantization_for_multimodal_large_language_mod.md)
-- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
-- [\[CVPR 2025\] Quantization without Tears](../../CVPR2025/multimodal_vlm/quantization_without_tears.md)
-- [\[CVPR 2026\] DiG: Differential Grounding for Enhancing Fine-Grained Perception in Multimodal Large Language Models](dig_differential_grounding_for_enhancing_fine-grained_perception_in_multimodal_l.md)
-- [\[CVPR 2026\] CropVLM: Learning to Zoom for Fine-Grained Vision-Language Perception](cropvlm_learning_to_zoom_for_fine_grained_vision_language_perception.md)
+- [\[CVPR 2026\] LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] Rethinking Asymmetric Quantization: Hidden Symmetry in Vision Model Weights](rethinking_asymmetric_quantization_hidden_symmetry_in_vision_model_weights.md)
 
 </div>
 

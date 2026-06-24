@@ -2,18 +2,20 @@
 title: >-
   [Paper Note] MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models
 description: >-
-  [ICML 2026][Audio & Speech][full-duplex] MoshiRAG incorporates a special $\langle\text{ret}\rangle$ trigger token into the Moshi full-duplex speech model, allowing the model to asynchronously invoke an LLM or search engine backend while speaking. By exploiting the natural "keyword delay" between the start of an utterance and the appearance of critical keyword
+  [ICML 2026][Audio & Speech][full-duplex] MoshiRAG incorporates a special $\langle\text{ret}\rangle$ trigger token into the Moshi full-duplex speech model, allowing the model to asynchronously invoke an LLM or search engine backend while speaking. By exploiting the natural "keyword delay" between the start of an utterance and the appearance of critical keywords, it preserves full-duplex interactivity while hiding retrieval latencies of up to 2 seconds. This enables the model t…
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - full-duplex
-  - speech LM
-  - RAG
-  - Moshi
-  - keyword delay
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "full-duplex"
+  - "speech LM"
+  - "RAG"
+  - "Moshi"
+  - "asynchronous retrieval"
+  - "keyword delay"
 date: 2026-05-08
-content_hash: 589ab1a947fbaaa9
+content_hash: a3f782b5ed686494
 ---
+
 # MoshiRAG: Asynchronous Knowledge Retrieval for Full-Duplex Speech Language Models
 
 **Conference**: ICML 2026  
@@ -130,7 +132,6 @@ Table 1 in the paper indicates that MoshiRAG achieves significantly higher quali
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

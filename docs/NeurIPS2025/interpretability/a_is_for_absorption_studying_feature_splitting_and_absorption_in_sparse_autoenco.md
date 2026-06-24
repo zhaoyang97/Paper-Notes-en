@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders
 description: >-
-  [NeurIPS 2025][Interpretability][Sparse Autoencoder] This paper identifies and systematically studies the phenomenon of "feature absorption" in SAEs: apparently monosemantic SAE latents fail to activate on certain tokens…
+  [NeurIPS 2025 Oral][Interpretability][Sparse Autoencoder] This paper identifies and systematically studies the phenomenon of "feature absorption" in SAEs: apparently monosemantic SAE latents fail to activate on certain tokens because their feature directions are "absorbed" by more specific sub-latents. This is shown to be an inevitable consequence of hierarchical features combined with sparsity loss, posing a fundamental challenge to using SAEs for reliable LLM interpretation…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Oral"
   - "Interpretability"
   - "Sparse Autoencoder"
   - "Feature Absorption"
@@ -12,7 +12,7 @@ tags:
   - "Mechanistic Interpretability"
   - "LLM Internal Representations"
 date: 2026-05-08
-content_hash: 9f96f1b0fad5fe7f
+content_hash: f771ec6cc9b53e0c
 ---
 
 # A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders
@@ -128,11 +128,11 @@ Feature absorption is present in all tested SAEs; none match the performance of 
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
+- [\[ICML 2025\] Do Sparse Autoencoders Generalize? A Case Study of Answerability](../../ICML2025/interpretability/do_sparse_autoencoders_generalize_a_case_study_of_answerability.md)
 - [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](../../ICML2026/interpretability/on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](../../ICML2026/interpretability/polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
-- [\[ACL 2026\] AdaptiveK: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations](../../ACL2026/interpretability/adaptivek_complexity-driven_sparse_autoencoders_for_interpretable_language_model.md)
-- [\[NeurIPS 2025\] Distributional Autoencoders Know the Score](distributional_autoencoders_know_the_score.md)
+- [\[NeurIPS 2025\] Transformer Key-Value Memories Are Nearly as Interpretable as Sparse Autoencoders](transformer_key-value_memories_are_nearly_as_interpretable_as_sparse_autoencoder.md)
+- [\[ICLR 2026\] The Price of Amortized inference in Sparse Autoencoders](../../ICLR2026/interpretability/the_price_of_amortized_inference_in_sparse_autoencoders.md)
 
 </div>
 

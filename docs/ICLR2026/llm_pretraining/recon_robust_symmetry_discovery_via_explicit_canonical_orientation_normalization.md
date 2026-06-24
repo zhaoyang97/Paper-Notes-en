@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] RECON is proposed as a class-pose-independent canonical orientation normalization method. By correcting arbitrary canonical representations generated during training through simple right translation, it achieves unsupervised instance-level symmetry discovery, OOD pose detection, and a plug-and-play test-time normalizat
+  [ICLR 2026][LLM Pretraining][Symmetry Discovery] RECON is proposed as a class-pose-independent canonical orientation normalization method. By correcting arbitrary canonical representations generated during training through simple right translation, it achieves unsupervised instance-level symmetry discovery, OOD pose detection, and a plug-and-play test-time normalization layer.
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Symmetry Discovery"
+  - "Canonical Orientation"
+  - "Class-pose Decomposition"
+  - "Plug-and-play"
+  - "Group Invariance"
 date: 2026-05-08
-content_hash: 8e446cc8e0233be0
+content_hash: c31997f958f8eeaa
 ---
+
 # RECON: Robust symmetry discovery via Explicit Canonical Orientation Normalization
 
 **Conference**: ICLR 2026  
@@ -150,10 +156,17 @@ Experiments were validated on image datasets and molecular conformation datasets
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)
+- [\[NeurIPS 2025\] A Practical Guide for Incorporating Symmetry in Diffusion Policy](../../NeurIPS2025/llm_pretraining/a_practical_guide_for_incorporating_symmetry_in_diffusion_policy.md)
+- [\[ICML 2026\] MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier](../../ICML2026/llm_pretraining/moose-star_unlocking_tractable_training_for_scientific_discovery_by_breaking_the.md)
+- [\[ICML 2025\] Language Models over Canonical Byte-Pair Encodings](../../ICML2025/llm_pretraining/language_models_over_canonical_byte-pair_encodings.md)
+- [\[ICML 2025\] Towards Robust Influence Functions with Flat Validation Minima](../../ICML2025/llm_pretraining/towards_robust_influence_functions_with_flat_validation_minima.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Imagine How To Change: Explicit Procedure Modeling for Change Captioning](imagine_how_to_change_explicit_procedure_modeling_for_change_captioning.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PaSE: Prototype-aligned Calibration and Shapley-based Equilibrium for Multimodal Sentiment Analysis
 description: >-
-  [AAAI 2026][Audio & Speech][multimodal sentiment analysis] PaSE is a framework that explicitly addresses modality competition in multimodal sentiment analysis through a two-stage optimization strategy combining prototype…
+  [AAAI 2026][Audio & Speech][multimodal sentiment analysis] Proposes the PaSE framework to explicitly address modality competition in multimodal sentiment analysis through a two-stage optimization strategy involving prototype-guided calibration alignment (Entropic Optimal Transport) and Shapley-value gradient modulation.
 tags:
   - "AAAI 2026"
   - "Audio & Speech"
@@ -13,9 +13,10 @@ tags:
   - "optimal transport"
   - "gradient modulation"
 date: 2026-05-08
-content_hash: c16537e57b9a61d7
+content_hash: ccf655a34787a221
 ---
 
+<!-- 由 src/gen_stubs.py 自动生成 -->
 # PaSE: Prototype-aligned Calibration and Shapley-based Equilibrium for Multimodal Sentiment Analysis
 
 **Conference**: AAAI 2026  
@@ -26,38 +27,38 @@ content_hash: c16537e57b9a61d7
 
 ## TL;DR
 
-PaSE is a framework that explicitly addresses modality competition in multimodal sentiment analysis through a two-stage optimization strategy combining prototype-guided calibration alignment (via Entropic Optimal Transport) and Shapley-value-based gradient modulation.
+Proposes the PaSE framework to explicitly address modality competition in multimodal sentiment analysis through a two-stage optimization strategy involving prototype-guided calibration alignment (Entropic Optimal Transport) and Shapley-value gradient modulation.
 
 ## Background & Motivation
 
-- Multimodal Sentiment Analysis (MSA) fuses text, audio, and visual modalities, yet **modality competition** frequently occurs in practice: dominant modalities suppress weaker ones, causing fusion performance to fall short of expectations.
-- For instance, on CMU-MOSI, incorporating audio/visual on top of a text-only baseline yields limited or even negative gains.
-- Existing methods largely assume natural complementarity among modalities, lacking explicit modeling of modality competition dynamics.
-- Current gradient modulation approaches (e.g., OGM-GE) rely on indirect signals such as gradient norms and lack principled quantification of individual modality contributions.
+- Multimodal sentiment analysis (MSA) integrates text, audio, and visual modalities, but often suffers from **modality competition** in practice, where dominant modalities suppress weaker ones, resulting in sub-optimal fusion performance.
+- For example, on the CMU-MOSI dataset, adding audio/visual modalities to a text-only baseline yields limited gains or even negative returns.
+- Existing methods mostly assume natural complementarity between modalities, lacking explicit modeling of modality competition dynamics.
+- Existing gradient modulation methods (e.g., OGM-GE) rely on indirect signals such as gradient norms, lacking a principled quantification of each modality's contribution.
 
 ## Core Problem
 
-How to explicitly quantify and balance the contributions of each modality in MSA, thereby alleviating the suppression of weaker modalities by dominant ones (typically text)?
+How to explicitly quantify and balance the contributions of different modalities in multimodal sentiment analysis to alleviate the suppression of weaker modalities by the dominant one (typically text)?
 
 ## Method
 
 ### Overall Architecture
 
-PaSE consists of three modules: **PCL** (intra-modal prototype calibration) → **CAL** (cross-modal alignment) → **two-stage optimization** (prototype-gated fusion + Shapley gradient modulation).
+PaSE consists of three modules: **PCL** (Intra-modal Prototype Calibration Learning) $\to$ **CAL** (Cross-modal Alignment) $\to$ **Two-stage Optimization** (Prototype-Gated Fusion + Shapley-based Gradient Modulation).
 
 ### Key Design 1: Prototype-guided Calibration Learning (PCL)
 
-A prototype vector is maintained for each class within each modality via momentum updates ($\gamma=0.98$):
+Maintains a prototype vector for each category within each modality (momentum-updated, with $\gamma=0.98$):
 
 $$c_k^m \leftarrow \gamma c_k^m + (1-\gamma) \frac{1}{|B_k|}\sum_{i \in B_k} h_i^m$$
 
-A contrastive learning loss pulls same-class samples closer and pushes apart different-class samples:
+Pulls intra-class samples closer while pushing inter-class samples away using a contrastive learning loss:
 
 $$\mathcal{L}_{\text{intra}}^m = -\frac{1}{N}\sum_{i=1}^N \log \frac{e^{\phi(h_i^m, c_{y_i}^m)/\tau}}{\sum_{k=1}^K e^{\phi(h_i^m, c_k^m)/\tau}}$$
 
 ### Key Design 2: Cross-modal Alignment via Entropic Optimal Transport (CAL)
 
-Class-level prototypes of each modality are treated as discrete distributions, and Entropic OT is applied to solve the cross-modal transport plan, minimizing the Wasserstein distance. A bidirectional symmetric matching loss and a consistency regularization term are introduced:
+Treats the category prototypes of each modality as discrete distributions and solves for the cross-modal transport plan using Entropic Optimal Transport (OT) to minimize the Wasserstein distance. Introduces bidirectional symmetric matching loss and consistency regularization:
 
 $$\mathcal{L}_{\text{match}} = \frac{1}{2}\left(\langle \mathbf{Q}^{(m \to n)}, \mathbf{C} \rangle_F + \langle \mathbf{Q}^{(n \to m)}, \mathbf{C}^\top \rangle_F\right)$$
 
@@ -65,16 +66,16 @@ $$\mathcal{L}_{\text{reg}} = \|\mathbf{Q}^{(m \to n)} - (\mathbf{Q}^{(n \to m)})
 
 ### Key Design 3: Shapley-based Gradient Modulation (SGM)
 
-Shapley values are employed to quantify the marginal contribution of each modality:
+Quantifies the marginal contribution of each modality using Shapley values:
 
 $$\psi_m(u) = \sum_{S \subseteq \mathcal{M} \setminus \{m\}} \frac{|S|!(k-|S|-1)!}{k!}[u(S \cup \{m\}) - u(S)]$$
 
-After normalization, a modulation factor $\varphi_m = \exp(\tilde{\psi}_{\min}/\tilde{\psi}_m - 1)$ is computed, granting weaker modalities larger effective learning rates while suppressing dominant ones.
+After normalization, the modulation factor $\varphi_m = \exp(\tilde{\psi}_{\min}/\tilde{\psi}_m - 1)$ is calculated, granting a larger learning rate to weaker modalities while suppressing dominant ones.
 
 ### Two-stage Training
 
-- **Stage 1** (warm-up): Standard training with entropy-guided weights and Prototype-Gated Fusion, allowing the dominant modality to guide representation learning.
-- **Stage 2**: Once validation-set entropy stabilizes, SGM is automatically activated to balance modality contributions via Shapley gradient modulation.
+- **Stage 1** (Warm-up): Employs entropy-guided weights and Prototype-Gated Fusion for normal training, allowing dominant modalities to guide the learning process.
+- **Stage 2**: Automatically switches to SGM once the validation set entropy stabilizes, using Shapley-based gradient modulation to balance modality contributions.
 
 ## Key Experimental Results
 
@@ -84,41 +85,43 @@ After normalization, a modulation factor $\varphi_m = \exp(\tilde{\psi}_{\min}/\
 | Semi-IIN (AAAI'25) | 85.28/87.04 | 46.50 | 84.98/87.70 | 0.804 |
 | **PaSE** | **86.40/88.32** | **50.92** | **86.07/88.10** | **0.831** |
 
-- IEMOCAP four-class emotion F1: Happy 91.5, Sad 88.6, Angry 89.4, Neutral 73.2 — state-of-the-art across all categories.
-- Ablation: removing SGM causes a 2.85% drop in MOSI Acc-2, the largest single-component impact; removing CAL causes a 1.52% drop.
-- Full modality vs. best bimodal combination: average improvement of 4.02%, effectively resolving the "performance degradation upon adding modalities" problem.
-- Comparison with GPT-4o-mini: PaSE (BERT-base) achieves 88.32 vs. 86.54 on MOSI, demonstrating that the lightweight model remains competitive.
+- F1 scores for four emotion categories on IEMOCAP: Happy 91.5, Sad 88.6, Angry 89.4, Neutral 73.2, achieving overall state-of-the-art results.
+- Ablation: Removing SGM causes a 2.85% drop in MOSI Acc-2, showing the largest impact; removing CAL leads to a 1.52% decrease.
+- All modalities vs. Best bi-modal combination: An average gain of 4.02%, effectively resolving the "modality addition degradation" issue.
+- Comparison with GPT-4o-mini: PaSE (BERT-base) achieves 88.32 vs. 86.54 on MOSI, showing that lightweight models still maintain an advantage.
 
 ## Highlights & Insights
 
-- PaSE is the first to introduce **Shapley values** for gradient modulation in MSA, providing a theoretically principled quantification of modality contributions.
-- The bidirectional symmetric alignment via Entropic OT combined with structural consistency regularization is more rigorous than simple contrastive loss.
-- The two-stage training strategy is well-motivated: allowing the dominant modality to first establish representational structure before applying SGM avoids instability from premature modulation.
-- t-SNE visualizations demonstrate that PaSE's fused representations achieve substantially better class separation than SelfMM/EUAR.
+- For the first time, **Shapley value** is introduced into gradient modulation for multimodal sentiment analysis, providing a theoretically principled quantification of modality contributions.
+- The combined bidirectional symmetric alignment and structure-preserving regularization of Entropic OT is more rigorous than a simple contrastive loss.
+- The two-stage training strategy is well-designed: it allows dominant modalities to construct the representation structure first, and then balances with SGM, preventing instability caused by premature modulation.
+- t-SNE visualizations show that the class separation of PaSE's fused representation is far superior to that of SelfMM/EUAR.
 
 ## Limitations & Future Work
 
-- Computing Shapley values requires enumerating all modality subsets ($2^3$ combinations for three modalities); computational cost grows exponentially as the number of modalities increases.
-- Validation is limited to MOSI/MOSEI/IEMOCAP; more challenging scenarios (e.g., sarcasm detection, multilingual settings) remain unexplored.
-- Feature extractors are relatively dated (Facet, COVAREP); the framework has not been validated with stronger visual/audio backbones.
-- The prototype update strategy is relatively simple (momentum EMA); more sophisticated prototype maintenance mechanisms have not been explored.
+- Computing Shapley values requires traversing all subsets of modalities ($2^3$ configurations for 3 modalities), which leads to exponential growth in computational cost as the number of modalities increases.
+- Validations are limited to MOSI, MOSEI, and IEMOCAP, lacking evaluation on more challenging scenarios (e.g., sarcasm detection, multilingual settings).
+- The feature extractors used are relatively dated (Facet, COVAREP), and have not been validated with stronger visual/audio backbones.
+- The prototype update strategy is simplistic (momentum EMA), leaving more sophisticated prototype maintenance mechanisms unexplored.
 
 ## Related Work & Insights
 
 | Dimension | PaSE | OGM-GE | PMR | ConFEDE |
 |------|------|--------|-----|---------|
-| Modality contribution quantification | Shapley value | Gradient norm | Progressive reinforcement | Contrastive decomposition |
-| Alignment method | Entropic OT | None | None | Contrastive learning |
-| Fusion strategy | Prototype-Gated | Simple fusion | Tri-directional attention | Shared-private |
-| Theoretical grounding | Game theory | Heuristic | None | None |
+| Modality Contribution Quantification | Shapley value | Gradient Norm | Progressive Reinforcement | Contrastive Decomposition |
+| Alignment Method | Entropic OT | None | None | Contrastive Learning |
+| Fusion Strategy | Prototype-Gated | Simple Fusion | Three-way Attention | Shared-Private |
+| Theoretical Guarantee | Game Theory | Heuristic | None | None |
 
-- Although Shapley value computation is costly, it is entirely feasible when the number of modalities is limited (3–5) and can be extended to other multimodal tasks.
-- The two-stage paradigm of "letting the model learn freely first, then introducing modulation for balance" is more stable than applying modulation throughout training.
-- The idea of using Entropic OT for prototype alignment is applicable to embedding space alignment across modalities in Vision-Language Models.
+## Insights
+
+- Although expensive to compute, Shapley values are entirely feasible when the number of modalities is limited (3-5), making this approach generalizable to other multimodal tasks.
+- The two-stage paradigm of "allowing the model to learn freely first, then introducing modulation-based balancing" is more stable than applying modulation throughout training.
+- The approach of utilizing Entropic OT for prototype alignment can be applied to align embedding spaces of different modalities in VLMs.
 
 ## Rating
 
-⭐⭐⭐⭐ — Theoretical motivation is clear; the Shapley-based gradient modulation is novel and effective, though the experimental validation is limited in scope and relies on conservative backbone choices.
+⭐⭐⭐⭐ — Clear theoretical motivation; the Shapley gradient modulation approach is novel and effective, but the experimental validation scenarios and backbones are somewhat conservative.
 
 <!-- RELATED:START -->
 
@@ -128,8 +131,8 @@ After normalization, a modulation factor $\varphi_m = \exp(\tilde{\psi}_{\min}/\
 
 - [\[AAAI 2026\] PSA-MF: Personality-Sentiment Aligned Multi-Level Fusion for Multimodal Sentiment Analysis](psa-mf_personality-sentiment_aligned_multi-level_fusion_for_multimodal_sentiment.md)
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
-- [\[AAAI 2026\] TEXT: Text-Routed Sparse Mixture of Experts for Multimodal Sentiment Analysis with Explanation Enhancement and Temporal Alignment](text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
 - [\[CVPR 2026\] Tri-Subspaces Disentanglement for Multimodal Sentiment Analysis](../../CVPR2026/audio_speech/tri-subspaces_disentanglement_for_multimodal_sentiment_analysis.md)
+- [\[AAAI 2026\] A Text-Routed Sparse Mixture-of-Experts Model with Explanation and Temporal Alignment for Multi-Modal Sentiment Analysis](text-routed_sparse_mixture-of-experts_model_with_explanation_and_temporal_alignm.md)
 - [\[AAAI 2026\] Cross-Space Synergy: A Unified Framework for Multimodal Emotion Recognition in Conversation](cross-space_synergy_a_unified_framework_for_multimodal_emotion_recognition_in_co.md)
 
 </div>

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] To address the challenge of high noise in 4K/8K videos captured by mobile phones under extreme low-light ($<1$lx) while meeting strict constraints of $<33$ms latency and $<250$mA power consumption, this Samsung paper presents an end-to-end engineering solution ranging from "Mixed Dataset Construction → Lightweight mRLF
+  [CVPR 2026][Image Generation][RAW Video Denoising] To address the challenge of high noise in 4K/8K videos captured by mobile phones under extreme low-light ($<1$lx) while meeting strict constraints of $<33$ms latency and $<250$mA power consumption, this Samsung paper presents an end-to-end engineering solution ranging from "Mixed Dataset Construction → Lightweight mRLFB Denoising Network → Distillation/Re-parameterization/Quantization Optimization." It develops a real-time de…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Generation"
+  - "RAW Video Denoising"
+  - "Extreme Low-Light"
+  - "Mobile Deployment"
+  - "Structural Re-parameterization"
+  - "Real-Time ISP"
 date: 2026-05-08
-content_hash: 2ff87e9a5fd29605
+content_hash: d894af8b06d29f58
 ---
+
 # Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices
 
 **Conference**: CVPR 2026  
@@ -137,11 +143,11 @@ Synthetic data ablation (Table 1): Set1 (56.97) / Set2 (56.53) / Set1+Set2 (58.0
 
 ## Related Papers
 
-- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
-- [\[CVPR 2026\] NEC-Diff: Noise-Robust Event–RAW Complementary Diffusion for Seeing Motion in Extreme Darkness](nec-diff_noise-robust_event-raw_complementary_diffusion_for_seeing_motion_in_ext.md)
-- [\[CVPR 2026\] Edit-aware RAW Reconstruction](edit-aware_raw_reconstruction.md)
-- [\[CVPR 2026\] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)
-- [\[CVPR 2026\] Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)
+- [\[CVPR 2026\] MERIT: Multi-domain Efficient RAW Image Translation](merit_multi-domain_efficient_raw_image_translation.md)
+- [\[CVPR 2026\] DreamStereo: Towards Real-Time Stereo Inpainting for HD Videos](dreamstereo_towards_real-time_stereo_inpainting_for_hd_videos.md)
+- [\[CVPR 2025\] MobilePortrait: Real-Time One-Shot Neural Head Avatars on Mobile Devices](../../CVPR2025/image_generation/mobileportrait_real-time_one-shot_neural_head_avatars_on_mobile_devices.md)
+- [\[CVPR 2026\] StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)
+- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
 
 </div>
 

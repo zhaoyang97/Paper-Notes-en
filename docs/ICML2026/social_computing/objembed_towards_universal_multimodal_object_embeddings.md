@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] ObjEmbed: Towards Universal Multimodal Object Embeddings
 description: >-
-  [ICML 2026][Social Computing][Paper Note] ObjEmbed trains a **universal object embedding model**—by aligning multimodal object representations through a combination of tasks including detection, segmentation, retrieval, captioning, and classification. A single embedding exceeds or matches task-specific SOTA across 11 tasks, such as OVD, OVS, Text2Image-Object,
+  [ICML 2026][Social Computing][Universal Object Embeddings] ObjEmbed trains a **universal object embedding model**—by aligning multimodal object representations through a combination of tasks including detection, segmentation, retrieval, captioning, and classification. A single embedding exceeds or matches task-specific SOTA across 11 tasks, such as OVD, OVS, Text2Image-Object, and Open-Caption-Eval.
 tags:
-  - ICML 2026
-  - Social Computing
+  - "ICML 2026"
+  - "Social Computing"
+  - "Universal Object Embeddings"
+  - "Multimodal Learning"
+  - "Object Retrieval"
+  - "Cross-task Representation"
 date: 2026-05-08
-content_hash: 1db8097276e20b08
+content_hash: 92fe0e16376a8859
 ---
+
 # ObjEmbed: Towards Universal Multimodal Object Embeddings
 
 **Conference**: ICML 2026  
@@ -145,8 +150,8 @@ Individual datasets naturally have task biases (e.g., COCO only has 80 categorie
 - [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](../../ACL2026/social_computing/the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
 - [\[ICML 2026\] IDO: Incongruity-Aware Distribution Optimization for Multimodal Fake News Detection](ido_incongruity-aware_distribution_optimization_for_multimodal_fake_news_detecti.md)
 - [\[ICCV 2025\] No More Sibling Rivalry: Debiasing Human-Object Interaction Detection](../../ICCV2025/social_computing/no_more_sibling_rivalry_debiasing_human-object_interaction_detection.md)
-- [\[ICLR 2026\] Functional Embeddings Enable Aggregation of Multi-Area SEEG Data for Robust BCI](../../ICLR2026/social_computing/functional_embeddings_enable_aggregation_of_multi-area_seeg_data_for_robust_bci.md)
 - [\[ACL 2026\] VeriTaS: The First Dynamic Benchmark for Multimodal Automated Fact-Checking](../../ACL2026/social_computing/veritas_the_first_dynamic_benchmark_for_multimodal_automated_fact-checking.md)
+- [\[ACL 2025\] Synergizing LLMs with Global Label Propagation for Multimodal Fake News Detection](../../ACL2025/social_computing/llm_label_propagation.md)
 
 </div>
 

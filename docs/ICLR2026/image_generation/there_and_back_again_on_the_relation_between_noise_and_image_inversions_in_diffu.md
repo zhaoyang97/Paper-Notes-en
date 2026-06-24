@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] There and Back Again: On the Relation between Noise and Image Inversions in Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] This work provides an in-depth analysis of the error mechanisms in DDIM inversion, discovering that latent encodings exhibit low diversity and high correlation in smooth image regions (e.g., sky). Tracing this to inaccurate noise predictions in the initial steps of inversion, the authors propose a simple fix by replaci
+  [ICLR 2026][Image Generation][DDIM Inversion] This work provides an in-depth analysis of the error mechanisms in DDIM inversion, discovering that latent encodings exhibit low diversity and high correlation in smooth image regions (e.g., sky). Tracing this to inaccurate noise predictions in the initial steps of inversion, the authors propose a simple fix by replacing the first few inversion steps with forward diffusion.
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "DDIM Inversion"
+  - "Latent Encoding"
+  - "Noise Correlation"
+  - "Smooth Regions"
+  - "Forward Diffusion Fix"
 date: 2026-05-08
-content_hash: dfb01db1596db7cc
+content_hash: 8c26631e58d41388
 ---
+
 # There and Back Again: On the Relation between Noise and Image Inversions in Diffusion Models
 
 **Conference**: ICLR 2026  

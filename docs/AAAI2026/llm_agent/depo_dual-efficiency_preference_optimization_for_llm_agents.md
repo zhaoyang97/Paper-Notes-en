@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DEPO: Dual-Efficiency Preference Optimization for LLM Agents
 description: >-
-  [AAAI 2026][LLM Agent][LLM Agent efficiency optimization] This paper proposes the concept of *dual-efficiency*, decomposing LLM agent efficiency into step-level (reducing tokens per step) and trajectory-level (reducing t…
+  [AAAI 2026][LLM Agent][LLM Agent efficiency optimization] This paper proposes the concept of *dual-efficiency*, decomposing LLM agent efficiency into step-level (reducing tokens per step) and trajectory-level (reducing total number of steps) dimensions. Building on KTO, the authors introduce DEPO, which jointly optimizes efficiency and task performance by incorporating an efficiency bonus into the reward for desirable samples.
 tags:
   - "AAAI 2026"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "dual-efficiency"
   - "reinforcement learning"
 date: 2026-05-08
-content_hash: 3a423b842869adee
+content_hash: 6b593aa150f92ae0
 ---
 
 # DEPO: Dual-Efficiency Preference Optimization for LLM Agents
@@ -172,10 +172,10 @@ The efficiency bonus design is transferable to other preference optimization fra
 ## Related Papers
 
 - [\[ACL 2026\] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization](../../ACL2026/llm_agent/lpo_towards_accurate_gui_agent_interaction_via_location_preference_optimization.md)
+- [\[ICLR 2026\] Dual-Scale World Memory for LLM Agents towards Hard-Exploration Problems](../../ICLR2026/llm_agent/dual-scale_world_memory_for_llm_agents_towards_hard-exploration_problems.md)
 - [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
 - [\[ACL 2026\] Verified Critical Step Optimization for LLM Agents](../../ACL2026/llm_agent/verified_critical_step_optimization_for_llm_agents.md)
-- [\[ICML 2026\] ReflexGrad: Within-Episode Failure Recovery in LLM Agents via Progress-Gated Dual-Process Routing](../../ICML2026/llm_agent/reflexgrad_within-episode_failure_recovery_in_llm_agents_via_progress-gated_dual.md)
-- [\[ICLR 2026\] Exploratory Memory-Augmented LLM Agent via Hybrid On- and Off-Policy Optimization](../../ICLR2026/llm_agent/exploratory_memory-augmented_llm_agent_via_hybrid_on-_and_off-policy_optimizatio.md)
+- [\[ICML 2026\] Self-evolving LLM agents with in-distribution Optimization](../../ICML2026/llm_agent/self-evolving_llm_agents_with_in-distribution_optimization.md)
 
 </div>
 

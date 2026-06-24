@@ -1,17 +1,20 @@
 ---
 title: >-
-  [Paper Note] T3S: 训练轨迹感知的 token 选择，破解推理蒸馏的「Imitation Shock」
+  [Paper Note] T3S: Training Trajectory-Aware Token Selection, Breaking the "Imitation Shock" in Reasoning Distillation
 description: >-
-  [ICML 2026][Model Compression][Imitation Shock] This paper discovers a universal "Imitation Shock" when a strong student (e.g., Qwen3-8B) is distilled from DeepSeek-R1—where loss decreases monotonically, but accuracy first plunges before recovering. The root cause is that "Imitation-Anchor Tokens" dominate optimization in early stages, suppressing the tokens truly r
+  [ICML 2026][Model Compression][Reasoning Distillation] This paper discovers a universal "Imitation Shock" when a strong student (e.g., Qwen3-8B) is distilled from DeepSeek-R1—where loss decreases monotonically, but accuracy first plunges before recovering. The root cause is that "Imitation-Anchor Tokens" dominate optimization in early stages, suppressing the tokens truly responsible for reasoning. T3S identifies anchor tokens via training trajectories and masks them…
 tags:
-  - ICML 2026
-  - Model Compression
-  - Imitation Shock
-  - anchor token
-  - AR + dLLM
+  - "ICML 2026"
+  - "Model Compression"
+  - "Reasoning Distillation"
+  - "Imitation Shock"
+  - "anchor token"
+  - "training trajectory"
+  - "AR + dLLM"
 date: 2026-05-08
-content_hash: 7ecfed2ecb30edbb
+content_hash: b6e0eb11f1ef2479
 ---
+
 # T3S: Training Trajectory-Aware Token Selection, Breaking the "Imitation Shock" in Reasoning Distillation
 
 **Conference**: ICML 2026  
@@ -134,16 +137,16 @@ T3S improves average performance by +14 points over standard SFT (BOBA-200). The
 - **Value**: ⭐⭐⭐⭐⭐ (Directly applicable to LLM distillation practitioners).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] π-Flow: Policy-Based Few-Step Generation via Imitation Distillation](../../ICLR2026/model_compression/pi-flow_policy-based_few-step_generation_via_imitation_distillation.md)
 - [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
-- [\[ICLR 2026\] Parallel Token Prediction for Language Models](../../ICLR2026/model_compression/parallel_token_prediction_for_language_models.md)
-- [\[ICML 2025\] OrthoRank: Token Selection via Sink Token Orthogonality for Efficient LLM Inference](../../ICML2025/model_compression/orthorank_token_selection_via_sink_token_orthogonality_for_efficient_llm_inferen.md)
-- [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](../../CVPR2026/model_compression/selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
+- [\[ICML 2026\] ToaSt: Token Channel Selection and Structured Pruning for Efficient ViT](toast_token_channel_selection_and_structured_pruning_for_efficient_vit.md)
+- [\[ICLR 2026\] Towards Quantization-Aware Training for Ultra-Low-Bit Reasoning LLMs](../../ICLR2026/model_compression/towards_quantization-aware_training_for_ultra-low-bit_reasoning_llms.md)
+- [\[ICML 2026\] Critique-Guided Distillation for Robust Reasoning via Refinement](critique-guided_distillation_for_robust_reasoning_via_refinement.md)
+- [\[ICML 2026\] ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training](reqat_achieving_full-precision_reasoning_accuracy_with_4-bit_floating-point_quan.md)
 
 </div>
 

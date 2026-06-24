@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EnergyAction: Unimanual to Bimanual Composition with Energy-Based Models
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Flow Matching] Two pre-trained unimanual policies are treated as energy functions and "composed" into a bimanual policy via energy summation. Spatiotemporal coordination is ensured through energy constraints, and an energy-aware adaptive denoising scheme determines the number of steps. This achieves coordinated bimanual manipulation
+  [CVPR 2026][Robotics][Bimanual Manipulation] Two pre-trained unimanual policies are treated as energy functions and "composed" into a bimanual policy via energy summation. Spatiotemporal coordination is ensured through energy constraints, and an energy-aware adaptive denoising scheme determines the number of steps. This achieves coordinated bimanual manipulation with minimal dual-arm demonstration data (77.3% success rate on RLBench2 with only 20 demonstrations…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "CVPR 2026"
+  - "Robotics"
+  - "Bimanual Manipulation"
+  - "Energy-Based Models (EBM)"
+  - "Compositional Transfer"
+  - "Flow Matching"
+  - "Adaptive Denoising"
 date: 2026-05-08
-content_hash: 530a54e3076b8b36
+content_hash: 6e59f1cac2c35335
 ---
+
 # EnergyAction: Unimanual to Bimanual Composition with Energy-Based Models
 
 **Conference**: CVPR 2026  
@@ -145,11 +150,11 @@ Stepwise removal of the three energy components (E-Compose / E-Temporal / E-Spat
 
 ## Related Papers
 
-- [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
 - [\[ICCV 2025\] AnyBimanual: Transferring Unimanual Policy for General Bimanual Manipulation](../../ICCV2025/robotics/anybimanual_transferring_unimanual_policy_for_general_bimanual_manipulation.md)
+- [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
 - [\[CVPR 2026\] ActiveGrasp: Information-Guided Active Grasping with Calibrated Energy-based Model](activegrasp_information-guided_active_grasping_with_calibrated_energy-based_mode.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 - [\[CVPR 2026\] BiPreManip: Learning Affordance-Based Bimanual Preparatory Manipulation through Anticipatory Collaboration](bipremanip_learning_affordance-based_bimanual_preparatory_manipulation_through_a.md)
+- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 
 </div>
 

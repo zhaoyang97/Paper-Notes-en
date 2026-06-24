@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography
 description: >-
-  [ICCV 2025][Multimodal VLM][camera trajectory generation] This paper introduces the DataDoP dataset (29K free-moving camera trajectories with descriptions extracted from real films) and the GenDoP auto-regressive Transfo…
+  [ICCV 2025][Multimodal VLM][camera trajectory generation] This paper introduces the DataDoP dataset (29K free-moving camera trajectories with descriptions extracted from real films) and the GenDoP auto-regressive Transformer model, which generates artistic, high-quality camera motion trajectories conditioned on text and/or RGBD input, outperforming existing methods in controllability, motion smoothness, and complexity.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "multimodal conditional generation"
   - "dataset construction"
 date: 2026-05-08
-content_hash: c9f04895630e05ac
+content_hash: 948faa59a0020852
 ---
 
 # GenDoP: Auto-regressive Camera Trajectory Generation as a Director of Photography
@@ -147,11 +147,11 @@ Hyperparameter ablations indicate that 256 discrete bins, trajectory length 30, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Self-Consistency for LLM-Based Motion Trajectory Generation and Verification](../../CVPR2026/multimodal_vlm/self-consistency_for_llm-based_motion_trajectory_generation_and_verification.md)
+- [\[CVPR 2026\] OneCAT: Decoder-Only Auto-Regressive Model for Unified Understanding and Generation](../../CVPR2026/multimodal_vlm/onecat_decoder-only_auto-regressive_model_for_unified_understanding_and_generati.md)
+- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](../../ICLR2026/multimodal_vlm/thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
 - [\[ICCV 2025\] MetaMorph: Multimodal Understanding and Generation via Instruction Tuning](metamorph_multimodal_understanding_and_generation_via_instruction_tuning.md)
+- [\[ICML 2025\] Universal Retrieval for Multimodal Trajectory Modeling](../../ICML2025/multimodal_vlm/universal_retrieval_for_multimodal_trajectory_modeling.md)
 - [\[ICCV 2025\] Harmonizing Visual Representations for Unified Multimodal Understanding and Generation](harmonizing_visual_representations_for_unified_multimodal_un.md)
-- [\[ICCV 2025\] AutoComPose: Automatic Generation of Pose Transition Descriptions for Composed Pose Retrieval Using Multimodal LLMs](autocompose_automatic_generation_of_pose_transition_descriptions_for_composed_po.md)
-- [\[ICCV 2025\] DWIM: Towards Tool-aware Visual Reasoning via Discrepancy-aware Workflow Generation & Instruct-Masking Tuning](dwim_towards_tool-aware_visual_reasoning_via_discrepancy-aware_workflow_generati.md)
 
 </div>
 

@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision
 description: >-
-  [CVPR 2026][LLM Safety][Deepfake Detection] The DeepfakeJudge framework is proposed to scale human-annotated reasoning supervision into large-scale structured scoring data via a bootstrapped generator-evaluator process. This trains 3B/7B vision-language models as automatic judges for the quality of deepfake detection reasoning, achieving high alignment with huma
+  [CVPR 2026][Multimodal VLM][Deepfake Detection] The DeepfakeJudge framework is proposed to scale human-annotated reasoning supervision into large-scale structured scoring data via a bootstrapped generator-evaluator process. This trains 3B/7B vision-language models as automatic judges for the quality of deepfake detection reasoning, achieving high alignment with human judgment in both pointwise and pairwise evaluations.
 tags:
-  - CVPR 2026
-  - LLM Safety
-  - Deepfake Detection
-  - Reasoning Supervision
-  - MLLM-as-a-Judge
-  - Visual Forensics
-  - Bootstrapping
-  - VLM Evaluation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Deepfake Detection"
+  - "Reasoning Supervision"
+  - "MLLM-as-a-Judge"
+  - "Visual Forensics"
+  - "Bootstrapping"
+  - "VLM Evaluation"
 date: 2026-05-08
-content_hash: 4198eec1d6948747
+content_hash: 9037ac9c42a94709
 ---
+
 # Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision
 
 **Conference**: CVPR 2026  
@@ -152,15 +153,13 @@ where $t_{i,j}$ is the $j$-th token of the target sequence for the $i$-th sample
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICLR 2026\] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning](../../ICLR2026/llm_safety/veritas_generalizable_deepfake_detection_via_pattern-aware_reasoning.md)
-- [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](../../ICML2026/llm_safety/prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
-- [\[ICML 2026\] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning](../../ICML2026/llm_safety/tcap_tri-component_attention_profiling_for_unsupervised_backdoor_detection_in_ml.md)
-- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
-- [\[ICML 2025\] Unlocking the Capabilities of Large Vision-Language Models for Generalizable and Explainable Deepfake Detection](../../ICML2025/llm_safety/unlocking_the_capabilities_of_large_vision-language_models_for_generalizable_and.md)
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
+- [\[ICLR 2026\] Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition](../../ICLR2026/multimodal_vlm/zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md)
+- [\[CVPR 2026\] Beyond Weak Supervision: MLLMs-Guided Graded Knowledge Distillation for Unsupervised Camouflaged Object Detection](beyond_weak_supervision_mllms-guided_graded_knowledge_distillation_for_unsupervi.md)
+- [\[ICCV 2025\] Calibrating MLLM-as-a-Judge via Multimodal Bayesian Prompt Ensembles](../../ICCV2025/multimodal_vlm/calibrating_mllm-as-a-judge_via_multimodal_bayesian_prompt_ensembles.md)
+- [\[ICML 2026\] Mitigating Manifold Departure: Uncertainty-Aware Subspace Rectification for Trustworthy MLLM Decoding](../../ICML2026/multimodal_vlm/mitigating_manifold_departure_uncertainty-aware_subspace_rectification_for_trust.md)
 
 </div>
 

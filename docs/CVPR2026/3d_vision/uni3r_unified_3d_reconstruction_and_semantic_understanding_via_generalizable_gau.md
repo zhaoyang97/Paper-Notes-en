@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images
 description: >-
-  [CVPR 2026][3D Vision][VGGT] Uni3R utilizes a VGGT-style Cross-View Transformer to perform a single feed-forward prediction of 3D Gaussians with semantic features from an arbitrary number of unposed multi-view images. It achieves novel view synthesis, open-vocabulary 3D segmentation, and depth estimation simultaneously in 0.15 seconds, setting new
+  [CVPR 2026][3D Vision][3D Gaussian Splatting] Uni3R utilizes a VGGT-style Cross-View Transformer to perform a single feed-forward prediction of 3D Gaussians with semantic features from an arbitrary number of unposed multi-view images. It achieves novel view synthesis, open-vocabulary 3D segmentation, and depth estimation simultaneously in 0.15 seconds, setting new SOTAs on multiple benchmarks including RE10K and ScanNet.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VGGT
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "feed-forward reconstruction"
+  - "open-vocabulary semantics"
+  - "unposed multi-view"
+  - "VGGT"
 date: 2026-05-08
-content_hash: 9dc35de963b3b02f
+content_hash: 11f49a2cab821634
 ---
+
 # Uni3R: Unified 3D Reconstruction and Semantic Understanding via Generalizable Gaussian Splatting from Unposed Multi-View Images
 
 **Conference**: CVPR 2026  
@@ -161,14 +166,13 @@ Impact of components on ScanNet (Tab. 7):
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)
+- [\[CVPR 2026\] Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](learning_3d_representations_for_spatial_intelligence_from_unposed_multi-view_ima.md)
 - [\[CVPR 2026\] BRepGaussian: CAD Reconstruction from Multi-View Images with Gaussian Splatting](brepgaussian_cad_reconstruction_from_multi-view_images_with_gaussian_splatting.md)
 - [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
-- [\[CVPR 2026\] UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](unisplat_3d_representations_unposed.md)
+- [\[CVPR 2026\] Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](3d_gaussian_splatting_from_unposed_spike_stream.md)
 - [\[CVPR 2026\] EcoSplat: Efficiency-controllable Feed-forward 3D Gaussian Splatting from Multi-view Images](ecosplat_efficiency-controllable_feed-forward_3d_gaussian_splatting_from_multi-v.md)
 
 </div>

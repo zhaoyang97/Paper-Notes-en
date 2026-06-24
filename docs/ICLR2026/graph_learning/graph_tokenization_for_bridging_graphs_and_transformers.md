@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Graph Tokenization for Bridging Graphs and Transformers
 description: >-
-  [ICLR 2026][Graph Learning][graph tokenization] The GraphTokenizer framework is proposed to convert graphs into symbolic sequences through reversible frequency-guided serialization, followed by BPE to learn a graph substructure vocabulary. This allows standard Transformers (e.g., BERT/GTE) to process graph data directly without architectural modifications, achieving
+  [ICLR 2026][Graph Learning][graph tokenization] The GraphTokenizer framework is proposed to convert graphs into symbolic sequences through reversible frequency-guided serialization, followed by BPE to learn a graph substructure vocabulary. This allows standard Transformers (e.g., BERT/GTE) to process graph data directly without architectural modifications, achieving SOTA results across 14 benchmarks.
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - graph tokenization
-  - BPE
-  - graph serialization
-  - Transformer
-  - graph classification
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "graph tokenization"
+  - "BPE"
+  - "graph serialization"
+  - "Transformer"
+  - "graph classification"
 date: 2026-05-08
-content_hash: 0a414f4ab6da6ac9
+content_hash: 48517f18b1e3c977
 ---
+
 # Graph Tokenization for Bridging Graphs and Transformers
 
 **Conference**: ICLR 2026  
@@ -144,10 +145,10 @@ GT+GTE achieves SOTA on most of the 14 benchmarks using standard off-the-shelf T
 ## Related Papers
 
 - [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](bridging_input_feature_spaces_towards_graph_foundation_models.md)
-- [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](../../AAAI2026/graph_learning/gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
 - [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
 - [\[ACL 2025\] Multimodal Transformers are Hierarchical Modal-wise Heterogeneous Graphs](../../ACL2025/graph_learning/multimodal_transformers_are_hierarchical_modal-wise_heterogeneous_graphs.md)
-- [\[ICML 2026\] What Structural Inductive Bias Helps Transformers Reason Over Knowledge Graphs? A Study with Tabula RASA](../../ICML2026/graph_learning/what_structural_inductive_bias_helps_transformers_reason_over_knowledge_graphs_a.md)
+- [\[AAAI 2026\] GT-SNT: A Linear-Time Transformer for Large-Scale Graphs via Spiking Node Tokenization](../../AAAI2026/graph_learning/gt-snt_a_linear-time_transformer_for_large-scale_graphs_via_spiking_node_tokeniz.md)
+- [\[ICLR 2026\] Si-GT: Fast Interconnect Signal Integrity Analysis for Integrated Circuit Design via Graph Transformers](si-gt_fast_interconnect_signal_integrity_analysis_for_integrated_circuit_design_.md)
 
 </div>
 

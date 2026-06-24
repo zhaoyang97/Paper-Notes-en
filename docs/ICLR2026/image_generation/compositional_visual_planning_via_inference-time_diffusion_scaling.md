@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Compositional Visual Planning via Inference-Time Diffusion Scaling
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] The authors freeze a pre-trained short-horizon video diffusion model and, at **inference time**, reformulate long-horizon planning as a chain-like factor graph of overlapping video segments. By performing synchronous and asynchronous message passing on **Tweedie clean estimates** (rather than noisy intermediate states)
+  [ICLR2026][Image Generation][Visual Planning] The authors freeze a pre-trained short-horizon video diffusion model and, at **inference time**, reformulate long-horizon planning as a chain-like factor graph of overlapping video segments. By performing synchronous and asynchronous message passing on **Tweedie clean estimates** (rather than noisy intermediate states) to enforce boundary consistency, they stitch short segments into globally coherent robotic manipulation plans wit…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Visual Planning"
+  - "Compositional Diffusion"
+  - "Factor Graphs"
+  - "Message Passing"
+  - "Inference-time Guidance"
 date: 2026-05-08
-content_hash: 07f7e89b6abbc74a
+content_hash: a9081d5391aa9274
 ---
+
 # Compositional Visual Planning via Inference-Time Diffusion Scaling
 
 **Conference**: ICLR2026  
@@ -154,8 +160,8 @@ Real-world robot (Franka Panda, 10 trials/task): Ours achieved IND 9/10, 7/10 an
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 - [\[ICLR 2026\] Self-Improving Loops for Visual Robotic Planning](self-improving_loops_for_visual_robotic_planning.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
 - [\[ICLR 2026\] Compositional amortized inference for large-scale hierarchical Bayesian models](compositional_amortized_inference_for_large-scale_hierarchical_bayesian_models.md)
-- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
 
 </div>
 

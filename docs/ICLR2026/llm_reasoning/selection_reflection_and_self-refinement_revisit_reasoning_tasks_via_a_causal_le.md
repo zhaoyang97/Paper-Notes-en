@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] This paper interprets reasoning tasks such as Sudoku, Maze, and ARC as latent variable constraint satisfaction problems under a causal selection mechanism. It proposes SR2, which iteratively corrects latent representations via reflective representation learning, dependency self-refinement, and periodic intermediate ali
+  [ICLR 2026][Reasoning][Causal Selection Mechanism] This paper interprets reasoning tasks such as Sudoku, Maze, and ARC as latent variable constraint satisfaction problems under a causal selection mechanism. It proposes SR2, which iteratively corrects latent representations via reflective representation learning, dependency self-refinement, and periodic intermediate alignment, significantly improving structured reasoning accuracy with fewer parameters.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Causal Selection Mechanism"
+  - "Latent Variable Reasoning"
+  - "Recurrent Transformer"
+  - "Self-Refinement"
+  - "Constraint Satisfaction"
 date: 2026-05-08
-content_hash: e39e8e670821223c
+content_hash: 460036a829a7bce2
 ---
+
 # Selection, Reflection and Self-Refinement: Revisit Reasoning Tasks via a Causal Lens
 
 **Conference**: ICLR 2026  
@@ -159,8 +165,21 @@ In terms of efficiency, SR2 is slower than direct prediction due to periodic ali
 - Value: ⭐⭐⭐⭐⭐ Clearly articulates that "reasoning is not answer fitting, but latent constraint coordination," providing significant reference value for future latent reasoning, test-time compute, and small-parameter reasoning models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ICLR 2026\] Plan-Answer-Refine-on-Graph: Structured Planning and Self-Refinement for Large Language Model Reasoning on Knowledge Graphs](plan-answer-refine-on-graph_structured_planning_and_self-refinement_for_large_la.md)
+- [\[ICLR 2026\] A Stitch in Time Saves Nine: Proactive Self-Refinement for Language Models](a_stitch_in_time_saves_nine_proactive_self-refinement_for_language_models.md)
+- [\[ICLR 2026\] Semantic Voting: A Self-Evaluation-Free Approach for Efficient LLM Self-Improvement on Unverifiable Open-ended Tasks](semantic_voting_a_self-evaluation-free_approach_for_efficient_llm_self-improveme.md)
+- [\[ACL 2025\] Self-Correction is More than Refinement: A Learning Framework for Visual and Language Reasoning Tasks](../../ACL2025/llm_reasoning/self-correction_is_more_than_refinement_a_learning_framework_for_visual_and_lang.md)
+- [\[ICLR 2026\] Rectifying LLM Thought from Lens of Optimization](rectifying_llm_thought_from_lens_of_optimization.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

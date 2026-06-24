@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] Ours proposes the NUFILT framework, which leverages the geometric property that "task vectors approximately align with representation subspaces." By using null-space filtering to suppress interference to old tasks and projection-aware LoRA to restore plasticity for new tasks, NUFILT achieves continual model merging wit
+  [ICLR 2026][Model Compression][Model Merging] Ours proposes the NUFILT framework, which leverages the geometric property that "task vectors approximately align with representation subspaces." By using null-space filtering to suppress interference to old tasks and projection-aware LoRA to restore plasticity for new tasks, NUFILT achieves continual model merging without any data access. It outperforms OPCM by 4-8% across vision, NLP, and multimodal benchmarks…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Model Merging"
+  - "Continual Learning"
+  - "Null-Space Projection"
+  - "Stability-Plasticity"
+  - "Data-Free"
 date: 2026-05-08
-content_hash: 067d29d2b4c7254b
+content_hash: da0b12a3364a07bd
 ---
+
 # Null-Space Filtering for Data-Free Continual Model Merging: Preserving Stability, Promoting Plasticity
 
 **Conference**: ICLR 2026  
@@ -146,8 +152,8 @@ NUFILT reaches 83.6% ACC on ViT-B/32 (8 tasks), 8.1% higher than OPCM. On ViT-L/
 - [\[NeurIPS 2025\] Mingle: Mixture of Null-Space Gated Low-Rank Experts for Test-Time Continual Model Merging](../../NeurIPS2025/model_compression/mingle_mixture_of_null-space_gated_low-rank_experts_for_test-time_continual_mode.md)
 - [\[NeurIPS 2025\] Weight Weaving: Parameter Pooling for Data-Free Model Merging](../../NeurIPS2025/model_compression/weight_weaving_parameter_pooling_for_data-free_model_merging.md)
 - [\[ICML 2025\] Rethinking the Stability-Plasticity Trade-off in Continual Learning from an Architectural Perspective](../../ICML2025/model_compression/rethinking_the_stability-plasticity_trade-off_in_continual_learning_from_an_arch.md)
+- [\[ICLR 2026\] LS-Merge: Merging Language Models in Latent Space](ls-merge_merging_language_models_in_latent_space.md)
 - [\[ICLR 2026\] MergOPT: A Merge-Aware Optimizer for Robust Model Merging](mergopt_a_merge-aware_optimizer_for_robust_model_merging.md)
-- [\[ICLR 2026\] AdaRank: Adaptive Rank Pruning for Enhanced Model Merging](adarank_adaptive_rank_pruning_for_enhanced_model_merging.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Learning with Preserving for Continual Multitask Learning
 description: >-
-  [AAAI 2026][Medical Imaging][Continual Multitask Learning] This paper proposes the Learning with Preserving (LwP) framework, which maintains the geometric structure of the shared representation space via a Dynamically We…
+  [AAAI 2026][Medical Imaging][Continual Multitask Learning] This paper proposes the Learning with Preserving (LwP) framework, which maintains the geometric structure of the shared representation space via a Dynamically Weighted Distance Preserving (DWDP) loss. Without requiring a replay buffer, LwP addresses catastrophic forgetting in Continual Multitask Learning (CMTL) and significantly outperforms existing continual learning methods on benchmarks including BDD100k, CelebA…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Catastrophic Forgetting"
   - "Replay-Free"
 date: 2026-05-08
-content_hash: 414e84d674bf7976
+content_hash: 21c8ddccc73bcbcb
 ---
 
 # Learning with Preserving for Continual Multitask Learning
@@ -132,10 +132,10 @@ The total loss is $\mathcal{L}_{lwp} = \lambda_c \mathcal{L}_{cur} + \lambda_o \
 ## Related Papers
 
 - [\[ICML 2026\] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning](../../ICML2026/medical_imaging/dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning.md)
+- [\[CVPR 2026\] Forging a Dynamic Memory: Retrieval-Guided Continual Learning for Generalist Medical Foundation Models](../../CVPR2026/medical_imaging/forging_a_dynamic_memory_retrieval-guided_continual_learning_for_generalist_medi.md)
+- [\[CVPR 2026\] InvCoSS: Inversion-driven Continual Self-supervised Learning in Medical Multi-modal Image Pre-training](../../CVPR2026/medical_imaging/invcoss_inversion-driven_continual_self-supervised_learning_in_medical_multi-mod.md)
 - [\[NeurIPS 2025\] EWC-Guided Diffusion Replay for Exemplar-Free Continual Learning in Medical Imaging](../../NeurIPS2025/medical_imaging/ewc-guided_diffusion_replay_for_exemplar-free_continual_learning_in_medical_imag.md)
 - [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
-- [\[AAAI 2026\] Radiation-Preserving Selective Imaging for Pediatric Hip Dysplasia: A Cross-Modal Approach](radiation-preserving_selective_imaging_for_pediatric_hip_dysplasia_a_cross-modal.md)
-- [\[AAAI 2026\] Multivariate Gaussian Representation Learning for Medical Action Evaluation](multivariate_gaussian_representation_learning_for_medical_action_evaluation.md)
 
 </div>
 

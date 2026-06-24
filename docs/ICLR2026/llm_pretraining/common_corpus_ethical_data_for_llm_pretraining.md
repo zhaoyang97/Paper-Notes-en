@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training
 description: >-
-  [ICLR 2026][Pretraining][pre-training data] Establishment of Common Corpus—the largest legally authorized LLM pre-training dataset with approximately 2 trillion tokens. It covers 6 major collections (Government, Culture, Science, Code, Web, Semantic) across multiple languages (including low-resource languages). All data originates from public domain or permissiv
+  [ICLR 2026 Oral][LLM Pretraining][pre-training data] Establishment of Common Corpus—the largest legally authorized LLM pre-training dataset with approximately 2 trillion tokens. It covers 6 major collections (Government, Culture, Science, Code, Web, Semantic) across multiple languages (including low-resource languages). All data originates from public domain or permissively licensed sources, featuring complete data provenance and a multi-stage filtering pipeline. It has alrea…
 tags:
-  - ICLR 2026
-  - Pretraining
-  - pre-training data
-  - ethical data
-  - open data
-  - multilingual
-  - data curation
-  - copyright
+  - "ICLR 2026 Oral"
+  - "LLM Pretraining"
+  - "pre-training data"
+  - "ethical data"
+  - "open data"
+  - "multilingual"
+  - "data curation"
+  - "copyright"
+  - "AI legislation"
 date: 2026-05-08
-content_hash: f51b18230856d01a
+content_hash: 7999e0905dea3107
 ---
+
 # Common Corpus: The Largest Collection of Ethical Data for LLM Pre-Training
 
 **Conference**: ICLR 2026 Oral  
@@ -152,8 +154,8 @@ Ours is the only dataset that simultaneously meets the criteria of "trillion-sca
 
 - [\[ICLR 2026\] Rewriting Pre-training Data Boosts LLM Performance in Math and Code](rewriting_pre-training_data_boosts_llm_performance_in_math_and_code.md)
 - [\[ACL 2026\] Demystifying Data Organization for Enhanced LLM Training](../../ACL2026/llm_pretraining/demystifying_data_organization_for_enhanced_llm_training.md)
+- [\[ICLR 2026\] Rethinking Data Curation in LLM Training: Online Reweighting Offers Better Generalization than Offline Methods](rethinking_data_curation_in_llm_training_online_reweighting_offers_better_genera.md)
 - [\[ICLR 2026\] Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning](pre-training_llm_without_learning_rate_decay_enhances_supervised_fine-tuning.md)
-- [\[ICLR 2026\] Late-to-Early Training: 让 LLM 更早学到后期知识，从而更快更好](late-to-early_training_let_llms_learn_earlier_so_faster_and_better.md)
 - [\[ICLR 2026\] Token-level Data Selection for Safe LLM Fine-tuning](token-level_data_selection_for_safe_llm_fine-tuning.md)
 
 </div>

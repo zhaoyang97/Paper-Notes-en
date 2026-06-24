@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models
 description: >-
-  [Multimodal VLM] This paper proposes FT-NCFM, a framework that evaluates sample utility via causal attribution (Fact-Tracing) and guides an adversarial NCFM process to synthesize high-information-density coresets. Using…
+  [Multimodal VLM] This paper proposes FT-NCFM, a framework that evaluates sample utility via causal attribution (Fact-Tracing) and guides an adversarial NCFM process to synthesize high-information-density coresets. Using only 5% synthetic data, it achieves 85–90% of full-data training performance while reducing training time by over 80%.
 tags:
   - "Multimodal VLM"
 date: 2026-05-08
-content_hash: b16a9eb9cf16da82
+content_hash: 2174d41c9f0c1070
 ---
 
 # FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models
@@ -172,7 +172,7 @@ The contrastive verification module contributes +0.30; the FT engine as a whole 
 - [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](../../ICLR2026/multimodal_vlm/webds_an_end-to-end_benchmark_for_web-based_data_science.md)
 - [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](../../ICLR2026/multimodal_vlm/why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
-- [\[ICCV 2025\] Physics Context Builders: A Modular Framework for Physical Reasoning in Vision-Language Models](../../ICCV2025/multimodal_vlm/physics_context_builders_a_modular_framework_for_physical_reasoning_in_vision-la.md)
+- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
 - [\[ICCV 2025\] SCAN: Bootstrapping Contrastive Pre-training for Data Efficiency](../../ICCV2025/multimodal_vlm/scan_bootstrapping_contrastive_pre-training_for_data_efficiency.md)
 
 </div>

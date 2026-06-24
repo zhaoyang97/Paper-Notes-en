@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval
 description: >-
-  [ICLR 2026][Anomaly Detection][Zero-Shot Anomaly Detection] MRAD replaces the parametric fitting of $p(y|x)$ in mainstream ZSAD with "similarity retrieval from a feature-label memory bank." The training-free version suppresses WinCLIP, and combined with two linear fine-tuning layers and dynamic prompts injected with regional priors, it achieves SOTA across 16 industrial and med
+  [ICLR 2026][Anomaly Detection][Zero-Shot Anomaly Detection] MRAD replaces the parametric fitting of $p(y|x)$ in mainstream ZSAD with "similarity retrieval from a feature-label memory bank." The training-free version suppresses WinCLIP, and combined with two linear fine-tuning layers and dynamic prompts injected with regional priors, it achieves SOTA across 16 industrial and medical datasets.
 tags:
-  - ICLR 2026
-  - Anomaly Detection
-  - Zero-Shot Anomaly Detection
-  - Memory Bank
-  - Feature Retrieval
-  - CLIP
-  - Prompt Learning
+  - "ICLR 2026"
+  - "Anomaly Detection"
+  - "Zero-Shot Anomaly Detection"
+  - "Memory Bank"
+  - "Feature Retrieval"
+  - "CLIP"
+  - "Prompt Learning"
 date: 2026-05-08
-content_hash: c2118a560c28960e
+content_hash: a9b3bba0ec63f0fe
 ---
+
 # MRAD: Zero-Shot Anomaly Detection with Memory-Driven Retrieval
 
 **Conference**: ICLR 2026  

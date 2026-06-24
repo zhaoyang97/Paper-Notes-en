@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention
 description: >-
-  [NeurIPS 2025][Segmentation][Egocentric video segmentation] This paper proposes CERES, a framework that addresses language bias and visual confusion in egocentric referring video object segmentation (Ego-RVOS) via dual-m…
+  [NeurIPS 2025][Segmentation][Egocentric video segmentation] This paper proposes CERES, a framework that addresses language bias and visual confusion in egocentric referring video object segmentation (Ego-RVOS) via dual-modal causal intervention — language backdoor adjustment to eliminate dataset statistical bias, and depth-guided visual frontdoor adjustment to construct causal mediators — achieving SOTA on VISOR/VOST/VSCOS.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "frontdoor adjustment"
   - "depth guidance"
 date: 2026-05-08
-content_hash: fbdeebec933a7c2f
+content_hash: c989544d08210039
 ---
 
 # Robust Egocentric Referring Video Object Segmentation via Dual-Modal Causal Intervention
@@ -138,11 +138,11 @@ The overall loss employs standard segmentation objectives. During training, auxi
 
 ## Related Papers
 
-- [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](../../ICCV2025/segmentation/referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
+- [\[ECCV 2024\] CoLA: Conditional Dropout and Language-Driven Robust Dual-Modal Salient Object Detection](../../ECCV2024/segmentation/cola_conditional_dropout_and_language-driven_robust_dual-modal_salient_object_de.md)
 - [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
+- [\[ICCV 2025\] ReferDINO: Referring Video Object Segmentation with Visual Grounding Foundations](../../ICCV2025/segmentation/referdino_referring_video_object_segmentation_with_visual_grounding_foundations.md)
 - [\[NeurIPS 2025\] OmniSegmentor: A Flexible Multi-Modal Learning Framework for Semantic Segmentation](omnisegmentor_a_flexible_multi-modal_learning_framework_for_semantic_segmentatio.md)
-- [\[CVPR 2026\] Weakly-Supervised Referring Video Object Segmentation through Text Supervision](../../CVPR2026/segmentation/wsrvos_weakly_supervised_rvos.md)
-- [\[NeurIPS 2025\] Towards Robust Pseudo-Label Learning in Semantic Segmentation: An Encoding Perspective](towards_robust_pseudo-label_learning_in_semantic_segmentation_an_encoding_perspe.md)
+- [\[NeurIPS 2025\] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation](safire_saccade-fixation_reiteration_with_mamba_for_referring_image_segmentation.md)
 
 </div>
 

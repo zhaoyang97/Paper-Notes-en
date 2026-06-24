@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Pico-Banana-400K: A Large-Scale Dataset for Text-Guided Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] The authors utilized Nano-Banana (Gemini-2.5-Flash-Image) to batch-generate approximately 400,000 instruction-based image editing samples on real photos from OpenImages. Using Gemini-2.5-Pro for automated quality inspection, they constructed Pico-Banana-400K, an open-source dataset covering 35 editing types that suppor
+  [CVPR 2026][Image Generation][Instruction-based Image Editing] The authors utilized Nano-Banana (Gemini-2.5-Flash-Image) to batch-generate approximately 400,000 instruction-based image editing samples on real photos from OpenImages. Using Gemini-2.5-Pro for automated quality inspection, they constructed Pico-Banana-400K, an open-source dataset covering 35 editing types that supports single-turn SFT, preference learning, and multi-turn editing research.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Instruction-based Image Editing"
+  - "Synthetic Dataset"
+  - "MLLM Evaluation"
+  - "Preference Pairs"
+  - "Multi-turn Editing"
 date: 2026-05-08
-content_hash: 8a1954d134f4097c
+content_hash: b0063eb0b02a8b7c
 ---
+
 # Pico-Banana-400K: A Large-Scale Dataset for Text-Guided Image Editing
 
 **Conference**: CVPR 2026  
@@ -122,13 +128,14 @@ The pass rate determined by Gemini-2.5-Pro indicates a clear trend: **Global app
 - **Value**: ⭐⭐⭐⭐⭐ A large-scale, real-photo, commercially usable open-source dataset with preference and multi-turn subsets is a significant infrastructure contribution to the instruction editing community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] StyleText: A Large-Scale Dataset and Benchmark for Stylized Scene Text Inpainting](styletext_a_large-scale_dataset_and_benchmark_for_stylized_scene_text_inpainting.md)
-- [\[CVPR 2026\] 4KLSDB: A Large-Scale Dataset for 4K Image Restoration and Generation](4klsdb_a_large-scale_dataset_for_4k_image_restoration_and_generation.md)
+- [\[CVPR 2026\] VINS-120K: Ultra High-Resolution Image Editing with A Large-Scale Dataset](vins-120k_ultra_high-resolution_image_editing_with_a_large-scale_dataset.md)
 - [\[CVPR 2026\] CG-Floor: Centroid-Guided Diffusion for Large-Scale Floorplan Generation](cg-floor_centroid-guided_diffusion_for_large-scale_floorplan_generation.md)
+- [\[CVPR 2026\] UnicEdit-10M: A Dataset and Benchmark Breaking the Scale-Quality Barrier via Unified Verification for Reasoning-Enriched Edits](unicedit-10m_a_dataset_and_benchmark_breaking_the_scale-quality_barrier_via_unif.md)
 - [\[CVPR 2026\] Learnability-Guided Diffusion for Dataset Distillation](learnability-guided_diffusion_for_dataset_distillation.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)
 

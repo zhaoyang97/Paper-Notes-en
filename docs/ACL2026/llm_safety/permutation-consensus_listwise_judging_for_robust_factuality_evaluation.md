@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Permutation-Consensus Listwise Judging for Robust Factuality Evaluation
 description: >-
-  [ACL 2026][LLM Safety][LLM-as-a-Judge] PCFJudge treats candidate answer order as a nuisance variable in listwise factuality evaluation. By running 7 permutations of the same candidate set and aggregating scores, rankings, top-set votes, and calibrated uncertainty, it improves performance on RewardBench 2 Factuality by up to 7 percentage points compared to s
+  [ACL 2026][LLM Safety][LLM-as-a-Judge] PCFJudge treats candidate answer order as a nuisance variable in listwise factuality evaluation. By running 7 permutations of the same candidate set and aggregating scores, rankings, top-set votes, and calibrated uncertainty, it improves performance on RewardBench 2 Factuality by up to 7 percentage points compared to single direct judging.
 tags:
-  - ACL 2026
-  - LLM Safety
-  - LLM-as-a-Judge
+  - "ACL 2026"
+  - "LLM Safety"
+  - "LLM-as-a-Judge"
+  - "Factuality Evaluation"
+  - "Position Bias"
+  - "Ranking Robustness"
+  - "Consensus Aggregation"
 date: 2026-05-08
-content_hash: 5d2187b0a47d8dfb
+content_hash: 883ef1239d454b4a
 ---
+
 # Permutation-Consensus Listwise Judging for Robust Factuality Evaluation
 
 **Conference**: ACL 2026  

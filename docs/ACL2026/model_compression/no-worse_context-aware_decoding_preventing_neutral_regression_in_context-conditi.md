@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] No-Worse Context-Aware Decoding: Preventing Neutral Regression in Context-Conditioned Generation
 description: >-
-  [ACL 2026][Model Compression][Paper Note] Ours propose NWCAD, a decoding-time adapter that utilizes a two-stage gating mechanism to precisely fall back to context-free decoding when the context is uninformative (preventing neutral regression) and leverage the context for correction when it is helpful, balancing "do-no-harm" and "effectiveness."
+  [ACL 2026 Findings][Model Compression][Context-Aware Decoding] Ours propose NWCAD, a decoding-time adapter that utilizes a two-stage gating mechanism to precisely fall back to context-free decoding when the context is uninformative (preventing neutral regression) and leverage the context for correction when it is helpful, balancing "do-no-harm" and "effectiveness."
 tags:
-  - ACL 2026
-  - Model Compression
+  - "ACL 2026 Findings"
+  - "Model Compression"
+  - "Context-Aware Decoding"
+  - "Neutral Regression"
+  - "Retrieval-Augmented Generation"
+  - "Two-Stage Gating"
+  - "Decoding-Time Adapter"
 date: 2026-05-08
-content_hash: 0bec8f78b4688f0a
+content_hash: e59c3c6718d6257e
 ---
+
 # No-Worse Context-Aware Decoding: Preventing Neutral Regression in Context-Conditioned Generation
 
 **Conference**: ACL 2026 Findings  
@@ -147,7 +153,7 @@ Ours achieves overall superiority across 12 QA benchmarks and 2 non-QA tasks (To
 - [\[ICML 2025\] Core Context Aware Transformers for Long Context Language Modeling](../../ICML2025/model_compression/core_context_aware_transformers_for_long_context_language_modeling.md)
 - [\[ICML 2025\] Context Tuning for In-Context Optimization](../../ICML2025/model_compression/context_tuning_for_in-context_optimization.md)
 - [\[ACL 2026\] DASH-KV: Accelerating Long-Context LLM Inference via Asymmetric KV Cache Hashing](dash-kv_accelerating_long-context_llm_inference_via_asymmetric_kv_cache_hashing.md)
-- [\[ACL 2026\] Latent-Condensed Transformer for Efficient Long Context Modeling](latent-condensed_transformer_for_efficient_long_context_modeling.md)
+- [\[ICLR 2026\] Learning Semi-Structured Sparsity for LLMs via Shared and Context-Aware Hypernetwork](../../ICLR2026/model_compression/learning_semi-structured_sparsity_for_llms_via_shared_and_context-aware_hypernet.md)
 
 </div>
 

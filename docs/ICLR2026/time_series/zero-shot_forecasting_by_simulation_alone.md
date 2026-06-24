@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Zero-shot Forecasting by Simulation Alone
 description: >-
-  [ICLR 2026][Time Series][SARIMA] This paper proposes SarSim0—a fast time-series simulator based entirely on stable SARIMA processes. It is used to generate approximately 1 billion purely synthetic sequences online to pre-train general forecasting backbones. This enables small models to match or even exceed the forecasting accuracy of large foundation
+  [ICLR 2026][Time Series][Zero-shot forecasting] This paper proposes SarSim0—a fast time-series simulator based entirely on stable SARIMA processes. It is used to generate approximately 1 billion purely synthetic sequences online to pre-train general forecasting backbones. This enables small models to match or even exceed the forecasting accuracy of large foundation models (Chronos, MOIRAI, TimesFM) trained on real data under a strict zero-shot protocol. Furthermore…
 tags:
-  - ICLR 2026
-  - Time Series
-  - SARIMA
+  - "ICLR 2026"
+  - "Time Series"
+  - "Zero-shot forecasting"
+  - "Time-series simulation"
+  - "SARIMA"
+  - "Synthetic data pre-training"
+  - "Foundation models"
 date: 2026-05-08
-content_hash: 6d7e8110b97c29a0
+content_hash: af0149ef72164b04
 ---
+
 # Zero-shot Forecasting by Simulation Alone
 
 **Conference**: ICLR 2026  
@@ -165,7 +170,7 @@ Components were removed step-by-step to verify the contributions of SARIMA-2 and
 - [\[NeurIPS 2025\] TiRex: Zero-Shot Forecasting Across Long and Short Horizons with Enhanced In-Context Learning](../../NeurIPS2025/time_series/tirex_zero-shot_forecasting_across_long_and_short_horizons_with_enhanced_in-cont.md)
 - [\[ICML 2025\] VisionTS: Visual Masked Autoencoders Are Free-Lunch Zero-Shot Time Series Forecasters](../../ICML2025/time_series/visionts_visual_masked_autoencoders_are_free-lunch_zero-shot_time_series_forecas.md)
 - [\[ACL 2025\] Revisiting LLMs as Zero-Shot Time-Series Forecasters: Small Noise Can Break Large Models](../../ACL2025/time_series/revisiting_llms_as_zero-shot_time_series_forecasters_small_noise_can_break_large.md)
-- [\[ICLR 2026\] CPiRi: Channel Permutation-Invariant Relational Interaction for Multivariate Time Series Forecasting](cpiri_channel_permutation-invariant_relational_interaction_for_multivariate_time_se.md)
+- [\[ICLR 2026\] STDDN: A Deep Learning Framework for Crowd Simulation Guided by the Fluid Continuity Equation](stddn_a_physics-guided_deep_learning_framework_for_crowd_simulation.md)
 
 </div>
 

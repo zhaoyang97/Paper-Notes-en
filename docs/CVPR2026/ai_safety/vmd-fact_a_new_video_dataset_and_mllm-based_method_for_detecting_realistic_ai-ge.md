@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Addressing the detection blind spot where "AI-generated video misinformation is highly realistic, cross-modally consistent, and existing datasets have obvious editing artifacts," this paper utilizes a multi-agent framework to iteratively generate 9049 pairs of highly realistic claim–video forgery samples to form the RA
+  [CVPR 2026][AI Safety][Video Misinformation Detection] Addressing the detection blind spot where "AI-generated video misinformation is highly realistic, cross-modally consistent, and existing datasets have obvious editing artifacts," this paper utilizes a multi-agent framework to iteratively generate 9049 pairs of highly realistic claim–video forgery samples to form the RAVM dataset. It further proposes the IEEG model, which constructs a directed acyclic evidence graph consis…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Video Misinformation Detection"
+  - "AI-Generated Content"
+  - "Multi-modal Large Language Model"
+  - "Evidence Graph"
+  - "Multi-agent Data Construction"
 date: 2026-05-08
-content_hash: 954a667245c6d07c
+content_hash: 2992a191cd01bc33
 ---
+
 # VMD-FACT: A New Video Dataset and MLLM-based method for Detecting Realistic AI-Generated Video Misinformation
 
 **Conference**: CVPR 2026  

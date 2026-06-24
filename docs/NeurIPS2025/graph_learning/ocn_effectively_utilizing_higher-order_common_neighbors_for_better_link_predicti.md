@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction
 description: >-
-  [NeurIPS 2025][Graph Learning][Link Prediction] This paper identifies redundancy and over-smoothing issues in higher-order common neighbors (CN) for link prediction…
+  [NeurIPS 2025][Graph Learning][Link Prediction] This paper identifies redundancy and over-smoothing issues in higher-order common neighbors (CN) for link prediction, and proposes orthogonalization (Gram-Schmidt to remove inter-order linear dependence) combined with normalization (dividing by path count, a generalized resource allocation heuristic) as a solution. The method achieves an average improvement of 7.7% in HR@100 across 7 datasets, with a 13.3% gain on the DDI datase…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "Gram-Schmidt"
   - "Resource Allocation Heuristic"
 date: 2026-05-08
-content_hash: 303c0e5f06ec2119
+content_hash: 46a813cd084d714b
 ---
 
 # OCN: Effectively Utilizing Higher-Order Common Neighbors for Better Link Prediction
@@ -127,10 +127,10 @@ Standard binary cross-entropy loss for link prediction. Negative sampling is use
 ## Related Papers
 
 - [\[NeurIPS 2025\] TAMI: Taming Heterogeneity in Temporal Interactions for Temporal Graph Link Prediction](tami_taming_heterogeneity_in_temporal_interactions_for_temporal_graph_link_predi.md)
+- [\[ICML 2025\] L-STEP: Learnable Spatial-Temporal Positional Encoding for Link Prediction](../../ICML2025/graph_learning/learnable_spatial-temporal_positional_encoding_for_link_prediction.md)
+- [\[ICML 2025\] Open Your Eyes: Vision Enhances Message Passing Neural Networks in Link Prediction](../../ICML2025/graph_learning/open_your_eyes_vision_enhances_message_passing_neural_networks_in_link_predictio.md)
 - [\[AAAI 2026\] UniHR: Hierarchical Representation Learning for Unified Knowledge Graph Link Prediction](../../AAAI2026/graph_learning/unihr_hierarchical_representation_learning_for_unified_knowledge_graph_link_pred.md)
-- [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
-- [\[NeurIPS 2025\] Solar-GECO: Perovskite Solar Cell Property Prediction with Geometric-Aware Co-Attention](solar-geco_perovskite_solar_cell_property_prediction_with_geometric-aware_co-att.md)
-- [\[NeurIPS 2025\] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction](bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p.md)
+- [\[ICLR 2026\] HYPER: A Foundation Model for Inductive Link Prediction with Knowledge Hypergraphs](../../ICLR2026/graph_learning/hyper_a_foundation_model_for_inductive_link_prediction_with_knowledge_hypergraph.md)
 
 </div>
 

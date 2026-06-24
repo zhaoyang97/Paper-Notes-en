@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Neon: Negative Extrapolation From Self-Training Improves Image Generation
 description: >-
-  [ICLR 2026][Image Generation][self-training] Neon is proposed as a post-processing method requiring <1% additional training computation. It involves fine-tuning the model on its own synthetic data to induce degradation, followed by negative extrapolation away from the degraded weights. The study proves that mode-seeking samplers cause anti-alignment between synth
+  [ICLR 2026 Oral][Image Generation][self-training] Neon is proposed as a post-processing method requiring <1% additional training computation. It involves fine-tuning the model on its own synthetic data to induce degradation, followed by negative extrapolation away from the degraded weights. The study proves that mode-seeking samplers cause anti-alignment between synthetic and real data gradients, making negative extrapolation equivalent to optimizing toward the real data dist…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - self-training
-  - model collapse
-  - weight merging
-  - negative extrapolation
-  - FID
+  - "ICLR 2026 Oral"
+  - "Image Generation"
+  - "self-training"
+  - "model collapse"
+  - "weight merging"
+  - "negative extrapolation"
+  - "FID"
 date: 2026-05-08
-content_hash: db90c3d555ec19a1
+content_hash: bdb0a4008c1ce090
 ---
+
 # Neon: Negative Extrapolation From Self-Training Improves Image Generation
 
 **Conference**: ICLR 2026 Oral  
@@ -144,11 +145,11 @@ The fine-tuning stage uses the original standard training loss for each respecti
 
 ## Related Papers
 
+- [\[ICLR 2026\] VLM-Guided Adaptive Negative Prompting for Creative Generation](vlm-guided_adaptive_negative_prompting_for_creative_generation.md)
 - [\[ICLR 2026\] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models](stochastic_self-guidance_for_training-free_enhancement_of_diffusion_models.md)
-- [\[ICLR 2026\] Diffusion Negative Preference Optimization Made Simple](diffusion_negative_preference_optimization_made_simple.md)
+- [\[ICLR 2026\] Safety-Guided Flow (SGF): A Unified Framework for Negative Guidance in Safe Generation](safety-guided_flow_sgf_a_unified_framework_for_negative_guidance_in_safe_generat.md)
 - [\[AAAI 2026\] RetrySQL: Text-to-SQL Training with Retry Data for Self-Correcting Query Generation](../../AAAI2026/image_generation/retrysql_text-to-sql_training_with_retry_data_for_self-correcting_query_generati.md)
-- [\[NeurIPS 2025\] Understand Before You Generate: Self-Guided Training for Autoregressive Image Generation](../../NeurIPS2025/image_generation/understand_before_you_generate_self-guided_training_for_autoregressive_image_gen.md)
-- [\[ECCV 2024\] Removing Distributional Discrepancies in Captions Improves Image-Text Alignment](../../ECCV2024/image_generation/removing_distributional_discrepancies_in_captions_improves_image-text_alignment.md)
+- [\[ICLR 2026\] Diffusion Negative Preference Optimization Made Simple](diffusion_negative_preference_optimization_made_simple.md)
 
 </div>
 

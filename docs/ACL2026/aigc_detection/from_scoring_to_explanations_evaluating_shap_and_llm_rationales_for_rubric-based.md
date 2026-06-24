@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment
 description: >-
-  [ACL 2026][AIGC Detection][SHAP] This paper proposes a sentence-level explanation evaluation framework for automated rubric scoring. Comparing fine-tuned PLMs, prompted LLMs, SHAP attribution, and LLM rationales on a classroom feedback quality scoring task, the study finds that fine-tuned PLMs are more accurate, while SHAP provides more faithful and t
+  [ACL2026 Findings][AIGC Detection][SHAP] This paper proposes a sentence-level explanation evaluation framework for automated rubric scoring. Comparing fine-tuned PLMs, prompted LLMs, SHAP attribution, and LLM rationales on a classroom feedback quality scoring task, the study finds that fine-tuned PLMs are more accurate, while SHAP provides more faithful and transferable explanations than LLM-generated ones.
 tags:
-  - ACL 2026
-  - AIGC Detection
-  - SHAP
+  - "ACL2026 Findings"
+  - "AIGC Detection"
+  - "SHAP"
+  - "LLM rationales"
+  - "teaching quality assessment"
+  - "sentence-level attribution"
+  - "deletion test"
 date: 2026-05-08
-content_hash: 88e33c574fb97476
+content_hash: 59fe01df0bae5cb5
 ---
+
 # From Scoring to Explanations: Evaluating SHAP and LLM Rationales for Rubric-based Teaching Quality Assessment
 
 **Conference**: ACL2026 Findings  

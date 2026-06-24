@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance
 description: >-
-  [NeurIPS 2025][Image Restoration][Diffusion Policy] This paper proposes DynaGuide, which applies classifier guidance to a frozen pretrained diffusion policy at inference time via an external latent dynamics model…
+  [NeurIPS 2025][Image Restoration][Diffusion Policy] This paper proposes DynaGuide, which applies classifier guidance to a frozen pretrained diffusion policy at inference time via an external latent dynamics model, steering the robot toward arbitrary positive/negative goals without modifying policy weights. It achieves an average success rate of 70% on CALVIN simulation and 80% on a real robot.
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "DinoV2"
   - "Robot Manipulation"
 date: 2026-05-08
-content_hash: c9152560c4bce1b6
+content_hash: 3db6822fbfa9e367
 ---
 
 # DynaGuide: Steering Diffusion Policies with Active Dynamic Guidance
@@ -158,11 +158,11 @@ Using a publicly available pretrained UMI policy (cup placement task) without mo
 
 ## Related Papers
 
-- [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
-- [\[ICCV 2025\] Blind Noisy Image Deblurring Using Residual Guidance Strategy](../../ICCV2025/image_restoration/blind_noisy_image_deblurring_using_residual_guidance_strateg.md)
+- [\[ECCV 2024\] Efficient Diffusion Transformer with Step-wise Dynamic Attention Mediators](../../ECCV2024/image_restoration/efficient_diffusion_transformer_with_step-wise_dynamic_attention_mediators.md)
 - [\[ICCV 2025\] Decouple to Reconstruct: High Quality UHD Restoration via Active Feature Disentanglement and Reversible Fusion](../../ICCV2025/image_restoration/decouple_to_reconstruct_high_quality_uhd_restoration_via_active_feature_disentan.md)
-- [\[ICCV 2025\] IDF: Iterative Dynamic Filtering Networks for Generalizable Image Denoising](../../ICCV2025/image_restoration/idf_iterative_dynamic_filtering_networks_for_generalizable_image_denoising.md)
-- [\[NeurIPS 2025\] Elucidated Rolling Diffusion Models for Probabilistic Forecasting of Complex Dynamics](elucidated_rolling_diffusion_models_for_probabilistic_forecasting_of_complex_dyn.md)
+- [\[ICCV 2025\] Blind Noisy Image Deblurring Using Residual Guidance Strategy](../../ICCV2025/image_restoration/blind_noisy_image_deblurring_using_residual_guidance_strateg.md)
+- [\[CVPR 2026\] Rethinking Diffusion Model-Based Video Super-Resolution: Leveraging Dense Guidance from Aligned Features](../../CVPR2026/image_restoration/rethinking_diffusion_model-based_video_super-resolution_leveraging_dense_guidanc.md)
+- [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](../../ICML2026/image_restoration/triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
 
 </div>
 

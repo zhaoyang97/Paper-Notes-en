@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models
 description: >-
-  [ACL 2026][LLM Agent][Multi-Agent] This paper proposes Agent-GWO, which introduces the leader-follower mechanism of the Grey Wolf Optimizer into a multi-agent framework to jointly optimize prompt templates and decoding hyperparameters (temperature, top-p, etc.). It consistently out-performs existing prompt optimization methods across 11 mathematical and
+  [ACL 2026][LLM Agent][Prompt Optimization] This paper proposes Agent-GWO, which introduces the leader-follower mechanism of the Grey Wolf Optimizer into a multi-agent framework to jointly optimize prompt templates and decoding hyperparameters (temperature, top-p, etc.). It consistently out-performs existing prompt optimization methods across 11 mathematical and hybrid reasoning benchmarks.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Multi-Agent
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Prompt Optimization"
+  - "Grey Wolf Optimizer"
+  - "Multi-Agent"
+  - "Reasoning Enhancement"
+  - "Decoding Hyperparameters"
 date: 2026-05-08
-content_hash: d1998bb6293b39f4
+content_hash: ebdd6f316d0c7424
 ---
+
 # Agent-GWO: Collaborative Agents for Dynamic Prompt Optimization in Large Language Models
 
 **Conference**: ACL 2026  
@@ -135,9 +140,9 @@ For discrete prompts, a `PromptAdaptation` function is used: the LLM follows fix
 
 - [\[ACL 2026\] ImplicitMemBench: Measuring Unconscious Behavioral Adaptation in Large Language Models](implicitmembench_measuring_unconscious_behavioral_adaptation_in_large_language_m.md)
 - [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](../../ICLR2026/llm_agent/toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
-- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
 - [\[CVPR 2026\] ModularAgent: A Task-Aware Modular Framework for Joint Optimization of Multimodal Large Language Models and World Models](../../CVPR2026/llm_agent/modularagent_a_task-aware_modular_framework_for_joint_optimization_of_multimodal.md)
-- [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
+- [\[ACL 2026\] Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments](feedback-driven_tool-use_improvements_in_large_language_models_via_automated_bui.md)
+- [\[ACL 2026\] Dynamic Generation of Multi-LLM Agents Communication Topologies with Graph Diffusion Models](dynamic_generation_of_multi-llm_agents_communication_topologies_with_graph_diffu.md)
 
 </div>
 

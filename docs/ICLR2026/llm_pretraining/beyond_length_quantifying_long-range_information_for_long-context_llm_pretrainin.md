@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] Addressing the overlooked fact that "long text $\neq$ long-range dependency," this paper proposes LongFilter. It quantifies the "information gain from extended context" by comparing a language model's prediction distributions under long vs. short context for each token. Samples that are long but predictable using only
+  [ICLR2026][LLM Pretraining][Long-context Pretraining] Addressing the overlooked fact that "long text $\neq$ long-range dependency," this paper proposes LongFilter. It quantifies the "information gain from extended context" by comparing a language model's prediction distributions under long vs. short context for each token. Samples that are long but predictable using only local context are filtered out. Continuing pretraining LLaMA-3-8B (8K $\rightarrow$ 64K) with filtered dat…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR2026"
+  - "LLM Pretraining"
+  - "Long-context Pretraining"
+  - "Data Selection"
+  - "Information Gain"
+  - "Conditional Mutual Information"
+  - "KL Divergence"
 date: 2026-05-08
-content_hash: 42d1e7416b114fac
+content_hash: d7b76d7d293a1eac
 ---
+
 # Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data
 
 **Conference**: ICLR2026  

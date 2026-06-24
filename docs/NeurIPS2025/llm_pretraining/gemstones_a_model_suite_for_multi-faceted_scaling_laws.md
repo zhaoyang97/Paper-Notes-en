@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Gemstones: A Model Suite for Multi-Faceted Scaling Laws
 description: >-
-  [NeurIPS 2025][LLM Pretraining][scaling laws] This work releases the Gemstones model suite — an open-source collection of over 4,000 checkpoints spanning 50M–2B parameters and diverse width-depth ratios. Through systemat…
+  [NeurIPS 2025][LLM Pretraining][scaling laws] This work releases the Gemstones model suite — an open-source collection of over 4,000 checkpoints spanning 50M–2B parameters and diverse width-depth ratios. Through systematic experimentation, the paper demonstrates that scaling laws are highly sensitive to design choices such as model selection, learning rate scheduling, and cooldown strategies, and proposes a convex-hull-based fitting method to improve scaling law stability und…
 tags:
   - "NeurIPS 2025"
   - "LLM Pretraining"
@@ -12,7 +12,7 @@ tags:
   - "model design"
   - "convex hull fitting"
 date: 2026-05-08
-content_hash: 3c256327f39844cc
+content_hash: a05f2c3d96b713a1
 ---
 
 # Gemstones: A Model Suite for Multi-Faceted Scaling Laws
@@ -148,10 +148,10 @@ Benchmark prediction model fitting quality:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Power Lines: Scaling Laws for Weight Decay and Batch Size in LLM Pre-training](power_lines_scaling_laws_for_weight_decay_and_batch_size_in_llm_pre-training.md)
-- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](../../ICML2026/llm_pretraining/dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
-- [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](scaling_embedding_layers_in_language_models.md)
-- [\[ICML 2026\] Scaling Depth Capacity via Zero/One-Layer Model Expansion](../../ICML2026/llm_pretraining/scaling_depth_capacity_via_zeroone-layer_model_expansion.md)
-- [\[ICML 2026\] InfoLaw: Information Scaling Laws for Large Language Models with Quality-Weighted Mixture Data and Repetition](../../ICML2026/llm_pretraining/infolaw_information_scaling_laws_for_large_language_models_with_quality-weighted.md)
+- [\[ACL 2025\] Training Dynamics Underlying Language Model Scaling Laws: Loss Deceleration and Zero-Sum Learning](../../ACL2025/llm_pretraining/training_dynamics_underlying_language_model_scaling_laws_loss_deceleration_and_z.md)
+- [\[ICLR 2026\] Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](../../ICLR2026/llm_pretraining/scaling_laws_revisited_modeling_the_role_of_data_quality_in_language_model_pretr.md)
+- [\[ICML 2026\] Explaining Data Mixing Scaling Laws](../../ICML2026/llm_pretraining/explaining_data_mixing_scaling_laws.md)
+- [\[ICLR 2026\] Pretraining Scaling Laws for Generative Evaluations of Language Models](../../ICLR2026/llm_pretraining/pretraining_scaling_laws_for_generative_evaluations_of_language_models.md)
 
 </div>
 

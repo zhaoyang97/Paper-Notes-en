@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance
 description: >-
-  [ICLR 2026][Reinforcement Learning][PPO] MIRA **amortizes** LLM sub-goal decomposition and trajectory priors into a continuously evolving memory graph, from which utility signals are derived to **softly shape advantage estimation**. This accelerates learning during the early stages of sparse rewards and decays the shaping term over training to preserve PPO co
+  [ICLR 2026][Reinforcement Learning][Sparse rewards] MIRA **amortizes** LLM sub-goal decomposition and trajectory priors into a continuously evolving memory graph, from which utility signals are derived to **softly shape advantage estimation**. This accelerates learning during the early stages of sparse rewards and decays the shaping term over training to preserve PPO convergence—achieving performance close to "per-step LLM querying" methods with only a few dozen offline/onlin…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - PPO
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Sparse rewards"
+  - "advantage shaping"
+  - "memory graph"
+  - "LLM priors"
+  - "sample efficiency"
+  - "PPO"
 date: 2026-05-08
-content_hash: 55ce26e4a0da1a03
+content_hash: f28fef93e0c7dc57
 ---
+
 # MIRA: Memory-Integrated Reinforcement Learning Agent with Limited LLM Guidance
 
 **Conference**: ICLR 2026  
@@ -117,16 +123,16 @@ All results were achieved with **fewer than 10 offline prompts** and minimal onl
 - **Value**: ⭐⭐⭐⭐ — Significant reduction in query overhead while maintaining performance, offering a practical path for LLM-RL integration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Trajectory Generation with Conservative Value Guidance for Offline Reinforcement Learning](trajectory_generation_with_conservative_value_guidance_for_offline_reinforcement.md)
 - [\[ICLR 2026\] Selective Expert Guidance for Effective and Diverse Exploration in Reinforcement Learning of LLMs](selective_expert_guidance_for_effective_and_diverse_exploration_in_reinforcement.md)
+- [\[ICLR 2026\] Deconstructing Memory in Reinforcement Learning Agents: A Taxonomy and Evaluation Methodology](unraveling_the_complexity_of_memory_in_rl_agents_an_approach_for_classification_.md)
 - [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](../../ICML2026/reinforcement_learning/llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 - [\[ICML 2026\] Learning Query-Aware Budget-Tier Routing for Runtime Agent Memory](../../ICML2026/reinforcement_learning/learning_query-aware_budget-tier_routing_for_runtime_agent_memory.md)
-- [\[ICLR 2026\] J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](j1_incentivizing_thinking_in_llm-as-a-judge_via_reinforcement_learning.md)
 
 </div>
 

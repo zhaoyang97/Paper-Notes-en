@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
 description: >-
-  [ICLR 2026][3D Vision][Robot Manipulation] CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and environments through three core components: task decomposition, VLM-finetuned 3D keypoint prediction, and 3D-aware representations. It outperforms SOTA by 12% on GemBench using only 1/5 of the training da
+  [ICLR 2026][3D Vision][Robot Manipulation] CLAP (Coarse-to-fine Language-Aligned manipulation Policy) achieves strong generalization to novel instructions and environments through three core components: task decomposition, VLM-finetuned 3D keypoint prediction, and 3D-aware representations. It outperforms SOTA by 12% on GemBench using only 1/5 of the training data.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Robot Manipulation
-  - Coarse-to-Fine Policy
-  - 3D Keypoints
-  - VLM Fine-tuning
-  - Language Grounding
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Robot Manipulation"
+  - "Coarse-to-Fine Policy"
+  - "3D Keypoints"
+  - "VLM Fine-tuning"
+  - "Language Grounding"
 date: 2026-05-08
-content_hash: fe65add798d95e1a
+content_hash: 70c665f57b0aec29
 ---
+
 # Generalizable Coarse-to-Fine Robot Manipulation via Language-Aligned 3D Keypoints
 
 **Conference**: ICLR 2026  
@@ -165,11 +166,11 @@ CLAP outperforms SOTA methods by 12 percentage points on GemBench while using on
 
 ## Related Papers
 
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](../../CVPR2026/3d_vision/3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
-- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
 - [\[ICCV 2025\] RoboPearls: Editable Video Simulation for Robot Manipulation](../../ICCV2025/3d_vision/robopearls_editable_video_simulation_for_robot_manipulation.md)
 - [\[AAAI 2026\] VGGT-DP: Generalizable Robot Control via Vision Foundation Models](../../AAAI2026/3d_vision/vggt-dp_generalizable_robot_control_via_vision_foundation_models.md)
+- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](../../CVPR2026/3d_vision/3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
 - [\[ICLR 2026\] Distractor-free Generalizable 3D Gaussian Splatting](distractor-free_generalizable_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] SpatialHand: Generative Object Manipulation from 3D Perspective](spatialhand_generative_object_manipulation_from_3d_prespective.md)
 
 </div>
 

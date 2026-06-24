@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference
 description: >-
-  [NeurIPS 2025][LLM Safety][Private inference] This paper proposes MPCache, a KV cache eviction framework designed for secure multi-party computation (MPC)…
+  [NeurIPS 2025][LLM Safety][Private inference] This paper proposes MPCache, a KV cache eviction framework designed for secure multi-party computation (MPC), combining one-time static eviction with query-aware dynamic selection. Through hierarchical clustering, linearized similarity approximation, and cross-layer index sharing, MPCache achieves up to 2.01× latency reduction and 8.37× communication volume reduction without sacrificing LLM performance.
 tags:
   - "NeurIPS 2025"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "LLM efficiency"
   - "sparse attention"
 date: 2026-05-08
-content_hash: 31f34a9ded4dd32c
+content_hash: 87bae8ef6b9fa807
 ---
 
 # MPCache: MPC-Friendly KV Cache Eviction for Efficient Private LLM Inference
@@ -53,11 +53,11 @@ MPCache is designed around three key observations: (1) attention maps over long 
 2. **MPC-friendly dynamic KV cache selection**: Neighboring tokens are grouped into clusters, elevating selection granularity from the token level to the cluster level. The core challenge is measuring cluster similarity accurately and efficiently.
 
    **Similarity approximation**: The maximum dot-product upper bound is used instead of mean or cosine similarity. Given query $\mathbf{q}$ and cluster key cache $\mathbf{K}_c$, the upper bound is derived as:
-   $$\mathrm{Sim}(\mathbf{q}, \mathbf{K}_c) \leq \sum_{i=0}^{d-1} \max(\mathbf{q}_i \mathbf{r}_i^{\max}, \mathbf{q}_i \mathbf{r}_i^{\min})$$
+    $\mathrm{Sim}(\mathbf{q}, \mathbf{K}_c) \leq \sum_{i=0}^{d-1} \max(\mathbf{q}_i \mathbf{r}_i^{\max}, \mathbf{q}_i \mathbf{r}_i^{\min})$
    where $\mathbf{r}_i^{\max}$ and $\mathbf{r}_i^{\min}$ are the per-dimension extrema of the key cache within the cluster (computed only once).
 
    **Linearization and reordering**: To eliminate the costly max operation in MPC, the approximation is further linearized as:
-   $$\mathrm{Sim}(\mathbf{q}, \mathbf{K}_c) \approx \sum_{i=0}^{d-1} \mathbf{q}_i \cdot (\alpha \mathbf{r}_i^{\max} + (1-\alpha) \mathbf{r}_i^{\min})$$
+    $\mathrm{Sim}(\mathbf{q}, \mathbf{K}_c) \approx \sum_{i=0}^{d-1} \mathbf{q}_i \cdot (\alpha \mathbf{r}_i^{\max} + (1-\alpha) \mathbf{r}_i^{\min})$
    where $\alpha=0.6$. After reordering, summation precedes multiplication, reducing the number of multiplications by 2× and eliminating all max operations.
 
 3. **Hierarchical KV cache clustering**: The KV cache is organized into a hierarchical structure, selecting from coarse-grained (large clusters) to fine-grained (small clusters). The coarse-grained level substantially narrows the search space, while the fine-grained level refines selection within already-chosen clusters, balancing accuracy and efficiency.
@@ -146,11 +146,11 @@ The clustering design directly reduces the overhead of the most expensive MPC op
 
 ## Related Papers
 
+- [\[ICML 2025\] Cascade: Token-Sharded Private LLM Inference](../../ICML2025/llm_safety/cascade_token-sharded_private_llm_inference.md)
 - [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](../../ICLR2026/llm_safety/secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
+- [\[ICML 2025\] An Attack to Break Permutation-Based Private Third-Party Inference Schemes for LLMs](../../ICML2025/llm_safety/an_attack_to_break_permutation-based_private_third-party_inference_schemes_for_l.md)
 - [\[NeurIPS 2025\] FedRW: Efficient Privacy-Preserving Data Reweighting for Enhancing Federated Learning of Language Models](fedrw_efficient_privacy-preserving_data_reweighting_for_enhancing_federated_lear.md)
-- [\[NeurIPS 2025\] On the Sample Complexity of Differentially Private Policy Optimization](on_the_sample_complexity_of_differentially_private_policy_optimization.md)
 - [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
-- [\[ACL 2026\] Fast-MIA: Efficient and Scalable Membership Inference for LLMs](../../ACL2026/llm_safety/fast-mia_efficient_and_scalable_membership_inference_for_llms.md)
 
 </div>
 

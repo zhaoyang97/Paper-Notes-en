@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work constructs IF-Bench, the first high-quality benchmark (499 images / 680 VQA / 10 dimensions) for systematically evaluating the infrared image understanding capabilities of Multimodal Large Language Models (MLLMs). After evaluating 40+ models, the authors propose GenViP, a training-free generative visual promp
+  [CVPR 2026][Multimodal VLM][Infrared image understanding] This work constructs IF-Bench, the first high-quality benchmark (499 images / 680 VQA / 10 dimensions) for systematically evaluating the infrared image understanding capabilities of Multimodal Large Language Models (MLLMs). After evaluating 40+ models, the authors propose GenViP, a training-free generative visual prompting method. By using an image editing model to translate infrared images into aligned RGB images and…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Infrared image understanding"
+  - "MLLM benchmarking"
+  - "generative visual prompting"
+  - "domain shift"
+  - "training-free"
 date: 2026-05-08
-content_hash: 2e6a263d3bd4103c
+content_hash: 37727122a9b8778c
 ---
+
 # IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting
 
 **Conference**: CVPR 2026  
@@ -127,10 +133,10 @@ GenViP consistently improves infrared understanding across various MLLMs, report
 ## Related Papers
 
 - [\[CVPR 2026\] ViKey: Enhancing Temporal Understanding in Videos via Visual Prompting](vikey_enhancing_temporal_understanding_in_videos_via_visual_prompting.md)
-- [\[CVPR 2026\] AV-Reasoner: Improving and Benchmarking Clue-Grounded Audio-Visual Counting for MLLMs](av-reasoner_improving_and_benchmarking_clue-grounded_audio-visual_counting_for_m.md)
+- [\[CVPR 2026\] P-Flow: Prompting Visual Effects Generation](p-flow_prompting_visual_effects_generation.md)
 - [\[CVPR 2026\] RealBirdID: Benchmarking Bird Species Identification in the Era of MLLMs](realbirdid_benchmarking_bird_species_identification_in_the_era_of_mllms.md)
 - [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](../../AAAI2026/multimodal_vlm/vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
+- [\[ACL 2026\] GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs](../../ACL2026/multimodal_vlm/grouptom-bench_benchmarking_group_theory_of_mind_and_nonlinear_social_emergence_.md)
 
 </div>
 

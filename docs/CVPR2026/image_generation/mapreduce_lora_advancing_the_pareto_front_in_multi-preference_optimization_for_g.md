@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models
 description: >-
-  [CVPR 2026][Image Generation][multi-preference optimization] This work proposes MapReduce LoRA and RaTE, two complementary methods to advance the Pareto front in multi-preference optimization: the former pushes the Pareto front progressively via a "Map (parallel training of preference experts) + Reduce (iterative merging)" strategy; the latter enables composable preference contr
+  [CVPR2026][Image Generation][multi-preference optimization] This work proposes MapReduce LoRA and RaTE, two complementary methods to advance the Pareto front in multi-preference optimization: the former pushes the Pareto front progressively via a "Map (parallel training of preference experts) + Reduce (iterative merging)" strategy; the latter enables composable preference control during inference by learning reward-aware token embeddings.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - multi-preference optimization
-  - LoRA merging
-  - Pareto front
-  - alignment tax
-  - RLHF
-  - text-to-image
+  - "CVPR2026"
+  - "Image Generation"
+  - "multi-preference optimization"
+  - "LoRA merging"
+  - "Pareto front"
+  - "alignment tax"
+  - "RLHF"
+  - "text-to-image"
+  - "text-to-video"
 date: 2026-05-08
-content_hash: fe1f5d4f13caa0c0
+content_hash: 51cbb79b0c7e45d4
 ---
+
 # MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models
 
 **Conference**: CVPR2026  
@@ -138,9 +140,9 @@ RaTE learns a trainable token embedding $e_k \in \mathbb{R}^d$ for each reward d
 ## Related Papers
 
 - [\[ICLR 2026\] Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization](../../ICLR2026/image_generation/pareto-conditioned_diffusion_models_for_offline_multi-objective_optimization.md)
-- [\[CVPR 2026\] Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge](quantization_with_unified_adaptive_distillation_to_enable_multi-lora_based_one-f.md)
-- [\[CVPR 2026\] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition](mico-150k_a_comprehensive_dataset_advancing_multi-image_composition.md)
+- [\[ICLR 2026\] Towards Better Optimization for Listwise Preference in Diffusion Models](../../ICLR2026/image_generation/towards_better_optimization_for_listwise_preference_in_diffusion_models.md)
 - [\[CVPR 2026\] ChimeraLoRA: Multi-Head LoRA-Guided Synthetic Datasets](chimeralora_multi-head_lora-guided_synthetic_datasets.md)
+- [\[CVPR 2026\] MICo-150K: A Comprehensive Dataset Advancing Multi-Image Composition](mico-150k_a_comprehensive_dataset_advancing_multi-image_composition.md)
 - [\[CVPR 2025\] Calibrated Multi-Preference Optimization for Aligning Diffusion Models](../../CVPR2025/image_generation/calibrated_multi-preference_optimization_for_aligning_diffusion_models.md)
 
 </div>

@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Model Merging] From the perspective of low-rank decomposition, this paper identifies "direction robustness" as the key factor in parameter-efficient module merging (as opposed to sign confl…
+  [NeurIPS 2025 Spotlight][Multimodal VLM][Model Merging] From the perspective of low-rank decomposition, this paper identifies "direction robustness" as the key factor in parameter-efficient module merging (as opposed to sign conflicts in full-parameter merging), and proposes RobustMerge, which maintains singular value direction stability via complementary parameter adaptive scaling and cross-task normalization, achieving average improvements of 3.4% (seen tasks) and 4.5% (uns…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Multimodal VLM"
   - "Model Merging"
   - "LoRA"
@@ -12,7 +12,7 @@ tags:
   - "Direction Robustness"
   - "Multi-Task Learning"
 date: 2026-05-08
-content_hash: 20d95eac343fb251
+content_hash: 5ec5bdd4dd8549f9
 ---
 
 # RobustMerge: Parameter-Efficient Model Merging for MLLMs with Direction Robustness
@@ -130,11 +130,11 @@ RobustMerge is a **training-free** method; all operations are post-processing:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] MMPerspective: Do MLLMs Understand Perspective? A Comprehensive Benchmark for Perspective Perception, Reasoning, and Robustness](mmperspective_do_mllms_understand_perspective_a_comprehensive_benchmark_for_pers.md)
-- [\[NeurIPS 2025\] AdaLRS: Loss-Guided Adaptive Learning Rate Search for Efficient Foundation Model Pretraining](adalrs_lossguided_adaptive_learning_rate_search_for_efficien.md)
-- [\[NeurIPS 2025\] HAWAII: Hierarchical Visual Knowledge Transfer for Efficient VLM](hawaii_hierarchical_visual_knowledge_transfer_for_efficient_vision-language_mode.md)
-- [\[ICML 2026\] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging](../../ICML2026/multimodal_vlm/decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging.md)
-- [\[NeurIPS 2025\] Nautilus: A Large Multimodal Model for Underwater Scene Understanding](nautilus_a_large_multimodal_model_for_underwater_scene_understanding.md)
+- [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
+- [\[ACL 2025\] Transferring Textual Preferences to Vision-Language Understanding through Model Merging](../../ACL2025/multimodal_vlm/transferring_textual_preferences_to_vision-language_understanding_through_model_.md)
+- [\[ACL 2025\] A Parameter-Efficient and Fine-Grained Prompt Learning for Vision-Language Models](../../ACL2025/multimodal_vlm/a_parameter-efficient_and_fine-grained_prompt_learning_for_vision-language_model.md)
+- [\[ICLR 2026\] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging](../../ICLR2026/multimodal_vlm/optmerge_unifying_multimodal_llm_capabilities_and_modalities_via_model_merging.md)
+- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](../../CVPR2026/multimodal_vlm/fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
 
 </div>
 

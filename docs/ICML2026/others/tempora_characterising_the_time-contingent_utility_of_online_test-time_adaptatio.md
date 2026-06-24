@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation
 description: >-
-  [ICML 2026][Others][TTA] TEMPORA reframes TTA evaluation from "offline accuracy with no latency upper bound" to "serviceable utility under latency constraints." By employing three types of time constraints (discrete, continuous, and amortized) and decomposable utility metrics, over 750 experiments on ImageNet-C × ResNet-50 demonstrate that off
+  [ICML 2026][TTA] TEMPORA reframes TTA evaluation from "offline accuracy with no latency upper bound" to "serviceable utility under latency constraints." By employing three types of time constraints (discrete, continuous, and amortized) and decomposable utility metrics, over 750 experiments on ImageNet-C × ResNet-50 demonstrate that offline SOTA methods lose their top ranking in 87.9% of latency-constrained scenarios, becoming increasingly impractical as they approach real-wor…
 tags:
-  - ICML 2026
-  - Others
-  - TTA
+  - "ICML 2026"
+  - "TTA"
+  - "Latency Constraints"
+  - "Ranking Instability"
+  - "Utility Decomposition"
+  - "Edge Deployment"
 date: 2026-05-08
-content_hash: 3628066199d4dbea
+content_hash: 0dd3531b5dcd0dff
 ---
+
 # TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation
 
 **Conference**: ICML 2026  
@@ -144,9 +148,9 @@ Latency decomposition per batch ($\lambda = 39.9$ ms):
 
 - [\[ICML 2026\] Private and Stable Test-Time Adaptation with Differential Privacy](private_and_stable_test-time_adaptation_with_differential_privacy.md)
 - [\[CVPR 2026\] Neural Collapse in Test-Time Adaptation](../../CVPR2026/others/neural_collapse_in_test-time_adaptation.md)
+- [\[ICLR 2026\] Prior-Free Tabular Test-Time Adaptation](../../ICLR2026/others/prior-free_tabular_test-time_adaptation.md)
 - [\[ICML 2026\] Test-Time Training with KV Binding Is Secretly Linear Attention](test-time_training_with_kv_binding_is_secretly_linear_attention.md)
-- [\[NeurIPS 2025\] Test-Time Adaptation by Causal Trimming](../../NeurIPS2025/others/test-time_adaptation_by_causal_trimming.md)
-- [\[CVPR 2026\] WiTTA-Bench: Benchmarking Test-Time Adaptation for WiFi Sensing](../../CVPR2026/others/witta-bench_benchmarking_test-time_adaptation_for_wifi_sensing.md)
+- [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](../../ICLR2026/others/priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
 
 </div>
 

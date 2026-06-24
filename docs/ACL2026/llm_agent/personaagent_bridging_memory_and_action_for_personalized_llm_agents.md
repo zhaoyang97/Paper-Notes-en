@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PersonaAgent: Bridging Memory and Action for Personalized LLM Agents
 description: >-
-  [ACL 2026][LLM Agent][Persona Prompt] PersonaAgent connects user history with tool-based actions through "personalized memory + personalized actions + test-time optimizable persona prompts," significantly outperforming baselines such as RAG, PAG, ReAct, and MemBank on multiple LaMP personalized decision-making tasks.
+  [ACL2026][LLM Agent][Personalized Agent] PersonaAgent connects user history with tool-based actions through "personalized memory + personalized actions + test-time optimizable persona prompts," significantly outperforming baselines such as RAG, PAG, ReAct, and MemBank on multiple LaMP personalized decision-making tasks.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - Persona Prompt
-  - LaMP
+  - "ACL2026"
+  - "LLM Agent"
+  - "Personalized Agent"
+  - "Long-term Memory"
+  - "Persona Prompt"
+  - "Test-time Alignment"
+  - "LaMP"
 date: 2026-05-08
-content_hash: 9e5881c282d981a2
+content_hash: c10a930d819796c7
 ---
+
 # PersonaAgent: Bridging Memory and Action for Personalized LLM Agents
 
 **Conference**: ACL2026  
@@ -145,10 +149,10 @@ PersonaAgent does not rely on user-level model fine-tuning; instead, it performs
 ## Related Papers
 
 - [\[ACL 2026\] ProPer Agents: Proactivity Driven Personalized Agents for Advancing Knowledge Gap Navigation](proper_agents_proactivity_driven_personalized_agents_for_advancing_knowledge_gap.md)
+- [\[ICML 2026\] Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents](../../ICML2026/llm_agent/memory_is_reconstructed_not_retrieved_graph_memory_for_llm_agents.md)
 - [\[ICLR 2026\] FingerTip 20K: A Benchmark for Proactive and Personalized Mobile LLM Agents](../../ICLR2026/llm_agent/fingertip_20k_a_benchmark_for_proactive_and_personalized_mobile_llm_agents.md)
-- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 - [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](codestruct_code_agents_over_structured_action_spaces.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](../../NeurIPS2025/llm_agent/a-mem_agentic_memory_for_llm_agents.md)
+- [\[ACL 2026\] Shopping Companion: A Memory-Augmented LLM Agent for Real-World E-Commerce Tasks](shopping_companion_a_memory-augmented_llm_agent_for_real-world_e-commerce_tasks.md)
 
 </div>
 

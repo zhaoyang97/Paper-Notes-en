@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Robust Reward Modeling via Causal Rubrics
 description: >-
-  [ICLR 2026][Alignment & RLHF][RLHF] Addressing the issue where reward models (RM) exploit spurious features like length and format, CROME utilizes an Oracle LLM to list "causal rubrics" that determine true quality for each prompt. It then synthesizes two types of counterfactual data: "causal augmentation" (upgrading/degrading along a single causal attrib
+  [ICLR 2026][LLM Alignment][Reward Model] Addressing the issue where reward models (RM) exploit spurious features like length and format, CROME utilizes an Oracle LLM to list "causal rubrics" that determine true quality for each prompt. It then synthesizes two types of counterfactual data: "causal augmentation" (upgrading/degrading along a single causal attribute) and "neutral augmentation" (pairing answers with irrelevant questions). Combined with a composite loss…
 tags:
-  - ICLR 2026
-  - Alignment & RLHF
-  - RLHF
+  - "ICLR 2026"
+  - "LLM Alignment"
+  - "Reward Model"
+  - "Reward Hacking"
+  - "Causal Attributes"
+  - "Counterfactual Augmentation"
+  - "RLHF"
 date: 2026-05-08
-content_hash: e5e2d931f92cf152
+content_hash: ed8a6afb510c2f8c
 ---
+
 # Robust Reward Modeling via Causal Rubrics
 
 **Conference**: ICLR 2026  
@@ -125,10 +130,10 @@ Ours achieves the largest gains on the most challenging **Safety (+12.44%) and R
 
 ## Related Papers
 
+- [\[ICLR 2026\] Truthful or Fabricated? Using Causal Attribution to Mitigate Reward Hacking in Explanations](truthful_or_fabricated_using_causal_attribution_to_mitigate_reward_hacking_in_ex.md)
 - [\[ICLR 2026\] Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences](omni-reward_towards_generalist_omni-modal_reward_modeling_with_free-form_prefere.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 - [\[ICLR 2026\] Beyond Binary Preferences: A Principled Framework for Reward Modeling with Ordinal Feedback](beyond_binary_preferences_a_principled_framework_for_reward_modeling_with_ordina.md)
-- [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](../../ICML2026/llm_alignment/mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
-- [\[ICLR 2026\] Eliminating Inductive Bias in Reward Models with Information-Theoretic Guidance](eliminating_inductive_bias_in_reward_models_with_information-theoretic_guidance.md)
 - [\[ICLR 2026\] RewardBench 2: Advancing Reward Model Evaluation](rewardbench_2_advancing_reward_model_evaluation.md)
 
 </div>

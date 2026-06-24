@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards 3D Object-Centric Feature Learning for Semantic Scene Completion
 description: >-
-  [AAAI 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes Ocean, a framework that leverages instance masks extracted by MobileSAM to guide 3D object-centric feature learning. Through Semantic Group A…
+  [AAAI 2026][Autonomous Driving][Semantic Scene Completion] This paper proposes Ocean, a framework that leverages instance masks extracted by MobileSAM to guide 3D object-centric feature learning. Through Semantic Group Attention (SGA3D) and Global Similarity-Guided Attention (GSGA), Ocean achieves instance-level feature aggregation in 3D space, and refines scene representations via an Instance-aware Local Diffusion (ILD) module, attaining state-of-the-art performance on Seman…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Linear Attention"
   - "BEV Representation"
 date: 2026-05-08
-content_hash: cc63b27de436ae84
+content_hash: ad2e324841fd7073
 ---
 
 # Towards 3D Object-Centric Feature Learning for Semantic Scene Completion
@@ -222,7 +222,7 @@ Training setup: 4× GeForce RTX 3090, AdamW optimizer, initial learning rate 3e-
 - [\[AAAI 2026\] HD2-SSC: High-Dimension High-Density Semantic Scene Completion for Autonomous Driving](hd2-ssc_high-dimension_high-density_semantic_scene_completion_for_autonomous_dri.md)
 - [\[CVPR 2026\] OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective](../../CVPR2026/autonomous_driving/occufly_a_3d_vision_benchmark_for_semantic_scene_completion_from_the_aerial_pers.md)
 - [\[CVPR 2026\] Sparsity-Aware Voxel Attention and Foreground Modulation for 3D Semantic Scene Completion](../../CVPR2026/autonomous_driving/sparsity-aware_voxel_attention_and_foreground_modulation_for_3d_semantic_scene_c.md)
-- [\[NeurIPS 2025\] FlowScene: Learning Temporal 3D Semantic Scene Completion via Optical Flow Guidance](../../NeurIPS2025/autonomous_driving/learning_temporal_3d_semantic_scene_completion_via_optical_flow_guidance.md)
+- [\[ECCV 2024\] Hierarchical Temporal Context Learning for Camera-based Semantic Scene Completion](../../ECCV2024/autonomous_driving/hierarchical_temporal_context_learning_for_camera-based_semantic_scene_completio.md)
 
 </div>
 

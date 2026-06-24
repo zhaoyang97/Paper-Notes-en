@@ -1,16 +1,20 @@
 ---
 title: >-
-  [Paper Note] SCRIBES：用强化学习做 Web 规模的脚本式半结构化数据抽取
+  [Paper Note] SCRIBES: Web-scale Scripted Semi-structured Data Extraction with Reinforcement Learning
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] Instead of letting LLMs parse webpages page-by-page, SCRIBES uses Reinforcement Learning to train a model that generates a **reusable extraction script** (BeautifulSoup code) after seeing a single webpage. By leveraging the property that "webpages from the same site share similar layouts," it designs cross-page rewards
+  [ICLR 2026][Reinforcement Learning][Scripted extraction] Instead of letting LLMs parse webpages page-by-page, SCRIBES uses Reinforcement Learning to train a model that generates a **reusable extraction script** (BeautifulSoup code) after seeing a single webpage. By leveraging the property that "webpages from the same site share similar layouts," it designs cross-page rewards to ensure scripts generalize to entire groups of structurally similar pages. Script quality outperform…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
-  - CommonCrawl
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Scripted extraction"
+  - "semi-structured data"
+  - "RLVR"
+  - "layout similarity reward"
+  - "CommonCrawl"
 date: 2026-05-08
-content_hash: 40f548765c44029c
+content_hash: 8cfab265d17355f2
 ---
+
 # SCRIBES: Web-scale Scripted Semi-structured Data Extraction with Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -128,15 +132,16 @@ The best SCRIBES Q-32B model outperforms the few-shot agentic baseline of the sa
 - Value: ⭐⭐⭐⭐⭐ Significant engineering value for reducing costs in large-scale knowledge extraction.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] DeepDiver: Adaptive Search Intensity Scaling via Open-Web Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/deepdiver_adaptive_search_intensity_scaling_via_open-web_reinforcement_learning.md)
-- [\[ICLR 2026\] Sparse but Critical: A Token-Level Analysis of Distributional Shifts in RLVR Fine-Tuning of LLMs](sparse_but_critical_a_token-level_analysis_of_distributional_shifts_in_rlvr_fine.md)
-- [\[ICLR 2026\] SSVPO：面向语言模型 RL 训练的有效步级信用分配](ssvpo_effective_step-level_credit_assignment_for_rl_training_of_language_models.md)
-- [\[ICLR 2026\] Scheduling Your LLM Reinforcement Learning with Reasoning Trees](scheduling_your_llm_reinforcement_learning_with_reasoning_trees.md)
-- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICLR 2026\] Towards High Data Efficiency in Reinforcement Learning with Verifiable Reward](towards_high_data_efficiency_in_reinforcement_learning_with_verifiable_reward.md)
+- [\[ICLR 2026\] MAGE: Multi-scale Autoregressive Generation for Offline Reinforcement Learning](mage_multi-scale_autoregressive_generation_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Learning from Synthetic Data Improves Multi-hop Reasoning](learning_from_synthetic_data_improves_multi-hop_reasoning.md)
+- [\[ICLR 2026\] Efficient Reinforcement Learning by Guiding World Models with Non-Curated Data](efficient_reinforcement_learning_by_guiding_world_models_with_non-curated_data.md)
+- [\[CVPR 2026\] AnyDoc: Enhancing Document Generation via Large-Scale HTML/CSS Data Synthesis and Height-Aware Reinforcement Optimization](../../CVPR2026/reinforcement_learning/anydoc_enhancing_document_generation_via_large-scale_htmlcss_data_synthesis_and_.md)
 
 </div>
 

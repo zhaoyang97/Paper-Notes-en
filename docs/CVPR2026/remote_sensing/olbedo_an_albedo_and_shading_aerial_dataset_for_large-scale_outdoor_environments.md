@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] Olbedo proposes the first large-scale real-world aerial albedo-shading decomposition dataset (5,664 UAV images, 4 landscapes, multi-illumination across years). It generates multi-view consistent pseudo-ground truth annotations through a physical inverse rendering pipeline. The study demonstrates that synthetic pre-trai
+  [CVPR 2026][Remote Sensing][Intrinsic Image Decomposition] Olbedo proposes the first large-scale real-world aerial albedo-shading decomposition dataset (5,664 UAV images, 4 landscapes, multi-illumination across years). It generates multi-view consistent pseudo-ground truth annotations through a physical inverse rendering pipeline. The study demonstrates that synthetic pre-training combined with Olbedo LoRA fine-tuning significantly improves outdoor albedo prediction and suppo…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Intrinsic Image Decomposition"
+  - "Albedo"
+  - "Aerial Dataset"
+  - "Inverse Rendering"
+  - "Urban Digital Twin"
 date: 2026-05-08
-content_hash: 89df327cf401abc0
+content_hash: 021af09a982a2c35
 ---
+
 # Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
 
 **Conference**: CVPR 2026  

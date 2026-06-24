@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Mixture of States: Routing Token-Level Dynamics for Multimodal Generation
 description: >-
-  [CVPR 2026][Image Generation][Mixture of States] Proposes Mixture of States (MoS)—a multimodal fusion paradigm based on learnable token-level sparse routing, enabling visual tokens to adaptively select hidden states from any layer of the text encoder at each denoising step. This allows 3-5B parameter models to match or exceed the performance of 20B-class models.
+  [CVPR2026][Image Generation][Multimodal Diffusion Models] Proposes Mixture of States (MoS)—a multimodal fusion paradigm based on learnable token-level sparse routing, enabling visual tokens to adaptively select hidden states from any layer of the text encoder at each denoising step. This allows 3-5B parameter models to match or exceed the performance of 20B-class models.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Mixture of States
-  - Image Editing
+  - "CVPR2026"
+  - "Image Generation"
+  - "Multimodal Diffusion Models"
+  - "Dynamic Routing"
+  - "Mixture of States"
+  - "Text-to-Image Generation"
+  - "Image Editing"
+  - "Sparse Interaction"
 date: 2026-05-08
-content_hash: 64a830f1ccdfcb5c
+content_hash: ded68f41313d98bc
 ---
+
 # Mixture of States: Routing Token-Level Dynamics for Multimodal Generation
 
 **Conference**: CVPR2026  

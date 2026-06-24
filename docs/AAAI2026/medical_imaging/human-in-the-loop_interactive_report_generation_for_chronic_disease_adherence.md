@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence
 description: >-
-  [AAAI 2026][Medical Imaging][Human-in-the-loop] This paper presents a "physician-in-the-loop" interactive interface that restricts AI to the roles of data organization and draft generation. Through a single-page editor…
+  [AAAI 2026][Medical Imaging][Human-in-the-loop] This paper presents a "physician-in-the-loop" interactive interface that restricts AI to the roles of data organization and draft generation. Through a single-page editor, chart–text pairing, and automated urgency stratification, it enables efficient and accountable chronic disease adherence report generation. A pilot study reveals an "accountability paradox": even when AI-generated quality matches the physician manual-authoring…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "medication adherence"
   - "clinical AI collaboration"
 date: 2026-05-08
-content_hash: 539b6f887b581b5e
+content_hash: 5485decbb5260170
 ---
 
 # Human-in-the-Loop Interactive Report Generation for Chronic Disease Adherence
@@ -145,11 +145,11 @@ Three physicians reviewed 24 cases (14 urgent / 8 attention / 2 stable):
 
 ## Related Papers
 
-- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
 - [\[AAAI 2026\] VitalDiagnosis: AI-Driven Ecosystem for 24/7 Vital Monitoring and Chronic Disease Management](vitaldiagnosis_ai-driven_ecosystem_for_247_vital_monitoring_and_chronic_disease_.md)
+- [\[AAAI 2026\] A Disease-Aware Dual-Stage Framework for Chest X-ray Report Generation](a_disease-aware_dual-stage_framework_for_chest_x-ray_report_.md)
+- [\[CVPR 2026\] BiOTPrompt: Bidirectional Optimal Transport Guided Prompting for Disease Evolution-aware Radiology Report Generation](../../CVPR2026/medical_imaging/biotprompt_bidirectional_optimal_transport_guided_prompting_for_disease_evolutio.md)
 - [\[AAAI 2026\] PriorRG: Prior-Guided Contrastive Pre-training and Coarse-to-Fine Decoding for Chest X-ray Report Generation](priorrg_prior-guided_contrastive_pre-training_and_coarse-to-fine_decoding_for_ch.md)
 - [\[AAAI 2026\] ReCoN-Ipsundrum: An Inspectable Recurrent Persistence Loop Agent with Affect-Coupled Cognition](recon-ipsundrum_an_inspectable_recurrent_persistence_loop_agent_with_affect-coup.md)
-- [\[CVPR 2026\] Unleashing Video Language Models for Fine-grained HRCT Report Generation](../../CVPR2026/medical_imaging/unleashing_video_language_models_for_fine-grained_hrct_report_generation.md)
 
 </div>
 

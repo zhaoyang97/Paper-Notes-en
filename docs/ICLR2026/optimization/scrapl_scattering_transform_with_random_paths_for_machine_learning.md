@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SCRAPL: Scattering Transform with Random Paths for Machine Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][DDSP] Addressing the high computational cost of the multivariate scattering transform (ST) as a differentiable loss function due to the large number of paths $P$, the authors propose SCRAPL. By randomly sampling only one path per step and employing three variance reduction techniques—P-Adam (Path-adaptive momentum), P-SAGA (
+  [ICLR 2026][Optimization][Scattering Transform] Addressing the high computational cost of the multivariate scattering transform (ST) as a differentiable loss function due to the large number of paths $P$, the authors propose SCRAPL. By randomly sampling only one path per step and employing three variance reduction techniques—P-Adam (Path-adaptive momentum), P-SAGA (Path-stochastic average gradient), and $\theta$-importance sampling—to stabilize gradients…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - DDSP
+  - "ICLR 2026"
+  - "Optimization"
+  - "Scattering Transform"
+  - "Random Path Sampling"
+  - "DDSP"
+  - "Importance Sampling"
+  - "Variance Reduction"
 date: 2026-05-08
-content_hash: 87907aff26ce67ff
+content_hash: 6e9ae24fbf5220de
 ---
+
 # SCRAPL: Scattering Transform with Random Paths for Machine Learning
 
 **Conference**: ICLR 2026  
@@ -142,7 +147,7 @@ The SCRAPL loss is an unbiased estimator of the full-path ST loss (proven in Pro
 - [\[ICLR 2026\] Jacobian Aligned Random Forests](jacobian_aligned_random_forests.md)
 - [\[ICLR 2026\] Exploring Diverse Generation Paths via Inference-time Stiefel Activation Steering](exploring_diverse_generation_paths_via_inference-time_stiefel_activation_steerin.md)
 - [\[ICLR 2026\] Rapid Training of Hamiltonian Graph Networks using Random Features](rapid_training_of_hamiltonian_graph_networks_using_random_features.md)
-- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
 
 </div>
 

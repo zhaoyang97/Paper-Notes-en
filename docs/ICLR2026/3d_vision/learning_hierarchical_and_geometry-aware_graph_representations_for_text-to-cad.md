@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Hierarchical and Geometry-Aware Graph Representations for Text-to-CAD
 description: >-
-  [ICLR 2026][3D Vision][Text-to-CAD] Graph-CAD decomposes the long-horizon "text-to-CAD code" task into three stages. It first leverages an LLM to generate an **explicit decomposition graph expressing assembly hierarchies and geometric constraints** as an intermediate representation. It then plans actions and generates bpy code sequentially, integrated wi
+  [ICLR 2026][3D Vision][Text-to-CAD] Graph-CAD decomposes the long-horizon "text-to-CAD code" task into three stages. It first leverages an LLM to generate an **explicit decomposition graph expressing assembly hierarchies and geometric constraints** as an intermediate representation. It then plans actions and generates bpy code sequentially, integrated with a structure-aware progressive curriculum learning approach to push the model's capability boundaries. This pulls the Geom…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Text-to-CAD
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Text-to-CAD"
+  - "Geometry Decomposition Graph"
+  - "Intermediate Representation"
+  - "Curriculum Learning"
+  - "Geometric Constraints"
 date: 2026-05-08
-content_hash: 0808d5075865f623
+content_hash: 110170366ea807b9
 ---
+
 # Learning Hierarchical and Geometry-Aware Graph Representations for Text-to-CAD
 
 **Conference**: ICLR 2026  
@@ -139,9 +144,9 @@ Three-stage pipeline ablation (SFT setting, Table 3):
 
 - [\[CVPR 2026\] Velox: Learning Representations of 4D Geometry and Appearance](../../CVPR2026/3d_vision/velox_learning_representations_of_4d_geometry_and_appearance.md)
 - [\[ICLR 2026\] DreamCS: Geometry-Aware Text-to-3D Generation with Unpaired 3D Reward Supervision](dreamcs_geometry-aware_text-to-3d_generation_with_unpaired_3d_reward_supervision.md)
+- [\[ICLR 2026\] Plan then Act: Bi-level CAD Command Sequence Generation](plan_then_act_bi-level_cad_command_sequence_generation.md)
 - [\[CVPR 2026\] Learning Hierarchical Hyperbolic Mixture Model for Part-aware 3D Generation](../../CVPR2026/3d_vision/learning_hierarchical_hyperbolic_mixture_model_for_part-aware_3d_generation.md)
 - [\[ICLR 2026\] $\pi^3$: Permutation-Equivariant Visual Geometry Learning](pi3_permutation-equivariant_visual_geometry_learning.md)
-- [\[AAAI 2026\] Graph Smoothing for Enhanced Local Geometry Learning in Point Cloud Analysis](../../AAAI2026/3d_vision/graph_smoothing_for_enhanced_local_geometry_learning_in_point_cloud_analysis.md)
 
 </div>
 

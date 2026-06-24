@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration
 description: >-
-  [AAAI 2026][Multimodal VLM][All-in-One Image Restoration] Inspired by human visual perception (HVP), this paper proposes ClearAIR, a coarse-to-fine unified image restoration framework that progressively recovers image qu…
+  [AAAI 2026][Multimodal VLM][All-in-One Image Restoration] Inspired by human visual perception (HVP), this paper proposes ClearAIR, a coarse-to-fine unified image restoration framework that progressively recovers image quality through four stages — MLLM-based quality assessment → semantic region perception → degradation type identification → internal clue reuse — achieving state-of-the-art performance across multiple degradation tasks.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Guidance"
   - "Self-supervised Learning"
 date: 2026-05-08
-content_hash: acc611a7d5926eb2
+content_hash: 8c4e12f41aa9aff1
 ---
 
 # ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration
@@ -159,10 +159,10 @@ ClearAIR achieves 29.34 dB / 0.886 SSIM, surpassing OneRestore (28.72 dB) by 0.6
 ## Related Papers
 
 - [\[ICCV 2025\] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis](../../ICCV2025/multimodal_vlm/oasis_one_image_is_all_you_need_for_multimodal_instruction_data_synthesis.md)
-- [\[AAAI 2026\] SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension](satiredecoder_visual_cascaded_decoupling_for_enhancing_satirical_image_comprehen.md)
+- [\[CVPR 2026\] One Patch to Caption Them All: A Unified Zero-Shot Captioning Framework](../../CVPR2026/multimodal_vlm/one_patch_to_caption_them_all_a_unified_zero-shot_captioning_framework.md)
 - [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
-- [\[AAAI 2026\] CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product](crebench_human-aligned_creativity_evaluation_from_idea_to_process_to_product.md)
-- [\[CVPR 2026\] PhysInOne: Visual Physics Learning and Reasoning in One Suite](../../CVPR2026/multimodal_vlm/physisinone_visual_physics_learning_and_reasoning_in_one_suite.md)
+- [\[ICLR 2026\] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models](../../ICLR2026/multimodal_vlm/one_patch_doesnt_fit_all_adaptive_patching_for_native-resolution_multimodal_larg.md)
+- [\[AAAI 2026\] SatireDecoder: Visual Cascaded Decoupling for Enhancing Satirical Image Comprehension](satiredecoder_visual_cascaded_decoupling_for_enhancing_satirical_image_comprehen.md)
 
 </div>
 

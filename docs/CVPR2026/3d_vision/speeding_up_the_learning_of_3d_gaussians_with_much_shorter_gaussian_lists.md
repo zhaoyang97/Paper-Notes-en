@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian Splatting] By periodically resetting Gaussian scales (Scale Reset) and imposing entropy constraints on alpha blending weights (Entropy Constraint), the length of the Gaussian list for each pixel is shortened. This achieves a **5–12× acceleration** in 3DGS training while maintaining comparable rendering quality.
+  [CVPR2026][3D Vision][3D Gaussian Splatting] By periodically resetting Gaussian scales (Scale Reset) and imposing entropy constraints on alpha blending weights (Entropy Constraint), the length of the Gaussian list for each pixel is shortened. This achieves a **5–12× acceleration** in 3DGS training while maintaining comparable rendering quality.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian Splatting
-  - Scale Reset
+  - "CVPR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Training Acceleration"
+  - "Scale Reset"
+  - "Entropy Constraint"
+  - "Gaussian List Shortening"
 date: 2026-05-08
-content_hash: f103c5122e4d8fd7
+content_hash: af6daed09a85f6ed
 ---
+
 # Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists
 
 **Conference**: CVPR2026  
@@ -146,11 +150,11 @@ Evaluations were conducted on Mip-NeRF 360, Deep Blending, and Tanks & Temples b
 
 ## Related Papers
 
-- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
 - [\[CVPR 2026\] Learning Differentiable Hierarchies in 3D Gaussian Splatting](learning_differentiable_hierarchies_in_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] MEGS2: Memory-Efficient Gaussian Splatting via Spherical Gaussians and Unified Pruning](../../ICLR2026/3d_vision/megs2_memory-efficient_gaussian_splatting_via_spherical_gaussians_and_unified_pr.md)
-- [\[CVPR 2025\] MegaSynth: Scaling Up 3D Scene Reconstruction with Synthesized Data](../../CVPR2025/3d_vision/megasynth_scaling_up_3d_scene_reconstruction_with_synthesized_data.md)
+- [\[CVPR 2026\] FastGS: Training 3D Gaussian Splatting in 100 Seconds](fastgs_training_3d_gaussian_splatting_in_100_seconds.md)
 - [\[CVPR 2026\] PhyGaP: Physically-Grounded Gaussians with Polarization Cues](phygap_physically-grounded_gaussians_with_polarization_cues.md)
+- [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](../../ICLR2026/3d_vision/learning_unified_representation_of_3d_gaussian_splatting.md)
+- [\[ECCV 2024\] Click-Gaussian: Interactive Segmentation to Any 3D Gaussians](../../ECCV2024/3d_vision/click-gaussian_interactive_segmentation_to_any_3d_gaussians.md)
 
 </div>
 

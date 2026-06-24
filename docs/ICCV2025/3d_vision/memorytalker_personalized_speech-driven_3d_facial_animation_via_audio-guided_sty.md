@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization
 description: >-
-  [3D Vision] This paper proposes MemoryTalker, a two-stage training framework (Memorizing + Animating) that employs a key-value memory network to store generic facial motions and generates personalized 3D facial animation…
+  [3D Vision] This paper proposes MemoryTalker, a two-stage training framework (Memorizing + Animating) that employs a key-value memory network to store generic facial motions and generates personalized 3D facial animations driven solely by audio via audio-guided stylized memory retrieval, requiring no additional prior information at inference time.
 tags:
   - "3D Vision"
 date: 2026-05-08
-content_hash: a5706a39d705891a
+content_hash: 71447919936d1443
 ---
 
 # MemoryTalker: Personalized Speech-Driven 3D Facial Animation via Audio-Guided Stylization
@@ -174,9 +174,9 @@ In a comparison with five state-of-the-art methods (33 participants), MemoryTalk
 
 - [\[ICCV 2025\] Identity Preserving 3D Head Stylization with Multiview Score Distillation](identity_preserving_3d_head_stylization_with_multiview_score_distillation.md)
 - [\[ICCV 2025\] PlaceIt3D: Language-Guided Object Placement in Real 3D Scenes](placeit3d_language-guided_object_placement_in_real_3d_scenes.md)
-- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/3d_vision/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
+- [\[CVPR 2025\] Multi-view Reconstruction via SfM-guided Monocular Depth Estimation](../../CVPR2025/3d_vision/multi-view_reconstruction_via_sfm-guided_monocular_depth_estimation.md)
 - [\[ICCV 2025\] SplatTalk: 3D VQA with Gaussian Splatting](splattalk_3d_vqa_with_gaussian_splatting.md)
-- [\[ICCV 2025\] GaussianProperty: Integrating Physical Properties to 3D Gaussians with LMMs](gaussianproperty_integrating_physical_properties_to_3d_gaussians_with_lmms.md)
+- [\[CVPR 2026\] TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures](../../CVPR2026/3d_vision/tehor_text-guided_3d_human_and_object_reconstruction_with_textures.md)
 
 </div>
 

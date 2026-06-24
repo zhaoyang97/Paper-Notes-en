@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Gromov-Wasserstein] This work reformulates semantic correspondence as a Fused Gromov-Wasserstein (FGW) optimal transport problem. By leveraging geometric structure constraints from 3D foundation models to generate globally consistent pseudo-labels, it addresses the geometric inconsistency caused by the locality and 2D appearance ambiguity
+  [CVPR2026][Self-Supervised Learning][Semantic Correspondence] This work reformulates semantic correspondence as a Fused Gromov-Wasserstein (FGW) optimal transport problem. By leveraging geometric structure constraints from 3D foundation models to generate globally consistent pseudo-labels, it addresses the geometric inconsistency caused by the locality and 2D appearance ambiguity of traditional nearest-neighbor matching.
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
-  - Gromov-Wasserstein
+  - "CVPR2026"
+  - "Self-Supervised Learning"
+  - "Semantic Correspondence"
+  - "Optimal Transport"
+  - "Gromov-Wasserstein"
+  - "3D Geometric Constraints"
+  - "Pseudo-labels"
+  - "Foundation Models"
 date: 2026-05-08
-content_hash: fa34ebf72caf9c5f
+content_hash: b78520d90c65682a
 ---
+
 # Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild
 
 **Conference**: CVPR2026  
@@ -153,9 +159,9 @@ On SPair-71k, the method achieves 67.9% PCK@0.1, surpassing the zero-shot DINOv2
 
 - [\[CVPR 2026\] An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)
 - [\[ICCV 2025\] MoSiC: Optimal-Transport Motion Trajectory for Dense Self-Supervised Learning](../../ICCV2025/self_supervised/mosic_optimal-transport_motion_trajectory_for_dense_self-supervised_learning.md)
+- [\[ICLR 2026\] Uncover Underlying Correspondence for Robust Multi-view Clustering](../../ICLR2026/self_supervised/uncover_underlying_correspondence_for_robust_multi-view_clustering.md)
+- [\[CVPR 2026\] Your Dissimilarities Define You: Complementary Learning Exploiting Class Diversities](your_dissimilarities_define_you_complementary_learning_exploiting_class_diversit.md)
 - [\[CVPR 2026\] Can You Learn to See Without Images? Procedural Warm-Up for Vision Transformers](can_you_learn_to_see_without_images_procedural_warm-up_for_vision_transformers.md)
-- [\[CVPR 2026\] SECOS: Semantic Capture for Rigorous Classification in Open-World Semi-Supervised Learning](secos_semantic_capture_for_rigorous_classification_in_open-world_semi-supervised.md)
-- [\[ICML 2026\] PartCo: Part-Level Correspondence Priors Enhance Category Discovery](../../ICML2026/self_supervised/partco_part-level_correspondence_priors_enhance_category_discovery.md)
 
 </div>
 

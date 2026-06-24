@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MaNGO: Adaptable Graph Network Simulators via Meta-Learning
 description: >-
-  [NeurIPS 2025][Robotics][Graph network simulators] This paper proposes MaNGO (Meta Neural Graph Operator), which leverages meta-learning and conditional neural processes (CNP) to learn shared latent structure across simu…
+  [NeurIPS 2025][Robotics][Graph network simulators] This paper proposes MaNGO (Meta Neural Graph Operator), which leverages meta-learning and conditional neural processes (CNP) to learn shared latent structure across simulation tasks under varying physical parameters, enabling rapid adaptation to new physical parameters without retraining.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "neural operators"
   - "physics simulation"
 date: 2026-05-08
-content_hash: ee034c022e34a1b6
+content_hash: 21b7bb79aeaf95de
 ---
 
 # MaNGO: Adaptable Graph Network Simulators via Meta-Learning
@@ -157,9 +157,9 @@ Evaluated on multiple dynamics prediction tasks involving variations in material
 
 - [\[NeurIPS 2025\] Asymptotically Stable Quaternionic Hopfield Structured Neural Network with Supervised Projection-based Manifold Learning](asymptotically_stable_quaternion-valued_hopfield-structured_neural_network_with_.md)
 - [\[NeurIPS 2025\] Adaptive Frontier Exploration on Graphs with Applications to Network-Based Disease Testing](adaptive_frontier_exploration_on_graphs_with_applications_to_network-based_disea.md)
+- [\[ICLR 2026\] Rodrigues Network for Learning Robot Actions](../../ICLR2026/robotics/rodrigues_network_for_learning_robot_actions.md)
+- [\[ICML 2025\] Graph-Assisted Stitching for Offline Hierarchical Reinforcement Learning](../../ICML2025/robotics/graph-assisted_stitching_for_offline_hierarchical_reinforcement_learning.md)
 - [\[AAAI 2026\] Scalable Multi-Objective and Meta Reinforcement Learning via Gradient Estimation](../../AAAI2026/robotics/scalable_multi-objective_and_meta_reinforcement_learning_via_gradient_estimation.md)
-- [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
-- [\[NeurIPS 2025\] Beyond Parallelism: Synergistic Computational Graph Effects in Multi-Head Attention](beyond_parallelism_synergistic_computational_graph_effects_in_multi-head_attenti.md)
 
 </div>
 

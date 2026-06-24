@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models
 description: >-
-  [ACL 2026][Medical NLP][PrimeKG] MHGraphBench automatically constructs 9 categories of multiple-choice tasks from the mental health subgraph of PrimeKG. It finds that LLMs achieve near-perfect scores in entity recognition but remain significantly deficient in drug-disease relationship judgment, contraindication boundaries, and two-hop KG reasoning.
+  [ACL2026][Medical LLM][Mental Health] MHGraphBench automatically constructs 9 categories of multiple-choice tasks from the mental health subgraph of PrimeKG. It finds that LLMs achieve near-perfect scores in entity recognition but remain significantly deficient in drug-disease relationship judgment, contraindication boundaries, and two-hop KG reasoning.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - PrimeKG
+  - "ACL2026"
+  - "Medical LLM"
+  - "Mental Health"
+  - "Knowledge Graph"
+  - "PrimeKG"
+  - "Relation Judgment"
+  - "Two-hop Reasoning"
 date: 2026-05-08
-content_hash: 1bc94803900b8c5b
+content_hash: 5d1c92ab1dd21fd2
 ---
+
 # MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models
 
 **Conference**: ACL2026  
@@ -139,10 +144,10 @@ The paper does not train models but constructs a benchmark to evaluate 15 models
 ## Related Papers
 
 - [\[ACL 2026\] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)
+- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](../../ICLR2026/medical_nlp/counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)
 - [\[ACL 2026\] MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)
 - [\[ACL 2026\] MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)
-- [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](responsible_evaluation_of_ai_for_mental_health.md)
-- [\[ACL 2026\] Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)
+- [\[NeurIPS 2025\] Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval](../../NeurIPS2025/medical_nlp/mind_the_gap_aligning_knowledge_bases_with_user_needs_to_enhance_mental_health_r.md)
 
 </div>
 

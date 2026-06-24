@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs
 description: >-
-  [AAAI 2026][Physics & Scientific Computing][Neural Operator] This paper proposes SAOT (Spectral Attention Operator Transformer), which captures high-frequency local details via linear-complexity Wavelet Attention (WA) an…
+  [AAAI 2026][Physics & Scientific Computing][Neural Operator] This paper proposes SAOT (Spectral Attention Operator Transformer), which captures high-frequency local details via linear-complexity Wavelet Attention (WA) and complements it with the global receptive field of Fourier Attention (FA) through a gated fusion mechanism. SAOT achieves state-of-the-art performance on 6 operator learning benchmarks, reducing the relative error on Navier-Stokes by 22.3% compared to Transol…
 tags:
   - "AAAI 2026"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Spectral Transformer"
   - "PDE Solving"
 date: 2026-05-08
-content_hash: 0d579bc2accb113d
+content_hash: 77d3554209520302
 ---
 
 # SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs
@@ -183,8 +183,8 @@ SAOT achieves best performance on Darcy, NS, Airfoil, and Plasticity, with the m
 - [\[AAAI 2026\] Knowledge-Guided Masked Autoencoder with Linear Spectral Mixing and Spectral-Angle-Aware Reconstruction](knowledge-guided_masked_autoencoder_with_linear_spectral_mixing_and_spectral-ang.md)
 - [\[ICLR 2026\] DRIFT-Net: A Spectral--Coupled Neural Operator for PDEs Learning](../../ICLR2026/physics/drift-net_a_spectral--coupled_neural_operator_for_pdes_learning.md)
 - [\[AAAI 2026\] FlashKAT: Understanding and Addressing Performance Bottlenecks in the Kolmogorov-Arnold Transformer](flashkat_understanding_and_addressing_performance_bottlenecks_in_the_kolmogorov-.md)
-- [\[ICML 2026\] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models](../../ICML2026/physics/quiver_quantum-informed_views_for_enhanced_representations_in_large_ml_models.md)
-- [\[CVPR 2026\] NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training](../../CVPR2026/physics/nestor_a_nested_moe-based_neural_operator_for_large-scale_pde_pre-training.md)
+- [\[ICML 2026\] TINNs: Time-Induced Neural Networks for Solving Time-Dependent PDEs](../../ICML2026/physics/tinns_time-induced_neural_networks_for_solving_time-dependent_pdes.md)
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](../../ICLR2026/physics/riesz_neural_operator_for_solving_partial_differential_equations.md)
 
 </div>
 

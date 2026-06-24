@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] The authors observe that VLMs trained with GRPO, while achieving deeper reasoning in single trials, suffer from "diversity collapse" early in training—degenerating into a single dominant strategy. They propose MUPO (Multi-group Policy Optimization), which clusters sampled responses into multiple groups based on reasoni
+  [CVPR 2026][VLM Reasoning][GRPO] The authors observe that VLMs trained with GRPO, while achieving deeper reasoning in single trials, suffer from "diversity collapse" early in training—degenerating into a single dominant strategy. They propose MUPO (Multi-group Policy Optimization), which clusters sampled responses into multiple groups based on reasoning patterns, estimates local advantages within groups, and applies inter-group diversity rewards. This allows the model to main…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "GRPO"
+  - "Divergent Thinking"
+  - "Diversity Collapse"
+  - "Multi-group Policy Optimization"
+  - "Test-time Scaling"
 date: 2026-05-08
-content_hash: 8d1d073b8b1c7e0e
+content_hash: 85427f002631eb63
 ---
+
 # All Roads Lead to Rome: Incentivizing Divergent Thinking in Vision-Language Models
 
 **Conference**: CVPR 2026  
@@ -159,15 +164,15 @@ Impact of group number $K$ (7B, average across five benchmarks, %):
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] MUPO: All Roads Lead to Rome - Incentivizing Divergent Thinking in Vision-Language Models](mupo_all_roads_lead_to_rome_incentivizing_divergent_thinking_in_vlms.md)
-- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
 - [\[CVPR 2026\] R-4B: Incentivizing General-Purpose Auto-Thinking in MLLMs via Bi-Mode Annealing and Reinforce Learning](r-4b_incentivizing_general-purpose_auto-thinking_in_mllms_via_bi-mode_annealing_.md)
 - [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](onethinker_all-in-one_reasoning_model_for_image_and_video.md)
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
 
 </div>
 

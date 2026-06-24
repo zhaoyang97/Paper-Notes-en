@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeepRAG: Thinking to Retrieve Step by Step for Large Language Models
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Reinforcement Learning] DeepRAG formalizes the "reasoning while retrieving" process as a Markov Decision Process (MDP). It enables LLMs to autonomously decide whether to "use internal knowledge or perform external retrieval" for each sub-problem during step-by-step problem decomposition. Through a three-step pipeline—binary tree search for da
+  [ICLR2026][Information Retrieval & RAG][Adaptive Retrieval] DeepRAG formalizes the "reasoning while retrieving" process as a Markov Decision Process (MDP). It enables LLMs to autonomously decide whether to "use internal knowledge or perform external retrieval" for each sub-problem during step-by-step problem decomposition. Through a three-step pipeline—binary tree search for data synthesis, imitation learning, and calibration training—DeepRAG achieves a 25.41% relative improv…
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Reinforcement Learning
+  - "ICLR2026"
+  - "Information Retrieval & RAG"
+  - "Adaptive Retrieval"
+  - "Retrieval-Augmented Generation"
+  - "Knowledge Boundaries"
+  - "Markov Decision Process"
+  - "Reinforcement Learning"
 date: 2026-05-08
-content_hash: 0845dddeb174be70
+content_hash: da184db3c173db39
 ---
+
 # DeepRAG: Thinking to Retrieve Step by Step for Large Language Models
 
 **Conference**: ICLR2026  

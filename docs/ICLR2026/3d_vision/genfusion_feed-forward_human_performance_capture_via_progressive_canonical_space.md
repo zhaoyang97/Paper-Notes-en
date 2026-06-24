@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] GenFusion: Feed-forward Human Performance Capture via Progressive Canonical Space Updates
 description: >-
-  [ICLR 2026][3D Vision][Diffusion Model] GenFusion accumulates monocular RGB video streams frame-by-frame into a progressively "completed" canonical feature space as temporal context. It then warps this context back to the current frame and renders novel views through diffusion-based probabilistic regression. This allows the model to synthesize frontal detail
+  [ICLR 2026][3D Vision][Human Performance Capture] GenFusion accumulates monocular RGB video streams frame-by-frame into a progressively "completed" canonical feature space as temporal context. It then warps this context back to the current frame and renders novel views through diffusion-based probabilistic regression. This allows the model to synthesize frontal details consistent with historical observations even from side-view inputs, producing sharper results than determini…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Human Performance Capture"
+  - "Monocular Video"
+  - "Progressive Canonical Space"
+  - "Probabilistic Regression"
+  - "Diffusion Models"
+  - "Feed-forward Methods"
 date: 2026-05-08
-content_hash: 818be8bfcb42f366
+content_hash: f9d75330c7b3162d
 ---
+
 # GenFusion: Feed-forward Human Performance Capture via Progressive Canonical Space Updates
 
 **Conference**: ICLR 2026  
@@ -127,15 +133,17 @@ Ablation on 4D-Dress:
 
 <div class="related-papers" markdown="1">
 
-1. **Champ**: Championing Human Motion Propagation with Guided Diffusion (2024)
-2. **SHERF**: Generalizable Human Radiance Fields from Single View with Canonical Representation (ICCV 2023)
-3. **NHP**: Neural Human Performer: Learning Generalizable Radiance Fields for Human Performance Capture (NeurIPS 2021)
-4. **GauHuman**: Real-Time Human Rendering with Gaussian Splatting (CVPR 2024)
+## Related Papers
+
+- [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](../../CVPR2026/3d_vision/unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)
+- [\[ICLR 2026\] Flash-Mono: Feed-Forward Accelerated Gaussian Splatting Monocular SLAM](flash-mono_feed-forward_accelerated_gaussian_splatting_monocular_slam.md)
+- [\[ICLR 2026\] ReSplat: Degradation-agnostic Feed-forward Gaussian Splatting via Self-guided Residual Diffusion](resplat_degradation-agnostic_feed-forward_gaussian_splatting_via_self-guided_res.md)
+- [\[ICLR 2026\] Splat and Distill: Augmenting Teachers with Feed-Forward 3D Reconstruction for 3D-Aware Distillation](splat_and_distill_augmenting_teachers_with_feed-forward_3d_reconstruction_for_3d.md)
+- [\[ICLR 2026\] A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features](a_scene_is_worth_a_thousand_features_feed-forward_camera_localization_from_a_col.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] UniSH: Unifying Scene and Human Reconstruction in a Feed-Forward Pass](../../CVPR2026/3d_vision/unish_unifying_scene_and_human_reconstruction_in_a_feed-forward_pass.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Diffusion Model] This paper proposes the TODSynth framework, which achieves text-image-mask joint-controlled remote sensing image synthesis via the unified tri-modal attention of MM-DiT. It innovatively introduces the Control-Rectify Flow Matching (CRFM) method, which utilizes the semantic loss of a downstream segmentation model during
+  [CVPR 2026][Segmentation][Remote sensing semantic segmentation] This paper proposes the TODSynth framework, which achieves text-image-mask joint-controlled remote sensing image synthesis via the unified tri-modal attention of MM-DiT. It innovatively introduces the Control-Rectify Flow Matching (CRFM) method, which utilizes the semantic loss of a downstream segmentation model during the sampling stage to dynamically adjust the generation trajectory. This approach improves mIoU…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Diffusion Model
-  - Flow Matching
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Remote sensing semantic segmentation"
+  - "data synthesis"
+  - "controllable generation"
+  - "diffusion models"
+  - "flow matching"
 date: 2026-05-08
-content_hash: a01f293d72152cfe
+content_hash: 3984528a83a619df
 ---
+
 # Task-Oriented Data Synthesis and Control-Rectify Sampling for Remote Sensing Semantic Segmentation
 
 **Conference**: CVPR 2026  
@@ -174,9 +178,9 @@ Ablation of CRFM steps (total steps=23):
 
 ## Related Papers
 
-- [\[CVPR 2026\] SGMA: Semantic-Guided Modality-Aware Segmentation for Remote Sensing with Incomplete Multimodal Data](sgma_semantic-guided_modality-aware_segmentation_for_remote_sensing_with_incompl.md)
 - [\[CVPR 2026\] MatchMask: Mask-Centric Generative Data Augmentation for Label-Scarce Semantic Segmentation](matchmask_mask-centric_generative_data_augmentation_for_label-scarce_semantic_se.md)
 - [\[NeurIPS 2025\] FAST: Foreground-aware Diffusion with Accelerated Sampling Trajectory for Segmentation-oriented Anomaly Synthesis](../../NeurIPS2025/segmentation/fast_foreground-aware_diffusion_with_accelerated_sampling_trajectory_for_segment.md)
+- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[CVPR 2026\] F2Net: A Frequency-Fused Network for Ultra-High Resolution Remote Sensing Segmentation](f2net_a_frequency-fused_network_for_ultra-high_resolution_remote_sensing_segment.md)
 - [\[CVPR 2026\] Test-Time Multi-Prompt Adaptation for Open-Vocabulary Remote Sensing Image Segmentation](test-time_multi-prompt_adaptation_for_open-vocabulary_remote_sensing_image_segme.md)
 

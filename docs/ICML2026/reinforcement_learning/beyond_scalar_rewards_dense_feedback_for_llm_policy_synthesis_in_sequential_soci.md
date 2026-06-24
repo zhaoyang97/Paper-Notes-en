@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Scalar Rewards: Dense Feedback for LLM Policy Synthesis in Sequential Social Dilemmas
 description: >-
-  [ICML 2026][Reinforcement Learning][Multi-Agent] This paper proposes an iterative LLM policy synthesis framework where an LLM directly generates Python policy code for multi-agent sequential social dilemmas. Through "feedback engineering," it demonstrates that adding four social metrics—efficiency, equality, sustainability, and peace—as dense feedback alongside scala
+  [ICML2026][Reinforcement Learning][LLM Policy Synthesis] This paper proposes an iterative LLM policy synthesis framework where an LLM directly generates Python policy code for multi-agent sequential social dilemmas. Through "feedback engineering," it demonstrates that adding four social metrics—efficiency, equality, sustainability, and peace—as dense feedback alongside scalar rewards breaks the "feedback aliasing" problem, achieving up to a 54% efficiency improvement in the C…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - Multi-Agent
+  - "ICML2026"
+  - "Reinforcement Learning"
+  - "LLM Policy Synthesis"
+  - "Multi-Agent"
+  - "Social Dilemmas"
+  - "Feedback Engineering"
+  - "Programmatic Policies"
 date: 2026-05-08
-content_hash: dce2331232a45483
+content_hash: d8f6c06591e35dc7
 ---
+
 # Beyond Scalar Rewards: Dense Feedback for LLM Policy Synthesis in Sequential Social Dilemmas
 
 **Conference**: ICML2026  
@@ -119,15 +124,15 @@ Experiments were conducted in two SSD environments (Gathering, Cleanup) with $N=
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] SocialJax: An Evaluation Suite for Multi-Agent Reinforcement Learning in Sequential Social Dilemmas](../../ICLR2026/reinforcement_learning/socialjax_an_evaluation_suite_for_multi-agent_reinforcement_learning_in_sequenti.md)
+- [\[ICML 2026\] Multi-Agent Reinforcement Learning from Delayed Marketplace Feedback for Objective-Weight Adaptation in Three-Sided Dispatch](multi-agent_reinforcement_learning_from_delayed_marketplace_feedback_for_objecti.md)
 - [\[ICLR 2026\] Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains RLVR](../../ICLR2026/reinforcement_learning/beyond_pass_1_self-play_with_variational_problem_synthesis_sustains_rlvr.md)
-- [\[AAAI 2026\] Constrained and Robust Policy Synthesis with Satisfiability-Modulo-Probabilistic-Model-Checking](../../AAAI2026/reinforcement_learning/constrained_and_robust_policy_synthesis_with_satisfiability-modulo-probabilistic.md)
-- [\[ICLR 2026\] Count Counts: Motivating Exploration in LLM Reasoning with Count-based Intrinsic Rewards](../../ICLR2026/reinforcement_learning/count_counts_motivating_exploration_in_llm_reasoning_with_count-based_intrinsic_.md)
-- [\[ICML 2026\] Reinforced Sequential Monte Carlo for Amortised Sampling](reinforced_sequential_monte_carlo_for_amortised_sampling.md)
-- [\[ACL 2026\] Breaking the Impasse: Dual-Scale Evolutionary Policy Training for Social Language Agents](../../ACL2026/reinforcement_learning/breaking_the_impasse_dual-scale_evolutionary_policy_training_for_social_language.md)
+- [\[ICLR 2026\] Rubrics as Rewards: Reinforcement Learning Beyond Verifiable Domains](../../ICLR2026/reinforcement_learning/rubrics_as_rewards_reinforcement_learning_beyond_verifiable_domains.md)
+- [\[ICML 2026\] Beyond the Proxy: Trajectory-Distilled Guidance for Offline GFlowNet Training](beyond_the_proxy_trajectory-distilled_guidance_for_offline_gflownet_training.md)
 
 </div>
 

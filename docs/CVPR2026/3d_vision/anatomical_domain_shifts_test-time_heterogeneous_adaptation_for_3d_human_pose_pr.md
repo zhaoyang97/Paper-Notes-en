@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] Addressing Continuous Test-time Adaptation (CTTA) for 3D Human Pose Prediction (HPP), this paper identifies the overlooked fact that "domain shifts are concentrated in specific body parts rather than occurring uniformly across the whole body." It proposes TT-HA: decomposing model parameters into five anatomical subsets
+  [CVPR 2026][3D Vision][Human Pose Prediction] Addressing Continuous Test-time Adaptation (CTTA) for 3D Human Pose Prediction (HPP), this paper identifies the overlooked fact that "domain shifts are concentrated in specific body parts rather than occurring uniformly across the whole body." It proposes TT-HA: decomposing model parameters into five anatomical subsets (left/right arms, left/right legs, torso), using Instance Normalization (IN) statistics combined with Earth Mover…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human Pose Prediction"
+  - "Continuous Test-time Adaptation"
+  - "Anatomical Heterogeneity"
+  - "Instance Normalization"
+  - "EMD Domain Shift Detection"
 date: 2026-05-08
-content_hash: 0a306e1b0fc3348b
+content_hash: aa93e5076edf4e27
 ---
+
 # Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction
 
 **Conference**: CVPR 2026  
@@ -146,15 +152,16 @@ TT-HA achieved the best results across all datasets and time steps. Improvements
 - **Value**: ⭐⭐⭐⭐ The mechanism is transferable to other non-uniform shift tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ECCV 2024\] Human Motion Forecasting in Dynamic Domain Shifts: A Homeostatic Continual Test-Time Adaptation Framework](../../ECCV2024/human_understanding/human_motion_forecasting_in_dynamic_domain_shifts_a_homeostatic_continual_test-t.md)
-- [\[AAAI 2026\] Robust Long-term Test-Time Adaptation for 3D Human Pose Estimation through Motion Discretization](../../AAAI2026/human_understanding/robust_long-term_test-time_adaptation_for_3d_human_pose_estimation_through_motio.md)
-- [\[CVPR 2025\] CRISP: Object Pose and Shape Estimation with Test-Time Adaptation](../../CVPR2025/human_understanding/crisp_object_pose_and_shape_estimation_with_test-time_adaptation.md)
-- [\[CVPR 2026\] Gaussian-Mixture Latent Flow for Stochastic 3D Human Motion Prediction](gaussian-mixture_latent_flow_for_stochastic_3d_human_motion_prediction.md)
-- [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
+- [\[CVPR 2026\] ELITE: Efficient Gaussian Head Avatar from a Monocular Video via Learned Initialization and Test-time Generative Adaptation](elite_efficient_gaussian_head_avatar_from_a_monocular_video_via_learned_initiali.md)
+- [\[CVPR 2026\] Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)
+- [\[CVPR 2026\] ZipMap: Linear-Time Stateful 3D Reconstruction via Test-Time Training](zipmap_linear-time_stateful_3d_reconstruction_via_test-time_training.md)
+- [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
+- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
 
 </div>
 

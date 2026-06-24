@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][3D Gaussian Splatting] Momentum-GS proposes a momentum-based self-distillation mechanism to address cross-block consistency issues in block-parallel training of large-scale 3D Gaussian Splatting. B…
+  [ICCV 2025][3D Vision][3D Gaussian Splatting] Momentum-GS proposes a momentum-based self-distillation mechanism to address cross-block consistency issues in block-parallel training of large-scale 3D Gaussian Splatting. By introducing a momentum teacher Gaussian decoder for global guidance and decoupling the number of blocks from the number of GPUs, the method achieves state-of-the-art performance on multiple large-scale scene datasets, improving LPIPS by 18.7% over CityGaussi…
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Hybrid Representation"
   - "Block-Parallel Training"
 date: 2026-05-08
-content_hash: db4942f5d0e80000
+content_hash: f1e49c6612c09ac1
 ---
 
 # Momentum-GS: Momentum Gaussian Self-Distillation for High-Quality Large Scene Reconstruction
@@ -140,10 +140,10 @@ Rendering efficiency: **59.91 FPS** with only **4.62 GB** memory (best among all
 ## Related Papers
 
 - [\[ICCV 2025\] OccluGaussian: Occlusion-Aware Gaussian Splatting for Large Scene Reconstruction and Rendering](occlugaussian_occlusion-aware_gaussian_splatting_for_large_scene_reconstruction_.md)
+- [\[ECCV 2024\] CityGaussian: Real-Time High-Quality Large-Scale Scene Rendering with Gaussians](../../ECCV2024/3d_vision/citygaussian_real-time_high-quality_large-scale_scene_rendering_with_gaussians.md)
 - [\[ICCV 2025\] S3R-GS: Streamlining the Pipeline for Large-Scale Street Scene Reconstruction](s3r-gs_streamlining_the_pipeline_for_large-scale_street_scene_reconstruction.md)
 - [\[ICCV 2025\] SegmentDreamer: Towards High-Fidelity Text-to-3D Synthesis with Segmented Consistency Trajectory Distillation](segmentdreamer_towards_high-fidelity_text-to-3d_synthesis_with_segmented_consist.md)
-- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](rayzer_a_self-supervised_large_view_synthesis_model.md)
-- [\[ICCV 2025\] BezierGS: Dynamic Urban Scene Reconstruction with Bézier Curve Gaussian Splatting](beziergs_dynamic_urban_scene_reconstruction_with_bezier_curve_gaussian_splatting.md)
+- [\[ICLR 2026\] Lyra: Generative 3D Scene Reconstruction via Video Diffusion Model Self-Distillation](../../ICLR2026/3d_vision/lyra_generative_3d_scene_reconstruction_via_video_diffusion_model_self-distillat.md)
 
 </div>
 

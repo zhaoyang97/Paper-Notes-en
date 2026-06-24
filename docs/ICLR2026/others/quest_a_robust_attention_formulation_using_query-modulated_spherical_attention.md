@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] QUEST: A Robust Attention Formulation Using Query-Modulated Spherical Attention
 description: >-
-  [ICLR 2026][Others][Attention] QUEST normalizes the key vectors in standard scaled dot-product attention to a hypersphere while maintaining the norm degrees of freedom for the queries (i.e., $A=\mathrm{softmax}(Q\bar{K}^\top)$). With a modification of less than one line, it simultaneously eliminates training instability caused by attention logit exp
+  [ICLR 2026][Attention Mechanism] QUEST normalizes the key vectors in standard scaled dot-product attention to a hypersphere while maintaining the norm degrees of freedom for the queries (i.e., $A=\mathrm{softmax}(Q\bar{K}^\top)$). With a modification of less than one line, it simultaneously eliminates training instability caused by attention logit explosion and enables the model to learn more dispersed and robust attention. It consistently outperforms standard attention and Q…
 tags:
-  - ICLR 2026
-  - Others
-  - Attention
-  - Vision Transformer
+  - "ICLR 2026"
+  - "Attention Mechanism"
+  - "Training Stability"
+  - "Hyperspherical Normalization"
+  - "Robustness"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: e320f8fed0447038
+content_hash: c2cc39872fcfab4a
 ---
+
 # QUEST: A Robust Attention Formulation Using Query-Modulated Spherical Attention
 
 **Conference**: ICLR 2026  
@@ -146,8 +149,8 @@ QUEST is more robust than standard attention across all attacks while maintainin
 - [\[ICLR 2026\] Hilbert-Guided Sparse Local Attention](hilbert-guided_sparse_local_attention.md)
 - [\[ICLR 2026\] Neural Dynamics Self-Attention for Spiking Transformers](neural_dynamics_self-attention_for_spiking_transformers.md)
 - [\[CVPR 2026\] Graph Attention Prototypical Network for Robust Few-Shot Classification](../../CVPR2026/others/graph_attention_prototypical_network_for_robust_few-shot_classification.md)
-- [\[ACL 2025\] Unique Hard Attention: A Tale of Two Sides](../../ACL2025/others/unique_hard_attention_a_tale_of_two_sides.md)
 - [\[NeurIPS 2025\] Normalization in Attention Dynamics](../../NeurIPS2025/others/normalization_in_attention_dynamics.md)
+- [\[AAAI 2026\] Boosting Adversarial Transferability via Ensemble Non-Attention](../../AAAI2026/others/boosting_adversarial_transferability_via_ensemble_non-attention.md)
 
 </div>
 

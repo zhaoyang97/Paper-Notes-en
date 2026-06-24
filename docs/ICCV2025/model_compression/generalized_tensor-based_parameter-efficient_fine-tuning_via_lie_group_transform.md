@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations
 description: >-
-  [ICCV 2025][Model Compression][PEFT] This paper proposes LieRA, which leverages Lie group theory to generalize matrix-level PEFT methods (e.g., LoRA) to high-dimensional parameter spaces (e.g.…
+  [ICCV 2025][Model Compression][PEFT] This paper proposes LieRA, which leverages Lie group theory to generalize matrix-level PEFT methods (e.g., LoRA) to high-dimensional parameter spaces (e.g., convolutional kernels). By representing perturbations in the Lie algebra and mapping them back to the Lie group via the exponential map, LieRA achieves efficient fine-tuning while preserving the structural properties of the parameter space.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "High-Dimensional Parameter Space"
   - "Convolutional Kernel Fine-Tuning"
 date: 2026-05-08
-content_hash: ebc37777e2a6d307
+content_hash: 793f614145c3f4a6
 ---
 
 # Generalized Tensor-based Parameter-Efficient Fine-Tuning via Lie Group Transformations
@@ -154,11 +154,11 @@ Coupling with Other PEFT Methods:
 
 ## Related Papers
 
+- [\[ACL 2025\] C3A: Parameter-Efficient Fine-Tuning via Circular Convolution](../../ACL2025/model_compression/parameter-efficient_fine-tuning_via_circular_convolution.md)
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](../../ICLR2026/model_compression/trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
 - [\[ICCV 2025\] TR-PTS: Task-Relevant Parameter and Token Selection for Efficient Tuning](tr-pts_task-relevant_parameter_and_token_selection_for_efficient_tuning.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](../../ICLR2026/model_compression/memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
-- [\[ACL 2026\] Rethinking Parameter Sharing for LLM Fine-Tuning with Multiple LoRAs](../../ACL2026/model_compression/rethinking_parameter_sharing_for_llm_fine-tuning_with_multiple_loras.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](../../NeurIPS2025/model_compression/reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
-- [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](../../NeurIPS2025/model_compression/data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
+- [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
+- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](../../ICLR2026/model_compression/pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
 
 </div>
 

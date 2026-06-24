@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models
 description: >-
-  [ICLR 2026][Computational Biology][JEPA] CryoLVM introduces the Joint-Embedding Predictive Architecture (JEPA) and a SCUNet backbone to the domain of 3D cryo-EM density maps. It performs self-supervised pre-training in representation space using 7,302 real experimental maps from EMDB, combined with a novel histogram distribution alignment loss for fine-tuning
+  [ICLR2026][Computational Biology][cryo-EM density maps] CryoLVM introduces the Joint-Embedding Predictive Architecture (JEPA) and a SCUNet backbone to the domain of 3D cryo-EM density maps. It performs self-supervised pre-training in representation space using 7,302 real experimental maps from EMDB, combined with a novel histogram distribution alignment loss for fine-tuning. It consistently outperforms specialized methods like DeepEMhancer, EMReady, EM-GAN…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - JEPA
-  - SCUNet
+  - "ICLR2026"
+  - "Computational Biology"
+  - "cryo-EM density maps"
+  - "JEPA"
+  - "SCUNet"
+  - "self-supervised pre-training"
+  - "histogram distribution alignment loss"
 date: 2026-05-08
-content_hash: 459c7ff77dd0c580
+content_hash: 7881d82c256a4ea7
 ---
+
 # CryoLVM: Self-supervised Learning from Cryo-EM Density Maps with Large Vision Models
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Decouple Your Discovery and Memory in Continual Generalized Category Discovery
 description: >-
-  [CVPR 2026][Self-Supervised Learning][Paper Note] Addressing the limitation in Continual Generalized Category Discovery (C-GCD) where "over-protection of old classes to prevent forgetting crushes the discovery of new classes," this paper proposes the DYDM dual-branch framework. It utilizes a discovery branch to recognize new classes without constraints and a memory br
+  [CVPR 2026][Self-Supervised Learning][Continual Generalized Category Discovery] Addressing the limitation in Continual Generalized Category Discovery (C-GCD) where "over-protection of old classes to prevent forgetting crushes the discovery of new classes," this paper proposes the DYDM dual-branch framework. It utilizes a discovery branch to recognize new classes without constraints and a memory branch using backprop-free Recursive Least Squares (RLS) analytical classifiers to…
 tags:
-  - CVPR 2026
-  - Self-Supervised Learning
+  - "CVPR 2026"
+  - "Self-Supervised Learning"
+  - "Continual Generalized Category Discovery"
+  - "Dual-branch Decoupling"
+  - "Analytical Learning"
+  - "Catastrophic Forgetting"
+  - "Stability-Plasticity Trade-off"
 date: 2026-05-08
-content_hash: 7354be7a97499e21
+content_hash: 021c099e5224883c
 ---
+
 # Decouple Your Discovery and Memory in Continual Generalized Category Discovery
 
 **Conference**: CVPR 2026  
@@ -142,11 +148,11 @@ CIFAR100 / CUB200, 6-stage average accuracy (All / Old / New):
 
 ## Related Papers
 
+- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
 - [\[CVPR 2026\] Seeing Through the Shift: Causality-Inspired Robust Generalized Category Discovery](seeing_through_the_shift_causality-inspired_robust_generalized_category_discover.md)
 - [\[CVPR 2026\] TAR: Token-Aware Refinement for Fine-grained Generalized Category Discovery](tar_token-aware_refinement_for_fine-grained_generalized_category_discovery.md)
 - [\[CVPR 2026\] Learning Like Humans: Analogical Concept Learning for Generalized Category Discovery](learning_like_humans_analogical_concept_learning_for_generalized_category_discov.md)
 - [\[CVPR 2026\] Beyond the Static World: Continual Category Discovery under Visual Drift](beyond_the_static_world_continual_category_discovery_under_visual_drift.md)
-- [\[AAAI 2026\] GOAL: Geometrically Optimal Alignment for Continual Generalized Category Discovery](../../AAAI2026/self_supervised/goal_geometrically_optimal_alignment_for_continual_generalized_category_discover.md)
 
 </div>
 

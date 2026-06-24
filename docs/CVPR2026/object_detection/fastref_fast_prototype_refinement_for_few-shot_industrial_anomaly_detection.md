@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection
 description: >-
-  [CVPR 2026][Object Detection][Sinkhorn] FastRef formulates "refining normal prototypes with query features" as a nested optimization problem involving **feature migration + anomaly suppression**. During inference, it uses a transform matrix with a closed-form update to migrate query information into prototypes, while employing Sinkhorn Optimal Transport to s
+  [CVPR 2026][Object Detection][Industrial Anomaly Detection] FastRef formulates "refining normal prototypes with query features" as a nested optimization problem involving **feature migration + anomaly suppression**. During inference, it uses a transform matrix with a closed-form update to migrate query information into prototypes, while employing Sinkhorn Optimal Transport to suppress incorporated anomalies. As a plug-and-play module for PatchCore, WinCLIP, and AnomalyDINO…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Sinkhorn
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Industrial Anomaly Detection"
+  - "Few-shot"
+  - "Prototype Refinement"
+  - "Optimal Transport"
+  - "Sinkhorn"
 date: 2026-05-08
-content_hash: c877889825df9e34
+content_hash: 9e69f8b7c3e6ee95
 ---
+
 # FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection
 
 **Conference**: CVPR 2026  
@@ -134,15 +139,15 @@ Pixel-level (localization) trends are consistent. A key conclusion is that FastR
 - Value: ⭐⭐⭐⭐ Practical, real-time, and plug-and-play for industry cold-start scenarios.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection](defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio.md)
-- [\[CVPR 2026\] Omni-AD: A Large-scale and Versatile Benchmark for Industrial Anomaly Detection](omni-ad_a_large-scale_and_versatile_benchmark_for_industrial_anomaly_detection.md)
 - [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
+- [\[CVPR 2026\] Omni-AD: A Large-scale and Versatile Benchmark for Industrial Anomaly Detection](omni-ad_a_large-scale_and_versatile_benchmark_for_industrial_anomaly_detection.md)
 - [\[CVPR 2026\] GPFlow: Gaussian Prototype Probability Flow for Unsupervised Multi-Modal Anomaly Detection](gpflow_gaussian_prototype_probability_flow_for_unsupervised_multi-modal_anomaly_.md)
+- [\[ICLR 2026\] Dual Distillation for Few-Shot Anomaly Detection](../../ICLR2026/object_detection/dual_distillation_for_few-shot_anomaly_detection.md)
 - [\[CVPR 2026\] Bidirectional Multimodal Prompt Learning with Scale-Aware Training for Few-Shot Multi-Class Anomaly Detection](bidirectional_multimodal_prompt_learning_with_scale-aware_training_for_few-shot_.md)
 
 </div>

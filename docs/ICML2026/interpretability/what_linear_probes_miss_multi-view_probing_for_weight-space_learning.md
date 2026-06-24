@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] What Linear Probes Miss: Multi-View Probing for Weight-Space Learning
 description: >-
-  [ICML 2026][Interpretability][probing] This paper points out that single-view first-order probes miss row-column interactions and second-order correlation structures within weight matrices. It proposes MVProbe, which uses multi-view representations consisting of row/column first-order projections and row/column Gram branches, significantly outperforming Pro
+  [ICML2026][Interpretability][Weight-space learning] This paper points out that single-view first-order probes miss row-column interactions and second-order correlation structures within weight matrices. It proposes MVProbe, which uses multi-view representations consisting of row/column first-order projections and row/column Gram branches, significantly outperforming ProbeX on Model Jungle and Stable Diffusion LoRA identification.
 tags:
-  - ICML 2026
-  - Interpretability
-  - probing
+  - "ICML2026"
+  - "Interpretability"
+  - "Weight-space learning"
+  - "probing"
+  - "model identification"
+  - "Gram matrix"
+  - "LoRA identification"
 date: 2026-05-08
-content_hash: eefc1abbf5b9670c
+content_hash: aaa50c7b32cf85ae
 ---
+
 # What Linear Probes Miss: Multi-View Probing for Weight-Space Learning
 
 **Conference**: ICML2026  
@@ -143,10 +148,10 @@ The training objective is the standard multi-label binary cross-entropy loss $\m
 ## Related Papers
 
 - [\[ICLR 2026\] Domain Expansion: A Latent Space Construction Framework for Multi-Task Learning](../../ICLR2026/interpretability/domain_expansion_a_latent_space_construction_framework_for_multi-task_learning.md)
+- [\[ICLR 2026\] Explainable K-means Neural Networks for Multi-view Clustering](../../ICLR2026/interpretability/explainable_k_-means_neural_networks_for_multi-view_clustering.md)
 - [\[ICLR 2026\] Beyond Linear Probes: Dynamic Safety Monitoring for Language Models](../../ICLR2026/interpretability/beyond_linear_probes_dynamic_safety_monitoring_for_language_models.md)
 - [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](../../ACL2026/interpretability/rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
-- [\[ACL 2026\] Linear Probes Detect Task Format, Not Reasoning Mode in Language Model Hidden States](../../ACL2026/interpretability/linear_probes_detect_task_format_not_reasoning_mode_in_language_model_hidden_sta.md)
-- [\[AAAI 2026\] Share Your Attention: Transformer Weight Sharing via Matrix-Based Dictionary Learning](../../AAAI2026/interpretability/share_your_attention_transformer_weight_sharing_via_matrix-based_dictionary_lear.md)
+- [\[ICLR 2026\] Learning to Weight Parameters for Training Data Attribution](../../ICLR2026/interpretability/learning_to_weight_parameters_for_training_data_attribution.md)
 
 </div>
 

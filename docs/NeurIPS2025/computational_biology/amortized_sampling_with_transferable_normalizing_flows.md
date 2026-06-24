@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Amortized Sampling with Transferable Normalizing Flows
 description: >-
-  [NeurIPS 2025][Computational Biology][normalizing flow] This work proposes Prose — a 285M-parameter all-atom transferable normalizing flow based on the TarFlow architecture, trained on 21…
+  [NeurIPS 2025][Computational Biology][normalizing flow] This work proposes Prose — a 285M-parameter all-atom transferable normalizing flow based on the TarFlow architecture, trained on 21,700 short-peptide MD trajectories (totaling 4.3 ms of simulation time). Prose enables zero-shot uncorrelated proposal sampling for arbitrary short-peptide systems, outperforms MD baselines under equal energy evaluation budgets, and generates samples 4,000× faster than the prior transferable…
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "peptide"
   - "importance sampling"
 date: 2026-05-08
-content_hash: e483e31ff70d38eb
+content_hash: 0d1cd36933e713d6
 ---
 
 # Amortized Sampling with Transferable Normalizing Flows
@@ -144,8 +144,8 @@ Prose comprehensively outperforms 1μs MD under equal energy evaluation budgets,
 - [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](amortized_active_generation_of_pareto_sets.md)
 - [\[NeurIPS 2025\] Split Gibbs Discrete Diffusion Posterior Sampling](split_gibbs_discrete_diffusion_posterior_sampling.md)
 - [\[NeurIPS 2025\] Consistent Sampling and Simulation: Molecular Dynamics with Energy-Based Diffusion Models](consistent_sampling_and_simulation_molecular_dynamics_with_energy-based_diffusio.md)
-- [\[ICLR 2026\] Thompson Sampling via Fine-Tuning of LLMs](../../ICLR2026/computational_biology/thompson_sampling_via_fine-tuning_of_llms.md)
-- [\[ICML 2026\] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation](../../ICML2026/computational_biology/card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t.md)
+- [\[ICML 2025\] Compositional Flows for 3D Molecule and Synthesis Pathway Co-design](../../ICML2025/computational_biology/compositional_flows_for_3d_molecule_and_synthesis_pathway_co-design.md)
+- [\[ICML 2025\] WGFormer: An SE(3)-Transformer Driven by Wasserstein Gradient Flows for Molecular Generation](../../ICML2025/computational_biology/wgformer_an_se3-transformer_driven_by_wasserstein_gradient_flows_for_molecular_g.md)
 
 </div>
 

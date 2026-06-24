@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging
 description: >-
-  [ICLR 2026][Medical Imaging][Paper Note] To address the inconsistency between training and testing distributions after deploying medical image models, this paper treats the "final user-corrected prediction" in interactive segmentation as a pseudo-ground truth. It designs a streamlined online adaptation framework, OAIMS (Post-Interaction + Mid-Interaction upda
+  [ICLR 2026][Medical Imaging][Interactive segmentation] To address the inconsistency between training and testing distributions after deploying medical image models, this paper treats the "final user-corrected prediction" in interactive segmentation as a pseudo-ground truth. It designs a streamlined online adaptation framework, OAIMS (Post-Interaction + Mid-Interaction updates + Click-Centered Gaussian loss), which consistently outperforms existing methods across 5 fundus and…
 tags:
-  - ICLR 2026
-  - Medical Imaging
+  - "ICLR 2026"
+  - "Medical Imaging"
+  - "Interactive segmentation"
+  - "distribution shift"
+  - "online learning"
+  - "pseudo-labels"
 date: 2026-05-08
-content_hash: 52328c33c6bf03ba
+content_hash: f7c4d206de2d10ec
 ---
+
 # You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging
 
 **Conference**: ICLR 2026  
@@ -144,7 +149,7 @@ CCG design ablation (Tab. 7): Removing "class-constrained" (no class) or replaci
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">...</div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

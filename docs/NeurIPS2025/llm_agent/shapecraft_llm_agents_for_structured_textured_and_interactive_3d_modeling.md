@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling
 description: >-
-  [NEURIPS2025][LLM Agent][text-to-3D] This paper proposes ShapeCraft, a multi-agent framework built on a Graph-based Procedural Shape (GPS) representation. Three LLM agents — Parser, Coder…
+  [NEURIPS2025][LLM Agent][text-to-3D] This paper proposes ShapeCraft, a multi-agent framework built on a Graph-based Procedural Shape (GPS) representation. Three LLM agents — Parser, Coder, and Evaluator — collaborate to decompose natural language descriptions into structured sub-task graphs, iteratively generating editable and animatable textured 3D assets.
 tags:
   - "NEURIPS2025"
   - "LLM Agent"
@@ -12,7 +12,7 @@ tags:
   - "shape program"
   - "Blender"
 date: 2026-05-08
-content_hash: c9b2fea24565ced7
+content_hash: f57dd1fd3a2aa663
 ---
 
 # ShapeCraft: LLM Agents for Structured, Textured and Interactive 3D Modeling
@@ -170,8 +170,8 @@ ShapeCraft achieves the best performance on IoGT, CLIP Score, and VQA Pass Rate.
 - [\[AAAI 2026\] Structured Personalization: Modeling Constraints as Matroids for Data-Minimal LLM Agents](../../AAAI2026/llm_agent/structured_personalization_modeling_constraints_as_matroids_for_data-minimal_llm.md)
 - [\[NeurIPS 2025\] TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration](trajagent_an_llm-agent_framework_for_trajectory_modeling_via_large-and-small_mod.md)
 - [\[NeurIPS 2025\] Traj-CoA: Patient Trajectory Modeling via Chain-of-Agents for Lung Cancer Risk Prediction](traj-coa_patient_trajectory_modeling_via_chain-of-agents_for_lung_cancer_risk_pr.md)
-- [\[ACL 2026\] CodeStruct: Code Agents over Structured Action Spaces](../../ACL2026/llm_agent/codestruct_code_agents_over_structured_action_spaces.md)
-- [\[NeurIPS 2025\] A-MEM: Agentic Memory for LLM Agents](a-mem_agentic_memory_for_llm_agents.md)
+- [\[CVPR 2026\] VULCAN: Tool-Augmented Multi Agents for Iterative 3D Object Arrangement](../../CVPR2026/llm_agent/vulcan_tool-augmented_multi_agents_for_iterative_3d_object_arrangement.md)
+- [\[ACL 2025\] BookWorld: From Novels to Interactive Agent Societies for Story Creation](../../ACL2025/llm_agent/bookworld_from_novels_to_interactive_agent_societies_for_story_creation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation
 description: >-
-  [ICLR 2026][3D Vision][State Space Model] PointLearner utilizes a biomimetic "focus-then-scan" design—Point-Focused Attention (simulating foveal vision) and Context-Scan State Space (simulating saccadic reasoning)—to model local fine-grained structures and global long-range dependencies under linear complexity. It achieves SOTA performance on ModelNet40/ScanOb
+  [ICLR 2026][3D Vision][Point Cloud] PointLearner utilizes a biomimetic "focus-then-scan" design—Point-Focused Attention (simulating foveal vision) and Context-Scan State Space (simulating saccadic reasoning)—to model local fine-grained structures and global long-range dependencies under linear complexity. It achieves SOTA performance on ModelNet40/ScanObjectNN/ShapeNet/S3DIS and demonstrates strong robustness to noise and sparse sampling.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - State Space Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Point Cloud"
+  - "Foveal Vision"
+  - "Attention"
+  - "State Space Model"
+  - "Hilbert Curve"
 date: 2026-05-08
-content_hash: 2668691b3468aff8
+content_hash: 364d85e52e2528d6
 ---
+
 # Point-Focused Attention Meets Context-Scan State Space: Robust Biological Visual Perception for Point Cloud Representation
 
 **Conference**: ICLR 2026  
@@ -129,9 +134,9 @@ Efficiency (S3DIS, single inference, RTX 4090): PointLearner (52.78M param, 63ms
 
 ## Related Papers
 
+- [\[ICLR 2026\] Point-UQ: An Uncertainty Quantification Paradigm for Point Cloud Few-Shot Class-Incremental Learning](point-uq_an_uncertainty-quantification_paradigm_for_point_cloud_few-shot_class_i.md)
 - [\[ICLR 2026\] Test-Time Optimization of 3D Point Cloud LLM via Manifold-Aware In-Context Guidance and Refinement](test-time_optimization_of_3d_point_cloud_llm_via_manifold-aware_in-context_guida.md)
 - [\[CVPR 2026\] Deformation-based In-Context Learning for Point Cloud Understanding](../../CVPR2026/3d_vision/deformation-based_in-context_learning_for_point_cloud_understanding.md)
-- [\[ICCV 2025\] UST-SSM: Unified Spatio-Temporal State Space Models for Point Cloud Video Modeling](../../ICCV2025/3d_vision/ust-ssm_unified_spatio-temporal_state_space_models_for_point_cloud_video_modelin.md)
 - [\[ICLR 2026\] PointRePar: SpatioTemporal Point Relation Parsing for Robust Category-Unified 3D Tracking](pointrepar_spatiotemporal_point_relation_parsing_for_robust_category-unified_3d_.md)
 - [\[ICLR 2026\] Guaranteed Simply Connected Mesh Reconstruction from an Unorganized Point Cloud](guaranteed_simply_connected_mesh_reconstruction_from_an_unorganized_point_cloud.md)
 

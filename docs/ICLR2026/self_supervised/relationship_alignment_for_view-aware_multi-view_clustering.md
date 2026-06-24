@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Relationship Alignment for View-aware Multi-view Clustering
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] RAV preserves the neighborhood structure of each view through "cross-view sample relationship alignment" and dynamically adjusts the intensity of cluster-level label contrastive learning using "view-aware adaptive weighting" based on Wasserstein distance. This ensures strong alignment for similar views and weak alignme
+  [ICLR 2026][Self-Supervised Learning][Multi-view clustering] RAV preserves the neighborhood structure of each view through "cross-view sample relationship alignment" and dynamically adjusts the intensity of cluster-level label contrastive learning using "view-aware adaptive weighting" based on Wasserstein distance. This ensures strong alignment for similar views and weak alignment for dissimilar views, overall surpassing existing SOTA on ten multi-view clustering benchmarks.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Multi-view clustering"
+  - "contrastive learning"
+  - "relationship alignment"
+  - "view-aware weighting"
+  - "Wasserstein distance"
 date: 2026-05-08
-content_hash: 56fdf11c9806136d
+content_hash: 61977e05f45e9a0f
 ---
+
 # Relationship Alignment for View-aware Multi-view Clustering
 
 **Conference**: ICLR 2026  
@@ -147,14 +153,17 @@ RAV is overall superior, especially on datasets with large view differences (NGs
 
 <div class="related-papers" markdown="1">
 
-1. **SCMVC**: Self-supervised Contrastive Multi-view Clustering, 2022.
-2. **SEM**: Scalable and Efficient Multi-View Clustering, 2023.
-3. **MFLVC**: Multi-level Feature Learning for Multi-view Clustering, CVPR 2023.
+## Related Papers
+
+- [\[ICLR 2026\] Uncover Underlying Correspondence for Robust Multi-view Clustering](uncover_underlying_correspondence_for_robust_multi-view_clustering.md)
+- [\[ICLR 2026\] Unified and Efficient Multi-view Clustering from Probabilistic Perspective](unified_and_efficient_multi-view_clustering_from_probabilistic_perspective.md)
+- [\[ICLR 2026\] Debiased and Denoised Representation Learning for Incomplete Multi-view Clustering](debiased_and_denoised_representation_learning_for_incomplete_multi-view_clusteri.md)
+- [\[ICLR 2026\] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation](incomplete_multi-view_multi-label_classification_via_shared_codebook_and_fused-t.md)
+- [\[ICLR 2026\] PromptHub: Enhancing Multi-Prompt Visual In-Context Learning with Locality-Aware Fusion, Concentration and Alignment](prompthub_enhancing_multi-prompt_visual_in-context_learning_with_locality-aware_.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Incomplete Multi-View Multi-Label Classification via Shared Codebook and Fused-Teacher Self-Distillation](incomplete_multi-view_multi-label_classification_via_shared_codebook_and_fused-t.md)

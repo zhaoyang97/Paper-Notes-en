@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows
 description: >-
-  [ICLR 2026][Multimodal VLM][any-to-any generation] FlowBind replaces fixed Gaussian priors with a **learnable shared latent anchor + per-modality invertible flows**, factorizing the multimodal joint distribution into a set of independent modality-to-anchor flows. Trained end-to-end with only a single flow matching loss, it enables arbitrary translation between text, im
+  [ICLR 2026][Multimodal VLM][any-to-any generation] FlowBind replaces fixed Gaussian priors with a **learnable shared latent anchor + per-modality invertible flows**, factorizing the multimodal joint distribution into a set of independent modality-to-anchor flows. Trained end-to-end with only a single flow matching loss, it enables arbitrary translation between text, images, and audio with 6x fewer parameters and 10x faster training.
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - any-to-any generation
-  - flow matching
-  - shared latent
-  - invertible flow
-  - multimodal
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "any-to-any generation"
+  - "flow matching"
+  - "shared latent"
+  - "invertible flow"
+  - "multimodal"
 date: 2026-05-08
-content_hash: f72d9b97f2f3deb9
+content_hash: 948333558d8b63da
 ---
+
 # FlowBind: Efficient Any-to-Any Generation with Bidirectional Flows
 
 **Conference**: ICLR 2026  
@@ -121,7 +122,7 @@ FlowBind achieves the best quality in all 6 one-to-one tasks. It significantly l
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

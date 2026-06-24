@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tracing Relational Knowledge Recall in Large Language Models
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper systematically investigates the internal mechanisms of LLMs in recalling relational knowledge during text generation. It finds that the head-wise contribution of attention heads to the residual stream ($\Delta_{att,h}$) is the strongest feature for linear relation classification (reaching 91% accuracy). It p
+  [ACL 2026 Findings][Interpretability][Relational Knowledge] This paper systematically investigates the internal mechanisms of LLMs in recalling relational knowledge during text generation. It finds that the head-wise contribution of attention heads to the residual stream ($\Delta_{att,h}$) is the strongest feature for linear relation classification (reaching 91% accuracy). It proposes two probe attribution methods, HeadScore and TokenScore, to decompose predictions to the lev…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026 Findings"
+  - "Interpretability"
+  - "Relational Knowledge"
+  - "Attention Head Attribution"
+  - "Linear Probing"
+  - "Knowledge Recall Mechanism"
+  - "Feature Attribution"
 date: 2026-05-08
-content_hash: 70b291d0fe0edd31
+content_hash: 0863f81def88f73b
 ---
+
 # Tracing Relational Knowledge Recall in Large Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -124,10 +130,10 @@ The linear probes are trained using Cross-Entropy loss and the Adam optimizer fo
 ## Related Papers
 
 - [\[ACL 2026\] Knowledge Vector of Logical Reasoning in Large Language Models](knowledge_vector_of_logical_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Medical Interpretability and Knowledge Maps of Large Language Models](../../ICLR2026/interpretability/medical_interpretability_and_knowledge_maps_of_large_language_models.md)
 - [\[ACL 2026\] Through a Compressed Lens: Investigating The Impact of Quantization on Factual Knowledge Recall](through_a_compressed_lens_investigating_the_impact_of_quantization_on_factual_kn.md)
+- [\[ICLR 2026\] Precise and Interpretable Editing of Code Knowledge in Large Language Models](../../ICLR2026/interpretability/precise_and_interpretable_editing_of_code_knowledge_in_large_language_models.md)
 - [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
-- [\[ACL 2025\] Cracking Factual Knowledge: A Comprehensive Analysis of Degenerate Knowledge Neurons in Large Language Models](../../ACL2025/interpretability/degenerate_knowledge_neurons.md)
-- [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 
 </div>
 

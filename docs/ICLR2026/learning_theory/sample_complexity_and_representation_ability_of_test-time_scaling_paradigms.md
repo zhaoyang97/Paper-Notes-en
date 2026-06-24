@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Sample Complexity and Representation Ability of Test-time Scaling Paradigms
 description: >-
-  [ICLR 2026][learning_theory][best-of-n] This paper theoretically characterizes the efficiency of three test-time scaling strategies: it proves that self-consistency requires $\Theta(1/\Delta^2)$ samples while best-of-n requires only $\Theta(1/\Delta)$ samples ($\Delta$ being the probability gap between the correct and sub-optimal answers). It also constructi
+  [ICLR 2026][Learning Theory][Sample Complexity] This paper theoretically characterizes the efficiency of three test-time scaling strategies: it proves that self-consistency requires $\Theta(1/\Delta^2)$ samples while best-of-n requires only $\Theta(1/\Delta)$ samples ($\Delta$ being the probability gap between the correct and sub-optimal answers). It also constructively proves that self-correction with verifier feedback allows a single Transformer to simulate "online learning…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - best-of-n
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "LLM Inference"
+  - "Test-time Scaling"
+  - "Sample Complexity"
+  - "Self-consistency"
+  - "best-of-n"
+  - "Self-correction"
+  - "Transformer Expressivity"
 date: 2026-05-08
-content_hash: 1ee0b3214b3b4b4e
+content_hash: 3510d20ee19bc3a2
 ---
+
 # Sample Complexity and Representation Ability of Test-time Scaling Paradigms
 
 **Conference**: ICLR 2026  
@@ -130,11 +137,20 @@ Without correction, accuracy plateaus at 63.19%. With verifier signals, sufficie
 - Value: ⭐⭐⭐⭐⭐ Provides a provable basis for strategy selection in test-time scaling and explains why self-correction works.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-<!-- Paper links go here if applicable -->
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
+- [\[ICLR 2026\] Expressive Power of Implicit Models: Rich Equilibria and Test-Time Scaling](expressive_power_of_implicit_models_rich_equilibria_and_test-time_scaling.md)
+- [\[ICLR 2026\] Test-Time Verification via Optimal Transport: Coverage, ROC, & Sub-Optimality](test-time_verification_via_optimal_transport_coverage_roc_sub-optimality.md)
+- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](../../ICML2026/learning_theory/on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
+- [\[ICLR 2026\] How hard is learning to cut? Trade-offs and sample complexity](how_hard_is_learning_to_cut_trade-offs_and_sample_complexity.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)

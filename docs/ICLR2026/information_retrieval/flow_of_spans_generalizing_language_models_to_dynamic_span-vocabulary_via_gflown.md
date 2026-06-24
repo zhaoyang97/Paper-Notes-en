@@ -4,12 +4,17 @@ title: >-
 description: >-
   [ICLR 2026][Information Retrieval & RAG][GFlowNets] Ours proposes FoSS, which introduces GFlowNets to span-level language models for the first time. By constructing a DAG-structured state space to replace the traditional token-by-token tree structure, it achieves more flexible and diverse text generation, with MAUVE scores improving by up to 12.5%.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - GFlowNets
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "GFlowNets"
+  - "Dynamic Vocabulary"
+  - "span generation"
+  - "DAG state space"
+  - "text generation"
 date: 2026-05-08
-content_hash: 687151d6b37ca592
+content_hash: 1d25a740749462e5
 ---
+
 # Flow of Spans: Generalizing Language Models to Dynamic Span-Vocabulary via GFlowNets
 
 **Conference**: ICLR 2026  

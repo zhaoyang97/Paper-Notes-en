@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Talk2Move: Reinforcement Learning for Text-Instructed Object-Level Geometric Transformation in Scenes
 description: >-
-  [CVPR 2026][Reinforcement Learning][Flow-GRPO] Talk2Move models "translating/rotating/scaling an object in a scene based on text instructions" as an RL problem. It utilizes Flow-GRPO for exploration on diffusion trajectories with spatial rewards, eliminating the need for paired supervision data. By employing early-exit sampling, it accelerates training by $2\times$
+  [CVPR 2026][Reinforcement Learning][Text-guided editing] Talk2Move models "translating/rotating/scaling an object in a scene based on text instructions" as an RL problem. It utilizes Flow-GRPO for exploration on diffusion trajectories with spatial rewards, eliminating the need for paired supervision data. By employing early-exit sampling, it accelerates training by $2\times$. It significantly outperforms existing editing models like GPT-Image-1, Flux-Kontext…
 tags:
-  - CVPR 2026
-  - Reinforcement Learning
-  - Flow-GRPO
+  - "CVPR 2026"
+  - "Reinforcement Learning"
+  - "Text-guided editing"
+  - "geometric transformation"
+  - "Flow-GRPO"
+  - "spatial reward"
+  - "early-exit sampling"
 date: 2026-05-08
-content_hash: 9a9fa41dea0818e6
+content_hash: 30d992b9ca530dc4
 ---
+
 # Talk2Move: Reinforcement Learning for Text-Instructed Object-Level Geometric Transformation in Scenes
 
 **Conference**: CVPR 2026  
@@ -128,7 +133,7 @@ Real-world results (OpenImages-V6) show consistent conclusions: Translation Acc.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -136,7 +141,7 @@ Real-world results (OpenImages-V6) show consistent conclusions: Translation Acc.
 - [\[ECCV 2024\] Visual Grounding for Object-Level Generalization in Reinforcement Learning](../../ECCV2024/reinforcement_learning/visual_grounding_for_object-level_generalization_in_reinforcement_learning.md)
 - [\[CVPR 2026\] Seeing is Improving: Visual Feedback for Iterative Text Layout Refinement](seeing_is_improving_visual_feedback_for_iterative_text_layout_refinement.md)
 - [\[AAAI 2026\] Object-Centric World Models for Causality-Aware Reinforcement Learning](../../AAAI2026/reinforcement_learning/object-centric_world_models_for_causality-aware_reinforcement_learning.md)
-- [\[ICML 2026\] Trajectory-Level Data Augmentation for Offline Reinforcement Learning](../../ICML2026/reinforcement_learning/trajectory-level_data_augmentation_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] Beyond Distributions: Geometric Action Control for Continuous Reinforcement Learning](../../ICLR2026/reinforcement_learning/beyond_distributions_geometric_action_control_for_continuous_reinforcement_learn.md)
 
 </div>
 

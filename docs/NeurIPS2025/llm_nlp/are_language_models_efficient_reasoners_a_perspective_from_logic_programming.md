@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Are Language Models Efficient Reasoners? A Perspective from Logic Programming
 description: >-
-  [NeurIPS 2025][LLM/NLP][reasoning efficiency] This paper proposes a framework for evaluating LLM reasoning *efficiency* (rather than correctness alone) from a logic programming perspective. By mapping natural language pr…
+  [NeurIPS 2025][LLM (Other)][reasoning efficiency] This paper proposes a framework for evaluating LLM reasoning *efficiency* (rather than correctness alone) from a logic programming perspective. By mapping natural language proofs to logic program proofs via verbalized logic programs, the authors find that current LLMs not only suffer accuracy degradation on math problems containing irrelevant axioms, but also exhibit severely inefficient reasoning—more than half of all reasoni…
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "reasoning efficiency"
   - "logic programming"
   - "irrelevant information"
   - "proof length"
   - "deductive reasoning"
 date: 2026-05-08
-content_hash: 0f3d254834ce5b57
+content_hash: b90888036393ab3e
 ---
 
 # Are Language Models Efficient Reasoners? A Perspective from Logic Programming
@@ -114,11 +114,11 @@ This paper proposes a framework for evaluating LLM reasoning *efficiency* (rathe
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks](mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ.md)
+- [\[ACL 2025\] Planning-Driven Programming: A Large Language Model Programming Workflow](../../ACL2025/llm_nlp/planning-driven_programming_a_large_language_model_programming_workflow.md)
 - [\[NeurIPS 2025\] EnCompass: Enhancing Agent Programming with Search Over Program Execution Paths](encompass_enhancing_agent_programming_with_search_over_program_execution_paths.md)
-- [\[ICML 2026\] Rethinking LLM Ensembling from the Perspective of Mixture Models](../../ICML2026/llm_nlp/rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)
-- [\[NeurIPS 2025\] Don't Be Lazy: CompleteP Enables Compute-Efficient Deep Transformers](dont_be_lazy_completep_enables_compute-efficient_deep_transformers.md)
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
+- [\[NeurIPS 2025\] Mind the Gap: Removing the Discretization Gap in Differentiable Logic Gate Networks](mind_the_gap_removing_the_discretization_gap_in_differentiable_logic_gate_networ.md)
+- [\[ACL 2025\] Perspective Transition of Large Language Models for Solving Subjective Tasks](../../ACL2025/llm_nlp/perspective_transition_of_large_language_models_for_solving_subjective_tasks.md)
+- [\[ACL 2025\] Understanding the Repeat Curse in Large Language Models from a Feature Perspective](../../ACL2025/llm_nlp/understanding_the_repeat_curse_in_large_language_models_from_a_feature_perspecti.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Disentangled Representation Learning for Parametric Partial Differential Equations
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] DisentangO proposes a "Variational Hyper-Neural Operator" architecture that treats the parameters of neural operators for multiple physical systems as signals. It uses a VAE to disentangle identifiable latent physical factors from these black-box parameters. This allows the model to **simultaneously** perform forward P
+  [ICLR2026][Physics & Scientific Computing][Neural Operator] DisentangO proposes a "Variational Hyper-Neural Operator" architecture that treats the parameters of neural operators for multiple physical systems as signals. It uses a VAE to disentangle identifiable latent physical factors from these black-box parameters. This allows the model to **simultaneously** perform forward PDE solving (predicting solution fields) and inverse physical discovery (recovering hidden parameters…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operator"
+  - "Disentangled Representation"
+  - "Hypernetwork"
+  - "Variational Autoencoder"
+  - "Inverse Problem"
 date: 2026-05-08
-content_hash: 51baf2447edaaeba
+content_hash: c20abdfd3bf9b3da
 ---
+
 # Disentangled Representation Learning for Parametric Partial Differential Equations
 
 **Conference**: ICLR2026  
@@ -144,9 +150,9 @@ As latent dimensions increase from 2 to 15, the forward error drops from 11.49% 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
 - [\[AAAI 2026\] Towards a Foundation Model for Partial Differential Equations Across Physics Domains](../../AAAI2026/physics/towards_a_foundation_model_for_partial_differential_equations_across_physics_dom.md)
 - [\[ICLR 2026\] Physics-Informed Inference Time Scaling for Solving High-Dimensional Partial Differential Equations via Defect Correction](physics-informed_inference_time_scaling_for_solving_high-dimensional_partial_dif.md)
-- [\[ICML 2026\] Foundation Inference Models for Ordinary Differential Equations](../../ICML2026/physics/foundation_inference_models_for_ordinary_differential_equations.md)
 - [\[ICML 2025\] Closed-form Symbolic Solutions: A New Perspective on Solving Partial Differential Equations](../../ICML2025/physics/closed-form_solutions_a_new_perspective_on_solving_differential_equations.md)
 - [\[ICLR 2026\] $\partial^\infty$-Grid: A Neural Differential Equation Solver with Differentiable Feature Grids](boldsymbolpartialinfty-grid_a_neural_differential_equation_solver_with_different.md)
 

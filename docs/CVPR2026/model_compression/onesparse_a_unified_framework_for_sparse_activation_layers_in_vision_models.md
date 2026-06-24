@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OneSparse: A Unified Framework for Sparse Activation Layers in Vision Models
 description: >-
-  [CVPR 2026][Model Compression][Mixture-of-Experts] OneSparse unifies Mixture-of-Experts (MoE) and memory modules—two previously distinct sparse activation approaches—into a single "dispatch–process–combine" abstraction. Based on this, it introduces the Nexus Layer, a hybrid sparse layer that utilizes memory units to provide a low-cost baseline for all tokens while empl
+  [CVPR 2026][Model Compression][Sparse Activation] OneSparse unifies Mixture-of-Experts (MoE) and memory modules—two previously distinct sparse activation approaches—into a single "dispatch–process–combine" abstraction. Based on this, it introduces the Nexus Layer, a hybrid sparse layer that utilizes memory units to provide a low-cost baseline for all tokens while employing expert units to refine semantically critical regions. On ImageNet, COCO, and ADE20K…
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Mixture-of-Experts
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Sparse Activation"
+  - "Mixture-of-Experts"
+  - "Memory Modules"
+  - "Unified Routing"
+  - "Vision Backbone"
 date: 2026-05-08
-content_hash: 8d8adc7d7d41e9d4
+content_hash: 37391c9ac2bafdc1
 ---
+
 # OneSparse: A Unified Framework for Sparse Activation Layers in Vision Models
 
 **Conference**: CVPR 2026  
@@ -136,11 +141,11 @@ Experiments were conducted on ViT and ConvNeXt backbones, with sparse layers ins
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
 - [\[CVPR 2026\] Teacher-Guided Routing for Sparse Vision Mixture-of-Experts](teacher-guided_routing_for_sparse_vision_mixture-of-experts.md)
 - [\[CVPR 2026\] Towards Unified Human Perception and Machine Understanding: Token Flow Guided Compression Framework](towards_unified_human_perception_and_machine_understanding_token_flow_guided_com.md)
 - [\[CVPR 2026\] Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)
 - [\[ICLR 2026\] ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment](../../ICLR2026/model_compression/odesteer_a_unified_ode-based_steering_framework_for_llm_alignment.md)
-- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
 
 </div>
 

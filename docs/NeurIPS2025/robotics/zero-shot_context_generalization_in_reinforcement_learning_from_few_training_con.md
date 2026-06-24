@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts
 description: >-
-  [NeurIPS 2025][Robotics][context generalization] This paper proposes the Context-Enhanced Bellman Equation (CEBE) and Context Sample Enhancement (CSE)…
+  [NeurIPS 2025][Robotics][context generalization] This paper proposes the Context-Enhanced Bellman Equation (CEBE) and Context Sample Enhancement (CSE), which leverage first-order derivative information of environment dynamics and reward functions with respect to context parameters to achieve zero-shot generalization to unseen contexts when training is restricted to a single context.
 tags:
   - "NeurIPS 2025"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "Bellman equation"
   - "zero-shot transfer"
 date: 2026-05-08
-content_hash: 0c5ac912105c8ee3
+content_hash: 7ba9a9988051e08a
 ---
 
 # Zero-Shot Context Generalization in Reinforcement Learning from Few Training Contexts
@@ -128,11 +128,11 @@ A standard off-policy RL algorithm (e.g., SAC) is used. Within the training loop
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
+- [\[ICLR 2026\] Sim2Real VLA: Zero-Shot Generalization of Synthesized Skills to Realistic Manipulation](../../ICLR2026/robotics/sim2real_vla_zero-shot_generalization_of_synthesized_skills_to_realistic_manipul.md)
+- [\[CVPR 2026\] Humanoid Generative Pre-Training for Zero-Shot Motion Tracking](../../CVPR2026/robotics/humanoid_generative_pre-training_for_zero-shot_motion_tracking.md)
 - [\[NeurIPS 2025\] Time Reversal Symmetry for Efficient Robotic Manipulations in Deep Reinforcement Learning](time_reversal_symmetry_for_efficient_robotic_manipulations_in_deep_reinforcement.md)
+- [\[NeurIPS 2025\] Memo: Training Memory-Efficient Embodied Agents with Reinforcement Learning](memo_training_memory-efficient_embodied_agents_with_reinforcement_learning.md)
 - [\[NeurIPS 2025\] Reinforcement Learning with Action Chunking](reinforcement_learning_with_action_chunking.md)
-- [\[NeurIPS 2025\] Learning Interactive World Model for Object-Centric Reinforcement Learning](learning_interactive_world_model_for_object-centric_reinforcement_learning.md)
-- [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](../../AAAI2026/robotics/panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
 
 </div>
 

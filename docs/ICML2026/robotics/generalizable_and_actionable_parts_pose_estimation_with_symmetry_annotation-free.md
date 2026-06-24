@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] SAFAG: 无对称性标注的可泛化可操作部件位姿估计
+  [Paper Note] SAFAG: Generalizable Actionable Part Pose Estimation without Symmetry Annotation
 description: >-
-  [ICML 2026][Robotics & Embodied AI][GAParts] SAFAG decomposes GAPart 6D pose estimation into a two-stage framework of "candidate quaternion generation + tangent space refinement." By utilizing adaptive probability distributions to implicitly learn symmetry axes/planes across $x, y, z$ axes, it reduces cross-category rotation error for actionable parts from 5.51°
+  [ICML 2026][Robotics][GAParts] SAFAG decomposes GAPart 6D pose estimation into a two-stage framework of "candidate quaternion generation + tangent space refinement." By utilizing adaptive probability distributions to implicitly learn symmetry axes/planes across $x, y, z$ axes, it reduces cross-category rotation error for actionable parts from 5.51° to 3.23° in the complete absence of symmetry annotations.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - GAParts
+  - "ICML 2026"
+  - "Robotics"
+  - "GAParts"
+  - "6D Pose"
+  - "Symmetry Self-Supervision"
+  - "Quaternion Refinement"
+  - "Robotic Manipulation"
 date: 2026-05-08
-content_hash: 8b400aca1fc7b3d4
+content_hash: 844a70198ab71b34
 ---
+
 # SAFAG: Generalizable Actionable Part Pose Estimation without Symmetry Annotation
 
 **Conference**: ICML 2026  
@@ -145,15 +150,13 @@ SAFAG reduces rotation error by 41% compared to the strongest baseline DFGAP (5.
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICML 2026\] From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation](from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_.md)
-- [\[ICML 2026\] Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)
-- [\[ICML 2026\] ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics](manisoft_towards_vision-language_manipulation_for_soft_continuum_robotics.md)
-- [\[ICML 2026\] Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)
-- [\[ICML 2026\] Neural Low-Discrepancy Sequences](neural_low-discrepancy_sequences.md)
+- [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](../../CVPR2026/robotics/robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
+- [\[CVPR 2026\] A Cross-view Fusion Framework for Robust 6-DoF Grasp Pose Estimation](../../CVPR2026/robotics/a_cross-view_fusion_framework_for_robust_6-dof_grasp_pose_estimation.md)
+- [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
+- [\[ICLR 2026\] PA3FF: Part-Aware Dense 3D Feature Fields for Generalizable Articulated Object Manipulation](../../ICLR2026/robotics/pa3fflearning_part-aware_dense_3d_feature_field_for_generalizable_articulated_ob.md)
+- [\[ICLR 2026\] Robotic Manipulation by Imitating Generated Videos Without Physical Demonstrations](../../ICLR2026/robotics/robotic_manipulation_by_imitating_generated_videos_without_physical_demonstratio.md)
 
 </div>
 

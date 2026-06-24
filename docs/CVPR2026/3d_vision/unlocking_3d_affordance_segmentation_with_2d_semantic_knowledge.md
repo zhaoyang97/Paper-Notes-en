@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge
 description: >-
-  [CVPR 2026][Segmentation][DINOv3] To address the lack of functional semantics in 3D encoders and insufficient geometric cues in sparse point clouds, this paper leverages semantic knowledge from 2D visual foundation models (e.g., DINOv3). Through "Cross-Modal Affinity Transfer" (CMAT) pre-training, the 3D encoder is aligned with the inter-patch relation
+  [CVPR 2026][3D Vision][3D Affordance Segmentation] To address the lack of functional semantics in 3D encoders and insufficient geometric cues in sparse point clouds, this paper leverages semantic knowledge from 2D visual foundation models (e.g., DINOv3). Through "Cross-Modal Affinity Transfer" (CMAT) pre-training, the 3D encoder is aligned with the inter-patch relationship structure of 2D features. Combined with a lightweight prompt segmenter…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - DINOv3
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Affordance Segmentation"
+  - "Cross-modal Knowledge Transfer"
+  - "2D Visual Foundation Models"
+  - "Affinity Matrix Alignment"
+  - "DINOv3"
 date: 2026-05-08
-content_hash: 2cf0dc34ebbdb5a9
+content_hash: ffab05a46a041753
 ---
+
 # Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge
 
 **Conference**: CVPR 2026  
@@ -143,15 +148,14 @@ Efficiency comparison against MLLM-based solutions:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
-- [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](gkd_generalizable_knowledge_distillation_vfm.md)
+- [\[CVPR 2026\] MatSpray: Fusing 2D Material World Knowledge on 3D Geometry](matspray_fusing_2d_material_world_knowledge_on_3d_geometry.md)
 - [\[CVPR 2026\] SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)
-- [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
-- [\[ECCV 2024\] PartSTAD: 2D-to-3D Part Segmentation Task Adaptation](../../ECCV2024/segmentation/partstad_2d-to-3d_part_segmentation_task_adaptation.md)
+- [\[CVPR 2026\] Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation](rewis3d_reconstruction_improves_weaklysupervised_s.md)
+- [\[CVPR 2026\] Affostruction: 3D Affordance Grounding with Generative Reconstruction](affostruction_3d_affordance_grounding_with_generative_reconstruction.md)
+- [\[CVPR 2026\] PointGS: Semantic-Consistent Unsupervised 3D Point Cloud Segmentation with 3D Gaussian Splatting](pointgs_semantic-consistent_unsupervised_3d_point_cloud_segmentation_with_3d_gau.md)
 
 </div>
 

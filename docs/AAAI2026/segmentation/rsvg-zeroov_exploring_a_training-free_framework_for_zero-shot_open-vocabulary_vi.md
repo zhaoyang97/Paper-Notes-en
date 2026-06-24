@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images
 description: >-
-  [AAAI 2026][Segmentation][Remote sensing visual grounding] This paper proposes RSVG-ZeroOV, a training-free framework that integrates cross-attention maps from a VLM and self-attention maps from a diffusion model via an…
+  [AAAI 2026][Segmentation][Remote sensing visual grounding] This paper proposes RSVG-ZeroOV, a training-free framework that integrates cross-attention maps from a VLM and self-attention maps from a diffusion model via an "Overview-Focus-Evolve" three-stage strategy, enabling zero-shot open-vocabulary visual grounding in remote sensing images.
 tags:
   - "AAAI 2026"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "diffusion model"
   - "training-free"
 date: 2026-05-08
-content_hash: 1aab191448490e09
+content_hash: 80b76b798fc3a7b7
 ---
 
 # RSVG-ZeroOV: Exploring a Training-Free Framework for Zero-Shot Open-Vocabulary Visual Grounding in Remote Sensing Images
@@ -196,11 +196,11 @@ This is a training-free framework requiring no loss functions. Hyperparameters: 
 
 ## Related Papers
 
+- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](../../CVPR2026/segmentation/reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
 - [\[NeurIPS 2025\] InstructSAM: A Training-Free Framework for Instruction-Oriented Remote Sensing Object Recognition](../../NeurIPS2025/segmentation/instructsam_a_training-free_framework_for_instruction-oriented_remote_sensing_ob.md)
-- [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
-- [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](../../CVPR2026/segmentation/direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
-- [\[AAAI 2026\] Target Refocusing via Attention Redistribution for Open-Vocabulary Semantic Segmentation: An Explainability Perspective](target_refocusing_via_attention_redistribution_for_open-vocabulary_semantic_segm.md)
-- [\[AAAI 2026\] LWGANet: Addressing Spatial and Channel Redundancy in Remote Sensing Visual Tasks with Light-Weight Grouped Attention](lwganet_addressing_spatial_and_channel_redundancy_in_remote_sensing_visual_tasks.md)
+- [\[CVPR 2026\] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt](../../CVPR2026/segmentation/training-free_open-vocabulary_camouflaged_object_segmentation_via_fine-grained_o.md)
+- [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](../../CVPR2026/segmentation/the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
+- [\[CVPR 2026\] Exploring the Underwater World Segmentation without Extra Training](../../CVPR2026/segmentation/exploring_the_underwater_world_segmentation_without_extra_training.md)
 
 </div>
 

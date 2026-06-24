@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] MoLingo achieves overall SOTA performance in FID, R-Precision, and user studies for text-to-human motion generation. This is accomplished by performing masked autoregressive rectified flow on a continuous latent space, utilizing a Semantically Aligned Autoencoder (SAE) and multi-token cross-attention for text condition
+  [CVPR 2026][Human Understanding][Text-driven motion generation] MoLingo achieves overall SOTA performance in FID, R-Precision, and user studies for text-to-human motion generation. This is accomplished by performing masked autoregressive rectified flow on a continuous latent space, utilizing a Semantically Aligned Autoencoder (SAE) and multi-token cross-attention for text condition injection.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Text-driven motion generation"
+  - "semantically aligned latent space"
+  - "cross-attention conditioning"
+  - "autoregressive diffusion"
+  - "continuous latent space"
 date: 2026-05-08
-content_hash: ee5d1dc46641bb32
+content_hash: 179e44dc41822ae9
 ---
+
 # MoLingo: Motion-Language Alignment for Text-to-Human Motion Generation
 
 **Conference**: CVPR 2026  
@@ -154,10 +160,10 @@ Under the MARDM-67 protocol, MoLingo (VAE) achieves the best FID, while MoLingo 
 ## Related Papers
 
 - [\[CVPR 2026\] Multi-level Causal LLM-based Text-to-Motion Generation with Human Alignment (MoTiGA)](multi-level_causal_llm-based_text-to-motion_generation_with_human_alignment.md)
-- [\[CVPR 2026\] Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)
 - [\[CVPR 2026\] LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)
 - [\[CVPR 2026\] Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)
 - [\[CVPR 2026\] MotionMaster: Generalizable Text-Driven Motion Generation and Editing](motionmaster_generalizable_text-driven_motion_generation_and_editing.md)
+- [\[CVPR 2026\] Unified Number-Free Text-to-Motion Generation Via Flow Matching](unified_number-free_text-to-motion_generation_via_flow_matching.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance
 description: >-
-  [ICML 2026][Alignment & RLHF][Bridge Tokens] This paper proposes SVGT, which shifts value alignment from "embedding in backbone parameters/activations" to "attaching an independent value module." It first continuously determines safety directions within an isolated value space based on current hidden states, and then explicitly guides generation trajectories usin
+  [ICML 2026 Spotlight][LLM Alignment][Value Alignment] This paper proposes SVGT, which shifts value alignment from "embedding in backbone parameters/activations" to "attaching an independent value module." It first continuously determines safety directions within an isolated value space based on current hidden states, and then explicitly guides generation trajectories using a set of learnable Bridge Tokens as attention anchors. Across four backbones…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - Bridge Tokens
+  - "ICML 2026 Spotlight"
+  - "LLM Alignment"
+  - "Value Alignment"
+  - "Inference-time Guidance"
+  - "Bridge Tokens"
+  - "Independent Value Modules"
+  - "Safety"
 date: 2026-05-08
-content_hash: e7bc20b50b827287
+content_hash: f9b309dbe83bed46
 ---
+
 # Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance
 
 **Conference**: ICML 2026 Spotlight  
@@ -146,11 +151,11 @@ The conditional encoding significantly improves results on context-dependent dat
 
 ## Related Papers
 
-- [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
-- [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
 - [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
-- [\[ACL 2026\] How Value Induction Reshapes LLM Behaviour](../../ACL2026/llm_alignment/how_value_induction_reshapes_llm_behaviour.md)
-- [\[ICLR 2026\] Unifying Stable Optimization and Reference Regularization in RLHF (DAR)](../../ICLR2026/llm_alignment/unifying_stable_optimization_and_reference_regularization_in_rlhf.md)
+- [\[ICLR 2026\] EigenBench: A Comparative Behavioral Measure of Value Alignment](../../ICLR2026/llm_alignment/eigenbench_a_comparative_behavioral_measure_of_value_alignment.md)
+- [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
+- [\[ICLR 2026\] Pretrain Value, Not Reward: Decoupled Value Policy Optimization](../../ICLR2026/llm_alignment/pretrain_value_not_reward_decoupled_value_policy_optimization.md)
+- [\[ICML 2026\] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization](picaco_pluralistic_in-context_value_alignment_of_llms_via_total_correlation_opti.md)
 
 </div>
 

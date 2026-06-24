@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters
 description: >-
-  [ICML 2026][Image Generation][Text-to-Image] AtelierEval is the first to evaluate the "prompter" in the text-to-image workflow. Using 360 expert tasks, three cognitive task categories, and the AtelierJudge agentic evaluator system, it quantitatively measures the prompting proficiency of humans and MLLMs, discovering that image-mimicry prompting is often more reli
+  [ICML2026][Image Generation][Text-to-Image] AtelierEval is the first to evaluate the "prompter" in the text-to-image workflow. Using 360 expert tasks, three cognitive task categories, and the AtelierJudge agentic evaluator system, it quantitatively measures the prompting proficiency of humans and MLLMs, discovering that image-mimicry prompting is often more reliable than pure text-planning prompting.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Text-to-Image
-  - Agent-as-a-Judge
+  - "ICML2026"
+  - "Image Generation"
+  - "Text-to-Image"
+  - "Prompting Proficiency Evaluation"
+  - "Agent-as-a-Judge"
+  - "Multimodal Large Language Models"
+  - "Human-AI Comparison"
 date: 2026-05-08
-content_hash: 31c6753d4609ceb1
+content_hash: dc53ae3d88b3e3f7
 ---
+
 # AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters
 
 **Conference**: ICML2026  
@@ -137,11 +141,11 @@ The experiment consists of two layers: verifying if AtelierJudge aligns with exp
 
 ## Related Papers
 
-- [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](../../CVPR2026/image_generation/agentic_retoucher_for_texttoimage_generation.md)
 - [\[CVPR 2026\] OctoT2I: A Self-Evolving Agentic Text-to-Image Router](../../CVPR2026/image_generation/octot2i_a_self-evolving_agentic_text-to-image_router.md)
+- [\[CVPR 2026\] Agentic Retoucher for Text-To-Image Generation](../../CVPR2026/image_generation/agentic_retoucher_for_texttoimage_generation.md)
+- [\[CVPR 2026\] Self-Evaluation Unlocks Any-Step Text-to-Image Generation](../../CVPR2026/image_generation/self-evaluation_unlocks_any-step_text-to-image_generation.md)
 - [\[ICML 2026\] WISE: A World Knowledge-Informed Semantic Evaluation for Text-to-Image Generation](wise_a_world_knowledge-informed_semantic_evaluation_for_text-to-image_generation.md)
 - [\[CVPR 2026\] Vinedresser3D: Agentic Text-guided 3D Editing](../../CVPR2026/image_generation/vinedresser3d_agentic_text-guided_3d_editing.md)
-- [\[CVPR 2026\] GenColorBench: A Color Evaluation Benchmark for Text-to-Image Generation](../../CVPR2026/image_generation/gencolorbench_a_color_evaluation_benchmark_for_text-to-image_generation.md)
 
 </div>
 

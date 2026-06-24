@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Is Spurious Correlation Removal Always Learnable?
 description: >-
-  [ICML 2026][learning_theory][Paper Note] This paper demonstrates that removing spurious correlations may be "computationally non-learnable" even when the invariant structure is "statistically identifiable" in ideal scenarios. It proves the existence of a family of multi-environment instances where brute-force search recovers the invariant direction with polyn
+  [ICML 2026][Learning Theory][Spurious Correlation] This paper demonstrates that removing spurious correlations may be "computationally non-learnable" even when the invariant structure is "statistically identifiable" in ideal scenarios. It proves the existence of a family of multi-environment instances where brute-force search recovers the invariant direction with polynomial samples, but any polynomial-time algorithm achieving constant precision would resolve a widely believed…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Learning Theory"
+  - "Invariant Learning"
+  - "Computational Complexity"
+  - "Spurious Correlation"
+  - "Computational-Statistical Gap"
+  - "Environmental Diversity"
+  - "Minimax Rate"
 date: 2026-05-08
-content_hash: 801b3a7c4118e734
+content_hash: cd02b0d955215578
 ---
+
 # Is Spurious Correlation Removal Always Learnable?
 
 **Conference**: ICML 2026  
@@ -126,15 +133,16 @@ Synthetic experiments (Figure 1/2) show that on planted hard instances, brute-fo
 - **Value**: ⭐⭐⭐⭐ High. Provides a diagnostic perspective for why invariant learning fails.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deep Learning with Learnable Product-Structured Activations](../../ICLR2026/learning_theory/deep_learning_with_learnable_product-structured_activations.md)
+- [\[ICLR 2026\] Does Weak-to-strong Generalization Happen under Spurious Correlations?](../../ICLR2026/learning_theory/does_weak-to-strong_generalization_happen_under_spurious_correlations.md)
 - [\[ICML 2026\] Estimating Correlation Clustering Cost in Node-Arrival Stream](estimating_correlation_clustering_cost_in_node-arrival_stream.md)
 - [\[ICML 2026\] Simple Algorithms for Bad Triangle Transversals with Applications to Correlation Clustering](simple_algorithms_for_bad_triangle_transversals_with_applications_to_correlation.md)
-- [\[NeurIPS 2025\] Learning-Augmented Streaming Algorithms for Correlation Clustering](../../NeurIPS2025/learning_theory/learning-augmented_streaming_algorithms_for_correlation_clustering.md)
-- [\[ICML 2025\] Sparse-Pivot: Dynamic Correlation Clustering for Node Insertions](../../ICML2025/learning_theory/sparse-pivot_dynamic_correlation_clustering_for_node_insertions.md)
-- [\[NeurIPS 2025\] Improved Approximation Algorithms for Chromatic and Pseudometric-Weighted Correlation Clustering](../../NeurIPS2025/learning_theory/improved_approximation_algorithms_for_chromatic_and_pseudometric-weighted_correl.md)
+- [\[ICLR 2026\] Efficient Testing for Correlation Clustering: Improved Algorithms and Optimal Bounds](../../ICLR2026/learning_theory/efficient_testing_for_correlation_clustering_improved_algorithms_and_optimal_bou.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] ActAvatar utilizes "structured text prompts + phase-aware cross-attention" to allow talking avatar videos to perform specific actions within designated time windows. Combined with "depth-progressive audio influence" and "two-stage training," it maintains lip-sync, action accuracy, and image quality without relying on p
+  [CVPR 2026][Human Understanding][Talking Avatar Video Generation] ActAvatar utilizes "structured text prompts + phase-aware cross-attention" to allow talking avatar videos to perform specific actions within designated time windows. Combined with "depth-progressive audio influence" and "two-stage training," it maintains lip-sync, action accuracy, and image quality without relying on pose skeletons, achieving 14B-level effects with a 5B model.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Talking Avatar Video Generation"
+  - "Action Control"
+  - "Temporal Alignment"
+  - "Cross-Attention"
+  - "Diffusion Transformer"
 date: 2026-05-08
-content_hash: ad8de7cea85fbc77
+content_hash: a744ec2dafd94638
 ---
+
 # ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars
 
 **Conference**: CVPR 2026  
@@ -149,10 +155,10 @@ A user study with 45 participants (scale 0–5) also ranked it first across all 
 ## Related Papers
 
 - [\[CVPR 2026\] PC-Talk: Precise Facial Animation Control for Audio-Driven Talking Face Generation](pc-talk_precise_facial_animation_control_for_audio-driven_talking_face_generatio.md)
+- [\[CVPR 2026\] Unifying Precise Keyframes and Semantic Control via Multi-level Diffusion](unifying_precise_keyframes_and_semantic_control_via_multi-level_diffusion.md)
 - [\[CVPR 2026\] AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars](audioavatar_personalized_audio-driven_whole-body_talking_avatars.md)
-- [\[CVPR 2026\] Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)
 - [\[CVPR 2026\] SyncDreamer: Controllable and Expressive Avatar Generation Beyond the Talking Head](syncdreamer_controllable_and_expressive_avatar_generation_beyond_the_talking_hea.md)
-- [\[CVPR 2026\] FlexAvatar: Learning Complete 3D Head Avatars with Partial Supervision](flexavatar_learning_complete_3d_head_avatars_with_partial_supervision.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
 
 </div>
 

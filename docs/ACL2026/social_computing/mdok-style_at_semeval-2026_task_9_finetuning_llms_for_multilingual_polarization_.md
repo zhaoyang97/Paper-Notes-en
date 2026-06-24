@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection
 description: >-
-  [ACL 2026][Social Computing][QLoRA] This paper transfers the mdok system (originally designed for multilingual machine-generated text detection, utilizing QLoRA finetuned Qwen3-32B / Gemma-3-27B) to SemEval-2026 Task 9 for multilingual polarization detection. By incorporating four types of "dual" data augmentation (anonymization, casing, and homoglyphs),
+  [ACL 2026 (SemEval-2026 Task 9 system paper)][Social Computing][Polarization Detection] This paper transfers the mdok system (originally designed for multilingual machine-generated text detection, utilizing QLoRA finetuned Qwen3-32B / Gemma-3-27B) to SemEval-2026 Task 9 for multilingual polarization detection. By incorporating four types of "dual" data augmentation (anonymization, casing, and homoglyphs), the system achieves an average Macro-F1 score 3–4% higher than the offi…
 tags:
-  - ACL 2026
-  - Social Computing
-  - QLoRA
+  - "ACL 2026 (SemEval-2026 Task 9 system paper)"
+  - "Social Computing"
+  - "Polarization Detection"
+  - "Multilingual"
+  - "QLoRA"
+  - "Data Augmentation"
+  - "Homoglyph Attack"
 date: 2026-05-08
-content_hash: 10eb8f85ca8b5471
+content_hash: bef7d60caefbfc04
 ---
+
 # mdok-style at SemEval-2026 Task 9: Finetuning LLMs for Multilingual Polarization Detection
 
 **Conference**: ACL 2026 (SemEval-2026 Task 9 system paper)  
@@ -134,6 +139,7 @@ The system outperformed the baseline by 3–4% in subtasks 1 and 2, remaining on
 - Value: ⭐⭐⭐⭐☆☆
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

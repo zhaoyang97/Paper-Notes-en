@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Deep Latent Variable Model based Vertical Federated Learning with Flexible Alignment and Labeling Scenarios
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] The problem of "misaligned users" in Vertical Federated Learning (VFL) is reinterpreted as a classic "blockwise missing data" problem. By employing a deep latent variable model with a two-stage training approach (unsupervised pre-training followed by supervised fine-tuning), this work simultaneously handles misaligned,
+  [ICLR2026][Optimization][Vertical Federated Learning] The problem of "misaligned users" in Vertical Federated Learning (VFL) is reinterpreted as a classic "blockwise missing data" problem. By employing a deep latent variable model with a two-stage training approach (unsupervised pre-training followed by supervised fine-tuning), this work simultaneously handles misaligned, unlabeled, and data under arbitrary missing mechanisms (MCAR/MAR/MNAR) in multi-party scenarios. It outpe…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Vertical Federated Learning"
+  - "Deep Latent Variable Models"
+  - "Missing Data Mechanisms"
+  - "Semi-supervised"
+  - "Variational Inference"
 date: 2026-05-08
-content_hash: 3d73712525a18e54
+content_hash: 446dedb288f6a5a3
 ---
+
 # Deep Latent Variable Model based Vertical Federated Learning with Flexible Alignment and Labeling Scenarios
 
 **Conference**: ICLR2026  
@@ -139,8 +145,8 @@ Evaluations were performed on four datasets (Isolet, HAPT tabular data; FashionM
 - [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
 - [\[ICLR 2026\] Learning to Solve Orienteering Problem with Time Windows and Variable Profits](learning_to_solve_orienteering_problem_with_time_windows_and_variable_profits.md)
 - [\[ICML 2026\] Distribution Alignment for One-Shot Federated Learning via Optimal Transport](../../ICML2026/optimization/distribution_alignment_for_one-shot_federated_learning_via_optimal_transport.md)
+- [\[ICLR 2026\] Compositional Generalization through Gradient Search in Nonparametric Latent Space](compositional_generalization_through_gradient_search_in_nonparametric_latent_spa.md)
 - [\[ICLR 2026\] LCA: Local Classifier Alignment for Continual Learning](lca_local_classifier_alignment_for_continual_learning.md)
-- [\[ICLR 2026\] Convex Dominance in Deep Learning I: A Scaling Law of Loss and Learning Rate](convex_dominance_in_deep_learning_i_a_scaling_law_of_loss_and_learning_rate.md)
 
 </div>
 

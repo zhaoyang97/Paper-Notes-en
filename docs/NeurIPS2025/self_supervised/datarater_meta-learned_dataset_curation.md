@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DataRater: Meta-Learned Dataset Curation
 description: >-
-  [NeurIPS 2025][Self-Supervised Learning][Data curation] This paper proposes DataRater, a meta-gradient-based data valuation framework that employs meta-learning to automatically score and filter low-quality training samp…
+  [NeurIPS 2025][Self-Supervised Learning][Data curation] This paper proposes DataRater, a meta-gradient-based data valuation framework that employs meta-learning to automatically score and filter low-quality training samples. It achieves up to 46.6% net compute savings across multiple pre-training datasets, and a DataRater trained on a 400M internal model generalizes directly to LLM training at scales ranging from 50M to 1B parameters.
 tags:
   - "NeurIPS 2025"
   - "Self-Supervised Learning"
@@ -12,7 +12,7 @@ tags:
   - "data quality assessment"
   - "pre-training efficiency"
 date: 2026-05-08
-content_hash: 1c63016d036aa47e
+content_hash: 94ada40bc64282ec
 ---
 
 # DataRater: Meta-Learned Dataset Curation
@@ -129,11 +129,11 @@ DataRater is a bilevel optimization framework:
 
 ## Related Papers
 
+- [\[CVPR 2025\] MetaWriter: Personalized Handwritten Text Recognition Using Meta-Learned Prompt Tuning](../../CVPR2025/self_supervised/metawriter_personalized_handwritten_text_recognition_using_meta-learned_prompt_t.md)
 - [\[NeurIPS 2025\] Understanding Ice Crystal Habit Diversity with Self-Supervised Learning](understanding_ice_crystal_habit_diversity_with_self-supervised_learning.md)
+- [\[CVPR 2025\] Breaking the Tuning Barrier: Zero-Hyperparameters Yield Multi-Corner Analysis Via Learned Priors](../../CVPR2025/self_supervised/breaking_the_tuning_barrier_zero-hyperparameters_yield_multi-corner_analysis_via.md)
 - [\[NeurIPS 2025\] Hybrid Autoencoders for Tabular Data: Leveraging Model-Based Augmentation in Low-Label Settings](hybrid_autoencoders_for_tabular_data_leveraging_model-based_augmentation_in_low-.md)
 - [\[NeurIPS 2025\] Self-Supervised Contrastive Learning is Approximately Supervised Contrastive Learning](self-supervised_contrastive_learning_is_approximately_supervised_contrastive_lea.md)
-- [\[NeurIPS 2025\] T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning](t-regs_minimum_spanning_tree_regularization_for_self-supervised_learning.md)
-- [\[NeurIPS 2025\] Soft Task-Aware Routing of Experts for Equivariant Representation Learning](soft_task-aware_routing_of_experts_for_equivariant_representation_learning.md)
 
 </div>
 

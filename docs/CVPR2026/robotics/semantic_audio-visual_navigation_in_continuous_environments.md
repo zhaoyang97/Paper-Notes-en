@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Semantic Audio-Visual Navigation in Continuous Environments
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Embodied AI] This paper proposes the SAVN-CE task, extending semantic audio-visual navigation to continuous 3D environments. It introduces MAGNet (Memory-Augmented Goal-description Network), which achieves robust goal reasoning after the target sound ceases by fusing historical context with self-motion cues, resulting in an absolut
+  [CVPR 2026][Robotics][Audio-Visual Navigation] This paper proposes the SAVN-CE task, extending semantic audio-visual navigation to continuous 3D environments. It introduces MAGNet (Memory-Augmented Goal-description Network), which achieves robust goal reasoning after the target sound ceases by fusing historical context with self-motion cues, resulting in an absolute success rate improvement of up to 12.1%.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Audio-Visual Navigation"
+  - "Continuous Environments"
+  - "Memory Augmentation"
+  - "Goal Reasoning"
+  - "Embodied AI"
 date: 2026-05-08
-content_hash: fce0b2a613021c60
+content_hash: 2fe2876b9fe5f7bc
 ---
+
 # Semantic Audio-Visual Navigation in Continuous Environments
 
 **Conference**: CVPR 2026  
@@ -141,10 +146,10 @@ In the Clean environment, MAGNet achieves a 12.1% absolute SR Gain over SAVi, wi
 ## Related Papers
 
 - [\[ICCV 2025\] NavMorph: A Self-Evolving World Model for Vision-and-Language Navigation in Continuous Environments](../../ICCV2025/robotics/navmorph_a_self-evolving_world_model_for_vision-and-language_navigation_in_conti.md)
-- [\[CVPR 2026\] Progress-Think: Semantic Progress Reasoning for Vision-Language Navigation](progress-think_semantic_progress_reasoning_for_vision-language_navigation.md)
 - [\[CVPR 2026\] TrajRAG: Retrieving Geometric-Semantic Experience for Zero-Shot Object Navigation](trajrag_retrieving_geometric-semantic_experience_for_zero-shot_object_navigation.md)
 - [\[CVPR 2026\] Towards Open Environments and Instructions: General Vision-Language Navigation via Fast-Slow Interactive Reasoning](towards_open_environments_and_instructions_general_vision-language_navigation_vi.md)
 - [\[CVPR 2026\] Bridging the 2D-3D Gap: A Hierarchical Semantic-Geometric Map for Vision Language Navigation](bridging_the_2d-3d_gap_a_hierarchical_semantic-geometric_map_for_vision_language.md)
+- [\[CVPR 2026\] Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control](do_you_have_freestyle_expressive_humanoid_locomotion_via_audio_control.md)
 
 </div>
 

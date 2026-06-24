@@ -1,17 +1,20 @@
 ---
 title: >-
-  [Paper Note] CHARM: 用 Multimodal JEPA + 通道描述做时间序列 foundation embedding
+  [Paper Note] CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding
 description: >-
-  [ICML 2026][Multimodal VLM][JEPA] CHARM injects channel text descriptions (e.g., "temperature sensor °C") as an inductive bias into a time series Transformer and trains it using a JEPA objective (latent prediction rather than raw signal reconstruction). The resulting embeddings match specialized models like PatchTST, MOMENT, and Moirai across anomaly d
+  [ICML 2026][Multimodal VLM][Time Series Foundation Models] CHARM injects channel text descriptions (e.g., "temperature sensor °C") as an inductive bias into a time series Transformer and trains it using a JEPA objective (latent prediction rather than raw signal reconstruction). The resulting embeddings match specialized models like PatchTST, MOMENT, and Moirai across anomaly detection, classification, and forecasting using simple linear probes…
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - JEPA
-  - equivariant attention
-  - sensor embedding
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Time Series Foundation Models"
+  - "JEPA"
+  - "Channel Description"
+  - "Equivariant Attention"
+  - "Sensor Embedding"
 date: 2026-05-08
-content_hash: e2b77a6f68f45302
+content_hash: 2f11cda1a96f9613
 ---
+
 # CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding
 
 **Conference**: ICML 2026  
@@ -144,15 +147,16 @@ CHARM (frozen + SVM) achieves the highest average accuracy at 79.6%.
 - **Value**: ⭐⭐⭐⭐ Highly practical. Matching billion-parameter models with linear probes enables high-performance time series analysis for smaller research groups and industrial fleets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] VL-JEPA: Joint Embedding Predictive Architecture for Vision-language](../../ICLR2026/multimodal_vlm/vl-jepa_joint_embedding_predictive_architecture_for_vision-language.md)
 - [\[ICML 2026\] Text-Conditional JEPA for Learning Semantically Rich Visual Representations](text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)
 - [\[ICML 2025\] M3-JEPA: Multimodal Alignment via Multi-gate MoE based on JEPA](../../ICML2025/multimodal_vlm/m3-jepa_multimodal_alignment_via_multi-gate_moe_based_on_the_joint-embedding_pre.md)
-- [\[ICML 2026\] Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models](circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan.md)
-- [\[CVPR 2026\] Scaling Spatial Intelligence with Multimodal Foundation Models](../../CVPR2026/multimodal_vlm/scaling_spatial_intelligence_with_multimodal_foundation_models.md)
-- [\[ICLR 2026\] U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning](../../ICLR2026/multimodal_vlm/u-marvel_unveiling_key_factors_for_universal_multimodal_retrieval_via_embedding_.md)
+- [\[ACL 2026\] Test-Time Scaling in Multimodal Foundation Models: A Comprehensive Survey of Generation and Reasoning](../../ACL2026/multimodal_vlm/test-time_scaling_in_multimodal_foundation_models_a_comprehensive_survey_of_gene.md)
+- [\[NeurIPS 2025\] GEM: Empowering MLLM for Grounded ECG Understanding with Time Series and Images](../../NeurIPS2025/multimodal_vlm/gem_empowering_mllm_for_grounded_ecg_understanding_with_time_series_and_images.md)
 
 </div>
 

@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] AgentMark: Utility-Preserving Behavioral Watermarking for Agents
 description: >-
-  [ACL 2026][LLM Safety][agent watermarking] AgentMark models the "next tool/subgoal selection" of an LLM agent as a time-varying discrete channel. By explicitly eliciting the behavioral distribution $P_t$ and applying FDPSS-style distribution-preserving sampling, it embeds multi-bit IDs into planning decisions. Combined with RLNC encoding, the watermark can be r
+  [ACL 2026][LLM Safety][agent watermarking] AgentMark models the "next tool/subgoal selection" of an LLM agent as a time-varying discrete channel. By explicitly eliciting the behavioral distribution $P_t$ and applying FDPSS-style distribution-preserving sampling, it embeds multi-bit IDs into planning decisions. Combined with RLNC encoding, the watermark can be recovered from residual logs even if the trace is cropped or steps are deleted. Across ALFWorld, ToolBench…
 tags:
-  - ACL 2026
-  - LLM Safety
-  - agent watermarking
-  - planning behavior
-  - distribution-preserving sampling
-  - erasure-resilient coding
-  - provenance
+  - "ACL 2026"
+  - "LLM Safety"
+  - "agent watermarking"
+  - "planning behavior"
+  - "distribution-preserving sampling"
+  - "erasure-resilient coding"
+  - "provenance"
 date: 2026-05-08
-content_hash: 84af4c2aee8bf55c
+content_hash: 738232060a78193c
 ---
+
 # AgentMark: Utility-Preserving Behavioral Watermarking for Agents
 
 **Conference**: ACL 2026  
@@ -142,10 +143,10 @@ Comparison of SR and watermark capacity on ALFWorld (DeepSeek-Chat) and ToolBenc
 ## Related Papers
 
 - [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
+- [\[ACL 2026\] Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)
 - [\[ACL 2026\] RISK: A Framework for GUI Agents in E-commerce Risk Management](risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)
-- [\[ACL 2026\] A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u.md)
-- [\[ACL 2026\] CI-Work: Benchmarking Contextual Integrity in Enterprise LLM Agents](ci-work_benchmarking_contextual_integrity_in_enterprise_llm_agents.md)
 - [\[ACL 2026\] SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking](ssg_logit-balanced_vocabulary_partitioning_for_llm_watermarking.md)
+- [\[ACL 2026\] STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability](a_linguistics-aware_llm_watermarking_via_syntactic_predictability.md)
 
 </div>
 

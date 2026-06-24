@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OmniMouse: Scaling properties of multi-modal, multi-task Brain Models on 150B Neural Tokens
 description: >-
-  [ICLR 2026][Computational Biology][Paper Note] OmniMouse adopts a unified architecture with single-neuron tokens and flexible masking, jointly performing neural prediction/forecasting, behavior decoding, and stimulus encoding on over 150 billion neural tokens from 73 mouse visual cortices, achieving new SOTA results. It yields a counter-intuitive scaling conclusion
+  [ICLR 2026][Computational Biology][Brain Foundation Models] OmniMouse adopts a unified architecture with single-neuron tokens and flexible masking, jointly performing neural prediction/forecasting, behavior decoding, and stimulus encoding on over 150 billion neural tokens from 73 mouse visual cortices, achieving new SOTA results. It yields a counter-intuitive scaling conclusion: brain activity modeling is currently **data-limited** rather than parameter-limited—increasing dat…
 tags:
-  - ICLR 2026
-  - Computational Biology
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Brain Foundation Models"
+  - "Single-neuron tokenization"
+  - "Multi-task Masking"
+  - "Scaling Laws"
+  - "Mouse Visual Cortex"
 date: 2026-05-08
-content_hash: 087e2a222f5639a7
+content_hash: 38c43cb544fc720a
 ---
+
 # OmniMouse: Scaling properties of multi-modal, multi-task Brain Models on 150B Neural Tokens
 
 **Conference**: ICLR 2026  
@@ -148,8 +154,8 @@ Even under data-matched conditions (5M model using 8 sessions), OmniMouse outper
 - [\[ICLR 2026\] PoinnCARE: Hyperbolic Multi-Modal Learning for Enzyme Classification](poinncare_hyperbolic_multi-modal_learning_for_enzyme_classification.md)
 - [\[ICLR 2026\] Coupled Transformer Autoencoder for Disentangling Multi-Region Neural Latent Dynamics](coupled_transformer_autoencoder_for_disentangling_multi-region_neural_latent_dyn.md)
 - [\[ICLR 2026\] Riemannian High-Order Pooling for Brain Foundation Models](riemannian_high-order_pooling_for_brain_foundation_models.md)
-- [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
 - [\[ICLR 2026\] DriftLite: Lightweight Drift Control for Inference-Time Scaling of Diffusion Models](driftlite_lightweight_drift_control_for_inference-time_scaling_of_diffusion_mode.md)
+- [\[ICLR 2026\] Hierarchical Multi-Scale Molecular Conformer Generation](hierarchical_multi-scale_molecular_conformer_generation.md)
 
 </div>
 

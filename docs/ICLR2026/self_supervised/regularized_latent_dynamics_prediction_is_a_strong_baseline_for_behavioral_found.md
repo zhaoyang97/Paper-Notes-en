@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models
 description: >-
-  [ICLR 2026][Self-Supervised Learning][Paper Note] The paper proposes Regularized Latent Dynamics Prediction (RLDP), which maintains feature diversity by adding simple orthogonal regularization to a self-supervised latent next-state prediction objective. RLDP matches or exceeds complex SOTA representation learning methods in zero-shot RL, demonstrating significant adva
+  [ICLR 2026][Self-Supervised Learning][Behavioral Foundation Models] The paper proposes Regularized Latent Dynamics Prediction (RLDP), which maintains feature diversity by adding simple orthogonal regularization to a self-supervised latent next-state prediction objective. RLDP matches or exceeds complex SOTA representation learning methods in zero-shot RL, demonstrating significant advantages particularly in low-coverage scenarios.
 tags:
-  - ICLR 2026
-  - Self-Supervised Learning
+  - "ICLR 2026"
+  - "Self-Supervised Learning"
+  - "Behavioral Foundation Models"
+  - "Zero-Shot RL"
+  - "Latent Dynamics Prediction"
+  - "Orthogonal Regularization"
+  - "State Feature Learning"
 date: 2026-05-08
-content_hash: 192f04814deba750
+content_hash: 0f5959618eeea469
 ---
+
 # Regularized Latent Dynamics Prediction is a Strong Baseline for Behavioral Foundation Models
 
 **Conference**: ICLR 2026  

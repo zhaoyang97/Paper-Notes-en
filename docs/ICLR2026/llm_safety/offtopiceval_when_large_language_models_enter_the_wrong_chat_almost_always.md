@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OffTopicEval: When Large Language Models Enter the Wrong Chat, Almost Always!
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing the overlooked enterprise-level safety issue of whether LLMs modified into specialized agents can refuse out-of-domain (OOD) queries, this paper proposes the concept of "operational safety" and the OffTopicEval benchmark. Evaluating 20 open-source models across 6 major families, the study finds nearly all mo
+  [ICLR 2026][LLM Safety][Operational Safety] Addressing the overlooked enterprise-level safety issue of whether LLMs modified into specialized agents can refuse out-of-domain (OOD) queries, this paper proposes the concept of "operational safety" and the OffTopicEval benchmark. Evaluating 20 open-source models across 6 major families, the study finds nearly all models to be extremely unsafe—specifically, when OOD queries are "disguised" as in-domain queries…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Operational Safety"
+  - "Out-of-Domain (OOD) Rejection"
+  - "Adversarial OOD"
+  - "Prompt Anchoring"
+  - "Multilingual Evaluation"
 date: 2026-05-08
-content_hash: b4a3d86725987fb1
+content_hash: 8209c893bfb773a0
 ---
+
 # OffTopicEval: When Large Language Models Enter the Wrong Chat, Almost Always!
 
 **Conference**: ICLR 2026  

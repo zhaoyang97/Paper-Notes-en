@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] EA3D integrates continuous geometric cues from event cameras with appearance cues from sparse RGB frames into view-dependent 3D features. These are then decoded by a 3D-aware video diffusion model (modified from CogVideoX) to generate temporally consistent novel view videos. This enables generalizable novel view synthe
+  [ICLR2026][3D Vision][Event camera] EA3D integrates continuous geometric cues from event cameras with appearance cues from sparse RGB frames into view-dependent 3D features. These are then decoded by a 3D-aware video diffusion model (modified from CogVideoX) to generate temporally consistent novel view videos. This enables generalizable novel view synthesis **without per-scene optimization** under fast camera motion, wide baselines, and cross-scene settings.
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "Event camera"
+  - "Novel View Synthesis"
+  - "Video Diffusion"
+  - "Generalizable"
+  - "Cost Volume"
 date: 2026-05-08
-content_hash: f5bd0268e1c2d27e
+content_hash: e414b9631b97d37c
 ---
+
 # EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis
 
 **Conference**: ICLR2026  

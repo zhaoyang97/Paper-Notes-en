@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition
 description: >-
-  [CVPR 2026][AI Safety][Diffusion Model] Addressing the vicious cycle of "real data scarcity $\rightarrow$ poor generative models $\rightarrow$ useless synthetic data" in privacy-constrained scenarios, this paper models the synthesis process of diffusion models as a reinforcement learning (RL) problem. It utilizes a DiT pre-trained on generic domains for cold
+  [CVPR 2026][AI Safety][Synthetic Data Generation] Addressing the vicious cycle of "real data scarcity $\rightarrow$ poor generative models $\rightarrow$ useless synthetic data" in privacy-constrained scenarios, this paper models the synthesis process of diffusion models as a reinforcement learning (RL) problem. It utilizes a DiT pre-trained on generic domains for cold-start alignment, followed by policy fine-tuning using a triple reward—"semantic consistency + distribution co…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - Diffusion Model
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Synthetic Data Generation"
+  - "Reinforcement Learning Finetuning"
+  - "Diffusion Models"
+  - "Person Re-Identification"
+  - "Privacy-constrained scenarios"
 date: 2026-05-08
-content_hash: 68f717cdd5fc8727
+content_hash: a33c66ede7ccd95a
 ---
+
 # Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition
 
 **Conference**: CVPR 2026  
@@ -144,8 +149,8 @@ Face Recognition (trained on CASIA-WebFace subset, downstream Face Verification 
 - [\[CVPR 2026\] Bridging Privacy and Provenance: Traceable Virtual Identity Generation](bridging_privacy_and_provenance_traceable_virtual_identity_generation.md)
 - [\[CVPR 2026\] PrivSynth: Alternating and Control-Based Optimization for Privacy and Utility in Synthetic Data](privsynth_alternating_and_control-based_optimization_for_privacy_and_utility_in_.md)
 - [\[CVPR 2026\] No Way To Steal My Face: Proactive Defense Against Identity-Preserving Personalized Generation](no_way_to_steal_my_face_proactive_defense_against_identity-preserving_personaliz.md)
-- [\[CVPR 2026\] PROMPTMINER: Black-Box Prompt Stealing against Text-to-Image Generative Models via Reinforcement Learning and VLM-Guided Optimization](promptminer_black-box_prompt_stealing_against_text-to-image_generative_models_vi.md)
 - [\[CVPR 2026\] GROW: Watermark Generation with Progressive Guidance for Diffusion Models](grow_watermark_generation_with_progressive_guidance_for_diffusion_models.md)
+- [\[CVPR 2026\] Protego: User-Centric Pose-Invariant Privacy Protection Against Face Recognition-Induced Digital Footprint Exposure](protego_user-centric_pose-invariant_privacy_protection_against_face_recognition-.md)
 
 </div>
 

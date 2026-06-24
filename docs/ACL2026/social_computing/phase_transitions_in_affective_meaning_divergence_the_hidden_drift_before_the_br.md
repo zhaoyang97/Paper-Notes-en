@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Phase Transitions in Affective Meaning Divergence: The Hidden Drift Before the Break
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper formalizes the phenomenon of "same word, different affective understanding" before dialogue breakdown as Affective Meaning Divergence (AMD). Using entropy-regularized games, it proves that the probability of repair undergoes a saddle-node bifurcation. Empirically, early warning signals of critical slowing do
+  [ACL2026][Social Computing][Affective Meaning Divergence] This paper formalizes the phenomenon of "same word, different affective understanding" before dialogue breakdown as Affective Meaning Divergence (AMD). Using entropy-regularized games, it proves that the probability of repair undergoes a saddle-node bifurcation. Empirically, early warning signals of critical slowing down, such as rising variance, are observed in the Conversations Gone Awry (CGA) dataset.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL2026"
+  - "Social Computing"
+  - "Affective Meaning Divergence"
+  - "Critical Transitions"
+  - "Dialogue Breakdown"
+  - "Repair Coordination"
+  - "Early Warning Signals"
 date: 2026-05-08
-content_hash: da0009edccf663a8
+content_hash: 8c91c3411dfdc7ef
 ---
+
 # Phase Transitions in Affective Meaning Divergence: The Hidden Drift Before the Break
 
 **Conference**: ACL2026  

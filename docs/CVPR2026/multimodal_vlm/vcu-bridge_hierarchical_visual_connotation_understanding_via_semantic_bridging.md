@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] VCU-Bridge proposes a three-layer progressive visual connotation understanding framework ("Foundational Perception → Semantic Bridging → Abstract Connotation") along with HVCU-Bench for layer-wise diagnosis. The study finds that MLLM performance consistently declines as the reasoning hierarchy ascends. By utilizing MCT
+  [CVPR 2026][Multimodal VLM][Hierarchical visual understanding] VCU-Bridge proposes a three-layer progressive visual connotation understanding framework ("Foundational Perception → Semantic Bridging → Abstract Connotation") along with HVCU-Bench for layer-wise diagnosis. The study finds that MLLM performance consistently declines as the reasoning hierarchy ascends. By utilizing MCTS-guided instruction tuning data to strengthen low-level perception…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Hierarchical visual understanding"
+  - "Semantic bridging"
+  - "Visual connotation"
+  - "MCTS data generation"
+  - "MLLM diagnosis"
 date: 2026-05-08
-content_hash: f3bf5edf260dacee
+content_hash: d998d154fa563a26
 ---
+
 # VCU-Bridge: Hierarchical Visual Connotation Understanding via Semantic Bridging
 
 **Conference**: CVPR 2026  
@@ -112,11 +118,11 @@ To verify if "strengthening the bottom layer can improve the top layer," this wo
 
 ## Related Papers
 
+- [\[CVPR 2026\] Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition](evolutionary_multimodal_reasoning_via_hierarchical_semantic_representation_for_i.md)
 - [\[CVPR 2026\] HBridge: H-Shape Bridging of Heterogeneous Experts for Unified Multimodal Understanding and Generation](hbridge_h-shape_bridging_of_heterogeneous_experts_for_unified_multimodal_underst.md)
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
+- [\[CVPR 2026\] HAVE-Bench: Hierarchical Audio-Visual Evaluation from Perception to Interaction](have-bench_hierarchical_audio-visual_evaluation_from_perception_to_interaction.md)
 - [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](../../ACL2026/multimodal_vlm/slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
-- [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[CVPR 2026\] CodeMMR: Bridging Natural Language, Code, and Image for Unified Retrieval](codemmr_bridging_natural_language_code_and_image_for_unified_retrieval.md)
 
 </div>
 

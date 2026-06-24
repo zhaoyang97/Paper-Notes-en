@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] When Preference Labels Fall Short: Aligning Diffusion Models from Real Data
 description: >-
-  [ICML 2026][Image Generation][Diffusion Model] This paper argues that preference labels consisting of generated images tend to guide models toward "relatively better but still flawed" samples. It proposes automatically constructing preference signals using real images and their controllable degraded versions. By using only 512 pairs of samples, it aligns SD-1.5 and
+  [ICML2026][Image Generation][Diffusion models] This paper argues that preference labels consisting of generated images tend to guide models toward "relatively better but still flawed" samples. It proposes automatically constructing preference signals using real images and their controllable degraded versions. By using only 512 pairs of samples, it aligns SD-1.5 and SD-3.5-M, achieving performance that is comparable to or supplements Diffusion-DPO / FlowGRPO.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Diffusion Model
-  - Diffusion-DPO
+  - "ICML2026"
+  - "Image Generation"
+  - "Diffusion models"
+  - "preference alignment"
+  - "real images"
+  - "Diffusion-DPO"
+  - "data curation"
 date: 2026-05-08
-content_hash: fecc6d7438fe954c
+content_hash: 98c890203577ead7
 ---
+
 # When Preference Labels Fall Short: Aligning Diffusion Models from Real Data
 
 **Conference**: ICML2026  
@@ -154,7 +158,7 @@ The two-stage strategy is the most critical component ablation. Results show tha
 - [\[AAAI 2026\] Margin-aware Preference Optimization for Aligning Diffusion Models without Reference](../../AAAI2026/image_generation/margin-aware_preference_optimization_for_aligning_diffusion_models_without_refer.md)
 - [\[CVPR 2025\] Calibrated Multi-Preference Optimization for Aligning Diffusion Models](../../CVPR2025/image_generation/calibrated_multi-preference_optimization_for_aligning_diffusion_models.md)
 - [\[CVPR 2026\] Towards Fine-Grained Attribution: Instance-Aware Preference Optimization for Aligning Diffusion Models](../../CVPR2026/image_generation/towards_fine-grained_attribution_instance-aware_preference_optimization_for_alig.md)
-- [\[ICLR 2026\] AlignTok: Aligning Visual Foundation Encoders to Tokenizers for Diffusion Models](../../ICLR2026/image_generation/aligntok_aligning_visual_foundation_encoders_to_tokenizers_for_diffusion_models.md)
+- [\[ICLR 2026\] $\alpha$-DPO: Robust Preference Alignment for Diffusion Models via $\alpha$ Divergence](../../ICLR2026/image_generation/alpha-dpo_robust_preference_alignment_for_diffusion_models_via_alpha_divergence.md)
 - [\[NeurIPS 2025\] When Are Concepts Erased From Diffusion Models?](../../NeurIPS2025/image_generation/when_are_concepts_erased_from_diffusion_models.md)
 
 </div>

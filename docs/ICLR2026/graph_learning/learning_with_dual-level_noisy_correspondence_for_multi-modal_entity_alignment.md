@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] Addressing the prevalent "Dual-level Noisy Correspondence" (entity-attribute level + cross-graph level) in multi-modal entity alignment, this paper proposes the RULE framework. It estimates the reliability of each correspondence using "uncertainty + consensus" criteria to suppress noise during attribute fusion and cros
+  [ICLR 2026][Graph Learning][Multi-modal Entity Alignment] Addressing the prevalent "Dual-level Noisy Correspondence" (entity-attribute level + cross-graph level) in multi-modal entity alignment, this paper proposes the RULE framework. It estimates the reliability of each correspondence using "uncertainty + consensus" criteria to suppress noise during attribute fusion and cross-graph alignment. Additionally, it leverages MLLM reasoning during test-time to uncover implicit attr…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Multi-modal Entity Alignment"
+  - "Noisy Correspondence"
+  - "Uncertainty"
+  - "Consensus"
+  - "Test-time Inference"
 date: 2026-05-08
-content_hash: 7d68458714bf22ec
+content_hash: d1afa226e27fe81d
 ---
+
 # Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment
 
 **Conference**: ICLR 2026  
@@ -123,8 +129,8 @@ Under a more aggressive "20% DNC" setting (20% additional noise injected), tradi
 - Value: 4.5/5 (Identifies and solves a prevalent real-world problem; transferable paradigm)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

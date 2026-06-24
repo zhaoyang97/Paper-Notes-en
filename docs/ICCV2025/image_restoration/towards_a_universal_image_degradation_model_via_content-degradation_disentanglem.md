@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Towards a Universal Image Degradation Model via Content-Degradation Disentanglement
 description: >-
-  [ICCV 2025][Image Restoration][Image degradation modeling] This paper proposes the first universal image degradation model. Through a *disentangle-by-compression* approach…
+  [ICCV 2025][Image Restoration][Image degradation modeling] This paper proposes the first universal image degradation model. Through a *disentangle-by-compression* approach, it separates degradation information from image content, introduces IDEN and IDA layers to handle inhomogeneous degradation, and enables cross-degradation encoding, synthesis, and transfer. The model can serve as a plug-in module to convert non-blind image restoration methods into blind ones.
 tags:
   - "ICCV 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "blind image restoration"
   - "film grain simulation"
 date: 2026-05-08
-content_hash: ddabf4ea69ec0e9d
+content_hash: 787311f594e760e0
 ---
 
 # Towards a Universal Image Degradation Model via Content-Degradation Disentanglement
@@ -167,11 +167,11 @@ When used as a plug-in, blind restoration quality improves substantially, with p
 
 ## Related Papers
 
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](../../CVPR2026/image_restoration/drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
+- [\[ICLR 2026\] UniRestorer: Universal Image Restoration via Adaptively Estimating Image Degradation at Proper Granularity](../../ICLR2026/image_restoration/unirestorer_universal_image_restoration_via_adaptively_estimating_image_degradat.md)
 - [\[ICCV 2025\] UniRes: Universal Image Restoration for Complex Degradations](unires_universal_image_restoration_for_complex_degradations.md)
 - [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
-- [\[NeurIPS 2025\] MoDEM: A Morton-Order Degradation Estimation Mechanism for Adverse Weather Image Restoration](../../NeurIPS2025/image_restoration/modem_a_morton-order_degradation_estimation_mechanism_for_adverse_weather_image_.md)
-- [\[ICML 2026\] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration](../../ICML2026/image_restoration/degradation-aware_metric_prompting_for_hyperspectral_image_restoration.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
+- [\[ECCV 2024\] Spatially-Variant Degradation Model for Dataset-free Super-resolution](../../ECCV2024/image_restoration/spatially-variant_degradation_model_for_dataset-free_super-resolution.md)
 
 </div>
 

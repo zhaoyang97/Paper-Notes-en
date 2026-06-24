@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Fast and Interpretable Protein Substructure Alignment via Optimal Transport
 description: >-
-  [ICLR 2026][Computational Biology][Interpretability] PLASMA reformulates protein local structure alignment as an entropy-regularized optimal transport problem. Using differentiable Sinkhorn iterations, it directly outputs a residue-level alignment matrix and an interpretable similarity score in $[0,1]$. It achieves high speed (~10ms/pair, 50× faster than TM-align) and hi
+  [ICLR 2026][Computational Biology][Protein Local Structure Alignment] PLASMA reformulates protein local structure alignment as an entropy-regularized optimal transport problem. Using differentiable Sinkhorn iterations, it directly outputs a residue-level alignment matrix and an interpretable similarity score in $[0,1]$. It achieves high speed (~10ms/pair, 50× faster than TM-align) and high accuracy for aligning active/binding sites.
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - Interpretability
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Local Structure Alignment"
+  - "Optimal Transport"
+  - "Sinkhorn Algorithm"
+  - "Interpretability"
+  - "Residue-level Alignment"
 date: 2026-05-08
-content_hash: 10901ee99dfb5ad0
+content_hash: 7fdcde52a89170c5
 ---
+
 # Fast and Interpretable Protein Substructure Alignment via Optimal Transport
 
 **Conference**: ICLR 2026  

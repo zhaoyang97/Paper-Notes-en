@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][logit lens] Drawing inspiration from the "dual-stream hypothesis" of human vision, this paper dissects VLM visual processing into "what" (object identification) and "where" (localization) pathways. By using logit lens to translate image patches into text tokens, the authors discover that the vision encoder follows a two-stage Gest
+  [ICLR 2026][Multimodal VLM][VLM Interpretability] Drawing inspiration from the "dual-stream hypothesis" of human vision, this paper dissects VLM visual processing into "what" (object identification) and "where" (localization) pathways. By using logit lens to translate image patches into text tokens, the authors discover that the vision encoder follows a two-stage Gestalt-like process: "attribute recognition followed by object disambiguation." Furthermore…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - logit lens
-  - 2D RoPE
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "VLM Interpretability"
+  - "logit lens"
+  - "2D RoPE"
+  - "spatial awareness"
+  - "token compression"
 date: 2026-05-08
-content_hash: bf13c6b33545a149
+content_hash: 92de42e75fd2cc46
 ---
+
 # Reading Images Like Texts: Sequential Image Understanding in Vision-Language Models
 
 **Conference**: ICLR 2026  
@@ -140,8 +144,8 @@ Training-free RoPE scaling provides a ~5 point gain on What's Up B for the 2B mo
 
 - [\[ICLR 2026\] AttTok: Marrying Attribute Tokens with Generative Pre-trained Vision-Language Models towards Medical Image Understanding](atttok_marrying_attribute_tokens_with_generative_pre-trained_vision-language_mod.md)
 - [\[CVPR 2026\] A More Word-like Image Tokenization for MLLMs](../../CVPR2026/multimodal_vlm/a_more_word-like_image_tokenization_for_mllms.md)
-- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 - [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
+- [\[ICLR 2026\] ERGO: Efficient High-Resolution Visual Understanding for Vision-Language Models](ergo_efficient_high-resolution_visual_understanding_for_vision-language_models.md)
 - [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](../../CVPR2026/multimodal_vlm/beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
 
 </div>

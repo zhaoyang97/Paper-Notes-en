@@ -2,15 +2,21 @@
 title: >-
   [Paper Note] Context and Diversity Matter: The Emergence of In-Context Learning in World Models
 description: >-
-  [ICLR 2026][Reinforcement Learning][World Models] This paper reformulates the "adaptability of world models" as an In-Context Learning (ICL) problem, decomposing it into two mechanisms: "Environment Recognition (ER)" and "Environment Learning (EL)". By deriving error upper bounds for both, the authors demonstrate that only **sufficiently long contexts + sufficiently d
+  [ICLR 2026][Reinforcement Learning][World Models] This paper reformulates the "adaptability of world models" as an In-Context Learning (ICL) problem, decomposing it into two mechanisms: "Environment Recognition (ER)" and "Environment Learning (EL)". By deriving error upper bounds for both, the authors demonstrate that only **sufficiently long contexts + sufficiently diverse environments** can catalyze genuine EL. They empirically validate this theory using L2World…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - World Models
-  - In-Context Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "World Models"
+  - "In-Context Learning"
+  - "Environment Recognition (ER)"
+  - "Environment Learning (EL)"
+  - "Long Context"
+  - "Linear Attention"
+  - "Adaptability"
 date: 2026-05-08
-content_hash: ce63007f356cb171
+content_hash: fa7c82925abcbe4d
 ---
+
 # Context and Diversity Matter: The Emergence of In-Context Learning in World Models
 
 **Conference**: ICLR 2026  
@@ -137,14 +143,17 @@ Takeaway: **32K-L (many environments + long trajectories) generalizes best on un
 
 <div class="related-papers" markdown="1">
 
-1. **In-context Learning with Transformers: Software Engineering Perspective** - Analysis of context vs weights.
-2. **DreamerV3: Mastering Diverse Domains through World Models** - Baseline for static world models.
-3. **Training Data, Capability Relevance and Context Length** - Discussion on ICL emergence and data diversity.
+## Related Papers
+
+- [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)
+- [\[ICLR 2026\] In-Context Compositional Q-Learning for Offline Reinforcement Learning](in-context_compositional_q-learning_for_offline_reinforcement_learning.md)
+- [\[ICLR 2026\] LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards](longrlvr_long-context_reinforcement_learning_requires_verifiable_context_rewards.md)
+- [\[NeurIPS 2025\] Towards Provable Emergence of In-Context Reinforcement Learning](../../NeurIPS2025/reinforcement_learning/towards_provable_emergence_of_in-context_reinforcement_learning.md)
+- [\[ICLR 2026\] Reward is Enough: LLMs are In-Context Reinforcement Learners](reward_is_enough_llms_are_in-context_reinforcement_learners.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Scalable In-Context Q-Learning](scalable_in-context_q-learning.md)

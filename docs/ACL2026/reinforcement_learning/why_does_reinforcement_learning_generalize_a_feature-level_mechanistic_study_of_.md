@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models
 description: >-
-  [ACL 2026][Reinforcement Learning][Sparse Crosscoder] Applying strictly controlled SFT/RL post-training comparisons and Sparse Crosscoder feature alignment, this paper finds that while SFT rapidly forms numerous specialized features, RL tends to retain base representations while gradually enhancing a small set of cross-task generalization features. Ablating these features
+  [ACL2026][Reinforcement Learning][RL Generalization] Applying strictly controlled SFT/RL post-training comparisons and Sparse Crosscoder feature alignment, this paper finds that while SFT rapidly forms numerous specialized features, RL tends to retain base representations while gradually enhancing a small set of cross-task generalization features. Ablating these features significantly harms RL generalization, whereas amplifying them improves base model performance.
 tags:
-  - ACL 2026
-  - Reinforcement Learning
-  - Sparse Crosscoder
+  - "ACL2026"
+  - "Reinforcement Learning"
+  - "RL Generalization"
+  - "SFT Forgetting"
+  - "Sparse Crosscoder"
+  - "Feature Intervention"
+  - "LLM Post-training"
 date: 2026-05-08
-content_hash: 186380c0048dde1d
+content_hash: 1db0e9f5a630eafd
 ---
+
 # Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models
 
 **Conference**: ACL2026  
@@ -136,7 +141,7 @@ Testing on unseen LogiQA and PIQA: ablating RL generalization features dropped s
 - [\[ICLR 2026\] Post-training Large Language Models for Diverse High-Quality Responses](../../ICLR2026/reinforcement_learning/post-training_large_language_models_for_diverse_high-quality_responses.md)
 - [\[ICML 2026\] Can Large Language Models Generalize Procedures Across Representations?](../../ICML2026/reinforcement_learning/can_large_language_models_generalize_procedures_across_representations.md)
 - [\[ACL 2026\] A Survey of Reinforcement Learning for Large Language Models under Data Scarcity: Challenges and Solutions](a_survey_of_reinforcement_learning_for_large_language_models_under_data_scarcity.md)
-- [\[ACL 2025\] MAPoRL: Multi-Agent Post-Co-Training for Collaborative Large Language Models with Reinforcement Learning](../../ACL2025/reinforcement_learning/maporl_multi-agent_post-co-training_for_collaborative_large_language_models_with.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](../../ICLR2026/reinforcement_learning/representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 
 </div>
 

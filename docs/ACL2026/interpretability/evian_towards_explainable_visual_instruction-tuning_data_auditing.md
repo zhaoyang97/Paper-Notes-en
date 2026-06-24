@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Evian: Towards Explainable Visual Instruction-tuning Data Auditing
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper proposes the "Decomposition-then-Evaluation" paradigm and the EVIAN framework, which decomposes answers in visual instruction-tuning data into three components: visual descriptions, subjective reasoning, and factual claims. These are evaluated across three orthogonal dimensions: image-text consistency, logic
+  [ACL 2026][Interpretability][Data Auditing] This paper proposes the "Decomposition-then-Evaluation" paradigm and the EVIAN framework, which decomposes answers in visual instruction-tuning data into three components: visual descriptions, subjective reasoning, and factual claims. These are evaluated across three orthogonal dimensions: image-text consistency, logical coherence, and factual accuracy. The study finds that models trained on a small amount of high-quality data filte…
 tags:
-  - ACL 2026
-  - Interpretability
+  - "ACL 2026"
+  - "Interpretability"
+  - "Data Auditing"
+  - "Visual Instruction Tuning"
+  - "Explainable Evaluation"
+  - "Data Quality"
+  - "Multi-modal Large Language Models"
 date: 2026-05-08
-content_hash: 2599df5223ffa86d
+content_hash: 0b976ae0548835c9
 ---
+
 # Evian: Towards Explainable Visual Instruction-tuning Data Auditing
 
 **Conference**: ACL 2026  
@@ -139,7 +145,7 @@ Qwen3-235B is used for answer decomposition, and Qwen2.5-VL-7B serves as the aut
 - [\[ICML 2025\] Configurable Preference Tuning with Rubric-Guided Synthetic Data](../../ICML2025/interpretability/configurable_preference_tuning_with_rubric-guided_synthetic_data.md)
 - [\[ACL 2026\] Diffusion-CAM: Faithful Visual Explanations for dMLLMs](diffusion-cam_faithful_visual_explanations_for_dmllms.md)
 - [\[ACL 2026\] Investigating More Explainable and Partition-Free Compositionality Estimation for LLMs: A Rule-Generation Perspective](investigating_more_explainable_and_partition-free_compositionality_estimation_fo.md)
-- [\[ACL 2026\] The Impact of Off-Policy Training Data on Probe Generalisation](the_impact_of_off-policy_training_data_on_probe_generalisation.md)
+- [\[ICLR 2026\] Can LLMs Reason Soundly in Law? Auditing Inference Patterns for Legal Judgment](../../ICLR2026/interpretability/can_llms_reason_soundly_in_law_auditing_inference_patterns_for_legal_judgment.md)
 
 </div>
 

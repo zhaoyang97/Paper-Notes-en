@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis
 description: >-
-  [CVPR 2026][3D Vision][Diffusion Model] This paper proposes PR-IQA, a cross-reference image quality assessment method that first computes geometrically consistent local quality maps in multi-view overlapping regions and then "completes" the quality information into non-overlapping regions via a reference-conditioned cross-attention network. This generates de
+  [CVPR 2026][3D Vision][Image Quality Assessment] This paper proposes PR-IQA, a cross-reference image quality assessment method that first computes geometrically consistent local quality maps in multi-view overlapping regions and then "completes" the quality information into non-overlapping regions via a reference-conditioned cross-attention network. This generates dense quality maps approaching full-reference accuracy, which are integrated into the 3DGS pipeline through a dua…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Diffusion Model
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Image Quality Assessment"
+  - "Cross-reference"
+  - "Novel View Synthesis"
+  - "3D Gaussian Splatting"
+  - "Diffusion Models"
 date: 2026-05-08
-content_hash: 212ed93dd981043f
+content_hash: 70e3233ce6f12764
 ---
+
 # PR-IQA: Partial-Reference Image Quality Assessment for Diffusion-Based Novel View Synthesis
 
 **Conference**: CVPR 2026  
@@ -157,15 +162,14 @@ The total loss consists of three parts: $\mathcal{L} = 0.5 \cdot \mathcal{L}_1^{
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
 - [\[CVPR 2026\] Splatent: Splatting Diffusion Latents for Novel View Synthesis](splatent_splatting_diffusion_latents_for_novel_view_synthesis.md)
-- [\[CVPR 2026\] QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment](qd-pcqa_quality-aware_domain_adaptation_for_point_cloud_quality_assessment.md)
-- [\[CVPR 2026\] OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation](orienpose_orientation-guided_novel_view_synthesis_for_single-image_unseen_object.md)
-- [\[CVPR 2026\] DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis](dmaligner_enhancing_image_alignment_via_diffusion_model_based_view_synthesis.md)
+- [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
+- [\[CVPR 2026\] R3-PCQA: Ray-Reprojection-Reinforcement for No-Reference 3D Point Cloud Quality Assessment](r3-pcqa_ray-reprojection-reinforcement_for_no-reference_3d_point_cloud_quality_a.md)
+- [\[CVPR 2026\] Thermal is Always Wild: Characterizing and Addressing Challenges in Thermal-Only Novel View Synthesis](thermal_is_always_wild_characterizing_and_addressing_challenges_in_thermal-only_.md)
 
 </div>
 

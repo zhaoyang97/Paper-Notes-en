@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Protein Design with Dynamic Protein Vocabulary
 description: >-
-  [NeurIPS 2025][Computational Biology][protein design] ProDVa introduces natural protein fragments as a "dynamic vocabulary" for generative protein design…
+  [NeurIPS 2025 Spotlight][Computational Biology][protein design] ProDVa introduces natural protein fragments as a "dynamic vocabulary" for generative protein design, employing a three-component architecture consisting of a text encoder, a protein language model, and a fragment encoder. Using less than 0.04% of the training data required by prior work, ProDVa designs functionally aligned and structurally foldable protein sequences, surpassing the SOTA model Pinal by 7.38% on th…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Computational Biology"
   - "protein design"
   - "dynamic vocabulary"
@@ -12,7 +12,7 @@ tags:
   - "foldability"
   - "functional alignment"
 date: 2026-05-08
-content_hash: f8b865d58e6251b3
+content_hash: 4ba08bc6613aff2a
 ---
 
 # Protein Design with Dynamic Protein Vocabulary
@@ -137,11 +137,11 @@ ProDVa improves pLDDT by 4.63%, reduces PAE by 2.71%, and increases the pLDDT>70
 
 ## Related Papers
 
+- [\[ACL 2025\] Concept Bottleneck Language Models For Protein Design](../../ACL2025/computational_biology/concept_bottleneck_language_models_for_protein_design.md)
 - [\[NeurIPS 2025\] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood](prospero_active_learning_for_robust_protein_design_beyond_wild-type_neighborhood.md)
-- [\[ACL 2026\] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design](../../ACL2026/computational_biology/protocycle_reflective_tool-augmented_planning_for_text-guided_protein_design.md)
-- [\[NeurIPS 2025\] g-DPO: Scalable Preference Optimization for Protein Language Models](g-dpo_scalable_preference_optimization_for_protein_language_models.md)
-- [\[NeurIPS 2025\] ConfRover: Simultaneous Modeling of Protein Conformation and Dynamics via Autoregression](confrover_simultaneous_modeling_of_protein_conformation_and_dynamics_via_autoreg.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
+- [\[ICML 2025\] Flexibility-conditioned Protein Structure Design with Flow Matching](../../ICML2025/computational_biology/flexibility-conditioned_protein_structure_design_with_flow_matching.md)
+- [\[ICLR 2026\] Constrained Diffusion for Protein Design with Hard Structural Constraints](../../ICLR2026/computational_biology/constrained_diffusion_for_protein_design_with_hard_structural_constraints.md)
+- [\[ICML 2025\] Elucidating the Design Space of Multimodal Protein Language Models](../../ICML2025/computational_biology/elucidating_the_design_space_of_multimodal_protein_language_models.md)
 
 </div>
 

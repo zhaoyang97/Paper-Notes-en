@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] LeVo: High-Quality Song Generation with Multi-Preference Alignment
 description: >-
-  [Audio & Speech] LeVo proposes a language-model-based song generation framework that simultaneously optimizes vocal–accompaniment harmony and audio quality by predicting mixed tokens and dual-track tokens in parallel…
+  [Audio & Speech] LeVo proposes a language-model-based song generation framework that simultaneously optimizes vocal–accompaniment harmony and audio quality by predicting mixed tokens and dual-track tokens in parallel, and introduces a DPO-based multi-preference alignment method to enhance musicality and instruction-following ability. LeVo comprehensively outperforms all academic baselines and approaches the performance of industrial systems.
 tags:
   - "Audio & Speech"
 date: 2026-05-08
-content_hash: 240e556fb4d906e0
+content_hash: a97cb9d3e06199ee
 ---
 
 # LeVo: High-Quality Song Generation with Multi-Preference Alignment
@@ -143,11 +143,11 @@ LeVo comprehensively surpasses all academic methods, with overall quality approa
 
 ## Related Papers
 
+- [\[CVPR 2025\] DualTalk: Dual-Speaker Interaction for 3D Talking Head Conversations](../../CVPR2025/audio_speech/dualtalk_dual-speaker_interaction_for_3d_talking_head_conversations.md)
+- [\[ACL 2025\] ChildMandarin: A Comprehensive Mandarin Speech Dataset for Young Children Aged 3-5](../../ACL2025/audio_speech/childmandarin_a_comprehensive_mandarin_speech_dataset_for_young_children_aged_3-.md)
 - [\[CVPR 2026\] SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval](../../CVPR2026/audio_speech/save_speech-aware_video_representation_learning_for_video-text_retrieval.md)
-- [\[NeurIPS 2025\] MGAudio: Model-Guided Dual-Role Alignment for High-Fidelity Open-Domain Video-to-Audio Generation](model-guided_dual-role_alignment_for_high-fidelity_open-domain_video-to-audio_ge.md)
-- [\[NeurIPS 2025\] Segment-Factorized Full-Song Generation on Symbolic Piano Music](segment-factorized_full-song_generation_on_symbolic_piano_music.md)
-- [\[NeurIPS 2025\] A TRIANGLE Enables Multimodal Alignment Beyond Cosine Similarity](a_triangle_enables_multimodal_alignment_beyond_cosine_simila.md)
-- [\[NeurIPS 2025\] Node-Based Editing for Multimodal Generation of Text, Audio, Image, and Video](node-based_editing_for_multimodal_generation_of_text_audio_image_and_video.md)
+- [\[ACL 2026\] Phun-Bench: Evaluating LLMs on Phonological Understanding in Chinese](../../ACL2026/audio_speech/phun-bench_evaluating_llms_on_phonological_understanding_in_chinese.md)
+- [\[ACL 2026\] From Isolation to Entanglement: When Do Interpretability Methods Identify and Disentangle Known Concepts?](../../ACL2026/audio_speech/from_isolation_to_entanglement_when_do_interpretability_methods_identify_and_dis.md)
 
 </div>
 

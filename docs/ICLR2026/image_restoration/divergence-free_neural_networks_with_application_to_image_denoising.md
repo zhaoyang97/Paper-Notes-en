@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Divergence-Free Neural Networks with Application to Image Denoising
 description: >-
-  [ICLR 2026][Image Restoration][SURE] This paper proposes CENSURE, a neural network parameterization that is "divergence-free by design." By utilizing a representer theorem to structure divergence-free vector fields as a combination of "anti-symmetric matrices × gradients of conservative fields" and adopting a sparse approximation for high-dimensional imag
+  [ICLR 2026][Image Restoration][Divergence-free networks] This paper proposes CENSURE, a neural network parameterization that is "divergence-free by design." By utilizing a representer theorem to structure divergence-free vector fields as a combination of "anti-symmetric matrices × gradients of conservative fields" and adopting a sparse approximation for high-dimensional images, the method achieves higher stability and accuracy than constrained methods like Noise2Self and UNSU…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - SURE
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Divergence-free networks"
+  - "SURE"
+  - "Self-supervised denoising"
+  - "Representer theorem"
+  - "Anti-symmetric matrices"
 date: 2026-05-08
-content_hash: 46afe9c7f0e86401
+content_hash: 76e84fd339a7b6b4
 ---
+
 # Divergence-Free Neural Networks with Application to Image Denoising
 
 **Conference**: ICLR 2026  

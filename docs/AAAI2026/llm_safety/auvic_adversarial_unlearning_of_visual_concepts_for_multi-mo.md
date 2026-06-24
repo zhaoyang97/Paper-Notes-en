@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models
 description: >-
-  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes AUVIC, a framework that combines an adversarial perturbation generator with a dynamic anchor preservation mechanism to precisely unlearn target visual conce…
+  [AAAI 2026][LLM Safety][Machine Unlearning] This paper proposes AUVIC, a framework that combines an adversarial perturbation generator with a dynamic anchor preservation mechanism to precisely unlearn target visual concepts (e.g., specific faces) in MLLMs, while avoiding collateral forgetting of semantically similar concepts. The paper also introduces VCUBench, the first evaluation benchmark for visual concept unlearning in group-scene scenarios.
 tags:
   - "AAAI 2026"
   - "LLM Safety"
@@ -12,7 +12,7 @@ tags:
   - "Visual Concept Forgetting"
   - "Privacy Protection"
 date: 2026-05-08
-content_hash: ec2d424e88ee1fe4
+content_hash: 291602e0f9fd04a3
 ---
 
 # AUVIC: Adversarial Unlearning of Visual Concepts for Multi-modal Large Language Models
@@ -166,10 +166,10 @@ Training uses the AdamW optimizer with a ReduceLROnPlateau scheduler; the genera
 ## Related Papers
 
 - [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
-- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](../../CVPR2026/llm_safety/multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 - [\[AAAI 2026\] Anti-adversarial Learning: Desensitizing Prompts for Large Language Models](anti-adversarial_learning_desensitizing_prompts_for_large_la.md)
-- [\[CVPR 2026\] Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](../../CVPR2026/llm_safety/which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)
-- [\[AAAI 2026\] Gender Bias in Emotion Recognition by Large Language Models](gender_bias_in_emotion_recognition_by_large_language_models.md)
+- [\[ACL 2025\] MMUnlearner: Reformulating Multimodal Machine Unlearning in the Era of Multimodal Large Language Models](../../ACL2025/llm_safety/mmunlearner_reformulating_multimodal_machine_unlearning_in_the_era_of_multimodal.md)
+- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](../../ICLR2026/llm_safety/doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
+- [\[ACL 2025\] CLIPErase: Efficient Unlearning of Visual-Textual Associations in CLIP](../../ACL2025/llm_safety/cliperase_efficient_unlearning_of_visual-textual_associations_in_clip.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning
 description: >-
-  [ACL 2026][Medical NLP][Reinforcement Learning] This paper proposes the Clinical Diagnostic Reasoning Data (CDRD) structure to capture the abstract clinical reasoning logic from symptoms to differential diagnosis. Based on CDRD, the Dr. Assistant model (14B) is developed using a two-stage SFT+RL training process. It outperforms HuatuoGPT-o1-72B by 13.59% in ICD-Reca
+  [ACL 2026 Findings][Medical LLM][Clinical Diagnostic Reasoning] This paper proposes the Clinical Diagnostic Reasoning Data (CDRD) structure to capture the abstract clinical reasoning logic from symptoms to differential diagnosis. Based on CDRD, the Dr. Assistant model (14B) is developed using a two-stage SFT+RL training process. It outperforms HuatuoGPT-o1-72B by 13.59% in ICD-Recall on clinical inquiry benchmarks, achieving performance competitive with GPT-5.
 tags:
-  - ACL 2026
-  - Medical NLP
-  - Reinforcement Learning
-  - CDSS
+  - "ACL 2026 Findings"
+  - "Medical LLM"
+  - "Clinical Diagnostic Reasoning"
+  - "Reinforcement Learning"
+  - "Structured Data"
+  - "Inquiry Guidance"
+  - "CDSS"
 date: 2026-05-08
-content_hash: 8adc88b8f28b6cb7
+content_hash: 514adfe325ebab83
 ---
+
 # Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning
 
 **Conference**: ACL 2026 Findings  
@@ -148,7 +152,7 @@ SFT stage uses standard cross-entropy loss. RL stage: Reward = Clinical reasonin
 - [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 - [\[ACL 2026\] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings](rads_reinforcement_learning-based_sample_selection_improves_transfer_learning_in.md)
 - [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
-- [\[ICML 2026\] MedCase-Structured: A Text-to-FHIR Dataset for Benchmarking Diagnostic Reasoning in Clinically Realistic EHR Settings](../../ICML2026/medical_nlp/medcase-structured_a_text-to-fhir_dataset_for_benchmarking_diagnostic_reasoning_.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](../../ICLR2026/medical_nlp/doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 
 </div>
 

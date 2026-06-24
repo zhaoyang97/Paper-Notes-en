@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] PerpetualWonder proposes "Visual-Physically Aligned Particles" (VPP) as a unified representation that bi-directionally binds physical particles with Gaussian primitives. Combined with progressive multi-view optimization, it creates the first true closed-loop hybrid generative simulator—allowing visual corrections from
+  [CVPR 2026][3D Vision][4D Scene Generation] PerpetualWonder proposes "Visual-Physically Aligned Particles" (VPP) as a unified representation that bi-directionally binds physical particles with Gaussian primitives. Combined with progressive multi-view optimization, it creates the first true closed-loop hybrid generative simulator—allowing visual corrections from video models to back-update physical states, enabling physically plausible 4D scene generation for long-horizon cont…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "4D Scene Generation"
+  - "Action-conditioned"
+  - "Generative Simulator"
+  - "Gaussian Splatting"
+  - "Closed-loop Optimization"
 date: 2026-05-08
-content_hash: eb38611257162e24
+content_hash: d84a8822c289fe2d
 ---
+
 # PerpetualWonder: Long-horizon Action-conditioned 4D Scene Generation
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Ablations focused on qualitative visualizations, investigating the roles of VPP 
 ## Related Papers
 
 - [\[CVPR 2026\] MANSION: Multi-floor Language-to-3D Scene Generation for Long-horizon Tasks](mansion_multi-floor_language-to-3d_scene_generation_for_long-horizon_tasks.md)
+- [\[CVPR 2026\] Grounded Latents for Entity-Centric 4D Scene Generation](grounded_latents_for_entity-centric_4d_scene_generation.md)
 - [\[CVPR 2026\] Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)
-- [\[CVPR 2026\] Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
-- [\[CVPR 2026\] Long-SCOPE: Fully Sparse Long-Range Cooperative 3D Perception](long_scope_fully_sparse_long_range_cooperative_3d_perception.md)
+- [\[CVPR 2026\] Layered 4D-Rotor Gaussian Splatting: A Compressed Representation for Long Dynamic Scenes](layered_4d-rotor_gaussian_splatting_a_compressed_representation_for_long_dynamic.md)
+- [\[CVPR 2026\] tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction](tttlrm_test-time_training_for_long_context_and_autoregressive_3d_reconstruction.md)
 
 </div>
 

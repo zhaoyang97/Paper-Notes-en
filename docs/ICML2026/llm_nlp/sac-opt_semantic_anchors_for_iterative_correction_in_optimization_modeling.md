@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling
 description: >-
-  [ICML 2026][LLM (Other)][LLM Agent] SAC-Opt "back-translates" LLM-generated optimization solver code into structured semantic anchors (constraints and objectives), compares them item-by-item with the original problem description's anchors, and iteratively rewrites only the inconsistent parts. It achieves an average performance gain of 7.7% across 7 publi
+  [ICML2026][LLM (Other)][Optimization Modeling] SAC-Opt "back-translates" LLM-generated optimization solver code into structured semantic anchors (constraints and objectives), compares them item-by-item with the original problem description's anchors, and iteratively rewrites only the inconsistent parts. It achieves an average performance gain of 7.7% across 7 public datasets and 21.9% on ComplexLP.
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - LLM Agent
+  - "ICML2026"
+  - "LLM (Other)"
+  - "Optimization Modeling"
+  - "Semantic Anchors"
+  - "Back-correction"
+  - "Solver Code Generation"
+  - "LLM Agent"
 date: 2026-05-08
-content_hash: 5b016e7a838a6364
+content_hash: 969ed659b102b52b
 ---
+
 # SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling
 
 **Conference**: ICML2026  

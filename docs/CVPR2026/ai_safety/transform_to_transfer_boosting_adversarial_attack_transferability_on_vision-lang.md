@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the poor transferability of black-box adversarial examples on Vision-Language Pre-training (VLP) models, this paper proposes the Transform to Transfer Attack (TTA). It employs a set of **learnable block-level image transformations** to automatically select optimal transformation combinations to expand input
+  [CVPR 2026][AI Safety][VLP Adversarial Attack] To address the poor transferability of black-box adversarial examples on Vision-Language Pre-training (VLP) models, this paper proposes the Transform to Transfer Attack (TTA). It employs a set of **learnable block-level image transformations** to automatically select optimal transformation combinations to expand input diversity, combined with **Boosted Integrated Gradients (Boosted IG)** to sample gradients along multiple transfo…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "VLP Adversarial Attack"
+  - "Black-box Transfer"
+  - "Learnable Transformation"
+  - "Integrated Gradients"
+  - "Cross-architecture Transfer"
 date: 2026-05-08
-content_hash: e80e931ecfe55dce
+content_hash: b5f377710731d959
 ---
+
 # Transform to Transfer: Boosting Adversarial Attack Transferability on Vision-Language Pre-training Models
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Attacking Image Captioning (BLIP) and Visual Grounding (RefCOCO+) using samples 
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Provable Energy-Guided Test-Time Defense Boosting Adversarial Robustness of Large Vision-Language Models](a_provable_energy-guided_test-time_defense_boosting_adversarial_robustness_of_la.md)
 - [\[CVPR 2026\] PureProof: Diffusion-Resistant Black-box Targeted Attack on Large Vision-Language Models](pureproof_diffusion-resistant_black-box_targeted_attack_on_large_vision-language.md)
 - [\[CVPR 2026\] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching Vision-Language-Action Models](flowhijack_a_dynamics-aware_backdoor_attack_on_flow-matching_vision-language-act.md)
 - [\[CVPR 2026\] TTP: Test-Time Padding for Adversarial Detection and Robust Adaptation on Vision-Language Models](ttp_test-time_padding_for_adversarial_detection_and_robust_adaptation_on_vision-.md)
-- [\[CVPR 2026\] Hierarchically Robust Zero-shot Vision-language Models](hierarchically_robust_zero-shot_vision-language_models.md)
-- [\[CVPR 2026\] SIF: Semantically In-Distribution Fingerprints for Large Vision-Language Models](sif_semantically_in-distribution_fingerprints_for_large_vision-language_models.md)
+- [\[CVPR 2026\] Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)
 
 </div>
 

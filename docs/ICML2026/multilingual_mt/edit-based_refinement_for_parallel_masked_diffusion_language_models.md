@@ -2,16 +2,18 @@
 title: >-
   [Paper Note] Edit-Based Refinement for Parallel Masked Diffusion Language Models
 description: >-
-  [ICML 2026][Multilingual & Translation][Masked Diffusion] ME-DLM introduces a lightweight "decode-then-edit" refinement stage to masked diffusion language models (e.g., LLaDA). The first stage generates a draft via standard parallel unmasking, while the second stage performs parallel corrections using replace/delete/insert actions supervised by the shortest edit distance scri
+  [ICML 2026][Multilingual & Machine Translation][Masked Diffusion] ME-DLM introduces a lightweight "decode-then-edit" refinement stage to masked diffusion language models (e.g., LLaDA). The first stage generates a draft via standard parallel unmasking, while the second stage performs parallel corrections using replace/delete/insert actions supervised by the shortest edit distance scripts. Using only 1/8 of the diffusion step budget, it outperforms LLaDA-Instruct by +11.6 on Hu…
 tags:
-  - ICML 2026
-  - Multilingual & Translation
-  - Masked Diffusion
-  - edit-based refinement
-  - parallel decoding
+  - "ICML 2026"
+  - "Multilingual & Machine Translation"
+  - "Masked Diffusion"
+  - "edit-based refinement"
+  - "edit distance supervision"
+  - "parallel decoding"
 date: 2026-05-08
-content_hash: c4cb734302a2c1bc
+content_hash: f0ed0e89d769dace
 ---
+
 # Edit-Based Refinement for Parallel Masked Diffusion Language Models
 
 **Conference**: ICML 2026  

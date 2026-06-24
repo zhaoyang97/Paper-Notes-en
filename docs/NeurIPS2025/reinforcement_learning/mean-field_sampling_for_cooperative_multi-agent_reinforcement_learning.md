@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][MARL] This paper proposes the SUBSAMPLE-MFQ algorithm, which randomly samples $k$ agents from $n$ to perform mean-field Q-learning…
+  [NeurIPS 2025 Best Paper Spotlight][Reinforcement Learning][MARL] This paper proposes the SUBSAMPLE-MFQ algorithm, which randomly samples $k$ agents from $n$ to perform mean-field Q-learning, reducing the sample complexity of multi-agent reinforcement learning from $\text{poly}(n)$ to $\text{poly}(k)$. The resulting optimality gap is only $\tilde{O}(1/\sqrt{k})$ (independent of $n$), achieving exponential speedup over standard mean-field MARL when $k = O(\log n)$.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Best Paper Spotlight"
   - "Reinforcement Learning"
   - "MARL"
   - "mean-field"
@@ -12,7 +12,7 @@ tags:
   - "Q-learning"
   - "cooperative"
 date: 2026-05-08
-content_hash: b65e74e9dfbe0118
+content_hash: 639f10f00333d084
 ---
 
 # Mean-Field Sampling for Cooperative Multi-Agent Reinforcement Learning
@@ -136,8 +136,8 @@ This paper proposes the SUBSAMPLE-MFQ algorithm, which randomly samples $k$ agen
 - [\[NeurIPS 2025\] Empirical Study on Robustness and Resilience in Cooperative Multi-Agent Reinforcement Learning](empirical_study_on_robustness_and_resilience_in_cooperative_multi-agent_reinforc.md)
 - [\[NeurIPS 2025\] Learning in Stackelberg Mean Field Games: A Non-Asymptotic Analysis](learning_in_stackelberg_mean_field_games_a_non-asymptotic_analysis.md)
 - [\[NeurIPS 2025\] Last Iterate Convergence in Monotone Mean Field Games](last_iterate_convergence_in_monotone_mean_field_games.md)
+- [\[ICML 2025\] Learning Mean Field Control on Sparse Graphs](../../ICML2025/reinforcement_learning/learning_mean_field_control_on_sparse_graphs.md)
 - [\[NeurIPS 2025\] Solving Continuous Mean Field Games: Deep Reinforcement Learning for Non-Stationary Dynamics](solving_continuous_mean_field_games_deep_reinforcement_learning_for_non-stationa.md)
-- [\[NeurIPS 2025\] Scalable Neural Incentive Design with Parameterized Mean-Field Approximation](scalable_neural_incentive_design_with_parameterized_mean-field_approximation.md)
 
 </div>
 

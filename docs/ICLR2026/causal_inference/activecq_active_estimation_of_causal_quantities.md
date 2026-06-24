@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ActiveCQ: Active Estimation of Causal Quantities
 description: >-
-  [ICLR 2026][Causal Inference][Paper Note] ActiveCQ unifies the task of "estimating a specific causal quantity (CATE/ATE/ATT/ATE under distribution shift) with minimal labeled samples" into a single active learning problem. It observes that most causal quantities can be expressed as the integral of a regression function over a specific distribution. By modeling
+  [ICLR 2026][Causal Inference][Causal Quantity Estimation] ActiveCQ unifies the task of "estimating a specific causal quantity (CATE/ATE/ATT/ATE under distribution shift) with minimal labeled samples" into a single active learning problem. It observes that most causal quantities can be expressed as the integral of a regression function over a specific distribution. By modeling the regression function with Gaussian Processes (GP) and representing the integral distribution via C…
 tags:
-  - ICLR 2026
-  - Causal Inference
+  - "ICLR 2026"
+  - "Causal Inference"
+  - "Causal Quantity Estimation"
+  - "Active Learning"
+  - "Gaussian Processes"
+  - "Conditional Mean Embeddings"
+  - "Bayesian Experimental Design"
 date: 2026-05-08
-content_hash: dfb6edb910a745ed
+content_hash: 2bd198f6cd45c8ec
 ---
+
 # ActiveCQ: Active Estimation of Causal Quantities
 
 **Conference**: ICLR 2026  
@@ -143,8 +149,21 @@ Baselines included: Random, $\mu$-BALD, Coreset (QHTE), and traditional TVR. The
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[ACL 2025\] Leveraging Variation Theory in Counterfactual Data Augmentation for Optimized Active Learning](../../ACL2025/causal_inference/leveraging_variation_theory_in_counterfactual_data_augmentation_for_optimized_ac.md)
+- [\[ICLR 2026\] Direct Doubly Robust Estimation of Conditional Quantile Contrasts](direct_doubly_robust_estimation_of_conditional_quantile_contrasts.md)
+- [\[ICLR 2026\] Overlap-Adaptive Regularization for Conditional Average Treatment Effect Estimation](overlap-adaptive_regularization_for_conditional_average_treatment_effect_estimat.md)
+- [\[ICLR 2026\] Matching without Group Barrier for Heterogeneous Treatment Effect Estimation](matching_without_group_barrier_for_heterogeneous_treatment_effect_estimation.md)
+- [\[ICLR 2026\] Modeling Interference for Treatment Effect Estimation in Network Dynamic Environment](modeling_interference_for_treatment_effect_estimation_in_network_dynamic_environ.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

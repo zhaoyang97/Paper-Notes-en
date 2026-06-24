@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Any2Any: Unified Arbitrary Modality Translation for Remote Sensing
 description: >-
-  [ICML 2026][Remote Sensing][RST-1M] Any2Any transforms remote sensing (RS) translation between RGB, SAR, NIR, MS, and PAN from a collection of paired models into a unified latent diffusion model within a shared latent space. By utilizing the million-level RST-1M dataset and target modality residual adapters, it achieves superior fidelity and generalizati
+  [ICML2026][Remote Sensing][Arbitrary modality translation] Any2Any transforms remote sensing (RS) translation between RGB, SAR, NIR, MS, and PAN from a collection of paired models into a unified latent diffusion model within a shared latent space. By utilizing the million-level RST-1M dataset and target modality residual adapters, it achieves superior fidelity and generalization across 14 seen translation directions and multiple unseen modality combinations.
 tags:
-  - ICML 2026
-  - Remote Sensing
-  - RST-1M
+  - "ICML2026"
+  - "Remote Sensing"
+  - "Arbitrary modality translation"
+  - "Remote sensing multimodality"
+  - "Latent diffusion"
+  - "RST-1M"
+  - "Residual adapter"
 date: 2026-05-08
-content_hash: 591b92367b5ea260
+content_hash: 96c39ac2e3b0af96
 ---
+
 # Any2Any: Unified Arbitrary Modality Translation for Remote Sensing
 
 **Conference**: ICML2026  
@@ -145,10 +150,10 @@ Ablations focus on the residual adapter, incremental training, and unified multi
 ## Related Papers
 
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
+- [\[ICLR 2026\] Object Fidelity Diffusion for Remote Sensing Image Generation](../../ICLR2026/remote_sensing/object_fidelity_diffusion_for_remote_sensing_image_generation.md)
 - [\[CVPR 2026\] GeoCoT: Towards Reliable Remote Sensing Reasoning with Manifold Perspective](../../CVPR2026/remote_sensing/geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective.md)
-- [\[CVPR 2026\] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes](../../CVPR2026/remote_sensing/unigeoseg_towards_unified_open-world_segmentation_for_geospatial_scenes.md)
-- [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](../../CVPR2026/remote_sensing/unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
 - [\[CVPR 2026\] ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](../../CVPR2026/remote_sensing/changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)
+- [\[CVPR 2026\] RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation](../../CVPR2026/remote_sensing/recs4r_bridging_semantics_and_geometry_for_referring_remote_sensing_interpretati.md)
 
 </div>
 

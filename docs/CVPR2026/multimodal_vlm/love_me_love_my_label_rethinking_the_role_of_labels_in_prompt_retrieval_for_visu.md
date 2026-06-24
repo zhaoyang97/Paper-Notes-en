@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] This work reveals that prompt retrieval in Visual In-Context Learning (VICL) often suffers from label inconsistency due to the neglect of label information. The proposed LaPR framework achieves label-aware prompt retrieval through joint image-label representations and a Mixture-of-Experts (MoE) mechanism, consistently
+  [CVPR 2026][Multimodal VLM][Visual In-Context Learning] This work reveals that prompt retrieval in Visual In-Context Learning (VICL) often suffers from label inconsistency due to the neglect of label information. The proposed LaPR framework achieves label-aware prompt retrieval through joint image-label representations and a Mixture-of-Experts (MoE) mechanism, consistently outperforming SOTA on foreground segmentation, object detection, and image colorization tasks.
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual In-Context Learning"
+  - "Prompt Retrieval"
+  - "Label Consistency"
+  - "Mixture-of-Experts"
+  - "Contrastive Learning"
 date: 2026-05-08
-content_hash: bb5e120cd263703f
+content_hash: 8cbcc664cd2cf120
 ---
+
 # Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning
 
 **Conference**: CVPR 2026  
@@ -154,11 +160,11 @@ Note: LaPR leads comprehensively in non-voting settings. In detection with votin
 
 ## Related Papers
 
-- [\[CVPR 2026\] SouPLe: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts](souple_enhancing_audio-visual_localization_and_segmentation_with_learnable_promp.md)
-- [\[CVPR 2025\] SAM2-LOVE: Segment Anything Model 2 in Language-Aided Audio-Visual Scenes](../../CVPR2025/segmentation/sam2-love_segment_anything_model_2_in_language-aided_audio-visual_scenes.md)
-- [\[CVPR 2026\] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation](pr-magic_prompt_refinement_via_mask_decoder_gradient_flow_for_in-context_segment.md)
-- [\[CVPR 2026\] EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection](erecu_pseudolabel_evolution_unsupervised_camouflage.md)
-- [\[CVPR 2026\] ROSE: Retrieval-Oriented Segmentation Enhancement](rose_retrieval-oriented_segmentation_enhancement.md)
+- [\[CVPR 2026\] Rethinking BCE Loss for Multi-Label Image Recognition with Fine-Tuning](rethinking_bce_loss_for_multi-label_image_recognition_with_fine-tuning.md)
+- [\[CVPR 2026\] Role-SynthCLIP: A Role-Play Driven Diverse Synthetic Data Approach](role-synthclip_a_role-play_driven_diverse_synthetic_data_approach.md)
+- [\[ACL 2026\] WikiSeeker: Rethinking the Role of Vision-Language Models in Knowledge-Based Visual Question Answering](../../ACL2026/multimodal_vlm/wikiseeker_rethinking_the_role_of_vision-language_models_in_knowledge-based_visu.md)
+- [\[CVPR 2026\] FedMPT: Federated Multi-Label Prompt Tuning of Vision-Language Models](fedmpt_federated_multi-label_prompt_tuning_of_vision-language_models.md)
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 
 </div>
 

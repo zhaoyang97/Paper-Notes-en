@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Addressing the hallucination issue where Large Reconstruction Models "imagine" sparse multi-views as outlier structures (holes, spikes), Dehallu3D introduces a plug-and-play Cyclic View Consistency Refinement (CVCR) module following the single-image-to-mesh reconstruction pipeline. It smooths out outliers via 360° circ
+  [CVPR 2026][3D Vision][Single-image 3D generation] Addressing the hallucination issue where Large Reconstruction Models "imagine" sparse multi-views as outlier structures (holes, spikes), Dehallu3D introduces a plug-and-play Cyclic View Consistency Refinement (CVCR) module following the single-image-to-mesh reconstruction pipeline. It smooths out outliers via 360° circular dense adjacent-view depth consistency constraints while preserving sharp features through adaptive smoot…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image 3D generation"
+  - "Large Reconstruction Model hallucination"
+  - "mesh optimization"
+  - "depth consistency"
+  - "outlier measurement"
 date: 2026-05-08
-content_hash: 830eede190eb1490
+content_hash: d269aaa5198644fe
 ---
+
 # Dehallu3D: Hallucination-Mitigated 3D Generation from a Single Image via Cyclic View Consistency Refinement
 
 **Conference**: CVPR 2026  
@@ -163,16 +169,15 @@ Angle interval ablation (Table 3)—the denser the CVCR adjacent view angle, the
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)
-- [\[CVPR 2026\] Depth Hypothesis Guided Iterative Refinement for Event-Image Monocular Depth Estimation](depth_hypothesis_guided_iterative_refinement_for_event-image_monocular_depth_est.md)
-- [\[CVPR 2026\] 3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image](3d-fixer_coarse-to-fine_in-place_completion_for_3d_scenes_from_a_single_image.md)
-- [\[CVPR 2026\] MatE: Material Extraction from Single-Image via Geometric Prior](mate_material_extraction_from_single-image_via_geometric_prior.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
+- [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)
+- [\[CVPR 2026\] Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image](pano3dcomposer_feed-forward_compositional_3d_scene_generation_from_single_panora.md)
+- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
+- [\[CVPR 2026\] VIAFormer: Voxel-Image Alignment Transformer for High-Fidelity Voxel Refinement](viaformer_voxel-image_alignment_transformer_for_high-fidelity_voxel_refinement.md)
+- [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](../../ICCV2025/3d_vision/ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] SmokeSVD: Smoke Reconstruction from A Single View via Progressive Novel View Synthesis and Refinement with Diffusion Models](smokesvd_smoke_reconstruction_from_a_single_view_via_progressive_novel_view_synt.md)

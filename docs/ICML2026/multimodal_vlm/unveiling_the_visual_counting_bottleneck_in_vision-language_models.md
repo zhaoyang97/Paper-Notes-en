@@ -1,15 +1,20 @@
 ---
 title: >-
-  [Paper Note] 揭示视觉-语言模型中的视觉计数瓶颈
+  [Paper Note] Unveiling Visual Counting Bottlenecks in Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][VLM] By decomposing visual counting into three cognitive stages, this study discovers that the root cause of VLM counting failure lies not in visual perception or numerical understanding, but in the symbolic mapping stage where visual representations fail to project to the correct text tokens, reflecting the lack of a unifi
+  [ICML 2026][Multimodal VLM][Visual counting] By decomposing visual counting into three cognitive stages, this study discovers that the root cause of VLM counting failure lies not in visual perception or numerical understanding, but in the symbolic mapping stage where visual representations fail to project to the correct text tokens, reflecting the lack of a unified cross-modal numerical representation space.
 tags:
-  - ICML 2026
-  - Multimodal VLM
-  - VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual counting"
+  - "systematic generalization"
+  - "symbolic mapping"
+  - "VLM"
+  - "out-of-distribution generalization"
 date: 2026-05-08
-content_hash: f9e3bc60c3430150
+content_hash: 61a6fa133d204fcd
 ---
+
 # Unveiling Visual Counting Bottlenecks in Vision-Language Models
 
 **Conference**: ICML 2026  
@@ -122,11 +127,11 @@ Even if explicit counting fails, numerical signals might still exist but get stu
 
 ## Related Papers
 
-- [\[ICML 2026\] VisionPulse：多模态推理中的动态视觉稀疏化](visionpulse_dynamic_visual_sparsity_for_efficient_multimodal_reasoning.md)
-- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
-- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
-- [\[ICML 2026\] ATHA: 通过打破尾部对齐改进 CLIP 在源数据无关跨域小样本上的适配](improving_clip_adaptation_by_breaking_tail_alignment_for_source-free_cross-domai.md)
-- [\[ICML 2026\] Med-Scout: Curing MLLMs' Geometric Blindness in Medical Perception via Geometry-Aware RL Post-Training](med-scout_curing_mllms_geometric_blindness_in_medical_perception_via_geometry-aw.md)
+- [\[CVPR 2026\] Understanding Counting Mechanisms in Large Language and Vision-Language Models](../../CVPR2026/multimodal_vlm/understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)
+- [\[ACL 2026\] Efficient Inference for Large Vision-Language Models: Bottlenecks, Techniques, and Prospects](../../ACL2026/multimodal_vlm/efficient_inference_for_large_vision-language_models_bottlenecks_techniques_and_.md)
+- [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[ICML 2026\] Visual Persuasion: What Influences the Decisions of Vision-Language Models?](visual_persuasion_what_influences_decisions_of_vision-language_models.md)
+- [\[ICML 2026\] Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain](focusing_where_vision_matters_selective_training_for_large_vision_language_model.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Discrete Bayesian Sample Inference for Graph Generation
 description: >-
-  [ICLR 2026][Graph Learning][Paper Note] This paper proposes GraphBSI, extending Bayesian Sample Inference (BSI) from continuous to discrete categorical data. This allows the model to iteratively refine beliefs about the graph in the "distribution parameter space on the probability simplex" rather than directly evolving discrete graphs. It formulates this pro
+  [ICLR2026][Graph Learning][Graph Generation] This paper proposes GraphBSI, extending Bayesian Sample Inference (BSI) from continuous to discrete categorical data. This allows the model to iteratively refine beliefs about the graph in the "distribution parameter space on the probability simplex" rather than directly evolving discrete graphs. It formulates this process as a family of SDEs with adjustable noise $\gamma$, achieving SOTA in a one-shot manner on Moses and GuacaMol…
 tags:
-  - ICLR 2026
-  - Graph Learning
+  - "ICLR2026"
+  - "Graph Learning"
+  - "Graph Generation"
+  - "Bayesian Sample Inference"
+  - "Discrete Diffusion"
+  - "Stochastic Differential Equations"
+  - "Molecule Generation"
 date: 2026-05-08
-content_hash: 3c943898dbeb4236
+content_hash: 21bc299559a9e08e
 ---
+
 # Discrete Bayesian Sample Inference for Graph Generation
 
 **Conference**: ICLR2026  

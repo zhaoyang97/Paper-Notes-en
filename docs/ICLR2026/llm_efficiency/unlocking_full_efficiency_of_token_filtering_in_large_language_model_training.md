@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Unlocking Full Efficiency of Token Filtering in Large Language Model Training
 description: >-
-  [ICLR 2026][LLM Efficiency][Token Filtering] Addressing the paradox where "token filtering improves model performance but saves almost no training time," this paper proposes CENTRIFUGE. It further filters activations of discarded tokens within the attention backward kernel, propagating sparsity from the output layer through all preceding layers. By replacing inef
+  [ICLR 2026][LLM Efficiency][Token Filtering] Addressing the paradox where "token filtering improves model performance but saves almost no training time," this paper proposes CENTRIFUGE. It further filters activations of discarded tokens within the attention backward kernel, propagating sparsity from the output layer through all preceding layers. By replacing inefficient sparse GEMMs with "dimension-reduced dense GEMMs," it enables real speedups at "intermediate" sparsity leve…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Token Filtering
-  - FlashAttention
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Token Filtering"
+  - "Backward Sparsity"
+  - "FlashAttention"
+  - "Dimension-reduced GEMM"
+  - "Computational Graph Rewriting"
 date: 2026-05-08
-content_hash: 4228de1a58494495
+content_hash: 5f69f4d576b9163f
 ---
+
 # Unlocking Full Efficiency of Token Filtering in Large Language Model Training
 
 **Conference**: ICLR 2026  
@@ -152,7 +156,7 @@ Backward acceleration: 40.0%–49.9%; End-to-end: 17.9%–34.7%. Acceleration is
 - [\[ICLR 2026\] Demystifying and Enhancing the Efficiency of Large Language Model Based Search Agents](demystifying_and_enhancing_the_efficiency_of_large_language_model_based_search_a.md)
 - [\[ICLR 2026\] Scaling Large Vision-Language Model RL Training via Efficient Load Balancing](scaling_large_vision-language_model_rl_training_via_efficient_load_balancing.md)
 - [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
-- [\[ICLR 2026\] AutoSP: Unlocking Long-Context LLM Training Via Compiler-Based Sequence Parallelism](autosp_unlocking_long-context_llm_training_via_compiler-based_sequence_paralleli.md)
+- [\[ICLR 2026\] ReFusion: A Diffusion Large Language Model with Parallel Autoregressive Decoding](refusion_a_diffusion_large_language_model_with_parallel_autoregressive_decoding.md)
 
 </div>
 

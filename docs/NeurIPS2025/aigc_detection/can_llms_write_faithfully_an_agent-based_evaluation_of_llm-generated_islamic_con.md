@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content
 description: >-
-  [NEURIPS2025 (MusIML Workshop)][AIGC Detection][LLM Evaluation] This paper proposes a dual-agent (quantitative + qualitative) evaluation framework that systematically assesses the faithfulness of GPT-4o, Ansari AI…
+  [NEURIPS2025 (MusIML Workshop)][AIGC Detection][LLM Evaluation] This paper proposes a dual-agent (quantitative + qualitative) evaluation framework that systematically assesses the faithfulness of GPT-4o, Ansari AI, and Fanar on Islamic content generation tasks across three dimensions—theological accuracy, citation integrity, and stylistic appropriateness—finding that even the best-performing model exhibits significant deficiencies in citation reliability.
 tags:
   - "NEURIPS2025 (MusIML Workshop)"
   - "AIGC Detection"
@@ -12,7 +12,7 @@ tags:
   - "Citation Verification"
   - "High-Stakes Domain Generation"
 date: 2026-05-08
-content_hash: 48579e8d1a67cc88
+content_hash: c7c9e04d1ffd79d4
 ---
 
 # Can LLMs Write Faithfully? An Agent-Based Evaluation of LLM-generated Islamic Content

@@ -2,16 +2,16 @@
 title: >-
   [Paper Note] On Universality Classes of Equivariant Networks
 description: >-
-  [NeurIPS 2025][equivariant neural networks] This paper proves that the separation power of equivariant neural networks (i.e., their ability to distinguish symmetry-inequivalent inputs) is insufficient to fully characteri…
+  [NeurIPS 2025 Spotlight][equivariant neural networks] This paper proves that the separation power of equivariant neural networks (i.e., their ability to distinguish symmetry-inequivalent inputs) is insufficient to fully characterize their approximation capacity—models with identical separation power may possess strictly different approximation abilities. The paper provides a complete characterization of universality classes for shallow invariant networks and establishes suffi…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "equivariant neural networks"
   - "universal approximation"
   - "separation power"
   - "symmetry groups"
   - "universality classes"
 date: 2026-05-08
-content_hash: 78d9f53f8abe2432
+content_hash: 241bd36acd181c1a
 ---
 
 # On Universality Classes of Equivariant Networks
@@ -55,10 +55,10 @@ $$D_{c_1} \cdots D_{c_\ell} f \neq 0$$
 $$\mathcal{U}_\sigma(C^1, I) \subsetneq \mathcal{U}_\sigma(\mathbb{R}^n, \mathbb{R}^n, \mathbb{R}) \subsetneq \mathcal{U}_\sigma(\mathbb{R}^n, \mathbb{R}^{S_n}, \mathbb{R})$$
 
    Proof strategy:
-   - **CNN(width 1) cannot approximate** $(x_1 + \cdots + x_n)^n$: since $\partial_n \cdots \partial_1 (x_1 + \cdots + x_n)^n = n! \neq 0$
-   - **PointNet can approximate** $(x_1 + \cdots + x_n)^n$: via a summation form $f(x_i, x_1+\cdots+x_n)$
-   - **PointNet cannot approximate** $x_1 \cdots x_n$: by constructing direction vectors satisfying the conditions of Theorem 14
-   - **Regular representation networks can approximate** $x_1 \cdots x_n$: guaranteed by Theorem 6 (Ravanbakhsh)
+    - **CNN(width 1) cannot approximate** $(x_1 + \cdots + x_n)^n$: since $\partial_n \cdots \partial_1 (x_1 + \cdots + x_n)^n = n! \neq 0$
+    - **PointNet can approximate** $(x_1 + \cdots + x_n)^n$: via a summation form $f(x_i, x_1+\cdots+x_n)$
+    - **PointNet cannot approximate** $x_1 \cdots x_n$: by constructing direction vectors satisfying the conditions of Theorem 14
+    - **Regular representation networks can approximate** $x_1 \cdots x_n$: guaranteed by Theorem 6 (Ravanbakhsh)
 
 4. **Universality under Normal Subgroup Conditions (Theorem 18)**: If the hidden representation arises from the coset space $\mathbb{R}^{G/H}$ of a **normal subgroup** $H$ of $G$, then the corresponding shallow network is separation-constrained universal. For the symmetric group $S_n$ ($n \geq 5$), however, the only nontrivial normal subgroup is the alternating group $A_n$, whose coset space has only 2 elements—too small to be useful. Since all subgroups of abelian groups are normal, cyclic CNNs possess separation-constrained universality.
 
@@ -129,9 +129,9 @@ This is a purely theoretical work with no training involved. Results are establi
 
 - [\[NeurIPS 2025\] Learning (Approximately) Equivariant Networks via Constrained Optimization](learning_approximately_equivariant_networks_via_constrained_optimization.md)
 - [\[ICML 2026\] Identifiable Equivariant Networks are Layerwise Equivariant](../../ICML2026/others/identifiable_equivariant_networks_are_layerwise_equivariant.md)
-- [\[NeurIPS 2025\] Depth-Bounds for Neural Networks via the Braid Arrangement](depth-bounds_for_neural_networks_via_the_braid_arrangement.md)
-- [\[NeurIPS 2025\] The Computational Complexity of Counting Linear Regions in ReLU Neural Networks](the_computational_complexity_of_counting_linear_regions_in_relu_neural_networks.md)
-- [\[NeurIPS 2025\] Revisiting Bi-Linear State Transitions in Recurrent Neural Networks](revisiting_bi-linear_state_transitions_in_recurrent_neural_networks.md)
+- [\[ICML 2025\] Permutation Equivariant Neural Networks for Symmetric Tensors](../../ICML2025/others/permutation_equivariant_neural_networks_for_symmetric_tensors.md)
+- [\[ICML 2025\] GLGENN: A Novel Parameter-Light Equivariant Neural Networks Architecture Based on Clifford Geometric Algebras](../../ICML2025/others/glgenn_a_novel_parameter-light_equivariant_neural_networks_architecture_based_on.md)
+- [\[ICML 2025\] The Price of Freedom: Exploring Expressivity and Runtime Tradeoffs in Equivariant Networks](../../ICML2025/others/the_price_of_freedom_exploring_expressivity_and_runtime_tradeoffs_in_equivariant.md)
 
 </div>
 

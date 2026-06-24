@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Tracing the Traces: Latent Temporal Signals for Efficient and Accurate Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Interpretability] This paper proposes **Latent-Trajectory (LT) signals**—by tracing the "temporal evolution trajectory" (net change, cumulative change, and aligned change) of the model's hidden states during reasoning token generation, it predicts whether a reasoning trajectory leads to a correct answer without training. This signal gui
+  [ICLR 2026][Reasoning][Reasoning Trajectory] This paper proposes **Latent-Trajectory (LT) signals**—by tracing the "temporal evolution trajectory" (net change, cumulative change, and aligned change) of the model's hidden states during reasoning token generation, it predicts whether a reasoning trajectory leads to a correct answer without training. This signal guides early stopping and early path selection in multi-sample reasoning, reducing token consumption by up to approxim…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Interpretability
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Reasoning Trajectory"
+  - "Hidden States"
+  - "Test-time Scaling"
+  - "Answer Selection"
+  - "Interpretability"
 date: 2026-05-08
-content_hash: 6ae115d423019456
+content_hash: 949dcdb1b37f4690
 ---
+
 # Tracing the Traces: Latent Temporal Signals for Efficient and Accurate Reasoning
 
 **Conference**: ICLR 2026  
@@ -153,7 +158,7 @@ Summary: Compared to MV@5, LT strategies save an average of **58% samples and 48
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -161,7 +166,7 @@ Summary: Compared to MV@5, LT strategies save an average of **58% samples and 48
 - [\[ACL 2026\] Efficient Test-Time Scaling via Temporal Reasoning Aggregation](../../ACL2026/llm_reasoning/efficient_test-time_scaling_via_temporal_reasoning_aggregation.md)
 - [\[ICLR 2026\] Where Did This Sentence Come From? Tracing Provenance in LLM Reasoning Distillation](where_did_this_sentence_come_from_tracing_provenance_in_llm_reasoning_distillati.md)
 - [\[ICLR 2026\] Segment-Level Attribution for Selective Learning of Long Reasoning Traces](segment-level_attribution_for_selective_learning_of_long_reasoning_traces.md)
-- [\[ICLR 2026\] RESTRAIN: From Spurious Votes to Signals — Self-Training RL with Self-Penalization](restrain_from_spurious_votes_to_signals_self-training_rl_with_self-penalization.md)
+- [\[ICLR 2026\] $\nabla$-Reasoner: LLM Reasoning via Test-Time Gradient Descent in Latent Space](nabla-reasoner_llm_reasoning_via_test-time_gradient_descent_in_latent_space.md)
 
 </div>
 

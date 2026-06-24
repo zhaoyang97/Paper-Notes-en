@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DIMOS: Disentangling Instance-level Moving Object Segmentation
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] Addressing the challenges of "entangled appearance and motion information in event cameras and sparse features for small objects," DIMOS employs dual disentangled encoders to **extract dual branches of appearance and motion features from both image and event modalities**. By utilizing adversarial domain adaptation and
+  [CVPR 2026][Segmentation][Moving Instance Segmentation] Addressing the challenges of "entangled appearance and motion information in event cameras and sparse features for small objects," DIMOS employs dual disentangled encoders to **extract dual branches of appearance and motion features from both image and event modalities**. By utilizing adversarial domain adaptation and modality translation for distribution-level and semantic-level alignment before fusion…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Moving Instance Segmentation"
+  - "Event Camera"
+  - "Multi-modal Fusion"
+  - "Feature Disentanglement"
+  - "Cross-modal Alignment"
 date: 2026-05-08
-content_hash: c1223c0ff371e9d1
+content_hash: 0f614ee524fa7ff4
 ---
+
 # DIMOS: Disentangling Instance-level Moving Object Segmentation
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Backbone ablation: ResNet-50 70.25% / ResNet-18 69.32% / MobileNetV2 68.62%. Swi
 
 ## Related Papers
 
-- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
 - [\[ECCV 2024\] Unsupervised Moving Object Segmentation with Atmospheric Turbulence](../../ECCV2024/segmentation/unsupervised_moving_object_segmentation_with_atmospheric_turbulence.md)
 - [\[ECCV 2024\] Dataset Enhancement with Instance-Level Augmentations](../../ECCV2024/segmentation/dataset_enhancement_with_instance-level_augmentations.md)
+- [\[CVPR 2026\] Dual-level Adapter Boosting Prompt-free Curvilinear Structure Segmentation](dual-level_adapter_boosting_prompt-free_curvilinear_structure_segmentation.md)
 - [\[CVPR 2026\] MARIS: Marine Open-Vocabulary Instance Segmentation](maris_marine_open-vocabulary_instance_segmentation.md)
-- [\[CVPR 2026\] Phrase-Instance Alignment for Generalized Referring Segmentation](phrase-instance_alignment_for_generalized_referring_segmentation.md)
+- [\[CVPR 2026\] BiPA: Bilevel Prompt Adaptation for Underwater Instance Segmentation](bipa_bilevel_prompt_adaptation_for_underwater_instance_segmentation.md)
 
 </div>
 

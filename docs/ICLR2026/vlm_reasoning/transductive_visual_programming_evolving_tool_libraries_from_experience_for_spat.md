@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Transductive Visual Programming: Evolving Tool Libraries from Experience for Spatial Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] TVP enables visual programming agents to solve problems using basic tools and store high-quality programs in an "Experience Library." It then clusters and abstracts reusable high-level tools from these **successfully executed** programs into a "Tool Library," forming a "Program → Tool → Better Program" closed loop. It
+  [ICLR 2026][VLM Reasoning][Visual Programming] TVP enables visual programming agents to solve problems using basic tools and store high-quality programs in an "Experience Library." It then clusters and abstracts reusable high-level tools from these **successfully executed** programs into a "Tool Library," forming a "Program → Tool → Better Program" closed loop. It outperforms GPT-4o by 22% and previous visual programming systems by 11% on Omni3D-Bench…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Programming"
+  - "Spatial Reasoning"
+  - "Tool Abstraction"
+  - "Self-Evolving Agents"
+  - "Dual-Library System"
 date: 2026-05-08
-content_hash: 0527ed471d081ac1
+content_hash: 2c46a64409cb2759
 ---
+
 # Transductive Visual Programming: Evolving Tool Libraries from Experience for Spatial Reasoning
 
 **Conference**: ICLR 2026  
@@ -139,10 +145,10 @@ The Experience Library alone (31.7%) already surpasses baselines, but the additi
 ## Related Papers
 
 - [\[CVPR 2026\] SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL](../../CVPR2026/vlm_reasoning/spacetools_tool-augmented_spatial_reasoning_via_double_interactive_rl.md)
-- [\[ICLR 2026\] Pursuing Minimal Sufficiency in Spatial Reasoning](pursuing_minimal_sufficiency_in_spatial_reasoning.md)
 - [\[ICLR 2026\] AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning](adareasoner_dynamic_tool_orchestration_for_iterative_visual_reasoning.md)
+- [\[ICLR 2026\] Pursuing Minimal Sufficiency in Spatial Reasoning](pursuing_minimal_sufficiency_in_spatial_reasoning.md)
+- [\[ICLR 2026\] VideoAnchor: Reinforcing Subspace-Structured Visual Cues for Coherent Visual-Spatial Reasoning](videoanchor_reinforcing_subspace-structured_visual_cues_for_coherent_visual-spat.md)
 - [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
-- [\[CVPR 2026\] Thinking with Programming Vision: Towards a Unified View for Thinking with Images](../../CVPR2026/vlm_reasoning/thinking_with_programming_vision_towards_a_unified_view_for_thinking_with_images.md)
 
 </div>
 

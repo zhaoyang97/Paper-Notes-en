@@ -2,17 +2,20 @@
 title: >-
   [Paper Note] CT-Flow: Orchestrating CT Interpretation Workflow with Model Context Protocol Servers
 description: >-
-  [ACL 2026][Medical NLP][MCP] The authors remodel 3D CT interpretation as an agentic task where "radiologists iteratively explore via tools." By exposing four categories of tools—Data Ingestion, Global Navigation, Detailed Observation, and Advanced Analysis—through the Model Context Protocol (MCP), they construct CT-FlowBench with 2000+300 executab
+  [ACL 2026][Medical LLM][CT Interpretation] The authors remodel 3D CT interpretation as an agentic task where "radiologists iteratively explore via tools." By exposing four categories of tools—Data Ingestion, Global Navigation, Detailed Observation, and Advanced Analysis—through the Model Context Protocol (MCP), they construct CT-FlowBench with 2000+300 executable trajectories. They subsequently perform SFT to develop CT-Flow-8B, which achieves 69.46% ACC on 3D-RAD (a +22.46%…
 tags:
-  - ACL 2026
-  - Medical NLP
-  - MCP
-  - Agentic LVLM
-  - ReAct
-  - CT-FlowBench
+  - "ACL 2026"
+  - "Medical LLM"
+  - "CT Interpretation"
+  - "MCP"
+  - "Agentic LVLM"
+  - "ReAct"
+  - "Tool Orchestration"
+  - "CT-FlowBench"
 date: 2026-05-08
-content_hash: d2634d653bfa7887
+content_hash: 826ca1fc130346e7
 ---
+
 # CT-Flow: Orchestrating CT Interpretation Workflow with Model Context Protocol Servers
 
 **Conference**: ACL 2026  

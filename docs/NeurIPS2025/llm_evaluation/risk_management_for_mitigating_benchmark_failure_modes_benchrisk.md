@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Risk Management for Mitigating Benchmark Failure Modes: BenchRisk
 description: >-
-  [NeurIPS 2025][LLM Evaluation][LLM benchmarks] Grounded in the NIST Risk Management Framework, this paper systematically analyzes 26 mainstream LLM benchmarks…
+  [NeurIPS 2025][LLM Evaluation][LLM benchmarks] Grounded in the NIST Risk Management Framework, this paper systematically analyzes 26 mainstream LLM benchmarks, identifies 57 potential failure modes and 196 mitigation strategies, and proposes the BenchRisk meta-evaluation framework for quantifying the reliability risk of benchmarks.
 tags:
   - "NeurIPS 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "failure modes"
   - "NIST"
 date: 2026-05-08
-content_hash: f9f652f42def6024
+content_hash: 40c91f5bb39f655f
 ---
 
 # Risk Management for Mitigating Benchmark Failure Modes: BenchRisk
@@ -149,11 +149,11 @@ Key finding: **All 26 benchmarks exhibit significant risk in at least one dimens
 
 ## Related Papers
 
+- [\[ACL 2025\] A Conformal Risk Control Framework for Granular Word Assessment and Uncertainty Calibration of CLIPScore Quality Estimates](../../ACL2025/llm_evaluation/a_conformal_risk_control_framework_for_granular_word_assessment_and_uncertainty_.md)
 - [\[AAAI 2026\] BCWildfire: A Long-term Multi-factor Dataset and Deep Learning Benchmark for Boreal Wildfire Risk Prediction](../../AAAI2026/llm_evaluation/bcwildfire_a_long-term_multi-factor_dataset_and_deep_learning_benchmark_for_bore.md)
 - [\[NeurIPS 2025\] PARROT: A Benchmark for Evaluating LLMs in Cross-System SQL Translation](parrot_a_benchmark_for_evaluating_llms_in_cross-system_sql_translation.md)
 - [\[NeurIPS 2025\] Beyond the Singular: Revealing the Value of Multiple Generations in Benchmark Evaluation](beyond_the_singular_revealing_the_value_of_multiple_generations_in_benchmark_eva.md)
 - [\[NeurIPS 2025\] PFΔ: A Benchmark Dataset for Power Flow under Load, Generation, and Topology Variations](pfδ_a_benchmark_dataset_for_power_flow_under_load_generation_and_topology_variat.md)
-- [\[NeurIPS 2025\] BLINK-Twice: You See But Do You Observe? A Reasoning Benchmark on Visual Perception](blink-twice_you_see_but_do_you_observe_a_reasoning_benchmark_on_visual_perceptio.md)
 
 </div>
 

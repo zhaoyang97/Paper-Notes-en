@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction
 description: >-
-  [NeurIPS 2025][3D Vision][Single-view human reconstruction] SyncHuman is the first framework to unify 2D multi-view generative models and 3D native generative models within a single pipeline. Through pixel-aligned 2D-3D…
+  [NeurIPS 2025][3D Vision][Single-view human reconstruction] SyncHuman is the first framework to unify 2D multi-view generative models and 3D native generative models within a single pipeline. Through pixel-aligned 2D-3D synchronized attention, the two branches mutually enhance each other, achieving high-fidelity textured mesh reconstruction under complex human poses and surpassing existing methods in both geometric accuracy and visual quality.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "3D Gaussian splatting"
   - "textured mesh"
 date: 2026-05-08
-content_hash: 989bb375201c69f7
+content_hash: 18f3ce23836e94a2
 ---
 
 # SyncHuman: Synchronizing 2D and 3D Generative Models for Single-View Human Reconstruction
@@ -143,9 +143,9 @@ Given a single full-body human image, SyncHuman operates in two stages:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Orientation Matters: Making 3D Generative Models Orientation-Aligned](orientation_matters_making_3d_generative_models_orientation-aligned.md)
+- [\[CVPR 2025\] PERSE: Personalized 3D Generative Avatars from A Single Portrait](../../CVPR2025/3d_vision/perse_personalized_3d_generative_avatars_from_a_single_portrait.md)
 - [\[ICCV 2025\] Repurposing 2D Diffusion Models with Gaussian Atlas for 3D Generation](../../ICCV2025/3d_vision/repurposing_2d_diffusion_models_with_gaussian_atlas_for_3d_generation.md)
-- [\[CVPR 2026\] FISHuman: Fine-grained Single-image 3D Human Reconstruction via Multi-view 4D Remeshing](../../CVPR2026/3d_vision/fishuman_fine-grained_single-image_3d_human_reconstruction_via_multi-view_4d_rem.md)
-- [\[NeurIPS 2025\] ROGR: Relightable 3D Objects using Generative Relighting](rogr_relightable_3d_objects_using_generative_relighting.md)
+- [\[NeurIPS 2025\] MiCADangelo: Fine-Grained Reconstruction of Constrained CAD Models from 3D Scans](micadangelo_fine-grained_reconstruction_of_constrained_cad_models_from_3d_scans.md)
 - [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](../../CVPR2026/3d_vision/human_interaction-aware_3d_reconstruction_from_a_single_image.md)
 
 </div>

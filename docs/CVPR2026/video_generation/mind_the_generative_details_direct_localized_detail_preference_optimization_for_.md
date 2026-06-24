@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] LocalDPO is proposed, which generates negative samples by locally corrupting real high-quality videos using random spatio-temporal Bézier masks (single inference, no external ranking). Combined with a region-aware DPO loss for preference alignment at the local detail level, it consistently surpasses traditional DPO and
+  [CVPR 2026][Video Generation][Video Diffusion Models] LocalDPO is proposed, which generates negative samples by locally corrupting real high-quality videos using random spatio-temporal Bézier masks (single inference, no external ranking). Combined with a region-aware DPO loss for preference alignment at the local detail level, it consistently surpasses traditional DPO and SFT in video quality on Wan2.1 and CogVideoX.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "DPO Preference Optimization"
+  - "Local Corruption"
+  - "Region-Aware Loss"
+  - "Spatio-Temporal Mask"
 date: 2026-05-08
-content_hash: a95c01307918af2c
+content_hash: 558090f9d4f7a8fa
 ---
+
 # LocalDPO: Direct Localized Detail Preference Optimization for Video Diffusion Models
 
 **Conference**: CVPR 2026  
@@ -149,15 +155,16 @@ Similar consistent gains were achieved on Wan2.1 across all post-training method
 - Value: ⭐⭐⭐⭐⭐ Efficient and effective preference alignment for video.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Consistent Noisy Latent Rewards for Trajectory Preference Optimization in Diffusion Models](../../ICLR2026/video_generation/consistent_noisy_latent_rewards_for_trajectory_preference_optimization_in_diffus.md)
 - [\[CVPR 2026\] DynamicsBoost: Dynamic Plausible Video Generation via Annotation-Free Continuation Preference Optimization](dynamicsboost_dynamic_plausible_video_generation_via_annotation-free_continuatio.md)
 - [\[NeurIPS 2025\] DenseDPO: Fine-Grained Temporal Preference Optimization for Video Diffusion Models](../../NeurIPS2025/video_generation/densedpo_finegrained_temporal_preference_optimization_for_vi.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
 - [\[CVPR 2026\] Diff4Splat: Repurposing Video Diffusion Models for Dynamic Scene Generation](diff4splat_controllable_4d_scene_generation_with_latent_dynamic_reconstruction_m.md)
-- [\[CVPR 2026\] MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)
+- [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](../../ICLR2026/video_generation/likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
 
 </div>
 

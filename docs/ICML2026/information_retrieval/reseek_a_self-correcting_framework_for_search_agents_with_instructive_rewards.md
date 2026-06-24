@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards
 description: >-
-  [ICML 2026][Information Retrieval & RAG][JUDGE action] ReSeek adds a JUDGE action to RL-trained search agents and utilizes BGE-reranker to calculate "ideal judgments" as process rewards. This enables agents to "soft-mask" invalid information and re-query after each retrieval. It also proposes FictionalHot, an anti-contamination benchmark based on fictional entities, achiev
+  [ICML 2026][Information Retrieval & RAG][Search Agent] ReSeek adds a JUDGE action to RL-trained search agents and utilizes BGE-reranker to calculate "ideal judgments" as process rewards. This enables agents to "soft-mask" invalid information and re-query after each retrieval. It also proposes FictionalHot, an anti-contamination benchmark based on fictional entities, achieving an average EM of 0.377 on Qwen2.5-7B, outperforming ZeroSearch by +3.1.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - JUDGE action
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Search Agent"
+  - "Self-correction"
+  - "JUDGE action"
+  - "Process rewards"
+  - "Data contamination evaluation"
 date: 2026-05-08
-content_hash: 6e51ff2f6b1f8557
+content_hash: 595089ca9de589cc
 ---
+
 # ReSeek: A Self-Correcting Framework for Search Agents with Instructive Rewards
 
 **Conference**: ICML 2026  
@@ -150,10 +155,10 @@ flowchart TD
 ## Related Papers
 
 - [\[ACL 2026\] Multi-Faceted Self-Consistent Preference Alignment for Query Rewriting in Conversational Search](../../ACL2026/information_retrieval/multi-faceted_self-consistent_preference_alignment_for_query_rewriting_in_conver.md)
-- [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](../../ACL2026/information_retrieval/enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
 - [\[ACL 2025\] SGIC: A Self-Guided Iterative Calibration Framework for RAG](../../ACL2025/information_retrieval/sgic_a_self-guided_iterative_calibration_framework_for_rag.md)
-- [\[ACL 2026\] Rerank Before You Reason: Analyzing Reranking Tradeoffs through Effective Token Cost in Deep Search Agents](../../ACL2026/information_retrieval/rerank_before_you_reason_analyzing_reranking_tradeoffs_through_effective_token_c.md)
-- [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](../../ACL2026/information_retrieval/can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
+- [\[ACL 2026\] Enhancing LLM-based Search Agents via Contribution Weighted Group Relative Policy Optimization](../../ACL2026/information_retrieval/enhancing_llm-based_search_agents_via_contribution_weighted_group_relative_polic.md)
+- [\[ICML 2026\] Self-Augmenting Retrieval for Diffusion Language Models](self-augmenting_retrieval_for_diffusion_language_models.md)
+- [\[ICLR 2026\] HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation](../../ICLR2026/information_retrieval/hiprag_hierarchical_process_rewards_for_efficient_agentic_retrieval_augmented_ge.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination
 description: >-
-  [ACL 2026][Hallucination Detection][Reinforcement Learning] This work systematically reveals the "Reasoning Trap" paradox: enhancing LLM reasoning capabilities (whether through RL, distillation, or switchable reasoning modes) systematically amplifies tool hallucinations. This effect is inherently associated with the reasoning process itself rather than RL training, and existing
+  [ACL 2026][Hallucination Detection][Tool Hallucination] This work systematically reveals the "Reasoning Trap" paradox: enhancing LLM reasoning capabilities (whether through RL, distillation, or switchable reasoning modes) systematically amplifies tool hallucinations. This effect is inherently associated with the reasoning process itself rather than RL training, and existing mitigation strategies (Prompt Engineering, DPO) face an inevitable reliability-capability trade-off.
 tags:
-  - ACL 2026
-  - Hallucination Detection
-  - Reinforcement Learning
+  - "ACL 2026"
+  - "Hallucination Detection"
+  - "Tool Hallucination"
+  - "Reasoning Enhancement"
+  - "Reinforcement Learning"
+  - "Reliability-Capability Trade-off"
+  - "LLM Agents"
 date: 2026-05-08
-content_hash: ddccd4b64c5d6edf
+content_hash: fe89036de7f3a233
 ---
+
 # The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination
 
 **Conference**: ACL 2026  
@@ -134,11 +139,11 @@ The authors evaluated two mainstream routes: Prompt Engineering (explicitly requ
 
 ## Related Papers
 
+- [\[ACL 2026\] Why LLMs Hallucinate on Structured Knowledge: A Mechanistic Analysis of the Reasoning Process](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
+- [\[ICLR 2026\] HARP: Hallucination Detection via Reasoning Subspace Projection](../../ICLR2026/hallucination/harp_hallucination_detection_via_reasoning_subspace_projection.md)
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
 - [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](enhancing_hallucination_detection_via_future_context.md)
-- [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](../../ICML2026/hallucination/harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
-- [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[ACL 2026\] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
+- [\[ICLR 2026\] Mechanistic Detection and Mitigation of Hallucination in Large Reasoning Models](../../ICLR2026/hallucination/mechanistic_detection_and_mitigation_of_hallucination_in_large_reasoning_models.md)
 
 </div>
 

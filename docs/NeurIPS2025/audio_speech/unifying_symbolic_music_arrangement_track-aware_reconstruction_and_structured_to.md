@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization
 description: >-
-  [NeurIPS 2025][Audio & Speech][music arrangement] This paper proposes a unified symbolic music arrangement framework that employs a segment-level self-supervised reconstruction objective (decoupling content from instrume…
+  [NeurIPS 2025][Audio & Speech][music arrangement] This paper proposes a unified symbolic music arrangement framework that employs a segment-level self-supervised reconstruction objective (decoupling content from instrument style) and a novel multi-track tokenization scheme REMI-z, enabling a single pretrained model to handle diverse arrangement tasks—including orchestral arrangement, piano reduction, and drum arrangement—while surpassing task-specific state-of-the-art methods…
 tags:
   - "NeurIPS 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "music tokenization"
   - "self-supervised learning"
 date: 2026-05-08
-content_hash: 88975676f0835409
+content_hash: 9bd16a5756440c24
 ---
 
 # Unifying Symbolic Music Arrangement: Track-Aware Reconstruction and Structured Tokenization

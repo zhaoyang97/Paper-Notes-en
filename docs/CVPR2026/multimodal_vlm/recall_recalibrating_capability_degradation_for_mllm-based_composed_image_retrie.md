@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This work reveals the "Capability Degradation" phenomenon when adapting generative MLLMs into discriminative retrievers. It proposes the ReCALL framework, a three-stage pipeline (Diagnosis of retriever blind spots → Generation of corrective triplets via base MLLM CoT reasoning → Grouped Contrastive Refining), to effect
+  [CVPR 2026][Multimodal VLM][Composed Image Retrieval] This work reveals the "Capability Degradation" phenomenon when adapting generative MLLMs into discriminative retrievers. It proposes the ReCALL framework, a three-stage pipeline (Diagnosis of retriever blind spots → Generation of corrective triplets via base MLLM CoT reasoning → Grouped Contrastive Refining), to effectively restore degraded fine-grained compositional reasoning. ReCALL achieves 55.52% R@1 on CIRR and 57.04%…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Composed Image Retrieval"
+  - "Capability Degradation"
+  - "MLLM Self-Improvement"
+  - "Contrastive Learning"
+  - "Diagnosis-Generation-Refinement"
 date: 2026-05-08
-content_hash: b8f43a308fcc48fe
+content_hash: 410dc608eed82bbb
 ---
+
 # ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval
 
 **Conference**: CVPR 2026  
@@ -147,11 +153,11 @@ Backbone: Qwen2.5-VL-7B with LoRA (rank=16). FashionIQ: lr=$4\times10^{-5}$, $\t
 
 ## Related Papers
 
+- [\[CVPR 2026\] Adapting In-context Generation for Enhanced Composed Image Retrieval](adapting_in-context_generation_for_enhanced_composed_image_retrieval.md)
 - [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
 - [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
-- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 - [\[CVPR 2026\] Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval](air-know_arbiter-calibrated_knowledge-internalizing_robust_network_for_composed_.md)
-- [\[ACL 2026\] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval](../../ACL2026/multimodal_vlm/tema_anchor_the_image_follow_the_text_for_multi-modification_composed_image_retr.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference
 description: >-
-  [ICLR 2026][LLM Efficiency][KV cache] FreeKV is a **training-free algorithm-system co-optimization framework**. It removes KV page selection and recall from the inference critical path via "speculative retrieval," compensates for accuracy loss with "fine-grained correction," and utilizes a hybrid CPU/GPU memory layout with double-buffering streaming recall
+  [ICLR 2026][LLM Efficiency][KV cache] FreeKV is a **training-free algorithm-system co-optimization framework**. It removes KV page selection and recall from the inference critical path via "speculative retrieval," compensates for accuracy loss with "fine-grained correction," and utilizes a hybrid CPU/GPU memory layout with double-buffering streaming recall. This allows retrieval-based KV cache compression to achieve up to **13×** speedup over SOTA retrieval methods with almos…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - KV cache
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "KV cache"
+  - "retrieval-based compression"
+  - "speculative retrieval"
+  - "long-context inference"
+  - "algorithm-system co-optimization"
 date: 2026-05-08
-content_hash: 368cfce943053dad
+content_hash: fd925bf766798143
 ---
+
 # FreeKV: Boosting KV Cache Retrieval for Efficient LLM Inference
 
 **Conference**: ICLR 2026  
@@ -152,7 +157,7 @@ End-to-end Efficiency (Speedup over SOTA retrieval methods, higher is better):
 - [\[ICLR 2026\] DefensiveKV: Taming the Fragility of KV Cache Eviction in LLM Inference](defensivekv_taming_the_fragility_of_kv_cache_eviction_in_llm_inference.md)
 - [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](../../ICML2026/llm_efficiency/obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 - [\[ICLR 2026\] IceCache: Memory-Efficient KV-cache Management for Long-Sequence LLMs](icecache_memory-efficient_kv-cache_management_for_long-sequence_llms.md)
-- [\[ICLR 2026\] QuoKA: Query-Oriented KV Selection for Efficient LLM Prefill](quoka_query-oriented_kv_selection_for_efficient_llm_prefill.md)
+- [\[ICLR 2026\] Fast-dLLM: Training-free Acceleration of Diffusion LLM by Enabling KV Cache and Parallel Decoding](fast-dllm_training-free_acceleration_of_diffusion_llm_by_enabling_kv_cache_and_p.md)
 
 </div>
 

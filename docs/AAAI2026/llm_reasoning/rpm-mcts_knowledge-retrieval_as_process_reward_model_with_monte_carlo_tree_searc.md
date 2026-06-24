@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation
 description: >-
-  [AAAI 2026][LLM Reasoning][Process Reward Model] This paper proposes RPM-MCTS, which replaces a trained Process Reward Model (PRM) with knowledge base retrieval to guide MCTS search for code generation. Exploiting the ho…
+  [AAAI 2026][Reasoning][Process Reward Model] This paper proposes RPM-MCTS, which replaces a trained Process Reward Model (PRM) with knowledge base retrieval to guide MCTS search for code generation. Exploiting the homogeneity of correct implementations within the same algorithm family, the method retrieves reference algorithm steps from a knowledge base as evaluation signals, applies similarity-based filtering to prune redundant expansion nodes…
 tags:
   - "AAAI 2026"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Process Reward Model"
   - "MCTS"
   - "Knowledge Base Retrieval"
   - "Code Generation"
   - "Algorithm Step Evaluation"
 date: 2026-05-08
-content_hash: f5c5d2c013dab636
+content_hash: 64483b55ffd90db0
 ---
 
 # RPM-MCTS: Knowledge-Retrieval as Process Reward Model with Monte Carlo Tree Search for Code Generation
@@ -135,11 +135,11 @@ The framework comprises three components: (1) **knowledge base construction** (c
 
 ## Related Papers
 
+- [\[ICLR 2026\] Incentivizing LLM Reasoning via Reinforcement Learning with Functional Monte Carlo Tree Search](../../ICLR2026/llm_reasoning/incentivizing_llm_reasoning_via_reinforcement_learning_with_functional_monte_car.md)
 - [\[AAAI 2026\] Intention Chain-of-Thought Prompting with Dynamic Routing for Code Generation](intention_chain-of-thought_prompting_with_dynamic_routing_for_code_generation.md)
-- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
-- [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](../../NeurIPS2025/llm_reasoning/unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
-- [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](../../NeurIPS2025/llm_reasoning/dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
+- [\[ICLR 2026\] OR-PRM: A Process Reward Model for Algorithmic Problem in Operations Research](../../ICLR2026/llm_reasoning/or-prm_a_process_reward_model_for_algorithmic_problem_in_operations_research.md)
 - [\[AAAI 2026\] Jupiter: Enhancing LLM Data Analysis Capabilities via Notebook and Inference-Time Value-Guided Search](jupiter_enhancing_llm_data_analysis_capabilities_via_notebook_and_inference-time.md)
+- [\[ICML 2026\] GRPO is Secretly a Process Reward Model](../../ICML2026/llm_reasoning/grpo_is_secretly_a_process_reward_model.md)
 
 </div>
 

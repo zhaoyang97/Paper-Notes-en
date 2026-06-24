@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TriDi: Trilateral Diffusion of 3D Humans, Objects, and Interactions
 description: >-
-  [ICCV 2025][3D Vision][3D human-object interaction] TriDi is proposed as the first unified diffusion model that jointly models the three-variable distribution of humans (H), objects (O)…
+  [ICCV 2025][3D Vision][3D human-object interaction] TriDi is proposed as the first unified diffusion model that jointly models the three-variable distribution of humans (H), objects (O), and interactions (I). A single network covers 7 conditional generation modes, outperforming dedicated unidirectional baselines across all settings.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "contact maps"
   - "multimodal generation"
 date: 2026-05-08
-content_hash: 3d1b4e273dac88a2
+content_hash: c5e94fd0e3d9fc22
 ---
 
 # TriDi: Trilateral Diffusion of 3D Humans, Objects, and Interactions
@@ -136,8 +136,8 @@ Augmentation improves distribution quality (1-NNA); guidance and the interaction
 - [\[ICCV 2025\] Event-Driven Storytelling with Multiple Lifelike Humans in a 3D Scene](event-driven_storytelling_with_multiple_lifelike_humans_in_a_3d_scene.md)
 - [\[ICCV 2025\] ETCH: Generalizing Body Fitting to Clothed Humans via Equivariant Tightness](etch_generalizing_body_fitting_to_clothed_humans_via_equivariant_tightness.md)
 - [\[ICCV 2025\] SceneMI: Motion In-betweening for Modeling Human-Scene Interactions](scenemi_motion_in-betweening_for_modeling_human-scene_interaction.md)
+- [\[CVPR 2026\] RHINO: Reconstructing Human Interactions with Novel Objects from Monocular Videos](../../CVPR2026/3d_vision/rhino_reconstructing_human_interactions_with_novel_objects_from_monocular_videos.md)
 - [\[ICCV 2025\] WildSeg3D: Segment Any 3D Objects in the Wild from 2D Images](wildseg3d_segment_any_3d_objects_in_the_wild_from_2d_images.md)
-- [\[ICCV 2025\] VolumetricSMPL: A Neural Volumetric Body Model for Efficient Interactions, Contacts, and Collisions](volumetricsmpl_a_neural_volumetric_body_model_for_efficient_interactions_contact.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][MLLM] The authors collected pedestrian-perspective outdoor videos using stereo cameras + LiDAR + IMU/GPS to construct OSI-Bench, the first three-layer (Relational/Metric/Kinematics) outdoor spatial intelligence benchmark with precise metric ground truth (8736 QAs). Through three diagnostic experiments—blinding tests, abnorma
+  [CVPR 2026][VLM Reasoning][Spatial Intelligence Benchmark] The authors collected pedestrian-perspective outdoor videos using stereo cameras + LiDAR + IMU/GPS to construct OSI-Bench, the first three-layer (Relational/Metric/Kinematics) outdoor spatial intelligence benchmark with precise metric ground truth (8736 QAs). Through three diagnostic experiments—blinding tests, abnormal scenes, and geometric information ablation—they demonstrate that current MLLM "spatial intelligence…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - MLLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Spatial Intelligence Benchmark"
+  - "MLLM"
+  - "Metric Reasoning"
+  - "Open World"
+  - "Language Prior Diagnosis"
 date: 2026-05-08
-content_hash: b25935b802ae8da0
+content_hash: d8bad3db5198a2d8
 ---
+
 # From Indoor to Open World: Revealing the Spatial Reasoning Gap in MLLMs
 
 **Conference**: CVPR 2026  
@@ -149,10 +154,10 @@ The bottleneck is the extraction of metric information from vision, not arithmet
 ## Related Papers
 
 - [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] CountGD++: Generalized Prompting for Open-World Counting](countgd_generalized_prompting_for_open-world_counting.md)
-- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](../../ACL2026/multimodal_vlm/geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
+- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](../../ACL2026/vlm_reasoning/geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
 - [\[CVPR 2026\] Eliciting Complex Spatial Reasoning in MLLMs through Wide-Baseline Matching](eliciting_complex_spatial_reasoning_in_mllms_through_wide-baseline_matching.md)
-- [\[CVPR 2026\] GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation](groundingme_exposing_the_visual_grounding_gap_in_mllms_through_multi-dimensional.md)
+- [\[CVPR 2026\] OpenMMReasoner: Pushing the Frontiers in Multimodal Reasoning with an Open and General Recipe](openmmreasoner_pushing_the_frontiers_in_multimodal_reasoning_with_an_open_and_ge.md)
+- [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
 
 </div>
 

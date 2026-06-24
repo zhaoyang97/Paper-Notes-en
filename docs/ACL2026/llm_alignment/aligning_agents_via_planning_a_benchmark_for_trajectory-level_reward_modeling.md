@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] Plan-RewardBench is proposed as a trajectory-level preference benchmark for complex tool-augmented scenarios, designed to evaluate the capability of reward models in distinguishing superior from inferior agent trajectories across multi-step planning, tool usage, and error recovery.
+  [ACL 2026][LLM Alignment][Reward Models] Plan-RewardBench is proposed as a trajectory-level preference benchmark for complex tool-augmented scenarios, designed to evaluate the capability of reward models in distinguishing superior from inferior agent trajectories across multi-step planning, tool usage, and error recovery.
 tags:
-  - ACL 2026
-  - Alignment & RLHF
+  - "ACL 2026"
+  - "LLM Alignment"
+  - "Reward Models"
+  - "Agent Evaluation"
+  - "Trajectory-Level Preferences"
+  - "Tool Calling"
+  - "Planning Benchmark"
 date: 2026-05-08
-content_hash: 7cea2c6877bedbc5
+content_hash: d7ed297ba85006af
 ---
+
 # Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling
 
 **Conference**: ACL 2026  
@@ -125,11 +131,11 @@ Individual LLM judges are prone to systematic biases, which can distort the enti
 
 ## Related Papers
 
-- [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
 - [\[ACL 2025\] PRMBench: A Fine-grained and Challenging Benchmark for Process-Level Reward Models](../../ACL2025/llm_alignment/prmbench_a_fine-grained_and_challenging_benchmark_for_process-level_reward_model.md)
+- [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
+- [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
 - [\[ACL 2025\] SDPO: Segment-Level Direct Preference Optimization for Social Agents](../../ACL2025/llm_alignment/sdpo_segment-level_direct_preference_optimization_for_social_agents.md)
-- [\[ACL 2025\] World Modeling Makes a Better Planner: Dual Preference Optimization for Embodied Task Planning](../../ACL2025/llm_alignment/world_modeling_makes_a_better_planner_dual_preference_optimization_for_embodied_.md)
-- [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](../../ICML2026/llm_alignment/mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
+- [\[ACL 2026\] CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters](cuma_aligning_llms_with_sparse_cultural_values_via_demographic-aware_mixture_of_.md)
 
 </div>
 

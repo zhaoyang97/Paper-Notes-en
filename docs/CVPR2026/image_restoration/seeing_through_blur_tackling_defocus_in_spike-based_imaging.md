@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] DeSpike：脉冲相机的离焦去模糊与图像重建
+  [Paper Note] DeSpike: Defocus Deblurring and Image Reconstruction for Spike Camera
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] DeSpike is the first end-to-end deblurring and reconstruction framework specifically designed for spike camera defocus blur. It first characterizes how defocus distorts spike firing using a thin-lens physical model, then restores clear images from blurred spike streams using multi-temporal scale IF neurons, learnable d
+  [CVPR 2026][Image Restoration][Spike Camera] DeSpike is the first end-to-end deblurring and reconstruction framework specifically designed for spike camera defocus blur. It first characterizes how defocus distorts spike firing using a thin-lens physical model, then restores clear images from blurred spike streams using multi-temporal scale IF neurons, learnable discrete PSF priors, and multi-spatial scale iterative refinement. It significantly outperforms existing deblurring…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Spike Camera"
+  - "Defocus Deblurring"
+  - "Integrate-and-Fire Neuron"
+  - "PSF Prior"
+  - "Image Reconstruction"
 date: 2026-05-08
-content_hash: ae17791b7cb1a1ea
+content_hash: a752fcd3ba61060d
 ---
+
 # DeSpike: Defocus Deblurring and Image Reconstruction for Spike Camera
 
 **Conference**: CVPR 2026  
@@ -146,11 +152,11 @@ PSNR and LPIPS lead across the board. SSIM is only slightly inferior to TFP reco
 
 ## Related Papers
 
-- [\[CVPR 2026\] HFR and HDR Video from Multi-Attenuated Spikes Using a Rapidly Rotating SpokeND Filter](hfr_and_hdr_video_from_multi-attenuated_spikes_using_a_rapidly_rotating_spokend_.md)
-- [\[CVPR 2026\] Hybrid Agents for Image Restoration](hybrid_agents_for_image_restoration.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[CVPR 2026\] Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis](unicac_universal_computational_aberration_correction_benchmark.md)
-- [\[CVPR 2026\] Bi-Bridge: Bidirectional Diffusion Bridges for Low-Light Image Enhancement](bi-bridge_bidirectional_diffusion_bridges_for_low-light_image_enhancement.md)
+- [\[CVPR 2026\] UCMNet: Uncertainty-Aware Context Memory Network for Under-Display Camera Image Restoration](ucmnet_uncertainty-aware_context_memory_network_for_under-display_camera_image_r.md)
+- [\[CVPR 2026\] BluRef: Unsupervised Image Deblurring with Dense-Matching References](bluref_unsupervised_image_deblurring_with_dense-matching_references.md)
+- [\[CVPR 2026\] Gyro-based Deep Video Deblurring](gyro-based_deep_video_deblurring.md)
+- [\[CVPR 2026\] ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)
+- [\[CVPR 2026\] SelfHVD: Self-Supervised Handheld Video Deblurring](selfhvd_self-supervised_handheld_video_deblurring.md)
 
 </div>
 

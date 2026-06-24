@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use
 description: >-
-  [ICLR 2026][LLM Agent][Model Context Protocol] MCPMark constructs 127 high-difficulty tasks across 5 types of realistic MCP environments (Notion / GitHub / Filesystem / PostgreSQL / Playwright), polished through expert-agent collaboration and accompanied by programmatic verification scripts. Emphasizing multi-step CRUD workflows, results show that even the stronges
+  [ICLR 2026][LLM Agent][Model Context Protocol] MCPMark constructs 127 high-difficulty tasks across 5 types of realistic MCP environments (Notion / GitHub / Filesystem / PostgreSQL / Playwright), polished through expert-agent collaboration and accompanied by programmatic verification scripts. Emphasizing multi-step CRUD workflows, results show that even the strongest gpt-5-medium achieves only 52.56% pass@1 and 33.86% pass^4, significantly pushing the performance limits of cur…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Model Context Protocol
-  - Agent Benchmark
-  - Tool Use
-  - CRUD
-  - Programmatic Verification
-  - pass^4
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Model Context Protocol"
+  - "Agent Benchmark"
+  - "Tool Use"
+  - "CRUD"
+  - "Programmatic Verification"
+  - "pass^4"
 date: 2026-05-08
-content_hash: 7f567d6d1fd5b62b
+content_hash: 45a05a5c621edb23
 ---
+
 # MCPMark: A Benchmark for Stress-Testing Realistic and Comprehensive MCP Use
 
 **Conference**: ICLR 2026  
@@ -142,8 +143,8 @@ Pass@1 is the mean of 4 independent runs; FS=Filesystem, GH=GitHub, NT=Notion, P
 
 - [\[ICLR 2026\] OSWorld-MCP: Benchmarking MCP Tool Invocation in Computer-Use Agents](osworld-mcp_benchmarking_mcp_tool_invocation_in_computer-use_agents.md)
 - [\[ICLR 2026\] SCUBA: Salesforce Computer Use Benchmark](scuba_salesforce_computer_use_benchmark.md)
+- [\[ACL 2026\] MCP-Flow: Facilitating LLM Agents to Master Real-World, Diverse and Scaling MCP Tools](../../ACL2026/llm_agent/mcp-flow_facilitating_llm_agents_to_master_real-world_diverse_and_scaling_mcp_to.md)
 - [\[AAAI 2026\] SoMe: A Realistic Benchmark for LLM-based Social Media Agents](../../AAAI2026/llm_agent/some_a_realistic_benchmark_for_llm-based_social_media_agents.md)
-- [\[ICLR 2026\] MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents](mcp_security_bench_msb_benchmarking_attacks_against_model_context_protocol_in_ll.md)
 - [\[ICLR 2026\] MCP-Bench: Benchmarking Tool-Using LLM Agents with Complex Real-World Tasks via MCP Servers](mcp-bench_benchmarking_tool-using_llm_agents_with_complex_real-world_tasks_via_m.md)
 
 </div>

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][Concept Erasure] SPEED proposes a closed-form model editing method based on null space constraints. By utilizing three complementary techniques—Influence Prior Filtering (IPF), Directional Prior Augmentation (DPA), and Invariant Equality Constraint (IEC)—to refine the preservation set, it achieves scalable (erasing 100 concepts in 5 se
+  [ICLR 2026][Image Generation][Concept Erasure] SPEED proposes a closed-form model editing method based on null space constraints. By utilizing three complementary techniques—Influence Prior Filtering (IPF), Directional Prior Augmentation (DPA), and Invariant Equality Constraint (IEC)—to refine the preservation set, it achieves scalable (erasing 100 concepts in 5 seconds), precise (zero semantic loss for non-target concepts), and efficient concept erasure.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Concept Erasure
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Null Space Constraint"
+  - "Model Editing"
+  - "Prior Preservation"
+  - "Multi-concept Erasure"
 date: 2026-05-08
-content_hash: b72de46b47cf4b02
+content_hash: 5b48f4d52365e2e0
 ---
+
 # SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models
 
 **Conference**: ICLR 2026  
@@ -143,9 +148,9 @@ Where $\mathbf{M} = (\mathbf{C}_1\mathbf{C}_1^\top\mathbf{P} + \mathbf{I})^{-1}$
 
 - [\[ICLR 2026\] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models](forget_many_forget_right_scalable_and_precise_concept_unlearning_in_diffusion_mo.md)
 - [\[ICML 2026\] Orthogonal Concept Erasure for Diffusion Models](../../ICML2026/image_generation/orthogonal_concept_erasure_for_diffusion_models.md)
+- [\[ICLR 2026\] SDErasure: Concept-Specific Trajectory Shifting for Concept Erasure via Adaptive Diffusion Classifier](sderasure_concept-specific_trajectory_shifting_for_concept_erasure_via_adaptive_.md)
 - [\[CVPR 2026\] MapRoute: Semantic Routing for Precise Concept Erasure with Mapper](../../CVPR2026/image_generation/maproute_semantic_routing_concept_erasure.md)
 - [\[ICLR 2026\] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection](localized_concept_erasure_in_text-to-image_diffusion_models_via_high-level_repre.md)
-- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](../../CVPR2026/image_generation/erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
 
 </div>
 

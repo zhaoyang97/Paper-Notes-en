@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection
 description: >-
-  [NeurIPS 2025][Human Understanding][Social Interaction Detection] This paper proposes a part-aware bottom-up group reasoning framework that enhances individual embeddings with pose-guided body part features and infers so…
+  [NeurIPS 2025][Human Understanding][Social Interaction Detection] This paper proposes a part-aware bottom-up group reasoning framework that enhances individual embeddings with pose-guided body part features and infers social groups via similarity-based association, achieving new state-of-the-art results on the NVI and Café datasets.
 tags:
   - "NeurIPS 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Nonverbal Interaction"
   - "Pose Guidance"
 date: 2026-05-08
-content_hash: af25ec3c7cc8799f
+content_hash: b98ddcf4cff0a322
 ---
 
 # Part-Aware Bottom-Up Group Reasoning for Fine-Grained Social Interaction Detection
@@ -151,10 +151,10 @@ $$\mathcal{L} = \lambda_i \mathcal{L}_{\text{ind}} + \lambda_c \mathcal{L}_{\tex
 
 ## Related Papers
 
-- [\[AAAI 2026\] CLIP-FTI: Fine-Grained Face Template Inversion via CLIP-Driven Attribute Conditioning](../../AAAI2026/human_understanding/clip-fti_fine-grained_face_template_inversion_via_clip-driven_attribute_conditio.md)
+- [\[CVPR 2025\] HSEmotion Team at ABAW-10 Competition: Facial Expression Recognition, Valence-Arousal Estimation, Action Unit Detection and Fine-Grained Violence Classification](../../CVPR2025/human_understanding/hsemotion_team_at_abaw-10_competition_facial_expression_recognition_valence-arou.md)
 - [\[NeurIPS 2025\] Some Optimizers are More Equal: Understanding the Role of Optimizers in Group Fairness](some_optimizers_are_more_equal_understanding_the_role_of_optimizers_in_group_fai.md)
-- [\[ICCV 2025\] Dynamic Reconstruction of Hand-Object Interaction with Distributed Force-aware Contact Representation](../../ICCV2025/human_understanding/dynamic_reconstruction_of_hand-object_interaction_with_distributed_force-aware_c.md)
-- [\[NeurIPS 2025\] HOI-Dyn: Learning Interaction Dynamics for Human-Object Motion Diffusion](hoi-dyn_learning_interaction_dynamics_for_human-object_motion_diffusion.md)
+- [\[CVPR 2026\] MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment](../../CVPR2026/human_understanding/mobind_motion_binding_for_fine-grained_imu-video_pose_alignment.md)
+- [\[CVPR 2026\] MOFA-VTON: More Fashion Possibilities with Fine-Grained Adaptations in Virtual Try-On](../../CVPR2026/human_understanding/mofa-vton_more_fashion_possibilities_with_fine-grained_adaptations_in_virtual_tr.md)
 - [\[NeurIPS 2025\] K-DeCore: Facilitating Knowledge Transfer in Continual Structured Knowledge Reasoning](k-decore_facilitating_knowledge_transfer_in_continual_structured_knowledge_reaso.md)
 
 </div>

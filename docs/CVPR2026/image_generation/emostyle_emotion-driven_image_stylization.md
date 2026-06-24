@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] EmoStyle: Emotion-Driven Image Stylization
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] EmoStyle proposes the new task of "Affective Image Stylization (AIS)"—rendering a content image into an artistic style that evokes a target emotion using only a single emotion word (e.g., "fear", "awe"). This is achieved via an emotion-content reasoner that fuses emotion and content into style queries, and a style quan
+  [CVPR 2026][Image Generation][Emotion-driven stylization] EmoStyle proposes the new task of "Affective Image Stylization (AIS)"—rendering a content image into an artistic style that evokes a target emotion using only a single emotion word (e.g., "fear", "awe"). This is achieved via an emotion-content reasoner that fuses emotion and content into style queries, and a style quantizer that discretizes continuous features into "per-emotion" style codebooks…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Emotion-driven stylization"
+  - "Emotion-content reasoning"
+  - "Style quantization"
+  - "VQ style dictionary"
+  - "Flow matching"
 date: 2026-05-08
-content_hash: f96ed034edc3ce8c
+content_hash: 1f66771d4dab7d59
 ---
+
 # EmoStyle: Emotion-Driven Image Stylization
 
 **Conference**: CVPR 2026  
@@ -146,16 +151,16 @@ User study (Aesthetic/Emotion/Balance):
 - Value: ⭐⭐⭐⭐ Practical utility for AIGC art creation and transferable style assets.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-Modal Emotion Transfer for Emotion Editing in Talking Face Video](cross-modal_emotion_transfer_for_emotion_editing_in_talking_face_video.md)
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
 - [\[CVPR 2026\] Hist2Style: Histogram-Guided Stylization with Bilateral Grids](hist2style_histogram-guided_stylization_with_bilateral_grids.md)
+- [\[CVPR 2026\] Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)
 - [\[CVPR 2026\] Proxy-Tuning: Tailoring Multimodal Autoregressive Models for Subject-Driven Image Generation](proxy-tuning_tailoring_multimodal_autoregressive_models_for_subject-driven_image.md)
-- [\[ICCV 2025\] Balanced Image Stylization with Style Matching Score](../../ICCV2025/image_generation/balanced_image_stylization_with_style_matching_score.md)
-- [\[CVPR 2026\] FlowFixer: Towards Detail-Preserving Subject-Driven Generation](flowfixer_towards_detail-preserving_subject-driven_generation.md)
 
 </div>
 

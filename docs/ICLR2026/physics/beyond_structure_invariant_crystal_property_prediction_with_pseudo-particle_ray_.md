@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Beyond Structure: Invariant Crystal Property Prediction with Pseudo-Particle Ray Diffraction
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] PRDNet introduces a **learnable "pseudo-particle"** to simulate crystal diffraction alongside traditional Graph Neural Networks. By synthesizing reciprocal space diffraction patterns using neural-network-generated form factors, it achieves modal-level fusion of graph representations (short-range) and diffraction repres
+  [ICLR2026][Physics & Scientific Computing][Crystal Property Prediction] PRDNet introduces a **learnable "pseudo-particle"** to simulate crystal diffraction alongside traditional Graph Neural Networks. By synthesizing reciprocal space diffraction patterns using neural-network-generated form factors, it achieves modal-level fusion of graph representations (short-range) and diffraction representations (long-range). While strictly satisfying crystallographic symmetry invariance…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Crystal Property Prediction"
+  - "Reciprocal Space"
+  - "Diffraction Characterization"
+  - "Pseudo-Particle"
+  - "Multi-modal Fusion"
 date: 2026-05-08
-content_hash: 70f4f660953e3d4a
+content_hash: 66a859fd730d1d1a
 ---
+
 # Beyond Structure: Invariant Crystal Property Prediction with Pseudo-Particle Ray Diffraction
 
 **Conference**: ICLR2026  
@@ -135,6 +141,7 @@ PRDNet also leads on JARVIS-DFT and MatBench, e.g., JARVIS Formation Energy 0.03
 - Value: ⭐⭐⭐⭐⭐ Sets new SOTA and provides a reusable paradigm for crystal representation.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

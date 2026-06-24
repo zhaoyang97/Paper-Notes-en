@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation
 description: >-
-  [NeurIPS 2025][Segmentation][Referring image segmentation] SaFiRe is a framework that simulates the human two-stage "saccade-fixation" cognitive process…
+  [NeurIPS 2025][Segmentation][Referring image segmentation] SaFiRe is a framework that simulates the human two-stage "saccade-fixation" cognitive process, leveraging Mamba's scan-then-update mechanism to achieve linear-complexity multi-round refinement for referring image segmentation under ambiguous expressions.
 tags:
   - "NeurIPS 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "ambiguous expressions"
   - "linear complexity"
 date: 2026-05-08
-content_hash: 9cbde6313937d6d3
+content_hash: 1b74819383188c67
 ---
 
 # SaFiRe: Saccade-Fixation Reiteration with Mamba for Referring Image Segmentation
@@ -162,10 +162,10 @@ Performance comparison on aRefCOCO (ambiguous expression benchmark):
 
 ## Related Papers
 
-- [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](../../ICCV2025/segmentation/latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
+- [\[ECCV 2024\] ReMamber: Referring Image Segmentation with Mamba Twister](../../ECCV2024/segmentation/remamber_referring_image_segmentation_with_mamba_twister.md)
 - [\[NeurIPS 2025\] RoMA: Scaling up Mamba-based Foundation Models for Remote Sensing](roma_scaling_up_mamba-based_foundation_models_for_remote_sensing.md)
-- [\[ICLR 2026\] AMLRIS: Alignment-aware Masked Learning for Referring Image Segmentation](../../ICLR2026/segmentation/amlris_alignment-aware_masked_learning_for_referring_image_segmentation.md)
-- [\[ICCV 2025\] DeRIS: Decoupling Perception and Cognition for Enhanced Referring Image Segmentation through Loopback Synergy](../../ICCV2025/segmentation/deris_decoupling_perception_and_cognition_for_enhanced_referring_image_segmentat.md)
+- [\[ICCV 2025\] Latent Expression Generation for Referring Image Segmentation and Grounding](../../ICCV2025/segmentation/latent_expression_generation_for_referring_image_segmentation_and_grounding.md)
+- [\[ICML 2025\] QMamba: On First Exploration of Vision Mamba for Image Quality Assessment](../../ICML2025/segmentation/qmamba_on_first_exploration_of_vision_mamba_for_image_quality_assessment.md)
 - [\[NeurIPS 2025\] UniPixel: Unified Object Referring and Segmentation for Pixel-Level Visual Reasoning](unipixel_unified_object_referring_and_segmentation_for_pixel-level_visual_reason.md)
 
 </div>

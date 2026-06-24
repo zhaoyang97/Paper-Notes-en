@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] The authors propose KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. By utilizing KLT-guided SVD for Input-Driven Redundancy Elimination (IDRE) and Bias-Corrected Output Stabilization (BCOS), it achieves a 10%+ accuracy improvement over existing methods under 2-bit quantiza
+  [ICLR 2026][Model Compression][MoE quantization] The authors propose KBVQ-MoE, the first vector quantization framework specifically designed for MoE architectures. By utilizing KLT-guided SVD for Input-Driven Redundancy Elimination (IDRE) and Bias-Corrected Output Stabilization (BCOS), it achieves a 10%+ accuracy improvement over existing methods under 2-bit quantization.
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "MoE quantization"
+  - "vector quantization"
+  - "KLT transform"
+  - "SVD redundancy elimination"
+  - "bias correction"
 date: 2026-05-08
-content_hash: a2dfc62e36e8f53b
+content_hash: 42c5177de429f3ac
 ---
+
 # KBVQ-MoE: KLT-guided SVD with Bias-Corrected Vector Quantization for MoE Large Language Models
 
 **Conference**: ICLR 2026  
@@ -130,11 +136,11 @@ Scaling and offset parameters are used to align the second-order statistics of t
 
 ## Related Papers
 
-- [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](../../ICML2026/model_compression/rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
+- [\[ICLR 2026\] TD-MoE: Tensor Decomposition for MoE Models](td-moe_tensor_decomposition_for_moe_models.md)
 - [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
-- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](steering_moe_llms_via_expert_deactivation.md)
-- [\[ICLR 2026\] SERE: Similarity-based Expert Re-routing for Efficient Batch Decoding in MoE Models](sere_similarity-based_expert_re-routing_for_efficient_batch_decoding_in_moe_mode.md)
 - [\[ICLR 2026\] TurboQuant: Online Vector Quantization with Near-Optimal Distortion Rate](turboquant_online_vector_quantization_with_near-optimal_distortion_rate.md)
+- [\[ICLR 2026\] Steering MoE LLMs via Expert (De)Activation](steering_moe_llms_via_expert_deactivation.md)
+- [\[ICLR 2026\] Tequila: Trapping-free Ternary Quantization for Large Language Models](tequila_trapping-free_ternary_quantization_for_large_language_models.md)
 
 </div>
 

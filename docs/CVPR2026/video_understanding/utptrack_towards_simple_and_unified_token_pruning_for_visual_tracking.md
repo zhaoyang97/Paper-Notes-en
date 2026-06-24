@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][token pruning] Ours proposes UTPTrack, the first unified framework to **jointly prune tokens across three components: Search Region (SR), Dynamic Template (DT), and Static Template (ST)** within one-stream Transformer trackers. It achieves 65–67% visual token reduction in RGB and multimodal/language-guided tracking while maintaining
+  [CVPR2026][Video Understanding][token pruning] Ours proposes UTPTrack, the first unified framework to **jointly prune tokens across three components: Search Region (SR), Dynamic Template (DT), and Static Template (ST)** within one-stream Transformer trackers. It achieves 65–67% visual token reduction in RGB and multimodal/language-guided tracking while maintaining 99.7%–100.5% of baseline performance.
 tags:
-  - CVPR 2026
-  - Video Understanding
-  - token pruning
-  - visual object tracking
-  - one-stream transformer
+  - "CVPR2026"
+  - "Video Understanding"
+  - "token pruning"
+  - "visual object tracking"
+  - "one-stream transformer"
+  - "multimodal tracking"
+  - "unified tracking"
+  - "attention-guided pruning"
 date: 2026-05-08
-content_hash: 536dea8617e151c2
+content_hash: efbf5a348e90bfeb
 ---
+
 # UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
 
 **Conference**: CVPR2026  
@@ -158,8 +162,8 @@ Unified Tracking Ablation (SUTrack224): Progressively adding CE → DTE → STE 
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[CVPR 2025\] DivPrune: Diversity-Based Visual Token Pruning for Large Multimodal Models](../../CVPR2025/video_understanding/divprune_diversity-based_visual_token_pruning_for_large_multimodal_models.md)
 - [\[ICML 2026\] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](../../ICML2026/video_understanding/unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)
-- [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
 - [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
+- [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
 
 </div>
 

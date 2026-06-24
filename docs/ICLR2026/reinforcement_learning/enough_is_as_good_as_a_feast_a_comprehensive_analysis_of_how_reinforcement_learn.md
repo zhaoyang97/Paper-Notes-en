@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Enough is as good as a feast: A Comprehensive Analysis of How Reinforcement Learning Mitigates Task Conflicts in LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][SFT] This paper systematically compares the impact of two post-training paradigms, SFT and RL, on "model merging." It discovers that RL-trained models experience significantly less performance degradation after merging compared to SFT-trained ones. Practical and theoretical explanations are provided from three perspectives:
+  [ICLR2026][Reinforcement Learning][Model Merging] This paper systematically compares the impact of two post-training paradigms, SFT and RL, on "model merging." It discovers that RL-trained models experience significantly less performance degradation after merging compared to SFT-trained ones. Practical and theoretical explanations are provided from three perspectives: on-policy data, adaptive decay of RL optimization objectives, and the joint optimization of positive and nega…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - SFT
-  - on-policy
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "Model Merging"
+  - "Task Conflicts"
+  - "SFT"
+  - "on-policy"
 date: 2026-05-08
-content_hash: 65538e2859545b80
+content_hash: a3b4bb0c20b1bca3
 ---
+
 # Enough is as good as a feast: A Comprehensive Analysis of How Reinforcement Learning Mitigates Task Conflicts in LLMs
 
 **Conference**: ICLR2026  
@@ -128,10 +131,10 @@ Key quantification at the mechanism level (values from Table 2 / Table 3 and the
 ## Related Papers
 
 - [\[ICLR 2026\] Reward is Enough: LLMs are In-Context Reinforcement Learners](reward_is_enough_llms_are_in-context_reinforcement_learners.md)
+- [\[ICLR 2026\] How to Lose Inherent Counterfactuality in Reinforcement Learning](how_to_lose_inherent_counterfactuality_in_reinforcement_learning.md)
 - [\[ICLR 2026\] Mirage or Method? How Model–Task Alignment Induces Divergent RL Conclusions](mirage_or_method_how_modeltask_alignment_induces_divergent_rl_conclusions.md)
 - [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 - [\[ICLR 2026\] RL Grokking Recipe: How Does RL Unlock and Transfer New Algorithms in LLMs?](rl_grokking_recipe_how_does_rl_unlock_and_transfer_new_algorithms_in_llms.md)
-- [\[ACL 2026\] Good Reasoning Makes Good Demonstrations: Implicit Reasoning Quality Supervision via In-Context Reinforcement Learning](../../ACL2026/reinforcement_learning/good_reasoning_makes_good_demonstrations_implicit_reasoning_quality_supervision_.md)
 
 </div>
 

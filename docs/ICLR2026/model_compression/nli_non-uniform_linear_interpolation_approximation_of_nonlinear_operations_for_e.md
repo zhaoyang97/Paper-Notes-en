@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] NLI: Non-uniform Linear Interpolation Approximation of Nonlinear Operations for Efficient LLMs Inference
 description: >-
-  [ICLR 2026][Model Compression][FP16] The selection of piecewise interpolation points for nonlinear functions on an FP16 grid is modeled as a dynamic programming problem to obtain globally optimal, calibration-free non-uniform piecewise linear interpolation tables. Coupled with a two-level addressing hardware circuit, this allows nonlinear operators like S
+  [ICLR 2026][Model Compression][Nonlinear operation approximation] The selection of piecewise interpolation points for nonlinear functions on an FP16 grid is modeled as a dynamic programming problem to obtain globally optimal, calibration-free non-uniform piecewise linear interpolation tables. Coupled with a two-level addressing hardware circuit, this allows nonlinear operators like SiLU, Softmax, and RMSNorm to achieve near-zero accuracy loss in LLMs while being 4 times more…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - FP16
-  - NPU
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Nonlinear operation approximation"
+  - "Lookup Table (LUT)"
+  - "Dynamic Programming"
+  - "FP16"
+  - "NPU"
+  - "HW-SW Co-design"
 date: 2026-05-08
-content_hash: 6c52ab93c2ff3fc8
+content_hash: d10578c1f0f5d2f8
 ---
+
 # NLI: Non-uniform Linear Interpolation Approximation of Nonlinear Operations for Efficient LLMs Inference
 
 **Conference**: ICLR 2026  
@@ -124,7 +129,7 @@ Key Insight: On Qwen models, NN-LUT **completely collapses** due to SiLU inputs 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

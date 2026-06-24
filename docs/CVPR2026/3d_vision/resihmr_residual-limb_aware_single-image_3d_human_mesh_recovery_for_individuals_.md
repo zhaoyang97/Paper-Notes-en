@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss
 description: >-
-  [CVPR 2026][3D Vision][SMPL-X] ResiHMR is the first single-image 3D human mesh recovery framework specifically for the amputee population. It utilizes "Residual-Limb Anchor-Factor Optimization" to clip the fixed SMPL-X skeleton to cover only the existing limbs and employs "Residual-Limb Reconstruction" to explicitly remove distal mesh vertices and s
+  [CVPR 2026][3D Vision][Human Mesh Recovery] ResiHMR is the first single-image 3D human mesh recovery framework specifically for the amputee population. It utilizes "Residual-Limb Anchor-Factor Optimization" to clip the fixed SMPL-X skeleton to cover only the existing limbs and employs "Residual-Limb Reconstruction" to explicitly remove distal mesh vertices and seal smooth residual surfaces. This reduces the residual limb 2D MPJPE from 73.61 px to 23.19 px (using HSMR backbone…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - SMPL-X
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Human Mesh Recovery"
+  - "Residual Limb"
+  - "Amputee"
+  - "Topology-Adaptive Optimization"
+  - "SMPL-X"
 date: 2026-05-08
-content_hash: 642b06e44a0cbc9c
+content_hash: 059e5f48514530b5
 ---
+
 # ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss
 
 **Conference**: CVPR 2026  
@@ -136,15 +141,16 @@ While a discrete ablation table was not provided, the margin of contribution is 
 - Value: ⭐⭐⭐⭐⭐ High social impact for inclusion in human modeling, with direct applications in prosthetic alignment and gait analysis.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)
 - [\[CVPR 2026\] Human Interaction-Aware 3D Reconstruction from a Single Image](human_interaction-aware_3d_reconstruction_from_a_single_image.md)
-- [\[CVPR 2026\] Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)
 - [\[CVPR 2026\] OnlineHMR: Video-based Online World-Grounded Human Mesh Recovery](onlinehmr_video-based_online_world-grounded_human_mesh_recovery.md)
-- [\[CVPR 2026\] Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](fall_risk_gait_analysis_hmr.md)
-- [\[ICCV 2025\] AJAHR: Amputated Joint Aware 3D Human Mesh Recovery](../../ICCV2025/3d_vision/ajahr_amputated_joint_aware_3d_human_mesh_recovery.md)
+- [\[CVPR 2025\] PromptHMR: Promptable Human Mesh Recovery](../../CVPR2025/3d_vision/prompthmr_promptable_human_mesh_recovery.md)
+- [\[ECCV 2024\] Multi-HMR: Multi-Person Whole-Body Human Mesh Recovery in a Single Shot](../../ECCV2024/3d_vision/multi-hmr_multi-person_whole-body_human_mesh_recovery_in_a_single_shot.md)
 
 </div>
 

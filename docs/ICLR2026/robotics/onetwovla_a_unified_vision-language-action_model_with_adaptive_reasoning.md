@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Paper Note] OneTwoVLA unifies fast action execution and slow language reasoning within a single VLA. The model adaptively triggers reasoning using `[BOR]` during critical moments and outputs actions directly via `[BOA]` otherwise, significantly outperforming non-reasoning VLAs and dual-system approaches in long-horizon manipulatio
+  [ICLR 2026][Robotics][Vision-Language-Action (VLA) Model] OneTwoVLA unifies fast action execution and slow language reasoning within a single VLA. The model adaptively triggers reasoning using `[BOR]` during critical moments and outputs actions directly via `[BOA]` otherwise, significantly outperforming non-reasoning VLAs and dual-system approaches in long-horizon manipulation, error recovery, human-robot interaction, and open-vocabulary visual grounding.
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
+  - "ICLR 2026"
+  - "Robotics"
+  - "Vision-Language-Action (VLA) Model"
+  - "Adaptive Reasoning"
+  - "Long-horizon Manipulation"
+  - "Human-Robot Interaction"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: 14ef995c01ffc07a
+content_hash: 506cb74aabc94093
 ---
+
 # OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning
 
 **Conference**: ICLR 2026  
@@ -150,15 +156,16 @@ The authors compared the non-reasoning $\pi_0$, OneTwoVLA (robot data only), and
 - **Value**: ⭐⭐⭐⭐⭐ The principle that "reasoning need not happen every step but must occur online" is highly valuable for future embodied AI.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] UniVLA: Unified Vision-Language-Action Model](unified_vision-language-action_model.md)
-- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[ICLR 2026\] HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model](hybridvla_collaborative_diffusion_and_autoregression_in_a_unified_vision-languag.md)
-- [\[NeurIPS 2025\] AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning](../../NeurIPS2025/robotics/autovla_a_vision-language-action_model_for_end-to-end_autonomous_driving_with_ad.md)
+- [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
+- [\[ICLR 2026\] HAMLET: Switch Your Vision-Language-Action Model into a History-Aware Policy](hamlet_switch_your_vision-language-action_model_into_a_history-aware_policy.md)
 
 </div>
 

@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Native Active Perception as Reasoning for Omni-Modal Understanding
 description: >-
-  [ICML 2026][vlm_reasoning][POMDP] OmniAgent shifts long video understanding from the passive "watch-it-all" paradigm to an active perception approach of "iterative look-as-needed." Using an Observation-Thought-Action (OTA) loop within a native omni-modal model, it distills audio-visual cues into persistent text memory and immediately discards raw media
+  [ICML 2026][VLM Reasoning][Active Perception] OmniAgent shifts long video understanding from the passive "watch-it-all" paradigm to an active perception approach of "iterative look-as-needed." Using an Observation-Thought-Action (OTA) loop within a native omni-modal model, it distills audio-visual cues into persistent text memory and immediately discards raw media, thereby decoupling reasoning costs from video duration. Combined with Agentic SFT for cold-starting and Agentic…
 tags:
-  - ICML 2026
-  - vlm_reasoning
-  - POMDP
-  - Agentic RL
-  - test-time scaling
+  - "ICML 2026"
+  - "VLM Reasoning"
+  - "Active Perception"
+  - "POMDP"
+  - "Long Video Understanding"
+  - "Agentic RL"
+  - "test-time scaling"
 date: 2026-05-08
-content_hash: d6fac2a30810502e
+content_hash: 3934b57c778444dc
 ---
+
 # Native Active Perception as Reasoning for Omni-Modal Understanding
 
 **Conference**: ICML 2026  
@@ -133,6 +136,7 @@ Highlights: On LVBench, the 7B model (50.5%) **outperforms the 10x larger Qwen2.
 - **Value**: ⭐⭐⭐⭐⭐ Provides a scalable roadmap for long video understanding by decoupling cost from duration.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -140,8 +144,8 @@ Highlights: On LVBench, the 7B model (50.5%) **outperforms the 10x larger Qwen2.
 - [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/vlm_reasoning/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
 - [\[ICLR 2026\] ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding](../../ICLR2026/vlm_reasoning/thinkomni_lifting_textual_reasoning_to_omni-modal_scenarios_via_guidance_decodin.md)
 - [\[CVPR 2026\] Act2See: Emergent Active Visual Perception for Video Reasoning](../../CVPR2026/vlm_reasoning/act2see_emergent_active_visual_perception_for_video_reasoning.md)
-- [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](../../ACL2026/vlm_reasoning/chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
-- [\[ACL 2026\] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning](../../ACL2026/vlm_reasoning/decoding_scientific_experimental_images_the_spur_benchmark_for_perception_unders.md)
+- [\[ICML 2026\] Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)
+- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] When Small Models Are Right for Wrong Reasons: Process Verification for Trustworthy Agents
 description: >-
-  [AAAI 2026][Information Retrieval & RAG][Small model reasoning] By analyzing 10,734 reasoning trajectories, this paper reveals a severe "Right for Wrong Reasons" (RWR) phenomenon in small language models (7–9B): 50–69% o…
+  [AAAI 2026][Information Retrieval & RAG][Small model reasoning] By analyzing 10,734 reasoning trajectories, this paper reveals a severe "Right for Wrong Reasons" (RWR) phenomenon in small language models (7–9B): 50–69% of correct answers contain fundamental reasoning flaws. The authors propose the Reasoning Integrity Score (RIS) as a process-level metric, find that RAG effectively improves reasoning quality while metacognitive interventions are harmful…
 tags:
   - "AAAI 2026"
   - "Information Retrieval & RAG"
@@ -12,7 +12,7 @@ tags:
   - "RAG"
   - "metacognition"
 date: 2026-05-08
-content_hash: a08e1956dfc7d744
+content_hash: fa258844c52750b1
 ---
 
 # When Small Models Are Right for Wrong Reasons: Process Verification for Trustworthy Agents
@@ -188,10 +188,10 @@ where γ=2.0 focuses training on hard examples and α=0.25 balances positive and
 ## Related Papers
 
 - [\[AAAI 2026\] Do Retrieval Augmented Language Models Know When They Don't Know?](do_retrieval_augmented_language_models_know_when_they_dont_know.md)
-- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](../../ACL2026/information_retrieval/when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
+- [\[ICLR 2026\] HiPRAG: Hierarchical Process Rewards for Efficient Agentic Retrieval Augmented Generation](../../ICLR2026/information_retrieval/hiprag_hierarchical_process_rewards_for_efficient_agentic_retrieval_augmented_ge.md)
+- [\[ACL 2025\] When Claims Evolve: Evaluating and Enhancing the Robustness of Embedding Models Against Misinformation Edits](../../ACL2025/information_retrieval/when_claims_evolve_evaluating_and_enhancing_the_robustness_of_embedding_models_a.md)
 - [\[ACL 2026\] Can Compact Language Models Search Like Agents? Distillation-Guided Policy Optimization for Preserving Agentic RAG Capabilities](../../ACL2026/information_retrieval/can_compact_language_models_search_like_agents_distillation-guided_policy_optimi.md)
-- [\[NeurIPS 2025\] SeCon-RAG: A Two-Stage Semantic Filtering and Conflict-Free Framework for Trustworthy RAG](../../NeurIPS2025/information_retrieval/secon-rag_a_two-stage_semantic_filtering_and_conflict-free_framework_for_trustwo.md)
-- [\[AAAI 2026\] Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](../../ACL2026/information_retrieval/when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets
 description: >-
-  [AAAI 2026][n-gram computation] This paper proposes Intergrams, a multi-pass scanning algorithm that recursively uses shorter n-grams as prefixes to filter candidates for longer n-grams…
+  [AAAI 2026][n-gram computation] This paper proposes Intergrams, a multi-pass scanning algorithm that recursively uses shorter n-grams as prefixes to filter candidates for longer n-grams, fully exploiting the processor cache hierarchy to achieve cache-friendly memory access patterns. On TB-scale datasets, Intergrams achieves 6–33× speedup over the previously fastest hash-gramming method while recovering nearly all top-k n-grams with high accuracy.
 tags:
   - "AAAI 2026"
   - "n-gram computation"
@@ -11,7 +11,7 @@ tags:
   - "Zipf distribution"
   - "multi-pass scanning"
 date: 2026-05-08
-content_hash: b3d99823b3042f73
+content_hash: 2ce489f4798141b4
 ---
 
 # Intermediate N-Gramming: Deterministic and Fast N-Grams For Large N and Large Datasets
@@ -143,10 +143,10 @@ When $a > 1$ (as is typical in real data), the recall rate asymptotically approa
 ## Related Papers
 
 - [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](../../ICML2026/others/torus_graphs_for_large_scale_neural_phase_analysis.md)
-- [\[ICML 2026\] HASTE: Hardware-Aware Dynamic Sparse Training for Large Output Spaces](../../ICML2026/others/haste_hardware-aware_dynamic_sparse_training_for_large_output_spaces.md)
-- [\[ICML 2026\] AMDP: Asynchronous Multi-Directional Pipeline Parallelism for Large-Scale Models Training](../../ICML2026/others/amdp_asynchronous_multi-directional_pipeline_parallelism_for_large-scale_models_.md)
-- [\[NeurIPS 2025\] On the Surprising Effectiveness of Large Learning Rates under Standard Width Scaling](../../NeurIPS2025/others/on_the_surprising_effectiveness_of_large_learning_rates_under_standard_width_sca.md)
-- [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
+- [\[CVPR 2026\] Large-scale Robust Enhanced Ensemble Clustering via Outlier Decoupling](../../CVPR2026/others/large-scale_robust_enhanced_ensemble_clustering_via_outlier_decoupling.md)
+- [\[ICLR 2026\] SmellNet: A Large-scale Dataset for Real-world Smell Recognition](../../ICLR2026/others/smellnet_a_large-scale_dataset_for_real-world_smell_recognition.md)
+- [\[CVPR 2026\] Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation](../../CVPR2026/others/bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation.md)
+- [\[ACL 2025\] Code-Switching and Syntax: A Large-Scale Experiment](../../ACL2025/others/code-switching_and_syntax_a_large-scale_experiment.md)
 
 </div>
 

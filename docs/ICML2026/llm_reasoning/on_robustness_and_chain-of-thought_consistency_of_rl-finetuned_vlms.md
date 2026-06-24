@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] On Robustness and Chain-of-Thought Consistency of RL-Finetuned VLMs
 description: >-
-  [ICML 2026][LLM Reasoning][Vision-Language Model] This paper systematically exposes the vulnerability of open-source VLMs in visual grounding and Chain-of-Thought (CoT) faithfulness after RL finetuning by injecting two types of controlled textual perturbations—"misleading captions" and "wrong CoT prefixes"—into visual reasoning benchmarks. It reveals an explicit trade
+  [ICML 2026][Reasoning][RL Finetuning] This paper systematically exposes the vulnerability of open-source VLMs in visual grounding and Chain-of-Thought (CoT) faithfulness after RL finetuning by injecting two types of controlled textual perturbations—"misleading captions" and "wrong CoT prefixes"—into visual reasoning benchmarks. It reveals an explicit trade-off between "accuracy $\uparrow$ vs. CoT faithfulness $\downarrow$" under RL optimization and demonstrates that neither d…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - Vision-Language Model
+  - "ICML 2026"
+  - "Reasoning"
+  - "RL Finetuning"
+  - "Vision-Language Models"
+  - "CoT Faithfulness"
+  - "Robustness"
+  - "Textual Perturbations"
 date: 2026-05-08
-content_hash: 982cb0c383255bab
+content_hash: f896014ba89485e6
 ---
+
 # On Robustness and Chain-of-Thought Consistency of RL-Finetuned VLMs
 
 **Conference**: ICML 2026  
@@ -144,11 +149,11 @@ Judge Consistency (Table 3): Strict 3-way agreement of 89–94% with Fleiss' $\k
 
 ## Related Papers
 
+- [\[ICLR 2026\] VERICOT: Neuro-Symbolic Chain-of-Thought Validation via Logical Consistency Checks](../../ICLR2026/llm_reasoning/vericot_neuro-symbolic_chain-of-thought_validation_via_logical_consistency_check.md)
 - [\[ICML 2026\] A Formal Comparison Between Chain of Thought and Latent Thought](a_formal_comparison_between_chain_of_thought_and_latent_thought.md)
-- [\[ICML 2026\] Beyond Two-Stage Training: Cooperative SFT and RL for LLM Reasoning](beyond_two-stage_training_cooperative_sft_and_rl_for_llm_reasoning.md)
 - [\[ICML 2026\] Clustering as Reasoning: A $k$-Means Interpretation of Chain-of-Thought Graph Learning](clustering_as_reasoning_a_k-means_interpretation_of_chain-of-thought_graph_learn.md)
-- [\[ICML 2026\] ETS: Energy-Guided Test-Time Scaling for Training-Free RL Alignment](ets_energy-guided_test-time_scaling_for_training-free_rl_alignment.md)
 - [\[CVPR 2026\] Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs](../../CVPR2026/llm_reasoning/scaling_agentic_reinforcement_learning_for_tool-integrated_reasoning_in_vlms.md)
+- [\[ICML 2026\] The Expressive Power of Low Precision Softmax Transformers with (Summarized) Chain-of-Thought](the_expressive_power_of_low_precision_softmax_transformers_with_summarized_chain.md)
 
 </div>
 

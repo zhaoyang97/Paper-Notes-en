@@ -4,17 +4,19 @@ title: >-
 description: >-
   [ICLR 2026][LLM (Other)][creativity evaluation] A context-aware pairwise comparison framework is proposed to evaluate text creativity. The authors constructed the CreataSet dataset, containing 100K+ human-level and 1M+ synthetic data points, and trained the CrEval evaluator, which outperforms GPT-4o by 18.7% in alignment with human judgment.
 tags:
-  - ICLR 2026
-  - LLM (Other)
-  - creativity evaluation
-  - LLM-as-a-judge
-  - pairwise comparison
-  - text creativity
-  - dataset construction
-  - CrEval
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "creativity evaluation"
+  - "LLM-as-a-judge"
+  - "pairwise comparison"
+  - "text creativity"
+  - "dataset construction"
+  - "CrEval"
+  - "cross-domain evaluation"
 date: 2026-05-08
-content_hash: 1797749462febf70
+content_hash: 1952e9c2fc036266
 ---
+
 # Evaluating Text Creativity across Diverse Domains: A Dataset and Large Language Model Evaluator
 
 **Conference**: ICLR 2026  
@@ -167,10 +169,10 @@ Traditional metrics (PPL, DSI) fail in cross-domain scenarios (Kappa near 0). Th
 ## Related Papers
 
 - [\[ACL 2025\] AgentGym: Evolving Large Language Model-based Agents across Diverse Environments](../../ACL2025/llm_nlp/agentgym_evaluating_and_training_large_language_model-based_agents_across_divers.md)
+- [\[ICLR 2026\] Beyond the Known: An Unknown-Aware Large Language Model for Open-Set Text Classification](beyond_the_known_an_unknown-aware_large_language_model_for_open-set_text_classif.md)
 - [\[ICLR 2026\] WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality](webdevjudge_mllm_web_development.md)
 - [\[ICLR 2026\] TEXT2ARCH: A Dataset for Generating Scientific Architecture Diagrams from Natural Language Descriptions](text2arch_a_dataset_for_generating_scientific_architecture_diagrams_from_natural.md)
-- [\[ICLR 2026\] First is Not Really Better Than Last: Evaluating Layer Choice and Aggregation Strategies in Language Model Data Influence Estimation](first_is_not_really_better_than_last_evaluating_layer_choice_and_aggregation_str.md)
-- [\[ICLR 2026\] SPRIG: Improving Large Language Model Performance by System Prompt Optimization](sprig_improving_large_language_model_performance_by_system_prompt_optimization.md)
+- [\[ICLR 2026\] FACT: Fine-grained Across-variable Convolution for Multivariate Time Series Forecasting](fact_fine-grained_across-variable_convolution_for_multivariate_time_series_forec.md)
 
 </div>
 

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval
 description: >-
-  [ACL 2026][Information Retrieval & RAG][visual RAG] Through a carefully designed financial document diagnostic benchmark (single-digit perturbation + text masking), this study empirically proves that "aggregating VLM patch tokens into a single vector" causes vast semantic differences (e.g., $1.2M vs $7.2M) to collapse into nearly identical vectors with cosine similarity
+  [ACL 2026 Findings][Information Retrieval & RAG][visual RAG] Through a carefully designed financial document diagnostic benchmark (single-digit perturbation + text masking), this study empirically proves that "aggregating VLM patch tokens into a single vector" causes vast semantic differences (e.g., $1.2M vs $7.2M) to collapse into nearly identical vectors with cosine similarity $> 0.99$. The root cause is "global texture dominance," which various mitigation strategies and re…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - visual RAG
-  - ColPali
+  - "ACL 2026 Findings"
+  - "Information Retrieval & RAG"
+  - "visual RAG"
+  - "single-vector aggregation"
+  - "ColPali"
+  - "MinPatch diagnostics"
+  - "financial documents"
 date: 2026-05-08
-content_hash: bb97a0b15443da75
+content_hash: 69bb417b84d945ae
 ---
+
 # A Picture is Worth a Thousand Words? An Empirical Study of Aggregation Strategies for Visual Financial Document Retrieval
 
 **Conference**: ACL 2026 Findings  
@@ -131,15 +135,16 @@ Variance-weighting, attention-guidance, and top-k patch removal all fail, indica
 - Value: ⭐⭐⭐⭐⭐ (Critical warning for visual RAG deployment in high-precision industries).
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] When Retrieval is Ineffective in Biomedical RAG: A Large-Scale Empirical Study](when_retrieval_doesnt_help_a_large-scale_study_of_biomedical_rag.md)
+- [\[ICLR 2026\] Seeing Through Words: Controlling Visual Retrieval Quality with Language Models](../../ICLR2026/information_retrieval/seeing_through_words_controlling_visual_retrieval_quality_with_language_models.md)
 - [\[ACL 2026\] Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](navigating_large-scale_document_collections_mudabench_for_multi-document_analyti.md)
-- [\[ICML 2026\] Understanding LoRA as Knowledge Memory: An Empirical Analysis](../../ICML2026/information_retrieval/understanding_lora_as_knowledge_memory_an_empirical_analysis.md)
-- [\[ACL 2026\] ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval](reasonembed_enhanced_text_embeddings_for_reasoning-intensive_document_retrieval.md)
 - [\[ACL 2026\] Is Agentic RAG Worth It? An Experimental Comparison of RAG Approaches](is_agentic_rag_worth_it_an_experimental_comparison_of_rag_approaches.md)
-- [\[ACL 2025\] On Synthetic Data Strategies for Domain-Specific Generative Retrieval](../../ACL2025/information_retrieval/on_synthetic_data_strategies_for_domain-specific_generative_retrieval.md)
+- [\[ACL 2026\] How Large Language Models Balance Internal Knowledge with User and Document Assertions](how_large_language_models_balance_internal_knowledge_with_user_and_document_asse.md)
 
 </div>
 

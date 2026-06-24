@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Can Language Models Discover Scaling Laws?
 description: >-
-  [ICLR 2026][LLM Agent][AI Scientist] This paper proposes **SLDAgent**—an evolutionary agent that co-evolves "formula generators + parameter optimizers"—along with **SLDBench**, the first scaling law discovery benchmark. It demonstrates for the first time that LLM agents can automatically discover scaling laws whose extrapolation accuracy exceeds human-exp
+  [ICLR 2026][LLM Agent][Scaling Law Discovery] This paper proposes **SLDAgent**—an evolutionary agent that co-evolves "formula generators + parameter optimizers"—along with **SLDBench**, the first scaling law discovery benchmark. It demonstrates for the first time that LLM agents can automatically discover scaling laws whose extrapolation accuracy exceeds human-expert derivations across all 8 evaluated tasks.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - AI Scientist
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Scaling Law Discovery"
+  - "Evolutionary Agent"
+  - "Symbolic Regression"
+  - "AI Scientist"
+  - "Superhuman Performance"
 date: 2026-05-08
-content_hash: 0a88c6abdd35efcc
+content_hash: c7c4dce2f44c1d48
 ---
+
 # Can Language Models Discover Scaling Laws?
 
 **Conference**: ICLR 2026  
@@ -125,8 +130,8 @@ Regardless of the LLM used, SLDAgent consistently improves upon native CLI agent
 - [\[ICLR 2026\] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models](agentic_context_engineering_evolving_contexts_for_self-improving_language_models.md)
 - [\[ICLR 2026\] GPS: Graph-guided Proactive Information Seeking in Large Language Models](gps_graph-guided_proactive_information_seeking_in_large_language_models.md)
 - [\[ICLR 2026\] ToolWeaver: Weaving Collaborative Semantics for Scalable Tool Use in Large Language Models](toolweaver_weaving_collaborative_semantics_for_scalable_tool_use_in_large_langua.md)
-- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](scaling_agent_learning_via_experience_synthesis.md)
 - [\[ICLR 2026\] Nemotron-Research-Tool-N1: Exploring Tool-Using Language Models with Reinforced Reasoning](nemotron-research-tool-n1_exploring_tool-using_language_models_with_reinforced_r.md)
+- [\[ICLR 2026\] Scaling Agent Learning via Experience Synthesis](scaling_agent_learning_via_experience_synthesis.md)
 
 </div>
 

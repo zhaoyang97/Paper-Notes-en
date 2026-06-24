@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DeLeaker: Dynamic Inference-Time Reweighting For Semantic Leakage Mitigation in Text-to-Image Models
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] DeLeaker performs dynamic reweighting of attention maps during the denoising process of DiT text-to-image models—suppressing cross-entity attention while reinforcing self-identity alignment. This training-free and input-free method mitigates "semantic leakage" and introduces the first dedicated dataset SLIM along with
+  [ICLR 2026][Image Generation][Semantic Leakage] DeLeaker performs dynamic reweighting of attention maps during the denoising process of DiT text-to-image models—suppressing cross-entity attention while reinforcing self-identity alignment. This training-free and input-free method mitigates "semantic leakage" and introduces the first dedicated dataset SLIM along with a VLM-based evaluation framework.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Semantic Leakage"
+  - "Text-to-Image"
+  - "Diffusion Transformer"
+  - "Attention Reweighting"
+  - "Training-free Inference Intervention"
 date: 2026-05-08
-content_hash: d3b3040cf315a202
+content_hash: 3105970e179f1d78
 ---
+
 # DeLeaker: Dynamic Inference-Time Reweighting For Semantic Leakage Mitigation in Text-to-Image Models
 
 **Conference**: ICLR 2026  
@@ -113,10 +118,20 @@ DeLeaker achieves the highest mitigation rate and lowest degradation rate, with 
 - **Value**: ⭐⭐⭐⭐ Plug-and-play solution providing a direct benefit to the semantic accuracy of practical T2I systems.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models](diffusion_blend_inference-time_multi-preference_alignment_for_diffusion_models.md)
+- [\[ICLR 2026\] VisualPrompter: Semantic-Aware Prompt Optimization with Visual Feedback for Text-to-Image Synthesis](visualprompter_semantic-aware_prompt_optimization_with_visual_feedback_for_text-.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Discrete Diffusion Models via Importance Weighting and Optimal Proposal Design](inference-time_scaling_of_discrete_diffusion_models_via_importance_weighting_and.md)
+- [\[NeurIPS 2025\] FairImagen: Post-Processing for Bias Mitigation in Text-to-Image Models](../../NeurIPS2025/image_generation/fairimagen_post-processing_for_bias_mitigation_in_text-to-image_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)

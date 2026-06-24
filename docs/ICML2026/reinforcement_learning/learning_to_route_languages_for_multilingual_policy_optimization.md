@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning to Route Languages for Multilingual Policy Optimization
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper proposes LRPO (Language-Routed Policy Optimization), which treats "which language to use for rollout generation" as a learnable variable. Using a contextual bandit-form language router, it selects the most informative language combinations for each training sample under a fixed rollout budget. By pulling mul
+  [ICML 2026][Reinforcement Learning][Multilingual RL] This paper proposes LRPO (Language-Routed Policy Optimization), which treats "which language to use for rollout generation" as a learnable variable. Using a contextual bandit-form language router, it selects the most informative language combinations for each training sample under a fixed rollout budget. By pulling multilingual rollouts into the same scale via offline estimation and online calibration of cross-lingual simil…
 tags:
-  - ICML 2026
-  - Reinforcement Learning
-  - GRPO
+  - "ICML 2026"
+  - "Reinforcement Learning"
+  - "Multilingual RL"
+  - "GRPO"
+  - "Language Router"
+  - "Multi-Armed Bandit"
+  - "Cross-lingual Reward Calibration"
 date: 2026-05-08
-content_hash: d1e0be4e53779a65
+content_hash: f21bfa0b19abba5f
 ---
+
 # Learning to Route Languages for Multilingual Policy Optimization
 
 **Conference**: ICML 2026  
@@ -130,10 +135,10 @@ Fixed routing (whether biased toward input or English) performs worse than learn
 ## Related Papers
 
 - [\[ICML 2026\] Metis: Learning to Jailbreak LLMs via Self-Evolving Metacognitive Policy Optimization](metis_learning_to_jailbreak_llms_via_self-evolving_metacognitive_policy_optimiza.md)
-- [\[ICML 2026\] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance](eapo_enhancing_policy_optimization_with_on-demand_expert_assistance.md)
-- [\[ICML 2026\] Revisiting Regularized Policy Optimization for Stable and Efficient Reinforcement Learning in Two-Player Games](revisiting_regularized_policy_optimization_for_stable_and_efficient_reinforcemen.md)
 - [\[ACL 2026\] LANG: Reinforcement Learning for Multilingual Reasoning with Language-Adaptive Hint Guidance](../../ACL2026/reinforcement_learning/lang_reinforcement_learning_for_multilingual_reasoning_with_language-adaptive_hi.md)
-- [\[ACL 2026\] Visually-Guided Policy Optimization for Multimodal Reasoning](../../ACL2026/reinforcement_learning/visually-guided_policy_optimization_for_multimodal_reasoning.md)
+- [\[ICML 2026\] EAPO: Enhancing Policy Optimization with On-Demand Expert Assistance](eapo_enhancing_policy_optimization_with_on-demand_expert_assistance.md)
+- [\[ICLR 2026\] Geometric-Mean Policy Optimization](../../ICLR2026/reinforcement_learning/geometric-mean_policy_optimization.md)
+- [\[ICLR 2026\] Single-stream Policy Optimization](../../ICLR2026/reinforcement_learning/single-stream_policy_optimization.md)
 
 </div>
 

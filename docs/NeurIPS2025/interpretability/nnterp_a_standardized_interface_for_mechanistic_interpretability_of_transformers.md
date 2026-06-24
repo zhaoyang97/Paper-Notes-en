@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers
 description: >-
-  [NeurIPS 2025 (Mechanistic Interpretability Workshop)][Interpretability][Mechanistic Interpretability] nnterp is a lightweight wrapper over NNsight that provides a unified interface for accessing internal activations acr…
+  [NeurIPS 2025 (Mechanistic Interpretability Workshop)][Interpretability][Mechanistic Interpretability] nnterp is a lightweight wrapper over NNsight that provides a unified interface for accessing internal activations across 50+ Transformer model variants spanning 21 architecture families, achieved through systematic module renaming and automated validation tests. It ships with built-in interpretability methods including logit lens, patchscope, and activation steering…
 tags:
   - "NeurIPS 2025 (Mechanistic Interpretability Workshop)"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "Cross-Architecture"
   - "Transformer Toolkit"
 date: 2026-05-08
-content_hash: b644d1c8a06b1e27
+content_hash: cbd802af5b69c3a3
 ---
 
 # nnterp: A Standardized Interface for Mechanistic Interpretability of Transformers
@@ -140,11 +140,11 @@ nnterp is an inference and analysis tool and does not involve training. Built-in
 
 ## Related Papers
 
+- [\[ICML 2025\] MIB: A Mechanistic Interpretability Benchmark](../../ICML2025/interpretability/mib_a_mechanistic_interpretability_benchmark.md)
 - [\[NeurIPS 2025\] The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?](the_non-linear_representation_dilemma_is_causal_abstraction_enough_for_mechanist.md)
-- [\[NeurIPS 2025\] How Intrinsic Motivation Shapes Learned Representations in Decision Transformers: A Cognitive Interpretability Analysis](toward_explainable_offline_rl_analyzing_representations_in_intrinsically_motivat.md)
-- [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
-- [\[ACL 2026\] Make Mechanistic Interpretability Auditable: A Call to Develop Guidelines via Continuous Collaborative Reviewing](../../ACL2026/interpretability/make_mechanistic_interpretability_auditable_a_call_to_develop_guidelines_via_con.md)
-- [\[NeurIPS 2025\] Causal Head Gating: A Framework for Interpreting Roles of Attention Heads in Transformers](causal_head_gating_a_framework_for_interpreting_roles_of_attention_heads_in_tran.md)
+- [\[ACL 2025\] An Empirical Study of Mechanistic Interpretability Approaches for Factual Recall](../../ACL2025/interpretability/an_empirical_study_of_mechanistic_interpretability_approaches_for_factual_recall.md)
+- [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
+- [\[ICLR 2026\] Small Transformers Don't Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](../../ICLR2026/interpretability/small_transformers_dont_need_layernorm_at_inference_time_scaling_layernorm_remov.md)
 
 </div>
 

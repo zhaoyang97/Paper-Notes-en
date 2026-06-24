@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations
 description: >-
-  [AAAI 2026][Speaking Style Representation] This paper proposes ParaMETA, a unified paralinguistic speaking style representation learning framework that achieves disentangled representations of speaking styles—including e…
+  [AAAI 2026][Speaking Style Representation] This paper proposes ParaMETA, a unified paralinguistic speaking style representation learning framework that achieves disentangled representations of speaking styles—including emotion, age, gender, and language—through META space regularization and task-specific subspace projection, while simultaneously supporting downstream multi-task classification and style-controllable speech synthesis.
 tags:
   - "AAAI 2026"
   - "Speaking Style Representation"
@@ -11,7 +11,7 @@ tags:
   - "Prototype Learning"
   - "text-to-speech"
 date: 2026-05-08
-content_hash: f6a1adf0949779ea
+content_hash: de195cd46df25723
 ---
 
 # ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations
@@ -234,10 +234,10 @@ ParaMETA-LSTM requires only 1.9% of CLAP's parameters, 22% of its GPU memory, an
 ## Related Papers
 
 - [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
-- [\[ICLR 2026\] Exchangeability of GNN Representations with Applications to Graph Retrieval](../../ICLR2026/others/exchangeability_gnn_representations.md)
-- [\[AAAI 2026\] Bandit Learning in Housing Markets](bandit_learning_in_housing_markets.md)
-- [\[AAAI 2026\] How to Marginalize in Causal Structure Learning?](how_to_marginalize_in_causal_structure_learning.md)
-- [\[AAAI 2026\] Learning Network Dismantling Without Handcrafted Inputs](learning_network_dismantling_without_handcrafted_inputs.md)
+- [\[ICLR 2026\] Learning Distributions over Permutations and Rankings with Factorized Representations](../../ICLR2026/others/learning_distributions_over_permutations_and_rankings_with_factorized_representa.md)
+- [\[ICLR 2026\] RADAR: Learning to Route with Asymmetry-aware Distance Representations](../../ICLR2026/others/radar_learning_to_route_with_asymmetry-aware_distance_representations.md)
+- [\[CVPR 2025\] SDF-Net: Structure-Aware Disentangled Feature Learning for Optical–SAR Ship Re-Identification](../../CVPR2025/others/sdf-net_structure-aware_disentangled_feature_learning_for_opticall-sar_ship_re-i.md)
+- [\[ICML 2025\] On the Importance of Gaussianizing Representations](../../ICML2025/others/on_the_importance_of_gaussianizing_representations.md)
 
 </div>
 

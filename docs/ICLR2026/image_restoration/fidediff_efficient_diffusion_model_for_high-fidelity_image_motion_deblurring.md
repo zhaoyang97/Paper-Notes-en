@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring
 description: >-
-  [ICLR 2026][Image Restoration][Kernel ControlNet] This work reformulates motion deblurring as a diffusion-like process where the "blur level serves as the timestep." By employing consistency training, all timesteps are aligned to predict the same sharp image, achieving **single-step, high-fidelity** deblurring with a pre-trained diffusion model, complemented by a Kern
+  [ICLR 2026][Image Restoration][Single-step diffusion] This work reformulates motion deblurring as a diffusion-like process where the "blur level serves as the timestep." By employing consistency training, all timesteps are aligned to predict the same sharp image, achieving **single-step, high-fidelity** deblurring with a pre-trained diffusion model, complemented by a Kernel ControlNet for blur kernel prior injection and adaptive timestep prediction.
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Kernel ControlNet
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Single-step diffusion"
+  - "motion deblurring"
+  - "consistency models"
+  - "Kernel ControlNet"
+  - "high-fidelity restoration"
 date: 2026-05-08
-content_hash: da6cf333226b427a
+content_hash: 8f9d4e7b918b7a56
 ---
+
 # FideDiff: Efficient Diffusion Model for High-Fidelity Image Motion Deblurring
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ Consistency Training (CT) vs. None: GoPro LPIPS improved from 0.0871 → 0.0831,
 ## Related Papers
 
 - [\[CVPR 2025\] Efficient Visual State Space Model for Image Deblurring](../../CVPR2025/image_restoration/efficient_visual_state_space_model_for_image_deblurring.md)
-- [\[CVPR 2026\] FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution](../../CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md)
 - [\[CVPR 2026\] Spatio-Temporal Difference Guided Motion Deblurring with the Complementary Vision Sensor](../../CVPR2026/image_restoration/spatio-temporal_difference_guided_motion_deblurring_with_the_complementary_visio.md)
 - [\[CVPR 2026\] Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations](../../CVPR2026/image_restoration/event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati.md)
 - [\[ICLR 2026\] FreeAdapt: Unleashing Diffusion Priors for Ultra-High-Definition Image Restoration](freeadapt_unleashing_diffusion_priors_for_ultra-high-definition_image_restoratio.md)
+- [\[CVPR 2026\] OMoBlur: An Object Motion Blur Dataset and Benchmark for Real-World Local Motion Deblurring](../../CVPR2026/image_restoration/omoblur_an_object_motion_blur_dataset_and_benchmark_for_real-world_local_motion_.md)
 
 </div>
 

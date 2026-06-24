@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] Minerva-Ego is a benchmark for complex reasoning in egocentric long videos, consisting of 1,160 human-annotated five-way multiple-choice questions. Each question is paired with a dense reasoning trajectory that binds "when (timestamp)" to "where (segmentation mask)". The authors reveal that state-of-the-art (SOTA) vide
+  [CVPR 2026][Video Understanding][First-person video] Minerva-Ego is a benchmark for complex reasoning in egocentric long videos, consisting of 1,160 human-annotated five-way multiple-choice questions. Each question is paired with a dense reasoning trajectory that binds "when (timestamp)" to "where (segmentation mask)". The authors reveal that state-of-the-art (SOTA) video models (Gemini 2.5 Pro at 40.1% vs. humans at 91.8%) are primarily bottlenecked by perceptual grounding.…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "First-person video"
+  - "Visual reasoning"
+  - "Benchmark"
+  - "Spatiotemporal grounding"
+  - "Visual prompting"
 date: 2026-05-08
-content_hash: b1ff8f11b05d9c61
+content_hash: bbc80516e06f7dea
 ---
+
 # Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding
 
 **Conference**: CVPR 2026  
@@ -142,8 +148,21 @@ The best combination reached 50.3% (+5.8%).
 - **Value**: ⭐⭐⭐⭐ Provides a hard diagnostic benchmark for egocentric video reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-<!-- RELATED:END --></div>
+
+## Related Papers
+
+- [\[CVPR 2026\] Ego-Grounding for Personalized Question-Answering in Egocentric Videos](ego-grounding_for_personalized_question-answering_in_egocentric_videos.md)
+- [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](../../ICCV2025/video_understanding/fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
+- [\[CVPR 2026\] Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)
+- [\[CVPR 2026\] Unified Spatiotemporal Token Compression for Video-LLMs at Ultra-Low Retention](unified_spatiotemporal_token_compression_for_video-llms_at_ultra-low_retention.md)
+- [\[CVPR 2026\] SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)
+
+</div>
+
+<!-- RELATED:END -->
+</div>
 
 ## Related Papers
 

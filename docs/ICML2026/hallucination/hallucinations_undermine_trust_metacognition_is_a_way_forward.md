@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hallucinations Undermine Trust; Metacognition is a Way Forward
 description: >-
-  [ICML 2026][Hallucination Detection][faithful uncertainty] This position paper argues that "totally eliminating LLM hallucinations" is theoretically impossible without incurring a "utility tax" (discrimination gap); the authors advocate shifting the goal from "eliminating hallucinations" to **faithful uncertainty** and treating this metacognition as an indispensable control la
+  [ICML 2026 (Position Paper)][Hallucination Detection][Hallucination] This position paper argues that "totally eliminating LLM hallucinations" is theoretically impossible without incurring a "utility tax" (discrimination gap); the authors advocate shifting the goal from "eliminating hallucinations" to **faithful uncertainty** and treating this metacognition as an indispensable control layer for agentic LLMs when calling tools.
 tags:
-  - ICML 2026
-  - Hallucination Detection
-  - faithful uncertainty
+  - "ICML 2026 (Position Paper)"
+  - "Hallucination Detection"
+  - "Hallucination"
+  - "Calibration vs. Discrimination"
+  - "Faithful Uncertainty"
+  - "Metacognition"
+  - "Agentic Control Layer"
 date: 2026-05-08
-content_hash: 0493480a263e9706
+content_hash: f9e2691061205da3
 ---
+
 # Hallucinations Undermine Trust; Metacognition is a Way Forward
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -120,11 +125,11 @@ As a position paper, there are no training objectives, but §6 identifies six ch
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] Auditing Meta-Cognitive Hallucinations in Reasoning Large Language Models](../../NeurIPS2025/hallucination/auditing_meta-cognitive_hallucinations_in_reasoning_large_language_models.md)
 - [\[CVPR 2026\] Evaluating and Easing Hallucinations for GUI Grounding](../../CVPR2026/hallucination/exposing_and_evaluating_hallucinations_for_gui_grounding.md)
 - [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
 - [\[ICML 2026\] From Flat Facts to Sharp Hallucinations: Detecting Stubborn Errors via Gradient Sensitivity](from_flat_facts_to_sharp_hallucinations_detecting_stubborn_errors_via_gradient_s.md)
 - [\[ICML 2026\] Mitigating Hallucinations in Large Vision-Language Models via Causal Route Gating](mitigating_hallucinations_in_large_vision-language_models_via_causal_route_gatin.md)
-- [\[ACL 2026\] MeasHalu: Mitigation of Scientific Measurement Hallucinations for LLMs](../../ACL2026/hallucination/meashalu_mitigation_of_scientific_measurement_hallucinations_for_large_language_.md)
 
 </div>
 

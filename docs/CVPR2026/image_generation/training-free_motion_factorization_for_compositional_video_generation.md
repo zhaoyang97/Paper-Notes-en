@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Training-free Motion Factorization for Compositional Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] A motion factorization framework is proposed to decompose the motion of multiple instances in a scene into three categories: static, rigid, and non-rigid. It addresses semantic ambiguity in prompts through Structured Motion Graph Reasoning (SMR) and regulates the generation of these three motion types during the diffus
+  [CVPR 2026][Image Generation][Compositional Video Generation] A motion factorization framework is proposed to decompose the motion of multiple instances in a scene into three categories: static, rigid, and non-rigid. It addresses semantic ambiguity in prompts through Structured Motion Graph Reasoning (SMR) and regulates the generation of these three motion types during the diffusion process via Decoupled Motion Guidance (DMG). Without additional training…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Compositional Video Generation"
+  - "Motion Factorization"
+  - "Structured Reasoning"
+  - "Decoupled Guidance"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 2555cc29f2d32bd0
+content_hash: b7568866be183d19
 ---
+
 # Training-free Motion Factorization for Compositional Video Generation
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Guidance branch ablation (VideoCrafter-v2.0):
 
 ## Related Papers
 
-- [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[CVPR 2026\] SWIFT: Sliding Window Reconstruction for Few-Shot Training-Free Generated Video Attribution](swift_sliding_window_reconstruction_for_few-shot_training-free_generated_video_a.md)
-- [\[CVPR 2026\] SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls](switchcraft_training-free_multi-event_video_generation_with_attention_controls.md)
-- [\[CVPR 2026\] FlowDirector: Training-Free Flow Steering for Precise Text-to-Video Editing](flowdirector_training-free_flow_steering_for_precise_text-to-video_editing.md)
-- [\[AAAI 2026\] DreamRunner: Fine-Grained Compositional Story-to-Video Generation with Retrieval-Augmented Motion Adaptation](../../AAAI2026/video_generation/dreamrunner_fine-grained_compositional_story-to-video_genera.md)
+- [\[CVPR 2026\] DTG-Restore: Training-Free Diffusion Refinement for Generative Video Super-Resolution](dtg-restore_training-free_diffusion_refinement_for_generative_video_super-resolu.md)
+- [\[CVPR 2026\] A Training-Free Style-Personalization via SVD-Based Feature Decomposition](a_training-free_style-personalization_via_svd-based_feature_decomposition.md)
+- [\[CVPR 2026\] SketchDeco: Training-Free Latent Composition for Precise Sketch Colourisation](sketchdeco_training-free_latent_composition_for_precise_sketch_colourisation.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
+- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 
 </div>
 

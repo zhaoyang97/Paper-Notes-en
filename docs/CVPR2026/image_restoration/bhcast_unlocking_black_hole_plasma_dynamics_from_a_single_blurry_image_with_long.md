@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] BHCast: Unlocking Black Hole Plasma Dynamics from a Single Blurry Image with Long-Term Forecasting
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] Starting from a single blurry EHT black hole image, BHCast performs super-resolution and long-term autoregressive prediction (stable for 100 steps) via a U-Net dynamics surrogate model. Physical features (rotation speed, pitch angle, etc.) are extracted from the predicted plasma dynamics, and black hole spin and inclin
+  [CVPR 2026][Image Restoration][Black Hole Imaging] Starting from a single blurry EHT black hole image, BHCast performs super-resolution and long-term autoregressive prediction (stable for 100 steps) via a U-Net dynamics surrogate model. Physical features (rotation speed, pitch angle, etc.) are extracted from the predicted plasma dynamics, and black hole spin and inclination are inferred using XGBoost, demonstrating effectiveness on real M87* observational images.
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Black Hole Imaging"
+  - "Super-resolution"
+  - "Long-term Time Series Forecasting"
+  - "Physical Inference"
+  - "Dynamics Modeling"
 date: 2026-05-08
-content_hash: 7025aa47f47aac27
+content_hash: 94d5ef2740d29b3b
 ---
+
 # BHCast: Unlocking Black Hole Plasma Dynamics from a Single Blurry Image with Long-Term Forecasting
 
 **Conference**: CVPR 2026  
@@ -123,7 +129,7 @@ The final stage infers spin and inclination from the four features. XGBoost is c
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -131,7 +137,7 @@ The final stage infers spin and inclination from the four features. XGBoost is c
 - [\[CVPR 2026\] UniLDiff: Unlocking the Power of Diffusion Priors for All-in-One Image Restoration](unildiff_unlocking_the_power_of_diffusion_priors_for_all-in-one_image_restoratio.md)
 - [\[CVPR 2026\] LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)
 - [\[CVPR 2026\] Reflection Separation from a Single Image via Joint Latent Diffusion](reflection_separation_from_a_single_image_via_joint_latent_diffusion.md)
-- [\[CVPR 2026\] RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)
+- [\[CVPR 2026\] GFRRN: Explore the Gaps in Single Image Reflection Removal](gfrrn_explore_the_gaps_in_single_image_reflection_removal.md)
 
 </div>
 

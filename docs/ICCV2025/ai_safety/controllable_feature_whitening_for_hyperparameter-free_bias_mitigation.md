@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation
 description: >-
-  [ICCV 2025][AI Safety][bias mitigation] This paper proposes the Controllable Feature Whitening (CFW) framework, which eliminates linear correlations between target features and bias features via whitening transformations…
+  [ICCV 2025][AI Safety][bias mitigation] This paper proposes the Controllable Feature Whitening (CFW) framework, which eliminates linear correlations between target features and bias features via whitening transformations to mitigate model bias. The approach requires neither adversarial training nor additional regularization hyperparameters, and supports smooth interpolation between demographic parity and equalized odds through a single weighting coefficient.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "demographic parity"
   - "equalized odds"
 date: 2026-05-08
-content_hash: 71a688b0c91bbf42
+content_hash: ede264dc8fbf0f77
 ---
 
 # Controllable Feature Whitening for Hyperparameter-Free Bias Mitigation
@@ -141,11 +141,11 @@ The core insight of this work is that, while zero covariance does not imply stat
 
 ## Related Papers
 
+- [\[CVPR 2026\] DSO: Direct Steering Optimization for Bias Mitigation](../../CVPR2026/ai_safety/dso_direct_steering_optimization_for_bias_mitigation.md)
+- [\[ICLR 2026\] Benchmarking Bias Mitigation Toward Fairness Without Harm from Vision to LVLMs](../../ICLR2026/ai_safety/benchmarking_bias_mitigation_toward_fairness_without_harm_from_vision_to_lvlms.md)
 - [\[ICCV 2025\] Backdoor Mitigation by Distance-Driven Detoxification](backdoor_mitigation_by_distance-driven_detoxification.md)
 - [\[ICCV 2025\] FRET: Feature Redundancy Elimination for Test Time Adaptation](fret_feature_redundancy_elimination_for_test_time_adaptation.md)
-- [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](../../AAAI2026/ai_safety/problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
 - [\[ICCV 2025\] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers](semantic_alignment_and_reinforcement_for_data-free_quantization_of_vision_transf.md)
-- [\[NeurIPS 2025\] Robust Graph Condensation via Classification Complexity Mitigation](../../NeurIPS2025/ai_safety/robust_graph_condensation_via_classification_complexity_mitigation.md)
 
 </div>
 

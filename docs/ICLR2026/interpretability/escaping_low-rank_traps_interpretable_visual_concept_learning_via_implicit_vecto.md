@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Escaping Low-Rank Traps: Interpretable Visual Concept Learning via Implicit Vector Quantization
 description: >-
-  [ICLR 2026][Interpretability][Concept Bottleneck Model] To address the "representation collapse" problem where patch features degrade into a low-rank subspace and destroy visual-concept many-to-many alignment during Concept Bottleneck Model (CBM) training, this paper proposes **Implicit Vector Quantization (IVQ)**, which treats the vector quantization objective as a regular
+  [ICLR 2026][Interpretability][Concept Bottleneck Model] To address the "representation collapse" problem where patch features degrade into a low-rank subspace and destroy visual-concept many-to-many alignment during Concept Bottleneck Model (CBM) training, this paper proposes **Implicit Vector Quantization (IVQ)**, which treats the vector quantization objective as a regularizer rather than a hard bottleneck. Combined with **Magnet Attention** to aggregate high-rank patch feat…
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Concept Bottleneck Model
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Model"
+  - "Representational Collapse"
+  - "Implicit Vector Quantization"
+  - "Many-to-Many Alignment"
+  - "Concept Aggregation"
 date: 2026-05-08
-content_hash: e88bd34cfe05e13e
+content_hash: 1d92494e4455b4a0
 ---
+
 # Escaping Low-Rank Traps: Interpretable Visual Concept Learning via Implicit Vector Quantization
 
 **Conference**: ICLR 2026  
@@ -122,8 +127,8 @@ IVQ contributes the most, with an 11.81 point gain in BMAC on the imbalanced IDR
 - [\[ICLR 2026\] Towards Understanding the Nature of Attention with Low-Rank Sparse Decomposition](towards_understanding_the_nature_of_attention_with_low-rank_sparse_decomposition.md)
 - [\[ICLR 2026\] Sequences of Logits Reveal the Low Rank Structure of Language Models](sequences_of_logits_reveal_the_low_rank_structure_of_language_models.md)
 - [\[ICML 2025\] SLiM: One-shot Quantization and Sparsity with Low-rank Approximation for LLM Weight Compression](../../ICML2025/interpretability/slim_one-shot_quantization_and_sparsity_with_low-rank_approximation_for_llm_weig.md)
+- [\[ICLR 2026\] Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention](why_low-precision_transformer_training_fails_an_analysis_on_flash_attention.md)
 - [\[ICLR 2026\] Decomposition of Concept-Level Rules in Visual Scenes](decomposition_of_concept-level_rules_in_visual_scenes.md)
-- [\[ICLR 2026\] Sparling: End-to-End Spatial Concept Learning via Extremely Sparse Activations](sparling_end-to-end_spatial_concept_learning_via_extremely_sparse_activations.md)
 
 </div>
 

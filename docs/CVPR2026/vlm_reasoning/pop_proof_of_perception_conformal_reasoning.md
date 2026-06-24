@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors propose Proof-of-Perception (PoP), which models multimodal reasoning as an executable directed acyclic graph (DAG). Each perception/logic node outputs set-values with conformal prediction certificates to provide step-by-step reliability guarantees. A lightweight controller adaptively allocates computing pow
+  [CVPR 2026][VLM Reasoning][Conformal Prediction] The authors propose Proof-of-Perception (PoP), which models multimodal reasoning as an executable directed acyclic graph (DAG). Each perception/logic node outputs set-values with conformal prediction certificates to provide step-by-step reliability guarantees. A lightweight controller adaptively allocates computing power within a budget based on these certificates, outperforming CoT, ReAct, and PoT baselines on document, chart…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Conformal Prediction"
+  - "Tool Use"
+  - "Multimodal Reasoning"
+  - "Uncertainty Quantization"
+  - "Adaptive Computation"
 date: 2026-05-08
-content_hash: 7826a240855974e7
+content_hash: 39706feaf052a48c
 ---
+
 # Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees
 
 **Conference**: CVPR 2026  
@@ -125,16 +131,16 @@ Conformal prediction assumes "exchangeability." If the test distribution shifts,
 - Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
 - [\[CVPR 2026\] Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs](dont_show_pixels_show_cues_unlocking_visual_tool_reasoning_in_language_models_vi.md)
-- [\[CVPR 2026\] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration](multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati.md)
+- [\[CVPR 2026\] Compositional Transformation Reasoning for Composed Video Retrieval](compositional_transformation_reasoning_for_composed_video_retrieval.md)
 - [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
+- [\[ICLR 2026\] CompoDistill: Attention Distillation for Compositional Reasoning in Multimodal LLMs](../../ICLR2026/vlm_reasoning/compodistill_attention_distillation_for_compositional_reasoning_in_multimodal_ll.md)
 
 </div>
 

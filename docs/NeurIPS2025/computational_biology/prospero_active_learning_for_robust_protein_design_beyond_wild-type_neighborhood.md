@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood
 description: >-
-  [NeurIPS 2025][Computational Biology][protein design] This paper proposes ProSpero, an active learning framework that discovers high-fitness and novel protein sequences even under surrogate model mismatch…
+  [NeurIPS 2025][Computational Biology][protein design] This paper proposes ProSpero, an active learning framework that discovers high-fitness and novel protein sequences even under surrogate model mismatch, via inference-time sampling of a frozen pretrained generative model (EvoDiff) guided by a surrogate, a targeted masking strategy, and biologically-constrained SMC sampling.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "pretrained generative model guidance"
   - "surrogate model robustness"
 date: 2026-05-08
-content_hash: 78a68b6b2e05bc69
+content_hash: 066ad618897f3cfb
 ---
 
 # PROSPERO: Active Learning for Robust Protein Design Beyond Wild-Type Neighborhood
@@ -122,11 +122,11 @@ The surrogate model (an ensemble of three 1D CNNs) is trained with MSE loss; all
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](protein_design_with_dynamic_protein_vocabulary.md)
 - [\[NeurIPS 2025\] Self Iterative Label Refinement via Robust Unlabeled Learning](self_iterative_label_refinement_via_robust_unlabeled_learning.md)
 - [\[NeurIPS 2025\] Amortized Active Generation of Pareto Sets](amortized_active_generation_of_pareto_sets.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[ICML 2026\] Active Timepoint Selection for Learning Measure-Valued Trajectories](../../ICML2026/computational_biology/active_timepoint_selection_for_learning_measure-valued_trajectories.md)
+- [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](protein_design_with_dynamic_protein_vocabulary.md)
+- [\[ICML 2025\] MF-LAL: Drug Compound Generation Using Multi-Fidelity Latent Space Active Learning](../../ICML2025/computational_biology/mf-lal_drug_compound_generation_using_multi-fidelity_latent_space_active_learnin.md)
+- [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/computational_biology/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
 
 </div>
 

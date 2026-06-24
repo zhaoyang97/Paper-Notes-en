@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] RenderFlow: Single-Step Neural Rendering via Flow Matching
 description: >-
-  [CVPR 2026][Image Generation][Flow Matching] The authors propose RenderFlow, which reformulates neural rendering as a single-step conditional flow matching problem from albedo to full-light images. Utilizing G-buffer as a condition and a pre-trained video DiT as the backbone, the method achieves deterministic rendering over 10 times faster than diffusion-based me
+  [CVPR 2026][Image Generation][Neural Rendering] The authors propose RenderFlow, which reformulates neural rendering as a single-step conditional flow matching problem from albedo to full-light images. Utilizing G-buffer as a condition and a pre-trained video DiT as the backbone, the method achieves deterministic rendering over 10 times faster than diffusion-based methods (~0.19s/frame). Optional sparse keyframe guidance further improves physical accuracy…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Flow Matching
-  - G-buffer
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Neural Rendering"
+  - "Flow Matching"
+  - "Single-step Inference"
+  - "G-buffer"
+  - "Keyframe Guidance"
 date: 2026-05-08
-content_hash: 82eeaeeb4b116c53
+content_hash: 0c01eb1cf4fb049c
 ---
+
 # RenderFlow: Single-Step Neural Rendering via Flow Matching
 
 **Conference**: CVPR 2026  
@@ -155,11 +159,11 @@ The authors demonstrate that the backbone can perform tasks beyond forward rende
 
 ## Related Papers
 
-- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
+- [\[CVPR 2026\] Stable Mean Flow: Lyapunov-Inspired One-Step Flow Matching](stable_mean_flow_lyapunov-inspired_one-step_flow_matching.md)
 - [\[CVPR 2026\] BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)
-- [\[CVPR 2026\] Spatiotemporal Pyramid Flow Matching for Climate Emulation](spatiotemporal_pyramid_flow_matching_for_climate_emulation.md)
 - [\[CVPR 2026\] LeapAlign: Post-Training Flow Matching Models at Any Generation Step by Building Two-Step Trajectories](leapalign_post_training_flow_matching_models_at_any_generation_step.md)
-- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
+- [\[NeurIPS 2025\] Flow Matching Neural Processes](../../NeurIPS2025/image_generation/flow_matching_neural_processes.md)
+- [\[CVPR 2026\] Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)
 
 </div>
 

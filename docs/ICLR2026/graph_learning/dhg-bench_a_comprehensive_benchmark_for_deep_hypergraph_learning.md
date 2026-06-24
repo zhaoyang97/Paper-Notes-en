@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning
 description: >-
-  [ICLR 2026][Graph Learning][Deep Hypergraph Learning] DHG-Bench is the first comprehensive benchmark for Hypergraph Neural Networks (HNNs). Under a unified experimental protocol, it systematically evaluates 17 SOTA HNN algorithms against 22 datasets (covering node, hyperedge, and hypergraph task granularities) across four dimensions: **effectiveness, efficiency, robustnes
+  [ICLR 2026][Graph Learning][Hypergraph Neural Networks] DHG-Bench is the first comprehensive benchmark for Hypergraph Neural Networks (HNNs). Under a unified experimental protocol, it systematically evaluates 17 SOTA HNN algorithms against 22 datasets (covering node, hyperedge, and hypergraph task granularities) across four dimensions: **effectiveness, efficiency, robustness, and fairness**. Through extensive controlled experiments, it reveals systemic shortcomings in existin…
 tags:
-  - ICLR 2026
-  - Graph Learning
-  - Deep Hypergraph Learning
-  - Benchmark
+  - "ICLR 2026"
+  - "Graph Learning"
+  - "Hypergraph Neural Networks"
+  - "Deep Hypergraph Learning"
+  - "Benchmark"
+  - "Robustness"
+  - "Fairness"
+  - "High-order Interaction"
 date: 2026-05-08
-content_hash: 7f5a2063dadddfa3
+content_hash: 42da755d95d59f83
 ---
+
 # DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning
 
 **Conference**: ICLR 2026  

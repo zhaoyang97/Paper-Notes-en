@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][UAV] Focusing on the Aerial ObjectNav task in large-scale outdoor scenes—where only target descriptions are provided without step-by-step instructions—this paper proposes OctMem-Agent. It utilizes an **adaptive octree memory** to incrementally aggregate historical RGB-D observations into a scalable hierarchical 3D represent
+  [CVPR 2026][Robotics][Aerial Object Navigation] Focusing on the Aerial ObjectNav task in large-scale outdoor scenes—where only target descriptions are provided without step-by-step instructions—this paper proposes OctMem-Agent. It utilizes an **adaptive octree memory** to incrementally aggregate historical RGB-D observations into a scalable hierarchical 3D representation, then employs **instruction-modulated memory queries** to extract compact "localization" and "exploration"…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - UAV
-  - Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Aerial Object Navigation"
+  - "UAV"
+  - "Octree Memory"
+  - "Instruction-Modulated Query"
+  - "Embodied AI"
 date: 2026-05-08
-content_hash: 33b329ff61c30ab5
+content_hash: 6d367046c6d339a8
 ---
+
 # Memory-Augmented Scene Understanding and Exploration for Open-World Aerial Object-Goal Navigation
 
 **Conference**: CVPR 2026  
@@ -149,8 +153,8 @@ SR still leads in unseen environments (new objects/instructions), but SPL (5.15%
 
 ## Related Papers
 
-- [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](../../AAAI2026/robotics/panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
 - [\[CVPR 2026\] Parse, Search, and Confirmation: Training-Free Aerial Vision-and-Dialog Navigation with Chain-of-Thought Reasoning and Structured Spatial Memory](parse_search_and_confirmation_training-free_aerial_vision-and-dialog_navigation_.md)
+- [\[AAAI 2026\] PanoNav: Mapless Zero-Shot Object Navigation with Panoramic Scene Parsing and Dynamic Memory](../../AAAI2026/robotics/panonav_mapless_zero-shot_object_navigation_with_panoramic_scene_parsing_and_dyn.md)
 - [\[CVPR 2026\] HTNav: A Hybrid Navigation Framework with Tiered Structure for Urban Aerial Vision-and-Language Navigation](htnav_a_hybrid_navigation_framework_with_tiered_structure_for_urban_aerial_visio.md)
 - [\[NeurIPS 2025\] C-NAV: Towards Self-Evolving Continual Object Navigation in Open World](../../NeurIPS2025/robotics/c-nav_towards_self-evolving_continual_object_navigation_in_open_world.md)
 - [\[CVPR 2026\] IGen: Scalable Data Generation for Robot Learning from Open-World Images](igen_scalable_data_generation_for_robot_learning_from_open-world_images.md)

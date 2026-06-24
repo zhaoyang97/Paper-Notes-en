@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UniCA: Unified Covariate Adaptation for Time Series Foundation Model
 description: >-
-  [ICLR 2026][Time Series][Adapter]] UniCA maps heterogeneous covariates such as categories, images, and text into a unified "implicit time series" representation. It then integrates these via pre-fusion and post-fusion attention modules into a frozen time series foundation model, improving covariate-aware forecasting performance without compromising pre-
+  [ICLR2026][Time Series][Time Series Foundation Models] UniCA maps heterogeneous covariates such as categories, images, and text into a unified "implicit time series" representation. It then integrates these via pre-fusion and post-fusion attention modules into a frozen time series foundation model, improving covariate-aware forecasting performance without compromising pre-trained generalization capabilities.
 tags:
-  - ICLR 2026
-  - Time Series
-  - Adapter]
+  - "ICLR2026"
+  - "Time Series"
+  - "Time Series Foundation Models"
+  - "Covariate Adaptation"
+  - "Heterogeneous Covariates"
+  - "Multi-modal Forecasting"
+  - "Adapter"
 date: 2026-05-08
-content_hash: a9482a0c61abbfaf
+content_hash: 0c4776804f352858
 ---
+
 # UniCA: Unified Covariate Adaptation for Time Series Foundation Model
 
 **Conference**: ICLR2026  
@@ -143,7 +148,7 @@ A notable conclusion is that UniCA does not outperform the strongest specialized
 - [\[AAAI 2026\] A Unified Shape-Aware Foundation Model for Time Series Classification](../../AAAI2026/time_series/a_unified_shape-aware_foundation_model_for_time_series_class.md)
 - [\[ICLR 2026\] Uni-NTFM: A Unified Foundation Model for EEG Signal Representation Learning](uni-ntfm_a_unified_foundation_model_for_eeg_signal_representation_learning.md)
 - [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
-- [\[ICLR 2026\] COSA: Context-aware Output-Space Adapter for Test-Time Adaptation in Time Series Forecasting](cosa_context-aware_output-space_adapter_for_test-time_adaptation_in_time_series_.md)
+- [\[ICLR 2026\] CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data](cauker_classification_time_series_foundation_models_can_be_pretrained_on_synthet.md)
 - [\[ICLR 2026\] Repurposing Foundation Model for Generalizable Medical Time Series Classification](repurposing_foundation_model_for_generalizable_medical_time_series_classificatio.md)
 
 </div>

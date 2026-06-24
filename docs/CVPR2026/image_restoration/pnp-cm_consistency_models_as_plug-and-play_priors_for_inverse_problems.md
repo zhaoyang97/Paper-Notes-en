@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems
 description: >-
-  [CVPR 2026][Image Restoration][ADMM] Consistency Models (CM) are reinterpreted as "proximal operators of a prior" and integrated into an ADMM-based Plug-and-Play (PnP) framework. By incorporating noise injection and momentum to compress iterations to 2–4 Number of Function Evaluations (NFE), this work unifiedly solves linear/nonlinear inverse problems and
+  [CVPR 2026][Image Restoration][Consistency Models] Consistency Models (CM) are reinterpreted as "proximal operators of a prior" and integrated into an ADMM-based Plug-and-Play (PnP) framework. By incorporating noise injection and momentum to compress iterations to 2–4 Number of Function Evaluations (NFE), this work unifiedly solves linear/nonlinear inverse problems and applies CM training to MRI reconstruction for the first time.
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - ADMM
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Consistency Models"
+  - "Inverse Problems"
+  - "Plug-and-Play Priors"
+  - "ADMM"
+  - "MRI Reconstruction"
 date: 2026-05-08
-content_hash: 59785e9a3bac5967
+content_hash: 6de74c5a1add69d0
 ---
+
 # PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems
 
 **Conference**: CVPR 2026  
@@ -170,11 +175,11 @@ Deconstructing the contributions of noise injection and momentum (CelebA-HQ, NFE
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](dual_ascent_diffusion_for_inverse_problems.md)
 - [\[CVPR 2026\] GSNR: Graph Smooth Null-Space Representation for Inverse Problems](gsnr_graph_smooth_null_space_representation_for_inverse_problems.md)
-- [\[CVPR 2026\] Variational Garrote for Sparse Inverse Problems](variational_garrote_for_sparse_inverse_problems.md)
-- [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](outlier-robust_diffusion_solvers_for_inverse_problems.md)
-- [\[CVPR 2025\] FiRe: Fixed-points of Restoration Priors for Solving Inverse Problems](../../CVPR2025/image_restoration/fire_fixed-points_of_restoration_priors_for_solving_inverse_problems.md)
-- [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](../../ICML2026/image_restoration/learning_normalized_energy_models_for_linear_inverse_problems.md)
+- [\[ICML 2026\] Solving Inverse Problems with Flow-based Models via Model Predictive Control](../../ICML2026/image_restoration/solving_inverse_problems_with_flow-based_models_via_model_predictive_control.md)
+- [\[ICLR 2026\] Taming Score-Based Denoisers in ADMM: A Convergent Plug-and-Play Framework](../../ICLR2026/image_restoration/taming_score-based_denoisers_in_admm_a_convergent_plug-and-play_framework.md)
+- [\[ICLR 2026\] Adaptive Moments are Surprisingly Effective for Plug-and-Play Diffusion Sampling](../../ICLR2026/image_restoration/adaptive_moments_are_surprisingly_effective_for_plug-and-play_diffusion_sampling.md)
 
 </div>
 

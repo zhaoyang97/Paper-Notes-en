@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation
 description: >-
-  [ICCV 2025][Segmentation][personalized segmentation] This paper introduces the Personalized Open-Vocabulary Semantic Segmentation (Personalized OVSS) task for the first time…
+  [ICCV 2025][Segmentation][personalized segmentation] This paper introduces the Personalized Open-Vocabulary Semantic Segmentation (Personalized OVSS) task for the first time, and proposes a plug-and-play method based on text prompt tuning. By incorporating negative mask proposals to suppress false positives and injecting visual embeddings to enrich personalized concept representations, the method enables recognition of user-specific object instances from only a few image-mask…
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "negative mask proposal"
   - "few-shot learning"
 date: 2026-05-08
-content_hash: dd89ef7c9b449125
+content_hash: 03d2ddde747d0a46
 ---
 
 # Personalized OVSS: Understanding Personal Concept in Open-Vocabulary Semantic Segmentation
@@ -157,8 +157,8 @@ Three lightweight components are added on top of an off-the-shelf OVSS model (e.
 - [\[ICCV 2025\] Training-Free Class Purification for Open-Vocabulary Semantic Segmentation](training-free_class_purification_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] FLOSS: Free Lunch in Open-vocabulary Semantic Segmentation](floss_free_lunch_in_openvocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Stepping Out of Similar Semantic Space for Open-Vocabulary Segmentation](stepping_out_of_similar_semantic_space_for_open-vocabulary_segmentation.md)
+- [\[CVPR 2025\] Effective SAM Combination for Open-Vocabulary Semantic Segmentation](../../CVPR2025/segmentation/effective_sam_combination_for_open-vocabulary_semantic_segmentation.md)
 - [\[ICCV 2025\] Auto-Vocabulary Semantic Segmentation](auto-vocabulary_semantic_segmentation.md)
-- [\[ICCV 2025\] CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation](corrclip_reconstructing_patch_correlations_in_clip_for_openv.md)
 
 </div>
 

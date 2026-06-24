@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Fore-Mamba3D: Mamba-based Foreground-Enhanced Encoding for 3D Object Detection
 description: >-
-  [ICLR 2026][3D Vision][Mamba] The Mamba encoder is shifted from "scanning all scene voxels" to "encoding only foreground voxels." Through two mechanisms—sliding window propagation and semantic/geometric fusion—long-range dependencies and context lost due to foreground sparsity are recovered, achieving SOTA performance on nuScenes/KITTI/Waymo with l
+  [ICLR 2026][3D Vision][Mamba] The Mamba encoder is shifted from "scanning all scene voxels" to "encoding only foreground voxels." Through two mechanisms—sliding window propagation and semantic/geometric fusion—long-range dependencies and context lost due to foreground sparsity are recovered, achieving SOTA performance on nuScenes/KITTI/Waymo with lower FLOPs.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - Mamba
-  - State Space Model
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Mamba"
+  - "Foreground Encoding"
+  - "State Space Models"
+  - "LiDAR 3D Detection"
+  - "Linear Modeling"
+  - "Hilbert Curve"
 date: 2026-05-08
 content_hash: 56890eeecd762344
 ---
+
 # Fore-Mamba3D: Mamba-based Foreground-Enhanced Encoding for 3D Object Detection
 
 **Conference**: ICLR 2026  
@@ -141,11 +146,11 @@ Sampling ratio $\alpha$ and efficiency (vs LION):
 
 ## Related Papers
 
-- [\[ICLR 2026\] 3DSMT: A Hybrid Spiking Mamba-Transformer for Point Cloud Analysis](3dsmt_a_hybrid_spiking_mamba-transformer_for_point_cloud_analysis.md)
 - [\[CVPR 2026\] RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval](../../CVPR2026/3d_vision/ri-mamba_rotation-invariant_mamba_for_robust_text-to-shape_retrieval.md)
 - [\[ICLR 2026\] Positional Encoding Field](positional_encoding_field.md)
-- [\[ICLR 2026\] GOLDILOCS: General Object-Level Detection and Labeling of Changes in Scenes](goldilocs_general_object-level_detection_and_labeling_of_changes_in_scenes.md)
-- [\[ICLR 2026\] MAVEN: A Mesh-Aware Volumetric Encoding Network for Simulating 3D Flexible Deformation](maven_a_mesh-aware_volumetric_encoding_network_for_simulating_3d_flexible_deform.md)
+- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](../../CVPR2026/3d_vision/towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[ICLR 2026\] UniUGG: Unified 3D Understanding and Generation via Geometric-Semantic Encoding](uniugg_unified_3d_understanding_and_generation_via_geometric-semantic_encoding.md)
+- [\[CVPR 2026\] SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](../../CVPR2026/3d_vision/spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)
 
 </div>
 

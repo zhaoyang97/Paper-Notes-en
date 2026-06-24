@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SWE-IF: Aligning Code Evaluation with Human Preference
 description: >-
-  [ICML 2026][Code Intelligence][vibe coding] Addressing the issue where "code evaluation only focuses on the functional correctness of pass@k but is disconnected from real user preferences," this paper proposes VERICODE (a taxonomy of 30 verifiable code instructions with deterministic verifiers) and the SWE-IF testbed. By evaluating functional correctness alongsi
+  [ICML 2026][Code Intelligence][Verifiable instructions] Addressing the issue where "code evaluation only focuses on the functional correctness of pass@k but is disconnected from real user preferences," this paper proposes VERICODE (a taxonomy of 30 verifiable code instructions with deterministic verifiers) and the SWE-IF testbed. By evaluating functional correctness alongside "instruction following" across 31 LLMs, the study finds that a composite score of functional correctn…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - vibe coding
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "Verifiable instructions"
+  - "vibe coding"
+  - "instruction following"
+  - "code evaluation"
+  - "alignment with human preferences"
 date: 2026-05-08
-content_hash: 78c7ca0fc303090c
+content_hash: 4dadb831ee4c16c7
 ---
+
 # SWE-IF: Aligning Code Evaluation with Human Preference
 
 **Conference**: ICML 2026  
@@ -135,11 +140,11 @@ The table below shows the **Functional Reduction rate** (%) under 5 instructions
 
 ## Related Papers
 
-- [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
 - [\[ICML 2026\] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale](swe-rebench_v2_language-agnostic_swe_task_collection_at_scale.md)
-- [\[ACL 2026\] From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation](../../ACL2026/code_intelligence/from_if-statements_to_ml_pipelines_revisiting_bias_in_code-generation.md)
 - [\[ICML 2026\] CentaurEval: Benchmarking Human-in-the-Loop Value in Agentic Coding](centaureval_benchmarking_human-in-the-loop_value_in_agentic_coding.md)
-- [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[ACL 2025\] UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench](../../ACL2025/code_intelligence/utboost_rigorous_evaluation_of_coding_agents_on_swe-bench.md)
+- [\[ACL 2026\] From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation](../../ACL2026/code_intelligence/from_if-statements_to_ml_pipelines_revisiting_bias_in_code-generation.md)
+- [\[ICLR 2026\] RECODE-H: A Benchmark for Research Code Development with Interactive Human Feedback](../../ICLR2026/code_intelligence/recode-h_a_benchmark_for_research_code_development_with_interactive_human_feedba.md)
 
 </div>
 

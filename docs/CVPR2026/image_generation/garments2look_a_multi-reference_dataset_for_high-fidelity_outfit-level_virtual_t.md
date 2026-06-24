@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Ours proposes Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories, 300+ subcategories). Each group contains 3-12 reference garment images, a model outfit image, and detailed text annotations, revealing significant deficiencies of existing methods in multi-layer
+  [CVPR 2026][Image Generation][Virtual Try-On] Ours proposes Garments2Look, the first large-scale multimodal outfit-level virtual try-on dataset (80K pairs, 40 categories, 300+ subcategories). Each group contains 3-12 reference garment images, a model outfit image, and detailed text annotations, revealing significant deficiencies of existing methods in multi-layer styling and accessory consistency.
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Virtual Try-On"
+  - "Multi-reference Images"
+  - "Outfit"
+  - "Dataset Construction"
 date: 2026-05-08
-content_hash: 937f91901a670699
+content_hash: f32a64488a0bef33
 ---
+
 # Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories
 
 **Conference**: CVPR 2026  
@@ -143,9 +148,9 @@ This paper is a dataset contribution and does not involve specific model trainin
 
 - [\[CVPR 2026\] PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)
 - [\[CVPR 2026\] High-Fidelity Virtual Try-On beyond Paired Data Scarcity via Diffusion-based Cycle-Consistent Learning](high-fidelity_virtual_try-on_beyond_paired_data_scarcity_via_diffusion-based_cyc.md)
+- [\[CVPR 2026\] PG-VTON: Single-Pass Training-Free Virtual Try-On via Patch-Guided Reference Alignment](pg-vton_single-pass_training-free_virtual_try-on_via_patch-guided_reference_alig.md)
 - [\[CVPR 2025\] Shining Yourself: High-Fidelity Ornaments Virtual Try-on with Diffusion Model](../../CVPR2025/image_generation/shining_yourself_high-fidelity_ornaments_virtual_try-on_with_diffusion_model.md)
 - [\[CVPR 2026\] HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images](hifi-inpaint_towards_high-fidelity_reference-based_inpainting_for_generating_det.md)
-- [\[CVPR 2026\] FEAT: Fashion Editing and Try-On from Any Design](feat_fashion_editing_and_try-on_from_any_design.md)
 
 </div>
 

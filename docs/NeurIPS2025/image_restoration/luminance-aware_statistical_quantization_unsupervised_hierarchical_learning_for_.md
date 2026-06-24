@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement
 description: >-
-  [NeurIPS 2025][Image Restoration][Low-light image enhancement] This paper proposes the LASQ framework, which reformulates low-light image enhancement (LLIE) as a statistical sampling process over hierarchical luminance d…
+  [NeurIPS 2025][Image Restoration][Low-light image enhancement] This paper proposes the LASQ framework, which reformulates low-light image enhancement (LLIE) as a statistical sampling process over hierarchical luminance distributions. By exploiting the power-law distribution inherent in natural luminance transitions, LASQ employs MCMC sampling to generate hierarchical luminance adaptation operators (LAOs) that are embedded into the forward process of a diffusion model…
 tags:
   - "NeurIPS 2025"
   - "Image Restoration"
@@ -12,7 +12,7 @@ tags:
   - "MCMC sampling"
   - "unsupervised learning"
 date: 2026-05-08
-content_hash: 21971895b66b7500
+content_hash: 8d885513297e6602
 ---
 
 # Luminance-Aware Statistical Quantization: Unsupervised Hierarchical Learning for Illumination Enhancement
@@ -176,9 +176,9 @@ LASQ preserves the performance advantages of diffusion models while achieving in
 
 - [\[ICCV 2025\] Low-Light Image Enhancement using Event-Based Illumination Estimation (RetinEV)](../../ICCV2025/image_restoration/low-light_image_enhancement_using_event-based_illumination_estimation.md)
 - [\[ICCV 2025\] Outlier-Aware Post-Training Quantization for Image Super-Resolution](../../ICCV2025/image_restoration/outlier-aware_post-training_quantization_for_image_super-resolution.md)
+- [\[CVPR 2026\] BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement](../../CVPR2026/image_restoration/bievlight_bi-level_learning_of_task-aware_event_refinement_for_low-light_image_e.md)
 - [\[AAAI 2026\] ICLR: Inter-Chrominance and Luminance Interaction for Natural Color Restoration in Low-Light Image Enhancement](../../AAAI2026/image_restoration/iclr_inter-chrominance_and_luminance_interaction_for_natural_color_restoration_i.md)
-- [\[ICLR 2026\] ProtoTS: Learning Hierarchical Prototypes for Explainable Time Series Forecasting](../../ICLR2026/image_restoration/protots_learning_hierarchical_prototypes_for_explainable_time_series_forecasting.md)
-- [\[ICCV 2025\] Learning Pixel-adaptive Multi-layer Perceptrons for Real-time Image Enhancement](../../ICCV2025/image_restoration/learning_pixel-adaptive_multi-layer_perceptrons_for_real-time_image_enhancement.md)
+- [\[ICLR 2026\] Texture Vector-Quantization and Reconstruction Aware Prediction for Generative Super-Resolution](../../ICLR2026/image_restoration/texture_vector-quantization_and_reconstruction_aware_prediction_for_generative_s.md)
 
 </div>
 

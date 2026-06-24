@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Parametric RAG] MergePRAG utilizes a hypernetwork to translate retrieved passages from each hop into "passage expert" parameters. These are incrementally superimposed into critical layers of the LLM via a continual merging mechanism based on Gram–Schmidt orthogonalization, extending parametric RAG (PRAG) from single-hop to multi-hop r
+  [ICLR 2026][Information Retrieval & RAG][Parametric RAG] MergePRAG utilizes a hypernetwork to translate retrieved passages from each hop into "passage expert" parameters. These are incrementally superimposed into critical layers of the LLM via a continual merging mechanism based on Gram–Schmidt orthogonalization, extending parametric RAG (PRAG) from single-hop to multi-hop reasoning for the first time.
 tags:
-  - ICLR 2026
-  - Information Retrieval & RAG
-  - Parametric RAG
-  - Multi-hop QA
-  - Gram–Schmidt
+  - "ICLR 2026"
+  - "Information Retrieval & RAG"
+  - "Parametric RAG"
+  - "Multi-hop QA"
+  - "Hypernetwork"
+  - "Orthogonal Merging"
+  - "Gram–Schmidt"
+  - "Knowledge Injection"
 date: 2026-05-08
-content_hash: c7b46c2dca6bbe6f
+content_hash: 4cf78984a3a181db
 ---
+
 # MergePRAG: Orthogonal Merging of Passage-experts for Multi-hop Parametric RAG
 
 **Conference**: ICLR 2026  
@@ -120,10 +124,17 @@ Comparison of merging methods: Orthogonal merging is approximately **2.4%** high
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)
+- [\[ICLR 2026\] Demystifying Deep Search: A Holistic Evaluation with Hint-free Multi-Hop Questions and Factorised Metrics](demystifying_deep_search_a_holistic_evaluation_with_hint-free_multi-hop_question.md)
+- [\[ACL 2025\] Mitigating Lost-in-Retrieval Problems in RAG Multi-Hop QA](../../ACL2025/information_retrieval/mitigating_lost-in-retrieval_problems_in_retrieval_augmented_multi-hop_question_.md)
+- [\[AAAI 2026\] REAP: Enhancing RAG with Recursive Evaluation and Adaptive Planning for Multi-Hop Question Answering](../../AAAI2026/information_retrieval/reap_enhancing_rag_with_recursive_evaluation_and_adaptive_planning_for_multi-hop.md)
+- [\[NeurIPS 2025\] Think Straight, Stop Smart: Structured Reasoning for Efficient Multi-Hop RAG](../../NeurIPS2025/information_retrieval/think_straight_stop_smart_structured_reasoning_for_efficient_multi-hop_rag.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] FrugalRAG: Less is More in RL Finetuning for Multi-hop Question Answering](frugalrag_less_is_more_in_rl_finetuning_for_multi-hop_question_answering.md)

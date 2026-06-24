@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] LMM-Det: Make Large Multimodal Models Excel in Object Detection
 description: >-
-  [ICCV 2025][Object Detection][Large multimodal models] This paper proposes LMM-Det, which through systematic analysis identifies low recall as the core bottleneck of large multimodal models (LMMs) in object detection. By…
+  [ICCV 2025][Object Detection][Large multimodal models] This paper proposes LMM-Det, which through systematic analysis identifies low recall as the core bottleneck of large multimodal models (LMMs) in object detection. By applying data distribution adjustment (pseudo-label augmentation) and inference optimization (per-category detection), LMM-Det improves COCO AP from 0.2 to 47.5 without any additional specialized detection modules.
 tags:
   - "ICCV 2025"
   - "Object Detection"
@@ -11,7 +11,7 @@ tags:
   - "data distribution adjustment"
   - "inference optimization"
 date: 2026-05-08
-content_hash: c7250443d5303106
+content_hash: 082ec3083c9ab762
 ---
 
 # LMM-Det: Make Large Multimodal Models Excel in Object Detection
@@ -155,11 +155,11 @@ Training uses 595K image-text pairs and 1.86M images, conducted across 6 nodes (
 
 ## Related Papers
 
+- [\[CVPR 2025\] Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models](../../CVPR2025/object_detection/towards_zero-shot_anomaly_detection_and_reasoning_with_multimodal_large_language.md)
 - [\[ICCV 2025\] Adversarial Attention Perturbations for Large Object Detection Transformers](adversarial_attention_perturbations_for_large_object_detection_transformers.md)
+- [\[CVPR 2025\] Large Self-Supervised Models Bridge the Gap in Domain Adaptive Object Detection](../../CVPR2025/object_detection/large_self-supervised_models_bridge_the_gap_in_domain_adaptive_object_detection.md)
 - [\[ICCV 2025\] Kaputt: A Large-Scale Dataset for Visual Defect Detection](kaputt_a_large-scale_dataset_for_visual_defect_detection.md)
 - [\[ICCV 2025\] Revisiting Adversarial Patch Defenses on Object Detectors: Unified Evaluation, Large-Scale Dataset, and New Insights](revisiting_adversarial_patch_defenses_on_object_detectors_unified_evaluation_lar.md)
-- [\[CVPR 2026\] MMR-AD: A Large-Scale Multimodal Dataset for Benchmarking General Anomaly Detection with MLLMs](../../CVPR2026/object_detection/mmrad_multimodal_anomaly_detection.md)
-- [\[ICCV 2025\] Large-scale Pre-training for Grounded Video Caption Generation](large-scale_pre-training_for_grounded_video_caption_generation.md)
 
 </div>
 

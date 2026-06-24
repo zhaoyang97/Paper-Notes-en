@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities
 description: >-
-  [Image Generation] > This paper proposes VLN-PE, the first physically realistic vision-and-language navigation platform supporting humanoid, quadruped…
+  [Image Generation] > This paper proposes VLN-PE, the first physically realistic vision-and-language navigation platform supporting humanoid, quadruped, and wheeled robots. It systematically evaluates existing VLN methods under real physical constraints, revealing a 34% drop in success rate when transferring from simulation to physical deployment.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: e3cfa257520c4a3c
+content_hash: b55d471cdc697327
 ---
 
 # Rethinking the Embodied Gap in Vision-and-Language Navigation: A Holistic Study of Physical and Visual Disparities

@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Neodragon: Mobile Video Generation Using Diffusion Transformer
 description: >-
-  [ICLR 2026][Video Generation][Diffusion Transformer] Neodragon compresses a video DiT (based on Pyramidal-Flow) into the Qualcomm Hexagon NPU of smartphones/laptops through four major operations: text encoder distillation, asymmetric decoder distillation, MMDiT block pruning, and step distillation extended to pyramidal flow matching (DMD). It generates 49 frames of $640
+  [ICLR 2026][Video Generation][Video Diffusion Model] Neodragon compresses a video DiT (based on Pyramidal-Flow) into the Qualcomm Hexagon NPU of smartphones/laptops through four major operations: text encoder distillation, asymmetric decoder distillation, MMDiT block pruning, and step distillation extended to pyramidal flow matching (DMD). It generates 49 frames of $640 \times 1024$ video in ~6.7 seconds, achieving a VBench total score of 81.61 and setting a new SOTA for on-d…
 tags:
-  - ICLR 2026
-  - Video Generation
-  - Diffusion Transformer
+  - "ICLR 2026"
+  - "Video Generation"
+  - "Video Diffusion Model"
+  - "Diffusion Transformer"
+  - "On-device Deployment"
+  - "Distillation"
+  - "Block Pruning"
+  - "Step Distillation"
+  - "DMD"
 date: 2026-05-08
-content_hash: 0b3972161eba6b6a
+content_hash: 04bcc09c42d8f680
 ---
+
 # Neodragon: Mobile Video Generation Using Diffusion Transformer
 
 **Conference**: ICLR 2026  
@@ -119,14 +126,17 @@ flowchart LR
 
 <div class="related-papers" markdown="1">
 
-- **AMD-Hummingbird**: Video Diffusion Models on Consumer Devices.
-- **Pyramidal-Flow**: Simple and Efficient Video Generation via Pyramidal Diffusion.
-- **DMD**: Distribution Matching Distillation for Fast Diffusion Models.
+## Related Papers
+
+- [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
+- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
+- [\[ICLR 2026\] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification](quantsparse_comprehensively_compressing_video_diffusion_transformer_with_model_q.md)
+- [\[CVPR 2025\] Tora: Trajectory-Oriented Diffusion Transformer for Video Generation](../../CVPR2025/video_generation/tora_trajectory-oriented_diffusion_transformer_for_video_generation.md)
+- [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Syncphony: 用扩散 Transformer 实现音画同步的音频到视频生成](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)

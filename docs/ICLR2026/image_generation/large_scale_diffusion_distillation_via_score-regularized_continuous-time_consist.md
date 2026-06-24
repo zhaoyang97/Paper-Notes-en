@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency
 description: >-
-  [ICLR 2026][Image Generation][JVP] The authors propose rCM (score-regularized continuous-time consistency model), which extends continuous-time consistency distillation to 14B parameter text-to-image/video models for the first time. By combining forward divergence (consistency) and backward divergence (score distillation), the method matches the quality
+  [ICLR 2026][Image Generation][Continuous-time Consistency Models] The authors propose rCM (score-regularized continuous-time consistency model), which extends continuous-time consistency distillation to 14B parameter text-to-image/video models for the first time. By combining forward divergence (consistency) and backward divergence (score distillation), the method matches the quality of DMD2 while preserving diversity, achieving 15-50× acceleration.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - JVP
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Continuous-time Consistency Models"
+  - "Score Distillation"
+  - "Large-scale Distillation"
+  - "JVP"
+  - "Few-step Generation"
 date: 2026-05-08
-content_hash: 8c833f3f537310ed
+content_hash: 4c0d40305713f0da
 ---
+
 # Large Scale Diffusion Distillation via Score-Regularized Continuous-Time Consistency
 
 **Conference**: ICLR 2026  
@@ -139,7 +144,7 @@ The sCM term uses a tangent-normalized form $\mathcal{L}_{\text{sCM}} = \mathbb{
 - [\[ICLR 2026\] Scale-wise Distillation of Diffusion Models](scale-wise_distillation_of_diffusion_models.md)
 - [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
 - [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
-- [\[ICLR 2026\] Motion Prior Distillation in Time Reversal Sampling for Generative Inbetweening](motion_prior_distillation_in_time_reversal_sampling_for_generative_inbetweening.md)
+- [\[ICLR 2026\] Score Distillation Beyond Acceleration: Generative Modeling from Corrupted Data](score_distillation_beyond_acceleration_generative_modeling_from_corrupted_data.md)
 
 </div>
 

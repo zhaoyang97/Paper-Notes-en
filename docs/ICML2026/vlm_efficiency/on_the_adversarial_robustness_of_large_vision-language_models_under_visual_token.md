@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression
 description: >-
-  [ICML 2026][vlm_efficiency][Robustness Evaluation] This paper presents the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) under visual token compression. It identifies an "optimization-inference space mismatch" in existing encoder attacks and proposes the CAGE attack. By utilizing Expected Feature Distortion (EFD) and Ranki
+  [ICML 2026][Multimodal Efficiency][Visual Token Compression] This paper presents the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) under visual token compression. It identifies an "optimization-inference space mismatch" in existing encoder attacks and proposes the CAGE attack. By utilizing Expected Feature Distortion (EFD) and Ranking-Distortion Alignment (RDA), CAGE significantly reduces the robust accuracy of compressed LVLMs u…
 tags:
-  - ICML 2026
-  - vlm_efficiency
-  - Robustness Evaluation
-  - LVLM
+  - "ICML 2026"
+  - "Multimodal Efficiency"
+  - "Visual Token Compression"
+  - "Adversarial Attack"
+  - "Robustness Evaluation"
+  - "LVLM"
+  - "Encoder Attack"
 date: 2026-05-08
-content_hash: d6be1460050bab4e
+content_hash: e172337811fff680
 ---
+
 # On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression
 
 **Conference**: ICML 2026  
@@ -132,15 +136,14 @@ Evaluation was conducted on LLaVA using 5 representative compression methods acr
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/vlm_efficiency/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
 - [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](../../CVPR2026/vlm_efficiency/hybrid_token_compression_for_vision-language_models.md)
 - [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](../../CVPR2026/vlm_efficiency/evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
-- [\[ECCV 2024\] IVTP: Instruction-Guided Visual Token Pruning for Large Vision-Language Models](../../ECCV2024/vlm_efficiency/ivtp_instruction-guided_visual_token_pruning_for_large_vision-language_models.md)
-- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[AAAI 2026\] Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](../../AAAI2026/vlm_efficiency/rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)
+- [\[ICLR 2026\] Task-Related Token Compression in Multimodal Large Language Models from an Explainability Perspective](../../ICLR2026/vlm_efficiency/task-related_token_compression_in_multimodal_large_language_models_from_an_expla.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](../../CVPR2026/vlm_efficiency/rethinking_token_reduction_for_large_vision-language_models.md)
 
 </div>
 

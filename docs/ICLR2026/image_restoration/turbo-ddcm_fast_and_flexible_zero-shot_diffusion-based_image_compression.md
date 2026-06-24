@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression
 description: >-
-  [ICLR 2026][Image Restoration][Diffusion Model] This paper replaces the stepwise "Greedy Matching Pursuit" of the zero-shot diffusion compression method DDCM with a closed-form sparse least squares selection rule. By combining hundreds of noise atoms simultaneously in each step, the diffusion steps are reduced by 92%, cutting the round-trip compression-decompression
+  [ICLR 2026][Image Restoration][Zero-shot Compression] This paper replaces the stepwise "Greedy Matching Pursuit" of the zero-shot diffusion compression method DDCM with a closed-form sparse least squares selection rule. By combining hundreds of noise atoms simultaneously in each step, the diffusion steps are reduced by 92%, cutting the round-trip compression-decompression time per image from 65 seconds to 1.8 seconds while maintaining SOTA-level quality and supporting flexibl…
 tags:
-  - ICLR 2026
-  - Image Restoration
-  - Diffusion Model
-  - DDCM
+  - "ICLR 2026"
+  - "Image Restoration"
+  - "Zero-shot Compression"
+  - "Diffusion Models"
+  - "DDCM"
+  - "Sparse Least Squares"
+  - "Priority-aware"
 date: 2026-05-08
-content_hash: 8127f2407dc25323
+content_hash: 043dd98b492d82bf
 ---
+
 # Turbo-DDCM: Fast and Flexible Zero-Shot Diffusion-Based Image Compression
 
 **Conference**: ICLR 2026  
@@ -128,7 +132,7 @@ On the rate-distortion-perception front, Turbo-DDCM outperforms PSC and achieves
 - [\[CVPR 2026\] MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](../../CVPR2026/image_restoration/mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)
 - [\[ICLR 2026\] Improved Adversarial Diffusion Compression for Real-World Video Super-Resolution](improved_adversarial_diffusion_compression_for_real-world_video_super-resolution.md)
 - [\[CVPR 2026\] Zero-Shot Image Denoising via Hybrid Prior-Guided Pseudo Sample Generation](../../CVPR2026/image_restoration/zero-shot_image_denoising_via_hybrid_prior-guided_pseudo_sample_generation.md)
-- [\[ICLR 2026\] Energy-oriented Diffusion Bridge for Image Restoration with Foundational Diffusion Models](energy-oriented_diffusion_bridge_for_image_restoration_with_foundational_diffusi.md)
+- [\[CVPR 2026\] Self-supervised Dynamic Heterogeneous Degradation Modeling for Unified Zero-Shot Image Restoration](../../CVPR2026/image_restoration/self-supervised_dynamic_heterogeneous_degradation_modeling_for_unified_zero-shot.md)
 
 </div>
 

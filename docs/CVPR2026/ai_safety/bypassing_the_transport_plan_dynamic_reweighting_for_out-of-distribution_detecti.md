@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] To address the lack of OOD labels in open-set semi-supervised learning, this paper proposes DREW: modeling batch-level OOD detection as Semi-Unbalanced Optimal Transport (SemiUOT). Through "dynamic reweighting," it is equivalently transformed into classical OT, allowing pseudo OOD scores to be directly read from the so
+  [CVPR 2026][AI Safety][OOD Detection] To address the lack of OOD labels in open-set semi-supervised learning, this paper proposes DREW: modeling batch-level OOD detection as Semi-Unbalanced Optimal Transport (SemiUOT). Through "dynamic reweighting," it is equivalently transformed into classical OT, allowing pseudo OOD scores to be directly read from the source distribution weights—bypassing the computation of the full transport plan $\pi$. This yields more accurate…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "OOD Detection"
+  - "Optimal Transport"
+  - "Semi-supervised Learning"
+  - "Open-set SSL"
+  - "Dynamic Reweighting"
 date: 2026-05-08
-content_hash: ea42407a9e5e8599
+content_hash: 75a4b39738ef78b9
 ---
+
 # Bypassing the Transport Plan: Dynamic Reweighting for Out-of-Distribution Detection with Optimal Transport
 
 **Conference**: CVPR 2026  
@@ -130,10 +136,20 @@ Comparison of supervision signals on CIFAR-100:
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Optimal Transport-Induced Samples against Out-of-Distribution Overconfidence](../../ICLR2026/ai_safety/optimal_transport-induced_samples_against_out-of-distribution_overconfidence.md)
+- [\[CVPR 2026\] RankOOD: Class Ranking-based Out-of-Distribution Detection](rankood_-_class_ranking-based_out-of-distribution_detection.md)
+- [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](../../ICML2026/ai_safety/optimal_transport_under_group_fairness_constraints.md)
+- [\[CVPR 2026\] Enhancing Out-of-Distribution Detection with Extended Logit Normalization](enhancing_out-of-distribution_detection_with_extended_logit_normalization.md)
+- [\[CVPR 2026\] Sparsity as a Key: Unlocking New Insights from Latent Structures for Out-of-Distribution Detection](sparsity_as_a_key_unlocking_new_insights_from_latent_structures_for_out-of-distr.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] SubFLOT: Submodel Extraction for Efficient and Personalized Federated Learning via Optimal Transport](subflot_submodel_extraction_for_efficient_and_personalized_federated_learning_vi.md)

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution
 description: >-
-  [Image Restoration] This paper demonstrates that the statistical isotropy of turbulence itself constitutes a form of implicit data augmentation…
+  [Image Restoration] This paper demonstrates that the statistical isotropy of turbulence itself constitutes a form of implicit data augmentation, enabling standard CNNs to partially learn rotational equivariance in super-resolution tasks without explicit rotation augmentation or equivariant architectures. The authors further show that the scale dependence of equivariance error is consistent with Kolmogorov's local isotropy hypothesis.
 tags:
   - "Image Restoration"
 date: 2026-05-08
-content_hash: 8d89659079e3038a
+content_hash: 72d0d34a91aeb291
 ---
 
 # Implicit Augmentation from Distributional Symmetry in Turbulence Super-Resolution
@@ -160,10 +160,10 @@ Subdomain sizes are chosen to capture a significant portion of the inertial rang
 ## Related Papers
 
 - [\[NeurIPS 2025\] Latent Harmony: Synergistic Unified UHD Image Restoration via Latent Space Regularization and Controllable Refinement](latent_harmony_synergistic_unified_uhd_image_restoration_with_pre-trained_diffus.md)
+- [\[ICLR 2026\] SuperF: Neural Implicit Fields for Multi-Image Super-Resolution](../../ICLR2026/image_restoration/superf_neural_implicit_fields_for_multi-image_super-resolution.md)
+- [\[CVPR 2026\] Edge-Focused Super-Resolution for Omnidirectional Images with Spherical Geometric Augmentation](../../CVPR2026/image_restoration/edge-focused_super-resolution_for_omnidirectional_images_with_spherical_geometri.md)
 - [\[NeurIPS 2025\] Audio Super-Resolution with Latent Bridge Models](audio_super-resolution_with_latent_bridge_models.md)
-- [\[CVPR 2026\] The Surprising Effectiveness of Noise Pretraining for Implicit Neural Representations](../../CVPR2026/image_restoration/the_surprising_effectiveness_of_noise_pretraining_for_implicit_neural_representa.md)
-- [\[NeurIPS 2025\] FIPER: Factorized Features for Robust Image Super-Resolution and Compression](fiper_factorized_features_for_robust_image_super-resolution_and_compression.md)
-- [\[NeurIPS 2025\] DP²O-SR: Direct Perceptual Preference Optimization for Real-World Image Super-Resolution](dp2o-sr_direct_perceptual_preference_optimization_for_real-world_image_super-res.md)
+- [\[CVPR 2025\] EQ-Reg: A Regularization-Guided Equivariant Approach for Image Restoration](../../CVPR2025/image_restoration/a_regularization-guided_equivariant_approach_for_image_restoration.md)
 
 </div>
 

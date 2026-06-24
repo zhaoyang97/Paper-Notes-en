@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate
 description: >-
-  [ICML 2026][Others][Paper Note] This paper proposes ReWA: by reparameterizing the target variable as $\boldsymbol{x}=\boldsymbol{y}^{K}$, applying weight decay to $\boldsymbol{y}$, and utilizing a coordinate-wise adaptive step size $\eta_t \boldsymbol{y}^{M}/(\boldsymbol{y}^{K-1}+\epsilon)$, it equivalently transforms the non-optimizable $\ell_p\;(0<
+  [ICML 2026][Sparse Optimization] This paper proposes ReWA: by reparameterizing the target variable as $\boldsymbol{x}=\boldsymbol{y}^{K}$, applying weight decay to $\boldsymbol{y}$, and utilizing a coordinate-wise adaptive step size $\eta_t \boldsymbol{y}^{M}/(\boldsymbol{y}^{K-1}+\epsilon)$, it equivalently transforms the non-optimizable $\ell_p\;(0<p<1)$ sparse regularization into a trainable objective with bounded gradients and resistance to zero-saddle points. Sparsity im…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML 2026"
+  - "Sparse Optimization"
+  - "$\\ell_p$ Regularization"
+  - "Reparameterization"
+  - "Weight Decay"
+  - "Adaptive Learning Rate"
 date: 2026-05-08
-content_hash: 11fe5e6fc1ba067d
+content_hash: 097de3f577610fed
 ---
+
 # Theoretical Analysis of Sparse Optimization with Reparameterization, Weight Decay, and Adaptive Learning Rate
 
 **Conference**: ICML 2026  
@@ -118,8 +123,8 @@ Using ResNet backbones on CIFAR-10 / ImageNet, the goal is to compare sparsity r
 
 - [\[AAAI 2026\] Theoretical and Empirical Analysis of Lehmer Codes to Search Permutation Spaces with Evolutionary Algorithms](../../AAAI2026/others/theoretical_and_empirical_analysis_of_lehmer_codes_to_search_permutation_spaces_.md)
 - [\[NeurIPS 2025\] Overfitting in Adaptive Robust Optimization](../../NeurIPS2025/others/overfitting_in_adaptive_robust_optimization.md)
-- [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](torus_graphs_for_large_scale_neural_phase_analysis.md)
 - [\[ICML 2025\] Sparse Training from Random Initialization: Aligning Lottery Ticket Masks using Weight Symmetry](../../ICML2025/others/sparse_training_from_random_initialization_aligning_lottery_ticket_masks_using_w.md)
+- [\[ICML 2026\] Torus Graphs for Large-Scale Neural Phase Analysis](torus_graphs_for_large_scale_neural_phase_analysis.md)
 - [\[ICML 2026\] DisjunctiveNet: Neural Symbolic Learning via Differentiable Convexified Optimization Layers](disjunctivenet_neural_symbolic_learning_via_differentiable_convexified_optimizat.md)
 
 </div>

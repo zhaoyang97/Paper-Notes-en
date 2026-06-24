@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] This work provides the first systematic diagnosis of two root causes preventing VLA model merging (selfish parameter conflicts in LoRA and task coupling caused by self-attention in action experts). It proposes MergeVLA—a framework that merges multiple single-skill VLA experts into a generalist agent using task-masked s
+  [CVPR 2026][Robotics][VLA Model Merging] This work provides the first systematic diagnosis of two root causes preventing VLA model merging (selfish parameter conflicts in LoRA and task coupling caused by self-attention in action experts). It proposes MergeVLA—a framework that merges multiple single-skill VLA experts into a generalist agent using task-masked sparse LoRA activation, de-self-attention action experts, and training-free test-time routing. It achieves a 90.2% succe…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA Model Merging"
+  - "Multi-skill Robot"
+  - "Sparse LoRA Mask"
+  - "Action Expert Redesign"
+  - "Test-time Task Routing"
 date: 2026-05-08
-content_hash: 85435969d97df400
+content_hash: aa59874eab6f016a
 ---
+
 # MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent
 
 **Conference**: CVPR 2026  
@@ -163,7 +169,7 @@ Each task is fine-tuned independently (LoRA + action expert from scratch) using 
 - [\[CVPR 2026\] Cross-Hand Latent Representation for Vision-Language-Action Models](cross-hand_latent_representation_for_vision-language-action_models.md)
 - [\[CVPR 2026\] Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment](evo-1_lightweight_vision-language-action_model_with_preserved_semantic_alignment.md)
 - [\[CVPR 2026\] Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight](mantis_a_versatile_vision-language-action_model_with_disentangled_visual_foresig.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
+- [\[ICLR 2026\] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](../../ICLR2026/robotics/robust_fine-tuning_of_vision-language-action_robot_policies_via_parameter_mergin.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
 
 </div>

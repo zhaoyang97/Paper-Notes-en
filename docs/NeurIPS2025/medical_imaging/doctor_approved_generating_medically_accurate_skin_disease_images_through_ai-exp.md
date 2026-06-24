@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback
 description: >-
-  [NeurIPS 2025][Medical Imaging][Medical image generation] This paper proposes MAGIC, a framework that encodes dermatologist-defined clinical checklists into structured evaluation prompts executable by MLLMs (e.g.…
+  [NeurIPS 2025][Medical Imaging][Medical image generation] This paper proposes MAGIC, a framework that encodes dermatologist-defined clinical checklists into structured evaluation prompts executable by MLLMs (e.g., GPT-4o), and uses the resulting feedback to fine-tune diffusion models via DPO or reward-based fine-tuning (RFT), generating clinically accurate skin disease images for data augmentation. MAGIC achieves +9.02% improvement on a 20-class skin disease classification ta…
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "AI feedback"
   - "skin disease diagnosis"
 date: 2026-05-08
-content_hash: 669c2106612917d6
+content_hash: 9642912562f62bbf
 ---
 
 # Doctor Approved: Generating Medically Accurate Skin Disease Images through AI-Expert Feedback
@@ -141,9 +141,9 @@ The MAGIC pipeline consists of four stages: (1) pre-fine-tuning Stable Diffusion
 
 - [\[NeurIPS 2025\] Dynamic Causal Discovery in Alzheimer's Disease through Latent Pseudotime Modelling](dynamic_causal_discovery_in_alzheimers_disease_through_latent_pseudotime_modelli.md)
 - [\[NeurIPS 2025\] Online Feedback Efficient Active Target Discovery in Partially Observable Environments](online_feedback_efficient_active_target_discovery_in_partially_observable_enviro.md)
-- [\[NeurIPS 2025\] DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders](dermacon-in_a_multi-concept_annotated_dermatological_image_dataset_of_indian_ski.md)
+- [\[CVPR 2025\] TopoCellGen: Generating Histopathology Cell Topology with a Diffusion Model](../../CVPR2025/medical_imaging/topocellgen_generating_histopathology_cell_topology_with_a_diffusion_model.md)
 - [\[NeurIPS 2025\] The Boundaries of Fair AI in Medical Image Prognosis: A Causal Perspective](the_boundaries_of_fair_ai_in_medical_image_prognosis_a_causal_perspective.md)
-- [\[NeurIPS 2025\] SMMILE: An Expert-Driven Benchmark for Multimodal Medical In-Context Learning](smmile_an_expert-driven_benchmark_for_multimodal_medical_in-context_learning.md)
+- [\[NeurIPS 2025\] DermaCon-IN: A Multi-concept Annotated Dermatological Image Dataset of Indian Skin Disorders](dermacon-in_a_multi-concept_annotated_dermatological_image_dataset_of_indian_ski.md)
 
 </div>
 

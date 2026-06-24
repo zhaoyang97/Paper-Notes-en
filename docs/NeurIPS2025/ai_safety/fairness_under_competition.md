@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Fairness under Competition
 description: >-
-  [NeurIPS 2025][AI Safety][Algorithmic Fairness] This paper is the first to study the joint fairness of multiple fair classifiers operating in a competitive environment. It theoretically demonstrates that even when each i…
+  [NeurIPS 2025][AI Safety][Algorithmic Fairness] This paper is the first to study the joint fairness of multiple fair classifiers operating in a competitive environment. It theoretically demonstrates that even when each individual classifier satisfies Equal Opportunity (EO), the ecosystem as a whole may remain unfair, and that applying fairness adjustments to a biased classifier can paradoxically reduce ecosystem-level fairness.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "Multi-Classifier Fairness"
   - "Ecosystem Fairness"
 date: 2026-05-08
-content_hash: d2d1887c7f0eab8b
+content_hash: 4ce017d0fba6509e
 ---
 
 # Fairness under Competition
@@ -150,10 +150,10 @@ Experiments use approximately 890K loan records from Lending Club (2007–2015),
 ## Related Papers
 
 - [\[NeurIPS 2025\] Cost Efficient Fairness Audit Under Partial Feedback](cost_efficient_fairness_audit_under_partial_feedback.md)
-- [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
+- [\[ICML 2025\] Accelerating Spectral Clustering under Fairness Constraints](../../ICML2025/ai_safety/accelerating_spectral_clustering_under_fairness_constraints.md)
 - [\[ICML 2026\] Optimal Transport under Group Fairness Constraints](../../ICML2026/ai_safety/optimal_transport_under_group_fairness_constraints.md)
-- [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](reconstruction_and_secrecy_under_approximate_distance_queries.md)
-- [\[NeurIPS 2025\] Preserving Task-Relevant Information Under Linear Concept Removal](preserving_task-relevant_information_under_linear_concept_removal.md)
+- [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
+- [\[NeurIPS 2025\] It's Complicated: The Relationship of Algorithmic Fairness and Non-Discrimination Provisions for High-Risk Systems in the EU AI Act](its_complicated_the_relationship_of_algorithmic_fairness_and_non-discrimination_.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ePC: Fast and Deep Predictive Coding in Digital Simulation
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper identifies a neglected root cause where "state-based Predictive Coding (sPC) exponentially decays training signals with network depth in digital simulations," leading to training failure and extremely slow convergence in deep networks. The authors propose ePC, an equivalent reparameterization that changes th
+  [ICML2026][Optimization][Predictive Coding] This paper identifies a neglected root cause where "state-based Predictive Coding (sPC) exponentially decays training signals with network depth in digital simulations," leading to training failure and extremely slow convergence in deep networks. The authors propose ePC, an equivalent reparameterization that changes the optimization variable from states to errors. It calculates exactly the same state equilibria and weight gradients…
 tags:
-  - ICML 2026
-  - Optimization & Theory
+  - "ICML2026"
+  - "Optimization"
+  - "Predictive Coding"
+  - "Backpropagation Alternative"
+  - "Signal Decay"
+  - "Deep Scalability"
+  - "Energy Minimization"
 date: 2026-05-08
-content_hash: b2fbb82c49458e3f
+content_hash: 4c3954e52d1bfb5a
 ---
+
 # ePC: Fast and Deep Predictive Coding in Digital Simulation
 
 **Conference**: ICML2026  
@@ -141,11 +147,11 @@ Following the benchmarks of Pinchetti et al. (2025), backpropagation is used as 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Difference Predictive Coding for Training Spiking Neural Networks](../../ICLR2026/optimization/difference_predictive_coding_for_training_spiking_neural_networks.md)
+- [\[ICML 2026\] A2SG: Adaptive and Asymmetric Surrogate Gradients for Training Deep Spiking Neural Networks](a2sgadaptive_and_asymmetric_surrogate_gradients_for_training_deep_spiking_neural.md)
+- [\[ICML 2026\] Bulk-Calibrated Credal Ambiguity Sets: Fast, Tractable Decision Making under Out-of-Sample Contamination](bulk-calibrated_credal_ambiguity_sets_fast_tractable_decision_making_under_out-o.md)
 - [\[ICML 2026\] $α$-PFN: Fast Entropy Search via In-Context Learning](α-pfn_fast_entropy_search_via_in-context_learning.md)
-- [\[ICML 2026\] LiMuon: Light and Fast Muon Optimizer for Large Models](limuon_light_and_fast_muon_optimizer_for_large_models.md)
-- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](../../ICLR2026/optimization/deepafl_deep_analytic_federated_learning.md)
-- [\[AAAI 2026\] ECPv2: Fast, Efficient, and Scalable Global Optimization of Lipschitz Functions](../../AAAI2026/optimization/ecpv2_fast_efficient_and_scalable_global_optimization_of_lipschitz_functions.md)
-- [\[ICML 2025\] AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs](../../ICML2025/optimization/advprompter_fast_adaptive_adversarial_prompting_for_llms.md)
+- [\[ICLR 2026\] Differentiable Model Predictive Control on the GPU](../../ICLR2026/optimization/differentiable_model_predictive_control_on_the_gpu.md)
 
 </div>
 

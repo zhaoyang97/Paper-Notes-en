@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] TAR3D: Creating High-Quality 3D Assets via Next-Part Prediction
 description: >-
-  [ICCV2025][3D Vision][3D generation] TAR3D is proposed as the first framework to quantize triplane representations into discrete geometric parts and generate them autoregressively via GPT. A 3D VQ-VAE encodes meshes of a…
+  [ICCV2025][3D Vision][3D generation] TAR3D is proposed as the first framework to quantize triplane representations into discrete geometric parts and generate them autoregressively via GPT. A 3D VQ-VAE encodes meshes of arbitrary face counts into fixed-length sequences, while TriPE positional encoding preserves 3D spatial information. The method comprehensively outperforms existing approaches on text/image-to-3D tasks.
 tags:
   - "ICCV2025"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "next-part prediction"
   - "GPT"
 date: 2026-05-08
-content_hash: fc9674d0542f047d
+content_hash: 4d765a9e520ae049
 ---
 
 # TAR3D: Creating High-Quality 3D Assets via Next-Part Prediction
@@ -178,8 +178,8 @@ TAR3D consists of two core modules: a **3D VQ-VAE** that encodes 3D shapes into 
 - [\[ICCV 2025\] TAPNext: Tracking Any Point (TAP) as Next Token Prediction](tapnext_tracking_any_point_tap_as_next_token_prediction.md)
 - [\[ICCV 2025\] AR-1-to-3: Single Image to Consistent 3D Object Generation via Next-View Prediction](ar1to3_single_image_to_consistent_3d_object_via_nextview_pre.md)
 - [\[NeurIPS 2025\] ARMesh: Autoregressive Mesh Generation via Next-Level-of-Detail Prediction](../../NeurIPS2025/3d_vision/armesh_autoregressive_mesh_generation_via_next-level-of-detail_prediction.md)
-- [\[ICCV 2025\] Bridging 3D Anomaly Localization and Repair via High-Quality Continuous Geometric Representation](bridging_3d_anomaly_localization_and_repair_via_high-qualit.md)
 - [\[NeurIPS 2025\] Dynamics of Spontaneous Topic Changes in Next Token Prediction with Self-Attention](../../NeurIPS2025/3d_vision/dynamics_of_spontaneous_topic_changes_in_next_token_prediction_with_self-attenti.md)
+- [\[CVPR 2026\] PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](../../CVPR2026/3d_vision/pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)
 
 </div>
 

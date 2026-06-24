@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Forget Forgetting: Continual Learning in a World of Abundant Memory
 description: >-
-  [ICLR 2026][Others][Paper Note] When storage is cheap and the GPU is the bottleneck, the primary challenge of continual learning flips from "preventing forgetting" to "preserving plasticity." This paper proposes a lightweight weight-space method (ranked parameter reset + in-training weight averaging) to recover both stability and plasticity at a cost
+  [ICLR 2026][Continual Learning] When storage is cheap and the GPU is the bottleneck, the primary challenge of continual learning flips from "preventing forgetting" to "preserving plasticity." This paper proposes a lightweight weight-space method (ranked parameter reset + in-training weight averaging) to recover both stability and plasticity at a cost comparable to naive Replay.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Continual Learning"
+  - "Abundant Replay Memory"
+  - "Stability-Plasticity"
+  - "Weight Space"
+  - "Parameter Reset"
+  - "Weight Averaging"
+  - "Computational Efficiency"
 date: 2026-05-08
-content_hash: 33779672b7695450
+content_hash: 8f38a055ee4a8107
 ---
+
 # Forget Forgetting: Continual Learning in a World of Abundant Memory
 
 **Conference**: ICLR 2026  
@@ -117,11 +124,11 @@ Importance Measures (Table 4): The momentum-based $S_l=|\hat m_l|\hat v_l$ match
 
 ## Related Papers
 
+- [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
 - [\[ICML 2026\] Continual Learning of Domain-Invariant Representations](../../ICML2026/others/continual_learning_of_domain-invariant_representations.md)
 - [\[AAAI 2026\] Forget Less by Learning from Parents Through Hierarchical Relationships](../../AAAI2026/others/forget_less_by_learning_from_parents_through_hierarchical_relationships.md)
-- [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
+- [\[ICLR 2026\] MaRS: Memory-Adaptive Routing for Reliable Capacity Expansion and Knowledge Retention](mars_memory-adaptive_routing_for_reliable_capacity_expansion_and_knowledge_reten.md)
 - [\[ICLR 2026\] Hippoformer: Integrating Hippocampus-inspired Spatial Memory with Transformers](hippoformer_integrating_hippocampus-inspired_spatial_memory_with_transformers.md)
-- [\[AAAI 2026\] Why Isn't Relational Learning Taking Over the World?](../../AAAI2026/others/why_isnt_relational_learning_taking_over_the_world.md)
 
 </div>
 

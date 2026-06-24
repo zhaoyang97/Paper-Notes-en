@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks
 description: >-
-  [ICML 2026][Audio & Speech][ACAV100M] MECAT constructs 20k multi-perspective fine-grained audio captions and 100k open-ended QA pairs using a "multi-expert models + CoT LLM reasoning" pipeline. It proposes the DATE metric (harmonic mean of semantic similarity and cross-sample discriminability), achieving the first stable differentiation between generic and
+  [ICML 2026][Audio & Speech][Fine-grained Audio Understanding] MECAT constructs 20k multi-perspective fine-grained audio captions and 100k open-ended QA pairs using a "multi-expert models + CoT LLM reasoning" pipeline. It proposes the DATE metric (harmonic mean of semantic similarity and cross-sample discriminability), achieving the first stable differentiation between generic and detailed audio model outputs.
 tags:
-  - ICML 2026
-  - Audio & Speech
-  - ACAV100M
+  - "ICML 2026"
+  - "Audio & Speech"
+  - "Fine-grained Audio Understanding"
+  - "Multi-expert Pipeline"
+  - "Open-ended QA"
+  - "Discriminative Metric DATE"
+  - "ACAV100M"
 date: 2026-05-08
-content_hash: 657be6196b2c2fcc
+content_hash: 966fef303aff1eb7
 ---
+
 # MECAT: A Multi-Experts Constructed Benchmark for Fine-Grained Audio Understanding Tasks
 
 **Conference**: ICML 2026  
@@ -126,15 +131,16 @@ DATE (%) performance of SOTA LALMs on MECAT-Caption (Abridged Table 2):
 - Value: ⭐⭐⭐⭐⭐ Provides a new "data + metric" standard for open-ended audio understanding.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Towards Fine-Grained and Multi-Granular Contrastive Language-Speech Pre-training](../../ACL2026/audio_speech/towards_fine-grained_and_multi-granular_contrastive_language-speech_pre-training.md)
+- [\[ACL 2026\] FIGMA: Towards Fine-Grained Music Retrieval](../../ACL2026/audio_speech/figma_towards_fine-grained_music_retrieval.md)
 - [\[CVPR 2026\] AMUSE: Audio-Visual Benchmark and Alignment Framework for Agentic Multi-Speaker Understanding](../../CVPR2026/audio_speech/amuse_audio-visual_benchmark_and_alignment_framework_for_agentic_multi-speaker_u.md)
 - [\[ICLR 2026\] MMSU: A Massive Multi-task Spoken Language Understanding and Reasoning Benchmark](../../ICLR2026/audio_speech/mmsu_a_massive_multi-task_spoken_language_understanding_and_reasoning_benchmark.md)
 - [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](../../CVPR2026/audio_speech/foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
-- [\[ACL 2026\] SegTune: Structured and Fine-Grained Control for Song Generation](../../ACL2026/audio_speech/segtune_structured_and_fine-grained_control_for_song_generation.md)
 
 </div>
 

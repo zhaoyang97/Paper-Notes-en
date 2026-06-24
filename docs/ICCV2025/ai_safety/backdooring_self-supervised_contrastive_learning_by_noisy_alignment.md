@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Backdooring Self-Supervised Contrastive Learning by Noisy Alignment
 description: >-
-  [ICCV 2025][AI Safety][self-supervised learning] This paper proposes Noisy Alignment (NA), a method that enhances backdoor attacks against self-supervised contrastive learning by explicitly suppressing noise components i…
+  [ICCV 2025][AI Safety][self-supervised learning] This paper proposes Noisy Alignment (NA), a method that enhances backdoor attacks against self-supervised contrastive learning by explicitly suppressing noise components in poisoned images. The attack is formulated as a 2D image layout optimization problem, and theoretically optimal layout parameters are derived. NA achieves up to 45.9% improvement in ASR on ImageNet-100.
 tags:
   - "ICCV 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "data poisoning"
   - "noisy alignment"
 date: 2026-05-08
-content_hash: 578b2e2a91dc1fb3
+content_hash: cb26a29516dba559
 ---
 
 # Backdooring Self-Supervised Contrastive Learning by Noisy Alignment
@@ -142,10 +142,10 @@ The attacker does not modify the training loss. Once poisoned samples are inject
 
 ## Related Papers
 
+- [\[CVPR 2025\] INACTIVE: Invisible Backdoor Attack against Self-supervised Learning](../../CVPR2025/ai_safety/invisible_backdoor_attack_against_self-supervised_learning.md)
 - [\[NeurIPS 2025\] FairContrast: Enhancing Fairness through Contrastive Learning and Customized Augmentation](../../NeurIPS2025/ai_safety/faircontrast_enhancing_fairness_through_contrastive_learning_and_customized_augm.md)
-- [\[ICLR 2026\] Less is More: Towards Simple Graph Contrastive Learning](../../ICLR2026/ai_safety/less_is_more_towards_simple_graph_contrastive_learning.md)
-- [\[CVPR 2026\] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning](../../CVPR2026/ai_safety/proxyfl_a_proxy-guided_framework_for_federated_semi-supervised_learning.md)
 - [\[ICCV 2025\] Semantic Alignment and Reinforcement for Data-Free Quantization of Vision Transformers](semantic_alignment_and_reinforcement_for_data-free_quantization_of_vision_transf.md)
+- [\[CVPR 2025\] Detecting Backdoor Attacks in Federated Learning via Direction Alignment Inspection](../../CVPR2025/ai_safety/detecting_backdoor_attacks_in_federated_learning_via_direction_alignment_inspect.md)
 - [\[ICCV 2025\] Towards Adversarial Robustness via Debiased High-Confidence Logit Alignment](towards_adversarial_robustness_via_debiased_high-confidence_logit_alignment.md)
 
 </div>

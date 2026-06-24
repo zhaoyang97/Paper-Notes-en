@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MSQ: Memory-Efficient Bit Sparsification Quantization
 description: >-
-  [ICCV 2025][Model Compression][mixed-precision quantization] MSQ is proposed to achieve mixed-precision quantization discovery by computing the least significant bit (LSB) directly from weights via a RoundClamp quantizer…
+  [ICCV 2025][Model Compression][mixed-precision quantization] MSQ is proposed to achieve mixed-precision quantization discovery by computing the least significant bit (LSB) directly from weights via a RoundClamp quantizer and imposing L1 regularization to induce sparsity, without explicitly creating bit-level trainable parameters. This reduces trainable parameters by 8× and training time by 86% while maintaining competitive accuracy–compression trade-offs.
 tags:
   - "ICCV 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "memory-efficient"
   - "Hessian"
 date: 2026-05-08
-content_hash: 2c1eaccafd9d727b
+content_hash: ac49c545acb3ed36
 ---
 
 # MSQ: Memory-Efficient Bit Sparsification Quantization
@@ -144,10 +144,10 @@ The insight that "each bit need not be trained independently" suggests that many
 ## Related Papers
 
 - [\[ICCV 2025\] Task Vector Quantization for Memory-Efficient Model Merging](task_vector_quantization_for_memory-efficient_model_merging.md)
+- [\[ICLR 2026\] Optimal Brain Restoration for Joint Quantization and Sparsification of LLMs](../../ICLR2026/model_compression/optimal_brain_restoration_for_joint_quantization_and_sparsification_of_llms.md)
 - [\[NeurIPS 2025\] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization](../../NeurIPS2025/model_compression/paretoq_improving_scaling_laws_in_extremely_low-bit_llm_quantization.md)
-- [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](scheduling_weight_transitions_for_quantization-aware_training.md)
-- [\[ICML 2026\] NanoQuant: Efficient Sub-1-Bit Quantization of Large Language Models](../../ICML2026/model_compression/nanoquant_efficient_sub-1-bit_quantization_of_large_language_models.md)
 - [\[NeurIPS 2025\] Memory-Efficient Training with In-Place FFT Implementation](../../NeurIPS2025/model_compression/memory-efficient_training_with_in-place_fft_implementation.md)
+- [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](scheduling_weight_transitions_for_quantization-aware_training.md)
 
 </div>
 

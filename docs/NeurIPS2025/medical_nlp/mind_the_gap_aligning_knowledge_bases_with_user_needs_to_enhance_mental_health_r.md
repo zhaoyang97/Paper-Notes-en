@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval
 description: >-
-  [NeurIPS 2025][Medical NLP][RAG] This paper proposes a knowledge base augmentation framework grounded in "demand gap" analysis. By overlaying real user data (forum posts) onto existing mental health resource repositories…
+  [NeurIPS 2025][Medical LLM][RAG] This paper proposes a knowledge base augmentation framework grounded in "demand gap" analysis. By overlaying real user data (forum posts) onto existing mental health resource repositories to identify content voids, the framework applies targeted augmentation strategies to achieve near-full-corpus RAG retrieval quality with minimal document additions.
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "RAG"
   - "knowledge base augmentation"
   - "mental health"
   - "gap analysis"
   - "corpus expansion"
 date: 2026-05-08
-content_hash: 442a1cc4755930c5
+content_hash: 3590d0252cb3eb11
 ---
 
 # Mind the Gap: Aligning Knowledge Bases with User Needs to Enhance Mental Health Retrieval
@@ -135,10 +135,10 @@ where $\alpha = 1.5$ amplifies the influence of weakly covered topics.
 ## Related Papers
 
 - [\[ACL 2026\] MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](../../ACL2026/medical_nlp/mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)
-- [\[ICLR 2026\] BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases](../../ICLR2026/medical_nlp/biomedsql_text-to-sql_for_scientific_reasoning_on_biomedical_knowledge_bases.md)
+- [\[ACL 2025\] Aligning AI Research with the Needs of Clinical Coding Workflows: Eight Recommendations Based on US Data Analysis and Critical Review](../../ACL2025/medical_nlp/clinical_coding_eight_recommendations.md)
+- [\[ICML 2025\] On the Vulnerability of Applying Retrieval-Augmented Generation within Knowledge-Intensive Application Domains](../../ICML2025/medical_nlp/on_the_vulnerability_of_applying_retrieval-augmented_generation_within_knowledge.md)
 - [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](../../ACL2026/medical_nlp/responsible_evaluation_of_ai_for_mental_health.md)
 - [\[AAAI 2026\] Voices, Faces, and Feelings: Multi-modal Emotion-Cognition Captioning for Mental Health Understanding](../../AAAI2026/medical_nlp/voices_faces_and_feelings_multi-modal_emotion-cognition_captioning_for_mental_he.md)
-- [\[NeurIPS 2025\] Demo: Guide-RAG: Evidence-Driven Corpus Curation for Retrieval-Augmented Generation in Long COVID](demo_guide-rag_evidence-driven_corpus_curation_for_retrieval-augmented_generatio.md)
 
 </div>
 

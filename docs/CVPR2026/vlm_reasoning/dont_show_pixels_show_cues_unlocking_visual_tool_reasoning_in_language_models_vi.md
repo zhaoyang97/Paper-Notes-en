@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs
 description: >-
-  [CVPR 2026][Multimodal VLM][Perception Program] When connecting MLLMs to visual tools like depth, optical flow, or matching, the bottleneck is not the number of tool calls or model size, but "how the tool output is fed." This paper proposes Perception Program (P2), which **rewrites raw dense pixel-level tool outputs into compact, structured, language-native symbolic
+  [CVPR 2026][VLM Reasoning][Visual Tool Reasoning] When connecting MLLMs to visual tools like depth, optical flow, or matching, the bottleneck is not the number of tool calls or model size, but "how the tool output is fed." This paper proposes Perception Program (P2), which **rewrites raw dense pixel-level tool outputs into compact, structured, language-native symbolic summaries**. It can be inserted into any MLLM without training or architectural changes. It achieves an avera…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Perception Program
+  - "CVPR 2026"
+  - "VLM Reasoning"
+  - "Visual Tool Reasoning"
+  - "Perception Program"
+  - "Training-free"
+  - "Multimodal LLM"
+  - "Representation Alignment"
 date: 2026-05-08
-content_hash: be1fb3ed8d7e0cb7
+content_hash: 7bd9417192c2cb0a
 ---
+
 # Don't Show Pixels, Show Cues: Unlocking Visual Tool Reasoning in Language Models via Perception Programs
 
 **Conference**: CVPR 2026  
@@ -129,15 +134,16 @@ P2 also scales well for small models. 4B-class models with P2 can match or excee
 - Value: ⭐⭐⭐⭐⭐ High feasibility for deployment with zero training cost and significant gains for small models.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Perception Programs: Unlocking Visual Tool Reasoning in Language Models](perception_programs_visual_tool_reasoning.md)
-- [\[CVPR 2026\] Synthesizing Visual Concepts as Vision-Language Programs](synthesizing_visual_concepts_as_vision-language_programs.md)
+- [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
 - [\[CVPR 2026\] Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees](pop_proof_of_perception_conformal_reasoning.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[CVPR 2026\] CodeDance: A Dynamic Tool-integrated MLLM for Executable Visual Reasoning](codedance_a_dynamic_tool-integrated_mllm_for_executable_visual_reasoning.md)
+- [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
+- [\[CVPR 2026\] Improving Vision-language Models with Perception-centric Process Reward Models](improving_vision-language_models_with_perception-centric_process_reward_models.md)
+- [\[CVPR 2026\] Dr. Seg: Revisiting GRPO Training for Visual Large Language Models through Perception-Oriented Design](dr_seg_revisiting_grpo_training_for_visual_large_language_models_through_percept.md)
 
 </div>
 

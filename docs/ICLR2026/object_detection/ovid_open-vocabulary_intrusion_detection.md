@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OVID: Open-Vocabulary Intrusion Detection
 description: >-
-  [ICLR 2026][Object Detection][Paper Note] This paper proposes the "Open-Vocabulary Intrusion Detection (OVID)" task for the first time, constructs the Cityintrusion-OpenV dataset with 8 intrusion categories, and designs an end-to-end multi-modal framework, OVIDNet. By leveraging text-image feature alignment to identify intrusion categories unseen during traini
+  [ICLR 2026][Object Detection][Intrusion Detection] This paper proposes the "Open-Vocabulary Intrusion Detection (OVID)" task for the first time, constructs the Cityintrusion-OpenV dataset with 8 intrusion categories, and designs an end-to-end multi-modal framework, OVIDNet. By leveraging text-image feature alignment to identify intrusion categories unseen during training and incorporating two plug-and-play strategies (multi-distribution noise mixing and dynamic memory gating)…
 tags:
-  - ICLR 2026
-  - Object Detection
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Intrusion Detection"
+  - "Open-Vocabulary"
+  - "Multi-modal Alignment"
+  - "Detection+Segmentation"
+  - "Memory Gating"
 date: 2026-05-08
-content_hash: 699b81a9d5c5d91a
+content_hash: 3c4ada91f315e739
 ---
+
 # OVID: Open-Vocabulary Intrusion Detection
 
 **Conference**: ICLR 2026  

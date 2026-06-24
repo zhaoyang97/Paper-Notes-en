@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] To address the issue of sample corruption in Masked Diffusion Models (MDM) during few-step sampling caused by "independent prediction across dimensions," this paper proposes VADD. By introducing a Gaussian latent variable $z$ into the denoising distribution and jointly training the denoising and recognition models via
+  [ICLR 2026][Image Generation][Discrete Diffusion] To address the issue of sample corruption in Masked Diffusion Models (MDM) during few-step sampling caused by "independent prediction across dimensions," this paper proposes VADD. By introducing a Gaussian latent variable $z$ into the denoising distribution and jointly training the denoising and recognition models via a Variational Autoencoder (VAE) framework, it implicitly models inter-dimensional correlations. This significa…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Discrete Diffusion"
+  - "Masked Diffusion Models"
+  - "VAE"
+  - "Latent Variables"
+  - "Dimensional Correlations"
 date: 2026-05-08
-content_hash: 4725642f7203db7f
+content_hash: 6771b70f50629435
 ---
+
 # Variational Autoencoding Discrete Diffusion with Enhanced Dimensional Correlations Modeling
 
 **Conference**: ICLR 2026  
@@ -158,10 +164,10 @@ For likelihood/perplexity: binarized MNIST BPD improved from 0.075 to **0.063**,
 ## Related Papers
 
 - [\[ICLR 2026\] Discrete Variational Autoencoding via Policy Search](discrete_variational_autoencoding_via_policy_search.md)
-- [\[ICML 2025\] Distillation of Discrete Diffusion through Dimensional Correlations (Di4C)](../../ICML2025/image_generation/distillation_of_discrete_diffusion_through_dimensional_correlations.md)
+- [\[ICLR 2026\] Pareto Variational Autoencoder](pareto_variational_autoencoder.md)
 - [\[ICLR 2026\] Purrception: Variational Flow Matching for Vector-Quantized Image Generation](purrception_variational_flow_matching_for_vector-quantized_image_generation.md)
+- [\[ICML 2025\] Distillation of Discrete Diffusion through Dimensional Correlations (Di4C)](../../ICML2025/image_generation/distillation_of_discrete_diffusion_through_dimensional_correlations.md)
 - [\[ICLR 2026\] Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall](loopholing_discrete_diffusion_deterministic_bypass_of_the_sampling_wall.md)
-- [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
 
 </div>
 

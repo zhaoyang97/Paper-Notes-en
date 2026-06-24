@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] MonoCoP transforms the coupled attributes of size, orientation, and depth in monocular 3D detection from "independent parallel prediction" to **feature-level chain-of-prediction** (size→orientation→depth propagation with residual aggregation). It employs an **Uncertainty-Guided Selector** to dynamically switch between
+  [CVPR 2026][3D Vision][Monocular 3D Detection] MonoCoP transforms the coupled attributes of size, orientation, and depth in monocular 3D detection from "independent parallel prediction" to **feature-level chain-of-prediction** (size→orientation→depth propagation with residual aggregation). It employs an **Uncertainty-Guided Selector** to dynamically switch between chain and parallel paths, significantly improving 3D detection performance on KITTI, nuScenes, and Waymo…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Monocular 3D Detection"
+  - "Attribute Correlation"
+  - "Chain-of-Prediction"
+  - "Uncertainty Routing"
+  - "Depth Estimation"
 date: 2026-05-08
-content_hash: d95013bf361e628b
+content_hash: 661e49831c2ea885
 ---
+
 # Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection
 
 **Conference**: CVPR 2026  
@@ -148,10 +154,10 @@ Internal breakdown of CoP components and prediction order:
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
+- [\[CVPR 2026\] LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)
+- [\[CVPR 2026\] RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)
 - [\[CVPR 2026\] MonoSAOD: Monocular 3D Object Detection with Sparsely Annotated Label](monosaod_monocular_3d_object_detection_with_sparsely_annotated_label.md)
 - [\[CVPR 2026\] GeoSAM2: Unleashing the Power of SAM2 for 3D Part Segmentation](geosam2_unleashing_the_power_of_sam2_for_3d_part_segmentation.md)
-- [\[CVPR 2026\] SPAN: Spatial-Projection Alignment for Monocular 3D Object Detection](span_spatial-projection_alignment_for_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] MSGNav: Unleashing the Power of Multi-modal 3D Scene Graph for Zero-Shot Embodied Navigation](msgnav_unleashing_the_power_of_multi-modal_3d_scene_graph_for_zero-shot_embodied.md)
 
 </div>
 

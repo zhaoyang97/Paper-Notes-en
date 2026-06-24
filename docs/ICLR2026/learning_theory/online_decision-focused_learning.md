@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Online Decision-Focused Learning
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper generalizes Decision-Focused Learning (DFL) from the i.i.d. batch setting to an online setting where objective functions vary over time. By employing two strategies—regularizing the inner problem for differentiability and utilizing approximate oracles with perturbations to handle non-convexity—the authors pr
+  [ICLR 2026][Learning Theory][Static/Dynamic regret] This paper generalizes Decision-Focused Learning (DFL) from the i.i.d. batch setting to an online setting where objective functions vary over time. By employing two strategies—regularizing the inner problem for differentiability and utilizing approximate oracles with perturbations to handle non-convexity—the authors propose DF-FTPL and DF-OGD algorithms, providing provable static and dynamic regret upper bounds…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Online Learning"
+  - "Decision-Focused Learning"
+  - "Static/Dynamic regret"
+  - "Bi-level optimization"
+  - "Perturbed leader"
 date: 2026-05-08
-content_hash: 0f64a7744c3723be
+content_hash: 6ec167cbe305cad4
 ---
+
 # Online Decision-Focused Learning
 
 **Conference**: ICLR 2026  
@@ -115,14 +121,17 @@ Experimentation utilizes a knapsack problem where items are selected based on pr
 
 <div class="related-papers" markdown="1">
 
-- **Smart Predict-then-Optimize** (Elmachtoub & Grigas, 2022)
-- **Melding the Data-Decisions Pipeline** (Wilder et al., 2019)
-- **Follow the Perturbed Leader** (Suggala & Netrapalli, 2020)
+## Related Papers
+
+- [\[ICLR 2026\] Online Decision Making with Generative Action Sets](online_decision_making_with_generative_action_sets.md)
+- [\[ICLR 2026\] Online Learning and Equilibrium Computation with Ranking Feedback](online_learning_and_equilibrium_computation_with_ranking_feedback.md)
+- [\[ICLR 2026\] Oracle-Efficient Hybrid Online Learning with Constrained Adversaries](oracle-efficient_hybrid_learning_with_constrained_adversaries.md)
+- [\[ICLR 2026\] Conformalized Decision Risk Assessment](conformalized_decision_risk_assessment.md)
+- [\[ICLR 2026\] Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms](decision-theoretic_approaches_for_improved_learning-augmented_algorithms.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Online Decision Making with Generative Action Sets](online_decision_making_with_generative_action_sets.md)

@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Simultaneous Multi-objective Alignment Across Verifiable and Non-verifiable Rewards
 description: >-
-  [ICML 2026][Alignment & RLHF][Multi-Action-Head DPO] MAHALO integrates "standardized PRM training + Multi-Action-Head DPO + PRM-guided decoding with KV-cache continuation" into a unified framework. This allows a single LLM to be simultaneously aligned across three categories: mathematics (verifiable), human values (non-verifiable), and Socratic tutoring (interactive), wh
+  [ICML2026][LLM Alignment][Multi-objective alignment] MAHALO integrates "standardized PRM training + Multi-Action-Head DPO + PRM-guided decoding with KV-cache continuation" into a unified framework. This allows a single LLM to be simultaneously aligned across three categories: mathematics (verifiable), human values (non-verifiable), and Socratic tutoring (interactive), while enabling smooth preference switching during inference through head weights and PRM selection.
 tags:
-  - ICML 2026
-  - Alignment & RLHF
-  - Multi-Action-Head DPO
-  - PRM-guided decoding
+  - "ICML2026"
+  - "LLM Alignment"
+  - "Multi-objective alignment"
+  - "Multi-Action-Head DPO"
+  - "PRM-guided decoding"
+  - "Process Reward Model"
+  - "Verifiable/Non-verifiable rewards"
 date: 2026-05-08
-content_hash: 60e52ffb7ee891af
+content_hash: 202b043f1143e011
 ---
+
 # Simultaneous Multi-objective Alignment Across Verifiable and Non-verifiable Rewards
 
 **Conference**: ICML2026  
@@ -154,10 +158,10 @@ The combination of training and inference pushes the Pareto front outward, revea
 ## Related Papers
 
 - [\[ICML 2026\] Decoupling Reasoning and Confidence: Resurrecting Calibration in Reinforcement Learning from Verifiable Rewards](decoupling_reasoning_and_confidence_resurrecting_calibration_in_reinforcement_le.md)
-- [\[ICML 2026\] Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling](mitigating_reward_hacking_in_rlhf_via_bayesian_non-negative_reward_modeling.md)
-- [\[ACL 2026\] Teaching LLM to be Persuasive: Reward-Enhanced Policy Optimization for Alignment from Heterogeneous Rewards](../../ACL2026/llm_alignment/teaching_llm_to_be_persuasive_reward-enhanced_policy_optimization_for_alignment_.md)
-- [\[ACL 2025\] AMoPO: Adaptive Multi-objective Preference Optimization without Reward Models and Reference Models](../../ACL2025/llm_alignment/amopo_adaptive_multi-objective_preference_optimization_without_reward_models_and.md)
-- [\[CVPR 2026\] Unlocking Token Rewards via Training-Free Reward Attribution](../../CVPR2026/llm_alignment/unlocking_token_rewards_via_training-free_reward_attribution.md)
+- [\[ICLR 2026\] RLBFF: Binary Flexible Feedback to Bridge Between Human Feedback & Verifiable Rewards](../../ICLR2026/llm_alignment/rlbff_binary_flexible_feedback_to_bridge_between_human_feedback_verifiable_rewar.md)
+- [\[ICLR 2026\] OrthAlign: Orthogonal Subspace Decomposition for Non-Interfering Multi-Objective Alignment](../../ICLR2026/llm_alignment/orthalign_orthogonal_subspace_decomposition_for_non-interfering_multi-objective_.md)
+- [\[ICLR 2026\] Multi-objective Large Language Model Alignment with Hierarchical Experts](../../ICLR2026/llm_alignment/multi-objective_large_language_model_alignment_with_hierarchical_experts.md)
+- [\[ICLR 2026\] Bradley–Terry and Multi-Objective Reward Modeling Are Complementary](../../ICLR2026/llm_alignment/bradley-terry_and_multi-objective_reward_modeling_are_complementary.md)
 
 </div>
 

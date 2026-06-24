@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement
 description: >-
-  [CVPR 2026][Segmentation][Paper Note] HOPS utilizes a bidirectional attention fusion mechanism of "CLIP Semantics $\otimes$ DINO Structure" within a two-stage framework to address Open-vocabulary Part Segmentation (OVPS). The first stage employs an Attention-Aware Filtering Module (AFM) to eliminate object-level over-segmentation, while the second stage us
+  [CVPR 2026][Segmentation][Open-vocabulary Part Segmentation] HOPS utilizes a bidirectional attention fusion mechanism of "CLIP Semantics $\otimes$ DINO Structure" within a two-stage framework to address Open-vocabulary Part Segmentation (OVPS). The first stage employs an Attention-Aware Filtering Module (AFM) to eliminate object-level over-segmentation, while the second stage uses an Affinity-Guided Enhancement Module (AEM) to iteratively expand weak activations for small par…
 tags:
-  - CVPR 2026
-  - Segmentation
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Open-vocabulary Part Segmentation"
+  - "CLIP-DINO Fusion"
+  - "Attention Filtering"
+  - "Affinity Propagation"
+  - "Over-segmentation/Under-segmentation"
 date: 2026-05-08
-content_hash: 9bd4a461b465f815
+content_hash: 85e5f830f17b734c
 ---
+
 # HOPS: Hierarchical Open-vocabulary Part Segmentation with Attention-Aware Filtering and Affinity-Guided Enhancement
 
 **Conference**: CVPR 2026  
@@ -167,8 +173,8 @@ AEM Components (PartImageNet, Tab. 8):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation](../../NeurIPS2025/segmentation/langhops_language_grounded_hierarchical_open-vocabulary_part_segmentation.md)
 - [\[CVPR 2026\] Frequency-Aware Affinity for Weakly Supervised Semantic Segmentation](frequency-aware_affinity_for_weakly_supervised_semantic_segmentation.md)
+- [\[NeurIPS 2025\] LangHOPS: Language Grounded Hierarchical Open-Vocabulary Part Segmentation](../../NeurIPS2025/segmentation/langhops_language_grounded_hierarchical_open-vocabulary_part_segmentation.md)
 - [\[CVPR 2026\] GeoGuide: Hierarchical Geometric Guidance for Open-Vocabulary 3D Semantic Segmentation](geoguide_hierarchical_geometric_guidance_for_open-vocabulary_3d_semantic_segment.md)
 - [\[CVPR 2026\] PCA-Seg: Revisiting Cost Aggregation for Open-Vocabulary Semantic and Part Segmentation](pca-seg_revisiting_cost_aggregation_for_openvocabulary_semantic_and_part_segmentat.md)
 - [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)

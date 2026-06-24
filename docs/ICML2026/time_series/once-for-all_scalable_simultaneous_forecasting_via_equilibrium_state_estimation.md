@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Once-for-All: Scalable Simultaneous Forecasting via Equilibrium State Estimation
 description: >-
-  [ICML 2026][Time Series][Paper Note] Aiming at scenarios where "multiple interacting systems must be predicted simultaneously" (e.g., exchange rates of 16 countries, new COVID-19 cases in hundreds of counties), this paper proposes Equilibrium State Estimation (ESE). It first estimates the "equilibrium state proportions" of all systems in one go, then perf
+  [ICML2026][Time Series][Multi-system Forecasting] Aiming at scenarios where "multiple interacting systems must be predicted simultaneously" (e.g., exchange rates of 16 countries, new COVID-19 cases in hundreds of counties), this paper proposes Equilibrium State Estimation (ESE). It first estimates the "equilibrium state proportions" of all systems in one go, then performs single-pass forecasting based on the direction of current state deviation from equilibrium. This replaces…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML2026"
+  - "Time Series"
+  - "Multi-system Forecasting"
+  - "Equilibrium State Estimation"
+  - "Cointegration Convergence"
+  - "Linear Complexity"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 91ceffc6cab8ae2c
+content_hash: 252e52f26ddd69ab
 ---
+
 # Once-for-All: Scalable Simultaneous Forecasting via Equilibrium State Estimation
 
 **Conference**: ICML2026  
@@ -127,9 +133,9 @@ Key Observations: (1) ESE alone is highly competitive and never ranks last, ofte
 
 - [\[AAAI 2026\] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching](../../AAAI2026/time_series/detecting_the_future_all-at-once_event_sequence_forecasting_with_horizon_matchin.md)
 - [\[ICLR 2026\] Are Global Dependencies Necessary? Scalable Time Series Forecasting via Local Cross-Variate Modeling](../../ICLR2026/time_series/are_global_dependencies_necessary_scalable_time_series_forecasting_via_local_cro.md)
+- [\[ICLR 2026\] ConvT3: Structured State Kernels for Convolutional State Space Models](../../ICLR2026/time_series/convt3_structured_state_kernels_for_convolutional_state_space_models.md)
 - [\[ICML 2026\] HiPPO Zoo: Explicit Memory Mechanisms for Interpretable State Space Models](hippo_zoo_explicit_memory_mechanisms_for_interpretable_state_space_models.md)
-- [\[ICML 2026\] FRACTAL: State Space Model with Fractional Recurrent Architecture for Computational Temporal Analysis of Long Sequences](fractal_ssm_with_fractional_recurrent_architecture_for_computational_temporal_an.md)
-- [\[ICML 2025\] Winner-takes-all for Multivariate Probabilistic Time Series Forecasting](../../ICML2025/time_series/winner-takes-all_for_multivariate_probabilistic_time_series_forecasting.md)
+- [\[ICLR 2026\] A General Spatio-Temporal Backbone with Scalable Contextual Pattern Bank for Urban Continual Forecasting](../../ICLR2026/time_series/a_general_spatio-temporal_backbone_with_scalable_contextual_pattern_bank_for_urb.md)
 
 </div>
 

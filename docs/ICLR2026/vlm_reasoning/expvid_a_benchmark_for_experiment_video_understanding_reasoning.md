@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] ExpVid is the first benchmark to systematically evaluate the capability of Multimodal Large Language Models (MLLMs) in understanding **real-world wet-lab experiment videos**. Using a three-level task hierarchy of "Fine-grained Perception $\rightarrow$ Procedure Understanding $\rightarrow$ Scientific Reasoning," it reve
+  [ICLR 2026][VLM Reasoning][MLLM] ExpVid is the first benchmark to systematically evaluate the capability of Multimodal Large Language Models (MLLMs) in understanding **real-world wet-lab experiment videos**. Using a three-level task hierarchy of "Fine-grained Perception $\rightarrow$ Procedure Understanding $\rightarrow$ Scientific Reasoning," it reveals that current models excel at coarse-grained recognition but suffer significant performance drops in detail identification…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
-  - wet-lab
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "MLLM"
+  - "Experiment Video"
+  - "Scientific Reasoning"
+  - "wet-lab"
+  - "Fine-grained Perception"
+  - "Procedure Understanding"
 date: 2026-05-08
-content_hash: 3ba749d6782bc40b
+content_hash: f7ea2ba4a323eda3
 ---
+
 # ExpVid: A Benchmark for Experiment Video Understanding & Reasoning
 
 **Conference**: ICLR 2026  
@@ -123,10 +128,10 @@ flowchart LR
 ## Related Papers
 
 - [\[CVPR 2026\] Towards Sparse Video Understanding and Reasoning](../../CVPR2026/vlm_reasoning/towards_sparse_video_understanding_and_reasoning.md)
+- [\[ICLR 2026\] VideoMathQA: Benchmarking Mathematical Reasoning via Multimodal Understanding in Video](videomathqa_benchmarking_mathematical_reasoning_via_multimodal_understanding_in_.md)
 - [\[ICLR 2026\] IV-Bench: A Benchmark for Image-Grounded Video Perception and Reasoning in Multimodal LLMs](iv-bench_a_benchmark_for_image-grounded_video_perception_and_reasoning_in_multim.md)
 - [\[CVPR 2026\] Agentic Video Summarization via Self-Reflecting Multimodal Understanding](../../CVPR2026/vlm_reasoning/agentic_video_summarization_via_self-reflecting_multimodal_understanding.md)
 - [\[ICLR 2026\] TimeSearch-R: Adaptive Temporal Search for Long-Form Video Understanding via Self-Verification Reinforcement Learning](timesearch-r_adaptive_temporal_search_for_long-form_video_understanding_via_self.md)
-- [\[ICML 2026\] VideoKR: Towards Knowledge- and Reasoning-Intensive Video Understanding](../../ICML2026/vlm_reasoning/videokr_towards_knowledge-_and_reasoning-intensive_video_understanding.md)
 
 </div>
 

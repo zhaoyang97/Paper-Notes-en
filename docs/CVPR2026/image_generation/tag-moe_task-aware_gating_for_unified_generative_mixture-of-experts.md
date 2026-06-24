@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TAG-MoE: Task-Aware Gating for Unified Generative Mixture-of-Experts
 description: >-
-  [CVPR 2026][Image Generation][Paper Note] Addressing the severe task interference problem in unified image generation and editing models, this paper proposes the TAG-MoE framework. By using a hierarchical task semantic annotation scheme and predictive alignment regularization, high-level task intent is injected into local MoE routing decisions. This evolves th
+  [CVPR 2026][Image Generation][Mixture-of-Experts] Addressing the severe task interference problem in unified image generation and editing models, this paper proposes the TAG-MoE framework. By using a hierarchical task semantic annotation scheme and predictive alignment regularization, high-level task intent is injected into local MoE routing decisions. This evolves the gating network from a task-agnostic executor into a semantic-aware scheduling center…
 tags:
-  - CVPR 2026
-  - Image Generation
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Mixture-of-Experts"
+  - "Task-Aware Routing"
+  - "Unified Image Generation and Editing"
+  - "Diffusion Transformer"
+  - "Task Interference"
 date: 2026-05-08
-content_hash: ff632b6dfbe3387f
+content_hash: 00f84291af5e8b91
 ---
+
 # TAG-MoE: Task-Aware Gating for Unified Generative Mixture-of-Experts
 
 **Conference**: CVPR 2026  
@@ -150,11 +156,11 @@ The total loss is the sum of three terms: $\mathcal{L}_{total} = \mathcal{L}_{fl
 
 ## Related Papers
 
+- [\[CVPR 2026\] Mixture of Style Experts for Diverse Image Stylization](mixture_of_style_experts_for_diverse_image_stylization.md)
 - [\[CVPR 2026\] CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)
 - [\[CVPR 2026\] Taming Generative Diffusion Model for Task-Oriented Infrared Imaging](taming_generative_diffusion_model_for_task-oriented_infrared_imaging.md)
 - [\[CVPR 2026\] PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback](posteromni_generalized_artistic_poster_creation_via_task_distillation_and_unifie.md)
-- [\[AAAI 2026\] Mixture of Ranks with Degradation-Aware Routing for One-Step Real-World Image Super-Resolution](../../AAAI2026/image_generation/mixture_of_ranks_with_degradation-aware_routing_for_one-step_real-world_image_su.md)
-- [\[CVPR 2026\] Unified Customized Generation by Disentangled Reward Modeling](unified_customized_generation_by_disentangled_reward_modeling.md)
+- [\[ICLR 2026\] Multi-Subspace Multi-Modal Modeling for Diffusion Models: Estimation, Convergence and Mixture of Experts](../../ICLR2026/image_generation/multi-subspace_multi-modal_modeling_for_diffusion_models_estimation_convergence_.md)
 
 </div>
 

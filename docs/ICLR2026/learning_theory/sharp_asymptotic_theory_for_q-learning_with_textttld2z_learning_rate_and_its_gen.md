@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization
 description: >-
-  [ICLR 2026][learning_theory][Q-learning] This paper provides the first complete set of asymptotic theories for Q-learning using "Linear Decay to Zero" (LD2Z, $\eta_{t,n}=\eta(1-t/n)$) and its power-law generalization (PD2Z-$\nu$, $\eta_{t,n}=\eta(1-t/n)^\nu$). This includes sharp non-asymptotic error bounds, a Central Limit Theorem (CLT) for tail Polyak-Ruppe
+  [ICLR 2026][Learning Theory][Q-learning] This paper provides the first complete set of asymptotic theories for Q-learning using "Linear Decay to Zero" (LD2Z, $\eta_{t,n}=\eta(1-t/n)$) and its power-law generalization (PD2Z-$\nu$, $\eta_{t,n}=\eta(1-t/n)^\nu$). This includes sharp non-asymptotic error bounds, a Central Limit Theorem (CLT) for tail Polyak-Ruppert averaging estimators, and a strong invariance principle (time-consistent Gaussian approximation) for partial sum pro…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - Q-learning
-  - LD2Z
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Reinforcement Learning Theory"
+  - "Q-learning"
+  - "Learning Rate Scheduling"
+  - "LD2Z"
+  - "Non-asymptotic Error Bounds"
+  - "Strong Invariance Principle"
 date: 2026-05-08
-content_hash: 094f6a906c7b0ac9
+content_hash: b43d0b35c60bc9bc
 ---
+
 # Sharp Asymptotic Theory for Q-Learning with LD2Z Learning Rate and Its Generalization
 
 **Conference**: ICLR 2026  
@@ -116,6 +121,7 @@ Experiments are numerical simulations performed on a $4\times4$ FrozenLake grid 
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -123,8 +129,8 @@ Experiments are numerical simulations performed on a $4\times4$ FrozenLake grid 
 - [\[ICLR 2026\] Learning Admissible Heuristics for A*: Theory and Practice](learning_admissible_heuristics_for_a_theory_and_practice.md)
 - [\[ICLR 2026\] Towards a Sharp Analysis of Offline Policy Learning for f-Divergence-Regularized Contextual Bandits](towards_a_sharp_analysis_of_offline_policy_learning_for_f-divergence-regularized.md)
 - [\[ICML 2026\] Performative Learning Theory](../../ICML2026/learning_theory/performative_learning_theory.md)
+- [\[ICLR 2026\] Almost Bayesian: Dynamics of SGD Through Singular Learning Theory](almost_bayesian_dynamics_of_sgd_through_singular_learning_theory.md)
 - [\[ICLR 2026\] Pretrain–Test Task Alignment Governs Generalization in In-Context Learning](pretraintest_task_alignment_governs_generalization_in_in-context_learning.md)
-- [\[ICLR 2026\] Understanding the Dynamics of Forgetting and Generalization in Continual Learning via the Neural Tangent Kernel](understanding_the_dynamics_of_forgetting_and_generalization_in_continual_learnin.md)
 
 </div>
 

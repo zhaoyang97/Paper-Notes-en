@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 description: >-
-  [ACL 2026][vlm_reasoning][Chain-of-Inquiry] This paper introduces the PlantInquiryVQA benchmark and the Chain-of-Inquiry (CoI) framework, comprising 24,950 plant images and 138,068 QA pairs. It simulates the adaptive diagnostic questioning strategies of botanists to evaluate the multi-step visual reasoning capabilities of 18 MLLMs in plant pathology. Findings sh
+  [ACL 2026 Findings][VLM Reasoning][Plant Pathological VQA] This paper introduces the PlantInquiryVQA benchmark and the Chain-of-Inquiry (CoI) framework, comprising 24,950 plant images and 138,068 QA pairs. It simulates the adaptive diagnostic questioning strategies of botanists to evaluate the multi-step visual reasoning capabilities of 18 MLLMs in plant pathology. Findings show that structured questioning significantly improves diagnostic accuracy and reduces hallucinations…
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - Chain-of-Inquiry
+  - "ACL 2026 Findings"
+  - "VLM Reasoning"
+  - "Plant Pathological VQA"
+  - "Chain-of-Inquiry"
+  - "Multi-step Visual Reasoning"
+  - "Diagnostic Reasoning"
+  - "Multimodal Evaluation"
 date: 2026-05-08
-content_hash: b70bc2ddd1498f73
+content_hash: 25e74db81218dbaf
 ---
+
 # Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 
 **Conference**: ACL 2026 Findings  
@@ -130,15 +135,16 @@ PlantInquiryVQA is an evaluation-only benchmark. It uses standard vocabulary met
 - Overall: ⭐⭐⭐⭐ Innovative perspective revealing the real gaps in MLLM professional reasoning.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] MIMIC-Bench: Exploring the User-Like Thinking and Mimicking Capabilities of Multimodal Large Language Models](../../ICLR2026/vlm_reasoning/mimic-bench_exploring_the_user-like_thinking_and_mimicking_capabilities_of_multi.md)
 - [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
-- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/vlm_reasoning/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
+- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](../../ICLR2026/vlm_reasoning/reasoning-driven_multimodal_llm_for_domain_generalization.md)
 - [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
-- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
-- [\[CVPR 2025\] Insight-V: Exploring Long-Chain Visual Reasoning with Multimodal Large Language Models](../../CVPR2025/vlm_reasoning/insight-v_exploring_long-chain_visual_reasoning_with_multimodal_large_language_m.md)
+- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/vlm_reasoning/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
 
 </div>
 

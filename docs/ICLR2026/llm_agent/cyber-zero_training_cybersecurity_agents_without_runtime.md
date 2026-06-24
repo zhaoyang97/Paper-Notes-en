@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Cyber-Zero: Training Cybersecurity Agents without Runtime
 description: >-
-  [ICLR 2026][LLM Agent][CTF] Addressing the limitation of lacking executable runtime environments and the difficulty of collecting real agent trajectories in cybersecurity (CTF) tasks, this paper proposes Cyber-Zero—the first **runtime-free** trajectory synthesis framework. It leverages public CTF writeups and persona-driven dual-LLM simulation (o
+  [ICLR2026][LLM Agent][Cybersecurity Agent] Addressing the limitation of lacking executable runtime environments and the difficulty of collecting real agent trajectories in cybersecurity (CTF) tasks, this paper proposes Cyber-Zero—the first **runtime-free** trajectory synthesis framework. It leverages public CTF writeups and persona-driven dual-LLM simulation (one playing a contestant, the other a Bash terminal) to reverse-engineer and "replay" multi-turn interaction trajector…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - CTF
+  - "ICLR2026"
+  - "LLM Agent"
+  - "Cybersecurity Agent"
+  - "CTF"
+  - "Trajectory Synthesis"
+  - "Runtime-free"
+  - "Persona Simulation"
 date: 2026-05-08
-content_hash: 84d6a889053c0240
+content_hash: f51f1872afe8c62d
 ---
+
 # Cyber-Zero: Training Cybersecurity Agents without Runtime
 
 **Conference**: ICLR2026  
@@ -140,15 +145,15 @@ The best model, **Cyber-Zero-32B**, reached an average Pass@1 of 33.4%, comparab
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Agents via Continual Pre-training](scaling_agents_via_continual_pre-training.md)
 - [\[ICML 2026\] ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation](../../ICML2026/llm_agent/excytin-bench_evaluating_llm_agents_on_cyber_threat_investigation.md)
+- [\[ICLR 2026\] Search Self-Play: Pushing the Frontier of Agent Capability without Supervision](search_self-play_pushing_the_frontier_of_agent_capability_without_supervision.md)
 - [\[NeurIPS 2025\] DefenderBench: A Toolkit for Evaluating Language Agents in Cybersecurity Environments](../../NeurIPS2025/llm_agent/defenderbench_a_toolkit_for_evaluating_language_agents_in_cybersecurity_environm.md)
 - [\[ECCV 2024\] Agent3D-Zero: An Agent for Zero-shot 3D Understanding](../../ECCV2024/llm_agent/agent3d-zero_an_agent_for_zero-shot_3d_understanding.md)
-- [\[ICLR 2026\] Go-Browse: Training Web Agents with Structured Exploration](go-browse_training_web_agents_with_structured_exploration.md)
-- [\[ICLR 2026\] Efficient Agent Training for Computer Use](efficient_agent_training_for_computer_use.md)
 
 </div>
 

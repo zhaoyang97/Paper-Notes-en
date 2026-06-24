@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MMOne: Representing Multiple Modalities in One Scene
 description: >-
-  [ICCV 2025][Multimodal VLM][Multimodal scene representation] MMOne is a general framework that addresses property disparity and granularity disparity in multi-modal scene representation through a modality modeling module…
+  [ICCV 2025][Multimodal VLM][Multimodal scene representation] MMOne is a general framework that addresses property disparity and granularity disparity in multi-modal scene representation through a modality modeling module (with modality indicators) and a multi-modal decomposition mechanism. It jointly models RGB, thermal, and language modalities within a single 3DGS representation, achieving consistent improvements across all modalities.
 tags:
   - "ICCV 2025"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "modality decomposition"
   - "thermal imaging"
 date: 2026-05-08
-content_hash: 281f39640b602d9e
+content_hash: 9a5abf76aa077233
 ---
 
 # MMOne: Representing Multiple Modalities in One Scene
@@ -187,10 +187,10 @@ Each component contributes consistent improvements. The final model achieves com
 ## Related Papers
 
 - [\[ICLR 2026\] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs](../../ICLR2026/multimodal_vlm/multimodal_prompt_optimization_why_not_leverage_multiple_modalities_for_mllms.md)
-- [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
 - [\[ICCV 2025\] Oasis: One Image is All You Need for Multimodal Instruction Data Synthesis](oasis_one_image_is_all_you_need_for_multimodal_instruction_data_synthesis.md)
+- [\[ICCV 2025\] Synergistic Prompting for Robust Visual Recognition with Missing Modalities](synergistic_prompting_for_robust_visual_recognition_with_missing_modalities.md)
 - [\[ICCV 2025\] One Perturbation is Enough: On Generating Universal Adversarial Perturbations against Vision-Language Pre-training Models](one_perturbation_is_enough_on_generating_universal_adversarial_perturbations_aga.md)
-- [\[CVPR 2026\] Scene-VLM: Multimodal Video Scene Segmentation via Vision-Language Models](../../CVPR2026/multimodal_vlm/scene-vlm_multimodal_video_scene_segmentation_via_vision-language_models.md)
+- [\[CVPR 2025\] Recognition-Synergistic Scene Text Editing](../../CVPR2025/multimodal_vlm/recognition-synergistic_scene_text_editing.md)
 
 </div>
 

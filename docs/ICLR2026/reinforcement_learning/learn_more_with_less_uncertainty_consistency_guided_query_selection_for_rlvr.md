@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR
 description: >-
-  [ICLR 2026][Reinforcement Learning][RLVR] This paper introduces active learning into RLVR mathematical reasoning training. It identifies that the alignment between "model-perceived difficulty" and "objective error probability" is crucial for training value. By employing offline $r_{pb}$ and online $r^{online}_{pb}$ metrics, the method achieves performance clos
+  [ICLR2026][Reinforcement Learning][RLVR] This paper introduces active learning into RLVR mathematical reasoning training. It identifies that the alignment between "model-perceived difficulty" and "objective error probability" is crucial for training value. By employing offline $r_{pb}$ and online $r^{online}_{pb}$ metrics, the method achieves performance close to or exceeding full-data RLVR training using only 30% of queries.
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
-  - RLVR
+  - "ICLR2026"
+  - "Reinforcement Learning"
+  - "RLVR"
+  - "Subjective-Objective Uncertainty Consistency"
+  - "Active Learning"
+  - "Query Selection"
+  - "Mathematical Reasoning"
 date: 2026-05-08
-content_hash: 4fa46e6e1ff98bb1
+content_hash: 94f2ad1019b2c38f
 ---
+
 # Learn More with Less: Uncertainty Consistency Guided Query Selection for RLVR
 
 **Conference**: ICLR2026  

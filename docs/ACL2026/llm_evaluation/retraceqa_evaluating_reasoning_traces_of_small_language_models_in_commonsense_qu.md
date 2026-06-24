@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-Judge] This paper proposes ReTraceQA, the first reasoning process evaluation benchmark for commonsense reasoning tasks. It includes 2421 expert-annotated step-level error localizations and classifications, revealing that 14–24% of SLMs provide correct answers despite flawed reasoning. When reasoning-aware evaluation replaces
+  [ACL 2026][LLM Evaluation][Reasoning Process Evaluation] This paper proposes ReTraceQA, the first reasoning process evaluation benchmark for commonsense reasoning tasks. It includes 2421 expert-annotated step-level error localizations and classifications, revealing that 14–24% of SLMs provide correct answers despite flawed reasoning. When reasoning-aware evaluation replaces answer-only evaluation, SLM performance drops by up to 25 percentage points.
 tags:
-  - ACL 2026
-  - LLM Evaluation
-  - LLM-as-Judge
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Reasoning Process Evaluation"
+  - "Small Language Models"
+  - "Commonsense Reasoning"
+  - "Process Reward Models"
+  - "LLM-as-Judge"
 date: 2026-05-08
-content_hash: ff211ae7372fe103
+content_hash: 852b23c33dbdc385
 ---
+
 # ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering
 
 **Conference**: ACL 2026  
@@ -141,8 +146,8 @@ As a benchmark paper, no new models were trained. LLM judges reused slightly ada
 - [\[ACL 2026\] Evaluating Legal Reasoning Traces with Legal Issue Tree Rubrics](evaluating_legal_reasoning_traces_with_legal_issue_tree_rubrics.md)
 - [\[ACL 2026\] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering](recoqa_a_benchmark_for_tool-augmented_and_multi-step_reasoning_in_real_estate_qu.md)
 - [\[ACL 2026\] Evaluating Reasoning Models for Queries with Presuppositions](evaluating_reasoning_models_for_queries_with_presuppositions.md)
-- [\[ACL 2026\] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users](language_models_dont_know_what_you_want_evaluating_personalization_in_deep_resea.md)
 - [\[ACL 2026\] Question Difficulty Estimation for Large Language Models via Answer Plausibility Scoring](question_difficulty_estimation_for_large_language_models_via_answer_plausibility.md)
+- [\[ACL 2026\] Language Models Don't Know What You Want: Evaluating Personalization in Deep Research Needs Real Users](language_models_dont_know_what_you_want_evaluating_personalization_in_deep_resea.md)
 
 </div>
 

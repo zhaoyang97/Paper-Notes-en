@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] Proposes the FedRE framework, which achieves a triple balance of performance, privacy protection, and communication overhead in model-heterogeneous Federated Learning (FL) through "entangled representation"—aggregating all local representations of each client into a single cross-class representation using normalized ra
+  [CVPR 2026][AI Safety][Federated Learning] Proposes the FedRE framework, which achieves a triple balance of performance, privacy protection, and communication overhead in model-heterogeneous Federated Learning (FL) through "entangled representation"—aggregating all local representations of each client into a single cross-class representation using normalized random weights.
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Model Heterogeneity"
+  - "Entangled Representation"
+  - "Privacy Protection"
+  - "Communication Efficiency"
 date: 2026-05-08
-content_hash: 457d20605b524038
+content_hash: 77726cc7c68aee92
 ---
+
 # FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning
 
 **Conference**: CVPR 2026  
@@ -168,10 +174,10 @@ RAP (Random Average Prototype) is optimal.
 ## Related Papers
 
 - [\[CVPR 2026\] ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning](proxyfl_a_proxy-guided_framework_for_federated_semi-supervised_learning.md)
-- [\[CVPR 2026\] FedHarmony: Harmonizing Heterogeneous Label Correlations in Federated Multi-Label Learning](fedharmony_harmonizing_heterogeneous_label_correlations_in_federated_multi-label.md)
 - [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](../../ICLR2026/ai_safety/toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
 - [\[ECCV 2024\] Fisher Calibration for Backdoor-Robust Heterogeneous Federated Learning](../../ECCV2024/ai_safety/fisher_calibration_for_backdoor-robust_heterogeneous_federated_learning.md)
 - [\[CVPR 2026\] Cross-modal Representation Learning for Diffusion-generated Image Detection](cross-modal_representation_learning_for_diffusion-generated_image_detection.md)
+- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
 
 </div>
 

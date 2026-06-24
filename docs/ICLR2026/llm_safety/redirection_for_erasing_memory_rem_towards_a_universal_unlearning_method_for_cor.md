@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes a two-dimensional taxonomy (Discovery Rate × Statistical Regularity) for corrupted data unlearning tasks, revealing the limitations of existing unlearning methods that are only effective in specific regions. It introduces the REM (Redirection for Erasing Memory) method, which redirects corrupted dat
+  [ICLR 2026][LLM Safety][Machine Unlearning] This paper proposes a two-dimensional taxonomy (Discovery Rate × Statistical Regularity) for corrupted data unlearning tasks, revealing the limitations of existing unlearning methods that are only effective in specific regions. It introduces the REM (Redirection for Erasing Memory) method, which redirects corrupted data into a newly added dedicated network capacity and subsequently discards it, achieving robust and consistent unlear…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Machine Unlearning"
+  - "Data Healing"
+  - "Poisoning Defense"
+  - "Classifier Robustness"
+  - "Memorization"
 date: 2026-05-08
-content_hash: 5c8ccd97b24e982d
+content_hash: b4d5d532cc4182a0
 ---
+
 # Redirection for Erasing Memory (REM): Towards a Universal Unlearning Method for Corrupted Data
 
 **Conference**: ICLR 2026  
@@ -139,11 +145,11 @@ The **Function** of these terms differs: $\mathcal{L}_{redirect}$ trains the ful
 
 ## Related Papers
 
+- [\[ICLR 2026\] WaterDrum: Watermark-based Data-centric Unlearning Metric](waterdrum_watermark-based_data-centric_unlearning_metric.md)
 - [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
 - [\[ICLR 2026\] Randomized Antipodal Search Done Right for Data Pareto Improvement of LLM Unlearning](randomized_antipodal_search_done_right_for_data_pareto_improvement_of_llm_unlear.md)
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](../../ACL2026/llm_safety/from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
-- [\[ICLR 2026\] Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs](unlearning_isnt_invisible_detecting_unlearning_traces_in_llms_from_model_outputs.md)
-- [\[AAAI 2026\] Democratizing LLM Efficiency: From Hyperscale Optimizations to Universal Deployability](../../AAAI2026/llm_safety/democratizing_llm_efficiency_from_hyperscale_optimizations_to_universal_deployab.md)
+- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Capacity Autoregressive Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] ARTrack-AC extends autoregressive tracking from "fixed-capacity per-frame prediction" to "system-level autoregression." It uses a lightweight diffusion trajectory estimator to pre-judge the stability of future video segments. A controller then switches to a low-capacity parallel mode for simple segments and a high-capa
+  [CVPR 2026][Video Understanding][Autoregressive Tracking] ARTrack-AC extends autoregressive tracking from "fixed-capacity per-frame prediction" to "system-level autoregression." It uses a lightweight diffusion trajectory estimator to pre-judge the stability of future video segments. A controller then switches to a low-capacity parallel mode for simple segments and a high-capacity sequential mode for difficult frames, achieving 66.7% AUC on LaSOT while being 2.9x faster than i…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Autoregressive Tracking"
+  - "Adaptive Capacity"
+  - "Diffusion Trajectory Prediction"
+  - "Difficulty-aware Scheduling"
+  - "Parallel Inference"
 date: 2026-05-08
-content_hash: a3583f9d9834c892
+content_hash: 55712464580313cb
 ---
+
 # Adaptive Capacity Autoregressive Visual Tracking
 
 **Conference**: CVPR 2026  
@@ -136,15 +142,16 @@ The precise tracker uses the single-template version of ARTrackV2 (ARTrackOT), a
 - Value: ⭐⭐⭐⭐⭐ New accuracy-speed SOTA with transferable insights for parallelizing sequential inference.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1"></div>
+
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)
+- [\[ICLR 2026\] FARTrack: Fast Autoregressive Visual Tracking with High Performance](../../ICLR2026/video_understanding/fartrack_fast_autoregressive_visual_tracking_with_high_performance.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
 - [\[CVPR 2026\] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking](spiketrack_a_spike-driven_framework_for_efficient_visual_tracking.md)
 - [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
-- [\[CVPR 2026\] Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](autogaze_attend_before_attention_efficient_video.md)
-- [\[CVPR 2026\] Dual-Agent Reinforcement Learning for Adaptive and Cost-Aware Visual-Inertial Odometry](dual-agent_reinforcement_learning_for_adaptive_and_cost-aware_visual-inertial_od.md)
 
 </div>
 

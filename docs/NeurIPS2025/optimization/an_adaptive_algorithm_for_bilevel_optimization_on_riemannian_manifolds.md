@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds
 description: >-
-  [NeurIPS 2025][Optimization][Riemannian manifold] AdaRHD is the first adaptive algorithm for Riemannian bilevel optimization (RBO) that requires no prior knowledge of problem-specific parameters (strong convexity constan…
+  [NeurIPS 2025][Optimization][Riemannian manifold] AdaRHD is the first adaptive algorithm for Riemannian bilevel optimization (RBO) that requires no prior knowledge of problem-specific parameters (strong convexity constants, Lipschitz bounds, manifold curvature). By adopting an inverse cumulative gradient norm strategy for adaptive step size selection and solving the lower-level problem, linear system, and upper-level update sequentially within a three-stage framework…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "hypergradient"
   - "conjugate gradient"
 date: 2026-05-08
-content_hash: 774ef8948b2353ca
+content_hash: 21e23faee7d2b124
 ---
 
 # An Adaptive Algorithm for Bilevel Optimization on Riemannian Manifolds
@@ -132,9 +132,9 @@ Two variants are proposed: AdaRHD-GD (gradient descent for the linear system, $O
 
 - [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 - [\[NeurIPS 2025\] Problem-Parameter-Free Decentralized Bilevel Optimization](problem-parameter-free_decentralized_bilevel_optimization.md)
+- [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](../../ICLR2026/optimization/bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
+- [\[ICLR 2026\] Strongly Convex Sets in Riemannian Manifolds](../../ICLR2026/optimization/strongly_convex_sets_in_riemannian_manifolds.md)
 - [\[NeurIPS 2025\] Learning Theory for Kernel Bilevel Optimization](learning_theory_for_kernel_bilevel_optimization.md)
-- [\[NeurIPS 2025\] Set Smoothness Unlocks Clarke Hyper-stationarity in Bilevel Optimization](set_smoothness_unlocks_clarke_hyper-stationarity_in_bilevel_optimization.md)
-- [\[NeurIPS 2025\] Adaptive Algorithms with Sharp Convergence Rates for Stochastic Hierarchical Optimization](adaptive_algorithms_with_sharp_convergence_rates_for_stochas.md)
 
 </div>
 

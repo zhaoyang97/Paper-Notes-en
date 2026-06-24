@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] A set of high-frequency switching color LED strobes is used to illuminate the scene, encoding "timestamps" of high-speed motion into the color and intensity of images captured by multiple standard 60 FPS cameras. A modified dynamic Gaussian Splatting (Gaussian-Flow) is then employed to decode 600 FPS volumetric dynamic
+  [CVPR 2026][3D Vision][High-speed imaging] A set of high-frequency switching color LED strobes is used to illuminate the scene, encoding "timestamps" of high-speed motion into the color and intensity of images captured by multiple standard 60 FPS cameras. A modified dynamic Gaussian Splatting (Gaussian-Flow) is then employed to decode 600 FPS volumetric dynamic scenes from these color-mixed frames, achieving high-speed 3D reconstruction without specialized camera hardware for…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "High-speed imaging"
+  - "Volumetric reconstruction"
+  - "Color-encoded strobe illumination"
+  - "Dynamic Gaussian Splatting"
+  - "Compressive video"
 date: 2026-05-08
-content_hash: bef6bfc5a23f34e0
+content_hash: 137aa2ce5d9a9e5a
 ---
+
 # Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction
 
 **Conference**: CVPR 2026  
@@ -136,10 +142,10 @@ Since no camera modification is required, this is the first work to combine **vo
 ## Related Papers
 
 - [\[CVPR 2026\] Illumination-Consistent Human-Scene Reconstruction from Monocular Video](illumination-consistent_human-scene_reconstruction_from_monocular_video.md)
+- [\[CVPR 2026\] Radiance Meshes for Volumetric Reconstruction](radiance_meshes_for_volumetric_reconstruction.md)
 - [\[CVPR 2026\] CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)
-- [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)
-- [\[CVPR 2026\] 4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction](4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction.md)
+- [\[CVPR 2026\] Volumetric Functional Maps](volumetric_functional_maps.md)
+- [\[CVPR 2026\] IR-HGP: Physically-Aware Gaussian Inverse Rendering for High-Illumination Scenes via Generative Priors](ir-hgp_physically-aware_gaussian_inverse_rendering_for_high-illumination_scenes_.md)
 
 </div>
 

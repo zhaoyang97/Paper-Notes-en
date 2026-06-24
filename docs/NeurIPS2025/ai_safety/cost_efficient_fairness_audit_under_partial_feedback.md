@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cost Efficient Fairness Audit Under Partial Feedback
 description: >-
-  [NeurIPS 2025][AI Safety][fairness audit] Under the partial feedback setting, this paper proposes a fairness auditing framework with a novel cost model…
+  [NeurIPS 2025][AI Safety][fairness audit] Under the partial feedback setting, this paper proposes a fairness auditing framework with a novel cost model, delivering near-optimal audit algorithms for both black-box and mixture model scenarios, reducing audit cost by approximately 50% compared to natural baselines.
 tags:
   - "NeurIPS 2025"
   - "AI Safety"
@@ -12,7 +12,7 @@ tags:
   - "rejection sampling"
   - "exponential family mixture"
 date: 2026-05-08
-content_hash: a987fc6ae1b67a17
+content_hash: 24bbfbb3e037694e
 ---
 
 # Cost Efficient Fairness Audit Under Partial Feedback
@@ -161,9 +161,9 @@ The conceptual connection between **truncated samples and partial feedback** is 
 
 - [\[NeurIPS 2025\] Fairness under Competition](fairness_under_competition.md)
 - [\[NeurIPS 2025\] Efficient Fairness-Performance Pareto Front Computation](efficient_fairness-performance_pareto_front_computation.md)
+- [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](../../ICLR2026/ai_safety/a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
+- [\[ICML 2025\] Accelerating Spectral Clustering under Fairness Constraints](../../ICML2025/ai_safety/accelerating_spectral_clustering_under_fairness_constraints.md)
 - [\[NeurIPS 2025\] Matchings Under Biased and Correlated Evaluations](matchings_under_biased_and_correlated_evaluations.md)
-- [\[NeurIPS 2025\] Efficient Verified Machine Unlearning for Distillation](efficient_verified_machine_unlearning_for_distillation.md)
-- [\[NeurIPS 2025\] Reconstruction and Secrecy under Approximate Distance Queries](reconstruction_and_secrecy_under_approximate_distance_queries.md)
 
 </div>
 

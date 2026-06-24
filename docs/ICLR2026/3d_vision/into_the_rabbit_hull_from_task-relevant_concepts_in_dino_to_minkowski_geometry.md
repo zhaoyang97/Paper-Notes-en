@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Into the Rabbit Hull: From Task-Relevant Concepts in DINO to Minkowski Geometry
 description: >-
-  [ICLR 2026][3D Vision][DINOv2] By training a 32,000-unit Sparse Autoencoder dictionary on DINOv2, this paper systematically analyzes how downstream tasks recruit different concepts. It finds that representation geometry deviates from the Linear Representation Hypothesis (LRH) and proposes the Minkowski Representation Hypothesis (MRH), which posits t
+  [ICLR2026][3D Vision][DINOv2] By training a 32,000-unit Sparse Autoencoder dictionary on DINOv2, this paper systematically analyzes how downstream tasks recruit different concepts. It finds that representation geometry deviates from the Linear Representation Hypothesis (LRH) and proposes the Minkowski Representation Hypothesis (MRH), which posits that token representations are Minkowski sums of multiple convex polytopes, where concepts are defined by proximity to prototypical…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - DINOv2
-  - Sparse Autoencoder
-  - Linear Representation Hypothesis
-  - Minkowski Representation Hypothesis
-  - interpretability
-  - Vision Transformer
+  - "ICLR2026"
+  - "3D Vision"
+  - "DINOv2"
+  - "Sparse Autoencoder"
+  - "Linear Representation Hypothesis"
+  - "Minkowski Representation Hypothesis"
+  - "interpretability"
+  - "Vision Transformer"
 date: 2026-05-08
-content_hash: f2ba457d2819a21d
+content_hash: cd1931b57449b7e3
 ---
+
 # Into the Rabbit Hull: From Task-Relevant Concepts in DINO to Minkowski Geometry
 
 **Conference**: ICLR2026  
@@ -127,7 +128,7 @@ Each token is a sum of convex combinations of a few active tiles $\bm{x} = \sum_
 - [\[CVPR 2026\] Task-Driven Implicit Representations for Automated Design of LiDAR Systems](../../CVPR2026/3d_vision/task-driven_implicit_representations_for_automated_design_of_lidar_systems.md)
 - [\[CVPR 2025\] ASHiTA: Automatic Scene-grounded Hierarchical Task Analysis](../../CVPR2025/3d_vision/ashita_automatic_scene-grounded_hierarchical_task_analysis.md)
 - [\[CVPR 2025\] Olympus: A Universal Task Router for Computer Vision Tasks](../../CVPR2025/3d_vision/olympus_a_universal_task_router_for_computer_vision_tasks.md)
-- [\[ICLR 2026\] Generative Human Geometry Distribution](generative_human_geometry_distribution.md)
+- [\[CVPR 2026\] 3D-Aware Multi-Task Learning with Cross-View Correlations for Dense Scene Understanding](../../CVPR2026/3d_vision/3d-aware_multi-task_learning_with_cross-view_correlations_for_dense_scene_unders.md)
 
 </div>
 

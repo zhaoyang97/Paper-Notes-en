@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Robustness in Both Domains: CLIP Needs a Robust Text Encoder
 description: >-
-  [NeurIPS 2025][Image Generation][CLIP] This paper proposes LEAF (Levenshtein Efficient Adversarial Finetuning), the first adversarial fine-tuning method targeting the CLIP text encoder. LEAF substantially improves robust…
+  [NeurIPS 2025][Image Generation][CLIP] This paper proposes LEAF (Levenshtein Efficient Adversarial Finetuning), the first adversarial fine-tuning method targeting the CLIP text encoder. LEAF substantially improves robustness under character-level text perturbations across zero-shot classification, text-image retrieval, and image generation, while preserving performance in the image domain.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "character-level attacks"
   - "Levenshtein distance"
 date: 2026-05-08
-content_hash: ea6a88c5ce601b9b
+content_hash: f141824989ff7242
 ---
 
 # Robustness in Both Domains: CLIP Needs a Robust Text Encoder
@@ -169,11 +169,11 @@ Text-to-image retrieval (MS-COCO, $k=2$, average over 3 targets):
 
 ## Related Papers
 
-- [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](../../ICCV2025/image_generation/your_text_encoder_can_be_an_object-level_watermarking_controller.md)
 - [\[NeurIPS 2025\] T2SMark: Balancing Robustness and Diversity in Noise-as-Watermark for Diffusion Models](t2smark_balancing_robustness_and_diversity_in_noise-as-watermark_for_diffusion_m.md)
-- [\[NeurIPS 2025\] Towards Robust Zero-Shot Reinforcement Learning](towards_robust_zero-shot_reinforcement_learning.md)
-- [\[ICCV 2025\] Fix-CLIP: Dual-Branch Hierarchical Contrastive Learning via Synthetic Captions for Better Understanding of Long Text](../../ICCV2025/image_generation/fix-clip_dual-branch_hierarchical_contrastive_learning_via_synthetic_captions_fo.md)
-- [\[NeurIPS 2025\] Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models](shallow_diffuse_robust_and_invisible_watermarking_through_low-dimensional_subspa.md)
+- [\[CVPR 2025\] GlyphMastero: A Glyph Encoder for High-Fidelity Scene Text Editing](../../CVPR2025/image_generation/glyphmastero_a_glyph_encoder_for_high-fidelity_scene_text_editing.md)
+- [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](../../ICCV2025/image_generation/your_text_encoder_can_be_an_object-level_watermarking_controller.md)
+- [\[CVPR 2025\] FineLIP: Extending CLIP's Reach via Fine-Grained Alignment with Longer Text Inputs](../../CVPR2025/image_generation/finelip_extending_clips_reach_via_fine-grained_alignment_with_longer_text_inputs.md)
+- [\[ECCV 2024\] LCM-Lookahead for Encoder-Based Text-to-Image Personalization](../../ECCV2024/image_generation/lcmlookahead_for_encoderbased_texttoimage_personalization.md)
 
 </div>
 

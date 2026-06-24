@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CLEP: Contrastive Language-Pose Pretraining
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] CLEP adapts CLIP-style contrastive learning to "3D Human Pose ↔ Natural Language". By combining the hierarchical pose encoder HierFormer (joint/limb/full-body levels + Cross-Scale Attention Fusion, CSAF) with the self-constructed CLEP-2M dataset (2 million pairs) for contrastive pretraining, it boosts mRecall on PoseSc
+  [CVPR 2026][Multimodal VLM][Pose-Language Alignment] CLEP adapts CLIP-style contrastive learning to "3D Human Pose ↔ Natural Language". By combining the hierarchical pose encoder HierFormer (joint/limb/full-body levels + Cross-Scale Attention Fusion, CSAF) with the self-constructed CLEP-2M dataset (2 million pairs) for contrastive pretraining, it boosts mRecall on PoseScript-H zero-shot retrieval from 5.9 to 34.8 (nearly 6x) and outperforms baselines in downstream tasks like…
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Pose-Language Alignment"
+  - "Contrastive Pretraining"
+  - "Hierarchical Pose Encoder"
+  - "Cross-Scale Attention"
+  - "3D Human Pose"
 date: 2026-05-08
-content_hash: 3b280a8219ded3ac
+content_hash: 21277d8f7d9d2307
 ---
+
 # CLEP: Contrastive Language-Pose Pretraining
 
 **Conference**: CVPR 2026  
@@ -155,10 +161,20 @@ Incremental contribution of components on CLEP-2M mRecall↑:
 - Value: ⭐⭐⭐⭐ Provides a reusable foundational model for human-centric multimodal tasks.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] From 3D Pose to Prose: Biomechanics-Grounded Vision-Language Coaching](from_3d_pose_to_prose_biomechanics-grounded_vision-language_coaching.md)
+- [\[CVPR 2026\] Concept-Aware Batch Sampling Improves Language-Image Pretraining](concept-aware_batch_sampling_improves_language-image_pretraining.md)
+- [\[CVPR 2026\] TIPSv2: Advancing Vision-Language Pretraining with Enhanced Patch-Text Alignment](tipsv2_patch_text_alignment.md)
+- [\[CVPR 2026\] SynCLIP: Synonym-Coherent Language-Image Pretraining for Robust Open-Vocabulary Dense Perception](synclip_synonym-coherent_language-image_pretraining_for_robust_open-vocabulary_d.md)
+- [\[CVPR 2026\] Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild](joint-aligned_latent_action_towards_scalable_vla_pretraining_in_the_wild.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] Mocap-2-to-3: Multi-view Lifting for Monocular Motion Recovery with 2D Pretraining](mocap-2-to-3_multi-view_lifting_for_monocular_motion_recovery_with_2d_pretrainin.md)

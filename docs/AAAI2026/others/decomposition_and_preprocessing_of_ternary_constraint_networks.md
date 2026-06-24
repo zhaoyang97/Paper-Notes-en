@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Decomposition and Preprocessing of Ternary Constraint Networks
 description: >-
-  [AAAI 2026][Constraint Programming] This paper proposes a complete theoretical framework for formally decomposing arbitrary discrete constraint networks into ternary constraint networks (TCNs)…
+  [AAAI 2026][Constraint Programming] This paper proposes a complete theoretical framework for formally decomposing arbitrary discrete constraint networks into ternary constraint networks (TCNs), and reduces the variable/constraint blowup introduced by decomposition from a median of 8x/6x to 4.8x/4.3x via seven preprocessing techniques (propagation, algebraic simplification, common subexpression elimination, etc.), providing a regularized data layout for efficient constraint so…
 tags:
   - "AAAI 2026"
   - "Constraint Programming"
@@ -11,7 +11,7 @@ tags:
   - "Preprocessing"
   - "MiniZinc"
 date: 2026-05-08
-content_hash: 38aeb2520aae93e4
+content_hash: 46fb5f320905fe53
 ---
 
 # Decomposition and Preprocessing of Ternary Constraint Networks
@@ -130,10 +130,10 @@ This is a theoretical/systems paper with no neural network loss functions. The o
 ## Related Papers
 
 - [\[AAAI 2026\] GDBA Revisited: Unleashing the Power of Guided Local Search for Distributed Constraint Optimization](gdba_revisited_unleashing_the_power_of_guided_local_search_for_distributed_const.md)
+- [\[ACL 2025\] Optimizing Decomposition for Optimal Claim Verification](../../ACL2025/others/optimizing_decomposition_for_optimal_claim_verification.md)
 - [\[AAAI 2026\] Formal Abductive Latent Explanations for Prototype-Based Networks](formal_abductive_latent_explanations_for_prototype-based_networks.md)
 - [\[AAAI 2026\] PIPHEN: Physical Interaction Prediction with Hamiltonian Energy Networks](piphen_physical_interaction_prediction_with_hamiltonian_energy_networks.md)
-- [\[AAAI 2026\] TDSNNs: Competitive Topographic Deep Spiking Neural Networks for Visual Cortex Modeling](tdsnns_competitive_topographic_deep_spiking_neural_networks_for_visual_cortex_mo.md)
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
+- [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](../../CVPR2026/others/revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
 
 </div>
 

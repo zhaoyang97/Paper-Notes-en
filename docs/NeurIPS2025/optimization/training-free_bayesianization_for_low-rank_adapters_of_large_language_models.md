@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Training-Free Bayesianization for Low-Rank Adapters of Large Language Models
 description: >-
-  [NeurIPS 2025][Optimization][Bayesian inference] This paper proposes TFB (Training-Free Bayesianization), which converts a pre-trained LoRA adapter into its Bayesian counterpart without any retraining by searching for th…
+  [NeurIPS 2025][Optimization][Bayesian inference] This paper proposes TFB (Training-Free Bayesianization), which converts a pre-trained LoRA adapter into its Bayesian counterpart without any retraining by searching for the maximum admissible variance within a family of low-rank isotropic Gaussian distributions. The procedure is theoretically shown to be equivalent to generalized variational inference.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "LLM"
   - "training-free"
 date: 2026-05-08
-content_hash: 9d4e22e49f1228a9
+content_hash: 2b501b2d79e5e668
 ---
 
 # Training-Free Bayesianization for Low-Rank Adapters of Large Language Models

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Why Is Attention Sparse in Particle Transformer?
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][Particle Transformer] This paper systematically analyzes the near-binary sparse attention phenomenon observed in Particle Transformer (ParT) after training on jet tagging ta…
+  [NeurIPS 2025][Physics & Scientific Computing][Particle Transformer] This paper systematically analyzes the near-binary sparse attention phenomenon observed in Particle Transformer (ParT) after training on jet tagging tasks. Through cross-dataset comparisons and ablation studies, it demonstrates that the sparsity primarily originates from the attention mechanism itself rather than the physics-inspired interaction matrix. Nevertheless, the interaction matrix remains indispensa…
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "interaction matrix"
   - "interpretability"
 date: 2026-05-08
-content_hash: 544657001c081183
+content_hash: 6249e6a2d7128b44
 ---
 
 # Why Is Attention Sparse in Particle Transformer?
@@ -173,8 +173,8 @@ On the Top Landscape dataset, however, the ratio distribution is more dispersed,
 - [\[NeurIPS 2025\] Tropical Attention: Neural Algorithmic Reasoning for Combinatorial Algorithms](tropical_attention_neural_algorithmic_reasoning_for_combinatorial_algorithms.md)
 - [\[NeurIPS 2025\] Latent Representation Learning in Heavy-Ion Collisions with MaskPoint Transformer](latent_representation_learning_in_heavy-ion_collisions_with_maskpoint_transforme.md)
 - [\[NeurIPS 2025\] Physics-Informed Neural Networks with Fourier Features and Attention-Driven Decoding](physics-informed_neural_networks_with_fourier_features_and_attention-driven_deco.md)
-- [\[AAAI 2026\] Just Few States are Enough: Randomized Sparse Feedback for Stability of Dynamical Systems](../../AAAI2026/physics/just_few_states_are_enough_randomized_sparse_feedback_for_stability_of_dynamical.md)
-- [\[ICLR 2026\] Sublinear Time Quantum Algorithm for Attention Approximation](../../ICLR2026/physics/sublinear_time_quantum_algorithm_for_attention_approximation.md)
+- [\[ICLR 2026\] FM4NPP: A Scaling Foundation Model for Nuclear and Particle Physics](../../ICLR2026/physics/fm4npp_a_scaling_foundation_model_for_nuclear_and_particle_physics.md)
+- [\[ICML 2025\] Erwin: A Tree-based Hierarchical Transformer for Large-scale Physical Systems](../../ICML2025/physics/erwin_a_tree-based_hierarchical_transformer_for_large-scale_physical_systems.md)
 
 </div>
 

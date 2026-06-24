@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FoNE: Precise Single-Token Number Embeddings via Fourier Features
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] FoNE maps arbitrary numbers directly into **single-token** embeddings using a set of sine and cosine functions with different periods (Fourier features). Each digit occupies only 2 dimensions, bypassing tokenization fragmentation and frequency bias. A 38M Transformer trained from scratch outperforms fine-tuned Llama-3.
+  [ICLR 2026][LLM Pretraining][Number Embeddings] FoNE maps arbitrary numbers directly into **single-token** embeddings using a set of sine and cosine functions with different periods (Fourier features). Each digit occupies only 2 dimensions, bypassing tokenization fragmentation and frequency bias. A 38M Transformer trained from scratch outperforms fine-tuned Llama-3.2-1B in addition, subtraction, and multiplication, being the only method to achieve 100% accuracy on 100…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Number Embeddings"
+  - "Fourier Features"
+  - "Single Token"
+  - "Arithmetic Tasks"
+  - "Frequency Bias"
 date: 2026-05-08
-content_hash: fef181d846093928
+content_hash: f3d0be64316374d6
 ---
+
 # FoNE: Precise Single-Token Number Embeddings via Fourier Features
 
 **Conference**: ICLR 2026  

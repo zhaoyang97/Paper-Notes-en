@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Operationalising the Superficial Alignment Hypothesis via Task Complexity
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] The authors redefine the Superficial Alignment Hypothesis (SAH) using "task complexity"—an algorithmic information-theoretic metric representing the shortest program length required to solve a task at target performance. They unify three disparate lines of evidence (data-efficient, parameter-efficient, and inference-co
+  [ICML 2026][LLM Alignment][Superficial Alignment Hypothesis] The authors redefine the Superficial Alignment Hypothesis (SAH) using "task complexity"—an algorithmic information-theoretic metric representing the shortest program length required to solve a task at target performance. They unify three disparate lines of evidence (data-efficient, parameter-efficient, and inference-controlled) into a single strategy of finding short programs on the same length–performance Pareto cu…
 tags:
-  - ICML 2026
-  - Alignment & RLHF
+  - "ICML 2026"
+  - "LLM Alignment"
+  - "Superficial Alignment Hypothesis"
+  - "Task Complexity"
+  - "Algorithmic Information Theory"
+  - "Post-training"
+  - "Data/Parameter/Inference Efficient Adaptation"
 date: 2026-05-08
-content_hash: 6a59336bacddc523
+content_hash: f1443c32a8d8534a
 ---
+
 # Operationalising the Superficial Alignment Hypothesis via Task Complexity
 
 **Conference**: ICML 2026  
@@ -132,10 +138,10 @@ Three perspectives dominate different sections of the curve:
 ## Related Papers
 
 - [\[ICLR 2026\] Superficial Safety Alignment Hypothesis](../../ICLR2026/llm_alignment/superficial_safety_alignment_hypothesis.md)
-- [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](../../AAAI2026/llm_alignment/intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
 - [\[ICML 2026\] Alignment-Aware Decoding](alignment-aware_decoding.md)
 - [\[ICML 2026\] Curriculum Learning for Safety Alignment](curriculum_learning_for_safety_alignment.md)
 - [\[ICML 2026\] Implicit Safety Alignment from Crowd Preferences](implicit_safety_alignment_from_crowd_preferences.md)
+- [\[AAAI 2026\] Intrinsic Barriers and Practical Pathways for Human-AI Alignment: An Agreement-Based Complexity Analysis](../../AAAI2026/llm_alignment/intrinsic_barriers_and_practical_pathways_for_human-ai_alignment_an_agreement-ba.md)
 
 </div>
 

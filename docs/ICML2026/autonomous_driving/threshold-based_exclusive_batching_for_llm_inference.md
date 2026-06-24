@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Threshold-Based Exclusive Batching for LLM Inference
 description: >-
-  [ICML 2026][Autonomous Driving][LLM Reasoning] This paper systematically characterizes the performance crossover conditions between mixed batching (MB) and exclusive batching (EB) in LLM inference. It proves that on bandwidth-constrained GPUs, co-batching prefill and decode stages slows down Attention due to bandwidth contention. Consequently, the authors derive an
+  [ICML 2026][Autonomous Driving][LLM Inference] This paper systematically characterizes the performance crossover conditions between mixed batching (MB) and exclusive batching (EB) in LLM inference. It proves that on bandwidth-constrained GPUs, co-batching prefill and decode stages slows down Attention due to bandwidth contention. Consequently, the authors derive an optimal phase-switching threshold $\theta^*$ and a memory-safe batch size based on the hazard rate…
 tags:
-  - ICML 2026
-  - Autonomous Driving
-  - LLM Reasoning
-  - exclusive batching
-  - mixed batching
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "LLM Inference"
+  - "batching scheduling"
+  - "exclusive batching"
+  - "mixed batching"
+  - "memory bandwidth"
 date: 2026-05-08
-content_hash: dc9534ecd265d569
+content_hash: db59e736af502b1f
 ---
+
 # Threshold-Based Exclusive Batching for LLM Inference
 
 **Conference**: ICML 2026  
@@ -159,7 +162,7 @@ EB+ automatically reverts to MB at low concurrency to maintain low TTFT (0.061 s
 - [\[ICML 2025\] SPHINX: Structural Prediction using Hypergraph Inference Network](../../ICML2025/autonomous_driving/sphinx_structural_prediction_using_hypergraph_inference_network.md)
 - [\[ICCV 2025\] CoLMDriver: LLM-based Negotiation Benefits Cooperative Autonomous Driving](../../ICCV2025/autonomous_driving/colmdriver_llm-based_negotiation_benefits_cooperative_autonomous_driving.md)
 - [\[CVPR 2026\] Open-Ended Instruction Realization with LLM-Enabled Multi-Planner Scheduling in Autonomous Vehicles](../../CVPR2026/autonomous_driving/open-ended_instruction_realization_with_llm-enabled_multi-planner_scheduling_in_.md)
-- [\[NeurIPS 2025\] BayesG: Bayesian Ego-Graph Inference for Networked Multi-Agent Reinforcement Learning](../../NeurIPS2025/autonomous_driving/bayesian_ego-graph_inference_for_networked_multi-agent_reinforcement_learning.md)
+- [\[AAAI 2026\] Smart: A GNN-LLM Hybrid Surrogate Model for Dragonfly System Application Runtime Prediction](../../AAAI2026/autonomous_driving/smart_a_surrogate_model_for_predicting_application_runtime_in_dragonfly_systems.md)
 
 </div>
 

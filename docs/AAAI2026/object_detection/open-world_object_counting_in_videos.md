@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CountVid: Open-World Object Counting in Videos
 description: >-
-  [AAAI 2026][Object Detection][Open-world counting] This paper proposes CountVid, a model, and the VideoCount benchmark, presenting the first systematic study of open-world video object counting—given a text or image desc…
+  [AAAI 2026][Object Detection][Open-world counting] This paper proposes CountVid, a model, and the VideoCount benchmark, presenting the first systematic study of open-world video object counting—given a text or image description specifying target objects, the system enumerates all unique instances in a video. By combining an image counting model with a promptable video segmentation and tracking model, CountVid addresses challenges such as occlusion and re-appearance…
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "video segmentation"
   - "multimodal query"
 date: 2026-05-08
-content_hash: 82ad101bbc5e3d0a
+content_hash: 8a3e4668bf73b50f
 ---
 
 # CountVid: Open-World Object Counting in Videos
@@ -133,8 +133,8 @@ Constructed from TAO (multi-object tracking), MOT20 (dense crowd tracking), peng
 
 - [\[CVPR 2026\] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection](../../CVPR2026/object_detection/detecting_unknown_objects_via_energy-based_separation.md)
 - [\[AAAI 2026\] CountSteer: Steering Attention for Object Counting in Diffusion Models](countsteer_steering_attention_for_object_counting_in_diffusion_models.md)
+- [\[CVPR 2025\] VCBench: A Streaming Counting Benchmark for Spatial-Temporal State Maintenance in Long Videos](../../CVPR2025/object_detection/vcbench_a_streaming_counting_benchmark_for_spatial-temporal_state_maintenance_in.md)
 - [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
-- [\[CVPR 2026\] Boosting Quantitive and Spatial Awareness for Zero-Shot Object Counting](../../CVPR2026/object_detection/boosting_quantitive_and_spatial_awareness_for_zero-shot_object_counting.md)
 - [\[CVPR 2026\] EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](../../CVPR2026/object_detection/ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)
 
 </div>

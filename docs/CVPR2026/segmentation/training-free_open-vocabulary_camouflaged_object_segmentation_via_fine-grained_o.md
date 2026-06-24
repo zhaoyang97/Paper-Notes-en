@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt
 description: >-
-  [CVPR 2026][Segmentation][CLIP+SAM] This paper proposes a **completely training-free** open-vocabulary camouflaged object segmentation (OVCOS) framework. It utilizes MLLMs to generate fine-grained "object descriptions + background descriptions" to supplement sparse text semantics. A Semantic Probe is then used to decouple object/background features and m
+  [CVPR 2026][Segmentation][Camouflaged Object Segmentation] This paper proposes a **completely training-free** open-vocabulary camouflaged object segmentation (OVCOS) framework. It utilizes MLLMs to generate fine-grained "object descriptions + background descriptions" to supplement sparse text semantics. A Semantic Probe is then used to decouple object/background features and model category similarity between patches via Spearman rank consistency for precise "object binding."…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - CLIP+SAM
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Camouflaged Object Segmentation"
+  - "Open-Vocabulary"
+  - "Training-Free"
+  - "Object Binding"
+  - "CLIP+SAM"
 date: 2026-05-08
-content_hash: 74a999dde12e2881
+content_hash: dc45c1404562116e
 ---
+
 # Training-Free Open-Vocabulary Camouflaged Object Segmentation via Fine-Grained Object Binding and Adaptive Hybrid Prompt
 
 **Conference**: CVPR 2026  
@@ -146,10 +151,10 @@ Stepwise addition of components (Baseline: CLIP ViT-L/14):
 ## Related Papers
 
 - [\[CVPR 2026\] Seeing Both Sides: Towards Bidirectional Semantic Alignment for Open-Vocabulary Camouflaged Object Segmentation](seeing_both_sides_towards_bidirectional_semantic_alignment_for_open-vocabulary_c.md)
-- [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
 - [\[CVPR 2026\] The Power of Prior: Training-Free Open-Vocabulary Semantic Segmentation with LLaVA](the_power_of_prior_training-free_open-vocabulary_semantic_segmentation_with_llav.md)
 - [\[CVPR 2026\] PEARL: Geometry Aligns Semantics for Training-Free Open-Vocabulary Semantic Segmentation](pearl_geometry_aligns_semantics_for_training-free_open-vocabulary_semantic_segme.md)
 - [\[CVPR 2026\] Direct Segmentation without Logits Optimization for Training-Free Open-Vocabulary Semantic Segmentation](direct_segmentation_without_logits_optimization_for_training-free_open-vocabular.md)
+- [\[CVPR 2026\] SDDF: Specificity-Driven Dynamic Focusing for Open-Vocabulary Camouflaged Object Detection](sddf_specificity-driven_dynamic_focusing_for_open-vocabulary_camouflaged_object.md)
 
 </div>
 

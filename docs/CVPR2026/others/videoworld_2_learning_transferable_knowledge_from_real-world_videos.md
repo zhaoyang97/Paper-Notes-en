@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][World Models] VideoWorld 2 proposes the "Dynamic-enhanced Latent Dynamics Model (dLDM)," which utilizes a pre-trained Video Diffusion Model (VDM) to handle appearance reconstruction. This forces latent codes to encode only task-relevant action dynamics, enabling the first-ever learning of transferable and executable long-horizon tas
+  [CVPR 2026][World Models] VideoWorld 2 proposes the "Dynamic-enhanced Latent Dynamics Model (dLDM)," which utilizes a pre-trained Video Diffusion Model (VDM) to handle appearance reconstruction. This forces latent codes to encode only task-relevant action dynamics, enabling the first-ever learning of transferable and executable long-horizon task knowledge from raw real-world videos. On a minute-level manual origami task, the 7-step continuous success rate improved from a 0% b…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - World Models
+  - "CVPR 2026"
+  - "World Models"
+  - "Latent Dynamics Models"
+  - "Video Diffusion Priors"
+  - "Appearance-Action Decoupling"
+  - "Long-horizon Manipulation"
 date: 2026-05-08
-content_hash: 14f3653a6e120c2d
+content_hash: 9007f06332fa8507
 ---
+
 # VideoWorld 2: Learning Transferable Knowledge from Real-world Videos
 
 **Conference**: CVPR 2026  
@@ -152,15 +156,17 @@ Hyperparameter sensitivity (Table 3b/c/d):
 
 <div class="related-papers" markdown="1">
 
-- **VideoWorld**: Ren et al., 2024.
-- **MAGVITv2**: Yu et al., 2023.
-- **NVIDIA Cosmos**: 2024.
-- **CoLA**: Concurrently published latent action optimization.
+## Related Papers
+
+- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
+- [\[CVPR 2026\] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](unimernet_a_universal_network_for_real-world_mathematical_expression_recognition.md)
+- [\[CVPR 2026\] Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization](clair_obscur_an_illumination-aware_method_for_real-world_image_vectorization.md)
+- [\[CVPR 2026\] Adaptive Bayesian Early-Exit Networks for Efficient Non-Transferable Learning](adaptive_bayesian_early-exit_networks_for_efficient_non-transferable_learning.md)
+- [\[CVPR 2026\] Towards Knowledge-augmented Bayesian Deep Learning For Computer Vision](towards_knowledge-augmented_bayesian_deep_learning_for_computer_vision.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] TraceGen: World Modeling in 3D Trace Space Enables Learning from Cross-Embodiment Videos](tracegen_world_modeling_in_3d_trace_space_enables_learning_from_cross-embodiment.md)

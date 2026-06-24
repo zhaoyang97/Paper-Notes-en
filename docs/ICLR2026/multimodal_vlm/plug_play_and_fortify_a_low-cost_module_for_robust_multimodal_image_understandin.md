@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Plug, Play, and Fortify: A Low-Cost Module for Robust Multimodal Image Understanding
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] Addressing the performance collapse of multimodal models when a modality is missing during inference, the authors discover that "modality preference" can be quantified in the frequency domain. They propose the Frequency Ratio Metric (FRM) and a plug-and-play, nearly zero-parameter Multimodal Weight Allocation Module (M
+  [ICLR 2026][Multimodal VLM][Missing modality] Addressing the performance collapse of multimodal models when a modality is missing during inference, the authors discover that "modality preference" can be quantified in the frequency domain. They propose the Frequency Ratio Metric (FRM) and a plug-and-play, nearly zero-parameter Multimodal Weight Allocation Module (MWAM). By weighting the neglected modalities during training to balance the optimization…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Missing modality"
+  - "Modality preference"
+  - "Frequency domain analysis"
+  - "Plug-and-play"
+  - "Robust multimodal understanding"
 date: 2026-05-08
-content_hash: fe2de98bed7f362e
+content_hash: 6f5c32e7f94302fc
 ---
+
 # Plug, Play, and Fortify: A Low-Cost Module for Robust Multimodal Image Understanding
 
 **Conference**: ICLR 2026  
@@ -151,9 +157,9 @@ MWAM improves Dice/MIoU and reduces PCR for all host methods. After integration,
 
 - [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
 - [\[AAAI 2026\] LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](../../AAAI2026/multimodal_vlm/llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)
+- [\[ICLR 2026\] TABLET: A Large-Scale Dataset for Robust Visual Table Understanding](tablet_a_large-scale_dataset_for_robust_visual_table_understanding.md)
+- [\[ICLR 2026\] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition](mora_missing_modality_low-rank_adaptation_for_visual_recognition.md)
 - [\[CVPR 2026\] MERLIN: Building Low-SNR Robust Multimodal LLMs for Electromagnetic Signals](../../CVPR2026/multimodal_vlm/merlin_building_low-snr_robust_multimodal_llms_for_electromagnetic_signals.md)
-- [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
-- [\[ICLR 2026\] Vision-Zero: Scalable VLM Self-Evolution via Multi-Agent Self-Play](vision-zero_scalable_vlm_self-evolution_via_multi-agent_self-play.md)
 
 </div>
 

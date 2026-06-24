@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Where Does Vision Meet Language? Understanding and Refining Visual Fusion in MLLMs via Contrastive Attention
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] This paper first uses "layer-wise visual masking" to dissect where visual information is integrated into the language stream (finding fusion concentrated in shallow-to-middle layers, with "reviewing" in deep layers), then proposes a **training-free** contrastive attention method. By subtracting "pre-fusion layer" atten
+  [CVPR 2026][Multimodal VLM][MLLM Interpretability] This paper first uses "layer-wise visual masking" to dissect where visual information is integrated into the language stream (finding fusion concentrated in shallow-to-middle layers, with "reviewing" in deep layers), then proposes a **training-free** contrastive attention method. By subtracting "pre-fusion layer" attention from final layer attention, it extracts truly task-relevant image regions for secondary inference…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "MLLM Interpretability"
+  - "Vision-Language Fusion"
+  - "Layer-wise Masking"
+  - "Contrastive Attention"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 93b78ba8ac6594f4
+content_hash: 30f322ff0157bbce
 ---
+
 # Where Does Vision Meet Language? Understanding and Refining Visual Fusion in MLLMs via Contrastive Attention
 
 **Conference**: CVPR 2026  
@@ -142,15 +148,17 @@ Inference latency (GQA, single RTX A6000, seconds):
 
 <div class="related-papers" markdown="1">
 
-[1] LLaVA: Visual Instruction Tuning, NeurIPS 2023.  
-[2] ViCrop: Adaptive Visual Cropping for MLLMs, arXiv 2024.  
-[3] DoLA: Decoding by Contrasting Layers, ICLR 2024.  
-[4] OPERA: Alleviating Hallucination in Multi-Modal Large Language Models via Over-Trust Penalty and Retrospection-Allocation, CVPR 2024.
+## Related Papers
+
+- [\[CVPR 2026\] Where MLLMs Attend and What They Rely On: Explaining Autoregressive Token Generation](where_mllms_attend_and_what_they_rely_on_explaining_autoregressive_token_generat.md)
+- [\[CVPR 2026\] Multi-Hierarchical Contrastive Spectral Fusion for Multi-View Clustering](multi-hierarchical_contrastive_spectral_fusion_for_multi-view_clustering.md)
+- [\[CVPR 2026\] The More, the Merrier: Contrastive Fusion for Higher-Order Multimodal Alignment](the_more_the_merrier_contrastive_fusion_for_higher-order_multimodal_alignment.md)
+- [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](../../ICLR2026/multimodal_vlm/when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
+- [\[CVPR 2026\] Hugging Visual Prompt and Segmentation Tokens: Consistency Learning for Fine-Grained Visual Understanding in MLLMs](hugging_visual_prompt_and_segmentation_tokens_consistency_learning_for_fine-grai.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Attention-space Contrastive Guidance for Efficient Hallucination Mitigation in LVLMs](attention-space_contrastive_guidance_for_efficient_hallucination_mitigation_in_l.md)

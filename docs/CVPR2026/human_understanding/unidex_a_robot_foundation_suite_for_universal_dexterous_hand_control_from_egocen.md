@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 description: >-
-  [CVPR 2026][Human Understanding][Paper Note] The authors propose the UniDex robot foundation suite—comprising a large-scale dataset across 8 dexterous hands (50K+ trajectories/9M frames), a Function-Actuator Aligned Space (FAAS), and a 3D VLA policy (UniDex-VLA). It achieves an 81% average task progress (vs. 38% for π₀) on real-world tool-use tasks and demonstrat
+  [CVPR 2026][Human Understanding][Dexterous manipulation] The authors propose the UniDex robot foundation suite—comprising a large-scale dataset across 8 dexterous hands (50K+ trajectories/9M frames), a Function-Actuator Aligned Space (FAAS), and a 3D VLA policy (UniDex-VLA). It achieves an 81% average task progress (vs. 38% for π₀) on real-world tool-use tasks and demonstrates spatial, object, and zero-shot cross-hand generalization capabilities.
 tags:
-  - CVPR 2026
-  - Human Understanding
+  - "CVPR 2026"
+  - "Human Understanding"
+  - "Dexterous manipulation"
+  - "VLA foundation model"
+  - "unified action space"
+  - "learning from human videos"
+  - "cross-hand transfer"
 date: 2026-05-08
-content_hash: 75880983583ceb54
+content_hash: 7073e86f595aa5b2
 ---
+
 # UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos
 
 **Conference**: CVPR 2026  
@@ -129,11 +135,11 @@ On the "cutting bags with scissors" task, it shows an 84.6% improvement over the
 
 ## Related Papers
 
-- [\[CVPR 2026\] Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)
+- [\[CVPR 2026\] InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions](interprior_scaling_generative_control_for_physics-based_human-object_interaction.md)
 - [\[CVPR 2026\] E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)
-- [\[CVPR 2026\] Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)
-- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
 - [\[CVPR 2026\] TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement](trilite_efficient_weakly_supervised_object_localization_with_universal_visual_fe.md)
+- [\[CVPR 2026\] Forecasting 3D Scanpaths in Egocentric Video](forecasting_3d_scanpaths_in_egocentric_video.md)
+- [\[ECCV 2024\] 3D Hand Pose Estimation in Everyday Egocentric Images](../../ECCV2024/human_understanding/3d_hand_pose_estimation_in_everyday_egocentric_images.md)
 
 </div>
 

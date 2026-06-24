@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Pretrained Reversible Generation as Unsupervised Visual Representation Learning
 description: >-
-  [ICCV 2025][Image Generation][Reversible generation] PRG extracts unsupervised visual representations by **inverting the generation process of pretrained continuous generative models** (diffusion/flow models)…
+  [ICCV 2025][Image Generation][Reversible generation] PRG extracts unsupervised visual representations by **inverting the generation process of pretrained continuous generative models** (diffusion/flow models), enabling model-agnostic adaptation to discriminative tasks. It achieves 78% top-1 accuracy on ImageNet 64×64, establishing state of the art among generative model-based methods.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "pretrain-finetune"
   - "mutual information"
 date: 2026-05-08
-content_hash: 4bf88d2d07e649fc
+content_hash: 67ec0dd6620da4ae
 ---
 
 # Pretrained Reversible Generation as Unsupervised Visual Representation Learning
@@ -149,11 +149,11 @@ Longer pretraining (higher mutual information) leads to better finetuning perfor
 
 ## Related Papers
 
+- [\[ECCV 2024\] Idempotent Unsupervised Representation Learning for Skeleton-Based Action Recognition](../../ECCV2024/image_generation/idempotent_unsupervised_representation_learning_for_skeleton-based_action_recogn.md)
 - [\[ICCV 2025\] VisualCloze: A Universal Image Generation Framework via Visual In-Context Learning](visualcloze_a_universal_image_generation_framework_via_visual_in-context_learnin.md)
+- [\[CVPR 2025\] CTRL-O: Language-Controllable Object-Centric Visual Representation Learning](../../CVPR2025/image_generation/ctrl-o_language-controllable_object-centric_visual_representation_learning.md)
 - [\[ICCV 2025\] Unsupervised Imaging Inverse Problems with Diffusion Distribution Matching](unsupervised_imaging_inverse_problems_with_diffusion_distribution_matching.md)
-- [\[NeurIPS 2025\] Latent Zoning Network: A Unified Principle for Generative Modeling, Representation Learning, and Classification](../../NeurIPS2025/image_generation/latent_zoning_network_a_unified_principle_for_generative_modeling_representation.md)
-- [\[ICCV 2025\] GenFlowRL: Shaping Rewards with Generative Object-Centric Flow in Visual Reinforcement Learning](genflowrl_shaping_rewards_with_generative_object-centric_flow_in_visual_reinforc.md)
-- [\[ICCV 2025\] Randomized Autoregressive Visual Generation](randomized_autoregressive_visual_generation.md)
+- [\[ICML 2025\] Unsupervised Learning for Class Distribution Mismatch (UCDM)](../../ICML2025/image_generation/unsupervised_learning_for_class_distribution_mismatch.md)
 
 </div>
 

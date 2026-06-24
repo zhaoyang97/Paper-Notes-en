@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs
 description: >-
-  [NeurIPS 2025][Graph Learning][GNN depth dilemma] Grounded in PAC-Bayes generalization theory, this paper proves that varying GNN depth induces generalization preference drift across node subgroups with different homophi…
+  [NeurIPS 2025][Graph Learning][GNN depth dilemma] Grounded in PAC-Bayes generalization theory, this paper proves that varying GNN depth induces generalization preference drift across node subgroups with different homophily levels. It proposes Moscat—a post-processing attention-gating model that adaptively fuses independently trained GNN experts of different depths at test time on a per-node basis—achieving significant improvements across diverse GNN architectures and datasets…
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "test-time gating"
   - "homophily subgroups"
 date: 2026-05-08
-content_hash: 652cc1ba2f9fecff
+content_hash: d0773a90b1dce5f2
 ---
 
 # Moscat: Mixture of Scope Experts at Test for Generalizing Deeper GNNs
@@ -150,9 +150,9 @@ Selecting the best GNN architecture paired with Moscat on each of 8 datasets, th
 
 - [\[NeurIPS 2025\] MoEMeta: Mixture-of-Experts Meta Learning for Few-Shot Relational Learning](moemeta_mixture-of-experts_meta_learning_for_few-shot_relational_learning.md)
 - [\[NeurIPS 2025\] S'MoRE: Structural Mixture of Residual Experts for Parameter-Efficient LLM Fine-tuning](smore_structural_mixture_of_residual_experts_for_parameter-efficient_llm_fine-tu.md)
-- [\[NeurIPS 2025\] What Expressivity Theory Misses: Message Passing Complexity for GNNs](what_expressivity_theory_misses_message_passing_complexity_for_gnns.md)
-- [\[NeurIPS 2025\] Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective](making_classic_gnns_strong_baselines_across_varying_homophily_a_smoothness-gener.md)
-- [\[AAAI 2026\] Self-Adaptive Graph Mixture of Models](../../AAAI2026/graph_learning/self-adaptive_graph_mixture_of_models.md)
+- [\[ICLR 2026\] Adaptive Mixture of Disentangled Experts for Dynamic Graph Out-of-Distribution Generalization](../../ICLR2026/graph_learning/adaptive_mixture_of_disentangled_experts_for_dynamic_graph_out-of-distribution_g.md)
+- [\[CVPR 2026\] Mixture-of-Experts based Feature Decoupling for Open Vocabulary Scene Graph Generation](../../CVPR2026/graph_learning/mixture-of-experts_based_feature_decoupling_for_open_vocabulary_scene_graph_gene.md)
+- [\[ICLR 2026\] Diverse and Sparse Mixture-of-Experts for Causal Subgraph–Based Out-of-Distribution Graph Learning](../../ICLR2026/graph_learning/diverse_and_sparse_mixture-of-experts_for_causal_subgraphbased_out-of-distributi.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations
 description: >-
-  [ICML 2026][learning_theory][Paper Note] The authors reattribute the root cause of "negative transfer" in Multi-Task Learning (MTL) from "gradient conflict" to the "entanglement of semantics and noise in shared representations." They propose CORE-MTL: a dual-stream encoder splits representations into semantic $\hat{Z}_s$ and residual $\hat{Z}_r$, implementing
+  [ICML 2026][Optimization][Gradient Conflict] The authors reattribute the root cause of "negative transfer" in Multi-Task Learning (MTL) from "gradient conflict" to the "entanglement of semantics and noise in shared representations." They propose CORE-MTL: a dual-stream encoder splits representations into semantic $\hat{Z}_s$ and residual $\hat{Z}_r$, implementing "causal orthogonality" through CKA independence constraints, counterfactual style replacement…
 tags:
-  - ICML 2026
-  - learning_theory
+  - "ICML 2026"
+  - "Optimization"
+  - "Multi-Task Learning"
+  - "Causal Representation Learning"
+  - "Gradient Conflict"
+  - "Causal Disentanglement"
+  - "OOD Generalization"
+  - "Counterfactual Augmentation"
 date: 2026-05-08
-content_hash: 12c09875ce623a81
+content_hash: ddab0453b523a00f
 ---
+
 # CORE-MTL: Rethinking Gradient Balancing via Causal Orthogonal Representations
 
 **Conference**: ICML 2026  
@@ -146,11 +153,11 @@ Scalability on CelebA ($K=10 \to 40$): CORE-MTL training time remains nearly con
 
 ## Related Papers
 
-- [\[ICLR 2026\] Function Spaces Without Kernels: Learning Compact Hilbert Space Representations](../../ICLR2026/learning_theory/function_spaces_without_kernels_learning_compact_hilbert_space_representations.md)
-- [\[ICML 2026\] MMD-Balls as Credal Sets: A PAC-Bayesian Framework for Epistemic Uncertainty in Test-Time Adaptation](mmd-balls_as_credal_sets_a_pac-bayesian_framework_for_epistemic_uncertainty_in_t.md)
-- [\[ICML 2026\] Semi-Supervised Noise Adaptation: Transferring Knowledge from Noise Domain](semi-supervised_noise_adaptation_transferring_knowledge_from_noise_domain.md)
-- [\[ICML 2026\] Towards Optimal Robustness in Learning-Augmented Paging](towards_optimal_robustness_in_learning-augmented_paging.md)
-- [\[ICML 2026\] On the Learnability of Test-Time Adaptation: A Recovery Complexity Perspective](on_the_learnability_of_test-time_adaptation_a_recovery_complexity_perspective.md)
+- [\[ICLR 2026\] Adaptive Hopfield Network: Rethinking Similarities in Associative Memory](../../ICLR2026/learning_theory/adaptive_hopfield_network_rethinking_similarities_in_associative_memory.md)
+- [\[ICLR 2026\] Persistence Spheres: Bi-Continuous Representations of Persistence Diagrams](../../ICLR2026/learning_theory/persistence_spheres_bi-continuous_representations_of_persistence_diagrams.md)
+- [\[ICLR 2026\] FACT: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations](../../ICLR2026/learning_theory/fact_a_first-principles_alternative_to_the_neural_feature_ansatz_for_how_network.md)
+- [\[ICLR 2026\] Gradient Descent Dynamics of Rank-One Matrix Denoising](../../ICLR2026/learning_theory/gradient_descent_dynamics_of_rank-one_matrix_denoising.md)
+- [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](../../ICLR2026/learning_theory/transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 
 </div>
 

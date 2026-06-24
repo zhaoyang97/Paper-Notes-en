@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Inference Acceleration] Addressing the two major efficiency bottlenecks of Masked Discrete Diffusion Models (MDM)—where thousands of redundant mask tokens are fed into the network every step and KV caching is incompatible—Sparse-LaViDa proposes an equivalent transformation using "sparse parameterization + register tokens + step-causal attenti
+  [CVPR 2026][Multimodal VLM][Masked Discrete Diffusion] Addressing the two major efficiency bottlenecks of Masked Discrete Diffusion Models (MDM)—where thousands of redundant mask tokens are fed into the network every step and KV caching is incompatible—Sparse-LaViDa proposes an equivalent transformation using "sparse parameterization + register tokens + step-causal attention masks." Without breaking the bidirectional context of MDM, it allows the model to process only the "sm…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - Inference Acceleration
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Masked Discrete Diffusion"
+  - "Multimodal Unified Model"
+  - "KV Cache"
+  - "Sparse Parameterization"
+  - "Inference Acceleration"
 date: 2026-05-08
-content_hash: 67670f4951b6dbdc
+content_hash: 74b4a3583fe10b43
 ---
+
 # Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models
 
 **Conference**: CVPR 2026  
@@ -143,8 +148,8 @@ T2I quality is maintained or slightly improved (GenEval +0.01, DPG +0.6) while l
 - [\[CVPR 2026\] Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens](cubic_discrete_diffusion_discrete_visual_generation_on_high-dimensional_represen.md)
 - [\[CVPR 2026\] Sparse Spectral LoRA: Routed Experts for Medical VLMs](sparse_spectral_lora_routed_experts_for_medical_vlms.md)
 - [\[CVPR 2026\] VISion On Request: Enhanced VLLM Efficiency with Sparse, Dynamically Selected, Vision-Language Interactions](vision_on_request_enhanced_vllm_efficiency_with_sparse_dynamically_selected_visi.md)
+- [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](../../ICLR2026/multimodal_vlm/lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
 - [\[CVPR 2026\] Bridging the Modality Gap in Compositional Zero-Shot Learning via Sparse Alignment and Unimodal Memory Bank](bridging_the_modality_gap_in_compositional_zero-shot_learning_via_sparse_alignme.md)
-- [\[NeurIPS 2025\] Sparse Autoencoders Learn Monosemantic Features in Vision-Language Models](../../NeurIPS2025/multimodal_vlm/sparse_autoencoders_learn_monosemantic_features_in_visionlan.md)
 
 </div>
 

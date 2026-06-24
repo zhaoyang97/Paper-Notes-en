@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CycleManip: Enabling Cycle-based Manipulation via Effective History Perception and Understanding
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] Addressing cyclic manipulation tasks such as "shaking a bottle three times" or "hammering a nail eight times," which require precise cycle counting and timely termination, CycleManip introduces "Cost-Aware Sampling" to efficiently expand history perception and "Multi-task Progress Prediction" to force the model to unde
+  [CVPR 2026][Robotics][Robot manipulation] Addressing cyclic manipulation tasks such as "shaking a bottle three times" or "hammering a nail eight times," which require precise cycle counting and timely termination, CycleManip introduces "Cost-Aware Sampling" to efficiently expand history perception and "Multi-task Progress Prediction" to force the model to understand cycle stages within end-to-end imitation learning. It increases success rates on cyclic tasks from single-digit…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Robotics"
+  - "Robot manipulation"
+  - "cyclic tasks"
+  - "history modeling"
+  - "imitation learning"
+  - "diffusion policy"
 date: 2026-05-08
-content_hash: 417854d42a123c27
+content_hash: b7d888d8328c88b8
 ---
+
 # CycleManip: Enabling Cycle-based Manipulation via Effective History Perception and Understanding
 
 **Conference**: CVPR 2026  
@@ -144,11 +150,11 @@ The `w/o Task` configuration in the real-world table (removing history understan
 
 ## Related Papers
 
-- [\[CVPR 2026\] CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding](cyclemanip_enabling_cyclic_task_manipulation_via_effective_historical_percepti.md)
+- [\[ICLR 2026\] Manipulation as in Simulation: Enabling Accurate Geometry Perception in Robots](../../ICLR2026/robotics/manipulation_as_in_simulation_enabling_accurate_geometry_perception_in_robots.md)
+- [\[CVPR 2026\] Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation](affordance_field_intervention_enabling_vlas_to_escape_memory_traps_in_robotic_ma.md)
 - [\[CVPR 2026\] DynBridge: Bridging Imagination and Control through Interaction Dynamics for Robot Manipulation](dynbridge_bridging_imagination_and_control_through_interaction_dynamics_for_robo.md)
 - [\[CVPR 2026\] DiffuView: Multi-View Diffusion Pretraining for 3D-Aware Robotic Manipulation](diffuview_multi-view_diffusion_pretraining_for_3d_aware_robotic_manipulation.md)
-- [\[CVPR 2026\] Rethinking Camera Choice: An Empirical Study on Fisheye Camera Properties in Robotic Manipulation](rethinking_camera_choice_an_empirical_study_on_fisheye_camera_properties_in_robo.md)
-- [\[CVPR 2026\] CLaD: Planning with Grounded Foresight via Cross-Modal Latent Dynamics](clad_planning_with_grounded_foresight_via_cross-modal_latent_dynamics.md)
+- [\[CVPR 2026\] CUBic: Coordinated Unified Bimanual Perception and Control Framework](cubic_coordinated_unified_bimanual_perception_and_control_framework.md)
 
 </div>
 

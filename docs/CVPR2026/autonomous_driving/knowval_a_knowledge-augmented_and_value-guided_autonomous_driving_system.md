@@ -2,19 +2,21 @@
 title: >-
   [Paper Note] KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System
 description: >-
-  [CVPR 2026][Autonomous Driving][end-to-end driving] The KnowVal end-to-end autonomous driving system is proposed, addressing the lack of knowledge reasoning and value alignment through three core components: (1) Retrieval-guided Open-world Perception, which integrates standard 3D detection, VL-SAMv2 for long-tail objects, and VLM for scene understanding; (2) Perception-
+  [CVPR 2026][Autonomous Driving][end-to-end driving] The KnowVal end-to-end autonomous driving system is proposed, addressing the lack of knowledge reasoning and value alignment through three core components: (1) Retrieval-guided Open-world Perception, which integrates standard 3D detection, VL-SAMv2 for long-tail objects, and VLM for scene understanding; (2) Perception-guided Knowledge Retrieval, which fetches relevant knowledge from driving knowledge graphs (traffic laws…
 tags:
-  - CVPR 2026
-  - Autonomous Driving
-  - end-to-end driving
-  - knowledge graph
-  - value model
-  - world model
-  - open-world perception
-  - VLM
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "end-to-end driving"
+  - "knowledge graph"
+  - "value model"
+  - "world model"
+  - "open-world perception"
+  - "VLM"
+  - "retrieval-augmented planning"
 date: 2026-05-08
-content_hash: e3f37f89268d69ec
+content_hash: d56d7bffe53276ed
 ---
+
 # KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System
 
 **Conference**: CVPR 2026  
@@ -174,11 +176,11 @@ In long-tail scenarios, Knowledge Retrieval is particularly impactful, reducing 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Spatial Retrieval Augmented Autonomous Driving](spatial_retrieval_augmented_autonomous_driving.md)
 - [\[CVPR 2026\] GuideFlow: Constraint-Guided Flow Matching for Planning in End-to-End Autonomous Driving](guideflow_constraint-guided_flow_matching_for_planning_in_end-to-end_autonomous_.md)
+- [\[ICCV 2025\] DriveX: Omni Scene Modeling for Learning Generalizable World Knowledge in Autonomous Driving](../../ICCV2025/autonomous_driving/drivex_omni_scene_modeling_for_learning_generalizable_world_knowledge_in_autonom.md)
 - [\[CVPR 2026\] Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving](drocc_depth_region_guided_3d_occupancy.md)
-- [\[ECCV 2024\] VisionTrap: Vision-Augmented Trajectory Prediction Guided by Textual Descriptions](../../ECCV2024/autonomous_driving/visiontrap_vision-augmented_trajectory_prediction_guided_by_textual_descriptions.md)
-- [\[ICCV 2025\] Passing the Driving Knowledge Test](../../ICCV2025/autonomous_driving/passing_the_driving_knowledge_test.md)
-- [\[CVPR 2026\] VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving](vggdrive_empowering_vision-language_models_with_cross-view_geometric_grounding_f.md)
+- [\[CVPR 2026\] EE-RL: Vision Language Guided Reinforcement Learning with Explorer and Expert model for End-to-End Autonomous Driving](ee-rl_vision_language_guided_reinforcement_learning_with_explorer_and_expert_mod.md)
 
 </div>
 

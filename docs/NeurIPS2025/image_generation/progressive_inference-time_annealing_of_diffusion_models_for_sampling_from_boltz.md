@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities
 description: >-
-  [NeurIPS 2025][Image Generation][Boltzmann Sampling] This paper proposes PITA (Progressive Inference-Time Annealing), a framework that combines temperature annealing and diffusion smoothing as two complementary interpola…
+  [NeurIPS 2025 Spotlight][Image Generation][Boltzmann Sampling] This paper proposes PITA (Progressive Inference-Time Annealing), a framework that combines temperature annealing and diffusion smoothing as two complementary interpolation strategies. PITA trains an initial diffusion model at high temperature, then applies a novel Feynman-Kac PDE with SMC resampling to progressively anneal toward lower temperatures at inference time, training a sequence of diffusion models up to t…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Image Generation"
   - "Boltzmann Sampling"
   - "Temperature Annealing"
@@ -12,7 +12,7 @@ tags:
   - "Diffusion Models"
   - "Molecular Conformation"
 date: 2026-05-08
-content_hash: 3318da774f253a42
+content_hash: 9e36fddc0843fe27
 ---
 
 # Progressive Inference-Time Annealing of Diffusion Models for Sampling from Boltzmann Densities
@@ -151,10 +151,10 @@ PITA is the first diffusion-based method to achieve equilibrium sampling of alan
 ## Related Papers
 
 - [\[NeurIPS 2025\] Ψ-Sampler: Initial Particle Sampling for SMC-Based Inference-Time Reward Alignment in Score Models](psi-sampler_initial_particle_sampling_for_smc-based_inference-time_reward_alignm.md)
-- [\[NeurIPS 2025\] Diffusion-Driven Progressive Target Manipulation for Source-Free Domain Adaptation](diffusion-driven_progressive_target_manipulation_for_source-free_domain_adaptati.md)
-- [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
-- [\[NeurIPS 2025\] Cross-fluctuation Phase Transitions Reveal Sampling Dynamics in Diffusion Models](cross-fluctuation_phase_transitions_reveal_sampling_dynamics_in_diffusion_models.md)
+- [\[ICML 2025\] Annealing Flow Generative Models Towards Sampling High-Dimensional and Multi-Modal Distributions](../../ICML2025/image_generation/annealing_flow_generative_models_towards_sampling_high-dimensional_and_multi-mod.md)
 - [\[ICCV 2025\] Inference-Time Diffusion Model Distillation](../../ICCV2025/image_generation/inference-time_diffusion_model_distillation.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](../../ICLR2026/image_generation/inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[NeurIPS 2025\] BoltzNCE: Learning Likelihoods for Boltzmann Generation with Stochastic Interpolants](boltznce_learning_likelihoods_for_boltzmann_generation_with_stochastic_interpola.md)
 
 </div>
 

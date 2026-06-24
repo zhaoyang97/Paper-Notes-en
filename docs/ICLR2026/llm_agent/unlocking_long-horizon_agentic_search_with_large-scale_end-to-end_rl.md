@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] Without relying on distillation data from commercial large models or acting as an external plugin tool, the search agent ASearcher is trained on a single QwQ-32B using pure end-to-end RL. By "automatically synthesizing high-difficulty QA data + setting the tool-call limit per trajectory to 128 steps for long-horizon ex
+  [ICLR 2026][LLM Agent][Search Agent] Without relying on distillation data from commercial large models or acting as an external plugin tool, the search agent ASearcher is trained on a single QwQ-32B using pure end-to-end RL. By "automatically synthesizing high-difficulty QA data + setting the tool-call limit per trajectory to 128 steps for long-horizon exploration," the model spontaneously develops expert-level search behaviors such as uncertainty analysis and conflict checki…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Search Agent"
+  - "End-to-End RL"
+  - "Long-Horizon Exploration"
+  - "Data Synthesis"
+  - "Asynchronous Training"
 date: 2026-05-08
-content_hash: e6f7f424dc12305d
+content_hash: 365a4ac3e75b4592
 ---
+
 # Unlocking Long-Horizon Agentic Search with Large-Scale End-to-End RL
 
 **Conference**: ICLR 2026  
@@ -143,7 +149,7 @@ All ablations continued training for 200 steps from the Stage 1 checkpoint and w
 - [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
 - [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
 - [\[ICLR 2026\] Repurposing Synthetic Data for Fine-grained Search Agent Supervision](repurposing_synthetic_data_for_fine-grained_search_agent_supervision.md)
-- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
+- [\[ICLR 2026\] WebSeer: Training Deeper Search Agents through Reinforcement Learning with Self-Reflection](webseer_training_deeper_search_agents_through_reinforcement_learning_with_self-r.md)
 
 </div>
 

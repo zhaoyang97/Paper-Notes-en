@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition
 description: >-
-  [ICML 2026][Computational Biology][ESM-3] ProtDiS decomposes pre-trained protein micro-environment embeddings (such as ESM-3) into 8 biophysically interpretable "knowledge channels" and 1 residual channel through information bottleneck and redundancy elimination. This leads to consistent improvements in structural representation across twelve downstream tasks,
+  [ICML 2026][Computational Biology][Protein Structure-Function] ProtDiS decomposes pre-trained protein micro-environment embeddings (such as ESM-3) into 8 biophysically interpretable "knowledge channels" and 1 residual channel through information bottleneck and redundancy elimination. This leads to consistent improvements in structural representation across twelve downstream tasks, particularly in scenarios where proteins share similar structures but possess different function…
 tags:
-  - ICML 2026
-  - Computational Biology
-  - ESM-3
+  - "ICML 2026"
+  - "Computational Biology"
+  - "Protein Structure-Function"
+  - "Knowledge-guided Disentanglement"
+  - "Information Bottleneck"
+  - "ESM-3"
+  - "Redundancy Elimination"
 date: 2026-05-08
-content_hash: 05a43ed9ba96247d
+content_hash: ca8dde7f64040a6f
 ---
+
 # Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition
 
 **Conference**: ICML 2026  
@@ -136,15 +141,17 @@ The gain under random split is smaller (e.g., EC 88.2 → 89.0), which aligns wi
 
 <div class="related-papers" markdown="1">
 
-1. **ESM-3**: Evolutionary Scale Modeling 3, the baseline micro-environment encoder used.
-2. **Barlow Twins**: The source of the redundancy elimination loss function.
-3. **VIB (Variational Information Bottleneck)**: The underlying theoretical framework for the decomposition.
-4. **GearNet**: A key comparative structural representation model mentioned in related work.
+## Related Papers
+
+- [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/computational_biology/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)
+- [\[ICLR 2026\] PRISM: Enhancing Protein Inverse Folding through Fine-Grained Retrieval on Structure-Sequence Multimodal Representations](../../ICLR2026/computational_biology/prism_enhancing_protein_inverse_folding_through_fine-_grained_retrieval_on_struc.md)
+- [\[ICML 2026\] CARD: Coarse-to-fine Autoregressive Modeling with Radix-based Decomposition for Transferable Free Energy Estimation](card_coarse-to-fine_autoregressive_modeling_with_radix-based_decomposition_for_t.md)
+- [\[ICML 2026\] Rethinking Genomic Modeling Through Optical Character Recognition](rethinking_genomic_modeling_through_optical_character_recognition.md)
+- [\[CVPR 2026\] Deciphering Genotype-Phenotype Mechanisms from High-Content Profiling via Knowledge-Guided Multi-modal Graph Learning](../../CVPR2026/computational_biology/deciphering_genotype-phenotype_mechanisms_from_high-content_profiling_via_knowle.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] S2Drug: Bridging Protein Sequence and 3D Structure in Contrastive Representation Learning for Virtual Screening](../../AAAI2026/computational_biology/s2drug_bridging_protein_sequence_and_3d_structure_in_contrastive_representation_.md)

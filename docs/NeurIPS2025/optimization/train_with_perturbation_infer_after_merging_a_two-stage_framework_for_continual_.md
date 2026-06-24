@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning
 description: >-
-  [NeurIPS 2025][Optimization][Continual Learning] This paper proposes the Perturb-and-Merge (P&M) framework, which introduces model merging mechanisms into the continual learning paradigm. During training…
+  [NeurIPS 2025][Optimization][Continual Learning] This paper proposes the Perturb-and-Merge (P&M) framework, which introduces model merging mechanisms into the continual learning paradigm. During training, random perturbations are added along the task vector direction to smooth the loss landscape; during inference, a closed-form optimal coefficient is used to compute a convex combination of the historical model and the current task model. Combined with LoRA…
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Parameter Perturbation"
   - "LoRA"
 date: 2026-05-08
-content_hash: b0593b2b5e6f43fb
+content_hash: 5bb584b2b28718dc
 ---
 
 # Train with Perturbation, Infer after Merging: A Two-Stage Framework for Continual Learning
@@ -149,8 +149,8 @@ The base loss is cross-entropy. The perturbation magnitude is $\epsilon = 0.5$, 
 
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](online_two-stage_submodular_maximization.md)
 - [\[NeurIPS 2025\] MergeBench: A Benchmark for Merging Domain-Specialized LLMs](mergebench_a_benchmark_for_merging_domain-specialized_llms.md)
-- [\[NeurIPS 2025\] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)
 - [\[CVPR 2026\] DC-Merge: Improving Model Merging with Directional Consistency](../../CVPR2026/optimization/dc-merge_improving_model_merging_with_directional_consistency.md)
+- [\[NeurIPS 2025\] Gradient Descent as Loss Landscape Navigation: a Normative Framework for Deriving Learning Rules](gradient_descent_as_loss_landscape_navigation_a_normative_framework_for_deriving.md)
 - [\[CVPR 2026\] Defending Unauthorized Model Merging via Dual-Stage Weight Protection](../../CVPR2026/optimization/defending_unauthorized_model_merging_via_dual-stage_weight_protection.md)
 
 </div>

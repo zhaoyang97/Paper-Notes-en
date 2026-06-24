@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] StructBreak: Structural Cognitive Overload-Induced Safety Failures in MLLMs
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] StructBreak proposes the "Structural Cognitive Overload" (SCO) attack paradigm, leveraging the topological complexity of Visual Knowledge Graphs (VKG) to induce safety failures in Multimodal LLMs. It achieves an average attack success rate of 92% across six frontier MLLMs in a black-box setting (reaching 97% on Gemini
+  [ACL2026 Findings][Multimodal VLM][MLLM Safety] StructBreak proposes the "Structural Cognitive Overload" (SCO) attack paradigm, leveraging the topological complexity of Visual Knowledge Graphs (VKG) to induce safety failures in Multimodal LLMs. It achieves an average attack success rate of 92% across six frontier MLLMs in a black-box setting (reaching 97% on Gemini 2.5) and reveals safety collapse mechanisms through attention dissipation, latent space topology…
 tags:
-  - ACL 2026
-  - Multimodal VLM
+  - "ACL2026 Findings"
+  - "Multimodal VLM"
+  - "MLLM Safety"
+  - "Jailbreak Attack"
+  - "Cognitive Overload"
+  - "Visual Knowledge Graph"
+  - "Attention Dissipation"
+  - "Alignment Failure"
 date: 2026-05-08
-content_hash: e16e44077e5e1e79
+content_hash: cb9671a805603b87
 ---
+
 # StructBreak: Structural Cognitive Overload-Induced Safety Failures in MLLMs
 
 **Conference**: ACL2026 Findings  
@@ -128,11 +135,11 @@ Attack Success Rate (ASR) across 6 frontier MLLMs:
 
 ## Related Papers
 
+- [\[ICLR 2026\] DaVinci: Reinforcing Visual-Structural Syntax in MLLMs for Generalized Scientific Diagram Parsing](../../ICLR2026/multimodal_vlm/davinci_reinforcing_visual-structural_syntax_in_mllms_for_generalized_scientific.md)
+- [\[ICLR 2026\] SpatialViz-Bench: A Cognitive Science-Driven Benchmark for Diagnosing the Spatial Visualization Capabilities of MLLMs](../../ICLR2026/multimodal_vlm/spatialviz-bench_a_cognitively-grounded_benchmark_for_diagnosing_spatial_visuali.md)
 - [\[CVPR 2026\] Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](../../CVPR2026/multimodal_vlm/harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)
-- [\[CVPR 2026\] LASAR: Towards Spatio-temporal Reasoning with Latent Cognitive Map](../../CVPR2026/multimodal_vlm/lasar_towards_spatio-temporal_reasoning_with_latent_cognitive_map.md)
 - [\[CVPR 2026\] Revisiting Visual Corruptions in LVLMs: A Shape-Texture Perspective on Model Failures](../../CVPR2026/multimodal_vlm/revisiting_visual_corruptions_in_lvlms_a_shape-texture_perspective_on_model_fail.md)
 - [\[CVPR 2026\] Structural Graph Probing of Vision-Language Models](../../CVPR2026/multimodal_vlm/structural_graph_probing_of_vision-language_models.md)
-- [\[CVPR 2026\] SO-Bench: A Structural Output Evaluation of Multimodal LLM](../../CVPR2026/multimodal_vlm/so-bench_a_structural_output_evaluation_of_multimodal_llm.md)
 
 </div>
 

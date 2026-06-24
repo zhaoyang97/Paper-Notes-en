@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer
 description: >-
-  [ICLR 2026][Audio & Speech][Flow Matching] AC-Foley is proposed as a reference-audio-guided video-to-audio synthesis framework. Through two-stage training (acoustic feature learning and temporal adaptation) and multimodal conditional flow matching, it achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation, significantly out
+  [ICLR 2026][Audio & Speech][Video-to-Audio] AC-Foley is proposed as a reference-audio-guided video-to-audio synthesis framework. Through two-stage training (acoustic feature learning and temporal adaptation) and multimodal conditional flow matching, it achieves fine-grained timbre control, timbre transfer, and zero-shot sound effect generation, significantly outperforming existing methods in audio quality and acoustic fidelity.
 tags:
-  - ICLR 2026
-  - Audio & Speech
-  - Flow Matching
+  - "ICLR 2026"
+  - "Audio & Speech"
+  - "Video-to-Audio"
+  - "Foley Synthesis"
+  - "Reference Audio Control"
+  - "Timbre Transfer"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 085e9e298d43e367
+content_hash: 2440729c05114a25
 ---
+
 # AC-Foley: Reference-Audio-Guided Video-to-Audio Synthesis with Acoustic Transfer
 
 **Conference**: ICLR 2026  
@@ -122,7 +127,7 @@ The training objective is the standard conditional flow matching loss (regressio
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

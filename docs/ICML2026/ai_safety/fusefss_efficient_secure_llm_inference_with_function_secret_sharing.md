@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing
 description: >-
-  [ICML 2026][AI Safety][Paper Note] FuseFSS replaces the paradigm of "handcrafting a dedicated secure protocol for every fixed-point non-linear operator" with a unified compiler. By defining a compact specification for each scalar operator (interval partitioning + low-degree polynomials + predicate bits), the compiler automatically generates two FSS call
+  [ICML2026][AI Safety][Secure Inference] FuseFSS replaces the paradigm of "handcrafting a dedicated secure protocol for every fixed-point non-linear operator" with a unified compiler. By defining a compact specification for each scalar operator (interval partitioning + low-degree polynomials + predicate bits), the compiler automatically generates two FSS calls: "one packed comparison + one vector interval lookup." Compared to the state-of-the-art FSS baseline Sigma…
 tags:
-  - ICML 2026
-  - AI Safety
+  - "ICML2026"
+  - "AI Safety"
+  - "Secure Inference"
+  - "Function Secret Sharing"
+  - "Fixed-point Non-linear Operators"
+  - "Compiler"
+  - "Two-party Computation"
 date: 2026-05-08
-content_hash: 76913ce358f0265f
+content_hash: 8799e779ae7e4016
 ---
+
 # FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing
 
 **Conference**: ICML2026  
@@ -144,13 +150,17 @@ Sequence length scaling (BERT-base, batch 1) and softmax sub-step breakdown:
 
 <div class="related-papers" markdown="1">
 
-- **Sigma**: [Sigma: Secure GPU-Accelerated Inference of Large Language Models](https://arxiv.org/abs/2311.01244)
-- **SHAFT**: [SHAFT: Secure High-performance Accelerated Flash Transformer](https://arxiv.org/abs/2410.05263)
+## Related Papers
+
+- [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)
+- [\[ACL 2026\] On the (In-)Security of the Shuffling Defense in the Transformer Secure Inference](../../ACL2026/ai_safety/on_the_in-security_of_the_shuffling_defense_in_the_transformer_secure_inference.md)
+- [\[ICLR 2026\] Secure Outlier-Aware Large Language Model Inference](../../ICLR2026/ai_safety/secure_outlier-aware_large_language_model_inference.md)
+- [\[ICML 2026\] Position: Retire the "Positive Backdoor" Label -- Secret Alignment Requires Strict and Systematic Evaluation](position_retire_the_positive_backdoor_label_--_secret_alignment_requires_strict_.md)
+- [\[ICML 2026\] From Weak Cues to Real Identities: Evaluating Inference-Driven De-Anonymization in LLM Agents](from_weak_cues_to_real_identities_evaluating_inference-driven_de-anonymization_i.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[AAAI 2026\] SecMoE: Communication-Efficient Secure MoE Inference via Select-Then-Compute](../../AAAI2026/ai_safety/secmoe_communication-efficient_secure_moe_inference_via_select-then-compute.md)

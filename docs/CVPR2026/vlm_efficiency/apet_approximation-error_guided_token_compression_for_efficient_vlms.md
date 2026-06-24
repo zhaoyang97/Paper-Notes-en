@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ApET: Approximation-Error Guided Token Compression for Efficient VLMs
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] From an information-theoretic perspective, this paper proposes a visual token importance evaluation method based on linear approximation reconstruction error. It does not rely on attention weights, making it naturally compatible with FlashAttention. On LLaVA-1.5, it maintains 95.2% performance while compressing 88.9% o
+  [CVPR 2026][Multimodal Efficiency][Token Compression] From an information-theoretic perspective, this paper proposes a visual token importance evaluation method based on linear approximation reconstruction error. It does not rely on attention weights, making it naturally compatible with FlashAttention. On LLaVA-1.5, it maintains 95.2% performance while compressing 88.9% of visual tokens.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Token Compression"
+  - "Visual Token Redundancy"
+  - "Approximation Error"
+  - "FlashAttention Compatibility"
+  - "VLM Acceleration"
 date: 2026-05-08
-content_hash: c43b122edf03ad95
+content_hash: 54224dae8a109037
 ---
+
 # ApET: Approximation-Error Guided Token Compression for Efficient VLMs
 
 **Conference**: CVPR 2026  
@@ -158,10 +164,10 @@ Performance slightly improves (100.4%) at 20% tokens in video tasks, as redundan
 ## Related Papers
 
 - [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
-- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
 - [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](flashcache_frequency_kv_cache_compression.md)
-- [\[CVPR 2026\] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation](unicompress_token_compression_for_unified_vision-language_understanding_and_gene.md)
-- [\[CVPR 2026\] Efficient Document Parsing via Parallel Token Prediction](efficient_document_parsing_via_parallel_token_prediction.md)
+- [\[ICLR 2026\] SURGE: Surprise-Guided Token Reduction for Efficient Video Understanding with VLMs](../../ICLR2026/vlm_efficiency/surge_surprise-guided_token_reduction_for_efficient_video_understanding_with_vlm.md)
+- [\[CVPR 2026\] MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
 
 </div>
 

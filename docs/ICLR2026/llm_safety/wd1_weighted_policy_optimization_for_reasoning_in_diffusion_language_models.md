@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Diffusion Language Model] This work proposes wd1, a ratio-free weighted log-likelihood policy optimization method for the RL fine-tuning of diffusion language models (dLLMs). By utilizing positive sample weighting and negative sample penalties, it avoids the bias and high variance issues associated with policy ratio estimation in GRPO. It achie
+  [ICLR 2026][LLM Safety][Diffusion Language Models] This work proposes wd1, a ratio-free weighted log-likelihood policy optimization method for the RL fine-tuning of diffusion language models (dLLMs). By utilizing positive sample weighting and negative sample penalties, it avoids the bias and high variance issues associated with policy ratio estimation in GRPO. It achieves SOTA performance on LLaDA-8B, including +59% on Sudoku and 84.5% on GSM8K.
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - Diffusion Language Model
-  - Reinforcement Learning
-  - dLLM
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Diffusion Language Models"
+  - "Reinforcement Learning"
+  - "Policy Optimization"
+  - "Reasoning Capability"
+  - "dLLM"
 date: 2026-05-08
-content_hash: 771e1a313381045f
+content_hash: 73ca47d398b9d9c1
 ---
+
 # wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models
 
 **Conference**: ICLR 2026  
@@ -139,8 +142,8 @@ Training cost comparison (4×A100):
 
 ## Related Papers
 
-- [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
 - [\[ICLR 2026\] EEPO: Exploration-Enhanced Policy Optimization via Sample-then-Forget](eepo_exploration-enhanced_policy_optimization_via_sample-then-forget.md)
+- [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
 - [\[ICLR 2026\] Tree-based Dialogue Reinforced Policy Optimization for Red-Teaming Attacks (DialTree)](tree-based_dialogue_reinforced_policy_optimization_for_red-teaming_attacks.md)
 - [\[ICLR 2026\] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)](membership_inference_attacks_against_fine-tuned_diffusion_language_models.md)
 - [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)

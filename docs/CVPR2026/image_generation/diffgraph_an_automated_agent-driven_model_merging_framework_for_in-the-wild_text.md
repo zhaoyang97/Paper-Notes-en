@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DiffGraph: An Automated Agent-driven Model Merging Framework for In-the-Wild Text-to-Image Generation
 description: >-
-  [CVPR 2026][Image Generation][LLM Agent] DiffGraph organizes vast amounts of online diffusion expert models (checkpoints / LoRAs) into a "universal graph." It employs two LLM agents to parse user prompts and dynamically activate subgraphs, utilizing a Variational Graph Autoencoder (VGAE) to predict merging coefficients for each expert. This allows for trainin
+  [CVPR 2026][Image Generation][Model Merging] DiffGraph organizes vast amounts of online diffusion expert models (checkpoints / LoRAs) into a "universal graph." It employs two LLM agents to parse user prompts and dynamically activate subgraphs, utilizing a Variational Graph Autoencoder (VGAE) to predict merging coefficients for each expert. This allows for training-free and test-time-optimization-free on-demand merging of arbitrary experts, leading in human preference metrics…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - LLM Agent
-  - in-the-wild T2I
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Model Merging"
+  - "Diffusion Experts"
+  - "LLM Agent"
+  - "Variational Graph Autoencoder (VGAE)"
+  - "in-the-wild T2I"
 date: 2026-05-08
-content_hash: 06e9bca26e2c3205
+content_hash: 6182b5369cd0f433
 ---
+
 # DiffGraph: An Automated Agent-driven Model Merging Framework for In-the-Wild Text-to-Image Generation
 
 **Conference**: CVPR 2026  
@@ -155,11 +159,11 @@ Four groups of ablations (SD15 / DABench, IR metric):
 
 ## Related Papers
 
-- [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](autodebias_automated_framework_for_debiasing_text-to-image_models.md)
+- [\[ICLR 2026\] EdiVal-Agent: An Object-Centric Framework for Automated, Fine-Grained Evaluation of Multi-Turn Editing](../../ICLR2026/image_generation/edival-agent_an_object-centric_framework_for_automated_fine-grained_evaluation_o.md)
 - [\[CVPR 2026\] Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation](disentangling_to_re-couple_resolving_the_similarity-controllability_paradox_in_s.md)
+- [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](../../ICLR2026/image_generation/w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
 - [\[CVPR 2025\] coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation](../../CVPR2025/image_generation/codrawagents_a_multi-agent_dialogue_framework_for_compositional_image_generation.md)
 - [\[CVPR 2026\] ParaUni: Enhance Generation in Unified Multimodal Model with Reinforcement-driven Hierarchical Parallel Information Interaction](parauni_enhance_generation_in_unified_multimodal_model_with_reinforcement-driven.md)
-- [\[CVPR 2026\] IntroSVG: Learning from Rendering Feedback for Text-to-SVG Generation via an Introspective Generator-Critic Framework](introsvg_learning_from_rendering_feedback_for_text-to-svg_generation_via_an_intr.md)
 
 </div>
 

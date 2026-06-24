@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Tree-RAG] Ψ-RAG replaces RAPTOR's k-means with a "merge-collapse" hierarchical clustering to construct cross-document abstraction trees. It incorporates a retrieval-response Agent with multi-turn rewriting capabilities and a hybrid BM25 index, enabling Tree-RAG to match or exceed Graph-RAG in corpus-level, multi-hop QA for the f
+  [ICML 2026][Information Retrieval & RAG][Tree-RAG] Ψ-RAG replaces RAPTOR's k-means with a "merge-collapse" hierarchical clustering to construct cross-document abstraction trees. It incorporates a retrieval-response Agent with multi-turn rewriting capabilities and a hybrid BM25 index, enabling Tree-RAG to match or exceed Graph-RAG in corpus-level, multi-hop QA for the first time. The average F1 score is 25.9% higher than RAPTOR and 7.4% higher than HippoRAG 2.
 tags:
-  - ICML 2026
-  - Information Retrieval & RAG
-  - Tree-RAG
+  - "ICML 2026"
+  - "Information Retrieval & RAG"
+  - "Tree-RAG"
+  - "Cross-document Multi-hop"
+  - "Hierarchical Abstraction"
+  - "Agentic Retrieval"
+  - "Hybrid Sparse Retrieval"
 date: 2026-05-08
-content_hash: 1a9af8561dd2aa96
+content_hash: f06df25a9570c391
 ---
+
 # Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation
 
 **Conference**: ICML 2026  
@@ -129,11 +134,11 @@ Ours is entirely training-free: encoders, rerankers, and the agent's LLM (Llama-
 
 ## Related Papers
 
-- [\[ACL 2025\] Hierarchical Document Refinement for Long-context Retrieval-augmented Generation](../../ACL2025/information_retrieval/hierarchical_document_refinement_for_long-context_retrieval-augmented_generation.md)
+- [\[ICLR 2026\] Hierarchical Encoding Tree with Modality Mixup for Cross-modal Hashing](../../ICLR2026/information_retrieval/hierarchical_encoding_tree_with_modality_mixup_for_cross-modal_hashing.md)
 - [\[ICLR 2026\] CFT-RAG: An Entity Tree Based Retrieval Augmented Generation Algorithm With Cuckoo Filter](../../ICLR2026/information_retrieval/cft-rag_an_entity_tree_based_retrieval_augmented_generation_algorithm_with_cucko.md)
-- [\[ACL 2025\] Cross-Lingual Relevance Transfer for Document Retrieval](../../ACL2025/information_retrieval/cross-lingual_relevance_transfer_for_document_retrieval.md)
+- [\[ACL 2025\] Hierarchical Document Refinement for Long-context Retrieval-augmented Generation](../../ACL2025/information_retrieval/hierarchical_document_refinement_for_long-context_retrieval-augmented_generation.md)
 - [\[ICML 2026\] LazyAttention: Efficient Retrieval-Augmented Generation with Deferred Positional Encoding](lazyattention_efficient_retrieval-augmented_generation_with_deferred_positional_.md)
-- [\[ICML 2026\] Predictive Prefetching for Retrieval-Augmented Generation](predictive_prefetching_for_retrieval-augmented_generation.md)
+- [\[ICML 2026\] Vector Linking based on Cross-Model Local Isometric Consistency](vector_linking_via_cross-model_local_isometric_consistency.md)
 
 </div>
 

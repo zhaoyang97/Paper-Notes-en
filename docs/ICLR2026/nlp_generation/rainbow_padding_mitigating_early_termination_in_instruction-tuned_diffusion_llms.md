@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Rainbow Padding: Mitigating Early Termination in Instruction-Tuned Diffusion LLMs
 description: >-
-  [ICLR 2026][Text Generation][instruction-tuning] This paper identifies a persistent " `<eos>` overflow" early termination issue in instruction-tuned diffusion language models—where longer allocated generation lengths lead to shorter or even collapsed answers (sequences of `<eos>`). The root cause is that `<eos>` serves as both a terminator and a padding token. The au
+  [ICLR 2026][Text Generation][Diffusion LLM] This paper identifies a persistent " `<eos>` overflow" early termination issue in instruction-tuned diffusion language models—where longer allocated generation lengths lead to shorter or even collapsed answers (sequences of `<eos>`). The root cause is that `<eos>` serves as both a terminator and a padding token. The authors propose Rainbow Padding: retaining a single `<eos>` for actual termination while filling remaining positions w…
 tags:
-  - ICLR 2026
-  - Text Generation
-  - instruction-tuning
+  - "ICLR 2026"
+  - "Text Generation"
+  - "Diffusion LLM"
+  - "early termination"
+  - "eos padding"
+  - "cyclic padding"
+  - "instruction-tuning"
 date: 2026-05-08
-content_hash: 1d69cef13b918cc4
+content_hash: d16cf1a04106bf7f
 ---
+
 # Rainbow Padding: Mitigating Early Termination in Instruction-Tuned Diffusion LLMs
 
 **Conference**: ICLR 2026  
@@ -138,10 +143,10 @@ Under standard decoding (#Blocks=1), Rainbow Padding significantly outperforms `
 
 ## Related Papers
 
+- [\[ICML 2025\] Understanding and Mitigating Memorization in Diffusion Models for Tabular Data](../../ICML2025/nlp_generation/understanding_and_mitigating_memorization_in_diffusion_models_for_tabular_data.md)
 - [\[ICLR 2026\] Rethinking Uncertainty Estimation in LLMs: A Principled Single-Sequence Measure](rethinking_uncertainty_estimation_in_llms_a_principled_single-sequence_measure.md)
 - [\[ICLR 2026\] Unveiling the Potential of Diffusion Large Language Model in Controllable Generation](unveiling_the_potential_of_diffusion_large_language_model_in_controllable_genera.md)
 - [\[ICLR 2026\] FS-DFM: Fast and Accurate Long Text Generation with Few-Step Diffusion Language Model](fs-dfm_fast_and_accurate_long_text_generation_with_few-step_diffusion_language_m.md)
-- [\[ICLR 2026\] Planner Aware Path Learning in Diffusion Language Models Training](planner_aware_path_learning_in_diffusion_language_models_training.md)
 - [\[ACL 2026\] Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models](../../ACL2026/nlp_generation/investigating_the_representation_of_backchannels_and_fillers_in_fine-tuned_langu.md)
 
 </div>

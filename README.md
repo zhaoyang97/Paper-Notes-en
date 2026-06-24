@@ -2,7 +2,7 @@
 
 **Read a top-tier AI paper in 5 minutes — one repo to keep up with the latest AI progress.**
 
-- 📖 **17,000+** AI · LLM · NLP · CV top-venue paper notes
+- 📖 **23,000+** AI · LLM · NLP · CV top-venue paper notes
 - 🏛️ Covers ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV and more
 - 🔬 Spans LLM Reasoning · VLM · Agent · RLHF · RAG · AIGC · Robotics and 55 research areas
 - 🔄 Continuously updated
@@ -17,13 +17,17 @@
 
 | Conference | Notes | Full Paper List |
 |------------|------:|:----------------|
+| [ICLR 2026](https://en.papernotes.org/ICLR2026/) | 5,327 | [ICLR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICLR2026-Papers.md) |
+| [CVPR 2026](https://en.papernotes.org/CVPR2026/) | 4,066 | [CVPR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/CVPR2026-Papers.md) |
+| [NeurIPS 2025](https://en.papernotes.org/NeurIPS2025/) | 2,530 | [NeurIPS2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/NeurIPS2025-Papers.md) |
+| [ACL 2025](https://en.papernotes.org/ACL2025/) | 1,853 | [ACL2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ACL2025-Papers.md) |
 | [ICML 2026](https://en.papernotes.org/ICML2026/) | 1,846 | [ICML2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICML2026-Papers.md) |
+| [CVPR 2025](https://en.papernotes.org/CVPR2025/) | 1,819 | [CVPR2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/CVPR2025-Papers.md) |
 | [ACL 2026](https://en.papernotes.org/ACL2026/) | 1,419 | [ACL2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ACL2026-Papers.md) |
-| [CVPR 2026](https://en.papernotes.org/CVPR2026/) | 3,703 | [CVPR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/CVPR2026-Papers.md) |
-| [ICLR 2026](https://en.papernotes.org/ICLR2026/) | 5,337 | [ICLR2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICLR2026-Papers.md) |
-| [AAAI 2026](https://en.papernotes.org/AAAI2026/) | 1,381 | [AAAI2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/AAAI2026-Papers.md) |
-| [NeurIPS 2025](https://en.papernotes.org/NeurIPS2025/) | 2,492 | [NeurIPS2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/NeurIPS2025-Papers.md) |
-| [ICCV 2025](https://en.papernotes.org/ICCV2025/) | 1,299 | [ICCV2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICCV2025-Papers.md) |
+| [AAAI 2026](https://en.papernotes.org/AAAI2026/) | 1,380 | [AAAI2026-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/AAAI2026-Papers.md) |
+| [ICCV 2025](https://en.papernotes.org/ICCV2025/) | 1,315 | [ICCV2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICCV2025-Papers.md) |
+| [ICML 2025](https://en.papernotes.org/ICML2025/) | 1,060 | [ICML2025-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ICML2025-Papers.md) |
+| [ECCV 2024](https://en.papernotes.org/ECCV2024/) | 869 | [ECCV2024-Papers.md →](https://github.com/zhaoyang97/papers-with-notes/blob/main/ECCV2024-Papers.md) |
 
 ## 🗓️ Roadmap
 
@@ -40,61 +44,61 @@
 
 | Folder | Area | Notes |
 |--------|------|------:|
-| `3d_vision/` | 🧊 3D Vision | 1,339 |
-| `ai_safety/` | 🛡️ AI Safety / Privacy | 544 |
-| `aigc_detection/` | 🔎 AIGC Detection | 76 |
+| `3d_vision/` | 🧊 3D Vision | 2,003 |
+| `ai_safety/` | 🛡️ AI Safety / Privacy | 637 |
+| `aigc_detection/` | 🔎 AIGC Detection | 97 |
 | `anomaly_detection/` | 🔍 Anomaly Detection | 17 |
-| `audio_speech/` | 🎵 Audio & Speech | 299 |
-| `autonomous_driving/` | 🚗 Autonomous Driving | 392 |
-| `causal_inference/` | 🔗 Causal Inference | 122 |
-| `code_intelligence/` | 💻 Code Intelligence | 162 |
-| `computational_biology/` | 🧬 Computational Biology | 331 |
-| `dialogue/` | 🗣️ Dialogue Systems | 55 |
-| `earth_science/` | 🌍 Earth Science | 18 |
-| `federated_learning/` | 🤝 Federated Learning | 18 |
-| `graph_learning/` | 🕸️ Graph Learning | 277 |
-| `hallucination/` | 👻 Hallucination Detection | 157 |
-| `human_understanding/` | 🧑 Human Understanding | 270 |
-| `image_generation/` | 🎨 Image Generation | 1,447 |
-| `image_restoration/` | 🖼️ Image Restoration | 256 |
-| `information_retrieval/` | 🔍 Information Retrieval / RAG | 239 |
-| `interpretability/` | 🔬 Interpretability | 507 |
-| `knowledge_editing/` | ✏️ Knowledge Editing | 45 |
-| `learning_theory/` | 📐 Learning Theory | 366 |
-| `llm_agent/` | 🦾 LLM Agent | 418 |
-| `llm_alignment/` | ⚖️ Alignment / RLHF | 244 |
-| `llm_efficiency/` | ⚡ LLM Efficiency | 294 |
-| `llm_evaluation/` | 📊 LLM Evaluation | 348 |
-| `llm_nlp/` | 💬 LLM (Other) | 247 |
-| `llm_pretraining/` | 📚 Pretraining | 192 |
-| `llm_reasoning/` | 💡 LLM Reasoning | 538 |
-| `llm_safety/` | 🔒 LLM Safety | 442 |
-| `medical_imaging/` | 🏥 Medical Imaging | 459 |
-| `medical_nlp/` | 🩺 Medical NLP | 100 |
-| `model_compression/` | 📦 Model Compression | 767 |
-| `multi_agent/` | 🤝 Multi-Agent | 156 |
-| `multilingual_mt/` | 🌐 Multilingual / Translation | 96 |
-| `multimodal_vlm/` | 🧩 Multimodal VLM | 1,057 |
-| `nlp_generation/` | ✍️ NLP Generation | 35 |
-| `nlp_understanding/` | 📖 NLP Understanding | 43 |
-| `object_detection/` | 🎯 Object Detection | 218 |
-| `optimization/` | 📐 Optimization & Theory | 481 |
-| `others/` | 📂 Others | 556 |
-| `physics/` | ⚛️ Physics & Scientific Computing | 178 |
-| `recommender/` | 🎁 Recommender Systems | 108 |
-| `reinforcement_learning/` | 🎮 Reinforcement Learning | 784 |
-| `remote_sensing/` | 🛰️ Remote Sensing | 101 |
-| `robotics/` | 🤖 Robotics & Embodied AI | 485 |
+| `audio_speech/` | 🎵 Audio & Speech | 386 |
+| `autonomous_driving/` | 🚗 Autonomous Driving | 562 |
+| `causal_inference/` | 🔗 Causal Inference | 158 |
+| `code_intelligence/` | 💻 Code Intelligence | 199 |
+| `computational_biology/` | 🧬 Computational Biology | 395 |
+| `dialogue/` | 🗣️ Dialogue Systems | 75 |
+| `earth_science/` | 🌍 Earth Science | 21 |
+| `federated_learning/` | 🤝 Federated Learning | 19 |
+| `graph_learning/` | 🕸️ Graph Learning | 343 |
+| `hallucination/` | 👻 Hallucination Detection | 200 |
+| `human_understanding/` | 🧑 Human Understanding | 415 |
+| `image_generation/` | 🎨 Image Generation | 2,026 |
+| `image_restoration/` | 🖼️ Image Restoration | 364 |
+| `information_retrieval/` | 🔍 Information Retrieval / RAG | 336 |
+| `interpretability/` | 🔬 Interpretability | 591 |
+| `knowledge_editing/` | ✏️ Knowledge Editing | 67 |
+| `learning_theory/` | 📐 Learning Theory | 382 |
+| `llm_agent/` | 🦾 LLM Agent | 499 |
+| `llm_alignment/` | ⚖️ Alignment / RLHF | 347 |
+| `llm_efficiency/` | ⚡ LLM Efficiency | 353 |
+| `llm_evaluation/` | 📊 LLM Evaluation | 483 |
+| `llm_nlp/` | 💬 LLM (Other) | 745 |
+| `llm_pretraining/` | 📚 Pretraining | 286 |
+| `llm_reasoning/` | 💡 LLM Reasoning | 620 |
+| `llm_safety/` | 🔒 LLM Safety | 555 |
+| `medical_imaging/` | 🏥 Medical Imaging | 598 |
+| `medical_nlp/` | 🩺 Medical NLP | 136 |
+| `model_compression/` | 📦 Model Compression | 1,021 |
+| `multi_agent/` | 🤝 Multi-Agent | 174 |
+| `multilingual_mt/` | 🌐 Multilingual / Translation | 184 |
+| `multimodal_vlm/` | 🧩 Multimodal VLM | 1,437 |
+| `nlp_generation/` | ✍️ NLP Generation | 65 |
+| `nlp_understanding/` | 📖 NLP Understanding | 75 |
+| `object_detection/` | 🎯 Object Detection | 303 |
+| `optimization/` | 📐 Optimization & Theory | 563 |
+| `others/` | 📂 Others | 940 |
+| `physics/` | ⚛️ Physics & Scientific Computing | 206 |
+| `recommender/` | 🎁 Recommender Systems | 134 |
+| `reinforcement_learning/` | 🎮 Reinforcement Learning | 873 |
+| `remote_sensing/` | 🛰️ Remote Sensing | 131 |
+| `robotics/` | 🤖 Robotics & Embodied AI | 583 |
 | `scientific_computing/` | 🧮 Scientific Computing | 3 |
-| `segmentation/` | ✂️ Segmentation | 310 |
-| `self_supervised/` | 🔄 Self-Supervised Learning | 261 |
-| `signal_comm/` | 📡 Signal & Communications | 23 |
-| `social_computing/` | 👥 Social Computing | 108 |
-| `time_series/` | 📈 Time Series | 270 |
-| `video_generation/` | 🎬 Video Generation | 369 |
-| `video_understanding/` | 📹 Video Understanding | 364 |
-| `vlm_efficiency/` | ⚡ VLM Efficiency | 114 |
-| `vlm_reasoning/` | 🧠 VLM Reasoning | 371 |
+| `segmentation/` | ✂️ Segmentation | 485 |
+| `self_supervised/` | 🔄 Self-Supervised Learning | 337 |
+| `signal_comm/` | 📡 Signal & Communications | 38 |
+| `social_computing/` | 👥 Social Computing | 150 |
+| `time_series/` | 📈 Time Series | 306 |
+| `video_generation/` | 🎬 Video Generation | 507 |
+| `video_understanding/` | 📹 Video Understanding | 505 |
+| `vlm_efficiency/` | ⚡ VLM Efficiency | 133 |
+| `vlm_reasoning/` | 🧠 VLM Reasoning | 416 |
 
 ## 📂 Directory Structure
 
@@ -116,7 +120,11 @@ docs/
 ├── ICLR2026/
 ├── AAAI2026/
 ├── NeurIPS2025/
-└── ICCV2025/
+├── ICCV2025/
+├── ACL2025/
+├── CVPR2025/
+├── ICML2025/
+└── ECCV2024/
 ```
 
 ## 📄 License

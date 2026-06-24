@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] A Systematic Investigation of RL-Jailbreaking in LLMs
 description: >-
-  [ICML 2026][Image Generation][Reinforcement Learning] This paper investigates RL-based LLM jailbreaking as a decomposable POMDP system, finding that environment definition factors—such as reward functions, episode length, and the number of training questions—determine automated red teaming success rates more significantly than the choice of RL algorithm.
+  [ICML 2026][Image Generation][LLM Security] This paper investigates RL-based LLM jailbreaking as a decomposable POMDP system, finding that environment definition factors—such as reward functions, episode length, and the number of training questions—determine automated red teaming success rates more significantly than the choice of RL algorithm.
 tags:
-  - ICML 2026
-  - Image Generation
-  - Reinforcement Learning
+  - "ICML 2026"
+  - "Image Generation"
+  - "LLM Security"
+  - "Automated Red Teaming"
+  - "Reinforcement Learning"
+  - "Jailbreak Evaluation"
+  - "Reward Design"
 date: 2026-05-08
-content_hash: f9136f8bf6f30978
+content_hash: e9ed9d641ddde6c6
 ---
+
 # A Systematic Investigation of RL-Jailbreaking in LLMs
 
 **Conference**: ICML 2026  

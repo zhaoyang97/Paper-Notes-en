@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection
 description: >-
-  [ICLR 2026][Human Understanding][Knowledge Distillation] LINK utilizes a plug-and-play two-stage HOI detection framework comprising a "geometric encoder + VLM linking decoder," supplemented by a progressive learning strategy under a teacher-student paradigm. By converting sparse HOI annotations into dense supervision covering all human-object pairs, it achieves SOTA performa
+  [ICLR 2026][Human Understanding][HOI Detection] LINK utilizes a plug-and-play two-stage HOI detection framework comprising a "geometric encoder + VLM linking decoder," supplemented by a progressive learning strategy under a teacher-student paradigm. By converting sparse HOI annotations into dense supervision covering all human-object pairs, it achieves SOTA performance across fully-supervised, zero-shot, and open-vocabulary settings.
 tags:
-  - ICLR 2026
-  - Human Understanding
-  - Knowledge Distillation
+  - "ICLR 2026"
+  - "Human Understanding"
+  - "HOI Detection"
+  - "Vision-Language Models"
+  - "Knowledge Distillation"
+  - "Zero-shot"
+  - "Open-vocabulary"
+  - "Geometric Encoding"
 date: 2026-05-08
-content_hash: a2141c0c30ef0a64
+content_hash: db0d44ca71b2585f
 ---
+
 # LINK: Learning Instance-level Knowledge from Vision-Language Models for Human-Object Interaction Detection
 
 **Conference**: ICLR 2026  
@@ -126,10 +132,10 @@ The Geometric encoder (A3) and VLM-Link decoder (A2) are both effective; their c
 ## Related Papers
 
 - [\[ICCV 2025\] CleanPose: Category-Level Object Pose Estimation via Causal Learning and Knowledge Distillation](../../ICCV2025/human_understanding/cleanpose_category-level_object_pose_estimation_via_causal_learning_and_knowledg.md)
-- [\[ICLR 2026\] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation](unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md)
+- [\[ICLR 2026\] Sapiens2: High-Resolution Foundation Models for Human-Centric Vision](sapiens2.md)
 - [\[ICLR 2026\] EmoPrefer: Can Large Language Models Understand Human Emotion Preferences?](emoprefer_can_large_language_models_understand_human_emotion_preferences.md)
+- [\[ICLR 2026\] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation](unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md)
 - [\[CVPR 2026\] Unleashing Vision-Language Semantics for Deepfake Video Detection](../../CVPR2026/human_understanding/unleashing_vision-language_semantics_for_deepfake_video_detection.md)
-- [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
 
 </div>
 

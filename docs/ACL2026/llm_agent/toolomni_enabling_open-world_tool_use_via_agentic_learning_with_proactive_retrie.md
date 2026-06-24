@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution
 description: >-
-  [ACL 2026][LLM Agent][GRPO] This paper proposes ToolOmni, a unified agent framework that integrates proactive tool retrieval and retrieval-based tool execution into a single reasoning loop. Through a two-stage approach of cold-start SFT and decoupled multi-objective GRPO, it jointly optimizes retrieval and execution capabilities, achieving an end
+  [ACL 2026][LLM Agent][Tool Learning] This paper proposes ToolOmni, a unified agent framework that integrates proactive tool retrieval and retrieval-based tool execution into a single reasoning loop. Through a two-stage approach of cold-start SFT and decoupled multi-objective GRPO, it jointly optimizes retrieval and execution capabilities, achieving an end-to-end success rate on ToolBench that surpasses strong baselines by +10.8%.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - GRPO
+  - "ACL 2026"
+  - "LLM Agent"
+  - "Tool Learning"
+  - "Proactive Retrieval"
+  - "Open-world"
+  - "GRPO"
+  - "End-to-end"
 date: 2026-05-08
-content_hash: 1fa70226f8ca05a6
+content_hash: bc2cca2077d2b395
 ---
+
 # ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution
 
 **Conference**: ACL 2026  
@@ -132,10 +137,10 @@ Two-stage training: (1) SFT cold-start using ~28K retrieval and ~33K execution t
 ## Related Papers
 
 - [\[ACL 2026\] Robust Tool Use via Fission-GRPO: Learning to Recover from Execution Errors](robust_tool_use_via_fission-grpo_learning_to_recover_from_execution_errors.md)
-- [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
 - [\[ACL 2026\] IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](intragent_an_llm_agent_for_content-grounded_information_retrieval_through_litera.md)
-- [\[NeurIPS 2025\] ContextAgent: Context-Aware Proactive LLM Agents with Open-World Sensory Perceptions](../../NeurIPS2025/llm_agent/contextagent_context-aware_proactive_llm_agents_with_open-world_sensory_percepti.md)
-- [\[ACL 2026\] When Agents Look the Same: Quantifying Distillation-Induced Similarity in Tool-Use Behaviors](when_agents_look_the_same_quantifying_distillation-induced_similarity_in_tool-us.md)
+- [\[ACL 2026\] FAMA: Failure-Aware Meta-Agentic Framework for Open-Source LLMs in Interactive Tool Use Environments](fama_failure-aware_meta-agentic_framework_for_open-source_llms_in_interactive_to.md)
+- [\[ICLR 2026\] R-WoM: Retrieval-augmented World Model for Computer-use Agents](../../ICLR2026/llm_agent/r-wom_retrieval-augmented_world_model_for_computer-use_agents.md)
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](prints_reward_modeling_for_long-horizon_information_seeking.md)
 
 </div>
 

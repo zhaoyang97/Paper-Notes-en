@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks
 description: >-
-  [ICML 2026][LLM Agent][ALFWorld] NSI "lifts" interaction traces of LLM agents into neuro-symbolic workflow graphs with explicit conditional branching and dynamic variable binding. This evolves skills from stateless scripts into state-aware logical programs, achieving success rates of 98.0 / 76.5 / 95.2 on ALFWorld / WebShop / TextCraft, significantly
+  [ICML 2026][LLM Agent][Skill Induction] NSI "lifts" interaction traces of LLM agents into neuro-symbolic workflow graphs with explicit conditional branching and dynamic variable binding. This evolves skills from stateless scripts into state-aware logical programs, achieving success rates of 98.0 / 76.5 / 95.2 on ALFWorld / WebShop / TextCraft, significantly outperforming programmatic skill baselines like ASI and AWM.
 tags:
-  - ICML 2026
-  - LLM Agent
-  - ALFWorld
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Skill Induction"
+  - "First-Order Logic"
+  - "Workflow Graph"
+  - "Reflective Planning"
+  - "ALFWorld"
 date: 2026-05-08
-content_hash: cb4b31ea50da2d4b
+content_hash: ec759649087873ea
 ---
+
 # Lifting Traces to Logic: Programmatic Skill Induction with Neuro-Symbolic Learning for Long-Horizon Agentic Tasks
 
 **Conference**: ICML 2026  
@@ -127,15 +132,15 @@ NSI does not update LLM parameters; all "training" occurs in the program space. 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] WebGym: Scaling Training Environments for Long-Horizon Visual Web Agents with Realistic Tasks](../../CVPR2026/llm_agent/webgym_scaling_training_environments_for_long-horizon_visual_web_agents_with_rea.md)
 - [\[ACL 2026\] SOLAR-RL: Semi-Online Long-horizon Assignment Reinforcement Learning](../../ACL2026/llm_agent/solar-rl_semi-online_long-horizon_assignment_reinforcement_learning.md)
-- [\[ICLR 2026\] Solving the Granularity Mismatch: Hierarchical Preference Learning for Long-Horizon LLM Agents](../../ICLR2026/llm_agent/solving_the_granularity_mismatch_hierarchical_preference_learning_for_long-horiz.md)
-- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
+- [\[ICLR 2026\] MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents](../../ICLR2026/llm_agent/mem1_learning_to_synergize_memory_and_reasoning_for_efficient_long-horizon_agent.md)
 - [\[ACL 2026\] FregeLogic at SemEval 2026 Task 11: A Hybrid Neuro-Symbolic Architecture for Content-Robust Syllogistic Validity Prediction](../../ACL2026/llm_agent/fregelogic_at_semeval_2026_task_11_a_hybrid_neuro-symbolic_architecture_for_cont.md)
+- [\[ICML 2026\] Skill-Pro: Learning Reusable Skills from Experience via Non-Parametric PPO for LLM Agents](skill-pro_learning_reusable_skills_from_experience_via_non-parametric_ppo_for_ll.md)
 
 </div>
 

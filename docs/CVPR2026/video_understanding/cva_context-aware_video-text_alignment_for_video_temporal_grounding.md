@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CVA: Context-aware Video-text Alignment for Video Temporal Grounding
 description: >-
-  [CVPR 2026][Video Understanding][Paper Note] The Context-aware Video-text Alignment (CVA) framework is proposed, consisting of three synergistic components: Query-aware Context Diversification (QCD), Context-invariant Boundary Discrimination (CBD) loss, and Context-enhanced Transformer Encoder (CTE). It addresses false negatives and background correlation issues
+  [CVPR 2026][Video Understanding][Video Temporal Grounding] The Context-aware Video-text Alignment (CVA) framework is proposed, consisting of three synergistic components: Query-aware Context Diversification (QCD), Context-invariant Boundary Discrimination (CBD) loss, and Context-enhanced Transformer Encoder (CTE). It addresses false negatives and background correlation issues in video temporal grounding, achieving approximately a 5-point improvement in R1@0.7 on the QVHighlig…
 tags:
-  - CVPR 2026
-  - Video Understanding
+  - "CVPR 2026"
+  - "Video Understanding"
+  - "Video Temporal Grounding"
+  - "Data Augmentation"
+  - "Contrastive Learning"
+  - "Context Invariance"
+  - "Video-Text Alignment"
 date: 2026-05-08
-content_hash: d71ba16b4fe70196
+content_hash: dba01acfdc170677
 ---
+
 # CVA: Context-aware Video-text Alignment for Video Temporal Grounding
 
 **Conference**: CVPR 2026  
@@ -152,10 +158,10 @@ Gain: R1@0.5 +4.26 (vs CDTR), R1@0.7 +4.95 (vs TD-DETR), HD mAP +4.1 (vs CG-DETR
 
 ## Related Papers
 
+- [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
 - [\[CVPR 2026\] TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection](tf-cade_foreground-concentrated_text-video_alignment_for_zero-shot_temporal_acti.md)
 - [\[CVPR 2026\] T2SGrid: Temporal-to-Spatial Gridification for Video Temporal Grounding](t2sgrid_temporal-to-spatial_gridification_for_video_temporal_grounding.md)
 - [\[CVPR 2026\] Learning to Refuse: Refusal-Aware Reinforcement Fine-Tuning for Hard-Irrelevant Queries in Video Temporal Grounding](learning_to_refuse_refusal-aware_reinforcement_fine-tuning_for_hard-irrelevant_q.md)
-- [\[CVPR 2026\] HieraMamba: Video Temporal Grounding via Hierarchical Anchor-Mamba Pooling](hieramamba_video_temporal_grounding_via_hierarchical_anchor-mamba_pooling.md)
 - [\[CVPR 2026\] DETACH: Decomposed Spatio-Temporal Alignment for Exocentric Video and Ambient Sensors with Staged Learning](detach_decomposed_spatio-temporal_alignment_for_exocentric_video_and_ambient_sen.md)
 
 </div>

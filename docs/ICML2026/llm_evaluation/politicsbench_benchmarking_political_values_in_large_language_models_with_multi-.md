@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay
 description: >-
-  [ICML 2026][LLM Evaluation][Paper Note] PoliticsBench is a novel benchmark based on **multi-stage roleplay**. By evaluating LLM political value expressions through 20 political scenarios and 4-stage interactions, it reveals that 7 mainstream LLMs are left-leaning (19–39 points), while only Grok is right-leaning (-22.7) but exhibits the highest volatility. **
+  [ICML 2026][LLM Evaluation][Political Bias] PoliticsBench is a novel benchmark based on **multi-stage roleplay**. By evaluating LLM political value expressions through 20 political scenarios and 4-stage interactions, it reveals that 7 mainstream LLMs are left-leaning (19–39 points), while only Grok is right-leaning (-22.7) but exhibits the highest volatility. **Scenario prompting stimulates value dimensions more effectively than direct questioning** (feature activation +0.48…
 tags:
-  - ICML 2026
-  - LLM Evaluation
+  - "ICML 2026"
+  - "LLM Evaluation"
+  - "Political Bias"
+  - "Values"
+  - "Multi-round Dialogue"
+  - "Roleplay"
 date: 2026-05-08
-content_hash: 40f69348eb740d31
+content_hash: 690e35a1fef6018f
 ---
+
 # PoliticsBench: Benchmarking Political Values in Large Language Models with Multi-Stage Roleplay
 
 **Conference**: ICML 2026  
@@ -130,15 +135,15 @@ Seven models exhibit a left-leaning tendency (19–39), whereas only Grok is rig
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2025\] PapersPlease: A Benchmark for Evaluating Motivational Values of Large Language Models Based on ERG Theory](../../ACL2025/llm_evaluation/papersplease_a_benchmark_for_evaluating_motivational_values_of_large_language_mo.md)
 - [\[AAAI 2026\] Benchmarking LLMs for Political Science: A United Nations Perspective](../../AAAI2026/llm_evaluation/benchmarking_llms_for_political_science_a_united_nations_perspective.md)
+- [\[ICML 2026\] Authority, Truth, and Citation Bias: A Large-Scale Multi-Domain Benchmark for Studying Epistemic Susceptibility in Large Language Models](authority_truth_and_citation_bias_a_large-scale_multi-domain_benchmark_for_study.md)
+- [\[ICLR 2026\] Multi-turn Evaluation of Anthropomorphic Behaviours in Large Language Models](../../ICLR2026/llm_evaluation/multi-turn_evaluation_of_anthropomorphic_behaviours_in_large_language_models.md)
 - [\[ICML 2026\] Investigating Advanced Reasoning of Large Language Models via Black-Box Environment Interaction](investigating_advanced_reasoning_of_large_language_models_via_black-box_environm.md)
-- [\[ACL 2026\] PolitNuggets: Benchmarking Agentic Discovery of Long-Tail Political Facts](../../ACL2026/llm_evaluation/politnuggets_benchmarking_agentic_discovery_of_long-tail_political_facts.md)
-- [\[ACL 2025\] Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models](../../ACL2025/llm_evaluation/retrieval_models_arent_tool-savvy_benchmarking_tool_retrieval_for_large_language.md)
 
 </div>
 

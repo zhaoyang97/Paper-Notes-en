@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems
 description: >-
-  [ICML 2026][Others][Paper Note] Addressing the widespread phenomenon of AI systems in the public sector being "technically feasible but failing in deployment," this paper proposes the **Institutional Alignment Readiness (IAR)** five-dimensional assessment framework. It evaluates whether a receiving institution is prepared for the responsible deployme
+  [ICML2026][Institutional Readiness] Addressing the widespread phenomenon of AI systems in the public sector being "technically feasible but failing in deployment," this paper proposes the **Institutional Alignment Readiness (IAR)** five-dimensional assessment framework. It evaluates whether a receiving institution is prepared for the responsible deployment of AI systems across five dimensions: institutional compatibility, data ecology maturity, human oversight capacity…
 tags:
-  - ICML 2026
-  - Others
+  - "ICML2026"
+  - "Institutional Readiness"
+  - "AI Deployment"
+  - "Public Sector"
+  - "Responsible AI"
+  - "Deployment Governance"
 date: 2026-05-08
-content_hash: 58b6e59e09d0a0d5
+content_hash: 859020461e521a56
 ---
+
 # Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems
 
 **Conference**: ICML2026  

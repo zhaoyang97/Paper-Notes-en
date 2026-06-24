@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Bringing Your Portrait to 3D Presence
 description: >-
-  [CVPR 2026][3D Vision][3D Gaussian] Utilizing a **Dual-UV representation** that projects image features into a canonical UV space, paired with a factorized "3D rendering + 2D generation" synthetic data manifold and a robust proxy mesh tracker, this work enables the reconstruction of animatable 3D Gaussian avatars from a single portrait (head, half-body,
+  [CVPR 2026][3D Vision][Single-image 3D Avatar] Utilizing a **Dual-UV representation** that projects image features into a canonical UV space, paired with a factorized "3D rendering + 2D generation" synthetic data manifold and a robust proxy mesh tracker, this work enables the reconstruction of animatable 3D Gaussian avatars from a single portrait (head, half-body, or full-body). The model generalizes to real-world photos despite being trained exclusively on synthetic data.
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D Gaussian
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Single-image 3D Avatar"
+  - "Dual-UV representation"
+  - "3D Gaussian"
+  - "Synthetic data"
+  - "proxy mesh tracking"
 date: 2026-05-08
-content_hash: 9b90a369ef6a8e81
+content_hash: 6f69c4a79d50f494
 ---
+
 # Bringing Your Portrait to 3D Presence
 
 **Conference**: CVPR 2026  
@@ -142,11 +147,11 @@ Key finding: Ours outperforms LRM-based models (IDOL, LHM-HF) in texture fidelit
 
 ## Related Papers
 
-- [\[CVPR 2026\] Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)
+- [\[CVPR 2026\] Haptic Neural Fields: Bringing Tactile Interactions to 3D Rendered Scenes](haptic_neural_fields_bringing_tactile_interactions_to_3d_rendered_scenes.md)
 - [\[CVPR 2026\] Iris: Bringing Real-World Priors into Diffusion Model for Monocular Depth Estimation](iris_bringing_realworld_priors_into_diffusion_model_for_monocular_depth_estimation.md)
-- [\[CVPR 2026\] D-Prism: Differentiable Primitives for Structured Dynamic Modeling](d-prism_differentiable_primitives_for_structured_dynamic_modeling.md)
-- [\[CVPR 2026\] 3D-IDE: 3D Implicit Depth Emergent](3d-ide_3d_implicit_depth_emergent.md)
-- [\[CVPR 2026\] ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)
+- [\[CVPR 2025\] PERSE: Personalized 3D Generative Avatars from A Single Portrait](../../CVPR2025/3d_vision/perse_personalized_3d_generative_avatars_from_a_single_portrait.md)
+- [\[CVPR 2025\] Coherent 3D Portrait Video Reconstruction via Triplane Fusion](../../CVPR2025/3d_vision/coherent_3d_portrait_video_reconstruction_via_triplane_fusion.md)
+- [\[ICCV 2025\] Tune-Your-Style: Intensity-Tunable 3D Style Transfer with Gaussian Splatting](../../ICCV2025/3d_vision/tune-your-style_intensity-tunable_3d_style_transfer_with_gaussian_splatting.md)
 
 </div>
 

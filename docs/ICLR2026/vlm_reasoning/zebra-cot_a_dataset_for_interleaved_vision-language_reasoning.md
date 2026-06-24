@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning
 description: >-
-  [ICLR 2026][vlm_reasoning][Paper Note] Constructed ZEBRA-COT, the first large-scale diverse interleaved text-image reasoning dataset (182K reasoning trajectories across 18 domains). Scaffolding experiments demonstrate that visual CoT has a potential improvement of up to +43% for frontier models, and fine-tuning enables Anole-7B and Bagel-7B to acquire endog
+  [ICLR 2026][VLM Reasoning][Visual Chain of Thought] Constructed ZEBRA-COT, the first large-scale diverse interleaved text-image reasoning dataset (182K reasoning trajectories across 18 domains). Scaffolding experiments demonstrate that visual CoT has a potential improvement of up to +43% for frontier models, and fine-tuning enables Anole-7B and Bagel-7B to acquire endogenous visual reasoning capabilities.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Chain of Thought"
+  - "Interleaved Text-Image Reasoning"
+  - "Multimodal Dataset"
+  - "Visual CoT"
 date: 2026-05-08
-content_hash: 797f0c9b1b80c353
+content_hash: 33ca812b8d135448
 ---
+
 # Zebra-CoT: A Dataset for Interleaved Vision-Language Reasoning
 
 **Conference**: ICLR 2026  

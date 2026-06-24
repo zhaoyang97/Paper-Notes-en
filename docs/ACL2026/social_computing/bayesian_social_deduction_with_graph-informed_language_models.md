@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Bayesian Social Deduction with Graph-Informed Language Models
 description: >-
-  [ACL 2026][Social Computing][Paper Note] This paper proposes GRAIL (Graph Reasoning Agent Informed through Language), a hybrid reasoning framework that externalizes probabilistic reasoning to a factor graph model while utilizing LLMs for language understanding and interaction. GRAIL defeated human players for the first time in the social deduction game Avalon
+  [ACL 2026][Social Computing][Social Reasoning] This paper proposes GRAIL (Graph Reasoning Agent Informed through Language), a hybrid reasoning framework that externalizes probabilistic reasoning to a factor graph model while utilizing LLMs for language understanding and interaction. GRAIL defeated human players for the first time in the social deduction game Avalon (67% win rate), with resource consumption significantly lower than large-scale reasoning models.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL 2026"
+  - "Social Computing"
+  - "Social Reasoning"
+  - "Probabilistic Graphical Models"
+  - "Theory of Mind"
+  - "Game Agents"
+  - "Human-Computer Interaction"
 date: 2026-05-08
-content_hash: 400a0faa34884844
+content_hash: b1485100d82cfec5
 ---
+
 # Bayesian Social Deduction with Graph-Informed Language Models
 
 **Conference**: ACL 2026  
@@ -140,10 +146,10 @@ The conditional dimension of the factor function $p(r_j\mid\text{game state})$ i
 ## Related Papers
 
 - [\[ACL 2026\] Inertia in Moral and Value Judgments of Large Language Models](inertia_in_moral_and_value_judgments_of_large_language_models.md)
+- [\[ICLR 2026\] Language and Experience: A Computational Model of Social Learning in Complex Tasks](../../ICLR2026/social_computing/language_and_experience_a_computational_model_of_social_learning_in_complex_task.md)
+- [\[ICLR 2026\] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions](../../ICLR2026/social_computing/measuring_and_mitigating_rapport_bias_of_large_language_models_under_multi-agent.md)
 - [\[ACL 2025\] Measuring Social Biases in Masked Language Models by Proxy of Prediction Quality](../../ACL2025/social_computing/measuring_social_biases_in_masked_language_models_by_proxy_of_prediction_quality.md)
-- [\[ACL 2026\] The Proxy Presumption: From Semantic Embeddings to Valid Social Measures](the_proxy_presumption_from_semantic_embeddings_to_valid_social_measures.md)
 - [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
-- [\[ACL 2026\] Synthia: Scalable Grounded Persona Generation from Social Media Data](synthia_scalable_grounded_persona_generation_from_social_media_data.md)
 
 </div>
 

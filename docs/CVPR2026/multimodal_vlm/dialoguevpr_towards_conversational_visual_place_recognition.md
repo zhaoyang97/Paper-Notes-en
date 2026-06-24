@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] DialogueVPR: Towards Conversational Visual Place Recognition
 description: >-
-  [CVPR 2026][Multimodal VLM][GRPO] This work transforms language-guided place recognition from a static "one-time query" retrieval into a multi-round dialogue reasoning (DlgPR) framework: "retriever coarse-screening → multi-modal LLM active questioning → user feedback → refined retrieval." It introduces the first conversational place recognition benchma
+  [CVPR 2026][Multimodal VLM][Visual Place Recognition] This work transforms language-guided place recognition from a static "one-time query" retrieval into a multi-round dialogue reasoning (DlgPR) framework: "retriever coarse-screening → multi-modal LLM active questioning → user feedback → refined retrieval." It introduces the first conversational place recognition benchmark, DQ-Cities, and a questioning agent, DQ-Pilot, trained via "SFT + GRPO curriculum learning." After 5 ro…
 tags:
-  - CVPR 2026
-  - Multimodal VLM
-  - GRPO
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Visual Place Recognition"
+  - "Conversational Retrieval"
+  - "Reasoning Retrieval"
+  - "Curriculum Learning"
+  - "GRPO"
 date: 2026-05-08
-content_hash: a643d6b8f45ef018
+content_hash: f06120fa2354bf24
 ---
+
 # DialogueVPR: Towards Conversational Visual Place Recognition
 
 **Conference**: CVPR 2026  
@@ -147,11 +152,11 @@ DQ-Pilot improves R@1 by 13.4% over the 7B base after 5 rounds, outperforming th
 
 ## Related Papers
 
+- [\[CVPR 2026\] Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)
+- [\[CVPR 2026\] WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition](wikiclip_an_efficient_contrastive_baseline_for_open-domain_visual_entity_recogni.md)
 - [\[CVPR 2026\] Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models](taxonomy-aware_representation_alignment_for_hierarchical_visual_recognition_with.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
-- [\[CVPR 2026\] The LLM Bottleneck: Why Open-Source Vision LLMs Struggle with Hierarchical Visual Recognition](the_llm_bottleneck_why_open-source_vision_llms_struggle_with_hierarchical_visual.md)
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[CVPR 2026\] RetFormer: Multimodal Retrieval for Enhancing Image Recognition](retformer_multimodal_retrieval_for_enhancing_image_recognition.md)
+- [\[ICLR 2026\] Multimodal Policy Internalization for Conversational Agents](../../ICLR2026/multimodal_vlm/multimodal_policy_internalization_for_conversational_agents.md)
+- [\[CVPR 2026\] TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition](trivia_self-supervised_fine-tuning_of_vision-language_models_for_table_recogniti.md)
 
 </div>
 

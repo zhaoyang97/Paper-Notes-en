@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition
 description: >-
-  [CVPR 2026][Others][Raster-Scan Attention] UniMERNet redefines the task of converting formula images to LaTeX: it constructs the UniMER-1M dataset covering four real-world scenarios and, based on the observation that "decoder attention naturally follows a raster-scan (horizontal then vertical) pattern," proposes Raster-Scan Attention. This decomposes 2D attenti
+  [CVPR 2026][Formula Recognition] UniMERNet redefines the task of converting formula images to LaTeX: it constructs the UniMER-1M dataset covering four real-world scenarios and, based on the observation that "decoder attention naturally follows a raster-scan (horizontal then vertical) pattern," proposes Raster-Scan Attention. This decomposes 2D attention into two orthogonal 1D computations, reducing complexity from $O(NH^2W^2D)$ to $O(NHWD(H+W))$. With 313M parameters…
 tags:
-  - CVPR 2026
-  - Others
-  - Raster-Scan Attention
+  - "CVPR 2026"
+  - "Formula Recognition"
+  - "Raster-Scan Attention"
+  - "Attention Decomposition"
+  - "Million-scale Dataset"
+  - "Visual Encoder"
 date: 2026-05-08
-content_hash: 168e38456ea688e7
+content_hash: e1f8f19e39779a0c
 ---
+
 # UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition
 
 **Conference**: CVPR 2026  
@@ -146,11 +150,11 @@ Ablation of attention types and ConvE module:
 
 ## Related Papers
 
-- [\[CVPR 2026\] From Pixel to Precision: Enhancing Handwritten Mathematical Expression Recognition with Image-Level Reward](from_pixel_to_precision_enhancing_handwritten_mathematical_expression_recognitio.md)
-- [\[CVPR 2026\] Crowdsourcing of Real-world Image Annotation via Visual Properties](crowdsourcing_of_real_world_image_annotation_via_visual_properties.md)
+- [\[ICLR 2026\] SmellNet: A Large-scale Dataset for Real-world Smell Recognition](../../ICLR2026/others/smellnet_a_large-scale_dataset_for_real-world_smell_recognition.md)
+- [\[CVPR 2026\] VideoWorld 2: Learning Transferable Knowledge from Real-world Videos](videoworld_2_learning_transferable_knowledge_from_real-world_videos.md)
 - [\[CVPR 2026\] Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization](clair_obscur_an_illumination-aware_method_for_real-world_image_vectorization.md)
-- [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](dream_document_recognition_with_explicit_adaptive_memory.md)
-- [\[NeurIPS 2025\] egoEMOTION: Egocentric Vision and Physiological Signals for Emotion and Personality Recognition in Real-World Tasks](../../NeurIPS2025/others/egoemotion_egocentric_vision_and_physiological_signals_for_emotion_and_personali.md)
+- [\[CVPR 2026\] The Missing GAP: From Solving Square Jigsaw Puzzles to Handling Real World Archaeological Fragments](the_missing_gap_from_solving_square_jigsaw_puzzles_to_handling_real_world_archae.md)
+- [\[CVPR 2026\] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)
 
 </div>
 

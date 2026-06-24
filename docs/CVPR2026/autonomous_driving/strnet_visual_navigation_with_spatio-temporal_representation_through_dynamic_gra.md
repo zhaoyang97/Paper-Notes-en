@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] STRNet proposes a unified spatio-temporal representation framework for visual navigation. By utilizing a graph reasoning module to model intra-frame spatial topology and combining hybrid temporal shifts with multi-resolution differential convolutions for temporal dynamics, it significantly improves the success rate of
+  [CVPR 2026][Autonomous Driving][Visual Navigation] STRNet proposes a unified spatio-temporal representation framework for visual navigation. By utilizing a graph reasoning module to model intra-frame spatial topology and combining hybrid temporal shifts with multi-resolution differential convolutions for temporal dynamics, it significantly improves the success rate of goal-conditioned navigation (a 70% increase over NoMaD).
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Autonomous Driving"
+  - "Visual Navigation"
+  - "Spatio-Temporal Representation"
+  - "Graph Neural Networks"
+  - "Diffusion Policy"
+  - "Goal-conditioned Control"
 date: 2026-05-08
-content_hash: 3f631e3545d11668
+content_hash: 1e3d4827b7ec6a4a
 ---
+
 # STRNet: Visual Navigation with Spatio-Temporal Representation through Dynamic Graph Aggregation
 
 **Conference**: CVPR 2026  
@@ -121,15 +127,13 @@ Consistently significant improvements across three datasets, effective in both i
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[CVPR 2026\] CLiViS: Unleashing Cognitive Map through Linguistic-Visual Synergy for Embodied Visual Reasoning](clivis_unleashing_cognitive_map_through_linguistic-visual_synergy_for_embodied_v.md)
-- [\[CVPR 2026\] Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos](spatial-aware_vla_pretraining_through_visual-physical_alignment_from_human_video.md)
-- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
-- [\[NeurIPS 2025\] EgoThinker: Unveiling Egocentric Reasoning with Spatio-Temporal CoT](../../NeurIPS2025/robotics/egothinker_unveiling_egocentric_reasoning_with_spatiotempora.md)
-- [\[CVPR 2026\] Semantic Audio-Visual Navigation in Continuous Environments](semantic_audio-visual_navigation_in_continuous_environments.md)
+- [\[CVPR 2026\] STUR3D: Spatio-Temporal Unified Representation Learning for 3D Object Detection](stur3d_spatio-temporal_unified_representation_learning_for_3d_object_detection.md)
+- [\[ICLR 2026\] UniSplat: Unified Spatio-Temporal Fusion via 3D Latent Scaffolds for Dynamic Driving Scene Reconstruction](../../ICLR2026/autonomous_driving/unisplat_unified_spatio-temporal_fusion_via_3d_latent_scaffolds_for_dynamic_driv.md)
+- [\[CVPR 2026\] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception](learning_mutual_view_information_graph_for_adaptive_adversarial_collaborative_pe.md)
+- [\[CVPR 2026\] VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation](vird_view-invariant_representation_through_dual-axis_transformation_for_cross-vi.md)
+- [\[AAAI 2026\] Meta Dynamic Graph for Traffic Flow Prediction](../../AAAI2026/autonomous_driving/meta_dynamic_graph_for_traffic_flow_prediction.md)
 
 </div>
 

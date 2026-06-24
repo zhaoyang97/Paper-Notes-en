@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] VULCAN: Tool-Augmented Multi Agents for Iterative 3D Object Arrangement
 description: >-
-  [CVPR 2026][LLM Agent][Multi-Agent] VULCAN upgrades "3D object repositioning based on instructions" from a single-step edit to a multi-agent long-horizon task with a "Plan-Execute-Evaluate" loop. It replaces fragile raw script operations with MCP vision APIs and constraint solvers, utilizes three types of specialized agents to distribute global planning
+  [CVPR 2026][LLM Agent][Multi-Agent] VULCAN upgrades "3D object repositioning based on instructions" from a single-step edit to a multi-agent long-horizon task with a "Plan-Execute-Evaluate" loop. It replaces fragile raw script operations with MCP vision APIs and constraint solvers, utilizes three types of specialized agents to distribute global planning and local execution, and incorporates adaptive backtracking search to recover from deadlocks. On 25 complex scenes…
 tags:
-  - CVPR 2026
-  - LLM Agent
-  - Multi-Agent
-  - MCP
+  - "CVPR 2026"
+  - "LLM Agent"
+  - "Multi-Agent"
+  - "Tool-Augmented"
+  - "3D Object Arrangement"
+  - "MCP"
+  - "Long-horizon Planning"
 date: 2026-05-08
-content_hash: ab738bc54d233ebe
+content_hash: c71a4608018bcf3a
 ---
+
 # VULCAN: Tool-Augmented Multi Agents for Iterative 3D Object Arrangement
 
 **Conference**: CVPR 2026  
@@ -136,13 +140,17 @@ VULCAN achieves a **0** collision and floating rate while leading in plausibilit
 
 <div class="related-papers" markdown="1">
 
-1. **ScanEdit: Interactive Scene Editing via Grounded 3D LLMs** (arXiv 2024)
-2. **BlenderAlchemy: Generating 3D Scenes via Multi-Agent Collaboration** (CVPR 2025)
+## Related Papers
+
+- [\[CVPR 2026\] Refer-Agent: A Collaborative Multi-Agent System with Reasoning and Reflection for Referring Video Object Segmentation](refer-agent_a_collaborative_multi-agent_system_with_reasoning_and_reflection_for.md)
+- [\[ACL 2026\] Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification](../../ACL2026/llm_agent/spec-o3_a_tool-augmented_vision-language_agent_for_rare_celestial_object_candida.md)
+- [\[ICLR 2026\] PhyScensis: Physics-Augmented LLM Agents for Complex Physical Scene Arrangement](../../ICLR2026/llm_agent/physcensis_physics-augmented_llm_agents_for_complex_physical_scene_arrangement.md)
+- [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](../../ICLR2026/llm_agent/infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
+- [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ACL 2026\] Spec-o3: A Tool-Augmented Vision-Language Agent for Rare Celestial Object Candidate Identification](../../ACL2026/llm_agent/spec-o3_a_tool-augmented_vision-language_agent_for_rare_celestial_object_candida.md)

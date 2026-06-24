@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Detect Anything via Next Point Prediction
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] Object detection is reformulated as "generating quantized coordinate token sequences with an MLLM." By combining three components—learnable coordinate tokens, a self-built data engine generating 22 million annotations, and SFT followed by GRPO reinforcement training to rectify behavior—the authors develop Rex-Omni, a 3
+  [CVPR 2026][Object Detection][Open-vocabulary detection] Object detection is reformulated as "generating quantized coordinate token sequences with an MLLM." By combining three components—learnable coordinate tokens, a self-built data engine generating 22 million annotations, and SFT followed by GRPO reinforcement training to rectify behavior—the authors develop Rex-Omni, a 3B model. It surpasses regression-based detectors like DINO and Grounding DINO in zero-shot performance…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary detection"
+  - "MLLM detection"
+  - "quantized coordinate tokens"
+  - "GRPO reinforcement learning"
+  - "unified visual perception"
 date: 2026-05-08
-content_hash: 0761dfc5fa91d64b
+content_hash: ec0c6784bad9f58d
 ---
+
 # Detect Anything via Next Point Prediction
 
 **Conference**: CVPR 2026  
@@ -128,11 +134,11 @@ The core ablation investigates what GRPO rectifies. The authors measured gains a
 
 ## Related Papers
 
-- [\[CVPR 2026\] DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)
 - [\[CVPR 2026\] Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)
-- [\[CVPR 2026\] Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)
 - [\[ICCV 2025\] YOLOE: Real-Time Seeing Anything](../../ICCV2025/object_detection/yoloe_realtime_seeing_anything.md)
-- [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
+- [\[CVPR 2025\] Multiple Object Tracking as ID Prediction](../../CVPR2025/object_detection/multiple_object_tracking_as_id_prediction.md)
+- [\[CVPR 2025\] Search and Detect: Training-Free Long Tail Object Detection via Web-Image Retrieval](../../CVPR2025/object_detection/search_and_detect_training-free_long_tail_object_detection_via_web-image_retriev.md)
+- [\[CVPR 2025\] PO3AD: Predicting Point Offsets toward Better 3D Point Cloud Anomaly Detection](../../CVPR2025/object_detection/po3ad_predicting_point_offsets_toward_better_3d_point_cloud_anomaly_detection.md)
 
 </div>
 

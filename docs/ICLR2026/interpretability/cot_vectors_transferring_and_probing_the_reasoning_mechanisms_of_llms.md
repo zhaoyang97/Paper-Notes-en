@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoT Vectors: Transferring and Probing the Reasoning Mechanisms of LLMs
 description: >-
-  [ICLR 2026][Interpretability][Chain-of-Thought] This work compresses a Chain-of-Thought (CoT) reasoning process into a "CoT Vector" that can be directly added to hidden states. This approach enhances LLM multi-step reasoning with near-zero overhead (comparable to LoRA but with 3 orders of magnitude fewer trainable parameters) and serves as a probe revealing an inter
+  [ICLR2026][Interpretability][Chain-of-Thought] This work compresses a Chain-of-Thought (CoT) reasoning process into a "CoT Vector" that can be directly added to hidden states. This approach enhances LLM multi-step reasoning with near-zero overhead (comparable to LoRA but with 3 orders of magnitude fewer trainable parameters) and serves as a probe revealing an internal "Perception—Reasoning—Expression" three-stage organization of LLM reasoning.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - Chain-of-Thought
-  - Task Vector
+  - "ICLR2026"
+  - "Interpretability"
+  - "Chain-of-Thought"
+  - "Task Vector"
+  - "Activation Intervention"
+  - "Reasoning Mechanism Probing"
+  - "Parameter-Efficient"
 date: 2026-05-08
-content_hash: 4f9a779576f2799c
+content_hash: f50a91ad8a450c7a
 ---
+
 # CoT Vectors: Transferring and Probing the Reasoning Mechanisms of LLMs
 
 **Conference**: ICLR2026  
@@ -130,15 +134,15 @@ Learnable CoT Vectors on Qwen achieved an average of 55.1 (4.6 above baseline), 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] The Potential of CoT for Reasoning: A Closer Look at Trace Dynamics](the_potential_of_cot_for_reasoning_a_closer_look_at_trace_dynamics.md)
 - [\[ICLR 2026\] Causality ≠ Invariance: Function and Concept Vectors in LLMs](causality_invariance_function_and_concept_vectors_in_llms.md)
 - [\[ICLR 2026\] Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models](linear_mechanisms_for_spatiotemporal_reasoning_in_vision_language_models.md)
 - [\[ICLR 2026\] RADAR: Reasoning-Ability and Difficulty-Aware Routing for Reasoning LLMs](radar_reasoning-ability_and_difficulty-aware_routing_for_reasoning_llms.md)
 - [\[ICLR 2026\] Reforming the Mechanism: Editing Reasoning Patterns in LLMs with Circuit Reshaping](reforming_the_mechanism_editing_reasoning_patterns_in_llms_with_circuit_reshapin.md)
-- [\[ICLR 2026\] Attention, Please! Revisiting Attentive Probing Through the Lens of Efficiency](attention_please_revisiting_attentive_probing_through_the_lens_of_efficiency.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment
 description: >-
-  [AAAI 2026][Interpretability][Blind Image Quality Assessment] This paper proposes the DR.Experts framework, which leverages DA-CLIP to obtain distortion-type priors…
+  [AAAI 2026][Interpretability][Blind Image Quality Assessment] This paper proposes the DR.Experts framework, which leverages DA-CLIP to obtain distortion-type priors, employs a Distortion Saliency Differential Module (DSDM) to disentangle distortion attention from semantic attention and thereby purify distortion features, and then applies a Dynamic Distortion Weighting Module (DDWM) to adaptively weight each distortion type's features according to its perceptual impact. The me…
 tags:
   - "AAAI 2026"
   - "Interpretability"
@@ -12,7 +12,7 @@ tags:
   - "DA-CLIP"
   - "Differential Attention"
 date: 2026-05-08
-content_hash: 62b768c597bc2556
+content_hash: 21984c265e3192ef
 ---
 
 # DR.Experts: Differential Refinement of Distortion-Aware Experts for Blind Image Quality Assessment
@@ -138,8 +138,8 @@ Smooth L1 Loss is used for training. The DA-CLIP module is frozen throughout. De
 - [\[ICML 2026\] IQA-Spider: Unifying Multi-Granularity Image Quality Assessment with Reasoning, Grounding and Referring](../../ICML2026/interpretability/iqa-spider_unifying_multi-granularity_image_quality_assessment_with_reasoning_gr.md)
 - [\[CVPR 2026\] Draft and Refine with Visual Experts](../../CVPR2026/interpretability/draft_and_refine_with_visual_experts.md)
 - [\[AAAI 2026\] ShapBPT: Image Feature Attributions Using Data-Aware Binary Partition Trees](shapbpt_image_feature_attributions_using_data-aware_binary_partition_trees.md)
-- [\[CVPR 2026\] ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization](../../CVPR2026/interpretability/ermoe_eigen-reparameterized_mixture-of-experts_for_stable_routing.md)
-- [\[ICML 2026\] The Expert Strikes Back: Interpreting Mixture-of-Experts Language Models at Expert Level](../../ICML2026/interpretability/the_expert_strikes_back_interpreting_mixture-of-experts_language_models_at_exper.md)
+- [\[CVPR 2025\] Learning on Model Weights using Tree Experts](../../CVPR2025/interpretability/learning_on_model_weights_using_tree_experts.md)
+- [\[ICLR 2026\] Understanding Cross-Layer Contributions to Mixture-of-Experts Routing in LLMs](../../ICLR2026/interpretability/understanding_cross-layer_contributions_to_mixture-of-experts_routing_in_llms.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale
 description: >-
-  [ICML 2026][Code Intelligence][SWE Agent] The authors developed a "language-agnostic unified construction pipeline + interactive installation Agent + triple-model ensemble for issue clarity filtering" to automatically mine 32,079 executable SWE tasks across 20 languages and 3,617 repositories from GitHub (accompanied by 120,000+ PR-derived tasks). Each task in
+  [ICML 2026][Code Intelligence][SWE Agent] The authors developed a "language-agnostic unified construction pipeline + interactive installation Agent + triple-model ensemble for issue clarity filtering" to automatically mine 32,079 executable SWE tasks across 20 languages and 3,617 repositories from GitHub (accompanied by 120,000+ PR-derived tasks). Each task includes pre-built Docker images, fail-to-pass tests, and instance-level diagnostic metadata, providing a stable…
 tags:
-  - ICML 2026
-  - Code Intelligence
-  - SWE Agent
+  - "ICML 2026"
+  - "Code Intelligence"
+  - "SWE Agent"
+  - "Executable Training Environment"
+  - "Multilingual"
+  - "Automated Data Pipeline"
+  - "Issue Quality Filtering"
 date: 2026-05-08
-content_hash: 9bd26a85b4301585
+content_hash: 3ad846b37220a274
 ---
+
 # SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale
 
 **Conference**: ICML 2026  
@@ -130,10 +135,10 @@ This work does not perform end-to-end RL training (noted as future work). Instea
 ## Related Papers
 
 - [\[NeurIPS 2025\] SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents](../../NeurIPS2025/code_intelligence/swe-rebench_an_automated_pipeline_for_task_collection_and_decontaminated_evaluat.md)
+- [\[ICML 2026\] SWE-IF: Aligning Code Evaluation with Human Preference](swe-if_aligning_code_evaluation_with_human_preference.md)
 - [\[ICML 2026\] MatchFixAgent: Language-Agnostic Autonomous Repository-Level Code Translation Validation and Repair](matchfixagent_language-agnostic_autonomous_repository-level_code_translation_val.md)
 - [\[ICML 2026\] HE-SNR: Uncovering Latent Logic via Entropy for Guiding Mid-Training on SWE-bench](he-snr_uncovering_latent_logic_via_entropy_for_guiding_mid-training_on_swe-bench.md)
-- [\[ACL 2026\] SWE-QA: Can Language Models Answer Repository-level Code Questions?](../../ACL2026/code_intelligence/swe-qa_can_language_models_answer_repository-level_code_questions.md)
-- [\[ICML 2026\] SWE-IF: Aligning Code Evaluation with Human Preference](swe-if_aligning_code_evaluation_with_human_preference.md)
+- [\[ICLR 2026\] SWE-RM: Execution-Free Feedback for Software Engineering Agents](../../ICLR2026/code_intelligence/swe-rm_execution-free_feedback_for_software_engineering_agents.md)
 
 </div>
 

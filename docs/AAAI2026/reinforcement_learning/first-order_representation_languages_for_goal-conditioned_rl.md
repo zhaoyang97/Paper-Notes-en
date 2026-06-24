@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] First-Order Representation Languages for Goal-Conditioned RL
 description: >-
-  [AAAI 2026][Reinforcement Learning][Goal-conditioned reinforcement learning] This paper investigates the application of first-order relational languages to goal-conditioned RL and generalized planning. It proposes repres…
+  [AAAI 2026][Reinforcement Learning][Goal-conditioned reinforcement learning] This paper investigates the application of first-order relational languages to goal-conditioned RL and generalized planning. It proposes representing goals as subsets or lifted versions of sets of atoms, and combines this with HER to automatically construct easy-to-hard goal curricula, enabling the learning of generalizable policies on large-scale sparse-reward planning problems.
 tags:
   - "AAAI 2026"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "generalized planning"
   - "curriculum learning"
 date: 2026-05-08
-content_hash: 8f58b645b63b8a14
+content_hash: 0ea5dfb58e45805d
 ---
 
 # First-Order Representation Languages for Goal-Conditioned RL
@@ -134,9 +134,9 @@ Evaluated on large instances across multiple planning domains (e.g., Blocksworld
 
 - [\[AAAI 2026\] Do It for HER: First-Order Temporal Logic Reward Specification in Reinforcement Learning](do_it_for_her_first-order_temporal_logic_reward_specification_in_reinforcement_l.md)
 - [\[ICML 2026\] Latent Representation Alignment for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/latent_representation_alignment_for_offline_goal-conditioned_reinforcement_learn.md)
-- [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
-- [\[AAAI 2026\] ReGal: A First Look at PPO-based Legal AI for Judgment Prediction and Summarization in India](regal_a_first_look_at_ppo-based_legal_ai_for_judgment_prediction_and_summarizati.md)
-- [\[ICLR 2026\] Spectral Bellman Method: Unifying Representation and Exploration in RL](../../ICLR2026/reinforcement_learning/spectral_bellman_method_unifying_representation_and_exploration_in_rl.md)
+- [\[ICML 2026\] Direction-Conditioned Policies via Compositional Subgoal Scoring for Online Goal-Conditioned Reinforcement Learning](../../ICML2026/reinforcement_learning/direction-conditioned_policies_via_compositional_subgoal_scoring_for_online_goal.md)
+- [\[ICLR 2026\] Demystifying The Mechanisms Behind Emergent Exploration in Goal-Conditioned RL](../../ICLR2026/reinforcement_learning/demystifying_the_mechanisms_behind_emergent_exploration_in_goal-conditioned_rl.md)
+- [\[ICLR 2026\] Multistep Quasimetric Learning for Scalable Goal-Conditioned Reinforcement Learning](../../ICLR2026/reinforcement_learning/scaling_goal-conditioned_reinforcement_learning_with_multistep_quasimetric_dista.md)
 
 </div>
 

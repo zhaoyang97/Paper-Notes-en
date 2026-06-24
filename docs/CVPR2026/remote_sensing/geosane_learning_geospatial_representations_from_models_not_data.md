@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GeoSANE: Learning Geospatial Representations from Models, Not Data
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] GeoSANE treats the **weights themselves** of 103 off-the-shelf remote sensing models as training data. It utilizes a weight-space autoencoder to learn a shared latent representation across all models. New "ready-to-fine-tune" model weights are then sampled and decoded from this latent space for a target architecture. T
+  [CVPR 2026][Remote Sensing][Remote Sensing Foundation Models] GeoSANE treats the **weights themselves** of 103 off-the-shelf remote sensing models as training data. It utilizes a weight-space autoencoder to learn a shared latent representation across all models. New "ready-to-fine-tune" model weights are then sampled and decoded from this latent space for a target architecture. This shifts remote sensing pre-training from "learning from satellite data" to "learning from model…
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Remote Sensing Foundation Models"
+  - "Weight-Space Learning"
+  - "Model Foundry"
+  - "Weight Generation"
+  - "Latent Space Sampling"
 date: 2026-05-08
-content_hash: d7c7fab6ee8de26a
+content_hash: 97be1487085b5485
 ---
+
 # GeoSANE: Learning Geospatial Representations from Models, Not Data
 
 **Conference**: CVPR 2026  
@@ -135,15 +141,15 @@ The most significant gains (+23.2 / +18.9) were observed on challenging multi-cl
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Data Leakage Detection and De-duplication in Large Scale Geospatial Image Datasets](data_leakage_detection_and_de-duplication_in_large_scale_geospatial_image_datase.md)
-- [\[CVPR 2026\] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes](unigeoseg_towards_unified_open-world_segmentation_for_geospatial_scenes.md)
-- [\[CVPR 2026\] GeoDiT: A Diffusion-based Vision-Language Model for Geospatial Understanding](geodit_a_diffusion-based_vision-language_model_for_geospatial_understanding.md)
+- [\[ICLR 2026\] MoRA: Mobility as the Backbone for Geospatial Representation Learning at Scale](../../ICLR2026/remote_sensing/mora_mobility_as_the_backbone_for_geospatial_representation_learning_at_scale.md)
+- [\[ICLR 2026\] Towards Faithful Reasoning in Remote Sensing: A Perceptually-Grounded Geospatial Chain-of-Thought for Vision-Language Models](../../ICLR2026/remote_sensing/towards_faithful_reasoning_in_remote_sensing_a_perceptually-grounded_geospatial_.md)
 - [\[ECCV 2024\] Learning Representations of Satellite Images From Metadata Supervision](../../ECCV2024/remote_sensing/learning_representations_of_satellite_images_from_metadata_supervision.md)
-- [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
+- [\[CVPR 2026\] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes](unigeoseg_towards_unified_open-world_segmentation_for_geospatial_scenes.md)
 
 </div>
 

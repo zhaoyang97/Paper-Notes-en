@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Reheat Nachos for Dinner? Evaluating AI Support for Cross-Cultural Communication of Neologisms
 description: >-
-  [ACL 2026][Social Computing][Paper Note] Through human experiments involving 234 non-native speakers and 144 native evaluators, this paper compares four types of AI and non-AI support. It finds that AI Explanation with contextual information most effectively improves native speaker ratings of neologisms used by non-native speakers, though a significant misali
+  [ACL2026 Findings][Social Computing][Cross-cultural communication] Through human experiments involving 234 non-native speakers and 144 native evaluators, this paper compares four types of AI and non-AI support. It finds that AI Explanation with contextual information most effectively improves native speaker ratings of neologisms used by non-native speakers, though a significant misalignment remains between learners' confidence and their actual communicative competence.
 tags:
-  - ACL 2026
-  - Social Computing
+  - "ACL2026 Findings"
+  - "Social Computing"
+  - "Cross-cultural communication"
+  - "Neologisms"
+  - "AI language learning"
+  - "Communicative competence"
+  - "User study"
 date: 2026-05-08
-content_hash: 5d5d1e09db4bcdc1
+content_hash: 358835d1827045f6
 ---
+
 # Reheat Nachos for Dinner? Evaluating AI Support for Cross-Cultural Communication of Neologisms
 
 **Conference**: ACL2026 Findings  
@@ -136,9 +142,9 @@ The paper performs "interaction ablations" rather than model ablations. Survey r
 
 - [\[ACL 2026\] Imperfectly Cooperative Human-AI Interactions: Comparing the Impacts of Human and AI Attributes in Simulated and User Studies](imperfectly_cooperative_human-ai_interactions_comparing_the_impacts_of_human_and.md)
 - [\[NeurIPS 2025\] Policy-as-Prompt: Turning AI Governance Rules into Guardrails for AI Agents](../../NeurIPS2025/social_computing/policy-as-prompt_turning_ai_governance_rules_into_guardrails_for_ai_agents.md)
+- [\[ICLR 2026\] The Value of Information in Human-AI Decision-Making](../../ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md)
+- [\[ICLR 2026\] INTIMA: A Benchmark for Human-AI Companionship Behavior](../../ICLR2026/social_computing/intima_a_benchmark_for_human-ai_companionship_behavior.md)
 - [\[AAAI 2026\] Cross-modal Prompting for Balanced Incomplete Multi-modal Emotion Recognition](../../AAAI2026/social_computing/cross-modal_prompting_for_balanced_incomplete_multi-modal_emotion_recognition.md)
-- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](../../ICLR2026/social_computing/propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
-- [\[AAAI 2026\] From Imitation to Discrimination: Toward A Generalized Curriculum Advantage Mechanism Enhancing Cross-Domain Reasoning Tasks](../../AAAI2026/social_computing/from_imitation_to_discrimination_toward_a_generalized_curriculum_advantage_mecha.md)
 
 </div>
 

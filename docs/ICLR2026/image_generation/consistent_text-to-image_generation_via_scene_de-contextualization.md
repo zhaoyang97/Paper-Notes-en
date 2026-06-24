@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] Consistent Text-to-Image Generation via Scene De-Contextualization
 description: >-
-  [ICLR 2026][Image Generation][consistent T2I] Reveals that the root cause of ID shift in T2I models is "scene contextualization" (scene tokens injecting contextual information into ID tokens) and proposes a training-free Scene De-Contextualization (SDeC) method. By analyzing the directional stability of SVD eigenvalues, SDeC identifies and suppresses potential sce
+  [ICLR 2026][Image Generation][consistent T2I] Reveals that the root cause of ID shift in T2I models is "scene contextualization" (scene tokens injecting contextual information into ID tokens) and proposes a training-free Scene De-Contextualization (SDeC) method. By analyzing the directional stability of SVD eigenvalues, SDeC identifies and suppresses potential scene-ID associations in prompt embeddings to achieve per-scene identity-consistent generation.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - consistent T2I
-  - identity preservation
-  - scene contextualization
-  - SVD
-  - training-free
-  - prompt embedding
+  - "ICLR 2026"
+  - "Image Generation"
+  - "consistent T2I"
+  - "identity preservation"
+  - "scene contextualization"
+  - "SVD"
+  - "training-free"
+  - "prompt embedding"
 date: 2026-05-08
-content_hash: 14063a9f57aa93e1
+content_hash: 24866fd535239db5
 ---
+
 # Consistent Text-to-Image Generation via Scene De-Contextualization
 
 **Conference**: ICLR 2026  
@@ -144,7 +145,7 @@ User study win rate: SDeC **42.67%** vs 1P1S 15% vs ConsiStory 20.83%
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
@@ -152,7 +153,7 @@ User study win rate: SDeC **42.67%** vs 1P1S 15% vs ConsiStory 20.83%
 - [\[AAAI 2026\] Infinite-Story: A Training-Free Consistent Text-to-Image Generation](../../AAAI2026/image_generation/infinite-story_a_training-free_consistent_text-to-image_gene.md)
 - [\[ICLR 2026\] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training](generate_any_scene_scene_graph_driven_data_synthesis_for_visual_generation_train.md)
 - [\[CVPR 2026\] StyleTextGen: Style-Conditioned Multilingual Scene Text Generation](../../CVPR2026/image_generation/styletextgen_style-conditioned_multilingual_scene_text_generation.md)
-- [\[ICLR 2026\] TIPO: Text to Image with Text Pre-sampling for Prompt Optimization](tipo_text_to_image_with_text_pre-sampling_for_prompt_optimization.md)
+- [\[NeurIPS 2025\] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency](../../NeurIPS2025/image_generation/scenedecorator_towards_scene-oriented_story_generation_with_scene_planning_and_s.md)
 
 </div>
 

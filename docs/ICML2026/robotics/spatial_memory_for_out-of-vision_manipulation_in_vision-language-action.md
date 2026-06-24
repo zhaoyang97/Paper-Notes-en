@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action
 description: >-
-  [ICML 2026][Robotics & Embodied AI][VLA] SOMA equips VLA with a persistent spatial-semantic memory built via active scanning with a movable head camera. This memory supports incremental online updates and instruction-based retrieval, enabling robots to stably manipulate objects outside the current field of view (OOV). In five real-world OOV grasping tasks, SO
+  [ICML 2026][Robotics][VLA] SOMA equips VLA with a persistent spatial-semantic memory built via active scanning with a movable head camera. This memory supports incremental online updates and instruction-based retrieval, enabling robots to stably manipulate objects outside the current field of view (OOV). In five real-world OOV grasping tasks, SOMA reduces the time to first gaze, head search path, and number of grasp attempts by 40-60%.
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "ICML 2026"
+  - "Robotics"
+  - "VLA"
+  - "Spatial Memory"
+  - "Out-of-Vision (OOV) Manipulation"
+  - "Movable Head Camera"
+  - "Memory-Guided Manipulation"
 date: 2026-05-08
-content_hash: 779740028b68548a
+content_hash: 11fab04166871623
 ---
+
 # Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action
 
 **Conference**: ICML 2026  
@@ -146,10 +151,10 @@ RoboCasa Tabletop GR1 (5 task categories, 300 demo setting): SOMA achieves an av
 ## Related Papers
 
 - [\[ICLR 2026\] MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation](../../ICLR2026/robotics/memoryvla_perceptual-cognitive_memory_in_vision-language-action_models_for_robot.md)
+- [\[ICLR 2026\] Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model](../../ICLR2026/robotics/spatial_forcing_implicit_spatial_representation_alignment_for_vision-language-ac.md)
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
 - [\[ICML 2026\] StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)
 - [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
-- [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
 
 </div>
 

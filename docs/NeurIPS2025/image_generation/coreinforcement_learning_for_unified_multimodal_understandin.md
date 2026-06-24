@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Co-Reinforcement Learning for Unified Multimodal Understanding and Generation
 description: >-
-  [NeurIPS 2025][Image Generation][Unified Multimodal Models] This paper proposes CoRL (Co-Reinforcement Learning), a two-stage framework — Unified RL followed by Refined RL — that simultaneously optimizes both understandi…
+  [NeurIPS 2025][Image Generation][Unified Multimodal Models] This paper proposes CoRL (Co-Reinforcement Learning), a two-stage framework — Unified RL followed by Refined RL — that simultaneously optimizes both understanding and generation capabilities of Unified Multimodal Language Models (ULMs) via reinforcement learning, achieving synergistic co-evolution of dual capabilities: +7% on generation and +23% on understanding at 1.5B parameters.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Text-to-Image Generation"
   - "Multimodal Understanding"
 date: 2026-05-08
-content_hash: 6dcf2f41db8114dc
+content_hash: 213d0f74355ddae8
 ---
 
 # Co-Reinforcement Learning for Unified Multimodal Understanding and Generation
@@ -137,11 +137,11 @@ Based on GRPO, 8 (Stage 1) or 16 (Stage 2) candidate responses are sampled per p
 
 ## Related Papers
 
+- [\[CVPR 2025\] TokenFlow: Unified Image Tokenizer for Multimodal Understanding and Generation](../../CVPR2025/image_generation/tokenflow_unified_image_tokenizer_for_multimodal_understanding_and_generation.md)
 - [\[CVPR 2026\] Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models](../../CVPR2026/image_generation/learning_to_generate_via_understanding_understanding-driven_intrinsic_rewarding_.md)
 - [\[NeurIPS 2025\] Show-o2: Improved Native Unified Multimodal Models](show-o2_improved_native_unified_multimodal_models.md)
+- [\[CVPR 2025\] JanusFlow: Harmonizing Autoregression and Rectified Flow for Unified Multimodal Understanding and Generation](../../CVPR2025/image_generation/janusflow_harmonizing_autoregression_and_rectified_flow_for_unified_multimodal_u.md)
 - [\[NeurIPS 2025\] RLVR-World: Training World Models with Reinforcement Learning](rlvr-world_training_world_models_with_reinforcement_learning.md)
-- [\[NeurIPS 2025\] Toward a Unified Geometry Understanding: Riemannian Diffusion Framework for Graph Generation and Prediction](toward_a_unified_geometry_understanding_riemannian_diffusion_framework_for_graph.md)
-- [\[NeurIPS 2025\] Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models](mitigating_intra-_and_inter-modal_forgetting_in_continual_learning_of_unified_mu.md)
 
 </div>
 

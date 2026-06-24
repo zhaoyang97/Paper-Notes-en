@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][VLA] This paper first systematically evaluates the robustness of mainstream VLAs across 17 types of perturbations in four modalities (action, observation, environment, and instruction), finding that action is the most vulnerable modality, existing vision-only robustness methods fail to transfer, and $\pi_0$ is the most stab
+  [ICLR 2026][Robotics][VLA] This paper first systematically evaluates the robustness of mainstream VLAs across 17 types of perturbations in four modalities (action, observation, environment, and instruction), finding that action is the most vulnerable modality, existing vision-only robustness methods fail to transfer, and $\pi_0$ is the most stable. Then, it proposes RobustVLA: robust optimization under worst-case action noise for the output…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - VLA
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Multi-modal robustness"
+  - "Flow matching"
+  - "Adversarial training"
+  - "Multi-armed bandit"
 date: 2026-05-08
-content_hash: 619a53c9643ca4df
+content_hash: 0d46b745b81563ac
 ---
+
 # On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations
 
 **Conference**: ICLR 2026  
@@ -147,7 +151,7 @@ On the LIBERO benchmark with 17 perturbations using the $\pi_0$ backbone (Succes
 - [\[ICLR 2026\] Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning](vlaser_vision-language-action_model_with_synergistic_embodied_reasoning.md)
 - [\[ICLR 2026\] WMPO: World Model-based Policy Optimization for Vision-Language-Action Models](wmpo_world_model-based_policy_optimization_for_vision-language-action_models.md)
 - [\[ICLR 2026\] AutoFly: Vision-Language-Action Model for UAV Autonomous Navigation in the Wild](autofly_vision-language-action_model_for_uav_autonomous_navigation_in_the_wild.md)
-- [\[ICLR 2026\] Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process](unified_diffusion_vla_vision-language-action_model_via_joint_discrete_denosing_d.md)
+- [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](../../ICML2026/robotics/dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
 
 </div>
 

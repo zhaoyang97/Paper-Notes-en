@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design
 description: >-
-  [ICLR 2026][Optimization & Theory][GRPO] CALM enables the simultaneous evolution of "prompts for heuristic generation" and the "underlying LLM" itself. Within an LLM-driven evolutionary heuristic design loop, each "prompt-response-performance" triplet is treated as reinforcement learning data. A local 7B INT4 model is fine-tuned online using GRPO, allowing he
+  [ICLR2026][Optimization][Automatic Heuristic Design] CALM enables the simultaneous evolution of "prompts for heuristic generation" and the "underlying LLM" itself. Within an LLM-driven evolutionary heuristic design loop, each "prompt-response-performance" triplet is treated as reinforcement learning data. A local 7B INT4 model is fine-tuned online using GRPO, allowing heuristics generated on a single 24GB GPU to outperform SOTA methods relying on the GPT-4o-mini API across mu…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - GRPO
+  - "ICLR2026"
+  - "Optimization"
+  - "Automatic Heuristic Design"
+  - "LLM evolutionary search"
+  - "GRPO"
+  - "Combinatorial Optimization"
+  - "Co-evolution"
 date: 2026-05-08
-content_hash: 3b8771155324e413
+content_hash: 1c5822c099542990
 ---
+
 # CALM: Co-evolution of Algorithms and Language Model for Automatic Heuristic Design
 
 **Conference**: ICLR2026  
@@ -134,7 +139,7 @@ Ours (local 7B + GRPO) effectively **outperforms** GPT-4o-mini-based methods.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

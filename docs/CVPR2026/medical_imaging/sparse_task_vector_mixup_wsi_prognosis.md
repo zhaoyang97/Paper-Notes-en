@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] STEPH proposes a model merging scheme based on Task Vector Mixup (TVM) combined with hypernetwork-driven sparse aggregation. It efficiently integrates predictive knowledge from multiple cancer-specific models into a target cancer model. On 13 TCGA datasets, it achieves an average C-Index of 0.6949 (+5.14% vs. cancer-sp
+  [CVPR 2026][Medical Imaging][Whole Slide Images (WSI)] STEPH proposes a model merging scheme based on Task Vector Mixup (TVM) combined with hypernetwork-driven sparse aggregation. It efficiently integrates predictive knowledge from multiple cancer-specific models into a target cancer model. On 13 TCGA datasets, it achieves an average C-Index of 0.6949 (+5.14% vs. cancer-specific learning, +2.01% vs. ROUPKT). During inference, it requires only a single model forward pass…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Whole Slide Images (WSI)"
+  - "Survival Analysis"
+  - "Cross-cancer Knowledge Transfer"
+  - "Task Vectors"
+  - "Hypernetworks"
+  - "Model Merging"
 date: 2026-05-08
-content_hash: 61d39dcb882c48c2
+content_hash: aff3ffd1d5722b86
 ---
+
 # STEPH: Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in WSI Prognosis
 
 **Conference**: CVPR 2026  
@@ -157,9 +164,9 @@ NLL Survival Loss + Aux Losses ($\beta=0.05, \gamma$ via cross-validation); $K=5
 
 - [\[CVPR 2026\] Any2Any 3D Diffusion Models with Knowledge Transfer: A Radiotherapy Planning Study](any2any_3d_diffusion_models_with_knowledge_transfer_a_radiotherapy_planning_stud.md)
 - [\[CVPR 2026\] GeneVAR: Causal MeanFlow for Autoregressive Gene-to-WSI Tile Synthesis](genevar_causal_meanflow_for_autoregressive_gene-to-wsi_tile_synthesis.md)
+- [\[ICLR 2026\] BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals](../../ICLR2026/medical_imaging/biox-bridge_model_bridging_for_unsupervised_cross-modal_knowledge_transfer_acros.md)
 - [\[CVPR 2026\] GaussianPile: A Unified Sparse Gaussian Splatting Framework for Slice-based Volumetric Reconstruction](gaussianpile_a_unified_sparse_gaussian_splatting_framework_for_slice-based_volum.md)
 - [\[CVPR 2026\] Momentum Memory for Knowledge Distillation in Computational Pathology](momentum_memory_for_knowledge_distillation_in_computational_pathology.md)
-- [\[CVPR 2026\] FBTA: Enabling Single-GPU End-to-End Gigapixel WSI Classification with Feature Bridging and Translation Alignment](fbta_enabling_single-gpu_end-to-end_gigapixel_wsi_classification_with_feature_br.md)
 
 </div>
 

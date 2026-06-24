@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Incremental Transformer Neural Processes
 description: >-
-  [ICML 2026][Time Series][Paper Note] By incorporating causal masking and KV caching—mechanisms common in Large Language Models—into Transformer Neural Processes (TNP), the update cost for each new observation in streaming scenarios is reduced from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$. Combined with a "dense autoregressive training" strategy that covers
+  [ICML 2026][Time Series][Neural Processes] By incorporating causal masking and KV caching—mechanisms common in Large Language Models—into Transformer Neural Processes (TNP), the update cost for each new observation in streaming scenarios is reduced from $\mathcal{O}(N^2)$ to $\mathcal{O}(N)$. Combined with a "dense autoregressive training" strategy that covers all context lengths in a single forward pass, incTNP maintains or exceeds the performance of standard TNP…
 tags:
-  - ICML 2026
-  - Time Series
+  - "ICML 2026"
+  - "Time Series"
+  - "Neural Processes"
+  - "Causal Masking"
+  - "KV Caching"
+  - "Streaming Inference"
+  - "Implicit Bayesianness"
 date: 2026-05-08
-content_hash: 96aec47aaa7d418d
+content_hash: e858ea98471a0c10
 ---
+
 # Incremental Transformer Neural Processes
 
 **Conference**: ICML 2026  
@@ -138,11 +144,11 @@ In AR deployment, incTNP offers orders-of-magnitude faster inference compared to
 
 ## Related Papers
 
+- [\[ICLR 2026\] Efficient Autoregressive Inference for Transformer Probabilistic Models](../../ICLR2026/time_series/efficient_autoregressive_inference_for_transformer_probabilistic_models.md)
 - [\[NeurIPS 2025\] Decomposition of Small Transformer Models](../../NeurIPS2025/time_series/decomposition_of_small_transformer_models.md)
+- [\[ICCV 2025\] VA-MoE: Variables-Adaptive Mixture of Experts for Incremental Weather Forecasting](../../ICCV2025/time_series/va-moe_variables-adaptive_mixture_of_experts_for_incremental_weather_forecasting.md)
 - [\[NeurIPS 2025\] Transformer Embeddings for Fast Microlensing Inference](../../NeurIPS2025/time_series/transformer_embeddings_for_fast_microlensing_inference.md)
 - [\[ICLR 2026\] Relational Transformer: Toward Zero-Shot Foundation Models for Relational Data](../../ICLR2026/time_series/relational_transformer_toward_zero-shot_foundation_models_for_relational_data.md)
-- [\[ICCV 2025\] VA-MoE: Variables-Adaptive Mixture of Experts for Incremental Weather Forecasting](../../ICCV2025/time_series/va-moe_variables-adaptive_mixture_of_experts_for_incremental_weather_forecasting.md)
-- [\[ICLR 2026\] EVEREST: A Transformer for Probabilistic Rare-Event Anomaly Detection with Evidential and Tail-Aware Uncertainty](../../ICLR2026/time_series/everest_a_transformer_for_probabilistic_rare-event_anomaly_detection_with_eviden.md)
 
 </div>
 

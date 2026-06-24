@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems
 description: >-
-  [ACL 2026][LLM Agent][reasoning-intensive retrieval] The paper proposes BRIGHT-PRO, which re-evaluates reasoning-intensive retrievers using multi-aspect evidence annotation and agentic search protocols. It also introduces RTriever-Synth to train RTriever-4B, demonstrating that retrievers should optimize for "evidence portfolio coverage" rather than single-passage relevan
+  [ACL2026][LLM Agent][reasoning-intensive retrieval] The paper proposes BRIGHT-PRO, which re-evaluates reasoning-intensive retrievers using multi-aspect evidence annotation and agentic search protocols. It also introduces RTriever-Synth to train RTriever-4B, demonstrating that retrievers should optimize for "evidence portfolio coverage" rather than single-passage relevance.
 tags:
-  - ACL 2026
-  - LLM Agent
-  - reasoning-intensive retrieval
-  - agentic search
-  - BRIGHT-PRO
-  - RTriever
+  - "ACL2026"
+  - "LLM Agent"
+  - "reasoning-intensive retrieval"
+  - "agentic search"
+  - "BRIGHT-PRO"
+  - "RTriever"
+  - "evidence coverage"
 date: 2026-05-08
-content_hash: 20eb2ed129c7e682
+content_hash: 171d7ff334c22a21
 ---
+
 # Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems
 
 **Conference**: ACL2026  
@@ -178,8 +180,8 @@ The adaptive round protocol further illustrates differences in efficiency.
 - [\[ICLR 2026\] MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains](../../ICLR2026/llm_agent/mc-search_evaluating_and_enhancing_multimodal_agentic_search_with_structured_lon.md)
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 - [\[ICML 2026\] Process Reward Agents for Steering Knowledge-Intensive Reasoning](../../ICML2026/llm_agent/process_reward_agents_for_steering_knowledge-intensive_reasoning.md)
-- [\[ICLR 2026\] LiveNewsBench: Evaluating LLM Web Search Capabilities with Freshly Curated News](../../ICLR2026/llm_agent/livenewsbench_evaluating_llm_web_search_capabilities_with_freshly_curated_news.md)
 - [\[ACL 2026\] ToolOmni: Enabling Open-World Tool Use via Agentic Learning with Proactive Retrieval and Grounded Execution](toolomni_enabling_open-world_tool_use_via_agentic_learning_with_proactive_retrie.md)
+- [\[ACL 2026\] OctoTools: An Agentic Framework with Extensible Tools for Complex Reasoning](octotools_an_agentic_framework_with_extensible_tools_for_complex_reasoning.md)
 
 </div>
 

@@ -2,16 +2,20 @@
 title: >-
   [Paper Note] Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference
 description: >-
-  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] Libra achieves near-perfect load balancing for Qwen3MoE and GLM-4.5 on 8 H200 GPUs by combining "speculative execution to predict next-layer expert activation" with a "two-stage locality-aware execution flow," completely hiding the overhead of expert replication and token sharding behind MoE computation. It improves pr
+  [ICLR 2026][LLM Efficiency][Mixture-of-Experts] Libra achieves near-perfect load balancing for Qwen3MoE and GLM-4.5 on 8 H200 GPUs by combining "speculative execution to predict next-layer expert activation" with a "two-stage locality-aware execution flow," completely hiding the overhead of expert replication and token sharding behind MoE computation. It improves prefill throughput by up to 19.2%.
 tags:
-  - ICLR 2026
-  - LLM Efficiency
-  - Mixture-of-Experts
-  - Expert Parallelism
-  - Token Sharding
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Mixture-of-Experts"
+  - "Expert Parallelism"
+  - "Expert Load Balancing"
+  - "Hot Expert Replication"
+  - "Token Sharding"
+  - "Speculative Execution"
 date: 2026-05-08
-content_hash: 97844c2340a1dcb9
+content_hash: e37988550376b7a6
 ---
+
 # Libra: Effective yet Efficient Load Balancing for Large-scale MoE Inference
 
 **Conference**: ICLR 2026  

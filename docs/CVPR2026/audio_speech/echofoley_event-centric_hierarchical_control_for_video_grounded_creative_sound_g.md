@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation
 description: >-
-  [CVPR 2026][Audio & Speech][video-to-audio] Addressing the issues of "visual dominance, inability to understand text instructions, and lack of fine-grained editing" in existing video-to-audio models, this paper proposes the EchoFoley task (using symbolic "sound event" representations + three levels of control granularity) along with a densely annotated benchmark
+  [CVPR 2026][Audio & Speech][video-to-audio] Addressing the issues of "visual dominance, inability to understand text instructions, and lack of fine-grained editing" in existing video-to-audio models, this paper proposes the EchoFoley task (using symbolic "sound event" representations + three levels of control granularity) along with a densely annotated benchmark of 6k samples. It designs EchoVidia, a training-free agentic framework (using slow-fast thinking + an action pool)…
 tags:
-  - CVPR 2026
-  - Audio & Speech
-  - video-to-audio
-  - slow-fast thinking
+  - "CVPR 2026"
+  - "Audio & Speech"
+  - "video-to-audio"
+  - "Foley sound effects"
+  - "event-level control"
+  - "agentic framework"
+  - "slow-fast thinking"
 date: 2026-05-08
-content_hash: 317438bf620004cf
+content_hash: f9fb34112c37d321
 ---
+
 # EchoFoley: Event-Centric Hierarchical Control for Video Grounded Creative Sound Generation
 
 **Conference**: CVPR 2026  
@@ -120,15 +124,16 @@ Gains from the Slow-Fast (SF) strategy in event detection (Task 1) and localizat
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Hierarchical Codec Diffusion for Video-to-Speech Generation](hierarchical_codec_diffusion_for_video-to-speech_generation.md)
+- [\[CVPR 2026\] Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models](echoes_over_time_unlocking_length_generalization_in_video-to-audio_generation_mo.md)
 - [\[CVPR 2026\] FoleyDirector: Fine-Grained Temporal Steering for Video-to-Audio Generation via Structured Scripts](foleydirector_fine-grained_temporal_steering_for_video-to-audio_generation_via_s.md)
-- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2025\] MultiFoley: Video-Guided Foley Sound Generation with Multimodal Controls](../../CVPR2025/audio_speech/video-guided_foley_sound_generation_with_multimodal_controls.md)
 - [\[CVPR 2026\] OmniSonic: Towards Universal and Holistic Audio Generation from Video and Text](omnisonic_towards_universal_and_holistic_audio_generation_from_video_and_text.md)
-- [\[CVPR 2026\] BabyVLM-V2: Toward Developmentally Grounded Pretraining and Benchmarking of Vision Foundation Models](babyvlm-v2_toward_developmentally_grounded_pretraining_and_benchmarking_of_visio.md)
 
 </div>
 

@@ -2,16 +2,24 @@
 title: >-
   [Paper Note] From Predictors to Samplers via the Training Trajectory
 description: >-
-  [ICLR 2026][learning_theory][coarse-to-fine] Without training any additional generative models, this work directly reuses the **sequence of checkpoints** left by a trained predictor during its training process to perform "trajectory annealing" MCMC. Early checkpoints provide coarse-to-fine smoothing that enables fast mixing, while late checkpoints refine details,
+  [ICLR 2026][Learning Theory][Training Trajectory Annealing] Without training any additional generative models, this work directly reuses the **sequence of checkpoints** left by a trained predictor during its training process to perform "trajectory annealing" MCMC. Early checkpoints provide coarse-to-fine smoothing that enables fast mixing, while late checkpoints refine details, effectively reducing exponential MCMC mixing times on rugged/needle-type landscapes to near-linear.
 tags:
-  - ICLR 2026
-  - learning_theory
-  - coarse-to-fine
-  - NTK
-  - GWG
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Sampling"
+  - "MCMC"
+  - "Training Dynamics"
+  - "Training Trajectory Annealing"
+  - "coarse-to-fine"
+  - "Spectral Bias"
+  - "NTK"
+  - "Boolean Functions"
+  - "GWG"
+  - "Mixing Time"
 date: 2026-05-08
-content_hash: 7868750d2c0d7173
+content_hash: ee8c7bf94a550822
 ---
+
 # From Predictors to Samplers via the Training Trajectory
 
 **Conference**: ICLR 2026  
@@ -121,10 +129,10 @@ Performance was compared under **matched compute** across synthetic Boolean, bin
 ## Related Papers
 
 - [\[ICLR 2026\] Diffusion Language Models are Provably Optimal Parallel Samplers](diffusion_language_models_are_provably_optimal_parallel_samplers.md)
+- [\[ICLR 2026\] The Coverage Principle: How Pre-Training Enables Post-Training](the_coverage_principle_how_pre-training_enables_post-training.md)
 - [\[ICLR 2026\] Strong Correlations Induce Cause Only Predictions in Transformer Training](strong_correlations_induce_cause_only_predictions_in_transformer_training.md)
 - [\[ICLR 2026\] Training-Free Determination of Network Width via Neural Tangent Kernel](training-free_determination_of_network_width_via_neural_tangent_kernel.md)
-- [\[ICLR 2026\] Tractability via Low Dimensionality: The Parameterized Complexity of Training Quantized Neural Networks](tractability_via_low_dimensionality_the_parameterized_complexity_of_training_qua.md)
-- [\[ICLR 2026\] On the Convergence of Two-Layer Kolmogorov-Arnold Networks with First-Layer Training](on_the_convergence_of_two-layer_kolmogorov-arnold_networks_with_first-layer_trai.md)
+- [\[ICLR 2026\] A Theoretical Analysis of Mamba's Training Dynamics: Filtering Relevant Features for Generalization in State Space Models](a_theoretical_analysis_of_mambas_training_dynamics_filtering_relevant_features_f.md)
 
 </div>
 

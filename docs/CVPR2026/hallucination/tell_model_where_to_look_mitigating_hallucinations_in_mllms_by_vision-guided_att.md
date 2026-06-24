@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] The authors propose Vision-Guided Attention (VGA), a training-free method that leverages the semantic features of visual tokens to construct precise visual localization. It guides the model's attention to relevant visual regions, effectively mitigating hallucinations in MLLMs while maintaining compatibility with FlashA
+  [CVPR2026][Hallucination Detection][Multimodal Hallucination] The authors propose Vision-Guided Attention (VGA), a training-free method that leverages the semantic features of visual tokens to construct precise visual localization. It guides the model's attention to relevant visual regions, effectively mitigating hallucinations in MLLMs while maintaining compatibility with FlashAttention.
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR2026"
+  - "Hallucination Detection"
+  - "Multimodal Hallucination"
+  - "Visual Attention"
+  - "Visual Semantic Confidence"
+  - "Training-free"
+  - "FlashAttention Compatible"
 date: 2026-05-08
-content_hash: 609026874e11df0b
+content_hash: a3a33de0773535e4
 ---
+
 # Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention
 
 **Conference**: CVPR2026  
@@ -128,11 +134,11 @@ This is a completely training-free method applied only during inference. Hyperpa
 
 ## Related Papers
 
-- [\[CVPR 2025\] Seeing Far and Clearly: Mitigating Hallucinations in MLLMs with Attention Causal Decoding](../../CVPR2025/hallucination/seeing_far_and_clearly_mitigating_hallucinations_in_mllms_with_attention_causal_.md)
 - [\[ACL 2026\] Spotlight and Shadow: Attention-Guided Dual-Anchor Introspective Decoding for MLLM Hallucination Mitigation](../../ACL2026/hallucination/spotlight_and_shadow_attention-guided_dual-anchor_introspective_decoding_for_mll.md)
-- [\[CVPR 2026\] COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs](copo_causal-oriented_policy_optimization_for_hallucinations_of_mllms.md)
-- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
+- [\[CVPR 2026\] Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance](residual_decoding_mitigating_hallucinations_in_large_vision-language_models_via_.md)
 - [\[CVPR 2026\] Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression](fighting_hallucinations_with_counterfactuals_diffusion-guided_perturbations_for_.md)
+- [\[ICLR 2026\] Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement](../../ICLR2026/hallucination/mitigating_hallucination_in_vision-language_model_with_depth_and_spatial-aware_k.md)
+- [\[ICLR 2026\] Imitating the Truth: Attention-aware Truth-Guided Enhancement for Hallucination Mitigation in Large Vision-Language Models](../../ICLR2026/hallucination/imitating_the_truth_attention-aware_truth-guided_enhancement_for_hallucination_m.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance
 description: >-
-  [ICCV 2025][Human Understanding][Human Animation] DreamActor-M1 proposes a human image animation framework based on the DiT architecture…
+  [ICCV 2025][Human Understanding][Human Animation] DreamActor-M1 proposes a human image animation framework based on the DiT architecture, achieving fine-grained facial and body control through hybrid control signals comprising implicit facial representations, 3D head spheres, and 3D body skeletons. Combined with complementary appearance guidance and a progressive training strategy, the framework supports multi-scale generation ranging from portrait to full-body.
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Multi-scale Adaptation"
   - "Long-term Consistency"
 date: 2026-05-08
-content_hash: 9e20a025fc46d067
+content_hash: 8e2771ce3b3241f7
 ---
 
 # DreamActor-M1: Holistic, Expressive and Robust Human Image Animation with Hybrid Guidance
@@ -157,11 +157,11 @@ Control signal ablation (qualitative):
 
 ## Related Papers
 
-- [\[CVPR 2026\] ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis](../../CVPR2026/human_understanding/party_part-guidance_for_expressive_text-to-motion_synthesis.md)
+- [\[CVPR 2025\] X-Dyna: Expressive Dynamic Human Image Animation](../../CVPR2025/human_understanding/x-dyna_expressive_dynamic_human_image_animation.md)
 - [\[ICCV 2025\] Controllable and Expressive One-Shot Video Head Swapping](controllable_and_expressive_one-shot_video_head_swapping.md)
+- [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
 - [\[ICCV 2025\] GestureHYDRA: Semantic Co-speech Gesture Synthesis via Hybrid Modality Diffusion Transformer and Cascaded-Synchronized Retrieval-Augmented Generation](gesturehydra_semantic_co-speech_gesture_synthesis_via_hybrid_modality_diffusion_.md)
-- [\[CVPR 2026\] Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation](../../CVPR2026/human_understanding/sketch2colab_sketch-conditioned_multi-human_animation_via_controllable_flow_dist.md)
-- [\[ICCV 2025\] GENMO: A GENeralist Model for Human MOtion](genmo_a_generalist_model_for_human_motion.md)
+- [\[ICLR 2026\] Unleashing Guidance Without Classifiers for Human-Object Interaction Animation](../../ICLR2026/human_understanding/unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md)
 
 </div>
 

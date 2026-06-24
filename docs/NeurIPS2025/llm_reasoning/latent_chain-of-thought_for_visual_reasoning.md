@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] Latent Chain-of-Thought for Visual Reasoning
 description: >-
-  [NeurIPS 2025][LLM Reasoning][visual reasoning] This paper reformulates visual CoT reasoning as a posterior inference problem and proposes LaCoT…
+  [NeurIPS 2025][Reasoning][visual reasoning] This paper reformulates visual CoT reasoning as a posterior inference problem and proposes LaCoT, a training framework based on amortized variational inference (AVI) comprising reference-guided GFlowNet fine-tuning (RGFN), token-level reward approximation, and Bayesian inference scaling (BiN). On Qwen2.5-VL 3B/7B, LaCoT outperforms GRPO by 10.6% and achieves open-source state-of-the-art across seven visual reasoning benchmarks.
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "visual reasoning"
   - "chain-of-thought"
   - "amortized variational inference"
@@ -13,7 +13,7 @@ tags:
   - "inference-time scaling"
   - "LVLM"
 date: 2026-05-08
-content_hash: dbb94a767737c10a
+content_hash: ff51788ba49478ca
 ---
 
 # Latent Chain-of-Thought for Visual Reasoning

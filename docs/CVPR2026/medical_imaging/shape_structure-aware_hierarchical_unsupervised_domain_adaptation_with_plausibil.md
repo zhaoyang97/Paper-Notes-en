@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation
 description: >-
-  [CVPR 2026][Medical Imaging][Paper Note] SHAPE reframes Unsupervised Domain Adaptation (UDA) for cross-modal medical segmentation from "local pixel correctness" to "global anatomical plausibility." By performing class-aware Hierarchical Feature Modulation (HFM) on a frozen DINOv3 to generate high-fidelity features, evaluating pseudo-labels at both anatomical
+  [CVPR 2026][Medical Imaging][Unsupervised Domain Adaptation] SHAPE reframes Unsupervised Domain Adaptation (UDA) for cross-modal medical segmentation from "local pixel correctness" to "global anatomical plausibility." By performing class-aware Hierarchical Feature Modulation (HFM) on a frozen DINOv3 to generate high-fidelity features, evaluating pseudo-labels at both anatomical shape and layout levels via Hypergraph Plausibility Evaluation (HPE)…
 tags:
-  - CVPR 2026
-  - Medical Imaging
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "Unsupervised Domain Adaptation"
+  - "Medical Image Segmentation"
+  - "Pseudo-labeling"
+  - "Hypergraph"
+  - "Anatomical Plausibility"
 date: 2026-05-08
-content_hash: 88b86e97cd1263b5
+content_hash: 8fc0fb1e91f1fd55
 ---
+
 # SHAPE: Structure-aware Hierarchical Unsupervised Domain Adaptation with Plausibility Evaluation for Medical Image Segmentation
 
 **Conference**: CVPR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Penalizing Boundary Activation for Object Completeness in Diffusion Models
 description: >-
-  [ICCV 2025][Image Generation][Object Completeness] This paper investigates the root cause of incomplete object generation in diffusion models — the RandomCrop data augmentation used during training — and proposes a train…
+  [ICCV 2025][Image Generation][Object Completeness] This paper investigates the root cause of incomplete object generation in diffusion models — the RandomCrop data augmentation used during training — and proposes a training-free boundary activation penalty method. By applying cross-attention and self-attention constraints during early denoising steps, the method suppresses object generation near image boundaries, reducing the object incompleteness rate of SDv2.1 from 45.7% to…
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Training-Free"
   - "Boundary Penalty"
 date: 2026-05-08
-content_hash: 9ce0503545fd5308
+content_hash: 7b8d4ad0bacef7e6
 ---
 
 # Penalizing Boundary Activation for Object Completeness in Diffusion Models
@@ -131,10 +131,10 @@ This update is applied only during early timesteps $t > T_1$, where coarse struc
 ## Related Papers
 
 - [\[ICCV 2025\] Synthesizing Near-Boundary OOD Samples for Out-of-Distribution Detection](synthesizing_near-boundary_ood_samples_for_out-of-distribution_detection.md)
-- [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
 - [\[ICCV 2025\] Efficient Input-Level Backdoor Defense on Text-to-Image Synthesis via Neuron Activation Variation](efficient_input-level_backdoor_defense_on_text-to-image_synthesis_via_neuron_act.md)
+- [\[ICCV 2025\] ScoreHOI: Physically Plausible Reconstruction of Human-Object Interaction via Score-Guided Diffusion](scorehoi_physically_plausible_reconstruction_of_human-object_interaction_via_sco.md)
+- [\[NeurIPS 2025\] LinEAS: End-to-end Learning of Activation Steering with a Distributional Loss](../../NeurIPS2025/image_generation/lineas_end-to-end_learning_of_activation_steering_with_a_distributional_loss.md)
 - [\[ICCV 2025\] Your Text Encoder Can Be An Object-Level Watermarking Controller](your_text_encoder_can_be_an_object-level_watermarking_controller.md)
-- [\[CVPR 2026\] Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](../../CVPR2026/image_generation/object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)
 
 </div>
 

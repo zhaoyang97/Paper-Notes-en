@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] P2-DPO: Grounding Hallucination in Perceptual Processing via Calibration Direct Preference Optimization
 description: >-
-  [ICLR 2026][Hallucination Detection][DPO] P2-DPO enables Large Vision-Language Models (LVLMs) to automatically generate on-policy, vision-grounded preference pairs (focus enhancement + noise resistance) targeting their own perceptual weaknesses. By utilizing a calibrated DPO loss to align the causal relationship between visual signals and text generation, the
+  [ICLR 2026][Hallucination Detection][Hallucination suppression] P2-DPO enables Large Vision-Language Models (LVLMs) to automatically generate on-policy, vision-grounded preference pairs (focus enhancement + noise resistance) targeting their own perceptual weaknesses. By utilizing a calibrated DPO loss to align the causal relationship between visual signals and text generation, the method outperforms strong baselines trained on expensive human feedback across hallucination ben…
 tags:
-  - ICLR 2026
-  - Hallucination Detection
-  - DPO
-  - on-policy
+  - "ICLR 2026"
+  - "Hallucination Detection"
+  - "Hallucination suppression"
+  - "DPO"
+  - "Preference optimization"
+  - "on-policy"
+  - "visual robustness"
 date: 2026-05-08
-content_hash: 6c1a85893e10eef6
+content_hash: c68b122d160bbe12
 ---
+
 # P2-DPO: Grounding Hallucination in Perceptual Processing via Calibration Direct Preference Optimization
 
 **Conference**: ICLR 2026  

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] MAPS: Preserving Vision-Language Representations via Module-Wise Proximity Scheduling for Better Vision-Language-Action Generalization
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][VLA] Addressing the issue where fine-tuning VLA models initialized from VLMs destroys pre-trained representations and compromises generalization, MAPS replaces the "global proximity constraint" in robust fine-tuning with a module-wise schedule that linearly decays from the vision encoder to the language layers. By keeping v
+  [CVPR 2026][Robotics][VLA] Addressing the issue where fine-tuning VLA models initialized from VLMs destroys pre-trained representations and compromises generalization, MAPS replaces the "global proximity constraint" in robust fine-tuning with a module-wise schedule that linearly decays from the vision encoder to the language layers. By keeping vision layers strictly tethered to pre-trained geometric priors while allowing action-oriented language layers to adapt freely—without…
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
-  - VLA
+  - "CVPR 2026"
+  - "Robotics"
+  - "VLA"
+  - "Robust Fine-tuning"
+  - "Catastrophic Forgetting"
+  - "Projection Regularization"
+  - "Module-wise Scheduling"
 date: 2026-05-08
-content_hash: 7f66976a0ab04205
+content_hash: 48f552016a26083e
 ---
+
 # MAPS: Preserving Vision-Language Representations via Module-Wise Proximity Scheduling for Better Vision-Language-Action Generalization
 
 **Conference**: CVPR 2026  
@@ -146,9 +151,9 @@ Notably, MiniVLA-OFT using only the small BridgeData V2 corpus achieves OOD perf
 
 - [\[CVPR 2026\] MoEActok: A MoE-based Action Tokenizer for Vision-Language-Action Models](moeactok_a_moe-based_action_tokenizer_for_vision-language-action_models.md)
 - [\[CVPR 2026\] ACoT-VLA: Action Chain-of-Thought for Vision-Language-Action Models](acot-vla_action_chain-of-thought_for_vision-language-action_models.md)
+- [\[ACL 2026\] When Does Language Matter? Multilingual Instructions Reveal Step-wise Language Sensitivity in Vision-Language-Action Models](../../ACL2026/robotics/when_does_language_matter_multilingual_instructions_reveal_step-wise_language_se.md)
 - [\[CVPR 2026\] SRPO: Self-Referential Policy Optimization for Vision-Language-Action Models](srpo_self-referential_policy_optimization_for_vision-language-action_models.md)
 - [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning](counterfactual_vla_self-reflective_vision-language-action_model_with_adaptive_re.md)
 
 </div>
 

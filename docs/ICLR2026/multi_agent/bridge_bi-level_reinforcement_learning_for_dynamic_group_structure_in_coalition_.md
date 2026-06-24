@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BRIDGE: Bi-level Reinforcement Learning for Dynamic Group Structure in Coalition Formation Games
 description: >-
-  [ICLR 2026][Multi-Agent][MADDPG] This paper models the "optimally partitioning a group of agents into several coalitions" (the NP-complete Coalition Structure Generation problem) as a compact, RL-solvable MDP. By employing bi-level RL (where the upper level learns to merge coalitions and the lower level learns optimal individual policies), models trai
+  [ICLR2026][Multi-Agent][Coalition Structure Generation] This paper models the "optimally partitioning a group of agents into several coalitions" (the NP-complete Coalition Structure Generation problem) as a compact, RL-solvable MDP. By employing bi-level RL (where the upper level learns to merge coalitions and the lower level learns optimal individual policies), models trained on only 3 agents can generalize to 100 agents, outperforming traditional heuristics in both inferenc…
 tags:
-  - ICLR 2026
-  - Multi-Agent
-  - MADDPG
+  - "ICLR2026"
+  - "Multi-Agent"
+  - "Coalition Structure Generation"
+  - "Bi-level Reinforcement Learning"
+  - "Multi-Agent Systems"
+  - "Stackelberg Games"
+  - "MADDPG"
 date: 2026-05-08
-content_hash: e58c25fd37d87429
+content_hash: 694582b75b8fb565
 ---
+
 # BRIDGE: Bi-level Reinforcement Learning for Dynamic Group Structure in Coalition Formation Games
 
 **Conference**: ICLR2026  
@@ -153,15 +158,15 @@ Except for the 6a5t case, BRIDGE outperforms all traditional CSG baselines (C-Li
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
+- [\[ICLR 2026\] Stronger-MAS: Multi-Agent Reinforcement Learning for Collaborative LLMs](stronger-mas_multi-agent_reinforcement_learning_for_collaborative_llms.md)
 - [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 - [\[AAAI 2026\] Learning to Generate and Extract: A Multi-Agent Collaboration Framework for Zero-shot Document-level Event Arguments Extraction](../../AAAI2026/multi_agent/learning_to_generate_and_extract_a_multi-agent_collaboration_framework_for_zero-.md)
 - [\[ICLR 2026\] Context Learning for Multi-Agent Discussion](context_learning_for_multi-agent_discussion.md)
-- [\[ICLR 2026\] Learning to Summarize by Learning to Quiz: Adversarial Agentic Collaboration for Long Document Summarization](learning_to_summarize_by_learning_to_quiz_adversarial_agentic_collaboration_for_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BLISS: Bandit Layer Importance Sampling Strategy for Efficient Training of Graph Neural Networks
 description: >-
-  [NeurIPS 2025][Graph Learning][Graph Sampling] This paper proposes BLISS, which formulates layer-wise neighbor sampling in GNNs as a multi-armed bandit problem. Using the EXP3 algorithm…
+  [NeurIPS 2025][Graph Learning][Graph Sampling] This paper proposes BLISS, which formulates layer-wise neighbor sampling in GNNs as a multi-armed bandit problem. Using the EXP3 algorithm, it dynamically adjusts per-edge sampling probabilities with the variance contribution of neighbors to node representations as the reward signal, achieving accuracy on par with or exceeding full-batch training on GCN and GAT.
 tags:
   - "NeurIPS 2025"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "GNN Training"
   - "Scalability"
 date: 2026-05-08
-content_hash: fea9f21d4722e5ed
+content_hash: a2e54e9976a623f9
 ---
 
 # BLISS: Bandit Layer Importance Sampling Strategy for Efficient Training of Graph Neural Networks
@@ -130,9 +130,9 @@ F1 scores of BLISS vs. PLADIES across 6 datasets (GAT / GraphSAGE):
 
 - [\[NeurIPS 2025\] Graph Neural Networks for Efficient AC Power Flow Prediction in Power Grids](graph_neural_networks_for_efficient_ac_power_flow_prediction_in_power_grids.md)
 - [\[NeurIPS 2025\] Over-squashing in Spatiotemporal Graph Neural Networks](over-squashing_in_spatiotemporal_graph_neural_networks.md)
+- [\[ICML 2025\] Unifews: You Need Fewer Operations for Efficient Graph Neural Networks](../../ICML2025/graph_learning/unifews_you_need_fewer_operations_for_efficient_graph_neural_networks.md)
 - [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
 - [\[NeurIPS 2025\] GraphTOP: Graph Topology-Oriented Prompting for Graph Neural Networks](graphtop_graph_topology-oriented_prompting_for_graph_neural_networks.md)
-- [\[NeurIPS 2025\] Logical Expressiveness of Graph Neural Networks with Hierarchical Node Individualization](logical_expressiveness_of_graph_neural_networks_with_hierarchical_node_individua.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] When Do Graph Foundation Models Transfer? A Data-Centric Theory
 description: >-
-  [ICML 2026][Graph Learning][graphon] This paper utilizes graphons to represent graphs of varying sizes and domains within a unified continuous space. It proves that cross-domain output discrepancies in graph foundation models (GFMs) can be decomposed into two finite sampling errors and an intrinsic graphon domain discrepancy. Synthetic and real-world expe
+  [ICML2026][Graph Learning][Graph Foundation Models] This paper utilizes graphons to represent graphs of varying sizes and domains within a unified continuous space. It proves that cross-domain output discrepancies in graph foundation models (GFMs) can be decomposed into two finite sampling errors and an intrinsic graphon domain discrepancy. Synthetic and real-world experiments demonstrate that graph size, structural shift, and spectral positional encoding stability collective…
 tags:
-  - ICML 2026
-  - Graph Learning
-  - graphon
+  - "ICML2026"
+  - "Graph Learning"
+  - "Graph Foundation Models"
+  - "graphon"
+  - "transfer theory"
+  - "positional encoding"
+  - "graph data curation"
 date: 2026-05-08
-content_hash: 44de663d5d1321c6
+content_hash: d61013bf4838a2b7
 ---
+
 # When Do Graph Foundation Models Transfer? A Data-Centric Theory
 
 **Conference**: ICML2026  
@@ -121,10 +126,10 @@ Experiments verify the roles of different error terms in the theoretical decompo
 ## Related Papers
 
 - [\[ICML 2026\] Structure-Centric Graph Foundation Model via Geometric Bases](structure-centric_graph_foundation_model_via_geometric_bases.md)
+- [\[ICLR 2026\] Bridging Input Feature Spaces Towards Graph Foundation Models](../../ICLR2026/graph_learning/bridging_input_feature_spaces_towards_graph_foundation_models.md)
 - [\[NeurIPS 2025\] Interaction-Centric Knowledge Infusion and Transfer for Open-Vocabulary Scene Graph Generation](../../NeurIPS2025/graph_learning/interaction-centric_knowledge_infusion_and_transfer_for_open-vocabulary_scene_gr.md)
-- [\[ICML 2025\] Towards Graph Foundation Models: Learning Generalities Across Graphs via Task-Trees](../../ICML2025/graph_learning/towards_graph_foundation_models_learning_generalities_across_graphs_via_task-tre.md)
-- [\[ICML 2026\] Are Common Substructures Transferable? Riemannian Graph Foundation Model with Neural Vector Bundles](are_common_substructures_transferable_riemannian_graph_foundation_model_with_neu.md)
-- [\[ICML 2026\] Finding the Minimal Parameter Budget for Implicit Reasoning: A Data Complexity Driven Scaling Law for Language Models](finding_the_minimal_parameter_budget_for_implicit_reasoning_a_data_complexity_dr.md)
+- [\[ICLR 2026\] Graphon Cross-Validation: Assessing Models on Network Data](../../ICLR2026/graph_learning/graphon_cross-validation_assessing_models_on_network_data.md)
+- [\[ICLR 2026\] Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models](../../ICLR2026/graph_learning/multi-domain_riemannian_graph_gluing_for_building_graph_foundation_models.md)
 
 </div>
 

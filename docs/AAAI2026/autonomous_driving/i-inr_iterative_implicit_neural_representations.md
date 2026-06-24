@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] I-INR: Iterative Implicit Neural Representations
 description: >-
-  [AAAI 2026][Autonomous Driving][Implicit Neural Representations] This paper proposes I-INR (Iterative Implicit Neural Representations), a plug-and-play iterative refinement framework that introduces lightweight FeedbackN…
+  [AAAI 2026][Autonomous Driving][Implicit Neural Representations] This paper proposes I-INR (Iterative Implicit Neural Representations), a plug-and-play iterative refinement framework that introduces lightweight FeedbackNet and FuseNet modules (adding only 0.5–2% parameters) to perform progressive multi-step signal reconstruction, effectively alleviating the spectral bias of INRs. I-INR consistently outperforms baselines across image fitting, super-resolution, denoising…
 tags:
   - "AAAI 2026"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Denoising Robustness"
   - "Plug-and-Play Framework"
 date: 2026-05-08
-content_hash: 328f20684801ddf6
+content_hash: 68502e11d685f9bc
 ---
 
 # I-INR: Iterative Implicit Neural Representations
@@ -240,9 +240,9 @@ I-SIREN achieves up to **+3.25 dB PSNR** improvement in the best-case denoising 
 
 - [\[ICLR 2026\] NeMo-map: Neural Implicit Flow Fields for Spatio-Temporal Motion Mapping](../../ICLR2026/autonomous_driving/nemo-map_neural_implicit_flow_fields_for_spatio-temporal_motion_mapping.md)
 - [\[CVPR 2026\] Neural Distribution Prior for LiDAR Out-of-Distribution Detection](../../CVPR2026/autonomous_driving/neural_distribution_prior_for_lidar_ood_detection.md)
-- [\[CVPR 2026\] MapGCLR: Geospatial Contrastive Learning of Representations for Online Vectorized HD Map Construction](../../CVPR2026/autonomous_driving/mapgclr_geospatial_contrastive_learning_of_represe.md)
+- [\[ICLR 2026\] Low-Latency Neural LiDAR Compression with 2D Context Models](../../ICLR2026/autonomous_driving/low-latency_neural_lidar_compression_with_2d_context_models.md)
 - [\[NeurIPS 2025\] Continuous Simplicial Neural Networks](../../NeurIPS2025/autonomous_driving/continuous_simplicial_neural_networks.md)
-- [\[ICLR 2026\] Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis](../../ICLR2026/autonomous_driving/spectral-geometric_neural_fields_for_pose-free_lidar_view_synthesis.md)
+- [\[CVPR 2025\] Neural Inverse Rendering from Propagating Light](../../CVPR2025/autonomous_driving/neural_inverse_rendering_from_propagating_light.md)
 
 </div>
 

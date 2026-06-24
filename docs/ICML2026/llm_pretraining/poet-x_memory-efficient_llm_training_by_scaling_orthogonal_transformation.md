@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] POET-X: Memory-efficient LLM Training by Scaling Orthogonal Transformation
 description: >-
-  [ICML 2026][Pretraining][Paper Note] POET-X implements a system-level acceleration and memory optimization for POET (reParameterized Orthogonal Equivalence Training), which is training-stable but slow and memory-intensive. By combining input-centric reconstruction, permutation kernel acceleration, block-diagonal batch parallelism, half-storage CNP, and Tr
+  [ICML2026][LLM Pretraining][Memory-efficient training] POET-X implements a system-level acceleration and memory optimization for POET (reParameterized Orthogonal Equivalence Training), which is training-stable but slow and memory-intensive. By combining input-centric reconstruction, permutation kernel acceleration, block-diagonal batch parallelism, half-storage CNP, and Triton fusion, it achieves a 3× memory reduction and 8× speedup compared to the original POET. This allows…
 tags:
-  - ICML 2026
-  - Pretraining
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "Memory-efficient training"
+  - "Orthogonal Equivalence Transformation"
+  - "Spectral Preservation"
+  - "Sparse training"
+  - "CUDA kernels"
 date: 2026-05-08
-content_hash: 540c3242d07d4c07
+content_hash: 3b1b9f9ca267b7cb
 ---
+
 # POET-X: Memory-efficient LLM Training by Scaling Orthogonal Transformation
 
 **Conference**: ICML2026  
@@ -120,8 +126,8 @@ $\text{POET-XQ}$ (8-bit) provides superior perplexity compared to 8-bit versions
 - [\[ICLR 2026\] Scaling with Collapse: Efficient and Predictable Training of LLM Families](../../ICLR2026/llm_pretraining/scaling_with_collapse_efficient_and_predictable_training_of_llm_families.md)
 - [\[ACL 2026\] SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](../../ACL2026/llm_pretraining/sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)
 - [\[ICML 2026\] AC-ODM: Actor–Critic Online Data Mixing for Sample-Efficient LLM Pretraining](ac-odm_actor--critic_online_data_mixing_for_sample-efficient_llm_pretraining.md)
-- [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](../../ICLR2026/llm_pretraining/beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
-- [\[ICML 2025\] Scaling Inference-Efficient Language Models](../../ICML2025/llm_pretraining/scaling_inference-efficient_language_models.md)
+- [\[ICML 2026\] Explaining Data Mixing Scaling Laws](explaining_data_mixing_scaling_laws.md)
+- [\[ICML 2026\] Inverse Depth Scaling From Most Layers Being Similar](inverse_depth_scaling_from_most_layers_being_similar.md)
 
 </div>
 

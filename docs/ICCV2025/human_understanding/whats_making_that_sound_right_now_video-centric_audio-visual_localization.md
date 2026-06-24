@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] What's Making That Sound Right Now? Video-centric Audio-Visual Localization
 description: >-
-  [Human Understanding] This paper proposes AVATAR, a video-level audio-visual localization benchmark, and TAVLO, a temporally-aware model that addresses the neglect of temporal dynamics in conventional AVL methods through…
+  [Human Understanding] This paper proposes AVATAR, a video-level audio-visual localization benchmark, and TAVLO, a temporally-aware model that addresses the neglect of temporal dynamics in conventional AVL methods through high-resolution temporal modeling.
 tags:
   - "Human Understanding"
 date: 2026-05-08
-content_hash: 550e1edfcc5884e4
+content_hash: a6b6153561d1989d
 ---
 
 # What's Making That Sound Right Now? Video-centric Audio-Visual Localization
@@ -140,8 +140,8 @@ The final loss is bidirectional: $\mathcal{L} = \mathcal{L}_{a \rightarrow v} + 
 - [\[ICCV 2025\] Sequential Keypoint Density Estimator: An Overlooked Baseline of Skeleton-Based Video Anomaly Detection](sequential_keypoint_density_estimator_an_overlooked_baseline_of_skeleton-based_v.md)
 - [\[ICCV 2025\] OpenAnimals: Revisiting Person Re-Identification for Animals Towards Better Generalization](openanimals_revisiting_person_re-identification_for_animals_towards_better_gener.md)
 - [\[ICCV 2025\] RayPose: Ray Bundling Diffusion for Template Views in Unseen 6D Object Pose Estimation](raypose_ray_bundling_diffusion_for_template_views_in_unseen_6d_object_pose_estim.md)
+- [\[ICCV 2025\] SemTalk: Holistic Co-speech Motion Generation with Frame-level Semantic Emphasis](semtalk_holistic_co-speech_motion_generation_with_frame-level_semantic_emphasis.md)
 - [\[ICCV 2025\] SemGes: Semantics-aware Co-Speech Gesture Generation using Semantic Coherence and Relevance Learning](semges_semantics-aware_co-speech_gesture_generation_using_semantic_coherence_and.md)
-- [\[ICCV 2025\] AR-VRM: Imitating Human Motions for Visual Robot Manipulation with Analogical Reasoning](ar-vrm_imitating_human_motions_for_visual_robot_manipulation_with_analogical_rea.md)
 
 </div>
 

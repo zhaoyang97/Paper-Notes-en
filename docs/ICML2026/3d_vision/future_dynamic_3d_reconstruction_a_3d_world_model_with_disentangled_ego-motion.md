@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion
 description: >-
-  [ICML 2026][3D Vision][World Models] This paper proposes FR3D—the first world model designed for "future dynamic 3D reconstruction." It **disentangles camera ego-motion from scene motion** within the latent space of a pre-trained 3D reconstruction model (CUT3R). By using two masked Transformers to extrapolate pose and geometry respectively and leveraging
+  [ICML2026][3D Vision][World Models] This paper proposes FR3D—the first world model designed for "future dynamic 3D reconstruction." It **disentangles camera ego-motion from scene motion** within the latent space of a pre-trained 3D reconstruction model (CUT3R). By using two masked Transformers to extrapolate pose and geometry respectively and leveraging teacher-student distillation for nearly cost-free training, it achieves zero-shot generalization…
 tags:
-  - ICML 2026
-  - 3D Vision
-  - World Models
+  - "ICML2026"
+  - "3D Vision"
+  - "World Models"
+  - "Dynamic 3D Reconstruction"
+  - "Ego-motion Disentanglement"
+  - "Teacher-Student Distillation"
+  - "Zero-shot Generalization"
 date: 2026-05-08
-content_hash: 1bfcefdbf6f18203
+content_hash: cbe4c3cec077e872
 ---
+
 # Future Dynamic 3D Reconstruction: A 3D World Model with Disentangled Ego-Motion
 
 **Conference**: ICML2026  
@@ -130,10 +135,10 @@ The table below shows ablations for key FR3D components on Waymo (A0–A6 at 224
 ## Related Papers
 
 - [\[CVPR 2025\] Estimating Body and Hand Motion in an Ego-sensed World](../../CVPR2025/3d_vision/estimating_body_and_hand_motion_in_an_ego-sensed_world.md)
+- [\[ICLR 2026\] DiMeR: Disentangled Mesh Reconstruction Model with Normal-only Geometry Training](../../ICLR2026/3d_vision/dimer_disentangled_mesh_reconstruction_model_with_normal-only_geometry_training.md)
 - [\[CVPR 2026\] Motion 3-to-4: 3D Motion Reconstruction for 4D Synthesis](../../CVPR2026/3d_vision/motion_3-to-4_3d_motion_reconstruction_for_4d_synthesis.md)
 - [\[CVPR 2026\] DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction](../../CVPR2026/3d_vision/duomo_dual_motion_diffusion_for_world-space_human_reconstruction.md)
-- [\[AAAI 2026\] Distilling Future Temporal Knowledge with Masked Feature Reconstruction for 3D Object Detection](../../AAAI2026/3d_vision/distilling_future_temporal_knowledge_with_masked_feature_reconstruction_for_3d_o.md)
-- [\[CVPR 2026\] Choreographing a World of Dynamic Objects](../../CVPR2026/3d_vision/choreographing_a_world_of_dynamic_objects.md)
+- [\[ICLR 2026\] ReLi3D: Relightable Multi-View 3D Reconstruction with Disentangled Illumination](../../ICLR2026/3d_vision/reli3d_relightable_multi-view_3d_reconstruction_with_disentangled_illumination.md)
 
 </div>
 

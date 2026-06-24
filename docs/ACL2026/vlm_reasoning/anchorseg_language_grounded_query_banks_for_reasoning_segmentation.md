@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation
 description: >-
-  [ACL 2026][vlm_reasoning][SAM] Ours proposes AnchorSeg, reframing reasoning segmentation as a structured conditional generation process based on a language-grounded query bank. It explicitly decouples spatial localization and semantic reasoning via anchor queries and a Token-Mask cycle consistency training objective, achieving SOTA on ReasonSeg (67.
+  [ACL 2026][VLM Reasoning][Reasoning Segmentation] Ours proposes AnchorSeg, reframing reasoning segmentation as a structured conditional generation process based on a language-grounded query bank. It explicitly decouples spatial localization and semantic reasoning via anchor queries and a Token-Mask cycle consistency training objective, achieving SOTA on ReasonSeg (67.7% gIoU, 68.1% cIoU).
 tags:
-  - ACL 2026
-  - vlm_reasoning
-  - SAM
+  - "ACL 2026"
+  - "VLM Reasoning"
+  - "Reasoning Segmentation"
+  - "Language Grounded Query Banks"
+  - "Spatial Prior"
+  - "Token-Mask Consistency"
+  - "SAM"
 date: 2026-05-08
-content_hash: cf54abd59eadbe63
+content_hash: 41bdccd81dd5cb59
 ---
+
 # AnchorSeg: Language Grounded Query Banks for Reasoning Segmentation
 
 **Conference**: ACL 2026  
@@ -132,15 +137,15 @@ Performance on the ReasonSeg test set:
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2026\] Fast Reasoning Segmentation for Images and Videos](../../CVPR2026/vlm_reasoning/fast_reasoning_segmentation_for_images_and_videos.md)
 - [\[CVPR 2026\] DPAD: Discriminative Perception via Anchored Description for Reasoning Segmentation](../../CVPR2026/vlm_reasoning/discriminative_perception_via_anchored_description_for_reasoning_segmentation.md)
+- [\[ICLR 2026\] CoPRS: Learning Positional Prior from Chain-of-Thought for Reasoning Segmentation](../../ICLR2026/vlm_reasoning/coprs_learning_positional_prior_from_chain-of-thought_for_reasoning_segmentation.md)
 - [\[CVPR 2026\] SegCompass: Exploring Interpretable Alignment with Sparse Autoencoders for Enhanced Reasoning Segmentation](../../CVPR2026/vlm_reasoning/segcompass_exploring_interpretable_alignment_with_sparse_autoencoders_for_enhanc.md)
 - [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
-- [\[CVPR 2026\] Reinforcing Video Object Segmentation to Think before it Segments](../../CVPR2026/vlm_reasoning/reinforcing_video_object_segmentation_to_think_before_it_segments.md)
 
 </div>
 

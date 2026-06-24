@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?
 description: >-
-  [Image Generation] Through systematic analysis of the behavior of $W_{\{q,k,v,o\}}$ components during LoRA fine-tuning, this work reveals that $W_v$ and $W_o$ are responsible for learning panoramic spherical structure wh…
+  [Image Generation] Through systematic analysis of the behavior of $W_{\{q,k,v,o\}}$ components during LoRA fine-tuning, this work reveals that $W_v$ and $W_o$ are responsible for learning panoramic spherical structure while $W_q$ and $W_k$ retain perspective-domain shared knowledge. Based on this finding, the paper proposes UniPano, an efficient single-branch panorama generation framework.
 tags:
   - "Image Generation"
 date: 2026-05-08
-content_hash: 306ce6eccd26b4cc
+content_hash: a5867302ad5c2910
 ---
 
 # What Makes for Text to 360-degree Panorama Generation with Stable Diffusion?

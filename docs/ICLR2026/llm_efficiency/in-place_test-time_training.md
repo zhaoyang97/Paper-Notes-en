@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] In-Place Test-Time Training
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] This paper treats the down-projection matrix $W_{down}$ of the MLP block in Transformers as "fast weights" that can be updated during inference. By combining an alignment objective for Next-Token Prediction with a chunk-based update mechanism, existing pre-trained LLMs can achieve "plug-and-play" Test-Time Training (TT
+  [ICLR 2026][LLM Efficiency][Test-Time Training] This paper treats the down-projection matrix $W_{down}$ of the MLP block in Transformers as "fast weights" that can be updated during inference. By combining an alignment objective for Next-Token Prediction with a chunk-based update mechanism, existing pre-trained LLMs can achieve "plug-and-play" Test-Time Training (TTT) capabilities without changing the architecture or training from scratch. This approach consistently outperfor…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR 2026"
+  - "LLM Efficiency"
+  - "Test-Time Training"
+  - "Fast Weights"
+  - "Long Context"
+  - "MLP Reuse"
+  - "Next-Token Alignment Objective"
 date: 2026-05-08
-content_hash: 33e6369e8b02fb74
+content_hash: cb742a0e049f62bd
 ---
+
 # In-Place Test-Time Training
 
 **Conference**: ICLR 2026  
@@ -150,8 +156,8 @@ At 500M and 1.5B scales, the Sliding Window Perplexity of In-Place TTT remains l
 - [\[ICLR 2026\] Test-Time Training Done Right](test-time_training_done_right.md)
 - [\[ICLR 2026\] Let's (not) just put things in Context: Test-time Training for Long-context LLMs](lets_not_just_put_things_in_context_test-time_training_for_long-context_llms.md)
 - [\[ICLR 2026\] MesaNet: Sequence Modeling by Locally Optimal Test-Time Training](mesanet_sequence_modeling_by_locally_optimal_test-time_training.md)
-- [\[ICLR 2026\] Guided Speculative Inference for Efficient Test-Time Alignment of LLMs](guided_speculative_inference_for_efficient_test-time_alignment_of_llms.md)
-- [\[ICLR 2026\] RACE Attention: A Strictly Linear-Time Attention Layer for Training on Outrageously Large Contexts](race_attention_a_strictly_linear-time_attention_layer_for_training_on_outrageous.md)
+- [\[ICLR 2026\] TrimR: Validator-based, Training-free Thinking Trimming for Efficient Test-time Scaling](trimr_verifier-based_training-free_thinking_trimming_for_efficient_test-time_sca.md)
+- [\[CVPR 2025\] Spatial-TTT: Streaming Visual-based Spatial Intelligence with Test-Time Training](../../CVPR2025/llm_efficiency/spatial-ttt_streaming_visual-based_spatial_intelligence_with_test-time_training.md)
 
 </div>
 

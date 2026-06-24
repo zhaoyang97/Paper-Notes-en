@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models
 description: >-
-  [ACL 2026][Audio & Speech][Prompt Tuning] SEPT significantly alleviates the Base-New Tradeoff (BNT) problem in Audio-Language Model (ALM) prompt tuning by leveraging LLMs to generate semantic neighbors and designing a margin-constrained semantic expansion loss to regularize the prompt embedding space. It establishes the first systematic evaluation benchmark fo
+  [ACL 2026 Findings][Audio & Speech][Prompt Tuning] SEPT significantly alleviates the Base-New Tradeoff (BNT) problem in Audio-Language Model (ALM) prompt tuning by leveraging LLMs to generate semantic neighbors and designing a margin-constrained semantic expansion loss to regularize the prompt embedding space. It establishes the first systematic evaluation benchmark for ALM prompt generalization.
 tags:
-  - ACL 2026
-  - Audio & Speech
-  - Prompt Tuning
-  - Semantic Expansion
-  - Base-New Trade-off
-  - Generalizability
+  - "ACL 2026 Findings"
+  - "Audio & Speech"
+  - "Prompt Tuning"
+  - "Audio-Language Models"
+  - "Semantic Expansion"
+  - "Base-New Tradeoff"
+  - "Generalization"
 date: 2026-05-08
-content_hash: 308129c615150223
+content_hash: f1945abd79e0998f
 ---
+
 # SEPT: Semantically Expanded Prompt Tuning for Audio-Language Models
 
 **Conference**: ACL 2026 Findings  
@@ -142,11 +144,11 @@ Standard Cross-Entropy + Semantic Expansion Loss (Intra-class Alignment + Inter-
 
 ## Related Papers
 
+- [\[ICLR 2026\] Continuous Audio Language Models](../../ICLR2026/audio_speech/continuous_audio_language_models.md)
 - [\[ACL 2026\] Temporal Contrastive Decoding: A Training-Free Method for Large Audio-Language Models](temporal_contrastive_decoding_a_training-free_method_for_large_audio-language_mo.md)
 - [\[AAAI 2026\] Listening Between the Frames: Bridging Temporal Gaps in Large Audio-Language Models](../../AAAI2026/audio_speech/listening_between_the_frames_bridging_temporal_gaps_in_large_audio-language_mode.md)
-- [\[ICML 2026\] Sparse Tokens Suffice: Jailbreaking Audio Language Models via Token-Aware Gradient Optimization](../../ICML2026/audio_speech/sparse_tokens_suffice_jailbreaking_audio_language_models_via_token-aware_gradien.md)
+- [\[ICLR 2026\] JALMBench: Benchmarking Jailbreak Vulnerabilities in Audio Language Models](../../ICLR2026/audio_speech/jalmbench_benchmarking_jailbreak_vulnerabilities_in_audio_language_models.md)
 - [\[NeurIPS 2025\] Brain-tuning Improves Generalizability and Efficiency of Brain Alignment in Speech Models](../../NeurIPS2025/audio_speech/brain-tuning_improves_generalizability_and_efficiency_of_brain_alignment_in_spee.md)
-- [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
 
 </div>
 

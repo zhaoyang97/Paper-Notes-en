@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Nearly Space-Optimal Graph and Hypergraph Sparsification in Insertion-Only Data Streams
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper presents nearly space-optimal algorithms for graph and hypergraph spectral sparsification in insertion-only streams. It reduces the space complexity of graph spectral sparsifiers from the previous $O(\frac{n}{\varepsilon^2}\log^2 n)$ bits to $O(\frac{n}{\varepsilon^2}\log n\cdot\text{poly}(\log\log n))$ and
+  This paper presents nearly space-optimal algorithms for graph and hypergraph spectral sparsification in insertion-only streams. It reduces the space complexity of graph spectral sparsifiers from the previous $O(\frac{n}{\varepsilon^2}\log^2 n)$ bits to $O(\frac{n}{\varepsilon^2}\log n\cdot\text{poly}(\log\log n))$ and introduces the first streaming hypergraph sparsifier with factors exceeding offline results by only poly-iterated-log terms relative to $m$. It simultaneously…
 tags:
-  - ICLR 2026
-  - learning_theory
+
 date: 2026-05-08
-content_hash: 9c1e89ddedba54b1
+content_hash: ad20fa2b6fd3f484
 ---
+
 # Nearly Space-Optimal Graph and Hypergraph Sparsification in Insertion-Only Data Streams
 
 Conference: ICLR 2026  
@@ -127,11 +127,11 @@ Ours matches the offline optimum within a $\text{poly}(\log\log n)$ factor, savi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Towards Sampling Data Structures for Tensor Products in Turnstile Streams](towards_sampling_data_structures_for_tensor_products_in_turnstile_streams.md)
+- [\[ICLR 2026\] Near Optimal Robust Federated Learning Against Data Poisoning Attack](near_optimal_robust_federated_learning_against_data_poisoning_attack.md)
+- [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](metric_k-clustering_using_only_weak_comparison_oracles.md)
 - [\[ICML 2026\] Quantum Algorithms for Triangle Cut Sparsification](../../ICML2026/learning_theory/quantum_algorithms_for_triangle_cut_sparsification.md)
 - [\[ICLR 2026\] Quotient-Space Diffusion Models](quotient-space_diffusion_models.md)
-- [\[ICLR 2026\] Metric $k$-Clustering using only Weak Comparison Oracles](metric_k-clustering_using_only_weak_comparison_oracles.md)
-- [\[ICLR 2026\] Near Optimal Robust Federated Learning Against Data Poisoning Attack](near_optimal_robust_federated_learning_against_data_poisoning_attack.md)
-- [\[ICLR 2026\] Minimax Sample Complexity of Graph Neural Networks: Lower Bounds and Structural Effects](minimax_sample_complexity_of_graph_neural_networks_lower_bounds_and_structural_e.md)
 
 </div>
 

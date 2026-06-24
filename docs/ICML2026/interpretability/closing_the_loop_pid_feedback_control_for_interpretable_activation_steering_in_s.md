@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper introduces PID feedback control from control theory into Sparse Autoencoder (SAE)-based activation steering. By using the integral term to accumulate error, the method overcomes the Top-K sparsity threshold which causes static steering to fail at low intensities during transitions. Temporal PID dynamically a
+  [ICML 2026][Interpretability][Activation Steering] This paper introduces PID feedback control from control theory into Sparse Autoencoder (SAE)-based activation steering. By using the integral term to accumulate error, the method overcomes the Top-K sparsity threshold which causes static steering to fail at low intensities during transitions. Temporal PID dynamically adjusts $\lambda(t)$ at each autoregressive step, achieving smooth transitions for pitch and duration in symbo…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Activation Steering"
+  - "PID Control"
+  - "Sparse Autoencoders"
+  - "Controllable Generation"
+  - "Symbolic Music"
 date: 2026-05-08
-content_hash: 1a167a5169ee8254
+content_hash: 9fdc111aa2963174
 ---
+
 # Closing the Loop: PID Feedback Control for Interpretable Activation Steering in Symbolic Music Generation
 
 **Conference**: ICML 2026  
@@ -139,8 +145,8 @@ PID achieves comparable steering strength while keeping Pitch FMD 5.3% lower tha
 - [\[ICLR 2026\] Activation Steering with a Feedback Controller](../../ICLR2026/interpretability/activation_steering_with_a_feedback_controller.md)
 - [\[ICML 2026\] Steer Like the LLM: Activation Steering that Mimics Prompting](steer_like_the_llm_activation_steering_that_mimics_prompting.md)
 - [\[ICML 2026\] CorrSteer: Generation-Time LLM Steering via Correlated Sparse Autoencoder Features](corrsteer_generation-time_llm_steering_via_correlated_sparse_autoencoder_feature.md)
+- [\[ICML 2026\] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders](on_the_relationship_between_activation_outliers_and_feature_death_in_sparse_auto.md)
 - [\[ICLR 2026\] PERSONA: Dynamic and Compositional Inference-Time Personality Control via Activation Vector Algebra](../../ICLR2026/interpretability/persona_dynamic_and_compositional_inference-time_personality_control_via_activat.md)
-- [\[ICML 2026\] Breaking the Simplification Bottleneck in Amortized Neural Symbolic Regression](breaking_the_simplification_bottleneck_in_amortized_neural_symbolic_regression.md)
 
 </div>
 

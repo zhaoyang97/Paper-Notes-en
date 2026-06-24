@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Test-Time Adaptation for LLM Agents via Environment Interaction
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] Addressing generalization failures of LLM Agents in unfamiliar websites or toolsets, this paper decomposes failures into "syntactic mismatch" and "semantic mismatch." These are resolved via an online-learned lightweight adaptation vector (Syntactic Alignment, SA) and a persona-driven exploration to build a verbalized w
+  [ICLR 2026][LLM Agent][Test-Time Adaptation] Addressing generalization failures of LLM Agents in unfamiliar websites or toolsets, this paper decomposes failures into "syntactic mismatch" and "semantic mismatch." These are resolved via an online-learned lightweight adaptation vector (Syntactic Alignment, SA) and a persona-driven exploration to build a verbalized world model in-context (Dynamics Grounding, DG). This process requires no labeled trajectories or fine-tuning…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Test-Time Adaptation"
+  - "Syntactic Alignment"
+  - "Dynamics Grounding"
+  - "Environmental World Model"
 date: 2026-05-08
-content_hash: 673a0b64eeaa3a4e
+content_hash: 8cf4abd5b52c1846
 ---
+
 # Test-Time Adaptation for LLM Agents via Environment Interaction
 
 **Conference**: ICLR 2026  
@@ -133,8 +138,8 @@ DG provides the largest gains on strong instruction-following models like GPT-4.
 - Value: ⭐⭐⭐⭐ Provides a practical, low-cost paradigm for adapting agents to new environments during deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

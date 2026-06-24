@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] CoCoReviewBench: A Completeness- and Correctness-Oriented Benchmark for AI Reviewers
 description: >-
-  [ICML 2026][LLM Reasoning][AI Reviewer] This paper proposes CoCoReviewBench, which transforms human reviews of 3,900 ICLR/NeurIPS papers into a more credible evaluation reference for AI reviewers through a two-step process: constructing category-based sub-benchmarks and filtering erroneous opinions using meta-review arbitration of reviewer/author conflicts.
+  [ICML 2026][Reasoning][AI Reviewer] This paper proposes CoCoReviewBench, which transforms human reviews of 3,900 ICLR/NeurIPS papers into a more credible evaluation reference for AI reviewers through a two-step process: constructing category-based sub-benchmarks and filtering erroneous opinions using meta-review arbitration of reviewer/author conflicts. The study reveals that current AI reviewing still lags behind humans in correctness and thoroughness…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - AI Reviewer
-  - Meta-Review
+  - "ICML 2026"
+  - "Reasoning"
+  - "AI Reviewer"
+  - "Completeness"
+  - "Correctness"
+  - "Conflict Detection"
+  - "Meta-Review"
 date: 2026-05-08
-content_hash: 200432fbd541c3a4
+content_hash: c81d6611a72798eb
 ---
+
 # CoCoReviewBench: A Completeness- and Correctness-Oriented Benchmark for AI Reviewers
 
 **Conference**: ICML 2026  
@@ -139,10 +143,10 @@ Testing 18 models on 1,300 papers. Values denote differences relative to human r
 ## Related Papers
 
 - [\[ICML 2026\] FloorplanQA: A Benchmark for Spatial Reasoning in LLMs Using Structured Representations](floorplanqa_a_benchmark_for_spatial_reasoning_in_llms_using_structured_represent.md)
-- [\[ACL 2026\] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals](../../ACL2026/llm_reasoning/llm_reasoning_as_trajectories_step-specific_representation_geometry_and_correctn.md)
+- [\[ICLR 2026\] CORE: Concept-Oriented Reinforcement for Bridging the Definition–Application Gap in Mathematical Reasoning](../../ICLR2026/llm_reasoning/core_concept-oriented_reinforcement_for_bridging_the_definitionapplication_gap_i.md)
 - [\[ICML 2026\] ToolMATH: A Math Tool Benchmark for Realistic Long-Horizon Multi-Tool Reasoning](toolmath_a_math_tool_benchmark_for_realistic_long-horizon_multi-tool_reasoning.md)
+- [\[ACL 2026\] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals](../../ACL2026/llm_reasoning/llm_reasoning_as_trajectories_step-specific_representation_geometry_and_correctn.md)
 - [\[ACL 2026\] CoAct: Co-Active LLM Preference Learning with Human-AI Synergy](../../ACL2026/llm_reasoning/coact_co-active_llm_preference_learning_with_human-ai_synergy.md)
-- [\[ICML 2025\] Ad-Hoc Human-AI Coordination Challenge (AH2AC2)](../../ICML2025/llm_reasoning/ad-hoc_human-ai_coordination_challenge.md)
 
 </div>
 

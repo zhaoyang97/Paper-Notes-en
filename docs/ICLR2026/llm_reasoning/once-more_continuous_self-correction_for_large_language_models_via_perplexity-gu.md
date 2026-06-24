@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Once-More: Continuous Self-Correction for Large Language Models via Perplexity-Guided Intervention
 description: >-
-  [ICLR 2026][LLM Reasoning][Multi-Agent] Once-More is a training-free, model-agnostic inference-time self-correction framework. It calculates real-time perplexity by "units" (sentences/formulas/code blocks) during generation, triggering Verifier checks for high-uncertainty units. Rejected units are regenerated using "feedback + perplexity-guided logit redistr
+  [ICLR 2026][Reasoning][Self-correction] Once-More is a training-free, model-agnostic inference-time self-correction framework. It calculates real-time perplexity by "units" (sentences/formulas/code blocks) during generation, triggering Verifier checks for high-uncertainty units. Rejected units are regenerated using "feedback + perplexity-guided logit redistribution," correcting the generation trajectory before errors propagate. It outperforms representative self-correction me…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Self-correction"
+  - "Perplexity"
+  - "Logit intervention"
+  - "Inference-time guidance"
+  - "Multi-agent"
 date: 2026-05-08
-content_hash: df1f1d2f8150ba5d
+content_hash: 5028229232702739
 ---
+
 # Once-More: Continuous Self-Correction for Large Language Models via Perplexity-Guided Intervention
 
 **Conference**: ICLR 2026  
@@ -157,9 +162,9 @@ Once-More improves over Raw by 3.4~10 points in math reasoning, while baseline g
 
 - [\[ICLR 2026\] Towards Safe Reasoning in Large Reasoning Models via Corrective Intervention](towards_safe_reasoning_in_large_reasoning_models_via_corrective_intervention.md)
 - [\[ICLR 2026\] Inpainting-Guided Policy Optimization for Diffusion Large Language Models](inpainting-guided_policy_optimization_for_diffusion_large_language_models.md)
-- [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
+- [\[ACL 2025\] Self-Correction is More than Refinement: A Learning Framework for Visual and Language Reasoning Tasks](../../ACL2025/llm_reasoning/self-correction_is_more_than_refinement_a_learning_framework_for_visual_and_lang.md)
 - [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Reasoning Intervention in Large Reasoning Models](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_reasoning_interv.md)
-- [\[ICLR 2026\] On the Thinking-Language Modeling Gap in Large Language Models](on_the_thinking-language_modeling_gap_in_large_language_models.md)
+- [\[ICLR 2026\] Co-rewarding: Stable Self-supervised RL for Eliciting Reasoning in Large Language Models](co-rewarding_stable_self-supervised_rl_for_eliciting_reasoning_in_large_language.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control
 description: >-
-  [AAAI 2026][Multimodal VLM][Multi-Instance Generation] This paper proposes DEIG, a framework for fine-grained multi-instance image generation. It distills high-dimensional embeddings from a frozen LLM encoder into compac…
+  [AAAI 2026][Multimodal VLM][Multi-Instance Generation] This paper proposes DEIG, a framework for fine-grained multi-instance image generation. It distills high-dimensional embeddings from a frozen LLM encoder into compact instance-aware representations via an Instance Detail Extractor (IDE), and employs instance masked attention in a Detail Fusion Module (DFM) to prevent attribute leakage. DEIG substantially outperforms existing methods on generation tasks with complex multi-…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Attribute Binding"
   - "Masked Attention"
 date: 2026-05-08
-content_hash: 376987692234ca9a
+content_hash: 9bd7ef09c214f0e8
 ---
 
 # DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control
@@ -180,10 +180,10 @@ Human instance MAA improves from 0.31 to 0.75 (+142%); object instance MAA impro
 ## Related Papers
 
 - [\[ACL 2026\] AFMRL: Attribute-Enhanced Fine-Grained Multi-Modal Representation Learning in E-commerce](../../ACL2026/multimodal_vlm/afmrl_attribute-enhanced_fine-grained_multi-modal_representation_learning_in_e-c.md)
-- [\[AAAI 2026\] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning](heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob.md)
+- [\[ICLR 2026\] P2P: Automated Paper-to-Poster Generation and Fine-Grained Benchmark](../../ICLR2026/multimodal_vlm/p2p_automated_paper-to-poster_generation_and_fine-grained_benchmark.md)
+- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](../../ICLR2026/multimodal_vlm/unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
 - [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](../../CVPR2026/multimodal_vlm/ma-bench_towards_fine-grained_micro-action_understanding.md)
-- [\[CVPR 2026\] ReasonMap: Towards Fine-Grained Visual Reasoning from Transit Maps](../../CVPR2026/multimodal_vlm/reasonmap_towards_fine-grained_visual_reasoning_from_transit_maps.md)
+- [\[AAAI 2026\] Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval](neighbor-aware_instance_refining_with_noisy_labels_for_cross-modal_retrieval.md)
 
 </div>
 

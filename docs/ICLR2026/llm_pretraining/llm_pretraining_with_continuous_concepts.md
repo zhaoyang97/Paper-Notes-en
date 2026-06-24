@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] LLM Pretraining with Continuous Concepts
 description: >-
-  [ICLR 2026][Pretraining][Paper Note] This paper proposes CoCoMix, which goes beyond standard next-token prediction by having the model predict high-level concepts extracted via SAE and filtered by attribution. These concepts are compressed into continuous vectors and interleaved into the Transformer hidden state sequence, achieving higher efficiency in la
+  [ICLR 2026][LLM Pretraining][Continuous Concepts] This paper proposes CoCoMix, which goes beyond standard next-token prediction by having the model predict high-level concepts extracted via SAE and filtered by attribution. These concepts are compressed into continuous vectors and interleaved into the Transformer hidden state sequence, achieving higher efficiency in language modeling, downstream reasoning, and controllable generation compared to vanilla NTP and knowledge disti…
 tags:
-  - ICLR 2026
-  - Pretraining
+  - "ICLR 2026"
+  - "LLM Pretraining"
+  - "Continuous Concepts"
+  - "Sparse Autoencoders"
+  - "Next-Token Prediction"
+  - "Weak-to-Strong Supervision"
+  - "Interpretable Pretraining"
 date: 2026-05-08
-content_hash: f312e6ee7c5e5a32
+content_hash: 4d7572084852ec4c
 ---
+
 # LLM Pretraining with Continuous Concepts
 
 **Conference**: ICLR 2026  
@@ -188,8 +194,8 @@ Ablations address three questions: how to select concepts, whether to insert con
 
 ## Related Papers
 
-- [\[ICLR 2026\] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining](how_learning_rate_decay_wastes_your_best_data_in_curriculum-based_llm_pretrainin.md)
 - [\[ICLR 2026\] Beyond URLs: Metadata Diversity and Position for Efficient LLM Pretraining](beyond_urls_metadata_diversity_and_position_for_efficient_llm_pretraining.md)
+- [\[ICLR 2026\] How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining](how_learning_rate_decay_wastes_your_best_data_in_curriculum-based_llm_pretrainin.md)
 - [\[ICLR 2026\] Synthetic Bootstrapped Pretraining](synthetic_bootstrapped_pretraining.md)
 - [\[ICLR 2026\] Beyond Length: Quantifying Long-Range Information for Long-Context LLM Pretraining Data](beyond_length_quantifying_long-range_information_for_long-context_llm_pretrainin.md)
 - [\[ICLR 2026\] Reformulation for Pretraining Data Augmentation](reformulation_for_pretraining_data_augmentation.md)

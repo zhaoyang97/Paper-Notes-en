@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ARROW: An Adaptive Rollout and Routing Method for Global Weather Forecasting
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Mixture-of-Experts] ARROW redesigns both the "next-step prediction model" and the "long-term autoregressive rollout strategy" in global weather forecasting: it unifies 6/12/24-hour scales using a multi-interval prediction model and employs a DQN scheduler to adaptively select the next jump based on current weather states, simultaneously r
+  [ICLR2026][Physics & Scientific Computing][Global weather forecasting] ARROW redesigns both the "next-step prediction model" and the "long-term autoregressive rollout strategy" in global weather forecasting: it unifies 6/12/24-hour scales using a multi-interval prediction model and employs a DQN scheduler to adaptively select the next jump based on current weather states, simultaneously reducing error accumulation and preserving fine-grained atmospheric variations in mid-to-l…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
-  - Mixture-of-Experts
+  - "ICLR2026"
+  - "Physics & Scientific Computing"
+  - "Global weather forecasting"
+  - "adaptive rollout"
+  - "multi-time scale modeling"
+  - "Mixture-of-Experts"
+  - "RL scheduling"
 date: 2026-05-08
-content_hash: d1cf81ba5be05662
+content_hash: 456889c755993091
 ---
+
 # ARROW: An Adaptive Rollout and Routing Method for Global Weather Forecasting
 
 **Conference**: ICLR2026  
@@ -132,13 +137,20 @@ ARROW outperforms data-driven baselines across six key variables and multiple le
 - Value: ⭐⭐⭐⭐⭐ Highly applicable insights for rollout strategies in spatio-temporal forecasting.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Pangu-Weather: A 3D High-Resolution Model for Deterministic Global Weather Forecasting (Nature 2023)
-- GraphCast: Learning skillful medium-range global weather forecasting (Science 2023)
-- Stormer: A Poly-Time scale Transformer for Global Weather Forecasting (ArXiv 2023)
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[NeurIPS 2025\] A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees](../../NeurIPS2025/physics/a_regularized_newton_method_for_nonconvex_optimization_with.md)
+- [\[ICLR 2026\] Adaptive Mamba Neural Operators](adaptive_mamba_neural_operators.md)
+- [\[ICLR 2026\] Towards a Transferable Acceleration Method for Density Functional Theory](towards_a_transferable_acceleration_method_for_density_functional_theory.md)
+- [\[ICML 2026\] ANTIC: Adaptive Neural Temporal In-situ Compressor](../../ICML2026/physics/antic_adaptive_neural_temporal_in-situ_compressor.md)
+- [\[AAAI 2026\] Adaptive Fidelity Estimation for Quantum Programs with Graph-Guided Noise Awareness](../../AAAI2026/physics/adaptive_fidelity_estimation_for_quantum_programs_with_graph.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[NeurIPS 2025\] A Regularized Newton Method for Nonconvex Optimization with Global and Local Complexity Guarantees](../../NeurIPS2025/physics/a_regularized_newton_method_for_nonconvex_optimization_with.md)

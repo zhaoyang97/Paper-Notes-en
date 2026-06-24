@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation
 description: >-
-  [AAAI 2026][Medical Imaging][Ambiguous medical image segmentation] This paper proposes the ATFM framework, which decouples prediction accuracy and diversity into distribution-level and sample-level optimization through a…
+  [AAAI 2026][Medical Imaging][Ambiguous medical image segmentation] This paper proposes the ATFM framework, which decouples prediction accuracy and diversity into distribution-level and sample-level optimization through a data-hierarchical inference paradigm. By integrating two modules — Gaussian Truncation Representation (GTR) and Segmentation Flow Matching (SFM) — ATFM simultaneously improves prediction accuracy, fidelity, and diversity in ambiguous medical image segmentatio…
 tags:
   - "AAAI 2026"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "Gaussian truncation representation"
   - "semantic consistency"
 date: 2026-05-08
-content_hash: 957d8c51e92bbeed
+content_hash: 54811d16b398340d
 ---
 
 # Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation
@@ -202,11 +202,11 @@ Five variants compared on the LIDC dataset:
 
 ## Related Papers
 
+- [\[CVPR 2026\] MicroFM: Physics-guided Flow Matching for Isotropic Microscopy Reconstruction](../../CVPR2026/medical_imaging/microfm_physics-guided_flow_matching_for_isotropic_microscopy_reconstruction.md)
+- [\[ICLR 2026\] Functional MRI Time Series Generation via Wavelet-Based Image Transform and Spectral Flow Matching for Brain Disorder Identification](../../ICLR2026/medical_imaging/functional_mri_time_series_generation_via_wavelet-based_image_transform_and_spec.md)
 - [\[ICLR 2026\] Learning Patient-Specific Disease Dynamics with Latent Flow Matching for Longitudinal Imaging Generation](../../ICLR2026/medical_imaging/learning_patient-specific_disease_dynamics_with_latent_flow_matching_for_longitu.md)
-- [\[AAAI 2026\] FunKAN: Functional Kolmogorov-Arnold Network for Medical Image Enhancement and Segmentation](funkan_functional_kolmogorov-arnold_network_for_medical_image_enhancement_and_se.md)
 - [\[AAAI 2026\] MAISI-v2: Accelerated 3D High-Resolution Medical Image Synthesis with Rectified Flow and Region-specific Contrastive Loss](maisi-v2_accelerated_3d_high-resolution_medical_image_synthesis_with_rectified_f.md)
-- [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
-- [\[AAAI 2026\] Decoding with Structured Awareness: Integrating Directional, Frequency-Spatial, and Structural Attention for Medical Image Segmentation](decoding_with_structured_awareness_integrating_directional_frequency-spatial_and.md)
+- [\[NeurIPS 2025\] Riemannian Flow Matching for Brain Connectivity Matrices via Pullback Geometry](../../NeurIPS2025/medical_imaging/riemannian_flow_matching_for_brain_connectivity_matrices_via_pullback_geometry.md)
 
 </div>
 

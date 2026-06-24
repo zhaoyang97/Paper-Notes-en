@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution
 description: >-
-  [ICML 2026][LLM Reasoning][KV cache eviction] ForesightKV trains a lightweight scoring model to dynamically evict KV pairs based on "future attention contribution." It utilizes a "Golden Eviction" algorithm to distill optimal eviction sequences from complete traces as supervision signals, followed by GRPO reinforcement learning fine-tuning with a reward based on t
+  [ICML 2026][Reasoning][KV cache eviction] ForesightKV trains a lightweight scoring model to dynamically evict KV pairs based on "future attention contribution." It utilizes a "Golden Eviction" algorithm to distill optimal eviction sequences from complete traces as supervision signals, followed by GRPO reinforcement learning fine-tuning with a reward based on the "sum of squared loss increments of low-entropy tokens." On AIME2024/2025, it outperforms SnapKV/H2O/R-KV with half…
 tags:
-  - ICML 2026
-  - LLM Reasoning
-  - KV cache eviction
-  - Golden Eviction
-  - GRPO
+  - "ICML 2026"
+  - "Reasoning"
+  - "KV cache eviction"
+  - "reasoning models"
+  - "Golden Eviction"
+  - "GRPO"
+  - "long-term contribution prediction"
 date: 2026-05-08
-content_hash: f66ee961e1902dda
+content_hash: b6d9110e813a49b9
 ---
+
 # ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution
 
 **Conference**: ICML 2026  
@@ -137,16 +140,16 @@ Efficiency (Qwen3-4B, A800, 32K Generation):
 - **Value**: ⭐⭐⭐⭐⭐ The ~10x throughput gain and near-lossless performance at high compression ratios make this highly practical for long-reasoning LLM deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] KaVa: Latent Reasoning via Compressed KV-Cache Distillation](../../ICLR2026/llm_reasoning/kava_latent_reasoning_via_compressed_kv-cache_distillation.md)
+- [\[ICLR 2026\] Beyond Speedup - Utilizing KV Cache for Sampling and Reasoning](../../ICLR2026/llm_reasoning/beyond_speedup_-_utilizing_kv_cache_for_sampling_and_reasoning.md)
 - [\[ICLR 2026\] Bottlenecked Transformers: Periodic KV Cache Consolidation for Generalised Reasoning](../../ICLR2026/llm_reasoning/bottlenecked_transformers_periodic_kv_cache_consolidation_for_generalised_reason.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
 - [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
-- [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
 
 </div>
 

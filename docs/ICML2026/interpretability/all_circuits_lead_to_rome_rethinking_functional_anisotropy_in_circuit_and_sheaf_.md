@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs
 description: >-
-  [ICML 2026][Interpretability][circuit discovery] This paper systematically disproves the implicit assumption in mechanistic interpretability—"one LLM capability corresponds to one unique circuit"—using the Overlap-Aware Sheaf Repulsion (OASR) algorithm. It reveals that the same task can be supported by multiple, nearly non-overlapping sheaves (IoU ~4–11%) that satisf
+  [ICML 2026][Interpretability][circuit discovery] This paper systematically disproves the implicit assumption in mechanistic interpretability—"one LLM capability corresponds to one unique circuit"—using the Overlap-Aware Sheaf Repulsion (OASR) algorithm. It reveals that the same task can be supported by multiple, nearly non-overlapping sheaves (IoU ~4–11%) that satisfy requirements for being faithful, sparse, and complete. The authors propose the "Distributive Dense Circuit Hy…
 tags:
-  - ICML 2026
-  - Interpretability
-  - circuit discovery
-  - sheaf discovery
-  - functional anisotropy
-  - superposition
-  - IOI
+  - "ICML 2026"
+  - "Interpretability"
+  - "circuit discovery"
+  - "sheaf discovery"
+  - "functional anisotropy"
+  - "superposition"
+  - "IOI"
 date: 2026-05-08
-content_hash: 98166c2f85ff6f64
+content_hash: 15047590b29f5106
 ---
+
 # All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs
 
 **Conference**: ICML 2026  
@@ -137,9 +138,9 @@ Analysis of "Mutual IoU" extended to 20 sheaves (Mutual IoU = total intersection
 
 - [\[ICML 2026\] Certified Circuits: Stability Guarantees for Mechanistic Circuits](certified_circuits_stability_guarantees_for_mechanistic_circuits.md)
 - [\[ICCV 2025\] Granular Concept Circuits: Toward a Fine-Grained Circuit Discovery for Concept Representations](../../ICCV2025/interpretability/granular_concept_circuits_toward_a_fine-grained_circuit_discovery_for_concept_re.md)
+- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
 - [\[ICLR 2026\] Formal Mechanistic Interpretability: Automated Circuit Discovery with Provable Guarantees](../../ICLR2026/interpretability/formal_mechanistic_interpretability_automated_circuit_discovery_with_provable_gu.md)
 - [\[ACL 2025\] Position-aware Automatic Circuit Discovery](../../ACL2025/interpretability/position-aware_automatic_circuit_discovery.md)
-- [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
 
 </div>
 

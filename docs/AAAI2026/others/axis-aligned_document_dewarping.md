@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Axis-Aligned Document Dewarping
 description: >-
-  [AAAI 2026][document dewarping] This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training, inference…
+  [AAAI 2026][document dewarping] This paper proposes to exploit the inherent axis-aligned geometric property of planar documents, systematically incorporating axis-alignment constraints across training, inference, and evaluation stages, achieving state-of-the-art document rectification performance and introducing a new evaluation metric, AAD.
 tags:
   - "AAAI 2026"
   - "document dewarping"
   - "geometric constraint"
   - "image rectification"
 date: 2026-05-08
-content_hash: e5a6015c2fbf4836
+content_hash: 1a0e41b69cd03550
 ---
 
 # Axis-Aligned Document Dewarping
@@ -165,9 +165,9 @@ Ablation studies show that on DocUNet (where the document occupies a large propo
 
 - [\[AAAI 2026\] HybriDLA: Hybrid Generation for Document Layout Analysis](hybridla_hybrid_generation_for_document_layout_analysis.md)
 - [\[AAAI 2026\] Judging by the Rules: Compliance-Aligned Framework for Modern Slavery Statement Monitoring](judging_by_the_rules_compliance-aligned_framework_for_modern_slavery_statement_m.md)
-- [\[CVPR 2026\] OmniFood8K: Single-Image Nutrition Estimation via Hierarchical Frequency-Aligned Fusion](../../CVPR2026/others/omnifood8k_nutrition_estimation.md)
-- [\[ICCV 2025\] LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer](../../ICCV2025/others/layertracer_cognitive-aligned_layered_svg_synthesis_via_diffusion_transformer.md)
-- [\[AAAI 2026\] Provably Data-Driven Projection Method for Quadratic Programming](provably_data-driven_projection_method_for_quadratic_programming.md)
+- [\[CVPR 2026\] DREAM: Document Recognition with Explicit Adaptive Memory](../../CVPR2026/others/dream_document_recognition_with_explicit_adaptive_memory.md)
+- [\[ICML 2025\] Gradient Aligned Regression via Pairwise Losses](../../ICML2025/others/gradient_aligned_regression_via_pairwise_losses.md)
+- [\[CVPR 2026\] ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](../../CVPR2026/others/immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)
 
 </div>
 

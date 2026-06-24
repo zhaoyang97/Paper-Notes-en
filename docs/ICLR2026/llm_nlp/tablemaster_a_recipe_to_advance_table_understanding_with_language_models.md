@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TableMaster: A Recipe to Advance Table Understanding with Language Models
 description: >-
-  [ICLR 2026][LLM (Other)][Paper Note] TableMaster systematically decomposes the "structural features" of tables into four categories of challenges. It then provides a "four-flavor recipe"—constructing a Table-of-Focus, verbalizing for semantic enrichment, adaptive switching between textual/symbolic reasoning, and text-guided symbolic reasoning—integrated i
+  [ICLR 2026][LLM (Other)][Table Understanding] TableMaster systematically decomposes the "structural features" of tables into four categories of challenges. It then provides a "four-flavor recipe"—constructing a Table-of-Focus, verbalizing for semantic enrichment, adaptive switching between textual/symbolic reasoning, and text-guided symbolic reasoning—integrated into a training-free three-stage framework. This approach improves accuracy from 64.73% to 78.13% on WikiTQ using G…
 tags:
-  - ICLR 2026
-  - LLM (Other)
+  - "ICLR 2026"
+  - "LLM (Other)"
+  - "Table Understanding"
+  - "Table-of-Focus"
+  - "Table Verbalization"
+  - "Adaptive Reasoning"
+  - "Symbolic Reasoning"
 date: 2026-05-08
-content_hash: be7e61884b8b664f
+content_hash: e1fd94460a21945e
 ---
+
 # TableMaster: A Recipe to Advance Table Understanding with Language Models
 
 **Conference**: ICLR 2026  
@@ -139,9 +145,9 @@ Removing components sequentially on WikiTQ / TabFact (GPT-4o-mini, Full Model 78
 
 - [\[ACL 2025\] TableLoRA: Low-rank Adaptation on Table Structure Understanding for Large Language Models](../../ACL2025/llm_nlp/table_lora_structure_understanding.md)
 - [\[ICLR 2026\] Transducing Language Models](transducing_language_models.md)
-- [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
+- [\[ICLR 2026\] Teaching Metric Distance to Discrete Autoregressive Language Models](teaching_metric_distance_to_discrete_autoregressive_language_models.md)
 - [\[ICLR 2026\] The Lattice Representation Hypothesis of Large Language Models](the_lattice_representation_hypothesis_of_large_language_models.md)
-- [\[ICLR 2026\] DreamOn: Diffusion Language Models For Code Infilling Beyond Fixed-size Canvas](dreamon_diffusion_language_models_for_code_infilling_beyond_fixed-size_canvas.md)
+- [\[ICLR 2026\] Massive Editing for Large Language Models Based on Dynamic Weight Generation](massive_editing_for_large_language_models_based_on_dynamic_weight_generation.md)
 
 </div>
 

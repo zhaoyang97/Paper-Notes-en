@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] UP2You: Fast Reconstruction of Yourself from Unconstrained Photo Collections
 description: >-
-  [ICLR 2026][3D Vision][SMPL-X] UP2You proposes a "data corrector" paradigm that transforms a collection of unconstrained photos with varying poses, viewpoints, crops, and occlusions into clean orthogonal multi-view RGB and normal maps via a single forward pass in seconds. These are then processed by traditional reconstruction algorithms to generate
+  [ICLR 2026][3D Vision][Dressed human reconstruction] UP2You proposes a "data corrector" paradigm that transforms a collection of unconstrained photos with varying poses, viewpoints, crops, and occlusions into clean orthogonal multi-view RGB and normal maps via a single forward pass in seconds. These are then processed by traditional reconstruction algorithms to generate high-fidelity textured human meshes. The entire pipeline takes 1.5 minutes with nearly constant memory usag…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - SMPL-X
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Dressed human reconstruction"
+  - "unconstrained photos"
+  - "data corrector"
+  - "pose-aware feature aggregation"
+  - "SMPL-X"
 date: 2026-05-08
-content_hash: d64946778e7cf37b
+content_hash: e3e387ecafe1d1bb
 ---
+
 # UP2You: Fast Reconstruction of Yourself from Unconstrained Photo Collections
 
 **Conference**: ICLR 2026  
@@ -132,14 +137,17 @@ Shape prediction ablation (V2V↓) shows: as references increase from 3 to 12, o
 
 <div class="related-papers" markdown="1">
 
-- [PuzzleAvatar: Creating 3D Avatars from Unconstrained Consumer Images](https://arxiv.org/abs/2311.16103)
-- [ECON: Explicit Clothed humans Optimized via Normal integration](https://arxiv.org/abs/2212.07422)
-- [PSHuman: Photorealistic Single-image 3D Human Reconstruction](https://arxiv.org/abs/2409.13442)
+## Related Papers
+
+- [\[CVPR 2026\] Long-Tail Internet Photo Reconstruction](../../CVPR2026/3d_vision/long-tail_internet_photo_reconstruction.md)
+- [\[ICLR 2026\] ULTRA-360: Unconstrained Dataset for Large-scale Temporal 3D Reconstruction across Altitudes and Omnidirectional Views](ultra-360_unconstrained_dataset_for_large-scale_temporal_3d_reconstruction_acros.md)
+- [\[ICLR 2026\] FastAvatar: Towards Unified and Fast 3D Avatar Reconstruction with Large Gaussian Reconstruction Transformers](fastavatar_towards_unified_and_fast_3d_avatar_reconstruction_with_large_gaussian.md)
+- [\[CVPR 2026\] Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](../../CVPR2026/3d_vision/generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)
+- [\[ICLR 2026\] FastVGGT: Fast Visual Geometry Transformer](fastvggt_fast_visual_geometry_transformer.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Long-Tail Internet Photo Reconstruction](../../CVPR2026/3d_vision/long-tail_internet_photo_reconstruction.md)

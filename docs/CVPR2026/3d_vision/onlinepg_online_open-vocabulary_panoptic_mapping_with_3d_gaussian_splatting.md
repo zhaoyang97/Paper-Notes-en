@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] Ours proposes OnlinePG, the first online open-vocabulary panoptic mapping system based on 3DGS. By employing a local-to-global paradigm—constructing locally consistent 3D instances within a sliding window via a multi-cue clustering graph (geometric overlap, semantic similarity, and view consensus), and incrementally fu
+  [CVPR 2026][3D Vision][Panoptic Mapping] Ours proposes OnlinePG, the first online open-vocabulary panoptic mapping system based on 3DGS. By employing a local-to-global paradigm—constructing locally consistent 3D instances within a sliding window via a multi-cue clustering graph (geometric overlap, semantic similarity, and view consensus), and incrementally fusing them into a global map through bidirectional bipartite matching—it achieves state-of-the-art semantic and panoptic…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Panoptic Mapping"
+  - "Open-Vocabulary"
+  - "3D Gaussian Splatting"
+  - "Online Reconstruction"
+  - "Instance Segmentation"
 date: 2026-05-08
-content_hash: 716efc757900ccdc
+content_hash: 786a6126ee1bc992
 ---
+
 # OnlinePG: Online Open-Vocabulary Panoptic Mapping with 3D Gaussian Splatting
 
 **Conference**: CVPR 2026  
@@ -162,10 +168,20 @@ For each new keyframe, 5 historical frames are randomly selected for 20 optimiza
 | Value | ⭐⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] OVI-MAP: Open-Vocabulary Instance-Semantic Mapping](ovi-map_open-vocabulary_instance-semantic_mapping.md)
+- [\[CVPR 2026\] ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)
+- [\[CVPR 2026\] Gaussian Mapping for Evolving Scenes](gaussian_mapping_for_evolving_scenes.md)
+- [\[CVPR 2026\] Uncertainty-driven 3D Gaussian Splatting Active Mapping via Anisotropic Visibility Field](uncertainty-driven_3d_gaussian_splatting_active_mapping_via_anisotropic_visibili.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)

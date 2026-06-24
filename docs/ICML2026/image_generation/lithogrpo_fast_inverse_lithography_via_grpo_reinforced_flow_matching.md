@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching
 description: >-
-  [ICML 2026][Image Generation][Rectified Flow] LithoGRPO models lithography mask generation as a rectified flow conditioned on target layouts and fine-tunes it using GRPO reinforcement learning. This allows a single forward pass to simultaneously optimize L2/PVB (differentiable) and EPE/Shot (non-differentiable) metrics. With a 130×–490× accelerated fast shot-count
+  [ICML 2026][Image Generation][Inverse Lithography Technology (ILT)] LithoGRPO models lithography mask generation as a rectified flow conditioned on target layouts and fine-tunes it using GRPO reinforcement learning. This allows a single forward pass to simultaneously optimize L2/PVB (differentiable) and EPE/Shot (non-differentiable) metrics. With a 130×–490× accelerated fast shot-count algorithm, it improves the comprehensive rank from 5.6 to 4.3 on LithoBench…
 tags:
-  - ICML 2026
-  - Image Generation
-  - Rectified Flow
-  - GRPO
-  - Shot Count
+  - "ICML 2026"
+  - "Image Generation"
+  - "Inverse Lithography Technology (ILT)"
+  - "Rectified Flow"
+  - "GRPO"
+  - "Non-differentiable Metrics"
+  - "Shot Count"
 date: 2026-05-08
-content_hash: 494c6018b49dbb51
+content_hash: 4b4557c0b6e3d323
 ---
+
 # LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching
 
 **Conference**: ICML 2026  
@@ -138,9 +141,9 @@ Fast Shot Count achieves 134×–491× acceleration compared to traditional impl
 
 - [\[ICML 2026\] Saving Foundation Flow-Matching Priors for Inverse Problems](saving_foundation_flow-matching_priors_for_inverse_problems.md)
 - [\[CVPR 2026\] GRPO-Guard: Mitigating Implicit Over-Optimization in Flow Matching via Regulated Clipping](../../CVPR2026/image_generation/grpo-guard_mitigating_implicit_over-optimization_in_flow_matching_via_regulated_.md)
+- [\[ICLR 2026\] TempFlow-GRPO: When Timing Matters for GRPO in Flow Models](../../ICLR2026/image_generation/tempflow-grpo_when_timing_matters_for_grpo_in_flow_models.md)
 - [\[ICML 2026\] (HB-ARFM) History-Bootstrapped Flow Matching for Inverse Boiling Reconstruction](hb-arfm_history-bootstrapped_flow_matching_for_inverse_boiling_reconstruction.md)
-- [\[CVPR 2026\] Stepwise-Flow-GRPO：给流匹配模型的去噪步逐步分配信用](../../CVPR2026/image_generation/stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
-- [\[ICML 2026\] Exploring and Exploiting Stability in Latent Flow Matching](exploring_and_exploiting_stability_in_latent_flow_matching.md)
+- [\[CVPR 2026\] Stepwise-Flow-GRPO: Assigning Stepwise Credit to Denoising Steps in Flow-Matching Models](../../CVPR2026/image_generation/stepwise_credit_assignment_for_grpo_on_flow-matching_models.md)
 
 </div>
 

@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] How Transformers Learn Causal Structures In-Context: Explainable Mechanism Meets Theoretical Guarantee
 description: >-
-  [ICLR 2026][Interpretability][in-context learning] This paper proves and empirically demonstrates that a two-layer Transformer with relative position encoding (RPE) can explicitly implement Bayesian Model Averaging (BMA)—the statistically optimal algorithm—in-context to infer the "parent" causal structure of each token. It further provides identifiability and training
+  [ICLR 2026][Interpretability][in-context learning] This paper proves and empirically demonstrates that a two-layer Transformer with relative position encoding (RPE) can explicitly implement Bayesian Model Averaging (BMA)—the statistically optimal algorithm—in-context to infer the "parent" causal structure of each token. It further provides identifiability and training dynamics guarantees using information theory (DPI / mutual information).
 tags:
-  - ICLR 2026
-  - Interpretability
-  - in-context learning
-  - Bayesian Model Averaging
+  - "ICLR 2026"
+  - "Interpretability"
+  - "in-context learning"
+  - "causal structure inference"
+  - "Bayesian Model Averaging"
+  - "attention mechanism interpretability"
+  - "information-theoretic guarantees"
+  - "Markov chains"
 date: 2026-05-08
-content_hash: 0e334f9d69021e59
+content_hash: a6ba3214e10b88c8
 ---
+
 # How Transformers Learn Causal Structures In-Context: Explainable Mechanism Meets Theoretical Guarantee
 
 **Conference**: ICLR 2026  

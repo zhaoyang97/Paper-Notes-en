@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning
 description: >-
-  [ACL 2026][LLM Efficiency][PEFT] This paper integrates adversarial training into Parameter-Efficient Fine-Tuning (PEFT). By employing a unified robust optimization framework, SDBN, it generates worst-case perturbations in the embedding space. Specific discrete uncertainty sets are introduced for "tokenization-breaking character noise" and "generative
+  [ACL 2026][LLM Efficiency][PEFT] This paper integrates adversarial training into Parameter-Efficient Fine-Tuning (PEFT). By employing a unified robust optimization framework, SDBN, it generates worst-case perturbations in the embedding space. Specific discrete uncertainty sets are introduced for "tokenization-breaking character noise" and "generative tasks." This approach significantly enhances the robustness of LoRA/Adapter/BitFit in low-data and noisy scenarios without addi…
 tags:
-  - ACL 2026
-  - LLM Efficiency
-  - PEFT
-  - LoRA
+  - "ACL 2026"
+  - "LLM Efficiency"
+  - "PEFT"
+  - "LoRA"
+  - "Adversarial Training"
+  - "Robust Optimization"
+  - "Low-Resource"
+  - "Character-level Noise"
 date: 2026-05-08
-content_hash: 05574ce652b1d00d
+content_hash: 6ed6f3a7f903ccf9
 ---
+
 # Small Data, Big Noise: Adversarial Training for Robust Parameter-Efficient Fine-Tuning
 
 **Conference**: ACL 2026  
@@ -152,11 +157,11 @@ Absolute accuracy **Gain** when applying SDBN to different training methods (Ban
 
 ## Related Papers
 
-- [\[ICML 2026\] TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins](../../ICML2026/llm_efficiency/tuneahead_predicting_fine-tuning_performance_before_full_training_begins.md)
-- [\[ICLR 2026\] TokenSeek: Memory Efficient Fine Tuning via Instance-Aware Token Selection](../../ICLR2026/llm_efficiency/tokenseek_memory_efficient_fine_tuning_via_instance-aware_token_selection.md)
-- [\[ACL 2026\] Tandem: Riding Together with Large and Small Language Models for Efficient Reasoning](tandem_riding_together_with_large_and_small_language_models_for_efficient_reason.md)
-- [\[ICML 2026\] A Risk Decomposition Framework for Pre-Hoc Fine-Tuning Prediction](../../ICML2026/llm_efficiency/a_risk_decomposition_framework_for_pre-hoc_fine-tuning_prediction.md)
-- [\[NeurIPS 2025\] Hierarchical Balance Packing: Towards Efficient Supervised Fine-tuning for Long-Context LLM](../../NeurIPS2025/llm_efficiency/hierarchical_balance_packing_towards_efficient_supervised_fine-tuning_for_long-c.md)
+- [\[ICLR 2026\] Difficulty–Diversity Collaborative Filtering for Data-Efficient LLM Fine-Tuning](../../ICLR2026/llm_efficiency/difficultydiversity_collaborative_filtering_for_data-efficient_llm_fine-tuning.md)
+- [\[ICLR 2026\] CPQS-Tuning: A Model Self-Perception-Based Data Filtering Algorithm for Efficient Instruction Fine-Tuning](../../ICLR2026/llm_efficiency/cpqs-tuning_a_model_self-perception-based_data_filtering_algorithm_for_efficient.md)
+- [\[ICLR 2026\] Explainable Token-level Noise Filtering for LLM Fine-tuning Datasets](../../ICLR2026/llm_efficiency/explainable_token-level_noise_filtering_for_llm_fine-tuning_datasets.md)
+- [\[ICLR 2026\] Influence-Preserving Proxies for Gradient-Based Data Selection in LLM Fine-Tuning](../../ICLR2026/llm_efficiency/influence-preserving_proxies_for_gradient-based_data_selection_in_llm_finetuning.md)
+- [\[ICLR 2026\] On-the-Fly Adaptation to Quantization: Configuration-Aware LoRA for Efficient Fine-Tuning of Quantized LLMs](../../ICLR2026/llm_efficiency/on-the-fly_adaptation_to_quantization_configuration-aware_lora_for_efficient_fin.md)
 
 </div>
 

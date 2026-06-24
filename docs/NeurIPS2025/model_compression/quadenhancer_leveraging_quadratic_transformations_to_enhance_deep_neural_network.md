@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks
 description: >-
-  [NeurIPS 2025][Model Compression][quadratic transformation] This paper proposes a lightweight quadratic enhancer (QuadEnhancer) that introduces sparsified quadratic interaction terms into each linear layer…
+  [NeurIPS 2025][Model Compression][quadratic transformation] This paper proposes a lightweight quadratic enhancer (QuadEnhancer) that introduces sparsified quadratic interaction terms into each linear layer, achieving significant performance improvements over existing neural network architectures with negligible additional parameters and computational overhead.
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "LoRA fine-tuning"
   - "weight sharing"
 date: 2026-05-08
-content_hash: f15bdb185472fdfa
+content_hash: 03df65ee40461310
 ---
 
 # QuadEnhancer: Leveraging Quadratic Transformations to Enhance Deep Neural Networks
@@ -131,11 +131,11 @@ where $\mathbf{\Lambda}$ is a sparse banded matrix and $\odot$ denotes the Hadam
 
 ## Related Papers
 
+- [\[ICML 2025\] FGFP: A Fractional Gaussian Filter and Pruning for Deep Neural Networks Compression](../../ICML2025/model_compression/fgfp_a_fractional_gaussian_filter_and_pruning_for_deep_neural_networks_compressi.md)
+- [\[ACL 2025\] Flipping Knowledge Distillation: Leveraging Small Models' Expertise to Enhance LLMs in Text Matching](../../ACL2025/model_compression/flipping_kd_small_to_large.md)
 - [\[NeurIPS 2025\] Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks](global_minimizers_of_ellp-regularized_objectives_yield_the_sparsest_relu_neural_.md)
-- [\[CVPR 2026\] AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](../../CVPR2026/model_compression/adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)
-- [\[NeurIPS 2025\] Synergy between the Strong and the Weak: Spiking Neural Networks Are Inherently Superior in Temporal Processing](synergy_between_the_strong_and_the_weak_spiking_neural_networks_are_inherently_s.md)
-- [\[NeurIPS 2025\] Spiking Brain Compression: Post-Training Second-Order Compression for Spiking Neural Networks](spiking_brain_compression_post-training_second-order_compression_for_spiking_neu.md)
-- [\[NeurIPS 2025\] DenoiseRotator: Enhance Pruning Robustness for LLMs via Importance Concentration](denoiserotator_enhance_pruning_robustness_for_llms_via_importance_concentration.md)
+- [\[ICML 2025\] Efficient Logit-based Knowledge Distillation of Deep Spiking Neural Networks for Full-Range Timestep Deployment](../../ICML2025/model_compression/efficient_logit-based_knowledge_distillation_of_deep_spiking_neural_networks_for.md)
+- [\[CVPR 2026\] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](../../CVPR2026/model_compression/neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Watch Your Steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper proposes FAB (Finetuning-activated Adversarial Behaviors), where an attacker pre-pollutes an open-source LLM using meta-learning. The model appears completely harmless during safety evaluations at upload, but **automatically triggers embedded adversarial behaviors (ad injection, jailbreak guardrail removal,
+  [ICLR 2026][LLM Safety][Fine-tuning Activation Attack] This paper proposes FAB (Finetuning-activated Adversarial Behaviors), where an attacker pre-pollutes an open-source LLM using meta-learning. The model appears completely harmless during safety evaluations at upload, but **automatically triggers embedded adversarial behaviors (ad injection, jailbreak guardrail removal, over-refusal) once fine-tuned by a downstream user on any conventional dataset**. On PHI-2…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Fine-tuning Activation Attack"
+  - "Dormant Backdoor"
+  - "Meta-learning"
+  - "Open-source LLM"
+  - "Threat Model"
 date: 2026-05-08
-content_hash: 023a8cad267fdf33
+content_hash: defdec6b32110691
 ---
+
 # Watch Your Steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning
 
 **Conference**: ICLR 2026  

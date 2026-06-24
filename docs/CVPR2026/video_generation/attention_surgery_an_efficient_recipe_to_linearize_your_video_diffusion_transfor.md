@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] The authors replace the expensive softmax self-attention in pretrained Video Diffusion Transformers (Wan2.1) with a hybrid attention mechanism consisting of "a few softmax anchor tokens + majority linear tokens." By employing a "surgical" pipeline comprising layer-wise distillation, knapsack-based block-rate selection,
+  [CVPR 2026][Video Generation][Video Diffusion Models] The authors replace the expensive softmax self-attention in pretrained Video Diffusion Transformers (Wan2.1) with a hybrid attention mechanism consisting of "a few softmax anchor tokens + majority linear tokens." By employing a "surgical" pipeline comprising layer-wise distillation, knapsack-based block-rate selection, and lightweight fine-tuning, the model is linearized to near-original quality in **less than 0.4k GPU hou…
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Video Diffusion Models"
+  - "Linear Attention"
+  - "Hybrid Attention"
+  - "Attention Distillation"
+  - "Mobile Acceleration"
 date: 2026-05-08
-content_hash: c02f0fd07a7169b7
+content_hash: a268f06d292e403f
 ---
+
 # Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer
 
 **Conference**: CVPR 2026  
@@ -137,15 +143,16 @@ The 15×R2 variant (15 blocks converted to hybrid, rate 2) **nearly matches the 
 - Value: ⭐⭐⭐⭐ Highly practical for industrial deployment on mobile devices for long-form video.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] FrameDiT: Diffusion Transformer with Matrix Attention for Efficient Video Generation](framedit_diffusion_transformer_with_matrix_attention_for_efficient_video_generat.md)
+- [\[CVPR 2026\] ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](rehyat_recurrent_hybrid_attention_for_video_diffusion_transformers.md)
 - [\[CVPR 2026\] VMonarch: Efficient Video Diffusion Transformers with Structured Attention](vmonarch_efficient_video_diffusion_transformers_with_structured_attention.md)
 - [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
+- [\[ICLR 2026\] SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer](../../ICLR2026/video_generation/sana-video_efficient_video_generation_with_block_linear_diffusion_transformer.md)
 - [\[CVPR 2026\] RAPID: Reusing Attention Sparsity with Inter-step Adaptation for Efficient Video Diffusion](rapid_reusing_attention_sparsity_with_inter-step_adaptation_for_efficient_video_.md)
-- [\[CVPR 2026\] STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)
 
 </div>
 

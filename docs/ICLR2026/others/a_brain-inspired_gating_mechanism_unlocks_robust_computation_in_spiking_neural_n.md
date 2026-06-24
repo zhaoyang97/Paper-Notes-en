@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks
 description: >-
-  [ICLR 2026][Others][Paper Note] This paper reintroduces "activity-dependent membrane conductance" from biological neurons into the LIF model to construct a Spiking Gated Neuron (DGN) that adaptively gates information flow. It theoretically proves its superior noise suppression capabilities and experimentally demonstrates high accuracy and noise resis
+  [ICLR 2026][Spiking Neural Networks] This paper reintroduces "activity-dependent membrane conductance" from biological neurons into the LIF model to construct a Spiking Gated Neuron (DGN) that adaptively gates information flow. It theoretically proves its superior noise suppression capabilities and experimentally demonstrates high accuracy and noise resistance on speech/neuromorphic temporal tasks.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Spiking Neural Networks"
+  - "Dynamic Conductance"
+  - "Gating Mechanism"
+  - "Robustness"
+  - "LIF Neuron"
+  - "Temporal Modeling"
 date: 2026-05-08
-content_hash: cda855a728eb39db
+content_hash: ae8814f802bb90bc
 ---
+
 # A Brain-Inspired Gating Mechanism Unlocks Robust Computation in Spiking Neural Networks
 
 **Conference**: ICLR 2026  

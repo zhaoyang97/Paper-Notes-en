@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Diffusion-based 3D Hand Motion Recovery with Intuitive Physics
 description: >-
-  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes a physics-augmented conditional diffusion model that refines per-frame 3D hand reconstruction results into temporally consistent motion sequences via an…
+  [ICCV 2025][Image Generation][Diffusion Models] This paper proposes a physics-augmented conditional diffusion model that refines per-frame 3D hand reconstruction results into temporally consistent motion sequences via an iterative denoising process, incorporating intuitive physics constraints (kinematic and stability constraints) to substantially improve reconstruction accuracy and physical plausibility.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Intuitive Physics"
   - "Hand-Object Interaction"
 date: 2026-05-08
-content_hash: f5b22f03866ae37f
+content_hash: 3155641d7f1113b6
 ---
 
 # Diffusion-based 3D Hand Motion Recovery with Intuitive Physics
@@ -177,10 +177,10 @@ Incremental component addition on DexYCB (base reconstruction: K-Hand):
 ## Related Papers
 
 - [\[ICCV 2025\] 3DSR: Bridging Diffusion Models and 3D Representations for 3D Consistent Super-Resolution](bridging_diffusion_models_and_3d_representations_a_3d_consis.md)
+- [\[ECCV 2024\] Prompting Future Driven Diffusion Model for Hand Motion Prediction](../../ECCV2024/image_generation/prompting_future_driven_diffusion_model_for_hand_motion_prediction.md)
 - [\[ICCV 2025\] Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling](music-aligned_holistic_3d_dance_generation_via_hierarchical_motion_modeling.md)
+- [\[CVPR 2025\] Lifting Motion to the 3D World via 2D Diffusion](../../CVPR2025/image_generation/lifting_motion_to_the_3d_world_via_2d_diffusion.md)
 - [\[ICCV 2025\] Bitrate-Controlled Diffusion for Disentangling Motion and Content in Video](bitrate-controlled_diffusion_for_disentangling_motion_and_content_in_video.md)
-- [\[ICCV 2025\] Video Motion Graphs](video_motion_graphs.md)
-- [\[ICCV 2025\] SMGDiff: Soccer Motion Generation using Diffusion Probabilistic Models](smgdiff_soccer_motion_generation_using_diffusion_probabilistic_models.md)
 
 </div>
 

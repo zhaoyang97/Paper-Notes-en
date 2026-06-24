@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs
 description: >-
-  [ICML 2026][LLM (Other)][token logprob] This is a position paper arguing that **treating the token softmax probabilities (logprobs) of an LLM as "world event probabilities" is theoretically flawed**. This is because distribution estimation, response prediction, and target distribution estimation are three distinct tasks, each corresponding to a different ide
+  [ICML 2026 (Position Paper)][LLM (Other)][token logprob] This is a position paper arguing that **treating the token softmax probabilities (logprobs) of an LLM as "world event probabilities" is theoretically flawed**. This is because distribution estimation, response prediction, and target distribution estimation are three distinct tasks, each corresponding to a different ideal output distribution. The correct approach to obtaining world probabilities is **second-order predict…
 tags:
-  - ICML 2026
-  - LLM (Other)
-  - token logprob
-  - calibration
-  - surface-form competition
+  - "ICML 2026 (Position Paper)"
+  - "LLM (Other)"
+  - "token logprob"
+  - "world modeling"
+  - "second-order prediction"
+  - "calibration"
+  - "surface-form competition"
 date: 2026-05-08
-content_hash: 85ee85012fa9b296
+content_hash: 5472411b92b5f5a5
 ---
+
 # Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs
 
 **Conference**: ICML 2026 (Position Paper)  
@@ -109,11 +112,11 @@ These findings, often viewed as LLM deficiencies, are mostly interpreted as rese
 
 ## Related Papers
 
-- [\[ICML 2026\] 结构化广义线性 token mixing：用 SND + Kronecker 在复杂度与表达力之间换挡](trading_complexity_for_expressivity_through_structured_generalized_linear_token_.md)
 - [\[ACL 2025\] Can You Share Your Story? Modeling Clients' Metacognition and Openness for LLM Therapist Evaluation](../../ACL2025/llm_nlp/can_you_share_your_story_modeling_clients_metacognition_and_openness_for_llm_the.md)
 - [\[ICML 2026\] Token-Efficient Change Detection in LLM APIs](token-efficient_change_detection_in_llm_apis.md)
 - [\[ICML 2026\] SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)
 - [\[ACL 2026\] C-World: A Computer Use Agent Environment Creator](../../ACL2026/llm_nlp/c-world_a_computer_use_agent_environment_creator.md)
+- [\[ICML 2026\] Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)
 
 </div>
 

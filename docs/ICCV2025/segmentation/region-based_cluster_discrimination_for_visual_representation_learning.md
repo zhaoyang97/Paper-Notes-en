@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Region-based Cluster Discrimination for Visual Representation Learning
 description: >-
-  [ICCV 2025][Segmentation][Region representation learning] This paper proposes RICE (Region-Aware Cluster Discrimination), which constructs a billion-scale region dataset, designs a Region Transformer layer…
+  [ICCV 2025][Segmentation][Region representation learning] This paper proposes RICE (Region-Aware Cluster Discrimination), which constructs a billion-scale region dataset, designs a Region Transformer layer, and introduces a unified region cluster discrimination loss to jointly optimize object-aware and OCR capabilities, significantly improving visual encoder performance across segmentation, detection, and MLLM multi-task benchmarks.
 tags:
   - "ICCV 2025"
   - "Segmentation"
@@ -12,7 +12,7 @@ tags:
   - "visual encoder"
   - "multimodal large language models"
 date: 2026-05-08
-content_hash: a0649822d15c6cfe
+content_hash: e50647a22d89ac1a
 ---
 
 # Region-based Cluster Discrimination for Visual Representation Learning
@@ -148,7 +148,7 @@ RICE surpasses both CLIP and MLCD on all RefCOCO benchmarks, with mean IoU impro
 - [\[ICCV 2025\] On the Generalization of Representation Uncertainty in Earth Observation](on_the_generalization_of_representation_uncertainty_in_earth_observation.md)
 - [\[ICCV 2025\] Hierarchical Visual Prompt Learning for Continual Video Instance Segmentation](hierarchical_visual_prompt_learning_for_continual_video_instance_segmentation.md)
 - [\[CVPR 2026\] AFRO: Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning](../../CVPR2026/segmentation/bootstrap_dynamic-aware_3d_visual_representation_for_scalable_robot_learning.md)
-- [\[ICLR 2026\] RegionReasoner: Region-Grounded Multi-Round Visual Reasoning](../../ICLR2026/segmentation/regionreasoner_region-grounded_multi-round_visual_reasoning.md)
+- [\[ICCV 2025\] Towards Omnimodal Expressions and Reasoning in Referring Audio-Visual Segmentation](towards_omnimodal_expressions_and_reasoning_in_referring_audio-visual_segmentati.md)
 
 </div>
 

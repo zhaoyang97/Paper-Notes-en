@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Negative Binomial Variational Autoencoders for Overdispersed Latent Modeling
 description: >-
-  [CVPR 2026][Others][VAE] The Poisson distribution of discrete latent spike variables in VAE is replaced with a Negative Binomial distribution. By introducing a dispersion parameter, the model allows the variance to exceed the mean, capturing the "overdispersion" of real neural spikes. The framework includes a trainable KL estimation and repara
+  [CVPR 2026][Negative Binomial Distribution] The Poisson distribution of discrete latent spike variables in VAE is replaced with a Negative Binomial distribution. By introducing a dispersion parameter, the model allows the variance to exceed the mean, capturing the "overdispersion" of real neural spikes. The framework includes a trainable KL estimation and reparameterization sampling, achieving reconstruction and generation quality superior to single-layer VAE baselines across…
 tags:
-  - CVPR 2026
-  - Others
-  - VAE
+  - "CVPR 2026"
+  - "Negative Binomial Distribution"
+  - "Discrete Latent Variables"
+  - "Overdispersion"
+  - "VAE"
+  - "Reparameterization Sampling"
 date: 2026-05-08
-content_hash: f9d974394e8fb949
+content_hash: f3624f0e2d07b77a
 ---
+
 # Negative Binomial Variational Autoencoders for Overdispersed Latent Modeling
 
 **Conference**: CVPR 2026  
@@ -151,9 +155,9 @@ General trends: The MC-G variant is best for generation (FID/KID) across almost 
 
 - [\[CVPR 2026\] BrepVGAE: Variational Graph Autoencoder with Unified Latent Representation for B-rep](brepvgae_variational_graph_autoencoder_with_unified_latent_representation_for_b-.md)
 - [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
-- [\[CVPR 2026\] Advancing Image Classification with Discrete Diffusion Classification Modeling](advancing_image_classification_with_discrete_diffusion_classification_modeling.md)
-- [\[ICLR 2026\] Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](../../ICLR2026/others/disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)
 - [\[CVPR 2026\] MSPT: Efficient Large-Scale Physical Modeling via Parallelized Multi-Scale Attention](mspt_efficient_large-scale_physical_modeling_via_parallelized_multi-scale_attent.md)
+- [\[ICLR 2026\] Latent Fourier Transform](../../ICLR2026/others/latent_fourier_transform.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 
 </div>
 

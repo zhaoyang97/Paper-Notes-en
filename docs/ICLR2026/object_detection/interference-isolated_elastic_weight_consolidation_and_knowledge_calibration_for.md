@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Interference-Isolated Elastic Weight Consolidation and Knowledge Calibration for Incremental Object Detection
 description: >-
-  [ICLR 2026][Object Detection][Incremental Object Detection] Addressing the task knowledge conflict caused by "unlabeled past/future targets being treated as background" in Incremental Object Detection (IOD), this paper re-derives the Bayesian posterior of EWC to **explicitly subtract interference knowledge** (IKI-EWC) from parameter importance. It then retrains the classificati
+  [ICLR 2026][Object Detection][Incremental Object Detection] Addressing the task knowledge conflict caused by "unlabeled past/future targets being treated as background" in Incremental Object Detection (IOD), this paper re-derives the Bayesian posterior of EWC to **explicitly subtract interference knowledge** (IKI-EWC) from parameter importance. It then retrains the classification head using learnable projection layers to compensate for prototype semantic drift (PKC)…
 tags:
-  - ICLR 2026
-  - Object Detection
-  - Incremental Object Detection
-  - Elastic Weight Consolidation
+  - "ICLR 2026"
+  - "Object Detection"
+  - "Incremental Object Detection"
+  - "Elastic Weight Consolidation"
+  - "Task Interference"
+  - "Prototype Calibration"
+  - "Semantic Drift"
 date: 2026-05-08
-content_hash: d9627172212f69f7
+content_hash: c9c205a648f57220
 ---
+
 # Interference-Isolated Elastic Weight Consolidation and Knowledge Calibration for Incremental Object Detection
 
 **Conference**: ICLR 2026  
@@ -129,10 +133,10 @@ IKI-EWC is the primary driver (granting +1.3%/+4.5%/+4.0% gains alone). PKC prov
 ## Related Papers
 
 - [\[CVPR 2026\] Parameterized Prompt for Incremental Object Detection](../../CVPR2026/object_detection/parameterized_prompt_for_incremental_object_detection.md)
+- [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
+- [\[CVPR 2026\] Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](../../CVPR2026/object_detection/incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)
 - [\[CVPR 2026\] RHCNet: Residual-Guided Hierarchical Calibration Network for Robust Underwater Object Detection](../../CVPR2026/object_detection/rhcnet_residual-guided_hierarchical_calibration_network_for_robust_underwater_ob.md)
 - [\[ECCV 2024\] On Calibration of Object Detectors: Pitfalls, Evaluation and Baselines](../../ECCV2024/object_detection/on_calibration_of_object_detectors_pitfalls_evaluation_and_baselines.md)
-- [\[CVPR 2026\] Black-Box Domain Adaptation for Object Detection with Retention-Driven Knowledge Compression](../../CVPR2026/object_detection/black-box_domain_adaptation_for_object_detection_with_retention-driven_knowledge.md)
-- [\[AAAI 2026\] YOLO-IOD: Towards Real Time Incremental Object Detection](../../AAAI2026/object_detection/yolo-iod_towards_real_time_incremental_object_detection.md)
 
 </div>
 

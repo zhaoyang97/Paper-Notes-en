@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning
 description: >-
-  [CVPR 2026][3D Vision][3D VAE] LoG3D partitions high-resolution Unsigned Distance Fields (UDF) into uniform sub-voxel blocks called UBlocks. It employs a hybrid VAE with "local 3D convolution + global sparse Transformer" for block-wise encoding and decoding, combined with a Pad-Average strategy to eliminate boundary seams. This pushes the reconstruc
+  [CVPR 2026][3D Vision][Unsigned Distance Field (UDF)] LoG3D partitions high-resolution Unsigned Distance Fields (UDF) into uniform sub-voxel blocks called UBlocks. It employs a hybrid VAE with "local 3D convolution + global sparse Transformer" for block-wise encoding and decoding, combined with a Pad-Average strategy to eliminate boundary seams. This pushes the reconstruction resolution of 3D VAEs to $2048^3$ for the first time, achieving SOTA in both reconstruction accuracy…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - 3D VAE
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Unsigned Distance Field (UDF)"
+  - "3D VAE"
+  - "Local-to-Global"
+  - "Ultra-high-resolution reconstruction"
+  - "Sparse Transformer"
 date: 2026-05-08
-content_hash: 164ab397bf225b59
+content_hash: 8091914544a41fb6
 ---
+
 # LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning
 
 **Conference**: CVPR 2026  
@@ -130,11 +135,11 @@ Ablation of padding value $\alpha$: At $\alpha=0/1/2/3$, NMSE was 0.58/0.40/0.34
 
 ## Related Papers
 
-- [\[CVPR 2026\] PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding](patchalign3d_local_feature_alignment_for_dense_3d_shape_understanding.md)
+- [\[CVPR 2026\] MeshMosaic: Scaling Artist Mesh Generation via Local-to-Global Assembly](meshmosaic_scaling_artist_mesh_generation_via_local-to-global_assembly.md)
 - [\[CVPR 2026\] Modeling Spatiotemporal Neural Frames for High Resolution Brain Dynamics](modeling_spatiotemporal_neural_frames_for_high_resolution_brain_dynamic.md)
 - [\[CVPR 2026\] 4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis](4d_local_modeling_toward_dynamic_global_perception_for_ambiguity-free_rotation-i.md)
+- [\[CVPR 2026\] PatchAlign3D: Local Feature Alignment for Dense 3D Shape Understanding](patchalign3d_local_feature_alignment_for_dense_3d_shape_understanding.md)
 - [\[AAAI 2026\] SmartSplat: Feature-Smart Gaussians for Scalable Compression of Ultra-High-Resolution Images](../../AAAI2026/3d_vision/smartsplat_feature-smart_gaussians_for_scalable_compression_of_ultra-high-resolu.md)
-- [\[CVPR 2026\] High-Fidelity Mobile Avatars with Pruned Local Blendshapes](high-fidelity_mobile_avatars_with_pruned_local_blendshapes.md)
 
 </div>
 

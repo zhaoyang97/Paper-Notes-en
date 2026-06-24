@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Internal Planning in Language Models: Characterizing Horizon and Branch Awareness
 description: >-
-  [ICLR 2026][Interpretability][VQ-VAE] Proposed an information-theoretic framework based on VQ-VAE to analyze the internal planning behavior of language models. It was found that planning horizons are task-dependent, models implicitly retain information about unselected correct paths, and next-token decisions primarily rely on recent computations.
+  [ICLR 2026][Interpretability][Language Model Planning] Proposed an information-theoretic framework based on VQ-VAE to analyze the internal planning behavior of language models. It was found that planning horizons are task-dependent, models implicitly retain information about unselected correct paths, and next-token decisions primarily rely on recent computations.
 tags:
-  - ICLR 2026
-  - Interpretability
-  - VQ-VAE
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Language Model Planning"
+  - "Mutual Information"
+  - "VQ-VAE"
+  - "Horizon Awareness"
+  - "Branch Awareness"
 date: 2026-05-08
-content_hash: 0cd7e51dc6926248
+content_hash: a2357bf3181c3496
 ---
+
 # Internal Planning in Language Models: Characterizing Horizon and Branch Awareness
 
 **Conference**: ICLR 2026  

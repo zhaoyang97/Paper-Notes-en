@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning
 description: >-
-  [ICLR 2026][vlm_reasoning][Vision-Language Model] DeepEyes enables Visual Language Models (VLM) to internalize "zooming into images" as an inherent action within the reasoning chain. Without relying on SFT cold-start or external tools, end-to-end reinforcement learning allows the model to learn to actively crop and zoom into key regions during reasoning. This elevates
+  [ICLR 2026][VLM Reasoning][Visual Language Models] DeepEyes enables Visual Language Models (VLM) to internalize "zooming into images" as an inherent action within the reasoning chain. Without relying on SFT cold-start or external tools, end-to-end reinforcement learning allows the model to learn to actively crop and zoom into key regions during reasoning. This elevates a 7B model from 71.2% to 90.1% on the V* high-resolution benchmark.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Vision-Language Model
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Visual Language Models"
+  - "Reinforcement Learning"
+  - "Active Perception"
+  - "Interleaved Multimodal Chain-of-Thought"
+  - "Visual Grounding"
 date: 2026-05-08
-content_hash: 4957c1c7048f536b
+content_hash: d1e5cfa84302da86
 ---
+
 # DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning
 
 **Conference**: ICLR 2026  
@@ -138,14 +142,17 @@ DeepEyes-7B significantly outperforms text-only SOTA open-source models and even
 
 <div class="related-papers" markdown="1">
 
-- **Pixel-Reasoner**: 7B-level pixel-level action reasoning.
-- **Qwen2.5-VL**: The foundational model used in this work.
-- **V\***: The primary high-resolution benchmark for perception-heavy tasks.
+## Related Papers
+
+- [\[ICLR 2026\] Medical Thinking with Multiple Images](medical_thinking_with_multiple_images.md)
+- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](../../CVPR2026/vlm_reasoning/incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[ICLR 2026\] STVG-R1: Incentivizing Instance-Level Reasoning and Grounding in Videos via Reinforcement Learning](stvg-r1_incentivizing_instance-level_reasoning_and_grounding_in_videos_via_reinf.md)
+- [\[ICLR 2026\] VisionReasoner: Unified Reasoning-Integrated Visual Perception via Reinforcement Learning](visionreasoner_unified_reasoning-integrated_visual_perception_via_reinforcement_.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Medical Thinking with Multiple Images](medical_thinking_with_multiple_images.md)

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion
 description: >-
-  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper reformulates sparse-input novel view synthesis as a test-time natural video completion problem. It leverages pretrained video diffusion models to generate interm…
+  [NeurIPS 2025][3D Vision][Novel View Synthesis] This paper reformulates sparse-input novel view synthesis as a test-time natural video completion problem. It leverages pretrained video diffusion models to generate intermediate pseudo-views, and iteratively optimizes 3D Gaussian Splatting (3D-GS) via an uncertainty-aware mechanism, achieving high-fidelity scene reconstruction under extremely sparse input conditions.
 tags:
   - "NeurIPS 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "Sparse Input"
   - "Test-Time Inference"
 date: 2026-05-08
-content_hash: 96c482ae5da0c78f
+content_hash: 7e596105366b9e49
 ---
 
 # Novel View Synthesis from A Few Glimpses via Test-Time Natural Video Completion

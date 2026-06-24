@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Where and How to Perturb: On the Design of Perturbation Guidance in Diffusion and Flow Models
 description: >-
-  [NeurIPS 2025][Image Generation][Attention Perturbation Guidance] This paper proposes the HeadHunter framework and SoftPAG method, refining the granularity of attention perturbation in diffusion models from the layer lev…
+  [NeurIPS 2025][Image Generation][Attention Perturbation Guidance] This paper proposes the HeadHunter framework and SoftPAG method, refining the granularity of attention perturbation in diffusion models from the layer level down to individual attention heads. It is the first work to reveal that different attention heads govern distinct visual concepts (structure, style, texture, etc.), enabling more precise and composable generation guidance.
 tags:
   - "NeurIPS 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "Fine-Grained Control"
   - "Style Transfer"
 date: 2026-05-08
-content_hash: b4bc1e80d74026dc
+content_hash: f4a5cfd05e4e735f
 ---
 
 # Where and How to Perturb: On the Design of Perturbation Guidance in Diffusion and Flow Models

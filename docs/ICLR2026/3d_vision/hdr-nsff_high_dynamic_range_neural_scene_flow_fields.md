@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] HDR-NSFF: High Dynamic Range Neural Scene Flow Fields
 description: >-
-  [ICLR 2026][3D Vision][HDR reconstruction] The authors propose HDR-NSFF, which transforms HDR video reconstruction from the traditional 2D pixel-level fusion paradigm to 4D spatio-temporal modeling. By jointly reconstructing the HDR radiance field, 3D scene flow, geometry, and tone-mapping from a monocular video with alternating exposures, they achieve spatio-t
+  [ICLR2026][3D Vision][HDR reconstruction] The authors propose HDR-NSFF, which transforms HDR video reconstruction from the traditional 2D pixel-level fusion paradigm to 4D spatio-temporal modeling. By jointly reconstructing the HDR radiance field, 3D scene flow, geometry, and tone-mapping from a monocular video with alternating exposures, they achieve spatio-temporally consistent dynamic HDR novel view synthesis.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - HDR reconstruction
-  - neural scene flow fields
-  - dynamic scene
-  - tone-mapping
-  - 4D radiance field
+  - "ICLR2026"
+  - "3D Vision"
+  - "HDR reconstruction"
+  - "neural scene flow fields"
+  - "dynamic scene"
+  - "tone-mapping"
+  - "4D radiance field"
 date: 2026-05-08
-content_hash: 38d7834b53b7dcdb
+content_hash: 37352fd9b498af45
 ---
+
 # HDR-NSFF: High Dynamic Range Neural Scene Flow Fields
 
 **Conference**: ICLR2026  
@@ -133,7 +134,7 @@ The total objective jointly optimizes the tone-mapped photometric loss, flow con
 - [\[ICLR 2026\] Dynamic Novel View Synthesis in High Dynamic Range](dynamic_novel_view_synthesis_in_high_dynamic_range.md)
 - [\[CVPR 2025\] Event Fields: Capturing Light Fields at High Speed, Resolution, and Dynamic Range](../../CVPR2025/3d_vision/event_fields_capturing_light_fields_at_high_speed_resolution_and_dynamic_range.md)
 - [\[ICLR 2026\] RobustSpring: Benchmarking Robustness to Image Corruptions for Optical Flow, Scene Flow and Stereo](robustspring_benchmarking_robustness_to_image_corruptions_for_optical_flow_scene.md)
-- [\[ICLR 2026\] Splat the Net: Radiance Fields with Splattable Neural Primitives](splat_the_net_radiance_fields_with_splattable_neural_primitives.md)
+- [\[CVPR 2026\] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation](../../CVPR2026/3d_vision/catalyst4d_highfidelity_3dto4d_scene_editing_via_d.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels
 description: >-
-  [NeurIPS 2025][Optimization][Implicit Bias] This paper provides the first theoretical proof that the implicit bias of Structured State Space Models (SSMs) can be poisoned by clean-label training samples — specifically…
+  [NeurIPS 2025][Optimization][Implicit Bias] This paper provides the first theoretical proof that the implicit bias of Structured State Space Models (SSMs) can be poisoned by clean-label training samples — specifically, there exist specially constructed training examples whose labels are correctly assigned by a teacher model, yet their inclusion fundamentally distorts the implicit bias of SSMs, causing complete generalization failure.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "Generalization Theory"
   - "SSM"
 date: 2026-05-08
-content_hash: 5b2ac74573222ea0
+content_hash: 083d556f76970b9c
 ---
 
 # The Implicit Bias of Structured State Space Models Can Be Poisoned With Clean Labels
@@ -154,9 +154,9 @@ Experiments on both linear and nonlinear SSMs validate the theoretical predictio
 
 - [\[NeurIPS 2025\] The Rich and the Simple: On the Implicit Bias of Adam and SGD](the_rich_and_the_simple_on_the_implicit_bias_of_adam_and_sgd.md)
 - [\[NeurIPS 2025\] Implicit Bias of Spectral Descent and Muon on Multiclass Separable Data](implicit_bias_of_spectral_descent_and_muon_on_multiclass_separable_data.md)
-- [\[NeurIPS 2025\] Faster Algorithms for Structured John Ellipsoid Computation](faster_algorithm_for_structured_john_ellipsoid_computation.md)
+- [\[ICLR 2026\] Hyperbolic Aware Minimization: Implicit Bias for Sparsity](../../ICLR2026/optimization/hyperbolic_aware_minimization_implicit_bias_for_sparsity.md)
 - [\[NeurIPS 2025\] DeltaProduct: Improving State-Tracking in Linear RNNs via Householder Products](deltaproduct_improving_state-tracking_in_linear_rnns_via_householder_products.md)
-- [\[ICML 2026\] The Implicit Bias of Adam and Muon on Smooth Homogeneous Neural Networks](../../ICML2026/optimization/the_implicit_bias_of_adam_and_muon_on_smooth_homogeneous_neural_networks.md)
+- [\[ACL 2025\] Aligned but Blind: Alignment Increases Implicit Bias by Reducing Awareness of Race](../../ACL2025/optimization/aligned_but_blind_implicit_bias.md)
 
 </div>
 

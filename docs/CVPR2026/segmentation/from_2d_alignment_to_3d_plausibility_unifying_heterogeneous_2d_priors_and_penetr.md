@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction
 description: >-
-  [CVPR 2026][Segmentation][Diffusion Model] The authors decouple two-hand reconstruction into 2D structural alignment (fusing keypoint/segmentation/depth priors) and 3D spatial interaction alignment (penetration-removal diffusion model). This approach achieves an MPJPE of 5.36mm on InterHand2.6M, significantly outperforming the state-of-the-art.
+  [CVPR 2026][Segmentation][Two-hand reconstruction] The authors decouple two-hand reconstruction into 2D structural alignment (fusing keypoint/segmentation/depth priors) and 3D spatial interaction alignment (penetration-removal diffusion model). This approach achieves an MPJPE of 5.36mm on InterHand2.6M, significantly outperforming the state-of-the-art.
 tags:
-  - CVPR 2026
-  - Segmentation
-  - Diffusion Model
+  - "CVPR 2026"
+  - "Segmentation"
+  - "Two-hand reconstruction"
+  - "2D prior fusion"
+  - "diffusion models"
+  - "penetration removal"
+  - "occlusion robustness"
 date: 2026-05-08
-content_hash: 8635f74289d578ca
+content_hash: 71c736cd72bd21ae
 ---
+
 # From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction
 
 **Conference**: CVPR 2026  
@@ -139,11 +144,11 @@ flowchart TD
 
 ## Related Papers
 
-- [\[CVPR 2026\] Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
-- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
 - [\[ECCV 2024\] PartSTAD: 2D-to-3D Part Segmentation Task Adaptation](../../ECCV2024/segmentation/partstad_2d-to-3d_part_segmentation_task_adaptation.md)
 - [\[AAAI 2026\] EAGLE: Episodic Appearance- and Geometry-Aware Memory for Unified 2D-3D Visual Query Localization](../../AAAI2026/segmentation/eagle_episodic_appearance-_and_geometry-aware_memory_for_unified_2d-3d_visual_qu.md)
+- [\[CVPR 2026\] Denoise and Align: Towards Source-Free UDA for Robust Panoramic Semantic Segmentation](denoise_and_align_towards_source-free_uda_for_robust_panoramic_semantic_segmenta.md)
+- [\[CVPR 2026\] SAMTok: Representing Any Mask with Two Words](samtok_representing_any_mask_with_two_words.md)
 
 </div>
 

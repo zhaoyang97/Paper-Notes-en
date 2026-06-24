@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Future-Aware Interaction Network For Motion Forecasting
 description: >-
-  [ICCV 2025][Autonomous Driving][Motion Forecasting] This paper proposes FINet, which incorporates latent future trajectories into the scene encoding stage for joint optimization…
+  [ICCV 2025][Autonomous Driving][Motion Forecasting] This paper proposes FINet, which incorporates latent future trajectories into the scene encoding stage for joint optimization, while introducing the Mamba architecture as a replacement for Transformers in spatiotemporal modeling, achieving efficient and accurate motion forecasting.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -11,7 +11,7 @@ tags:
   - "State Space Model"
   - "Trajectory Prediction"
 date: 2026-05-08
-content_hash: f884dfe56c1a54a7
+content_hash: 1a921c215a6636ab
 ---
 
 # Future-Aware Interaction Network For Motion Forecasting
@@ -159,10 +159,10 @@ $$\mathcal{L} = \mathcal{L}_{traj} + \mathcal{L}_{score} + \mathcal{L}_{traj}^{i
 ## Related Papers
 
 - [\[ICCV 2025\] Foresight in Motion: Reinforcing Trajectory Prediction with Reward Heuristics](foresight_in_motion_reinforcing_trajectory_prediction_with_reward_heuristics.md)
+- [\[CVPR 2025\] Trajectory Mamba: Efficient Attention-Mamba Forecasting Model Based on Selective SSM](../../CVPR2025/autonomous_driving/trajectory_mamba_efficient_attention-mamba_forecasting_model_based_on_selective_.md)
 - [\[ICCV 2025\] INSTINCT: Instance-Level Interaction Architecture for Query-Based Collaborative Perception](instinct_instance-level_interaction_architecture_for_query-based_collaborative_p.md)
 - [\[NeurIPS 2025\] Future-Aware End-to-End Driving: Bidirectional Modeling of Trajectory Planning and Scene Evolution](../../NeurIPS2025/autonomous_driving/future-aware_end-to-end_driving_bidirectional_modeling_of_trajectory_planning_an.md)
 - [\[ICCV 2025\] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving](uniocc_a_unified_benchmark_for_occupancy_forecasting_and_prediction_in_autonomou.md)
-- [\[CVPR 2026\] SHARP: Short-Window Streaming for Accurate and Robust Prediction in Motion Forecasting](../../CVPR2026/autonomous_driving/sharp_short-window_streaming_for_accurate_and_robust_prediction_in_motion_foreca.md)
 
 </div>
 

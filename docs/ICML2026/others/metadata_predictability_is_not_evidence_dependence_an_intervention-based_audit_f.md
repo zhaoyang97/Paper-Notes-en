@@ -2,18 +2,18 @@
 title: >-
   [Paper Note] Metadata Predictability Is Not Evidence Dependence: An Intervention-Based Audit for Weak-Label Benchmarks
 description: >-
-  [ICML 2026][Others][MPDS] The authors point out that "output predictability from metadata" $\neq$ "output dependence on evidence." They propose a dual-statistic audit protocol: using MPDS to measure metadata predictability and evidence-shuffling $\Delta\text{Evi}$ to measure evidence sensitivity, supplemented by a stronger-reader calibration la
+  [ICML 2026 Workshop on Hypothesis Testing][MPDS] The authors point out that "output predictability from metadata" $\neq$ "output dependence on evidence." They propose a dual-statistic audit protocol: using MPDS to measure metadata predictability and evidence-shuffling $\Delta\text{Evi}$ to measure evidence sensitivity, supplemented by a stronger-reader calibration layer and input ablation, forming a reusable 4-step diagnostic scheme for weak-label benchmarks.
 tags:
-  - ICML 2026
-  - Others
-  - MPDS
-  - ΔEvi
-  - shortcut detection
-  - weak-label benchmark
-  - reader calibration
+  - "ICML 2026 Workshop on Hypothesis Testing"
+  - "MPDS"
+  - "ΔEvi"
+  - "shortcut detection"
+  - "weak-label benchmark"
+  - "reader calibration"
 date: 2026-05-08
-content_hash: d15d3d4ca6671bbb
+content_hash: e0fbd60c618399c3
 ---
+
 # Metadata Predictability Is Not Evidence Dependence: An Intervention-Based Audit for Weak-Label Benchmarks
 
 **Conference**: ICML 2026 Workshop on Hypothesis Testing  

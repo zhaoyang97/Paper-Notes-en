@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive
 description: >-
-  [AAAI 2026][Multimodal VLM][Document QA] This paper constructs OIDA-QA, a multimodal document question-answering benchmark based on the UCSF-JHU Opioid Industry Documents Archive (OIDA)…
+  [AAAI 2026][Multimodal VLM][Document QA] This paper constructs OIDA-QA, a multimodal document question-answering benchmark based on the UCSF-JHU Opioid Industry Documents Archive (OIDA), comprising 400K training documents and 370K multi-hop QA pairs. A domain-specialized LLM system integrating content recitation and a page finder module is developed to effectively handle multi-turn QA and answer page localization over extremely long documents.
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "Page Localization"
   - "Opioid Crisis"
 date: 2026-05-08
-content_hash: 63588140c7621e26
+content_hash: 13bafb1f39023a12
 ---
 
 # OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive
@@ -174,11 +174,11 @@ At inference: query-page relevance scores are computed → Top-K pages are selec
 
 ## Related Papers
 
-- [\[ACL 2026\] MONETA: Multimodal Industry Classification through Geographic Information with Multi Agent Systems](../../ACL2026/multimodal_vlm/moneta_multimodal_industry_classification_through_geographic_information_with_mu.md)
-- [\[ICCV 2025\] Analyzing Finetuning Representation Shift for Multimodal LLMs Steering](../../ICCV2025/multimodal_vlm/analyzing_finetuning_representation_shift_for_multimodal_llms_steering.md)
-- [\[AAAI 2026\] VP-Bench: A Comprehensive Benchmark for Visual Prompting in Multimodal Large Language Models](vp-bench_a_comprehensive_benchmark_for_visual_prompting_in_m.md)
-- [\[AAAI 2026\] CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)
-- [\[CVPR 2026\] SALMUBench: A Benchmark for Sensitive Association-Level Multimodal Unlearning](../../CVPR2026/multimodal_vlm/salmubench_a_benchmark_for_sensitive_association-level_multimodal_unlearning.md)
+- [\[CVPR 2026\] MCHDoc: A Comprehensive Benchmark for Reading Multi-Carrier Chinese Historical Documents](../../CVPR2026/multimodal_vlm/mchdoc_a_comprehensive_benchmark_for_reading_multi-carrier_chinese_historical_do.md)
+- [\[CVPR 2026\] HanDyVQA: A Video QA Benchmark for Fine-Grained Hand-Object Interaction Dynamics](../../CVPR2026/multimodal_vlm/handyvqa_a_video_qa_benchmark_for_fine-grained_hand-object_interaction_dynamics.md)
+- [\[ICML 2026\] Very Efficient Listwise Multimodal Reranking for Long Documents](../../ICML2026/multimodal_vlm/very_efficient_listwise_multimodal_reranking_for_long_documents.md)
+- [\[CVPR 2026\] 4DP-QA: Scalable QA for 4D Perception in Vision Language Models](../../CVPR2026/multimodal_vlm/4dp-qa_scalable_qa_for_4d_perception_in_vision_language_models.md)
+- [\[CVPR 2025\] Multimodal OCR: Parse Anything from Documents](../../CVPR2025/multimodal_vlm/multimodal_ocr_parse_anything_from_documents.md)
 
 </div>
 

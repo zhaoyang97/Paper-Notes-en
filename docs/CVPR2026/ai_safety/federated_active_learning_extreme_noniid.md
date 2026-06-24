@@ -2,16 +2,21 @@
 title: >-
   [Paper Note] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance
 description: >-
-  [CVPR 2026][AI Safety][non-IID] This work systematically analyzes the impact of global class imbalance and client heterogeneity on query model selection in Federated Active Learning (FAL). Based on three core Observations, it proposes FairFAL—a class-fair FAL framework featuring adaptive query model selection, prototype-guided pseudo-labeling, and tw
+  [CVPR 2026][AI Safety][Federated Learning] This work systematically analyzes the impact of global class imbalance and client heterogeneity on query model selection in Federated Active Learning (FAL). Based on three core Observations, it proposes FairFAL—a class-fair FAL framework featuring adaptive query model selection, prototype-guided pseudo-labeling, and two-stage uncertainty-diversity balanced sampling, consistently outperforming all baselines across five benchmark datas…
 tags:
-  - CVPR 2026
-  - AI Safety
-  - non-IID
-  - query selection
-  - class-fair sampling
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Federated Learning"
+  - "Active Learning"
+  - "non-IID"
+  - "Class Imbalance"
+  - "query selection"
+  - "class-fair sampling"
+  - "prototype-guided"
 date: 2026-05-08
-content_hash: 12545ea4a36b2c06
+content_hash: 90d18df3e5eefe9a
 ---
+
 # Federated Active Learning Under Extreme Non-IID and Global Class Imbalance
 
 **Conference**: CVPR 2026  
@@ -168,10 +173,10 @@ Standard FedAvg framework: 100 communication rounds, 5 local epochs. 4-layer CNN
 ## Related Papers
 
 - [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
+- [\[ICLR 2026\] Federated Learning of Quantile Inference under Local Differential Privacy](../../ICLR2026/ai_safety/federated_learning_of_quantile_inference_under_local_differential_privacy.md)
 - [\[CVPR 2025\] Geometric Knowledge-Guided Localized Global Distribution Alignment for Federated Learning](../../CVPR2025/ai_safety/geometric_knowledge-guided_localized_global_distribution_alignment_for_federated.md)
-- [\[CVPR 2026\] FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation](fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation.md)
+- [\[ICLR 2026\] INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy](../../ICLR2026/ai_safety/ino-sgd_addressing_utility_imbalance_under_individualized_differential_privacy.md)
 - [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
-- [\[ICML 2026\] Active Continual Learning with Metaplastic Binary Bayesian Neural Networks](../../ICML2026/ai_safety/active_continual_learning_with_metaplastic_binary_bayesian_neural_networks.md)
 
 </div>
 

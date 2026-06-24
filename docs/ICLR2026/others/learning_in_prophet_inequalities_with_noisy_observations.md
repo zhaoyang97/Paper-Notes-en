@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Learning in Prophet Inequalities with Noisy Observations
 description: >-
-  [ICLR 2026][Others][prophet inequality] In a prophet inequality setting with unknown distributions and "linear contextual rewards" observed with noise, the authors achieve optimal competitive ratios of $1-1/e$ (i.i.d.) and $1/2$ (non-i.i.d.) without offline samples by employing a "learn-as-you-stop" LCB threshold policy.
+  [ICLR 2026][prophet inequality] In a prophet inequality setting with unknown distributions and "linear contextual rewards" observed with noise, the authors achieve optimal competitive ratios of $1-1/e$ (i.i.d.) and $1/2$ (non-i.i.d.) without offline samples by employing a "learn-as-you-stop" LCB threshold policy.
 tags:
-  - ICLR 2026
-  - Others
-  - prophet inequality
+  - "ICLR 2026"
+  - "prophet inequality"
+  - "optimal stopping"
+  - "online learning"
+  - "noisy observations"
+  - "LCB threshold"
+  - "competitive ratio"
 date: 2026-05-08
-content_hash: 0ce848f99d90cdc1
+content_hash: 04aa5b293e1c5707
 ---
+
 # Learning in Prophet Inequalities with Noisy Observations
 
 **Conference**: ICLR 2026  

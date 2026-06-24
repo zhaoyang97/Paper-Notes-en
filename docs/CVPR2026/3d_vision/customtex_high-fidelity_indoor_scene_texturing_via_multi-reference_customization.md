@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] The CustomTex framework is proposed, which implements high-fidelity, instance-controllable texture generation for 3D indoor scenes through instance-level multi-reference driving and a dual-distillation training strategy (semantic-level VSD distillation + pixel-level super-resolution distillation). It significantly outp
+  [CVPR 2026][3D Vision][Indoor Scene Texturing] The CustomTex framework is proposed, which implements high-fidelity, instance-controllable texture generation for 3D indoor scenes through instance-level multi-reference driving and a dual-distillation training strategy (semantic-level VSD distillation + pixel-level super-resolution distillation). It significantly outperforms existing methods in semantic consistency, texture clarity, and the reduction of "baked-in shading."
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Indoor Scene Texturing"
+  - "Multi-Reference Customization"
+  - "Dual-Distillation"
+  - "VSD Optimization"
+  - "Instance-level Control"
 date: 2026-05-08
-content_hash: 2a0d01597e7ae4fc
+content_hash: cf2e8a073e513bec
 ---
+
 # CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization
 
 **Conference**: CVPR 2026  
@@ -136,11 +142,11 @@ Text-to-Texture:
 
 ## Related Papers
 
-- [\[CVPR 2026\] CraftMesh: High-Fidelity Generative Mesh Manipulation via Poisson Seamless Fusion](craftmesh_high-fidelity_generative_mesh_manipulation_via_poisson_seamless_fusion.md)
-- [\[CVPR 2026\] CrowdGaussian: Reconstructing High-Fidelity 3D Gaussians for Human Crowd from a Single Image](crowdgaussian_reconstructing_high-fidelity_3d_gaussians_for_human_crowd_from_a_s.md)
-- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
-- [\[CVPR 2026\] Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)
-- [\[CVPR 2026\] Confidence-Guided Multi-Scale Aggregation for Sparse-View High-Resolution 3D Gaussian Splatting](confidence-guided_multi-scale_aggregation_for_sparse-view_high-resolution_3d_gau.md)
+- [\[CVPR 2026\] UniTEX: Universal High Fidelity Generative Texturing for 3D Shapes](unitex_universal_high_fidelity_generative_texturing_for_3d_shapes.md)
+- [\[CVPR 2026\] Catalyst4D: High-Fidelity 3D-to-4D Scene Editing via Dynamic Propagation](catalyst4d_highfidelity_3dto4d_scene_editing_via_d.md)
+- [\[CVPR 2026\] Skullptor: High Fidelity 3D Head Reconstruction in Seconds with Multi-View Normal Prediction](skullptor_high_fidelity_3d_head_reconstruction_in_seconds_with_multi-view_normal.md)
+- [\[CVPR 2026\] HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)
+- [\[CVPR 2026\] RISE: Single Static Radar-based Indoor Scene Understanding](rise_single_static_radar-based_indoor_scene_understanding.md)
 
 </div>
 

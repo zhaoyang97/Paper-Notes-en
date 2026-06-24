@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Why Less is More (Sometimes): A Theory of Data Curation
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper utilizes high-dimensional binary classification and Random Matrix Theory (RMT) to derive **precise test error scaling curves** for data curation strategies such as "keep hard samples," "keep easy samples," and "full training." It proves that the "less is more" phenomenon (where a small subset of high-quality
+  [ICLR 2026][Learning Theory][Scaling Laws] This paper utilizes high-dimensional binary classification and Random Matrix Theory (RMT) to derive **precise test error scaling curves** for data curation strategies such as "keep hard samples," "keep easy samples," and "full training." It proves that the "less is more" phenomenon (where a small subset of high-quality data is superior) only occurs in the quadrant of "abundant data + sufficiently strong generator…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Data Curation"
+  - "High-dimensional Statistics"
+  - "Scaling Laws"
+  - "Phase Transition Analysis"
+  - "Model Collapse"
+  - "Random Matrix Theory"
 date: 2026-05-08
-content_hash: dbb92a684519afd5
+content_hash: 0e3536f53d131d0e
 ---
+
 # Why Less is More (Sometimes): A Theory of Data Curation
 
 **Conference**: ICLR 2026  
@@ -158,11 +165,11 @@ Experiments on ImageNet scaled the initial training set size $n$ to adjust gener
 
 ## Related Papers
 
+- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
 - [\[ICLR 2026\] Learning Admissible Heuristics for A*: Theory and Practice](learning_admissible_heuristics_for_a_theory_and_practice.md)
 - [\[ICLR 2026\] Why We Need New Benchmarks for Local Intrinsic Dimension Estimation](why_we_need_new_benchmarks_for_local_intrinsic_dimension_estimation.md)
-- [\[ICLR 2026\] Larger Datasets Can Be Repeated More: A Theoretical Analysis of Multi-Epoch Scaling in Linear Regression](larger_datasets_can_be_repeated_more_a_theoretical_analysis_of_multi-epoch_scali.md)
 - [\[ICML 2026\] Performative Learning Theory](../../ICML2026/learning_theory/performative_learning_theory.md)
-- [\[ICLR 2026\] High-dimensional Analysis of Synthetic Data Selection](high-dimensional_analysis_of_synthetic_data_selection.md)
+- [\[ICLR 2026\] Why High-Rank Neural Networks Also Generalize?: An Algebraic Framework Based on RKHS](why_high-rank_neural_networks_generalize_an_algebraic_framework_with_rkhss.md)
 
 </div>
 

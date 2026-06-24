@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model
 description: >-
-  [CVPR 2026][Image Restoration][all-in-one] FoundIR-v2 discovers that the "training data mixture ratio of different restoration tasks" is a key variable determining all-in-one image restoration performance. Consequently, it employs a dual-scheduling scheme—Dynamic Equilibrium Scheduling (dynamic ratio adjustment) and an MoE-driven Diffusion Scheduler (task-adapt
+  [CVPR 2026][Image Restoration][Image Restoration Foundation Model] FoundIR-v2 discovers that the "training data mixture ratio of different restoration tasks" is a key variable determining all-in-one image restoration performance. Consequently, it employs a dual-scheduling scheme—Dynamic Equilibrium Scheduling (dynamic ratio adjustment) and an MoE-driven Diffusion Scheduler (task-adaptive generative prior allocation)—for generative pre-training on SDXL. A single model covers 5…
 tags:
-  - CVPR 2026
-  - Image Restoration
-  - all-in-one
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Image Restoration Foundation Model"
+  - "Data Mixture Ratios"
+  - "Dynamic Data Scheduling"
+  - "MoE Diffusion Prior"
+  - "all-in-one"
 date: 2026-05-08
-content_hash: f201d3fa8a95e120
+content_hash: 3cef9d0ddd9efb68
 ---
+
 # FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model
 
 **Conference**: CVPR 2026  
@@ -142,10 +147,10 @@ DES is not only optimal for FoundIR-v2 but also brings gains when migrated to Pr
 ## Related Papers
 
 - [\[ICCV 2025\] FoundIR: Unleashing Million-scale Training Data to Advance Foundation Models for Image Restoration](../../ICCV2025/image_restoration/foundir_unleashing_million-scale_training_data_to_advance_foundation_models_for_.md)
-- [\[CVPR 2026\] Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)
+- [\[CVPR 2026\] UniSER: A Foundation Model for Unified Soft Effects Removal](uniser_a_foundation_model_for_unified_soft_effects_removal.md)
 - [\[CVPR 2026\] 2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)
+- [\[CVPR 2026\] Self-Attention Driven Tensor Representation for High-Order Data Recovery](self-attention_driven_tensor_representation_for_high-order_data_recovery.md)
 - [\[CVPR 2026\] Hybrid Agents for Image Restoration](hybrid_agents_for_image_restoration.md)
-- [\[CVPR 2026\] Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion](beyond_strict_pairing_arbitrarily_paired_training_for_high-performance_infrared_.md)
 
 </div>
 

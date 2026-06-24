@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] GSNR: Graph Smooth Null-Space Representation for Inverse Problems
 description: >-
-  [CVPR 2026][Image Restoration][Paper Note] The authors propose Graph Smooth Null-Space Representation (GSNR), which utilizes spectral graph theory to construct a null-space constrained Laplacian and selects the $p$ smoothest spectral modes as projection bases. This provides structured null-space constraints for inverse problem solvers such as PnP, DIP, and diff
+  [CVPR 2026][Image Restoration][Inverse problems] The authors propose Graph Smooth Null-Space Representation (GSNR), which utilizes spectral graph theory to construct a null-space constrained Laplacian and selects the $p$ smoothest spectral modes as projection bases. This provides structured null-space constraints for inverse problem solvers such as PnP, DIP, and diffusion models, achieving improvements of up to 4.3dB PSNR in deblurring, compressed sensing, demosaicing…
 tags:
-  - CVPR 2026
-  - Image Restoration
+  - "CVPR 2026"
+  - "Image Restoration"
+  - "Inverse problems"
+  - "null-space representation"
+  - "graph smoothing"
+  - "spectral graph theory"
+  - "plug-and-play"
 date: 2026-05-08
-content_hash: d4082c12df9a337a
+content_hash: 767e21fff5996de6
 ---
+
 # GSNR: Graph Smooth Null-Space Representation for Inverse Problems
 
 **Conference**: CVPR 2026  
@@ -139,11 +145,11 @@ The predictor $G$ is trained using an L2 loss: $\min_G \mathbb{E}\|G(y) - Sx^*\|
 
 ## Related Papers
 
-- [\[CVPR 2026\] Variational Garrote for Sparse Inverse Problems](variational_garrote_for_sparse_inverse_problems.md)
+- [\[CVPR 2026\] Dual Ascent Diffusion for Inverse Problems](dual_ascent_diffusion_for_inverse_problems.md)
+- [\[ICLR 2026\] Flower: A Flow-Matching Solver for Inverse Problems](../../ICLR2026/image_restoration/flower_a_flow-matching_solver_for_inverse_problems.md)
 - [\[CVPR 2026\] PnP-CM: Consistency Models as Plug-and-Play Priors for Inverse Problems](pnp-cm_consistency_models_as_plug-and-play_priors_for_inverse_problems.md)
 - [\[CVPR 2026\] Outlier-Robust Diffusion Solvers for Inverse Problems](outlier-robust_diffusion_solvers_for_inverse_problems.md)
 - [\[CVPR 2026\] Time Without Time: Pseudo-Temporal Representation for Space-Time Super-Resolution](time_without_time_pseudo-temporal_representation_for_space-time_super-resolution.md)
-- [\[ICML 2026\] Learning Normalized Energy Models for Linear Inverse Problems](../../ICML2026/image_restoration/learning_normalized_energy_models_for_linear_inverse_problems.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] True Self-Supervised Novel View Synthesis is Transferable
 description: >-
-  [ICLR 2026][3D Vision][geometry-free] This paper proposes "transferability" as the core criterion for determining whether a model truly performs Novel View Synthesis (NVS). Based on this, it introduces XFactor—the first model capable of learning cross-scene transferable camera pose representations through pure self-supervision without relying on multi-view
+  [ICLR 2026][3D Vision][Novel View Synthesis] This paper proposes "transferability" as the core criterion for determining whether a model truly performs Novel View Synthesis (NVS). Based on this, it introduces XFactor—the first model capable of learning cross-scene transferable camera pose representations through pure self-supervision without relying on multi-view geometry. By utilizing two simple designs—a "stereo-monocular model" and a "pose-preserving transferable objective…
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - geometry-free
+  - "ICLR 2026"
+  - "3D Vision"
+  - "Novel View Synthesis"
+  - "Self-Supervised"
+  - "Transferability"
+  - "Camera Pose"
+  - "geometry-free"
 date: 2026-05-08
-content_hash: 84923f866eb31b99
+content_hash: e722d6f2a7c3a9ff
 ---
+
 # True Self-Supervised Novel View Synthesis is Transferable
 
 **Conference**: ICLR 2026  
@@ -143,10 +148,10 @@ Starting from the stereo-monocular XFactor, two pillars (stereo-monocular struct
 ## Related Papers
 
 - [\[CVPR 2026\] From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](../../CVPR2026/3d_vision/from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)
+- [\[ICLR 2026\] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation](aligned_novel_view_image_and_geometry_synthesis_via_cross-modal_attention_instil.md)
 - [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
 - [\[CVPR 2026\] WildRayZer: Self-supervised Large View Synthesis in Dynamic Environments](../../CVPR2026/3d_vision/wildrayzer_self-supervised_large_view_synthesis_in_dynamic_environments.md)
 - [\[ICLR 2026\] EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis](ea3d_event-augmented_3d_diffusion_for_generalizable_novel_view_synthesis.md)
-- [\[ICLR 2026\] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation](aligned_novel_view_image_and_geometry_synthesis_via_cross-modal_attention_instil.md)
 
 </div>
 

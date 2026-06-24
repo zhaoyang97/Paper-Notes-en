@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WavefrontDiffusion: Dynamic Decoding Schedule for Improved Reasoning
 description: >-
-  [ICLR 2026][LLM Reasoning][Diffusion Language Model] Addressing the scheduling problem of "which tokens to determine first" during Diffusion Language Model (DLM) decoding, this paper proposes **WavefrontDiffusion**—a training-free dynamic scheduling strategy. It allows finalized tokens to expand candidate regions like water waves, ensuring each token is finalized only wh
+  [ICLR 2026][Reasoning][Diffusion Language Models] Addressing the scheduling problem of "which tokens to determine first" during Diffusion Language Model (DLM) decoding, this paper proposes **WavefrontDiffusion**—a training-free dynamic scheduling strategy. It allows finalized tokens to expand candidate regions like water waves, ensuring each token is finalized only when sufficient context is available. Across five reasoning and code benchmarks…
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - Diffusion Language Model
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Diffusion Language Models"
+  - "Decoding Schedule"
+  - "Wavefront Expansion"
+  - "Mathematical Reasoning"
+  - "Code Generation"
 date: 2026-05-08
-content_hash: 4388e490183f41e2
+content_hash: 186eecda0130ec00
 ---
+
 # WavefrontDiffusion: Dynamic Decoding Schedule for Improved Reasoning
 
 **Conference**: ICLR 2026  
@@ -151,10 +156,10 @@ Where $S_t$ is the set selected for finalization in the current step, $N_{\text{
 ## Related Papers
 
 - [\[ICLR 2026\] Dynamic Early Exit in Reasoning Models](dynamic_early_exit_in_reasoning_models.md)
+- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
 - [\[ICLR 2026\] Sample Smart, Not Hard: Correctness-First Decoding for Better Reasoning in LLMs](sample_smart_not_hard_correctness-first_decoding_for_better_reasoning_in_llms.md)
 - [\[ICLR 2026\] FastGRPO: Accelerating Policy Optimization via Concurrency-aware Speculative Decoding and Online Draft Learning](fastgrpo_accelerating_policy_optimization_via_concurrency-aware_speculative_deco.md)
-- [\[ACL 2026\] Adapt to Thrive! Adaptive Power-Mean Policy Optimization for Improved LLM Reasoning](../../ACL2026/llm_reasoning/adapt_to_thrive_adaptive_power-mean_policy_optimization_for_improved_llm_reasoni.md)
-- [\[ICML 2026\] DyCon: Dynamic Reasoning Control via Evolving Difficulty Modeling](../../ICML2026/llm_reasoning/dycon_dynamic_reasoning_control_via_evolving_difficulty_modeling.md)
+- [\[NeurIPS 2025\] Mind the Gap: Bridging Thought Leap for Improved Chain-of-Thought Tuning](../../NeurIPS2025/llm_reasoning/mind_the_gap_bridging_thought_leap_for_improved_chain-of-thought_tuning.md)
 
 </div>
 

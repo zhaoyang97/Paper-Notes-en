@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Probing in the Dark: State Entropy Maximization for POMDPs
 description: >-
-  [ICLR 2026][Reinforcement Learning][Paper Note] Addressing the POMDP challenge where true states are unobservable, this paper proposes maximizing the **entropy of a predictive latent** as a proxy objective. It introduces the LatEnt algorithm, which concurrently learns latent dynamics and policies. On the custom PROBE benchmark, it induces true state entropy close to
+  [ICLR 2026][Reinforcement Learning][Maximum State Entropy] Addressing the POMDP challenge where true states are unobservable, this paper proposes maximizing the **entropy of a predictive latent** as a proxy objective. It introduces the LatEnt algorithm, which concurrently learns latent dynamics and policies. On the custom PROBE benchmark, it induces true state entropy close to the "oracle" view, enabling downstream PPO to solve sparse-reward tasks that are unlearnable from sc…
 tags:
-  - ICLR 2026
-  - Reinforcement Learning
+  - "ICLR 2026"
+  - "Reinforcement Learning"
+  - "Maximum State Entropy"
+  - "Partially Observable"
+  - "Information State"
+  - "Predictive Latent"
+  - "Reward-free Pre-training"
 date: 2026-05-08
-content_hash: c269a36022da000e
+content_hash: db29ef88e1907a31
 ---
+
 # Probing in the Dark: State Entropy Maximization for POMDPs
 
 **Conference**: ICLR 2026  

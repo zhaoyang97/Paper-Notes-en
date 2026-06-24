@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Internal Evaluation of Density-Based Clusterings with Noise
 description: >-
-  [ICLR 2026][Others][DISCO] This paper proposes DISCO, an internal evaluation metric for density-based clustering results with noise. It uses density-connectivity instead of Euclidean compactness to evaluate clusters of arbitrary shapes and explicitly evaluates whether noise labels represent "true noise" or "points that should be in a cluster but
+  [ICLR2026][density clustering] This paper proposes DISCO, an internal evaluation metric for density-based clustering results with noise. It uses density-connectivity instead of Euclidean compactness to evaluate clusters of arbitrary shapes and explicitly evaluates whether noise labels represent "true noise" or "points that should be in a cluster but were discarded."
 tags:
-  - ICLR 2026
-  - Others
-  - DISCO
-  - density-connectivity
+  - "ICLR2026"
+  - "density clustering"
+  - "internal cluster validity index"
+  - "noise labels"
+  - "DISCO"
+  - "density-connectivity"
 date: 2026-05-08
-content_hash: fbd046f2896d293a
+content_hash: 12a14f1eeb6e0671
 ---
+
 # Internal Evaluation of Density-Based Clusterings with Noise
 
 **Conference**: ICLR2026  

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ESAM++: Efficient Online 3D Perception on the Edge
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] ESAM++ replaces the slowest component of the state-of-the-art (SOTA) online 3D perception method ESAM—the 3D Sparse UNet backbone—with a lightweight "3D Sparse Feature Pyramid Network (SFPN)." By leveraging multi-scale feature aggregation and channel rebalancing, it achieves up to a 3× speedup in CPU inference and a 2×
+  [CVPR 2026][3D Vision][Online 3D Perception] ESAM++ replaces the slowest component of the state-of-the-art (SOTA) online 3D perception method ESAM—the 3D Sparse UNet backbone—with a lightweight "3D Sparse Feature Pyramid Network (SFPN)." By leveraging multi-scale feature aggregation and channel rebalancing, it achieves up to a 3× speedup in CPU inference and a 2× reduction in model size across four indoor segmentation benchmarks. It maintains or even exceeds the accuracy of E…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Online 3D Perception"
+  - "3D Instance Segmentation"
+  - "Sparse Feature Pyramid"
+  - "Edge Deployment"
+  - "Sparse Convolution"
 date: 2026-05-08
-content_hash: 9c82ad3646f87289
+content_hash: 5ead85642458bcf3
 ---
+
 # ESAM++: Efficient Online 3D Perception on the Edge
 
 **Conference**: CVPR 2026  
@@ -159,11 +165,11 @@ Pose Noise Robustness (ScanNet200):
 
 ## Related Papers
 
+- [\[CVPR 2026\] PE3R: Perception-Efficient 3D Reconstruction](pe3r_perception-efficient_3d_reconstruction.md)
+- [\[CVPR 2026\] Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)
+- [\[CVPR 2026\] NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration](nanosd_edge_efficient_foundation_model_for_real_time_image_restoration.md)
 - [\[CVPR 2026\] ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
-- [\[CVPR 2026\] Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning](adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo.md)
-- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
+- [\[CVPR 2026\] 3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)
 
 </div>
 

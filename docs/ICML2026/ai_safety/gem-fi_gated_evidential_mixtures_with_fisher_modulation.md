@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] GEM-FI: Gated Evidential Mixtures with Fisher Modulation
 description: >-
-  [ICML 2026][AI Safety][Evidential Deep Learning] This paper addresses the issues of overconfidence in out-of-distribution (OOD) samples and the difficulty of single-head architectures in expressing multimodal epistemic uncertainty in Evidential Deep Learning (EDL). It proposes a three-component suite, GEM-Core/MIX/FI: gating evidence with learned feature energy, appr
+  [ICML 2026][AI Safety][Evidential Deep Learning] This paper addresses the issues of overconfidence in out-of-distribution (OOD) samples and the difficulty of single-head architectures in expressing multimodal epistemic uncertainty in Evidential Deep Learning (EDL). It proposes a three-component suite, GEM-Core/MIX/FI: gating evidence with learned feature energy, approximating ensembles via a single-pass mixture of evidential heads, and stabilizing mixture assignments with Fis…
 tags:
-  - ICML 2026
-  - AI Safety
-  - Evidential Deep Learning
-  - Energy-based gating
-  - Fisher Information
-  - Mixture of Beliefs
+  - "ICML 2026"
+  - "AI Safety"
+  - "Evidential Deep Learning"
+  - "Energy-based gating"
+  - "Fisher Information"
+  - "Mixture of Beliefs"
+  - "Single-pass OOD Detection"
 date: 2026-05-08
-content_hash: 5bf134d8d051db5c
+content_hash: 11d59a1c4ba2fd99
 ---
+
 # GEM-FI: Gated Evidential Mixtures with Fisher Modulation
 
 **Conference**: ICML 2026  
@@ -135,15 +137,14 @@ CIFAR-10 ID Classification + Calibration:
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Mind the Gap: Mixtures of Gaussians in Approximate Differential Privacy](mind_the_gap_mixtures_of_gaussians_in_approximate_differential_privacy.md)
+- [\[ICLR 2026\] Robust Adversarial Quantification via Conflict-Aware Evidential Deep Learning](../../ICLR2026/ai_safety/robust_adversarial_quantification_via_conflict-aware_evidential_deep_learning.md)
+- [\[ICLR 2026\] Fairness-Aware Multi-view Evidential Learning with Adaptive Prior](../../ICLR2026/ai_safety/fairness-aware_multi-view_evidential_learning_with_adaptive_prior.md)
 - [\[ECCV 2024\] Fisher Calibration for Backdoor-Robust Heterogeneous Federated Learning](../../ECCV2024/ai_safety/fisher_calibration_for_backdoor-robust_heterogeneous_federated_learning.md)
-- [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
-- [\[ICML 2026\] MetaMoE: Diversity-Aware Proxy Selection for Privacy-Preserving Mixture-of-Experts Unification](metamoe_diversity-aware_proxy_selection_for_privacy-preserving_mixture-of-expert.md)
-- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
+- [\[ICLR 2026\] Fisher-Rao Sensitivity for Out-of-Distribution Detection in Deep Neural Networks](../../ICLR2026/ai_safety/fisher-rao_sensitivity_for_out-of-distribution_detection_in_deep_neural_networks.md)
 
 </div>
 

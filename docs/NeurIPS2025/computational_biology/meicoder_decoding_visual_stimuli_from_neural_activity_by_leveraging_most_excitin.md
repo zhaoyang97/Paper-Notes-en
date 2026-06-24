@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs
 description: >-
-  [NeurIPS 2025][Computational Biology][Visual decoding] MEIcoder is proposed to leverage neuron-specific Most Exciting Inputs (MEIs) as biological priors, combined with SSIM loss and adversarial training…
+  [NeurIPS 2025][Computational Biology][Visual decoding] MEIcoder is proposed to leverage neuron-specific Most Exciting Inputs (MEIs) as biological priors, combined with SSIM loss and adversarial training, to achieve state-of-the-art visual stimulus reconstruction from neural population activity in the primary visual cortex (V1), with particular strengths in small-dataset and low-neuron-count regimes.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "neural population activity"
   - "adversarial training"
 date: 2026-05-08
-content_hash: 45a2fb7160ebc150
+content_hash: a236280c7fb6726a
 ---
 
 # MEIcoder: Decoding Visual Stimuli from Neural Activity by Leveraging Most Exciting Inputs
@@ -146,11 +146,11 @@ Evaluated on three datasets (Brainreader/SENSORIUM 2022: real mouse V1; Syntheti
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] SpecMER: Fast Protein Generation with K-mer Guided Speculative Decoding](specmer_fast_protein_generation_with_k-mer_guided_speculative_decoding.md)
-- [\[ICCV 2025\] MolParser: End-to-end Visual Recognition of Molecule Structures in the Wild](../../ICCV2025/computational_biology/molparser_end-to-end_visual_recognition_of_molecule_structures_in_the_wild.md)
+- [\[ICLR 2026\] A tale of two tails: Preferred and anti-preferred natural stimuli in visual cortex](../../ICLR2026/computational_biology/a_tale_of_two_tails_preferred_and_anti-preferred_natural_stimuli_in_visual_corte.md)
+- [\[ICLR 2026\] Continuous Multinomial Logistic Regression for Neural Decoding](../../ICLR2026/computational_biology/continuous_multinomial_logistic_regression_for_neural_decoding.md)
+- [\[ICLR 2026\] Decoding Dynamic Visual Experience from Calcium Imaging via Cell-Pattern-Aware Pretraining](../../ICLR2026/computational_biology/decoding_dynamic_visual_experience_from_calcium_imaging_via_cell-pattern-aware_p.md)
+- [\[ICLR 2026\] A Cross-Species Neural Foundation Model for End-to-End Speech Decoding](../../ICLR2026/computational_biology/a_cross-species_neural_foundation_model_for_end-to-end_speech_decoding.md)
 - [\[NeurIPS 2025\] Unified All-Atom Molecule Generation with Neural Fields](unified_all-atom_molecule_generation_with_neural_fields.md)
-- [\[NeurIPS 2025\] Random Search Neural Networks for Efficient and Expressive Graph Learning](random_search_neural_networks_for_efficient_and_expressive_graph_learning.md)
-- [\[ICLR 2026\] How to Make the Most of Your Masked Language Model for Protein Engineering](../../ICLR2026/computational_biology/how_to_make_the_most_of_your_masked_language_model_for_protein_engineering.md)
 
 </div>
 

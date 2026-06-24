@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers
 description: >-
-  [ICLR 2026][Image Generation][diffusion transformer] The first systematic analysis of conditional embeddings in Diffusion Transformers reveals extreme angular similarity (inter-class cosine similarity >99%) and dimensional sparsity (only 1-2% of dimensions carry semantic information). Generation quality remains largely unchanged after pruning 2/3 of low-magnitude dimensi
+  [ICLR 2026][Image Generation][diffusion transformer] The first systematic analysis of conditional embeddings in Diffusion Transformers reveals extreme angular similarity (inter-class cosine similarity >99%) and dimensional sparsity (only 1-2% of dimensions carry semantic information). Generation quality remains largely unchanged after pruning 2/3 of low-magnitude dimensions, uncovering a hidden semantic bottleneck in conditional embeddings.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - diffusion transformer
-  - conditioning
-  - embedding sparsity
-  - cosine similarity
-  - AdaLN
+  - "ICLR 2026"
+  - "Image Generation"
+  - "diffusion transformer"
+  - "conditioning"
+  - "embedding sparsity"
+  - "cosine similarity"
+  - "AdaLN"
 date: 2026-05-08
-content_hash: a9026b848eb87050
+content_hash: 7bb9bcd9dbccaece
 ---
+
 # A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers
 
 **Conference**: ICLR 2026  
@@ -129,9 +130,9 @@ No training is involved; all analyses and pruning are performed on pre-trained m
 
 - [\[ICLR 2026\] Scaling Laws for Diffusion Transformers](scaling_laws_for_diffusion_transformers.md)
 - [\[ICLR 2026\] Rethinking Global Text Conditioning in Diffusion Transformers](rethinking_global_text_conditioning_in_diffusion_transformers.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 - [\[ICML 2026\] Recovering Hidden Reward in Diffusion-Based Policies](../../ICML2026/image_generation/recovering_hidden_reward_in_diffusion-based_policies.md)
 - [\[ICLR 2026\] Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](massive_activations_are_the_key_to_local_detail_synthesis_in_diffusion_transform.md)
-- [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
 
 </div>
 

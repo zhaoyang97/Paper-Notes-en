@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] FreqEdit: Preserving High-Frequency Features for Robust Multi-Turn Image Editing
 description: >-
-  [CVPR 2026][Image Generation][Rectified Flow] FreqEdit identifies the root cause of "performance breakdown in multi-turn instruction-based editing" as the continuous loss of high-frequency information during iterations. It constructs a reference velocity field from context images in early denoising stages and injects its high-frequency wavelet components into the
+  [CVPR 2026][Image Generation][Multi-turn image editing] FreqEdit identifies the root cause of "performance breakdown in multi-turn instruction-based editing" as the continuous loss of high-frequency information during iterations. It constructs a reference velocity field from context images in early denoising stages and injects its high-frequency wavelet components into the editing velocity field in a spatially adaptive manner. Coupled with path compensation and quality guidan…
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Rectified Flow
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Multi-turn image editing"
+  - "high-frequency features"
+  - "wavelet transform"
+  - "training-free"
+  - "Rectified Flow"
 date: 2026-05-08
-content_hash: e513a57bd7913252
+content_hash: 5a00ef37997943b2
 ---
+
 # FreqEdit: Preserving High-Frequency Features for Robust Multi-Turn Image Editing
 
 **Conference**: CVPR 2026  
@@ -154,11 +159,11 @@ The evaluation set consists of 70 source images (half real, half FLUX.1-synthesi
 
 ## Related Papers
 
-- [\[CVPR 2026\] CoD: A Diffusion Foundation Model for Image Compression](cod_a_diffusion_foundation_model_for_image_compression.md)
+- [\[CVPR 2026\] Frequency-Aware Flow Matching for High-Quality Image Generation](freqflow_frequency_aware_flow_matching.md)
+- [\[CVPR 2026\] Coupled Diffusion Sampling for Training-Free Multi-View Image Editing](coupled_diffusion_sampling_for_training-free_multi-view_image_editing.md)
+- [\[CVPR 2026\] Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)
+- [\[ICCV 2025\] Multi-turn Consistent Image Editing](../../ICCV2025/image_generation/multi-turn_consistent_image_editing.md)
 - [\[CVPR 2026\] Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective](toward_diffusible_high-dimensional_latent_spaces_a_frequency_perspective.md)
-- [\[CVPR 2026\] Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality](preserving_source_video_realism_high-fidelity_face_swapping_for_cinematic_qualit.md)
-- [\[CVPR 2026\] Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)
-- [\[CVPR 2026\] FlowDC: Flow-Based Decoupling-Decay for Complex Image Editing](flowdc_flow-based_decoupling-decay_for_complex_image_editing.md)
 
 </div>
 

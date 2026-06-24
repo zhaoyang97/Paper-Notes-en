@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Put the Space of LoRA Initialization to the Extreme to Preserve Pre-trained Knowledge
 description: >-
-  [AAAI2026][Model Compression][LoRA] This paper proposes LoRA-Null, which initializes LoRA within the null space of pre-trained input activations (rather than the null space of weights). From an information-theoretic pers…
+  [AAAI2026][Model Compression][LoRA] This paper proposes LoRA-Null, which initializes LoRA within the null space of pre-trained input activations (rather than the null space of weights). From an information-theoretic perspective, the effective rank of activations is much lower than that of weights, meaning their null space encodes less pre-trained knowledge, thereby substantially mitigating catastrophic forgetting during fine-tuning.
 tags:
   - "AAAI2026"
   - "Model Compression"
@@ -12,7 +12,7 @@ tags:
   - "null space"
   - "activation-aware initialization"
 date: 2026-05-08
-content_hash: cd2a1f8452a8b8ae
+content_hash: af71141d51df6fda
 ---
 
 # Put the Space of LoRA Initialization to the Extreme to Preserve Pre-trained Knowledge
@@ -99,9 +99,9 @@ Evaluations are conducted on LLaMA-2-7B and LLaMA-3.2-3B across three tasks: Mat
 
 - [\[AAAI 2026\] Compensating Distribution Drifts in Class-incremental Learning of Pre-trained Vision Transformers](compensating_distribution_drifts_in_class-incremental_learning_of_pre-trained_vi.md)
 - [\[ICCV 2025\] Efficient Adaptation of Pre-Trained Vision Transformer Underpinned by Approximation Theory](../../ICCV2025/model_compression/efficient_adaptation_of_pre-trained_vision_transformer_underpinned_by_approximat.md)
+- [\[ICML 2025\] Beyond Zero Initialization: Investigating the Impact of Non-Zero Initialization on LoRA Fine-Tuning Dynamics](../../ICML2025/model_compression/beyond_zero_initialization_investigating_the_impact_of_non-zero_initialization_o.md)
 - [\[NeurIPS 2025\] Mixture of Noise for Pre-Trained Model-Based Class-Incremental Learning](../../NeurIPS2025/model_compression/mixture_of_noise_for_pre-trained_model-based_class-incremental_learning.md)
-- [\[ICML 2026\] Task-Driven Subspace Decomposition for Knowledge Sharing and Isolation in LoRA-based Continual Learning](../../ICML2026/model_compression/task-driven_subspace_decomposition_for_knowledge_sharing_and_isolation_in_lora-b.md)
-- [\[ICML 2026\] FedRot-LoRA: Mitigating Rotational Misalignment in Federated LoRA](../../ICML2026/model_compression/fedrot-lora_mitigating_rotational_misalignment_in_federated_lora.md)
+- [\[ICML 2026\] LoRA-DA: Data-Aware Initialization for Low-Rank Adaptation via Asymptotic Analysis](../../ICML2026/model_compression/lora-da_data-aware_initialization_for_low-rank_adaptation_via_asymptotic_analysi.md)
 
 </div>
 

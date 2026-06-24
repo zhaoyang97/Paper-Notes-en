@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL
 description: >-
-  [ICLR 2026][vlm_reasoning][GRPO] VidGuard-R1 is the first video authenticity detector to utilize Group Relative Policy Optimization (GRPO) reinforcement learning for fine-tuning MLLMs. By constructing a shortcut-free dataset of 140,000 real/fake video pairs and designing two specialized reward mechanisms—temporal artifact rewards and diffusion step qu
+  [ICLR 2026][VLM Reasoning][AI-generated video detection] VidGuard-R1 is the first video authenticity detector to utilize Group Relative Policy Optimization (GRPO) reinforcement learning for fine-tuning MLLMs. By constructing a shortcut-free dataset of 140,000 real/fake video pairs and designing two specialized reward mechanisms—temporal artifact rewards and diffusion step quality rewards—it achieves 86.17% accuracy on its internal dataset and reaches 95%+ SOTA zero-shot detec…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - GRPO
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "AI-generated video detection"
+  - "MLLM reasoning"
+  - "GRPO"
+  - "temporal artifacts"
+  - "explainable forensics"
 date: 2026-05-08
-content_hash: e0c5a110c1e3dbee
+content_hash: d11bf97305a6a997
 ---
+
 # VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL
 
 **Conference**: ICLR 2026  
@@ -149,7 +154,7 @@ Each stage provides consistent improvements. The jump from SFT to DPO is the lar
 - [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
 - [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
 - [\[ICLR 2026\] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning](game-rl_synthesizing_multimodal_verifiable_game_data_to_boost_vlms_general_reaso.md)
-- [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
+- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](../../CVPR2026/vlm_reasoning/axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
 
 </div>
 

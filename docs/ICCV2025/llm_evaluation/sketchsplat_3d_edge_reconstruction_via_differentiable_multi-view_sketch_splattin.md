@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting
 description: >-
-  [ICCV 2025][LLM Evaluation][3D edge reconstruction] This paper proposes SketchSplat, which represents 3D edges as parametric sketches (line segments + Bézier curves) and directly optimizes edge parameters via differentia…
+  [ICCV 2025][LLM Evaluation][3D edge reconstruction] This paper proposes SketchSplat, which represents 3D edges as parametric sketches (line segments + Bézier curves) and directly optimizes edge parameters via differentiable rendering by sampling Gaussian points from sketches. Combined with adaptive topology control and an improved 2D edge detector, the method achieves state-of-the-art accuracy, completeness, and compactness on CAD datasets.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "parametric curves"
   - "CAD modeling"
 date: 2026-05-08
-content_hash: c074ba4d2dc30202
+content_hash: 0a6e4284aa6f028e
 ---
 
 # SketchSplat: 3D Edge Reconstruction via Differentiable Multi-view Sketch Splatting
@@ -151,9 +151,9 @@ Ablation on initialization methods:
 
 - [\[ICCV 2025\] Neural Multi-View Self-Calibrated Photometric Stereo without Photometric Stereo Cues](neural_multi-view_self-calibrated_photometric_stereo_without_photometric_stereo_.md)
 - [\[ICCV 2025\] 3DSRBench: A Comprehensive 3D Spatial Reasoning Benchmark](3dsrbench_a_comprehensive_3d_spatial_reasoning_benchmark.md)
+- [\[ACL 2025\] Revisiting 3D LLM Benchmarks: Are We Really Testing 3D Capabilities?](../../ACL2025/llm_evaluation/revisiting_3d_llm_benchmarks_are_we_really_testing_3d_capabilities.md)
 - [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](../../ACL2026/llm_evaluation/diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
-- [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](../../ACL2026/llm_evaluation/sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
-- [\[ICML 2026\] Multi$^2$: Hierarchical Multi-Agent Decision-Making with LLM-Based Agents in Interactive Environments](../../ICML2026/llm_evaluation/multi2_hierarchical_multi-agent_decision-making_with_llm-based_agents_in_interac.md)
+- [\[ACL 2025\] EcomScriptBench: A Multi-task Benchmark for E-commerce Script Planning via Step-wise Intention-Driven Product Association](../../ACL2025/llm_evaluation/ecomscriptbench.md)
 
 </div>
 

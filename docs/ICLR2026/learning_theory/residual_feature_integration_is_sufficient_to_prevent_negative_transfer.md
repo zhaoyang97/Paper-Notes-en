@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Residual Feature Integration is Sufficient to Prevent Negative Transfer
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper proposes REFINE: concatenating frozen pre-trained source features $f_{rep}(x)$ with a residual encoder $h(x)$ trained on the target domain, followed by a shallow adapter. Theoretically analyzed through non-parametric regression, this minimalist architecture **provably prevents negative transfer**—the worst-c
+  [ICLR 2026][Transfer Learning Theory][Negative Transfer] This paper proposes REFINE: concatenating frozen pre-trained source features $f_{rep}(x)$ with a residual encoder $h(x)$ trained on the target domain, followed by a shallow adapter. Theoretically analyzed through non-parametric regression, this minimalist architecture **provably prevents negative transfer**—the worst-case performance is no worse than training from scratch, while the convergence rate smoothly approaches…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Transfer Learning Theory"
+  - "Representation Learning"
+  - "Negative Transfer"
+  - "Residual Connections"
+  - "Transfer Learning"
+  - "Non-parametric Regression"
+  - "Convergence Rates"
 date: 2026-05-08
-content_hash: 32b6ec66a0286b3f
+content_hash: d31f0da8bbedc9f6
 ---
+
 # Residual Feature Integration is Sufficient to Prevent Negative Transfer
 
 **Conference**: ICLR 2026  
@@ -138,15 +145,15 @@ LinearProbe/Adapter/LoRA/DANN-Gate show severe negative transfer in CIFAR100→1
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Transfer Learning in Infinite Width Feature Learning Networks](transfer_learning_in_infinite_width_feature_learning_networks.md)
+- [\[ICLR 2026\] Understanding the Mechanisms of Fast Hyperparameter Transfer](understanding_the_mechanisms_of_fast_hyperparameter_transfer.md)
 - [\[ICLR 2026\] Toward Practical Equilibrium Propagation: Brain-Inspired Recurrent Neural Network with Feedback Regulation and Residual Connections](toward_practical_equilibrium_propagation_brain-inspired_recurrent_neural_network.md)
 - [\[ICLR 2026\] Price of Quality: Sufficient Conditions for Sparse Recovery using Mixed-Quality Data](price_of_quality_sufficient_conditions_for_sparse_recovery_using_mixed-quality_d.md)
 - [\[ICLR 2026\] Feature Compression is the Root Cause of Adversarial Fragility in Neural Networks](feature_compression_is_the_root_cause_of_adversarial_fragility_in_neural_network.md)
-- [\[ICLR 2026\] Mitigating the Curse of Detail: Scaling Arguments for Feature Learning and Sample Complexity](mitigating_the_curse_of_detail_scaling_arguments_for_feature_learning_and_sample.md)
 
 </div>
 

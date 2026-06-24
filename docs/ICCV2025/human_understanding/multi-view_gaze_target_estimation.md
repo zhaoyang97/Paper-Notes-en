@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Multi-view Gaze Target Estimation
 description: >-
-  [ICCV 2025][Human Understanding][Gaze Target Estimation] This paper is the first to extend Gaze Target Estimation (GTE) from single-view to multi-view settings. By integrating three modules — Head Information Aggregation…
+  [ICCV 2025][Human Understanding][Gaze Target Estimation] This paper is the first to extend Gaze Target Estimation (GTE) from single-view to multi-view settings. By integrating three modules — Head Information Aggregation (HIA), Uncertainty-based Gaze Selection (UGS), and Epipolar-based Scene Attention (ESA) — the method fuses information across multiple cameras. It significantly outperforms single-view state-of-the-art methods on the newly introduced MVGT dataset and enables…
 tags:
   - "ICCV 2025"
   - "Human Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Epipolar Attention"
   - "Uncertainty"
 date: 2026-05-08
-content_hash: 3dd601c3330e594c
+content_hash: c84f564dc96572d9
 ---
 
 # Multi-view Gaze Target Estimation
@@ -135,11 +135,11 @@ When the head in the reference view is visible, the proposed method reduces Dist
 
 ## Related Papers
 
+- [\[CVPR 2026\] Gaze Target Estimation Anywhere with Concepts](../../CVPR2026/human_understanding/gaze_target_estimation_anywhere_with_concepts.md)
 - [\[AAAI 2026\] Toward Gaze Target Detection in Young Autistic Children](../../AAAI2026/human_understanding/toward_gaze_target_detection_of_young_autistic_children.md)
-- [\[CVPR 2026\] GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](../../CVPR2026/human_understanding/gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)
-- [\[NeurIPS 2025\] OmniGaze: Reward-inspired Generalizable Gaze Estimation in the Wild](../../NeurIPS2025/human_understanding/omnigaze_reward-inspired_generalizable_gaze_estimation_in_the_wild.md)
-- [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](../../NeurIPS2025/human_understanding/a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
-- [\[ICCV 2025\] GenM3: Generative Pretrained Multi-path Motion Model for Text Conditional Human Motion Generation](genm3_generative_pretrained_multi-path_motion_model_for_text_conditional_human_m.md)
+- [\[ECCV 2024\] Gaze Target Detection Based on Head-Local-Global Coordination](../../ECCV2024/human_understanding/gaze_target_detection_based_on_head-local-global_coordination.md)
+- [\[CVPR 2025\] Enhancing 3D Gaze Estimation in the Wild Using Weak Supervision with Gaze Following Labels](../../CVPR2025/human_understanding/enhancing_3d_gaze_estimation_in_the_wild_using_weak_supervision_with_gaze_follow.md)
+- [\[CVPR 2025\] GA3CE: Unconstrained 3D Gaze Estimation with Gaze-Aware 3D Context Encoding](../../CVPR2025/human_understanding/ga3ce_unconstrained_3d_gaze_estimation_with_gaze-aware_3d_context_encoding.md)
 
 </div>
 

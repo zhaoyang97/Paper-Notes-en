@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] There Was Never a Bottleneck in Concept Bottleneck Models
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] The paper points out that Concept Bottleneck Models (CBMs) do not actually possess a true "bottleneck"—the fact that a representation variable $z_j$ can predict concept $c_j$ does not mean it encodes *only* information about $c_j$. It proposes the Minimal Concept Bottleneck Model (MCBM), which uses information bottlene
+  [ICLR 2026][Interpretability][Concept Bottleneck Models] The paper points out that Concept Bottleneck Models (CBMs) do not actually possess a true "bottleneck"—the fact that a representation variable $z_j$ can predict concept $c_j$ does not mean it encodes *only* information about $c_j$. It proposes the Minimal Concept Bottleneck Model (MCBM), which uses information bottleneck regularization to constrain each $z_j$ to retain only information from its corresponding concept…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Concept Bottleneck Models"
+  - "Information Bottleneck"
+  - "Information Leakage"
+  - "Intervenability"
+  - "Representation Learning"
 date: 2026-05-08
-content_hash: 578bbdf6df9c4439
+content_hash: a44ee11fbc2a2ff8
 ---
+
 # There Was Never a Bottleneck in Concept Bottleneck Models
 
 **Conference**: ICLR 2026  
@@ -140,7 +146,7 @@ Measures how much nuisance information beyond the concept set is encoded in $z$ 
 - [\[AAAI 2026\] Partially Shared Concept Bottleneck Models](../../AAAI2026/interpretability/partially_shared_concept_bottleneck_models.md)
 - [\[ICLR 2026\] Debugging Concept Bottleneck Models through Removal and Retraining](debugging_concept_bottleneck_models_through_removal_and_retraining.md)
 - [\[CVPR 2026\] Rethinking Concept Bottleneck Models: From Pitfalls to Solutions](../../CVPR2026/interpretability/rethinking_concept_bottleneck_models_from_pitfalls_to_solutions.md)
-- [\[AAAI 2026\] Flexible Concept Bottleneck Model](../../AAAI2026/interpretability/flexible_concept_bottleneck_model.md)
+- [\[AAAI 2026\] Concepts from Representations: Post-hoc Concept Bottleneck Models via Sparse Decomposition of Visual Representations](../../AAAI2026/interpretability/concepts_from_representations_post-hoc_concept_bottleneck_models_via_sparse_deco.md)
 
 </div>
 

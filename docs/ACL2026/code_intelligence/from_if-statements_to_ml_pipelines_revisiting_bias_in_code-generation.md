@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation
 description: >-
-  [ACL 2026][Code Intelligence][Paper Note] Research reveals that bias evaluations for LLM code generation significantly underestimate actual risks: in ML pipeline generation, sensitive attributes appear in $87.7\%$ of feature selections (vs. $59.2\%$ in conditional statements). Models correctly exclude irrelevant features but choose to retain sensitive attribut
+  [ACL 2026 Findings][Code Intelligence][Code Generation Bias] Research reveals that bias evaluations for LLM code generation significantly underestimate actual risks: in ML pipeline generation, sensitive attributes appear in $87.7\%$ of feature selections (vs. $59.2\%$ in conditional statements). Models correctly exclude irrelevant features but choose to retain sensitive attributes like race and gender, demonstrating systemic implicit discrimination.
 tags:
-  - ACL 2026
-  - Code Intelligence
+  - "ACL 2026 Findings"
+  - "Code Intelligence"
+  - "Code Generation Bias"
+  - "ML Pipelines"
+  - "Feature Selection"
+  - "Implicit Discrimination"
+  - "Fairness Evaluation"
 date: 2026-05-08
-content_hash: a2fd228bb275aa0f
+content_hash: 7d03303189ece9d2
 ---
+
 # From If-Statements to ML Pipelines: Revisiting Bias in Code-Generation
 
 **Conference**: ACL 2026 Findings  
@@ -135,10 +141,10 @@ Typical case (Llama-3.3-70B crime rate prediction): excluded "favorite_color" an
 ## Related Papers
 
 - [\[ICML 2026\] SWE-IF: Aligning Code Evaluation with Human Preference](../../ICML2026/code_intelligence/swe-if_aligning_code_evaluation_with_human_preference.md)
+- [\[ICLR 2026\] The Matthew Effect of AI Programming Assistants: A Hidden Bias in Software Evolution](../../ICLR2026/code_intelligence/the_matthew_effect_of_ai_programming_assistants_a_hidden_bias_in_software_evolut.md)
 - [\[ACL 2026\] CollabCoder: Plan-Code Co-Evolution via Collaborative Decision-Making for Efficient Code Generation](collabcoder_plan-code_co-evolution_via_collaborative_decision-making_for_efficie.md)
 - [\[ACL 2026\] OmniDiagram: Advancing Unified Diagram Code Generation via Visual Interrogation Reward](omnidiagram_advancing_unified_diagram_code_generation_via_visual_interrogation_r.md)
 - [\[ACL 2026\] SolidCoder: Bridging the Mental-Reality Gap in LLM Code Generation through Concrete Execution](solidcoder_bridging_the_mental-reality_gap_in_llm_code_generation_through_concre.md)
-- [\[ACL 2026\] Across Programming Language Silos: A Study on Cross-Lingual Retrieval-Augmented Code Generation](across_programming_language_silos_a_study_on_cross-lingual_retrieval-augmented_c.md)
 
 </div>
 

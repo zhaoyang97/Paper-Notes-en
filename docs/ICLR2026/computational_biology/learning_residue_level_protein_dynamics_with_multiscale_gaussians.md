@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Learning Residue Level Protein Dynamics with Multiscale Gaussians
 description: >-
-  [ICLR 2026][Computational Biology][RMSF] DYNAPROT models protein dynamics as a "multivariate Gaussian distribution over Cα coordinates on a static structure." It utilizes a lightweight SE(3)-invariant network to directly predict per-residue 3×3 marginal covariances and residue-pair N×N scalar couplings from a single static structure. A heuristic then assemble
+  [ICLR 2026][Computational Biology][Protein Dynamics] DYNAPROT models protein dynamics as a "multivariate Gaussian distribution over Cα coordinates on a static structure." It utilizes a lightweight SE(3)-invariant network to directly predict per-residue 3×3 marginal covariances and residue-pair N×N scalar couplings from a single static structure. A heuristic then assembles the full 3N×3N joint covariance, achieving fast and interpretable flexibility prediction and conformation…
 tags:
-  - ICLR 2026
-  - Computational Biology
-  - RMSF
+  - "ICLR 2026"
+  - "Computational Biology"
+  - "Protein Dynamics"
+  - "Multivariate Gaussian"
+  - "RMSF"
+  - "SE(3) Invariant"
+  - "Covariance Prediction"
+  - "Conformational Ensemble Generation"
 date: 2026-05-08
-content_hash: ef30903696193590
+content_hash: 75ddb153bec28247
 ---
+
 # Learning Residue Level Protein Dynamics with Multiscale Gaussians
 
 **Conference**: ICLR 2026  
@@ -130,11 +136,11 @@ DYNAPROT-M significantly outperforms NMA and is comparable to AlphaFlow+Template
 
 ## Related Papers
 
+- [\[ICLR 2026\] Fast Proteome-Scale Protein Interaction Retrieval via Residue-Level Factorization](fast_proteome-scale_protein_interaction_retrieval_via_residue-level_factorizatio.md)
 - [\[ICLR 2026\] Learning Explicit Single-Cell Dynamics Using ODE Representations](learning_explicit_single-cell_dynamics_using_ode_representations.md)
 - [\[ICLR 2026\] ProTDyn: A Foundation Protein Language Model for Thermodynamics and Dynamics Generation](protdyn_a_foundation_protein_language_model_for_thermodynamics_and_dynamics_gene.md)
 - [\[ICLR 2026\] Scalable Spatio-Temporal SE(3) Diffusion for Long-Horizon Protein Dynamics](scalable_spatio-temporal_se3_diffusion_for_long-horizon_protein_dynamics.md)
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](../../NeurIPS2025/computational_biology/towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
+- [\[ICLR 2026\] Automatic Image-Level Morphological Trait Annotation for Organismal Images](automatic_image-level_morphological_trait_annotation_for_organismal_images.md)
 
 </div>
 

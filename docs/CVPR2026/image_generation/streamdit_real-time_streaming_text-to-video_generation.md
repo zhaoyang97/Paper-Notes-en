@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] StreamDiT: Real-Time Streaming Text-to-Video Generation
 description: >-
-  [CVPR 2026][Video Generation][Flow Matching] StreamDiT proposes a comprehensive streaming video generation solution (including training, modeling, and distillation). By introducing a sliding buffer with progressive denoising in Flow Matching and a mixed partition training strategy, combined with a time-variant DiT architecture with window attention and a customiz
+  [CVPR 2026][Image Generation][Streaming Video Generation] StreamDiT proposes a comprehensive streaming video generation solution (including training, modeling, and distillation). By introducing a sliding buffer with progressive denoising in Flow Matching and a mixed partition training strategy, combined with a time-variant DiT architecture with window attention and a customized multi-step distillation method, a 4B parameter model achieves real-time streaming video generation…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - Flow Matching
+  - "CVPR 2026"
+  - "Image Generation"
+  - "Streaming Video Generation"
+  - "Diffusion Transformer"
+  - "Real-time Inference"
+  - "Sampling Distillation"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 1c5aa557d3453c1c
+content_hash: 103c4391c7553133
 ---
+
 # StreamDiT: Real-Time Streaming Text-to-Video Generation
 
 **Conference**: CVPR 2026  
@@ -141,11 +146,11 @@ Three-stage training: (1) Task Learning—3K high-quality videos, learning rate 
 
 ## Related Papers
 
-- [\[CVPR 2026\] EgoEdit: Dataset, Real-Time Streaming Model, and Benchmark for Egocentric Video Editing](egoedit_dataset_real-time_streaming_model_and_benchmark_for_egocentric_video_edi.md)
-- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
-- [\[CVPR 2026\] Reasoning Diffusion for Unpaired Test Time Out-of-distribution Text-Image to Video Generation](reasoning_diffusion_for_unpaired_test_time_out-of-distribution_text-image_to_vid.md)
-- [\[CVPR 2026\] U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation](u-mind_a_unified_framework_for_real-time_multimodal_interaction_with_audiovisual.md)
-- [\[CVPR 2026\] Real-Time Generation of Streamable Talking Portrait Video with Reference-Guided Deep Compression VAEs](real-time_generation_of_streamable_talking_portrait_video_with_reference-guided_.md)
+- [\[CVPR 2026\] StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)
+- [\[CVPR 2026\] FlashDecoder: Real-Time Latent-to-Pixel Streaming Decoder with Transformers](flashdecoder_real-time_latent-to-pixel_streaming_decoder_with_transformers.md)
+- [\[CVPR 2026\] Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)
+- [\[CVPR 2026\] Streaming Diffusion Model for Fast Infrared and Visible Video Fusion](streaming_diffusion_model_for_fast_infrared_and_visible_video_fusion.md)
+- [\[CVPR 2026\] Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)
 
 </div>
 

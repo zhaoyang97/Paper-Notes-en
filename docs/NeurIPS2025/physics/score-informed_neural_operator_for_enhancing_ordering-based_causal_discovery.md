@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery
 description: >-
-  [NeurIPS 2025][Physics & Scientific Computing][causal discovery] This paper proposes SciNO (Score-informed Neural Operator), a probabilistic generative model designed in a smooth function space that stably approximates t…
+  [NeurIPS 2025][Physics & Scientific Computing][causal discovery] This paper proposes SciNO (Score-informed Neural Operator), a probabilistic generative model designed in a smooth function space that stably approximates the log-density Hessian diagonal to improve ordering-based causal discovery, achieving a 42.7% reduction in order divergence on synthetic graphs and 31.5% on real-world data.
 tags:
   - "NeurIPS 2025"
   - "Physics & Scientific Computing"
@@ -12,7 +12,7 @@ tags:
   - "Hessian diagonal"
   - "causal ordering"
 date: 2026-05-08
-content_hash: 5240b2c94c05f443
+content_hash: 0e79cc6ae91c5579
 ---
 
 # Score-informed Neural Operator for Enhancing Ordering-based Causal Discovery
@@ -128,11 +128,11 @@ SciNO operates in two stages: (1) a neural operator is trained in a smooth funct
 
 ## Related Papers
 
+- [\[ICML 2025\] Causal Discovery of Latent Variables in Galactic Archaeology](../../ICML2025/physics/causal_discovery_of_latent_variables_in_galactic_archaeology.md)
 - [\[NeurIPS 2025\] Neuro-Spectral Architectures for Causal Physics-Informed Networks](neuro-spectral_architectures_for_causal_physics-informed_networks.md)
 - [\[NeurIPS 2025\] From Black Hole to Galaxy: Neural Operator Framework for Accretion and Feedback Dynamics](from_black_hole_to_galaxy_neural_operator_framework_for_accretion_and_feedback_d.md)
-- [\[ICCV 2025\] JPEG Processing Neural Operator for Backward-Compatible Coding](../../ICCV2025/physics/jpeg_processing_neural_operator_for_backward-compatible_coding.md)
-- [\[ICLR 2026\] One Operator to Rule Them All? On Boundary-Indexed Operator Families in Neural PDE Solvers](../../ICLR2026/physics/one_operator_to_rule_them_all_on_boundary-indexed_operator_families_in_neural_pd.md)
-- [\[NeurIPS 2025\] Towards Universal Neural Operators through Multiphysics Pretraining](towards_universal_neural_operators_through_multiphysics_pretraining.md)
+- [\[ICML 2025\] Causal-PIK: Causality-based Physical Reasoning with a Physics-Informed Kernel](../../ICML2025/physics/causal-pik_causality-based_physical_reasoning_with_a_physics-informed_kernel.md)
+- [\[CVPR 2026\] Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](../../CVPR2026/physics/spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)
 
 </div>
 

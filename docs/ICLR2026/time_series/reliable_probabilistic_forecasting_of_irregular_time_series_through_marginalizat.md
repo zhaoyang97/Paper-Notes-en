@@ -1,14 +1,20 @@
 ---
 title: >-
-  [Paper Note] 通过边缘一致流实现不规则时间序列的可靠概率预测
+  [Paper Note] Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows
 description: >-
-  [ICLR 2026][Time Series][Paper Note] This paper proposes MOSES (Mixtures of Separable Flows), which uses a mixture of normalizing flows—combining a "multivariate Gaussian source distribution + variable-wise separable spline transformations"—to perform probabilistic forecasting for irregular time series. This approach ensures "marginal consistency," where
+  [ICLR 2026][Time Series][Marginal Consistency] This paper proposes MOSES (Mixtures of Separable Flows), which uses a mixture of normalizing flows—combining a "multivariate Gaussian source distribution + variable-wise separable spline transformations"—to perform probabilistic forecasting for irregular time series. This approach ensures "marginal consistency," where predictions for subset queries are perfectly self-consistent with the margins integrated from the joint distribut…
 tags:
-  - ICLR 2026
-  - Time Series
+  - "ICLR 2026"
+  - "Time Series"
+  - "Marginal Consistency"
+  - "Irregular Time Series"
+  - "Normalizing Flows"
+  - "Gaussian Processes"
+  - "Mixture Models"
 date: 2026-05-08
-content_hash: 6e6e473e315a6bfd
+content_hash: b6e583de7c851c92
 ---
+
 # Reliable Probabilistic Forecasting of Irregular Time Series via Marginal Consistent Flows
 
 **Conference**: ICLR 2026  
@@ -145,11 +151,11 @@ Observations: While MOSES and ProFITi are competitive on njNLL, MOSES **signific
 
 ## Related Papers
 
-- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
+- [\[ICLR 2026\] GCGNet: Graph-Consistent Generative Network for Time Series Forecasting with Exogenous Variables](gcgnet_graph-consistent_generative_network_for_time_series_forecasting_with_exog.md)
 - [\[ICLR 2026\] Learning Recursive Multi-Scale Representations for Irregular Multivariate Time Series Forecasting](learning_recursive_multi-scale_representations_for_irregular_multivariate_time_s.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
-- [\[ICLR 2026\] When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection](when_foundation_models_are_one-liners_limitations_and_future_directions_for_time.md)
-- [\[ICLR 2026\] HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming](hivid_llm-guided_video_saliency_for_content-aware_vod_and_live_streaming.md)
+- [\[ICLR 2026\] pyrregular: A Unified Framework for Irregular Time Series, with Classification Benchmarks](pyrregular_a_unified_framework_for_irregular_time_series_with_classification_ben.md)
+- [\[ICLR 2026\] From Samples to Scenarios: A New Paradigm for Probabilistic Forecasting](from_samples_to_scenarios_a_new_paradigm_for_probabilistic_forecasting.md)
+- [\[ICLR 2026\] JAPAN: Joint Adaptive Prediction Areas with Normalising-Flows](japan_joint_adaptive_prediction_areas_with_normalising_flow.md)
 
 </div>
 

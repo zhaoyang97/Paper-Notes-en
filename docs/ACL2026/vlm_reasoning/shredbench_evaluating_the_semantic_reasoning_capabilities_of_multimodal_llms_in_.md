@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction
 description: >-
-  [ACL 2026][vlm_reasoning][Paper Note] ShredBench constructs an evaluation benchmark centered on "restoring content from shredded documents using multimodal large language models," demonstrating that current MLLMs, despite being strong in conventional OCR, generally lack the ability to perform reasoning by integrating visual fragments, reading order, and se
+  [ACL2026 Findings][VLM Reasoning][Document Reconstruction] ShredBench constructs an evaluation benchmark centered on "restoring content from shredded documents using multimodal large language models," demonstrating that current MLLMs, despite being strong in conventional OCR, generally lack the ability to perform reasoning by integrating visual fragments, reading order, and semantic context.
 tags:
-  - ACL 2026
-  - vlm_reasoning
+  - "ACL2026 Findings"
+  - "VLM Reasoning"
+  - "Document Reconstruction"
+  - "MLLM Evaluation"
+  - "Fragmented Documents"
+  - "Semantic Reasoning"
+  - "OCR Robustness"
 date: 2026-05-08
-content_hash: 44b935590567cb50
+content_hash: cd6bbd47ae448420
 ---
+
 # ShredBench: Evaluating the Semantic Reasoning Capabilities of Multimodal LLMs in Document Reconstruction
 
 **Conference**: ACL2026 Findings  
@@ -135,11 +141,11 @@ The semantic ablation in the appendix directly addresses whether models are mere
 
 ## Related Papers
 
-- [\[ACL 2025\] Chart-based Reasoning: Transferring Capabilities from LLMs to VLMs](../../ACL2025/vlm_reasoning/chart-based_reasoning_transferring_capabilities_from_llms_to_vlms.md)
-- [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](scimdr_advancing_scientific_multimodal_document_reasoning.md)
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](../../ICLR2026/vlm_reasoning/visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/vlm_reasoning/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
+- [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](scimdr_advancing_scientific_multimodal_document_reasoning.md)
+- [\[ACL 2025\] Chart-based Reasoning: Transferring Capabilities from LLMs to VLMs](../../ACL2025/vlm_reasoning/chart-based_reasoning_transferring_capabilities_from_llms_to_vlms.md)
 - [\[ACL 2026\] Faithful-First Reasoning, Planning, and Acting for Multimodal LLMs](faithful-first_reasoning_planning_and_acting_for_multimodal_llms.md)
-- [\[AAAI 2026\] FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](../../AAAI2026/vlm_reasoning/finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)
 
 </div>
 

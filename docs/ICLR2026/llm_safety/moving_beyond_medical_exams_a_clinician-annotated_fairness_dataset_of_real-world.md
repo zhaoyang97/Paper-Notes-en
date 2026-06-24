@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare
 description: >-
-  [ICLR 2026][LLM Safety][mental healthcare] The paper introduces MENTAT—an evaluation dataset designed and annotated by 9 US psychiatrists (203 base questions expanded via demographic variables). It covers five clinical practice domains: diagnosis, treatment, triage, monitoring, and documentation. By systematically replacing patient age, race, and gender, the au
+  [ICLR 2026][LLM Safety][mental healthcare] The paper introduces MENTAT—an evaluation dataset designed and annotated by 9 US psychiatrists (203 base questions expanded via demographic variables). It covers five clinical practice domains: diagnosis, treatment, triage, monitoring, and documentation. By systematically replacing patient age, race, and gender, the authors evaluate the decision bias of 22 language models, revealing significant and unpredictable accuracy variations a…
 tags:
-  - ICLR 2026
-  - LLM Safety
-  - mental healthcare
-  - fairness benchmark
-  - clinical decision-making
-  - demographic bias
-  - expert annotation
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "mental healthcare"
+  - "fairness benchmark"
+  - "clinical decision-making"
+  - "demographic bias"
+  - "expert annotation"
 date: 2026-05-08
-content_hash: 73d5c5bc3e6a6d69
+content_hash: b3bc292ab24088d0
 ---
+
 # Moving Beyond Medical Exams: A Clinician-Annotated Fairness Dataset of Real-World Tasks and Ambiguity in Mental Healthcare
 
 **Conference**: ICLR 2026  
@@ -158,7 +159,7 @@ Demographic sensitivity (Average Accuracy for Diagnosis/Monitoring, all models):
 - [\[ACL 2026\] AgentCoMa: A Compositional Benchmark Mixing Commonsense and Mathematical Reasoning in Real-World Scenarios](../../ACL2026/llm_safety/agentcoma_a_compositional_benchmark_mixing_commonsense_and_mathematical_reasonin.md)
 - [\[ICLR 2026\] Hot PATE: Private Aggregation of Distributions for Diverse Tasks](hot_pate_private_aggregation_of_distributions_for_diverse_tasks.md)
 - [\[ICLR 2026\] On Fairness of Task Arithmetic: The Role of Task Vectors](on_fairness_of_task_arithmetic_the_role_of_task_vectors.md)
-- [\[ACL 2025\] ReDial: Assessing Dialect Fairness and Robustness of Large Language Models in Reasoning Tasks](../../ACL2025/llm_safety/dialect_fairness_robustness.md)
+- [\[ICLR 2026\] Tab-MIA: A Benchmark Dataset for Membership Inference Attacks on Tabular Data in LLMs](tab-mia_a_benchmark_dataset_for_membership_inference_attacks_on_tabular_data_in_.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning
 description: >-
-  [NeurIPS 2025][LLM Alignment][reward model] This paper proposes ResponseRank, a method that robustly learns utility differences by exploiting local relative differences in proxy signals of preference strength (e.g.…
+  [NeurIPS 2025][LLM Alignment][reward model] This paper proposes ResponseRank, a method that robustly learns utility differences by exploiting local relative differences in proxy signals of preference strength (e.g., response time and annotator agreement), significantly improving the sample efficiency of reward models.
 tags:
   - "NeurIPS 2025"
   - "LLM Alignment"
@@ -12,7 +12,7 @@ tags:
   - "RLHF"
   - "sample efficiency"
 date: 2026-05-08
-content_hash: a29996e783a5179a
+content_hash: fae4f779de0f9211
 ---
 
 # ResponseRank: Data-Efficient Reward Modeling through Preference Strength Learning
@@ -152,8 +152,8 @@ Robustness under varying proxy signal quality:
 - [\[NeurIPS 2025\] Limited Preference Data? Learning Better Reward Model with Latent Space Synthesis](limited_preference_data_learning_better_reward_model_with_latent_space_synthesis.md)
 - [\[NeurIPS 2025\] Provably Efficient Online RLHF with One-Pass Reward Modeling](provably_efficient_online_rlhf_with_one-pass_reward_modeling.md)
 - [\[NeurIPS 2025\] Improving Data Efficiency for LLM Reinforcement Fine-tuning Through Difficulty-targeted Online Data Selection and Rollout Replay](improving_data_efficiency_for_llm_reinforcement_fine-tuning_through_difficulty-t.md)
-- [\[NeurIPS 2025\] Preference Optimization by Estimating the Ratio of the Data Distribution](preference_optimization_by_estimating_the_ratio_of_the_data_distribution.md)
-- [\[NeurIPS 2025\] What Makes a Reward Model a Good Teacher? An Optimization Perspective](what_makes_a_reward_model_a_good_teacher_an_optimization_perspective.md)
+- [\[ACL 2025\] Rethinking Reward Model Evaluation Through the Lens of Reward Overoptimization](../../ACL2025/llm_alignment/rethinking_reward_model_evaluation_through_the_lens_of_reward_overoptimization.md)
+- [\[ICLR 2026\] Robust Reward Modeling via Causal Rubrics](../../ICLR2026/llm_alignment/robust_reward_modeling_via_causal_rubrics.md)
 
 </div>
 

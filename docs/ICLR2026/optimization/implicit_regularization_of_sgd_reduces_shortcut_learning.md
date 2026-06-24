@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Implicit Regularization of SGD Reduces Shortcut Learning
 description: >-
-  [ICLR 2026][Optimization & Theory][SGD] This paper proves that the implicit regularization of SGD (with strength proportional to the learning rate divided by batch size $\epsilon/b$) systematically suppresses the model's reliance on spurious features, thereby improving group robustness without sacrificing accuracy—whereas full-batch GD not only lacks this be
+  [ICLR 2026][Optimization][Implicit regularization] This paper proves that the implicit regularization of SGD (with strength proportional to the learning rate divided by batch size $\epsilon/b$) systematically suppresses the model's reliance on spurious features, thereby improving group robustness without sacrificing accuracy—whereas full-batch GD not only lacks this benefit but may even exacerbate shortcut dependence.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - SGD
+  - "ICLR 2026"
+  - "Optimization"
+  - "Implicit regularization"
+  - "SGD"
+  - "shortcut learning"
+  - "spurious correlation"
+  - "batch size"
+  - "learning rate"
+  - "group robustness"
 date: 2026-05-08
-content_hash: ba19e72f8e84a8db
+content_hash: a907a1f9da1306ca
 ---
+
 # Implicit Regularization of SGD Reduces Shortcut Learning
 
 **Conference**: ICLR 2026  

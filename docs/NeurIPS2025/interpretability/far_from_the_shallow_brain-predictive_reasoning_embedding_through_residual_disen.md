@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement
 description: >-
-  [NeurIPS 2025][Interpretability][Brain encoding] This paper proposes a residual disentanglement method that decomposes LLM hidden states into four approximately orthogonal embeddings—lexical, syntactic, semantic…
+  [NeurIPS 2025][Interpretability][Brain encoding] This paper proposes a residual disentanglement method that decomposes LLM hidden states into four approximately orthogonal embeddings—lexical, syntactic, semantic, and reasoning—for predicting intracranial ECoG brain signals. The study finds that reasoning signals exhibit independent neural signatures both temporally (~350–400 ms) and spatially (extending beyond classical language areas into visual cortex)…
 tags:
   - "NeurIPS 2025"
   - "Interpretability"
@@ -13,7 +13,7 @@ tags:
   - "reasoning representations"
   - "language hierarchy"
 date: 2026-05-08
-content_hash: 18f7c862600a37e1
+content_hash: b3904a96731b72af
 ---
 
 # Far from the Shallow: Brain-Predictive Reasoning Embedding through Residual Disentanglement
@@ -139,9 +139,9 @@ Validated across multiple generations of the Qwen model family (1.8B–14B); the
 
 - [\[ICML 2026\] DLLM-JEPA: Joint Embedding Predictive Architectures for Masked Diffusion Language Models](../../ICML2026/interpretability/dllm-jepa_joint_embedding_predictive_architectures_for_masked_diffusion_language.md)
 - [\[NeurIPS 2025\] Conditional Distribution Compression via the Kernel Conditional Mean Embedding](conditional_distribution_compression_via_the_kernel_conditional_mean_embedding.md)
+- [\[ICLR 2026\] Mixture of Cognitive Reasoners: Modular Reasoning with Brain-Like Specialization](../../ICLR2026/interpretability/mixture_of_cognitive_reasoners_modular_reasoning_with_brain-like_specialization.md)
 - [\[NeurIPS 2025\] Deep Value Benchmark: Measuring Whether Models Generalize Deep Values or Shallow Preferences](deep_value_benchmark_measuring_whether_models_generalize_deep_values_or_shallow_.md)
-- [\[NeurIPS 2025\] Reasoning by Superposition: A Theoretical Perspective on Chain of Continuous Thought](reasoning_by_superposition_a_theoretical_perspective_on_chain_of_continuous_thou.md)
-- [\[NeurIPS 2025\] Saying the Unsaid: Revealing the Hidden Language of Multimodal Systems Through Telephone Games](saying_the_unsaid_revealing_the_hidden_language_of_multimodal_systems_through_te.md)
+- [\[ICML 2025\] Leveraging Predictive Equivalence in Decision Trees](../../ICML2025/interpretability/leveraging_predictive_equivalence_in_decision_trees.md)
 
 </div>
 

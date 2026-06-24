@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models
 description: >-
-  [NeurIPS 2025][LLM/NLP][self-play fine-tuning] This paper proposes SPACE (Self-PlAy via Noise Contrastive Estimation), which incorporates noise contrastive estimation into self-play fine-tuning. By independently optimizi…
+  [NeurIPS 2025][LLM (Other)][self-play fine-tuning] This paper proposes SPACE (Self-PlAy via Noise Contrastive Estimation), which incorporates noise contrastive estimation into self-play fine-tuning. By independently optimizing the absolute reward values of real and synthetic samples—rather than their relative margin—SPACE fundamentally resolves the unstable convergence issues of methods such as SPIN, and provides provable convergence guarantees.
 tags:
   - "NeurIPS 2025"
-  - "LLM/NLP"
+  - "LLM (Other)"
   - "self-play fine-tuning"
   - "noise contrastive estimation"
   - "LLM alignment"
   - "distribution matching"
   - "iterative optimization"
 date: 2026-05-08
-content_hash: 70dbf371d6de344b
+content_hash: a92553a05fbd635d
 ---
 
 # SPACE: Noise Contrastive Estimation Stabilizes Self-Play Fine-Tuning for Large Language Models
@@ -147,10 +147,10 @@ Increasing $\mu$ yields marginal gains at substantially higher cost; $\mu = 1$ i
 ## Related Papers
 
 - [\[NeurIPS 2025\] Triplets Better Than Pairs: Towards Stable and Effective Self-Play Fine-Tuning for LLMs](triplets_better_than_pairs_towards_stable_and_effective_self-play_fine-tuning_fo.md)
+- [\[ACL 2025\] HFT: Half Fine-Tuning for Large Language Models](../../ACL2025/llm_nlp/hft_half_fine-tuning_for_large_language_models.md)
+- [\[ACL 2025\] GIFT-SW: Gaussian Noise Injected Fine-Tuning of Salient Weights for LLMs](../../ACL2025/llm_nlp/gift-sw_gaussian_noise_injected_fine-tuning_of_salient_weights_for_llms.md)
 - [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
-- [\[NeurIPS 2025\] Synergy over Discrepancy: A Partition-Based Approach to Multi-Domain LLM Fine-Tuning](synergy_over_discrepancy_a_partition-based_approach_to_multi-domain_llm_fine-tun.md)
-- [\[NeurIPS 2025\] Sparse MeZO: Less Parameters for Better Performance in Zeroth-Order LLM Fine-Tuning](sparse_mezo_less_parameters_for_better_performance_in_zeroth-order_llm_fine-tuni.md)
-- [\[NeurIPS 2025\] Solving Inequality Proofs with Large Language Models](solving_inequality_proofs_with_large_language_models.md)
+- [\[ACL 2025\] SDD: Self-Degraded Defense against Malicious Fine-tuning](../../ACL2025/llm_nlp/sdd_self-degraded_defense_against_malicious_fine-tuning.md)
 
 </div>
 

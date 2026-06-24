@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning
 description: >-
-  [AAAI 2026][Graph Learning][Heterogeneous graph learning] Echoless-LP eliminates training label leakage (the echo effect) caused by multi-hop message passing in label pre-computation via Partition-Focused Echoless Propag…
+  [AAAI 2026][Graph Learning][Heterogeneous graph learning] Echoless-LP eliminates training label leakage (the echo effect) caused by multi-hop message passing in label pre-computation via Partition-Focused Echoless Propagation (PFEP). Combined with an Asymmetric Partition Scheme (APS) and a PostAdjust mechanism to address information loss and distribution shift introduced by partitioning, the method remains memory-efficient, is compatible with arbitrary message-passing operato…
 tags:
   - "AAAI 2026"
   - "Graph Learning"
@@ -12,7 +12,7 @@ tags:
   - "echo effect"
   - "memory efficiency"
 date: 2026-05-08
-content_hash: 347d13e6787f04c9
+content_hash: f119fc2186778e59
 ---
 
 # EchoLess: Label-Based Pre-Computation for Memory-Efficient Heterogeneous Graph Learning
@@ -169,8 +169,8 @@ RemoveDiag-LP is incompatible with RpHGNN (marked as --), while Echoless-LP inte
 - [\[AAAI 2026\] MUG: Meta-path-aware Universal Heterogeneous Graph Pre-Training](mug_meta-path-aware_universal_heterogeneous_graph_pre-training.md)
 - [\[AAAI 2026\] Spiking Heterogeneous Graph Attention Networks](spiking_heterogeneous_graph_attention_networks.md)
 - [\[AAAI 2026\] Posterior Label Smoothing for Node Classification](posterior_label_smoothing_for_node_classification.md)
-- [\[AAAI 2026\] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)
 - [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
+- [\[AAAI 2026\] Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces](beyond_fact_retrieval_episodic_memory_for_rag_with_generative_semantic_workspace.md)
 
 </div>
 

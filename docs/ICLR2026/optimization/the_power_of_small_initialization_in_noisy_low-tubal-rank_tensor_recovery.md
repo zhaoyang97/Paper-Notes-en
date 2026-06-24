@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] The Power of Small Initialization in Noisy Low-Tubal-Rank Tensor Recovery
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] In noisy low-rank tensor recovery with an over-estimated tubal-rank, this paper proves that setting the initialization scale of Factorized Gradient Descent (FGD) close to zero (small initialization) allows the final recovery error to depend only on the true tubal-rank $r$ rather than the over-estimated rank $R$. This a
+  [ICLR 2026][Optimization][Low tubal-rank tensor recovery] In noisy low-rank tensor recovery with an over-estimated tubal-rank, this paper proves that setting the initialization scale of Factorized Gradient Descent (FGD) close to zero (small initialization) allows the final recovery error to depend only on the true tubal-rank $r$ rather than the over-estimated rank $R$. This approaches the information-theoretic minimax lower bound and can be achieved without any prior knowledg…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Low tubal-rank tensor recovery"
+  - "factorized gradient descent"
+  - "small initialization"
+  - "over-parameterization"
+  - "minimax optimal"
+  - "early stopping"
 date: 2026-05-08
-content_hash: d1c57664247871fe
+content_hash: c44827b8e26d543e
 ---
+
 # The Power of Small Initialization in Noisy Low-Tubal-Rank Tensor Recovery
 
 **Conference**: ICLR 2026  
@@ -148,14 +155,17 @@ In completion tasks on 50 $481\times321\times3$ color images from the Berkeley d
 
 <div class="related-papers" markdown="1">
 
-[1] **Liu et al.**, "Reduced sample complexity for overparameterized low tubal rank tensor recovery," arXiv:2403.02498, 2024.  
-[2] **Karnik et al.**, "Implicit Regularization of Small Initialization in Overparameterized Low-Rank Matrix and Tensor Recovery," 2025.  
-[3] **Shi et al.**, "Fast and robust low tubal rank tensor recovery via factorized gradient descent," 2021.
+## Related Papers
+
+- [\[ICLR 2026\] Trion: FFT-based Dynamic Subspace Selection for Low-Rank Adaptive Optimization of LLMs](trion_fft-based_dynamic_subspace_selection_for_low-rank_adaptive_optimization_of.md)
+- [\[ICLR 2026\] Towards Efficient Optimizer Design for LLM via Structured Fisher Approximation with a Low-Rank Extension](towards_efficient_optimizer_design_for_llm_via_structured_fisher_approximation_w.md)
+- [\[ICLR 2026\] LoRA meets Riemannion: Muon Optimizer for Parametrization-independent Low-Rank Adapters](lora_meets_riemannion_muon_optimizer_for_parametrization-independent_low-rank_ad.md)
+- [\[ECCV 2024\] Handling the Non-smooth Challenge in Tensor SVD: A Multi-objective Tensor Recovery Framework](../../ECCV2024/optimization/handling_the_non-smooth_challenge_in_tensor_svd_a_multi-objective_tensor_recover.md)
+- [\[ICLR 2026\] Hierarchical Multi-Stage Recovery Framework for Kronecker Compressed Sensing](hierarchical_multi-stage_recovery_framework_for_kronecker_compressed_sensing.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[ICLR 2026\] Trion: FFT-based Dynamic Subspace Selection for Low-Rank Adaptive Optimization of LLMs](trion_fft-based_dynamic_subspace_selection_for_low-rank_adaptive_optimization_of.md)

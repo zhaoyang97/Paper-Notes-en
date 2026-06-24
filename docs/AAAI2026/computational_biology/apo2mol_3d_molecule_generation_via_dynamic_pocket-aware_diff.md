@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models
 description: >-
-  [AAAI 2026][Computational Biology][Structure-based drug design] This paper proposes Apo2Mol, a diffusion-based all-atom framework that simultaneously generates 3D ligand molecules and corresponding holo (bound-state) poc…
+  [AAAI 2026][Computational Biology][Structure-based drug design] This paper proposes Apo2Mol, a diffusion-based all-atom framework that simultaneously generates 3D ligand molecules and corresponding holo (bound-state) pocket conformations from protein apo (unbound) conformations. Trained on 24K experimentally resolved apo-holo structure pairs, it achieves state-of-the-art performance in binding affinity (Vina min −7.86) and drug-likeness.
 tags:
   - "AAAI 2026"
   - "Computational Biology"
@@ -12,7 +12,7 @@ tags:
   - "3D molecule generation"
   - "SE(3) equivariance"
 date: 2026-05-08
-content_hash: 55c966c93a39e635
+content_hash: 740a0c801dc978b1
 ---
 
 # Apo2Mol: 3D Molecule Generation via Dynamic Pocket-Aware Diffusion Models
@@ -121,11 +121,11 @@ Five loss terms: ligand position MSE + ligand atom type KL divergence + pocket t
 
 ## Related Papers
 
-- [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](../../ICLR2026/computational_biology/syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
 - [\[AAAI 2026\] Distributional Priors Guided Diffusion for Generating 3D Molecules in Low Data Regimes](distributional_priors_guided_diffusion_for_generating_3d_molecules_in_low_data_r.md)
+- [\[ICML 2025\] Scalable Non-Equivariant 3D Molecule Generation via Rotational Alignment](../../ICML2025/computational_biology/scalable_non-equivariant_3d_molecule_generation_via_rotational_alignment.md)
+- [\[ICLR 2026\] SynCoGen: Synthesizable 3D Molecule Generation via Joint Reaction and Coordinate Modeling](../../ICLR2026/computational_biology/syncogen_synthesizable_3d_molecule_generation_via_joint_reaction_and_coordinate_.md)
+- [\[ICLR 2026\] GAGA: Gaussianity-Aware Gaussian Approximation for Efficient 3D Molecular Generation](../../ICLR2026/computational_biology/gaga_gaussianity-aware_gaussian_approximation_for_efficient_3d_molecular_generat.md)
 - [\[AAAI 2026\] MergeDNA: Context-aware Genome Modeling with Dynamic Tokenization through Token Merging](mergedna_context-aware_genome_modeling_with_dynamic_tokenization_through_token_m.md)
-- [\[NeurIPS 2025\] Prior-Guided Flow Matching for Target-Aware Molecule Design with Learnable Atom Number](../../NeurIPS2025/computational_biology/prior-guided_flow_matching_for_target-aware_molecule_design_with_learnable_atom_.md)
-- [\[NeurIPS 2025\] Atomic Diffusion Models for Small Molecule Structure Elucidation from NMR Spectra](../../NeurIPS2025/computational_biology/atomic_diffusion_models_for_small_molecule_structure_elucidation_from_nmr_spectr.md)
 
 </div>
 

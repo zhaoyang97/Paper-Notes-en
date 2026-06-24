@@ -2,19 +2,20 @@
 title: >-
   [Paper Note] e3: Learning to Explore Enables Extrapolation of Test-Time Compute for LLMs
 description: >-
-  [ICLR 2026][LLM Reasoning][test-time scaling] This paper points out that most open-source reasoning models fail to "extrapolate" test-time compute beyond their training budgets. It proposes the e3 recipe—linking the asymmetric capabilities of base models + RL negative gradients + coupled curricula—to enable in-context exploration. This allows a 1.7B model to conti
+  [ICLR 2026][Reasoning][test-time scaling] This paper points out that most open-source reasoning models fail to "extrapolate" test-time compute beyond their training budgets. It proposes the e3 recipe—linking the asymmetric capabilities of base models + RL negative gradients + coupled curricula—to enable in-context exploration. This allows a 1.7B model to continuously improve when extrapolating to 2.5× its training budget on AIME/HMMT'25, surpassing all models $\le$ 2B.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
-  - test-time scaling
-  - extrapolation
-  - in-context exploration
-  - verification-generation asymmetry
-  - negative gradient
-  - RL curriculum
+  - "ICLR 2026"
+  - "Reasoning"
+  - "test-time scaling"
+  - "extrapolation"
+  - "in-context exploration"
+  - "verification-generation asymmetry"
+  - "negative gradient"
+  - "RL curriculum"
 date: 2026-05-08
-content_hash: 23ed307d40b13f2c
+content_hash: 6ec4dee7ee389224
 ---
+
 # e3: Learning to Explore Enables Extrapolation of Test-Time Compute for LLMs
 
 **Conference**: ICLR 2026  
@@ -126,10 +127,10 @@ e3-1.7B improves the base Qwen3-1.7B from 35.5 to 43.8 on pass@1, and pass@32 al
 ## Related Papers
 
 - [\[ICLR 2026\] Strategic Scaling of Test-Time Compute: A Bandit Learning Approach](strategic_scaling_of_test-time_compute_a_bandit_learning_approach.md)
-- [\[ICLR 2026\] Zero-Overhead Introspection for Adaptive Test-Time Compute](zero-overhead_introspection_for_adaptive_test-time_compute.md)
 - [\[ICLR 2026\] Mode-conditioning unlocks superior test-time compute scaling](mode-conditioning_unlocks_superior_test-time_compute_scaling.md)
-- [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
+- [\[ICLR 2026\] Zero-Overhead Introspection for Adaptive Test-Time Compute](zero-overhead_introspection_for_adaptive_test-time_compute.md)
 - [\[ICLR 2026\] Test-Time Scaling in Diffusion LLMs via Hidden Semi-Autoregressive Experts](test-time_scaling_in_diffusion_llms_via_hidden_semi-autoregressive_experts.md)
+- [\[ICLR 2026\] Plan and Budget: Effective and Efficient Test-Time Scaling on Reasoning LLMs](plan_and_budget_effective_and_efficient_test-time_scaling_on_reasoning_large_lan.md)
 
 </div>
 

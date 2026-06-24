@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation
 description: >-
-  [ICML 2026][LLM Agent][SQL Agent] This paper constructs ExCyTIn-Bench, the first benchmark evaluating LLM Agents for end-to-end "cyber threat investigation." Using 57 security log tables from a real Azure tenant, it automatically generates 7,542 SQL Q&A pairs with evidence chains via alert-entity bipartite graphs. It provides a MySQL environment for Ag
+  [ICML 2026][LLM Agent][Threat Investigation] This paper constructs ExCyTIn-Bench, the first benchmark evaluating LLM Agents for end-to-end "cyber threat investigation." Using 57 security log tables from a real Azure tenant, it automatically generates 7,542 SQL Q&A pairs with evidence chains via alert-entity bipartite graphs. It provides a MySQL environment for Agents to answer by querying logs and performing multi-hop evidence tracking. Currently, the strongest model…
 tags:
-  - ICML 2026
-  - LLM Agent
-  - SQL Agent
-  - Azure Sentinel
-  - ReAct
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Threat Investigation"
+  - "SQL Agent"
+  - "Bipartite Graph QA"
+  - "Azure Sentinel"
+  - "ReAct"
 date: 2026-05-08
-content_hash: cdd0eb9fc4313cf9
+content_hash: 7cdb00fec08c673c
 ---
+
 # ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation
 
 **Conference**: ICML 2026  
@@ -144,11 +147,11 @@ Performance varies significantly by incident: incident 38 (Fileless Attack, 25 a
 
 ## Related Papers
 
-- [\[ACL 2025\] LegalAgentBench: Evaluating LLM Agents in Legal Domain](../../ACL2025/llm_agent/legalagentbench_evaluating_llm_agents_in_legal_domain.md)
-- [\[ACL 2025\] MultiAgentBench: Evaluating the Collaboration and Competition of LLM Agents](../../ACL2025/llm_agent/multiagentbench_evaluating_the_collaboration_and_competition_of_llm_agents.md)
-- [\[ICLR 2026\] ZeroDayBench: Evaluating LLM Agents on Unseen Zero-Day Vulnerabilities for Cyberdefense](../../ICLR2026/llm_agent/zerodaybench_evaluating_llm_agents_on_unseen_zero-day_vulnerabilities_for_cyberd.md)
-- [\[ICML 2026\] CoDA-Bench: Can Code Agents Handle Data-Intensive Tasks?](coda-bench_can_code_agents_handle_data-intensive_tasks.md)
-- [\[ICML 2026\] Hunt Instead of Wait: Evaluating Deep Data Research on Large Language Models](hunt_instead_of_wait_evaluating_deep_data_research_on_large_language_models.md)
+- [\[ICLR 2026\] InfoMosaic-Bench: Evaluating Multi-Source Information Seeking in Tool-Augmented Agents](../../ICLR2026/llm_agent/infomosaic-bench_evaluating_multi-source_information_seeking_in_tool-augmented_a.md)
+- [\[ICLR 2026\] Cyber-Zero: Training Cybersecurity Agents without Runtime](../../ICLR2026/llm_agent/cyber-zero_training_cybersecurity_agents_without_runtime.md)
+- [\[ICML 2026\] MCP-Persona: Evaluating LLM Agent Capabilities in Real-World Personal Applications via Environment Simulation](mcp-persona_benchmarking_llm_agents_on_real-world_personal_applications_via_envi.md)
+- [\[ICLR 2026\] Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions](../../ICLR2026/llm_agent/evaluating_memory_in_llm_agents_via_incremental_multi-turn_interactions.md)
+- [\[ICML 2026\] EvoClaw: Evaluating AI Agents on Continuous Software Evolution](evoclaw_evaluating_ai_agents_on_continuous_software_evolution.md)
 
 </div>
 

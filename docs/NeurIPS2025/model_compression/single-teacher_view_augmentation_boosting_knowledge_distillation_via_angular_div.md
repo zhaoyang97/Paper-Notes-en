@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity
 description: >-
-  [NeurIPS 2025][Model Compression][Knowledge Distillation] This paper proposes Angular-KD, which attaches multiple lightweight linear branches to a single teacher model and introduces two angular diversity losses — a cons…
+  [NeurIPS 2025][Model Compression][Knowledge Distillation] This paper proposes Angular-KD, which attaches multiple lightweight linear branches to a single teacher model and introduces two angular diversity losses — a constrained inter-angle diversity loss and an intra-angle diversity loss — to generate diverse supervisory signals from a single teacher. This approach serves as a low-cost alternative to multi-teacher distillation and achieves state-of-the-art performance across…
 tags:
   - "NeurIPS 2025"
   - "Model Compression"
@@ -11,7 +11,7 @@ tags:
   - "Angular Diversity"
   - "Ensemble Learning"
 date: 2026-05-08
-content_hash: ccceea672a0bd3d7
+content_hash: 64529631f1bac12d
 ---
 
 # Single-Teacher View Augmentation: Boosting Knowledge Distillation via Angular Diversity
@@ -165,10 +165,10 @@ The optimal number of augmentation heads is $N=5$; each head adds only approxima
 ## Related Papers
 
 - [\[ICCV 2025\] A Good Teacher Adapts Their Knowledge for Distillation](../../ICCV2025/model_compression/a_good_teacher_adapts_their_knowledge_for_distillation.md)
+- [\[ACL 2025\] Data Laundering: Artificially Boosting Benchmark Results through Knowledge Distillation](../../ACL2025/model_compression/data_laundering_artificially_boosting_benchmark_results_through_knowledge_distil.md)
 - [\[NeurIPS 2025\] ATLAS: Autoformalizing Theorems through Lifting, Augmentation, and Synthesis of Data](atlas_autoformalizing_theorems_through_lifting_augmentation_and_synthesis_of_dat.md)
 - [\[NeurIPS 2025\] Few-Shot Knowledge Distillation of LLMs With Counterfactual Explanations](few-shot_knowledge_distillation_of_llms_with_counterfactual_explanations.md)
-- [\[NeurIPS 2025\] Why Knowledge Distillation Works in Generative Models: A Minimal Working Explanation](why_knowledge_distillation_works_in_generative_models_a_minimal_working_explanat.md)
-- [\[NeurIPS 2025\] PKD: Preference-driven Knowledge Distillation for Few-shot Node Classification](preference-driven_knowledge_distillation_for_few-shot_node_classification.md)
+- [\[ICLR 2026\] In Good GRACES: Principled Teacher Selection for Knowledge Distillation](../../ICLR2026/model_compression/in_good_graces_principled_teacher_selection_for_knowledge_distillation.md)
 
 </div>
 

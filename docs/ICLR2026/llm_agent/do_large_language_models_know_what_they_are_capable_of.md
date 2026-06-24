@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Do Large Language Models Know What They Are Capable Of?
 description: >-
-  [ICLR 2026][LLM Agent][Paper Note] The authors systematically measure the ability of LLMs to "predict their success before starting a task" through three experimental setups. The study reveals that all models are systematically overconfident, though most possess discriminative power better than random. Furthermore, this self-awareness does not improve c
+  [ICLR2026][LLM Agent][In-advance confidence] The authors systematically measure the ability of LLMs to "predict their success before starting a task" through three experimental setups. The study reveals that all models are systematically overconfident, though most possess discriminative power better than random. Furthermore, this self-awareness does not improve consistently as models grow stronger—current LLM agents are fundamentally limited by their inadequate understanding…
 tags:
-  - ICLR 2026
-  - LLM Agent
+  - "ICLR2026"
+  - "LLM Agent"
+  - "In-advance confidence"
+  - "overconfidence"
+  - "discriminative power"
+  - "risk aversion"
+  - "misuse risk"
 date: 2026-05-08
-content_hash: 8e532961cec97b4f
+content_hash: b7cb8decb004a4dd
 ---
+
 # Do Large Language Models Know What They Are Capable Of?
 
 **Conference**: ICLR2026  
@@ -95,6 +101,7 @@ This experiment uses SWE-Bench Verified (~500 agentic tasks requiring tool calls
 - Value: ⭐⭐⭐⭐ (Critical for agent reliability and AI safety assessments)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

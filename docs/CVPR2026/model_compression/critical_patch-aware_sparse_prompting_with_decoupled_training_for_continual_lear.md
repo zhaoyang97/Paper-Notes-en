@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge
 description: >-
-  [CVPR 2026][Model Compression][Prompt-based CL] The CPS-Prompt framework is proposed, which achieves approximately 1.6× improvement in training-time memory and computational efficiency for Prompt-based continual learning on edge devices through two modules: task-aware Critical Patch Sampling (CPS) and Decoupled Prompt-Classifier Training (DPCT), while only incurring
+  [CVPR 2026][Model Compression][Continual Learning] The CPS-Prompt framework is proposed, which achieves approximately 1.6× improvement in training-time memory and computational efficiency for Prompt-based continual learning on edge devices through two modules: task-aware Critical Patch Sampling (CPS) and Decoupled Prompt-Classifier Training (DPCT), while only incurring an approximately 2% drop in accuracy.
 tags:
-  - CVPR 2026
-  - Model Compression
-  - Prompt-based CL
-  - Token Reduction
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Continual Learning"
+  - "Edge Devices"
+  - "Prompt-based CL"
+  - "Token Reduction"
+  - "Training Efficiency"
 date: 2026-05-08
-content_hash: 320f077b5be42fc3
+content_hash: 0caa14a803c97ade
 ---
+
 # Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge
 
 **Conference**: CVPR 2026  
@@ -153,10 +157,10 @@ Efficiency Comparison (Measured on Jetson Orin Nano):
 ## Related Papers
 
 - [\[NeurIPS 2025\] REP: Resource-Efficient Prompting for Rehearsal-Free Continual Learning](../../NeurIPS2025/model_compression/rep_resource-efficient_prompting_for_rehearsal-free_continual_learning.md)
-- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](elastic_weight_consolidation_done_right_for_continual_learning.md)
-- [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
 - [\[CVPR 2026\] Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation](cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn.md)
-- [\[ICLR 2026\] IDER: IDempotent Experience Replay for Reliable Continual Learning](../../ICLR2026/model_compression/ider_idempotent_experience_replay_for_reliable_continual_learning.md)
+- [\[CVPR 2026\] MEMO: Human-like Crisp Edge Detection Using Masked Edge Prediction](memo_human-like_crisp_edge_detection_using_masked_edge_prediction.md)
+- [\[CVPR 2026\] Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)
+- [\[ICLR 2026\] Quantized Gradient Projection for Memory-Efficient Continual Learning](../../ICLR2026/model_compression/quantized_gradient_projection_for_memory-efficient_continual_learning.md)
 
 </div>
 

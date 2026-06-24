@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] VisCodex utilizes "task vectors" to arithmetically merge a powerful code LLM into the language backbone of a Vision-Language Model (VLM), while keeping the vision encoder and projection layer frozen. Combined with a self-constructed 598k multimodal coding dataset (MCD) for supervised fine-tuning, the MLLM retains visio
+  [ICLR 2026][Multimodal VLM][Multimodal Code Generation] VisCodex utilizes "task vectors" to arithmetically merge a powerful code LLM into the language backbone of a Vision-Language Model (VLM), while keeping the vision encoder and projection layer frozen. Combined with a self-constructed 598k multimodal coding dataset (MCD) for supervised fine-tuning, the MLLM retains vision understanding while gaining strong coding capabilities. It achieves open-source SOTA on UI-to-code and…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Multimodal Code Generation"
+  - "Model Merging"
+  - "Task Vectors"
+  - "Instruction Tuning Data"
+  - "Vision-to-Code"
 date: 2026-05-08
-content_hash: e60c0f511c1a6d45
+content_hash: 60db2ce973e2bb12
 ---
+
 # VisCodex: Unified Multimodal Code Generation via Merging Vision and Coding Models
 
 **Conference**: ICLR 2026  
@@ -138,10 +144,10 @@ Selection of Code LLM: Merging code-specialized models is superior to merging ge
 ## Related Papers
 
 - [\[ICLR 2026\] OptMerge: Unifying Multimodal LLM Capabilities and Modalities via Model Merging](optmerge_unifying_multimodal_llm_capabilities_and_modalities_via_model_merging.md)
+- [\[ICLR 2026\] MME-Unify: A Comprehensive Benchmark for Unified Multimodal Understanding and Generation Models](mme-unify_a_comprehensive_benchmark_for_unified_multimodal_understanding_and_gen.md)
 - [\[ICLR 2026\] Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)
+- [\[CVPR 2026\] Beyond Layer-Wise Merging: Chain-of-Merging for Vision-Language Models](../../CVPR2026/multimodal_vlm/beyond_layer-wise_merging_chain-of-merging_for_vision-language_models.md)
 - [\[ICLR 2026\] Lavida-O: Elastic Large Masked Diffusion Models for Unified Multimodal Understanding and Generation](lavida-o_elastic_large_masked_diffusion_models_for_unified_multimodal_understand.md)
-- [\[ICLR 2026\] Omni-Weather: A Unified Multimodal Model for Weather Radar Understanding and Generation](omni-weather_a_unified_multimodal_model_for_weather_radar_understanding_and_gene.md)
-- [\[ICLR 2026\] Thinking with Camera: A Unified Multimodal Model for Camera-Centric Understanding and Generation](thinking_with_camera_a_unified_multimodal_model_for_camera-centric_understanding.md)
 
 </div>
 

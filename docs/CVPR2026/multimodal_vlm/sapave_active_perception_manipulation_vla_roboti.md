@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 description: >-
-  [CVPR 2026][Robotics & Embodied AI][Paper Note] SaPaVe proposes an end-to-end active manipulation framework. By employing a bottom-to-top training strategy with decoupled camera and manipulation actions, it first learns active perception priors using 200,000 semantic camera control pairs, followed by joint optimization for active manipulation. In real-world scenario
+  [CVPR 2026][Multimodal VLM][Active Perception] SaPaVe proposes an end-to-end active manipulation framework. By employing a bottom-to-top training strategy with decoupled camera and manipulation actions, it first learns active perception priors using 200,000 semantic camera control pairs, followed by joint optimization for active manipulation. In real-world scenarios, it surpasses π₀ and GR00T N1 by a 31.25% improvement in success rate.
 tags:
-  - CVPR 2026
-  - Robotics & Embodied AI
+  - "CVPR 2026"
+  - "Multimodal VLM"
+  - "Active Perception"
+  - "VLA Models"
+  - "Decoupled Action Space"
+  - "3D Spatial Injection"
+  - "Humanoid Robots"
 date: 2026-05-08
-content_hash: 96f278c75e233eb3
+content_hash: 21d2eaea34d02714
 ---
+
 # SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 
 **Conference**: CVPR 2026  
@@ -143,11 +149,11 @@ Real-world Active Manipulation (Success Rate %):
 
 ## Related Papers
 
-- [\[CVPR 2026\] ActiveVLA: Injecting Active Perception into Vision-Language-Action Models for Precise 3D Robotic Manipulation](activevla_injecting_active_perception_into_vision-language-action_models_for_pre.md)
-- [\[CVPR 2026\] Adaptive Action Chunking at Inference-time for Vision-Language-Action Models](adaptive_action_chunking_at_inference-time_for_vision-language-action_models.md)
-- [\[CVPR 2026\] QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models](quantvla_scale-calibrated_post-training_quantization_for_vision-language-action_.md)
-- [\[CVPR 2026\] HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models](hif-vla_hindsight_insight_and_foresight_through_motion_representation_for_vision.md)
-- [\[CVPR 2026\] AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention](ava_vla_improving_vision_language_action_models_with_active_visual_attention.md)
+- [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](../../ICML2026/multimodal_vlm/active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
+- [\[CVPR 2026\] SIMPACT: Simulation-Enabled Action Planning using Vision-Language Models](simpact_simulation-enabled_action_planning_using_vision-language_models.md)
+- [\[CVPR 2026\] Same or Not? Enhancing Visual Perception in Vision-Language Models](same_or_not_enhancing_visual_perception_in_vision-language_models.md)
+- [\[CVPR 2026\] Abstract 3D Perception for Spatial Intelligence in Vision-Language Models](abstract_3d_perception_for_spatial_intelligence_in_vision-language_models.md)
+- [\[CVPR 2026\] 4DP-QA: Scalable QA for 4D Perception in Vision Language Models](4dp-qa_scalable_qa_for_4d_perception_in_vision_language_models.md)
 
 </div>
 

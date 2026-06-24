@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference
 description: >-
-  [ICLR 2026][LLM Efficiency][Paper Note] Authors discovered that reasoning LLMs present a "U-shaped entropy curve" across different problem difficulties—easy problems are answered correctly but with high entropy (overthinking). Consequently, a lightweight probe reading only the model's hidden states is trained to dynamically select among Easy, Normal, and Har
+  [ICLR2026][LLM Efficiency][Reasoning LLMs] Authors discovered that reasoning LLMs present a "U-shaped entropy curve" across different problem difficulties—easy problems are answered correctly but with high entropy (overthinking). Consequently, a lightweight probe reading only the model's hidden states is trained to dynamically select among Easy, Normal, and Hard reasoning strategies for each problem. Without fine-tuning the base model, this method reduces token consumption by…
 tags:
-  - ICLR 2026
-  - LLM Efficiency
+  - "ICLR2026"
+  - "LLM Efficiency"
+  - "Reasoning LLMs"
+  - "Overthinking"
+  - "Token Budget"
+  - "Difficulty-Adaptive"
+  - "Hidden State Probe"
 date: 2026-05-08
-content_hash: ba3382d42859482a
+content_hash: 345506346f4f4f9c
 ---
+
 # DiffAdapt: Difficulty-Adaptive Reasoning for Token-Efficient LLM Inference
 
 **Conference**: ICLR2026  

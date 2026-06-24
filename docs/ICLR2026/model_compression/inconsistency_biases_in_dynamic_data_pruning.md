@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Inconsistency Biases in Dynamic Data Pruning
 description: >-
-  [ICLR 2026][Model Compression][Paper Note] This paper identifies that dynamic data pruning is hindered by two types of "inconsistency biases": **Score Context Drift**, caused by comparing importance scores across different model states, and **Temporal Gradient Bias**, resulting from non-uniform sampling across epochs. The proposed RePB framework (Local Window P
+  [ICLR 2026][Model Compression][Dynamic Data Pruning] This paper identifies that dynamic data pruning is hindered by two types of "inconsistency biases": **Score Context Drift**, caused by comparing importance scores across different model states, and **Temporal Gradient Bias**, resulting from non-uniform sampling across epochs. The proposed RePB framework (Local Window Pruning + Uniform Resampling + Cumulative Temporal Reweighting) structurally eliminates these biases…
 tags:
-  - ICLR 2026
-  - Model Compression
+  - "ICLR 2026"
+  - "Model Compression"
+  - "Dynamic Data Pruning"
+  - "Score Context Drift"
+  - "Temporal Gradient Bias"
+  - "Local Window Pruning"
+  - "Cumulative Temporal Reweighting"
 date: 2026-05-08
-content_hash: 196dae3adb4153c2
+content_hash: fdab841c6bcfa74c
 ---
+
 # Inconsistency Biases in Dynamic Data Pruning
 
 **Conference**: ICLR 2026  

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection
 description: >-
-  [ICCV 2025][Autonomous Driving][4D millimeter-wave radar] This paper proposes CVFusion — the first two-stage 4D radar-camera fusion network for 3D object detection. Stage 1 generates high-recall proposals via a Radar-Gui…
+  [ICCV 2025][Autonomous Driving][4D millimeter-wave radar] This paper proposes CVFusion — the first two-stage 4D radar-camera fusion network for 3D object detection. Stage 1 generates high-recall proposals via a Radar-Guided Iterative (RGIter) BEV fusion module, while Stage 2 refines each proposal by aggregating heterogeneous multi-view features through Point-Guided Fusion (PGF) and Grid-Guided Fusion (GGF). CVFusion achieves mAP improvements of 9.10% and 3.68% on VoD and TJ4D…
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "two-stage detection"
   - "BEV fusion"
 date: 2026-05-08
-content_hash: dfe479773938fefc
+content_hash: 9bc712377aa0ca97
 ---
 
 # CVFusion: Cross-View Fusion of 4D Radar and Camera for 3D Object Detection
@@ -124,11 +124,11 @@ CVFusion advances the state of the art on VoD from 56.31 to 65.41 (+9.10%), and 
 
 ## Related Papers
 
+- [\[CVPR 2025\] RaCFormer: Towards High-Quality 3D Object Detection via Query-based Radar-Camera Fusion](../../CVPR2025/autonomous_driving/racformer_towards_high-quality_3d_object_detection_via_query-based_radar-camera_.md)
 - [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](../../CVPR2026/autonomous_driving/r4det_4d_radar-camera_fusion_for_high-performance_3d_object_detection.md)
+- [\[CVPR 2025\] V2X-R: Cooperative LiDAR-4D Radar Fusion with Denoising Diffusion for 3D Object Detection](../../CVPR2025/autonomous_driving/v2x-r_cooperative_lidar-4d_radar_fusion_with_denoising_diffusion_for_3d_object_d.md)
 - [\[ICCV 2025\] EVT: Efficient View Transformation for Multi-Modal 3D Object Detection](evt_efficient_view_transformation_for_multi-modal_3d_object_detection.md)
-- [\[AAAI 2026\] Exploring Surround-View Fisheye Camera 3D Object Detection](../../AAAI2026/autonomous_driving/exploring_surround-view_fisheye_camera_3d_object_detection.md)
-- [\[NeurIPS 2025\] V2X-Radar: A Multi-Modal Dataset with 4D Radar for Cooperative Perception](../../NeurIPS2025/autonomous_driving/v2x-radar_a_multi-modal_dataset_with_4d_radar_for_cooperative_perception.md)
-- [\[ICCV 2025\] Robust 3D Object Detection using Probabilistic Point Clouds from Single-Photon LiDARs](robust_3d_object_detection_using_probabilistic_point_clouds_from_single-photon_l.md)
+- [\[CVPR 2026\] RPGFusion: 4D Radar Prior-Guided Multi-Modal Fusion for 3D Detection](../../CVPR2026/autonomous_driving/rpgfusion_4d_radar_prior-guided_multi-modal_fusion_for_3d_detection.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning
 description: >-
-  [AAAI 2026][Multimodal VLM][Class-incremental learning] This paper proposes BOFA, a framework that exclusively fine-tunes the existing cross-modal projection layer (bridge-layer) in CLIP. By constraining parameter update…
+  [AAAI 2026][Multimodal VLM][Class-incremental learning] This paper proposes BOFA, a framework that exclusively fine-tunes the existing cross-modal projection layer (bridge-layer) in CLIP. By constraining parameter updates within a low-rank "safe subspace" orthogonal to old-task features via Orthogonal Low-Rank Fusion, and combining this with cross-modal hybrid prototypes, BOFA achieves state-of-the-art exemplar-free class-incremental learning without introducing any additiona…
 tags:
   - "AAAI 2026"
   - "Multimodal VLM"
@@ -12,7 +12,7 @@ tags:
   - "cross-modal prototypes"
   - "catastrophic forgetting"
 date: 2026-05-08
-content_hash: 7848c1cf6769c629
+content_hash: 8c3fb5774b270d39
 ---
 
 # BOFA: Bridge-Layer Orthogonal Low-Rank Fusion for CLIP-Based Class-Incremental Learning
@@ -174,11 +174,11 @@ The core innovation of BOFA lies in **restricting adaptation to existing layers 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Naming to Learn: Class Incremental Learning for Vision-Language Model with Unlabeled Data](../../ICLR2026/multimodal_vlm/naming_to_learn_class_incremental_learning_for_vision-language_model_with_unlabe.md)
 - [\[AAAI 2026\] Branch, or Layer? Zeroth-Order Optimization for Continual Learning of Vision-Language Models](branch_or_layer_zeroth-order_optimization_for_continual_lear.md)
-- [\[ICCV 2025\] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation](../../ICCV2025/multimodal_vlm/sparsity_outperforms_low-rank_projections_in_few-shot_adaptation.md)
+- [\[ICLR 2026\] MoRA: Missing Modality Low-Rank Adaptation for Visual Recognition](../../ICLR2026/multimodal_vlm/mora_missing_modality_low-rank_adaptation_for_visual_recognition.md)
 - [\[AAAI 2026\] Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)
-- [\[ICLR 2026\] Enhanced Continual Learning of Vision-Language Models with Model Fusion](../../ICLR2026/multimodal_vlm/enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)
-- [\[AAAI 2026\] Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)
+- [\[CVPR 2025\] Improving Personalized Search with Regularized Low-Rank Parameter Updates](../../CVPR2025/multimodal_vlm/improving_personalized_search_with_regularized_low-rank_parameter_updates.md)
 
 </div>
 

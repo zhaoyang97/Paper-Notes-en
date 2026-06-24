@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Scaling Laws of Global Weather Models
 description: >-
-  [ICML 2026][Earth Science][ERA5] This paper presents the first cross-model scaling law analysis of five mainstream data-driven weather models (Aurora, AIFS, Pangu, GraphCast, SFNO) under a unified training/evaluation protocol. It finds that weather models favor "width over depth," compute budgets should prioritize more training data over larger models
+  [ICML 2026][Earth Science][Weather Forecasting Models] This paper presents the first cross-model scaling law analysis of five mainstream data-driven weather models (Aurora, AIFS, Pangu, GraphCast, SFNO) under a unified training/evaluation protocol. It finds that weather models favor "width over depth," compute budgets should prioritize more training data over larger models, and scaling behaviors vary significantly across meteorological variables—distinct patterns from NLP/Vis…
 tags:
-  - ICML 2026
-  - Earth Science
-  - ERA5
+  - "ICML 2026"
+  - "Earth Science"
+  - "Weather Forecasting Models"
+  - "Scaling Laws"
+  - "Compute-Optimal"
+  - "Width-First"
+  - "ERA5"
 date: 2026-05-08
-content_hash: 296e2575554daf20
+content_hash: 72b44e0896f5d2f5
 ---
+
 # Scaling Laws of Global Weather Models
 
 **Conference**: ICML 2026  
@@ -118,15 +123,14 @@ Scaling laws often treat compute as a static resource, ignoring wall-clock time.
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] TianQuan-S2S: Constructing Subseasonal-to-Seasonal Global Weather Forecasting Models by Incorporating Climatology](../../ICLR2026/earth_science/tianquan-s2s_a_subseasonal-to-seasonal_global_weather_model_via_incorporate_clim.md)
 - [\[ICML 2026\] (Sparse) Attention to the Details: Preserving Spectral Fidelity in ML-based Weather Forecasting Models](sparse_attention_to_the_details_preserving_spectral_fidelity_in_ml-based_weather.md)
+- [\[ICLR 2026\] Task-Adaptive Parameter-Efficient Fine-Tuning for Weather Foundation Models](../../ICLR2026/earth_science/task-adaptive_parameter-efficient_fine-tuning_for_weather_foundation_models.md)
 - [\[CVPR 2026\] PhyOceanCast: Global Ocean Forecasting with Physics-Informed Diffusion](../../CVPR2026/earth_science/phyoceancast_global_ocean_forecasting_with_physics-informed_diffusion.md)
-- [\[CVPR 2026\] SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](../../CVPR2026/earth_science/sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)
-- [\[AAAI 2026\] RENEW: Risk- and Energy-Aware Navigation in Dynamic Waterways](../../AAAI2026/earth_science/renew_risk-_and_energy-aware_navigation_in_dynamic_waterways.md)
-- [\[AAAI 2026\] MdaIF: Robust One-Stop Multi-Degradation-Aware Image Fusion with Language-Driven Semantics](../../AAAI2026/earth_science/mdaif_robust_one-stop_multi-degradation-aware_image_fusion_with_language-driven_.md)
+- [\[ICLR 2026\] RainPro-8: An Efficient Deep Learning Model to Estimate Rainfall Probabilities Over 8 Hours](../../ICLR2026/earth_science/rainpro-8_an_efficient_deep_learning_model_to_estimate_rainfall_probabilities_ov.md)
 
 </div>
 

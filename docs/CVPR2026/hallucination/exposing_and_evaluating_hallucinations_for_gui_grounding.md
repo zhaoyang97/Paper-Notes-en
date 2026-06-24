@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Evaluating and Easing Hallucinations for GUI Grounding
 description: >-
-  [CVPR 2026][Hallucination Detection][GUI grounding] This paper presents the first systematic study of hallucinations in GUI grounding, categorizing them into "confusion hallucinations" (misidentifying similar elements) and "fabrication hallucinations" (inventing non-existent coordinates). The authors construct GUI-HalluBench, a bilingual dataset with dual subsets, to di
+  [CVPR 2026][Hallucination Detection][GUI grounding] This paper presents the first systematic study of hallucinations in GUI grounding, categorizing them into "confusion hallucinations" (misidentifying similar elements) and "fabrication hallucinations" (inventing non-existent coordinates). The authors construct GUI-HalluBench, a bilingual dataset with dual subsets, to diagnose the correlation between hallucinations and parsing capabilities. They propose a training-free Parsing…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
-  - GUI grounding
-  - benchmark
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "GUI grounding"
+  - "hallucination evaluation"
+  - "multimodal large models"
+  - "benchmark"
+  - "bilingual"
 date: 2026-05-08
-content_hash: 8c14747c54ceef60
+content_hash: 61f60f6c0f6ab17d
 ---
+
 # Evaluating and Easing Hallucinations for GUI Grounding
 
 **Conference**: CVPR 2026  
@@ -144,8 +148,8 @@ Comparison of Baseline, PGP, and HFT across two open-source models:
 - [\[CVPR 2026\] HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration](hallugen_synthesizing_realistic_and_controllable_hallucinations_for_evaluating_i.md)
 - [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
 - [\[CVPR 2026\] Beyond the Global Scores: Fine-Grained Token Grounding as a Robust Detector of LVLM Hallucinations](beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations.md)
+- [\[ICLR 2026\] EmotionHallucer: Evaluating Emotion Hallucinations in Multimodal Large Language Models](../../ICLR2026/hallucination/emotionhallucer_evaluating_emotion_hallucinations_in_multimodal_large_language_m.md)
 - [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](../../ACL2026/hallucination/finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
-- [\[CVPR 2026\] First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models](first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in.md)
 
 </div>
 

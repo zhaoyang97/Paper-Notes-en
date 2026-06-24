@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] LoL: Longer than Longer, Scaling Video Generation to Hour
 description: >-
-  [CVPR 2026][Video Generation][RoPE] Addressing the "sink-collapse" phenomenon in autoregressive ultra-long video generation—where the video suddenly reverts to the first few frames—this paper identifies its root cause as "multi-dimensional phase synchronization + multi-head attention homogenization" induced by RoPE periodicity. The authors propose **Mult
+  [CVPR 2026][Video Generation][Autoregressive long video] Addressing the "sink-collapse" phenomenon in autoregressive ultra-long video generation—where the video suddenly reverts to the first few frames—this paper identifies its root cause as "multi-dimensional phase synchronization + multi-head attention homogenization" induced by RoPE periodicity. The authors propose **Multi-Head RoPE Jitter**, a **training-free** method that perturbs the RoPE base frequency per head to brea…
 tags:
-  - CVPR 2026
-  - Video Generation
-  - RoPE
-  - sink-collapse
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Autoregressive long video"
+  - "attention sink"
+  - "RoPE"
+  - "sink-collapse"
+  - "streaming generation"
 date: 2026-05-08
-content_hash: 8c534e32e5a59e58
+content_hash: 9bf2da9856a55a7b
 ---
+
 # LoL: Longer than Longer, Scaling Video Generation to Hour
 
 **Conference**: CVPR 2026  
@@ -125,15 +129,15 @@ LoL was applied to LongLive and Self-Forcing++ and compared against position emb
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] Scaling Zero-Shot Reference-to-Video Generation](scaling_zero-shot_reference-to-video_generation.md)
+- [\[CVPR 2026\] Scaling Instruction-Based Video Editing with a High-Quality Synthetic Dataset](scaling_instruction-based_video_editing_with_a_high-quality_synthetic_dataset.md)
 - [\[CVPR 2026\] FFP-300K: Scaling First-Frame Propagation for Generalizable Video Editing](ffp-300k_scaling_first-frame_propagation_for_generalizable_video_editing.md)
+- [\[CVPR 2026\] Endless World: Real-Time 3D-Aware Long Video Generation](endless_world_real-time_3d-aware_long_video_generation.md)
 - [\[NeurIPS 2025\] Scaling RL to Long Videos](../../NeurIPS2025/video_generation/scaling_rl_to_long_videos.md)
-- [\[CVPR 2025\] Towards Precise Scaling Laws for Video Diffusion Transformers](../../CVPR2025/video_generation/towards_precise_scaling_laws_for_video_diffusion_transformers.md)
-- [\[CVPR 2026\] Dual-Granularity Memory for Efficient Video Generation](dual-granularity_memory_for_efficient_video_generation.md)
-- [\[CVPR 2026\] MultiShotMaster: A Controllable Multi-Shot Video Generation Framework](multishotmaster_a_controllable_multi-shot_video_generation_framework.md)
 
 </div>
 

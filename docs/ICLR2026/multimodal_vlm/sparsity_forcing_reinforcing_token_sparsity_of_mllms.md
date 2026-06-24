@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][GRPO] Ours proposes Sparsity Forcing—a RL post-training framework based on GRPO. It adopts an MLLM with top-$p$ sparse attention as the policy model and the original MLLM as the reference model. Through multi-budget rollout exploration of varying token retention thresholds $p$, it performs group-relative optimization using a
+  [ICLR 2026][Multimodal VLM][token sparsity] Ours proposes Sparsity Forcing—a RL post-training framework based on GRPO. It adopts an MLLM with top-$p$ sparse attention as the policy model and the original MLLM as the reference model. Through multi-budget rollout exploration of varying token retention thresholds $p$, it performs group-relative optimization using a joint reward of efficiency (token reduction rate) and performance (answer correctness). This framework enhances the…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
-  - GRPO
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "token sparsity"
+  - "RL post-training"
+  - "GRPO"
+  - "efficiency-performance joint reward"
+  - "multi-budget exploration"
 date: 2026-05-08
-content_hash: e92dc19c1b6485ed
+content_hash: 16ccdbe72f710e10
 ---
+
 # Sparsity Forcing: Reinforcing Token Sparsity of MLLMs
 
 **Conference**: ICLR 2026  
@@ -145,11 +150,11 @@ MOBA uses trainable sparse attention with block-wise attention probing and MoE-l
 
 ## Related Papers
 
+- [\[ICLR 2026\] DaVinci: Reinforcing Visual-Structural Syntax in MLLMs for Generalized Scientific Diagram Parsing](davinci_reinforcing_visual-structural_syntax_in_mllms_for_generalized_scientific.md)
 - [\[ICCV 2025\] SparseMM: Head Sparsity Emerges from Visual Concept Responses in MLLMs](../../ICCV2025/multimodal_vlm/sparsemm_head_sparsity_emerges_from_visual_concept_responses_in_mllms.md)
 - [\[ICLR 2026\] Patch-as-Decodable-Token: Towards Unified Multi-Modal Vision Tasks in MLLMs](patch-as-decodable-token_towards_unified_multi-modal_vision_tasks_in_mllms.md)
 - [\[ICCV 2025\] Sparsity Outperforms Low-Rank Projections in Few-Shot Adaptation](../../ICCV2025/multimodal_vlm/sparsity_outperforms_low-rank_projections_in_few-shot_adaptation.md)
 - [\[ICLR 2026\] Enhancing Multi-Image Understanding through Delimiter Token Scaling](enhancing_multi-image_understanding_through_delimiter_token_scaling.md)
-- [\[ICLR 2026\] MMDuet2: Enhancing Proactive Interaction of Video MLLMs with Multi-Turn Reinforcement Learning](mmduet2_enhancing_proactive_interaction_of_video_mllms_with_multi-turn_reinforce.md)
 
 </div>
 

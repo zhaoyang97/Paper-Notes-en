@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving
 description: >-
-  [ICML 2026][LLM Efficiency][AFD] This paper provides the first theoretical framework for the emerging Attention-FFN Disaggregation (AFD) inference architecture. Based on a probabilistic workload model where "prefill length has a finite mean and decode length follows a geometric distribution," it derives a closed-form solution for the optimal A/F ratio
+  [ICML 2026][LLM Efficiency][AFD] This paper provides the first theoretical framework for the emerging Attention-FFN Disaggregation (AFD) inference architecture. Based on a probabilistic workload model where "prefill length has a finite mean and decode length follows a geometric distribution," it derives a closed-form solution for the optimal A/F ratio in an rA-1F topology: $r^*=\max\{r_A, r_C, r_{\text{peak}}\}$. The theory is validated using a trace-calibrated simulator…
 tags:
-  - ICML 2026
-  - LLM Efficiency
-  - AFD
-  - A/F ratio
+  - "ICML 2026"
+  - "LLM Efficiency"
+  - "AFD"
+  - "A/F ratio"
+  - "Bilevel optimization"
+  - "Geometric distribution"
+  - "roofline model"
 date: 2026-05-08
-content_hash: 6e96b267c435d887
+content_hash: 1eb23fafa9e1ca4d
 ---
+
 # Theoretically Optimal Attention/FFN Ratios in Disaggregated LLM Serving
 
 **Conference**: ICML 2026  
@@ -117,11 +121,11 @@ Across various combinations of batch size $B$ and context length $\mu_P$, the de
 
 ## Related Papers
 
-- [\[ICML 2026\] DOT-MoE: 用可微 optimal transport 把 dense LLM 转成 MoE](dot-moe_differentiable_optimal_transport_for_moefication.md)
 - [\[ICML 2026\] GraphFlow: A Graph-Based Workflow Management for Efficient LLM-Agent Serving](graphflow_a_graph-based_workflow_management_for_efficient_llm-agent_serving.md)
 - [\[ICML 2026\] OServe: Accelerating LLM Serving via Spatial-Temporal Workload Orchestration](oserve_accelerating_llm_serving_via_spatial-temporal_workload_orchestration.md)
 - [\[ICML 2026\] Optimal Bayesian Stopping for Efficient Inference of Consistent LLM Answers](optimal_bayesian_stopping_for_efficient_inference_of_consistent_llm_answers.md)
 - [\[NeurIPS 2025\] UMoE: Unifying Attention and FFN with Shared Experts](../../NeurIPS2025/llm_efficiency/umoe_unifying_attention_and_ffn_with_shared_experts.md)
+- [\[ICML 2026\] OBCache: Optimal Brain KV Cache Pruning for Efficient Long-Context LLM Inference](obcache_optimal_brain_kv_cache_pruning_for_efficient_long-context_llm_inference.md)
 
 </div>
 

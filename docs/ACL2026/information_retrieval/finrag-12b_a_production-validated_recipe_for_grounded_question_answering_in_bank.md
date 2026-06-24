@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] FinRAG-12B: A Production-Validated Recipe for Grounded Question Answering in Banking
 description: >-
-  [ACL 2026][Information Retrieval & RAG][calibrated refusal] The Kasisto team developed FinRAG-12B based on Gemma 3 12B-IT using an efficient 143M-token data recipe (LLM-as-Judge filtering + citation labeling + 22% unanswerable samples + two-stage curriculum). Compressed via W4A16 quantization to 8.4 GB for single-GPU deployment, it outperforms GPT-4.1 in both answer quality (Ju
+  [ACL 2026][Information Retrieval & RAG][Financial QA] The Kasisto team developed FinRAG-12B based on Gemma 3 12B-IT using an efficient 143M-token data recipe (LLM-as-Judge filtering + citation labeling + 22% unanswerable samples + two-stage curriculum). Compressed via W4A16 quantization to 8.4 GB for single-GPU deployment, it outperforms GPT-4.1 in both answer quality (JudgeLM 6.21) and citation quality (73.1). Its refusal rate of 12% balances the unsafe 4.3% of the base mode…
 tags:
-  - ACL 2026
-  - Information Retrieval & RAG
-  - calibrated refusal
-  - curriculum learning
+  - "ACL 2026"
+  - "Information Retrieval & RAG"
+  - "Financial QA"
+  - "citation grounding"
+  - "calibrated refusal"
+  - "curriculum learning"
+  - "W4A16 quantization"
 date: 2026-05-08
-content_hash: ec6bbc28ccb8322b
+content_hash: c2baa44395db6fab
 ---
+
 # FinRAG-12B: A Production-Validated Recipe for Grounded Question Answering in Banking
 
 **Conference**: ACL 2026  

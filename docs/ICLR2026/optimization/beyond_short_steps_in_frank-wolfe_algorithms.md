@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Beyond Short Steps in Frank-Wolfe Algorithms
 description: >-
-  [ICLR 2026][Optimization & Theory][Frank-Wolfe] This work upgrades the analysis of the Frank-Wolfe (FW) algorithm from "short steps considering only primal progress" to a "unified primal-dual gap framework." Based on this, it proposes an Optimistic FW algorithm borrowing the "optimism" concept from online learning (featuring an $O(LD^2/t)$ primal-dual convergence bo
+  [ICLR2026][Optimization][Frank-Wolfe] This work upgrades the analysis of the Frank-Wolfe (FW) algorithm from "short steps considering only primal progress" to a "unified primal-dual gap framework." Based on this, it proposes an Optimistic FW algorithm borrowing the "optimism" concept from online learning (featuring an $O(LD^2/t)$ primal-dual convergence bound and a computable stopping criterion). Furthermore, it derives a class of "primal-dual short steps" that generalize sho…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
-  - Frank-Wolfe
+  - "ICLR2026"
+  - "Optimization"
+  - "Frank-Wolfe"
+  - "primal-dual analysis"
+  - "optimistic online learning"
+  - "short step"
+  - "convergence rate"
 date: 2026-05-08
-content_hash: 0d0da27f47cd4d42
+content_hash: 6a51ed9acf56591e
 ---
+
 # Beyond Short Steps in Frank-Wolfe Algorithms
 
 **Conference**: ICLR2026  
@@ -121,7 +126,7 @@ Conclusion: In settings like $f(x)=\|x-x_0\|_2^2$ on a probability simplex (rand
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

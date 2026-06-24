@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] The authors propose MoDES, the first training-free expert skipping framework for MoE Multimodal Large Language Models (MLLMs). By utilizing Global Modulated Local Gating (GMLG) and a Dual-Modality Threshold (DMT) mechanism to adaptively skip redundant experts, MoDES retains 97%+ of the original performance while skippi
+  [CVPR2026][Multimodal Efficiency][MoE Acceleration] The authors propose MoDES, the first training-free expert skipping framework for MoE Multimodal Large Language Models (MLLMs). By utilizing Global Modulated Local Gating (GMLG) and a Dual-Modality Threshold (DMT) mechanism to adaptively skip redundant experts, MoDES retains 97%+ of the original performance while skipping 88% of experts, achieving a 2.16× prefill acceleration.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR2026"
+  - "Multimodal Efficiency"
+  - "MoE Acceleration"
+  - "Expert Skipping"
+  - "Multimodal Large Language Models"
+  - "Training-free"
+  - "Inference Efficiency"
 date: 2026-05-08
-content_hash: 83928fa63ea1e252
+content_hash: b421fdb6e5f853ca
 ---
+
 <!-- Generated automatically by src/gen_stubs.py -->
 # MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping
 
@@ -159,11 +165,11 @@ At an aggressive 88% skipping rate, MoDES outperforms the strongest baseline MC-
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
-- [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](../../ICML2026/multimodal_vlm/toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
-- [\[ICML 2026\] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](../../ICML2026/multimodal_vlm/same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)
-- [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
+- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)
+- [\[CVPR 2026\] VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping](vvs_accelerating_speculative_decoding_for_visual_autoregressive_generation_via_p.md)
+- [\[CVPR 2026\] Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)
+- [\[ICCV 2025\] ShortV: Efficient Multimodal Large Language Models by Freezing Visual Tokens in Ineffective Layers](../../ICCV2025/vlm_efficiency/shortv_efficient_multimodal_large_language_models_by_freezing_visual_tokens_in_i.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
 
 </div>
 

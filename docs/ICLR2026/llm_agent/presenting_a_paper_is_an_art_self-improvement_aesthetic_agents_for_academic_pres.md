@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations
 description: >-
-  [ICLR 2026][LLM Agent][Multi-Agent] EvoPresent connects four agents—Storyline, Scholar, Design, and Checker—into a "draft-feedback-revision" self-improvement pipeline, transforming papers into narrative-driven, aesthetically pleasing presentation videos with virtual explanations. Its core is PresAesth, an aesthetic model trained via multi-task reinforcem
+  [ICLR 2026][LLM Agent][Academic Presentation Generation] EvoPresent connects four agents—Storyline, Scholar, Design, and Checker—into a "draft-feedback-revision" self-improvement pipeline, transforming papers into narrative-driven, aesthetically pleasing presentation videos with virtual explanations. Its core is PresAesth, an aesthetic model trained via multi-task reinforcement learning, which provides reliable scoring, defect diagnosis, and comparative feedback…
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Multi-Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Academic Presentation Generation"
+  - "Multi-Agent"
+  - "Aesthetic Evaluation"
+  - "Multi-task GRPO"
+  - "Self-improvement"
 date: 2026-05-08
-content_hash: 6307ab44b8b62875
+content_hash: 90722e70f69c399f
 ---
+
 # Presenting a Paper is an Art: Self-Improvement Aesthetic Agents for Academic Presentations
 
 **Conference**: ICLR 2026  
@@ -150,9 +155,9 @@ The 7B PresAesth model outperforms closed-source models across all tasks: Scorin
 
 - [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](../../CVPR2026/llm_agent/paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
 - [\[ACL 2025\] PaSa: An LLM Agent for Comprehensive Academic Paper Search](../../ACL2025/llm_agent/pasa_an_llm_agent_for_comprehensive_academic_paper_search.md)
+- [\[ICLR 2026\] Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents](darwin_gödel_machine_open-ended_evolution_of_self-improving_agents.md)
+- [\[ICLR 2026\] ReVeal: Self-Evolving Code Agents via Reliable Self-Verification](reveal_self-evolving_code_agents_via_reliable_self-verification.md)
 - [\[ACL 2025\] Gödel Agent: A Self-Referential Agent Framework for Recursive Self-Improvement](../../ACL2025/llm_agent/gödel_agent_a_self-referential_agent_framework_for_recursive_self-improvement.md)
-- [\[ICLR 2026\] Your Agent May Misevolve: Emergent Risks in Self-evolving LLM Agents](your_agent_may_misevolve_emergent_risks_in_self-evolving_llm_agents.md)
-- [\[ICLR 2026\] MemGen: Weaving Generative Latent Memory for Self-Evolving Agents](memgen_weaving_generative_latent_memory_for_self-evolving_agents.md)
 
 </div>
 

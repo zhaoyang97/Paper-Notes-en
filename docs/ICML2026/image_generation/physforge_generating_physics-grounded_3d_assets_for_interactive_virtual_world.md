@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World
 description: >-
-  [ICML 2026][Image Generation][Paper Note] Interactive 3D object creation is reframed as a two-stage "physical planning followed by physical generation" problem. A VLM acts as a physical architect to generate a "Hierarchical Physical Blueprint" containing hierarchy, materials, and kinematic constraints. Subsequently, a diffusion model utilizes KineVoxel Injecti
+  [ICML 2026][Image Generation][Physics-aware 3D Generation] Interactive 3D object creation is reframed as a two-stage "physical planning followed by physical generation" problem. A VLM acts as a physical architect to generate a "Hierarchical Physical Blueprint" containing hierarchy, materials, and kinematic constraints. Subsequently, a diffusion model utilizes KineVoxel Injection to jointly denoise articulation parameters and geometric voxels. Combined with the PhysDB dataset—…
 tags:
-  - ICML 2026
-  - Image Generation
+  - "ICML 2026"
+  - "Image Generation"
+  - "Physics-aware 3D Generation"
+  - "VLM Planning"
+  - "KineVoxel Injection"
+  - "Hierarchical Physical Blueprint"
+  - "Interactive Assets"
 date: 2026-05-08
-content_hash: 43a666d85f608351
+content_hash: f6938b08466a6a2a
 ---
+
 # PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World
 
 **Conference**: ICML 2026  
@@ -138,7 +144,7 @@ Comparison with existing part-aware and physics-aware methods on PhysXNet. Key m
 - [\[ICML 2026\] Position: AI Evaluations Should be Grounded on a Theory of Capability](position_ai_evaluations_should_be_grounded_on_a_theory_of_capability.md)
 - [\[ECCV 2024\] Generating 3D House Wireframes with Semantics](../../ECCV2024/image_generation/generating_3d_house_wireframes_with_semantics.md)
 - [\[ICCV 2025\] Diffusion-based 3D Hand Motion Recovery with Intuitive Physics](../../ICCV2025/image_generation/diffusion-based_3d_hand_motion_recovery_with_intuitive_physics.md)
-- [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
+- [\[CVPR 2025\] Lifting Motion to the 3D World via 2D Diffusion](../../CVPR2025/image_generation/lifting_motion_to_the_3d_world_via_2d_diffusion.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras
 description: >-
-  [ICLR 2026][Robotics & Embodied AI][Flow Matching] RAVEN treats each pixel patch of an RGB image as an oriented 3D ray. This allows for the construction of the first end-to-end SE(3) equivariant robot manipulation policy using only standard RGB cameras (without requiring point clouds, depth, or fixed top-down views). It significantly outperforms strong baselines like D
+  [ICLR 2026][Robotics][Equivariant Policy] RAVEN treats each pixel patch of an RGB image as an oriented 3D ray. This allows for the construction of the first end-to-end SE(3) equivariant robot manipulation policy using only standard RGB cameras (without requiring point clouds, depth, or fixed top-down views). It significantly outperforms strong baselines like Diffusion Policy in MimicGen / DexMimicGen simulations and real-world experiments, while training 1.6× faster than exis…
 tags:
-  - ICLR 2026
-  - Robotics & Embodied AI
-  - Flow Matching
+  - "ICLR 2026"
+  - "Robotics"
+  - "Equivariant Policy"
+  - "SE(3) Equivariance"
+  - "Imitation Learning"
+  - "Ray Representation"
+  - "Flow Matching"
 date: 2026-05-08
-content_hash: 78962162a43ccd2e
+content_hash: f5433f2cb1379555
 ---
+
 # RAVEN: End-to-end Equivariant Robot Learning with RGB Cameras
 
 **Conference**: ICLR 2026  
@@ -133,7 +138,7 @@ On MimicGen, RAVEN achieved the highest success rate in 11 out of 12 tasks, trai
 - [\[ICLR 2026\] End-to-end Listen, Look, Speak and Act](end-to-end_listen_look_speak_and_act.md)
 - [\[CVPR 2026\] RoboTAG: End-to-end Robot Pose Estimation via Topological Alignment Graph](../../CVPR2026/robotics/robotag_end-to-end_robot_pose_estimation_via_topological_alignment_graph.md)
 - [\[CVPR 2026\] End-to-End Language-Action Model for Humanoid Whole Body Control](../../CVPR2026/robotics/end-to-end_language-action_model_for_humanoid_whole_body_control.md)
-- [\[ICLR 2026\] Rodrigues Network for Learning Robot Actions](rodrigues_network_for_learning_robot_actions.md)
+- [\[NeurIPS 2025\] SutureBot: A Precision Framework & Benchmark for Autonomous End-to-End Suturing](../../NeurIPS2025/robotics/suturebot_a_precision_framework_benchmark_for_autonomous_end-to-end_suturing.md)
 
 </div>
 

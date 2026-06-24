@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] On Universality of Deep Equivariant Networks
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper establishes the theorem of "universality under separation constraints" for deep invariant/equivariant networks, identifying depth and readout layers as the decisive mechanisms for achieving universality. It introduces a finer "entry-wise separability" criterion for the equivariant case than standard separati
+  [ICLR 2026][Learning Theory][invariant networks] This paper establishes the theorem of "universality under separation constraints" for deep invariant/equivariant networks, identifying depth and readout layers as the decisive mechanisms for achieving universality. It introduces a finer "entry-wise separability" criterion for the equivariant case than standard separation, unifying and generalizing previous conclusions limited to shallow or specific architectures.
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Equivariant Networks"
+  - "Expressive Power"
+  - "invariant networks"
+  - "universal approximation"
+  - "separation power"
+  - "entry-wise separability"
 date: 2026-05-08
-content_hash: c2baeb9447454482
+content_hash: bf2b3c72084260ed
 ---
+
 # On Universality of Deep Equivariant Networks
 
 **Conference**: ICLR 2026  
@@ -136,15 +143,15 @@ This paper contains no experiments. The theoretical results are summarized below
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Reducing Symmetry Increase in Equivariant Neural Networks](reducing_symmetry_increase_in_equivariant_neural_networks.md)
 - [\[ICLR 2026\] Quasi-Equivariant Metanetworks](quasi-equivariant_metanetworks.md)
 - [\[ICLR 2026\] Random Label Prediction Heads for Studying Memorization in Deep Neural Networks](random_label_prediction_heads_for_studying_memorization_in_deep_neural_networks.md)
-- [\[ICLR 2026\] Implicit bias produces neural scaling laws in learning curves, from perceptrons to deep networks](implicit_bias_produces_neural_scaling_laws_in_learning_curves_from_perceptrons_t.md)
-- [\[ICLR 2026\] Variational Deep Learning via Implicit Regularization](variational_deep_learning_via_implicit_regularization.md)
+- [\[ICLR 2026\] Tversky Neural Networks: Psychologically Plausible Deep Learning with Differentiable Tversky Similarity](tversky_neural_networks_psychologically_plausible_deep_learning_with_differentia.md)
+- [\[ICLR 2026\] Saddle-To-Saddle Dynamics in Deep ReLU Networks: Low-Rank Bias in the First Saddle Escape](saddle-to-saddle_dynamics_in_deep_relu_networks_low-rank_bias_in_the_first_saddl.md)
 
 </div>
 

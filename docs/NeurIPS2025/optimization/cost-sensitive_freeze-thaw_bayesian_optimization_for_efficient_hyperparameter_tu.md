@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning
 description: >-
-  [NeurIPS 2025][Optimization][Hyperparameter Optimization] CFBO incorporates user-defined utility functions (cost–performance trade-offs) into the freeze-thaw Bayesian optimization framework…
+  [NeurIPS 2025][Optimization][Hyperparameter Optimization] CFBO incorporates user-defined utility functions (cost–performance trade-offs) into the freeze-thaw Bayesian optimization framework, and combines an adaptive stopping criterion with LC mixup-based transfer learning to achieve optimal cost–performance trade-offs on multi-fidelity HPO benchmarks.
 tags:
   - "NeurIPS 2025"
   - "Optimization"
@@ -13,7 +13,7 @@ tags:
   - "Learning Curve Extrapolation"
   - "Transfer Learning"
 date: 2026-05-08
-content_hash: f52cb70effc51c8a
+content_hash: 1946c46ef6e63270
 ---
 
 # Cost-Sensitive Freeze-thaw Bayesian Optimization for Efficient Hyperparameter Tuning
@@ -151,8 +151,8 @@ The gap is negligible — network training time dominates BO step time in practi
 - [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Federated Optimization](efficient_adaptive_federated_optimization.md)
 - [\[NeurIPS 2025\] MOBO-OSD: Batch Multi-Objective Bayesian Optimization via Orthogonal Search Directions](mobo-osd_batch_multi-objective_bayesian_optimization_via_orthogonal_search_direc.md)
+- [\[CVPR 2026\] GR-Gauge: Cost-efficient Training Configuration By Gauging the Gradient Redundancy](../../CVPR2026/optimization/gr-gauge_cost-efficient_training_configuration_by_gauging_the_gradient_redundanc.md)
 - [\[NeurIPS 2025\] Efficient Adaptive Experimentation with Noncompliance](efficient_adaptive_experimentation_with_noncompliance.md)
-- [\[NeurIPS 2025\] Oracle-Efficient Combinatorial Semi-Bandits](oracle-efficient_combinatorial_semi-bandits.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages
 description: >-
-  [NeurIPS 2025][Multilingual & Machine Translation][Preference Dataset] NVIDIA releases a 40K+ open-source human-annotated preference dataset covering general, STEM, code…
+  [NeurIPS 2025][Multilingual & Machine Translation][Preference Dataset] NVIDIA releases a 40K+ open-source human-annotated preference dataset covering general, STEM, code, and multilingual (13 languages) tasks. The reward model trained on this dataset achieves 82.4% (+10%) on RM-Bench, with a commercially friendly CC-BY-4.0 license.
 tags:
   - "NeurIPS 2025"
   - "Multilingual & Machine Translation"
@@ -14,7 +14,7 @@ tags:
   - "Reward Models"
   - "CC-BY-4.0"
 date: 2026-05-08
-content_hash: d1c7feba3668dcac
+content_hash: dc16142d7cb662e9
 ---
 
 # HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages
@@ -118,9 +118,9 @@ Stratified data collection: different subsets are sourced differently (ShareGPT/
 
 - [\[ACL 2026\] Is Human-Like Text Liked by Humans? Multilingual Human Detection and Preference Against AI](../../ACL2026/multilingual_mt/is_human-like_text_liked_by_humans_multilingual_human_detection_and_preference_a.md)
 - [\[NeurIPS 2025\] On Extending Direct Preference Optimization to Accommodate Ties](on_extending_direct_preference_optimization_to_accommodate_ties.md)
-- [\[ACL 2026\] Lost in Translation: Do LVLM Judges Generalize Across Languages?](../../ACL2026/multilingual_mt/lost_in_translation_do_lvlm_judges_generalize_across_languages.md)
+- [\[ACL 2025\] Implicit Cross-Lingual Rewarding for Efficient Multilingual Preference Alignment](../../ACL2025/multilingual_mt/implicit_cross-lingual_rewarding_for_efficient_multilingual_preference_alignment.md)
+- [\[ACL 2025\] The Hidden Space of Safety: Understanding Preference-Tuned LLMs in Multilingual Contexts](../../ACL2025/multilingual_mt/the_hidden_space_of_safety_understanding_preference-tuned_llms_in_multilingual_c.md)
 - [\[NeurIPS 2025\] How Data Mixing Shapes In-Context Learning: Asymptotic Equivalence for Transformers with MLPs](how_data_mixing_shapes_in-context_learning_asymptotic_equivalence_for_transforme.md)
-- [\[NeurIPS 2025\] Quantifying Climate Policy Action and Its Links to Development Outcomes: A Cross-National Data-Driven Analysis](quantifying_climate_policy_action_and_its_links_to_development_outcomes_a_cross-.md)
 
 </div>
 

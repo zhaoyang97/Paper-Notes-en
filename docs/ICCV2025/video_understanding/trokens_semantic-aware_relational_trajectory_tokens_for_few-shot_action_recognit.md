@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition
 description: >-
-  [ICCV 2025][Video Understanding][Few-Shot Action Recognition] This paper proposes the Trokens framework, which converts point trajectories into semantically-aware relational tokens via **semantic-aware trajectory point s…
+  [ICCV 2025][Video Understanding][Few-Shot Action Recognition] This paper proposes the Trokens framework, which converts point trajectories into semantically-aware relational tokens via **semantic-aware trajectory point sampling** and **relational motion modeling** (comprising intra-trajectory HoD and inter-trajectory relative displacement descriptors). By fusing these tokens with appearance features, Trokens achieves state-of-the-art performance on six few-shot action recogni…
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "Motion Modeling"
   - "HoD"
 date: 2026-05-08
-content_hash: 53bafadecaea03e0
+content_hash: a6a977f9989ac11f
 ---
 
 # Trokens: Semantic-Aware Relational Trajectory Tokens for Few-Shot Action Recognition
@@ -184,9 +184,9 @@ Through class-level performance analysis (Figure 3), the paper identifies the so
 
 - [\[ICCV 2025\] Beyond Label Semantics: Language-Guided Action Anatomy for Few-shot Action Recognition](beyond_label_semantics_language-guided_action_anatomy_for_few-shot_action_recogn.md)
 - [\[ICCV 2025\] Frequency-Semantic Enhanced Variational Autoencoder for Zero-Shot Skeleton-based Action Recognition](frequency-semantic_enhanced_variational_autoencoder_for_zero-shot_skeleton-based.md)
+- [\[CVPR 2025\] Temporal Alignment-Free Video Matching for Few-Shot Action Recognition](../../CVPR2025/video_understanding/temporal_alignment-free_video_matching_for_few-shot_action_recognition.md)
+- [\[CVPR 2025\] TAMT: Temporal-Aware Model Tuning for Cross-Domain Few-Shot Action Recognition](../../CVPR2025/video_understanding/tamt_temporal-aware_model_tuning_for_cross-domain_few-shot_action_recognition.md)
 - [\[ICCV 2025\] Attention to Trajectory: Trajectory-Aware Open-Vocabulary Tracking](attention_to_trajectory_trajectory-aware_open-vocabulary_tracking.md)
-- [\[AAAI 2026\] Task-Specific Distance Correlation Matching for Few-Shot Action Recognition](../../AAAI2026/video_understanding/task-specific_distance_correlation_matching_for_few-shot_action_recognition.md)
-- [\[ICCV 2025\] Learning to Generalize Without Bias for Open-Vocabulary Action Recognition](learning_to_generalize_without_bias_for_open-vocabulary_action_recognition.md)
 
 </div>
 

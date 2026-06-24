@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Continuum Transformers Perform In-Context Learning by Operator Gradient Descent
 description: >-
-  [ICLR 2026][learning_theory][Paper Note] This paper provides the first theoretical characterization of the In-Context Learning (ICL) phenomenon in "Continuum Transformers" (Transformer variants that handle infinite-dimensional function inputs for PDE surrogate modeling). It proves that forward propagation is equivalent to performing gradient descent in an **o
+  [ICLR2026][Learning Theory][Continuum Transformer] This paper provides the first theoretical characterization of the In-Context Learning (ICL) phenomenon in "Continuum Transformers" (Transformer variants that handle infinite-dimensional function inputs for PDE surrogate modeling). It proves that forward propagation is equivalent to performing gradient descent in an **operator RKHS**. In the limit of infinite depth, the model recovers the Bayesian optimal predictor…
 tags:
-  - ICLR 2026
-  - learning_theory
+  - "ICLR2026"
+  - "Learning Theory"
+  - "In-Context Learning"
+  - "Neural Operators"
+  - "Continuum Transformer"
+  - "Operator RKHS"
+  - "Operator Gradient Descent"
+  - "Bayesian Optimal Predictor"
 date: 2026-05-08
-content_hash: 02eab4d7cd6c7f43
+content_hash: 3c4443abb06e7a51
 ---
+
 # Continuum Transformers Perform In-Context Learning by Operator Gradient Descent
 
 **Conference**: ICLR2026  
@@ -133,11 +140,11 @@ Experiments verify three theoretical claims on $X=L^2(\mathbb{T}^2)$ using Hilbe
 
 ## Related Papers
 
+- [\[ICLR 2026\] Transformers Learn Latent Mixture Models In-Context via Mirror Descent](transformers_learn_latent_mixture_models_in-context_via_mirror_descent.md)
 - [\[ICLR 2026\] Transformers Trained via Gradient Descent Can Provably Learn a Class of Teacher Models](transformers_trained_via_gradient_descent_can_provably_learn_a_class_of_teacher_.md)
 - [\[ICLR 2026\] Transformers with Endogenous In-Context Learning: Bias Characterization and Mitigation](transformers_with_endogenous_in-context_learning_bias_characterization_and_mitig.md)
-- [\[ICLR 2026\] Critical Attention Scaling in Long-Context Transformers](critical_attention_scaling_in_long-context_transformers.md)
-- [\[ICLR 2026\] Separable Neural Networks: Approximation Theory, NTK Regime, and Preconditioned Gradient Descent](separable_neural_networks_approximation_theory_ntk_regime_and_preconditioned_gra.md)
-- [\[ICLR 2026\] Adversarially Pretrained Transformers May Be Universally Robust In-Context Learners](adversarially_pretrained_transformers_may_be_universally_robust_in-context_learn.md)
+- [\[ICLR 2026\] Interactive Learning of Single-Index Models via Stochastic Gradient Descent](interactive_learning_of_single-index_models_via_stochastic_gradient_descent.md)
+- [\[ICLR 2026\] In-Context Algorithm Emulation in Fixed-Weight Transformers](in-context_algorithm_emulation_in_fixed-weight_transformers.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI
 description: >-
-  [NeurIPS 2025][Medical Imaging][Glioma segmentation] This paper proposes SegFormer3D+, a domain-adaptive Transformer architecture tailored for heterogeneous MRI data from Sub-Saharan Africa. By integrating histogram matc…
+  [NeurIPS 2025][Medical Imaging][Glioma segmentation] This paper proposes SegFormer3D+, a domain-adaptive Transformer architecture tailored for heterogeneous MRI data from Sub-Saharan Africa. By integrating histogram matching, radiomics-guided stratified sampling, a frequency-aware dual-path encoder, and a dual attention mechanism, the model achieves a mean Dice of 0.81 for glioma segmentation with only 60 annotated cases for fine-tuning, outperforming nnU-Net by +2.5%.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "resource-constrained"
   - "BraTS-Africa"
 date: 2026-05-08
-content_hash: e696200a55c5525c
+content_hash: 334966fd4da055ea
 ---
 
 # Domain-Adaptive Transformer for Data-Efficient Glioma Segmentation in Sub-Saharan MRI
@@ -143,11 +143,11 @@ The SegFormer3D+ pipeline takes multi-parametric MRI (T1, T1CE, T2, FLAIR) as in
 
 ## Related Papers
 
+- [\[CVPR 2025\] Domain Adaptive Diabetic Retinopathy Grading with Model Absence and Flowing Data](../../CVPR2025/medical_imaging/domain_adaptive_diabetic_retinopathy_grading_with_model_absence_and_flowing_data.md)
 - [\[AAAI 2026\] DeNAS-ViT: Data Efficient NAS-Optimized Vision Transformer for Ultrasound Image Segmentation](../../AAAI2026/medical_imaging/denas-vit_data_efficient_nas-optimized_vision_transformer_for_ultrasound_image_s.md)
 - [\[ICCV 2025\] MRGen: Segmentation Data Engine for Underrepresented MRI Modalities](../../ICCV2025/medical_imaging/mrgen_segmentation_data_engine_for_underrepresented_mri_modalities.md)
 - [\[NeurIPS 2025\] MATCH: Multi-faceted Adaptive Topo-Consistency for Semi-Supervised Histopathology Segmentation](match_multi-faceted_adaptive_topo-consistency_for_semi-supervised_histopathology.md)
-- [\[NeurIPS 2025\] Mind the (Data) Gap: Evaluating Vision Systems in Small Data Applications](mind_the_data_gap_evaluating_vision_systems_in_small_data_applications.md)
-- [\[NeurIPS 2025\] PhysioWave: A Multi-Scale Wavelet-Transformer for Physiological Signal Representation](physiowave_a_multi-scale_wavelet-transformer_for_physiological_signal_representa.md)
+- [\[ICML 2025\] LangDAug: Langevin Data Augmentation for Multi-Source Domain Generalization in Medical Image Segmentation](../../ICML2025/medical_imaging/langdaug_langevin_data_augmentation_for_multi-source_domain_generalization_in_me.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering
 description: >-
-  [ICLR 2026][Interpretability][Paper Note] REAL trains a Vector Quantized Autoencoder (VQ-AE) for each attention head (or layer) of a Transformer to map highly entangled hidden activations into a separable discrete code space. It then uses the log-likelihood ratio of two autoregressive priors + AUC scoring to determine "how relevant this module is to the target
+  [ICLR 2026][Interpretability][Activation Steering] REAL trains a Vector Quantized Autoencoder (VQ-AE) for each attention head (or layer) of a Transformer to map highly entangled hidden activations into a separable discrete code space. It then uses the log-likelihood ratio of two autoregressive priors + AUC scoring to determine "how relevant this module is to the target behavior," thereby precisely selecting modules for intervention and adaptively adjusting steering strength b…
 tags:
-  - ICLR 2026
-  - Interpretability
+  - "ICLR 2026"
+  - "Interpretability"
+  - "Activation Steering"
+  - "Module Localization"
+  - "Vector Quantized Autoencoder"
+  - "Attention Head Selection"
+  - "Truthfulness"
 date: 2026-05-08
-content_hash: 9060a1bf6c2add49
+content_hash: 4d6ac82f9ba90351
 ---
+
 # REAL: Reading Out Transformer Activations for Precise Localization in Language Model Steering
 
 **Conference**: ICLR 2026  

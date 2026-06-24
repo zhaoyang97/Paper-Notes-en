@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts
 description: >-
-  [ICCV 2025][Image Generation][Red-Teaming] This paper proposes APT (AutoPrompT), a black-box red-teaming framework driven by an LLM. Through an alternating optimize-finetune pipeline and a dual-evasion strategy…
+  [ICCV 2025][Image Generation][Red-Teaming] This paper proposes APT (AutoPrompT), a black-box red-teaming framework driven by an LLM. Through an alternating optimize-finetune pipeline and a dual-evasion strategy, APT automatically generates human-readable adversarial suffixes that bypass content filters, effectively circumventing the safety mechanisms of T2I models while enabling zero-shot cross-prompt transferability.
 tags:
   - "ICCV 2025"
   - "Image Generation"
@@ -12,7 +12,7 @@ tags:
   - "LLM"
   - "Safety Evaluation"
 date: 2026-05-08
-content_hash: 34459974c40a4df7
+content_hash: 39c82dea684377e8
 ---
 
 # AutoPrompt: Automated Red-Teaming of Text-to-Image Models via LLM-Driven Adversarial Prompts
@@ -133,10 +133,10 @@ The suffix generator uses Llama-3.1-8B; the auxiliary LLM uses the same weights 
 ## Related Papers
 
 - [\[ACL 2026\] ANCHOR: LLM-driven Subject Conditioning for Text-to-Image Synthesis](../../ACL2026/image_generation/anchor_llm-driven_subject_conditioning_for_text-to-image_synthesis.md)
+- [\[CVPR 2025\] FilmComposer: LLM-Driven Music Production for Silent Film Clips](../../CVPR2025/image_generation/filmcomposer_llm-driven_music_production_for_silent_film_clips.md)
 - [\[ICCV 2025\] DIA: The Adversarial Exposure of Deterministic Inversion in Diffusion Models](dia_the_adversarial_exposure_of_deterministic_inversion_in_diffusion_models.md)
+- [\[CVPR 2025\] ShapeWords: Guiding Text-to-Image Synthesis with 3D Shape-Aware Prompts](../../CVPR2025/image_generation/shapewords_guiding_text-to-image_synthesis_with_3d_shape-aware_prompts.md)
 - [\[ICCV 2025\] Transformed Low-rank Adaptation via Tensor Decomposition and Its Applications to Text-to-image Models](transformed_low-rank_adaptation_via_tensor_decomposition_and_its_applications_to.md)
-- [\[CVPR 2026\] AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](../../CVPR2026/image_generation/autodebias_automated_framework_for_debiasing_text-to-image_models.md)
-- [\[ICCV 2025\] Discovering Divergent Representations between Text-to-Image Models](discovering_divergent_representations_between_text-to-image_models.md)
 
 </div>
 

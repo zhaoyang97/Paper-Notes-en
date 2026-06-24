@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing
 description: >-
-  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SkySense V2, which employs a single unified Transformer backbone to process three remote sensing modalities — high-resolution optical…
+  [ICCV 2025][Remote Sensing][Remote sensing foundation model] This paper proposes SkySense V2, which employs a single unified Transformer backbone to process three remote sensing modalities — high-resolution optical, multispectral, and SAR imagery — and introduces Adaptive Patch Merging (APM), modality-specific prompt tokens, and Query-based Semantic Aggregation Contrastive Learning (QSACL) for pre-training. With only 665M parameters (vs. 1.26B in the predecessor SkySense)…
 tags:
   - "ICCV 2025"
   - "Remote Sensing"
@@ -12,7 +12,7 @@ tags:
   - "self-supervised learning"
   - "Mixture of Experts"
 date: 2026-05-08
-content_hash: e2f377905e3e3ebf
+content_hash: d3048acd3864acb2
 ---
 
 # SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing
@@ -150,9 +150,9 @@ Training configuration: batch size 1024, 128 H20 GPUs, 600K iterations, AdamW op
 
 - [\[ICCV 2025\] RS-vHeat: Heat Conduction Guided Efficient Remote Sensing Foundation Model](rs-vheat_heat_conduction_guided_efficient_remote_sensing_foundation_model.md)
 - [\[ICCV 2025\] Towards a Unified Copernicus Foundation Model for Earth Vision](towards_a_unified_copernicus_foundation_model_for_earth_vision.md)
-- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 - [\[ICCV 2025\] SMARTIES: Spectrum-Aware Multi-Sensor Auto-Encoder for Remote Sensing Images](smarties_spectrum-aware_multi-sensor_auto-encoder_for_remote_sensing_images.md)
-- [\[ICML 2026\] Any2Any: Unified Arbitrary Modality Translation for Remote Sensing](../../ICML2026/remote_sensing/any2any_unified_arbitrary_modality_translation_for_remote_sensing.md)
+- [\[CVPR 2026\] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery](../../CVPR2026/remote_sensing/skysense-vita_towards_universal_in-context_segmentation_of_multi-modal_remote_se.md)
+- [\[NeurIPS 2025\] GeoLink: Empowering Remote Sensing Foundation Model with OpenStreetMap Data](../../NeurIPS2025/remote_sensing/geolink_empowering_remote_sensing_foundation_model_with_openstreetmap_data.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery
 description: >-
-  [CVPR 2026][Remote Sensing][Paper Note] SkySense-VITA utilizes a "prompt-and-prediction decoupling" architecture to unify visual prompts, text prompts, and their fusion into a single tuning-free in-context segmentation model. It natively supports both optical and SAR imagery while employing a coarse-to-fine semantic granularity annealing pre-training strateg
+  [CVPR 2026][Remote Sensing][Remote Sensing Segmentation] SkySense-VITA utilizes a "prompt-and-prediction decoupling" architecture to unify visual prompts, text prompts, and their fusion into a single tuning-free in-context segmentation model. It natively supports both optical and SAR imagery while employing a coarse-to-fine semantic granularity annealing pre-training strategy, leading to an average mIoU improvement of over 10% across 18 remote sensing datasets.
 tags:
-  - CVPR 2026
-  - Remote Sensing
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Remote Sensing Segmentation"
+  - "In-context Segmentation"
+  - "Multi-modal Prompting"
+  - "Optical-SAR"
+  - "Semantic Hierarchy"
 date: 2026-05-08
-content_hash: 075a8e8e58c44935
+content_hash: 5882c59207f9b233
 ---
+
 # SkySense-VITA: Towards Universal In-context Segmentation of Multi-modal Remote Sensing Imagery
 
 **Conference**: CVPR 2026  
@@ -157,10 +163,10 @@ Out-of-distribution (Domain & Category Generalization):
 ## Related Papers
 
 - [\[CVPR 2026\] SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)
-- [\[CVPR 2026\] HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)
 - [\[ICCV 2025\] SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing](../../ICCV2025/remote_sensing/skysense_v2_a_unified_foundation_model_for_multi-modal_remote_sensing.md)
-- [\[CVPR 2026\] ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)
-- [\[CVPR 2026\] CrossEarth-Gate: Fisher-Guided Adaptive Tuning Engine for Efficient Adaptation of Cross-Domain Remote Sensing Semantic Segmentation](crossearth-gate_fisher-guided_adaptive_tuning_engine_for_efficient_adaptation_of.md)
+- [\[CVPR 2026\] MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing](mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot.md)
+- [\[CVPR 2026\] UniGeoSeg: Towards Unified Open-World Segmentation for Geospatial Scenes](unigeoseg_towards_unified_open-world_segmentation_for_geospatial_scenes.md)
+- [\[CVPR 2026\] Orthogonal Spatial-Aware Multi-View Anchor Graph Clustering for Incomplete Remote Sensing Data](orthogonal_spatial-aware_multi-view_anchor_graph_clustering_for_incomplete_remot.md)
 
 </div>
 

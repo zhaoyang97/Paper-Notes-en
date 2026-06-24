@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Designing Rules to Pick a Rule: Aggregation by Consistency
 description: >-
-  [ICLR 2026][Image Generation][Paper Note] Addressing the challenge of choosing among various rank aggregation rules (Borda, plurality, veto, etc.) with diverse pros and cons, this paper proposes the "Rule Picking Rule" (RPR) framework and a specific instantiation called AbC. By randomly splitting voters into two groups and selecting the rule that yields the mo
+  [ICLR2026][Image Generation][Rank Aggregation] Addressing the challenge of choosing among various rank aggregation rules (Borda, plurality, veto, etc.) with diverse pros and cons, this paper proposes the "Rule Picking Rule" (RPR) framework and a specific instantiation called AbC. By randomly splitting voters into two groups and selecting the rule that yields the most consistent rankings across both halves, AbC automatically identifies the most suitable aggregation rule for an…
 tags:
-  - ICLR 2026
-  - Image Generation
+  - "ICLR2026"
+  - "Image Generation"
+  - "Rank Aggregation"
+  - "Social Choice"
+  - "Rule Selection"
+  - "Consistency"
+  - "Axiomatic Analysis"
 date: 2026-05-08
-content_hash: c53a16a8c0d2f0c4
+content_hash: 8c963df96500615d
 ---
+
 # Designing Rules to Pick a Rule: Aggregation by Consistency
 
 **Conference**: ICLR2026  
@@ -130,15 +136,15 @@ While peer review practice often favors projects with "the highest scores" (Max)
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[CVPR 2025\] AutoPresent: Designing Structured Visuals from Scratch](../../CVPR2025/image_generation/autopresent_designing_structured_visuals_from_scratch.md)
+- [\[ICLR 2026\] Shortcut Diffusion Training with Cumulative Consistency Loss: An Optimal Control View](shortcut_diffusion_training_with_cumulative_consistency_loss_an_optimal_control_.md)
+- [\[ICLR 2026\] reAR: Rethinking Visual Autoregressive Models via Token-wise Consistency Regularization](rear_rethinking_visual_autoregressive_models_via_token-wise_consistency_regulari.md)
 - [\[ICLR 2026\] FACM: Flow-Anchored Consistency Models](facm_flow-anchored_consistency_models.md)
 - [\[ICLR 2026\] The Intricate Dance of Prompt Complexity, Quality, Diversity, and Consistency in T2I Models](the_intricate_dance_of_prompt_complexity_quality_diversity_and_consistency_in_t2.md)
-- [\[ICLR 2026\] Consis-GCPO: Consistency-Preserving Group Causal Preference Optimization for Vision Customization](consis-gcpo_consistency-preserving_group_causal_preference_optimization_for_visi.md)
-- [\[CVPR 2026\] Designing Instance-Level Sampling Schedules via REINFORCE with James-Stein Shrinkage](../../CVPR2026/image_generation/designing_instance-level_sampling_schedules_via_reinforce_with_james-stein_shrin.md)
 
 </div>
 

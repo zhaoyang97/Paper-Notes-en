@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Meta-World+: An Improved, Standardized, RL Benchmark
 description: >-
-  [NeurIPS 2025][Reinforcement Learning][multi-task reinforcement learning] This paper systematically exposes how undocumented reward function inconsistencies across versions of the Meta-World benchmark distort algorithm c…
+  [NeurIPS 2025][Reinforcement Learning][multi-task reinforcement learning] This paper systematically exposes how undocumented reward function inconsistencies across versions of the Meta-World benchmark distort algorithm comparisons, and releases a standardized new version, Meta-World+, which explicitly retains both V1 and V2 reward functions, introduces MT25/ML25 task sets, upgrades to the Gymnasium API, and enables fully reproducible evaluation for multi-task and meta-reinfor…
 tags:
   - "NeurIPS 2025"
   - "Reinforcement Learning"
@@ -12,7 +12,7 @@ tags:
   - "reward function"
   - "reproducibility"
 date: 2026-05-08
-content_hash: 8346e24e0203192c
+content_hash: 8047afffb4a60b89
 ---
 
 # Meta-World+: An Improved, Standardized, RL Benchmark
@@ -128,10 +128,10 @@ Following the statistical recommendations of Agarwal et al. (2021), results are 
 ## Related Papers
 
 - [\[NeurIPS 2025\] MetaBox-v2: A Unified Benchmark Platform for Meta-Black-Box Optimization](metabox-v2_a_unified_benchmark_platform_for_meta-black-box_optimization.md)
-- [\[NeurIPS 2025\] The World Is Bigger! A Computationally-Embedded Perspective on the Big World Hypothesis](the_world_is_bigger_a_computationally-embedded_perspective_on_the_big_world_hypo.md)
 - [\[NeurIPS 2025\] Improved Regret Bounds for GP-UCB in Bayesian Optimization](improved_regret_bounds_for_gaussian_process_upper_confidence_bound_in_bayesian_o.md)
-- [\[ICLR 2026\] Virne: A Comprehensive Benchmark for RL-based Network Resource Allocation in NFV](../../ICLR2026/reinforcement_learning/virne_a_comprehensive_benchmark_for_rl-based_network_resource_allocation_in_nfv.md)
 - [\[NeurIPS 2025\] Improved Regret and Contextual Linear Extension for Pandora's Box and Prophet Inequality](improved_regret_and_contextual_linear_extension_for_pandoras_box_and_prophet_ine.md)
+- [\[NeurIPS 2025\] TensorRL-QAS: Reinforcement Learning with Tensor Networks for Improved Quantum Architecture Search](tensorrl-qas_reinforcement_learning_with_tensor_networks_for_improved_quantum_ar.md)
+- [\[ICLR 2026\] MATH-Beyond: A Benchmark for RL to Expand Beyond the Base Model](../../ICLR2026/reinforcement_learning/math-beyond_a_benchmark_for_rl_to_expand_beyond_the_base_model.md)
 
 </div>
 

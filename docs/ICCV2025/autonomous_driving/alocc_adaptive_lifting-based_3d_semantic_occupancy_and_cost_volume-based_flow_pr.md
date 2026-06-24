@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions
 description: >-
-  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes the ALOcc framework, which achieves state-of-the-art performance on multiple occupancy prediction benchmarks while maintaining high inference s…
+  [ICCV 2025][Autonomous Driving][3D Occupancy Prediction] This paper proposes the ALOcc framework, which achieves state-of-the-art performance on multiple occupancy prediction benchmarks while maintaining high inference speed through three improvements: an occlusion-aware adaptive lifting mechanism, semantic prototype alignment, and BEV cost volume-based flow prediction.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Semantic Prototype"
   - "Occupancy Flow"
 date: 2026-05-08
-content_hash: fdedc0f251e8cac6
+content_hash: 589b35f700d1bbff
 ---
 
 # ALOcc: Adaptive Lifting-Based 3D Semantic Occupancy and Cost Volume-Based Flow Predictions
@@ -53,27 +53,27 @@ N surround-view camera images → ResNet-50 2D feature extraction → **Adaptive
 
    Conventional LSS populates the transformation matrix $M_T$ with depth probabilities, but since the depth target is a delta distribution, nearly all weight is placed on the surface, leaving occluded regions without features. ALOcc addresses this with three components:
 
-   - **Soft filling replacing hard rounding**: Trilinear interpolation diffuses depth probabilities to the surrounding 8 voxel centers, making the 2D→3D mapping differentiable with respect to coordinates.
-   - **Intra-object occlusion modeling**: A conditional probability matrix $P(o_l|o_d)$ is designed to propagate surface depth probabilities to deeper positions. The physical interpretation is: "if a camera ray reaches a surface at depth $i$, depth $j$ ($j > i$) may also be occupied by the same object." This is implemented via causal conditional matrix multiplication: positions before depth $i$ have zero probability (the ray reaching $i$ implies empty space ahead), depth $i$ itself has probability 1, and positions beyond $i$ are predicted by a network $f_h(x, j-i)$.
-   - **Inter-object occlusion modeling**: Multiple offsets $(\Delta u, \Delta v)$ and propagation weights $w$ are predicted per point to spread occupancy probabilities to neighboring pixel locations, covering background objects occluded by foreground objects. For computational efficiency, propagation is applied only to points with top-$k$ depth probabilities.
-   - **Depth denoising**: Inspired by query denoising in object detection, training uses a weighted average of GT depth and predicted depth, with the weight annealed from 1 to 0 via cosine scheduling. This ensures GT depth serves as a safety net in early training, preventing local optima due to inaccurate depth estimates.
+    - **Soft filling replacing hard rounding**: Trilinear interpolation diffuses depth probabilities to the surrounding 8 voxel centers, making the 2D→3D mapping differentiable with respect to coordinates.
+    - **Intra-object occlusion modeling**: A conditional probability matrix $P(o_l|o_d)$ is designed to propagate surface depth probabilities to deeper positions. The physical interpretation is: "if a camera ray reaches a surface at depth $i$, depth $j$ ($j > i$) may also be occupied by the same object." This is implemented via causal conditional matrix multiplication: positions before depth $i$ have zero probability (the ray reaching $i$ implies empty space ahead), depth $i$ itself has probability 1, and positions beyond $i$ are predicted by a network $f_h(x, j-i)$.
+    - **Inter-object occlusion modeling**: Multiple offsets $(\Delta u, \Delta v)$ and propagation weights $w$ are predicted per point to spread occupancy probabilities to neighboring pixel locations, covering background objects occluded by foreground objects. For computational efficiency, propagation is applied only to points with top-$k$ depth probabilities.
+    - **Depth denoising**: Inspired by query denoising in object detection, training uses a weighted average of GT depth and predicted depth, with the weight annealed from 1 to 0 via cosine scheduling. This ensures GT depth serves as a safety net in early training, preventing local optima due to inaccurate depth estimates.
 
 2. **Semantic Prototype-based Occupancy Head**:
 
    A learnable prototype vector is initialized for each semantic class, serving simultaneously as classification weights for both 2D and 3D features, naturally establishing a cross-dimensional semantic alignment bridge. During inference, voxel features are matched against prototypes via inner product, and the class with the maximum response is selected.
 
    Two strategies are designed to address the long-tail problem:
-   - **Independent prototype training**: When a class is absent from the current scene's GT, its corresponding prototype is not trained; each class mask is predicted independently to prevent majority classes from suppressing minority classes.
-   - **Uncertainty + class-prior sampling**: Logit maps quantify per-voxel uncertainty; combined with class priors as a multinomial distribution, $K$ hard samples are drawn from all voxels, and loss is computed only at these points.
+    - **Independent prototype training**: When a class is absent from the current scene's GT, its corresponding prototype is not trained; each class mask is predicted independently to prevent majority classes from suppressing minority classes.
+    - **Uncertainty + class-prior sampling**: Logit maps quantify per-voxel uncertainty; combined with class priors as a multinomial distribution, $K$ hard samples are drawn from all voxels, and loss is computed only at these points.
 
 3. **BEV Cost Volume-based Flow Head**:
 
    Jointly predicting semantics and flow directly on voxel features causes feature encoding conflicts. ALOcc constructs an independent motion prior as follows:
-   - Voxel features at heights 0–4 m are average-pooled to the BEV plane and downsampled to increase receptive field.
-   - Camera parameters are used to warp the previous frame's BEV features into the current frame's coordinate system.
-   - Cosine similarities between the current frame and the warped previous frame features are computed at multiple hypothetical offset points to construct a cost volume.
-   - The cost volume together with current-frame voxel features is fed into the flow network, allowing voxel features to focus on semantic encoding.
-   - **Classification-regression hybrid prediction**: Flow values are discretized into bins; the probability of each bin is predicted, and the final flow is $\text{flow} = \sum (p_\text{bin} \times \text{bin\_center})$. Both regression loss ($L_2$ + cosine) and classification cross-entropy supervise the prediction.
+    - Voxel features at heights 0–4 m are average-pooled to the BEV plane and downsampled to increase receptive field.
+    - Camera parameters are used to warp the previous frame's BEV features into the current frame's coordinate system.
+    - Cosine similarities between the current frame and the warped previous frame features are computed at multiple hypothetical offset points to construct a cost volume.
+    - The cost volume together with current-frame voxel features is fed into the flow network, allowing voxel features to focus on semantic encoding.
+    - **Classification-regression hybrid prediction**: Flow values are discretized into bins; the probability of each bin is predicted, and the final flow is $\text{flow} = \sum (p_\text{bin} \times \text{bin\_center})$. Both regression loss ($L_2$ + cosine) and classification cross-entropy supervise the prediction.
 
    The cost volume reuses cached historical frame features, requiring no second forward pass.
 

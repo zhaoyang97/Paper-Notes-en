@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models
 description: >-
-  [NeurIPS 2025][Multimodal VLM][Affordance] This paper introduces a fine-grained 3D embodied reasoning task—jointly predicting the spatial location, motion type…
+  [NeurIPS 2025][VLM Reasoning][Affordance] This paper introduces a fine-grained 3D embodied reasoning task—jointly predicting the spatial location, motion type, and motion axis of actionable elements—and proposes rendering 3D point clouds into panoramic views with projected affordance candidates, guided by a customized Chain-of-Thought (CoT) reasoning paradigm for MLLMs, achieving state-of-the-art performance with AP25 of 23.3%.
 tags:
   - "NeurIPS 2025"
-  - "Multimodal VLM"
+  - "VLM Reasoning"
   - "Affordance"
   - "3D Reasoning"
   - "Chain-of-Thought"
   - "MLLM"
   - "Motion Estimation"
 date: 2026-05-08
-content_hash: ec9a8426f07e1dbe
+content_hash: a778da03af5fb254
 ---
 
 # AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models
@@ -132,10 +132,10 @@ Affordance grounding and motion estimation on the SceneFun3D dataset.
 ## Related Papers
 
 - [\[NeurIPS 2025\] Unveiling Chain of Step Reasoning for Vision-Language Models with Fine-grained Rewards](unveiling_chain_of_step_reasoning_for_visionlanguage_models.md)
-- [\[NeurIPS 2025\] Situat3DChange: Situated 3D Change Understanding Dataset for Multimodal Large Language Models](situat3dchange_situated_3d_change_understanding_dataset_for_multimodal_large_lan.md)
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
 - [\[NeurIPS 2025\] PhysVLM-AVR: Active Visual Reasoning for Multimodal Large Language Models in Physical Environments](physvlm-avr_active_visual_reasoning_for_multimodal_large_language_models_in_phys.md)
-- [\[ICCV 2025\] Fine-Grained Evaluation of Large Vision-Language Models in Autonomous Driving](../../ICCV2025/multimodal_vlm/fine-grained_evaluation_of_large_vision-language_models_in_autonomous_driving.md)
+- [\[ICLR 2026\] VisuRiddles: Fine-Grained Perception is a Primary Bottleneck for Multimodal Large Language Models in Abstract Visual Reasoning](../../ICLR2026/vlm_reasoning/visuriddles_fine-grained_perception_is_a_primary_bottleneck_for_multimodal_large.md)
+- [\[NeurIPS 2025\] ACT as Human: Multimodal Large Language Model Data Annotation with Critical Thinking](act_as_human_multimodal_large_language_model_data_annotation.md)
+- [\[NeurIPS 2025\] FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models](flexac_towards_flexible_control_of_associative_reasoning_in_multimodal_large_lan.md)
 
 </div>
 

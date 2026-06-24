@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Interpretable Next-token Prediction via the Generalized Induction Head
 description: >-
-  [NeurIPS 2025][Medical Imaging][Interpretability] This paper proposes Induction-Gram (GIM), an interpretable language model that combines exact n-gram matching with fuzzy matching. By constructing a "generalized inductio…
+  [NeurIPS 2025][Medical Imaging][Interpretability] This paper proposes Induction-Gram (GIM), an interpretable language model that combines exact n-gram matching with fuzzy matching. By constructing a "generalized induction head" to retrieve similar sequences from the input context for next-token prediction, it achieves up to 25 percentage points improvement over interpretable baselines and a 20% improvement in fMRI brain response prediction.
 tags:
   - "NeurIPS 2025"
   - "Medical Imaging"
@@ -12,7 +12,7 @@ tags:
   - "n-gram Models"
   - "fMRI"
 date: 2026-05-08
-content_hash: 05f6112024e96bb8
+content_hash: 256bc6216a405ff9
 ---
 
 # Interpretable Next-token Prediction via the Generalized Induction Head
@@ -173,10 +173,10 @@ $$P_{\text{induction(fuzzy)}}(w_i | x) = \frac{c_{\text{fuzzy}}(w_{i-k-1:i-1} w_
 ## Related Papers
 
 - [\[NeurIPS 2025\] STAMP: Spatial-Temporal Adapter with Multi-Head Pooling](stamp_spatial-temporal_adapter_with_multi-head_pooling.md)
-- [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
 - [\[NeurIPS 2025\] MoRE-Brain: Routed Mixture of Experts for Interpretable and Generalizable Cross-Subject fMRI Visual Decoding](more-brain_routed_mixture_of_experts_for_interpretable_and_generalizable_cross-s.md)
+- [\[NeurIPS 2025\] VQ-Seg: Vector-Quantized Token Perturbation for Semi-Supervised Medical Image Segmentation](vq-seg_vector-quantized_token_perturbation_for_semi-supervised_medical_image_seg.md)
 - [\[NeurIPS 2025\] FireGNN: Neuro-Symbolic Graph Neural Networks with Trainable Fuzzy Rules for Interpretable Medical Image Classification](firegnn_neuro-symbolic_graph_neural_networks_with_trainable_fuzzy_rules_for_inte.md)
-- [\[ICCV 2025\] SIC: Similarity-Based Interpretable Image Classification with Neural Networks](../../ICCV2025/medical_imaging/sic_similarity-based_interpretable_image_classification_with_neural_networks.md)
+- [\[ICML 2025\] I2MoE: Interpretable Multimodal Interaction-aware Mixture-of-Experts](../../ICML2025/medical_imaging/i2moe_interpretable_multimodal_interaction-aware_mixture-of-experts.md)
 
 </div>
 

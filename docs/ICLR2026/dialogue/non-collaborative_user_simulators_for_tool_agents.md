@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Non-Collaborative User Simulators for Tool Agents
 description: >-
-  [ICLR 2026][Dialogue Systems][Paper Note] Based on marketing research, this paper defines four types of non-collaborative user behaviors (unavailable service, tangential chat, impatience, and incomplete utterances) and constructs a simulation framework that maintains goal-alignment. Evaluations on MultiWOZ and $\tau$-bench systematically expose behavior-specif
+  [ICLR 2026][Dialogue Systems][Non-collaborative user simulation] Based on marketing research, this paper defines four types of non-collaborative user behaviors (unavailable service, tangential chat, impatience, and incomplete utterances) and constructs a simulation framework that maintains goal-alignment. Evaluations on MultiWOZ and $\tau$-bench systematically expose behavior-specific failure mechanisms in SOTA tool agents—tangential chat leads to an average SR drop of 29.1%…
 tags:
-  - ICLR 2026
-  - Dialogue Systems
+  - "ICLR 2026"
+  - "Dialogue Systems"
+  - "Non-collaborative user simulation"
+  - "tool agent robustness"
+  - "dialogue system stress testing"
+  - "user behavior modeling"
+  - "multi-turn dialogue evaluation"
 date: 2026-05-08
-content_hash: 7242eccc8b72d3e4
+content_hash: aaf92d4c08c87dca
 ---
+
 # Non-Collaborative User Simulators for Tool Agents
 
 **Conference**: ICLR 2026  

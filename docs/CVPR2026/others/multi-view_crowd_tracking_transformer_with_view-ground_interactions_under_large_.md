@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes
 description: >-
-  [CVPR 2026][Object Detection][Transformer] This work is the first to push multi-view crowd tracking from small scenes with dozens of frames (e.g., Wildtrack/MultiviewX) to large-scale real-world scenes spanning hundreds of meters. It proposes a fully Transformer-based model, MVTrackTrans (tracking in ground BEV space + view-ground cross-attention to complement
+  [CVPR 2026][Multi-view Crowd Tracking] This work is the first to push multi-view crowd tracking from small scenes with dozens of frames (e.g., Wildtrack/MultiviewX) to large-scale real-world scenes spanning hundreds of meters. It proposes a fully Transformer-based model, MVTrackTrans (tracking in ground BEV space + view-ground cross-attention to complement appearance information), and releases two large-scale long-sequence datasets, MVCrowdTrack and CityTrack. The model leads…
 tags:
-  - CVPR 2026
-  - Object Detection
-  - Transformer
-  - BEV
+  - "CVPR 2026"
+  - "Multi-view Crowd Tracking"
+  - "Transformer"
+  - "View-Ground Interaction"
+  - "BEV"
+  - "Large-scale Scene Dataset"
 date: 2026-05-08
-content_hash: b81300cef5c0a4fc
+content_hash: 6aa4790859ef42e2
 ---
+
 # Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes
 
 **Conference**: CVPR 2026  
@@ -150,15 +153,16 @@ On small datasets (Wildtrack/MultiviewX), performance is comparable but not domi
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)
-- [\[CVPR 2026\] GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking](gmt_effective_global_framework_for_multi-camera_multi-target_tracking.md)
-- [\[CVPR 2026\] CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)
-- [\[CVPR 2026\] AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos](ar2-4fv_anchored_referring_and_re-identification_for_long-term_grounding_in_fixe.md)
-- [\[CVPR 2026\] From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking](from_detection_to_association_learning_discriminative_object_embeddings_for_mult.md)
+- [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[ECCV 2024\] Mahalanobis Distance-Based Multi-View Optimal Transport for Multi-View Crowd Localization](../../ECCV2024/others/mahalanobis_distance-based_multi-view_optimal_transport_for_multi-view_crowd_loc.md)
+- [\[CVPR 2026\] Bootstrapping Multi-view Learning for Test-time Noisy Correspondence](bootstrapping_multi-view_learning_for_test-time_noisy_correspondence.md)
+- [\[CVPR 2026\] Scalable Multi-View Subspace Clustering with Tensorized Anchor Guidance](scalable_multi-view_subspace_clustering_with_tensorized_anchor_guidance.md)
+- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
 
 </div>
 

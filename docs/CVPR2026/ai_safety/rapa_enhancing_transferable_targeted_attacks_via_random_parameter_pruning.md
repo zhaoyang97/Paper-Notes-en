@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning
 description: >-
-  [CVPR 2026][AI Safety][Paper Note] RaPA discovers that adversarial perturbations in existing targeted transfer attacks over-rely on a few key parameters in the surrogate model. By applying random parameter pruning (DropConnect) at each optimization step, it implicitly adds an "importance equalization regularization" to the loss. This disperses the depen
+  [CVPR 2026][AI Safety][Targeted Transferable Attacks] RaPA discovers that adversarial perturbations in existing targeted transfer attacks over-rely on a few key parameters in the surrogate model. By applying random parameter pruning (DropConnect) at each optimization step, it implicitly adds an "importance equalization regularization" to the loss. This disperses the dependency and significantly improves targeted attack success rates across architectures (especially CNN $\righ…
 tags:
-  - CVPR 2026
-  - AI Safety
+  - "CVPR 2026"
+  - "AI Safety"
+  - "Targeted Transferable Attacks"
+  - "Adversarial Examples"
+  - "Random Parameter Pruning"
+  - "Self-Ensemble"
+  - "Importance Regularization"
 date: 2026-05-08
-content_hash: 8ab6c0fce7f9b843
+content_hash: fe96a8f4bd455243
 ---
+
 # RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning
 
 **Conference**: CVPR 2026  

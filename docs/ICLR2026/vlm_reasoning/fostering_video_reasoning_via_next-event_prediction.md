@@ -2,17 +2,19 @@
 title: >-
   [Paper Note] Fostering Video Reasoning via Next-Event Prediction
 description: >-
-  [ICLR 2026][vlm_reasoning][Next-Event Prediction] This paper proposes **Next-Event Prediction (NEP)**, a learning task that splits video into "past" and "future" segments. It requires MLLMs to predict textual descriptions of future events based solely on past frames, leveraging the video's inherent future content as a self-supervised signal to elicit temporal reasonin
+  [ICLR 2026][VLM Reasoning][Next-Event Prediction] This paper proposes **Next-Event Prediction (NEP)**, a learning task that splits video into "past" and "future" segments. It requires MLLMs to predict textual descriptions of future events based solely on past frames, leveraging the video's inherent future content as a self-supervised signal to elicit temporal reasoning capabilities. The work also introduces the V1-33K training set and the FutureBench evaluation benchmark.
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - Next-Event Prediction
-  - MLLM
-  - Self-Supervised Learning
-  - FutureBench
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Next-Event Prediction"
+  - "Video Temporal Reasoning"
+  - "MLLM"
+  - "Self-supervised Learning"
+  - "FutureBench"
 date: 2026-05-08
-content_hash: ff07a3664736e9cb
+content_hash: 49451e861190d935
 ---
+
 # Fostering Video Reasoning via Next-Event Prediction
 
 **Conference**: ICLR 2026  
@@ -132,7 +134,7 @@ SFT, the simplest strategy, achieves substantial gains on temporal benchmarks (f
 - [\[ICLR 2026\] ExpVid: A Benchmark for Experiment Video Understanding & Reasoning](expvid_a_benchmark_for_experiment_video_understanding_reasoning.md)
 - [\[CVPR 2026\] VGent: Visual Grounding via Modular Design for Disentangling Reasoning and Prediction](../../CVPR2026/vlm_reasoning/vgent_visual_grounding_via_modular_design_for_disentangling_reasoning_and_predic.md)
 - [\[ICLR 2026\] VideoZoomer: Reinforcement-Learned Temporal Focusing for Long Video Reasoning](videozoomer_reinforcement-learned_temporal_focusing_for_long_video_reasoning.md)
-- [\[ICLR 2026\] Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy](vid-llm_a_compact_video-based_3d_multimodal_llm_with_reconstructionreasoning_syn.md)
+- [\[ICLR 2026\] VideoReasonBench: Can MLLMs Perform Vision-Centric Complex Video Reasoning?](videoreasonbench_can_mllms_perform_vision-centric_complex_video_reasoning.md)
 
 </div>
 

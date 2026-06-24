@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] This paper reveals that in geo-distributed or federated large model training scenarios, a single malicious client can stealthily inject a jailbreak backdoor into the global model using an attack called CloudGhost—combining "hidden triggers + pseudo-contrastive safety alignment + downstream performance protection." It a
+  [ICLR 2026][LLM Safety][Jailbreak Attack] This paper reveals that in geo-distributed or federated large model training scenarios, a single malicious client can stealthily inject a jailbreak backdoor into the global model using an attack called CloudGhost—combining "hidden triggers + pseudo-contrastive safety alignment + downstream performance protection." It achieves a 74–93% attack success rate (ASR) while rendering two types of server-side defenses nearly useless (detection…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Jailbreak Attack"
+  - "Backdoor Trigger"
+  - "Geo-Distributed Training"
+  - "Federated Learning"
+  - "Safety Alignment"
+  - "Fisher Information Matrix"
 date: 2026-05-08
-content_hash: d827db5940b5727a
+content_hash: 31d405c254ecf231
 ---
+
 # Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated
 
 **Conference**: ICLR 2026  
@@ -118,8 +125,8 @@ Key takeaway: Adding pseudo-contrastive alignment causes DTR to crash from $\ge 
 - [\[ICLR 2026\] PRISON: Unmasking the Criminal Potential of Large Language Models](prison_unmasking_the_criminal_potential_of_large_language_models.md)
 - [\[NeurIPS 2025\] Attention! Your Vision Language Model Could Be Maliciously Manipulated](../../NeurIPS2025/llm_safety/attention_your_vision_language_model_could_be_maliciously_manipulated.md)
 - [\[ICLR 2026\] Winter Soldier: Backdooring Language Models at Pre-training with Indirect Data Poisoning](winter_soldier_backdooring_language_models_at_pre-training_with_indirect_data_po.md)
-- [\[ICLR 2026\] TAO-Attack: Toward Advanced Optimization-based Jailbreak Attacks for Large Language Models](tao-attack_toward_advanced_optimization-based_jailbreak_attacks_for_large_langua.md)
 - [\[ACL 2026\] Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](../../ACL2026/llm_safety/exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)
+- [\[ICLR 2026\] The Alignment Waltz: Jointly Training Agents to Collaborate for Safety](the_alignment_waltz_jointly_training_agents_to_collaborate_for_safety.md)
 
 </div>
 

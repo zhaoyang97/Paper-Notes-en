@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction
 description: >-
-  [CVPR 2026][3D Vision][NeuS] ManifoldNeuS identifies that "treating all views uniformly" in pose-free neural surface reconstruction leads to "easy-view bias" (where easily optimized views dominate gradients while critical but difficult views are marginalized). It proposes MaVOS, a score jointly measuring "immediate fitness + long-term coverage gai
+  [CVPR 2026][3D Vision][Pose-free Reconstruction] ManifoldNeuS identifies that "treating all views uniformly" in pose-free neural surface reconstruction leads to "easy-view bias" (where easily optimized views dominate gradients while critical but difficult views are marginalized). It proposes MaVOS, a score jointly measuring "immediate fitness + long-term coverage gain" on the view manifold. This score drives a tripartite system—dynamic view scheduling…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - NeuS
-  - SDF
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Pose-free Reconstruction"
+  - "NeuS"
+  - "View Optimizability"
+  - "Manifold Embedding"
+  - "SDF"
 date: 2026-05-08
-content_hash: e88747edfe8cedef
+content_hash: 4db95880fe593855
 ---
+
 # ManifoldNeuS: Manifold-aware View Optimizability for Pose-Free Neural Surface Reconstruction
 
 **Conference**: CVPR 2026  
@@ -161,11 +165,11 @@ Ablation on Scan 24 ($\Delta R$ / $\Delta T$, lower is better):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
+- [\[CVPR 2026\] Cov2Pose: Leveraging Spatial Covariance for Direct Manifold-aware 6-DoF Object Pose Estimation](cov2pose_leveraging_spatial_covariance_for_direct_manifold-aware_6-dof_object_po.md)
 - [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
-- [\[CVPR 2026\] FreeScale: Scaling 3D Scenes via Certainty-Aware Free-View Generation](freescale_scaling_3d_scenes.md)
+- [\[CVPR 2026\] FSFSplatter: Geometrically Accurate Reconstruction with Free Sparse-view Images within 2 minutes](fsfsplatter_geometrically_accurate_reconstruction_with_free_sparse-view_images_w.md)
+- [\[CVPR 2026\] Neural Gabor Splatting: Enhanced Gaussian Splatting with Neural Gabor for High-frequency Surface Reconstruction](neural_gabor_splatting.md)
 
 </div>
 

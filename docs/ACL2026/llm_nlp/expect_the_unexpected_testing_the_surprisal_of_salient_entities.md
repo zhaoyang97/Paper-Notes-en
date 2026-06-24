@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Expect the Unexpected? Testing the Surprisal of Salient Entities
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper investigates the relationship between discourse-level salient entities and surprisal. Using over 70K manually annotated entity mentions and a novel minimal-pair prompting method, the study finds that while global salient entities are themselves more unexpected (higher surprisal), they systematically reduce t
+  [ACL 2026][LLM (Other)][Uniform Information Density] This paper investigates the relationship between discourse-level salient entities and surprisal. Using over 70K manually annotated entity mentions and a novel minimal-pair prompting method, the study finds that while global salient entities are themselves more unexpected (higher surprisal), they systematically reduce the surprisal of surrounding content. This effect varies by genre, being strongest in texts with high topic…
 tags:
-  - ACL 2026
-  - LLM (Other)
+  - "ACL 2026"
+  - "LLM (Other)"
+  - "Uniform Information Density"
+  - "Discourse Salience"
+  - "Surprisal"
+  - "Entity Prominence"
+  - "Discourse Structure"
 date: 2026-05-08
-content_hash: c250621120b1eb23
+content_hash: 3f0326bc9d079450
 ---
+
 # Expect the Unexpected? Testing the Surprisal of Salient Entities
 
 **Conference**: ACL 2026  
@@ -114,9 +120,9 @@ If salient entities lower surrounding surprisal by establishing "topic expectati
 
 - [\[ACL 2026\] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal](clozing_the_gap_exploring_why_language_model_surprisal_outperforms_cloze_surpris.md)
 - [\[ACL 2026\] An Existence Proof for Neural Language Models That Can Explain Garden-Path Effects via Surprisal](an_existence_proof_for_neural_language_models_that_can_explain_garden-path_effec.md)
-- [\[ACL 2025\] GIFT-SW: Gaussian Noise Injected Fine-Tuning of Salient Weights for LLMs](../../ACL2025/llm_nlp/gift-sw_gaussian_noise_injected_fine-tuning_of_salient_weights_for_llms.md)
 - [\[ACL 2025\] The Impact of Token Granularity on the Predictive Power of Language Model Surprisal](../../ACL2025/llm_nlp/token_granularity_impact.md)
-- [\[ACL 2025\] Leveraging In-Context Learning for Political Bias Testing of LLMs](../../ACL2025/llm_nlp/leveraging_in-context_learning_for_political_bias_testing_of_llms.md)
+- [\[ACL 2025\] GIFT-SW: Gaussian Noise Injected Fine-Tuning of Salient Weights for LLMs](../../ACL2025/llm_nlp/gift-sw_gaussian_noise_injected_fine-tuning_of_salient_weights_for_llms.md)
+- [\[ICML 2026\] "I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal](../../ICML2026/llm_nlp/ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)
 
 </div>
 

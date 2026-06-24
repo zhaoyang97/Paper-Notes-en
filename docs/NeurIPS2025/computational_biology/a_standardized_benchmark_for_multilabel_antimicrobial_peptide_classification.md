@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification
 description: >-
-  [NeurIPS 2025][Computational Biology][Antimicrobial Peptide] This paper presents **ESCAPE**—the first standardized multilabel antimicrobial peptide classification benchmark, integrating 80…
+  [NeurIPS 2025][Computational Biology][Antimicrobial Peptide] This paper presents **ESCAPE**—the first standardized multilabel antimicrobial peptide classification benchmark, integrating 80,000+ peptides from 27 public databases, along with a dual-branch Transformer + bidirectional cross-attention baseline model that achieves a 2.56% relative improvement in mAP over the second-best method.
 tags:
   - "NeurIPS 2025"
   - "Computational Biology"
@@ -13,7 +13,7 @@ tags:
   - "Cross-Attention"
   - "Drug Discovery"
 date: 2026-05-08
-content_hash: e2dc4e18044ed76c
+content_hash: dfcebc3859e0d1f1
 ---
 
 # A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification
@@ -153,11 +153,11 @@ ESCAPE contributes at three levels:
 
 ## Related Papers
 
+- [\[ICLR 2026\] PepBenchmark: A Standardized Benchmark for Peptide Machine Learning](../../ICLR2026/computational_biology/pepbenchmark_a_standardized_benchmark_for_peptide_machine_learning.md)
 - [\[NeurIPS 2025\] FGBench: A Dataset and Benchmark for Molecular Property Reasoning at Functional Group-Level in Large Language Models](fgbench_a_dataset_and_benchmark_for_molecular_property_reasoning_at_functional_g.md)
-- [\[ICML 2026\] Protein Fold Classification at Scale: Benchmarking and Pretraining](../../ICML2026/computational_biology/protein_fold_classification_at_scale_benchmarking_and_pretraining.md)
-- [\[ACL 2026\] ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway](../../ACL2026/computational_biology/toxreason_a_benchmark_for_mechanistic_chemical_toxicity_reasoning_via_adverse_ou.md)
-- [\[ICML 2026\] TadA-Bench: A Million-Variant Benchmark for Future-Round Discovery Toward Agentic Protein Engineering](../../ICML2026/computational_biology/tada-bench_a_million-variant_benchmark_for_future-round_discovery_toward_agentic.md)
-- [\[ICML 2026\] Cross-Chirality Generalization by Axial Vectors for Hetero-Chiral Protein-Peptide Interaction Design](../../ICML2026/computational_biology/cross-chirality_generalization_by_axial_vectors_for_hetero-chiral_protein-peptid.md)
+- [\[NeurIPS 2025\] Beyond Chemical QA: Evaluating LLM's Chemical Reasoning with Modular Chemical Operations](beyond_chemical_qa_evaluating_llms_chemical_reasoning_with_modular_chemical_oper.md)
+- [\[NeurIPS 2025\] AANet: Virtual Screening under Structural Uncertainty via Alignment and Aggregation](aanet_virtual_screening_under_structural_uncertainty_via_alignment_and_aggregati.md)
+- [\[NeurIPS 2025\] Towards Unified and Lossless Latent Space for 3D Molecular Latent Diffusion Modeling](towards_unified_and_lossless_latent_space_for_3d_molecular_latent_diffusion_mode.md)
 
 </div>
 

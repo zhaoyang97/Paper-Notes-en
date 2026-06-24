@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction
 description: >-
-  [ICCV 2025][3D Vision][Single-view human reconstruction] MoGA is proposed to reconstruct high-fidelity 3D Gaussian avatars from a single image by learning a generative 3D avatar prior and leveraging it as a strong constr…
+  [ICCV 2025][3D Vision][Single-view human reconstruction] MoGA is proposed to reconstruct high-fidelity 3D Gaussian avatars from a single image by learning a generative 3D avatar prior and leveraging it as a strong constraint for initialization, regularization, and pose optimization, substantially outperforming existing methods.
 tags:
   - "ICCV 2025"
   - "3D Vision"
@@ -12,7 +12,7 @@ tags:
   - "model inversion"
   - "SMPL-X"
 date: 2026-05-08
-content_hash: 3f421997dc559f1a
+content_hash: 520eab89ae51f179
 ---
 
 # MoGA: 3D Generative Avatar Prior for Monocular Gaussian Avatar Reconstruction
@@ -136,9 +136,9 @@ A PSNR improvement of approximately 4.8 dB demonstrates the generalization capab
 
 - [\[ICCV 2025\] GAS: Generative Avatar Synthesis from a Single Image](gas_generative_avatar_synthesis_from_a_single_image.md)
 - [\[ICCV 2025\] GUAVA: Generalizable Upper Body 3D Gaussian Avatar](guava_generalizable_upper_body_3d_gaussian_avatar.md)
-- [\[ICCV 2025\] DriveX: Driving View Synthesis on Free-form Trajectories with Generative Prior](driving_view_synthesis_on_free-form_trajectories_with_generative_prior.md)
-- [\[ICCV 2025\] HairCUP: Hair Compositional Universal Prior for 3D Gaussian Avatars](haircup_hair_compositional_universal_prior_for_3d_gaussian_avatars.md)
-- [\[ICCV 2025\] Boost 3D Reconstruction using Diffusion-based Monocular Camera Calibration](boost_3d_reconstruction_using_diffusion-based_monocular_camera_calibration.md)
+- [\[CVPR 2025\] Vid2Avatar-Pro: Authentic Avatar from Videos in the Wild via Universal Prior](../../CVPR2025/3d_vision/vid2avatar-pro_authentic_avatar_from_videos_in_the_wild_via_universal_prior.md)
+- [\[CVPR 2025\] Synthetic Prior for Few-Shot Drivable Head Avatar Inversion](../../CVPR2025/3d_vision/synthetic_prior_for_few-shot_drivable_head_avatar_inversion.md)
+- [\[CVPR 2025\] AniGS: Animatable Gaussian Avatar from a Single Image with Inconsistent Gaussian Reconstruction](../../CVPR2025/3d_vision/anigs_animatable_gaussian_avatar_from_a_single_image_with_inconsistent_gaussian_.md)
 
 </div>
 

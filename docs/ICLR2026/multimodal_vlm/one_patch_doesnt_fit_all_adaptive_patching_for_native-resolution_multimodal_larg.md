@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Paper Note] The authors discover that MLLMs claiming "any-resolution" support are actually highly sensitive to resolution, rooted in the use of **fixed patch sizes** in ViTs. They propose AdaPatch, which adaptively selects patch sizes per image based on resolution and information density. By using pseudo-inverse resizing, they con
+  [ICLR 2026][Multimodal VLM][Native resolution] The authors discover that MLLMs claiming "any-resolution" support are actually highly sensitive to resolution, rooted in the use of **fixed patch sizes** in ViTs. They propose AdaPatch, which adaptively selects patch sizes per image based on resolution and information density. By using pseudo-inverse resizing, they convert pre-trained fixed-patch models into any-patch models **without training**, simultaneously improving accuracy…
 tags:
-  - ICLR 2026
-  - Multimodal VLM
+  - "ICLR 2026"
+  - "Multimodal VLM"
+  - "Native resolution"
+  - "Adaptive patch"
+  - "Information density"
+  - "Sequence packing"
+  - "Training-free"
 date: 2026-05-08
-content_hash: 7434bb3e07519462
+content_hash: f4daf6fbf07110b3
 ---
+
 # One Patch Doesn't Fit All: Adaptive Patching for Native-Resolution Multimodal Large Language Models
 
 **Conference**: ICLR 2026  

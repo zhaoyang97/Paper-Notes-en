@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation
 description: >-
-  [ICLR 2026][Others][Paper Note] The ADAlign framework is proposed to adaptively align source and target graph distributions in the spectral domain using neural characteristic functions. This eliminates the need for manual selection of alignment criteria by automatically identifying the most significant distribution discrepancies in each transfer scen
+  [ICLR 2026][Graph Domain Adaptation] The ADAlign framework is proposed to adaptively align source and target graph distributions in the spectral domain using neural characteristic functions. This eliminates the need for manual selection of alignment criteria by automatically identifying the most significant distribution discrepancies in each transfer scenario. It achieves SOTA on 16 transfer tasks across 10 datasets while reducing memory and training time.
 tags:
-  - ICLR 2026
-  - Others
+  - "ICLR 2026"
+  - "Graph Domain Adaptation"
+  - "Characteristic Function"
+  - "Spectral Domain Alignment"
+  - "Adaptive Frequency Sampling"
+  - "minimax Optimization"
 date: 2026-05-08
-content_hash: 6f0dcdc472bbd62e
+content_hash: af640a145dbf8a85
 ---
+
 # Learning Adaptive Distribution Alignment with Neural Characteristic Function for Graph Domain Adaptation
 
 **Conference**: ICLR 2026  

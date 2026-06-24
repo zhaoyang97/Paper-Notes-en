@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] LGBO continuously converts LLM semantic preferences about "where is worth trying" into controllable mean shifts of the GP surrogate model. This allows Bayesian optimization (BO) to utilize domain knowledge to accelerate cold starts in scientific discovery tasks without delegating final point selection to potentially un
+  [ICLR2026][Optimization][Bayesian Optimization] LGBO continuously converts LLM semantic preferences about "where is worth trying" into controllable mean shifts of the GP surrogate model. This allows Bayesian optimization (BO) to utilize domain knowledge to accelerate cold starts in scientific discovery tasks without delegating final point selection to potentially unstable LLMs.
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR2026"
+  - "Optimization"
+  - "Bayesian Optimization"
+  - "LLM Preference"
+  - "Region Lifting"
+  - "Scientific Experiment Optimization"
+  - "Wet-lab"
 date: 2026-05-08
-content_hash: f9ca03f4243a788c
+content_hash: 5164fc14eb1dc85e
 ---
+
 # Unleashing LLMs in Bayesian Optimization: Preference-Guided Framework for Scientific Discovery
 
 **Conference**: ICLR2026  

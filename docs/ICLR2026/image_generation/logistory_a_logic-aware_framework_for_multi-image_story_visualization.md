@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] LogiStory: A Logic-Aware Framework for Multi-Image Story Visualization
 description: >-
-  [ICLR 2026][Image Generation][Multi-Agent] This work proposes the concept of "visual logic" and introduces LogiStory, a framework combining multi-agent planning with causal verification. It transforms multi-image story visualization from generating "beautiful isolated pictures" into a reasoning problem that "explicitly models causal coherence between characters
+  [ICLR 2026][Image Generation][Story Visualization] This work proposes the concept of "visual logic" and introduces LogiStory, a framework combining multi-agent planning with causal verification. It transforms multi-image story visualization from generating "beautiful isolated pictures" into a reasoning problem that "explicitly models causal coherence between characters, actions, and scenes," accompanied by the LogicTale benchmark with causal annotations.
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Multi-Agent
+  - "ICLR 2026"
+  - "Image Generation"
+  - "Story Visualization"
+  - "Visual Logic"
+  - "Multi-Agent"
+  - "Causal Reasoning"
+  - "Multi-Image Sequence Generation"
 date: 2026-05-08
-content_hash: 12b050c30df12271
+content_hash: 2202ebfc28b41569
 ---
+
 # LogiStory: A Logic-Aware Framework for Multi-Image Story Visualization
 
 **Conference**: ICLR 2026  
@@ -138,11 +143,11 @@ LogiStory leads in narrative causality, story readability, and character express
 
 ## Related Papers
 
+- [\[ICLR 2026\] Story-Iter: A Training-free Iterative Paradigm for Long Story Visualization](story-iter_a_training-free_iterative_paradigm_for_long_story_visualization.md)
 - [\[CVPR 2026\] ViStoryBench: Comprehensive Benchmark Suite for Story Visualization](../../CVPR2026/image_generation/vistorybench_comprehensive_benchmark_suite_for_story_visualization.md)
 - [\[CVPR 2026\] DreamingComics: A Story Visualization Pipeline via Subject and Layout Customized Generation using Video Models](../../CVPR2026/image_generation/dreamingcomics_a_story_visualization_pipeline_via_subject_and_layout_customized_.md)
 - [\[ICLR 2026\] W-Edit: A Wavelet-based Frequency-aware Framework for Text-driven Image Editing](w-edit_a_wavelet-based_frequency-aware_framework_for_text-driven_image_editing.md)
 - [\[ICLR 2026\] MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement](mosaic_multi-subject_personalized_generation_via_correspondence-aware_alignment_.md)
-- [\[ICLR 2026\] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation](jointdiff_bridging_continuous_and_discrete_in_multi-agent_trajectory_generation.md)
 
 </div>
 

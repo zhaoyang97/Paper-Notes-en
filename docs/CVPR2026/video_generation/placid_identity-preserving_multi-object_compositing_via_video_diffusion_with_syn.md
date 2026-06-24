@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories
 description: >-
-  [CVPR 2026][Video Generation][Paper Note] PLACID reformulates multi-object "staging" compositing as an Image-to-Video (I2V) task: multiple objects scattered randomly are made to "move" along synthetic trajectories to a final layout. By using the last frame of the video diffusion model as the composite result, the method leverages temporal priors to preserve ob
+  [CVPR 2026][Video Generation][Multi-Object Compositing] PLACID reformulates multi-object "staging" compositing as an Image-to-Video (I2V) task: multiple objects scattered randomly are made to "move" along synthetic trajectories to a final layout. By using the last frame of the video diffusion model as the composite result, the method leverages temporal priors to preserve object identity, background, and color while significantly reducing object omissions or duplications.
 tags:
-  - CVPR 2026
-  - Video Generation
+  - "CVPR 2026"
+  - "Video Generation"
+  - "Multi-Object Compositing"
+  - "Image-to-Video"
+  - "Identity Preservation"
+  - "Synthetic Trajectories"
+  - "Product Imagery"
 date: 2026-05-08
-content_hash: 8971ac564193b3ee
+content_hash: 8e10ccc6f7810187
 ---
+
 # PLACID: Identity-Preserving Multi-Object Compositing via Video Diffusion with Synthetic Trajectories
 
 **Conference**: CVPR 2026  
@@ -137,14 +143,17 @@ Ablation on data sources shows: In-the-wild data yields best identity (CLIP-I 0.
 
 <div class="related-papers" markdown="1">
 
-1. **AnyDoor**: Zero-shot Object-level Image Customization.
-2. **Wan2.1**: Edge-stabilized Video Diffusion Transformer.
-3. **OmniGen**: Unified Image Generation Model.
+## Related Papers
+
+- [\[CVPR 2026\] ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation](consid-gen_view-consistent_and_identity-preserving_image-to-video_generation.md)
+- [\[CVPR 2026\] EvoID: Reinforced Evolution for Identity-Preserving Video Generation](evoid_reinforced_evolution_for_identity-preserving_video_generation.md)
+- [\[CVPR 2026\] AnyID: Ultra-Fidelity Universal Identity-Preserving Video Generation from Any Visual References](anyid_ultra-fidelity_universal_identity-preserving_video_generation_from_any_vis.md)
+- [\[CVPR 2026\] Let Your Image Move with Your Motion! – Implicit Multi-Object Multi-Motion Transfer](let_your_image_move_with_your_motion_--_implicit_multi-object_multi-motion_trans.md)
+- [\[CVPR 2026\] Stand-In: A Lightweight and Plug-and-Play Identity Control for Video Generation](stand-in_a_lightweight_and_plug-and-play_identity_control_for_video_generation.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)

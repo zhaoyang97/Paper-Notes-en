@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms
 description: >-
-  [AAAI 2026][Robotics][Social Navigation] This paper proposes RLSLM, a hybrid framework that embeds a psychology-experiment-driven rule-based Social Locomotion Model (SLM) into the reward function of reinforcement learnin…
+  [AAAI 2026][Robotics][Social Navigation] This paper proposes RLSLM, a hybrid framework that embeds a psychology-experiment-driven rule-based Social Locomotion Model (SLM) into the reward function of reinforcement learning, enabling agents to efficiently learn navigation policies aligned with human social norms in crowd environments. VR experiments demonstrate that RLSLM achieves significantly higher comfort ratings than existing rule-based baselines.
 tags:
   - "AAAI 2026"
   - "Robotics"
@@ -12,7 +12,7 @@ tags:
   - "VR Experiment"
   - "Human-Robot Interaction"
 date: 2026-05-08
-content_hash: 9790c688ec327ebd
+content_hash: ff1547eede06e739
 ---
 
 # RLSLM: A Hybrid Reinforcement Learning Framework Aligning Rule-Based Social Locomotion Model with Human Social Norms
@@ -228,10 +228,10 @@ Removing HRSC causes the agent to lose awareness of pedestrian heading, with the
 ## Related Papers
 
 - [\[AAAI 2026\] Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy](coordinated_humanoid_robot_locomotion_with_symmetry_equivariant_reinforcement_le.md)
-- [\[AAAI 2026\] Actor-Critic for Continuous Action Chunks: A Reinforcement Learning Framework for Long-Horizon Robotic Manipulation with Sparse Reward](actor-critic_for_continuous_action_chunks_a_reinforcement_le.md)
+- [\[CVPR 2025\] SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with 3D Autonomous Characters](../../CVPR2025/robotics/solami_social_vision-language-action_modeling_for_immersive_interaction_with_3d_.md)
+- [\[CVPR 2026\] SocialNav: Training Human-Inspired Foundation Model for Socially-Aware Embodied Navigation](../../CVPR2026/robotics/socialnav_training_human-inspired_foundation_model_for_socially-aware_embodied_n.md)
 - [\[AAAI 2026\] Theory of Mind for Explainable Human-Robot Interaction](theory_of_mind_for_explainable_human-robot_interaction.md)
-- [\[AAAI 2026\] Towards Affordance-Aware Robotic Dexterous Grasping with Human-like Priors](towards_affordance-aware_robotic_dexterous_grasping_with_human-like_priors.md)
-- [\[AAAI 2026\] UrbanNav: Learning Language-Guided Urban Navigation from Web-Scale Human Trajectories](urbannav_learning_language-guided_urban_navigation_from_web-scale_human_trajecto.md)
+- [\[CVPR 2026\] Beyond Mimicry: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations](../../CVPR2026/robotics/beyond_mimicry_learning_whole-body_human-humanoid_interaction_from_human-human_d.md)
 
 </div>
 

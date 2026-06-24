@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] BideDPO: Conditional Image Generation with Simultaneous Text and Condition Alignment
 description: >-
-  [ICLR 2026][Image Generation][DPO] When text prompts and structural conditions (depth/edges, etc.) conflict, existing controllable generation models often satisfy only one. This paper proposes BideDPO, a bidirectional decoupled DPO framework that splits "text alignment" and "condition alignment" into two independent preference pairs. It utilizes adaptiv
+  [ICLR2026][Image Generation][Conditional Image Generation] When text prompts and structural conditions (depth/edges, etc.) conflict, existing controllable generation models often satisfy only one. This paper proposes BideDPO, a bidirectional decoupled DPO framework that splits "text alignment" and "condition alignment" into two independent preference pairs. It utilizes adaptive loss balancing for dynamic weighting and includes a pipeline to automatically construct "conflict-a…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - DPO
+  - "ICLR2026"
+  - "Image Generation"
+  - "Conditional Image Generation"
+  - "DPO"
+  - "Gradient Decoupling"
+  - "Adaptive Loss Balancing"
+  - "Preference Data"
 date: 2026-05-08
-content_hash: e737ca279b1a2a24
+content_hash: 59fc75ae78cbbac7
 ---
+
 # BideDPO: Conditional Image Generation with Simultaneous Text and Condition Alignment
 
 **Conference**: ICLR2026  
@@ -136,10 +141,10 @@ For Canny, Union-Pro2 SR improved from 0.34 to 0.68 (+34%). Robustness tests on 
 ## Related Papers
 
 - [\[CVPR 2026\] DynFusion: Rethinking Condition Fusion for Adaptive Multi-Conditional Text-to-Image Generation](../../CVPR2026/image_generation/dynfusion_rethinking_condition_fusion_for_adaptive_multi-conditional_text-to-ima.md)
+- [\[ICLR 2026\] Dual-Path Condition Alignment for Diffusion Transformers](dual-path_condition_alignment_for_diffusion_transformers.md)
 - [\[ICLR 2026\] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss](condition_errors_refinement_in_autoregressive_image_generation_with_diffusion_lo.md)
 - [\[ICLR 2026\] Condition Matters in Full-head 3D GANs](condition_matters_in_full-head_3d_gans.md)
-- [\[ICLR 2026\] Beyond Text-to-Image: Liberating Generation with a Unified Discrete Diffusion Model](beyond_text-to-image_liberating_generation_with_a_unified_discrete_diffusion_mod.md)
-- [\[ICLR 2026\] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design](creatidesign_a_unified_multi-conditional_diffusion_transformer_for_creative_grap.md)
+- [\[ICLR 2026\] Interleaving Reasoning for Better Text-to-Image Generation](interleaving_reasoning_for_better_text-to-image_generation.md)
 
 </div>
 

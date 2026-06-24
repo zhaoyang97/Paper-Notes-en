@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Don't Throw Away Your Beams: Improving Consistency-based Uncertainties in LLMs via Beam Search
 description: >-
-  [ICLR 2026][LLM Evaluation][Beam Search] This paper points out that multinomial sampling in short-answer QA frequently repeats high-probability answers, leading to high variance in consistency-based uncertainty estimation. By replacing sampling candidates with probability-weighted beam search candidates, the authors demonstrate stable improvements in PRR, ROC
+  [ICLR2026][LLM Evaluation][LLM Uncertainty Estimation] This paper points out that multinomial sampling in short-answer QA frequently repeats high-probability answers, leading to high variance in consistency-based uncertainty estimation. By replacing sampling candidates with probability-weighted beam search candidates, the authors demonstrate stable improvements in PRR, ROC-AUC, and PR-AUC across six QA datasets and six models.
 tags:
-  - ICLR 2026
-  - LLM Evaluation
-  - Beam Search
-  - Prediction-Rejection
+  - "ICLR2026"
+  - "LLM Evaluation"
+  - "LLM Uncertainty Estimation"
+  - "Consistency Assessment"
+  - "Beam Search"
+  - "Short-answer QA"
+  - "Prediction-Rejection"
 date: 2026-05-08
-content_hash: 6aa0406c7a20a984
+content_hash: 185cfbdd464b2c21
 ---
+
 # Don't Throw Away Your Beams: Improving Consistency-based Uncertainties in LLMs via Beam Search
 
 **Conference**: ICLR2026  

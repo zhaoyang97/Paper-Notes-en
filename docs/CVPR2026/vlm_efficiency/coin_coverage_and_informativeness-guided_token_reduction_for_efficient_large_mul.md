@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] This paper reformulates visual token reduction in large multimodal models (LMMs) as an "optimal subset selection" problem. It uses **informativeness** (visual saliency + cross-modal alignment) to score each token and **coverage** (log-det volume) to ensure the selected subset spans the feature space. A compact subset i
+  [CVPR 2026][Multimodal Efficiency][Visual token reduction] This paper reformulates visual token reduction in large multimodal models (LMMs) as an "optimal subset selection" problem. It uses **informativeness** (visual saliency + cross-modal alignment) to score each token and **coverage** (log-det volume) to ensure the selected subset spans the feature space. A compact subset is then selected end-to-end via greedy submodular optimization—requiring no training…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Visual token reduction"
+  - "training-free inference acceleration"
+  - "subset selection"
+  - "submodular optimization"
+  - "cross-modal alignment"
 date: 2026-05-08
-content_hash: b4e3cd58fccc97aa
+content_hash: 38cf01e86fa45d3c
 ---
+
 # CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models
 
 **Conference**: CVPR 2026  
@@ -143,10 +149,17 @@ Info vs. Coverage (LLaVA-1.5-7B, 64 tokens):
 
 <div class="related-papers" markdown="1">
 
+## Related Papers
+
+- [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)
+- [\[CVPR 2026\] EvoComp: Learning Visual Token Compression for Multimodal Large Language Models via Semantic-Guided Evolutionary Labeling](evocomp_learning_visual_token_compression_for_multimodal_large_language_models_v.md)
+- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
+- [\[CVPR 2026\] IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)
+
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)

@@ -2,14 +2,20 @@
 title: >-
   [Paper Note] Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions
 description: >-
-  [ICML 2026][Medical Imaging][Sybil] This paper proposes S(H)NAP—a generative interventional framework based on 3D diffusion bridges for "removal + insertion." It decomposes the decisions of Sybil, a leading lung cancer risk prediction model, into a Linear + Second-order Interaction Model (LMPI) consisting of "nodule main effects + pairwise interactions +
+  [ICML 2026][Medical Imaging][Lung Cancer Screening] This paper proposes S(H)NAP—a generative interventional framework based on 3D diffusion bridges for "removal + insertion." It decomposes the decisions of Sybil, a leading lung cancer risk prediction model, into a Linear + Second-order Interaction Model (LMPI) consisting of "nodule main effects + pairwise interactions + background." For the first time, it audits the model's dependence on in-hospital artifacts (e.g.…
 tags:
-  - ICML 2026
-  - Medical Imaging
-  - Sybil
+  - "ICML 2026"
+  - "Medical Imaging"
+  - "Lung Cancer Screening"
+  - "Sybil"
+  - "Counterfactual Explanations"
+  - "Diffusion Bridges"
+  - "Shapley Interaction"
+  - "Interventional Auditing"
 date: 2026-05-08
-content_hash: a078501d8e5b01b3
+content_hash: 363aac9d75c5c1ec
 ---
+
 # Auditing Sybil: Explaining Deep Lung Cancer Risk Prediction Through Generative Interventional Attributions
 
 **Conference**: ICML 2026  
@@ -125,12 +131,20 @@ S(H)NAP systematically audited Sybil across three datasets.
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-- Mikhael et al., "Sybil: A Validated Deep Learning Model to Predict Future Lung Cancer Risk From a Single Chest Computed Tomography Scan", JCO 2023.
-- Schut et al., "Generating Interpretable Counterfactual Explanations by Implicit Minimisation of Relative Entropy", ICML 2021.
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[CVPR 2025\] Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts](../../CVPR2025/medical_imaging/association_of_radiologic_ppfe_change_with_mortality_in_lung_cancer_screening_co.md)
+- [\[CVPR 2026\] Factorized Context Aggregation for Robust Cancer Risk Estimation via Soft Re-Ranked Retrieval and Hierarchical Anchors](../../CVPR2026/medical_imaging/factorized_context_aggregation_for_robust_cancer_risk_estimation_via_soft_re-ran.md)
+- [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](../../CVPR2026/medical_imaging/solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
+- [\[AAAI 2026\] GROVER: Graph-guided Representation of Omics and Vision with Expert Regulation for Cancer Survival Prediction](../../AAAI2026/medical_imaging/grover_graph-guided_representation_of_omics_and_vision_with_expert_regulation_fo.md)
+- [\[ICML 2026\] DP-KFC: Data-Free Preconditioning for Privacy-Preserving Deep Learning](dp-kfc_data-free_preconditioning_for_privacy-preserving_deep_learning.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[CVPR 2025\] Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts](../../CVPR2025/medical_imaging/association_of_radiologic_ppfe_change_with_mortality_in_lung_cancer_screening_co.md)

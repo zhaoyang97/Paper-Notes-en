@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Disrupting Hierarchical Reasoning: Adversarial Protection for Geographic Privacy in Multimodal Reasoning Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] Addressing the privacy threat where multimodal large reasoning models (MLRMs) like GPT-o3, GPT-5, and Gemini 2.5 Pro can "reason step-by-step" to pinpoint precise geographic locations from personal photos, this paper proposes ReasonBreak—a defense framework that uses "concept-aware" adversarial perturbations to disrupt
+  [ICLR 2026][LLM Safety][Geographic Privacy] Addressing the privacy threat where multimodal large reasoning models (MLRMs) like GPT-o3, GPT-5, and Gemini 2.5 Pro can "reason step-by-step" to pinpoint precise geographic locations from personal photos, this paper proposes ReasonBreak—a defense framework that uses "concept-aware" adversarial perturbations to disrupt the reasoning chain. It also releases the GeoPrivacy-6K dataset, nearly doubling the street-block level privacy pro…
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Geographic Privacy"
+  - "Multimodal Reasoning Models"
+  - "Adversarial Perturbation"
+  - "Concept-aware"
+  - "Hierarchical Reasoning"
 date: 2026-05-08
-content_hash: 6cc31a9656ca7552
+content_hash: 4f2a0c98f558fe7d
 ---
+
 # Disrupting Hierarchical Reasoning: Adversarial Protection for Geographic Privacy in Multimodal Reasoning Models
 
 **Conference**: ICLR 2026  
@@ -132,10 +138,20 @@ Adaptive tiling $N_{max}$ follows a unimodal curve, with the $16 \le N_{max} \le
 - **Value**: ⭐⭐⭐⭐⭐ Directly addresses a real-world privacy and compliance threat; releases the GeoPrivacy-6K dataset.
 
 <!-- RELATED:START -->
-<div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models](benchmarking_empirical_privacy_protection_for_adaptations_of_large_language_mode.md)
+- [\[ICLR 2026\] Reasoning or Retrieval? A Study of Answer Attribution on Large Reasoning Models](reasoning_or_retrieval_a_study_of_answer_attribution_on_large_reasoning_models.md)
+- [\[ICLR 2026\] AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models](advchain_adversarial_chain-of-thought_tuning_for_robust_safety_alignment_of_larg.md)
+- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
+- [\[ICLR 2026\] Strategic Obfuscation of Deceptive Reasoning in Language Models](strategic_obfuscation_of_deceptive_reasoning_in_language_models.md)
+
+</div>
+
+<!-- RELATED:END -->
 ## Related Papers
 
 - [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)

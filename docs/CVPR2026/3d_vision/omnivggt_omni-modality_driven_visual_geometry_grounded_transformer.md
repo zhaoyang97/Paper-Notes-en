@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer
 description: >-
-  [CVPR 2026][3D Vision][VLA] OmniVGGT introduces a lightweight GeoAdapter to feed-forward 3D foundation models like VGGT, enabling the model to flexibly incorporate an **arbitrary number** of auxiliary geometric modalities (depth, camera intrinsics/poses) during both training and inference. Even with RGB-only input, Ours outperforms VGGT; with aux
+  [CVPR 2026][3D Vision][3D Foundation Model] OmniVGGT introduces a lightweight GeoAdapter to feed-forward 3D foundation models like VGGT, enabling the model to flexibly incorporate an **arbitrary number** of auxiliary geometric modalities (depth, camera intrinsics/poses) during both training and inference. Even with RGB-only input, Ours outperforms VGGT; with auxiliary information, performance gains are substantial, and its integration into VLA models enhances robotic manipula…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - VLA
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D Foundation Model"
+  - "Multi-modal Geometric Priors"
+  - "Zero-Convolution Injection"
+  - "Random Modality Fusion"
+  - "VLA"
 date: 2026-05-08
-content_hash: e130523314fe5428
+content_hash: e7f48cf04ac45d7e
 ---
+
 # OmniVGGT: Omni-Modality Driven Visual Geometry Grounded Transformer
 
 **Conference**: CVPR 2026  
@@ -156,8 +161,8 @@ Scaling of auxiliary information (Sintel, progressive GT injection) shows strong
 - [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
 - [\[CVPR 2026\] MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)
 - [\[ICLR 2026\] Quantized Visual Geometry Grounded Transformer](../../ICLR2026/3d_vision/quantized_visual_geometry_grounded_transformer.md)
+- [\[CVPR 2026\] DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)
 - [\[CVPR 2026\] Fast Spatial Tracking with Visual Geometry Transformer](fast_spatial_tracking_with_visual_geometry_transformer.md)
-- [\[CVPR 2025\] VGGT: Visual Geometry Grounded Transformer](../../CVPR2025/3d_vision/vggt_visual_geometry_grounded_transformer.md)
 
 </div>
 

@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Multi-Feature Quantized Self-Attention for Fair Large Language Models
 description: >-
-  [ICLR 2026][LLM Safety][Paper Note] The authors propose MQAR: a lightweight plugin using "Vector Quantization + Adversarial Autoencoder" inserted before **frozen** LLM self-attention layers. Without modifying the backbone or accessing pre-training data, it filters sensitive attribute information (e.g., gender, race) from attention representations while k
+  [ICLR 2026][LLM Safety][Fairness] The authors propose MQAR: a lightweight plugin using "Vector Quantization + Adversarial Autoencoder" inserted before **frozen** LLM self-attention layers. Without modifying the backbone or accessing pre-training data, it filters sensitive attribute information (e.g., gender, race) from attention representations while keeping downstream accuracy loss below 0.4%.
 tags:
-  - ICLR 2026
-  - LLM Safety
+  - "ICLR 2026"
+  - "LLM Safety"
+  - "Fairness"
+  - "De-biasing"
+  - "Self-Attention"
+  - "Vector Quantization"
+  - "Adversarial Autoencoder"
+  - "Multi-attribute Bias"
 date: 2026-05-08
-content_hash: a5a13b8423fe054a
+content_hash: 37232e7ef2641c43
 ---
+
 # Multi-Feature Quantized Self-Attention for Fair Large Language Models
 
 **Conference**: ICLR 2026  
@@ -111,15 +118,16 @@ Removing decoders → semantic destruction and bias explosion; removing discrimi
 - **Value**: ⭐⭐⭐⭐ — Highly practical for deploying fair black-box/proprietary LLMs where retraining is impossible.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Self-Destructive Language Models](self-destructive_language_models.md)
 - [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)
 - [\[ICLR 2026\] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs](fair_in_mind_fair_in_action_a_synchronous_benchmark_for_understanding_and_genera.md)
-- [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](../../ACL2026/llm_safety/multi-component_causal_tracing_in_large_language_models.md)
 - [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
-- [\[ICLR 2026\] In-Context Watermarks for Large Language Models](in-context_watermarks_for_large_language_models.md)
+- [\[ACL 2026\] Multi-component Causal Tracing in Large Language Models](../../ACL2026/llm_safety/multi-component_causal_tracing_in_large_language_models.md)
 
 </div>
 

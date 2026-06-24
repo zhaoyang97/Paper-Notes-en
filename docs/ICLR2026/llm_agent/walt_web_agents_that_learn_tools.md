@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] WALT: Web Agents that Learn Tools
 description: >-
-  [ICLR 2026][LLM Agent][Web Agent] WALT reverse-engineers functions already designed into websites (search, filter, sort, post, CRUD) into a set of deterministically callable tools. This shifts web agents from "reasoning step-by-step how to click and fill" to "directly calling `search(query)`," achieving SOTA on VisualWebArena (52.9%) and WebArena (50.1
+  [ICLR 2026][LLM Agent][Web Agent] WALT reverse-engineers functions already designed into websites (search, filter, sort, post, CRUD) into a set of deterministically callable tools. This shifts web agents from "reasoning step-by-step how to click and fill" to "directly calling `search(query)`," achieving SOTA on VisualWebArena (52.9%) and WebArena (50.1%) with fewer steps and lower reliance on LLM inference.
 tags:
-  - ICLR 2026
-  - LLM Agent
-  - Web Agent
+  - "ICLR 2026"
+  - "LLM Agent"
+  - "Web Agent"
+  - "Tool Learning"
+  - "Browser Automation"
+  - "Reverse Engineering"
+  - "URL Promotion"
 date: 2026-05-08
-content_hash: 2e5f05fcba8444d3
+content_hash: dbff39028bd25bee
 ---
+
 # WALT: Web Agents that Learn Tools
 
 **Conference**: ICLR 2026  

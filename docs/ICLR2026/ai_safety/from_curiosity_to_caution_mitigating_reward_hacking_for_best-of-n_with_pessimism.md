@@ -2,15 +2,20 @@
 title: >-
   [Paper Note] From Curiosity to Caution: Mitigating Reward Hacking for Best-of-$N$ with Pessimism
 description: >-
-  [ICLR 2026][AI Safety][Best-of-N] This paper reverses the idea of using "curiosity" reward prediction error as an exploration signal in Reinforcement Learning. Instead, it trains a predictor to fit the internal features of a reward model on typical responses and uses the prediction error as an "out-of-distribution uncertainty" penalty for reward scores
+  [ICLR 2026][AI Safety][Best-of-N] This paper reverses the idea of using "curiosity" reward prediction error as an exploration signal in Reinforcement Learning. Instead, it trains a predictor to fit the internal features of a reward model on typical responses and uses the prediction error as an "out-of-distribution uncertainty" penalty for reward scores. This ensures that Best-of-$N$ sampling no longer degrades as $N$ increases but rather improves monotonically.
 tags:
-  - ICLR 2026
-  - AI Safety
-  - Best-of-N
-  - RND
+  - "ICLR 2026"
+  - "AI Safety"
+  - "Best-of-N"
+  - "Reward Hacking"
+  - "Pessimism"
+  - "Uncertainty Estimation"
+  - "RND"
+  - "OOD Detection"
 date: 2026-05-08
-content_hash: e8aad662f231efc1
+content_hash: e2d62be85e2d0589
 ---
+
 # From Curiosity to Caution: Mitigating Reward Hacking for Best-of-$N$ with Pessimism
 
 **Conference**: ICLR 2026  
@@ -124,11 +129,11 @@ Predictor architecture ablation (Table 3): Lightweight architectures actually ou
 
 ## Related Papers
 
+- [\[ICLR 2026\] Robust Optimization for Mitigating Reward Hacking with Correlated Proxies](robust_optimization_for_mitigating_reward_hacking_with_correlated_proxies.md)
 - [\[ICLR 2026\] Generative Adversarial Post-Training Mitigates Reward Hacking in Live Human-AI Music Interaction](generative_adversarial_post-training_mitigates_reward_hacking_in_live_human-ai_m.md)
 - [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
+- [\[ICLR 2026\] Mitigating Privacy Risk via Forget Set-Free Unlearning](mitigating_privacy_risk_via_forget_set-free_unlearning.md)
 - [\[ICLR 2026\] Robust Fine-Tuning from Non-Robust Pretrained Models: Mitigating Suboptimal Transfer with Epsilon-Scheduling](robust_fine-tuning_from_non-robust_pretrained_models_mitigating_suboptimal_trans.md)
-- [\[AAAI 2026\] ProbLog4Fairness: A Neurosymbolic Approach to Modeling and Mitigating Bias](../../AAAI2026/ai_safety/problog4fairness_a_neurosymbolic_approach_to_modeling_and_mitigating_bias.md)
-- [\[ICML 2026\] Robust In-Context Reinforcement Learning Under Reward Poisoning Attacks](../../ICML2026/ai_safety/robust_in-context_reinforcement_learning_under_reward_poisoning_attacks.md)
 
 </div>
 

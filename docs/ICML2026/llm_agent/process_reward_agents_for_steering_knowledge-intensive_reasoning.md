@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Process Reward Agents for Steering Knowledge-Intensive Reasoning
 description: >-
-  [ICML 2026][LLM Agent][Process Reward Model] Reconstructs the Process Reward Model (PRM) from "post-hoc scoring" into an **online agent**: it decides in real-time whether to retrieve evidence and provides rewards at each reasoning step. By using beam search to prune candidate trajectories from a frozen policy, Qwen3-4B achieves a 4B-scale SOTA of 81.9% on MedQA a
+  [ICML 2026][LLM Agent][Process Reward Model] Reconstructs the Process Reward Model (PRM) from "post-hoc scoring" into an **online agent**: it decides in real-time whether to retrieve evidence and provides rewards at each reasoning step. By using beam search to prune candidate trajectories from a frozen policy, Qwen3-4B achieves a 4B-scale SOTA of 81.9% on MedQA and demonstrates direct transferability to various unseen backbones from 0.5B to 8B (yielding up to a 25.7% gain).
 tags:
-  - ICML 2026
-  - LLM Agent
-  - Process Reward Model
-  - Beam Search
+  - "ICML 2026"
+  - "LLM Agent"
+  - "Process Reward Model"
+  - "Beam Search"
+  - "Retrieval Augmented"
+  - "Medical Reasoning"
+  - "Frozen Policy"
 date: 2026-05-08
-content_hash: 540f448762f3606b
+content_hash: 3e181f7be7bd233c
 ---
+
 # Process Reward Agents for Steering Knowledge-Intensive Reasoning
 
 **Conference**: ICML 2026  
@@ -171,10 +175,10 @@ Table 4 further decomposes reward level and timing (using the same trained PRA p
 ## Related Papers
 
 - [\[ICLR 2026\] WebArbiter: A Principle-Guided Reasoning Process Reward Model for Web Agents](../../ICLR2026/llm_agent/webarbiter_a_principle-guided_reasoning_process_reward_model_for_web_agents.md)
+- [\[ACL 2026\] PRInTS: Process Reward Modeling for Long-range Information Retrieval](../../ACL2026/llm_agent/prints_reward_modeling_for_long-horizon_information_seeking.md)
 - [\[ACL 2026\] Exploring Reasoning Reward Model for Agents](../../ACL2026/llm_agent/exploring_reasoning_reward_model_for_agents.md)
 - [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
-- [\[ICLR 2026\] Web-CogReasoner: Towards Knowledge-Induced Cognitive Reasoning for Web Agents](../../ICLR2026/llm_agent/web-cogreasoner_towards_knowledge-induced_cognitive_reasoning_for_web_agents.md)
-- [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](../../ACL2026/llm_agent/rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
+- [\[ICML 2026\] CoDA-Bench: Can Code Agents Handle Data-Intensive Tasks?](coda-bench_can_code_agents_handle_data-intensive_tasks.md)
 
 </div>
 

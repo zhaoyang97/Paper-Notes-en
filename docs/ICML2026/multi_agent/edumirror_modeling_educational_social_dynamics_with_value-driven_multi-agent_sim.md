@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] EduMirror: Modeling Educational Social Dynamics with Value-driven Multi-agent Simulation
 description: >-
-  [ICML 2026][Multi-Agent][Paper Note] EduMirror simulates educational social phenomena like "campus bullying" and "peer cooperation" in an LLM-driven multi-agent sandbox. It employs "value-driven agents" based on Maslow's hierarchy of needs and Social Value Orientation (SVO) to play students and teachers, coupled with a "dual-track measurement" protocol th
+  [ICML2026][Multi-Agent][Educational Social Dynamics] EduMirror simulates educational social phenomena like "campus bullying" and "peer cooperation" in an LLM-driven multi-agent sandbox. It employs "value-driven agents" based on Maslow's hierarchy of needs and Social Value Orientation (SVO) to play students and teachers, coupled with a "dual-track measurement" protocol that quantifies both observable behaviors and latent psychological states. This allows for ethically safe "wh…
 tags:
-  - ICML 2026
-  - Multi-Agent
+  - "ICML2026"
+  - "Multi-Agent"
+  - "Educational Social Dynamics"
+  - "Value-driven Agents"
+  - "Multi-agent Simulation"
+  - "Psychological Needs"
+  - "Counterfactual Intervention"
 date: 2026-05-08
-content_hash: 9e26cbbce1af589b
+content_hash: 001bed930719a0cf
 ---
+
 # EduMirror: Modeling Educational Social Dynamics with Value-driven Multi-agent Simulation
 
 **Conference**: ICML2026  
@@ -133,8 +139,8 @@ System-wide, pairwise win-rate heatmaps across 17 scenarios show EduMirror posse
 - [\[ACL 2026\] Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](../../ACL2026/multi_agent/social_dynamics_as_critical_vulnerabilities_that_undermine_objective_decision-ma.md)
 - [\[NeurIPS 2025\] MetaMind: Modeling Human Social Thoughts with Metacognitive Multi-Agent Systems](../../NeurIPS2025/multi_agent/metamind_modeling_human_social_thoughts_with_metacognitive_multi-agent_systems.md)
 - [\[ACL 2026\] Preference Estimation via Opponent Modeling in Multi-Agent Negotiation](../../ACL2026/multi_agent/preference_estimation_via_opponent_modeling_in_multi-agent_negotiation.md)
-- [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ACL 2025\] CoMet: Metaphor-Driven Covert Communication for Multi-Agent Language Games](../../ACL2025/multi_agent/comet_metaphor-driven_covert_communication_for_multi-agent_language_games.md)
+- [\[ICLR 2026\] DoVer: Intervention-Driven Auto Debugging for LLM Multi-Agent Systems](../../ICLR2026/multi_agent/dover_intervention-driven_auto_debugging_for_llm_multi-agent_systems.md)
+- [\[ICLR 2026\] From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization](../../ICLR2026/multi_agent/from_eduvisbench_to_eduvisagent_a_benchmark_and_multi-agent_framework_for_reason.md)
 
 </div>
 

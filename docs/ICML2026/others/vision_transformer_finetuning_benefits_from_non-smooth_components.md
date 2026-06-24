@@ -1,16 +1,19 @@
 ---
 title: >-
-  [Paper Note] Vision Transformer 微调中的非光滑分量优势
+  [Paper Note] Advantages of Non-Smooth Components in Vision Transformer Fine-Tuning
 description: >-
-  [ICML 2026][Others][Vision Transformer] By defining a "plasticity" metric, this paper demonstrates that non-smooth components in ViTs (Attention and Feed-Forward layers) possess higher plasticity—providing larger gradient norms during fine-tuning to achieve better and more stable transfer learning performance.
+  [ICML 2026][Plasticity] By defining a "plasticity" metric, this paper demonstrates that non-smooth components in ViTs (Attention and Feed-Forward layers) possess higher plasticity—providing larger gradient norms during fine-tuning to achieve better and more stable transfer learning performance.
 tags:
-  - ICML 2026
-  - Others
-  - Vision Transformer
-  - Fine-tuning
+  - "ICML 2026"
+  - "Plasticity"
+  - "Vision Transformer"
+  - "Fine-Tuning"
+  - "Parameter-Efficient"
+  - "Smoothness"
 date: 2026-05-08
-content_hash: be63d83366e70241
+content_hash: 425f855dbb12cd29
 ---
+
 # Advantages of Non-Smooth Components in Vision Transformer Fine-Tuning
 
 **Conference**: ICML 2026  
@@ -111,11 +114,11 @@ To verify that the plasticity ranking corresponds to fine-tuning performance wit
 
 ## Related Papers
 
+- [\[ICLR 2026\] Deploying Models to Non-participating Clients in Federated Learning without Fine-tuning: A Hypernetwork-based Approach](../../ICLR2026/others/deploying_models_to_non-participating_clients_in_federated_learning_without_fine.md)
 - [\[NeurIPS 2025\] Frequency-Aware Token Reduction for Efficient Vision Transformer](../../NeurIPS2025/others/frequency-aware_token_reduction_for_efficient_vision_transformer.md)
-- [\[CVPR 2026\] ViT3: Unlocking Test-Time Training in Vision](../../CVPR2026/others/vit3_unlocking_test_time_training_in_vision.md)
-- [\[CVPR 2025\] CARE Transformer: Mobile-Friendly Linear Visual Transformer via Decoupled Dual Interaction](../../CVPR2025/others/care_transformer_linear_attention.md)
-- [\[AAAI 2026\] Enhancing Noise Resilience in Face Clustering via Sparse Differential Transformer](../../AAAI2026/others/enhancing_noise_resilience_in_face_clustering_via_sparse_differential_transforme.md)
-- [\[CVPR 2026\] Computer Vision with a Superpixelation Camera](../../CVPR2026/others/computer_vision_with_a_superpixelation_camera.md)
+- [\[ICLR 2026\] HippoTune: A Hippocampal Associative Loop–Inspired Fine-Tuning Method for Continual Learning](../../ICLR2026/others/hippotune_a_hippocampal_associative_loopinspired_fine-tuning_method_for_continua.md)
+- [\[ACL 2025\] Intuitive Fine-Tuning: Towards Simplifying Alignment into a Single Process](../../ACL2025/others/intuitive_fine_tuning.md)
+- [\[ACL 2025\] SoRFT: Issue Resolving with Subtask-oriented Reinforced Fine-Tuning](../../ACL2025/others/sorft_issue_resolving_with_subtask-oriented_reinforced_fine-tuning.md)
 
 </div>
 

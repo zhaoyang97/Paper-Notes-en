@@ -4,15 +4,16 @@ title: >-
 description: >-
   [CVPR 2026][Medical Imaging][few-shot segmentation] Proposes SD-FSMIS, a framework that adapts pre-trained Stable Diffusion to few-shot medical image segmentation. Through a support-query interaction module and a visual-to-text condition transformer, it achieves efficient adaptation and demonstrates particularly outstanding performance in cross-domain scenarios.
 tags:
-  - CVPR 2026
-  - Medical Imaging
-  - few-shot segmentation
-  - stable diffusion
-  - cross-domain
-  - foundation model
+  - "CVPR 2026"
+  - "Medical Imaging"
+  - "few-shot segmentation"
+  - "stable diffusion"
+  - "cross-domain"
+  - "foundation model"
 date: 2026-05-08
-content_hash: a371ff2770b8cd62
+content_hash: e30459567e9f707e
 ---
+
 # SD-FSMIS: Adapting Stable Diffusion for Few-Shot Medical Image Segmentation
 
 **Conference**: CVPR 2026  
@@ -127,10 +128,10 @@ The model is trained using an MSE loss between the predicted and ground truth qu
 ## Related Papers
 
 - [\[CVPR 2026\] Focus on Background: Exploring SAM's Potential in Few-shot Medical Image Segmentation with Background-centric Prompting](focus_on_background_exploring_sams_potential_in_few-shot_medical_image_segmentat.md)
-- [\[CVPR 2026\] Few-Shot Synthetic Data Generation with Diffusion Models for Downstream Vision Tasks](few-shot_synthetic_data_generation_with_diffusion_models_for_downstream_vision_t.md)
 - [\[CVPR 2026\] Universal-to-Specific: Dynamic Knowledge-Guided Multiple Instance Learning for Few-Shot Whole Slide Image Classification](universal-to-specific_dynamic_knowledge-guided_multiple_instance_learning_for_fe.md)
 - [\[CVPR 2026\] Interpretable Cross-Domain Few-Shot Learning with Rectified Target-Domain Local Alignment](interpretable_cross-domain_few-shot_learning_with_rectified_target-domain_local_.md)
-- [\[CVPR 2025\] Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation](../../CVPR2025/medical_imaging/noise-consistent_siamese-diffusion_for_medical_image_synthesis_and_segmentation.md)
+- [\[CVPR 2026\] MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification](muse_harnessing_precise_and_diverse_semantics_for_few-shot_whole_slide_image_cla.md)
+- [\[CVPR 2026\] Diffusion-Based Native Adversarial Synthesis for Enhanced Medical Segmentation Generalization](diffusion-based_native_adversarial_synthesis_for_enhanced_medical_segmentation_g.md)
 
 </div>
 

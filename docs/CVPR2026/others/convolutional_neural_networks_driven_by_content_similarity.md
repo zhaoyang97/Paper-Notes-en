@@ -2,14 +2,18 @@
 title: >-
   [Paper Note] Convolutional Neural Networks Driven by Content Similarity
 description: >-
-  [CVPR 2026][Others][Token Mixer] By performing "intra-channel sorting" on features to align tokens with high similarity in adjacent positions and then aggregating them using 1D depthwise convolution, the proposed pure CNN model, Ego, enables "content-driven aggregation" similar to self-attention. Ego outperforms Transformers and advanced CNNs of reach
+  [CVPR 2026][Convolutional Neural Networks] By performing "intra-channel sorting" on features to align tokens with high similarity in adjacent positions and then aggregating them using 1D depthwise convolution, the proposed pure CNN model, Ego, enables "content-driven aggregation" similar to self-attention. Ego outperforms Transformers and advanced CNNs of reached scales in classification, segmentation, and detection with lower computational costs.
 tags:
-  - CVPR 2026
-  - Others
-  - Token Mixer
+  - "CVPR 2026"
+  - "Convolutional Neural Networks"
+  - "Content Similarity"
+  - "Gated Convolution"
+  - "Intra-channel Sorting"
+  - "Token Mixer"
 date: 2026-05-08
-content_hash: 79ccfc054e10ce73
+content_hash: 597eac339023216e
 ---
+
 # Convolutional Neural Networks Driven by Content Similarity
 
 **Conference**: CVPR 2026  
@@ -143,15 +147,16 @@ Ego-T achieves 84.0% with only 3.8 GFLOPs, outperforming Conv2Former-T and MogaN
 - Value: ⭐⭐⭐⭐ (Provides a "sort-then-conv" paradigm for CNNs)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)
-- [\[CVPR 2026\] Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)
-- [\[CVPR 2026\] On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)
-- [\[CVPR 2026\] ID-Sim: An Identity-Focused Similarity Metric](id-sim_an_identity-focused_similarity_metric.md)
-- [\[CVPR 2026\] Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)
+- [\[CVPR 2026\] Bidirectional Query-Driven Generation of Parametric CAD Sketch](bidirectional_query-driven_generation_of_parametric_cad_sketch.md)
+- [\[ICML 2026\] On the Epistemic Uncertainty of Overparametrized Neural Networks](../../ICML2026/others/on_the_epistemic_uncertainty_of_overparametrized_neural_networks.md)
+- [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
+- [\[ICLR 2026\] On the Lipschitz Continuity of Set Aggregation Functions and Neural Networks for Sets](../../ICLR2026/others/on_the_lipschitz_continuity_of_set_aggregation_functions_and_neural_networks_for.md)
+- [\[ICLR 2026\] Breaking Gradient Temporal Collinearity for Robust Spiking Neural Networks](../../ICLR2026/others/breaking_gradient_temporal_collinearity_for_robust_spiking_neural_networks.md)
 
 </div>
 

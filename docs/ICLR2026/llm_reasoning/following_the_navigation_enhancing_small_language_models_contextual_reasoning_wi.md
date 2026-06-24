@@ -2,13 +2,20 @@
 title: >-
   [Paper Note] Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance
 description: >-
-  [ICLR 2026][LLM Reasoning][Paper Note] Proposes **Navigation**—a training-free framework that distills the "reasoning strategies" of large models for complex contexts into reusable navigation templates stored in a database. Using a three-phase "Generation-Utilization-Update" cycle, it guides 3B small models to locate key information, achieving an average ac
+  [ICLR 2026][Reasoning][Small Language Models] Proposes **Navigation**—a training-free framework that distills the "reasoning strategies" of large models for complex contexts into reusable navigation templates stored in a database. Using a three-phase "Generation-Utilization-Update" cycle, it guides 3B small models to locate key information, achieving an average accuracy improvement of 10.7% and outperforming GPT-3.5-Turbo.
 tags:
-  - ICLR 2026
-  - LLM Reasoning
+  - "ICLR 2026"
+  - "Reasoning"
+  - "Small Language Models"
+  - "Contextual Reasoning"
+  - "Training-free"
+  - "LLM Distillation"
+  - "Template Retrieval"
+  - "Knowledge Base"
 date: 2026-05-08
-content_hash: a7f9eda3f0fff3ef
+content_hash: 05bc71cb254ffd3d
 ---
+
 # Following the Navigation: Enhancing Small Language Models Contextual Reasoning with LLM Guidance
 
 **Conference**: ICLR 2026  
@@ -136,7 +143,7 @@ The proportion of templates to the dataset is extremely low: 8 templates for 756
 - [\[ICLR 2026\] T1: Tool-Integrated Verification for Test-Time Compute Scaling in Small Language Models](t1_tool-integrated_verification_for_test-time_compute_scaling_in_small_language_.md)
 - [\[ICLR 2026\] Efficient Test-Time Scaling for Small Vision-Language Models](efficient_test-time_scaling_for_small_vision-language_models.md)
 - [\[ICLR 2026\] Predicting LLM Reasoning Performance with Small Proxy Model](predicting_llm_reasoning_performance_with_small_proxy_model.md)
-- [\[ICLR 2026\] From Abstract to Contextual: What LLMs Still Cannot Do in Mathematics](from_abstract_to_contextual_what_llms_still_cannot_do_in_math_word_problem_solvi.md)
+- [\[ICML 2025\] ProofCompass: Enhancing Specialized Provers with LLM Guidance](../../ICML2025/llm_reasoning/proofcompass_enhancing_specialized_provers_with_llm_guidance.md)
 
 </div>
 

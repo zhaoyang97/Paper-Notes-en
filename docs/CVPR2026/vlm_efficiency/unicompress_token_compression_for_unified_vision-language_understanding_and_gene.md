@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] UniCompress: Token Compression for Unified Vision-Language Understanding and Generation
 description: >-
-  [CVPR 2026][Multimodal VLM][Paper Note] UniCompress wraps off-the-shelf discrete tokenizers with lightweight "global meta-token extraction + average pooling compression + global-guided autoregressive decompression" modules. It reduces the visual token count of unified understanding-generation models by 4×, maintaining understanding performance with only mino
+  [CVPR 2026][Multimodal Efficiency][Unified Multimodal Models] UniCompress wraps off-the-shelf discrete tokenizers with lightweight "global meta-token extraction + average pooling compression + global-guided autoregressive decompression" modules. It reduces the visual token count of unified understanding-generation models by 4×, maintaining understanding performance with only minor generation degradation, all without retraining the language model.
 tags:
-  - CVPR 2026
-  - Multimodal VLM
+  - "CVPR 2026"
+  - "Multimodal Efficiency"
+  - "Unified Multimodal Models"
+  - "Visual Token Compression"
+  - "Global Meta-tokens"
+  - "Autoregressive Decompression"
+  - "Plug-and-play"
 date: 2026-05-08
-content_hash: 6e8d62b9168f69d2
+content_hash: a415665d45c261bb
 ---
+
 # UniCompress: Token Compression for Unified Vision-Language Understanding and Generation
 
 **Conference**: CVPR 2026  
@@ -149,11 +155,11 @@ Lightweight backbones show minimal degradation, though diffusion-head architectu
 
 ## Related Papers
 
-- [\[CVPR 2026\] Rosetta Stone for Unified MLLMs: A Unified Tokenizer to Decipher Understanding and Generation](rosetta_stone_for_unified_mllms_a_unified_tokenizer_to_decipher_understanding_an.md)
-- [\[CVPR 2026\] ApET: Approximation-Error Guided Token Compression for Efficient VLMs](apet_approximation-error_guided_token_compression_for_efficient_vlms.md)
-- [\[CVPR 2026\] OmniZip: Audio-Guided Dynamic Token Compression for Fast Omnimodal Large Language Models](omnizip_audio-guided_dynamic_token_compression_for_fast_omnimodal_large_language.md)
-- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](unified_personalized_understanding_generating_and_editing.md)
-- [\[CVPR 2026\] DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance](duetsvg_unified_multimodal_svg_generation_with_internal_visual_guidance.md)
+- [\[CVPR 2026\] Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)
+- [\[CVPR 2026\] VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction](vqrae_representation_quantization_autoencoders_for_multimodal_understanding_gene.md)
+- [\[ICLR 2026\] VisionTrim: Unified Vision Token Compression for Training-Free MLLM Acceleration](../../ICLR2026/vlm_efficiency/visiontrim_unified_vision_token_compression_for_training-free_mllm_acceleration.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
 
 </div>
 

@@ -2,15 +2,18 @@
 title: >-
   [Paper Note] Decision Tree Learning on Product Spaces
 description: >-
-  [ICML 2026][Others][top-down greedy heuristic] This paper extends the theoretical guarantees of Blanc et al. (ITCS'20) for the "top-down greedy decision tree heuristic" from uniform distributions to **arbitrary product distributions**. It provides an upper bound on tree size of $\exp(\Delta_\mathrm{opt} D_\mathrm{opt}\log(e/\epsilon))$ (strictly superior to ITCS'20
+  [ICML 2026][top-down greedy heuristic] This paper extends the theoretical guarantees of Blanc et al. (ITCS'20) for the "top-down greedy decision tree heuristic" from uniform distributions to **arbitrary product distributions**. It provides an upper bound on tree size of $\exp(\Delta_\mathrm{opt} D_\mathrm{opt}\log(e/\epsilon))$ (strictly superior to ITCS'20 in the full binary tree case) and is **entirely parameter-free**, requiring no prior knowledge of the optimal tree size…
 tags:
-  - ICML 2026
-  - Others
-  - top-down greedy heuristic
-  - parameter-free
+  - "ICML 2026"
+  - "top-down greedy heuristic"
+  - "influence splitting"
+  - "product distribution"
+  - "PAC learning"
+  - "parameter-free"
 date: 2026-05-08
-content_hash: 32b85029524fa526
+content_hash: ade8ae131b002528
 ---
+
 # Decision Tree Learning on Product Spaces
 
 **Conference**: ICML 2026  

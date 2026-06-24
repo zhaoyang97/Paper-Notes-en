@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination
 description: >-
-  [NeurIPS 2025][Robotics][Imitation Learning] Inspired by Vygotsky's theory of inner speech, this paper proposes MIMIC, a framework that uses language as an intermediate representation between perception and action. A VLM…
+  [NeurIPS 2025 Spotlight][Robotics][Imitation Learning] Inspired by Vygotsky's theory of inner speech, this paper proposes MIMIC, a framework that uses language as an intermediate representation between perception and action. A VLM provides language scaffolding to train a CVAE that generates inner speech, which then conditions a diffusion policy to produce diverse and steerable behaviors.
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Robotics"
   - "Imitation Learning"
   - "Inner Speech"
@@ -12,7 +12,7 @@ tags:
   - "Human-AI Coordination"
   - "Diffusion Policy"
 date: 2026-05-08
-content_hash: 4e3b08229856c67b
+content_hash: e7d6526d98618d93
 ---
 
 # Inner Speech as Behavior Guides: Steerable Imitation of Diverse Behaviors for Human-AI Coordination
@@ -180,10 +180,10 @@ Collective reward improves significantly, with a maximum gain of 36 points.
 ## Related Papers
 
 - [\[NeurIPS 2025\] EgoBridge: Domain Adaptation for Generalizable Imitation from Egocentric Human Data](egobridge_domain_adaptation_for_generalizable_imitation_from_egocentric_human_da.md)
+- [\[ICML 2026\] Moving Out: Physically-grounded Human-AI Collaboration](../../ICML2026/robotics/moving_out_physically-grounded_human-ai_collaboration.md)
 - [\[NeurIPS 2025\] Real-World Reinforcement Learning of Active Perception Behaviors](real-world_reinforcement_learning_of_active_perception_behaviors.md)
-- [\[NeurIPS 2025\] Massively Parallel Imitation Learning of Mouse Forelimb Musculoskeletal Reaching Dynamics](massively_parallel_imitation_learning_of_mouse_forelimb_musculoskeletal_reaching.md)
-- [\[NeurIPS 2025\] Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning](adversarial_locomotion_and_motion_imitation_for_humanoid_policy_learning.md)
-- [\[NeurIPS 2025\] BEAST: Efficient Tokenization of B-Splines Encoded Action Sequences for Imitation Learning](beast_efficient_tokenization_of_b-splines_encoded_action_sequences_for_imitation.md)
+- [\[NeurIPS 2025\] COOPERA: Continual Open-Ended Human-Robot Assistance](coopera_continual_open_ended_human_robot_assistance.md)
+- [\[ICML 2025\] Action-Constrained Imitation Learning](../../ICML2025/robotics/action-constrained_imitation_learning.md)
 
 </div>
 

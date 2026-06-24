@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] UniKPT proposes replacing point-to-point dense matching with a set of **adaptive sparse keypoints**. Through three modules—Adaptive Keypoint Extraction, Progressive Correspondence Alignment, and Confidence-Aware Structure Localization—it unifies the tracking of diverse categories such as pedestrians, trucks, and buses
+  [CVPR 2026][3D Vision][3D SOT] UniKPT proposes replacing point-to-point dense matching with a set of **adaptive sparse keypoints**. Through three modules—Adaptive Keypoint Extraction, Progressive Correspondence Alignment, and Confidence-Aware Structure Localization—it unifies the tracking of diverse categories such as pedestrians, trucks, and buses within a single model. On nuScenes, it outperforms category-specific SOTA methods by 4.37%/5.16% in Success/Precision.
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "3D SOT"
+  - "Point Cloud Tracking"
+  - "Category-Unified"
+  - "Keypoint Correspondence"
+  - "Structure-Aware"
 date: 2026-05-08
-content_hash: d837533c3b80c89e
+content_hash: 8e3928853b39591e
 ---
+
 # Generalizable Structure-Aware Keypoint Correspondence for Category-Unified 3D Single Object Tracking
 
 **Conference**: CVPR 2026  
@@ -143,15 +149,14 @@ Efficiency analysis (Tab.6) shows the keypoint design is more accurate than the 
 ## Related Papers
 
 - [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)
+- [\[ICLR 2026\] PointRePar: SpatioTemporal Point Relation Parsing for Robust Category-Unified 3D Tracking](../../ICLR2026/3d_vision/pointrepar_spatiotemporal_point_relation_parsing_for_robust_category-unified_3d_.md)
+- [\[CVPR 2026\] UniCorrn: Unified Correspondence Transformer Across 2D and 3D](unicorrn_unified_correspondence_transformer_across_2d_and_3d.md)
 - [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
-- [\[CVPR 2026\] CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction](cari4d_category_agnostic_4d_reconstruction_of_human_object_interaction.md)
-- [\[CVPR 2026\] Aligning Text, Images and 3D Structure Token-by-Token](aligning_text_images_and_3d_structure_token-by-token.md)
-- [\[CVPR 2026\] EV-CGNet: Co-visible Focused 3D-guided 2D Event Keypoint Detection Network](ev-cgnet_co-visible_focused_3d-guided_2d_event_keypoint_detection_network.md)
+- [\[CVPR 2026\] From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection](from_pairs_to_sequences_track-aware_policy_gradients_for_keypoint_detection.md)
 
 </div>
 
 <!-- RELATED:END -->
-
 ## Related Papers
 
 - [\[CVPR 2026\] MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)

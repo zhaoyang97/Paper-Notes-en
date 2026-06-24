@@ -1,14 +1,19 @@
 ---
 title: >-
-  [Paper Note] VisionPulse：多模态推理中的动态视觉稀疏化
+  [Paper Note] VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] VisionPulse proposes a training-free, step-level dynamic visual token pruning framework. By adaptively adjusting the number of retained tokens based on changing visual dependencies at each decoding step, it maintains inference accuracy while retaining only 5% of visual tokens, reducing inference length by 11.2%.
+  [ICML 2026][Multimodal VLM][Visual Token Pruning] VisionPulse proposes a training-free, step-level dynamic visual token pruning framework. By adaptively adjusting the number of retained tokens based on changing visual dependencies at each decoding step, it maintains inference accuracy while retaining only 5% of visual tokens, reducing inference length by 11.2%.
 tags:
-  - ICML 2026
-  - Multimodal VLM
+  - "ICML 2026"
+  - "Multimodal VLM"
+  - "Visual Token Pruning"
+  - "Inference Efficiency"
+  - "Dynamic Budget Allocation"
+  - "Multimodal Reasoning"
 date: 2026-05-08
-content_hash: e59915119b14a28a
+content_hash: 23b69aa365a28d44
 ---
+
 # VisionPulse: Dynamic Visual Sparsification in Multimodal Reasoning
 
 **Conference**: ICML 2026  
@@ -119,15 +124,16 @@ Redundant visual context imposes a **dual cost**. First is computation: total ov
 - Value: ⭐⭐⭐⭐⭐ Direct reduction of inference cost and improvement in reliability; training-free and easy to deploy.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICML 2026\] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics](dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics.md)
-- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
-- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[ICML 2026\] V-LynX: Token Interface Alignment for VideoX LLMs](v-lynx_token_interface_alignment_for_videox_llms.md)
-- [\[ICML 2026\] CG-MLLM: Captioning and Generating 3D Content via Multi-modal Large Language Models](cg-mllm_captioning_and_generating_3d_content_via_multi-modal_large_language_mode.md)
+- [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
+- [\[CVPR 2026\] GeoTikzBridge: Advancing Multimodal Code Generation for Geometric Perception and Reasoning](../../CVPR2026/multimodal_vlm/geotikzbridge_advancing_multimodal_code_generation_for_geometric_perception_and_.md)
+- [\[ICML 2026\] TRAP: Hijacking CoT Reasoning of VLA for Targeted Behavior Attacks via Adversarial Patches](trap_hijacking_vla_cot-reasoning_via_adversarial_patches.md)
+- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](../../CVPR2026/multimodal_vlm/adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
+- [\[CVPR 2026\] Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)
 
 </div>
 

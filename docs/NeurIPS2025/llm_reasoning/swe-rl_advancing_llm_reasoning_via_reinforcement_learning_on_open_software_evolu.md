@@ -2,10 +2,10 @@
 title: >-
   [Paper Note] SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution
 description: >-
-  [NeurIPS 2025][LLM Reasoning][Reinforcement Learning] This work is the first to apply reinforcement learning (RL) to real-world software engineering tasks (GitHub PR/Issue resolution)…
+  [NeurIPS 2025][Reasoning][Reinforcement Learning] This work is the first to apply reinforcement learning (RL) to real-world software engineering tasks (GitHub PR/Issue resolution), training Llama-3.3-70B exclusively with a rule-based sequence-similarity reward. It achieves a 41.0% resolve rate on SWE-bench Verified (SOTA among medium-scale models). Notably, although RL training is conducted solely on issue-solving data, it elicits emergent generalization in out-of-domain task…
 tags:
   - "NeurIPS 2025"
-  - "LLM Reasoning"
+  - "Reasoning"
   - "Reinforcement Learning"
   - "Software Evolution Data"
   - "GRPO"
@@ -14,7 +14,7 @@ tags:
   - "Code Editing"
   - "Pull Request"
 date: 2026-05-08
-content_hash: 8799b01836f36e08
+content_hash: 1f5b14e43e077f32
 ---
 
 # SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution
@@ -150,9 +150,9 @@ The SWE-RL pipeline proceeds as follows: (1) collect 273K high-quality PRs from 
 
 - [\[NeurIPS 2025\] SRPO: Enhancing Multimodal LLM Reasoning via Reflection-Aware Reinforcement Learning](srpo_enhancing_multimodal_llm_reasoning_via_reflection-aware_reinforcement_learn.md)
 - [\[NeurIPS 2025\] SQL-R1: Training Natural Language to SQL Reasoning Model By Reinforcement Learning](sql-r1_training_natural_language_to_sql_reasoning_model_by_reinforcement_learnin.md)
-- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
+- [\[ICLR 2026\] RL of Thoughts: Navigating LLM Reasoning with Inference-Time Reinforcement Learning](../../ICLR2026/llm_reasoning/rl_of_thoughts_navigating_llm_reasoning_with_inference-time_reinforcement_learni.md)
 - [\[NeurIPS 2025\] The Impact of Quantization on Large Reasoning Model Reinforcement Learning](the_impact_of_quantization_on_large_reasoning_model_reinforcement_learning.md)
-- [\[NeurIPS 2025\] ExPO: Unlocking Hard Reasoning with Self-Explanation-Guided Reinforcement Learning](expo_unlocking_hard_reasoning_with_self-explanation-guided_reinforcement_learnin.md)
+- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
 
 </div>
 

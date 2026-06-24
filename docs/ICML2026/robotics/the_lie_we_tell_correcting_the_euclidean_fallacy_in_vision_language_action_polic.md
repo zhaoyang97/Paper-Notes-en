@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] The Lie We Tell: Correcting the Euclidean Fallacy in Vision-Language-Action Policies via Score Matching on Tangent Space
 description: >-
-  [ICML 2026][Robotics & Embodied AI][CALVIN] Lie Diffuser Actor (LDA) corrects the "Euclidean Fallacy" of flattening $SE(3)$ poses into $\mathbb{R}^{12}$ by returning to manifold-native diffusion: injecting noise into the Lie algebra $\mathfrak{se}(3)$ via left-invariant SDEs, pulling back via the exponential map, and predicting scores in the tangent space. Theor
+  [ICML 2026][Robotics][SE(3) manifold] Lie Diffuser Actor (LDA) corrects the "Euclidean Fallacy" of flattening $SE(3)$ poses into $\mathbb{R}^{12}$ by returning to manifold-native diffusion: injecting noise into the Lie algebra $\mathfrak{se}(3)$ via left-invariant SDEs, pulling back via the exponential map, and predicting scores in the tangent space. Theoretically, this achieves manifold closure, coordinate equivariance, and geodesic optimality…
 tags:
-  - ICML 2026
-  - Robotics & Embodied AI
-  - CALVIN
+  - "ICML 2026"
+  - "Robotics"
+  - "SE(3) manifold"
+  - "Lie group diffusion"
+  - "Left-invariant SDE"
+  - "Tangent-space score matching"
+  - "CALVIN"
 date: 2026-05-08
-content_hash: 1ed46b6d56926779
+content_hash: 7cff0dd8a83d47dd
 ---
+
 # The Lie We Tell: Correcting the Euclidean Fallacy in Vision-Language-Action Policies via Score Matching on Tangent Space
 
 **Conference**: ICML 2026  
@@ -114,16 +119,16 @@ The results show that both modules are independently effective, and their combin
 - **Value**: ⭐⭐⭐⭐ Provides a low-overhead, high-gain upgrade path for diffusion-based manipulation policies.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[ICLR 2026\] VITA: Vision-to-Action Flow Matching Policy](../../ICLR2026/robotics/vita_vision-to-action_flow_matching_policy.md)
 - [\[ICML 2026\] Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)
-- [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
-- [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
-- [\[ICML 2026\] Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)
+- [\[ICLR 2026\] Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging](../../ICLR2026/robotics/robust_fine-tuning_of_vision-language-action_robot_policies_via_parameter_mergin.md)
+- [\[ICML 2026\] Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)
 
 </div>
 

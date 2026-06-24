@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Long-term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation
 description: >-
-  [ICCV 2025][Autonomous Driving][Traffic Simulation] This paper proposes InfGen, a unified autoregressive next-token prediction model that interleaves closed-loop motion simulation with scenario generation (dynamic agent…
+  [ICCV 2025][Autonomous Driving][Traffic Simulation] This paper proposes InfGen, a unified autoregressive next-token prediction model that interleaves closed-loop motion simulation with scenario generation (dynamic agent insertion and removal), achieving for the first time stable long-term (30-second) traffic simulation. InfGen reaches state-of-the-art performance on short-term benchmarks and significantly outperforms all existing methods on long-term tasks.
 tags:
   - "ICCV 2025"
   - "Autonomous Driving"
@@ -12,7 +12,7 @@ tags:
   - "Scenario Generation"
   - "Next-Token Prediction"
 date: 2026-05-08
-content_hash: e45616e4199e2f06
+content_hash: f14e96373b786008
 ---
 
 # Long-term Traffic Simulation with Interleaved Autoregressive Motion and Scenario Generation
@@ -208,11 +208,11 @@ Motion-only simulation (agent insertion/removal disabled, 30s):
 
 ## Related Papers
 
+- [\[CVPR 2026\] TrafficAlign: Aligning Large Language Models for Traffic Scenario Generation](../../CVPR2026/autonomous_driving/trafficalign_aligning_large_language_models_for_traffic_scenario_generation.md)
+- [\[ICLR 2026\] SceneStreamer: Continuous Scenario Generation as Next Token Group Prediction](../../ICLR2026/autonomous_driving/scenestreamer_continuous_scenario_generation_as_next_token_group_prediction.md)
+- [\[CVPR 2025\] Scenario Dreamer: Vectorized Latent Diffusion for Generating Driving Simulation Environments](../../CVPR2025/autonomous_driving/scenario_dreamer_vectorized_latent_diffusion_for_generating_driving_simulation_e.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[NeurIPS 2025\] UniMotion: A Unified Motion Framework for Simulation, Prediction and Planning](../../NeurIPS2025/autonomous_driving/unimotion_a_unified_motion_framework_for_simulation_prediction_and_planning.md)
-- [\[ICCV 2025\] Epona: Autoregressive Diffusion World Model for Autonomous Driving](epona_autoregressive_diffusion_world_model_for_autonomous_driving.md)
-- [\[ICLR 2026\] Steerable Adversarial Scenario Generation through Test-Time Preference Alignment (SAGE)](../../ICLR2026/autonomous_driving/steerable_adversarial_scenario_generation_through_test-time_preference_alignment.md)
-- [\[ICLR 2026\] SMART-R1: Advancing Multi-agent Traffic Simulation via R1-Style Reinforcement Fine-Tuning](../../ICLR2026/autonomous_driving/advancing_multi-agent_traffic_simulation_via_r1-style_reinforcement_fine-tuning.md)
+- [\[CVPR 2025\] SceneDiffuser++: City-Scale Traffic Simulation via a Generative World Model](../../CVPR2025/autonomous_driving/scenediffuser_city-scale_traffic_simulation_via_a_generative_world_model.md)
 
 </div>
 

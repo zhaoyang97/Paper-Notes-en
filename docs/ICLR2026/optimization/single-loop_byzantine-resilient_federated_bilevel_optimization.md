@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Single-Loop Byzantine-Resilient Federated Bilevel Optimization
 description: >-
-  [ICLR 2026][Optimization & Theory][Paper Note] This paper investigates federated bilevel optimization in the presence of Byzantine clients. It first derives an asymptotic error lower bound determined by the heterogeneity of both upper and lower levels, then proposes the single-loop algorithm BR-FedBi and its Momentum/PAGE variants. These algorithms utilize auxiliar
+  [ICLR 2026][Optimization][Federated Bilevel Optimization] This paper investigates federated bilevel optimization in the presence of Byzantine clients. It first derives an asymptotic error lower bound determined by the heterogeneity of both upper and lower levels, then proposes the single-loop algorithm BR-FedBi and its Momentum/PAGE variants. These algorithms utilize auxiliary variables for hypergradient estimation combined with robust aggregation…
 tags:
-  - ICLR 2026
-  - Optimization & Theory
+  - "ICLR 2026"
+  - "Optimization"
+  - "Federated Bilevel Optimization"
+  - "Byzantine Robustness"
+  - "Single-Loop Algorithm"
+  - "Hypergradient Estimation"
+  - "Robust Aggregation"
 date: 2026-05-08
-content_hash: 83d60e55f2a43e28
+content_hash: ca72c5934cf92e03
 ---
+
 # Single-Loop Byzantine-Resilient Federated Bilevel Optimization
 
 **Conference**: ICLR 2026  
@@ -137,11 +143,11 @@ BR-FedBiP uses probabilistic gradient estimation to achieve $O(\epsilon^{-1.5})$
 
 ## Related Papers
 
+- [\[NeurIPS 2025\] A Single-Loop First-Order Algorithm for Linearly Constrained Bilevel Optimization](../../NeurIPS2025/optimization/a_single-loop_first-order_algorithm_for_linearly_constrained_bilevel_optimizatio.md)
 - [\[ICLR 2026\] Byzantine-Robust Federated Learning with Learnable Aggregation Weights](byzantine-robust_federated_learning_with_learnable_aggregation_weights.md)
-- [\[ICLR 2026\] Bilevel Optimization with Lower-Level Uniform Convexity: Theory and Algorithm](bilevel_optimization_with_lower-level_uniform_convexity_theory_and_algorithm.md)
+- [\[ICML 2026\] Delayed Momentum Aggregation: Communication-efficient Byzantine-robust Federated Learning with Partial Participation](../../ICML2026/optimization/delayed_momentum_aggregation_communication-efficient_byzantine-robust_federated_.md)
 - [\[ICLR 2026\] Reducing Contextual Stochastic Bilevel Optimization via Structured Function Approximation](reducing_contextual_stochastic_bilevel_optimization_via_structured_function_appr.md)
 - [\[ICLR 2026\] On the Surprising Effectiveness of a Single Global Merging in Decentralized Learning](on_the_surprising_effectiveness_of_a_single_global_merging_in_decentralized_lear.md)
-- [\[ICLR 2026\] DeepAFL: Deep Analytic Federated Learning](deepafl_deep_analytic_federated_learning.md)
 
 </div>
 

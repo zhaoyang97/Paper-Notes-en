@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] TabReX: Tabular Referenceless eXplainable Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] Ours proposes TabReX, a referenceless graph-reasoning-based framework for tabular generation evaluation. It converts source text and generated tables into knowledge graph (KG) triples and aligns them to compute explainable attribute-driven scores. TabReX significantly outperforms existing methods in correlation with hu
+  [ACL 2026][LLM Evaluation][Tabular evaluation metrics] Ours proposes TabReX, a referenceless graph-reasoning-based framework for tabular generation evaluation. It converts source text and generated tables into knowledge graph (KG) triples and aligns them to compute explainable attribute-driven scores. TabReX significantly outperforms existing methods in correlation with human judgment and establishes a large-scale benchmark, TabReX-Bench.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Tabular evaluation metrics"
+  - "referenceless evaluation"
+  - "knowledge graph alignment"
+  - "explainable evaluation"
+  - "structured generation"
 date: 2026-05-08
-content_hash: 327cec3996993183
+content_hash: 459e3d601d23cf21
 ---
+
 # TabReX: Tabular Referenceless eXplainable Evaluation
 
 **Conference**: ACL 2026  
@@ -145,9 +151,9 @@ Under referenceless conditions, TabReX approaches the correlation of the stronge
 
 - [\[ICLR 2026\] Human-LLM Collaborative Feature Engineering for Tabular Learning](../../ICLR2026/llm_evaluation/human-llm_collaborative_feature_engineering_for_tabular_data.md)
 - [\[NeurIPS 2025\] ConTextTab: A Semantics-Aware Tabular In-Context Learner](../../NeurIPS2025/llm_evaluation/contexttab_a_semantics-aware_tabular_in-context_learner.md)
-- [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
 - [\[ACL 2026\] Reward Modeling for Scientific Writing Evaluation](reward_modeling_for_scientific_writing_evaluation.md)
 - [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
+- [\[ACL 2026\] IF-Critic: Towards a Fine-Grained LLM Critic for Instruction-Following Evaluation](if-critic_towards_a_fine-grained_llm_critic_for_instruction-following_evaluation.md)
 
 </div>
 

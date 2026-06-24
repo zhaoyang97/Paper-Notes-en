@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving
 description: >-
-  [ICLR 2026][Physics & Scientific Computing][Paper Note] This paper combines the classical Domain Decomposition Method (DDM) with neural operators to propose a "local-to-global" framework. A local neural operator is trained only on randomly generated basic shapes (simple polygons). During inference, an arbitrary geometric domain is partitioned into small subdomains, solved d
+  [ICLR 2026][Physics & Scientific Computing][Neural Operator] This paper combines the classical Domain Decomposition Method (DDM) with neural operators to propose a "local-to-global" framework. A local neural operator is trained only on randomly generated basic shapes (simple polygons). During inference, an arbitrary geometric domain is partitioned into small subdomains, solved domain-by-domain, and stitched using additive Schwarz iterations (termed Schwarz Neural Inference…
 tags:
-  - ICLR 2026
-  - Physics & Scientific Computing
+  - "ICLR 2026"
+  - "Physics & Scientific Computing"
+  - "Neural Operator"
+  - "Domain Decomposition"
+  - "Geometry Generalization"
+  - "Schwarz Method"
+  - "Data Efficiency"
 date: 2026-05-08
-content_hash: 64dad5ba909108ce
+content_hash: 746978c333ea9232
 ---
+
 # Operator Learning with Domain Decomposition for Geometry Generalization in PDE Solving
 
 **Conference**: ICLR 2026  
@@ -124,15 +130,16 @@ SNI reduced errors by 34.8%~96.8% across stationary problems. **The more complex
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Riesz Neural Operator for Solving Partial Differential Equations](riesz_neural_operator_for_solving_partial_differential_equations.md)
 - [\[ICML 2026\] Topology-Preserving Neural Operator Learning via Hodge Decomposition](../../ICML2026/physics/topology-preserving_neural_operator_learning_via_hodge_decomposition.md)
 - [\[ICLR 2026\] Locally Subspace-Informed Neural Operators for Efficient Multiscale PDE Solving](locally_subspace-informed_neural_operators_for_efficient_multiscale_pde_solving.md)
-- [\[ICLR 2026\] OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs](orthosolver_a_neural_proper_orthogonal_decomposition_solver_for_pdes.md)
 - [\[ICLR 2026\] From Cheap Geometry to Expensive Physics: A Physics-agnostic Pretraining Framework for Neural Operators](from_cheap_geometry_to_expensive_physics_a_physics-agnostic_pretraining_framewor.md)
-- [\[ICLR 2026\] KANO: Kolmogorov–Arnold Neural Operator](kano_kolmogorov-arnold_neural_operator.md)
+- [\[ICLR 2026\] OrthoSolver: A Neural Proper Orthogonal Decomposition Solver For PDEs](orthosolver_a_neural_proper_orthogonal_decomposition_solver_for_pdes.md)
 
 </div>
 

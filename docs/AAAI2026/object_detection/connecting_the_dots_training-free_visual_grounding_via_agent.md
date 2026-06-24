@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning
 description: >-
-  [AAAI 2026][Object Detection][Visual Grounding] This paper proposes GroundingAgent, a visual grounding framework that requires no task-specific fine-tuning. By composing pretrained open-vocabulary detectors (YOLO World)…
+  [AAAI 2026][Object Detection][Visual Grounding] This paper proposes GroundingAgent, a visual grounding framework that requires no task-specific fine-tuning. By composing pretrained open-vocabulary detectors (YOLO World), an MLLM (Llama-3.2-11B-Vision), and an LLM (DeepSeek-V3) into a structured iterative reasoning pipeline, the method achieves a zero-shot average accuracy of 65.1% on RefCOCO/+/g, substantially outperforming prior zero-shot approaches.
 tags:
   - "AAAI 2026"
   - "Object Detection"
@@ -12,7 +12,7 @@ tags:
   - "Chain-of-Thought"
   - "Open-Vocabulary Detection"
 date: 2026-05-08
-content_hash: 2bc17bc5275f5460
+content_hash: 581f3a164e17066b
 ---
 
 # Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning
@@ -158,11 +158,11 @@ No training is required; the method is entirely training-free. All modules (dete
 
 ## Related Papers
 
+- [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](../../CVPR2026/object_detection/vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
 - [\[CVPR 2026\] PET-DINO: Unifying Visual Cues into Grounding DINO with Prompt-Enriched Training](../../CVPR2026/object_detection/pet-dino_unifying_visual_cues_into_grounding_dino_with_prompt-enriched_training.md)
-- [\[CVPR 2026\] CompAgent: An Agentic Framework for Visual Compliance Verification](../../CVPR2026/object_detection/compagent_an_agentic_framework_for_visual_compliance_verification.md)
+- [\[CVPR 2025\] UniVAD: A Training-free Unified Model for Few-shot Visual Anomaly Detection](../../CVPR2025/object_detection/univad_a_training-free_unified_model_for_few-shot_visual_anomaly_detection.md)
+- [\[CVPR 2026\] Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](../../CVPR2026/object_detection/anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)
 - [\[CVPR 2026\] SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling](../../CVPR2026/object_detection/subspacead_training-free_few-shot_anomaly_detection_via_subspace_modeling.md)
-- [\[AAAI 2026\] VK-Det: Visual Knowledge Guided Prototype Learning for Open-Vocabulary Aerial Object Detection](vk-det_visual_knowledge_guided_prototype_learning_for_open-vocabulary_aerial_obj.md)
-- [\[ICLR 2026\] Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and Method](../../ICLR2026/object_detection/traceable_evidence_enhanced_visual_grounded_reasoning_evaluation_and_methodology.md)
 
 </div>
 

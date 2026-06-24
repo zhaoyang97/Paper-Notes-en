@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] What Happens Next? Anticipating Future Motion by Generating Point Trajectories
 description: >-
-  [ICLR 2026][Video Understanding][Flow Matching] This paper recasts the inherently ambiguous task of "predicting future motion from a single image" as a conditional generation task on a **dense grid of point trajectories**. By using a trajectory VAE to compress full-image point trajectories into a latent space and sampling diverse possible futures via rectified flow
+  [ICLR 2026][Video Understanding][Motion Prediction] This paper recasts the inherently ambiguous task of "predicting future motion from a single image" as a conditional generation task on a **dense grid of point trajectories**. By using a trajectory VAE to compress full-image point trajectories into a latent space and sampling diverse possible futures via rectified flow matching, the proposed method is both more accurate than regressive trajectory predictors and more physicall…
 tags:
-  - ICLR 2026
-  - Video Understanding
-  - Flow Matching
-  - World Models
+  - "ICLR 2026"
+  - "Video Understanding"
+  - "Motion Prediction"
+  - "Point Trajectory Generation"
+  - "Flow Matching"
+  - "Trajectory VAE"
+  - "World Models"
 date: 2026-05-08
-content_hash: 9896e33791238853
+content_hash: 2aedcfd08c22c0c1
 ---
+
 # What Happens Next? Anticipating Future Motion by Generating Point Trajectories
 
 **Conference**: ICLR 2026  
@@ -155,10 +159,10 @@ Since latent dimensions were kept comparable, the gain is attributed to the **ch
 ## Related Papers
 
 - [\[CVPR 2026\] Envisioning the Future, One Step at a Time](../../CVPR2026/video_understanding/envisioning_the_future_one_step_at_a_time.md)
+- [\[ICLR 2026\] ARFlow: Auto-regressive Optical Flow Estimation for Arbitrary-Length Videos via Progressive Next-Frame Forecasting](arflow_auto-regressive_optical_flow_estimation_for_arbitrary-length_videos_via_p.md)
 - [\[CVPR 2026\] InternVideo-Next: Towards World-Understanding Video Models](../../CVPR2026/video_understanding/internvideo-next_towards_world-understanding_video_models.md)
 - [\[ICLR 2026\] Point Prompting: Counterfactual Tracking with Video Diffusion Models](point_prompting_counterfactual_tracking_with_video_diffusion_models.md)
 - [\[CVPR 2026\] Generative Point Tracking and Forecasting](../../CVPR2026/video_understanding/generative_point_tracking_and_forecasting.md)
-- [\[ICCV 2025\] What You Have is What You Track: Adaptive and Robust Multimodal Tracking](../../ICCV2025/video_understanding/what_you_have_is_what_you_track_adaptive_and_robust_multimodal_tracking.md)
 
 </div>
 

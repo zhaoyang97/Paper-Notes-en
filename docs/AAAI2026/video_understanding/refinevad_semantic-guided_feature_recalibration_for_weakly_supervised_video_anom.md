@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection
 description: >-
-  [AAAI 2026][Video Understanding][Weakly supervised video anomaly detection] This paper proposes RefineVAD, a framework comprising two modules — Motion-aware Temporal Attention Recalibration (MoTAR) and Category-Oriented…
+  [AAAI 2026][Video Understanding][Weakly supervised video anomaly detection] This paper proposes RefineVAD, a framework comprising two modules — Motion-aware Temporal Attention Recalibration (MoTAR) and Category-Oriented REfinement (CORE) — that jointly models temporal motion dynamics and anomaly category semantics, achieving precise localization and interpretable detection of anomalous events in weakly supervised video anomaly detection.
 tags:
   - "AAAI 2026"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "temporal modeling"
   - "category prototypes"
 date: 2026-05-08
-content_hash: 0e9a4193a9491bb6
+content_hash: 8756e2103b510e37
 ---
 
 # RefineVAD: Semantic-Guided Feature Recalibration for Weakly Supervised Video Anomaly Detection
@@ -126,10 +126,10 @@ RefineVAD achieves state of the art among all weakly supervised methods on XD-Vi
 ## Related Papers
 
 - [\[AAAI 2026\] Learning to Tell Apart: Weakly Supervised Video Anomaly Detection via Disentangled Semantic Alignment](learning_to_tell_apart_weakly_supervised_video_anomaly_detection_via_disentangle.md)
+- [\[CVPR 2026\] Learning from Noisy Supervision: A Denoising-Debiasing Framework for Weakly Supervised Video Anomaly Detection](../../CVPR2026/video_understanding/learning_from_noisy_supervision_a_denoising-debiasing_framework_for_weakly_super.md)
 - [\[CVPR 2026\] Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning](../../CVPR2026/video_understanding/weakly_supervised_video_anomaly_detection_with_anomaly-connected_components_and_.md)
-- [\[AAAI 2026\] Predicting Video Slot Attention Queries from Random Slot-Feature Pairs](predicting_video_slot_attention_queries_from_random_slot-feature_pairs.md)
-- [\[AAAI 2026\] HeadHunt-VAD: Hunting Robust Anomaly-Sensitive Heads in MLLM for Tuning-Free Video Anomaly Detection](headhunt-vad_hunting_robust_anomaly-sensitive_heads_in_mllm_.md)
-- [\[ICLR 2026\] Language-guided Open-world Video Anomaly Detection under Weak Supervision](../../ICLR2026/video_understanding/language-guided_open-world_video_anomaly_detection_under_weak_supervision.md)
+- [\[CVPR 2026\] The Road Less Seen: Segment Exploration for Weakly Supervised Video Anomaly Detection](../../CVPR2026/video_understanding/the_road_less_seen_segment_exploration_for_weakly_supervised_video_anomaly_detec.md)
+- [\[CVPR 2026\] TLMA: Mitigating the Impact of Weakly Labeled Information for Video Anomaly Detection](../../CVPR2026/video_understanding/tlma_mitigating_the_impact_of_weakly_labeled_information_for_video_anomaly_detec.md)
 
 </div>
 

@@ -2,11 +2,11 @@
 title: >-
   [Paper Note] LangBridge: Interpreting Image as a Combination of Language Embeddings
 description: >-
-  [Information Retrieval & RAG] LangBridge achieves interpretable vision-language alignment by explicitly decomposing visual features into linear combinations of LLM vocabulary embeddings…
+  [Information Retrieval & RAG] LangBridge achieves interpretable vision-language alignment by explicitly decomposing visual features into linear combinations of LLM vocabulary embeddings, and supports pretraining-free adapter transfer across different LLMs.
 tags:
   - "Information Retrieval & RAG"
 date: 2026-05-08
-content_hash: f2b853b5e9bc9486
+content_hash: 4dedf5bafacac09f
 ---
 
 # LangBridge: Interpreting Image as a Combination of Language Embeddings
@@ -142,10 +142,10 @@ A vocabulary size of 19,200 significantly outperforms larger vocabularies on MME
 ## Related Papers
 
 - [\[ICLR 2026\] Your Language Model Secretly Contains Personality Subnetworks](../../ICLR2026/information_retrieval/your_language_model_secretly_contains_personality_subnetworks.md)
-- [\[ICCV 2025\] Aligning Information Capacity Between Vision and Language via Dense-to-Sparse Feature Distillation for Image-Text Matching](aligning_information_capacity_between_vision_and_language_via_dense_to_sparse_feature_distillation.md)
-- [\[CVPR 2026\] PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing](../../CVPR2026/information_retrieval/pinpoint_evaluation_of_composed_image_retrieval_with_explicit_negatives_multi-im.md)
-- [\[ICML 2026\] ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World](../../ICML2026/information_retrieval/ml-embed_inclusive_and_efficient_embeddings_for_a_multilingual_world.md)
-- [\[NeurIPS 2025\] The Narrow Gate: Localized Image-Text Communication in Native Multimodal Models](../../NeurIPS2025/information_retrieval/the_narrow_gate_localized_imagetext_communication_in_native.md)
+- [\[ACL 2025\] Re-identification of De-identified Documents with Autoregressive Infilling](../../ACL2025/information_retrieval/reidentification_deidentified.md)
+- [\[ACL 2025\] Uncovering Visual-Semantic Psycholinguistic Properties from the Distributional Structure of Text Embedding Space](../../ACL2025/information_retrieval/psycholinguistic_visual_semantic.md)
+- [\[CVPR 2025\] Advancing Myopia To Holism: Fully Contrastive Language-Image Pre-training](../../CVPR2025/information_retrieval/advancing_myopia_to_holism_fully_contrastive_language-image_pre-training.md)
+- [\[ACL 2025\] Enhancing Lexicon-Based Text Embeddings with Large Language Models](../../ACL2025/information_retrieval/enhancing_lexicon-based_text_embeddings_with_large_language_models.md)
 
 </div>
 

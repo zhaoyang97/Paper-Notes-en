@@ -2,16 +2,19 @@
 title: >-
   [Paper Note] Bridging the Gap Between Promise and Performance for Microscaling FP4 Quantization
 description: >-
-  [ICLR 2026][Model Compression][MXFP4] This paper systematically deconstructs the promise of "free speedup and preserved accuracy" offered by hardware-native 4-bit floating-point formats (MXFP4/NVFP4). Through theoretical proof of quantization errors, it identifies why existing quantization techniques fail on these formats. The authors propose MR-GPTQ, a ta
+  [ICLR2026][Model Compression][FP4 Quantization] This paper systematically deconstructs the promise of "free speedup and preserved accuracy" offered by hardware-native 4-bit floating-point formats (MXFP4/NVFP4). Through theoretical proof of quantization errors, it identifies why existing quantization techniques fail on these formats. The authors propose MR-GPTQ, a tailored algorithm for FP4 characteristics, and the QuTLASS GPU kernel, achieving 2.2x~4x end-to-end acceleration…
 tags:
-  - ICLR 2026
-  - Model Compression
-  - MXFP4
-  - NVFP4
-  - GPTQ
+  - "ICLR2026"
+  - "Model Compression"
+  - "FP4 Quantization"
+  - "MXFP4"
+  - "NVFP4"
+  - "GPTQ"
+  - "Hadamard Transform"
 date: 2026-05-08
-content_hash: ff95b55866d6ef8f
+content_hash: c88b01ca28da5a3c
 ---
+
 # Bridging the Gap Between Promise and Performance for Microscaling FP4 Quantization
 
 **Conference**: ICLR2026  
@@ -157,9 +160,9 @@ Performance: QuTLASS single-layer speedups reached 3.6x (B200) and 6x (RTX5090).
 
 - [\[ICLR 2026\] Alignment through Meta-Weighted Online Sampling: Bridging the Gap between Data Generation and Preference Optimization](alignment_through_meta-weighted_online_sampling_bridging_the_gap_between_data_ge.md)
 - [\[ICLR 2026\] Metis: Training LLMs with FP4 Quantization](metis_training_llms_with_fp4_quantization.md)
+- [\[ICLR 2026\] Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)
 - [\[ICLR 2026\] MicroMix: Efficient Mixed-Precision Quantization with Microscaling Formats for Large Language Models](micromix_efficient_mixed-precision_quantization_with_microscaling_formats_for_la.md)
 - [\[ICLR 2026\] ARMOR: High-Performance Semi-Structured Pruning via Adaptive Matrix Factorization](armor_high-performance_semi-structured_pruning_via_adaptive_matrix_factorization.md)
-- [\[ICLR 2026\] Is Finer Better? The Limits of Microscaling Formats in Large Language Models](is_finer_better_the_limits_of_microscaling_formats_in_large_language_models.md)
 
 </div>
 

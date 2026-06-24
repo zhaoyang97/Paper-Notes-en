@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Inverse Depth Scaling From Most Layers Being Similar
 description: >-
-  [ICML 2026][Pretraining][ensemble averaging] By measuring LLM hidden state dynamics and conducting controlled experiments with a teacher-student toy model, this paper proves that LLM loss is approximately inversely proportional to depth ($\alpha_\ell \approx 1$). This is attributed to an inefficient but robust "ensemble averaging" mode where the vast majority of
+  [ICML2026][LLM Pretraining][depth scaling] By measuring LLM hidden state dynamics and conducting controlled experiments with a teacher-student toy model, this paper proves that LLM loss is approximately inversely proportional to depth ($\alpha_\ell \approx 1$). This is attributed to an inefficient but robust "ensemble averaging" mode where the vast majority of layers perform functionally similar small-step updates to cancel out errors.
 tags:
-  - ICML 2026
-  - Pretraining
-  - ensemble averaging
-  - Chinchilla
+  - "ICML2026"
+  - "LLM Pretraining"
+  - "depth scaling"
+  - "ensemble averaging"
+  - "residual networks"
+  - "Chinchilla"
+  - "width-depth tradeoff"
 date: 2026-05-08
-content_hash: 898a835298ea8195
+content_hash: 5889e1ba0cc0e963
 ---
+
 # Inverse Depth Scaling From Most Layers Being Similar
 
 **Conference**: ICML2026  
@@ -132,15 +136,15 @@ Toy students are trained with Adam for 40,000 steps (extended to 80,000 in some 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Scaling Depth Capacity via Zero/One-Layer Model Expansion](scaling_depth_capacity_via_zeroone-layer_model_expansion.md)
 - [\[NeurIPS 2025\] Scaling Embedding Layers in Language Models](../../NeurIPS2025/llm_pretraining/scaling_embedding_layers_in_language_models.md)
-- [\[ICML 2026\] Dropout Universality: Scaling Laws and Optimal Scheduling at the Edge-of-Chaos](dropout_universality_scaling_laws_and_optimal_scheduling_at_the_edge-of-chaos.md)
+- [\[ICML 2026\] Explaining Data Mixing Scaling Laws](explaining_data_mixing_scaling_laws.md)
 - [\[ICML 2026\] Different Layers, Different Manifolds: Module-Wise Weight-Space Geometry in Transformer Optimization](different_layers_different_manifolds_module-wise_weight-space_geometry_in_transf.md)
-- [\[NeurIPS 2025\] The Curse of Depth in Large Language Models](../../NeurIPS2025/llm_pretraining/the_curse_of_depth_in_large_language_models.md)
+- [\[ICML 2026\] POET-X: Memory-efficient LLM Training by Scaling Orthogonal Transformation](poet-x_memory-efficient_llm_training_by_scaling_orthogonal_transformation.md)
 
 </div>
 

@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend
 description: >-
-  [CVPR 2026][3D Vision][Structure-from-Motion] AMB3R attaches a "sparse but compact" voxel backend on top of a frozen VGGT frontend for explicit 3D geometric reasoning, alongside a lightweight scale head for metric scale recovery. Trained with only ~80 H100 GPU hours, it achieves SOTA across 7 tasks and 13 datasets. Its two training-free pipelines, AMB3R-VO and AMB
+  [CVPR 2026][3D Vision][Feed-forward 3D Reconstruction] AMB3R attaches a "sparse but compact" voxel backend on top of a frozen VGGT frontend for explicit 3D geometric reasoning, alongside a lightweight scale head for metric scale recovery. Trained with only ~80 H100 GPU hours, it achieves SOTA across 7 tasks and 13 datasets. Its two training-free pipelines, AMB3R-VO and AMB3R-SfM, enable feed-forward models to outperform traditional optimization-based systems in VO/SLAM and Sf…
 tags:
-  - CVPR 2026
-  - 3D Vision
-  - Structure-from-Motion
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Feed-forward 3D Reconstruction"
+  - "Metric Scale"
+  - "Sparse Voxel Backend"
+  - "Visual Odometry"
+  - "Structure-from-Motion"
 date: 2026-05-08
-content_hash: 560aab44bf978d47
+content_hash: e27584e7ad98caeb
 ---
+
 # AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend
 
 **Conference**: CVPR 2026  
@@ -164,11 +169,11 @@ Backend ablation (Tab 14, 3D Reconstruction):
 
 ## Related Papers
 
-- [\[CVPR 2026\] Global Structure-from-Motion Meets Feedforward Reconstruction](global_structure-from-motion_meets_feedforward_reconstruction.md)
-- [\[CVPR 2026\] AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
-- [\[CVPR 2026\] Feed-forward Gaussian Registration for Head Avatar Creation and Editing](feed-forward_gaussian_registration_for_head_avatar_creation_and_editing.md)
-- [\[CVPR 2026\] EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)
+- [\[CVPR 2026\] Any4D: Unified Feed-Forward Metric 4D Reconstruction](any4d_unified_feed-forward_metric_4d_reconstruction.md)
+- [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
+- [\[CVPR 2026\] Reliev3R: Relieving Feed-forward 3D Reconstruction from Multi-View Geometric Annotations](reliev3r_relieving_feed-forward_3d_reconstruction_from_multi-view_geometric_annot.md)
+- [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
+- [\[CVPR 2026\] Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction](gen3r_3d_scene_generation_meets_feed-forward_reconstruction.md)
 
 </div>
 

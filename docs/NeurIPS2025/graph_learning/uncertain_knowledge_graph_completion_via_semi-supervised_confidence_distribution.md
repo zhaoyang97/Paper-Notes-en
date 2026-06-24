@@ -2,9 +2,9 @@
 title: >-
   [Paper Note] Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning
 description: >-
-  [NeurIPS 2025][Graph Learning][Uncertain Knowledge Graph] ssCDL converts triple confidence scores from scalars into Gaussian confidence distributions to capture supervisory signals from neighboring confidence values…
+  [NeurIPS 2025 Spotlight][Graph Learning][Uncertain Knowledge Graph] ssCDL converts triple confidence scores from scalars into Gaussian confidence distributions to capture supervisory signals from neighboring confidence values, and employs meta self-training to generate high-quality pseudo confidence labels for negatively sampled triples, thereby rebalancing the training data. The method significantly outperforms all baselines on both confidence prediction and link prediction…
 tags:
-  - "NeurIPS 2025"
+  - "NeurIPS 2025 Spotlight"
   - "Graph Learning"
   - "Uncertain Knowledge Graph"
   - "Confidence Distribution Learning"
@@ -12,7 +12,7 @@ tags:
   - "Meta Self-Training"
   - "Knowledge Graph Completion"
 date: 2026-05-08
-content_hash: 6f7c527da5a0c333
+content_hash: 05ad5c40de83698a
 ---
 
 # Uncertain Knowledge Graph Completion via Semi-Supervised Confidence Distribution Learning
@@ -135,10 +135,10 @@ The total loss of CDL-RL is: $\mathcal{L} = \frac{1}{2\lambda_{CP}^2}\mathcal{L}
 ## Related Papers
 
 - [\[NeurIPS 2025\] Geometric Imbalance in Semi-Supervised Node Classification](geometric_imbalance_in_semi-supervised_node_classification.md)
+- [\[ICLR 2026\] Forest-Based Graph Learning for Semi-Supervised Node Classification](../../ICLR2026/graph_learning/forest-based_graph_learning_for_semi-supervised_node_classification.md)
+- [\[ACL 2025\] Extending Complex Logical Queries on Uncertain Knowledge Graphs](../../ACL2025/graph_learning/extending_complex_logical_queries_uncertain_knowledge_graphs.md)
+- [\[ICLR 2026\] Topological Anomaly Quantification for Semi-Supervised Graph Anomaly Detection](../../ICLR2026/graph_learning/topological_anomaly_quantification_for_semi-supervised_graph_anomaly_detection.md)
 - [\[NeurIPS 2025\] SSTAG: Structure-Aware Self-Supervised Learning Method for Text-Attributed Graphs](sstag_structure-aware_self-supervised_learning_method_for_text-attributed_graphs.md)
-- [\[NeurIPS 2025\] Self-Supervised Discovery of Neural Circuits in Spatially Patterned Neural Responses with Graph Neural Networks](self-supervised_discovery_of_neural_circuits_in_spatially_patterned_neural_respo.md)
-- [\[NeurIPS 2025\] MedMKG: Benchmarking Medical Knowledge Exploitation with Multimodal Knowledge Graph](medmkg_benchmarking_medical_knowledge_exploitation_with_multimodal_knowledge_gra.md)
-- [\[NeurIPS 2025\] Elastic Weight Consolidation for Knowledge Graph Continual Learning: An Empirical Evaluation](elastic_weight_consolidation_for_knowledge_graph_continual_learning_an_empirical.md)
 
 </div>
 

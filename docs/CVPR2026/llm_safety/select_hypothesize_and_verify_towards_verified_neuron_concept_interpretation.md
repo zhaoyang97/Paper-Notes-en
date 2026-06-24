@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation
 description: >-
-  [CVPR 2026][LLM Safety][Paper Note] The SIEVE (Select–Hypothesize–Verify) framework is proposed to interpret neuron functions through a closed-loop process involving high-activation sample screening, concept hypothesis generation, and text-to-image verification. The probability of generated concepts matching neuron activation is approximately 1.5 times t
+  [CVPR 2026][LLM Safety][Neuron Interpretation] The SIEVE (Select–Hypothesize–Verify) framework is proposed to interpret neuron functions through a closed-loop process involving high-activation sample screening, concept hypothesis generation, and text-to-image verification. The probability of generated concepts matching neuron activation is approximately 1.5 times that of existing SOTA methods.
 tags:
-  - CVPR 2026
-  - LLM Safety
+  - "CVPR 2026"
+  - "LLM Safety"
+  - "Neuron Interpretation"
+  - "Concept Verification"
+  - "Explainable AI"
+  - "Neuron Functional Analysis"
+  - "Closed-loop Verification"
 date: 2026-05-08
-content_hash: 93c8d05c5e4d51b7
+content_hash: ffb84479b9f0f2b3
 ---
+
 # Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation
 
 **Conference**: CVPR 2026  
@@ -148,8 +154,8 @@ Similar trends are observed on ViT-B/16: SIEVE reaches a mean AR of 85.24%, far 
 
 - [\[ACL 2026\] CRISP: Persistent Concept Unlearning via Sparse Autoencoders](../../ACL2026/llm_safety/crisp_persistent_concept_unlearning_via_sparse_autoencoders.md)
 - [\[ACL 2026\] APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation](../../ACL2026/llm_safety/appsi-139_a_parallel_corpus_of_english_application_privacy_policy_summarization_.md)
+- [\[ICLR 2026\] RepIt: Steering Language Models with Concept-Specific Refusal Vectors](../../ICLR2026/llm_safety/repit_steering_language_models_with_concept-specific_refusal_vectors.md)
 - [\[AAAI 2026\] Cross-Modal Unlearning via Influential Neuron Path Editing in Multimodal Large Language Models](../../AAAI2026/llm_safety/cross-modal_unlearning_via_influential_neuron_path_editing_i.md)
-- [\[ICCV 2025\] SAUCE: Selective Concept Unlearning in Vision-Language Models with Sparse Autoencoders](../../ICCV2025/llm_safety/sauce_selective_concept_unlearning_in_vision-language_models_with_sparse_autoenc.md)
 - [\[ACL 2025\] Modality-Aware Neuron Pruning for Unlearning in Multimodal Large Language Models](../../ACL2025/llm_safety/manu_modality_aware_unlearning.md)
 
 </div>

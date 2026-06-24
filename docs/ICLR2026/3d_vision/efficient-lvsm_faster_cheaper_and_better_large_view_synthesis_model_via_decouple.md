@@ -2,18 +2,19 @@
 title: >-
   [Paper Note] Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention
 description: >-
-  [ICLR 2026][3D Vision][novel view synthesis] Ours proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation, reducing the complexity of novel view synthesis from $O(N_{in}^2)$ to $O(N_{in})$. It achieves SOTA performance on RealEstate10K (29.86 dB PSNR) with 50% training time and a 4.4x speedup in inference
+  [ICLR2026][3D Vision][novel view synthesis] Ours proposes Efficient-LVSM, a dual-stream architecture that decouples input view encoding from target view generation, reducing the complexity of novel view synthesis from $O(N_{in}^2)$ to $O(N_{in})$. It achieves SOTA performance on RealEstate10K (29.86 dB PSNR) with 50% training time and a 4.4x speedup in inference.
 tags:
-  - ICLR 2026
-  - 3D Vision
-  - novel view synthesis
-  - Transformer
-  - Dual-Stream Architecture
-  - KV-Cache
-  - Attention Decoupling
+  - "ICLR2026"
+  - "3D Vision"
+  - "novel view synthesis"
+  - "Transformer"
+  - "Dual-Stream Architecture"
+  - "KV-Cache"
+  - "Attention Decoupling"
 date: 2026-05-08
-content_hash: c52c46cdcba049ff
+content_hash: 746599b1ba20d92d
 ---
+
 # Efficient-LVSM: Faster, Cheaper, and Better Large View Synthesis Model via Decoupled Co-Refinement Attention
 
 **Conference**: ICLR2026  
@@ -155,11 +156,11 @@ Compared to Gaussian Splatting methods like pixelSplat/MVSplat, Efficient-LVSM i
 
 ## Related Papers
 
+- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
 - [\[CVPR 2026\] FlashMesh: Faster and Better Autoregressive Mesh Synthesis via Structured Speculation](../../CVPR2026/3d_vision/flashmesh_faster_and_better_autoregressive_mesh_synthesis_via_structured_specula.md)
 - [\[ICLR 2026\] Aligned Novel View Image and Geometry Synthesis via Cross-modal Attention Instillation](aligned_novel_view_image_and_geometry_synthesis_via_cross-modal_attention_instil.md)
-- [\[ICCV 2025\] RayZer: A Self-supervised Large View Synthesis Model](../../ICCV2025/3d_vision/rayzer_a_self-supervised_large_view_synthesis_model.md)
-- [\[CVPR 2026\] From Rays to Projections: Better Inputs for Feed-Forward View Synthesis](../../CVPR2026/3d_vision/from_rays_to_projections_better_inputs_for_feed-forward_view_synthesis.md)
 - [\[ICCV 2025\] Faster and Better 3D Splatting via Group Training](../../ICCV2025/3d_vision/faster_and_better_3d_splatting_via_group_training.md)
+- [\[ICLR 2026\] EA3D: Event-Augmented 3D Diffusion for Generalizable Novel View Synthesis](ea3d_event-augmented_3d_diffusion_for_generalizable_novel_view_synthesis.md)
 
 </div>
 

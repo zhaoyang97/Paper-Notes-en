@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models
 description: >-
-  [CVPR 2026][Image Generation][Concept Erasure] GrOCE introduces a training-free concept erasure framework based on dynamic semantic graphs. By integrating three synergistic components—semantic graph construction, adaptive cluster identification, and selective severance—it achieves precise, context-aware online removal of target concepts within text-to-image diffusi
+  [CVPR 2026 Highlight][Image Generation][Concept Erasure] GrOCE introduces a training-free concept erasure framework based on dynamic semantic graphs. By integrating three synergistic components—semantic graph construction, adaptive cluster identification, and selective severance—it achieves precise, context-aware online removal of target concepts within text-to-image diffusion models.
 tags:
-  - CVPR 2026
-  - Image Generation
-  - Concept Erasure
-  - Diffusion Model
+  - "CVPR 2026 Highlight"
+  - "Image Generation"
+  - "Concept Erasure"
+  - "Diffusion Models"
+  - "Semantic Graph"
+  - "Training-free"
+  - "Online Inference"
 date: 2026-05-08
-content_hash: 288c3571480abd65
+content_hash: 1a60d1894054d61a
 ---
+
 # GrOCE: Graph-Guided Online Concept Erasure for Text-to-Image Diffusion Models
 
 **Conference**: CVPR 2026 Highlight  
@@ -137,7 +141,7 @@ Completely training-free. It operates exclusively during inference, requiring no
 - [\[CVPR 2026\] Prototype-Guided Concept Erasure in Diffusion Models](prototype-guided_concept_erasure_in_diffusion_models.md)
 - [\[CVPR 2026\] Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration](beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration.md)
 - [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
-- [\[CVPR 2026\] Erasing Thousands of Concepts: Towards Scalable and Practical Concept Erasure for Text-to-Image Diffusion Models](erasing_thousands_of_concepts_towards_scalable_and_practical_concept_erasure_for.md)
+- [\[CVPR 2026\] GenErase: Generalizable and Semantically-Aware Concept Erasure in Diffusion Models](generase_generalizable_and_semantically-aware_concept_erasure_in_diffusion_model.md)
 
 </div>
 

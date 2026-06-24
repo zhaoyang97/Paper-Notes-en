@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images
 description: >-
-  [CVPR 2026][Others][Paper Note] To address the issue where "reconstruction-based training-free AI image detection" is biased by simple backgrounds or large latent norms, this paper proposes using augmentations like **rotation + low-pass filtering**—which "preserve bias factors but destroy forensic information"—to normalize reconstruction errors. By c
+  [CVPR 2026][Training-free Detection] To address the issue where "reconstruction-based training-free AI image detection" is biased by simple backgrounds or large latent norms, this paper proposes using augmentations like **rotation + low-pass filtering**—which "preserve bias factors but destroy forensic information"—to normalize reconstruction errors. By computing debiased scores at both the image and latent levels and fusing them into a unified RDD score…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Training-free Detection"
+  - "AIGI Forensics"
+  - "Reconstruction Debiasing"
+  - "Latent Diffusion"
+  - "Data Augmentation"
 date: 2026-05-08
-content_hash: b1121d6e8b9fe610
+content_hash: c19c5b2b021d2b7e
 ---
+
 # A Debiased Reconstruction-based Framework for Training-Free Detection of AI-Generated Images
 
 **Conference**: CVPR 2026  
@@ -162,16 +167,16 @@ Individual component contributions (Table 3) show the complementarity and the ef
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] A Difference-in-Difference Approach to Detecting AI-Generated Images](a_difference-in-difference_approach_to_detecting_ai-generated_images.md)
-- [\[CVPR 2026\] DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images](dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua.md)
+- [\[CVPR 2026\] Zero-shot Detection of AI-Generated Image via RAW-RGB Alignment](zero-shot_detection_of_ai-generated_image_via_raw-rgb_alignment.md)
+- [\[CVPR 2026\] FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction](fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi.md)
 - [\[CVPR 2026\] Debiased Sample Selection for Learning with Noisy Labels](debiased_sample_selection_for_learning_with_noisy_labels.md)
-- [\[CVPR 2026\] ALLNet: Multi-task Dense Prediction for Degraded Images](allnet_multi-task_dense_prediction_for_degraded_images.md)
-- [\[CVPR 2026\] Region-Wise Correspondence Prediction between Manga Line Art Images](region-wise_correspondence_prediction_between_manga_line_art_images.md)
+- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
 
 </div>
 

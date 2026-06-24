@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 description: >-
-  [CVPR 2026][Remote Sensing][Transformer] This paper proposes PanScale, the first cross-scale pansharpening dataset and evaluation benchmark (PanScale-Bench), along with the ScaleFormer framework. The method reinterprets resolution changes as sequence length variations, achieving cross-scale generalization through Scale-Aware Patchify bucketed sampling, decoup
+  [CVPR 2026][Remote Sensing][Remote sensing image fusion] This paper proposes PanScale, the first cross-scale pansharpening dataset and evaluation benchmark (PanScale-Bench), along with the ScaleFormer framework. The method reinterprets resolution changes as sequence length variations, achieving cross-scale generalization through Scale-Aware Patchify bucketed sampling, decoupled spatial-sequence modeling, and RoPE.
 tags:
-  - CVPR 2026
-  - Remote Sensing
-  - Transformer
-  - Pansharpening
+  - "CVPR 2026"
+  - "Remote Sensing"
+  - "Remote sensing image fusion"
+  - "cross-scale generalization"
+  - "Transformer"
+  - "Rotary Position Embedding"
+  - "Pansharpening"
 date: 2026-05-08
-content_hash: fccad6d5fb8d627b
+content_hash: f26107f58dc3968c
 ---
+
 # Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 
 **Conference**: CVPR 2026  
@@ -155,7 +159,7 @@ All ablation variants show significant performance degradation at large resoluti
 
 - [\[CVPR 2026\] Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)
 - [\[CVPR 2026\] RoadGIE: Towards A Global-Scale Aerial Benchmark for Generalizable Interactive Road Extraction](roadgie_towards_a_global-scale_aerial_benchmark_for_generalizable_interactive_ro.md)
-- [\[CVPR 2026\] Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)
+- [\[CVPR 2026\] Regulating Rather than Constraining: Adaptive Guidance for Complex Spectral Reconstruction in Pansharpening](regulating_rather_than_constraining_adaptive_guidance_for_complex_spectral_recon.md)
 - [\[CVPR 2026\] UniGeoRS: A Unified Benchmark for Tri-view Geo-Localization](unigeors_a_unified_benchmark_for_tri-view_geo-localization.md)
 - [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 

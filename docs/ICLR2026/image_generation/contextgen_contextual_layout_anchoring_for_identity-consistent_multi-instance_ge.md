@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation
 description: >-
-  [ICLR 2026][Image Generation][Diffusion Transformer] ContextGen builds upon the FLUX.1-Kontext Diffusion Transformer by "inserting composite layout maps and reference images together into a single context token sequence." Combined with hierarchical attention masking (Contextual Layout Anchoring (CLA) in the initial/final layers for global structure and Identity Consisten
+  [ICLR2026][Image Generation][Multi-instance Generation] ContextGen builds upon the FLUX.1-Kontext Diffusion Transformer by "inserting composite layout maps and reference images together into a single context token sequence." Combined with hierarchical attention masking (Contextual Layout Anchoring (CLA) in the initial/final layers for global structure and Identity Consistency Attention (ICA) in middle layers for instance-level injection) and non-overlapping position indices…
 tags:
-  - ICLR 2026
-  - Image Generation
-  - Diffusion Transformer
+  - "ICLR2026"
+  - "Image Generation"
+  - "Multi-instance Generation"
+  - "Layout Control"
+  - "Identity Consistency"
+  - "Diffusion Transformer"
+  - "Attention Masking"
 date: 2026-05-08
-content_hash: 03a3e2d221ac086e
+content_hash: 097080b3a070cc4f
 ---
+
 # ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation
 
 **Conference**: ICLR2026  
@@ -144,8 +149,8 @@ Ablations focused on ICA block placement (F=First 19, M=Middle 19, B=Back 19) an
 - [\[ICLR 2026\] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data](i-druid_layout_to_image_generation_via_instance-disentangled_representation_and_.md)
 - [\[ICLR 2026\] SIGMA-GEN: Structure and Identity Guided Multi-Subject Assembly for Image Generation](sigma-gen_structure_and_identity_guided_multi-subject_assembly_for_image_generat.md)
 - [\[AAAI 2026\] EchoGen: Cycle-Consistent Learning for Unified Layout-Image Generation and Understanding](../../AAAI2026/image_generation/echogen_cycle-consistent_learning_for_unified_layout-image_generation_and_unders.md)
-- [\[ICLR 2026\] CreatiDesign: A Unified Multi-Conditional Diffusion Transformer for Creative Graphic Design](creatidesign_a_unified_multi-conditional_diffusion_transformer_for_creative_grap.md)
 - [\[NeurIPS 2025\] InstanceAssemble: Layout-Aware Image Generation via Instance Assembling Attention](../../NeurIPS2025/image_generation/instanceassemble_layoutaware_image_generation_via_instance_a.md)
+- [\[CVPR 2026\] SounDiT: Geo-Contextual Soundscape-to-Landscape Generation](../../CVPR2026/image_generation/soundit_geo-contextual_soundscape-to-landscape_generation.md)
 
 </div>
 

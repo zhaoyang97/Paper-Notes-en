@@ -2,14 +2,21 @@
 title: >-
   [Paper Note] Why We Need New Benchmarks for Local Intrinsic Dimension Estimation
 description: >-
-  [ICLR 2026][learning_theory][benchmark] This paper argues that current neural LID estimators evaluate themselves on outdated benchmarks: either overly simple synthetic data or real data with unknown LID, which masks true performance. The authors propose a principled benchmark construction toolbox (mapping the same manifold to multiple domain representations,
+  [ICLR 2026][Learning Theory][Local Intrinsic Dimension (LID)] This paper argues that current neural LID estimators evaluate themselves on outdated benchmarks: either overly simple synthetic data or real data with unknown LID, which masks true performance. The authors propose a principled benchmark construction toolbox (mapping the same manifold to multiple domain representations, designing harder variants for key manifold properties, and controlled transformations with known…
 tags:
-  - ICLR 2026
-  - learning_theory
-  - benchmark
+  - "ICLR 2026"
+  - "Learning Theory"
+  - "Manifold Learning"
+  - "Local Intrinsic Dimension Estimation"
+  - "Benchmark"
+  - "Local Intrinsic Dimension (LID)"
+  - "Manifold Geometry"
+  - "Cross-architecture Evaluation"
+  - "Stress Testing"
 date: 2026-05-08
-content_hash: b0f00da65a94f005
+content_hash: 4f6992a5cc757df5
 ---
+
 # Why We Need New Benchmarks for Local Intrinsic Dimension Estimation
 
 **Conference**: ICLR 2026  
@@ -117,6 +124,7 @@ The authors summarize all experiments into an H/M/L/O rating table (High / Mediu
 - **Value**: ⭐⭐⭐⭐⭐ (Provides a necessary diagnostic tool for the fast-developing field of LID estimation.)
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -125,7 +133,7 @@ The authors summarize all experiments into an H/M/L/O rating table (High / Mediu
 - [\[ICLR 2026\] Random-Projection Ensemble Dimension Reduction](random-projection_ensemble_dimension_reduction.md)
 - [\[ICLR 2026\] Intrinsic Entropy of Context Length Scaling in LLMs](intrinsic_entropy_of_context_length_scaling_in_llms.md)
 - [\[ICLR 2026\] Prediction with Expert Advice under Local Differential Privacy](prediction_with_expert_advice_under_local_differential_privacy.md)
-- [\[ICLR 2026\] A New Approach to Controlling Linear Dynamical Systems](a_new_approach_to_controlling_linear_dynamical_systems.md)
+- [\[ICLR 2026\] A New Initialization to Control Gradients in Sinusoidal Neural Networks](a_new_initialization_to_control_gradients_in_sinusoidal_neural_networks.md)
 
 </div>
 

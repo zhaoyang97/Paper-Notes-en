@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning
 description: >-
-  [CVPR 2026][Object Detection][Paper Note] This paper discovers that open-vocabulary detectors output features that drift significantly when the same object appears in different backgrounds (background overfitting). It proposes the CCL framework, which utilizes diffusion models to generate paired "same-object-different-background" samples (CBDG) and enforces ba
+  [CVPR 2026][Object Detection][Open-vocabulary detection] This paper discovers that open-vocabulary detectors output features that drift significantly when the same object appears in different backgrounds (background overfitting). It proposes the CCL framework, which utilizes diffusion models to generate paired "same-object-different-background" samples (CBDG) and enforces background invariance through an intra-class contrastive consistency loss (CCLoss). This approach achieve…
 tags:
-  - CVPR 2026
-  - Object Detection
+  - "CVPR 2026"
+  - "Object Detection"
+  - "Open-vocabulary detection"
+  - "contextual consistency"
+  - "data generation"
+  - "background robustness"
+  - "cross-modal alignment"
 date: 2026-05-08
-content_hash: 015f7c6903902a6c
+content_hash: 7da52dbae03001ae
 ---
+
 # Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning
 
 **Conference**: CVPR 2026  
@@ -158,7 +164,7 @@ Decomposing the contributions of CBDG and CCLoss ("+data" = only CBDG without CC
 - [\[CVPR 2026\] Parameter-Efficient Semantic Augmentation for Enhancing Open-Vocabulary Object Detection](parameter-efficient_semantic_augmentation_for_enhancing_open-vocabulary_object_d.md)
 - [\[CVPR 2026\] WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)
 - [\[CVPR 2026\] ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)
-- [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
+- [\[ICCV 2025\] Automated Model Evaluation for Object Detection via Prediction Consistency and Reliability](../../ICCV2025/object_detection/automated_model_evaluation_for_object_detection_via_prediction_consistency_and_r.md)
 
 </div>
 

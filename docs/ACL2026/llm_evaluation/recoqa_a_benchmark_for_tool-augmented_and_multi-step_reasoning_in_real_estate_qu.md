@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering
 description: >-
-  [ACL 2026][LLM Evaluation][Paper Note] This paper constructs ReCoQA—a large-scale benchmark containing 29,270 real estate QA pairs—which requires models to integrate database queries and map API calls for hybrid multi-source reasoning. A hierarchical multi-agent framework, HIRE-Agent, is proposed as a strong baseline, systematically revealing the bottleneck
+  [ACL 2026][LLM Evaluation][Tool-augmented reasoning] This paper constructs ReCoQA—a large-scale benchmark containing 29,270 real estate QA pairs—which requires models to integrate database queries and map API calls for hybrid multi-source reasoning. A hierarchical multi-agent framework, HIRE-Agent, is proposed as a strong baseline, systematically revealing the bottlenecks of existing LLMs in complex reasoning within vertical domains.
 tags:
-  - ACL 2026
-  - LLM Evaluation
+  - "ACL 2026"
+  - "LLM Evaluation"
+  - "Tool-augmented reasoning"
+  - "Multi-step reasoning"
+  - "Real estate QA"
+  - "Multi-Agent framework"
+  - "Benchmark dataset"
 date: 2026-05-08
-content_hash: 2e0e97c114d02652
+content_hash: bc1293193b017969
 ---
+
 # ReCoQA: A Benchmark for Tool-Augmented and Multi-Step Reasoning in Real Estate Question and Answering
 
 **Conference**: ACL 2026  
@@ -144,10 +150,10 @@ The SLU module is fine-tuned using BERT with Cross-Entropy loss. The LLM Agent c
 ## Related Papers
 
 - [\[ACL 2026\] Beyond Itinerary Planning: A Real-World Benchmark for Multi-Turn and Tool-Using Travel Tasks](beyond_itinerary_planning-a_real-world_benchmark_for_multi-turn_and_tool-using_t.md)
-- [\[ACL 2026\] SciImpact: A Multi-Dimensional, Multi-Field Benchmark for Scientific Impact Prediction](sciimpact_a_multi-dimensional_multi-field_benchmark_for_scientific_impact_predic.md)
-- [\[ACL 2026\] TaxPraBen: A Scalable Benchmark for Structured Evaluation of LLMs in Chinese Real-World Tax Practice](taxpraben_a_scalable_benchmark_for_structured_evaluation_of_llms_in_chinese_real.md)
-- [\[ACL 2026\] Idiom Understanding as a Tool to Measure the Dialect Gap](idiom_understanding_as_a_tool_to_measure_the_dialect_gap.md)
-- [\[ACL 2026\] SessionIntentBench: A Multi-Task Inter-Session Intention-Shift Modeling Benchmark](sessionintentbench_a_multi-task_inter-session_intention-shift_modeling_benchmark.md)
+- [\[ACL 2026\] ReTraceQA: Evaluating Reasoning Traces of Small Language Models in Commonsense Question Answering](retraceqa_evaluating_reasoning_traces_of_small_language_models_in_commonsense_qu.md)
+- [\[ACL 2026\] DiningBench: A Hierarchical Multi-view Benchmark for Perception and Reasoning in the Dietary Domain](diningbench_a_hierarchical_multi-view_benchmark_for_perception_and_reasoning_in_.md)
+- [\[NeurIPS 2025\] DSAS: A Universal Plug-and-Play Framework for Attention Optimization in Multi-Document Question Answering](../../NeurIPS2025/llm_evaluation/dsas_a_universal_plug-and-play_framework_for_attention_optimization_in_multi-doc.md)
+- [\[ACL 2025\] YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering](../../ACL2025/llm_evaluation/yescieval_llm_judge_science.md)
 
 </div>
 

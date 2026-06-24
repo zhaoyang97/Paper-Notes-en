@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Generative Zoo
 description: >-
-  [ICCV 2025][LLM Evaluation][Synthetic data generation] A scalable pipeline is proposed for synthesizing animal 3D pose and shape training data using conditional image generation models (FLUX + ControlNet)…
+  [ICCV 2025][LLM Evaluation][Synthetic data generation] A scalable pipeline is proposed for synthesizing animal 3D pose and shape training data using conditional image generation models (FLUX + ControlNet), producing the million-scale GenZoo dataset. Training exclusively on synthetic data achieves state-of-the-art performance on real-world benchmarks.
 tags:
   - "ICCV 2025"
   - "LLM Evaluation"
@@ -12,7 +12,7 @@ tags:
   - "conditional image generation"
   - "ControlNet"
 date: 2026-05-08
-content_hash: 9af5bd76c8564a27
+content_hash: 6e9c77d4ccb2f8af
 ---
 
 # Generative Zoo
@@ -142,11 +142,11 @@ Image generation model ablation (FLUX vs. Hunyuan-DiT vs. SD3): FLUX achieves th
 
 ## Related Papers
 
+- [\[ICML 2025\] G-Sim: Generative Simulations with Large Language Models and Gradient-Free Calibration](../../ICML2025/llm_evaluation/g-sim_generative_simulations_with_large_language_models_and_gradient-free_calibr.md)
+- [\[ICML 2026\] Hacking Generative Perplexity: Why Unconditional Text Evaluation Needs Distributional Metrics](../../ICML2026/llm_evaluation/hacking_generative_perplexity_why_unconditional_text_evaluation_needs_distributi.md)
+- [\[ICLR 2026\] Foundational Automatic Evaluators: Scaling Multi-Task Generative Evaluator Training for Reasoning-Centric Domains](../../ICLR2026/llm_evaluation/foundational_automatic_evaluators_scaling_multi-task_generative_evaluator_traini.md)
 - [\[ICCV 2025\] A Real-world Display Inverse Rendering Dataset](a_real-world_display_inverse_rendering_dataset.md)
 - [\[ICCV 2025\] OmniDiff: A Comprehensive Benchmark for Fine-grained Image Difference Captioning](omnidiff_a_comprehensive_benchmark_for_fine-grained_image_difference_captioning.md)
-- [\[ICCV 2025\] Few-Shot Pattern Detection via Template Matching and Regression](few-shot_pattern_detection_via_template_matching_and_regression.md)
-- [\[ICCV 2025\] Degradation-Modeled Multipath Diffusion for Tunable Metalens Photography](degradation-modeled_multipath_diffusion_for_tunable_metalens_photography.md)
-- [\[ICCV 2025\] Lay2Story: Extending Diffusion Transformers for Layout-Togglable Story Generation](lay2story_extending_diffusion_transformers_for_layout-togglable_story_generation.md)
 
 </div>
 

@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance
 description: >-
-  [ICML 2026][Interpretability][Paper Note] The authors argue that rather than continuing trial-and-error with massive real-world corpora, researchers should design "data probes"—synthetic sequences sampled from **completely known** stochastic processes. By training/fine-tuning LLMs on these and feeding generated results **back into the known distribution** for
+  [ICML 2026][Interpretability][Data Probes] The authors argue that rather than continuing trial-and-error with massive real-world corpora, researchers should design "data probes"—synthetic sequences sampled from **completely known** stochastic processes. By training/fine-tuning LLMs on these and feeding generated results **back into the known distribution** for likelihood analysis, the question of "what data teaches the model what" can be elevated from empirical heuristics to…
 tags:
-  - ICML 2026
-  - Interpretability
+  - "ICML 2026"
+  - "Interpretability"
+  - "Data Probes"
+  - "Typical Sets"
+  - "Markov Chains"
+  - "Falsifiable Transfer"
+  - "Position Paper"
 date: 2026-05-08
-content_hash: b6e0bb2412603019
+content_hash: da7a6b639450eda7
 ---
+
 # Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance
 
 **Conference**: ICML 2026  
@@ -117,15 +123,14 @@ The experiments provide a "proof of concept" to demonstrate if the methodology c
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
+- [\[ICLR 2026\] From Data Statistics to Feature Geometry: How Correlations Shape Superposition](../../ICLR2026/interpretability/from_data_statistics_to_feature_geometry_how_correlations_shape_superposition.md)
 - [\[ICML 2026\] MiniMax Learning of Interpretable Factored Stochastic Policies from Conjoint Data, with Uncertainty Quantification](minimax_learning_of_interpretable_factored_stochastic_policies_from_conjoint_dat.md)
-- [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
-- [\[ACL 2026\] The Impact of Off-Policy Training Data on Probe Generalisation](../../ACL2026/interpretability/the_impact_of_off-policy_training_data_on_probe_generalisation.md)
-- [\[ACL 2026\] Evian: Towards Explainable Visual Instruction-tuning Data Auditing](../../ACL2026/interpretability/evian_towards_explainable_visual_instruction-tuning_data_auditing.md)
+- [\[ICLR 2026\] Influence Dynamics and Stagewise Data Attribution](../../ICLR2026/interpretability/influence_dynamics_and_stagewise_data_attribution.md)
+- [\[ICML 2026\] ExPLAIND: Unifying Model, Data, and Training Attribution to Study Model Behavior](explaind_unifying_model_data_and_training_attribution_to_study_model_behavior.md)
 
 </div>
 

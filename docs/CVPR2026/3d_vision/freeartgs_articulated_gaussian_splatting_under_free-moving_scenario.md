@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario
 description: >-
-  [CVPR 2026][3D Vision][Paper Note] FreeArtGS proposes a method for reconstructing articulated objects from monocular RGB-D videos in "free-moving scenarios" (where object pose and joint states vary simultaneously). By utilizing a three-stage pipeline comprising motion-driven part segmentation, robust joint estimation, and end-to-end 3DGS optimization, i
+  [CVPR 2026][3D Vision][Articulated Object Reconstruction] FreeArtGS proposes a method for reconstructing articulated objects from monocular RGB-D videos in "free-moving scenarios" (where object pose and joint states vary simultaneously). By utilizing a three-stage pipeline comprising motion-driven part segmentation, robust joint estimation, and end-to-end 3DGS optimization, it significantly outperforms all baselines on the self-produced FreeArt-21 benchmark and existing datas…
 tags:
-  - CVPR 2026
-  - 3D Vision
+  - "CVPR 2026"
+  - "3D Vision"
+  - "Articulated Object Reconstruction"
+  - "Gaussian Splatting"
+  - "Free-Moving"
+  - "Joint Estimation"
+  - "Motion Segmentation"
 date: 2026-05-08
-content_hash: 665e10e18dd15049
+content_hash: a969f8dba6c00017
 ---
+
 # FreeArtGS: Articulated Gaussian Splatting Under Free-Moving Scenario
 
 **Conference**: CVPR 2026  
@@ -145,11 +151,11 @@ Part segmentation: $\mathcal{L} = 200\mathcal{L}_{main} + 10\mathcal{L}_{smooth}
 
 ## Related Papers
 
-- [\[CVPR 2026\] E2EGS: Event-to-Edge Gaussian Splatting for Pose-Free 3D Reconstruction](e2egs_event-to-edge_gaussian_splatting_for_pose-free_3d_reconstruction.md)
-- [\[CVPR 2026\] Clay-to-Stone: Phase-wise 3D Gaussian Splatting for Monocular Articulated Hand-Object Manipulation Modeling](clay-to-stone_phase-wise_3d_gaussian_splatting_for_monocular_articulated_hand-ob.md)
+- [\[CVPR 2026\] Paparazzo: Active Mapping of Moving 3D Objects](paparazzo_active_mapping_of_moving_3d_objects.md)
+- [\[CVPR 2026\] Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)
 - [\[CVPR 2026\] AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)
 - [\[CVPR 2026\] ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)
-- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
+- [\[CVPR 2026\] HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views](herogs_hierarchical_guidance_for_robust_3d_gaussian_splatting_under_sparse_views.md)
 
 </div>
 

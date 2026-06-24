@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Approximately Aligned Decoding
 description: >-
-  [NeurIPS 2025][LLM Efficiency][constrained decoding] This paper proposes Approximately Aligned Decoding (AprAD), a method for constrained generation in LLMs that leverages the prefix-selection algorithm from speculative…
+  [NeurIPS 2025][LLM Efficiency][constrained decoding] This paper proposes Approximately Aligned Decoding (AprAD), a method for constrained generation in LLMs that leverages the prefix-selection algorithm from speculative decoding. Upon encountering a constraint violation, AprAD neither reverts only one token (as in constrained generation, which causes extreme probability amplification) nor resamples entirely from scratch (as in ASAp, which incurs prohibitive computational cost…
 tags:
   - "NeurIPS 2025"
   - "LLM Efficiency"
@@ -12,7 +12,7 @@ tags:
   - "probability amplification"
   - "lipogram"
 date: 2026-05-08
-content_hash: 9215d663da1e7a1f
+content_hash: 1f90ea096eb25326
 ---
 
 # Approximately Aligned Decoding
@@ -98,10 +98,10 @@ Compared to constrained generation methods (e.g., llama.cpp grammar, Outlines), 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access](hardware-aligned_hierarchical_sparse_attention_for_efficient_long-term_memory_ac.md)
+- [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
 - [\[NeurIPS 2025\] 3-Model Speculative Decoding (PyramidSD)](3model_speculative_decoding.md)
-- [\[NeurIPS 2025\] MoESD: Revealing the Potential of Speculative Decoding to Accelerate Sparse MoE](moesd_unveil_speculative_decodings_potential_for_accelerating_sparse_moe.md)
 - [\[NeurIPS 2025\] OmniDraft: A Cross-Vocabulary Online Adaptive Drafter for On-Device Speculative Decoding](omnidraft_a_cross-vocabulary_online_adaptive_drafter_for_on-device_speculative_d.md)
-- [\[NeurIPS 2025\] Yggdrasil: Bridging Dynamic Speculation and Static Runtime for Latency-Optimal Tree-Based LLM Decoding](yggdrasil_bridging_dynamic_speculation_and_static_runtime_for_latency-optimal_tr.md)
+- [\[ACL 2025\] SAM Decoding: Speculative Decoding via Suffix Automaton](../../ACL2025/llm_efficiency/sam_decoding_speculative_decoding_via_suffix_automaton.md)
 
 </div>
 

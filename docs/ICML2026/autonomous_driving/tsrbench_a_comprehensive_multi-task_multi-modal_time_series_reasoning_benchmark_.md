@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models
 description: >-
-  [ICML 2026][Autonomous Driving][LLM/VLM/TSLLM] TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (Perception/Reasoning/Prediction/Decision-making), 15 tasks, and 4,125 questions. It supports four input modalities (Text, Visual, Text+Image, Embedding) and systematically evaluates 30+ mainstream LLMs, VLMs, and TSLLMs. It r
+  [ICML 2026][Autonomous Driving][Time series reasoning] TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (Perception/Reasoning/Prediction/Decision-making), 15 tasks, and 4,125 questions. It supports four input modalities (Text, Visual, Text+Image, Embedding) and systematically evaluates 30+ mainstream LLMs, VLMs, and TSLLMs. It reveals that "scaling holds in perception/reasoning but fails in prediction" and that "text and visual mod…
 tags:
-  - ICML 2026
-  - Autonomous Driving
-  - LLM/VLM/TSLLM
-  - scaling law
+  - "ICML 2026"
+  - "Autonomous Driving"
+  - "Time series reasoning"
+  - "multimodal evaluation"
+  - "LLM/VLM/TSLLM"
+  - "4 dimensions 15 tasks"
+  - "scaling law"
 date: 2026-05-08
-content_hash: 5ef1323ad39fe322
+content_hash: 54346e4e284f1742
 ---
+
 # TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models
 
 **Conference**: ICML 2026  
@@ -119,9 +123,9 @@ GPT-5 (T) leads with an overall score of 55.5%, but sub-tasks requiring strict r
 
 - [\[AAAI 2026\] Task Prototype-Based Knowledge Retrieval for Multi-Task Learning from Partially Annotated Data](../../AAAI2026/autonomous_driving/task_prototype-based_knowledge_retrieval_for_multi-task_lear.md)
 - [\[CVPR 2025\] Distilling Multi-modal Large Language Models for Autonomous Driving](../../CVPR2025/autonomous_driving/distilling_multi-modal_large_language_models_for_autonomous_driving.md)
+- [\[ICLR 2026\] Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization](../../ICLR2026/autonomous_driving/map_as_a_prompt_learning_multi-modal_spatial-signal_foundation_models_for_cross-.md)
 - [\[CVPR 2026\] Towards Balanced Multi-Modal Learning in 3D Human Pose Estimation](../../CVPR2026/autonomous_driving/towards_balanced_multi-modal_learning_in_3d_human_pose_estimation.md)
 - [\[ICCV 2025\] UAVScenes: A Multi-Modal Dataset for UAVs](../../ICCV2025/autonomous_driving/uavscenes_a_multi-modal_dataset_for_uavs.md)
-- [\[ICML 2026\] Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion](constrained_multi-objective_reinforcement_learning_with_max-min_criterion.md)
 
 </div>
 

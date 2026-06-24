@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency
 description: >-
-  [NeurIPS 2025 (Spotlight)][Optimization][time series forecasting] This paper reveals a counter-intuitive phenomenon in time series forecasting — that appropriately truncating historical inputs can improve prediction accu…
+  [NeurIPS 2025 (Spotlight)][Optimization][time series forecasting] This paper reveals a counter-intuitive phenomenon in time series forecasting — that appropriately truncating historical inputs can improve prediction accuracy (termed the redundant feature learning problem) — and proposes AMRC based on information bottleneck theory. AMRC suppresses redundant feature learning via adaptive masking loss and representation consistency constraints, serving as a model-agnostic traini…
 tags:
   - "NeurIPS 2025 (Spotlight)"
   - "Optimization"
@@ -12,7 +12,7 @@ tags:
   - "representation consistency"
   - "redundant features"
 date: 2026-05-08
-content_hash: af0c721b3f9f8645
+content_hash: 7b404db19b588147
 ---
 
 # Abstain Mask Retain Core: Time Series Prediction by Adaptive Masking Loss with Representation Consistency
@@ -128,11 +128,11 @@ The observation that "more data is not always better" warrants investigation in 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Conformal Prediction Adaptive to Unknown Subpopulation Shifts](../../ICLR2026/optimization/conformal_prediction_adaptive_to_unknown_subpopulation_shifts.md)
+- [\[CVPR 2025\] Test-Time Augmentation Improves Efficiency in Conformal Prediction](../../CVPR2025/optimization/test-time_augmentation_improves_efficiency_in_conformal_prediction.md)
 - [\[ICML 2026\] Adaptive Preconditioners Trigger Loss Spikes in Adam](../../ICML2026/optimization/adaptive_preconditioners_trigger_loss_spikes_in_adam.md)
 - [\[NeurIPS 2025\] Conformal Prediction for Causal Effects of Continuous Treatments](conformal_prediction_for_causal_effects_of_continuous_treatments.md)
-- [\[NeurIPS 2025\] One Sample is Enough to Make Conformal Prediction Robust](one_sample_is_enough_to_make_conformal_prediction_robust.md)
 - [\[NeurIPS 2025\] Preference Learning with Response Time: Robust Losses and Guarantees](preference_learning_with_response_time_robust_losses_and_guarantees.md)
+- [\[ICML 2025\] Random Feature Representation Boosting](../../ICML2025/optimization/random_feature_representation_boosting.md)
 
 </div>
 

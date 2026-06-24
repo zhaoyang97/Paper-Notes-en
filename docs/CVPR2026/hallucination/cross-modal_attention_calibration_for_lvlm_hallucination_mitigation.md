@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Cross-Modal Attention Calibration for LVLM Hallucination Mitigation
 description: >-
-  [CVPR 2026][Hallucination Detection][Paper Note] To mitigate hallucinations in LVLMs, this paper proposes CMAC, a training-free cross-modal attention calibration framework. It uses the IMD module to perform "surgical" masking of high cross-modal weight value vectors in the attention layer to construct a more accurate hallucination distribution for contrastive decodin
+  [CVPR 2026][Hallucination Detection][LVLM Hallucination] To mitigate hallucinations in LVLMs, this paper proposes CMAC, a training-free cross-modal attention calibration framework. It uses the IMD module to perform "surgical" masking of high cross-modal weight value vectors in the attention layer to construct a more accurate hallucination distribution for contrastive decoding. Additionally, the CMPC module scales the position indices of image tokens to alleviate the position…
 tags:
-  - CVPR 2026
-  - Hallucination Detection
+  - "CVPR 2026"
+  - "Hallucination Detection"
+  - "LVLM Hallucination"
+  - "Contrastive Decoding"
+  - "Cross-modal Attention"
+  - "Position Bias"
+  - "Training-free"
 date: 2026-05-08
-content_hash: d917d3bbca31781c
+content_hash: cd34434b8213f38b
 ---
+
 # Cross-Modal Attention Calibration for LVLM Hallucination Mitigation
 
 **Conference**: CVPR 2026  
@@ -163,7 +169,7 @@ This applies calibrated positional attention only to the "text query looking at 
 - [\[CVPR 2026\] MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models](mad_modality-adaptive_decoding_for_mitigating_cross-modal_hallucinations_in_mult.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](../../AAAI2026/hallucination/inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
-- [\[ICML 2026\] Capturing Gaze Shifts for Guidance: Cross-Modal Fusion Enhancement for VLM Hallucination Mitigation](../../ICML2026/hallucination/capturing_gaze_shifts_for_guidance_cross-modal_fusion_enhancement_for_vlm_halluc.md)
+- [\[CVPR 2026\] Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)
 
 </div>
 

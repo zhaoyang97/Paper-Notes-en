@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
 description: >-
-  [ICLR 2026][3D Vision][Paper Note] KeySS transforms "hiding multiple 3DGS secret scenes within a single 3DGS cover scene" into an end-to-end trainable framework. It employs a decoder controlled by CLIP-encoded keys to directly map cover Gaussians to secret Gaussians; incorrect keys result in reconstructing only the cover. The study identifies that diffe
+  [ICLR2026][3D Vision][3D Gaussian Splatting] KeySS transforms "hiding multiple 3DGS secret scenes within a single 3DGS cover scene" into an end-to-end trainable framework. It employs a decoder controlled by CLIP-encoded keys to directly map cover Gaussians to secret Gaussians; incorrect keys result in reconstructing only the cover. The study identifies that different Gaussian attributes contribute unequally to hiding secrets (opacity is effective…
 tags:
-  - ICLR 2026
-  - 3D Vision
+  - "ICLR2026"
+  - "3D Vision"
+  - "3D Gaussian Splatting"
+  - "Steganography"
+  - "Key Control"
+  - "Optimal Transport"
+  - "Multi-Secret Hiding"
 date: 2026-05-08
-content_hash: f038c5cdb6e9aeef
+content_hash: a6c8be9f5940b93e
 ---
+
 # All That Glitters Is Not Gold: Key-Secured 3D Secrets within 3D Gaussian Splatting
 
 **Conference**: ICLR2026  
@@ -157,11 +163,11 @@ Note: The 3DGS-GT (KeySS) cover upper bound is 26.518 dB. Under an incorrect key
 
 ## Related Papers
 
-- [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
 - [\[ICLR 2026\] Learning Unified Representation of 3D Gaussian Splatting](learning_unified_representation_of_3d_gaussian_splatting.md)
-- [\[ICCV 2025\] Not All Frame Features Are Equal: Video-to-4D Generation via Decoupling Dynamic-Static Features](../../ICCV2025/3d_vision/not_all_frame_features_are_equal_video-to-4d_generation_via_decoupling_dynamic-s.md)
-- [\[ICLR 2026\] SSD-GS: Scattering and Shadow Decomposition for Relightable 3D Gaussian Splatting](ssd-gs_scattering_and_shadow_decomposition_for_relightable_3d_gaussian_splatting.md)
-- [\[ICLR 2026\] Human3R: Everyone Everywhere All at Once](human3r_everyone_everywhere_all_at_once.md)
+- [\[ICLR 2026\] FlashWorld: High-quality 3D Scene Generation within Seconds](flashworld_high-quality_3d_scene_generation_within_seconds.md)
+- [\[ICLR 2026\] CLoD-GS: Continuous Level-of-Detail via 3D Gaussian Splatting](clod-gs_continuous_level-of-detail_via_3d_gaussian_splatting.md)
+- [\[ICLR 2026\] Active Learning of 3D Gaussian Splatting with Consistent Region Partition and Robust Pose Estimation](active_learning_of_3d_gaussian_splatting_with_consistent_region_partition_and_ro.md)
+- [\[ICCV 2025\] No Pose at All: Self-Supervised Pose-Free 3D Gaussian Splatting from Sparse Views](../../ICCV2025/3d_vision/no_pose_at_all_self-supervised_pose-free_3d_gaussian_splatting_from_sparse_views.md)
 
 </div>
 

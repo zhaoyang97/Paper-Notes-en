@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach
 description: >-
-  [CVPR 2026][Others][Paper Note] Addressing optimal F-measure prediction in multi-label classification, this paper rewrites the $O(q^3)$ matrix multiplication in the Bayesian rule into a convolution using the Hankel structure, further reducing complexity to $O(q^2\log q)$ via FFT. It replaces the traditionally difficult-to-train $q$ multinomial estima
+  [CVPR 2026][Multi-label classification] Addressing optimal F-measure prediction in multi-label classification, this paper rewrites the $O(q^3)$ matrix multiplication in the Bayesian rule into a convolution using the Hankel structure, further reducing complexity to $O(q^2\log q)$ via FFT. It replaces the traditionally difficult-to-train $q$ multinomial estimators with a "train $q$ binary estimators + autoregressive sampling + Monte Carlo integration" strategy to alleviate spar…
 tags:
-  - CVPR 2026
-  - Others
+  - "CVPR 2026"
+  - "Multi-label classification"
+  - "F-measure optimization"
+  - "Bayesian decision rules"
+  - "Autoregressive sampling"
+  - "FFT acceleration"
 date: 2026-05-08
-content_hash: 0bfb98b8faf82d5c
+content_hash: 992c14d2dd4a9fef
 ---
+
 # Revisiting F-measure Optimization in Multi-Label Classification: A Sampling-based Approach
 
 **Conference**: CVPR 2026  
@@ -150,9 +155,9 @@ FFT was faster than matrix multiplication on all datasets, with gains increasing
 ## Related Papers
 
 - [\[CVPR 2026\] Prototype-based Causal Intervention for Multi-Label Image Classification](prototype-based_causal_intervention_for_multi-label_image_classification.md)
-- [\[CVPR 2026\] Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)
 - [\[CVPR 2026\] Revisiting Sparsity Constraint Under High-Rank Property in Partial Multi-Label Learning](revisiting_sparsity_constraint_under_high-rank_property_in_partial_multi-label_l.md)
 - [\[CVPR 2026\] DF²-VB: Dual-level Fuzzy Fusion with View-specific Boosting for Multi-view Multi-label Classification](df2-vb_dual-level_fuzzy_fusion_with_view-specific_boosting_for_multi-view_multi-.md)
+- [\[ICLR 2026\] Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification](../../ICLR2026/others/permutation-consistent_variational_encoding_for_incomplete_multi-view_multi-labe.md)
 - [\[CVPR 2026\] EXOTIC: External Vision-driven Incomplete Multi-view Classification](exotic_external_vision-driven_incomplete_multi-view_classification.md)
 
 </div>

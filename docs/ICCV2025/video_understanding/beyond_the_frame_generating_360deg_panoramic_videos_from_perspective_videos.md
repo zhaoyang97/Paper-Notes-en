@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos
 description: >-
-  [ICCV 2025][Video Understanding][360° video generation] This paper introduces Argus, the first model to generate complete 360° panoramic videos from standard perspective videos. Through three geometry- and motion-aware t…
+  [ICCV 2025][Video Understanding][360° video generation] This paper introduces Argus, the first model to generate complete 360° panoramic videos from standard perspective videos. Through three geometry- and motion-aware techniques—camera movement simulation, view-based frame alignment, and blended decoding—Argus achieves spatially consistent and temporally coherent panoramic video generation within a diffusion-based framework.
 tags:
   - "ICCV 2025"
   - "Video Understanding"
@@ -12,7 +12,7 @@ tags:
   - "panoramic video"
   - "view synthesis"
 date: 2026-05-08
-content_hash: 0b4d575293516d6b
+content_hash: 6a151f14472949e1
 ---
 
 # Beyond the Frame: Generating 360° Panoramic Videos from Perspective Videos
@@ -154,8 +154,8 @@ Comparison with video outpainting methods (FoV=60°):
 - [\[ICCV 2025\] Fine-grained Spatiotemporal Grounding on Egocentric Videos](fine-grained_spatiotemporal_grounding_on_egocentric_videos.md)
 - [\[ICCV 2025\] An Empirical Study of Autoregressive Pre-training from Videos](an_empirical_study_of_autoregressive_pre-training_from_videos.md)
 - [\[ICCV 2025\] Vamba: Understanding Hour-Long Videos with Hybrid Mamba-Transformers](vamba_understanding_hour-long_videos_with_hybrid_mamba-transformers.md)
-- [\[CVPR 2026\] VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](../../CVPR2026/video_understanding/vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)
-- [\[ICCV 2025\] Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](q-frame_query-aware_frame_selection_and_multi-resolution_adaptation_for_video-ll.md)
+- [\[CVPR 2026\] Seeing Beyond 8bits: Subjective and Objective Quality Assessment of HDR-UGC Videos](../../CVPR2026/video_understanding/seeing_beyond_8bits_subjective_and_objective_quality_assessment_of_hdr-ugc_video.md)
+- [\[ICCV 2025\] PriOr-Flow: Enhancing Primitive Panoramic Optical Flow with Orthogonal View](prior-flow_enhancing_primitive_panoramic_optical_flow_with_orthogonal_view.md)
 
 </div>
 

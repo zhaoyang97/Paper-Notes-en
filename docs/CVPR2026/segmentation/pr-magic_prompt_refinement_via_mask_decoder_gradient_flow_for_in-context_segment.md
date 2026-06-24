@@ -2,15 +2,19 @@
 title: >-
   [Paper Note] PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation
 description: >-
-  [CVPR 2026][Segmentation][in-context segmentation] PR-MaGIC is a **training-free, test-time** prompt refinement framework. It treats the gradient of the SAM mask decoder as a "discriminator gradient flow" backpropagated to query image embeddings, iteratively "shifting" low-quality automatically generated prompt points to more accurate positions. By using top-1 similari
+  [CVPR 2026][Segmentation][in-context segmentation] PR-MaGIC is a **training-free, test-time** prompt refinement framework. It treats the gradient of the SAM mask decoder as a "discriminator gradient flow" backpropagated to query image embeddings, iteratively "shifting" low-quality automatically generated prompt points to more accurate positions. By using top-1 similarity to select the most robust mask from multiple candidate steps, it serves as a plug-and-play module that con…
 tags:
-  - CVPR 2026
-  - Segmentation
-  - in-context segmentation
-  - SAM
+  - "CVPR 2026"
+  - "Segmentation"
+  - "in-context segmentation"
+  - "SAM"
+  - "automatic prompt"
+  - "gradient flow"
+  - "test-time refinement"
 date: 2026-05-08
-content_hash: e0a7f23a998db6f3
+content_hash: 3d94be9fa2990192
 ---
+
 # PR-MaGIC: Prompt Refinement Via Mask Decoder Gradient Flow For In-Context Segmentation
 
 **Conference**: CVPR 2026  
@@ -154,11 +158,11 @@ The largest gains for PerSAM-F were in semantic segmentation: FSS +8.8, COCO +2.
 
 ## Related Papers
 
-- [\[AAAI 2026\] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion](../../AAAI2026/segmentation/ctrlfuse_mask-prompt_guided_controllable_infrared_and_visible_image_fusion.md)
 - [\[CVPR 2026\] PromptMoE: A Segmentation Refinement Framework Leveraging Mixture of Experts for Improved Prompting](promptmoe_a_segmentation_refinement_framework_leveraging_mixture_of_experts_for_.md)
-- [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
-- [\[CVPR 2026\] Love Me, Love My Label: Rethinking the Role of Labels in Prompt Retrieval for Visual In-Context Learning](love_me_love_my_label_rethinking_the_role_of_labels_in_prompt_retrieval_for_visu.md)
 - [\[CVPR 2026\] INSID3: Training-Free In-Context Segmentation with DINOv3](insid3_training-free_in-context_segmentation_with_dinov3.md)
+- [\[AAAI 2026\] CtrlFuse: Mask-Prompt Guided Controllable Infrared and Visible Image Fusion](../../AAAI2026/segmentation/ctrlfuse_mask-prompt_guided_controllable_infrared_and_visible_image_fusion.md)
+- [\[CVPR 2026\] FlowDIS: Language-Guided Dichotomous Image Segmentation with Flow Matching](flowdis_language-guided_dichotomous_image_segmentation_with_flow_matching.md)
+- [\[CVPR 2026\] CDICS: Delving Into Fine-Grained Attribute for In-Context Segmentation via Compositional Prompts and Phased Decoupling](cdics_delving_into_fine-grained_attribute_for_in-context_segmentation_via_compos.md)
 
 </div>
 

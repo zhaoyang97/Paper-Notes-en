@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing
 description: >-
-  [ICCV 2025][Audio & Speech][Audio-visual video parsing] This paper proposes the MUG framework, which simultaneously improves segment-level and event-level prediction in weakly supervised audio-visual video parsing (AVVP)…
+  [ICCV 2025][Audio & Speech][Audio-visual video parsing] This paper proposes the MUG framework, which simultaneously improves segment-level and event-level prediction in weakly supervised audio-visual video parsing (AVVP) through a pseudo label-augmented cross-modal random combination data augmentation strategy and an audio-visual Mamba network.
 tags:
   - "ICCV 2025"
   - "Audio & Speech"
@@ -12,7 +12,7 @@ tags:
   - "data augmentation"
   - "weakly supervised learning"
 date: 2026-05-08
-content_hash: ece249ce9ec8a23c
+content_hash: 8899fe3a995daf86
 ---
 
 # MUG: Pseudo Labeling Augmented Audio-Visual Mamba Network for Audio-Visual Video Parsing
@@ -133,11 +133,11 @@ Comparison with Transformer/CNN architectures: MUG (7.6M parameters) vs. Transfo
 
 ## Related Papers
 
+- [\[CVPR 2025\] UWAV: Uncertainty-Weighted Weakly-Supervised Audio-Visual Video Parsing](../../CVPR2025/audio_speech/uwav_uncertainty-weighted_weakly-supervised_audio-visual_video_parsing.md)
+- [\[ECCV 2024\] CoLeaF: A Contrastive-Collaborative Learning Framework for Weakly Supervised Audio-Visual Video Parsing](../../ECCV2024/audio_speech/coleaf_a_contrastive-collaborative_learning_framework_for_weakly_supervised_audi.md)
+- [\[ECCV 2024\] Label-Anticipated Event Disentanglement for Audio-Visual Video Parsing](../../ECCV2024/audio_speech/label-anticipated_event_disentanglement_for_audio-visual_video_parsing.md)
 - [\[ICCV 2025\] VGGSounder: Audio-Visual Evaluations for Foundation Models](vggsounder_audio-visual_evaluations_for_foundation_models.md)
 - [\[ICCV 2025\] Zero-AVSR: Zero-Shot Audio-Visual Speech Recognition with LLMs by Learning Language-Agnostic Speech Representations](zero-avsr_zero-shot_audio-visual_speech_recognition_with_llms_by_learning_langua.md)
-- [\[NeurIPS 2025\] MoME: Mixture of Matryoshka Experts for Audio-Visual Speech Recognition](../../NeurIPS2025/audio_speech/mome_mixture_of_matryoshka_experts_for_audio-visual_speech_recognition.md)
-- [\[NeurIPS 2025\] AVRobustBench: Benchmarking the Robustness of Audio-Visual Recognition Models at Test-Time](../../NeurIPS2025/audio_speech/textttavrobustbench_benchmarking_the_robustness_of_audio-visual_recognition_mode.md)
-- [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](../../ICML2026/audio_speech/probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 
 </div>
 

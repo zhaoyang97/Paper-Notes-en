@@ -2,14 +2,19 @@
 title: >-
   [Paper Note] Unfolding Spatial Cognition: Evaluating Multimodal Models on Visual Simulations
 description: >-
-  [ICLR 2026][vlm_reasoning][MLLM] The authors propose the STARE benchmark, which systematically evaluates Multimodal Large Language Models (MLLMs) using approximately 4,000 spatial problems requiring "multi-step visual simulation" (2D/3D transformations, cube folding, tangrams, viewpoint, and temporal reasoning). The study finds that while models perfo
+  [ICLR 2026][VLM Reasoning][Spatial Cognition] The authors propose the STARE benchmark, which systematically evaluates Multimodal Large Language Models (MLLMs) using approximately 4,000 spatial problems requiring "multi-step visual simulation" (2D/3D transformations, cube folding, tangrams, viewpoint, and temporal reasoning). The study finds that while models perform near human levels on simple 2D transformations, their performance drops to near-random on tasks requiring step-…
 tags:
-  - ICLR 2026
-  - vlm_reasoning
-  - MLLM
+  - "ICLR 2026"
+  - "VLM Reasoning"
+  - "Spatial Cognition"
+  - "Visual Simulation"
+  - "Multimodal Benchmark"
+  - "Mental Rotation"
+  - "MLLM"
 date: 2026-05-08
-content_hash: f7c9c53994729e26
+content_hash: 2369587632ae4314
 ---
+
 # Unfolding Spatial Cognition: Evaluating Multimodal Models on Visual Simulations
 
 **Conference**: ICLR 2026  
@@ -133,11 +138,11 @@ The strongest model, o3, scored 68.1, far below the human 97.1. Among non-reason
 
 ## Related Papers
 
+- [\[ICLR 2026\] VisuLogic: A Benchmark for Evaluating Visual Reasoning Capabilities of Multimodal Large Models](visulogic_a_benchmark_for_evaluating_visual_reasoning_in_multi-modal_large_langu.md)
 - [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[CVPR 2026\] EgoMind: Activating Spatial Cognition through Linguistic Reasoning in MLLMs](../../CVPR2026/vlm_reasoning/egomind_activating_spatial_cognition_through_linguistic_reasoning_in_mllms.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
 - [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
-- [\[ICLR 2026\] Evaluating Cross-Modal Reasoning Ability and Problem Characteristics with Multimodal Item Response Theory](evaluating_cross-modal_reasoning_ability_and_problem_characteristics_with_multim.md)
+- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
 
 </div>
 

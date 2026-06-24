@@ -2,13 +2,19 @@
 title: >-
   [Paper Note] Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation
 description: >-
-  [CVPR 2026][Model Compression][Paper Note] Addressing the common issues of "color oversaturation + motion collapse" in DMD (Distribution Matching Distillation) for video diffusion models, this paper proposes an adaptive regression loss (using an EMA cache to dynamically down-weight unreliable real samples with high variance) and a temporal regularization loss (
+  [CVPR 2026][Model Compression][Video Diffusion] Addressing the common issues of "color oversaturation + motion collapse" in DMD (Distribution Matching Distillation) for video diffusion models, this paper proposes an adaptive regression loss (using an EMA cache to dynamically down-weight unreliable real samples with high variance) and a temporal regularization loss (directly penalizing low inter-frame variance). Combined with an inference acceleration strategy that reduces the…
 tags:
-  - CVPR 2026
-  - Model Compression
+  - "CVPR 2026"
+  - "Model Compression"
+  - "Video Diffusion"
+  - "Distribution Matching Distillation"
+  - "Oversaturation"
+  - "Temporal Collapse"
+  - "Few-step Generation"
 date: 2026-05-08
-content_hash: 995ba698244319dc
+content_hash: 016f667bd30d5ada
 ---
+
 # Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation
 
 **Conference**: CVPR 2026  
@@ -150,8 +156,8 @@ Starting from the 1.3B DMD baseline (Instance Preservation measures temporal con
 - Value: ⭐⭐⭐⭐ High industrial potential due to the 4-step generation, preference over teacher, and 30% inference saving.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

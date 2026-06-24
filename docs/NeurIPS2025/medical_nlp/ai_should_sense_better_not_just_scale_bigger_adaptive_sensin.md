@@ -2,17 +2,17 @@
 title: >-
   [Paper Note] AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift
 description: >-
-  [NeurIPS 2025][Medical NLP][Adaptive Sensing] Inspired by biological sensory systems, this position paper argues that AI research must shift from simply scaling models to optimizing inputs—by dynamically adjusting sensor…
+  [NeurIPS 2025][Medical LLM][Adaptive Sensing] Inspired by biological sensory systems, this position paper argues that AI research must shift from simply scaling models to optimizing inputs—by dynamically adjusting sensor-level parameters (exposure, gain, multimodal configuration, etc.) to produce inputs most favorable to the model. Under ideal sensor adaptation, a small model (EfficientNet-B0, 5M parameters) can outperform a large model (OpenCLIP-H, 632M parameters)…
 tags:
   - "NeurIPS 2025"
-  - "Medical NLP"
+  - "Medical LLM"
   - "Adaptive Sensing"
   - "Paradigm Shift"
   - "Sensor Optimization"
   - "Closed-Loop Perception"
   - "Embodied AI"
 date: 2026-05-08
-content_hash: 65163a8dfa17c360
+content_hash: 25b43386bd6d1c0b
 ---
 
 # AI Should Sense Better, Not Just Scale Bigger: Adaptive Sensing as a Paradigm Shift
@@ -140,10 +140,10 @@ The core empirical data cited in this paper are drawn from prior works Lens and 
 ## Related Papers
 
 - [\[ACL 2026\] Responsible Evaluation of AI for Mental Health](../../ACL2026/medical_nlp/responsible_evaluation_of_ai_for_mental_health.md)
-- [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](../../ICLR2026/medical_nlp/counselbench_llm_mental_health_qa.md)
-- [\[ICLR 2026\] ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](../../ICLR2026/medical_nlp/atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)
-- [\[ACL 2026\] "Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery](../../ACL2026/medical_nlp/34excuse_me_may_i_say_something34_colabscience_a_proactive_ai_assistant_for_biom.md)
-- [\[AAAI 2026\] A Principle-Driven Adaptive Policy for Group Cognitive Stimulation Dialogue for Elderly with Cognitive Impairment](../../AAAI2026/medical_nlp/a_principle-driven_adaptive_policy_for_group_cognitive_stimu.md)
+- [\[ACL 2025\] One Size Fits None: Rethinking Fairness in Medical AI](../../ACL2025/medical_nlp/one_size_fits_none_rethinking_fairness_in_medical_ai.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](../../ICLR2026/medical_nlp/medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
+- [\[ACL 2025\] Adaptive-VP: A Framework for LLM-Based Virtual Patients that Adapts to Trainees' Dialogue to Facilitate Nurse Communication Training](../../ACL2025/medical_nlp/adaptive-vp_a_framework_for_llm-based_virtual_patients_that_adapts_to_trainees_d.md)
+- [\[ACL 2026\] Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA](../../ACL2026/medical_nlp/calibrated_not_for_everyone_how_sexual_orientation_and_religious_markers_distort.md)
 
 </div>
 
